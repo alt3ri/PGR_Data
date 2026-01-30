@@ -1,0 +1,623 @@
+[
+    {
+        "PoolId": 10001,
+        "Name": "Schrodinger's Maze",
+        "Description": "In front of you is an unknown region shrouded by black mist. Neither the terrain radar nor the scanning sensor could detect any information. Forces were deployed to explore the region, but each time they came back with a different map, as if the maze could alter its form based on the explorers. Stepping inside is the only way to learn more about it.",
+        "BtnName": "Enter",
+        "EventId1": "[4]",
+        "EventId2": "[5]",
+        "EventId3": "[6]"
+    },
+    {
+        "PoolId": 10002,
+        "Name": "Theseus' Maze",
+        "Description": "In front of you is an unknown region shrouded by black mist. The terrain radar and the scanning sensor give largely different results. Perhaps a construction Construct has been modifying its structure, or maybe a terrain-changing function is built within.",
+        "BtnName": "Enter",
+        "EventId1": "[7]",
+        "EventId2": "[8]",
+        "EventId3": "[9]"
+    },
+    {
+        "PoolId": 10003,
+        "Name": "Ignosticism Maze",
+        "Description": "In front of you is an unknown region shrouded by black mist. The terrain radar and the scanning sensor have returned some information, but according to the exploration forces previously deployed, the shortest paths marked on the map usually led to a dead end.",
+        "BtnName": "Enter",
+        "EventId1": "[10]",
+        "EventId2": "[11]",
+        "EventId3": null
+    },
+    {
+        "PoolId": 10004,
+        "Name": "Cleansing Container",
+        "Description": "An unstable cleansing container with signs of Punishing corruption on its pipes and pump. The user interface is still working, and the cleansing fluids are proven to be functional. No one knows how long it can remain \"functional\", but it won't harm to give yourself a clean if you have touched something troublesome.",
+        "BtnName": "Activate the cleansing program",
+        "EventId1": "[12]",
+        "EventId2": "[13]",
+        "EventId3": "[14]"
+    },
+    {
+        "PoolId": 10005,
+        "Name": "Faulty Assembly Line",
+        "Description": "The connecting rods and belts are significantly worn out on this assembly line. It could still produce supplies if you put the materials in, but don't give it too much hope.",
+        "BtnName": "Connect the power",
+        "EventId1": "[15]",
+        "EventId2": "[16]",
+        "EventId3": "[17]"
+    },
+    {
+        "PoolId": 10006,
+        "Name": "Strange Assembly Line",
+        "Description": "An assembly line that is on the brink of overloading. The energy pipes are significantly corroded and the user interface is filled with warning messages. It could still produce supplies if you put the materials in, but don't give it too much hope.",
+        "BtnName": "Connect the power",
+        "EventId1": "[18]",
+        "EventId2": "[19]",
+        "EventId3": "[20]"
+    },
+    {
+        "PoolId": 10007,
+        "Name": "Rusty Assembly Line",
+        "Description": "You have no idea why the gears on this rusty assembly line are still running. It could still produce supplies if you put the materials in, but don't give it too much hope. You may end up losing some parts if the broken parts hit you.",
+        "BtnName": "Connect the power",
+        "EventId1": "[21]",
+        "EventId2": "[22]",
+        "EventId3": "[23]"
+    },
+    {
+        "PoolId": 10008,
+        "Name": "Damaged Assembly Line",
+        "Description": "This assembly line was hit by shrapnel and the main axle is only barely connected to the gear sets. It could still produce supplies if you put the materials in, but don't give it too much hope. You may end up losing some parts if the broken parts hit you.",
+        "BtnName": "Connect the power",
+        "EventId1": "[24]",
+        "EventId2": "[25]",
+        "EventId3": "[26]"
+    },
+    {
+        "PoolId": 10009,
+        "Name": "Underpowered Assembly Line",
+        "Description": "The user interface on this assembly line is blinking. It could still produce supplies if you put the materials in, but don't give it too much hope\u2014maybe it will shut down again after you have waited for an hour.",
+        "BtnName": "Connect the power",
+        "EventId1": "[27]",
+        "EventId2": "[28]",
+        "EventId3": "[29]"
+    },
+    {
+        "PoolId": 10010,
+        "Name": "Corrupted Remains",
+        "Description": "Somehow, you feel like this broken Corrupted body is still moving.",
+        "BtnName": "Investigate the remains",
+        "EventId1": "[30]",
+        "EventId2": "[31]",
+        "EventId3": "[32]"
+    },
+    {
+        "PoolId": 10011,
+        "Name": "Corrupted Remains with Weird Pose",
+        "Description": "This broken Corrupted body is leaning on the corner with a weird pose. Somehow, you feel like it's still making sounds.",
+        "BtnName": "Investigate the remains",
+        "EventId1": "[33]",
+        "EventId2": "[34]",
+        "EventId3": "[35]"
+    },
+    {
+        "PoolId": 10012,
+        "Name": "Spare Parts Box",
+        "Description": "A strange sign is laser-printed on this spare parts box in the corner. Sometimes, Corrupted are seen moving this box. Would you also find it useful?",
+        "BtnName": "Open the box",
+        "EventId1": "[36]",
+        "EventId2": "[37]",
+        "EventId3": "[38]"
+    },
+    {
+        "PoolId": 10013,
+        "Name": "Maintenance Terminal",
+        "Description": "\"This shaky maintenance terminal looks like it needs some repairing itself. Better think twice before turning it on.\"",
+        "BtnName": "Turn on the terminal",
+        "EventId1": "[39]",
+        "EventId2": "[40]",
+        "EventId3": "[41]"
+    },
+    {
+        "PoolId": 10014,
+        "Name": "Intact Supply Crate",
+        "Description": "Although not recycled, this supply crate is still intact under such poor condition. The quality of Babylonia's supplies is definitely top-notch.",
+        "BtnName": "Open the box",
+        "EventId1": "[42]",
+        "EventId2": "[43]",
+        "EventId3": "[44]"
+    },
+    {
+        "PoolId": 10015,
+        "Name": "Damaged Supply Crate",
+        "Description": "This supply crate has a Babylonia sign printed on its cracking surface. It was probably left behind by another exploration team.",
+        "BtnName": "Open the box",
+        "EventId1": "[45]",
+        "EventId2": "[46]",
+        "EventId3": "[47]"
+    },
+    {
+        "PoolId": 10016,
+        "Name": "Strange Supply Crate",
+        "Description": "Supply crates like this have never been sighted in Babylonia. The patterns on the crate are badly worn out and cannot be identified.",
+        "BtnName": "Open the box",
+        "EventId1": "[48]",
+        "EventId2": "[49]",
+        "EventId3": "[50]"
+    },
+    {
+        "PoolId": 10017,
+        "Name": "Supply Warehouse",
+        "Description": "A Babylonia identification device hangs on the door of this supply warehouse. It seems to be part of a deserted frontline base.",
+        "BtnName": "Open the gate",
+        "EventId1": "[51]",
+        "EventId2": "[52]",
+        "EventId3": null
+    },
+    {
+        "PoolId": 10018,
+        "Name": "Production Line",
+        "Description": "A dated production line that seems to be significantly corrupted by Punishing Virus. No one knows what it was originally designed to produce. You can try putting some materials in, but don't give it too much hope. You may end up losing some parts if its broken parts hit you.",
+        "BtnName": "Connect the power",
+        "EventId1": "[53]",
+        "EventId2": "[54]",
+        "EventId3": "[55]"
+    },
+    {
+        "PoolId": 10019,
+        "Name": "Maintenance Tunnel",
+        "Description": "The entrance to the maintenance tunnel is open. It may be a shortcut, but it does look suspicious.",
+        "BtnName": "Explore the tunnel",
+        "EventId1": "[56]",
+        "EventId2": "[57]",
+        "EventId3": "[58]"
+    },
+    {
+        "PoolId": 10020,
+        "Name": "Spare Parts",
+        "Description": "No one knows what they will find after putting their hand into this pile of spare parts.",
+        "BtnName": "Search",
+        "EventId1": "[59]",
+        "EventId2": "[60]",
+        "EventId3": "[61]"
+    },
+    {
+        "PoolId": 10021,
+        "Name": "Spare Parts",
+        "Description": "No one knows what they will find after putting their hand into this pile of spare parts.",
+        "BtnName": "Search",
+        "EventId1": "[62]",
+        "EventId2": "[63]",
+        "EventId3": "[64]"
+    },
+    {
+        "PoolId": 10022,
+        "Name": "Spare Parts",
+        "Description": "No one knows what they will find after putting their hand into this pile of spare parts.",
+        "BtnName": "Search",
+        "EventId1": "[65]",
+        "EventId2": "[66]",
+        "EventId3": "[67]"
+    },
+    {
+        "PoolId": 10023,
+        "Name": "Damaged Assembly Line",
+        "Description": "This assembly line was hit by shrapnel and the main axle is only barely connected to the gear sets. It could still produce supplies if you put the materials in, but don't give it too much hope. You may end up losing some parts if the broken parts hit you.",
+        "BtnName": "Connect the power",
+        "EventId1": "[175]",
+        "EventId2": "[176]",
+        "EventId3": null
+    },
+    {
+        "PoolId": 10024,
+        "Name": "Corrupted Remains",
+        "Description": "Somehow, you feel like this broken Corrupted body is still moving.",
+        "BtnName": "Investigate the remains",
+        "EventId1": "[177]",
+        "EventId2": "[178]",
+        "EventId3": null
+    },
+    {
+        "PoolId": 20001,
+        "Name": "Heteromer Container",
+        "Description": "A container formed by Heteromers. Something seems to be wrapped inside. Whoever opens the structure will receive Punishing corruption. Would you share with someone, or face it alone?",
+        "BtnName": null,
+        "EventId1": "[68, 69]",
+        "EventId2": "[70, 71]",
+        "EventId3": null
+    },
+    {
+        "PoolId": 20002,
+        "Name": "Large Heteromer Container",
+        "Description": "A large container formed by Heteromers. Something seems to be wrapped inside. Whoever opens the structure will receive Punishing corruption. Would you share with someone, or face it alone?",
+        "BtnName": null,
+        "EventId1": "[72, 73]",
+        "EventId2": "[74, 75]",
+        "EventId3": null
+    },
+    {
+        "PoolId": 20003,
+        "Name": "Heteromer Structure",
+        "Description": "A structure formed by Heteromers. Something seems to be wrapped inside. Whoever opens the structure will receive Punishing corruption. Would you share with someone, or face it alone?",
+        "BtnName": null,
+        "EventId1": "[76, 77]",
+        "EventId2": "[78, 79]",
+        "EventId3": null
+    },
+    {
+        "PoolId": 20004,
+        "Name": "Terminal of Greed - S",
+        "Description": "A small terminal corrupted by Punishing Virus. It may return different things based on the amount of materials consumed.",
+        "BtnName": null,
+        "EventId1": "[80, 81]",
+        "EventId2": "[82, 83]",
+        "EventId3": "[84, 85]"
+    },
+    {
+        "PoolId": 20005,
+        "Name": "Terminal of Greed - M",
+        "Description": "A medium terminal corrupted by Punishing Virus. It may return different things based on the amount of materials consumed.",
+        "BtnName": null,
+        "EventId1": "[86, 87]",
+        "EventId2": "[88, 89]",
+        "EventId3": "[90, 91]"
+    },
+    {
+        "PoolId": 20006,
+        "Name": "Bait Trap",
+        "Description": "A poorly made and carelessly deployed bait trap. Whoever gets hurt by this probably does not want anyone else to know.",
+        "BtnName": null,
+        "EventId1": "[92, 93]",
+        "EventId2": "[94, 95]",
+        "EventId3": null
+    },
+    {
+        "PoolId": 20007,
+        "Name": "Quality Bait Trap",
+        "Description": "This bait trap is carefully assembled and properly set up. One can easily get injured if they don't pay extra attention while walking.",
+        "BtnName": null,
+        "EventId1": "[96, 97]",
+        "EventId2": "[98, 99]",
+        "EventId3": null
+    },
+    {
+        "PoolId": 20008,
+        "Name": "Passionate Service Station",
+        "Description": "A service station corrupted by Punishing Virus. The AI has gone haywire and keeps boasting its service standards. It might be still functional for repairs, but one must carefully consider which service to choose.",
+        "BtnName": null,
+        "EventId1": "[100, 101]",
+        "EventId2": "[102, 103]",
+        "EventId3": null
+    },
+    {
+        "PoolId": 20009,
+        "Name": "Hungry Assembly Line",
+        "Description": "Corrupted by Punishing Virus, this assembly line is still running and trembling without raw materials. What if you put some materials in...?",
+        "BtnName": null,
+        "EventId1": "[104, 105]",
+        "EventId2": "[106, 107]",
+        "EventId3": "[108, 109]"
+    },
+    {
+        "PoolId": 20010,
+        "Name": "Mean Supply Robot",
+        "Description": "Punishing Virus seems to have influenced the characteristics of this rude supply robot. It gives different reactions based on the item you hand out.",
+        "BtnName": null,
+        "EventId1": "[110, 111]",
+        "EventId2": "[112, 113]",
+        "EventId3": "[114, 115]"
+    },
+    {
+        "PoolId": 20011,
+        "Name": "Mean Supply Robot",
+        "Description": "Punishing Virus seems to have influenced the characteristics of this rude supply robot. It gives different reactions based on the item you hand out.",
+        "BtnName": null,
+        "EventId1": "[116, 117]",
+        "EventId2": "[118, 119]",
+        "EventId3": "[120, 121]"
+    },
+    {
+        "PoolId": 20012,
+        "Name": "Mean Supply Robot",
+        "Description": "Punishing Virus seems to have influenced the characteristics of this rude supply robot. It gives different reactions based on the item you hand out.",
+        "BtnName": null,
+        "EventId1": "[122, 123]",
+        "EventId2": "[124, 125]",
+        "EventId3": "[126, 127]"
+    },
+    {
+        "PoolId": 20013,
+        "Name": "Fluid Ravager",
+        "Description": "The corruption seems to have turned the injection terminal into a blood-draining terminal. Something may happen if you let it collect some vital fluids...",
+        "BtnName": null,
+        "EventId1": "[128, 129]",
+        "EventId2": "[130, 131]",
+        "EventId3": "[132, 133]"
+    },
+    {
+        "PoolId": 20014,
+        "Name": "Mean Supply Robot (L)",
+        "Description": "Punishing Virus seems to have influenced the characteristics of this rude large supply robot. It gives different reactions based on the item you hand out, but the price it asks may be a bit dangerous given its size.",
+        "BtnName": null,
+        "EventId1": "[134, 135]",
+        "EventId2": "[136, 137]",
+        "EventId3": "[138, 139]"
+    },
+    {
+        "PoolId": 20015,
+        "Name": "Ruthless Cleansing Platform",
+        "Description": "Built by Cosmos Industries, this cleansing platform will perform all cleansing duties without hesitation.",
+        "BtnName": null,
+        "EventId1": "[140, 141]",
+        "EventId2": "[142, 143]",
+        "EventId3": null
+    },
+    {
+        "PoolId": 20016,
+        "Name": "Heartless Cleansing Platform",
+        "Description": "Built by Cosmos Industries, this cleansing platform is now offering complete cleansing service to individuals.",
+        "BtnName": null,
+        "EventId1": "[144, 145]",
+        "EventId2": "[146, 147]",
+        "EventId3": null
+    },
+    {
+        "PoolId": 20017,
+        "Name": "Heteromer Prank Box",
+        "Description": "The object inside the prank box is already mutating. No one knows what they will see once the box is opened.",
+        "BtnName": null,
+        "EventId1": "[148, 149]",
+        "EventId2": "[150, 151]",
+        "EventId3": "[152, 153]"
+    },
+    {
+        "PoolId": 20018,
+        "Name": "Heteromer Prank Crate",
+        "Description": "This is way too large for a prank \"box\". In fact, no one can easily open it...",
+        "BtnName": null,
+        "EventId1": "[154, 155]",
+        "EventId2": "[156, 157]",
+        "EventId3": "[158, 159]"
+    },
+    {
+        "PoolId": 20019,
+        "Name": "Mysterious Prank Box",
+        "Description": "Seems like something is trying to escape from this giant \"box\"...",
+        "BtnName": null,
+        "EventId1": "[160, 161]",
+        "EventId2": "[162, 163]",
+        "EventId3": "[164, 165]"
+    },
+    {
+        "PoolId": 20020,
+        "Name": "Uncertain Spare Parts Box",
+        "Description": "The sign on this spare parts box is hardly readable, but a personal terminal is still able to read the ID.",
+        "BtnName": null,
+        "EventId1": "[166]",
+        "EventId2": "[167]",
+        "EventId3": "[168]"
+    },
+    {
+        "PoolId": 20021,
+        "Name": "Agnosticism Spare Parts Box",
+        "Description": "The contents of this spare parts box cannot be detected due to the unknown substance on its surface. Someone seems to have tried to break it by force. No one knows exactly what this box has been through, but you probably can still find something useful once you open it.",
+        "BtnName": null,
+        "EventId1": "[169]",
+        "EventId2": "[170]",
+        "EventId3": "[171]"
+    },
+    {
+        "PoolId": 20022,
+        "Name": "Mysterious Spare Parts Box",
+        "Description": "The model of the spare parts inside this box is unknown. It is hidden among many scrapped materials...",
+        "BtnName": null,
+        "EventId1": "[172]",
+        "EventId2": "[173]",
+        "EventId3": "[174]"
+    },
+    {
+        "PoolId": 20023,
+        "Name": "Uncertain Spare Parts Box",
+        "Description": "The sign on this spare parts box is hardly readable, but a personal terminal is still able to read the ID.",
+        "BtnName": null,
+        "EventId1": "[179, 180]",
+        "EventId2": "[181, 182]",
+        "EventId3": null
+    },
+    {
+        "PoolId": 20024,
+        "Name": "Agnosticism Spare Parts Box",
+        "Description": "The contents of this spare parts box cannot be detected due to the unknown substance on its surface. Someone seems to have tried to break it by force. No one knows exactly what this box has been through, but you probably can still find something useful once you open it.",
+        "BtnName": null,
+        "EventId1": "[183, 184]",
+        "EventId2": "[185, 186]",
+        "EventId3": null
+    },
+    {
+        "PoolId": 20025,
+        "Name": "Mysterious Spare Parts Box",
+        "Description": "The model of the spare parts inside this box is unknown. It is hidden among many scrapped materials...",
+        "BtnName": null,
+        "EventId1": "[187, 188]",
+        "EventId2": "[189, 190]",
+        "EventId3": null
+    },
+    {
+        "PoolId": 11001,
+        "Name": "Production Line",
+        "Description": "A dated production line that seems to be significantly corrupted by Punishing Virus. No one knows what it was originally designed to produce. You can try putting some materials in, but don't give it too much hope. You may end up losing some parts if its broken parts hit you.",
+        "BtnName": "Connect the power",
+        "EventId1": "[191]",
+        "EventId2": "[192]",
+        "EventId3": "[193]"
+    },
+    {
+        "PoolId": 11002,
+        "Name": "Production Line",
+        "Description": "A dated production line that seems to be significantly corrupted by Punishing Virus. No one knows what it was originally designed to produce. You can try putting some materials in, but don't give it too much hope. You may end up losing some parts if its broken parts hit you.",
+        "BtnName": "Connect the power",
+        "EventId1": "[194]",
+        "EventId2": "[195]",
+        "EventId3": "[196]"
+    },
+    {
+        "PoolId": 11003,
+        "Name": "Production Line",
+        "Description": "A dated production line that seems to be significantly corrupted by Punishing Virus. No one knows what it was originally designed to produce. You can try putting some materials in, but don't give it too much hope. You may end up losing some parts if its broken parts hit you.",
+        "BtnName": "Connect the power",
+        "EventId1": "[197]",
+        "EventId2": "[198]",
+        "EventId3": "[199]"
+    },
+    {
+        "PoolId": 11004,
+        "Name": "Production Line",
+        "Description": "A dated production line that seems to be significantly corrupted by Punishing Virus. No one knows what it was originally designed to produce. You can try putting some materials in, but don't give it too much hope. You may end up losing some parts if its broken parts hit you.",
+        "BtnName": "Connect the power",
+        "EventId1": "[200]",
+        "EventId2": "[201]",
+        "EventId3": "[202]"
+    },
+    {
+        "PoolId": 11005,
+        "Name": "Production Line",
+        "Description": "A dated production line that seems to be significantly corrupted by Punishing Virus. No one knows what it was originally designed to produce. You can try putting some materials in, but don't give it too much hope. You may end up losing some parts if its broken parts hit you.",
+        "BtnName": "Connect the power",
+        "EventId1": "[203]",
+        "EventId2": "[204]",
+        "EventId3": "[205]"
+    },
+    {
+        "PoolId": 11006,
+        "Name": "Production Line",
+        "Description": "A dated production line that seems to be significantly corrupted by Punishing Virus. No one knows what it was originally designed to produce. You can try putting some materials in, but don't give it too much hope. You may end up losing some parts if its broken parts hit you.",
+        "BtnName": "Connect the power",
+        "EventId1": "[206]",
+        "EventId2": "[207]",
+        "EventId3": "[208]"
+    },
+    {
+        "PoolId": 11007,
+        "Name": "Production Line",
+        "Description": "A dated production line that seems to be significantly corrupted by Punishing Virus. No one knows what it was originally designed to produce. You can try putting some materials in, but don't give it too much hope. You may end up losing some parts if its broken parts hit you.",
+        "BtnName": "Connect the power",
+        "EventId1": "[209]",
+        "EventId2": "[210]",
+        "EventId3": "[211]"
+    },
+    {
+        "PoolId": 11008,
+        "Name": "Production Line",
+        "Description": "A dated production line that seems to be significantly corrupted by Punishing Virus. No one knows what it was originally designed to produce. You can try putting some materials in, but don't give it too much hope. You may end up losing some parts if its broken parts hit you.",
+        "BtnName": "Connect the power",
+        "EventId1": "[212]",
+        "EventId2": "[213]",
+        "EventId3": "[214]"
+    },
+    {
+        "PoolId": 11009,
+        "Name": "Production Line",
+        "Description": "A dated production line that seems to be significantly corrupted by Punishing Virus. No one knows what it was originally designed to produce. You can try putting some materials in, but don't give it too much hope. You may end up losing some parts if its broken parts hit you.",
+        "BtnName": "Connect the power",
+        "EventId1": "[215]",
+        "EventId2": "[216]",
+        "EventId3": "[217]"
+    },
+    {
+        "PoolId": 11010,
+        "Name": "Production Line",
+        "Description": "A dated production line that seems to be significantly corrupted by Punishing Virus. No one knows what it was originally designed to produce. You can try putting some materials in, but don't give it too much hope. You may end up losing some parts if its broken parts hit you.",
+        "BtnName": "Connect the power",
+        "EventId1": "[218]",
+        "EventId2": "[219]",
+        "EventId3": "[220]"
+    },
+    {
+        "PoolId": 21001,
+        "Name": "Mysterious Spare Parts Box",
+        "Description": "The model of the spare parts inside this box is unknown. It is hidden among many scrapped materials...",
+        "BtnName": null,
+        "EventId1": "[221, 222]",
+        "EventId2": "[223, 224]",
+        "EventId3": null
+    },
+    {
+        "PoolId": 21002,
+        "Name": "Mysterious Spare Parts Box",
+        "Description": "The model of the spare parts inside this box is unknown. It is hidden among many scrapped materials...",
+        "BtnName": null,
+        "EventId1": "[225, 226]",
+        "EventId2": "[227, 228]",
+        "EventId3": null
+    },
+    {
+        "PoolId": 21003,
+        "Name": "Mysterious Spare Parts Box",
+        "Description": "The model of the spare parts inside this box is unknown. It is hidden among many scrapped materials...",
+        "BtnName": null,
+        "EventId1": "[229, 230]",
+        "EventId2": "[231, 232]",
+        "EventId3": null
+    },
+    {
+        "PoolId": 21004,
+        "Name": "Mysterious Spare Parts Box",
+        "Description": "The model of the spare parts inside this box is unknown. It is hidden among many scrapped materials...",
+        "BtnName": null,
+        "EventId1": "[233, 234]",
+        "EventId2": "[235, 236]",
+        "EventId3": null
+    },
+    {
+        "PoolId": 21005,
+        "Name": "Mysterious Spare Parts Box",
+        "Description": "The model of the spare parts inside this box is unknown. It is hidden among many scrapped materials...",
+        "BtnName": null,
+        "EventId1": "[237, 238]",
+        "EventId2": "[239, 240]",
+        "EventId3": null
+    },
+    {
+        "PoolId": 21006,
+        "Name": "Mysterious Spare Parts Box",
+        "Description": "The model of the spare parts inside this box is unknown. It is hidden among many scrapped materials...",
+        "BtnName": null,
+        "EventId1": "[241, 242]",
+        "EventId2": "[243, 244]",
+        "EventId3": null
+    },
+    {
+        "PoolId": 21007,
+        "Name": "Mysterious Spare Parts Box",
+        "Description": "The model of the spare parts inside this box is unknown. It is hidden among many scrapped materials...",
+        "BtnName": null,
+        "EventId1": "[245, 246]",
+        "EventId2": "[247, 248]",
+        "EventId3": null
+    },
+    {
+        "PoolId": 21008,
+        "Name": "Mysterious Spare Parts Box",
+        "Description": "The model of the spare parts inside this box is unknown. It is hidden among many scrapped materials...",
+        "BtnName": null,
+        "EventId1": "[249, 250]",
+        "EventId2": "[251, 252]",
+        "EventId3": null
+    },
+    {
+        "PoolId": 21009,
+        "Name": "Mysterious Spare Parts Box",
+        "Description": "The model of the spare parts inside this box is unknown. It is hidden among many scrapped materials...",
+        "BtnName": null,
+        "EventId1": "[253, 254]",
+        "EventId2": "[255, 256]",
+        "EventId3": null
+    },
+    {
+        "PoolId": 21010,
+        "Name": "Mysterious Spare Parts Box",
+        "Description": "The model of the spare parts inside this box is unknown. It is hidden among many scrapped materials...",
+        "BtnName": null,
+        "EventId1": "[257, 258]",
+        "EventId2": "[259, 260]",
+        "EventId3": null
+    }
+]

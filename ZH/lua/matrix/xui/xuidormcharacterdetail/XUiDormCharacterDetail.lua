@@ -1,0 +1,176 @@
+local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
+local XUiGridDetailDormCharacter = require("XUi/XUiDormCharacterDetail/XUiGridDetailDormCharacter")
+local XUiDormCharacterDetail = XLuaUiManager.Register(XLuaUi, "UiDormCharacterDetail")
+
+function XUiDormCharacterDetail:OnAwake()
+    self:AddListener()
+
+    --这里处理一下场景类型
+    XUiHelper.SetSceneType(CS.XSceneType.Ui)
+
+    XEventManager.AddEventListener(XEventId.EVENT_CHARACTER_MOOD_CHANGED, self.UpdateMoodInfo, self)
+    XEventManager.AddEventListener(XEventId.EVENT_CHARACTER_VITALITY_CHANGED, self.UpdateVitalityInfo, self)
+end
+
+function XUiDormCharacterDetail:OnDisable()
+    XHomeDormManager.ShowOrHideBuilding(true)
+end
+
+
+function XUiDormCharacterDetail:OnDestroy()
+    XEventManager.RemoveEventListener(XEventId.EVENT_CHARACTER_MOOD_CHANGED, self.UpdateMoodInfo, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_CHARACTER_VITALITY_CHANGED, self.UpdateVitalityInfo, self)
+
+    if self.LoadUrl then
+        XSceneResourceManager.Unload(self.LoadUrl)
+        self.LoadUrl = nil
+    end
+
+    if self.Model then
+        CS.UnityEngine.Object.Destroy(self.Model)
+    end
+    XUiHelper.SetSceneType(CS.XSceneType.Dormitory)
+end
+
+function XUiDormCharacterDetail:OnStart(characterId, fromDorm)
+    XHomeDormManager.ShowOrHideBuilding(false)
+    self.CharacterId = characterId
+    self.FromDorm = fromDorm
+    XHomeCharManager.HideAllCharacter()
+    self:InitStyleInfo()
+    self:InitModelInfo()
+    self:InitExpInfo()
+
+    self.AssetPanel = XUiPanelAsset.New(self, self.PanelAsset, XDataCenter.ItemManager.ItemId.DormCoin, XDataCenter.ItemManager.ItemId.FurnitureCoin)
+end
+
+function XUiDormCharacterDetail:AddListener()
+    self:RegisterClickEvent(self.BtnBack, self.OnBtnBackClick)
+    self:RegisterClickEvent(self.BtnMainUi, self.OnBtnMainUiClick)
+    self:RegisterClickEvent(self.BtnLikeInfo, self.OnBtnLikeInfoClick)
+    self:RegisterClickEvent(self.BtnFriendInfo, self.OnBtnFriendInfoClick)
+end
+
+function XUiDormCharacterDetail:OnBtnMainUiClick()
+    XHomeCharManager.ShowAllCharacter()
+    XHomeDormManager.SetIllumination()
+    XLuaUiManager.RunMain()
+end
+
+function XUiDormCharacterDetail:OnBtnBackClick()
+    XHomeCharManager.ShowAllCharacter()
+    if self.FromDorm then
+      XHomeDormManager.SetIllumination()
+    end
+    self:Close()
+end
+
+function XUiDormCharacterDetail:OnBtnLikeInfoClick()
+    XLuaUiManager.Open("UiDormCharacterLikeInfo", self.CharacterId)
+end
+
+function XUiDormCharacterDetail:OnBtnFriendInfoClick()
+    -- 暂未开放
+    XUiManager.TipMsg(CS.XTextManager.GetText("ComingSoon"), XUiManager.UiTipType.Tip)
+end
+
+function XUiDormCharacterDetail:InitStyleInfo()
+    self.GridHostelCharacter.gameObject:SetActive(false)
+    local charStyleConfig = XDormConfig.GetCharacterStyleConfigById(self.CharacterId)
+    local loveTypeConfig = XFurnitureConfigs.GetDormFurnitureType(charStyleConfig.LoveType)
+    local likeTypeConfig = XFurnitureConfigs.GetDormFurnitureType(charStyleConfig.LikeType)
+
+    self.TxtName.text = charStyleConfig.NameFrist
+    self.TxtLastName.text = charStyleConfig.NameLast
+    self:SetUiSprite(self.ImgLove, loveTypeConfig.TypeIcon)
+    self:SetUiSprite(self.ImgLike, likeTypeConfig.TypeIcon)
+
+    self.TxtLove.text = CS.XTextManager.GetText("DormHight", loveTypeConfig.Color, loveTypeConfig.TypeName)
+    self.TxtLike.text = CS.XTextManager.GetText("DormMiddle", likeTypeConfig.Color, likeTypeConfig.TypeName)
+
+    for i = 1, #charStyleConfig.LikeCharIds do
+        local grid = CS.UnityEngine.Object.Instantiate(self.GridHostelCharacter)
+        local gridDormCharacter = XUiGridDetailDormCharacter.New(grid)
+        gridDormCharacter:Refresh(charStyleConfig.LikeCharIds[i], true, false)
+        grid.transform:SetParent(self.PanelLikeContent, false)
+        gridDormCharacter.GameObject:SetActive(true)
+    end
+
+    for i = 1, #charStyleConfig.HateCharIds do
+        local grid = CS.UnityEngine.Object.Instantiate(self.GridHostelCharacter)
+        local gridDormCharacter = XUiGridDetailDormCharacter.New(grid)
+        gridDormCharacter:Refresh(charStyleConfig.HateCharIds[i], false, false)
+        grid.transform:SetParent(self.PanelHateContent, false)
+        gridDormCharacter.GameObject:SetActive(true)
+    end
+
+    if XTool.IsTableEmpty(charStyleConfig.LikePetIds) then
+        self.PanelRelationLikePet.gameObject:SetActiveEx(false)
+    else
+        self.PanelRelationLikePet.gameObject:SetActiveEx(true)
+        for _, petId in ipairs(charStyleConfig.LikePetIds) do
+            local grid = CS.UnityEngine.Object.Instantiate(self.GridHostelCharacter)
+            local gridDormPet = XUiGridDetailDormCharacter.New(grid)
+            gridDormPet:Refresh(petId, true, true)
+            grid.transform:SetParent(self.PanelLikePetContent, false)
+            gridDormPet.GameObject:SetActive(true)
+        end
+    end
+end
+
+function XUiDormCharacterDetail:InitModelInfo()
+    local charStyleConfig = XDormConfig.GetCharacterStyleConfigById(self.CharacterId)
+    local root = self.UiModelGo.transform
+    local target = root:FindTransform("PanelRoleModel")
+
+    local url = charStyleConfig.Model
+    self.LoadUrl = url
+    local asset = XSceneResourceManager.LoadSync(url)
+    self.Model = CS.UnityEngine.Object.Instantiate(asset)
+    self.Model.transform:SetParent(target, false)
+    self.Model.gameObject:SetLayerRecursively(target.gameObject.layer)
+    self.PanelDrag.Target = self.Model.transform
+    CS.XShadowHelper.AddShadow(self.Model, true)
+
+    local animator = self.Model:GetComponent("Animator")
+    animator:SetInteger("State", 1)
+end
+
+function XUiDormCharacterDetail:InitExpInfo()
+    local characterData = XDataCenter.DormManager.GetCharacterDataByCharId(self.CharacterId)
+
+    self.ImgHpExp.fillAmount = characterData.Vitality / XDormConfig.DORM_VITALITY_MAX_VALUE
+    self.ImgMoodExp.fillAmount = characterData.Mood / XDormConfig.DORM_MOOD_MAX_VALUE
+    self.TxtHpCount.text = CS.XTextManager.GetText("DormCharacterHpLeft", characterData.Vitality, XDormConfig.DORM_VITALITY_MAX_VALUE)
+
+    self.TxtMoodState.text = XDormConfig.GetMoodStateDesc(characterData.Mood)
+    self.ImgMoodExp.color = XDormConfig.GetMoodStateColor(characterData.Mood)
+
+    XDataCenter.DormManager.GetDormitoryRecoverSpeed(self.CharacterId, function(moodSpeed, vitalitySpeed)
+        self.TxtMoodRecover.text = CS.XTextManager.GetText("DormCharacterMoodSpeed", moodSpeed)
+        self.TxtHpRecover.text = CS.XTextManager.GetText("DormCharacterHpSpeed", vitalitySpeed)
+    end)
+end
+
+function XUiDormCharacterDetail:UpdateMoodInfo(characterId)
+    if not self.CharacterId or self.CharacterId ~= characterId then
+        return
+    end
+
+    local characterData = XDataCenter.DormManager.GetCharacterDataByCharId(self.CharacterId)
+
+    self.ImgMoodExp.fillAmount = characterData.Mood / XDormConfig.DORM_MOOD_MAX_VALUE
+    self.TxtMoodState.text = XDormConfig.GetMoodStateDesc(characterData.Mood)
+    self.ImgMoodExp.color = XDormConfig.GetMoodStateColor(characterData.Mood)
+end
+
+function XUiDormCharacterDetail:UpdateVitalityInfo(characterId)
+    if not self.CharacterId or self.CharacterId ~= characterId then
+        return
+    end
+
+    local characterData = XDataCenter.DormManager.GetCharacterDataByCharId(self.CharacterId)
+
+    self.ImgHpExp.fillAmount = characterData.Vitality / XDormConfig.DORM_VITALITY_MAX_VALUE
+    self.TxtHpCount.text = CS.XTextManager.GetText("DormCharacterHpLeft", characterData.Vitality, XDormConfig.DORM_VITALITY_MAX_VALUE)
+end

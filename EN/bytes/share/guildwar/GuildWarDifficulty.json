@@ -1,0 +1,53 @@
+[
+    {
+        "Id": 1,
+        "PreId": null,
+        "Name": "Flat Terrain",
+        "RecommendActive": null,
+        "BgPath": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarSelectLevel1.png",
+        "MapPath": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageMap01.png",
+        "LockText": null,
+        "FightEventIds": "[2240394, 2240392]",
+        "PassRewardId": null,
+        "UnPassRewardId": null,
+        "SweepHpFactor": 0.85,
+        "SweepPointFactor": 0.85,
+        "BossSweepHpFactor": 0.6999,
+        "BossSweepPointFactor": 0.6999,
+        "RobotId": null
+    },
+    {
+        "Id": 2,
+        "PreId": null,
+        "Name": "Dangerous Terrain",
+        "RecommendActive": 11500.0,
+        "BgPath": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarSelectLevel2.png",
+        "MapPath": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageMap02.png",
+        "LockText": null,
+        "FightEventIds": "[2240394, 2240392]",
+        "PassRewardId": null,
+        "UnPassRewardId": null,
+        "SweepHpFactor": 0.85,
+        "SweepPointFactor": 0.85,
+        "BossSweepHpFactor": 0.6999,
+        "BossSweepPointFactor": 0.6999,
+        "RobotId": null
+    },
+    {
+        "Id": 3,
+        "PreId": 2.0,
+        "Name": "Rugged Terrain",
+        "RecommendActive": 23500.0,
+        "BgPath": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarSelectLevel3.png",
+        "MapPath": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageMap03.png",
+        "LockText": "Clear the Dangerous Terrain to unlock",
+        "FightEventIds": "[2240394, 2240393, 2240395]",
+        "PassRewardId": null,
+        "UnPassRewardId": null,
+        "SweepHpFactor": 0.85,
+        "SweepPointFactor": 0.85,
+        "BossSweepHpFactor": 0.6999,
+        "BossSweepPointFactor": 0.6999,
+        "RobotId": null
+    }
+]

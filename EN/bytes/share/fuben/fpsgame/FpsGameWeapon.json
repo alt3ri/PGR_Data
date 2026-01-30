@@ -1,0 +1,54 @@
+[
+    {
+        "Id": 1,
+        "TemplateId": 2013001,
+        "Name": "Pistol",
+        "UnlockCondition": null,
+        "Icon": "Assets/Product/Texture/Image/IconTools/E2GunMd050011.png",
+        "Title": "Group Attack",
+        "SkillIcon": "['Assets/Product/Texture/Image/IconSkill/R3KuluomuQTE1.png', 'Assets/Product/Texture/Image/IconSkill/R2lihexin1.png', 'Assets/Product/Texture/Image/IconSkill/lipugong1.png', 'Assets/Product/Texture/Image/IconSkill/DlcFightKalienina2.png']",
+        "SkillName": "['Core Passive', 'Gun Passive', 'Basic Attack', 'Skill']",
+        "SkillDesc": "['When switching weapons, 1 bullet will be replenished.', 'Switches to running with a forward dodge. While running, performing another forward dodge will trigger a slide to greatly increase movement speed.', 'Fires single shots using 5 bullets.\\\\nDeals AOE DMG to mid-range targets.', 'Consumes all bullets.\\\\nWhen casting it on the ground, freezes enemies ahead and deals AOE DMG.\\\\nWhen casting it in midair, deals more DMG to a bigger area.']",
+        "SkillVideoUrl": "['External/Video/fpsgame4.usm', 'External/Video/fpsgame4.usm', 'External/Video/fpsgame4.usm', 'External/Video/fpsgame3.usm']",
+        "Fightevent": null
+    },
+    {
+        "Id": 2,
+        "TemplateId": 2984001,
+        "Name": "Katana",
+        "UnlockCondition": null,
+        "Icon": "Assets/Product/Texture/Image/IconTools/E3SwordMd140111.png",
+        "Title": "Melee",
+        "SkillIcon": "['Assets/Product/Texture/Image/IconSkill/R3KuluomuQTE1.png', 'Assets/Product/Texture/Image/IconSkill/R2LiangExhuang1.png', 'Assets/Product/Texture/Image/IconSkill/R5Luxiyapugong1.png', 'Assets/Product/Texture/Image/IconSkill/R5Luxiyadazhao1.png']",
+        "SkillName": "['Core Passive', 'Katana Passive', 'Basic Attack', 'Skill']",
+        "SkillDesc": "['Press and hold Dodge to accumulate Blade Aura. Release to trigger a forward dash and deal DMG.\\\\nWhen Blade Aura is full, press and hold Basic Attack to pull in enemies and deal AOE DMG.', 'Automatically block to reduce DMG taken when not casting any skill.\\\\nDodge right before receiving DMG to trigger a Perfect Block and restore Swordwave Orbs.', 'Deals DMG to enemies ahead', 'Spends Swordwave Orbs to cast Swordwave and restore Blade Aura.\\\\nCasting Swordwave during Basic Attack will deal more damage.']",
+        "SkillVideoUrl": "['External/Video/fpsgame8.usm', 'External/Video/fpsgame7.usm', 'External/Video/fpsgame8.usm', 'External/Video/fpsgame9.usm']",
+        "Fightevent": null
+    },
+    {
+        "Id": 3,
+        "TemplateId": 2984002,
+        "Name": "Bow",
+        "UnlockCondition": 1030002.0,
+        "Icon": "Assets/Product/Texture/Image/IconTools/E3BowMd090011.png",
+        "Title": "Ranged",
+        "SkillIcon": "['Assets/Product/Texture/Image/IconSkill/R3KuluomuQTE1.png', 'Assets/Product/Texture/Image/IconSkill/R3biankaExlan1.png', 'Assets/Product/Texture/Image/IconSkill/R3Yalishapugong1.png', 'Assets/Product/Texture/Image/IconSkill/R3biankaExbisha1.png']",
+        "SkillName": "['Core Passive', 'Bow Passive', 'Basic Attack', 'Skill']",
+        "SkillDesc": "['Press and hold Basic Attack to charge. Release after Energy is full to release a tracing arrow.\\\\nRelease right upon full Energy to follow up with a lightning strike.', 'Switches to running with a forward dodge. While running, performing another forward dodge will trigger a slide to greatly increase movement speed.', 'Performs long-range single-target attacks with infinite bullets.', 'Cooldown: 8s. Deals AOE DMG once.']",
+        "SkillVideoUrl": "['External/Video/fpsgame2.usm', 'External/Video/fpsgame2.usm', 'External/Video/fpsgame2.usm', 'External/Video/fpsgame1.usm']",
+        "Fightevent": null
+    },
+    {
+        "Id": 4,
+        "TemplateId": 2016001,
+        "Name": "Dual Guns",
+        "UnlockCondition": 1030003.0,
+        "Icon": "Assets/Product/Texture/Image/IconTools/E3GunMd070011.png",
+        "Title": "Agile",
+        "SkillIcon": "['Assets/Product/Texture/Image/IconSkill/R3KuluomuQTE1.png', 'Assets/Product/Texture/Image/IconSkill/R2lihexin1.png', 'Assets/Product/Texture/Image/IconSkill/R3WanshiSSS1.png', 'Assets/Product/Texture/Image/IconSkill/DlcFightBianka1.png']",
+        "SkillName": "['Core Passive', 'Gun Passive', 'Basic Attack', 'Skill']",
+        "SkillDesc": "['When consuming Dual Gun bullets, increases pistol bullets and Katana swordwave, and reduces Bow skill cooldown.', 'Switches to running with a forward dodge. While running, performing another forward dodge will trigger a slide to greatly increase movement speed.', 'Press and hold for continuous firing with 30 bullets.\\\\nDeals single-target DMG to mid-range enemies.', 'Consumes 3 bullets.\\\\nWhen casting it on the ground, deals AOE DMG forward once.\\\\nWhen casting it in midair, deals damage over time to a bigger area.']",
+        "SkillVideoUrl": "['External/Video/fpsgame6.usm', 'External/Video/fpsgame6.usm', 'External/Video/fpsgame6.usm', 'External/Video/fpsgame5.usm']",
+        "Fightevent": null
+    }
+]

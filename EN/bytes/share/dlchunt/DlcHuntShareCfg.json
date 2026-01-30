@@ -1,0 +1,240 @@
+[
+    {
+        "Key": "ChipMaxCount",
+        "IntValues": "[1000]",
+        "FloatValues": null,
+        "StringValues": null,
+        "Comment": "Max number of chips reached"
+    },
+    {
+        "Key": "ChipFormCount",
+        "IntValues": "[6]",
+        "FloatValues": null,
+        "StringValues": null,
+        "Comment": "Number of chip groups"
+    },
+    {
+        "Key": "ChipFormNameMaxLength",
+        "IntValues": "[8]",
+        "FloatValues": null,
+        "StringValues": null,
+        "Comment": "Max length of chip group name"
+    },
+    {
+        "Key": "LostTipId",
+        "IntValues": "[1]",
+        "FloatValues": null,
+        "StringValues": null,
+        "Comment": "Insufficient BP, failed"
+    },
+    {
+        "Key": "RoomTipId",
+        "IntValues": "[2]",
+        "FloatValues": null,
+        "StringValues": null,
+        "Comment": "Room disbanded, failed"
+    },
+    {
+        "Key": "WeekTaskGroupId",
+        "IntValues": "[5]",
+        "FloatValues": null,
+        "StringValues": null,
+        "Comment": "Weekly Mission"
+    },
+    {
+        "Key": "TaskGroupId",
+        "IntValues": "[6]",
+        "FloatValues": null,
+        "StringValues": null,
+        "Comment": "Mode Mission"
+    },
+    {
+        "Key": "WeekGainAssistLimit",
+        "IntValues": "[10000]",
+        "FloatValues": null,
+        "StringValues": null,
+        "Comment": "Max Support Points obtainable every week"
+    },
+    {
+        "Key": "WeekGainSocialAssistLimit",
+        "IntValues": "[10000]",
+        "FloatValues": null,
+        "StringValues": null,
+        "Comment": "Max Friend Support Points obtainable every week"
+    },
+    {
+        "Key": "BorrowSocialAssist",
+        "IntValues": "[15, 15]",
+        "FloatValues": null,
+        "StringValues": null,
+        "Comment": "Borrow a friend's chip to get Support Points for yourself and your friend"
+    },
+    {
+        "Key": "BorrowTeammateAssist",
+        "IntValues": "[10, 10]",
+        "FloatValues": null,
+        "StringValues": null,
+        "Comment": "Borrow a teammate's chip to get Support Points for yourself and your teammate"
+    },
+    {
+        "Key": "BorrowRandomAssist",
+        "IntValues": "[5, 5]",
+        "FloatValues": null,
+        "StringValues": null,
+        "Comment": "Borrow a player's chip to get Support Points for yourself and the player"
+    },
+    {
+        "Key": "AssistPointItemId",
+        "IntValues": "[97002]",
+        "FloatValues": null,
+        "StringValues": null,
+        "Comment": "Support Point ItemId"
+    },
+    {
+        "Key": "RandAssistChipCount",
+        "IntValues": "[5]",
+        "FloatValues": null,
+        "StringValues": null,
+        "Comment": "Max random Support Shards provided by players"
+    },
+    {
+        "Key": "HelpKey",
+        "IntValues": null,
+        "FloatValues": null,
+        "StringValues": "['lalalal']",
+        "Comment": "Help button"
+    },
+    {
+        "Key": "IconBreakthrough0",
+        "IntValues": null,
+        "FloatValues": null,
+        "StringValues": "['Assets/Product/Texture/Atlas/UiDlcHunt/UiDlcHuntIconBreak01.png', 'Assets/Product/Texture/Atlas/UiDlcHunt/UiDlcHuntIconBreak3D01.png']",
+        "Comment": "Overclock icon attempt 0"
+    },
+    {
+        "Key": "IconBreakthrough1",
+        "IntValues": null,
+        "FloatValues": null,
+        "StringValues": "['Assets/Product/Texture/Atlas/UiDlcHunt/UiDlcHuntIconBreak02.png', 'Assets/Product/Texture/Atlas/UiDlcHunt/UiDlcHuntIconBreak3D02.png']",
+        "Comment": "Overclock icon attempt 1"
+    },
+    {
+        "Key": "IconBreakthrough2",
+        "IntValues": null,
+        "FloatValues": null,
+        "StringValues": "['Assets/Product/Texture/Atlas/UiDlcHunt/UiDlcHuntIconBreak03.png', 'Assets/Product/Texture/Atlas/UiDlcHunt/UiDlcHuntIconBreak3D03.png']",
+        "Comment": "Overclock icon attempt 2"
+    },
+    {
+        "Key": "SortGroup",
+        "IntValues": null,
+        "FloatValues": null,
+        "StringValues": "['Star', 'Level', 'Overclock', 'Recent']",
+        "Comment": "Filter frame of batch equipment screen"
+    },
+    {
+        "Key": "EmptyChipGroup",
+        "IntValues": null,
+        "FloatValues": null,
+        "StringValues": "['Assets/Product/Texture/Image/UiDlcHunt/UiDlcHuntIconMain00.png']",
+        "Comment": "empty chip group icon"
+    },
+    {
+        "Key": "MatchTimeoutSec",
+        "IntValues": "[300]",
+        "FloatValues": null,
+        "StringValues": null,
+        "Comment": "Match timeout (seconds), 0 means no limit"
+    },
+    {
+        "Key": "ReJoinWorldDuration",
+        "IntValues": "[300]",
+        "FloatValues": null,
+        "StringValues": null,
+        "Comment": "Duration of reconnection after disconnection"
+    },
+    {
+        "Key": "ModelMainUi",
+        "IntValues": null,
+        "FloatValues": null,
+        "StringValues": "['Mb1BengyuehtMd010001']",
+        "Comment": "Home screen model"
+    },
+    {
+        "Key": "CharacterAttr",
+        "IntValues": null,
+        "FloatValues": null,
+        "StringValues": "['Defense', 'Life', 'Attack']",
+        "Comment": "Stats displayed on the character screen"
+    },
+    {
+        "Key": "DurationRequestFriendAssistantChipClient",
+        "IntValues": "[300]",
+        "FloatValues": null,
+        "StringValues": null,
+        "Comment": "Request interval for client friend chip support list"
+    },
+    {
+        "Key": "AssistantChipAmount",
+        "IntValues": "[10, 2, 2, 2]",
+        "FloatValues": null,
+        "StringValues": null,
+        "Comment": "Number of client chip support lists, the corresponding order is: friends, teammates, random, planned configuration"
+    },
+    {
+        "Key": "RoomKickCountDownTime",
+        "IntValues": "[30]",
+        "FloatValues": null,
+        "StringValues": null,
+        "Comment": "Once everyone in the room is ready, the countdown to kick the host begins."
+    },
+    {
+        "Key": "RoomKickCountDownShowTime",
+        "IntValues": "[10]",
+        "FloatValues": null,
+        "StringValues": null,
+        "Comment": "Once everyone in the room is ready, the countdown to kick the host begins. No time alerts."
+    },
+    {
+        "Key": "ChipEffect",
+        "IntValues": null,
+        "FloatValues": null,
+        "StringValues": "['0', '0', 'Assets/Product/Effect/DlcPrefab/FxUi/FxUiDlcSceneHunt02/FxUiDlcSceneHunt02Blue.prefab', 'Assets/Product/Effect/DlcPrefab/FxUi/FxUiDlcSceneHunt02/FxUiDlcSceneHunt02Purple.prefab', 'Assets/Product/Effect/DlcPrefab/FxUi/FxUiDlcSceneHunt02/FxUiDlcSceneHunt02Golden.prefab']",
+        "Comment": "Chip model special effect"
+    },
+    {
+        "Key": "ChipSubEffect",
+        "IntValues": null,
+        "FloatValues": null,
+        "StringValues": "['0', '0', 'Assets/Product/Effect/DlcPrefab/FxUi/FxUiDlcHuntChipDetails/FxUiDlcHuntChipMainCongBlue.prefab', 'Assets/Product/Effect/DlcPrefab/FxUi/FxUiDlcHuntChipDetails/FxUiDlcHuntChipMainCongPurple.prefab', 'Assets/Product/Effect/DlcPrefab/FxUi/FxUiDlcHuntChipDetails/FxUiDlcHuntChipMainCongGolden.prefab']",
+        "Comment": "Secondary chip main interface model special effect"
+    },
+    {
+        "Key": "ChipMainEffect",
+        "IntValues": null,
+        "FloatValues": null,
+        "StringValues": "['0', '0', 'Assets/Product/Effect/DlcPrefab/FxUi/FxUiDlcHuntChipDetails/FxUiDlcHuntChipMainZhuBlue.prefab', 'Assets/Product/Effect/DlcPrefab/FxUi/FxUiDlcHuntChipDetails/FxUiDlcHuntChipMainZhuPurple.prefab', 'Assets/Product/Effect/DlcPrefab/FxUi/FxUiDlcHuntChipDetails/FxUiDlcHuntChipMainZhuGolden.prefab']",
+        "Comment": "Main chip main interface model special effect"
+    },
+    {
+        "Key": "TimeOutSettleMailId",
+        "IntValues": "[67001]",
+        "FloatValues": null,
+        "StringValues": null,
+        "Comment": null
+    },
+    {
+        "Key": "RankNumber",
+        "IntValues": null,
+        "FloatValues": null,
+        "StringValues": "['Assets/Product/Texture/Atlas/UiDlcHunt/UiDlcHuntNoOne.png', 'Assets/Product/Texture/Atlas/UiDlcHunt/UiDlcHuntNoTwo.png', 'Assets/Product/Texture/Atlas/UiDlcHunt/UiDlcHuntNoThree.png']",
+        "Comment": "Ranking Images 123"
+    },
+    {
+        "Key": "ChipFormDefaultNameAffix",
+        "IntValues": null,
+        "FloatValues": null,
+        "StringValues": "['Chip group']",
+        "Comment": null
+    }
+]

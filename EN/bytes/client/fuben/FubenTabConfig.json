@@ -1,0 +1,68 @@
+[
+    {
+        "Id": 1,
+        "Name": "Battle Screen",
+        "AssetPath": "Assets/Product/Ui/ComponentPrefab/FuBenNew/MainAggregateChapter.prefab",
+        "IconPath": "Assets/Product/Texture/Image/UiNewFuBen/NewFuBenIconZongmianban.png",
+        "ProxyPath": "XUi/XUiFuben/Main/XUiPanelMain",
+        "UiParentName": "PanelMain",
+        "ConditionDesc": "Unlocked when Commandant reaches Lv.30",
+        "UnlockCondition": 770411.0,
+        "Params": null
+    },
+    {
+        "Id": 2,
+        "Name": "Main",
+        "AssetPath": null,
+        "IconPath": "Assets/Product/Texture/Image/UiNewFuBen/NewFuBenIconZhuxian.png",
+        "ProxyPath": "XUi/XUiFuben/MainLine/XUiPanelMainLineRoot",
+        "UiParentName": "PanelMainLineRoot",
+        "ConditionDesc": "Unlocked when Commandant reaches Lv.1.",
+        "UnlockCondition": null,
+        "Params": "['Assets/Product/Ui/Prefab/UiMainLineExhibition/UiMainLineExhibitionMain.prefab', 'Assets/Product/Ui/ComponentPrefab/FuBenNew/MainLineChapter.prefab']"
+    },
+    {
+        "Id": 3,
+        "Name": "Side",
+        "AssetPath": "Assets/Product/Ui/ComponentPrefab/FuBenNew/BranchLineChapter.prefab",
+        "IconPath": "Assets/Product/Texture/Image/UiNewFuBen/NewFuBenIconZhixian.png",
+        "ProxyPath": "XUi/XUiFuben/ExtralLine/XUiPanelExtralLine",
+        "UiParentName": "PanelExtralLine",
+        "ConditionDesc": "Complete Normal Story 1-12 to unlock",
+        "UnlockCondition": 770400.0,
+        "Params": null
+    },
+    {
+        "Id": 4,
+        "Name": "Study",
+        "AssetPath": "Assets/Product/Ui/ComponentPrefab/FuBenNew/CollegeBanner.prefab",
+        "IconPath": "Assets/Product/Texture/Image/UiNewFuBen/NewFuBenIconYanxi.png",
+        "ProxyPath": "XUi/XUiFuben/XUiPanelCollegeStudy",
+        "UiParentName": "PanelCollegeBanner",
+        "ConditionDesc": "Complete Normal Story 1-8 to unlock",
+        "UnlockCondition": 774501.0,
+        "Params": null
+    },
+    {
+        "Id": 5,
+        "Name": "Resources",
+        "AssetPath": "Assets/Product/Ui/ComponentPrefab/FuBenNew/DailyBanner.prefab",
+        "IconPath": "Assets/Product/Texture/Image/UiNewFuBen/NewFuBenIconZiyuan.png",
+        "ProxyPath": "XUi/XUiFuben/XUiPanelResourceCollection",
+        "UiParentName": "PanelResource",
+        "ConditionDesc": "Unlocked when Commandant reaches Lv.16",
+        "UnlockCondition": 770422.0,
+        "Params": null
+    },
+    {
+        "Id": 6,
+        "Name": "Challenge",
+        "AssetPath": "Assets/Product/Ui/ComponentPrefab/FuBenNew/ChallengeBanner.prefab",
+        "IconPath": "Assets/Product/Texture/Image/UiNewFuBen/NewFuBenIconTiaozhan.png",
+        "ProxyPath": "XUi/XUiFuben/XUiPanelSimulationChallenge",
+        "UiParentName": "PanelChallengeBanner",
+        "ConditionDesc": "Unlocked when Commandant reaches Lv.24",
+        "UnlockCondition": 770423.0,
+        "Params": null
+    }
+]

@@ -1,0 +1,242 @@
+[
+    {
+        "Key": "StageMainCostItems",
+        "Comment": "Consumable slot for stage main interface.",
+        "Values": "['96114']"
+    },
+    {
+        "Key": "DayRefreshTime",
+        "Comment": "Daily refresh (enemy movement, etc.) time unit: hours in the 24-hour clock format (e.g., 8 AM is 08:00 and 8 PM is 20:00).",
+        "Values": "['20']"
+    },
+    {
+        "Key": "HourRefreshTime",
+        "Comment": "Regular Refresh Time (in minutes)",
+        "Values": "['5']"
+    },
+    {
+        "Key": "PathMarkMaxCount",
+        "Comment": "Max Mark Points",
+        "Values": "['2']"
+    },
+    {
+        "Key": "StageTypeName",
+        "Comment": "Stage type name",
+        "Values": "['Resource Security Area', 'Juncture', 'Land of Resources', 'Ambush Outpost', 'Dangerous Pass', 'Dangerous Cliff', 'Dangerous Cliff', 'Dangerous Cliff', 'Dangerous Cliff', 'Dangerous Cliff', 'Hidden Area', 'Assistance Outpost', 'Hidden Area', 'Dangerous Cliff', 'Dangerous Cliff', 'Cliff Fortress', 'Resource Security Area', 'Resource Security Area', 'Dangerous Cliff']"
+    },
+    {
+        "Key": "StageTypeIcon",
+        "Comment": "Stage type icon",
+        "Values": "['Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon1.png', 'Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon2.png', 'Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon6.png', 'Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon3.png', 'Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon4_1.png', 'Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon5.png', 'Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon7.png', 'Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon9.png', 'Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon9.png', 'Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon9.png', 'Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon11.png', 'Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon10.png', 'Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon11.png', 'Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon5.png', 'Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon5.png', 'Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon14.png', 'Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon15.png', 'Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon15.png', 'Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon5.png']"
+    },
+    {
+        "Key": "LogCount",
+        "Comment": "Show the recent battle reports",
+        "Values": "['30']"
+    },
+    {
+        "Key": "AutoSelectDifficultyTime",
+        "Comment": "Auto-select Difficulty Time (24-hour)",
+        "Values": "['23']"
+    },
+    {
+        "Key": "EntryRewardId",
+        "Comment": "Entrance reward display",
+        "Values": "['550600']"
+    },
+    {
+        "Key": "SpecialRoleIcon1",
+        "Comment": "Operation Icon 1",
+        "Values": "['Assets/Product/Texture/Image/UiGuildWar/UiGuildWarUpIcon1.png']"
+    },
+    {
+        "Key": "SpecialRoleIcon2",
+        "Comment": "Operation Icon 2",
+        "Values": "['Assets/Product/Texture/Image/UiGuildWar/UiGuildWarUpIcon2.png']"
+    },
+    {
+        "Key": "PassRewardShow",
+        "Comment": "Difficulty selection screen reward preview",
+        "Values": "['66998', '66999', '67000']"
+    },
+    {
+        "Key": "PlanPath1",
+        "Comment": "\"Recommended Route, Difficulty 1\"",
+        "Values": "['102', '103', '104', '105', '106', '107']"
+    },
+    {
+        "Key": "PlanPath2",
+        "Comment": "\"Recommended Route, Difficulty 2\"",
+        "Values": "['202', '203', '204', '205', '206', '207']"
+    },
+    {
+        "Key": "PlanPath3",
+        "Comment": "\"Recommended Route, Difficulty 3\"",
+        "Values": "['302', '303', '304', '305', '306', '307']"
+    },
+    {
+        "Key": "ShopSkipId",
+        "Comment": "Shop interface jump ID, corresponding to SkipFunctional",
+        "Values": "['88002']"
+    },
+    {
+        "Key": "CancelDefend",
+        "Comment": "Cancel Stationing Pop-up Window Prompt",
+        "Values": "['Cancel stationing?']"
+    },
+    {
+        "Key": "ChangeDefend",
+        "Comment": "Stationing (But Already Stationing) Pop-up Window Prompt",
+        "Values": "['Your units are stationed at another Resource Point. Switch to another location?']"
+    },
+    {
+        "Key": "DefendSuccess",
+        "Comment": "Successful Stationing Prompt",
+        "Values": "['Stationed successfully.']"
+    },
+    {
+        "Key": "DefendBtnDisplay",
+        "Comment": "Stationing Button Text Display",
+        "Values": "['Station', 'Cancel']"
+    },
+    {
+        "Key": "DefendTime",
+        "Comment": "Bombing Countdown Text",
+        "Values": "['Bombing Countdown: {0}']"
+    },
+    {
+        "Key": "DefendPercentDetail",
+        "Comment": "Stationed in Percentage Text on Details Page",
+        "Values": "['Stationed: {0}%']"
+    },
+    {
+        "Key": "MemberLevel",
+        "Comment": null,
+        "Values": "['Lv\uff1a{0}']"
+    },
+    {
+        "Key": "AttackLeftTimes",
+        "Comment": null,
+        "Values": "['Remaining: {0}']"
+    },
+    {
+        "Key": "BuffShowTimeEvents",
+        "Comment": "Fill in the EventId of bombing countdown and other info that needs to be displayed",
+        "Values": "['2240408']"
+    },
+    {
+        "Key": "BuffUnshowRebuilTagEvents",
+        "Comment": "Fill in the EventId when there's no need to display reconstruction tag during Resource Point reconstruction.",
+        "Values": "['2240409']"
+    },
+    {
+        "Key": "ResNodeRebuildIcons",
+        "Comment": null,
+        "Values": "['Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon18.png', 'Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon19.png', 'Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon20.png']"
+    },
+    {
+        "Key": "GuildQuitLastMemberInWar",
+        "Comment": null,
+        "Values": "['After you exit, the Command Bureau will disband and you must wait 8 hours before joining a new Command Bureau. If you have already participated in Guild Expedition, you will not be able to participate in it again after joining another guild. Proceed?']"
+    },
+    {
+        "Key": "ReinforcementsRushDesc",
+        "Comment": "\u63f4\u519b\u8fdb\u653b\u63cf\u8ff0",
+        "Values": "['\u653b\u575a\u6218\u8f66\u53ef\u4ee5\u8fdb\u653b\u654c\u65b9\u70b9\u4f4d\uff0c\u5bf9\u654c\u65b9\u8282\u70b9\u9020\u6210\u5927\u91cf\u4f24\u5bb3\uff01']"
+    },
+    {
+        "Key": "ReinforcementsRushNextTime",
+        "Comment": "\u63f4\u519b\u884c\u52a8\u5012\u8ba1\u65f6",
+        "Values": "['(Remaining Time: {0})']"
+    },
+    {
+        "Key": "ReinforcementsRushStateDesc",
+        "Comment": "Reinforcement Status Description",
+        "Values": "['Preparing Siege Engine', '\u653b\u575a\u6218\u8f66\u8fdb\u653b\u4e2d']"
+    },
+    {
+        "Key": "BuffShowReinforceEvents",
+        "Comment": "\u9700\u8981\u663e\u793a\u5f53\u524d\u63f4\u52a9\u8fdb\u5ea6\u4fe1\u606f\u7684eventId\u586b\u8fd9\u91cc",
+        "Values": "['2240410']"
+    },
+    {
+        "Key": "ReinforcementsSupportDetail",
+        "Comment": "\u63f4\u52a9\u7269\u8d44\u60c5\u51b5",
+        "Values": "['<color=#FF1111FF>Total supplies sent: {0} HP increases by {1}</color>']"
+    },
+    {
+        "Key": "LockBossNode",
+        "Comment": "\u76ee\u524dBoss\u6709\u4e24\u79cd\u5f62\u6001\uff0c\u662f\u5426\u8981\u9501\u5b9a\u53ea\u6709\u4e00\u4e2a\u5f62\u6001\uff08\u4ec5left\u8282\u70b9\uff09",
+        "Values": "['1']"
+    },
+    {
+        "Key": "ReinforcementSupportTxt",
+        "Comment": "\u63f4\u519b\u8be6\u60c5\u9875\u63f4\u52a9\u6309\u94ae\u6587\u672c\u663e\u793a",
+        "Values": "['Aid Supplies', '\u5df2\u63f4\u52a9']"
+    },
+    {
+        "Key": "ReinforcementSupportResultTxt",
+        "Comment": "\u70b9\u51fb\u63f4\u52a9\u6309\u94ae\u6210\u529f\u540e\u7684\u6587\u672c\u63d0\u793a",
+        "Values": "['Aid Supplies Sent', '\u53d6\u6d88\u63f4\u52a9\u6210\u529f']"
+    },
+    {
+        "Key": "ReinforceSupportListEntranceTxt",
+        "Comment": "\u63f4\u52a9\u5217\u8868\u5165\u53e3\u6309\u94ae\u7684\u6587\u672c",
+        "Values": "['Aid Members']"
+    },
+    {
+        "Key": "ReinforcementsReadyDoneTxt",
+        "Comment": null,
+        "Values": "['will be ready in {0}']"
+    },
+    {
+        "Key": "NodeShowReinforcementEvents",
+        "Comment": "\u5982\u679c\u63f4\u519b\u91cc\u7684showevent\u5728\u8fd9\u91cc\u914d\u7f6e\u4e86\uff0c\u5219\u4f1a\u7ee7\u627f\u5230\u5173\u5361\u4e0a",
+        "Values": "['2240411', '2240412', '2240413']"
+    },
+    {
+        "Key": "NodeAttackedByReinforementBuffTime",
+        "Comment": "\u88ab\u63f4\u519b\u653b\u51fb\u7684\u8282\u70b9\u4e0a\u7684buff\u5269\u4f59\u65f6\u95f4\u6587\u672c\u683c\u5f0f",
+        "Values": "['(Remaining Time: {0})']"
+    },
+    {
+        "Key": "BossRewardEntranceIntercept",
+        "Comment": "boss\u5956\u52b1\u5165\u53e3\uff08\u4e3b\u754c\u9762\u5de6\u8fb9\u3010\u9886\u4e3b\u3011\uff09\u7684\u62e6\u622a\u63d0\u793a\u6587\u672c",
+        "Values": "['Participated in expedition(s) in other Command Bureau(s). Cannot claim the Boss rewards of this round']"
+    },
+    {
+        "Key": "ReinforcementSupportInCDTips",
+        "Comment": null,
+        "Values": "['Action too frequent. Please try again later.']"
+    },
+    {
+        "Key": "DragonRageLevelTips",
+        "Comment": "Red Tide Level Description",
+        "Values": "['Red Tide Level increases along with the cycle. Same with the difficulty of all stages.']"
+    },
+    {
+        "Key": "DragonRageLevel",
+        "Comment": "Red Tide Level Format",
+        "Values": "['LV.{0}']"
+    },
+    {
+        "Key": "DragonRageToRelicTitle",
+        "Comment": "Red Tide Node to Ruins Pop-Up Window Title",
+        "Values": "['The Sovereign has become more violent. The following node(s) has/have become ruins.']"
+    },
+    {
+        "Key": "DragonRageEffectShowLowerLimit",
+        "Comment": "Red Tide Progress Bar Displays Effect Lower Limit Percentage",
+        "Values": "['0']"
+    },
+    {
+        "Key": "DragonRageSweepTips",
+        "Comment": "Red Tide Mode Available for Auto Clear",
+        "Values": "['Current cycle not manually cleared yet. Auto Clear will grant the points from the previous manual clear.']"
+    },
+    {
+        "Key": "DragonRageRoundNoTips",
+        "Comment": null,
+        "Values": "['Do not show again this cycle.']"
+    }
+]

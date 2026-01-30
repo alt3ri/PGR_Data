@@ -1,0 +1,402 @@
+[
+    {
+        "Key": "HelpKey",
+        "Note": "Help Key",
+        "Params": "['Theatre4']"
+    },
+    {
+        "Key": "CameraDistanceRange",
+        "Note": "Camera Zooming Distance Area",
+        "Params": "['50', '200']"
+    },
+    {
+        "Key": "CameraMoveSpeedRange",
+        "Note": "Camera Movement Speed Area",
+        "Params": "['3', '9', '1.5', '5']"
+    },
+    {
+        "Key": "CameraDragMaxRange",
+        "Note": "Max Camera Drag Range - Default Point as Center of the Map",
+        "Params": "['425', '375']"
+    },
+    {
+        "Key": "CameraDragMinRange",
+        "Note": "Min Camera Drag Range - Default Point as Center of the Map",
+        "Params": "['400', '350']"
+    },
+    {
+        "Key": "CameraZoomSpeed",
+        "Note": "Camera Zooming Speed (Permillage)",
+        "Params": "['100', '90000']"
+    },
+    {
+        "Key": "CameraDefaultDistance",
+        "Note": "Default Camera Distance",
+        "Params": "['70']"
+    },
+    {
+        "Key": "ClickGridLensFocusOffset",
+        "Note": "Tap Grid Camera Focus Shift, Parameter 1 is X Axis Shift, Parameter 2 is Y Axis Shift",
+        "Params": "['7', '0']"
+    },
+    {
+        "Key": "MapFirstFloorRange",
+        "Note": "Map Layer 1 Distance Range - Parameter 2 = Max Camera Distance",
+        "Params": "['120', '200']"
+    },
+    {
+        "Key": "MapSecondFloorRange",
+        "Note": "Map Layer 2 Distance Range - Parameter 1 = Min Camera Distance",
+        "Params": "['50', '120']"
+    },
+    {
+        "Key": "ClickGridLensFocusTime",
+        "Note": "Tap Grid Camera Focus Duration (ms)",
+        "Params": "['300']"
+    },
+    {
+        "Key": "RecoverGridLensFocusTime",
+        "Note": "Lens Focus Reset Duration (ms)",
+        "Params": "['500']"
+    },
+    {
+        "Key": "IsOpenGridFocusRecover",
+        "Note": "Enable Lens Focus Reset? (1: Yes, 0: No)",
+        "Params": "['1']"
+    },
+    {
+        "Key": "LocationBtnFocusToMapTime",
+        "Note": "Tap Locate Button Camera Focus Duration (ms)",
+        "Params": "['500']"
+    },
+    {
+        "Key": "NewAreaFocusToMapBigCameraTime",
+        "Note": "New Area Big Camera Focus Duration (ms)",
+        "Params": "['1000']"
+    },
+    {
+        "Key": "NewAreaFocusToMapBaseCameraTime",
+        "Note": "New Area Basic Camera Focus Duration (ms)",
+        "Params": "['500']"
+    },
+    {
+        "Key": "NewAreaFocusCueId",
+        "Note": "New Area Focus Audio ID",
+        "Params": "['4840']"
+    },
+    {
+        "Key": "PopupNewAreaShowTime",
+        "Note": "New Area Prompt Window Display Duration (ms)",
+        "Params": "['1500']"
+    },
+    {
+        "Key": "CountDownIcon",
+        "Note": "Boss Countdown Icon",
+        "Params": "['Assets/Product/Texture/Atlas/UiTheatre4/UiTheatre4BossGridBg04.png']"
+    },
+    {
+        "Key": "CountDownDesc",
+        "Note": "Boss Countdown Description",
+        "Params": "['Attack in {0} day(s)', '<color=#FD1414>About to Attack</color>']"
+    },
+    {
+        "Key": "DisableCountDownIcon",
+        "Note": "Self-Destruction Countdown Icon",
+        "Params": "['Assets/Product/Texture/Atlas/UiTheatre4/UiTheatre4BossGridBg04.png']"
+    },
+    {
+        "Key": "DisableCountDownDesc",
+        "Note": "Self-Destruction Countdown Description",
+        "Params": "['Crashes in {0} days', '<color=#FD1414>About to self-destruct</color>']"
+    },
+    {
+        "Key": "TimelineDays",
+        "Note": "Days Displayed on Timeline",
+        "Params": "['4']"
+    },
+    {
+        "Key": "ArchieveTypeText",
+        "Note": "Codex Collectible Column",
+        "Params": "['Golden Blueprint', 'Purple Blueprint', 'Blue Blueprint', 'Token']"
+    },
+    {
+        "Key": "FateExclamationMarkIcon",
+        "Note": "Timeline Exclamation Mark Icon",
+        "Params": "['Assets/Product/Texture/Image/UiTheatre4/UiTheatre4GridEvent.png']"
+    },
+    {
+        "Key": "ShopItemCostColor",
+        "Note": "Shop Item Cost Price Color",
+        "Params": "['D0DFE7', 'FF001F']"
+    },
+    {
+        "Key": "SettlementDataContent",
+        "Note": "Result Data Text",
+        "Params": "['Clear Area', 'Development Level', 'Explore Area', 'Ending Multiplier', 'Reward Multiplier', '3\u2605 Reward']"
+    },
+    {
+        "Key": "EntryProgressDesc",
+        "Note": "Entrance BP Description",
+        "Params": "['Current Level: %s/%s']"
+    },
+    {
+        "Key": "StartGridName",
+        "Note": "Start Grid Name",
+        "Params": "['Garrison Point']"
+    },
+    {
+        "Key": "StartGridDesc",
+        "Note": "Start Grid Description",
+        "Params": "['Receive Silver Coin x{1}\\\\nfor every Silver Coin x{0} you have.\\\\n<color=#A0522D>Current Interest: {2}</color>\\\\n<color=#A0522D>Max Interest: {3}</color>']"
+    },
+    {
+        "Key": "BpRewardName",
+        "Note": "BP Button Name",
+        "Params": "['Assessment Progress', 'Mission Reward']"
+    },
+    {
+        "Key": "InGameOpenSkillTip",
+        "Note": "In-Game Talent Tree Opening Prompt",
+        "Params": "['In-Game Talent Activation Failed']"
+    },
+    {
+        "Key": "HandBookTagText",
+        "Note": "Collectible Interface Tag Text",
+        "Params": "['Blueprint Handbook', 'Logistic Support', 'Map Overview']"
+    },
+    {
+        "Key": "DiscoverGridColorBg",
+        "Note": "Found Grid Background Color",
+        "Params": "['Assets/Product/Texture/Image/UiTheatre4/UiTheatre4GridBgRed.png', 'Assets/Product/Texture/Image/UiTheatre4/UiTheatre4GridBgYellow.png', 'Assets/Product/Texture/Image/UiTheatre4/UiTheatre4GridBgBlue.png']"
+    },
+    {
+        "Key": "EmptyGridProcessedName",
+        "Note": "Empty Grid Solved Status Name",
+        "Params": "['Completed']"
+    },
+    {
+        "Key": "GameBossInfoTips",
+        "Note": "Game Main Interface Boss Prosperity Prompt",
+        "Params": "['%d Development Level required', 'Requirement met']"
+    },
+    {
+        "Key": "HurdleGridName",
+        "Note": "Obstacle Grid Name",
+        "Params": "['Ruins']"
+    },
+    {
+        "Key": "ColorResourceAnimTime",
+        "Note": "Color Resource Anime Duration (ms)",
+        "Params": "['1500']"
+    },
+    {
+        "Key": "ProsperityAnimTime",
+        "Note": "Prosperity Anime Duration (ms)",
+        "Params": "['1000']"
+    },
+    {
+        "Key": "GeniusLevelIcon",
+        "Note": "Talent Level Icon",
+        "Params": "['Assets/Product/Texture/Atlas/UiTheatre4/ImgGeniusIconLv.png', 'Assets/Product/Texture/Atlas/UiTheatre4/ImgGeniusIconLv2.png', 'Assets/Product/Texture/Atlas/UiTheatre4/ImgGeniusIconLv3.png']"
+    },
+    {
+        "Key": "SkillActiveText",
+        "Note": "Talent Activation Button Description",
+        "Params": "['Activate', 'Locked', 'Activated']"
+    },
+    {
+        "Key": "TimelineAnimTime",
+        "Note": "Timeline Movement Duration (ms)",
+        "Params": "['500']"
+    },
+    {
+        "Key": "GuideActiveMapId",
+        "Note": "Trigger Guide MapId",
+        "Params": "['11002', '11003']"
+    },
+    {
+        "Key": "ShopSureText",
+        "Note": "Shop Confirmation Button Text",
+        "Params": "['Leave', 'Purchase']"
+    },
+    {
+        "Key": "BtnClickCoolingTime",
+        "Note": "Button Tap Cooldown Time (ms)",
+        "Params": "['500']"
+    },
+    {
+        "Key": "FirstEntryStoryId",
+        "Note": "1st Time Story",
+        "Params": "['RG00801BA']"
+    },
+    {
+        "Key": "NotFoundItemAndGeniusDesc",
+        "Note": "Collectible/Talent Not Found Description Text",
+        "Params": "['Not Found']"
+    },
+    {
+        "Key": "BossAttackDrainLifeTip",
+        "Note": "Boss Attack HP Reduction Prompt",
+        "Params": "['Garrison Point is <color=#FF9519>under attack</color>. Defense -1. Eliminate the Boss asap!']"
+    },
+    {
+        "Key": "RestartGoldName",
+        "Note": "Name of Token Consumed by Restart",
+        "Params": "['Silver Coin']"
+    },
+    {
+        "Key": "ResourceRollingNumberTime",
+        "Note": "Color Resource Scrolling Duration (ms)",
+        "Params": "['600']"
+    },
+    {
+        "Key": "LevelRollingNumberTime",
+        "Note": "Color Level Scrolling Display Duration (ms)",
+        "Params": "['600']"
+    },
+    {
+        "Key": "ProsperityRollingNumberTime",
+        "Note": "Prosperity Scrolling Display Duration (ms)",
+        "Params": "['600']"
+    },
+    {
+        "Key": "AssetNotEnoughTextColor",
+        "Note": "Exploration Cost Not Met Text Color",
+        "Params": "['D0DFE7', 'FF676B']"
+    },
+    {
+        "Key": "BuildPointDailyAdd",
+        "Note": "Construction Point Daily Prompt",
+        "Params": "['Daily +{0}']"
+    },
+    {
+        "Key": "BossUnknowIcon",
+        "Note": "Top Left Corner Icon Display (Boss Locked)",
+        "Params": "['Assets/Product/Texture/Image/UiTheatre4/UiTheatre4BossGridBg05.png']"
+    },
+    {
+        "Key": "BossUnknowName",
+        "Note": "Top Left Corner Name Display (Boss Locked)",
+        "Params": "['???']"
+    },
+    {
+        "Key": "BossUnknowProsperity",
+        "Note": "Top Left Corner Prosperity Display (Boss Locked)",
+        "Params": "['???']"
+    },
+    {
+        "Key": "ItemRepeatLimitTips",
+        "Note": "Duplicate Collectible Prompt",
+        "Params": "['Blueprint cannot be obtained repeatedly']"
+    },
+    {
+        "Key": "TechItemCountUnEnough",
+        "Note": "Tech Tree Insufficient Tech Points Prompt",
+        "Params": "['Insufficient Supply Coupons']"
+    },
+    {
+        "Key": "BpFullLevelTip",
+        "Note": "Max BP Level Prompt",
+        "Params": "['Level limit reached']"
+    },
+    {
+        "Key": "BuildPointEffectShowValue",
+        "Note": "Construction Point Special Effect Display Value (Displayed When Above or Equal to the Configured Value)",
+        "Params": "['10']"
+    },
+    {
+        "Key": "AttackPopupTitle",
+        "Note": "Attack Alert Title",
+        "Params": "['Tip']"
+    },
+    {
+        "Key": "AttackPopupDesc",
+        "Note": "Attack Alert Description",
+        "Params": "['Garrison Point will be attacked soon!']"
+    },
+    {
+        "Key": "AttackPopupHpDesc",
+        "Note": "Attack Alert HP Description",
+        "Params": "['Current Defense: {0}', 'Defense Reduced: {0}']"
+    },
+    {
+        "Key": "AdventureFailedPopupTitle",
+        "Note": "Failed Adventure Pop-up Window Title",
+        "Params": "['Tip']"
+    },
+    {
+        "Key": "AdventureFailedPopupContent",
+        "Note": "Failed Adventure Pop-up Window Text Content",
+        "Params": "[\"Base's Defense reduced to 0. Challenge failed.\"]"
+    },
+    {
+        "Key": "AdventureFailedPopupConfirmText",
+        "Note": "Failed Adventure Pop-up Window Confirmation Text",
+        "Params": "['Leave Challenge']"
+    },
+    {
+        "Key": "ViewMapTipContent",
+        "Note": "View Map Tips",
+        "Params": "['Cannot proceed without {0}']"
+    },
+    {
+        "Key": "ViewMapBtnClickTipContent",
+        "Note": "View Map Tap Button Tips",
+        "Params": "['Cannot tap when {0}']"
+    },
+    {
+        "Key": "EntryViewMapPopupName",
+        "Note": "Map View on That Interface",
+        "Params": "['Replacement Blueprint', 'Select Blueprint', 'Select Rewards', 'Select Support']"
+    },
+    {
+        "Key": "SwitchFloorCueId",
+        "Note": "Switch Layer Audio ID",
+        "Params": "['557']"
+    },
+    {
+        "Key": "EventOptionStageScoreNotEnough",
+        "Note": "Event Option Score Prompt",
+        "Params": "['Low Event Option Stage Score']"
+    },
+    {
+        "Key": "EffectForbiddenFight",
+        "Note": "411 Battle Prohibition Prompt",
+        "Params": "['Encounter Prohibited for This Battle Type']"
+    },
+    {
+        "Key": "EffectRecruitCostNotEnoughTip",
+        "Note": "Effect 410 Insufficient Gold Coins Prompt",
+        "Params": "['Insufficient Silver Coins. You can save the Action Points and convert them to Silver Coins on the next day.', 'Insufficient Silver Coins. The remaining Action Points can be converted into {0} Silver Coin(s).']"
+    },
+    {
+        "Key": "EffectRecruitRedCostNotEnoughTip",
+        "Note": "Effect 422 Insufficient Red Cost Prompt",
+        "Params": "['Insufficient Military Development Rate']"
+    },
+    {
+        "Key": "EffectRecruitHalfDiscount",
+        "Note": "Ownership Effect 421, Red Cost Affiliated Effect, Cost Consumption Halved",
+        "Params": "[\"(Only reduces the enemy's HP by %s%%)\"]"
+    },
+    {
+        "Key": "TimeBackTips1",
+        "Note": null,
+        "Params": "['Refunds the %s Action Points used in the last 3 rounds and clears them in the next chapter', 'Assets/Product/Texture/Image/UiTheatre4/UiTheatre4IconActionpoint.png']"
+    },
+    {
+        "Key": "TimeBackTips2",
+        "Note": null,
+        "Params": "['Refunds a portion of the Silver Coins spent in the last 3 rounds, for a total of %s', 'Assets/Product/Texture/Image/UiTheatre4/UiTheatre4IconCoin.png']"
+    },
+    {
+        "Key": "TimeBackTips3",
+        "Note": null,
+        "Params": "['Refunds the %s Construction Permits spent in the last 3 rounds and demolishes the corresponding buildings', 'Assets/Product/Texture/Image/UiTheatre4/UiTheatre4IconXuke.png']"
+    },
+    {
+        "Key": "TimeBackTips4",
+        "Note": null,
+        "Params": "['Deducts the %s Tri-Colored Multiplier gained in the last 3 rounds', 'Assets/Product/Texture/Image/UiTheatre4/UiTheatre4IconGou.png']"
+    }
+]

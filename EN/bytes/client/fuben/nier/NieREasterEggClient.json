@@ -1,0 +1,242 @@
+[
+    {
+        "Id": 10101,
+        "GroupId": 1,
+        "Type": null,
+        "ShowBullet": null,
+        "Desc": "Perhaps there is nothing in the end, but does that mean it is pointless?",
+        "BtnExStr": null,
+        "BtnStr": null,
+        "BtnTag": "[10102]"
+    },
+    {
+        "Id": 10102,
+        "GroupId": 1,
+        "Type": null,
+        "ShowBullet": null,
+        "Desc": "Even if you win, this may not change anything. Is this really what you want to do?",
+        "BtnExStr": null,
+        "BtnStr": "['Decline', 'Accept']",
+        "BtnTag": "[10201, 10301]"
+    },
+    {
+        "Id": 10201,
+        "GroupId": 1,
+        "Type": null,
+        "ShowBullet": null,
+        "Desc": "If you decide to stick to your choice...",
+        "BtnExStr": null,
+        "BtnStr": "['Select quit', 'Continue fighting']",
+        "BtnTag": "[10202, 10301]"
+    },
+    {
+        "Id": 10202,
+        "GroupId": 1,
+        "Type": 1.0,
+        "ShowBullet": null,
+        "Desc": null,
+        "BtnExStr": null,
+        "BtnStr": null,
+        "BtnTag": null
+    },
+    {
+        "Id": 10301,
+        "GroupId": 1,
+        "Type": 2.0,
+        "ShowBullet": null,
+        "Desc": null,
+        "BtnExStr": null,
+        "BtnStr": null,
+        "BtnTag": null
+    },
+    {
+        "Id": 20101,
+        "GroupId": 2,
+        "Type": null,
+        "ShowBullet": null,
+        "Desc": "It may not be possible... to fight against fate in the end.",
+        "BtnExStr": null,
+        "BtnStr": null,
+        "BtnTag": "[20102]"
+    },
+    {
+        "Id": 20102,
+        "GroupId": 2,
+        "Type": null,
+        "ShowBullet": 1.0,
+        "Desc": "Even if unwilling, even if angry, perhaps this will result in nothing.",
+        "BtnExStr": null,
+        "BtnStr": null,
+        "BtnTag": "[20103]"
+    },
+    {
+        "Id": 20103,
+        "GroupId": 2,
+        "Type": null,
+        "ShowBullet": null,
+        "Desc": "Is this really worth your persistence?",
+        "BtnExStr": null,
+        "BtnStr": "['Decline', 'Accept']",
+        "BtnTag": "[20201, 20301]"
+    },
+    {
+        "Id": 20201,
+        "GroupId": 2,
+        "Type": null,
+        "ShowBullet": null,
+        "Desc": "If that is what you want, so be it.",
+        "BtnExStr": null,
+        "BtnStr": "['Accept', 'Decline']",
+        "BtnTag": "[20202, 20301]"
+    },
+    {
+        "Id": 20202,
+        "GroupId": 2,
+        "Type": 1.0,
+        "ShowBullet": null,
+        "Desc": null,
+        "BtnExStr": null,
+        "BtnStr": null,
+        "BtnTag": null
+    },
+    {
+        "Id": 20301,
+        "GroupId": 2,
+        "Type": null,
+        "ShowBullet": null,
+        "Desc": "If you decide to stick to your choice...",
+        "BtnExStr": null,
+        "BtnStr": "['Decline', 'Accept']",
+        "BtnTag": "[20201, 20302]"
+    },
+    {
+        "Id": 20302,
+        "GroupId": 2,
+        "Type": 2.0,
+        "ShowBullet": null,
+        "Desc": null,
+        "BtnExStr": null,
+        "BtnStr": "['Decline', 'Accept']",
+        "BtnTag": "[20201]"
+    },
+    {
+        "Id": 30101,
+        "GroupId": 3,
+        "Type": null,
+        "ShowBullet": null,
+        "Desc": "To make the impossible possible by relying on others...",
+        "BtnExStr": null,
+        "BtnStr": null,
+        "BtnTag": "[30102]"
+    },
+    {
+        "Id": 30102,
+        "GroupId": 3,
+        "Type": null,
+        "ShowBullet": null,
+        "Desc": "If it was the commandant... Perhaps it's not that hard to understand.",
+        "BtnExStr": null,
+        "BtnStr": null,
+        "BtnTag": "[30103]"
+    },
+    {
+        "Id": 30103,
+        "GroupId": 3,
+        "Type": null,
+        "ShowBullet": null,
+        "Desc": "Somewhere on the network, perhaps there are other commandants caught in a struggle.",
+        "BtnExStr": null,
+        "BtnStr": null,
+        "BtnTag": "[30104]"
+    },
+    {
+        "Id": 30104,
+        "GroupId": 3,
+        "Type": null,
+        "ShowBullet": null,
+        "Desc": "Similar to just now, you can make the same \"sacrifice\" to help them.",
+        "BtnExStr": null,
+        "BtnStr": "['Decline', 'Accept']",
+        "BtnTag": "[30201, 30301]"
+    },
+    {
+        "Id": 30201,
+        "GroupId": 3,
+        "Type": null,
+        "ShowBullet": null,
+        "Desc": "Well, cowardice and weakness may happen if that's what you wish.",
+        "BtnExStr": null,
+        "BtnStr": "['Leave', 'Make a Sacrifice']",
+        "BtnTag": "[30202, 30301]"
+    },
+    {
+        "Id": 30202,
+        "GroupId": 3,
+        "Type": 1.0,
+        "ShowBullet": null,
+        "Desc": null,
+        "BtnExStr": null,
+        "BtnStr": null,
+        "BtnTag": null
+    },
+    {
+        "Id": 30301,
+        "GroupId": 3,
+        "Type": null,
+        "ShowBullet": null,
+        "Desc": "Making such a \"sacrifice\" means changing something forever. Do you accept it?",
+        "BtnExStr": null,
+        "BtnStr": "['Decline', 'Accept']",
+        "BtnTag": "[30201, 30302]"
+    },
+    {
+        "Id": 30302,
+        "GroupId": 3,
+        "Type": null,
+        "ShowBullet": null,
+        "Desc": "And you have no right to decide what kind of people will benefit from this \"sacrifice.\" Do you accept it?",
+        "BtnExStr": null,
+        "BtnStr": "['Decline', 'Accept']",
+        "BtnTag": "[30201, 30303]"
+    },
+    {
+        "Id": 30303,
+        "GroupId": 3,
+        "Type": null,
+        "ShowBullet": null,
+        "Desc": "Well, is there anything else you want to say?",
+        "BtnExStr": null,
+        "BtnStr": "['Edit Message']",
+        "BtnTag": "[30304]"
+    },
+    {
+        "Id": 30304,
+        "GroupId": 3,
+        "Type": 2.0,
+        "ShowBullet": null,
+        "Desc": null,
+        "BtnExStr": null,
+        "BtnStr": null,
+        "BtnTag": null
+    },
+    {
+        "Id": 40101,
+        "GroupId": 4,
+        "Type": null,
+        "ShowBullet": null,
+        "Desc": "Your sacrifice and will have been recognized.",
+        "BtnExStr": "Press anywhere to leave",
+        "BtnStr": null,
+        "BtnTag": "[40102]"
+    },
+    {
+        "Id": 40102,
+        "GroupId": 4,
+        "Type": 2.0,
+        "ShowBullet": null,
+        "Desc": null,
+        "BtnExStr": null,
+        "BtnStr": null,
+        "BtnTag": null
+    }
+]

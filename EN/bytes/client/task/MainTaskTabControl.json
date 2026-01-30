@@ -1,0 +1,79 @@
+[
+    {
+        "Id": 100,
+        "TagName": "Beginner",
+        "TagType": null,
+        "ShowCondition": 770419,
+        "UnlockCondition": null,
+        "FunctionId": null,
+        "ShowTypeInHideFunc": 2,
+        "RedPointConditions": null,
+        "RedPointArgs": "[1]"
+    },
+    {
+        "Id": 101,
+        "TagName": "Novice",
+        "TagType": 4.0,
+        "ShowCondition": 770420,
+        "UnlockCondition": null,
+        "FunctionId": null,
+        "ShowTypeInHideFunc": 2,
+        "RedPointConditions": "['CONDITION_MAIN_NEWBIE_TASK']",
+        "RedPointArgs": null
+    },
+    {
+        "Id": 102,
+        "TagName": "Target",
+        "TagType": 5.0,
+        "ShowCondition": 770421,
+        "UnlockCondition": null,
+        "FunctionId": null,
+        "ShowTypeInHideFunc": 2,
+        "RedPointConditions": "['CONDITION_MAIN_NEWPLAYER_TASK']",
+        "RedPointArgs": null
+    },
+    {
+        "Id": 200,
+        "TagName": "Daily",
+        "TagType": 1.0,
+        "ShowCondition": 770425,
+        "UnlockCondition": null,
+        "FunctionId": 503.0,
+        "ShowTypeInHideFunc": 1,
+        "RedPointConditions": "['CONDITION_TASK_TYPE']",
+        "RedPointArgs": "[2]"
+    },
+    {
+        "Id": 300,
+        "TagName": "Weekly",
+        "TagType": 2.0,
+        "ShowCondition": 770411,
+        "UnlockCondition": null,
+        "FunctionId": 505.0,
+        "ShowTypeInHideFunc": 1,
+        "RedPointConditions": "['CONDITION_TASK_TYPE']",
+        "RedPointArgs": "[3]"
+    },
+    {
+        "Id": 400,
+        "TagName": "Event",
+        "TagType": 3.0,
+        "ShowCondition": 770417,
+        "UnlockCondition": null,
+        "FunctionId": 504.0,
+        "ShowTypeInHideFunc": 1,
+        "RedPointConditions": "['CONDITION_TASK_TYPE']",
+        "RedPointArgs": "[5]"
+    },
+    {
+        "Id": 500,
+        "TagName": "Service",
+        "TagType": 6.0,
+        "ShowCondition": 1060018,
+        "UnlockCondition": null,
+        "FunctionId": null,
+        "ShowTypeInHideFunc": 1,
+        "RedPointConditions": "['CONDITION_TASK_CANLIVER']",
+        "RedPointArgs": null
+    }
+]

@@ -1,0 +1,68 @@
+[
+    {
+        "Id": 1,
+        "Name": "Base Price",
+        "MethodName": "GetCommodityPriceBubble",
+        "ParamNames": "['Id']"
+    },
+    {
+        "Id": 2,
+        "Name": "Price Bonus",
+        "MethodName": "GetCommodityPriceAddBubble",
+        "ParamNames": "['Id']"
+    },
+    {
+        "Id": 3,
+        "Name": "Price Fluctuation This Quarter",
+        "MethodName": "GetCommodityPriceFluctuationBubble",
+        "ParamNames": "['Id']"
+    },
+    {
+        "Id": 4,
+        "Name": "Final Price Increase",
+        "MethodName": "GetCommodityPriceAddFixedBubble",
+        "ParamNames": "['Id']"
+    },
+    {
+        "Id": 5,
+        "Name": "Sale CRIT Rate",
+        "MethodName": "GetCommodityPriceCritAddBubble",
+        "ParamNames": "['Id']"
+    },
+    {
+        "Id": 6,
+        "Name": "Sale CRIT Effect",
+        "MethodName": "GetCommodityPriceCritHurtAddBubble",
+        "ParamNames": "['Id']"
+    },
+    {
+        "Id": 7,
+        "Name": "Base Output",
+        "MethodName": "GetCommodityProductionBubble",
+        "ParamNames": "['Id']"
+    },
+    {
+        "Id": 8,
+        "Name": "Productivity Bonus",
+        "MethodName": "GetCommodityProductionAddBubble",
+        "ParamNames": "['Id']"
+    },
+    {
+        "Id": 9,
+        "Name": "Output Fluctuation This Quarter",
+        "MethodName": "GetCommodityProductionFluctuationBubble",
+        "ParamNames": "['Id']"
+    },
+    {
+        "Id": 10,
+        "Name": "Production CRIT Rate",
+        "MethodName": "GetCommodityProductionCritAddBubble",
+        "ParamNames": "['Id']"
+    },
+    {
+        "Id": 11,
+        "Name": "Production CRIT Effect",
+        "MethodName": "GetCommodityProductionCritHurtAddBubble",
+        "ParamNames": "['Id']"
+    }
+]

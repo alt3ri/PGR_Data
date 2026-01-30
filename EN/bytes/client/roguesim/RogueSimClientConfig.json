@@ -1,0 +1,762 @@
+[
+    {
+        "Key": "HelpKey",
+        "Note": "Help Key",
+        "Params": "['RogueSim']"
+    },
+    {
+        "Key": "MainCountDownDesc",
+        "Note": "Countdown Description",
+        "Params": "['Remaining Time: %s']"
+    },
+    {
+        "Key": "ExchangeCountDownDesc",
+        "Note": "Countdown Description",
+        "Params": "['Remaining Time for Shop Exchange: %s']"
+    },
+    {
+        "Key": "StageNotUnlockDesc",
+        "Note": "Stage Locked Description",
+        "Params": "['Unlocks in %s', 'Unlocks after clearing %s']"
+    },
+    {
+        "Key": "StageRoundDesc",
+        "Note": "Stage Quarter Description",
+        "Params": "['<color=#ff0000>%s</color> quarters']"
+    },
+    {
+        "Key": "ScenePath",
+        "Note": "Scene Preset Including Grid Points and Cameras",
+        "Params": "['Assets/Product/Scene/ScenePrefab/SystemRogueSim3d01.prefab']"
+    },
+    {
+        "Key": "SceneLoadGridSpeed",
+        "Note": "Number of Grid Preset Format Loaded per Frame in the Scene",
+        "Params": "['20']"
+    },
+    {
+        "Key": "ProduceContent",
+        "Note": "Production Page Description",
+        "Params": "['Item production will start according to these settings at the beginning of the next quarter']"
+    },
+    {
+        "Key": "ProduceBtnYesTips",
+        "Note": "Production Button Notification Info",
+        "Params": "['Please select an item for production', 'Overflowing stock will be abandoned during the production of this quarter', '%s stock limit reached. Cannot be produced anymore']"
+    },
+    {
+        "Key": "ProduceDialogTitle",
+        "Note": "Pop-up Window Title",
+        "Params": "['Tips']"
+    },
+    {
+        "Key": "ProduceChangeContent",
+        "Note": "Production Change Description",
+        "Params": "['Production item changed successfully']"
+    },
+    {
+        "Key": "ProduceNotSelectTips",
+        "Note": "Item Not Selected for Production Notification",
+        "Params": "['Please select an item for production']"
+    },
+    {
+        "Key": "SellContent",
+        "Note": "Trade Page Description",
+        "Params": "['Golden Shells earned by selling items will be sent during the next quarter.']"
+    },
+    {
+        "Key": "SellSingleValue",
+        "Note": "Trade Decrease/Increase Value per Time",
+        "Params": "['9999999']"
+    },
+    {
+        "Key": "SellChangeContent",
+        "Note": "Trade Change Description",
+        "Params": "['Loaded successfully', 'No items to load']"
+    },
+    {
+        "Key": "BattleRoundNumDesc",
+        "Note": "Quarter Count Description",
+        "Params": "['Season <color=#ffeb9b>%d</color>']"
+    },
+    {
+        "Key": "BattleRoundLine10",
+        "Note": null,
+        "Params": "['Assets/Product/Texture/Image/UiRogueSim/UiRogueSimBattleLine10.png']"
+    },
+    {
+        "Key": "BattleRoundLine20",
+        "Note": null,
+        "Params": "['Assets/Product/Texture/Image/UiRogueSim/UiRogueSimBattleLine20.png']"
+    },
+    {
+        "Key": "BattleRoundLine30",
+        "Note": null,
+        "Params": "['Assets/Product/Texture/Image/UiRogueSim/UiRogueSimBattleLine30.png']"
+    },
+    {
+        "Key": "BattleRoundLine5",
+        "Note": null,
+        "Params": "['Assets/Product/Texture/Image/UiRogueSim/UiRogueSimBattleLine5.png']"
+    },
+    {
+        "Key": "BattleRoundLine15",
+        "Note": null,
+        "Params": "['Assets/Product/Texture/Image/UiRogueSim/UiRogueSimBattleLine15.png']"
+    },
+    {
+        "Key": "BattleRoundLine25",
+        "Note": null,
+        "Params": "['Assets/Product/Texture/Image/UiRogueSim/UiRogueSimBattleLine25.png']"
+    },
+    {
+        "Key": "TransitionDuration",
+        "Note": "Cutscene Duration",
+        "Params": "['2']"
+    },
+    {
+        "Key": "TransitionDesc",
+        "Note": "Cutscene Description",
+        "Params": "['Remaining Time: %d quarters', 'The last quarter!']"
+    },
+    {
+        "Key": "BtnExplore",
+        "Note": "Explore Button",
+        "Params": "['Explore']"
+    },
+    {
+        "Key": "BtnDetail",
+        "Note": "Details Button",
+        "Params": "['View Details']"
+    },
+    {
+        "Key": "LandBubbleBtnName",
+        "Note": "Grid Projectile Button Name",
+        "Params": "['Explore', 'View Details', 'View Upgrade', 'Continue to Select']"
+    },
+    {
+        "Key": "LandNotExplorableTips",
+        "Note": "Grid Cannot Be Explored Notification",
+        "Params": "['Explore to open up the path']"
+    },
+    {
+        "Key": "North",
+        "Note": "North to the Rumor Point",
+        "Params": "['North']"
+    },
+    {
+        "Key": "South",
+        "Note": "South to the Rumor Point",
+        "Params": "['South']"
+    },
+    {
+        "Key": "East",
+        "Note": "East to the Rumor Point",
+        "Params": "['East']"
+    },
+    {
+        "Key": "West",
+        "Note": "West to the Rumor Point",
+        "Params": "['West']"
+    },
+    {
+        "Key": "Northeast",
+        "Note": "Northeast to the Rumor Point",
+        "Params": "['Northeast']"
+    },
+    {
+        "Key": "Southeast",
+        "Note": "Southeast to the Rumor Point",
+        "Params": "['Southeast']"
+    },
+    {
+        "Key": "Northwest",
+        "Note": "Northwest to the Rumor Point",
+        "Params": "['Northwest']"
+    },
+    {
+        "Key": "Southwest",
+        "Note": "Southwest to the Rumor Point",
+        "Params": "['Southwest']"
+    },
+    {
+        "Key": "MainMaxLevelDesc",
+        "Note": "Main City Max Level Description",
+        "Params": "['MAX']"
+    },
+    {
+        "Key": "MainLevelUpExpTips",
+        "Note": "Main City EXP Notification",
+        "Params": "['Can be leveled up', 'At max!']"
+    },
+    {
+        "Key": "MainLevelUpAdditionDesc",
+        "Note": "Main City Level Bonus Description",
+        "Params": "['%s+%d', 'Tech Level Unlocked: Lv.%d', 'Exploration Level Unlocked: Lv.%d']"
+    },
+    {
+        "Key": "MainLevelCanLevelUpTips",
+        "Note": "Main City Upgrade Failure Notification",
+        "Params": "['Highest level reached', 'Insufficient Merchant EXP for upgrade', 'Insufficient Golden Shells']"
+    },
+    {
+        "Key": "MainLevelBtnLvUpText",
+        "Note": "Upgrade Button Text",
+        "Params": "['Upgrade', 'At max']"
+    },
+    {
+        "Key": "MainLevelRewardColor",
+        "Note": "Main City Level Reward Color",
+        "Params": "['524C3F', 'FF6500']"
+    },
+    {
+        "Key": "MainLevelUpgradeGoldColor",
+        "Note": "Main City Upgrade Gold Coins Color",
+        "Params": "['524C3F', 'FF6500']"
+    },
+    {
+        "Key": "ShopId",
+        "Note": "Shop ID",
+        "Params": "['1434']"
+    },
+    {
+        "Key": "PreviewShopGoodIds",
+        "Note": "Shop Preview Item ID List",
+        "Params": "['143366', '143367']"
+    },
+    {
+        "Key": "TaskGroupId",
+        "Note": "Mission Group ID",
+        "Params": "['268']"
+    },
+    {
+        "Key": "EventTurnNumberDesc",
+        "Note": "Event Quarter Count Description",
+        "Params": "['Time-limited: Complete within %d quarters']"
+    },
+    {
+        "Key": "BuildingGoldNotEnough",
+        "Note": "Insufficient Golden Shells for Building Notice",
+        "Params": "['Insufficient Golden Shells']"
+    },
+    {
+        "Key": "StoryLockText",
+        "Note": "Story Locked",
+        "Params": "['Locked']"
+    },
+    {
+        "Key": "TechLevelUnlockTips",
+        "Note": "Low Tech Tree Level Notification",
+        "Params": "['Unlocks at Main City Lv.%s!']"
+    },
+    {
+        "Key": "TechPreLevelUnlockTips",
+        "Note": "Activation Required for Key Technology on Tech Tree Notification",
+        "Params": "['Activate the key technology on the left first!']"
+    },
+    {
+        "Key": "TechPreUnlockTips",
+        "Note": "Activation Required for Prerequisite Technology on Tech Tree Notification",
+        "Params": "['Please activate the prerequisite technology first!']"
+    },
+    {
+        "Key": "TechGoldUnlockTips",
+        "Note": "Tech Tree Insufficient Golden Shells Notice",
+        "Params": "['Insufficient Golden Shells for upgrade!']"
+    },
+    {
+        "Key": "TechLevelNextUnlockTips",
+        "Note": "Tech Tree Key Technology Next Unlock Notification",
+        "Params": "['The remaining Technologies will be unlocked at Main City Lv.%s']"
+    },
+    {
+        "Key": "TechCanUnlockTips",
+        "Note": "Unlock Available Notification",
+        "Params": "['Unlock Available: %s/%s']"
+    },
+    {
+        "Key": "TechSelectFull",
+        "Note": "Max Key Technologies Selected",
+        "Params": "['Max number selected!']"
+    },
+    {
+        "Key": "TechActivePreLevelTechTips",
+        "Note": "Prerequisite Key Technology Not Activated",
+        "Params": "['Please activate the prerequisite Key Technology!']"
+    },
+    {
+        "Key": "TechNoSelectFullTips",
+        "Note": "Unselected Key Technologies",
+        "Params": "['Please select %s technologies from them!']"
+    },
+    {
+        "Key": "RoundStartSellHistogramColor",
+        "Note": "Histogram Color",
+        "Params": "['DBCBA0', '74CABD']"
+    },
+    {
+        "Key": "RoundStartSellPriceColor",
+        "Note": "Profit Color",
+        "Params": "['FFA600', 'FF0015']"
+    },
+    {
+        "Key": "RoundStarProduceColor",
+        "Note": "Production Color",
+        "Params": "['0F70BC', 'FF0015']"
+    },
+    {
+        "Key": "SettlementDataContent",
+        "Note": "Result Data Text",
+        "Params": "['Earn Golden Shells', 'Main City Level', 'Buildings Constructed', 'City Total Star Level', 'Event and Artifact', 'Purchase Area']"
+    },
+    {
+        "Key": "ActivityEntryProgressTips",
+        "Note": "Event Entrance Progress Notification",
+        "Params": "['Progress: %s/%s', '%s in Progress: Quarter %s/%s']"
+    },
+    {
+        "Key": "HandbookProgress",
+        "Note": "Codex Page Unlock Progress Text",
+        "Params": "['%s<color=#FFFFFF>/%s</color>']"
+    },
+    {
+        "Key": "AreaUnlockTips",
+        "Note": "Tap on Locked Area Notification",
+        "Params": "['Upgrade Main City to Lv.%s to unlock the area!']"
+    },
+    {
+        "Key": "GridUnlockTips",
+        "Note": "Tap on Locked Grid Notification",
+        "Params": "['Please explore and form a connection first!']"
+    },
+    {
+        "Key": "CameraPanelDragSizeOffset",
+        "Note": "Camera drag area size offset, parameter 1: width, parameter 2: height",
+        "Params": "['-6', '-2']"
+    },
+    {
+        "Key": "CameraDistance",
+        "Note": "Camera distance from the ground. When the camera is further away from the ground, more tiles are visible.",
+        "Params": "['14']"
+    },
+    {
+        "Key": "CameraDistanceRange",
+        "Note": "Camera distance from the ground. Parameter 1 is the lowest, parameter 2 is the highest. Parameter 3 is a one-time value for the plus/minus buttons when the value changes. Parameter 4 is for the mouse scroll wheel multiplier.",
+        "Params": "['10', '25', '2.5', '10']"
+    },
+    {
+        "Key": "CameraRotationX",
+        "Note": "Camera spins upwards on the X direction.",
+        "Params": "['45']"
+    },
+    {
+        "Key": "CityExploredEffect",
+        "Note": "City Unlock Effect",
+        "Params": "['Assets/Product/Effect/Prefab/FxSceneEffect/FxSceneRougePrefab/FxRogueSimBuildingLevelUp.prefab']"
+    },
+    {
+        "Key": "BuildingEffect",
+        "Note": "Successful Building Effect",
+        "Params": "['Assets/Product/Effect/Prefab/FxSceneEffect/FxSceneRougePrefab/FxRogueSimBuildingFog.prefab']"
+    },
+    {
+        "Key": "MainLevelUpEffect",
+        "Note": "Main City Upgrade Effect",
+        "Params": "['Assets/Product/Effect/Prefab/FxSceneEffect/FxSceneRougePrefab/FxRogueSimBuildingLevelUp.prefab']"
+    },
+    {
+        "Key": "GridCanExploreEffect",
+        "Note": "Tile Exploration Effect",
+        "Params": "['Assets/Product/Effect/Prefab/FxSceneEffect/FxSceneRougePrefab/FxRogueSimGridTip.prefab']"
+    },
+    {
+        "Key": "StageMaxScoreEmpty",
+        "Note": "No Highest Score for the Stage",
+        "Params": "['Not cleared']"
+    },
+    {
+        "Key": "StageMaxScore",
+        "Note": "Highest Score for the Stage",
+        "Params": "['Highest Score: %s']"
+    },
+    {
+        "Key": "MainLevelUpExpAnimTime",
+        "Note": "Main City Upgrade EXP Increase Amine Duration",
+        "Params": "['0.5']"
+    },
+    {
+        "Key": "RoundSettlementConfirmTitle",
+        "Note": "End Quarter Confirmation Title",
+        "Params": "['Tips', 'Tips', 'End Quarter']"
+    },
+    {
+        "Key": "RoundSettlementConfirmContent",
+        "Note": "End Quarter Confirmation Description",
+        "Params": "['You have not completed the exploration point. End the round anyway?', \"This quarter's %s output has exceeded the remaining warehouse capacity. End this quarter?\", 'There are still areas available for purchase. End the current season anyway?']"
+    },
+    {
+        "Key": "RoundSettlementExceedLimitTips",
+        "Note": "Storage Limit Exceeded Notice",
+        "Params": "['%s stock limit reached. Cannot be produced anymore']"
+    },
+    {
+        "Key": "AllTargetCompleteTips",
+        "Note": "All In-Game Targets Completed Notification",
+        "Params": "['All targets completed']"
+    },
+    {
+        "Key": "Lv",
+        "Note": "Tech Tree Main City Level Display",
+        "Params": "['Lv.%s']"
+    },
+    {
+        "Key": "PropBuffCumulativeMarkupTip",
+        "Note": "Buff Accumulation Bonus Notification Info",
+        "Params": "['(Accumulated: %d%%)', '(Accumulated: %d)', 'Active', 'Inactive']"
+    },
+    {
+        "Key": "CityTaskSuccessContent",
+        "Note": "City Mission Complete Description",
+        "Params": "['%s missions complete, after completing missions the city can be upgraded.']"
+    },
+    {
+        "Key": "CityTaskSuccessAnimTime",
+        "Note": "Mission Complete Anime Duration",
+        "Params": "['0.5']"
+    },
+    {
+        "Key": "ShopRedPointCoinNumber",
+        "Note": "Shop Blue Point Token Threshold",
+        "Params": "['150']"
+    },
+    {
+        "Key": "ShopRedPointTimerId",
+        "Note": "Shop Blue Point Display Time",
+        "Params": "['33701']"
+    },
+    {
+        "Key": "ExploreFail",
+        "Note": "Reward Not Issued for Exploration Completed",
+        "Params": "['Exploration failed due to an unknown error!']"
+    },
+    {
+        "Key": "CameraMoveSpeed",
+        "Note": "Camera Movement Speed",
+        "Params": "['30']"
+    },
+    {
+        "Key": "CameraMoveMaxTime",
+        "Note": "Max Camera Movement Time (s)",
+        "Params": "['0.6']"
+    },
+    {
+        "Key": "CameraMoveSpeedOverlook",
+        "Note": "Movement Speed in Distant View When Area is Unlocked",
+        "Params": "['30']"
+    },
+    {
+        "Key": "CameraMoveMaxTimeOverlook",
+        "Note": "Max Movement Time (s) in Distant View When Area is Unlocked",
+        "Params": "['0.5']"
+    },
+    {
+        "Key": "CameraFocusGridOffsetXWan",
+        "Note": "Focus tile is in the X direction offset by (Value x 10000 configuration). When the tile moves towards the screen center's left side the value is negative, the value is positive when it moves towards the right side.",
+        "Params": "['-4000']"
+    },
+    {
+        "Key": "ActivityNotOpenTip",
+        "Note": "Event Not Available Notification",
+        "Params": "['Outside the event period']"
+    },
+    {
+        "Key": "PopupBuildIcon",
+        "Note": "Building Pop-up Window Picture",
+        "Params": "['Assets/Product/Texture/Atlas/UiRogueSim/UiRogueSimBuild.png']"
+    },
+    {
+        "Key": "PopupBuildTitle",
+        "Note": "Building Pop-up Window Title",
+        "Params": "['Area Construction']"
+    },
+    {
+        "Key": "PopupBuildTips",
+        "Note": "Building Pop-up Window Notice",
+        "Params": "['Consume Blueprints and Golden Shells to build in the current area']"
+    },
+    {
+        "Key": "MainEffectProduce",
+        "Note": "Main City Upgrade Display Effect",
+        "Params": "['Production', 'Assets/Product/Texture/Atlas/UiRogueSim/UiRogueSimProduceIcon01.png']"
+    },
+    {
+        "Key": "MainEffectArea",
+        "Note": "Main City Upgrade Display Effect",
+        "Params": "['Islands for Sale', 'Assets/Product/Texture/Atlas/UiRogueSim/UiRogueSimPurchaseArea.png']"
+    },
+    {
+        "Key": "MainEffectBuild",
+        "Note": "Main City Upgrade Display Effect",
+        "Params": "['Building Area', 'Assets/Product/Texture/Atlas/UiRogueSim/UiRogueSimProduceConstruction.png']"
+    },
+    {
+        "Key": "PopulationTextColor",
+        "Note": "Production Text Color",
+        "Params": "['0F70BC', 'FF0015']"
+    },
+    {
+        "Key": "RoundEndRemainPopulationTips",
+        "Note": "Round End Remaining Production Notice",
+        "Params": "['There is still unallocated productivity']"
+    },
+    {
+        "Key": "RoundEndPopulationOverFlowTips",
+        "Note": "Round End Production Overflow Notice",
+        "Params": "['Productivity has exceeded the limit, please reassign!']"
+    },
+    {
+        "Key": "RoundEndMainCanLevelUpTips",
+        "Note": "Round End Main City Upgrade Notice",
+        "Params": "['Main city can be upgraded, upgrade in the waiting list!']"
+    },
+    {
+        "Key": "RoundEndPendingEventTips",
+        "Note": "Round End Waiting List Notice",
+        "Params": "['Waiting list has yet to be processed!']"
+    },
+    {
+        "Key": "RoundEndEventGambleRewardTips",
+        "Note": "Round End Event Speculation Notice",
+        "Params": "['Speculation rewards unclaimed, please claim from the waiting list.']"
+    },
+    {
+        "Key": "RoundEndCityCanLevelUpTips",
+        "Note": "Round End City Upgrade Notice",
+        "Params": "['City can be upgraded, upgrade through city commissions!']"
+    },
+    {
+        "Key": "BuildingBluePrintNotSelectTips",
+        "Note": "Private Building Not Selected Notice",
+        "Params": "['Please select a building']"
+    },
+    {
+        "Key": "AutoSellNoProfitTips",
+        "Note": "Vending Profits Notice",
+        "Params": "['Please set an amount']"
+    },
+    {
+        "Key": "CityLevelCanLevelUpTips",
+        "Note": "City Cannot Be Upgraded Notice",
+        "Params": "['City not yet purchased', 'Highest level reached', 'City mission incomplete']"
+    },
+    {
+        "Key": "TemporaryBagRewardDropIcon",
+        "Note": "Temporary Inventory Reward Drop Icon",
+        "Params": "['Assets/Product/Texture/Image/IconTools/IconRogueSimTwo08.png']"
+    },
+    {
+        "Key": "TemporaryBagRewardTips",
+        "Note": "Temporary Inventory Reward Notice",
+        "Params": "['Temporary inventory is empty', '%s warehouse full']"
+    },
+    {
+        "Key": "NoCityTip",
+        "Note": "No Cities Owned Notice",
+        "Params": "['No cities purchased']"
+    },
+    {
+        "Key": "NewsShowTime",
+        "Note": "Rumor Display Duration (unit: ms)",
+        "Params": "['10000']"
+    },
+    {
+        "Key": "GambleLoading",
+        "Note": "Configuration Loading Text",
+        "Params": "['Checking Earnings...']"
+    },
+    {
+        "Key": "GambleResultWin",
+        "Note": "Multiplier >10000 text",
+        "Params": "['Rising Market']"
+    },
+    {
+        "Key": "GambleResultLose",
+        "Note": "Multiplier \uff1c10000 text",
+        "Params": "['Falling Market']"
+    },
+    {
+        "Key": "GambleImgWin",
+        "Note": "Rising Pictures",
+        "Params": "['Assets/Product/Texture/Image/UiRogueSim/UiRogueSimIconZy13.png']"
+    },
+    {
+        "Key": "GambleDescWin",
+        "Note": "Rising Text",
+        "Params": "['Rising Market']"
+    },
+    {
+        "Key": "GambleImgLose",
+        "Note": "Falling Pictures",
+        "Params": "['Assets/Product/Texture/Image/UiRogueSim/UiRogueSimIconZy14.png']"
+    },
+    {
+        "Key": "GambleDescLose",
+        "Note": "Falling Text",
+        "Params": "['Falling Market']"
+    },
+    {
+        "Key": "GambleGainTips",
+        "Note": "Earnings Ratio",
+        "Params": "['Investment Return {0}%']"
+    },
+    {
+        "Key": "GambleEventOptionsCost",
+        "Note": "Gambling Event Option Consumption",
+        "Params": "['{0} ({1}% of current tokens)']"
+    },
+    {
+        "Key": "GambleNotReady",
+        "Note": null,
+        "Params": "['Event speculation has not reached the required rounds']"
+    },
+    {
+        "Key": "GridChangeAnim",
+        "Note": "Tile change animation. Parameters 1|3|5... are the height, parameters 2|4|6... are the time.",
+        "Params": "['-0.2', '0.2', '0.6', '0.6', '0', '0.4']"
+    },
+    {
+        "Key": "GridChangeTimeInterval",
+        "Note": "Tile Opening Animation Time",
+        "Params": "['0.2']"
+    },
+    {
+        "Key": "BuildingQualityIcon",
+        "Note": "Building Quality Icon",
+        "Params": "['Assets/Product/Texture/Image/UiRogueSim/UiRogueSimIconJzbb01.png', 'Assets/Product/Texture/Image/UiRogueSim/UiRogueSimIconJzbb02.png', 'Assets/Product/Texture/Image/UiRogueSim/UiRogueSimIconJzbb03.png']"
+    },
+    {
+        "Key": "ResourceNotEnoughTip",
+        "Note": "Insufficient Resources Notice",
+        "Params": "['%s insufficient']"
+    },
+    {
+        "Key": "BattleEarlySettlementTitle",
+        "Note": "Result Calculation in Advance Title",
+        "Params": "['Tip', 'Tip']"
+    },
+    {
+        "Key": "BattleEarlySettlementContent",
+        "Note": "Result Calculation in Advance Content",
+        "Params": "['Challenge goals already completed. Skip to stage summary?', 'Give up and enter summary?']"
+    },
+    {
+        "Key": "BattleEarlySettlementBtnName",
+        "Note": "Result Calculation in Advance Button Text",
+        "Params": "['Early Tally', 'Abandon Game']"
+    },
+    {
+        "Key": "StageStarConditionTips",
+        "Note": "Stage 3\u2605 Requirements Notice",
+        "Params": "['3\u2605 requirements incomplete']"
+    },
+    {
+        "Key": "CommodityAttributeType",
+        "Note": "Cargo Attribute Type",
+        "Params": "['1002', '1003', '1005', '1006', '2003', '2005', '2006']"
+    },
+    {
+        "Key": "CommodityAttributeScore",
+        "Note": "Cargo Attribute Rating",
+        "Params": "['100', '10', '5', '1.5', '10', '5', '1.5']"
+    },
+    {
+        "Key": "CommodityFluctuationScore",
+        "Note": "Cargo Fluctuation Rating",
+        "Params": "['10']"
+    },
+    {
+        "Key": "CommodityScoreInterval1",
+        "Note": "Cargo Rating Area",
+        "Params": "['-1000', '0', '00C314']"
+    },
+    {
+        "Key": "CommodityScoreInterval2",
+        "Note": "Cargo Rating Area",
+        "Params": "['0', '1000', '808080']"
+    },
+    {
+        "Key": "CommodityScoreInterval3",
+        "Note": "Cargo Rating Area",
+        "Params": "['1000', '-1', 'FF0000']"
+    },
+    {
+        "Key": "AreaDefaultIcon",
+        "Note": "Navigation Function Area Default Icon",
+        "Params": "['Assets/Product/Texture/Atlas/UiRogueSim/UiRogueSimBuild.png']"
+    },
+    {
+        "Key": "DelayOpenNextTipsTime",
+        "Note": "Delay the time for opening the notice about entering the next season, configuration unit is ms.",
+        "Params": "['1500']"
+    },
+    {
+        "Key": "RollingNumberTime",
+        "Note": "Scroll Number Duration (ms)",
+        "Params": "['500']"
+    },
+    {
+        "Key": "LandBubbleCommonBgIcon",
+        "Note": "Interface Left Pop-up Common Background Icon",
+        "Params": "['Assets/Product/Texture/Image/UiRogueSim/UiRogueSimTu.png']"
+    },
+    {
+        "Key": "TemporaryBagParticleInterval1",
+        "Note": "Temporary Inventory Particle Space (Cargo 1)",
+        "Params": "['0|10|1', '10|50|5', '50|100|8', '100|200|12', '200|300|15', '300|400|20', '400|500|25', '500|-1|30']"
+    },
+    {
+        "Key": "TemporaryBagParticleInterval2",
+        "Note": "Temporary Inventory Particle Space (Cargo 2)",
+        "Params": "['0|25|1', '25|100|8', '100|250|12', '250|400|20', '400|600|25', '600|-1|30']"
+    },
+    {
+        "Key": "TemporaryBagParticleInterval3",
+        "Note": "Temporary Inventory Particle Space (Cargo 3)",
+        "Params": "['0|2|1', '2|30|4', '30|50|8', '50|80|10', '80|150|15', '150|200|18', '200|300|25', '300|-1|30']"
+    },
+    {
+        "Key": "TemporaryBagParticleTotalLimit",
+        "Note": "Temporary Inventory Particle Space Limit",
+        "Params": "['100']"
+    },
+    {
+        "Key": "TemporaryBagParticleDuration",
+        "Note": "Temporary Inventory Particle Time (ms)",
+        "Params": "['2500']"
+    },
+    {
+        "Key": "LandformIdsCommodity1",
+        "Note": "Cargo 1 corresponding landform Id list",
+        "Params": "['3341', '3342', '3343']"
+    },
+    {
+        "Key": "LandformIdsCommodity2",
+        "Note": "Cargo 2 corresponding landform Id list",
+        "Params": "['3351', '3352', '3353']"
+    },
+    {
+        "Key": "LandformIdsCommodity3",
+        "Note": "Cargo 3 corresponding landform Id list",
+        "Params": "['3361', '3362', '3363']"
+    },
+    {
+        "Key": "CommodityFullTitle",
+        "Note": "Cargo Filled Title",
+        "Params": "['Tip']"
+    },
+    {
+        "Key": "CommodityFullContent",
+        "Note": "Cargo Filled Content",
+        "Params": "['%s warehouse full, continue exploring?']"
+    }
+]

@@ -1,0 +1,308 @@
+[
+    {
+        "Id": 1,
+        "PetId": 1001,
+        "State": "IDLE",
+        "BehaviorId": "D100101",
+        "CanClick": null,
+        "StateMachine": "IDLE",
+        "Desc": "IDLE  ==  Basic Actions (Standby, Navigation)"
+    },
+    {
+        "Id": 2,
+        "PetId": 1001,
+        "State": "BENCH",
+        "BehaviorId": "D100102",
+        "CanClick": null,
+        "StateMachine": "INTERACT",
+        "Desc": "BENCH == Interacting With Bench"
+    },
+    {
+        "Id": 3,
+        "PetId": 1001,
+        "State": "GOBENCH",
+        "BehaviorId": "D100103",
+        "CanClick": null,
+        "StateMachine": "INTERACT",
+        "Desc": "GOBENCH == Walk to Bench"
+    },
+    {
+        "Id": 4,
+        "PetId": 1001,
+        "State": "SLEEP",
+        "BehaviorId": "D100104",
+        "CanClick": null,
+        "StateMachine": "INTERACT",
+        "Desc": "SLEEP == Interacting With Bed"
+    },
+    {
+        "Id": 5,
+        "PetId": 1001,
+        "State": "ATTRACT",
+        "BehaviorId": "D100105",
+        "CanClick": null,
+        "StateMachine": "INTERACT",
+        "Desc": "ATTRACT == Walk to Bed"
+    },
+    {
+        "Id": 6,
+        "PetId": 1001,
+        "State": "CHAIR",
+        "BehaviorId": "D100106",
+        "CanClick": null,
+        "StateMachine": "INTERACT",
+        "Desc": "CHAIR == Interact With Chair"
+    },
+    {
+        "Id": 7,
+        "PetId": 1001,
+        "State": "GOCHAIR",
+        "BehaviorId": "D100107",
+        "CanClick": null,
+        "StateMachine": "INTERACT",
+        "Desc": "GOBENCH == Walk to Chair"
+    },
+    {
+        "Id": 8,
+        "PetId": 1001,
+        "State": "PALY_WITH_FURNITURE_01",
+        "BehaviorId": "D100108",
+        "CanClick": null,
+        "StateMachine": "INTERACT",
+        "Desc": "PALY_WITH_FURNITURE_01    ==  Interact With Cat Tree (Azukisan Exclusive)"
+    },
+    {
+        "Id": 9,
+        "PetId": 1001,
+        "State": "GO_PALY_WITH_FURNITURE_01",
+        "BehaviorId": "D100109",
+        "CanClick": null,
+        "StateMachine": "INTERACT",
+        "Desc": "GO_PALY_WITH_FURNITURE_01  ==  Walk to Cat Tree (Azukisan Exclusive)"
+    },
+    {
+        "Id": 10,
+        "PetId": 1001,
+        "State": "PALY_WITH_FURNITURE_02",
+        "BehaviorId": "D100110",
+        "CanClick": null,
+        "StateMachine": "INTERACT",
+        "Desc": "PALY_WITH_FURNITURE_02  ==  Interact With Cat Scratcher 1 (Azukisan Exclusive)"
+    },
+    {
+        "Id": 11,
+        "PetId": 1001,
+        "State": "GO_PALY_WITH_FURNITURE_02",
+        "BehaviorId": "D100111",
+        "CanClick": null,
+        "StateMachine": "INTERACT",
+        "Desc": "GO_PALY_WITH_FURNITURE_02  ==  Walk to Cat Scratcher 1 (Azukisan Exclusive)"
+    },
+    {
+        "Id": 12,
+        "PetId": 1001,
+        "State": "PALY_WITH_FURNITURE_03",
+        "BehaviorId": "D100112",
+        "CanClick": null,
+        "StateMachine": "INTERACT",
+        "Desc": "PALY_WITH_FURNITURE_03  ==  Interact With Cat Scratcher 2 (Azukisan Exclusive)"
+    },
+    {
+        "Id": 13,
+        "PetId": 1001,
+        "State": "GO_PALY_WITH_FURNITURE_03",
+        "BehaviorId": "D100113",
+        "CanClick": null,
+        "StateMachine": "INTERACT",
+        "Desc": "GO_PALY_WITH_FURNITURE_03  ==  Walk to Cat Scratcher 2 (Azukisan Exclusive)"
+    },
+    {
+        "Id": 14,
+        "PetId": 1001,
+        "State": "PLAY_WITH_CHAR",
+        "BehaviorId": "D100114",
+        "CanClick": null,
+        "StateMachine": "INTERACT",
+        "Desc": "PLAY_WITH_CHAR == Pet Interacts With Character (Pet)"
+    },
+    {
+        "Id": 15,
+        "PetId": 1001,
+        "State": "BORN",
+        "BehaviorId": "D100115",
+        "CanClick": null,
+        "StateMachine": "INTERACT",
+        "Desc": "BORN  ==  Spawn From Designated Decor"
+    },
+    {
+        "Id": 16,
+        "PetId": 1001,
+        "State": "SIT",
+        "BehaviorId": "D100116",
+        "CanClick": null,
+        "StateMachine": "INTERACT",
+        "Desc": "SIT == Interacting With Sofa"
+    },
+    {
+        "Id": 17,
+        "PetId": 1001,
+        "State": "GOSOFA",
+        "BehaviorId": "D100117",
+        "CanClick": null,
+        "StateMachine": "INTERACT",
+        "Desc": "GOSOFA == Walk to Sofa"
+    },
+    {
+        "Id": 18,
+        "PetId": 1002,
+        "State": "IDLE",
+        "BehaviorId": "D100201",
+        "CanClick": null,
+        "StateMachine": "IDLE",
+        "Desc": "IDLE  ==  Basic Actions (Standby, Navigation)"
+    },
+    {
+        "Id": 19,
+        "PetId": 1002,
+        "State": "BENCH",
+        "BehaviorId": "D100202",
+        "CanClick": null,
+        "StateMachine": "INTERACT",
+        "Desc": "BENCH == Interacting With Bench"
+    },
+    {
+        "Id": 20,
+        "PetId": 1002,
+        "State": "GOBENCH",
+        "BehaviorId": "D100203",
+        "CanClick": null,
+        "StateMachine": "INTERACT",
+        "Desc": "GOBENCH == Walk to Bench"
+    },
+    {
+        "Id": 21,
+        "PetId": 1002,
+        "State": "SLEEP",
+        "BehaviorId": "D100204",
+        "CanClick": null,
+        "StateMachine": "INTERACT",
+        "Desc": "SLEEP == Interacting With Bed"
+    },
+    {
+        "Id": 22,
+        "PetId": 1002,
+        "State": "ATTRACT",
+        "BehaviorId": "D100205",
+        "CanClick": null,
+        "StateMachine": "INTERACT",
+        "Desc": "ATTRACT == Walk to Bed"
+    },
+    {
+        "Id": 23,
+        "PetId": 1002,
+        "State": "CHAIR",
+        "BehaviorId": "D100206",
+        "CanClick": null,
+        "StateMachine": "INTERACT",
+        "Desc": "CHAIR == Interact With Chair"
+    },
+    {
+        "Id": 24,
+        "PetId": 1002,
+        "State": "GOCHAIR",
+        "BehaviorId": "D100207",
+        "CanClick": null,
+        "StateMachine": "INTERACT",
+        "Desc": "GOCHAIR == Walk to Chair"
+    },
+    {
+        "Id": 25,
+        "PetId": 1002,
+        "State": "AYA_PALY_WITH_FURNITURE_01",
+        "BehaviorId": "D100208",
+        "CanClick": null,
+        "StateMachine": "INTERACT",
+        "Desc": "PALY_WITH_FURNITURE_01    ==  Interact with Aya Clapper (Aya Exclusive)"
+    },
+    {
+        "Id": 26,
+        "PetId": 1002,
+        "State": "AYA_GO_PALY_WITH_FURNITURE_01",
+        "BehaviorId": "D100209",
+        "CanClick": null,
+        "StateMachine": "INTERACT",
+        "Desc": "GO_PALY_WITH_FURNITURE_01  ==  Walk to Aya Clapper (Aya Exclusive)"
+    },
+    {
+        "Id": 27,
+        "PetId": 1002,
+        "State": "AYA_PALY_WITH_FURNITURE_02",
+        "BehaviorId": "D100210",
+        "CanClick": null,
+        "StateMachine": "INTERACT",
+        "Desc": "PALY_WITH_FURNITURE_02  ==  Interact with Aya Delivery Box (Aya Exclusive)"
+    },
+    {
+        "Id": 28,
+        "PetId": 1002,
+        "State": "AYA_GO_PALY_WITH_FURNITURE_02",
+        "BehaviorId": "D100211",
+        "CanClick": null,
+        "StateMachine": "INTERACT",
+        "Desc": "GO_PALY_WITH_FURNITURE_02  ==  Walk to Aya Delivery Box (Aya Exclusive)"
+    },
+    {
+        "Id": 29,
+        "PetId": 1002,
+        "State": "AYA_PALY_WITH_FURNITURE_03",
+        "BehaviorId": "D100212",
+        "CanClick": null,
+        "StateMachine": "INTERACT",
+        "Desc": "PALY_WITH_FURNITURE_03  ==  Interact with Aya Photo Stand Combo (Aya Exclusive)"
+    },
+    {
+        "Id": 30,
+        "PetId": 1002,
+        "State": "AYA_GO_PALY_WITH_FURNITURE_03",
+        "BehaviorId": "D100213",
+        "CanClick": null,
+        "StateMachine": "INTERACT",
+        "Desc": "GO_PALY_WITH_FURNITURE_03  ==  Walk to Aya Photo Stand Combo (Aya Exclusive)"
+    },
+    {
+        "Id": 31,
+        "PetId": 1002,
+        "State": "PLAY_WITH_CHAR",
+        "BehaviorId": "D100214",
+        "CanClick": null,
+        "StateMachine": "INTERACT",
+        "Desc": "PLAY_WITH_CHAR == Pet Interacts With Character (Pet)"
+    },
+    {
+        "Id": 32,
+        "PetId": 1002,
+        "State": "BORN",
+        "BehaviorId": "D100215",
+        "CanClick": null,
+        "StateMachine": "INTERACT",
+        "Desc": "BORN  ==  Spawn From Designated Decor"
+    },
+    {
+        "Id": 33,
+        "PetId": 1002,
+        "State": "SIT",
+        "BehaviorId": "D100216",
+        "CanClick": null,
+        "StateMachine": "INTERACT",
+        "Desc": "SIT == Interacting With Sofa"
+    },
+    {
+        "Id": 34,
+        "PetId": 1002,
+        "State": "GOSOFA",
+        "BehaviorId": "D100217",
+        "CanClick": null,
+        "StateMachine": "INTERACT",
+        "Desc": "GOSOFA == Walk to Sofa"
+    }
+]

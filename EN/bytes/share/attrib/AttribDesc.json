@@ -1,0 +1,767 @@
+[
+    {
+        "Index": 1,
+        "Name": "HP",
+        "Attrib": "Life"
+    },
+    {
+        "Index": 2,
+        "Name": "Energy",
+        "Attrib": "Energy"
+    },
+    {
+        "Index": 3,
+        "Name": "Speed (Run)",
+        "Attrib": "RunSpeed"
+    },
+    {
+        "Index": 4,
+        "Name": "Speed (Walk)",
+        "Attrib": "WalkSpeed"
+    },
+    {
+        "Index": 5,
+        "Name": "Speed (Turning)",
+        "Attrib": "TurnRoundSpeed"
+    },
+    {
+        "Index": 6,
+        "Name": "Orb Interval",
+        "Attrib": "BallInterval"
+    },
+    {
+        "Index": 7,
+        "Name": "Physical DMG Immunity",
+        "Attrib": "DamageNormalImmunity"
+    },
+    {
+        "Index": 8,
+        "Name": "Elemental DMG Immunity",
+        "Attrib": "DamageMagicImmunity"
+    },
+    {
+        "Index": 9,
+        "Name": "Physical DMG Counter Immunity",
+        "Attrib": "AntiDamageNormalImmunity"
+    },
+    {
+        "Index": 10,
+        "Name": "Anti-Elemental DMG Immunity",
+        "Attrib": "AntiDamageMagicImmunity"
+    },
+    {
+        "Index": 11,
+        "Name": "ATK",
+        "Attrib": "AttackNormal"
+    },
+    {
+        "Index": 12,
+        "Name": "Fire Attack",
+        "Attrib": "AttackMagic1"
+    },
+    {
+        "Index": 13,
+        "Name": "Lightning Attack",
+        "Attrib": "AttackMagic2"
+    },
+    {
+        "Index": 14,
+        "Name": "Ice Attack",
+        "Attrib": "AttackMagic3"
+    },
+    {
+        "Index": 15,
+        "Name": "Dark Attack",
+        "Attrib": "AttackMagic4"
+    },
+    {
+        "Index": 16,
+        "Name": "Nihil Attack",
+        "Attrib": "AttackMagic5"
+    },
+    {
+        "Index": 17,
+        "Name": "Physical ATK Counter",
+        "Attrib": "AntiAttackNormal"
+    },
+    {
+        "Index": 18,
+        "Name": "Anti-Fire Attack",
+        "Attrib": "AntiAttackMagic1"
+    },
+    {
+        "Index": 19,
+        "Name": "Anti-Lightning Attack",
+        "Attrib": "AntiAttackMagic2"
+    },
+    {
+        "Index": 20,
+        "Name": "Anti-Ice Attack",
+        "Attrib": "AntiAttackMagic3"
+    },
+    {
+        "Index": 21,
+        "Name": "Anti-Dark Attack",
+        "Attrib": "AntiAttackMagic4"
+    },
+    {
+        "Index": 22,
+        "Name": "Anti-Nihil Attack",
+        "Attrib": "AntiAttackMagic5"
+    },
+    {
+        "Index": 23,
+        "Name": "DEF",
+        "Attrib": "DefenseNormal"
+    },
+    {
+        "Index": 24,
+        "Name": "Anti-Defense",
+        "Attrib": "AntiDefenseNormal"
+    },
+    {
+        "Index": 25,
+        "Name": "Extra DMG Bonus",
+        "Attrib": "DamageChangeP"
+    },
+    {
+        "Index": 26,
+        "Name": "Physical DMG Bonus",
+        "Attrib": "DamageNormalChangeP"
+    },
+    {
+        "Index": 27,
+        "Name": "Fire DMG Bonus",
+        "Attrib": "DamageMagic1ChangeP"
+    },
+    {
+        "Index": 28,
+        "Name": "Lightning DMG Bonus",
+        "Attrib": "DamageMagic2ChangeP"
+    },
+    {
+        "Index": 29,
+        "Name": "Ice DMG Bonus",
+        "Attrib": "DamageMagic3ChangeP"
+    },
+    {
+        "Index": 30,
+        "Name": "Dark DMG Bonus",
+        "Attrib": "DamageMagic4ChangeP"
+    },
+    {
+        "Index": 31,
+        "Name": "Nihil DMG Bonus",
+        "Attrib": "DamageMagic5ChangeP"
+    },
+    {
+        "Index": 32,
+        "Name": "Extra DMG Reduction",
+        "Attrib": "AntiDamageChangeP"
+    },
+    {
+        "Index": 33,
+        "Name": "Physical RES",
+        "Attrib": "AntiDamageNormalChangeP"
+    },
+    {
+        "Index": 34,
+        "Name": "Fire DMG RES",
+        "Attrib": "AntiDamageMagic1ChangeP"
+    },
+    {
+        "Index": 35,
+        "Name": "Lightning DMG RES",
+        "Attrib": "AntiDamageMagic2ChangeP"
+    },
+    {
+        "Index": 36,
+        "Name": "Ice DMG RES",
+        "Attrib": "AntiDamageMagic3ChangeP"
+    },
+    {
+        "Index": 37,
+        "Name": "Dark DMG RES",
+        "Attrib": "AntiDamageMagic4ChangeP"
+    },
+    {
+        "Index": 38,
+        "Name": "Nihil Resistance",
+        "Attrib": "AntiDamageMagic5ChangeP"
+    },
+    {
+        "Index": 39,
+        "Name": "DMG Type Start-Mark",
+        "Attrib": "DamagePBegin"
+    },
+    {
+        "Index": 40,
+        "Name": "Mech DMG",
+        "Attrib": "Damage1P"
+    },
+    {
+        "Index": 41,
+        "Name": "Energy DMG",
+        "Attrib": "Damage2P"
+    },
+    {
+        "Index": 42,
+        "Name": "Creature DMG",
+        "Attrib": "Damage3P"
+    },
+    {
+        "Index": 43,
+        "Name": "DMG Type End-Mark",
+        "Attrib": "DamagePEnd"
+    },
+    {
+        "Index": 44,
+        "Name": "CRIT",
+        "Attrib": "Crit"
+    },
+    {
+        "Index": 45,
+        "Name": "CRIT Rate",
+        "Attrib": "CritP"
+    },
+    {
+        "Index": 46,
+        "Name": "CRIT DMG Rate",
+        "Attrib": "CritDamageP"
+    },
+    {
+        "Index": 47,
+        "Name": "Anti-CRIT Rate",
+        "Attrib": "AntiCritP"
+    },
+    {
+        "Index": 48,
+        "Name": "Anti-CRIT DMG Rate",
+        "Attrib": "AntiCritDamageP"
+    },
+    {
+        "Index": 49,
+        "Name": "Lifesteal",
+        "Attrib": "Lifesteal"
+    },
+    {
+        "Index": 50,
+        "Name": "Lifesteal Rate",
+        "Attrib": "LifestealP"
+    },
+    {
+        "Index": 51,
+        "Name": "Amplify Healing",
+        "Attrib": "CureChangeP"
+    },
+    {
+        "Index": 52,
+        "Name": "Anti-Amplify Healing",
+        "Attrib": "AntiCureChangeP"
+    },
+    {
+        "Index": 53,
+        "Name": "Super Armor - Yellow",
+        "Attrib": "Endure"
+    },
+    {
+        "Index": 54,
+        "Name": "Aggro Generation Rate",
+        "Attrib": "ThreatRateP"
+    },
+    {
+        "Index": 55,
+        "Name": "Dodge Energy",
+        "Attrib": "DodgeEnergy"
+    },
+    {
+        "Index": 56,
+        "Name": "Dodge Energy Auto Regen (Energy/s)",
+        "Attrib": "DodgeEnergyAutoRecovery"
+    },
+    {
+        "Index": 57,
+        "Name": "Custom Energy",
+        "Attrib": "CustomEnergy"
+    },
+    {
+        "Index": 58,
+        "Name": "Charge Resistance 1",
+        "Attrib": "AccuResistance1"
+    },
+    {
+        "Index": 59,
+        "Name": "Charge Resistance 2",
+        "Attrib": "AccuResistance2"
+    },
+    {
+        "Index": 60,
+        "Name": "Charge Resistance 3",
+        "Attrib": "AccuResistance3"
+    },
+    {
+        "Index": 61,
+        "Name": "Charge Resistance 4",
+        "Attrib": "AccuResistance4"
+    },
+    {
+        "Index": 62,
+        "Name": "Charge Resistance 5",
+        "Attrib": "AccuResistance5"
+    },
+    {
+        "Index": 63,
+        "Name": "Charge Resistance 6",
+        "Attrib": "AccuResistance6"
+    },
+    {
+        "Index": 64,
+        "Name": "Charge Resistance 7",
+        "Attrib": "AccuResistance7"
+    },
+    {
+        "Index": 65,
+        "Name": "Charge Resistance 8",
+        "Attrib": "AccuResistance8"
+    },
+    {
+        "Index": 66,
+        "Name": "Charge Resistance 9",
+        "Attrib": "AccuResistance9"
+    },
+    {
+        "Index": 67,
+        "Name": "Charge Resistance 10",
+        "Attrib": "AccuResistance10"
+    },
+    {
+        "Index": 68,
+        "Name": "Crouch SPD",
+        "Attrib": "SquatSpeed"
+    },
+    {
+        "Index": 69,
+        "Name": "Physical Weakness",
+        "Attrib": "NormalWeaknessP"
+    },
+    {
+        "Index": 70,
+        "Name": "Fire Weakness",
+        "Attrib": "Magic1WeaknessP"
+    },
+    {
+        "Index": 71,
+        "Name": "Lightning Weakness",
+        "Attrib": "Magic2WeaknessP"
+    },
+    {
+        "Index": 72,
+        "Name": "Ice Weakness",
+        "Attrib": "Magic3WeaknessP"
+    },
+    {
+        "Index": 73,
+        "Name": "Dark Weakness",
+        "Attrib": "Magic4WeaknessP"
+    },
+    {
+        "Index": 74,
+        "Name": "Sprint Speed (Logic Unit/Rate)",
+        "Attrib": "SprintSpeed"
+    },
+    {
+        "Index": 75,
+        "Name": "Custom Energy Group 1",
+        "Attrib": "CustomEnergyGroup1"
+    },
+    {
+        "Index": 76,
+        "Name": "Custom Energy Group 2",
+        "Attrib": "CustomEnergyGroup2"
+    },
+    {
+        "Index": 77,
+        "Name": "Custom Energy Group 3",
+        "Attrib": "CustomEnergyGroup3"
+    },
+    {
+        "Index": 78,
+        "Name": "Custom Energy Group 4",
+        "Attrib": "CustomEnergyGroup4"
+    },
+    {
+        "Index": 79,
+        "Name": "Execution",
+        "Attrib": "Hack"
+    },
+    {
+        "Index": 80,
+        "Name": "Execution Buff Rate",
+        "Attrib": "HackChangeP"
+    },
+    {
+        "Index": 81,
+        "Name": "Execution Resistance Rate",
+        "Attrib": "AntiHackChangeP"
+    },
+    {
+        "Index": 82,
+        "Name": "Remaining gauge that can activate Finishing Move",
+        "Attrib": "HackExecuteSkillTriggerP"
+    },
+    {
+        "Index": 83,
+        "Name": "Skill Multiplier Increase",
+        "Attrib": "SkillDamageChangeP"
+    },
+    {
+        "Index": 84,
+        "Name": "Dynamic Scoring Coefficient of Reduced Enemy Execution",
+        "Attrib": "ReduceHackDynamicScoringCoe"
+    },
+    {
+        "Index": 85,
+        "Name": "Dynamic Scoring Coefficient of Enemy Execution",
+        "Attrib": "BeExecutedDynamicScoringCoe"
+    },
+    {
+        "Index": 86,
+        "Name": "Dynamic scoring rate up",
+        "Attrib": "DynamicScoringScoreChangeP"
+    },
+    {
+        "Index": 87,
+        "Name": "Dynamic scoring up",
+        "Attrib": "DynamicScoringScoreChangeV"
+    },
+    {
+        "Index": 88,
+        "Name": "Dynamic scoring rate decreased per second up",
+        "Attrib": "ReduceDynamicScoringScorePerSecondChangeP"
+    },
+    {
+        "Index": 89,
+        "Name": "Dynamic scoring decreased per second up",
+        "Attrib": "ReduceDynamicScoringScorePerSecondChangeV"
+    },
+    {
+        "Index": 90,
+        "Name": "Dynamic scoring rate decreased once injured up",
+        "Attrib": "ReduceDynamicScoringScoreWhenBeDamagedChangeP"
+    },
+    {
+        "Index": 91,
+        "Name": "Dynamic scoring decreased once injured up",
+        "Attrib": "ReduceDynamicScoringScoreWhenBeDamagedChangeV"
+    },
+    {
+        "Index": 92,
+        "Name": "DMG Boost",
+        "Attrib": "DamageAmplificationFactorP"
+    },
+    {
+        "Index": 93,
+        "Name": "Basic Shield Break Efficiency",
+        "Attrib": "BrokenProtectorHp"
+    },
+    {
+        "Index": 94,
+        "Name": "Extra Shield Break Increase",
+        "Attrib": "BrokenProtectorHpChangeP"
+    },
+    {
+        "Index": 95,
+        "Name": "Extra Shield Break Resistance",
+        "Attrib": "AntiBrokenProtectorHpChangeP"
+    },
+    {
+        "Index": 96,
+        "Name": "All Elemental DMG Increase",
+        "Attrib": "AllMagicDamageChangeP"
+    },
+    {
+        "Index": 97,
+        "Name": "All Elemental Resistance Reduction",
+        "Attrib": "AllMagicAntiChangeP"
+    },
+    {
+        "Index": 98,
+        "Name": "Nihil Fragility",
+        "Attrib": "Magic5WeaknessP"
+    },
+    {
+        "Index": 99,
+        "Name": "Equilibrium Field",
+        "Attrib": "ProtectorHp"
+    },
+    {
+        "Index": 100,
+        "Name": "Skill Debuff Gauge Amplification",
+        "Attrib": "SkillAccumulatorP"
+    },
+    {
+        "Index": 101,
+        "Name": "Extra Ignition DMG Bonus",
+        "Attrib": "BurnDamageExtraP"
+    },
+    {
+        "Index": 102,
+        "Name": "Ignition DMG Resistance",
+        "Attrib": "AntiBurnDamageP"
+    },
+    {
+        "Index": 103,
+        "Name": "Ignition Gauge Efficiency Increase",
+        "Attrib": "BurnAccumulatorP"
+    },
+    {
+        "Index": 104,
+        "Name": "Ignition Gauge Efficiency Resistance",
+        "Attrib": "BurnAntiAccumulatorP"
+    },
+    {
+        "Index": 105,
+        "Name": "Swordwave Gauge Efficiency Increase",
+        "Attrib": "SwordPowerAccumulatorP"
+    },
+    {
+        "Index": 106,
+        "Name": "Swordwave Gauge Efficiency Resistance",
+        "Attrib": "SwordPowerAntiAccumulatorP"
+    },
+    {
+        "Index": 107,
+        "Name": "Dimension Slash Base DMG Bonus",
+        "Attrib": "SwordPowerDamageP"
+    },
+    {
+        "Index": 108,
+        "Name": "Dimension Slash Extra DMG Bonus",
+        "Attrib": "SwordPowerDamageExtraP"
+    },
+    {
+        "Index": 109,
+        "Name": "Dimension Slash DMG Resistance",
+        "Attrib": "AntiSwordPowerP"
+    },
+    {
+        "Index": 110,
+        "Name": "Dimension Slash Fragility",
+        "Attrib": "SwordPowerWeaknessP"
+    },
+    {
+        "Index": 111,
+        "Name": "Ignition DMG Fragility",
+        "Attrib": "BurnDamageWeaknessP"
+    },
+    {
+        "Index": 112,
+        "Name": "Lightning Shield Gauge Efficiency Increase",
+        "Attrib": "ThunderShieldAccumulatorP"
+    },
+    {
+        "Index": 113,
+        "Name": "Lightning Shield Gauge Efficiency Resistance",
+        "Attrib": "ThunderShieldAntiAccumulatorP"
+    },
+    {
+        "Index": 114,
+        "Name": "Lightning Shield Extra DMG Bonus",
+        "Attrib": "ThunderShieldDamageExtraP"
+    },
+    {
+        "Index": 115,
+        "Name": "Lightning Shield DMG Resistance",
+        "Attrib": "AntiThunderShieldP"
+    },
+    {
+        "Index": 116,
+        "Name": "Lightning Shield DMG Fragility",
+        "Attrib": "ThunderShieldWeaknessP"
+    },
+    {
+        "Index": 117,
+        "Name": "Congelation Gauge Efficiency Increase",
+        "Attrib": "FreezeAccumulatorP"
+    },
+    {
+        "Index": 118,
+        "Name": "Congelation Gauge Efficiency Resistance",
+        "Attrib": "FreezeAntiAccumulatorP"
+    },
+    {
+        "Index": 119,
+        "Name": "Congelation Extra DMG Bonus",
+        "Attrib": "FreezeDamageExtraP"
+    },
+    {
+        "Index": 120,
+        "Name": "Congelation DMG Resistance",
+        "Attrib": "AntiFreezeP"
+    },
+    {
+        "Index": 121,
+        "Name": "Congelation DMG Fragility",
+        "Attrib": "FreezeWeaknessP"
+    },
+    {
+        "Index": 122,
+        "Name": "Speed (Walk and Jump)",
+        "Attrib": "IdleJumpSpeed"
+    },
+    {
+        "Index": 123,
+        "Name": "Speed (Run and Jump)",
+        "Attrib": "RunJumpSpeed"
+    },
+    {
+        "Index": 124,
+        "Name": "Speed (Leap Turning)",
+        "Attrib": "JumpTurnRoundSpeed"
+    },
+    {
+        "Index": 125,
+        "Name": "Rigid Landing",
+        "Attrib": "LandingFreeze"
+    },
+    {
+        "Index": 126,
+        "Name": "HP Lock",
+        "Attrib": "LockedLife"
+    },
+    {
+        "Index": 127,
+        "Name": "Extra Radiation DMG Bonus",
+        "Attrib": "FalloutDamageExtraP"
+    },
+    {
+        "Index": 128,
+        "Name": "Radiation DMG Resistance",
+        "Attrib": "FalloutAntiDamageP"
+    },
+    {
+        "Index": 129,
+        "Name": "Radiation Weakness",
+        "Attrib": "FalloutWeaknessP"
+    },
+    {
+        "Index": 130,
+        "Name": "Radiation Gauge Efficiency Increase",
+        "Attrib": "FalloutAccumulatorP"
+    },
+    {
+        "Index": 131,
+        "Name": "Radiation Gauge Efficiency Resistance",
+        "Attrib": "FalloutAntiAccumulatorP"
+    },
+    {
+        "Index": 132,
+        "Name": "Jumping Acceleration",
+        "Attrib": "JumpAcceleration"
+    },
+    {
+        "Index": 133,
+        "Name": "Temp HP",
+        "Attrib": "BloodBorne"
+    },
+    {
+        "Index": 134,
+        "Name": "Temp HP Decay (ms)",
+        "Attrib": "BloodBorneAttenuationTime"
+    },
+    {
+        "Index": 135,
+        "Name": "Temp HP Deduction Rate (/s)",
+        "Attrib": "BloodBorneDeductSpeed"
+    },
+    {
+        "Index": 136,
+        "Name": "Temp HP Recovery CD (ms)",
+        "Attrib": "BloodBorneResetCD"
+    },
+    {
+        "Index": 137,
+        "Name": "Temp HP Conversion Rate",
+        "Attrib": "BloodBorneChangeRateP"
+    },
+    {
+        "Index": 138,
+        "Name": "LightNoiseAccumulatorP",
+        "Attrib": "LightNoiseAccumulatorP"
+    },
+    {
+        "Index": 139,
+        "Name": "LightNoiseAntiAccumulatorP",
+        "Attrib": "LightNoiseAntiAccumulatorP"
+    },
+    {
+        "Index": 140,
+        "Name": "LightNoiseDamageExtraP",
+        "Attrib": "LightNoiseDamageExtraP"
+    },
+    {
+        "Index": 141,
+        "Name": "AntiLightNoiseP",
+        "Attrib": "AntiLightNoiseP"
+    },
+    {
+        "Index": 142,
+        "Name": "LightNoiseWeaknessP",
+        "Attrib": "LightNoiseWeaknessP"
+    },
+    {
+        "Index": 143,
+        "Name": "DamageChangePEx",
+        "Attrib": "DamageChangePEx"
+    },
+    {
+        "Index": 144,
+        "Name": "Phylotree Energy 1",
+        "Attrib": "LifeEnergy1"
+    },
+    {
+        "Index": 145,
+        "Name": "Phylotree Energy 2",
+        "Attrib": "LifeEnergy2"
+    },
+    {
+        "Index": 146,
+        "Name": "Phylotree Energy 3",
+        "Attrib": "LifeEnergy3"
+    },
+    {
+        "Index": 147,
+        "Name": "Phylotree Energy 4",
+        "Attrib": "LifeEnergy4"
+    },
+    {
+        "Index": 148,
+        "Name": "Phylotree Energy 5",
+        "Attrib": "LifeEnergy5"
+    },
+    {
+        "Index": 149,
+        "Name": "Phylotree Energy 6",
+        "Attrib": "LifeEnergy6"
+    },
+    {
+        "Index": 150,
+        "Name": "Phylotree Energy 7",
+        "Attrib": "LifeEnergy7"
+    },
+    {
+        "Index": 151,
+        "Name": "Phylotree Energy 8",
+        "Attrib": "LifeEnergy8"
+    },
+    {
+        "Index": 152,
+        "Name": "Phylotree Energy 9",
+        "Attrib": "LifeEnergy9"
+    },
+    {
+        "Index": 153,
+        "Name": "Phylotree Energy 10",
+        "Attrib": "LifeEnergy10"
+    }
+]

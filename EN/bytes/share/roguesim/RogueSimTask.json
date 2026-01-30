@@ -1,0 +1,767 @@
+[
+    {
+        "Id": 101,
+        "TaskName": "City Mission: Acquisition of Golden Shells",
+        "TaskDesc": "Earn a total of {0} Golden Shells",
+        "Schedule": 1,
+        "ConditionId": 1,
+        "ConditionParams": "[20000]",
+        "BuffIds": null
+    },
+    {
+        "Id": 102,
+        "TaskName": "City Mission: Item Production",
+        "TaskDesc": "Produce a total of {0} items",
+        "Schedule": 1,
+        "ConditionId": 3,
+        "ConditionParams": "[1, 0, 200]",
+        "BuffIds": null
+    },
+    {
+        "Id": 103,
+        "TaskName": "City Mission: Selling Items",
+        "TaskDesc": "Sell a total of {0} items",
+        "Schedule": 1,
+        "ConditionId": 3,
+        "ConditionParams": "[2, 0, 200]",
+        "BuffIds": null
+    },
+    {
+        "Id": 201,
+        "TaskName": "City Mission: Acquisition of Golden Shells",
+        "TaskDesc": "Earn a total of {0} Golden Shells",
+        "Schedule": 1,
+        "ConditionId": 1,
+        "ConditionParams": "[50000]",
+        "BuffIds": null
+    },
+    {
+        "Id": 202,
+        "TaskName": "City Mission: Item Production",
+        "TaskDesc": "Produce a total of {0} items",
+        "Schedule": 1,
+        "ConditionId": 3,
+        "ConditionParams": "[1, 0, 500]",
+        "BuffIds": null
+    },
+    {
+        "Id": 203,
+        "TaskName": "City Mission: Selling Items",
+        "TaskDesc": "Sell a total of {0} items",
+        "Schedule": 1,
+        "ConditionId": 3,
+        "ConditionParams": "[2, 0, 500]",
+        "BuffIds": null
+    },
+    {
+        "Id": 211,
+        "TaskName": "Area 2 Main City Mission 4 Scrapped",
+        "TaskDesc": "Sell a total of item A x{0} scrapped",
+        "Schedule": 1,
+        "ConditionId": 3,
+        "ConditionParams": "[2, 1, 100]",
+        "BuffIds": null
+    },
+    {
+        "Id": 212,
+        "TaskName": "Area 2 Main City Mission 5 Scrapped",
+        "TaskDesc": "Sell a total of item B x{0} scrapped",
+        "Schedule": 1,
+        "ConditionId": 3,
+        "ConditionParams": "[2, 2, 100]",
+        "BuffIds": null
+    },
+    {
+        "Id": 213,
+        "TaskName": "Area 2 Main City Mission 6 Scrapped",
+        "TaskDesc": "Sell a total of item C x{0} scrapped",
+        "Schedule": 1,
+        "ConditionId": 3,
+        "ConditionParams": "[2, 3, 100]",
+        "BuffIds": null
+    },
+    {
+        "Id": 301,
+        "TaskName": "City Mission: Acquisition of Golden Shells",
+        "TaskDesc": "Earn a total of {0} Golden Shells",
+        "Schedule": 1,
+        "ConditionId": 1,
+        "ConditionParams": "[150000]",
+        "BuffIds": null
+    },
+    {
+        "Id": 302,
+        "TaskName": "City Mission: Item Production",
+        "TaskDesc": "Produce a total of {0} items",
+        "Schedule": 1,
+        "ConditionId": 3,
+        "ConditionParams": "[1, 0, 1500]",
+        "BuffIds": null
+    },
+    {
+        "Id": 303,
+        "TaskName": "City Mission: Selling Items",
+        "TaskDesc": "Sell a total of {0} items",
+        "Schedule": 1,
+        "ConditionId": 3,
+        "ConditionParams": "[2, 0, 1500]",
+        "BuffIds": null
+    },
+    {
+        "Id": 311,
+        "TaskName": "Area 3 Main City Mission 4 Scrapped",
+        "TaskDesc": "Produce item A x{0} at a time scrapped",
+        "Schedule": 1,
+        "ConditionId": 2,
+        "ConditionParams": "[1, 1, 100, 1]",
+        "BuffIds": null
+    },
+    {
+        "Id": 312,
+        "TaskName": "Area 3 Main City Mission 5 Scrapped",
+        "TaskDesc": "Produce item B x{0} at a time scrapped",
+        "Schedule": 1,
+        "ConditionId": 2,
+        "ConditionParams": "[1, 2, 100, 1]",
+        "BuffIds": null
+    },
+    {
+        "Id": 313,
+        "TaskName": "Area 3 Main City Mission 6 Scrapped",
+        "TaskDesc": "Produce item C x{0} at a time scrapped",
+        "Schedule": 1,
+        "ConditionId": 2,
+        "ConditionParams": "[1, 3, 100, 1]",
+        "BuffIds": null
+    },
+    {
+        "Id": 321,
+        "TaskName": "Area 3 Main City Mission 7 Scrapped",
+        "TaskDesc": "Sell item A x{0} at a time scrapped",
+        "Schedule": 1,
+        "ConditionId": 2,
+        "ConditionParams": "[2, 1, 100, 1]",
+        "BuffIds": null
+    },
+    {
+        "Id": 322,
+        "TaskName": "Area 3 Main City Mission 8 Scrapped",
+        "TaskDesc": "Sell item B x{0} at a time scrapped",
+        "Schedule": 1,
+        "ConditionId": 2,
+        "ConditionParams": "[2, 2, 100, 1]",
+        "BuffIds": null
+    },
+    {
+        "Id": 323,
+        "TaskName": "Area 3 Main City Mission 9 Scrapped",
+        "TaskDesc": "Sell item C x{0} at a time scrapped",
+        "Schedule": 1,
+        "ConditionId": 2,
+        "ConditionParams": "[2, 3, 100, 1]",
+        "BuffIds": null
+    },
+    {
+        "Id": 331,
+        "TaskName": "City Mission: Single Production",
+        "TaskDesc": "Produce {0} items at a time",
+        "Schedule": 1,
+        "ConditionId": 2,
+        "ConditionParams": "[1, 0, 500, 1]",
+        "BuffIds": null
+    },
+    {
+        "Id": 332,
+        "TaskName": "City Mission: Single Sale",
+        "TaskDesc": "Sell a total of {0} items at a time",
+        "Schedule": 1,
+        "ConditionId": 2,
+        "ConditionParams": "[2, 0, 1000, 1]",
+        "BuffIds": null
+    },
+    {
+        "Id": 1010101,
+        "TaskName": "<color=#a46800>Start City (2\u2605)</color>",
+        "TaskDesc": "Clear all exploration content on this island",
+        "Schedule": 2,
+        "ConditionId": 9,
+        "ConditionParams": "[1102, 2]",
+        "BuffIds": null
+    },
+    {
+        "Id": 1010201,
+        "TaskName": "<color=#a46800>Start City (3\u2605)</color>",
+        "TaskDesc": "Sell a total of {0} items",
+        "Schedule": 40,
+        "ConditionId": 3,
+        "ConditionParams": "[2, 0, 40]",
+        "BuffIds": null
+    },
+    {
+        "Id": 1020101,
+        "TaskName": "<color=#a46800>Newbie City (2\u2605)</color>",
+        "TaskDesc": "Clear all exploration content on this island",
+        "Schedule": 2,
+        "ConditionId": 9,
+        "ConditionParams": "[1103, 2]",
+        "BuffIds": null
+    },
+    {
+        "Id": 1020201,
+        "TaskName": "<color=#a46800>Newbie City (3\u2605)</color>",
+        "TaskDesc": "Sell a total of {0} items",
+        "Schedule": 80,
+        "ConditionId": 3,
+        "ConditionParams": "[2, 0, 80]",
+        "BuffIds": null
+    },
+    {
+        "Id": 2010101,
+        "TaskName": "<color=#a46800>Fieryjoy City (2\u2605)</color>",
+        "TaskDesc": "Clear all exploration content on this island",
+        "Schedule": 3,
+        "ConditionId": 9,
+        "ConditionParams": "[1212, 3]",
+        "BuffIds": null
+    },
+    {
+        "Id": 2010102,
+        "TaskName": "<color=#a46800>Fieryjoy City (2\u2605)</color>",
+        "TaskDesc": "Produce a total of {0} <color=#a46800>Coconuts</color>",
+        "Schedule": 100,
+        "ConditionId": 3,
+        "ConditionParams": "[1, 1, 100]",
+        "BuffIds": null
+    },
+    {
+        "Id": 2010201,
+        "TaskName": "<color=#a46800>Fieryjoy City (3\u2605)</color>",
+        "TaskDesc": "Clear all exploration content on this island",
+        "Schedule": 6,
+        "ConditionId": 9,
+        "ConditionParams": "[1212, 6]",
+        "BuffIds": null
+    },
+    {
+        "Id": 2010202,
+        "TaskName": "<color=#a46800>Fieryjoy City (3\u2605)</color>",
+        "TaskDesc": "Sell a total of {0} items",
+        "Schedule": 200,
+        "ConditionId": 3,
+        "ConditionParams": "[2, 0, 200]",
+        "BuffIds": null
+    },
+    {
+        "Id": 2020101,
+        "TaskName": "<color=#a46800>Coconut City (2\u2605)</color>",
+        "TaskDesc": "Sell a total of {0} <color=#a46800>Coconuts</color>",
+        "Schedule": 400,
+        "ConditionId": 3,
+        "ConditionParams": "[2, 1, 400]",
+        "BuffIds": null
+    },
+    {
+        "Id": 2020201,
+        "TaskName": "<color=#a46800>Coconut City (3\u2605)</color>",
+        "TaskDesc": "Clear all exploration content on this island",
+        "Schedule": 6,
+        "ConditionId": 9,
+        "ConditionParams": "[1213, 6]",
+        "BuffIds": null
+    },
+    {
+        "Id": 2020202,
+        "TaskName": "<color=#a46800>Coconut City (3\u2605)</color>",
+        "TaskDesc": "Construct a total of {0} buildings",
+        "Schedule": 3,
+        "ConditionId": 10,
+        "ConditionParams": "[0, 3]",
+        "BuffIds": null
+    },
+    {
+        "Id": 2030101,
+        "TaskName": "<color=#a46800>Ice City (2\u2605)</color>",
+        "TaskDesc": "Produce a total of {0} <color=#a46800>Coconuts</color>",
+        "Schedule": 300,
+        "ConditionId": 3,
+        "ConditionParams": "[1, 1, 300]",
+        "BuffIds": null
+    },
+    {
+        "Id": 2030201,
+        "TaskName": "<color=#a46800>Ice City (3\u2605)</color>",
+        "TaskDesc": "Clear all exploration content on this island",
+        "Schedule": 5,
+        "ConditionId": 9,
+        "ConditionParams": "[1217, 5]",
+        "BuffIds": null
+    },
+    {
+        "Id": 2030202,
+        "TaskName": "<color=#a46800>Ice City (3\u2605)</color>",
+        "TaskDesc": "Construct a total of {0} buildings",
+        "Schedule": 5,
+        "ConditionId": 10,
+        "ConditionParams": "[0, 5]",
+        "BuffIds": null
+    },
+    {
+        "Id": 2040101,
+        "TaskName": "<color=#a46800>Expensive City (2\u2605)</color>",
+        "TaskDesc": "Earn a total of {0} Golden Shells",
+        "Schedule": 200000,
+        "ConditionId": 1,
+        "ConditionParams": "[200000]",
+        "BuffIds": null
+    },
+    {
+        "Id": 2040201,
+        "TaskName": "<color=#a46800>Expensive City (3\u2605)</color>",
+        "TaskDesc": "Produce {0} <color=#a46800>Petroleum</color> in a single order",
+        "Schedule": 1,
+        "ConditionId": 2,
+        "ConditionParams": "[1, 3, 120, 1]",
+        "BuffIds": null
+    },
+    {
+        "Id": 2040202,
+        "TaskName": "<color=#a46800>Expensive City (3\u2605)</color>",
+        "TaskDesc": "Sell {0} <color=#a46800>Wood</color> in a single sale",
+        "Schedule": 1,
+        "ConditionId": 2,
+        "ConditionParams": "[2, 2, 1000, 1]",
+        "BuffIds": null
+    },
+    {
+        "Id": 3010101,
+        "TaskName": "<color=#a46800>Moderation City (2\u2605)</color>",
+        "TaskDesc": "Clear all exploration content on this island",
+        "Schedule": 3,
+        "ConditionId": 9,
+        "ConditionParams": "[1302, 3]",
+        "BuffIds": null
+    },
+    {
+        "Id": 3010102,
+        "TaskName": "<color=#a46800>Moderation City (2\u2605)</color>",
+        "TaskDesc": "Earn a total of {0} Golden Shells",
+        "Schedule": 5000,
+        "ConditionId": 1,
+        "ConditionParams": "[5000]",
+        "BuffIds": null
+    },
+    {
+        "Id": 3010201,
+        "TaskName": "<color=#a46800>Moderation City (3\u2605)</color>",
+        "TaskDesc": "Clear all exploration content on this island",
+        "Schedule": 6,
+        "ConditionId": 9,
+        "ConditionParams": "[1302, 6]",
+        "BuffIds": null
+    },
+    {
+        "Id": 3010202,
+        "TaskName": "<color=#a46800>Moderation City (3\u2605)</color>",
+        "TaskDesc": "Earn a total of {0} Golden Shells",
+        "Schedule": 30000,
+        "ConditionId": 1,
+        "ConditionParams": "[30000]",
+        "BuffIds": null
+    },
+    {
+        "Id": 3020101,
+        "TaskName": "<color=#a46800>Coconut Wood City (2\u2605)</color>",
+        "TaskDesc": "Sell a total of {0} items",
+        "Schedule": 250,
+        "ConditionId": 3,
+        "ConditionParams": "[2, 0, 250]",
+        "BuffIds": null
+    },
+    {
+        "Id": 3020201,
+        "TaskName": "<color=#a46800>Coconut Wood City (3\u2605)</color>",
+        "TaskDesc": "Sell a total of {0} <color=#a46800>Wood</color>",
+        "Schedule": 1250,
+        "ConditionId": 3,
+        "ConditionParams": "[2, 2, 1250]",
+        "BuffIds": null
+    },
+    {
+        "Id": 3020202,
+        "TaskName": "<color=#a46800>Coconut Wood City (3\u2605)</color>",
+        "TaskDesc": "Sell a total of {0} <color=#a46800>Coconuts</color>",
+        "Schedule": 300,
+        "ConditionId": 3,
+        "ConditionParams": "[2, 1, 300]",
+        "BuffIds": null
+    },
+    {
+        "Id": 3030101,
+        "TaskName": "<color=#a46800>Oil City (2\u2605)</color>",
+        "TaskDesc": "Earn {0} or more Golden Shells in a single quarter",
+        "Schedule": 60000,
+        "ConditionId": 12,
+        "ConditionParams": "[0, 1, 60000]",
+        "BuffIds": null
+    },
+    {
+        "Id": 3030201,
+        "TaskName": "<color=#a46800>Oil City (3\u2605)</color>",
+        "TaskDesc": "Earn {0} or more Golden Shells in a single sale of <color=#a46800>Petroleum</color>",
+        "Schedule": 150000,
+        "ConditionId": 12,
+        "ConditionParams": "[3, 1, 150000]",
+        "BuffIds": null
+    },
+    {
+        "Id": 3030202,
+        "TaskName": "<color=#a46800>Oil City (3\u2605)</color>",
+        "TaskDesc": "Produce {0} <color=#a46800>Petroleum</color> in a single order",
+        "Schedule": 1,
+        "ConditionId": 2,
+        "ConditionParams": "[1, 3, 150, 1]",
+        "BuffIds": null
+    },
+    {
+        "Id": 3040101,
+        "TaskName": "<color=#a46800>Builder City (2\u2605)</color>",
+        "TaskDesc": "Construct a total of {0} buildings",
+        "Schedule": 10,
+        "ConditionId": 10,
+        "ConditionParams": "[0, 10]",
+        "BuffIds": null
+    },
+    {
+        "Id": 3040201,
+        "TaskName": "<color=#a46800>Builder City (3\u2605)</color>",
+        "TaskDesc": "Construct a total of {0} buildings",
+        "Schedule": 14,
+        "ConditionId": 10,
+        "ConditionParams": "[0, 14]",
+        "BuffIds": null
+    },
+    {
+        "Id": 4010101,
+        "TaskName": "<color=#a46800>Cogs City (2\u2605)</color>",
+        "TaskDesc": "Purchase a total of {0} islands",
+        "Schedule": 2,
+        "ConditionId": 7,
+        "ConditionParams": "[2]",
+        "BuffIds": null
+    },
+    {
+        "Id": 4010201,
+        "TaskName": "<color=#a46800>Cogs City (3\u2605)</color>",
+        "TaskDesc": "Purchase a total of {0} islands",
+        "Schedule": 4,
+        "ConditionId": 7,
+        "ConditionParams": "[4]",
+        "BuffIds": null
+    },
+    {
+        "Id": 4020101,
+        "TaskName": "<color=#a46800>Many City (2\u2605)</color>",
+        "TaskDesc": "Construct a total of {0} buildings",
+        "Schedule": 4,
+        "ConditionId": 10,
+        "ConditionParams": "[0, 4]",
+        "BuffIds": null
+    },
+    {
+        "Id": 4020201,
+        "TaskName": "<color=#a46800>Many City (3\u2605)</color>",
+        "TaskDesc": "Construct a total of {0} buildings",
+        "Schedule": 8,
+        "ConditionId": 10,
+        "ConditionParams": "[0, 8]",
+        "BuffIds": null
+    },
+    {
+        "Id": 4030101,
+        "TaskName": "<color=#a46800>Finger Heart City (2\u2605)</color>",
+        "TaskDesc": "Produce a total of {0} items",
+        "Schedule": 400,
+        "ConditionId": 3,
+        "ConditionParams": "[1, 0, 400]",
+        "BuffIds": null
+    },
+    {
+        "Id": 4030201,
+        "TaskName": "<color=#a46800>Finger Heart City (3\u2605)</color>",
+        "TaskDesc": "Earn {0} or more Golden Shells in the gross sale of <color=#a46800>Petroleum</color>",
+        "Schedule": 100000,
+        "ConditionId": 5,
+        "ConditionParams": "[3, 100000]",
+        "BuffIds": null
+    },
+    {
+        "Id": 4040101,
+        "TaskName": "<color=#a46800>Lucky City (2\u2605)</color>",
+        "TaskDesc": "Earn a total of {0} Golden Shells",
+        "Schedule": 150000,
+        "ConditionId": 1,
+        "ConditionParams": "[150000]",
+        "BuffIds": null
+    },
+    {
+        "Id": 4040201,
+        "TaskName": "<color=#a46800>Lucky City (3\u2605)</color>",
+        "TaskDesc": "Earn a total of {0} Golden Shells",
+        "Schedule": 300000,
+        "ConditionId": 1,
+        "ConditionParams": "[300000]",
+        "BuffIds": null
+    },
+    {
+        "Id": 4050101,
+        "TaskName": "<color=#a46800>Slacker City (2\u2605)</color>",
+        "TaskDesc": "Produce {0} or more <color=#a46800>Coconuts</color> in a single order",
+        "Schedule": 1000,
+        "ConditionId": 13,
+        "ConditionParams": "[1, 1, 1000]",
+        "BuffIds": null
+    },
+    {
+        "Id": 4050201,
+        "TaskName": "<color=#a46800>Slacker City (3\u2605)</color>",
+        "TaskDesc": "Produce {0} or more <color=#a46800>Wood</color> in a single order",
+        "Schedule": 2000,
+        "ConditionId": 13,
+        "ConditionParams": "[2, 1, 2000]",
+        "BuffIds": null
+    },
+    {
+        "Id": 4060101,
+        "TaskName": "<color=#a46800>Fried Chicken City (2\u2605)</color>",
+        "TaskDesc": "Earn {0} or more Golden Shells in a single quarter",
+        "Schedule": 500000,
+        "ConditionId": 12,
+        "ConditionParams": "[0, 1, 500000]",
+        "BuffIds": null
+    },
+    {
+        "Id": 4060201,
+        "TaskName": "<color=#a46800>Fried Chicken City (3\u2605)</color>",
+        "TaskDesc": "Earn {0} or more Golden Shells in a single quarter",
+        "Schedule": 800000,
+        "ConditionId": 12,
+        "ConditionParams": "[0, 1, 800000]",
+        "BuffIds": null
+    },
+    {
+        "Id": 5010101,
+        "TaskName": "<color=#a46800>Cross City (2\u2605)</color>",
+        "TaskDesc": "Purchase a total of {0} islands",
+        "Schedule": 2,
+        "ConditionId": 7,
+        "ConditionParams": "[2]",
+        "BuffIds": null
+    },
+    {
+        "Id": 5010201,
+        "TaskName": "<color=#a46800>Cross City (3\u2605)</color>",
+        "TaskDesc": "Purchase a total of {0} islands",
+        "Schedule": 3,
+        "ConditionId": 7,
+        "ConditionParams": "[3]",
+        "BuffIds": null
+    },
+    {
+        "Id": 5020101,
+        "TaskName": "<color=#a46800>Polarized City (2\u2605)</color>",
+        "TaskDesc": "Sell a total of {0} items",
+        "Schedule": 400,
+        "ConditionId": 3,
+        "ConditionParams": "[2, 0, 400]",
+        "BuffIds": null
+    },
+    {
+        "Id": 5020201,
+        "TaskName": "<color=#a46800>Polarized City (3\u2605)</color>",
+        "TaskDesc": "Sell a total of {0} <color=#a46800>Petroleum</color>",
+        "Schedule": 250,
+        "ConditionId": 3,
+        "ConditionParams": "[2, 3, 250]",
+        "BuffIds": null
+    },
+    {
+        "Id": 5030101,
+        "TaskName": "<color=#a46800>Forest City (2\u2605)</color>",
+        "TaskDesc": "Trigger {0} CRITs in trade",
+        "Schedule": 2,
+        "ConditionId": 11,
+        "ConditionParams": "[0, 2]",
+        "BuffIds": null
+    },
+    {
+        "Id": 5030201,
+        "TaskName": "<color=#a46800>Forest City (3\u2605)</color>",
+        "TaskDesc": "Earn {0} or more Golden Shells in a single quarter",
+        "Schedule": 300000,
+        "ConditionId": 12,
+        "ConditionParams": "[0, 1, 300000]",
+        "BuffIds": null
+    },
+    {
+        "Id": 5040101,
+        "TaskName": "<color=#a46800>South Polar City (2\u2605)</color>",
+        "TaskDesc": "Earn a total of {0} Golden Shells",
+        "Schedule": 300000,
+        "ConditionId": 1,
+        "ConditionParams": "[300000]",
+        "BuffIds": null
+    },
+    {
+        "Id": 5040201,
+        "TaskName": "<color=#a46800>South Polar City (3\u2605)</color>",
+        "TaskDesc": "Earn a total of {0} Golden Shells",
+        "Schedule": 500000,
+        "ConditionId": 1,
+        "ConditionParams": "[500000]",
+        "BuffIds": null
+    },
+    {
+        "Id": 5050101,
+        "TaskName": "<color=#a46800>Left Gemini City (2\u2605)</color>",
+        "TaskDesc": "Construct a total of {0} buildings",
+        "Schedule": 20,
+        "ConditionId": 10,
+        "ConditionParams": "[0, 20]",
+        "BuffIds": null
+    },
+    {
+        "Id": 5050201,
+        "TaskName": "<color=#a46800>Left Gemini City (3\u2605)</color>",
+        "TaskDesc": "Construct a total of {0} buildings",
+        "Schedule": 30,
+        "ConditionId": 10,
+        "ConditionParams": "[0, 30]",
+        "BuffIds": null
+    },
+    {
+        "Id": 5060101,
+        "TaskName": "<color=#a46800>Right Gemini City 6 (2\u2605)</color>",
+        "TaskDesc": "Earn {0} or more Golden Shells in a single quarter",
+        "Schedule": 500000,
+        "ConditionId": 12,
+        "ConditionParams": "[0, 1, 500000]",
+        "BuffIds": null
+    },
+    {
+        "Id": 5060201,
+        "TaskName": "<color=#a46800>Right Gemini City 6 (3\u2605)</color>",
+        "TaskDesc": "Earn {0} or more Golden Shells in a single quarter",
+        "Schedule": 1000000,
+        "ConditionId": 12,
+        "ConditionParams": "[0, 1, 1000000]",
+        "BuffIds": null
+    },
+    {
+        "Id": 6010101,
+        "TaskName": "<color=#a46800>Nanami City (2\u2605)</color>",
+        "TaskDesc": "Purchase a total of {0} islands",
+        "Schedule": 2,
+        "ConditionId": 7,
+        "ConditionParams": "[2]",
+        "BuffIds": null
+    },
+    {
+        "Id": 6010201,
+        "TaskName": "<color=#a46800>Nanami City (3\u2605)</color>",
+        "TaskDesc": "Purchase a total of {0} islands",
+        "Schedule": 3,
+        "ConditionId": 7,
+        "ConditionParams": "[3]",
+        "BuffIds": null
+    },
+    {
+        "Id": 6020101,
+        "TaskName": "<color=#a46800>Changyu City (2\u2605)</color>",
+        "TaskDesc": "Produce a total of {0} <color=#a46800>Wood</color>",
+        "Schedule": 1500,
+        "ConditionId": 3,
+        "ConditionParams": "[1, 2, 1500]",
+        "BuffIds": null
+    },
+    {
+        "Id": 6020201,
+        "TaskName": "<color=#a46800>Changyu City (3\u2605)</color>",
+        "TaskDesc": "Earn {0} or more Golden Shells in the gross sale of <color=#a46800>Wood</color>",
+        "Schedule": 100000,
+        "ConditionId": 5,
+        "ConditionParams": "[2, 100000]",
+        "BuffIds": null
+    },
+    {
+        "Id": 6030101,
+        "TaskName": "<color=#a46800>Sophia City (2\u2605)</color>",
+        "TaskDesc": "Produce a total of {0} <color=#a46800>Petroleum</color>",
+        "Schedule": 350,
+        "ConditionId": 3,
+        "ConditionParams": "[1, 3, 350]",
+        "BuffIds": null
+    },
+    {
+        "Id": 6030201,
+        "TaskName": "<color=#a46800>Sophia City (3\u2605)</color>",
+        "TaskDesc": "Earn {0} or more Golden Shells in the gross sale of <color=#a46800>Petroleum</color>",
+        "Schedule": 100000,
+        "ConditionId": 5,
+        "ConditionParams": "[3, 100000]",
+        "BuffIds": null
+    },
+    {
+        "Id": 6040101,
+        "TaskName": "<color=#a46800>Ayla City (2\u2605)</color>",
+        "TaskDesc": "Produce a total of {0} <color=#a46800>Coconuts</color>",
+        "Schedule": 1000,
+        "ConditionId": 3,
+        "ConditionParams": "[1, 1, 1000]",
+        "BuffIds": null
+    },
+    {
+        "Id": 6040201,
+        "TaskName": "<color=#a46800>Ayla City (3\u2605)</color>",
+        "TaskDesc": "Earn {0} or more Golden Shells in the gross sale of <color=#a46800>Coconuts</color>",
+        "Schedule": 100000,
+        "ConditionId": 5,
+        "ConditionParams": "[1, 100000]",
+        "BuffIds": null
+    },
+    {
+        "Id": 6050101,
+        "TaskName": "<color=#a46800>Karenina City (2\u2605)</color>",
+        "TaskDesc": "Construct a total of {0} buildings",
+        "Schedule": 3,
+        "ConditionId": 10,
+        "ConditionParams": "[0, 3]",
+        "BuffIds": null
+    },
+    {
+        "Id": 6050201,
+        "TaskName": "<color=#a46800>Karenina City (3\u2605)</color>",
+        "TaskDesc": "Construct a total of {0} buildings",
+        "Schedule": 6,
+        "ConditionId": 10,
+        "ConditionParams": "[0, 6]",
+        "BuffIds": null
+    },
+    {
+        "Id": 6060101,
+        "TaskName": "<color=#a46800>Secret City (2\u2605)</color>",
+        "TaskDesc": "Earn {0} or more Golden Shells in a single quarter",
+        "Schedule": 100000,
+        "ConditionId": 12,
+        "ConditionParams": "[0, 1, 100000]",
+        "BuffIds": null
+    },
+    {
+        "Id": 6060201,
+        "TaskName": "<color=#a46800>Secret City (3\u2605)</color>",
+        "TaskDesc": "Earn {0} or more Golden Shells in a single quarter",
+        "Schedule": 200000,
+        "ConditionId": 12,
+        "ConditionParams": "[0, 1, 200000]",
+        "BuffIds": null
+    }
+]

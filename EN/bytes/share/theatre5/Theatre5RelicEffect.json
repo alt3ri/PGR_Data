@@ -1,0 +1,620 @@
+[
+    {
+        "Id": 1,
+        "Type": 2,
+        "Desc": "Universal - Draw Green Pool",
+        "Param": "[1001]"
+    },
+    {
+        "Id": 2,
+        "Type": 2,
+        "Desc": "Universal - Draw Blue Pool",
+        "Param": "[1002]"
+    },
+    {
+        "Id": 3,
+        "Type": 2,
+        "Desc": "Universal - Draw Purple Pool",
+        "Param": "[1003]"
+    },
+    {
+        "Id": 4,
+        "Type": 2,
+        "Desc": "Universal - Draw Orange Pool",
+        "Param": "[1004]"
+    },
+    {
+        "Id": 1001,
+        "Type": 4,
+        "Desc": "40001 - Gain 7 Gold Coins",
+        "Param": "[7, 0, 0]"
+    },
+    {
+        "Id": 1002,
+        "Type": 4,
+        "Desc": "40001 - Gold Coin -1",
+        "Param": "[-1, 0, 0]"
+    },
+    {
+        "Id": 1003,
+        "Type": 4,
+        "Desc": "40004 - Gain 2 Gold Coins",
+        "Param": "[2, 0, 0]"
+    },
+    {
+        "Id": 1004,
+        "Type": 4,
+        "Desc": "40004 - Gain 1 Gold Coin",
+        "Param": "[1, 0, 0]"
+    },
+    {
+        "Id": 1005,
+        "Type": 4,
+        "Desc": "40004 - Gain 4 Gold Coins",
+        "Param": "[4, 0, 0]"
+    },
+    {
+        "Id": 1006,
+        "Type": 5,
+        "Desc": "40005 - Gain 1 free refresh",
+        "Param": "[1, 0, 0]"
+    },
+    {
+        "Id": 1007,
+        "Type": 6,
+        "Desc": "40006-\u83b7\u5f978\u70b9\u7ecf\u9a8c",
+        "Param": "[8, 0, 0]"
+    },
+    {
+        "Id": 1008,
+        "Type": 6,
+        "Desc": "40006-\u83b7\u5f972\u70b9\u7ecf\u9a8c",
+        "Param": "[2, 0, 0]"
+    },
+    {
+        "Id": 1009,
+        "Type": 4,
+        "Desc": "40007 - Gain Gold Coins equal to current round count",
+        "Param": "[0, 0, 10000]"
+    },
+    {
+        "Id": 1010,
+        "Type": 4,
+        "Desc": "40009 - Gain 6 Gold Coins",
+        "Param": "[6, 0, 0]"
+    },
+    {
+        "Id": 1011,
+        "Type": 4,
+        "Desc": "40009 - Gain 2 Gold Coins",
+        "Param": "[2, 0, 0]"
+    },
+    {
+        "Id": 1012,
+        "Type": 4,
+        "Desc": "40009 - Gain 4 Gold Coins",
+        "Param": "[4, 0, 0]"
+    },
+    {
+        "Id": 1013,
+        "Type": 4,
+        "Desc": "40009 - Gain 6 Gold Coins",
+        "Param": "[6, 0, 0]"
+    },
+    {
+        "Id": 1014,
+        "Type": 4,
+        "Desc": "40009 - Gain 8 Gold Coins",
+        "Param": "[8, 0, 0]"
+    },
+    {
+        "Id": 1015,
+        "Type": 4,
+        "Desc": "40009 - Gain 10 Gold Coins",
+        "Param": "[10, 0, 0]"
+    },
+    {
+        "Id": 1016,
+        "Type": 4,
+        "Desc": "40010 - Gain 2 Gold Coins",
+        "Param": "[2, 0, 0]"
+    },
+    {
+        "Id": 1017,
+        "Type": 9,
+        "Desc": "40010-\u83b7\u5f976\u500d\u7b49\u7ea7\u7684\u653b\u51fb\u529b",
+        "Param": "[1, 0, 0, 5, 60000]"
+    },
+    {
+        "Id": 1018,
+        "Type": 9,
+        "Desc": "40010-\u83b7\u5f9735\u500d\u7b49\u7ea7\u7684\u751f\u547d\u503c",
+        "Param": "[0, 0, 0, 5, 350000]"
+    },
+    {
+        "Id": 1019,
+        "Type": 6,
+        "Desc": "40011 - Gain EXP equal to empty inventory slots",
+        "Param": "[0, 7, 10000]"
+    },
+    {
+        "Id": 1020,
+        "Type": 5,
+        "Desc": "40012 - Gain 1 free refresh",
+        "Param": "[1, 0, 0]"
+    },
+    {
+        "Id": 1021,
+        "Type": 4,
+        "Desc": "40013 - Gain 60 Gold Coins",
+        "Param": "[60, 0, 0]"
+    },
+    {
+        "Id": 1022,
+        "Type": 6,
+        "Desc": "40014 - Gain 2 EXP",
+        "Param": "[2, 0, 0]"
+    },
+    {
+        "Id": 1023,
+        "Type": 6,
+        "Desc": "40014 - Gain 3 EXP",
+        "Param": "[3, 0, 0]"
+    },
+    {
+        "Id": 1024,
+        "Type": 7,
+        "Desc": "40015 - Steal 1 Rune",
+        "Param": "[1]"
+    },
+    {
+        "Id": 1025,
+        "Type": 4,
+        "Desc": "40016 - Gain 5 Gold Coins",
+        "Param": "[5, 0, 0]"
+    },
+    {
+        "Id": 1026,
+        "Type": 5,
+        "Desc": "40016 - Gain refresh attempts equal to failure count",
+        "Param": "[0, 2, 10000]"
+    },
+    {
+        "Id": 1027,
+        "Type": 6,
+        "Desc": "40017 - Gain EXP equal to the number of equipped archetypes x1",
+        "Param": "[0, 6, 10000]"
+    },
+    {
+        "Id": 1028,
+        "Type": 11,
+        "Desc": "40019 - Replace rightmost inventory slot's Rune",
+        "Param": "[2, 6, 3, 5, 7, 12]"
+    },
+    {
+        "Id": 1029,
+        "Type": 4,
+        "Desc": "40020 - Gain 32 Gold Coins",
+        "Param": "[32, 0, 0]"
+    },
+    {
+        "Id": 1030,
+        "Type": 11,
+        "Desc": "40020 - Replace Equipment 1's Rune",
+        "Param": "[1, 1, 3, 5, 7, 12]"
+    },
+    {
+        "Id": 1031,
+        "Type": 11,
+        "Desc": "40020 - Replace Equipment 2's Rune",
+        "Param": "[1, 2, 3, 5, 7, 12]"
+    },
+    {
+        "Id": 1032,
+        "Type": 11,
+        "Desc": "40020 - Replace Equipment 3's Rune",
+        "Param": "[1, 3, 3, 5, 7, 12]"
+    },
+    {
+        "Id": 1033,
+        "Type": 11,
+        "Desc": "40020 - Replace Equipment 4's Rune",
+        "Param": "[1, 4, 3, 5, 7, 12]"
+    },
+    {
+        "Id": 1034,
+        "Type": 11,
+        "Desc": "40020 - Replace Equipment 5's Rune",
+        "Param": "[1, 5, 3, 5, 7, 12]"
+    },
+    {
+        "Id": 1035,
+        "Type": 11,
+        "Desc": "40020 - Replace Equipment 6's Rune",
+        "Param": "[1, 6, 3, 5, 7, 12]"
+    },
+    {
+        "Id": 1036,
+        "Type": 11,
+        "Desc": "40020 - Replace Equipment 7's Rune",
+        "Param": "[1, 7, 3, 5, 7, 12]"
+    },
+    {
+        "Id": 1037,
+        "Type": 11,
+        "Desc": "40020 - Replace Equipment 8's Rune",
+        "Param": "[1, 8, 3, 5, 7, 12]"
+    },
+    {
+        "Id": 1038,
+        "Type": 11,
+        "Desc": "40020 - Replace Equipment 9's Rune",
+        "Param": "[1, 9, 3, 5, 7, 12]"
+    },
+    {
+        "Id": 1039,
+        "Type": 11,
+        "Desc": "40020 - Replace Equipment 10's Rune",
+        "Param": "[1, 10, 3, 5, 7, 12]"
+    },
+    {
+        "Id": 1040,
+        "Type": 8,
+        "Desc": "40021 - Replace the next purchase with enhanced version",
+        "Param": "[1]"
+    },
+    {
+        "Id": 1041,
+        "Type": 4,
+        "Desc": "40022 - Gain 50 Gold Coins",
+        "Param": "[50, 0, 0]"
+    },
+    {
+        "Id": 1042,
+        "Type": 1,
+        "Desc": "40101 - Gain specified buff after entering battle",
+        "Param": "[1010518]"
+    },
+    {
+        "Id": 1043,
+        "Type": 1,
+        "Desc": "40102 - Gain specified buff after entering battle",
+        "Param": "[1010519]"
+    },
+    {
+        "Id": 1044,
+        "Type": 1,
+        "Desc": "40103 - Gain specified buff after entering battle",
+        "Param": "[1010577]"
+    },
+    {
+        "Id": 1045,
+        "Type": 1,
+        "Desc": "40104 - Gain specified buff after entering battle",
+        "Param": "[1010578]"
+    },
+    {
+        "Id": 1046,
+        "Type": 1,
+        "Desc": "40105 - Gain specified buff after entering battle",
+        "Param": "[1013216]"
+    },
+    {
+        "Id": 1047,
+        "Type": 1,
+        "Desc": "40106 - Gain specified buff after entering battle",
+        "Param": "[1013217]"
+    },
+    {
+        "Id": 1048,
+        "Type": 1,
+        "Desc": "40107 - Gain specified buff after entering battle",
+        "Param": "[1012215]"
+    },
+    {
+        "Id": 1049,
+        "Type": 1,
+        "Desc": "40108 - Gain specified buff after entering battle",
+        "Param": "[1012216]"
+    },
+    {
+        "Id": 1050,
+        "Type": 3,
+        "Desc": "40101 - Obtain specified skill",
+        "Param": "[10004]"
+    },
+    {
+        "Id": 1051,
+        "Type": 3,
+        "Desc": "40102 - Obtain specified skill",
+        "Param": "[10009]"
+    },
+    {
+        "Id": 1052,
+        "Type": 3,
+        "Desc": "40103 - Obtain specified skill",
+        "Param": "[10104]"
+    },
+    {
+        "Id": 1053,
+        "Type": 3,
+        "Desc": "40104 - Obtain specified skill",
+        "Param": "[10111]"
+    },
+    {
+        "Id": 1054,
+        "Type": 3,
+        "Desc": "40105 - Obtain specified skill",
+        "Param": "[10201]"
+    },
+    {
+        "Id": 1055,
+        "Type": 3,
+        "Desc": "40106 - Obtain specified skill",
+        "Param": "[10209]"
+    },
+    {
+        "Id": 1056,
+        "Type": 3,
+        "Desc": "40107 - Obtain specified skill",
+        "Param": "[10303]"
+    },
+    {
+        "Id": 1057,
+        "Type": 3,
+        "Desc": "40108 - Obtain specified skill",
+        "Param": "[10312]"
+    },
+    {
+        "Id": 1058,
+        "Type": 1,
+        "Desc": "\u5e9f\u5f03-\u8fdb\u5165\u6218\u6597\u540e\u83b7\u5f97\u653b\u51fb\u529b",
+        "Param": "[1016000]"
+    },
+    {
+        "Id": 1059,
+        "Type": 1,
+        "Desc": "\u5e9f\u5f03-\u8fdb\u5165\u6218\u6597\u540e\u83b7\u5f97\u653b\u51fb\u529b",
+        "Param": "[1016001]"
+    },
+    {
+        "Id": 1060,
+        "Type": 1,
+        "Desc": "\u5e9f\u5f03-\u8fdb\u5165\u6218\u6597\u540e\u83b7\u5f97\u653b\u51fb\u529b",
+        "Param": "[1016002]"
+    },
+    {
+        "Id": 1061,
+        "Type": 1,
+        "Desc": "\u5e9f\u5f03-\u8fdb\u5165\u6218\u6597\u540e\u83b7\u5f97\u653b\u51fb\u529b",
+        "Param": "[1016003]"
+    },
+    {
+        "Id": 1062,
+        "Type": 1,
+        "Desc": "\u5e9f\u5f03-\u8fdb\u5165\u6218\u6597\u540e\u83b7\u5f97\u653b\u51fb\u529b",
+        "Param": "[1016004]"
+    },
+    {
+        "Id": 1063,
+        "Type": 1,
+        "Desc": "\u5e9f\u5f03-\u8fdb\u5165\u6218\u6597\u540e\u83b7\u5f97\u653b\u51fb\u529b",
+        "Param": "[1016005]"
+    },
+    {
+        "Id": 1064,
+        "Type": 1,
+        "Desc": "\u5e9f\u5f03-\u8fdb\u5165\u6218\u6597\u540e\u83b7\u5f97\u653b\u51fb\u529b",
+        "Param": "[1016006]"
+    },
+    {
+        "Id": 1065,
+        "Type": 1,
+        "Desc": "\u5e9f\u5f03-\u8fdb\u5165\u6218\u6597\u540e\u83b7\u5f97\u653b\u51fb\u529b",
+        "Param": "[1016007]"
+    },
+    {
+        "Id": 1066,
+        "Type": 1,
+        "Desc": "\u5e9f\u5f03-\u8fdb\u5165\u6218\u6597\u540e\u83b7\u5f97\u653b\u51fb\u529b",
+        "Param": "[1016008]"
+    },
+    {
+        "Id": 1067,
+        "Type": 1,
+        "Desc": "40110 - Add Script: Deals 120% more DMG against enemies whose Max HP is greater than your own.",
+        "Param": "[1016009]"
+    },
+    {
+        "Id": 1068,
+        "Type": 1,
+        "Desc": "40111 - Add script: Each time damage is dealt, additionally deals damage equal to 100% of the damage value to enemy Shields.",
+        "Param": "[1016014]"
+    },
+    {
+        "Id": 1069,
+        "Type": 1,
+        "Desc": "40112 - Add script: For every 5000 HP enemies recover, steals 2000 HP from them.",
+        "Param": "[1016015]"
+    },
+    {
+        "Id": 1070,
+        "Type": 1,
+        "Desc": "40113 - Add Script: Loses 5% HP every second while dealing damage to enemies equal to 100% of own HP loss for 10s.",
+        "Param": "[1016018]"
+    },
+    {
+        "Id": 1071,
+        "Type": 9,
+        "Desc": "40114-\u63d0\u534714%\u751f\u547d\u503c",
+        "Param": "[0, 0, 1400, 0, 0]"
+    },
+    {
+        "Id": 1072,
+        "Type": 1,
+        "Desc": "40114-\u63d0\u534714%\u653b\u51fb\u529b",
+        "Param": "[1016020]"
+    },
+    {
+        "Id": 1073,
+        "Type": 9,
+        "Desc": "40115 - Gain HP based on the number of archetypes",
+        "Param": "[0, 0, 0, 6, 2000000]"
+    },
+    {
+        "Id": 1074,
+        "Type": 1,
+        "Desc": "40117 - [Opening] Exclusive",
+        "Param": "[1016021]"
+    },
+    {
+        "Id": 1075,
+        "Type": 1,
+        "Desc": "40118 - [Full Body] Exclusive",
+        "Param": "[1016022]"
+    },
+    {
+        "Id": 1076,
+        "Type": 1,
+        "Desc": "40119 - [Last Stand] Exclusive",
+        "Param": "[1016023]"
+    },
+    {
+        "Id": 1077,
+        "Type": 1,
+        "Desc": "40120 - [Execution] Exclusive",
+        "Param": "[1016024]"
+    },
+    {
+        "Id": 1078,
+        "Type": 1,
+        "Desc": "40121 - [Fatigue] Exclusive",
+        "Param": "[1016025]"
+    },
+    {
+        "Id": 1079,
+        "Type": 1,
+        "Desc": "40122 - [Probability] Exclusive",
+        "Param": "[1016026]"
+    },
+    {
+        "Id": 1080,
+        "Type": 1,
+        "Desc": "40123 - [Periodic] Exclusive",
+        "Param": "[1016027]"
+    },
+    {
+        "Id": 1081,
+        "Type": 9,
+        "Desc": "40124 - Gain ATK based on the number of archetypes",
+        "Param": "[1, 0, 0, 6, 180000]"
+    },
+    {
+        "Id": 1082,
+        "Type": 9,
+        "Desc": "40126 - For every 1 Gold Coin owned, ATK increases by 0.8",
+        "Param": "[1, 0, 0, 4, 8000]"
+    },
+    {
+        "Id": 1083,
+        "Type": 9,
+        "Desc": "40126 - For every 1 Gold Coin owned, HP increases by 20",
+        "Param": "[0, 0, 0, 4, 200000]"
+    },
+    {
+        "Id": 1084,
+        "Type": 4,
+        "Desc": "40015 - Lose 6 Gold Coins",
+        "Param": "[-6, 0, 0]"
+    },
+    {
+        "Id": 1085,
+        "Type": 9,
+        "Desc": "40109 - Gain 40 ATK after entering battle",
+        "Param": "[1, 40, 0, 0, 0]"
+    },
+    {
+        "Id": 1086,
+        "Type": 9,
+        "Desc": "40116 - Gain 50 ATK after entering battle",
+        "Param": "[1, 50, 0, 0, 0]"
+    },
+    {
+        "Id": 1087,
+        "Type": 9,
+        "Desc": "40125-\u8fdb\u5165\u6218\u6597\u540e\u83b7\u5f97\u653b\u51fb\u529b40",
+        "Param": "[1, 40, 0, 0, 0]"
+    },
+    {
+        "Id": 10001,
+        "Type": 1,
+        "Desc": "Test: Gain specified buffs upon entering battle",
+        "Param": "[1, 2]"
+    },
+    {
+        "Id": 10002,
+        "Type": 2,
+        "Desc": "Test: Perform one draw from the specified RandomGroup",
+        "Param": "[1]"
+    },
+    {
+        "Id": 10003,
+        "Type": 3,
+        "Desc": "Test: Obtain specified items",
+        "Param": "[20261]"
+    },
+    {
+        "Id": 10004,
+        "Type": 4,
+        "Desc": "Test: Gain Gold Coins",
+        "Param": "[1, 1, 20]"
+    },
+    {
+        "Id": 10005,
+        "Type": 5,
+        "Desc": "Test: Gain free refresh attempts",
+        "Param": "[1, 2, 0]"
+    },
+    {
+        "Id": 10006,
+        "Type": 6,
+        "Desc": "Test: Gain EXP",
+        "Param": "[5, 3, 0]"
+    },
+    {
+        "Id": 10007,
+        "Type": 7,
+        "Desc": "Test: Randomly steal runes from the shop",
+        "Param": "[2]"
+    },
+    {
+        "Id": 10008,
+        "Type": 8,
+        "Desc": "Test: Replace the next x purchased runes with enhanced runes",
+        "Param": "[2]"
+    },
+    {
+        "Id": 10009,
+        "Type": 9,
+        "Desc": "Test: Gain stats upon entering battle",
+        "Param": "[1, 1, 1, 1, 1]"
+    },
+    {
+        "Id": 10010,
+        "Type": 10,
+        "Desc": "Test: Sell runes at specified locations",
+        "Param": "[1, 1]"
+    },
+    {
+        "Id": 10011,
+        "Type": 11,
+        "Desc": "Test: Remove the rune at the specified location and draw from the corresponding RandomGroup based on the removed rune's rarity.",
+        "Param": "[1, 1, 1, 2, 3, 4]"
+    },
+    {
+        "Id": 10012,
+        "Type": 12,
+        "Desc": "Test: Heart count increase, decrease",
+        "Param": "[1]"
+    }
+]

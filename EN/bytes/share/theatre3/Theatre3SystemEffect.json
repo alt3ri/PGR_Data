@@ -1,0 +1,578 @@
+[
+    {
+        "Id": 10001,
+        "Desc": "Changes revive cost to 5 gold",
+        "Type": 23,
+        "Params": "[2.0]"
+    },
+    {
+        "Id": 10003,
+        "Desc": "Gains 50 gold for every node cleared",
+        "Type": 4,
+        "Params": "[96189.0, 50.0]"
+    },
+    {
+        "Id": 10008,
+        "Desc": "Shop offers a 50% discount",
+        "Type": 13,
+        "Params": "[0.625]"
+    },
+    {
+        "Id": 100081,
+        "Desc": "6 extra Discount Slots added",
+        "Type": 5,
+        "Params": "[6.0]"
+    },
+    {
+        "Id": 10009,
+        "Desc": "Recruit Energy +3",
+        "Type": 22,
+        "Params": "[3.0]"
+    },
+    {
+        "Id": 10010,
+        "Desc": "Weight Carrying Limit +3",
+        "Type": 16,
+        "Params": "[3.0]"
+    },
+    {
+        "Id": 10022,
+        "Desc": "Battle additionally drops an item crate",
+        "Type": 21,
+        "Params": "[1.0]"
+    },
+    {
+        "Id": 10062,
+        "Desc": "Quantum Value \u03b1 +10",
+        "Type": 28,
+        "Params": "[1.0, 10.0, 10.0]"
+    },
+    {
+        "Id": 11001,
+        "Desc": "Recruit Energy +1",
+        "Type": 22,
+        "Params": "[1.0]"
+    },
+    {
+        "Id": 11002,
+        "Desc": "Recruit Energy +2",
+        "Type": 22,
+        "Params": "[2.0]"
+    },
+    {
+        "Id": 11003,
+        "Desc": "Recruit Energy +3",
+        "Type": 22,
+        "Params": "[3.0]"
+    },
+    {
+        "Id": 11004,
+        "Desc": "Weight Carrying Limit +1",
+        "Type": 16,
+        "Params": "[1.0]"
+    },
+    {
+        "Id": 11005,
+        "Desc": "Weight Carrying Limit +2",
+        "Type": 16,
+        "Params": "[2.0]"
+    },
+    {
+        "Id": 11006,
+        "Desc": "Gold +250",
+        "Type": 12,
+        "Params": "[96189.0, 250.0]"
+    },
+    {
+        "Id": 12011,
+        "Desc": "Recruit Energy +2",
+        "Type": 22,
+        "Params": "[2.0]"
+    },
+    {
+        "Id": 12012,
+        "Desc": "Weight Carrying Limit +2",
+        "Type": 16,
+        "Params": "[2.0]"
+    },
+    {
+        "Id": 12021,
+        "Desc": "Recruit Energy +2",
+        "Type": 22,
+        "Params": "[2.0]"
+    },
+    {
+        "Id": 12031,
+        "Desc": "Weight Carrying Limit +2",
+        "Type": 16,
+        "Params": "[2.0]"
+    },
+    {
+        "Id": 20101,
+        "Desc": "Gold Drop +40%",
+        "Type": 3,
+        "Params": "[40.0]"
+    },
+    {
+        "Id": 20104,
+        "Desc": "Gold Drop +20%",
+        "Type": 3,
+        "Params": "[20.0]"
+    },
+    {
+        "Id": 20151,
+        "Desc": "For every battle node cleared, gains HP growth after a battle.",
+        "Type": 17,
+        "Params": "[1501.0, 1.0]"
+    },
+    {
+        "Id": 20152,
+        "Desc": "For every battle node cleared, gains ATK after the battle.",
+        "Type": 17,
+        "Params": "[1502.0, 2.0]"
+    },
+    {
+        "Id": 20153,
+        "Desc": "For every battle node cleared, drops 10 additional Gold after a battle (the more battles cleared, the more additional Gold drops).",
+        "Type": 20,
+        "Params": "[1503.0, 21.0]"
+    },
+    {
+        "Id": 20154,
+        "Desc": "Record the number of battle nodes cleared after the set is collected.",
+        "Type": 18,
+        "Params": "[15.0]"
+    },
+    {
+        "Id": 20155,
+        "Desc": "Record the number of Boss nodes cleared after the set is collected.",
+        "Type": 19,
+        "Params": "[15.0]"
+    },
+    {
+        "Id": 20301,
+        "Desc": "Weight Carrying Limit +1",
+        "Type": 16,
+        "Params": "[1.0]"
+    },
+    {
+        "Id": 20302,
+        "Desc": "Weight Carrying Limit +1",
+        "Type": 16,
+        "Params": "[1.0]"
+    },
+    {
+        "Id": 20303,
+        "Desc": "Weight Carrying Limit +1",
+        "Type": 16,
+        "Params": "[1.0]"
+    },
+    {
+        "Id": 20321,
+        "Desc": "For every battle node cleared, pet growth after battle - Part 1 - Test",
+        "Type": 17,
+        "Params": "[2101.0, 3.0]"
+    },
+    {
+        "Id": 20322,
+        "Desc": "For every battle node cleared, pet growth after battle - Part 2 - Test",
+        "Type": 17,
+        "Params": "[2102.0, 3.0]"
+    },
+    {
+        "Id": 20323,
+        "Desc": "For every battle node cleared, pet growth after battle - Part 3 - Test",
+        "Type": 17,
+        "Params": "[2103.0, 3.0]"
+    },
+    {
+        "Id": 21101,
+        "Desc": "Gold Drop +60%",
+        "Type": 3,
+        "Params": "[60.0]"
+    },
+    {
+        "Id": 21104,
+        "Desc": "Gold Drop +20%",
+        "Type": 3,
+        "Params": "[20.0]"
+    },
+    {
+        "Id": 21151,
+        "Desc": "For every battle node cleared, gains HP growth after a battle.",
+        "Type": 17,
+        "Params": "[1501.0, 1.0]"
+    },
+    {
+        "Id": 21152,
+        "Desc": "For every battle node cleared, gains ATK after the battle",
+        "Type": 17,
+        "Params": "[1502.0, 2.0]"
+    },
+    {
+        "Id": 21153,
+        "Desc": "For every battle node cleared, drops 10 additional Gold after a battle (the more battles cleared, the more additional Gold drops).",
+        "Type": 20,
+        "Params": "[1503.0, 24.0]"
+    },
+    {
+        "Id": 21154,
+        "Desc": "Record the number of battle nodes cleared after the set is collected.",
+        "Type": 18,
+        "Params": "[15.0]"
+    },
+    {
+        "Id": 21155,
+        "Desc": "Record the number of Boss nodes cleared after the set is collected.",
+        "Type": 19,
+        "Params": "[15.0]"
+    },
+    {
+        "Id": 21301,
+        "Desc": "Weight Carrying Limit +1",
+        "Type": 16,
+        "Params": "[1.0]"
+    },
+    {
+        "Id": 21302,
+        "Desc": "Weight Carrying Limit +1",
+        "Type": 16,
+        "Params": "[1.0]"
+    },
+    {
+        "Id": 21303,
+        "Desc": "Weight Carrying Limit +1",
+        "Type": 16,
+        "Params": "[1.0]"
+    },
+    {
+        "Id": 21321,
+        "Desc": "For every battle node cleared, pet growth after battle - Part 1 - Test",
+        "Type": 17,
+        "Params": "[2101.0, 3.0]"
+    },
+    {
+        "Id": 21322,
+        "Desc": "For every battle node cleared, pet growth after battle - Part 2 - Test",
+        "Type": 17,
+        "Params": "[2102.0, 3.0]"
+    },
+    {
+        "Id": 21323,
+        "Desc": "For every battle node cleared, pet growth after battle - Part 3 - Test",
+        "Type": 17,
+        "Params": "[2103.0, 3.0]"
+    },
+    {
+        "Id": 30002,
+        "Desc": "Roguelike 3.0 Outer Loop - Starting Gold +50",
+        "Type": 12,
+        "Params": "[96189.0, 50.0]"
+    },
+    {
+        "Id": 30004,
+        "Desc": "Roguelike 3.0 Outer Loop - Starting Gold +50",
+        "Type": 12,
+        "Params": "[96189.0, 50.0]"
+    },
+    {
+        "Id": 30006,
+        "Desc": "Roguelike 3.0 Outer Loop - Starting Recruit Energy +1",
+        "Type": 22,
+        "Params": "[1.0]"
+    },
+    {
+        "Id": 30011,
+        "Desc": "Roguelike 3.0 Outer Loop - Starting Gold +50",
+        "Type": 12,
+        "Params": "[96189.0, 50.0]"
+    },
+    {
+        "Id": 30012,
+        "Desc": "Roguelike 3.0 Outer Loop - Gain an additional random item at the start of the game (First Clear Difficulty Chapter 1)",
+        "Type": 8,
+        "Params": "[1.0, 30012.0]"
+    },
+    {
+        "Id": 300121,
+        "Desc": "Roguelike 3.0 Outer Loop - Gain an additional random item at the start of the game (Easy Difficulty Chapter 1)",
+        "Type": 8,
+        "Params": "[101.0, 30012.0]"
+    },
+    {
+        "Id": 300122,
+        "Desc": "Roguelike 3.0 Outer Loop - Gain an additional random item at the start of the game (Normal Difficulty Chapter 1)",
+        "Type": 8,
+        "Params": "[201.0, 30012.0]"
+    },
+    {
+        "Id": 300123,
+        "Desc": "Roguelike 3.0 Outer Loop - Gain an additional random item at the start of the game (Hard Difficulty Chapter 1)",
+        "Type": 8,
+        "Params": "[301.0, 30012.0]"
+    },
+    {
+        "Id": 30015,
+        "Desc": "Roguelike 3.0 Outer Loop - Shop Item Discount Slots +1",
+        "Type": 5,
+        "Params": "[1.0]"
+    },
+    {
+        "Id": 30017,
+        "Desc": "Roguelike 3.0 Outer Loop - All Member Equipment Weight Carrying Limit +1",
+        "Type": 16,
+        "Params": "[1.0]"
+    },
+    {
+        "Id": 30023,
+        "Desc": "Roguelike 3.0 Outer Loop - Starting Gold +50",
+        "Type": 12,
+        "Params": "[96189.0, 50.0]"
+    },
+    {
+        "Id": 30025,
+        "Desc": "Roguelike 3.0 Outer Loop - Starting Gold +50",
+        "Type": 12,
+        "Params": "[96189.0, 50.0]"
+    },
+    {
+        "Id": 30028,
+        "Desc": "Roguelike 3.0 Outer Loop - Starting Gold +50",
+        "Type": 12,
+        "Params": "[96189.0, 50.0]"
+    },
+    {
+        "Id": 30030,
+        "Desc": "Roguelike 3.0 Outer Loop - Starting Recruit Energy +1",
+        "Type": 22,
+        "Params": "[1.0]"
+    },
+    {
+        "Id": 30102,
+        "Desc": "Roguelike 3.0 DLC Outer Loop - Starting Gold +30",
+        "Type": 12,
+        "Params": "[96189.0, 30.0]"
+    },
+    {
+        "Id": 30104,
+        "Desc": "Roguelike 3.0 DLC Outer Loop - Starting Gold +30",
+        "Type": 12,
+        "Params": "[96189.0, 30.0]"
+    },
+    {
+        "Id": 30111,
+        "Desc": "Roguelike 3.0 DLC Outer Loop - Starting Gold +30",
+        "Type": 12,
+        "Params": "[96189.0, 30.0]"
+    },
+    {
+        "Id": 30123,
+        "Desc": "Roguelike 3.0 DLC Outer Loop - Starting Gold +30",
+        "Type": 12,
+        "Params": "[96189.0, 30.0]"
+    },
+    {
+        "Id": 30125,
+        "Desc": "Roguelike 3.0 DLC Outer Loop - Starting Gold +30",
+        "Type": 12,
+        "Params": "[96189.0, 30.0]"
+    },
+    {
+        "Id": 30128,
+        "Desc": "Roguelike 3.0 DLC Outer Loop - Starting Gold +30",
+        "Type": 12,
+        "Params": "[96189.0, 30.0]"
+    },
+    {
+        "Id": 30112,
+        "Desc": "Roguelike 3.0 Outer Loop - Equipment Box Free Refreshes +1",
+        "Type": 33,
+        "Params": "[1.0]"
+    },
+    {
+        "Id": 30131,
+        "Desc": "Roguelike 3.0 Outer Loop - Equipment Box Paid Refresh Price -50%",
+        "Type": 34,
+        "Params": "[0.5]"
+    },
+    {
+        "Id": 99001,
+        "Desc": "Projector - Two-Value - \u03b1",
+        "Type": 28,
+        "Params": "[1.0, 12.0, 15.0]"
+    },
+    {
+        "Id": 99002,
+        "Desc": "Projector - Two-Value - \u03b2",
+        "Type": 28,
+        "Params": "[2.0, 12.0, 15.0]"
+    },
+    {
+        "Id": 99003,
+        "Desc": "Recruit Energy +2",
+        "Type": 22,
+        "Params": "[2.0]"
+    },
+    {
+        "Id": 99004,
+        "Desc": "Test Quantum Value Event - \u03b1",
+        "Type": 28,
+        "Params": "[1.0, 6.0, 6.0]"
+    },
+    {
+        "Id": 99005,
+        "Desc": "Test Quantum Value Event - \u03b2",
+        "Type": 28,
+        "Params": "[2.0, 6.0, 6.0]"
+    },
+    {
+        "Id": 99006,
+        "Desc": "Test Quantum Value Event - \u03b12",
+        "Type": 28,
+        "Params": "[1.0, 8.0, 8.0]"
+    },
+    {
+        "Id": 99007,
+        "Desc": "Test Quantum Value Event - \u03b22",
+        "Type": 28,
+        "Params": "[2.0, 8.0, 8.0]"
+    },
+    {
+        "Id": 99008,
+        "Desc": "Gold +500",
+        "Type": 12,
+        "Params": "[96189.0, 500.0]"
+    },
+    {
+        "Id": 99991,
+        "Desc": "Opens Rroguelike Quantum route",
+        "Type": 26,
+        "Params": "[1.0]"
+    },
+    {
+        "Id": 99992,
+        "Desc": "Closes Roguelike Quantum route",
+        "Type": 26,
+        "Params": "[0.0]"
+    },
+    {
+        "Id": 99993,
+        "Desc": "Directly switches the Roguelike Quantum route",
+        "Type": 27,
+        "Params": null
+    },
+    {
+        "Id": 99994,
+        "Desc": "Roguelike Quantized sets + Quantum Value \u03b2",
+        "Type": 28,
+        "Params": "[2.0, 8.0, 8.0]"
+    },
+    {
+        "Id": 99995,
+        "Desc": "Roguelike Purifying Ring + Quantum Value \u03b1",
+        "Type": 28,
+        "Params": "[1.0, 8.0, 8.0]"
+    },
+    {
+        "Id": 110001,
+        "Desc": "When purchasing items, -50% chance to additionally obtain an Artifact, 10% chance to lose 20% of the current gold",
+        "Type": 30,
+        "Params": "[5000.0, 1000.0, 104.0, 0.0, 999.0, 12345.0, 12345.0]"
+    },
+    {
+        "Id": 110003,
+        "Desc": "Every battle gives additional Quantum Value \u03b1 +1",
+        "Type": 32,
+        "Params": "[1.0, 2.0]"
+    },
+    {
+        "Id": 110004,
+        "Desc": "Every battle gives additional Quantum Value \u03b2 +1",
+        "Type": 32,
+        "Params": "[2.0, 2.0]"
+    },
+    {
+        "Id": 110005,
+        "Desc": "Immediately gives 3 Gold Boxes",
+        "Type": 25,
+        "Params": "[5.0, 3.0]"
+    },
+    {
+        "Id": 110006,
+        "Desc": "Workshop node equipment swap attempt +1",
+        "Type": 29,
+        "Params": "[2.0, 1.0]"
+    },
+    {
+        "Id": 110008,
+        "Desc": "Immediately gives 1 Gold Box",
+        "Type": 25,
+        "Params": "[5.0, 1.0]"
+    },
+    {
+        "Id": 110009,
+        "Desc": "Immediately gives 1 Red Box and 1 Blue Box (Red)",
+        "Type": 25,
+        "Params": "[2.0, 1.0]"
+    },
+    {
+        "Id": 110010,
+        "Desc": "Immediately gives 1 Red Box and 1 Blue Box (Blue)",
+        "Type": 25,
+        "Params": "[3.0, 1.0]"
+    },
+    {
+        "Id": 110011,
+        "Desc": "Immediately gives 1 Red-Blue Box",
+        "Type": 25,
+        "Params": "[4.0, 1.0]"
+    },
+    {
+        "Id": 110012,
+        "Desc": "4\u2605 Dual Blades Artifact - Quantum Value \u03b2",
+        "Type": 28,
+        "Params": "[2.0, 2.0, 2.0]"
+    },
+    {
+        "Id": 110013,
+        "Desc": "5\u2605 Dual Blades Artifact - Quantum Value \u03b2",
+        "Type": 28,
+        "Params": "[2.0, 5.0, 5.0]"
+    },
+    {
+        "Id": 110049,
+        "Desc": "Quantum Value \u03b2 +10",
+        "Type": 28,
+        "Params": "[2.0, 10.0, 10.0]"
+    },
+    {
+        "Id": 110050,
+        "Desc": "Quantum Value \u03b1 +10",
+        "Type": 28,
+        "Params": "[1.0, 5.0, 10.0]"
+    },
+    {
+        "Id": 110051,
+        "Desc": "Quantum Value \u03b2 +10",
+        "Type": 28,
+        "Params": "[2.0, 5.0, 10.0]"
+    },
+    {
+        "Id": 110052,
+        "Desc": "Switch Route Immediately",
+        "Type": 35,
+        "Params": null
+    },
+    {
+        "Id": 110053,
+        "Desc": "Immediately gives 6 Gold Boxes",
+        "Type": 25,
+        "Params": "[5.0, 6.0]"
+    },
+    {
+        "Id": 110054,
+        "Desc": "Workshop Node Equipment Reforging Attempts +1",
+        "Type": 29,
+        "Params": "[1.0, 1.0]"
+    }
+]

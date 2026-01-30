@@ -1,0 +1,342 @@
+[
+    {
+        "Key": "HelpKey",
+        "Note": "Help Key",
+        "Params": "['Pcg1Help']"
+    },
+    {
+        "Key": "CardColorNames",
+        "Note": "Card Color Orb Name",
+        "Params": "['Red Orb', 'Blue Orb', 'Yellow Orb']"
+    },
+    {
+        "Key": "CardColorIcons",
+        "Note": "Card Color Orb Icon",
+        "Params": "['Assets/Product/Texture/Image/IconSkill/hongse.png', 'Assets/Product/Texture/Image/IconSkill/lanse.png', 'Assets/Product/Texture/Image/IconSkill/huangse.png']"
+    },
+    {
+        "Key": "CardSuitIcons",
+        "Note": "Card Front Set Image",
+        "Params": "['Assets/Product/Texture/Image/UiPcg/UiPcgCardIconSpade.png', 'Assets/Product/Texture/Image/UiPcg/UiPcgCardIconClub.png', 'Assets/Product/Texture/Image/UiPcg/UiPcgCardIconDiamond.png', 'Assets/Product/Texture/Image/UiPcg/UiPcgCardIconHeart.png']"
+    },
+    {
+        "Key": "CardPointTexts",
+        "Note": "Card Rank Display Text",
+        "Params": "['A', '2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K']"
+    },
+    {
+        "Key": "CommanderName",
+        "Note": "Commandant Name",
+        "Params": "['Commandant']"
+    },
+    {
+        "Key": "CommanderHeadIcon",
+        "Note": "Commandant Portrait",
+        "Params": "['Assets/Product/Texture/Image/UiPcg/UiPcgGameCommanderRole.png']"
+    },
+    {
+        "Key": "CommanderSkillIcon",
+        "Note": "Commandant Skill Icon",
+        "Params": "['Assets/Product/Texture/Image/UiPcg/UiPcgGameCommanderSkill.png']"
+    },
+    {
+        "Key": "CommanderSkillName",
+        "Note": "Commandant Skill Name",
+        "Params": "['The true measure of a Chief!']"
+    },
+    {
+        "Key": "CommanderSkillDesc",
+        "Note": "Commandant Skill Name Description",
+        "Params": "['Spend 5 to charge. Drag any card in your hand to move it to another location. Spend Action Points to charge Commandant Skills.']"
+    },
+    {
+        "Key": "StageLockTips",
+        "Note": "Stage Locked Tap Prompt",
+        "Params": "['Clear %s to unlock!']"
+    },
+    {
+        "Key": "CanNoPlayCardTips",
+        "Note": "Non-Play Phase. Illegal Action.",
+        "Params": "['You are not in the play phase!']"
+    },
+    {
+        "Key": "ActionPointNoEnoughTips",
+        "Note": "Insufficient Action Points When Playing Cards Prompt",
+        "Params": "['Insufficient Action Points!']"
+    },
+    {
+        "Key": "NoSelectedEnoughCharacterTips",
+        "Note": "Insufficient Characters Selected Prompt",
+        "Params": "['Please select at least %s character(s)!']"
+    },
+    {
+        "Key": "NoChangeCharacterTips",
+        "Note": "Tutorial Stage Unable to Switch Character Prompt",
+        "Params": "['You cannot switch characters in a tutorial stage!']"
+    },
+    {
+        "Key": "CharacterSelectedTips",
+        "Note": "Member Selection Prompt",
+        "Params": "['Member already deployed']"
+    },
+    {
+        "Key": "NoSelectCharacterTips",
+        "Note": "Tutorial No Unlocked Character Prompt",
+        "Params": "['No unlocked character in this position']"
+    },
+    {
+        "Key": "CharacterNoUnlockTips",
+        "Note": "Character Locked Prompt",
+        "Params": "['Character still locked!']"
+    },
+    {
+        "Key": "CardSpacing",
+        "Note": "Card Quantity Corresponding Interval",
+        "Params": "['0', '-81', '-81', '-81', '-81', '-81', '-119', '-146', '-165', '-180', '-192', '-200']"
+    },
+    {
+        "Key": "CardBriefDetailLength",
+        "Note": "Short Card Details Display Length. Displays when exceeding length limit...",
+        "Params": "['30']"
+    },
+    {
+        "Key": "GiveUpGameTips",
+        "Note": "Re-confirm Abandoning Game",
+        "Params": "['Abandon the ongoing game?']"
+    },
+    {
+        "Key": "ChallengeFailTips",
+        "Note": "Ongoing Stage When Challenging a Stage",
+        "Params": "['There is an ongoing stage!']"
+    },
+    {
+        "Key": "SetTargetMonsterFailTips",
+        "Note": "Setting Target Enemy Failure Prompt",
+        "Params": "['Dead enemy!']"
+    },
+    {
+        "Key": "PopupDetailPrefabs",
+        "Note": "Premade Pop-Up Details, Commandant, Enemy, Member Respectively",
+        "Params": "['Assets/Product/Ui/ComponentPrefab/UiPcg/UiPcgPopupCommanderDetail.prefab', 'Assets/Product/Ui/ComponentPrefab/UiPcg/UiPcgPopupMonsterDetail.prefab', 'Assets/Product/Ui/ComponentPrefab/UiPcg/UiPcgPopupCharacterDetail.prefab']"
+    },
+    {
+        "Key": "MonsterBehaviorIcons",
+        "Note": "Enemy Action Preview Icon",
+        "Params": "['Assets/Product/Texture/Image/UiPcg/UiPcgCardAttlkIcon01.png', 'Assets/Product/Texture/Image/UiPcg/UiPcgCardAttlkIcon02.png', 'Assets/Product/Texture/Image/UiPcg/UiPcgCardAttlkIcon03.png', 'Assets/Product/Texture/Image/UiPcg/UiPcgCardAttlkIcon06.png', 'Assets/Product/Texture/Image/UiPcg/UiPcgCardAttlkIcon05.png', 'Assets/Product/Texture/Image/UiPcg/UiPcgCardAttlkIcon04.png']"
+    },
+    {
+        "Key": "RoundTxt",
+        "Note": "Round Log Displays Round Number",
+        "Params": "['Round %s']"
+    },
+    {
+        "Key": "EffectSettleLog1",
+        "Note": "Effect Calculation Log, DMG Dealt",
+        "Params": "['<color=#B7B7B764><color=#B7B7B764>\u00b7</color></color> <color=#FFFFFF><%s></color> attacked <color=#FFFFFF><%s></color> and dealt <Icon=IconAttack|25|25|0.5/> <color=#E76D88><%s></color>']"
+    },
+    {
+        "Key": "EffectSettleLog2",
+        "Note": "Effect Calculation Log, Change of Target HP",
+        "Params": "['<color=#B7B7B764>\u00b7</color><color=#FFFFFF> <%s> </color>HP -> %s']"
+    },
+    {
+        "Key": "EffectSettleLog3",
+        "Note": "Effect Calculation Log, Change of Target Armor",
+        "Params": "['<color=#B7B7B764>\u00b7</color><color=#FFFFFF> <%s> </color> <Icon=IconArmor|25|25|0.5/> -><color=#FAD364FF> %s </color>']"
+    },
+    {
+        "Key": "EffectSettleLog4",
+        "Note": "Effect Calculation Log, Change of Action Points",
+        "Params": "['<color=#B7B7B764>\u00b7</color> Action Points  -> %s']"
+    },
+    {
+        "Key": "EffectSettleLog5",
+        "Note": "Effect Calculation Log, Character Switched to the Middle",
+        "Params": "['<color=#B7B7B764>\u00b7</color><color=#FFFFFF> <%s> </color> switched in']"
+    },
+    {
+        "Key": "EffectSettleLog6",
+        "Note": "Effect Calculation Log, Change of Pile",
+        "Params": "['<color=#B7B7B764>\u00b7</color> Card %s is out of %s and enters %s']"
+    },
+    {
+        "Key": "EffectSettleLog7",
+        "Note": "Effect Calculation Log, Change of Mark",
+        "Params": "[\"<color=#B7B7B764>\u00b7</color><color=#FFFFFF> <%s>'s </color>Mark <color=#FFFFFF> [%s]</color>  -> %s Stack(s)\"]"
+    },
+    {
+        "Key": "EffectSettleLog8",
+        "Note": "Effect Calculation Log, New Wave of Enemies Refreshed",
+        "Params": "['<color=#B7B7B764>\u00b7</color> New Enemies Appear: %s']"
+    },
+    {
+        "Key": "EffectSettleLog9",
+        "Note": "Effect Calculation Log, Hand Order",
+        "Params": "['<color=#B7B7B764>\u00b7</color> The opponent rearranged their hand']"
+    },
+    {
+        "Key": "EffectSettleLog10",
+        "Note": "Effect Calculation Log, Adjustment of Card Position in Card Pool",
+        "Params": "['<color=#B7B7B764>\u00b7</color> Card %s moves to position %s in hand']"
+    },
+    {
+        "Key": "EffectSettleLog11",
+        "Note": "Effect Calculation Log, Discard Card",
+        "Params": "['<color=#B7B7B764>\u00b7</color> Card %s has been discarded and entered the discard pile']"
+    },
+    {
+        "Key": "EffectSettleLog12",
+        "Note": "Effect Calculation Log, Remove Card",
+        "Params": null
+    },
+    {
+        "Key": "EffectSettleLog13",
+        "Note": "Effect Calculation Log, Card Generated Directly",
+        "Params": "['<color=#B7B7B764>\u00b7</color> Card %s enters %s from the Derivative Zone']"
+    },
+    {
+        "Key": "EffectSettleLog14",
+        "Note": "Effect Calculation Log, Wave of Enemies Died",
+        "Params": null
+    },
+    {
+        "Key": "CardPos",
+        "Note": "Card Position",
+        "Params": "['Draw Pile', 'Discard Pile', 'Hand', '0', 'Derivative Zone Generated,']"
+    },
+    {
+        "Key": "DrawPoolTips",
+        "Note": "Draw Pile Prompt",
+        "Params": "['The order does not affect the actual cards you draw']"
+    },
+    {
+        "Key": "DropPoolTips",
+        "Note": "Discard Pile Prompt",
+        "Params": "['When the draw pile is empty, drawing cards will move the entire discard pile to the draw card']"
+    },
+    {
+        "Key": "ProgressTxt",
+        "Note": "Move Entrance Progress",
+        "Params": "['Progress: %s/%s']"
+    },
+    {
+        "Key": "ChapterProgressTxt",
+        "Note": "Chapter progress text, the 1st is UiPcgMain display, the 2nd is UiPcgStage display",
+        "Params": "['%s<color=#FFFFFF><size=34>/%s</size></color>', '%s/<color=#FFFFFF>%s</color>']"
+    },
+    {
+        "Key": "EnterActivityFail",
+        "Note": "Failed to enter the event. The 1st is event not available yet. The 2nd is event is over.",
+        "Params": "['Outside of the event time', 'Outside of the event time']"
+    },
+    {
+        "Key": "StartPlayCardTips",
+        "Note": "Start Playing Prompt. Parameter 1: prompt text. Parameter 2: prompt duration (ms)",
+        "Params": "['Your Action', '1000']"
+    },
+    {
+        "Key": "ReStartContent",
+        "Note": "Restart Text",
+        "Params": "['Restart game?']"
+    },
+    {
+        "Key": "CharacterUnlockTips",
+        "Note": "Character Codex Locked Prompt",
+        "Params": "['Clear %s to unlock']"
+    },
+    {
+        "Key": "EnergyNoEnoughTips",
+        "Note": "Insufficient Energy for Commandant Skill Prompt",
+        "Params": "['Insufficient Skill Energy']"
+    },
+    {
+        "Key": "NoValidCardTips",
+        "Note": "Prompt When Distributed Card ID is 0 in Action Log",
+        "Params": "['No card matching the requirement in the deck!']"
+    },
+    {
+        "Key": "IconSpade",
+        "Note": "Spades, For Texts and Graphics Icon Display",
+        "Params": "['Assets/Product/Texture/Image/UiPcg/UiPcgCardIconSpade.png']"
+    },
+    {
+        "Key": "IconClub",
+        "Note": "Clubs, For Texts and Graphics Icon Display",
+        "Params": "['Assets/Product/Texture/Image/UiPcg/UiPcgCardIconClub.png']"
+    },
+    {
+        "Key": "IconDiamond",
+        "Note": "Diamonds, For Texts and Graphics Icon Display",
+        "Params": "['Assets/Product/Texture/Image/UiPcg/UiPcgCardIconDiamond.png']"
+    },
+    {
+        "Key": "IconHeart",
+        "Note": "Hearts, For Texts and Graphics Icon Display",
+        "Params": "['Assets/Product/Texture/Image/UiPcg/UiPcgCardIconHeart.png']"
+    },
+    {
+        "Key": "IconDualBlades",
+        "Note": "Lotus Core Dual Blades, For Texts and Graphics Icon Display",
+        "Params": "['Assets/Product/Texture/Image/IconSkill/R1luxiyahexin1.png']"
+    },
+    {
+        "Key": "IconMercy",
+        "Note": "Zero Core Forgive, For Texts and Graphics Icon Display",
+        "Params": "['Assets/Product/Texture/Image/IconSkill/R2biankahexin1.png']"
+    },
+    {
+        "Key": "IconDance",
+        "Note": "Zitherwoe Core Dance, For Texts and Graphics Icon Display",
+        "Params": "['Assets/Product/Texture/Image/IconSkill/R2Hanyinhexin1.png']"
+    },
+    {
+        "Key": "IconSingularity",
+        "Note": "Laurel Core Singularity, For Texts and Graphics Icon Display",
+        "Params": "['Assets/Product/Texture/Image/IconSkill/R3Lunahexin1.png']"
+    },
+    {
+        "Key": "IconAnnihilation",
+        "Note": "Laurel Core Annihilation, For Texts and Graphics Icon Display",
+        "Params": "['Assets/Product/Texture/Image/IconSkill/R3Lunadazhao1.png']"
+    },
+    {
+        "Key": "IconReprise",
+        "Note": "Capriccio Core Reprise, For Texts and Graphics Icon Display",
+        "Params": "['Assets/Product/Texture/Image/IconSkill/R4Sailinnahexin1.png']"
+    },
+    {
+        "Key": "IconAttack",
+        "Note": "Effect Attack, For Texts and Graphics Icon Display",
+        "Params": "['Assets/Product/Texture/Image/UiPcg/UiPcgCardSmallIcon04.png']"
+    },
+    {
+        "Key": "IconArmor",
+        "Note": "Effect Armor, For Texts and Graphics Icon Display",
+        "Params": "['Assets/Product/Texture/Image/UiPcg/UiPcgCardSmallIcon05.png']"
+    },
+    {
+        "Key": "IconHeal",
+        "Note": "Effect Healing, For Texts and Graphics Icon Display",
+        "Params": "['Assets/Product/Texture/Image/UiPcg/UiPcgCardSmallIcon06.png']"
+    },
+    {
+        "Key": "IconRedSkill",
+        "Note": "Red Orb, For Texts and Graphics Icon Display",
+        "Params": "['Assets/Product/Texture/Image/IconSkill/hongse.png']"
+    },
+    {
+        "Key": "IconBlueSkill",
+        "Note": "Blue Orb, For Texts and Graphics Icon Display",
+        "Params": "['Assets/Product/Texture/Image/IconSkill/lanse.png']"
+    },
+    {
+        "Key": "IconYellowSkill",
+        "Note": "Yellow Orb, For Texts and Graphics Icon Display",
+        "Params": "['Assets/Product/Texture/Image/IconSkill/huangse.png']"
+    },
+    {
+        "Key": "IconPower",
+        "Note": "Amplifier QTE Strength, For Texts and Graphics Icon Display",
+        "Params": "['Assets/Product/Texture/Image/IconAffix/AffixIconQianggong.png']"
+    }
+]

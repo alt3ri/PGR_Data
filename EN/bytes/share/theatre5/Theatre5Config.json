@@ -1,0 +1,272 @@
+[
+    {
+        "Key": "BattlePoolMaxLen",
+        "Desc": "\u9635\u5bb9\u6c60\u6700\u5927\u957f\u5ea6",
+        "Values": "['1000']"
+    },
+    {
+        "Key": "PvpHealth",
+        "Desc": "PvP\u6a21\u5f0f\u751f\u547d\u6570\u91cf",
+        "Values": "['5']"
+    },
+    {
+        "Key": "PvpTarget",
+        "Desc": "PvP\u6a21\u5f0f\u76ee\u6807\u5956\u676f\u6570",
+        "Values": "['10']"
+    },
+    {
+        "Key": "ReduceRankFailCount",
+        "Desc": "\u8fde\u7eed\u5931\u8d253\u6b21\u540e\u5339\u914d\u65f6\u8c03\u4f4e\u5bf9\u6bb5\u4f4d",
+        "Values": "['3']"
+    },
+    {
+        "Key": "BagItemGridMaxNum",
+        "Desc": "\u80cc\u5305\u683c\u5b50\u6700\u5927\u5141\u8bb8\u6570\u91cf",
+        "Values": "['6']"
+    },
+    {
+        "Key": "SkillGridMaxNum",
+        "Desc": "\u6280\u80fd\u683c\u5b50\u6700\u5927\u5141\u8bb8\u6570\u91cf",
+        "Values": "['3']"
+    },
+    {
+        "Key": "RuneGridMinNum",
+        "Desc": "\u5b9d\u73e0\u683c\u5b50\u521d\u59cb\u5316\u6570\u91cf\uff08PVP\u7528\uff0cPVE\u521d\u59cb\u5316\u6570\u91cf\u5728Theatre5PveChapter\u8868\u63a7\u5236\uff09",
+        "Values": "['2']"
+    },
+    {
+        "Key": "RuneGridMaxNum",
+        "Desc": "\u5b9d\u73e0\u683c\u5b50\u6700\u5927\u5141\u8bb8\u6570\u91cf\u4e0a\u9650",
+        "Values": "['10']"
+    },
+    {
+        "Key": "ShopItemDiscountWeight",
+        "Desc": "\u5546\u5e97\u6298\u6263\u6743\u91cd(\u968f\u673a\u51faX\u4e2a\u7269\u54c1\u6298\u6263\u7684\u6743\u91cd)",
+        "Values": "['90', '10', '1']"
+    },
+    {
+        "Key": "PvpShopGridsTotalCount",
+        "Desc": "\u5546\u5e97\u683c\u5b50\u603b\u6570",
+        "Values": "['8']"
+    },
+    {
+        "Key": "WDraw",
+        "Desc": "\u6218\u6597\u5e73\u5c40W\u7cfb\u6570\uff08\u4e07\u5206\u6bd4\uff09",
+        "Values": "['5000']"
+    },
+    {
+        "Key": "WLose",
+        "Desc": "\u6218\u6597\u5931\u8d25W\u7cfb\u6570\uff08\u4e07\u5206\u6bd4\uff09",
+        "Values": "['0']"
+    },
+    {
+        "Key": "WWin",
+        "Desc": "\u6218\u6597\u80dc\u5229W\u7cfb\u6570\uff08\u4e07\u5206\u6bd4\uff09",
+        "Values": "['10000']"
+    },
+    {
+        "Key": "InitRating",
+        "Desc": "\u521d\u59cb\u5316\u5929\u68af\u5206",
+        "Values": "['0']"
+    },
+    {
+        "Key": "RobotHeadPortraits",
+        "Desc": "List of Portraits available for Robots",
+        "Values": "['9000001']"
+    },
+    {
+        "Key": "RobotHeadHeadFrames",
+        "Desc": "List of Portrait Frames available for Robots",
+        "Values": "['9090008']"
+    },
+    {
+        "Key": "TeachingPveStoryLineId",
+        "Desc": "\u6559\u5b66\u6545\u4e8b\u7ebfid",
+        "Values": "['1']"
+    },
+    {
+        "Key": "TeachingPveCharacterId",
+        "Desc": "\u6559\u5b66\u6545\u4e8b\u7ebf\u89d2\u8272id",
+        "Values": "['1']"
+    },
+    {
+        "Key": "ChapterCoin",
+        "Desc": "\u7ae0\u8282\u7ae0\u8282\u5e01",
+        "Values": "['1']"
+    },
+    {
+        "Key": "TempItemBagGridMaxNum",
+        "Desc": "\u4e34\u65f6\u80cc\u5305\u683c\u5b50\u6700\u5927\u5141\u8bb8\u6570\u91cf",
+        "Values": "['4']"
+    },
+    {
+        "Key": "PvpGridUnlockDiscount",
+        "Desc": "pvp\u80cc\u5305\u56de\u5408\u6570\u6298\u6263\uff08pve\u7528\u7684\u914d\u7f6e\u5728PveChapter\u8868\u4e2d\uff09",
+        "Values": "['3']"
+    },
+    {
+        "Key": "PveHealth",
+        "Desc": "Pve\u6a21\u5f0f\u751f\u547d\u6570\u91cf",
+        "Values": "['5']"
+    },
+    {
+        "Key": "PveBattleCheckOpen",
+        "Desc": "\u662f\u5426\u5f00\u653e\u6218\u6597\u6821\u9a8c(0\u5173\u95ed)",
+        "Values": "['0']"
+    },
+    {
+        "Key": "PveBattleTimeLimit",
+        "Desc": "pve\u6218\u6597\u65f6\u957f\u9650\u5236",
+        "Values": "['1']"
+    },
+    {
+        "Key": "PveMyTotalDamageLimit",
+        "Desc": "pve\u6211\u65b9\u4f24\u5bb3\u603b\u91cf\u9650\u5236",
+        "Values": "['1']"
+    },
+    {
+        "Key": "PveMyTotalCureLimit",
+        "Desc": "pve\u6211\u65b9\u6cbb\u7597\u603b\u91cf\u9650\u5236",
+        "Values": "['1']"
+    },
+    {
+        "Key": "PveEnemyTotalDamageLimit",
+        "Desc": "pve\u654c\u65b9\u4f24\u5bb3\u603b\u91cf\u9650\u5236",
+        "Values": "['1']"
+    },
+    {
+        "Key": "PveEnemyTotalCureLimit",
+        "Desc": "pve\u6218\u6597\u654c\u65b9\u6cbb\u7597\u603b\u91cf\u9650\u5236",
+        "Values": "['1']"
+    },
+    {
+        "Key": "PvpBattleTimeLimit",
+        "Desc": "pvp\u6218\u6597\u65f6\u957f\u9650\u5236",
+        "Values": "['1']"
+    },
+    {
+        "Key": "PvpMyTotalDamageLimit",
+        "Desc": "pvp\u6211\u65b9\u4f24\u5bb3\u603b\u91cf\u9650\u5236",
+        "Values": "['1']"
+    },
+    {
+        "Key": "PvpMyTotalCureLimit",
+        "Desc": "pvp\u6211\u65b9\u6cbb\u7597\u603b\u91cf\u9650\u5236",
+        "Values": "['1']"
+    },
+    {
+        "Key": "PvpEnemyTotalDamageLimit",
+        "Desc": "pvp\u654c\u65b9\u4f24\u5bb3\u603b\u91cf\u9650\u5236",
+        "Values": "['1']"
+    },
+    {
+        "Key": "PvpEnemyTotalCureLimit",
+        "Desc": "pvp\u6218\u6597\u654c\u65b9\u6cbb\u7597\u603b\u91cf\u9650\u5236",
+        "Values": "['1']"
+    },
+    {
+        "Key": "PveChatWriteTime",
+        "Desc": "pve\u5bf9\u8bdd\u804a\u5929\u901f\u5ea6(\u6beb\u79d2)",
+        "Values": "['300']"
+    },
+    {
+        "Key": "BattleCheckFailTimesLimit",
+        "Desc": "\u6218\u6597\u6821\u9a8c\u5931\u8d25\u6b21\u6570\u9650\u5236\uff0c\u8fbe\u5230\u9650\u5236\u6b21\u6570\u5c06\u76f4\u63a5\u7ed3\u7b97\u5904\u7406",
+        "Values": "['3']"
+    },
+    {
+        "Key": "DeduceTipsTime",
+        "Desc": "\u63a8\u6f14tips\u65f6\u95f4\uff0c1\u662f\u666e\u901a\u65f6\u95f4\uff0c2\u65f6\u56de\u7b54\u6b63\u786e\u65f6\u95f4",
+        "Values": "['1000', '2000']"
+    },
+    {
+        "Key": "ClueBoardScaleLimitPoint",
+        "Desc": "\u7ebf\u7d22\u677f\u7f29\u653e\u53d8\u5316\u7684\u4e34\u754c\u70b9(\u7f29\u653e\u503c*1000)",
+        "Values": "['650']"
+    },
+    {
+        "Key": "MainClueBoardRect",
+        "Desc": "\u6838\u5fc3\u7ebf\u7d22\u677f\u7684\u5916\u6269\u5bbd\u9ad8",
+        "Values": "['7500', '3500']"
+    },
+    {
+        "Key": "ClueBoardFocusTime",
+        "Desc": "\u70b9\u51fb\u7ebf\u7d22\u805a\u7126\u65f6\u95f4",
+        "Values": "['200']"
+    },
+    {
+        "Key": "Theatre5ShopCurrencyId",
+        "Desc": "\u5151\u6362\u5546\u5e97id",
+        "Values": "['97054']"
+    },
+    {
+        "Key": "KLoseMin",
+        "Desc": "Minimum Restart K Value Penalty",
+        "Values": "['2']"
+    },
+    {
+        "Key": "PveTimeId",
+        "Desc": "PVE Mode Starting Time",
+        "Values": "['34']"
+    },
+    {
+        "Key": "PveVersion",
+        "Desc": "PVE Mode Version Number",
+        "Values": "['4']"
+    },
+    {
+        "Key": "SkipSotryPage",
+        "Desc": "Codex Redirect Tag",
+        "Values": "['16']"
+    },
+    {
+        "Key": "MainVideoId",
+        "Desc": "Main Screen Video ID",
+        "Values": "['20004']"
+    },
+    {
+        "Key": "ShopShowRewards",
+        "Desc": "Groups of 2: The 1st part is the ID, the 2nd is the quantity.",
+        "Values": "['50005', '2250', '32', '49', '11000292', '1']"
+    },
+    {
+        "Key": "PveSlideButton",
+        "Desc": "PVE Clue Board +/- buttons; click {\u53c2\u65701} times to reach max/min value.",
+        "Values": "['20']"
+    },
+    {
+        "Key": "Theatre5LimitShop",
+        "Desc": "PVE limited-time shop ID corresponding to taskshop table ID",
+        "Values": "['1']"
+    },
+    {
+        "Key": "PveWorldId",
+        "Desc": "PVE world ID to be loaded",
+        "Values": "['200']"
+    },
+    {
+        "Key": "ClueBoardMaskMinAndMax",
+        "Desc": "PvE clue board zoom aperture configuration",
+        "Values": "['1000', '2000']"
+    },
+    {
+        "Key": "PvpLevelGroup",
+        "Desc": "PvP Level Configuration Set",
+        "Values": "['1']"
+    },
+    {
+        "Key": "RelicRefresh",
+        "Desc": "Accessory Refresh Attempts",
+        "Values": "['1']"
+    },
+    {
+        "Key": "StrengthenRate",
+        "Desc": "Enhanced Rune Price Multiplier",
+        "Values": "['20000']"
+    },
+    {
+        "Key": "MinPvpFinishScores",
+        "Desc": "The guarantee system triggers after clearing with 10 wins (guarantee scores vary by remaining HP)",
+        "Values": "['10', '10', '15', '15', '15']"
+    }
+]

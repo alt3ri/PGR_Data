@@ -1,0 +1,65 @@
+[
+    {
+        "Id": 1,
+        "Name": "Command Bureau Ranking",
+        "TabType": "BtnFirstHasSnd",
+        "FatherTab": null,
+        "RankingTarget": null,
+        "Params": null,
+        "RoundId": null
+    },
+    {
+        "Id": 2,
+        "Name": "Command Bureau Ranking",
+        "TabType": "BtnSecondAll",
+        "FatherTab": 1.0,
+        "RankingTarget": 1.0,
+        "Params": "[1, 0]",
+        "RoundId": null
+    },
+    {
+        "Id": 3,
+        "Name": "Command Bureau Report",
+        "TabType": "BtnFirstHasSnd",
+        "FatherTab": null,
+        "RankingTarget": null,
+        "Params": null,
+        "RoundId": null
+    },
+    {
+        "Id": 4,
+        "Name": "Total Reports",
+        "TabType": "BtnSecondTop",
+        "FatherTab": 3.0,
+        "RankingTarget": 2.0,
+        "Params": "[2, 0]",
+        "RoundId": null
+    },
+    {
+        "Id": 5,
+        "Name": "First Round Report",
+        "TabType": "BtnSecond",
+        "FatherTab": 3.0,
+        "RankingTarget": 2.0,
+        "Params": "[2, 1]",
+        "RoundId": 1.0
+    },
+    {
+        "Id": 6,
+        "Name": "Second Round Report",
+        "TabType": "BtnSecond",
+        "FatherTab": 3.0,
+        "RankingTarget": 2.0,
+        "Params": "[2, 2]",
+        "RoundId": 2.0
+    },
+    {
+        "Id": 7,
+        "Name": "Third Round Report",
+        "TabType": "BtnSecondBottom",
+        "FatherTab": 3.0,
+        "RankingTarget": 2.0,
+        "Params": "[2, 3]",
+        "RoundId": 3.0
+    }
+]

@@ -1,0 +1,110 @@
+[
+    {
+        "Id": 1,
+        "Name": "Luna Passive",
+        "Type": 1,
+        "RoundDuration": null,
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33131.png",
+        "Params": "[1, 9999, 1021005, 6]",
+        "Desc": "Luna's passive. Only takes effect once per game. Invalid against the King."
+    },
+    {
+        "Id": 2,
+        "Name": "Luna Signature passive increases damage",
+        "Type": 2,
+        "RoundDuration": null,
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChesscanPieceUp.png",
+        "Params": "[3, 1, 2, 3]",
+        "Desc": "Takes effect 3 times per game. Value each time:"
+    },
+    {
+        "Id": 3,
+        "Name": "Luna Signature passive increases attack range",
+        "Type": 3,
+        "RoundDuration": null,
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChesscanPieceUp.png",
+        "Params": "[3, 1, 2, 3]",
+        "Desc": "Takes effect 3 times per game. Value each time:"
+    },
+    {
+        "Id": 4,
+        "Name": "Luna Signature passive increases movement",
+        "Type": 4,
+        "RoundDuration": null,
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChesscanPieceUp.png",
+        "Params": "[3, 0, 0, 0]",
+        "Desc": "Takes effect 3 times per game. Value each time:"
+    },
+    {
+        "Id": 5,
+        "Name": "Vera Signature Bonus DMG",
+        "Type": 5,
+        "RoundDuration": null,
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChesscanPieceUp.png",
+        "Params": "[3, 32]",
+        "Desc": "Increases damage each time, skill id"
+    },
+    {
+        "Id": 6,
+        "Name": "Vera Signature Energy Consumption",
+        "Type": 6,
+        "RoundDuration": null,
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChesscanPieceUp.png",
+        "Params": "[30, 32]",
+        "Desc": "\"Consumption increases each time, skill id\""
+    },
+    {
+        "Id": 7,
+        "Name": "Vera Signature Revives Temporary Chess Piece",
+        "Type": 7,
+        "RoundDuration": null,
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChesscanPieceUp.png",
+        "Params": "[50, 2, 6]",
+        "Desc": "HP parameter. Turns survived. Excluding chess piece type."
+    },
+    {
+        "Id": 8,
+        "Name": "Wrench Boy Gains Movement Range",
+        "Type": 4,
+        "RoundDuration": 5.0,
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChesscanPieceUp.png",
+        "Params": "[1, 1]",
+        "Desc": "Bonus range"
+    },
+    {
+        "Id": 9,
+        "Name": "Wrench Boy Jump Cleave Increases Skill Range",
+        "Type": 8,
+        "RoundDuration": 5.0,
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChesscanPieceUp.png",
+        "Params": "[5, 21]",
+        "Desc": "Skill width. Skill id."
+    },
+    {
+        "Id": 10,
+        "Name": "Wrench Boy Jump Cleave Reduces Skill Range cd",
+        "Type": 9,
+        "RoundDuration": 5.0,
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChesscanPieceUp.png",
+        "Params": "[-2, 19]",
+        "Desc": "cd reduction. CD sheet skill id"
+    },
+    {
+        "Id": 12,
+        "Name": "Vera deals more damage to Shark-eclipser on any square of a different color.",
+        "Type": 10,
+        "RoundDuration": null,
+        "Icon": "Assets/Product/Texture/Image/UiBlackRockChess/UiBlackRockChesscanPieceUp.png",
+        "Params": "[5]",
+        "Desc": "Different-color square DMG increase"
+    },
+    {
+        "Id": 13,
+        "Name": "Shark-eclipser DMG Taken Skill CD Reduction",
+        "Type": 9,
+        "RoundDuration": null,
+        "Icon": null,
+        "Params": "[-1, 22]",
+        "Desc": "Different-color square DMG Taken interval reduction"
+    }
+]

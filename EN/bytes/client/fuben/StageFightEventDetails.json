@@ -1,0 +1,4496 @@
+[
+    {
+        "Id": 110004,
+        "Name": "Fused Armor",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconRongjia1.png",
+        "Description": "Extra DMG Reduction decreases by 50% when taking DMG from Tank Omniframes."
+    },
+    {
+        "Id": 33101,
+        "Name": "Deterioration",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconLuehua.png",
+        "Description": "When the enemy deals DMG, the healing received by the target is reduced by 50% for 3s."
+    },
+    {
+        "Id": 32131,
+        "Name": "Lightning Shield",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDiandun.png",
+        "Description": "Every time the enemy gets hit, has a 10% chance to call down a lightning strike upon the attacker, dealing Lightning DMG equal to 20% of its ATK."
+    },
+    {
+        "Id": 32101,
+        "Name": "Lone Wolf",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou.png",
+        "Description": "If there are fewer than 3 companions around the enemy, its Extra DMG Bonus increases by 10% (up to 30%) for each companion lost."
+    },
+    {
+        "Id": 32112,
+        "Name": "Commander II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconTongling.png",
+        "Description": "The enemy's Extra DMG Bonus increases by 10% for each companion around. Stacks up to 3 times."
+    },
+    {
+        "Id": 110001,
+        "Name": "Penetration III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconGuanchuan.png",
+        "Description": "The enemy will reduce the target's Extra DMG Reduction by 5% when dealing DMG. Stacks up to 10 times. Each stack lasts 10s."
+    },
+    {
+        "Id": 32071,
+        "Name": "Radiation I",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFushe.png",
+        "Description": "The enemy will deal Physical DMG equal to 1% of its ATK to nearby targets per second."
+    },
+    {
+        "Id": 32072,
+        "Name": "Radiation II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFushe.png",
+        "Description": "The enemy will deal Physical DMG equal to 2% of its ATK to nearby targets per second."
+    },
+    {
+        "Id": 32073,
+        "Name": "Radiation III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFushe.png",
+        "Description": "The enemy will deal Physical DMG equal to 3% of its ATK to nearby targets per second."
+    },
+    {
+        "Id": 32031,
+        "Name": "Berserk I",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBaozou.png",
+        "Description": "The enemy's attacking desire increases by 33%. When dealing DMG, has a 20% chance to deal 33% Extra DMG."
+    },
+    {
+        "Id": 32032,
+        "Name": "Berserk II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBaozou.png",
+        "Description": "The enemy's attacking desire increases by 66%. When dealing DMG, has a 40% chance to deal 33% Extra DMG."
+    },
+    {
+        "Id": 32033,
+        "Name": "Berserk III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBaozou.png",
+        "Description": "The enemy's attacking desire increases by 100%. When dealing DMG, has a 60% chance to deal 33% Extra DMG."
+    },
+    {
+        "Id": 32011,
+        "Name": "Recovery I",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFusu.png",
+        "Description": "The enemy will recover 1% of max HP per second."
+    },
+    {
+        "Id": 32012,
+        "Name": "Recovery II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFusu.png",
+        "Description": "The enemy will recover 2% of max HP per second."
+    },
+    {
+        "Id": 32013,
+        "Name": "Recovery III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFusu.png",
+        "Description": "The enemy will recover 3% of max HP per second."
+    },
+    {
+        "Id": 110007,
+        "Name": "Attack Boost II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconQianggong.png",
+        "Description": "The enemy's ATK increases by 20%."
+    },
+    {
+        "Id": 110008,
+        "Name": "Attack Boost III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconQianggong.png",
+        "Description": "The enemy's ATK increases by 30%."
+    },
+    {
+        "Id": 33001,
+        "Name": "Flash",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconShanxian.png",
+        "Description": "The enemy will teleport toward the target every 10s."
+    },
+    {
+        "Id": 33032,
+        "Name": "Black Hole II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHeidong.png",
+        "Description": "The enemy will pull the player in every 12s."
+    },
+    {
+        "Id": 33033,
+        "Name": "Black Hole",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHeidong.png",
+        "Description": "The enemy will pull the player in every 8s."
+    },
+    {
+        "Id": 33062,
+        "Name": "Freeze II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDongjie.png",
+        "Description": "Each enemy attack has a 60% chance to deal an additional 10% Ice DMG and freeze the target for 1s."
+    },
+    {
+        "Id": 32042,
+        "Name": "Bomb",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconZhadan.png",
+        "Description": "The enemy will explode and deal Physical DMG equal to 45% of its ATK to nearby units before it dies."
+    },
+    {
+        "Id": 32043,
+        "Name": "Bomb",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconZhadan.png",
+        "Description": "The enemy will explode and deal Physical DMG equal to 45% of its ATK to nearby units before it dies."
+    },
+    {
+        "Id": 33123,
+        "Name": "Backfire III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFanshi.png",
+        "Description": "The enemy will generate an energy shield that deals 10% Physical DMG to the attackers. Lasts 3s. 16s cooldown."
+    },
+    {
+        "Id": 110002,
+        "Name": "Barrier",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBilei.png",
+        "Description": "Receives a permanent shield equal to 15% of current HP. Becomes immune to attacks while the shield is active. Removes the shield after taking a certain amount of damage. It will reactivate in 15s."
+    },
+    {
+        "Id": 110003,
+        "Name": "Barrier",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBilei.png",
+        "Description": "Receives a permanent shield equal to 25% of current HP. Becomes immune to attacks while the shield is active. Removes the shield after taking a certain amount of damage. It will reactivate in 15s."
+    },
+    {
+        "Id": 32082,
+        "Name": "Closed Loop",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBihuan.png",
+        "Description": "The enemy's Extra DMG Reduction increases by 30% when taking DMG farther than 4m."
+    },
+    {
+        "Id": 32083,
+        "Name": "Closed Loop",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBihuan.png",
+        "Description": "The enemy's Extra DMG Reduction increases by 30% when taking DMG farther than 4m."
+    },
+    {
+        "Id": 110005,
+        "Name": "Lightning Mine III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconMailei.png",
+        "Description": "When attacking, the enemy will leave a bomb that deals 25% Physical DMG on the target."
+    },
+    {
+        "Id": 110006,
+        "Name": "Damage Resistance III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconMianshang.png",
+        "Description": "Extra DMG Reduction increases by 60%."
+    },
+    {
+        "Id": 110009,
+        "Name": "Freeze I",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDongjie.png",
+        "Description": "Enemy attacks have a 30% chance to deal an additional 10% Ice DMG and freeze the target for 1s."
+    },
+    {
+        "Id": 110010,
+        "Name": "Agile I",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconXunjie.png",
+        "Description": "The enemy's Movement Speed is increased."
+    },
+    {
+        "Id": 110011,
+        "Name": "Damage Resistance I",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconMianshang.png",
+        "Description": "Extra DMG Reduction increases by 30%."
+    },
+    {
+        "Id": 110012,
+        "Name": "Attack Reduction I",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconRuogong.png",
+        "Description": "Extra DMG Bonus decreases by 30%."
+    },
+    {
+        "Id": 110013,
+        "Name": "Attack Reduction II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconRuogong.png",
+        "Description": "Extra DMG Bonus decreases by 45%."
+    },
+    {
+        "Id": 51096,
+        "Name": "Bolster",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconQianghua.png",
+        "Description": "When an enemy dies, it will increase other enemies' Extra DMG Bonus by 25%."
+    },
+    {
+        "Id": 32001,
+        "Name": "Immovable",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBudong.png",
+        "Description": "Enemies will not be stunned."
+    },
+    {
+        "Id": 32143,
+        "Name": "Wave Motion III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBodong.png",
+        "Description": "When an enemy gets up after being knocked down, it will create a shock wave to knock away nearby units"
+    },
+    {
+        "Id": 32021,
+        "Name": "Shield I",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHudun.png",
+        "Description": "Every 10s, enemies will gain a shield equal to 15% of maximum HP for 3s."
+    },
+    {
+        "Id": 32022,
+        "Name": "Shield II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHudun.png",
+        "Description": "Every 10s, enemies will gain a shield equal to 25% of maximum HP for 3s."
+    },
+    {
+        "Id": 32023,
+        "Name": "Shield III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHudun.png",
+        "Description": "Every 10s, enemies will gain a shield equal to 35% of maximum HP for 3s."
+    },
+    {
+        "Id": 33151,
+        "Name": "Combustion Mine",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconZhadan.png",
+        "Description": "Triggering a mine will create a burning area. Units that stay inside this area over 1.5s will become burned (emitting an orange glow) and take burning DMG equal to 20% of the caster's ATK per second for 2s. This DMG will not interrupt actions."
+    },
+    {
+        "Id": 32091,
+        "Name": "Blessing",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconZhufu.png",
+        "Description": "Within the area around each enemy, Extra DMG Bonus of other enemies increases by 20%"
+    },
+    {
+        "Id": 33113,
+        "Name": "Invasion",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBingdu.png",
+        "Description": "When dealing DMG, also deals 1% Physical DMG to the target every second and triggers other effects of Damage Affix for 5s."
+    },
+    {
+        "Id": 32024,
+        "Name": "Shield I",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHudun.png",
+        "Description": "Every 10s, enemies will gain a shield equal to 5% of maximum HP for 10s."
+    },
+    {
+        "Id": 32025,
+        "Name": "Shield II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHudun.png",
+        "Description": "Every 10s, enemies will gain a shield equal to 10% of maximum HP for 10s."
+    },
+    {
+        "Id": 32026,
+        "Name": "Shield III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHudun.png",
+        "Description": "Every 10s, enemies will gain a shield equal to 15% of maximum HP for 10s."
+    },
+    {
+        "Id": 760131,
+        "Name": "Assault",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconQianggong2.png",
+        "Description": "Extra DMG Bonus increases by 30%."
+    },
+    {
+        "Id": 760132,
+        "Name": "Assault",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconQianggong2.png",
+        "Description": "Extra DMG Bonus increases by 45%."
+    },
+    {
+        "Id": 760133,
+        "Name": "Assault",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconQianggong2.png",
+        "Description": "Extra DMG Bonus increases by 60%."
+    },
+    {
+        "Id": 760211,
+        "Name": "Agile",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconXunjie2.png",
+        "Description": "Increases 15% - 30% movement speed. The farther away from the target, the faster the movement speed."
+    },
+    {
+        "Id": 760212,
+        "Name": "Agile",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconXunjie2.png",
+        "Description": "Increases 20% - 35% movement speed. The farther away from the target, the faster the movement speed."
+    },
+    {
+        "Id": 760213,
+        "Name": "Agile",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconXunjie2.png",
+        "Description": "Increases 25% - 40% movement speed. The farther away from the target, the faster the movement speed."
+    },
+    {
+        "Id": 760221,
+        "Name": "Immovable",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBudong2.png",
+        "Description": "Immune to hit and control effects."
+    },
+    {
+        "Id": 760231,
+        "Name": "Recovery",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFusu2.png",
+        "Description": "Recovers 0.1% of max HP per second."
+    },
+    {
+        "Id": 760232,
+        "Name": "Recovery",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFusu2.png",
+        "Description": "Recovers 0.2% of max HP per second."
+    },
+    {
+        "Id": 760233,
+        "Name": "Recovery",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFusu2.png",
+        "Description": "Recovers 0.3% of max HP per second."
+    },
+    {
+        "Id": 760241,
+        "Name": "Shield",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHudun2.png",
+        "Description": "Receives a shield with 15% of current HP every other 8s, for 3s."
+    },
+    {
+        "Id": 760242,
+        "Name": "Shield",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHudun2.png",
+        "Description": "Receives a shield with 25% of current HP every other 8s, for 3s."
+    },
+    {
+        "Id": 760243,
+        "Name": "Shield",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHudun2.png",
+        "Description": "Receives a shield with 35% of current HP every other 8s, for 3s."
+    },
+    {
+        "Id": 760251,
+        "Name": "Berserk I",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBaozou2.png",
+        "Description": "Increases ATK frequency by 33%, having a 20% of chance to deal 33% Extra Physical DMG."
+    },
+    {
+        "Id": 760252,
+        "Name": "Berserk II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBaozou2.png",
+        "Description": "Increases ATK frequency by 66%, having a 30% of chance to deal 33% Extra Physical DMG."
+    },
+    {
+        "Id": 760253,
+        "Name": "Berserk III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBaozou2.png",
+        "Description": "Increases ATK frequency by 100%, having a 40% of chance to deal 33% Extra Physical DMG."
+    },
+    {
+        "Id": 760261,
+        "Name": "Bomb",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconZhadan2.png",
+        "Description": "A bomb left after death that deals 35% Physical DMG."
+    },
+    {
+        "Id": 760262,
+        "Name": "Bomb",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconZhadan2.png",
+        "Description": "Leaves a bomb upon death that deals 45% Physical DMG."
+    },
+    {
+        "Id": 760263,
+        "Name": "Bomb",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconZhadan2.png",
+        "Description": "Leaves a bomb upon death that deals 60% Physical DMG."
+    },
+    {
+        "Id": 760271,
+        "Name": "Rigid Body",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconGangti2.png",
+        "Description": "Only takes 1 damage from incoming attacks. This effect is removed after taking damage 6 times, and resumes 8s later."
+    },
+    {
+        "Id": 760272,
+        "Name": "Rigid Body",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconGangti2.png",
+        "Description": "Only takes 1 damage from incoming attacks. This effect is removed after taking damage 9 times, and resumes 8s later."
+    },
+    {
+        "Id": 760273,
+        "Name": "Rigid Body",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconGangti2.png",
+        "Description": "Only takes 1 damage from incoming attacks. This effect is removed after taking damage 12 times, and resumes 8s later."
+    },
+    {
+        "Id": 760281,
+        "Name": "Barrier",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBilei2.png",
+        "Description": "Receives a permanent shield equal to 15% of current HP. Becomes immune to attacks while the shield is active. Removes the shield after taking a certain amount of DMG. It will reactivate in 15s."
+    },
+    {
+        "Id": 760282,
+        "Name": "Barrier",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBilei2.png",
+        "Description": "Receives a permanent shield equal to 25% of current HP. Becomes immune to attacks while the shield is active. Removes the shield after taking a certain amount of DMG. It will reactivate in 15s."
+    },
+    {
+        "Id": 760283,
+        "Name": "Barrier",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBilei2.png",
+        "Description": "Receives a permanent shield equal to 35% of current HP. Becomes immune to attacks while the shield is active. Removes the shield after taking a certain amount of DMG. It will reactivate in 15s."
+    },
+    {
+        "Id": 760291,
+        "Name": "Radiation",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFushe2.png",
+        "Description": "Consecutively deals 6% Physical DMG to enemies nearby"
+    },
+    {
+        "Id": 760292,
+        "Name": "Radiation",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFushe2.png",
+        "Description": "Consecutively deals 8% Physical DMG to enemies nearby"
+    },
+    {
+        "Id": 760293,
+        "Name": "Radiation",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFushe2.png",
+        "Description": "Consecutively deals 10% Physical DMG to enemies nearby"
+    },
+    {
+        "Id": 761275,
+        "Name": "Radiation",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFushe2.png",
+        "Description": "Consecutively deals 1.25% Physical DMG to enemies nearby"
+    },
+    {
+        "Id": 760301,
+        "Name": "Closed Loop",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBihuan2.png",
+        "Description": "A damage to the remote enemy, increases Extra DMG Reduction by 30%"
+    },
+    {
+        "Id": 760302,
+        "Name": "Closed Loop",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBihuan2.png",
+        "Description": "A damage to the remote enemy, increases Extra DMG Reduction by 45%"
+    },
+    {
+        "Id": 760303,
+        "Name": "Closed Loop",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBihuan2.png",
+        "Description": "A damage to the remote enemy, increases Extra DMG Reduction by 60%"
+    },
+    {
+        "Id": 760311,
+        "Name": "Blessing",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconZhufu2.png",
+        "Description": "Increases Extra DMG Bonus of allies nearby by 10%"
+    },
+    {
+        "Id": 760312,
+        "Name": "Blessing",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconZhufu2.png",
+        "Description": "Increases Extra DMG Bonus of allies nearby by 20%"
+    },
+    {
+        "Id": 760313,
+        "Name": "Blessing",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconZhufu2.png",
+        "Description": "Increases Extra DMG Bonus of allies nearby by 30%"
+    },
+    {
+        "Id": 760321,
+        "Name": "Lone Wolf",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "Description": "Increases Extra DMG Bonus by 3%. Stacks up to 10 times. The less the allies nearby, the higher the stacks."
+    },
+    {
+        "Id": 760322,
+        "Name": "Lone Wolf",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "Description": "Increases Extra DMG Bonus by 4.5%. Stacks up to 10 times. The less the allies nearby, the higher the stacks."
+    },
+    {
+        "Id": 760323,
+        "Name": "Lone Wolf",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "Description": "Increases Extra DMG Bonus by 6%. Stacks up to 10 times. The less the allies nearby, the higher the stacks."
+    },
+    {
+        "Id": 760331,
+        "Name": "Commander",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconTongling2.png",
+        "Description": "Increases Extra DMG Bonus by 3%. Stacks up to 10 times. The more the allies nearby, the higher the stacks."
+    },
+    {
+        "Id": 760332,
+        "Name": "Commander",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconTongling2.png",
+        "Description": "Increases Extra DMG Bonus by 4.5%, up to 10 layers; the more allies nearby, the higher the stacks."
+    },
+    {
+        "Id": 760333,
+        "Name": "Commander",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconTongling2.png",
+        "Description": "Increases Extra DMG Bonus by 6%. Stacks up to 10 times. The more the allies nearby, the higher the stacks."
+    },
+    {
+        "Id": 760341,
+        "Name": "Penetration",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconGuanchuan2.png",
+        "Description": "Decreases Extra DMG Reduction of the target by 3% when dealing DMG. Stacks up to 10 times. Each stack lasts 10s."
+    },
+    {
+        "Id": 760342,
+        "Name": "Penetration",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconGuanchuan2.png",
+        "Description": "Decreases Extra DMG Reduction of the target by 4% when dealing DMG. Stacks up to 10 times. Each stack lasts 10s."
+    },
+    {
+        "Id": 760343,
+        "Name": "Penetration",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconGuanchuan2.png",
+        "Description": "Decreases Extra DMG Reduction of the target by 5% when dealing DMG. Stacks up to 10 times. Each stack lasts 10s."
+    },
+    {
+        "Id": 760351,
+        "Name": "Lightning Shield",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDiandun2.png",
+        "Description": "When attacked, has a 15%-25% chance to unleash a lightning strike at the attacker's location, dealing 20% Lightning DMG. 3s cooldown. The farther from the target, the higher chance it will be triggered."
+    },
+    {
+        "Id": 760352,
+        "Name": "Lightning Shield",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDiandun2.png",
+        "Description": "When attacked, has a 15%-25% chance to unleash a lightning strike at the attacker's location, dealing 25% Lightning DMG. 2.5s cooldown. The farther from the target, the higher chance it will be triggered."
+    },
+    {
+        "Id": 760353,
+        "Name": "Lightning Shield",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDiandun2.png",
+        "Description": "When attacked, has a 15%-25% chance to unleash a lightning strike at the attacker's location, dealing 30% Lightning DMG. 2s cooldown. The farther from the target, the higher chance it will be triggered."
+    },
+    {
+        "Id": 760361,
+        "Name": "Wave",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBodong.png",
+        "Description": "A Shockwave created when getting up after falling down to repel the enemies nearby"
+    },
+    {
+        "Id": 760371,
+        "Name": "Lightning Mine",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconMailei2.png",
+        "Description": "When attacking, leaves a bomb that deals 15% Physical DMG on the target."
+    },
+    {
+        "Id": 760372,
+        "Name": "Lightning Mine",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconMailei2.png",
+        "Description": "When attacking, leaves a bomb that deals 20% Physical DMG on the target."
+    },
+    {
+        "Id": 760373,
+        "Name": "Lightning Mine",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconMailei2.png",
+        "Description": "When attacking, leaves a bomb that deals 25% Physical DMG on the target."
+    },
+    {
+        "Id": 760381,
+        "Name": "Stealth",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconYinshen2.png",
+        "Description": "When visible, gains invisibility after 5s. If hit, invisibility will be temporarily lost and restored after 3s."
+    },
+    {
+        "Id": 760382,
+        "Name": "Stealth",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconYinshen2.png",
+        "Description": "When visible, gains invisibility after 3s. If hit, invisibility will be temporarily lost and restored after 3s."
+    },
+    {
+        "Id": 760383,
+        "Name": "Stealth",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconYinshen2.png",
+        "Description": "When visible, gains invisibility after 1s. If hit, invisibility will be temporarily lost and restored after 3s."
+    },
+    {
+        "Id": 760391,
+        "Name": "Flash",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconShanxian2.png",
+        "Description": "When you are far away from the target, transfers you close to the target, CD for 8-10s. The farther the transfer distance, the shorter the CD."
+    },
+    {
+        "Id": 760392,
+        "Name": "Flash",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconShanxian2.png",
+        "Description": "When you are far away from the target, transfers you close to the target, CD for 7-9s. The farther the transfer distance, the shorter the CD."
+    },
+    {
+        "Id": 760393,
+        "Name": "Flash",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconShanxian2.png",
+        "Description": "When you are far away from the target, transfers you close to the target, CD for 6-8s. The farther the transfer distance, the shorter the CD."
+    },
+    {
+        "Id": 760394,
+        "Name": "Transfer",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconShanxian2.png",
+        "Description": "Teleports away when close to the target. Has a cooldown of 8 seconds. Has a 30% chance to trigger the effect when taking DMG. Cooldown are calculated separately."
+    },
+    {
+        "Id": 760395,
+        "Name": "Transfer",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconShanxian2.png",
+        "Description": "Teleports away when close to the target. Has a cooldown of 7 seconds. Has a 30% chance to trigger the effect when taking DMG. Cooldowns are calculated separately."
+    },
+    {
+        "Id": 760396,
+        "Name": "Transfer",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconShanxian2.png",
+        "Description": "Teleport away when close to the target. Has a cooldown of 6 seconds. Has a 30% chance to trigger the effect when taking DMG. Cooldowns are calculated separately."
+    },
+    {
+        "Id": 760401,
+        "Name": "Division",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconLiejie.png",
+        "Description": "Summons two Clones of the same type that inherit 30% of their ATK and DEF at dying."
+    },
+    {
+        "Id": 760402,
+        "Name": "Division",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconLiejie.png",
+        "Description": "Summons two Clones of the same type that inherit 60% of their ATK and DEF at dying"
+    },
+    {
+        "Id": 760403,
+        "Name": "Division",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconLiejie.png",
+        "Description": "Summons two Clones of the same type that inherit 100% of their ATK and DEF at dying"
+    },
+    {
+        "Id": 760411,
+        "Name": "Black Hole",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHeidong2.png",
+        "Description": "Unleash a Black Hole with a weaker gravitational pull at where you stay every once in a while"
+    },
+    {
+        "Id": 760412,
+        "Name": "Black Hole",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHeidong2.png",
+        "Description": "Unleash a Black Hole with an ordinary gravitational pull at where you stay every once in a while"
+    },
+    {
+        "Id": 760413,
+        "Name": "Black Hole",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHeidong2.png",
+        "Description": "Unleash a Black Hole with a stronger gravitational pull at where you stay every once in a while"
+    },
+    {
+        "Id": 760421,
+        "Name": "Laser",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconShexian2.png",
+        "Description": "Unleash lasers that can deal 3% continuous Physical Damage to the eight main directions every once in a while"
+    },
+    {
+        "Id": 760422,
+        "Name": "Laser",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconShexian2.png",
+        "Description": "Unleash lasers that can deal 4% continuous Physical Damage to the eight main directions every once in a while"
+    },
+    {
+        "Id": 760423,
+        "Name": "Laser",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconShexian2.png",
+        "Description": "Unleash lasers that can deal 5% continuous Physical Damage to the eight main directions every once in a while"
+    },
+    {
+        "Id": 760431,
+        "Name": "Flame",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHuoyan2.png",
+        "Description": "Attacks deal an additional 10% Fire DMG and have a 10% of chance to inflict Burn, dealing 10% of Fire DMG per second for 3s."
+    },
+    {
+        "Id": 760432,
+        "Name": "Flame",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHuoyan2.png",
+        "Description": "Attacks deal an additional 15% Fire DMG and have a 15% of chance to inflict Burn, dealing 15% of Fire DMG per second for 3s."
+    },
+    {
+        "Id": 760433,
+        "Name": "Flame",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHuoyan2.png",
+        "Description": "Attacks deal an additional 20% Fire DMG and have a 20% of chance to inflict Burn, dealing 20% of Fire DMG per second for 3s."
+    },
+    {
+        "Id": 760451,
+        "Name": "Freeze",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDongjie2.png",
+        "Description": "Attacks deal an additional 10% Ice DMG and slow down the Target's movement speed by 15%, have 10% of chance to Freeze for 0.3s"
+    },
+    {
+        "Id": 760452,
+        "Name": "Freeze",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDongjie2.png",
+        "Description": "Attacks deal an additional 15% Ice DMG and slow down the Target's movement speed by 20%, have 15% of chance to Freeze for 0.5s"
+    },
+    {
+        "Id": 760453,
+        "Name": "Freeze",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDongjie2.png",
+        "Description": "Attacks deal an additional 20% Ice DMG and slow down the Target's movement speed by 25%, have 20% of chance to Freeze for 0.7s"
+    },
+    {
+        "Id": 760471,
+        "Name": "Shadow",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconAnying2.png",
+        "Description": "Attacks deal an additional 10% Dark DMG and have a 10% of chance to Stun for 0.5s, and 10% Extra Dark DMG received."
+    },
+    {
+        "Id": 760472,
+        "Name": "Shadow",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconAnying2.png",
+        "Description": "Attacks deal an additional 15% Dark DMG and have a 15% of chance to Stun for 0.7s, and 15% Extra Dark DMG received."
+    },
+    {
+        "Id": 760473,
+        "Name": "Shadow",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconAnying2.png",
+        "Description": "Attacks deal an additional 20% Dark DMG and have a 20% of chance to Stun for 0.9s, and 20% Extra Dark DMG received."
+    },
+    {
+        "Id": 760491,
+        "Name": "Thunderous",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconLeiming2.png",
+        "Description": "Attacks deal an additional 10% Lightning DMG and have a 10% of chance to Channel, and unleash lightning once to target every 1.5s, for 1.5s."
+    },
+    {
+        "Id": 760492,
+        "Name": "Thunderous",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconLeiming2.png",
+        "Description": "Attacks deal an additional 15% Lightning DMG and have a 15% of chance to Channel, and unleash lightning once to target every 1.5s, for 3s."
+    },
+    {
+        "Id": 760493,
+        "Name": "Thunderous",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconLeiming2.png",
+        "Description": "Attacks deal an additional 20% Lightning DMG and have a 20% of chance for Channeling, and unleash lightning once to target every 1.5s, for 4.5s."
+    },
+    {
+        "Id": 760601,
+        "Name": "Cold Trail",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBingjing.png",
+        "Description": "Unleashes an Ice Block to keep tracing the target, dealing 5% Ice DMG when the Ice Block contacts the target. The farther away from the target, the faster the movement speed."
+    },
+    {
+        "Id": 760602,
+        "Name": "Cold Trail",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBingjing.png",
+        "Description": "Unleashes an Ice Block to keep tracing the target, dealing 10% Ice DMG when the Ice Block contacts the target. The farther away from the target, the faster the movement speed."
+    },
+    {
+        "Id": 760603,
+        "Name": "Cold Trail",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBingjing.png",
+        "Description": "Unleash an Ice Block to keep tracing the target, dealing 15% Ice DMG when the Ice Block contacts the target. The farther away from the target, the faster the movement speed."
+    },
+    {
+        "Id": 760630,
+        "Name": "Deterioration",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconLuehua2.png",
+        "Description": "Damage dealt also reduces target's healing received by 30% for 3s."
+    },
+    {
+        "Id": 760631,
+        "Name": "Deterioration",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconLuehua2.png",
+        "Description": "Damage dealt also reduces target's healing received by 45% for 4s."
+    },
+    {
+        "Id": 760632,
+        "Name": "Deterioration",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconLuehua2.png",
+        "Description": "Damage dealt also reduces target's healing received by 60% for 5s."
+    },
+    {
+        "Id": 760640,
+        "Name": "Healban",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJinliao.png",
+        "Description": "Unleash it to the target every once a while, making the target unable to receive any healing for 3s"
+    },
+    {
+        "Id": 760641,
+        "Name": "Healban",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJinliao.png",
+        "Description": "Unleash it to the target every once a while, making the target unable to receive any healing for 4s"
+    },
+    {
+        "Id": 760642,
+        "Name": "Healban",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJinliao.png",
+        "Description": "Unleash it to the target every once a while, making the target unable to receive any healing for 5s"
+    },
+    {
+        "Id": 760650,
+        "Name": "Imprison",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJingu.png",
+        "Description": "Creates a barrier at the target location that blocks the target leaving or entering the barrier area. Lasts 3s. 15s cooldown."
+    },
+    {
+        "Id": 760651,
+        "Name": "Imprison",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJingu.png",
+        "Description": "Creates a barrier at the target location that blocks the target leaving or entering the barrier area. Lasts 4s. 16s cooldown."
+    },
+    {
+        "Id": 760652,
+        "Name": "Imprison",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJingu.png",
+        "Description": "Creates a barrier at the target location that blocks the target leaving or entering the barrier area. Lasts 5s. 17s cooldown."
+    },
+    {
+        "Id": 760670,
+        "Name": "Invasion",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBingdu2.png",
+        "Description": "When dealing DMG, also deals 2% Physical DMG to the target every second and triggers other effects of Damage Affix for 3s."
+    },
+    {
+        "Id": 760671,
+        "Name": "Invasion",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBingdu2.png",
+        "Description": "When dealing DMG, also deals 2% Physical DMG to the target every second and triggers other effects of Damage Affix for 4s."
+    },
+    {
+        "Id": 760672,
+        "Name": "Invasion",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBingdu2.png",
+        "Description": "When dealing DMG, also deals 2% Physical DMG to the target every second and triggers other effects of Damage Affix for 5s."
+    },
+    {
+        "Id": 760690,
+        "Name": "Backfire",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFanshi.png",
+        "Description": "Generate an energy shield that deals 15% Physical DMG to the attackers. Lasts 3s. 16s cooldown."
+    },
+    {
+        "Id": 760691,
+        "Name": "Backfire",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFanshi.png",
+        "Description": "The enemy will generate an energy shield that deals 25% Physical DMG to the attackers. Lasts 4s. 17s cooldown."
+    },
+    {
+        "Id": 760692,
+        "Name": "Backfire",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFanshi.png",
+        "Description": "Generate an energy shield that deals 35% Physical DMG to the attackers. Lasts 5s. 18s cooldown."
+    },
+    {
+        "Id": 771774,
+        "Name": "Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconXueruo.png",
+        "Description": "DMG dealt increases by 20% for 5s"
+    },
+    {
+        "Id": 110201,
+        "Name": "Vision Interference",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33141.png",
+        "Description": "Enemies throw smoke bombs at the target, significantly blocking its vision for 2s. 20s cooldown."
+    },
+    {
+        "Id": 110202,
+        "Name": "Vision Interference",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33141.png",
+        "Description": "Enemies throw smoke bombs at the target, significantly blocking its vision for 4s. 20s cooldown."
+    },
+    {
+        "Id": 110203,
+        "Name": "Vision Interference",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33141.png",
+        "Description": "Enemies throw smoke bombs at the target, significantly blocking its vision for 6s. 20s cooldown."
+    },
+    {
+        "Id": 110204,
+        "Name": "Combustion Mine",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33151.png",
+        "Description": "Enemies leave a combustion mine that creates a burning area when triggered. Staying within the area for 1.5s will cause the target to be ignited for 2s, taking damage once every sec. At the end of ignition, an explosion will interrupt the target's action. 15s cooldown."
+    },
+    {
+        "Id": 110205,
+        "Name": "Recovery I",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFusu.png",
+        "Description": "Recovers 1% of max HP per second."
+    },
+    {
+        "Id": 110206,
+        "Name": "Recovery II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFusu.png",
+        "Description": "Recovers 2% of max HP per second."
+    },
+    {
+        "Id": 110207,
+        "Name": "Recovery III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFusu.png",
+        "Description": "Recovers 3% of max HP per second."
+    },
+    {
+        "Id": 110208,
+        "Name": "Shield I",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHudun.png",
+        "Description": "Gains a shield with capacity equal to 5% of current HP every 10s. The shield lasts 10s."
+    },
+    {
+        "Id": 110209,
+        "Name": "Shield II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHudun.png",
+        "Description": "Gains a shield with capacity equal to 10% of current HP every 10s. The shield lasts 10s."
+    },
+    {
+        "Id": 110210,
+        "Name": "Shield III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHudun.png",
+        "Description": "Gains a shield with capacity equal to 15% of current HP every 10s. The shield lasts 10s."
+    },
+    {
+        "Id": 110211,
+        "Name": "Berserk I",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBaozou.png",
+        "Description": "Increases ATK frequency by 33%. 20% chance to deal 33% extra Physical DMG when damaging a target."
+    },
+    {
+        "Id": 110212,
+        "Name": "Berserk II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBaozou.png",
+        "Description": "Increases ATK frequency by 66%. 30% chance to deal 33% extra Physical DMG when damaging a target."
+    },
+    {
+        "Id": 110213,
+        "Name": "Berserk III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBaozou.png",
+        "Description": "Increases ATK frequency by 100%. 40% chance to deal 33% extra Physical DMG when damaging a target."
+    },
+    {
+        "Id": 110214,
+        "Name": "Radiation I",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFushe.png",
+        "Description": "Deals 6% Physical DMG to enemies nearby continuously."
+    },
+    {
+        "Id": 110215,
+        "Name": "Radiation II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFushe.png",
+        "Description": "Deals 8% Physical DMG to enemies nearby continuously."
+    },
+    {
+        "Id": 110216,
+        "Name": "Radiation III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFushe.png",
+        "Description": "Deals 10% Physical DMG to enemies nearby continuously."
+    },
+    {
+        "Id": 110217,
+        "Name": "Penetration I",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconGuanchuan.png",
+        "Description": "Damaging a target also reduces its Extra DMG Reduction by 3%, stacking up to 10 times. Each stack lasts 10s."
+    },
+    {
+        "Id": 110218,
+        "Name": "Penetration II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconGuanchuan.png",
+        "Description": "Damaging a target also reduces its Extra DMG Reduction by 4%, stacking up to 10 times. Each stack lasts 10s."
+    },
+    {
+        "Id": 110219,
+        "Name": "Penetration III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconGuanchuan.png",
+        "Description": "Damaging a target also reduces its Extra DMG Reduction by 5%, stacking up to 10 times. Each stack lasts 10s."
+    },
+    {
+        "Id": 110220,
+        "Name": "Electric Shield I",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDiandun.png",
+        "Description": "When attacked, there is a 15%-25% chance to unleash a lightning strike at the attacker's location, dealing 20% Lightning DMG. 3s cooldown. The farther the target is, the more likely it will be triggered."
+    },
+    {
+        "Id": 110221,
+        "Name": "Lightning Shield II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDiandun.png",
+        "Description": "When attacked, there is a 15%-25% chance to unleash a lightning strike at the attacker's location, dealing 25% Lightning DMG. 2.5s cooldown. The farther the target is, the more likely it will be triggered."
+    },
+    {
+        "Id": 110222,
+        "Name": "Lightning Shield III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDiandun.png",
+        "Description": "When attacked, there is a 15%-25% chance to unleash a lightning strike at the attacker's location, dealing 30% Lightning DMG. 2s cooldown. The farther the target is, the more likely it will be triggered."
+    },
+    {
+        "Id": 110223,
+        "Name": "Mine I",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconMailei.png",
+        "Description": "Attacks also leave a bomb that deals 15% Physical DMG on the target."
+    },
+    {
+        "Id": 110224,
+        "Name": "Mine II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconMailei.png",
+        "Description": "Attacks also leave a bomb that deals 20% Physical DMG on the target."
+    },
+    {
+        "Id": 110225,
+        "Name": "Mine III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconMailei.png",
+        "Description": "Attacks also leave a bomb that deals 25% Physical DMG on the target."
+    },
+    {
+        "Id": 110226,
+        "Name": "Agile I",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconXunjie.png",
+        "Description": "Move Speed increases by 15%-30%. The farther the target is, the higher the move speed becomes."
+    },
+    {
+        "Id": 110227,
+        "Name": "Agile II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconXunjie.png",
+        "Description": "Move Speed increases by 20%-35%. The farther the target is, the higher the move speed becomes."
+    },
+    {
+        "Id": 110228,
+        "Name": "Agile III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconXunjie.png",
+        "Description": "Move Speed increases by 25%-40%. The farther the target is, the higher the move speed becomes."
+    },
+    {
+        "Id": 110229,
+        "Name": "Damage Resistance I",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconMianshang.png",
+        "Description": "Extra DMG Reduction increases by 30%."
+    },
+    {
+        "Id": 110230,
+        "Name": "Damage Resistance II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconMianshang.png",
+        "Description": "Extra DMG Reduction increases by 45%."
+    },
+    {
+        "Id": 110231,
+        "Name": "Damage Resistance III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconMianshang.png",
+        "Description": "Extra DMG Reduction increases by 60%."
+    },
+    {
+        "Id": 110232,
+        "Name": "Rigid Body I",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconGangti.png",
+        "Description": "Takes 1 damage only from incoming attacks. This effect is removed after taking damage 6 times, and is resumed 8s later."
+    },
+    {
+        "Id": 110233,
+        "Name": "Rigid Body II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconGangti.png",
+        "Description": "Takes 1 damage only from incoming attacks. This effect is removed after taking damage 9 times, and is resumed 8s later."
+    },
+    {
+        "Id": 110234,
+        "Name": "Rigid Body III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconGangti.png",
+        "Description": "Takes 1 damage only from incoming attacks. This effect is removed after taking damage 12 times, and is resumed 8s later."
+    },
+    {
+        "Id": 110235,
+        "Name": "Flash I",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconShanxian.png",
+        "Description": "Teleports near the target when they are far away. 8-10s cooldown. The farther the distance travelled, the shorter the cooldown is."
+    },
+    {
+        "Id": 110236,
+        "Name": "Flash II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconShanxian.png",
+        "Description": "Teleports near the target when they are far away. 7-9s cooldown. The farther the distance travelled, the shorter the cooldown is."
+    },
+    {
+        "Id": 110237,
+        "Name": "Flash III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconShanxian.png",
+        "Description": "Teleports near the target when they are far away. 6-8s cooldown. The farther the distance travelled, the shorter the cooldown is."
+    },
+    {
+        "Id": 110238,
+        "Name": "Black Hole I",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHeidong.png",
+        "Description": "Leaves a black hole with weak gravitational pull at your location every once in a while."
+    },
+    {
+        "Id": 110239,
+        "Name": "Black Hole II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHeidong.png",
+        "Description": "Leaves a black hole with moderate gravitational pull at your location every once in a while."
+    },
+    {
+        "Id": 110240,
+        "Name": "Black Hole III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHeidong.png",
+        "Description": "Leaves a black hole with strong gravitational pull at your location every once in a while."
+    },
+    {
+        "Id": 110241,
+        "Name": "Deterioration I",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconLuehua.png",
+        "Description": "Damage dealt also reduces target's healing received by 30% for 3s."
+    },
+    {
+        "Id": 110242,
+        "Name": "Deterioration II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconLuehua.png",
+        "Description": "Damage dealt also reduces target's healing received by 45% for 4s."
+    },
+    {
+        "Id": 110243,
+        "Name": "Deterioration III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconLuehua.png",
+        "Description": "Damage dealt also reduces target's healing received by 60% for 5s."
+    },
+    {
+        "Id": 110244,
+        "Name": "Fire I",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHuoyan.png",
+        "Description": "Attacks deal an additional 10% Fire DMG and have a 10% chance to inflict Burn, dealing 10% Fire DMG per second for 3s."
+    },
+    {
+        "Id": 110245,
+        "Name": "Fire II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHuoyan.png",
+        "Description": "Attacks deal an additional 15% Fire DMG and have a 15% chance to inflict Burn, dealing 15% Fire DMG per second for 3s."
+    },
+    {
+        "Id": 110246,
+        "Name": "Fire III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHuoyan.png",
+        "Description": "Attacks deal an additional 20% Fire DMG and have a 20% chance to inflict Burn, dealing 20% Fire DMG per second for 3s."
+    },
+    {
+        "Id": 110247,
+        "Name": "Freeze I",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDongjie.png",
+        "Description": "Attacks deal an additional 10% Ice DMG, slow down the Target's move speed by 15%, and have a 10% chance to Freeze for 0.3s."
+    },
+    {
+        "Id": 110248,
+        "Name": "Freeze II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDongjie.png",
+        "Description": "Attacks deal an additional 15% Ice DMG, slow down the Target's move speed by 20%, and have a 15% chance to Freeze for 0.5s."
+    },
+    {
+        "Id": 110249,
+        "Name": "Freeze III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDongjie.png",
+        "Description": "Attacks deal an additional 20% Ice DMG, slow down the Target's move speed by 25%, and have a 20% chance to Freeze for 0.7s."
+    },
+    {
+        "Id": 110250,
+        "Name": "Shadow I",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconAnying.png",
+        "Description": "Attacks deal an additional 10% Dark DMG and have a 10% chance to stun the target for 0.5s. Takes 10% extra Dark DMG."
+    },
+    {
+        "Id": 110251,
+        "Name": "Shadow II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconAnying.png",
+        "Description": "Attacks deal an additional 15% Dark DMG and have a 15% chance to stun the target for 0.7s. Takes 15% extra Dark DMG."
+    },
+    {
+        "Id": 110252,
+        "Name": "Shadow III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconAnying.png",
+        "Description": "Attacks deal an additional 20% Dark DMG and have a 20% chance to stun the target for 0.9s. Takes 20% extra Dark DMG."
+    },
+    {
+        "Id": 110253,
+        "Name": "Thunderous I",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconLeiming.png",
+        "Description": "Attacks deal an additional 10% Lightning DMG and have a 10% of chance to channel lightning, striking the target area once every 1.5s for 1.5s."
+    },
+    {
+        "Id": 110254,
+        "Name": "Thunderous II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconLeiming.png",
+        "Description": "Attacks deal an additional 15% Lightning DMG and have a 15% of chance to channel lightning, striking the target area once every 1.5s for 3s."
+    },
+    {
+        "Id": 110255,
+        "Name": "Thunderous III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconLeiming.png",
+        "Description": "Attacks deal an additional 20% Lightning DMG and have a 20% of chance to channel lightning, striking the target area once every 1.5s for 4.5s."
+    },
+    {
+        "Id": 110256,
+        "Name": "Attack Boost I",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconQianggong.png",
+        "Description": "Extra DMG Bonus increases by 30%."
+    },
+    {
+        "Id": 110257,
+        "Name": "Attack Boost II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconQianggong.png",
+        "Description": "Extra DMG Bonus increases by 45%."
+    },
+    {
+        "Id": 110258,
+        "Name": "Attack Boost III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconQianggong.png",
+        "Description": "Extra DMG Bonus increases by 60%."
+    },
+    {
+        "Id": 110259,
+        "Name": "Fused Armor",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconRongjia1.png",
+        "Description": "Extra DMG Reduction decreases by 50% when taking DMG from Tank Omniframes."
+    },
+    {
+        "Id": 110260,
+        "Name": "Attack Reduction I",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconRuogong.png",
+        "Description": "Extra DMG Bonus decreases by 30%."
+    },
+    {
+        "Id": 110261,
+        "Name": "Attack Reduction II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconRuogong.png",
+        "Description": "Extra DMG Bonus decreases by 45%."
+    },
+    {
+        "Id": 110262,
+        "Name": "Attack Reduction III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconRuogong.png",
+        "Description": "Extra DMG Bonus decreases by 60%."
+    },
+    {
+        "Id": 110263,
+        "Name": "Sunder Armor I",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconPojia.png",
+        "Description": "Extra DMG Reduction decreases by 30%."
+    },
+    {
+        "Id": 110264,
+        "Name": "Sunder Armor II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconPojia.png",
+        "Description": "Extra DMG Reduction decreases by 45%."
+    },
+    {
+        "Id": 110265,
+        "Name": "Sunder Armor III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconPojia.png",
+        "Description": "Extra DMG Reduction decreases by 60%."
+    },
+    {
+        "Id": 110266,
+        "Name": "Sea Squirt Bond I",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconhaiqiao.png",
+        "Description": "When there are 3 Sea Squirts in battle, they gain Radiation, provide nearby allies with increased Attack, and heal Siren over time."
+    },
+    {
+        "Id": 110267,
+        "Name": "Super Armor Protection",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconYinshen.png",
+        "Description": "Super Armor point is protected for 3s each time when Siren takes damage."
+    },
+    {
+        "Id": 110268,
+        "Name": "Damage Limit",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFanshi.png",
+        "Description": "Damage taken by Siren within 3s cannot exceed 30% of her HP."
+    },
+    {
+        "Id": 110269,
+        "Name": "Self Enhancement",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconZhuanyi.png",
+        "Description": "Gains Attack (5%-25%) based on own HP percentage"
+    },
+    {
+        "Id": 110270,
+        "Name": "Radioactive Environment",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFushe.png",
+        "Description": "Player characters take damage equal to 2% of max HP every sec."
+    },
+    {
+        "Id": 110271,
+        "Name": "Deteriorating Environment",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconLuehua.png",
+        "Description": "The healing received by player characters decreases by 90%."
+    },
+    {
+        "Id": 110272,
+        "Name": "Ice Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeibing.png",
+        "Description": "Ice Resistance of enemies decreases by 30%."
+    },
+    {
+        "Id": 110273,
+        "Name": "Ice Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeibing.png",
+        "Description": "Ice Resistance of enemies decreases by 45%."
+    },
+    {
+        "Id": 110274,
+        "Name": "Ice Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeibing.png",
+        "Description": "Ice Resistance of enemies decreases by 60%."
+    },
+    {
+        "Id": 110275,
+        "Name": "Immovable",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBudong.png",
+        "Description": "Boss is immune to Hit and Controlled."
+    },
+    {
+        "Id": 110276,
+        "Name": "Radiation I",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFushe.png",
+        "Description": "Monsters deal Physical DMG equal to 6% of Attack to nearby enemies continuously."
+    },
+    {
+        "Id": 110277,
+        "Name": "Radiation II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFushe.png",
+        "Description": "Monsters deal Physical DMG equal to 8% of Attack to nearby enemies continuously."
+    },
+    {
+        "Id": 110278,
+        "Name": "Radiation III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFushe.png",
+        "Description": "Monsters deal Physical DMG equal to 10% of Attack to nearby enemies continuously."
+    },
+    {
+        "Id": 110279,
+        "Name": "Sea Squirt Bond II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconhaiqiao.png",
+        "Description": "When there are 5 Sea Squirts in battle, they gain Radiation, provide nearby allies with increased Attack, and heal Siren for a large amount of HP over time."
+    },
+    {
+        "Id": 110280,
+        "Name": "Summon Sea Squirt I",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconhaiqiao.png",
+        "Description": "Summons 3 Sea Squirts to attack the player every 35s."
+    },
+    {
+        "Id": 110281,
+        "Name": "Summon Sea Squirt II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconhaiqiao.png",
+        "Description": "Summons 5 Sea Squirts to attack the player every 35s."
+    },
+    {
+        "Id": 772583,
+        "Name": "Diffusion",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33021.png",
+        "Description": "Enemy attacks will remove 1 Signal Orb. When the enemy dies, it returns all Signal Orbs."
+    },
+    {
+        "Id": 772587,
+        "Name": "Healing",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22080.png",
+        "Description": "Heals the HP of the enemy's nearby allies equal to its ATK every 20s."
+    },
+    {
+        "Id": 772589,
+        "Name": "Grudge",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon10031.png",
+        "Description": "When the enemy dies, all allies within 20m of it will permanently receive 20% more DMG. Stacks up to 3 times."
+    },
+    {
+        "Id": 772591,
+        "Name": "Revenge",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11045.png",
+        "Description": "When the enemy dies, all allies within 20m of it will receive 25% more DMG. Stacks up to 3 times."
+    },
+    {
+        "Id": 772593,
+        "Name": "Burning Fire",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32011.png",
+        "Description": "When the enemy dies, all allies within 20m of it restore 20% HP."
+    },
+    {
+        "Id": 772595,
+        "Name": "Protection",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11021.png",
+        "Description": "Grants the enemy and its nearby allies a shield equal to 10% of its current HP every 10s. Shields granted this way cannot be stacked."
+    },
+    {
+        "Id": 772597,
+        "Name": "Sacrifice",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12111.png",
+        "Description": "Randomly selects 1 ally as a protected target. When the protected target dies, sacrifice itself to revive the target to full HP."
+    },
+    {
+        "Id": 772601,
+        "Name": "Self-Destruction Bug",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22100.png",
+        "Description": "Periodically summons 1 Self-Destruction Bug to attack the enemy."
+    },
+    {
+        "Id": 772602,
+        "Name": "Devour",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22011.png",
+        "Description": "Kills 1 nearby ally every 30s to restore 20% HP."
+    },
+    {
+        "Id": 772608,
+        "Name": "Soul Devourer",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22090.png",
+        "Description": "Increases the Extra DMG bonus by 20% for each dead ally. Stacks up to 3 times."
+    },
+    {
+        "Id": 778081,
+        "Name": "Curse",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconZuzhou2.png",
+        "Description": "Permanently reduces the enemy's Extra DMG Reduction upon death."
+    },
+    {
+        "Id": 778076,
+        "Name": "Purify",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJinghua2.png",
+        "Description": "Removes all your [Curses] upon death."
+    },
+    {
+        "Id": 778091,
+        "Name": "Mourn",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconMoai2.png",
+        "Description": "When being killed, all enemies within a certain area will become unable to attack for 10s."
+    },
+    {
+        "Id": 778131,
+        "Name": "Bond",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJiban2.png",
+        "Description": "Revives and restores 15% of max HP 10s after death if there are still enemies with an affix [Bond] alive."
+    },
+    {
+        "Id": 778200,
+        "Name": "Leader",
+        "Icon": "Assets/Product/Texture/Image/IconAffixUnionKill/UiUnionKillBUFFIcon007.png",
+        "Description": "Challenge a Boss enemy"
+    },
+    {
+        "Id": 778201,
+        "Name": "Bond",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJiban2.png",
+        "Description": "Replacements are drawn to each other"
+    },
+    {
+        "Id": 760042,
+        "Name": "Physical Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangwuli2.png",
+        "Description": "Physical Resistance decreases by 45%."
+    },
+    {
+        "Id": 760052,
+        "Name": "Elemental Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangyuansu2.png",
+        "Description": "All Elemental Resistance decreases by 45%."
+    },
+    {
+        "Id": 760103,
+        "Name": "Red Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeihong2.png",
+        "Description": "Extra DMG Reduction against Red Orb skills decreases by 60%."
+    },
+    {
+        "Id": 760113,
+        "Name": "Yellow Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeihuang2.png",
+        "Description": "Extra DMG Reduction against Yellow Orb skills decreases by 60%."
+    },
+    {
+        "Id": 760123,
+        "Name": "Blue Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeilan2.png",
+        "Description": "Extra DMG Reduction against Blue Orb skills decreases by 60%."
+    },
+    {
+        "Id": 845057,
+        "Name": "Power Booster",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconQianghua.png",
+        "Description": "Deals 30% more DMG and receives 40% less DMG."
+    },
+    {
+        "Id": 760014,
+        "Name": "Lightning Vulnerability I",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeilei.png",
+        "Description": "Lightning Resistance decreases by 20%."
+    },
+    {
+        "Id": 760015,
+        "Name": "Lightning Vulnerability II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeilei.png",
+        "Description": "Lightning Resistance decreases by 40%."
+    },
+    {
+        "Id": 780001,
+        "Name": "Fire Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeihuo.png",
+        "Description": "Fire Resistance decreases by 30%."
+    },
+    {
+        "Id": 780002,
+        "Name": "Fire Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeihuo.png",
+        "Description": "Fire Resistance decreases by 45%."
+    },
+    {
+        "Id": 780003,
+        "Name": "Fire Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeihuo.png",
+        "Description": "Fire Resistance decreases by 60%."
+    },
+    {
+        "Id": 780011,
+        "Name": "Lightning Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeilei.png",
+        "Description": "Lightning Resistance decreases by 30%."
+    },
+    {
+        "Id": 780012,
+        "Name": "Lightning Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeilei.png",
+        "Description": "Lightning Resistance decreases by 45%."
+    },
+    {
+        "Id": 780013,
+        "Name": "Lightning Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeilei.png",
+        "Description": "Lightning Resistance decreases by 60%."
+    },
+    {
+        "Id": 780021,
+        "Name": "Ice Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeibing.png",
+        "Description": "Ice Resistance decreases by 30%."
+    },
+    {
+        "Id": 780022,
+        "Name": "Ice Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeibing.png",
+        "Description": "Ice Resistance decreases by 45%."
+    },
+    {
+        "Id": 780023,
+        "Name": "Ice Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeibing.png",
+        "Description": "Ice Resistance decreases by 60%."
+    },
+    {
+        "Id": 780031,
+        "Name": "Dark Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeian.png",
+        "Description": "Dark Resistance decreases by 30%."
+    },
+    {
+        "Id": 780032,
+        "Name": "Dark Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeian.png",
+        "Description": "Dark Resistance decreases by 45%."
+    },
+    {
+        "Id": 780033,
+        "Name": "Dark Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeian.png",
+        "Description": "Dark Resistance decreases by 60%."
+    },
+    {
+        "Id": 780041,
+        "Name": "Physical Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiwuli.png",
+        "Description": "Physical Resistance decreases by 30%."
+    },
+    {
+        "Id": 780042,
+        "Name": "Physical Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiwuli.png",
+        "Description": "Physical Resistance decreases by 45%."
+    },
+    {
+        "Id": 780043,
+        "Name": "Physical Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiwuli.png",
+        "Description": "Physical Resistance decreases by 60%."
+    },
+    {
+        "Id": 780051,
+        "Name": "Elemental Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Description": "All Elemental Resistance decreases by 30%."
+    },
+    {
+        "Id": 780052,
+        "Name": "Elemental Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Description": "All Elemental Resistance decreases by 45%."
+    },
+    {
+        "Id": 780053,
+        "Name": "Elemental Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Description": "All Elemental Resistance decreases by 60%."
+    },
+    {
+        "Id": 780061,
+        "Name": "Attack Reduction",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconRuogong.png",
+        "Description": "Extra DMG Bonus decreases by 30%."
+    },
+    {
+        "Id": 780062,
+        "Name": "Attack Reduction",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconRuogong.png",
+        "Description": "Extra DMG Bonus decreases by 45%."
+    },
+    {
+        "Id": 780063,
+        "Name": "Attack Reduction",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconRuogong.png",
+        "Description": "Extra DMG Bonus decreases by 60%."
+    },
+    {
+        "Id": 780071,
+        "Name": "Sunder Armor",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconPojia.png",
+        "Description": "Extra DMG Reduction decreases by 30%."
+    },
+    {
+        "Id": 780072,
+        "Name": "Sunder Armor",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconPojia.png",
+        "Description": "Extra DMG Reduction decreases by 45%."
+    },
+    {
+        "Id": 780073,
+        "Name": "Sunder Armor",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconPojia.png",
+        "Description": "Extra DMG Reduction decreases by 60%."
+    },
+    {
+        "Id": 780081,
+        "Name": "Fragility",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconRuodian.png",
+        "Description": "Extra DMG Reduction against CRIT hits decreases by 30%."
+    },
+    {
+        "Id": 780082,
+        "Name": "Fragility",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconRuodian.png",
+        "Description": "Extra DMG Reduction against CRIT hits decreases by 45%."
+    },
+    {
+        "Id": 780083,
+        "Name": "Fragility",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconRuodian.png",
+        "Description": "Extra DMG Reduction against CRIT hits decreases by 60%."
+    },
+    {
+        "Id": 780091,
+        "Name": "Fatigue",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconXuruo.png",
+        "Description": "Extra DMG Bonus, Movement Speed, Attack Frequency, and Extra DMG Reduction decrease by 20%."
+    },
+    {
+        "Id": 780092,
+        "Name": "Fatigue",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconXuruo.png",
+        "Description": "Extra DMG Bonus, Movement Speed, Attack Frequency, and Extra DMG Reduction decrease by 35%."
+    },
+    {
+        "Id": 780093,
+        "Name": "Fatigue",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconXuruo.png",
+        "Description": "Extra DMG Bonus, Movement Speed, Attack Frequency, and Extra DMG Reduction decrease by 50%."
+    },
+    {
+        "Id": 780101,
+        "Name": "Red Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeihong.png",
+        "Description": "Extra DMG Reduction against Red Orb skills decreases by 30%."
+    },
+    {
+        "Id": 780102,
+        "Name": "Red Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeihong.png",
+        "Description": "Extra DMG Reduction against Red Orb skills decreases by 45%."
+    },
+    {
+        "Id": 780103,
+        "Name": "Red Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeihong.png",
+        "Description": "Extra DMG Reduction against Red Orb skills decreases by 60%."
+    },
+    {
+        "Id": 780111,
+        "Name": "Yellow Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeihuang.png",
+        "Description": "Extra DMG Reduction against Yellow Orb skills decreases by 30%."
+    },
+    {
+        "Id": 780112,
+        "Name": "Yellow Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeihuang.png",
+        "Description": "Extra DMG Reduction against Yellow Orb skills decreases by 45%."
+    },
+    {
+        "Id": 780113,
+        "Name": "Yellow Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeihuang.png",
+        "Description": "Extra DMG Reduction against Yellow Orb skills decreases by 60%."
+    },
+    {
+        "Id": 780121,
+        "Name": "Blue Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeilan.png",
+        "Description": "Extra DMG Reduction against Blue Orb skills decreases by 30%."
+    },
+    {
+        "Id": 780122,
+        "Name": "Blue Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeilan.png",
+        "Description": "Extra DMG Reduction against Blue Orb skills decreases by 45%."
+    },
+    {
+        "Id": 780123,
+        "Name": "Blue Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeilan.png",
+        "Description": "Extra DMG Reduction against Blue Orb skills decreases by 60%."
+    },
+    {
+        "Id": 780131,
+        "Name": "Assault",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconQianggong.png",
+        "Description": "Extra Damage Bonus increases by 20%."
+    },
+    {
+        "Id": 780132,
+        "Name": "Assault",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconQianggong.png",
+        "Description": "Extra Damage Bonus increases by 35%."
+    },
+    {
+        "Id": 780133,
+        "Name": "Assault",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconQianggong.png",
+        "Description": "Extra Damage Bonus increases by 50%."
+    },
+    {
+        "Id": 780141,
+        "Name": "Fire Endurance",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKanghuo.png",
+        "Description": "Fire Resistance increases by 30%."
+    },
+    {
+        "Id": 780142,
+        "Name": "Fire Endurance",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKanghuo.png",
+        "Description": "Fire Resistance increases by 45%."
+    },
+    {
+        "Id": 780143,
+        "Name": "Fire Endurance",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKanghuo.png",
+        "Description": "Fire Resistance increases by 60%."
+    },
+    {
+        "Id": 780151,
+        "Name": "Lightning Endurance",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKanglei.png",
+        "Description": "Lightning Resistance increases by 30%."
+    },
+    {
+        "Id": 780152,
+        "Name": "Lightning Endurance",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKanglei.png",
+        "Description": "Lightning Resistance increases by 45%."
+    },
+    {
+        "Id": 780153,
+        "Name": "Lightning Endurance",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKanglei.png",
+        "Description": "Lightning Resistance increases by 60%."
+    },
+    {
+        "Id": 780161,
+        "Name": "Ice Endurance",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangbing.png",
+        "Description": "Ice Resistance increases by 30%."
+    },
+    {
+        "Id": 780162,
+        "Name": "Ice Endurance",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangbing.png",
+        "Description": "Ice Resistance increases by 45%."
+    },
+    {
+        "Id": 780163,
+        "Name": "Ice Endurance",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangbing.png",
+        "Description": "Ice Resistance increases by 60%."
+    },
+    {
+        "Id": 780171,
+        "Name": "Dark Endurance",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangan.png",
+        "Description": "Dark Resistance increases by 30%."
+    },
+    {
+        "Id": 780172,
+        "Name": "Dark Endurance",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangan.png",
+        "Description": "Dark Resistance increases by 45%."
+    },
+    {
+        "Id": 780173,
+        "Name": "Dark Endurance",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangan.png",
+        "Description": "Dark Resistance increases by 60%."
+    },
+    {
+        "Id": 780181,
+        "Name": "Physical Endurance",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangwuli.png",
+        "Description": "Physical Resistance increases by 30%."
+    },
+    {
+        "Id": 780182,
+        "Name": "Physical Endurance",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangwuli.png",
+        "Description": "Physical Resistance increases by 45%."
+    },
+    {
+        "Id": 780183,
+        "Name": "Physical Endurance",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangwuli.png",
+        "Description": "Physical Resistance increases by 60%."
+    },
+    {
+        "Id": 780191,
+        "Name": "Elemental Endurance",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangyuansu.png",
+        "Description": "Elemental Resistance increases by 30%."
+    },
+    {
+        "Id": 780192,
+        "Name": "Elemental Endurance",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangyuansu.png",
+        "Description": "Elemental Resistance increases by 45%."
+    },
+    {
+        "Id": 780193,
+        "Name": "Elemental Endurance",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangyuansu.png",
+        "Description": "Elemental Resistance increases by 60%."
+    },
+    {
+        "Id": 780201,
+        "Name": "Damage Resistance",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconMianshang.png",
+        "Description": "Extra DMG Reduction increases by 30%."
+    },
+    {
+        "Id": 780202,
+        "Name": "Damage Resistance",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconMianshang.png",
+        "Description": "Extra DMG Reduction increases by 45%."
+    },
+    {
+        "Id": 780203,
+        "Name": "Damage Resistance",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconMianshang.png",
+        "Description": "Extra DMG Reduction increases by 60%."
+    },
+    {
+        "Id": 760202,
+        "Name": "DMG Immunity",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconMianshang.png",
+        "Description": "Extra DMG Reduction increases by 45%"
+    },
+    {
+        "Id": 780211,
+        "Name": "Agile",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconXunjie.png",
+        "Description": "Increases 5%-40% movement speed. The farther away from the target, the faster the movement speed"
+    },
+    {
+        "Id": 780212,
+        "Name": "Agile",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconXunjie.png",
+        "Description": "Increases 20%-35% movement speed. The farther away from the target, the faster the movement speed"
+    },
+    {
+        "Id": 780213,
+        "Name": "Agile",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconXunjie.png",
+        "Description": "Increases 25%-40% movement speed. The farther away from the target, the faster the movement speed"
+    },
+    {
+        "Id": 780221,
+        "Name": "Immovable",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBudong.png",
+        "Description": "Immune to hit and control effects."
+    },
+    {
+        "Id": 780231,
+        "Name": "Recovery",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFusu.png",
+        "Description": "Recovers 1% of max HP per second."
+    },
+    {
+        "Id": 780232,
+        "Name": "Recovery",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFusu.png",
+        "Description": "Recovers 2% of max HP per second."
+    },
+    {
+        "Id": 780233,
+        "Name": "Recovery",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFusu.png",
+        "Description": "Recovers 3% of max HP per second."
+    },
+    {
+        "Id": 780241,
+        "Name": "Shield",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHudun.png",
+        "Description": "Gains a shield with capacity equal to 5% of current HP every 10s. The shield lasts 10s."
+    },
+    {
+        "Id": 780242,
+        "Name": "Shield",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHudun.png",
+        "Description": "Gains a shield with capacity equal to 10% of current HP every 10s. The shield lasts 10s."
+    },
+    {
+        "Id": 780243,
+        "Name": "Shield",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHudun.png",
+        "Description": "Gains a shield with capacity equal to 15% of current HP every 10s. The shield lasts 10s."
+    },
+    {
+        "Id": 780251,
+        "Name": "Berserk",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBaozou.png",
+        "Description": "Increases ATK frequency by 33%, having a 20% of chance to deal 33% Extra Physical DMG."
+    },
+    {
+        "Id": 780252,
+        "Name": "Berserk",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBaozou.png",
+        "Description": "Increases ATK frequency by 66%, having a 40% of chance to deal 33% Extra Physical DMG."
+    },
+    {
+        "Id": 780253,
+        "Name": "Berserk",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBaozou.png",
+        "Description": "Increases ATK frequency by 100%, having a 60% of chance to deal 33% Extra Physical DMG."
+    },
+    {
+        "Id": 780261,
+        "Name": "Bomb",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconZhadan.png",
+        "Description": "Leaves a bomb upon death that deals 45% Physical DMG."
+    },
+    {
+        "Id": 780262,
+        "Name": "Bomb",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconZhadan.png",
+        "Description": "Leaves a bomb upon death that deals 45% Physical DMG."
+    },
+    {
+        "Id": 780263,
+        "Name": "Bomb",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconZhadan.png",
+        "Description": "Leaves a bomb upon death that deals 45% Physical DMG."
+    },
+    {
+        "Id": 780271,
+        "Name": "Rigid Body",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconGangti.png",
+        "Description": "Only takes 1 damage from incoming attacks. This effect is removed after taking damage 6 times, and resumes 8s later."
+    },
+    {
+        "Id": 780272,
+        "Name": "Rigid Body",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconGangti.png",
+        "Description": "Only takes 1 damage from incoming attacks. This effect is removed after taking damage 9 times, and resumes 8s later."
+    },
+    {
+        "Id": 780273,
+        "Name": "Rigid Body",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconGangti.png",
+        "Description": "Only takes 1 damage from incoming attacks. This effect is removed after taking damage 12 times, and resumes 8s later."
+    },
+    {
+        "Id": 780281,
+        "Name": "Barrier",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBilei.png",
+        "Description": "Receives a permanent shield equal to 15% of current HP. Becomes immune to attacks while the shield is active. After taking a certain amount of DMG, the shield will be removed."
+    },
+    {
+        "Id": 780282,
+        "Name": "Barrier",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBilei.png",
+        "Description": "Receives a permanent shield equal to 25% of current HP. Becomes immune to attacks while the shield is active. After taking a certain amount of DMG, the shield will be removed."
+    },
+    {
+        "Id": 780283,
+        "Name": "Barrier",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBilei.png",
+        "Description": "Receives a permanent shield equal to 35% of current HP. Becomes immune to attacks while the shield is active. After taking a certain amount of DMG, the shield will be removed."
+    },
+    {
+        "Id": 780291,
+        "Name": "Radiation",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFushe.png",
+        "Description": "Continuously deals 1% Physical DMG to nearby enemies."
+    },
+    {
+        "Id": 780292,
+        "Name": "Radiation",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFushe.png",
+        "Description": "Continuously deals 2% Physical DMG to nearby enemies."
+    },
+    {
+        "Id": 780293,
+        "Name": "Radiation",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFushe.png",
+        "Description": "Continuously deals 3% Physical DMG to nearby enemies."
+    },
+    {
+        "Id": 780301,
+        "Name": "Closed Loop",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBihuan.png",
+        "Description": "Increases Extra DMG Reduction by 30% against long-ranged attacks."
+    },
+    {
+        "Id": 780302,
+        "Name": "Closed Loop",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBihuan.png",
+        "Description": "Increases Extra DMG Reduction by 45% against long-ranged attacks."
+    },
+    {
+        "Id": 780303,
+        "Name": "Closed Loop",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBihuan.png",
+        "Description": "Increases Extra DMG Reduction by 60% against long-ranged attacks."
+    },
+    {
+        "Id": 780311,
+        "Name": "Blessing",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconZhufu.png",
+        "Description": "Increases Extra DMG Bonus of allies nearby by 20%"
+    },
+    {
+        "Id": 780312,
+        "Name": "Blessing",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconZhufu.png",
+        "Description": "Increases Extra DMG Bonus of allies nearby by 20%"
+    },
+    {
+        "Id": 780313,
+        "Name": "Blessing",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconZhufu.png",
+        "Description": "Increases Extra DMG Bonus of allies nearby by 20%"
+    },
+    {
+        "Id": 780321,
+        "Name": "Lone Wolf",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou.png",
+        "Description": "Increases Extra DMG Bonus by 10%. Stacks up to 3 times. When there are less than 3 allies nearby, the fewer the allies, the more stacks will be granted."
+    },
+    {
+        "Id": 780322,
+        "Name": "Lone Wolf",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou.png",
+        "Description": "Increases Extra DMG Bonus by 4.5%. Stacks up to 10 times on the fewer number of nearby allies."
+    },
+    {
+        "Id": 780323,
+        "Name": "Lone Wolf",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou.png",
+        "Description": "Increases Extra DMG Bonus by 6%. Stacks up to 10 times. The less the allies nearby, the higher the stacks."
+    },
+    {
+        "Id": 780331,
+        "Name": "Commander",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconTongling.png",
+        "Description": "Increases Extra DMG Bonus by 5%. The more allies nearby, the more stacks will be granted."
+    },
+    {
+        "Id": 780332,
+        "Name": "Commander",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconTongling.png",
+        "Description": "Increases Extra DMG Bonus by 10%. The more allies nearby, the more stacks will be granted."
+    },
+    {
+        "Id": 780333,
+        "Name": "Commander",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconTongling.png",
+        "Description": "Increases Extra DMG Bonus by 15%. The more allies nearby, the more stacks will be granted."
+    },
+    {
+        "Id": 780341,
+        "Name": "Penetration",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconGuanchuan.png",
+        "Description": "Dealing DMG will reduce the target's DEF by 3%. Stacks up to 10 times. Each stack lasts 10s."
+    },
+    {
+        "Id": 780342,
+        "Name": "Penetration",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconGuanchuan.png",
+        "Description": "Dealing DMG will reduce the target's DEF by 4%. Stacks up to 10 times. Each stack lasts 10s."
+    },
+    {
+        "Id": 780343,
+        "Name": "Penetration",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconGuanchuan.png",
+        "Description": "Dealing DMG will reduce the target's DEF by 5%. Stacks up to 10 times. Each stack lasts 10s."
+    },
+    {
+        "Id": 780351,
+        "Name": "Lightning Shield",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDiandun.png",
+        "Description": "When attacked, has a 10% chance to cast a lightning strike at the attacker's location, dealing 20% Lightning DMG. 5s cooldown."
+    },
+    {
+        "Id": 780352,
+        "Name": "Lightning Shield",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDiandun.png",
+        "Description": "When attacked, has a 15%-25% chance to cast a lightning strike at the attacker's location, dealing 25% Lightning DMG. 2.5s cooldown. The farther from the target, the higher chance it will be triggered."
+    },
+    {
+        "Id": 780353,
+        "Name": "Lightning Shield",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDiandun.png",
+        "Description": "When attacked, has a 15%-25% chance to cast a lightning strike at the attacker's location, dealing 30% Lightning DMG. 2s cooldown. The farther from the target, the higher chance it will be triggered."
+    },
+    {
+        "Id": 780361,
+        "Name": "Wave",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBodong.png",
+        "Description": "Creates a shockwave upon getting up, repelling nearby enemies. Cooldown: 18s."
+    },
+    {
+        "Id": 780362,
+        "Name": "Wave",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBodong.png",
+        "Description": "Creates a shockwave upon getting up, repelling nearby enemies. Cooldown: 14s."
+    },
+    {
+        "Id": 780363,
+        "Name": "Wave",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBodong.png",
+        "Description": "Creates a shockwave upon getting up, repelling nearby enemies. Cooldown: 10s."
+    },
+    {
+        "Id": 780371,
+        "Name": "Lightning Mine",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconMailei.png",
+        "Description": "When attacking, leaves a bomb that deals 15% Physical DMG on the target."
+    },
+    {
+        "Id": 780372,
+        "Name": "Lightning Mine",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconMailei.png",
+        "Description": "When attacking, leaves a bomb that deals 15% Physical DMG on the target."
+    },
+    {
+        "Id": 780373,
+        "Name": "Lightning Mine",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconMailei.png",
+        "Description": "When attacking, leaves a bomb that deals 15% Physical DMG on the target."
+    },
+    {
+        "Id": 780381,
+        "Name": "Stealth",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconYinshen.png",
+        "Description": "When visible, you will gain invisibility after 3s. If you are hit, you'll become visible."
+    },
+    {
+        "Id": 780382,
+        "Name": "Stealth",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconYinshen.png",
+        "Description": "You can switch to invisibility 3s later if you are visible now. And when you are hit, you will be visible again for 3s"
+    },
+    {
+        "Id": 780383,
+        "Name": "Stealth",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconYinshen.png",
+        "Description": "You can switch to invisibility 1s later if you are visible now. And when you are hit, you will be visible again for 3s"
+    },
+    {
+        "Id": 780391,
+        "Name": "Flash",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconShanxian.png",
+        "Description": "Teleports near the target when they are far away. 10s cooldown."
+    },
+    {
+        "Id": 780392,
+        "Name": "Flash",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconShanxian.png",
+        "Description": "When you are far away from the target, transfers you close to the target, CD for 7-9s. The farther the transfer distance, the shorter the CD"
+    },
+    {
+        "Id": 780393,
+        "Name": "Flash",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconShanxian.png",
+        "Description": "Teleports near the target when they are far away. 6-8s cooldown. The farther the teleport distance, the shorter the cooldown will become."
+    },
+    {
+        "Id": 780394,
+        "Name": "Transfer",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconShanxian.png",
+        "Description": "Teleports away when close to the target. 8s cooldown. Has a 30% chance to trigger the effect when taking DMG. Cooldowns are calculated separately."
+    },
+    {
+        "Id": 780395,
+        "Name": "Transfer",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconShanxian.png",
+        "Description": "Teleports away when close to the target. 7s cooldown. Has a 30% chance to trigger the effect when taking DMG. Cooldowns are calculated separately."
+    },
+    {
+        "Id": 780396,
+        "Name": "Transfer",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconShanxian.png",
+        "Description": "Teleports away when close to the target. Has a cooldown of 6 seconds. Has a 30% chance to trigger the effect when taking DMG. Cooldowns are calculated separately."
+    },
+    {
+        "Id": 780401,
+        "Name": "Division",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconLiejie.png",
+        "Description": "Summons two Clones of the same type that inherit 30% ATK and DEF upon dying."
+    },
+    {
+        "Id": 780402,
+        "Name": "Division",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconLiejie.png",
+        "Description": "Summons two Clones of the same type that inherit 60% ATK and DEF upon dying."
+    },
+    {
+        "Id": 780403,
+        "Name": "Division",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconLiejie.png",
+        "Description": "Summons two Clones of the same type that inherit 100% ATK and DEF upon dying."
+    },
+    {
+        "Id": 780411,
+        "Name": "Black Hole",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHeidong.png",
+        "Description": "Every 16s, casts a black hole with weak gravitational pull at the current location."
+    },
+    {
+        "Id": 780412,
+        "Name": "Black Hole",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHeidong.png",
+        "Description": "Every 12s, leaves a black hole with moderate gravitational pull at your location."
+    },
+    {
+        "Id": 780413,
+        "Name": "Black Hole",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHeidong.png",
+        "Description": "Every 8s, casts a black hole with strong gravitational pull at your location."
+    },
+    {
+        "Id": 780421,
+        "Name": "Laser",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconShexian.png",
+        "Description": "Casts lasers that can deal 3% continuous Physical Damage to the eight main directions every once in a while."
+    },
+    {
+        "Id": 780422,
+        "Name": "Laser",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconShexian.png",
+        "Description": "Casts lasers that can deal 4% continuous Physical Damage to the eight main directions every once in a while."
+    },
+    {
+        "Id": 780423,
+        "Name": "Laser",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconShexian.png",
+        "Description": "Casts lasers that can deal 5% continuous Physical Damage to the eight main directions every once in a while."
+    },
+    {
+        "Id": 780431,
+        "Name": "Flame",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHuoyan.png",
+        "Description": "Attacks deal an additional 10% Fire DMG and have a 10% of chance to inflict Burn, dealing 10% of Fire DMG per second for 3s."
+    },
+    {
+        "Id": 780432,
+        "Name": "Flame",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHuoyan.png",
+        "Description": "Attacks deal an additional 15% Fire DMG and have a 15% of chance to inflict Burn, dealing 15% of Fire DMG per second for 3s."
+    },
+    {
+        "Id": 780433,
+        "Name": "Flame",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHuoyan.png",
+        "Description": "Attacks deal an additional 20% Fire DMG and have a 20% of chance to inflict Burn, dealing 20% of Fire DMG per second for 3s."
+    },
+    {
+        "Id": 780451,
+        "Name": "Freeze",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDongjie.png",
+        "Description": "Attacks have a 30% chance to deal an additional 10% Ice DMG and freeze the target for 1s."
+    },
+    {
+        "Id": 780452,
+        "Name": "Freeze",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDongjie.png",
+        "Description": "Attacks have a 60% chance to deal an additional 10% Ice DMG and freeze the target for 1s."
+    },
+    {
+        "Id": 780453,
+        "Name": "Freeze",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDongjie.png",
+        "Description": "Attacks have a 100% chance to deal an additional 10% Ice DMG and freeze the target for 1s."
+    },
+    {
+        "Id": 780471,
+        "Name": "Shadow",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconAnying.png",
+        "Description": "Attacks deal an additional 10% Dark DMG with a 10% chance to stun the target for 0.5s and deal 10% extra Dark DMG."
+    },
+    {
+        "Id": 780472,
+        "Name": "Shadow",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconAnying.png",
+        "Description": "Attacks deal an additional 15% Dark DMG with a 15% chance to stun the target for 0.7s and deal 15% extra Dark DMG."
+    },
+    {
+        "Id": 780473,
+        "Name": "Shadow",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconAnying.png",
+        "Description": "Attacks deal an additional 20% Dark DMG with a 20% chance to stun the target for 0.9s and deal 20% extra Dark DMG."
+    },
+    {
+        "Id": 780491,
+        "Name": "Thunderous",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconLeiming.png",
+        "Description": "Attacks deal an additional 10% Lightning DMG and have a 10% chance for Channeling, and casts lightning once to the target every 1.5s for 1.5s."
+    },
+    {
+        "Id": 780492,
+        "Name": "Thunderous",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconLeiming.png",
+        "Description": "Attacks deal an additional 15% Lightning DMG and have a 15% chance for Channeling, and casts lightning once to the target every 1.5s for 3s."
+    },
+    {
+        "Id": 780493,
+        "Name": "Thunderous",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconLeiming.png",
+        "Description": "Attacks deal an additional 20% Lightning DMG and have a 20% chance for Channeling, and casts lightning once to the target every 1.5s for 4.5s."
+    },
+    {
+        "Id": 780601,
+        "Name": "Cold Trail",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBingjing.png",
+        "Description": "Unleashes an Ice Block to keep tracing the target, dealing 500 Ice DMG when the Ice Block contacts the target. The farther away from the target, the faster the movement speed."
+    },
+    {
+        "Id": 780602,
+        "Name": "Cold Trail",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBingjing.png",
+        "Description": "Unleashes an Ice Block to keep tracing the target, dealing 10% Ice DMG when the Ice Block contacts the target. The farther away from the target, the faster the movement speed."
+    },
+    {
+        "Id": 780603,
+        "Name": "Cold Trail",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBingjing.png",
+        "Description": "Unleashes an Ice Block to keep tracing the target, dealing 15% Ice DMG when the Ice Block contacts the target. The farther away from the target, the faster the movement speed."
+    },
+    {
+        "Id": 780630,
+        "Name": "Deterioration",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconLuehua.png",
+        "Description": "Damage dealt also reduces target's healing received by 30% for 3s."
+    },
+    {
+        "Id": 780631,
+        "Name": "Deterioration",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconLuehua.png",
+        "Description": "Damage dealt also reduces target's healing received by 45% for 4s."
+    },
+    {
+        "Id": 780632,
+        "Name": "Deterioration",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconLuehua.png",
+        "Description": "Damage dealt also reduces target's healing received by 60% for 5s."
+    },
+    {
+        "Id": 780640,
+        "Name": "Null Heal",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJinliao.png",
+        "Description": "Periodically makes the target unable to receive any healing effects for 3s."
+    },
+    {
+        "Id": 780641,
+        "Name": "Null Heal",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJinliao.png",
+        "Description": "Periodically makes the target unable to receive any healing effects for 4s."
+    },
+    {
+        "Id": 780642,
+        "Name": "Null Heal",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJinliao.png",
+        "Description": "Periodically makes the target unable to receive any healing effects for 5s."
+    },
+    {
+        "Id": 780650,
+        "Name": "Imprison",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJingu.png",
+        "Description": "Creates a barrier at the target location that lasts for 3s, blocking targets from entering or leaving. 15s cooldown."
+    },
+    {
+        "Id": 780651,
+        "Name": "Imprison",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJingu.png",
+        "Description": "Creates a barrier at the target location that lasts for 4s, blocking targets from entering or leaving. 16s cooldown."
+    },
+    {
+        "Id": 780652,
+        "Name": "Imprison",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJingu.png",
+        "Description": "Creates a barrier at the target location that lasts for 5s, blocking targets from entering or leaving. 17s cooldown."
+    },
+    {
+        "Id": 780670,
+        "Name": "Invasion",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBingdu.png",
+        "Description": "When dealing DMG, also deals 2% Physical DMG to the target every second and triggers other effects of Damage Affix for 3s."
+    },
+    {
+        "Id": 780671,
+        "Name": "Invasion",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBingdu.png",
+        "Description": "When dealing DMG, also deals 2% Physical DMG to the target every second and triggers other effects of Damage Affix for 4s."
+    },
+    {
+        "Id": 780672,
+        "Name": "Invasion",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBingdu.png",
+        "Description": "When dealing DMG, also deals 2% Physical DMG to the target every second and triggers other effects of Damage Affix for 5s."
+    },
+    {
+        "Id": 780690,
+        "Name": "Backfire",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFanshi.png",
+        "Description": "Generates an energy shield that deals 15% Physical DMG to the attackers. Lasts 3s. 16s cooldown."
+    },
+    {
+        "Id": 780691,
+        "Name": "Backfire",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFanshi.png",
+        "Description": "Generates an energy shield for 4s that deals 25% Physical DMG to targets. 17s cooldown."
+    },
+    {
+        "Id": 780692,
+        "Name": "Backfire",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFanshi.png",
+        "Description": "Generates an energy shield for 5s that deals 35% Physical DMG to targets. 18s cooldown."
+    },
+    {
+        "Id": 780693,
+        "Name": "Fire Vulnerability III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeihuo.png",
+        "Description": "Fire Resistance decreases by 60%."
+    },
+    {
+        "Id": 780694,
+        "Name": "Berserk III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBaozou.png",
+        "Description": "Increases Attack Desire by 100%, having a 40% chance to deal 33% Extra Physical Damage."
+    },
+    {
+        "Id": 780695,
+        "Name": "Barrier II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBilei.png",
+        "Description": "Gets a permanent shield equal to 25% of current HP. Becomes immune to attacks while the shield is active. Removes the shield after taking a certain amount of damage. It'll reactivate in 15s."
+    },
+    {
+        "Id": 780696,
+        "Name": "Random Vulnerable Orb Color",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Description": "The orb color that your character is vulnerable to changes every 30s (lasts 15s). The damage taken from the orbs of the corresponding color decreases by 30%."
+    },
+    {
+        "Id": 780697,
+        "Name": "Fragility Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconXueruo.png",
+        "Description": "After receiving 400k/500k/600k/700k damage during the Fragility status, the character will be immobilized for 5s and gain 20%/30%/40%/50% permanent Vulnerability."
+    },
+    {
+        "Id": 780698,
+        "Name": "Random Vulnerable Orb Color II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiyuansu.png",
+        "Description": "The orb color that your character is vulnerable to changes every 30s (lasts 15s). The damage taken from the orbs of the corresponding color decreases by 60%."
+    },
+    {
+        "Id": 780699,
+        "Name": "Penetration III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconGuanchuan.png",
+        "Description": "Dealing DMG will reduce the target's Extra DMG Reduction by 5%. Stacks up to 10 times. Each stack lasts 10s."
+    },
+    {
+        "Id": 761223,
+        "Name": "Fate",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconSuming1.png",
+        "Description": "Extra DMG Reduction against Kamui's hits decreases by 30%."
+    },
+    {
+        "Id": 712004,
+        "Name": "Frost Shield",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconYubing2.png",
+        "Description": "Reduces DMG taken by 30%. When receiving Basic Attacks, the attacker's movement speed decreases by 50% for 2s."
+    },
+    {
+        "Id": 712005,
+        "Name": "Flame Shield",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconYuhuo2.png",
+        "Description": "The sphere burner will inflict continuous DMG equal to 20% of self ATK on the enemy it touches. Half of DMG dealt will be converted to HP."
+    },
+    {
+        "Id": 712006,
+        "Name": "Shadow Shield",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconYuan2.png",
+        "Description": "When HP drops by more than 20%, creates a shield equal to 10% of max HP for 5s. When it disappears, it will explode and deal damage within 8m."
+    },
+    {
+        "Id": 776102,
+        "Name": "Lethal",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22041.png",
+        "Description": "When the attack hits its target, the target has a 50% chance to lose additional 50% HP or recover 20% HP."
+    },
+    {
+        "Id": 776105,
+        "Name": "Drain",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconTongling.png",
+        "Description": "Attacks will restore 10% of self-HP."
+    },
+    {
+        "Id": 746005,
+        "Name": "First-aid",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFusu.png",
+        "Description": "Activated when HP drops to 10% and restores 20% HP after 5s"
+    },
+    {
+        "Id": 772604,
+        "Name": "Soul Devourer",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22090.png",
+        "Description": "Increases ATK by 20% for each dead ally."
+    },
+    {
+        "Id": 772605,
+        "Name": "Super Assault",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconQianggong.png",
+        "Description": "Extra DMG Bonus increases by 10%. Can be stacked up to 20 times."
+    },
+    {
+        "Id": 772606,
+        "Name": "Super Rigid Body",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconGangti2.png",
+        "Description": "Takes 1 DMG only from incoming attacks. This effect is removed after taking DMG 100 times, and is resumed 10s later."
+    },
+    {
+        "Id": 772607,
+        "Name": "Bleed",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconXueruo.png",
+        "Description": "Takes DMG according to max HP once per second."
+    },
+    {
+        "Id": 772609,
+        "Name": "Grave Wounds",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconXueruo.png",
+        "Description": "When HP drops below 90%, receives DMG at regular intervals until HP is restored to more than 90%."
+    },
+    {
+        "Id": 712002,
+        "Name": "Domination",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconShexian.png",
+        "Description": "Immune to Matrix and limiting effects of Signature Moves"
+    },
+    {
+        "Id": 763325,
+        "Name": "Vanguard Enhanced",
+        "Icon": "Assets/Product/Texture/Image/IconType/IconCharacter4.png",
+        "Description": "Vanguard gains an additional 20% ATK."
+    },
+    {
+        "Id": 763326,
+        "Name": "Reruns",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21071.png",
+        "Description": "15 Reruns Owned"
+    },
+    {
+        "Id": 763327,
+        "Name": "Reruns",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21071.png",
+        "Description": "8 Reruns Owned"
+    },
+    {
+        "Id": 763328,
+        "Name": "Reruns",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21072.png",
+        "Description": "5 Reruns Owned"
+    },
+    {
+        "Id": 763329,
+        "Name": "Reruns",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21073.png",
+        "Description": "3 Reruns Owned"
+    },
+    {
+        "Id": 763330,
+        "Name": "HP Up",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12001.png",
+        "Description": "Enemies' HP decreases by 50%."
+    },
+    {
+        "Id": 763331,
+        "Name": "HP Up",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12001.png",
+        "Description": "Enemies' HP does not change."
+    },
+    {
+        "Id": 763332,
+        "Name": "HP Up",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12002.png",
+        "Description": "Enemies' HP increases by 70%."
+    },
+    {
+        "Id": 763333,
+        "Name": "HP Up",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12003.png",
+        "Description": "Enemies' HP increases by 120%."
+    },
+    {
+        "Id": 763334,
+        "Name": "ATK Up",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21011.png",
+        "Description": "Enemies' ATK decreases by 30%."
+    },
+    {
+        "Id": 763335,
+        "Name": "ATK Up",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21011.png",
+        "Description": "Enemies' ATK does not change."
+    },
+    {
+        "Id": 763336,
+        "Name": "ATK Up",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21012.png",
+        "Description": "Enemies' ATK increases by 70%."
+    },
+    {
+        "Id": 763337,
+        "Name": "ATK Up",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21013.png",
+        "Description": "Enemies' ATK increases by 150%."
+    },
+    {
+        "Id": 2240183,
+        "Name": "Rerun I",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21071.png",
+        "Description": "15 Reruns Owned."
+    },
+    {
+        "Id": 2240184,
+        "Name": "Rerun II",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21071.png",
+        "Description": "8 Reruns Owned."
+    },
+    {
+        "Id": 2240185,
+        "Name": "Rerun III",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21072.png",
+        "Description": "5 Reruns owned. Commandant, you are recommended to upgrade Truth Unveiled before challenging again."
+    },
+    {
+        "Id": 2240186,
+        "Name": "Rerun IV",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21073.png",
+        "Description": "3 Reruns owned. Commandant, you are recommended to upgrade Truth Unveiled before challenging again."
+    },
+    {
+        "Id": 2240187,
+        "Name": "Exhausted III",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12001.png",
+        "Description": "Enemy HP -90%"
+    },
+    {
+        "Id": 2240188,
+        "Name": "Exhausted II",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12001.png",
+        "Description": "Enemy HP -75%"
+    },
+    {
+        "Id": 2240189,
+        "Name": "Exhausted I",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12002.png",
+        "Description": "Enemy HP -50%"
+    },
+    {
+        "Id": 2240190,
+        "Name": "HP",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12003.png",
+        "Description": "Enemy HP remains normal."
+    },
+    {
+        "Id": 2240191,
+        "Name": "Weakened II",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21011.png",
+        "Description": "Enemies' ATK decreases by 65%"
+    },
+    {
+        "Id": 2240192,
+        "Name": "Weakened I",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21011.png",
+        "Description": "Enemies' ATK decreases by 30%"
+    },
+    {
+        "Id": 2240193,
+        "Name": "ATK",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21012.png",
+        "Description": "Enemy ATK remains normal."
+    },
+    {
+        "Id": 2240194,
+        "Name": "ATK Boost I",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21013.png",
+        "Description": "Enemy ATK +70%"
+    },
+    {
+        "Id": 2240195,
+        "Name": "Berserk I",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11040.png",
+        "Description": "The enemy's attacking desire increases by 33%. When dealing DMG, has a 20% chance to deal 33% Extra DMG."
+    },
+    {
+        "Id": 2240196,
+        "Name": "Berserk II",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11041.png",
+        "Description": "The enemy's attacking desire increases by 66%. When dealing DMG, has a 40% chance to deal 33% Extra DMG."
+    },
+    {
+        "Id": 2240197,
+        "Name": "Black Hole II",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22130.png",
+        "Description": "Periodically leaves a black hole with moderate gravitational pull at your location."
+    },
+    {
+        "Id": 746057,
+        "Name": "Weak Point 1",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconRuodian.png",
+        "Description": "Refresh a random weak point. Destroy the weak point to deal massive True DMG"
+    },
+    {
+        "Id": 746074,
+        "Name": "Weak Point 2",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconRuodian.png",
+        "Description": "Enemies will have 4 weak points that disappear in 4.5s and refresh 2s after that. Destroy all weak points to reduce the enemies' DMG Immunity by 20% for 20s"
+    },
+    {
+        "Id": 746072,
+        "Name": "Bleed",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconXueruo.png",
+        "Description": "The character will bleed and take damage over time when staying too long on the battlefield"
+    },
+    {
+        "Id": 2240247,
+        "Name": "Defense Boost",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21023.png",
+        "Description": "The character's Extra DMG Reduction increases by 50%"
+    },
+    {
+        "Id": 2240248,
+        "Name": "Devour Wave",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconRuodian.png",
+        "Description": "1. <color=#0e70bd>40/70/100/120s</color> after entering the level, a <color=#0e70bd>Devour Wave</color> will appear.\\n2. While in the Devour Wave, <color=#0e70bd>5s will be deducted</color> (triggers every <color=#0e70bd>5s</color>)."
+    },
+    {
+        "Id": 2240249,
+        "Name": "Devour Wave II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconRuodian.png",
+        "Description": "1. <color=#0e70bd>40/70/100/120s</color> after entering the level, a massive <color=#0e70bd>Devour Wave</color> will appear.\\n2. While in the Devour Wave, <color=#0e70bd>5s will be deducted</color> (triggers every <color=#0e70bd>5s</color>)."
+    },
+    {
+        "Id": 2240250,
+        "Name": "Devour Wave",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconRuodian.png",
+        "Description": "1. <color=#0e70bd>40/70/100/120s</color> after entering the level, a <color=#0e70bd>Devour Wave</color> will appear.\\n2. While in the Devour Wave, <color=#0e70bd>5s will be deducted</color> (triggers every <color=#0e70bd>5s</color>)."
+    },
+    {
+        "Id": 2240251,
+        "Name": "Devour Wave II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconRuodian.png",
+        "Description": "1. <color=#0e70bd>40/70/100/120s</color> after entering the level, a massive <color=#0e70bd>Devour Wave</color> will appear.\\n2. While in the Devour Wave, <color=#0e70bd>5s will be deducted</color> (triggers every <color=#0e70bd>5s</color>)."
+    },
+    {
+        "Id": 2240252,
+        "Name": "Breezes",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconMoai.png",
+        "Description": "1. The direction of a Breeze will be indicated <color=#0e70bd>3s</color> before it begins to blow. After which, the Breeze wiill blow for <color=#0e70bd>2s</color>.\\n2. The Breeze will trigger <color=#0e70bd>Candle Light</color>, <color=#0e70bd>Condensing Tides</color> and <color=#0e70bd>Halting Lasers</color>."
+    },
+    {
+        "Id": 2240253,
+        "Name": "Frail Obstacles",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconYuan.png",
+        "Description": "1. Whenever a <color=#0e70bd>barrier</color> appears, be sure to <color=#0e70bd>destroy</color> it ASAP."
+    },
+    {
+        "Id": 2240255,
+        "Name": "Candle Light",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconZhadan.png",
+        "Description": "1. Explodes <color=#0e70bd>8s</color> after spawning. Be sure to <color=#0e70bd>destroy it ASAP</color>.\\n2. The explosion causes <color=#0e70bd>Knockback</color> and <color=#0e70bd>deducts 10s</color>."
+    },
+    {
+        "Id": 2240256,
+        "Name": "Candle Light II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconZhadan.png",
+        "Description": "1. Explodes <color=#0e70bd>6s</color> after spawning. Be sure to <color=#0e70bd>destroy it ASAP</color>.\\n2. The explosion causes <color=#0e70bd>Knockback</color> and <color=#0e70bd>deducts 10s</color>."
+    },
+    {
+        "Id": 2240257,
+        "Name": "Condensing Tides",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconLiejie.png",
+        "Description": "1. Divides <color=#0e70bd>8s</color> after spawning. Be sure to <color=#0e70bd>destroy it ASAP</color>.\\n2. After dividing, it creates a 3*3 <color=#0e70bd>Devour Wave</color> on the ground."
+    },
+    {
+        "Id": 2240258,
+        "Name": "Condensing Tides II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconLiejie.png",
+        "Description": "1. Divides <color=#0e70bd>6s</color> after spawning. Be sure to <color=#0e70bd>destroy it ASAP</color>.\\n2. After dividing, it creates a 3x3 <color=#0e70bd>Devour Wave</color> on the ground."
+    },
+    {
+        "Id": 2240259,
+        "Name": "Halting Lasers",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBodong.png",
+        "Description": "1. After an <color=#0e70bd>8s</color> warning, fires a laser beam in a straight line.\\n2 After firing, deals DMG and <color=#0e70bd>deducts 10s</color>."
+    },
+    {
+        "Id": 2240260,
+        "Name": "Halting Lasers II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBodong.png",
+        "Description": "1. After an <color=#0e70bd>6s</color> warning, fires a laser beam in a straight line.\\n2 After firing, deals DMG and <color=#0e70bd>deducts 10s</color>."
+    },
+    {
+        "Id": 2240261,
+        "Name": "Team Lock-On",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconYinshen.png",
+        "Description": "1. Team members can only be selected <color=#0e70bd>at the start of each challenge attempt</color>. After which, team composition cannot be altered.\\n2. After completing a level, <color=#0e70bd>team HP</color> and <color=#0e70bd> Signature Energy</color> will be maintained."
+    },
+    {
+        "Id": 2240397,
+        "Name": "Space Recovery II",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12122.png",
+        "Description": "1. Gain a 90-second remaining time bonus after clearing it successfully."
+    },
+    {
+        "Id": 2240398,
+        "Name": "Space Recovery I",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon12121.png",
+        "Description": "1. Gain a 70-second remaining time bonus after clearing it successfully."
+    },
+    {
+        "Id": 2240399,
+        "Name": "Enemy Enhancement I",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11045.png",
+        "Description": "1. All enemy units' basic stats get enhanced. 3-man team with an average of 6000 Battle Power recommended."
+    },
+    {
+        "Id": 2240400,
+        "Name": "Data Recovery",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22021.png",
+        "Description": "Switching characters will restore 1 random set of Signal Orbs."
+    },
+    {
+        "Id": 761190,
+        "Name": "Sunder Armor",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiwuli.png",
+        "Description": "Physical Resistance decreases by 40%."
+    },
+    {
+        "Id": 761191,
+        "Name": "Pyrophobia",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeihuo.png",
+        "Description": "Fire Resistance decreases by 40%."
+    },
+    {
+        "Id": 761192,
+        "Name": "Astraphobia",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeilei.png",
+        "Description": "Lightning Resistance decreases by 40%."
+    },
+    {
+        "Id": 761193,
+        "Name": "Cryophobia",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeibing.png",
+        "Description": "Ice Resistance - 40%"
+    },
+    {
+        "Id": 761194,
+        "Name": "Nyctophobia",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeian.png",
+        "Description": "Dark Resistance decreases by 40%."
+    },
+    {
+        "Id": 779156,
+        "Name": "Stop thinking",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconMoai.png",
+        "Description": "In the Matrix, Finisher Gauge reduction increased by 20%"
+    },
+    {
+        "Id": 2240268,
+        "Name": "Expedition Security I",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeian.png",
+        "Description": "We have to protect the Base! Upon result calculation, <color=#0e70bd>the higher HP of the Base</color>, the <color=#0e70bd>more Guild Points</color> will be rewarded, up to <color=#0e70bd>19,000 points</color>."
+    },
+    {
+        "Id": 2240269,
+        "Name": "Ambusher Killer",
+        "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarBuff10.png",
+        "Description": "(Not activated) For every 33% of the progress, <color=#0e70bd>1 Ambusher closest to the base with the highest HP will be removed</color>. The Ambusher refresh interval will be refreshed to 24h."
+    },
+    {
+        "Id": 2240270,
+        "Name": "Ambusher Killer I",
+        "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarBuff10.png",
+        "Description": "For every 33% of the progress, <color=#0e70bd>1 Ambusher closest to the base with the highest HP will be removed</color>. The Ambusher refresh interval will be refreshed to 24h."
+    },
+    {
+        "Id": 2240271,
+        "Name": "Ambusher Killer II",
+        "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarBuff10.png",
+        "Description": "For every 33% of the progress, <color=#0e70bd>1 Ambusher closest to the base with the highest HP will be removed</color>. The Ambusher refresh interval will be refreshed to 24h."
+    },
+    {
+        "Id": 2240272,
+        "Name": "Ambusher Killer III",
+        "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarBuff10.png",
+        "Description": "Success! <color=#0e70bd>1 Ambusher closest to the base with the highest HP will be removed</color>. The Ambusher refresh interval will be refreshed to 24h."
+    },
+    {
+        "Id": 2240273,
+        "Name": "Ambusher Terminator",
+        "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarBuff10.png",
+        "Description": "(Not activated) For every 33% of the progress, <color=#0e70bd>2 Ambushers closest to the base with the highest HP will be removed</color>. The Ambusher refresh interval will be refreshed to 48h."
+    },
+    {
+        "Id": 2240274,
+        "Name": "Ambusher Terminator I",
+        "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarBuff10.png",
+        "Description": "For every 33% of the progress, <color=#0e70bd>2 Ambushers closest to the base with the highest HP will be removed</color>. The Ambusher refresh interval will be refreshed to 48h."
+    },
+    {
+        "Id": 2240275,
+        "Name": "Ambusher Terminator II",
+        "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarBuff10.png",
+        "Description": "For every 33% of the progress, <color=#0e70bd>2 Ambushers closest to the base with the highest HP will be removed</color>. The Ambusher refresh interval will be refreshed to 48h."
+    },
+    {
+        "Id": 2240276,
+        "Name": "Ambusher Terminator III",
+        "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarBuff10.png",
+        "Description": "Success! <color=#0e70bd>2 Ambushers closest to the base with the highest HP will be removed</color>. The Ambusher refresh interval will be refreshed to 48h."
+    },
+    {
+        "Id": 2240277,
+        "Name": "Uniframe Area",
+        "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon4_1.png",
+        "Description": "Enemies have 30% less Physical Resistance. Upon casting the Signature Move, characters start dealing 40% more Physical DMG."
+    },
+    {
+        "Id": 2240278,
+        "Name": "Fire Pass",
+        "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon4_3.png",
+        "Description": "<color=#A52A2A>Upon destruction, Dangerous Cliff is no longer Invincible</color>. Fire Pass reduces enemies' Fire Resistance by <color=#0e70bd>30%</color>. Fire members are recommended for this battle."
+    },
+    {
+        "Id": 2240279,
+        "Name": "Steel Courage",
+        "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarBuff09.png",
+        "Description": "After the merging, Steel Tango will use the special ability to <color=#36b2fc>restore 10% of Max HP to all Ambushers!</color>"
+    },
+    {
+        "Id": 2240280,
+        "Name": "Dark Pass",
+        "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon4_2.png",
+        "Description": "<color=#A52A2A>Upon destruction, Dangerous Cliff is no longer Invincible</color>. Dark Pass reduces the enemies' Dark Resistance by <color=#0e70bd>30%</color>. Try to deploy Dark characters."
+    },
+    {
+        "Id": 2240281,
+        "Name": "Physical Pass",
+        "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarStageIcon4_1.png",
+        "Description": "<color=#A52A2A>Beat the Fire Pass to remove the Invincibility status of the Dangerous Cliff</color>. Physical Pass enemies have <color=#0e70bd>30%</color> less Physical Resistance. You're suggested to deploy physical members."
+    },
+    {
+        "Id": 2240282,
+        "Name": "Fire Resistance Down",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeihuo.png",
+        "Description": "Enemies' Fire Resistance decreases by 30%."
+    },
+    {
+        "Id": 2240283,
+        "Name": "Signature Move Boost",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconTongling.png",
+        "Description": "Upon casting the Signature Move, starts dealing 40% more Physical DMG for 5s."
+    },
+    {
+        "Id": 2240284,
+        "Name": "Dark Resistance Down",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeianyan.png",
+        "Description": "Enemies' Dark Resistance decreases by 30%."
+    },
+    {
+        "Id": 2240285,
+        "Name": "Phantom Amplification",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHeidong.png",
+        "Description": "For every character or phantom on the field, characters on the field deal 10% more Dark DMG, stacking up to 7 times and lasting 3s."
+    },
+    {
+        "Id": 2240286,
+        "Name": "Physical Resistance Down",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiwuli.png",
+        "Description": "Enemies' Physical Resistance decreases by 30%."
+    },
+    {
+        "Id": 2240287,
+        "Name": "Single Overclock",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangan.png",
+        "Description": "Dealing more than 100k Lightning DMG with a single hit restores 3 Signal Orbs of the same random color. This effect has an 8s cooldown."
+    },
+    {
+        "Id": 2240288,
+        "Name": "Special Operation Character",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDiandun.png",
+        "Description": "Use the special operation character to clear the stage faster!"
+    },
+    {
+        "Id": 2240289,
+        "Name": "TBD",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeian.png",
+        "Description": "TBD"
+    },
+    {
+        "Id": 2240290,
+        "Name": "Data Recovery",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21081.png",
+        "Description": "Recovers a set of random Signal Orbs after casting Signature Move."
+    },
+    {
+        "Id": 2240291,
+        "Name": "DMG Up",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconXunjie.png",
+        "Description": "Upon matching a 3-Ping, for 5s, casting a Signature Move inflicts a 50% DMG Up effect on its target for 4s."
+    },
+    {
+        "Id": 2240292,
+        "Name": "Assassin I",
+        "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarBuff10.png",
+        "Description": "<color=#0e70bd>Removes 1 Ambusher</color> when triggered."
+    },
+    {
+        "Id": 2240293,
+        "Name": "Assassin II",
+        "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarBuff10.png",
+        "Description": "When triggered, <color=#0e70bd>removes 1 Ambusher</color> with 2 Ambushers removed in total."
+    },
+    {
+        "Id": 2240294,
+        "Name": "Assassin III",
+        "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarBuff10.png",
+        "Description": "When triggered, <color=#0e70bd>removes 1 Ambusher and extends the Ambusher refresh interval to 24h</color>, with 3 Ambushers removed in total."
+    },
+    {
+        "Id": 2240295,
+        "Name": "Termination I",
+        "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarBuff10.png",
+        "Description": "<color=#0e70bd>Removes 2 Ambushers</color> when triggered."
+    },
+    {
+        "Id": 2240296,
+        "Name": "Termination II",
+        "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarBuff10.png",
+        "Description": "When triggered, <color=#0e70bd>removes 2 Ambushers</color> with 4 Ambushers removed in total."
+    },
+    {
+        "Id": 2240297,
+        "Name": "Termination III",
+        "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarBuff10.png",
+        "Description": "When triggered, <color=#0e70bd>removes 2 Ambushers and extends the Ambusher refresh interval to 48h</color>, with 6 Ambushers removed in total."
+    },
+    {
+        "Id": 2240307,
+        "Name": "Expedition Operation I",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11011.png",
+        "Description": "Physical and Elemental DMG increases by 15%."
+    },
+    {
+        "Id": 2240308,
+        "Name": "Expedition Operation II",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11012.png",
+        "Description": "Physical and Elemental DMG increases by 30%."
+    },
+    {
+        "Id": 2240309,
+        "Name": "Operation Thunder",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconLeiming2.png",
+        "Description": "On this Expedition, Lightning characters will surely outperform themselves. You should make the most of them."
+    },
+    {
+        "Id": 2240310,
+        "Name": "Outpost Boost I",
+        "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarBuff07.png",
+        "Description": "On this difficulty level, there are more Outposts. Proceed with caution."
+    },
+    {
+        "Id": 2240311,
+        "Name": "Outpost Boost II",
+        "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarBuff08.png",
+        "Description": "On this difficulty level, there are significantly more Outposts. Proceed with caution."
+    },
+    {
+        "Id": 2240319,
+        "Name": "Expedition Security II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeian.png",
+        "Description": "Protect the base! During result calculation, <color=#0e70bd>the higher the Base HP</color>, <color=#0e70bd>the more Guild Points</color> you'll get, up to <color=#0e70bd>100,000 Points</color>."
+    },
+    {
+        "Id": 2240320,
+        "Name": "Expedition Security III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeian.png",
+        "Description": "Protect the base! During result calculation, <color=#0e70bd>the higher the Base HP</color>, <color=#0e70bd>the more Guild Points</color> you'll get, up to <color=#0e70bd>340,000 Points</color>."
+    },
+    {
+        "Id": 2240392,
+        "Name": "Route Blocking I",
+        "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarBuff11.png",
+        "Description": "Cliff Fortress during the expedition. Clear it to move on."
+    },
+    {
+        "Id": 2240393,
+        "Name": "Route Blocking II",
+        "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarBuff12.png",
+        "Description": "Cliff Fortress II during the expedition. Clear it to move on."
+    },
+    {
+        "Id": 2240394,
+        "Name": "Comeback",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKanghuo2.png",
+        "Description": "Once the Sovereign is killed, a new cycle will start and the progress will be reset!"
+    },
+    {
+        "Id": 2240395,
+        "Name": "Enhanced Boss",
+        "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarBuff10.png",
+        "Description": "On this difficulty, Falling Star: Powered's stats are enhanced. More guild members are required."
+    },
+    {
+        "Id": 2240401,
+        "Name": "Surge of Energy",
+        "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarBuff09.png",
+        "Description": "Breaking the Moon Eater's <color=#35aff8>Super Armor</color> will restore 3 sets of Signal Orbs to all members for 6s."
+    },
+    {
+        "Id": 2240402,
+        "Name": "Fluctuation of Violence",
+        "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarBuff09.png",
+        "Description": "Breaking the Moon Eater's <color=#35aff8>Super Armor</color> will restore Signature Energy to all members for 6s."
+    },
+    {
+        "Id": 2240403,
+        "Name": "Matrix Outburst",
+        "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarBuff11.png",
+        "Description": "Kill an enemy or break their <color=#0e70bd>Super Armor</color> to enter the Matrix."
+    },
+    {
+        "Id": 2240404,
+        "Name": "Broken Walls",
+        "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarBuff09.png",
+        "Description": "Under the influence of the Sovereign, the ATK of enemies in the stage has greatly increased, and the rocks will keep falling down. Be careful!"
+    },
+    {
+        "Id": 2240405,
+        "Name": "Resource Security",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangyuansu2.png",
+        "Description": "Gain 5% more <color=#0e70bd>Guild Points</color> for successfully protecting a Resource Security Area and clearing a node."
+    },
+    {
+        "Id": 2240406,
+        "Name": "Energy Overlock",
+        "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarBuff09.png",
+        "Description": "Defeat a Hetero-Wolf to gain <color=#35aff8>ATK Boost</color>. This effect can stack."
+    },
+    {
+        "Id": 2240407,
+        "Name": "Energy Disintegration",
+        "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarBuff09.png",
+        "Description": "Defeat a Hetero-Wolf to gain enhancement and remove Fenrir's <color=#35aff8>enhancements</color>."
+    },
+    {
+        "Id": 2240408,
+        "Name": "Base Bombing",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconZhadan2.png",
+        "Description": "When time's up, The Sovereign will bomb random <color=#35aff8>Resource Security Areas</color>. Please protect the <color=#35aff8>Resource Security Areas</color>."
+    },
+    {
+        "Id": 2240409,
+        "Name": "Unity",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHudun2.png",
+        "Description": "Guild's <color=#35aff8>most garrisoned</color> Resource Security Area will set up a <color=#35aff8>shield</color> during Sovereign's next round of bombing."
+    },
+    {
+        "Id": 2240410,
+        "Name": "Aid Supplies",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHudun2.png",
+        "Description": "Increase the Assault Vehicle's Max HP."
+    },
+    {
+        "Id": 2240411,
+        "Name": "Burst of Killing Intent",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJingu2.png",
+        "Description": "All your characters gain a 20% Extra DMG Bonus for every 50 combos up. Max 5 stacks."
+    },
+    {
+        "Id": 2240412,
+        "Name": "Gamechanger",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangyuansu2.png",
+        "Description": "After switching to any character in battle, the character restores any set of Signal Orbs every second for 6s and deals 50% more Extra DMG."
+    },
+    {
+        "Id": 2240413,
+        "Name": "Swift Footsteps",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconZhuanyi2.png",
+        "Description": "The character restores 100 extra Dodge Gauge value every second. After a successful dodge, deals 50% more Extra DMG for 6s."
+    },
+    {
+        "Id": 2240414,
+        "Name": "Emperor's Armor",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou2.png",
+        "Description": "\"The Emperor\" will be greatly enhanced when having the Super Armor. Breaking the Super Armor will deal massive damage to \"The Emperor\" and weaken him. Meanwhile, your team will be significantly enhanced for 6s."
+    },
+    {
+        "Id": 2240415,
+        "Name": "Broken Walls",
+        "Icon": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarBuff09.png",
+        "Description": "Under the influence of the Sovereign, the ATK of enemies in the stage has greatly increased, and the rocks will keep falling down. Be careful!"
+    },
+    {
+        "Id": 2240416,
+        "Name": "Comeback",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKanghuo2.png",
+        "Description": "A new cycle is available with 20% higher node HP, 20% higher enemy HP, 5% higher enemy ATK, and 20% higher stage clearance points."
+    },
+    {
+        "Id": 2240417,
+        "Name": "Synchronized Agony",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFushe2.png",
+        "Description": "When attacked, Shorthalt will accumulate Red Tide Points. At full Red Tide Points, it will cast Synchronized Agony and temporarily enter the Berserk mode."
+    },
+    {
+        "Id": 712003,
+        "Name": "Shield Wall",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHudun.png",
+        "Description": "Reduces DMG from the front by up to 50%."
+    },
+    {
+        "Id": 742151,
+        "Name": "Messenger of the Last Words",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconYinshen2.png",
+        "Description": "Grants 30% DMG and HP to all allies upon death"
+    },
+    {
+        "Id": 742198,
+        "Name": "Dynamic Calibration",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFusu.png",
+        "Description": "Restores 1% of max HP every second. The restoration effect drops from 1% to 0.4% during the 2s after the character receives damage."
+    },
+    {
+        "Id": 742199,
+        "Name": "Dynamic Calibration",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFusu.png",
+        "Description": "Restores 2% of max HP every second. The restoration effect drops from 2% to 0.8% during the 2s after the character receives damage."
+    },
+    {
+        "Id": 742200,
+        "Name": "Dynamic Calibration",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFusu.png",
+        "Description": "Restores 3% of max HP every second. The restoration effect drops from 3% to 1.2% during the 2s after the character receives damage."
+    },
+    {
+        "Id": 742152,
+        "Name": "The Leader",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDudou.png",
+        "Description": "Gains the Commander and Blessing effects and 50% higher max HP."
+    },
+    {
+        "Id": 760181,
+        "Name": "Physical Endurance",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangwuli2.png",
+        "Description": "Physical Resistance increases by 30%."
+    },
+    {
+        "Id": 760182,
+        "Name": "Physical Endurance",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangwuli2.png",
+        "Description": "Physical Resistance increases by 45%."
+    },
+    {
+        "Id": 760183,
+        "Name": "Physical Endurance",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangwuli2.png",
+        "Description": "Physical Resistance increases by 60%."
+    },
+    {
+        "Id": 760191,
+        "Name": "Elemental Endurance",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangyuansu.png",
+        "Description": "Elemental Resistance increases by 30%."
+    },
+    {
+        "Id": 760192,
+        "Name": "Elemental Endurance",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangyuansu.png",
+        "Description": "Elemental Resistance increases by 45%."
+    },
+    {
+        "Id": 760193,
+        "Name": "Elemental Endurance",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangyuansu.png",
+        "Description": "Elemental Resistance increases by 60%."
+    },
+    {
+        "Id": 760201,
+        "Name": "DMG Immunity",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconMianshang2.png",
+        "Description": "Extra DMG Reduction increases by 30%."
+    },
+    {
+        "Id": 760203,
+        "Name": "DMG Immunity III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconMianshang2.png",
+        "Description": "Extra DMG Reduction increases by 60%."
+    },
+    {
+        "Id": 778052,
+        "Name": "Red Resistance",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconMianhong.png",
+        "Description": "Extra DMG Reduction against Red Orb skills increases by 100%."
+    },
+    {
+        "Id": 778053,
+        "Name": "Blue Resistance",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconMianlan.png",
+        "Description": "Extra DMG Reduction against Blue Orb skills increases by 100%."
+    },
+    {
+        "Id": 778054,
+        "Name": "Yellow Resistance",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconMianhuang.png",
+        "Description": "Extra DMG Reduction against Yellow Orb skills increases by 100%."
+    },
+    {
+        "Id": 760071,
+        "Name": "Sunder Armor",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconPojia2.png",
+        "Description": "Extra DMG Reduction decreases by 30%."
+    },
+    {
+        "Id": 760072,
+        "Name": "Sunder Armor",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconPojia2.png",
+        "Description": "Extra DMG Reduction decreases by 45%."
+    },
+    {
+        "Id": 760073,
+        "Name": "Sunder Armor",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconPojia2.png",
+        "Description": "Extra DMG Reduction decreases by 60%."
+    },
+    {
+        "Id": 760091,
+        "Name": "Fatigue",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconXuruo2.png",
+        "Description": "Extra DMG Bonus, Movement Speed, Attack Frequency, and Extra DMG Reduction decrease by 20%."
+    },
+    {
+        "Id": 760092,
+        "Name": "Fatigue",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconXuruo2.png",
+        "Description": "Extra DMG Bonus, Movement Speed, Attack Frequency, and Extra DMG Reduction decrease by 35%."
+    },
+    {
+        "Id": 760093,
+        "Name": "Fatigue",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconXuruo2.png",
+        "Description": "Extra DMG Bonus, Movement Speed, Attack Frequency, and Extra DMG Reduction decrease by 50%."
+    },
+    {
+        "Id": 760061,
+        "Name": "Attack Reduction",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconRuogong.png",
+        "Description": "Extra DMG Bonus decreases by 30%."
+    },
+    {
+        "Id": 760062,
+        "Name": "Attack Reduction",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconRuogong.png",
+        "Description": "Extra DMG Bonus decreases by 45%."
+    },
+    {
+        "Id": 760063,
+        "Name": "Attack Reduction",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconRuogong.png",
+        "Description": "Extra DMG Bonus decreases by 60%."
+    },
+    {
+        "Id": 779305,
+        "Name": "Hesitation",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconZhuanyi2.png",
+        "Description": "Restores 5% Finisher Gauge per second after not taking damage for 8s."
+    },
+    {
+        "Id": 715713,
+        "Name": "Domination",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconShexian2.png",
+        "Description": "Immune to Matrix and limiting effects of Signature Moves."
+    },
+    {
+        "Id": 720008,
+        "Name": "Bleed",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFanshi2.png",
+        "Description": "When the attack hits its target, the target loses 1% HP per second for 5s."
+    },
+    {
+        "Id": 715712,
+        "Name": "Super Lightning Field",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeiwuli.png",
+        "Description": "Generate vertical and diagonal lightnings around the target every 8s in that order."
+    },
+    {
+        "Id": 715956,
+        "Name": "Power of Nature",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeianLogistics4.png",
+        "Description": "Restores 1% HP per second. Summons a Fairy every 8s that rotates around you. When you have 3, releases all Fairies onto the target to deal damage and reduce max HP."
+    },
+    {
+        "Id": 715946,
+        "Name": "Brightness",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconShexian.png",
+        "Description": "Receives the power of lightning and gains [Repel Demons] in light environment."
+    },
+    {
+        "Id": 715947,
+        "Name": "Darkness",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDiandun.png",
+        "Description": "Receives the power of darkness to hide in the shadows and gains [Bleed] in dark environment."
+    },
+    {
+        "Id": 715985,
+        "Name": "Security Captain",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBilei.png",
+        "Description": "Summons reinforcements periodically while the Security Captain is present."
+    },
+    {
+        "Id": 715973,
+        "Name": "Alert",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconTongling.png",
+        "Description": "DMG increases over time when there are enemies in the same area. The DMG bonus resets when there are no enemies in the same area."
+    },
+    {
+        "Id": 716004,
+        "Name": "Damage+",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconTongling.png",
+        "Description": "DMG is greatly increased for enemies under the red light."
+    },
+    {
+        "Id": 716005,
+        "Name": "DMG Reduction+",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJiangu.png",
+        "Description": "DMG Reduction is greatly increased for enemies under the yellow light."
+    },
+    {
+        "Id": 12170303,
+        "Name": "Elemental Edge",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBingdu.png",
+        "Description": "Gains multiple elemental damage bonuses at the same time."
+    },
+    {
+        "Id": 12170304,
+        "Name": "Elemental Shield",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFanshi.png",
+        "Description": "Gains multiple elemental resistance bonuses at the same time."
+    },
+    {
+        "Id": 12170211,
+        "Name": "Inspired",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconQianghua.png",
+        "Description": "All units gain a DMG bonus based on HP percentage."
+    },
+    {
+        "Id": 12170221,
+        "Name": "Wind Zone",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBihuan.png",
+        "Description": "Generates Wind Zones on the field. Units can gain a massive boost in Movement Speed while in the Wind Zones."
+    },
+    {
+        "Id": 12170222,
+        "Name": "Charge",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconShanxian.png",
+        "Description": "All units can cast skills immediately after moving to boost the damage based on Movement Speed."
+    },
+    {
+        "Id": 12170231,
+        "Name": "Alert",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconTongling.png",
+        "Description": "Damage dealt by enemies in the same area as the character increases over time."
+    },
+    {
+        "Id": 12170232,
+        "Name": "Portal",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconZhuanyi.png",
+        "Description": "The character can use the Portal to switch between battle areas. Leaving an area through the Portal will reset the Alert of all enemies in the area."
+    },
+    {
+        "Id": 12170241,
+        "Name": "Carrousel",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconYinshen.png",
+        "Description": "The Carrousel rotates around the center of the field and never stops, dealing damage to those in its way."
+    },
+    {
+        "Id": 12170251,
+        "Name": "Meteorite",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconYiran.png",
+        "Description": "The Sovereign periodically summons a meteor to fall upon the player."
+    },
+    {
+        "Id": 12170311,
+        "Name": "Falling Star",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangyuansu.png",
+        "Description": "The character periodically summons 5 meteors nearby to deal damage to all units within range."
+    },
+    {
+        "Id": 12180101,
+        "Name": "Bio-Bird",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconShexian.png",
+        "Description": "The Bio-Bird lurks in the field and attacks those who approach."
+    },
+    {
+        "Id": 761530,
+        "Name": "Scorch",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKanghuo2.png",
+        "Description": "Attacks will also inflict Burn, dealing Fire DMG equal to 10% ATK every second to the target for 10s."
+    },
+    {
+        "Id": 761534,
+        "Name": "Frost",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangbing2.png",
+        "Description": "Attacks will also deal Ice DMG equal to 30% ATK and reduce the target's speed by 30% for 10s."
+    },
+    {
+        "Id": 761537,
+        "Name": "Lightning Strike",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKanglei2.png",
+        "Description": "Attacks will also deal Lightning DMG equal to 30% ATK and reduce the target's ATK by 30% for 10s."
+    },
+    {
+        "Id": 761540,
+        "Name": "Dark Corruption",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangan2.png",
+        "Description": "Attacks will also deal Dark DMG equal to 50% ATK and reduce the target's healing by 30% for 10s."
+    },
+    {
+        "Id": 778078,
+        "Name": "Curse",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconZuzhou.png",
+        "Description": "Permanently reduces the enemy's Extra DMG Reduction by 25% upon death."
+    },
+    {
+        "Id": 12190001,
+        "Name": "Deep-sea Bait",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconSuming2.png",
+        "Description": "Approach the mysterious fish to attract the true predator."
+    },
+    {
+        "Id": 12190002,
+        "Name": "Nightmare Phantom",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHamlet2.png",
+        "Description": "Getting close to an unknown phantom will trigger tentacles that hunt you, but it could also grant you bonus Signal Orbs."
+    },
+    {
+        "Id": 12190003,
+        "Name": "Heart of Bond",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconChongNeng2001.png",
+        "Description": "Bosses will be linked. The character will take DMG over time in the area formed by the lines."
+    },
+    {
+        "Id": 12190004,
+        "Name": "Unreal Illusion",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconYinshen.png",
+        "Description": "Bosses will appear as phantoms and take 30% less DMG."
+    },
+    {
+        "Id": 12190005,
+        "Name": "Gaze of Nightmare",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconXueruo.png",
+        "Description": "Getting close to an unknown flash will force you to face the gaze of the abyss. You'll take damage, and your vision will be affected, but you'll also have a chance to get bonus Signal Orbs."
+    },
+    {
+        "Id": 12190006,
+        "Name": "Time Rift",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeian.png",
+        "Description": "Getting close to a phantom will trigger the time rift. You'll lose Signature Energy over time when standing in it."
+    },
+    {
+        "Id": 12190007,
+        "Name": "Mental Crush",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconMoai.png",
+        "Description": "Any Construct mentally controlled by Madorea will die directly."
+    },
+    {
+        "Id": 12190008,
+        "Name": "Corrupted Host",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconhaiqiao2.png",
+        "Description": "Every 10s, the remaining Hetero-Consciousness Hosts on the battlefield will generate a Corrupted Construct (up to 10 at the same time)."
+    },
+    {
+        "Id": 12200001,
+        "Name": "Penetration III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconGuanchuan2.png",
+        "Description": "The enemy will reduce the target's Extra DMG Reduction by 5% when dealing DMG. Stacks up to 10 times. Each stack lasts 10s."
+    },
+    {
+        "Id": 12200002,
+        "Name": "Radiation III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFushe2.png",
+        "Description": "The enemy will deal Physical DMG equal to 3% of its ATK to nearby targets per second."
+    },
+    {
+        "Id": 12200003,
+        "Name": "Agility I",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconXunjie2.png",
+        "Description": "Enemy has increased move speed."
+    },
+    {
+        "Id": 12200004,
+        "Name": "Wave",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBodong2.png",
+        "Description": "A Shockwave created when getting up after falling down to repel the enemies nearby"
+    },
+    {
+        "Id": 12200005,
+        "Name": "Cold Trail",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBingjing2.png",
+        "Description": "Unleash an Ice Block that tracks the target, dealing 15% Ice DMG upon contact. Tracking speed increases the farther the target."
+    },
+    {
+        "Id": 12200006,
+        "Name": "Healing Prohibition",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJinliao2.png",
+        "Description": "Unleash it to the target every once a while, making the target unable to receive any healing for 5s"
+    },
+    {
+        "Id": 12200007,
+        "Name": "Imprison",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJingu2.png",
+        "Description": "Creates a barrier at the target location that blocks the target leaving or entering the barrier area. Lasts 5s. 17s cooldown."
+    },
+    {
+        "Id": 12200008,
+        "Name": "Backfire",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFanshi2.png",
+        "Description": "Generates an energy shield that deals 35% Physical DMG to the attackers. Lasts 5s. 18s cooldown."
+    },
+    {
+        "Id": 12200009,
+        "Name": "Berserk III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBaozou2.png",
+        "Description": "Increases attack frequency by 100%, having a 40% chance to deal 33% Extra Physical DMG."
+    },
+    {
+        "Id": 12200010,
+        "Name": "Radiation III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFushe2.png",
+        "Description": "Consecutively deals 10% Physical DMG to enemies nearby"
+    },
+    {
+        "Id": 12200011,
+        "Name": "Lightning Shield III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDiandun2.png",
+        "Description": "When attacked, has a 15-25% chance to unleash a lightning strike at the attacker's location, dealing 30% Lightning DMG. 2s cooldown. The farther from the target, the higher chance it will be triggered."
+    },
+    {
+        "Id": 12200012,
+        "Name": "Flash III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconShanxian2.png",
+        "Description": "When you are far away from the target, transfers you close to the target, CD for 6-8s. The farther the transfer distance, the shorter the CD"
+    },
+    {
+        "Id": 12200013,
+        "Name": "Deterioration III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconLuehua2.png",
+        "Description": "DMG dealt also reduces target's healing received by 60% for 5s."
+    },
+    {
+        "Id": 12200014,
+        "Name": "Attack Boost III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconQianggong2.png",
+        "Description": "Extra Damage Bonus increases by 60%."
+    },
+    {
+        "Id": 12200015,
+        "Name": "Fire Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKanghuo2.png",
+        "Description": "Fire Resistance decreases by 30%."
+    },
+    {
+        "Id": 12200016,
+        "Name": "Lightning Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKanglei2.png",
+        "Description": "Lightning Resistance decreases by 30%."
+    },
+    {
+        "Id": 12200017,
+        "Name": "Lightning Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKanglei2.png",
+        "Description": "Lightning Resistance decreases by 45%."
+    },
+    {
+        "Id": 12200018,
+        "Name": "Ice Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangbing2.png",
+        "Description": "Ice Resistance decreases by 30%."
+    },
+    {
+        "Id": 12200019,
+        "Name": "Nyctophobia",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangan2.png",
+        "Description": "Dark Resistance decreases by 30%."
+    },
+    {
+        "Id": 12200020,
+        "Name": "Physical Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangwuli2.png",
+        "Description": "Physical Resistance decreases by 30%."
+    },
+    {
+        "Id": 12200021,
+        "Name": "Elemental Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangyuansu2.png",
+        "Description": "All Elemental Resistance decreases by 60%."
+    },
+    {
+        "Id": 12200022,
+        "Name": "Fragility",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconRuodian2.png",
+        "Description": "Extra DMG Reduction against CRIT hits decreases by 30%."
+    },
+    {
+        "Id": 12200023,
+        "Name": "Red Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeihong2.png",
+        "Description": "Extra DMG Reduction against Red Orb skills decreases by 45%."
+    },
+    {
+        "Id": 12200024,
+        "Name": "Lightning Resistance",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKanglei2.png",
+        "Description": "Lightning Resistance increases by 60%."
+    },
+    {
+        "Id": 12200025,
+        "Name": "\u2193Ice",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangbing2.png",
+        "Description": "Ice Resistance increases by 60%."
+    },
+    {
+        "Id": 12200026,
+        "Name": "\u2193Phy",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangwuli2.png",
+        "Description": "Physical Resistance increases by 30%."
+    },
+    {
+        "Id": 12200027,
+        "Name": "\u2193Phy",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangwuli2.png",
+        "Description": "Physical Resistance increases by 60%."
+    },
+    {
+        "Id": 12200028,
+        "Name": "Elemental Endurance",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangyuansu2.png",
+        "Description": "Elemental Resistance increases by 30%."
+    },
+    {
+        "Id": 12200029,
+        "Name": "Elemental Endurance",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangyuansu2.png",
+        "Description": "Elemental Resistance increases by 45%."
+    },
+    {
+        "Id": 12200030,
+        "Name": "Elemental Endurance",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangyuansu2.png",
+        "Description": "Elemental Resistance increases by 60%."
+    },
+    {
+        "Id": 12200031,
+        "Name": "DMG Reduction",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconMianshang2.png",
+        "Description": "Extra DMG Reduction increases by 60%."
+    },
+    {
+        "Id": 12200032,
+        "Name": "Closed Loop",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBihuan2.png",
+        "Description": "A damage to the remote enemy, increases Extra DMG Reduction by 60%"
+    },
+    {
+        "Id": 12200033,
+        "Name": "Stealth",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconYinshen2.png",
+        "Description": "When visible, it will gain invisibility after 1s. If it is hit, it loses invisibility, and it must wait for 3s to reactivate it."
+    },
+    {
+        "Id": 12200034,
+        "Name": "Division",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconLiejie2.png",
+        "Description": "Summons two Clones of the same type that inherit 100% ATK and DEF upon dying."
+    },
+    {
+        "Id": 12200035,
+        "Name": "Black Hole",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHeidong2.png",
+        "Description": "Every 8s, casts a black hole with strong gravitational pull at your location."
+    },
+    {
+        "Id": 12200036,
+        "Name": "Imprison",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJingu2.png",
+        "Description": "Creates a barrier at the target location that blocks the target leaving or entering the barrier area. Lasts 5s. 17s cooldown."
+    },
+    {
+        "Id": 12200037,
+        "Name": "Berserk III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBaozou2.png",
+        "Description": "Increases Attack Desire by 100%, having a 40% chance to deal 33% Extra Physical Damage."
+    },
+    {
+        "Id": 12200038,
+        "Name": "Domination",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconShexian2.png",
+        "Description": "Immune to the limiting effects Matrix and Signature"
+    },
+    {
+        "Id": 12200039,
+        "Name": "Shield Wall",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHudun2.png",
+        "Description": "Reduces DMG from the front by up to 50%."
+    },
+    {
+        "Id": 12200040,
+        "Name": "Elemental Endurance",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangyuansu2.png",
+        "Description": "Elemental Resistance increases by 60%."
+    },
+    {
+        "Id": 12200041,
+        "Name": "Brightness",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconShexian2.png",
+        "Description": "Receives the power of lightning and gains [Repel Demons] in light environment."
+    },
+    {
+        "Id": 12200042,
+        "Name": "Darkness",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDiandun2.png",
+        "Description": "Receives the power of darkness to hide in the shadows and gains [Bleed] in dark environment."
+    },
+    {
+        "Id": 12200043,
+        "Name": "Security Captain",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBilei2.png",
+        "Description": "Summons reinforcements periodically while the Security Captain is present."
+    },
+    {
+        "Id": 12200044,
+        "Name": "Damage+",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconTongling2.png",
+        "Description": "DMG is greatly increased for enemies under the red light."
+    },
+    {
+        "Id": 12200045,
+        "Name": "DMG Reduction+",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJiangu2.png",
+        "Description": "DMG Reduction is greatly increased for enemies under the yellow light."
+    },
+    {
+        "Id": 12200046,
+        "Name": "Elemental Edge",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBingdu2.png",
+        "Description": "Gains multiple elemental damage bonuses at the same time."
+    },
+    {
+        "Id": 12200047,
+        "Name": "Elemental Shield",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFanshi2.png",
+        "Description": "Gains multiple elemental resistance bonuses at the same time."
+    },
+    {
+        "Id": 12200048,
+        "Name": "Inspired",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconQianghua2.png",
+        "Description": "All units gain a DMG bonus based on HP percentage."
+    },
+    {
+        "Id": 12200049,
+        "Name": "Wind Zone",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBihuan2.png",
+        "Description": "Generates Wind Zones on the field. Units can gain a massive boost in Movement Speed while in the Wind Zones."
+    },
+    {
+        "Id": 12200050,
+        "Name": "Charge",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconShanxian2.png",
+        "Description": "All units can cast skills immediately after moving to boost the damage based on Movement Speed."
+    },
+    {
+        "Id": 12200051,
+        "Name": "Carrousel",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconYinshen2.png",
+        "Description": "The Carrousel rotates around the center of the field and never stops, dealing damage to those in its way."
+    },
+    {
+        "Id": 12200052,
+        "Name": "Meteorite",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKanghuo2.png",
+        "Description": "The Sovereign periodically summons a meteor to fall upon the player."
+    },
+    {
+        "Id": 12200053,
+        "Name": "Falling Star",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangyuansu2.png",
+        "Description": "The character periodically summons 5 meteors nearby to deal damage to all units within range."
+    },
+    {
+        "Id": 12200054,
+        "Name": "Bio-Bird",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconShexian2.png",
+        "Description": "The Bio-Bird lurks in the field and attacks those who approach."
+    },
+    {
+        "Id": 12200055,
+        "Name": "Deep-sea Bait",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconSuming2.png",
+        "Description": "Approach the mysterious fish to attract the true predator."
+    },
+    {
+        "Id": 12200056,
+        "Name": "Nightmare Phantom",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHamlet2.png",
+        "Description": "Getting close to an unknown phantom will trigger tentacles that hunt you, but it could also grant you bonus Signal Orbs."
+    },
+    {
+        "Id": 12200057,
+        "Name": "Heart of Bond",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJiban2.png",
+        "Description": "Bosses will be linked. The character will take DMG over time in the area formed by the lines."
+    },
+    {
+        "Id": 12200058,
+        "Name": "Unreal Illusion",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconYinshen2.png",
+        "Description": "Bosses will appear as phantoms and take 30% less DMG."
+    },
+    {
+        "Id": 12200059,
+        "Name": "Gaze of Nightmare",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconMoai2.png",
+        "Description": "Getting close to an unknown flash will force you to face the gaze of the abyss. You'll take damage, and your vision will be affected, but you'll also have a chance to get bonus Signal Orbs."
+    },
+    {
+        "Id": 12200060,
+        "Name": "Time Rift",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangan2.png",
+        "Description": "Getting close to a phantom will trigger the time rift. You'll lose Signature Energy over time when standing in it."
+    },
+    {
+        "Id": 12200061,
+        "Name": "Corrupted Host",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconhaiqiao2.png",
+        "Description": "Every 10s, the remaining Hetero-Consciousness Hosts on the battlefield will generate a Corrupted Construct (up to 10 at the same time)."
+    },
+    {
+        "Id": 12200062,
+        "Name": "Command III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconTongling2.png",
+        "Description": "Increases Extra DMG Bonus by 10%. The more allies nearby, the more stacks will be granted."
+    },
+    {
+        "Id": 752115,
+        "Name": "Nihil Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod3009.png",
+        "Description": "Nihil Resistance decreases by 30%"
+    },
+    {
+        "Id": 752116,
+        "Name": "Nihil Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod3009.png",
+        "Description": "Nihil Resistance decreases by 45%"
+    },
+    {
+        "Id": 752117,
+        "Name": "Nihil Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod3009.png",
+        "Description": "Nihil Resistance decreases by 60%"
+    },
+    {
+        "Id": 782101,
+        "Name": "Prismatic Bewilderment",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1009.png",
+        "Description": "Enemies gain 90% DMG Reduction while dyed. Same-color 3-Ping attacks will clear the dye on the target, and they cannot be dyed again in 30s."
+    },
+    {
+        "Id": 782107,
+        "Name": "Chromatic Rupture",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHeidong2.png",
+        "Description": "All enemies gain 80% DMG Reduction. When a member hits the target with QTE, paint will be sprayed to increase damage taken by 80% for all enemies in the paint zone."
+    },
+    {
+        "Id": 782111,
+        "Name": "Defense Sphere",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJingu2.png",
+        "Description": "Members will be dyed after getting hit 3 times. While dyed, the member cannot do anything other than dodge. The dye will be cleared in 10s."
+    },
+    {
+        "Id": 782118,
+        "Name": "Audacious Daredevil",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconXuruo2.png",
+        "Description": "DMG of all 3-Ping attacks decreases by 80% for members. Enemies cannot be affected by Matrix."
+    },
+    {
+        "Id": 782122,
+        "Name": "Final Stand",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconMoai2.png",
+        "Description": "Members cannot use QTE skills or switch in."
+    },
+    {
+        "Id": 752342,
+        "Name": "Deadly Gambit",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconJingu2.png",
+        "Description": "DMG dealt decreases by 80% when combo count is lower than 200 for members."
+    },
+    {
+        "Id": 752344,
+        "Name": "Dark Forest",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFushe2.png",
+        "Description": "Members lose HP over time and have their Dodge Gauge recovery rate halved."
+    },
+    {
+        "Id": 752346,
+        "Name": "Virulent Blight",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconMoai2.png",
+        "Description": "When hit by enemies, lose Signature Energy and take toxin damage for 5s."
+    },
+    {
+        "Id": 782124,
+        "Name": "Bloody Bite",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFanshi2.png",
+        "Description": "Whenever a member is hit by enemies, they are inflicted with a toxin that reduces movement speed and Dodge Gauge recovery rate. This effect stacks. Receiving heal will remove one stack."
+    },
+    {
+        "Id": 752349,
+        "Name": "Painful Exemption",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconKangyuansu2.png",
+        "Description": "When an enemy takes Fire, Ice, Lightning or Dark DMG, they will gain 80% Resistance to that type of element. Only one Resistance at a time. The Resistance resets after 15s."
+    },
+    {
+        "Id": 752354,
+        "Name": "Unhealing Wound",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDiandun2.png",
+        "Description": "Members lose HP over time and cannot heal in any way."
+    },
+    {
+        "Id": 782129,
+        "Name": "Impregnable Vantage",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconLiejie2.png",
+        "Description": "Enemies cannot take damage until you trigger Matrix by dodging. Dodge Matrix cooldown reduced for members."
+    },
+    {
+        "Id": 782133,
+        "Name": "Wavy Camouflage",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconYuan2.png",
+        "Description": "Enemies enter a semi-cloak status, gaining a chance to take no damage when hit."
+    },
+    {
+        "Id": 782137,
+        "Name": "Siren's Lure",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconYinshen2.png",
+        "Description": "Members lose control after staying on the battlefield for 30s and become unable to attack or dodge. Time needed to lose control shortens by 5s each time they are hit. Switching resets the timer."
+    },
+    {
+        "Id": 782142,
+        "Name": "Abyssal Gravity",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconXuruo2.png",
+        "Description": "Members other than Lamia have their movement speed and Dodge Gauge recovery rate reduced."
+    },
+    {
+        "Id": 2251555,
+        "Name": "Weakened Buildings I",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod3009.png",
+        "Description": "Enemies are less affected by buildings."
+    },
+    {
+        "Id": 2251556,
+        "Name": "Weakened Buildings II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod3009.png",
+        "Description": "Enemies are less affected by buildings x2"
+    },
+    {
+        "Id": 2251557,
+        "Name": "Weakened Buildings III",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod3009.png",
+        "Description": "Enemies are less affected by buildings x3"
+    },
+    {
+        "Id": 780912,
+        "Name": "Plasma Beam Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeidianshu.png",
+        "Description": "Plasma Beam Resistance decreases by 30%"
+    },
+    {
+        "Id": 780913,
+        "Name": "Plasma Beam Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeidianshu.png",
+        "Description": "Plasma Beam Resistance decreases by 45%"
+    },
+    {
+        "Id": 780914,
+        "Name": "Plasma Beam Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeidianshu.png",
+        "Description": "Plasma Beam Resistance decreases by 60%"
+    },
+    {
+        "Id": 780915,
+        "Name": "Ignition Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeifenshao.png",
+        "Description": "Ignition Resistance decreases by 30%"
+    },
+    {
+        "Id": 780916,
+        "Name": "Ignition Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeifenshao.png",
+        "Description": "Ignition Resistance decreases by 45%"
+    },
+    {
+        "Id": 780917,
+        "Name": "Ignition Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeifenshao.png",
+        "Description": "Ignition Resistance decreases by 60%"
+    },
+    {
+        "Id": 780918,
+        "Name": "Ultima Slash Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeizhenyizhan.png",
+        "Description": "Ultima Slash Resistance decreases by 30%"
+    },
+    {
+        "Id": 780919,
+        "Name": "Ultima Slash Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeizhenyizhan.png",
+        "Description": "Ultima Slash Resistance decreases by 45%"
+    },
+    {
+        "Id": 780920,
+        "Name": "Ultima Slash Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeizhenyizhan.png",
+        "Description": "Ultima Slash Resistance decreases by 60%"
+    },
+    {
+        "Id": 780921,
+        "Name": "Glaciation Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeifubing.png",
+        "Description": "Glaciation Resistance decreases by 30%"
+    },
+    {
+        "Id": 780922,
+        "Name": "Glaciation Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeifubing.png",
+        "Description": "Glaciation Resistance decreases by 45%"
+    },
+    {
+        "Id": 780923,
+        "Name": "Glaciation Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeifubing.png",
+        "Description": "Glaciation Resistance decreases by 60%"
+    },
+    {
+        "Id": 780924,
+        "Name": "Darkflow Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeianyan.png",
+        "Description": "Darkflow Resistance decreases by 30%"
+    },
+    {
+        "Id": 780925,
+        "Name": "Darkflow Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeianyan.png",
+        "Description": "Darkflow Resistance decreases by 45%"
+    },
+    {
+        "Id": 780926,
+        "Name": "Darkflow Vulnerability",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconWeianyan.png",
+        "Description": "Darkflow Resistance decreases by 60%"
+    },
+    {
+        "Id": 735478,
+        "Name": "Rigid Body",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconGangti2.png",
+        "Description": "Takes 1 damage only from incoming attacks. This effect is removed after taking damage 50 times, and is resumed 8s later."
+    },
+    {
+        "Id": 2267121,
+        "Name": "Environmental Buff: Return to Matrix",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon13001.png",
+        "Description": "Signature Move's Extra DMG Bonus increases by 50%."
+    },
+    {
+        "Id": 2267122,
+        "Name": "Environmental Buff: Infinite firepower",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22021.png",
+        "Description": "Orb recovery of Basic Attacks increases by 100%. For every Orb pinged, increases Extra DMG Bonus of the whole team by 5% for 15s, up to 30%."
+    },
+    {
+        "Id": 2267123,
+        "Name": "Environmental Buff: Strike!",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22031.png",
+        "Description": "The battle has entered the chariot stage. Gains Extra DMG Bonus when hit by the chariot, up to 40%."
+    },
+    {
+        "Id": 2267124,
+        "Name": "Environmental Buff: True Test I",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22080.png",
+        "Description": "Healing effect decreases by 50%. Recovers 10% HP and gains 5% Extra DMG for 15s upon a successful dodge (This effect stacks up to 4 times). The Boss gains 25% Fire Weakness."
+    },
+    {
+        "Id": 2267125,
+        "Name": "Environmental Buff: True Test II",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22080.png",
+        "Description": "Healing effect decreases by 50%. Recovers 10% HP and gains 5% Extra DMG for 15s upon a successful dodge (This effect stacks up to 4 times). The Boss gains 25% Glaciation Weakness."
+    },
+    {
+        "Id": 2267111,
+        "Name": "Boss Affix: Assault",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconQianggong.png",
+        "Description": "Enemies gain 30% more Attack."
+    },
+    {
+        "Id": 2267112,
+        "Name": "Boss Affix: Fire",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconHuoyan.png",
+        "Description": "Attacks deal an additional 20% Fire DMG and has 20% of chance to inflict Burn, dealing 20% of Fire DMG per second for 3 seconds."
+    },
+    {
+        "Id": 2267113,
+        "Name": "Boss Affix: Assault",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconQianggong.png",
+        "Description": "Enemies gain 30% more Attack."
+    },
+    {
+        "Id": 2267114,
+        "Name": "Boss Affix: Freeze",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconDongjie.png",
+        "Description": "Attacks have a 100% chance to deal an additional 10% Ice DMG and freeze the target for 1s."
+    },
+    {
+        "Id": 2267115,
+        "Name": "Boss Affix: Dominator",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconShexian.png",
+        "Description": "Immune to restrictions from Matrix and Signature Moves."
+    },
+    {
+        "Id": 2267116,
+        "Name": "Boss Affix: Cold Trail",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconBingjing.png",
+        "Description": "Cast an Ice Block to keep tracing the target, dealing 500 Ice DMG when the Ice Block contacts the target. The farther away from the target, the faster the movement speed"
+    },
+    {
+        "Id": 2267117,
+        "Name": "Boss Affix: Dominator",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconShexian.png",
+        "Description": "Immune to restrictions from Matrix and Signature Moves."
+    },
+    {
+        "Id": 2267118,
+        "Name": "Boss Affix: Radiation",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconFushe.png",
+        "Description": "Consecutively deals 2% of Physical DMG to nearby enemies."
+    },
+    {
+        "Id": 2267150,
+        "Name": "ATK Boost I",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11011.png",
+        "Description": "All Elemental ATK increases by 5%."
+    },
+    {
+        "Id": 2267151,
+        "Name": "ATK Boost II",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11012.png",
+        "Description": "All Elemental ATK increases by 10%."
+    },
+    {
+        "Id": 2267152,
+        "Name": "ATK Boost III",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon11013.png",
+        "Description": "All Elemental ATK increases by 15%."
+    },
+    {
+        "Id": 2267153,
+        "Name": "HP Boost I",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21131.png",
+        "Description": "Max HP +10%."
+    },
+    {
+        "Id": 2267154,
+        "Name": "HP Boost II",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21132.png",
+        "Description": "Max HP +20%."
+    },
+    {
+        "Id": 2267155,
+        "Name": "HP Boost III",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21133.png",
+        "Description": "Max HP +35%."
+    },
+    {
+        "Id": 2267156,
+        "Name": "Rotation I",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33304.png",
+        "Description": "Gain 2 random Signal Orbs after switching to another member."
+    },
+    {
+        "Id": 2267157,
+        "Name": "Rotation II",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33305.png",
+        "Description": "Gain 3 random Signal Orbs after switching to another member."
+    },
+    {
+        "Id": 2267158,
+        "Name": "Rotation III",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33306.png",
+        "Description": "Gain 4 random Signal Orbs after switching to another member."
+    },
+    {
+        "Id": 2267159,
+        "Name": "Elemental DMG I",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21061.png",
+        "Description": "Elemental Extra DMG Bonus increases by 5%."
+    },
+    {
+        "Id": 2267160,
+        "Name": "Elemental DMG II",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21062.png",
+        "Description": "Elemental Extra DMG Bonus increases by 10%."
+    },
+    {
+        "Id": 2267161,
+        "Name": "Elemental DMG III",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21063.png",
+        "Description": "Elemental Extra DMG Bonus increases by 15%."
+    },
+    {
+        "Id": 2267162,
+        "Name": "Reinvigorated I",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32011.png",
+        "Description": "Healing effect increases by 20%."
+    },
+    {
+        "Id": 2267163,
+        "Name": "Reinvigorated II",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32012.png",
+        "Description": "Healing effect increases by 30%."
+    },
+    {
+        "Id": 2267164,
+        "Name": "Reinvigorated III",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32013.png",
+        "Description": "Healing effect increases by 50%."
+    },
+    {
+        "Id": 2267165,
+        "Name": "Momentum Strike I",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon31071.png",
+        "Description": "Reduces the enemy's Extra DMG Reduction by 5% for 5s upon a successful dodge."
+    },
+    {
+        "Id": 2267166,
+        "Name": "Momentum Strike II",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon31072.png",
+        "Description": "Reduces the enemy's Extra DMG Reduction by 10% for 5s upon a successful dodge."
+    },
+    {
+        "Id": 2267167,
+        "Name": "Momentum Strike III",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon31073.png",
+        "Description": "Reduces the enemy's Extra DMG Reduction by 15% for 5s upon a successful dodge."
+    },
+    {
+        "Id": 2267168,
+        "Name": "Barrier I",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21021.png",
+        "Description": "Gains a shield equal to 10% of own max HP after switching to another member."
+    },
+    {
+        "Id": 2267169,
+        "Name": "Barrier II",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21022.png",
+        "Description": "Gains a shield equal to 20% of own max HP after switching to another member."
+    },
+    {
+        "Id": 2267170,
+        "Name": "Barrier III",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21023.png",
+        "Description": "Gains a shield equal to 35% of own max HP after switching to another member."
+    },
+    {
+        "Id": 2267171,
+        "Name": "Minor Matrix Lightning I",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33031.png",
+        "Description": "Reduces the Elemental Resistance of enemies inside the Matrix by 5% for 5s."
+    },
+    {
+        "Id": 2267172,
+        "Name": "Minor Matrix Lightning II",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33032.png",
+        "Description": "Reduces the Elemental Resistance of enemies inside the Matrix by 10% for 5s."
+    },
+    {
+        "Id": 2267173,
+        "Name": "Minor Matrix Lightning III",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33033.png",
+        "Description": "Reduces the Elemental Resistance of enemies inside the Matrix by 15% for 5s."
+    },
+    {
+        "Id": 2267174,
+        "Name": "Life-Saving Strand I",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33221.png",
+        "Description": "Each character becomes immune to a lethal attack and returns to full HP once per battle."
+    },
+    {
+        "Id": 2267175,
+        "Name": "Life-Saving Strand II",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33222.png",
+        "Description": "Each character becomes immune to a lethal attack and returns to full HP twice per battle."
+    },
+    {
+        "Id": 2267176,
+        "Name": "Life-Saving Strand III",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon33223.png",
+        "Description": "Each character becomes immune to a lethal attack and returns to full HP 3 times per battle."
+    },
+    {
+        "Id": 2267177,
+        "Name": "Endless Vigor I",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22001.png",
+        "Description": "Gains 5% Extra DMG Bonus when HP is at maximum."
+    },
+    {
+        "Id": 2267178,
+        "Name": "Endless Vigor II",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22002.png",
+        "Description": "Gains 10% Extra DMG Bonus when HP is at maximum."
+    },
+    {
+        "Id": 2267179,
+        "Name": "Endless Vigor III",
+        "Icon": "Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22003.png",
+        "Description": "Gains 15% Extra DMG Bonus when HP is at maximum."
+    }
+]

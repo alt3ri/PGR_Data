@@ -1,0 +1,152 @@
+[
+    {
+        "Key": "MoveCostEnergy",
+        "Comment": "Movement consumes Stamina",
+        "Value": "1"
+    },
+    {
+        "Key": "ProgressWarnAfterStart",
+        "Comment": "The time of sending a progress warning mail after a round starts. (in hours) (6 days)",
+        "Value": "144"
+    },
+    {
+        "Key": "AddEnergy",
+        "Comment": "The amount of Stamina added every night at 20:00.",
+        "Value": "70"
+    },
+    {
+        "Key": "AutoSetDifficultyDelay",
+        "Comment": "(Abandoned) The latest time of auto setting of difficulty after a round starts. (in hours)",
+        "Value": "3"
+    },
+    {
+        "Key": "MaxEnergy",
+        "Comment": "Max Stamina",
+        "Value": "210"
+    },
+    {
+        "Key": "ActivityPointItemId",
+        "Comment": "Event Stamina ID",
+        "Value": "96114"
+    },
+    {
+        "Key": "NodeRewardMailId",
+        "Comment": "Night Node Reward Mail ID",
+        "Value": "0"
+    },
+    {
+        "Key": "RoundRewardMailId",
+        "Comment": "Round Reward Mail ID",
+        "Value": "0"
+    },
+    {
+        "Key": "EntryBgPath",
+        "Comment": "Entrance Picture Address",
+        "Value": "Assets/Product/Texture/Image/UiGuildWar/UiGuildWarBtn04.png"
+    },
+    {
+        "Key": "AssistCountSupply",
+        "Comment": "Supply per Support",
+        "Value": "30"
+    },
+    {
+        "Key": "AssistTimeSupply",
+        "Comment": "\"Time Supply, Amount per 10 min\"",
+        "Value": "1"
+    },
+    {
+        "Key": "AssistCountSupplyLimit",
+        "Comment": "Max Supply per Round",
+        "Value": "600"
+    },
+    {
+        "Key": "AssistTimeSupplyLimit",
+        "Comment": "Max Time Supply per Round",
+        "Value": "576"
+    },
+    {
+        "Key": "UseAssistCharacterCd",
+        "Comment": "Use Support Character CD. Unit: Second (1h)",
+        "Value": "3600"
+    },
+    {
+        "Key": "AssistMaxDisplayCount",
+        "Comment": "Max number of support characters in display. To avoid too much data.",
+        "Value": "40"
+    },
+    {
+        "Key": "AssistLogMaxCount",
+        "Comment": "Max Support Logs",
+        "Value": "35"
+    },
+    {
+        "Key": "MaxBossLevel",
+        "Comment": "Guild War 4.0 Boss Max Level",
+        "Value": "99"
+    },
+    {
+        "Key": "ResourceNodeAttackedInterval",
+        "Comment": "Resource Point Attack Interval (in seconds)",
+        "Value": "172800"
+    },
+    {
+        "Key": "ResourceNodeScoreAddition",
+        "Comment": "Single Resource Point Points Bonus Percentage",
+        "Value": "5"
+    },
+    {
+        "Key": "MoneyHipLeftTime",
+        "Comment": "Token Blue Point Condition - Event Remaining Time (in seconds)",
+        "Value": "259200"
+    },
+    {
+        "Key": "RewardItemId",
+        "Comment": "Token ID",
+        "Value": "96205"
+    },
+    {
+        "Key": "RewardItemHipLimitCount",
+        "Comment": "Token Blue Point Condition - Minimum",
+        "Value": "30"
+    },
+    {
+        "Key": "BossNodeType",
+        "Comment": "Current Season Boss Fight Node Type",
+        "Value": "14"
+    },
+    {
+        "Key": "ReinforcementBuffEffectInterval",
+        "Comment": "\u63f4\u5175Buff\u751f\u6548\u65f6\u95f4\uff0c\u5355\u4f4d\u79d2",
+        "Value": "86400"
+    },
+    {
+        "Key": "ReinforcementSupportHp",
+        "Comment": "\u6bcf\u4e2a\u7269\u8d44\u63d0\u5347\u591a\u5c11\u8840\u91cf",
+        "Value": "25"
+    },
+    {
+        "Key": "ExtraAddEnergyRule",
+        "Comment": "\u989d\u5916\u589e\u52a0\u4f53\u529b\u89c4\u5219",
+        "Value": "{\"DifficultyIds\":[1,2],\"GiveDays\":4,\"GameThrough\":2,\"NodeConditions\":[{\"Priority\":1,\"NodeType\":16,\"EnergyAdd\":70},{\"Priority\":2,\"NodeType\":5,\"EnergyAdd\":20}]}"
+    },
+    {
+        "Key": "GuildWarShopId",
+        "Comment": "\u5546\u5e97id",
+        "Value": "4016"
+    },
+    {
+        "Key": "DragonRageOpenNodeType",
+        "Comment": "Cycle 1 Red Tide Point Activation Condition, Type of Node Cleared (Block Point)",
+        "Value": "16"
+    },
+    {
+        "Key": "FullDragonRageGameThrough",
+        "Comment": "Cycle 3 or above, Cycle Switch Red Tide Point Charging to Full and Stay Full",
+        "Value": "3"
+    },
+    {
+        "Key": "DragonRageRankDifficultyId",
+        "Comment": "A new cycle begins with higher Total Red Tide Level upon every clearance of Difficulty 3",
+        "Value": "3"
+    }
+]

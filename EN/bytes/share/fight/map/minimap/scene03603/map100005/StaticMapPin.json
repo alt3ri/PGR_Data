@@ -1,0 +1,54 @@
+[
+    {
+        "Id": 1,
+        "MapPinGroup": 1,
+        "MapPinId": 1,
+        "MapPinTemplateId": 4,
+        "PinName": "Teleport 01",
+        "PinDesc": "Tap to teleport, maintain original facing direction\\nHas camera transition",
+        "PosX": 270.7969,
+        "PosY": 201.0625,
+        "UniqueClickCB": true,
+        "CBText": "['Teleport']",
+        "CBFunc": "['11']"
+    },
+    {
+        "Id": 2,
+        "MapPinGroup": 1,
+        "MapPinId": 2,
+        "MapPinTemplateId": 3,
+        "PinName": "Teleport 02",
+        "PinDesc": "Tap to teleport, add magic, and face 180 degrees",
+        "PosX": 262.5,
+        "PosY": 212.875,
+        "UniqueClickCB": true,
+        "CBText": "['Teleport']",
+        "CBFunc": "['12|10']"
+    },
+    {
+        "Id": 3,
+        "MapPinGroup": 1,
+        "MapPinId": 3,
+        "MapPinTemplateId": 6,
+        "PinName": "Show Info",
+        "PinDesc": "Tap to show other info interface",
+        "PosX": 253.7656,
+        "PosY": 226.2188,
+        "UniqueClickCB": true,
+        "CBText": "['Message']",
+        "CBFunc": "['14']"
+    },
+    {
+        "Id": 4,
+        "MapPinGroup": 1,
+        "MapPinId": 4,
+        "MapPinTemplateId": 1,
+        "PinName": "Tap here to teleport to settlement point",
+        "PinDesc": "Teleport there for settlement, or run directly here for settlement too",
+        "PosX": 246.0,
+        "PosY": 235.9375,
+        "UniqueClickCB": true,
+        "CBText": "['Teleport to settlement point']",
+        "CBFunc": "['13']"
+    }
+]

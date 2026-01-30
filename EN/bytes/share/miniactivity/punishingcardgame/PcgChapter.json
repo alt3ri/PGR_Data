@@ -1,0 +1,54 @@
+[
+    {
+        "Id": 1,
+        "ActivityId": 1,
+        "TimeId": null,
+        "Name": "Start of the Journey",
+        "Title": "Tutorial Chapter 1",
+        "LockTips": null,
+        "Type": 1,
+        "ChallengeStageId": null,
+        "StageIds": "[1, 2, 3, 4, 5, 6, 7, 8]",
+        "CharacterUnlockIds": "[1, 2, 3]",
+        "BgIcon": "Assets/Product/Texture/Image/UiPcg/UiPcgStageBg01Bt.png"
+    },
+    {
+        "Id": 2,
+        "ActivityId": 1,
+        "TimeId": null,
+        "Name": "Graffiti Art",
+        "Title": "Challenge Chapter 1",
+        "LockTips": "Clear Start of the Journey to unlock",
+        "Type": 2,
+        "ChallengeStageId": 14.0,
+        "StageIds": "[10, 11, 12, 13]",
+        "CharacterUnlockIds": "[4, 5, 6]",
+        "BgIcon": "Assets/Product/Texture/Image/UiPcg/UiPcgStageBg02Bt.png"
+    },
+    {
+        "Id": 3,
+        "ActivityId": 1,
+        "TimeId": null,
+        "Name": "Journey of Torture",
+        "Title": "Challenge Chapter 2",
+        "LockTips": "Clear Graffiti Art to unlock",
+        "Type": 2,
+        "ChallengeStageId": 24.0,
+        "StageIds": "[20, 21, 22, 23]",
+        "CharacterUnlockIds": "[7, 8, 9]",
+        "BgIcon": "Assets/Product/Texture/Image/UiPcg/UiPcgStageBg03Bt.png"
+    },
+    {
+        "Id": 4,
+        "ActivityId": 1,
+        "TimeId": null,
+        "Name": "Final Exhibition",
+        "Title": "Challenge Chapter 3",
+        "LockTips": "Clear Journey of Torture to unlock",
+        "Type": 2,
+        "ChallengeStageId": 34.0,
+        "StageIds": "[30, 31, 32, 33]",
+        "CharacterUnlockIds": null,
+        "BgIcon": "Assets/Product/Texture/Image/UiPcg/UiPcgStageBg04Bt.png"
+    }
+]

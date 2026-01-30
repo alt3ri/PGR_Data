@@ -1,0 +1,332 @@
+[
+    {
+        "Key": "DamageRandomMin",
+        "Type": "int",
+        "Value": "9500"
+    },
+    {
+        "Key": "DamageRandomMax",
+        "Type": "int",
+        "Value": "10500"
+    },
+    {
+        "Key": "DamageFormulaParam",
+        "Type": "int",
+        "Value": "3000"
+    },
+    {
+        "Key": "CritFormulaParam1",
+        "Type": "int",
+        "Value": "1980"
+    },
+    {
+        "Key": "CritFormulaParam2",
+        "Type": "int",
+        "Value": "20"
+    },
+    {
+        "Key": "RestStandWaitTime",
+        "Type": "fix",
+        "Value": "0"
+    },
+    {
+        "Key": "ComboDuration",
+        "Type": "fix",
+        "Value": "3"
+    },
+    {
+        "Key": "DefaultNpcMaxHitValue",
+        "Type": "int",
+        "Value": "100"
+    },
+    {
+        "Key": "BallMoveSpeed",
+        "Type": "int",
+        "Value": "2000"
+    },
+    {
+        "Key": "BallWidth",
+        "Type": "int",
+        "Value": "1000"
+    },
+    {
+        "Key": "BallBoxLength",
+        "Type": "int",
+        "Value": "7000"
+    },
+    {
+        "Key": "ThreatAttenuationCoefficient",
+        "Type": "fix",
+        "Value": "0.995"
+    },
+    {
+        "Key": "MaxBallReserve",
+        "Type": "int",
+        "Value": "8"
+    },
+    {
+        "Key": "DodgeLimitMagicToMe",
+        "Type": "string",
+        "Value": "100081"
+    },
+    {
+        "Key": "DodgeLimitMagicToTarget",
+        "Type": "string",
+        "Value": "100082"
+    },
+    {
+        "Key": "DodgeLimitMagicToMeEx",
+        "Type": "string",
+        "Value": "100083"
+    },
+    {
+        "Key": "DodgeLimitMagicToTargetEx",
+        "Type": "string",
+        "Value": "100084"
+    },
+    {
+        "Key": "DodgeLimitInterval",
+        "Type": "fix",
+        "Value": "1"
+    },
+    {
+        "Key": "SwitchInvincibleMagicIds",
+        "Type": "string",
+        "Value": "100039"
+    },
+    {
+        "Key": "RunStartIncludedAngle",
+        "Type": "fix",
+        "Value": "170"
+    },
+    {
+        "Key": "MaxBuffAccumulation",
+        "Type": "int",
+        "Value": "10000"
+    },
+    {
+        "Key": "FindPathInterval",
+        "Type": "int",
+        "Value": "10"
+    },
+    {
+        "Key": "CheckStateChangeInterval",
+        "Type": "int",
+        "Value": "5"
+    },
+    {
+        "Key": "EnterPathFindLimit",
+        "Type": "int",
+        "Value": "5"
+    },
+    {
+        "Key": "ExitPathFindLimit",
+        "Type": "int",
+        "Value": "15"
+    },
+    {
+        "Key": "PathFinderMaxNodes",
+        "Type": "int",
+        "Value": "512"
+    },
+    {
+        "Key": "PathFinderMaxCheckCount",
+        "Type": "int",
+        "Value": "350"
+    },
+    {
+        "Key": "AreaFinderMaxNodes",
+        "Type": "int",
+        "Value": "512"
+    },
+    {
+        "Key": "AreaFinderMaxCheckCount",
+        "Type": "int",
+        "Value": "256"
+    },
+    {
+        "Key": "HitFlyUpAccelerationSpeed",
+        "Type": "fix",
+        "Value": "-15"
+    },
+    {
+        "Key": "HitFlyDownAccelerationSpeed",
+        "Type": "fix",
+        "Value": "30"
+    },
+    {
+        "Key": "MaxHitFlyHeight",
+        "Type": "fix",
+        "Value": "3"
+    },
+    {
+        "Key": "HitFlyHeightDamping",
+        "Type": "fix",
+        "Value": "0.8"
+    },
+    {
+        "Key": "HookRopeSpeed",
+        "Type": "fix",
+        "Value": "30"
+    },
+    {
+        "Key": "PeripheralCollision",
+        "Type": "fix",
+        "Value": "3"
+    },
+    {
+        "Key": "ExecuteKind",
+        "Type": "int",
+        "Value": "100"
+    },
+    {
+        "Key": "DynamicScoringBreakthroughPercentage",
+        "Type": "fix",
+        "Value": "0"
+    },
+    {
+        "Key": "DynamicScoringExecuteEffectScore",
+        "Type": "fix",
+        "Value": "2500"
+    },
+    {
+        "Key": "DynamicScoringNormalEffectScore",
+        "Type": "fix",
+        "Value": "1250"
+    },
+    {
+        "Key": "NpcQuadTreeEnable",
+        "Type": "bool",
+        "Value": "1"
+    },
+    {
+        "Key": "HackChangePExcludeKinds",
+        "Type": "string",
+        "Value": "102|104"
+    },
+    {
+        "Key": "AntiHackChangePExcludeKinds",
+        "Type": "string",
+        "Value": "0"
+    },
+    {
+        "Key": "SupportDamageBuffKind",
+        "Type": "string",
+        "Value": "125|131|128|134|144"
+    },
+    {
+        "Key": "SupportChangePBuffKind",
+        "Type": "string",
+        "Value": "138|140|139|141|142"
+    },
+    {
+        "Key": "AntiDamageBuffKind",
+        "Type": "string",
+        "Value": "216|222|219|225|231"
+    },
+    {
+        "Key": "ConsciousAntiBuffKind",
+        "Type": "string",
+        "Value": "320"
+    },
+    {
+        "Key": "WeaponAntiBuffKind",
+        "Type": "string",
+        "Value": "321"
+    },
+    {
+        "Key": "CircleQteDetal",
+        "Type": "float",
+        "Value": "2"
+    },
+    {
+        "Key": "GlobalGAL",
+        "Type": "fix",
+        "Value": "-80"
+    },
+    {
+        "Key": "JumpSpeed",
+        "Type": "fix",
+        "Value": "24"
+    },
+    {
+        "Key": "ChangeDownSpeed",
+        "Type": "fix",
+        "Value": "14"
+    },
+    {
+        "Key": "IdleJumpForceTime",
+        "Type": "fix",
+        "Value": "0.1"
+    },
+    {
+        "Key": "RunJumpForceTime",
+        "Type": "fix",
+        "Value": "0.1"
+    },
+    {
+        "Key": "ChangeDownAnimeTime",
+        "Type": "fix",
+        "Value": "0.2"
+    },
+    {
+        "Key": "StandSlopeAngle",
+        "Type": "fix",
+        "Value": "45"
+    },
+    {
+        "Key": "WallToleranceAngle",
+        "Type": "fix",
+        "Value": "10"
+    },
+    {
+        "Key": "FallingVelocityLimit",
+        "Type": "fix",
+        "Value": "-10"
+    },
+    {
+        "Key": "ScoreTowerV3P3Level",
+        "Type": "int",
+        "Value": "250000000"
+    },
+    {
+        "Key": "FPSRotateSpeed",
+        "Type": "fix",
+        "Value": "0.36"
+    },
+    {
+        "Key": "ScoreTowerV3P3IgnoreDamage",
+        "Type": "string",
+        "Value": "51|104"
+    },
+    {
+        "Key": "MaxStepHeight",
+        "Type": "fix",
+        "Value": "1"
+    },
+    {
+        "Key": "SubMagic2DamageRatio",
+        "Type": "int",
+        "Value": "10000"
+    },
+    {
+        "Key": "SubMagic7DamageRatio",
+        "Type": "int",
+        "Value": "10000"
+    },
+    {
+        "Key": "AttackMagic2WeakRatio",
+        "Type": "int",
+        "Value": "7500"
+    },
+    {
+        "Key": "SubMagic2WeakRatio",
+        "Type": "int",
+        "Value": "7500"
+    },
+    {
+        "Key": "SubMagic7WeakRatio",
+        "Type": "int",
+        "Value": "10000"
+    }
+]
