@@ -221,9 +221,11 @@ function XUiPurchaseCoatingLB:OpenUiView(data)
 	    local disCountValue = XDataCenter.PurchaseManager.GetLBDiscountValue(data)
             
 	    local buyData = {}
+        buyData.PurchasePackageId = data.Id
         buyData.IsHave = XDataCenter.PurchaseManager.IsLBHave(data)
 	    buyData.ItemIcon = XDataCenter.ItemManager.GetItemIcon(data.ConsumeId)
-	    buyData.ItemCount = math.modf(data.ConvertSwitch * disCountValue)
+	    buyData.ItemCount = math.modf(data.ConvertSwitch * disCountValue) --折扣价格
+        buyData.InitItemCount = data.ConvertSwitch --初始价格
 	    buyData.BuyCallBack = function() self:FashionDetailBuyCB() end
         buyData.FashionLabel = data.FashionLabel
         -- v1.28-采购优化-赠品队列过滤涂装

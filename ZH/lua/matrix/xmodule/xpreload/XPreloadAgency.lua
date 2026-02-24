@@ -1048,15 +1048,21 @@ function XPreloadAgency:InitPath()
     self._PreloadDirPath = UnityApplication.persistentDataPath .. "/preload"
     self._LocalPreloadIndexPath = string.format("%s/%s/%s", self._PreloadDirPath, ResFileType, PreloadIndexName)
     local baseVersion = CsInfo.Version -- self._Model:GetPreloadBaseVersion()
-
+    local platformName = ""
     if UnityApplication.platform == UnityRuntimePlatform.Android then
-        self._PreloadCdnUrl = string.format("client/patch/%s/%s/%s", CS.XInfo.Identifier, baseVersion, "android")
+        platformName = "android"
     elseif UnityApplication.platform == UnityRuntimePlatform.IPhonePlayer then
-        self._PreloadCdnUrl = string.format("client/patch/%s/%s/%s", CS.XInfo.Identifier, baseVersion, "ios")
+        platformName = "ios"
     elseif UnityApplication.platform == UnityRuntimePlatform.WindowsEditor then
-        self._PreloadCdnUrl = string.format("client/patch/%s/%s/%s", CS.XInfo.Identifier, baseVersion, "android")
+        platformName = "android"
     elseif UnityApplication.platform == UnityRuntimePlatform.WindowsPlayer then
-        self._PreloadCdnUrl = string.format("client/patch/%s/%s/%s", CS.XInfo.Identifier, baseVersion, "standalone")
+        platformName = "standalone"
+    end
+    local cdnKey = CsInfo.CDNKey
+    if string.IsNilOrEmpty(cdnKey) then
+        self._PreloadCdnUrl = string.format("client/patch/%s/%s/%s", CS.XInfo.Identifier, baseVersion, platformName)
+    else
+        self._PreloadCdnUrl = string.format("client/patch/%s/%s/%s/%s", cdnKey, CS.XInfo.Identifier, baseVersion, platformName)
     end
 end
 

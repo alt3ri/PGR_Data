@@ -6,7 +6,7 @@ function XUiSoloReformSettlement:OnAwake()
     self._StageId = nil
     self._StarDescCellList = nil
     self._StarAnimTimerId = nil
-    self:RegisterClickEvent(self.BtnLeave, self.Close, true)
+    self.BtnLeave:AddEventListener(handler(self, self.Close))
     self:RegisterClickEvent(self.BtnBack, self.Close, true)
     self:RegisterClickEvent(self.BtnAgain, self.OnAgain, true)
 end
@@ -28,10 +28,14 @@ end
 function XUiSoloReformSettlement:RefreshPassTime(stageId, passTime, isNew)
     local chapterId = XMVCA.XSoloReform:GetEnterChapterId()
     local maxDifficultyStageId = self._Control:GetMaxDifficultyStageId(chapterId)
-    self.PanelTime.gameObject:SetActiveEx(maxDifficultyStageId == stageId)
+    if self.PanelTime then
+        self.PanelTime.gameObject:SetActiveEx(maxDifficultyStageId == stageId)
+    end
     if maxDifficultyStageId == stageId then
-        self.TxtTime.text = XUiHelper.GetTime(passTime)
-        self.TxtNew.gameObject:SetActiveEx(isNew)
+        if self.TxtTime then
+            self.TxtTime.text = XUiHelper.GetTime(passTime)
+            self.TxtNew.gameObject:SetActiveEx(isNew)
+        end
     end            
 end
 

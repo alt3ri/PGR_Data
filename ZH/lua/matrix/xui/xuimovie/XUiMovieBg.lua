@@ -28,7 +28,7 @@ function XUiMovieBg:GetBg(index)
     if not bg then
         local link = self.UiMovie["RImgBg" .. index]
         if link then
-            bg = require("XUi/XUiMovie/XUiGridMovieBg").New(self.UiMovie, link)
+            bg = require("XUi/XUiMovie/XUiGridMovieBg").New(self.UiMovie, link, index)
             self.BgDic[index] = bg
         end
     end

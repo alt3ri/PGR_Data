@@ -402,9 +402,15 @@ XBfrtManagerCreator = function()
                 TeamDic[groupId][XBfrtManager.EchelonType.Fight] = {}
                 TeamDic[groupId][XBfrtManager.EchelonType.Logistics] = {}
 
+                -- [Fixed] Use Unique ID
+                local function GetTeamUniqueId(groupId, echelonType, index)
+                    return groupId * 100000 + echelonType * 1000 + index
+                end
+                
                 -- 1. 作战队伍
                 for index, memberIds in pairs(teamInfo.FightTeamList) do
-                    local team = XTeam.New(XTime.GetServerNowTimestamp() + index)
+                     local uniqueId = GetTeamUniqueId(groupId, XBfrtManager.EchelonType.Fight, index)
+                    local team = XTeam.New(uniqueId)
                     team:UpdateEntityIds(memberIds)
                     team:UpdateCaptainPos(teamInfo.CaptainPosList[index] or 1)
                     team:UpdateFirstFightPos(teamInfo.FirstFightPosList[index] or 1)
@@ -428,7 +434,8 @@ XBfrtManagerCreator = function()
 
                 -- 2. 后勤队伍
                 for index, memberIds in pairs(teamInfo.LogisticsTeamList) do
-                    local team = XTeam.New(XTime.GetServerNowTimestamp() + 100 + index)
+                     local uniqueId = GetTeamUniqueId(groupId, XBfrtManager.EchelonType.Logistics, index)
+                    local team = XTeam.New(uniqueId)
                     team:UpdateEntityIds(memberIds)
                     
                     team:UpdateSaveCallback(function(inTeam)
@@ -465,6 +472,13 @@ XBfrtManagerCreator = function()
                 end
                 GeneralSkillSelectIdCache[groupId] = XSaveTool.GetData(XBfrtManager.GetTeamGeneralSkillIdsKey(groupId))
                 CgIndexGroupCache[groupId] = XSaveTool.GetData(XBfrtManager.GetTeamCgIndexGroupKey(groupId))
+
+                -- [Fixed] Sync View Data if we are currently viewing this group
+                -- This ensures that when NotifyBfrtData replaces the cache tables, the view data references are also updated.
+                if _ViewGroupId == groupId then
+                    _ViewGroupFightTeams = FightTeams[groupId]
+                    _ViewGroupLogisticsTeams = LogisticsTeams[groupId]
+                end
             end
         end
     end
@@ -2079,6 +2093,13 @@ XBfrtManagerCreator = function()
         end
     end
 
+    -- [新增] 生成唯一的队伍ID (解决多关卡队伍ID冲突问题)
+    local function GetTeamUniqueId(groupId, echelonType, index)
+        -- Format: GGG ET II (GroupId * 10000 + EchelonType * 1000 + Index)
+        -- Assumes GroupId < 10000, Index < 1000. Sufficient for current config.
+        return groupId * 100000 + echelonType * 1000 + index
+    end
+
     -- [替换] 获取队伍实例 (最终版 - 包含视图同步)
     function XBfrtManager.GetTeam(data)
         if XTool.IsTableEmpty(data) then return nil end
@@ -2106,7 +2127,9 @@ XBfrtManagerCreator = function()
 
         -- 3. 懒加载
         if not team then
-            team = XTeam.New(XTime.GetServerNowTimestamp())
+            -- [Fixed] Use Unique ID to prevent collision
+            local uniqueId = GetTeamUniqueId(groupId, echelonType, index)
+            team = XTeam.New(uniqueId)
             team:UpdateEntityIds({0, 0, 0}) 
 
             -- [修改] 绑定回调 (增加视图同步)
@@ -2136,8 +2159,32 @@ XBfrtManagerCreator = function()
 
             TeamDic[groupId][echelonType][index] = team
         end
+
+        -- 4. 同步数据 (Critical Fix: Always sync with authoritative data)
+        -- Ensure we grab the latest data from the authoritative cache
+        -- [Prioritize View Data]: If we are in the view of this group, the view data (e.g. AutoTeam results) is more up-to-date than the cache.
+        local authoritativeIds = nil
+        local isViewGroup = _ViewGroupId == groupId
         
-        -- 4. 同步数据
+        if echelonType == XBfrtManager.EchelonType.Fight then
+            if isViewGroup and _ViewGroupFightTeams and _ViewGroupFightTeams[index] then
+                authoritativeIds = _ViewGroupFightTeams[index]
+            elseif FightTeams[groupId] and FightTeams[groupId][index] then
+                authoritativeIds = FightTeams[groupId][index]
+            end
+        else
+            if isViewGroup and _ViewGroupLogisticsTeams and _ViewGroupLogisticsTeams[index] then
+                authoritativeIds = _ViewGroupLogisticsTeams[index]
+            elseif LogisticsTeams[groupId] and LogisticsTeams[groupId][index] then
+                authoritativeIds = LogisticsTeams[groupId][index]
+            end
+        end
+
+        -- If we have authoritative data, verify the team instance matches it
+        if authoritativeIds then
+            team:UpdateEntityIds(authoritativeIds) 
+        end
+
         local captainPos = XDataCenter.BfrtManager.GetTeamCaptainPos(data.EchelonId, groupId, index)
         local firstFightPos = XDataCenter.BfrtManager.GetTeamFirstFightPos(data.EchelonId, groupId, index)
         team:UpdateCaptainPosAndFirstFightPos(captainPos, firstFightPos)

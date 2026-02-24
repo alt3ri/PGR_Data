@@ -281,6 +281,9 @@ function XFubenAgency:CallAllCustomFunc(funcKey, ...)
     end
 end
 
+function XFubenAgency:GetFubenSettling()
+    return self._Model:GetFubenSettling() 
+end
 function XFubenAgency:GetFightBeginData()
     return self._Model:GetBeginData()
 end
@@ -295,6 +298,14 @@ end
 
 function XFubenAgency:SetFubenSettling(value)
     return self._Model:SetFubenSettling(value)
+end
+
+function XFubenAgency:SetCurFightResult(value)
+    self._Model:SetCurFightResult(value)
+end
+
+function XFubenAgency:UpdateStageEventInfo()
+    self._Model:UpdateStageEventInfo()
 end
 
 ---------进入战斗相关接口
@@ -4024,6 +4035,10 @@ function XFubenAgency:NetWorkPreFightRequest(request, ...)
     local originStageId = request.PreFightData.StageId
     local stageId = request.PreFightData.StageId
 
+    if request.PreFightData then
+        request.PreFightData.CvType = CS.XAudioManager.CvType
+    end
+    
     -- 视频弹窗检测
     if not XTool.IsNumberValid(stageId) then
         XLog.Error("XFubenAgency:NetWorkPreFightRequest 视频弹窗检测 stageId is invalid:", request)

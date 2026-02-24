@@ -555,6 +555,13 @@ function XUiDlcRelinkRoom:OnBtnFightClick()
         return
     end
 
+    -- 检查当前选择的关卡是否解锁
+    local levelId = self._Control:GetCurrentSelectLevelId()
+    if not self._Control:CheckLevelUnlock(levelId) then
+        self._Control:OpenCommonTipMsg(self._Control:GetLevelUnlockDesc(levelId))
+        return
+    end
+
     -- 仓库是否已满
     local curCount, maxCount = self._Control:GetEquipBagCurCountAndMaxCount()
     if curCount >= maxCount then
@@ -673,6 +680,13 @@ function XUiDlcRelinkRoom:OnBtnReadyClick()
     if isSelfLeader then
         return
     end
+
+    -- 检查当前选择的关卡是否解锁
+    local levelId = self._Control:GetCurrentSelectLevelId()
+    if not self._Control:CheckLevelUnlock(levelId) then
+        self._Control:OpenCommonTipMsg(self._Control:GetLevelUnlockDesc(levelId))
+        return
+    end
     XMVCA.XDlcRoom:Ready()
 end
 
@@ -741,6 +755,10 @@ end
 --region 机制教学
 
 function XUiDlcRelinkRoom:CheckShowMechanismTeach()
+    -- 引导中不弹
+    if XDataCenter.GuideManager.CheckIsInGuide() then
+        return
+    end
     local levelId = self.PanelBossNode.LevelId
     if not XTool.IsNumberValid(levelId) then
         return

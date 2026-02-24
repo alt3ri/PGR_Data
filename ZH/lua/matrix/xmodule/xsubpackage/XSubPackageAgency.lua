@@ -6,6 +6,7 @@
 local XSubPackageAgency = XClass(XAgency, "XSubPackageAgency")
 
 local MIN_SIZE = 1024
+local BATCH_DELETE_COUNT = 10
 
 local CheckStageId = 10030304
 
@@ -25,15 +26,15 @@ local IsDebugBuild = CS.XApplication.Debug
 local CsLog = CS.XLog
 
 --分包下载源
-local DownloadType = DOWNLOAD_SOURCE.SUBPACKAGE
-
 local CsXApplication = CS.XApplication
 
 function XSubPackageAgency:OnInit()
     self.DefaultSkipVideoPreloadDownloadTip = false
     self._SubpackageWaitDnLdQueue = {}
     self._ResWaitDnLdQueue = {}
+    self._FileToResIds = {}
 
+    self._IsUninstalling = false
     self._IsDownloading = false
     self._DownloadPackageId = 0
     self._DownloadingResId = 0
@@ -73,6 +74,10 @@ end
 
 function XSubPackageAgency:GetSubIndexInfo()
     return self._SubIndexInfo
+end
+
+function XSubPackageAgency:GetFileToResIds()
+    return self._FileToResIds
 end
 
 function XSubPackageAgency:InitRpc()
@@ -331,6 +336,9 @@ function XSubPackageAgency:AddToDownload(subpackageId)
     table.insert(self._SubpackageWaitDnLdQueue, subpackageId)
     item:PrepareDownload()
 
+    -- 用户点击下载，标记分包为激活状态
+    self._LaunchDlcManager.SetSubPackageActive(subpackageId, true)
+
     if not self._IsDownloading and not self._IsShowingWifiTip and XTool.IsTableEmpty(self._ResWaitDnLdQueue) then
         self:StartDownload()
     end
@@ -575,6 +583,7 @@ function XSubPackageAgency:OnComplete(subpackageId)
     --埋点
     self:DoRecordSubpackageComplete(id)
     self:Print(string.format("[SubPackage] Subpackage(%s) Download Complete!", subpackageId))
+    self._LaunchDlcManager.SetSubPackageFinished(subpackageId, true)
 end
 
 function XSubPackageAgency:OnProgressUpdate(progress, taskGrpId)
@@ -592,89 +601,308 @@ function XSubPackageAgency:OnProgressUpdate(progress, taskGrpId)
     end
 end
 
----------------------------------------------------------
--- 根据 resId 卸载对应 XResource（删除所有本地文件）
--- @param resId number
----------------------------------------------------------
-function XSubPackageAgency:UninstallResourceByResId(resId)
-    if not resId or resId <= 0 then
-        XLog.Error("[XSubPackageAgency] UninstallResourceByResId: resId 无效 -> " .. tostring(resId))
-        return
+-- [新增] 检查资源是否被其他分包占用
+function XSubPackageAgency:IsResUsedByOtherProcessSubpackage(checkResId, excludeSubpackageId)
+    local ownerSubIds = self._Model:GetSubpackageIdByResId(checkResId)
+    if XTool.IsTableEmpty(ownerSubIds) then
+        return false 
     end
 
-    local indexInfo = self._SubIndexInfo[resId]
-    if not indexInfo then
-        XLog.Warning(string.format("[XSubPackageAgency] UninstallResourceByResId: 找不到 IndexInfo, resId=%d", resId))
-        return
+    for _, subId in ipairs(ownerSubIds) do
+        -- 排除当前正在卸载的这个分包
+        if subId ~= excludeSubpackageId then
+            -- 【判定 1】分包级保护：只要有一个主人是“已完成”状态，必须保护
+            if self:CheckSubpackageComplete(subId) then
+                return true 
+            end
+
+            -- 【判定 2】资源级精细保护：该资源有实际下载进度
+            local resItem = self._Model:GetResourceItem(checkResId)
+            if resItem and resItem:GetDownloadSize() > 0 then
+                return true
+            end
+        end
     end
-
-    XLog.Warning(string.format("[XSubPackageAgency] 开始卸载 ResId=%d 的所有文件", resId))
-
-    for fileName, info in pairs(indexInfo) do
-        -- 文件名 info[1]
-        local fullName = info[1]
-        local savePath = self:GetSavePath(fullName)
-
-        -- Lua 层谨慎保险：如果 C# 未删除，则尝试删除（不报错）
-        CS.XFileTool.DeleteFile(savePath)
-
-        XLog.Warning(string.format("[XSubPackageAgency] 删除文件: %s", savePath))
-    end
-
-    -- 删除下载记录（否则认为资源已下载）
-    self._LaunchDlcManager.ClearDownloadRecord(resId)
-
-    XLog.Warning(string.format("[XSubPackageAgency] ResId=%d 卸载完成", resId))
+    return false
 end
 
----------------------------------------------------------
--- 根据 SubpackageId 卸载该分包所有文件（按路径删除，不依赖ResId卸载接口）
--- @param subpackageId number
----------------------------------------------------------
-function XSubPackageAgency:UninstallSubpackageById(subpackageId)
-    if not subpackageId or subpackageId <= 0 then
-        XLog.Error("[XSubPackageAgency] UninstallSubpackageById: subpackageId 无效 -> " .. tostring(subpackageId))
+-- [重构] 外部调用的单个资源卸载接口（自动异步）
+function XSubPackageAgency:UninstallResourceById(resId, cb)
+    if not resId or resId <= 0 then return end
+
+    -- 如果正在进行批量卸载（锁住了），则不允许单独插队
+    if self._IsUninstalling then
+        XUiManager.TipText("正在卸载资源，请稍候...")
         return
     end
+
+    -- 正在下载中，不允许卸载（避免下载与卸载并发导致状态异常）
+    if self._IsDownloading or XTool.IsNumberValid(self._DownloadingResId) then
+        XUiManager.TipText("SubpackageUninstallRejectDownloading")
+        return
+    end
+
+    -- 定义执行体
+    local execute = function()
+        self._IsUninstalling = true -- 加上锁
+        
+        -- 调用核心逻辑
+        self:_UninstallResCore(resId)
+        
+        -- 刷新事件
+        local affectedSubpackageIds = self._Model:GetSubpackageIdByResId(resId)
+        if affectedSubpackageIds then
+            for _, subId in ipairs(affectedSubpackageIds) do
+                local subItem = self._Model:GetSubpackageItem(subId)
+                if subItem then
+                    XEventManager.DispatchEvent(XEventId.EVENT_SUBPACKAGE_UPDATE, subId, subItem:GetProgress())
+                    XEventManager.DispatchEvent(XEventId.EVENT_SUBPACKAGE_PREPARE, subId)
+                end
+            end
+        end
+        XEventManager.DispatchEvent(XEventId.EVENT_RES_UPDATE, resId, 0)
+        
+        -- 卸载后销毁下载器，确保下次下载时重新创建并注册新的 TaskGroup
+        if self._DownloadCenter then
+            self._DownloadCenter = nil
+        end
+
+        self._IsUninstalling = false -- 解锁
+        XLog.Warning(string.format("[XSubPackageAgency] 单资源异步卸载完成 ResId=%d", resId))
+        if cb then cb() end
+    end
+
+    -- [智能环境判断]
+    local co = coroutine.running()
+    if co then
+        -- 情况A：已经在协程里了（极少情况，除非有其他系统调它），直接跑
+        execute()
+    else
+        -- 情况B：主线程调用的（如按钮点击），启动协程包裹它
+        RunAsyn(execute)
+    end
+end
+
+-- [重构] 分包卸载接口
+function XSubPackageAgency:UninstallSubpackageById(subpackageId, cb)
+    if not subpackageId or subpackageId <= 0 then return end
+
+    if self._IsUninstalling then
+        XUiManager.TipText("正在卸载资源，请稍候...")
+        return
+    end
+
+    -- 正在下载中，不允许卸载（避免下载与卸载并发导致状态异常）
+    if self._IsDownloading or XTool.IsNumberValid(self._DownloadingResId) then
+        XUiManager.TipText("SubpackageUninstallRejectDownloading")
+        return
+    end
+
+    RunAsyn(function()
+        self._IsUninstalling = true
+        
+        local template = self:GetSubpackageTemplate(subpackageId)
+        if not template or not template.ResIds then
+            self._IsUninstalling = false
+            if cb then cb() end
+            return
+        end
+
+        XLog.Warning(string.format("[XSubPackageAgency] 开始协程卸载 SubpackageId=%d", subpackageId))
+
+        for _, resId in ipairs(template.ResIds) do
+            local isLocked = self:IsResUsedByOtherProcessSubpackage(resId, subpackageId)
+            
+            if isLocked then
+                XLog.Warning(string.format("跳过 ResId=%d", resId))
+            else
+                -- [关键] 直接调用 Core，因为它已经支持 yield，且当前已经在协程里
+                self:_UninstallResCore(resId)
+                
+                -- Res 之间的额外休息（可选）
+                asynWaitSecond(0)
+            end
+        end
+
+        -- 统一刷新
+        local item = self._Model:GetSubpackageItem(subpackageId)
+        if item then
+            XEventManager.DispatchEvent(XEventId.EVENT_SUBPACKAGE_UPDATE, subpackageId, item:GetProgress())
+            XEventManager.DispatchEvent(XEventId.EVENT_SUBPACKAGE_PREPARE, subpackageId)
+        end
+        XEventManager.DispatchEvent(XEventId.EVENT_SUBPACKAGE_COMPLETE)
+        
+        -- 卸载后销毁下载器，确保下次下载时重新创建并注册新的 TaskGroup
+        if self._DownloadCenter then
+            self._DownloadCenter = nil
+        end
+
+        self._IsUninstalling = false
+        XLog.Warning("[XSubPackageAgency] 卸载完成")
+        -- 用户卸载分包，标记为非激活状态
+        self._LaunchDlcManager.SetSubPackageActive(subpackageId, false)
+        self._LaunchDlcManager.SetSubPackageFinished(subpackageId, false)
+        if cb then cb() end
+    end)
+end
+
+-- [修复] 内部辅助：检查某个物理文件是否被"当前操作目标以外"的活跃资源占用
+-- @param physicalFileName 物理文件名（hash名，即 info[1]），与 _FileToResIds 的 key 维度一致
+-- @param excludeResIds table 需要排除的资源ID列表（通常是当前要卸载的分包包含的所有ResId）
+function XSubPackageAgency:_IsFileProtected(physicalFileName, excludeResIds)
+    local owners = self._FileToResIds[physicalFileName]
+    if not owners then return false end
+
+    for _, ownerResId in ipairs(owners) do
+        -- 如果该 ownerResId 不在“排除列表”中（说明属于其他分包或独立资源）
+        local isTargetRes = false
+        for _, exId in ipairs(excludeResIds) do
+            if ownerResId == exId then
+                isTargetRes = true
+                break
+            end
+        end
+
+        if not isTargetRes then
+            -- 检查这个“外部引用者”是否处于活跃状态（已下载或有进度）
+            local isCompleted = self._LaunchDlcManager.HasDownloadedDlc(ownerResId)
+            local resItem = self._Model:GetResourceItem(ownerResId)
+            local hasProgress = resItem and resItem:GetDownloadSize() > 0
+
+            if isCompleted or hasProgress then
+                return true -- 被外部活跃资源引用，受保护
+            end
+        end
+    end
+    return false
+end
+
+-- [新增] 获取分包下所有实际_UninstallResCore删除时会删的文件
+-- @param subpackageId 分包Id
+-- @return table { [resId] = { "path1", "path2", ... } }
+function XSubPackageAgency:GetUninstallableFileInfoBySubpackageId(subpackageId)
+    local result = {}
+    if not subpackageId or subpackageId <= 0 then return result end
 
     local template = self:GetSubpackageTemplate(subpackageId)
-    if not template or not template.ResIds then
-        XLog.Warning(string.format(
-            "[XSubPackageAgency] UninstallSubpackageById: 找不到模板或 ResIds 为空, subpackageId=%d",
-            subpackageId
-        ))
-        return
-    end
+    if not template or not template.ResIds then return result end
 
-    XLog.Warning(string.format("[XSubPackageAgency] 开始卸载 SubpackageId=%d 所有文件", subpackageId))
+    local currentSubResIds = template.ResIds
 
-    -------------------------------------
-    -- 去重字典：因为多个ResId可能含同名文件
-    -------------------------------------
-    local deleted = {}
-
-    for _, resId in ipairs(template.ResIds) do
-        local indexInfo = self._SubIndexInfo[resId]
-        if indexInfo then
-            for fileName, info in pairs(indexInfo) do
-                local fullName = info[1]
-                if not deleted[fullName] then
-                    deleted[fullName] = true
-
-                    local savePath = self:GetSavePath(fullName)
-
-                    -- 这里直接删，不依赖 res 卸载接口
-                    CS.XFileTool.DeleteFile(savePath)
-
-                    XLog.Warning(string.format("[XSubPackageAgency] 删除文件: %s", savePath))
+    for _, resId in ipairs(currentSubResIds) do
+        local resItem = self._Model:GetResourceItem(resId)
+        -- 只有本地确实存在的资源才需要统计
+        if resItem and resItem:GetDownloadSize() > 0 then
+            local indexInfo = self._SubIndexInfo[resId]
+            if indexInfo then
+                local deletableFiles = {}
+                for assetPath, info in pairs(indexInfo) do
+                    local physicalFileName = info[1]
+                    -- 判定逻辑：传入物理文件名（与 _FileToResIds 的 key 维度一致）
+                    if not self:_IsFileProtected(physicalFileName, currentSubResIds) and CS.System.IO.File.Exists(self:GetSavePath(physicalFileName)) then
+                        -- info[1] 通常是文件的全路径或相对路径名
+                        table.insert(deletableFiles, info[1])
+                    end
+                end
+                
+                -- 如果该 Res 下有可删文件，存入结果
+                if #deletableFiles > 0 then
+                    result[resId] = deletableFiles
                 end
             end
         end
     end
 
-    self._LaunchDlcManager.ClearDownloadRecord(subpackageId)
+    return result
+end
 
-    XLog.Warning(string.format("[XSubPackageAgency] SubpackageId=%d 卸载完成", subpackageId))
+-- [修改] 检查分包是否有可卸载的资源 (控制删除按钮显示)
+-- 逻辑：只要分包有进度，且处于暂停或完成状态，即视为可卸载
+function XSubPackageAgency:CheckSubpackageCanUninstall(subpackageId)
+    if not subpackageId or subpackageId <= 0 then 
+        return false 
+    end
+
+    local item = self._Model:GetSubpackageItem(subpackageId)
+    if not item then
+        return false
+    end
+
+    -- 1. 检查是否有下载进度
+    local downloadSize = item:GetDownloadSize()
+    if downloadSize <= 0 then
+        return false
+    end
+
+    -- 2. 检查状态 (暂停 或 完成)
+    local state = item:GetState()
+    local STATE_ENUM = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE
+
+    if state == STATE_ENUM.PAUSE or state == STATE_ENUM.COMPLETE then
+        return true
+    end
+
+    return false
+end
+
+-- [新增] 核心卸载逻辑（私有，必须在协程中运行）
+--- @param resId number 资源Id
+function XSubPackageAgency:_UninstallResCore(resId)
+    local indexInfo = self._SubIndexInfo[resId]
+    if not indexInfo then return end
+
+    local allRelatedResIds = { resId } -- 至少排除自己
+    -- 这里可以根据业务需求扩展，通常单资源卸载只排除自己，分包卸载则排除整个分包的 ResIds
+    print(string.format("[Core] 开始执行物理删除 ResId=%d", resId))
+
+    -- 1. 业务数据清理
+    self._LaunchDlcManager.ClearDownloadRecord(resId)
+    self._LaunchDlcManager.AddUninstalledResId(resId)
+    local unistallResItem = self._Model:GetResourceItem(resId)
+    unistallResItem:Uninstall()
+
+    local deleteCount = 0
+    local batchCounter = 0 
+    
+    for assetPath, info in pairs(indexInfo) do
+        local physicalFileName = info[1]
+        local savePath = self:GetSavePath(physicalFileName)
+
+        -- 2. 依赖检查：传入物理文件名（与 _FileToResIds 的 key 维度一致）
+        if not self:_IsFileProtected(physicalFileName, allRelatedResIds) then
+            -- 3. 物理删除
+            CS.XFileTool.DeleteFile(savePath)
+            deleteCount = deleteCount + 1
+            
+            -- [关键] 强制分帧：每删 10 个文件，向当前协程申请休息
+            batchCounter = batchCounter + 1
+            if batchCounter >= BATCH_DELETE_COUNT then
+                batchCounter = 0
+                asynWaitSecond(0) -- 让出控制权给下一帧
+            end
+        end
+    end
+
+    -- 4. 内存刷新
+    self._Model:RemoveResCache(resId)
+    local affectedSubpackageIds = self._Model:GetSubpackageIdByResId(resId)
+    if affectedSubpackageIds then
+        for _, subId in ipairs(affectedSubpackageIds) do
+            local subItem = self._Model:GetSubpackageItem(subId)
+            if subItem then
+                for assetPath, info in pairs(indexInfo) do
+                    subItem:InitFileInfo(assetPath, info, resId)
+                end
+                subItem:FileInitComplete()
+            end
+        end
+    end
+
+    -- 补调新 XResource 的 FileInitComplete，确保状态正确初始化
+    local newResItem = self._Model:GetResourceItem(resId)
+    if newResItem then
+        newResItem:FileInitComplete()
+    end
 end
 
 function XSubPackageAgency:ResolveResIndex()
@@ -684,28 +912,58 @@ function XSubPackageAgency:ResolveResIndex()
     if self._IsResolve then
         return
     end
-    XLog.Warning("XSubPackageAgency:ResolveResIndex _SubIndexInfo:", not XTool.IsTableEmpty(self._SubIndexInfo))
+    
+    -- 初始化文件反向索引表：Key = FileName, Value = {ResId1, ResId2, ...}
+    -- 用于在 UninstallResourceById 中快速判断文件是否被其他 ResId 引用
+    self._FileToResIds = self._FileToResIds or {}
+
+    XLog.Warning("XSubPackageAgency:ResolveResIndex Start")
+
     for resId, indexInfo in pairs(self._SubIndexInfo) do
-        if not resId or resId <= 0 then
-            goto continue
-        end
-        local subpackageIds = self._Model:GetSubpackageIdByResId(resId)
-        if XTool.IsTableEmpty(subpackageIds) then
-            XLog.Error("XSubPackageAgency:ResolveResIndex subpackageIds is empty, resId:", resId)
-        end
-        for _, subpackageId in pairs(subpackageIds) do
-            local item = self._Model:GetSubpackageItem(subpackageId)
-            if item then
-                for assetPath, info in pairs(indexInfo) do
-                    item:InitFileInfo(assetPath, info, resId)
+        if resId and resId > 0 then
+            
+            -- 【修复】构建 物理文件名(hash) -> ResIdList 的映射
+            -- key 必须是 info[1]（物理文件名），而非 assetPath（indexInfo 的 key）
+            -- 因为不同 assetPath 可能映射到同一个物理文件，按 assetPath 建索引会遗漏跨 assetPath 的共享
+            for assetPath, info in pairs(indexInfo) do
+                local physicalFileName = info[1]
+                if not self._FileToResIds[physicalFileName] then
+                    self._FileToResIds[physicalFileName] = {}
+                end
+                -- 去重：同一 resId 下多个 assetPath 可能指向同一物理文件
+                local alreadyExists = false
+                for _, existingResId in ipairs(self._FileToResIds[physicalFileName]) do
+                    if existingResId == resId then
+                        alreadyExists = true
+                        break
+                    end
+                end
+                if not alreadyExists then
+                    table.insert(self._FileToResIds[physicalFileName], resId)
                 end
             end
+
+            -- 原有的 Item 初始化逻辑
+            local subpackageIds = self._Model:GetSubpackageIdByResId(resId)
+            if not XTool.IsTableEmpty(subpackageIds) then
+                for _, subpackageId in pairs(subpackageIds) do
+                    local item = self._Model:GetSubpackageItem(subpackageId)
+                    if item then
+                        for assetPath, info in pairs(indexInfo) do
+                            item:InitFileInfo(assetPath, info, resId)
+                        end
+                    end
+                end
+            else
+                XLog.Error("XSubPackageAgency:ResolveResIndex subpackageIds is empty, resId:", resId)
+            end
         end
-        :: continue ::
     end
+
     self._Model:ResolveComplete()
     self._IsResolve = true
 end
+
 function XSubPackageAgency:InitDownloader()
     if not self._DownloadCenter then
         self._DownloadCenter = CS.XMTDownloadCenter()
@@ -1279,6 +1537,7 @@ function XSubPackageAgency:OnLoginOut()
         return
     end
 
+    self._IsUninstalling = false
     self:PauseAll()
 end
 

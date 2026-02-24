@@ -285,11 +285,17 @@ function XBigWorldAlbumAgency:BigWorldAlbumAddPhotoRequest(isHide, uniqueId, cb,
    )
 end
 
-function XBigWorldAlbumAgency:UploadTakeTexture(isHide, objId, texture, cb, width, height)
+function XBigWorldAlbumAgency:UploadTakeTexture(isPhotograph, isHide, objId, texture, cb, width, height)
     self:BigWorldAlbumAddPhotoRequest(isHide, objId, function(photoData)
         self:CacheTexture(texture, width, height, photoData.Id, photoData.CheckSalt)
         if cb then cb(photoData) end
     end)
+    if isPhotograph then
+        self:BigWorldAlbumAddPhotoRequest(false, objId, function(photoData)
+            self:CacheTexture(texture, width, height, photoData.Id, photoData.CheckSalt)
+            if cb then cb(photoData) end
+        end)
+    end
 end
 
 function XBigWorldAlbumAgency:CacheTexture(texture, width, height, photoDataId, photoDataSalt)

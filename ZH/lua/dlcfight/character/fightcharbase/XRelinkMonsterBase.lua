@@ -978,7 +978,7 @@ end
 function XRelinkMonsterBase:CheckSelfActionValid()
     
     if self._proxy:CheckNpcAction(self._uuid, ENpcAction.Skill) then--正在释放技能
-        if not self._proxy:CheckNpcCurActionIsDone(self._uuid)then--自己技能没有完成时，无效。
+        if not self._proxy:CheckNpcCurActionIsDone(self._uuid) then  --自己技能没有完成时，无效。
             return false
         end
     end
@@ -1268,8 +1268,8 @@ function XRelinkMonsterBase:EnterCombatByNpc(triggerNpc)
     local npcList = self._proxy:GetPlayerNpcList()
     for i, npcUUID in pairs(npcList) do
         --把没有在仇恨列表的合法玩家拉进仇恨列表
-        if not self._proxy:CheckNpcInThreatList(self._uuid, npcUUID) and self:CheckTargetValidByNpc(npcUUID)then
-            self:AddNpcToThreatValueList(npcUUID)--添加进仇恨列表
+        if not self._proxy:CheckNpcInThreatList(self._uuid, npcUUID) and self:CheckTargetValidByNpc(npcUUID) then
+            self:AddNpcToThreatValueList(npcUUID) --添加进仇恨列表
         end
     end
     self:SetTarget(triggerNpc) --将目标设置为触发战斗的Npc
@@ -1341,7 +1341,7 @@ end
 
 --设置怪物目标
 function XRelinkMonsterBase:SetTarget(npc)
-    if (not npc) or (npc == 0)then
+    if (not npc) or (npc == 0) then
         XLog.Warning("设置目标非法")
         return
     end
@@ -2476,7 +2476,7 @@ function XRelinkMonsterBase:IsSkillODStateValid(skill)
         --XLog.Warning("技能"..skill.."释放失败，因为OD锁定且当前在OD")
         return false
     end
-    if config.IsNeedODState and (not self:CheckCurIsOverDrive())then --需要OD且不在OD,返回F
+    if config.IsNeedODState and (not self:CheckCurIsOverDrive()) then --需要OD且不在OD,返回F
         return false
     end
     return true

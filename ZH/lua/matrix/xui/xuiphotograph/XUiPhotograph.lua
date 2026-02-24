@@ -285,18 +285,21 @@ function XUiPhotograph:ChangeState(state)
         self.SDKPanel:Hide()
         --self.PanelMenu.gameObject:SetActiveEx(true)
         self.ImgLine.gameObject:SetActiveEx(true)
+        self.RoleModel:SetXPostFaicalControllerActive(true)
     elseif state == XPhotographConfigs.PhotographViewState.Capture then
         self.PhotographPanel:Hide()
         self.CapturePanel:Show()
         self.SDKPanel:Hide()
         self.PanelMenu.gameObject:SetActiveEx(false)
         self.ImgLine.gameObject:SetActiveEx(false)
+        self.RoleModel:SetXPostFaicalControllerActive(false)
     elseif state == XPhotographConfigs.PhotographViewState.SDK then
         self.PhotographPanel:Hide()
         self.CapturePanel:Show()
         self.SDKPanel:Show()
         self.PanelMenu.gameObject:SetActiveEx(false)
         self.ImgLine.gameObject:SetActiveEx(false)
+        self.RoleModel:SetXPostFaicalControllerActive(false)
     end
 end
 

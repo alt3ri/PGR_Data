@@ -534,6 +534,155 @@ XPurchaseManagerCreator = function()
         end)
     end
 
+    ---涂装成套购买
+    function XPurchaseManager.MultiPurchaseRequest(ids, uiTypeList, cb, cbAfterPopup)
+        if #ids == 1 then
+            XPurchaseManager.PurchaseRequest(ids[1], cb, 1, -1, uiTypeList, nil, nil, nil, cbAfterPopup)
+            return
+        end
+        if not uiTypeList then
+            uiTypeList = {}
+        end
+        XDataCenter.KickOutManager.Lock(XEnumConst.KICK_OUT.LOCK.RECHARGE)
+
+        local index, count = 1, #ids
+        local totalRewardList = {}
+        local totalRewardGoodsListByType = {}
+
+        local function nextStep(rewardList, rewardGoodsListByType)
+            if rewardList then
+                for _, v in ipairs(rewardList) do
+                    table.insert(totalRewardList, v)
+                end
+            end
+            if rewardGoodsListByType then
+                for _, v in pairs(rewardGoodsListByType) do
+                    table.insert(totalRewardGoodsListByType, v)
+                end
+            end
+            if index > count then
+                XPurchaseManager.OnMultiPurchaseReqCb(totalRewardList, totalRewardGoodsListByType, cb, cbAfterPopup)
+                return
+            end
+
+            local id = ids[index]
+            index = index + 1
+            XPurchaseManager.SubPurchaseRequest(id, uiTypeList, nextStep)
+        end
+
+        nextStep()
+    end
+
+    function XPurchaseManager.SubPurchaseRequest(id, uiTypeList, cb)
+        local reqContent = {
+            Id = id,
+            Count = 1,
+            DiscountId = -1,
+            UiTypeList = uiTypeList,
+            RandomSelectGoodsIds = nil,
+            SelectGroups = nil,
+            SelectGroupGoodsIds = nil,
+            Param = PurchaseBuyCustomParams,
+        }
+        XNetwork.Call(PurchaseRequest.PurchaseReq, reqContent, function(res)
+            if res.Code ~= XCode.Success then
+                XUiManager.TipCode(res.Code)
+                XDataCenter.KickOutManager.Unlock(XEnumConst.KICK_OUT.LOCK.RECHARGE, true)
+                return
+            end
+            XPurchaseManager.CurBuyIds[id] = id
+            XPurchaseManager.PurchaseSuccess(id, res.PurchaseInfo, res.NewPurchaseInfoList)
+            XEventManager.DispatchEvent(XEventId.EVENT_LB_UPDATE)
+            XEventManager.DispatchEvent(XEventId.EVENT_CARD_REFRESH_WELFARE_BTN)
+            cb(res.RewardList, res.RewardGoodsListByType)
+        end)
+    end
+
+    function XPurchaseManager.OnMultiPurchaseReqCb(rewardList, rewardGoodsListByType, cb, cbAfterPopup)
+        local commonRewardCount = XTool.GetTableCount(rewardList)
+        local specialRewardCount = XTool.GetTableCount(rewardGoodsListByType)
+
+        local popQueue = {}
+        local DoPopQueue = function()
+            table.remove(popQueue, 1)
+            if not XTool.IsTableEmpty(popQueue) then
+                popQueue[1]()
+            else
+                if cbAfterPopup then
+                    cbAfterPopup()
+                end
+            end
+        end
+
+        if commonRewardCount >= 1 or specialRewardCount > 0 then
+            -- 福袋道具和其他道具分开两个弹窗
+            if not XTool.IsTableEmpty(rewardGoodsListByType) then
+                local randomDrawRewardList = {}
+                local otherRewardList = {}
+                local afterSendRewardList = {}
+
+                for i, v in pairs(rewardGoodsListByType) do
+                    if v.RewardGoodsType == XPurchaseConfigs.XPurchaseRewardGoodsType.Random then
+                        table.insert(randomDrawRewardList, v.RewardGoods)
+                        -- 记录福袋奖励重复获得的转换道具
+                        if not XTool.IsTableEmpty(v.AfterSendRewardGoods) then
+                            for index, afterGoods in pairs(v.AfterSendRewardGoods) do
+                                table.insert(afterSendRewardList, afterGoods)
+                            end
+                        end
+                    else
+                        table.insert(otherRewardList, v.RewardGoods)
+                    end
+                end
+
+                local commonList = XTool.MergeArray(otherRewardList, rewardList)
+
+                if not XTool.IsTableEmpty(randomDrawRewardList) then
+                    table.insert(popQueue, function()
+                        XLuaUiManager.OpenWithCloseCallback("UiPurchaseRandomObtain", function()
+                            DoPopQueue()
+                        end, randomDrawRewardList, afterSendRewardList)
+                    end)
+                end
+
+                if not XTool.IsTableEmpty(commonList) then
+                    table.insert(popQueue, function()
+                        XUiManager.OpenUiObtain(commonList, nil, function()
+                            XDataCenter.KickOutManager.Unlock(XEnumConst.KICK_OUT.LOCK.RECHARGE, true)
+                            DoPopQueue()
+                        end)
+                    end)
+                end
+
+                if XTool.IsTableEmpty(popQueue) then
+                    XDataCenter.KickOutManager.Unlock(XEnumConst.KICK_OUT.LOCK.RECHARGE, true)
+                end
+            else
+                table.insert(popQueue, function()
+                    XUiManager.OpenUiObtain(rewardList, nil, function()
+                        XDataCenter.KickOutManager.Unlock(XEnumConst.KICK_OUT.LOCK.RECHARGE, true)
+                        DoPopQueue()
+                    end)
+                end)
+            end
+        else
+            XUiManager.TipText("PurchaseLBBuySuccessTips")
+            XDataCenter.KickOutManager.Unlock(XEnumConst.KICK_OUT.LOCK.RECHARGE, true)
+        end
+
+        if cb then
+            cb(rewardList)
+        end
+
+        if XTool.IsTableEmpty(popQueue) then
+            if cbAfterPopup then
+                cbAfterPopup()
+            end
+        else
+            popQueue[1]()
+        end
+    end
+
     --- 购买捆绑包
     function XPurchaseManager.PurchaseComboRequest(comboId, cb)
         if not XTool.IsNumberValidEx(comboId) then
@@ -1807,23 +1956,33 @@ XPurchaseManagerCreator = function()
     ---判断指定Id的礼包是否已购买，且距离最后一次购买此礼包的时间大于X秒
     ---@param negate number 对结果是否取反 0=取反 1=取正
     ---@param paskageId number 礼包Id
-    ---@param buyState number 参数1=已购买过至少一次，0=一次都未购买
-    ---@param judgingType number 参数1:等于 2:大于等于 3:小于等于
+    ---@param buyState number 参数1=购买次数
+    ---@param judgingType number 参数4:等于 2:大于等于 3:小于等于 
     ---@param seconds number 参数3为1时可选填，填距离最后一次购买后的秒数
-    function XPurchaseManager.CheckPackageSellTimeCondition(negate, paskageId, buyState, judgingType, seconds)
+    ---@param buyJudgingType number 参数6:购买次数比较等于 2:大于等于 3:小于等于 
+    function XPurchaseManager.CheckPackageSellTimeCondition(negate, paskageId, buyState, judgingType, seconds,buyJudgingType)
         if XTool.IsNumberValid(paskageId) then
             local data = XPurchaseManager.GetPurchasePackageById(paskageId)
             if not data then
                 return false
             end
             local curTimes = data:GetCurrentBuyTime()
-            local targetTimes = buyState == 1 and 1 or 0
             local now = XTime.GetServerNowTimestamp()
-            local result = false
-            if buyState == 1 then
+            local result = true
+            if buyJudgingType == 1 then
+                result = curTimes == buyState
+            elseif buyJudgingType == 2 then
+                result = curTimes >= buyState
+            elseif buyJudgingType == 3 then
+                result = curTimes <= buyState
+            end
+            if not result then
+                return result
+            end
+            if buyState >= 1 then
                 result = curTimes >= 1
                 if result and XTool.IsNumberValid(seconds) then
-                    local lastTime = data:GetLastBuyTime()
+                    local lastTime = data:GetLastBuyTime() or 0
                     local passTime = now - lastTime
                     if judgingType == 1 then
                         result = passTime == seconds

@@ -354,6 +354,7 @@ function XUiGridMovieActor:GetStatusAnim(toStatus)
 end
 
 function XUiGridMovieActor:PlayFadeAnimation(beginAlpha,endAlpha,duration)
+    self:LoadPrefab()
     self.CanvasGroup.alpha = beginAlpha
     self.CanvasGroup:DOFade(endAlpha, duration)
 end

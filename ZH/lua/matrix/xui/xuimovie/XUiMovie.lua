@@ -102,23 +102,29 @@ function XUiMovie:OnDestroy()
     end
     self.SpineActors = nil
 
-    for _, actor in pairs(self.ActorDic) do
-        if not XTool.UObjIsNil(actor) then
-            actor:Destroy()
+    if not XTool.IsTableEmpty(self.ActorDic) then
+        for _, actor in pairs(self.ActorDic) do
+            if not XTool.UObjIsNil(actor) then
+                actor:Destroy()
+            end
         end
     end
     self.ActorDic = {}
 
-    for _, camera in pairs(self.CameraDic) do
-        if not XTool.UObjIsNil(camera) then
-            CS.UnityEngine.GameObject.Destroy(camera.gameObject)
+    if not XTool.IsTableEmpty(self.CameraDic) then
+        for _, camera in pairs(self.CameraDic) do
+            if not XTool.UObjIsNil(camera) then
+                CS.UnityEngine.GameObject.Destroy(camera.gameObject)
+            end
         end
     end
     self.CameraDic = {}
 
-    for _, timeline in pairs(self.TimelineDic) do
-        if not XTool.UObjIsNil(timeline) then
-            CS.UnityEngine.GameObject.Destroy(timeline.gameObject)
+    if not XTool.IsTableEmpty(self.TimelineDic) then
+        for _, timeline in pairs(self.TimelineDic) do
+            if not XTool.UObjIsNil(timeline) then
+                CS.UnityEngine.GameObject.Destroy(timeline.gameObject)
+            end
         end
     end
     self.TimelineDic = {}
@@ -196,7 +202,7 @@ function XUiMovie:OnInitScene()
 end
 
 function XUiMovie:AddListener()
-    self.BtnSkip.CallBack = function() self:OnClickBtnSkip() end
+    self:RegisterClickEvent(self.BtnSkip, self.OnClickBtnSkip)
     self.BtnReview.CallBack = function() self:OnClickBtnReview() end
     self.BtnAuto.CallBack = function() self:OnClickBtnAuto() end
     self.BtnAutoing.CallBack = function() self:OnClickBtnAutoing() end
@@ -676,13 +682,13 @@ end
 
 --region PanelText
 -- 显示文本
-function XUiMovie:AppearText(layer, id, content, posX, posY, scale, rotation, isAnim)
+function XUiMovie:AppearText(layer, id, content, posX, posY, scale, rotation, isAnim, anchorType)
     if not self.UiPanelText then
         local XUiPanelText = require("XUi/XUiMovie/XUiPanelText")
         self.UiPanelText = XUiPanelText.New(self.PanelText, self)
         self.UiPanelText:Open()
     end
-    return self.UiPanelText:AppearText(layer, id, content, posX, posY, scale, rotation, isAnim)
+    return self.UiPanelText:AppearText(layer, id, content, posX, posY, scale, rotation, isAnim, anchorType)
 end
 
 -- 隐藏指定id的文本

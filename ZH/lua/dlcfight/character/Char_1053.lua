@@ -126,7 +126,6 @@ function XCharR4LivH:ScriptInit(isGainControl)
     self._secMod4 = 10531008
     --专属装备变量合集
     self._coreMod1Open = false
-    self._secMod1Open = false 
     --专属装备BUFFID合集
     self._coreMod1Atkup = 105308013
     self._coreMod2DamgUp = 105308026
@@ -236,22 +235,10 @@ function XCharR4LivH:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds
         self._proxy:ApplyMagic(self._uuid, self._uuid, 10536011, 1)
         self._proxy:ApplyMagic(self._uuid, self._uuid, 10536012, 1)
         self._proxy:ApplyMagic(self._uuid, self._uuid, 10536013, 1)
-        --次级改造1变身时清除强化普攻2的条件buff（因为必定会变成强化普攻1所以不应该清楚对应条件buff），且重置技能组和按钮倒计时
-        if self._secMod1Open and self._proxy:CheckBuffByKind(self._uuid, self._secMod1) then
-            self._secMod1Open = false
-            self._proxy:RemoveBuffByKindAndCount(self._uuid, 1053050011, 1)
-            --极昼状态切换技能3治疗为防护罩，普攻替换为长按普攻1
-            self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Ball3, self._LivMod_SG08Id)
-            self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Attack, self._LivMod_SG13Id)
-            --self._proxy:ClearButtonCountDown(self._uuid, ENpcOperationKey.Attack)
-            self._proxy:StartButtonCountDown(self._uuid,ENpcOperationKey.Attack,8)
-        elseif not self._secMod1Open then
-            --常规变身，极昼状态切换技能3治疗为防护罩，普攻替换为长按普攻1
-            self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Ball3, self._LivMod_SG08Id)
-            self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Attack, self._LivMod_SG13Id)
-            self._proxy:StartButtonCountDown(self._uuid,ENpcOperationKey.Attack,8)
-        end
-        --次级改造4逻辑
+        --极昼状态切换技能3治疗为防护罩
+        self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Ball3, self._LivMod_SG08Id)
+        self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Attack, self._LivMod_SG13Id)
+        self._proxy:StartButtonCountDown(self._uuid,ENpcOperationKey.Attack,8)
         if self._proxy:CheckBuffByKind(self._uuid, self._secMod4) then
             self._proxy:ApplyMagic(self._uuid, self._uuid, self._secMod4Skill4CD[self._CDGroupID], 1)
             self._proxy:ApplyMagic(self._uuid, self._uuid, self._secMod4Skill31CD[self._CDGroupID], 1)
@@ -269,20 +256,8 @@ function XCharR4LivH:OnNpcRemoveBuffEvent(casterNpcUUID, npcUUID, buffId, buffKi
         self._proxy:ApplyMagic(self._uuid, self._uuid, 105305003, 1)
         self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Ball3, self._LivMod_SG07Id)
         self._proxy:ClearButtonCountDown(self._uuid, ENpcOperationKey.Attack)
-        --通过装备改造技能4进入核心后，检查被动层数若符合修改技能组为核心强化普攻
-        if self._coreLevel == 3 and self._proxy:CheckBuffByKind(self._uuid, self._LivMod1) then
-            --第一风格：核心长按普攻开启
-            self._coreMod1Open = true
-            self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Attack, self._LivMod_SG02Id)
-        elseif self._coreLevel >= 2 and self._proxy:CheckBuffByKind(self._uuid, self._LivMod2) then
-            --第二风格：核心长按普攻开启
-            self._proxy:ApplyMagic(self._uuid, self._uuid, self._skill3Mod2Magic, 1)
-            self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Attack, self._LivMod_SG02Id)
-        elseif self._coreLevel ~= 3 and self._proxy:CheckBuffByKind(self._uuid, self._LivMod1) then
-            --第一风格：以上检查都没有通过，走换回技能组逻辑，且核心等于3时核心普攻不换做保底
-            self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Attack, self._LivMod_SG01Id)
-        elseif self._coreLevel >= 2 and self._proxy:CheckBuffByKind(self._uuid, self._LivMod2) then
-            --第二风格：以上检查都没有通过，再走通用换回技能组逻辑，且核心等于3时核心普攻不换做保底
+        --通用换回技能组逻辑，且核心等于3时核心普攻不换做保底
+        if self._coreLevel ~= 3 then
             self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Attack, self._LivMod_SG01Id)
         end
         --第二风格变身被动攻击力提升buff移除
@@ -291,6 +266,7 @@ function XCharR4LivH:OnNpcRemoveBuffEvent(casterNpcUUID, npcUUID, buffId, buffKi
         end
         --XLog.Warning("极昼状态结束！！！") 
     end
+
     --第二风格：强化一技能还原技能组
     if buffId == 10580001 and self._proxy:CheckBuffByKind(self._uuid, self._LivMod2) then
         self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Ball1, self._LivMod_SG04Id)
@@ -316,18 +292,14 @@ function XCharR4LivH:OnNpcCastActionBeforeEvent(SkillId, LauncherId, TargetId, T
         self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Attack, self._LivMod_SG14Id)
     end
     --次级改造1，技能组重置，强普条件重置
-    if SkillId == self._skill34Id and self._proxy:CheckBuffByKind(self._uuid, self._secMod1) then
-        --变量记录本次变身是由技能4发起的
-        self._secMod1Open = true
-        self._proxy:RemoveBuffByKindAndCount(self._uuid, self._coreStateMagic, 1)
+    if SkillId == self._skill34Id then
+        --条件移除重置
+        self._proxy:RemoveBuffByKindAndCount(self._uuid, 1053050010, 1)
+        self._proxy:RemoveBuffByKindAndCount(self._uuid, 1053050011, 1)
     end
     --第二风格核心变身后self._skill3Mod2Magic移除
     if SkillId == self._skill3Id then
         self._proxy:RemoveBuffByKindAndCount(self._uuid, self._skill3Mod2Magic, 1)
-    end
-    --防护罩快速信息逻辑
-    if SkillId == self._skill41Id then
-        self._proxy:ShowQuickMessage(3)
     end
 
 end

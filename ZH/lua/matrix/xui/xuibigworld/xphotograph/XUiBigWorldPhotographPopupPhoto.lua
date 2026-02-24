@@ -71,6 +71,7 @@ function XUiBigWorldPhotographPopupPhoto:QuestFinishToFight(photoId, shotId)
         ShotId = shotId or 0,
     })
     self._IsSendFinish = true
+    self._IsFinishTask = false
 end
 
 function XUiBigWorldPhotographPopupPhoto:OnTipMsgEnqueue()
@@ -167,13 +168,15 @@ function XUiBigWorldPhotographPopupPhoto:OnBtnSaveClick()
 end
 
 function XUiBigWorldPhotographPopupPhoto:OnBtnUploadClick()
-    if self._Control:IsPhotoFull() and not self._isNeedUpload then
+    local isFull = self._Control:IsPhotoFull()
+    if isFull and not self._isNeedUpload then
         XUiManager.TipMsg(XMVCA.XBigWorldService:GetText("SG_P_UploadFull"))
         self:QuestFinishToFight()
         return
     end
+    local saveDouble = self._isNeedUpload and not isFull and self._Control:GetAutoSave()
     local descaleTimes = 6
-    XMVCA.XBigWorldAlbum:UploadTakeTexture(self._isNeedUpload, self._objectiveId, self.RawImage.texture, function(photoData)
+    XMVCA.XBigWorldAlbum:UploadTakeTexture(saveDouble, self._isNeedUpload, self._objectiveId, self.RawImage.texture, function(photoData)
         if not self._isNeedUpload then
             self._hasUpload = true
         end

@@ -1,0 +1,103 @@
+Role	Layer	State	Target	TransitionDuration
+Mo1KuroMd1001			Born	
+Mo1KuroMd1001			Stand1	0.1
+Mo1KuroMd1001			Stand2	0.1
+Mo1KuroMd1001			Stand3	0.1
+Mo1KuroMd1001			Death	0.1
+Mo1KuroMd1001			Standchange	0.1
+Mo1KuroMd1001			Run	0.1
+Mo1KuroMd1001			Walk	0.1
+Mo1KuroMd1001			Runb	0.2
+Mo1KuroMd1001			Runl	0.2
+Mo1KuroMd1001			Runr	0.2
+Mo1KuroMd1001			Walkb	0.1
+Mo1KuroMd1001			Walkl	0.1
+Mo1KuroMd1001			Walkr	0.1
+Mo1KuroMd1001			TurnLeft	0.1
+Mo1KuroMd1001			TurnRight	0.1
+Mo1KuroMd1001			Move1	0.1
+Mo1KuroMd1001			Move2	0.1
+Mo1KuroMd1001			Move3	0.1
+Mo1KuroMd1001			RunStart	0.1
+Mo1KuroMd1001			RunStartEnd01	0.1
+Mo1KuroMd1001			Hit1	0.05
+Mo1KuroMd1001			Hit2	0.05
+Mo1KuroMd1001			Hit3	0.05
+Mo1KuroMd1001			Hit4	0.05
+Mo1KuroMd1001			Behitfly	0.05
+Mo1KuroMd1001			Hoverhit	0.05
+Mo1KuroMd1001			Falldown	0.1
+Mo1KuroMd1001			Hitdown	0.05
+Mo1KuroMd1001			Lieonfloor	0.1
+Mo1KuroMd1001			Standup	0.1
+Mo1KuroMd1001			Straight	0.1
+Mo1KuroMd1001			Stun	0.1
+Mo1KuroMd1001			StraightBefore	0.1
+Mo1KuroMd1001			StraightAfter	0.1
+Mo1KuroMd1001			Win	
+Mo1KuroMd1001			Win2	0.1
+Mo1KuroMd1001			Stop	0.1
+Mo1KuroMd1001			Fail	0.1
+Mo1KuroMd1001			Save	0.1
+Mo1KuroMd1001			Caught	0.1
+Mo1KuroMd1001			Attack01	0.1
+Mo1KuroMd1001		Stand1	Run	0.2
+Mo1KuroMd1001		Stand1	Walk	0.1
+Mo1KuroMd1001		Stand2	Standchange	0.1
+Mo1KuroMd1001		Stand2	Run	0.2
+Mo1KuroMd1001		Stand2	Walk	0.3
+Mo1KuroMd1001		Stand2	Walkb	0.3
+Mo1KuroMd1001		Stand2	Walkl	0.3
+Mo1KuroMd1001		Stand2	Walkr	0.3
+Mo1KuroMd1001		Standchange	Stand1	0.1
+Mo1KuroMd1001		Standchange	Run	0.1
+Mo1KuroMd1001		Standchange	Walk	0.1
+Mo1KuroMd1001		Run	Stop	0.2
+Mo1KuroMd1001		Run	Stand2	0.2
+Mo1KuroMd1001		Run	Runb	0.2
+Mo1KuroMd1001		Run	Runl	0.2
+Mo1KuroMd1001		Run	Runr	0.2
+Mo1KuroMd1001		Walk	Stand2	0.1
+Mo1KuroMd1001		Runb	Stand2	0.2
+Mo1KuroMd1001		Runb	Run	0.2
+Mo1KuroMd1001		Runb	Runl	0.2
+Mo1KuroMd1001		Runb	Runr	0.2
+Mo1KuroMd1001		Runl	Stand2	0.2
+Mo1KuroMd1001		Runl	Run	0.2
+Mo1KuroMd1001		Runl	Runb	0.2
+Mo1KuroMd1001		Runl	Runr	0.2
+Mo1KuroMd1001		Runr	Stand2	0.2
+Mo1KuroMd1001		Runr	Run	0.2
+Mo1KuroMd1001		Runr	Runb	0.2
+Mo1KuroMd1001		Runr	Runl	0.2
+Mo1KuroMd1001		Walkb	Stand2	0.1
+Mo1KuroMd1001		Walkb	Walk	0.2
+Mo1KuroMd1001		Walkb	Walkl	0.1
+Mo1KuroMd1001		Walkb	Walkr	0.1
+Mo1KuroMd1001		Walkl	Stand2	0.1
+Mo1KuroMd1001		Walkl	Walk	0.1
+Mo1KuroMd1001		Walkl	Walkb	0.1
+Mo1KuroMd1001		Walkl	Walkr	0.2
+Mo1KuroMd1001		Walkr	Stand2	0.1
+Mo1KuroMd1001		Walkr	Walk	0.1
+Mo1KuroMd1001		Walkr	Walkb	0.1
+Mo1KuroMd1001		Walkr	Walkl	0.2
+Mo1KuroMd1001		TurnLeft	Stand2	0.1
+Mo1KuroMd1001		TurnRight	Stand2	0.1
+Mo1KuroMd1001		RunStart	Run	
+Mo1KuroMd1001		RunStart	RunStartEnd01	0.1
+Mo1KuroMd1001		Hit1	Stand2	
+Mo1KuroMd1001		Hit2	Stand2	
+Mo1KuroMd1001		Hit3	Stand2	
+Mo1KuroMd1001		Hit4	Stand2	
+Mo1KuroMd1001		Behitfly	Hoverhit	0.1
+Mo1KuroMd1001		Behitfly	Falldown	0.1
+Mo1KuroMd1001		Hoverhit	Falldown	0.1
+Mo1KuroMd1001		Falldown	Lieonfloor	0.1
+Mo1KuroMd1001		Hitdown	Lieonfloor	0.1
+Mo1KuroMd1001		Standup	Stand2	0.1
+Mo1KuroMd1001		Straight	Stand2	0.1
+Mo1KuroMd1001		Stun	Stand2	0.1
+Mo1KuroMd1001		Win	Win2	0.1
+Mo1KuroMd1001		Stop	Stand2	0.1
+Mo1KuroMd1001		Caught	Stand2	0.1

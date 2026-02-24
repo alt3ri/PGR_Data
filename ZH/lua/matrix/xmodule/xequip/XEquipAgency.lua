@@ -1,3 +1,5 @@
+local tableInsert = table.insert
+
 ---@class XEquipAgency : XAgency
 ---@field _Model XEquipModel
 local XEquipAgency = XClass(XAgency, "XEquipAgency")
@@ -2734,5 +2736,49 @@ function XEquipAgency:GetSuitFilterProvider(Text, suitId)
     
 end
 --============================================================== #endregion 其他 ==============================================================
+
+--region 战斗接口
+--- @desc 获取角色武器共鸣特效(战斗用)
+--- @return string[]，示例：{模型Index、挂点名称、特效路径、模型Index、挂点名称、特效路径}
+function XEquipAgency:GetWeaponResonanceEffectPathByFight(fightNpcData)
+    -- 获取武器信息
+    local equip
+    for _, v in pairs(fightNpcData.Equips) do
+        local equipTemplate = XMVCA.XEquip:GetConfigEquip(v.TemplateId)
+        if equipTemplate.Site == XEnumConst.EQUIP.EQUIP_SITE.WEAPON then
+            equip = v
+            break
+        end
+    end
+    if not equip then
+        XLog.Warning("参数fightNpcData：" .. tostring(fightNpcData) .. "中不包含武器")
+        return
+    end
+
+    -- 获取模型id列表
+    local resonanceCount = equip.ResonanceInfo and (equip.ResonanceInfo.Count or XTool.GetTableCount(equip.ResonanceInfo)) or 0
+    local weaponFashionId = fightNpcData.WeaponFashionId or XDataCenter.WeaponFashionManager.GetCharacterWearingWeaponFashionId(fightNpcData.Character.Id)
+    local modelIds = self._Model:GetWeaponEquipModelIdListByTemplateId(equip.TemplateId, weaponFashionId, resonanceCount, equip.Breakthrough)
+
+    -- 读取模型战斗用共鸣特效
+    local result = {}
+    local usage = XEnumConst.EQUIP.WEAPON_USAGE.BATTLE
+    for i, modelId in ipairs(modelIds) do
+        local configs = XMVCA.XEquip:GetWeaponEffectsByModelId(modelId)
+        if configs then
+            for _, config in pairs(configs) do
+                local rootName = config.DisplayRootName[usage]
+                local effectPath = config.DisplayEffectPath[usage]
+                if not string.IsNilOrEmpty(rootName) and not string.IsNilOrEmpty(effectPath) then
+                    tableInsert(result, tostring(i - 1)) -- 下标与CsCallLua.Equip.GetWeaponModelNameListByFight返回模型下标一致
+                    tableInsert(result, rootName)
+                    tableInsert(result, effectPath)
+                end
+            end
+        end
+    end
+    return result
+end
+--endregion
 
 return XEquipAgency

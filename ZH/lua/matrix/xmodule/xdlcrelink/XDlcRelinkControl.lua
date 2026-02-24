@@ -1308,7 +1308,7 @@ function XDlcRelinkControl:GetLevelUnlockDesc(levelId)
     if timeId > 0 and not XFunctionManager.CheckInTimeByTimeId(timeId) then
         local remainTime = XFunctionManager.GetStartTimeByTimeId(timeId) - XTime.GetServerNowTimestamp()
         if remainTime > 0 then
-            return string.format(self:GetClientConfig("LevelUnlockDesc", 2), XUiHelper.GetTime(remainTime, XUiHelper.TimeFormatType.ESCAPE_REMAIN_TIME))
+            return string.format(self:GetClientConfig("LevelUnlockDesc", 2), XUiHelper.GetTime(remainTime, XUiHelper.TimeFormatType.MOE_WAR))
         end
     end
 
@@ -3252,7 +3252,7 @@ function XDlcRelinkControl:GetSkillMaxDamageLimit(skillId, characterId, isNotSel
     end
 
     local dmgLimitPValue = self:GetTotalAttributeValue(characterId, "DmgLimitP", isNotSelf)
-    return math.floor(baseDamageLimit * (1 + dmgLimitPValue / 10000))
+    return math.round(baseDamageLimit * (1 + dmgLimitPValue / 10000))
 end
 
 --- 获取技能属性类型映射
@@ -4262,8 +4262,12 @@ function XDlcRelinkControl:CheckNeedPopWifiTips()
     local data = self:GetClientConfig("WifiSwitchTips")
 
     -- 只弹提示, 确认和取消都不需要其他动作
-    self:OpenCommonTipDialog(title, data)
-    self._Model:ClearWifiTipsPopMark()
+    XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.Tip_Big)
+    XLuaUiManager.OpenWithCloseCallback("UiDlcRelinkPopupCommon", function()
+        if self._Model then
+            self._Model:ClearWifiTipsPopMark()
+        end
+    end, title, data)
 end
 
 --endregion

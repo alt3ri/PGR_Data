@@ -1,0 +1,41 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '36'}
+3	3		301			DialogEnable				{3: '鬼泣联动特效'}
+4	8		401							{1: '2', 2: '15046001'}
+5	9		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNewDante01V350.prefab', 2: '2'}
+6	10		301							{3: '但丁剑光-横切'}
+7	13		401							{1: '2', 2: '15046001'}
+8	14		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNewDante02V350.prefab', 2: '2'}
+9	15		301							{3: '但丁剑光-右切'}
+10	18		401							{1: '2', 2: '15046001'}
+11	19		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNewDante03V350.prefab', 2: '2'}
+12	20		301							{3: '但丁剑光-左切'}
+13	23		401							{1: '2', 2: '15044024'}
+14	24		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNewVergil01V350.prefab', 2: '2'}
+15	25		301							{3: '维吉尔剑光-横切'}
+16	28		401							{1: '2', 2: '15044024'}
+17	29		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNewVergil02V350.prefab', 2: '2'}
+18	30		301							{3: '维吉尔剑光-右切'}
+19	33		401							{1: '2', 2: '15044024'}
+20	34		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNewVergil03V350.prefab', 2: '2'}
+21	35		301							{3: '维吉尔剑光-左切'}
+22	38		502						500.0	{1: 'DialogDisable'}
+23	39		101	1		AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1253.jpg'}
+24	40		401							{1: '2', 2: '5657'}
+25	41		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryShiZiChuanSongMenV350.prefab', 2: '2'}
+26	42		301			DialogEnable				{3: '十字传送门-打开'}
+27	43		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryShiZiChuanSongMenV350.prefab'}
+28	44		402							{1: '5657'}
+29	45		401							{1: '2', 2: '5658'}
+30	46		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryShiZiChuanSongMenV350End.prefab', 2: '2'}
+31	47		301							{3: '十字传送门-关闭'}
+32	48		201							{1: '1', 2: '500902'}
+33	49		301							{1: '1', 3: '小怪'}
+34	50		401							{1: '2', 2: '15045002'}
+35	51		111						600.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySuipingCiYuanZhanV350.prefab'}
+36	52		401						350.0	{1: '2', 2: '15045003'}
+37	53		202							{1: '1', 6: '1'}
+38	54		301							{3: '次元斩绝'}
+39	55		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySuipingCiYuanZhanV350.prefab'}
+40	56		301		1		AniZhuanchangBegin			{3: '特效结束'}

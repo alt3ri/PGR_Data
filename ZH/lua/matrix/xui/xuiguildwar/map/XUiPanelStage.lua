@@ -1344,13 +1344,15 @@ function XUiPanelStage:AddPath(nodeId, grid)
         end
     else
         --增加节点操作
+        ---@type XUiGridStage
         local lastStageGrid --路线最后的节点
         if #self.PathList == 0 then
             lastStageGrid = self.GridStageDic[BASENODE_INDEX]:GetCurShowGrid() --默认第一个节点是基地
         else
             lastStageGrid = self.NodeId2GridStageDic[self.PathList[#self.PathList]] --路线最后节点
         end
-        local lastNode = lastStageGrid.StageNode
+        local lastNode = XDataCenter.GuildWarManager.GetNode(lastStageGrid.StageNodeId, true)
+
         local lastChildNodes = lastNode:GetNextNodes()
         local operationSuccess = false
         for _, childNode in ipairs(lastChildNodes) do

@@ -1295,8 +1295,13 @@ function XLoginManager.OnReconnectFailed()
                 XLoginManager.BackToLogin(text)
             end)
         else
-            -- 重连成功
-            XLoginManager.BackToMain() -- 默认关闭Normal上的所有UI，回到主界面。后续针对当前停留的ui来保留
+            if XMVCA.XAprilFoolDay:CheckCanEnterFailureMain() then
+                -- 愚人节进入假看板
+                XMVCA.XAprilFoolDay:BackToAprilFoolMain()
+            else
+                -- 重连成功
+                XLoginManager.BackToMain() -- 默认关闭Normal上的所有UI，回到主界面。后续针对当前停留的ui来保留
+            end
         end
         IsRelogining = false
     end)

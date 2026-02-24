@@ -1,0 +1,259 @@
+Role	Layer	State	Target	TransitionDuration
+Mo1RefugeeMd000003			Born	
+Mo1RefugeeMd000003			Stand1	0.1
+Mo1RefugeeMd000003			Stand2	0.1
+Mo1RefugeeMd000003			Stand3	0.1
+Mo1RefugeeMd000003			Death	0.1
+Mo1RefugeeMd000003			Standchange	0.1
+Mo1RefugeeMd000003			Run	0.1
+Mo1RefugeeMd000003			Walk	0.1
+Mo1RefugeeMd000003			Runb	0.2
+Mo1RefugeeMd000003			Runl	0.2
+Mo1RefugeeMd000003			Runr	0.2
+Mo1RefugeeMd000003			Walkb	0.1
+Mo1RefugeeMd000003			Walkl	0.1
+Mo1RefugeeMd000003			Walkr	0.1
+Mo1RefugeeMd000003			TurnLeft	0.1
+Mo1RefugeeMd000003			TurnRight	0.1
+Mo1RefugeeMd000003			Move1	0.1
+Mo1RefugeeMd000003			Move2	0.1
+Mo1RefugeeMd000003			Move3	0.1
+Mo1RefugeeMd000003			RunStart	0.1
+Mo1RefugeeMd000003			RunStartEnd01	0.1
+Mo1RefugeeMd000003			Hit1	0.05
+Mo1RefugeeMd000003			Hit2	0.05
+Mo1RefugeeMd000003			Hit3	0.05
+Mo1RefugeeMd000003			Hit4	0.05
+Mo1RefugeeMd000003			Behitfly	0.05
+Mo1RefugeeMd000003			Hoverhit	0.05
+Mo1RefugeeMd000003			Falldown	0.1
+Mo1RefugeeMd000003			Hitdown	0.05
+Mo1RefugeeMd000003			Lieonfloor	0.1
+Mo1RefugeeMd000003			Standup	0.1
+Mo1RefugeeMd000003			Straight	0.1
+Mo1RefugeeMd000003			Stun	0.1
+Mo1RefugeeMd000003			StraightBefore	0.1
+Mo1RefugeeMd000003			StraightAfter	0.1
+Mo1RefugeeMd000003			Win	
+Mo1RefugeeMd000003			Win2	0.1
+Mo1RefugeeMd000003			Stop	0.1
+Mo1RefugeeMd000003			Fail	0.1
+Mo1RefugeeMd000003			Save	0.1
+Mo1RefugeeMd000003			Caught	0.1
+Mo1RefugeeMd000003			RunStartEnd02	0.1
+Mo1RefugeeMd000003			StopR	0.1
+Mo1RefugeeMd000003			Attack01	0.1
+Mo1RefugeeMd000003			Attack02	0.1
+Mo1RefugeeMd000003			Attack03	0.1
+Mo1RefugeeMd000003			Attack04	0.1
+Mo1RefugeeMd000003			Attack05	0.1
+Mo1RefugeeMd000003			Attack06	0.1
+Mo1RefugeeMd000003			Attack07	0.1
+Mo1RefugeeMd000003			Attack08	0.1
+Mo1RefugeeMd000003			Attack09	0.1
+Mo1RefugeeMd000003			Attack10	0.1
+Mo1RefugeeMd000003			Attack11	0.1
+Mo1RefugeeMd000003			Attack12	0.1
+Mo1RefugeeMd000003			Attack13	0.1
+Mo1RefugeeMd000003			Attack14	0.1
+Mo1RefugeeMd000003			Attack15	0.1
+Mo1RefugeeMd000003			Attack16	0.1
+Mo1RefugeeMd000003			Attack17	0.1
+Mo1RefugeeMd000003			Attack18	0.1
+Mo1RefugeeMd000003			Attack19	0.1
+Mo1RefugeeMd000003			Attack20	0.1
+Mo1RefugeeMd000003			Attack21	0.1
+Mo1RefugeeMd000003			Attack22	0.1
+Mo1RefugeeMd000003			Attack23	0.1
+Mo1RefugeeMd000003			Attack24	0.1
+Mo1RefugeeMd000003			Attack25	0.1
+Mo1RefugeeMd000003		Stand1	Run	0.2
+Mo1RefugeeMd000003		Stand1	Walk	0.1
+Mo1RefugeeMd000003		Stand2	Standchange	0.1
+Mo1RefugeeMd000003		Stand2	Run	0.2
+Mo1RefugeeMd000003		Stand2	Walk	0.3
+Mo1RefugeeMd000003		Stand2	Walkb	0.3
+Mo1RefugeeMd000003		Stand2	Walkl	0.3
+Mo1RefugeeMd000003		Stand2	Walkr	0.3
+Mo1RefugeeMd000003		Standchange	Stand1	0.1
+Mo1RefugeeMd000003		Standchange	Run	0.1
+Mo1RefugeeMd000003		Standchange	Walk	0.1
+Mo1RefugeeMd000003		Run	Stop	0.2
+Mo1RefugeeMd000003		Run	Stand2	0.2
+Mo1RefugeeMd000003		Run	Runb	0.2
+Mo1RefugeeMd000003		Run	Runl	0.2
+Mo1RefugeeMd000003		Run	Runr	0.2
+Mo1RefugeeMd000003		Walk	Stand2	0.1
+Mo1RefugeeMd000003		Runb	Stand2	0.2
+Mo1RefugeeMd000003		Runb	Run	0.2
+Mo1RefugeeMd000003		Runb	Runl	0.2
+Mo1RefugeeMd000003		Runb	Runr	0.2
+Mo1RefugeeMd000003		Runl	Stand2	0.2
+Mo1RefugeeMd000003		Runl	Run	0.2
+Mo1RefugeeMd000003		Runl	Runb	0.2
+Mo1RefugeeMd000003		Runl	Runr	0.2
+Mo1RefugeeMd000003		Runr	Stand2	0.2
+Mo1RefugeeMd000003		Runr	Run	0.2
+Mo1RefugeeMd000003		Runr	Runb	0.2
+Mo1RefugeeMd000003		Runr	Runl	0.2
+Mo1RefugeeMd000003		Walkb	Stand2	0.1
+Mo1RefugeeMd000003		Walkb	Walk	0.2
+Mo1RefugeeMd000003		Walkb	Walkl	0.1
+Mo1RefugeeMd000003		Walkb	Walkr	0.1
+Mo1RefugeeMd000003		Walkl	Stand2	0.1
+Mo1RefugeeMd000003		Walkl	Walk	0.1
+Mo1RefugeeMd000003		Walkl	Walkb	0.1
+Mo1RefugeeMd000003		Walkl	Walkr	0.2
+Mo1RefugeeMd000003		Walkr	Stand2	0.1
+Mo1RefugeeMd000003		Walkr	Walk	0.1
+Mo1RefugeeMd000003		Walkr	Walkb	0.1
+Mo1RefugeeMd000003		Walkr	Walkl	0.2
+Mo1RefugeeMd000003		TurnLeft	Stand2	0.1
+Mo1RefugeeMd000003		TurnRight	Stand2	0.1
+Mo1RefugeeMd000003		RunStart	Run	0.1
+Mo1RefugeeMd000003		RunStart	RunStartEnd01	0.1
+Mo1RefugeeMd000003		Hit1	Stand2	
+Mo1RefugeeMd000003		Hit2	Stand2	
+Mo1RefugeeMd000003		Hit3	Stand2	
+Mo1RefugeeMd000003		Hit4	Stand2	
+Mo1RefugeeMd000003		Behitfly	Hoverhit	0.1
+Mo1RefugeeMd000003		Behitfly	Falldown	0.1
+Mo1RefugeeMd000003		Hoverhit	Falldown	0.1
+Mo1RefugeeMd000003		Falldown	Lieonfloor	0.1
+Mo1RefugeeMd000003		Hitdown	Lieonfloor	0.1
+Mo1RefugeeMd000003		Standup	Stand2	0.1
+Mo1RefugeeMd000003		Straight	Stand2	0.1
+Mo1RefugeeMd000003		Stun	Stand2	0.1
+Mo1RefugeeMd000003		Win	Win2	0.1
+Mo1RefugeeMd000003		Stop	Stand2	0.1
+Mo1RefugeeMd000003		Caught	Stand2	0.1
+Mo1RefugeeMd000003	1		Born	
+Mo1RefugeeMd000003	1		Stand1	0.1
+Mo1RefugeeMd000003	1		Stand2	0.1
+Mo1RefugeeMd000003	1		Stand3	0.1
+Mo1RefugeeMd000003	1		Death	0.1
+Mo1RefugeeMd000003	1		Standchange	0.1
+Mo1RefugeeMd000003	1		Run	0.1
+Mo1RefugeeMd000003	1		Walk	0.1
+Mo1RefugeeMd000003	1		Runb	0.2
+Mo1RefugeeMd000003	1		Runl	0.2
+Mo1RefugeeMd000003	1		Runr	0.2
+Mo1RefugeeMd000003	1		Walkb	0.1
+Mo1RefugeeMd000003	1		Walkl	0.1
+Mo1RefugeeMd000003	1		Walkr	0.1
+Mo1RefugeeMd000003	1		TurnLeft	0.1
+Mo1RefugeeMd000003	1		TurnRight	0.1
+Mo1RefugeeMd000003	1		Move1	0.1
+Mo1RefugeeMd000003	1		Move2	0.1
+Mo1RefugeeMd000003	1		Move3	0.1
+Mo1RefugeeMd000003	1		RunStart	0.1
+Mo1RefugeeMd000003	1		RunStartEnd01	0.1
+Mo1RefugeeMd000003	1		Hit1	0.05
+Mo1RefugeeMd000003	1		Hit2	0.05
+Mo1RefugeeMd000003	1		Hit3	0.05
+Mo1RefugeeMd000003	1		Hit4	0.05
+Mo1RefugeeMd000003	1		Behitfly	0.05
+Mo1RefugeeMd000003	1		Hoverhit	0.05
+Mo1RefugeeMd000003	1		Falldown	0.1
+Mo1RefugeeMd000003	1		Hitdown	0.05
+Mo1RefugeeMd000003	1		Lieonfloor	0.1
+Mo1RefugeeMd000003	1		Standup	0.1
+Mo1RefugeeMd000003	1		Straight	0.1
+Mo1RefugeeMd000003	1		Stun	0.1
+Mo1RefugeeMd000003	1		StraightBefore	0.1
+Mo1RefugeeMd000003	1		StraightAfter	0.1
+Mo1RefugeeMd000003	1		Win	
+Mo1RefugeeMd000003	1		Win2	0.1
+Mo1RefugeeMd000003	1		Stop	0.1
+Mo1RefugeeMd000003	1		Fail	0.1
+Mo1RefugeeMd000003	1		Save	0.1
+Mo1RefugeeMd000003	1		Caught	0.1
+Mo1RefugeeMd000003	1		RunStartEnd02	0.1
+Mo1RefugeeMd000003	1		StopR	0.1
+Mo1RefugeeMd000003	1		Attack100	0.1
+Mo1RefugeeMd000003	1		Attack101	0.1
+Mo1RefugeeMd000003	1		Attack102	0.1
+Mo1RefugeeMd000003	1		Attack103	0.1
+Mo1RefugeeMd000003	1		Attack104	0.1
+Mo1RefugeeMd000003	1		Attack105	0.1
+Mo1RefugeeMd000003	1		Attack106	0.1
+Mo1RefugeeMd000003	1		Attack107	0.1
+Mo1RefugeeMd000003	1		Attack108	0.1
+Mo1RefugeeMd000003	1		Attack109	0.1
+Mo1RefugeeMd000003	1		Attack110	0.1
+Mo1RefugeeMd000003	1		Attack111	0.1
+Mo1RefugeeMd000003	1		Attack112	0.1
+Mo1RefugeeMd000003	1		Attack113	0.1
+Mo1RefugeeMd000003	1		Attack114	0.1
+Mo1RefugeeMd000003	1		Attack115	0.1
+Mo1RefugeeMd000003	1		Attack116	0.1
+Mo1RefugeeMd000003	1		Attack117	0.1
+Mo1RefugeeMd000003	1		Attack118	0.1
+Mo1RefugeeMd000003	1		Attack119	0.1
+Mo1RefugeeMd000003	1		Attack120	0.1
+Mo1RefugeeMd000003	1		Attack121	0.1
+Mo1RefugeeMd000003	1		Attack122	0.1
+Mo1RefugeeMd000003	1		Attack123	0.1
+Mo1RefugeeMd000003	1		Attack124	0.1
+Mo1RefugeeMd000003	1		Attack125	0.1
+Mo1RefugeeMd000003	1		Attack126	0.1
+Mo1RefugeeMd000003	1	Stand1	Run	0.2
+Mo1RefugeeMd000003	1	Stand1	Walk	0.1
+Mo1RefugeeMd000003	1	Stand2	Standchange	0.1
+Mo1RefugeeMd000003	1	Stand2	Run	0.2
+Mo1RefugeeMd000003	1	Stand2	Walk	0.3
+Mo1RefugeeMd000003	1	Stand2	Walkb	0.3
+Mo1RefugeeMd000003	1	Stand2	Walkl	0.3
+Mo1RefugeeMd000003	1	Stand2	Walkr	0.3
+Mo1RefugeeMd000003	1	Standchange	Stand1	0.1
+Mo1RefugeeMd000003	1	Standchange	Run	0.1
+Mo1RefugeeMd000003	1	Standchange	Walk	0.1
+Mo1RefugeeMd000003	1	Run	Stop	0.2
+Mo1RefugeeMd000003	1	Run	Stand2	0.2
+Mo1RefugeeMd000003	1	Run	Runb	0.2
+Mo1RefugeeMd000003	1	Run	Runl	0.2
+Mo1RefugeeMd000003	1	Run	Runr	0.2
+Mo1RefugeeMd000003	1	Walk	Stand2	0.1
+Mo1RefugeeMd000003	1	Runb	Stand2	0.2
+Mo1RefugeeMd000003	1	Runb	Run	0.2
+Mo1RefugeeMd000003	1	Runb	Runl	0.2
+Mo1RefugeeMd000003	1	Runb	Runr	0.2
+Mo1RefugeeMd000003	1	Runl	Stand2	0.2
+Mo1RefugeeMd000003	1	Runl	Run	0.2
+Mo1RefugeeMd000003	1	Runl	Runb	0.2
+Mo1RefugeeMd000003	1	Runl	Runr	0.2
+Mo1RefugeeMd000003	1	Runr	Stand2	0.2
+Mo1RefugeeMd000003	1	Runr	Run	0.2
+Mo1RefugeeMd000003	1	Runr	Runb	0.2
+Mo1RefugeeMd000003	1	Runr	Runl	0.2
+Mo1RefugeeMd000003	1	Walkb	Stand2	0.1
+Mo1RefugeeMd000003	1	Walkb	Walk	0.2
+Mo1RefugeeMd000003	1	Walkb	Walkl	0.1
+Mo1RefugeeMd000003	1	Walkb	Walkr	0.1
+Mo1RefugeeMd000003	1	Walkl	Stand2	0.1
+Mo1RefugeeMd000003	1	Walkl	Walk	0.1
+Mo1RefugeeMd000003	1	Walkl	Walkb	0.1
+Mo1RefugeeMd000003	1	Walkl	Walkr	0.2
+Mo1RefugeeMd000003	1	Walkr	Stand2	0.1
+Mo1RefugeeMd000003	1	Walkr	Walk	0.1
+Mo1RefugeeMd000003	1	Walkr	Walkb	0.1
+Mo1RefugeeMd000003	1	Walkr	Walkl	0.2
+Mo1RefugeeMd000003	1	TurnLeft	Stand2	0.1
+Mo1RefugeeMd000003	1	TurnRight	Stand2	0.1
+Mo1RefugeeMd000003	1	RunStart	Run	0.1
+Mo1RefugeeMd000003	1	RunStart	RunStartEnd01	0.1
+Mo1RefugeeMd000003	1	Hit1	Stand2	
+Mo1RefugeeMd000003	1	Hit2	Stand2	
+Mo1RefugeeMd000003	1	Hit3	Stand2	
+Mo1RefugeeMd000003	1	Hit4	Stand2	
+Mo1RefugeeMd000003	1	Behitfly	Hoverhit	0.1
+Mo1RefugeeMd000003	1	Behitfly	Falldown	0.1
+Mo1RefugeeMd000003	1	Hoverhit	Falldown	0.1
+Mo1RefugeeMd000003	1	Falldown	Lieonfloor	0.1
+Mo1RefugeeMd000003	1	Hitdown	Lieonfloor	0.1
+Mo1RefugeeMd000003	1	Standup	Stand2	0.1
+Mo1RefugeeMd000003	1	Straight	Stand2	0.1
+Mo1RefugeeMd000003	1	Stun	Stand2	0.1
+Mo1RefugeeMd000003	1	Win	Win2	0.1
+Mo1RefugeeMd000003	1	Stop	Stand2	0.1
+Mo1RefugeeMd000003	1	Caught	Stand2	0.1

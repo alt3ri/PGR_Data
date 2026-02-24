@@ -16,6 +16,28 @@ local function NormalizeData(data)
     return data
 end
 
+-- 检查配置版本变更与红点触发
+local function CheckConfigChange(data)
+    if not data or not data.Type or not data.Id then return end
+    
+    -- 绑定玩家ID与Type
+    local playerId = XPlayer.Id
+    if not playerId then return end
+
+    local key = string.format("ItemRestrict_ConfigId_%d_%s", data.Type, tostring(playerId))
+    local lastId = XSaveTool.GetData(key)
+    
+    if lastId ~= data.Id then
+        XSaveTool.SaveData(key, data.Id)
+        -- 触发小红点
+        if data.IsChangeTrigger then
+            XSaveTool.SaveData("IsUiMainBtnStoreBlue"..playerId, 1)
+            XSaveTool.SaveData(string.format("IsShopTabRedPoint%s", tostring(playerId)), 1)
+            XEventManager.DispatchEvent(XEventId.EVENT_ITEM_RESTRICT_CONFIG_TRIGGER_CHANGE)
+        end
+    end
+end
+
 -- 覆盖或创建某个 Type 的整条数据
 function XItemRestrictModel:ApplyFullData(data)
     NormalizeData(data)
@@ -49,6 +71,7 @@ function XItemRestrictModel:InitData(dataList)
     self.ServerPrams.ItemsByType = {}
 
     for _, data in ipairs(dataList or {}) do
+        CheckConfigChange(data)
         self:ApplyFullData(data)
     end
 end
@@ -57,6 +80,7 @@ end
 function XItemRestrictModel:UpdateActivityData(data)
     -- data: ItemRestrictData
     if not data then return end
+    CheckConfigChange(data)
     self:ApplyFullData(data)
 end
 
@@ -115,6 +139,8 @@ function XItemRestrictModel:UpdateConfigData(configList)
     for _, cfg in ipairs(configList or {}) do
         local typeId = cfg.Type
         if typeId then
+            CheckConfigChange(cfg)
+
             local entry = self.ServerPrams.ItemsByType[typeId]
             if not entry then
                 -- 创建最初的骨架

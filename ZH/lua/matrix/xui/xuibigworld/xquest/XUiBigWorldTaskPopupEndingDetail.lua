@@ -4,6 +4,9 @@
 ---@field _GridCommon XUiGridBWItem
 local XUiBigWorldTaskPopupEndingDetail = XMVCA.XBigWorldUI:Register(nil, "UiBigWorldTaskPopupEndingDetail")
 
+local DESIGN_WIDTH = 1920
+local DESIGN_HEIGHT = 1080
+
 function XUiBigWorldTaskPopupEndingDetail:OnAwake()
     self:InitUi()
     self:InitCb()
@@ -79,10 +82,29 @@ function XUiBigWorldTaskPopupEndingDetail:OnBtnDownloadClick()
     --    return
     --end
     XPermissionManager.GetCameraPermissionToCallback(function()
-        if CS.XTool.SaveUnreadableTexture(fileName, texture) then
+        if CS.XTool.SaveUnreadableTexture(fileName, texture, DESIGN_WIDTH, DESIGN_HEIGHT) then
             XUiManager.TipMsg(XMVCA.XBigWorldService:GetText("SG_SS_SaveSucess"))
         end
     end)
+end
+
+function XUiBigWorldTaskPopupEndingDetail:SaveUnreadableTexture(fileName, unreadableTexture)
+    local width, height = DESIGN_WIDTH, DESIGN_HEIGHT
+    local tempRenderTexture = CS.UnityEngine.RenderTexture.GetTemporary(width, height, 0);
+    CS.UnityEngine.Graphics.Blit(unreadableTexture, tempRenderTexture);
+
+    local readableTexture = XTool.GenTexture2DReleaseManually(width, height);
+
+    CS.UnityEngine.RenderTexture.active = tempRenderTexture;
+    local rect = CS.UnityEngine.Rect(0, 0, width, height)
+    readableTexture:ReadPixels(rect, 0, 0);
+    readableTexture:Apply();
+    CS.UnityEngine.RenderTexture.active = nil;
+
+    CS.XTool.SavePhotoAlbumImg(fileName, readableTexture);
+
+    CS.UnityEngine.RenderTexture.ReleaseTemporary(tempRenderTexture);
+    CS.UnityEngine.Object.Destroy(readableTexture);
 end
 
 function XUiBigWorldTaskPopupEndingDetail:OnBtnViewClick()

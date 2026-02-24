@@ -116,6 +116,8 @@ function XUiNewDrawMain:RefreshNormalUiShow()
             self.BtnTree:SetSprite(powerConfig.Icon)
         end
     end
+
+    self.TxtBubbleReward.text = XUiHelper.GetText("UiNewDrawMainShopBubbleText")
 end
 -- region 鬼泣五相关
 function XUiNewDrawMain:RefreshPanelTwoForOne()
@@ -225,6 +227,9 @@ function XUiNewDrawMain:_CheckServerDataReady()
     self.readyCount = self.readyCount + 1
     if self.readyCount == ServerDataReadyMaxCount then
         self:_InitDrawTabs()
+        self:RefreshTabRedDot()
+    else
+        XLog.Error("XUiNewDrawMain._CheckServerDataReady: Waiting... " .. tostring(self.readyCount) .. "/" .. tostring(ServerDataReadyMaxCount))
     end
 end
 
@@ -646,13 +651,63 @@ function XUiNewDrawMain:_RefreshCharacterDrawTarget()
 end
 
 -- 刷新页签标签
+function XUiNewDrawMain:RefreshTabRedDot()
+    if XTool.IsTableEmpty(self.AllBtnList) then return end
+
+    local canLiverActivityId = XDataCenter.DrawManager.GetCanLiverActivityId()
+    local canLiverConfig = XDrawConfigs.GetDrawCanLiverActivityCfgById(canLiverActivityId)
+    local canLiverDrawIds = canLiverConfig and canLiverConfig.DrawIds or {}
+    
+    local function CheckGroupHasCanLiverRedPoint(groupId)
+        for _, drawId in ipairs(canLiverDrawIds) do
+             local info = XDataCenter.DrawManager.GetDrawInfo(drawId)
+             if info and info.GroupId == groupId then
+                 if XRedPointConditions.Check(XRedPointConditions.Types.CONDITION_DRAW_CAN_LIVER_JOURNEY_REWARD, drawId) then
+                     return true
+                 end
+             end
+        end
+        return false
+    end
+
+    for index, uiButton in ipairs(self.AllBtnList) do
+        local data = self.AllTabEntityList[index]
+        if data then
+            local isShowRedDot = false 
+            
+            if data:IsShowFreeTip() then
+                isShowRedDot = true
+            end
+            
+            if not isShowRedDot then
+                if data.DrawGroupList then  -- 一级页签
+                    for _, drawData in ipairs(data.DrawGroupList) do
+                         if CheckGroupHasCanLiverRedPoint(drawData.Id) then
+                            isShowRedDot = true
+                            break 
+                        end
+                    end
+                else                        -- 二级页签
+                     if CheckGroupHasCanLiverRedPoint(data:GetId()) then
+                        isShowRedDot = true
+                    end
+                end
+            end
+            
+            uiButton:ShowReddot(isShowRedDot)
+        end
+    end
+end
+
+-- 刷新页签标签
 function XUiNewDrawMain:_RefreshBtnTag()
     local groupTargetData
-    for _, uiButton in ipairs(self.AllBtnList) do
+    for index, uiButton in ipairs(self.AllBtnList) do
         local btnObjDir = {}
-        local data = self.AllTabEntityList[table.indexof(self.AllBtnList, uiButton)]
+        local data = self.AllTabEntityList[index]
         XTool.InitUiObjectByUi(btnObjDir, uiButton.gameObject)
         local isShowTag = data:IsShowTag() and (not data:IsShowFreeTip())
+
         if data.DrawGroupList then  -- 一级页签
             for _, drawData in ipairs(data.DrawGroupList) do
                 groupTargetData = XDataCenter.DrawManager.GetDrawGroupActivityTargetInfo(drawData.Id)
@@ -663,6 +718,9 @@ function XUiNewDrawMain:_RefreshBtnTag()
             uiButton:ShowTag(data:IsShowTag() and (not data:IsShowFreeTip()) or isShowTag)
         else                        -- 二级页签
             groupTargetData = XDataCenter.DrawManager.GetDrawGroupActivityTargetInfo(self.GroupId)
+            
+            uiButton:ShowTag(data:IsShowTag() and (not data:IsShowFreeTip()) or isShowTag)
+
             if btnObjDir.PanelActivity and data:GetId() == self.GroupId then
                 local isNewbieShow = data.MaxBottomTimes == data:GetNewHandBottomCount()
                 local isShow = not isShowTag and groupTargetData and not isNewbieShow
@@ -674,6 +732,7 @@ function XUiNewDrawMain:_RefreshBtnTag()
             end
         end
     end
+    self:RefreshTabRedDot()
 end
 
 ---校准活动按钮刷新
@@ -797,7 +856,7 @@ function XUiNewDrawMain:CreateMainBtn(data)
             -- ✅ Power优先逻辑：Power显示时禁用NewImg
             local canShowTag = (not needShowPower) and (data:IsShowTag() and (not data:IsShowFreeTip()) or isShowTag)
             uiButton:ShowTag(canShowTag)
-            uiButton:ShowReddot(data:IsShowFreeTip())
+            -- uiButton:ShowReddot(data:IsShowFreeTip()) -- [Fixed] Removed to prevent overwriting CanLiver RedDot
             uiButton.transform:FindTransform("TagReceive").gameObject:SetActiveEx(isDevilCanReceive)
         end, XScheduleManager.SECOND * 0.7)
 
@@ -1000,6 +1059,7 @@ function XUiNewDrawMain:OnSelectUp(drawId)
     local hasClicked = XSaveTool.GetData(key)
     -- 未点击过 → 显示红点
     self.BtnShop:ShowReddot(not hasClicked)
+    self:CheckShopBubble()
 
     self.DrawControl:Update(drawInfo, self.GroupId)
     local combination = XDataCenter.DrawManager.GetDrawCombination(drawInfo.Id)
@@ -1144,8 +1204,12 @@ function XUiNewDrawMain:OnBtnShopClick()
     local skipToShopId = 90055 -- 临时写死
     XFunctionManager.SkipInterface(skipToShopId) 
     local curDrawId = self.DrawInfo.Id
-    local key = string.format("NewDraw_ShopRedDot_%s", tostring(curDrawId))
-    XSaveTool.SaveData(key, true)
+    local key = string.format("HasUiNewDrawMainClickBtnShop_%d_%d", curDrawId, XPlayer.Id)
+    XSaveTool.SaveData(key, 1)
+
+    key = string.format("NewDraw_ShopRedDot_%s", tostring(curDrawId))
+    XSaveTool.SaveData(key, 1)
+    self.BtnShop:ShowReddot(false)
 end
 
 function XUiNewDrawMain:OnBtnActivityTargetClick()
@@ -1218,11 +1282,13 @@ end
 function XUiNewDrawMain:AddEventListener()
     XEventManager.AddEventListener(XEventId.EVENT_DRAW_FREE_TICKET_UPDATE, self.UpdateDrawControl, self)
     XEventManager.AddEventListener(XEventId.EVENT_DRAW_TARGET_ACTIVITY_CHANGE, self.WhenDrawActivityStatusUpdate, self)
+    XEventManager.AddEventListener(XEventId.EVENT_DRAW_CAN_LIVER_UPDATE, self.RefreshTabRedDot, self)
 end
 
 function XUiNewDrawMain:RemoveEventListener()
     XEventManager.RemoveEventListener(XEventId.EVENT_DRAW_FREE_TICKET_UPDATE, self.UpdateDrawControl, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_DRAW_TARGET_ACTIVITY_CHANGE, self.WhenDrawActivityStatusUpdate, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_DRAW_CAN_LIVER_UPDATE, self.RefreshTabRedDot, self)
 end
 --endregion
 
@@ -1268,6 +1334,21 @@ function XUiNewDrawMain:UpdateBtnDiscount()
     end
     if self.PanelDiscount2 then
         self.PanelDiscount2.gameObject:SetActiveEx(isShowDiscount)
+    end
+end
+
+
+function XUiNewDrawMain:CheckShopBubble()
+    if not self.DrawInfo then return end
+
+    local isShowBubble = self.DrawInfo.IsShowBubble
+    if not isShowBubble then return end
+
+    local key = string.format("HasUiNewDrawMainClickBtnShop_%d_%d", self.DrawInfo.Id, XPlayer.Id)
+    local hasClicked = XSaveTool.GetData(key)
+
+    if not hasClicked then
+        self:PlayAnimation("ShowBtnShopBubble")
     end
 end
 

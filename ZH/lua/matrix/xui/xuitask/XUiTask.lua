@@ -584,6 +584,7 @@ function XUiTask:OnTaskPanelSelect(index)
             return
         end
 
+        self:RecordBuriedSpot(XGlobalVar.BtnBuriedSpotTypeLevelOne.BtnUiTaskDaily)
         self.TaskDailyModule:ShowPanel(self.IsFirstAnimation)
 
         self:PlayAnimation("TaskDailyQieHuan", function()
@@ -600,6 +601,7 @@ function XUiTask:OnTaskPanelSelect(index)
             return
         end
 
+        self:RecordBuriedSpot(XGlobalVar.BtnBuriedSpotTypeLevelOne.BtnUiTaskWeek)
         self.TaskWeeklyModule:ShowPanel()
         self:PlayAnimation("TaskWeeklyQieHuan")
 
@@ -613,6 +615,7 @@ function XUiTask:OnTaskPanelSelect(index)
             return
         end
 
+        self:RecordBuriedSpot(XGlobalVar.BtnBuriedSpotTypeLevelOne.BtnUiTaskActivity)
         self.TaskActivityModule:ShowPanel()
         self:PlayAnimation("TaskActivityQieHuan")
     elseif cfg.TagType == TabType.NewbieStart then
@@ -647,6 +650,7 @@ function XUiTask:OnTaskPanelSelect(index)
             return
         end
 
+        self:RecordBuriedSpot(XGlobalVar.BtnBuriedSpotTypeLevelOne.BtnUiTaskCanliver)
         self.TaskCanLiver:Open()
     end
 
@@ -659,4 +663,11 @@ function XUiTask:GetCfgByType(type)
             return v
         end
     end
+end
+
+function XUiTask:RecordBuriedSpot(id)
+    local dict = {}
+    dict["ui_first_button"] = id
+    dict["role_level"] = XPlayer.GetLevel()
+    CS.XRecord.Record(dict, "200004", "UiOpen")
 end

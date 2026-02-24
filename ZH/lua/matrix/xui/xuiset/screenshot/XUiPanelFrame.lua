@@ -24,11 +24,8 @@ function XUiPanelFrame:OnStart()
         [XCustomUi.INDEX_COMBO] = self.FrameCombo,
         [XCustomUi.INDEX_INFO] = self.FrameInfo,
         [XCustomUi.INDEX_ROLES] = self.FrameRoles,
-        [XCustomUi.INDEX_ROLES_BUFF] = self.FrameRolesBuff,
-        --[XCustomUi.INDEX_ALL_DMG] = self.FrameAllDMG
+        [XCustomUi.INDEX_ROLES_BUFF] = self.FrameRolesBuff
     }
-    -- V4.2不开放总伤害，直接隐藏
-    self.FrameAllDMG.gameObject:SetActiveEx(false)
 end
 
 function XUiPanelFrame:Refresh()

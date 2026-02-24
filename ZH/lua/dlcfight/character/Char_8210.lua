@@ -29,7 +29,7 @@ function XCharTes8210:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKind
     if buffId == 8210002 then--发射特效与伤害子弹
         local target = self._proxy:GetFightTargetId(self._uuid) --获取战斗目标
 
-        if not (target and target~=0 and self._proxy:CheckNpc(target) )then --检查目标有效性：（合法、不为0、且检查npc还存在）
+        if not (target and target ~= 0 and self._proxy:CheckNpc(target)) then --检查目标有效性：（合法、不为0、且检查npc还存在）
             return
         end
 

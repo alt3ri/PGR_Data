@@ -65,7 +65,6 @@
 ---@field InputManagerPc InputManagerPc
 ---@field FubenActivityBossSingleManager XFubenActivityBossSingleManager
 ---@field CloudGameManager XCloudGameManager
----@field CrossVersionManager XCrossVersionManager
 XDataCenter = XDataCenter or {}
 
 local IsWindowsEditor = XMain.IsWindowsEditor
@@ -323,7 +322,6 @@ function XDataCenter.InitDependency()
     InitManager("XQualityManager", XQualityManagerCreator)
 
     InitManager("CloudGameManager", XCloudGameManagerCreator)
-    InitManager("CrossVersionManager", XCrossVersionManagerCreator)
 
     XDataCenter.FubenManagerEx.Init()
 

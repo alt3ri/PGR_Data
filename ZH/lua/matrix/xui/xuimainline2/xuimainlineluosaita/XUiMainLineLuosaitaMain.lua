@@ -200,6 +200,12 @@ function XUiMainLineLuosaitaMain:RefreshTask()
     -- 蓝点
     local isRed = XMVCA.XMainLine2:IsMainRedTaskReward(self._MainId)
     self.BtnMission:ShowReddot(isRed)
+    
+    -- 完成状态
+    if self.ImgMissionComplete then
+        local isFinish = curCnt >= totalCnt
+        self.ImgMissionComplete.gameObject:SetActiveEx(isFinish)
+    end
 end
 
 -- 刷新文件回顾按钮

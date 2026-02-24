@@ -67,6 +67,35 @@ local XMovieEnumConst = {
     -- 播放速度
     DEFAULT_SPEED = 1,                  -- 默认速度
     LONG_PRESS_SPEED = 32,              -- 长按自动播放速度
+    -- 锚点对齐类型
+    ANCHOR_ALIGNMENT_TYPE = {
+        FULL = 0,                       -- 全部撑开
+        TOP_LEFT = 1,                   -- 左上角
+        TOP_CENTER = 2,                 -- 上中
+        TOP_RIGHT = 3,                  -- 右上角
+        MIDDLE_LEFT = 4,                -- 中左
+        MIDDLE = 5,                     -- 中心点
+        MIDDLE_RIGHT = 6,               -- 中右
+        BOTTOM_LEFT = 7,                -- 左下角
+        BOTTOM_CENTER = 8,              -- 下中
+        BOTTOM_RIGHT = 9,               -- 右下角
+        FULL_DISABLE_ADAPTER = 10,      -- 全部撑开，且禁用适配
+    },
+    -- 锚点对齐类型对应参数 (anchorMinX, anchorMinY, anchorMaxX, anchorMaxY)
+    ANCHOR_ALIGNMENT_TYPE_TO_PARAM = {
+        [0] = {0, 0, 1, 1},             -- FULL: 全部撑开
+        [1] = {0, 1, 0, 1},             -- TOP_LEFT: 左上角
+        [2] = {0.5, 1, 0.5, 1},         -- TOP_CENTER: 上中
+        [3] = {1, 1, 1, 1},             -- TOP_RIGHT: 右上角
+        [4] = {0, 0.5, 0, 0.5},         -- MIDDLE_LEFT: 中左
+        [5] = {0.5, 0.5, 0.5, 0.5},     -- MIDDLE: 中心点
+        [6] = {1, 0.5, 1, 0.5},         -- MIDDLE_RIGHT: 中右
+        [7] = {0, 0, 0, 0},             -- BOTTOM_LEFT: 左下角
+        [8] = {0.5, 0, 0.5, 0},         -- BOTTOM_CENTER: 下中
+        [9] = {1, 0, 1, 0},             -- BOTTOM_RIGHT: 右下角
+        [10] = {0, 0, 1, 1},            -- FULL_DISABLE_ADAPTER: 全部撑开，且禁用适配
+    },
+    ACTOR_AVATAR_INDEX = 18,            -- 第18号演员为左下角头像位置
 }
 
 function XMovieEnumConst:GetActionClass(actionType)
@@ -83,6 +112,7 @@ function XMovieEnumConst:GetActionClass(actionType)
         [110] = require("XMovieActions/XMovieActionTextDisAppear"), -- 文本消失
         [111] = require("XMovieActions/XMovieActionBgEffect"), -- 背景特效
         [112] = require("XMovieActions/XMovieActionTextAnim"), -- 文本动画
+        [113] = require("XMovieActions/XMovieActionBgRotate"), --背景旋转
 
         [201] = require("XMovieActions/XMovieActionActorAppear"), --演员出现
         [202] = require("XMovieActions/XMovieActionActorDisappear"), --演员消失

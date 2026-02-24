@@ -12,7 +12,6 @@ local DebugTraceback = debug.traceback
 local XLogDebug = CS.XDlcLog.Debug
 local XLogWarning = CS.XDlcLog.Warning
 local XLogError = CS.XDlcLog.Error
-local XLogBugly = CS.XDlcLog.BuglyLog
 
 local Pairs = function(arr)
     local meta_t = getmetatable(arr)
@@ -182,14 +181,6 @@ XLog.Error = function(...)
     end
 end
 
-XLog.BuglyLog = function (moduleName, ...)
-    local content = Print(moduleName, ...)
-    if content then
-        XLogBugly(content .. "\n" .. DebugTraceback())
-    else
-        XLogBugly("nil\n" .. DebugTraceback())
-    end
-end
 
 -- 表格找不到数据错误统一输出接口
 XLog.ErrorTableDataNotFound = function(functionName, dataName, tablePath, paramName, paramValue)

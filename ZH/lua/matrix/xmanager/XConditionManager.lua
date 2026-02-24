@@ -118,6 +118,8 @@ PlayerCondition = {
         end
         return false, condition.Desc
     end,
+    [10113] = function(condition) -- 已被服务端占用
+    end,
     [10114] = function(condition)
         -- 世界boss属性关完成数量
         --local worldBossActivity = XDataCenter.WorldBossManager.GetCurWorldBossActivity()
@@ -432,7 +434,8 @@ PlayerCondition = {
         local buyState = tonumber(condition.Params[3])
         local judgingType = tonumber(condition.Params[4])
         local seconds = tonumber(condition.Params[5])
-        return XDataCenter.PurchaseManager.CheckPackageSellTimeCondition(negate, paskageId, buyState, judgingType, seconds), condition.Desc
+        local buyJudgingType = tonumber(condition.Params[6])
+        return XDataCenter.PurchaseManager.CheckPackageSellTimeCondition(negate, paskageId, buyState, judgingType, seconds,buyJudgingType), condition.Desc
     end,
     -- 新手签到判断指定签到领取完毕
     [10161] = function(condition)  
@@ -486,6 +489,12 @@ PlayerCondition = {
         end
         
         return result, condition.Desc
+    end,
+
+    [10164] = function(condition)
+        -- 查询玩家是否未完成过某个任务
+        local task = XDataCenter.TaskManager.GetTaskDataById(condition.Params[1])
+        return not (task and task.State == XDataCenter.TaskManager.TaskState.Finish), condition.Desc
     end,
     
     [10189] = function(condition)
@@ -2732,6 +2741,17 @@ PlayerCondition = {
     [23005] = function(condition)
         local level = condition.Params[1]
         return XMVCA.XDlcRelink:CheckBagUiGuideCondition(level), condition.Desc
+    end,
+    -- Relink-玩家是否在房间中
+    [23006] = function(condition)
+        local isInRoom = condition.Params[1] == 1
+        local inRoom = XMVCA.XDlcRoom:IsInRoom() and true or false
+        return inRoom == isInRoom, condition.Desc
+    end,
+    -- Relink-网络切换提示
+    [23007] = function(condition)
+        local isShow = condition.Params[1] == 1
+        return XMVCA.XDlcRelink:IsShowNetworkSwitchTip(isShow), condition.Desc
     end,
     --endregion
 }

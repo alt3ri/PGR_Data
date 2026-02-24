@@ -27,6 +27,7 @@ function XUiPlayerEx:InitTopButtons()
         self:OnClickBtnExhibition()
     end
     self.BtnSkinSeries:AddEventListener(function()
+        self.PanelPlayerInfoEx:RecordAnimation()
         XMVCA.XFashionSuit:OpenMain()
     end)
 end

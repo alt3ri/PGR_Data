@@ -215,12 +215,6 @@ function XChar8052:SkillCastConfig()
             [805234]=10,   --二连拳（0）
             [805202]=10,   --反身拳（0）
         },
-        {--保底闪现调整位置
-            [805210]=40,   --前
-            [805211]=40,   --后
-            [805212]=10,   --左
-            [805213]=10,   --右
-        },
     }
 end
 
@@ -363,7 +357,7 @@ function XChar8052:MortalBladeTickCheck()
     end
 
     ----距离场地中心10m范围内的时候
-    if self:CheckNpcToPosDistanceIgnoreY(self._uuid,self:GetLevelCenterPoint(),10)then
+    if self:CheckNpcToPosDistanceIgnoreY(self._uuid, self:GetLevelCenterPoint(), 10) then
         self:MortalBladeStart()
     else
         self:CastSkillToPosition(805275,self.levelCenterPoint) --尝试向场地中间放蓄力不死斩启动技能
@@ -644,7 +638,7 @@ function XChar8052:ReStartCreatDashTips()
     --创建屏障子弹
     self:ClearDashTips() --先清空
     ---内圈
-    if self.curDashRound == 1then
+    if self.curDashRound == 1 then
         _,self.dashPingZhangBulletUUID = self._proxy:LaunchMissileFromPosToPos(self._uuid,80520170,80525001,self.dashCenter,self.dashCenter)
         self:DashSetObstacleActive(true,true)--开启内圈
         self:DashSetObstacleActive(false,false)--关闭外圈
@@ -874,7 +868,6 @@ function XChar8052:DashReStart()
         self:CreatStartDashPosLink() --创建开始时的冲刺线
         self.nextDashIndex = 1 --重新选点重置下一个点
         self:ForceSkillToPosition(805240,startPos)--向开始的点释放Start技能
-        self:DashSetDashMode(XChar8052.DashMode.Start) --DashMode设置为Start
         self._proxy:LookAtPositionImmediately(self._uuid,self.dashList[self.nextDashIndex])--看向要冲刺的第一个点
         self.dashSelectCount = 2 --冲刺选点之后要选第二个点了
         return
@@ -977,15 +970,11 @@ function XChar8052:DashLoopTickCheck()
     if not self.dashMode == XChar8052.DashMode.Loop then --不在循环中跳过
         return
     end
-
-    if #self.dashList ==0 then
-        self:DashReStart() --重启重启！
-    else
-        local nextPointDistance = self._proxy:GetNpcToPositionDistance(self._uuid,self.dashList[self.nextDashIndex])--获取和下一个点的距离
-        --判断到达目标点的条件
-        if nextPointDistance <= self.dashArriveCheckRange  then --小于这个距离就等于到达了目的地
-            self:OnArrivedDashPoint()
-        end
+    
+    local nextPointDistance = self._proxy:GetNpcToPositionDistance(self._uuid,self.dashList[self.nextDashIndex])--获取和下一个点的距离
+    --判断到达目标点的条件
+    if nextPointDistance <= self.dashArriveCheckRange  then --小于这个距离就等于到达了目的地
+        self:OnArrivedDashPoint()
     end
 end
 
@@ -1848,9 +1837,7 @@ end
 
 ---怪物自己死亡时
 function XChar8052:OnMonsterSelfDie()
-    if self._proxy:CheckBuffByKind(self._uuid,1000512) then--有这个提示的时候
-        self._proxy:ApplyMagic(self._uuid,self._uuid,1000513) --移除这个Buff
-    end
+    self._proxy:ApplyMagic(self._uuid,self._uuid,1000513) --移除这个Buff
 end
 
 ---处理怪物受到伤害时的受击
@@ -1946,7 +1933,7 @@ end
 
 ---移动射击时每帧检测
 function XChar8052:MoveFireTickCheck()
-    if not self._proxy:CheckNpcCurrentAction(self._uuid,805221)then --在移动射击的过程中
+    if not self._proxy:CheckNpcCurrentAction(self._uuid, 805221) then --在移动射击的过程中
         return
     end
     

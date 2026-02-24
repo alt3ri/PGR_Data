@@ -283,6 +283,14 @@ function XPurchasePackage:GetUiFashionDetailBuyData(buyFinishedFunc, notEnoughCb
             end
         end
     end
+    buyData.GroupBuyCallBack = function(fashionGroupId)
+        XMVCA.XFashionSuit:PurchaseBuyFashionGroup(fashionGroupId, function(rewardList)
+            self:HandleBuyFinished(rewardList)
+            if buyFinishedFunc then
+                buyFinishedFunc()
+            end
+        end)
+    end
     buyData.FashionLabel = self.Data.FashionLabel
     -- v1.28-采购优化-赠品队列过滤涂装
     local graftRewartdIds = {}

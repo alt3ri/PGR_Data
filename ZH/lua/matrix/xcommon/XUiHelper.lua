@@ -2217,7 +2217,6 @@ end
 function XUiHelper.GetTimeMonthDay(time)
     time = time or XTime.GetServerNowTimestamp()
     local dt = CS.XDateUtil.GetLocalDateTime(time)
-    local timeStr
     if XOverseaManager.IsENRegion() then
         timeStr = string.format("%d/%d", dt.Month, dt.Day)
     else

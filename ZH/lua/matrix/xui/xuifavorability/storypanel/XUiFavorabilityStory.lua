@@ -6,6 +6,7 @@ local XUiPanelFavorabilityStoryReward = require('XUi/XUiFavorability/StoryPanel/
 local XUiPanelFavorabilityStoryDetail = require('XUi/XUiFavorability/StoryPanel/PanelStoryDetail/XUiPanelFavorabilityStoryDetail')
 local XUiPanelBgNormal = require('XUi/XUiFavorability/StoryPanel/PanelBg/XUiPanelBgNormal')
 local XUiPanelFavorabilityRegional = require('XUi/XUiFavorability/StoryPanel/XUiPanelFavorabilityRegional')
+local XUiPanelCharacter = require("XUi/XUiCharacterFiles/XUiPanelCharacter")
 
 local lastPosX = 0 --上一次关闭前content的x坐标
 local shouldResume=false
@@ -27,6 +28,9 @@ end
 function XUiFavorabilityStory:OnEnable()
     self._Control:AddEventListener(XControlEventId.EVENT_OPEN_STORY_DETAIL, self.OnOpenStoryDetailEvent, self)
     self:RefreshList()
+    if self.PanelCharacterNode then
+        self.PanelCharacterNode:CheckShow()
+    end
     self.RegionalPanel:RefreshStoryData()
 end
 
@@ -54,6 +58,11 @@ function XUiFavorabilityStory:InitStoryReward()
         self._PanelStoryReward:Open()
     else
         self._PanelStoryReward:Close()
+    end
+
+    if self.PanelCharacter then
+        self.PanelCharacterNode = XUiPanelCharacter.New(self.PanelCharacter, self)
+        self.PanelCharacterNode:SetCharacterId(self.CurrentCharacterId)
     end
 end
 

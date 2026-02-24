@@ -58,7 +58,7 @@ function XCharTes1013:OnNpcCastActionBeforeEvent(skillId, launcherId, targetId, 
         return
     end
 
-    if (skillId == 101303) or (skillId == 101304) or (skillId ==101307) or (skillId ==101308) or (skillId ==101309) or (skillId ==101328)then
+    if (skillId == 101303) or (skillId == 101304) or (skillId == 101307) or (skillId == 101308) or (skillId == 101309) or (skillId == 101328) then
         self._proxy:SetNpcAnimationLayer(self._uuid, 0)
     else
         self._proxy:SetNpcAnimationLayer(self._uuid, 1)
@@ -131,6 +131,10 @@ end
 
 function XCharTes1013:FaceTargetSide()--看向侧面
     local own = self._uuid
+    local target = self._proxy:GetFightTargetId(own) --获取战斗目标
+    if not self._proxy:CheckActorExist(target) then --检测目标是否存活
+        return
+    end
     local targetPosition = self._proxy:GetNpcPosition(self._proxy:GetFightTargetId(own))  --获取自己战斗目标的位置
     local distance = 3
     local euler = {x=0,y=90,z=0} --概率左右，增加变化

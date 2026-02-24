@@ -300,7 +300,7 @@ end
 function XDlcPartnerBase:CheckSelfActionValid()
     
     if self._proxy:CheckNpcAction(self._uuid, ENpcAction.Skill) then--正在释放技能
-        if not self._proxy:CheckNpcCurActionIsDone(self._uuid)then--自己技能没有完成时，无效。
+        if not self._proxy:CheckNpcCurActionIsDone(self._uuid) then  --自己技能没有完成时，无效。
             return false
         end
     end
@@ -613,7 +613,7 @@ end
 
 --设置伙伴目标
 function XDlcPartnerBase:SetTarget(npc)
-    if (not npc) or (npc == 0)then
+    if (not npc) or (npc == 0) then
         XLog.Warning("设置目标非法")
         return
     end
@@ -1311,7 +1311,7 @@ function XDlcPartnerBase:IsSkillODStateValid(skill)
         XLog.Warning("技能"..skill.."释放失败，因为OD锁定且当前在OD")
         return false
     end
-    if config.IsNeedODState and (not self:CheckCurIsOverDrive())then --需要OD且不在OD,返回F
+    if config.IsNeedODState and (not self:CheckCurIsOverDrive()) then --需要OD且不在OD,返回F
         return false
     end
     return true

@@ -131,6 +131,10 @@ end
 
 function XCharTes1011:FaceTargetSide()--看向侧面
     local own = self._uuid
+    local target = self._proxy:GetFightTargetId(own) --获取战斗目标
+    if not self._proxy:CheckActorExist(target) then --检测目标是否存活
+        return
+    end
     local targetPosition = self._proxy:GetNpcPosition(self._proxy:GetFightTargetId(own))  --获取自己战斗目标的位置
     local target = self._proxy:GetFightTargetId(own) --获取战斗目标
     if not self._proxy:CheckActorExist(target) then --检测目标是否存活

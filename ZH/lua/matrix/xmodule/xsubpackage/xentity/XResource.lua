@@ -15,6 +15,11 @@ function XResource:Ctor(resId)
 end
 
 function XResource:InitState()
+    if XLaunchDlcManager.HasUninstalledResId(self._Id) then
+        self:Uninstall()
+        return
+    end
+
     local downloadSize = self:GetDownloadSize()
     local totalSize = self:GetTotalSize()
     if totalSize and totalSize <= 0 then
@@ -45,6 +50,7 @@ function XResource:PrepareDownload()
         return
     end
     
+    XLaunchDlcManager.RemoveUninstalledResId(self._Id)
     self._State = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.PREPARE_DOWNLOAD
 end
 
@@ -53,6 +59,8 @@ function XResource:StartDownload()
         XLog.Warning("XResource:StartDownload, already complete, id = " .. self._Id .. ", state = " .. self._State)
         return
     end
+
+    XLaunchDlcManager.RemoveUninstalledResId(self._Id)
     self._State = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.DOWNLOADING
     XMVCA.XSubPackage:Print(string.format("[SubPackage] Resource(%s) Start to Download!", self._Id))
 end
@@ -63,6 +71,8 @@ function XResource:PreparePause()
         XLog.Warning("XResource:PreparePause, already complete, id = " .. self._Id .. ", state = " .. self._State)
         return
     end
+
+    XLaunchDlcManager.RemoveUninstalledResId(self._Id)
     self._State = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.PREPARE_DOWNLOAD
 end
 
@@ -71,8 +81,32 @@ function XResource:Pause()
         XLog.Warning("XResource:Pause, already complete, id = " .. self._Id .. ", state = " .. self._State)
         return
     end
+
+    XLaunchDlcManager.RemoveUninstalledResId(self._Id)
     self._State = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.PAUSE
     XMVCA.XSubPackage:Print(string.format("[SubPackage] Resource(%s) Paused!", self._Id))
+end
+
+function XResource:Uninstall()
+    if self._State == XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.UNINSTALLED then
+        XLog.Warning("XResource:Unistall, already UNINSTALLED, id = " .. self._Id .. ", state = " .. self._State)
+        return
+    end
+    self._State = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.UNINSTALLED
+    
+    -- 获取该资源所属的所有分包 Id，并通知它们刷新状态
+    local subpackageIdList = XMVCA.XSubPackage:GetSubpackageIdByResId(self._Id)
+    if not XTool.IsTableEmpty(subpackageIdList) then
+        for _, subPackageId in pairs(subpackageIdList) do
+            local subpackageItem = XMVCA.XSubPackage:GetSubpackageItem(subPackageId)
+            if subpackageItem then
+                -- 调用刚才新增的同步方法
+                subpackageItem:UpdateUninstallState()
+            end
+        end
+    end
+
+    XMVCA.XSubPackage:Print(string.format("[SubPackage] Resource(%s) Unistall!", self._Id))
 end
 
 function XResource:Complete()
@@ -83,15 +117,31 @@ function XResource:Complete()
 end
 
 function XResource:IsStateComplete()
+    if self._State == nil then
+        self:InitState()
+    end
     return self._State == XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.COMPLETE
 end
 
 function XResource:IsPrepare()
+    if self._State == nil then
+        self:InitState()
+    end
     return self._State == XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.PREPARE_DOWNLOAD
 end
 
 function XResource:IsPause()
+    if self._State == nil then
+        self:InitState()
+    end
     return self._State == XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.PAUSE
+end
+
+function XResource:IsUninstalled()
+    if self._State == nil then
+        self:InitState()
+    end
+    return self._State == XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.UNINSTALLED
 end
 
 function XResource:GetSourceSizeWithUnit()

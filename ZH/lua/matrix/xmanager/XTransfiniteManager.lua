@@ -536,6 +536,19 @@ XTransfiniteManagerCreator = function()
         if _Data:IsLock4ActivityClose() then
             return XUiHelper.GetText("ActivityBranchNotOpen")
         end
+        
+        if self:ExGetIsLocked() then
+            -- 只有最终失败（返回 nil）时才打印详细日志
+            local functionNameTypeStr = functionNameType and tostring(functionNameType) or "nil"
+            local canOpen = XFunctionManager.JudgeCanOpen(functionNameType)
+            local isLock4ActivityClose = _Data:IsLock4ActivityClose()
+            local activityId = _Data:GetActivityId() or 0
+            local circleId = _Data:GetCircleId() or 0
+            local isOpen = _Data:IsOpen()
+            
+            XLog.Error(string.format("[XTransfiniteManager] ExGetLockTip 返回 nil 原因分析：functionNameType=%s, JudgeCanOpen=%s, IsLock4ActivityClose=%s, ActivityId=%d, CircleId=%d, IsOpen=%s, 结论：所有锁定条件检查都通过（功能已开启且活动未关闭），函数返回 nil 表示没有锁定提示。提示：可能是debug环境下的问题", 
+                functionNameTypeStr, tostring(canOpen), tostring(isLock4ActivityClose), activityId, circleId, tostring(isOpen)))
+        end
     end
 
     function XTransfiniteManager:ExGetProgressTip()

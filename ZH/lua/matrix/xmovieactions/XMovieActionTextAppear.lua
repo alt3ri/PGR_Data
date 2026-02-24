@@ -26,13 +26,14 @@ function XMovieActionTextAppear:OnInit(actionData)
     end
     
     self.IsAnim = paramToNumber(params[11]) == 1
-    self.Scale = params[12] and XMVCA.XMovie:ParamToNumber(params[12]) or 1
+    self.Scale = params[12] and paramToNumber(params[12]) or 1
+    self.AnchorType = string.IsNilOrEmpty(params[13]) and XMVCA.XMovie.EnumConst.ANCHOR_ALIGNMENT_TYPE.MIDDLE or paramToNumber(params[13]) -- 对齐方式
 end
 
 function XMovieActionTextAppear:OnEnter()
     self.IsTyping = false
     local content = XMVCA.XMovie:ExtractGenderContent(self.TextContent)
-    local text = self.UiRoot:AppearText(self.Layer, self.TextId, content, self.PosX, self.PosY, self.Scale, self.Rotation, self.IsAnim)
+    local text = self.UiRoot:AppearText(self.Layer, self.TextId, content, self.PosX, self.PosY, self.Scale, self.Rotation, self.IsAnim, self.AnchorType)
     if self.IsPlayTypeWriter then
         self.IsTyping = true
         self.TypeWriter = text.transform:GetComponent("TextTypewriter")

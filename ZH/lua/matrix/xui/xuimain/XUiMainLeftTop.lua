@@ -24,10 +24,6 @@ local RedPointConditionGroup = {
     Passport = {
         XRedPointConditions.Types.CONDITION_PASSPORT_RED
     },
-    --战令Comb #203409
-    PassportComb = {
-        XRedPointConditions.Types.CONDITION_PASSPORT_COMB_RED
-    },
     --回归
     Regression = {
         XRedPointConditions.Types.CONDITION_REGRESSION
@@ -87,8 +83,6 @@ function XUiMainLeftTop:OnStart(rootUi)
     --Filter
     self:CheckFilterFunctions()
 
-    self.CombBp = CS.XGame.ClientConfig:GetInt("IsCombBP") == 1
-
     ---@type XUiPanelMainLeftTopActivityBtns
     self._PanelActivityBtns = XUiPanelMainLeftTopActivityBtns.New(self.PanelActivityBtn, self, self.RootUi)
     self._PanelActivityBtns:Open()
@@ -133,13 +127,8 @@ function XUiMainLeftTop:OnEnable()
     self._PanelActivityBtns:CheckActivityBtnTimerStart()
 end
 
--- #203409
 function XUiMainLeftTop:BindPassport()
-    if not self.CombBp then
-        self:AddRedPointEvent(self.BtnPassport.ReddotObj, self.OnCheckPassportRedPoint, self, RedPointConditionGroup.Passport)
-    else
-        self:AddRedPointEvent(self.BtnPassport.ReddotObj, self.OnCheckPassportRedPoint, self, RedPointConditionGroup.PassportComb)
-    end
+    self:AddRedPointEvent(self.BtnPassport.ReddotObj, self.OnCheckPassportRedPoint, self, RedPointConditionGroup.Passport)
 end
 
 function XUiMainLeftTop:OnDisable()
@@ -178,8 +167,7 @@ end
 
 --通行证入口
 function XUiMainLeftTop:OnBtnPassportClick()
-    -- #203409
-    local functionName = not self.CombBp and XFunctionManager.FunctionName.Passport or XFunctionManager.FunctionName.PassportComb
+    local functionName = XFunctionManager.FunctionName.Passport
     if not XFunctionManager.DetectionFunction(functionName) then
         return
     end
@@ -188,7 +176,7 @@ function XUiMainLeftTop:OnBtnPassportClick()
         return
     end
     XUiHelper.RecordBuriedSpotTypeLevelOne(XGlobalVar.BtnBuriedSpotTypeLevelOne.BtnUiMainBtnPassport)
-    XUiHelper.OpenPassport()
+    XLuaUiManager.Open("UiPassport")
 end
 
 --@region 更新等级经验等
@@ -231,8 +219,7 @@ end
 --region   ------------------通行证 start-------------------
 
 function XUiMainLeftTop:UpdatePassportLeftTime()
-    -- #203409
-    local mvca = not self.CombBp and XMVCA.XPassport or XMVCA.XPassportComb
+    local mvca = XMVCA.XPassport
 
     local timeId = mvca:GetPassportActivityTimeId()
     if XFunctionManager.CheckInTimeByTimeId(timeId) then
@@ -253,9 +240,8 @@ function XUiMainLeftTop:StopPassportTimer()
 end
 
 function XUiMainLeftTop:OnPassportOpenStatusUpdate()
-    -- #203409
-    local mvca = not self.CombBp and XMVCA.XPassport or XMVCA.XPassportComb
-    local functionName = not self.CombBp and XFunctionManager.FunctionName.Passport or XFunctionManager.FunctionName.PassportComb
+    local mvca = XMVCA.XPassport
+    local functionName = XFunctionManager.FunctionName.Passport
     local bpClosed = mvca:IsActivityClose() or not XFunctionManager.DetectionFunction(functionName, false, true)
     -- 功能未开启时，隐藏通行证按钮
     if bpClosed or XUiManager.IsHideFunc then

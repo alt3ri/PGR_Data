@@ -26,11 +26,11 @@ function XBigWorldBackpackAgency:CheckHasNotRecord()
     for _, config in pairs(configs) do
         if not config.IsTabHide then
             if config.TagType == XEnumConst.BWBackpack.ItemType.Quest then
-                local questItemIds = XMVCA.XBigWorldService:GetAllQuestItemIdList()
+                local questItemsMap = XMVCA.XBigWorldService:GetQuestItemMap()
 
-                if not XTool.IsTableEmpty(questItemIds) then
-                    for _, itemId in pairs(questItemIds) do
-                        if not self._Model:CheckItemIsRecord(itemId) then
+                if not XTool.IsTableEmpty(questItemsMap) then
+                    for itemId, count in pairs(questItemsMap) do
+                        if count > 0 and not self._Model:CheckItemIsRecord(itemId) then
                             return true
                         end
                     end

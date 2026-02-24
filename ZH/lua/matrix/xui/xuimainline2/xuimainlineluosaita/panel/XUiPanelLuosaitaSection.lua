@@ -22,6 +22,8 @@ function XUiPanelLuosaitaSection:OnStart(sectionId)
     self._GridBlocks = {}
     self._GridPositions = {}
     self.FOCUS_SPEED = self._Control:GetConfig():GetConfigNumber("FocusSpeed", 1)
+    
+    self:InitDragArea()
     self:InitPositions()
     self:RegisterUiEvents()
     self:LoadSectionLoopAnim()
@@ -37,6 +39,10 @@ function XUiPanelLuosaitaSection:OnStart(sectionId)
         -- 刷新界面
         self:Refresh(false)
     end
+end
+
+function XUiPanelLuosaitaSection:OnEnable()
+    self:UpdateAreaDragEnable()
 end
 
 function XUiPanelLuosaitaSection:OnDestroy()
@@ -70,6 +76,7 @@ function XUiPanelLuosaitaSection:Refresh(isCheckSwitchSection, checkWaitTime)
     self:RefreshBlocks()
     self:RefreshPositions()
     self:RefreshSkyGardenButton()
+    self:UpdateAreaDragEnable()
 
     if checkWaitTime and checkWaitTime > 0 then
         self:RemoveAnimWaitTimer()
@@ -123,6 +130,12 @@ function XUiPanelLuosaitaSection:RefreshBlocks()
         gridBlock:Refresh(blockInfo)
         :: CONTINUE ::
     end
+end
+
+-- 初始化拖拽缩放组件设置
+function XUiPanelLuosaitaSection:InitDragArea()
+    self.PanelAreaScaleDrag.MaxScale = XMVCA.XMainLineLuosaita.EnumConst.MAX_SCALE
+    self.PanelAreaScaleDrag.MinScale = XMVCA.XMainLineLuosaita.EnumConst.MIN_SCALE
 end
 
 -- 初始化点位
@@ -283,8 +296,7 @@ function XUiPanelLuosaitaSection:PlayCharacterMove(startPosId, endPosId, time)
         self.CharacterMoveNode.transform:DOLocalMove(moveAimPos, time):SetEase(CSTween.Ease.OutQuad):OnComplete(function()
             XLuaUiManager.SetMask(false)
             self.IsMapMoving = false
-            local isTopUi = XLuaUiManager.GetTopUiName() == "UiMainLineLuosaitaMain"
-            self:SetAreaDragEnable(isTopUi)
+            self:UpdateAreaDragEnable()
             
             startGrid:ShowMovingEffect(false)
             startGrid:Close()
@@ -353,7 +365,9 @@ function XUiPanelLuosaitaSection:CheckPlaySectionEnableAnim()
             self.ActivatedAnimDic[i] = true
             self:FocusWithUiNodeName(uiNodeName, true, function()
                 if not string.IsNilOrEmpty(enableAnim) then
+                    self:SetAreaDragEnable(false)
                     self:PlayAnimationWithMask(enableAnim, function()
+                        self:UpdateAreaDragEnable()
                         self:Refresh()
                     end)
                 end
@@ -627,8 +641,7 @@ function XUiPanelLuosaitaSection:FocusWithTargetPos(targetPos, isAnim, cb)
     target.transform:DOLocalMove(focusPos, animTime):OnComplete(function()
         XLuaUiManager.SetMask(false)
         self.IsMapMoving = false
-        local isTopUi = XLuaUiManager.GetTopUiName() == "UiMainLineLuosaitaMain"
-        self:SetAreaDragEnable(isTopUi)
+        self:UpdateAreaDragEnable()
         if cb then cb() end
     end)
 end
@@ -643,6 +656,12 @@ end
 
 function XUiPanelLuosaitaSection:IsDragOperation()
     return self.PanelAreaScaleDrag.DragTranslate.IsFingerDrag
+end
+
+-- 更新拖拽组件是否启用
+function XUiPanelLuosaitaSection:UpdateAreaDragEnable()
+    local isTopUi = XLuaUiManager.GetTopUiName() == "UiMainLineLuosaitaMain"
+    self:SetAreaDragEnable(isTopUi)
 end
 
 -- 设置拖拽组件是否启用

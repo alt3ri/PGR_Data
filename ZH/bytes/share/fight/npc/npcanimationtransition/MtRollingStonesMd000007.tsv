@@ -1,0 +1,105 @@
+Role	Layer	State	Target	TransitionDuration
+MtRollingStonesMd000007			Born	
+MtRollingStonesMd000007			Stand1	0.1
+MtRollingStonesMd000007			Stand2	0.1
+MtRollingStonesMd000007			Stand3	0.1
+MtRollingStonesMd000007			Death	0.1
+MtRollingStonesMd000007			Standchange	0.1
+MtRollingStonesMd000007			Run	0.1
+MtRollingStonesMd000007			Walk	0.1
+MtRollingStonesMd000007			Runb	0.2
+MtRollingStonesMd000007			Runl	0.2
+MtRollingStonesMd000007			Runr	0.2
+MtRollingStonesMd000007			Walkb	0.1
+MtRollingStonesMd000007			Walkl	0.1
+MtRollingStonesMd000007			Walkr	0.1
+MtRollingStonesMd000007			TurnLeft	0.1
+MtRollingStonesMd000007			TurnRight	0.1
+MtRollingStonesMd000007			Move1	0.1
+MtRollingStonesMd000007			Move2	0.1
+MtRollingStonesMd000007			Move3	0.1
+MtRollingStonesMd000007			RunStart	0.1
+MtRollingStonesMd000007			RunStartEnd01	0.1
+MtRollingStonesMd000007			Hit1	0.05
+MtRollingStonesMd000007			Hit2	0.05
+MtRollingStonesMd000007			Hit3	0.05
+MtRollingStonesMd000007			Hit4	0.05
+MtRollingStonesMd000007			Behitfly	0.05
+MtRollingStonesMd000007			Hoverhit	0.05
+MtRollingStonesMd000007			Falldown	0.1
+MtRollingStonesMd000007			Hitdown	0.05
+MtRollingStonesMd000007			Lieonfloor	0.1
+MtRollingStonesMd000007			Standup	0.1
+MtRollingStonesMd000007			Straight	0.1
+MtRollingStonesMd000007			Stun	0.1
+MtRollingStonesMd000007			StraightBefore	0.1
+MtRollingStonesMd000007			StraightAfter	0.1
+MtRollingStonesMd000007			Win	
+MtRollingStonesMd000007			Win2	0.1
+MtRollingStonesMd000007			Stop	0.1
+MtRollingStonesMd000007			Fail	0.1
+MtRollingStonesMd000007			Save	0.1
+MtRollingStonesMd000007			Caught	0.1
+MtRollingStonesMd000007			RunStartEnd02	0.1
+MtRollingStonesMd000007			StopR	0.1
+MtRollingStonesMd000007			Attack01	0.1
+MtRollingStonesMd000007		Stand1	Run	0.2
+MtRollingStonesMd000007		Stand1	Walk	0.1
+MtRollingStonesMd000007		Stand2	Standchange	0.1
+MtRollingStonesMd000007		Stand2	Run	0.2
+MtRollingStonesMd000007		Stand2	Walk	0.3
+MtRollingStonesMd000007		Stand2	Walkb	0.3
+MtRollingStonesMd000007		Stand2	Walkl	0.3
+MtRollingStonesMd000007		Stand2	Walkr	0.3
+MtRollingStonesMd000007		Standchange	Stand1	0.1
+MtRollingStonesMd000007		Standchange	Run	0.1
+MtRollingStonesMd000007		Standchange	Walk	0.1
+MtRollingStonesMd000007		Run	Stop	0.2
+MtRollingStonesMd000007		Run	Stand2	0.2
+MtRollingStonesMd000007		Run	Runb	0.2
+MtRollingStonesMd000007		Run	Runl	0.2
+MtRollingStonesMd000007		Run	Runr	0.2
+MtRollingStonesMd000007		Walk	Stand2	0.1
+MtRollingStonesMd000007		Runb	Stand2	0.2
+MtRollingStonesMd000007		Runb	Run	0.2
+MtRollingStonesMd000007		Runb	Runl	0.2
+MtRollingStonesMd000007		Runb	Runr	0.2
+MtRollingStonesMd000007		Runl	Stand2	0.2
+MtRollingStonesMd000007		Runl	Run	0.2
+MtRollingStonesMd000007		Runl	Runb	0.2
+MtRollingStonesMd000007		Runl	Runr	0.2
+MtRollingStonesMd000007		Runr	Stand2	0.2
+MtRollingStonesMd000007		Runr	Run	0.2
+MtRollingStonesMd000007		Runr	Runb	0.2
+MtRollingStonesMd000007		Runr	Runl	0.2
+MtRollingStonesMd000007		Walkb	Stand2	0.1
+MtRollingStonesMd000007		Walkb	Walk	0.2
+MtRollingStonesMd000007		Walkb	Walkl	0.1
+MtRollingStonesMd000007		Walkb	Walkr	0.1
+MtRollingStonesMd000007		Walkl	Stand2	0.1
+MtRollingStonesMd000007		Walkl	Walk	0.1
+MtRollingStonesMd000007		Walkl	Walkb	0.1
+MtRollingStonesMd000007		Walkl	Walkr	0.2
+MtRollingStonesMd000007		Walkr	Stand2	0.1
+MtRollingStonesMd000007		Walkr	Walk	0.1
+MtRollingStonesMd000007		Walkr	Walkb	0.1
+MtRollingStonesMd000007		Walkr	Walkl	0.2
+MtRollingStonesMd000007		TurnLeft	Stand2	0.1
+MtRollingStonesMd000007		TurnRight	Stand2	0.1
+MtRollingStonesMd000007		RunStart	Run	0.1
+MtRollingStonesMd000007		RunStart	RunStartEnd01	0.1
+MtRollingStonesMd000007		Hit1	Stand2	
+MtRollingStonesMd000007		Hit2	Stand2	
+MtRollingStonesMd000007		Hit3	Stand2	
+MtRollingStonesMd000007		Hit4	Stand2	
+MtRollingStonesMd000007		Behitfly	Hoverhit	0.1
+MtRollingStonesMd000007		Behitfly	Falldown	0.1
+MtRollingStonesMd000007		Hoverhit	Falldown	0.1
+MtRollingStonesMd000007		Falldown	Lieonfloor	0.1
+MtRollingStonesMd000007		Hitdown	Lieonfloor	0.1
+MtRollingStonesMd000007		Standup	Stand2	0.1
+MtRollingStonesMd000007		Straight	Stand2	0.1
+MtRollingStonesMd000007		Stun	Stand2	0.1
+MtRollingStonesMd000007		Win	Win2	0.1
+MtRollingStonesMd000007		Stop	Stand2	0.1
+MtRollingStonesMd000007		Caught	Stand2	0.1

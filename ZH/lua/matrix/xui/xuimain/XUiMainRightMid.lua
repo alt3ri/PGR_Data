@@ -65,6 +65,7 @@ local RedPointConditionGroup = {
         XRedPointConditions.Types.CONDITION_GUILD_SIGN_REWARD,
         XRedPointConditions.Types.CONDITION_PARTNER_COMPOSE_RED,
         XRedPointConditions.Types.CONDITION_PARTNER_NEWSKILL_RED,
+        XRedPointConditions.Types.CONDITION_MAIN_STORE,
         -- XRedPointConditions.Types.CONDITION_ITEM_COLLECTION_ENTRANCE,
     },
 }
@@ -155,7 +156,10 @@ function XUiMainRightMid:OnEnable()
         if XFunctionManager.JudgeOpen(XFunctionManager.FunctionName.DrawCard) then
             XDataCenter.DrawManager.GetDrawGroupList(function()
                 self:AddRedPointEvent(self.BtnReward, self.OnCheckDrawFreeTicketTag, self, { XRedPointConditions.Types.CONDITION_DRAW_FREE_TAG })
-                self:AddRedPointEvent(self.BtnReward.ReddotObj, self.OnCheckARewardNews, self, { XRedPointConditions.Types.CONDITION_DEVILMAYCRY_CAN_RECEIVE_CHARACTER })
+                self:AddRedPointEvent(self.BtnReward.ReddotObj, self.OnCheckARewardNews, self, { 
+                    XRedPointConditions.Types.CONDITION_DEVILMAYCRY_CAN_RECEIVE_CHARACTER,
+                    XRedPointConditions.Types.CONDITION_DRAW_CAN_LIVER_JOURNEY_REWARD 
+                })
             end)
         end
     else
@@ -187,6 +191,7 @@ function XUiMainRightMid:CheckRedPoint()
     self:AddRedPointEvent(self.BtnRecharge.ReddotObj, self.OnCheckRechargeNews, self, RedPointConditionGroup.Recharge)
 
     self:AddRedPointEvent(self.BtnBag, self.OnCheckBagNews, self, RedPointConditionGroup.Bag)
+    self:AddRedPointEvent(self.BtnStore, self.OnCheckStoreBlueDot, self, { XRedPointConditions.Types.CONDITION_MAIN_STORE })
 
     self:AddRedPointEvent(self.BtnOpen, self.OnCheckOpenRedPoint, self, RedPointConditionGroup.Open)
 end
@@ -659,14 +664,23 @@ end
 
 --商店入口
 function XUiMainRightMid:OnBtnStore()
-    if XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.ShopCommon)
-            or XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.ShopActive) then
+    if XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.ShopCommon)or XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.ShopActive) then
         XUiHelper.RecordBuriedSpotTypeLevelOne(XGlobalVar.BtnBuriedSpotTypeLevelOne.BtnUiMainBtnStore)
         XLuaUiManager.Open("UiShop", XShopManager.ShopType.Common)
         
         -- 消除首次蓝点
         XPlayerManager.RequestRecordPlayerPoint(XFunctionConfig.FunctionalShowId.UiMainBtnStore, XFunctionConfig.RedPointType.NewbieFirstShow)
+
+        -- 消除更新蓝点
+        if XSaveTool.GetData("IsUiMainBtnStoreBlue"..XPlayer.Id) == 1 then
+            XSaveTool.SaveData("IsUiMainBtnStoreBlue"..XPlayer.Id, 0)
+            self.BtnStore:ShowReddot(false)
+        end
     end
+end
+
+function XUiMainRightMid:OnCheckStoreBlueDot(count)
+    self.BtnStore:ShowReddot(count >= 0)
 end
 
 --商店开启状态

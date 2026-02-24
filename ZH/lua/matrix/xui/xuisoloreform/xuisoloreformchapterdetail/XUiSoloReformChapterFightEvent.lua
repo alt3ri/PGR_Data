@@ -37,8 +37,10 @@ function XUiSoloReformChapterFightEvent:InitStrengthList()
     -- if XTool.IsTableEmpty(stageCfg.FightEventIds) then
     --     return
     -- end
-    XTool.UpdateDynamicItem(self._StrengthCellList, fightEventIds, self.GridReform, XUiSoloReformChapterStrengthItem, self)
-    self:OnClickStrength(fightEventIds[1]) --默认选第一个
+    if self.GridReform then
+        XTool.UpdateDynamicItem(self._StrengthCellList, fightEventIds, self.GridReform, XUiSoloReformChapterStrengthItem, self)
+        self:OnClickStrength(fightEventIds[1]) --默认选第一个
+    end
 end
 
 function XUiSoloReformChapterFightEvent:GetChapterId()
@@ -71,10 +73,14 @@ function XUiSoloReformChapterFightEvent:RefreshFightEventInfo(fightEventId)
     local chapterId = self:GetChapterId()
     local passDifficulty = self._Control:GetChapterPassDifficulty(chapterId)
     local isUnlock = fightEventCfg.UnlockDiff <= passDifficulty
-    self.PanelOn.gameObject:SetActiveEx(isUnlock)
-    self.PanelOff.gameObject:SetActiveEx(not isUnlock)
+    if self.PanelOn then
+        self.PanelOn.gameObject:SetActiveEx(isUnlock)
+    end
+    if self.PanelOff then
+        self.PanelOff.gameObject:SetActiveEx(not isUnlock)
+    end
     local chapterCfg = self._Control:GetSoloReformChapterCfg(chapterId)
-    for _, stageId in pairs(chapterCfg.ChapterStageId) do
+    for _, stageId in pairs(chapterCfg.ChapterStageIds) do
         local stageCfg = self._Control:GetSoloReformStageCfg(stageId)
         if stageCfg.Difficulty == fightEventCfg.UnlockDiff then
             local battleStageCfg = XMVCA.XFuben:GetStageCfg(stageId)

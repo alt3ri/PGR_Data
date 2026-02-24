@@ -612,10 +612,8 @@ function XLevelScript9001:OnUpdatePhase(dt)
                         self._proxy:AbortAction(self._localNpc,true)
                     end)
                     self._timer:Schedule(1.64, self, function()
-                        self._proxy:AbortAction(self.monster_UUID,true)--打断白龙动作
-                        self._proxy:CastMultiParry(self.monster_UUID, self._localNpc, 800501) --强制两人拼刀
+                        self._proxy:CastSkillActionToNpcNotCheck(self._localNpc,1051081,self.monster_UUID)      --拼刀技能
                         self._proxy:RemoveBuff(self.monster_UUID,8005906)                   --移除怪物的霸体
-                        self._proxy:ApplyMagic(self.monster_UUID,self.monster_UUID,8005907)                   --移除怪物的霸体
                     end)
                     self._timer:Schedule(2.7, self, function()
                         self._proxy:SetNpcPosition(self.NpcNanami,{x=self._proxy:GetNpcPosition(self._localNpc).x,y=5,z=self._proxy:GetNpcPosition(self._localNpc).z}) --传送nanami

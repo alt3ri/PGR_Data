@@ -9,6 +9,10 @@ function XUiSoloReformChapterItem:OnStart()
     XUiHelper.RegisterClickEvent(self, self.BtnGridChapter, self.OnClickChapter, true, true, 0.5)
 end
 
+function XUiSoloReformChapterItem:GetColor()
+    return "#6AC5FA"
+end
+
 function XUiSoloReformChapterItem:Update(chapterCfg)
     self._ChapterCfg = chapterCfg
     self.BtnGridChapter:SetNameByGroup(0, chapterCfg.Title)
@@ -17,7 +21,7 @@ function XUiSoloReformChapterItem:Update(chapterCfg)
     local completedCount, totalCount = self._Control:GetChapterCompletedTaskCountAndTotal(chapterCfg.Id)
     local isAllPass = totalCount > 0 and completedCount == totalCount
     
-    self.BtnGridChapter:SetNameByGroup(1, string.format("<color=#6BE6FF>%d</color>/%d", completedCount, totalCount))
+    self.BtnGridChapter:SetNameByGroup(1, string.format("<color=%s>%d</color>/%d", self:GetColor(), completedCount, totalCount))
     local minPassTime = self._Control:GetChapterStageMinPassTime(chapterCfg.Id)
     if not string.IsNilOrEmpty(minPassTime) then
         self.BtnGridChapter:SetNameByGroup(2, minPassTime)

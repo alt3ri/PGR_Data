@@ -112,11 +112,6 @@ XFubenActivityBossSingleManagerCreator = function()
         return SectionId
     end
 
-    -- #203409 需要增加一个能够设置secionId的接口
-    function XFubenActivityBossSingleManager.SetCurSectionId(sectionId)
-        SectionId = sectionId
-    end
-
     function XFubenActivityBossSingleManager.GetFinishCount()
         return Schedule
     end
@@ -167,11 +162,6 @@ XFubenActivityBossSingleManagerCreator = function()
     --获取当前活动Id
     function XFubenActivityBossSingleManager.GetCurActivityId()
         return CurActivityId
-    end
-
-    -- #203409 需要增加一个能够设置activityId的接口
-    function XFubenActivityBossSingleManager.SetCurActivityId(activityId)
-        CurActivityId = activityId
     end
 
     --根据关卡个数获得总星数
@@ -388,7 +378,6 @@ XFubenActivityBossSingleManagerCreator = function()
     -- 读取本地编队信息
     function XFubenActivityBossSingleManager.LoadTeamLocal()
         local teamId = GetCookieKeyTeam()
-        -- #203409 抽象了该方法, 到时候不是非要删除
         local currentTeam = XFubenActivityBossSingleManager.GetCurrentTeam(teamId)
         local ids = currentTeam:GetEntityIds()
         local tmpIds = XTool.Clone(ids)
@@ -402,7 +391,6 @@ XFubenActivityBossSingleManagerCreator = function()
         return CurrentTeam
     end
     
-    -- #203409 供分类覆写
     function XFubenActivityBossSingleManager.GetCurrentTeam(teamId)
         if not CurrentTeam then
             CurrentTeam = XTeam.New(teamId)
@@ -540,18 +528,6 @@ XFubenActivityBossSingleManagerCreator = function()
         
         return false
     end
-
-    -- region
-    -- #203409 跨版本代码 这两个变量是local的 无法被Partial脚本操作
-    function XFubenActivityBossSingleManager.SetCurSectionId(sectionId)
-        SectionId = sectionId
-    end
-
-    function XFubenActivityBossSingleManager.SetCurActivityId(activityId)
-        CurActivityId = activityId
-    end
-
-    -- endregion
 
     return XFubenActivityBossSingleManager
 end

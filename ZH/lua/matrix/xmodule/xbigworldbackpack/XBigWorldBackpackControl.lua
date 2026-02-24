@@ -136,10 +136,9 @@ end
 
 function XBigWorldBackpackControl:_GetQuestItems()
     local result = {}
-    local questItemIds = XMVCA.XBigWorldService:GetAllQuestItemIdList()
+    local questItemMap = XMVCA.XBigWorldService:GetQuestItemMap()
 
-    for _, itemId in pairs(questItemIds) do
-        local count = XMVCA.XBigWorldService:GetQuestItemCount(itemId)
+    for itemId, count in pairs(questItemMap) do
         if count > 0 then
             table.insert(result, {
                 TemplateId = itemId,

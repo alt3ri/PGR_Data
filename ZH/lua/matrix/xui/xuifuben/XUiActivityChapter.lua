@@ -23,8 +23,6 @@ end
 function XUiGridActivity:SetManager(data)
     self.RImgIcon:SetRawImage(data:ExGetIcon())
     self.TxtName.text = data:ExGetName()
-    -- #203409 抽象该方法
-    -- self.TxtConsumeCount.text = data:ExGetProgressTip()
     self:SetTxtConsumeCount(data)
     self.PanelLock.gameObject:SetActiveEx(data:ExGetIsLocked())
     self.TxtLock.text = data:ExGetLockTip()
@@ -34,21 +32,7 @@ function XUiGridActivity:SetManager(data)
 end
 
 function XUiGridActivity:SetTxtConsumeCount(data)
-    -- #203409
-    -- 因为是local变量 因此无法被外界获取也就无法重写
-    if XDataCenter.CrossVersionManager.GetEnable() then
-        if data.ExConfig and data.ExConfig.SkipId then
-            local skipConfig = XFunctionConfig.GetSkipFuncCfg(data.ExConfig.SkipId)
-            if skipConfig then
-                self.teachId = skipConfig.CustomParams[1]
-            end
-        end
-        self.TxtConsumeCount.text = data:ExGetProgressTip(self.teachId)
-    else
-		-- 原文start
-        self.TxtConsumeCount.text = data:ExGetProgressTip()
-        -- 原文end
-    end
+    self.TxtConsumeCount.text = data:ExGetProgressTip()
 end
 
 function XUiGridActivity:SetChapter(data)
@@ -93,11 +77,7 @@ function XUiGridActivity:RefreshProgressTips()
 end
 
 function XUiGridActivity:ExGetProgressTip()
-    if XDataCenter.CrossVersionManager.GetEnable() then
-        return self.Data:ExGetProgressTip(self.teachId)
-    else
-        return self.Data:ExGetProgressTip()
-    end
+    return self.Data:ExGetProgressTip()
 end
 
 function XUiGridActivity:IsActivityEnd()

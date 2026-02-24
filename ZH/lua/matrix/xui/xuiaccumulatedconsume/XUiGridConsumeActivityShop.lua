@@ -1,4 +1,4 @@
-local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XUiGridConsumeActivityShop = XClass(nil,"XUiGridConsumeActivityShop")
 local BuyCount = 1
 function XUiGridConsumeActivityShop:Ctor(ui)
@@ -71,6 +71,19 @@ function XUiGridConsumeActivityShop:RefreshCommon()
                     local rewardGoodList = XRewardManager.GetRewardList(data.GiftRewardId)
                     XUiManager.OpenUiObtain(rewardGoodList)
                 end
+            end)
+            self.Parent:RefreshBuy()
+        end)
+    end
+    data.GroupBuyCallBack = function(fashionGroupId)
+        XMVCA.XFashionSuit:ShopBuyFashionGroup(fashionGroupId, function(goodList)
+            self:RefreshSellOut()
+            self:RefreshBuyCount()
+            self:RefreshPrice()
+
+            local text = CS.XTextManager.GetText("BuySuccess")
+            XUiManager.TipMsg(text, nil, function()
+                XUiManager.OpenUiObtain(goodList)
             end)
             self.Parent:RefreshBuy()
         end)

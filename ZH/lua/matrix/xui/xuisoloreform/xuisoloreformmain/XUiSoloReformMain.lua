@@ -2,6 +2,7 @@
 ---@field private _Control XSoloReformControl
 local XUiSoloReformMain = XLuaUiManager.Register(XLuaUi, 'UiSoloReformMain')
 local XUiSoloReformChapterItem = require("XUi/XUiSoloReform/XUiSoloReformMain/XUiSoloReformChapterItem")
+local XUiSoloReformChapterKillItem = require("XUi/XUiSoloReform/XUiSoloReformMain/XUiSoloReformChapterKillItem")
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 
 function XUiSoloReformMain:OnAwake()
@@ -10,7 +11,8 @@ function XUiSoloReformMain:OnAwake()
     self:RegisterClickEvent(self.BtnBack, self.OnclickClose, true)
     self:RegisterClickEvent(self.BtnMainUi, self.OnReturnMain, true)
     self:RegisterClickEvent(self.BtnTask, self.OnClickTask, true)
-    self:BindHelpBtn(self.BtnHelp, self._Control:GetHelpString())
+    -- self:BindHelpBtn(self.BtnHelp, self._Control:GetHelpString())
+    self.BtnHelp.gameObject:SetActiveEx(false)
 end
 
 function XUiSoloReformMain:OnStart()
@@ -20,6 +22,7 @@ end
 function XUiSoloReformMain:OnEnable()
     XMVCA.XFunction:EnterFunction(XFunctionManager.FunctionName.SoloReform)
     self._Control:AddEventListener(XMVCA.XSoloReform.EventId.EVENT_CLICK_CHAPTER, self.OnClickChapter, self)
+    self._Control:AddEventListener(XMVCA.XSoloReform.EventId.EVENT_CLICK_KILL_CHAPTER, self.OnClickKillChapter, self)
     self._Control:AddEventListener(XMVCA.XSoloReform.EventId.EVENT_GAIN_TASK_REWARD, self.OnGainTaskReward, self)
     self:UpdateChapterList()
     self:RefreshActivityTime()
@@ -31,6 +34,7 @@ end
 
 function XUiSoloReformMain:OnDisable()
     self._Control:RemoveEventListener(XMVCA.XSoloReform.EventId.EVENT_CLICK_CHAPTER, self.OnClickChapter, self)
+    self._Control:RemoveEventListener(XMVCA.XSoloReform.EventId.EVENT_CLICK_KILL_CHAPTER, self.OnClickKillChapter, self)
     self._Control:RemoveEventListener(XMVCA.XSoloReform.EventId.EVENT_GAIN_TASK_REWARD, self.OnGainTaskReward, self)
     self:StopTimer()
     self._Control:StopActivityEndCheckTimer()
@@ -38,7 +42,7 @@ end
 
 function XUiSoloReformMain:InitReddot()
     self._TaskReddotId = self:AddRedPointEvent(self.BtnTask, self.OnTaskReddotEvent, self, 
-        { XRedPointConditions.Types.CONDITION_SOLO_REFORM_TASK }, nil, false)
+        { XRedPointConditions.Types.CONDITION_SOLO_REFORM_TASK, XRedPointConditions.Types.CONDITION_SOLO_REFORM_CHALLENGE_TASK}, nil, false)
 end
 
 function XUiSoloReformMain:OnTaskReddotEvent(count)
@@ -82,7 +86,11 @@ function XUiSoloReformMain:UpdateChapterList()
         local cell = self._ChapterCellList[i]
         if not cell then
             local go = self.PanelChapter.transform:GetChild(i - 1).gameObject
-            cell = XUiSoloReformChapterItem.New(go, self)
+            if i == 1 then
+                cell = XUiSoloReformChapterKillItem.New(go, self)
+            else
+                cell = XUiSoloReformChapterItem.New(go, self)
+            end
             self._ChapterCellList[i] = cell
         end
         if showChapterList[i] then
@@ -108,7 +116,7 @@ end
 
 function XUiSoloReformMain:RefreshTaskProcess()
    local completedCount, totalCount = self._Control:GetCompletedTaskCountAndTotal()
-   self.TxtTaskNum.text = string.format("<color=#6BE6FF>%d</color>/%d", completedCount, totalCount)
+   self.TxtTaskNum.text = string.format("<color=#6AC5FA>%d</color>/%d", completedCount, totalCount)
    local process = 0
    if totalCount > 0 then
         process = completedCount/totalCount
@@ -122,28 +130,27 @@ function XUiSoloReformMain:OnClickChapter(chapterId)
     end)
 end
 
+function XUiSoloReformMain:OnClickKillChapter(chapterId)
+    self:PlayAnimationWithMask("Entry", function()
+        self:ClickKillChapter(chapterId)
+    end)
+end
+
 function XUiSoloReformMain:OnGainTaskReward()
     self:RefreshReddot()
 end
 
 function XUiSoloReformMain:ClickChapter(chapterId)
-    XLuaUiManager.OpenWithCallback("UiSoloReformChapterDetail", function()
-        self:AutoOpenTeachingMessage(chapterId)
-    end, chapterId)
+    XLuaUiManager.Open("UiSoloReformChapterDetail", chapterId)
     self._Control:MarkLocalChapterReddot(chapterId)
 end
 
-function XUiSoloReformMain:AutoOpenTeachingMessage(chapterId)
-    local robotId = self._Control:GetChapterRobotId(chapterId)
-    --XDataCenter.PracticeManager.ShowTeachDialogHintTip(characterId, nil, handler(self, self.OnTeaching))
-    XDataCenter.PracticeManager.OnJoinTeam(robotId, function()
-        XDataCenter.PracticeManager.OpenUiFubenPractice(robotId, true)
-    end, handler(self, self.CancelTeachingMessage))
+function XUiSoloReformMain:ClickKillChapter(chapterId)
+    XLuaUiManager.Open("UiSoloReformKillChapterDetail", chapterId)
+    self._Control:MarkLocalChapterReddot(chapterId)
 end
 
-function XUiSoloReformMain:CancelTeachingMessage()
-    
-end
+
 
 function XUiSoloReformMain:StopTimer()
     if self._TimerId then

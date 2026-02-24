@@ -72,8 +72,12 @@ function XMovieConfigs.Init()
     IsLoadMovieSkipSummary = false
 end
 
+local function GetMoviePath(movieId)
+    return stringFormat(TABLE_MOVIE_PATH_PREFIX, movieId)
+end
+
 local function InitMovieTemplate(movieId)
-    local path = stringFormat(TABLE_MOVIE_PATH_PREFIX, movieId)
+    local path = GetMoviePath(movieId)
     MovieTemplates[movieId] = XTableManager.ReadByIntKey(path, XTable.XTableMovieNew, "Id")
 end
 
@@ -96,6 +100,12 @@ function XMovieConfigs.GetMovieCfg(movieId)
 end
 
 function XMovieConfigs.DeleteMovieCfgs()
+    if MovieTemplates then
+        for movieId, _ in pairs(MovieTemplates) do
+            local path = GetMoviePath(movieId)
+            XTableManager.ReleaseTable(path)
+        end
+    end
     MovieTemplates = {}
 end
 
@@ -115,6 +125,15 @@ function XMovieConfigs.GetActorFacePosVector2(actorId)
         return
     end
     return vector(config.FacePosX, config.FacePosY)
+end
+
+function XMovieConfigs.GetActorAvatarPosVector3(actorId)
+    local config = MovieActorTemplates[actorId]
+    if not config then
+        XLog.ErrorTableDataNotFound("XMovieConfigs.GetActorFacePosVector2", "MovieActor", TABLE_MOVIE_ACTOR_PATH, "actorId", tostring(actorId))
+        return
+    end
+    return XLuaVector3.New(config.AvatarPosX, config.AvatarPosY, config.AvatarPosZ)
 end
 
 function XMovieConfigs.GetActorFaceImgPath(actorId, faceId)

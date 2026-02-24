@@ -478,15 +478,8 @@ function XBigWorldServiceAgency:InitQuestItemMap(map)
     self._Model:InitQuestItemMap(map)
 end
 
-function XBigWorldServiceAgency:GetAllQuestItemIdList()
-    local questItemMap = self._Model:GetQuestItemMap()
-    local result = {}
-
-    for id, _ in pairs(questItemMap) do
-        table.insert(result, id)
-    end
-
-    return result
+function XBigWorldServiceAgency:GetQuestItemMap()
+    return self._Model:GetQuestItemMap()
 end
 
 function XBigWorldServiceAgency:GetQuestItemCount(itemId)

@@ -176,49 +176,24 @@ function XMovieAgency:ExtractGenderContent(content, specGender)
     else
         gender = XPlayer.GetShowGender()
     end
+    
     if gender == XEnumConst.PLAYER.GENDER_TYPE.MAN then
-        local funcItor = string.gmatch(content, "<W>.-</W>")
-        local result = funcItor()
-        if result then
-            content = string.gsub(content, result, "")
-            local funcItorL = string.gmatch(content, "<T>.-</T>")
-            local resultL = funcItorL()
-            if resultL then
-                content = string.gsub(content, resultL, "")
-            end
-            content = string.gsub(content, "<M>", "")
-            content = string.gsub(content, "</M>", "")
-            return content
-        end
+        content = string.gsub(content, "<[WT]>.-</[WT]>", "")  -- 同时匹配<W>和<T>
+        content = string.gsub(content, "</?M>", "")  -- 匹配<M>和</M>
+        return content
     elseif gender == XEnumConst.PLAYER.GENDER_TYPE.WOMAN then
-        local funcItor = string.gmatch(content, "<M>.-</M>")
-        local result = funcItor()
-        if result then
-            content = string.gsub(content, result, "")
-            local funcItorL = string.gmatch(content, "<T>.-</T>")
-            local resultL = funcItorL()
-            if resultL then
-                content = string.gsub(content, resultL, "")
-            end
-            content = string.gsub(content, "<W>", "")
-            content = string.gsub(content, "</W>", "")
-            return content
-        end
+        content = string.gsub(content, "<[MT]>.-</[MT]>", "")  -- 同时匹配<M>和<T>
+        content = string.gsub(content, "</?W>", "")  -- 匹配<W>和</W>
+        return content
     elseif gender == XEnumConst.PLAYER.GENDER_TYPE.SECRECY then
         local isManOrWoman = string.gmatch(content, "<T>.-</T>")
         if not isManOrWoman() then
-            local result = string.gsub(content, '<W>.-</W>', '')
-            result = string.gsub(result, '<M>', '')
-            result = string.gsub(result, '</M>', '')
-            content = result
+            content = string.gsub(content, '<W>.-</W>', "")
+            content = string.gsub(content, "</?M>", "")  -- 匹配<M>和</M>
         else
-            local result = string.gsub(content, '<M>.-</M>', '')
-            result = string.gsub(result, '<W>.-</W>', '')
-            result = string.gsub(result, '<T>', '')
-            result = string.gsub(result, '</T>', '')
-            content = result
+            content = string.gsub(content, "<[MW]>.-</[MW]>", "")  -- 同时匹配<M>和<W>
+            content = string.gsub(content, "</?T>", "")  -- 匹配<T>和</T>
         end
-      
     end
     return content
 end

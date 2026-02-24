@@ -1,0 +1,608 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1378.jpg'}
+2	2		401							{1: '1', 2: '280'}
+3	3		107							{1: '心理诊所内', 2: '伊利希恩'}
+4	4		309	1					200.0	{2: '伊利希恩，心理诊所内。'}
+5	5		108							{1: '1'}
+6	6		306							{1: '1'}
+7	7		301			DialogEnable				{3: '光线在心理咨询中起着暗示作用，所以诊所无论在白昼还是黑夜，都会点亮经过精心调制的灯光。'}
+8	8		301							{3: '但今天，办公室内的光却暗着。'}
+9	9		201							{1: '1', 2: '501416', 3: '8', 5: '-150'}
+10	10		301				DialogDisable			{1: '1', 3: '约翰仰坐在柔软的座椅上，闭着眼，放任身体沉浸在这片漆黑的美梦。大部分人出于生物的天性，生来喜光——与他这种偏爱黑暗的人截然相反。'}
+11	11		307							{1: '他们这种被称为“影子”的人。', 3: '45'}
+12	12		309	1					200.0	{2: '他们这种被称为“影子”的人。'}
+13	13		307							{2: '1'}
+14	14		204							{1: '1'}
+15	15		301			DialogEnable	DialogDisable			{3: '约翰睁开双眼，看向面前桌上的装饰器皿。'}
+16	16		202						500.0	{1: '1'}
+17	17		104						1500.0	{1: '150|80|-200', 2: '1'}
+18	18		301			DialogEnable				{3: '皿中盛着一方清水，他通常会根据访客的情况，选择不同颜色的染剂放入水中，也是一种别样的心理暗示。'}
+19	19		301				DialogDisable			{3: '各式颜色的染剂中，只有黑色的从未被使用过。'}
+20	20		401						500.0	{1: '2', 2: '10028808'}
+21	21		401							{1: '2', 2: '981'}
+22	22		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLianyi.prefab', 2: '1'}
+23	23		205						800.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '3.8'}
+24	24		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong01.prefab'}
+25	25		401							{1: '2', 2: '4146'}
+26	26		111						2500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab'}
+27	27		301			DialogEnable	AniZhuanchangBegin			{3: '他将崭新的封口启封，毫不犹豫地将黑色染剂倒入。皿中清明不复，在瞬间便染为全黑，与周遭包括他自己，融为一体。'}
+28	28		502							{1: 'DialogDisable'}
+29	29		104							{1: '0|0|0', 2: '0'}
+30	30		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+31	31		205							{1: '999'}
+32	32		111							
+33	33		306						1500.0	
+34	34		502						300.0	{1: 'AniZhuanchangEnd'}
+35	35		401							{1: '2', 2: '5703'}
+36	36		201							{1: '2', 2: '501416', 4: '800'}
+37	37		203						1000.0	{1: '2', 2: '0.5', 3: '600'}
+38	38		401							{1: '2', 2: '5703'}
+39	39		203						1200.0	{1: '2', 2: '0.5', 3: '400'}
+40	40		301			DialogEnable	DialogDisable			{2: '心理医生约翰', 3: '夙愿已结了吗，亚伯？', 4: '2'}
+41	41		201							{1: '15', 2: '501435', 4: '-700'}
+42	42		203						1000.0	{1: '15', 2: '0.5', 3: '-500'}
+43	43		203						1200.0	{1: '15', 2: '0.5', 3: '-300'}
+44	44		301			DialogEnable				{2: '言真？', 3: '闭嘴……真以为你是该隐？', 4: '15'}
+45	45		204							{1: '2', 2: '1'}
+46	46		301							{2: '心理医生约翰', 3: '哈，这可不好说。', 4: '2'}
+47	47		301							{2: '心理医生约翰', 3: '毕竟我们两人之间，或许只能活下来一个。', 4: '2'}
+48	48		301							{2: '言真？', 3: '少贫嘴了，刺杀哈桑失败，该启动备用计划了。', 4: '15'}
+49	49		204							{1: '2', 2: '4'}
+50	50		301							{2: '言真？', 3: '虽然不清楚命运之轮那里为什么对法奥斯感兴趣，但只要不妨碍我们夺取格式塔就行。', 4: '15'}
+51	51		204							{1: '2', 2: '8'}
+52	52		301							{2: '心理医生约翰', 3: '不用你说我也知道该做什么。', 4: '2'}
+53	53		401							{1: '1', 2: '36'}
+54	54		401							{1: '2', 2: '981'}
+55	55		204							{1: '2'}
+56	56		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLianyi.prefab', 2: '1'}
+57	57		301				DialogDisable			{3: '他将指尖侵入水中，沾染黑剂。'}
+58	58		401							{1: '1', 2: '6208'}
+59	59		401							{1: '2', 2: '9380001'}
+60	60		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainScreenRedEx.prefab', 2: '2'}
+61	61		203							{1: '2', 2: '1.5', 3: '300'}
+62	62		203						1700.0	{1: '15', 2: '1.5', 3: '-200'}
+63	63		301			DialogEnable	DialogDisable			{2: '心理医生约翰/言真？', 3: '此后我将再次降生，抛弃残缺丑陋的肉身，世上再无言真。', 4: '2', 5: '15'}
+64	64		401							{1: '2', 2: '6376'}
+65	65		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStrongholdMain/FxUiStrongholdMainFlashing01.prefab', 2: '2'}
+66	66		203							{1: '2', 2: '1.5', 3: '150'}
+67	67		203						1000.0	{1: '15', 2: '1.5', 3: '-50'}
+68	68		501						600.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+69	69		301			DialogEnable	DialogDisable			{3: '数据流与乱码覆盖上他的身体。'}
+70	70		203							{1: '2', 2: '0.25'}
+71	71		203						200.0	{1: '15', 2: '0.25', 3: '100'}
+72	72		401							{1: '2', 2: '4278'}
+73	73		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3MainChangeScreenRed.prefab', 2: '3'}
+74	74		402							{1: '9380001'}
+75	75		402							{1: '6376'}
+76	76		202							{1: '2', 2: '15', 6: '1'}
+77	77		201							{1: '1', 2: '501417', 7: '1'}
+78	78		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainScreenRedEx.prefab'}
+79	79		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStrongholdMain/FxUiStrongholdMainFlashing01.prefab'}
+80	80		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+81	81		301			DialogEnable				{1: '1', 2: '升格者约翰·杜', 3: '只有我，只剩下约翰·杜。', 4: '1'}
+82	82		205							{1: '2', 3: '1', 4: '1', 5: '0'}
+83	83		205							{1: '15', 3: '1', 4: '1', 5: '0'}
+84	84		301				DialogDisable			{2: '升格者约翰·杜', 3: '我是绿眼的妖魔，我是第六罪，我是约翰·杜，我是——', 4: '1'}
+85	85		401							{1: '2', 2: '2595'}
+86	86		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.2'}
+87	87		109							{1: '11', 2: '<color=#34D7C8><size=250>嫉  妒</size></color>', 4: '120', 9: '3', 11: '1'}
+88	88		309	1					400.0	{2: '嫉妒。'}
+89	89		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '1', 4: '0', 5: '0.5'}
+90	90		110						600.0	{1: '11|1'}
+91	91		205						50.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0'}
+92	92		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1372.jpg'}
+93	93		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront119.png', 3: '0', 4: '1', 5: '0'}
+94	94		205							{1: '1006', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront113.png', 3: '0', 4: '1', 5: '0'}
+95	95		401							{1: '2', 2: '4424'}
+96	96		205						50.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '1', 4: '0', 5: '0.6'}
+97	97		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainScreenRedEx.prefab', 2: '1'}
+98	98		104							{1: '-600|0|0', 2: '0.3', 4: '4'}
+99	99		104						1000.0	{1: '600|0|0', 2: '0.3', 4: '6'}
+100	100		301			DialogEnable				{3: '右手在空中轻轻滑动，数据代码撕开空间。'}
+101	101		401							{1: '2', 2: '5703'}
+102	102		203						300.0	{1: '1', 2: '0.5', 5: '-50'}
+103	103		401							{1: '2', 2: '4426'}
+104	104		104							{1: '-1000|0|0', 2: '0.5', 4: '4'}
+105	105		104							{1: '1000|0|0', 2: '0.5', 4: '6'}
+106	106		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront119.png', 3: '1', 4: '0', 5: '0.5'}
+107	107		205						300.0	{1: '1006', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront113.png', 3: '1', 4: '0', 5: '0.5'}
+108	108		505						500.0	{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainScreenRedEx.prefab'}
+109	109		301							{3: '约翰·杜走进空洞中，出现在顶楼。'}
+110	110		104							{1: '0|0|0', 2: '0', 4: '4'}
+111	111		104							{1: '0|0|0', 2: '0', 4: '6'}
+112	112		301				DialogDisable			{2: '升格者约翰·杜', 3: '升格网络予我新生，我自当慷慨回报。', 4: '1'}
+113	113		401						1000.0	{1: '1', 2: '36'}
+114	114		401							{1: '2', 2: '2957'}
+115	115		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+116	116		202							{1: '1', 6: '1'}
+117	117		101						1500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1366.jpg'}
+118	118		401							{1: '2', 2: '5714'}
+119	119		201						400.0	{1: '1', 2: '500013', 4: '300'}
+120	120		201						500.0	{1: '2', 2: '500013', 4: '-300'}
+121	121		201						400.0	{1: '15', 2: '500013', 4: '600', 6: '-200'}
+122	122		201						1500.0	{1: '16', 2: '500013', 4: '-600', 6: '-200'}
+123	123		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+124	124		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1367.jpg'}
+125	125		202							{1: '1', 2: '2', 3: '15', 4: '16', 6: '1'}
+126	126		201						400.0	{1: '1', 2: '500013', 4: '-500'}
+127	127		201						500.0	{1: '2', 2: '500013', 4: '500'}
+128	128		201						1500.0	{1: '15', 2: '500013', 6: '-100'}
+129	129		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+130	130		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1365.jpg'}
+131	131		202							{1: '1', 2: '2', 3: '15', 6: '1'}
+132	132		201						400.0	{1: '15', 2: '500013', 4: '300', 6: '-150'}
+133	133		201						500.0	{1: '16', 2: '500013', 4: '-300', 6: '-150'}
+134	134		201							{1: '1', 2: '500013', 4: '-700'}
+135	135		201							{1: '2', 2: '500013'}
+136	136		201						1500.0	{1: '3', 2: '500013', 4: '700'}
+137	137		301			DialogEnable	DialogDisable			{3: '双手仿佛在虚空中弹动钢琴，伴随每一次“琴键”被按下，远处的街道上就会出现几只感染体。'}
+138	138		202							{1: '1', 2: '2', 3: '3', 4: '15', 5: '16'}
+139	139		104							{1: '200|0|-300', 2: '0', 4: '3'}
+140	140		205						1600.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1373.jpg', 3: '0', 4: '1', 5: '1.5'}
+141	141		104							{1: '200|0|-300', 2: '0', 4: '1'}
+142	142		101						50.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1373.jpg'}
+143	143		205							{1: '999'}
+144	144		104							{1: '0|0|0', 2: '0', 4: '3'}
+145	145		201							{1: '18', 2: '501417', 4: '-360', 5: '-280', 6: '300'}
+146	146		301			DialogEnable				{1: '1', 2: '升格者约翰·杜', 3: '就以伊利希恩为阶梯，助我们通往格式塔。', 4: '18'}
+147	147		306							{1: '1'}
+148	148		502							{1: 'DialogDisable'}
+149	149		202						500.0	{1: '18'}
+150	150		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '1'}
+151	151		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 3: '0', 4: '0.4', 5: '5'}
+152	152		104						5200.0	{1: '-200|0|-300', 2: '5', 4: '1'}
+153	153		301			DialogEnable				{3: '城市星星点点的灯火逐渐被染成红色。'}
+154	154		306							
+155	155		201							{1: '18', 2: '501417', 4: '-360', 5: '-280', 6: '300'}
+156	156		301				AniZhuanchangBegin			{1: '1', 2: '升格者约翰·杜', 3: '至此，这个世界都会成为我们这般虚无的“影子”，迎来黑暗狂欢。', 4: '18'}
+157	157		402							{1: '5714'}
+158	158		205							{1: '999'}
+159	159		502							{1: 'DialogDisable'}
+160	160		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1372.jpg'}
+161	161		104							{1: '0|0|0', 2: '0', 4: '1'}
+162	162		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+163	163		202							{1: '18', 6: '1'}
+164	164		201							{1: '1', 2: '500864', 3: '5', 4: '-400', 6: '-300', 7: '1'}
+165	165		201						2000.0	{1: '2', 2: '501419', 3: '5', 4: '400', 6: '-300', 7: '1'}
+166	166		401							{1: '1', 2: '296'}
+167	167		502						200.0	{1: 'AniZhuanchangEnd'}
+168	168		401							{1: '2', 2: '4172'}
+169	169		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTRPGTest/FxUiTRPGTest02.prefab', 2: '2'}
+170	170		203							{1: '1', 2: '0.25', 3: '-400'}
+171	171		203							{1: '2', 2: '0.25', 3: '400'}
+172	172		502							{1: 'RImgBg1Shake'}
+173	173		301			DialogEnable				{1: '1', 2: '布偶熊', 3: '你到底打算干什么，莫瓦诺！', 4: '1'}
+174	174		202							{1: '1', 2: '2'}
+175	175		301							{3: '布偶熊与穆尔配合着接住了莫瓦诺的攻击，但局面仍旧僵持不下。伊利希恩是莫瓦诺的主场，只要战场仍旧存在于此，莫瓦诺就有压倒性的优势。'}
+176	176		201							{1: '1', 2: '501421', 3: '6'}
+177	177		301			DialogShake				{1: '1', 2: '莫瓦诺', 3: '为什么你非要刨根问底，布偶熊！', 4: '1'}
+178	178		301			DialogShake				{2: '莫瓦诺', 3: '你只要待在伊利希恩，等一切结束就好！', 4: '1'}
+179	179		203							{1: '1', 2: '0.2', 5: '-200'}
+180	180		401							{1: '2', 2: '11105405'}
+181	181		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+182	182		502							{1: 'RImgBg1Shake'}
+183	183		301				DialogDisable			{2: '莫瓦诺', 3: '你不是依旧憎恨着那座牢笼吗？', 4: '1'}
+184	184		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+185	185		202							{1: '1', 6: '1'}
+186	186		201						300.0	{1: '2', 2: '500864', 3: '5'}
+187	187		401							{1: '2', 2: '2513'}
+188	188		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTRPGTest/FxUiTRPGTest02.prefab', 2: '3'}
+189	189		203							{1: '2', 2: '0.15', 3: '300'}
+190	190		502							{1: 'DialogShake'}
+191	191		301			DialogEnable				{1: '1', 2: '布偶熊', 3: '所以你打算毁掉空中花园？！', 4: '2'}
+192	192		202							{1: '2'}
+193	193		301							{3: '攻击的间隙，布偶熊试图用言语试探莫瓦诺的真实目的。'}
+194	194		201							{1: '1', 2: '501421', 3: '5'}
+195	195		301							{1: '1', 2: '莫瓦诺', 3: '我只在乎伊利希恩。', 4: '1'}
+196	196		201							{1: '1', 2: '500864', 3: '13'}
+197	197		301							{1: '1', 2: '布偶熊', 3: '“你只在乎伊利希恩”。', 4: '1'}
+198	198		204							{1: '1', 2: '5'}
+199	199		301				DialogDisable			{2: '布偶熊', 3: '那么你的同伴，那个要对空中花园不利的人是谁？', 4: '1'}
+200	200		203							{1: '1', 2: '0.35', 3: '-750'}
+201	201		401							{1: '2', 2: '2513'}
+202	202		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTRPGTest/FxUiTRPGTest02.prefab', 2: '2', 5: '11'}
+203	203		511							{1: '11', 2: '0', 3: '0|0|0'}
+204	204		502							{1: 'RImgBg1Shake'}
+205	205		501						150.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+206	206		401							{1: '2', 2: '2513'}
+207	207		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTRPGTest/FxUiTRPGTest02.prefab', 2: '2', 5: '12'}
+208	208		511						150.0	{1: '12', 2: '0', 3: '-150|0|0'}
+209	209		401							{1: '2', 2: '2513'}
+210	210		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTRPGTest/FxUiTRPGTest02.prefab', 2: '2', 5: '13'}
+211	211		511						500.0	{1: '13', 2: '0', 3: '-400|0|0'}
+212	212		202							{1: '1'}
+213	213		301			DialogEnable				{3: '这次莫瓦诺没有再回答布偶熊，只是无人机的射击频率默默加快。'}
+214	214		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTRPGTest/FxUiTRPGTest02.prefab', 5: '11'}
+215	215		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTRPGTest/FxUiTRPGTest02.prefab', 5: '12'}
+216	216		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTRPGTest/FxUiTRPGTest02.prefab', 5: '13'}
+217	217		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+218	218		306							{1: '1'}
+219	219		201							{1: '1', 2: '500864', 3: '3'}
+220	220		301							{1: '1', 3: '蓦地，布偶熊回想起之前与哈桑的谈话。'}
+221	221		401							{1: '2', 2: '4387'}
+222	222		306							
+223	223		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+224	224		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg'}
+225	225		201							{1: '1', 2: '500864', 3: '1', 7: '1'}
+226	226		504							{1: '0.7'}
+227	227		301							{1: '1', 2: '布偶熊', 3: '先说好，我不想卷进任何你们的阴谋算计，我只想完成本职工作。', 4: '1'}
+228	228		401							{1: '2', 2: '4388'}
+229	229		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+230	230		306							{1: '1'}
+231	231		504							{1: '0'}
+232	232		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1372.jpg'}
+233	233		201							{1: '1', 2: '500864', 3: '3'}
+234	234		301				DialogDisable			{1: '1', 3: '布偶熊忽然明悟过来，各种线索连接在一起。'}
+235	235		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '1', 5: '0.5'}
+236	236		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong01.prefab'}
+237	237		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab'}
+238	238		109						1200.0	{1: '21', 2: '<size=40>“未搭载人工智能的量子超级计算机”</size>', 3: '530', 4: '245', 9: '2', 11: '1'}
+239	239		109						1200.0	{1: '22', 2: '<size=40>“伊利希恩的核心”</size>', 3: '-550', 4: '80', 9: '2', 11: '1'}
+240	240		109						1200.0	{1: '23', 2: '<size=40>“电子极乐世界”</size>', 3: '540', 4: '-110', 9: '2', 11: '1'}
+241	241		109						1200.0	{1: '24', 2: '<size=40>“……”</size>', 3: '-550', 4: '-200', 9: '2', 11: '1'}
+242	242		309	1					200.0	{2: '“未搭载人工智能的量子超级计算机”，“伊利希恩的核心”，“电子极乐世界”……'}
+243	243		110							{1: '21|1', 2: '22|1', 3: '23|1', 4: '24|1'}
+244	244		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong03.prefab'}
+245	245		204							{1: '1', 2: '13'}
+246	246		306							
+247	247		301			DialogEnable				{2: '布偶熊', 3: '（呵，早在最开始就被卷进来了啊。）', 4: '1'}
+248	248		301				DialogDisable			{2: '布偶熊', 3: '（事情结束后，要狠狠敲诈一笔报酬。）', 4: '1'}
+249	249		204							{1: '1', 2: '5'}
+250	250		205						800.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '1', 4: '0', 5: '0.5'}
+251	251		401							{1: '2', 2: '11105405'}
+252	252		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTRPGTest/FxUiTRPGTest02.prefab', 2: '2'}
+253	253		203							{1: '1', 2: '0.25', 3: '500'}
+254	254		202							{1: '1'}
+255	255		502						1200.0	{1: 'RImgBg1Shake'}
+256	256		201							{1: '3', 2: '501421', 3: '5', 4: '-250', 5: '0'}
+257	257		201							{1: '2', 2: '501419', 3: '5', 4: '1200'}
+258	258		203						200.0	{1: '2', 2: '0.2', 3: '200'}
+259	259		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '2'}
+260	260		502							{1: 'RImgBg1Shake'}
+261	261		401						1500.0	{1: '2', 2: '9342060'}
+262	262		301			DialogEnable				{3: '布偶熊侧身躲过莫瓦诺无人机射出的光线，穆尔快步上前对莫瓦诺挥动手中剑刃，被莫瓦诺两个无人机交叉挡下。'}
+263	263		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab'}
+264	264		401							{1: '2', 2: '4339'}
+265	265		203							{1: '2', 2: '0.5', 3: '600'}
+266	266		202							{1: '2'}
+267	267		301							{3: '攻击无果，穆尔退到布偶熊身边。'}
+268	268		203							{1: '3', 2: '0.25'}
+269	269		204							{1: '3', 2: '6'}
+270	270		301							{2: '莫瓦诺', 3: '我们之间的战斗没有意义——', 4: '3'}
+271	271		401							{1: '1', 2: '36'}
+272	272		401							{1: '2', 2: '4784'}
+273	273		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+274	274		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 3: '0', 4: '0.4', 5: '0'}
+275	275		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1373.jpg'}
+276	276		202							{1: '3', 6: '1'}
+277	277		301			RImgBg1Shake	DialogDisable			{2: '？？？', 3: '▆▅▄▇——！！！！'}
+278	278		401							{1: '1', 2: '6391'}
+279	279		306							{1: '1'}
+280	280		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '2'}
+281	281		104						1700.0	{1: '200|0|-300', 2: '1.5'}
+282	282		301			DialogEnable	DialogDisable			{3: '一道清晰而刺耳的尖叫声打破了所有僵持与对峙，三人立即同时看向声源处的方向。只见远方浮现一道猩红的火光，底下数不清的光点血块摇曳暴动。'}
+283	283		401							{1: '2', 2: '2927'}
+284	284		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '1', 5: '4.5'}
+285	285		104						4600.0	{1: '-200|0|-300', 2: '4'}
+286	286		301			DialogEnable	DialogDisable			{3: '城市寂静不再，所有熟睡的人都惊醒逃逸——不知为何，伊利希恩突然涌现众多的感染体侵袭。泛滥的猩红盖过所有霓虹灯光，城市中央沦为感染体的围猎场，边缘则开始消弭。'}
+287	287		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+288	288		402							{1: '2927'}
+289	289		306							
+290	290		205							{1: '999'}
+291	291		205							{1: '1004'}
+292	292		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+293	293		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1372.jpg'}
+294	294		104							{1: '0|0|0', 2: '0', 4: '1'}
+295	295		201							{1: '1', 2: '501421', 3: '5', 4: '-700', 7: '1'}
+296	296		201							{1: '2', 2: '500864', 3: '5', 4: '200', 7: '1'}
+297	297		201							{1: '3', 2: '501419', 3: '5', 4: '845', 7: '1'}
+298	298		502							{1: 'DialogEnable'}
+299	299		301			DialogShake	DialogDisable			{1: '1', 2: '布偶熊&莫瓦诺&穆尔', 3: '？！', 4: '1', 5: '2', 6: '3'}
+300	300		401							{1: '2', 2: '4387'}
+301	301		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+302	302		504							{1: '0.7'}
+303	303		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory547.jpg'}
+304	304		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+305	305		306						800.0	{1: '1'}
+306	306		401							{1: '2', 2: '2959'}
+307	307		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+308	308		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory346.jpg'}
+309	309		401							{1: '2', 2: '2959'}
+310	310		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+311	311		101						500.0	{1: 'Assets/Product/Texture/Image/BgUi/BgFightLoading56.png'}
+312	312		401							{1: '2', 2: '2959'}
+313	313		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+314	314		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg001_4.jpg'}
+315	315		401							{1: '2', 2: '2959'}
+316	316		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '3'}
+317	317		101						500.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg109_1.jpg'}
+318	318		301			DialogEnable				{3: '被忽略的梦魇自角落悄然崛起，哪有什么暴动机械，一直都是帕弥什，一直都是感染体。'}
+319	319		401							{1: '2', 2: '4388'}
+320	320		306							
+321	321		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+322	322		504							{1: '0'}
+323	323		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1372.jpg'}
+324	324		201							{1: '1', 2: '501421', 3: '5', 7: '1'}
+325	325		301			DialogEnable				{1: '1', 2: '莫瓦诺', 3: '偏偏在这个时候……', 4: '1'}
+326	326		201							{1: '1', 2: '501419', 3: '5'}
+327	327		301			DialogShake				{1: '1', 2: '穆尔', 3: '你和那些感染体不是一伙的？！', 4: '1'}
+328	328		203							{1: '1', 2: '0.25', 3: '400'}
+329	329		201							{1: '2', 2: '500864', 3: '3', 4: '-400'}
+330	330		301							{1: '1', 2: '布偶熊', 3: '能够操控帕弥什和感染体……至少也是……', 4: '2'}
+331	331		202							{1: '1', 2: '2'}
+332	332		301				DialogDisable			{2: '升格者约翰·杜', 3: '升格者。'}
+333	333		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+334	334		104							{1: '0|0|-500', 2: '0', 4: '3'}
+335	335		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/UiFightDetailMapBg.png', 3: '0', 4: '1', 5: '0'}
+336	336		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainScreenRedEx.prefab', 2: '1'}
+337	337		201						500.0	{1: '1', 2: '501417', 7: '1'}
+338	338		401							{1: '2', 2: '5703'}
+339	339		203						1000.0	{1: '1', 2: '0.5', 5: '-50'}
+340	340		401							{1: '2', 2: '5703'}
+341	341		203						600.0	{1: '1', 2: '0.5', 5: '-100'}
+342	342		401							{1: '2', 2: '4426'}
+343	343		104							{1: '0|0|0', 2: '1', 4: '3'}
+344	344		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/UiFightDetailMapBg.png', 3: '1', 4: '0', 5: '1'}
+345	345		505						1000.0	{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainScreenRedEx.prefab'}
+346	346		104							{1: '0|0|0', 2: '0', 4: '3'}
+347	347		301			DialogEnable				{3: '陌生的声音从一旁传来，三人循声看去。身披斗篷，散发青焰，全身机械结构的不明人物正从一道散发数据流的漆黑空洞中缓缓走出。'}
+348	348		201							{1: '1', 2: '501419', 3: '4'}
+349	349		301							{1: '1', 2: '穆尔', 3: '哈……我说什么来着，黑客大乱斗。', 4: '1'}
+350	350		201							{1: '1', 2: '501417'}
+351	351		301							{1: '1', 3: '升格者望向穆尔。'}
+352	352		301							{2: '升格者约翰·杜', 3: '好久不见，探员。', 4: '1'}
+353	353		201							{1: '1', 2: '501419', 3: '4'}
+354	354		301			DialogShake				{2: '穆尔', 3: '？！', 4: '1'}
+355	355		401							{1: '1', 2: '36'}
+356	356		201							{1: '1', 2: '501417'}
+357	357		301							{1: '1', 2: '升格者约翰·杜', 3: '哦，你应该更熟悉这个身体吧。', 4: '1'}
+358	358		401							{1: '2', 2: '4278'}
+359	359		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3MainChangeScreenRed.prefab', 2: '3'}
+360	360		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+361	361		201							{1: '1', 2: '501416', 3: '1', 7: '1'}
+362	362		401							{1: '1', 2: '6247'}
+363	363		301							{1: '1', 3: '数据流与乱码覆盖他的身体，升格者变换为心理医生约翰的样子。'}
+364	364		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+365	365		201							{1: '1', 2: '501419', 3: '5'}
+366	366		301			DialogShake	DialogDisable			{1: '1', 2: '穆尔', 3: '……约翰！', 4: '1'}
+367	367		201						600.0	{1: '1', 2: '501416', 3: '1'}
+368	368		204						300.0	{1: '1', 2: '2'}
+369	369		401							{1: '2', 2: '4278'}
+370	370		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3MainChangeScreenRed.prefab', 2: '3'}
+371	371		401							{1: '2', 2: '2760'}
+372	372		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+373	373		202							{1: '1', 6: '1'}
+374	374		301			DialogEnable				{3: '穆尔从喉咙中愤怒低吼出他的名字，但下一秒三人的视野中同时失去了升格者的踪迹。'}
+375	375		402							{1: '2760'}
+376	376		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+377	377		201							{1: '1', 2: '501421', 3: '5', 4: '-700'}
+378	378		201							{1: '2', 2: '500864', 3: '5', 4: '200'}
+379	379		201							{1: '3', 2: '501419', 3: '5', 4: '845'}
+380	380		301			DialogShake	DialogDisable			{1: '1', 2: '布偶熊&莫瓦诺&穆尔', 3: '！！！', 4: '1', 5: '2', 6: '3'}
+381	381		401							{1: '2', 2: '8220087'}
+382	382		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+383	383		306							{1: '1'}
+384	384		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '1'}
+385	385		502							{1: 'RImgBg1Shake'}
+386	386		202						1000.0	{1: '1', 2: '2', 3: '3', 6: '1'}
+387	387		401						1000.0	{1: '2', 2: '4006'}
+388	388		301			DialogEnable				{3: '穆尔感受到身后传来一股巨力，整副身体向前飞去，在地上翻滚几圈后停下。'}
+389	389		306							
+390	390		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+391	391		201							{1: '1', 2: '500864', 3: '4'}
+392	392		301							{1: '1', 2: '布偶熊', 3: '好快……不，不只是快。', 4: '1'}
+393	393		401							{1: '2', 2: '2760'}
+394	394		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+395	395		204							{1: '1', 2: '5'}
+396	396		301			DialogShake	DialogDisable			{2: '布偶熊', 3: '还侵入了视觉模块！', 4: '1'}
+397	397		202							{1: '1'}
+398	398		402							{1: '2760'}
+399	399		505						1200.0	{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+400	400		401							{1: '2', 2: '4278'}
+401	401		501						150.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3MainChangeScreenRed.prefab', 2: '3'}
+402	402		201							{1: '1', 2: '501417', 7: '1'}
+403	403		301			DialogEnable				{1: '1', 2: '升格者约翰·杜', 3: '莫瓦诺，刺杀哈桑的计划失败了。', 4: '1'}
+404	404		202							{1: '1'}
+405	405		301							{3: '突如其来的话语让在场人内心一惊。'}
+406	406		201							{1: '1', 2: '500864', 3: '4'}
+407	407		301							{1: '1', 2: '布偶熊', 3: '这就是你们密谋的事情……', 4: '1'}
+408	408		201							{1: '1', 2: '501421', 3: '6'}
+409	409		301			DialogShake				{1: '1', 2: '莫瓦诺', 3: '我父亲怎么样了？！', 4: '1'}
+410	410		201							{1: '1', 2: '501417'}
+411	411		301							{1: '1', 3: '升格者没有理会布偶熊，直视莫瓦诺。'}
+412	412		301							{2: '升格者约翰·杜', 3: '言真啊……', 4: '1'}
+413	413		401							{1: '2', 2: '4278'}
+414	414		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3MainChangeScreenRed.prefab', 2: '3'}
+415	415		401							{1: '2', 2: '2760'}
+416	416		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+417	417		201							{1: '1', 2: '501425', 3: '14', 7: '1'}
+418	418		301							{1: '1', 3: '他再度变换身躯，在轮椅上向莫瓦诺开口。'}
+419	419		301			PanelActor1Shake				{2: '言真？', 3: '莫瓦诺……救我……', 4: '1'}
+420	420		402							{1: '2760'}
+421	421		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+422	422		201							{1: '1', 2: '501421', 3: '6'}
+423	423		301			RImgBg1Shake	DialogDisable			{1: '1', 2: '莫瓦诺', 3: '你！！', 4: '1'}
+424	424		202							{1: '1', 6: '1'}
+425	425		201							{1: '1', 2: '501425', 3: '14', 7: '1'}
+426	426		201							{1: '15', 2: '501429', 7: '1'}
+427	427		205							{1: '15', 3: '0', 4: '1', 5: '3'}
+428	428		502							{1: 'PanelActor1Shake'}
+429	429		502						500.0	{1: 'PanelActor15Shake'}
+430	430		401							{1: '2', 2: '2760'}
+431	431		501						2800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+432	432		401							{1: '2', 2: '4278'}
+433	433		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3MainChangeScreenRed.prefab', 2: '3'}
+434	434		402							{1: '2760'}
+435	435		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+436	436		202							{1: '15', 6: '1'}
+437	437		201							{1: '1', 2: '501417', 7: '1'}
+438	438		301			DialogEnable				{3: '升格者变回自己的模样，发出嗤笑。'}
+439	439		301				DialogDisable			{2: '升格者约翰·杜', 3: '再也没有言真了，只有约翰·杜！', 4: '1'}
+440	440		201							{1: '1', 2: '501421', 3: '5'}
+441	441		401							{1: '2', 2: '1509'}
+442	442		501						1300.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineBaozhaNew.prefab', 2: '1'}
+443	443		401							{1: '2', 2: '1088'}
+444	444		203							{1: '1', 2: '0.25', 4: '-30'}
+445	445		204						800.0	{1: '1', 2: '6'}
+446	446		401							{1: '2', 2: '970804'}
+447	447		402							{1: '1509'}
+448	448		203							{1: '1', 2: '0.2', 5: '-300'}
+449	449		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+450	450		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainScreenBlueEx.prefab', 2: '2', 5: '21'}
+451	451		511						5.0	{1: '21', 2: '0', 3: '0|0|500'}
+452	452		502							{1: 'RImgBg1Shake'}
+453	453		511						200.0	{1: '21', 2: '0.2', 3: '0|0|0'}
+454	454		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+455	455		202							{1: '1', 6: '1'}
+456	456		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineBaozhaNew.prefab'}
+457	457		301			DialogEnable	DialogDisable			{3: '莫瓦诺怒吼着向升格者冲去，身后无人机以最大功率推动她的身体，宣泄她的愤怒，数道病毒程序与无人机光束一同攻击。'}
+458	458		201							{1: '1', 2: '501417'}
+459	459		401							{1: '2', 2: '510'}
+460	460		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+461	461		511						300.0	{1: '21', 2: '0.3', 3: '0|0|-500'}
+462	462		401							{1: '2', 2: '4426'}
+463	463		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3MainChangeScreenRed.prefab', 2: '3'}
+464	464		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3PlayMainScreenBlueEx.prefab', 5: '21'}
+465	465		301			DialogEnable				{3: '但他毫不费力便轻易化解了莫瓦诺的攻击。'}
+466	466		201							{1: '1', 2: '501421', 3: '5'}
+467	467		301							{1: '1', 2: '莫瓦诺', 3: '你怎么也有……', 4: '1'}
+468	468		201							{1: '1', 2: '501417'}
+469	469		301							{1: '1', 2: '升格者约翰·杜', 3: '我怎么也有伊利希恩的权限吗？', 4: '1'}
+470	470		401							{1: '2', 2: '4278'}
+471	471		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3MainChangeScreenRed.prefab', 2: '3'}
+472	472		401							{1: '2', 2: '2760'}
+473	473		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+474	474		202							{1: '1', 6: '1'}
+475	475		201							{1: '5', 2: '501421', 3: '2', 7: '1'}
+476	476		301							{1: '1', 3: '升格者没有解答她，数据交错间，他竟化身莫瓦诺的姿态。'}
+477	477		402							{1: '2760'}
+478	478		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+479	479		301							{2: '升格者约翰·杜', 3: '就用这个姿态陪你们玩玩吧，折翼鸟是吧……', 4: '5'}
+480	480		204							{1: '5', 2: '9'}
+481	481		301				DialogDisable			{2: '升格者约翰·杜', 3: '就叫我伪·折翼鸟吧。', 4: '5'}
+482	482		401							{1: '2', 2: '9342060'}
+483	483		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+484	484		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+485	485		502							{1: 'RImgBg1Shake'}
+486	486		201							{1: '1', 2: '501419', 3: '5', 4: '250', 7: '1'}
+487	487		204							{1: '5', 2: '2'}
+488	488		203						500.0	{1: '5', 2: '0', 3: '-250'}
+489	489		203							{1: '1', 2: '0.2', 3: '800'}
+490	490		203						700.0	{1: '5', 2: '0.2', 3: '-800'}
+491	491		203							{1: '1', 2: '0.15', 3: '250'}
+492	492		203						150.0	{1: '5', 2: '0.15', 3: '-250'}
+493	493		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '2'}
+494	494		502							{1: 'RImgBg1Shake'}
+495	495		401						500.0	{1: '2', 2: '9389038'}
+496	496		401							{1: '2', 2: '4339'}
+497	497		203							{1: '1', 2: '0.5', 3: '1200'}
+498	498		203							{1: '5', 2: '0.5', 3: '-1000'}
+499	499		202						1000.0	{1: '1', 2: '5'}
+500	500		301			DialogEnable				{3: '穆尔上前助战，但没过两下便节节退败。'}
+501	501		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+502	502		201							{1: '5', 2: '501421', 3: '2'}
+503	503		301							{1: '1', 2: '升格者约翰·杜', 3: '不过是一介亡灵——你现在的生命皆得益于我的缔造。', 4: '5'}
+504	504		202							{1: '5', 6: '1'}
+505	505		201							{1: '18', 2: '501421', 3: '5', 5: '-120'}
+506	506		301			DialogShake				{1: '1', 2: '莫瓦诺', 3: '？！', 4: '18'}
+507	507		202							{1: '18', 6: '1'}
+508	508		201							{1: '5', 2: '501421', 3: '2', 7: '1'}
+509	509		301							{1: '1', 2: '升格者约翰·杜', 3: '不仅不感恩戴德，居然妄想反噬你的造物主么？可笑。', 4: '5'}
+510	510		204							{1: '5', 2: '6'}
+511	511		301			RImgBg1Shake				{2: '升格者约翰·杜', 3: '离开这里，你不过是一具冰冷的尸体！', 4: '5'}
+512	512		202							{1: '5', 6: '1'}
+513	513		201							{1: '1', 2: '500864', 3: '5', 7: '1'}
+514	514		301				DialogDisable			{1: '1', 2: '布偶熊', 3: '废话连篇。', 4: '1'}
+515	515		401							{1: '2', 2: '4172'}
+516	516		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+517	517		502							{1: 'RImgBg1Shake'}
+518	518		201							{1: '1', 2: '500864', 3: '5', 4: '-200', 7: '1'}
+519	519		201						500.0	{1: '5', 2: '501421', 3: '2', 4: '200', 7: '1'}
+520	520		203							{1: '1', 2: '0.2', 3: '-500'}
+521	521		203						700.0	{1: '5', 2: '0.2', 3: '600'}
+522	522		203							{1: '1', 2: '0.1', 3: '100'}
+523	523		203						100.0	{1: '5', 2: '0.1', 3: '500'}
+524	524		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: '3', 5: '22'}
+525	525		511							{1: '22', 2: '0', 3: '400|0|0'}
+526	526		502							{1: 'RImgBg1Shake'}
+527	527		401						700.0	{1: '2', 2: '8220087'}
+528	528		204							{1: '5', 2: '5'}
+529	529		203							{1: '1', 2: '0.2', 3: '-300'}
+530	530		203						500.0	{1: '5', 2: '0.2', 3: '900'}
+531	531		203							{1: '1', 2: '0.1', 3: '300'}
+532	532		203						100.0	{1: '5', 2: '0.1', 3: '700'}
+533	533		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: '3', 5: '23'}
+534	534		511							{1: '23', 2: '0', 3: '500|0|0'}
+535	535		502							{1: 'RImgBg1Shake'}
+536	536		401						700.0	{1: '2', 2: '4172'}
+537	537		203							{1: '1', 2: '0.25', 3: '0'}
+538	538		203							{1: '5', 2: '0.25', 3: '1200'}
+539	539		202						1000.0	{1: '1', 2: '5'}
+540	540		301			DialogEnable				{3: '布偶熊干脆利落地反击着升格者，对待他的挑衅也同样足够冷静。'}
+541	541		201							{1: '5', 2: '501421', 3: '2', 7: '1'}
+542	542		301							{1: '1', 2: '升格者约翰·杜', 3: '哦，还有你，很好奇空中花园发生了什么吗？', 4: '5'}
+543	543		301				DialogDisable			{2: '升格者约翰·杜', 3: '我解除了这里与空中花园的信息屏蔽，自己去了解吧。', 4: '5'}
+544	544		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 5: '22'}
+545	545		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 5: '23'}
+546	546		401							{1: '2', 2: '4278'}
+547	547		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3MainChangeScreenRed.prefab', 2: '3'}
+548	548		202							{1: '5', 6: '1'}
+549	549		401							{1: '2', 2: '914'}
+550	550		401							{1: '2', 2: '5565'}
+551	551		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab', 2: '1'}
+552	552		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1358.jpg'}
+553	553		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '3'}
+554	554		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu02.prefab'}
+555	555		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 3: '0', 4: '1', 5: '0'}
+556	556		205							{1: '1006', 2: 'Assets/Product/Texture/Image/BgStoryFront/UiFightDetailMapBg.png', 3: '0', 4: '0.8', 5: '0'}
+557	557		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront30.png', 3: '0', 4: '0.8', 5: '0'}
+558	558		301			DialogEnable	DialogDisable			{3: '布偶熊听到，无数嘈杂的警报与通讯，那是空中花园的现状。'}
+559	559		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu03.prefab'}
+560	560		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 3: '1', 4: '0', 5: '1.5'}
+561	561		205							{1: '1006', 2: 'Assets/Product/Texture/Image/BgStoryFront/UiFightDetailMapBg.png', 3: '0.8', 4: '0', 5: '1.5'}
+562	562		205						1000.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront30.png', 3: '0.8', 4: '0', 5: '1.5'}
+563	563		402						500.0	{1: '5565'}
+564	564		401							{1: '2', 2: '4545'}
+565	565		301			DialogEnable				{2: '系统提示', 3: '警告，警告，全检轨道高度发生波动，幅度……'}
+566	566		301							{2: '系统提示', 3: '警告，警告，检测到大量帕弥什病毒——'}
+567	567		301							{2: '系统提示', 3: '请迅速进入距离您最近的避难舰。'}
+568	568		301				DialogDisable			{2: '系统提示', 3: '警告，空中花园常规动力引擎已被锁死。'}
+569	569		402							{1: '4545'}
+570	570		402							{1: '914'}
+571	571		401							{1: '2', 2: '2595'}
+572	572		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+573	573		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+574	574		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+575	575		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunNew.prefab'}
+576	576		109						1500.0	{1: '31', 2: '<color=#ffffffff><size=55>所有声音都在诉说一件事情</size></color>', 4: '150', 9: '3'}
+577	577		109						1500.0	{1: '32', 2: '<color=#ff4e4eff><size=70>空中花园正在向地球坠落</size></color>', 4: '50', 6: '1', 9: '3'}
+578	578		309	1			AniZhuanchangBegin		200.0	{2: '所有声音都在诉说一件事情，空中花园正在向地球坠落。'}
+579	579		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1372.jpg'}
+580	580		110							
+581	581		201							{1: '15', 2: '500864', 3: '5', 7: '1'}
+582	582		502							{1: 'DialogEnable'}
+583	583		301			AniZhuanchangEnd	DialogDisable			{1: '1', 2: '布偶熊', 3: '怎么可能……', 4: '15'}
+584	584		201							{1: '5', 2: '501421', 3: '2', 4: '800'}
+585	585		203						100.0	{1: '5', 2: '0.15', 3: '300'}
+586	586		401							{1: '2', 2: '4796'}
+587	587		205						100.0	{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 3: '0', 4: '1', 5: '0'}
+588	588		104							{1: '0|-100|300', 2: '0', 4: '5'}
+589	589		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '0', 4: '1', 5: '0'}
+590	590		204						100.0	{1: '15', 2: '5'}
+591	591		502							{1: 'PanelActor15Shake'}
+592	592		401							{1: '2', 2: '2593'}
+593	593		205						1000.0	{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/BgStory843.jpg', 3: '1', 4: '0', 5: '0.5'}
+594	594		301			DialogEnable	DialogDisable			{3: '趁着这一瞬间的恍惚——升格者迅速来到布偶熊背后，手臂贯穿布偶熊胸膛。'}
+595	595		203							{1: '15', 2: '0.5', 4: '-250'}
+596	596		104							{1: '0|-350|300', 2: '0.5', 4: '5'}
+597	597		401							{1: '2', 2: '5804'}
+598	598		202							{1: '5', 2: '15'}
+599	599		205						700.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront17.png', 3: '1', 4: '0', 5: '0.3'}
+600	600		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+601	601		401							{1: '2', 2: '4331'}
+602	602		201							{1: '1', 2: '501421', 3: '6', 4: '-600'}
+603	603		201							{1: '2', 2: '501419', 3: '5', 4: '600'}
+604	604		203							{1: '1', 2: '0.3', 3: '-400', 5: '-70'}
+605	605		203							{1: '2', 2: '0.3', 3: '400', 5: '-70'}
+606	606		502							{1: 'RImgBg1Shake'}
+607	607		301		1	DialogEnable	AniZhuanchangBegin			{1: '1', 2: '莫瓦诺&穆尔', 3: '布偶熊！！', 4: '1', 5: '2'}

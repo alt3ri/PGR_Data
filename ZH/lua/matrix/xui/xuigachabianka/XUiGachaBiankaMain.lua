@@ -183,13 +183,6 @@ function XUiGachaBiankaMain:InitButton()
     end)
 end
 
-function XUiGachaBiankaMain:OnChildClose()
-    self:RefreshUiShow()
-    self:PlayAnimationWithMask("AnimStart1")
-    self:RefreshReddot()
-    self._Scene:SetXPostFaicalControllerActive(true)
-end
-
 function XUiGachaBiankaMain:PlayEnableAnim()
     self._CanPlayEnableAnim = false
     self._Scene:SetXPostFaicalControllerActive(false)
@@ -219,6 +212,7 @@ function XUiGachaBiankaMain:PlayLongEnableAnim()
     self._Scene:PlayEnableLong(function()
         self._Volume:PlayEnd()
         self.SafeAreaContentPane.blocksRaycasts = true
+        self._Scene:SetXPostFaicalControllerActive(true)
     end, function()
         self._SwitchableScene:AutoPlay(self.UiSceneInfo.Transform)
     end)

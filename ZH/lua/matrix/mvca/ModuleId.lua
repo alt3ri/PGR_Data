@@ -92,6 +92,7 @@ ModuleId = {
   XMusicGameActivity = "XMusicGameActivity",
   XArrangementGame = "XArrangementGame",
   XLuckyTenant = "XLuckyTenant",
+  XLuckyTenant2 = "XLuckyTenant2",
   XBigWorldUI = "XBigWorldUI",
   XSkyGardenDorm = "XSkyGardenDorm",
   XBigWorldTeach = "XBigWorldTeach",
@@ -124,9 +125,6 @@ ModuleId = {
   XFunction = "XFunction",
   XAreaWar = "XAreaWar",
 
-  -- #203409 多次尝试后, 还是写在这里最稳妥
-  XPassportComb = "XPassportComb",
-  XAccumulateExpendL = "XAccumulateExpendL",
   XPlotExhibition = "XPlotExhibition",
 
   XSkyGardenDroneGame = "XSkyGardenDroneGame",
@@ -137,4 +135,5 @@ ModuleId = {
   XRadioSign = "XRadioSign",
   XItemRestrict = "XItemRestrict",
   XShop = "XShop",
+  XItem = "XItem",
 }

@@ -734,6 +734,27 @@ XFashionManagerCreator = function()
         return fashionIdList
     end
 
+    ---角色涂装是否已加入随机涂装
+    function XFashionManager.IsFashionRandom(fashionId)
+        local fashionData = XDataCenter.FashionManager.GetOwnFashionDataById(fashionId)
+        return fashionData and fashionData.IsRandom
+    end
+
+    ---武器涂装是否已加入随机涂装
+    function XFashionManager.IsWeaponFashionRandom(weaponFashionId)
+        local characterIds = XMVCA.XCharacter:GetCharacterIdsByWeaponFashion(weaponFashionId)
+        local dataList = XFashionManager.GetCurrentTimeFashionByCharId(characterIds[1])
+        for _, fashionId in pairs(dataList) do
+            local fashionData = XDataCenter.FashionManager.GetOwnFashionDataById(fashionId)
+            if fashionData then
+                if fashionData.WeaponFashionId == weaponFashionId then
+                    return fashionData.IsRandom
+                end
+            end
+        end
+        return false
+    end
+
     function XFashionManager.GetCharacterOwnFashionIdList(charId)
         local allFashion = XFashionManager.GetCurrentTimeFashionByCharId(charId)
         local ownFashionIdList = {}

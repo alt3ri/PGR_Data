@@ -540,7 +540,7 @@ local UIBindControl = {
     --region 剧情
     UiMovie = ModuleId.XMovie,
     UiMovieKeywordTips = ModuleId.XMovie,
-
+    UiMovie2D = ModuleId.XMovie,
     --endregion
 
     --region 肉鸽4.0
@@ -1024,6 +1024,8 @@ local UIBindControl = {
     UiSoloReformChapterDetail = ModuleId.XSoloReform,
     UiSoloReformSettlement = ModuleId.XSoloReform,
     UiSoloReformPopupReward = ModuleId.XSoloReform,
+    UiSoloReformKillChapterDetail = ModuleId.XSoloReform,
+    UiSoloReformKillSettlement = ModuleId.XSoloReform,
     --endregion
     
     --region 图文教学
@@ -1065,20 +1067,6 @@ local UIBindControl = {
     UiRaceToastHall = ModuleId.XRace,
     UiRaceToastHallChat = ModuleId.XRace,
     UiRaceObtain = ModuleId.XRace,
-    --endregion
-
-    -- #203409 多次尝试后, 还是写在这里最稳妥
-    --region combBP/passportComb
-    UiPassportComb = ModuleId.XPassportComb,
-    UiPassportTipsComb = ModuleId.XPassportComb,
-    UiPassportCardComb = ModuleId.XPassportComb,
-    UiPassportCombReward = ModuleId.XPassportComb,
-    UiPassportCombUpLevel = ModuleId.XPassportComb,
-    --endregion
-
-    --region 合版本累消
-    UiCombAccumulateDraw = ModuleId.XAccumulateExpendL,
-    UiCombAccumulateDrawLog = ModuleId.XAccumulateExpendL,
     --endregion
     
     --region 军团系统/PlotExhibition
@@ -1139,6 +1127,29 @@ local UIBindControl = {
     --region 商店系统
     UiAccumulateExpendShopMain = ModuleId.XShop,
     UiAccumulateExpendShopLog = ModuleId.XShop,
+    --endregion
+    --region XLuckyTenant2
+    UiLuckyTenant2Game = ModuleId.XLuckyTenant2,
+    UiLuckyTenant2Chess = ModuleId.XLuckyTenant2,
+    UiLuckyTenant2ChessBag = ModuleId.XLuckyTenant2,
+    UiLuckyTenant2Main = ModuleId.XLuckyTenant2,
+    UiLuckyTenant2PopupDeleteChess = ModuleId.XLuckyTenant2,
+    UiLuckyTenant2PopupNormal = ModuleId.XLuckyTenant2,
+    UiLuckyTenant2PopupStageDetail = ModuleId.XLuckyTenant2,
+    UiLuckyTenant2PopupSuccess = ModuleId.XLuckyTenant2,
+    UiLuckyTenant2Settlement = ModuleId.XLuckyTenant2,
+    UiLuckyTenant2Task = ModuleId.XLuckyTenant2,
+    UiLuckyTenant2Toast = ModuleId.XLuckyTenant2,
+    --endregion
+
+    --region 愚人节
+    UiMainAprilFoolsV403 = ModuleId.XAprilFoolDay,
+    UiMainAprilFoolsToastHall = ModuleId.XAprilFoolDay,
+    --endregion
+
+    --region 物品
+    UiCommonPopupUsePackage = ModuleId.XItem,
+    UiCommonPopupBuyAsset = ModuleId.XItem,
     --endregion
 }
 

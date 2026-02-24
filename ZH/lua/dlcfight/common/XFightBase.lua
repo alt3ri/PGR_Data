@@ -434,6 +434,7 @@ end
 
 ---计算伤害前
 ---@class BeforeDamageCalcEventArgs
+---@field ContextId integer 伤害上下文Id
 ---@field Launcher number 发起者NpcId
 ---@field Target number 目标NpcId
 ---@field Part number 部位ID
@@ -470,6 +471,7 @@ end
 
 ---计算伤害后
 ---@class AfterDamageCalcEventArgs
+---@field ContextId integer 伤害上下文Id
 ---@field Launcher number 发起者NpcId
 ---@field Target number 目标NpcId
 ---@field Part number 部位ID
@@ -499,7 +501,7 @@ end
 ---@field Permyriad number 倍率（可更改）
 ---@field Additive table 附加值数组 （可更改）
 ---计算治疗前
----@param eventArgs AfterDamageCalcEventArgs
+---@param eventArgs BeforeCureCalcEventArgs
 function XFightBase:BeforeCureCalc(eventArgs)
 
 end

@@ -127,7 +127,6 @@ XGame.Start6 = function()
     --打点
     CS.XRecord.Record("23014", "LuaXGameStartFinish")
     LuaGC()
-    XDataCenter.CrossVersionManager.LoadRequire()
 end
 
 local BreakPointTimerId = nil

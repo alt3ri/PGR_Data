@@ -334,40 +334,10 @@ function XLuaUiManager.RunMain(notDialogTip)
     elseif XMVCA.XBigWorldGamePlay:IsInGame() then
         XMVCA.XBigWorldGamePlay:ExitGame()
     else
-
-        --local unionFightData = XDataCenter.FubenUnionKillRoomManager.GetUnionRoomData()
-        --local unionInfo = XDataCenter.FubenUnionKillManager.GetUnionKillInfo()
-        --local inActivity = false
-        --if unionInfo and unionInfo.Id and unionInfo.Id > 0 then
-        --    inActivity = XFubenUnionKillConfigs.UnionKillInActivity(unionInfo.Id)
-        --end
-
-        --if inActivity and unionFightData and unionFightData.Id then
-        --    if notDialogTip then
-        --        XDataCenter.FubenUnionKillRoomManager.LeaveUnionTeamRoom(function()
-        --            CsXUiManager.Instance:RunMain()
-        --        end)
-        --        return
-        --    end
-        --
-        --    local title = CsXTextManagerGetText("TipTitle")
-        --    local cancelMatchMsg = CsXTextManagerGetText("UnionKillExitRoom")
-        --    XUiManager.DialogTip(
-        --        title,
-        --        cancelMatchMsg,
-        --        XUiManager.DialogType.Normal,
-        --        nil, function()
-        --            XDataCenter.FubenUnionKillRoomManager.LeaveUnionTeamRoom(function()
-        --                CsXUiManager.Instance:RunMain()
-        --            end)
-        --        end
-        --    )
-        --else
         if XLoginManager.IsFirstOpenMainUi() then
             CS.XCustomUi.Instance:GetData()
         end
         CsXUiManager.Instance:RunMain()
-        --end
     end
     
     XMVCA.XFunction:ExitCurrentFunction()
@@ -479,10 +449,17 @@ function XLuaUiManager.SetUi2NameMap(uid, name)
     Uid2UiNameMap[uid] = name
 end
 
+local BuryDict = {}
 function XLuaUiManager.RecordTryDownload(uiName)
     if not XMVCA then
         return
     end
+
+    -- 运营埋点
+    local dict = BuryDict or {}
+    dict["ui_name"] = uiName -- 当前的ui
+    dict["role_id"] = XPlayer.Id -- 玩家id
+    CS.XRecord.Record(dict, "200025", "LuaOpenUi")
 
     if not XMVCA.XSubPackage then
         return

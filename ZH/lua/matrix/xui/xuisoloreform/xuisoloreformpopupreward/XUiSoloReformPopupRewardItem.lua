@@ -5,16 +5,33 @@ local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 
 function XUiSoloReformPopupRewardItem:OnStart()
     self._TaskData = nil
-   XUiHelper.RegisterClickEvent(self, self.BtnReceive, self.OnBtnReceiveClick)
+    self.BtnReceive:AddEventListener(handler(self, self.OnBtnReceiveClick))
+    self.BtnSkip:AddEventListener(handler(self, self.OnBtnSkip))
 end
-function XUiSoloReformPopupRewardItem:Update(taskData)
+
+function XUiSoloReformPopupRewardItem:Update(taskData,taskType)
     self._TaskData = taskData
     local state = taskData.State
-    self.TxtStarNums.text = string.format("%s/%s", taskData.CurProcess, taskData.TotalProcess)
+    -- self.TxtTaskNumQian.gameObject:SetActiveEx(taskType ~= 2)
+    if taskData.TotalProcess > 0 then
+        self.TxtStarNums.text = string.format("%s/%s", taskData.CurProcess, taskData.TotalProcess)
+        self.TaskProgress.fillAmount = taskData.CurProcess / taskData.TotalProcess
+    else
+        self.TaskProgress.fillAmount = 0
+        self.TxtStarNums.text = ""
+    end
     self.BtnReceive.gameObject:SetActiveEx(state == XDataCenter.TaskManager.TaskState.Achieved)
-    self.ImgCannotReceive.gameObject:SetActiveEx(state == XDataCenter.TaskManager.TaskState.Active)
     self.ImgAlreadyReceived.gameObject:SetActiveEx(state == XDataCenter.TaskManager.TaskState.Finish)
     self:InitRewardsList(taskData)
+
+    local config = XDataCenter.TaskManager.GetTaskTemplate(taskData.Id)
+    self.tableData = config
+    self.TxtTaskName.text = config.Title
+    self.TxtTaskDescribe.text = XUiHelper.ReplaceTextNewLine(config.Desc)
+    self.BtnSkip.gameObject:SetActiveEx(state == XDataCenter.TaskManager.TaskState.Active and config.SkipId ~= nil)
+    self.ImgCannotReceive.gameObject:SetActiveEx(state == XDataCenter.TaskManager.TaskState.Active and
+        config.SkipId == nil)
+    -- self.TxtSubTypeTip.text = config.Suffix or ""
 end
 
 function XUiSoloReformPopupRewardItem:OnBtnReceiveClick()
@@ -26,6 +43,12 @@ function XUiSoloReformPopupRewardItem:OnBtnReceiveClick()
             self._Control:DispatchEvent(XMVCA.XSoloReform.EventId.EVENT_GAIN_TASK_REWARD)
         end)
     end
+end
+
+function XUiSoloReformPopupRewardItem:OnBtnSkip()
+    local config = XDataCenter.TaskManager.GetTaskTemplate(self._TaskData.Id)
+
+    XFunctionManager.SkipInterface(config.SkipId)
 end
 
 function XUiSoloReformPopupRewardItem:InitRewardsList(taskData)

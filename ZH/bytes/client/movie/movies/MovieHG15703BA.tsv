@@ -1,0 +1,369 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '297'}
+3	3		301			DialogEnable				{2: '昊一世尔', 3: '喂，醒醒……诅咒……已经来了！', 4: '1', 18: '100009349'}
+4	4		301							{2: '昊一世尔', 3: '快、快醒醒……要、要来不及了……！', 4: '1', 18: '100009350'}
+5	5		301							{2: '提科挪', 3: '可恶，怎么睡得这么熟啊？！', 4: '2', 18: '100009351'}
+6	6		301				AniZhuanchangBegin			{3: '朦胧中听到嘈杂的声音，随后身躯感觉到剧烈的摇晃。'}
+7	7		502							{1: 'DialogDisable'}
+8	8		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '2'}
+9	9		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4401_19.jpg'}
+10	10		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+11	11		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+12	12		111				AniZhuanchangEnd			{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+13	13		201							{1: '1', 2: '501233', 4: '-500'}
+14	14		201							{1: '2', 2: '501232', 4: '500'}
+15	15		301			DialogEnable				{1: '1', 3: '睁开眼，眼前并不是熟悉的系统提示，而是两名侍卫焦急的脸。'}
+16	16		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+17	17		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+18	18		202							{1: '2'}
+19	19		203							{1: '1', 2: '0.25', 3: '0'}
+20	20		301							{2: '提科挪', 3: '快起来！赶紧走！魔王大人吩咐，让你赶紧离开城堡！', 5: '1', 18: '100009352'}
+21	21		301							{2: '提科挪', 3: '“那个东西”就要来了……喂，带上这个！你的村好剑！', 5: '1', 18: '100009353'}
+22	22		401							{1: '2', 2: '4834'}
+23	23		203							{1: '1', 2: '0.25', 3: '0', 4: '-50', 5: '-50'}
+24	24		301							{3: '侍卫一边说着，一边将之前收缴的武器抛向了勇者。'}
+25	25		203							{1: '1', 2: '0.25', 3: '0', 4: '0', 5: '0'}
+26	26		302							{2: '发生了什么事？', 3: '27'}
+27	27		301				DialogDisable			{2: '提科挪', 3: '没时间解释了！', 4: '1', 18: '100009354'}
+28	28		203							{1: '1', 2: '0.2', 3: '600'}
+29	29		202							{1: '1'}
+30	30		301			DialogEnable	DialogDisable			{3: '伴随着侍卫的大喊，才发现这处监牢已经出现了诡异的改变。'}
+31	31		306							{1: '1'}
+32	32		401							{1: '2', 2: '4984'}
+33	33		104						300.0	{1: '-100|0|-100', 2: '0.3'}
+34	34		504						150.0	{1: '1'}
+35	35		504						150.0	{1: '0'}
+36	36		504						150.0	{1: '1'}
+37	37		504							{1: '0'}
+38	38		301			DialogEnable	DialogDisable			{3: '诡异的暗影正在四周的墙壁上流动，仿佛是有生命一般，敏锐的神经随之感受到微妙的压迫感。'}
+39	39		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab', 2: '2'}
+40	40		104						2000.0	{1: '100|0|-100', 2: '0.5'}
+41	41		104							{1: '0|0|0', 2: '0.3'}
+42	42		301			DialogEnable	DialogDisable			{3: '还来不及细看，流动的暗影已经从各方席卷过来，被暗影席卷而过的空间，只剩下扭曲的空气。'}
+43	43		401							{1: '2', 2: '4388'}
+44	44		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '2'}
+45	45		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab'}
+46	46		402							{1: '4984'}
+47	47		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory509.jpg'}
+48	48		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+49	49		401						500.0	{1: '2', 2: '1504'}
+50	50		104						300.0	{1: '0|50|-50', 2: '0.3'}
+51	51		104							{1: '0|0|-100', 2: '0.2'}
+52	52		301			DialogEnable				{1: '1', 3: '暗影迅速涌动过来，转瞬就已经缠上了为首的侍卫的手臂。'}
+53	53		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+54	54		504						150.0	{1: '1'}
+55	55		504						150.0	{1: '0'}
+56	56		504						150.0	{1: '1'}
+57	57		504							{1: '0'}
+58	58		201							{1: '1', 2: '501233'}
+59	59		301			PanelActor1Shake				{1: '1', 2: '提科挪', 3: '……我***……可恶！', 4: '1', 18: '100009355'}
+60	60		203							{1: '1', 2: '0.25', 4: '-100'}
+61	61		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab', 2: '2'}
+62	62		401							{1: '2', 2: '3077'}
+63	63		301				DialogDisable			{2: '提科挪', 3: '这究竟是什么**玩意……呃！', 4: '1', 18: '100009356'}
+64	64		203							{1: '1', 2: '0.25', 3: '400', 4: '0'}
+65	65		401							{1: '2', 2: '4222'}
+66	66		501						150.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+67	67		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab'}
+68	68		301			DialogEnable	DialogDisable			{3: '重新握住村好剑的同时，勇者斩断了缠上侍卫的黑雾。'}
+69	69		501						150.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+70	70		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab'}
+71	71		202						200.0	{1: '1', 6: '1'}
+72	72		104						300.0	{1: '0|0|-150', 2: '0.3'}
+73	73		104							{1: '0|0|-50', 2: '0.2'}
+74	74		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+75	75		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+76	76		401							{1: '2', 2: '2924'}
+77	77		301			DialogEnable	DialogDisable			{3: '滋啦！'}
+78	78		306							
+79	79		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+80	80		401							{1: '2', 2: '1105'}
+81	81		301			DialogEnable				{2: '系统', 3: '警告，警告，检测到，人设崩坏行为。', 18: '100009357'}
+82	82		302							{2: '唔！稍微忍一下……', 3: '83'}
+83	83		401						200.0	{1: '2', 2: '1105'}
+84	84		401							{1: '2', 2: '1105'}
+85	85		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteAnimationJingGao.prefab', 2: '2'}
+86	86		301							{2: '系统', 3: '检测到，多次红线行为，强制推进程序，已启动。', 18: '100009358'}
+87	87		302							{2: '什么？', 3: '88'}
+88	88		301				DialogDisable			{2: '系统', 3: '自动补全剧本脉络中……自动寻路已开启。', 18: '100009359'}
+89	89		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteAnimationJingGao.prefab'}
+90	90		104						300.0	{1: '0|0|-150', 2: '0.3'}
+91	91		104							{1: '0|0|-50', 2: '0.2'}
+92	92		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+93	93		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+94	94		104						100.0	{1: '-50|50|-50', 2: '0.1'}
+95	95		104						200.0	{1: '50|-50|-150', 2: '0.2'}
+96	96		104						100.0	{1: '-50|50|-100', 2: '0.1'}
+97	97		104						200.0	{1: '0|0|0', 2: '0.2'}
+98	98		401							{1: '2', 2: '4278'}
+99	99		501						150.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+100	100		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+101	101		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+102	102		101						100.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3002_05.jpg'}
+103	103		101						100.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3002_06.jpg'}
+104	104		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory530.jpg'}
+105	105		301			DialogEnable	DialogDisable			{3: '系统顿了顿，随后，潮水一般的数据流涌入脑中，挤压着每一片记忆区域。'}
+106	106		401							{1: '2', 2: '4278'}
+107	107		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+108	108		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+109	109		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+110	110		101						100.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3002_08.jpg'}
+111	111		101						100.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3002_09.jpg'}
+112	112		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory531.jpg'}
+113	113		301			DialogEnable	DialogDisable			{2: '系统', 3: '勇者带上了会引来灾厄的红玫瑰去往了魔王的大殿勇者假意对魔王倾诉衷肠赢得了魔王的信任和好意然后当机立断引来了连魔王无法破除的诅咒一把握住顷刻炼化吞噬殆尽……', 18: '100009360'}
+114	114		401							{1: '2', 2: '4278'}
+115	115		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+116	116		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+117	117		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+118	118		101						100.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3002_08.jpg'}
+119	119		101						100.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg3002_20.jpg'}
+120	120		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1124.jpg'}
+121	121		301			DialogEnable	DialogDisable			{2: '系统', 3: '那之后勇者出了新手村历尽千帆斩尽万难先杀了黑龙王夺得龙骨又炸了酷螺大厦习得时间倒流术然后上下打通三界终于成为了举世无双的大主宰但在某个落雪的夜晚……', 18: '100009361'}
+122	122		401							{1: '2', 2: '4278'}
+123	123		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+124	124		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+125	125		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+126	126		101						100.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory530.jpg'}
+127	127		101						100.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory531.jpg'}
+128	128		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1193.jpg'}
+129	129		301			DialogEnable	DialogDisable			{2: '系统', 3: '但在某个落雪的夜晚大主宰勇者来到一处荒废许久的古堡看到荆棘园里开满了红玫瑰骤然发现自己当年是在假戏真做而那个嚣张跋扈不可一世的大魔王在心中留下了一道伤痕……', 18: '100009362'}
+130	130		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+131	131		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+132	132		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+133	133		401							{1: '2', 2: '558'}
+134	134		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory509.jpg'}
+135	135		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+136	136		201							{1: '1', 2: '501233'}
+137	137		301			DialogEnable				{1: '1', 2: '提科挪', 3: '喂！你怎么了！', 4: '1', 18: '100009363'}
+138	138		302							{2: '系统又发疯了！', 3: '139'}
+139	139		301				DialogDisable			{2: '提科挪', 3: '啥？！', 4: '1', 18: '100009364'}
+140	140		203							{1: '1', 2: '0.1', 4: '-100', 5: '-100'}
+141	141		401							{1: '2', 2: '907504'}
+142	142		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+143	143		202							{1: '1', 6: '1'}
+144	144		401							{1: '2', 2: '9389034'}
+145	145		104							{1: '-50|50|-50', 2: '0.1'}
+146	146		104						100.0	{1: '50|-50|-150', 2: '0.1'}
+147	147		104						100.0	{1: '-50|50|-100', 2: '0.1'}
+148	148		104						100.0	{1: '0|0|0', 2: '0.1'}
+149	149		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+150	150		301			DialogEnable	DialogDisable			{3: '侍卫在勇者身上重重拍了一巴掌，将脑海中的系统都拍出了频闪。'}
+151	151		401							{1: '2', 2: '558'}
+152	152		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab', 2: '2'}
+153	153		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoiseNew.prefab'}
+154	154		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+155	155		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+156	156		201							{1: '1', 2: '501233', 4: '-500'}
+157	157		201							{1: '2', 2: '501232', 4: '500'}
+158	158		306							{1: '1'}
+159	159		301			DialogEnable				{1: '1', 2: '系统', 3: '*&*（%）/~*@）@#！——#*（~&￥（*！@*/*/！', 18: '100009365'}
+160	160		301				DialogDisable			{2: '系统', 3: '——系统更新锚点已确认，城堡大殿。', 18: '100009366'}
+161	161		302							{2: '……', 3: '162'}
+162	162		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+163	163		104							{1: '0|0|-100', 2: '0.5'}
+164	164		203							{1: '1', 3: '-500', 5: '-300'}
+165	165		202						100.0	{1: '1'}
+166	166		203							{1: '2', 3: '500', 5: '-300'}
+167	167		202						100.0	{1: '2'}
+168	168		401							{1: '2', 2: '1504'}
+169	169		502						300.0	{1: 'RImgBg1Shake'}
+170	170		301			DialogEnable	DialogDisable			{1: ' ', 3: '在得到侍卫助力的瞬间，脑中的束缚暂时松懈了一瞬，勇者诧异地看了侍卫两眼，随即拉着他们就跑。'}
+171	171		401							{1: '2', 2: '1504'}
+172	172		502						300.0	{1: 'RImgBg1Shake'}
+173	173		302							{2: '我没事……！快跑！', 3: '174'}
+174	174		104						200.0	{1: '0|50|-150', 2: '0.2'}
+175	175		104				AniZhuanchangBegin			{1: '0|0|-200', 2: '0.2'}
+176	176		502							{1: 'DialogDisable'}
+177	177		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory531.jpg'}
+178	178		104				AniZhuanchangEnd			{1: '-150|-100|-200', 2: '0'}
+179	179		301			DialogEnable	DialogDisable			{3: '根本无法去细究这恐怖的暗影究竟是什么，昨日所见的景象如今已经完全不同。'}
+180	180		401						500.0	{1: '2', 2: '1504'}
+181	181		104							{1: '0|0|-50', 2: '0.5'}
+182	182		301			DialogEnable	DialogDisable			{3: '无论石墙还是装饰，都已经被暗影侵蚀殆尽，寒意袭来，连在奔跑中吸入胸膛的空气都侵蚀内脏——这种情况下，魔王的处境会变成什么样？'}
+183	183		306							
+184	184		302							{2: '薇拉——魔王在哪里？！', 3: '185'}
+185	185		302							{2: '这座城堡究竟发生了什么？告诉我！', 3: '186'}
+186	186		401							{1: '2', 2: '1504'}
+187	187		201							{1: '18', 2: '501232'}
+188	188		301			DialogEnable				{1: '1', 2: '昊一世尔', 3: '是……诅、诅咒……', 4: '18', 18: '100009367'}
+189	189		301							{2: '昊一世尔', 3: '当……当那朵玫瑰的花、花瓣落尽时，诅、诅咒就会生效……这座城、城堡里的一切都、都会消失……', 4: '18', 18: '100009368'}
+190	190		202				DialogDisable			{1: '18'}
+191	191		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+192	192		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+193	193		504							{1: '0.7'}
+194	194		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1124.jpg'}
+195	195		201							{1: '1', 2: '501233', 4: '-500', 7: '1'}
+196	196		201							{1: '2', 2: '501232', 4: '500', 7: '1'}
+197	197		301			DialogEnable	DialogDisable			{1: '1', 2: '昊一世尔', 3: '喂，你、你不要命了？你留下那朵花……魔王大、大人可是会——唔！', 4: '2', 18: '100009369'}
+198	198		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+199	199		202							{1: '1', 2: '2', 6: '1'}
+200	200		201							{1: '3', 2: '501216', 3: '4', 5: '-100', 6: '-100', 7: '1'}
+201	201		301			DialogEnable	DialogDisable			{1: '1', 2: '薇拉', 3: '难道我的手下没有告诉过你，“玫瑰”对我而言意味着什么？', 4: '3', 18: '100009370'}
+202	202		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+203	203		202							{1: '1', 2: '2', 3: '3', 6: '1'}
+204	204		504							{1: '0'}
+205	205		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory531.jpg'}
+206	206		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '2'}
+207	207		302							{2: '催动诅咒的是玫瑰？', 3: '208'}
+208	208		302							{2: '系统说能牵制魔王的“诅咒”……就是这个？', 3: '209'}
+209	209		201						100.0	{1: '1', 2: '501233', 4: '-1800', 5: '-1800', 7: '1'}
+210	210		203							{1: '1', 2: '0.2', 3: '-500', 4: '0'}
+211	211		301			DialogEnable				{1: '1', 2: '提科挪', 3: '是的！很多年前，魔王大人遭受了红玫瑰的诅咒！所以她才那么痛恨玫瑰的！', 4: '1', 18: '100009371'}
+212	212		301				DialogDisable			{2: '提科挪', 3: '可最终诅咒生效的时刻明明是今晚12点……怎么会现在就发动……难道她把昨天那朵玫瑰收下了？！', 4: '1', 18: '100009372'}
+213	213		201						100.0	{1: '2', 2: '501232', 4: '1800', 5: '-1800', 7: '1'}
+214	214		203							{1: '2', 2: '0.2', 3: '500', 4: '0'}
+215	215		301			DialogEnable				{1: '1', 2: '昊一世尔', 3: '大、大人说……一、一切都会……消失……', 4: '2', 18: '100009373'}
+216	216		301			PanelActor2Shake				{2: '昊一世尔', 3: '我好害怕，好害怕……被那个影、影子吃掉，是不是会、会很痛……', 4: '2', 18: '100009374'}
+217	217		301			PanelActor1Shake	DialogDisable			{1: '1', 2: '提科挪', 3: '一定是因为你！你这狡猾的人类！', 4: '1', 18: '100009375'}
+218	218		302							{2: '不，不是我……', 3: '219'}
+219	219		301			DialogEnable				{3: '勇者张口想要反对，但想起刚才系统抽风时倾泻而出的垃圾剧情，悲哀地发现——这场面好像还真是自己一手促成的。'}
+220	220		401							{1: '2', 2: '4984'}
+221	221		504						150.0	{1: '1'}
+222	222		504						150.0	{1: '0'}
+223	223		504						150.0	{1: '1'}
+224	224		504							{1: '0'}
+225	225		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+226	226		401							{1: '2', 2: '4044'}
+227	227		203							{1: '1', 2: '0.25', 3: '-300', 4: '0'}
+228	228		203						200.0	{1: '2', 2: '0.25', 3: '300', 4: '0'}
+229	229		401							{1: '2', 2: '3077'}
+230	230		203							{1: '1', 2: '0.2', 3: '-300', 4: '-100'}
+231	231		203							{1: '2', 2: '0.2', 3: '300', 4: '-100'}
+232	232		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab', 2: '2', 3: '1'}
+233	233		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab', 2: '2', 3: '2'}
+234	234		301			DialogEnable				{3: '与此同时，身后的暗影还是追了上来，捉住了两个不靠谱的侍卫。'}
+235	235		302							{2: '再跑快点！', 3: '236'}
+236	236		301			PanelActor1Shake				{2: '提科挪', 3: '啧！难缠……为什么偏偏不抓你！', 4: '1', 18: '100009376'}
+237	237		302							{2: '因为我是光明傍身的天命之子啊！', 3: '238'}
+238	238		205						500.0	{1: '1', 2: '501233', 3: '1', 4: '0.8', 5: '0.5'}
+239	239		301			PanelActor2Shake	DialogDisable			{2: '昊一世尔', 3: '大、大哥……你的身体已、已经……', 4: '2', 18: '100009377'}
+240	240		401							{1: '2', 2: '4222'}
+241	241		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab'}
+242	242		401							{1: '2', 2: '4222'}
+243	243		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab'}
+244	244		301			DialogEnable	DialogDisable			{3: '暗影将两人缠得越来越深，就算勇者帮忙劈斩也渐渐跟不上侵蚀的速度。'}
+245	245		203							{1: '1', 2: '0.2', 3: '-300', 4: '-150'}
+246	246		203							{1: '2', 2: '0.2', 3: '300', 4: '-150'}
+247	247		205						500.0	{1: '1', 2: '501233', 3: '1', 4: '0.5', 5: '0.5'}
+248	248		401							{1: '1', 2: '6172'}
+249	249		301			DialogEnable	DialogDisable			{2: '提科挪', 3: '你这家伙……“光明傍身”的话……你能去帮帮魔王大人吗！', 18: '100009378'}
+250	250		302							{2: '你凭什么信任我？', 3: '251'}
+251	251		302							{2: '我可是剧本里要害死魔王的家伙！', 3: '252'}
+252	252		301			DialogEnable				{2: '提科挪', 3: '因为你……', 18: '100009379'}
+253	253		301							{3: '提科挪突然意味深长地看了勇者一眼。'}
+254	254		302							{2: '……求你别说“少爷很久没那么笑过了”！', 3: '255', 4: '……求你别说烂台词！', 5: '255'}
+255	255		301							{2: '提科挪', 3: '因为魔王大人很久都没那么开心过了！', 18: '100009380'}
+256	256		203							{1: '1', 2: '0.2', 3: '-300', 4: '-200'}
+257	257		203							{1: '2', 2: '0.2', 3: '300', 4: '-200'}
+258	258		401							{1: '2', 2: '3077'}
+259	259		205						500.0	{1: '1', 2: '501233', 3: '0.5', 4: '0', 5: '0.5'}
+260	260		205						500.0	{1: '2', 2: '501233', 3: '0.8', 4: '0.5', 5: '0.5'}
+261	261		301			PanelActor2Shake	DialogDisable			{2: '昊一世尔', 3: '别、别担心，我们是魔王大、大人的侍卫，我们也会挣、挣扎出来的——哇啊啊啊……', 18: '100009381'}
+262	262		205						500.0	{1: '2', 2: '501233', 3: '0.5', 4: '0', 5: '0.5'}
+263	263		301			DialogEnable	DialogDisable			{3: '勇者还想去抓，可两个侍卫的身形已经慢慢变得透明——然后就此消融在暗影中。'}
+264	264		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab', 4: '1'}
+265	265		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab', 4: '2'}
+266	266		302							{2: '糟糕了！', 3: '267'}
+267	267		401							{1: '2', 2: '4537'}
+268	268		502							{1: 'RImgBg1Shake'}
+269	269		501				AniZhuanchangBegin		1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryFallStone.prefab', 2: '2'}
+270	270		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory771.jpg'}
+271	271		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryFallStone.prefab'}
+272	272		104				AniZhuanchangEnd			{1: '0|0|0', 2: '0', 4: '1'}
+273	273		307							{1: '一切归于虚无，一切归于涌动的暗影。', 3: '65'}
+274	274		301							{3: '一切归于虚无，一切归于涌动的暗影。'}
+275	275		307							{2: '1'}
+276	276		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory771.jpg', 3: '0', 4: '1', 5: '0.5'}
+277	277		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory771.jpg'}
+278	278		205							{1: '999'}
+279	279		301			DialogEnable	DialogDisable			{3: '城堡已经不复原来的样貌，前进的路已然被流动的暗影封锁。'}
+280	280		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+281	281		301			DialogEnable				{3: '勇者本能地退后几步，但暗影依旧如影随行，靠近暗影的一侧手臂瞬间被刺骨的寒意裹挟。'}
+282	282		401						500.0	{1: '2', 2: '772'}
+283	283		402							{1: '772'}
+284	284		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryFreezeScreen.prefab', 2: '2'}
+285	285		301							{3: '仅仅因为一瞬的迟疑，勇者还未来得及握紧武器回防，寒意就将肢体冻僵。'}
+286	286		401							{1: '2', 2: '2924'}
+287	287		301							{3: '与此同时，系统的声音再次响起。'}
+288	288		401							{1: '2', 2: '2924'}
+289	289		104						200.0	{1: '0|0|-150', 2: '0.2'}
+290	290		104							{1: '0|0|0', 2: '0.3'}
+291	291		301			DialogEnable	DialogDisable			{2: '系统', 3: '强制纠正，强制纠正。', 18: '100009382'}
+292	292		302							{2: '这疯子系统……', 3: '293'}
+293	293		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '1', 5: '0.3'}
+294	294		301			DialogEnable				{3: '勇者的呼吸渐渐困难起来，仿佛被包裹进黏稠黑暗的沼泽中，一切都在凝滞……固化……'}
+295	295		401							{1: '2', 2: '4044'}
+296	296		301				DialogDisable			{3: '但在意识被黏腻的寒冷侵蚀之前，手腕上传来了有力的触碰。'}
+297	297		201							{1: '1', 2: '501225'}
+298	298		301			DialogEnable				{1: '1', 2: '？？', 3: '…………', 4: '1'}
+299	299		301				DialogDisable			{2: '？？', 3: '……果然，我还是无法接受这样的结局。', 4: '1', 18: '100009384'}
+300	300		202							{1: '1', 6: '1'}
+301	301		401						500.0	{1: '2', 2: '773'}
+302	302		402							{1: '773'}
+303	303		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryFreezeScreen.prefab'}
+304	304		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryFreezeScreenDis.prefab', 2: '2'}
+305	305		401							{1: '2', 2: '778'}
+306	306		301			DialogEnable	DialogDisable			{3: '哗——'}
+307	307		401						500.0	{1: '2', 2: '772'}
+308	308		501						250.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySuipingTongYong.prefab', 2: '2'}
+309	309		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory531.jpg'}
+310	310		401							{1: '1', 2: '6177'}
+311	311		201							{1: '1', 2: '501225'}
+312	312		301			DialogEnable	DialogDisable			{1: '1', 3: '熟悉的声音冲破混沌的屏障，趋于模糊的意识重新清醒起来。'}
+313	313		205						300.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '1', 4: '0', 5: '0.3'}
+314	314		205							{1: '999'}
+315	315		301			DialogEnable				{3: '火红的光影刺破眼前的黑暗，来人飞扬的红发分外显眼。'}
+316	316		111							{1: '0', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+317	317		201							{1: '1', 2: '501216', 3: '10', 7: '1'}
+318	318		301							{3: '勇者极力稳定住心神，视线渐渐凝晰起来——面前那张脸依旧是魔王薇拉。'}
+319	319		306							{1: '1'}
+320	320		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab', 2: '1', 3: '1'}
+321	321		301				DialogDisable			{3: '但激动的心情只维持了一瞬，很快，勇者就发现魔王身上也已经沾染了暗影的痕迹。'}
+322	322		306							
+323	323		302							{2: '薇拉，你怎么也……', 3: '324'}
+324	324		401							{1: '2', 2: '2924'}
+325	325		104						200.0	{1: '0|0|-150', 2: '0.2'}
+326	326		104							{1: '0|0|0', 2: '0.3'}
+327	327		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+328	328		204							{1: '1', 2: '9'}
+329	329		401							{1: '2', 2: '1105'}
+330	330		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteAnimationJingGao.prefab', 2: '2'}
+331	331		301			DialogEnable	DialogDisable			{2: '系统', 3: '警告，警告，剧情脉络紊乱，修正，修正。', 18: '100009385'}
+332	332		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteAnimationJingGao.prefab'}
+333	333		104						200.0	{1: '0|0|-150', 2: '0.2'}
+334	334		104							{1: '0|0|0', 2: '0.3'}
+335	335		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+336	336		301			DialogEnable				{3: '剧痛袭上四肢百骸，勇者的四肢也开始融化，而魔王——'}
+337	337		104							{1: '0|-50|-50', 2: '0.3'}
+338	338		203							{1: '1', 2: '0.25', 4: '-100', 5: '-100'}
+339	339		301							{3: '魔王一把抓住勇者的手腕，将其揽入怀中。'}
+340	340		204							{1: '1', 2: '10'}
+341	341		301				DialogDisable			{2: '薇拉', 3: '……为什么一定是你呢？', 4: '1', 18: '100009386'}
+342	342		307							{1: '她好像在悲叹，她难得悲叹。', 2: '0', 3: '60', 5: '0'}
+343	343		301							{3: '她好像在悲叹，她难得悲叹。'}
+344	344		307							{2: '1'}
+345	345		301			DialogEnable				{2: '薇拉', 3: '外面那群“猴子”还是进化得太狡猾了，几百年过去……也依旧不肯放过最后一个“人类时代”的遗民。', 4: '1', 18: '100009387'}
+346	346		204							{1: '1', 2: '8'}
+347	347		301							{2: '薇拉', 3: '罢了，我早就是它们的眼中钉了，这一次它们终于找准了正确的方向。', 4: '1', 18: '100009388'}
+348	348		302							{2: '……什么？', 3: '349'}
+349	349		204							{1: '1', 2: '4'}
+350	350		301				DialogDisable			{2: '薇拉', 3: '看来你还是什么都没懂，小人偶。', 4: '1', 18: '100009389'}
+351	351		203							{1: '1', 2: '0.25', 4: '-100', 5: '-150'}
+352	352		204							{1: '1', 2: '8'}
+353	353		301			DialogEnable	DialogDisable			{1: '1', 3: '她紧紧拥着勇者，就算暗影蔓延到全身也没有松手的迹象。'}
+354	354		203							{1: '1', 2: '0.5', 4: '-150', 5: '-180'}
+355	355		301			DialogEnable				{1: '1', 3: '她低下头，用额头轻触勇者的眼眉，像是要用肌肤描画这一切。'}
+356	356		301							{1: '1', 2: '薇拉', 3: '……如果可以，再链接我吧，【kuroname】。', 4: '1', 18: '100009390'}
+357	357		301				AniZhuanchangBegin			{1: '1', 2: '薇拉', 3: '数百年的梦魇……也好久没能分享过了。', 4: '1', 18: '100009391'}
+358	358		402							{1: '4984'}
+359	359		502							{1: 'DialogDisable'}
+360	360		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryBlackSmokeNew.prefab'}
+361	361		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab'}
+362	362		202							{1: '1', 6: '1'}
+363	363		401							{1: '2', 2: '2924'}
+364	364		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+365	365		401							{1: '2', 2: '4276'}
+366	366		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGlow.prefab', 2: '2'}
+367	367		301			DialogEnable				{3: '一股另类的刺痛感拨开系统的纷扰不堪，径直闯入了勇者的脑海。'}
+368	368		301		1		AniZhuanchangBegin			{3: '就像一道熟悉的光芒。'}

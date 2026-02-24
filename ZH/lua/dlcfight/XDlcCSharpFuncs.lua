@@ -2558,9 +2558,8 @@ end
 ---@desc [清空按钮上的倒计时进度条](http://redmine.haru.com:8081/redmine/issues/223498)
 ---@param npcUUID int Npc对象的UUID
 ---@param opKeyId int 目标操作键id,参考ENpcOperationKey
----@param time float
 ---@return void 
-function XDlcCSharpFuncs:ClearButtonCountDown(npcUUID, opKeyId, time)
+function XDlcCSharpFuncs:ClearButtonCountDown(npcUUID, opKeyId)
 end
 
 ---@desc 获取技能默认CD

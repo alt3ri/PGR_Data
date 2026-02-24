@@ -94,6 +94,7 @@ end
 ---@param dt number @ delta time
 function XCharR5Nanami2:Update(dt)
     Base.Update(self, dt)
+
     --self:TestInputLogic()
     self:CheckInputDuringAxeWrestle()
     self:EnergyBarChangeColorCheck()
@@ -248,13 +249,13 @@ function XCharR5Nanami2:ChangeDamageBeforeCalc(eventArgs)
     self._uuid = self._proxy:GetSelfNpcId()
     ----超解伤害修正
     if eventArgs.Id == 1057201 then
-        XLog.Warning("修正前："..eventArgs.PhysicalPermyraid)
+        --XLog.Warning("修正前："..eventArgs.PhysicalPermyraid)
         --XLog.Warning("能量点："..self.CustomPower2)
         local hasOverReleaseDamageModifyCoe,OverReleaseDamageModifyCoe = self:TryGetBBFloat(1057001)
         local hasCustomPower2,CustomPower2 = self:TryGetBBInt(1057002)
         local FinalDMGRate = math.floor(eventArgs.PhysicalPermyraid *(1+(CustomPower2 * OverReleaseDamageModifyCoe)))
         self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate, eventArgs.ElementPermyraid, eventArgs.HackDamage, eventArgs.HackPermyraid, eventArgs.isCrit)
-        XLog.Warning("修正后："..FinalDMGRate)
+        --XLog.Warning("修正后："..FinalDMGRate)
     end
 end
 function XCharR5Nanami2:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffTableId, buffKinds)
@@ -602,68 +603,36 @@ function XCharR5Nanami2:SkillAtuoCombo()
         self._proxy:CastActionEx(self._uuid,105245,0,5)
         --XLog.Warning("完成攻击动作后回到僵持循环")
     end
-    ----[[
+----[[
     if self._proxy:CheckNpcCurrentAction(self._uuid,105262) and self._skillTimer >= 0.8 then --斧角力攻击动作完成时回到僵持循环的内容
         self._proxy:AbortAction(self._uuid,true)
         self._proxy:CastActionEx(self._uuid,105259,0,5)
         --XLog.Warning("斧完成攻击动作后回到僵持循环")
     end
-    ----]]
+----]]
 
     if self._proxy:CheckNpcCurrentAction(self._uuid,105252) and self._skillTimer >= 1 then
         self._proxy:AbortAction(self._uuid,true)
         --XLog.Warning("终结移动后攻击流程")
-        local _,locktargetUUID = self._proxy:GetLockTarget(self._uuid)
-        if locktargetUUID ~= 0 then
-            self._proxy:CastActionToTargetEx(self._uuid,105253,locktargetUUID,0,5)
+        if self._proxy:CheckBuffByKind(self._uuid,105217) then
+            self._proxy:CastActionEx(self._uuid,105253,0,5)
         else
-            local searchtarget = self._proxy:GetFirstSearchTarget(self._uuid,ENpcTargetType.Enemy)
-            if searchtarget == 0 then
-                return
-            end
-            self._proxy:SetSoftLock(self._uuid,searchtarget)
-            local _,locktargetUUID = self._proxy:GetLockTarget(self._uuid)
-            self._proxy:CastActionToTargetEx(self._uuid,105253,locktargetUUID,0,5)
+            self._proxy:CastActionEx(self._uuid,105254,0,5)
         end
     end
 
     if self._proxy:CheckNpcCurrentAction(self._uuid,105276) and self._skillTimer >= 0.9 then
         self._proxy:AbortAction(self._uuid,true)
         --XLog.Warning("斧终结移动后攻击流程")
-        local _,locktargetUUID = self._proxy:GetLockTarget(self._uuid)
-        if locktargetUUID ~= 0 then
-            self._proxy:CastActionToTargetEx(self._uuid,105254,locktargetUUID,0,5)
+        if self._proxy:CheckBuffByKind(self._uuid,105218) then
+            self._proxy:CastActionEx(self._uuid,105253,0,5)
         else
-            local searchtarget = self._proxy:GetFirstSearchTarget(self._uuid,ENpcTargetType.Enemy)
-            if searchtarget == 0 then
-                return
-            end
-            self._proxy:SetSoftLock(self._uuid,searchtarget)
-            local _,locktargetUUID = self._proxy:GetLockTarget(self._uuid)
-            self._proxy:CastActionToTargetEx(self._uuid,105254,locktargetUUID,0,5)
+            self._proxy:CastActionEx(self._uuid,105254,0,5)
         end
     end
-
-    if self._proxy:CheckNpcCurrentAction(self._uuid,105247) and self._skillTimer >= 1.05 then
-        --XLog.Warning("角力成功清除镜头")
-        self._proxy:ApplyMagic(self._uuid,self._uuid,1052171,1)
-    end
-
-    if self._proxy:CheckNpcCurrentAction(self._uuid,105246) and self._skillTimer >= 0.7 then
-        --XLog.Warning("角力失败清除镜头")
-        self._proxy:ApplyMagic(self._uuid,self._uuid,1052171,1)
-    end
-
-    if self._proxy:CheckNpcCurrentAction(self._uuid,105260) and self._skillTimer >= 0.7 then
-        --XLog.Warning("角力失败清除镜头")
-        self._proxy:ApplyMagic(self._uuid,self._uuid,1052171,1)
-    end
-
-    if self._proxy:CheckNpcCurrentAction(self._uuid,105261) and self._skillTimer >= 0.95 then
-        --XLog.Warning("角力失败清除镜头")
-        self._proxy:ApplyMagic(self._uuid,self._uuid,1052171,1)
-    end
 end
+
+
 --endregion
 
 --region 角力相关表现镜头
@@ -843,7 +812,7 @@ end
 function XCharR5Nanami2:OnNpcCounterSuccess(triggerNpcUUID, counterNpcUUID, triggerTag, counterTag)
     Base.OnNpcCounterSuccess(self,triggerNpcUUID, counterNpcUUID, triggerTag, counterTag)
     if self._proxy:CheckNpcCurrentAction(self._uuid, 105206) or self._proxy:CheckNpcCurrentAction(self._uuid, 105224)
-            or self._proxy:CheckNpcCurrentAction(self._uuid,105235) or self._proxy:CheckNpcCurrentAction(self._uuid,105236)then
+            or self._proxy:CheckNpcCurrentAction(self._uuid,105235) or self._proxy:CheckNpcCurrentAction(self._uuid,105236) then
         self._proxy:AbortAction(self._uuid, true)
         if self._proxy:CheckBuffByKind(self._uuid, 105217) then
             self._proxy:CastActionEx(self._uuid,105240,0.26,3.83) --剑盾受击触发弹刀释放精确格挡
@@ -859,8 +828,13 @@ end
 --region 角力监听节点(处理部分角力相关的保底内容)
 function XCharR5Nanami2:OnNpcWrestleStart(launcherNpcUUID, targetNpcUUID, succeed)
     Base.OnNpcWrestleStart(self,launcherNpcUUID, targetNpcUUID, succeed)
-    --角力进入强制设置锁定目标
     self.WrestleTarget = targetNpcUUID
+    if targetNpcUUID ~= self._uuid then
+        return
+    end
+    --使用旧有镜头设置
+    self._proxy:ApplyMagic(self._uuid,self._uuid,1052284,1)
+    --角力进入强制设置锁定目标
     self.LockTargetKeeper = self._proxy:GetLockTarget()
     --XLog.Warning("程序角力进入 "..self.LockTargetKeeper .. " launcherUUID" .. launcherNpcUUID .. " targetNpcUUID" .. targetNpcUUID)
     self._proxy:SetHardLockToPart(targetNpcUUID,launcherNpcUUID,self.LockPartForWrestle)
@@ -884,6 +858,13 @@ function XCharR5Nanami2:OnNpcWrestlePursuit(launcherNpcUUID, targetNpcUUID)
     Base.OnNpcWrestlePursuit(self,launcherNpcUUID, targetNpcUUID)
     --XLog.Warning("角力失败")
     self.WrestleTarget = 0
+    if targetNpcUUID ~= self._uuid then
+        return
+    end
+    --延时移除角力镜头参数
+    self._proxy:AddTimerTask(0.5,function()
+        self._proxy:RemoveBuffByKindAndCount(targetNpcUUID,1052284,0)
+    end)
     self.AxeWrestleInput = false
     --角力退出还原锁定配置
     self._proxy:SetHardLock(targetNpcUUID,self.LockTargetKeeper)
@@ -902,6 +883,13 @@ function XCharR5Nanami2:OnNpcWrestleReversal(launcherNpcUUID, targetNpcUUID)
     Base.OnNpcWrestleReversal(self,launcherNpcUUID, targetNpcUUID)
     --XLog.Warning("角力成功")
     self.WrestleTarget = 0
+    if targetNpcUUID ~= self._uuid then
+        return
+    end
+    --延时移除角力镜头参数
+    self._proxy:AddTimerTask(1.5,function()
+        self._proxy:RemoveBuffByKindAndCount(targetNpcUUID,1052284,0)
+    end)
     self.AxeWrestleInput = false
     --角力退出还原锁定配置
     self._proxy:SetHardLock(targetNpcUUID,self.LockTargetKeeper)

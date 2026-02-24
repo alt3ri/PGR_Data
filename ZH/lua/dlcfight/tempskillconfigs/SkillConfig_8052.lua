@@ -201,16 +201,16 @@ local SkillConditions = {
     },
     --------------70AI的技能条件配置-------------------------
     [105215] ={ --70
-        DistanceNeed = {9},
+        DistanceNeed = {8},
     },
     [105216] ={ --70
-        DistanceNeed = {13},
+        DistanceNeed = {8},
     },
     [105217] ={ --70
-        DistanceNeed = {13},
+        DistanceNeed = {8},
     },
     [105218] ={ --70
-        DistanceNeed = {13},
+        DistanceNeed = {8},
     },
 
     --------------丽芙AI的技能条件配置-------------------------

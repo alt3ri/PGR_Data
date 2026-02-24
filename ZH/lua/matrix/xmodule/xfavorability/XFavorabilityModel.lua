@@ -14,6 +14,7 @@ local TABLE_FESTIVAL = "Share/FestivalMail/Festival.tab"
 local TABLE_CHARACTER_COLLABORATION = "Client/Trust/CharacterCollaboration.tab"
 local TABLE_SIGNBOARD_FEEDBACK = "Client/Signboard/SignBoardFeedback.tab";
 local TABLE_SIGNBOARD_FEEDBACK_ROLEMAP = "Client/Signboard/SignBoardFeedbackRoleMap.tab";
+local TABLE_CHARACTER_STORY_ACTIVITY = "Share/Trust/CharacterStoryActivity.tab"
 
 local TableNormal = {
     CharacterVoiceContentMap = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "Id", ReadFunc = XConfigUtil.ReadType.Int },
@@ -65,6 +66,7 @@ function XFavorabilityModel:OnInit()
         [TABLE_FESTIVAL] = {XConfigUtil.ReadType.Int,XTable.XTableFestival,"Id",XConfigUtil.CacheType.Private},
         [TABLE_CHARACTER_GROUP] = {XConfigUtil.ReadType.Int,XTable.XTableFestivalCharacterGroup,"CharacterId",XConfigUtil.CacheType.Private},
         [TABLE_LIKE_LEVELCONFIG] = {XConfigUtil.ReadType.Int,XTable.XTableFavorabilityLevelConfig,"Id",XConfigUtil.CacheType.Normal},
+        [TABLE_CHARACTER_STORY_ACTIVITY] = {XConfigUtil.ReadType.Int,XTable.XTableCharacterStoryActivity,"CharacterId",XConfigUtil.CacheType.Normal},
 
         [TABLE_LIKE_INFORMATION] = {XConfigUtil.ReadType.Int,XTable.XTableCharacterInformation, "Id",XConfigUtil.CacheType.Temp},
         [TABLE_LIKE_STRANGENEWS] = {XConfigUtil.ReadType.Int,XTable.XTableCharacterStrangeNews,"Id",XConfigUtil.CacheType.Temp},
@@ -248,6 +250,11 @@ end
     
 function XFavorabilityModel:ResetLastPlaySkillCvTime()
     self._LastPlaySkillCvTime = 0
+end
+
+function XFavorabilityModel:GetCharacterStoryActivityConfig(characterId)
+    local config = self._ConfigUtil:Get(TABLE_CHARACTER_STORY_ACTIVITY)
+    return config[characterId]
 end
 ----------public end----------
 

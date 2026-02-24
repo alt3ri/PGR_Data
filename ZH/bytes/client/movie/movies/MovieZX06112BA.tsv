@@ -1,0 +1,226 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1349.jpg'}
+2	2		502						250.0	{1: 'DialogDisable', 2: '201'}
+3	3		107							{1: '矿洞深处'}
+4	4		301							{3: '矿洞深处'}
+5	5		108							{1: '1'}
+6	6		401							{1: '1', 2: '6245'}
+7	7		301			DialogEnable	DialogDisable			{3: '艾丝琳扯着衣角，亦步亦趋地跟着人类指挥官的脚步，矿洞蜿蜒，由于地动导致的塌陷，许多地形发生变化，一些进入时留下的标记已经难以寻找。'}
+8	8		401							{1: '2', 2: '13081709'}
+9	9		104						250.0	{1: '0|-30|0', 2: '0.2'}
+10	10		104							{1: '0|0|0', 2: '0.3'}
+11	11		301			DialogEnable				{3: '循着留下的标记，暂时寻找到路过的安全区，人类指挥官坐下来尝试着摆弄终端。'}
+12	12		201							{1: '1', 2: '501382', 3: '7'}
+13	13		301							{1: '1', 2: '艾丝琳', 3: '这是……什么？', 4: '1'}
+14	14		301							{3: '短暂的路程中，小女孩已经不再害怕人类，她好奇地在一侧探头探脑，想要看到人类手上的动作。'}
+15	15		302							{2: '这是终端，用来联络其他人。', 3: '16'}
+16	16		204							{1: '1', 2: '3'}
+17	17		301							{2: '艾丝琳', 3: '联络……', 4: '1'}
+18	18		302							{2: '利用这个，就能和更远地方的人说话。', 3: '19'}
+19	19		204							{1: '1', 2: '0'}
+20	20		301							{2: '艾丝琳', 3: '喔……', 4: '1'}
+21	21		301							{3: '她似懂非懂地探头看着。'}
+22	22		301							{2: '艾丝琳', 3: '就像你说的，联络，丽芙？', 4: '1'}
+23	23		302							{2: '是啊，可惜这里信号太差了，完全联络不上。', 3: '24'}
+24	24		204							{1: '1', 2: '8'}
+25	25		301				DialogDisable			{2: '艾丝琳', 3: '唔……信号？'}
+26	26		202							{1: '1', 6: '1'}
+27	27		401							{1: '2', 2: '4331'}
+28	28		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+29	29		104						550.0	{1: '0|-50|-100', 2: '0.5'}
+30	30		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+31	31		301			DialogEnable				{3: '她噔噔跑到一边，像模像样的对着上方挥舞双手。'}
+32	32		201							{1: '1', 2: '501382', 3: '3', 4: '-150'}
+33	33		301			PanelActor1Shake	DialogDisable			{1: '1', 2: '艾丝琳', 3: '我要信号！', 4: '1'}
+34	34		302							{2: '这里没有信号是矿洞的原因。', 3: '35'}
+35	35		302							{2: '不是这样就能……', 3: '36'}
+36	36		401							{1: '1', 2: '6246'}
+37	37		401							{1: '2', 2: '2782'}
+38	38		204							{1: '1', 2: '7'}
+39	39		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab', 2: '3'}
+40	40		301			DialogEnable	DialogDisable			{3: '话音未落，帕弥什浓度监控骤然急剧上升。'}
+41	41		302							{2: '等等……快过来！', 3: '42'}
+42	42		402							{1: '2782'}
+43	43		401							{1: '2', 2: '844090'}
+44	44		201							{1: '2', 2: '500902', 4: '700', 6: '-150'}
+45	45		203							{1: '2', 2: '0.25', 3: '450', 5: '-150'}
+46	46		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+47	47		104						250.0	{1: '0|-50|-100', 2: '0.2'}
+48	48		104							{1: '0|0|-150', 2: '0.3'}
+49	49		401							{1: '2', 2: '4339'}
+50	50		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+51	51		202							{1: '2', 2: '1', 6: '1'}
+52	52		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+53	53		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '1'}
+54	54		401							{1: '2', 2: '4341'}
+55	55		502							{1: 'RImgBg1Shake'}
+56	56		301			DialogEnable				{3: '闪身扑过去，险险捞回小女孩，眨眼间，一只异合生物从另一边的岔道口飞扑过来——'}
+57	57		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+58	58		201							{1: '18', 2: '501382', 3: '7'}
+59	59		301			DialogShake				{1: '1', 2: '艾丝琳', 3: '！！！', 4: '18'}
+60	60		202				DialogDisable			{1: '18', 6: '1'}
+61	61		301			DialogEnable	DialogDisable			{3: '孩子瞪大眼睛，像是吓呆了。'}
+62	62		104						250.0	{1: '-30|0|-150', 2: '0.2'}
+63	63		104							{1: '0|0|0', 2: '0.3'}
+64	64		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+65	65		201							{1: '2', 2: '500902'}
+66	66		302							{2: '（拔出配枪）', 3: '67'}
+67	67		401							{1: '2', 2: '4779'}
+68	68		302							{2: '（开枪）', 3: '69'}
+69	69		401							{1: '2', 2: '1510'}
+70	70		501						150.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+71	71		401							{1: '2', 2: '1510'}
+72	72		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+73	73		502							{1: 'RImgBg1Shake'}
+74	74		203							{1: '2', 2: '0.3', 4: '-800'}
+75	75		401							{1: '2', 2: '4006'}
+76	76		202							{1: '2'}
+77	77		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiSHanshuoNew.prefab'}
+78	78		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+79	79		301			DialogEnable				{3: '枪声沉闷地回荡在矿洞中，那只异合生物的爪子险险从自己脸颊边擦过，划出一道血痕。'}
+80	80		301				DialogDisable			{3: '怎么会，这里不应该出现异合生物——'}
+81	81		401							{1: '2', 2: '1513'}
+82	82		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1', 5: '2'}
+83	83		104						350.0	{1: '0|50|-50', 2: '0.3'}
+84	84		104							{1: '0|0|-150', 2: '0.4'}
+85	85		301			DialogEnable	DialogDisable			{3: '顾不得拨到一半的通讯，抄起孩子，转身跑向另一条没有探索过的通道。'}
+86	86		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+87	87		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1351.jpg'}
+88	88		301			DialogEnable	DialogDisable			{3: '奔跑过程中，通讯意外地接通了。'}
+89	89		401							{1: '2', 2: '1515'}
+90	90		509						250.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1344.jpg', 2: '1'}
+91	91		511							{1: '2', 2: '0', 3: '1400|-300|900'}
+92	92		401							{1: '2', 2: '2775'}
+93	93		201							{1: '11', 2: '501385', 3: '7', 4: '-650'}
+94	94		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '11'}
+95	95		301			DialogEnable				{1: '1', 2: '丽芙', 3: '……指挥官？！', 4: '11'}
+96	96		301							{3: '丽芙的声音从终端中传来，白噪音依旧剧烈，但勉强能听到她在说什么。'}
+97	97		302							{2: '丽芙！', 3: '98'}
+98	98		204							{1: '11', 2: '15'}
+99	99		301							{2: '丽芙', 3: '指挥官……！你现在在……什么……地方……！', 4: '11'}
+100	100		302							{2: '我在安全区，安全区出现了异合生物！', 3: '101'}
+101	101		204							{1: '11', 2: '7'}
+102	102		301							{2: '丽芙', 3: '异合……生物……？', 4: '11'}
+103	103		201							{1: '12', 2: '501387', 3: '7', 4: '-250', 5: '-50'}
+104	104		301							{1: '1', 3: '终端对面，丽芙身后影影绰绰站着一个女人……是墨利诺厄？她怎么会在这里？'}
+105	105		204							{1: '11', 2: '4'}
+106	106		301							{2: '丽芙', 3: '能……同步……位置吗……？！', 4: '11'}
+107	107		301							{3: '丽芙急切地呼喊着。'}
+108	108		302							{2: '我试试看……', 3: '109'}
+109	109		301							{3: '显然，人类很难完成一边捞着一个小孩，一边开枪击退异合生物，一边尝试点开终端同步位置这样的操作。'}
+110	110		302							{2: '不行啊，点不开……', 3: '111', 4: '不行……', 5: '111'}
+111	111		301							{3: '丽芙显然没有接收到这个信息，她努力贴近终端，尝试听清楚这里的声音。'}
+112	112		301				DialogDisable			{3: '异合生物被暂时击退，周围的环境看似安全了下来。'}
+113	113		302							{2: '丽芙，要小心这里，异合生物和矿晶都有古怪。', 3: '114'}
+114	114		302							{2: '要小心你的意识海……', 3: '115'}
+115	115		204							{1: '11', 2: '15'}
+116	116		301			DialogEnable				{2: '丽芙', 3: '指挥官……你……还好吗？', 4: '11'}
+117	117		301				DialogDisable			{3: '丽芙的急切几乎要透过屏幕溢出来。'}
+118	118		302							{2: '没关系。', 3: '119'}
+119	119		302							{2: '我担心你那边。', 3: '120'}
+120	120		302							{2: '异合生物，它们可能有什么在后面操控……', 3: '121'}
+121	121		301			DialogEnable				{2: '丽芙', 3: '……指挥官……不要担心……', 4: '11'}
+122	122		302							{2: '这点小伤不要紧，你要小心意识海的波动……', 3: '123'}
+123	123		204							{1: '11', 2: '12'}
+124	124		301				DialogDisable			{2: '丽芙', 3: '…………', 4: '11'}
+125	125		302							{2: '我在沿途留下了标记，假如你看到标记……', 3: '126'}
+126	126		302							{2: '就立刻来和我汇合……', 3: '127'}
+127	127		201							{1: '1', 2: '500902', 4: '-1500'}
+128	128		201							{1: '2', 2: '500902', 4: '1500'}
+129	129		301			DialogEnable	DialogDisable			{1: '1', 2: '丽芙', 3: '我们很快就能汇——', 4: '11'}
+130	130		401							{1: '2', 2: '1515'}
+131	131		402							{1: '2775'}
+132	132		202							{1: '11', 2: '12', 6: '1'}
+133	133		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '11'}
+134	134		510						250.0	{1: '1', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1344.jpg'}
+135	135		511							{1: '2', 2: '0', 3: '0|0|0'}
+136	136		502							{1: 'RImgBg1Shake'}
+137	137		401							{1: '2', 2: '844090'}
+138	138		203							{1: '1', 2: '0.3', 3: '-350'}
+139	139		203							{1: '2', 2: '0.3', 3: '350'}
+140	140		301			DialogEnable				{1: '1', 3: '通讯骤然中断，与此同时，异合生物已飞扑而上——'}
+141	141		401							{1: '2', 2: '4779'}
+142	142		301				AniZhuanchangBegin			{3: '无暇顾及另一端，人类指挥官拔出配枪，转身迎敌。'}
+143	143		502							{1: 'DialogDisable'}
+144	144		202							{1: '1', 2: '2', 6: '1'}
+145	145		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 5: '2'}
+146	146		401						1000.0	{1: '1', 2: '36'}
+147	147		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1344.jpg'}
+148	148		401							{1: '1', 2: '6245'}
+149	149		201							{1: '1', 2: '501385', 3: '4', 4: '-400'}
+150	150		201							{1: '2', 2: '501387', 3: '14', 4: '400'}
+151	151		502							{1: 'DialogEnable'}
+152	152		301			AniZhuanchangEnd				{1: '1', 3: '潮湿的空气弥漫在四周，丽芙和墨利诺厄摸索着朝矿洞深处走去。'}
+153	153		401							{1: '2', 2: '4536'}
+154	154		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab', 2: '1'}
+155	155		502							{1: 'RImgBg1Shake'}
+156	156		204							{1: '1', 2: '7'}
+157	157		301			DialogShake	DialogDisable			{2: '丽芙', 3: '……小心！', 4: '1'}
+158	158		401							{1: '2', 2: '4339'}
+159	159		203							{1: '1', 2: '0.25', 3: '650', 4: '-500'}
+160	160		203							{1: '2', 2: '0.3', 3: '750', 4: '-500'}
+161	161		202							{1: '1', 2: '2'}
+162	162		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '1'}
+163	163		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+164	164		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab'}
+165	165		502							{1: 'RImgBg1Shake'}
+166	166		301			DialogEnable	DialogDisable			{3: '地面高频震颤，丽芙闪电般出手拉开墨利诺厄，一块尖锐的石头自她身侧猛然坠落。'}
+167	167		201							{1: '1', 2: '501385', 3: '4', 4: '-250', 7: '1'}
+168	168		201							{1: '2', 2: '501387', 3: '7', 4: '450', 5: '-50'}
+169	169		203						150.0	{1: '2', 2: '0.1', 3: '430', 4: '-20'}
+170	170		203							{1: '2', 2: '0.2', 3: '400', 4: '0'}
+171	171		301			DialogEnable				{1: '1', 2: '墨利诺厄', 3: '！', 4: '2'}
+172	172		204							{1: '2', 2: '8'}
+173	173		301							{2: '墨利诺厄', 3: '多，多谢……', 4: '2'}
+174	174		204							{1: '2', 2: '14'}
+175	175		301							{3: '墨利诺厄惊魂未定地跟在了丽芙身后。'}
+176	176		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}
+177	177		502							{1: 'RImgBg1Shake'}
+178	178		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab', 2: '1'}
+179	179		301							{3: '矿洞仍然时有摇晃，丽芙尝试定位震源，但始终得不到精确数据。'}
+180	180		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab'}
+181	181		301							{2: '丽芙', 3: '还在震动……可能应力集中引发的诱发地震。', 4: '1'}
+182	182		204							{1: '2', 2: '7'}
+183	183		301							{2: '墨利诺厄', 3: '那，那要怎么办？艾丝琳还在里面……', 4: '2'}
+184	184		204							{1: '1', 2: '0'}
+185	185		301				DialogDisable			{2: '丽芙', 3: '诱发地震震源比较浅，应该不会造成太大的震动……我们继续往前走。', 4: '1'}
+186	186		202							{1: '1', 2: '2', 6: '1'}
+187	187		104						250.0	{1: '0|50|-80', 2: '0.2'}
+188	188		104							{1: '0|50|-150', 2: '0.3'}
+189	189		301			DialogEnable	DialogDisable			{3: '她刚刚看到了指挥官的位置，尽管只闪烁了一瞬，但也能确定大概方向。'}
+190	190		205						450.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1350.jpg', 3: '0', 4: '1', 5: '0.4'}
+191	191		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1350.jpg'}
+192	192		205							{1: '999'}
+193	193		201							{1: '1', 2: '501385', 3: '12'}
+194	194		301			DialogEnable				{1: '1', 2: '丽芙', 3: '前面右转，<M>他们</M><W>她们</W>应该在那个安全区停留过……', 4: '1'}
+195	195		202							{1: '1'}
+196	196		401							{1: '2', 2: '1504'}
+197	197		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab', 2: '1'}
+198	198		301				DialogDisable			{3: '丽芙紧紧抿起嘴唇，加快脚步。'}
+199	199		205						450.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1349.jpg', 3: '0', 4: '1', 5: '0.4'}
+200	200		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1349.jpg'}
+201	201		205							{1: '999'}
+202	202		201							{1: '2', 2: '500902', 4: '-1500'}
+203	203		201							{1: '3', 2: '500902', 4: '1500'}
+204	204		301			DialogEnable				{1: '1', 3: '绕过了第三个岔路口，前面就是指挥官他们可能停留的第一个安全区了……'}
+205	205		401							{1: '1', 2: '6246'}
+206	206		401							{1: '2', 2: '844090'}
+207	207		203							{1: '2', 2: '0.2', 3: '-450'}
+208	208		203							{1: '3', 2: '0.2', 3: '450'}
+209	209		502							{1: 'RImgBg1Shake'}
+210	210		201							{1: '18', 2: '501388', 3: '7', 5: '-100', 6: '-50'}
+211	211		301			DialogShake				{1: '1', 2: '墨利诺厄', 3: '丽，丽芙！那边……是什么！', 4: '18'}
+212	212		202				DialogDisable			{1: '18', 6: '1'}
+213	213		401							{1: '2', 2: '14014403'}
+214	214		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao.prefab', 2: '2'}
+215	215		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao01.prefab', 2: '2'}
+216	216		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+217	217		202							{1: '2', 2: '3', 6: '1'}
+218	218		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineSpreadNew.prefab'}
+219	219		502							{1: 'RImgBg1Shake'}
+220	220		301			DialogEnable				{3: '战斗的直觉先于视觉模块捕捉到空气中异合生物的气息，丽芙轮刃骤然出鞘，斩断一只攀爬过来的异合生物。'}
+221	221		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+222	222		401							{1: '2', 2: '4339'}
+223	223		201							{1: '1', 2: '501385', 3: '4', 4: '-50', 5: '-50', 6: '-50', 7: '1'}
+224	224		203							{1: '1', 2: '0.2', 3: '0', 4: '0', 5: '0'}
+225	225		301		1		AniZhuanchangBegin			{1: '1', 2: '丽芙', 3: '……这里怎么也出现了异合生物……', 4: '1'}

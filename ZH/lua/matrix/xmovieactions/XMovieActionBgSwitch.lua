@@ -1,4 +1,3 @@
-local DefaultAspectRatio = 1
 local DefaultBgIndex = 1
 
 ---@field UiRoot XUiMovie
@@ -18,21 +17,20 @@ function XMovieActionBgSwitch:OnInit(actionData)
     local bgIndex = params[4]
     self.BgIndex = bgIndex and paramToNumber(bgIndex) or DefaultBgIndex
     self.IsHide = params[5] == "1"
+    self.AnchorType = string.IsNilOrEmpty(params[6]) and XMVCA.XMovie.EnumConst.ANCHOR_ALIGNMENT_TYPE.FULL or paramToNumber(params[6]) -- 对齐方式
+    self.PositionParams = XMVCA.XMovie:SplitParam(params[7], "|", true)
 end
 
 function XMovieActionBgSwitch:OnUiRootInit()
     self.RImgBg = self.UiRoot.UiMovieBg:GetBg(self.BgIndex)
 
     if self.RImgBg then
-        self.AspectRatioFitter = self.RImgBg:GetXAspectRatioFitter()
         self.CanvasGroup = self.RImgBg:GetCanvasGroup()
-        DefaultAspectRatio = self.AspectRatioFitter.aspectRatio
     end
 
     -- 支持动画时，RImgBg1为原图，RImgBg2为新图，RImgBg2的透明度从0缓变为1
     if self.NeedSupportAnim and self.BgIndex == DefaultBgIndex then
         self.RImgAnimBg = self.UiRoot.UiMovieBg:GetBg(2)
-        self.AspectRatioFitter2 = self.RImgAnimBg:GetXAspectRatioFitter()
     end
 
     -- FullScreenBackground下的背景图，仍按照旧逻辑改动FullScreenBackground的透明度
@@ -47,8 +45,6 @@ end
 function XMovieActionBgSwitch:OnUiRootDestroy()
     self.CanvasGroup = nil
     self.AspectRatioFitter = nil
-    self.AspectRatioFitter2 = nil
-    DefaultAspectRatio = 1
 end
 
 function XMovieActionBgSwitch:OnEnter()
@@ -58,24 +54,23 @@ function XMovieActionBgSwitch:OnEnter()
     end
 
     local bgPath = self.BgPath
-    local aspectRatioPercent = self.AspectRatioPercent
-    local ratio = aspectRatioPercent > 0 and DefaultAspectRatio * aspectRatioPercent or DefaultAspectRatio
     local rImgBg = self.RImgBg
     self.Record.BgPath = rImgBg:GetBgPath()
-    rImgBg:ResetPosition()
-    rImgBg:ResetScale()
-    self.AspectRatioFitter.aspectRatio = ratio
+    rImgBg:Reset()
+    if self.AspectRatioPercent > 0 then
+        local ratio = rImgBg:GetAspectRatio() * self.AspectRatioPercent
+        rImgBg:SetAspectRatio(ratio)
+    end
     rImgBg:Show()
 
     if self.NeedSupportAnim and self.RImgAnimBg then
-        rImgBg = self.RImgAnimBg
-        rImgBg:SetBgPath(bgPath)
-        rImgBg:ResetScale()
-        rImgBg:ResetPosition()
-        self.AspectRatioFitter2.aspectRatio = ratio
-        rImgBg:Show()
+        local ratio = self.RImgBg:GetAspectRatio() * self.AspectRatioPercent
+        self.RImgAnimBg:Reset()
+        self.RImgAnimBg:SetBgPath(bgPath, self.AnchorType, self.PositionParams)
+        self.RImgAnimBg:SetAspectRatio(ratio)
+        self.RImgAnimBg:Show()
     else
-        rImgBg:SetBgPath(bgPath)
+        rImgBg:SetBgPath(bgPath, self.AnchorType, self.PositionParams)
     end
 
     local bgAlpha = self.BgAlpha
@@ -130,11 +125,12 @@ end
 function XMovieActionBgSwitch:OnPassedActionRun()
     -- 刷新背景图
     self.Record.BgPath = self.RImgBg:GetBgPath()
-    self.RImgBg:SetBgPath(self.BgPath)
-    self.RImgBg:ResetPosition()
-    self.RImgBg:ResetScale()
-    local ratio = self.AspectRatioPercent > 0 and DefaultAspectRatio * self.AspectRatioPercent or DefaultAspectRatio
-    self.AspectRatioFitter.aspectRatio = ratio
+    self.RImgBg:Reset()
+    self.RImgBg:SetBgPath(self.BgPath, self.AnchorType, self.PositionParams)
+    if self.AspectRatioPercent > 0 then
+        local ratio = self.RImgBg:GetAspectRatio() * self.AspectRatioPercent
+        self.RImgBg:SetAspectRatio(ratio)
+    end
     self.RImgBg:Show()
     if self.BgAlpha then
         self.CanvasGroupBg.alpha = self.BgAlpha

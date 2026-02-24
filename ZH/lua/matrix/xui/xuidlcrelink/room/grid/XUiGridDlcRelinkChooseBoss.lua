@@ -53,7 +53,7 @@ function XUiGridDlcRelinkChooseBoss:RefreshTime()
         return
     end
 
-    local timeStr = XUiHelper.GetTime(remainTime, XUiHelper.TimeFormatType.ESCAPE_REMAIN_TIME)
+    local timeStr = XUiHelper.GetTime(remainTime, XUiHelper.TimeFormatType.MOE_WAR)
     self.TxtLock.text = string.format(self._Control:GetClientConfig("ChapterCountDownDesc"), timeStr)
 end
 

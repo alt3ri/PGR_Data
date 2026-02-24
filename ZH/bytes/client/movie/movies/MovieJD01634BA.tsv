@@ -1,0 +1,15 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory275.png'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '500166'}
+4	4		301			DialogEnable				{1: '1', 3: '众人渐渐靠近了化工厂地区的出口，露西亚似乎有些出神地左右张望着。'}
+5	5		302							{2: '露西亚，怎么了？', 3: '6'}
+6	6		301							{2: '露西亚', 3: '抱歉，我还是觉得这里很眼熟，但却想不起来。', 4: '1'}
+7	7		302							{2: '在这里查找一下线索吧。', 3: '8'}
+8	8		301							{2: '露西亚', 3: '这只是我的私事，就不占用任务时间了。', 4: '1'}
+9	9		302							{2: '不，这也很可能是升格者的线索。', 3: '10'}
+10	10		301				DialogDisable			{2: '露西亚', 3: '……嗯，那就按照指挥官的意见来吧。', 4: '1'}
+11	11		305							{1: '12', 2: '14'}
+12	12		301			DialogEnable				{2: '露西亚', 3: '露娜……？', 4: '1'}
+13	13		302		1		AniZhuanchangBegin			{2: '去看看吧，露西亚。'}
+14	14		202		1		AniZhuanchangBegin			{1: '1', 6: '1'}

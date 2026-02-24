@@ -31,6 +31,8 @@ local XMainLineLuosaitaEnumConst = {
         ITEM = 2,           -- 提升道具
         ASSIST_ARMY = 3,    -- 支援军队
     },
+    MAX_SCALE = 1.05,       -- 最大缩放
+    MIN_SCALE = 0.95,       -- 最小缩放
 }
 
 return XMainLineLuosaitaEnumConst

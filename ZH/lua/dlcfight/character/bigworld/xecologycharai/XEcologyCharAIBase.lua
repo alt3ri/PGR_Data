@@ -58,7 +58,7 @@ function XEcologyCharAIBase:InitStateMachine()
     -- 初始化状态机
     self._stateMachine = XStateMachineController.New(self._proxy)
     self._stateMachine:Init()
-    
+
     self:RegisterMachineState()
     self:RegisterMachineStateTransition()
 end

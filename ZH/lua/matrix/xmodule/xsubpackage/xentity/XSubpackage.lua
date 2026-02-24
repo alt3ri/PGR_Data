@@ -11,13 +11,24 @@ function XSubpackage:Ctor(packageId)
     self._TotalSize = -1
     self._DownSize = 0
     self._WaitPause = false
-    self._MaxProgress = 0
+    self._PeakProgress = 0 -- 达到的最大进度
     ---@type XResource[]
     self._ResItemDic = {}
     self._TaskGroups = nil
 end
 
 function XSubpackage:InitState()
+    -- [新增 Fix]：初始化时优先检查逻辑卸载状态
+    -- 如果满足卸载条件（独占资源已卸载 或 共享资源被其他占用），则直接定为 UNINSTALLED
+    -- 防止因为残留文件或共享文件导致状态被重置为 PAUSE
+    if not XTool.IsTableEmpty(self._ResItemDic) then
+        self:UpdateUninstallState()
+        if self:IsUninstalled() then
+            return
+        end
+    end
+
+    -- [原有逻辑]：基于物理文件大小的判断
     local downloadSize = self:GetDownloadSize()
     local totalSize = self:GetTotalSize()
     if totalSize and totalSize <= 0 then
@@ -60,7 +71,7 @@ function XSubpackage:GetProgress()
 end
 
 function XSubpackage:GetMaxProgress()
-    return math.max(self:GetProgress(), self._MaxProgress)
+    return math.max(self:GetProgress(), self._PeakProgress)
 end
 
 function XSubpackage:UpdateMaxProgress()
@@ -68,12 +79,12 @@ function XSubpackage:UpdateMaxProgress()
     for k, resItem in pairs(self._ResItemDic) do
         prg = prg + resItem:GetMaxProgress()
     end
-    self._MaxProgress = math.max(prg, self._MaxProgress)
+    self._PeakProgress = math.max(prg, self._PeakProgress)
 end
 
 -- 下载过程中，临时文件可能出错，删除掉会导致进度减少
 function XSubpackage:IsProgressLess()
-    return self:GetProgress() < self._MaxProgress
+    return self:GetProgress() < self._PeakProgress
 end
 
 function XSubpackage:GetTotalSize()
@@ -139,6 +150,32 @@ function XSubpackage:IsPause()
     return self._State == XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.PAUSE
 end
 
+---更新分包的卸载状态
+---判定逻辑：如果所有“可卸载”的资源（即非共享资源）都已经卸载，则分包进入 UNINSTALLED 状态
+function XSubpackage:UpdateUninstallState()
+    if XTool.IsTableEmpty(self._ResItemDic) then return end
+
+    local allUninstallableDone = true
+    for resId, resItem in pairs(self._ResItemDic) do
+        -- 检查资源是否被其他分包占用（不可卸载）
+        local isLocked = XMVCA.XSubPackage:IsResUsedByOtherProcessSubpackage(resId, self._Id)
+        
+        -- 如果资源既没有卸载，也不是因为被占用而跳过，说明还没卸载完
+        if not resItem:IsUninstalled() and not isLocked then
+            allUninstallableDone = false
+            break
+        end
+    end
+
+    if allUninstallableDone then
+        self._State = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.UNINSTALLED
+    end
+end
+
+function XSubpackage:IsUninstalled()
+    return self._State == XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.UNINSTALLED
+end
+
 function XSubpackage:GetSubpackageSizeWithUnit()
     local size = self:GetTotalSize()
     return XMVCA.XSubPackage:TransformSize(size)
@@ -151,6 +188,18 @@ function XSubpackage:InitFileInfo(filePath, data, resId)
         self._ResItemDic[resId] = resItem
     end
     resItem:InitFileInfo(filePath, data)
+end
+
+-- [XSubpackage.lua] 新增方法
+function XSubpackage:RemoveResCache(resId)
+    -- 1. 移除对旧 Res 对象的引用
+    if self._ResItemDic[resId] then
+        self._ResItemDic[resId] = nil
+    end
+    
+    -- 2. 清除 TaskGroups 缓存 (因为它里面存的是旧 Res 的 TaskGroup)
+    -- 下次调用 GetTaskGroups 时会自动重新获取新的
+    self._TaskGroups = nil 
 end
 
 function XSubpackage:FileInitComplete()

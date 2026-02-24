@@ -709,10 +709,10 @@ end
 function XCharR5Nanami1:TestInputLogic()
 
     if self._proxy:IsKeyDown(ENpcOperationKey.Ball4) then
-        local TestAction = 105268
+        local TestAction = 105253
         local _,locktargetUUID = self._proxy:GetLockTarget()
-        self._proxy:CastSkillActionNotCheck(self._uuid,TestAction,0,999)
-        --self._proxy:CastSkillActionToNpcNotCheck(self._uuid,TestAction,locktargetUUID,0,999)
+        --self._proxy:CastSkillActionNotCheck(self._uuid,TestAction,0,999)
+        self._proxy:CastSkillActionToNpcNotCheck(self._uuid,TestAction,locktargetUUID,0,999)
         --XLog.Warning("测试技能"..TestAction)
     end
 
@@ -799,35 +799,15 @@ function XCharR5Nanami1:SkillAtuoCombo()
         self._proxy:AbortAction(self._uuid,true)
         --XLog.Warning("终结移动后攻击流程")
         local _,locktargetUUID = self._proxy:GetLockTarget(self._uuid)
-        if locktargetUUID ~= 0 then
-            self._proxy:CastActionToTargetEx(self._uuid,105253,locktargetUUID,0,5)
-        else
-            local searchtarget = self._proxy:GetFirstSearchTarget(self._uuid,ENpcTargetType.Enemy)
-            if searchtarget == 0 then
-                return
-            end
-            self._proxy:SetSoftLock(self._uuid,searchtarget)
-            local _,locktargetUUID = self._proxy:GetLockTarget(self._uuid)
-            self._proxy:CastActionToTargetEx(self._uuid,105253,locktargetUUID,0,5)
-        end
+        self._proxy:CastActionToTargetEx(self._uuid,105253,locktargetUUID,0,5)
+
     end
 
     if self._proxy:CheckNpcCurrentAction(self._uuid,105276) and self._skillTimer >= 0.9 then
         self._proxy:AbortAction(self._uuid,true)
         --XLog.Warning("斧终结移动后攻击流程")
         local _,locktargetUUID = self._proxy:GetLockTarget(self._uuid)
-        if locktargetUUID ~= 0 then
-            self._proxy:CastActionToTargetEx(self._uuid,105254,locktargetUUID,0,5)
-        else
-            local searchtarget = self._proxy:GetFirstSearchTarget(self._uuid,ENpcTargetType.Enemy)
-            if searchtarget == 0 then
-                return
-            end
-            self._proxy:SetSoftLock(self._uuid,searchtarget)
-            local _,locktargetUUID = self._proxy:GetLockTarget(self._uuid)
-            self._proxy:CastActionToTargetEx(self._uuid,105254,locktargetUUID,0,5)
-        end
-
+        self._proxy:CastActionToTargetEx(self._uuid,105254,locktargetUUID,0,5)
     end
 
 --[[
@@ -1038,7 +1018,7 @@ end
 function XCharR5Nanami1:OnNpcCounterSuccess(triggerNpcUUID, counterNpcUUID, triggerTag, counterTag)
     Base.OnNpcCounterSuccess(self,triggerNpcUUID, counterNpcUUID, triggerTag, counterTag)
     if self._proxy:CheckNpcCurrentAction(self._uuid, 105206) or self._proxy:CheckNpcCurrentAction(self._uuid, 105224)
-            or self._proxy:CheckNpcCurrentAction(self._uuid,105235) or self._proxy:CheckNpcCurrentAction(self._uuid,105236)then
+            or self._proxy:CheckNpcCurrentAction(self._uuid, 105235) or self._proxy:CheckNpcCurrentAction(self._uuid, 105236) then
         self._proxy:AbortAction(self._uuid, true)
         if self._proxy:CheckBuffByKind(self._uuid, 105217) then
             self._proxy:CastActionEx(self._uuid,105240,0.26,3.83) --剑盾受击触发弹刀释放精确格挡

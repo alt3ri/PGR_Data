@@ -1029,7 +1029,8 @@ function XCharacterAgency:GetShowFashionId(templateId, isNotSelf)
     if self:IsOwnCharacter(templateId) == true then
         return self._Model.OwnCharacters[templateId].FashionId
     else
-        return self:GetCharacterTemplate(templateId).DefaultNpcFashtionId
+        local template = self:GetCharacterTemplate(templateId)
+        return template and template.DefaultNpcFashtionId or nil
     end
 end
 
@@ -1935,7 +1936,7 @@ function XCharacterAgency:GetCharModel(templateId, quality)
     local npcTemplate = CS.XNpcManager.GetNpcTemplate(npcId)
 
     if npcTemplate == nil then
-        XLog.ErrorTableDataNotFound("self:GetCharModel", "npcTemplate", " Client/Fight/Npc/Npc.tab", "npcId", tostring(npcId))
+        XLog.ErrorTableDataNotFound("self:GetCharModel", "npcTemplate", " Share/Fight/Npc/Npc/Npc.tab", "npcId", tostring(npcId))
         return
     end
 
@@ -4726,6 +4727,31 @@ function XCharacterAgency:GetCharacterPowerEnhanceSkillIds(characterId)
 
     return powerEnhanceSkillIds
 end
+
+function XCharacterAgency:GetClientConfig(key, index)
+    if not index then
+        index = 1
+    end
+    local params = self._Model:GetClientConfigParams(key)
+    return params and params[index] or ""
+end
+
+function XCharacterAgency:GetClientConfigParams(key)
+    return self._Model:GetClientConfigParams(key)
+end
+
+function XCharacterAgency:GetClientConfigIntParams(key)
+    local params = self._Model:GetClientConfigParams(key)
+    if not params then
+        return {}
+    end
+
+    local intParams = {}
+    for _, v in ipairs(params) do
+        tableInsert(intParams, tonumber(v))
+    end
+    return intParams
+end
 --endregion getModeComplex结束
 
 -- 埋点
@@ -4756,6 +4782,17 @@ end
 -- 获取当前选中成员Id(武器超限引导用)
 function XCharacterAgency:GetCurSelectCharacterId()
     return self._Model:GetCurSelectCharacterId()
+end
+
+---根据武器涂装Id获取穿戴的角色Id
+---@return number[]
+function XCharacterAgency:GetCharacterIdsByWeaponFashion(weaponFashionId)
+    local equipType = XWeaponFashionConfigs.GetWeaponFashionEquipType(weaponFashionId)
+    if XTool.IsNumberValid(equipType) then
+        local cfg = self._Model:GetCharacterEquipTypeToIdAuto(equipType)
+        return cfg and cfg.CharacterId
+    end
+    return nil
 end
 
 -- Notify协议相关

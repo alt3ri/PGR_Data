@@ -521,7 +521,7 @@ XGuideManagerCreator = function()
     --- 是否处于引导流程中
     ---@return boolean
     function XGuideManager.CheckIsInGuide()
-        return IsGuiding and RunningGuideTemplate ~= nil
+        return IsGuiding or RunningGuideTemplate
     end
 
     function XGuideManager.GetIsOpenControl()

@@ -10,6 +10,7 @@ local XSoloReformEventId = {
 
     ---点击章节
     EVENT_CLICK_CHAPTER = "EVENT_CLICK_CHAPTER",
+    EVENT_CLICK_KILL_CHAPTER = "EVENT_CLICK_KILL_CHAPTER",
 
 }
 

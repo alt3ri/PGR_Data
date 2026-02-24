@@ -19,7 +19,7 @@ end
 
 function XLuckyTenantAgency:InitRpc()
     --实现服务器事件注册
-    XRpc.LuckyTenantStagesNotify = Handler(self, self.LuckyTenantStagesNotify)
+    -- XRpc.LuckyTenantStagesNotify = Handler(self, self.LuckyTenantStagesNotify)
 end
 
 function XLuckyTenantAgency:ClearAfterLeavingTheGame()
@@ -62,11 +62,11 @@ function XLuckyTenantAgency:LogHistory()
 end
 
 function XLuckyTenantAgency:SetTestCase(id)
-    XEventManager.DispatchEvent(XEventId.EVENT_LUCKY_TENANT_SET_TEST_CASE, id)
+    XEventManager.DispatchEvent(XEventId.EVENT_LUCKY_TENANT2_SET_TEST_CASE, id)
 end
 
 function XLuckyTenantAgency:TestClearBag()
-    XEventManager.DispatchEvent(XEventId.EVENT_LUCKY_TENANT_CLEAR_BAG)
+    XEventManager.DispatchEvent(XEventId.EVENT_LUCKY_TENANT2_CLEAR_BAG)
 end
 
 function XLuckyTenantAgency:ExCheckInTime()

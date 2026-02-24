@@ -3,7 +3,6 @@
 local XMovieActionSelection = XClass(XMovieActionBase, "XMovieActionSelection")
 
 function XMovieActionSelection:OnInit(actionData)
-    self.MAX_SELECTION_NUM = 3
     self.DEFAULT_SELECTION_TYPE = 1
 
     local params = actionData.Params
@@ -13,13 +12,14 @@ function XMovieActionSelection:OnInit(actionData)
     self.IsLeft = params[11] == "1" -- 是否使用左边的UI显示，默认是用右边的UI显示
 
     -- 参数下标
-    local contentIndexList = {2, 4, 6}      -- 选项内容
-    local actionIdIndexList = {3, 5, 7}     -- 跳转ActionId
-    local btnTypeIndexList = {8, 9, 10}     -- 按钮预设体
-    local settingIndexList = {12, 13, 14}   -- 已阅读和存在前置未完成 表现
+    local contentIndexList = {2, 4, 6, 15}      -- 选项内容
+    local actionIdIndexList = {3, 5, 7, 16}     -- 跳转ActionId
+    local btnTypeIndexList = {8, 9, 10, 17}     -- 按钮预设体
+    local settingIndexList = {12, 13, 14, 18}   -- 已阅读和存在前置未完成 表现
 
     local selectList = {}
-    for i = 1, self.MAX_SELECTION_NUM do
+    local maxSelectionNum = #contentIndexList
+    for i = 1, maxSelectionNum do
         local contentIndex = contentIndexList[i]
         local idIndex = actionIdIndexList[i]
         local btnTypeIndex = btnTypeIndexList[i]

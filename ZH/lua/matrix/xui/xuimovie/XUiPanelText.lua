@@ -9,18 +9,26 @@ function XUiPanelText:OnStart()
 end
 
 -- 显示文本
-function XUiPanelText:AppearText(layer, id, content, posX, posY, scale, rotation, isAnim)
+function XUiPanelText:AppearText(layer, id, content, posX, posY, scale, rotation, isAnim, anchorType)
     local text = self.TextDic[id]
     if not text then
         text = XUiHelper.Instantiate(self["GridText"..layer], self.TextList.transform)
         self.TextDic[id] = text
     end
+    local rect = text.transform:GetComponent(typeof(CS.UnityEngine.RectTransform))
     text.gameObject:SetActiveEx(true)
     text.text = XUiHelper.ConvertLineBreakSymbol(content)
-    local Vector3 = CS.UnityEngine.Vector3
-    text.transform.localPosition = Vector3(posX, posY, 0)
-    text.transform.localScale = Vector3(scale, scale, scale)
-    text.transform.eulerAngles = Vector3(0, 0, rotation)
+    
+    -- 对齐方式
+    local params = XMVCA.XMovie.EnumConst.ANCHOR_ALIGNMENT_TYPE_TO_PARAM[anchorType]
+    rect.anchorMin = XLuaVector2.New(params[1], params[2])
+    rect.anchorMax = XLuaVector2.New(params[3], params[4])
+    
+    text.transform.anchoredPosition3D = XLuaVector3.New(posX, posY, 0)
+    text.transform.localScale = XLuaVector3.New(scale, scale, scale)
+    text.transform.eulerAngles = XLuaVector3.New(0, 0, rotation)
+    
+    -- 动画
     if isAnim then
         local anim = XUiHelper.TryGetComponent(text.transform, "Ainmation/GridTextEnable")
         anim:PlayTimelineAnimation()
@@ -61,7 +69,8 @@ function XUiPanelText:TextPlayAnim(id, time, pos, rotation, scale)
     local second = time
     if pos then
         local aimPos = XLuaVector3.New(pos[1], pos[2], pos[3] or 0)
-        text.transform:DOLocalMove(aimPos, second)
+        local rect = text.transform:GetComponent(typeof(CS.UnityEngine.RectTransform))
+        rect:DOAnchorPos3D(aimPos, second)
     end
 
     if rotation then

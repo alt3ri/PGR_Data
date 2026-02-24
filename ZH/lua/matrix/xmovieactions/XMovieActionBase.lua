@@ -32,6 +32,13 @@ function XMovieActionBase:Ctor(actionData)
     self:OnInit(actionData)
 end
 
+function XMovieActionBase:Release()
+    XEventManager.RemoveEventListener(XEventId.EVENT_MOVIE_UI_OPEN, self.InitUiRoot, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_MOVIE_UI_DESTROY, self.ClearUiRoot, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_MOVIE_AUTO_PLAY, self.OnSwitchAutoPlay, self)
+    self:OnRelease()
+end
+
 function XMovieActionBase:GetActionId()
     return self.ActionId
 end
@@ -256,8 +263,14 @@ function XMovieActionBase:OnExit()
     XMVCA.XMovie:RequestRecordOption(movieId, self.ActionId)
 end
 
+-- 节点切换ActionStatus.TERMINATED 状态时调用
 function XMovieActionBase:OnDestroy()
     
+end
+
+-- 剧情播放结束时调用
+function XMovieActionBase:OnRelease()
+
 end
 
 function XMovieActionBase:OnSwitchAutoPlay()
@@ -285,8 +298,8 @@ function XMovieActionBase:StopAnimtion(anim)
     end
 end
 
---region PassAction
--- 作为PassedAction，是否需要执行
+--region PassAction 跳到某个节点开始播放，前面Action需要执行的函数
+-- 是走Run还是Skip函数。会被后面Action覆盖，则不需要刷新UI，走Skip做数据记录
 function XMovieActionBase:IsPassedActionRun(index)
     return false
 end
@@ -296,15 +309,16 @@ function XMovieActionBase:IsAdvanceStartAction()
     return false
 end
 
+-- 执行Run函数
 function XMovieActionBase:RunPassedAction()
     self:OnPassedActionRun()
 end
 
--- PassedAction的执行函数
 function XMovieActionBase:OnPassedActionRun()
 
 end
 
+-- 执行Skip函数
 function XMovieActionBase:SkipPassedAction()
     self:OnPassedActionSkip()
 end
@@ -313,7 +327,7 @@ function XMovieActionBase:OnPassedActionSkip()
 
 end
 
--- 当此Action为PassedActions之后的第一个时，需要判断这个Action是否在PanelLoading之后执行
+-- 当此Action为跳过Actions之后的第一个时，需要判断这个Action是否在PanelLoading之后执行
 function XMovieActionBase:IsStartAfterLoading()
     return false
 end

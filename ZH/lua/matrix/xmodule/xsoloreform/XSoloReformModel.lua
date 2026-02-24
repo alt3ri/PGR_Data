@@ -6,6 +6,10 @@ local TableKey = {
     SoloReformChapter = {CacheType = XConfigUtil.CacheType.Normal, ReadFunc = XConfigUtil.ReadType.IntAll},
     SoloReformStage = {CacheType = XConfigUtil.CacheType.Normal, ReadFunc = XConfigUtil.ReadType.IntAll},
     SoloReformUnlockFightEvent = {Identifier = "FightEventId"},
+    SoloReformRankUp = {CacheType = XConfigUtil.CacheType.Normal,DirPath = XConfigUtil.DirectoryType.Client,Identifier = "Stageid"},
+    SoloReformLevel = {DirPath = XConfigUtil.DirectoryType.Share},
+    SoloReformScore = {ReadFunc = XConfigUtil.ReadType.Int},
+
 }
 local LONG_TERM_VERSION = 1
 local SAVE_KEY_LONGTERM = 'LONGT_TERM'
@@ -106,12 +110,12 @@ end
 --return 完成任务数，总任务数
 function XSoloReformModel:GetChapterCompletedTaskCountAndTotal(chapterId)
     local chapterCfg = self:GetSoloReformChapterCfg(chapterId)
-    if XTool.IsTableEmpty(chapterCfg.ChapterStageId) then
-        return
+    if XTool.IsTableEmpty(chapterCfg.ChapterStageIds) then
+        return 0, 0
     end
     local totalCount = 0 
     local completedCount = 0
-    for _, stageId in pairs(chapterCfg.ChapterStageId) do
+    for _, stageId in pairs(chapterCfg.ChapterStageIds) do
         local stageCfg = self:GetSoloReformStageCfg(stageId)
         totalCount = totalCount + stageCfg.StarNum
         local stageStarStates = self:GetStageStarStateByStageId(stageId)
@@ -166,6 +170,29 @@ function XSoloReformModel:GetAllShowChapterCfgs()
 end
 
 
+function XSoloReformModel:GetKillStageScore(chapterId,stageId)
+    local stageData = self:GetChapterStageData(chapterId)
+    if not stageData then
+        return nil
+    end
+    if stageData.StageMaxScore then
+        return stageData.StageMaxScore[stageId]
+    end
+    return nil
+end
+
+function XSoloReformModel:GetScoreLevelCfg(score,difficulty)
+    if not XTool.IsNumberValid(difficulty) then
+        difficulty = 1
+    end
+    for _, cfg in ipairs(self:GetSoloReformLevelCfgs()) do
+        if score >= cfg.MinScores[difficulty] and score <= cfg.MaxScores[difficulty] then
+            return cfg
+        end
+    end
+end
+
+
 --region config
 function XSoloReformModel:GetSoloReformCfg(id, notips)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.SoloReformCfg, id, notips)
@@ -185,6 +212,18 @@ end
 
 function XSoloReformModel:GetSoloReformUnlockFightEvent(fightEventId, notips)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.SoloReformUnlockFightEvent, fightEventId, notips)
+end
+
+function XSoloReformModel:GetSoloReformRankUpCfg(stageId, notips)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.SoloReformRankUp, stageId, notips)
+end
+
+function XSoloReformModel:GetSoloReformLevelCfgs()
+    return self._ConfigUtil:GetByTableKey(TableKey.SoloReformLevel)
+end
+
+function XSoloReformModel:GetSoloReformScoreCfg(id, notips)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.SoloReformScore, id, notips)
 end
 
 function XSoloReformModel:GetSoloReformUnlockFightEventCfgs(chapterId)
@@ -211,11 +250,11 @@ end
 
 function XSoloReformModel:GetMaxDifficultyStageId(chapterId)
     local chapterCfg = self:GetSoloReformChapterCfg(chapterId)
-    if XTool.IsTableEmpty(chapterCfg.ChapterStageId) then
+    if XTool.IsTableEmpty(chapterCfg.ChapterStageIds) then
         return
     end
     local targetStageCfg
-    for _, stageId in pairs(chapterCfg.ChapterStageId) do
+    for _, stageId in pairs(chapterCfg.ChapterStageIds) do
         local stageCfg = self:GetSoloReformStageCfg(stageId)
         if not targetStageCfg then
             targetStageCfg = stageCfg

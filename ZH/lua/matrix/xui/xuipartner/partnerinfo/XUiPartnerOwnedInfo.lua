@@ -66,7 +66,13 @@ function XUiPartnerOwnedInfo:UpdatePanel(data)
         self:ShowLock()
         self:ShowPanelSkill()
         self:PlayAnimation("QieHuan")
-
+        local recommendCharacterId = data:GetRecommendCharacterId()
+        local hasRecommendCharacter = recommendCharacterId and recommendCharacterId > 0
+        self.RImgCharacterIcon.transform.parent.parent.gameObject:SetActiveEx(hasRecommendCharacter)
+        if hasRecommendCharacter then
+            local characterIcon = XMVCA.XCharacter:GetCharRoundnessHeadIcon(recommendCharacterId)
+            self.RImgCharacterIcon:SetRawImage(characterIcon)
+        end
         --region 辅助机 -> 异界装备
         if data:GetPartnerType() == XPartnerConfigs.PartnerType.Link then
             if self.StatciLvTextLink and self.StatciLvText then

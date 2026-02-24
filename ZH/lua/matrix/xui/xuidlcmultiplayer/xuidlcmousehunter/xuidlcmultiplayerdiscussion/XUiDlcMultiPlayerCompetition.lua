@@ -20,8 +20,11 @@ function XUiDlcMultiPlayerCompetition:OnStart()
     ---@type XUiDlcMultiPlayerCompetitionCamp
     self._RedCamp = XUiDlcMultiPlayerCompetitionCamp.New(self.RedCampPanel, self, CampEnum.Camp2)
     self._ClickCount = 0
-    self._CurShowDiscussionStatus = nil  -- 当前界面显示的状态
-    self:Refresh()
+    self._CurShowDiscussionStatus = nil -- 当前界面显示的状态
+    self:_SpecialkGetReward(function ()
+        self:Refresh()
+    end)
+    
 end
 
 function XUiDlcMultiPlayerCompetition:OnGetLuaEvents()
@@ -41,6 +44,9 @@ function XUiDlcMultiPlayerCompetition:OnNotify(event, ...)
 end
 
 function XUiDlcMultiPlayerCompetition:Refresh()
+    if self._Control == nil then
+        return
+    end
     local discussion = self._Control:GetDiscussion()
     local discussionConfig = discussion:GetPlayerTable() or discussion:GetTable()
     local discussionStatus = discussion:IsSameDiscussion() and discussion:GetStatus() or StatusEnum.Show
@@ -166,7 +172,7 @@ function XUiDlcMultiPlayerCompetition:RegisterUiEvents()
 end
 
 function XUiDlcMultiPlayerCompetition:OnBtnVoteClick()
-    XMVCA.XDlcMultiMouseHunter:RequestPlayerDiscussionVote(self._CurSelectCamp,function()
+    XMVCA.XDlcMultiMouseHunter:RequestPlayerDiscussionVote(self._CurSelectCamp, function()
         self._BulletChat:AddOwnDanmakuData(self._CurSelectCamp)
     end)
 end
@@ -205,6 +211,7 @@ function XUiDlcMultiPlayerCompetition:OnDestroy()
         self.MonsetResetTimer = nil
     end
 end
+
 function XUiDlcMultiPlayerCompetition:_CheckGetReward()
     local discussion = self._Control:GetDiscussion()
     if not discussion:CanGetReward() then
@@ -213,7 +220,8 @@ function XUiDlcMultiPlayerCompetition:_CheckGetReward()
 
     XMVCA.XDlcMultiMouseHunter:RequestGetDiscussionVoteReward(function()
         local activityConfig = self._Control:GetDlcMultiplayerActivityConfig()
-        local rewardCount = discussion:IsPlayerVectory() and activityConfig.DiscussionWinExp or activityConfig.DiscussionFailExp
+        local rewardCount = discussion:IsPlayerVectory() and activityConfig.DiscussionWinExp or
+            activityConfig.DiscussionFailExp
 
         local rewardList = {}
         table.insert(rewardList, XRewardManager.CreateRewardGoods(activityConfig.BpExpItem, rewardCount))
@@ -221,6 +229,39 @@ function XUiDlcMultiPlayerCompetition:_CheckGetReward()
     end)
 end
 
+function XUiDlcMultiPlayerCompetition:_SpecialkGetReward(callback)
+    local discussion = self._Control:GetDiscussion()
+    if not discussion:CanGetReward() then
+        if callback then
+            callback()
+        end
+        return
+    end
+    if discussion:GetPlayerCamp() == CampEnum.None then
+        if callback then
+            callback()
+        end
+        return
+    end
+    if discussion:IsSameDiscussion() == true and discussion:GetStatus() ~= nil then
+        if callback then
+            callback()
+        end
+        return
+    end
 
+    local activityConfig = self._Control:GetDlcMultiplayerActivityConfig()
+    local rewardCount = discussion:IsPlayerVectory() and activityConfig.DiscussionWinExp or
+        activityConfig.DiscussionFailExp
+
+    local rewardList = {}
+    table.insert(rewardList, XRewardManager.CreateRewardGoods(activityConfig.BpExpItem, rewardCount))
+    XMVCA.XDlcMultiMouseHunter:RequestGetDiscussionVoteReward(function()
+        XUiManager.OpenUiObtain(rewardList)
+        if callback then
+            callback()
+        end
+    end)
+end
 
 return XUiDlcMultiPlayerCompetition

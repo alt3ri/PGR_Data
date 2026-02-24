@@ -13,10 +13,10 @@ function XUiGachaFashionSelfChoiceDescribe:OnStart(activityId)
     local config = XDataCenter.GachaManager.GetCurGachaFashionSelfChoiceActivityConfig()
     self.ActivityConfig = config
 
-    local XUiGridRulePanel = require("XUi/XUiGachaFashionSelfChoice/Grid/XUiGridRulePanel")
+    local XUiGachaGridRulePanel = require("XUi/XUiGachaFashionSelfChoice/Grid/XUiGachaGridRulePanel")
     for k, title in pairs(config.RuleTitle) do
         local go = k == 1 and self.GridRulePanel or XUiHelper.Instantiate(self.GridRulePanel, self.GridRulePanel.parent)
-        local grid = XUiGridRulePanel.New(go, self)
+        local grid = XUiGachaGridRulePanel.New(go, self)
         grid:Refresh(title, config.RuleText[k])
     end
 end

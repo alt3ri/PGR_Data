@@ -24,8 +24,8 @@ function XUiPanelPlayerInfoEx:OnStart()
     self.TxtServerName.text = XServerManager.GetCurServerName()
     self.PanelServerInfo.gameObject:SetActiveEx(false)
 
-    self.BtnFeedback.gameObject:SetActiveEx(not XFunctionManager.CheckFunctionFitter(XFunctionManager.FunctionName.Feedback))
-    self.PanelDuihuan.gameObject:SetActiveEx(not XFunctionManager.CheckFunctionFitter(XFunctionManager.FunctionName.ExchangeCode))
+    self.BtnFeedback.gameObject:SetActiveEx(not XFunctionManager.CheckFunctionFitter(XFunctionManager.FunctionName.Feedback) and not XUiManager.IsHideFunc)
+    self.PanelDuihuan.gameObject:SetActiveEx(not XFunctionManager.CheckFunctionFitter(XFunctionManager.FunctionName.ExchangeCode) and not XUiManager.IsHideFunc)
 
     self:AddRedPointEvent(self.ImgSetNameTag, self.OnCheckSetName, self, { XRedPointConditions.Types.CONDITION_PLAYER_SETNAME })
     if self.ImgExhibitionNew then

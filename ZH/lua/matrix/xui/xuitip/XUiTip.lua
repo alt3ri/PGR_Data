@@ -136,13 +136,12 @@ function XUiTip:OnBtnOkClick()
 end
 
 function XUiTip:OnBtnTcanchaungBlackClick()
-    local buyAssetTemplate = XDataCenter.ItemManager.GetBuyAssetTemplateById(self.TemplateId)
-
+    local hasConfig = XMVCA.XItem:CheckItemHasConfig(self.TemplateId)
     -- 判断配置表是否存在快捷购买数据
-    if not buyAssetTemplate then
+    if not hasConfig then
         XUiManager.TipMsg(CS.XTextManager.GetText("ShopNoGoodsDesc"), XUiManager.UiTipType.Tip)
     else
-        XLuaUiManager.Open("UiBuyAsset", self.TemplateId, nil, nil, self.LackNum)
+        XMVCA.XItem:SelectBuyAssetType(self.TemplateId, nil, nil, self.LackNum)
     end
 end
 
@@ -221,8 +220,7 @@ function XUiTip:Refresh(data)
     end
 
     -- 快捷兑换按钮
-    if
-    XDataCenter.ItemManager.IsFastTrading(self.TemplateId) and
+    if XDataCenter.ItemManager.IsFastTrading(self.TemplateId) and
             XDataCenter.ItemManager.JudjeCanFastTrading(self.RootUiName)
     then
         self:SetUiActive(self.BtnTcanchaungBlack, true)

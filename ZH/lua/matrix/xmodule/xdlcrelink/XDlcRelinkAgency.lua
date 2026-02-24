@@ -537,6 +537,21 @@ function XDlcRelinkAgency:CheckBagUiGuideCondition(level)
     return false
 end
 
+--- 是否显示网络切换提示
+--- 1. 仅在房间界面显示
+--- 2. 当前网络为非wifi且之前未弹过提示则显示
+---@param isShow boolean 是否显示
+---@return boolean
+function XDlcRelinkAgency:IsShowNetworkSwitchTip(isShow)
+    if not XLuaUiManager.IsUiShow("UiDlcRelinkRoom") then
+        return false
+    end
+
+    local isWifi = CS.XNetworkReachability.IsViaLocalArea()
+    local needPopTip = not isWifi and self._Model:CheckNeedPopWifiTips()
+    return isShow == needPopTip
+end
+
 --endregion
 
 return XDlcRelinkAgency

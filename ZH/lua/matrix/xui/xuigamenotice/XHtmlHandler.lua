@@ -1,6 +1,7 @@
 local strlen = string.len
 local strFormat = string.format
 local strFind = string.find
+local strGmatch = string.gmatch
 local mathFloor = math.floor
 local tableInsert = table.insert
 local next = next
@@ -15,6 +16,7 @@ local NodeType = {
 local ParagraphType = {
     Pic = 1,
     Text = 2,
+    Table = 3,
 }
 
 local FontSizeMap = {
@@ -310,6 +312,105 @@ InitTextNode = function(node, content, defaultStyle, textNodes)
         end
     end
 end
+-- 转换 HTML 中的所有 span 标签
+local function ConvertAllSpans(htmlStr)
+    local result = htmlStr
+
+    -- 查找所有的 span 标签
+    local spans = {}
+    for span in htmlStr:gmatch("<span[^>]*>.-</span>") do
+        table.insert(spans, span)
+    end
+
+    -- 转换每个 span
+    for _, span in ipairs(spans) do
+        local r, g, b = span:match("rgb%((%d+),%s*(%d+),%s*(%d+)%)")
+        if not r then
+            r, g, b = span:match("rgb%((%d+)%s*,%s*(%d+)%s*,%s*(%d+)%s*%)")
+        end
+
+        local text = span:match(">([^<]+)<")
+
+        if r and g and b and text then
+            local hexColor = ConvertRGB2Hex(r, g, b)
+            if hexColor then
+                local converted = string.format("<color=#%s>%s</color>", hexColor, text)
+                result = result:gsub(span:gsub("%(", "%%("):gsub("%)", "%%)"), converted, 1)
+            end
+        end
+    end
+
+    return result
+end
+
+-- 定义提取函数
+local function ExtractData(html, tag)
+    local data = {}
+
+    -- 提取 colSpan（注意大小写两种格式）
+    local colSpan = html:match('colSpan="(%d+)"') or html:match('colspan="(%d+)"')
+    data.colSpan = colSpan or "1"
+
+    -- 提取 rowSpan（注意大小写两种格式）
+    local rowSpan = html:match('rowSpan="(%d+)"') or html:match('rowspan="(%d+)"')
+    data.rowSpan = rowSpan or "1"
+
+    -- 提取 width
+    local width = html:match('width="([^"]+)"')
+    data.width = width or "auto"
+
+    -- 提取 style 中的 text-align
+    local style = html:match('style="([^"]*)"')
+    local textAlign = ""
+    if style then
+        textAlign = style:match("text%-align%s*:%s*([^;]+)") or ""
+    end
+    data.textAlign = textAlign
+
+    -- 提取 span 内容
+    local spanContent = html:match('<span[^>]*>(.-)</span>')
+    if spanContent then
+        data.span = spanContent:match('>([^<]+)<') or spanContent:match('>([^<]+)$')
+    end
+
+    local innerContent = html:match('<' .. tag .. '[^>]*>(.*)</' .. tag .. '>')
+    data.innerContent = ConvertAllSpans(innerContent or ""):gsub("<strong>", "<b>"):gsub("</strong>", "</b>")
+    for k, v in pairs(HtmlCharMap) do
+        data.innerContent = data.innerContent:gsub(k, v)
+    end
+    return data
+end
+
+local function IsTable(paragraph)
+    return paragraph.Head and paragraph.Head.Tag == "table"
+end
+
+local function ParseHTMLTableAdvanced(paragraph, content)
+    local result = {
+        rows = {},
+        headers = {}
+    }
+
+    -- 提取数据行
+    for content in strGmatch(content, '<tr>(.-)</tr>') do
+        if strFind(content, '<th') then
+            -- 提取表头（th）
+            for header in strGmatch(content, '<th[^>]*>.-</th>') do
+                table.insert(result.headers, ExtractData(header, "th"))
+            end
+        elseif strFind(content, '<td') then
+            local row = {}
+            for td in strGmatch(content, '<td[^>]*>.-</td>') do
+                table.insert(row, ExtractData(td, "td"))
+            end
+            table.insert(result.rows, row)
+        else
+            XLog.Error("ParseHTMLTableAdvanced invalid content", content)
+        end
+    end
+    return result
+end
+
 
 local function CreateTextNode(paragraph, content)
     local textNodes = {}
@@ -420,7 +521,12 @@ local function CreateParagraph(paragraph, content)
         texture:LoadImage(CS.System.Convert.FromBase64String(imgData))
         return { Type = ParagraphType.Pic, Data = texture }
     end
-
+    
+    -- 表格
+    if IsTable(paragraph) then
+        local tableData = ParseHTMLTableAdvanced(paragraph,tempContent)
+        return { Type = ParagraphType.Table, Data = tableData }
+    end
     -- 文本段落
     local textNodes = CreateTextNode(paragraph, content)
     if not textNodes or not next(textNodes) then

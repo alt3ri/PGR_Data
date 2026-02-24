@@ -316,7 +316,7 @@ function XUiRadioSignMain:OnEnable()
     -- OnEnable 结束，释放初始化标志
     self._IsInStart = false
 
-        -- 检查引导，因为在连续弹窗的过程中，不会触发指引，所以这里只能手动触发
+    -- 检查引导，因为在连续弹窗的过程中，不会触发指引，所以这里只能手动触发
     XDataCenter.GuideManager.CheckGuideOpen()
 end
 
@@ -865,6 +865,32 @@ function XUiRadioSignMain:OnBtnSubClick(pressingTime)
     self:OnBtnKnobValueChanged(newValue, true)
 end
 
+--- 视频资源不存在或播放失败时的统一处理：打错日志、发奖励请求、视为完成
+---@param reason string 失败原因，用于 XLog.Error（如 "Video资源不存在或gameObject未赋值" / "视频播放失败"）
+function XUiRadioSignMain:OnVideoResourcePlayFailed(reason)
+    local contentId = self._CurrentContentConfig and self._CurrentContentConfig.Id
+    XLog.Error("[XUiRadioSignMain] PlayVideo: ", reason, ", contentId =", contentId)
+    if self._CurrentContentConfig then
+        local isReceived = self._Control:IsRewardReceived(self._CurrentContentConfig.Id)
+        if not isReceived and self._RewardRequestState ~= RewardRequestState.Pending then
+            self._RewardRequestState = RewardRequestState.Pending
+            local id = self._CurrentContentConfig.Id
+            XLuaUiManager.SafeClose(self.Name)
+            XMVCA.XRadioSign:RadioSignGainRewardRequest(id, function(isSuccess, rewardGoodsList)
+                self._RewardRequestState = RewardRequestState.Completed
+                self._RewardRequestSuccess = isSuccess
+                self._PendingRewardList = rewardGoodsList
+                if not isSuccess then
+                    XLog.Debug("[XUiRadioSignMain] OnVideoResourcePlayFailed: 奖励请求失败, contentId =", id)
+                else
+                    self:UpdateAllButtons()
+                end
+            end, false)
+        end
+    end
+    self:StopVideo(true)
+end
+
 ---@param content XTableRadioSignClientConfig
 function XUiRadioSignMain:PlayVideo(content)
     if not content or not content.VideoConfigId or content.VideoConfigId == 0 then
@@ -880,10 +906,19 @@ function XUiRadioSignMain:PlayVideo(content)
         self._PlayState = PlayState.PlayingVideo
         self:SetButtonRotationEnabled(false)
 
-        -- 激活Video，隐藏LineGroup
-        if self.Video.gameObject then
-            self.Video.gameObject:SetActiveEx(true)
+        -- 安全获取 gameObject（C# 端 Component 为 null/已销毁时 getter 会抛 NullReferenceException）
+        local videoGo
+        local ok, result = pcall(function()
+            return self.Video.gameObject
+        end)
+        if ok and result then
+            videoGo = result
         end
+        if not videoGo then
+            self:OnVideoResourcePlayFailed("Video资源不存在或gameObject未赋值")
+            return
+        end
+        videoGo:SetActiveEx(true)
         if self.LineGroup and self.LineGroup.gameObject then
             self.LineGroup.gameObject:SetActiveEx(false)
         end
@@ -947,7 +982,7 @@ function XUiRadioSignMain:PlayVideo(content)
             end
         end
         self.Video.ActionError = function()
-            self:StopVideo(false)
+            self:OnVideoResourcePlayFailed("视频播放失败")
         end
 
         self.Video:SetInfoByVideoId(content.VideoConfigId)
@@ -1082,8 +1117,13 @@ function XUiRadioSignMain:StopVideo(isNormalEnd)
     self:SetButtonRotationEnabled(true)
 
     -- 隐藏Video
-    if self.Video and self.Video.gameObject then
-        self.Video.gameObject:SetActiveEx(false)
+    local videoGo
+    local ok, result = pcall(function() return self.Video.gameObject end)
+    if ok and result then
+        videoGo = result
+    end
+    if videoGo then
+        videoGo:SetActiveEx(false)
     end
 
     -- 根据领奖状态显示不同的UI元素
@@ -1470,7 +1510,7 @@ function XUiRadioSignMain:StartLightEffect(standTime)
     if not self._ImgLights or #self._ImgLights == 0 then
         return
     end
-    
+
     -- 先取消之前的灯光定时器，避免重复创建
     self:CancelLightTimers()
 
@@ -1482,23 +1522,23 @@ function XUiRadioSignMain:StartLightEffect(standTime)
     local interval = standTime / lightCount
 
     -- 记录开始时间和间隔
-    self._LightEffectStartTime = CS.UnityEngine.Time.realtimeSinceStartup * 1000  -- 转换为毫秒
+    self._LightEffectStartTime = CS.UnityEngine.Time.realtimeSinceStartup * 1000 -- 转换为毫秒
     self._LightEffectInterval = interval
     self._LightEffectCount = lightCount
-    self._LightEffectCurrentIndex = 0  -- 当前已点亮的灯光索引
+    self._LightEffectCurrentIndex = 0 -- 当前已点亮的灯光索引
 
     -- 使用 ScheduleForever 定时器，定期检查应该点亮哪个灯光
     self._LightTimerId = XScheduleManager.ScheduleForever(function()
         if not self._LightEffectStartTime or not self._LightEffectInterval then
             return
         end
-        
-        local currentTime = CS.UnityEngine.Time.realtimeSinceStartup * 1000  -- 转换为毫秒
+
+        local currentTime = CS.UnityEngine.Time.realtimeSinceStartup * 1000 -- 转换为毫秒
         local elapsedTime = currentTime - self._LightEffectStartTime
-        
+
         -- 计算应该点亮到第几个灯光（从1开始）
         local targetIndex = math.floor(elapsedTime / self._LightEffectInterval) + 1
-        
+
         -- 如果已经超过所有灯光，停止定时器
         if targetIndex > self._LightEffectCount then
             -- 确保所有灯光都已点亮
@@ -1508,7 +1548,7 @@ function XUiRadioSignMain:StartLightEffect(standTime)
             self:CancelLightTimers()
             return
         end
-        
+
         -- 只点亮新增加的灯光，避免重复设置
         if targetIndex > self._LightEffectCurrentIndex then
             for i = self._LightEffectCurrentIndex + 1, targetIndex do
@@ -1516,7 +1556,7 @@ function XUiRadioSignMain:StartLightEffect(standTime)
             end
             self._LightEffectCurrentIndex = targetIndex
         end
-    end, 16)  -- 约60fps的检查频率
+    end, 16) -- 约60fps的检查频率
 end
 
 -- 设置指定索引的灯光为点亮状态
@@ -1551,7 +1591,7 @@ function XUiRadioSignMain:CancelLightTimers()
         XScheduleManager.UnSchedule(self._LightTimerId)
         self._LightTimerId = nil
     end
-    
+
     self._LightEffectStartTime = nil
     self._LightEffectInterval = nil
     self._LightEffectCount = 0

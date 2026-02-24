@@ -135,6 +135,9 @@ function XUiDlcMultiPlayerSkillDesc:RefreshSkillDetail(skillConfig)
     self.TxtCd.text = string.format(cdDesFormat, skillConfig.SkillCd)
     local timesDesFormat = self._Control:GetDlcMultiplayerConfigConfigByKey("SkillUseTimesDes").Values[1]
     self.TxtTimes.text = string.format(timesDesFormat, skillConfig.SkillCnt)
+    
+    self.PanelTxtList.verticalNormalizedPosition = 1
+   
 end
 
 function XUiDlcMultiPlayerSkillDesc:OnClickSKillChange()

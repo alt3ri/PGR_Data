@@ -25,10 +25,12 @@ function XUiSoloReformChapterStarInfo:Update(stageId)
     end
     self.Title.gameObject:SetActiveEx(stageId ~= maxDifficultyStageId)
     self.Time.gameObject:SetActiveEx(stageId == maxDifficultyStageId)
-    self.TxtNum.text = XUiHelper.GetText("SoloReformTimeShowNoPass")
-    local minPassTime = self._Control:GetChapterStageMinPassTime(chapterId)
-    if not string.IsNilOrEmpty(minPassTime) then
-        self.TxtNum.text = minPassTime
+    if self.TxtNum then
+        self.TxtNum.text = XUiHelper.GetText("SoloReformTimeShowNoPass")
+        local minPassTime = self._Control:GetChapterStageMinPassTime(chapterId)
+        if not string.IsNilOrEmpty(minPassTime) then
+            self.TxtNum.text = minPassTime
+        end
     end
     self:RefreshStarDesc(stageId)
     self._IsInit = false    

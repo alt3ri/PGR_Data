@@ -41,6 +41,7 @@ XModelManager.MODEL_UINAME = {
     XUiDisplay = "UiDisplay",
     XUiFashion = "UiFashion",
     XUiFashionDetail = "UiFashionDetail",
+    XUiFashionSuitDetail = "UiFashionSuitDetail",
     XUiNewPlayerTask = "UiNewPlayerTask",
     XUiBossSingle = "UiPanelBossDetail",
     XUiOnlineBoss = "UiOnlineBoss",

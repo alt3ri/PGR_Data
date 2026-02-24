@@ -238,7 +238,7 @@ function XCharR4LivH2:OnNpcSkillActionKeyframeSendEvent(launcher,eventName,skill
         end
         --XLog.Warning("有目标丽芙第二段连携弹刀")
         self._proxy:CastActionToSearchTarget(self._uuid, self._parryCounter1, targetNpc)
-    elseif (eventName == "ParryCounter2")then
+    elseif (eventName == "ParryCounter2") then
         --XLog.Warning("释放衔接连携弹刀第三段")
         local targetNpc = self._proxy:GetLockTarget()
         if (targetNpc == 0) or (not targetNpc) then

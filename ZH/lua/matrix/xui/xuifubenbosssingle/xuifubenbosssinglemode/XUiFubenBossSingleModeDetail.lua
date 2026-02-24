@@ -56,13 +56,14 @@ function XUiFubenBossSingleModeDetail:OnEnable()
     self:_RefreshRankReward()
     self:_RegisterEventListener()
     if self._IsNeedResetAnimation then
-        self:ChangeCamera(false, nil, true)
+        self:ChangeCamera(self._IsSelecting, self._SelectIndex, true)
         self:SetIsNeedResetAnimation(false)
     end
 end
 
 function XUiFubenBossSingleModeDetail:OnDisable()
     self:_RemoveEventListener()
+    self:SetIsNeedResetAnimation(true)
 end
 
 -- endregion
@@ -102,6 +103,11 @@ function XUiFubenBossSingleModeDetail:ChangeCamera(isSelecting, selectIndex, isF
     end
     self:_PlayAllBuffAnimation(isSelecting, selectIndex, isForce)
     self._IsSelecting = isSelecting
+    self._SelectIndex = selectIndex
+
+    if not isForce then
+        self:_RefreshRankReward()
+    end
 end
 
 function XUiFubenBossSingleModeDetail:GetBossId()
@@ -242,6 +248,10 @@ function XUiFubenBossSingleModeDetail:_RefreshRankInfo()
 end
 
 function XUiFubenBossSingleModeDetail:_RefreshRankReward()
+    if self._IsSelecting then
+        self._RankRewardUi:Close()
+        return
+    end
     local levelType = self._Control:GetBossSingleData():GetBossSingleChallengeLevelType()
 
     self._RankRewardUi:Close()

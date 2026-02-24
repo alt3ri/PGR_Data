@@ -379,6 +379,23 @@ function XShopManager.IsShopExist(shopId)
     return ShopBaseInfoDict[shopId] ~= nil
 end
 
+function XShopManager.CheckShopActivityPeriod(shopId)
+    local info = ShopBaseInfoDict[shopId]
+    if not info then
+        return false
+    end
+
+    local now = XTime.GetServerNowTimestamp()
+    local startTime = info.ActivityStartTime or 0
+    local endTime = info.ActivityEndTime or 0
+
+    if startTime <= 0 or endTime <= 0 then
+        return false
+    end
+
+    return now >= startTime and now < endTime
+end
+
 function XShopManager.GetShopGoodsInfo(shopId, goodsId)
     local goodsList = XShopManager.GetShopGoodsList(shopId, false, true)
     for _, goods in pairs(goodsList) do
@@ -712,6 +729,31 @@ function XShopManager.BuyShop(shopId, goodsId, count, cb, err_cb, isActivityOpen
         AddBuyTimes(shopId, goodsId, count)
         cb(res)
     end)
+end
+
+function XShopManager.MultiBuyShop(shopIds, goodsIds, cb, err_cb, isActivityOpen)
+    local index, count = 1, #shopIds
+    local totalGoodList = {}
+    
+    local function nextStep(res)
+        if res then
+            for _, goods in pairs(res.GoodList) do
+                table.insert(totalGoodList, goods)
+            end
+        end
+        if index > count then
+            if cb then
+                cb(totalGoodList)
+            end
+            return
+        end
+        local shopId = shopIds[index]
+        local goodsId = goodsIds[index]
+        index = index + 1
+        XShopManager.BuyShop(shopId, goodsId, 1, nextStep, err_cb, isActivityOpen)
+    end
+
+    nextStep()
 end
 
 function XShopManager.GetShopGroup()

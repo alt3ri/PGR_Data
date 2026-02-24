@@ -1,7 +1,7 @@
 local RewardState = XTransfiniteConfigs.RewardState
 
 ---@class XViewModelTransfiniteGift
-local XViewModelTransfiniteGift = XClass(nil, "XViewModelTransfiniteGift", true) -- #203409 增加该类被分类
+local XViewModelTransfiniteGift = XClass(nil, "XViewModelTransfiniteGift")
 
 local TableSort = table.sort
 local TableInsert = table.insert
@@ -73,7 +73,6 @@ function XViewModelTransfiniteGift:UpdateScore()
     local data = self._DataScore
 
     local region = XDataCenter.TransfiniteManager.GetRegion()
-    -- #203409
     local scoreArray, reward = self:GetScoreAndRewardArray(region)
     local scoreCurrent = XDataCenter.TransfiniteManager.GetScore()
     local length = #reward

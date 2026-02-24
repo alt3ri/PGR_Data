@@ -599,6 +599,7 @@ function XUiFubenBossSingleDetail:_RegisterButtonClicks()
     self:RegisterClickEvent(self.BtnRank, self.OnBtnRankClick, true)
     -- v3.8 新增重置按钮
     self:RegisterClickEvent(self.BtnReset, self.OnBtnResetClick, true)
+    self.BtnAttributeDetail:AddEventListener(handler(self, self.OnBtnAttributeDetailClick))
 end
 
 function XUiFubenBossSingleDetail:_RemoveSchedules()
@@ -682,5 +683,9 @@ function XUiFubenBossSingleDetail:ScheduleResetCooldown()
     end
 end
 --endregion reset btn
+
+function XUiFubenBossSingleDetail:OnBtnAttributeDetailClick()
+    XLuaUiManager.Open("UiCharacterAttributeDetail", nil, XEnumConst.UiCharacterAttributeDetail.BtnTab.Damage)
+end
 
 return XUiFubenBossSingleDetail

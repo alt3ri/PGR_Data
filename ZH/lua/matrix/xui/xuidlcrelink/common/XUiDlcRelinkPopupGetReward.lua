@@ -42,7 +42,12 @@ function XUiDlcRelinkPopupGetReward:RefreshReward(rewardGoodsList)
         end
         grid:Refresh(rewardGoods)
         grid:SetProxyClickFunc(function()
-            XLuaUiManager.Open("UiDlcRelinkPopupItemDetail", grid.TemplateId)
+            local rewardType = XArrangeConfigs.GetType(grid.TemplateId)
+            if rewardType == XRewardManager.XRewardType.Nameplate then
+                XLuaUiManager.Open("UiNameplateTip", grid.TemplateId, true, true, true)
+            else
+                XLuaUiManager.Open("UiDlcRelinkPopupItemDetail", grid.TemplateId)
+            end
         end)
         grid.GameObject:SetActiveEx(true)
     end

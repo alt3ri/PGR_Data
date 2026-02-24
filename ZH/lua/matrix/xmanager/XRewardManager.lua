@@ -39,11 +39,13 @@ local XRewardType = {
 --local HeadPortraitQuality = CS.XGame.Config:GetInt("HeadPortraitQuality")
 local TABLE_REWARD_PATH = "Share/Reward/Reward.tab"
 local TABLE_REWARD_GOODS_PATH = "Share/Reward/RewardGoods.tab"
+local TABLE_REWARD_PREFAB_PATH = "Client/Reward/RewardPrefab.tab"
 
 --local RewardTemplates = {}
 ---@type table<number, XTableReward>
 local RewardSubIds = {}
 local RewardGoodsTable = {}
+local RewardPrefabConfig = {}
 
 local Arrange2RewardType = {
     [XArrangeConfigs.Types.Item] = XRewardType.Item,
@@ -830,11 +832,10 @@ local function MergeAndSortRewardGoodsList(rewardGoodsList)
     return SortRewardGoodsList(MergeRewardGoodsList(rewardGoodsList))
 end
 
-
-
 function XRewardManager.Init()
     RewardSubIds = XTableManager.ReadByIntKey(TABLE_REWARD_PATH, XTable.XTableReward, "Id")
     RewardGoodsTable = XTableManager.ReadByIntKey(TABLE_REWARD_GOODS_PATH, XTable.XTableRewardGoods, "Id")
+    RewardPrefabConfig = XTableManager.ReadByIntKey(TABLE_REWARD_PREFAB_PATH, XTable.XTableRewardPrefab, "RewardId")
 end
 
 function XRewardManager.GetRewardSubId(id, index)
@@ -962,15 +963,11 @@ function XRewardManager.CheckRewardOwn(rewardType, templateId)
 
     if XRewardManager.IsRewardFashion(rewardType, templateId) then
         isHave = true
-    elseif XRewardManager.IsRewardWeaponFashion(rewardType, templateId) then
+    elseif XRewardManager.IsRewardWeaponFashion(rewardType, templateId) then --id为Item表Id
         local weaponFashionId = XDataCenter.ItemManager.GetWeaponFashionId(templateId)
-        local ownWeaponFashion = XDataCenter.WeaponFashionManager.GetWeaponFashion(weaponFashionId)
-        if ownWeaponFashion then
-            isHave = XDataCenter.WeaponFashionManager.CheckHasFashion(weaponFashionId)
-            ownRewardIsLimitTime = ownWeaponFashion:IsTimeLimit()
-            rewardIsLimitTime = XDataCenter.ItemManager.IsWeaponFashionTimeLimit(templateId)
-            leftTime = ownWeaponFashion:GetLeftTime()
-        end
+        isHave, ownRewardIsLimitTime, rewardIsLimitTime, leftTime = XRewardManager._GetWeaponFashionInfo(templateId, weaponFashionId)
+    elseif XRewardManager.IsRewardWeaponFashionWithFashionId(rewardType, templateId) then --id为WeaponFashion表Id
+        isHave, ownRewardIsLimitTime, rewardIsLimitTime, leftTime = XRewardManager._GetWeaponFashionInfo(nil, templateId)
     elseif XRewardManager.IsRewardHeadPortrait(rewardType, templateId) then
         isHave = true
     elseif XRewardManager.IsRewardDormCharacter(rewardType, templateId) then
@@ -1082,6 +1079,10 @@ function XRewardManager.IsRewardWeaponFashion(rewardType, templateId) -- 是否�
     return (rewardType == XRewardManager.XRewardType.Item or rewardType == XRewardManager.XRewardType.WeaponFashion) and XDataCenter.ItemManager.IsWeaponFashion(templateId)
 end
 
+function XRewardManager.IsRewardWeaponFashionWithFashionId(rewardType, fashionId)
+    return (rewardType == XRewardManager.XRewardType.Item or rewardType == XRewardManager.XRewardType.WeaponFashion) and XWeaponFashionConfigs.IsWeaponFashion(fashionId)
+end
+
 function XRewardManager.IsRewardFashion(rewardType, templateId) -- 是否拥有涂装
     return (rewardType == XRewardManager.XRewardType.Fashion and XDataCenter.FashionManager.CheckHasFashion(templateId))
     or (rewardType == XRewardManager.XRewardType.Character and XMVCA.XCharacter:IsOwnCharacter(templateId))
@@ -1109,6 +1110,39 @@ end
 
 function XRewardManager.IsRewardEquip(rewardType, templateId) -- 是否拥有武器
     return (rewardType == XRewardManager.XRewardType.Equip and XMVCA.XEquip:GetFirstEquip(templateId))
+end
+
+function XRewardManager.ShowRewardUi(rewardId)
+    if not rewardId then return end
+    local prefabUrl = XRewardManager.GetRewardPrefabUrl(rewardId)
+    if not prefabUrl then
+        XLog.Error("XRewardManager.ShowRewardUi error: prefabUrl not found, rewardId is " .. tostring(rewardId))
+        return
+    end
+    XLuaUiManager.Open("UiCommonPopupGetCharacter", prefabUrl)
+end
+
+function XRewardManager.GetRewardPrefabUrl(rewardId)
+    if not RewardPrefabConfig[rewardId] then return nil end
+    return RewardPrefabConfig[rewardId].ShowPrefabUrl
+end
+
+---@private
+function XRewardManager._GetWeaponFashionInfo(templateId, weaponFashionId)
+    local isHave = false
+    local ownRewardIsLimitTime = false
+    local rewardIsLimitTime = false
+    local leftTime = 0
+    
+    local ownWeaponFashion = XDataCenter.WeaponFashionManager.GetWeaponFashion(weaponFashionId)
+    if ownWeaponFashion then
+        isHave = XDataCenter.WeaponFashionManager.CheckHasFashion(weaponFashionId)
+        ownRewardIsLimitTime = ownWeaponFashion:IsTimeLimit()
+        rewardIsLimitTime = templateId and XDataCenter.ItemManager.IsWeaponFashionTimeLimit(templateId)
+        leftTime = ownWeaponFashion:GetLeftTime()
+    end
+
+    return isHave, ownRewardIsLimitTime, rewardIsLimitTime, leftTime
 end
 
 XRewardManager.XRewardType = XRewardType

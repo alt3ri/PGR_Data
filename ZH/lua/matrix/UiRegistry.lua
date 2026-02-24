@@ -148,6 +148,7 @@ local UiRegistry = {
     UiFashion = "XUi/XUiFashion/XUiFashion",
     UiFashionRandom = "XUi/XUiFashion/XUiFashionRandom",
     UiFashionWeaponRandomSelect = "XUi/XUiFashion/XUiFashionWeaponRandomSelect",
+    UiCommonPopupNewFashion = "XUi/XUiFashion/XUiCommonPopupNewFashion",
     UiAreaWarBoss = "XUi/XUiAreaWar/XUiAreaWarBoss",
     UiDoomsdayLineDetail = "XUi/XUiDoomsday/XUiDoomsdayLineDetail",
     UiTRPGYingDi = "XUi/XUiTRPG/XUiTRPGYingDi",
@@ -197,6 +198,7 @@ local UiRegistry = {
     UiTRPGTalenTree = "XUi/XUiTRPG/XUiTRPGTalenTree",
     UiPartnerActivatePassiveSkill = "XUi/XUiPartner/PartnerSkillInstall/PassiveSkill/XUiPartnerActivatePassiveSkill",
     UiObtain = "XUi/XUiObtain/XUiObtain",
+    UiCommonPopupGetCharacter = "XUi/XUiObtain/XUiCommonPopupGetCharacter",
     UiDormSecond = "XUi/XUiDormSecond/XUiDormSecond",
     UiDormArchiveUnlock = "XUi/XUiDorm/XUiDormCommom/XUiDormArchiveUnlock",
     UiDormReset = "XUi/XUiDormSecond/XUiDormReset",
@@ -475,6 +477,7 @@ local UiRegistry = {
     UiHostelRest = "XUi/XUiHostelRest/XUiHostelRest",
     UiArenaActivityResult = "XUi/XUiArenaNew/XUiArenaResult/XUiArenaActivityResult",
     UiMovie = "XUi/XUiMovie/XUiMovie",
+    UiMovie2D = "XUi/XUiMovie/XUiMovie2D",
     UiMovieKeywordTips = "XUi/XUiMovie/XUiMovieKeywordTips",
     UiDrawShow = "XUi/XUiDraw/XUiDrawShow",
     UiDrawShowNew = "XUi/XUiDraw/XUiDrawShowNew",
@@ -2218,6 +2221,8 @@ local UiRegistry = {
     UiSoloReformChapterDetail = "XUi/XUiSoloReform/XUiSoloReformChapterDetail/XUiSoloReformChapterDetail",
     UiSoloReformSettlement = "XUi/XUiSoloReform/XUiSoloReformSettlement/XUiSoloReformSettlement",
     UiSoloReformPopupReward = "XUi/XUiSoloReform/XUiSoloReformPopupReward/XUiSoloReformPopupReward",
+    UiSoloReformKillChapterDetail = "XUi/XUiSoloReform/XUiSoloReformKillChapterDetail/XUiSoloReformKillChapterDetail",
+    UiSoloReformKillSettlement = "XUi/XUiSoloReform/XUiSoloReformKillSettlement/XUiSoloReformKillSettlement",
     --endregion
 
     UiCloudGamingPopupMain = "XUi/XUiCloudGame/XUiCloudGamingPopupMain",
@@ -2337,6 +2342,24 @@ local UiRegistry = {
     UiGachaBianka402Result = "XUi/XUiGachaBianka/XUiGachaBiankaResult",
     --endregion
     UiBigWorldPurchaseItem = "XUi/XUiBigWorld/XCommon/XUiBigWorldPurchaseItem",
+
+    --region XLuckyTenant2
+    UiLuckyTenant2Game = "XUi/XUiLuckyTenant2/XUiLuckyTenant2Game/XUiLuckyTenant2Game",
+    UiLuckyTenant2Chess = "XUi/XUiLuckyTenant2/XUiLuckyTenant2Chess/XUiLuckyTenant2Chess",
+    UiLuckyTenant2ChessBag = "XUi/XUiLuckyTenant2/XUiLuckyTenant2Chess/XUiLuckyTenant2ChessBag",
+    UiLuckyTenant2Main = "XUi/XUiLuckyTenant2/XUiLuckyTenant2Main/XUiLuckyTenant2Main",
+    UiLuckyTenant2PopupDeleteChess = "XUi/XUiLuckyTenant2/XUiLuckyTenant2PopupDeleteChess/XUiLuckyTenant2PopupDeleteChess",
+    UiLuckyTenant2PopupNormal = "XUi/XUiLuckyTenant2/XUiLuckyTenant2PopupNormal/XUiLuckyTenant2PopupNormal",
+    UiLuckyTenant2PopupStageDetail = "XUi/XUiLuckyTenant2/XUiLuckyTenant2PopupStageDetail/XUiLuckyTenant2PopupStageDetail",
+    UiLuckyTenant2PopupSuccess = "XUi/XUiLuckyTenant2/XUiLuckyTenant2PopupSuccess/XUiLuckyTenant2PopupSuccess",
+    UiLuckyTenant2Settlement = "XUi/XUiLuckyTenant2/XUiLuckyTenant2Settlement/XUiLuckyTenant2Settlement",
+    UiLuckyTenant2Task = "XUi/XUiLuckyTenant2/XUiLuckyTenant2Task/XUiLuckyTenant2Task",
+    UiLuckyTenant2Toast = "XUi/XUiLuckyTenant2/XUiLuckyTenant2Toast/XUiLuckyTenant2Toast",
+    --endregion
+    UiMainAprilFoolsV403 = "XUi/XUiAprilFools/UiMainAprilFoolsV403/XUiMainAprilFoolsV403",
+    UiMainAprilFoolsToastHall = "XUi/XUiAprilFools/UiMainAprilFoolsToastHall/XUiMainAprilFoolsToastHall",
+    UiCommonPopupUsePackage = "XUi/XUiCommonPopupUsePackage/XUiCommonPopupUsePackage",
+    UiCommonPopupBuyAsset = "XUi/XUiCommonPopupBuyAsset/XUiCommonPopupBuyAsset",
 }
 
 return UiRegistry

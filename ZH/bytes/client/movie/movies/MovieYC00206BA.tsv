@@ -1,0 +1,28 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory62.jpg'}
+2	1000		401							{1: '1', 2: '203'}
+3	2		201							{1: '1', 2: '1081001', 4: '-400'}
+4	3		201							{1: '2', 2: '500007', 4: '400'}
+5	101		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '2'}
+6	4		301			DialogEnable				{1: '1', 2: '库洛姆', 3: '神威，你那边什么情况？', 4: '2'}
+7	5		301							{2: '神威', 3: '队长，附近并没有发现什么叫升格者的人，但我发现了一个……', 4: '1'}
+8	6		301							{2: '神威', 3: '长着很多尖刺的怪物……呃……看起来有点恐怖……', 4: '1'}
+9	7		301							{2: '库洛姆', 3: '那个是其他小队这次行动的目标‘苦刑之女’，不是你的主要目标，不要轻举妄动。', 4: '2'}
+10	8		301							{2: '神威', 3: '可是我已经和它对上眼了啊。', 4: '1'}
+11	102		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+12	9		202							{1: '1', 2: '2', 6: '1'}
+13	10		201							{1: '1', 2: '500015'}
+14	11		301							{1: '1', 2: '提法', 3: '……', 4: '1'}
+15	12		202							{1: '1', 6: '1'}
+16	13		201							{1: '1', 2: '1081001', 4: '-400'}
+17	14		201							{1: '2', 2: '500007', 4: '400'}
+18	103		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '2'}
+19	15		301							{1: '1', 2: '库洛姆', 3: '什么？你……哎，坚持住，等我过来！', 4: '2'}
+20	16		301							{2: '神威', 3: '没问题，队长！', 4: '1'}
+21	104		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '2'}
+22	17		201							{1: '2', 2: '500015', 4: '400'}
+23	18		301							{1: '1', 2: '提法', 3: '区区构造体，胆敢落单出现在我面前……', 4: '2'}
+24	19		301							{2: '神威', 3: '那啥，我是来打探‘升格者’相关的消息的。', 4: '1'}
+25	20		301							{2: '提法', 3: '哦？你也对成为升格者感兴趣？', 4: '2'}
+26	21		301							{2: '神威', 3: '那倒没有，我们的目标是把升格者找出来，然后打败！', 4: '1'}
+27	22		301		1		AniZhuanchangBegin			{2: '提法', 3: '哈哈哈，不自量力的人类……', 4: '2'}

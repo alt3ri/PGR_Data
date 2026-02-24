@@ -731,7 +731,7 @@ function XFavorabilityAgency:GetSignBoardConfigByRoldIdAndCondition(roleId, cond
 end
 
 --根据操作获取表数据
-function XFavorabilityAgency:GetSignBoardConfigByFeedback(roleId, conditionId, param)
+function XFavorabilityAgency:GetSignBoardConfigByFeedback(roleId, conditionId, param, ignoreFashion)
     if not self._Model._TableSignBoardRoleIdIndexs then
         return
     end
@@ -749,11 +749,11 @@ function XFavorabilityAgency:GetSignBoardConfigByFeedback(roleId, conditionId, p
 
 
     local fitterCfg = {}
-    local tryFashionId = XDataCenter.FashionManager.GetFashionIdByCharId(roleId)
+    local tryFashionId = not ignoreFashion and XDataCenter.FashionManager.GetFashionIdByCharId(roleId) or nil
     local trySceneId = XDataCenter.PhotographManager.GetCurSceneId()
 
     -- 如果开启了假涂装，用假涂装检测
-    if XDataCenter.PhotographManager.GetIsBackgroundRandomFashion() then
+    if XDataCenter.PhotographManager.GetIsBackgroundRandomFashion() and not ignoreFashion then
         tryFashionId = XDataCenter.PhotographManager.GetCharRandomBackgroundFashionDic(roleId) or tryFashionId
     end
 
@@ -978,9 +978,9 @@ function XFavorabilityAgency:GetSignBoardPlayerData()
 end
 
 --通过点击次数获取事件
-function XFavorabilityAgency:GetRandomPlayElementsByClick(clickTimes, displayCharacterId)
+function XFavorabilityAgency:GetRandomPlayElementsByClick(clickTimes, displayCharacterId, ignoreFashion)
 
-    local configs = self:GetSignBoardConfigByFeedback(displayCharacterId, XEnumConst.Favorability.XSignBoardEventType.CLICK, clickTimes)
+    local configs = self:GetSignBoardConfigByFeedback(displayCharacterId, XEnumConst.Favorability.XSignBoardEventType.CLICK, clickTimes, ignoreFashion)
     configs = self:FitterPlayElementByStandType(configs)
     configs = self:FitterCurLoginPlayed(configs)
 
@@ -1303,6 +1303,10 @@ function XFavorabilityAgency:GetPlayElements(displayCharacterId)
     return all
 end
 
+function XFavorabilityAgency:GetCharacterStoryActivityConfig(characterId)
+    return self._Model:GetCharacterStoryActivityConfig(characterId)
+end
+
 ---====================================
 --- 过滤当天播放过的动作,返回当天未播放过的动作
 ---@param elements table
@@ -1341,9 +1345,9 @@ function XFavorabilityAgency:FitterDailyPlayed(elements)
 end
 
 --通过摇晃获取事件
-function XFavorabilityAgency:GetRandomPlayElementsByRoll(time, displayCharacterId)
+function XFavorabilityAgency:GetRandomPlayElementsByRoll(time, displayCharacterId, ignoreFashion)
 
-    local configs = self:GetSignBoardConfigByFeedback(displayCharacterId, XEnumConst.Favorability.XSignBoardEventType.ROCK)
+    local configs = self:GetSignBoardConfigByFeedback(displayCharacterId, XEnumConst.Favorability.XSignBoardEventType.ROCK, ignoreFashion)
     configs = self:FitterPlayElementByStandType(configs)
     configs = self:FitterCurLoginPlayed(configs)
 

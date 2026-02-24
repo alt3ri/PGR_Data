@@ -1,0 +1,676 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory608.jpg'}
+2	2		401							{1: '1', 2: '119'}
+3	3		306							{1: '1'}
+4	4		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.5', 5: '0'}
+5	5		502							{1: 'DialogEnable'}
+6	6		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '1'}
+7	7		301			AniZhuanchangEnd	AniZhuanchangBegin			{3: '灾变发生后，“永恒白昼”降临，整座烬土边疆却笼罩在无边的阴暗之中。'}
+8	8		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab'}
+9	9		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1285.jpg'}
+10	10		301			AniZhuanchangEnd				{3: '至高天因枢机主神的陨落而震怒，将神罚平等地加诸于每个灵魂，哪怕是身处地狱的恶魔也不能逃避这场审判。'}
+11	11		301							{3: '在和至高天对决中落败的<phonetic=死亡大君>奈亚希茨</phonetic>也下落不明，失去了主君的地狱陷入一片混沌。', 11: '1'}
+12	12		301				AniZhuanchangBegin			{3: '而未参与这场战争的恶魔领主们纷纷躲回了自己的领地，但求自己能在这场动乱中苟且偷生。', 11: '1'}
+13	13		502						50.0	{1: 'DialogDisable'}
+14	14		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.5', 4: '0', 5: '0'}
+15	15		306							
+16	16		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1281.jpg'}
+17	17		304			AniZhuanchangEnd				{1: '昔日生与死在此不断翻涌，川流不息的阿格龙河陷入死寂，', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-2', 10: '1'}
+18	18		304							{1: '不再有死者流入冥河，也再无新的灵魂浮上水面。', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 10: '1'}
+19	19		304							{1: '一切都陷入了永无止尽的停滞。', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 8: '1', 10: '1'}
+20	20		205						1550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1.5'}
+21	21		205							{1: '999'}
+22	22		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+23	23		304			AniZhuanchangEnd				{1: '但唯有一个孤独的灵魂例外，', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-2', 10: '1'}
+24	24		304							{1: '她倔强地背着沉重的木棺，', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 10: '1'}
+25	25		304							{1: '毅然走进了阿格龙河里，', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 10: '1'}
+26	26		304							{1: '涉过河水，往岸上走去。', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 7: '-1', 9: '1', 10: '1'}
+27	27		401							{1: '1', 2: '36'}
+28	28		401							{1: '2', 2: '5539'}
+29	29		501						5000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBubble.prefab', 2: '3'}
+30	30		401							{1: '1', 2: '33'}
+31	31		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory913.jpg'}
+32	32		201							{1: '1', 2: '501281'}
+33	33		301			DialogEnable				{1: '1', 2: '涅缇娅', 3: '摩利甘，我知道你就在这里！', 4: '1'}
+34	34		306							{1: '1'}
+35	35		301							{3: '她对着茫茫的水面大喊。'}
+36	36		306							
+37	37		204							{1: '1', 2: '14'}
+38	38		301							{2: '涅缇娅', 3: '回答我，我需要你帮助——！', 4: '1'}
+39	39		202							{1: '1'}
+40	40		401							{1: '2', 2: '759'}
+41	41		301							{3: '过了片刻，一道细小的黑影从岸边密密麻麻的树影中飞出，在血红的穹壁下盘旋了一圈，最后停到了岸上。'}
+42	42		201							{1: '18', 2: '501283'}
+43	43		301							{1: '1', 2: '摩利甘', 3: '你这小妮子喊什么，地狱都乱成一锅粥了，你一回来就净给老子添乱……', 4: '18'}
+44	44		202							{1: '18'}
+45	45		306							{1: '1'}
+46	46		201							{1: '1', 2: '501281'}
+47	47		401							{1: '2', 2: '306'}
+48	48		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '2'}
+49	49		301							{1: '1', 3: '渡鸦的话还没说完，它便敏锐地发现到涅缇娅的身上传来一股不同寻常的气息，它的抱怨变成了震惊。'}
+50	50		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+51	51		402							{1: '306'}
+52	52		202							{1: '1'}
+53	53		306							
+54	54		201							{1: '18', 2: '501283'}
+55	55		301							{1: '1', 2: '摩利甘', 3: '你去人间一趟之后怎么成为了领主？而且是在这么混乱的局势下？', 4: '18'}
+56	56		202							{1: '18'}
+57	57		201							{1: '1', 2: '501281'}
+58	58		301							{1: '1', 2: '涅缇娅', 3: '我把汉帕的灵魂吃下去了。', 4: '1'}
+59	59		306							{1: '1'}
+60	60		301							{3: '她只是冷静地回答了结果，不打算对此解释更多。'}
+61	61		306							
+62	62		204							{1: '1', 2: '4'}
+63	63		301							{2: '涅缇娅', 3: '这不重要，摩利甘，我来是为了问你另一个问题。', 4: '1'}
+64	64		301							{2: '涅缇娅', 3: '你知道……要怎么复活一个人类吗？', 4: '1'}
+65	65		201							{1: '18', 2: '501283'}
+66	66		301							{1: '1', 2: '摩利甘', 3: '你这是在说什么鬼……', 4: '18'}
+67	67		202							{1: '18'}
+68	68		301							{3: '此时，摩利甘终于看清了涅缇娅身上背着的“某物”。'}
+69	69		201							{1: '18', 2: '501283'}
+70	70		301			DialogShake				{1: '1', 2: '摩利甘', 3: '活死人！涅缇娅，你把一个活死人装在木棺里，带到了地狱，还试图复活祂！', 4: '18'}
+71	71		301							{2: '摩利甘', 3: '你这是怎么敢的，哪怕在生死律法没有崩坏之前，任何绕开审判，擅自复苏死者的行为，都是一项重罪……', 4: '18'}
+72	72		202							{1: '18'}
+73	73		204							{1: '1', 2: '14'}
+74	74		301							{2: '涅缇娅', 3: '……摩利甘，这个人很重要。', 4: '1'}
+75	75		301							{3: '她的神情里带着恳求，这是摩利甘第一次看到涅缇娅的姿态放得这么卑微，哪怕是在过往，被汉帕手下的那些恶魔欺侮的日子里，这个魔女都从没有这样哀切地和它对话过。'}
+76	76		204							{1: '1', 2: '8'}
+77	77		301							{2: '涅缇娅', 3: '我确信，这个人是能让三界重新取回秩序的最大希望……', 4: '1'}
+78	78		204							{1: '1', 2: '14'}
+79	79		301							{2: '涅缇娅', 3: '能不能请你相信我这一次，什么都不要问？', 4: '1'}
+80	80		201							{1: '18', 2: '501283'}
+81	81		301							{1: '1', 2: '摩利甘', 3: '……', 4: '18'}
+82	82		202							{1: '18'}
+83	83		301							{3: '在一阵长久的沉默之后，向来嘴上不饶人的摩利甘罕见地松了口。'}
+84	84		201							{1: '18', 2: '501283'}
+85	85		301							{1: '1', 2: '摩利甘', 3: '要说天底下还有谁能做到这种事，估计也只有死亡大君了。', 4: '18'}
+86	86		301							{2: '摩利甘', 3: '正如你所知的，自从祂在和至高天的对决中落败后，下落不明，地狱也陷入一片混沌……', 4: '18'}
+87	87		202							{1: '18'}
+88	88		204							{1: '1'}
+89	89		301							{2: '涅缇娅', 3: '但我知道你一定还留有后手。', 4: '1'}
+90	90		201							{1: '18', 2: '501283'}
+91	91		301							{1: '1', 2: '摩利甘', 3: '确实如此，你这小妮子，一如既往的只有直觉准得惊人。', 4: '18'}
+92	92		301							{2: '摩利甘', 3: '和你这种依靠同类相食，匆忙之间加冕的冒牌领主不一样，我们这些正牌的恶魔领主，在接受任命的时候，也一并承担了“护卫死亡大君”的职责。', 4: '18'}
+93	93		202							{1: '18'}
+94	94		301							{3: '摩利甘的语气非常严肃，话语之中的告诫意味不言自明。'}
+95	95		201							{1: '18', 2: '501283'}
+96	96		301							{1: '1', 2: '摩利甘', 3: '我们都掌握着能打开一道通向唯一的秘法门的方法，这秘法能让恶魔领主跨越空间，瞬间赶往死亡大君身边。', 4: '18'}
+97	97		301							{2: '摩利甘', 3: '但甚少有人会真的使用这个秘法，毕竟……', 4: '18'}
+98	98		202							{1: '18'}
+99	99		204							{1: '1', 2: '8'}
+100	100		301							{2: '涅缇娅', 3: '毕竟你们都不知道，在前方等待着的是死亡大君的慈悲，还是怒火。', 4: '1'}
+101	101		202							{1: '1'}
+102	102		201							{1: '18', 2: '501283'}
+103	103		301							{1: '1', 2: '摩利甘', 3: '嘎，而且老子还在最终决战里临战脱逃了。', 4: '18'}
+104	104		301							{2: '摩利甘', 3: '不过老子不后悔，毕竟那可是个连拉斯特丽丝都有去无回的战场，总得有人留下来为这场战争收拾烂摊子。', 4: '18'}
+105	105		202							{1: '18'}
+106	106		301							{3: '摩利甘不愿再提过多那场让无数同僚形神俱灭的死斗，很快又把话题拉回涅缇娅身上。'}
+107	107		201							{1: '18', 2: '501283'}
+108	108		301							{1: '1', 2: '摩利甘', 3: '涅缇娅，如果你真的需要去见死亡大君，老子可以为你打开秘法门……', 4: '18'}
+109	109		301							{2: '摩利甘', 3: '但谁都无法预测，我们见到死亡大君之后会发生什么。', 4: '18'}
+110	110		301							{2: '摩利甘', 3: '我也实在不认为，祂会对一个人类的死活感兴趣。', 4: '18'}
+111	111		202							{1: '18'}
+112	112		201							{1: '1', 2: '501281'}
+113	113		301							{1: '1', 2: '涅缇娅', 3: '无妨，我会提出让祂无法拒绝的条件的。', 4: '1'}
+114	114		301							{2: '涅缇娅', 3: '摩利甘……请你为我打开秘法门吧。', 4: '1'}
+115	115		201							{1: '18', 2: '501283'}
+116	116		301				DialogDisable			{1: '1', 2: '摩利甘', 3: '嘎，看来你都早想好，那老子也不拦你了。', 4: '18'}
+117	117		202							{1: '18', 2: '1'}
+118	118		401							{1: '2', 2: '759'}
+119	119		104						1050.0	{1: '0|-50|-100', 2: '1'}
+120	120		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+121	121		401						300.0	{1: '2', 2: '5517'}
+122	122		401							{1: '2', 2: '9357061'}
+123	123		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiFubenRogueLike/FxUiFubenRogueLike01.prefab', 2: '1'}
+124	124		401							{1: '2', 2: '4814'}
+125	125		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiCommon/FxUiActivityBranch01.prefab', 2: '1'}
+126	126		301			DialogEnable				{3: '它发出一声沉重的叹息，随后飞上空中展开双翼，漆黑的羽尖在血穹中划出一道吞吐着焚焰和热浪的口子。'}
+127	127		201							{1: '18', 2: '501283'}
+128	128		301							{1: '1', 2: '摩利甘', 3: '进去吧，你马上就会见识到，哪怕已经身处地狱，这世间也会有比此处更为深暗的地方。', 4: '18'}
+129	129		202							{1: '18', 6: '1'}
+130	130		401							{1: '1', 2: '36'}
+131	131		402							{1: '9357061'}
+132	132		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiFubenRogueLike/FxUiFubenRogueLike01.prefab'}
+133	133		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiCommon/FxUiActivityBranch01.prefab'}
+134	134		401							{1: '2', 2: '5813'}
+135	135		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+136	136		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1285.jpg'}
+137	137		301							{3: '涅缇娅背着木棺，迈步踏进不断舞动的炽焰之中，转瞬之间便来到了更深一层的幽冥。'}
+138	138		401							{1: '1', 2: '6105'}
+139	139		306							{1: '1'}
+140	140		301				DialogDisable			{3: '她来到了看不到尽头的万魔殿，每一层台阶都似乎是往更深的地底延伸，又像是要把人引往解脱的彼方。'}
+141	141		401							{1: '2', 2: '4276'}
+142	142		501						350.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab', 2: '3'}
+143	143		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab'}
+144	144		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront25.png', 3: '0', 4: '0.7', 5: '0.3'}
+145	145		201							{1: '1', 2: '501299', 4: '-400', 5: '-100', 6: '-200', 7: '1'}
+146	146		205						350.0	{1: '1', 3: '0', 4: '0.7', 5: '0'}
+147	147		202							{1: '1', 6: '1'}
+148	148		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront25.png', 3: '0.7', 4: '0', 5: '0'}
+149	149		401							{1: '2', 2: '4276'}
+150	150		501						350.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab', 2: '3'}
+151	151		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab'}
+152	152		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront26.png', 3: '0', 4: '0.7', 5: '0.3'}
+153	153		201							{1: '1', 2: '501299', 4: '400', 5: '-100', 6: '-200', 7: '1'}
+154	154		205						350.0	{1: '1', 3: '0', 4: '0.7', 5: '0'}
+155	155		202							{1: '1', 6: '1'}
+156	156		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront26.png', 3: '0.7', 4: '0', 5: '0'}
+157	157		401							{1: '2', 2: '4276'}
+158	158		501						350.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab', 2: '3'}
+159	159		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab'}
+160	160		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront58.png', 3: '0', 4: '0.7', 5: '0.3'}
+161	161		201							{1: '1', 2: '501299', 5: '-100', 6: '-200', 7: '1'}
+162	162		205						350.0	{1: '1', 3: '0', 4: '0.7', 5: '0'}
+163	163		202							{1: '1', 6: '1'}
+164	164		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront58.png', 3: '0.7', 4: '0', 5: '0'}
+165	165		301			DialogEnable				{1: '1', 3: '涅缇娅在无数面镜子中看到自己的身影，倒影中都折射着一样的茫然。'}
+166	166		306							
+167	167		201							{1: '1', 2: '500868', 3: '3'}
+168	168		301							{1: '1', 2: '奈亚希茨', 3: '不错的“见面礼”，哈哈……新任恶魔领主，本君已经听到你的索求了。', 4: '1'}
+169	169		306							{1: '1'}
+170	170		301							{3: '冥界的唯一君主——奈亚希茨出现在长阶的尽头，顺着长廊拾级而下，但祂的身影没有折射在任何一面镜子中，只是孑然地出现在涅缇娅的视野里。'}
+171	171		301							{3: '为了躲避至高天的诛杀，祂将灵魂藏在了这座无限的回廊中，这里的每一面镜子都是祂的分身，静待着某日能冲出禁锢。'}
+172	172		306							
+173	173		204							{1: '1'}
+174	174		301							{2: '奈亚希茨', 3: '此前本君命你去杀死灰鸦，你却在人间悄无声息地躲了起来，本君未加追究。', 4: '1'}
+175	175		204							{1: '1', 2: '4'}
+176	176		301							{2: '奈亚希茨', 3: '本君又命汉帕去完成这个使命，你却沉溺在无用的情感中，为了所谓的复仇又吞噬了他的灵魂……你的所作所为早就已经背叛了整个地狱。', 4: '1'}
+177	177		301							{2: '奈亚希茨', 3: '但谅在你从未认清自己的灵魂到底是何种姿态，本君怜悯你，给你最后一次机会来到了本君面前。', 4: '1'}
+178	178		301							{2: '奈亚希茨', 3: '事到如今，你身上到底还有什么东西可以用作交换，涅缇娅？', 4: '1'}
+179	179		201							{1: '18', 2: '501283'}
+180	180		301							{1: '1', 2: '摩利甘', 3: '我的君主，涅缇娅她那时候吃下汉帕的灵魂，只是出于走投无路……！', 4: '18'}
+181	181		202							{1: '18', 2: '1', 6: '1'}
+182	182		401							{1: '2', 2: '4276'}
+183	183		501						350.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab', 2: '3'}
+184	184		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBaseChild/FxUIPanelPicturePuzzleLiuguang.prefab'}
+185	185		301							{3: '摩利甘的辩解没有起到任何作用，奈亚希茨眉头微动，转手便将它的身影关到了镜子里。'}
+186	186		202							{1: '1'}
+187	187		401							{1: '2', 2: '5531'}
+188	188		201							{1: '18', 2: '501427'}
+189	189		301			DialogShake				{1: '1', 2: '摩利甘', 3: '——？', 4: '18'}
+190	190		202							{1: '18'}
+191	191		301							{3: '渡鸦瞬间被“镶”到了一块镜面里，它的尖叫再也没能传出来分毫。'}
+192	192		201							{1: '1', 2: '501281', 3: '4'}
+193	193		301							{1: '1', 2: '涅缇娅', 3: '……我能成为大君您的长镰，持续在这个世间收割生命，散播“苦厄”。', 4: '1'}
+194	194		301				DialogDisable			{2: '涅缇娅', 3: '这些灵魂会成为您“复仇”的基石，铺成通往您“复活”的阶梯。', 4: '1'}
+195	195		401							{1: '2', 2: '1516'}
+196	196		203						350.0	{1: '1', 2: '0.3', 4: '25', 5: '-50'}
+197	197		203						350.0	{1: '1', 2: '0.3', 4: '-50', 5: '-100'}
+198	198		301			DialogEnable				{3: '涅缇娅走上前，背着沉重的棺柩，跪伏在下。'}
+199	199		301							{2: '涅缇娅', 3: '如今枢机主神陨落，圣堂的走狗们一盘散沙，地狱众魔死伤惨重，由我来接替汉帕的使命正好合适。', 4: '1'}
+200	200		204							{1: '1', 2: '8'}
+201	201		301							{2: '涅缇娅', 3: '我愿听从您的一切吩咐，为您达成一切目的，死亡大君。', 4: '1'}
+202	202		201							{1: '1', 2: '500868', 3: '4'}
+203	203		301							{1: '1', 2: '奈亚希茨', 3: '不惜如此也要救活这个人类吗……涅缇娅，你可否知道人类的寿命只有短短数十年，而在未来等待你的是永生的苦刑？', 4: '1'}
+204	204		301							{3: '奈亚希茨摇摇头，似乎真心为这个请求而感到可叹。'}
+205	205		204							{1: '1'}
+206	206		301							{2: '奈亚希茨', 3: '算了，你终究无法理解我们必须推翻三大律法的根由，但我仍会为你实现这个愿望。', 4: '1'}
+207	207		204							{1: '1', 2: '4'}
+208	208		301							{2: '奈亚希茨', 3: '但这次，我不会再给你机会逃避使命。', 4: '1'}
+209	209		301							{2: '奈亚希茨', 3: '……既然那只喧噪的鸟儿把你引到了这儿，那就也由它肩负起监督你的责任吧。', 4: '1'}
+210	210		202							{1: '1'}
+211	211		301							{3: '死亡大君转过身，径自走入又一面长镜中，祂的身影逐渐在无限的反射回廊中远去。'}
+212	212		201							{1: '18', 2: '500868'}
+213	213		301							{1: '1', 2: '奈亚希茨', 3: '摩利甘，我收回了你的“记忆”，从今天开始，你就作为我的“眼”，留在她身边。', 4: '18'}
+214	214		301							{2: '奈亚希茨', 3: '而涅缇娅，本君将“<phonetic=Dirige>告死渡鸦</phonetic>”的名号赐予于你，你需执行我的旨意，在三界之间无尽地散播灾厄，为本君的复活铺设阶梯。', 4: '18'}
+215	215		204							{1: '18', 2: '2'}
+216	216		301				AniZhuanchangBegin			{2: '奈亚希茨', 3: '去往阿格龙河吧，代价已经收取了，你的愿望即将会得到实现。', 4: '18'}
+217	217		202							{1: '18'}
+218	218		401							{1: '1', 2: '36'}
+219	219		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory913.jpg'}
+220	220		401							{1: '1', 2: '5072'}
+221	221		306							{1: '1'}
+222	222		201							{1: '1', 2: '501282'}
+223	223		301			AniZhuanchangEnd				{1: '1', 3: '涅缇娅背着棺柩，怀中抱着已经失去过往所有记忆的摩利甘，再次来到了潮水不停翻滚的长河边。'}
+224	224		301				DialogDisable			{3: '为了来到这里，这一路上她已经牺牲和失去了太多，一切已经再也不能回头。'}
+225	225		203						550.0	{1: '1', 2: '0.5', 4: '-50'}
+226	226		202							{1: '1', 6: '1'}
+227	227		401							{1: '2', 2: '5965'}
+228	228		201							{1: '1', 2: '501281', 4: '200', 5: '-50', 6: '-50'}
+229	229		401							{1: '2', 2: '13081710'}
+230	230		201							{1: '2', 2: '500678', 4: '-200', 5: '-150'}
+231	231		203						550.0	{1: '1', 2: '0.8', 3: '200'}
+232	232		301			DialogEnable				{1: '1', 3: '放下仍在沉睡中的摩利甘，她揭开椁木，从中抱起紧闭着双目的人类。'}
+233	233		306							
+234	234		301				DialogDisable			{2: '涅缇娅', 3: '灰鸦……抱歉我不能追随你而去，我必须留在这里。', 4: '1'}
+235	235		202							{1: '1', 2: '2', 6: '1'}
+236	236		201							{1: '1', 2: '500678'}
+237	237		205						1050.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory844.jpg', 3: '0', 4: '0.3', 5: '1'}
+238	238		401							{1: '2', 2: '841'}
+239	239		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLianyi.prefab', 2: '2'}
+240	240		301			DialogEnable				{1: '1', 3: '涅缇娅划破手掌，将一滴鲜血滴入人类胸口的空洞中。'}
+241	241		401							{1: '2', 2: '2986'}
+242	242		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '2'}
+243	243		301							{3: '血契的力量随即生效，新生的血肉很快取代了那颗如今在涅缇娅胸膛中跳动的心脏，为人类的身躯填补了那个缺口。'}
+244	244		201							{1: '18', 2: '501281', 3: '14', 5: '-150'}
+245	245		301							{1: '1', 2: '涅缇娅', 3: '请原谅我的自私，将如此沉重的命运赋予你身上……', 4: '18'}
+246	246		202			DialogDisable				{1: '18'}
+247	247		401							{1: '2', 2: '4919'}
+248	248		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieHongchaoHs.prefab', 2: '2'}
+249	249		203						550.0	{1: '1', 2: '0.5', 4: '-50'}
+250	250		202							{1: '1'}
+251	251		301			DialogEnable				{3: '人类的身躯缓缓沉入温热的河水，轻盈的水珠拍打在脸上，为其拭去死亡的寒意。'}
+252	252		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieHongchaoHs.prefab'}
+253	253		205						1050.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory844.jpg', 3: '0.3', 4: '0', 5: '1'}
+254	254		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+255	255		201							{1: '1', 2: '501281', 3: '8'}
+256	256		301							{1: '1', 2: '涅缇娅', 3: '但我多想多想请求你……纵使生死往复轮回，都不要忘记你“自己”。', 4: '1'}
+257	257		204							{1: '1', 2: '14'}
+258	258		301				DialogDisable			{2: '涅缇娅', 3: '忘记我也没关系，忘记此前发生的所有都无所谓。', 4: '1'}
+259	259		202							{1: '1'}
+260	260		401							{1: '2', 2: '4919'}
+261	261		501						5000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBubble.prefab', 2: '3'}
+262	262		306							{1: '1'}
+263	263		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1281.jpg'}
+264	264		301			DialogEnable				{3: '无梦的魔女将人类的身体放进滔天的洪流里，汹涌的浪花很快就将其包裹而走，卷入生死轮回。'}
+265	265		301							{3: '涅缇娅立在岸边，注视着那道身影顺着河水顺流而下，最终消失在一片耀眼的混沌之中。'}
+266	266		306							
+267	267		201							{1: '18', 2: '501281', 3: '14', 5: '-150'}
+268	268		301							{1: '1', 2: '涅缇娅', 3: '再次睁开眼的时候，请记住你的名字和你的使命，你便不会忘记该去何处寻找我。', 4: '18'}
+269	269		202							{1: '18'}
+270	270		301				DialogDisable			{3: '她喃喃道。'}
+271	271		401							{1: '2', 2: '5813'}
+272	272		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+273	273		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+274	274		202							{1: '1'}
+275	275		307							{1: '我来！', 3: '60', 4: 'ff4e4eff'}
+276	276		301							{3: '我来！'}
+277	277		307							{2: '1'}
+278	278		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+279	279		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory913.jpg'}
+280	280		201							{1: '1', 2: '501281', 7: '1'}
+281	281		301			DialogEnable	DialogDisable			{1: '1', 2: '涅缇娅', 3: '我会于血契的尽头一直等待你——', 4: '1'}
+282	282		401							{1: '2', 2: '5813'}
+283	283		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+284	284		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+285	285		202							{1: '1', 6: '1'}
+286	286		307							{1: '灰鸦', 3: '80', 4: 'DDDDDD'}
+287	287		301							{3: '灰鸦'}
+288	288		307							{2: '1'}
+289	289		401						400.0	{1: '2', 2: '9327108', 3: '1'}
+290	290		401							{1: '2', 2: '1226'}
+291	291		401							{1: '2', 2: '213'}
+292	292		304							{1: '最开始，是从滔天的洪水中醒来，烈焰劈开混沌，将自己带离冥渊。', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 7: '-2'}
+293	293		401							{1: '2', 2: '4834'}
+294	294		304							{1: '然后，人类从潺潺洪流中抓住了一柄铁枪，这块本应冰冷的铁钢上却有着几乎要把人烫伤的高温。', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 7: '-1'}
+295	295		304							{1: '从握住这把枪的瞬间开始，一个陌生而又熟悉的名词轰然在脑内显现。', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 7: '-1', 9: '1'}
+296	296		401							{1: '2', 2: '2595'}
+297	297		307				AniZhuanchangBegin			{1: '血契', 3: '100', 4: 'ff4e4eff', 6: '1'}
+298	298		301							{3: '血契'}
+299	299		307							{2: '1'}
+300	300		402							{1: '213'}
+301	301		401							{1: '1', 2: '36'}
+302	302		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab', 2: '2'}
+303	303		401							{1: '1', 2: '120'}
+304	304		502							{1: 'DialogEnable'}
+305	305		301			AniZhuanchangEnd				{3: '耳边，忽而响起了宛若风铃的旋律。'}
+306	306		301							{3: '乐曲流淌着，编织成金色纺线，垂入支离破碎的梦乡，指引意识走出酣眠，重新拥抱现实的温度。'}
+307	307		302							{2: '（睁开眼）', 3: '308'}
+308	308		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab'}
+309	309		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+310	310		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+311	311		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory923.jpg'}
+312	312		401							{1: '2', 2: '4206'}
+313	313		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen01.prefab', 2: '2'}
+314	314		401							{1: '2', 2: '5672'}
+315	315		201							{1: '18', 2: '501283'}
+316	316		301			DialogShake				{1: '1', 2: '摩利甘', 3: '嘎——<M>他</M><W>她</W>醒了！<M>他</M><W>她</W>醒了！', 4: '18'}
+317	317		202							{1: '18'}
+318	318		401							{1: '2', 2: '5517'}
+319	319		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteGlow.prefab', 2: '2'}
+320	320		301				DialogDisable			{3: '簌簌的风沙声环绕着四周，朦胧的光景中，一只渡鸦正停在自己的肩膀上，叽喳吵个不停。'}
+321	321		401							{1: '2', 2: '3079'}
+322	322		104						550.0	{1: '0|-50|-150', 2: '0.5'}
+323	323		301			DialogEnable				{3: '人类从漫天的黄沙中坐起来，感觉自己虽然自己只睡了一晚，但是过了很长一段时间。'}
+324	324		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen01.prefab'}
+325	325		505						50.0	{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteGlow.prefab'}
+326	326		402							{1: '4206'}
+327	327		401							{1: '2', 2: '5813'}
+328	328		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+329	329		504							{1: '0.7'}
+330	330		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory913.jpg'}
+331	331		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab', 2: '2'}
+332	332		201							{1: '1', 2: '501294', 7: '1'}
+333	333		301							{1: '1', 3: '梦中好像见到了一个自己无比熟悉的人，语带悲恸地请求了自己一些事……但却怎么都想不起来具体的细节。'}
+334	334		505						50.0	{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiFogNew.prefab'}
+335	335		202							{1: '1', 6: '1'}
+336	336		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+337	337		504							{1: '0'}
+338	338		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory923.jpg'}
+339	339		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteGlow.prefab', 2: '2'}
+340	340		201							{1: '1', 2: '501270', 7: '1'}
+341	341		301				DialogDisable			{1: '1', 2: '渡边', 3: '抱歉，被吵醒了？', 4: '1'}
+342	342		401							{1: '2', 2: '1516'}
+343	343		203						550.0	{1: '1', 2: '0.5', 4: '-50', 5: '-100'}
+344	344		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTransfiniteMain/FxUiTransfiniteGlow.prefab'}
+345	345		301			DialogEnable	DialogDisable			{3: '熟悉的身影迈过散落在地的枯草与碎石，缓缓走入阴影，半蹲在其身边。'}
+346	346		202							{1: '1'}
+347	347		104						450.0	{1: '50|-50|-150', 2: '0.4'}
+348	348		104						450.0	{1: '-50|-50|-150', 2: '0.4'}
+349	349		104						250.0	{1: '0|-50|-150', 2: '0.2'}
+350	350		301			DialogEnable				{3: '人类的愣神只维持了片刻，然后很快摇了摇头，把残留在梦中的悲伤都抛诸了脑后。'}
+351	351		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+352	352		202							{1: '1', 6: '1'}
+353	353		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory338.jpg'}
+354	354		201							{1: '1', 2: '501281', 3: '4'}
+355	355		301				DialogDisable			{1: '1', 2: '涅缇娅', 3: '……', 4: '1'}
+356	356		401							{1: '2', 2: '1516'}
+357	357		203						550.0	{1: '1', 2: '0.5', 3: '400'}
+358	358		202							{1: '1'}
+359	359		301			DialogEnable				{3: '站在沙丘上的魔女缓缓将自己的身形敛进巨岩的阴影之中，无需摩利甘刻意报告，她都能通过渡鸦的眼睛洞察它所见之事。'}
+360	360		306							{1: '1'}
+361	361		301				DialogDisable			{3: '命运的齿轮终于再次开始转动，她也必须加紧脚步，尽快让棋盘上的木偶都悉数登场。'}
+362	362		306							
+363	363		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen01.prefab'}
+364	364		401							{1: '1', 2: '36'}
+365	365		205						1050.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}
+366	366		205							{1: '999'}
+367	367		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+368	368		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront18.png', 3: '0', 4: '1', 5: '0'}
+369	369		401						500.0	{1: '2', 2: '772'}
+370	370		111						250.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySuipingTongYong.prefab'}
+371	371		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront18.png', 3: '1', 4: '0', 5: '0'}
+372	372		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg6101_11.jpg'}
+373	373		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '2'}
+374	374		401							{1: '1', 2: '6199'}
+375	375		402							{1: '9357061'}
+376	376		301			DialogEnable				{2: '涅缇娅', 3: '……永恒并不是我们的敌人，时间才是。'}
+377	377		301							{2: '涅缇娅', 3: '这个世界不应以任何人的意志为准条运转，至高天，祂藏在棋盘之外太久了，以至于我们都忘记了这一切背后真正的推手。'}
+378	378		301							{2: '涅缇娅', 3: '那些死在动乱里的生命，那些被困在阿格龙河里的灵魂，每个人都诉说着律法的世界下生命是多么的卑贱，要么像草芥一般死去，要么只能选择被圣堂的猪狗收割。'}
+379	379		301							{2: '涅缇娅', 3: '我要让每个灵魂都活得自由公平，不再畏惧死亡，不再畏惧圣堂。'}
+380	380		301							{2: '涅缇娅', 3: '灰鸦，这一次，我会赶在死亡来临之前，先一步引领你进入新世界……'}
+381	381		301				DialogDisable			{2: '涅缇娅', 3: '……而你，将会是这个新世界的王。'}
+382	382		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab'}
+383	383		401							{1: '2', 2: '4276'}
+384	384		501						1200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '2'}
+385	385		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+386	386		501						100.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+387	387		401							{1: '2', 2: '759'}
+388	388		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+389	389		301			DialogEnable				{3: '一道璀璨的光芒从她手心瞬间炸裂而开，眨眼间散落成无数片灰色落羽，羽毛落尽之后，涅缇娅的人影也消失在了这片浊雨之中。'}
+390	390		401							{1: '1', 2: '36'}
+391	391		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+392	392		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory732.jpg'}
+393	393		401							{1: '1', 2: '6200'}
+394	394		504							{1: '0.7'}
+395	395		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+396	396		201							{1: '1', 2: '500787', 7: '1'}
+397	397		301							{1: '1', 2: '铁殇', 3: '渡边？！', 4: '1'}
+398	398		201							{1: '1', 2: '500800'}
+399	399		301							{1: '1', 2: '矛隼', 3: '……你……是谁？', 4: '1'}
+400	400		202							{1: '1', 6: '1'}
+401	401		201							{1: '1', 2: '501281', 3: '1'}
+402	402		301							{1: '1', 2: '涅缇娅', 3: '……巴拉德阁下。', 4: '1'}
+403	403		204							{1: '1', 2: '3'}
+404	404		301				DialogDisable			{2: '涅缇娅', 3: '要来做个交易吗？', 4: '1'}
+405	405		504							{1: '0'}
+406	406		202							{1: '1', 6: '1'}
+407	407		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+408	408		401							{1: '2', 2: '558'}
+409	409		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+410	410		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+411	411		109							{1: '1', 2: '<color=#ffffffff><size=70>她杀害了一位意志崇高的军人，</size></color>', 3: '0', 4: '80', 11: '1'}
+412	412		109							{1: '2', 2: '<color=#ffffffff><size=70>只为煽动“战争”亲身加入战场。</size></color>', 3: '0', 4: '-80', 11: '1'}
+413	413		309	1						{2: '她杀害了一位意志崇高的军人，只为煽动“战争”亲身加入战场。'}
+414	414		110							
+415	415		502							{1: 'DialogEnable'}
+416	416		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+417	417		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory710.jpg'}
+418	418		504							{1: '0.7'}
+419	419		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+420	420		201							{1: '1', 2: '501281', 3: '1', 4: '-400', 7: '1'}
+421	421		201							{1: '2', 2: '500739', 4: '400', 7: '1'}
+422	422		301							{1: '1', 2: '涅缇娅', 3: '你想做什么呢？', 4: '1'}
+423	423		301							{2: '涅缇娅', 3: '没有你想得这么简单的，海妲魔女，圣堂不是供人游戏的场所。', 4: '1'}
+424	424		301							{2: '海妲魔女', 3: '那我该怎么做？', 4: '2'}
+425	425		204							{1: '1', 2: '3'}
+426	426		301				DialogDisable			{2: '涅缇娅', 3: '或许……我可以帮你。', 4: '1'}
+427	427		504							{1: '0'}
+428	428		202							{1: '1', 2: '2', 6: '1'}
+429	429		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+430	430		401							{1: '2', 2: '558'}
+431	431		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+432	432		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+433	433		109							{1: '3', 2: '<color=#ffffffff><size=60>她劝诱一位大胆天真的魔女摘下星星，</size></color>', 3: '0', 4: '80', 11: '1'}
+434	434		109							{1: '4', 2: '<color=#ffffffff><size=60>只为引导“死亡”为保护地狱而剑指圣堂。</size></color>', 3: '0', 4: '-80', 11: '1'}
+435	435		309	1						{2: '她劝诱一位大胆天真的魔女摘下星星，只为引导“死亡”为保护地狱而剑指圣堂。'}
+436	436		110							
+437	437		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+438	438		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory536.jpg'}
+439	439		504							{1: '0.7'}
+440	440		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+441	441		502							{1: 'DialogEnable'}
+442	442		201							{1: '1', 2: '501281', 3: '1', 4: '-400', 6: '-50', 7: '1'}
+443	443		201							{1: '2', 2: '500129', 4: '400', 7: '1'}
+444	444		301							{1: '1', 2: '涅缇娅', 3: '欧石兰阁下，您所指的人类是？', 4: '1'}
+445	445		301							{2: '欧石兰', 3: '当然指的是被迫卷入这场战争的所有群众……虽然出于救赎之道，我不得不篡改了族人的圣典，但我也不希望他们落得更坏的下场了。', 4: '2'}
+446	446		204							{1: '1', 2: '9'}
+447	447		301							{2: '涅缇娅', 3: '那您无需费心，站在历史的尺度上，人类的爱恨都是可以被塑造、引导的意识形态。', 4: '1'}
+448	448		204							{1: '1', 2: '1'}
+449	449		301				DialogDisable			{2: '涅缇娅', 3: '不论仇恨或是信仰，都可以在一夜之间倒错变换。', 4: '1'}
+450	450		504							{1: '0'}
+451	451		202							{1: '1', 2: '2', 6: '1'}
+452	452		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+453	453		401							{1: '2', 2: '558'}
+454	454		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+455	455		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+456	456		109							{1: '5', 2: '<color=#ffffffff><size=60>她命令一位懊悔的男人亲手撕毁部落的神谕，</size></color>', 3: '0', 4: '80', 11: '1'}
+457	457		109							{1: '6', 2: '<color=#ffffffff><size=60>只为让“瘟疫”取回自身完整的记忆。</size></color>', 3: '0', 4: '-80', 11: '1'}
+458	458		309	1						{2: '她命令一位懊悔的男人亲手撕毁部落的神谕，只为让“瘟疫”取回自身完整的记忆。'}
+459	459		110							
+460	460		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+461	461		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1175.jpg'}
+462	462		504							{1: '0.7'}
+463	463		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+464	464		502							{1: 'DialogEnable'}
+465	465		201							{1: '1', 2: '501281', 3: '1', 4: '-400', 6: '-50', 7: '1'}
+466	466		201							{1: '2', 2: '501123', 4: '400', 7: '1'}
+467	467		301							{1: '1', 2: '涅缇娅', 3: '玛门之席长期空缺，黄金律法也迟早会迎来崩坏，我不愿见到这个结果，这和你们的目的一致。', 4: '1'}
+468	468		204							{1: '1', 2: '9'}
+469	469		301							{2: '涅缇娅', 3: '所以，我希望你不要认为这是一种“协助”，把它作为是一种先行投资的筹码收下即可。', 4: '1'}
+470	470		204							{1: '1', 2: '1'}
+471	471		301							{2: '涅缇娅', 3: '我期待着这枚筹码能在你手上开花结果的一天。', 4: '1'}
+472	472		301				DialogDisable			{2: '拉斐尔夫人', 3: '——骗人的吧？', 4: '2'}
+473	473		504							{1: '0'}
+474	474		202							{1: '1', 2: '2', 6: '1'}
+475	475		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+476	476		401							{1: '2', 2: '558'}
+477	477		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+478	478		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+479	479		109							{1: '7', 2: '<color=#ffffffff><size=60>她将号令整座炼狱的权柄交予天使，</size></color>', 3: '0', 4: '80', 11: '1'}
+480	480		109							{1: '8', 2: '<color=#ffffffff><size=60>只为借助“饥荒”之手摧毁玛门的席位。</size></color>', 3: '0', 4: '-80', 11: '1'}
+481	481		309	1						{2: '她将号令整座炼狱的权柄交予天使，只为借助“饥荒”之手摧毁玛门的席位。'}
+482	482		110							
+483	483		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+484	484		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1039.png'}
+485	485		502							{1: 'DialogEnable'}
+486	486		301				AniZhuanchangBegin			{3: '她严格地执行着地狱交付于自己的使命，为万千无处可归的灵魂带去讣告，铺成通往“死亡大君”复活的阶梯。'}
+487	487		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+488	488		304			AniZhuanchangEnd				{1: '但她同时也欺瞒了所有人，在无人知晓的角落布下缜密的伏线。', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 7: '-3', 10: '1'}
+489	489		304							{1: '而如今，这位魔女终于得偿所愿，', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 7: '-1', 10: '1'}
+490	490		304				AniZhuanchangBegin			{1: '在所有丝线收紧的那一瞬间，拽住了“人偶”的躯干，并将甜美的胜利果实拉往自己身边。', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 7: '-1', 9: '1', 10: '1'}
+491	491		401							{1: '1', 2: '36'}
+492	492		101						2000.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory1039.png'}
+493	493		401							{1: '1', 2: '369'}
+494	494		201							{1: '1', 2: '501281', 3: '1'}
+495	495		502							{1: 'DialogEnable'}
+496	496		301			AniZhuanchangEnd				{1: '1', 2: '涅缇娅', 3: '灰鸦，你是否满意我为你展示的这一切？', 4: '1'}
+497	497		301				DialogDisable			{2: '涅缇娅', 3: '还是说，你早有预感……这一切会如此发生？', 4: '1'}
+498	498		401							{1: '2', 2: '1516'}
+499	499		203						550.0	{1: '1', 2: '0.5', 4: '-20', 5: '-50'}
+500	500		203						550.0	{1: '1', 2: '0.5', 4: '30', 5: '-75'}
+501	501		203						550.0	{1: '1', 2: '0.5', 4: '-40', 5: '-100'}
+502	502		301			DialogEnable	DialogDisable			{3: '同时夺得“枢机主神”和“死亡大君”权能的涅缇娅缓步走下圣坛，刚刚还血战不止的天使和恶魔们目睹到她的身影纷纷俯首跪下，在圣堂残庭上匍匐一片。'}
+503	503		401							{1: '2', 2: '4359'}
+504	504		205						1050.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1143.jpg', 3: '0', 4: '0.6', 5: '1'}
+505	505		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiColorTableStageMain/FxUiColorTableStageRollStarLoop.prefab', 2: '2'}
+506	506		402							{1: '4359'}
+507	507		301			DialogEnable				{3: '无数个微小的“星球”如气泡一样环绕在涅缇娅周围，但她没有去注视其中流动的世界一秒。'}
+508	508		301							{3: '她得到了足以重塑整片大陆的权柄，但却毫不在意，眼中只注视着那位让自己亲手缔造的“血契者”——和其余四位不受影响，仍然站立在原地的骑士。'}
+509	509		204							{1: '1', 2: '3'}
+510	510		301							{2: '涅缇娅', 3: '但无论如何，我得感谢你们，我的计划能进展得如此顺利，和各位的努力密不可分。', 4: '1'}
+511	511		204							{1: '1', 2: '9'}
+512	512		301							{2: '涅缇娅', 3: '想必你们一定很想怒斥于我，例如“你竟然利用了我们之间的契约”……诸如此类。', 4: '1'}
+513	513		204							{1: '1', 2: '1'}
+514	514		301							{2: '涅缇娅', 3: '但请各位无需愤怒，无需懊悔，我为你们的真诚和热血都提供了真正的救赎之道——因为我将会重塑这个世界。', 4: '1'}
+515	515		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1143.jpg', 3: '0.6', 4: '0', 5: '0'}
+516	516		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiColorTableStageMain/FxUiColorTableStageRollStarLoop.prefab'}
+517	517		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+518	518		401							{1: '2', 2: '5564'}
+519	519		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab', 2: '2'}
+520	520		301							{3: '涅缇娅举起手腕，将余留在人间的成百上千条「混沌之创」一并纳入掌心。'}
+521	521		204							{1: '1', 2: '1'}
+522	522		301							{2: '涅缇娅', 3: '我会联通三界，打破律法，将所有的人类都化作不再受圣堂束缚的恶魔，剩下的天使，也回归到阿格龙河去化作新生的魂灵。', 4: '1'}
+523	523		204							{1: '1', 2: '8'}
+524	524		301							{2: '涅缇娅', 3: '从此之后，各个灵魂之间将不再有重量之分，轮回之间也不再有“审判”存在……', 4: '1'}
+525	525		202							{1: '1', 6: '1'}
+526	526		502							{1: 'DialogDisable'}
+527	527		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen02.prefab'}
+528	528		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+529	529		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1106.jpg'}
+530	530		401							{1: '2', 2: '5812'}
+531	531		502							{1: 'RImgBg1Shake'}
+532	532		301			DialogEnable				{3: '一时间，整个宇宙爆发出激烈的摇晃，涅缇娅的双手如同化作了“天”与“地”，同时向中央压迫而去。'}
+533	533		402							{1: '5812'}
+534	534		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+535	535		401							{1: '2', 2: '5885'}
+536	536		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiCommon/FxUiActivityBranch01.prefab', 2: '2'}
+537	537		301				AniZhuanchangBegin			{3: '地表的一切事物也在这道强烈的压迫下不断被压缩，扭曲，即将化为一张“片面”。'}
+538	538		502							{1: 'DialogDisable'}
+539	539		401							{1: '1', 2: '36'}
+540	540		505						2000.0	{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiCommon/FxUiActivityBranch01.prefab'}
+541	541		401							{1: '1', 2: '370'}
+542	542		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg3401_06.jpg'}
+543	543		201							{1: '1', 2: '500928', 4: '-700'}
+544	544		203						550.0	{1: '1', 2: '0.5', 3: '-400', 4: '-50', 5: '-100'}
+545	545		202							{1: '1'}
+546	546		201							{1: '2', 2: '501233', 4: '700'}
+547	547		203						550.0	{1: '2', 2: '0.5', 3: '400', 4: '-50', 5: '-100'}
+548	548		202							{1: '2'}
+549	549		201							{1: '3', 2: '500460', 4: '-700'}
+550	550		203						550.0	{1: '3', 2: '0.5', 3: '-400', 4: '-50', 5: '-100'}
+551	551		202							{1: '3'}
+552	552		201							{1: '4', 2: '500624', 4: '700'}
+553	553		203						550.0	{1: '4', 2: '0.5', 3: '400', 4: '-50', 5: '-100'}
+554	554		202							{1: '4'}
+555	555		301			DialogEnable				{3: '还残留在地表上的恶魔大军和人类们，也被这股奇妙力量所引导，缓缓地飞向圣堂残庭——这个涅缇娅为自己准备的加冕仪式现场。'}
+556	556		201							{1: '1', 2: '501281', 3: '9'}
+557	557		301							{1: '1', 2: '涅缇娅', 3: '不必担心，这一点都不会痛的，所有人只会像做了一个轻飘飘的梦一样，在醒来的瞬间就获得了永生不死的身份。', 4: '1'}
+558	558		204							{1: '1', 2: '1'}
+559	559		301							{2: '涅缇娅', 3: '因为唯有这样的躯体，才能足以应对接下来的考验——', 4: '1'}
+560	560		202							{1: '1'}
+561	561		401							{1: '2', 2: '2766'}
+562	562		301							{3: '她合上手掌，甜美一笑。'}
+563	563		201							{1: '1', 2: '501281', 3: '1'}
+564	564		301							{1: '1', 2: '涅缇娅', 3: '为了让这样美好的世界得以持续，我们还要出发去打倒至高天才行。', 4: '1'}
+565	565		202							{1: '1', 6: '1'}
+566	566		401							{1: '2', 2: '771'}
+567	567		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+568	568		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+569	569		301			DialogShake	DialogDisable			{3: '砰——'}
+570	570		205						1800.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory627.jpg', 3: '0', 4: '1', 5: '1.8'}
+571	571		205							{1: '999'}
+572	572		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory627.jpg'}
+573	573		301			DialogEnable				{3: '奇妙的引力消失，在场的众人再次睁开眼的时候，发现自己来到了一片虚无的空间之中。'}
+574	574		306							{1: '1'}
+575	575		301							{3: '三界都被涅缇娅搅成了一片“混沌”，然后又压缩成了一场“黑夜”——'}
+576	576		301							{3: '没错，此处便是她创造的新世界，众人此刻站在此处，就如同站在了她的掌心之中。'}
+577	577		306							
+578	578		201							{1: '1', 2: '501281', 3: '3'}
+579	579		301				DialogDisable			{1: '1', 2: '涅缇娅', 3: '嗨——欢迎来到“新纪元”。', 4: '1'}
+580	580		203						550.0	{1: '1', 2: '0.5', 5: '-100'}
+581	581		202							{1: '1'}
+582	582		401							{1: '2', 2: '5517'}
+583	583		501						500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiCerberusGameChapter/FxUiCerberusGameChapterLizi01.prefab', 2: '2'}
+584	584		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiCerberusGameChapter/FxUiCerberusGameChapterLizi01.prefab'}
+585	585		301			DialogEnable				{3: '涅缇娅只轻轻吹了口气，他们便同时被她身上迸发而出的强大气压掀翻在地，齐齐往后退了一步。'}
+586	586		201							{1: '1', 2: '501281', 3: '9'}
+587	587		301							{1: '1', 2: '涅缇娅', 3: '希望你们会喜欢这个没有“死亡”和“战争”的世界。', 4: '1'}
+588	588		401							{1: '2', 2: '5705'}
+589	589		201							{1: '1', 2: '501216'}
+590	590		301							{1: '1', 3: '其中薇拉率先抽出双刃枪，将其牢牢插在地表上，手持着枪柄怒喝道：'}
+591	591		204							{1: '1', 2: '5'}
+592	592		301			RImgBg1Shake				{2: '薇拉', 3: '梦话留到睡着了之后再去讲！生死律法不是任由你如此胡乱戏弄的东西，如此多魂灵一并涌入地狱，你想过如何引导祂们离去吗？', 4: '1'}
+593	593		301							{2: '薇拉', 3: '那些天使是连猪狗都不如，但你又干了什么？你现在只是又把一个烂摊子甩给了地狱，甩给了众魔！', 4: '1'}
+594	594		201							{1: '1', 2: '501271', 3: '8'}
+595	595		301							{1: '1', 2: '渡边', 3: '那些为了捍卫自己的家园而战，为了自己认定的使命付上一切的人，也不甘愿成为恶魔。', 4: '1'}
+596	596		204							{1: '1'}
+597	597		301				DialogDisable			{2: '渡边', 3: '你不应该剥夺他们选择的权利！', 4: '1'}
+598	598		401							{1: '2', 2: '5705'}
+599	599		203						350.0	{1: '1', 2: '0.3', 5: '-100'}
+600	600		401							{1: '2', 2: '1510'}
+601	601		202						350.0	{1: '1'}
+602	602		301			DialogEnable				{3: '渡边也紧随其后，向涅缇娅拔出手枪，但膛管中发射出的子弹尚未接近她身边，便被无数片灰羽组成的旋涡吸纳了进去。'}
+603	603		201							{1: '1', 2: '501297', 3: '5', 4: '-300'}
+604	604		301				DialogDisable			{1: '1', 2: '莉莉丝', 3: '……普通的攻击对她没有作用！', 4: '1'}
+605	605		401							{1: '2', 2: '5327'}
+606	606		203						350.0	{1: '1', 2: '0.3', 3: '-300', 4: '-50'}
+607	607		203						350.0	{1: '1', 2: '0.3', 3: '-300'}
+608	608		201							{1: '2', 2: '501295', 3: '8', 4: '700', 5: '-100'}
+609	609		301			DialogEnable				{1: '1', 3: '莉莉丝在后方撑起月伞构成屏障，一边保护着被涅缇娅重伤的万事，一边对人类大喊。'}
+610	610		301							{2: '莉莉丝', 3: '灰鸦，这里由我们抵挡，你——', 4: '1'}
+611	611		202							{1: '1', 2: '2', 6: '1'}
+612	612		201							{1: '18', 2: '501281', 3: '3', 5: '-150'}
+613	613		301							{1: '1', 2: '涅缇娅', 3: '抱歉呀，我可不打算玩那种放任你离开，然后找一个关键时刻回来翻盘的戏码。', 4: '18'}
+614	614		202							{1: '18', 6: '1'}
+615	615		401							{1: '2', 2: '5911'}
+616	616		201							{1: '1', 2: '501281', 5: '30', 6: '-100'}
+617	617		203						550.0	{1: '1', 2: '0.5', 5: '-100'}
+618	618		301							{1: '1', 3: '话音未完，涅缇娅已经随着一声清脆的脚步声，缓缓降落到众人身边。'}
+619	619		204							{1: '1', 2: '9'}
+620	620		301							{2: '涅缇娅', 3: '嘘，四骑士，都暂且休息吧。', 4: '1'}
+621	621		202							{1: '1', 6: '1'}
+622	622		306							{1: '1'}
+623	623		401							{1: '1', 2: '36'}
+624	624		401							{1: '2', 2: '6343'}
+625	625		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+626	626		504							{1: '0.3'}
+627	627		301							{3: '叮铃——风铃的旋律响起，整个世界瞬间陷入了停滞。'}
+628	628		201							{1: '1', 2: '501297', 4: '-1000', 6: '1'}
+629	629		201							{1: '2', 2: '501270', 4: '250'}
+630	630		201							{1: '3', 2: '501216', 4: '-200'}
+631	631		201							{1: '4', 2: '501295', 3: '8', 4: '1100'}
+632	632		301				DialogDisable			{1: '1', 3: '无数的恶魔和天使都在一瞬间停住了动作，四位骑士也不例外，如同变成了一座精美的雕像一样停在了原处。'}
+633	633		202							{1: '1', 2: '2', 3: '3', 4: '4', 6: '1'}
+634	634		504							{1: '0'}
+635	635		306							
+636	636		401							{1: '1', 2: '6252'}
+637	637		201							{1: '1', 2: '501281', 3: '1', 5: '80', 6: '-100'}
+638	638		203						1050.0	{1: '1', 2: '1', 4: '-100', 5: '-100'}
+639	639		205						1050.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1110.jpg', 3: '0', 4: '1', 5: '1'}
+640	640		205							{1: '999'}
+641	641		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1110.jpg'}
+642	642		203							{1: '1', 2: '1', 5: '-150'}
+643	643		104						1050.0	{1: '0|10|-150', 2: '1'}
+644	644		301			DialogEnable				{1: '1', 3: '而她单足轻触地面，上半身仍轻忽地漂浮在空中，拉起人类的手，将其拉向无边的黑夜之中。'}
+645	645		204							{1: '1', 2: '1'}
+646	646		301							{2: '涅缇娅', 3: '灰鸦，我一直都想跟你仔细地诉说……我真正的梦想。', 4: '1'}
+647	647		301							{3: '人类的身体被涅缇娅引导，二人一起漂流在数以百计的“星球”之间。'}
+648	648		204							{1: '1', 2: '8'}
+649	649		301							{2: '涅缇娅', 3: '我思考了很久……到底怎样的世界，对于所有人来说才是真正“美好”的。', 4: '1'}
+650	650		204							{1: '1', 2: '4'}
+651	651		301							{2: '涅缇娅', 3: '天使，恶魔，人类，他们各自站在自身不同的立场，为了自己的利益不断发起斗争，而至高天制定的规则，就是诞生无尽矛盾的根源。', 4: '1'}
+652	652		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiColorTableStageMain/FxUiColorTableStageRollStarLoop.prefab'}
+653	653		401							{1: '2', 2: '13081710'}
+654	654		203							{1: '1', 2: '0.3', 4: '-50', 5: '-200'}
+655	655		104						350.0	{1: '0|-40|-200', 2: '0.3'}
+656	656		301							{3: '她轻轻一拽，把人类的躯体拉往自己身边。'}
+657	657		301							{2: '涅缇娅', 3: '把全部人都变为恶魔，向至高天发起远征——这就是我最后得出的答案。', 4: '1'}
+658	658		301							{2: '涅缇娅', 3: '只要将所有人的立场都强行归为一致，他们就能意识到真正的敌人是谁了。', 4: '1'}
+659	659		202							{1: '1'}
+660	660		306							{1: '1'}
+661	661		401							{1: '2', 2: '2819'}
+662	662		205						350.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '1', 5: '0.3'}
+663	663		301							{3: '唰——涅缇娅在虚空中展开漆黑的羽翼，将怀中的人类拥抱入怀。'}
+664	664		306							
+665	665		201							{1: '1', 2: '501281', 3: '1', 5: '-50', 6: '-200'}
+666	666		301							{1: '1', 2: '涅缇娅', 3: '灰鸦……如果是你的话，一定能理解我的理想吧？', 4: '1'}
+667	667		204							{1: '1', 2: '8'}
+668	668		301							{2: '涅缇娅', 3: '我们一起去消除所有的痛苦，颠覆所有的压迫……', 4: '1'}
+669	669		204							{1: '1', 2: '14'}
+670	670		301							{2: '涅缇娅', 3: '那些曾经在我们身上降临的苦难，将再也不会有任何人会体会到……', 4: '1'}
+671	671		401							{1: '2', 2: '4044'}
+672	672		203						350.0	{1: '1', 2: '0.3', 4: '-80', 5: '-250'}
+673	673		301							{3: '她收紧双臂，重重地将人类的身体圈住——简直如同要禁锢住其灵魂一般。'}
+674	674		301		1		AniZhuanchangBegin			{3: '但她的声音又低得如同在恳求。'}
+675	675		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '1', 4: '0', 5: '0'}

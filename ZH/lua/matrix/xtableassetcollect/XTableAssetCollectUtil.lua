@@ -2,7 +2,7 @@ local IO = CS.System.IO
 local Directory = IO.Directory
 local Path = IO.Path
 local XTableAssetCollectConst = require("XTableAssetCollect/XTableAssetCollectConst")
-local TableSourceTypeTips = XTableAssetCollectConst.TableSourceTypeTips
+local CollectSourceTypeTips = XTableAssetCollectConst.CollectSourceTypeTips
 local FileType = XTableAssetCollectConst.FileType
 
 local this = {}
@@ -108,8 +108,8 @@ this.ExtractTablePathByRegular = function(input)
 end
 
 this.GetTableSourceTypeTips = function(type)
-    if TableSourceTypeTips[type] then
-        return TableSourceTypeTips[type]
+    if CollectSourceTypeTips[type] then
+        return CollectSourceTypeTips[type]
     else
         return "不支持, 请添加到类型定义中"
     end

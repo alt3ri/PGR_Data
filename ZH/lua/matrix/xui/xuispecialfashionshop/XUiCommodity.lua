@@ -375,6 +375,16 @@ function XUiCommodity:OnBtnBuyClick()
             self:OnBuySuccessCb()
         end)
     end
+    buyData.GroupBuyCallBack = function(fashionGroupId)
+        XMVCA.XFashionSuit:ShopBuyFashionGroup(fashionGroupId, function(goodList)
+            local text = CS.XTextManager.GetText("BuySuccess")
+            XUiManager.TipMsg(text, nil, function()
+                XUiManager.OpenUiObtain(goodList)
+            end)
+
+            self:OnBuySuccessCb()
+        end)
+    end
     XMVCA.XShop:OpenFashionDetailUi(self.Id, buyData, { isWeaponFashion = self.IsWeaponFashion, updateCb = handler(self, self.OnBuySuccessCb) })
 end
 

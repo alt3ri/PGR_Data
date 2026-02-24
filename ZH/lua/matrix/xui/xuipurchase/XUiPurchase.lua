@@ -73,7 +73,7 @@ function XUiPurchase:OnStart(tab, isClearData, childTabIndex, customParams)
     -- 刷新累计充值状态
     local flag = XDataCenter.PurchaseManager.IsAccumulateEnterOpen() and not XUiManager.IsHideFunc
     self.BtnLjcz.gameObject:SetActive(flag)
-    self.BtnKefu.gameObject:SetActiveEx(not XFunctionManager.CheckFunctionFitter(XFunctionManager.FunctionName.Feedback))
+    self.BtnKefu.gameObject:SetActiveEx(not XFunctionManager.CheckFunctionFitter(XFunctionManager.FunctionName.Feedback) and not XUiManager.IsHideFunc)
     if XOverseaManager.IsKRRegion() then
         self.BtnKefu.gameObject:SetActiveEx(false)
     end
@@ -106,6 +106,7 @@ function XUiPurchase:OnStart(tab, isClearData, childTabIndex, customParams)
     self:CheckCustomParams()
     
     XEventManager.AddEventListener(XEventId.EVENT_PURCHASE_QUICK_BUY_SKIP, self.SkipToPayPage, self)
+    XEventManager.AddEventListener(XEventId.EVENT_FIGHT_BEFORE_ENTER, self.SignDontClearDataOnFight, self)
 end
 
 function XUiPurchase:AddListener()
@@ -683,6 +684,7 @@ end
 
 function XUiPurchase:OnDestroy()
     XEventManager.RemoveEventListener(XEventId.EVENT_PURCHASE_QUICK_BUY_SKIP, self.SkipToPayPage, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_FIGHT_BEFORE_ENTER, self.SignDontClearDataOnFight, self)
     self.Btns = nil
     if self.IsClearData and not XLuaUiManager.IsUiLoad("UiPurchase")  then
         XDataCenter.PurchaseManager.ClearData()
@@ -765,8 +767,8 @@ function XUiPurchase:RefreshLBGroupTab()
     for index, tab in pairs(self.TabBtns) do
         if uiTypes[index] then
             local isHaveData = XDataCenter.PurchaseManager.IsHaveDataByUiType(uiTypes[index])
-            
-            tab.gameObject:SetActiveEx(isHaveData)
+            local isAllSellOut = self:IsTabLbAllSellOut(index)
+            tab.gameObject:SetActiveEx(isHaveData and isAllSellOut)
 
             if isHaveData and isChangeSelect then
                 selectIndex = index
@@ -828,4 +830,35 @@ function XUiPurchase:TryFocusStage(selectGrid)
     end
 end
 
---endregion
+--endregion
+--region V4.3采购礼包界面优化
+
+function XUiPurchase:IsTabLbAllSellOut(index)
+    if self.CurGroupTab ~= 2 then
+        return true
+    end
+    local cfgs = self.TabsCfg[self.CurGroupTab]
+    if cfgs.Childs[index].Closecondition ~= 0 then
+       local isOpen, desc = XConditionManager.CheckCondition(cfgs.Childs[index].Closecondition)
+       return not isOpen
+    end
+    return true
+ 
+    -- local datas = XDataCenter.PurchaseManager.GetDatasByUiType(cfg.UiType)
+    -- local active = true
+    -- for _, data in pairs(datas) do
+    --     local cansell = XDataCenter.PurchaseManager.IsLbCanSell(data)
+    --     if cansell then
+    --         active = true
+    --         break
+    --     else
+    --         active = false
+    --     end
+    -- end
+    -- return active
+end
+--endregion
+
+function XUiPurchase:SignDontClearDataOnFight()
+    self.IsClearData = false
+end

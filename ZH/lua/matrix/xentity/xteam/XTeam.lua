@@ -757,6 +757,7 @@ function XTeam:GetObservationActiveCareer()
     local supportAmpEntityId = 0 
     local tankBreakerCount = 0
     local tankBreakerEntityId = 0
+    local nihilAmplifierCount = 0
 
     -- 1. 获取标准化后的 ID 列表并统计
     local idList = self:GetEntityIdListForObservation()
@@ -779,6 +780,10 @@ function XTeam:GetObservationActiveCareer()
                 if AMPLIFIER_CAREERS[career] then
                     supportAmpCount = supportAmpCount + 1
                     supportAmpEntityId = fixedId
+                    -- 统计空元素增幅型职业数量
+                    if element == XEnumConst.CHARACTER.Element.Nihil and career == XEnumConst.CHARACTER.Career.Amplifier then
+                        nihilAmplifierCount = nihilAmplifierCount + 1
+                    end
                 elseif TANK_CAREERS[career] then
                     tankBreakerCount = tankBreakerCount + 1
                     tankBreakerEntityId = fixedId
@@ -787,19 +792,24 @@ function XTeam:GetObservationActiveCareer()
         end
     end
 
-    local res = XEnumConst.CHARACTER.Career.None
-
-    -- 2. 核心屏蔽逻辑
-    if obsCount ~= 1 or physicalCount > 1 then 
-        return res, obsPos 
-    end
-
-    -- [关键屏蔽]：非物理候选职业总数 >= 2 时不转化
-    if (supportAmpCount + tankBreakerCount) >= 2 then
-        return res, obsPos
-    end
-
-    -- 3. 按照优先级顺序判定
+    local res = XEnumConst.CHARACTER.Career.None
+
+    -- 2. 核心屏蔽逻辑
+    if obsCount ~= 1 or physicalCount > 1 then 
+        return res, obsPos 
+    end
+
+    -- 3. [关键屏蔽]：非物理候选职业总数 >= 2 时不转化
+    if (supportAmpCount + tankBreakerCount) >= 2 then
+        return res, obsPos
+    end
+
+    -- 4. 特殊空增幅（仅当目标角色是空元素且为增幅型职业时直接返回Breaker）
+    if nihilAmplifierCount == 1 then
+        return XEnumConst.CHARACTER.Career.Breaker, obsPos
+    end
+
+    -- 5. 按照优先级顺序判定
     -- 【优先级 1 & 3】：处理 增幅/辅助 触发
     if supportAmpCount == 1 then
         local element = XMVCA.XCharacter:GetCharacterElement(supportAmpEntityId)

@@ -39,9 +39,7 @@ function XUiDlcRelinkPopupSkillDetail:OnStart(skillId, characterId, isRemodel, c
     self.Callback = callback
     self.IsNotSelf = isNotSelf or false
 
-    self:RefreshGridSkill()
     self:RefreshInfo()
-    self:RefreshDamage()
     self:RefreshSkillDetail()
 end
 
@@ -58,7 +56,7 @@ function XUiDlcRelinkPopupSkillDetail:RefreshGridSkill()
         self.GridSkillUi = XUiGridDlcRelinkCharacterSkill.New(self.GridSkill, self)
     end
     self.GridSkillUi:Open()
-    self.GridSkillUi:Refresh(self.SkillId, self.CharacterId, self.IsRemodel, self.IsNotSelf)
+    self.GridSkillUi:Refresh(self.CurSecondSkillId, self.CharacterId, self.IsRemodel, self.IsNotSelf)
 end
 
 function XUiDlcRelinkPopupSkillDetail:RefreshInfo()
@@ -71,8 +69,8 @@ end
 
 function XUiDlcRelinkPopupSkillDetail:RefreshDamage()
     -- 伤害
-    local curDamage = self._Control:GetSkillCurrentDamage(self.SkillId, self.CharacterId, self.IsNotSelf)
-    local maxDamage = self._Control:GetSkillMaxDamageLimit(self.SkillId, self.CharacterId, self.IsNotSelf)
+    local curDamage = self._Control:GetSkillCurrentDamage(self.CurSecondSkillId, self.CharacterId, self.IsNotSelf)
+    local maxDamage = self._Control:GetSkillMaxDamageLimit(self.CurSecondSkillId, self.CharacterId, self.IsNotSelf)
     if maxDamage > 0 then
         curDamage = math.min(curDamage, maxDamage)
     end
@@ -106,6 +104,8 @@ end
 function XUiDlcRelinkPopupSkillDetail:RefreshSecondSkill()
     self.CurSecondSkillId = self.SecondSkillIds[self.CurSecondSkillIndex]
     self.TxtSecondTitle.text = self._Control:GetSkillDescSubtitle(self.CurSecondSkillId)
+    self:RefreshGridSkill()
+    self:RefreshDamage()
     self:RefreshTagList()
     self:RefreshDesc()
     self:RefreshVideo()
@@ -242,9 +242,9 @@ function XUiDlcRelinkPopupSkillDetail:OnBtnDescClick()
     end
 
     self.IsSimpleDesc = not self.IsSimpleDesc
-    
+
     self._Control:SetSkillDescIsDetail(not self.IsSimpleDesc)
-    
+
     self:RefreshDesc()
 end
 

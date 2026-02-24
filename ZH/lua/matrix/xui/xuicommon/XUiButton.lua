@@ -24,6 +24,21 @@ function XUiButton:SetText(uiName, value)
     end
 end
 
+---设置按钮下指定名称的 Text 组件的颜色
+---@param uiName string 子节点名称（如 TxtNoFree）
+---@param color UnityEngine.Color 目标颜色
+function XUiButton:SetTextColor(uiName, color)
+    if not color then
+        return
+    end
+    for i, gameObject in pairs(self._List) do
+        local ui = XUiHelper.TryGetComponent(gameObject.transform, uiName, "Text")
+        if ui and ui.color then
+            ui.color = color
+        end
+    end
+end
+
 function XUiButton:SetRawImage(uiName, value)
     for i, gameObject in pairs(self._List) do
         local ui = XUiHelper.TryGetComponent(gameObject.transform, uiName, "RawImage")

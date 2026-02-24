@@ -26,8 +26,12 @@ end
 
 function XBigWorldNewsAgency:CheckAutoPopup()
     if XMVCA.XBigWorldGamePlay:IsInstLevel() then
-        return
+        return false
     end
+    if not XMVCA.XBigWorldFunction:DetectionFunction(XMVCA.XBigWorldFunction.FunctionId.BigWorldNews, true, true) then
+        return false
+    end
+    
     local newsIds = self:GetNewsIds()
     for _, newsId in pairs(newsIds) do
         if self:CheckNewsPopup(newsId) then
@@ -65,6 +69,9 @@ function XBigWorldNewsAgency:TryOpenNewsUiAndMarkPopped(newsId)
     if XMVCA.XBigWorldGamePlay:IsInstLevel() then
         return
     end
+    if not XMVCA.XBigWorldFunction:DetectionFunction(XMVCA.XBigWorldFunction.FunctionId.BigWorldNews, true, true) then
+        return
+    end
     if self:CheckNewsPopup(newsId) then
         self:RequestMarkNewsPopped(newsId)
         self._Model:SetNewsPopup(newsId)
@@ -74,6 +81,10 @@ end
 
 function XBigWorldNewsAgency:RequestMarkNewsPopped(newsId, func)
     if self._Model:CheckNewsPopup(newsId) then
+        return
+    end
+
+    if not XMVCA.XBigWorldFunction:DetectionFunction(XMVCA.XBigWorldFunction.FunctionId.BigWorldNews, true, true) then
         return
     end
     

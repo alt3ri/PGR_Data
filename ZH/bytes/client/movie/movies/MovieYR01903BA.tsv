@@ -1,0 +1,41 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory416.jpg'}
+2	2		401							{1: '1', 2: '201'}
+3	3		201							{1: '1', 2: '500042', 4: '400'}
+4	4		201							{1: '2', 2: '500567', 4: '-400'}
+5	5		301			DialogEnable				{1: '1', 2: '负责人', 3: '你说什么？！那个莱恩是假冒的？', 4: '1'}
+6	6		301							{2: '士兵', 3: '没错，事后我们在医疗部的管道里找到了昏迷的莱恩先生。', 4: '2'}
+7	7		301							{2: '士兵', 3: '根据他的说法，他起码昏迷有半天以上了。', 4: '2'}
+8	8		301							{2: '负责人', 3: '他有看见凶手是谁吗？', 4: '1'}
+9	9		301							{3: '士兵摇了摇头。'}
+10	10		301							{2: '负责人', 3: '看来我们要重新评估研究所的安全等级了。', 4: '1'}
+11	11		301							{2: '负责人', 3: '这次有哪些损失？', 4: '1'}
+12	12		301							{2: '士兵', 3: '呃……关于这点……其实对方没有带走任何东西。', 4: '2'}
+13	13		301				AniZhuanchangBegin			{2: '士兵', 3: '丢失的，只有一个放在旧仓库的咖啡杯。', 4: '2'}
+14	14		401						500.0	{1: '1', 2: '36'}
+15	15		202			DialogDisable				{1: '1', 2: '2', 6: '1'}
+16	16		401							{1: '1', 2: '63'}
+17	17		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+18	18		304				AniZhuanchangBegin			{1: '拉弥亚就这样离开了。', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory396.jpg', 6: '1', 8: '1', 9: '1', 10: '1'}
+19	19		502							{1: 'AniZhuanchangEnd'}
+20	20		304				AniZhuanchangBegin			{1: '在灰鸦和那个红发女人离开时，她仍然可以将亚特兰蒂斯潜入深海，但她没有那么做。', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory399.jpg', 6: '1', 7: '2', 10: '1'}
+21	21		502							{1: 'AniZhuanchangEnd'}
+22	22		304				AniZhuanchangBegin			{1: '在空中花园的部队刚到达时，她仍然可以发动感染体击垮这些人，但她没有那么做。', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory401.jpg', 6: '1', 7: '2', 10: '1'}
+23	23		502							{1: 'AniZhuanchangEnd'}
+24	24		304				AniZhuanchangBegin			{1: '在那些人覆写原本的生物权限时，她仍然可以阻止他们，但她没有那么做。', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory415.jpg', 6: '1', 8: '1', 10: '1'}
+25	25		502							{1: 'AniZhuanchangEnd'}
+26	26		304							{1: '亚特兰蒂斯存在过，他们存在过，她的归乡也确实存在过。', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory398.jpg', 6: '1', 10: '1'}
+27	27		304							{1: '她的夙愿已经终结，但是他们的战斗呢？', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory398.jpg', 6: '1', 10: '1'}
+28	28		304				AniZhuanchangBegin			{1: '他们是会希望亚特兰蒂斯这座墓碑永远沉寂，还是希望这座墓碑上能开出新的花，结出新的果呢？', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory398.jpg', 6: '1', 8: '1', 10: '1'}
+29	29		502							{1: 'AniZhuanchangEnd'}
+30	30		304							{1: '几乎是一瞬间，拉弥亚就得出了结论。', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory396.jpg', 6: '1', 10: '1'}
+31	31		304							{1: '所以她静静地看着这座海上的堡垒，由死寂重新变得活跃。', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory396.jpg', 6: '1', 10: '1'}
+32	32		304							{1: '像是一颗沉睡许久的大脑再次开始了思考。', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory396.jpg', 6: '1', 10: '1'}
+33	33		304							{1: '这里已经不再是她的归处了。', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory396.jpg', 6: '1', 10: '1'}
+34	34		304							{1: '她完成了嘱托，是个有用的孩子。', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory396.jpg', 6: '1', 10: '1'}
+35	35		304							{1: '而那些承认她的人早已下坠到了死亡的深海中。', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory396.jpg', 6: '1', 10: '1'}
+36	36		304							{1: '她抱着那个陈旧褪色的咖啡杯，像是人鱼公主抱着即将消退的泡沫。', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory396.jpg', 6: '1', 10: '1'}
+37	37		304				AniZhuanchangBegin			{1: '她游向海岸，游向终极的平静。', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStory/Bgstory396.jpg', 9: '1', 10: '1'}
+38	38		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/Bgstory391.jpg'}
+39	39		201							{1: '1', 2: '500165', 3: '8'}
+40	40		301		1	DialogEnable	AniZhuanchangBegin			{1: '1', 2: '拉弥亚', 3: '再见了。', 4: '1'}
