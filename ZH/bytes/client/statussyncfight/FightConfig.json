@@ -595,6 +595,16 @@
         "Value": "10"
     },
     {
+        "Key": "MaxUpdateStepDeltaForBigWorld",
+        "Type": "float",
+        "Value": "0.05"
+    },
+    {
+        "Key": "MaxUpdateStepCountForBigWorld",
+        "Type": "int",
+        "Value": "6"
+    },
+    {
         "Key": "OpenRenderPos",
         "Type": "bool",
         "Value": "1"
@@ -638,5 +648,15 @@
         "Key": "RelinkSkillButtonHitUiEffectName",
         "Type": "string",
         "Value": "FxCommonPressNormal"
+    },
+    {
+        "Key": "NpcCheckDynamicBoneOnWarpDistance",
+        "Type": "float",
+        "Value": "0.15"
+    },
+    {
+        "Key": "NpcCheckDynamicBoneOnWarpAngle",
+        "Type": "float",
+        "Value": "20"
     }
 ]
