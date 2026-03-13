@@ -696,7 +696,8 @@ function XUiPanelSignBoard:IsPlaying()
 end
 
 --多点回调
-function XUiPanelSignBoard:OnMultClick(clickTimes)
+---@param isIgnoreFashion @播放动画对应角色是否要查找涂装（有些特殊npc角色没有相关配置，需要忽略）
+function XUiPanelSignBoard:OnMultClick(clickTimes, isIgnoreFashion)
     local dict = {}
     dict["ui_first_button"] = XGlobalVar.BtnBuriedSpotTypeLevelOne.BtnUiMainBtnRole
     dict["role_level"] = XPlayer.GetLevel()
@@ -708,11 +709,11 @@ function XUiPanelSignBoard:OnMultClick(clickTimes)
     
     local config
     if self.SignBoardPlayer:IsPlaying() and not self.CanBreakTrigger then
-        return
+        return false
     end
     self.CanBreakTrigger = false
     -- 从头开始播放动画，避免重复播放同一动画时继承上一个动画的进度
-    config = XMVCA.XFavorability:GetRandomPlayElementsByClick(clickTimes, self.DisplayCharacterId)
+    config = XMVCA.XFavorability:GetRandomPlayElementsByClick(clickTimes, self.DisplayCharacterId, isIgnoreFashion)
     -- 特殊动作屏蔽处理（本我回廊功能）
     if config ~= nil and self.SpecialFilterAnimId and self.SpecialFilterAnimId[config.Id] then
         return
@@ -884,14 +885,23 @@ function XUiPanelSignBoard:Play(element)
 
     if self.OpenType == XUiPanelSignBoard.SignBoardOpenType.MAIN then
         self.Parent:PlayAnimation("AnimOprationBegan")
+        self:AOPAfterOperationShowBegin()
         self:StopTimerShow()
         self.TimerShow = XScheduleManager.ScheduleOnce(function()
             self.Parent:PlayAnimation("AnimOprationEnd")
             self.PanelOpration.gameObject:SetActiveEx(false)
+            self:AOPAfterOperationShowEnd()
         end, CS.XGame.ClientConfig:GetInt("Interactionbuttonshowtime"))
     end
 end
 
+function XUiPanelSignBoard:AOPAfterOperationShowEnd()
+    
+end
+
+function XUiPanelSignBoard:AOPAfterOperationShowBegin()
+    
+end
 
 --============================
 -- 播放入口: Cross
@@ -921,10 +931,12 @@ function XUiPanelSignBoard:PlayCross(element)
 
     if self.OpenType == XUiPanelSignBoard.SignBoardOpenType.MAIN then
         self.Parent:PlayAnimation("AnimOprationBegan")
+        self:AOPAfterOperationShowBegin()
         self:StopTimerShow()
         self.TimerShow = XScheduleManager.ScheduleOnce(function()
             self.Parent:PlayAnimation("AnimOprationEnd")
             self.PanelOpration.gameObject:SetActiveEx(false)
+            self:AOPAfterOperationShowEnd()
         end, CS.XGame.ClientConfig:GetInt("Interactionbuttonshowtime"))
     end
 end

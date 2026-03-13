@@ -63,7 +63,7 @@ end
 --region 涂装商店打开涂装详情
 
 function XShopAgency:OpenFashionDetailUi(fashionid, buyData, params)
-    local isShowFashionIconWithoutGift, isNeedCD, customWeaponFashionId, customDesc, suitId, isWeaponFashion, updateCb
+    local isShowFashionIconWithoutGift, isNeedCD, customWeaponFashionId, customDesc, suitId, isWeaponFashion, updateCb, skipType
     if params then
         isShowFashionIconWithoutGift = params.isShowFashionIconWithoutGift
         isNeedCD = params.isNeedCD
@@ -72,38 +72,61 @@ function XShopAgency:OpenFashionDetailUi(fashionid, buyData, params)
         isWeaponFashion = params.isWeaponFashion
         suitId = params.suitId
         updateCb = params.updateCb
+        skipType = params.skipType
     end
-    if isWeaponFashion then
-        XLuaUiManager.Open("UiFashionDetail", fashionid, isWeaponFashion, buyData,isShowFashionIconWithoutGift,isNeedCD,customWeaponFashionId,customDesc)
-        return
-    end
+    --v4.3 涂装套装详情界面支持显示武器涂装
     suitId = suitId or XMVCA.XFashionSuit:GetFashionSuitId(fashionid)
     if suitId then
+        local reqQueue = {}
+        local context = {}
         --请求商店是否开启
-        XMVCA.XFashionSuit:CheckFashionShopOpen(suitId, function()
-            local hasOpenShopIds = {}
-            local shopIds = XMVCA.XFashionSuit:GetSuitShopIds(suitId)
-            for _, shopId in pairs(shopIds) do
-                if XShopManager.IsShopOpen(shopId) then
-                    table.insert(hasOpenShopIds, shopId)
-                end
-            end
-            --请求商店商品信息
-            self:GetBaseInfo(function()
-                self:GetShopInfoList(hasOpenShopIds, function()
-                    --请求礼包信息
-                    XDataCenter.PurchaseManager.LBInfoDataReq(function()
-                        XLuaUiManager.Open("UiFashionSuitDetail", suitId, fashionid, updateCb)
-                    end)
-                end, XShopManager.ActivityShopType.FashionShop)
-            end)
+        table.insert(reqQueue, function(next)
+            self:_CheckFashionShopOpen(suitId, context, next)
+        end)
+        --请求商店折扣
+        table.insert(reqQueue, function(next)
+            self:_GetBaseInfo(next)
+        end)
+        --请求商店商品信息
+        table.insert(reqQueue, function(next)
+            self:_GetShopInfoList(context.hasOpenShopIds, next, XShopManager.ActivityShopType.FashionShop)
+        end)
+        --请求礼包信息
+        table.insert(reqQueue, function(next)
+            XDataCenter.PurchaseManager.LBInfoDataReq(next)
+        end)
+        --开始执行
+        self:RunChain(reqQueue, function()
+            XLuaUiManager.Open("UiFashionSuitDetail", suitId, fashionid, skipType, updateCb)
         end)
     else
-        XLuaUiManager.Open("UiFashionDetail", fashionid, false, buyData,isShowFashionIconWithoutGift,isNeedCD,customWeaponFashionId,customDesc)
+        local reqQueue = {}
+        local shopIds = XMVCA.XFashionSuit:GetGroupSalesShopIds(fashionid)
+        --请求商店商品信息
+        table.insert(reqQueue, function(next)
+            self:_GetShopInfoList(shopIds, next, XShopManager.ActivityShopType.FashionShop)
+        end)
+        --开始执行
+        self:RunChain(reqQueue, function()
+            XLuaUiManager.Open("UiFashionDetail", fashionid, isWeaponFashion, buyData, isShowFashionIconWithoutGift, isNeedCD, customWeaponFashionId, customDesc)
+        end)
     end
 end
 
-function XShopAgency:GetShopInfoList(shopIdList, cb, shopType, notTip)
+function XShopAgency:_CheckFashionShopOpen(suitId, context, next)
+    XMVCA.XFashionSuit:CheckFashionShopOpen(suitId, function()
+        context.hasOpenShopIds = {}
+        local shopIds = XMVCA.XFashionSuit:GetSuitShopIds(suitId)
+        for _, shopId in pairs(shopIds) do
+            if XShopManager.IsShopOpen(shopId) then
+                table.insert(context.hasOpenShopIds, shopId)
+            end
+        end
+        next()
+    end)
+end
+
+function XShopAgency:_GetShopInfoList(shopIdList, cb, shopType, notTip)
     if XTool.IsTableEmpty(shopIdList) or not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.ShopCommon, nil, true) then
         if cb then
             cb()
@@ -113,7 +136,7 @@ function XShopAgency:GetShopInfoList(shopIdList, cb, shopType, notTip)
     XShopManager.GetShopInfoList(shopIdList, cb, shopType, notTip)
 end
 
-function XShopAgency:GetBaseInfo(cb)
+function XShopAgency:_GetBaseInfo(cb)
     if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.ShopCommon, nil, true) then
         if cb then
             cb()
@@ -121,6 +144,23 @@ function XShopAgency:GetBaseInfo(cb)
         return
     end
     XShopManager.GetBaseInfo(cb)
+end
+
+function XShopAgency:RunChain(steps, finalCb)
+    local index = 1
+    local function next()
+        local step = steps[index]
+        index = index + 1
+
+        if step then
+            step(next)
+        else
+            if finalCb then
+                finalCb()
+            end
+        end
+    end
+    next()
 end
 
 function XShopAgency:OpenFashionDetailShowUi(fashionid,IsWeaponFashion)

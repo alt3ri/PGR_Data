@@ -245,24 +245,30 @@ end
 function XPartnerSort.CarrySortFunction(partnerList, carrierId)
     local tmpSortList = {}
     local orderList = {}
-    for _,data in pairs(CarrySortTypeList) do
+    for _, data in pairs(CarrySortTypeList) do
         table.insert(tmpSortList, sortDic[data.Type])
         table.insert(orderList, data.IsDescend)
     end
-
+ 
     table.sort(partnerList, function(a, b)
-            if a:GetCharacterId() == carrierId or b:GetCharacterId() == carrierId then
-                return a:GetCharacterId() == carrierId
-            else
-                for index,sort in pairs(tmpSortList) do
-                    if sort(a, b, orderList[index]) ~= nil then
-                        return sort(a, b, orderList[index])
-                    end
+        local aRecommend = a:GetRecommendCharacterId() == carrierId
+        local bRecommend = b:GetRecommendCharacterId() == carrierId
+        if aRecommend ~= bRecommend then -- 只有不相等时才比较
+            return aRecommend
+        end
+
+        if a:GetCharacterId() == carrierId or b:GetCharacterId() == carrierId then
+            return a:GetCharacterId() == carrierId
+        else
+            for index, sort in pairs(tmpSortList) do
+                if sort(a, b, orderList[index]) ~= nil then
+                    return sort(a, b, orderList[index])
                 end
             end
+        end
 
-            return a:GetId() > b:GetId()
-        end)
+        return a:GetId() > b:GetId()
+    end)
 end
 
 function XPartnerSort.SkillSort(skillList)
@@ -326,6 +332,6 @@ function XPartnerSort.PresetSort(partnerList, carriedPartnerDict)
         return a:GetId() > b:GetId()
     end)
 end
-
-
+
+
 return XPartnerSort

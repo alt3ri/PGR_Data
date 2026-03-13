@@ -36,7 +36,6 @@ function XUiPanelDynamic:OnNotify(evt, ...)
         self:RefreshSingleGrid(...)
     elseif evt == XEventId.EVENT_SUBPACKAGE_COMPLETE or evt == XEventId.EVENT_CLIENT_TASK_FINISH then
         self:SetupDynamicTable(self.DataList)
-        self:CheckPopDialog()
     elseif evt == XEventId.EVENT_SUBPACKAGE_UPDATE then
         self:RefreshSingleProgress(...)
     end
@@ -58,14 +57,6 @@ function XUiPanelDynamic:OnlyRefreshGridData()
     end
 end
 
-function XUiPanelDynamic:CheckPopDialog()
-    if not XMVCA.XSubPackage:CheckAllComplete() then
-        return
-    end
-    
-    XUiManager.DialogTip(XUiHelper.GetText("TipTitle"), XUiHelper.GetText("DlcDownloadReStartTip"), 
-            XUiManager.DialogType.OnlySure, nil, CS.XApplication.Exit)
-end
 
 ---
 ---@param evt string

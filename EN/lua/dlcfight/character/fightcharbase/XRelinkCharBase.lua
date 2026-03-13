@@ -332,7 +332,7 @@ function XRelinkCharBase:InitCV()
     --- 是否在残血状态下
     self._cvIsInLowLifeMode = false
     --- 残血的血量归一化阈值（必须0 - 1）
-    self._cvLowLifeRatioThreshold = 0.5
+    self._cvLowLifeRatioThreshold = 0.3
 
     -- CV 救和被救相关
     --[[
@@ -673,7 +673,7 @@ function XRelinkCharBase:OnFullChainSkillStart(gameplayActive, isInChain, chainR
     end
 
     if chainLevel > 1 then
-        self._proxy:PlayNpcCV(self._uuid, 0, EFightCVAction.ResponseFullChain, EAudioLuaFuncSyncType.ExcludeScriptController)
+        self._proxy:PlayNpcCV(self._uuid, 0, EFightCVAction.ResponseFullChain, EAudioLuaFuncSyncType.All)
     end
 
     self:ControlUltUI(UIControl.Off)

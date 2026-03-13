@@ -267,16 +267,19 @@ function XSoloReformControl:GetKillStageScore(chapterId,stageId)
     return self._Model:GetKillStageScore(chapterId,stageId)
 end
 
+---@description 获取击杀最后一关章节最高分数
+---@return number
 function XSoloReformControl:GetKillChapterMaxScore(chapterId)
     local chapterCfg = self:GetSoloReformChapterCfg(chapterId)
-    local maxScore = nil
-    for index, stageId in pairs(chapterCfg.ChapterStageIds) do
-        local stageScore = self._Model:GetKillStageScore(chapterId, stageId)
-        if stageScore and (not maxScore or stageScore > maxScore) then
-            maxScore = stageScore
+    local lastStageId = chapterCfg.ChapterStageIds[#chapterCfg.ChapterStageIds]
+    if lastStageId then
+        local unlock = XMVCA.XSoloReform:IsKillStageUnlock(chapterId, lastStageId)
+        if not unlock then
+            return nil
         end
     end
-    return maxScore
+    local stageScore = self._Model:GetKillStageScore(chapterId, lastStageId)
+    return stageScore
 end
 
 
@@ -284,6 +287,14 @@ function XSoloReformControl:GetScoreLevelIcon(score,difficulty)
     local cfg = self._Model:GetScoreLevelCfg(score,difficulty)
     if cfg then
         return cfg.LevelIcon
+    end
+    return nil
+end
+
+function XSoloReformControl:GetScoreUIEffectPath(score,difficulty)
+    local cfg = self._Model:GetScoreLevelCfg(score,difficulty)
+    if cfg then
+        return cfg.SettlementUIEffectName
     end
     return nil
 end

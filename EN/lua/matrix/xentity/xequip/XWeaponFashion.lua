@@ -13,6 +13,7 @@ local Default = {
     UseCharacterIdCheckTable = {},
 }
 
+---@class XWeaponFashion
 local XWeaponFashion = XClass(nil, "XWeaponFashion")
 
 function XWeaponFashion:Ctor(data)

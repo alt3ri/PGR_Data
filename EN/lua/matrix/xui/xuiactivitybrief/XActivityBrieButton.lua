@@ -36,11 +36,9 @@ function XActivityBrieButton:Refresh(args)
     local isWaitLockAnim = XTool.IsNumberValid(XActivityBriefConfigs.GetActivityBriefGroupIsRemindWhenOpen(self.activityGroupId))
         and not XDataCenter.ActivityBriefManager.GetIsPlayedUnlockAnim(self.activityGroupId)
 
-    -- #203409 抽象调用按键显示
     self:ShowBtnCom(isOpen, isWaitLockAnim)
 end
 
--- #203409 覆写类覆写
 function XActivityBrieButton:ShowBtnCom(isOpen, isWaitLockAnim)
     self.BtnCom:SetDisable(not isOpen or isOpen and isWaitLockAnim)   
 end

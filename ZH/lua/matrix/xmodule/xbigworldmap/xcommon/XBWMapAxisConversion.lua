@@ -27,7 +27,7 @@ function XBWMapAxisConversion:WorldToMapPosition2D(x, y, pixelRatio)
 
     local offsetX = (x - self._OriginPos.x) * pixelRatio
     local offsetY = (y - self._OriginPos.y) * pixelRatio
-    
+
     return offsetX, offsetY
 end
 
@@ -225,6 +225,10 @@ end
 
 function XBWMapAxisConversion:GetCurrentNpcPosition()
     local transform = self:GetCurrentNpcTransform()
+
+    if XTool.UObjIsNil(transform) then
+        return 0, 0, 0
+    end
 
     return transform:GetPosition()
 end

@@ -1364,6 +1364,11 @@ XNoticeManagerCreator = function()
                 return false
             end
 
+            -- 云游戏不弹出登录公告
+            if XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.CloudGame then
+                return false
+            end
+
             XLuaUiManager.Open("UiLoginNotice", LoginNotice, true)
             XNoticeManager.RefreshLoginNoticeTime()
             return true
@@ -1382,6 +1387,11 @@ XNoticeManagerCreator = function()
     end
 
     function XNoticeManager.OpenLoginNotice()
+        -- 云游戏不弹出登录公告
+        if XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.CloudGame then
+            return
+        end
+
         if not LoginNotice then
             XNoticeManager.RequestLoginNotice(function(isValid)
                 if isValid then
@@ -2095,7 +2105,8 @@ XNoticeManagerCreator = function()
     end
 
     function XNoticeManager.HandleKRPCNotice(data)
-        if  XDataCenter.UiPcManager.IsPc() then
+        if XDataCenter.UiPcManager.GetUiPcMode() ~= XDataCenter.UiPcManager.XUiPcMode.Pc then
+            XLog.Error("not pc return")
             return
         end
         -- 延迟时间

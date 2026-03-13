@@ -2466,7 +2466,7 @@
         "Phase": null,
         "Name": "Swift End",
         "Level": 2,
-        "Intro": "<size=26>Automatically uses a QTE when exiting the battle. While <color=#D91414>Forest Guard Mimic</color> is active, <color=#D91414>Signal Orb Skills</color>, <color=#D91414>Decisive Rend</color>, <color=#D91414>Horizontal Slash</color>, and <color=#D91414>Crescent Cut</color> have their Base DMG increased. When Arete is on the battlefield and gains <color=#D91414>Hypermatrix Deduction</color> by actively triggering Matrix, she continuously activates available QTEs for its duration. When casting <color=#D91414>Signature</color> or exiting <color=#D91414>Nessos Mimic</color>, unconsumed <color=#D91414>Overridden Blessing</color> converts into <color=#D91414>Signature Energy</color>. When the team does not carry <color=#D91414>Ultima Slash</color> effect, <color=#D91414>Overridden Blessing</color> consumed returns White Signal Orbs. When the team carries <color=#D91414>Ultima Slash</color> effect, Truewill consumed by casting <color=#D91414>Signature</color> refunds White Signal Orbs. When Arete is on the battlefield, triggering teammates' <color=#D91414>QTE</color> grants <color=#D91414>Sharp Reserve</color>.</size>",
+        "Intro": "Automatically uses a QTE when exiting the battle. While <color=#D91414>Forest Guard Mimic</color> is active, <color=#D91414>Signal Orb Skills</color>, <color=#D91414>Decisive Rend</color>, <color=#D91414>Horizontal Slash</color>, and <color=#D91414>Crescent Cut</color> have their Base DMG increased. When Arete is on the battlefield and gains <color=#D91414>Hypermatrix Deduction</color> by actively triggering Matrix, she continuously activates available QTEs for its duration. When casting <color=#D91414>Signature</color>, unconsumed <color=#D91414>Overridden Blessing</color> converts into <color=#D91414>Signature Energy</color>. When the team does not carry <color=#D91414>Ultima Slash</color> effect, <color=#D91414>Overridden Blessing</color> consumed returns White Signal Orbs. When the team carries <color=#D91414>Ultima Slash</color> effect, Truewill consumed by casting <color=#D91414>Signature</color> refunds White Signal Orbs. When Arete is on the battlefield, triggering teammates' <color=#D91414>QTE</color> grants <color=#D91414>Sharp Reserve</color>.",
         "SkillId": 114424
     },
     {
@@ -2517,6 +2517,76 @@
         "Name": "Omnistate Adaptation",
         "Level": 3,
         "Intro": "Extra DMG Bonus of <color=#D91414>Signature - Omniversal Step</color> increases by <color=#D91414>30%</color>. When the team carries the <color=#D91414>Ultima Slash</color> effect, the domain's Extra DMG Bonus increases by <color=#D91414>30%</color>.",
+        "SkillId": 114426
+    },
+    {
+        "Id": 253,
+        "CharacterId": 1391003,
+        "Quality": 3,
+        "Phase": 5.0,
+        "Name": "Swift End",
+        "Level": 1,
+        "Intro": "Casting <color=#D91414>Signature - Omniversal Step</color> or switching to <color=#D91414>Nessos Mimic</color> with <color=#D91414>2</color> <color=#D91414>Grayscale Links</color> will activate all available QTEs.",
+        "SkillId": 114424
+    },
+    {
+        "Id": 254,
+        "CharacterId": 1391003,
+        "Quality": 4,
+        "Phase": null,
+        "Name": "Swift End",
+        "Level": 2,
+        "Intro": "Automatically uses a QTE when exiting the battle. While <color=#D91414>Forest Guard Mimic</color> is active, <color=#D91414>Signal Orb Skills</color>, <color=#D91414>Decisive Rend</color>, <color=#D91414>Horizontal Slash</color>, and <color=#D91414>Crescent Cut</color> have their Base DMG increased by <color=#D91414>60%</color>. When casting <color=#D91414>Signature - Omniversal Step</color> or exiting <color=#D91414>Nessos Mimic</color>, every <color=#D91414>2</color> unconsumed <color=#D91414>Overridden Blessing</color> converts into <color=#D91414>1</color> <color=#D91414>Signature Energy</color>. When the team does not carry <color=#D91414>Ultima Slash</color> effect, every <color=#D91414>10</color> <color=#D91414>Overridden Blessing</color> consumed returns <color=#D91414>1</color> White Signal Orb. When the team carries <color=#D91414>Ultima Slash</color> effect, every <color=#D91414>2</color> Truewill consumed when casting <color=#D91414>Signature - Omniversal Step</color> returns <color=#D91414>1</color> White Signal Orb. When Arete is on the battlefield, triggering teammates' <color=#D91414>QTE</color> grants <color=#D91414>50</color> <color=#D91414>Sharp Reserve</color>.",
+        "SkillId": 114424
+    },
+    {
+        "Id": 255,
+        "CharacterId": 1391003,
+        "Quality": 4,
+        "Phase": 3.0,
+        "Name": "Radiant Surge",
+        "Level": 1,
+        "Intro": "The resistance reduction effect of <color=#D91414>Chain Fusion</color> increases by <color=#D91414>10%</color>. With Arete in the team, when triggering QTE during <color=#D91414>Hypermatrix Deduction</color>, all team members can extend its duration by <color=#D91414>1</color>s. The Base DMG of <color=#D91414>Roaming Hunt</color>, <color=#D91414>Dominion Sight</color>, and <color=#D91414>Core Vibration</color> increases by <color=#D91414>20%</color>. Each time she enters the battlefield, <color=#D91414>Signature Energy</color> gained from <color=#D91414>Signal Orb Skills</color> in <color=#D91414>Forest Guard Mimic</color> is doubled. <color=#D91414>Signature Energy</color>, <color=#D91414>Grayscale Link</color>, and <color=#D91414>Sharp Reserve</color> gained from <color=#D91414>Decisive Rend</color>, <color=#D91414>Horizontal Slash</color>, and <color=#D91414>Crescent Cut</color> are doubled. When the team carries <color=#D91414>Ultima Slash</color> effect, if <color=#D91414>Truewill</color> consumed by <color=#D91414>Signature - Omniversal Step</color> is no less than <color=#D91414>10</color>, refunds <color=#D91414>Sharp Reserve</color> equal to half of the consumed <color=#D91414>Truewill</color>.",
+        "SkillId": 114425
+    },
+    {
+        "Id": 256,
+        "CharacterId": 1391003,
+        "Quality": 5,
+        "Phase": null,
+        "Name": "Radiant Surge",
+        "Level": 2,
+        "Intro": "The resistance reduction effect of <color=#D91414>Chain Fusion</color> increases by <color=#D91414>10%</color>. When Arete is in the team, all team members' <color=#D91414>QTE</color> can store charges with a maximum of <color=#D91414>2</color> charges. All characters' switch cooldown decreases by <color=#D91414>3</color>s. Does not stack with similar effects. When switching to <color=#D91414>Nessos Mimic</color> with <color=#D91414>2</color> <color=#D91414>Grayscale Links</color> (regardless of color), tap or press and hold Morph Orb to gain <color=#D91414>Sin Engraving</color> enhancement without consuming <color=#D91414>Signature Energy</color>. <color=#D91414>Signature - Omniversal Step</color> Base DMG increases by <color=#D91414>30%</color>.",
+        "SkillId": 114425
+    },
+    {
+        "Id": 257,
+        "CharacterId": 1391003,
+        "Quality": 5,
+        "Phase": 3.0,
+        "Name": "Omnistate Adaptation",
+        "Level": 1,
+        "Intro": "Extra DMG Bonus of <color=#D91414>Decisive Rend</color>, <color=#D91414>Horizontal Slash</color>, and <color=#D91414>Crescent Cut</color> increases by <color=#D91414>50%</color>. Extra DMG Bonus of <color=#D91414>Halberd of Conviction</color>, <color=#D91414>Mirage Shatter</color>, and <color=#D91414>Collective Pivot</color> increases by <color=#D91414>50%</color>.",
+        "SkillId": 114426
+    },
+    {
+        "Id": 258,
+        "CharacterId": 1391003,
+        "Quality": 5,
+        "Phase": 6.0,
+        "Name": "Omnistate Adaptation",
+        "Level": 2,
+        "Intro": "Extra DMG Bonus of <color=#D91414>Signal Orb skills</color> in <color=#D91414>Forest Guard Mimic</color> increases by <color=#D91414>100%</color>. Extra DMG Bonus of <color=#D91414>Roaming Hunt</color>, <color=#D91414>Dominion Sight</color>, and <color=#D91414>Core Vibration</color> increases by <color=#D91414>20%</color>.",
+        "SkillId": 114426
+    },
+    {
+        "Id": 259,
+        "CharacterId": 1391003,
+        "Quality": 6,
+        "Phase": null,
+        "Name": "Omnistate Adaptation",
+        "Level": 3,
+        "Intro": "Extra DMG Bonus of <color=#D91414>Signature - Omniversal Step</color> increases by <color=#D91414>30%</color>.",
         "SkillId": 114426
     }
 ]

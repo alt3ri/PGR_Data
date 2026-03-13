@@ -178,8 +178,10 @@ function XUiAnnouncement:ShowHtml(html)
     for _, value in ipairs(html or {}) do
         if value.Type == XHtmlHandler.ParagraphType.Text then
             value.Obj = self:CreateTxt(value.Param, value.Data, value.SourceData, value.FontSize)
-        else
+        elseif value.Type == XHtmlHandler.ParagraphType.Pic then
             value.Obj = self:CreateImg(value.Data)
+        elseif value.Type == XHtmlHandler.ParagraphType.Table then
+            value.Obj = self:CreateTable(value.Data)
         end
     end
     CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.ParagraphContent)
@@ -188,6 +190,242 @@ function XUiAnnouncement:ShowHtml(html)
     self.ParagraphContent.anchoredPosition = cachePos
     self.Html = html
 end
+
+function XUiAnnouncement:CreateTable(parameters)
+    if not parameters or not parameters.headers or not parameters.rows == 0 then
+        XLog.Error("XUiAnnouncement:CreateTable invalid parameters")
+        return nil
+    end
+    -- 创建表格根节点
+    local tableRoot = XUiHelper.Instantiate(self.Table, self.ParagraphContent)
+    tableRoot.gameObject:SetActive(true)
+
+    -- 获取表格组件
+    local tableHeader = self.TableHeader
+    local tableRow = self.TableRow
+    local rootRectTransform = tableRoot:GetComponent("RectTransform")
+    local paddingX = 20
+    local paddingY = 20
+    local borderThickness = 2
+    -- 存储每列的最大宽度
+    local maxWidths = {}
+    -- 存储每行的最大高度（第1行是表头）
+    local maxHeights = {}
+    local totalWidth = 0
+    local totalHeight = 0
+    local widthAutoCount = 0
+    -- 是否表格宽度拉伸填满整个容器
+    local isTableExpend = false
+
+    -- 初始化最大宽度数组
+    for i = 1, #parameters.headers do
+        maxWidths[i] = 0
+    end
+
+    -- 第一遍：创建所有行/单元格并记录最大宽度/高度
+    local allRows = {}
+    local allCells = {}
+
+    -- 处理表头（行索引从1开始）
+    local headerRow = XUiHelper.Instantiate(tableHeader, tableRoot)
+    headerRow.gameObject:SetActive(true)
+    table.insert(allRows, {
+        rowObj = headerRow,
+        cells = {},
+        rowIndex = 1
+    })
+
+    for colIndex, headerData in ipairs(parameters.headers) do
+        widthAutoCount = widthAutoCount + (headerData.width == "auto" and 1 or 0)
+        local cell = self:CreateTableCell(headerData, headerRow.transform)
+        table.insert(allRows[1].cells, cell)
+        table.insert(allCells, {
+            cell = cell,
+            rowIndex = 1,
+            colIndex = colIndex,
+            cellData = headerData,
+            widthIsAuto = headerData.width == "auto"
+        })
+    end
+
+    -- 处理数据行
+    for dataRowIndex, rowData in ipairs(parameters.rows) do
+        local rowIndex = dataRowIndex + 1
+        local rowObj = XUiHelper.Instantiate(tableRow, tableRoot)
+        rowObj.gameObject:SetActive(true)
+        table.insert(allRows, {
+            rowObj = rowObj,
+            cells = {},
+            rowIndex = rowIndex
+        })
+
+        for colIndex, cellData in ipairs(rowData) do
+            local cell = self:CreateTableCell(cellData, rowObj.transform)
+            table.insert(allRows[rowIndex].cells, cell)
+            table.insert(allCells, {
+                cell = cell,
+                rowIndex = rowIndex,
+                colIndex = colIndex,
+                cellData = cellData,
+                widthIsAuto = cellData.width == "auto"
+            })
+        end
+    end
+
+    for _, cellInfo in ipairs(allCells) do
+        local cell = cellInfo.cell
+        local colIndex = cellInfo.colIndex
+        local rowIndex = cellInfo.rowIndex
+
+        local textComponent = cell.transform:GetComponent("XUiHrefText")
+        local preferredWidth
+        if cellInfo.widthIsAuto then
+            preferredWidth = textComponent.preferredWidth
+        else
+            preferredWidth = tonumber(cellInfo.cellData.width)
+        end
+        local preferredHeight = textComponent.preferredHeight
+        maxWidths[colIndex] = math.ceil(math.max(maxWidths[colIndex] or 0, preferredWidth + paddingX))
+        maxHeights[rowIndex] = math.ceil(math.max(maxHeights[rowIndex] or 0, preferredHeight + paddingY))
+    end
+
+    for i = 1, #maxWidths do
+        totalWidth = totalWidth + (maxWidths[i] or 0)
+    end
+    -- 表格宽度拉伸填满整个容器
+    if isTableExpend then
+        -- 获取父容器可用宽度
+        local parentWidth = self.PanelWebView:GetComponent("RectTransform").rect.width - 20
+        local extraSpace = math.ceil((parentWidth - totalWidth) / widthAutoCount)
+        -- 和父节点比较宽度后把多余的空间分配给auto
+        for index = 1, #maxWidths do
+            if allCells[index].widthIsAuto then
+                maxWidths[index] = maxWidths[index] + extraSpace
+            end
+        end
+        totalWidth = parentWidth
+    end
+    for i = 1, #allRows do
+        totalHeight = totalHeight + (maxHeights[i] or 0)
+    end
+
+    -- 第二遍：手动设置每一行（含表头）位置 + 每个cell位置/大小
+    local yOffset = 0
+    for rowIndex, rowInfo in ipairs(allRows) do
+        local rowObj = rowInfo.rowObj
+        local rowRect = rowObj:GetComponent("RectTransform")
+        local rowHeight = maxHeights[rowIndex] or rowRect.sizeDelta.y
+
+        rowRect:SetAnchorMin(0, 1)
+        rowRect:SetAnchorMax(0, 1)
+        rowRect:SetPivot(0, 1)
+        rowRect:SetAnchoredPosition(0, -yOffset)
+        rowRect:SetUISizeDelta(totalWidth, rowHeight)
+
+        local xOffset = 0
+        for colIndex, cell in ipairs(rowInfo.cells) do
+            local cellRect = cell:GetComponent("RectTransform")
+            local cellWidth = maxWidths[colIndex] or cellRect.sizeDelta.x
+            cellRect:SetAnchorMin(0, 1)
+            cellRect:SetAnchorMax(0, 1)
+            cellRect:SetPivot(0, 1)
+            cellRect:SetAnchoredPosition(xOffset, 0)
+            cellRect:SetUISizeDelta(cellWidth, rowHeight)
+
+            xOffset = xOffset + cellWidth
+        end
+
+        yOffset = yOffset + rowHeight
+    end
+
+    rootRectTransform:SetUISizeDelta(totalWidth, totalHeight)
+    self:DrawTableLines(tableRoot, maxWidths, maxHeights, totalWidth, totalHeight, borderThickness)
+    return tableRoot
+end
+
+-- 添加单元格边框的辅助函数
+function XUiAnnouncement:DrawTableLines(tableRoot, colWidths, rowHeights, totalWidth, totalHeight, thickness)
+    if not tableRoot or not colWidths or not rowHeights then
+        return
+    end
+    thickness = thickness or 1
+    local rootRect = tableRoot:GetComponent("RectTransform")
+    if rootRect then
+        rootRect:SetAnchorMin(0, 1)
+        rootRect:SetAnchorMax(0, 1)
+        rootRect:SetPivot(0, 1)
+    end
+
+    -- 横线：rowCount + 1
+    local y = 0
+    local rowCount = #rowHeights
+    for i = 0, rowCount do
+        local rt = self:CreateTableLine(tableRoot, string.format("TableHLine_%d", i))
+        rt:SetAnchoredPosition(0, -y)
+        rt:SetUISizeDelta(totalWidth, thickness)
+        if i < rowCount then
+            y = y + (rowHeights[i + 1] or 0)
+        end
+    end
+
+    -- 竖线：colCount + 1
+    local x = 0
+    local colCount = #colWidths
+    for i = 0, colCount do
+        local rt = self:CreateTableLine(tableRoot, string.format("TableVLine_%d", i))
+        rt:SetAnchoredPosition(x, 0)
+        rt:SetUISizeDelta(thickness, totalHeight)
+
+        if i < colCount then
+            x = x + (colWidths[i + 1] or 0)
+        end
+    end
+end
+
+function XUiAnnouncement:GetTextAnchor(textAlign)
+    if textAlign == "center" then
+        return CS.UnityEngine.TextAnchor.MiddleCenter
+    elseif textAlign == "left" then
+        return CS.UnityEngine.TextAnchor.MiddleLeft
+    elseif textAlign == "right" then
+        return CS.UnityEngine.TextAnchor.MiddleRight
+    else
+        return CS.UnityEngine.TextAnchor.MiddleCenter
+    end
+end
+
+-- 创建表格单元格
+function XUiAnnouncement:CreateTableCell(cellData, parent, fontSize)
+    local content = cellData.innerContent
+    local cell = XUiHelper.Instantiate(self.TableCell, parent)
+    cell.gameObject:SetActive(true)
+
+    -- 设置单元格内容
+    local textComponent = cell.transform:GetComponent("XUiHrefText")
+
+    textComponent.fontSize = fontSize or XHtmlHandler.FontSizeMap["large"]
+    textComponent.lineSpacing = 1.0
+    textComponent.alignment = self:GetTextAnchor(cellData.textAlign)
+    textComponent.text = content
+
+    return cell
+end
+
+function XUiAnnouncement:CreateTableLine(tableRoot, name)
+    local go = XUiHelper.Instantiate(self.TableLine, tableRoot)
+    go.gameObject:SetActive(true)
+    go.name = name
+    local img = go:GetComponent("Image")
+    if img then
+        img.raycastTarget = false
+    end
+    local rt = go:GetComponent("RectTransform")
+    rt:SetAnchorMin(0, 1)
+    rt:SetAnchorMax(0, 1)
+    rt:SetPivot(0, 1)
+    return rt
+end
+
 
 function XUiAnnouncement:GetAutoKey(uiNode, eventName)
     if not uiNode then

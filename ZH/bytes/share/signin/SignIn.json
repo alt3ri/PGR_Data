@@ -1693,7 +1693,7 @@
     },
     {
         "Id": 99,
-        "TimeId": 42953.0,
+        "TimeId": null,
         "Name": "\u7720\u4e8e\u5384\u5bd0\u4e4b\u5883-\u7b7e\u5230",
         "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/SignBgV400.png",
         "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignMainV400.prefab",
@@ -1711,7 +1711,7 @@
     },
     {
         "Id": 100,
-        "TimeId": 42954.0,
+        "TimeId": null,
         "Name": "\u4f34\u660e\u8363\u5e8f-\u7b7e\u5230",
         "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/SignBgBirthday3V400.png",
         "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignMainBirthday3V400.prefab",
@@ -1729,7 +1729,7 @@
     },
     {
         "Id": 101,
-        "TimeId": 42955.0,
+        "TimeId": null,
         "Name": "\u661f\u843d\u6c6a\u6d0b-\u7b7e\u5230",
         "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/SignBgBirthday14V400.png",
         "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignMainBirthday14V400.prefab",
@@ -1747,7 +1747,7 @@
     },
     {
         "Id": 102,
-        "TimeId": 43502.0,
+        "TimeId": null,
         "Name": "\u63a8\u60f3\u89c6\u9650-\u7b7e\u5230",
         "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/SignBgV401.png",
         "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignMainV401.prefab",
@@ -1765,7 +1765,7 @@
     },
     {
         "Id": 103,
-        "TimeId": 43503.0,
+        "TimeId": null,
         "Name": "\u65f6\u8f68\u5d2d\u5217-\u7b7e\u5230",
         "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/SignBgNewYearV401.png",
         "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignMainNewYearV401.prefab",
@@ -1783,7 +1783,7 @@
     },
     {
         "Id": 104,
-        "TimeId": 44551.0,
+        "TimeId": null,
         "Name": "\u51ac\u5195\u7684\u51cb\u4ea1-\u7b7e\u5230",
         "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/SignBgV402.png",
         "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignMainV402.prefab",
@@ -1801,7 +1801,7 @@
     },
     {
         "Id": 105,
-        "TimeId": 44552.0,
+        "TimeId": null,
         "Name": "\u798f\u97f6\u7948\u5c81-\u7b7e\u5230",
         "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/SignBgCnNewYearV402.png",
         "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignMainNewYearV402.prefab",
@@ -1833,6 +1833,24 @@
         "CreateTimeId": null,
         "IsShowWhenDayOver": null,
         "IsShowWhenSignOver": true,
+        "ReissueRewardMailId": null
+    },
+    {
+        "Id": 108,
+        "TimeId": 45110.0,
+        "Name": "\u66f4\u7f8e\u597d\u7684\u660e\u5929-\u7b7e\u5230",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/SignBgV403.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignMainV403.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/SignLabelV403.png",
+        "Type": 2,
+        "RoundDays": "[7]",
+        "SubRoundId": "[1104]",
+        "OpenLevel": 20.0,
+        "OpenStage": null,
+        "PreSignId": null,
+        "CreateTimeId": null,
+        "IsShowWhenDayOver": null,
+        "IsShowWhenSignOver": null,
         "ReissueRewardMailId": null
     }
 ]

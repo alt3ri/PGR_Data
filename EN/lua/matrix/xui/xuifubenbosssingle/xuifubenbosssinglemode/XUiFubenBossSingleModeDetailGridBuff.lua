@@ -134,8 +134,8 @@ function XUiFubenBossSingleModeDetailGridBuff:OnBtnTongBlackClick()
     if self._Feature then
         local stageId = self._Feature:GetStageId()
 
-        self.Parent:ChangeCamera(false)
-        self.Parent:SetIsNeedResetAnimation(true)
+        --self.Parent:ChangeCamera(false)
+        --self.Parent:SetIsNeedResetAnimation(true)
         self._Control:SetEnterBossInfo(self.Parent:GetBossId(), XEnumConst.BossSingle.LevelType.Challenge, self._Feature:GetFeatureId())
         self._Control:OnEnterChallengeFight()
         XLuaUiManager.Open("UiBattleRoleRoom", stageId, nil, require(
@@ -150,6 +150,7 @@ end
 function XUiFubenBossSingleModeDetailGridBuff:_RegisterButtonClicks()
     XUiHelper.RegisterClickEvent(self, self.BtnBuff, self.OnBtnBuffClick, true)
     XUiHelper.RegisterClickEvent(self, self.BtnTongBlack, self.OnBtnTongBlackClick, true)
+    self.BtnAttributeDetail:AddEventListener(handler(self, self.OnBtnAttributeDetailClick))
 end
 
 function XUiFubenBossSingleModeDetailGridBuff:_RefreshCharacterList()
@@ -502,5 +503,9 @@ function XUiFubenBossSingleModeDetailGridBuff:_RefreshTotalScoreRate()
 end
 
 -- endregion
+
+function XUiFubenBossSingleModeDetailGridBuff:OnBtnAttributeDetailClick()
+    XLuaUiManager.Open("UiCharacterAttributeDetail", nil, XEnumConst.UiCharacterAttributeDetail.BtnTab.Damage)
+end
 
 return XUiFubenBossSingleModeDetailGridBuff

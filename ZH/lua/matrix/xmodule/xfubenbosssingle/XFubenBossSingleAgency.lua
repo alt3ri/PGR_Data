@@ -59,6 +59,10 @@ function XFubenBossSingleAgency:OnRelease()
     XEventManager.RemoveEventListener(XEventId.EVENT_FUBEN_SETTLE_REWARD, self.OnFightSettle, self)
 end
 
+function XFubenBossSingleAgency:ResetAll()
+    self:StopPopSettleUITimer()
+end
+
 -- region Getter/Setter
 
 function XFubenBossSingleAgency:IsBossSingleDataEmpty()
@@ -943,7 +947,31 @@ function XFubenBossSingleAgency:_ShowReward(winData)
     if XMain.IsEditorDebug then
         self._DebugWinData = winData
     end
+    
+    self:StopPopSettleUITimer()
 
+    local delayTime = XMVCA.XFuben:GetFightSettleAnimationDuration()
+
+    if XTool.IsNumberValidEx(delayTime) then
+        local delayTimeRaw = math.floor(delayTime * XScheduleManager.SECOND)
+
+        self._PopSettleUITimerId = XScheduleManager.ScheduleOnce(function()
+            self._PopSettleUITimerId = nil
+            self:_OpenRewardUi(winData)
+        end, delayTimeRaw)
+    else
+        self:_OpenRewardUi(winData)
+    end
+end
+
+function XFubenBossSingleAgency:StopPopSettleUITimer()
+    if self._PopSettleUITimerId then
+        XScheduleManager.UnSchedule(self._PopSettleUITimerId)
+        self._PopSettleUITimerId = nil
+    end
+end
+
+function XFubenBossSingleAgency:_OpenRewardUi(winData)
     if XMVCA.XFuben:CheckHasFlopReward(winData) then
         XLuaUiManager.Open("UiFubenFlopReward", function()
             XLuaUiManager.PopThenOpen("UiFubenBossSingleSettlement", winData)

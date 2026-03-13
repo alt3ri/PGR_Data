@@ -29,9 +29,7 @@ end
 
 function XUiBigWorldMessageTask:OnTaskSkip()
     if self._QuestId then
-        local questData = XMVCA.XBigWorldQuest:GetQuestData(self._QuestId)
-
-        if questData and not questData:IsFinish() then
+        if not XMVCA.XBigWorldQuest:CheckQuestFinish(self._QuestId) then
             XMVCA.XBigWorldGamePlay:GetCurrentAgency():OpenQuest(1, self._QuestId)
         end
     end
@@ -40,14 +38,11 @@ end
 -- endregion
 
 function XUiBigWorldMessageTask:Refresh(questId)
-    ---@type XBigWorldQuest
-    local questData = XMVCA.XBigWorldQuest:GetQuestData(questId)
-
-    if questData then
+    if XTool.IsNumberValid(questId) then
         self._QuestId = questId
         self.TxtTitle.text = XMVCA.XBigWorldQuest:GetQuestText(questId)
         self.ImgIcon:SetSprite(XMVCA.XBigWorldQuest:GetQuestIcon(questId))
-        self:_RefreshTaskState(questData)
+        self:_RefreshTaskState(questId)
         self:_RefreshTaskColor(questId)
     else
         self._QuestId = false
@@ -106,12 +101,11 @@ function XUiBigWorldMessageTask:_RefreshTaskColor(questId)
     end
 end
 
----@param questData XBigWorldQuest
-function XUiBigWorldMessageTask:_RefreshTaskState(questData)
-    if questData then
-        self.ImgGo.gameObject:SetActiveEx(not questData:IsFinish())
-        self.ImgComplete.gameObject:SetActiveEx(questData:IsFinish())
-    end
+function XUiBigWorldMessageTask:_RefreshTaskState(questId)
+    local isFinish = XMVCA.XBigWorldQuest:CheckQuestFinish(self._QuestId)
+
+    self.ImgGo.gameObject:SetActiveEx(not isFinish)
+    self.ImgComplete.gameObject:SetActiveEx(isFinish)
 end
 
 -- endregion

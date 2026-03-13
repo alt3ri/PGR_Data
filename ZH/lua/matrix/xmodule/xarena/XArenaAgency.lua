@@ -28,6 +28,10 @@ function XArenaAgency:InitEvent()
     XEventManager.AddEventListener(XEventId.EVENT_FUBEN_SETTLE_REWARD, self.OnFightSettle, self)
 end
 
+function XArenaAgency:ResetAll()
+    self:StopPopSettleUITimer()
+end
+
 -- region Notify
 
 function XArenaAgency:OnActivityResultNotify(data)
@@ -419,7 +423,33 @@ function XArenaAgency:_ShowReward(winData)
             end
         end
     end
+    
+    self:StopPopSettleUITimer()
+    
+    local delayTime = XMVCA.XFuben:GetFightSettleAnimationDuration()
 
+    if XTool.IsNumberValidEx(delayTime) then
+        local delayTimeRaw = math.floor(delayTime * XScheduleManager.SECOND)
+        
+        self._PopSettleUITimerId = XScheduleManager.ScheduleOnce(function()
+            self._PopSettleUITimerId = nil
+            self:_OpenRewardUi(winData)
+        end, delayTimeRaw)
+    else
+        self:_OpenRewardUi(winData)
+    end
+    
+    
+end
+
+function XArenaAgency:StopPopSettleUITimer()
+    if self._PopSettleUITimerId then
+        XScheduleManager.UnSchedule(self._PopSettleUITimerId)
+        self._PopSettleUITimerId = nil
+    end
+end
+
+function XArenaAgency:_OpenRewardUi(winData)
     if XMVCA.XFuben:CheckHasFlopReward(winData) then
         XLuaUiManager.Open("UiFubenFlopReward", function()
             XLuaUiManager.PopThenOpen("UiArenaSettlement", winData)

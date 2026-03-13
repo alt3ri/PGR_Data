@@ -65,7 +65,7 @@
     {
         "Id": 108,
         "Type": 1,
-        "Name": "Stagger & Follow-Up Skills",
+        "Name": "Imbalance & Follow-Up Skills",
         "ConditionId": null,
         "VideoConfigIds": "{2: '31006'}",
         "ImageUrl": "{1: 'Assets/Product/Texture/Image/UiDlcRelink/DlcRelinkWikiImage06.png', 2: 'Assets/Product/Texture/Image/UiDlcRelink/DlcRelinkWikiImage06.png'}",
@@ -96,16 +96,16 @@
         "ConditionId": null,
         "VideoConfigIds": null,
         "ImageUrl": "{1: 'Assets/Product/Texture/Image/UiDlcRelink/DlcRelinkWikiImage17.png'}",
-        "Desc": "{1: '- Every character skill and attack has a preset <color=#ffdd93>max DMG</color>.\\\\n- Player DMG dealt in battle <color=#ffdd93>cannot exceed</color> the preset max DMG.\\\\n- Max DMG can be increased by upgrading <color=#ffdd93>Research Level</color> or <color=#ffdd93>equipment traits</color>.'}"
+        "Desc": "{1: '- Every character skill and attack has a preset <color=#ffdd93>max DMG</color>.\\\\n- Player DMG dealt in battle <color=#ffdd93>cannot exceed</color> the preset max DMG.\\\\n- Max DMG can be increased by upgrading <color=#ffdd93>Research Level</color> or <color=#ffdd93>gear traits</color>.'}"
     },
     {
         "Id": 202,
         "Type": 2,
-        "Name": "Class Equipment",
+        "Name": "Class Gear",
         "ConditionId": null,
         "VideoConfigIds": null,
         "ImageUrl": "{1: 'Assets/Product/Texture/Image/UiDlcRelink/DlcRelinkWikiImage10.png'}",
-        "Desc": "{1: '- When <color=#ffdd93>Research Level</color> meets requirements, equipping <color=#ffdd93>class equipment</color> unlocks two <color=#ffdd93>special module slots</color> (left and right).\\\\n- When equipment in the left and right slots is the <color=#ffdd93>same class</color> as the class equipment, gains a <color=#ffdd93>Trait Level bonus</color>.\\\\n- When the bonus is triggered, the <color=#ffdd93>first trait</color> of the module equipment receives an additional level increase.'}"
+        "Desc": "{1: '- When <color=#ffdd93>Research Level</color> meets requirements, equipping <color=#ffdd93>class gear</color> unlocks two <color=#ffdd93>special module slots</color> (left and right).\\\\n- When gear in the left and right slots is the <color=#ffdd93>same class</color> as the class gear, gains a <color=#ffdd93>Trait Level bonus</color>.\\\\n- When the bonus is triggered, the <color=#ffdd93>first trait</color> of the module gear receives an additional level increase.'}"
     },
     {
         "Id": 203,
@@ -128,11 +128,11 @@
     {
         "Id": 205,
         "Type": 2,
-        "Name": "Equipment Level",
+        "Name": "Gear Level",
         "ConditionId": null,
         "VideoConfigIds": null,
         "ImageUrl": "{1: 'Assets/Product/Texture/Image/UiDlcRelink/DlcRelinkWikiImage13.png'}",
-        "Desc": "{1: \"- Used to evaluate equipment strength and <color=#ffdd93>matchmaking</color> threshold requirements for stages.\\\\n- A piece's Equipment Level equals <color=#ffdd93>Quality</color> plus <color=#ffdd93>Trait</color> levels combined.\\\\n- <color=#ffdd93>Equipment Level</color> can be increased by embedding more traits through <color=#ffdd93>Enhancement</color>.\"}"
+        "Desc": "{1: \"- Used to evaluate gear strength and <color=#ffdd93>matchmaking</color> threshold requirements for stages.\\\\n- A piece's Gear Level equals <color=#ffdd93>Quality</color> plus <color=#ffdd93>Trait</color> levels combined.\\\\n- <color=#ffdd93>Gear Level</color> can be increased by embedding more traits through <color=#ffdd93>Enhancement</color>.\"}"
     },
     {
         "Id": 206,
@@ -141,7 +141,7 @@
         "ConditionId": null,
         "VideoConfigIds": null,
         "ImageUrl": "{1: 'Assets/Product/Texture/Image/UiDlcRelink/DlcRelinkWikiImage14.png'}",
-        "Desc": "{1: '- Extraction consumes <color=#ffdd93>other equipment</color> to embed their <color=#ffdd93>traits</color> into <color=#ffdd93>empty trait slots</color> of the equipment being enhanced.\\\\n- When the extracted equipment has <color=#ffdd93>multiple traits</color>, one will be <color=#ffdd93>randomly selected</color> for embedding.'}"
+        "Desc": "{1: '- Extraction consumes <color=#ffdd93>other gear</color> to embed their <color=#ffdd93>traits</color> into <color=#ffdd93>empty trait slots</color> of the gear being enhanced.\\\\n- When the extracted gear has <color=#ffdd93>multiple traits</color>, one will be <color=#ffdd93>randomly selected</color> for embedding.'}"
     },
     {
         "Id": 300,
@@ -150,7 +150,7 @@
         "ConditionId": null,
         "VideoConfigIds": null,
         "ImageUrl": "{1: 'Assets/Product/Texture/Image/UiDlcRelink/DlcRelinkWikiImage09.png'}",
-        "Desc": "{1: '- The character has multiple <color=#ffdd93>forms</color>, each with different <color=#ffdd93>skills</color> and <color=#ffdd93>combat focus</color>.\\\\n- Tap to switch freely between forms.'}"
+        "Desc": "{1: '- Characters have multiple <color=#ffdd93>forms</color>, each with different <color=#ffdd93>skills</color> and <color=#ffdd93>combat focus</color>.\\\\n- Tap to switch freely between forms.'}"
     },
     {
         "Id": 301,
@@ -177,7 +177,7 @@
         "ConditionId": null,
         "VideoConfigIds": "{1: '31011', 2: '31012'}",
         "ImageUrl": null,
-        "Desc": "{1: \"- <color=#ffdd93>Startrail</color>'s <color=#ffdd93>Iron Bastion</color> form excels at <color=#ffdd93>survivability</color> and building <color=#ffdd93>Aggro</color>.\\\\n- In this form, <color=#ffdd93>defensive actions</color> and most attacks grant <color=#ffdd93>Starcore Value</color>.\\\\n- When wielding Sword Shield, <color=#ffdd93>press and hold Basic Attack</color> to consume <color=#ffdd93>100</color> Starcore Value and cast <color=#ffdd93>Jump Cleave</color>.\\\\n- When wielding Shield Axe and Starcore Value exceeds <color=#ffdd93>400</color>, <color=#ffdd93>press and hold Basic Attack</color> to cast <color=#ffdd93>Meteoric Doom</color>.\", 2: '- When <color=#ffdd93>switching weapon</color> forms, gains a shield based on the current <color=#ffdd93>Starcore Value</color>.\\\\n- When wielding Sword & Shield and <color=#ffdd93>using skills</color>, gains a <color=#ffdd93>DMG bonus</color> and a <color=#ffdd93>shield</color>.\\\\n- Using Skill 2 <color=#ffdd93>Golden Roar</color> can also <color=#ffdd93>taunt enemies</color>, drawing their attacks.\\\\n- Use skills strategically to stay safe while also safeguarding other players.'}"
+        "Desc": "{1: \"- <color=#ffdd93>Startrail</color>'s <color=#ffdd93>Iron Bastion</color> form excels at <color=#ffdd93>survivability</color> and building <color=#ffdd93>Aggro</color>.\\\\n- In this form, <color=#ffdd93>defensive actions</color> and most attacks grant <color=#ffdd93>Starcore Value</color>.\\\\n- When wielding Sword Shield, <color=#ffdd93>press and hold Basic Attack</color> to consume <color=#ffdd93>100</color> Starcore Value and cast <color=#ffdd93>Jump Cleave</color>.\\\\n- When wielding Shield Axe and Starcore Value exceeds <color=#ffdd93>400</color>, <color=#ffdd93>press and hold Basic Attack</color> to cast <color=#ffdd93>Meteoric Doom</color>.\", 2: '- When <color=#ffdd93>switching weapon</color> forms, gains a shield based on the current <color=#ffdd93>Starcore Value</color>.\\\\n- When wielding Sword Shield and <color=#ffdd93>using skills</color>, gains a <color=#ffdd93>DMG bonus</color> and a <color=#ffdd93>shield</color>.\\\\n- Using Skill 2 <color=#ffdd93>Golden Roar</color> can also <color=#ffdd93>taunt enemies</color>, drawing their attacks.\\\\n- Use skills strategically to stay safe while also safeguarding other players.'}"
     },
     {
         "Id": 304,

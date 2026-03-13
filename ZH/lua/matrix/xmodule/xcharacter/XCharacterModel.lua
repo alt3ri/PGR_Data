@@ -22,6 +22,7 @@ local CharacterTableKey =
     CharacterGeneralSkill  = {},
     CharacterEquipTypeToIdAuto = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "EquipType" }, --由源表工具根据Character.tab生成，其中的角色Id列表已根据Priority由大到小排序
     CharacterClientConfig = { CacheType = XConfigUtil.CacheType.Normal, ReadFunc = XConfigUtil.ReadType.String, DirPath = XConfigUtil.DirectoryType.Client, Identifier = "Key", },
+    CharacterPopupGetCharacterController = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "CharacterId" },
 }
 
 local CharacterEnhanceSkillTableKey = 
@@ -151,6 +152,11 @@ end
 ---@return XTableCharacterFilterController[]
 function XCharacterModel:GetCharacterFilterController()
     return self._ConfigUtil:GetByTableKey(CharacterTableKey.CharacterFilterController)
+end
+
+---@return XTableCharacterPopupGetCharacterController[]
+function XCharacterModel:GetCharacterPopupGetCharacterController()
+    return self._ConfigUtil:GetByTableKey(CharacterTableKey.CharacterPopupGetCharacterController)
 end
 
 ---@return XTableCharacterModelNodeEffectMapping[]

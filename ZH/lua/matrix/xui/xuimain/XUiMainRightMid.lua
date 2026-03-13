@@ -90,7 +90,7 @@ function XUiMainRightMid:OnStart(rootUi)
     self.BtnRecharge.CallBack = function() self:OnBtnRecharge() end
     self.BtnEquipGuide.CallBack = function() XDataCenter.EquipGuideManager.OpenEquipGuideDetail() end
     self.BtnBag.CallBack = function() self:OnBtnBag() end
-    --self.BtnStore.CallBack = function() self:OnBtnStore() end
+    self.BtnStore.CallBack = function() self:OnBtnStore() end
 
     if XUiManager.IsHideFunc then
         self.BtnTask.CallBack = function() self:OnBtnTask() end
@@ -102,9 +102,9 @@ function XUiMainRightMid:OnStart(rootUi)
     end
     
     self._FuncBtnStore = XUiHelper.XUiFunctionShowBtn(self.BtnStore, self)
+    self._FuncBtnStore:SetId(XFunctionConfig.FunctionalShowId.UiMainBtnStore)
     self._FuncBtnStore:AddButtonClickEvent(handler(self, self.OnBtnStore))
-    
-    self.BtnGuild.gameObject:SetActiveEx(true)
+    self._FuncBtnStore:AddAdditionRedPointEvent({ XRedPointConditions.Types.CONDITION_MAIN_STORE })
     
     if XUiManager.IsHideFunc then
         self.BtnActivityBrief.gameObject:SetActiveEx(false)
@@ -171,7 +171,7 @@ function XUiMainRightMid:OnEnable()
     self:OnCheckRechargeNews()
     self:OnCheckStore()
     self:RefreshSubPanelState(self:GetSubPanelState(), true)
-
+    
     self._FuncBtnStore:RefreshAll()
 end
 
@@ -191,7 +191,7 @@ function XUiMainRightMid:CheckRedPoint()
     self:AddRedPointEvent(self.BtnRecharge.ReddotObj, self.OnCheckRechargeNews, self, RedPointConditionGroup.Recharge)
 
     self:AddRedPointEvent(self.BtnBag, self.OnCheckBagNews, self, RedPointConditionGroup.Bag)
-    self:AddRedPointEvent(self.BtnStore, self.OnCheckStoreBlueDot, self, { XRedPointConditions.Types.CONDITION_MAIN_STORE })
+    --self:AddRedPointEvent(self.BtnStore, self.OnCheckStoreBlueDot, self, { XRedPointConditions.Types.CONDITION_MAIN_STORE })
 
     self:AddRedPointEvent(self.BtnOpen, self.OnCheckOpenRedPoint, self, RedPointConditionGroup.Open)
 end
@@ -727,7 +727,12 @@ function XUiMainRightMid:OnBtnGuildClick()
     end
     XUiHelper.RecordBuriedSpotTypeLevelOne(XGlobalVar.BtnBuriedSpotTypeLevelOne.BtnUiMainBtnGuild)
     --self.RootUi:ChangeLowPowerState(self.RootUi.LowPowerState.None)
-    XDataCenter.GuildDormManager.EnterGuildDorm()
+    XDataCenter.GuildDormManager.EnterGuildDorm(nil, nil, function()
+        --工会在场景加载完成才会打开界面，需要在加载场景时就暂停陀螺仪动画，否则陀螺仪动画会影响公会场景
+        if self.RootUi and self.RootUi.SwitchableScene then
+            self.RootUi.SwitchableScene:Stop()
+        end
+    end)
 end
 
 function XUiMainRightMid:OnCheckGuildRedPoint(count)

@@ -47,6 +47,7 @@ function XUiGridSGFurniturePhotoOp:OnBtnPackUpClick()
     if not self:IsVisible() then
         return
     end
+    self:Close()
     self.Parent:RemoveFurniture(self._Index, self._Id)
     self.Parent:ExitEditMode()
 end
@@ -266,6 +267,7 @@ end
 function XUiPanelSGPhotoWallOp:ClearDecoration()
     for _, grid in pairs(self._OpDict) do
         grid:SetVisible(false)
+        grid:Close()
     end
     self._Control:ClearDecoration(self._AreaType)
     self._Container:DisposeAllSlot()
@@ -277,6 +279,7 @@ end
 function XUiPanelSGPhotoWallOp:RevertDecoration()
     for _, grid in pairs(self._OpDict) do
         grid:SetVisible(false)
+        grid:Close()
     end
     self._Container:DisposeAllSlot()
     local serverData = self._Control:GetContainerFurnitureData(self._AreaType)

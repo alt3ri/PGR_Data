@@ -72,6 +72,10 @@ function XPartnerBase:GetDecomposeItemCount()
     return self:GetPartnerCfg().DecomposeItemCount
 end
 
+function XPartnerBase:GetRecommendCharacterId()
+    return self:GetPartnerCfg().RecommendCharacterId
+end
+
 function XPartnerBase:GetDecomposeBackItem()
     local itemlist = {}
     local itemIdlist = self:GetDecomposeItemId()

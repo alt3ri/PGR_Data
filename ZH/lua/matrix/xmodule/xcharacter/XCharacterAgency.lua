@@ -2576,6 +2576,12 @@ function XCharacterAgency:GetModelCharacterElementById(elementId)
     return configs and configs[elementId]
 end
 
+---@return XTableCharacterPopupGetCharacterController
+function XCharacterAgency:GetPopupGetCharacterConfig(characterId)
+    local configs = self._Model:GetCharacterPopupGetCharacterController()
+    return configs and configs[characterId]
+end
+
 function XCharacterAgency:GetModelCharacterFilterController()
     return self._Model:GetCharacterFilterController()
 end

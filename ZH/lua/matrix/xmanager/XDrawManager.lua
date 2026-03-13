@@ -41,6 +41,7 @@ XDrawManagerCreator = function()
     local DrawNewGroupIds = nil
     local DrawDiscountGroupIds = nil
     local DrawDevilMayCryGroupIds = nil
+    local DrawHideOptionalBtnGroupIds = nil
 
     -- 可肝卡池相关数据
     local CanLiverActivityId = nil
@@ -840,6 +841,19 @@ XDrawManagerCreator = function()
         return DrawDevilMayCryGroupIds[groupId]
     end
 
+    function XDrawManager:CheckIsHideOptionalBtnGroupId(groupId)
+        if not DrawHideOptionalBtnGroupIds then
+            DrawHideOptionalBtnGroupIds = {}
+            local ids = XDrawConfigs.GetDrawClientConfigs("DrawHideOptionalBtnGroupIds")
+            if ids then
+                for _, v in pairs(ids) do
+                    DrawHideOptionalBtnGroupIds[tonumber(v)] = true
+                end
+            end
+        end
+        return DrawHideOptionalBtnGroupIds[groupId]
+    end
+
     -- 可领次数，指立即点击按钮可领但是还没领的
     function XDrawManager:CheckIsCanReceiveCharacterByDrawId(drawId)
         local cfg = XDrawConfigs.GetDevilMayCryActivityCfgByDrawId(drawId)
@@ -1113,22 +1127,22 @@ XDrawManagerCreator = function()
 
     function XDrawManager.DrawCard(drawId, count, freeTicketId, cb)
         XDataCenter.KickOutManager.Lock(XEnumConst.KICK_OUT.LOCK.DRAW)
-        XNetwork.Call("DrawDrawCardRequest", { DrawId = drawId, Count = count, UseDrawTicketId = freeTicketId }, function(res)
-            if res.Code ~= XCode.Success then
-                XDataCenter.KickOutManager.Unlock(XEnumConst.KICK_OUT.LOCK.DRAW, true)
-                XUiManager.TipCode(res.Code)
-                return
-            end
-            XDrawManager.UpdateDrawInfo(res.ClientDrawInfo)
-            XDrawManager.UpdateDrawGroupByInfo(res.ClientDrawInfo)
-            XDrawManager._UpdateDrawActivityTimes(res.DrawAdjustData)
-            local drawInfo = XDrawManager.GetDrawInfo(res.ClientDrawInfo.Id)
-            if cb then
-                cb(drawInfo, res.RewardGoodsList, res.ExtraRewardList)
-            else
-                XDataCenter.KickOutManager.Unlock(XEnumConst.KICK_OUT.LOCK.DRAW, true)
-            end
-        end)
+        XNetwork.Call("DrawDrawCardRequest", { DrawId = drawId, Count = count, UseDrawTicketId = freeTicketId }, function(res)
+            if res.Code ~= XCode.Success then
+                XDataCenter.KickOutManager.Unlock(XEnumConst.KICK_OUT.LOCK.DRAW, true)
+                XUiManager.TipCode(res.Code)
+                return
+            end
+            XDrawManager.UpdateDrawInfo(res.ClientDrawInfo)
+            XDrawManager.UpdateDrawGroupByInfo(res.ClientDrawInfo)
+            XDrawManager._UpdateDrawActivityTimes(res.DrawAdjustData)
+            local drawInfo = XDrawManager.GetDrawInfo(res.ClientDrawInfo.Id)
+            if cb then
+                cb(drawInfo, res.RewardGoodsList, res.ExtraRewardList)
+            else
+                XDataCenter.KickOutManager.Unlock(XEnumConst.KICK_OUT.LOCK.DRAW, true)
+            end
+        end)
     end
 
     function XDrawManager.SaveDrawAimId(drawId, groupId, cb)

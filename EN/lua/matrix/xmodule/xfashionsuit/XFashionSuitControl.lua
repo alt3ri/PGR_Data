@@ -62,15 +62,17 @@ function XFashionSuitControl:GetCollectCount(suitId)
 end
 
 function XFashionSuitControl:SetFashionViewed(fashionId)
+    if not fashionId or XWeaponFashionConfigs.IsWeaponFashion(fashionId) then
+        return
+    end
     self._Model:SetFashionViewed(fashionId)
 end
 
 function XFashionSuitControl:IsFashionViewed(fashionId)
+    if not fashionId or XWeaponFashionConfigs.IsWeaponFashion(fashionId) then
+        return false
+    end
     return self._Model:IsFashionViewed(fashionId)
-end
-
-function XFashionSuitControl:GetSuitShopIds(suitId)
-    return self._Model:GetSuitShopIds(suitId)
 end
 
 ---领取涂装套装奖励

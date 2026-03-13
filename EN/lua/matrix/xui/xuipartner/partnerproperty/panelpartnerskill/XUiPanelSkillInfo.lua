@@ -183,8 +183,8 @@ function XUiPanelSkillInfo:UpdateSkill(level)
 
     local isMainSkill = self:IsMainSkill()
     self.ImgSkillType.gameObject:SetActiveEx(isMainSkill)
-    self.BtnSwitchMainSkill.gameObject:SetActiveEx(isMainSkill)
-
+    local mainSkillGroupList = self.Partner:GetMainSkillGroupList()
+    self.BtnSwitchMainSkill.gameObject:SetActiveEx(isMainSkill and #mainSkillGroupList > 1)
     self.PanelMaxLevel.gameObject:SetActiveEx(isMaxLevel)
     self.PanelUnlockMaterial.gameObject:SetActiveEx(not isMaxLevel)
     self.PanelConsume.gameObject:SetActiveEx(not isMaxLevel)

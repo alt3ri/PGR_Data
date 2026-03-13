@@ -32,7 +32,7 @@ function XEcologyCharAIFindPathState:OnStateEnter(lastStateEnum)
     end
     self.StateEnum = self.StateConfig.StateEnum
     self._proxy:SetBBInt(XVarDomain.Npc, self._uuid, EEcologySaveKey.CurStateEnum, self.StateConfig.StateEnum)
-    
+
     self:UpdateOptionActive()
     self:RegisterWorldEvent()
     XFindPathState.OnStateEnter(self, lastStateEnum)
@@ -43,7 +43,7 @@ function XEcologyCharAIFindPathState:OnStateUpdate(dt)
     if self.StateConfig == nil then
         return
     end
-    
+
     self:UpdateWait(dt)
     self:UpdateStop2Move(dt)
     XFindPathState.OnStateUpdate(self, dt)
@@ -103,7 +103,7 @@ function XEcologyCharAIFindPathState:OnActorTrigger(eventArgs)
     then
         return
     end
-    
+
     if eventArgs.TriggerState == ETriggerState.Enter then
         self:OnMeetCommander()
     end
@@ -165,11 +165,11 @@ function XEcologyCharAIFindPathState:UpdateStop2Move(dt)
     if self._isMove then
         return
     end
-    
+
     if self._proxy:CheckNpcDistance(self._uuid, self._proxy:GetLocalPlayerNpcId(), 3.5) then
         return
     end
-    
+
     -- 离开后1s选择离开
     if self._curWaitTime > 1 then
         self._curWaitTime = 1

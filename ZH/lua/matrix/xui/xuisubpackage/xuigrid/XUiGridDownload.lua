@@ -211,6 +211,12 @@ function XUiGridDownload:OnBtnDeleteClick()
         return
     end
 
+    -- 正在下载中，不允许卸载（避免遮罩问题）
+    if XMVCA.XSubPackage:IsDownloading() then
+        XUiManager.TipText("SubpackageUninstallRejectDownloading")
+        return
+    end
+
     local sureCb = function()
         self.Parent.Parent.DeleteMask.gameObject:SetActiveEx(true)
         XMVCA.XSubPackage:UninstallSubpackageById(self.Id, function ()

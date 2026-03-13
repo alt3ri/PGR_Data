@@ -72,8 +72,8 @@ function XUiLuckyTenant2PopupSuccess:Update()
         XTool.UpdateDynamicItem(self._PropGrids, rewards, self.Prop1, XUiLuckyTenant2ChessProp, self)
     end
     -- 无奖励时隐藏奖励区域
-    if self.PanelReward then
-        self.PanelReward.gameObject:SetActiveEx(#rewards > 0)
+    if self.Reward then
+        self.Reward.gameObject:SetActiveEx(#rewards > 0)
     end
 end
 

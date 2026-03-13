@@ -478,6 +478,7 @@ local UiRegistry = {
     UiArenaActivityResult = "XUi/XUiArenaNew/XUiArenaResult/XUiArenaActivityResult",
     UiMovie = "XUi/XUiMovie/XUiMovie",
     UiMovie2D = "XUi/XUiMovie/XUiMovie2D",
+    UiMovieReview2D = "XUi/XUiMovie/XUiMovieReview2D",
     UiMovieKeywordTips = "XUi/XUiMovie/XUiMovieKeywordTips",
     UiDrawShow = "XUi/XUiDraw/XUiDrawShow",
     UiDrawShowNew = "XUi/XUiDraw/XUiDrawShowNew",

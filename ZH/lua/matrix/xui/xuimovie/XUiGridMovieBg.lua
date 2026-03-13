@@ -260,6 +260,11 @@ function XUiGridMovieBg:GetAspectRatio()
 end
 
 function XUiGridMovieBg:SetAspectRatio(aspectRatio)
+    if aspectRatio <= 0 then
+        XLog.Error("aspectRatio 不能设置<=0！会导致localPosition.y 变成NaN！")
+        return
+    end
+    
     if self.XAspectRatioFitter then
         self.XAspectRatioFitter.aspectRatio = aspectRatio
     end

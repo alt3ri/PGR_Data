@@ -348,22 +348,6 @@ function XLuckyTenant2ConfigModel:GetLuckyTenant2ChessCanBeEliminatedById(id)
     return config and config.CanBeEliminated == 1 or false
 end
 
--- 新增字段：可触发的动态状态
-function XLuckyTenant2ConfigModel:GetLuckyTenant2ChessTriggerStateById(id, index)
-    local config = self:GetLuckyTenant2ChessConfigById(id)
-    if not config then return 0 end
-    local triggerStates = config.TriggerState or {}
-    return triggerStates[index or 1] or 0
-end
-
--- 新增字段：状态SkillConditionId
-function XLuckyTenant2ConfigModel:GetLuckyTenant2ChessStateConditionIdById(id, index)
-    local config = self:GetLuckyTenant2ChessConfigById(id)
-    if not config then return "" end
-    local stateConditionIds = config.StateConditionId or {}
-    return stateConditionIds[index or 1] or ""
-end
-
 -- 新增字段：状态SkillId
 function XLuckyTenant2ConfigModel:GetLuckyTenant2ChessStateSkillIdById(id, index)
     local config = self:GetLuckyTenant2ChessConfigById(id)
@@ -482,7 +466,8 @@ end
 
 ---@return XTableLuckyTenant2ChessSkill
 function XLuckyTenant2ConfigModel:GetLuckyTenant2ChessSkillConfigById(id)
-    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(LuckyTenant2TableKey.LuckyTenant2ChessSkill, id)
+    -- 因为会尝试查找skillId，所以不提示错误 
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(LuckyTenant2TableKey.LuckyTenant2ChessSkill, id, true)
 end
 
 -- 新增字段：condition

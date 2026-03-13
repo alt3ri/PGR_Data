@@ -17,9 +17,11 @@ function XItemAgency:SelectBuyAssetType(useItemId, callBack, challengeCountData,
     if useItemId == XDataCenter.ItemManager.ItemId.ActionPoint and
         XDataCenter.ItemManager.CheckBatteryIsHave() then
         XLuaUiManager.Open("UiUsePackage", useItemId, callBack, challengeCountData, buyAmount)
+        return
     elseif useItemId == XDataCenter.ItemManager.ItemId.Coin
         and XDataCenter.ItemManager.CheckCoinPackageIsHave() then
         XLuaUiManager.Open("UiUseCoinPackage")
+        return
     end
     local cfg = self._Model:GetItemUsePackageConfig(useItemId,true)
     if not cfg then

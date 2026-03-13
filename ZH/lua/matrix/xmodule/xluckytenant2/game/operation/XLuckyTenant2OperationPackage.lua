@@ -41,14 +41,23 @@ function XLuckyTenant2OperationPackage:Do(ctx)
             if not success and errMsg then
                 XLog.Warning("[XLuckyTenant2OperationPackage] Operation执行失败:", errMsg, "操作:", operation:GetDescription())
             else
-                -- 执行成功后，获取动画数据
-                local animData = operation:GetAnimationData()
-                if animData then
-                    animationDataList[#animationDataList + 1] = animData
-                end
-            end
-        end
-    end
+                -- 执行成功后，获取动画数据
+                local animData = operation:GetAnimationData()
+                if animData then
+                    -- 兼容两种返回：
+                    -- 1) 单条动画数据：{ type = ... }
+                    -- 2) 动画数据列表：{ {type=...}, {type=...}, ... }
+                    if animData.type then
+                        animationDataList[#animationDataList + 1] = animData
+                    elseif type(animData[1]) == "table" and animData[1].type then
+                        for _, one in ipairs(animData) do
+                            animationDataList[#animationDataList + 1] = one
+                        end
+                    end
+                end
+            end
+        end
+    end
     
     -- 如果有动画数据，返回；否则返回 nil
     if #animationDataList > 0 then

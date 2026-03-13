@@ -39,6 +39,9 @@ function XLuckyTenant2OperationProxy:Ctor(game, model)
     ---@type number[] 技能参数
     self.Params = {}
     
+    ---@type table[] 本技能仅需播放的动画（如 Type508 原地生成新宝盒，不经过 Operation 但需播生成动画）
+    self._ExtraAnimations = {}
+    
     ---@type XLuckyTenant2Piece[] 这部分棋子已经从棋盘和背包上移除，但要等到本轮次结束后才真正移除
     self._ToDelete = {}
     
@@ -68,26 +71,42 @@ function XLuckyTenant2OperationProxy:SaveOperationPackage()
     end
 end
 
+---添加仅播放动画的数据（不经过 Operation，如 Type508 原地生成新宝盒）
+---@param animData table 格式同 GetAnimationData，如 { type = AnimationType.AddPiece, pieceId = x, x = x, y = y }
+function XLuckyTenant2OperationProxy:AddExtraAnimation(animData)
+    if animData and animData.type then
+        self._ExtraAnimations[#self._ExtraAnimations + 1] = animData
+    end
+end
+
+---取出并清空本技能累积的额外动画（由 Game 在创建动画组时合并）
+---@return table[]
+function XLuckyTenant2OperationProxy:GetAndClearExtraAnimations()
+    local list = self._ExtraAnimations
+    self._ExtraAnimations = {}
+    return list
+end
+
 ---执行所有操作包中的操作
 ---@param model XLuckyTenant2Model
 ---@param animationGroups table|false 动画组（可选）
-function XLuckyTenant2OperationProxy:ExecuteAllOperations(model, animationGroups)
+function XLuckyTenant2OperationProxy:ExecuteAllOperations(model)
     -- 先保存当前操作包
     self:SaveOperationPackage()
-    
+
     -- 创建操作上下文
     local XLuckyTenant2OperationContext = require("XModule/XLuckyTenant2/Game/Operation/XLuckyTenant2OperationContext")
-    
+
     -- 执行所有操作包
     for i = 1, #self.ManyOperationPackages do
         local package = self.ManyOperationPackages[i]
-        local ctx = XLuckyTenant2OperationContext.New(self.Game, model, self, animationGroups)
+        local ctx = XLuckyTenant2OperationContext.New(self.Game, model, self)
         package:Do(ctx)
     end
-    
+
     -- 执行延迟删除
     self:ExecuteDeferredDeletions()
-    
+
     -- 清空操作包列表（已执行完毕）
     self.ManyOperationPackages = {}
 end
@@ -402,16 +421,11 @@ function XLuckyTenant2OperationProxy:AddNewPiece(pieceId, x, y)
     end
     
     local skillId = self.Skill and self.Skill:GetId() or 0
-    local skillName = self.Skill and self.Skill:GetName() or ""
-    XMVCA.XLuckyTenant2:Print(string.format("[AddNewPiece] 添加新棋子: pieceId=%d, 位置=(%s,%s), 技能ID=%d, 技能名=%s", 
-        pieceId, tostring(x), tostring(y), skillId, skillName))
     
     local operation = XLuckyTenant2OperationFactory.CreateAddNewPiece(pieceId, x, y, skillId)
     if operation then
         self.OperationPackage:Push(operation)
-        XMVCA.XLuckyTenant2:Print(string.format("[AddNewPiece] 操作已添加到队列，pieceId=%d", pieceId))
     else
-        XMVCA.XLuckyTenant2:Print(string.format("[AddNewPiece] 创建操作失败，pieceId=%d", pieceId))
     end
 end
 
@@ -503,56 +517,55 @@ end
 
 ---添加分数
 ---@param value number 分数值
----@param piece XLuckyTenant2Piece 棋子（可选，默认使用当前棋子）
-function XLuckyTenant2OperationProxy:AddScore(value, piece)
-    piece = piece or self.Piece
-    if not piece then
+---@param piece XLuckyTenant2Piece 棋子（可选，用于飘字位置）
+---@param sourcePiece XLuckyTenant2Piece|nil 分数来源棋子
+function XLuckyTenant2OperationProxy:AddScore(value, piece, sourcePiece)
+    local displayPiece = piece or self.Piece
+    if not displayPiece then
         XLog.Error("[XLuckyTenant2OperationProxy] AddScore失败，棋子不存在")
         return
     end
-    
-    local x, y = piece:GetPosition()
+
+    local scoreSourcePiece = sourcePiece or self.Piece or displayPiece
+    local sourceBondIds = nil
+    if self.Game and self.Game.GetScoreBondIdsByPiece then
+        sourceBondIds = self.Game:GetScoreBondIdsByPiece(scoreSourcePiece)
+    end
+
+    local x, y = displayPiece:GetPosition()
     local skillId = self.Skill and self.Skill:GetId() or 0
-    local operation = XLuckyTenant2OperationFactory.CreateAddScore(x, y, value, skillId)
+    local operation = XLuckyTenant2OperationFactory.CreateAddScore(x, y, value, skillId, sourceBondIds)
     if operation then
         self.OperationPackage:Push(operation)
     end
 end
 
----删除棋子（通过Operation）
----@param piece XLuckyTenant2Piece 要删除的棋子
----@param from XLuckyTenant2Piece 来源棋子（可选）
----@return boolean 是否成功
-function XLuckyTenant2OperationProxy:DeletePiece(piece, from)
+---删除棋子（通过Operation）
+---@param piece XLuckyTenant2Piece 要删除的棋子
+---@param from XLuckyTenant2Piece 来源棋子（可选）
+---@param options table|nil 额外选项（可选）{ roleWhipCount:number, roleWhipSkillId:number }
+---@return boolean 是否成功
+function XLuckyTenant2OperationProxy:DeletePiece(piece, from, options)
     if not piece then
         XLog.Error("[XLuckyTenant2OperationProxy] 删除棋子失败，棋子不存在")
         return false
     end
     
     local uid = piece:GetUid()
-    local pieceName = piece:GetName() or "未知"
-    local pieceId = piece:GetId()
     local x, y = piece:GetPosition()
-    local posStr = (x > 0 and y > 0) and string.format("位置(%d,%d)", x, y) or "背包"
-    
+
     if self._DeletedPieces[uid] then
-        if XMVCA.XLuckyTenant2 then
-            XMVCA.XLuckyTenant2:Print(string.format("[DeletePiece] 棋子已被标记删除: %s[ID:%d,UID:%d], %s", 
-                pieceName, pieceId, uid, posStr))
-        end
         return false
     end
     self._DeletedPieces[uid] = true
     
-    local fromPieceUid = (from or self.Piece) and (from or self.Piece):GetUid() or 0
-    local skillId = self.Skill and self.Skill:GetId() or 0
-    local operation = XLuckyTenant2OperationFactory.CreateDeletePiece(uid, x, y, fromPieceUid, skillId)
+    local fromPieceUid = (from or self.Piece) and (from or self.Piece):GetUid() or 0
+    local skillId = self.Skill and self.Skill:GetId() or 0
+    local roleWhipCount = options and options.roleWhipCount or 0
+    local roleWhipSkillId = options and options.roleWhipSkillId or 0
+    local operation = XLuckyTenant2OperationFactory.CreateDeletePiece(uid, x, y, fromPieceUid, skillId, roleWhipCount, roleWhipSkillId)
     if operation then
         self.OperationPackage:Push(operation)
-        if XMVCA.XLuckyTenant2 then
-            XMVCA.XLuckyTenant2:Print(string.format("[DeletePiece] 删除棋子操作已加入队列: %s[ID:%d,UID:%d], %s, 技能ID=%d", 
-                pieceName, pieceId, uid, posStr, skillId))
-        end
         return true
     end
     
@@ -582,12 +595,13 @@ function XLuckyTenant2OperationProxy:ModifyPieceLevel(piece, levelDelta)
     end
 end
 
----应用状态到棋子（通过Operation）
----@param piece XLuckyTenant2Piece 棋子
----@param stateType number 状态类型
----@param skillId number 状态技能ID（可以是技能类型ID或技能配置ID）
----@param rounds number 持续回合数
-function XLuckyTenant2OperationProxy:ApplyState(piece, stateType, skillId, rounds)
+---应用状态到棋子（通过Operation）
+---@param piece XLuckyTenant2Piece 棋子
+---@param stateType number 状态类型
+---@param skillId number 状态技能ID（可以是技能类型ID或技能配置ID）
+---@param rounds number 持续回合数
+---@param fromPiece XLuckyTenant2Piece|nil 来源棋子（可选，用于动画定位施法者）
+function XLuckyTenant2OperationProxy:ApplyState(piece, stateType, skillId, rounds, fromPiece)
     if not piece then
         XLog.Error("[XLuckyTenant2OperationProxy] ApplyState失败，棋子不存在")
         return
@@ -595,15 +609,19 @@ function XLuckyTenant2OperationProxy:ApplyState(piece, stateType, skillId, round
     
     -- 解析技能ID：如果传入的是技能类型ID（例如102），则解析为实际的技能配置ID
     local actualSkillId = skillId
-    if self.Model then
-        local SkillExecutor = require("XModule/XLuckyTenant2/Game/Skill/XLuckyTenant2SkillExecutor")
-        local resolvedId, _ = SkillExecutor.ResolveStateSkillId(skillId, self.Model)
-        if resolvedId then
-            actualSkillId = resolvedId
+    if self.Model and self.Game then
+        local se = self.Game:GetSkillExecutor()
+        if se then
+            local resolvedId = se:ResolveStateSkillId(skillId, self.Model)
+            if resolvedId then
+                actualSkillId = resolvedId
+            end
         end
     end
     
-    local operation = XLuckyTenant2OperationFactory.CreateAddPieceState(piece:GetUid(), stateType, actualSkillId, rounds)
+    local sourcePiece = fromPiece or self.Piece
+    local fromPieceUid = sourcePiece and sourcePiece:GetUid() or 0
+    local operation = XLuckyTenant2OperationFactory.CreateAddPieceState(piece:GetUid(), stateType, actualSkillId, rounds, fromPieceUid)
     if operation then
         -- 设置Operation的技能ID为当前技能ID（用于日志）
         local currentSkillId = self.Skill and self.Skill:GetId() or 0

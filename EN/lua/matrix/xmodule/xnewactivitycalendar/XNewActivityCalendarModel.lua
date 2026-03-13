@@ -14,13 +14,11 @@ local TableKey = {
     NewActivityCalendarWeekReward = {},
     NewActivityCalendarKind = { DirPath = XConfigUtil.DirectoryType.Client },
     NewActivityCalendarClientConfig = { CacheType = XConfigUtil.CacheType.Normal, ReadFunc = XConfigUtil.ReadType.String, DirPath = XConfigUtil.DirectoryType.Client, Identifier = "Key" },
-    -- #203409 经过多次尝试, 在这里添加还是最稳妥的办法
-    NewActivityCalendarWeekRewardSpecialDeal = {},
 }
 
 ---@class XNewActivityCalendarModel : XModel
 ---@field ActivityData XNewActivityCalendarData
-local XNewActivityCalendarModel = XClass(XModel, "XNewActivityCalendarModel", true) -- #203409 增加该类被分类
+local XNewActivityCalendarModel = XClass(XModel, "XNewActivityCalendarModel")
 function XNewActivityCalendarModel:OnInit()
     --初始化内部变量
     --这里只定义一些基础数据, 请不要一股脑把所有表格在这里进行解析
@@ -40,12 +38,6 @@ function XNewActivityCalendarModel:OnInit()
 
     -- 添加周常开启时间表的字段检测
     self._ConfigUtil:AddCheckerByTableKey(TableKey.NewActivityCalendarClientConfig, self.CheckWeekShowTimeIsCorrect, self)
-end
-
--- #203409 提供一个方法让分类 
----不要调用, 这是给跨版本分类提供的方法
-function XNewActivityCalendarModel:GetTableKey()
-    return TableKey
 end
 
 function XNewActivityCalendarModel:ClearPrivate()

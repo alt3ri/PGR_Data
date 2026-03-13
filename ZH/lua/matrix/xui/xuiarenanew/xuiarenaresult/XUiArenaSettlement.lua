@@ -1,6 +1,6 @@
 ---@class XUiArenaSettlement : XLuaUi
 ---@field _Control XArenaControl
----@field _ResultData table|nil 结算数据（ArenaResult）
+---@field _ResultData ArenaFightResult|nil 结算数据（ArenaResult）
 ---@field _WinData table|nil 完整的胜利数据（包含 SettleData, CharExp 等，用于 debug）
 ---@field _AudioInfo any|nil 音效信息
 ---@field _AnimationDelayTimerId number|nil 动画延迟定时器ID
@@ -160,6 +160,11 @@ function XUiArenaSettlement:_ClearAnimationPlayTimer()
         XScheduleManager.UnSchedule(self._AnimationPlayTimerId)
         self._AnimationPlayTimerId = nil
     end
+
+    if self._PlayScoreAnimationTimerId then
+        XScheduleManager.UnSchedule(self._PlayScoreAnimationTimerId)
+        self._PlayScoreAnimationTimerId = nil
+    end
 end
 
 --- 启动动画延迟（延迟3秒后允许操作，配合Unity动画演出）
@@ -190,7 +195,15 @@ function XUiArenaSettlement:_Refresh()
     local data = self._ResultData
     local areaId = self._Control:GetCurrentEnterAreaId()
     local markId = self._Control:GetMarkIdByAreaId(areaId)
+    if not XTool.IsNumberValid(markId) then
+        XLog.Error("XUiArenaSettlement:_Refresh markId is not valid")
+        return
+    end
     local markInfo = self:_GetMarkInfo(markId)
+    if not markInfo then
+        XLog.Error("XUiArenaSettlement:_Refresh markInfo is not valid")
+        return
+    end
 
     -- 初始化UI显示状态
     self:_InitUIState(data, markInfo)
@@ -249,10 +262,12 @@ function XUiArenaSettlement:_InitUIState(data, markInfo)
     self:_InitDefaultValues()
     
     self.BtnReFight.gameObject:SetActiveEx(true)
-    self.PanelNewRecord.gameObject:SetActiveEx(data.Point > (data.ArenaMaxPoint or 0))
+    self.PanelNewRecord.gameObject:SetActiveEx(false)
     self.PanelBossLoseHp.gameObject:SetActiveEx(markInfo.ShowEnemyHp)
     self.PanelSurplusHp.gameObject:SetActiveEx(markInfo.ShowMyHp)
     self.PanelGroupCount.gameObject:SetActiveEx(markInfo.ShowGroup)
+    
+    self:_UpdateHighScoreDisplay(data, markInfo, true)
 end
 
 --- 初始化数值类型文本的默认值（设置为0）
@@ -285,8 +300,8 @@ end
 ---@param markInfo table 标记信息
 function XUiArenaSettlement:_PlayScoreAnimation(data, markInfo)
     local animaTime = CS.XGame.ClientConfig:GetFloat("BossSingleAnimaTime")
-
-    XUiHelper.Tween(animaTime, function(progress)
+    
+    self._PlayScoreAnimationTimerId = XUiHelper.Tween(animaTime, function(progress)
         if XTool.UObjIsNil(self.Transform) then
             return
         end
@@ -296,7 +311,9 @@ function XUiArenaSettlement:_PlayScoreAnimation(data, markInfo)
         self:_UpdateGroupDisplay(data, markInfo, progress)
         self:_UpdateScoreDisplay(data, markInfo, progress)
     end, function()
+        self._PlayScoreAnimationTimerId = nil
         self:_StopAudio()
+        self:_RefreshNewScore(data, markInfo)
     end)
 end
 
@@ -357,11 +374,20 @@ function XUiArenaSettlement:_UpdateScoreDisplay(data, markInfo, progress)
     else
         self.TxtPoint.text = tostring(currentPoint)
     end
+end
 
+function XUiArenaSettlement:_UpdateHighScoreDisplay(data, markInfo, isOld)
     -- 历史最高分
     -- 4.2 新增字段ArenaMaxPoint(Area), 与4.1的OldPoint功能(Stage)有区分, 如果 data.ArenaMaxPoint 为 nil，则使用 0 作为后备
-    local highScore = math.floor(progress * (data.ArenaMaxPoint or 0))
-    if (data.ArenaMaxPoint or 0) >= markInfo.MaxPoint and markInfo.MaxPoint > 0 then
+    local highScore = 0
+
+    if isOld then
+        highScore =  data.OldArenaMaxPoint or 0
+    else
+        highScore =  data.ArenaMaxPoint or 0
+    end
+    
+    if (highScore or 0) >= markInfo.MaxPoint and markInfo.MaxPoint > 0 then
         self.TxtHighScore.text = highScore .. "/" .. markInfo.MaxPoint
     else
         self.TxtHighScore.text = tostring(highScore)
@@ -409,6 +435,21 @@ function XUiArenaSettlement:_RefreshCharacterList()
     -- 隐藏模板
     if self.GridCharacter1 and not XTool.UObjIsNil(self.GridCharacter1.gameObject) then
         self.GridCharacter1.gameObject:SetActiveEx(false)
+    end
+end
+
+function XUiArenaSettlement:_RefreshNewScore(data, markInfo)
+    local hasNewMaxPoint = data.Point > (data.OldArenaMaxPoint or 0)
+
+    if self.PanelNewRecord then
+        self.PanelNewRecord.gameObject:SetActiveEx(hasNewMaxPoint)
+
+        if hasNewMaxPoint then
+            self:DelayCall(function()
+                self:_UpdateHighScoreDisplay(data, markInfo, false)
+                self:PlayAnimation('AnimQiehuan')
+            end, 0.5)
+        end
     end
 end
 

@@ -64,10 +64,12 @@ function XMovieActionBgSwitch:OnEnter()
     rImgBg:Show()
 
     if self.NeedSupportAnim and self.RImgAnimBg then
-        local ratio = self.RImgBg:GetAspectRatio() * self.AspectRatioPercent
         self.RImgAnimBg:Reset()
         self.RImgAnimBg:SetBgPath(bgPath, self.AnchorType, self.PositionParams)
-        self.RImgAnimBg:SetAspectRatio(ratio)
+        if self.AspectRatioPercent > 0 then
+            local ratio = self.RImgBg:GetAspectRatio() * self.AspectRatioPercent
+            self.RImgAnimBg:SetAspectRatio(ratio)
+        end
         self.RImgAnimBg:Show()
     else
         rImgBg:SetBgPath(bgPath, self.AnchorType, self.PositionParams)

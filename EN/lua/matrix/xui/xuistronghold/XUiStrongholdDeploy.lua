@@ -225,6 +225,7 @@ function XUiStrongholdDeploy:AutoAddListener()
         end
     end
     self:RegisterClickEvent(self.BtnAllocation, self.OnClickBtnAllocation)
+    self.BtnAttributeDetail:AddEventListener(handler(self, self.OnBtnAttributeDetailClick))
 end
 
 function XUiStrongholdDeploy:OnClickBtnBack()
@@ -422,3 +423,9 @@ function XUiStrongholdDeploy:OnCountChange(addElectric)
 end
 
 --endregion
+
+function XUiStrongholdDeploy:OnBtnAttributeDetailClick()
+    XLuaUiManager.Open("UiCharacterAttributeDetail", nil, XEnumConst.UiCharacterAttributeDetail.BtnTab.Damage)
+end
+
+return XUiStrongholdDeploy

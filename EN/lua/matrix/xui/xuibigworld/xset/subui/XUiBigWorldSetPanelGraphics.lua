@@ -97,7 +97,7 @@ end
 -- region 按钮事件
 
 function XUiBigWorldSetPanelGraphics:OnTGroupAutoClick(index)
-    self._Setting:SetGraphicsQualityValue(index - 1)
+    self._Setting:SetGraphicsQualityValue(index - 1, true)
     self:_RefreshOther()
 end
 

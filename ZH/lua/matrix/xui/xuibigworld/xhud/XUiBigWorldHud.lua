@@ -99,6 +99,7 @@ function XUiBigWorldHud:InitView()
 end
 
 function XUiBigWorldHud:AddEventHandler()
+    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_FIGHT_LEVEL_BEGIN_UPDATE, self.RefreshRedPoint, self)
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_TEACH_UNLOCK, self.OnRefreshTeachRedPoint, self)
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_TEACH_READ, self.OnRefreshTeachRedPoint, self)
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_QUEST_RED_POINT_REFRESH, self.OnQuestStateChanged, self)
@@ -119,6 +120,7 @@ function XUiBigWorldHud:AddEventHandler()
 end
 
 function XUiBigWorldHud:RemoveEventHandler()
+    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_FIGHT_LEVEL_BEGIN_UPDATE, self.RefreshRedPoint, self)
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_TEACH_UNLOCK, self.OnRefreshTeachRedPoint, self)
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_TEACH_READ, self.OnRefreshTeachRedPoint, self)
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_QUEST_RED_POINT_REFRESH, self.OnQuestStateChanged, self)

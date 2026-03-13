@@ -243,6 +243,23 @@ function XSubPackageModel:GetNecessarySubIds()
     return self._NecessarySubIds
 end
 
+-- [XSubPackageModel.lua] 新增方法
+function XSubPackageModel:RemoveResCache(resId)
+    -- 1. 从 Model 缓存中移除 (下次 GetResourceItem 会 New 一个新的)
+    self._ResourceDict[resId] = nil
+
+    -- 2. 通知所有包含该 Res 的 Subpackage 也移除引用
+    local subIds = self:GetSubpackageIdByResId(resId)
+    if subIds then
+        for _, subId in ipairs(subIds) do
+            local subItem = self._SubpackageDict[subId]
+            if subItem then
+                subItem:RemoveResCache(resId)
+            end
+        end
+    end
+end
+
 function XSubPackageModel:GetSubpackageIdByResId(resId)
     if self._ResId2PackageId and self._ResId2PackageId[resId] then
         return self._ResId2PackageId[resId]

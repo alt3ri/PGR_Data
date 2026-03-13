@@ -17,11 +17,9 @@ function XMovieActionActorAppear:OnInit(actionData)
 
     self.ActorId = paramToNumber(params[2])
     self.FaceId = paramToNumber(params[3])
-
-    local posX = paramToNumber(params[4])
-    local posY = paramToNumber(params[5])
-    local posZ = paramToNumber(params[6])
-    self.FixPos = vector(XDataCenter.MovieManager.Fit(posX), posY, posZ)
+    self.PosX = paramToNumber(params[4])
+    self.PosY = paramToNumber(params[5])
+    self.PosZ = paramToNumber(params[6])
 
     self.SkipRoleAnim = paramToNumber(params[7]) ~= 0
     self.IsReverse = paramToNumber(params[8]) ~= 0
@@ -40,8 +38,9 @@ function XMovieActionActorAppear:OnEnter()
         ImagePos = actor:GetImagePos(),
         IsHide = actor:IsHide()
     }
+    local fixPos = self:GetFixPos()
     actor:UpdateActor(self.ActorId)
-    actor:SetImagePos(self.FixPos)
+    actor:SetImagePos(fixPos)
     actor:SetFace(self.FaceId)
 end
 
@@ -87,6 +86,17 @@ end
 function XMovieActionActorAppear:OnPassedActionRun()
     self:OnEnter()
     self:OnRunning()
+end
+
+function XMovieActionActorAppear:GetFixPos()
+    local fixPosX = XDataCenter.MovieManager.Fit(self.PosX)
+    -- 演员位置为18号(左下角头像专属位置)时，需要读取配置表位置
+    if self.ActorIndex == XMVCA.XMovie.EnumConst.ACTOR_AVATAR_INDEX then
+        local avatarPos = XMovieConfigs.GetActorAvatarPosVector3(self.ActorId)
+        return vector(fixPosX + avatarPos.x, self.PosY + avatarPos.y, self.PosZ + avatarPos.z)
+    else
+        return vector(fixPosX, self.PosY, self.PosZ)
+    end
 end
 
 return XMovieActionActorAppear

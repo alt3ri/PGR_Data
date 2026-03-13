@@ -218,9 +218,11 @@ end
 
 function XUiBigWorldTaskMainInvitation:OnClickCommon(itemParms, goodsParams)
     local questId = self._BranchIds[self._TabIndex]
+    local tabIndex = self._TabIndex
     --已经完成 && 未领取
     if XMVCA.XBigWorldQuest:CheckInviteFinish(questId) and not XMVCA.XBigWorldQuest:CheckInviteRewardReceived(questId) then
-        self._Control:RequestReceiveInviteReward(questId, function() 
+        self._Control:RequestReceiveInviteReward(questId, function()
+            self:RefreshDetail(tabIndex)
             self:RefreshRedPoint()
         end)
     else

@@ -2207,6 +2207,7 @@ function XChar8005:OnNpcCastActionAfterEvent(skillId, launcherId, targetId, targ
 
     -- 弹刀类技能触发预警事件，主要用于CV响应
     if self:Contain(self._counterSkills, skillId) then
+        --self:ApplyMagicsToSelf({self._cvEventMagics.CastCounterSkill}, 1)
         if targetId ~= nil and targetId ~= 0 then
             self._proxy:ApplyMagic(self._uuid, targetId, self._cvEventMagics.CastCounterSkill, 1)
         end
@@ -2499,19 +2500,15 @@ function XChar8005:OnNpcBeforeTriggerCounter(triggerNpcUUID, counterNpcUUID, tri
 
     self._proxy:DispatchLuaEvent(ELuaEventTarget.All, EFightLuaEvent.RelinkCounterSuccess, { TriggerNpcUUid = triggerNpcUUID, NpcUUid = counterNpcUUID })
 
-    local isSustain = GameplayTag.CSMatchAnyTag(triggerTag, {EGameplayTag.Missile_Parry_Trigger_Sustain})
-    local isTargetHeavyCounter = GameplayTag.CSMatchAnyTag(counterTag, {EGameplayTag.Missile_Parry_Counter_Heavy})
-
-    -- 远程没有弹刀表现
-    if not isTargetHeavyCounter then
-        return
-    end
-
+    local isSustain = GameplayTag.CSMatchAnyTag(triggerTag, {EGameplayTag.Missile_Parry_Trigger_Sustain}) or
+            GameplayTag.CSMatchAnyTag(counterTag, {EGameplayTag.Missile_Parry_Counter_Light})
     -- 不打断拼刀(触发盒为sustain或反制盒为light)
     if isSustain then
         -- 通用逻辑部分
         self._proxy:ApplyMagic(self._uuid, self._uuid, self._lightReflectSlomo, 1)    -- 弱顿帧（对自己）
         self._proxy:ApplyMagic(self._uuid, counterNpcUUID, self._lightReflectSlomo, 1)-- 弱顿帧（对目标）
+
+        -- 根据子弹ID的定制化表现,弹刀特效
         if triggerMissileTemplateId == 8005064 or triggerMissileTemplateId == 8005067 then
             self._proxy:LaunchMissile(self._uuid, counterNpcUUID, 8005012, 8005012,  1)
         end
@@ -2597,6 +2594,10 @@ function XChar8005:OnNpcWrestlePursuit(launcherNpcUUID, targetNpcUUID)
     if launcherNpcUUID ~= self._uuid then return end
 
     self:ExitQTEInteract()
+    -- 延迟通知赛利卡发出语音
+    self._proxy:AddTimerTask(1.5, function()
+        self:ApplyMagicsToSelf({self._cvEventMagics.MultiQTESuccess}, 1)
+    end)
 end
 
 function XChar8005:OnNpcWrestleReversal(launcherNpcUUID, targetNpcUUID)

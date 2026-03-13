@@ -23,6 +23,19 @@ function XLuckyTenant2AnimationGroup:Ctor(skillId, pieceUid, animationData, isFi
     
     -- 直接保存动画数据（不再从 Operations 中提取）
     self._AnimationData = animationData or {}
+    -- 倒计时动画标记（用于 AnimationManager 排序，确保倒计时特效排在第一位）
+    self._IsCountdown = false
+end
+
+---标记为倒计时动画组
+function XLuckyTenant2AnimationGroup:SetIsCountdown(value)
+    self._IsCountdown = value == true
+end
+
+---是否为倒计时动画组
+---@return boolean
+function XLuckyTenant2AnimationGroup:IsCountdown()
+    return self._IsCountdown == true
 end
 
 ---更新动画
@@ -105,143 +118,6 @@ end
 ---@return table
 function XLuckyTenant2AnimationGroup:GetAnimationData()
     return self._AnimationData
-end
-
----播放动画（由 UI 层调用）
----@param ui XUiLuckyTenant2Game UI 实例
-function XLuckyTenant2AnimationGroup:PlayAnimations(ui)
-    if not ui then
-        return
-    end
-    
-    local animationData = self._AnimationData
-    if not animationData or #animationData == 0 then
-        return
-    end
-    
-    -- 遍历所有动画数据，播放对应的动画
-    for idx, animData in ipairs(animationData) do
-        local animType = animData.type
-        if animType == XLuckyTenant2Enum.AnimationType.GetScore then
-            -- 播放分数动画
-            self:_PlayGetScoreAnimation(ui, animData)
-        elseif animType == XLuckyTenant2Enum.AnimationType.AddPiece then
-            -- 播放添加棋子动画
-            self:_PlayAddPieceAnimation(ui, animData)
-        elseif animType == XLuckyTenant2Enum.AnimationType.DeletePiece then
-            -- 播放删除棋子动画
-            self:_PlayDeletePieceAnimation(ui, animData)
-        elseif animType == XLuckyTenant2Enum.AnimationType.UpdatePiece then
-            -- 播放更新棋子动画
-            self:_PlayUpdatePieceAnimation(ui, animData)
-        elseif animType == XLuckyTenant2Enum.AnimationType.ActivateSkillEnable then
-            -- 主动发动技能的棋子播放
-            self:_PlayActivateSkillEnableAnimation(ui, animData)
-        elseif animType == XLuckyTenant2Enum.AnimationType.AffectedBySkillEnable then
-            -- 受技能影响的棋子播放
-            self:_PlayAffectedBySkillEnableAnimation(ui, animData)
-        end
-    end
-end
-
----播放分数动画
----@param ui XUiLuckyTenant2Game UI 实例
----@param animData table 动画数据
-function XLuckyTenant2AnimationGroup:_PlayGetScoreAnimation(ui, animData)
-    if not ui or not animData then
-        return
-    end
-    
-    local x = animData.x or 0
-    local y = animData.y or 0
-    local value = animData.value or 0
-    
-    if value > 0 and ui.PlayAnimationGetScore then
-        local duration = 0.7  -- 动画持续时间（秒）
-        ui:PlayAnimationGetScore(x, y, value, duration, function()
-            -- 动画完成回调（已在 UI 层处理分数更新）
-        end)
-    end
-end
-
----播放添加棋子动画
----@param ui XUiLuckyTenant2Game UI 实例
----@param animData table 动画数据
-function XLuckyTenant2AnimationGroup:_PlayAddPieceAnimation(ui, animData)
-    if not ui or not animData then
-        return
-    end
-    
-    local pieceId = animData.pieceId or 0
-    local x = animData.x
-    local y = animData.y
-    
-    if pieceId > 0 and ui.PlayAnimationAddPiece then
-        ui:PlayAnimationAddPiece(pieceId, x, y)
-    end
-end
-
----播放删除棋子动画
----@param ui XUiLuckyTenant2Game UI 实例
----@param animData table 动画数据
-function XLuckyTenant2AnimationGroup:_PlayDeletePieceAnimation(ui, animData)
-    if not ui or not animData then
-        return
-    end
-    
-    local pieceUid = animData.pieceUid or 0
-    local x = animData.x or 0
-    local y = animData.y or 0
-    local fromPieceUid = animData.fromPieceUid or 0
-    
-    if pieceUid > 0 and ui.PlayAnimationDeletePiece then
-        ui:PlayAnimationDeletePiece(pieceUid, x, y, fromPieceUid)
-    end
-end
-
----播放更新棋子动画
----@param ui XUiLuckyTenant2Game UI 实例
----@param animData table 动画数据
-function XLuckyTenant2AnimationGroup:_PlayUpdatePieceAnimation(ui, animData)
-    if not ui or not animData then
-        return
-    end
-    
-    local pieceUid = animData.pieceUid or 0
-    
-    if pieceUid > 0 and ui.PlayAnimationUpdatePiece then
-        ui:PlayAnimationUpdatePiece(pieceUid)
-    end
-end
-
----播放主动发动技能动画（发动技能的棋子）
----@param ui XUiLuckyTenant2Game UI 实例
----@param animData table 动画数据 { pieceUid, x, y }
-function XLuckyTenant2AnimationGroup:_PlayActivateSkillEnableAnimation(ui, animData)
-    if not ui or not animData then
-        return
-    end
-    local pieceUid = animData.pieceUid or 0
-    local x = animData.x or 0
-    local y = animData.y or 0
-    if (pieceUid > 0 or (x > 0 and y > 0)) and ui.PlayAnimationActivateSkillEnable then
-        ui:PlayAnimationActivateSkillEnable(pieceUid, x, y)
-    end
-end
-
----播放受技能影响动画（被技能影响的棋子）
----@param ui XUiLuckyTenant2Game UI 实例
----@param animData table 动画数据 { pieceUid, x, y }
-function XLuckyTenant2AnimationGroup:_PlayAffectedBySkillEnableAnimation(ui, animData)
-    if not ui or not animData then
-        return
-    end
-    local pieceUid = animData.pieceUid or 0
-    local x = animData.x or 0
-    local y = animData.y or 0
-    if (pieceUid > 0 or (x > 0 and y > 0)) and ui.PlayAnimationAffectedBySkillEnable then
-        ui:PlayAnimationAffectedBySkillEnable(pieceUid, x, y)
-    end
 end
 
 return XLuckyTenant2AnimationGroup

@@ -304,6 +304,20 @@
         "Role": "R2BuouxiongMd010021",
         "Layer": null,
         "State": null,
+        "Target": "WalkStart",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd010021",
+        "Layer": null,
+        "State": null,
+        "Target": "WalkStop",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd010021",
+        "Layer": null,
+        "State": null,
         "Target": "Attack01",
         "TransitionDuration": 0.1
     },
@@ -430,14 +444,7 @@
         "Role": "R2BuouxiongMd010021",
         "Layer": null,
         "State": null,
-        "Target": "WalkStart",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "R2BuouxiongMd010021",
-        "Layer": null,
-        "State": null,
-        "Target": "WalkStop",
+        "Target": "Attack96",
         "TransitionDuration": 0.1
     },
     {
@@ -584,14 +591,14 @@
         "Role": "R2BuouxiongMd010021",
         "Layer": null,
         "State": "Walk",
-        "Target": "Stand2",
+        "Target": "WalkStop",
         "TransitionDuration": 0.1
     },
     {
         "Role": "R2BuouxiongMd010021",
         "Layer": null,
         "State": "Walk",
-        "Target": "WalkStop",
+        "Target": "Stand1",
         "TransitionDuration": 0.1
     },
     {
@@ -926,6 +933,20 @@
     {
         "Role": "R2BuouxiongMd010021",
         "Layer": null,
+        "State": "WalkStart",
+        "Target": "Walk",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd010021",
+        "Layer": null,
+        "State": "WalkStop",
+        "Target": "Stand1",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R2BuouxiongMd010021",
+        "Layer": null,
         "State": "Attack01",
         "Target": "Attack51",
         "TransitionDuration": null
@@ -1090,19 +1111,5 @@
         "State": "Attack45",
         "Target": "Attack52",
         "TransitionDuration": null
-    },
-    {
-        "Role": "R2BuouxiongMd010021",
-        "Layer": null,
-        "State": "WalkStart",
-        "Target": "Walk",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "R2BuouxiongMd010021",
-        "Layer": null,
-        "State": "WalkStop",
-        "Target": "Stand1",
-        "TransitionDuration": 0.1
     }
 ]

@@ -112,6 +112,7 @@ local IsWindowsEditor = XMain.IsWindowsEditor
 ---@field XMusicGameActivity XMusicGameActivityAgency
 ---@field XArrangementGame XArrangementGameAgency
 ---@field XLuckyTenant XLuckyTenantAgency
+---@field XLuckyTenant2 XLuckyTenant2Agency
 ---@field XSkyGardenDorm XSkyGardenDormAgency
 ---@field XBigWorldTeach XBigWorldTeachAgency
 ---@field XPcg XPcgAgency
@@ -148,6 +149,7 @@ local IsWindowsEditor = XMain.IsWindowsEditor
 ---@field XSkyGardenDroneGame XSkyGardenDroneGameAgency
 ---@field XItemRestrict XItemRestrictAgency
 ---@field XShop XShopAgency
+---@field XItem XItemAgency
 local XMVCACls = XClass(XMVCAEvent, "XMVCACls")
 
 function XMVCACls:Ctor()
@@ -641,6 +643,7 @@ function XMVCACls:InitModule()
     self:RegisterAgency(ModuleId.XMusicGameActivity)
     self:RegisterAgency(ModuleId.XArrangementGame)
     self:RegisterAgency(ModuleId.XLuckyTenant)
+    self:RegisterAgency(ModuleId.XLuckyTenant2)
     self:RegisterAgency(ModuleId.XPcg)
     self:RegisterAgency(ModuleId.XVersionGift)
     self:RegisterAgency(ModuleId.XGuildWar)
@@ -662,14 +665,12 @@ function XMVCACls:InitModule()
     self:RegisterAgency(ModuleId.XAreaWar)
     self:RegisterAgency(ModuleId.XMainLineLuosaita)
 
-    -- #203409 多次尝试后, 还是写在这里最稳妥
-    self:RegisterAgency(ModuleId.XAccumulateExpendL)
-    self:RegisterAgency(ModuleId.XPassportComb)
     self:RegisterAgency(ModuleId.XPlotExhibition)
     self:RegisterAgency(ModuleId.XSwitchableScene)
     self:RegisterAgency(ModuleId.XRadioSign)
     self:RegisterAgency(ModuleId.XItemRestrict)
     self:RegisterAgency(ModuleId.XShop)
+    self:RegisterAgency(ModuleId.XItem)
 end
 
 function XMVCACls:AddPreloadConfig(path)

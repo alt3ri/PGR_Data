@@ -43,12 +43,6 @@ function XLuckyTenant2OperationSetValueUponDeletion:Do(ctx)
     end
     
     piece:SetValueUponDeletion(self._Value)
-    
-    if XMVCA.XLuckyTenant2 then
-        XMVCA.XLuckyTenant2:Print("[XLuckyTenant2OperationSetValueUponDeletion] 棋子UID:", self._PieceUid, 
-            "设置消除得分:", self._Value, "技能ID:", self._SkillId)
-    end
-    
     return true, nil
 end
 

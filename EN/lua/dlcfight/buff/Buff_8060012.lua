@@ -26,14 +26,13 @@ function XBuffScript8060012:Update(dt)
     ------------执行-------------
     if self.hasLevel==false then
         self.hasLevel,self.magicLevel=self._proxy:TryQueryBuffLevel(self._uuid,8060012)--获取自身的BUFF等级
-    end
-    local atkNum=self._proxy:GetNpcAttribValue(self._uuid,self.attribType) --初始化的时候就判断加上
-    if atkNum>=self.thresholdNum and not self._proxy:CheckBuffByKind(self._uuid,self.magicId) then
-        self._proxy:ApplyMagic(self._uuid,self._uuid,self.magicId,self.magicLevel) --上BUFF
-    elseif atkNum<self.thresholdNum and self._proxy:CheckBuffByKind(self._uuid,self.magicId) then
-        self._proxy:RemoveBuff(self._uuid,self.magicId)
+        local atkNum=self._proxy:GetNpcAttribValue(self._uuid,self.attribType) --初始化的时候就判断加上
+        if atkNum>=self.thresholdNum and not self._proxy:CheckBuffByKind(self._uuid,self.magicId) then
+            self._proxy:ApplyMagic(self._uuid,self._uuid,self.magicId,self.magicLevel) --上BUFF
+        end
     end
 end
+
 ---@param eventType number
 ---@param eventArgs userdata
 function XBuffScript8060012:HandleEvent(eventType, eventArgs)

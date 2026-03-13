@@ -20,6 +20,9 @@ local CharacterTableKey =
     CharacterPower  = { DirPath = XConfigUtil.DirectoryType.Client },
     CharacterQualityIcon = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "Quality" }, 
     CharacterGeneralSkill  = {},
+    CharacterEquipTypeToIdAuto = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "EquipType" }, --由源表工具根据Character.tab生成，其中的角色Id列表已根据Priority由大到小排序
+    CharacterClientConfig = { CacheType = XConfigUtil.CacheType.Normal, ReadFunc = XConfigUtil.ReadType.String, DirPath = XConfigUtil.DirectoryType.Client, Identifier = "Key", },
+    CharacterPopupGetCharacterController = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "CharacterId" },
 }
 
 local CharacterEnhanceSkillTableKey = 
@@ -151,6 +154,11 @@ function XCharacterModel:GetCharacterFilterController()
     return self._ConfigUtil:GetByTableKey(CharacterTableKey.CharacterFilterController)
 end
 
+---@return XTableCharacterPopupGetCharacterController[]
+function XCharacterModel:GetCharacterPopupGetCharacterController()
+    return self._ConfigUtil:GetByTableKey(CharacterTableKey.CharacterPopupGetCharacterController)
+end
+
 ---@return XTableCharacterModelNodeEffectMapping[]
 function XCharacterModel:GetCharacterModelNodeEffectMapping()
     return self._ConfigUtil:GetByTableKey(CharacterTableKey.CharacterModelNodeEffectMapping)
@@ -237,6 +245,19 @@ end
 ---@return XTableCharacterTabId[]
 function XCharacterModel:GetCharacterTabId()
     return self._ConfigUtil:GetByTableKey(CharacterTableKey.CharacterTabId)
+end
+
+---@return XTableCharacterClientConfig[]
+function XCharacterModel:GetCharacterClientConfig()
+    return self._ConfigUtil:GetByTableKey(CharacterTableKey.CharacterClientConfig)
+end
+
+function XCharacterModel:GetClientConfigParams(key)
+    local config = self._ConfigUtil:GetCfgByTableKeyAndIdKey(CharacterTableKey.CharacterClientConfig, key)
+    if not config then
+        return nil
+    end
+    return config.Params
 end
 
 ---@return XTableCharacterTabByRecommendTypeTab[]
@@ -358,6 +379,11 @@ end
 
 function XCharacterModel:GetCharacterGrade()
     return self._ConfigUtil:GetByTableKey(CharacterGradeTableKey.CharacterGrade)
+end
+
+---@return XTableCharacterEquipTypeToIdAuto
+function XCharacterModel:GetCharacterEquipTypeToIdAuto(equipType)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(CharacterTableKey.CharacterEquipTypeToIdAuto, equipType)
 end
 
 function XCharacterModel:InitNpcTemplates()

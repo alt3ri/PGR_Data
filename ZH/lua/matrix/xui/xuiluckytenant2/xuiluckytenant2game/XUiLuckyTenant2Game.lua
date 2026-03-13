@@ -4,11 +4,8 @@
 -- Generated at: 2025-12-31 16:39:51
 --]]
 
-local XUiLuckyTenant2GamePanelTipsnew = require(
-    "XUi/XUiLuckyTenant2/XUiLuckyTenant2Game/XUiLuckyTenant2GamePanelTipsnew")
 local XUiLuckyTenant2GameGridChess = require("XUi/XUiLuckyTenant2/XUiLuckyTenant2Game/XUiLuckyTenant2GameGridChess")
 local XUiLuckyTenant2GameGridRound = require("XUi/XUiLuckyTenant2/XUiLuckyTenant2Game/XUiLuckyTenant2GameGridRound")
-local XUiLuckyTenant2GamePanelChess = require("XUi/XUiLuckyTenant2/XUiLuckyTenant2Game/XUiLuckyTenant2GamePanelChess")
 local XUiLuckyTenant2GameAnimationGetScore = require(
     "XUi/XUiLuckyTenant2/XUiLuckyTenant2Game/XUiLuckyTenant2GameAnimationGetScore")
 local XUiLuckyTenant2GameAnimationGetItem = require(
@@ -20,6 +17,10 @@ local XUiLuckyTenant2GameUiLuckyTenant2ChessDetail = require(
 local XUiLuckyTenant2PropDisplay = require("XUi/XUiLuckyTenant2/XUiLuckyTenant2PropDisplay")
 local XLuckyTenant2Enum = require("XModule/XLuckyTenant2/Game/XLuckyTenant2Enum")
 local GameState = XLuckyTenant2Enum.GameState
+local Skill = XLuckyTenant2Enum.Skill
+local GridEffectType = XLuckyTenant2Enum.GridEffectType
+local UiConstants = XLuckyTenant2Enum.UiConstants
+local GameConstants = XLuckyTenant2Enum.GameConstants
 local XTool = XTool
 
 ---@class XUiLuckyTenant2Game : XLuaUi
@@ -51,27 +52,27 @@ function XUiLuckyTenant2Game:Ctor()
 
     self._IsPause = false
     self._IsCancelNextState = false
+    self._PendingNextStateFromPopupClose = false -- 指引暂停期间弹窗关闭时延后推进，等指引恢复后执行
 
     self._IsSpeedUp = false
-    self._TimeScaleSpeedUp = 5
+    self._TimeScaleSpeedUp = UiConstants.TIME_SCALE_SPEED_UP
     self._TimerRoll = false
     self._IsCheckGuide = false
 
     -- 分数动画相关
-    self._PieceScoreAnimations = {}            -- 待播放的棋子分数动画列表 {x, y, value}
-    self._PieceScoreAnimationIndex = 0         -- 当前播放的动画索引
     self._IsPlayingPieceScoreAnimation = false -- 是否正在播放分数动画
     self._AccumulatedScoreForAnimation = 0     -- 动画过程中的累计分数
     self._BaseScoreForAnimation = 0            -- 动画开始前的基准分数
+    self._AnimationLevelLastTriggered = 0      -- 飘字动画已触发的最高等级（1/2/3），仅等级2/3时播放TxtTargetScoreEnable
+    self._FxLoop02Timer = nil                  -- 等级3特效 FxUiLuckyTenant202Loop02 的隐藏定时器
+    self._TxtTargetScoreNextFrameTimerId = nil -- PlayTxtTargetScoreEnableAnimation 中 ScheduleNextFrame 的 id，用于 OnDisable 回收
 end
 
 function XUiLuckyTenant2Game:OnAwake()
     XMVCA.XLuckyTenant2:SetPlaying(true)
 
     self.BtnBack:AddEventListener(function() self:OnBtnBackClick() end)
-    if self._Control then
-        self:BindHelpBtn(nil, self._Control:GetUiData().HelpKey)
-    end
+    self:BindHelpBtn(nil, self._Control:GetUiData().HelpKey)
 
     XUiHelper.RegisterClickEvent(self, self.BtnArrange, self.OnClickNextRound, nil, true)
     if self.BtnBag then
@@ -113,10 +114,29 @@ function XUiLuckyTenant2Game:OnAwake()
     end
 
     self:ClosePanelTips()
+
+    --[[
+        特效和动画逻辑
+        动画等级 = 本回合得分 >= 本阶段得分/本阶段（quest）回合数量 * 系数
+        等级1=90%，等级2=110%，等级3=130%
+        当飘字后得分达到等级时：等级1播放Shake1，等级2播放Shake2，等级3播放Shake3；等级2和3另播放TxtTargetScoreEnable；等级3另显示 FxUiLuckyTenant202Loop02
+        FxUiLuckyTenant202Loop03：本回合分数进度条超出上限（当前分数>=阶段目标）时显示
+        有棋子出生在GridChess时播放ChessBorn
+    --]]
+    self.FxUiLuckyTenant202Loop02 = self.FxUiLuckyTenant202Loop02 or self.ImgBarScore.transform:Find("FxUiLuckyTenant202Loop02")
+    self.FxUiLuckyTenant202Loop03 = self.FxUiLuckyTenant202Loop03 or self.ImgBarScore.transform:Find("FxUiLuckyTenant202Loop03")
+    if self.FxUiLuckyTenant202Loop02 then
+        self.FxUiLuckyTenant202Loop02.gameObject:SetActiveEx(false)
+    end
+    if self.FxUiLuckyTenant202Loop03 then
+        self.FxUiLuckyTenant202Loop03.gameObject:SetActiveEx(false)
+    end
+
+    self.FxUiLuckyTenant217 = self.FxUiLuckyTenant217 or self.TxtTargetScore.transform:Find("RImgCostIcon/FxUiLuckyTenant217", "RectTransform")
 end
 
 function XUiLuckyTenant2Game:OnStart(stageId, seed, isFirstTimeEntering, record)
-    self._StageId = stageId or 101
+    self._StageId = stageId or GameConstants.DEFAULT_STAGE_ID
     self._Seed = seed or XTime.GetServerNowTimestamp()
     if isFirstTimeEntering == nil then
         isFirstTimeEntering = true
@@ -126,6 +146,9 @@ function XUiLuckyTenant2Game:OnStart(stageId, seed, isFirstTimeEntering, record)
 end
 
 function XUiLuckyTenant2Game:OnEnable()
+    -- 检查棋盘上的棋子是否还在背包中，把不在的删除
+    self:_RemoveInvalidPiecesFromBoard()
+
     if not self._IsCheckGuide then
         local isGuide = XDataCenter.GuideManager.CheckGuideOpen()
         self:CheckGuide(isGuide)
@@ -134,7 +157,7 @@ function XUiLuckyTenant2Game:OnEnable()
 
     if self._IsPause then
         --指引暂停时， 也得先刷新一次界面
-        self:UpdateUi()
+        self:UpdateUi(true)
     else
         self:Update()
     end
@@ -143,15 +166,54 @@ function XUiLuckyTenant2Game:OnEnable()
     self._Control:RefreshBondLevels()
 
     -- 刷新羁绊列表（从选棋界面返回时，羁绊等级可能已改变）
-    self._Control:UpdateBonds()
     self:UpdateBonds()
 
+    -- 首帧传入 fromOnEnable=true，用于棋盘延迟显示等逻辑
+    local isFirstTick = true
     self._Timer = XScheduleManager.ScheduleForever(function()
-        self:Update()
+        self:Update(isFirstTick)
+        isFirstTick = false
     end, 0)
 
     -- 监听任务成功弹窗关闭事件
     XEventManager.AddEventListener(XEventId.EVENT_LUCKY_TENANT2_QUEST_SUCCESS_POPUP_CLOSE, self.OnQuestSuccessPopupClose, self)
+    -- 监听指引事件（0=暂停游戏，1=恢复游戏）
+    XEventManager.AddEventListener(XEventId.EVENT_LUCKY_TENANT_GUIDE, self._OnGuideEvent, self)
+    -- 监听指引跳过事件
+    XEventManager.AddEventListener(XEventId.EVENT_GUIDE_SKIP, self._OnGuideSkip, self)
+
+    -- 显示下一个Toast
+    self._Control:ShowNextToast()
+
+    -- 刷新背包按钮的背包数量
+    self:ForceUpdateBagAmount()
+
+    -- 刷新道具数量
+    self:UpdateProp()
+end
+
+--- 检查棋盘UI格子上的棋子是否还在背包中，把不在的隐藏
+function XUiLuckyTenant2Game:_RemoveInvalidPiecesFromBoard()
+    local game = self._Control and self._Control:GetGame()
+    if not game then
+        return
+    end
+
+    local bag = game:GetBag()
+    if not bag then
+        return
+    end
+
+    for _, grid in ipairs(self._Grids) do
+        local data = grid._Data
+        if data and data.Uid and data.IsValid then
+            if not bag:GetPieceByUid(data.Uid) then
+                if grid.PanelChess then
+                    grid.PanelChess.gameObject:SetActiveEx(false)
+                end
+            end
+        end
+    end
 end
 
 function XUiLuckyTenant2Game:CheckGuide(isGuide)
@@ -163,14 +225,60 @@ end
 
 function XUiLuckyTenant2Game:OnDisable()
     XScheduleManager.UnSchedule(self._Timer)
-    self._Timer = false
+    self._Timer = nil
+
+    XScheduleManager.UnSchedule(self._ChessboardShowTimer)
+    self._ChessboardShowTimer = nil
+
+    -- 回收等级3特效定时器并隐藏
+    if self._FxLoop02Timer then
+        XScheduleManager.UnSchedule(self._FxLoop02Timer)
+        self._FxLoop02Timer = nil
+    end
+    if self.FxUiLuckyTenant202Loop02 and self.FxUiLuckyTenant202Loop02.gameObject then
+        self.FxUiLuckyTenant202Loop02.gameObject:SetActiveEx(false)
+    end
+
+    -- 清理每个棋格的一次性特效定时器并隐藏特效
+    for _, grid in ipairs(self._Grids) do
+        if grid and grid.CancelAllEffectTimers then
+            grid:CancelAllEffectTimers()
+        end
+    end
+
+    -- 清空格子特效播放记录
+    self._GridEffectPlayedInGroup = nil
 
     -- 注销任务成功弹窗关闭事件
     XEventManager.RemoveEventListener(XEventId.EVENT_LUCKY_TENANT2_QUEST_SUCCESS_POPUP_CLOSE, self.OnQuestSuccessPopupClose, self)
+    -- 注销指引事件
+    XEventManager.RemoveEventListener(XEventId.EVENT_LUCKY_TENANT_GUIDE, self._OnGuideEvent, self)
+    -- 注销指引跳过事件
+    XEventManager.RemoveEventListener(XEventId.EVENT_GUIDE_SKIP, self._OnGuideSkip, self)
+
+    -- 重置时间缩放
+    self:ResetTimeScaleTo1()
+
+    -- 隐藏等级0特效
+    self.FxUiLuckyTenant217.gameObject:SetActiveEx(false)
+
+    -- 重置TxtTargetScoreEnable动画状态并回收下一帧定时器
+    self._IsPlayingTxtTargetScoreEnable = false
+    self._IsPlayingTxtTargetScoreTwice = false
+    if self._TxtTargetScoreNextFrameTimerId then
+        XScheduleManager.UnSchedule(self._TxtTargetScoreNextFrameTimerId)
+        self._TxtTargetScoreNextFrameTimerId = nil
+    end
+    self:StopAnimation("TxtTargetScoreEnable")
 end
 
 ---任务成功弹窗关闭事件处理
 function XUiLuckyTenant2Game:OnQuestSuccessPopupClose()
+    if self._IsPause then
+        -- 指引暂停时与 1 期一致：延迟推进，等指引结束（_OnGuideEvent(1)）后再执行
+        self._PendingNextStateFromPopupClose = true
+        return
+    end
     if self._Control then
         self._Control:NextGameState()
         -- 强制刷新UI信息，确保分数进度条和目标分数显示为下一个quest的数值
@@ -182,7 +290,7 @@ end
 function XUiLuckyTenant2Game:OnDestroy()
     XMVCA.XLuckyTenant2:SetPlaying(false)
 
-    CS.UnityEngine.Time.timeScale = 1
+    self:ResetTimeScaleTo1()
     if self._Control then
         self._Control:ClearGame()
     end
@@ -199,27 +307,36 @@ function XUiLuckyTenant2Game:SetUiDirtyAndUpdate()
     end
 end
 
-function XUiLuckyTenant2Game:UpdateUi()
+function XUiLuckyTenant2Game:UpdateUi(fromOnEnable)
     if not self._Control then
         return
     end
 
     local uiData = self._Control:GetUiData()
+    -- 仅在数据脏时更新棋盘，避免每帧都刷新
     if uiData.IsDirty then
         -- 先调用 Control 层的 UpdateInfo 来更新数据（包括 TotalRound）
         self._Control:UpdateInfo()
         self:UpdateInfo()
         uiData.IsDirty = false
-    else
-        -- 即使 IsDirty 为 false，也需要更新羁绊列表（因为从选棋界面返回时，羁绊等级可能已改变）
+
+        self:UpdateChessboard()
+        if fromOnEnable then
+            -- 不立即显示棋盘，等 OnEnable一小段动画之后再显示
+            self.PanelChess.gameObject:SetActiveEx(false)
+            XScheduleManager.UnSchedule(self._ChessboardShowTimer)
+            self._ChessboardShowTimer = XScheduleManager.ScheduleOnce(function()
+                self._ChessboardShowTimer = nil
+                self.PanelChess.gameObject:SetActiveEx(true)
+            end, 400)
+        end
+    elseif fromOnEnable then 
         self._Control:UpdateBonds()
         self:UpdateBonds()
     end
-    -- 无论 IsDirty 是否为 true，都需要更新棋盘（因为棋盘数据可能在 Control 层已经被更新了）
-    self:UpdateChessboard()
 end
 
-function XUiLuckyTenant2Game:Update()
+function XUiLuckyTenant2Game:Update(fromOnEnable)
     if self._IsPause then
         self:UpdateAnimation()
         return
@@ -235,7 +352,7 @@ function XUiLuckyTenant2Game:Update()
     end
 
     local uiData = self._Control:GetUiData()
-    self:UpdateUi()
+    self:UpdateUi(fromOnEnable)
 
     local gameState = uiData.GameState
     if self._State ~= gameState then
@@ -246,79 +363,21 @@ function XUiLuckyTenant2Game:Update()
 end
 
 function XUiLuckyTenant2Game:UpdateAnimation()
-    if self._State == GameState.Animation then
-        if not self._Control then
-            return
-        end
+    if self._State ~= GameState.Animation then
+        return
+    end
 
-        local uiData = self._Control:GetUiData()
-        local animationGroups = uiData.AnimationGroups
-        -- 动画态但没有动画组时，仍需要先刷新倒计时并刷新棋盘
-        if uiData.ChessboardSnapshot and not uiData.IsRoundCountdownApplied then
-            self._Control:ApplyRoundCountdownForAnimation()
-            self._Control:UpdateChessboard()
-            self:UpdateChessboard()
-        end
-        if animationGroups and #animationGroups > 0 then
-            -- 动画开始时，先对倒计时做一次-1刷新（只会生效一次）
-            if self._Control then
-                self._Control:ApplyRoundCountdownForAnimation()
-            end
-            local animationGroup = animationGroups[1]
-            if animationGroup then
-                -- 检查是否是第一个动画组的第一次更新（需要立即刷新棋盘）
-                local wasWaiting = animationGroup._State == "waiting"
+    if not self._Control then
+        return
+    end
 
-                -- 使用 Time.deltaTime 更新动画（转换为秒）
-                local deltaTime = CS.UnityEngine.Time.deltaTime
-                local isFinish = animationGroup:Update(deltaTime)
+    -- 使用新的动画管理器
+    local deltaTime = CS.UnityEngine.Time.deltaTime
+    local isFinished = self._Control:UpdateAnimation(deltaTime, self)
 
-                -- 如果从 waiting 状态转为 playing 状态，标记需要刷新棋盘并播放动画
-                if wasWaiting and animationGroup._State == "playing" then
-                    -- 播放该动画组的动画
-                    animationGroup:PlayAnimations(self)
-                    -- 立即刷新一次棋盘
-                    if self._Control then
-                        self._Control:ApplyRoundCountdownForAnimation()
-                        self._Control:UpdateChessboard()
-                        self:UpdateChessboard()
-                    end
-                    self._ChessboardDirty = true
-                end
-
-                if isFinish then
-                    -- 动画组完成，移除它
-                    table.remove(animationGroups, 1)
-
-                    -- 如果还有下一个动画组，标记需要刷新棋盘（为下一个技能做准备）
-                    if #animationGroups > 0 then
-                        self._ChessboardDirty = true
-                    end
-                end
-            end
-        end
-
-        -- 统一刷新棋盘（如果标记为脏）
-        if self._ChessboardDirty then
-            self._Control:UpdateChessboard()
-            self:UpdateChessboard()
-            self._ChessboardDirty = false
-        end
-
-        -- 检查是否所有动画组都已完成
-        local animationGroupsCount = animationGroups and #animationGroups or 0
-        if animationGroupsCount == 0 then
-            -- 如果还没有开始播放分数动画，先同步棋盘到最终状态，再播分数飞字（避免先飞分再刷棋盘的错误顺序）
-            if not self._IsPlayingPieceScoreAnimation then
-                -- 清除快照，让棋盘使用真实数据（新棋子出现、旧棋子移除），再刷新 UI
-                self._Control._UiData.ChessboardSnapshot = nil
-                self._Control:UpdateUiData(true)
-                self:UpdateChessboard()
-                self:StartPieceScoreAnimation()
-                -- else
-                -- 如果正在播放分数动画，检查是否完成（在 PlayNextPieceScoreAnimation 的回调中处理）
-            end
-        end
+    if isFinished then
+        self._Control:FinishAnimation()
+        self:ResetTimeScaleTo1()
     end
 end
 
@@ -338,7 +397,7 @@ function XUiLuckyTenant2Game:HandleStateAction()
             XScheduleManager.UnSchedule(self._TimerNextState)
             self._TimerNextState = false
             self._Control:NextGameState()
-        end, 1000)
+        end, UiConstants.SCHEDULE_NEXT_STATE_DELAY_MS)
         return
     end
 
@@ -361,7 +420,7 @@ function XUiLuckyTenant2Game:HandleStateAction()
             XScheduleManager.UnSchedule(self._TimerNextState)
             self._TimerNextState = false
             self._Control:NextGameState()
-        end, 1000)
+        end, UiConstants.SCHEDULE_NEXT_STATE_DELAY_MS)
         return
     end
 
@@ -433,17 +492,53 @@ function XUiLuckyTenant2Game:SetScore(value)
     if self.TxtNumScore then
         self.TxtNumScore.text = tostring(value)
     end
-    -- 分数变化时：stop 并播放一次 TxtTargetScoreEnable 动画
-    if self._LastScoreForTxtTargetScoreEnable ~= value then
-        self._LastScoreForTxtTargetScoreEnable = value
-        self:PlayTxtTargetScoreEnableAnimation()
-    end
+    self._LastScoreForTxtTargetScoreEnable = value
 end
 
----TxtTargetScoreEnable 动画：先 stop 再播放一次（在每次分数变化时调用）
+---TxtTargetScoreEnable 动画：先 stop 再播放一次（在飘字达到动画等级2或3时调用）
+---若动画播放中再次被调用，则标记“再播一次”，当前动画结束下一帧再播一次，避免重叠；定时器在 OnDisable 时回收。
 function XUiLuckyTenant2Game:PlayTxtTargetScoreEnableAnimation()
-    self:StopAnimation("TxtTargetScoreEnable")
-    self:PlayAnimation("TxtTargetScoreEnable")
+    if self._IsPlayingTxtTargetScoreEnable then
+        self._IsPlayingTxtTargetScoreTwice = true
+        return
+    end
+    self._IsPlayingTxtTargetScoreEnable = true
+    self:PlayAnimation("TxtTargetScoreEnable", function()
+        if self._IsPlayingTxtTargetScoreTwice then
+            self._IsPlayingTxtTargetScoreTwice = false
+            if self._TxtTargetScoreNextFrameTimerId then
+                XScheduleManager.UnSchedule(self._TxtTargetScoreNextFrameTimerId)
+                self._TxtTargetScoreNextFrameTimerId = nil
+            end
+            self._TxtTargetScoreNextFrameTimerId = XScheduleManager.ScheduleNextFrame(function()
+                self._TxtTargetScoreNextFrameTimerId = nil
+                self:PlayTxtTargetScoreEnableAnimation()
+            end)
+        else
+            self._IsPlayingTxtTargetScoreEnable = false
+            self._IsPlayingTxtTargetScoreTwice = false
+        end
+    end)
+end
+
+---启动循环动画（Shake等）
+---@param animName string 动画名称
+function XUiLuckyTenant2Game:StartLoopAnimation(animName)
+    if not animName then
+        return
+    end
+    -- 记录当前循环动画名称
+    self._CurrentLoopAnimation = animName
+    -- 播放动画
+    self:PlayAnimation(animName, nil, nil, CS.UnityEngine.Playables.DirectorWrapMode.Loop)
+end
+
+---停止循环动画
+function XUiLuckyTenant2Game:StopLoopAnimation()
+    if self._CurrentLoopAnimation then
+        self:StopAnimation(self._CurrentLoopAnimation)
+        self._CurrentLoopAnimation = nil
+    end
 end
 
 function XUiLuckyTenant2Game:SetAddScore(value)
@@ -452,7 +547,7 @@ function XUiLuckyTenant2Game:SetAddScore(value)
     end
 
     if value > 0 then
-        self.TxtAddScore.text = "+" .. value
+        self.TxtAddScore.text = value
         self.TxtAddScore.gameObject:SetActiveEx(true)
         if self._TimerAddScore then
             XScheduleManager.UnSchedule(self._TimerAddScore)
@@ -460,7 +555,7 @@ function XUiLuckyTenant2Game:SetAddScore(value)
         self._TimerAddScore = XScheduleManager.ScheduleOnce(function()
             self.TxtAddScore.gameObject:SetActiveEx(false)
             self._TimerAddScore = false
-        end, 3000)
+        end, UiConstants.ADD_SCORE_DISPLAY_DURATION_MS)
     end
 end
 
@@ -513,9 +608,12 @@ function XUiLuckyTenant2Game:UpdateInfo()
     local totalRound = data.TotalRound or 0
     -- 显示的总回合数最小为 1（TotalRound 在 Control 层已经处理过 quest 上限限制）
     local displayTotalRound = math.max(1, totalRound)
+    local lastTargetQuest = self._Control:GetLastTargetQuest()
+    local lastTargetQuestRound = lastTargetQuest and lastTargetQuest.Round or 0
 
     -- 更新当前回合数显示
     if self.TxtTotalTimes then
+        currentRound = math.max(1, currentRound)
         self.TxtTotalTimes.text = XUiHelper.GetText("LuckyTenant2TotalTimes", tostring(currentRound))
     end
 
@@ -533,8 +631,9 @@ function XUiLuckyTenant2Game:UpdateInfo()
         local nextQuestRound = 0
         nextQuestRound = self._Control:GetNextQuestRound()
         local remainRound = math.max(1, nextQuestRound - currentRound)
-        local upperLimit = math.max(1, displayTotalRound - currentRound + 1)
+        local upperLimit = nextQuestRound - lastTargetQuestRound
         remainRound = math.min(remainRound, upperLimit)
+        remainRound = math.max(0, remainRound)
         self.TxtTimesRemain.text = XUiHelper.GetText("LuckyTenant2TimesRemain", tostring(remainRound))
     end
 
@@ -547,6 +646,10 @@ function XUiLuckyTenant2Game:UpdateInfo()
         fillAmount = math.max(0, math.min(1, fillAmount)) -- 限制在 0-1 之间
         self.ImgBarScore.fillAmount = fillAmount
         self.ImgBarScore.color = XUiHelper.Hexcolor2Color("f1d58f")
+        -- 本回合超出上限（当前分数>=阶段目标）时显示 FxUiLuckyTenant202Loop03
+        if self.FxUiLuckyTenant202Loop03 then
+            self.FxUiLuckyTenant202Loop03.gameObject:SetActiveEx(fillAmount >= 1 and targetQuestScore > 0)
+        end
     end
 
     self:UpdateBagAmount()
@@ -620,24 +723,15 @@ function XUiLuckyTenant2Game:UpdateQuestList()
     local currentRound = data.Round or 0
 
     if self.GridRound then
-        -- 逆序显示 Quests
-        local reversedQuests = {}
-        local questCount = #data.Quests
-        for i = questCount, 1, -1 do
-            reversedQuests[#reversedQuests + 1] = data.Quests[i]
-        end
+        -- 使用 Control 提供的显示顺序（当前、前一个、后一个、完美/普通通关、最后一个）
+        local questsToShow = data.Quests or {}
+        XTool.UpdateDynamicItem(self._GridRounds, questsToShow, self.GridRound, XUiLuckyTenant2GameGridRound, self)
 
-        -- 使用 UpdateDynamicItem 更新列表（逆序）
-        XTool.UpdateDynamicItem(self._GridRounds, reversedQuests, self.GridRound, XUiLuckyTenant2GameGridRound, self)
-
-        -- 更新每个 grid，传递当前回合数和 quest 列表用于区间判断
         for i = 1, #self._GridRounds do
             local gridRound = self._GridRounds[i]
-            local questData = reversedQuests[i]
-            -- 计算原始索引（用于区间判断）
-            local originalIndex = questCount - i + 1
+            local questData = questsToShow[i]
             if gridRound and questData then
-                gridRound:Update(questData, currentRound, data.Quests, originalIndex)
+                gridRound:Update(questData, currentRound, questsToShow, questData.OriginalIndex or i)
             end
         end
     end
@@ -726,6 +820,13 @@ function XUiLuckyTenant2Game:_OnGuideEvent(value)
     end
     if value == 1 then
         self._IsPause = false
+        -- 指引恢复时，补执行弹窗关闭时被暂停的 NextGameState（与 1 期 ShowNextQuestGoals 定时器行为一致）
+        if self._PendingNextStateFromPopupClose then
+            self._PendingNextStateFromPopupClose = false
+            self._Control:NextGameState()
+            self._Control:SetUiDataDirty(true)
+            self:UpdateInfo()
+        end
     end
 end
 
@@ -778,6 +879,49 @@ function XUiLuckyTenant2Game:GetGridByXY(x, y)
 
     local position = (y - 1) * column + x
     return self:GetGridByPosition(position)
+end
+
+-- ==================== 中点刷新机制 ====================
+-- 动画播放期间，在动画进行到一半时刷新/隐藏棋子，使视觉效果更自然
+-- 即使中点刷新失败，Control:FinishAnimation() 会在动画结束后强制刷新整个棋盘（保底机制）
+
+---从游戏数据刷新指定位置的格子显示
+---由 AnimationManager 在 AddPiece/UpdatePiece 动画播放到一半时调用
+---@param x number X坐标
+---@param y number Y坐标
+function XUiLuckyTenant2Game:RefreshGridFromGame(x, y)
+    if not self._Control then
+        return
+    end
+
+    local grid = self:GetGridByXY(x, y)
+    if not grid then
+        return
+    end
+
+    -- 从游戏数据层获取最新的格子数据并刷新显示
+    if self._Control.GetCellDisplayDataFromGame then
+        local data = self._Control:GetCellDisplayDataFromGame(x, y)
+        if data then
+            grid:Update(data)
+        end
+    end
+end
+
+---隐藏指定位置的棋子
+---由 AnimationManager 在 DeletePiece 动画播放到一半时调用
+---@param x number X坐标
+---@param y number Y坐标
+function XUiLuckyTenant2Game:HideGridPiece(x, y)
+    local grid = self:GetGridByXY(x, y)
+    if not grid then
+        return
+    end
+
+    -- 隐藏棋子面板
+    if grid.PanelChess and grid.PanelChess.gameObject then
+        grid.PanelChess.gameObject:SetActiveEx(false)
+    end
 end
 
 ---播放分数动画
@@ -847,7 +991,7 @@ function XUiLuckyTenant2Game:PlayAnimationGetScore(x, y, value, duration, callba
     end
     -- 在 Open() 之后设置文本（避免被 Update() 覆盖）
     if getScoreGrid and getScoreGrid.TextGetScore then
-        getScoreGrid.TextGetScore.text = "+" .. tostring(value)
+        getScoreGrid.TextGetScore.text = tostring(value)
     end
 
     -- 播放移动动画
@@ -878,125 +1022,6 @@ function XUiLuckyTenant2Game:PlayAnimationGetScore(x, y, value, duration, callba
         -- 如果没有 Transform，直接完成
         if callback then
             callback()
-        end
-    end
-end
-
----开始播放所有棋子的分数动画
-function XUiLuckyTenant2Game:StartPieceScoreAnimation()
-    if not self._Control then
-        return
-    end
-
-    -- 收集所有棋子的分数数据
-    local data = self._Control:GetUiData()
-    if not data or not data.Chessboard then
-        self:FinishPieceScoreAnimation()
-        return
-    end
-
-    -- 收集所有有效棋子的分数数据
-    self._PieceScoreAnimations = {}
-    for _, chessData in ipairs(data.Chessboard) do
-        if chessData.IsValid and chessData.X and chessData.Y then
-            local value = chessData.Score or chessData.Value or 0
-            if value > 0 then
-                self._PieceScoreAnimations[#self._PieceScoreAnimations + 1] = {
-                    x = chessData.X,
-                    y = chessData.Y,
-                    value = value
-                }
-            end
-        end
-    end
-
-    -- 如果没有需要播放的动画，直接完成
-    if #self._PieceScoreAnimations == 0 then
-        self:FinishPieceScoreAnimation()
-        return
-    end
-
-    -- 初始化动画状态
-    self._IsPlayingPieceScoreAnimation = true
-    self._PieceScoreAnimationIndex = 0
-
-    -- 获取动画开始前的基准分数（当前总分 - 本回合分数）
-    if self._Control then
-        local game = self._Control:GetGame()
-        if game then
-            local totalScore = game:GetTotalScore() or 0
-            local scoreThisRound = game:GetScoreThisRound() or 0
-            self._BaseScoreForAnimation = totalScore - scoreThisRound
-            self._AccumulatedScoreForAnimation = self._BaseScoreForAnimation
-        end
-    end
-
-    -- 开始播放第一个动画
-    self:PlayNextPieceScoreAnimation()
-end
-
----播放下一个棋子分数动画
-function XUiLuckyTenant2Game:PlayNextPieceScoreAnimation()
-    if not self._IsPlayingPieceScoreAnimation then
-        return
-    end
-
-    self._PieceScoreAnimationIndex = self._PieceScoreAnimationIndex + 1
-
-    if self._PieceScoreAnimationIndex > #self._PieceScoreAnimations then
-        -- 所有动画播放完成
-        self:FinishPieceScoreAnimation()
-        return
-    end
-
-    local animData = self._PieceScoreAnimations[self._PieceScoreAnimationIndex]
-    if not animData then
-        self:FinishPieceScoreAnimation()
-        return
-    end
-
-    -- 播放单个分数动画，动画完成后更新累计分数并播放下一个
-    local duration = 0.5 -- 每个动画持续时间
-    self:PlayAnimationGetScore(animData.x, animData.y, animData.value, duration, function()
-        -- 动画完成，更新累计分数
-        self._AccumulatedScoreForAnimation = self._AccumulatedScoreForAnimation + animData.value
-
-        -- 更新分数显示
-        if self.TxtNumScore then
-            self.TxtNumScore.text = tostring(math.floor(self._AccumulatedScoreForAnimation))
-        end
-
-        -- 每有一个分数飞到时，播放一次 TxtTargetScoreEnable
-        self:PlayTxtTargetScoreEnableAnimation()
-
-        -- 播放下一个动画（延迟一小段时间）
-        XScheduleManager.ScheduleOnce(function()
-            self:PlayNextPieceScoreAnimation()
-        end, 50) -- 50ms 延迟
-    end)
-end
-
----完成所有棋子分数动画
-function XUiLuckyTenant2Game:FinishPieceScoreAnimation()
-    self._IsPlayingPieceScoreAnimation = false
-    self._PieceScoreAnimations = {}
-    self._PieceScoreAnimationIndex = 0
-
-    -- 更新到最终分数（从 Control 层获取）；已按“每飞一次播一次”播完，此处不再触发 TxtTargetScoreEnable
-    if self._Control then
-        local uiData = self._Control:GetUiData()
-        if uiData then
-            local finalScore = uiData.Score or 0
-            self._LastScoreForTxtTargetScoreEnable = finalScore
-            self:SetScore(finalScore)
-        end
-    end
-
-    -- 调用 FinishAnimation 继续游戏流程
-    if self._Control then
-        self._Control:FinishAnimation()
-        if CS.UnityEngine.Time.timeScale ~= 1 then
-            CS.UnityEngine.Time.timeScale = 1
         end
     end
 end
@@ -1093,7 +1118,7 @@ function XUiLuckyTenant2Game:PlayAnimationGetItem(x, y, itemId, duration, callba
 end
 
 ---播放添加棋子动画（生成棋子）
----动画阶段棋盘用快照显示，快照不包含新加的棋子，所以先从当前游戏状态取该格数据并刷新格子，再播特效
+---刷新由 AnimationManager 中点刷新机制控制（RefreshGridFromGame）
 ---@param pieceId number 棋子ID
 ---@param x number|nil X坐标（可选）
 ---@param y number|nil Y坐标（可选）
@@ -1105,30 +1130,20 @@ function XUiLuckyTenant2Game:PlayAnimationAddPiece(pieceId, x, y)
     if not grid then
         return
     end
-    -- 动画阶段棋盘是快照，新棋子不在快照里；先用当前游戏状态刷新该格，让新棋子显示出来
-    if self._Control and self._Control.GetCellDisplayDataFromGame then
-        local data = self._Control:GetCellDisplayDataFromGame(x, y)
-        if data then
-            grid:Update(data)
-        end
+    -- 播放该格子的生成/出现特效；有棋子出生在 GridChess 时播放 ChessBorn
+    if grid.PlayAnimation then
+        grid:PlayAnimation("ChessBorn")
     end
-    -- 再播放该格子的生成/出现特效
     if grid.ShowEffect then
         grid:ShowEffect()
-    elseif grid.Effect and grid.Effect.gameObject then
-        grid.Effect.gameObject:SetActiveEx(true)
-        XScheduleManager.ScheduleOnce(function()
-            if grid and grid.Effect and grid.Effect.gameObject then
-                grid.Effect.gameObject:SetActiveEx(false)
-            end
-        end, 800)
     end
 end
 
 ---播放更新棋子动画（属性变化：值、等级、状态等）
----动画阶段棋盘是快照，格子显示的是旧数据；先用当前游戏状态刷新该格再播特效，否则看不到数值/等级等变化
 ---@param pieceUid number 棋子UID
-function XUiLuckyTenant2Game:PlayAnimationUpdatePiece(pieceUid)
+---@param skillId number|nil 来源技能ID（动画组传入，用于日志）
+---@param refreshImmediately boolean|nil 是否立即刷新（默认false，由AnimationManager控制刷新时机）
+function XUiLuckyTenant2Game:PlayAnimationUpdatePiece(pieceUid, skillId, refreshImmediately)
     if not pieceUid or pieceUid <= 0 then
         return
     end
@@ -1160,24 +1175,14 @@ function XUiLuckyTenant2Game:PlayAnimationUpdatePiece(pieceUid)
         return
     end
 
-    -- 动画阶段格子显示的是快照旧数据，先用当前游戏状态刷新该格，再播特效
     local x, y = pieceData.X, pieceData.Y
-    if x and y and self._Control.GetCellDisplayDataFromGame then
+
+    -- 如果需要立即刷新（兼容旧逻辑）
+    if refreshImmediately and x and y and self._Control.GetCellDisplayDataFromGame then
         local data = self._Control:GetCellDisplayDataFromGame(x, y)
         if data then
             grid:Update(data)
         end
-    end
-
-    if grid.ShowEffect then
-        grid:ShowEffect()
-    elseif grid.Effect and grid.Effect.gameObject then
-        grid.Effect.gameObject:SetActiveEx(true)
-        XScheduleManager.ScheduleOnce(function()
-            if grid and grid.Effect and grid.Effect.gameObject then
-                grid.Effect.gameObject:SetActiveEx(false)
-            end
-        end, 800)
     end
 end
 
@@ -1205,24 +1210,114 @@ function XUiLuckyTenant2Game:GetGridByPieceUidOrXY(pieceUid, x, y)
     return nil
 end
 
+---单回合内该格子该类型特效是否已播过（用于同格同类型只播一次）
+---@param effectType string GridEffectType 枚举值（Countdown/Delete/WeaponSkill/Infection/RoleEliminate）
+---@param gridKey string 格子键，如 "x,y" 或 "uid_xxx"
+---@return boolean
+function XUiLuckyTenant2Game:_WasGridEffectPlayedInGroup(effectType, gridKey)
+    if not self._GridEffectPlayedInGroup or not effectType or not gridKey then
+        return false
+    end
+    local set = self._GridEffectPlayedInGroup[effectType]
+    return set and set[gridKey] == true
+end
+
+---标记单回合内该格子该类型特效已播
+---@param effectType string
+---@param gridKey string
+function XUiLuckyTenant2Game:_MarkGridEffectPlayedInGroup(effectType, gridKey)
+    if not effectType or not gridKey then
+        return
+    end
+    if not self._GridEffectPlayedInGroup then
+        self._GridEffectPlayedInGroup = {}
+    end
+    if not self._GridEffectPlayedInGroup[effectType] then
+        self._GridEffectPlayedInGroup[effectType] = {}
+    end
+    self._GridEffectPlayedInGroup[effectType][gridKey] = true
+end
+
+---清空格子特效播放记录（每回合动画开始前调用）
+function XUiLuckyTenant2Game:ClearGridEffectPlayedInGroup()
+    self._GridEffectPlayedInGroup = nil
+end
+
 ---播放主动发动技能动画（发动技能的棋子）
 ---@param pieceUid number 棋子UID
 ---@param x number X坐标
 ---@param y number Y坐标
-function XUiLuckyTenant2Game:PlayAnimationActivateSkillEnable(pieceUid, x, y)
+---@param skillId number 技能配置ID（用于武器类/角色升级类技能播放 FxUiLuckyTenant213）
+function XUiLuckyTenant2Game:PlayAnimationActivateSkillEnable(pieceUid, x, y, skillId)
     local grid = self:GetGridByPieceUidOrXY(pieceUid, x, y)
-    if grid and grid.PlayAnimation then
-        grid:PlayAnimation("ActivateSkillEnable")
+    if not grid then return end
+    local gridKey = (x and y and x > 0 and y > 0) and (tostring(x) .. "," .. tostring(y)) or (grid._Data and grid._Data.X and grid._Data.Y and (tostring(grid._Data.X) .. "," .. tostring(grid._Data.Y))) or ("uid_" .. tostring(pieceUid))
+    -- 武器类（Type401-407）、角色升级（Type301）发动时复用 FxUiLuckyTenant213；单回合内同一格子只播一次（skillId 需转换为 skillType 再比较）
+    local skillType = self._Control and self._Control:GetSkillTypeBySkillId(skillId)
+    local isActivateSkill213 = skillType and ((skillType >= Skill.Type401 and skillType <= Skill.Type407) or skillType == Skill.Type301)
+    if isActivateSkill213 and not self:_WasGridEffectPlayedInGroup(GridEffectType.WeaponSkill, gridKey) then
+        self:_MarkGridEffectPlayedInGroup(GridEffectType.WeaponSkill, gridKey)
+        grid:PlayEffectWeaponSkill(skillId)
     end
+    -- 宝盒品质提升（Type507品质+1、Type502重生品质提升）时播放 FxUiLuckyTenant213；单回合内同一格子只播一次
+    if skillType then
+        if skillType == Skill.Type507 and not self:_WasGridEffectPlayedInGroup(GridEffectType.BoxUpgrade, gridKey) then
+            self:_MarkGridEffectPlayedInGroup(GridEffectType.BoxUpgrade, gridKey)
+            grid:PlayEffectBoxUpgrade(skillId)
+        elseif skillType == Skill.Type502 and not self:_WasGridEffectPlayedInGroup(GridEffectType.BoxUpgrade, gridKey) then
+            self:_MarkGridEffectPlayedInGroup(GridEffectType.BoxUpgrade, gridKey)
+            grid:PlayEffectBoxReborn(skillId)
+        end
+    end
+    grid:PlayAnimation("ActivateSkillEnable")
 end
 
 ---播放受技能影响动画（被技能影响的棋子）
 ---@param pieceUid number 棋子UID（可选，无则用 x,y 定位）
 ---@param x number X坐标
 ---@param y number Y坐标
-function XUiLuckyTenant2Game:PlayAnimationAffectedBySkillEnable(pieceUid, x, y)
+---@param skillId number 技能配置ID（可选，用于传染/角色消除播放对应特效）
+---@param fromPieceUid number|nil 主动释放技能的棋子UID（可选，传染特效优先在该棋子播放）
+function XUiLuckyTenant2Game:PlayAnimationAffectedBySkillEnable(pieceUid, x, y, skillId, fromPieceUid)
     local grid = self:GetGridByPieceUidOrXY(pieceUid, x, y)
-    if grid and grid.PlayAnimation then
+    if not grid then return end
+
+    local gridKey = (x and y and x > 0 and y > 0) and (tostring(x) .. "," .. tostring(y)) or (grid._Data and grid._Data.X and grid._Data.Y and (tostring(grid._Data.X) .. "," .. tostring(grid._Data.Y))) or ("uid_" .. tostring(pieceUid))
+    local skillType = self._Control and skillId and self._Control:GetSkillTypeBySkillId(skillId)
+
+    -- 子虫/红潮传染（Type207/208/601）播放传染特效；角色消除（Type304/305/306）播放被角色消除特效；
+    -- 去重规则：同回合同类型下，同一UID只播一次（无UID时回退到坐标）
+    if skillType then
+        local isInfection = skillType == Skill.Type207 or skillType == Skill.Type208 or skillType == Skill.Type601
+        local isRoleEliminate = skillType == Skill.Type304 or skillType == Skill.Type305 or skillType == Skill.Type306
+
+        if isInfection then
+            -- 传染特效播在“主动释放技能”的棋子上；找不到时回退到受影响棋子
+            local infectionGrid = grid
+            local infectionEffectKey = (pieceUid and pieceUid > 0) and ("uid_" .. tostring(pieceUid)) or gridKey
+            if fromPieceUid and fromPieceUid > 0 then
+                local sourceGrid = self:GetGridByPieceUidOrXY(fromPieceUid)
+                if sourceGrid then
+                    infectionGrid = sourceGrid
+                end
+                infectionEffectKey = "uid_" .. tostring(fromPieceUid)
+            end
+            if not self:_WasGridEffectPlayedInGroup(GridEffectType.Infection, infectionEffectKey) then
+                self:_MarkGridEffectPlayedInGroup(GridEffectType.Infection, infectionEffectKey)
+                infectionGrid:PlayEffectInfectionSkill(skillId)
+            end
+        elseif isRoleEliminate then
+            local roleUid = pieceUid or (grid and grid._Data and grid._Data.Uid) or 0
+            local roleEffectKey = (roleUid and roleUid > 0) and ("uid_" .. tostring(roleUid)) or gridKey
+            local shouldPlay = skillType == Skill.Type305 or not self:_WasGridEffectPlayedInGroup(GridEffectType.RoleEliminate, roleEffectKey)
+            if shouldPlay then
+                self:_MarkGridEffectPlayedInGroup(GridEffectType.RoleEliminate, roleEffectKey)
+                grid:PlayEffectRoleEliminate(skillId)
+            end
+        end
+    end
+
+    if grid.PlayAnimation then
         grid:PlayAnimation("AffectedBySkillEnable")
     end
 end
@@ -1232,7 +1327,39 @@ end
 ---@param x number X坐标
 ---@param y number Y坐标
 ---@param fromPieceUid number 发出消除动作的棋子UID（可选）
-function XUiLuckyTenant2Game:PlayAnimationDeletePiece(pieceUid, x, y, fromPieceUid)
+---@param pieceId number 被删棋子ID（可选，用于宝盒/非宝盒消除特效 208/209）
+---@param skillId number|nil 来源技能ID（动画组传入，用于日志）
+---@param hideImmediately boolean|nil 是否立即执行隐藏动画（默认true，false时由AnimationManager控制隐藏时机）
+function XUiLuckyTenant2Game:PlayAnimationDeletePiece(pieceUid, x, y, fromPieceUid, pieceId, skillId, hideImmediately)
+    -- 默认立即执行隐藏动画（兼容旧逻辑）
+    if hideImmediately == nil then
+        hideImmediately = true
+    end
+
+    -- 在被消除的格子上播放消除特效（宝盒 209，其它 208）；单回合内同一格子只播一次（优先按UID去重，其次按坐标）
+    local grid = self:GetGridByPieceUidOrXY(pieceUid, x, y)
+    local gridKey = (pieceUid and pieceUid > 0) and ("uid_" .. tostring(pieceUid))
+        or ((x and y) and (tostring(x) .. "," .. tostring(y)) or nil)
+    if grid and not self:_WasGridEffectPlayedInGroup(GridEffectType.Delete, gridKey) then
+        self:_MarkGridEffectPlayedInGroup(GridEffectType.Delete, gridKey)
+        if pieceId and self._Control and self._Control._Model then
+            local pieceType = self._Control._Model:GetLuckyTenant2ChessTypeById(pieceId)
+            local XLuckyTenant2Enum = require("XModule/XLuckyTenant2/Game/XLuckyTenant2Enum")
+            if pieceType == XLuckyTenant2Enum.PieceType.Box then
+                grid:PlayEffectEliminatedBox(skillId)
+            else
+                grid:PlayEffectEliminatedNormal(skillId)
+            end
+        else
+            grid:PlayEffectEliminatedNormal(skillId)
+        end
+    end
+
+    -- 如果不立即执行隐藏动画，只播放特效，由AnimationManager控制隐藏时机
+    if not hideImmediately then
+        return
+    end
+
     -- 步骤1: 如果有fromPieceUid，先晃动发出消除动作的棋子
     if fromPieceUid and fromPieceUid > 0 then
         self:_PlayShakeAnimationForPiece(fromPieceUid, function()
@@ -1305,8 +1432,8 @@ function XUiLuckyTenant2Game:_PlayShakeAnimationForPiece(pieceUid, callback)
 
     -- 使用简单的缩放动画模拟晃动效果（可以后续优化为真正的晃动动画）
     local originalScale = targetTransform.localScale
-    local shakeScale = CS.UnityEngine.Vector3(originalScale.x * 1.1, originalScale.y * 1.1, originalScale.z)
-    local duration = 0.15 -- 晃动时间
+    local shakeScale = CS.UnityEngine.Vector3(originalScale.x * UiConstants.SHAKE_SCALE_FACTOR, originalScale.y * UiConstants.SHAKE_SCALE_FACTOR, originalScale.z)
+    local duration = UiConstants.SHAKE_ANIMATION_DURATION
 
     -- 快速放大然后恢复
     XUiHelper.DoScale(targetTransform, originalScale, shakeScale, duration / 2, XUiHelper.EaseType.Sin, function()
@@ -1342,8 +1469,8 @@ function XUiLuckyTenant2Game:_PlayHighlightAnimationForPiece(pieceUid, x, y, cal
 
     -- 使用简单的缩放动画模拟高亮效果（可以后续优化为颜色或发光效果）
     local originalScale = targetTransform.localScale
-    local highlightScale = CS.UnityEngine.Vector3(originalScale.x * 1.15, originalScale.y * 1.15, originalScale.z)
-    local duration = 0.2 -- 高亮时间
+    local highlightScale = CS.UnityEngine.Vector3(originalScale.x * UiConstants.HIGHLIGHT_SCALE_FACTOR, originalScale.y * UiConstants.HIGHLIGHT_SCALE_FACTOR, originalScale.z)
+    local duration = UiConstants.HIGHLIGHT_ANIMATION_DURATION
 
     -- 放大然后恢复
     XUiHelper.DoScale(targetTransform, originalScale, highlightScale, duration / 2, XUiHelper.EaseType.Sin, function()
@@ -1385,7 +1512,7 @@ function XUiLuckyTenant2Game:_PlayDeleteAnimationForPiece(pieceUid, x, y)
 
     -- 使用 XUiHelper.DoScale 播放缩放消失动画
     local zeroScale = CS.UnityEngine.Vector3.zero
-    local duration = 0.3
+    local duration = UiConstants.DELETE_ANIMATION_DURATION
 
     XUiHelper.DoScale(targetTransform, originalScale, zeroScale, duration, XUiHelper.EaseType.Sin, function()
         -- 动画完成后，确保对象被隐藏并恢复原始缩放
@@ -1398,6 +1525,23 @@ end
 
 function XUiLuckyTenant2Game:OnBtnBackClick()
     XLuaUiManager.Open("UiLuckyTenant2PopupNormal")
+end
+
+function XUiLuckyTenant2Game:ResetTimeScaleTo1()
+    CS.UnityEngine.Time.timeScale = UiConstants.TIME_SCALE_NORMAL
+end
+
+function XUiLuckyTenant2Game:PlayEffectLevel0()
+    if self.FxUiLuckyTenant217 then
+        self.FxUiLuckyTenant217.gameObject:SetActiveEx(false)
+        self.FxUiLuckyTenant217.gameObject:SetActiveEx(true)
+    end
+end
+
+function XUiLuckyTenant2Game:_OnGuideSkip()
+    if not XDataCenter.GuideManager.CheckIsInGuide() then
+        self._IsPause = false
+    end
 end
 
 return XUiLuckyTenant2Game

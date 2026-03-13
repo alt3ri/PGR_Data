@@ -3981,7 +3981,7 @@
     },
     {
         "Key": "InTeamCantLookFashion",
-        "Text": "Cannot view Coating details in Co-op room"
+        "Text": "\u8054\u673a\u623f\u95f4\u4e2d\u4e0d\u80fd\u67e5\u770b\u6d82\u88c5\u8be6\u60c5"
     },
     {
         "Key": "DormNullFurniture",
@@ -4261,7 +4261,7 @@
     },
     {
         "Key": "SetInputFirstKey",
-        "Text": " (Release button to reflect changes)"
+        "Text": "(Release to Apply Changes)"
     },
     {
         "Key": "DormVistorFriend",
@@ -5033,11 +5033,11 @@
     },
     {
         "Key": "PlayBeforeStory",
-        "Text": "Play Pre-combat Story"
+        "Text": "Play pre-combat Cutscene"
     },
     {
         "Key": "PlayAfterStory",
-        "Text": "Play Post-combat Story"
+        "Text": "Play post-combat Cutscene"
     },
     {
         "Key": "MovieSkipTipTitle",
@@ -9657,7 +9657,7 @@
     },
     {
         "Key": "SpecialFashionShopGiftTitle",
-        "Text": "   Gift Display"
+        "Text": "Display Items"
     },
     {
         "Key": "WhiteValenDateInvite",
@@ -10973,11 +10973,11 @@
     },
     {
         "Key": "InvertCardGameConstomCountBlue",
-        "Text": "<color=#744EF1>{0}</color> \u53ef\u4ee5\u7ffb\u5f00\u5361\u724c"
+        "Text": "*<color=#744EF1>{0}</color> to flip"
     },
     {
         "Key": "InvertCardGameConstomCountRed",
-        "Text": "<color=#744EF1>{0}</color> \u53ef\u4ee5\u7ffb\u5f00\u5361\u724c"
+        "Text": "*<color=#744EF1>{0}</color> to flip"
     },
     {
         "Key": "InvertCardGameHaveNotEnoughItem",
@@ -14977,7 +14977,7 @@
     },
     {
         "Key": "EquipGuideEquipNotExist",
-        "Text": "No equipable items available."
+        "Text": "No equipment can be equipped for now."
     },
     {
         "Key": "EquipGuideEquipCanEquips",
@@ -17465,7 +17465,7 @@
     },
     {
         "Key": "ConnectingLineMoney",
-        "Text": "Insufficient [Black Gold Bear Cards]. Unable to unlock the stage."
+        "Text": "\u3010\u9ed1\u91d1\u718a\u5361\u3011\u4e0d\u8db3\uff0c\u65e0\u6cd5\u5f00\u542f\u5173\u5361"
     },
     {
         "Key": "ConnectingLineStage",
@@ -19396,6 +19396,30 @@
         "Text": "..."
     },
     {
+        "Key": "LuckyTenant2TotalTimes",
+        "Text": "\u7b2c{0}\u56de"
+    },
+    {
+        "Key": "LuckyTenant2Round",
+        "Text": "Round {0}"
+    },
+    {
+        "Key": "LuckyTenant2TimesRemain",
+        "Text": "\u5269\u4f59{0}\u56de"
+    },
+    {
+        "Key": "LuckyTenant2BondLevelDown",
+        "Text": "<color=#43454a>{0}\u7f81\u7eca\u7b49\u7ea7\u4e0b\u964d</color>"
+    },
+    {
+        "Key": "LuckyTenant2BondLevelUp",
+        "Text": "<color=#f09235>{0}</color><color=#356395>\u7f81\u7eca\u7b49\u7ea7\u63d0\u5347</color>"
+    },
+    {
+        "Key": "LuckyTenant2PopupSuccessRound",
+        "Text": " \u8f6e\u6570: <color=#5089c6>{0}</color>/{1}"
+    },
+    {
         "Key": "FavorabilityStoryUnlockProgressLabel",
         "Text": "Unlock Story"
     },
@@ -19437,7 +19461,7 @@
     },
     {
         "Key": "MultiMouseHunterUnVote",
-        "Text": "Support All"
+        "Text": "\u4e00\u952e\u652f\u6301"
     },
     {
         "Key": "MultiMouseHunterVote",
@@ -19445,7 +19469,7 @@
     },
     {
         "Key": "MultiMouseHunterVoted",
-        "Text": "{0} supported"
+        "Text": "\u5df2\u652f\u6301{0}"
     },
     {
         "Key": "MultiMouseHunterSubUnVote",
@@ -19457,7 +19481,7 @@
     },
     {
         "Key": "MultiMouseHunterSubVoted",
-        "Text": "Support!"
+        "Text": "Support:!"
     },
     {
         "Key": "MultiMouseHunterChoice",
@@ -19469,7 +19493,7 @@
     },
     {
         "Key": "MultiMouseHunterVoteVictory",
-        "Text": "Congrats on {0}'s victory"
+        "Text": "\u606d\u559c\u201c{0}\u201d\u83b7\u80dc"
     },
     {
         "Key": "MultiMouseHunterVoteVictoryGet",
@@ -19549,7 +19573,7 @@
     },
     {
         "Key": "InRoomSkipTip",
-        "Text": "Cannot navigate while in co-op room"
+        "Text": "\u8054\u673a\u623f\u95f4\u4e2d\u65e0\u6cd5\u8df3\u8f6c"
     },
     {
         "Key": "VersionGiftLeftTime",
@@ -23516,10 +23540,6 @@
         "Text": "Switch to this Coating immediately?"
     },
     {
-        "Key": "FashionSuitDiscountActivityTip",
-        "Text": "Discount expires in: {0}"
-    },
-    {
         "Key": "TeamPrefabWeaponNotExistConflict",
         "Text": "Some equipment in the current team is unavailable. Adjust your setup before deploying."
     },
@@ -23601,19 +23621,55 @@
     },
     {
         "Key": "FashionActivitySecondTag",
-        "Text": "Special Offer"
+        "Text": "\u7279\u60e0"
     },
     {
         "Key": "FashionActivityRemainDays",
-        "Text": "Returns to original price in {0} day(s)."
+        "Text": "{0}\u5929\u540e\u6062\u590d\u539f\u4ef7"
     },
     {
         "Key": "FashionActivityRemainNotEnoughDay",
-        "Text": "Returns to original price in under 1 day."
+        "Text": "\u4e0d\u8db31\u5929\u6062\u590d\u539f\u4ef7"
+    },
+    {
+        "Key": "FashionGroupSalesDesc",
+        "Text": "\u5957\u88c5\u5305\u542b\u89d2\u8272\u6d82\u88c5\u3001\u6b66\u5668\u6d82\u88c5\u548c\u8d60\u54c1\u5934\u50cf"
+    },
+    {
+        "Key": "FashionDetailGroupSalesTitle1",
+        "Text": "Coating Set"
+    },
+    {
+        "Key": "FashionDetailGroupSalesTitle2",
+        "Text": "\u5957\u88c5\u7b80\u4ecb"
+    },
+    {
+        "Key": "FashionGroupSalesPopupTitle",
+        "Text": "\u662f\u5426\u786e\u8ba4\u82b1\u8d39<color=#0D70BC>{0}</color>{1}\u8d2d\u4e70<color=#0D70BC>{2}</color>"
+    },
+    {
+        "Key": "FashionAddToRandomTip",
+        "Text": "\u5df2\u52a0\u5165\u968f\u673a\u6d82\u88c5"
+    },
+    {
+        "Key": "FashionSuitGroupSalesDesc",
+        "Text": "\u5957\u88c5\u5305\u542b\u6b66\u5668\u6d82\u88c5\u3001\u6b66\u5668\u6d82\u88c5\u548c\u8d60\u54c1\u5934\u50cf\u3002\u5176\u4e2d\u6b66\u5668\u6d82\u88c5\u4e0d\u8ba1\u5165\u7cfb\u5217\u6536\u96c6\u8fdb\u5ea6\u3002"
+    },
+    {
+        "Key": "FashionGroupSalesPopupItem1",
+        "Text": "Character Coating"
+    },
+    {
+        "Key": "FashionGroupSalesPopupItem2",
+        "Text": "Weapon Coating"
+    },
+    {
+        "Key": "FashionGroupSalesPopupItem3",
+        "Text": "\u5168\u5957\u6d82\u88c5"
     },
     {
         "Key": "SwitchableScenePcTip",
-        "Text": "Hold Alt and move the mouse to interact."
+        "Text": "\u6309\u4f4fAlt\u952e\u79fb\u52a8\u9f20\u6807\uff0c\u53ef\u4e0e\u573a\u666f\u4ea4\u4e92"
     },
     {
         "Key": "DrawCanLiverWeekTaskFinish",
@@ -23629,18 +23685,38 @@
     },
     {
         "Key": "DlcMultiPlayerSkillTips1",
-        "Text": "Skill slots not full. Please continue equipping."
+        "Text": "\u6280\u80fd\u672a\u88c5\u914d\u6ee1\uff0c\u8bf7\u7ee7\u7eed\u88c5\u914d"
     },
     {
         "Key": "DlcMultiPlayerSkillTips2",
-        "Text": "The slots are full. Please remove a skill first."
+        "Text": "\u6280\u80fd\u5df2\u6ee1\uff0c\u8bf7\u5148\u5378\u4e0b\u5176\u4ed6\u6280\u80fd"
+    },
+    {
+        "Key": "SubPackageDeleteConfirm",
+        "Text": "\u786e\u8ba4\u8981\u5220\u9664\u5206\u5305{0}\u5417\uff1f"
     },
     {
         "Key": "DlcRelinkMateForceExit",
-        "Text": "Co-op connection interrupted due to network error. Please check your network connection."
+        "Text": "\u8054\u673a\u51fa\u73b0\u7f51\u7edc\u5f02\u5e38\u5bfc\u81f4\u4e2d\u65ad\uff0c\u8bf7\u68c0\u67e5\u8054\u7f51\u73af\u5883\u3002"
+    },
+    {
+        "Key": "UiShopBtnActivityTagName",
+        "Text": "\u4e0a\u65b0"
     },
     {
         "Key": "DiscountActivityTip",
         "Text": "<color=#626c78>Discount expires in:</color> {0}"
+    },
+    {
+        "Key": "UiNewDrawMainShopBubbleText",
+        "Text": "\u53ef\u76f4\u63a5\u5151\u6362"
+    },
+    {
+        "Key": "UiBuyAssetHasCount",
+        "Text": "\u73b0\u6709:{0}"
+    },
+    {
+        "Key": "UsePackageOverMaxCount",
+        "Text": "\u4f7f\u7528{0}\u5df2\u5230\u8fbe\u4e0a\u9650"
     }
 ]

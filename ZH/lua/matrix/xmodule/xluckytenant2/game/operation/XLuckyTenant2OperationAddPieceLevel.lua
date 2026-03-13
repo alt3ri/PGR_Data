@@ -50,22 +50,11 @@ function XLuckyTenant2OperationAddPieceLevel:Do(ctx)
     local currentLevel = piece:GetLevel() or 0
     piece:AddLevel(self._LevelDelta)
     
-    -- 如果等级增加了（升级），自动标记"刚升级"，供Type504等技能检测
+    -- 如果等级增加了（升级），标记"刚升级"，供Type504等技能检测
+    -- 注意：不能修改Upgrade状态的RemainRounds，否则会破坏Type301的升级倒计时
     if self._LevelDelta > 0 then
-        local TriggerState = XLuckyTenant2Enum.TriggerState
-        local upgradeState = piece:GetState(TriggerState.Upgrade)
-        if upgradeState then
-            -- 将Upgrade状态倒计时设为0，表示"刚升级"
-            -- 这是统一的升级标记机制，所有升级技能都会自动触发
-            upgradeState:SetRemainRounds(0)
-        end
+        piece:MarkJustLeveledUp()
     end
-    
-    if XMVCA.XLuckyTenant2 then
-        XMVCA.XLuckyTenant2:Print("[XLuckyTenant2OperationAddPieceLevel] 棋子UID:", self._PieceUid, 
-            "等级变化:", currentLevel, "->", piece:GetLevel(), "技能ID:", self._SkillId)
-    end
-    
     return true, nil
 end
 

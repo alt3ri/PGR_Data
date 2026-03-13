@@ -17,9 +17,9 @@ function XUiSoloReformChapterDetail:OnAwake()
     self:BindHelpBtn(self.BtnHelp, self._Control:GetHelpString())
 end
 
-function XUiSoloReformChapterDetail:OnStart(chapterId)
+function XUiSoloReformChapterDetail:OnStart(chapterId,defaultSelectStage)
     self._ChapterId = chapterId
-    XMVCA.XSoloReform:SetEnterChapterId(chapterId)
+    self._ResumetageId = defaultSelectStage
     self:InitPanel()
     self:InitDifficultyList(chapterId)
     --放到start中，编队界面到期也会被踢出去
@@ -46,7 +46,7 @@ function XUiSoloReformChapterDetail:OnResume(data)
     if XTool.IsTableEmpty(data) then
         return
    end
-   self._ResumetageId = data.CurStageId
+   self._ResumetageId = self._ResumetageId or data.CurStageId
    self._ResumeFightEvent = data.CurSelectFightEventId
 end
 
@@ -54,17 +54,30 @@ function XUiSoloReformChapterDetail:InitPanel()
     self._FightEvent = XUiSoloReformChapterFightEvent.New(self.PanelReform, self)
     self._FightEvent:ResumeCurFightEventId(self._ResumeFightEvent)  
     self._StarInfo = XUiSoloReformChapterStarInfo.New(self.PanelTarget, self)
+    self.RImgBossBg4.gameObject:SetActiveEx(false)
 end
 
 function XUiSoloReformChapterDetail:InitDifficultyList(chapterId)
     local chapterCfg = self._Control:GetSoloReformChapterCfg(chapterId)
-    if XTool.IsTableEmpty(chapterCfg.ChapterStageId) then
+    if XTool.IsTableEmpty(chapterCfg.ChapterStageIds) then
         return
     end
-    XTool.UpdateDynamicItem(self._DifficultyCellList, chapterCfg.ChapterStageId, self.BtnBoss, XUiSoloReformChapterDifficultyItem, self)
-    local defaultSelect = self._ResumetageId or chapterCfg.ChapterStageId[1]  
+    local childCount = self.ListBoss.childCount
+    for i = 0, childCount - 1 do
+        self:InitBossBtn(self.ListBoss:GetChild(i).gameObject, chapterCfg.ChapterStageIds[i + 1], i + 1)
+    end
+    
+    -- XTool.UpdateDynamicItem(self._DifficultyCellList, chapterCfg.ChapterStageIds, self.BtnBoss, XUiSoloReformChapterDifficultyItem, self)
+    local defaultSelect = self._ResumetageId or chapterCfg.ChapterStageIds[1]  
     self:OnClickDifficulty(defaultSelect) --默认选第一个
     self._ResumetageId = nil
+end
+
+function XUiSoloReformChapterDetail:InitBossBtn(btnBoss, stageId,index)
+    local grid = XUiSoloReformChapterDifficultyItem.New(btnBoss, self)
+    table.insert(self._DifficultyCellList, grid)
+    grid:Open()
+    grid:Update(stageId,index)
 end
 
 function XUiSoloReformChapterDetail:GetChapterId()
@@ -99,7 +112,10 @@ function XUiSoloReformChapterDetail:RefreshSwitchDiff(stageId)
     local stageCfg = self._Control:GetSoloReformStageCfg(stageId)
     self.RImgBoss:SetRawImage(stageCfg.Img)
     self:RefreshCharacter()
-    self._FightEvent:Update(stageId)
+    if not self.IsKillMode then
+        self._FightEvent:Update(stageId)
+        
+    end
     self._StarInfo:Update(stageId)
     self.Logo01:SetRawImage(chapterCfg.StageLogo)
     self.Logo02:SetRawImage(chapterCfg.StageLogo)
@@ -170,11 +186,28 @@ function XUiSoloReformChapterDetail:CanSkipToTeaching()
 end
 
 function XUiSoloReformChapterDetail:OnEnterBattle()
+    XMVCA.XSoloReform:SetEnterChapterId(self._ChapterId)
+
     local team = XMVCA.XSoloReform:GetTeam(self._ChapterId)
     local proxy = require("XUi/XUiSoloReform/XUiSoloReformRoleRoom/XUiSoloReformRoleRoomProxy")
-    XLuaUiManager.Open("UiBattleRoleRoom", self._CurStageId, team, proxy)
+    XLuaUiManager.OpenWithCallback("UiBattleRoleRoom",function()
+        self:AutoOpenTeachingMessage(self._ChapterId)
+    end, self._CurStageId, team, proxy)
 end
 
+
+function XUiSoloReformChapterDetail:AutoOpenTeachingMessage(chapterId)
+    local robotId = self._Control:GetChapterRobotId(chapterId)
+    --XDataCenter.PracticeManager.ShowTeachDialogHintTip(characterId, nil, handler(self, self.OnTeaching))
+    XDataCenter.PracticeManager.OnJoinTeam(robotId, function()
+        XDataCenter.PracticeManager.OpenUiFubenPractice(robotId, true)
+    end, handler(self, self.CancelTeachingMessage))
+end
+
+
+function XUiSoloReformChapterDetail:CancelTeachingMessage()
+    
+end
 function XUiSoloReformChapterDetail:OnDestroy()
     self._Control:StopActivityEndCheckTimer()
     self._ChapterId = nil

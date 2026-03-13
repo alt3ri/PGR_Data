@@ -1345,6 +1345,11 @@
         "Text": "20004017 Preset formation contains duplicate characters"
     },
     {
+        "Id": 20004018.0,
+        "Key": "TeamManagerPrefabTeamEquipDataIsNull",
+        "Text": "20004018\u9884\u8bbe\u7f16\u961f\u88c5\u5907\u6570\u636e\u4e0d\u80fd\u8bbe\u7f6e\u4e3a\u7a7a"
+    },
+    {
         "Id": 20007001.0,
         "Key": "FightProxyManagerEnterIsExist",
         "Text": "The player is already in another battle"
@@ -2042,7 +2047,7 @@
     {
         "Id": 20012037.0,
         "Key": "ItemRestrictGainCountLimit",
-        "Text": "Service Certificate acquisition limit reached. Cannot obtain more mission rewards."
+        "Text": "Service Certificate acquisition limit reached. Only rewards within the limit will be obtained."
     },
     {
         "Id": 20014001.0,
@@ -3553,6 +3558,26 @@
         "Id": 20033014.0,
         "Key": "ChatEmojiPackageIdsInvalid",
         "Text": "20033014 Illegal stamp parameter"
+    },
+    {
+        "Id": 20033015.0,
+        "Key": "ChatNotInRoom",
+        "Text": "20033015 Not in a room. Cannot speak."
+    },
+    {
+        "Id": 20033016.0,
+        "Key": "ChatNotInGuild",
+        "Text": "20033016 Not in Command Bureau. Cannot speak."
+    },
+    {
+        "Id": 20033017.0,
+        "Key": "ChatNotExistMentor",
+        "Text": "20033017 Guide does not exist. Cannot speak."
+    },
+    {
+        "Id": 20033018.0,
+        "Key": "ChatNotInGuildDorm",
+        "Text": "20033018 Not in the dormitory. Cannot speak."
     },
     {
         "Id": 20034001.0,
@@ -26490,6 +26515,11 @@
         "Text": "20270002 DMC Pool data error"
     },
     {
+        "Id": 20270003.0,
+        "Key": "DevilMayCryDataDbEnd",
+        "Text": "202700023 DMC Pool has ended"
+    },
+    {
         "Id": 20280001.0,
         "Key": "Theatre5NotOpen",
         "Text": "Event not yet available"
@@ -29842,12 +29872,12 @@
     {
         "Id": 25300090.0,
         "Key": "RelinkPlayerLikeSelf",
-        "Text": "You cannot like yourself"
+        "Text": "25300090 Cannot like your own content"
     },
     {
         "Id": 25300091.0,
         "Key": "RelinkPlayerNotInTheRoom",
-        "Text": "Team does not exist"
+        "Text": "25300091 Not in a team."
     },
     {
         "Id": 25300092.0,
@@ -30043,10 +30073,5 @@
         "Id": 40001030.0,
         "Key": "PayCheckReceiptCurrencyUnMatch",
         "Text": "40001026 Currency on the recharge permit mismatched"
-    },
-    {
-        "Id": 202700023.0,
-        "Key": "DevilMayCryDataDbEnd",
-        "Text": "202700023 DMC Pool has ended"
     }
 ]

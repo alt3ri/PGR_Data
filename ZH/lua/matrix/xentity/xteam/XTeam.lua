@@ -672,6 +672,10 @@ function XTeam:CheckAmplifierAndSameElement()
 end
 
 function XTeam:AutoSelectGeneralSkill(defaultSkillIds)
+    if not self._GenernalSkills then
+        self._GenernalSkills = {}
+    end
+    
     if not XTool.IsTableEmpty(defaultSkillIds) then
         local aimSkillId = 0
         for index, value in ipairs(defaultSkillIds) do
@@ -792,24 +796,24 @@ function XTeam:GetObservationActiveCareer()
         end
     end
 
-    local res = XEnumConst.CHARACTER.Career.None
-
-    -- 2. 核心屏蔽逻辑
-    if obsCount ~= 1 or physicalCount > 1 then 
-        return res, obsPos 
-    end
-
-    -- 3. [关键屏蔽]：非物理候选职业总数 >= 2 时不转化
-    if (supportAmpCount + tankBreakerCount) >= 2 then
-        return res, obsPos
-    end
-
-    -- 4. 特殊空增幅（仅当目标角色是空元素且为增幅型职业时直接返回Breaker）
-    if nihilAmplifierCount == 1 then
-        return XEnumConst.CHARACTER.Career.Breaker, obsPos
-    end
-
-    -- 5. 按照优先级顺序判定
+    local res = XEnumConst.CHARACTER.Career.None
+
+    -- 2. 核心屏蔽逻辑
+    if obsCount ~= 1 or physicalCount > 1 then 
+        return res, obsPos 
+    end
+
+    -- 3. [关键屏蔽]：非物理候选职业总数 >= 2 时不转化
+    if (supportAmpCount + tankBreakerCount) >= 2 then
+        return res, obsPos
+    end
+
+    -- 4. 特殊空增幅（仅当目标角色是空元素且为增幅型职业时直接返回Breaker）
+    if nihilAmplifierCount == 1 then
+        return XEnumConst.CHARACTER.Career.Breaker, obsPos
+    end
+
+    -- 5. 按照优先级顺序判定
     -- 【优先级 1 & 3】：处理 增幅/辅助 触发
     if supportAmpCount == 1 then
         local element = XMVCA.XCharacter:GetCharacterElement(supportAmpEntityId)

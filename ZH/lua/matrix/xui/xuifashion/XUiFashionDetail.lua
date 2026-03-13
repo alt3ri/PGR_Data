@@ -131,6 +131,14 @@ function XUiFashionDetail:OnDisable()
     CS.XGraphicManager.UseUiLightDir = false
 end
 
+function XUiFashionDetail:OnReleaseInst()
+    return self.IsEnableGroupSales
+end
+
+function XUiFashionDetail:OnResume(value)
+    self.IsEnableGroupSales = value
+end
+
 function XUiFashionDetail:OnUiSceneLoaded()
     --self:SetGameObject()
 end
@@ -237,12 +245,12 @@ function XUiFashionDetail:ShowBuyButton()
         local isWear, isMulti
         if self.IsEnableGroupSales then
             local fashionId, weaponFashionId = self:GetGroupFashionId()
-            isWear = XMVCA.XFashionSuit:IsDressed(fashionId, weaponFashionId)
+            isWear = XMVCA.XFashionSuit:IsDressed(fashionId, weaponFashionId, self.CharacterId)
         else
             if self.IsWeaponFashion then
-                isWear = XMVCA.XFashionSuit:IsDressed(nil, self.FashionId)
+                isWear = XMVCA.XFashionSuit:IsDressed(nil, self.FashionId, self.CharacterId)
             else
-                isWear = XMVCA.XFashionSuit:IsDressed(self.FashionId, nil)
+                isWear = XMVCA.XFashionSuit:IsDressed(self.FashionId, nil, self.CharacterId)
             end
         end
         
@@ -636,9 +644,8 @@ function XUiFashionDetail:InitGroupSales()
             XLog.Error(string.format("【涂装：%s 是否武器：%s】找不到对应配置！", self.FashionId, self.IsWeaponFashion))
         end
     end
-    self.IsEnableGroupSales = false
     self.BtnBuySuit.gameObject:SetActiveEx(isVisible)
-    self.BtnBuySuit:SetButtonState(XUiButtonState.Normal)
+    self.BtnBuySuit:SetButtonState(self.IsEnableGroupSales and XUiButtonState.Select or XUiButtonState.Normal)
 end
 
 ---角色涂装Id、武器涂装Id

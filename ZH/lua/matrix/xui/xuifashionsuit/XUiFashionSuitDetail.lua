@@ -55,6 +55,7 @@ function XUiFashionSuitDetail:OnStart(fashionSuitId, id, skipType, updateCb)
     XUiHelper.NewPanelTopControl(self, self.TopControlWhite)
     XUiHelper.NewPanelActivityAssetSafe({ XDataCenter.ItemManager.ItemId.HongKa, XDataCenter.ItemManager.ItemId.PaintingDesign }, self.PanelSpecialTool, self)
     XEventManager.AddEventListener(XEventId.EVENT_PURCHASE_CLEAR_DATA, self.SignGetShopInfo, self)
+    XEventManager.AddEventListener(XEventId.EVENT_PURCHASE_QUICK_BUY_SKIP, self.Close, self)
 end
 
 function XUiFashionSuitDetail:OnEnable()
@@ -89,6 +90,7 @@ end
 
 function XUiFashionSuitDetail:OnDestroy()
     XEventManager.RemoveEventListener(XEventId.EVENT_PURCHASE_CLEAR_DATA, self.SignGetShopInfo, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_PURCHASE_QUICK_BUY_SKIP, self.Close, self)
 end
 
 function XUiFashionSuitDetail:InitView()
@@ -276,6 +278,7 @@ end
 function XUiFashionSuitDetail:InitModelHandler()
     self._FashionModelPos = Vector3(self._SuitConfig.RolePosX, self._SuitConfig.RolePosY, self._SuitConfig.RolePosZ)
     self._WeaponModelPos = Vector3(self._SuitConfig.WeaponPosX, self._SuitConfig.WeaponPosY, self._SuitConfig.WeaponPosZ)
+    self._UiFashionNearCamAngle = Vector3(2.25, 0, 0)
 
     self._ModelHander = {}
     self._ModelHander[true] = handler(self, self.UpdateWeaponModel)
@@ -289,6 +292,7 @@ end
 
 function XUiFashionSuitDetail:UpdateFashionModel()
     local fashionConfig = XFashionConfigs.GetFashionTemplate(self._Context.FashionId)
+    self._VirtualNearCameraTran.localEulerAngles = self._VirtualNearCameraAngles --使用策划配置的相机旋转角度
     self.PanelWeapon.gameObject:SetActiveEx(false)
     self.UiModelParent.gameObject:SetActiveEx(true)
     self.RoleModelPanel:UpdateCharacterResModel(fashionConfig.ResourcesId, fashionConfig.CharacterId, XModelManager.MODEL_UINAME.XUiFashionSuitDetail, function(model)
@@ -308,13 +312,13 @@ function XUiFashionSuitDetail:UpdateFashionModel()
 end
 
 function XUiFashionSuitDetail:UpdateWeaponModel()
+    self._VirtualNearCameraTran.localEulerAngles = self._UiFashionNearCamAngle --使用UiFashionDetail界面的相机旋转角度
     self.PanelWeapon.gameObject:SetActiveEx(true)
+    self.PanelWeapon.localPosition = self._WeaponModelPos
     self.UiModelParent.gameObject:SetActiveEx(false)
     local uiName = XModelManager.MODEL_UINAME.XUiFashionDetail
     local modelConfig = XDataCenter.WeaponFashionManager.GetWeaponModelCfg(self._Context.WeaponFashionId, nil, uiName)
-    XModelManager.LoadWeaponModel(modelConfig.ModelId, self.PanelWeapon, modelConfig.TransformConfig, uiName, function(model, targetName)
-        model.transform.localPosition = self._WeaponModelPos
-    end, { gameObject = self.GameObject, IsDragRotation = self._IsModelDrag }, self.PanelDrag)
+    XModelManager.LoadWeaponModel(modelConfig.ModelId, self.PanelWeapon, modelConfig.TransformConfig, uiName, nil, { gameObject = self.GameObject, IsDragRotation = self._IsModelDrag }, self.PanelDrag)
 
     if not XTool.UObjIsNil(self.WeaponDOFBurAnim) then
         self.WeaponDOFBurAnim:PlayTimelineAnimation()
@@ -343,7 +347,6 @@ function XUiFashionSuitDetail:InitCameraTransform(modelUrl)
     local angles = Vector3(self._SuitConfig.CameraRotationX, self._SuitConfig.CameraRotationY, self._SuitConfig.CameraRotationZ)
     virtualNearCameraTran.localPosition = position
     virtualFarCameraTran.localPosition = position
-    virtualNearCameraTran.localEulerAngles = angles
     virtualFarCameraTran.localEulerAngles = angles
 
     local nearVirtualCamera = virtualNearCameraTran:GetComponent("CinemachineVirtualCamera")
@@ -359,6 +362,8 @@ function XUiFashionSuitDetail:InitCameraTransform(modelUrl)
         newLens.FieldOfView = self._SuitConfig.CameraFov
         farVirtualCamera.m_Lens = newLens
     end
+    self._VirtualNearCameraTran = virtualNearCameraTran
+    self._VirtualNearCameraAngles = angles
 end
 
 --endregion

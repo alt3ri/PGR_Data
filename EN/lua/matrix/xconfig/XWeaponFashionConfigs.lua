@@ -4,7 +4,7 @@ local ParseToTimestamp = XTime.ParseToTimestamp
 
 local TABLE_WEAPON_FASHION_PATH = "Share/WeaponFashion/WeaponFashion.tab"
 local TABLE_WEAPON_FASHION_RES_PATH = "Client/WeaponFashion/WeaponFashionRes.tab"
-
+---@type XTableWeaponFashion[]
 local WeaponFashionTemplates = nil
 local WeaponFashionResTemplates = nil
 
@@ -174,4 +174,9 @@ function XWeaponFashionConfigs.IsWeaponFashion(fashionId)
     XWeaponFashionConfigs.InitWeaponFashionTemplate()
     local tab = WeaponFashionTemplates[fashionId]
     return tab ~= nil
+end
+
+function XWeaponFashionConfigs.GetWeaponFashionEquipType(id)
+    local cfg = WeaponFashionTemplates[id]
+    return cfg and cfg.EquipType
 end

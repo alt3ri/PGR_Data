@@ -1342,7 +1342,7 @@ end
 --设置怪物目标
 function XRelinkMonsterBase:SetTarget(npc)
     if (not npc) or (npc == 0) then
-        --XLog.Warning("设置目标非法")
+        XLog.Warning("设置目标非法")
         return
     end
     if not self.lastTarget or npc~=self.lastTarget then --没有上一个目标且当前目标和之前目标不一样的时候
@@ -2009,6 +2009,7 @@ function XRelinkMonsterBase:OnMonsterEnterOverDrive()
     self:TryRiseCurPhaseOnEnterOverDrive()--尝试进OD时提升阶段
     self:SetCurOverDriveState(XRelinkMonsterBase.OverDriveState.ODState)--进入OD
     self:ApplyMagicsToSelf(self.enterOverDriveMagics)--给自己挂上进入时的Magic列表
+    self:LockBroken() --锁定削韧
     self:MonsterEnterOverDriveAfter()--自定义编辑的地方
 end
 
@@ -2573,7 +2574,7 @@ end
 ---检查Npc的距离
 function XRelinkMonsterBase:CheckSkillDisByNpc(skill, npc)
     if not self._proxy:CheckNpc(npc) then
-        --XLog.Warning("NPC非法,CheckSkillDisByNpc不通过" .. npc)
+        XLog.Warning("NPC非法,CheckSkillDisByNpc不通过" .. npc)
         return false
     end
     local dis = self._proxy:CalcNpcDistance(self._uuid, npc)
@@ -2810,25 +2811,7 @@ function XRelinkMonsterBase:GetPositionByPosToPosOffset(pos1,pos2,offset)
     return npc == self.curSkillTarget
 end
 
----尝试MagicList，如果有了就不加了
-function XRelinkMonsterBase:MonsterSelfTryOnlyApplyMagicList(list)
-    for i, magicId in pairs(list) do
-        if not self._proxy:CheckBuffByKind(self._uuid, magicId) then
-            --如果没有这个Buff就加上去
-            self._proxy:ApplyMagic(self._uuid, self._uuid, magicId)
-        end
-    end
-end
 
----尝试MagicList，如果有就删除
-function XRelinkMonsterBase:MonsterSelfTryOnlyRemoveBuffList(list)
-    for i, magicId in pairs(list) do
-        if self._proxy:CheckBuffByKind(self._uuid,magicId) then
-            --如果有这个Buff就移除
-            self._proxy:RemoveBuff(self._uuid,magicId)
-        end
-    end
-end
 
 --TODO:可能要判断是否死亡，现在没有包括死亡判断
 ---获取位置半径范围内玩家数量（）
@@ -3086,7 +3069,7 @@ end
 ---怪物对npc释放技能,会进行一系列怪物侧配置的条件判断
 function XRelinkMonsterBase:CastSkillToNpc(skill, npc)
     if not self._proxy:CheckNpc(npc) then
-        --XLog.Warning("释放技能" .. skill .. "失败,Npc非法")
+        XLog.Warning("释放技能" .. skill .. "失败,Npc非法")
         return false
     end
     local isSuccess = false
@@ -3111,7 +3094,7 @@ function XRelinkMonsterBase:ForceSkillToTarget(skill)
     local isSuccess = false
     if not self._proxy:CheckNpc(target) then
         --目标不合法
-        --("强制释放技能目标非法"..target)
+        XLog.Warning("强制释放技能目标非法"..target)
         return false
     end
     self._proxy:AbortAction(self._uuid, true) --强制打断当前技能
@@ -3145,7 +3128,7 @@ function XRelinkMonsterBase:ForceSkillToNpc(skill, npc)
         return false
     end
     if not skill or skill == 0 then
-        --XLog.Warning("ForceSkillToNpc的技能非法")
+        XLog.Warning("ForceSkillToNpc的技能非法")
     end
     self._proxy:AbortAction(self._uuid, true)--打断Npc
     isSuccess = self._proxy:CastActionToTarget(self._uuid, skill, npc)--放技能
@@ -3182,7 +3165,7 @@ end
 
 ---对战斗目标根据权重组放技能（技能组，是否忽略技能完成）
 function XRelinkMonsterBase:TryCastSkillToTargetByWeights(skills)
-    --XLog.Warning(skills)
+    XLog.Warning(skills)
     local target = self.target
     local isSuccess = false
     local skill = self:GetAbleSkillByWeightsToNpc(skills,target) --从权重组里找到适合可以放的技能

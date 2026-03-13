@@ -8,6 +8,7 @@ local tableRemove = table.remove
 local CSMovieXMovieManagerInstance = CS.Movie.XMovieManager.Instance
 
 local UI_MOVIE = "UiMovie"
+local UI_MOVIE_2D = "UiMovie2D"   --不带3D场景的UI
 local RESOLUTION_RATIO = CS.XResolutionManager.OriginWidth / CS.XResolutionManager.OriginHeight / CS.XUiManager.DefaultScreenRatio
 local TIMELINE_SECONDS_TRANS = 1 / 60
 local DisableFunction = false     --功能屏蔽标记（调试模式时使用）
@@ -98,6 +99,16 @@ XMovieManagerCreator = function()
             XLog.Error("XMovieManager GetActionIndexById error:index not exsit, actionId is: " .. actionId)
         end
         return index
+    end
+    
+    local function ClearAllMovieActions()
+        for movieId, movieActions in pairs(AllMovieActions) do
+            for _, action in pairs(movieActions) do
+                action:Release()
+            end
+        end
+        AllMovieActions = {}
+        ActionIdToIndexDics = {}
     end
 
     -- 当前ActionId是否可以到达目标ActionId
@@ -252,7 +263,11 @@ XMovieManagerCreator = function()
         end
     end
 
-    local function OnPlayBegin(movieId, hideSkipBtn, isRelease, startActionId, optionDic, stageId)
+    local function IsUiShow()
+        return XLuaUiManager.IsUiShow(UI_MOVIE) or XLuaUiManager.IsUiShow(UI_MOVIE_2D)
+    end
+
+    local function OnPlayBegin(movieId, hideSkipBtn, isRelease, startActionId, optionDic, stageId, is2D)
         CurPlayingMovieId = movieId
         CurPlayingActionIndex = 1
         WaitToPlayList = GetMovieActions(movieId)
@@ -300,11 +315,22 @@ XMovieManagerCreator = function()
         CsXGameEventManager.Instance:Notify(XEventId.EVENT_MOVIE_BEGIN, movieId)
         XEventManager.DispatchEvent(XEventId.EVENT_MOVIE_BEGIN, movieId)
 
-        if XLuaUiManager.IsUiShow(UI_MOVIE) then return end
+        if IsUiShow() then return end
 
         ReleaseAll(isRelease)
 
-        XLuaUiManager.Open(UI_MOVIE, hideSkipBtn)
+        local uiMovie = is2D and UI_MOVIE_2D or UI_MOVIE
+        XLuaUiManager.Open(uiMovie, hideSkipBtn)
+    end
+    
+    local function CheckClose()
+        if XLuaUiManager.IsUiShow(UI_MOVIE) then
+            XLuaUiManager.Close(UI_MOVIE)
+        end
+
+        if XLuaUiManager.IsUiShow(UI_MOVIE_2D) then
+            XLuaUiManager.Close(UI_MOVIE_2D)
+        end
     end
 
     local function OnPlayEnd(isLoginOut)
@@ -337,9 +363,10 @@ XMovieManagerCreator = function()
         end
         ]]
 
-        if XLuaUiManager.IsUiShow(UI_MOVIE) then
-            XLuaUiManager.Close(UI_MOVIE)
-        end
+        CheckClose()
+
+        ClearAllMovieActions()
+        XMovieConfigs.DeleteMovieCfgs()
     end
 
     --剧情UI完全关闭，所有节点清理行为结束
@@ -444,10 +471,10 @@ XMovieManagerCreator = function()
         end)
     end
 
-    local function PlayNewMovie(movieId, cb, yieldCb, hideSkipBtn, isRelease, startActionId, optionDic, stageId)
+    local function PlayNewMovie(movieId, cb, yieldCb, hideSkipBtn, isRelease, startActionId, optionDic, stageId, is2D)
         EndCallBack = cb
         YieldCallBack = yieldCb
-        OnPlayBegin(movieId, hideSkipBtn, isRelease, startActionId, optionDic, stageId)
+        OnPlayBegin(movieId, hideSkipBtn, isRelease, startActionId, optionDic, stageId, is2D)
     end
     
     --检查剧情存在
@@ -465,9 +492,10 @@ XMovieManagerCreator = function()
     function XMovieManager.IsSkipMovie()
         return DisableFunction or XUiManager.IsHideFunc
     end
-    
+
     ---@param startActionId number 开始播放的ActionId
-    function XMovieManager.PlayMovie(movieId, cb, yieldCb, hideSkipBtn, isRelease, startActionId, optionDic, stageId)
+    ---@param is2D bool 是否仅使用不带3D场景的UI界面
+    function XMovieManager.PlayMovie(movieId, cb, yieldCb, hideSkipBtn, isRelease, startActionId, optionDic, stageId, is2D)
         if XMain.IsEditorDebug then
             XLog.Debug("开始播放剧情 MovieId = " .. tostring(movieId))
         end
@@ -485,7 +513,7 @@ XMovieManagerCreator = function()
             movieId = tostring(movieId)
             XMVCA.XMovie:RequestMovieOptions(movieId)
             if XMovieConfigs.CheckMovieConfigExist(movieId) then
-                PlayNewMovie(movieId, cb, yieldCb, hideSkipBtn, isRelease, startActionId, optionDic, stageId)
+                PlayNewMovie(movieId, cb, yieldCb, hideSkipBtn, isRelease, startActionId, optionDic, stageId, is2D)
             else
                 PlayOldMovie(movieId, cb)
             end
@@ -505,7 +533,7 @@ XMovieManagerCreator = function()
 
     function XMovieManager.StopMovie(isLoginOut)
         if not XMovieManager.IsPlayingMovie() then return end
-        if not XLuaUiManager.IsUiShow(UI_MOVIE) then return end
+        if not IsUiShow() then return end
         OnPlayEnd(isLoginOut)
     end
     
@@ -777,8 +805,7 @@ XMovieManagerCreator = function()
     function XMovieManager.ReloadMovies()
         if not XMain.IsDebug then return end
 
-        AllMovieActions = {}
-        ActionIdToIndexDics = {}
+        ClearAllMovieActions()
         XMovieConfigs.DeleteMovieCfgs()
     end
 

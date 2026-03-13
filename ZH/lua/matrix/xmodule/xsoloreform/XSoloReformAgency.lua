@@ -72,9 +72,7 @@ function XSoloReformAgency:SettleFight(result)
         XLog.Warning("XSoloReformAgency:SettleFight Warning, fuben is settling!")
         return
     end
-    XMVCA.XFuben:StatisticsFightResultDps(result)
-    XMVCA.XFuben:SetFubenSettling(true) --正在结算
-    local fightResBytes = result:GetFightsResultsBytes()
+  
     XMVCA.XFuben:SetCurFightResult(result:GetFightResult())
     local settleData = result and result.Data
     if settleData then
@@ -84,7 +82,9 @@ function XSoloReformAgency:SettleFight(result)
             XMVCA.XFuben:SettleFight(result)
             return
         end
-
+        XMVCA.XFuben:StatisticsFightResultDps(result)
+        XMVCA.XFuben:SetFubenSettling(true) --正在结算
+        local fightResBytes = result:GetFightsResultsBytes()
         XNetwork.Call("FightSettleRequest", fightResBytes, function(res)
             local soloReformSettleResult = res.Settle.SoloReformSettleResult
             local passTime = soloReformSettleResult and soloReformSettleResult.PassTime or 0

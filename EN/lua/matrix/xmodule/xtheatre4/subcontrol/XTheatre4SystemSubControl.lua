@@ -341,6 +341,11 @@ function XTheatre4SystemSubControl:GetTaskDatasByTaskType(taskType)
     return XDataCenter.TaskManager.GetTaskIdListData(taskIds, true)
 end
 
+function XTheatre4SystemSubControl:CheckTaskDataEmptyByTaskType(taskType)
+    local taskDatas = self:GetTaskDatasByTaskType(taskType)
+    return XTool.IsTableEmpty(taskDatas)
+end
+
 function XTheatre4SystemSubControl:GetCurrentBattlePassTotalExp()
     return self._Model.ActivityData:GetTotalBattlePassExp()
 end
@@ -462,10 +467,18 @@ function XTheatre4SystemSubControl:FinishAllTaskIdByTaskType(taskType)
     local taskDatas = self:GetTaskDatasByTaskType(taskType)
     local taskIds = {}
 
+    if XTool.IsTableEmpty(taskDatas) then
+        return
+    end
+
     for _, taskData in pairs(taskDatas) do
         if taskData.State == XDataCenter.TaskManager.TaskState.Achieved then
             table.insert(taskIds, taskData.Id)
         end
+    end
+
+    if XTool.IsTableEmpty(taskIds) then
+        return
     end
 
     self:RecordBattlePassOldExp()

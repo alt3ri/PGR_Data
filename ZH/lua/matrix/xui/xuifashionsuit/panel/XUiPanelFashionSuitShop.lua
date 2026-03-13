@@ -92,7 +92,7 @@ function XUiPanelFashionSuitShop:ShowGoodsDiscount()
         if gameTime > 0 then
             local leftTimeStr = XUiHelper.GetText("FashionSuitDiscountActivityTip",
                 XUiHelper.GetTime(gameTime, XUiHelper.TimeFormatType.ACTIVITY))
-            self:SetDiscountCountDown(leftTimeStr)
+            self._Parent:SetDiscountCountDown(leftTimeStr)
         end
     end
 end

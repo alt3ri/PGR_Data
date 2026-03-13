@@ -60,8 +60,14 @@ end
 
 ----------------------------------------------------
 -- ★ 本函数必须正确，否则不会弹奖励
+-- ★ 只处理本面板发起的领取流程，防止其他面板的事件触发意外领取
 ----------------------------------------------------
 function XUiPanelTaskCanLiver:CheckRefreshLeftNewTask()
+    -- 只处理本面板发起的领取流程，忽略其他面板触发的事件
+    if not self.IsMulting then
+        return false
+    end
+
     if self.IsWaitServerResponse then
         return true
     end

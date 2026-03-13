@@ -11,8 +11,7 @@ function XUiSoloReformMain:OnAwake()
     self:RegisterClickEvent(self.BtnBack, self.OnclickClose, true)
     self:RegisterClickEvent(self.BtnMainUi, self.OnReturnMain, true)
     self:RegisterClickEvent(self.BtnTask, self.OnClickTask, true)
-    -- self:BindHelpBtn(self.BtnHelp, self._Control:GetHelpString())
-    self.BtnHelp.gameObject:SetActiveEx(false)
+    self:BindHelpBtn(self.BtnHelp, self._Control:GetHelpString())
 end
 
 function XUiSoloReformMain:OnStart()
@@ -116,7 +115,7 @@ end
 
 function XUiSoloReformMain:RefreshTaskProcess()
    local completedCount, totalCount = self._Control:GetCompletedTaskCountAndTotal()
-   self.TxtTaskNum.text = string.format("<color=#6AC5FA>%d</color>/%d", completedCount, totalCount)
+   self.TxtTaskNum.text = string.format("<color=#6BE6FF>%d</color>/%d", completedCount, totalCount)
    local process = 0
    if totalCount > 0 then
         process = completedCount/totalCount

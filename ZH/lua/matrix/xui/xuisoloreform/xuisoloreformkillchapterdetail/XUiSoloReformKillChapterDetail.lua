@@ -11,7 +11,6 @@ function XUiSoloReformKillChapterDetail:OnStart(chapterId, defaultSelectStage)
     self.IsKillMode = true
     self.Super.OnStart(self, chapterId, defaultSelectStage)
     self.PanelReform.gameObject:SetActiveEx(false)
-    self.BtnHelp.gameObject:SetActiveEx(false)
 end
 
 function XUiSoloReformKillChapterDetail:InitPanel()
@@ -29,6 +28,8 @@ function XUiSoloReformKillChapterDetail:InitDifficultyList(chapterId)
     self.GridBoss.gameObject:SetActiveEx(false)
     self.BtnBoss.gameObject:SetActiveEx(false)
     self._ReformUis = {}
+    local selectIndex = 1
+
     for index, chapterStageId in pairs(chapterCfg.ChapterStageIds) do
         local stageType = self._Control:GetChapterStageStageType(chapterStageId)
         if not stageTypes[stageType] then
@@ -44,6 +45,10 @@ function XUiSoloReformKillChapterDetail:InitDifficultyList(chapterId)
         self._CellList[chapterStageId] = {}
         self:RefreshGridItem(stageBtn, chapterStageId)
         tabGroup[index] = self._CellList[chapterStageId].BtnBoss
+        local unlock = self._CellList[chapterStageId].Unlock
+        if unlock then
+            selectIndex = index
+        end
     end
     local fightEventCfgs = self._Control:GetSoloReformUnlockFightEventCfgs(self._ChapterId)
 
@@ -52,7 +57,6 @@ function XUiSoloReformKillChapterDetail:InitDifficultyList(chapterId)
     end
 
     -- self:InitDynamicTable()
-
     self.PanelTagGroup:Init(tabGroup, function(tabIndex)
         local chapterStageId = chapterCfg.ChapterStageIds[tabIndex]
         local stageType = self._Control:GetChapterStageStageType(chapterStageId)
@@ -65,11 +69,11 @@ function XUiSoloReformKillChapterDetail:InitDifficultyList(chapterId)
         end
     end)
 
-    local index = 1
+  
     if self._ResumetageId then
-        index = table.indexof(chapterCfg.ChapterStageIds, self._ResumetageId)
+        selectIndex = table.indexof(chapterCfg.ChapterStageIds, self._ResumetageId)
     end
-    self.PanelTagGroup:SelectIndex(index)
+    self.PanelTagGroup:SelectIndex(selectIndex)
     self._ResumetageId = nil
 end
 
@@ -86,7 +90,7 @@ function XUiSoloReformKillChapterDetail:RefreshGridGroup(gridGo, firstStageId)
     XTool.InitUiObjectByUi(gridUi, gridGo)
     local stageCfg = self._Control:GetSoloReformStageCfg(firstStageId)
     gridUi.RImgBoss:SetRawImage(stageCfg.Img)
-    gridUi.TxtName.text = stageCfg.StageEnemyName[1]
+    gridUi.TxtName.text = stageCfg.StageEnemyName
 end
 
 function XUiSoloReformKillChapterDetail:RefreshGridItem(stageItemGo, stageId)
@@ -102,7 +106,7 @@ function XUiSoloReformKillChapterDetail:RefreshGridItem(stageItemGo, stageId)
             grid.ImgStarOff.gameObject:SetActiveEx(not starStateList[index])
             grid.ImgStarOn.gameObject:SetActiveEx(starStateList[index])
         end)
-    stageItemUi.BtnBoss:SetNameByGroup(0, stageCfg.TitleName[1])
+    stageItemUi.BtnBoss:SetNameByGroup(0, stageCfg.TitleName)
     local score = self._Control:GetKillStageScore(self._ChapterId, stageId)
     stageItemUi.BtnBoss:SetNameByGroup(1, score or "") --score
     stageItemUi.BtnBoss:SetRawImageVisible(score ~= nil)
@@ -120,28 +124,6 @@ function XUiSoloReformKillChapterDetail:RefreshGridItem(stageItemGo, stageId)
         value:SetRawImage(stageCfg.Icon)
     end
 end
-
--- function XUiSoloReformKillChapterDetail:InitDynamicTable()
---     self.DynamicTable = XDynamicTableNormal.New(self.ScrollListDetail)
---     self.DynamicTable:SetProxy(XUiSoloReformKillChapterDetailGrid, self)
---     self.DynamicTable:SetDelegate(self)
--- end
-
--- function XUiSoloReformKillChapterDetail:OnDynamicTableEvent(event, index, grid)
---     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
---         grid:Refresh(self._ReformUis[self.StageType][index])
---     end
--- end
-
--- function XUiSoloReformKillChapterDetail:RefreshPanelReform(stageType)
---     if self.StageType == stageType then
---         return
---     end
---     self.StageType = stageType
---     XLog.Error(self._ReformUis[self.StageType])
---     self.DynamicTable:SetDataSource(self._ReformUis[self.StageType])
---     self.DynamicTable:ReloadDataASync(1)
--- end
 
 function XUiSoloReformKillChapterDetail:RefreshPanelReform(stageType)
     self.ScrollListUi = self.ScrollListUi or {}
@@ -168,6 +150,8 @@ function XUiSoloReformKillChapterDetail:RefreshPanelReform(stageType)
         gridUi:Open()
     end
     self.ScrollListDetail.verticalNormalizedPosition = 1
+    self._StarInfo.Time.gameObject:SetActiveEx(false)
+    
 end
 
 return XUiSoloReformKillChapterDetail

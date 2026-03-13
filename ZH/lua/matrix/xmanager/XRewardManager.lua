@@ -39,13 +39,11 @@ local XRewardType = {
 --local HeadPortraitQuality = CS.XGame.Config:GetInt("HeadPortraitQuality")
 local TABLE_REWARD_PATH = "Share/Reward/Reward.tab"
 local TABLE_REWARD_GOODS_PATH = "Share/Reward/RewardGoods.tab"
-local TABLE_REWARD_PREFAB_PATH = "Client/Reward/RewardPrefab.tab"
 
 --local RewardTemplates = {}
 ---@type table<number, XTableReward>
 local RewardSubIds = {}
 local RewardGoodsTable = {}
-local RewardPrefabConfig = {}
 
 local Arrange2RewardType = {
     [XArrangeConfigs.Types.Item] = XRewardType.Item,
@@ -835,7 +833,6 @@ end
 function XRewardManager.Init()
     RewardSubIds = XTableManager.ReadByIntKey(TABLE_REWARD_PATH, XTable.XTableReward, "Id")
     RewardGoodsTable = XTableManager.ReadByIntKey(TABLE_REWARD_GOODS_PATH, XTable.XTableRewardGoods, "Id")
-    RewardPrefabConfig = XTableManager.ReadByIntKey(TABLE_REWARD_PREFAB_PATH, XTable.XTableRewardPrefab, "RewardId")
 end
 
 function XRewardManager.GetRewardSubId(id, index)
@@ -1110,21 +1107,6 @@ end
 
 function XRewardManager.IsRewardEquip(rewardType, templateId) -- 是否拥有武器
     return (rewardType == XRewardManager.XRewardType.Equip and XMVCA.XEquip:GetFirstEquip(templateId))
-end
-
-function XRewardManager.ShowRewardUi(rewardId)
-    if not rewardId then return end
-    local prefabUrl = XRewardManager.GetRewardPrefabUrl(rewardId)
-    if not prefabUrl then
-        XLog.Error("XRewardManager.ShowRewardUi error: prefabUrl not found, rewardId is " .. tostring(rewardId))
-        return
-    end
-    XLuaUiManager.Open("UiCommonPopupGetCharacter", prefabUrl)
-end
-
-function XRewardManager.GetRewardPrefabUrl(rewardId)
-    if not RewardPrefabConfig[rewardId] then return nil end
-    return RewardPrefabConfig[rewardId].ShowPrefabUrl
 end
 
 ---@private

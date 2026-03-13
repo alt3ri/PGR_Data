@@ -97,6 +97,10 @@ function XUiArenaChapterDetail:OnZoneSelectClick(index)
     self._Scene:RefreshPlayerGrid(index, self:_GetCurrentAreaShowData())
 end
 
+function XUiArenaChapterDetail:OnBtnAttributeDetailClick()
+    XLuaUiManager.Open("UiCharacterAttributeDetail", nil, XEnumConst.UiCharacterAttributeDetail.BtnTab.Damage)
+end
+
 -- endregion
 
 -- region 私有方法
@@ -114,6 +118,7 @@ function XUiArenaChapterDetail:_RegisterButtonClicks()
         self:RegisterClickEvent(self.BtnClose, self.Close, true)
         XUiHelper.RegisterPassClickEvent(self, self.BtnCloseTarget, self.BtnClose)
     end
+    self.BtnAttributeDetail:AddEventListener(handler(self, self.OnBtnAttributeDetailClick))
 end
 
 function XUiArenaChapterDetail:_RefreshBuffList()

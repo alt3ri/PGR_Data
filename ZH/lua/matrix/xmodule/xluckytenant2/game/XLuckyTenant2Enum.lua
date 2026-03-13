@@ -20,9 +20,15 @@ local XLuckyTenant2Enum = {
     -- 羁绊ID与感染状态技能类型ID的映射关系
     -- 用于Type601（红潮被动01）和Type208（子虫死亡传染）
     BondToInfectionSkillMap = {
-        [1] = 102,  -- 金融羁绊 → 金融感染状态技能(Type102)
-        [4] = 405,  -- 武器羁绊 → 武器感染状态技能(Type405)
-        [5] = 506,  -- 宝盒羁绊 → 宝盒感染状态技能(Type506)
+        [1] = 101,  -- 金融羁绊 → 金融感染状态技能(Type101)
+        [4] = 404,  -- 武器羁绊 → 武器感染状态技能(Type404)
+        [5] = 505,  -- 宝盒羁绊 → 宝盒感染状态技能(Type505)
+    },
+    -- 技能类型与感染状态技能类型ID的映射关系
+    SkillTypeToInfectionSkillMap = {
+        [101] = 102,  -- 金融感染状态技能(Type101)
+        [404] = 408,  -- 武器感染状态技能(Type408)
+        [505] = 506,  -- 宝盒感染状态技能(Type506)
     },
     -- 羁绊升级要求类型
     BondUpgradeRequire = {
@@ -69,14 +75,15 @@ local XLuckyTenant2Enum = {
         Type305 = 305, -- 角色羁绊lv.3 - 鞭尸增强（配合304）
         Type306 = 306, -- 角色羁绊lv.4 - 范围扩大增强（配合304）
         
-        -- ==================== 武器羁绊技能类型（Type 401-407）====================
-        Type401 = 401, -- 武器被动01 - 2个相同品质武器融合升品质
-        Type402 = 402, -- 武器被动02 - 动态增加基础金币，增加棋子等级*N金币
-        Type403 = 403, -- 武器羁绊lv.1 - 武器融合武器碎片等级
-        Type404 = 404, -- 武器羁绊lv.2 - 可被传染，感染后可融合任意相邻武器
-        Type405 = 405, -- 武器状态技能（被传染）- 感染后可融合任意相邻武器
-        Type406 = 406, -- 武器羁绊lv.3 - 相邻可升级棋子升级，自身升级
-        Type407 = 407, -- 武器羁绊lv.4 - 相邻N个可升级棋子等级+M
+        -- ==================== 武器羁绊技能类型（Type 401-408）====================
+        Type401 = 401, -- 武器被动01 - 相邻2枚同品质武器可融合提升品质，属性叠加
+        Type402 = 402, -- 武器被动02 - 等级每+1级，基础金币根据品质额外增加
+        Type403 = 403, -- 武器羁绊lv1 - 可融合武器碎片升级
+        Type404 = 404, -- 武器羁绊lv2 - 可被传染，被传染后激活Type408
+        Type405 = 405, -- 武器羁绊lv3 - 让相邻N枚棋子等级+M，成功后自身等级+K
+        Type406 = 406, -- [已废弃]
+        Type407 = 407, -- 武器羁绊lv4 - 有N%概率让相邻棋子倒计时清零，成功后自身等级+M
+        Type408 = 408, -- 武器状态技能（被传染）- 可融合任意相邻武器，等级额外+N
         
         -- ==================== 宝盒羁绊技能类型（Type 501-508）====================
         Type501 = 501, -- 宝盒被动01 - 倒计时N回合后死亡，并在相邻空位产生棋子
@@ -112,11 +119,12 @@ local XLuckyTenant2Enum = {
     Quality = {
         None = 0,
         White = 0,     -- 灰色/白色（新增，给子虫、金币使用）
-        Green = 1,
-        Blue = 2,
-        Purple = 3,
-        Orange = 4,
-        Red = 5,
+        Grey = 1,
+        Green = 2,
+        Blue = 3,
+        Purple = 4,
+        Orange = 5,
+        Max = 5,        -- 最大品质
     },
     PieceType = {
         Monster = 1,
@@ -199,12 +207,15 @@ local XLuckyTenant2Enum = {
     },
     -- 动画数据类型（用于 AnimationGroup）
     AnimationType = {
-        GetScore = 1,      -- 获得分数动画
-        AddPiece = 2,      -- 添加棋子动画
-        DeletePiece = 3,   -- 删除棋子动画
-        UpdatePiece = 4,   -- 更新棋子动画
+        GetScore = 1,              -- 获得分数动画
+        AddPiece = 2,              -- 添加棋子动画
+        DeletePiece = 3,           -- 删除棋子动画
+        UpdatePiece = 4,           -- 更新棋子动画
         ActivateSkillEnable = 5,   -- 主动发动技能的棋子播放
-        AffectedBySkillEnable = 6, -- 受技能影响的棋子播放
+        AffectedBySkillEnable = 6, -- 受技能影响的棋子播放（目标格子）
+        Duang = 7,                 -- Duang 特效
+        Countdown = 8,             -- 倒计时特效（沙漏）
+        InfectionSourceEnable = 9, -- 感染来源棋子播放（如 Type210 结算时，在拥有 Type207 时展示感染特效）
     },
     Cost = 1,
     QualityIcon = {
@@ -216,10 +227,32 @@ local XLuckyTenant2Enum = {
         MAX_SKILL_LOOP = 9,          -- 技能循环最大次数
         MAX_SKILL_PRIORITY = 10,     -- 技能最大优先级
         MAX_PIECES_AMOUNT = 99,      -- 背包最大棋子数量
-        MAX_PIECE_LEVEL = 99,        -- 棋子最大等级
+        MAX_PIECE_LEVEL = 20,        -- 棋子最大等级
         MIN_PIECE_LEVEL = 0,         -- 棋子最小等级
         MAX_ROLE_LEVEL = 20,         -- 角色羁绊棋子最大等级
         MAX_QUALITY = 5,             -- 棋子最大品质
+        DEFAULT_STAGE_ID = 101,      -- 默认关卡ID
+    },
+    -- 格子特效类型（用于 _WasGridEffectPlayedInGroup / _MarkGridEffectPlayedInGroup）
+    GridEffectType = {
+        Countdown = "Countdown",
+        Delete = "Delete",
+        WeaponSkill = "WeaponSkill",
+        Infection = "Infection",
+        RoleEliminate = "RoleEliminate",
+        BoxUpgrade = "BoxUpgrade",
+    },
+    -- UI 常量（XUiLuckyTenant2Game 等）
+    UiConstants = {
+        TIME_SCALE_SPEED_UP = 2,              -- 加速时的时间缩放倍率
+        TIME_SCALE_NORMAL = 1,                 -- 正常时间缩放
+        SCHEDULE_NEXT_STATE_DELAY_MS = 1000,  -- 状态切换定时器间隔（毫秒）
+        ADD_SCORE_DISPLAY_DURATION_MS = 3000, -- 加分数飘字显示时长（毫秒）
+        SHAKE_ANIMATION_DURATION = 0.15,      -- 晃动动画时长（秒）
+        SHAKE_SCALE_FACTOR = 1.1,             -- 晃动时缩放系数
+        HIGHLIGHT_ANIMATION_DURATION = 0.2,   -- 高亮动画时长（秒）
+        HIGHLIGHT_SCALE_FACTOR = 1.15,        -- 高亮时缩放系数
+        DELETE_ANIMATION_DURATION = 0.3,      -- 删除动画时长（秒）
     },
 }
 

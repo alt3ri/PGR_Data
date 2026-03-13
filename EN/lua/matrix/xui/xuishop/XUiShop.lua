@@ -58,14 +58,14 @@ function XUiShop:OnStart(typeId, cb, configShopId, screenId)
     self.AssetPanel = XUiPanelAsset.New(self, self.PanelAsset, XDataCenter.ItemManager.ItemId.FreeGem,
         XDataCenter.ItemManager.ItemId.ActionPoint, XDataCenter.ItemManager.ItemId.Coin)
     ---@type XUiPanelActivityAsset
-    self.AssetActivityPanel = XUiPanelActivityAsset.New(self.PanelActivityAsset, self, nil, self, true)
+    self.AssetActivityPanel = XUiPanelActivityAsset.New(self.PanelActivityAsset, self, nil, self)
     self.ItemList = XUiPanelItemList.New(self.PanelItemList, self)
     self.FashionList = XUiPanelFashionList.New(self.PanelFashionList, self)
     self.GuildGoodsList = XUiPanelGuildGoodsList.New(self.PanelGuildGoodsList, self)
     self.ShopPeriod = XUiPanelShopPeriod.New(self.PanelShopPeriod, self)
     self.RefreshTips = require("XUi/XUiShop/XUiShopRefreshTips").New(self.PanelSkillDetails)
     self.UiShopFashionDiscountActivity = XUiShopFashionDiscountActivity.New(self)
-
+  
 
     self.AssetActivityPanel:HidePanel()
     self.ItemList:HidePanel()
@@ -227,7 +227,7 @@ function XUiShop:OnDestroy()
     self.UiShopFashionDiscountActivity:OnDestroy()
     self.UiShopFashionDiscountActivity = nil
    
-    end
+end
 
 function XUiShop:SetShopBtn(shopType)
     local btnList = nil
@@ -383,18 +383,24 @@ function XUiShop:UpdateTog()
                 btn.transform:SetParent(self.TabBtnContent, false)
                 local uiButton = btn:GetComponent("XUiButton")
                 uiButton.SubGroupIndex = SubGroupIndex
-                uiButton:SetName(name)                
+                uiButton:SetName(name)
                 table.insert(self.BtnGoList, uiButton)
-                if info.IsNeedFirstBluePoint then
-                    -- key 与当前 info.Id 绑定
-                    self.ShopIndex2IdDic[#self.BtnGoList] = info.Id
-                    local key = string.format("ShopBluePoint_%s", tostring(info.Id))
-                    local hasClicked = XSaveTool.GetData(key)
-                    -- 如果没有点击过 → 显示蓝点，否则不显示
-                    uiButton:ShowReddot(not hasClicked)
+                -- key 与当前 info.Id 绑定
+                self.ShopIndex2IdDic[#self.BtnGoList] = info.Id
+                if not XTool.IsTableEmpty(info.ShopBtnRedPointConditions) then
+                    self:AddRedPointEvent(uiButton, function(_, count) uiButton:ShowReddot(count >= 0) end, self,
+                        info.ShopBtnRedPointConditions, info)
                 end
                 self.TagBtnShopGroup[uiButton] = info
                 btn.gameObject.name = info.Id
+
+                local isShowTag = XShopManager.CheckShopActivityPeriod(info.Id)
+                uiButton:ShowTag(isShowTag)
+                local tagObj = uiButton.TagObj
+                if not XTool.UObjIsNil(tagObj) then
+                    local txObjg = tagObj:FindTransform("TxtTag")
+                    txObjg:GetComponent("Text").text = XUiHelper.GetText("UiShopBtnActivityTagName")
+                end
             end
         end
 
@@ -475,12 +481,15 @@ end
 function XUiShop:OnSelectedTog(index)
     local shopId = self.ShopIndex2IdDic[index]
     if XTool.IsNumberValid(shopId) then
-        local key = string.format("ShopBluePoint_%s", tostring(shopId))
+        local key = string.format("ShopTabFirstBluePoint_%s_%s", tostring(shopId), tostring(XPlayer.Id))
         XSaveTool.SaveData(key, true)
-        local btn = self.BtnGoList[index]
-        if btn then
-            btn:ShowReddot(false)
+
+        local redPointKey = string.format("IsShopTabRedPoint%s", tostring(XPlayer.Id))
+        if XSaveTool.GetData(redPointKey) == 1 then
+            XSaveTool.SaveData(redPointKey, 0)
         end
+
+        XEventManager.DispatchEvent(XEventId.EVENT_SHOP_TAB_BTN_RED_POINT_UPDATE)
     end
     self.TabBtnGroupSelectIndex = self.TabBtnGroupSelectIndex or {}
     self.TabBtnGroupSelectIndex[self.Type] = index
@@ -501,7 +510,7 @@ function XUiShop:UpdateInfo(shopId)
     self:InitScreen(shopId)
     self:RefreshSelectFilter(shopId)
     self:UpdateList(shopId, false)
-    
+
 
     self.UiShopFashionDiscountActivity:ResetDiscountActivityTime(shopId)
 end
@@ -682,11 +691,11 @@ function XUiShop:OpenSuitSelect()
     end
 
     XLuaUiManager.Open('UiShopWaferSelect', selectData, dataProvider, function(data)
-        self:CloseSuitSelect(shopId,data)
+        self:CloseSuitSelect(shopId, data)
     end)
 end
 
-function XUiShop:CloseSuitSelect(shopId,data)
+function XUiShop:CloseSuitSelect(shopId, data)
     self.FilterResult[shopId] = {}
     self.FilterResult[shopId].TagId = data.TagId
     if data.WaferData then
@@ -715,8 +724,8 @@ function XUiShop:OnBtnScreenSuitClick()
             end
         end
     end
-    XLuaUiManager.Open('UiShopWaferSelect', selectData, dataProvider, function(data) 
-                self:CloseSuitSelect(shopId,data)
+    XLuaUiManager.Open('UiShopWaferSelect', selectData, dataProvider, function(data)
+        self:CloseSuitSelect(shopId, data)
     end)
 end
 
@@ -828,7 +837,7 @@ function XUiShop:OnBtnFilterClick()
             elementTags = self.FilterResult[shopId].ElementTags,
             weaponData = self.FilterResult[shopId].TagText
         }
-    else 
+    else
         selectData = {}
     end
 
@@ -853,7 +862,7 @@ function XUiShop:RefreshSelectFilter(shopId)
     self.BtnFilter.gameObject:SetActiveEx(false)
     self.BtnSwitch.gameObject:SetActiveEx(false)
     self.BtnScreening.gameObject:SetActiveEx(false)
-    for id ,data in pairs(self.FilterResult)do
+    for id, data in pairs(self.FilterResult) do
         if id ~= shopId then
             self.FilterResult[id] = nil
         end
@@ -907,5 +916,5 @@ function XUiShop:RefreshSelectFilter(shopId)
 end
 
 --endregion
-        
+
 return XUiShop

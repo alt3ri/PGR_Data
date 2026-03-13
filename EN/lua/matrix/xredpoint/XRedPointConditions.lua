@@ -28,6 +28,7 @@ local type = {
     --主界面红点相关 UiMain-----------------------------------------------
     CONDITION_MAIN_MEMBER = "XRedPointConditionMainMember", --成员
     CONDITION_MAIN_FRIEND = "XRedPointConditionMainFriend", --好友
+    CONDITION_MAIN_STORE = "XRedPointConditionMainStore", -- 主界面商店
     CONDITION_MAIN_NOTICE = "XRedPointConditionMainNotice", --活动系统
     CONDITION_MAIN_MAIL = "XRedPointConditionMainMail", --邮件
     CONDITION_MAIN_SET = "XRedPointConditionMainSet", --设置
@@ -343,12 +344,6 @@ local type = {
     CONDITION_PASSPORT_TASK_DAILY_RED = "XRedPointConditionPassportTaskDaily", --每日任务奖励可领取
     CONDITION_PASSPORT_TASK_WEEKLY_RED = "XRedPointConditionPassportTaskWeekly", --每周任务奖励可领取
     CONDITION_PASSPORT_TASK_ACTIVITY_RED = "XRedPointConditionPassportTaskActivity", --活动任务奖励可领取
-    --复合版本BP #203409
-    CONDITION_PASSPORT_COMB_RED = "XRedPointConditionPassportComb", --入口红点
-    CONDITION_PASSPORT_COMB_PANEL_REWARD_RED = "XRedPointConditionPassportCombPanelReward", --主界面奖励可领取
-    CONDITION_PASSPORT_COMB_TASK_DAILY_RED = "XRedPointConditionPassportCombTaskDaily", --每日任务奖励可领取
-    CONDITION_PASSPORT_COMB_TASK_WEEKLY_RED = "XRedPointConditionPassportCombTaskWeekly", --每周任务奖励可领取
-    CONDITION_PASSPORT_COMB_TASK_ACTIVITY_RED = "XRedPointConditionPassportCombTaskActivity", --活动任务奖励可领取
     --三消
     CONDITION_SAMECOLOR_TASK = "XRedPointConditionSCTask",
     CONDITION_SAMECOLOR_IS_CHALLENGE = "XRedPointConditionSCIsChallenge",
@@ -465,12 +460,16 @@ local type = {
     CONDITION_COURSE_LESSON_TOG = "XRedPointConditionCourseLessonTog", -- 课程页签红点
     CONDITION_COURSE_EXAM_TOG = "XRedPointConditionCourseExamTog", -- 考级页签红点
     CONDITION_DRAW_FREE_TAG = "XRedPointDrawFreeTag", --主界面免费抽卡tag
+    CONDITION_DRAW_CAN_LIVER_JOURNEY_REWARD = "XRedPointConditionDrawCanLiverJourneyReward", -- 可肝卡池有可领取奖励
     -- 夏日签到
     CONDITION_SUMMER_SIGNIN_ACTIVITY = "XRedPointConditionSummerSignInActivity", -- 活动入口
     -- 大秘境
     CONDITION_RIFT_ENTRANCE = "XRedPointConditionRiftEntrance", -- 活动入口
     CONDITION_RIFT_ATTRIBUTE = "XRedPointConditionRiftAttribute", -- 属性加点界面入口
     CONDITION_RIFT_ACTIVITY_TAG = "XRedPointConditionRiftActivityTag", -- 活动入口Tag
+    -- 商店内蓝点
+    CONDITION_SHOP_FIRST_BLUE = "XRedPointConditionShopFirstBlue",
+    CONDITION_SHOP_NOTIFY_RED = "XRedPointConditionShopNotifyRed",
     -- 调色板战争
     CONDITION_COLORTABLE_ENTRANCE = "XRedPointConditionColorTableEntrance", -- 活动入口
 
@@ -549,8 +548,6 @@ local type = {
     CONDITION_TEMPLE_CHALLENGE = "XRedPointConditionTempleChallenge",
     -- 春节累消
     CONDITION_ACCUMULATE_EXPEND_MAIN = "XRedPointConditionAccumulateExpend",
-    -- 合版本累消 #203409
-    CONDITION_ACCUMULATE_EXPEND_MAIN_COMB = "XRedPointConditionAccumulateExpendComb",
     -- 打地鼠红点
     CONDITION_HIT_MOUSE = "XRedpointConditionHitMouse",
     -- Boss跃升
@@ -669,6 +666,7 @@ local type = {
     CONDITION_SOLO_REFORM_MAIN = "XSoloReform/XRedPointSoloReformMain", -- 主红点
     CONDITION_SOLO_REFORM_CHAPTER = "XSoloReform/XRedPointSoloReformChapter", --章节蓝点
     CONDITION_SOLO_REFORM_TASK = "XSoloReform/XRedPointSoloReformTask", --任务蓝点
+    CONDITION_SOLO_REFORM_CHALLENGE_TASK = "XSoloReform/XRedPointSoloReformChallengeTask", --挑战任务蓝点
     CONDITION_SOLO_REFORM_STRENGTH = "XSoloReform/XRedPointSoloReformStrength", --强化蓝点
     
     --启明卡池

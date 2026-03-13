@@ -409,6 +409,7 @@ function XUiFubenBossSingleTrialDetail:_RegisterButtonClicks()
     self:BindExitBtns(self.BtnBack, self.BtnMainUi)
     self:BindHelpBtn(self.BtnHelp, "BossSingle")
     self:RegisterClickEvent(self.BtnStart, self.OnBtnStartClick, true)
+    self.BtnAttributeDetail:AddEventListener(handler(self, self.OnBtnAttributeDetailClick))
 end
 
 function XUiFubenBossSingleTrialDetail:_InitUi()
@@ -418,6 +419,10 @@ function XUiFubenBossSingleTrialDetail:_InitUi()
         rankButton.gameObject:SetActiveEx(false)
     end
     self.GridBossSkill.gameObject:SetActiveEx(false)
+end
+
+function XUiFubenBossSingleTrialDetail:OnBtnAttributeDetailClick()
+    XLuaUiManager.Open("UiCharacterAttributeDetail", nil, XEnumConst.UiCharacterAttributeDetail.BtnTab.Damage)
 end
 
 --endregion

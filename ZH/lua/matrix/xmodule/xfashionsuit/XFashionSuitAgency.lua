@@ -250,11 +250,11 @@ function XFashionSuitAgency:IsRandom(fashionId, weaponFashionId)
 end
 
 ---涂装是否已穿戴
-function XFashionSuitAgency:IsDressed(fashionId, weaponFashionId)
+function XFashionSuitAgency:IsDressed(fashionId, weaponFashionId, characterId)
     if fashionId and not self:IsFashionDressed(fashionId) then
         return false
     end
-    if weaponFashionId and not self:IsWeaponFashionDressed(weaponFashionId) then
+    if weaponFashionId and not self:IsWeaponFashionDressed(weaponFashionId, characterId) then
         return false
     end
     return true
@@ -332,7 +332,11 @@ function XFashionSuitAgency:OnMoneyNotEnough(skipIndex, leftTabIndex, payCount)
         if payCount then
             XLuaUiManager.Open("UiPurchaseQuickBuy", payCount, function(index)
                 XLuaUiManager.SafeClose("UiPurchaseQuickBuy")
-                XLuaUiManager.Open("UiPurchase", XPurchaseConfigs.TabsConfig.Pay, false, index)
+                if XLuaUiManager.IsUiLoad("UiPurchase") then
+                    XEventManager.DispatchEvent(XEventId.EVENT_PURCHASE_QUICK_BUY_SKIP, index)
+                else
+                    XLuaUiManager.Open("UiPurchase", XPurchaseConfigs.TabsConfig.Pay, false, index)
+                end
             end)
         end
     else
@@ -554,7 +558,7 @@ function XFashionSuitAgency:GetShopGoodsSale(shopId, goodsData)
     local sales = 100
     local activityOpen, needCount = self:GetDiscountActivityIsOpen(shopId, goodsData)
 
-    XTool.LoopMap(onSales, function(k, sales)
+    XTool.LoopMap(goodsData.OnSales, function(k, sales)
         onSales[k] = sales
     end)
 

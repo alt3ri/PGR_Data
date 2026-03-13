@@ -30,7 +30,7 @@ function XUiBigWorldMessageGrid:OnStart()
 
     self._IsWait = false
     self._AnimationName = "PanelCharacter"
-    
+
     self._TextureCache = false
     self._OverrideTextureCache = false
 
@@ -111,14 +111,14 @@ function XUiBigWorldMessageGrid:Refresh(content)
         self.RImgPhoto.gameObject:SetActiveEx(true)
         self.RImgExpression.gameObject:SetActiveEx(false)
 
-        local photoImage = content:GetPhotoImage()
+        self._TextureCache = content:GetPhotoImage()
 
-        if not photoImage then
+        if not self._TextureCache then
             self.RImgPhoto:SetRawImage(content:GetImage(), function()
                 self._Control:AdaptImageSize(self.RImgPhoto)
             end)
         else
-            self.RImgPhoto.texture = photoImage
+            self.RImgPhoto.texture = self._TextureCache
             self._Control:AdaptImageSize(self.RImgPhoto)
         end
     elseif content:IsImage() then
@@ -189,7 +189,7 @@ function XUiBigWorldMessageGrid:OpenPreview()
 
     ---@type XPreviewData
     local previewData = XMVCA.XBigWorldCommon:GetPreviewData()
-    
+
     if self._Content:IsImageToVideo() then
         previewData:SetImageToVideoData(self._Content:GetImage(), self._Content:GetVideoId())
     elseif self._Content:IsImage() then
@@ -225,12 +225,14 @@ end
 
 function XUiBigWorldMessageGrid:_RegisterListeners()
     -- 在此处注册事件监听
-    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_PREVIEW_CLOSE, self.OnPreviewClose, self)
+    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_PREVIEW_CLOSE, self.OnPreviewClose,
+        self)
 end
 
 function XUiBigWorldMessageGrid:_RemoveListeners()
     -- 在此处移除事件监听
-    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_PREVIEW_CLOSE, self.OnPreviewClose, self)
+    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_PREVIEW_CLOSE,
+        self.OnPreviewClose, self)
 end
 
 function XUiBigWorldMessageGrid:_RegisterRedPointEvents()
@@ -262,7 +264,8 @@ function XUiBigWorldMessageGrid:_PlayFinish(content, isComplete)
     end
 
     if content:IsEnd() then
-        XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MESSAGE_PLAY_FINISH_NOTIFY, content, isComplete)
+        XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MESSAGE_PLAY_FINISH_NOTIFY, content,
+            isComplete)
     end
 end
 

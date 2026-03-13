@@ -110,11 +110,11 @@ function XFashionSuitModel:IsAllowGroupSales(fashionId)
         return false
     end
     if config.GainType == XEnumConst.FashionSuit.GainType.Shop then
-        if not self:CheckGoodsValid(config.FashionGainParams[1], config.FashionGainParams[2]) then
+        if not isHaveFashion and not self:CheckGoodsValid(config.FashionGainParams[1], config.FashionGainParams[2]) then
             --角色涂装商品无效
             return false
         end
-        if not self:CheckGoodsValid(config.WeaponFashionGainParams[1], config.WeaponFashionGainParams[2]) then
+        if not isHaveWeaponFashion and not self:CheckGoodsValid(config.WeaponFashionGainParams[1], config.WeaponFashionGainParams[2]) then
             --武器涂装商品无效
             return false
         end

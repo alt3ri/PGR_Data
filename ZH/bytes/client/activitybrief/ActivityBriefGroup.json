@@ -3,8 +3,8 @@
         "Id": 1,
         "Name": "\u4e3b\u7ebf\u6d3b\u52a8",
         "SkipId": 532.0,
-        "BtnInitMethodName": "RefreshActivityMainLine2",
         "TimeId": 45901.0,
+        "BtnInitMethodName": "RefreshActivityMainLine2",
         "IsRemindWhenOpen": 1.0,
         "RemindPriority": 9.0,
         "RedConditions": null,
@@ -13,14 +13,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 2,
         "Name": "\u652f\u7ebf\u6d3b\u52a8",
         "SkipId": 8000.0,
-        "BtnInitMethodName": "RefreshActivityBranch",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshActivityBranch",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -29,14 +30,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 3,
         "Name": "\u8d85\u96be\u5173",
         "SkipId": 11724.0,
-        "BtnInitMethodName": "RefreshActivityBossSingle",
         "TimeId": 45801.0,
+        "BtnInitMethodName": "RefreshActivityBossSingle",
         "IsRemindWhenOpen": 1.0,
         "RemindPriority": 3.0,
         "RedConditions": "['CONDITION_ACTIVITY_BOSS_SINGLE_REWARD']",
@@ -45,14 +47,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 4,
         "Name": "8/6-8/20",
         "SkipId": 20019.0,
-        "BtnInitMethodName": "RefreshActivityBossOnline",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshActivityBossOnline",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -61,14 +64,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 5,
         "Name": "\u95f4\u7ae01",
         "SkipId": 20117.0,
-        "BtnInitMethodName": "RefreshAllActivityPrequel",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshAllActivityPrequel",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -77,14 +81,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 6,
         "Name": "\u5df4\u522b\u5854",
         "SkipId": 20015.0,
-        "BtnInitMethodName": "RefreshNormal",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshNormal",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_ACTIVITYBRIE_BABELTOWER_REWARD']",
@@ -93,14 +98,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 7,
         "Name": "\u8089\u9e3d\u722c\u5854",
         "SkipId": 20018.0,
-        "BtnInitMethodName": "RefreshActivityRogueLike",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshActivityRogueLike",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -109,14 +115,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 8,
         "Name": "\u590d\u5237\u5173",
         "SkipId": 20017.0,
-        "BtnInitMethodName": "RefreshActivityRepeateChallenge",
         "TimeId": 45711.0,
+        "BtnInitMethodName": "RefreshActivityRepeateChallenge",
         "IsRemindWhenOpen": 1.0,
         "RemindPriority": 2.0,
         "RedConditions": "['CONDITION_REPEAT_CHALLENGE_ENTRANCE']",
@@ -124,15 +131,16 @@
         "TagCondition": null,
         "TagOffset": null,
         "TagParam": null,
-        "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "ActivityRewardIds": "[67938]",
+        "RewardShowTimeIds": "[45711]",
+        "ConstShowRewardId": null
     },
     {
         "Id": 9,
         "Name": "\u533a\u57df\u8054\u673a",
         "SkipId": 11723.0,
-        "BtnInitMethodName": "RefreshActivityArenaOnline",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshActivityArenaOnline",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -141,14 +149,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 10,
         "Name": "\u72d9\u51fb\u6218",
         "SkipId": 11722.0,
-        "BtnInitMethodName": "RefreshActivityUnionKill",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshActivityUnionKill",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -157,14 +166,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 11,
         "Name": "\u77ed\u7bc7\u6545\u4e8b",
         "SkipId": 11729.0,
-        "BtnInitMethodName": "RefreshActivityShortStories",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshActivityShortStories",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -173,14 +183,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 12,
         "Name": "\u95f4\u7ae02",
         "SkipId": 11731.0,
-        "BtnInitMethodName": "RefreshAllActivityPrequel",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshAllActivityPrequel",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -189,14 +200,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 13,
         "Name": "\u5f02\u805a\u8ff7\u5bab",
         "SkipId": 11726.0,
-        "BtnInitMethodName": "RefreshActivityLabyrinth",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshActivityLabyrinth",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -205,14 +217,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 14,
         "Name": "\u516c\u4f1a\u7cfb\u7edf",
         "SkipId": 15001.0,
-        "BtnInitMethodName": "RefreshActivitySociety",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshActivitySociety",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -221,14 +234,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 15,
         "Name": "\u8d44\u6e90AE5",
         "SkipId": 11728.0,
-        "BtnInitMethodName": "RefreshActivityResource",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshActivityResource",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -237,14 +251,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 16,
         "Name": "\u7279\u8bad\u5173",
         "SkipId": 89025.0,
-        "BtnInitMethodName": "RefreshActivitySpecialTrain",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshActivitySpecialTrain",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -253,14 +268,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 17,
         "Name": "\u4e5d\u9f99\u6218\u5f79",
         "SkipId": 99998.0,
-        "BtnInitMethodName": "RefreshActivityExtra",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshActivityExtra",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -269,14 +285,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 18,
         "Name": "\u4e16\u754cBoss",
         "SkipId": 11735.0,
-        "BtnInitMethodName": "RefreshWorldBoss",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshWorldBoss",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -285,14 +302,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 19,
         "Name": "\u81ea\u8d70\u68cb",
         "SkipId": 20104.0,
-        "BtnInitMethodName": "RefreshExpedition",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshExpedition",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -301,14 +319,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 20,
         "Name": "\u65b0\u589e\u7ec8\u6781\u533a",
         "SkipId": 10009.0,
-        "BtnInitMethodName": "RefreshFubenBossSingle",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshFubenBossSingle",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -317,14 +336,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 21,
         "Name": "\u6d3b\u52a8\u5546\u5e97",
         "SkipId": 20055.0,
-        "BtnInitMethodName": "RefreshActivityShop",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshActivityShop",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -333,14 +353,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 22,
         "Name": "\u756a\u5916-\u9690\u85cf",
         "SkipId": 99995.0,
-        "BtnInitMethodName": "RefreshActivityExtra",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshActivityExtra",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -349,14 +370,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 23,
         "Name": "\u5927\u5bcc\u7fc1\u73a9\u6cd5",
         "SkipId": 11737.0,
-        "BtnInitMethodName": "RefreshMaintainerAction",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshMaintainerAction",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -365,14 +387,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 24,
         "Name": "RPG\u73a9\u6cd5",
         "SkipId": 11736.0,
-        "BtnInitMethodName": "RefreshRpgTower",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshRpgTower",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -381,14 +404,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 25,
         "Name": "\u6d3b\u52a8\u62bd\u5361",
         "SkipId": 20053.0,
-        "BtnInitMethodName": "RefreshDrawActivity",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshDrawActivity",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -397,14 +421,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 26,
         "Name": "\u7ec8\u7109\u798f\u97f3-\u4e3b\u7ebf\u8dd1\u56e2\u6d3b\u52a8",
         "SkipId": 11738.0,
-        "BtnInitMethodName": "RefreshTRPG",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshTRPG",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -413,30 +438,32 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 27,
         "Name": "\u65b0\u89d2\u8272\u8bd5\u73a9",
         "SkipId": 20235.0,
-        "BtnInitMethodName": "RefreshNewCharActivity",
         "TimeId": 45301.0,
+        "BtnInitMethodName": "RefreshNewCharActivity",
         "IsRemindWhenOpen": 1.0,
         "RemindPriority": 6.0,
-        "RedConditions": "['CONDITION_KOROMCHARACTIVITYMAINRED']",
+        "RedConditions": "['CONDITION_KOROMCHARACTIVITYMAINRED', 'CONDITION_FAVORABILITY_STORY_GIFT_TASK']",
         "RedParam": null,
         "TagCondition": "CONDITION_NEWCHARACT_ISCHALLENGEABLE",
         "TagOffset": null,
         "TagParam": null,
-        "ActivityRewardIds": "[703142]",
-        "RewardShowTimeIds": "[45601]"
+        "ActivityRewardIds": null,
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 28,
         "Name": "\u6d82\u88c5\u8bd5\u73a9\u5173",
         "SkipId": 10035.0,
-        "BtnInitMethodName": "RefreshFubenActivityTrial",
         "TimeId": 45803.0,
+        "BtnInitMethodName": "RefreshFubenActivityTrial",
         "IsRemindWhenOpen": 1.0,
         "RemindPriority": 8.0,
         "RedConditions": null,
@@ -445,14 +472,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 29,
         "Name": "\u5e08\u5f92\u7cfb\u7edf",
         "SkipId": 15003.0,
-        "BtnInitMethodName": "RefreshShiTu",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshShiTu",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -461,14 +489,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 30,
         "Name": "\u5c3c\u5c14\u73a9\u6cd5",
         "SkipId": 11749.0,
-        "BtnInitMethodName": "RefreshNier",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshNier",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -477,14 +506,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 31,
         "Name": "\u53e3\u888b\u6218\u53cc",
         "SkipId": 11750.0,
-        "BtnInitMethodName": "RefreshPokemon",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshPokemon",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -493,14 +523,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 32,
         "Name": "\u8ffd\u53ca\u73a9\u6cd5",
         "SkipId": 11751.0,
-        "BtnInitMethodName": "RefreshPursuit",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshPursuit",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -509,14 +540,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 33,
         "Name": "\u8d85\u7ea7\u636e\u70b9",
         "SkipId": 70001.0,
-        "BtnInitMethodName": "RefreshStrongHold",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshStrongHold",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -525,14 +557,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 34,
         "Name": "\u6a21\u62df\u4f5c\u6218",
         "SkipId": 11752.0,
-        "BtnInitMethodName": "RefreshSimulate",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshSimulate",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -541,14 +574,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 35,
         "Name": "\u5ba0\u7269",
         "SkipId": 7110.0,
-        "BtnInitMethodName": "RefreshPartner",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshPartner",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -557,14 +591,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 36,
         "Name": "2021\u767d\u8272\u60c5\u4eba\u8282",
         "SkipId": 80011.0,
-        "BtnInitMethodName": null,
         "TimeId": null,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -573,14 +608,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 37,
         "Name": "\u731c\u62f3\u5c0f\u6e38\u620f",
         "SkipId": 11753.0,
-        "BtnInitMethodName": null,
         "TimeId": null,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -589,14 +625,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 38,
         "Name": "\u840c\u6218",
         "SkipId": 11756.0,
-        "BtnInitMethodName": "RefreshMoeWar",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshMoeWar",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -605,14 +642,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 39,
         "Name": "\u5ba0\u7269\u62bd\u5361\u7cfb\u7edf",
         "SkipId": 7212.0,
-        "BtnInitMethodName": "RefreshPetCard",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshPetCard",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -621,14 +659,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 40,
         "Name": "\u65b0\u5ba0\u7269\u6d3b\u52a8",
         "SkipId": 7109.0,
-        "BtnInitMethodName": "RefreshPetTrial",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshPetTrial",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -637,14 +676,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 41,
         "Name": "\u7ffb\u724c\u62fc\u5927\u5c0f",
         "SkipId": 11761.0,
-        "BtnInitMethodName": "RefreshPokerGuessing",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshPokerGuessing",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -653,14 +693,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 42,
         "Name": "\u9a87\u5165\u73a9\u6cd5",
         "SkipId": 11758.0,
-        "BtnInitMethodName": "RefreshHack",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshHack",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -669,14 +710,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 43,
         "Name": "\u63a8\u7bb1\u5b50",
         "SkipId": 20128.0,
-        "BtnInitMethodName": "RefreshRpgMaker",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshRpgMaker",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_RPG_MAKER_GAME_RED']",
@@ -685,14 +727,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 44,
         "Name": "\u754c\u9650\u6784\u89e3",
         "SkipId": 81104.0,
-        "BtnInitMethodName": "RefreshReform",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshReform",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_REFORM_All_RED_POINT']",
@@ -701,14 +744,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 45,
         "Name": "\u53cc\u4eba\u540c\u884c",
         "SkipId": 82001.0,
-        "BtnInitMethodName": "RefreshCoupleCombat",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshCoupleCombat",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -717,14 +761,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 46,
         "Name": "\u8d85\u7ea7\u722c\u5854",
         "SkipId": 20084.0,
-        "BtnInitMethodName": "RefreshSuperTower",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshSuperTower",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -733,14 +778,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 47,
         "Name": "\u590f\u6d3b\u7cfb\u5217\u5173",
         "SkipId": 20088.0,
-        "BtnInitMethodName": "RefreshSummerSeries",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshSummerSeries",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -749,14 +795,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 48,
         "Name": "\u6740\u622e\u7a7a\u95f4",
         "SkipId": 20083.0,
-        "BtnInitMethodName": "RefreshKillZone",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshKillZone",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -765,14 +812,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 49,
         "Name": "\u865a\u50cf\u5730\u5e73\u7ebf",
         "SkipId": 11734.0,
-        "BtnInitMethodName": "RefreshExpedition",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshExpedition",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -781,14 +829,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 50,
         "Name": "\u4e09\u6d88-\u94fe\u5408\u56de\u8def",
         "SkipId": 82010.0,
-        "BtnInitMethodName": null,
         "TimeId": null,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_SAMECOLOR_IS_CHALLENGE']",
@@ -797,14 +846,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 51,
         "Name": "\u5168\u5883\u7279\u9063-\u5168\u670d\u51b3\u6218",
         "SkipId": 80176.0,
-        "BtnInitMethodName": "RefreshAreaWar",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshAreaWar",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['XRedPointConditionAreaWarActivity']",
@@ -813,14 +863,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 52,
         "Name": "\u8d85\u9650\u4e71\u6597",
         "SkipId": 20104.0,
-        "BtnInitMethodName": "RefreshSuperSmashBros",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshSuperSmashBros",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -829,14 +880,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 53,
         "Name": "\u6559\u5b66\u5173\u6d82\u88c5\u8bd5\u73a9",
         "SkipId": 89012.0,
-        "BtnInitMethodName": "RefreshTeachingSkin",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshTeachingSkin",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -845,14 +897,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 54,
         "Name": "\u5c04\u51fb\u73a9\u6cd5",
         "SkipId": 89011.0,
-        "BtnInitMethodName": "RefreshMaverick",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshMaverick",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -861,14 +914,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 55,
         "Name": "\u610f\u8bc6\u8425\u6551\u6218",
         "SkipId": 82040.0,
-        "BtnInitMethodName": "RefreshMemorySave",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshMemorySave",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -877,14 +931,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 56,
         "Name": "\u8089\u9e3d\u73a9\u6cd5",
         "SkipId": 82020.0,
-        "BtnInitMethodName": "RefreshTheatre",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshTheatre",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -893,14 +948,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 57,
         "Name": "\u6a21\u62df\u7ecf\u8425",
         "SkipId": 82050.0,
-        "BtnInitMethodName": "RefreshDoomsDay",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshDoomsDay",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -909,14 +965,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 58,
         "Name": "\u72ec\u57df\u7279\u653b - Sp\u89d2\u8272",
         "SkipId": 82070.0,
-        "BtnInitMethodName": "RefreshPivotCombat",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshPivotCombat",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -925,14 +982,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 59,
         "Name": "\u9650\u65f6\u9003\u8131",
         "SkipId": 82080.0,
-        "BtnInitMethodName": "RefreshEscape",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshEscape",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -941,14 +999,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 60,
         "Name": "\u6d6e\u70b9\u7eaa\u5b9e-\u6545\u4e8b\u96c6",
         "SkipId": 20191.0,
-        "BtnInitMethodName": "RefreshFubenShortStory",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshFubenShortStory",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -957,14 +1016,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 61,
         "Name": "\u5854\u9632",
         "SkipId": 82100.0,
-        "BtnInitMethodName": "RefreshDoubleTower",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshDoubleTower",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -973,14 +1033,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 62,
         "Name": "\u526f\u9762\u677f\u6d3b\u52a8\u5546\u5e97",
         "SkipId": null,
-        "BtnInitMethodName": "RefreshFubenShortStory",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshFubenShortStory",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -989,14 +1050,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 63,
         "Name": "\u526f\u9762\u677f\u8df3\u8f6c",
         "SkipId": 20125.0,
-        "BtnInitMethodName": "RefreshSecondActivityPanel",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshSecondActivityPanel",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -1005,14 +1067,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 64,
         "Name": "\u5de5\u4f1a\u6218",
         "SkipId": 85016.0,
-        "BtnInitMethodName": "RefreshGuildWar",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshGuildWar",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_GUILDWAR_Main']",
@@ -1021,14 +1084,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 65,
         "Name": "\u77ff\u5de5",
         "SkipId": 20177.0,
-        "BtnInitMethodName": "RefreshGoldenMiner",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshGoldenMiner",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_GOLDEN_MINER_REWARD']",
@@ -1037,14 +1101,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 66,
         "Name": "\u6625\u8282\u4e03\u5173",
         "SkipId": 83010.0,
-        "BtnInitMethodName": "RefreshNormal",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshNormal",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -1053,14 +1118,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 67,
         "Name": "\u97f3\u6e38\u5c0f\u6e38\u620f",
         "SkipId": 84010.0,
-        "BtnInitMethodName": "RefreshTaiKoMaster",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshTaiKoMaster",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -1069,14 +1135,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 68,
         "Name": "\u591a\u7ef4\u6311\u6218",
         "SkipId": 84020.0,
-        "BtnInitMethodName": "RefreshMultiDim",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshMultiDim",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -1085,14 +1152,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 69,
         "Name": "\u6d3b\u52a8\u5267\u60c5",
         "SkipId": 20147.0,
-        "BtnInitMethodName": "RefreshActivityFestival",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshActivityFestival",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -1101,14 +1169,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 70,
         "Name": "\u62df\u771f\u56f4\u527f",
         "SkipId": 84040.0,
-        "BtnInitMethodName": "RefreshGuildBoss",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshGuildBoss",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -1117,14 +1186,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 71,
         "Name": "\u6b63\u9006\u5854-\u5fc3\u8c61\u98ce\u666f",
         "SkipId": 85013.0,
-        "BtnInitMethodName": "RefreshTwoSideTower",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshTwoSideTower",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -1133,14 +1203,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 72,
         "Name": "\u7279\u8bad\u5173",
         "SkipId": 11727.0,
-        "BtnInitMethodName": "RefreshActivitySpecialTrain",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshActivitySpecialTrain",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -1149,14 +1220,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 73,
         "Name": "\u4e03\u5915\u6d3b\u52a8",
         "SkipId": 11761.0,
-        "BtnInitMethodName": "RefreshActivityFestival",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshActivityFestival",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -1165,14 +1237,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 74,
         "Name": "\u8089\u9e3d2.0\uff08\u5384\u613f\u6f6e\u58f0\uff09",
         "SkipId": 85015.0,
-        "BtnInitMethodName": "RefreshBiancaTheatre",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshBiancaTheatre",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -1181,14 +1254,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 75,
         "Name": "\u4e2d\u79cb\u6d3b\u52a8\u5267\u60c5",
         "SkipId": 20166.0,
-        "BtnInitMethodName": "RefreshActivityFestival",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshActivityFestival",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -1197,14 +1271,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 76,
         "Name": "\u672c\u6211\u56de\u5eca",
         "SkipId": 11772.0,
-        "BtnInitMethodName": "RefreshActivityCharacterTower",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshActivityCharacterTower",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -1213,14 +1288,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 77,
         "Name": "\u6218\u53cc\u5927\u79d8\u5883",
         "SkipId": 80201.0,
-        "BtnInitMethodName": "RefreshActivityRift",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshActivityRift",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_RIFT_ENTRANCE']",
@@ -1229,14 +1305,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 78,
         "Name": "\u8c03\u8272\u677f\u6218\u4e89",
         "SkipId": 88004.0,
-        "BtnInitMethodName": "RefreshColorTable",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshColorTable",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -1245,14 +1322,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 79,
         "Name": "\u5149\u8f89\u540c\u884c",
         "SkipId": 89001.0,
-        "BtnInitMethodName": "RefreshBrilliantWalk",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshBrilliantWalk",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -1261,14 +1339,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 80,
         "Name": "\u610f\u8bc6\u516c\u7ea6",
         "SkipId": 11775.0,
-        "BtnInitMethodName": "RefreshFubenAwareness",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshFubenAwareness",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -1277,14 +1356,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 81,
         "Name": "\u6218\u53cc\u53a8\u623f",
         "SkipId": 89008.0,
-        "BtnInitMethodName": "RefreshRestaurant",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshRestaurant",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -1293,14 +1373,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 82,
         "Name": "\u7279\u8bad\u5173",
         "SkipId": 89007.0,
-        "BtnInitMethodName": "RefreshActivitySpecialTrain",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshActivitySpecialTrain",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -1309,14 +1390,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 83,
         "Name": "\u8282\u65e5\u5267\u60c5",
         "SkipId": 90024.0,
-        "BtnInitMethodName": "RefreshActivityFestival",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshActivityFestival",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_ACTIVITY_FESTIVAL_DMC']",
@@ -1325,14 +1407,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 84,
         "Name": "\u60c5\u4eba\u8282",
         "SkipId": 89013.0,
-        "BtnInitMethodName": "RefreshNormal",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshNormal",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -1341,14 +1424,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 85,
         "Name": "\u661f\u661f\u73af\u6e38\u8bb0",
         "SkipId": 89015.0,
-        "BtnInitMethodName": "RefreshPlanetRunning",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshPlanetRunning",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -1357,14 +1441,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 86,
         "Name": "BVB",
         "SkipId": 89016.0,
-        "BtnInitMethodName": "RefreshMonsterCombat",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshMonsterCombat",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -1373,14 +1458,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 87,
         "Name": "\u4e09\u5934\u72ac-\u4f59\u5c18\u4e09\u91cd\u594f",
         "SkipId": 89018.0,
-        "BtnInitMethodName": "RefreshNormal",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshNormal",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -1389,14 +1475,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 88,
         "Name": "\u8d85\u9650\u8fde\u6218",
         "SkipId": 89023.0,
-        "BtnInitMethodName": "RefreshTransfinite",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshTransfinite",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -1405,14 +1492,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 89,
         "Name": "\u8089\u9e3d3.0",
         "SkipId": 89027.0,
-        "BtnInitMethodName": "RefreshTheatre3",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshTheatre3",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -1421,14 +1509,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 90,
         "Name": "\u9ed1\u5ca9\u56fd\u9645\u6218\u65d7",
         "SkipId": 89028.0,
-        "BtnInitMethodName": "RefreshNormal",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshNormal",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_BLACK_ROCK_CHESS_ENTRANCE']",
@@ -1437,14 +1526,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 91,
         "Name": "\u4e5d\u9f99\u4e00\u5546",
         "SkipId": 89044.0,
-        "BtnInitMethodName": "RefreshNormal",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshNormal",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_ROGUESIM_ACTIVITY']",
@@ -1453,14 +1543,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 92,
         "Name": "2.9\u4e3b\u7ebf\u6d3b\u52a8\u7279\u6b8a\u914d\u7f6e-\u9690\u85cf\u5173",
         "SkipId": 511.0,
-        "BtnInitMethodName": "RefreshActivityMainLine",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshActivityMainLine",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_MAINLINE_CHAPTER_REWARD']",
@@ -1469,14 +1560,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 94,
         "Name": "\u6d82\u88c5\u8bd5\u73a9\u5173\u5408\u4f53\u7248",
         "SkipId": 10035.0,
-        "BtnInitMethodName": "RefreshFubenActivityTrial",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshFubenActivityTrial",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -1485,14 +1577,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 95,
         "Name": "\u9b54\u65b9\u5f39\u8df3\u4e50",
         "SkipId": 89045.0,
-        "BtnInitMethodName": null,
         "TimeId": null,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_DLC_CASUAL_ACTIVITY']",
@@ -1501,14 +1594,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 96,
         "Name": "\u9690\u85cf\u5267\u60c5",
         "SkipId": 510.0,
-        "BtnInitMethodName": "RefreshActivityMainLine",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshActivityMainLine",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -1517,14 +1611,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 97,
         "Name": "\u571f\u8033\u5176\u65b9\u5757",
         "SkipId": 89049.0,
-        "BtnInitMethodName": null,
         "TimeId": null,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_FANGKUAI_MAIN']",
@@ -1533,14 +1628,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 98,
         "Name": "\u8a00\u7075",
         "SkipId": 89050.0,
-        "BtnInitMethodName": null,
         "TimeId": null,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_KOTODAMA_MAIN']",
@@ -1549,14 +1645,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 99,
         "Name": "\u5e99\u4f1a",
         "SkipId": 89052.0,
-        "BtnInitMethodName": "RefreshNormal",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshNormal",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_TEMPLE_MAIN']",
@@ -1565,14 +1662,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 100,
         "Name": "\u6218\u53cc\u5de5\u827a",
         "SkipId": 89058.0,
-        "BtnInitMethodName": null,
         "TimeId": null,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_LINKCRAFT_MAIN']",
@@ -1581,14 +1679,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 101,
         "Name": "\u5367\u732b\u85cf\u9f20",
         "SkipId": 89057.0,
-        "BtnInitMethodName": null,
         "TimeId": null,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_DLC_MOUSE_HUNTER_ACTIVITY']",
@@ -1597,14 +1696,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 102,
         "Name": "\u62c9\u5f25\u4e9a\u6d82\u88c5\u8bd5\u73a9\u5173",
         "SkipId": 10035.0,
-        "BtnInitMethodName": "RefreshFubenActivityTrial",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshFubenActivityTrial",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -1613,14 +1713,15 @@
         "TagOffset": null,
         "TagParam": 107.0,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 103,
         "Name": "\u4e07\u4e8b\u5927\u8fde\u7ebf",
         "SkipId": 89062.0,
-        "BtnInitMethodName": null,
         "TimeId": null,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_LINE_ARITHMETIC']",
@@ -1629,14 +1730,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 104,
         "Name": "\u6548\u5e94\u73a9\u6cd5",
         "SkipId": 89063.0,
-        "BtnInitMethodName": null,
         "TimeId": null,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_MECHANISM_MAIN']",
@@ -1645,14 +1747,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 105,
         "Name": "\u6d82\u88c5\u5267\u60c5",
         "SkipId": 89065.0,
-        "BtnInitMethodName": null,
         "TimeId": null,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_FASHION_STORY_ENTRANCE']",
@@ -1661,14 +1764,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 106,
         "Name": "\u8bc4\u5206\u73a9\u6cd5",
         "SkipId": 89061.0,
-        "BtnInitMethodName": null,
         "TimeId": null,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_BOSS_INSHOT']",
@@ -1677,14 +1781,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 107,
         "Name": "\u65b0\u9ad8\u96be",
         "SkipId": 89073.0,
-        "BtnInitMethodName": null,
         "TimeId": null,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_SUCCEED_BOSS']",
@@ -1693,14 +1798,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 108,
         "Name": "\u6570\u636e\u6f14\u4e60\u6d3b\u52a8",
         "SkipId": 89071.0,
-        "BtnInitMethodName": null,
         "TimeId": null,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_SIMULATE_TRAIN']",
@@ -1709,14 +1815,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 109,
         "Name": "\u901b\u8857\u73a9\u6cd5",
         "SkipId": 89074.0,
-        "BtnInitMethodName": null,
         "TimeId": null,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_TEMPLE2']",
@@ -1725,14 +1832,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 110,
         "Name": "\u80cc\u5305\u6574\u7406",
         "SkipId": 90020.0,
-        "BtnInitMethodName": null,
         "TimeId": null,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_BAGORGANIZE_ANY']",
@@ -1741,14 +1849,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 111,
         "Name": "2048",
         "SkipId": 89075.0,
-        "BtnInitMethodName": null,
         "TimeId": null,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_GAME2048_MAIN']",
@@ -1757,14 +1866,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 112,
         "Name": "FPS",
         "SkipId": 89079.0,
-        "BtnInitMethodName": null,
         "TimeId": null,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_FPSGAME_MAIN']",
@@ -1773,14 +1883,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 113,
         "Name": "\u7cbe\u9009\u5173",
         "SkipId": 90010.0,
-        "BtnInitMethodName": null,
         "TimeId": null,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_STAGE_MEMORY']",
@@ -1789,14 +1900,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 114,
         "Name": "\u9732\u5a1c\u5361\u6c60\u76ae",
         "SkipId": 80203.0,
-        "BtnInitMethodName": null,
         "TimeId": null,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -1805,14 +1917,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 115,
         "Name": "\u5f02\u6784\u9635\u7ebf\u00b7\u7edd\u5883\u5148\u950b",
         "SkipId": 90011.0,
-        "BtnInitMethodName": null,
         "TimeId": null,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_MAVERICK3_MAIN']",
@@ -1821,14 +1934,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 116,
         "Name": "\u5e78\u8fd0\u623f\u4e1c",
         "SkipId": 90014.0,
-        "BtnInitMethodName": null,
         "TimeId": 45201.0,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": 1.0,
         "RemindPriority": 5.0,
         "RedConditions": "['CONDITION_LUCKY_TENANT2']",
@@ -1837,14 +1951,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 117,
         "Name": "\u53ef\u809d\u89d2\u8272\u5361\u6c60",
         "SkipId": 20239.0,
-        "BtnInitMethodName": null,
         "TimeId": null,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_GACHACANLIVER_MAIN']",
@@ -1853,14 +1968,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 118,
         "Name": "\u62df\u50cf\u8bd5\u70bc",
         "SkipId": 89061.0,
-        "BtnInitMethodName": null,
         "TimeId": null,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_BOSS_INSHOT']",
@@ -1869,14 +1985,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 119,
         "Name": "\u6253\u724c",
         "SkipId": 90016.0,
-        "BtnInitMethodName": null,
         "TimeId": null,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_PCG_ACTIVITY']",
@@ -1885,14 +2002,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 120,
         "Name": "\u60c5\u4eba\u8282",
         "SkipId": 90018.0,
-        "BtnInitMethodName": null,
         "TimeId": null,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_POKER_GUESSING2']",
@@ -1901,14 +2019,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 121,
         "Name": "\u65b0\u77ff\u533a",
         "SkipId": 89091.0,
-        "BtnInitMethodName": null,
         "TimeId": null,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_SCORETOWER_MAIN']",
@@ -1917,14 +2036,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 122,
         "Name": "\u5403\u8c46\u4eba",
         "SkipId": 90025.0,
-        "BtnInitMethodName": null,
         "TimeId": null,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_PACMAN2_NEW_STAGE']",
@@ -1933,14 +2053,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 123,
         "Name": "\u8089\u9e3d5",
         "SkipId": 89092.0,
-        "BtnInitMethodName": null,
         "TimeId": null,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_THEATRE5_PVP_NEW_ACTIVITY']",
@@ -1949,14 +2070,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 124,
         "Name": "3.6\u4e0b\u534a\u4e3b\u7ebf\u6d3b\u52a8",
         "SkipId": 526.0,
-        "BtnInitMethodName": "RefreshActivityMainLine2",
         "TimeId": null,
+        "BtnInitMethodName": "RefreshActivityMainLine2",
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -1965,14 +2087,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 125,
         "Name": "\u5168\u7cfb\u56de\u6eaf\u52a0\u6599",
         "SkipId": 89093.0,
-        "BtnInitMethodName": null,
         "TimeId": null,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_BOUNTY_CHALLENGE']",
@@ -1981,30 +2104,32 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 126,
         "Name": "\u4f5c\u6218\u8986\u5199",
         "SkipId": 89094.0,
-        "BtnInitMethodName": null,
         "TimeId": 45501.0,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": 1.0,
         "RemindPriority": 4.0,
-        "RedConditions": "['CONDITION_SOLO_REFORM_MAIN']",
+        "RedConditions": "['CONDITION_SOLO_REFORM_MAIN', 'CONDITION_SOLO_REFORM_CHALLENGE_TASK']",
         "RedParam": null,
         "TagCondition": null,
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 133,
         "Name": "\u8d4c\u9a6c",
         "SkipId": 89100.0,
-        "BtnInitMethodName": null,
         "TimeId": null,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_RACE_MAIN']",
@@ -2013,14 +2138,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 134,
         "Name": "\u5468\u5e74\u9762\u677f",
         "SkipId": 89047.0,
-        "BtnInitMethodName": null,
         "TimeId": null,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_ANNIVERSARY_REPEATCHALLENGE', 'CONDITION_ANNIVERSARY_DRAW', 'CONDITION_SUMMER_SIGNIN_ACTIVITY']",
@@ -2029,14 +2155,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 135,
         "Name": "\u7a7a\u82b11.5",
         "SkipId": 89076.0,
-        "BtnInitMethodName": null,
         "TimeId": null,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_BIG_WORLD_SKY_GARDEN_ENTRANCE']",
@@ -2045,14 +2172,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 136,
         "Name": "\u7a7a\u82b1\u9884\u70ed\u7b7e\u5230",
         "SkipId": 90058.0,
-        "BtnInitMethodName": null,
         "TimeId": null,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_RADIO_SIGN']",
@@ -2061,14 +2189,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 137,
         "Name": "relink",
         "SkipId": 90047.0,
-        "BtnInitMethodName": null,
         "TimeId": null,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_DLC_RELINK_MAIN']",
@@ -2077,14 +2206,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 138,
         "Name": "\u5361\u6c60\u76ae\u80a4\u8bd5\u73a9",
         "SkipId": 20321.0,
-        "BtnInitMethodName": null,
         "TimeId": null,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": null,
@@ -2093,14 +2223,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 139,
         "Name": "\u60c5\u4eba\u8282\u6253\u724c",
         "SkipId": 90018.0,
-        "BtnInitMethodName": null,
         "TimeId": null,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": null,
         "RemindPriority": null,
         "RedConditions": "['CONDITION_POKER_GUESSING2']",
@@ -2109,14 +2240,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 140,
         "Name": "\u52e4\u52a1\u5546\u5e97",
         "SkipId": 90055.0,
-        "BtnInitMethodName": null,
         "TimeId": 45102.0,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": 1.0,
         "RemindPriority": 11.0,
         "RedConditions": null,
@@ -2125,14 +2257,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": 68073.0
     },
     {
         "Id": 141,
         "Name": "\u52e4\u52a1\u4efb\u52a1",
         "SkipId": 90057.0,
-        "BtnInitMethodName": null,
         "TimeId": 45102.0,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": 1.0,
         "RemindPriority": 10.0,
         "RedConditions": "['CONDITION_TASK_CANLIVER']",
@@ -2141,14 +2274,15 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 142,
         "Name": "\u8089\u9e3d4",
         "SkipId": 89090.0,
-        "BtnInitMethodName": null,
         "TimeId": 45713.0,
+        "BtnInitMethodName": null,
         "IsRemindWhenOpen": 1.0,
         "RemindPriority": 1.0,
         "RedConditions": null,
@@ -2157,22 +2291,24 @@
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": null
     },
     {
         "Id": 143,
         "Name": "\u5927\u597d\u611f",
         "SkipId": 20331.0,
+        "TimeId": 45601.0,
         "BtnInitMethodName": null,
-        "TimeId": 45651.0,
         "IsRemindWhenOpen": 1.0,
         "RemindPriority": 7.0,
-        "RedConditions": null,
+        "RedConditions": "['CONDITION_FAVORABILITY_STORY_GIFT_TASK']",
         "RedParam": null,
         "TagCondition": null,
         "TagOffset": null,
         "TagParam": null,
         "ActivityRewardIds": null,
-        "RewardShowTimeIds": null
+        "RewardShowTimeIds": null,
+        "ConstShowRewardId": 703142.0
     }
 ]

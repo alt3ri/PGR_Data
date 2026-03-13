@@ -270,6 +270,9 @@ function XPurchasePackage:GetUiFashionDetailBuyData(buyFinishedFunc, notEnoughCb
     buyData.IsHave = XRewardManager.CheckRewardGoodsListIsOwnForPackage(self.Data.RewardGoodsList)
     buyData.ItemIcon = XDataCenter.ItemManager.GetItemIcon(self.Data.ConsumeId)
     buyData.ItemCount = math.modf(self.Data.ConvertSwitch * disCountValue)
+    if disCountValue ~= 1 then
+        buyData.OriginCount = self.Data.ConvertSwitch
+    end
     buyData.BuyCallBack = function() 
         if self:CheckCanBuy(nil, nil, notEnoughCb) then
             if self.Data and self.Data.Id then

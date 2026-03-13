@@ -346,6 +346,16 @@ function XMainLine2Model:GetChapterEggIds(chapterId)
     return config and config.EggIds or {}
 end
 
+function XMainLine2Model:GetChapterSpineStageIndexs(chapterId)
+    local config = self:GetConfigChapter(chapterId)
+    return config and config.SpineStageIndexs or {}
+end
+
+function XMainLine2Model:GetChapterSpineProgressWans(chapterId)
+    local config = self:GetConfigChapter(chapterId)
+    return config and config.SpineProgressWans or {}
+end
+
 function XMainLine2Model:GetChapterLastStageId(chapterId)
     local stageGroupId = self:GetChapterStageGroupIds(chapterId)
     local lastGroupId = stageGroupId[#stageGroupId]
@@ -437,6 +447,12 @@ end
 function XMainLine2Model:GetStageAchievementBriefDesc(stageId, index)
     local config = self:GetConfigStage(stageId)
     return config.AchievementBriefDescs[index]
+end
+
+-- 获取关卡特效路径
+function XMainLine2Model:GetStageEffectPath(stageId)
+    local config = self:GetConfigStage(stageId)
+    return config.EffectPath
 end
 
 function XMainLine2Model:GetConfigTreasure(treasureId)

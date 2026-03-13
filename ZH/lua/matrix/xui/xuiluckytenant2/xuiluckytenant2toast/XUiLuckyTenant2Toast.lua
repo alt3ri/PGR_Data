@@ -15,10 +15,10 @@ end
 function XUiLuckyTenant2Toast:OnStart(toastData)
     self._ToastData = toastData
     self:Update()
-    
+
     -- 自动关闭：2秒后自动关闭
     self._AutoCloseTimer = XScheduleManager.ScheduleOnce(function()
-        self:Close()
+        XLuaUiManager.SafeClose(self.Name)
     end, 2000)
 
     if self.BtnClose then
@@ -31,22 +31,23 @@ end
 
 function XUiLuckyTenant2Toast:OnDisable()
     -- 取消自动关闭定时器
-    if self._AutoCloseTimer then
-        XScheduleManager.UnSchedule(self._AutoCloseTimer)
-        self._AutoCloseTimer = nil
-    end
+    -- if self._AutoCloseTimer then
+    --     XScheduleManager.UnSchedule(self._AutoCloseTimer)
+    --     self._AutoCloseTimer = nil
+    --     XLog.Error("XUiLuckyTenant2Toast:OnDisable self._AutoCloseTimer is not nil")
+    -- end
 end
 
 function XUiLuckyTenant2Toast:Update()
     if not self._ToastData then
         return
     end
-    
+
     local bondName = self._ToastData.BondName or ""
     local oldLevel = self._ToastData.OldLevel or 0
     local newLevel = self._ToastData.NewLevel or 0
     local isUpgrade = newLevel > oldLevel
-    
+
     -- 控制Panel显隐
     if isUpgrade then
         -- 等级提升：显示PanelUp，隐藏PanelDown
@@ -67,7 +68,7 @@ function XUiLuckyTenant2Toast:OnDestroy()
         XScheduleManager.UnSchedule(self._AutoCloseTimer)
         self._AutoCloseTimer = nil
     end
-    
+
     -- Toast关闭时，通知Control显示队列中的下一个Toast
     if self._Control then
         self._Control:ShowNextToast()

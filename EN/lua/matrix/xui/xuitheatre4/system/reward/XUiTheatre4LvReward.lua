@@ -131,17 +131,44 @@ function XUiTheatre4LvReward:_InitUi()
 end
 
 function XUiTheatre4LvReward:_InitTabGroup()
-    local buttonGroup = self._TabGroup
+    local buttonGroup = {}
+    local taskTypeToTabType = {
+        [XEnumConst.Theatre4.BattlePassTaskType.VersionTask] = TabType.VersionTask,
+        [XEnumConst.Theatre4.BattlePassTaskType.ProcessTask] = TabType.ProcessTask,
+        [XEnumConst.Theatre4.BattlePassTaskType.ChallengeTask] = TabType.ChallengeTask,
+    }
 
     for key, index in pairs(XEnumConst.Theatre4.BattlePassTaskType) do
-        self["BtnChild0" .. index]:SetNameByGroup(0, self._Control.SystemControl:GetTaskTabNameByTaskType(index))
+        local btn = self["BtnChild0" .. index]
+        if btn then
+            btn:SetNameByGroup(0, self._Control.SystemControl:GetTaskTabNameByTaskType(index))
+            -- 检查任务是否为空，如果为空则隐藏对应的tabBtn
+            local isEmpty = self._Control.SystemControl:CheckTaskDataEmptyByTaskType(index)
+            btn.gameObject:SetActiveEx(not isEmpty)
+            if not isEmpty then
+                local tabType = taskTypeToTabType[index]
+                if tabType then
+                    buttonGroup[tabType] = btn
+                end
+            end
+        end
     end
 
     self.BtnTab1:SetNameByGroup(0, self._Control:GetClientConfig("BpRewardName", 1))
     self.BtnTab2:SetNameByGroup(0, self._Control:GetClientConfig("BpRewardName", 2))
-    self.BtnChild01.SubGroupIndex = 2
-    self.BtnChild02.SubGroupIndex = 2
-    self.BtnChild03.SubGroupIndex = 2
+    
+    buttonGroup[TabType.BP] = self.BtnTab1
+    buttonGroup[TabType.AllTask] = self.BtnTab2
+    
+    if buttonGroup[TabType.VersionTask] then
+        buttonGroup[TabType.VersionTask].SubGroupIndex = 2
+    end
+    if buttonGroup[TabType.ProcessTask] then
+        buttonGroup[TabType.ProcessTask].SubGroupIndex = 2
+    end
+    if buttonGroup[TabType.ChallengeTask] then
+        buttonGroup[TabType.ChallengeTask].SubGroupIndex = 2
+    end
 
     self.BtnGroup:Init(buttonGroup, Handler(self, self.OnBtnGroupSelect))
     self.BtnGroup:SelectIndex(TabType.BP)

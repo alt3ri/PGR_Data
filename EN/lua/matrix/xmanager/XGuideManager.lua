@@ -417,6 +417,7 @@ XGuideManagerCreator = function()
             return
         end
         XGuideManager.SwitchGuideProxy(LastProxyType)
+        XGuideManager.CheckGuideOpen() -- 从空花回主线，会先恢复界面再修改GuideProxy，需要手动触发引导检测
     end
     
     --启动引导
@@ -521,7 +522,7 @@ XGuideManagerCreator = function()
     --- 是否处于引导流程中
     ---@return boolean
     function XGuideManager.CheckIsInGuide()
-        return IsGuiding and RunningGuideTemplate ~= nil
+        return IsGuiding or RunningGuideTemplate
     end
 
     function XGuideManager.GetIsOpenControl()

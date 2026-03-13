@@ -179,4 +179,19 @@ function XAprilFoolDayControl:UpdateRoleModel(panelRoleModel, resId, cb)
     return state
 end
 
+
+--- 2026愚人节假看板点击事件埋点
+function XAprilFoolDayControl:RecordAprilFoolDayMainUiBtnClick(btnIndex)
+    -- 记录埋点
+    local dict = {}
+
+    dict["BtnId"] = btnIndex
+
+    if XMain.IsWindowsEditor then
+        CS.XRecord.RecordTest(dict, "1000026", "AprilFoolsDayMainUi")
+    else
+        CS.XRecord.Record(dict, "1000026", "AprilFoolsDayMainUi")
+    end
+end
+
 return XAprilFoolDayControl

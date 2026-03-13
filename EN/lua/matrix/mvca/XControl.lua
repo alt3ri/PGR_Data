@@ -31,19 +31,17 @@ function XControl:CallInit()
     if self:UseUiStackOperationRef() then
         self._OnRemoveStackOperationHandler = handler(self, self.OnRemoveStackOperation)
         CsXGameEventManager.Instance:RegisterEvent(CS.XEventId.EVENT_UI_REMOVE_STACK_OPERATION, self._OnRemoveStackOperationHandler)
-    end    
+    end
 end
 
 function XControl:OnRemoveStackOperation(event, args)
-    ---@type XGameUi
-    local ui = args and args[0]
-    if ui and XTool.IsNumberValid(ui.UUID) then
-        self:SubUiStackOperationRef(ui.UUID)
-        XMVCA:CheckReleaseControl(self:GetId()) 
+    local uuid = args and args[0]
+    if XTool.IsNumberValid(uuid) then
+        self:SubUiStackOperationRef(uuid)
+        XMVCA:CheckReleaseControl(self:GetId())
     else
         XLog.Error(string.format("Control%s监听到错误的UI栈操作", self._Id))
-    end         
-   
+    end
 end
 
 --用来开启是否使用UI栈同步control的卸载， 子类进行重写

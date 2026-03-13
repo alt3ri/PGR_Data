@@ -153,7 +153,7 @@ needFightController)
     local curRoleName = self.CurRoleName
     local curModelInfo = modelPool[curRoleName]
     if curModelInfo then
-        if XTool.UObjIsNil(curModelInfo.Model.gameObject) then
+        if XTool.UObjIsNil(curModelInfo.Model) then
             XLog.Error("[UpdateRoleModel] NullReferenceException: Object reference not set to an instance of an object")
             modelPool[curRoleName] = nil
             return
@@ -273,7 +273,7 @@ needFightController)
                 local cueInfo = XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, sfxCueId)
                 cueInfo.UpdateCb = function()
                     local curModel = self:GetCurRoleModel()
-                    if not curModel or XTool.UObjIsNil(curModel.gameObject) or not curModel.gameObject.activeSelf then
+                    if XTool.UObjIsNil(curModel) or not curModel.activeSelf then
                         XLuaAudioManager.StopAudioByCueId(sfxCueId)
                         cueInfo.UpdateCb = nil
                     end
@@ -725,7 +725,7 @@ function XUiPanelRoleModel:LoadCharacterCuteUiEffect(characterId)
     if not model.CharacterId then
         model.CharacterId = characterId
     end
-    if XTool.UObjIsNil(model.Model.gameObject) then
+    if XTool.UObjIsNil(model.Model) then
         return
     end
     local playRoleAnimation = model.Model.gameObject:GetComponent("XPlayRoleAnimation")
@@ -3129,7 +3129,7 @@ function XUiPanelRoleModel:WeaponAnimationSync(weaponModelList, modelName)
         return
     end
     local roleModel = self.RoleModelPool[modelName]
-    if not roleModel or XTool.UObjIsNil(roleModel.Model.gameObject) then
+    if not roleModel or XTool.UObjIsNil(roleModel.Model) then
         return
     end
     local playRoleAnimation = roleModel.Model.gameObject:GetComponent("XPlayRoleAnimation")

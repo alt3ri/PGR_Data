@@ -22,45 +22,12 @@ local ArenaTableKey = {
         DirPath = XConfigUtil.DirectoryType.Client,
     },
     ArenaGroupFightEvent = {},
-    -- #203409
-    ChallengeAreaFixTask = {
-        Identifier = "ChallengeId",
-        CacheType = XConfigUtil.CacheType.Normal,
-    },
     AreaDistributeType = {},
 }
 
 function XArenaConfigModel:_InitTableKey()
     self._ConfigUtil:InitConfigByTableKey("Fuben/Arena", ArenaTableKey)
 end
-
--- region  #203409 供覆写类使用
-function XArenaConfigModel:GetSpecialGroupConfig()
-    return self._ConfigUtil:GetByTableKey(ArenaTableKey.ChallengeAreaFixTask) or {}
-end
-
-function XArenaConfigModel:GetSpecialGroupConfigById(id)
-    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(ArenaTableKey.ChallengeAreaFixTask, id, false) or {}
-end
-
-function XArenaConfigModel:GetSpecialGroupTaskIdByChallengeId(challengeId)
-    local config = self:GetSpecialGroupConfigById(challengeId)
-
-    return config.TaskId
-end
-
-function XArenaConfigModel:GetSpecialGroupMaxId()
-    local maxId = 0
-    local SpecialGroupConfig = self:GetSpecialGroupConfig()
-    for id, config in pairs(SpecialGroupConfig) do
-        if config.ActivityIdRange > maxId then
-            maxId = config.ActivityIdRange
-        end
-    end
-    return maxId
-end
-
--- endregion
 
 ---@return XTableArenaLevel[]
 function XArenaConfigModel:GetArenaLevelConfigs()

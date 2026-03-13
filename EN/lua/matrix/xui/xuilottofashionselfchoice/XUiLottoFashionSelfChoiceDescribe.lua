@@ -13,10 +13,10 @@ function XUiLottoFashionSelfChoiceDescribe:OnStart(lottoPrimaryId)
     lottoPrimaryId = lottoPrimaryId or XDataCenter.LottoManager.GetCurSelfChoiceLottoPrimaryId()
     local config = XLottoConfigs.GetLottoPrimaryCfgById(lottoPrimaryId)
 
-    local XUiGridRulePanel = require("XUi/XUiLottoFashionSelfChoice/Grid/XUiGridRulePanel")
+    local XUiLottoGridRulePanel = require("XUi/XUiLottoFashionSelfChoice/Grid/XUiLottoGridRulePanel")
     for k, title in pairs(config.RuleTitleList) do
         local go = k == 1 and self.GridRulePanel or XUiHelper.Instantiate(self.GridRulePanel, self.GridRulePanel.parent)
-        local grid = XUiGridRulePanel.New(go, self)
+        local grid = XUiLottoGridRulePanel.New(go, self)
         grid:Refresh(title, config.RuleTextList[k])
     end
 end

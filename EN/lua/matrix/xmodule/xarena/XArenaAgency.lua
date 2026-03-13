@@ -2,7 +2,7 @@ local XFubenSimulationChallengeAgency = require("XModule/XBase/XFubenSimulationC
 
 ---@class XArenaAgency : XFubenSimulationChallengeAgency
 ---@field private _Model XArenaModel
-local XArenaAgency = XClass(XFubenSimulationChallengeAgency, "XArenaAgency", true) -- #203409 增加该类被分类
+local XArenaAgency = XClass(XFubenSimulationChallengeAgency, "XArenaAgency")
 
 function XArenaAgency:OnInit()
     -- 初始化一些变量
@@ -501,7 +501,6 @@ function XArenaAgency:GetCurrentChallengeTasks()
         local activityData = self._Model:GetActivityData()
         local challengeId = activityData:GetChallengeId()
         local dailyTasks = XDataCenter.TaskManager.GetArenaChallengeTaskList()
-        -- #203409 抽象了该方法, 后续可以评估, 其实不是一定要删除
         local taskIds = self:GetChallengeTaskIds(activityData, challengeId)
         if not XTool.IsTableEmpty(taskIds) then
             for _, taskId in pairs(taskIds) do

@@ -247,9 +247,9 @@ function XUiPartnerMain:IsTrialShow(partner)
         return false
     end
 
-    local id = partner:GetTemplateId()
+    local skipId = partner:GetStageSkipId()
 
-    return id and id > 0
+    return skipId and skipId > 0
 end
 
 function XUiPartnerMain:UpdatePanel(data)

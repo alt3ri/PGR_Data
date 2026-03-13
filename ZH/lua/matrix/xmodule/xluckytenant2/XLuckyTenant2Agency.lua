@@ -1,5 +1,4 @@
 local XFubenActivityAgency = require("XModule/XBase/XFubenActivityAgency")
-local XLuckyTenant2DebugLog = require("XModule/XLuckyTenant2/XLuckyTenant2DebugLog")
 
 ---@class XLuckyTenant2Agency : XFubenActivityAgency
 ---@field private _Model XLuckyTenant2Model
@@ -7,17 +6,7 @@ local XLuckyTenant2Agency = XClass(XFubenActivityAgency, "XLuckyTenant2Agency")
 
 function XLuckyTenant2Agency:OnInit()
     self:RegisterActivityAgency()
-    self._IsDebugLog = XMain.IsEditorDebug
-    --初始化一些变量
-    if self._IsDebugLog then
-        self._Log = {}
-    end
     self._IsRequesting = false
-    -- 离线模式，debug阶段使用
-    self._IsOffline = false
-    -- if XMain.IsEditorDebug then
-    --     self._IsOffline = true
-    -- end
     self._IsPlaying = false
     -- 请求队列，确保请求按顺序执行
     self._RequestQueue = {}
@@ -108,61 +97,16 @@ function XLuckyTenant2Agency:CollectRoundSettleData(game)
     return data
 end
 
-function XLuckyTenant2Agency:Print(...)
-    if self._IsDebugLog then
-        local params = { ... }
-        -- 将所有参数转换为字符串
-        local stringParams = {}
-        for i = 1, #params do
-            stringParams[i] = tostring(params[i])
-        end
-        local log = table.concat(stringParams, " ")
-        self._Log[#self._Log + 1] = log
-        -- 写入日志到文件
-        XLuckyTenant2DebugLog.Log(log)
-    end
-end
-
-function XLuckyTenant2Agency:Error(...)
-    if self._IsDebugLog then
-        XLog.Error(...)
-    end
-end
-
-function XLuckyTenant2Agency:ClearLog()
-    if self._IsDebugLog then
-        self._Log = {}
-        XLuckyTenant2DebugLog.Clear()
-    end
-end
-
-function XLuckyTenant2Agency:LogHistory()
-    if self._IsDebugLog then
-        local str = table.concat(self._Log, "\n")
-        XLog.Debug("以下为日志:", str)
-    end
-end
-
 function XLuckyTenant2Agency:ExCheckInTime()
     return true
 end
 
-function XLuckyTenant2Agency:CheckRequestingAndOffline(callback)
+function XLuckyTenant2Agency:CheckRequesting()
     if self._IsRequesting then
         XLog.Warning("[XLuckyTenant2Agency] request too frequently")
         return true
     end
-    if self._IsOffline then
-        if callback then
-            callback()
-        end
-        return true
-    end
     return false
-end
-
-function XLuckyTenant2Agency:IsOffline()
-    return self._IsOffline
 end
 
 function XLuckyTenant2Agency:SetPlaying(value)
@@ -178,18 +122,6 @@ function XLuckyTenant2Agency:SetRequesting(value)
 end
 
 function XLuckyTenant2Agency:OpenMain()
-    -- 离线模式，debug阶段使用
-    -- local activityConfig = self._Model:GetActivityConfig()
-    -- if not activityConfig then
-    --     if self._IsOffline then
-    --         XLog.Error("[XLuckyTenant2Agency] 离线模式，设置活动ID为1, 等待服务端提交代码")
-    --         self._Model._ActivityId = 1
-    --     end
-    -- else
-    --     -- 服务端已经提交了, 不需要离线模式了
-    --     self._IsOffline = false
-    -- end
-
     if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.LuckyTenant2, false, true) then
         return false
     end
@@ -207,7 +139,7 @@ end
 ---@param stageId number 关卡ID
 ---@param callback function 回调函数
 function XLuckyTenant2Agency:RequestStart(stageId, callback)
-    if self:CheckRequestingAndOffline(callback) then
+    if self:CheckRequesting() then
         return
     end
     self._IsRequesting = true
@@ -243,7 +175,7 @@ function XLuckyTenant2Agency:RequestSupplyPieces(game, useProp)
         return
     end
 
-    if self:CheckRequestingAndOffline() then
+    if self:CheckRequesting() then
         return
     end
 
@@ -261,7 +193,6 @@ function XLuckyTenant2Agency:RequestSupplyPieces(game, useProp)
         local piece = game:GetBag():GetProp(XLuckyTenant2Enum.Item.RefreshProp)
         if piece then
             refreshChess = piece:GetEncodeMessage()
-            self:Print("刷新道具剩余数量:" .. piece:GetAmount())
         else
             XLog.Error("[XLuckyTenant2Agency] 刷新棋子道具不存在")
         end
@@ -270,19 +201,7 @@ function XLuckyTenant2Agency:RequestSupplyPieces(game, useProp)
     -- 在第一回合, 需要发送初始背包内容
     local message
     if game:GetRound() == 1 then
-        local log
-        if XMain.IsEditorDebug then
-            log = {}
-        end
-        message = game:GetBag():GetEncodeMessage(log)
-        if log then
-            XLog.Debug("打印LuckyTenantSuppleChessRequest", {
-                StageId = stageId,
-                SuppleChess = pieces,
-                Chess = refreshChess,
-                Grids = log,
-            })
-        end
+        message = game:GetBag():GetEncodeMessage()
     end
 
     self._IsRequesting = true
@@ -306,23 +225,13 @@ end
 ---@param game XLuckyTenant2Game
 ---@param callback function|nil 成功回调
 function XLuckyTenant2Agency:RequestNextRound(game, callback)
-    if self:CheckRequestingAndOffline(callback) then
+    if self:CheckRequesting() then
         return
     end
     self._IsRequesting = true
 
     local stageId = game:GetStageId()
-    local logGrids
-    if self._IsDebugLog then
-        logGrids = {}
-    end
-    local grids = game:GetBag():GetEncodeMessage(logGrids)
-    if logGrids then
-        XLog.Debug("打印LuckyTenantRoundBeginRequest", {
-            StageId = stageId,
-            Grids = logGrids,
-        })
-    end
+    local grids = game:GetBag():GetEncodeMessage()
     XNetwork.Call("LuckyTenantRoundBeginRequest", {
         StageId = stageId,
         Grids = grids,
@@ -344,17 +253,12 @@ end
 ---分数变化
 ---@param game XLuckyTenant2Game
 function XLuckyTenant2Agency:RequestUpdateScore(game)
-    if self:CheckRequestingAndOffline() then
+    if self:CheckRequesting() then
         return
     end
     self._IsRequesting = true
 
     local stageId = game:GetStageId()
-    local logGrids
-    if self._IsDebugLog then
-        logGrids = {}
-    end
-
     local record = game:GetRecord4Server()
     local suppleChess = record.SelectPiece
     record.SelectPiece = {}
@@ -362,17 +266,7 @@ function XLuckyTenant2Agency:RequestUpdateScore(game)
     record.DeletePiece = {}
 
     local chessboard = game:GetChessBoard():GetEncodeMessage()
-    local grids = game:GetBag():GetEncodeMessage(logGrids)
-    if logGrids then
-        XLog.Debug("打印LuckyTenantRoundEndRequest", {
-            StageId = stageId,
-            AddScore = game:GetScoreThisRound(),
-            Grids = logGrids,
-            ChessBoard = chessboard,
-            SuppleChess = suppleChess,
-            DeleteChess = deleteChess,
-        })
-    end
+    local grids = game:GetBag():GetEncodeMessage()
     local score = game:GetScoreThisRound()
     local round = game:GetRound()
 
@@ -438,7 +332,7 @@ end
 ---@param stageId number 关卡ID
 ---@param game XLuckyTenant2Game|nil 游戏对象（可选，用于收集结算数据）
 function XLuckyTenant2Agency:RequestSettle(stageId, game)
-    if self:CheckRequestingAndOffline() then
+    if self:CheckRequesting() then
         return
     end
     self._IsRequesting = true
@@ -473,13 +367,7 @@ end
 ---@param game XLuckyTenant2Game|nil 游戏对象（可选，用于收集结算数据）
 ---@param callback function|nil 回调函数
 function XLuckyTenant2Agency:RequestEndGame(stageId, game, callback)
-    if self:CheckRequestingAndOffline(function()
-            -- 离线模式下，清理进行中的游戏记录后再执行回调
-            self._Model:ClearPlayingStage()
-            if callback then
-                callback(true)
-            end
-        end) then
+    if self:CheckRequesting() then
         return
     end
 
@@ -503,13 +391,16 @@ function XLuckyTenant2Agency:RequestEndGame(stageId, game, callback)
             end
             return
         end
+        -- 更新通关最高分，即使游戏失败或者中途结束
+        res.Record.StageId = stageId
+        self._Model:OnStagePassed(res.Record)
+
         -- 清理进行中的游戏记录
         self._Model:ClearPlayingStage()
+
         if callback then
             callback(true)
         end
-        -- TODO: 根据实际EventId修改
-        -- XEventManager.DispatchEvent(XEventId.EVENT_LUCKY_TENANT2_UPDATE_STAGE)
     end, nil, function()
         self:SetRequesting(false)
         if callback then
@@ -522,7 +413,7 @@ end
 ---@param game XLuckyTenant2Game
 ---@param callback function 回调函数
 function XLuckyTenant2Agency:RequestRestart(game, callback)
-    if self:CheckRequestingAndOffline(callback) then
+    if self:CheckRequesting() then
         return
     end
     self._IsRequesting = true
@@ -551,33 +442,25 @@ function XLuckyTenant2Agency:RequestRestart(game, callback)
     end)
 end
 
----删除或更新棋子
+---删除或更新棋子（协议参数为单个对象，非数组）
 ---@param game XLuckyTenant2Game
 ---@param deletePieces XLuckyTenant2Piece[]
 ---@param updatePieces XLuckyTenant2Piece[]
 ---@param callback function 回调函数
 function XLuckyTenant2Agency:RequestDeleteOrUpdateChess(game, deletePieces, updatePieces, callback)
-    if self:CheckRequestingAndOffline() then
+    if self:CheckRequesting() then
         return
     end
     self._IsRequesting = true
 
     local toDelete
     if deletePieces and #deletePieces > 0 then
-        toDelete = {}
-        for i = 1, #deletePieces do
-            local piece = deletePieces[i]
-            toDelete[#toDelete + 1] = piece:GetEncodeMessage()
-        end
+        toDelete = deletePieces[1]:GetEncodeMessage()
     end
 
     local toUpdate
     if updatePieces and #updatePieces > 0 then
-        toUpdate = {}
-        for i = 1, #updatePieces do
-            local piece = updatePieces[i]
-            toUpdate[#toUpdate + 1] = piece:GetEncodeMessage()
-        end
+        toUpdate = updatePieces[1]:GetEncodeMessage()
     end
 
     XNetwork.Call("LuckyTenantDeleteUpdateChessRequest", {
@@ -616,6 +499,16 @@ function XLuckyTenant2Agency:IsInStageAndRound(stageId, round)
     return isInStage and isInRound
 end
 
+---该关卡是否已弹出过图文指引（由 SaveUtil 持久化，与 Control 内 TryShowStageTutorial 记录一致）
+---@param stageId number 关卡ID
+---@return boolean
+function XLuckyTenant2Agency:IsStageTutorialShown(stageId)
+    if not self._Model then
+        return false
+    end
+    return self._Model:IsStageTutorialShown(stageId)
+end
+
 ---获取关卡已游玩标记的Key
 ---@param stageId number 关卡ID
 ---@return string
@@ -623,12 +516,110 @@ function XLuckyTenant2Agency:GetKeyHasPlayed(stageId)
     return "LuckyTenant2NewStage" .. stageId .. "_" .. XPlayer.Id
 end
 
+--- 红点：活动入口是否显示红点（任务或未游玩关卡）
+---@return boolean
+function XLuckyTenant2Agency:IsShowRedDot()
+    if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.LuckyTenant2, false, true) then
+        return false
+    end
+    if not self._Model:IsActivityOpen() then
+        return false
+    end
+    if self:IsShowRedDotTask() then
+        return true
+    end
+    local stages = self._Model:GetStages()
+    for i = 1, #stages do
+        local stage = stages[i]
+        if self:IsShowRedDotStage(stage.Id) then
+            return true
+        end
+    end
+    return false
+end
+
+--- 红点：指定关卡是否显示红点（在时间范围内、前置通过、未游玩过）
+---@param stageId number 关卡ID
+---@return boolean
+function XLuckyTenant2Agency:IsShowRedDotStage(stageId)
+    local stageConfig = self._Model:GetLuckyTenant2StageConfigById(stageId)
+    if not stageConfig then
+        return false
+    end
+    if XFunctionManager.CheckInTimeByTimeId(stageConfig.TimeId)
+            and (not stageConfig.PreStage or stageConfig.PreStage == 0 or self._Model:IsStagePassed(stageConfig.PreStage))
+    then
+        if XSaveTool.GetData(self:GetKeyHasPlayed(stageConfig.Id)) == nil then
+            return true
+        end
+    end
+    return false
+end
+
+--- 红点：是否有任务奖励可领取
+---@return boolean
+function XLuckyTenant2Agency:IsShowRedDotTask()
+    local activityConfig = self._Model:GetActivityConfig()
+    if activityConfig and activityConfig.TaskGroup then
+        local taskGroups = activityConfig.TaskGroup
+        for i = 1, #taskGroups do
+            local groupId = taskGroups[i]
+            if XDataCenter.TaskManager.CheckLimitTaskList(groupId) then
+                return true
+            end
+        end
+    end
+    return false
+end
+
+---@param id number 测试用例ID
 function XLuckyTenant2Agency:SetTestCase(id)
     XEventManager.DispatchEvent(XEventId.EVENT_LUCKY_TENANT2_SET_TEST_CASE, id)
 end
 
 function XLuckyTenant2Agency:TestClearBag()
     XEventManager.DispatchEvent(XEventId.EVENT_LUCKY_TENANT2_CLEAR_BAG)
+end
+
+--- 红点：指定章节是否显示红点（时间范围内、章节已开启、且章节内有未游玩关卡）
+---@param chapterId number 章节ID
+---@return boolean
+function XLuckyTenant2Agency:IsShowRedDotChapter(chapterId)
+    local chapterConfig = self._Model:GetLuckyTenant2ChapterConfigById(chapterId)
+    if not chapterConfig then
+        return false
+    end
+    -- 时间范围内
+    local timeId = chapterConfig.TimeId or 0
+    if timeId > 0 and not XFunctionManager.CheckInTimeByTimeId(timeId) then
+        return false
+    end
+    -- 章节已开启（上一章所有关卡已通关）
+    local chapterConfigs = self._Model:GetChapters()
+    for chapterIdx, cfg in ipairs(chapterConfigs) do
+        if cfg.Id == chapterId then
+            if chapterIdx > 1 then
+                local prevConfig = chapterConfigs[chapterIdx - 1]
+                if prevConfig and prevConfig.StageId then
+                    for _, sid in ipairs(prevConfig.StageId) do
+                        if not self._Model:IsStagePassed(sid) then
+                            return false
+                        end
+                    end
+                end
+            end
+            break
+        end
+    end
+    -- 章节内至少有一个关卡显示红点
+    if chapterConfig.StageId then
+        for _, stageId in ipairs(chapterConfig.StageId) do
+            if self:IsShowRedDotStage(stageId) then
+                return true
+            end
+        end
+    end
+    return false
 end
 
 return XLuckyTenant2Agency

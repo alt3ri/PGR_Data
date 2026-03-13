@@ -65,6 +65,6 @@ function XUiMainLineLuosaitaPopupSkyGardenDetail:OnBtnGoClick()
         return
     end
     local skipId = self._SkipId
-    self:Close()
+    --self:Close()
     XFunctionManager.SkipInterface(skipId)
 end

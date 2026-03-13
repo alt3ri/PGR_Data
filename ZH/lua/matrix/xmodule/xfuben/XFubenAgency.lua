@@ -3988,6 +3988,10 @@ end
 --- 获取机器人编队需要支持有限编辑功能的配置
 ---@return boolean, XTableStageLineupType @是否有配置，配置数据
 function XFubenAgency:GetConfigStageLineupType(stageId)
+    local speedrunStageId = XMVCA.XPlotExhibition:GetSpeedrunStageId(stageId)
+    if speedrunStageId and speedrunStageId > 0 then    
+        return self._Model:GetConfigStageLineupType(speedrunStageId)
+    end
     return self._Model:GetConfigStageLineupType(stageId)
 end
 
@@ -4087,6 +4091,12 @@ end
 
 function XFubenAgency:SetStagePassed(stageId)
     self._Model:SetStagePassed(stageId)
+end
+
+--- 获取主线战斗结算动画时长(秒）
+function XFubenAgency:GetFightSettleAnimationDuration()
+    --todo 4.3临时处理，读固定配置
+    return CS.XGame.ClientConfig:GetFloat("ArenaAndBossSingleFightSettleAnimDuration")
 end
 
 return XFubenAgency

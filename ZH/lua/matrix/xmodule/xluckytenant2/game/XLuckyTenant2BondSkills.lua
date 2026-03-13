@@ -13,8 +13,8 @@ local XLuckyTenant2BondSkills = {}
 ---@param bondId number
 ---@param pieceId number 子虫等棋子 ID
 ---@return boolean
-function XLuckyTenant2BondSkills.BondHasType207ForPieceId(model, game, bondId, pieceId)
-    if not model or not game or not bondId or not pieceId then
+function XLuckyTenant2BondSkills.BondHasType207ForPieceId(model, game, bondId)
+    if not model or not game or not bondId then
         return false
     end
     local bondManager = game:GetBondManager()
@@ -40,10 +40,7 @@ function XLuckyTenant2BondSkills.BondHasType207ForPieceId(model, game, bondId, p
             if skillId and skillId > 0 then
                 local skillConfig = model:GetLuckyTenant2ChessSkillConfigById(skillId)
                 if skillConfig and skillConfig.Type == SkillType.Type207 then
-                    local params = skillConfig.Params or {}
-                    if (params[1] or 0) == pieceId then
-                        return true
-                    end
+                    return true
                 end
             end
         end
@@ -71,7 +68,7 @@ function XLuckyTenant2BondSkills.GetBondsForPiece(piece, game)
                 local bond = bondManager:GetBond(bondId)
                 if bond then
                     local bondLevel = bond:GetLevel()
-                    if bondLevel > 0 then
+                    if bondLevel >= 0 then
                         list[#list + 1] = { bondId = bondId, bond = bond, bondLevel = bondLevel }
                     end
                 end
@@ -84,7 +81,7 @@ function XLuckyTenant2BondSkills.GetBondsForPiece(piece, game)
     for _, bond in ipairs(allBonds) do
         local bondId = bond:GetBondId()
         local bondLevel = bond:GetLevel()
-        if bondLevel > 0 then
+        if bondLevel >= 0 then
             list[#list + 1] = { bondId = bondId, bond = bond, bondLevel = bondLevel }
         end
     end
@@ -189,7 +186,10 @@ function XLuckyTenant2BondSkills.GetSkillsFromPieceConfig(piece, model, resolveS
     if isNoBondIdPiece then
         local hasValid = false
         for i = 1, #stateSkillIds do
-            if stateSkillIds[i] and stateSkillIds[i] > 0 then hasValid = true break end
+            if stateSkillIds[i] and stateSkillIds[i] > 0 then
+                hasValid = true
+                break
+            end
         end
         if not hasValid and XLog and XLog.Warning then
             XLog.Warning(string.format("[BondSkills] 棋子配置 ID=%d（无 bondId 类型）未配置或 StateSkillId 为空，请在配置表中为该棋子填写 StateSkillId", pieceId))

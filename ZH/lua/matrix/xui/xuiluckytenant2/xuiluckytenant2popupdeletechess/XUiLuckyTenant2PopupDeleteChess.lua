@@ -24,6 +24,8 @@ function XUiLuckyTenant2PopupDeleteChess:InitComponents()
     if self.GridChess then
         self._GridChess = XUiLuckyTenant2GameGridChess.New(self.GridChess, self)
     end
+
+    self.ImgIcon = self.ImgIcon or XUiHelper.TryGetComponent(self.Transform, "SafeAreaContentPane/PanelBond/PanelDoc/ImgIcon/ImgIcon", "RawImage")
 end
 
 ---@param pieceData table 待删除的棋子数据（与 SelectedBagPiece 结构一致）
@@ -85,6 +87,17 @@ function XUiLuckyTenant2PopupDeleteChess:Update()
     -- 用 GridChess 展示待删棋子
     if self._GridChess and self._PieceData then
         self._GridChess:Update(self._PieceData)
+    end
+
+    if self.ImgIcon then
+        local pieceId = self._PieceData and self._PieceData.Id or 0
+        local bondIcon = self._Control:GetBondIcon(pieceId) or ""
+        if bondIcon and not string.IsNilOrEmpty(bondIcon) then
+            self.ImgIcon:SetImage(bondIcon or "")
+            self.ImgIcon.gameObject:SetActiveEx(true)
+        else
+            self.ImgIcon.gameObject:SetActiveEx(false)
+        end
     end
 end
 

@@ -13,8 +13,6 @@ local OnLogin = function()
     if XUserManager.IsUseSdk() then
         XHeroSdkManager.EnterGame()
     end
-
-    CS.BuglyAgent.SetUserId(tostring(XPlayer.Id))
 end
 
 local OnLevelUp = function()

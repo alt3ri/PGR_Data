@@ -10,16 +10,16 @@ function XRedPointConditionMainStore.Check(eventId, args)
     if XSaveTool.GetData("IsUiMainBtnStoreBlue" .. XPlayer.Id) == 1 then
         return true
     end
-    
+
     return false
 end
 
-function XRedPointConditionMainStore.GetEvents()
+function XRedPointConditionMainStore.GetSubEvents()
     if Events then
         return Events
     end
     Events = {
-        XEventId.EVENT_ITEM_RESTRICT_CONFIG_TRIGGER_CHANGE
+        XRedPointEventElement.New(XEventId.EVENT_ITEM_RESTRICT_CONFIG_TRIGGER_CHANGE)
     }
     return Events
 end

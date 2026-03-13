@@ -1,6 +1,6 @@
 ---@class XWheelchairManualControl : XControl
 ---@field private _Model XWheelchairManualModel
-local XWheelchairManualControl = XClass(XControl, "XWheelchairManualControl", true) -- #203409 增加该类被分类
+local XWheelchairManualControl = XClass(XControl, "XWheelchairManualControl")
 function XWheelchairManualControl:OnInit()
     --初始化内部变量
     

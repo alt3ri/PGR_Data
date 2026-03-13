@@ -13,6 +13,7 @@ local UnlockType = {
 local inputSpeed = 0.02
 
 function XUiBigWorldPhotographControl:OnAwake()
+    -- XTool.GarbageCollect()
     XEventManager.AddEventListener(XEventId.EVENT_LOGIN_UI_OPEN, self.OnNotify, self)
     self:_RegisterButtonClicks()
     self._recordData = {}

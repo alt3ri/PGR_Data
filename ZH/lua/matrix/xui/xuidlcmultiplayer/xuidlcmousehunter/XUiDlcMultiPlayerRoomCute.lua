@@ -241,7 +241,7 @@ function XUiDlcMultiPlayerRoomCute:OnBtnBPClick()
 end
 
 function XUiDlcMultiPlayerRoomCute:OnBtnSkillClick()
-    if XMVCA.XDlcRoom:IsInRoomMatching() then
+    if XMVCA.XDlcRoom:IsInRoomMatching() or XMVCA.XDlcRoom:IsSelfReady() then
         XUiManager.TipMsg(self._Control:GetDlcMultiplayerConfigConfigByKey("CantChangeSkillTip").Values[1])
         return
     end

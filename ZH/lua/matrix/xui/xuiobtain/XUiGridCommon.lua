@@ -73,6 +73,7 @@ function XUiGridCommon:AutoInitUi()
     self.ImgUp = XUiHelper.TryGetComponent(self.Transform, "ImgUp", "Image")
     self.ImgRail = XUiHelper.TryGetComponent(self.Transform, "ImgRail", "Image")
     self.ImgReceived = XUiHelper.TryGetComponent(self.Transform, "ImgReceived", nil)
+    self.PanelReceive = XUiHelper.TryGetComponent(self.Transform, "PanelReceive")
     self.ImgQualityTag = XUiHelper.TryGetComponent(self.Transform, "ImgQualityTag", "Image")
     self.TxtStock = XUiHelper.TryGetComponent(self.Transform, "TxtStock", "Text")
     self.ImgNone = XUiHelper.TryGetComponent(self.Transform, "ImgNone", nil)
@@ -222,6 +223,7 @@ function XUiGridCommon:ResetUi()
     self:SetUiActive(self.ImgUp, false)
     self:SetUiActive(self.ImgRail, false)
     self:SetUiActive(self.ImgReceived, false)
+    self:SetUiActive(self.PanelReceive, false)
     self:SetUiActive(self.ImgQualityTag, false)
     self:SetUiActive(self.IconLevel, false)
     self:SetUiActive(self.TxtHave, false)
@@ -467,6 +469,9 @@ end
 function XUiGridCommon:SetReceived(isReceive)
     if self.ImgReceived then
         self:SetUiActive(self.ImgReceived, isReceive)
+    end
+    if self.PanelReceive then
+        self:SetUiActive(self.PanelReceive, isReceive)
     end
 end
 

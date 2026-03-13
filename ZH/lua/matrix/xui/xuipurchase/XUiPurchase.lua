@@ -838,7 +838,7 @@ function XUiPurchase:IsTabLbAllSellOut(index)
         return true
     end
     local cfgs = self.TabsCfg[self.CurGroupTab]
-    if cfgs.Childs[index].Closecondition ~= 0 then
+    if cfgs.Childs[index].Closecondition and cfgs.Childs[index].Closecondition ~= 0 then
        local isOpen, desc = XConditionManager.CheckCondition(cfgs.Childs[index].Closecondition)
        return not isOpen
     end

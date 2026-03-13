@@ -310,7 +310,8 @@ function XBWGraphicsSetting:GetDefaultGraphicsQualityValue()
     return self._GraphicsQualityValue:GetDefaultValue()
 end
 
-function XBWGraphicsSetting:SetGraphicsQualityValue(value)
+function XBWGraphicsSetting:SetGraphicsQualityValue(value, isInit)
+    self._GraphicsQualityValueIsInit = isInit
     self._GraphicsQualityValue:SetValue(value)
 end
 
@@ -468,11 +469,9 @@ function XBWGraphicsSetting:_InitGraphicsQualityValue()
         ---@type XBWSettingValue
         self._GraphicsQualityValue = XBWSettingValue.New(defaultQuality, graphicsQuality)
         self._GraphicsQualityValue:RegisterValueChangedEvent(function(value)
-            -- if value ~= XEnumConst.BWSetting.GraphicsQuality.Custom then
-            --     self:_InitQualityValue(value)
-            -- end
-            -- 和主线功能保持一致
-            self:_InitQualityValue(value)
+            if value ~= XEnumConst.BWSetting.GraphicsQuality.Custom or self._GraphicsQualityValueIsInit then
+                self:_InitQualityValue(value)
+            end
         end)
     else
         self._GraphicsQualityValue:Init(defaultQuality, graphicsQuality)
@@ -706,7 +705,7 @@ end
 -- region Private
 
 function XBWGraphicsSetting:__OnQualitySettingChanged()
-    self:SetGraphicsQualityValue(XEnumConst.BWSetting.GraphicsQuality.Custom)
+    self:SetGraphicsQualityValue(XEnumConst.BWSetting.GraphicsQuality.Custom, false)
 end
 
 function XBWGraphicsSetting:__ToCsQualitySetting()

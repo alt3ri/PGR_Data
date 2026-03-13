@@ -508,14 +508,16 @@ function XUiFashion:GetSceneUrl(isDefault)
     end
 end
 
-function XUiFashion:UpdateCharacterModel()
+function XUiFashion:UpdateCharacterModel(isSwitchPreview)
     self:UpdateBlackName()
     if self.CurFashionId then
         local template = XDataCenter.FashionManager.GetFashionTemplate(self.CurFashionId)
         self.PanelWeapon.gameObject:SetActiveEx(false)
         self.RoleModelPanel.GameObject:SetActiveEx(true)
         self.PanelBtnSwitch.gameObject:SetActiveEx(false)
-        self:ResetPanelBtnLens()
+        if not isSwitchPreview then
+            self:ResetPanelBtnLens()
+        end
         self:UpdateFashionIntro(self.CurFashionId)
         self:UpdateCharacterResModel(template.CharacterId, self.CurFashionId)
     else
@@ -1146,9 +1148,11 @@ end
 function XUiFashion:OnBtnPreviewSuitClick()
     self.OpenPreviewDict[LastSelectedTabIndex] = self.BtnPreviewSuit.ButtonState == CS.UiButtonState.Select
     if LastSelectedTabIndex == BtnTabIndex.Character then
-        self:UpdateCharacterModel()
+        self:UpdateCharacterModel(true)
+        self:OnBtnLensIn()
     elseif LastSelectedTabIndex == BtnTabIndex.Weapon then
         self:UpdateWeaponWithCharacterModel()
+        self:OnBtnLensIn()
     end
 end
 

@@ -32,7 +32,6 @@ end
 
 function XUiDlcMultiPlayerSkillDescGrid:RefreshBtnBuff()
     -- 图标和名称
-    self.BtnBuffIcon.gameObject:SetActiveEx(true)
     self.BtnBuffIcon:SetRawImage(self._SkillConfig.Icon)
     self.BtnBuffIcon:SetNameByGroup(0, self._SkillConfig.Name)
     self.BtnBuffIcon:SetNameByGroup(1, XUiHelper.GetText("NotUnlock"))

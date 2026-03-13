@@ -82,8 +82,9 @@ function XUiBigWorldTaskPopupEndingDetail:OnBtnDownloadClick()
     --    return
     --end
     XPermissionManager.GetCameraPermissionToCallback(function()
-        self:SaveUnreadableTexture(fileName, texture)
-        XUiManager.TipMsg(XMVCA.XBigWorldService:GetText("SG_SS_SaveSucess"))
+        if CS.XTool.SaveUnreadableTexture(fileName, texture, DESIGN_WIDTH, DESIGN_HEIGHT) then
+            XUiManager.TipMsg(XMVCA.XBigWorldService:GetText("SG_SS_SaveSucess"))
+        end
     end)
 end
 

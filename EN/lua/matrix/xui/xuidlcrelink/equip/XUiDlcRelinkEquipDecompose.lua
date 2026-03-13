@@ -439,6 +439,11 @@ function XUiDlcRelinkEquipDecompose:OnBtnBreakClick()
 
     local equipUidList = {}
     for equipUid, _ in pairs(self.SelectedEquipUidSet) do
+        local isLocked = self._Control:GetEquipIsLockedByEquipUid(equipUid)
+        if isLocked then
+            self._Control:OpenCommonTipCode(XCode.RelinkEquipAlreadyLocked)
+            return
+        end
         table.insert(equipUidList, equipUid)
     end
     self._Control:RequestEquipBreak(equipUidList, function(rewardList)

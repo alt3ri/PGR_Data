@@ -53,29 +53,59 @@ function XUiLogin:OnEnable()
 end
 
 function XUiLogin:CheckFool()
-    if not XMVCA.XAprilFoolDay:IsInTitleTime() then
-        return
+    if XMVCA.XAprilFoolDay:IsInTitleTime() then
+        -- 替换图片
+        self.ImgLogo:SetRawImage(CS.XGame.ClientConfig:GetString("AprilFoolsDayLoginPicPath2025"))
+        self.ImgLogo.transform.localScale = Vector3(0.95, 0.95, 0.95)
     end
-    if XOverseaManager.IsJP_KRRegion() then
-        self.ImgLogo:SetRawImage(CS.XGame.ClientConfig:GetString("JPFoolLogo"))
+
+    if XMVCA.XAprilFoolDay:IsInTitleSpecialEffectShowTime() then
+        -- 显示特效
+        if self.AprilFoolsRoot then
+            self.AprilFoolsRoot.gameObject:SetActiveEx(true)
+            
+            local effectPrefabUrl = CS.XGame.ClientConfig:GetString('AprilFoolsDayLoginPicPath2026')
+
+            if not string.IsNilOrEmpty(effectPrefabUrl) then
+                local effectGo = self.AprilFoolsRoot:LoadPrefabEx(effectPrefabUrl)
+                effectGo.gameObject:SetActiveEx(true)
+                effectGo.transform:SetLocalPosition(0, 0, 0)
+                -- 设置层级
+                XUiHelper.SetCanvasesSortingOrder(effectGo.transform)
+                
+                local xOffset = CS.XGame.ClientConfig:GetFloat('AprilFoolsDaycoordinateX2026')
+                local yOffset = CS.XGame.ClientConfig:GetFloat('AprilFoolsDaycoordinateY2026')
+
+                if XTool.IsNumberValidEx(xOffset) or XTool.IsNumberValidEx(yOffset) then
+                    effectGo.transform:SetLocalPosition(xOffset, yOffset, 0)
+                end
+            end
+        end
+
+        if self.EffectBgAprilFoolsV403 then
+            self.EffectBgAprilFoolsV403.gameObject:SetActiveEx(true)
+            
+            -- 全屏特效
+            local fullScreenEffectPrefabUrl = CS.XGame.ClientConfig:GetString('AprilFoolsDayLoginFullPicPath2026')
+
+            if not string.IsNilOrEmpty(fullScreenEffectPrefabUrl) then
+                local fullScreenEffectGo = self.EffectBgAprilFoolsV403:LoadPrefabEx(fullScreenEffectPrefabUrl)
+                fullScreenEffectGo.gameObject:SetActiveEx(true)
+                -- 设置层级
+                XUiHelper.SetCanvasesSortingOrder(fullScreenEffectGo.transform)
+            end
+        end
+    else
+        if self.AprilFoolsRoot then
+            self.AprilFoolsRoot.gameObject:SetActiveEx(false)
+        end
+
+        if self.EffectBgAprilFoolsV403 then
+            self.EffectBgAprilFoolsV403.gameObject:SetActiveEx(false)
+        end
     end
-    -- 翻转
-    -- local scale = self.ImgLogo.transform.localScale
-    -- self.ImgLogo.transform.localScale = Vector3(-scale.x, scale.y, scale.z)
-    -- scale = self.TextStart.transform.localScale
-    -- self.TextStart.transform.localScale = Vector3(-scale.x, scale.y, scale.z)
-
-    -- if self.BackGround then
-    --     self.BackGround.gameObject:SetActiveEx(true)
-    --     self.PanelSpine.gameObject:SetActiveEx(false)
-
-    --     local icon = CS.XGame.ClientConfig:GetString("AprilFoolsDayLoginPicPath")
-    --     self.BackGround:SetRawImage(icon)
-    -- end
-
-    -- 替换图片
-    self.ImgLogo:SetRawImage(CS.XGame.ClientConfig:GetString("AprilFoolsDayLoginPicPath2025"))
-    self.ImgLogo.transform.localScale = Vector3(0.95, 0.95, 0.95)
+    
+    
 end
 
 function XUiLogin:OnStart()
@@ -775,7 +805,12 @@ function XUiLogin:DoLogin()
                         XFunctionManager.SkipInterface(targetGotoConfig.EnterSkipId)
                     else
                         XLoginManager.SetFirstOpenMainUi(true)
-                        XLuaUiManager.RunMain()
+
+                        if XMVCA.XAprilFoolDay:CheckAndEnterFailureMain() then
+                            -- do nothing
+                        else
+                            XLuaUiManager.RunMain()
+                        end
                     end
                 end
             end)

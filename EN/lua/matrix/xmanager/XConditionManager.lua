@@ -118,6 +118,8 @@ PlayerCondition = {
         end
         return false, condition.Desc
     end,
+    [10113] = function(condition) -- 已被服务端占用
+    end,
     [10114] = function(condition)
         -- 世界boss属性关完成数量
         --local worldBossActivity = XDataCenter.WorldBossManager.GetCurWorldBossActivity()
@@ -432,7 +434,8 @@ PlayerCondition = {
         local buyState = tonumber(condition.Params[3])
         local judgingType = tonumber(condition.Params[4])
         local seconds = tonumber(condition.Params[5])
-        return XDataCenter.PurchaseManager.CheckPackageSellTimeCondition(negate, paskageId, buyState, judgingType, seconds), condition.Desc
+        local buyJudgingType = tonumber(condition.Params[6])
+        return XDataCenter.PurchaseManager.CheckPackageSellTimeCondition(negate, paskageId, buyState, judgingType, seconds,buyJudgingType), condition.Desc
     end,
     -- 新手签到判断指定签到领取完毕
     [10161] = function(condition)  
@@ -486,6 +489,12 @@ PlayerCondition = {
         end
         
         return result, condition.Desc
+    end,
+
+    [10164] = function(condition)
+        -- 查询玩家是否未完成过某个任务
+        local task = XDataCenter.TaskManager.GetTaskDataById(condition.Params[1])
+        return not (task and task.State == XDataCenter.TaskManager.TaskState.Finish), condition.Desc
     end,
     
     [10189] = function(condition)
@@ -1427,6 +1436,11 @@ PlayerCondition = {
         local stageId = condition.Params[1]
         local round = condition.Params[2]
         local value = XMVCA.XLuckyTenant:IsInStageAndRound(stageId, round)
+        return value, condition.Desc
+    end,
+    [17429] = function(condition)
+        local stageId = condition.Params[1]
+        local value = XMVCA.XLuckyTenant2:IsStageTutorialShown(stageId)
         return value, condition.Desc
     end,
     -- 音游预热MusicGameActivity

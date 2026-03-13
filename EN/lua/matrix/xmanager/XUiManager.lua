@@ -330,7 +330,7 @@ function XUiManager.UiFubenDialogTip(title, content, closeCallback, sureCallback
 end
 
 function XUiManager.OpenBuyAssetPanel(id, successCallback, challengeCountData, buyAmount)
-    XDataCenter.ItemManager.SelectBuyAssetType(id, successCallback, challengeCountData, buyAmount)
+    XMVCA.XItem:SelectBuyAssetType(id, successCallback, challengeCountData, buyAmount)
 end
 
 function XUiManager.OpenUiObtain(data, title, closeCallback, sureCallback, horizontalNormalizedPosition, customParams)

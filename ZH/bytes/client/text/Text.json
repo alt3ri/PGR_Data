@@ -5981,7 +5981,7 @@
     },
     {
         "Key": "ActivityBossSingleSchedule",
-        "Text": "{0}/<color=#00000><size=20>{1}</size></color>"
+        "Text": "{0}/<color=#00000><size=28>{1}</size></color>"
     },
     {
         "Key": "GuildSettingLevelLessThanZero",
@@ -19405,15 +19405,15 @@
     },
     {
         "Key": "LuckyTenant2TimesRemain",
-        "Text": "\u5269\u4f59{0}\u56de"
+        "Text": "\u672c\u8f6e\u5269\u4f59{0}\u56de"
     },
     {
         "Key": "LuckyTenant2BondLevelDown",
-        "Text": "{0}\u7f81\u7eca\u7b49\u7ea7\u4e0b\u964d"
+        "Text": "<color=#43454a>{0}\u7f81\u7eca\u7b49\u7ea7\u4e0b\u964d</color>"
     },
     {
         "Key": "LuckyTenant2BondLevelUp",
-        "Text": "{0}\u7f81\u7eca\u7b49\u7ea7\u63d0\u5347"
+        "Text": "<color=#f09235>{0}</color><color=#356395>\u7f81\u7eca\u7b49\u7ea7\u63d0\u5347</color>"
     },
     {
         "Key": "LuckyTenant2PopupSuccessRound",
@@ -20260,6 +20260,10 @@
         "Text": "\u662f\u5426\u7acb\u5373\u66f4\u6362\u4e3a\u8be5\u6d82\u88c5\uff1f"
     },
     {
+        "Key": "FashionSuitDiscountActivityTip",
+        "Text": "\u6298\u6263\u5269\u4f59\u65f6\u95f4\uff1a{0}"
+    },
+    {
         "Key": "TeamPrefabWeaponNotExistConflict",
         "Text": "\u5f53\u524d\u7f16\u961f\u90e8\u5206\u89d2\u8272\u88c5\u5907\u65e0\u6cd5\u4f7f\u7528\uff0c\u8bf7\u91cd\u65b0\u8bbe\u7f6e\u540e\u4e0a\u9635"
     },
@@ -20365,7 +20369,7 @@
     },
     {
         "Key": "FashionGroupSalesPopupTitle",
-        "Text": "\u662f\u5426\u786e\u8ba4\u82b1\u8d39{0}{1}\u8d2d\u4e70{2}"
+        "Text": "\u662f\u5426\u786e\u8ba4\u82b1\u8d39<color=#0D70BC>{0}</color>{1}\u8d2d\u4e70<color=#0D70BC>{2}</color>"
     },
     {
         "Key": "FashionAddToRandomTip",
@@ -20373,7 +20377,7 @@
     },
     {
         "Key": "FashionSuitGroupSalesDesc",
-        "Text": "\u5957\u88c5\u5305\u542b\u6b66\u5668\u6d82\u88c5\u3001\u6b66\u5668\u6d82\u88c5\u548c\u8d60\u54c1\u5934\u50cf\u3002\u5176\u4e2d\u6b66\u5668\u6d82\u88c5\u4e0d\u8ba1\u5165\u7cfb\u5217\u6536\u96c6\u8fdb\u5ea6\u3002"
+        "Text": "\u5957\u88c5\u5305\u542b\u89d2\u8272\u6d82\u88c5\u3001\u6b66\u5668\u6d82\u88c5\u548c\u8d60\u54c1\u5934\u50cf\u3002\u5176\u4e2d\u6b66\u5668\u6d82\u88c5\u4e0d\u8ba1\u5165\u7cfb\u5217\u6536\u96c6\u8fdb\u5ea6\u3002"
     },
     {
         "Key": "FashionGroupSalesPopupItem1",
@@ -20409,7 +20413,11 @@
     },
     {
         "Key": "SubPackageDeleteConfirm",
-        "Text": "\u786e\u8ba4\u8981\u5220\u9664\u5206\u5305{0}\u5417\uff1f"
+        "Text": "\u786e\u8ba4\u8981\u5378\u8f7d\u6b64\u8d44\u6e90\u5305{0}\u5417\uff1f"
+    },
+    {
+        "Key": "SubpackageUninstallRejectDownloading",
+        "Text": "\u5176\u5b83\u4e0b\u8f7d\u4efb\u52a1\u8fdb\u884c\u4e2d\uff0c\u65e0\u6cd5\u8fdb\u884c\u5378\u8f7d"
     },
     {
         "Key": "DlcRelinkMateForceExit",
@@ -20434,5 +20442,9 @@
     {
         "Key": "UsePackageOverMaxCount",
         "Text": "\u4f7f\u7528{0}\u5df2\u5230\u8fbe\u4e0a\u9650"
+    },
+    {
+        "Key": "TeamPrefabCannotCoverEmptyTeam",
+        "Text": "\u7f16\u961f\u6570\u636e\u4e3a\u7a7a\uff0c\u65e0\u6cd5\u8986\u76d6"
     }
 ]

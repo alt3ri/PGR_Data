@@ -27,11 +27,16 @@ function XUiLuckyTenant2ChessBagGroup:Update(data)
     
     -- 羁绊图标（新增 IconBond 节点时设置）
     if self.IconBond then
-        local icon = data.IconBond or ""
-        if self.IconBond.SetRawImage then
-            self.IconBond:SetRawImage(icon)
-        elseif self.IconBond.SetImage then
-            self.IconBond:SetImage(icon)
+        local icon = data.IconBond
+        if string.IsNilOrEmpty(icon) then
+            self.IconBond.gameObject:SetActiveEx(false)
+        else
+            self.IconBond.gameObject:SetActiveEx(true)
+            if self.IconBond.SetRawImage then
+                self.IconBond:SetRawImage(icon)
+            elseif self.IconBond.SetImage then
+                self.IconBond:SetImage(icon)
+            end
         end
     end
     

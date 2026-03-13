@@ -605,10 +605,14 @@ XTheatreManagerCreator = function()
     local _TaskStartTimeOpenCookieKey = "TheatreTaskStartTimeOpen_"
     --检查是否有任务过了开启时间
     function XTheatreManager.CheckTaskStartTimeOpen()
-        local taskIdList = XTheatreConfigs.GetTheatreTaskHaveStartTimeIdList()
-        for _, taskId in ipairs(taskIdList) do
-            if XTheatreManager.CheckTaskStartTimeOpenByTaskId(taskId) then
-                return true
+        local theatreTaskIdList = XTheatreConfigs.GetTheatreTaskMainShowIdList()
+        local taskIdList
+        for _, theatreTaskId in ipairs(theatreTaskIdList) do
+            taskIdList = XTheatreConfigs.GetTaskIdList(theatreTaskId)
+            for _, taskId in ipairs(taskIdList) do
+                if XTheatreManager.CheckTaskStartTimeOpenByTaskId(taskId) then
+                    return true
+                end
             end
         end
         return false

@@ -1,4 +1,6 @@
-local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+
+--- 活动面板通用商品预览气泡
 ---@class XUiPanelActivityBriefShowGoods
 local XUiPanelActivityBriefShowGoods = XClass(nil, 'XUiPanelActivityBriefShowGoods')
 
@@ -6,10 +8,20 @@ function XUiPanelActivityBriefShowGoods:Ctor(ui, activityRewardId)
     XTool.InitUiObjectByUi(self, ui)
     self._ActivityRewardId = activityRewardId
     self:InitShowGoods()
+    
+    self._IsShow = false
 end
 
 function XUiPanelActivityBriefShowGoods:Open()
-    self:PlayAnimation('PanelRewardEnable')
+    if not self._IsShow then
+        self:PlayAnimation('PanelRewardEnable')
+    end
+
+    self._IsShow = true
+end
+
+function XUiPanelActivityBriefShowGoods:Close()
+    self._IsShow = false    
 end
 
 function XUiPanelActivityBriefShowGoods:PlayAnimation(animeName, finCb, beginCb)

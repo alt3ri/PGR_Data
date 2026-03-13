@@ -11,6 +11,7 @@ local XLuckyTenant2OperationAddScore = XClass(XLuckyTenant2Operation, "XLuckyTen
 ---@param data.y number Y坐标
 ---@param data.value number 分数值
 ---@param data.skillId number 技能ID（可选）
+---@param data.sourceBondIds number[]|nil 归因羁绊ID列表（可选）
 function XLuckyTenant2OperationAddScore:Ctor(data)
     data = data or {}
     XLuckyTenant2OperationAddScore.Super.Ctor(self, data)
@@ -18,6 +19,7 @@ function XLuckyTenant2OperationAddScore:Ctor(data)
     self._X = data.x or 0
     self._Y = data.y or 0
     self._Value = data.value or 0
+    self._SourceBondIds = data.sourceBondIds or false
 end
 
 ---验证操作
@@ -35,13 +37,7 @@ end
 ---@return boolean, string|nil 是否执行成功，错误信息
 function XLuckyTenant2OperationAddScore:Do(ctx)
     -- 验证已在基类中完成，这里直接执行
-    ctx:AddScoreThisRound(self._Value)
-    
-    if XMVCA.XLuckyTenant2 then
-        XMVCA.XLuckyTenant2:Print("[XLuckyTenant2OperationAddScore] 位置(", self._X, ",", self._Y, 
-            ") 增加分数:", self._Value, "技能ID:", self._SkillId)
-    end
-    
+    ctx:AddScoreThisRound(self._Value, nil, self._SourceBondIds)
     return true, nil
 end
 

@@ -44,9 +44,17 @@ function XAprilFoolDayModel:Check2026ActivityIsOpen()
     if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.AprilFoolsDayClearOut, true, true) then
         return false
     end
-    
+
     if XTool.IsNumberValidEx(self._ActivityId) then
-        return not self._IsAtkComplete
+        if self._IsAtkComplete then
+            return false
+        end
+
+        local cfg = self:GetFoolsDayClearOutCfgById(self._ActivityId)
+
+        if cfg then
+            return XFunctionManager.CheckInTimeByTimeId(cfg.TimeId, false)
+        end
     end
     
     return false

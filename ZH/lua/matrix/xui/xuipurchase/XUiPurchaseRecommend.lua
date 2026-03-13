@@ -77,8 +77,13 @@ end
 
 function XUiPurchaseRecommend:OnRefresh(uiType, childTabIndex)
     if self.RootUi.TabGroup.CurSelectId == self.RootUi:GetTabIndexByTabType(XPurchaseConfigs.TabsConfig.Recommend) then
-        self:ShowPanel()
+        self:ShowPanel(uiType, childTabIndex)
+    else
+        self:UpdateRecommend(uiType, childTabIndex)
     end
+end
+
+function XUiPurchaseRecommend:UpdateRecommend(uiType, childTabIndex)
     -- 页签按钮
     self.Recommends = self.RecommendManager:GetRecommends()
     if #self.Recommends <= 0 then
@@ -166,11 +171,12 @@ function XUiPurchaseRecommend:OnDynamicTableEvent(event, index, grid)
     end
 end
 
-function XUiPurchaseRecommend:ShowPanel()
+function XUiPurchaseRecommend:ShowPanel(uiType, childTabIndex)
     self.GameObject:SetActiveEx(true)
     if self.RootUi.PanelTjTabEx then
         self.RootUi.PanelTjTabEx.gameObject:SetActiveEx(true)
     end
+    self:UpdateRecommend(uiType, childTabIndex)
 end
 
 function XUiPurchaseRecommend:HidePanel()

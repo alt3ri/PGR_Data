@@ -41,6 +41,7 @@ XDrawManagerCreator = function()
     local DrawNewGroupIds = nil
     local DrawDiscountGroupIds = nil
     local DrawDevilMayCryGroupIds = nil
+    local DrawHideOptionalBtnGroupIds = nil
 
     -- 可肝卡池相关数据
     local CanLiverActivityId = nil
@@ -840,6 +841,19 @@ XDrawManagerCreator = function()
         return DrawDevilMayCryGroupIds[groupId]
     end
 
+    function XDrawManager:CheckIsHideOptionalBtnGroupId(groupId)
+        if not DrawHideOptionalBtnGroupIds then
+            DrawHideOptionalBtnGroupIds = {}
+            local ids = XDrawConfigs.GetDrawClientConfigs("DrawHideOptionalBtnGroupIds")
+            if ids then
+                for _, v in pairs(ids) do
+                    DrawHideOptionalBtnGroupIds[tonumber(v)] = true
+                end
+            end
+        end
+        return DrawHideOptionalBtnGroupIds[groupId]
+    end
+
     -- 可领次数，指立即点击按钮可领但是还没领的
     function XDrawManager:CheckIsCanReceiveCharacterByDrawId(drawId)
         local cfg = XDrawConfigs.GetDevilMayCryActivityCfgByDrawId(drawId)
@@ -913,6 +927,7 @@ XDrawManagerCreator = function()
         CanLiverActivityId = data.ActivityId
         CanLiverDrawCount = data.DrawCount or 0
         CanLiverRewardIndex = data.RewardIndex
+        XEventManager.DispatchEvent(XEventId.EVENT_DRAW_CAN_LIVER_UPDATE)
     end
 
     function XDrawManager.GetCanLiverActivityId()
@@ -1211,6 +1226,7 @@ XDrawManagerCreator = function()
             if cb then
                 cb(res.RewardGoodsList)
             end
+            XEventManager.DispatchEvent(XEventId.EVENT_DRAW_CAN_LIVER_UPDATE)
         end)
     end
     --endregion

@@ -70,6 +70,7 @@ XWeaponFashionManagerCreator = function()
     function XWeaponFashionManager.NotifyWeaponFashionInfo(data)
         XWeaponFashionManager.InitWeaponFashions(data.WeaponFashionDataList)
         XWeaponFashionManager.RecycleWeaponFashions(data.ExpireList)
+        XEventManager.DispatchEvent(XEventId.EVENT_WEAPOM_SYM)
     end
 
     function XWeaponFashionManager.NotifyWeaponFashionTransform(data)
@@ -167,6 +168,7 @@ XWeaponFashionManagerCreator = function()
         return weaponFashionId
     end
 
+    ---@return XWeaponFashion
     function XWeaponFashionManager.GetWeaponFashion(id)
         return OwnWeaponFashions[id]
     end

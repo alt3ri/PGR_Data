@@ -123,19 +123,21 @@ end
 
 function XUiBigWorldSet:_InitTabGroup()
     if not XTool.IsTableEmpty(self._TypeDatas) then
+        local isCloudGame = XDataCenter.UiPcManager.IsCloudGame()
         self._TypeIndex = {}
         for i, typeData in ipairs(self._TypeDatas) do
-            local tab = self._TabList[i]
+            local isGraphicPage = i == 2
+            if not (isGraphicPage and isCloudGame) then
+                local tab = self._TabList[i]
+                if not tab then
+                    tab = XUiHelper.Instantiate(self.BtnTab, self.TabBtnGroup.transform)
+                    self._TabList[i] = tab
+                end
 
-            if not tab then
-                tab = XUiHelper.Instantiate(self.BtnTab, self.TabBtnGroup.transform)
-
-                self._TabList[i] = tab
+                tab.gameObject:SetActiveEx(true)
+                tab:SetNameByGroup(0, typeData:GetName())
+                tab:SetSprite(typeData:GetIcon())
             end
-
-            tab.gameObject:SetActiveEx(true)
-            tab:SetNameByGroup(0, typeData:GetName())
-            tab:SetSprite(typeData:GetIcon())
         end
 
         self.TabBtnGroup:Init(self._TabList, Handler(self, self.OnTabBtnGroupClick))

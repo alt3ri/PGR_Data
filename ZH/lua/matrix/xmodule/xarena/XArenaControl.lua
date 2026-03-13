@@ -357,6 +357,14 @@ function XArenaControl:GetAreaStageDistributeTypeByAreaId(areaId)
     return self._Model:GetAreaStageDistributeTypeById(areaId)
 end
 
+function XArenaControl:GetOldAreaDistributeMaxPointByDistributeType(distributeType)
+    return self._Model:GetOldArenaMaxPointCacheByDistributeType(distributeType)
+end
+
+function XArenaControl:UpdateOldAreaDistributeMaxPointByDistributeType(distributeType, newPoint)
+    return self._Model:SaveArenaOldMaxPointByDistributeType(distributeType, newPoint)
+end
+
 --- 获取区域数据
 ---@return XArenaAreaData|nil
 function XArenaControl:GetArenaAreaData()

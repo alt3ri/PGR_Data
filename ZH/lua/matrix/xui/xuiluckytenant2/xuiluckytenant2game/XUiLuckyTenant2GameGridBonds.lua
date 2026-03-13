@@ -15,7 +15,15 @@ function XUiLuckyTenant2GameGridBonds:OnStart(...)
             self:OnClick()
         end
     end
-    
+
+    -- 羁绊等级增加时播放的特效，播一段时间后隐藏
+    self.FxUiLuckyTenant21Jiban01 = self.FxUiLuckyTenant21Jiban01 or self.Transform:Find("Image/ImageBg/FxUiLuckyTenant21Jiban01")
+    if self.FxUiLuckyTenant21Jiban01 then
+        self.FxUiLuckyTenant21Jiban01.gameObject:SetActiveEx(false)
+    end
+    self._LevelUpTimer = nil -- 等级增加特效的隐藏定时器，用于回收
+    self._LastLevel = nil    -- 上一帧等级，用于检测等级增加
+
     -- 初始化选中状态为 false
     self._IsSelected = false
 end
@@ -24,9 +32,22 @@ function XUiLuckyTenant2GameGridBonds:OnEnable()
 end
 
 function XUiLuckyTenant2GameGridBonds:OnDisable()
+    -- hide effect
+    if self.FxUiLuckyTenant21Jiban01 then
+        self.FxUiLuckyTenant21Jiban01.gameObject:SetActiveEx(false)
+    end
 end
 
 function XUiLuckyTenant2GameGridBonds:OnDestroy()
+    self:_CancelLevelUpTimer()
+end
+
+---取消等级增加特效的隐藏定时器
+function XUiLuckyTenant2GameGridBonds:_CancelLevelUpTimer()
+    if self._LevelUpTimer then
+        XScheduleManager.UnSchedule(self._LevelUpTimer)
+        self._LevelUpTimer = nil
+    end
 end
 
 ---@param data table 羁绊数据
@@ -34,9 +55,25 @@ function XUiLuckyTenant2GameGridBonds:Update(data)
     if not data then
         return
     end
-    
+
+    -- 是否播放羁绊升级特效：由 Control 在 bondData.ShouldPlayLevelUpFx 中预先计算
+    if data.ShouldPlayLevelUpFx then
+        self:_CancelLevelUpTimer()
+        if self.FxUiLuckyTenant21Jiban01 then
+            self.FxUiLuckyTenant21Jiban01.gameObject:SetActiveEx(true)
+            local node = self.FxUiLuckyTenant21Jiban01
+            local delayMs = 1500
+            self._LevelUpTimer = XScheduleManager.ScheduleOnce(function()
+                self._LevelUpTimer = nil
+                if node and node.gameObject then
+                    node.gameObject:SetActiveEx(false)
+                end
+            end, delayMs)
+        end
+    end
+
     self._Data = data
-    
+
     -- 设置羁绊品质背景（根据羁绊等级从 Control 传入的 ImageBg）
     if self.ImageBg and data.ImageBg then
         if self.ImageBg.SetRawImage then
@@ -45,7 +82,7 @@ function XUiLuckyTenant2GameGridBonds:Update(data)
             self.ImageBg:SetImage(data.ImageBg)
         end
     end
-    
+
     -- 设置羁绊图标
     if self.BondIcon and data.Icon then
         if self.BondIcon.SetRawImage then
@@ -58,7 +95,7 @@ function XUiLuckyTenant2GameGridBonds:Update(data)
     if self.BondIcon and data.LevelColor then
         self.BondIcon.color = XUiHelper.Hexcolor2Color(data.LevelColor)
     end
-    
+
     -- 设置羁绊名称
     if self.TxtName then
         self.TxtName.text = data.Name or ""
@@ -67,12 +104,12 @@ function XUiLuckyTenant2GameGridBonds:Update(data)
     -- if self.TxtName and data.LevelColor then
     --     self.TxtName.color = XUiHelper.Hexcolor2Color(data.LevelColor)
     -- end
-    
+
     -- 设置等级文本（如：2/4/5/6/7）
     if self.TxtLvNum then
         self.TxtLvNum.text = data.LevelText or ""
     end
-    
+
     -- 设置当前羁绊棋子数量（或棋子类型数量）
     if self.TxtLv then
         local pieceCount = data.PieceCount or 0
@@ -84,12 +121,12 @@ function XUiLuckyTenant2GameGridBonds:OnClick()
     if not self._Data then
         return
     end
-    
+
     -- 先设置选中状态（确保在打开详情界面之前选中状态已更新）
     if self.Parent and self.Parent.SetSelectedGrid then
         self.Parent:SetSelectedGrid(self)
     end
-    
+
     -- 然后打开详情界面（直接通过Parent调用，Parent是XUiLuckyTenant2GameUiLuckyTenant2Bonds）
     if self.Parent and self.Parent.OpenBondsDetail then
         self.Parent:OpenBondsDetail(self._Data)
@@ -100,7 +137,7 @@ end
 ---@param isSelected boolean 是否选中
 function XUiLuckyTenant2GameGridBonds:SetSelected(isSelected)
     self._IsSelected = isSelected
-    
+
     -- 更新按钮状态
     if self._Button then
         if isSelected then
@@ -109,7 +146,7 @@ function XUiLuckyTenant2GameGridBonds:SetSelected(isSelected)
             self._Button:SetButtonState(CS.UiButtonState.Normal)
         end
     end
-    
+
     -- 如果有选中状态的UI元素（如高亮图片），也可以在这里更新
     -- if self.ImgSelect then
     --     self.ImgSelect.gameObject:SetActiveEx(isSelected)

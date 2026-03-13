@@ -1,10 +1,12 @@
 ---@class XUiPanelTaskCanLiver
 local XUiPanelTaskCanLiver = XClass(XUiNode, "XUiPanelTaskCanLiver")
+local MaskKey = "XUiPanelTaskCanLiver"
 
-local IsMulting = false
-local ShowRewardList = {}
 
 function XUiPanelTaskCanLiver:OnStart()
+    self.IsMulting = false
+    self.ShowRewardList = {}
+
     self.BtnShop.CallBack = function()
         local skipToShopId = 90055
         XFunctionManager.SkipInterface(skipToShopId)
@@ -12,6 +14,8 @@ function XUiPanelTaskCanLiver:OnStart()
 
     local XDynamicDrawCanLiverTask = require("XUi/XUiTask/XDynamicDrawCanLiverTask")
     self.DynamicTable = XUiHelper.DynamicTableNormal(self, self.PanelTaskCanLiverList, XDynamicDrawCanLiverTask)
+    
+    XEventManager.AddEventListener(XEventId.EVENT_TASK_FINISH_FAIL, self.OnTaskFinishFail, self)
 end
 
 function XUiPanelTaskCanLiver:OnEnable()
@@ -31,10 +35,36 @@ function XUiPanelTaskCanLiver:OnEnable()
     self.DynamicTable:ReloadDataASync()
 end
 
+function XUiPanelTaskCanLiver:OnDestroy()
+    self.IsMulting = false
+    self.ShowRewardList = {}
+    self.IsWaitServerResponse = false
+    XEventManager.RemoveEventListener(XEventId.EVENT_TASK_FINISH_FAIL, self.OnTaskFinishFail, self)
+
+    if XLuaUiManager.IsMaskShow(MaskKey) then
+        XLuaUiManager.SetMask(false, MaskKey)
+    end
+end
+
+function XUiPanelTaskCanLiver:OnTaskFinishFail()
+    if self.IsWaitServerResponse or self.IsMulting then
+        self.IsWaitServerResponse = false
+        self.IsMulting = false
+        self.ShowRewardList = {}
+        if XLuaUiManager.IsMaskShow(MaskKey) then
+            XLuaUiManager.SetMask(false, MaskKey)
+        end
+        self:Refresh()
+    end
+end
+
 ----------------------------------------------------
 -- ★ 本函数必须正确，否则不会弹奖励
 ----------------------------------------------------
 function XUiPanelTaskCanLiver:CheckRefreshLeftNewTask()
+    if self.IsWaitServerResponse then
+        return true
+    end
     local tempTasks = self:GetTasks()
 
     if self.ReceiveAll then
@@ -43,19 +73,33 @@ function XUiPanelTaskCanLiver:CheckRefreshLeftNewTask()
         local leftTasks = header and header.AllAchieveTaskDatas
 
         if leftTasks and next(leftTasks) then
+            self.IsWaitServerResponse = true
             XDataCenter.TaskManager.FinishMultiTaskRequest(leftTasks, function(rewardGoodsList)
+                self.IsWaitServerResponse = false
                 for _, reward in pairs(rewardGoodsList) do
-                    table.insert(ShowRewardList, reward)
+                    table.insert(self.ShowRewardList, reward)
                 end
+                self:Refresh(true)
             end)
         end
 
-    elseif ShowRewardList and next(ShowRewardList) then
+    elseif self.ShowRewardList and next(self.ShowRewardList) then
         -- ★ 最终弹奖励（所有奖励合并弹出）
-        XUiManager.OpenUiObtain(ShowRewardList)
-        ShowRewardList = {}
-        IsMulting = false
-        XLuaUiManager.SetMask(false)
+        XUiManager.OpenUiObtain(self.ShowRewardList)
+        self.ShowRewardList = {}
+        self.IsMulting = false
+
+        if XLuaUiManager.IsMaskShow(MaskKey) then
+            XLuaUiManager.SetMask(false, MaskKey)
+        end
+    else
+        -- ★ 即使没有奖励，流程结束也必须解锁
+        self.ShowRewardList = {}
+        self.IsMulting = false
+
+        if XLuaUiManager.IsMaskShow(MaskKey) then
+            XLuaUiManager.SetMask(false, MaskKey)
+        end
     end
 
     return self.ReceiveAll
@@ -71,7 +115,7 @@ function XUiPanelTaskCanLiver:Refresh(isMulti)
         return
     end
 
-    if IsMulting then
+    if self.IsMulting then
         return
     end
 
@@ -132,14 +176,19 @@ function XUiPanelTaskCanLiver:GetTasks()
         self.ReceiveAll = true
 
         local receiveCb = function()
-            IsMulting = true
-            XLuaUiManager.SetMask(true)
+            self.IsMulting = true
+            XLuaUiManager.SetMask(true, MaskKey)
+            self.IsWaitServerResponse = true
 
             -- ★ 第一次 finish：不弹奖励，只累积
             XDataCenter.TaskManager.FinishMultiTaskRequest(allAchieveTasks, function(rewardGoodsList)
-                for _, r in ipairs(rewardGoodsList) do
-                    table.insert(ShowRewardList, r)
+                self.IsWaitServerResponse = false
+                if rewardGoodsList then
+                    for _, r in ipairs(rewardGoodsList) do
+                        table.insert(self.ShowRewardList, r)
+                    end
                 end
+                self:Refresh(true)
             end)
         end
 

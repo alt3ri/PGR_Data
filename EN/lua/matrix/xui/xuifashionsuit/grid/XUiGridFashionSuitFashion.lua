@@ -85,7 +85,11 @@ function XUiGridFashionSuitFashion:AddClickEvt()
 end
 
 function XUiGridFashionSuitFashion:OpenDetail()
-    XMVCA.XShop:OpenFashionDetailUi(self._Id, nil, { suitId = self._SuitId })
+    local params = {
+        suitId = self._SuitId,
+        skipType = XEnumConst.FashionSuit.SkipType.SuitMain,
+    }
+    XMVCA.XShop:OpenFashionDetailUi(self._Id, nil, params)
 end
 
 return XUiGridFashionSuitFashion

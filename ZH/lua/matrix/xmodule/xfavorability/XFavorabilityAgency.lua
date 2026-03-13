@@ -296,6 +296,47 @@ function XFavorabilityAgency:IsStoryShowNewTag(characterId, storyId)
     return false
 end
 
+-- [检查好感剧情限时送角色任务红点]
+function XFavorabilityAgency:CheckStoryGiftTaskRedPoint(characterId)
+    local allConfigs = self._Model:GetAllCharacterStoryActivityConfig()
+    if not allConfigs then return false end
+    
+    if XTool.IsNumberValid(characterId) then
+        local cfg = allConfigs[characterId]
+        if cfg then
+            return self:_CheckStoryGiftTaskStatus(cfg.TaskTimeLimitId)
+        end
+        return false
+    else
+        for _, cfg in pairs(allConfigs) do
+            if self:_CheckStoryGiftTaskStatus(cfg.TaskTimeLimitId) then
+                return true
+            end
+        end
+        return false 
+    end
+end
+
+function XFavorabilityAgency:_CheckStoryGiftTaskStatus(taskTimeLimitId)
+    if not XTool.IsNumberValid(taskTimeLimitId) then
+        return false
+    end
+    
+    local taskLimitConfig = XTaskConfig.GetTimeLimitTaskCfg(taskTimeLimitId)
+    if not taskLimitConfig or not taskLimitConfig.TaskId or not taskLimitConfig.TaskId[1] then
+        return false
+    end
+    
+    local taskId = taskLimitConfig.TaskId[1]
+    local task = XDataCenter.TaskManager.GetTaskDataById(taskId)
+    
+    if task and task.State == XDataCenter.TaskManager.TaskState.Achieved then
+        return true
+    end
+    
+    return false
+end
+
 -- [某个/当前角色是否有剧情任务奖励可以领取]
 function XFavorabilityAgency:HasStroyTaskCanFinish(characterId)
     local storys = self:GetCharacterStoryById(characterId)

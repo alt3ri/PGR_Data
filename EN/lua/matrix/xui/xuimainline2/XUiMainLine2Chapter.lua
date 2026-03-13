@@ -28,8 +28,8 @@ function XUiMainLine2Chapter:OnStart(mainId, chapterId, stageId, isOpenStageDeta
     
     -- 未播放章节切换效果
     if not self.CurChapterId then
-        local mainId = self._Control:GetClientConfigParams("SwitchEffectMainId", 1)
-        if mainId and tonumber(mainId) == self.MainId then
+        local switchEffectMainId = self._Control:GetClientConfigParams("SwitchEffectMainId", 1)
+        if switchEffectMainId and tonumber(switchEffectMainId) == self.MainId then
             for i = 1, #self.ChapterIds - 1 do
                 local cId = self.ChapterIds[i]
                 local isPlay = self._Control:GetIsPlaySwitchEnterEffect(cId)

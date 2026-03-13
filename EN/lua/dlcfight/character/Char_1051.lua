@@ -101,13 +101,6 @@ function XCharR5Lucia1:ScriptInit(isGainControl)
         [1051089] = true,
         [1051096] = true,
     }
-    --设置闪避技能组
-    self._SkillDodgeId = {
-        [1051006] = true,
-        [1051007] = true,
-        [1051008] = true,
-        [1051009] = true,
-    }
 
     --初始化登龙值
     self._proxy:ApplyMagic(self._uuid, self._uuid, 1051001, 1)
@@ -165,10 +158,6 @@ function XCharR5Lucia1:ScriptInit(isGainControl)
     self._DataidaoBuffDownDelayTime = 0.25
     self._DataidaoBuffTimerSwitch = false
 end
-local UIControl = {
-    On = 100,                               --全开
-    Off = 10                                --全关
-}
 
 ---@param dt number @ delta time
 function XCharR5Lucia1:Update(dt)
@@ -269,19 +258,11 @@ function XCharR5Lucia1:Update(dt)
                 local targetNpc = self._proxy:SearchNpc(self._uuid, ENpcCampType.Camp2, 4, 15, -1)
                 if (targetNpc == 0) or (not targetNpc) then
                     self._proxy:CastAction(self._uuid, 1051026)
-                    --如果是2技能弹刀居合，则进入冷却
-                    if self._proxy:CheckBuffByKind(self._uuid, 10512005) then
-                        self._proxy:ApplyMagic(self._uuid, self._uuid, 10512006)
-                    end
                     self._GPJuhe = false
                     return
                 end
                 ----XLog.Warning("释放技能")
                 self._proxy:CastActionToTarget(self._uuid, 1051026, targetNpc)
-                --如果是2技能弹刀居合，则进入冷却
-                if self._proxy:CheckBuffByKind(self._uuid, 10512005) then
-                    self._proxy:ApplyMagic(self._uuid, self._uuid, 10512006)
-                end
                 ----XLog.Warning("释放成功")
                 self._GPJuhe = false
             end
@@ -478,7 +459,7 @@ function XCharR5Lucia1:OnNpcCastActionAfterEvent(SkillId, LauncherId, TargetId, 
         if (SkillId == 1051031) then --3技能拔刀
             self._proxy:ApplyMagic(self._uuid, self._uuid, 1051053)
         end
-        if (SkillId == 1051091) then --必杀技能
+        if (SkillId == 1051091) or (SkillId == 1051096) then --必杀技能
             self._proxy:ApplyMagic(self._uuid, self._uuid, 1051054)
         end
         if (SkillId == 1051011) or (SkillId == 1051026) then -- 小技能1 2 
@@ -528,14 +509,6 @@ function XCharR5Lucia1:OnNpcCastActionAfterEvent(SkillId, LauncherId, TargetId, 
         else
             if self._proxy:CheckBuffByKind(self._uuid,1051027) then
                 self._proxy:ApplyMagic(self._uuid, self._uuid, 1051028)
-            end
-        end
-
-        --释放闪避后删除2技能居合蓄力进入冷却标记
-        if self._SkillDodgeId[SkillId] then
-            --XLog.Warning("释放了闪避")
-            if self._proxy:CheckBuffByKind(self._uuid,10512005) then
-                self._proxy:RemoveBuff(self._uuid, 10512005)
             end
         end
     end
@@ -624,6 +597,7 @@ function XCharR5Lucia1:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKin
     if (buffId == 10511108) then
         --1技能第二段切换
         self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Ball1, 105112)
+        self._proxy:StartButtonCountDown(self._uuid,ENpcOperationKey.Ball1,1.5)
     end
 
     if(buffId == 10518108) then
@@ -722,6 +696,7 @@ function XCharR5Lucia1:OnNpcRemoveBuffEvent(casterNpcUUID, npcUUID, buffId, buff
     if (buffId == 10511108) then
         --1技能连段时间结束
         self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Ball1, 105106)
+        self._proxy:ClearButtonCountDown(self._uuid, ENpcOperationKey.Ball1)
     end
     if(buffId == 10518108) then
         --切换弹刀反击为普攻
@@ -780,10 +755,8 @@ function XCharR5Lucia1:ChangeDamageBeforeCalc(eventArgs)
             if self.JianqiDmgTbl[eventArgs.Id] then
                 ----XLog.Warning("剑气伤害加成-核心2-1")
                 self._proxy:ApplyMagic(self._uuid, self._uuid, 10511031, 1, eventArgs.ContextId, 1)
-                if not self._proxy:CheckNpcFullActionState(self._uuid, ENpcAction.Reboot,-1) then
-                    self._proxy:ApplyMagic(self._uuid, self._uuid, 10511032)
-                    self._proxy:ApplyMagic(self._uuid, self._uuid, 10511033) 
-                end
+                self._proxy:ApplyMagic(self._uuid, self._uuid, 10511032)
+                self._proxy:ApplyMagic(self._uuid, self._uuid, 10511033) 
             end
             if self._proxy:CheckBuffByKind(eventArgs.Target, 1056020) then
                 if eventArgs.Id == 1056021 then
@@ -800,10 +773,8 @@ function XCharR5Lucia1:ChangeDamageBeforeCalc(eventArgs)
             if self.JianqiDmgTbl[eventArgs.Id] then
                 ----XLog.Warning("剑气伤害加成-核心2-2")
                 self._proxy:ApplyMagic(self._uuid, self._uuid, 10511041, 1, eventArgs.ContextId, 1)
-                if not self._proxy:CheckNpcFullActionState(self._uuid, ENpcAction.Reboot,-1) then
-                    self._proxy:ApplyMagic(self._uuid, self._uuid, 10511032)
-                    self._proxy:ApplyMagic(self._uuid, self._uuid, 10511033) 
-                end
+                self._proxy:ApplyMagic(self._uuid, self._uuid, 10511032)
+                self._proxy:ApplyMagic(self._uuid, self._uuid, 10511033) 
             end
             if self._proxy:CheckBuffByKind(eventArgs.Target, 1056020) then
                 if eventArgs.Id == 1056021 then
@@ -1035,14 +1006,6 @@ function XCharR5Lucia1:OnNpcSkillActionKeyframeSendEvent(launcher, eventName, sk
             self._proxy:CastActionToSearchTarget(self._uuid, self._JuheXuliSkill, targetNpc)
             self._proxy:ApplyMagic(self._uuid, self._uuid, 10511203)
         end
-        --极限技UI关
-        if eventName == "UltSkillUiOff" then
-            self:ControlUltSkillUI(UIControl.Off)
-        end
-        --极限技UI开
-        if eventName == "UltSkillUiOn" then
-            self:ControlUltSkillUI(UIControl.On)
-        end
     end
 end
 
@@ -1219,55 +1182,6 @@ function XCharR5Lucia1:EquipTuoWei()
             --XLog.Warning("yes")
             self._proxy:ApplyMagic(self._uuid, self._uuid, 1051028)
         end
-    end
-end
-
-function XCharR5Lucia1:ControlUltSkillUI(SwitchType)    --大招控制UI隐藏
-    if SwitchType == UIControl.Off then
-        self._proxy:SetLevelUiState(EFightUiType.CommonJoystick,self._localNpc,3)            --隐藏摇杆
-        self._proxy:SetLevelUiState(EFightUiType.CommonControl,self._localNpc,3)         --隐藏右侧面板
-        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Attack,self._localNpc,false)
-        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Dodge,self._localNpc,false)
-        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Ball1,self._localNpc,false)
-        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Ball2,self._localNpc,false)
-        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Ball3,self._localNpc,false)
-        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Ball4,self._localNpc,false)
-        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Focus,self._localNpc,false)
-        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Jump,self._localNpc,false)
-        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Move,self._localNpc,false)
-        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.ExSkill,self._localNpc,false)
-        self._proxy:SetLevelOperationUiState(EFightUiType.CommonJoystick,ENpcOperationKey.Move,self._localNpc,3)
-        self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.Dodge,self._localNpc,3) 
-        self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.Focus,self._localNpc,3) 
-        self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.ExSkill,self._localNpc,3) 
-        self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.Ball1,self._localNpc,3) 
-        self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.Ball2,self._localNpc,3) 
-        self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.Ball3,self._localNpc,3) 
-        self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.Ball4,self._localNpc,3)
-        self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.Attack,self._localNpc,3) 
-
-    elseif SwitchType == UIControl.On then
-        self._proxy:SetLevelUiState(EFightUiType.CommonJoystick,self._localNpc,1)            --隐藏摇杆
-        self._proxy:SetLevelUiState(EFightUiType.CommonControl,self._localNpc,1)         --隐藏右侧面板
-        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Attack,self._localNpc,true)
-        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Dodge,self._localNpc,true)
-        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Ball1,self._localNpc,true)
-        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Ball2,self._localNpc,true)
-        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Ball3,self._localNpc,true)
-        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Ball4,self._localNpc,true)
-        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Focus,self._localNpc,true)
-        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Jump,self._localNpc,true)
-        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Move,self._localNpc,true)
-        self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.ExSkill,self._localNpc,true)
-        self._proxy:SetLevelOperationUiState(EFightUiType.CommonJoystick,ENpcOperationKey.Move,self._localNpc,1)
-        self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.Dodge,self._localNpc,1) 
-        self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.Focus,self._localNpc,1) 
-        self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.ExSkill,self._localNpc,1) 
-        self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.Ball1,self._localNpc,1) 
-        self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.Ball2,self._localNpc,1) 
-        self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.Ball3,self._localNpc,1) 
-        self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.Ball4,self._localNpc,1) 
-        self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.Attack,self._localNpc,1)
     end
 end
 

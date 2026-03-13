@@ -421,10 +421,9 @@ function Equip.GetWeaponAnimStateNameByFight(fightNpcData)
 end
 ]]
 
---- TODO 实现逻辑挪到XEquipAgency
---- @desc 获取角色武器共鸣特效(战斗用) v2.17功能已废弃
+--- @desc 获取角色武器共鸣特效(战斗用)
 function Equip.GetWeaponResonanceEffectPathByFight(fightNpcData)
-    return nil
+    return XMVCA.XEquip:GetWeaponResonanceEffectPathByFight(fightNpcData)
 end
 
 --- @desc 获取灵敏度值(战斗用)
@@ -630,6 +629,10 @@ function VideoManager.RecordVideoSkip(id)
     XDataCenter.MovieManager.RecordStorylineSkip(id)
 end
 --endregion
+
+function VideoManager.PlayMovie(movieId, cb)
+    XDataCenter.MovieManager.PlayMovie(movieId, cb, nil, nil, nil, nil, nil, nil, true)
+end
 
 function Movie.ExtractGenderContent(content, specGender)
     local content = XMVCA.XMovie:ExtractGenderContent(content, specGender)

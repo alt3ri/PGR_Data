@@ -4,8 +4,8 @@
 -- Generated at: 2025-12-31 16:39:51
 --]]
 
+local XUiLuckyTenant2ChessBagGroup = require("XUi/XUiLuckyTenant2/XUiLuckyTenant2Chess/XUiLuckyTenant2ChessBagGroup")
 local XUiLuckyTenant2ChessPanelChess = require("XUi/XUiLuckyTenant2/XUiLuckyTenant2Chess/XUiLuckyTenant2ChessPanelChess")
-local XUiLuckyTenant2ChessPanelProp = require("XUi/XUiLuckyTenant2/XUiLuckyTenant2Chess/XUiLuckyTenant2ChessPanelProp")
 local XUiLuckyTenant2PropDisplay = require("XUi/XUiLuckyTenant2/XUiLuckyTenant2PropDisplay")
 local XUiLuckyTenant2GameUiLuckyTenant2Bonds = require("XUi/XUiLuckyTenant2/XUiLuckyTenant2Game/XUiLuckyTenant2GameUiLuckyTenant2Bonds")
 local XLuckyTenant2Enum = require("XModule/XLuckyTenant2/Game/XLuckyTenant2Enum")
@@ -49,10 +49,6 @@ function XUiLuckyTenant2Chess:InitComponents()
         self.BtnBag:AddEventListener(function() self:OnBtnBagClick() end)
     end
 
-    ---@type XUiLuckyTenant2ChessPanelProp
-    if self.PanelProp then
-        self.PanelProp = XUiLuckyTenant2ChessPanelProp.New(self.PanelProp, self)
-    end
     ---@type XUiLuckyTenant2GameUiLuckyTenant2Bonds
     if self.UiLuckyTenant2Bonds then
         self.UiLuckyTenant2Bonds = XUiLuckyTenant2GameUiLuckyTenant2Bonds.New(self.UiLuckyTenant2Bonds, self)
@@ -110,6 +106,9 @@ function XUiLuckyTenant2Chess:InitComponents()
             button:SetRawImage("ImgNoFreeIcon02", deletePropIcon)
         end
     end
+
+    -- 背包网格列表（与 XUiLuckyTenant2ChessBag 共用逻辑）
+    self._Grids = {}
 
     -- 初始化标签页
     -- self:SetTab(Tab.AddPiece)
@@ -249,13 +248,21 @@ function XUiLuckyTenant2Chess:UpdateProp()
     end
 
     -- 更新刷新币的数量与颜色（充足 #ffffff，不充足 #24002c）
+    -- 当随机池数量不足时，隐藏刷新按钮
+    local isRefreshAvailable = self._Control:IsRefreshOptionAvailable()
     local refreshCoin = self._Control:GetRefreshCoin()
     if self.BtnRefreshNoFree then
-        self.BtnRefreshNoFree:SetNameByGroup(0, XLuckyTenant2Enum.Cost)
-        local XUiButton = require("XUi/XUiCommon/XUiButton")
-        local btn = XUiButton.New(self.BtnRefreshNoFree)
-        local color = (refreshCoin and refreshCoin > 0) and XUiHelper.Hexcolor2Color("ffffff") or XUiHelper.Hexcolor2Color("24002c")
-        btn:SetTextColor("TxtNoFree", color)
+        self.BtnRefreshNoFree.gameObject:SetActiveEx(isRefreshAvailable)
+        if isRefreshAvailable then
+            self.BtnRefreshNoFree:SetNameByGroup(0, XLuckyTenant2Enum.Cost)
+            local XUiButton = require("XUi/XUiCommon/XUiButton")
+            local btn = XUiButton.New(self.BtnRefreshNoFree)
+            local color = (refreshCoin and refreshCoin > 0) and XUiHelper.Hexcolor2Color("ffffff") or XUiHelper.Hexcolor2Color("24002c")
+            btn:SetTextColor("TxtNoFree", color)
+        end
+    end
+    if self.BtnRefreshFree then
+        self.BtnRefreshFree.gameObject:SetActiveEx(false)
     end
 end
 
@@ -279,16 +286,9 @@ function XUiLuckyTenant2Chess:UpdateBag()
     local uiData = self._Control:GetUiData()
     local bagData = uiData.Bag
 
-    -- 更新背包棋子列表
-    local panelProp = XUiHelper.TryGetComponent(self.Transform, "SafeAreaContentPane/BagPanel/PanelDelete/PanelBagList/Viewport/Content/PanelProp", "Transform")
-    if panelProp and bagData then
-        local XUiLuckyTenant2ChessBagGroup = require("XUi/XUiLuckyTenant2/XUiLuckyTenant2Chess/XUiLuckyTenant2ChessBagGroup")
-        if not self._Grids then
-            self._Grids = {}
-        end
-        if panelProp then
-            XTool.UpdateDynamicItem(self._Grids, bagData, panelProp, XUiLuckyTenant2ChessBagGroup, self)
-        end
+    -- 刷新背包网格显示
+    if self.PanelProp then
+        XTool.UpdateDynamicItem(self._Grids, bagData, self.PanelProp, XUiLuckyTenant2ChessBagGroup, self)
     end
 
     -- 初始化详情面板（如果还没有初始化）

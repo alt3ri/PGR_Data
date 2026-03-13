@@ -190,7 +190,15 @@ function XUiArenaSettlement:_Refresh()
     local data = self._ResultData
     local areaId = self._Control:GetCurrentEnterAreaId()
     local markId = self._Control:GetMarkIdByAreaId(areaId)
+    if not XTool.IsNumberValid(markId) then
+        XLog.Error("XUiArenaSettlement:_Refresh markId is not valid")
+        return
+    end
     local markInfo = self:_GetMarkInfo(markId)
+    if not markInfo then
+        XLog.Error("XUiArenaSettlement:_Refresh markInfo is not valid")
+        return
+    end
 
     -- 初始化UI显示状态
     self:_InitUIState(data, markInfo)

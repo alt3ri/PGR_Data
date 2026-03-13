@@ -35,6 +35,7 @@ function XSubPackageAgency:OnInit()
     self._FileToResIds = {}
 
     self._IsUninstalling = false
+    self._UninstallVersion = 0
     self._IsDownloading = false
     self._DownloadPackageId = 0
     self._DownloadingResId = 0
@@ -136,6 +137,11 @@ function XSubPackageAgency:IsOpen()
         return true
     end
     return self._LaunchDlcManager.CheckSubpackageOpen()
+end
+
+--- 检查当前是否有下载任务正在进行
+function XSubPackageAgency:IsDownloading()
+    return self._IsDownloading or XTool.IsNumberValid(self._DownloadingResId)
 end
 
 function XSubPackageAgency:OpenUiMain(groupId)
@@ -632,7 +638,7 @@ function XSubPackageAgency:UninstallResourceById(resId, cb)
 
     -- 如果正在进行批量卸载（锁住了），则不允许单独插队
     if self._IsUninstalling then
-        XUiManager.TipText("正在卸载资源，请稍候...")
+        XLog.Warning("正在卸载资源，请稍候...")
         return
     end
 
@@ -642,13 +648,24 @@ function XSubPackageAgency:UninstallResourceById(resId, cb)
         return
     end
 
+    -- 递增版本号，使旧协程失效
+    self._UninstallVersion = self._UninstallVersion + 1
+    local currentVersion = self._UninstallVersion
+
     -- 定义执行体
     local execute = function()
         self._IsUninstalling = true -- 加上锁
-        
+
         -- 调用核心逻辑
-        self:_UninstallResCore(resId)
-        
+        local cancelled = self:_UninstallResCore(resId, currentVersion)
+        if cancelled then return end
+
+        -- 版本号校验
+        if self._UninstallVersion ~= currentVersion then
+            XLog.Warning("[XSubPackageAgency] UninstallResourceById 协程被取消")
+            return
+        end
+
         -- 刷新事件
         local affectedSubpackageIds = self._Model:GetSubpackageIdByResId(resId)
         if affectedSubpackageIds then
@@ -688,7 +705,7 @@ function XSubPackageAgency:UninstallSubpackageById(subpackageId, cb)
     if not subpackageId or subpackageId <= 0 then return end
 
     if self._IsUninstalling then
-        XUiManager.TipText("正在卸载资源，请稍候...")
+        XLog.Warning("正在卸载资源，请稍候...")
         return
     end
 
@@ -698,9 +715,13 @@ function XSubPackageAgency:UninstallSubpackageById(subpackageId, cb)
         return
     end
 
+    -- 递增版本号，使旧协程失效
+    self._UninstallVersion = self._UninstallVersion + 1
+    local currentVersion = self._UninstallVersion
+
     RunAsyn(function()
         self._IsUninstalling = true
-        
+
         local template = self:GetSubpackageTemplate(subpackageId)
         if not template or not template.ResIds then
             self._IsUninstalling = false
@@ -711,20 +732,35 @@ function XSubPackageAgency:UninstallSubpackageById(subpackageId, cb)
         XLog.Warning(string.format("[XSubPackageAgency] 开始协程卸载 SubpackageId=%d", subpackageId))
 
         for _, resId in ipairs(template.ResIds) do
+            -- 版本号校验
+            if self._UninstallVersion ~= currentVersion then
+                XLog.Warning("[XSubPackageAgency] UninstallSubpackageById 协程被取消")
+                return
+            end
+
             local isLocked = self:IsResUsedByOtherProcessSubpackage(resId, subpackageId)
-            
+
             if isLocked then
                 XLog.Warning(string.format("跳过 ResId=%d", resId))
             else
                 -- [关键] 直接调用 Core，因为它已经支持 yield，且当前已经在协程里
-                self:_UninstallResCore(resId)
-                
+                local cancelled = self:_UninstallResCore(resId, currentVersion)
+                if cancelled then return end
+
                 -- Res 之间的额外休息（可选）
                 asynWaitSecond(0)
+                -- yield 恢复后再次校验
+                if self._UninstallVersion ~= currentVersion then
+                    XLog.Warning("[XSubPackageAgency] UninstallSubpackageById 协程被取消")
+                    return
+                end
             end
         end
 
-        -- 统一刷新
+        -- 最终校验
+        if self._UninstallVersion ~= currentVersion then
+            return
+        end
         local item = self._Model:GetSubpackageItem(subpackageId)
         if item then
             XEventManager.DispatchEvent(XEventId.EVENT_SUBPACKAGE_UPDATE, subpackageId, item:GetProgress())
@@ -847,9 +883,9 @@ end
 
 -- [新增] 核心卸载逻辑（私有，必须在协程中运行）
 --- @param resId number 资源Id
-function XSubPackageAgency:_UninstallResCore(resId)
+function XSubPackageAgency:_UninstallResCore(resId, currentVersion)
     local indexInfo = self._SubIndexInfo[resId]
-    if not indexInfo then return end
+    if not indexInfo then return false end
 
     local allRelatedResIds = { resId } -- 至少排除自己
     -- 这里可以根据业务需求扩展，通常单资源卸载只排除自己，分包卸载则排除整个分包的 ResIds
@@ -862,8 +898,8 @@ function XSubPackageAgency:_UninstallResCore(resId)
     unistallResItem:Uninstall()
 
     local deleteCount = 0
-    local batchCounter = 0 
-    
+    local batchCounter = 0
+
     for assetPath, info in pairs(indexInfo) do
         local physicalFileName = info[1]
         local savePath = self:GetSavePath(physicalFileName)
@@ -873,12 +909,17 @@ function XSubPackageAgency:_UninstallResCore(resId)
             -- 3. 物理删除
             CS.XFileTool.DeleteFile(savePath)
             deleteCount = deleteCount + 1
-            
+
             -- [关键] 强制分帧：每删 10 个文件，向当前协程申请休息
             batchCounter = batchCounter + 1
             if batchCounter >= BATCH_DELETE_COUNT then
                 batchCounter = 0
                 asynWaitSecond(0) -- 让出控制权给下一帧
+                -- 版本号校验：重连/登出后旧协程应立即退出
+                if currentVersion and self._UninstallVersion ~= currentVersion then
+                    XLog.Warning("[XSubPackageAgency] _UninstallResCore 协程被取消")
+                    return true -- true 表示被取消
+                end
             end
         end
     end
@@ -1076,10 +1117,6 @@ function XSubPackageAgency:IsChangingThread()
     return self._DownloadCenter:GetCurrentRunningTaskNumber() ~= self._ThreadCount
 end
 
-function XSubPackageAgency:IsDownloading()
-    return self._IsDownloading
-end
-
 function XSubPackageAgency:OnStateChanged(taskGpId, state)
     local item = self._Model:GetResourceItem(taskGpId)
     if item then
@@ -1094,7 +1131,7 @@ function XSubPackageAgency:CheckSubpackageComplete(subpackageId)
         return true
     end
 
-    if not XTool.IsNumberValid(subpackageId) then
+    if type(subpackageId) ~= "number" then
         return true
     end
 
@@ -1537,6 +1574,8 @@ function XSubPackageAgency:OnLoginOut()
         return
     end
 
+    -- 递增版本号，使正在运行的卸载协程失效
+    self._UninstallVersion = (self._UninstallVersion or 0) + 1
     self._IsUninstalling = false
     self:PauseAll()
 end

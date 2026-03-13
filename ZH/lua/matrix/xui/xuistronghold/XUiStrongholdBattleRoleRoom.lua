@@ -197,11 +197,15 @@ function XUiStrongholdBattleRoleRoom:OnTeamEntityChange()
     self.Team = self.TeamList[self.TeamPropId]:GetOrCreateTempTeam()
     
     -- 刷新角色显示
-    self:RefreshRoleModels()
-    self:RefreshCharacterRImgType()
-    self:RefreshPartners()
-    self:RefreshRoleDetalInfo(true)
-end
+    self:RefreshRoleInfos()
+    self.FirstEnterBtnGroup:SelectIndex(self.Team:GetFirstFightPos(), false)
+    self:RefreshFirstFightInfo()
+    self:RefreshTipGrids()
+    self:RefreshFightControlState()
+    self.PanelGeneralSkill:Refresh()
+    self:RefreshRoleDetalInfo(true)
+    self:OnAnimationSetChange()
+end
 
 function XUiStrongholdBattleRoleRoom:OnBtnTeamPrefabClicked()
     local stageId
@@ -1020,8 +1024,8 @@ function XUiStrongholdBattleRoleRoom:CheckIsCloseView()
     end
 end
 
-function XUiStrongholdBattleRoleRoom:OnBtnAnimationSetClick()
-    XLuaUiManager.Open("UiPopupAnimationSet", self.Team)
-end
-
+function XUiStrongholdBattleRoleRoom:OnBtnAnimationSetClick()
+    XLuaUiManager.Open("UiPopupAnimationSet", self.Team)
+end
+
 return XUiStrongholdBattleRoleRoom

@@ -510,7 +510,12 @@ XEnumConst = {
             Lightning = 4,  --雷
             Dark = 5,       --暗
             Nihil = 6,      --空
-        }
+        },
+        -- 技能切换的UI类型
+        SKILL_EXCHANGE_UI_TYPE = {
+            SKILL = 1,      -- 技能
+            FORM = 2,       -- 形态
+        },
     },
     Filter = {
         MaxEnableElementNum = 6,
@@ -1301,6 +1306,7 @@ XEnumConst = {
             FavorabilityMainFile = 1, --看板交流界面入口
             CharacterFile = 2, -- 档案/试玩关入口
             ExtraLine = 3, -- 支线章节入口
+            Other = 4, -- 其他
         },
         StoryLayoutBgType = { -- 好感度界面背景类型
             Default = 1, -- 默认旧版
@@ -1393,6 +1399,7 @@ XEnumConst = {
             PAUSE = 3, --暂停
             DOWNLOADING = 4, --下载中
             COMPLETE = 5, --完全下载
+            UNINSTALLED = 6, --卸载
         },
         CUSTOM_SUBPACKAGE_ID = {
             INVALID = -1, --无效Id
@@ -2371,7 +2378,8 @@ XEnumConst = {
         BtnTab = {
             Career = 1,
             Element = 2,
-            GeneralSkill = 3,
+            Damage = 3,
+            GeneralSkill = 4,
         }
     },
     SharePlatform = {
@@ -3553,6 +3561,18 @@ XEnumConst = {
             Shop = 1, --商店
             Purchase = 2, --采购
             Skip = 3, --跳转
+        },
+        SkipType = {
+            SuitMain = 1, --从涂装套装主界面打开
+        },
+        FashionType = {
+            Character = 0,
+            Weapon = 1,
+        },
+        Action = {
+            Buy = 1, --购买涂装
+            Wear = 2, --穿戴涂装
+            JoinRandom = 4, --添加进随机涂装
         },
     },
     SwitchableScene = {

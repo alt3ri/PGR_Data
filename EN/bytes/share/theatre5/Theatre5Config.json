@@ -6,12 +6,12 @@
     },
     {
         "Key": "PvpHealth",
-        "Desc": "PvP\u6a21\u5f0f\u751f\u547d\u6570\u91cf",
+        "Desc": "PvP Mode Health Amount",
         "Values": "['5']"
     },
     {
         "Key": "PvpTarget",
-        "Desc": "PvP\u6a21\u5f0f\u76ee\u6807\u5956\u676f\u6570",
+        "Desc": "PvP Mode Target Trophy Amount",
         "Values": "['10']"
     },
     {
@@ -21,27 +21,27 @@
     },
     {
         "Key": "BagItemGridMaxNum",
-        "Desc": "\u80cc\u5305\u683c\u5b50\u6700\u5927\u5141\u8bb8\u6570\u91cf",
+        "Desc": "Max Inventory Slots",
         "Values": "['6']"
     },
     {
         "Key": "SkillGridMaxNum",
-        "Desc": "\u6280\u80fd\u683c\u5b50\u6700\u5927\u5141\u8bb8\u6570\u91cf",
+        "Desc": "Max Skill Slots",
         "Values": "['3']"
     },
     {
         "Key": "RuneGridMinNum",
-        "Desc": "\u5b9d\u73e0\u683c\u5b50\u521d\u59cb\u5316\u6570\u91cf\uff08PVP\u7528\uff0cPVE\u521d\u59cb\u5316\u6570\u91cf\u5728Theatre5PveChapter\u8868\u63a7\u5236\uff09",
+        "Desc": "Initial Orb Slots (for PvP only; PvE initialization amount is controlled in the Theatre5PveChapter table)",
         "Values": "['2']"
     },
     {
         "Key": "RuneGridMaxNum",
-        "Desc": "\u5b9d\u73e0\u683c\u5b50\u6700\u5927\u5141\u8bb8\u6570\u91cf\u4e0a\u9650",
+        "Desc": "Max Orb Slots",
         "Values": "['10']"
     },
     {
         "Key": "ShopItemDiscountWeight",
-        "Desc": "\u5546\u5e97\u6298\u6263\u6743\u91cd(\u968f\u673a\u51faX\u4e2a\u7269\u54c1\u6298\u6263\u7684\u6743\u91cd)",
+        "Desc": "Shop Discount Weight (Weighting for X randomly discounted items)",
         "Values": "['90', '10', '1']"
     },
     {
@@ -56,7 +56,7 @@
     },
     {
         "Key": "WLose",
-        "Desc": "\u6218\u6597\u5931\u8d25W\u7cfb\u6570\uff08\u4e07\u5206\u6bd4\uff09",
+        "Desc": "Battle Failure W Coefficient (Parts per 10000)",
         "Values": "['0']"
     },
     {
@@ -66,7 +66,7 @@
     },
     {
         "Key": "InitRating",
-        "Desc": "\u521d\u59cb\u5316\u5929\u68af\u5206",
+        "Desc": "Initial Ladder Points",
         "Values": "['0']"
     },
     {
@@ -81,27 +81,27 @@
     },
     {
         "Key": "TeachingPveStoryLineId",
-        "Desc": "\u6559\u5b66\u6545\u4e8b\u7ebfid",
+        "Desc": "Tutorial Storyline ID",
         "Values": "['1']"
     },
     {
         "Key": "TeachingPveCharacterId",
-        "Desc": "\u6559\u5b66\u6545\u4e8b\u7ebf\u89d2\u8272id",
+        "Desc": "Tutorial Storyline Character ID",
         "Values": "['1']"
     },
     {
         "Key": "ChapterCoin",
-        "Desc": "\u7ae0\u8282\u7ae0\u8282\u5e01",
+        "Desc": "Chapter Currency",
         "Values": "['1']"
     },
     {
         "Key": "TempItemBagGridMaxNum",
-        "Desc": "\u4e34\u65f6\u80cc\u5305\u683c\u5b50\u6700\u5927\u5141\u8bb8\u6570\u91cf",
+        "Desc": "Max Temporary Inventory Slots",
         "Values": "['4']"
     },
     {
         "Key": "PvpGridUnlockDiscount",
-        "Desc": "pvp\u80cc\u5305\u56de\u5408\u6570\u6298\u6263\uff08pve\u7528\u7684\u914d\u7f6e\u5728PveChapter\u8868\u4e2d\uff09",
+        "Desc": "PvP Inventory Round Discount (PvE configuration is in the PveChapter table)",
         "Values": "['3']"
     },
     {
@@ -116,22 +116,22 @@
     },
     {
         "Key": "PveBattleTimeLimit",
-        "Desc": "pve\u6218\u6597\u65f6\u957f\u9650\u5236",
+        "Desc": "PvE Battle Duration Limit",
         "Values": "['1']"
     },
     {
         "Key": "PveMyTotalDamageLimit",
-        "Desc": "pve\u6211\u65b9\u4f24\u5bb3\u603b\u91cf\u9650\u5236",
+        "Desc": "PvE Ally Total Damage Limit",
         "Values": "['1']"
     },
     {
         "Key": "PveMyTotalCureLimit",
-        "Desc": "pve\u6211\u65b9\u6cbb\u7597\u603b\u91cf\u9650\u5236",
+        "Desc": "PvE Ally Total Healing Limit",
         "Values": "['1']"
     },
     {
         "Key": "PveEnemyTotalDamageLimit",
-        "Desc": "pve\u654c\u65b9\u4f24\u5bb3\u603b\u91cf\u9650\u5236",
+        "Desc": "PvE Enemy Total Damage Limit",
         "Values": "['1']"
     },
     {
@@ -146,17 +146,17 @@
     },
     {
         "Key": "PvpMyTotalDamageLimit",
-        "Desc": "pvp\u6211\u65b9\u4f24\u5bb3\u603b\u91cf\u9650\u5236",
+        "Desc": "PvP Ally Total Damage Limit",
         "Values": "['1']"
     },
     {
         "Key": "PvpMyTotalCureLimit",
-        "Desc": "pvp\u6211\u65b9\u6cbb\u7597\u603b\u91cf\u9650\u5236",
+        "Desc": "PvP Ally Total Healing Limit",
         "Values": "['1']"
     },
     {
         "Key": "PvpEnemyTotalDamageLimit",
-        "Desc": "pvp\u654c\u65b9\u4f24\u5bb3\u603b\u91cf\u9650\u5236",
+        "Desc": "PvP Enemy Total Damage Limit",
         "Values": "['1']"
     },
     {
@@ -171,17 +171,17 @@
     },
     {
         "Key": "BattleCheckFailTimesLimit",
-        "Desc": "\u6218\u6597\u6821\u9a8c\u5931\u8d25\u6b21\u6570\u9650\u5236\uff0c\u8fbe\u5230\u9650\u5236\u6b21\u6570\u5c06\u76f4\u63a5\u7ed3\u7b97\u5904\u7406",
+        "Desc": "Battle validation failure limit; reaching it forces immediate settlement.",
         "Values": "['3']"
     },
     {
         "Key": "DeduceTipsTime",
-        "Desc": "\u63a8\u6f14tips\u65f6\u95f4\uff0c1\u662f\u666e\u901a\u65f6\u95f4\uff0c2\u65f6\u56de\u7b54\u6b63\u786e\u65f6\u95f4",
+        "Desc": "Deduction Tips Time, 1 is Normal Time, 2 is Correct Answer Time",
         "Values": "['1000', '2000']"
     },
     {
         "Key": "ClueBoardScaleLimitPoint",
-        "Desc": "\u7ebf\u7d22\u677f\u7f29\u653e\u53d8\u5316\u7684\u4e34\u754c\u70b9(\u7f29\u653e\u503c*1000)",
+        "Desc": "Clue Board Scaling Threshold (Scale Value x1000)",
         "Values": "['650']"
     },
     {
@@ -191,12 +191,12 @@
     },
     {
         "Key": "ClueBoardFocusTime",
-        "Desc": "\u70b9\u51fb\u7ebf\u7d22\u805a\u7126\u65f6\u95f4",
+        "Desc": "Tap Clue to Focus Timeline",
         "Values": "['200']"
     },
     {
         "Key": "Theatre5ShopCurrencyId",
-        "Desc": "\u5151\u6362\u5546\u5e97id",
+        "Desc": "Exchange Shop ID",
         "Values": "['97054']"
     },
     {

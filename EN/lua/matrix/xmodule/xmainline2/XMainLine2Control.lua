@@ -116,6 +116,16 @@ function XMainLine2Control:GetChapterLastStageId(chapterId)
     return self._Model:GetChapterLastStageId(chapterId)
 end
 
+-- 获取章节Spine进度的关卡下标
+function XMainLine2Control:GetChapterSpineStageIndexs(chapterId)
+    return self._Model:GetChapterSpineStageIndexs(chapterId)
+end
+
+-- 获取章节Spine进度
+function XMainLine2Control:GetChapterSpineProgressWans(chapterId)
+    return self._Model:GetChapterSpineProgressWans(chapterId)
+end
+
 -- 获取主章节标题
 function XMainLine2Control:GetMainTitle(mainId)
     return self._Model:GetMainTitle(mainId)
@@ -164,6 +174,11 @@ end
 -- 获取关卡怪物头像替换位置
 function XMainLine2Control:GetStageMonsterReplaceOrders(stageId)
     return self._Model:GetStageMonsterReplaceOrders(stageId)
+end
+
+-- 获取关卡特效路径
+function XMainLine2Control:GetStageEffectPath(stageId)
+    return self._Model:GetStageEffectPath(stageId)
 end
 
 -- 获取通关奖励表

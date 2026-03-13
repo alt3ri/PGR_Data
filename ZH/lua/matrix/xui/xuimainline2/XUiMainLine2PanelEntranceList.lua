@@ -82,7 +82,7 @@ function XUiMainLine2PanelEntranceList:OnScrollRectValueChanged(normalizedPos)
     -- 检测切换背景图
     self:CheckChangeBg()
     -- 刷新spine进度
-    self:RefreshSpineProgress(normalizedPos)
+    self:RefreshSpineProgress()
     -- 刷新视野中心入口特效
     self:RefreshViewCenterEntranceEffect()
 end
@@ -91,7 +91,7 @@ end
 function XUiMainLine2PanelEntranceList:InitEntrances()
     local XUiMainLine2GridEntrance =  require("XUi/XUiMainLine2/XUiMainLine2GridEntrance")
     for i, data in pairs(self.EntranceDatas) do
-        local parentGo = self.PanelStageContent:Find("Stage"..i)
+        local parentGo = self:GetStageGo(i)
         local lineGo = self.PanelStageContent:Find("Line"..(i-1))
         if not parentGo then
             XLog.Error(string.format("章节预制体%s缺少Stage%s", self.Parent.ChapterPrefabName, i))
@@ -129,7 +129,7 @@ function XUiMainLine2PanelEntranceList:InitBgChange()
 
     -- 记录切换背景入口相的anchoredPosition.x
     for _, index in ipairs(stageIndexs) do
-        local stageGo = self.PanelStageContent:Find("Stage" .. tostring(index))
+        local stageGo = self:GetStageGo(index)
         local posX = stageGo.anchoredPosition.x
         tableInsert(self.StagePosXs, posX)
     end
@@ -230,11 +230,22 @@ end
 
 -- 定位到入口
 function XUiMainLine2PanelEntranceList:LocateToEntrance(index)
-    local stageGo = self.PanelStageContent:Find("Stage" .. tostring(index))
+    local stageGo = self:GetStageGo(index)
     local posX = -stageGo.anchoredPosition.x + self.LocateOffsetX
     self.PanelStageContent.anchoredPosition = CS.UnityEngine.Vector2(posX, self.PanelStageContent.anchoredPosition.y)
 
     self:CheckChangeBg(true)
+end
+
+-- 获取关卡挂点GameObject
+function XUiMainLine2PanelEntranceList:GetStageGo(index)
+    self.StageGos = self.StageGos or {}
+    local stageGo = self.StageGos[index]
+    if not stageGo then
+        stageGo = self.PanelStageContent:Find("Stage" .. tostring(index))
+        self.StageGos[index] = stageGo
+    end
+    return stageGo
 end
 
 --region 背景列表 ------------------------------------------------------------------------------------------------------
@@ -412,9 +423,14 @@ function XUiMainLine2PanelEntranceList:InitSpine()
     local dragKeyLength = string.len(dragKey)
     ---@type Spine.TrackEntry 由拖拽进度控制
     self.SpineDragTrackEntries = {}
+
+    local bgKey = "Bg"
+    local bgKeyLength = string.len(bgKey)
+    ---@type Spine.TrackEntry 由配置关卡进度控制的背景Spine
+    self.SpineBgTrackEntries = {}
     
-    ---@type Spine.TrackEntry 由配置关卡进度控制
-    self.SpineConfigTrackEntries = {}
+    ---@type Spine.TrackEntry 由配置关卡进度控制的主Spine
+    self.SpineTrackEntries = {}
     
     for i = 1, #spineComponents do
         local skeleton = spineComponents[i]
@@ -426,40 +442,63 @@ function XUiMainLine2PanelEntranceList:InitSpine()
         local goName = skeleton.gameObject.name
         if stringSub(goName, 1, dragKeyLength) == dragKey then
             tableInsert(self.SpineDragTrackEntries, trackEntry)
+        elseif stringSub(goName, 1, bgKeyLength) == bgKey then
+            tableInsert(self.SpineBgTrackEntries, trackEntry)
         else
-            tableInsert(self.SpineConfigTrackEntries, trackEntry)
+            tableInsert(self.SpineTrackEntries, trackEntry)
         end
     end
     
+    -- 拖拽进度的最大X坐标
+    if self.SpineDragTrackEntries and #self.SpineDragTrackEntries > 0 then
+        local lastStageGo = self:GetStageGo(#self.EntranceDatas)
+        self.DragMaxPosX = lastStageGo.anchoredPosition.x - self.LocateOffsetX -- 最后一个关卡拖动到中间视为结束
+    end
+    
+    -- 关卡对应背景图Spine进度
+    if self.SpineBgTrackEntries and #self.SpineBgTrackEntries > 0 then
+        local bgStageIndexs = self._Control:GetChapterBgSpineStageIndexs(self.ChapterId)
+        local bgProgressWans = self._Control:GetChapterBgSpineProgressWans(self.ChapterId)
+        self.StagePosXToBgSpineProgress = self:GenStagePosXToSpineProgress(bgStageIndexs, bgProgressWans)
+    end
+    
     -- 关卡对应Spine进度
-    self.StagePosXToSpineProgress = {}
-    local stageIndexs = self._Control:GetChapterSpineStageIndexs(self.ChapterId)
-    local progressWans = self._Control:GetChapterSpineProgressWans(self.ChapterId)
+    if self.SpineTrackEntries and #self.SpineTrackEntries > 0 then
+        local stageIndexs = self._Control:GetChapterSpineStageIndexs(self.ChapterId)
+        local progressWans = self._Control:GetChapterSpineProgressWans(self.ChapterId)
+        self.StagePosXToSpineProgress = self:GenStagePosXToSpineProgress(stageIndexs, progressWans)
+    end
+end
+
+-- 生成关卡X位置对应进度
+function XUiMainLine2PanelEntranceList:GenStagePosXToSpineProgress(stageIndexs, progressWans)
+    local result = {}
     for i, index in ipairs(stageIndexs) do
-        local stageGo = self.PanelStageContent:Find("Stage" .. tostring(index))
+        local stageGo = self:GetStageGo(index)
         local data = {
             PosX = stageGo.anchoredPosition.x - self.LocateOffsetX, -- 不需要关卡贴到屏幕左边才切换背景图，在滑动区域中心点就切换
             Progress = progressWans[i] / 10000
         }
-        tableInsert(self.StagePosXToSpineProgress, data)
+        tableInsert(result, data)
     end
     local maxDragLength = self.PanelStageContent.rect.width - self.ViewPort.rect.width
-    tableInsert(self.StagePosXToSpineProgress, 1,{ PosX = 0, Progress = 0 })
-    tableInsert(self.StagePosXToSpineProgress, { PosX = maxDragLength, Progress = 1 })
+    tableInsert(result, 1,{ PosX = 0, Progress = 0 })
+    tableInsert(result, { PosX = maxDragLength, Progress = 1 })
+    return result
 end
 
 -- 获取当前Spine的进度
-function XUiMainLine2PanelEntranceList:GetCurSpineProgress()
+function XUiMainLine2PanelEntranceList:GetCurSpineProgress(stagePosXToSpineProgress)
     local moveLength = -self.PanelStageContent.anchoredPosition.x -- 滚动容器移动距离
  
     -- 处理边界情况
-    local firstData = self.StagePosXToSpineProgress[1]
+    local firstData = stagePosXToSpineProgress[1]
     if moveLength <= firstData.PosX then return firstData.Progress end
-    local lastData = self.StagePosXToSpineProgress[#self.StagePosXToSpineProgress]
+    local lastData = stagePosXToSpineProgress[#stagePosXToSpineProgress]
     if moveLength >= lastData.PosX then return lastData.Progress end
 
-    for i, data in ipairs(self.StagePosXToSpineProgress) do
-        local nextData = self.StagePosXToSpineProgress[i + 1]
+    for i, data in ipairs(stagePosXToSpineProgress) do
+        local nextData = stagePosXToSpineProgress[i + 1]
         if moveLength >= data.PosX and nextData and  moveLength <= nextData.PosX then
             local progress = data.Progress + (nextData.Progress - data.Progress) * (moveLength - data.PosX) / (nextData.PosX - data.PosX)
             return progress
@@ -468,23 +507,35 @@ function XUiMainLine2PanelEntranceList:GetCurSpineProgress()
 end
 
 -- 更新Spine动画进度
-function XUiMainLine2PanelEntranceList:RefreshSpineProgress(normalizedPos)
-    if not self.SpineConfigTrackEntries then return end
-
-    -- 配置进度
-    local progress = self:GetCurSpineProgress()
-    for _, trackEntry in pairs(self.SpineConfigTrackEntries) do
-        local trackTime = trackEntry.Animation.Duration * progress
-        trackEntry.TrackTime = trackTime
+function XUiMainLine2PanelEntranceList:RefreshSpineProgress()
+    -- 拖拽进度
+    if self.SpineDragTrackEntries and #self.SpineDragTrackEntries > 0 then
+        local moveLength = -self.PanelStageContent.anchoredPosition.x -- 滚动容器移动距离
+        if moveLength < 0 then moveLength = 0 end
+        if moveLength > self.DragMaxPosX then moveLength = self.DragMaxPosX end
+        local dragProgress = moveLength / self.DragMaxPosX
+        for _, trackEntry in pairs(self.SpineDragTrackEntries) do
+            local trackTime = trackEntry.Animation.Duration * dragProgress
+            trackEntry.TrackTime = trackTime
+        end
     end
 
-    -- 拖拽进度
-    local dragProgress = normalizedPos.x
-    if dragProgress > 1 then dragProgress = 1 end
-    if dragProgress < 0 then dragProgress = 0 end
-    for _, trackEntry in pairs(self.SpineDragTrackEntries) do
-        local trackTime = trackEntry.Animation.Duration * dragProgress
-        trackEntry.TrackTime = trackTime
+    -- 配置关卡进度控制的背景Spine
+    if self.SpineBgTrackEntries and #self.SpineBgTrackEntries > 0 then
+        local progress = self:GetCurSpineProgress(self.StagePosXToBgSpineProgress)
+        for _, trackEntry in pairs(self.SpineBgTrackEntries) do
+            local trackTime = trackEntry.Animation.Duration * progress
+            trackEntry.TrackTime = trackTime
+        end
+    end
+    
+    -- 配置关卡进度控制的主Spine
+    if self.SpineTrackEntries and #self.SpineTrackEntries > 0 then
+        local progress = self:GetCurSpineProgress(self.StagePosXToSpineProgress)
+        for _, trackEntry in pairs(self.SpineTrackEntries) do
+            local trackTime = trackEntry.Animation.Duration * progress
+            trackEntry.TrackTime = trackTime
+        end
     end
 end
 --endregion

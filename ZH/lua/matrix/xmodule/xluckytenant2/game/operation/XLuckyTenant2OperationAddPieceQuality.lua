@@ -44,14 +44,7 @@ function XLuckyTenant2OperationAddPieceQuality:Do(ctx)
         return false, string.format("执行时找不到棋子UID:%d", self._PieceUid)
     end
 
-    local currentQuality = piece:GetQuality() or 0
     piece:AddQuality(self._QualityDelta)
-
-    if XMVCA.XLuckyTenant2 then
-        XMVCA.XLuckyTenant2:Print("[XLuckyTenant2OperationAddPieceQuality] 棋子UID:", self._PieceUid,
-            "品质变化:", currentQuality, "->", piece:GetQuality(), "技能ID:", self._SkillId)
-    end
-
     return true, nil
 end
 

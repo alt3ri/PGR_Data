@@ -11,6 +11,8 @@ function XMovieActionActorAlphaChange:OnInit(actionData)
     self.BeginAlpha = paramToNumber(params[3])
     self.EndAlpha = paramToNumber(params[4])
     self.Duration = paramToNumber(params[5])
+    self.AnchorType = string.IsNilOrEmpty(params[6]) and XMVCA.XMovie.EnumConst.ANCHOR_ALIGNMENT_TYPE.FULL or paramToNumber(params[6]) -- 对齐方式
+    self.PositionParams = XMVCA.XMovie:SplitParam(params[7], "|", true)
 end
 
 function XMovieActionActorAlphaChange:OnRunning()
@@ -21,8 +23,8 @@ function XMovieActionActorAlphaChange:OnRunning()
         local bgIndex = self.Index == FRONT_BG_INDEX and 3 or self.Index % 1000
         local rImgBg = self.UiRoot.UiMovieBg:GetBg(bgIndex)
         if not string.IsNilOrEmpty(self.BgPath) then
-            rImgBg:SetBgPath(self.BgPath)
             rImgBg:Show()
+            rImgBg:SetBgPath(self.BgPath, self.AnchorType, self.PositionParams)
         else
             rImgBg:Hide()
         end

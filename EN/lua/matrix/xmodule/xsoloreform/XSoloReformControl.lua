@@ -153,6 +153,36 @@ function XSoloReformControl:GetTaskDatas()
     return taskDatas
 end
 
+function XSoloReformControl:GetChallengeTaskDatas()
+    local taskDatas = {}
+    local activityCfg = self:GetActivityCfg()
+    if not activityCfg or XTool.IsTableEmpty(activityCfg.TaskGroupIds) then
+        return taskDatas
+    end
+    for _, groupId in ipairs(activityCfg.TaskGroupIds) do
+        local taskDataList = XDataCenter.TaskManager.GetTimeLimitTaskListByGroupId(groupId, true)
+        for _, data in pairs(taskDataList) do
+            local taskData = {
+                Id = data.Id,
+                State = data.State,
+                CurProcess = 0,
+                TotalProcess = 0,
+            }
+            if not XTool.IsTableEmpty(data.Schedule) then
+                taskData.CurProcess = data.Schedule[1].Value
+                local conditionCfg = XTaskConfig.GetTaskCondition(data.Schedule[1].Id)
+                taskData.TotalProcess = conditionCfg.Params[2]
+                taskData.CurProcess = math.min(taskData.CurProcess, taskData.TotalProcess)
+            end
+            local rewardId = XTaskConfig.GetTaskRewardId(data.Id)
+            taskData.RewardsList = XRewardManager.GetRewardList(rewardId)
+            table.insert(taskDatas, taskData)
+        end
+    end
+
+    return taskDatas
+end
+
 function XSoloReformControl:MarkLocalChapterReddot(chapterId)
     self._Model:MarkLocalChapterReddot(chapterId)
 end
@@ -208,6 +238,59 @@ function XSoloReformControl:StopActivityEndCheckTimer()
         XScheduleManager.UnSchedule(self._ActivityEndCheckTimeId)
         self._ActivityEndCheckTimeId = nil
     end    
+end
+
+function XSoloReformControl:GetChapterStageStageType(stageId)
+    local stageData = self._Model:GetSoloReformStageCfg(stageId)
+    return stageData.StageType       
+end
+
+
+function XSoloReformControl:GetChapterByStageId(stageId)
+    for _, chapterCfg in self._Model:GetAllSoloReformChapterCfgs() do
+        if table.contains(chapterCfg.ChapterStageIds, stageId) then
+            return chapterCfg
+        end 
+    end
+    return nil
+end
+
+function XSoloReformControl:GetChapterPassStageId(chapterId)
+    local stageData = self._Model:GetChapterStageData(chapterId)
+    if not stageData or not XTool.IsNumberValid(stageData.PassStageId) then
+        return 0
+    end
+    return stageData.PassStageId
+end
+
+function XSoloReformControl:GetKillStageScore(chapterId,stageId)
+    return self._Model:GetKillStageScore(chapterId,stageId)
+end
+
+function XSoloReformControl:GetKillChapterMaxScore(chapterId)
+    local chapterCfg = self:GetSoloReformChapterCfg(chapterId)
+    local maxScore = nil
+    for index, stageId in pairs(chapterCfg.ChapterStageIds) do
+        local stageScore = self._Model:GetKillStageScore(chapterId, stageId)
+        if stageScore and (not maxScore or stageScore > maxScore) then
+            maxScore = stageScore
+        end
+    end
+    return maxScore
+end
+
+
+function XSoloReformControl:GetScoreLevelIcon(score,difficulty)
+    local cfg = self._Model:GetScoreLevelCfg(score,difficulty)
+    if cfg then
+        return cfg.LevelIcon
+    end
+    return nil
+end
+
+function XSoloReformControl:GetScoreDetail(id)
+    local cfg = self._Model:GetSoloReformScoreCfg(id)
+    return cfg and cfg.Desc or ""
 end
 
 function XSoloReformControl:OnRelease()

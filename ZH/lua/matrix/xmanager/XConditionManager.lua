@@ -1435,7 +1435,12 @@ PlayerCondition = {
     [17427] = function(condition)
         local stageId = condition.Params[1]
         local round = condition.Params[2]
-        local value = XMVCA.XLuckyTenant:IsInStageAndRound(stageId, round)
+        local value = XMVCA.XLuckyTenant2:IsInStageAndRound(stageId, round)
+        return value, condition.Desc
+    end,
+    [17429] = function(condition)
+        local stageId = condition.Params[1]
+        local value = XMVCA.XLuckyTenant2:IsStageTutorialShown(stageId)
         return value, condition.Desc
     end,
     -- 音游预热MusicGameActivity

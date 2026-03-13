@@ -31,12 +31,10 @@ function XMovieActionBgMoveAnimation:OnRunning()
     end
 
     if self.RImgBg then
-        self.RImgBg:DOComplete()
-        self.RImgBg:DOLocalMove(self.Pos, self.Duration)
+        self.RImgBg:DOAnchorPos3D(self.Pos, self.Duration)
     end
     if self.RImgAnimBg then
-        self.RImgAnimBg:DOComplete()
-        self.RImgAnimBg:DOLocalMove(self.Pos, self.Duration)
+        self.RImgAnimBg:DOAnchorPos3D(self.Pos, self.Duration)
     end
 end
 
@@ -67,7 +65,7 @@ function XMovieActionBgMoveAnimation:OnPassedActionRun()
     end
 
     if self.RImgBg then
-        self.RImgBg:SetLocalPosition(self.Pos)
+        self.RImgBg:SetAnchoredPosition3D(self.Pos)
     end
     if self.RImgAnimBg then
         self.RImgAnimBg:SetLocalScale(self.Pos)

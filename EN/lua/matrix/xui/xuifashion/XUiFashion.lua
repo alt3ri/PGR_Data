@@ -39,6 +39,7 @@ local XUiFashion = XLuaUiManager.Register(XLuaUi, "UiFashion")
 
 function XUiFashion:OnAwake()
     self.ExpiredRefreshNameList = {}
+    self.OpenPreviewDict = {}
 
     self.BtnLensOut.gameObject:SetActiveEx(true)
     self.BtnLensIn.gameObject:SetActiveEx(false)
@@ -349,6 +350,7 @@ function XUiFashion:OnSelectCharacter(characterId)
     end
     self:OnBtnCloseFilterClick()
     self:RefreshRandomFashionBtns()
+    self:UpdatePreviewGroup()
 end
 
 --是否显示黑岩名字组件
@@ -465,6 +467,7 @@ function XUiFashion:OnSelectCharacterFashion(fashionId, grid)
     self.CurFashionId = fashionId
     XDataCenter.FashionManager.SetFashionIsOwnNewUnactive(fashionId)
 
+    self:UpdatePreviewGroup()
     self:UpdateSceneAndModel()
     self:UpdateCamera(CameraIndex.Normal)
     self:UpdateButtonState()
@@ -506,26 +509,15 @@ function XUiFashion:GetSceneUrl(isDefault)
 end
 
 function XUiFashion:UpdateCharacterModel()
-    local characterId
-    local func = function(model)
-        self.PanelDrag:GetComponent("XDrag").Target = model.transform
-        self:ShowImgEffectHuanren(characterId)
-    end
     self:UpdateBlackName()
     if self.CurFashionId then
         local template = XDataCenter.FashionManager.GetFashionTemplate(self.CurFashionId)
-        characterId = template.CharacterId
         self.PanelWeapon.gameObject:SetActiveEx(false)
         self.RoleModelPanel.GameObject:SetActiveEx(true)
         self.PanelBtnSwitch.gameObject:SetActiveEx(false)
         self:ResetPanelBtnLens()
         self:UpdateFashionIntro(self.CurFashionId)
-        self.RoleModelPanel:UpdateCharacterResModel(
-                template.ResourcesId,
-                template.CharacterId,
-                XModelManager.MODEL_UINAME.XUiFashion,
-                func
-        )
+        self:UpdateCharacterResModel(template.CharacterId, self.CurFashionId)
     else
         self.TxtFashionName.text = ""
         self.PanelWeapon.gameObject:SetActiveEx(false)
@@ -617,6 +609,7 @@ function XUiFashion:OnSwitchWeaponViewType(doNotReset)
     local oldType = self.CurWeaponViewType
     local newType = not doNotReset and SwitchWeaponViewType[self.CurWeaponViewType] or oldType
     self.CurWeaponViewType = newType
+    self:UpdatePreviewGroup()
 
     if newType == WeaponViewType.WithCharacter then
         self:ResetPanelBtnLens()
@@ -708,23 +701,10 @@ function XUiFashion:UpdateWeaponModel()
 end
 
 function XUiFashion:UpdateWeaponWithCharacterModel()
-    local characterId = self.CharacterId
-    local resourcesId = XDataCenter.FashionManager.GetFashionResourceIdByCharId(characterId)
-    local func = function(model)
-        self.PanelDrag:GetComponent("XDrag").Target = model.transform
-        self:ShowImgEffectHuanren(characterId)
-    end
-
+    local fashionId = XDataCenter.FashionManager.GetFashionIdByCharId(self.CharacterId)
     self.PanelWeapon.gameObject:SetActiveEx(false)
     self.RoleModelPanel.GameObject:SetActiveEx(true)
-    self.RoleModelPanel:UpdateCharacterResModel(
-    resourcesId,
-    characterId,
-    XModelManager.MODEL_UINAME.XUiFashion,
-    func,
-    nil,
-    self.CurWeaponFashionId
-    )
+    self:UpdateCharacterResModel(self.CharacterId, fashionId, self.CurWeaponFashionId)
 end
 
 function XUiFashion:UpdateWeaponButtonState()
@@ -845,6 +825,7 @@ function XUiFashion:AutoAddListener()
         self:OnSwitchWeaponViewType()
     end
     XUiHelper.RegisterSliderChangeEvent(self, self.SliderCharacter, self.OnSliderCharacterChanged)
+    self.BtnPreviewSuit:AddEventListener(handler(self, self.OnBtnPreviewSuitClick))
 end
 
 function XUiFashion:OnBtnFashionUnLockClick()
@@ -929,6 +910,7 @@ function XUiFashion:OnBtnUseClick()
             end
             )
         end
+        self:ClosePreviewSuit()
     elseif LastSelectedTabIndex == BtnTabIndex.Weapon then
         local characterId = self.CharacterId
         XDataCenter.WeaponFashionManager.UseFashion(
@@ -939,6 +921,7 @@ function XUiFashion:OnBtnUseClick()
             self:UpdateWeaponFashionList(true)
         end
         )
+        self:ClosePreviewSuit()
     elseif LastSelectedTabIndex == BtnTabIndex.HeadPortrait then
         if not XMVCA.XCharacter:IsOwnCharacter(self.CharacterId) then
             XUiManager.TipText("CharacterLock")
@@ -1136,4 +1119,70 @@ function XUiFashion:ShowImgEffectHuanren(templateId)
     else
         self.ImgEffectHuanren.gameObject:SetActiveEx(true)
     end
-end
+end
+
+--region 涂装组合
+
+function XUiFashion:UpdatePreviewGroup()
+    self.IsPreviewSuitVisible = self:CheckBtnPreviewSuitShow()
+    self.BtnPreviewSuit.gameObject:SetActiveEx(self.IsPreviewSuitVisible)
+    if self.OpenPreviewDict[LastSelectedTabIndex] then
+        self.BtnPreviewSuit:SetButtonState(XUiButtonState.Select)
+    else
+        self.BtnPreviewSuit:SetButtonState(XUiButtonState.Normal)
+    end
+end
+
+function XUiFashion:CheckBtnPreviewSuitShow()
+    if LastSelectedTabIndex == BtnTabIndex.Weapon then
+        local cfg = XMVCA.XFashionSuit:GetFashionGroupByFashionId(self.CurWeaponFashionId)
+        return self.CurWeaponViewType ~= WeaponViewType.OnlyWeapon and cfg and table.contains(self.FashionList, cfg.FashionId)
+    elseif LastSelectedTabIndex == BtnTabIndex.Character then
+        return XTool.IsNumberValid(XMVCA.XFashionSuit:GetGroupIdByFashion(self.CurFashionId))
+    end
+    return false
+end
+
+function XUiFashion:OnBtnPreviewSuitClick()
+    self.OpenPreviewDict[LastSelectedTabIndex] = self.BtnPreviewSuit.ButtonState == CS.UiButtonState.Select
+    if LastSelectedTabIndex == BtnTabIndex.Character then
+        self:UpdateCharacterModel()
+    elseif LastSelectedTabIndex == BtnTabIndex.Weapon then
+        self:UpdateWeaponWithCharacterModel()
+    end
+end
+
+--点击【替换】后取消【套装预览】勾选
+function XUiFashion:ClosePreviewSuit()
+    self.BtnPreviewSuit:SetButtonState(XUiButtonState.Normal)
+    self:OnBtnPreviewSuitClick()
+end
+
+function XUiFashion:IsShowSuitModel()
+    return self.IsPreviewSuitVisible and self.OpenPreviewDict[LastSelectedTabIndex]
+end
+
+function XUiFashion:UpdateCharacterResModel(characterId, fashionId, weaponFashionId)
+    if self:IsShowSuitModel() then
+        --显示涂装组合
+        if XTool.IsNumberValid(weaponFashionId) then
+            --以武器涂装匹配对应的角色涂装
+            local cfg = XMVCA.XFashionSuit:GetFashionGroupByFashionId(weaponFashionId)
+            fashionId = cfg.FashionId
+        elseif XTool.IsNumberValid(fashionId) then
+            --以角色涂装匹配对应的武器涂装
+            local cfg = XMVCA.XFashionSuit:GetFashionGroupByFashionId(fashionId)
+            if cfg then
+                weaponFashionId = cfg.WeaponFashionId
+            end
+        end
+    end
+
+    local template = XDataCenter.FashionManager.GetFashionTemplate(fashionId)
+    self.RoleModelPanel:UpdateCharacterResModel(template.ResourcesId, characterId, XModelManager.MODEL_UINAME.XUiFashion, function(model)
+        self.PanelDrag:GetComponent("XDrag").Target = model.transform
+        self:ShowImgEffectHuanren(characterId)
+    end, nil, weaponFashionId)
+end
+
+--endregion

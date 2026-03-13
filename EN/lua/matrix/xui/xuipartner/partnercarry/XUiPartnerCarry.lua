@@ -1,6 +1,6 @@
-local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
-local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
-local XPartnerSort = require("XUi/XUiPartner/PartnerCommon/XPartnerSort")
+local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
+local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
+local XPartnerSort = require("XUi/XUiPartner/PartnerCommon/XPartnerSort")
 local XUiPartnerCarry = XLuaUiManager.Register(XLuaUi, "UiPartnerCarry")
 local XUiGridSkill = require("XUi/XUiPartner/PartnerCommon/XUiGridSkill")
 local XUiGridPartnerCarry = require("XUi/XUiPartner/PartnerCarry/XUiGridPartnerCarry")
@@ -164,7 +164,17 @@ function XUiPartnerCarry:UpdatePanelPartnerCarryInfo(data)
         local qualityIcon = XMVCA.XCharacter:GetCharacterQualityIcon(data:GetQuality())
         self.RImgPartnerIcon:SetRawImage(data:GetIcon())
         self.RawImageQuality:SetRawImage(qualityIcon)
-
+        local recommendCharacterId = data:GetRecommendCharacterId()
+        if recommendCharacterId and recommendCharacterId ~= 0 then
+            local fashionId = XMVCA.XCharacter:GetShowFashionId(recommendCharacterId)
+            self.RImgCharacterIcon.transform.parent.parent.gameObject:SetActiveEx(fashionId ~= nil)
+            if fashionId then
+            local characterIcon = XMVCA.XCharacter:GetCharRoundnessHeadIcon(recommendCharacterId)
+            self.RImgCharacterIcon:SetRawImage(characterIcon)
+            end
+        else
+            self.RImgCharacterIcon.transform.parent.parent.gameObject:SetActiveEx(false)
+        end
         self:ShowLock()
         self:ShowPanelSkill()
 

@@ -555,6 +555,13 @@ function XUiDlcRelinkRoom:OnBtnFightClick()
         return
     end
 
+    -- 检查当前选择的关卡是否解锁
+    local levelId = self._Control:GetCurrentSelectLevelId()
+    if not self._Control:CheckLevelUnlock(levelId) then
+        self._Control:OpenCommonTipMsg(self._Control:GetLevelUnlockDesc(levelId))
+        return
+    end
+
     -- 仓库是否已满
     local curCount, maxCount = self._Control:GetEquipBagCurCountAndMaxCount()
     if curCount >= maxCount then
@@ -671,6 +678,13 @@ function XUiDlcRelinkRoom:OnBtnReadyClick()
     local team = XMVCA.XDlcRoom:GetRoomProxy():GetTeam()
     local isSelfLeader = team and team:IsSelfLeader()
     if isSelfLeader then
+        return
+    end
+
+    -- 检查当前选择的关卡是否解锁
+    local levelId = self._Control:GetCurrentSelectLevelId()
+    if not self._Control:CheckLevelUnlock(levelId) then
+        self._Control:OpenCommonTipMsg(self._Control:GetLevelUnlockDesc(levelId))
         return
     end
     XMVCA.XDlcRoom:Ready()

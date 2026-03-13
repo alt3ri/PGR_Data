@@ -813,3 +813,5 @@ function XUiMain:HideBoardEffect()
 end
 
 --endregion
+
+return XUiMain

@@ -92,7 +92,7 @@ end
 
 
 function XCharHeavyArtillery7002:Terminate()
-    if self._Playeruuid ~= nil then
+    if self._Playeruuid ~= nil and self._proxy:CheckNpc(self._Playeruuid) then
         self._proxy:RemoveBuff(self._Playeruuid, 7002119)
     end
     self._proxy:UnregisterEvent(EWorldEvent.GameplayHeavyArtilleryFireTriggerFire)

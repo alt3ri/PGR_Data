@@ -21,6 +21,9 @@ function XLuckyTenant2OperationAddNewPiece:Ctor(data)
     self._X = data.x
     self._Y = data.y
     self._FromPieceUid = data.fromPieceUid or 0
+
+    -- 克隆棋子数据, 以防止在动画播放的过程中, 被删掉, 导致不显示
+    self._ClonePieceData = nil
 end
 
 ---验证操作
@@ -65,35 +68,27 @@ function XLuckyTenant2OperationAddNewPiece:Do(ctx)
         elseif existingPiece:IsDeleted() then
             -- 位置上的棋子已被标记删除，可以放置
             canPlace = true
-            if XMVCA.XLuckyTenant2 then
-                XMVCA.XLuckyTenant2:Print(string.format("[AddNewPiece] 位置(%d,%d)上的棋子[UID:%d]已被标记删除，可以放置新棋子",
-                    self._X, self._Y, existingPiece:GetUid()))
-            end
         end
-        
+
         if canPlace then
             ctx:SetPieceByPosition(piece, self._X, self._Y)
         else
             -- 位置已被占用且未被标记删除，添加到空位
-            if XMVCA.XLuckyTenant2 then
-                XMVCA.XLuckyTenant2:Print(string.format("[AddNewPiece] 位置(%d,%d)已被占用，将添加到空位",
-                    self._X, self._Y))
-            end
             ctx:AddPieceToChessBoard(piece)
         end
     else
         -- 未指定位置，添加到棋盘空位
         ctx:AddPieceToChessBoard(piece)
     end
-    
-    if XMVCA.XLuckyTenant2 then
-        local pieceName = ctx.model:GetLuckyTenant2ChessConfigById(self._PieceId)
-        pieceName = pieceName and pieceName.Name or "未知"
-        local x, y = piece:GetPosition()
-        XMVCA.XLuckyTenant2:Print("[XLuckyTenant2OperationAddNewPiece]", pieceName, "位置(", 
-            x, ",", y, ")", "技能ID:", self._SkillId)
-    end
 
+    self._ClonePieceData = piece:Clone()
+    
+    -- 用棋子最终位置更新，供 GetAnimationData 使用（添加到空位或占位时位置由棋盘决定）
+    local px, py = piece:GetPosition()
+    if px and py then
+        self._X, self._Y = px, py
+    end
+    
     -- 根据来源怪物羁绊应用状态与数值（Type203/205/207 + 死亡/感染状态，逻辑统一在 XLuckyTenant2StateApplier）
     XLuckyTenant2StateApplier.ApplyStateSkillsFromSourceBond(ctx, piece, self._PieceId, self._FromPieceUid, self._DeathSkillId, self._DeathRounds)
 
@@ -121,6 +116,7 @@ function XLuckyTenant2OperationAddNewPiece:GetAnimationData()
             pieceId = self._PieceId,
             x = self._X,
             y = self._Y,
+            clonePieceData = self._ClonePieceData,
         }
     end
     return nil

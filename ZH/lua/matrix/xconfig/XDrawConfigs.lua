@@ -472,7 +472,11 @@ function XDrawConfigs.GetDrawClientConfig(key, index)
 end
 
 function XDrawConfigs.GetDrawClientConfigs(key)
-    return DrawClientCfg[key].ValueList
+    local config = DrawClientCfg[key]
+    if not config then
+        return nil
+    end
+    return config.ValueList
 end
 --endregion
 

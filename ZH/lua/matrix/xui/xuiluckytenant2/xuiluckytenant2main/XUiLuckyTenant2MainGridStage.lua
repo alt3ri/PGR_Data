@@ -15,6 +15,8 @@ function XUiLuckyTenant2MainGridStage:InitComponents()
         XUiHelper.RegisterClickEvent(self, self.BtnEndGame, self.OnClickEndGame, nil, true)
     end
     self._Timer = false
+
+    self.TxtScore2 = self.TxtScore2 or XUiHelper.TryGetComponent(self.Transform, "PanelPress/Text/TxtScore", "Text")
 end
 
 function XUiLuckyTenant2MainGridStage:OnEnable()
@@ -52,7 +54,7 @@ function XUiLuckyTenant2MainGridStage:UpdateRemainTime()
         if remainTime >= 0 and data.TimeId and data.TimeId > 0 then
             local timeStr = XUiHelper.GetTime(math.max(remainTime, 1), XUiHelper.TimeFormatType.ACTIVITY)
             if self.TxtTips then
-                self.TxtTips.text = XUiHelper.GetText("LuckyTenant2UnlockAfterTime", timeStr)
+                self.TxtTips.text = XUiHelper.GetText("LuckyTenantUnlockAfterTime", timeStr)
             end
             if not self._Timer then
                 self._Timer = XScheduleManager.ScheduleForever(function()
@@ -62,7 +64,7 @@ function XUiLuckyTenant2MainGridStage:UpdateRemainTime()
             return
         end
         if not data.IsPreStagePass and self.TxtTips then
-            self.TxtTips.text = XUiHelper.GetText("LuckyTenant2PreStageNotClear")
+            self.TxtTips.text = XUiHelper.GetText("FubenPreStageNotPass")
         end
     end
     
@@ -98,8 +100,13 @@ function XUiLuckyTenant2MainGridStage:Update(data)
     end
     
     -- 进行中标记
-    if self.TagOngoing then
-        self.TagOngoing.gameObject:SetActiveEx(data.IsPlaying or false)
+    if self.PanelOngoing then
+        self.PanelOngoing.gameObject:SetActiveEx(data.IsPlaying or false)
+
+        local title = XUiHelper.TryGetComponent(self.PanelOngoing.transform, "TxtNum", "Text")
+        if title then
+            title.text = string.format("%02d", data.Index or 0)
+        end
     end
     
     -- 标题（使用序号格式，如 "01"）
@@ -111,6 +118,11 @@ function XUiLuckyTenant2MainGridStage:Update(data)
     -- 分数
     if self.TxtScore then
         self.TxtScore.text = tostring(data.BestScore or 0)
+    end
+
+    -- 这是按下时的ui
+    if self.TxtScore2 then
+        self.TxtScore2.text = tostring(data.BestScore or 0)
     end
     
     -- 更新解锁时间提示
@@ -126,9 +138,13 @@ function XUiLuckyTenant2MainGridStage:Update(data)
         self.BtnEndGame.gameObject:SetActiveEx(data.IsPlaying or false)
     end
     
-    -- 红点
+    -- 红点（使用 Agency 的 IsShowRedDotStage 逻辑：在时间范围内、前置通过、未游玩过时显示）
     if self.RedPoint then
-        self.RedPoint.gameObject:SetActiveEx(false)
+        local showRedDot = false
+        if data.Id then
+            showRedDot = XMVCA.XLuckyTenant2:IsShowRedDotStage(data.Id)
+        end
+        self.RedPoint.gameObject:SetActiveEx(showRedDot)
     end
 end
 
@@ -138,7 +154,7 @@ function XUiLuckyTenant2MainGridStage:OnClick()
     end
     
     if self._Data.IsOtherStagePlaying then
-        XUiManager.TipText("LuckyTenant2OtherStagePlaying")
+        XUiManager.TipText("LuckyTenantOtherStageIsPlaying")
         return
     end
     
@@ -152,10 +168,10 @@ function XUiLuckyTenant2MainGridStage:OnClick()
             local remainTime = XFunctionManager.GetStartTimeByTimeId(self._Data.TimeId) - currentTime
             if remainTime > 0 then
                 local timeStr = XUiHelper.GetTime(remainTime, XUiHelper.TimeFormatType.ACTIVITY)
-                XUiManager.TipMsg(XUiHelper.GetText("LuckyTenant2UnlockAfterTime", timeStr))
+                XUiManager.TipMsg(XUiHelper.GetText("LuckyTenantUnlockAfterTime", timeStr))
             end
         else
-            XUiManager.TipText("LuckyTenant2PreStageNotPass")
+            XUiManager.TipText("FubenPreStageNotPass")
         end
     end
 end

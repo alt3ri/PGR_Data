@@ -43,6 +43,37 @@ function XTeamPrefab:UpdateEntityIds(value)
     self:RefreshGeneralSkills(true)
 end
 
+--- 重写父类方法：预设队伍更新成员时不派发 EVENT_TEAM_MEMBER_MANUAL_CHANGE_MEMBER 事件
+--- 该事件语义上是"真实队伍成员手动变更"，预设作为静态数据对象不应触发此事件
+function XTeamPrefab:UpdateEntityTeamPos(entityId, teamPos, isJoin)
+    local beforeJoinPosEntityId = self.EntitiyIds[teamPos]
+    if isJoin then
+        if self:CheckHasSameCharacterId(entityId, teamPos) and XTool.IsNumberValid(entityId) then
+            return
+        end
+
+        -- 如果是替换，需要先移除前一个角色的效应统计
+        if XTool.IsNumberValid(self.EntitiyIds[teamPos]) then
+            self:UpdateGenernalSkillsByEntityId(self.EntitiyIds[teamPos], true, true)
+        end
+
+        self:UpdateGenernalSkillsByEntityId(entityId, false)
+        self.EntitiyIds[teamPos] = entityId or 0
+    else
+        for pos, id in ipairs(self.EntitiyIds) do
+            if id == entityId then
+                self.EntitiyIds[pos] = 0
+                break
+            end
+        end
+        self:UpdateGenernalSkillsByEntityId(entityId, true, true)
+    end
+
+    -- 注意：此处故意不派发 EVENT_TEAM_MEMBER_MANUAL_CHANGE_MEMBER 事件
+    -- 预设对象修改成员不应触发真实队伍的效应自动重选逻辑
+    -- self:Save() 已被重写为空实现
+end
+
 --- 更新伙伴预设数据
 ---@param partnerData table
 function XTeamPrefab:InitPartnerData(partnerData)

@@ -73,6 +73,8 @@ function XUiLuckyTenant2ChessBag:OnAwake()
     -- 注册删除按钮事件
     if self.BtnDeleteNoFree then
         XUiHelper.RegisterClickEvent(self, self.BtnDeleteNoFree, self._OnClickDelete, nil, true)
+        
+        -- 设置删除按钮文本
         self.BtnDeleteNoFree:SetNameByGroup(0, XLuckyTenant2Enum.Cost)
         self.BtnDeleteNoFree.gameObject:SetActiveEx(true)
     end
@@ -89,6 +91,13 @@ function XUiLuckyTenant2ChessBag:OnAwake()
         if deletePropIcon then
             button:SetRawImage("ImgNoFreeIcon02", deletePropIcon)
         end
+        self._LuaButtonDeleteNoFree = button
+    end
+    if self.BtnRefreshNoFree then
+        local XUiButton = require("XUi/XUiCommon/XUiButton")
+        ---@type XUiButtonLua
+        local button = XUiButton.New(self.BtnRefreshNoFree)
+        self._LuaButtonRefresh = button
     end
     
     -- 初始化奖励提示
@@ -189,6 +198,26 @@ end
 function XUiLuckyTenant2ChessBag:UpdateProp()
     if self.Prop1 and self._PropGrids then
         XUiLuckyTenant2PropDisplay.UpdatePropDisplay(self._Control, self._PropGrids, self.Prop1, self)
+    end
+
+    -- 设置删除按钮文本颜色
+    local coinAmount = self._Control:GetDeleteCoin()
+    if self._LuaButtonDeleteNoFree then
+        if coinAmount > XLuckyTenant2Enum.Cost then
+            self._LuaButtonDeleteNoFree:SetTextColor("TxtNoFree", XUiHelper.Hexcolor2Color("FFFFFF"))
+        else
+            self._LuaButtonDeleteNoFree:SetTextColor("TxtNoFree", XUiHelper.Hexcolor2Color("24002c"))
+        end
+    end
+
+    -- 刷新按钮文本颜色
+    local coinAmount = self._Control:GetRefreshCoin()
+    if self._LuaButtonRefresh then
+        if coinAmount > XLuckyTenant2Enum.Cost then
+            self._LuaButtonRefresh:SetTextColor("TxtNoFree", XUiHelper.Hexcolor2Color("FFFFFF"))
+        else
+            self._LuaButtonRefresh:SetTextColor("TxtNoFree", XUiHelper.Hexcolor2Color("24002c"))
+        end
     end
 end
 

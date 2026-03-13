@@ -830,8 +830,6 @@ local function MergeAndSortRewardGoodsList(rewardGoodsList)
     return SortRewardGoodsList(MergeRewardGoodsList(rewardGoodsList))
 end
 
-
-
 function XRewardManager.Init()
     RewardSubIds = XTableManager.ReadByIntKey(TABLE_REWARD_PATH, XTable.XTableReward, "Id")
     RewardGoodsTable = XTableManager.ReadByIntKey(TABLE_REWARD_GOODS_PATH, XTable.XTableRewardGoods, "Id")

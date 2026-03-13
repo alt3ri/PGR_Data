@@ -171,7 +171,6 @@ function XLevelScript9001:Init() --初始化逻辑
     self._audioPlayer:SetCvActionValidation(EFightCVAction.OverDriveBreak,false)  --ODbreak提示
     self._audioPlayer:SetCvActionValidation(EFightCVAction.PraiseConterSuccess,false) --拼刀语音提示
     self._audioPlayer:SetCvActionValidation(EFightCVAction.EnterOverDriveWarning,false) --OD状态开启提示
-    self._audioPlayer:SetCvActionValidation(EFightCVAction.NotifyEnemyDead,false) --BOSS死亡播报
 end
 
 --region 关卡阶段管理
@@ -404,8 +403,8 @@ function XLevelScript9001:OnEnterPhase(phase)
     elseif phase == Phase.End then
         XLog.Debug("阶段进入!Phase.End")
         self._audioPlayer:PlayAudioFightWin()
-        self._timer:Schedule(5, self, function() 
-            self._proxy:StopAudioByUid(self._backGrounSoundUid)              
+        self._proxy:StopAudioByUid(self._backGrounSoundUid)
+        self._timer:Schedule(5, self, function()               
             self._proxy:FinishFight()
         end)
     elseif phase == Phase.Test then   --OD阶段对应的配置
@@ -613,10 +612,8 @@ function XLevelScript9001:OnUpdatePhase(dt)
                         self._proxy:AbortAction(self._localNpc,true)
                     end)
                     self._timer:Schedule(1.64, self, function()
-                        self._proxy:AbortAction(self.monster_UUID,true)--打断白龙动作
-                        self._proxy:CastMultiParry(self.monster_UUID, self._localNpc, 800501) --强制两人拼刀
+                        self._proxy:CastSkillActionToNpcNotCheck(self._localNpc,1051081,self.monster_UUID)      --拼刀技能
                         self._proxy:RemoveBuff(self.monster_UUID,8005906)                   --移除怪物的霸体
-                        self._proxy:ApplyMagic(self.monster_UUID,self.monster_UUID,8005907)                   --移除怪物的霸体
                     end)
                     self._timer:Schedule(2.7, self, function()
                         self._proxy:SetNpcPosition(self.NpcNanami,{x=self._proxy:GetNpcPosition(self._localNpc).x,y=5,z=self._proxy:GetNpcPosition(self._localNpc).z}) --传送nanami

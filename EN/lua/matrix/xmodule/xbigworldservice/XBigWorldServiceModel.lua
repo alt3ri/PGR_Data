@@ -185,7 +185,8 @@ function XBigWorldServiceModel:InitQuestItemMap(map)
 end
 
 function XBigWorldServiceModel:IsQuestItemExist(itemId)
-    return self:GetQuestItemMap()[itemId] and true or false
+    local count = self:GetQuestItemMap()[itemId]
+    return (count and count > 0) and true or false
 end
 
 function XBigWorldServiceModel:GetQuestItemCount(itemId)

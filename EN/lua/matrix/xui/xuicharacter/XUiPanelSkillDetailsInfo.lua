@@ -1,4 +1,4 @@
-local XUiButtonLongClick = require("XUi/XUiCommon/XUiButtonLongClick")
+local XUiButtonLongClick = require("XUi/XUiCommon/XUiButtonLongClick")
 local XUiPanelSkillDetailsInfo = XClass(nil, "XUiPanelSkillDetailsInfo")
 
 -- 触发拖拽前的延时
@@ -329,6 +329,17 @@ function XUiPanelSkillDetailsInfo:OnBtnDetails()
 end
 
 function XUiPanelSkillDetailsInfo:OnBtnSwitchClick()
+    -- 形态切换
+    local skillId, exchangeDesConfig = XMVCA.XCharacter:GetSkillExchangeDesSkillIdAndConfigByCharacterId(self.CharacterId)
+    if skillId and exchangeDesConfig and exchangeDesConfig.UiType == XEnumConst.CHARACTER.SKILL_EXCHANGE_UI_TYPE.FORM then
+        local skillLevel = XMVCA.XCharacter:GetSkillLevel(skillId)
+        XLuaUiManager.Open("UiCharacterBattleRoomSkillSwitch", skillId, skillLevel, function()
+            self.RootUi:RefreshData()
+        end, exchangeDesConfig)
+        return
+    end
+    
+    -- 技能切换
     local addLevel = self.CharacterAgency:GetSkillPlusLevel(self.CharacterId, self.SubSkillId)
     local totalLevel = self.SubSkill.Level + addLevel
     XLuaUiManager.Open("UiCharacterSkillSwich", self.SubSkillId, totalLevel, function()

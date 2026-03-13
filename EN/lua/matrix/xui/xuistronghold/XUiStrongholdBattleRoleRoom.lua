@@ -473,22 +473,20 @@ function XUiStrongholdBattleRoleRoom:RefreshCharacterRImgType()
         -- 观测者职业的特殊处理
         curRImgType = self["RImgType" .. pos]
         curRImgType.gameObject:SetActiveEx(XTool.IsNumberValid(entityId))
-        local tankEffectTrans = curRImgType.transform:Find("TankEffect")
-        local amplifierEffectTrans = curRImgType.transform:Find("AmplifierEffect")
-        if not tankEffectTrans or not amplifierEffectTrans then
+        local tankEffect = curRImgType.transform:Find("TankEffect")
+        local amplifierEffect = curRImgType.transform:Find("AmplifierEffect")
+        local breakerEffect = curRImgType.transform:Find("BreakerEffect")
+        if not (tankEffect and amplifierEffect and breakerEffect) then
             return
         end
-        local tankEffectGo = tankEffectTrans.gameObject
-        local amplifierEffectGo = amplifierEffectTrans.gameObject
-        tankEffectGo:SetActiveEx(false)
-        amplifierEffectGo:SetActiveEx(false)
-        if obsActiveCarrer ~= XEnumConst.CHARACTER.Career.None and XTool.IsNumberValid(obsPos) and obsPos == pos then
+
+        local isObsPos = XTool.IsNumberValid(obsPos) and obsPos == pos and obsActiveCarrer ~= XEnumConst.CHARACTER.Career.None
+        tankEffect.gameObject:SetActiveEx(isObsPos and obsActiveCarrer == XEnumConst.CHARACTER.Career.Tank)
+        amplifierEffect.gameObject:SetActiveEx(isObsPos and (obsActiveCarrer == XEnumConst.CHARACTER.Career.Amplifier or obsActiveCarrer == XEnumConst.CHARACTER.Career.Support))
+        breakerEffect.gameObject:SetActiveEx(isObsPos and obsActiveCarrer == XEnumConst.CHARACTER.Career.Breaker)
+
+        if isObsPos then
             iconPath = XMVCA.XCharacter:GetNpcTypeIconObs(obsActiveCarrer)
-            if obsActiveCarrer == XEnumConst.CHARACTER.Career.Tank or obsActiveCarrer == XEnumConst.CHARACTER.Career.Breaker then
-                tankEffectGo:SetActiveEx(true)
-            elseif obsActiveCarrer == XEnumConst.CHARACTER.Career.Amplifier or obsActiveCarrer == XEnumConst.CHARACTER.Career.Support then
-                amplifierEffectGo:SetActiveEx(true)
-            end
         elseif characterViewModel then
             iconPath = characterViewModel:GetProfessionIcon()
         end

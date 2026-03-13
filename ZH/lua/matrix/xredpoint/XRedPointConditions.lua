@@ -86,6 +86,7 @@ local type = {
     CONDITION_FAVORABILITY_DOCUMENT_ACTION = "XRedPointConditionFavorabilityAction", --好感度-档案-动作
     CONDITION_FAVORABILITY_PLOT = "XRedPointConditionFavorabilityPlot", --好感度-剧情
     CONDITION_FAVORABILITY_GIFT = "XRedPointConditionFavorabilityGift", --好感度-礼物
+    CONDITION_FAVORABILITY_STORY_GIFT_TASK = "XRedPointConditionFavorabilityStoryGiftTask", --好感剧情限时送角色任务
     -- 试炼
     CONDITION_TRIAL_RED = "XRedPointConditionTrial", --试炼关卡奖励
     CONDITION_TRIAL_REWARD_RED = "XRedPointConditionTrialReward", --试炼关卡奖励
@@ -622,6 +623,7 @@ local type = {
     CONDITION_VERSIONGIFT_REWARD = "XVersionGift/XRedPointVersionGiftReward", -- 奖励
     -- 幸运租客
     CONDITION_LUCKY_TENANT = "XRedPointConditionLuckyTenant",
+    CONDITION_LUCKY_TENANT2 = "XRedPointConditionLuckyTenant2",
 
     -- 音游预热
     CONDITION_MUSICGAME_ENTRANCE = "XRedPointConditionMusicGameEntrance", -- 活动入口

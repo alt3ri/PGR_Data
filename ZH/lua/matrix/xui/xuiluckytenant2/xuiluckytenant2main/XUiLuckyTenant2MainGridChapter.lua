@@ -4,8 +4,6 @@
 -- Generated at: 2025-12-31 16:39:51
 --]]
 
-local XUiLuckyTenant2MainGridStage = require("XUi/XUiLuckyTenant2/XUiLuckyTenant2Main/XUiLuckyTenant2MainGridStage")
-
 ---@class XUiLuckyTenant2MainGridChapter : XUiNode
 ---@field Parent XUiLuckyTenant2Main
 ---@field BtnClick XUiComponent.XUiButton
@@ -23,11 +21,36 @@ function XUiLuckyTenant2MainGridChapter:InitComponents()
         self.BtnClick = self.GameObject:GetComponent("XUiButton")
         self.BtnClick:AddEventListener(function() self:OnClick() end)
     end
-    
+
     -- 初始化关卡列表
     self._StageGrids = {}
     if self.GridStage then
         self.GridStage.gameObject:SetActiveEx(false)
+    end
+
+    self.TagOngoing = self.TagOngoing or XUiHelper.TryGetComponent(self.Transform, "TagOngoing", "RectTransform")
+    if self.TagOngoing then
+        self.TagOngoing.gameObject:SetActiveEx(false)
+    end
+
+    self.ImgLock = self.ImgLock or XUiHelper.TryGetComponent(self.Transform, "ImgLock", "Image")
+    if self.ImgLock then
+        self.ImgLock.gameObject:SetActiveEx(false)
+    end
+
+    -- 章节 TimeId 倒计时：按钮 Disable 状态下的 TxtTime
+    self.TxtDisableTime = self.TxtDisableTime or XUiHelper.TryGetComponent(self.Transform, "Disable/TxtTime", "Text")
+    self._TimeIdTimer = false
+
+    -- 章节 TimeId 倒计时：按钮 Disable 状态下的 ImgLock
+    self.ImgLockDisable = self.ImgLockDisable or XUiHelper.TryGetComponent(self.Transform, "Disable/ImgLock", "Image")
+    if self.ImgLockDisable then
+        self.ImgLockDisable.gameObject:SetActiveEx(false)
+    end
+
+    self.PanelLock = self.PanelLock or XUiHelper.TryGetComponent(self.Transform, "PanelLock", "RectTransform")
+    if self.PanelLock then
+        self.PanelLock.gameObject:SetActiveEx(false)
     end
 end
 
@@ -35,34 +58,132 @@ function XUiLuckyTenant2MainGridChapter:Update(data)
     if not data then
         return
     end
-    
+
     self._Data = data
-    
+
+    -- IsDisabled 由 Control 预计算：时间未开启/已结束或上一章未通关
+    local isDisabled = data.IsDisabled or data.IsDisabledByTime or data.IsLockedByPrevChapter
+
     -- 更新章节名称
-    -- self.TxtName.text = data.Name or ""
     self.BtnClick:SetNameByGroup(0, data.Name or "")
 
     -- 设置按钮选中状态
     if self.BtnClick and self.BtnClick.SetButtonState then
-        -- 判断当前章节是否被选中
-        local isSelected = false
-        if self.Parent then
-            local currentChapterData = self.Parent:GetCurrentChapterData()
-            if currentChapterData then
-                isSelected = currentChapterData.Id == data.Id
-            end
-        end
-
-        if isSelected then
-            self.BtnClick:SetButtonState(CS.UiButtonState.Select)
+        if isDisabled then
+            self.BtnClick:SetButtonState(CS.UiButtonState.Disable)
         else
-            self.BtnClick:SetButtonState(CS.UiButtonState.Normal)
+            local currentChapter = self.Parent and self.Parent:GetCurrentChapterData()
+            local isSelected = currentChapter and currentChapter.Id == data.Id
+            self.BtnClick:SetButtonState(isSelected and CS.UiButtonState.Select or CS.UiButtonState.Normal)
         end
     end
-    
-    -- 更新关卡列表
+
+    -- 红点
+    self.BtnClick:ShowReddot(XMVCA.XLuckyTenant2:IsShowRedDotChapter(data.Id))
+
+    -- 更新关卡列表：时间锁时不更新并隐藏所有 grid；未开启时不显示 On；已开启时按 IsPerfectClear/IsNormalClear 显示 On
     local stages = data.Stages or {}
-    XTool.UpdateDynamicItem(self._StageGrids, stages, self.GridStage, XUiLuckyTenant2MainGridStage, self)
+    if data.IsDisabledByTime then
+        for i = 1, #self._StageGrids do
+            local grid = self._StageGrids[i]
+            if grid then
+                grid.gameObject:SetActiveEx(false)
+            end
+        end
+    else
+        for i = 1, #stages do
+            local stage = stages[i]
+            if stage then
+                self._StageGrids[i] = self._StageGrids[i] or XUiHelper.Instantiate(self.GridStage, self.GridStage.transform.parent)
+                local grid = self._StageGrids[i]
+                grid.gameObject:SetActiveEx(true)
+                local showOn = (not isDisabled) and (stage.IsPerfectClear or stage.IsNormalClear)
+                local on = XUiHelper.TryGetComponent(grid.transform, "On", "RectTransform")
+                if on then
+                    on.gameObject:SetActiveEx(showOn)
+                end
+            end
+        end
+        for i = #stages + 1, #self._StageGrids do
+            local grid = self._StageGrids[i]
+            if grid then
+                grid.gameObject:SetActiveEx(false)
+            end
+        end
+    end
+
+    -- 进行中标记
+    if self.TagOngoing then
+        self.TagOngoing.gameObject:SetActiveEx(data.IsPlaying or false)
+    end
+
+    -- 因上一章未通关而上锁：ImgLock 显隐（时间锁由 Disable 节点显示）
+    if self.ImgLock then
+        self.ImgLock.gameObject:SetActiveEx(data.IsLockedByPrevChapter or false)
+    end
+
+    if self.ImgLockDisable then
+        self.ImgLockDisable.gameObject:SetActiveEx(data.IsDisabledByTime or false)
+    end
+
+    self:UpdateChapterTimeId()
+end
+
+--- 更新章节 TimeId 倒计时（未开启/已结束时按钮 Disable，每秒刷新 TxtTime）
+function XUiLuckyTenant2MainGridChapter:UpdateChapterTimeId()
+    if self._TimeIdTimer then
+        XScheduleManager.UnSchedule(self._TimeIdTimer)
+        self._TimeIdTimer = false
+    end
+
+    local data = self._Data
+    if not data or not data.TimeId or data.TimeId <= 0 or not data.IsDisabledByTime then
+        -- 在时间范围内：不显示 ImgLockDisable 和 TxtDisableTime
+        if self.ImgLockDisable then
+            self.ImgLockDisable.gameObject:SetActiveEx(false)
+        end
+        if self.TxtDisableTime then
+            self.TxtDisableTime.gameObject:SetActiveEx(false)
+        end
+        return
+    end
+
+    local timeId = data.TimeId
+
+    -- 不在时间范围内：按钮 Disable，显示并定时刷新剩余时间
+    if self.BtnClick and self.BtnClick.SetButtonState then
+        self.BtnClick:SetButtonState(CS.UiButtonState.Disable)
+    end
+    local function refreshTime()
+        -- 若已进入时间范围，取消定时器
+        if XFunctionManager.CheckInTimeByTimeId(timeId) then
+            if self._TimeIdTimer then
+                XScheduleManager.UnSchedule(self._TimeIdTimer)
+                self._TimeIdTimer = false
+            end
+            return
+        end
+        if self.TxtDisableTime then
+            self.TxtDisableTime.text = self._Control:GetChapterTimeTipText(timeId)
+        end
+    end
+
+    refreshTime()
+    self._TimeIdTimer = XScheduleManager.ScheduleForever(refreshTime, 1000)
+end
+
+function XUiLuckyTenant2MainGridChapter:OnDestroy()
+    if self._TimeIdTimer then
+        XScheduleManager.UnSchedule(self._TimeIdTimer)
+        self._TimeIdTimer = false
+    end
+end
+
+function XUiLuckyTenant2MainGridChapter:OnDisable()
+    if self._TimeIdTimer then
+        XScheduleManager.UnSchedule(self._TimeIdTimer)
+        self._TimeIdTimer = false
+    end
 end
 
 function XUiLuckyTenant2MainGridChapter:OnClick()

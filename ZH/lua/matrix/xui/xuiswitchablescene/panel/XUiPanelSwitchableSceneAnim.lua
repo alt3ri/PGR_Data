@@ -221,9 +221,9 @@ function XUiPanelSwitchableSceneAnim:ChangeSceneByGyro()
     local adjusted = Reference * deviceRotation
     local euler = adjusted.eulerAngles
 
-    if self._IsDebug then
-        self:ShowDebugInfo(string.format("X:%0.2f,Y:%0.2f,Z:%0.2f", euler.x, euler.y, euler.z))
-    end
+    --if self._IsDebug then
+    --    self:ShowDebugInfo(string.format("X:%0.2f,Y:%0.2f,Z:%0.2f", euler.x, euler.y, euler.z))
+    --end
 
     --在某个角度内时才进行陀螺仪判断
     -- euler.x：上下倾斜 -90°~90° 手机垂直桌面时为0
@@ -256,9 +256,9 @@ function XUiPanelSwitchableSceneAnim:ChangeSceneByMouse()
         local delta = Input.mousePosition.x - self._StartMouseX --离起点的距离（像素）
         local speedValue = XMVCA.XSwitchableScene:GetSpeedByDistance(self._SceneId, math.abs(delta))
 
-        if self._IsDebug then
-            self:ShowDebugInfo(string.format("delta:%0.2f,speed:%0.2f", delta, speedValue))
-        end
+        --if self._IsDebug then
+        --    self:ShowDebugInfo(string.format("delta:%0.2f,speed:%0.2f", delta, speedValue))
+        --end
 
         if math.abs(delta) > self._MoveXKeep then
             self._PlayOrder = delta >= 0 and Reverse or Sequential
@@ -326,12 +326,13 @@ function XUiPanelSwitchableSceneAnim:IsEnterGyroMode()
     return XMVCA.XSwitchableScene:GetGyroSetting(self._SceneId) == XEnumConst.SwitchableScene.Setting.Open
 end
 
-function XUiPanelSwitchableSceneAnim:ShowDebugInfo(value)
-    local debuggerGyroInfo = XDebugManager.DebuggerGyroInfo
-    if debuggerGyroInfo then
-        debuggerGyroInfo:SetEulerCustom(value)
-    end
-end
+--因为在Lua这边没法区分devBuild 所以暂时注释掉
+--function XUiPanelSwitchableSceneAnim:ShowDebugInfo(value)
+--    local debuggerGyroInfo = XDebugManager.DebuggerGyroInfo
+--    if debuggerGyroInfo then
+--        debuggerGyroInfo:SetEulerCustom(value)
+--    end
+--end
 
 function XUiPanelSwitchableSceneAnim:OnCamAnimStatusChange(status, isUseNewCamAnim)
     if not isUseNewCamAnim then

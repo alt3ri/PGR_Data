@@ -53,6 +53,10 @@ end
 
 function XUiFubenBossSingleModeDetailGridBuff:OnDisable()
     self:_StopRecordTimer()
+    -- 避免XUiNode显隐导致的报错
+    for i = 1, #self._GridSelectableFeatureUiList do
+        self._GridSelectableFeatureUiList[i]:Close()
+    end
 end
 
 -- endregion
@@ -365,6 +369,18 @@ function XUiFubenBossSingleModeDetailGridBuff:_RefreshSelectableFeatures()
         return
     end
 
+    if self._IsDetailOpen then
+        self:_RefreshSelectableFeatureGridList(buffFeatureIds, challengeData)
+    end
+
+    -- 刷新当前feature的倍率（只刷新自己的）
+    self:_RefreshTotalScoreRate()
+end
+
+-- v4.2 新增：刷新可选词缀Grid列表（detail打开时显示）
+---@param buffFeatureIds number[] 可选词缀ID列表
+---@param challengeData table ChallengeData
+function XUiFubenBossSingleModeDetailGridBuff:_RefreshSelectableFeatureGridList(buffFeatureIds, challengeData)
     local count = 0
 
     -- 遍历可选feature IDs，创建并显示
@@ -403,9 +419,6 @@ function XUiFubenBossSingleModeDetailGridBuff:_RefreshSelectableFeatures()
     for i = count + 1, #self._GridSelectableFeatureUiList do
         self._GridSelectableFeatureUiList[i]:Close()
     end
-
-    -- 刷新当前feature的倍率（只刷新自己的）
-    self:_RefreshTotalScoreRate()
 end
 
 -- v4.2 新增：隐藏可选词缀UI

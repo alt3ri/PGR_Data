@@ -108,6 +108,9 @@ function XRaceScene:OnEnter()
                     self._MapEffect.gameObject:SetActive(false)
                 end
                 self._XRaceViewManager = self._SceneRaceGameRoot:GetComponent(typeof(CS.XRace.XRaceViewManager))
+
+                local brain = self._Road.transform:Find("MainCamera"):GetComponent(typeof(CS.Cinemachine.CinemachineBrain))
+                brain.m_VcamUpdateMethod = CS.Cinemachine.CinemachineBrain.VcamUpdateMethod.LateUpdate
             end
             XLuaUiManager.Open("UiRaceFightMain", self._RoundId, self._Ids, self._SceneType)
         end)

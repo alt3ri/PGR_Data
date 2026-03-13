@@ -30,6 +30,9 @@ XNoticeManagerCreator = function()
     local SYNC_QUEUE_INTERVAL = 1
     local InGameAutoPopupMap
     local PreloadNotice = nil --预下载公告
+    
+    -- 是否已执行本次登录的第一次请求清理
+    local _HasCleanedOnFirstRequest = false
 
     local SubMenuNoticeReadList = {}
     local SubMenuNoticeMap = {}
@@ -37,6 +40,10 @@ XNoticeManagerCreator = function()
 
     local ScrollCountList = {}
     local ScrollCountSaveKey = "_NoticeScrollCountList"
+    
+    -- 复用table，减少 GC 压力（用于字符串拼接）
+    local _TempKeyParts2 = {}  -- 用于 GetTextNoticeKey（2个元素）
+    local _TempKeyParts3 = {}  -- 用于 GetGameNoticeReadDataKey（3个元素）
 
     local LoginNotice = nil
     local LoginNoticeTimeInfo = {}
@@ -145,9 +152,15 @@ XNoticeManagerCreator = function()
     end
 
     function XNoticeManager.InitNoticeCdnUrl()
+        local cdnKey = CS.XInfo.CDNKey
+        local isEmptyCdnKey = string.IsNilOrEmpty(cdnKey)
         local noticePathPrefix = CS.XGame.ClientConfig:GetString("NoticePathPrefix")
         for k, v in pairs(NoticeFileName) do
-            NoticeCdnUrl[k] = noticePathPrefix .. CS.XInfo.Identifier .. "/" .. CS.XRemoteConfig.ApplicationVersion .. "/" .. v
+            if isEmptyCdnKey then
+                NoticeCdnUrl[k] = string.format("%s%s/%s/%s", noticePathPrefix, CS.XInfo.Identifier, CS.XRemoteConfig.ApplicationVersion, v)
+            else
+                NoticeCdnUrl[k] = string.format("%s%s/%s/%s/%s", noticePathPrefix, cdnKey, CS.XInfo.Identifier, CS.XRemoteConfig.ApplicationVersion, v)
+            end
         end
     end
     ----------------------------------初始化公告cdn路径 end----------------------------------
@@ -324,6 +337,9 @@ XNoticeManagerCreator = function()
             return
         end
         
+        -- 在同步前清理过期已读公告
+        XNoticeManager.CleanExpiredReadNotices()
+        
         -- 收集队列中的所有公告
         local gameNoticeInfos = {}
         for serverKey, info in pairs(_SyncQueue) do
@@ -405,6 +421,9 @@ XNoticeManagerCreator = function()
         if _HasSyncedGameNoticeToServer then
             return
         end
+        
+        -- 在同步前清理过期已读公告
+        XNoticeManager.CleanExpiredReadNotices()
         
         if not InGameNoticeReadList then
             _HasSyncedGameNoticeToServer = true
@@ -586,13 +605,19 @@ XNoticeManagerCreator = function()
         if not ScrollCountList then
             return
         end
-        local saveContent = ''
+        -- 使用 table.concat 替代循环中的多次 .. 拼接，减少 GC 压力
+        local contentParts = {}
         for _, v in pairs(ScrollCountList) do
-            saveContent = saveContent .. v.id .. '\t'
-            saveContent = saveContent .. v.maxCount .. '\t'
-            saveContent = saveContent .. v.nowCount .. '\t'
-            saveContent = saveContent .. v.overTime .. '\n'
+            tableInsert(contentParts, v.id)
+            tableInsert(contentParts, '\t')
+            tableInsert(contentParts, v.maxCount)
+            tableInsert(contentParts, '\t')
+            tableInsert(contentParts, v.nowCount)
+            tableInsert(contentParts, '\t')
+            tableInsert(contentParts, v.overTime)
+            tableInsert(contentParts, '\n')
         end
+        local saveContent = table.concat(contentParts)
 
         CS.UnityEngine.PlayerPrefs.SetString(XNoticeManager.GetScrollCountSaveKey(), saveContent)
         CS.UnityEngine.PlayerPrefs.Save()
@@ -647,7 +672,10 @@ XNoticeManagerCreator = function()
     end
 
     function XNoticeManager.GetTextNoticeKey(notice)
-        return notice.Id .. "_" .. notice.ModifyTime
+        -- 复用table减少 GC 压力，直接设置值避免创建新表
+        _TempKeyParts2[1] = notice.Id
+        _TempKeyParts2[2] = notice.ModifyTime
+        return table.concat(_TempKeyParts2, "_", 1, 2)
     end
 
     function XNoticeManager.CreateDefaultScrollCountData(notice)
@@ -855,6 +883,35 @@ XNoticeManagerCreator = function()
             end
         end
 
+        -- 只在本次登录第一次请求时清理过期已读公告
+        -- 后续清理将在同步前执行，避免每次请求都执行清理逻辑
+        if not _HasCleanedOnFirstRequest then
+            XNoticeManager.CleanExpiredReadNotices()
+            _HasCleanedOnFirstRequest = true
+        end
+        
+        for _, v in pairs(InGameNoticeMap) do
+            XNoticeManager.InitInGameReadList(v)
+
+            local sortFunc = function(l, r)
+                return l.Order > r.Order
+            end
+            table.sort(v, sortFunc)
+        end
+        
+        -- 所有公告类型处理完成后，触发红点刷新事件
+        XEventManager.DispatchEvent(XEventId.EVENT_ACTIVITY_NOTICE_READ_CHANGE)
+    end
+
+    ---清理过期已读公告记录（不在当前公告列表中的记录）
+    ---在以下时机调用：
+    ---1. 本次登录第一次请求时
+    ---2. 发送给服务端同步前
+    function XNoticeManager.CleanExpiredReadNotices()
+        if not InGameNoticeMap then
+            return
+        end
+        
         -- 先收集所有当前公告的 dataKey，用于清理已删除的公告记录
         local allCurrentDataKeys = {}
         for _, v in pairs(InGameNoticeMap) do
@@ -883,7 +940,9 @@ XNoticeManagerCreator = function()
                 local found = false
                 for _, v in pairs(InGameNoticeMap) do
                     for _, noticeData in pairs(v) do
-                        local expectedServerKey = string.format("%s_%s", noticeData.Id, tostring(noticeData.ModifyTime))
+                        _TempKeyParts2[1] = noticeData.Id
+                        _TempKeyParts2[2] = noticeData.ModifyTime
+                        local expectedServerKey = table.concat(_TempKeyParts2, "_", 1, 2)
                         if serverKey == expectedServerKey then
                             found = true
                             break
@@ -897,18 +956,6 @@ XNoticeManagerCreator = function()
                 end
             end
         end
-        
-        for _, v in pairs(InGameNoticeMap) do
-            XNoticeManager.InitInGameReadList(v)
-
-            local sortFunc = function(l, r)
-                return l.Order > r.Order
-            end
-            table.sort(v, sortFunc)
-        end
-        
-        -- 所有公告类型处理完成后，触发红点刷新事件
-        XEventManager.DispatchEvent(XEventId.EVENT_ACTIVITY_NOTICE_READ_CHANGE)
     end
 
     function XNoticeManager.GetInGameNoticeMap(type)
@@ -999,15 +1046,17 @@ XNoticeManagerCreator = function()
             end
         end
         
-        -- 注意：清理逻辑已在 HandleRequestInGameNotice 中统一处理（基于所有类型的数据）
-        -- 这里不需要再次清理，因为 currentDataKeys 只包含当前类型的数据，
-        -- 如果在这里清理会误删其他类型的记录
+        -- 注意：清理逻辑已改为在特定时机执行（首次请求和同步前），不再每次请求都执行
 
         XEventManager.DispatchEvent(XEventId.EVENT_ACTIVITY_NOTICE_READ_CHANGE)
     end
 
     function XNoticeManager.GetGameNoticeReadDataKey(noticeData, index)
-        return noticeData.Id .. "_" .. noticeData.ModifyTime .. "_" .. index
+        -- 复用table减少 GC 压力，直接设置值避免创建新表
+        _TempKeyParts3[1] = noticeData.Id
+        _TempKeyParts3[2] = noticeData.ModifyTime
+        _TempKeyParts3[3] = index
+        return table.concat(_TempKeyParts3, "_", 1, 3)
     end
 
     function XNoticeManager.CheckInGameNoticeRedPointIndividual(notice, index)
@@ -1364,7 +1413,10 @@ XNoticeManagerCreator = function()
             return
         end
 
-        local id = notice.Id .. notice.ModifyTime
+        -- 复用table减少 GC 压力
+        _TempKeyParts2[1] = notice.Id
+        _TempKeyParts2[2] = notice.ModifyTime
+        local id = table.concat(_TempKeyParts2, "", 1, 2)
         local resetTime = CS.XReset.GetNextDailyResetTime() - CS.XDateUtil.ONE_DAY_SECOND
         if LoginNoticeTimeInfo[id] and LoginNoticeTimeInfo[id].Time > resetTime then
             return not XNoticeManager.CheckHasOpenLoginNotice()
@@ -2018,6 +2070,7 @@ XNoticeManagerCreator = function()
         end
         _SyncQueue = {}
         _HasSyncedGameNoticeToServer = false
+        _HasCleanedOnFirstRequest = false
 
         for _, v in pairs(NoticePicList) do
             if v and v:Exist() then

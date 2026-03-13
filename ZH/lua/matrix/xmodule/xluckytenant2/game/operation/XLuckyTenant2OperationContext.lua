@@ -9,12 +9,11 @@ local XLuckyTenant2OperationContext = {}
 ---@param proxy XLuckyTenant2OperationProxy 操作代理
 ---@param animationGroup table|false 动画组（可选）
 ---@return XLuckyTenant2OperationContext
-function XLuckyTenant2OperationContext.New(game, model, proxy, animationGroup)
+function XLuckyTenant2OperationContext.New(game, model, proxy)
     local ctx = {
         game = game,
         model = model,
         proxy = proxy,
-        animationGroup = animationGroup,
     }
     
     ---查找棋子（统一方法，在棋盘和背包中查找）
@@ -63,18 +62,19 @@ function XLuckyTenant2OperationContext.New(game, model, proxy, animationGroup)
         return game:GetScoreThisRound()
     end
     
-    ---设置当前回合分数
-    ---@param score number
-    function ctx:SetScoreThisRound(score)
-        game:SetScoreThisRound(score)
-    end
-    
-    ---增加当前回合分数
-    ---@param delta number 增量
-    function ctx:AddScoreThisRound(delta)
-        local current = game:GetScoreThisRound()
-        game:SetScoreThisRound(current + delta)
-    end
+    ---设置当前回合分数
+    ---@param score number
+    function ctx:SetScoreThisRound(score)
+        game:SetScoreThisRound(score)
+    end
+    
+    ---增加当前回合分数
+    ---@param delta number 增量
+    ---@param sourcePiece XLuckyTenant2Piece|nil 分数来源棋子（可选）
+    ---@param sourceBondIds number[]|nil 明确羁绊ID列表（可选）
+    function ctx:AddScoreThisRound(delta, sourcePiece, sourceBondIds)
+        game:AddScoreThisRound(delta, sourcePiece, sourceBondIds)
+    end
     
     ---添加新棋子到背包
     ---@param pieceId number 棋子ID

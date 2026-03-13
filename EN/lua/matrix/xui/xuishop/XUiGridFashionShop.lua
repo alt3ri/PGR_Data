@@ -73,31 +73,38 @@ function XUiGridFashionShop:OnBtnBuyClick()
         end
 
         XShopManager.BuyShop(self.Parent:GetCurShopId(), self.Data.Id, BuyCount, function(res)
-            local text = CS.XTextManager.GetText("BuySuccess")
-            XUiManager.TipMsg(text, nil, function()
-                if res.IsShowBuyResult and not XTool.IsTableEmpty(res.GoodList) then
-                    XUiManager.OpenUiObtain(res.GoodList)
-                    return
-                end
-            end)
-
-            if XTool.UObjIsNil(self.ImgSellOut) then
-                return
-            end
-            self:RefreshSellOut()
-            self:RefreshCondition()
-            self:RefreshOnSales()
-            self:RefreshPrice()
-            self:RefreshBuyCount()
-            self.Parent:RefreshBuy()
+            self:OnBuyShopSuccessCb(res.GoodList, res.IsShowBuyResult)
         end, function(errorCode)
             if errorCode == 20030022 then --写死活动过期错误码
                 XLuaUiManager.RunMain()
             end
         end, self.ActivityIsOpen)
     end
-
+    buyData.GroupBuyCallBack = function(fashionGroupId)
+        XMVCA.XFashionSuit:ShopBuyFashionGroup(fashionGroupId, function(goodList)
+            self:OnBuyShopSuccessCb(goodList, true)
+        end)
+    end
     XMVCA.XShop:OpenFashionDetailUi(self.Id, buyData, { isWeaponFashion = self.IsWeaponFashion })
+end
+
+function XUiGridFashionShop:OnBuyShopSuccessCb(goodList, isShowBuyResult)
+    local text = CS.XTextManager.GetText("BuySuccess")
+    XUiManager.TipMsg(text, nil, function()
+        if isShowBuyResult and not XTool.IsTableEmpty(goodList) then
+            XUiManager.OpenUiObtain(goodList)
+            return
+        end
+    end)
+    if XTool.UObjIsNil(self.ImgSellOut) then
+        return
+    end
+    self:RefreshSellOut()
+    self:RefreshCondition()
+    self:RefreshOnSales()
+    self:RefreshPrice()
+    self:RefreshBuyCount()
+    self.Parent:RefreshBuy()
 end
 
 function XUiGridFashionShop:UpdateData(data)
@@ -316,12 +323,10 @@ function XUiGridFashionShop:RefreshPanelSale()
             self.TxtSaleRate.text = CS.XTextManager.GetText("Recommend")
         elseif self.Data.Tags == XShopManager.ShopTags.HotSale then
             self.TxtSaleRate.text = CS.XTextManager.GetText("HotSell")
-        elseif self.Data.Tags == XShopManager.ShopTags.Not then
-            hideSales = true
         end
-
+        
         -- 控制显示/隐藏
-        if hideSales then
+        if self.Data.Tags == XShopManager.ShopTags.Not or hideSales then
             self.TxtSaleRate.gameObject:SetActiveEx(false)
             self.TxtSaleRate.gameObject.transform.parent.gameObject:SetActiveEx(false)
         else

@@ -1455,14 +1455,17 @@ end
 function XEquipModel:GetEquipBreakthroughCfg(templateId, times)
     times = times or 0
     local cfgs = self:GetEquipBreakthroughCfgs(templateId)
-    local config = cfgs[times]
-    if not config then
-        XLog.ErrorTableDataNotFound("XEquipModel:GetEquipBreakthroughCfg", "config", "Share/Equip/EquipBreakThrough.tab", "templateId : times", 
-            tostring(templateId) .. " : " .. tostring(times))
-        return
-    end
 
-    return config
+    if cfgs then
+        local config = cfgs[times]
+        if not config then
+            XLog.ErrorTableDataNotFound("XEquipModel:GetEquipBreakthroughCfg", "config", "Share/Equip/EquipBreakThrough.tab", "templateId : times",
+                    tostring(templateId) .. " : " .. tostring(times))
+            return
+        end
+
+        return config
+    end
 end
 
 --- 获取装备当前突破等级对应配置表
@@ -2264,13 +2267,16 @@ end
 function XEquipModel:GetEquipResConfig(templateId, breakthroughTimes)
     breakthroughTimes = breakthroughTimes or 0
     local breakthroughCfg = self:GetEquipBreakthroughCfg(templateId, breakthroughTimes)
-    local resId = breakthroughCfg.ResId
-    if not resId then
-        XLog.ErrorTableDataNotFound("XEquipModel:GetEquipResConfig", "resId",
-                "Share/Equip/EquipBreakThrough.tab", "templateId : times", tostring(templateId) .. " : " .. tostring(breakthroughTimes))
-        return
+
+    if breakthroughCfg then
+        local resId = breakthroughCfg.ResId
+        if not resId then
+            XLog.ErrorTableDataNotFound("XEquipModel:GetEquipResConfig", "resId",
+                    "Share/Equip/EquipBreakThrough.tab", "templateId : times", tostring(templateId) .. " : " .. tostring(breakthroughTimes))
+            return
+        end
+        return self:GetConfigEquipRes(resId)
     end
-    return self:GetConfigEquipRes(resId)
 end
 
 --- 获取立绘
@@ -2385,8 +2391,11 @@ function XEquipModel:GetEquipModelIdListByCharacterId(characterId, isDefault, we
         local idList = {}
         local templateId = XMVCA.XCharacter:GetCharacterDefaultEquipId(characterId)
         local template = self:GetEquipResConfig(templateId)
-        for _, id in pairs(template.ModelTransId) do
-            table.insert(idList, id)
+
+        if template then
+            for _, id in pairs(template.ModelTransId) do
+                table.insert(idList, id)
+            end
         end
         return idList
     end

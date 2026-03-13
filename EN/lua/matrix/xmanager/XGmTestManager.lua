@@ -1082,14 +1082,14 @@ local function AddAudioDebugFunction()
     Panel:AddButton(
         "打印激活音频列表",
         function()
-            local list = CS.XAudioManager.GetAudioInfoList()
-            local str = "[AIF音频播放中列表]\n"
-            for i= 0, list.Count - 1 do
-                local info = list[i]
-                local strTemp = string.format("CueId:%d, Id:%d, CueName:%s, Time:%s, ObjetName:%s\n", info.CueId, info.Id, info.CueName, info.Time, info.Source.gameObject.name)
-                str = str .. strTemp
-            end
-            print(str)
+            CS.XAudioManager.PrintActiveAudioList()
+        end
+    )
+
+    Panel:AddToggle(
+        "每帧打印激活列表",
+        function()
+            CS.XAudioManager.SetLateUpdatePrintAudioList()
         end
     )
 
@@ -1503,7 +1503,7 @@ local function AddSubPackageFunction()
     end)
 
     Panel:AddButton("卸载ResId", function()
-        XMVCA.XSubPackage:UninstallResourceByResId(ResId)
+        XMVCA.XSubPackage:UninstallResourceById(ResId)
     end)
 
     local SubPackageId
@@ -1516,6 +1516,10 @@ local function AddSubPackageFunction()
 
     Panel:AddButton("下载SubPackageId", function()
         XMVCA.XSubPackage:AddToDownload(SubPackageId)
+    end)
+
+    Panel:AddButton("卸载SubPackageId", function()
+        XMVCA.XSubPackage:UninstallSubpackageById(SubPackageId)
     end)
 end
 

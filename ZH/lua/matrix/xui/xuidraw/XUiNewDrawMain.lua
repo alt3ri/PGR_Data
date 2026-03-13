@@ -1039,6 +1039,7 @@ end
 function XUiNewDrawMain:UpdateOptionalBtn()
     local isShow = not self:CheckIsNewDraw() 
                    and not XDataCenter.DrawManager:CheckIsDevilMayCryGroupId(self.GroupId)
+                   and not XDataCenter.DrawManager:CheckIsHideOptionalBtnGroupId(self.GroupId)
                    and not (self.CurBanner and self.CurBanner.TargetBtnDetails)
     self.BtnOptionalDraw.gameObject:SetActiveEx(isShow)
 end
@@ -1342,13 +1343,28 @@ function XUiNewDrawMain:CheckShopBubble()
     if not self.DrawInfo then return end
 
     local isShowBubble = self.DrawInfo.IsShowBubble
-    if not isShowBubble then return end
+    if not isShowBubble then
+        self:StopAnimation("ShowBtnShopBubble")
+        self:PlayAnimation("HideBtnShopBubble")
+        return
+    end
+
+    -- 校验卡池时间范围
+    local now = XTime.GetServerNowTimestamp()
+    local isDefaultTime = self.DrawInfo.StartTime <= 0 and self.DrawInfo.EndTime <= 0
+    if not isDefaultTime and (now < self.DrawInfo.StartTime or now > self.DrawInfo.EndTime) then
+        self:PlayAnimation("HideBtnShopBubble")
+        return
+    end
 
     local key = string.format("HasUiNewDrawMainClickBtnShop_%d_%d", self.DrawInfo.Id, XPlayer.Id)
     local hasClicked = XSaveTool.GetData(key)
 
     if not hasClicked then
         self:PlayAnimation("ShowBtnShopBubble")
+    else
+        self:StopAnimation("ShowBtnShopBubble")
+        self:PlayAnimation("HideBtnShopBubble")
     end
 end
 

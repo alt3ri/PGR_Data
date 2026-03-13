@@ -68,15 +68,17 @@ function XUiGridAwarenessDeployMember:Refresh(chapterId, teamOrder, teamData, me
 
         -- 职业图标
         local carrerIconPath = nil
-        self.TankEffect.gameObject:SetActiveEx(false)
-        self.AmplifierEffect.gameObject:SetActiveEx(false)
-        if obsCarrer ~= XEnumConst.CHARACTER.Career.None and XTool.IsNumberValid(obsPos) and obsPos == memberOrder then
+        if not (self.TankEffect and self.AmplifierEffect and self.BreakerEffect) then
+            return
+        end
+
+        local isObsPos = XTool.IsNumberValid(obsPos) and obsPos == memberOrder and obsCarrer ~= XEnumConst.CHARACTER.Career.None
+        self.TankEffect.gameObject:SetActiveEx(isObsPos and obsCarrer == XEnumConst.CHARACTER.Career.Tank)
+        self.AmplifierEffect.gameObject:SetActiveEx(isObsPos and (obsCarrer == XEnumConst.CHARACTER.Career.Amplifier or obsCarrer == XEnumConst.CHARACTER.Career.Support))
+        self.BreakerEffect.gameObject:SetActiveEx(isObsPos and obsCarrer == XEnumConst.CHARACTER.Career.Breaker)
+
+        if isObsPos then
             carrerIconPath = XMVCA.XCharacter:GetNpcTypeIconObs(obsCarrer)
-            if obsCarrer == XEnumConst.CHARACTER.Career.Tank or obsCarrer == XEnumConst.CHARACTER.Career.Breaker then
-                self.TankEffect.gameObject:SetActiveEx(true)
-            elseif obsCarrer == XEnumConst.CHARACTER.Career.Amplifier then
-                self.AmplifierEffect.gameObject:SetActiveEx(true)
-            end
         else
             local carrer = XMVCA.XCharacter:GetCharacterCareer(self.CurCharacterId)
             carrerIconPath = XMVCA.XCharacter:GetNpcTypeIcon(carrer)

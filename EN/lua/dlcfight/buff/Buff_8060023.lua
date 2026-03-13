@@ -21,7 +21,7 @@ function XBuffScript8060023:Update(dt)
     if self.hasLevel==false then
         self.hasLevel,self.magicLevel=self._proxy:TryQueryBuffLevel(self._uuid,8060023)--获取自身的BUFF等级
         self._proxy:ApplyMagic(self._uuid,self._uuid,self.magicIds[1],self.magicLevel)
-        self._proxy:AddNpcAttribAdditive(self._uuid,0,0,-2000)
+        self._proxy:ApplyMagic(self._uuid,self._uuid,self.magicIds[2],self.magicLevel)
         self._proxy:ApplyMagic(self._uuid,self._uuid,self.magicIds[3],self.magicLevel)
     end
 end

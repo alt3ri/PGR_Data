@@ -1,4 +1,5 @@
-local XUiGridCharacter = require("XUi/XUiCharacter/XUiGridCharacter")
+local XUiGridCharacter = require("XUi/XUiCharacter/XUiGridCharacter")
+---@class XUiGridCharacterCareer : XUiNode
 local XUiGridCharacterCareer = XClass(XUiNode, "XUiGridCharacterCareer")
 
 function XUiGridCharacterCareer:OnStart()

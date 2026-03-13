@@ -1,7 +1,7 @@
-local XRedPointConditionLuckyTenant2 = {}
+local XRedPointConditionLuckyTenant = {}
 
-function XRedPointConditionLuckyTenant2.Check()
+function XRedPointConditionLuckyTenant.Check()
     return XMVCA.XLuckyTenant:IsShowRedDot()
 end
 
-return XRedPointConditionLuckyTenant2
+return XRedPointConditionLuckyTenant

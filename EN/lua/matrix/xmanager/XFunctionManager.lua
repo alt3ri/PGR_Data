@@ -277,7 +277,8 @@ XFunctionManager.FunctionName = {
     
     SkyGarden = 20000, --空中花园
     Race = 10354, --赛马
-    FashionSuit = 10496 --涂装套装
+    FashionSuit = 10496, --涂装套装
+    AprilFoolsDayClearOut = 10499, -- 愚人节假界面小活动
 }   
 
 XFunctionManager.FunctionType = {

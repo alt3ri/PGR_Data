@@ -155,9 +155,10 @@ function XUiArenaChapterDetail:_RefreshStageDatail()
     self.TxtTips.text = self._Control:GetAreaStageDescByAreaId(areaId)
     
     -- 显示区域历史最高分（使用当前选中的Buff索引）
-    local currentBuffIndex = self._Control:GetLocalSelectBuffIndex(areaId) or 1
-    self:_UpdateBestRecord(areaId, currentBuffIndex)
     if #stageBuffNameList == 1 then
+        local currentBuffIndex = self._Control:GetLocalSelectBuffIndex(areaId) or 1
+        self:_UpdateBestRecord(areaId, currentBuffIndex)
+        
         self.PanelTitle.gameObject:SetActiveEx(true)
         self.ListTitle.gameObject:SetActiveEx(false)
 
@@ -212,29 +213,56 @@ function XUiArenaChapterDetail:_UpdateBestRecord(areaId, index)
     if not self.TxtBestRecord then
         return
     end
+
+    -- 切换子页签的情况，可能别的在播历史分数动画，先关掉
+    self:StopBestRecordTweenTimer()
     
     local distributeTypeList = self._Control:GetAreaStageDistributeTypeByAreaId(areaId)
     local maxPoint = nil
     local isNewRecord = false
+    local oldMaxPoint = 0
     
     -- 使用index获取DistributeType数组中对应的值
     if distributeTypeList and not XTool.IsTableEmpty(distributeTypeList) then
         local distributeType = distributeTypeList[index]
         if distributeType then
             maxPoint = self._AreaData:GetAreaDistributeMaxPointByDistributeType(distributeType)
-            
-            -- 检查是否是新纪录（通过结算数据判断）
-            local settleData = self._Control:GetSettlePointByDistributeType(distributeType)
-            if settleData and settleData.Point and settleData.OldPoint then
-                if settleData.Point > settleData.OldPoint and settleData.Point > 0 then
+            oldMaxPoint = self._Control:GetOldAreaDistributeMaxPointByDistributeType(distributeType) or 0
+
+            -- 检查是否是新纪录
+            if XTool.IsNumberValidEx(maxPoint) then
+                if maxPoint and maxPoint > oldMaxPoint then
                     isNewRecord = true
+                    
+                    self._Control:UpdateOldAreaDistributeMaxPointByDistributeType(distributeType, maxPoint)
                 end
             end
         end
     end
     
     if maxPoint and maxPoint > 0 then
-        self.TxtBestRecord.text = tostring(maxPoint)
+        if isNewRecord then
+            local diffPoint = maxPoint - oldMaxPoint
+            
+            self:StopBestRecordTweenTimer()
+
+            self._BestRecordTweenTimer = self:Tween(1, function(progress)
+                if XTool.UObjIsNil(self.Transform) or not self.TxtBestRecord then
+                    return
+                end
+
+                -- 计算当前显示的分数（从 旧分数 到目标分数）
+                local currentScore = math.floor(progress * diffPoint) + oldMaxPoint
+                self.TxtBestRecord.text = tostring(currentScore)
+            end, function()
+                -- 动画结束，确保显示最终分数
+                if not XTool.UObjIsNil(self.Transform) and self.TxtBestRecord then
+                    self.TxtBestRecord.text = tostring(maxPoint)
+                end
+            end)
+        else
+            self.TxtBestRecord.text = tostring(maxPoint)
+        end
     else
         self.TxtBestRecord.text = "--"
     end
@@ -242,6 +270,15 @@ function XUiArenaChapterDetail:_UpdateBestRecord(areaId, index)
     -- 显示/隐藏新纪录标记
     if self.TxtNew then
         self.TxtNew.gameObject:SetActiveEx(isNewRecord)
+    end
+end
+
+function XUiArenaChapterDetail:StopBestRecordTweenTimer()
+    if self._BestRecordTweenTimer then
+        XScheduleManager.UnSchedule(self._BestRecordTweenTimer)
+        self:_RemoveTimerIdAndDoCallback(self._BestRecordTweenTimer)
+        
+        self._BestRecordTweenTimer = nil
     end
 end
 

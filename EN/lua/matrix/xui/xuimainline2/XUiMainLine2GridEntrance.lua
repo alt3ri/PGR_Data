@@ -1,5 +1,6 @@
 ---@class XUiMainLine2GridEntrance : XUiNode
 ---@field private _Control XMainLine2Control
+---@field ParentGo CS.UnityEngine.Transform
 local XUiMainLine2GridEntrance = XClass(XUiNode, "XUiMainLine2GridEntrance")
 
 function XUiMainLine2GridEntrance:OnStart(entranceData, chapterId, mainId, parentGo, lineGo, uiName)
@@ -14,6 +15,7 @@ function XUiMainLine2GridEntrance:OnStart(entranceData, chapterId, mainId, paren
     self.UiName = uiName
     self.SubPrefabs = {}
 
+    self:InitViewCenterEffect()
     self:RegisterUiEvents()
 
     -- 缓存关卡Id对应的章节Id
@@ -303,5 +305,23 @@ function XUiMainLine2GridEntrance:CheckReOpenSpecialEffect()
         self:ShowSubPrefab("PanelEffect", true)
     end
 end
+
+--region 特效
+-- 初始化视野中心特效
+function XUiMainLine2GridEntrance:InitViewCenterEffect()
+    for _, stageId in pairs(self.StageIds) do
+        local effectPath = self._Control:GetStageEffectPath(stageId)
+        if not string.IsNilOrEmpty(effectPath) then
+            self.ViewCenterEffectPath = effectPath
+            return
+        end
+    end
+end
+
+-- 获取关卡处于视野中心时显示的特效
+function XUiMainLine2GridEntrance:GetViewCenterEffectPath()
+    return self.ViewCenterEffectPath
+end
+--endregion
 
 return XUiMainLine2GridEntrance

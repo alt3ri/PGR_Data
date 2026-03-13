@@ -129,7 +129,7 @@ function XBigWorldGamePlayAgency:IsInstLevel()
     if not levelId or levelId <= 0 then
         return false
     end
-    
+
     return CS.StatusSyncFight.XLevelConfig.IsInstLevel(levelId)
 end
 
@@ -316,6 +316,8 @@ function XBigWorldGamePlayAgency:OnEventExitFight()
     if not XLoginManager.IsLogin() then
         return
     end
+    XTableManager.ReleaseAll()
+    CS.BinaryManager.ReleaseAllCache()
     self:OnExitFight()
 end
 
@@ -758,7 +760,7 @@ function XBigWorldGamePlayAgency:OnFightGetPerspectiveState(data)
         levelId = data.LevelId
     end
     local isFirstPersonMode = XMVCA.XBigWorldGamePlay:GetCurrentAgency():GetPerspective(levelId) == first
-    
+
     return {
         IsFirstPersonMode = isFirstPersonMode,
         HasData = self:GetCurrentAgency():IsSavePerspective(levelId),
@@ -771,7 +773,7 @@ function XBigWorldGamePlayAgency:OnPerspectiveModeChanged(data)
         return
     end
     local success, isFirst, levelId = data.IsSuccess, data.IsFirstPersonMode, data.LevelId
-    
+
     if not levelId or levelId <= 0 then
         XLog.Error("OnSetFirstPersonMode levelId is invalid: " .. tostring(levelId))
         return

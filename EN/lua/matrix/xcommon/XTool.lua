@@ -17,13 +17,25 @@ XTool = XTool or
             _IsAutoRefreshOnNextFrame = true
         }
 
+XTool.GarbageCollect = function()
+    collectgarbage("collect")
+    CS.UnityEngine.Resources.UnloadUnusedAssets()
+end
+
 XTool.GenTexture2DReleaseManually = function(width, height, textureFormat, mipChain)
     if mipChain == nil then
         mipChain = true
     end
     local tex = CS.UnityEngine.Texture2D(width, height, textureFormat or CS.UnityEngine.TextureFormat.RGBA32, mipChain)
     if XMain.IsDebug then
-        tex.name = string.gsub(debug.traceback(), "\n", " ")
+        local info = debug.getinfo(2)
+        local str
+        if info then
+            str = info.short_src .. " " .. info.currentline
+        else
+            str = "GenTexture2DReleaseManually"
+        end
+        tex.name = str
     end
     return tex
 end

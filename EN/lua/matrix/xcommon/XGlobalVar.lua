@@ -59,6 +59,11 @@ XGlobalVar = {
         DragAnimPanelRightMid       = 40, --主界面拖拽收起【宿舍、公会】
         ClickAnimPanelRightMidSecond= 41, --主界面点击展开【宿舍、公会】
         ClickAnimPanelRightMid      = 42, --主界面点击收起【宿舍、公会】
+
+        BtnUiTaskDaily              = 43, --任务界面点击日常
+        BtnUiTaskWeek               = 44, --任务界面点击周常
+        BtnUiTaskActivity           = 45, --任务界面点击活动
+        BtnUiTaskCanliver           = 46, --任务界面点击勤务
     },
     BtnBuriedSpotTypeLevelTwo = {
         BtnUiPurchaseBtnTabSkip1 = 1,

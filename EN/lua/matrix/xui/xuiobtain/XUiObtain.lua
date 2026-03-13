@@ -126,8 +126,8 @@ function XUiObtain:Layout()
 end
 
 function XUiObtain:Refresh(rewardGoodsList, horizontalNormalizedPosition)
-    rewardGoodsList = XRewardManager.MergeAndSortRewardGoodsList(rewardGoodsList)
-    XUiHelper.CreateTemplates(self, self.Items, rewardGoodsList, XUiGridCommon.New, self.GridCommon, self.PanelContent, function(grid, data)
+    self._RewardGoodsList = XRewardManager.MergeAndSortRewardGoodsList(rewardGoodsList)
+    XUiHelper.CreateTemplates(self, self.Items, self._RewardGoodsList, XUiGridCommon.New, self.GridCommon, self.PanelContent, function(grid, data)
         grid:Refresh(data, nil, nil, false)
         if self.CustomParams.IsShowGridCommonPanelTag then
             grid:SetPanelTag(true)
@@ -158,12 +158,39 @@ function XUiObtain:CheckIsTimelimitGood(rewardGoodsList)
 end
 
 function XUiObtain:Close()
+    self:CheckOpenFashionTip()
     self:EmitSignal("Close")
     XUiObtain.Super.Close(self)
 end
 
 function XUiObtain:PlayAnimationAniObtain()
     self:PlayAnimation("AniObtain")
+end
+
+function XUiObtain:CheckOpenFashionTip()
+    if XTool.IsTableEmpty(self._RewardGoodsList) then
+        return
+    end
+    local rewards = {}
+    for _, reward in pairs(self._RewardGoodsList) do
+        local id, characterId
+        if reward.RewardType == XRewardManager.XRewardType.Fashion then
+            id = reward.TemplateId --TemplateId是Fashion表Id
+            characterId = XDataCenter.FashionManager.GetCharacterId(id)
+        elseif XDataCenter.ItemManager.IsWeaponFashion(reward.TemplateId) then
+            id = XDataCenter.ItemManager.GetWeaponFashionId(reward.TemplateId) --TemplateId是Item表Id，需要转成WeaponFashion表Id
+            local characterIds = XMVCA.XCharacter:GetCharacterIdsByWeaponFashion(id)
+            characterId = characterIds and characterIds[1]
+        end
+        --判断玩家是否拥有该涂装的角色,如果没有则不弹新涂装穿戴的弹窗
+        if characterId and XMVCA.XCharacter:IsOwnCharacter(characterId) then
+            rewards[id] = reward
+        end
+    end
+    if XTool.IsTableEmpty(rewards) then
+        return
+    end
+    XLuaUiManager.Open("UiCommonPopupNewFashion", rewards)
 end
 
 return XUiObtain
