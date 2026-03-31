@@ -170,12 +170,30 @@ function XReCallActivityControl:GetCurInviteInTime()
     return self._Model:GetCurInviteInTime()
 end
 
-function XReCallActivityControl:PlayIdToHexUpper()
-    return string.upper(string.format("%X", XPlayer.Id))
-end
-
 function XReCallActivityControl:OnRelease()
     --XLog.Error("这里执行Control的释放")
+end
+
+function XReCallActivityControl:GetMaxRegressionPlayerMultiRewardCount()
+    local cfg = self._Model:GetCurActivityCfg()
+
+    if cfg then
+        return cfg.MultiRewardCount
+    end
+end
+
+function XReCallActivityControl:GetCurRegressionPlayerMultiRewardCount(stageId)
+    local recallData = self._Model:GetRecallData()
+    
+    if recallData and not XTool.IsTableEmpty(recallData.MultiRewardInfos) then
+        for i, v in pairs(recallData.MultiRewardInfos) do
+            if v.StageId == stageId then
+                return v.GetMultiRewardCount
+            end
+        end
+    end
+    
+    return 0
 end
 
 return XReCallActivityControl

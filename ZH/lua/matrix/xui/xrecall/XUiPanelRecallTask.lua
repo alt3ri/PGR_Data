@@ -1,15 +1,10 @@
-local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
+local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
 ---@class XUiPanelRecallTask
 ---@field _Control XReCallActivityControl
-local XUiPanelRecallTask = XClass(nil, "XUiPanelRecallTask")
+local XUiPanelRecallTask = XClass(XUiNode, "XUiPanelRecallTask")
 local XUiReCallTaskGrid = require("XUi/XReCall/XUiReCallTaskGrid")
 
-function XUiPanelRecallTask:Ctor(ui, parent, control)
-    self.GameObject = ui.gameObject
-    self.Transform = ui.transform
-    self.Parent = parent
-    self._Control = control
-    XTool.InitUiObject(self)
+function XUiPanelRecallTask:OnStart()
     self:InitAutoScript()
 end
 
@@ -37,7 +32,7 @@ function XUiPanelRecallTask:AutoAddListener()
 end
 
 function XUiPanelRecallTask:OnBtnCopyClick()
-    XTool.CopyToClipboard(self._Control:PlayIdToHexUpper())
+    XTool.CopyToClipboard(XMVCA.XReCallActivity:PlayIdToHexUpper())
 end
 
 function XUiPanelRecallTask:Refresh()
@@ -45,7 +40,7 @@ function XUiPanelRecallTask:Refresh()
     self.DynamicTable:SetDataSource(self.Tasks)
     self.DynamicTable:ReloadDataASync()
     self.GridNewbieTaskItem.gameObject:SetActiveEx(false)
-    self.CodeText.text = CS.XTextManager.GetText("HoldRegressionInviteCode",self._Control:PlayIdToHexUpper())
+    self.CodeText.text = CS.XTextManager.GetText("HoldRegressionInviteCode", XMVCA.XReCallActivity:PlayIdToHexUpper())
     self.InviteCountText.text = CS.XTextManager.GetText("HoldRegressionInvitenumber",self._Control:GetInviteCount())
 end
 

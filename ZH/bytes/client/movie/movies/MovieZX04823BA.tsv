@@ -1,0 +1,63 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1026.jpg'}
+2	2		401							{1: '1', 2: '5029'}
+3	3		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront22.png', 4: '5'}
+4	4		109	1						{1: '1', 2: '<size=60>告别了她最为重要的人，</size>', 3: '-350', 4: '50', 6: '1', 7: '1', 9: '3'}
+5	5		109	1			AniZhuanchangBegin			{1: '2', 2: '<size=60>露西亚踏进了漫长的牢笼起点。</size>', 3: '-350', 4: '-50', 6: '1', 7: '1', 9: '3'}
+6	6		301			DialogDisable				{3: '告别了她最为重要的人，露西亚踏进了漫长的牢笼起点。'}
+7	7		110							
+8	8		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront22.png', 4: '5', 5: '1'}
+9	9		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+10	10		401							{1: '2', 2: '4278'}
+11	11		105			AniZhuanchangEnd				{1: 'Assets/Product/Ui/Spine/2-15Spine/ActivityLuxiya/UimovieActivityLuxiya.prefab'}
+12	12		301			DialogEnable				{3: '从“未来的信息”中，她窥见过自己站在裂隙前的身影，她知道在那9个未来中，这是一条损失最小的路。'}
+13	13		301				AniZhuanchangBegin			{3: '即使如此，这条路的终点依然存在分歧。'}
+14	14		502							{1: 'DialogDisable'}
+15	15		105							
+16	16		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+17	17		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '3'}
+18	18		401							{1: '2', 2: '4792'}
+19	19		306							{1: '1'}
+20	20		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg1701_1.jpg'}
+21	21		301	1		DialogEnable	AniZhuanchangBegin			{3: '她看见过战斗胜利后，两人带着核心回到正确时代和大家团聚的样子。'}
+22	22		502						400.0	{1: 'DialogDisable'}
+23	23		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+24	24		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '3'}
+25	25		401							{1: '2', 2: '4792'}
+26	26		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgCg/Cg109_1.jpg'}
+27	27		301	1		DialogEnable	AniZhuanchangBegin			{3: '也看到过她未能守住这三十余年，导致世界一片混乱的样子。'}
+28	28		502						400.0	{1: 'DialogDisable'}
+29	29		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+30	30		306							
+31	31		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab', 2: '3'}
+32	32		504							{1: '0.8', 2: '999'}
+33	33		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1012.jpg'}
+34	34		301			DialogEnable	AniZhuanchangBegin			{3: '更多的……是返回异聚塔后，和冯·内古特反复战斗并被他击败的样子。'}
+35	35		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab'}
+36	36		504							
+37	37		105							{1: 'Assets/Product/Ui/Spine/2-15Spine/ActivityLuxiya/UimovieActivityLuxiya.prefab'}
+38	38		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1026.jpg'}
+39	39		301			AniZhuanchangEnd				{2: '露西亚', 3: '…………'}
+40	40		301							{3: '——指挥官平安回去了吗？'}
+41	41		301							{3: '——得到治疗了吗？'}
+42	42		301							{3: '——在没有柯蕾多尔阻挠的情况下和丽芙还有里汇合了吗？'}
+43	43		301							{3: '这些问题她都得不到答案，而这份忐忑还将持续很久很久。'}
+44	44		301							{3: '如果在这漫长的三十余年中，她没能坚持下去，辜负了所有人的期待，又该怎么面对自己？'}
+45	45		301							{3: '可还有什么办法？如果没有人来复原被荼毒的过去，那个人所能到达的“现在”也会荡然无存。'}
+46	46		301							{3: '——就当是放手一搏吧。'}
+47	47		301							{3: '她和指挥官已经在摸索中找到了损失最小的路，应该为此庆幸。'}
+48	48		301							{2: '露西亚', 3: '…………'}
+49	49		401							{1: '2', 2: '2936'}
+50	50		301							{3: '露西亚取出怀中的四叶草折纸，放在手心摩挲，向徒刑的终点祈盼着一份奇迹。'}
+51	51		301							{2: '露西亚', 3: '……无论发生了什么，灰鸦都会再次聚到一起。'}
+52	52		301							{3: '她看着四叶草折纸，把这句话说给自己听。'}
+53	53		301							{3: '她需要相信这句话，必须得相信还有属于奇迹的可能性。'}
+54	54		301				AniZhuanchangBegin			{2: '露西亚', 3: '…………'}
+55	55		105			DialogDisable				
+56	56		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}
+57	57		502						1500.0	{1: 'RImgBg1BlowUp'}
+58	58		109	1						{1: '1', 2: '<size=60>与此同时，她也做好了准备。</size>', 3: '0', 6: '1', 7: '1', 9: '3'}
+59	59		109	1						{1: '1', 2: '<size=60>无论如何，都要履行最后的约定——</size>', 3: '0', 4: '70', 6: '1', 7: '1', 9: '3'}
+60	60		301							{3: '与此同时，她也做好了准备。无论如何，都要履行最后的约定——'}
+61	61		109	1						{1: '2', 2: '<size=60>把核心送还回去。</size>', 3: '0', 4: '-30', 6: '1', 7: '1', 9: '3'}
+62	62		301		1		AniZhuanchangBegin			{3: '把核心送还回去。'}

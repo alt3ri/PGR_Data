@@ -191,7 +191,6 @@ end
 function XLevelScript9002:OnUpdatePhase(dt)
     --当前关卡阶段需要一直执行的逻辑在这里实现（一般在这里跳转关卡阶段
     if self._currentPhase == Phase.Start then  
-
         self._playerNpcContainer:Init()         --从系统层获取playerNpcList
         self:InitialPlayerSet()                 -- 从playerNpcContainer获取:self._playerNpcList
         if #self._playerNpcList == 1 then                                                                --判断是否是单人进入，用完结列表长度进行判断
@@ -367,9 +366,11 @@ function XLevelScript9002:CheckLevelEnd() --检查关卡结束
         if self:CheckAllPlayerDead() then
             self._isPlayerWin = false                               --玩家失败传参修改
             self._isFinishFight = true
-            self:SetMonsterHasLostLife(self.monster_UUID)
             self._proxy:SetLevelMemoryInt(133027,0)  --是否胜利黑板值传值
-            self._proxy:ApplyMagic(self.monster_UUID,self.monster_UUID,9001022)--玩家死了BOSS锁血
+            if self._proxy:CheckNpc(self.monster_UUID) == true then
+                self:SetMonsterHasLostLife(self.monster_UUID)
+                self._proxy:ApplyMagic(self.monster_UUID,self.monster_UUID,9001022)--玩家死了BOSS锁血
+            end
             XLog.Debug("检测到所有玩家死亡")
             self._audioPlayer:PlayAudioFightLose()
             self._eventRecord:SetResultData(self._proxy)--传值
@@ -385,10 +386,8 @@ function XLevelScript9002:LevelEnd(isPlayerWin)
     if not self._hasSettleLevel then
         self._hasSettleLevel = true
         self.isLeveEnd = true
-        self._eventRecord:Destory()
         self._proxy:FinishFight() --仅客户端完成战斗
     end
-    
 end
 function XLevelScript9002:SetMonsterHasLostLife(monsterId)--传值怪物损失百分比血量，用于失败结算给部分经验值
     local _monsterLostLifePersent = 1.0
@@ -410,7 +409,7 @@ function XLevelScript9002:InitialPlayerSet(npc, index)
 end
 
 function XLevelScript9002:Terminate() --脚本结束逻辑（脚本被卸载、Npc死亡、关卡结束......）
-
+    self._eventRecord:Destory()
 end
 
 return XLevelScript9002

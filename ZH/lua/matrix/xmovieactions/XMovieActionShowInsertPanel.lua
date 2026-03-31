@@ -20,9 +20,7 @@ function XMovieActionShowInsertPanel:OnUndo()
 end
 
 function XMovieActionShowInsertPanel:IsPassedActionRun(index)
-    local isCover = XDataCenter.MovieManager.IsBehindPassedActionCover(index, function(action)
-        return self:IsActionCover(action)
-    end)
+    local isCover = XDataCenter.MovieManager.IsBehindPassedActionCover(index)
     return not isCover
 end
 
@@ -32,7 +30,7 @@ end
 
 -- 传入Action是否可覆盖当前Action的UI显示，可覆盖则OnPassedActionRun不用再刷新UI界面
 ---@param action XMovieActionBase
-function XMovieActionShowInsertPanel:IsActionCover(action)
+function XMovieActionShowInsertPanel:IsPassedActionCovered(action)
     if action:GetType() == self:GetType() then 
         return self.Direction == action:GetDirection()
     elseif action:GetType() == XMVCA.XMovie.EnumConst.ACTION_TYPE.INSERT_PANEL_HIDE then

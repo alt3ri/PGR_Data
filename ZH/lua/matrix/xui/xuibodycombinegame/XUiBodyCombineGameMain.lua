@@ -1,7 +1,8 @@
 ---==============================
-   ---@desc: 关卡入口按钮
+---@desc: 关卡入口按钮
 ---==============================
-local XUiButtonGrid = XClass(nil, "XUiButtonGrid")
+---@class XUiButtonGrid: XUiNode
+local XUiButtonGrid = XClass(XUiNode, "XUiButtonGrid")
 --关卡状态
 local StageState    = XDataCenter.BodyCombineGameManager.StageState
 --解锁的状态
@@ -12,9 +13,9 @@ local Color = {
     White = "white",
 }
 
-function XUiButtonGrid:Ctor(ui, stageId)
+function XUiButtonGrid:OnStart(stageId)
     
-    XTool.InitUiObjectByUi(self, ui)
+    -- XTool.InitUiObjectByUi(self, ui)
     
     self.Stage = XDataCenter.BodyCombineGameManager.GetStage(stageId)
     
@@ -37,8 +38,8 @@ function XUiButtonGrid:InitUI(stageId)
     local stageName = self.Stage:GetStageName()
     self.TxtComeLevelTittle.text = stageName
     self.TxtLockLevelTittle.text = stageName
-
-    self.RedPointId = XRedPointManager.AddRedPointEvent(self.Button, self.OnCheckButtonRedPoint, self, {
+    
+    self.RedPointId = self:AddRedPointEvent(self.Button, self.OnCheckButtonRedPoint, self, {
         XRedPointConditions.Types.CONDITION_BODYCOMBINEGAME_UNLOCKED_STAGE,
     }, stageId, false)
 end
@@ -76,32 +77,39 @@ end
 
 
 function XUiButtonGrid:AddListener()
-    self.Button.CallBack = function()
-        if self.State == StageState.Lock then
-            local stageId = self.Stage:GetStageId()
-            local lockState = XDataCenter.BodyCombineGameManager.GetLockState(stageId)
-            if lockState == LockState.Unlocked then
-                return
-            elseif lockState == LockState.NoPassPreStage then
-                local preStageId = self.Stage:GetPreStageId()
-                local stage = XDataCenter.BodyCombineGameManager.GetStage(preStageId)
-                local txt = CSXTextManagerGetText("BodyCombineGameLock1Tips", stage and stage:GetStageName() or "")
-                XUiManager.TipError(txt)
-                return
-            elseif lockState == LockState.NoEnoughCoin then
-                local cost = self.Stage and self.Stage:GetCost() or 0
-                local itemId = XDataCenter.BodyCombineGameManager.GetCoinItemId()
-                local itemName = XDataCenter.ItemManager.GetItemName(itemId)
-                local txt = CSXTextManagerGetText("BodyCombineGameLock2Tips", itemName, cost, itemName)
-                XUiManager.TipError(txt)
-                return
-            else
-                XDataCenter.BodyCombineGameManager.BodyCombineUnlockRequest(stageId, handler(self, self.RefreshState))
-            end
+    self.Button:AddEventListener(handler(self, self.OnBtnClickEvent))
+end
+
+function XUiButtonGrid:OnBtnClickEvent()
+    if self.State == StageState.Lock then
+        local stageId = self.Stage:GetStageId()
+        local lockState = XDataCenter.BodyCombineGameManager.GetLockState(stageId)
+        if lockState == LockState.Unlocked then
+            return
+        elseif lockState == LockState.NoPassPreStage then
+            local preStageId = self.Stage:GetPreStageId()
+            local stage = XDataCenter.BodyCombineGameManager.GetStage(preStageId)
+            local txt = CSXTextManagerGetText("BodyCombineGameLock1Tips", stage and stage:GetStageName() or "")
+            XUiManager.TipError(txt)
+            return
+        elseif lockState == LockState.NoEnoughCoin then
+            local cost = self.Stage and self.Stage:GetCost() or 0
+            local itemId = XDataCenter.BodyCombineGameManager.GetCoinItemId()
+            local itemName = XDataCenter.ItemManager.GetItemName(itemId)
+            local txt = CSXTextManagerGetText("BodyCombineGameLock2Tips", itemName, cost, itemName)
+            XUiManager.TipError(txt)
+            return
+        else
+            XDataCenter.BodyCombineGameManager.BodyCombineUnlockRequest(stageId, handler(self, self.RefreshState))
         end
+    end
+    if self.Parent then
+        self.Parent:PlayAnimationWithMask("Disable", function()
+            XLuaUiManager.Open("UiBodyCombineGamePlay", self.Stage)
+        end)
+    else
         XLuaUiManager.Open("UiBodyCombineGamePlay", self.Stage)
     end
-    
 end
 
 function XUiButtonGrid:OnCheckButtonRedPoint(count)
@@ -113,6 +121,7 @@ end
 --===========================================================================
  ---@desc 接头霸王小游戏主界面
 --===========================================================================
+---@class XUiBodyCombineGameMain: XLuaUi
 local XUiBodyCombineGameMain = XLuaUiManager.Register(XLuaUi, "UiBodyCombineGameMain")
 
 local Stage_Members = 4 -- 关卡数量
@@ -129,7 +138,7 @@ function XUiBodyCombineGameMain:OnStart()
     
     self.RImgTittle:SetRawImage(XDataCenter.BodyCombineGameManager.GetActivityTitle())
 
-    self.TreasureRedDot = XRedPointManager.AddRedPointEvent(self.BtnTreasure, self.OnCheckTreasureRedPoint, self, {
+    self.TreasureRedDot = self:AddRedPointEvent(self.BtnTreasure, self.OnCheckTreasureRedPoint, self, {
         XRedPointConditions.Types.CONDITION_BODYCOMBINEGAME_REWARD,
     })
 end
@@ -192,7 +201,7 @@ function XUiBodyCombineGameMain:RefreshStageButton()
             if not stageId then
                 goto Continue
             end
-            btnStage = XUiButtonGrid.New(self["PanelLevel"..idx], stageId)
+            btnStage = XUiButtonGrid.New(self["PanelLevel"..idx], self, stageId)
             self["StageButton"..idx] = btnStage
         end
         if not btnStage then

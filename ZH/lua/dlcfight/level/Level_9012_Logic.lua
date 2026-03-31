@@ -137,18 +137,18 @@ function XLevelScript9012:OnUpdatePhase(dt)
     elseif self._currentPhase == Phase.Show then   
              self:SetPhase(Phase.Battle)                   --跳转到战斗阶段
     elseif self._currentPhase == Phase.Battle then
-        ------超时判负---------------
-        if self._levelTime >= (self.LimitTime) then        
-            XLog.Debug("战斗超时，判负处理")
-            self._isPlayerWin = false
-            self._isFinishFight = true
-            self._proxy:SetLevelMemoryInt(40001,100)
-            self:SetPhase(Phase.LosedStart)                                     --失败流程
-        elseif self._levelTime >= (self.LimitTime - 11) then 
-            XLog.Debug("超时倒计时")
-            self._proxy:SetLevelMemoryInt(60001,math.floor(self._levelTime))
-            self._proxy:SetLevelMemoryInt(40001,200)
-        end
+        -- ------超时判负---------------
+        -- if self._levelTime >= (self.LimitTime) then        
+        --     XLog.Debug("战斗超时，判负处理")
+        --     self._isPlayerWin = false
+        --     self._isFinishFight = true
+        --     self._proxy:SetLevelMemoryInt(40001,100)
+        --     self:SetPhase(Phase.LosedStart)                                     --失败流程
+        -- elseif self._levelTime >= (self.LimitTime - 11) then 
+        --     XLog.Debug("超时倒计时")
+        --     self._proxy:SetLevelMemoryInt(60001,math.floor(self._levelTime))
+        --     self._proxy:SetLevelMemoryInt(40001,200)
+        -- end
         ------正常胜负判断---------------
         self:CheckLevelEnd()                                                        --检测关卡结束
         self.resetDamageTime = 10 - math.floor( self._levelTime - self._finalDamageTime )
@@ -248,7 +248,6 @@ end
 
 function XLevelScript9012:LevelEnd(isPlayerWin)
     if not self._hasSettleLevel then
-        
         self._hasSettleLevel = true
         self.isLeveEnd = true
         self._proxy:FinishFight() --仅客户端完成战斗

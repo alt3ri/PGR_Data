@@ -53,6 +53,21 @@ end
 --- @param varType @ 同步变量类型
 --- @return bool @ 是否已经存在于服务器
 function XFastBlackboard:InitBBSyncVar(key, varType, initValue)
+    if initValue == nil then
+        if varType == XFastBlackboard.ESyncVarType.Boolean then
+            initValue = false
+        elseif varType == XFastBlackboard.ESyncVarType.Integer then
+            initValue = 0
+        elseif varType == XFastBlackboard.ESyncVarType.Float then
+            initValue = 0
+        elseif varType == XFastBlackboard.ESyncVarType.Vector2 then
+            initValue = { x = 0, y = 0 }
+        elseif varType == XFastBlackboard.ESyncVarType.Vector3 then
+            initValue = { x = 0, y = 0, z = 0 }
+        end
+    end
+    self._syncVarLocalVals[key] = { value = initValue, type = varType }
+
     local hasSyncVar, val = self:GetSyncVarInternal(key, true)
 
     if hasSyncVar then
@@ -62,27 +77,11 @@ function XFastBlackboard:InitBBSyncVar(key, varType, initValue)
         return true
     else
         -- 没黑板键，执行注册
-
-        if initValue == nil then
-            if varType == XFastBlackboard.ESyncVarType.Boolean then
-                initValue = false
-            elseif varType == XFastBlackboard.ESyncVarType.Integer then
-                initValue = 0
-            elseif varType == XFastBlackboard.ESyncVarType.Float then
-                initValue = 0
-            elseif varType == XFastBlackboard.ESyncVarType.Vector2 then
-                initValue = { x = 0, y = 0 }
-            elseif varType == XFastBlackboard.ESyncVarType.Vector3 then
-                initValue = { x = 0, y = 0, z = 0 }
-            end
-        end
-
         if initValue == nil then
             XLog.Error(string.format("[XFastBlackboard][%s]: 尝试使用不存在或者不支持的类型进行黑板键注册", self._name))
             return false
         end
 
-        self._syncVarLocalVals[key] = { value = initValue, type = varType }
         self:RegBBSyncVar(key)
         self:SetSyncVar(key, initValue)
         self:TryLogDebug(string.format("注册黑板键[%d(%s)], 值为[%s]", key, self:BBVarTypeToString(self._syncVarLocalVals[key].type), tostring(initValue)))

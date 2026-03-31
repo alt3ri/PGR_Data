@@ -286,7 +286,7 @@ function XTheatre5BattleAgencyCom:RequestTheatre5NormalSettle(result, summaryDat
                 self._Model.PVERougeData:UpdatePveStoryLine(autoChessResult.PveStoryLineData)     --章节结束
             end
             self._Model.CurAdventureData:HandleAutoChessGameplayResult(autoChessResult)
-            
+
             -- 战斗校验结果
             if XTool.IsNumberValid(autoChessResult.CheckFailTimes) and autoChessResult.CheckFailTimes > self._Model.CurAdventureData:GetCheckFailTimes() then
                 local limit = self._Model:GetTheatre5ConfigValByKey('BattleCheckFailTimesLimit')
@@ -299,8 +299,8 @@ function XTheatre5BattleAgencyCom:RequestTheatre5NormalSettle(result, summaryDat
                     end
 
                     self._OwnerAgency:TryPopupDialogWithOneBtn(XUiHelper.GetText("TipTitle"),
-                            self._Model:GetTheatre5ClientConfigText('BattleCheckFailEndGameTips'),
-                            nil, finalSettleFunc, nil, nil, true)
+                        self._Model:GetTheatre5ClientConfigText('BattleCheckFailEndGameTips'),
+                        nil, finalSettleFunc, nil, nil, true)
                 else
                     local restartFunc = function()
                         if self:_CheckPVPTimeEndInSettle() then
@@ -328,8 +328,8 @@ function XTheatre5BattleAgencyCom:RequestTheatre5NormalSettle(result, summaryDat
                     end
 
                     self._OwnerAgency:TryPopupDialog(XUiHelper.GetText("TipTitle"),
-                            self._Model:GetTheatre5ClientConfigText('BattleCheckFailRestartTips'),
-                            nil, restartFunc, finalSettleFunc, nil, nil, true)
+                        self._Model:GetTheatre5ClientConfigText('BattleCheckFailRestartTips'),
+                        nil, restartFunc, finalSettleFunc, nil, nil, true)
                 end
 
                 -- 校验失败
@@ -345,6 +345,10 @@ function XTheatre5BattleAgencyCom:RequestTheatre5NormalSettle(result, summaryDat
             if res.DlcFightSettleData and res.DlcFightSettleData.ResultData and res.DlcFightSettleData.ResultData.IsPlayerWin then
                 battleStatus = XMVCA.XTheatre5.EnumConst.PlayStatus.PveEveHandle
             end
+        elseif self._Model:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVP then
+            if res.DlcFightSettleData and res.DlcFightSettleData.XAutoChessGameplayResult and res.DlcFightSettleData.XAutoChessGameplayResult.IsPvpExtraChoice then
+                battleStatus = XMVCA.XTheatre5.EnumConst.PlayStatus.PvpExtraChoice
+            end
         end
         self._Model.CurAdventureData:UpdateCurPlayStatus(battleStatus)
 
@@ -352,6 +356,49 @@ function XTheatre5BattleAgencyCom:RequestTheatre5NormalSettle(result, summaryDat
             cb(true)
         end
     end, true)
+end
+
+--- 加时赛选择
+---@param isExtra boolean 是否选择加时赛
+function XTheatre5BattleAgencyCom:RequestTheatre5SettleExtraChoice(isExtra, cb)
+    if self:_CheckPVPTimeEndInSettle() then
+        return
+    end
+
+    local requestData = {
+        IsExtra = isExtra
+    }
+
+    XNetwork.Call("Theatre5SettleExtraChoiceRequest", requestData, function(res)
+        if res.Code ~= XCode.Success then
+            XUiManager.TipCode(res.Code)
+            self:_CheckPVPTimeEndInSettle()
+            if cb then
+                cb(false)
+            end
+            return
+        end
+
+        self._Model.CurAdventureData:UpdateCurPlayStatus(XMVCA.XTheatre5.EnumConst.PlayStatus.BattleFinish)
+        if res.SettleResult then
+            ---@type XAutoChessGameplayResult
+            local autoChessResult = res.SettleResult
+            self._Model.CurAdventureData:UpdateHealth(autoChessResult.Health)
+            self._Model.CurAdventureData:UpdateRoundNum(autoChessResult.RoundNum)
+
+            if not XTool.IsTableEmpty(autoChessResult.CommonFightCnt) then
+                self._Model:SetCharacterWinGameCountData(autoChessResult.CommonFightCnt)
+            end
+
+            if self._Model:GetCurPlayingMode() == XMVCA.XTheatre5.EnumConst.GameMode.PVP then
+                self._OwnerAgency:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_COMMON_BATTLE_SETTLE, autoChessResult)
+            end
+            self._Model.CurAdventureData:HandleAutoChessGameplayResult(autoChessResult)
+        end
+        if cb then
+            cb(true, res)
+        end
+    end)
 end
 
 --- 请求匹配
@@ -626,9 +673,9 @@ function XTheatre5BattleAgencyCom:_GetXAutoChessData(autoChessDataServer, isDebu
                                 local changeValue = fixVal + baseAttrValue * rateVal / 10000 + specificVal * specificRateVal / 10000
                                 if autoChessData.Attribs:ContainsKey(attrType) then
                                     autoChessData.Attribs[attrType] = autoChessData.Attribs[attrType] + changeValue
-                            else
-                                autoChessData.Attribs:Add(attrType, changeValue)
-                            end
+                                else
+                                    autoChessData.Attribs:Add(attrType, changeValue)
+                                end
                             end
                         end
                     end
@@ -785,7 +832,7 @@ function XTheatre5BattleAgencyCom:_GetXFightClientArgs()
     args.InterruptFightCb = function(result, summary)
         self:RequestTheatre5NormalSettle(result, summary)
     end
-    
+
     args.ExitFightCb = function()
         if XMain.IsEditorDebug then
             XLog.Debug('退出战斗回调')
@@ -821,4 +868,4 @@ function XTheatre5BattleAgencyCom:_CheckPVPTimeEndInSettle(inBattle)
     return false
 end
 
-return XTheatre5BattleAgencyCom
+return XTheatre5BattleAgencyCom

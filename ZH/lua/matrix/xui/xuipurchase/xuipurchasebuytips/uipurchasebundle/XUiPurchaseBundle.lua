@@ -168,11 +168,17 @@ function XUiPurchaseBundle:BeforeBuyFunc(realBuyFunc)
     if self._Data.MainComboData then
         -- 是子包
         -- 提示引导玩家可以购买捆绑包
-        XLuaUiManager.Open('UiPurchaseDialog', function()
+
+        -- 新增判断，如果父捆绑包没有折扣，则不引导买捆绑包
+        if self._Data.MainComboData.Price == self._Data.MainComboData.OriginalPrice then
             realBuyFunc()
-        end, function()
-            XEventManager.DispatchEvent(XEventId.EVENT_PURCHASE_SELECT_COMBO_MAIN)
-        end)
+        else
+             XLuaUiManager.Open('UiPurchaseDialog', function()
+                realBuyFunc()
+            end, function()
+                XEventManager.DispatchEvent(XEventId.EVENT_PURCHASE_SELECT_COMBO_MAIN)
+            end)
+        end
     else
         -- 是捆绑包
         -- 替代作为实际购买的逻辑

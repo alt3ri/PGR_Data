@@ -1,0 +1,18 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '203'}
+3	3		302							{2: '我们到哪了？', 3: '4'}
+4	4		301							{2: '飞行员', 3: '我们现在在马六甲海峡的上空，马上就到舞明市！'}
+5	5		301				AniZhuanchangBegin			{3: '随着飞行员的话语，在远方的海天线上出现了城市的轮廓。'}
+6	6		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory3.jpg'}
+7	7		301			AniZhuanchangEnd				{3: '舞明市，33600常驻人口，是航线上重要的补给点之一。'}
+8	8		301							{3: '这足以让舞明的市长先生闻到空中花园的味道了。'}
+9	9		301				AniZhuanchangBegin			{3: '于是它出现在了哈桑议长列出的据点名单上。'}
+10	10		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory160.png'}
+11	12		301			AniZhuanchangEnd				{2: '市长', 3: '欢迎来到舞明市！'}
+12	13		302							{2: '直入主题', 3: '14'}
+13	14		301							{2: '市长', 3: '……你们真的愿意帮我们？'}
+14	15		302							{2: '是的', 3: '16'}
+15	16		301							{2: '市长', 3: '那现在就开始吧。'}
+16	17		301							{2: '市长', 3: '事实上，因为舞明市的过滤塔故障，城墙附近已经开始发现游荡的感染体了。'}
+17	18		301		1		AniZhuanchangBegin			{2: '市长', 3: '各位可以沿着出城的路线搜索清扫。'}

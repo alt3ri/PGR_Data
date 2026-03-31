@@ -1,0 +1,207 @@
+Role	Layer	State	Target	TransitionDuration
+Mo1JiuhucheMd010001			Born	
+Mo1JiuhucheMd010001			Stand1	0.1
+Mo1JiuhucheMd010001			Stand2	0.1
+Mo1JiuhucheMd010001			Stand3	0.1
+Mo1JiuhucheMd010001			Death	0.1
+Mo1JiuhucheMd010001			Standchange	0.1
+Mo1JiuhucheMd010001			Run	0.1
+Mo1JiuhucheMd010001			Walk	0.1
+Mo1JiuhucheMd010001			Runb	0.2
+Mo1JiuhucheMd010001			Runl	0.2
+Mo1JiuhucheMd010001			Runr	0.2
+Mo1JiuhucheMd010001			Walkb	0.1
+Mo1JiuhucheMd010001			Walkl	0.1
+Mo1JiuhucheMd010001			Walkr	0.1
+Mo1JiuhucheMd010001			TurnLeft	0.1
+Mo1JiuhucheMd010001			TurnRight	0.1
+Mo1JiuhucheMd010001			Move1	0.1
+Mo1JiuhucheMd010001			Move2	0.1
+Mo1JiuhucheMd010001			Move3	0.1
+Mo1JiuhucheMd010001			RunStart	0.1
+Mo1JiuhucheMd010001			RunStartEnd01	0.1
+Mo1JiuhucheMd010001			Hit1	0.05
+Mo1JiuhucheMd010001			Hit2	0.05
+Mo1JiuhucheMd010001			Hit3	0.05
+Mo1JiuhucheMd010001			Hit4	0.05
+Mo1JiuhucheMd010001			Behitfly	0.05
+Mo1JiuhucheMd010001			Hoverhit	0.05
+Mo1JiuhucheMd010001			Falldown	0.1
+Mo1JiuhucheMd010001			Hitdown	0.05
+Mo1JiuhucheMd010001			Lieonfloor	0.1
+Mo1JiuhucheMd010001			Standup	0.1
+Mo1JiuhucheMd010001			Straight	0.1
+Mo1JiuhucheMd010001			Stun	0.1
+Mo1JiuhucheMd010001			StraightBefore	0.1
+Mo1JiuhucheMd010001			StraightAfter	0.1
+Mo1JiuhucheMd010001			Win	
+Mo1JiuhucheMd010001			Win2	0.1
+Mo1JiuhucheMd010001			Stop	0.1
+Mo1JiuhucheMd010001			Fail	0.1
+Mo1JiuhucheMd010001			Save	0.1
+Mo1JiuhucheMd010001			Caught	0.1
+Mo1JiuhucheMd010001			RunStartEnd02	0.1
+Mo1JiuhucheMd010001			StopR	0.1
+Mo1JiuhucheMd010001		Stand1	Run	0.2
+Mo1JiuhucheMd010001		Stand1	Walk	0.1
+Mo1JiuhucheMd010001		Stand2	Standchange	0.1
+Mo1JiuhucheMd010001		Stand2	Run	0.2
+Mo1JiuhucheMd010001		Stand2	Walk	0.3
+Mo1JiuhucheMd010001		Stand2	Walkb	0.3
+Mo1JiuhucheMd010001		Stand2	Walkl	0.3
+Mo1JiuhucheMd010001		Stand2	Walkr	0.3
+Mo1JiuhucheMd010001		Standchange	Stand1	0.1
+Mo1JiuhucheMd010001		Standchange	Run	0.1
+Mo1JiuhucheMd010001		Standchange	Walk	0.1
+Mo1JiuhucheMd010001		Run	Stop	0.2
+Mo1JiuhucheMd010001		Run	Stand2	0.2
+Mo1JiuhucheMd010001		Run	Runb	0.2
+Mo1JiuhucheMd010001		Run	Runl	0.2
+Mo1JiuhucheMd010001		Run	Runr	0.2
+Mo1JiuhucheMd010001		Walk	Stand2	0.1
+Mo1JiuhucheMd010001		Runb	Stand2	0.2
+Mo1JiuhucheMd010001		Runb	Run	0.2
+Mo1JiuhucheMd010001		Runb	Runl	0.2
+Mo1JiuhucheMd010001		Runb	Runr	0.2
+Mo1JiuhucheMd010001		Runl	Stand2	0.2
+Mo1JiuhucheMd010001		Runl	Run	0.2
+Mo1JiuhucheMd010001		Runl	Runb	0.2
+Mo1JiuhucheMd010001		Runl	Runr	0.2
+Mo1JiuhucheMd010001		Runr	Stand2	0.2
+Mo1JiuhucheMd010001		Runr	Run	0.2
+Mo1JiuhucheMd010001		Runr	Runb	0.2
+Mo1JiuhucheMd010001		Runr	Runl	0.2
+Mo1JiuhucheMd010001		Walkb	Stand2	0.1
+Mo1JiuhucheMd010001		Walkb	Walk	0.2
+Mo1JiuhucheMd010001		Walkb	Walkl	0.1
+Mo1JiuhucheMd010001		Walkb	Walkr	0.1
+Mo1JiuhucheMd010001		Walkl	Stand2	0.1
+Mo1JiuhucheMd010001		Walkl	Walk	0.1
+Mo1JiuhucheMd010001		Walkl	Walkb	0.1
+Mo1JiuhucheMd010001		Walkl	Walkr	0.2
+Mo1JiuhucheMd010001		Walkr	Stand2	0.1
+Mo1JiuhucheMd010001		Walkr	Walk	0.1
+Mo1JiuhucheMd010001		Walkr	Walkb	0.1
+Mo1JiuhucheMd010001		Walkr	Walkl	0.2
+Mo1JiuhucheMd010001		TurnLeft	Stand2	0.1
+Mo1JiuhucheMd010001		TurnRight	Stand2	0.1
+Mo1JiuhucheMd010001		RunStart	Run	0.1
+Mo1JiuhucheMd010001		RunStart	RunStartEnd01	0.1
+Mo1JiuhucheMd010001		Hit1	Stand2	
+Mo1JiuhucheMd010001		Hit2	Stand2	
+Mo1JiuhucheMd010001		Hit3	Stand2	
+Mo1JiuhucheMd010001		Hit4	Stand2	
+Mo1JiuhucheMd010001		Behitfly	Hoverhit	0.1
+Mo1JiuhucheMd010001		Behitfly	Falldown	0.1
+Mo1JiuhucheMd010001		Hoverhit	Falldown	0.1
+Mo1JiuhucheMd010001		Falldown	Lieonfloor	0.1
+Mo1JiuhucheMd010001		Hitdown	Lieonfloor	0.1
+Mo1JiuhucheMd010001		Standup	Stand2	0.1
+Mo1JiuhucheMd010001		Straight	Stand2	0.1
+Mo1JiuhucheMd010001		Stun	Stand2	0.1
+Mo1JiuhucheMd010001		Win	Win2	0.1
+Mo1JiuhucheMd010001		Stop	Stand2	0.1
+Mo1JiuhucheMd010001		Caught	Stand2	0.1
+Mo1JiuhucheMd010001	1		Born	
+Mo1JiuhucheMd010001	1		Stand1	0.1
+Mo1JiuhucheMd010001	1		Stand2	0.1
+Mo1JiuhucheMd010001	1		Stand3	0.1
+Mo1JiuhucheMd010001	1		Death	0.1
+Mo1JiuhucheMd010001	1		Standchange	0.1
+Mo1JiuhucheMd010001	1		Run	0.1
+Mo1JiuhucheMd010001	1		Walk	0.1
+Mo1JiuhucheMd010001	1		Runb	0.2
+Mo1JiuhucheMd010001	1		Runl	0.2
+Mo1JiuhucheMd010001	1		Runr	0.2
+Mo1JiuhucheMd010001	1		Walkb	0.1
+Mo1JiuhucheMd010001	1		Walkl	0.1
+Mo1JiuhucheMd010001	1		Walkr	0.1
+Mo1JiuhucheMd010001	1		TurnLeft	0.1
+Mo1JiuhucheMd010001	1		TurnRight	0.1
+Mo1JiuhucheMd010001	1		Move1	0.1
+Mo1JiuhucheMd010001	1		Move2	0.1
+Mo1JiuhucheMd010001	1		Move3	0.1
+Mo1JiuhucheMd010001	1		RunStart	0.1
+Mo1JiuhucheMd010001	1		RunStartEnd01	0.1
+Mo1JiuhucheMd010001	1		Hit1	0.05
+Mo1JiuhucheMd010001	1		Hit2	0.05
+Mo1JiuhucheMd010001	1		Hit3	0.05
+Mo1JiuhucheMd010001	1		Hit4	0.05
+Mo1JiuhucheMd010001	1		Behitfly	0.05
+Mo1JiuhucheMd010001	1		Hoverhit	0.05
+Mo1JiuhucheMd010001	1		Falldown	0.1
+Mo1JiuhucheMd010001	1		Hitdown	0.05
+Mo1JiuhucheMd010001	1		Lieonfloor	0.1
+Mo1JiuhucheMd010001	1		Standup	0.1
+Mo1JiuhucheMd010001	1		Straight	0.1
+Mo1JiuhucheMd010001	1		Stun	0.1
+Mo1JiuhucheMd010001	1		StraightBefore	0.1
+Mo1JiuhucheMd010001	1		StraightAfter	0.1
+Mo1JiuhucheMd010001	1		Win	
+Mo1JiuhucheMd010001	1		Win2	0.1
+Mo1JiuhucheMd010001	1		Stop	0.1
+Mo1JiuhucheMd010001	1		Fail	0.1
+Mo1JiuhucheMd010001	1		Save	0.1
+Mo1JiuhucheMd010001	1		Caught	0.1
+Mo1JiuhucheMd010001	1		RunStartEnd02	0.1
+Mo1JiuhucheMd010001	1		StopR	0.1
+Mo1JiuhucheMd010001	1	Stand1	Run	0.2
+Mo1JiuhucheMd010001	1	Stand1	Walk	0.1
+Mo1JiuhucheMd010001	1	Stand2	Standchange	0.1
+Mo1JiuhucheMd010001	1	Stand2	Run	0.2
+Mo1JiuhucheMd010001	1	Stand2	Walk	0.3
+Mo1JiuhucheMd010001	1	Stand2	Walkb	0.3
+Mo1JiuhucheMd010001	1	Stand2	Walkl	0.3
+Mo1JiuhucheMd010001	1	Stand2	Walkr	0.3
+Mo1JiuhucheMd010001	1	Standchange	Stand1	0.1
+Mo1JiuhucheMd010001	1	Standchange	Run	0.1
+Mo1JiuhucheMd010001	1	Standchange	Walk	0.1
+Mo1JiuhucheMd010001	1	Run	Stop	0.2
+Mo1JiuhucheMd010001	1	Run	Stand2	0.2
+Mo1JiuhucheMd010001	1	Run	Runb	0.2
+Mo1JiuhucheMd010001	1	Run	Runl	0.2
+Mo1JiuhucheMd010001	1	Run	Runr	0.2
+Mo1JiuhucheMd010001	1	Walk	Stand2	0.1
+Mo1JiuhucheMd010001	1	Runb	Stand2	0.2
+Mo1JiuhucheMd010001	1	Runb	Run	0.2
+Mo1JiuhucheMd010001	1	Runb	Runl	0.2
+Mo1JiuhucheMd010001	1	Runb	Runr	0.2
+Mo1JiuhucheMd010001	1	Runl	Stand2	0.2
+Mo1JiuhucheMd010001	1	Runl	Run	0.2
+Mo1JiuhucheMd010001	1	Runl	Runb	0.2
+Mo1JiuhucheMd010001	1	Runl	Runr	0.2
+Mo1JiuhucheMd010001	1	Runr	Stand2	0.2
+Mo1JiuhucheMd010001	1	Runr	Run	0.2
+Mo1JiuhucheMd010001	1	Runr	Runb	0.2
+Mo1JiuhucheMd010001	1	Runr	Runl	0.2
+Mo1JiuhucheMd010001	1	Walkb	Stand2	0.1
+Mo1JiuhucheMd010001	1	Walkb	Walk	0.2
+Mo1JiuhucheMd010001	1	Walkb	Walkl	0.1
+Mo1JiuhucheMd010001	1	Walkb	Walkr	0.1
+Mo1JiuhucheMd010001	1	Walkl	Stand2	0.1
+Mo1JiuhucheMd010001	1	Walkl	Walk	0.1
+Mo1JiuhucheMd010001	1	Walkl	Walkb	0.1
+Mo1JiuhucheMd010001	1	Walkl	Walkr	0.2
+Mo1JiuhucheMd010001	1	Walkr	Stand2	0.1
+Mo1JiuhucheMd010001	1	Walkr	Walk	0.1
+Mo1JiuhucheMd010001	1	Walkr	Walkb	0.1
+Mo1JiuhucheMd010001	1	Walkr	Walkl	0.2
+Mo1JiuhucheMd010001	1	TurnLeft	Stand2	0.1
+Mo1JiuhucheMd010001	1	TurnRight	Stand2	0.1
+Mo1JiuhucheMd010001	1	RunStart	Run	0.1
+Mo1JiuhucheMd010001	1	RunStart	RunStartEnd01	0.1
+Mo1JiuhucheMd010001	1	Hit1	Stand2	
+Mo1JiuhucheMd010001	1	Hit2	Stand2	
+Mo1JiuhucheMd010001	1	Hit3	Stand2	
+Mo1JiuhucheMd010001	1	Hit4	Stand2	
+Mo1JiuhucheMd010001	1	Behitfly	Hoverhit	0.1
+Mo1JiuhucheMd010001	1	Behitfly	Falldown	0.1
+Mo1JiuhucheMd010001	1	Hoverhit	Falldown	0.1
+Mo1JiuhucheMd010001	1	Falldown	Lieonfloor	0.1
+Mo1JiuhucheMd010001	1	Hitdown	Lieonfloor	0.1
+Mo1JiuhucheMd010001	1	Standup	Stand2	0.1
+Mo1JiuhucheMd010001	1	Straight	Stand2	0.1
+Mo1JiuhucheMd010001	1	Stun	Stand2	0.1
+Mo1JiuhucheMd010001	1	Win	Win2	0.1
+Mo1JiuhucheMd010001	1	Stop	Stand2	0.1
+Mo1JiuhucheMd010001	1	Caught	Stand2	0.1

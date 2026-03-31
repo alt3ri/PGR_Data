@@ -21,7 +21,7 @@ end
 
 function XUiSoloReformChapterKillItem:RefreshKill()
     local score = self._Control:GetKillChapterMaxScore(self._ChapterCfg.Id)
-    self.TxtScoreNone.gameObject:SetActiveEx(not score and self._IsUnlock)
+    self.TxtScoreNone.gameObject:SetActiveEx(not score)
     if score then
         self.BtnGridChapter:SetNameByGroup(2, score)
     else

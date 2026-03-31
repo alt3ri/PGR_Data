@@ -1,0 +1,74 @@
+Role	Layer	State	Target	TransitionDuration
+Mt1SpinesMd000001		AnyState	Born	
+Mt1SpinesMd000001		AnyState	Stand2	
+Mt1SpinesMd000001		AnyState	Stand1	
+Mt1SpinesMd000001		AnyState	Stand3	
+Mt1SpinesMd000001		AnyState	Standchange	
+Mt1SpinesMd000001		AnyState	Run	0.2
+Mt1SpinesMd000001		AnyState	Walk	
+Mt1SpinesMd000001		AnyState	Death	
+Mt1SpinesMd000001		AnyState	Hit1	
+Mt1SpinesMd000001		AnyState	Hit2	
+Mt1SpinesMd000001		AnyState	Behitfly	
+Mt1SpinesMd000001		AnyState	Hoverhit	
+Mt1SpinesMd000001		AnyState	Falldown	0.1
+Mt1SpinesMd000001		AnyState	Hitdown	
+Mt1SpinesMd000001		AnyState	Lieonfloor	
+Mt1SpinesMd000001		AnyState	Standup	
+Mt1SpinesMd000001		AnyState	Straight	
+Mt1SpinesMd000001		AnyState	Stun	0.1
+Mt1SpinesMd000001		AnyState	TurnLeft	
+Mt1SpinesMd000001		AnyState	TurnRight	
+Mt1SpinesMd000001		AnyState	StraightBefore	
+Mt1SpinesMd000001		AnyState	StraightAfter	
+Mt1SpinesMd000001		AnyState	UiStand1	
+Mt1SpinesMd000001		AnyState	Win	
+Mt1SpinesMd000001		AnyState	Win2	
+Mt1SpinesMd000001		AnyState	Runb	0.2
+Mt1SpinesMd000001		AnyState	Runl	
+Mt1SpinesMd000001		AnyState	Runr	
+Mt1SpinesMd000001		AnyState	Attack01	
+Mt1SpinesMd000001		AnyState	Attack02	
+Mt1SpinesMd000001		AnyState	Attack03	
+Mt1SpinesMd000001		AnyState	Move1	
+Mt1SpinesMd000001		AnyState	Move2	
+Mt1SpinesMd000001		AnyState	Move3	
+Mt1SpinesMd000001		Stand2	Standchange	
+Mt1SpinesMd000001		Stand2	Run	0.2
+Mt1SpinesMd000001		Stand2	Walk	
+Mt1SpinesMd000001		Stand1	Run	0.2
+Mt1SpinesMd000001		Stand1	Walk	
+Mt1SpinesMd000001		Standchange	Stand1	
+Mt1SpinesMd000001		Standchange	Run	0.2
+Mt1SpinesMd000001		Standchange	Walk	
+Mt1SpinesMd000001		Run	Stand2	0.3
+Mt1SpinesMd000001		Run	Runb	0.2
+Mt1SpinesMd000001		Run	Runl	
+Mt1SpinesMd000001		Run	Runr	
+Mt1SpinesMd000001		Walk	Stand2	0.3
+Mt1SpinesMd000001		Hit1	Stand2	0.3
+Mt1SpinesMd000001		Hit1	Hit2	
+Mt1SpinesMd000001		Hit2	Stand2	0.3
+Mt1SpinesMd000001		Behitfly	Hoverhit	
+Mt1SpinesMd000001		Behitfly	Falldown	0.1
+Mt1SpinesMd000001		Hoverhit	Falldown	0.1
+Mt1SpinesMd000001		Falldown	Lieonfloor	
+Mt1SpinesMd000001		Hitdown	Lieonfloor	
+Mt1SpinesMd000001		Standup	Stand2	0.3
+Mt1SpinesMd000001		Straight	Stand2	0.3
+Mt1SpinesMd000001		Stun	Stand2	0.1
+Mt1SpinesMd000001		TurnLeft	Stand2	0.3
+Mt1SpinesMd000001		TurnRight	Stand2	0.3
+Mt1SpinesMd000001		Win	Win2	
+Mt1SpinesMd000001		Runb	Stand2	0.2
+Mt1SpinesMd000001		Runb	Run	0.2
+Mt1SpinesMd000001		Runb	Runl	
+Mt1SpinesMd000001		Runb	Runr	
+Mt1SpinesMd000001		Runl	Stand2	
+Mt1SpinesMd000001		Runl	Run	
+Mt1SpinesMd000001		Runl	Runb	
+Mt1SpinesMd000001		Runl	Runr	
+Mt1SpinesMd000001		Runr	Stand2	
+Mt1SpinesMd000001		Runr	Run	
+Mt1SpinesMd000001		Runr	Runb	
+Mt1SpinesMd000001		Runr	Runl	

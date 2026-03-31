@@ -1,5 +1,5 @@
-local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
-local XUiGridWinRole = require("XUi/XUiSettleWin/XUiGridWinRole")
+local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
+local XUiGridWinRole = require("XUi/XUiSettleWin/XUiGridWinRole")
 local XUiPanelExpBar = require("XUi/XUiSettleWinMainLine/XUiPanelExpBar")
 local XUiGridRewardLine = require("XUi/XUiFubenRepeatchallenge/XUiGridRewardLine")
 
@@ -201,7 +201,7 @@ function XUiRepeatChallengeSettleWin:OnDynamicTableEvent(event, index, grid)
         grid:InitRootUi(self)
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         local rewardGoodsList = self.RewardLineList[index]
-        grid:Refresh(rewardGoodsList, index)
+        grid:Refresh(rewardGoodsList, index, self.StageCfg.StageId)
     end
 end
 

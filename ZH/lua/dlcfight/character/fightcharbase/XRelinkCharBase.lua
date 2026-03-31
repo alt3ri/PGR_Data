@@ -332,7 +332,7 @@ function XRelinkCharBase:InitCV()
     --- 是否在残血状态下
     self._cvIsInLowLifeMode = false
     --- 残血的血量归一化阈值（必须0 - 1）
-    self._cvLowLifeRatioThreshold = 0.3
+    self._cvLowLifeRatioThreshold = 0.5
 
     -- CV 救和被救相关
     --[[
@@ -673,7 +673,7 @@ function XRelinkCharBase:OnFullChainSkillStart(gameplayActive, isInChain, chainR
     end
 
     if chainLevel > 1 then
-        self._proxy:PlayNpcCV(self._uuid, 0, EFightCVAction.ResponseFullChain, EAudioLuaFuncSyncType.All)
+        self._proxy:PlayNpcCV(self._uuid, 0, EFightCVAction.ResponseFullChain, EAudioLuaFuncSyncType.ExcludeScriptController)
     end
 
     self:ControlUltUI(UIControl.Off)
@@ -753,6 +753,17 @@ end
 function XRelinkCharBase:OnNpcReviveEvent(npcUUID, npcPlaceId, npcKind, isPlayer)
     if npcUUID == self._uuid then
         self:OnSelfReviveEvent()
+
+        local template = self._proxy:GetNpcTemplate(self._uuid)
+        if template.Id == 1051 or template.Id == 1056 then
+            if self._proxy:CheckNpcOnAir(self._uuid) then
+                if self._proxy:CheckBuffByKind(self._uuid, 10513101) then
+                    self._proxy:CastAction(self._uuid, 1051057)
+                else
+                    self._proxy:CastAction(self._uuid, 1051010)
+                end
+            end
+        end
     end
 end
 

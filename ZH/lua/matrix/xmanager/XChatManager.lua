@@ -2,6 +2,7 @@ local tableInsert = table.insert
 local ipairs = ipairs
 local ChatChannelType = ChatChannelType
 local CSTime = CS.UnityEngine.Time
+local XDynamicFaceManager = CS.XDynamicFaceManager
 
 XChatManagerCreator = function()
     local XChatManager = {}
@@ -44,6 +45,10 @@ XChatManagerCreator = function()
     local MentorChatContent = ""
     local MentorSaveCount = 0
     local SubManager = {}
+
+    local dynamicFaceDict = {}   -- 动态表情c#对象字典，统一管理
+    local dynamicFaceId = 0      -- 动态表情自增id，返回给使用者
+
     --协议处理
     local MethodName = {
         SendChat = "SendChatRequest",
@@ -306,6 +311,21 @@ XChatManagerCreator = function()
     --=== Emoji ===
     function XChatManager.GetEmojiIcon(emojiId)
         return XChatConfigs.GetEmojiIcon(emojiId)
+    end
+
+    -- 获取表情动图资源 : SpriteAtlas类型
+    function XChatManager.GetEmojiGIFAsset(emojiId)
+        return XChatConfigs.GetEmojiGIFAsset(emojiId)
+    end
+
+    -- 获取表情类型: 1静态 2动态
+    function XChatManager.GetEmojiType(emojiId)
+        return XChatConfigs.GetEmojiType(emojiId)
+    end
+
+    -- 是否是动态表情
+    function XChatManager.IsDynamicEmoji(emojiId)
+        return XChatConfigs.GetEmojiType(emojiId) == XChatConfigs.EmojiType.Dynamic
     end
 
     function XChatManager.GetEmojiQuality()
@@ -1253,10 +1273,21 @@ XChatManagerCreator = function()
 
             ChatChannelInfos = response.ChannelInfos
             local lastIndex = #ChatChannelInfos
+            
+            local inviteChannelId = XMVCA.XReCallActivity:GetCurReCallChatChannelId()
+            
             for index, v in pairs(ChatChannelInfos) do
-                v.ChannelId = v.ChannelId + 1
-                if index == lastIndex then v.IsRecruitChannel = true end
+                -- 招募频道优先，随限时活动开启的回归频道不可覆盖常驻的招募频道
+                if index == lastIndex then
+                    v.IsRecruitChannel = true
+                elseif v.ChannelId == inviteChannelId then
+                    v.IsInviteChannel = true
                 end
+
+                v.ChannelId = v.ChannelId + 1
+            end
+            
+            
             if not XOverseaManager.IsOverSeaRegion() then
                 --收到市网信办举报特殊处理 频道5移除，所有后续频道顺延显示 + 1
                 RecruitChannelId = lastIndex + 1
@@ -1574,6 +1605,38 @@ XChatManagerCreator = function()
 
         return idList
     end
+
+    ------------------------------------------------ 动态表情包相关 start ---------------------------------------------
+    -- 获取动态表情包   （c#层的接口，在lua层封装一层，方便管理）
+    function XChatManager.CreateDynamicFace(imgComponent, emojiId)
+        local gifAsset = XDataCenter.ChatManager.GetEmojiGIFAsset(emojiId)
+        if gifAsset then
+            local dynamicFace = XDynamicFaceManager.Instance:CreateDynamicFace(imgComponent, gifAsset)
+            dynamicFaceId = dynamicFaceId + 1
+            dynamicFaceDict[dynamicFaceId] = dynamicFace
+            return dynamicFaceId
+        end
+    end
+
+    -- 释放动态表情包
+    function XChatManager.ReleaseDynamicFace(dynamicFaceId)
+        if dynamicFaceDict[dynamicFaceId] then
+            XDynamicFaceManager.Instance:ReleaseDynamicFace(dynamicFaceDict[dynamicFaceId])
+            dynamicFaceDict[dynamicFaceId] = nil
+        end
+    end
+
+    -- 设置动态表情包图集
+    function XChatManager.SetDynamicFaceAtlas(dynamicFaceId, emojiId)
+        if dynamicFaceDict[dynamicFaceId] then
+            local gifAsset = XDataCenter.ChatManager.GetEmojiGIFAsset(emojiId)
+            if gifAsset then
+                dynamicFaceDict[dynamicFaceId]:SetAtlas(gifAsset)
+            end
+        end
+    end
+
+    ------------------------------------------------ 动态表情包相关 start ---------------------------------------------
 
     function XChatManager.CheckChatBoardIsLockById(chartBoardId)
         if not ChatBoardData then

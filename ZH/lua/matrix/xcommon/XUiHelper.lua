@@ -1739,6 +1739,29 @@ function XUiHelper.FormatText(str, ...)
     return CS.XStringEx.Format(str, ...)
 end
 
+---更安全的C#的string解析方法
+function XUiHelper.FormatTextEx(str, ...)
+    if string.find(str, '{0}') then
+        if XMain.IsWindowsEditor then
+            local finalText = str
+            
+            local args = { ... }
+
+            xpcall(function()
+                finalText = CS.XStringEx.Format(str, table.unpack(args))
+            end, function(msg)
+                XLog.Error('字符串插值失败，请检查插入的参数及插值位配置：', str, args, msg)
+            end)
+            
+            return finalText
+        else
+            return CS.XStringEx.Format(str, ...)
+        end
+    end
+    
+    return str
+end
+
 function XUiHelper.FormatTextWithSplit(desc, params, separator)
     local args = string.Split(params, separator)
     return XUiHelper.FormatText(desc, table.unpack(args))
@@ -2217,6 +2240,9 @@ end
 function XUiHelper.GetTimeMonthDay(time)
     time = time or XTime.GetServerNowTimestamp()
     local dt = CS.XDateUtil.GetLocalDateTime(time)
+    
+    local timeStr = ""
+    
     if XOverseaManager.IsENRegion() then
         timeStr = string.format("%d/%d", dt.Month, dt.Day)
     else
@@ -2607,6 +2633,21 @@ function XUiHelper.GetDiscountTextV2(discount)
         discount = discount / 10
         local text = tostring(discount) .. XUiHelper.GetText("Snap")
         return text
+    end
+end
+
+-- 研发折扣显示 区分海外国服
+function XUiHelper.GetDiscountTextV3(discount)
+    if XOverseaManager.IsJPRegion() then
+        -- 日服显示 固定的文本
+        return XUiHelper.GetText("SnapLabel")
+    elseif XOverseaManager.IsENRegion() or XOverseaManager.IsKRRegion() then
+        -- 英文服&韩服显示 (100-xx)% off
+        return XUiHelper.GetText("Snap", tostring(100 - discount))
+    else
+         --国服&台服显示 x折 保留小数
+        discount = discount / 10
+        return tostring(discount) .. XUiHelper.GetText("Snap")
     end
 end
 

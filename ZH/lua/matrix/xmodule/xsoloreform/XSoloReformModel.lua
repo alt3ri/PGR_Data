@@ -35,6 +35,7 @@ function XSoloReformModel:UpdateSoloReformData(data)
     if not data then
         return
     end    
+    
     if not XTool.IsTableEmpty(data.SoloReformDataDb) then
         for k, v in pairs(data.SoloReformDataDb) do
             self._SoloReformData[k] = v

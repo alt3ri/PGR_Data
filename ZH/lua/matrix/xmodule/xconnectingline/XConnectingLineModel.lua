@@ -206,6 +206,10 @@ function XConnectingLineModel:GetCurrentStageId()
     return self._CurrentStageId
 end
 
+function XConnectingLineModel:SetCurrentStageId(stageId)
+    self._CurrentStageId = stageId
+end
+
 function XConnectingLineModel:IsChapterUnlock(chapterId)
     local currentChapterId = self:GetCurrentStageChapterId()
     return chapterId <= currentChapterId or currentChapterId == 1
@@ -457,6 +461,17 @@ function XConnectingLineModel:IsChapterJustUnlock(chapterId)
         return true
     end
     return false
+end
+
+function XConnectingLineModel:GetStageListByGameId(gameId)
+    local stageConfigs = self._ConfigUtil:GetByTableKey(TableKey.ConnectingLineStage)
+    local list = {}
+    for i, config in pairs(stageConfigs) do
+        if config.ActivityId == gameId then
+            list[#list + 1] = config
+        end
+    end
+    return list
 end
 
 return XConnectingLineModel

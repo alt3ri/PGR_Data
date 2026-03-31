@@ -18,11 +18,11 @@ end
 
 function XPlanetTalentConfigs.GetFilterName(talentCardFilter)
     if talentCardFilter == XPlanetTalentConfigs.TalentCardFilter.All then
-        return "全部"
+        return ""
     elseif talentCardFilter == XPlanetTalentConfigs.TalentCardFilter.Build then
-        return "建筑"
+        return ""
     elseif talentCardFilter == XPlanetTalentConfigs.TalentCardFilter.Floor then
-        return "地板"
+        return ""
     end
 end
 

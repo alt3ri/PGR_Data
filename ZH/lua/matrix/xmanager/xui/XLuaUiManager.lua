@@ -58,11 +58,19 @@ function XLuaUiManager.New(uiName, uiProxy)
     end
 
     if not class then
-        baseName = string.match(baseName, "%w*[^(%d)$*]") -- 解析包含数字后缀的界面
-        class = ClassType[baseName]
-        if not class then
-            XLog.Error("XLuaUiManager.New error, class not exist, name: " .. uiName)
-            return nil
+        if XMain.IsEditorDebug and uiName == "UiLaunch" then
+            local ui = require("XLaunchUi/XLaunchUi")()
+            ui:Ctor(uiName, uiProxy)
+            ui:SetDowloadTest()
+            uiProxy:SetLuaTable(ui)
+            return ui
+        else
+            baseName = string.match(baseName, "%w*[^(%d)$*]") -- 解析包含数字后缀的界面
+            class = ClassType[baseName]
+            if not class then
+                XLog.Error("XLuaUiManager.New error, class not exist, name: " .. uiName)
+                return nil
+            end
         end
     end
     local obj = class.New(uiName, uiProxy)

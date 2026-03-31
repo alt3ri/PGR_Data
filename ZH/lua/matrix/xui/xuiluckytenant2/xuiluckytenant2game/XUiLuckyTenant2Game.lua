@@ -61,6 +61,7 @@ function XUiLuckyTenant2Game:Ctor()
 
     -- 分数动画相关
     self._IsPlayingPieceScoreAnimation = false -- 是否正在播放分数动画
+    self._TempScoreIncrement = 0               -- 暂存分数量，用于分数增量动画
     self._AccumulatedScoreForAnimation = 0     -- 动画过程中的累计分数
     self._BaseScoreForAnimation = 0            -- 动画开始前的基准分数
     self._AnimationLevelLastTriggered = 0      -- 飘字动画已触发的最高等级（1/2/3），仅等级2/3时播放TxtTargetScoreEnable
@@ -589,6 +590,7 @@ function XUiLuckyTenant2Game:UpdateInfo()
         return
     end
 
+    self._TempScoreIncrement = 0
     self:SetScore(data.Score)
     self:SetAddScore(data.AddScore)
     self:SetDeleteCoin(data.DeleteCoin)
@@ -1016,6 +1018,18 @@ function XUiLuckyTenant2Game:PlayAnimationGetScore(x, y, value, duration, callba
 
             if callback then
                 callback()
+            end
+
+            -- 分数增量动画
+            self._TempScoreIncrement = self._TempScoreIncrement + math.ceil(value)
+            local data = self:GetUiData()
+            if data then
+                local currentScore = (data.Score or 0) + self._TempScoreIncrement
+                local targetQuestScore = self._Control:GetTargetQuestScore()
+                self.TxtTargetScore.text = tostring(currentScore) .. "/" .. tostring(targetQuestScore)
+                local fillAmount = targetQuestScore > 0 and (currentScore / targetQuestScore) or 0
+                fillAmount = math.max(0, math.min(1, fillAmount)) -- 限制在 0-1 之间
+                self.ImgBarScore.fillAmount = fillAmount
             end
         end)
     else

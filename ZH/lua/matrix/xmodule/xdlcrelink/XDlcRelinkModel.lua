@@ -34,10 +34,6 @@ local DlcRelinkTableKey = {
     },
     DlcRelinkBossSkillDesc = { DirPath = XConfigUtil.DirectoryType.Client, },
     DlcRelinkEquipSkillFactor = { DirPath = XConfigUtil.DirectoryType.Client, },
-    DlcRelinkWorld = {
-        ReadFunc = XConfigUtil.ReadType.String,
-        DirPath = XConfigUtil.DirectoryType.Client,
-    },
     DlcRelinkMedalTag = {
         DirPath = XConfigUtil.DirectoryType.Client,
     },
@@ -508,55 +504,6 @@ end
 ---@return XTableDlcRelinkEquipSkillFactor
 function XDlcRelinkModel:GetEquipSkillFactorConfig(id)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkEquipSkillFactor, id)
-end
-
---endregion
-
---region World表相关
-
----@return XTableDlcRelinkWorld[]
-function XDlcRelinkModel:GetWorldConfigs()
-    return self._ConfigUtil:GetByTableKey(DlcRelinkTableKey.DlcRelinkWorld)
-end
-
----@return XTableDlcRelinkWorld
-function XDlcRelinkModel:GetWorldConfig(id)
-    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcRelinkTableKey.DlcRelinkWorld, id)
-end
-
-function XDlcRelinkModel:GetWorldIcon(id)
-    local config = self:GetWorldConfig(id)
-    return config and config.Icon or ""
-end
-
-function XDlcRelinkModel:GetWorldSceneUrl(id)
-    local config = self:GetWorldConfig(id)
-    return config and config.SceneUrl or ""
-end
-
-function XDlcRelinkModel:GetWorldSceneModelUrl(id)
-    local config = self:GetWorldConfig(id)
-    return config and config.SceneModelUrl or ""
-end
-
-function XDlcRelinkModel:GetWorldLoadingBackground(id)
-    local config = self:GetWorldConfig(id)
-    return config and config.LoadingBackground or ""
-end
-
-function XDlcRelinkModel:GetWorldArtName(id)
-    local config = self:GetWorldConfig(id)
-    return config and config.ArtName or ""
-end
-
-function XDlcRelinkModel:GetWorldMaskLoadingType(id)
-    local config = self:GetWorldConfig(id)
-    return config and config.MaskLoadingType or ""
-end
-
-function XDlcRelinkModel:GetWorldSettlementUiName(id)
-    local config = self:GetWorldConfig(id)
-    return config and config.SettlementUiName or ""
 end
 
 --endregion

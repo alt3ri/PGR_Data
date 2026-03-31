@@ -13,7 +13,6 @@ function XBountyChallengeControl:OnInit()
     self._ChapterDetail = {
         Name = "",
         DifficultyLevel = 0,
-        Description = "",
         Characters = false,
         BossId = 0,
         TaskList = false,
@@ -219,6 +218,20 @@ function XBountyChallengeControl:GetCurStageIsRobot()
     return self._ChapterDetail.IsRobot
 end
 
+function XBountyChallengeControl:GetBossIndexInTable(bossId)
+    local bossList = self._Main.BossList
+    if #bossList == 0 then
+        self:GetUiMain()
+        bossList = self._Main.BossList
+    end
+    for i = 1, #bossList do
+        if bossList[i].BossId == bossId then
+            return i
+        end
+    end
+    return -1
+end
+
 function XBountyChallengeControl:GetUiChapterDetail()
     local data = self._ChapterDetail
     local bossConfig = self._Model:GetBossConfig(self._SelectedBossId)
@@ -228,8 +241,6 @@ function XBountyChallengeControl:GetUiChapterDetail()
     end
     data.BossId = self._SelectedBossId
     data.Name = bossConfig.Name
-    data.Description = bossConfig.Description
-    data.Icon = bossConfig.Icon3
 
     -- 可上阵角色
     data.Characters = {}
@@ -323,6 +334,7 @@ function XBountyChallengeControl:GetUiChapterDetail()
                     IsPlayAnimation = false,
                     Priority = cfg.Priority,
                     Config = cfg,
+                    Difficulty = cfg.Difficulty
                 }
                 local taskData = XDataCenter.TaskManager.GetTaskDataById(taskId)
                 if taskData then
@@ -510,6 +522,14 @@ function XBountyChallengeControl:GetConfigNum(key, index)
     end
     
     return 0
+end
+
+function XBountyChallengeControl:GetCurrentBossIdAndDifficulty()
+    return self._Model:GetCurrentBossIdAndDifficulty()
+end
+
+function XBountyChallengeControl:GetDifficultyConfigByBossAndLevel(bossId, level)
+    return self._Model:GetDifficultyConfigByBossAndLevel(bossId, level)
 end
 
 return XBountyChallengeControl

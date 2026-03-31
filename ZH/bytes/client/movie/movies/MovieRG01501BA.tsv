@@ -1,0 +1,424 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		306						500.0	{1: '1'}
+3	3		401							{1: '2', 2: '1514'}
+4	4		101				AniZhuanchangEnd			{1: 'Assets/Product/Texture/Image/BgStory/BgStory1092.jpg'}
+5	5		501							{1: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieBgSnow.prefab', 2: '2'}
+6	6		401							{1: '1', 2: '6236'}
+7	7		301			DialogEnable				{3: '在漫长的跋涉之后，终于来到“沙盘”世界的边缘。'}
+8	8		301							{3: '被冰霜和风雪冻住的沉重铁壁横亘在面前，这是沙盘的“高位权限”所设置的，防止沙盘内任何数据逃逸的高墙。'}
+9	9		301							{3: '试图去推开它，但一如以往碰到的那些障碍一样，这个世界的法则在拒绝任何干涉。'}
+10	10		401							{1: '2', 2: '1543'}
+11	11		104							{1: '0|0|-50', 2: '0.3'}
+12	12		301							{3: '但这次，一道温暖的力量从后方伸出，抵上推着铁门的手掌。'}
+13	13		306							
+14	14		201							{1: '18', 2: '501465', 4: '-63', 5: '-247', 6: '10'}
+15	15		301							{1: '1', 2: '？？', 3: '这一定是最后一次了吧。', 4: '18'}
+16	16		202							{1: '18'}
+17	17		104						200.0	{1: '0|0|0', 2: '0.2'}
+18	18		201							{1: '1', 2: '501015', 3: '1'}
+19	19		301							{1: '1', 3: '回过头，那位始终跟随在身边，但从未真正相见的女性正站在身后。'}
+20	20		301							{3: '但那副姿态，却是一直相伴着走来的，最初的模样。'}
+21	21		301							{2: '塔季扬娜投影体', 3: '思考了很久，在最后，还是以我“过去的样子”来与你分别吧。', 4: '1'}
+22	22		204							{1: '1', 2: '4'}
+23	23		301				DialogDisable			{2: '塔季扬娜投影体', 3: '虽然离别让人不舍……但，我也很庆幸正是这样的姿态，才能以“棋子”的形式完成我该做的事。', 4: '1'}
+24	24		306							{1: '1'}
+25	25		401							{1: '2', 2: '1543'}
+26	26		204							{1: '1'}
+27	27		203						550.0	{1: '1', 2: '0.5', 4: '-50', 5: '-100'}
+28	28		401							{1: '2', 2: '4134'}
+29	29		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDust.prefab', 2: '2', 3: '1'}
+30	30		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiSummerSign/FxUiSummerSignLizi02.prefab', 2: '2'}
+31	31		301			DialogEnable				{3: '她握紧了那双被风雪冻僵的手，点点光斑从她体内溢出，化为温暖的力量注入身躯。'}
+32	32		301				DialogDisable			{3: '凭至今与她一路走来的默契，人类明白了这举动所象征的含义。'}
+33	33		306							
+34	34		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiSummerSign/FxUiSummerSignLizi02.prefab'}
+35	35		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDust.prefab', 4: '1'}
+36	36		302							{2: '我本以为，我们还能有更多的时间。', 3: '37', 4: '……我们会在沙盘外再次相遇的。', 5: '37'}
+37	37		204							{1: '1', 2: '1'}
+38	38		301			DialogEnable				{2: '塔季扬娜投影体', 3: '别露出这样的表情啊，我也……很想再留在你身边多一会儿。', 4: '1'}
+39	39		301							{3: '她笑了，澄澈的瞳孔中却隐隐闪烁着水光。'}
+40	40		204							{1: '1', 2: '8'}
+41	41		301							{2: '塔季扬娜投影体', 3: '虽然好不容易才追上你的脚步，马上却要这样分别让我很不甘心。', 4: '1'}
+42	42		204							{1: '1'}
+43	43		301							{2: '塔季扬娜投影体', 3: '但……就像当初你为了拯救我而投身于此那样，在“沙盘”之外，也有着你必须要去完成的事吧。', 4: '1'}
+44	44		505							{2: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieBgSnow.prefab'}
+45	45		501							{1: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieBgBlizzard.prefab', 2: '2'}
+46	46		401							{1: '2', 2: '5165'}
+47	47		301							{3: '不知从何处吹来的风，扬起了她金黄色的长发。'}
+48	48		203							{1: '1', 2: '0.5'}
+49	49		301				DialogDisable			{3: '她拉着身侧之人的手，像是要引导其迎着那股风往更深处窥探一样，往前走了一步。'}
+50	50		302							{2: '（跟随她的引导）', 3: '51', 4: '（往前踏出一步）', 5: '51'}
+51	51		401							{1: '2', 2: '1514'}
+52	52		203							{1: '1', 2: '0.5', 4: '-50', 5: '-100'}
+53	53		104						550.0	{1: '0|0|-50', 2: '0.5'}
+54	54		402							{1: '1514'}
+55	55		204							{1: '1', 2: '1'}
+56	56		301			DialogEnable				{2: '塔季扬娜投影体', 3: '所以——往前走吧。', 4: '1'}
+57	57		202							{1: '1'}
+58	58		301				DialogDisable			{3: '风声撕裂了她的声音，身形也在漫天的雪中渐渐纷飞而去。'}
+59	59		505							{2: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieBgBlizzard.prefab'}
+60	60		501							{1: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieBgSnow.prefab', 2: '2'}
+61	61		402							{1: '5165'}
+62	62		401							{1: '2', 2: '2700'}
+63	63		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+64	64		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+65	65		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront119.png', 4: '4'}
+66	66		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront113.png', 4: '6'}
+67	67		104							{1: '-100|0|0', 2: '1', 4: '4'}
+68	68		104						1000.0	{1: '100|0|0', 2: '1', 4: '6'}
+69	69		402							{1: '2700'}
+70	70		301			DialogEnable	DialogDisable			{3: '但那股温暖柔和的力量已经推开了前往未来的门扉。'}
+71	71		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable01.prefab', 2: '1', 5: '1'}
+72	72		511							{1: '1', 2: '0', 3: '300|-10|375', 4: '-47'}
+73	73		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg6001_08.jpg', 3: '0', 4: '0.4', 5: '0.5'}
+74	74		301			DialogEnable	DialogDisable			{3: '在门后宣泄而出的光芒中，似乎隐约看到了耀眼的日光，翠绿的原野——'}
+75	75		401							{1: '2', 2: '4126'}
+76	76		104							{1: '-200|0|0', 2: '1', 4: '4'}
+77	77		104							{1: '200|0|0', 2: '1', 4: '6'}
+78	78		104						500.0	{1: '0|0|-100', 2: '1', 4: '3'}
+79	79		205						500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg6001_08.jpg', 3: '0.4', 4: '0.7', 5: '0.5'}
+80	80		301			DialogEnable	DialogDisable			{3: '而她像是要拥抱春天第一道风的诗人一般，将人类用力地推往了门后的世界。'}
+81	81		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 4: '8'}
+82	82		201						700.0	{1: '19', 2: '501015', 3: '8', 5: '-221', 6: '-328'}
+83	83		204							{1: '19', 2: '1'}
+84	84		109							{1: '1', 2: '<color=#ffffffff><size=60>“去吧，那边才是你该走的路。”</size></color>', 4: '-280'}
+85	85		301							{2: '塔季扬娜投影体', 3: '去吧，那边才是你该走的路。', 4: '19'}
+86	86		505							{2: 'Assets/Product/Ui/Prefab/UiEffect/UiMovie/FxUiMovieBgSnow.prefab'}
+87	87		110							{1: '1'}
+88	88		401							{1: '2', 2: '5702'}
+89	89		203							{1: '19', 2: '1', 4: '-221'}
+90	90		104							{1: '-300|0|0', 2: '1', 4: '4'}
+91	91		104							{1: '300|0|0', 2: '1', 4: '6'}
+92	92		511							{1: '1', 2: '1', 3: '300|-10|-139'}
+93	93		104						500.0	{1: '0|0|-200', 2: '1', 4: '3'}
+94	94		202						200.0	{1: '19'}
+95	95		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 4: '8', 5: '1'}
+96	96		402							{1: '5702'}
+97	97		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg6001_08.jpg', 3: '0.7', 4: '0.4', 5: '0.5'}
+98	98		301			DialogEnable	DialogDisable			{3: '走到耀眼的光芒之中，而她的身影在门后的黑暗之中逐渐隐去。'}
+99	99		307							{1: '这是最后的一次“梦醒”了。', 3: '60'}
+100	100		309	1						{2: '这是最后的一次“梦醒”了。'}
+101	101		307							{2: '1'}
+102	102		201							{1: '18', 2: '501465', 4: '-63', 5: '-247', 6: '10'}
+103	103		301			DialogEnable				{1: '1', 2: '塔季扬娜投影体', 3: '至于另一个“我”，就托付给你了，投影者。', 4: '18'}
+104	104		401							{1: '1', 2: '36'}
+105	105		502							{1: 'DialogDisable'}
+106	106		202							{1: '18', 6: '1'}
+107	107		401							{1: '2', 2: '4387'}
+108	108		104							{1: '-1080|0|0', 2: '1', 4: '4'}
+109	109		104							{1: '1080|0|0', 2: '1', 4: '6'}
+110	110		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable01.prefab', 5: '1'}
+111	111		104						300.0	{1: '0|0|-300', 2: '1', 4: '3'}
+112	112		205						750.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg6001_08.jpg', 3: '0.4', 4: '0', 5: '0.5'}
+113	113		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+114	114		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront119.png', 4: '4', 5: '1'}
+115	115		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront113.png', 4: '6', 5: '1'}
+116	116		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiDiceGame/FxUiDiceGameBg02.prefab', 2: '2'}
+117	117		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg6001_08.jpg', 3: '0', 4: '1', 5: '2'}
+118	118		401							{1: '1', 2: '7103'}
+119	119		104						2050.0	{1: '0|0|-300', 2: '0', 4: '3'}
+120	120		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+121	121		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg6001_08.jpg'}
+122	122		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiRegressionInvitation/FxUiRegressionInvitationShine.prefab', 2: '2'}
+123	123		401							{1: '2', 2: '4276'}
+124	124		104						500.0	{1: '0|0|-300', 2: '0'}
+125	125		104							{1: '0|0|0', 2: '60'}
+126	126		401							{1: '2', 2: '2596'}
+127	127		109							{1: '2', 2: '<color=#ffffffff><size=25>Проснусь. Заря как осень серый дым</size></color>', 4: '300', 9: '3', 11: '1'}
+128	128		109							{1: '3', 2: '<color=#ffffffff><size=60>我于清晨醒来，黎明如坠日昏沉</size></color>', 4: '250', 9: '3', 11: '1'}
+129	129		109							{1: '10', 2: '<color=#212B1B><size=25>Проснусь. Заря как осень серый дым</size></color>', 3: '2', 4: '298', 9: '1', 11: '1'}
+130	130		109						3000.0	{1: '11', 2: '<color=#212B1B><size=60>我于清晨醒来，黎明如坠日昏沉</size></color>', 3: '2', 4: '248', 9: '1', 11: '1'}
+131	131		109							{1: '4', 2: '<color=#ffffffff><size=25>Ветер березы гонит вдаль стеною</size></color>', 4: '150', 9: '3', 11: '1'}
+132	132		109							{1: '5', 2: '<color=#ffffffff><size=60>晨风卷着白桦树向远方奔去</size></color>', 4: '100', 9: '3', 11: '1'}
+133	133		109							{1: '12', 2: '<color=#212B1B><size=25>Ветер березы гонит вдаль стеною</size></color>', 3: '2', 4: '148', 9: '1', 11: '1'}
+134	134		109						3000.0	{1: '13', 2: '<color=#212B1B><size=60>晨风卷着白桦树向远方奔去</size></color>', 3: '2', 4: '98', 9: '1', 11: '1'}
+135	135		109							{1: '6', 2: '<color=#ffffffff><size=25>Ряды берез — летящая в небе пряха</size></color>', 4: '0', 9: '3', 11: '1'}
+136	136		109							{1: '7', 2: '<color=#ffffffff><size=60>挺拔的枝木在空中卷成一排</size></color>', 4: '-50', 9: '3', 11: '1'}
+137	137		109							{1: '14', 2: '<color=#212B1B><size=25>Ряды берез — летящая в небе пряха</size></color>', 3: '2', 4: '-2', 9: '1', 11: '1'}
+138	138		109						3000.0	{1: '15', 2: '<color=#212B1B><size=60>挺拔的枝木在空中卷成一排</size></color>', 3: '2', 4: '-52', 9: '1', 11: '1'}
+139	139		109							{1: '8', 2: '<color=#ffffffff><size=25>Как гроза гонит тележку с соломой</size></color>', 4: '-150', 9: '3', 11: '1'}
+140	140		109							{1: '9', 2: '<color=#ffffffff><size=60>恰似暴雨追赶着载满麦秸的车四处奔窜</size></color>', 4: '-200', 9: '3', 11: '1'}
+141	141		109							{1: '16', 2: '<color=#212B1B><size=25>Как гроза гонит тележку с соломой</size></color>', 3: '2', 4: '-152', 9: '1', 11: '1'}
+142	142		109						3000.0	{1: '17', 2: '<color=#212B1B><size=60>恰似暴雨追赶着载满麦秸的车四处奔窜</size></color>', 3: '2', 4: '-202', 9: '1', 11: '1'}
+143	143		309	1						{2: 'Проснусь. Заря как осень серый дым，\\n我于清晨醒来，黎明如坠日昏沉，\\nВетер березы гонит вдаль стеною.\\n晨风卷着白桦树向远方奔去，\\nРяды берез — летящая в небе пряха，\\n挺拔的枝木在空中卷成一排，\\nКак гроза гонит тележку с соломой.\\n恰似暴雨追赶着载满麦秸的车四处奔窜。'}
+144	144		205							{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 3: '0', 4: '1', 5: '2'}
+145	145		104						1000.0	{1: '0|0|0', 2: '0', 4: '3'}
+146	146		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiRegressionInvitation/FxUiRegressionInvitationShine.prefab'}
+147	147		110						1050.0	
+148	148		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiDiceGame/FxUiDiceGameBg02.prefab'}
+149	149		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+150	150		104				AniZhuanchangBegin			{1: '0|0|0', 2: '0'}
+151	151		205							{1: '1007', 3: '1', 4: '1', 5: '0'}
+152	152		402							{1: '2596'}
+153	153		401						1000.0	{1: '1', 2: '36'}
+154	154		401						1000.0	{1: '2', 2: '2759'}
+155	155		401							{1: '1', 2: '6186'}
+156	156		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory576.jpg'}
+157	157		502							{1: 'DialogEnable'}
+158	158		402							{1: '2759'}
+159	159		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDustLightWall.prefab', 2: '1'}
+160	160		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryFreezeScreen.prefab', 2: '1'}
+161	161		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '3'}
+162	162		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+163	163		301			AniZhuanchangEnd				{3: '在一段短暂的失神后，人类意识朦胧地从被冰霜严封的舱体中醒来。'}
+164	164		306							{1: '1'}
+165	165		111							{2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+166	166		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+167	167		301				DialogDisable			{3: '脑海中仍残留着在迷蒙中所见的那片原野，但来自现实世界的严寒几乎要将躯体刺伤。'}
+168	168		111							{2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest03.prefab'}
+169	169		104							{1: '0|0|-50', 2: '0.3'}
+170	170		401						400.0	{1: '2', 2: '1085'}
+171	171		104						300.0	{1: '0|0|0', 2: '0.3'}
+172	172		301			DialogEnable				{3: '怀揣着那份与梦中之人告别的失落，人类缓缓起身，试图推开那层堆在玻璃舷窗上的积雪，却发现舱体的机械结构因霜冻而无法顺利开启。'}
+173	173		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryFreezeScreen.prefab'}
+174	174		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryFreezeScreenDis.prefab', 2: '2'}
+175	175		301							{3: '正准备另行寻找制动开关，动作却因另一道声音而骤然停住。'}
+176	176		306							
+177	177		301							{2: '？？', 3: '不用那么焦急……'}
+178	178		301							{2: '？？', 3: '一切都已经结束了，你不用急着离开这里。'}
+179	179		401							{1: '2', 2: '1543'}
+180	180		301				AniZhuanchangBegin			{3: '熟悉的嗓音在身边出其不意地响起，随后，指尖传来轻柔的碰触。'}
+181	181		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDustLightWall.prefab'}
+182	182		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg6301_1.jpg'}
+183	183		104							{1: '364|119|-378', 2: '0'}
+184	184		301			AniZhuanchangEnd				{2: '塔季扬娜', 3: '终于……见到你了。'}
+185	185		301							{3: '眼帘中映入曾在梦中的门扉后所见的，那片象征着生机的金黄，随后，是一抹粲然的微笑。'}
+186	186		104							{1: '0|0|0', 2: '20'}
+187	187		301							{3: '那位本以为以失去所有记忆作为代价打开了“门扉”的女性，此刻却在身侧，温柔地注视着自己。'}
+188	188		301							{2: '塔季扬娜', 3: '我也很惊讶……明明已经作出了抹消盘中的一切来破除那堵高墙的选择，但我依然还记得你。'}
+189	189		301							{2: '塔季扬娜', 3: '可能，这一切都是由于你始终没有放弃“寻找”我。'}
+190	190		301				DialogDisable			{3: '来自现实的，暖热的体温贴近了自己身侧。'}
+191	191		306							{1: '1'}
+192	192		504							{1: '0.7', 2: '999', 8: '1'}
+193	193		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '1'}
+194	194		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_42.jpg', 3: '0', 4: '1', 5: '1'}
+195	195		104						1050.0	{1: '0|0|0', 2: '0', 4: '3'}
+196	196		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+197	197		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_42.jpg'}
+198	198		104							{1: '0|0|0', 2: '0'}
+199	199		301			DialogEnable	DialogDisable			{1: '1', 2: '塔季扬娜', 3: '谢谢你，在那个世界里发生的一切，我都“看到”了，那真是一段……非常漫长的旅程。', 4: '18'}
+200	200		205						1050.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg4801_77.jpg', 3: '0', 4: '1', 5: '1'}
+201	201		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+202	202		101						1000.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg4801_77.jpg'}
+203	203		301			DialogEnable	DialogDisable			{1: '1', 2: '塔季扬娜', 3: '在那么长久的时间里，甚至我都会怀疑，自己那段记忆是否真的存在过，那个沙盘里发生的事又多少来源于外部的虚构。', 4: '18'}
+204	204		205						1050.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg5501_15.jpg', 3: '0', 4: '1', 5: '1'}
+205	205		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+206	206		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5501_15.jpg'}
+207	207		301			DialogEnable				{1: '1', 2: '塔季扬娜', 3: '但在那段时间里，是由于始终被你的视线紧紧跟随，我才得以“锚定”我自己的存在。', 4: '18'}
+208	208		301				DialogDisable			{1: '1', 2: '塔季扬娜', 3: '最后……我才能这样与你在现实里相见。', 4: '18'}
+209	209		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+210	210		306							
+211	211		504							{1: '0', 8: '1'}
+212	212		205						1050.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg6301_1.jpg', 3: '0', 4: '1', 5: '1'}
+213	213		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+214	214		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg6301_1.jpg'}
+215	215		302							{2: '你同时拥有着……“两个塔季扬娜”的记忆？', 3: '216'}
+216	216		301			DialogEnable				{2: '塔季扬娜', 3: '嗯。'}
+217	217		202							{1: '18', 6: '1'}
+218	218		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiRegressionInvitation/FxUiRegressionInvitationShine.prefab', 2: '2'}
+219	219		301				DialogDisable			{3: '她枕在盛开的洋甘菊中，而这个陈旧不堪，被植物逐渐侵占的链接舱在她身下，却映衬得像是一片春日的原野。'}
+220	220		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiRegressionInvitation/FxUiRegressionInvitationShine.prefab'}
+221	221		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+222	222		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+223	223		306							{1: '1'}
+224	224		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '1'}
+225	225		201							{1: '1', 2: '501015', 4: '100', 5: '-50', 6: '-200', 7: '1'}
+226	226		201							{1: '15', 2: '501221', 4: '-100', 5: '-50', 7: '1'}
+227	227		401							{1: '2', 2: '558'}
+228	228		205							{1: '1', 3: '0', 4: '0.4', 5: '0'}
+229	229		301			DialogEnable				{1: '1', 2: '塔季扬娜', 3: '我的投影体……不，就叫她“另一位塔季扬娜”吧，本来只是一段从我的回忆里“剪出”的意识。', 4: '18'}
+230	230		301				DialogDisable			{2: '塔季扬娜', 3: '她就是过去的我，也象征着我那段尚还青涩的时光。', 4: '18'}
+231	231		401						200.0	{1: '2', 2: '4219'}
+232	232		205						400.0	{1: '1', 3: '0.4', 4: '0', 5: '0.5'}
+233	233		505						100.0	{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '1'}
+234	234		301			DialogEnable	DialogDisable			{1: '1', 2: '塔季扬娜', 3: '舒尔茨可能是认为，只要抹除了我与你相遇后的记忆，就能完全扼杀我们的意识在沙盘中相聚的可能性。', 4: '18'}
+235	235		202							{1: '15', 6: '1'}
+236	236		306							
+237	237		205						1050.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg6301_1.jpg', 3: '0', 4: '1', 5: '1'}
+238	238		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+239	239		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg6301_1.jpg'}
+240	240		301			DialogEnable				{2: '塔季扬娜', 3: '但……虽然我还不明白你是如何突破这层障碍的，你却做到了。'}
+241	241		301							{2: '塔季扬娜', 3: '你屏除了电子之海中的“杂音”，努力将呼唤带到了我的身边。'}
+242	242		301				DialogDisable			{2: '塔季扬娜', 3: '因为你的声音，我才得以在沉眠中苏醒。'}
+243	243		302							{2: '……我是如何突破……那层障碍的？', 3: '244'}
+244	244		401							{1: '2', 2: '4387'}
+245	245		306							{1: '1'}
+246	246		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+247	247		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1010.jpg'}
+248	248		504							{1: '0.7'}
+249	249		301			DialogEnable	DialogDisable			{3: '听到她的提问，人类试图回忆那曾在“沙盘”中发生过的一切。'}
+250	250		205						1050.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory217.png', 3: '0', 4: '1', 5: '1'}
+251	251		104							{1: '0|0|0', 2: '0', 4: '3'}
+252	252		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+253	253		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory217.png'}
+254	254		205						1050.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory218.png', 3: '0', 4: '1', 5: '1'}
+255	255		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+256	256		101						1000.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory218.png'}
+257	257		205						1050.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory214.png', 3: '0', 4: '1', 5: '1'}
+258	258		205							{1: '999', 3: '1', 4: '1', 5: '0'}
+259	259		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory214.png'}
+260	260		205							{1: '1', 3: '0', 4: '0', 5: '0'}
+261	261		504							{1: '0.7'}
+262	262		301			DialogEnable	DialogDisable			{1: '1', 3: '但奇异的是，虽然仍记得在那片寒境中发生过的林林总总，却唯独想不起来自身是怎么进入那座沙盘的。'}
+263	263		401							{1: '2', 2: '4387'}
+264	264		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+265	265		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1092.jpg'}
+266	266		203							{1: '1', 2: '0', 4: '-50', 5: '-150'}
+267	267		204							{1: '1', 2: '1'}
+268	268		205						550.0	{1: '1', 3: '0', 4: '1', 5: '0'}
+269	269		301			DialogEnable	DialogDisable			{3: '脑海中清晰地记得自身是怎么一步步走到沙盘的边缘，也记得和塔季扬娜的“投影”在沙盘中与自己最后的道别……'}
+270	270		202							{1: '1'}
+271	271		205						1050.0	{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory105.png', 3: '0', 4: '1', 5: '1'}
+272	272		205							{1: '1005', 3: '1', 4: '1', 5: '0'}
+273	273		101						500.0	{1: 'Assets/Product/Texture/Image/BgStory/Bgstory105.png'}
+274	274		104						500.0	{1: '0|0|-100', 2: '1'}
+275	275		205							{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory105.png', 3: '0', 4: '0.3', 5: '0.5'}
+276	276		205							{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory105.png', 3: '0', 4: '0.4', 5: '0.5'}
+277	277		104							{1: '-30|0|-100', 2: '0', 4: '4'}
+278	278		104						1050.0	{1: '30|0|-100', 2: '0', 4: '5'}
+279	279		301			DialogEnable	AniZhuanchangBegin			{3: '但一旦努力试图回忆起自己如何进入“沙盘”的细节，相关的记忆就会开始变得朦胧，仿佛回忆被强行“剪去”了一部分。'}
+280	280		205							{1: '1004', 3: '1', 4: '1', 5: '0'}
+281	281		205							{1: '1005', 3: '1', 4: '1', 5: '0'}
+282	282		104							{1: '0|0|0', 2: '0', 4: '4'}
+283	283		104							{1: '0|0|0', 2: '0', 4: '5'}
+284	284		504							{1: '0'}
+285	285		306							
+286	286		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDustLightWall.prefab', 2: '1'}
+287	287		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory576.jpg'}
+288	288		104							{1: '0|0|0', 2: '0'}
+289	289		201							{1: '1', 2: '501221', 3: '1', 7: '1'}
+290	290		301			AniZhuanchangEnd				{1: '1', 2: '塔季扬娜', 3: '想不起来了？不必忧心，你毕竟刚刚才在沙盘装置之内经历了一场长期的，堪比重构多个时间线的模拟演算。', 4: '1'}
+291	291		204							{1: '1'}
+292	292		301							{2: '塔季扬娜', 3: '过于庞大的“信息”会对大脑造成无法承受的负担，在脱离沙盘的时候，装置应该是帮你主动舍弃了这部分的数据。', 4: '1'}
+293	293		301				DialogDisable			{2: '塔季扬娜', 3: '但我的意识海，能将沙盘内外“两侧”发生的一切，都完整地铭刻下来。', 4: '1'}
+294	294		203						550.0	{1: '1', 2: '0.5', 4: '-20', 5: '-100'}
+295	295		401							{1: '2', 2: '1543'}
+296	296		202						500.0	{1: '1'}
+297	297		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '3'}
+298	298		111						500.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+299	299		111							{2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest01.prefab'}
+300	300		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+301	301		301			DialogEnable				{3: '塔季扬娜轻轻将手放到人类的额头上，视野瞬间变得一片朦胧，但她传递过来的体温却感受得越加清晰。'}
+302	302		201							{1: '18', 2: '501221', 3: '1', 4: '-226', 5: '-287', 6: '274'}
+303	303		301				DialogDisable			{1: '1', 2: '塔季扬娜', 3: '日后，我会将那些故事都尽诉于你的。', 4: '18'}
+304	304		202							{1: '18', 6: '1'}
+305	305		501						3000.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab', 2: '3'}
+306	306		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGoldDustLightWall.prefab'}
+307	307		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab'}
+308	308		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+309	309		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlowlyCloseEye.prefab'}
+310	310		111							{2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest02.prefab'}
+311	311		201							{1: '18', 2: '501221', 3: '1', 4: '-226', 5: '-287', 6: '274'}
+312	312		301			DialogEnable	AniZhuanchangBegin			{1: '1', 2: '塔季扬娜', 3: '现在，你只需要一场好好的休息。', 4: '18'}
+313	313		202							{1: '18', 6: '1'}
+314	314		401				DialogDisable		1000.0	{1: '1', 2: '36'}
+315	315		401							{1: '1', 2: '5061'}
+316	316		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1397.jpg'}
+317	317		107							{1: '新苏菲亚城', 2: '三个月后'}
+318	318		309	1						{2: '三个月后\\n新苏菲亚城'}
+319	319		108						400.0	{1: '1'}
+320	320		201							{1: '1', 2: '501449', 3: '3'}
+321	321		301			DialogEnable				{1: '1', 2: '罗塞塔', 3: '原来如此……你们突然“失踪”的那段时间里，都发生了这样的故事。', 4: '1'}
+322	322		202							{1: '1'}
+323	323		306							{1: '1'}
+324	324		301							{3: '罗塞塔在简短的叙述后，很快便理解了二人在那个装置中经历的一切。'}
+325	325		306							
+326	326		201							{1: '1', 2: '501449', 3: '2'}
+327	327		301							{1: '1', 2: '罗塞塔', 3: '虽然这么说不太妥当，但在那趟旅程里面，你们不止见到了来自“过去”的我，还有新苏菲亚城各种各样的未来……', 4: '1'}
+328	328		204							{1: '1', 2: '1'}
+329	329		301							{2: '罗塞塔', 3: '听着是一趟颇为有趣的经历。', 4: '1'}
+330	330		301							{3: '站在身边的罗塞塔遥遥望向天边的群山，思忖良久之后，说出了下一句话。'}
+331	331		204							{1: '1'}
+332	332		301							{2: '罗塞塔', 3: '那能让我问一个问题吗？', 4: '1'}
+333	333		204							{1: '1', 2: '3'}
+334	334		301							{2: '罗塞塔', 3: '指挥官，在你“见证”到的那么多个未来里面，其中“最好”的可能性，是哪一个？', 4: '1'}
+335	335		302							{2: '这个啊……', 3: '336'}
+336	336		301				DialogDisable			{3: '只略微沉默了片刻，便毫不犹豫地给出了回答。'}
+337	337		302							{2: '至今为止，我从未真正去试图寻求一个“最好”的可能性。', 3: '338'}
+338	338		302				AniZhuanchangBegin			{2: '因为，我们都应该从“当下”中抉择一条，应当继续前进的路。', 3: '339'}
+339	339		202							{1: '1', 6: '1'}
+340	340		401						2000.0	{1: '1', 2: '36'}
+341	341		401							{1: '1', 2: '33'}
+342	342		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1419.jpg'}
+343	343		104							{1: '0|355|0', 2: '0'}
+344	344		304			AniZhuanchangEnd				{1: '新苏菲亚城的先遣队很快就将那座无名实验室调查清楚了，', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront111.png', 6: '1', 7: '-6'}
+345	345		304							{1: '正如舒尔茨在“沙盘”内宣告的那样，这原本只是一座属于“矩阵”计划的格式塔分端，', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront111.png', 6: '1'}
+346	346		304							{1: '在帕弥什爆发之后很快便遭到了废弃。', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront111.png', 6: '1'}
+347	347		304							{1: '在研究室被废弃后，沙盘系统的设计者——那位负责推进“机械角鲸”研究的无名学者——', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront111.png', 6: '1', 7: '-1'}
+348	348		304				AniZhuanchangBegin			{1: '将自己的意识通过链接舱转移到了数据中，试图继续通过无数次演算来寻找挽回自己“错误”的方法。', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront111.png', 6: '1', 8: '1'}
+349	349		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg2601_11.jpg'}
+350	350		104							{1: '576|0|0', 2: '0'}
+351	351		304			AniZhuanchangEnd				{1: '但在近乎永恒的时间后，他绝望了。', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront26.png', 6: '1', 7: '-1'}
+352	352		304							{1: '不论怎么进行演算，极地的生态圈都注定会在数十年后迎来崩溃，', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront26.png', 6: '1', 7: '-1'}
+353	353		304							{1: '而居住在这片大陆上的人类也会面临灭顶之灾——这是“沙盘”系统给出的解答。', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront26.png', 6: '1', 7: '-1'}
+354	354		304							{1: '在确认这个答案无法推翻之后，他选择在沙盘中删除自己的意识数据以完成“自刭”，', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront26.png', 6: '1', 7: '-1'}
+355	355		304				AniZhuanchangBegin			{1: '但在最后，这个学者维持着最后一丝理智向周边发出了警告信号：', 2: 'ffffffff', 4: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront26.png', 6: '1', 7: '-1', 9: '1'}
+356	356		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+357	357		104							{1: '0|0|0', 2: '0'}
+358	358		109			AniZhuanchangEnd			1300.0	{1: '20', 2: '<color=#ff4e4eff><size=45><i>离开极地，那些困于我们手下的造物最终会给我们带来沉重的苦难。</i></size></color>', 4: '100', 6: '1', 7: '1'}
+359	359		109						900.0	{1: '21', 2: '<color=#ff4e4eff><size=45><i>我们永远无法真正掌控一个开始学会自由的灵魂。</i></size></color>', 4: '-30', 6: '1', 7: '1'}
+360	360		309	1			AniZhuanchangBegin			{2: '离开极地，那些困于我们手下的造物最终会给我们带来沉重的苦难。\\n我们永远无法真正掌控一个开始学会自由的灵魂。'}
+361	361		110							
+362	362		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront39.png', 4: '4'}
+363	363		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1010.jpg'}
+364	364		502							{1: 'DialogEnable'}
+365	365		301			AniZhuanchangEnd				{3: '数月前，塔季扬娜在新苏菲亚城的信号塔中接收到了这条警告信息，便决定单独前往此处调查。'}
+366	366		301				AniZhuanchangBegin			{3: '随后她在山上遭遇了一场雪崩，一步步随着舒尔茨的指引踏进其精心布置的圈套之中，这便是那场漫长的“轮回推演”诞生的根由。'}
+367	367		401						1500.0	{1: '1', 2: '36'}
+368	368		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront39.png', 4: '4', 5: '1'}
+369	369		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory576.jpg'}
+370	370		201							{1: '1', 2: '501221', 3: '4', 7: '1'}
+371	371		401							{1: '1', 2: '6224'}
+372	372		301			AniZhuanchangEnd				{1: '1', 2: '塔季扬娜', 3: '但事到如今，有一件事我还是想不明白……', 4: '1'}
+373	373		301							{3: '她站在链接舱前，凝视着舱体内因为感受到春意到来而逐一绽放的洋甘菊。'}
+374	374		204							{1: '1'}
+375	375		301							{2: '塔季扬娜', 3: '在和“沙盘”系统链接之前，我确实见到了舒尔茨描述的那场大雪崩，也得知新苏菲亚城因为那场突如其来的雪灾而濒临崩溃。', 4: '1'}
+376	376		301							{2: '塔季扬娜', 3: '为了在“沙盘”系统中寻求转机，我才会在阅读了那位学者留下的资料之后，选择主动链接到这座终端……', 4: '1'}
+377	377		204							{1: '1', 2: '4'}
+378	378		301							{2: '塔季扬娜', 3: '但在我们脱出这个装置之后，新苏菲亚的人却告诉我，那场雪灾不存在。', 4: '1'}
+379	379		204							{1: '1', 2: '8'}
+380	380		301							{2: '塔季扬娜', 3: '我不认为这是由于意识海偏移产生的记忆误差，但也无法解释这个矛盾。', 4: '1'}
+381	381		204							{1: '1', 2: '4'}
+382	382		301							{2: '塔季扬娜', 3: '除非……', 4: '1'}
+383	383		302							{2: '除非……还有更为“高维”的存在，在干涉这一切？', 3: '384'}
+384	384		306							{1: '1'}
+385	385		301							{3: '不知道为何，脑海中没有根据地冒出了这个称得上是“荒唐”的假设。'}
+386	386		306							
+387	387		204							{1: '1', 2: '8'}
+388	388		401							{1: '2', 2: '1543'}
+389	389		301							{3: '她没有接过这个大胆的猜测，只是摇了摇头。'}
+390	390		204							{1: '1', 2: '1'}
+391	391		301							{2: '塔季扬娜', 3: '如果那种事真的发生了的话，就是一个真正的“奇迹”了。', 4: '1'}
+392	392		301				DialogDisable			{2: '塔季扬娜', 3: '现阶段，还是不要那么轻易地把这种揣测说出口吧。', 4: '1'}
+393	393		202						500.0	{1: '1'}
+394	394		401							{1: '2', 2: '2661'}
+395	395		401						500.0	{1: '1', 2: '36'}
+396	396		502							{1: 'DialogEnable'}
+397	397		301							{3: '啪嗒——'}
+398	398		401							{1: '2', 2: '1516'}
+399	399		201							{1: '1', 2: '500361', 4: '400'}
+400	400		203							{1: '1', 2: '0.5'}
+401	401		401							{1: '1', 2: '7102'}
+402	402		301							{1: '1', 3: '就在二人对话的时候，实验室的门突然被推开，一位满身风雪的年轻研究员抱着一堆残旧档案，狼狈不堪地走了进来。'}
+403	403		402							{1: '1516'}
+404	404		301			PanelActor1Shake				{2: '研究员', 3: '部，部长，我们在研究室里面发现了一份重要的记录…！', 4: '1'}
+405	405		301							{2: '研究员', 3: '虽然现在还不能确认这份记录的真实性，但是，最好还是由你亲自过目一下……', 4: '1'}
+406	406		201							{1: '1', 2: '501221', 3: '4', 7: '1'}
+407	407		301				DialogDisable			{1: '1', 2: '塔季扬娜', 3: '发生什么了？', 4: '1'}
+408	408		401						500.0	{1: '2', 2: '4112'}
+409	409		204							{1: '1', 2: '7'}
+410	410		301			DialogEnable				{3: '塔季扬娜双眉紧蹙，接过研究员递来的纸张，在看到上面印着的字迹之后，瞳孔中的震惊情绪骤然放大。'}
+411	411		301							{2: '塔季扬娜', 3: '【kuroname】……请过来一下。', 4: '1'}
+412	412		401							{1: '2', 2: '4095'}
+413	413		202							{1: '1'}
+414	414		301				DialogDisable			{3: '她将那份泛黄的档案递到视野面前，人类也得以看清了纸张上用铅黑色的油墨所敲出的标题。'}
+415	415		401							{1: '2', 2: '5735'}
+416	416		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront101.png', 4: '4', 6: '8', 7: '-471|-200|-326'}
+417	417		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront43.png', 3: '0', 4: '1', 5: '1'}
+418	419		104						1000.0	{1: '-471|435|-326', 2: '1', 4: '4'}
+419	420		109							{1: '22', 2: '<b><size=45><color=#000000ff>关于</color><color=#ff4e4eff>“永冬”</color><color=#000000ff>拟算现象的观察记录</color></size></b>', 3: '75', 4: '650', 5: '7', 13: '8'}
+420	421		109							{1: '23', 2: '<b><i><color=#000000ff><size=45>与</size></color></i></b>', 3: '80', 4: '570', 5: '7', 13: '8'}
+421	422		109							{1: '24', 2: '<b><color=#000000ff><size=45>地球生态圈跨越既定拟算现象可能性</size></color></b>', 3: '85', 4: '500', 5: '7', 13: '8'}
+422	423		109						1000.0	{1: '25', 2: '<b><color=#000000ff><size=45>的分析性报告</size></color></b>', 3: '90', 4: '420', 5: '7', 13: '8'}
+423	424		309	1	1		AniZhuanchangBegin			{2: '关于<color=#ff4e4eff>“永冬”</color>拟算现象的观察记录\\n与\\n地球生态圈跨越既定拟算现象可能性\\n的分析性报告'}

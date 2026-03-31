@@ -9,4 +9,10 @@ fixquaternion = CS.Mathematics.fixquaternion
 FixParseEx = CS.FixExtension.ParseEx
 FixParse = CS.FixExtension.Parse
 FixToInt = CS.FixExtension.FixToInt
-FixToDouble = CS.FixExtension.FixToDouble
+FixToDouble = CS.FixExtension.FixToDouble
+
+-- 通过RawValue进行操作的接口
+AddFixEx = CS.XTool.AddFixEx
+MultFixEx = CS.XTool.MultFixEx
+DivisionFixEx = CS.XTool.DivisionFixEx
+FixToIntEx = CS.XTool.FixToIntEx

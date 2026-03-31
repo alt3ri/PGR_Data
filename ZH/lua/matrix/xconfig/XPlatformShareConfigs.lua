@@ -9,14 +9,6 @@ XPlatformShareConfigs.PlatformType = {
     Local = 100,
 }
 
-XPlatformShareConfigs.PlatformTypeToHeroSharePlatform = {
-    [XPlatformShareConfigs.PlatformType.QQ] = CS.SharePlatform.QQ,
-    [XPlatformShareConfigs.PlatformType.QQSpace] = CS.SharePlatform.QQ_Space,
-    [XPlatformShareConfigs.PlatformType.WeChat] = CS.SharePlatform.WeChat,
-    [XPlatformShareConfigs.PlatformType.WeChatTimeline] = CS.SharePlatform.WXTimeLine,
-    [XPlatformShareConfigs.PlatformType.Weibo] = CS.SharePlatform.Weibo,
-}
-
 XPlatformShareConfigs.ShareType = {
     Image = 1,
     Link = 2,

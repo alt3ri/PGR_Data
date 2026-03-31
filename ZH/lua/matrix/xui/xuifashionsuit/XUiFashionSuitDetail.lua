@@ -2,6 +2,7 @@
 ---@field _Control XFashionSuitControl
 local XUiFashionSuitDetail = XLuaUiManager.Register(XLuaUi, "UiFashionSuitDetail")
 
+local XUiPanelLackResources = require("XUi/XUiSubPackage/XUiPanel/XUiPanelLackResources")
 local SkipType = XEnumConst.FashionSuit.SkipType
 local CameraIndex = {
     Normal = 1,
@@ -26,6 +27,11 @@ function XUiFashionSuitDetail:OnAwake()
     self.BtnTipsClose.CallBack = handler(self, self.OnBtnTipsCloseClick)
     self.BtnPlay.CallBack = handler(self, self.OnBtnPlayClick)
     XUiHelper.RegisterSliderChangeEvent(self, self.SliderCharacterHight, self.OnSliderCharacterHightChanged)
+
+    -- PanelLackResources 初始化
+    if self.PanelLackResources then
+        self._PanelLackRes = XUiPanelLackResources.New(self.PanelLackResources, self)
+    end
 end
 
 ---@param id number 角色涂装Id、武器涂装Id（WeaponFashion表里的Id，非itemId）
@@ -71,11 +77,13 @@ function XUiFashionSuitDetail:OnEnable()
 
     XEventManager.AddEventListener(XEventId.EVENT_WEAPOM_SYM, self.UpdateBuyBtn, self)
     XEventManager.AddEventListener(XEventId.EVENT_CHARACTER_SYN, self.UpdateBuyBtn, self)
+    XEventManager.AddEventListener(XEventId.EVENT_RES_COMPLETE, self.OnFashionDownloadComplete, self)
 end
 
 function XUiFashionSuitDetail:OnDisable()
     XEventManager.RemoveEventListener(XEventId.EVENT_WEAPOM_SYM, self.UpdateBuyBtn, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_CHARACTER_SYN, self.UpdateBuyBtn, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_RES_COMPLETE, self.OnFashionDownloadComplete, self)
 end
 
 --历史遗留逻辑：XPurchaseManager.ClearData和UiPurchase绑定
@@ -125,6 +133,7 @@ function XUiFashionSuitDetail:UpdateView()
     self:UpdateModel()
     self:UpdateSwitchBtn()
     self:UpdateBuyBtn()
+    self:CheckAndUpdateLackResourcesPanel()
 end
 
 function XUiFashionSuitDetail:UpdateBuyBtn()
@@ -278,6 +287,7 @@ end
 function XUiFashionSuitDetail:InitModelHandler()
     self._FashionModelPos = Vector3(self._SuitConfig.RolePosX, self._SuitConfig.RolePosY, self._SuitConfig.RolePosZ)
     self._WeaponModelPos = Vector3(self._SuitConfig.WeaponPosX, self._SuitConfig.WeaponPosY, self._SuitConfig.WeaponPosZ)
+    self._FashionModleRotation = Vector3(self._SuitConfig.RoleRotationX, self._SuitConfig.RoleRotationY, self._SuitConfig.RoleRotationZ)
     self._UiFashionNearCamAngle = Vector3(2.25, 0, 0)
 
     self._ModelHander = {}
@@ -297,6 +307,7 @@ function XUiFashionSuitDetail:UpdateFashionModel()
     self.UiModelParent.gameObject:SetActiveEx(true)
     self.RoleModelPanel:UpdateCharacterResModel(fashionConfig.ResourcesId, fashionConfig.CharacterId, XModelManager.MODEL_UINAME.XUiFashionSuitDetail, function(model)
         model.transform.localPosition = self._FashionModelPos
+        model.transform.localEulerAngles = self._FashionModleRotation
         if self._IsModelDrag then
             self.PanelDrag.gameObject:SetActiveEx(true)
             self.PanelDrag:GetComponent("XDrag").Target = model.transform
@@ -483,5 +494,44 @@ function XUiFashionSuitDetail:SetGroupSales(isVisible, isEnable)
     self._Helper:SetGroupSales(isOpen)
     self:UpdateView()
 end
+
+--region 资源缺失面板
+
+function XUiFashionSuitDetail:CheckAndUpdateLackResourcesPanel()
+    if not self._PanelLackRes then return end
+    local fashionId = self._Context and self._Context.FashionId
+    if not XTool.IsNumberValid(fashionId) then
+        self._PanelLackRes:Close()
+        self._isFashionLacking = false
+        return
+    end
+    local isDownloaded = XMVCA.XSubPackage:CheckFashionDownloaded(fashionId)
+    if isDownloaded then
+        self._PanelLackRes:Close()
+        self._isFashionLacking = false
+    else
+        local characterId = self._Context and self._Context.CharacterId or 0
+        self._PanelLackRes:SetData(characterId, fashionId)
+        self._PanelLackRes:Open()
+        self._isFashionLacking = true
+    end
+end
+
+function XUiFashionSuitDetail:OnFashionDownloadComplete()
+    if not self._isFashionLacking then
+        self:CheckAndUpdateLackResourcesPanel()
+        return
+    end
+    local fashionId = self._Context and self._Context.FashionId
+    if XTool.IsNumberValid(fashionId)
+       and XMVCA.XSubPackage:CheckFashionDownloaded(fashionId) then
+        self:UpdateModel()
+        local fashionTemplate = XDataCenter.FashionManager.GetFashionTemplate(fashionId)
+        XUiManager.PopupLeftTip(CS.XTextManager.GetText("DownloadFashionFinishedRefresh", fashionTemplate and fashionTemplate.Name or ""))
+    end
+    self:CheckAndUpdateLackResourcesPanel()
+end
+
+--endregion
 
 return XUiFashionSuitDetail

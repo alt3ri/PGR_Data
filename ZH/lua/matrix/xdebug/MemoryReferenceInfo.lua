@@ -245,7 +245,7 @@ local function CollectObjectReferenceInMemory(strName, cObject, cDumpInfoContain
 		cNameInfoContainer[cObject] = strName
 
 		-- Dump table key and value.
-		for k, v in pairs(cObject) do
+		for k, v in next, cObject do
 			-- Check key type.
 			local strKeyType = type(k)
 			if "table" == strKeyType then

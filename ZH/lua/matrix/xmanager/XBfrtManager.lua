@@ -2202,7 +2202,7 @@ XBfrtManagerCreator = function()
         local teamB = groupTeams[indexB]
 
         if not teamA or not teamB then 
-            XUiManager.TipError("交换失败：队伍实例不存在")
+            XUiManager.TipError(CS.XTextManager.GetText("BfrtTeamInstanceNotExist"))
             return 
         end
 

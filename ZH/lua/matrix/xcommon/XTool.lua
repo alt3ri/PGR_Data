@@ -40,6 +40,43 @@ XTool.GenTexture2DReleaseManually = function(width, height, textureFormat, mipCh
     return tex
 end
 
+-- region 下载器测试
+
+-- 下载器测试
+XTool.CreateDownloadManager = function()
+    if CS.XRemoteConfig.IsHaruDownloader then
+        local downloader = CS.XHaruDownloader.XDownloadManager()
+        downloader:Init()
+        return downloader
+    else
+        return CS.XMTDownloadCenter()
+    end
+end
+
+-- 下载器测试任务组
+XTool.CreateDownloadTaskGroup = function(groupId, skipClientCdns, fileDownloadFinishCallback)
+    if CS.XRemoteConfig.IsHaruDownloader then
+        local taskGroup = CS.XHaruDownloader.XDownloadTaskGroup(groupId)
+        taskGroup.NotifyUrlDownloadFinish = fileDownloadFinishCallback
+        return taskGroup
+    else
+        local taskGroup = CS.XMTDownloadTaskGroup(groupId)
+        taskGroup:SetClientCDNsSkip(skipClientCdns or false)
+        return taskGroup
+    end
+end
+
+-- 下载器测试状态
+XTool.GetDownloadStateEnum = function()
+    if CS.XRemoteConfig.IsHaruDownloader then
+        return CS.XHaruDownloader.XDownloadTaskGroupState
+    else
+        return CS.XMTDownloadTaskGroupState
+    end
+end
+
+-- endregion 下载器测试
+
 XTool.UObjIsNil = function(uobj)
     return uobj == nil or not uobj:Exist()
 end
@@ -433,9 +470,15 @@ end
 
 XTool.ReleaseUiObjectIndex = function(tbl)
     if tbl.Obj and tbl.Obj:Exist() then
+        
         local nameList = tbl.Obj.NameList
-        for _, v in pairs(nameList) do
-            tbl[v] = nil
+        --会调用c#的迭代器
+        --for _, v in pairs(nameList) do
+        --    tbl[v] = nil
+        --end
+        for i = 0, nameList.Count - 1 do
+            local k = nameList[i]
+            tbl[k] = nil
         end
         tbl.Obj = nil
     end

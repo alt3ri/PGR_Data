@@ -9,6 +9,11 @@ local XUiPartnerRecommendCharacter = require("XUi/XUiPartner/PartnerCompose/XUiP
 local CSTextManagerGetText = CS.XTextManager.GetText
 local CSUnityEngineGameObject = CS.UnityEngine.GameObject
 local DefaultIndex = 1
+local TagIndexEnum = {
+    All = 1,
+    Normal = 2,
+    Link = 3,
+}
 
 function XUiPartnerMain:OnStart(state, partner, IsNotBackChange, IsNotSelectPartner)
     self.LastPartner = {}
@@ -38,17 +43,17 @@ function XUiPartnerMain:OnStart(state, partner, IsNotBackChange, IsNotSelectPart
     ---@type XUiButtonGroup
     local buttonGroup = self.ListTab
     buttonGroup:InitBtns({ self.BtnAll, self.BtnTag1, self.BtnTag2 }, function(index)
-        if index == 1 then
+        if index == TagIndexEnum.All then
             self.CurPartnerType = XPartnerConfigs.PartnerType.All
             self:ShowPanel()
             return
         end
-        if index == 2 then
+        if index == TagIndexEnum.Normal then
             self.CurPartnerType = XPartnerConfigs.PartnerType.Normal
             self:ShowPanel()
             return
         end
-        if index == 3 then
+        if index == TagIndexEnum.Link then
             self.CurPartnerType = XPartnerConfigs.PartnerType.Link
             self:ShowPanel()
             return
@@ -67,6 +72,13 @@ function XUiPartnerMain:OnEnable()
     self:ChangeUiState(self.CurUiState)
     XEventManager.AddEventListener(XEventId.EVENT_PARTNER_DATAUPDATE, self.UpdatePanelByEvent, self)
     XEventManager.AddEventListener(XEventId.EVENT_PARTNER_SKILLUNLOCK_CLOSERED, self.UpdatePanelByEvent, self)
+    
+    -- 总览页面下每次激活刷新一次联动标签显示
+    if self.CurUiState == XPartnerConfigs.MainUiState.Overview then
+        if self.BtnTag2 then
+            self.BtnTag2.gameObject:SetActiveEx(XDataCenter.PartnerManager.CheckPlayerHasLinkPartner())
+        end
+    end
 end
 
 function XUiPartnerMain:OnDisable()

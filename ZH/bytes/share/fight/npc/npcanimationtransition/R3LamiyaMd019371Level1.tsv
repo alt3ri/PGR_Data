@@ -1,0 +1,999 @@
+Role	Layer	State	Target	TransitionDuration
+R3LamiyaMd019371			Born	
+R3LamiyaMd019371			Stand1	0.1
+R3LamiyaMd019371			Stand2	0.1
+R3LamiyaMd019371			Stand3	0.1
+R3LamiyaMd019371			Death	0.1
+R3LamiyaMd019371			Standchange	0.1
+R3LamiyaMd019371			Run	0.1
+R3LamiyaMd019371			Walk	0.1
+R3LamiyaMd019371			Runb	0.2
+R3LamiyaMd019371			Runl	0.2
+R3LamiyaMd019371			Runr	0.2
+R3LamiyaMd019371			Walkb	0.1
+R3LamiyaMd019371			Walkl	0.1
+R3LamiyaMd019371			Walkr	0.1
+R3LamiyaMd019371			TurnLeft	0.1
+R3LamiyaMd019371			TurnRight	0.1
+R3LamiyaMd019371			Move1	0.1
+R3LamiyaMd019371			Move2	0.1
+R3LamiyaMd019371			Move3	0.1
+R3LamiyaMd019371			RunStart	0.1
+R3LamiyaMd019371			RunStartEnd01	0.1
+R3LamiyaMd019371			Hit1	0.05
+R3LamiyaMd019371			Hit2	0.05
+R3LamiyaMd019371			Hit3	0.05
+R3LamiyaMd019371			Hit4	0.05
+R3LamiyaMd019371			Behitfly	0.05
+R3LamiyaMd019371			Hoverhit	0.05
+R3LamiyaMd019371			Falldown	0.1
+R3LamiyaMd019371			Hitdown	0.05
+R3LamiyaMd019371			Lieonfloor	0.1
+R3LamiyaMd019371			Standup	0.1
+R3LamiyaMd019371			Straight	0.1
+R3LamiyaMd019371			Stun	0.1
+R3LamiyaMd019371			StraightBefore	0.1
+R3LamiyaMd019371			StraightAfter	0.1
+R3LamiyaMd019371			Win	
+R3LamiyaMd019371			Win2	0.1
+R3LamiyaMd019371			Stop	0.1
+R3LamiyaMd019371			Fail	0.1
+R3LamiyaMd019371			Save	0.1
+R3LamiyaMd019371			Caught	0.1
+R3LamiyaMd019371			RunStartEnd02	0.1
+R3LamiyaMd019371			StopR	0.1
+R3LamiyaMd019371			WalkStart	0.1
+R3LamiyaMd019371			WalkStop	0.1
+R3LamiyaMd019371			WalkStartEnd	0.1
+R3LamiyaMd019371			LTurn90	0.1
+R3LamiyaMd019371			LTurn180	0.1
+R3LamiyaMd019371			RTurn90	0.1
+R3LamiyaMd019371			RTurn180	0.1
+R3LamiyaMd019371			Attack01	0.1
+R3LamiyaMd019371			Attack02	0.1
+R3LamiyaMd019371			Attack03	0.1
+R3LamiyaMd019371			Attack04	0.1
+R3LamiyaMd019371			Attack05	0.1
+R3LamiyaMd019371			Attack21	0.1
+R3LamiyaMd019371			Attack31	0.1
+R3LamiyaMd019371			Attack32	0.1
+R3LamiyaMd019371			Attack41	0.1
+R3LamiyaMd019371			Attack42	0.1
+R3LamiyaMd019371			Attack51	0.1
+R3LamiyaMd019371			Attack61	0.1
+R3LamiyaMd019371			Attack90	0.1
+R3LamiyaMd019371			Attack91	0.1
+R3LamiyaMd019371			Attack92	0.1
+R3LamiyaMd019371			Attack93	0.1
+R3LamiyaMd019371			Attack94	0.1
+R3LamiyaMd019371			Attack95	0.1
+R3LamiyaMd019371			Attack96	0.1
+R3LamiyaMd019371			Attack97	0.1
+R3LamiyaMd019371			Attack98	0.1
+R3LamiyaMd019371			Attack99	0.1
+R3LamiyaMd019371			Attack100	0.1
+R3LamiyaMd019371		Stand1	Run	0.2
+R3LamiyaMd019371		Stand1	Walk	0.1
+R3LamiyaMd019371		Stand2	Standchange	0.1
+R3LamiyaMd019371		Stand2	Run	0.2
+R3LamiyaMd019371		Stand2	Walk	0.3
+R3LamiyaMd019371		Stand2	Walkb	0.3
+R3LamiyaMd019371		Stand2	Walkl	0.3
+R3LamiyaMd019371		Stand2	Walkr	0.3
+R3LamiyaMd019371		Standchange	Stand1	0.1
+R3LamiyaMd019371		Standchange	Run	0.1
+R3LamiyaMd019371		Standchange	Walk	0.1
+R3LamiyaMd019371		Run	Stop	0.2
+R3LamiyaMd019371		Run	Stand2	0.2
+R3LamiyaMd019371		Run	Runb	0.2
+R3LamiyaMd019371		Run	Runl	0.2
+R3LamiyaMd019371		Run	Runr	0.2
+R3LamiyaMd019371		Walk	Stand2	0.1
+R3LamiyaMd019371		Runb	Stand2	0.2
+R3LamiyaMd019371		Runb	Run	0.2
+R3LamiyaMd019371		Runb	Runl	0.2
+R3LamiyaMd019371		Runb	Runr	0.2
+R3LamiyaMd019371		Runl	Stand2	0.2
+R3LamiyaMd019371		Runl	Run	0.2
+R3LamiyaMd019371		Runl	Runb	0.2
+R3LamiyaMd019371		Runl	Runr	0.2
+R3LamiyaMd019371		Runr	Stand2	0.2
+R3LamiyaMd019371		Runr	Run	0.2
+R3LamiyaMd019371		Runr	Runb	0.2
+R3LamiyaMd019371		Runr	Runl	0.2
+R3LamiyaMd019371		Walkb	Stand2	0.1
+R3LamiyaMd019371		Walkb	Walk	0.2
+R3LamiyaMd019371		Walkb	Walkl	0.1
+R3LamiyaMd019371		Walkb	Walkr	0.1
+R3LamiyaMd019371		Walkl	Stand2	0.1
+R3LamiyaMd019371		Walkl	Walk	0.1
+R3LamiyaMd019371		Walkl	Walkb	0.1
+R3LamiyaMd019371		Walkl	Walkr	0.2
+R3LamiyaMd019371		Walkr	Stand2	0.1
+R3LamiyaMd019371		Walkr	Walk	0.1
+R3LamiyaMd019371		Walkr	Walkb	0.1
+R3LamiyaMd019371		Walkr	Walkl	0.2
+R3LamiyaMd019371		TurnLeft	Stand2	0.1
+R3LamiyaMd019371		TurnRight	Stand2	0.1
+R3LamiyaMd019371		RunStart	Run	0.1
+R3LamiyaMd019371		RunStart	RunStartEnd01	0.1
+R3LamiyaMd019371		Hit1	Stand2	
+R3LamiyaMd019371		Hit2	Stand2	
+R3LamiyaMd019371		Hit3	Stand2	
+R3LamiyaMd019371		Hit4	Stand2	
+R3LamiyaMd019371		Behitfly	Hoverhit	0.1
+R3LamiyaMd019371		Behitfly	Falldown	0.1
+R3LamiyaMd019371		Hoverhit	Falldown	0.1
+R3LamiyaMd019371		Falldown	Lieonfloor	0.1
+R3LamiyaMd019371		Hitdown	Lieonfloor	0.1
+R3LamiyaMd019371		Standup	Stand2	0.1
+R3LamiyaMd019371		Straight	Stand2	0.1
+R3LamiyaMd019371		Stun	Stand2	0.1
+R3LamiyaMd019371		Win	Win2	0.1
+R3LamiyaMd019371		Stop	Stand2	0.1
+R3LamiyaMd019371		Caught	Stand2	0.1
+R3LamiyaMd019371		WalkStart	Stand2	0.1
+R3LamiyaMd019371		WalkStop	Stand2	0.1
+R3LamiyaMd019371		WalkStartEnd	Stand2	0.1
+R3LamiyaMd019371		LTurn90	Stand2	0.1
+R3LamiyaMd019371		LTurn180	Stand2	0.1
+R3LamiyaMd019371		RTurn90	Stand2	0.1
+R3LamiyaMd019371		RTurn180	Stand2	0.1
+R3LamiyaMd019371	1		Born	
+R3LamiyaMd019371	1		Stand1	0.1
+R3LamiyaMd019371	1		Stand2	0.1
+R3LamiyaMd019371	1		Stand3	0.1
+R3LamiyaMd019371	1		Death	0.1
+R3LamiyaMd019371	1		Standchange	0.1
+R3LamiyaMd019371	1		Run	0.1
+R3LamiyaMd019371	1		Walk	0.1
+R3LamiyaMd019371	1		Runb	0.2
+R3LamiyaMd019371	1		Runl	0.2
+R3LamiyaMd019371	1		Runr	0.2
+R3LamiyaMd019371	1		Walkb	0.1
+R3LamiyaMd019371	1		Walkl	0.1
+R3LamiyaMd019371	1		Walkr	0.1
+R3LamiyaMd019371	1		TurnLeft	0.1
+R3LamiyaMd019371	1		TurnRight	0.1
+R3LamiyaMd019371	1		Move1	0.1
+R3LamiyaMd019371	1		Move2	0.1
+R3LamiyaMd019371	1		Move3	0.1
+R3LamiyaMd019371	1		RunStart	0.1
+R3LamiyaMd019371	1		RunStartEnd01	0.1
+R3LamiyaMd019371	1		Hit1	0.05
+R3LamiyaMd019371	1		Hit2	0.05
+R3LamiyaMd019371	1		Hit3	0.05
+R3LamiyaMd019371	1		Hit4	0.05
+R3LamiyaMd019371	1		Behitfly	0.05
+R3LamiyaMd019371	1		Hoverhit	0.05
+R3LamiyaMd019371	1		Falldown	0.1
+R3LamiyaMd019371	1		Hitdown	0.05
+R3LamiyaMd019371	1		Lieonfloor	0.1
+R3LamiyaMd019371	1		Standup	0.1
+R3LamiyaMd019371	1		Straight	0.1
+R3LamiyaMd019371	1		Stun	0.1
+R3LamiyaMd019371	1		StraightBefore	0.1
+R3LamiyaMd019371	1		StraightAfter	0.1
+R3LamiyaMd019371	1		Win	
+R3LamiyaMd019371	1		Win2	0.1
+R3LamiyaMd019371	1		Stop	0.1
+R3LamiyaMd019371	1		Fail	0.1
+R3LamiyaMd019371	1		Save	0.1
+R3LamiyaMd019371	1		Caught	0.1
+R3LamiyaMd019371	1		RunStartEnd02	0.1
+R3LamiyaMd019371	1		StopR	0.1
+R3LamiyaMd019371	1		WalkStart	0.1
+R3LamiyaMd019371	1		WalkStop	0.1
+R3LamiyaMd019371	1		WalkStartEnd	0.1
+R3LamiyaMd019371	1		LTurn90	0.1
+R3LamiyaMd019371	1		LTurn180	0.1
+R3LamiyaMd019371	1		RTurn90	0.1
+R3LamiyaMd019371	1		RTurn180	0.1
+R3LamiyaMd019371	1		Attack01	0.1
+R3LamiyaMd019371	1		Attack02	0.1
+R3LamiyaMd019371	1		Attack03	0.1
+R3LamiyaMd019371	1		Attack04	0.1
+R3LamiyaMd019371	1		Attack05	0.1
+R3LamiyaMd019371	1		Attack06	0.1
+R3LamiyaMd019371	1		Attack07	0.1
+R3LamiyaMd019371	1		Attack08	0.1
+R3LamiyaMd019371	1		Attack09	0.1
+R3LamiyaMd019371	1		Attack11	0.1
+R3LamiyaMd019371	1		Attack12	0.1
+R3LamiyaMd019371	1		Attack13	0.1
+R3LamiyaMd019371	1		Attack14	0.1
+R3LamiyaMd019371	1		Attack21	0.1
+R3LamiyaMd019371	1		Attack22	0.1
+R3LamiyaMd019371	1		Attack23	0.1
+R3LamiyaMd019371	1		Attack24	0.1
+R3LamiyaMd019371	1		Attack25	0.1
+R3LamiyaMd019371	1		Attack26	0.1
+R3LamiyaMd019371	1		Attack27	0.1
+R3LamiyaMd019371	1		Attack28	0.1
+R3LamiyaMd019371	1		Attack31	0.1
+R3LamiyaMd019371	1		Attack32	0.1
+R3LamiyaMd019371	1		Attack41	0.1
+R3LamiyaMd019371	1		Attack42	0.1
+R3LamiyaMd019371	1		Attack43	0.1
+R3LamiyaMd019371	1		Attack44	0.1
+R3LamiyaMd019371	1		Attack51	0.1
+R3LamiyaMd019371	1		Attack52	0.1
+R3LamiyaMd019371	1		Attack61	0.1
+R3LamiyaMd019371	1		Attack90	0.1
+R3LamiyaMd019371	1		Attack91	0.1
+R3LamiyaMd019371	1		Attack92	0.1
+R3LamiyaMd019371	1		Attack93	0.1
+R3LamiyaMd019371	1		Attack94	0.1
+R3LamiyaMd019371	1		Attack95	0.1
+R3LamiyaMd019371	1		Attack96	0.1
+R3LamiyaMd019371	1		Attack97	0.1
+R3LamiyaMd019371	1		Attack98	0.1
+R3LamiyaMd019371	1		Attack99	0.1
+R3LamiyaMd019371	1		Attack100	0.1
+R3LamiyaMd019371	1	Stand1	Run	0.2
+R3LamiyaMd019371	1	Stand1	Walk	0.1
+R3LamiyaMd019371	1	Stand2	Standchange	0.1
+R3LamiyaMd019371	1	Stand2	Run	0.2
+R3LamiyaMd019371	1	Stand2	Walk	0.3
+R3LamiyaMd019371	1	Stand2	Walkb	0.3
+R3LamiyaMd019371	1	Stand2	Walkl	0.3
+R3LamiyaMd019371	1	Stand2	Walkr	0.3
+R3LamiyaMd019371	1	Standchange	Stand1	0.1
+R3LamiyaMd019371	1	Standchange	Run	0.1
+R3LamiyaMd019371	1	Standchange	Walk	0.1
+R3LamiyaMd019371	1	Run	Stop	0.2
+R3LamiyaMd019371	1	Run	Stand2	0.2
+R3LamiyaMd019371	1	Run	Runb	0.2
+R3LamiyaMd019371	1	Run	Runl	0.2
+R3LamiyaMd019371	1	Run	Runr	0.2
+R3LamiyaMd019371	1	Walk	Stand2	0.1
+R3LamiyaMd019371	1	Runb	Stand2	0.2
+R3LamiyaMd019371	1	Runb	Run	0.2
+R3LamiyaMd019371	1	Runb	Runl	0.2
+R3LamiyaMd019371	1	Runb	Runr	0.2
+R3LamiyaMd019371	1	Runl	Stand2	0.2
+R3LamiyaMd019371	1	Runl	Run	0.2
+R3LamiyaMd019371	1	Runl	Runb	0.2
+R3LamiyaMd019371	1	Runl	Runr	0.2
+R3LamiyaMd019371	1	Runr	Stand2	0.2
+R3LamiyaMd019371	1	Runr	Run	0.2
+R3LamiyaMd019371	1	Runr	Runb	0.2
+R3LamiyaMd019371	1	Runr	Runl	0.2
+R3LamiyaMd019371	1	Walkb	Stand2	0.1
+R3LamiyaMd019371	1	Walkb	Walk	0.2
+R3LamiyaMd019371	1	Walkb	Walkl	0.1
+R3LamiyaMd019371	1	Walkb	Walkr	0.1
+R3LamiyaMd019371	1	Walkl	Stand2	0.1
+R3LamiyaMd019371	1	Walkl	Walk	0.1
+R3LamiyaMd019371	1	Walkl	Walkb	0.1
+R3LamiyaMd019371	1	Walkl	Walkr	0.2
+R3LamiyaMd019371	1	Walkr	Stand2	0.1
+R3LamiyaMd019371	1	Walkr	Walk	0.1
+R3LamiyaMd019371	1	Walkr	Walkb	0.1
+R3LamiyaMd019371	1	Walkr	Walkl	0.2
+R3LamiyaMd019371	1	TurnLeft	Stand2	0.1
+R3LamiyaMd019371	1	TurnRight	Stand2	0.1
+R3LamiyaMd019371	1	RunStart	Run	0.1
+R3LamiyaMd019371	1	RunStart	RunStartEnd01	0.1
+R3LamiyaMd019371	1	Hit1	Stand2	
+R3LamiyaMd019371	1	Hit2	Stand2	
+R3LamiyaMd019371	1	Hit3	Stand2	
+R3LamiyaMd019371	1	Hit4	Stand2	
+R3LamiyaMd019371	1	Behitfly	Hoverhit	0.1
+R3LamiyaMd019371	1	Behitfly	Falldown	0.1
+R3LamiyaMd019371	1	Hoverhit	Falldown	0.1
+R3LamiyaMd019371	1	Falldown	Lieonfloor	0.1
+R3LamiyaMd019371	1	Hitdown	Lieonfloor	0.1
+R3LamiyaMd019371	1	Standup	Stand2	0.1
+R3LamiyaMd019371	1	Straight	Stand2	0.1
+R3LamiyaMd019371	1	Stun	Stand2	0.1
+R3LamiyaMd019371	1	Win	Win2	0.1
+R3LamiyaMd019371	1	Stop	Stand2	0.1
+R3LamiyaMd019371	1	Caught	Stand2	0.1
+R3LamiyaMd019371	1	WalkStart	Stand2	0.1
+R3LamiyaMd019371	1	WalkStop	Stand2	0.1
+R3LamiyaMd019371	1	WalkStartEnd	Stand2	0.1
+R3LamiyaMd019371	1	LTurn90	Stand2	0.1
+R3LamiyaMd019371	1	LTurn180	Stand2	0.1
+R3LamiyaMd019371	1	RTurn90	Stand2	0.1
+R3LamiyaMd019371	1	RTurn180	Stand2	0.1
+R3LamiyaMd019371	2		Born	
+R3LamiyaMd019371	2		Stand1	0.1
+R3LamiyaMd019371	2		Stand2	0.1
+R3LamiyaMd019371	2		Stand3	0.1
+R3LamiyaMd019371	2		Death	0.1
+R3LamiyaMd019371	2		Standchange	0.1
+R3LamiyaMd019371	2		Run	0.1
+R3LamiyaMd019371	2		Walk	0.1
+R3LamiyaMd019371	2		Runb	0.2
+R3LamiyaMd019371	2		Runl	0.2
+R3LamiyaMd019371	2		Runr	0.2
+R3LamiyaMd019371	2		Walkb	0.1
+R3LamiyaMd019371	2		Walkl	0.1
+R3LamiyaMd019371	2		Walkr	0.1
+R3LamiyaMd019371	2		TurnLeft	0.1
+R3LamiyaMd019371	2		TurnRight	0.1
+R3LamiyaMd019371	2		Move1	0.1
+R3LamiyaMd019371	2		Move2	0.1
+R3LamiyaMd019371	2		Move3	0.1
+R3LamiyaMd019371	2		RunStart	0.1
+R3LamiyaMd019371	2		RunStartEnd01	0.1
+R3LamiyaMd019371	2		Hit1	0.05
+R3LamiyaMd019371	2		Hit2	0.05
+R3LamiyaMd019371	2		Hit3	0.05
+R3LamiyaMd019371	2		Hit4	0.05
+R3LamiyaMd019371	2		Behitfly	0.05
+R3LamiyaMd019371	2		Hoverhit	0.05
+R3LamiyaMd019371	2		Falldown	0.1
+R3LamiyaMd019371	2		Hitdown	0.05
+R3LamiyaMd019371	2		Lieonfloor	0.1
+R3LamiyaMd019371	2		Standup	0.1
+R3LamiyaMd019371	2		Straight	0.1
+R3LamiyaMd019371	2		Stun	0.1
+R3LamiyaMd019371	2		StraightBefore	0.1
+R3LamiyaMd019371	2		StraightAfter	0.1
+R3LamiyaMd019371	2		Win	
+R3LamiyaMd019371	2		Win2	0.1
+R3LamiyaMd019371	2		Stop	0.1
+R3LamiyaMd019371	2		Fail	0.1
+R3LamiyaMd019371	2		Save	0.1
+R3LamiyaMd019371	2		Caught	0.1
+R3LamiyaMd019371	2		RunStartEnd02	0.1
+R3LamiyaMd019371	2		StopR	0.1
+R3LamiyaMd019371	2		WalkStart	0.1
+R3LamiyaMd019371	2		WalkStop	0.1
+R3LamiyaMd019371	2		WalkStartEnd	0.1
+R3LamiyaMd019371	2		LTurn90	0.1
+R3LamiyaMd019371	2		LTurn180	0.1
+R3LamiyaMd019371	2		RTurn90	0.1
+R3LamiyaMd019371	2		RTurn180	0.1
+R3LamiyaMd019371	2		Attack01	0.1
+R3LamiyaMd019371	2		Attack02	0.1
+R3LamiyaMd019371	2		Attack03	0.1
+R3LamiyaMd019371	2		Attack04	0.1
+R3LamiyaMd019371	2		Attack05	0.1
+R3LamiyaMd019371	2		Attack21	0.1
+R3LamiyaMd019371	2		Attack31	0.1
+R3LamiyaMd019371	2		Attack32	0.1
+R3LamiyaMd019371	2		Attack41	0.1
+R3LamiyaMd019371	2		Attack42	0.1
+R3LamiyaMd019371	2		Attack51	0.1
+R3LamiyaMd019371	2		Attack61	0.1
+R3LamiyaMd019371	2		Attack90	0.1
+R3LamiyaMd019371	2		Attack91	0.1
+R3LamiyaMd019371	2		Attack92	0.1
+R3LamiyaMd019371	2		Attack93	0.1
+R3LamiyaMd019371	2		Attack94	0.1
+R3LamiyaMd019371	2		Attack95	0.1
+R3LamiyaMd019371	2		Attack96	0.1
+R3LamiyaMd019371	2		Attack97	0.1
+R3LamiyaMd019371	2		Attack98	0.1
+R3LamiyaMd019371	2		Attack99	0.1
+R3LamiyaMd019371	2		Attack100	0.1
+R3LamiyaMd019371	2	Stand1	Run	0.2
+R3LamiyaMd019371	2	Stand1	Walk	0.1
+R3LamiyaMd019371	2	Stand2	Standchange	0.1
+R3LamiyaMd019371	2	Stand2	Run	0.2
+R3LamiyaMd019371	2	Stand2	Walk	0.3
+R3LamiyaMd019371	2	Stand2	Walkb	0.3
+R3LamiyaMd019371	2	Stand2	Walkl	0.3
+R3LamiyaMd019371	2	Stand2	Walkr	0.3
+R3LamiyaMd019371	2	Standchange	Stand1	0.1
+R3LamiyaMd019371	2	Standchange	Run	0.1
+R3LamiyaMd019371	2	Standchange	Walk	0.1
+R3LamiyaMd019371	2	Run	Stop	0.2
+R3LamiyaMd019371	2	Run	Stand2	0.2
+R3LamiyaMd019371	2	Run	Runb	0.2
+R3LamiyaMd019371	2	Run	Runl	0.2
+R3LamiyaMd019371	2	Run	Runr	0.2
+R3LamiyaMd019371	2	Walk	Stand2	0.1
+R3LamiyaMd019371	2	Runb	Stand2	0.2
+R3LamiyaMd019371	2	Runb	Run	0.2
+R3LamiyaMd019371	2	Runb	Runl	0.2
+R3LamiyaMd019371	2	Runb	Runr	0.2
+R3LamiyaMd019371	2	Runl	Stand2	0.2
+R3LamiyaMd019371	2	Runl	Run	0.2
+R3LamiyaMd019371	2	Runl	Runb	0.2
+R3LamiyaMd019371	2	Runl	Runr	0.2
+R3LamiyaMd019371	2	Runr	Stand2	0.2
+R3LamiyaMd019371	2	Runr	Run	0.2
+R3LamiyaMd019371	2	Runr	Runb	0.2
+R3LamiyaMd019371	2	Runr	Runl	0.2
+R3LamiyaMd019371	2	Walkb	Stand2	0.1
+R3LamiyaMd019371	2	Walkb	Walk	0.2
+R3LamiyaMd019371	2	Walkb	Walkl	0.1
+R3LamiyaMd019371	2	Walkb	Walkr	0.1
+R3LamiyaMd019371	2	Walkl	Stand2	0.1
+R3LamiyaMd019371	2	Walkl	Walk	0.1
+R3LamiyaMd019371	2	Walkl	Walkb	0.1
+R3LamiyaMd019371	2	Walkl	Walkr	0.2
+R3LamiyaMd019371	2	Walkr	Stand2	0.1
+R3LamiyaMd019371	2	Walkr	Walk	0.1
+R3LamiyaMd019371	2	Walkr	Walkb	0.1
+R3LamiyaMd019371	2	Walkr	Walkl	0.2
+R3LamiyaMd019371	2	TurnLeft	Stand2	0.1
+R3LamiyaMd019371	2	TurnRight	Stand2	0.1
+R3LamiyaMd019371	2	RunStart	Run	0.1
+R3LamiyaMd019371	2	RunStart	RunStartEnd01	0.1
+R3LamiyaMd019371	2	Hit1	Stand2	
+R3LamiyaMd019371	2	Hit2	Stand2	
+R3LamiyaMd019371	2	Hit3	Stand2	
+R3LamiyaMd019371	2	Hit4	Stand2	
+R3LamiyaMd019371	2	Behitfly	Hoverhit	0.1
+R3LamiyaMd019371	2	Behitfly	Falldown	0.1
+R3LamiyaMd019371	2	Hoverhit	Falldown	0.1
+R3LamiyaMd019371	2	Falldown	Lieonfloor	0.1
+R3LamiyaMd019371	2	Hitdown	Lieonfloor	0.1
+R3LamiyaMd019371	2	Standup	Stand2	0.1
+R3LamiyaMd019371	2	Straight	Stand2	0.1
+R3LamiyaMd019371	2	Stun	Stand2	0.1
+R3LamiyaMd019371	2	Win	Win2	0.1
+R3LamiyaMd019371	2	Stop	Stand2	0.1
+R3LamiyaMd019371	2	Caught	Stand2	0.1
+R3LamiyaMd019371	2	WalkStart	Stand2	0.1
+R3LamiyaMd019371	2	WalkStop	Stand2	0.1
+R3LamiyaMd019371	2	WalkStartEnd	Stand2	0.1
+R3LamiyaMd019371	2	LTurn90	Stand2	0.1
+R3LamiyaMd019371	2	LTurn180	Stand2	0.1
+R3LamiyaMd019371	2	RTurn90	Stand2	0.1
+R3LamiyaMd019371	2	RTurn180	Stand2	0.1
+R3LamiyaMd019371	3		Born	
+R3LamiyaMd019371	3		Stand1	0.1
+R3LamiyaMd019371	3		Stand2	0.1
+R3LamiyaMd019371	3		Stand3	0.1
+R3LamiyaMd019371	3		Death	0.1
+R3LamiyaMd019371	3		Standchange	0.1
+R3LamiyaMd019371	3		Run	0.1
+R3LamiyaMd019371	3		Walk	0.1
+R3LamiyaMd019371	3		Runb	0.2
+R3LamiyaMd019371	3		Runl	0.2
+R3LamiyaMd019371	3		Runr	0.2
+R3LamiyaMd019371	3		Walkb	0.1
+R3LamiyaMd019371	3		Walkl	0.1
+R3LamiyaMd019371	3		Walkr	0.1
+R3LamiyaMd019371	3		TurnLeft	0.1
+R3LamiyaMd019371	3		TurnRight	0.1
+R3LamiyaMd019371	3		Move1	0.1
+R3LamiyaMd019371	3		Move2	0.1
+R3LamiyaMd019371	3		Move3	0.1
+R3LamiyaMd019371	3		RunStart	0.1
+R3LamiyaMd019371	3		RunStartEnd01	0.1
+R3LamiyaMd019371	3		Hit1	0.05
+R3LamiyaMd019371	3		Hit2	0.05
+R3LamiyaMd019371	3		Hit3	0.05
+R3LamiyaMd019371	3		Hit4	0.05
+R3LamiyaMd019371	3		Behitfly	0.05
+R3LamiyaMd019371	3		Hoverhit	0.05
+R3LamiyaMd019371	3		Falldown	0.1
+R3LamiyaMd019371	3		Hitdown	0.05
+R3LamiyaMd019371	3		Lieonfloor	0.1
+R3LamiyaMd019371	3		Standup	0.1
+R3LamiyaMd019371	3		Straight	0.1
+R3LamiyaMd019371	3		Stun	0.1
+R3LamiyaMd019371	3		StraightBefore	0.1
+R3LamiyaMd019371	3		StraightAfter	0.1
+R3LamiyaMd019371	3		Win	
+R3LamiyaMd019371	3		Win2	0.1
+R3LamiyaMd019371	3		Stop	0.1
+R3LamiyaMd019371	3		Fail	0.1
+R3LamiyaMd019371	3		Save	0.1
+R3LamiyaMd019371	3		Caught	0.1
+R3LamiyaMd019371	3		RunStartEnd02	0.1
+R3LamiyaMd019371	3		StopR	0.1
+R3LamiyaMd019371	3		WalkStart	0.1
+R3LamiyaMd019371	3		WalkStop	0.1
+R3LamiyaMd019371	3		WalkStartEnd	0.1
+R3LamiyaMd019371	3		LTurn90	0.1
+R3LamiyaMd019371	3		LTurn180	0.1
+R3LamiyaMd019371	3		RTurn90	0.1
+R3LamiyaMd019371	3		RTurn180	0.1
+R3LamiyaMd019371	3		Attack01	0.1
+R3LamiyaMd019371	3		Attack02	0.1
+R3LamiyaMd019371	3		Attack03	0.1
+R3LamiyaMd019371	3		Attack04	0.1
+R3LamiyaMd019371	3		Attack05	0.1
+R3LamiyaMd019371	3		Attack21	0.1
+R3LamiyaMd019371	3		Attack31	0.1
+R3LamiyaMd019371	3		Attack32	0.1
+R3LamiyaMd019371	3		Attack41	0.1
+R3LamiyaMd019371	3		Attack42	0.1
+R3LamiyaMd019371	3		Attack51	0.1
+R3LamiyaMd019371	3		Attack61	0.1
+R3LamiyaMd019371	3		Attack90	0.1
+R3LamiyaMd019371	3		Attack91	0.1
+R3LamiyaMd019371	3		Attack92	0.1
+R3LamiyaMd019371	3		Attack93	0.1
+R3LamiyaMd019371	3		Attack94	0.1
+R3LamiyaMd019371	3		Attack95	0.1
+R3LamiyaMd019371	3		Attack96	0.1
+R3LamiyaMd019371	3		Attack97	0.1
+R3LamiyaMd019371	3		Attack98	0.1
+R3LamiyaMd019371	3		Attack99	0.1
+R3LamiyaMd019371	3		Attack100	0.1
+R3LamiyaMd019371	3	Stand1	Run	0.2
+R3LamiyaMd019371	3	Stand1	Walk	0.1
+R3LamiyaMd019371	3	Stand2	Standchange	0.1
+R3LamiyaMd019371	3	Stand2	Run	0.2
+R3LamiyaMd019371	3	Stand2	Walk	0.3
+R3LamiyaMd019371	3	Stand2	Walkb	0.3
+R3LamiyaMd019371	3	Stand2	Walkl	0.3
+R3LamiyaMd019371	3	Stand2	Walkr	0.3
+R3LamiyaMd019371	3	Standchange	Stand1	0.1
+R3LamiyaMd019371	3	Standchange	Run	0.1
+R3LamiyaMd019371	3	Standchange	Walk	0.1
+R3LamiyaMd019371	3	Run	Stop	0.2
+R3LamiyaMd019371	3	Run	Stand2	0.2
+R3LamiyaMd019371	3	Run	Runb	0.2
+R3LamiyaMd019371	3	Run	Runl	0.2
+R3LamiyaMd019371	3	Run	Runr	0.2
+R3LamiyaMd019371	3	Walk	Stand2	0.1
+R3LamiyaMd019371	3	Runb	Stand2	0.2
+R3LamiyaMd019371	3	Runb	Run	0.2
+R3LamiyaMd019371	3	Runb	Runl	0.2
+R3LamiyaMd019371	3	Runb	Runr	0.2
+R3LamiyaMd019371	3	Runl	Stand2	0.2
+R3LamiyaMd019371	3	Runl	Run	0.2
+R3LamiyaMd019371	3	Runl	Runb	0.2
+R3LamiyaMd019371	3	Runl	Runr	0.2
+R3LamiyaMd019371	3	Runr	Stand2	0.2
+R3LamiyaMd019371	3	Runr	Run	0.2
+R3LamiyaMd019371	3	Runr	Runb	0.2
+R3LamiyaMd019371	3	Runr	Runl	0.2
+R3LamiyaMd019371	3	Walkb	Stand2	0.1
+R3LamiyaMd019371	3	Walkb	Walk	0.2
+R3LamiyaMd019371	3	Walkb	Walkl	0.1
+R3LamiyaMd019371	3	Walkb	Walkr	0.1
+R3LamiyaMd019371	3	Walkl	Stand2	0.1
+R3LamiyaMd019371	3	Walkl	Walk	0.1
+R3LamiyaMd019371	3	Walkl	Walkb	0.1
+R3LamiyaMd019371	3	Walkl	Walkr	0.2
+R3LamiyaMd019371	3	Walkr	Stand2	0.1
+R3LamiyaMd019371	3	Walkr	Walk	0.1
+R3LamiyaMd019371	3	Walkr	Walkb	0.1
+R3LamiyaMd019371	3	Walkr	Walkl	0.2
+R3LamiyaMd019371	3	TurnLeft	Stand2	0.1
+R3LamiyaMd019371	3	TurnRight	Stand2	0.1
+R3LamiyaMd019371	3	RunStart	Run	0.1
+R3LamiyaMd019371	3	RunStart	RunStartEnd01	0.1
+R3LamiyaMd019371	3	Hit1	Stand2	
+R3LamiyaMd019371	3	Hit2	Stand2	
+R3LamiyaMd019371	3	Hit3	Stand2	
+R3LamiyaMd019371	3	Hit4	Stand2	
+R3LamiyaMd019371	3	Behitfly	Hoverhit	0.1
+R3LamiyaMd019371	3	Behitfly	Falldown	0.1
+R3LamiyaMd019371	3	Hoverhit	Falldown	0.1
+R3LamiyaMd019371	3	Falldown	Lieonfloor	0.1
+R3LamiyaMd019371	3	Hitdown	Lieonfloor	0.1
+R3LamiyaMd019371	3	Standup	Stand2	0.1
+R3LamiyaMd019371	3	Straight	Stand2	0.1
+R3LamiyaMd019371	3	Stun	Stand2	0.1
+R3LamiyaMd019371	3	Win	Win2	0.1
+R3LamiyaMd019371	3	Stop	Stand2	0.1
+R3LamiyaMd019371	3	Caught	Stand2	0.1
+R3LamiyaMd019371	3	WalkStart	Stand2	0.1
+R3LamiyaMd019371	3	WalkStop	Stand2	0.1
+R3LamiyaMd019371	3	WalkStartEnd	Stand2	0.1
+R3LamiyaMd019371	3	LTurn90	Stand2	0.1
+R3LamiyaMd019371	3	LTurn180	Stand2	0.1
+R3LamiyaMd019371	3	RTurn90	Stand2	0.1
+R3LamiyaMd019371	3	RTurn180	Stand2	0.1
+R3LamiyaMd019371	4		Born	
+R3LamiyaMd019371	4		Stand1	0.1
+R3LamiyaMd019371	4		Stand2	0.1
+R3LamiyaMd019371	4		Stand3	0.1
+R3LamiyaMd019371	4		Death	0.1
+R3LamiyaMd019371	4		Standchange	0.1
+R3LamiyaMd019371	4		Run	0.1
+R3LamiyaMd019371	4		Walk	0.1
+R3LamiyaMd019371	4		Runb	0.2
+R3LamiyaMd019371	4		Runl	0.2
+R3LamiyaMd019371	4		Runr	0.2
+R3LamiyaMd019371	4		Walkb	0.1
+R3LamiyaMd019371	4		Walkl	0.1
+R3LamiyaMd019371	4		Walkr	0.1
+R3LamiyaMd019371	4		TurnLeft	0.1
+R3LamiyaMd019371	4		TurnRight	0.1
+R3LamiyaMd019371	4		Move1	0.1
+R3LamiyaMd019371	4		Move2	0.1
+R3LamiyaMd019371	4		Move3	0.1
+R3LamiyaMd019371	4		RunStart	0.1
+R3LamiyaMd019371	4		RunStartEnd01	0.1
+R3LamiyaMd019371	4		Hit1	0.05
+R3LamiyaMd019371	4		Hit2	0.05
+R3LamiyaMd019371	4		Hit3	0.05
+R3LamiyaMd019371	4		Hit4	0.05
+R3LamiyaMd019371	4		Behitfly	0.05
+R3LamiyaMd019371	4		Hoverhit	0.05
+R3LamiyaMd019371	4		Falldown	0.1
+R3LamiyaMd019371	4		Hitdown	0.05
+R3LamiyaMd019371	4		Lieonfloor	0.1
+R3LamiyaMd019371	4		Standup	0.1
+R3LamiyaMd019371	4		Straight	0.1
+R3LamiyaMd019371	4		Stun	0.1
+R3LamiyaMd019371	4		StraightBefore	0.1
+R3LamiyaMd019371	4		StraightAfter	0.1
+R3LamiyaMd019371	4		Win	
+R3LamiyaMd019371	4		Win2	0.1
+R3LamiyaMd019371	4		Stop	0.1
+R3LamiyaMd019371	4		Fail	0.1
+R3LamiyaMd019371	4		Save	0.1
+R3LamiyaMd019371	4		Caught	0.1
+R3LamiyaMd019371	4		RunStartEnd02	0.1
+R3LamiyaMd019371	4		StopR	0.1
+R3LamiyaMd019371	4		WalkStart	0.1
+R3LamiyaMd019371	4		WalkStop	0.1
+R3LamiyaMd019371	4		WalkStartEnd	0.1
+R3LamiyaMd019371	4		LTurn90	0.1
+R3LamiyaMd019371	4		LTurn180	0.1
+R3LamiyaMd019371	4		RTurn90	0.1
+R3LamiyaMd019371	4		RTurn180	0.1
+R3LamiyaMd019371	4		Attack01	0.1
+R3LamiyaMd019371	4		Attack02	0.1
+R3LamiyaMd019371	4		Attack03	0.1
+R3LamiyaMd019371	4		Attack04	0.1
+R3LamiyaMd019371	4		Attack05	0.1
+R3LamiyaMd019371	4		Attack21	0.1
+R3LamiyaMd019371	4		Attack31	0.1
+R3LamiyaMd019371	4		Attack32	0.1
+R3LamiyaMd019371	4		Attack41	0.1
+R3LamiyaMd019371	4		Attack42	0.1
+R3LamiyaMd019371	4		Attack51	0.1
+R3LamiyaMd019371	4		Attack61	0.1
+R3LamiyaMd019371	4		Attack90	0.1
+R3LamiyaMd019371	4		Attack91	0.1
+R3LamiyaMd019371	4		Attack92	0.1
+R3LamiyaMd019371	4		Attack93	0.1
+R3LamiyaMd019371	4		Attack94	0.1
+R3LamiyaMd019371	4		Attack95	0.1
+R3LamiyaMd019371	4		Attack96	0.1
+R3LamiyaMd019371	4		Attack97	0.1
+R3LamiyaMd019371	4		Attack98	0.1
+R3LamiyaMd019371	4		Attack99	0.1
+R3LamiyaMd019371	4		Attack100	0.1
+R3LamiyaMd019371	4	Stand1	Run	0.2
+R3LamiyaMd019371	4	Stand1	Walk	0.1
+R3LamiyaMd019371	4	Stand2	Standchange	0.1
+R3LamiyaMd019371	4	Stand2	Run	0.2
+R3LamiyaMd019371	4	Stand2	Walk	0.3
+R3LamiyaMd019371	4	Stand2	Walkb	0.3
+R3LamiyaMd019371	4	Stand2	Walkl	0.3
+R3LamiyaMd019371	4	Stand2	Walkr	0.3
+R3LamiyaMd019371	4	Standchange	Stand1	0.1
+R3LamiyaMd019371	4	Standchange	Run	0.1
+R3LamiyaMd019371	4	Standchange	Walk	0.1
+R3LamiyaMd019371	4	Run	Stop	0.2
+R3LamiyaMd019371	4	Run	Stand2	0.2
+R3LamiyaMd019371	4	Run	Runb	0.2
+R3LamiyaMd019371	4	Run	Runl	0.2
+R3LamiyaMd019371	4	Run	Runr	0.2
+R3LamiyaMd019371	4	Walk	Stand2	0.1
+R3LamiyaMd019371	4	Runb	Stand2	0.2
+R3LamiyaMd019371	4	Runb	Run	0.2
+R3LamiyaMd019371	4	Runb	Runl	0.2
+R3LamiyaMd019371	4	Runb	Runr	0.2
+R3LamiyaMd019371	4	Runl	Stand2	0.2
+R3LamiyaMd019371	4	Runl	Run	0.2
+R3LamiyaMd019371	4	Runl	Runb	0.2
+R3LamiyaMd019371	4	Runl	Runr	0.2
+R3LamiyaMd019371	4	Runr	Stand2	0.2
+R3LamiyaMd019371	4	Runr	Run	0.2
+R3LamiyaMd019371	4	Runr	Runb	0.2
+R3LamiyaMd019371	4	Runr	Runl	0.2
+R3LamiyaMd019371	4	Walkb	Stand2	0.1
+R3LamiyaMd019371	4	Walkb	Walk	0.2
+R3LamiyaMd019371	4	Walkb	Walkl	0.1
+R3LamiyaMd019371	4	Walkb	Walkr	0.1
+R3LamiyaMd019371	4	Walkl	Stand2	0.1
+R3LamiyaMd019371	4	Walkl	Walk	0.1
+R3LamiyaMd019371	4	Walkl	Walkb	0.1
+R3LamiyaMd019371	4	Walkl	Walkr	0.2
+R3LamiyaMd019371	4	Walkr	Stand2	0.1
+R3LamiyaMd019371	4	Walkr	Walk	0.1
+R3LamiyaMd019371	4	Walkr	Walkb	0.1
+R3LamiyaMd019371	4	Walkr	Walkl	0.2
+R3LamiyaMd019371	4	TurnLeft	Stand2	0.1
+R3LamiyaMd019371	4	TurnRight	Stand2	0.1
+R3LamiyaMd019371	4	RunStart	Run	0.1
+R3LamiyaMd019371	4	RunStart	RunStartEnd01	0.1
+R3LamiyaMd019371	4	Hit1	Stand2	
+R3LamiyaMd019371	4	Hit2	Stand2	
+R3LamiyaMd019371	4	Hit3	Stand2	
+R3LamiyaMd019371	4	Hit4	Stand2	
+R3LamiyaMd019371	4	Behitfly	Hoverhit	0.1
+R3LamiyaMd019371	4	Behitfly	Falldown	0.1
+R3LamiyaMd019371	4	Hoverhit	Falldown	0.1
+R3LamiyaMd019371	4	Falldown	Lieonfloor	0.1
+R3LamiyaMd019371	4	Hitdown	Lieonfloor	0.1
+R3LamiyaMd019371	4	Standup	Stand2	0.1
+R3LamiyaMd019371	4	Straight	Stand2	0.1
+R3LamiyaMd019371	4	Stun	Stand2	0.1
+R3LamiyaMd019371	4	Win	Win2	0.1
+R3LamiyaMd019371	4	Stop	Stand2	0.1
+R3LamiyaMd019371	4	Caught	Stand2	0.1
+R3LamiyaMd019371	4	WalkStart	Stand2	0.1
+R3LamiyaMd019371	4	WalkStop	Stand2	0.1
+R3LamiyaMd019371	4	WalkStartEnd	Stand2	0.1
+R3LamiyaMd019371	4	LTurn90	Stand2	0.1
+R3LamiyaMd019371	4	LTurn180	Stand2	0.1
+R3LamiyaMd019371	4	RTurn90	Stand2	0.1
+R3LamiyaMd019371	4	RTurn180	Stand2	0.1
+R3LamiyaMd019371	5		Born	
+R3LamiyaMd019371	5		Stand1	0.1
+R3LamiyaMd019371	5		Stand2	0.1
+R3LamiyaMd019371	5		Stand3	0.1
+R3LamiyaMd019371	5		Death	0.1
+R3LamiyaMd019371	5		Standchange	0.1
+R3LamiyaMd019371	5		Run	0.1
+R3LamiyaMd019371	5		Walk	0.1
+R3LamiyaMd019371	5		Runb	0.2
+R3LamiyaMd019371	5		Runl	0.2
+R3LamiyaMd019371	5		Runr	0.2
+R3LamiyaMd019371	5		Walkb	0.1
+R3LamiyaMd019371	5		Walkl	0.1
+R3LamiyaMd019371	5		Walkr	0.1
+R3LamiyaMd019371	5		TurnLeft	0.1
+R3LamiyaMd019371	5		TurnRight	0.1
+R3LamiyaMd019371	5		Move1	0.1
+R3LamiyaMd019371	5		Move2	0.1
+R3LamiyaMd019371	5		Move3	0.1
+R3LamiyaMd019371	5		RunStart	0.1
+R3LamiyaMd019371	5		RunStartEnd01	0.1
+R3LamiyaMd019371	5		Hit1	0.05
+R3LamiyaMd019371	5		Hit2	0.05
+R3LamiyaMd019371	5		Hit3	0.05
+R3LamiyaMd019371	5		Hit4	0.05
+R3LamiyaMd019371	5		Behitfly	0.05
+R3LamiyaMd019371	5		Hoverhit	0.05
+R3LamiyaMd019371	5		Falldown	0.1
+R3LamiyaMd019371	5		Hitdown	0.05
+R3LamiyaMd019371	5		Lieonfloor	0.1
+R3LamiyaMd019371	5		Standup	0.1
+R3LamiyaMd019371	5		Straight	0.1
+R3LamiyaMd019371	5		Stun	0.1
+R3LamiyaMd019371	5		StraightBefore	0.1
+R3LamiyaMd019371	5		StraightAfter	0.1
+R3LamiyaMd019371	5		Win	
+R3LamiyaMd019371	5		Win2	0.1
+R3LamiyaMd019371	5		Stop	0.1
+R3LamiyaMd019371	5		Fail	0.1
+R3LamiyaMd019371	5		Save	0.1
+R3LamiyaMd019371	5		Caught	0.1
+R3LamiyaMd019371	5		RunStartEnd02	0.1
+R3LamiyaMd019371	5		StopR	0.1
+R3LamiyaMd019371	5		WalkStart	0.1
+R3LamiyaMd019371	5		WalkStop	0.1
+R3LamiyaMd019371	5		WalkStartEnd	0.1
+R3LamiyaMd019371	5		LTurn90	0.1
+R3LamiyaMd019371	5		LTurn180	0.1
+R3LamiyaMd019371	5		RTurn90	0.1
+R3LamiyaMd019371	5		RTurn180	0.1
+R3LamiyaMd019371	5		Attack01	0.1
+R3LamiyaMd019371	5		Attack02	0.1
+R3LamiyaMd019371	5		Attack03	0.1
+R3LamiyaMd019371	5		Attack04	0.1
+R3LamiyaMd019371	5		Attack05	0.1
+R3LamiyaMd019371	5		Attack21	0.1
+R3LamiyaMd019371	5		Attack31	0.1
+R3LamiyaMd019371	5		Attack32	0.1
+R3LamiyaMd019371	5		Attack41	0.1
+R3LamiyaMd019371	5		Attack42	0.1
+R3LamiyaMd019371	5		Attack51	0.1
+R3LamiyaMd019371	5		Attack61	0.1
+R3LamiyaMd019371	5		Attack90	0.1
+R3LamiyaMd019371	5		Attack91	0.1
+R3LamiyaMd019371	5		Attack92	0.1
+R3LamiyaMd019371	5		Attack93	0.1
+R3LamiyaMd019371	5		Attack94	0.1
+R3LamiyaMd019371	5		Attack95	0.1
+R3LamiyaMd019371	5		Attack96	0.1
+R3LamiyaMd019371	5		Attack97	0.1
+R3LamiyaMd019371	5		Attack98	0.1
+R3LamiyaMd019371	5		Attack99	0.1
+R3LamiyaMd019371	5		Attack100	0.1
+R3LamiyaMd019371	5	Stand1	Run	0.2
+R3LamiyaMd019371	5	Stand1	Walk	0.1
+R3LamiyaMd019371	5	Stand2	Standchange	0.1
+R3LamiyaMd019371	5	Stand2	Run	0.2
+R3LamiyaMd019371	5	Stand2	Walk	0.3
+R3LamiyaMd019371	5	Stand2	Walkb	0.3
+R3LamiyaMd019371	5	Stand2	Walkl	0.3
+R3LamiyaMd019371	5	Stand2	Walkr	0.3
+R3LamiyaMd019371	5	Standchange	Stand1	0.1
+R3LamiyaMd019371	5	Standchange	Run	0.1
+R3LamiyaMd019371	5	Standchange	Walk	0.1
+R3LamiyaMd019371	5	Run	Stop	0.2
+R3LamiyaMd019371	5	Run	Stand2	0.2
+R3LamiyaMd019371	5	Run	Runb	0.2
+R3LamiyaMd019371	5	Run	Runl	0.2
+R3LamiyaMd019371	5	Run	Runr	0.2
+R3LamiyaMd019371	5	Walk	Stand2	0.1
+R3LamiyaMd019371	5	Runb	Stand2	0.2
+R3LamiyaMd019371	5	Runb	Run	0.2
+R3LamiyaMd019371	5	Runb	Runl	0.2
+R3LamiyaMd019371	5	Runb	Runr	0.2
+R3LamiyaMd019371	5	Runl	Stand2	0.2
+R3LamiyaMd019371	5	Runl	Run	0.2
+R3LamiyaMd019371	5	Runl	Runb	0.2
+R3LamiyaMd019371	5	Runl	Runr	0.2
+R3LamiyaMd019371	5	Runr	Stand2	0.2
+R3LamiyaMd019371	5	Runr	Run	0.2
+R3LamiyaMd019371	5	Runr	Runb	0.2
+R3LamiyaMd019371	5	Runr	Runl	0.2
+R3LamiyaMd019371	5	Walkb	Stand2	0.1
+R3LamiyaMd019371	5	Walkb	Walk	0.2
+R3LamiyaMd019371	5	Walkb	Walkl	0.1
+R3LamiyaMd019371	5	Walkb	Walkr	0.1
+R3LamiyaMd019371	5	Walkl	Stand2	0.1
+R3LamiyaMd019371	5	Walkl	Walk	0.1
+R3LamiyaMd019371	5	Walkl	Walkb	0.1
+R3LamiyaMd019371	5	Walkl	Walkr	0.2
+R3LamiyaMd019371	5	Walkr	Stand2	0.1
+R3LamiyaMd019371	5	Walkr	Walk	0.1
+R3LamiyaMd019371	5	Walkr	Walkb	0.1
+R3LamiyaMd019371	5	Walkr	Walkl	0.2
+R3LamiyaMd019371	5	TurnLeft	Stand2	0.1
+R3LamiyaMd019371	5	TurnRight	Stand2	0.1
+R3LamiyaMd019371	5	RunStart	Run	0.1
+R3LamiyaMd019371	5	RunStart	RunStartEnd01	0.1
+R3LamiyaMd019371	5	Hit1	Stand2	
+R3LamiyaMd019371	5	Hit2	Stand2	
+R3LamiyaMd019371	5	Hit3	Stand2	
+R3LamiyaMd019371	5	Hit4	Stand2	
+R3LamiyaMd019371	5	Behitfly	Hoverhit	0.1
+R3LamiyaMd019371	5	Behitfly	Falldown	0.1
+R3LamiyaMd019371	5	Hoverhit	Falldown	0.1
+R3LamiyaMd019371	5	Falldown	Lieonfloor	0.1
+R3LamiyaMd019371	5	Hitdown	Lieonfloor	0.1
+R3LamiyaMd019371	5	Standup	Stand2	0.1
+R3LamiyaMd019371	5	Straight	Stand2	0.1
+R3LamiyaMd019371	5	Stun	Stand2	0.1
+R3LamiyaMd019371	5	Win	Win2	0.1
+R3LamiyaMd019371	5	Stop	Stand2	0.1
+R3LamiyaMd019371	5	Caught	Stand2	0.1
+R3LamiyaMd019371	5	WalkStart	Stand2	0.1
+R3LamiyaMd019371	5	WalkStop	Stand2	0.1
+R3LamiyaMd019371	5	WalkStartEnd	Stand2	0.1
+R3LamiyaMd019371	5	LTurn90	Stand2	0.1
+R3LamiyaMd019371	5	LTurn180	Stand2	0.1
+R3LamiyaMd019371	5	RTurn90	Stand2	0.1
+R3LamiyaMd019371	5	RTurn180	Stand2	0.1
+R3LamiyaMd019371	6		Born	
+R3LamiyaMd019371	6		Stand1	0.1
+R3LamiyaMd019371	6		Stand2	0.1
+R3LamiyaMd019371	6		Stand3	0.1
+R3LamiyaMd019371	6		Death	0.1
+R3LamiyaMd019371	6		Standchange	0.1
+R3LamiyaMd019371	6		Run	0.1
+R3LamiyaMd019371	6		Walk	0.1
+R3LamiyaMd019371	6		Runb	0.2
+R3LamiyaMd019371	6		Runl	0.2
+R3LamiyaMd019371	6		Runr	0.2
+R3LamiyaMd019371	6		Walkb	0.1
+R3LamiyaMd019371	6		Walkl	0.1
+R3LamiyaMd019371	6		Walkr	0.1
+R3LamiyaMd019371	6		TurnLeft	0.1
+R3LamiyaMd019371	6		TurnRight	0.1
+R3LamiyaMd019371	6		Move1	0.1
+R3LamiyaMd019371	6		Move2	0.1
+R3LamiyaMd019371	6		Move3	0.1
+R3LamiyaMd019371	6		RunStart	0.1
+R3LamiyaMd019371	6		RunStartEnd01	0.1
+R3LamiyaMd019371	6		Hit1	0.05
+R3LamiyaMd019371	6		Hit2	0.05
+R3LamiyaMd019371	6		Hit3	0.05
+R3LamiyaMd019371	6		Hit4	0.05
+R3LamiyaMd019371	6		Behitfly	0.05
+R3LamiyaMd019371	6		Hoverhit	0.05
+R3LamiyaMd019371	6		Falldown	0.1
+R3LamiyaMd019371	6		Hitdown	0.05
+R3LamiyaMd019371	6		Lieonfloor	0.1
+R3LamiyaMd019371	6		Standup	0.1
+R3LamiyaMd019371	6		Straight	0.1
+R3LamiyaMd019371	6		Stun	0.1
+R3LamiyaMd019371	6		StraightBefore	0.1
+R3LamiyaMd019371	6		StraightAfter	0.1
+R3LamiyaMd019371	6		Win	
+R3LamiyaMd019371	6		Win2	0.1
+R3LamiyaMd019371	6		Stop	0.1
+R3LamiyaMd019371	6		Fail	0.1
+R3LamiyaMd019371	6		Save	0.1
+R3LamiyaMd019371	6		Caught	0.1
+R3LamiyaMd019371	6		RunStartEnd02	0.1
+R3LamiyaMd019371	6		StopR	0.1
+R3LamiyaMd019371	6		WalkStart	0.1
+R3LamiyaMd019371	6		WalkStop	0.1
+R3LamiyaMd019371	6		WalkStartEnd	0.1
+R3LamiyaMd019371	6		LTurn90	0.1
+R3LamiyaMd019371	6		LTurn180	0.1
+R3LamiyaMd019371	6		RTurn90	0.1
+R3LamiyaMd019371	6		RTurn180	0.1
+R3LamiyaMd019371	6		Attack01	0.1
+R3LamiyaMd019371	6		Attack02	0.1
+R3LamiyaMd019371	6		Attack03	0.1
+R3LamiyaMd019371	6		Attack04	0.1
+R3LamiyaMd019371	6		Attack05	0.1
+R3LamiyaMd019371	6		Attack21	0.1
+R3LamiyaMd019371	6		Attack31	0.1
+R3LamiyaMd019371	6		Attack32	0.1
+R3LamiyaMd019371	6		Attack41	0.1
+R3LamiyaMd019371	6		Attack42	0.1
+R3LamiyaMd019371	6		Attack51	0.1
+R3LamiyaMd019371	6		Attack61	0.1
+R3LamiyaMd019371	6		Attack90	0.1
+R3LamiyaMd019371	6		Attack91	0.1
+R3LamiyaMd019371	6		Attack92	0.1
+R3LamiyaMd019371	6		Attack93	0.1
+R3LamiyaMd019371	6		Attack94	0.1
+R3LamiyaMd019371	6		Attack95	0.1
+R3LamiyaMd019371	6		Attack96	0.1
+R3LamiyaMd019371	6		Attack97	0.1
+R3LamiyaMd019371	6		Attack98	0.1
+R3LamiyaMd019371	6		Attack99	0.1
+R3LamiyaMd019371	6		Attack100	0.1
+R3LamiyaMd019371	6	Stand1	Run	0.2
+R3LamiyaMd019371	6	Stand1	Walk	0.1
+R3LamiyaMd019371	6	Stand2	Standchange	0.1
+R3LamiyaMd019371	6	Stand2	Run	0.2
+R3LamiyaMd019371	6	Stand2	Walk	0.3
+R3LamiyaMd019371	6	Stand2	Walkb	0.3
+R3LamiyaMd019371	6	Stand2	Walkl	0.3
+R3LamiyaMd019371	6	Stand2	Walkr	0.3
+R3LamiyaMd019371	6	Standchange	Stand1	0.1
+R3LamiyaMd019371	6	Standchange	Run	0.1
+R3LamiyaMd019371	6	Standchange	Walk	0.1
+R3LamiyaMd019371	6	Run	Stop	0.2
+R3LamiyaMd019371	6	Run	Stand2	0.2
+R3LamiyaMd019371	6	Run	Runb	0.2
+R3LamiyaMd019371	6	Run	Runl	0.2
+R3LamiyaMd019371	6	Run	Runr	0.2
+R3LamiyaMd019371	6	Walk	Stand2	0.1
+R3LamiyaMd019371	6	Runb	Stand2	0.2
+R3LamiyaMd019371	6	Runb	Run	0.2
+R3LamiyaMd019371	6	Runb	Runl	0.2
+R3LamiyaMd019371	6	Runb	Runr	0.2
+R3LamiyaMd019371	6	Runl	Stand2	0.2
+R3LamiyaMd019371	6	Runl	Run	0.2
+R3LamiyaMd019371	6	Runl	Runb	0.2
+R3LamiyaMd019371	6	Runl	Runr	0.2
+R3LamiyaMd019371	6	Runr	Stand2	0.2
+R3LamiyaMd019371	6	Runr	Run	0.2
+R3LamiyaMd019371	6	Runr	Runb	0.2
+R3LamiyaMd019371	6	Runr	Runl	0.2
+R3LamiyaMd019371	6	Walkb	Stand2	0.1
+R3LamiyaMd019371	6	Walkb	Walk	0.2
+R3LamiyaMd019371	6	Walkb	Walkl	0.1
+R3LamiyaMd019371	6	Walkb	Walkr	0.1
+R3LamiyaMd019371	6	Walkl	Stand2	0.1
+R3LamiyaMd019371	6	Walkl	Walk	0.1
+R3LamiyaMd019371	6	Walkl	Walkb	0.1
+R3LamiyaMd019371	6	Walkl	Walkr	0.2
+R3LamiyaMd019371	6	Walkr	Stand2	0.1
+R3LamiyaMd019371	6	Walkr	Walk	0.1
+R3LamiyaMd019371	6	Walkr	Walkb	0.1
+R3LamiyaMd019371	6	Walkr	Walkl	0.2
+R3LamiyaMd019371	6	TurnLeft	Stand2	0.1
+R3LamiyaMd019371	6	TurnRight	Stand2	0.1
+R3LamiyaMd019371	6	RunStart	Run	0.1
+R3LamiyaMd019371	6	RunStart	RunStartEnd01	0.1
+R3LamiyaMd019371	6	Hit1	Stand2	
+R3LamiyaMd019371	6	Hit2	Stand2	
+R3LamiyaMd019371	6	Hit3	Stand2	
+R3LamiyaMd019371	6	Hit4	Stand2	
+R3LamiyaMd019371	6	Behitfly	Hoverhit	0.1
+R3LamiyaMd019371	6	Behitfly	Falldown	0.1
+R3LamiyaMd019371	6	Hoverhit	Falldown	0.1
+R3LamiyaMd019371	6	Falldown	Lieonfloor	0.1
+R3LamiyaMd019371	6	Hitdown	Lieonfloor	0.1
+R3LamiyaMd019371	6	Standup	Stand2	0.1
+R3LamiyaMd019371	6	Straight	Stand2	0.1
+R3LamiyaMd019371	6	Stun	Stand2	0.1
+R3LamiyaMd019371	6	Win	Win2	0.1
+R3LamiyaMd019371	6	Stop	Stand2	0.1
+R3LamiyaMd019371	6	Caught	Stand2	0.1
+R3LamiyaMd019371	6	WalkStart	Stand2	0.1
+R3LamiyaMd019371	6	WalkStop	Stand2	0.1
+R3LamiyaMd019371	6	WalkStartEnd	Stand2	0.1
+R3LamiyaMd019371	6	LTurn90	Stand2	0.1
+R3LamiyaMd019371	6	LTurn180	Stand2	0.1
+R3LamiyaMd019371	6	RTurn90	Stand2	0.1
+R3LamiyaMd019371	6	RTurn180	Stand2	0.1

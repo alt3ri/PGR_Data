@@ -134,6 +134,7 @@ local IsWindowsEditor = XMain.IsWindowsEditor
 ---@field XDlcHelper XDlcHelperAgency
 ---@field XDlcRelink XDlcRelinkAgency
 ---@field XLineArithmetic2 XLineArithmetic2Agency
+---@field XLineArithmetic3 XLineArithmetic3Agency
 ---@field XFashionStory XFashionStoryAgency
 ---@field XHelpCourse XHelpCourseAgency
 ---@field XSoloReform XSoloReformAgency
@@ -150,6 +151,7 @@ local IsWindowsEditor = XMain.IsWindowsEditor
 ---@field XItemRestrict XItemRestrictAgency
 ---@field XShop XShopAgency
 ---@field XItem XItemAgency
+---@field XPBRGame XPBRGameAgency
 local XMVCACls = XClass(XMVCAEvent, "XMVCACls")
 
 function XMVCACls:Ctor()
@@ -654,6 +656,7 @@ function XMVCACls:InitModule()
     self:RegisterAgency(ModuleId.XBountyChallenge)
     self:RegisterAgency(ModuleId.XDlcRelink)
     self:RegisterAgency(ModuleId.XLineArithmetic2)
+    self:RegisterAgency(ModuleId.XLineArithmetic3)
     self:RegisterAgency(ModuleId.XFashionStory)
     self:RegisterAgency(ModuleId.XSoloReform)
     self:RegisterAgency(ModuleId.XHelpCourse)
@@ -671,6 +674,8 @@ function XMVCACls:InitModule()
     self:RegisterAgency(ModuleId.XItemRestrict)
     self:RegisterAgency(ModuleId.XShop)
     self:RegisterAgency(ModuleId.XItem)
+
+    self:RegisterAgency(ModuleId.XPBRGame)
 end
 
 function XMVCACls:AddPreloadConfig(path)

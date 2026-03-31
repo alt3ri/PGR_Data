@@ -18,6 +18,12 @@ XChatConfigs.KEY_LAST_READ_CHAT_TIME = "KEY_LAST_READ_CHAT_TIME_"
 
 XChatConfigs.DefaultChatBoardId = 25000001
 
+-- 表情类型 ： 1-普通表情 2-动态表情
+XChatConfigs.EmojiType = {
+    Normal = 1,
+    Dynamic = 2,
+}
+
 function XChatConfigs:Init()
     EmojiTemplates = XTableManager.ReadByIntKey(TABLE_EMOJI_CONFIG_PATH, XTable.XTableEmoji, "Id")
     EmojiPackTemplates = XTableManager.ReadByIntKey(TABLE_EMOJI_PACK_PATH, XTable.XTableEmojiPack, "Id")
@@ -44,6 +50,28 @@ function XChatConfigs.GetEmojiIcon(emojiId)
         return nil
     end
     return cfg.Path
+end
+
+-- 获取表情类型
+function XChatConfigs.GetEmojiType(emojiId)
+    emojiId = tonumber(emojiId)
+    emojiId = emojiId or 0
+    local cfg = EmojiTemplates[emojiId]
+    if cfg == nil then
+        return nil
+    end
+    return cfg.Type
+end
+
+-- 获取动态表情资源
+function XChatConfigs.GetEmojiGIFAsset(emojiId)
+    emojiId = tonumber(emojiId)
+    emojiId = emojiId or 0
+    local cfg = EmojiTemplates[emojiId]
+    if cfg == nil then
+        return nil
+    end
+    return cfg.GIFAsset
 end
 
 function XChatConfigs.GetEmojiQuality()

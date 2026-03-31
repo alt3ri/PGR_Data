@@ -1,0 +1,90 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '36'}
+3	3		301				DialogDisable			{3: '4.4特效测试'}
+4	4		302							{2: '背景变形特效（即故障花屏）', 3: '5', 4: '普通特效', 5: '13'}
+5	5		101	1						{1: 'Assets/Product/Texture/Image/BgStory/BgStory737.jpg'}
+6	6		111	1						{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiguzhangNew.prefab'}
+7	7		301			DialogEnable	DialogDisable		200.0	{3: '故障花屏'}
+8	8		101	1						{1: 'Assets/Product/Texture/Image/BgStory/Bgstory87.png'}
+9	9		101	1						{1: 'Assets/Product/Texture/Image/BgStory/Bgstory86.png'}
+10	10		101	1						{1: 'Assets/Product/Texture/Image/BgStory/Bgstory95.png'}
+11	11		101	1						{1: 'Assets/Product/Texture/Image/BgStory/Bgstory93.png'}
+12	12		301		1	DialogEnable				{3: '切图片测试'}
+13	13		302							{2: '常规测试', 3: '14', 4: '图层测试（还没配不要点）', 5: '87'}
+14	14		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory737.jpg'}
+15	15		201	1					500.0	{1: '1', 2: '501541', 7: '1'}
+16	16		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiheixianNew.prefab', 2: '1'}
+17	17		401	1						{1: '1', 2: '36'}
+18	18		301			DialogEnable				{1: '1', 3: '混乱黑线', 4: '1'}
+19	19		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiheixianNew.prefab'}
+20	20		202							{1: '1'}
+21	21		301				DialogDisable			{3: '清屏'}
+22	22		201							{1: '1', 2: '501239', 7: '1'}
+23	23		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUi2DLihuiFireGlowTY.prefab', 2: '2', 3: '1', 4: '1'}
+24	24		401	1						{1: '1', 2: '36'}
+25	25		301			DialogEnable				{1: '1', 3: '火光倒影（适配不同分辨率立绘）', 4: '1'}
+26	26		202							{1: '1', 6: '1'}
+27	27		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUi2DLihuiFireGlowTY.prefab', 4: '1'}
+28	28		301							{3: '角色1消失'}
+29	29		201							{1: '2', 2: '501361'}
+30	30		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUi2DLihuiFireGlowTY.prefab', 2: '2', 3: '2', 4: '2'}
+31	31		301							{1: '1', 3: '角色2'}
+32	32		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUi2DLihuiFireGlowTY.prefab', 4: '2'}
+33	33		202							{1: '2', 6: '1'}
+34	34		301							{3: '角色2消失'}
+35	35		201							{1: '3', 2: '501379'}
+36	36		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUi2DLihuiFireGlowTY.prefab', 2: '2', 3: '3', 4: '3'}
+37	37		301							{1: '1', 3: '角色3'}
+38	38		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUi2DLihuiFireGlowTY.prefab', 4: '3'}
+39	39		202							{1: '3', 6: '1'}
+40	40		301							{3: '角色3消失'}
+41	41		201							{1: '4', 2: '501417'}
+42	42		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUi2DLihuiFireGlowTY.prefab', 2: '2', 3: '4', 4: '4'}
+43	43		301							{1: '1', 3: '角色4'}
+44	44		202							{1: '4', 6: '1'}
+45	45		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUi2DLihuiFireGlowTY.prefab', 4: '4'}
+46	46		301							{3: '角色4消失'}
+47	47		201							{1: '5', 2: '501385'}
+48	48		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUi2DLihuiFireGlowTY.prefab', 2: '2', 3: '5', 4: '5'}
+49	49		301							{1: '1', 3: '角色5'}
+50	50		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUi2DLihuiFireGlowTY.prefab', 4: '5'}
+51	51		202							{1: '1', 2: '2', 3: '3', 4: '4', 5: '5'}
+52	52		301				DialogDisable			{3: '清屏'}
+53	53		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoisexuehuaNew.prefab', 2: '1'}
+54	54		301			DialogEnable				{3: '雪花屏特效'}
+55	55		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiNoisexuehuaNew.prefab'}
+56	56		301				DialogDisable			{3: '特效卸载'}
+57	57		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUibaiping01New.prefab', 2: '1'}
+58	58		301			DialogEnable				{3: '白光转场出现'}
+59	59		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUibaiping01New.prefab'}
+60	60		301				DialogDisable			{3: '特效卸载'}
+61	61		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUibaiping02New.prefab', 2: '1'}
+62	62		301			DialogEnable				{3: '白光转场消失'}
+63	63		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUibaiping02New.prefab'}
+64	64		301				DialogDisable			{3: '特效卸载'}
+65	65		501						1500.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUibaiping01New.prefab', 2: '1'}
+66	66		501						50.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUibaiping02New.prefab', 2: '1'}
+67	67		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUibaiping02New.prefab'}
+68	68		301			DialogEnable	DialogDisable			{3: '白光转场（出现和消失结合）'}
+69	69		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUibaiping01New.prefab'}
+70	70		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLightNew.prefab', 2: '1'}
+71	71		301			DialogEnable				{3: '顶光'}
+72	72		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLightNew.prefab'}
+73	73		301				DialogDisable			{3: '特效卸载'}
+74	74		201	1					500.0	{1: '1', 2: '501541', 7: '1'}
+75	75		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiPerishXS01New.prefab', 2: '1', 3: '1'}
+76	76		301			DialogEnable				{1: '1', 3: '黄色荧光粒子环绕特效'}
+77	77		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiPerishXS01New.prefab', 4: '1'}
+78	78		301				DialogDisable			{3: '特效卸载'}
+79	79		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiPerishXS02New.prefab', 2: '1', 3: '1'}
+80	80		301			DialogEnable				{3: '黑色消散特效'}
+81	81		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiPerishXS02New.prefab', 4: '1'}
+82	82		301				DialogDisable			{3: '特效卸载'}
+83	83		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiPerishXS03New.prefab', 2: '1', 3: '1'}
+84	84		301			DialogEnable				{3: '白色消散特效'}
+85	85		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiPerishXS03New.prefab', 4: '1'}
+86	86		301		1		AniZhuanchangBegin			{3: '特效卸载'}
+87	87		301			DialogEnable	DialogDisable			{3: '分图层测试：1-背景之上，演员之下；2-演员之上；3-最上层'}
+88	88		302							{2: '1-背景之上，演员之下', 3: '89', 4: '2-演员之上', 5: '89', 6: '3-最上层', 7: '89'}
+89	89		401	1	1		AniZhuanchangBegin			{1: '1', 2: '36'}

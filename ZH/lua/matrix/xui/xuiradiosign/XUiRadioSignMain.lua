@@ -939,54 +939,40 @@ function XUiRadioSignMain:PlayVideo(content)
         -- 视频播放前，暂停 RMS 分析器
         XAudioManager.StopAnalyzer()
 
-        -- 暂时屏蔽随机模式，尝试从 video 获取 RMS
-        -- 视频播放时，启动 RMS 随机模式
-        -- if self._RMSStrip1 then
-        --     self._RMSStrip1:StartRandomMode()
-        -- end
-        -- if self._RMSStrip2 then
-        --     self._RMSStrip2:StartRandomMode()
-        -- end
+        -- 使用全屏视频播放器播放视频
+        local videoId = content.VideoConfigId
 
-        -- 设置视频播放结束回调
-        self.Video.ActionEnded = function()
-            self:StopVideo(true)
-        end
         -- 在视频播放时, 就发送请求获取奖励, 但是表现上, 弹出奖励和切换重播状态等, 都要等到视频播放完成后
-        self.Video.ActionPlayed = function()
-            -- 如果当前content未领奖，在视频播放时提前发送奖励请求
-            if self._CurrentContentConfig then
-                local isReceived = self._Control:IsRewardReceived(self._CurrentContentConfig.Id)
-                -- 防止重复触发：只有未领奖且未在请求中时才发送请求
-                if not isReceived and self._RewardRequestState ~= RewardRequestState.Pending then
-                    self._RewardRequestState = RewardRequestState.Pending
-                    local contentId = self._CurrentContentConfig.Id
-                    XMVCA.XRadioSign:RadioSignGainRewardRequest(contentId, function(isSuccess, rewardGoodsList)
-                        self._RewardRequestState = RewardRequestState.Completed
-                        self._RewardRequestSuccess = isSuccess
-                        -- 保存奖励列表，延后到视频播放完成后弹出
-                        self._PendingRewardList = rewardGoodsList
-                        if not isSuccess then
-                            XLog.Debug("[XUiRadioSignMain] ActionPlayed: 奖励请求失败, contentId =", contentId)
-                        else
-                            -- 请求成功后立即更新按钮状态，解锁页签，允许玩家跳过视频
-                            self:UpdateAllButtons()
-                        end
-                    end, true) -- 延后显示奖励
-                else
-                    if self._RewardRequestState == RewardRequestState.Pending then
-                        XLog.Debug("[XUiRadioSignMain] ActionPlayed: 请求已在进行中，忽略重复触发, contentId =",
-                            self._CurrentContentConfig.Id)
+        if self._CurrentContentConfig then
+            local isReceived = self._Control:IsRewardReceived(self._CurrentContentConfig.Id)
+            -- 防止重复触发：只有未领奖且未在请求中时才发送请求
+            if not isReceived and self._RewardRequestState ~= RewardRequestState.Pending then
+                self._RewardRequestState = RewardRequestState.Pending
+                local contentId = self._CurrentContentConfig.Id
+                XMVCA.XRadioSign:RadioSignGainRewardRequest(contentId, function(isSuccess, rewardGoodsList)
+                    self._RewardRequestState = RewardRequestState.Completed
+                    self._RewardRequestSuccess = isSuccess
+                    -- 保存奖励列表，延后到视频播放完成后弹出
+                    self._PendingRewardList = rewardGoodsList
+                    if not isSuccess then
+                        XLog.Debug("[XUiRadioSignMain] PlayUiVideo: 奖励请求失败, contentId =", contentId)
+                    else
+                        -- 请求成功后立即更新按钮状态，解锁页签，允许玩家跳过视频
+                        self:UpdateAllButtons()
                     end
+                end, true) -- 延后显示奖励
+            else
+                if self._RewardRequestState == RewardRequestState.Pending then
+                    XLog.Debug("[XUiRadioSignMain] PlayUiVideo: 请求已在进行中，忽略重复触发, contentId =",
+                        self._CurrentContentConfig.Id)
                 end
             end
         end
-        self.Video.ActionError = function()
-            self:OnVideoResourcePlayFailed("视频播放失败")
-        end
 
-        self.Video:SetInfoByVideoId(content.VideoConfigId)
-        self.Video:RePlay()
+        -- 使用UiVideoPlayer全屏播放，结束后统一走StopVideo逻辑处理领奖和UI
+        XLuaVideoManager.PlayUiVideo(videoId, function()
+            self:StopVideo(true)
+        end, nil, nil, true)
     end
 end
 

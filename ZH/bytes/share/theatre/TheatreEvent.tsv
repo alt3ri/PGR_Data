@@ -1,0 +1,398 @@
+Id	EventId	NeedDecoration	StepId	NextStepId	Type	StageId	StepRewardItemId	StepRewardItemCount	StoryId	OptionDesc	OptionDownDesc	OptionIcon	OptionType	OptionItemId	OptionItemCount	OptionNextStepId	OptionNeedDecoration	Title	TitleContent	RoleIcon	RoleName	RoleContent	EventDesc	ConfirmContent	BgAsset
+1	101		10101		2					['寻找休憩之地']			[3]			[10102]		安眠之处	似乎会有神秘事件将要发生				夜幕渐沉，潮气从地面升起，寒冷自空气渗出，整片森林的光线仿佛被吸收殆尽，古怪的暗影扭曲着身姿变换着形状，悄悄地融入夜色当中。远处似乎传来豺狼怒熊的长嗥之声。而前路迢迢，看来你必须在此寻找一处暂时的休憩之地以度过今夜，等待朝阳初升，照亮前路。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+2	101		10102		2					['在结着蛛网的巨型乔木', '在更易攀爬的低矮的乔木上']			[3, 3]			[10103, 10104]		安眠之处	似乎会有神秘事件将要发生				经过短暂的思考，你决定就在此处过夜	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+3	101		10103		1													安眠之处	似乎会有神秘事件将要发生				你沉入深深的睡眠当中，蛛网之上三只蜘蛛纺织着你的梦境，你梦见了火光和哭喊声，无边际的花海，盘旋的飞龙，高高的露台上少女的身姿……而现在你醒了，晨光熹微，前路如梦境般重叠扑朔。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+4	101		10104		5	30061911												安眠之处	似乎会有神秘事件将要发生				你刚擎住乔木的最低矮的枝干，正打算往上攀爬，树身突然开始剧烈摇晃起来——	准备战斗	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+5	102		10201		2					['往前去']			[3]			[10202]		火堆					有灰白色的烟雾袅袅出现在森林上空，你追寻着烟雾的方向，打算去一探究竟。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+6	102		10202		2					['决定翻查灰烬', '留在原地等待', '往前走走']			[3, 3, 3]			[10203, 10204, 10205]		火堆					空地上只剩下下火堆焚烧的残余和灰烬，四周无人，也没有任何活物的气息。看着眼前已然熄灭的火堆，你——	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+7	102		10203		4		96110	1										火堆					你捡了一根大小合适的树枝，翻动查看起已熄灭的火堆，你发现有残存的辨识不出本体的骨头的痕迹，移开半截骨头，你在灰烬之下发现了一枚流光溢彩的宝石。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+8	102		10204		5	30061910												火堆					你在已熄灭的火堆旁坐下，期待着有人会回到这里。时间掠过森林的枝桠，向你的眼皮施下缓缓闭合的术法。再次睁开双眼时，簇簇磷火立刻自火堆处高高低低地飞出——	准备战斗	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+9	102		10205		1													火堆					你沿着来时的道路的反方向谨慎向前，远离了火堆，但你并未发现任何人经过的痕迹。但幸运的是，你发现了一丛结满果实的乌泡刺。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+10	103		10301		2					['根据羽毛的指引', '跟随日出的方向']			[3, 3]			[10302, 10303]		花与羽毛					你在森林里游荡，你学会倾听风的声音，你在日升时行走，在日落时分歇息，用甘甜的溪水漱口，以林间树果裹腹。你逐渐掌握了在森林中生存的技巧，却也逐渐迷失了方向。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+11	103		10302		1													花与羽毛					你拾捡起某种灰色鸟类落下的羽毛，用以卜算前进的方向，你跟随羽毛的指引，来到了水源处，沿着溪流的方向，你一路前行。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+12	103		10303		1													花与羽毛					一些粗浅的知识浮现在你的脑海之中，你决定先选定一个方向前进，跟随着日出的方位，你慢慢向前。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+13	104		10401		2					['将宝石交付出去', '表示可以在船上充当帮工', '坦诚相告，希望得到帮助']	['需要道具%s']		[2, 3, 3]	[96110]	[1]	[10402, 10406, 10407]		登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	这可不是什么玩具船开往快乐岛。	经过一番交谈之后，你表示希望一同搭乘船只前往遥远的王国，记忆里的那不勒斯与水手描述中的城都相对应了起来，但摸遍浑身上下，你发现自己身无分文。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+14	104		10402	10403	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	你……	水手看向你，起了个话头，却最终什么也没说。他应允了你上船的请求，却没有收下那枚宝石。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+15	104		10403	10404	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	这是哪里来的？	水手看向你，起了个话头，却最终什么也没说。他应允了你上船的请求，却没有收下那枚宝石。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+16	104		10404	10405	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	你认识一个紫色眼睛的旅行者吗？	水手看向你，起了个话头，却最终什么也没说。他应允了你上船的请求，却没有收下那枚宝石。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+17	104		10405		1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	不……没什么。	水手看向你，起了个话头，却最终什么也没说。他应允了你上船的请求，却没有收下那枚宝石。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+18	104		10406		1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手		水手看了你一眼，似乎笑了一下，却最终什么也没说。他应允了你上船的请求，却一句未提帮工的内容。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+19	104		10407	10408	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手		水手看向你，似乎想起久远以前的记忆，他最终什么也没说，但应允了你上船的请求。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+20	104		10408	10409	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	你见过龙吗？	水手看向你，似乎想起久远以前的记忆，他最终什么也没说，但应允了你上船的请求。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+21	104		10409	10410	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	我们已经很久没见过龙了。	水手看向你，似乎想起久远以前的记忆，他最终什么也没说，但应允了你上船的请求。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+22	104		10410	10411	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	‘龙随着笛声而来’。	水手看向你，似乎想起久远以前的记忆，他最终什么也没说，但应允了你上船的请求。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+23	104		10411	10412	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	但在最开始的时候，恶龙的出现是毫无征兆的。	水手看向你，似乎想起久远以前的记忆，他最终什么也没说，但应允了你上船的请求。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+24	104		10412	10413	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	惟一可循的规律是，恶龙往往会搜寻人群。	水手看向你，似乎想起久远以前的记忆，他最终什么也没说，但应允了你上船的请求。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+25	104		10413		1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	会像海上飓风一样掘起陆地上的人群，将他们从空中摔落。它袭击村庄和人群，毁坏目之所及任何可以毁坏的事物。	水手看向你，似乎想起久远以前的记忆，他最终什么也没说，但应允了你上船的请求。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+26	105		10501		2					['前往舱室的方向', '在甲板上随意走动', '表示想自己随意走动一下']			[3, 3, 3]			[10502, 10503, 10504]		船舶之上		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手		登上了船，引路的水手询问你要往哪里去。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+27	105		10502		6				ZX02404BA									船舶之上							
+28	105		10503		6				ZX02405BA									船舶之上							
+29	105		10504		1													船舶之上					表示想自己随意走动一下	离开	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+30	107		10701		2					['点头示意', '返回舱室休息']			[3, 3]			[10702, 10707]		水手		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手		太阳没入了海平面，船上的夜色朦胧，今晚值夜之一的水手身形高大，脸色蜡黄，走路有点不明显的跛足，你认出正是登船遇到的其中一位。他在白天总是沉默，在夜晚则会敞开心扉。	下一步	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+31	107		10702		2					['聊聊恶龙', '聊聊水手的故事']			[3, 3]			[10703, 10704]		水手		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手		他站在远离船室的甲板上，目光却一直望着船室的方向，他向你招了招手，直到你走近，方才低声开了口。	下一步	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+32	107		10703	10705	6				ZX02407BA									水手		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手				
+33	107		10704	10705	6				ZX02408BA									水手		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手				
+34	107		10705	10706	1													水手		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	大概是年岁大了，开始兜着绕着，絮絮叨叨讲一些无关紧要的琐事。你想听的并不是这些吧？	水手笑了下，面容因这个笑容显得更加平和了起来。	交谈	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+35	107		10706		1													水手		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	夜也深了，今晚的故事就讲到这里吧。	水手笑了下，面容因这个笑容显得更加平和了起来。	下一步	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+36	107		10707		1													水手		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手		你向水手打了个招呼，微醺的海风让你有了一丝睡意，你返回了舱室，和衣而眠，你做了一个长长的梦	下一步	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+37	108		10801		2					['这是哪里？']			[3]			[10802]		流落孤岛					睁开眼是一片澄澈的天空，空气中夹杂着海腥味，你恍惚记得你被高高的浪潮带起，你极力呼喊着，视野里最后是龙高昂的头颅和巨大的双爪，你避让开了，并牢牢掌控着身下窄小的浮舟，这使你不至于在漂流中下沉。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory533.jpg
+38	108		10802		2					['四处走走']			[3]			[10803]		流落孤岛					身下是细软的沙粒，你缓慢直起了上半身，入目是海平面，浪潮不再凶猛，潮水一触即离地搔挠你的双脚。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory533.jpg
+39	108		10803		2					['躺在沙滩上晒太阳', '寻找活物的踪迹']			[3, 3]			[10804, 10805]		流落孤岛					你往四周查探了一圈，虽然没有完全摸清状况，但你确定自己身处在一个岛屿之上。这会是一个无人岛吗？	下一步	Assets/Product/Texture/Image/BgStory/Bgstory533.jpg
+40	108		10804		1													流落孤岛					阳光正好，在半梦半醒之中，你身上的衣物干透了。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory533.jpg
+41	108		10805		5	30061932												流落孤岛					你看见有什么活动的身影，你连忙追了上去，是凯列班还是星期五？你决定一探究竟。	准备战斗	Assets/Product/Texture/Image/BgStory/Bgstory533.jpg
+42	201		20101		2					['寻找休憩之地']			[3]			[20102]		安眠之处	似乎会有神秘事件将要发生				夜幕渐沉，潮气从地面升起，寒冷自空气渗出，整片森林的光线仿佛被吸收殆尽，古怪的暗影扭曲着身姿变换着形状，悄悄地融入夜色当中。远处似乎传来豺狼怒熊的长嗥之声。而前路迢迢，看来你必须在此寻找一处暂时的休憩之地以度过今夜，等待朝阳初升，照亮前路。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+43	201		20102		2					['在结着蛛网的巨型乔木', '在更易攀爬的低矮的乔木上']			[3, 3]			[20103, 20104]		安眠之处	似乎会有神秘事件将要发生				经过短暂的思考，你决定就在此处过夜	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+44	201		20103		1													安眠之处	似乎会有神秘事件将要发生				你沉入深深的睡眠当中，蛛网之上三只蜘蛛纺织着你的梦境，你梦见了火光和哭喊声，无边际的花海，盘旋的飞龙，高高的露台上少女的身姿……而现在你醒了，晨光熹微，前路如梦境般重叠扑朔。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+45	201		20104		5	30061911												安眠之处	似乎会有神秘事件将要发生				你刚擎住乔木的最低矮的枝干，正打算往上攀爬，树身突然开始剧烈摇晃起来——	准备战斗	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+46	202		20201		2					['往前去']			[3]			[20202]		火堆					有灰白色的烟雾袅袅出现在森林上空，你追寻着烟雾的方向，打算去一探究竟。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+47	202		20202		2					['决定翻查灰烬', '留在原地等待', '往前走走']			[3, 3, 3]			[20203, 20204, 20205]		火堆					空地上只剩下下火堆焚烧的残余和灰烬，四周无人，也没有任何活物的气息。看着眼前已然熄灭的火堆，你——	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+48	202		20203		4		96110	1										火堆					你捡了一根大小合适的树枝，翻动查看起已熄灭的火堆，你发现有残存的辨识不出本体的骨头的痕迹，移开半截骨头，你在灰烬之下发现了一枚流光溢彩的宝石。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+49	202		20204		5	30061910												火堆					你在已熄灭的火堆旁坐下，期待着有人会回到这里。时间掠过森林的枝桠，向你的眼皮施下缓缓闭合的术法。再次睁开双眼时，簇簇磷火立刻自火堆处高高低低地飞出——	准备战斗	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+50	202		20205		1													火堆					你沿着来时的道路的反方向谨慎向前，远离了火堆，但你并未发现任何人经过的痕迹。但幸运的是，你发现了一丛结满果实的乌泡刺。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+51	203		20301		2					['根据花苞的指引', '跟随日出的方向', '根据羽毛的指引']			[3, 3, 3]			[20304, 20303, 20302]		花与羽毛	出现了新的选择				你在森林里游荡，你学会倾听风的声音，你在日升时行走，在日落时分歇息，用甘甜的溪水漱口，以林间树果裹腹。你逐渐掌握了在森林中生存的技巧，却也逐渐迷失了方向。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+52	203		20302		1													花与羽毛					你拾捡起某种灰色鸟类落下的羽毛，用以卜算前进的方向，你跟随羽毛的指引，来到了水源处，沿着溪流的方向，你一路前行。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+53	203		20303		1													花与羽毛					一些粗浅的知识浮现在你的脑海之中，你决定先选定一个方向前进，跟随着日出的方位，你慢慢向前。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+54	203		20304	20305	1													花与羽毛					你注意到地面草丛间有一些剑状的长叶子拥着细小的花苞，它们脆弱又美丽，仿佛某种启示，却一路往前延展，仿佛在行走，你跟着同类植株生长指向的方向前进。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+55	203		20305		6				ZX02404BB									花与羽毛							
+56	204		20401		2					['将宝石交付出去', '表示可以在船上充当帮工', '坦诚相告，希望得到帮助']	['需要道具%s']		[2, 3, 3]	[96110]	[1]	[20402, 20406, 20407]		登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	这可不是什么玩具船开往快乐岛。	经过一番交谈之后，你表示希望一同搭乘船只前往遥远的王国，记忆里的那不勒斯与水手描述中的城都相对应了起来，但摸遍浑身上下，你发现自己身无分文。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+57	204		20402	20403	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	你……	水手看向你，起了个话头，却最终什么也没说。他应允了你上船的请求，却没有收下那枚宝石。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+58	204		20403	20404	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	这是哪里来的？	水手看向你，起了个话头，却最终什么也没说。他应允了你上船的请求，却没有收下那枚宝石。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+59	204		20404	20405	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	你认识一个紫色眼睛的旅行者吗？	水手看向你，起了个话头，却最终什么也没说。他应允了你上船的请求，却没有收下那枚宝石。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+60	204		20405		1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	不……没什么。	水手看向你，起了个话头，却最终什么也没说。他应允了你上船的请求，却没有收下那枚宝石。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+61	204		20406		1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手		水手看了你一眼，似乎笑了一下，却最终什么也没说。他应允了你上船的请求，却一句未提帮工的内容。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+62	204		20407	20408	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手		水手看向你，似乎想起久远以前的记忆，他最终什么也没说，但应允了你上船的请求。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+63	204		20408	20409	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	你见过龙吗？	水手看向你，似乎想起久远以前的记忆，他最终什么也没说，但应允了你上船的请求。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+64	204		20409	20410	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	我们已经很久没见过龙了。	水手看向你，似乎想起久远以前的记忆，他最终什么也没说，但应允了你上船的请求。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+65	204		20410	20411	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	‘龙随着笛声而来’。	水手看向你，似乎想起久远以前的记忆，他最终什么也没说，但应允了你上船的请求。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+66	204		20411	20412	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	但在最开始的时候，恶龙的出现是毫无征兆的。	水手看向你，似乎想起久远以前的记忆，他最终什么也没说，但应允了你上船的请求。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+67	204		20412	20413	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	惟一可循的规律是，恶龙往往会搜寻人群。	水手看向你，似乎想起久远以前的记忆，他最终什么也没说，但应允了你上船的请求。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+68	204		20413		1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	会像海上飓风一样掘起陆地上的人群，将他们从空中摔落。它袭击村庄和人群，毁坏目之所及任何可以毁坏的事物。	水手看向你，似乎想起久远以前的记忆，他最终什么也没说，但应允了你上船的请求。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+69	205		20501		2					['前往舱室的方向', '在甲板上随意走动', '表示想自己随意走动一下']			[3, 3, 3]			[20502, 20503, 20504]		船舶之上		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手		登上了船，引路的水手询问你要往哪里去。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+70	205		20502		6				ZX02405BB									船舶之上							
+71	205		20503		6				ZX02406BB									船舶之上							
+72	205		20504		1													船舶之上					表示想自己随意走动一下	离开	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+73	207		20701		2					['表示想自己一个人吹吹风', '点头示意', '返回舱室休息']			[3, 3, 3]			[20705, 20702, 20706]		水手	出现了新的选择	Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手		太阳没入了海平面，船上的夜色朦胧，今晚值夜之一的水手身形高大，脸色蜡黄，走路有点不明显的跛足，你认出正是登船遇到的其中一位。他在白天总是沉默，在夜晚则会敞开心扉。	下一步	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+74	207		20702		2					['聊聊恶龙', '聊聊水手的故事']			[3, 3]			[20703, 20704]		水手		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手		他站在远离船室的甲板上，目光却一直望着船室的方向，他向你招了招手，直到你走近，方才低声开了口。	下一步	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+75	207		20703	20707	6				ZX02409BB									水手		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手				
+76	207		20704	20707	6				ZX02410BB									水手		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手				
+77	207		20705		6				ZX02408BB									水手		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手				
+78	207		20706		1													水手		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手		你向水手打了个招呼，微醺的海风让你有了一丝睡意，你返回了舱室，和衣而眠，一夜无梦。	下一步	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+79	207		20707	20708	1													水手		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	大概是年岁大了，开始兜着绕着，絮絮叨叨讲一些无关紧要的琐事。你想听的并不是这些吧？	水手笑了下，面容因这个笑容显得更加平和了起来。	交谈	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+80	207		20708		1													水手		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	夜也深了，今晚的故事就讲到这里吧。	水手笑了下，面容因这个笑容显得更加平和了起来。	下一步	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+81	208		20801		2					['这是哪里？']			[3]			[20802]		流落孤岛					睁开眼是一片澄澈的天空，空气中夹杂着海腥味，你恍惚记得你被高高的浪潮带起，你极力呼喊着，视野里最后是龙高昂的头颅和巨大的双爪，你避让开了，并牢牢掌控着身下窄小的浮舟，这使你不至于在漂流中下沉。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory533.jpg
+82	208		20802		2					['四处走走']			[3]			[20803]		流落孤岛					身下是细软的沙粒，你缓慢直起了上半身，入目是海平面，浪潮不再凶猛，潮水一触即离地搔挠你的双脚。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory533.jpg
+83	208		20803		2					['躺在沙滩上晒太阳', '寻找活物的踪迹', '沿海岸走去']			[3, 3, 3]			[20804, 20805, 20806]		流落孤岛	出现了新的选择				你往四周查探了一圈，虽然没有完全摸清状况，但你确定自己身处在一个岛屿之上。这会是一个无人岛吗？	下一步	Assets/Product/Texture/Image/BgStory/Bgstory533.jpg
+84	208		20804		1													流落孤岛					阳光正好，在半梦半醒之中，你身上的衣物干透了。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory533.jpg
+85	208		20805		5	30061932												流落孤岛					你看见有什么活动的身影，你连忙追了上去，是凯列班还是星期五？你决定一探究竟。	开始战斗	Assets/Product/Texture/Image/BgStory/Bgstory533.jpg
+86	208		20806		6				ZX02412BB									流落孤岛							
+87	210		21001		2					['进行自我介绍', '说明来历情况', '表示自己只会短暂停留，很快离开']			[3, 3, 3]			[21002, 21003, 21007]		村庄					巨龙的出现在村庄里引起了骚动，村民纷纷拿起了农具和武器，而全副武装赶到后，只余你从顶棚上慢慢爬下，与村民们大眼瞪小眼。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+88	210		21002		1													村庄		Assets/Product/Texture/Image/RoleStory/PinminNormal01.png	农夫	我们这里不欢迎外来人	一番介绍说明之后，村民们脸上的神情并未松动，他们如同铁壁般挡在你的面前。	离开这里	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+89	210		21003	21004	1													村庄		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	青年A	你跟那个吹笛子是不是一伙的？	一番说明之后，村民里骚动起来，人们开始窃窃私语，而投射过来的眼神并不友好，有谁向你扔了石子。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+90	210		21004	21005	1													村庄		Assets/Product/Texture/Image/RoleStory/TongyongNanmingirlNormal02.png	青年B	你说你是龙带来的？	一番说明之后，村民里骚动起来，人们开始窃窃私语，而投射过来的眼神并不友好，有谁向你扔了石子。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+91	210		21005	21006	1													村庄		Assets/Product/Texture/Image/RoleStory/ShihuangzhenanNormal01.png	中年A	灾厄！灾厄！灾厄要来到我们村庄了！	一番说明之后，村民里骚动起来，人们开始窃窃私语，而投射过来的眼神并不友好，有谁向你扔了石子。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+92	210		21006		5	30061887												村庄		Assets/Product/Texture/Image/RoleStory/KaliegrandNomal02.png	中年B	滚出去！滚出去！	一番说明之后，村民里骚动起来，人们开始窃窃私语，而投射过来的眼神并不友好，有谁向你扔了石子。	准备战斗	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+93	210		21007		1													村庄					表示自己只会短暂停留，很快离开	离开	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+94	211		21101	21102	1													村口		Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png	妇人	米伊！米伊！	你徘徊在村口，失去了目标和行进的方向，妇女焦急的喊声吸引了你的注意。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+95	211		21102		2					['忽略', '上前询问']			[3, 3]			[21103, 21104]		村口		Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png	妇人	你在哪米伊！	你徘徊在村口，失去了目标和行进的方向，妇女焦急的喊声吸引了你的注意。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+96	211		21103		1													村口		Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png	妇人	呜……	你认出妇人是之前驱赶你的村民里的一员，本着多一事不如少一事的原则，你离开了这里。	离开	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+97	211		21104	21105	1													村口		Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png	妇人	米伊不见了……我的米伊不见了。	你走上前去，询问她有什么需要帮助。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+98	211		21105	21106	1													村口		Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png	妇人	我找遍了整个村子，没有找到他！	你走上前去，询问她有什么需要帮助。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+99	211		21106	21107	1													村口		Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png	妇人	大家都不敢到村外去，说是有龙和魔物……	你走上前去，询问她有什么需要帮助。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+100	211		21107	21108	1													村口		Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png	妇人	米伊他会不会往龙穴去了？是不是被那奇怪的笛声骗走了？	你走上前去，询问她有什么需要帮助。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+101	211		21108		2					['你表示会帮她一起寻找米伊', '你表示自己有更重要的事，要先行离开']			[3, 3]			[21109, 21112]		村口		Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png	妇人	都怪我！都怪我！	你走上前去，询问她有什么需要帮助。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+102	211		21109		2					['偷偷潜入村庄寻找线索', '决定晚些往妇人口中所说的“龙穴”的方向去看看']			[3, 3]			[21110, 21111]		村口		Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png	妇人		你要从哪里寻找起呢？	下一步	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+103	211		21110		5	30061887												村口					偷偷潜入村庄寻找线索	准备战斗	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+104	211		21111		6				ZX02415BB									村口							
+105	211		21112		1													村口					你表示自己有更重要的事，要先行离开	离开	
+106	213		21301		2					['上前看看', '绕路而行']			[3, 3]			[21302, 21313]		迷失之人					你行走于荒地之上，传言中龙的巢穴便在此处，许多人有来无回，这个延伸到世界边缘的荒冢，地平线一片黢黑，脚下的石块参差不齐。你听到前方有声响——	下一步	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+107	213		21302		2					['阻止他', '解救他', '先行离开']			[3, 3, 3]			[21303, 21307, 21314]		迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	我才不怕你！	你看见一个小男孩正与魔物对峙，他拿起石块，正要朝魔物掷去。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+108	213		21303	21304	1													迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	你、你是勇者吗？	你阻止了小男孩，并带着他往安全的地方跑去。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+109	213		21304	21305	1													迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	你也是来讨伐恶龙的吗？	你阻止了小男孩，并带着他往安全的地方跑去。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+110	213		21305	21306	1													迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	我？	你阻止了小男孩，并带着他往安全的地方跑去。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+111	213		21306		1													迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	我也是一个勇者哦！	你阻止了小男孩，并带着他往安全的地方跑去。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+112	213		21307	21308	5	30061888												迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	我才不怕你！	解救他	准备战斗	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+113	213		21308	21309	1													迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	你好厉害啊！	战斗成功后	交谈	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+114	213		21309	21310	1													迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	你是真正的勇者吗？		交谈	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+115	213		21310	21311	1													迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	妈妈说吹笛人是坏人。		交谈	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+116	213		21311	21312	1													迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	我想证明给妈妈看，才不是这样的。		交谈	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+117	213		21312		1													迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	能吹出这么好听曲子的人怎么可能是坏人呢！		下一步	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+118	213		21313		1													迷失之人					绕路而行	离开	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+119	213		21314		1													迷失之人					先行离开	离开	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+120	301		30101		2					['前往一探究竟', '快速离开这里']			[3, 3]			[30102, 30103]		密林深处	似乎会有神秘事件发生				前方有一片黑森林，无论白日的光线如何变幻，枝叶的颜色丝毫不会受到影响，往前一点看，树木长得也奇形怪状。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+121	301		30102		2					['一瞬不瞬盯着看', '走上前去打招呼', '快步离开']			[3, 3, 3]			[30104, 30105, 30106]		密林深处	似乎会有神秘事件发生	Assets/Product/Texture/Image/RoleStory/AilaNormal02.png			穿过林叶的阴影，你看到女巫以年轻貌美的少女形象出现，在魔法维持下热烈绽放的高高花丛中唱着奇怪的歌谣，声音被枝叶的阴影吞没，一点都透不出去。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+122	301		30103		1													密林深处	似乎会有神秘事件发生	Assets/Product/Texture/Image/RoleStory/AilaNormal02.png			快速离开这里	离开	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+123	301		30104		1													密林深处	似乎会有神秘事件发生	Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png			女巫显露出苍老的面貌，大声呼喊并恫吓于你。你并没有转移视线，女巫停下了行动，只留下深深一瞥，随即身影连带花丛，尽皆消失不见了。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+124	301		30105		4		96109	1										密林深处	似乎会有神秘事件发生	Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png			女巫显露出苍老的面貌，你毫不惊慌，不卑不亢的态度赢得了女巫的尊重，她恢复了原本年轻的面容，深深地看了你一眼，随即身影连同花丛一起消失不见，原地只留下一枚银铃。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+125	301		30106		1													密林深处	似乎会有神秘事件发生	Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png			快步离开	离开	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+126	302		30201		2					['往前去']			[3]			[30202]		火堆					有灰白色的烟雾袅袅出现在森林上空，你追寻着烟雾的方向，打算去一探究竟。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+127	302		30202		2					['决定翻查灰烬', '留在原地等待', '往前走走']			[3, 3, 3]			[30203, 30204, 30205]		火堆					空地上只剩下下火堆焚烧的残余和灰烬，四周无人，也没有任何活物的气息。看着眼前已然熄灭的火堆，你——	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+128	302		30203		4		96110	1										火堆					你捡了一根大小合适的树枝，翻动查看起已熄灭的火堆，你发现有残存的辨识不出本体的骨头的痕迹，移开半截骨头，你在灰烬之下发现了一枚流光溢彩的宝石。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+129	302		30204		5	30061910												火堆					你在已熄灭的火堆旁坐下，期待着有人会回到这里。时间掠过森林的枝桠，向你的眼皮施下缓缓闭合的术法。再次睁开双眼时，簇簇磷火立刻自火堆处高高低低地飞出——	准备战斗	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+130	302		30205		1													火堆					你沿着来时的道路的反方向谨慎向前，远离了火堆，但你并未发现任何人经过的痕迹。但幸运的是，你发现了一丛结满果实的乌泡刺。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+131	303		30301		2					['根据花苞的指引', '跟随日出的方向', '根据羽毛的指引']			[3, 3, 3]			[30304, 30303, 30302]		花与羽毛					你在森林里游荡，你学会倾听风的声音，你在日升时行走，在日落时分歇息，用甘甜的溪水漱口，以林间树果裹腹。你逐渐掌握了在森林中生存的技巧，却也逐渐迷失了方向。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+132	303		30302		1													花与羽毛					你拾捡起某种灰色鸟类落下的羽毛，用以卜算前进的方向，你跟随羽毛的指引，来到了水源处，沿着溪流的方向，你一路前行。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+133	303		30303		1													花与羽毛					一些粗浅的知识浮现在你的脑海之中，你决定先选定一个方向前进，跟随着日出的方位，你慢慢向前。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+134	303		30304	30305	1													花与羽毛					你注意到地面草丛间有一些剑状的长叶子拥着细小的花苞，它们脆弱又美丽，仿佛某种启示，却一路往前延展，仿佛在行走，你跟着同类植株生长指向的方向前进。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+135	303		30305		6				ZX02404BC									花与羽毛							
+136	304		30401		2					['将宝石交付出去', '表示可以在船上充当帮工', '坦诚相告，希望得到帮助']	['需要道具%s']		[2, 3, 3]	[96110]	[1]	[30402, 30406, 30407]		登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	这可不是什么玩具船开往快乐岛。	经过一番交谈之后，你表示希望一同搭乘船只前往遥远的王国，记忆里的那不勒斯与水手描述中的城都相对应了起来，但摸遍浑身上下，你发现自己身无分文。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+137	304		30402	30403	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	你……	水手看向你，起了个话头，却最终什么也没说。他应允了你上船的请求，却没有收下那枚宝石。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+138	304		30403	30404	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	这是哪里来的？	水手看向你，起了个话头，却最终什么也没说。他应允了你上船的请求，却没有收下那枚宝石。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+139	304		30404	30405	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	你认识一个紫色眼睛的旅行者吗？	水手看向你，起了个话头，却最终什么也没说。他应允了你上船的请求，却没有收下那枚宝石。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+140	304		30405		1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	不……没什么。	水手看向你，起了个话头，却最终什么也没说。他应允了你上船的请求，却没有收下那枚宝石。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+141	304		30406		1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手		水手看了你一眼，似乎笑了一下，却最终什么也没说。他应允了你上船的请求，却一句未提帮工的内容。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+142	304		30407	30408	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手		水手看向你，似乎想起久远以前的记忆，他最终什么也没说，但应允了你上船的请求。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+143	304		30408	30409	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	你见过龙吗？	水手看向你，似乎想起久远以前的记忆，他最终应允了你上船的请求。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+144	304		30409	30410	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	我们已经很久没见过龙了。		交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+145	304		30410	30411	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	‘龙随着笛声而来’。		交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+146	304		30411	30412	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	但在最开始的时候，恶龙的出现是毫无征兆的。		交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+147	304		30412	30413	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	惟一可循的规律是，恶龙往往会搜寻人群。		交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+148	304		30413		1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	会像海上飓风一样掘起陆地上的人群，将他们从空中摔落。它袭击村庄和人群，毁坏目之所及任何可以毁坏的事物。		下一步	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+149	314		31401		2					['前往舱室的方向', '在甲板上随意走动', '表示想自己随意走动一下']			[3, 3, 3]			[31402, 31403, 31404]		船舶之上		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手		登上了船，引路的水手询问你要往哪里去。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+150	314		31402		6				ZX02405BC									船舶之上							
+151	314		31403		6				ZX02406BC									船舶之上							
+152	314		31404		1													船舶之上					表示想自己随意走动一下	离开	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+153	305		30501		2					['表示想自己一个人吹吹风', '点头示意', '返回舱室休息']			[3, 3, 3]			[30505, 30502, 30506]		水手		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手		太阳没入了海平面，船上的夜色朦胧，今晚值夜之一的水手身形高大，脸色蜡黄，走路有点不明显的跛足，你认出正是登船遇到的其中一位。他在白天总是沉默，在夜晚则会敞开心扉。	下一步	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+154	305		30502		2					['聊聊恶龙', '聊聊水手的故事']			[3, 3]			[30503, 30504]		水手		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手		他站在远离船室的甲板上，目光却一直望着船室的方向，他向你招了招手，直到你走近，方才低声开了口。	下一步	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+155	305		30503	30507	6				ZX02409BC									水手		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手				
+156	305		30504	30507	6				ZX02410BC									水手		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手				
+157	305		30505		6				ZX02408BC									水手		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手				
+158	305		30506		1													水手		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手		你向水手打了个招呼，微醺的海风让你有了一丝睡意，你返回了舱室，和衣而眠，一夜无梦。	下一步	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+159	305		30507	30508	1													水手		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	大概是年岁大了，开始兜着绕着，絮絮叨叨讲一些无关紧要的琐事。你想听的并不是这些吧？	水手笑了下，面容因这个笑容显得更加平和了起来。	交谈	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+160	305		30508		1													水手		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	夜也深了，今晚的故事就讲到这里吧。	水手笑了下，面容因这个笑容显得更加平和了起来。	下一步	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+161	306		30601		2					['聊过恶龙', '聊过水手的故事', '表示自己对故事没有兴趣']			[3, 3, 3]			[30602, 30602, 30604]		讲故事		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	上次我讲到哪了？	海面上风平浪静，你几乎每夜都会碰巧遇见那个讲故事的水手，他讲不同今时的过去的故事，讲归乡的船歌，讲龙所带来的灾厄。	下一步	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+162	306		30602		2					['表示想继续听']			[3]			[30605]		讲故事		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手		大概是年岁大了，开始兜着绕着，絮絮叨叨讲一些无关紧要的过去的往事。	下一步	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+163	306		30604		1													讲故事		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手		你向水手道了声安，微醺的海风让你有了一丝睡意，你返回了舱室，和衣而眠，做了一个长长的梦。	离开	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+164	306		30605	30607	6				ZX02411BC									讲故事		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手				
+165	306		30607		2					['表示想知道更多关于旅行者的信息', '表示想先返回舱室休息']	['需要道具%s']		[1, 3]	[96110]	[1]	[30608, 30609]		讲故事		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	今晚的故事就讲到这里了？		下一步	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+166	306		30608		6				ZX02412BC									讲故事							
+167	306		30609		1													讲故事		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手		你向水手道了声安，微醺的海风让你有了一丝睡意，你返回了舱室，和衣而眠，做了一个长长的梦。	下一步	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+168	307		30701		2					['这是哪里？']			[3]			[30702]		流落孤岛					睁开眼是一片澄澈的天空，空气中夹杂着海腥味，你恍惚记得你被高高的浪潮带起，你极力呼喊着，视野里最后是龙高昂的头颅和巨大的双爪，你避让开了，并牢牢掌控着身下窄小的浮舟，这使你不至于在漂流中下沉。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory533.jpg
+169	307		30702		2					['四处走走']			[3]			[30703]		流落孤岛					身下是细软的沙粒，你缓慢直起了上半身，入目是海平面，浪潮不再凶猛，潮水一触即离地搔挠你的双脚。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory533.jpg
+170	307		30703		2					['躺在沙滩上晒太阳', '寻找活物的踪迹', '沿海岸走去']			[3, 3, 3]			[30704, 30705, 30706]		流落孤岛					你往四周查探了一圈，虽然没有完全摸清状况，但你确定自己身处在一个岛屿之上。这会是一个无人岛吗？	下一步	Assets/Product/Texture/Image/BgStory/Bgstory533.jpg
+171	307		30704		1													流落孤岛					阳光正好，在半梦半醒之中，你身上的衣物干透了。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory533.jpg
+172	307		30705		5	30061932												流落孤岛					你看见有什么活动的身影，你连忙追了上去，是凯列班还是星期五？你决定一探究竟。	开始战斗	Assets/Product/Texture/Image/BgStory/Bgstory533.jpg
+173	307		30706		6				ZX02413BC									流落孤岛							
+174	308		30801		2					['进行自我介绍', '说明来历情况', '表示自己只会短暂停留，很快离开']			[3, 3, 3]			[30802, 30803, 30807]		村庄					巨龙的出现在村庄里引起了骚动，村民纷纷拿起了农具和武器，而全副武装赶到后，只余你从顶棚上慢慢爬下，与村民们大眼瞪小眼。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+175	308		30802		1													村庄		Assets/Product/Texture/Image/RoleStory/PinminNormal01.png	农夫	我们这里不欢迎外来人	一番介绍说明之后，村民们脸上的神情并未松动，他们如同铁壁般挡在你的面前。	离开这里	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+176	308		30803	30804	1													村庄		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	青年A	你跟那个吹笛子是不是一伙的？	一番说明之后，村民里骚动起来，人们开始窃窃私语，而投射过来的眼神并不友好，有谁向你扔了石子。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+177	308		30804	30805	1													村庄		Assets/Product/Texture/Image/RoleStory/TongyongNanmingirlNormal02.png	青年B	你说你是龙带来的？	一番说明之后，村民里骚动起来，人们开始窃窃私语，而投射过来的眼神并不友好，有谁向你扔了石子。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+178	308		30805	30806	1													村庄		Assets/Product/Texture/Image/RoleStory/ShihuangzhenanNormal01.png	中年A	灾厄！灾厄！灾厄要来到我们村庄了！	一番说明之后，村民里骚动起来，人们开始窃窃私语，而投射过来的眼神并不友好，有谁向你扔了石子。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+179	308		30806		5	30061887												村庄		Assets/Product/Texture/Image/RoleStory/KaliegrandNomal02.png	中年B	滚出去！滚出去！	一番说明之后，村民里骚动起来，人们开始窃窃私语，而投射过来的眼神并不友好，有谁向你扔了石子。	准备战斗	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+180	308		30807		1													村庄					表示自己只会短暂停留，很快离开	离开	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+181	309		30901	30902	1													村口		Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png	妇人	米伊！米伊！	你徘徊在村口，失去了目标和行进的方向，妇女焦急的喊声吸引了你的注意。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+182	309		30902		2					['忽略', '上前询问']			[3, 3]			[30903, 30904]		村口		Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png	妇人	你在哪米伊！	你徘徊在村口，失去了目标和行进的方向，妇女焦急的喊声吸引了你的注意。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+183	309		30903		1													村口		Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png	妇人	呜……	你认出妇人是之前驱赶你的村民里的一员，本着多一事不如少一事的原则，你离开了这里。	离开	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+184	309		30904	30905	1													村口		Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png	妇人	米伊不见了……我的米伊不见了。	你走上前去，询问她有什么需要帮助。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+185	309		30905	30906	1													村口		Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png	妇人	我找遍了整个村子，没有找到他！	你走上前去，询问她有什么需要帮助。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+186	309		30906	30907	1													村口		Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png	妇人	大家都不敢到村外去，说是有龙和魔物……	你走上前去，询问她有什么需要帮助。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+187	309		30907	30908	1													村口		Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png	妇人	米伊他会不会往龙穴去了？是不是被那奇怪的笛声骗走了？	你走上前去，询问她有什么需要帮助。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+188	309		30908		2					['你表示会帮她一起寻找米伊', '你表示自己有更重要的事，要先行离开']			[3, 3]			[30909, 30912]		村口		Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png	妇人	都怪我！都怪我！	你走上前去，询问她有什么需要帮助。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+189	309		30909		2					['偷偷潜入村庄寻找线索', '决定晚些往妇人口中所说的“龙穴”的方向去看看']			[3, 3]			[30910, 30911]		村口		Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png	妇人		你要从哪里寻找起呢？	下一步	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+190	309		30910		5	30061887												村口					偷偷潜入村庄寻找线索	准备战斗	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+191	309		30911		6				ZX02416BC									村口							
+192	309		30912		1													村口					你表示自己有更重要的事，要先行离开	离开	
+193	310		31001		2					['上前看看', '绕路而行']			[3, 3]			[31002, 31013]		迷失之人					你行走于荒地之上，传言中龙的巢穴便在此处，许多人有来无回，这个延伸到世界边缘的荒冢，地平线一片黢黑，脚下的石块参差不齐。你听到前方有声响——	下一步	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+194	310		31002		2					['阻止他', '解救他', '先行离开']			[3, 3, 3]			[31003, 31007, 31014]		迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	我才不怕你！	你看见一个小男孩正与魔物对峙，他拿起石块，正要朝魔物掷去。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+195	310		31003	31004	1													迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	你、你是勇者吗？	你阻止了小男孩，并带着他往安全的地方跑去。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+196	310		31004	31005	1													迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	你也是来讨伐恶龙的吗？	你阻止了小男孩，并带着他往安全的地方跑去。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+197	310		31005	31006	1													迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	我？	你阻止了小男孩，并带着他往安全的地方跑去。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+198	310		31006		1													迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	我也是一个勇者哦！	你阻止了小男孩，并带着他往安全的地方跑去。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+199	310		31007	31008	5	30061888												迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	我才不怕你！	解救他	准备战斗	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+200	310		31008	31009	1													迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	你好厉害啊！	战斗成功后	交谈	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+201	310		31009	31010	1													迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	你是真正的勇者吗？		交谈	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+202	310		31010	31011	1													迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	妈妈说吹笛人是坏人。		交谈	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+203	310		31011	31012	1													迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	我想证明给妈妈看，才不是这样的。		交谈	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+204	310		31012		1													迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	能吹出这么好听曲子的人怎么可能是坏人呢！		下一步	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+205	310		31013		1													迷失之人					绕路而行	离开	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+206	310		31014		1													迷失之人					先行离开	离开	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+207	311		31101		2					['将在哪里遇见小男孩的信息告诉妇人', '将救下的小男孩领到妇人面前']			[3, 3]			[31102, 31104]		妇人		Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png	妇人		你往村庄的方向去，焦急的妇人依旧徘徊在村口，你快步往前去——	下一步	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+208	311		31102	31103	1													妇人		Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png	妇人	谢谢您！好心人！	妇人向你鞠了一躬，慌忙地往村庄里跑去，你紧随其后。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+209	311		31103		1													妇人		Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png	妇人	一定要找到米伊……孩子他爸……孩子他爸……有米伊的消息了！		离开	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+210	311		31104	31105	1													妇人		Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png	妇人	呜……	妇人挥起巴掌，在落下之际却化作了厉声的悲泣，她俯下身，紧紧地抱住自己的孩子，反反复复地念着孩子的名字，仿佛可以从中获取什么力量。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+211	311		31105	31106	1													妇人		Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png	妇人	米伊……米伊……我的米伊……		交谈	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+212	311		31106	31107	1													妇人		Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png	妇人	没事就好……没事就好……		交谈	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+213	311		31107	31108	1													妇人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	米伊	我没事，我没事！		交谈	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+214	311		31108	31109	1													妇人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	米伊	真正的勇者救了我！		下一步	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+215	311		31109		2					['表示自己正在寻找恶龙', '表示自己并不是勇者']			[3, 3]			[31111, 31110]		妇人		Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png	妇人	您真的是勇者吗？	等到妇人收拾好了情绪，她直起了身，双手按着孩子的肩膀，两人一起向你深深地鞠了一躬。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+216	311		31110		1													妇人		Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png	妇人		表示自己并不是勇者	离开	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+217	311		31111	31112	1													妇人		Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png	妇人	请千万不要再往前去了！	你与妇人交谈了起来。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+218	311		31112	31113	1													妇人		Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png	妇人	王都前几日派了军队去了龙的巢穴，有去无回。		交谈	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+219	311		31113		2					['表示自己心意已决。', '表示会先探听好情况再行动。']			[3, 3]			[31114, 31117]		妇人		Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png	妇人	听说王国的公主早早就失踪了，我想要不是被龙抓去了，就是已经死在邪恶的吹笛人手下了！		下一步	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+220	311		31114	31115	1													妇人		Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png	妇人	屠龙可不是说笑的。	妇人沉默了一阵，不再阻挠于你，只是表示希望你先随她回到村子里。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+221	311		31115	31116	1													妇人		Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png	妇人	没有武器防身，你打算赤手空拳过去么？		交谈	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+222	311		31116		4		96112	1										妇人		Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png	妇人	随我来吧。		下一步	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+223	311		31117	31118	1													妇人		Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png	妇人	那就好，年轻人！	你在妇人的带领下进入了村庄里。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+224	311		31118		1													妇人		Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png	妇人	可不要犯傻去找什么恶龙！		下一步	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+225	312		31201		2					['点头承认', '表示自己只是帮了点微不足道的忙']	['需要道具%s']		[2, 3]	[96112]	[1]	[31202, 31204]		铁匠		Assets/Product/Texture/Image/RoleStory/KaliegrandNomal02.png	铁匠	你是救了米伊那小子的外村人吧？	这次再没有村民冲你叫骂，根据妇人的指引，你来到了一家铁匠店，简陋的环境，到处散落着各种各样的农具。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+226	312		31202	31203	4		96105	1										铁匠		Assets/Product/Texture/Image/RoleStory/KaliegrandNomal02.png	铁匠	听说你是一个勇者。	铁匠似乎笑了一下，不知道在哪摸索出了一把破旧的铁剑，他将铁剑递给了你。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+227	312		31203		1													铁匠		Assets/Product/Texture/Image/RoleStory/KaliegrandNomal02.png	铁匠	勇者没有剑怎么行。	铁匠似乎笑了一下，不知道在哪摸索出了一把破旧的铁剑，他将铁剑递给了你。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+228	312		31204		1													铁匠		Assets/Product/Texture/Image/RoleStory/KaliegrandNomal02.png	铁匠		铁匠无所谓地点了点头，旋即专注于自己手头的活计去了。	离开	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+229	313		31301		2					['协助军队，加入战局', '专心于追踪恶龙的踪迹']			[3, 3]			[31302, 31303]		城门					恶龙奄奄一息地飞走了，你一路追踪着恶龙的踪迹，来到城门之下。城门已被攻破，人们四散奔逃，军队以血肉之躯护卫着城门以及背后的人民，抵抗魔物的入侵。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory531.jpg
+230	313		31302		4		96107	1										城门					获得道具	下一步	Assets/Product/Texture/Image/BgStory/Bgstory531.jpg
+231	313		31303		1													城门					专心于追踪恶龙的踪迹	离开	Assets/Product/Texture/Image/BgStory/Bgstory531.jpg
+232	315		31501	31502	1													露台					火光与硝烟充斥了整座城都，恶龙展开看不见的死亡之翼，向城堡的方向飞去，人们四散奔逃着，哭喊着，一切与起初并无不同，哀嚎灌满了耳朵，你往人们逃跑的反方向奔去——	下一步	Assets/Product/Texture/Image/BgStory/Bgstory531.jpg
+233	315		31502		2					['上前搭救', '径直往露台方向去']			[3, 3]			[31503, 31504]		露台					你抬头仰望，是梦中少女伫立的露台，恶龙盘踞在其之上，你闯入宫殿之内，宫殿空空荡荡，魔物横行，你听见有人惊声尖叫着！	下一步	Assets/Product/Texture/Image/BgStory/Bgstory531.jpg
+234	315		31503		5	30061889												露台					上前搭救	准备战斗	Assets/Product/Texture/Image/BgStory/Bgstory531.jpg
+235	315		31504		1													露台					径直往露台方向去	离开	Assets/Product/Texture/Image/BgStory/Bgstory531.jpg
+236	401		40101		2					['前往一探究竟', '快速离开这里']			[3, 3]			[40102, 40103]		密林深处	似乎会有神秘事件发生				前方有一片黑森林，无论白日的光线如何变幻，枝叶的颜色丝毫不会受到影响，往前一点看，树木长得也奇形怪状。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+237	401		40102		2					['一瞬不瞬盯着看', '走上前去打招呼', '快步离开']			[3, 3, 3]			[40104, 40105, 40106]		密林深处	似乎会有神秘事件发生	Assets/Product/Texture/Image/RoleStory/AilaNormal02.png			穿过林叶的阴影，你看到女巫以年轻貌美的少女形象出现，在魔法维持下热烈绽放的高高花丛中唱着奇怪的歌谣，声音被枝叶的阴影吞没，一点都透不出去。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+238	401		40103		1													密林深处	似乎会有神秘事件发生	Assets/Product/Texture/Image/RoleStory/AilaNormal02.png			快速离开这里	离开	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+239	401		40104		1													密林深处	似乎会有神秘事件发生	Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png			女巫显露出苍老的面貌，大声呼喊并恫吓于你。你并没有转移视线，女巫停下了行动，只留下深深一瞥，随即身影连带花丛，尽皆消失不见了。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+240	401		40105		4		96109	1										密林深处	似乎会有神秘事件发生	Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png			女巫显露出苍老的面貌，你毫不惊慌，不卑不亢的态度赢得了女巫的尊重，她恢复了原本年轻的面容，深深地看了你一眼，随即身影连同花丛一起消失不见，原地只留下一枚银铃。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+241	401		40106		1													密林深处	似乎会有神秘事件发生	Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png			快步离开	离开	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+242	402		40201		2					['让花朵开放的魔法', '杀死恶龙的办法', '能杀死任何生灵的魔法']	['需要道具%s', '需要道具%s']		[1, 2, 3]	[96109, 96105]	[1, 1]	[40202, 40203, 40209]		魔法					你留在女巫出现的地界，真心请求女巫的帮助，你想要的向女巫求教的魔法是——	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+243	402		40202		6				ZX02417BD									魔法							Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+244	402		40203	40204	1													魔法		Assets/Product/Texture/Image/RoleStory/AilaNormal02.png	女巫	你已经拥有了一把剑。	女巫从森林的另一端缓缓显露出身形与轮廓，如同一阵晨雾一般，她似乎听见了你的请求与召唤，她注视着你，像是正透过你的躯体注视你的灵魂。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+245	402		40204	40205	1													魔法		Assets/Product/Texture/Image/RoleStory/AilaNormal02.png	女巫	它已经具备了勇士之剑的轮廓。		交谈	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+246	402		40205	40206	1													魔法		Assets/Product/Texture/Image/RoleStory/AilaNormal02.png	女巫	我将为它施法，赋予它斩断螺旋，杀死恶龙，拯救世界的力量。		交谈	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+247	402		40206	40207	1													魔法		Assets/Product/Texture/Image/RoleStory/AilaNormal02.png	女巫	我会用鸢尾花的祝福、不断轮回的少女的骨灰的结晶、歌声和回忆淬炼它。		交谈	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+248	402		40207	40208	1													魔法		Assets/Product/Texture/Image/RoleStory/AilaNormal02.png	女巫	现在还缺少“歌声”，去把歌声带回来吧。		交谈	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+249	402		40208		1													魔法		Assets/Product/Texture/Image/RoleStory/AilaNormal02.png	女巫	我会为你锻造真正的勇者之剑。		下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+250	402		40209		1													魔法					你的恳求被森林的风声吞没，直至夜幕降临，女巫都未曾给予你任何回应。	离开	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+251	403		40301		2					['根据花苞的指引', '跟随日出的方向', '根据羽毛的指引']			[3, 3, 3]			[40304, 40303, 40302]		花与羽毛					你在森林里游荡，你学会倾听风的声音，你在日升时行走，在日落时分歇息，用甘甜的溪水漱口，以林间树果裹腹。你逐渐掌握了在森林中生存的技巧，却也逐渐迷失了方向。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+252	403		40302		1													花与羽毛					你拾捡起某种灰色鸟类落下的羽毛，用以卜算前进的方向，你跟随羽毛的指引，来到了水源处，沿着溪流的方向，你一路前行。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+253	403		40303		1													花与羽毛					一些粗浅的知识浮现在你的脑海之中，你决定先选定一个方向前进，跟随着日出的方位，你慢慢向前。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+254	403		40304	40305	1													花与羽毛					你注意到地面草丛间有一些剑状的长叶子拥着细小的花苞，它们脆弱又美丽，仿佛某种启示，却一路往前延展，仿佛在行走，你跟着同类植株生长指向的方向前进。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+255	403		40305		6				ZX02404BD									花与羽毛							
+256	404		40401		2					['将宝石交付出去', '表示可以在船上充当帮工', '坦诚相告，希望得到帮助']	['需要道具%s']		[2, 3, 3]	[96110]	[1]	[40402, 40406, 40407]		登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	这可不是什么玩具船开往快乐岛。	经过一番交谈之后，你表示希望一同搭乘船只前往遥远的王国，记忆里的那不勒斯与水手描述中的城都相对应了起来，但摸遍浑身上下，你发现自己身无分文。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+257	404		40402	40403	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	你……	水手看向你，起了个话头，却最终什么也没说。他应允了你上船的请求，却没有收下那枚宝石。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+258	404		40403	40404	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	这是哪里来的？	水手看向你，起了个话头，却最终什么也没说。他应允了你上船的请求，却没有收下那枚宝石。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+259	404		40404	40405	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	你认识一个紫色眼睛的旅行者吗？	水手看向你，起了个话头，却最终什么也没说。他应允了你上船的请求，却没有收下那枚宝石。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+260	404		40405		1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	不……没什么。	水手看向你，起了个话头，却最终什么也没说。他应允了你上船的请求，却没有收下那枚宝石。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+261	404		40406		1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手		水手看了你一眼，似乎笑了一下，却最终什么也没说。他应允了你上船的请求，却一句未提帮工的内容。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+262	404		40407	40408	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手		水手看向你，似乎想起久远以前的记忆，他最终什么也没说，但应允了你上船的请求。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+263	404		40408	40409	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	你见过龙吗？	水手看向你，似乎想起久远以前的记忆，他最终应允了你上船的请求。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+264	404		40409	40410	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	我们已经很久没见过龙了。		交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+265	404		40410	40411	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	‘龙随着笛声而来’。		交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+266	404		40411	40412	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	但在最开始的时候，恶龙的出现是毫无征兆的。		交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+267	404		40412	40413	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	惟一可循的规律是，恶龙往往会搜寻人群。		交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+268	404		40413		1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	会像海上飓风一样掘起陆地上的人群，将他们从空中摔落。它袭击村庄和人群，毁坏目之所及任何可以毁坏的事物。		下一步	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+269	406		40601		2					['聊过恶龙', '聊过水手的故事', '表示自己对故事没有兴趣']			[3, 3, 3]			[40602, 40602, 40604]		讲故事		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	上次我讲到哪了？	海面上风平浪静，你几乎每夜都会碰巧遇见那个讲故事的水手，他讲不同今时的过去的故事，讲归乡的船歌，讲龙所带来的灾厄。	下一步	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+270	406		40602		2					['表示想继续听']			[3]			[40605]		讲故事		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手		大概是年岁大了，开始兜着绕着，絮絮叨叨讲一些无关紧要的过去的往事。	下一步	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+271	406		40604		1													讲故事		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手		你向水手道了声安，微醺的海风让你有了一丝睡意，你返回了舱室，和衣而眠，做了一个长长的梦。	离开	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+272	406		40605	40607	6				ZX02411BD									讲故事		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手				
+273	406		40607		2					['表示想知道更多关于旅行者的信息', '表示想先返回舱室休息']	['需要道具%s']		[2, 3]	[96110]	[1]	[40608, 40609]		讲故事		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	今晚的故事就讲到这里了？		下一步	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+274	406		40608	40610	6				ZX02412BD									讲故事							
+275	406		40609		1													讲故事		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手		你向水手道了声安，微醺的海风让你有了一丝睡意，你返回了舱室，和衣而眠，做了一个长长的梦。	下一步	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+276	406		40610		2					['询问水手是否记得“塞壬之歌”的曲调旋律', '询问水手是否能够教自己唱原来的“塞壬之歌”']			[3, 3]			[40611, 40614]		讲故事	出现了新的选择	Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手			下一步	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+277	406		40611	40612	1													讲故事		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	你对那首海上的歌谣感兴趣？	询问水手是否记得“塞壬之歌”的曲调旋律	交谈	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+278	406		40612	40613	1													讲故事		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	你所听到的夜晚水手唱起的归乡之歌，便是塞壬之歌的变调。		交谈	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+279	406		40613		1													讲故事		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	歌声流传了下来，将人心连在了一起。		下一步	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+280	406		40614	40615	1													讲故事		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	哈哈，当然可以。	询问水手是否能够教自己唱原来的“塞壬之歌”	交谈	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+281	406		40615		4		96113	1										讲故事		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	你所听到的夜晚水手唱起的归乡之歌，便是塞壬之歌的变调。		下一步	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+282	407		40701		2					['这是哪里？']			[3]			[40702]		流落孤岛					睁开眼是一片澄澈的天空，空气中夹杂着海腥味，你恍惚记得你被高高的浪潮带起，你极力呼喊着，视野里最后是龙高昂的头颅和巨大的双爪，你避让开了，并牢牢掌控着身下窄小的浮舟，这使你不至于在漂流中下沉。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory533.jpg
+283	407		40702		2					['四处走走']			[3]			[40703]		流落孤岛					身下是细软的沙粒，你缓慢直起了上半身，入目是海平面，浪潮不再凶猛，潮水一触即离地搔挠你的双脚。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory533.jpg
+284	407		40703		2					['躺在沙滩上晒太阳', '寻找活物的踪迹', '沿海岸走去']			[3, 3, 3]			[40704, 40705, 40706]		流落孤岛					你往四周查探了一圈，虽然没有完全摸清状况，但你确定自己身处在一个岛屿之上。这会是一个无人岛吗？	下一步	Assets/Product/Texture/Image/BgStory/Bgstory533.jpg
+285	407		40704		1													流落孤岛					阳光正好，在半梦半醒之中，你身上的衣物干透了。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory533.jpg
+286	407		40705		5	30061932												流落孤岛					你看见有什么活动的身影，你连忙追了上去，是凯列班还是星期五？你决定一探究竟。	开始战斗	Assets/Product/Texture/Image/BgStory/Bgstory533.jpg
+287	407		40706		6				ZX02413BD									流落孤岛							
+288	408		40801		2					['进行自我介绍', '说明来历情况', '表示自己只会短暂停留，很快离开']			[3, 3, 3]			[40802, 40803, 40807]		村庄					巨龙的出现在村庄里引起了骚动，村民纷纷拿起了农具和武器，而全副武装赶到后，只余你从顶棚上慢慢爬下，与村民们大眼瞪小眼。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+289	408		40802		1													村庄		Assets/Product/Texture/Image/RoleStory/PinminNormal01.png	农夫	我们这里不欢迎外来人	一番介绍说明之后，村民们脸上的神情并未松动，他们如同铁壁般挡在你的面前。	离开这里	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+290	408		40803	40804	1													村庄		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	青年A	你跟那个吹笛子是不是一伙的？	一番说明之后，村民里骚动起来，人们开始窃窃私语，而投射过来的眼神并不友好，有谁向你扔了石子。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+291	408		40804	40805	1													村庄		Assets/Product/Texture/Image/RoleStory/TongyongNanmingirlNormal02.png	青年B	你说你是龙带来的？	一番说明之后，村民里骚动起来，人们开始窃窃私语，而投射过来的眼神并不友好，有谁向你扔了石子。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+292	408		40805	40806	1													村庄		Assets/Product/Texture/Image/RoleStory/ShihuangzhenanNormal01.png	中年A	灾厄！灾厄！灾厄要来到我们村庄了！	一番说明之后，村民里骚动起来，人们开始窃窃私语，而投射过来的眼神并不友好，有谁向你扔了石子。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+293	408		40806		5	30061887												村庄		Assets/Product/Texture/Image/RoleStory/KaliegrandNomal02.png	中年B	滚出去！滚出去！	一番说明之后，村民里骚动起来，人们开始窃窃私语，而投射过来的眼神并不友好，有谁向你扔了石子。	准备战斗	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+294	408		40807		1													村庄					表示自己只会短暂停留，很快离开	离开	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+295	410		41001		2					['上前看看', '绕路而行']			[3, 3]			[41002, 41013]		迷失之人					你行走于荒地之上，传言中龙的巢穴便在此处，许多人有来无回，这个延伸到世界边缘的荒冢，地平线一片黢黑，脚下的石块参差不齐。你听到前方有声响——	下一步	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+296	410		41002		2					['阻止他', '解救他', '先行离开']			[3, 3, 3]			[41003, 41007, 41014]		迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	我才不怕你！	你看见一个小男孩正与魔物对峙，他拿起石块，正要朝魔物掷去。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+297	410		41003	41004	1													迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	你、你是勇者吗？	你阻止了小男孩，并带着他往安全的地方跑去。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+298	410		41004	41005	1													迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	你也是来讨伐恶龙的吗？	你阻止了小男孩，并带着他往安全的地方跑去。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+299	410		41005	41006	1													迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	我？	你阻止了小男孩，并带着他往安全的地方跑去。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+300	410		41006		1													迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	我也是一个勇者哦！	你阻止了小男孩，并带着他往安全的地方跑去。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+301	410		41007	41008	5	30061888												迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	我才不怕你！	解救他	准备战斗	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+302	410		41008	41009	1													迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	你好厉害啊！	战斗成功后	交谈	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+303	410		41009	41010	1													迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	你是真正的勇者吗？		交谈	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+304	410		41010	41011	1													迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	妈妈说吹笛人是坏人。		交谈	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+305	410		41011	41012	1													迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	我想证明给妈妈看，才不是这样的。		交谈	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+306	410		41012		1													迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	能吹出这么好听曲子的人怎么可能是坏人呢！		下一步	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+307	410		41013		1													迷失之人					绕路而行	离开	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+308	410		41014		1													迷失之人					先行离开	离开	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+309	413		41301		2					['协助军队，加入战局', '专心于追踪恶龙的踪迹']			[3, 3]			[41302, 41303]		城门					恶龙奄奄一息地飞走了，你一路追踪着恶龙的踪迹，来到城门之下。城门已被攻破，人们四散奔逃，军队以血肉之躯护卫着城门以及背后的人民，抵抗魔物的入侵。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory531.jpg
+310	413		41302		4		96107	1										城门					获得道具	下一步	Assets/Product/Texture/Image/BgStory/Bgstory531.jpg
+311	413		41303		1													城门					专心于追踪恶龙的踪迹	离开	Assets/Product/Texture/Image/BgStory/Bgstory531.jpg
+312	415		41501	41502	1													露台					火光与硝烟充斥了整座城都，恶龙展开看不见的死亡之翼，向城堡的方向飞去，人们四散奔逃着，哭喊着，一切与起初并无不同，哀嚎灌满了耳朵，你往人们逃跑的反方向奔去——	下一步	Assets/Product/Texture/Image/BgStory/Bgstory531.jpg
+313	415		41502		2					['吸引魔物注意', '上前搭救', '径直往露台方向去']	['需要道具%s']		[2, 3, 3]	[96107]	[1]	[41505, 41503, 41504]		露台	出现了新的选择				你抬头仰望，是梦中少女伫立的露台，恶龙盘踞在其之上，你闯入宫殿之内，宫殿空空荡荡，魔物横行，你听见有人惊声尖叫着！	下一步	Assets/Product/Texture/Image/BgStory/Bgstory531.jpg
+314	415		41503		5	30061889												露台					上前搭救	准备战斗	Assets/Product/Texture/Image/BgStory/Bgstory531.jpg
+315	415		41504		1													露台					径直往露台方向去	离开	Assets/Product/Texture/Image/BgStory/Bgstory531.jpg
+316	415		41505		6				ZX02418BD																
+317	501		50101		2					['前往一探究竟', '快速离开这里']			[3, 3]			[50102, 50103]		密林深处	似乎会有神秘事件发生				前方有一片黑森林，无论白日的光线如何变幻，枝叶的颜色丝毫不会受到影响，往前一点看，树木长得也奇形怪状。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+318	501		50102		2					['一瞬不瞬盯着看', '走上前去打招呼', '快步离开']			[3, 3, 3]			[50104, 50105, 50106]		密林深处	似乎会有神秘事件发生	Assets/Product/Texture/Image/RoleStory/AilaNormal02.png			穿过林叶的阴影，你看到女巫以年轻貌美的少女形象出现，在魔法维持下热烈绽放的高高花丛中唱着奇怪的歌谣，声音被枝叶的阴影吞没，一点都透不出去。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+319	501		50103		1													密林深处	似乎会有神秘事件发生	Assets/Product/Texture/Image/RoleStory/AilaNormal02.png			快速离开这里	离开	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+320	501		50104		1													密林深处	似乎会有神秘事件发生	Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png			女巫显露出苍老的面貌，大声呼喊并恫吓于你。你并没有转移视线，女巫停下了行动，只留下深深一瞥，随即身影连带花丛，尽皆消失不见了。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+321	501		50105		4		96109	1										密林深处	似乎会有神秘事件发生	Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png			女巫显露出苍老的面貌，你毫不惊慌，不卑不亢的态度赢得了女巫的尊重，她恢复了原本年轻的面容，深深地看了你一眼，随即身影连同花丛一起消失不见，原地只留下一枚银铃。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+322	501		50106		1													密林深处	似乎会有神秘事件发生	Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png			快步离开	离开	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+323	502		50201		2					['让花朵开放的魔法', '杀死恶龙的办法', '能杀死任何生灵的魔法']	['需要道具%s', '需要道具%s']		[1, 2, 3]	[96109, 96105]	[1, 1]	[50202, 50203, 50209]		魔法					你留在女巫出现的地界，真心请求女巫的帮助，你想要的向女巫求教的魔法是——	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+324	502		50202		6				ZX02417BE									魔法							Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+325	502		50203	50204	1													魔法		Assets/Product/Texture/Image/RoleStory/AilaNormal02.png	女巫	你已经拥有了一把剑。	女巫从森林的另一端缓缓显露出身形与轮廓，如同一阵晨雾一般，她似乎听见了你的请求与召唤，她注视着你，像是正透过你的躯体注视你的灵魂。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+326	502		50204	50205	1													魔法		Assets/Product/Texture/Image/RoleStory/AilaNormal02.png	女巫	它已经具备了勇士之剑的轮廓。		交谈	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+327	502		50205	50206	1													魔法		Assets/Product/Texture/Image/RoleStory/AilaNormal02.png	女巫	我将为它施法，赋予它斩断螺旋，杀死恶龙，拯救世界的力量。		交谈	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+328	502		50206	50207	1													魔法		Assets/Product/Texture/Image/RoleStory/AilaNormal02.png	女巫	我会用鸢尾花的祝福、不断轮回的少女的骨灰的结晶、歌声和回忆淬炼它。		交谈	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+329	502		50207	50208	1													魔法		Assets/Product/Texture/Image/RoleStory/AilaNormal02.png	女巫	现在还缺少“歌声”，去把歌声带回来吧。		交谈	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+330	502		50208		1													魔法		Assets/Product/Texture/Image/RoleStory/AilaNormal02.png	女巫	我会为你锻造真正的勇者之剑。		下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+331	502		50209		1													魔法					你的恳求被森林的风声吞没，直至夜幕降临，女巫都未曾给予你任何回应。	离开	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+332	503		50301		2					['根据花苞的指引', '跟随日出的方向', '根据羽毛的指引']			[3, 3, 3]			[50304, 50303, 50302]		花与羽毛					你在森林里游荡，你学会倾听风的声音，你在日升时行走，在日落时分歇息，用甘甜的溪水漱口，以林间树果裹腹。你逐渐掌握了在森林中生存的技巧，却也逐渐迷失了方向。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+333	503		50302		1													花与羽毛					你拾捡起某种灰色鸟类落下的羽毛，用以卜算前进的方向，你跟随羽毛的指引，来到了水源处，沿着溪流的方向，你一路前行。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+334	503		50303		1													花与羽毛					一些粗浅的知识浮现在你的脑海之中，你决定先选定一个方向前进，跟随着日出的方位，你慢慢向前。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+335	503		50304	50305	1													花与羽毛					你注意到地面草丛间有一些剑状的长叶子拥着细小的花苞，它们脆弱又美丽，仿佛某种启示，却一路往前延展，仿佛在行走，你跟着同类植株生长指向的方向前进。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+336	503		50305		6				ZX02404BE									花与羽毛							
+337	504		50401		2					['将宝石交付出去', '表示可以在船上充当帮工', '坦诚相告，希望得到帮助']	['需要道具%s']		[2, 3, 3]	[96110]	[1]	[50402, 50406, 50407]		登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	这可不是什么玩具船开往快乐岛。	经过一番交谈之后，你表示希望一同搭乘船只前往遥远的王国，记忆里的那不勒斯与水手描述中的城都相对应了起来，但摸遍浑身上下，你发现自己身无分文。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+338	504		50402	50403	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	你……	水手看向你，起了个话头，却最终什么也没说。他应允了你上船的请求，却没有收下那枚宝石。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+339	504		50403	50404	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	这是哪里来的？	水手看向你，起了个话头，却最终什么也没说。他应允了你上船的请求，却没有收下那枚宝石。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+340	504		50404	50405	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	你认识一个紫色眼睛的旅行者吗？	水手看向你，起了个话头，却最终什么也没说。他应允了你上船的请求，却没有收下那枚宝石。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+341	504		50405		1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	不……没什么。	水手看向你，起了个话头，却最终什么也没说。他应允了你上船的请求，却没有收下那枚宝石。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+342	504		50406		1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手		水手看了你一眼，似乎笑了一下，却最终什么也没说。他应允了你上船的请求，却一句未提帮工的内容。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+343	504		50407	50408	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手		水手看向你，似乎想起久远以前的记忆，他最终什么也没说，但应允了你上船的请求。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+344	504		50408	50409	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	你见过龙吗？	水手看向你，似乎想起久远以前的记忆，他最终应允了你上船的请求。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+345	504		50409	50410	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	我们已经很久没见过龙了。		交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+346	504		50410	50411	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	‘龙随着笛声而来’。		交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+347	504		50411	50412	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	但在最开始的时候，恶龙的出现是毫无征兆的。		交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+348	504		50412	50413	1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	惟一可循的规律是，恶龙往往会搜寻人群。		交谈	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+349	504		50413		1													登船		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	会像海上飓风一样掘起陆地上的人群，将他们从空中摔落。它袭击村庄和人群，毁坏目之所及任何可以毁坏的事物。		下一步	Assets/Product/Texture/Image/BgStory/Bgstory537.jpg
+350	506		50601		2					['聊过恶龙', '聊过水手的故事', '表示自己对故事没有兴趣']			[3, 3, 3]			[50602, 50602, 50604]		讲故事		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	上次我讲到哪了？	海面上风平浪静，你几乎每夜都会碰巧遇见那个讲故事的水手，他讲不同今时的过去的故事，讲归乡的船歌，讲龙所带来的灾厄。	下一步	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+351	506		50602		2					['表示想继续听']			[3]			[50605]		讲故事		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手		大概是年岁大了，开始兜着绕着，絮絮叨叨讲一些无关紧要的过去的往事。	下一步	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+352	506		50604		1													讲故事		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手		你向水手道了声安，微醺的海风让你有了一丝睡意，你返回了舱室，和衣而眠，做了一个长长的梦。	离开	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+353	506		50605	50607	6				ZX02411BE									讲故事		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手				
+354	506		50607		2					['表示想知道更多关于旅行者的信息', '表示想先返回舱室休息']	['需要道具%s']		[2, 3]	[96110]	[1]	[50608, 50609]		讲故事		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	今晚的故事就讲到这里了？		下一步	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+355	506		50608	50610	6				ZX02412BE									讲故事							
+356	506		50609		1													讲故事		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手		你向水手道了声安，微醺的海风让你有了一丝睡意，你返回了舱室，和衣而眠，做了一个长长的梦。	下一步	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+357	506		50610		2					['询问水手是否记得“塞壬之歌”的曲调旋律', '询问水手是否能够教自己唱原来的“塞壬之歌”']			[3, 3]			[50611, 50614]		讲故事		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手			下一步	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+358	506		50611	50612	1													讲故事		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	你对那首海上的歌谣感兴趣？	询问水手是否记得“塞壬之歌”的曲调旋律	交谈	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+359	506		50612	50613	1													讲故事		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	你所听到的夜晚水手唱起的归乡之歌，便是塞壬之歌的变调。		交谈	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+360	506		50613		1													讲故事		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	歌声流传了下来，将人心连在了一起。		下一步	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+361	506		50614	50615	1													讲故事		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	哈哈，当然可以。	询问水手是否能够教自己唱原来的“塞壬之歌”	交谈	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+362	506		50615		4		96113	1										讲故事		Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	水手	你所听到的夜晚水手唱起的归乡之歌，便是塞壬之歌的变调。		下一步	Assets/Product/Texture/Image/BgStory/BgStory548.jpg
+363	507		50701		2					['这是哪里？']			[3]			[50702]		流落孤岛					睁开眼是一片澄澈的天空，空气中夹杂着海腥味，你恍惚记得你被高高的浪潮带起，你极力呼喊着，视野里最后是龙高昂的头颅和巨大的双爪，你避让开了，并牢牢掌控着身下窄小的浮舟，这使你不至于在漂流中下沉。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory533.jpg
+364	507		50702		2					['四处走走']			[3]			[50703]		流落孤岛					身下是细软的沙粒，你缓慢直起了上半身，入目是海平面，浪潮不再凶猛，潮水一触即离地搔挠你的双脚。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory533.jpg
+365	507		50703		2					['躺在沙滩上晒太阳', '寻找活物的踪迹', '沿海岸走去']			[3, 3, 3]			[50704, 50705, 50706]		流落孤岛					你往四周查探了一圈，虽然没有完全摸清状况，但你确定自己身处在一个岛屿之上。这会是一个无人岛吗？	下一步	Assets/Product/Texture/Image/BgStory/Bgstory533.jpg
+366	507		50704		1													流落孤岛					阳光正好，在半梦半醒之中，你身上的衣物干透了。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory533.jpg
+367	507		50705		5	30061932												流落孤岛					你看见有什么活动的身影，你连忙追了上去，是凯列班还是星期五？你决定一探究竟。	开始战斗	Assets/Product/Texture/Image/BgStory/Bgstory533.jpg
+368	507		50706		6				ZX02413BE									流落孤岛							
+369	508		50801		2					['进行自我介绍', '说明来历情况', '表示自己只会短暂停留，很快离开']			[3, 3, 3]			[50802, 50803, 50807]		村庄					巨龙的出现在村庄里引起了骚动，村民纷纷拿起了农具和武器，而全副武装赶到后，只余你从顶棚上慢慢爬下，与村民们大眼瞪小眼。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+370	508		50802		1													村庄		Assets/Product/Texture/Image/RoleStory/PinminNormal01.png	农夫	我们这里不欢迎外来人	一番介绍说明之后，村民们脸上的神情并未松动，他们如同铁壁般挡在你的面前。	离开这里	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+371	508		50803	50804	1													村庄		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	青年A	你跟那个吹笛子是不是一伙的？	一番说明之后，村民里骚动起来，人们开始窃窃私语，而投射过来的眼神并不友好，有谁向你扔了石子。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+372	508		50804	50805	1													村庄		Assets/Product/Texture/Image/RoleStory/TongyongNanmingirlNormal02.png	青年B	你说你是龙带来的？	一番说明之后，村民里骚动起来，人们开始窃窃私语，而投射过来的眼神并不友好，有谁向你扔了石子。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+373	508		50805	50806	1													村庄		Assets/Product/Texture/Image/RoleStory/ShihuangzhenanNormal01.png	中年A	灾厄！灾厄！灾厄要来到我们村庄了！	一番说明之后，村民里骚动起来，人们开始窃窃私语，而投射过来的眼神并不友好，有谁向你扔了石子。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+374	508		50806		5	30061887												村庄		Assets/Product/Texture/Image/RoleStory/KaliegrandNomal02.png	中年B	滚出去！滚出去！	一番说明之后，村民里骚动起来，人们开始窃窃私语，而投射过来的眼神并不友好，有谁向你扔了石子。	准备战斗	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+375	508		50807		1													村庄					表示自己只会短暂停留，很快离开	离开	Assets/Product/Texture/Image/BgStory/Bgstory530.jpg
+376	510		51001		2					['上前看看', '绕路而行']			[3, 3]			[51002, 51013]		迷失之人					你行走于荒地之上，传言中龙的巢穴便在此处，许多人有来无回，这个延伸到世界边缘的荒冢，地平线一片黢黑，脚下的石块参差不齐。你听到前方有声响——	下一步	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+377	510		51002		2					['阻止他', '解救他', '先行离开']			[3, 3, 3]			[51003, 51007, 51014]		迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	我才不怕你！	你看见一个小男孩正与魔物对峙，他拿起石块，正要朝魔物掷去。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+378	510		51003	51004	1													迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	你、你是勇者吗？	你阻止了小男孩，并带着他往安全的地方跑去。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+379	510		51004	51005	1													迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	你也是来讨伐恶龙的吗？	你阻止了小男孩，并带着他往安全的地方跑去。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+380	510		51005	51006	1													迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	我？	你阻止了小男孩，并带着他往安全的地方跑去。	交谈	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+381	510		51006		1													迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	我也是一个勇者哦！	你阻止了小男孩，并带着他往安全的地方跑去。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+382	510		51007	51008	5	30061888												迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	我才不怕你！	解救他	准备战斗	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+383	510		51008	51009	1													迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	你好厉害啊！	战斗成功后	交谈	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+384	510		51009	51010	1													迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	你是真正的勇者吗？		交谈	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+385	510		51010	51011	1													迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	妈妈说吹笛人是坏人。		交谈	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+386	510		51011	51012	1													迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	我想证明给妈妈看，才不是这样的。		交谈	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+387	510		51012		1													迷失之人		Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	小男孩	能吹出这么好听曲子的人怎么可能是坏人呢！		下一步	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+388	510		51013		1													迷失之人					绕路而行	离开	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+389	510		51014		1													迷失之人					先行离开	离开	Assets/Product/Texture/Image/BgStory/Bgstory534.jpg
+390	513		51301		2					['协助军队，加入战局', '专心于追踪恶龙的踪迹']			[3, 3]			[51302, 51303]		城门					恶龙奄奄一息地飞走了，你一路追踪着恶龙的踪迹，来到城门之下。城门已被攻破，人们四散奔逃，军队以血肉之躯护卫着城门以及背后的人民，抵抗魔物的入侵。	下一步	Assets/Product/Texture/Image/BgStory/Bgstory531.jpg
+391	513		51302		4		96107	1										城门					获得道具	下一步	Assets/Product/Texture/Image/BgStory/Bgstory531.jpg
+392	513		51303		1													城门					专心于追踪恶龙的踪迹	离开	Assets/Product/Texture/Image/BgStory/Bgstory531.jpg
+393	515		51501	51502	1													露台					火光与硝烟充斥了整座城都，恶龙展开看不见的死亡之翼，向城堡的方向飞去，人们四散奔逃着，哭喊着，一切与起初并无不同，哀嚎灌满了耳朵，你往人们逃跑的反方向奔去——	下一步	Assets/Product/Texture/Image/BgStory/Bgstory531.jpg
+394	515		51502		2					['吸引魔物注意', '上前搭救', '径直往露台方向去']	['需要道具%s']		[2, 3, 3]	[96107]	[1]	[51505, 51503, 51504]		露台					你抬头仰望，是梦中少女伫立的露台，恶龙盘踞在其之上，你闯入宫殿之内，宫殿空空荡荡，魔物横行，你听见有人惊声尖叫着！	下一步	Assets/Product/Texture/Image/BgStory/Bgstory531.jpg
+395	515		51503		5	30061889												露台					上前搭救	准备战斗	Assets/Product/Texture/Image/BgStory/Bgstory531.jpg
+396	515		51504		1													露台					径直往露台方向去	离开	Assets/Product/Texture/Image/BgStory/Bgstory531.jpg
+397	515		51505		6				ZX02418BE									露台					吸引魔物注意	下一步	Assets/Product/Texture/Image/BgStory/Bgstory531.jpg

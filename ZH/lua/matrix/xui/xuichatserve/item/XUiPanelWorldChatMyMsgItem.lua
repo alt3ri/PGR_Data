@@ -3,8 +3,6 @@ local XUiPanelWorldChatMyMsgItem = XClass(XUiNode, "XUiPanelWorldChatMyMsgItem")
 local XUiPanelNameplate = require("XUi/XUiNameplate/XUiPanelNameplate")
 
 function XUiPanelWorldChatMyMsgItem:OnStart()
-    self:InitAutoScript()
-
     local prefab = self.PanelMsg:Find("PanelName"):LoadPrefab(XMedalConfigs.XNameplatePanelPath)
     self.UiPanelNameplate = XUiPanelNameplate.New(prefab, self)
     -- self.UiPanelNameplate = XUiPanelNameplate.New(self.PanelNameplate, self)
@@ -12,6 +10,12 @@ function XUiPanelWorldChatMyMsgItem:OnStart()
     if self.PanelBg then
         self._PanelChatBoard = require('XUi/XUiChatServe/XUiChatBoard').New(self.PanelBg, self)
     end
+    
+    -- 聊天文本复制功能
+    ---@type XUiChatMsgCopy
+    self._CopyCom = require('XUi/XUiChatServe/XUiChatMsgCopy').New(self.GameObject, self.Parent)
+
+    self:InitAutoScript()
 end
 -- auto
 -- Automatic generation of code, forbid to edit
@@ -59,7 +63,11 @@ function XUiPanelWorldChatMyMsgItem:AutoAddListener()
 
     -- 添加长按事件
     if self.BtnClickPointer then
-        XUiButtonLongClick.New(self.BtnClickPointer, XScheduleManager.SECOND, self, nil, self.OnBtnLongClick, nil, true)
+        ---@type XUiButtonLongClick
+        self.CommonBtnLongLick = XUiButtonLongClick.New(self.BtnClickPointer, XScheduleManager.SECOND, self, nil, self.OnBtnLongClick, nil, true)
+        
+        -- 通用点击的层级比复制要高，需要将事件穿透给复制点击
+        self.CommonBtnLongLick.Widget:AddTransmitWidget(self._CopyCom.ContentPointer.Widget)
     end
 end
 
@@ -160,6 +168,9 @@ function XUiPanelWorldChatMyMsgItem:Refresh(chatData, longClickCb)
     
     -- 设置聊天框
     self._PanelChatBoard:Refresh(chatData.ChatBoardId, chatData.SenderId == XPlayer.Id)
+    
+    -- 缓存待复制的文本
+    self._CopyCom:SetMsg(chatData.Content)
 end
 
 function XUiPanelWorldChatMyMsgItem:GetPlayerId()

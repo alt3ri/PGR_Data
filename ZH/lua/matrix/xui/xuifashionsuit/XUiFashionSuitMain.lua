@@ -14,11 +14,9 @@ function XUiFashionSuitMain:OnAwake()
     end
 end
 
-function XUiFashionSuitMain:OnStart()
+function XUiFashionSuitMain:OnStart(suitId)
     XUiHelper.NewPanelTopControl(self, self.TopControlWhite)
 
-    --v4.1没有一级界面 此处是临时写法 后续可能加个Type字段 不同样式的套装界面对应不同的Panel类
-    local suitId = self._Control:GetIntClientConfig("TempSuitIdV41")
     local config = self._Control:GetFashionSuitById(suitId)
     local go = self.PanelSuit:LoadPrefab(config.PrefabPath)
     ---@type XUiPanelFashionSuitNormal

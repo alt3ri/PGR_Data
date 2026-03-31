@@ -16,7 +16,7 @@ XGachaManagerCreator = function()
     local TotalGachaTimes = {}
     local MissTimes = {} -- 保底次数
     local CurGachaFashionSelfChoiceActivityId = nil
-    local CurSelfChoiceSelectGachId = nil
+    local CurGroupSelectMap = {}  -- GroupId -> SelectedGachaId
     --
 
     -- 卡池组状态
@@ -50,8 +50,8 @@ XGachaManagerCreator = function()
         end
     end
 
-    function XGachaManager.GetCurSelfChoiceSelectGachId()
-        return CurSelfChoiceSelectGachId
+    function XGachaManager.GetCurSelfChoiceSelectGachId(groupId)
+        return CurGroupSelectMap[groupId]
     end
 
     function XGachaManager.GetCurGachaFashionSelfChoiceActivityId()
@@ -62,6 +62,78 @@ XGachaManagerCreator = function()
     function XGachaManager.GetCurGachaFashionSelfChoiceActivityConfig()
         local config = XGachaConfigs.GetAllConfigs(XGachaConfigs.TableKey.GachaFashionSelfChoiceActivity)
         return config[CurGachaFashionSelfChoiceActivityId]
+    end
+
+    -- gachaId -> GroupId 反查缓存（延迟构建）
+    local GachaIdToGroupIdCache = nil
+
+    -- 通过gachaId反查所属GroupId（gachaId跨Group唯一，使用缓存避免频繁遍历）
+    function XGachaManager.GetGroupIdByGachaId(gachaId)
+        if not GachaIdToGroupIdCache then
+            GachaIdToGroupIdCache = {}
+            local groupConfigs = XGachaConfigs.GetAllConfigs(XGachaConfigs.TableKey.GachaFashionSelfChoiceGroup)
+            for groupId, config in pairs(groupConfigs) do
+                for _, id in pairs(config.GachaIds) do
+                    if XTool.IsNumberValid(id) then
+                        GachaIdToGroupIdCache[id] = groupId
+                    end
+                end
+            end
+        end
+        return GachaIdToGroupIdCache[gachaId]
+    end
+
+    -- 获取Group配置
+    function XGachaManager.GetGroupConfig(groupId)
+        local config = XGachaConfigs.GetAllConfigs(XGachaConfigs.TableKey.GachaFashionSelfChoiceGroup)[groupId]
+        if not config then
+            XLog.Error("GetGroupConfig: groupId not found: " .. tostring(groupId))
+        end
+        return config
+    end
+
+    -- 检查指定gachaId是否被任一Group选中
+    function XGachaManager.IsGachaIdSelected(gachaId)
+        for _, selectedId in pairs(CurGroupSelectMap) do
+            if selectedId == gachaId then
+                return true
+            end
+        end
+        return false
+    end
+
+    -- 检查当前活动是否有任一（时间有效的）Group未选择
+    function XGachaManager.HasUnselectedGroup()
+        local activityConfig = XGachaManager.GetCurGachaFashionSelfChoiceActivityConfig()
+        if not activityConfig then return false end
+        for _, groupId in pairs(activityConfig.GachaGroupIds) do
+            if XTool.IsNumberValid(groupId) then
+                local groupConfig = XGachaManager.GetGroupConfig(groupId)
+                -- 只检查时间有效的Group，过期Group不算"未选择"
+                if groupConfig and XFunctionManager.CheckInTimeByTimeId(groupConfig.TimeId)
+                        and not XTool.IsNumberValid(CurGroupSelectMap[groupId]) then
+                    return true
+                end
+            end
+        end
+        return false
+    end
+
+    -- 检查当前活动是否所有（时间有效的）Group都已选择
+    function XGachaManager.IsAllGroupsSelected()
+        local activityConfig = XGachaManager.GetCurGachaFashionSelfChoiceActivityConfig()
+        if not activityConfig then return false end
+        for _, groupId in pairs(activityConfig.GachaGroupIds) do
+            if XTool.IsNumberValid(groupId) then
+                local groupConfig = XGachaManager.GetGroupConfig(groupId)
+                -- 只检查时间有效的Group
+                if groupConfig and XFunctionManager.CheckInTimeByTimeId(groupConfig.TimeId)
+                        and not XTool.IsNumberValid(CurGroupSelectMap[groupId]) then
+                    return false
+                end
+            end
+        end
+        return true
     end
 
     function XGachaManager.GetMissTimes(gachaId)
@@ -399,7 +471,11 @@ XGachaManagerCreator = function()
                 return
             end
 
-            CurSelfChoiceSelectGachId = gachaId
+            -- 通过gachaId反查GroupId（gachaId跨Group唯一）
+            local groupId = XGachaManager.GetGroupIdByGachaId(gachaId)
+            if groupId then
+                CurGroupSelectMap[groupId] = gachaId
+            end
 
             if cb then
                 cb()
@@ -609,7 +685,17 @@ XGachaManagerCreator = function()
 
     function XGachaManager.NotifySelfChoiceGachaData(data)
         CurGachaFashionSelfChoiceActivityId = data.ActivityId
-        CurSelfChoiceSelectGachId = data.GachaId
+        CurGroupSelectMap = {}
+        if not XTool.IsNumberValid(data.ActivityId) then
+            return  -- 活动已结束，清空状态即可
+        end
+        if data.ChoiceGroupList then
+            for _, groupInfo in pairs(data.ChoiceGroupList) do
+                if XTool.IsNumberValid(groupInfo.SelectedGachaId) then
+                    CurGroupSelectMap[groupInfo.GroupId] = groupInfo.SelectedGachaId
+                end
+            end
+        end
     end
     --------------------------------------------------------------------------------------------------------------------
 

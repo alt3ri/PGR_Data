@@ -424,6 +424,7 @@ local UiRegistry = {
     UiCharacterElementDetail = "XUi/XUiCharacter/XUiCharacterElementDetail",
     UiTheatreOutpost = "XUi/XUiTheatre/XUiTheatreOutpost",
     UiAutoWindow = "XUi/XUiAutoWindow/XUiAutoWindow",
+    UiAutoWindowNotice = "XUi/XUiAutoWindow/XUiAutoWindowNotice",
     UiSpringFestivalFriendTip = "XUi/XUiSpringFestival/CollectCard/XUiSpringFestivalFriendsTip",
     UiSimulatedCombatResAllo = "XUi/XUiFubenSimulatedCombat/XUiResAllo/XUiSimulatedCombatResAllo",
     UiChessPursuitFightResult = "XUi/XUiChessPursuit/XUi/XUiChessPursuitFightResult",
@@ -1578,9 +1579,12 @@ local UiRegistry = {
     UiTwoSideTowerCueMark = "XUi/XUiTwoSideTower/XUiTwoSideTowerCueMark",
     UiConnectingLineGame = "XUi/XUiConnectingLine/XUiConnectingLineGame",
     UiConnectingLineTableTask = "XUi/XUiConnectingLine/XUiConnectingLineTableTask",
+    UiFightHackerGameV440 = "XUi/XUiConnectingLine/XUiFightHackerGameV440",
     UiDownLoadMain = "XUi/XUiSubPackage/XUiDownLoadMain",
     UiDownloadPreview = "XUi/XUiSubPackage/XUiDownloadPreview",
+    UiDownloadPreviewForTips = "XUi/XUiSubPackage/XUiDownloadPreviewForTips",
     UiVideoPreloadDownloadTip = "XUi/XUiSubPackage/XUiVideoPreloadDownloadTip",
+    UiDownloadFashion = "XUi/XUiSubPackage/XUiDownloadFashion",
     UiPreloadMain = "XUi/XUiPreload/XUiPreloadMain",
     UiSettleWinTutorialCount = "XUi/XUiNewChar/XUiSettleWinTutorialCount",
     UiFightCommonInterBtnList = "XUi/XUiFightCommonInterBtnList/XUiFightCommonInterBtnList",
@@ -2169,13 +2173,6 @@ local UiRegistry = {
     --endregion 悬赏任务
 
     --region 联机共斗
-    UiRelinkPlayerRoom = "XUi/XUiDlcRelink/Room/XUiRelinkPlayerRoom",
-    UiRelinkPopupPlayerInvite = "XUi/XUiDlcRelink/Room/XUiRelinkPopupPlayerInvite",
-    UiRelinkLoading = "XUi/XUiDlcRelink/Loading/XUiRelinkLoading",
-    UiRelinkPopupChooseRoom = "XUi/XUiDlcRelink/Room/XUiRelinkPopupChooseRoom",
-    UiRelinkPopupChooseCharacter = "XUi/XUiDlcRelink/Room/XUiRelinkPopupChooseCharacter",
-    UiRelinkSettlement = "XUi/XUiDlcRelink/Settlement/XUiRelinkSettlement",
-
     UiDlcRelinkMain = "XUi/XUiDlcRelink/XUiDlcRelinkMain",
     UiDlcRelinkRoom = "XUi/XUiDlcRelink/Room/XUiDlcRelinkRoom",
     UiDlcRelinkPopupPlayerInvite = "XUi/XUiDlcRelink/Room/Popup/XUiDlcRelinkPopupPlayerInvite",
@@ -2289,6 +2286,8 @@ local UiRegistry = {
     UiFashionSuitMain = "XUi/XUiFashionSuit/XUiFashionSuitMain",
     UiFashionSuitDetail = "XUi/XUiFashionSuit/XUiFashionSuitDetail",
     UiFashionSuitPopupPic = "XUi/XUiFashionSuit/XUiFashionSuitPopupPic",
+    UiFashionSuitLobby = "XUi/XUiFashionSuit/XUiFashionSuitLobby/XUiFashionSuitLobby",
+    UiFashionSuitPopupNew = "XUi/XUiFashionSuit/XUiFashionSuitPopupNew/XUiFashionSuitPopupNew",
     --endregion
 
     UiPurchaseDialog = "XUi/XUiPurchase/XUiPurchaseDialog",
@@ -2361,6 +2360,32 @@ local UiRegistry = {
     UiMainAprilFoolsToastHall = "XUi/XUiAprilFools/UiMainAprilFoolsToastHall/XUiMainAprilFoolsToastHall",
     UiCommonPopupUsePackage = "XUi/XUiCommonPopupUsePackage/XUiCommonPopupUsePackage",
     UiCommonPopupBuyAsset = "XUi/XUiCommonPopupBuyAsset/XUiCommonPopupBuyAsset",
+
+    --region XPBRGame
+    UiPBRMain = "XUi/XUiPBRGame/XUiPBRMain/XUiPBRMain",
+    UiPBRChapter = "XUi/XUiPBRGame/XUiPBRChapter/XUiPBRChapter",
+    UiPBRCharacterSelection = "XUi/XUiPBRGame/XUiPBRCharacterSelection/XUiPBRCharacterSelection",
+    UiPBRCharacterDetail = "XUi/XUiPBRGame/XUiPBRCharacterDetail/XUiPBRCharacterDetail",
+    UiPBRPause = "XUi/XUiPBRGame/XUiPBRPause/XUiPBRPause",
+    UiPBRPopupEndless = "XUi/XUiPBRGame/XUiPBRPopupEndless/XUiPBRPopupEndless",
+    UiPBRSettlement = "XUi/XUiPBRGame/XUiPBRSettlement/XUiPBRSettlement",
+    UiPBRShopNew = "XUi/XUiPBRGame/XUiPBRShopNew/XUiPBRShopNew",
+    UiPBRCollection = "XUi/XUiPBRGame/XUiPBRCollection/XUiPBRCollection",
+    UiPBRGenius = "XUi/XUiPBRGame/XUiPBRGenius/XUiPBRGenius",
+    UiPBRTask = "XUi/XUiPBRGame/XUiPBRTask/XUiPBRTask",
+    --endregion
+
+    --动态表情包预览界面
+    UiDynamicFacePreview = "XUi/DynamicFace/XUiDynamicFacePreview",
+    --region XLineArithmetic3
+    UiLineArithmetic3Chapter = "XUi/XUiLineArithmetic3/XUiLineArithmetic3Chapter/XUiLineArithmetic3Chapter",
+    UiLineArithmetic3Game = "XUi/XUiLineArithmetic3/XUiLineArithmetic3Game/XUiLineArithmetic3Game",
+    UiLineArithmetic3Main = "XUi/XUiLineArithmetic3/XUiLineArithmetic3Main/XUiLineArithmetic3Main",
+    UiLineArithmetic3PopupCommon = "XUi/XUiLineArithmetic3/XUiLineArithmetic3PopupCommon/XUiLineArithmetic3PopupCommon",
+    UiLineArithmetic3PopupSettlement = "XUi/XUiLineArithmetic3/XUiLineArithmetic3PopupSettlement/XUiLineArithmetic3PopupSettlement",
+    UiLineArithmetic3Task = "XUi/XUiLineArithmetic3/XUiLineArithmetic3Task/XUiLineArithmetic3Task",
+    --endregion
 }
 
 return UiRegistry
+

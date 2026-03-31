@@ -1,0 +1,64 @@
+Id	Name	RoundClear	MaxLayer	RoundClearLayer	Effects	IsShow	Icon	Desc	EffectType
+1	刚体				[1000001, 1000002, 1000003, 1000004]	1	Assets/Product/Texture/Image/IconAffix/AffixIconGangti2.png	受到的伤害降低至1。玩家消球后，移除等同于消球点数之和的[刚体]层数。	1
+2	嗜黄		1		[1000005]	1	Assets/Product/Texture/Image/UiPcg/UiPcgAffixIconYellow.png	玩家三消<color=#FAD364FF>黄球</color>时，怪物获得[刚体]*10。<size=24><color=#FFFFFF2D><size=24><color=#FFFFFF2D>\n- [刚体]：受到的伤害降低至1。玩家消球后，移除等同于消球点数之和的[刚体]层数。</color></size>	1
+3	嗜红		1		[1000006]	1	Assets/Product/Texture/Image/UiPcg/UiPcgAffixIconRed.png	玩家三消<color=#CD2F30FF>红球</color>时，怪物获得[暴走]*1。<size=24><color=#FFFFFF2D><size=24><color=#FFFFFF2D>\n- [暴走]：可以叠加，造成伤害时，每层使伤害值+1。</color></size>	1
+4	嗜蓝		1		[1000007]	1	Assets/Product/Texture/Image/UiPcg/UiPcgAffixIconBlue.png	玩家三消<color=#59CCFFFF>蓝球</color>时，召唤1个自爆原虫。	1
+5	脆弱				[1000008, 1000009]	1	Assets/Product/Texture/Image/IconAffix/AffixIconGuanchuan2.png	受到的伤害增加50%，受伤后移除1层。	2
+6	暴走				[1000010]	1	Assets/Product/Texture/Image/IconAffix/AffixIconBaozou2.png	可以叠加，造成伤害时，每层使伤害值+1。	1
+7	虚弱				[1000011, 1000012]	1	Assets/Product/Texture/Image/IconAffix/AffixIconXuruo2.png	造成的伤害减少25%，造成伤害后移除1层。	2
+8	倒数					1	Assets/Product/Texture/Image/IconAffix/AffixIconZhadan2.png	行动时移除1层，层数为0时怪物自爆，对玩家造成10点伤害。	
+9	苦旅Ⅰ		12		[1000020, 1000021]	1	Assets/Product/Texture/Image/UiPcg/UiPcgAffixIconMonster1P1.png	玩家每行动12次，怪物获得[刚体]*20。怪物受到单次伤害≥12时，重置行动计数。<size=24><color=#FFFFFF2D>\n- [刚体]：受到的伤害降低至1。玩家消球后，移除等同于消球点数之和的[刚体]层数。</color></size>	1
+10	苦旅Ⅱ		12		[1000030, 1000031]	1	Assets/Product/Texture/Image/UiPcg/UiPcgAffixIconMonster1P2.png	玩家每行动12次，怪物获得[暴走]*1。怪物受到单次伤害≥12时，重置行动计数。<size=24><color=#FFFFFF2D>\n- [暴走]：可以叠加，造成伤害时，每层使伤害值+1。</color></size>	1
+11	苦旅Ⅲ		12		[1000060, 1000061]	1	Assets/Product/Texture/Image/UiPcg/UiPcgAffixIconMonster1P3.png	玩家每行动12次，怪物获得[刚体]*20，并将两张【苦刑】牌加入抽牌堆。怪物受到单次伤害≥24时，重置行动计数。<size=24><color=#FFFFFF2D>\n-【苦刑】牌： <Icon=IconHeart|24|24/> K，获得1点行动点，抽到此牌时，指挥官受到3点伤害。消除后移出游戏。</color></size>	1
+12	苦旅Ⅳ		12		[1000070, 1000071]	1	Assets/Product/Texture/Image/UiPcg/UiPcgAffixIconMonster1P4.png	玩家每行动12次，怪物获得[暴走]*1，并将两张【苦刑】牌加入抽牌堆。怪物受到单次伤害≥24时，重置行动计数。<size=24><color=#FFFFFF2D>\n-【苦刑】牌：<Icon=IconHeart|24|24/> K，获得1点行动点，抽到此牌时，指挥官受到3点伤害。消除后移出游戏。</color></size>	1
+13	感染		1		[1000080]	1	Assets/Product/Texture/Image/IconAffix/AffixIconLiejie2.png	阵亡后对指挥官施加[脆弱]*2。<size=24><color=#FFFFFF2D>\n- [脆弱]：受到的伤害增加50%，受伤后移除1层。</color></size>	
+14	感染		1		[1000090]	1	Assets/Product/Texture/Image/IconAffix/AffixIconLiejie2.png	阵亡后对指挥官施加[脆弱]*2。<size=24><color=#FFFFFF2D>\n- [脆弱]：受到的伤害增加50%，受伤后移除1层。</color></size>	
+15	感染		1		[1000100]	1	Assets/Product/Texture/Image/IconAffix/AffixIconLiejie2.png	阵亡后对指挥官施加[脆弱]*2。<size=24><color=#FFFFFF2D>\n- [脆弱]：受到的伤害增加50%，受伤后移除1层。</color></size>	
+16	蹇修		1		[1000110]	1	Assets/Product/Texture/Image/IconAffix/AffixIconZhufu2.png	对指挥官造成的单次伤害＞10时，将1张【苦刑】牌加入抽牌堆；<size=24><color=#FFFFFF2D>\n-【苦刑】牌：红桃K，获得1点行动点，抽到此牌时，指挥官受到3点伤害。消除后移出游戏。</color></size>	1
+17	更多！		1		[1000120, 1000121, 1000122, 1000123, 1000124, 1000125]	1	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22090.png	行动开始时，若苦刑之女HP<120，获得20护甲，移除[苦旅Ⅲ]，获得[苦旅Ⅳ]。	1
+18	安保检查Ⅰ		1		[1000140]	1	Assets/Product/Texture/Image/UiPcg/UiPcgAffixIconMonster2P1.png	行动开始时，若玩家手中有<color=#CD2F30FF>点数A</color>的牌，召唤1个自律警卫。	1
+19	安保检查Ⅱ		1		[1000150]	1	Assets/Product/Texture/Image/UiPcg/UiPcgAffixIconMonster2P2.png	行动开始时，若玩家手中有<color=#CD2F30FF>点数A或2</color>的牌，召唤1个自律警卫。	1
+20	安保检查Ⅲ		1		[1000160]	1	Assets/Product/Texture/Image/UiPcg/UiPcgAffixIconMonster2P3.png	行动开始时，若玩家手中有<color=#CD2F30FF>红球牌</color>，召唤1个自律警卫。	1
+21	飞行		2		[1000170, 1000171]	1	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22110.png	受到的伤害减少50%，受到伤害后移除1层，失去最后1层[飞行]后，怪物在1回合内无法行动。	1
+22	坠地		1		[1000180, 1000181, 1000182, 1000183]	1	Assets/Product/Texture/Image/IconAffix/AffixIconMoai2.png	无法行动，触发后移除，并获得[飞行]*2。	2
+23	苦旅Ⅰ计数Token		13		[1000190, 1000191, 1000192, 1000193, 1000194]		Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22100.png	只做显示用无实际效果，后续加功能隐藏。	
+24	苦旅Ⅱ计数Token		13		[1000200, 1000201, 1000202, 1000203, 1000204]		Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22100.png	只做显示用无实际效果，后续加功能隐藏。	
+25	苦旅Ⅲ计数Token		13		[1000210, 1000211, 1000212, 1000213, 1000214, 1000215]		Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22100.png	只做显示用无实际效果，后续加功能隐藏。	
+26	苦旅Ⅳ计数Token		13		[1000220, 1000221, 1000222, 1000223, 1000224, 1000225]		Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22100.png	只做显示用无实际效果，后续加功能隐藏。	
+27	飞行计数Token		3		[1000230, 1000231]		Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22100.png	只做显示用无实际效果，后续加功能隐藏。	
+28	无尽馈赠		1		[1000260, 1000261]	1	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32113.png	击败此怪物后，指挥官回复1点行动点并抽3张牌！	
+29	无尽怒火				[1000270]	1	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon32032.png	可以叠加，造成伤害时，每层使伤害值+2。	1
+30	必杀牌-红莲					1	Assets/Product/Texture/Image/IconSkill/R1luxiyadazhao1.png	打出红莲必杀牌时，若红莲未出场，切换出场。	
+31	必杀牌-风暴					1	Assets/Product/Texture/Image/IconSkill/R2yongyechaodazhao1.png	打出风暴必杀牌时，若风暴未出场，切换出场。	
+32	必杀牌-蚀暗					1	Assets/Product/Texture/Image/IconSkill/R1lifudazhao1.png	打出蚀暗必杀牌时，若蚀暗未出场，切换出场。	
+33	必杀牌-零度					1	Assets/Product/Texture/Image/IconSkill/R2biankadazhao1.png	打出零度必杀牌时，若零度未出场，切换出场。	
+34	必杀牌-凛冽					1	Assets/Product/Texture/Image/IconSkill/R3Luosaitadazhao1.png	打出凛冽必杀牌时，若凛冽未出场，切换出场。	
+35	必杀牌-清商					1	Assets/Product/Texture/Image/IconSkill/R2Hanyindazhao1.png	打出清商必杀牌时，若清商未出场，切换出场。	
+36	必杀牌-银冕					1	Assets/Product/Texture/Image/IconSkill/R3Lunadazhao1.png	打出银冕必杀牌时，若银冕未出场，切换出场。	
+37	必杀牌-辉晓					1	Assets/Product/Texture/Image/IconSkill/R4Kalieninadazhao1.png	打出辉晓必杀牌时，若辉晓未出场，切换出场。	
+38	必杀牌-幻奏					1	Assets/Product/Texture/Image/IconSkill/R4Sailinnadazhao1.png	打出幻奏必杀牌时，若幻奏未出场，切换出场。	
+39	衍生牌					1	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22120.png	由角色技能或怪物效果衍生的特殊卡牌。	
+40	倒数计数Token				[1000013, 1000014]		Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22100.png	只做显示用无实际效果，后续加功能隐藏。	
+41	意识海战神		1		[1000290]	1	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon21255.png	任意友方角色造成伤害时，使伤害值+999。	1
+1010	双刀术	1	1	1	[1010]	1	Assets/Product/Texture/Image/IconSkill/R1luxiyahexin1.png	持续1回合。造成伤害后，额外造成1次等值的伤害。	1
+1020	双刀术回能计数隐藏Token	1	99	99			Assets/Product/Texture/Image/IconSkill/R1luxiyahexin1.png	只做显示用无实际效果，后续加功能隐藏。	
+2010	壁垒		1		[2010, 2011]	1	Assets/Product/Texture/Image/IconAffix/AffixIconBilei.png	下一回合开始时，指挥官的护甲不会消失。	1
+4010	饶恕		3		[4010, 4011]	1	Assets/Product/Texture/Image/IconSkill/R2biankahexin1.png	可以叠加，最大层数3。造成伤害时，每层使伤害值+1。达到3层时，将零度的必杀牌从抽牌堆或弃牌堆置于牌堆顶。	1
+4020	零度必杀空效果占位Token	1	20	20			Assets/Product/Texture/Image/IconAffix/AffixIconBilei.png	只做显示用无实际效果，后续加功能隐藏。	
+5010	曼舞		3		[5010]	1	Assets/Product/Texture/Image/IconSkill/R2Hanyinhexin1.png	可以叠加，最大层数3。达到3层时，将清商的必杀牌从抽牌堆或弃牌堆置于牌堆顶。	1
+5020	力量	1	99	99	[5020]	1	Assets/Product/Texture/Image/IconAffix/AffixIconQianggong2.png	持续1回合，可以叠加。任意友方角色造成伤害时，每层使伤害值+1	1
+6010	脆弱				[6010, 6011]	1	Assets/Product/Texture/Image/IconAffix/AffixIconGuanchuan2.png	受到的伤害增加50%，受伤后移除1层。	2
+7010	湮灭		999			1	Assets/Product/Texture/Image/IconSkill/R3Lunadazhao1.png	可以叠加，最大层数999。	1
+7020	帕弥什		999		[7020, 7021, 7022]	1	Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon13011.png	可以叠加，回合开始时，失去当前层数的生命值，然后移除1层。	2
+7030	湮灭计数隐藏Token	1	999	999	[7030, 7031]		Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerwuli.png	只做显示用无实际效果，后续加功能隐藏。	
+7040	奇点		4		[7040, 7041]	1	Assets/Product/Texture/Image/IconSkill/R3Lunahexin1.png	可以叠加，最大层数4。回合开始时，若银冕已出场，弃置X张点数最小的手牌，然后抽X张牌，X为银冕拥有的[奇点]层数，然后移除所有[奇点]。	1
+7050	奇点抽牌计数Token		4		[7042, 7043, 7044, 7045, 7046, 7047, 7048]		Assets/Product/Texture/Image/UiBabelTower/UiBabelTowerChallengeIcon22100.png	只做显示用无实际效果，后续加功能隐藏。	
+7060	奇点空效果占位Token		1				Assets/Product/Texture/Image/IconAffix/AffixIconBilei.png	只做显示用无实际效果，后续加功能隐藏。	
+7070	银冕必杀空效果占位Token	1	20	20			Assets/Product/Texture/Image/IconAffix/AffixIconBilei.png	只做显示用无实际效果，后续加功能隐藏。	
+8010	幻奏必杀计数Token		11		[8010, 8011, 8012, 8013]		Assets/Product/Texture/Image/IconSkill/R1luxiyahexin1.png	只做显示用无实际效果，后续加功能隐藏。	
+8020	重奏		3		[8020, 8021]	1	Assets/Product/Texture/Image/IconSkill/R4Sailinnahexin1.png	可以叠加，最大层数3。任意角色切换出场时，触发1次幻奏QTE效果，触发后移除1层。	1
+9010	辉晓必杀抽牌计数Token	1	99	99			Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerwuli.png	只做显示用无实际效果，后续加功能隐藏。	
+9020	辉晓核心计数Token1	1	9999	9999	[9020]		Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerwuli.png	只做显示用无实际效果，后续加功能隐藏。	
+9030	辉晓核心计数Token2	1	9999	9999	[9030]		Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerwuli.png	只做显示用无实际效果，后续加功能隐藏。	
+9040	辉晓核心计数Token3	1	9999	9999	[9040]		Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerwuli.png	只做显示用无实际效果，后续加功能隐藏。	
+9050	辉晓必杀空效果占位Token	1	20	20			Assets/Product/Texture/Image/IconAffix/AffixIconBilei.png	只做显示用无实际效果，后续加功能隐藏。	

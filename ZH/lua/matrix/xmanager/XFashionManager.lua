@@ -846,10 +846,16 @@ XFashionManagerCreator = function()
         end
 
         local fashionId = fightNpcData.Character.FashionId
+        local charId = fightNpcData.Character.Id
         if fashionId <= 0 then
-            local charId = fightNpcData.Character.Id
             fashionId = XMVCA.XCharacter:GetCharacterTemplate(charId).DefaultNpcFashtionId
         end
+
+        -- 分包检查：若涂装未下载则使用默认涂装
+        if XMVCA.XSubPackage:IsOpen() and not XMVCA.XSubPackage:CheckFashionDownloaded(fashionId) then
+            fashionId = XMVCA.XCharacter:GetCharacterTemplate(charId).DefaultNpcFashtionId
+        end
+
         local resId = XFashionManager.GetFashionTemplate(fashionId).ResourcesId
 
         return XMVCA.XCharacter:GetCharResModel(resId)

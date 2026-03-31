@@ -33,8 +33,6 @@ function XUiPhotographSDKPanel:AutoRegisterBtn()
             {
                 [1] = XPhotographConfigs.OverseaSharePlatform.ShareLink,
             }
-        else
-            shareSDKIds = XPhotographConfigs.OverSeaPlatform
         end
     end
     local shareBtnCount = #shareSDKIds
@@ -59,14 +57,18 @@ function XUiPhotographSDKPanel:AutoRegisterBtn()
             end
             if isShow then
                 if btnIndex <= shareBtnCount then
-                    self.ShareBtnList[btnIndex].gameObject:SetActiveEx(true)
-                    self.ShareBtnList[btnIndex].CallBack = function()
-                        self:OnClickShareBtn(shareInfo.Id)
-                    end
-                    self.ShareBtnList[btnIndex]:SetSprite(shareInfo.IconPath)
-                    self.ShareBtnList[btnIndex]:SetName(shareInfo.Name)
+                    local btn = self.ShareBtnList[btnIndex]
 
-                    btnIndex = btnIndex + 1
+                    if btn then
+                        self.ShareBtnList[btnIndex].gameObject:SetActiveEx(true)
+                        self.ShareBtnList[btnIndex].CallBack = function()
+                            self:OnClickShareBtn(shareInfo.Id)
+                        end
+                        self.ShareBtnList[btnIndex]:SetSprite(shareInfo.IconPath)
+                        self.ShareBtnList[btnIndex]:SetName(shareInfo.Name)
+
+                        btnIndex = btnIndex + 1
+                    end
                 else
                     XLog.Error('有效的分享入口数量超过UI上限')
                 end

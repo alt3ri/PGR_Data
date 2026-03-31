@@ -303,9 +303,6 @@ function XUiDlcMultiPlayerCompetitionBulletChat:_GetFromPool(poolList, indexRef)
         self[indexRef] = self[indexRef] + 1
         if self[indexRef] > #poolList then
             self[indexRef] = 1
-            -- 一轮数据执行完成，记录日志
-            local poolName = indexRef == "_CurrentPool1Index" and "阵营1" or "阵营2"
-            XLog.Warning("测试-> 弹幕池执行完一轮: " .. poolName .. " 池大小:" .. #poolList)
         end
         return data
     end

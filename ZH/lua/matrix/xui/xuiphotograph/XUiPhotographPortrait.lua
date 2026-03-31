@@ -6,6 +6,7 @@ local XUiGridPhotographOtherBtn = require("XUi/XUiPhotograph/XUiGridPhotographOt
 local XUiGridPhotographFashionBtn = require("XUi/XUiPhotograph/XUiGridPhotographFashionBtn")
 local XUiPhotographActionPanel = require("XUi/XUiPhotograph/XUiPhotographActionPanel")
 local XUiPhotographSDKPanel = require("XUi/XUiPhotograph/XUiPhotographSDKPanel")
+local XUiPanelLackResources = require("XUi/XUiSubPackage/XUiPanel/XUiPanelLackResources")
 
 local XUiPhotographPortrait = XLuaUiManager.Register(XLuaUi, "UiPhotographPortrait")
 local XUiPanelRoleModel = require("XUi/XUiCharacter/XUiPanelRoleModel")
@@ -35,6 +36,11 @@ local DynamicTableType = {
 function XUiPhotographPortrait:OnAwake()
     self:InitCb()
     self:InitUi()
+
+    -- PanelLackResources 初始化
+    if self.PanelLackResources then
+        self._PanelLackRes = XUiPanelLackResources.New(self.PanelLackResources, self)
+    end
 end
 
 function XUiPhotographPortrait:OnStart(orientation, charId, fashionId, uiPhotograph, sceneId)
@@ -66,6 +72,9 @@ function XUiPhotographPortrait:OnEnable()
     -- 开启时钟
     self.ClockTimer = XUiHelper.SetClockTimeTempFun(self)
     XUiHelper.SetSceneAnimHandler(self)
+
+    -- 监听下载完成事件
+    XEventManager.AddEventListener(XEventId.EVENT_RES_COMPLETE, self.OnFashionDownloadComplete, self)
 end
 
 function XUiPhotographPortrait:Update()
@@ -91,6 +100,9 @@ function XUiPhotographPortrait:OnDisable()
         self.SignBoardPlayer:OnDisable()
     end
     XMVCA.XFavorability:RemoveRoleActionUiAnimListener(self)
+
+    -- 移除下载完成事件监听
+    XEventManager.RemoveEventListener(XEventId.EVENT_RES_COMPLETE, self.OnFashionDownloadComplete, self)
 
     -- 关闭时钟
     if self.ClockTimer then
@@ -788,6 +800,7 @@ function XUiPhotographPortrait:UpdateRoleModel(charId, fashionId)
     self.CG.LastPlayId = nil
 
     self.RoleModel:SetXPostFaicalControllerActive(true)
+    self:CheckAndUpdateLackResourcesPanel()
 end
 
 --region   ------------------点击事件 start-------------------
@@ -1188,4 +1201,43 @@ function XUiPhotographPortrait:GetRoleModel()
     return self.RoleModel
 end
 
--- ===================================================
+-- ===================================================
+
+--region 资源缺失面板
+
+function XUiPhotographPortrait:CheckAndUpdateLackResourcesPanel()
+    if not self._PanelLackRes then return end
+    local fashionId = self.FashionId
+    local characterId = self.CharacterId
+    if not XTool.IsNumberValid(fashionId) then
+        self._PanelLackRes:Close()
+        self._isFashionLacking = false
+        return
+    end
+    local isDownloaded = XMVCA.XSubPackage:CheckFashionDownloaded(fashionId)
+    if isDownloaded then
+        self._PanelLackRes:Close()
+        self._isFashionLacking = false
+    else
+        self._PanelLackRes:SetData(characterId, fashionId)
+        self._PanelLackRes:Open()
+        self._isFashionLacking = true
+    end
+end
+
+function XUiPhotographPortrait:OnFashionDownloadComplete()
+    if not self._isFashionLacking then
+        self:CheckAndUpdateLackResourcesPanel()
+        return
+    end
+    local fashionId = self.FashionId
+    if XTool.IsNumberValid(fashionId)
+       and XMVCA.XSubPackage:CheckFashionDownloaded(fashionId) then
+        self:UpdateRoleModel(self.CharacterId, fashionId)
+        local fashionTemplate = XDataCenter.FashionManager.GetFashionTemplate(fashionId)
+        XUiManager.PopupLeftTip(CS.XTextManager.GetText("DownloadFashionFinishedRefresh", fashionTemplate and fashionTemplate.Name or ""))
+    end
+    self:CheckAndUpdateLackResourcesPanel()
+end
+
+--endregion

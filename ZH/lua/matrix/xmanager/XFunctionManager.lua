@@ -279,6 +279,7 @@ XFunctionManager.FunctionName = {
     Race = 10354, --赛马
     FashionSuit = 10496, --涂装套装
     AprilFoolsDayClearOut = 10499, -- 愚人节假界面小活动
+    PBRGame = 10500, -- 战双兄弟
 }   
 
 XFunctionManager.FunctionType = {
@@ -445,7 +446,6 @@ function XFunctionManager.SkipInterface(id, fromMsg, ...)
             return false
         end
 
-        CS.XResourceRecord.Stop()
         XLuaUiManager.RunMain()
         XFunctionManager.RecordSkip(id, nil, fromMsg)
         return true
@@ -457,12 +457,8 @@ function XFunctionManager.SkipInterface(id, fromMsg, ...)
     if list.Origin == XFunctionManager.SkipOrigin.Section then
         result = XDataCenter.FubenManager.GoToFuben(list.ParamId)
     elseif list.Origin == XFunctionManager.SkipOrigin.SystemWithArgs then
-        CS.XResourceRecord.FunctionEnter(id)
-        
         result = XDataCenter.FunctionalSkipManager.SkipSystemWidthArgs(list)
     elseif list.Origin == XFunctionManager.SkipOrigin.Custom then
-        CS.XResourceRecord.FunctionEnter(id)
-
         result = XDataCenter.FunctionalSkipManager.SkipCustom(list, ...)
     elseif list.Origin == XFunctionManager.SkipOrigin.Dormitory then
         result = XDataCenter.FunctionalSkipManager.SkipDormitory(list)

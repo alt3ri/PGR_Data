@@ -1,7 +1,7 @@
 ---@class XLuaVideoManager
 XLuaVideoManager = XLuaVideoManager or {}
 
-function XLuaVideoManager.PlayUiVideo(id, callback, needAuto, needSkip)
+function XLuaVideoManager.PlayUiVideo(id, callback, needAuto, needSkip, defaultHideButtons)
     if not id then
         return
     end
@@ -23,7 +23,7 @@ function XLuaVideoManager.PlayUiVideo(id, callback, needAuto, needSkip)
 
     XLuaVideoManager.RecordVideoStart(id)
     
-    XLuaUiManager.Open("UiVideoPlayer", id, callback, needAuto, needSkip)
+    XLuaUiManager.Open("UiVideoPlayer", id, callback, needAuto, needSkip, defaultHideButtons)
 end
 
 function XLuaVideoManager.LoadVideoPlayerUguiWithPrefab(parentTransform)

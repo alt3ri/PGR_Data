@@ -323,10 +323,12 @@ function XUiGridFashionShop:RefreshPanelSale()
             self.TxtSaleRate.text = CS.XTextManager.GetText("Recommend")
         elseif self.Data.Tags == XShopManager.ShopTags.HotSale then
             self.TxtSaleRate.text = CS.XTextManager.GetText("HotSell")
+        elseif self.Data.Tags == XShopManager.ShopTags.Not then
+            hideSales = true
         end
-        
+
         -- 控制显示/隐藏
-        if self.Data.Tags == XShopManager.ShopTags.Not or hideSales then
+        if hideSales then
             self.TxtSaleRate.gameObject:SetActiveEx(false)
             self.TxtSaleRate.gameObject.transform.parent.gameObject:SetActiveEx(false)
         else

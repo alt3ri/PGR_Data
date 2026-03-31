@@ -104,4 +104,6 @@ XDlcNpcAttribType = {
     DodgeIncreaseP = 100, -- 极限闪避时间延长倍率
     BlockIncreaseP = 101, -- 极限格挡时间延长倍率
     RelinkChainSkillAmpP = 102, -- FullChain增伤
+    BonusDmgP2 = 103, -- 追击伤害率2
+    BonusDmgP3 = 104, -- 追击伤害率3
 }

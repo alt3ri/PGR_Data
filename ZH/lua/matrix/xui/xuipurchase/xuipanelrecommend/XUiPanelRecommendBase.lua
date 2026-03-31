@@ -24,14 +24,34 @@ function XUiPanelRecommendBase:SetUi(ui)
     XUiHelper.InitUiClass(self, ui)
 end
 
+-- 子类可重写  可以指定专属的Item模板
+function XUiPanelRecommendBase:GetRecommendItemTemplate()
+    local XUiPanelRecommendItem = require("XUi/XUiPurchase/XUiPanelRecommend/XUiPanelRecommendItem/XUiPanelRecommendItem")
+    return XUiPanelRecommendItem
+end
+
 function XUiPanelRecommendBase:AddEditableTextComponent(btn, index, package)
     local recommendItem = self["RecommendItem" .. index]
     if not recommendItem then
-        local XUiPanelRecommendItem = require("XUi/XUiPurchase/XUiPanelRecommend/XUiPanelRecommendItem/XUiPanelRecommendItem")
+        local XUiPanelRecommendItem = self:GetRecommendItemTemplate()
         recommendItem = XUiPanelRecommendItem.New(btn)
         self["RecommendItem" .. index] = recommendItem
     end
     recommendItem:Update(package)
+end
+
+-- 子类可重写 礼包点击处理
+function XUiPanelRecommendBase:OnClickPackage(package)
+    if package:GetIsSellOut() then
+        XUiManager.TipErrorWithKey("PurchaseSettOut")
+        return
+    end
+    local buyData = self.Recommend:GetPurchasePackage()
+    if buyData then
+        self.PurchaseManager.OpenPurchaseBuyUiByPurchasePackage(package, function(_, payCount)
+            self.SkipFunc(XPurchaseConfigs.TabsConfig.Pay, nil, payCount)
+        end, nil, self.BuyFinished)
+    end
 end
 
 function XUiPanelRecommendBase:SetData(data, skipFunc, buyFinished)
@@ -73,16 +93,7 @@ function XUiPanelRecommendBase:SetData(data, skipFunc, buyFinished)
                     end
                     -- 注册礼包购买
                     XUiHelper.RegisterClickEvent(self, btn, function()
-                        if package:GetIsSellOut() then
-                            XUiManager.TipErrorWithKey("PurchaseSettOut")
-                            return
-                        end
-                        local buyData = self.Recommend:GetPurchasePackage()
-                        if buyData then
-                            self.PurchaseManager.OpenPurchaseBuyUiByPurchasePackage(package, function(_, payCount)
-                                self.SkipFunc(XPurchaseConfigs.TabsConfig.Pay, nil, payCount)
-                            end, nil, self.BuyFinished)
-                        end
+                        self:OnClickPackage(package)
                     end)
                 end
             else

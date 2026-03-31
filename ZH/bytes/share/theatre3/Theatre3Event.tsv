@@ -1,0 +1,896 @@
+Id	EventId	StepId	NextStepId	Type	FightNodeId	WorkShopId	EffectGroupId	StoryId	StepRewardItemType	StepRewardItemId	StepRewardItemCount	OptionGroupId	Title	TitleContent	RoleIcon	RoleName	RoleContent	RoleEffect	EventDesc	ConfirmContent	BgAsset
+1	1	101		2								101	贴心搭档						洁塔薇有些不太情愿地拿出两个包裹。	决定	Assets/Product/Texture/Image/BgStory/BgStory670.jpg
+2	1	102		3					1	{1: 96189}	{1: 300}		贴心搭档		Assets/Product/Texture/Image/RoleStory/V260qyNormal02.png	洁塔薇	对于杂鱼来说，是很重要的东西呢。		洁塔薇满意地点了点头，对你接受她施舍的谦卑态度感到满意。	出发	Assets/Product/Texture/Image/BgStory/BgStory670.jpg
+3	1	103		3					4	{1: 1}	{1: 1}		贴心搭档		Assets/Product/Texture/Image/RoleStory/V260qyNormal02.png	洁塔薇	对于杂鱼来说，是很重要的东西呢。		洁塔薇满意地点了点头，对你接受她施舍的谦卑态度感到满意。	出发	Assets/Product/Texture/Image/BgStory/BgStory670.jpg
+4	1	104		3					1	{1: 96189}	{1: 300}		贴心搭档		Assets/Product/Texture/Image/RoleStory/V260qyNormal01.png	洁塔薇	两手空空上路会死的哦，快给我拿好！		洁塔薇将沉甸甸的大包裹强行塞到你的手中。	出发	Assets/Product/Texture/Image/BgStory/BgStory670.jpg
+5	1	105		3					4	{1: 1}	{1: 1}		贴心搭档		Assets/Product/Texture/Image/RoleStory/V260qyNormal01.png	洁塔薇	两手空空上路会死的哦，快给我拿好！		洁塔薇将精致的小包裹强行塞到你的手中。	出发	Assets/Product/Texture/Image/BgStory/BgStory670.jpg
+6	2	201		2								201	物归新主						洁塔薇不小心跌进了一处地陷，意外发现了一个古怪的箱子。	决定	Assets/Product/Texture/Image/BgStory/BgStory604.jpg
+7	2	202		3					2	{1: 1002}	{1: 1}		物归新主			洁塔薇	就当作是让我摔跟头的补偿吧。		你从箱子里回收了有用的东西。	出发	Assets/Product/Texture/Image/BgStory/BgStory604.jpg
+8	2	203		3					2	{1: 1002}	{1: 1}		物归新主			洁塔薇	我不管，现在它就是我的。		洁塔薇赌气地藏起了箱子，说什么也不肯归还。	出发	Assets/Product/Texture/Image/BgStory/BgStory604.jpg
+9	3	301	302	3					2	{1: 1002}	{1: 1}		隐秘工坊						洁塔薇发现了一间隐秘的工坊，你们在里面找到了备用的特殊物资。	收取	Assets/Product/Texture/Image/BgStory/Bgstory351.jpg
+10	3	302		2								302	隐秘工坊						在出发前，你和洁塔薇在考虑是否在工坊休整下。	决定	Assets/Product/Texture/Image/BgStory/Bgstory351.jpg
+11	3	303		5		2							隐秘工坊						机会难得，你决定在这调整下状态。	休整	Assets/Product/Texture/Image/BgStory/Bgstory351.jpg
+12	3	304		1									隐秘工坊						在时间紧要的情况下，你们决定尽早出发。	出发	Assets/Product/Texture/Image/BgStory/Bgstory351.jpg
+13	4	401	402	3					2	{1: 1002}	{1: 1}		休憩之地						洁塔薇在前方恰好发现了一座废弃小屋，并从那带来了些特殊物资。	前往	Assets/Product/Texture/Image/BgStory/BgStory733.jpg
+14	4	402		2								402	休憩之地						来到小屋内，洁塔薇示意你停下来歇息一会。	决定	Assets/Product/Texture/Image/BgStory/BgStory733.jpg
+15	4	403		5		2							休憩之地						连续的作战让你感到疲惫，你决定趁此机会调整下状态，以便应对接下来会遇到的危险。	休整	Assets/Product/Texture/Image/BgStory/BgStory733.jpg
+16	4	404		1									休憩之地						时间紧迫，你们不能再在这继续驻留，小憩后便立即出发	出发	Assets/Product/Texture/Image/BgStory/BgStory733.jpg
+17	5	501	502	1									自动化工坊						采用自动化流程和先进AI的无人工坊，装载的精密模组允许其对不同项目进行微调。	继续	Assets/Product/Texture/Image/BgStory/BgStory778.jpg
+18	5	502		2								502	自动化工坊			提醒！	为了防止系统出现逻辑谬误，请谨慎调试配额......		启动无人工坊进行调整。	决定	Assets/Product/Texture/Image/BgStory/BgStory778.jpg
+19	5	503		5		1							自动化工坊						你决定进入工坊内进行整备。	进入	Assets/Product/Texture/Image/BgStory/BgStory778.jpg
+20	5	504		5		2							自动化工坊						你决定在外部简单休整下状态便离开。	休整	Assets/Product/Texture/Image/BgStory/BgStory778.jpg
+21	6	601		2								601	天台扭蛋机						你在诡异的摩天轮上，发现了名为“天台”的怪异扭蛋机，里面有【<color=#EA4323>太阳</color>】、【<color=#34A853>菠萝</color>】、【<color=#FBBC05>饼干</color>】三种图案，你不知道是谁摆在这的，似乎投入算力单元就能运行。	决定	Assets/Product/Texture/Image/BgStory/Bgstory197.png
+22	6	602	609	3					1	{1: 96189}	{1: 80}		天台扭蛋机						扭蛋机开始运行，里面图案不断变化……\n几秒之后，图案停止了变化。\n结果是<size=60>【<color=#EA4323>太阳</color>、<color=#EA4323>太阳</color>、<color=#FBBC05>饼干</color>】</size>	取走	Assets/Product/Texture/Image/BgStory/Bgstory197.png
+23	6	603	609	3					1	{1: 96189}	{1: 100}		天台扭蛋机						扭蛋机开始运行，里面图案不断变化……\n几秒之后，图案停止了变化。\n结果是<size=60>【<color=#FBBC05>饼干</color>、<color=#FBBC05>饼干</color>、<color=#FBBC05>饼干</color>】</size>	取走	Assets/Product/Texture/Image/BgStory/Bgstory197.png
+24	6	604	609	3					1	{1: 96189}	{1: 150}		天台扭蛋机						扭蛋机开始运行，里面图案不断变化……\n几秒之后，图案停止了变化。\n结果是<size=60>【<color=#34A853>菠萝</color>、<color=#34A853>菠萝</color>、<color=#34A853>菠萝</color>】</size>	取走	Assets/Product/Texture/Image/BgStory/Bgstory197.png
+25	6	605	609	3					1	{1: 96189}	{1: 250}		天台扭蛋机						扭蛋机开始运行，里面图案不断变化……\n几秒之后，图案停止了变化。\n结果是<size=60>【<color=#34A853>菠萝</color>、<color=#EA4323>太阳</color>、<color=#34A853>菠萝</color>】</size>	取走	Assets/Product/Texture/Image/BgStory/Bgstory197.png
+26	6	606	609	3					4	{1: 4}	{1: 1}		天台扭蛋机						扭蛋机开始运行，里面图案不断变化……\n几秒之后，图案停止了变化。\n结果是<size=60>【<color=#34A853>菠萝</color>、<color=#34A853>菠萝</color>、<color=#FBBC05>饼干</color>】</size>	取走	Assets/Product/Texture/Image/BgStory/Bgstory197.png
+27	6	607	609	3					4	{1: 3}	{1: 1}		天台扭蛋机						扭蛋机开始运行，里面图案不断变化……\n几秒之后，图案停止了变化。\n结果是<size=60>【<color=#EA4323>太阳</color>、<color=#EA4323>太阳</color>、<color=#EA4323>太阳</color>】</size>	取走	Assets/Product/Texture/Image/BgStory/Bgstory197.png
+28	6	608	609	1									天台扭蛋机						扭蛋机开始运行，里面图案不断变化……\n几秒之后，图案停止了变化。\n结果是<size=60>【<color=#EA4323>太阳</color>、<color=#34A853>菠萝</color>、<color=#FBBC05>饼干</color>】</size>\n扭蛋机什么也没吐出来。	继续	Assets/Product/Texture/Image/BgStory/Bgstory197.png
+29	6	609		2								609	天台扭蛋机						扭蛋机有些发烫，但看起来还能继续运行。	决定	Assets/Product/Texture/Image/BgStory/Bgstory197.png
+30	6	610	617	3					1	{1: 96189}	{1: 10}		天台扭蛋机						扭蛋机开始运行，里面图案不断变化……\n几秒之后，图案停止了变化。\n结果是<size=60>【<color=#EA4323>太阳</color>、<color=#EA4323>太阳</color>、<color=#FBBC05>饼干</color>】</size>	取走	Assets/Product/Texture/Image/BgStory/Bgstory197.png
+31	6	611	617	3					1	{1: 96189}	{1: 30}		天台扭蛋机						扭蛋机开始运行，里面图案不断变化……\n几秒之后，图案停止了变化。\n结果是<size=60>【<color=#FBBC05>饼干</color>、<color=#FBBC05>饼干</color>、<color=#FBBC05>饼干</color>】</size>	取走	Assets/Product/Texture/Image/BgStory/Bgstory197.png
+32	6	612	617	3					1	{1: 96189}	{1: 70}		天台扭蛋机						扭蛋机开始运行，里面图案不断变化……\n几秒之后，图案停止了变化。\n结果是<size=60>【<color=#34A853>菠萝</color>、<color=#34A853>菠萝</color>、<color=#34A853>菠萝</color>】</size>	取走	Assets/Product/Texture/Image/BgStory/Bgstory197.png
+33	6	613	617	3					1	{1: 96189}	{1: 85}		天台扭蛋机						扭蛋机开始运行，里面图案不断变化……\n几秒之后，图案停止了变化。\n结果是<size=60>【<color=#34A853>菠萝</color>、<color=#EA4323>太阳</color>、<color=#34A853>菠萝</color>】</size>	取走	Assets/Product/Texture/Image/BgStory/Bgstory197.png
+34	6	614	617	3					4	{1: 4}	{1: 1}		天台扭蛋机						扭蛋机开始运行，里面图案不断变化……\n几秒之后，图案停止了变化。\n结果是<size=60>【<color=#34A853>菠萝</color>、<color=#34A853>菠萝</color>、<color=#FBBC05>饼干</color>】</size>	取走	Assets/Product/Texture/Image/BgStory/Bgstory197.png
+35	6	615	617	3					4	{1: 5}	{1: 1}		天台扭蛋机						扭蛋机开始运行，里面图案不断变化……\n几秒之后，图案停止了变化。\n结果是<size=60>【<color=#EA4323>太阳</color>、<color=#EA4323>太阳</color>、<color=#EA4323>太阳</color>】</size>	取走	Assets/Product/Texture/Image/BgStory/Bgstory197.png
+36	6	616	617	1									天台扭蛋机						扭蛋机开始运行，里面图案不断变化……\n几秒之后，图案停止了变化。\n结果是<size=60>【<color=#EA4323>太阳</color>、<color=#34A853>菠萝</color>、<color=#FBBC05>饼干</color>】</size>\n扭蛋机什么也没吐出来。	继续	Assets/Product/Texture/Image/BgStory/Bgstory197.png
+37	6	617	625	2								617	天台扭蛋机						连续工作后，扭蛋机冒出了几缕黑烟，继续运行的话，很有可能会出现故障。	决定	Assets/Product/Texture/Image/BgStory/Bgstory197.png
+38	6	618	625	3					1	{1: 96189}	{1: 75}		天台扭蛋机	——幸运☆					扭蛋机开始运行，里面图案不断变化……\n几秒之后，图案停止了变化。\n结果是<size=60>【<color=#EA4323>太阳</color>、<color=#EA4323>太阳</color>、<color=#FBBC05>饼干</color>】</size>	取走	Assets/Product/Texture/Image/BgStory/Bgstory197.png
+39	6	619	625	3					1	{1: 96189}	{1: 125}		天台扭蛋机	——幸运☆					扭蛋机开始运行，里面图案不断变化……\n几秒之后，图案停止了变化。\n结果是<size=60>【<color=#FBBC05>饼干</color>、<color=#FBBC05>饼干</color>、<color=#FBBC05>饼干</color>】</size>	取走	Assets/Product/Texture/Image/BgStory/Bgstory197.png
+40	6	620	625	3					1	{1: 96189}	{1: 150}		天台扭蛋机	——幸运☆					扭蛋机开始运行，里面图案不断变化……\n几秒之后，图案停止了变化。\n结果是<size=60>【<color=#34A853>菠萝</color>、<color=#34A853>菠萝</color>、<color=#34A853>菠萝</color>】</size>	取走	Assets/Product/Texture/Image/BgStory/Bgstory197.png
+41	6	621	625	3					1	{1: 96189}	{1: 200}		天台扭蛋机	——幸运☆					扭蛋机开始运行，里面图案不断变化……\n几秒之后，图案停止了变化。\n结果是<size=60>【<color=#34A853>菠萝</color>、<color=#EA4323>太阳</color>、<color=#34A853>菠萝</color>】</size>	取走	Assets/Product/Texture/Image/BgStory/Bgstory197.png
+42	6	622	625	3					4	{1: 3}	{1: 1}		天台扭蛋机	——幸运☆					扭蛋机开始运行，里面图案不断变化……\n几秒之后，图案停止了变化。\n结果是<size=60>【<color=#34A853>菠萝</color>、<color=#34A853>菠萝</color>、<color=#FBBC05>饼干</color>】</size>	取走	Assets/Product/Texture/Image/BgStory/Bgstory197.png
+43	6	623	625	3					4	{1: 5}	{1: 1}		天台扭蛋机	——幸运☆					扭蛋机开始运行，里面图案不断变化……\n几秒之后，图案停止了变化。\n结果是<size=60>【<color=#EA4323>太阳</color>、<color=#EA4323>太阳</color>、<color=#EA4323>太阳</color>】</size>	取走	Assets/Product/Texture/Image/BgStory/Bgstory197.png
+44	6	624	625	1									天台扭蛋机	——幸运☆					扭蛋机开始运行，里面图案不断变化……\n几秒之后，图案停止了变化。\n结果是<size=60>【<color=#EA4323>太阳</color>、<color=#34A853>菠萝</color>、<color=#FBBC05>饼干</color>】</size>\n扭蛋机什么也没吐出来。	继续	Assets/Product/Texture/Image/BgStory/Bgstory197.png
+45	6	625		2								625	天台扭蛋机	——幸运☆					运气不错，扭蛋机又一次经受住了高负载的工作，但再次运行会有99.9999%的概率直接损坏。	决定	Assets/Product/Texture/Image/BgStory/Bgstory197.png
+46	6	626	628	3					1	{1: 96189}	{1: 9999}		天台扭蛋机	——超级幸运☆					扭蛋机开始运行，里面图案不断变化……\n几秒之后，图案停止了变化。\n结果是<size=60>【<color=#FBBC05>饼干</color>、<color=#FBBC05>饼干</color>、<color=#FBBC05>饼干</color>】</size>	取走	Assets/Product/Texture/Image/BgStory/Bgstory197.png
+47	6	627	628	3					1	{1: 96189}	{1: 7777}		天台扭蛋机	——超级幸运☆					扭蛋机开始运行，里面图案不断变化……\n几秒之后，图案停止了变化。\n结果是<size=60>【<color=#EA4323>太阳</color>、<color=#EA4323>太阳</color>、<color=#EA4323>太阳</color>】</size>	取走	Assets/Product/Texture/Image/BgStory/Bgstory197.png
+48	6	628		1									天台扭蛋机	——超级幸运☆					在0.0001%的概率下，你引发了奇迹，扭蛋机并没有损坏，但也无法再继续工作，以后再来看看吧。	离开	Assets/Product/Texture/Image/BgStory/Bgstory197.png
+49	6	629	609	3					4	{1: 3}	{1: 1}		天台扭蛋机						扭蛋机开始运行，里面图案不断变化……\n几秒之后，图案停止了变化。\n结果是<size=60>【<color=#EA4323>太阳</color>、<color=#EA4323>太阳</color>、<color=#EA4323>太阳</color>】</size>	取走	Assets/Product/Texture/Image/BgStory/Bgstory197.png
+50	6	630	617	3					4	{1: 5}	{1: 1}		天台扭蛋机						扭蛋机开始运行，里面图案不断变化……\n几秒之后，图案停止了变化。\n结果是<size=60>【<color=#EA4323>太阳</color>、<color=#EA4323>太阳</color>、<color=#EA4323>太阳</color>】</size>	取走	Assets/Product/Texture/Image/BgStory/Bgstory197.png
+51	6	631	625	3					4	{1: 5}	{1: 1}		天台扭蛋机	——作弊★					扭蛋机开始运行，里面图案不断变化……\n几秒之后，图案停止了变化。\n结果是<size=60>【<color=#EA4323>太阳</color>、<color=#EA4323>太阳</color>、<color=#EA4323>太阳</color>】</size>	取走	Assets/Product/Texture/Image/BgStory/Bgstory197.png
+52	6	632	633	3					1	{1: 96189}	{1: 9999}		天台扭蛋机	——超级作弊★					扭蛋机开始运行，里面图案不断变化……\n几秒之后，图案停止了变化。\n结果是<size=60>【<color=#FBBC05>饼干</color>、<color=#FBBC05>饼干</color>、<color=#FBBC05>饼干</color>】</size>	取走	Assets/Product/Texture/Image/BgStory/Bgstory197.png
+53	6	633		1									天台扭蛋机	——超级作弊★					在100%的概率下，你创造了奇迹，扭蛋机并没有损坏，但也无法再继续工作，以后再来看看吧。	离开	Assets/Product/Texture/Image/BgStory/Bgstory197.png
+54	6	697		1									天台扭蛋机	——寄					扭蛋机运行后发出了奇怪的异响，转速越来越快没有停下迹象，最终在冒出火花后，不堪重负的彻底损坏。	离开	Assets/Product/Texture/Image/BgStory/Bgstory197.png
+55	6	698		1									天台扭蛋机						你离开那个诡异的扭蛋机，离开了天台。	离开	Assets/Product/Texture/Image/BgStory/Bgstory197.png
+56	6	699		1									天台扭蛋机						扭蛋机似乎具备自我修复的功能，为了以后着想，你决定给它一个缓冲时间，暂时离开这里。	离开	Assets/Product/Texture/Image/BgStory/Bgstory197.png
+57	7	701		2								701	皇后游戏	魔女艾丽卡					自称艾丽卡的魔女在自己的占卜店铺里布置了一张桌子，上面摆满了自制的卡牌。艾丽卡询问洁塔薇是否愿意来一场纸牌游戏，赢过她的话会给予丰厚的报酬。	决定	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+58	7	702	703	1									皇后游戏	魔女艾丽卡		艾丽卡	新手福利，首次免费哦~		——游戏规则——\n· 有三种类型的卡牌，大小关系分别是\n· <color=#EA4323>「皇后」</color>最大\n· <color=#FBBC05>「女仆」</color>其次\n· <color=#34A853>「猫娘」</color>最小，但可以克制<color=#EA4323>「皇后」</color>\n· 每回合出一张卡牌，大者胜，小者负。	拿牌	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+59	7	703		2								703	皇后游戏	魔女艾丽卡					接过艾丽卡手中的卡牌，要打出的牌是？	决定	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+60	7	704	713	1									皇后游戏	魔女艾丽卡		艾丽卡	真可惜~		· 双方出牌\n· 洁塔薇打出了<color=#EA4323>「皇后」</color>\n· 艾丽卡翻开了盖上的牌，是<color=#34A853>「猫娘」</color>\n· 洁塔薇输掉了这回合	继续	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+61	7	705	713	3					1	{1: 96189}	{1: 50}		皇后游戏	魔女艾丽卡		艾丽卡	再来一把？		· 双方出牌\n· 洁塔薇打出了<color=#EA4323>「皇后」</color>\n· 艾丽卡翻开了盖上的牌，是<color=#EA4323>「皇后」</color>\n· 这回合是平局	继续	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+62	7	706	713	3					3	{1: 4}	{1: 1}		皇后游戏	魔女艾丽卡		艾丽卡	运气不错嘛~		· 双方出牌\n· 洁塔薇打出了<color=#EA4323>「皇后」</color>\n· 艾丽卡翻开了盖上的牌，是<color=#FBBC05>「女仆」</color>\n· 洁塔薇赢下了这回合	继续	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+63	7	707	713	1									皇后游戏	魔女艾丽卡		艾丽卡	真可惜~		· 双方出牌\n· 洁塔薇打出了<color=#FBBC05>「女仆」</color>\n· 艾丽卡翻开了盖上的牌，是<color=#EA4323>「皇后」</color>\n· 洁塔薇输掉了这回合	继续	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+64	7	708	713	3					1	{1: 96189}	{1: 50}		皇后游戏	魔女艾丽卡		艾丽卡	再来一把？		· 双方出牌\n· 洁塔薇打出了<color=#FBBC05>「女仆」</color>\n· 艾丽卡翻开了盖上的牌，是<color=#FBBC05>「女仆」</color>\n· 这回合是平局	继续	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+65	7	709	713	3					3	{1: 4}	{1: 1}		皇后游戏	魔女艾丽卡		艾丽卡	运气不错嘛~		· 双方出牌\n· 洁塔薇打出了<color=#FBBC05>「女仆」</color>\n· 艾丽卡翻开了盖上的牌，是<color=#34A853>「猫娘」</color>\n· 洁塔薇赢下了这回合	继续	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+66	7	710	713	1									皇后游戏	魔女艾丽卡		艾丽卡	真可惜~		· 双方出牌\n· 洁塔薇打出了<color=#34A853>「猫娘」</color>\n· 艾丽卡翻开了盖上的牌，是<color=#FBBC05>「女仆」</color>\n· 洁塔薇输掉了这回合	继续	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+67	7	711	713	3					1	{1: 96189}	{1: 50}		皇后游戏	魔女艾丽卡		艾丽卡	再来一把？		· 双方出牌\n· 洁塔薇打出了<color=#34A853>「猫娘」</color>\n· 艾丽卡翻开了盖上的牌，是<color=#34A853>「猫娘」</color>\n· 这回合是平局	继续	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+68	7	712	713	3					3	{1: 4}	{1: 1}		皇后游戏	魔女艾丽卡		艾丽卡	运气不错嘛~		· 双方出牌\n· 洁塔薇打出了<color=#34A853>「猫娘」</color>\n· 艾丽卡翻开了盖上的牌，是<color=#EA4323>「皇后」</color>\n· 洁塔薇赢下了这回合	继续	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+69	7	713		2								713	皇后游戏	魔女艾丽卡		艾丽卡	新手的强运要结束了哦~		试玩环节结束，从现在开始，艾丽卡每回合会收取你一定的赌注。	决定	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+70	7	714		2								714	皇后游戏	魔女艾丽卡					接过艾丽卡手中的卡牌，要打出的牌是？	决定	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+71	7	715	724	1									皇后游戏	魔女艾丽卡		艾丽卡	真可惜~		· 双方出牌\n· 洁塔薇打出了<color=#EA4323>「皇后」</color>\n· 艾丽卡翻开了盖上的牌，是<color=#34A853>「猫娘」</color>\n· 洁塔薇输掉了这回合	继续	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+72	7	716	724	3					1	{1: 96189}	{1: 30}		皇后游戏	魔女艾丽卡		艾丽卡	再来一把？		· 双方出牌\n· 洁塔薇打出了<color=#EA4323>「皇后」</color>\n· 艾丽卡翻开了盖上的牌，是<color=#EA4323>「皇后」</color>\n· 这回合是平局	继续	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+73	7	717	724	3					1	{1: 96189}	{1: 200}		皇后游戏	魔女艾丽卡		艾丽卡	运气不错嘛~		· 双方出牌\n· 洁塔薇打出了<color=#EA4323>「皇后」</color>\n· 艾丽卡翻开了盖上的牌，是<color=#FBBC05>「女仆」</color>\n· 洁塔薇赢下了这回合	继续	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+74	7	718	724	1									皇后游戏	魔女艾丽卡		艾丽卡	真可惜~		· 双方出牌\n· 洁塔薇打出了<color=#FBBC05>「女仆」</color>\n· 艾丽卡翻开了盖上的牌，是<color=#EA4323>「皇后」</color>\n· 洁塔薇输掉了这回合	继续	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+75	7	719	724	3					1	{1: 96189}	{1: 30}		皇后游戏	魔女艾丽卡		艾丽卡	再来一把？		· 双方出牌\n· 洁塔薇打出了<color=#FBBC05>「女仆」</color>\n· 艾丽卡翻开了盖上的牌，是<color=#FBBC05>「女仆」</color>\n· 这回合是平局	继续	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+76	7	720	724	3					1	{1: 96189}	{1: 200}		皇后游戏	魔女艾丽卡		艾丽卡	运气不错嘛~		· 双方出牌\n· 洁塔薇打出了<color=#FBBC05>「女仆」</color>\n· 艾丽卡翻开了盖上的牌，是<color=#34A853>「猫娘」</color>\n· 洁塔薇赢下了这回合	继续	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+77	7	721	724	1									皇后游戏	魔女艾丽卡		艾丽卡	真可惜~		· 双方出牌\n· 洁塔薇打出了<color=#34A853>「猫娘」</color>\n· 艾丽卡翻开了盖上的牌，是<color=#FBBC05>「女仆」</color>\n· 洁塔薇输掉了这回合	继续	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+78	7	722	724	3					1	{1: 96189}	{1: 30}		皇后游戏	魔女艾丽卡		艾丽卡	再来一把？		· 双方出牌\n· 洁塔薇打出了<color=#34A853>「猫娘」</color>\n· 艾丽卡翻开了盖上的牌，是<color=#34A853>「猫娘」</color>\n· 这回合是平局	继续	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+79	7	723	724	3					1	{1: 96189}	{1: 200}		皇后游戏	魔女艾丽卡		艾丽卡	运气不错嘛~		· 双方出牌\n· 洁塔薇打出了<color=#34A853>「猫娘」</color>\n· 艾丽卡翻开了盖上的牌，是<color=#EA4323>「皇后」</color>\n· 洁塔薇赢下了这回合	继续	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+80	7	724		2								724	皇后游戏	魔女艾丽卡		艾丽卡	奖励更好了哦~		需要的赌注增加了，是继续玩还是离开？	决定	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+81	7	725		2								725	皇后游戏	魔女艾丽卡					接过艾丽卡手中的卡牌，要打出的牌是？	决定	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+82	7	726	735	1									皇后游戏	魔女艾丽卡		艾丽卡	真可惜~		· 双方出牌\n· 洁塔薇打出了<color=#EA4323>「皇后」</color>\n· 艾丽卡翻开了盖上的牌，是<color=#34A853>「猫娘」</color>\n· 洁塔薇输掉了这回合	继续	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+83	7	727	735	3					1	{1: 96189}	{1: 80}		皇后游戏	魔女艾丽卡		艾丽卡	再来一把？		· 双方出牌\n· 洁塔薇打出了<color=#EA4323>「皇后」</color>\n· 艾丽卡翻开了盖上的牌，是<color=#EA4323>「皇后」</color>\n· 这回合是平局	继续	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+84	7	728	735	3					3	{1: 5}	{1: 1}		皇后游戏	魔女艾丽卡		艾丽卡	运气不错嘛~		· 双方出牌\n· 洁塔薇打出了<color=#EA4323>「皇后」</color>\n· 艾丽卡翻开了盖上的牌，是<color=#FBBC05>「女仆」</color>\n· 洁塔薇赢下了这回合	继续	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+85	7	729	735	1									皇后游戏	魔女艾丽卡		艾丽卡	真可惜~		· 双方出牌\n· 洁塔薇打出了<color=#FBBC05>「女仆」</color>\n· 艾丽卡翻开了盖上的牌，是<color=#EA4323>「皇后」</color>\n· 洁塔薇输掉了这回合	继续	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+86	7	730	735	3					1	{1: 96189}	{1: 80}		皇后游戏	魔女艾丽卡		艾丽卡	再来一把？		· 双方出牌\n· 洁塔薇打出了<color=#FBBC05>「女仆」</color>\n· 艾丽卡翻开了盖上的牌，是<color=#FBBC05>「女仆」</color>\n· 这回合是平局	继续	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+87	7	731	735	3					3	{1: 5}	{1: 1}		皇后游戏	魔女艾丽卡		艾丽卡	运气不错嘛~		· 双方出牌\n· 洁塔薇打出了<color=#FBBC05>「女仆」</color>\n· 艾丽卡翻开了盖上的牌，是<color=#34A853>「猫娘」</color>\n· 洁塔薇赢下了这回合	继续	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+88	7	732	735	1									皇后游戏	魔女艾丽卡		艾丽卡	真可惜~		· 双方出牌\n· 洁塔薇打出了<color=#34A853>「猫娘」</color>\n· 艾丽卡翻开了盖上的牌，是<color=#FBBC05>「女仆」</color>\n· 洁塔薇输掉了这回合	继续	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+89	7	733	735	3					1	{1: 96189}	{1: 80}		皇后游戏	魔女艾丽卡		艾丽卡	再来一把？		· 双方出牌\n· 洁塔薇打出了<color=#34A853>「猫娘」</color>\n· 艾丽卡翻开了盖上的牌，是<color=#34A853>「猫娘」</color>\n· 这回合是平局	继续	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+90	7	734	735	3					3	{1: 5}	{1: 1}		皇后游戏	魔女艾丽卡		艾丽卡	运气不错嘛~		· 双方出牌\n· 洁塔薇打出了<color=#34A853>「猫娘」</color>\n· 艾丽卡翻开了盖上的牌，是<color=#EA4323>「皇后」</color>\n· 洁塔薇赢下了这回合	继续	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+91	7	735		2								735	皇后游戏	魔女艾丽卡		艾丽卡	准备好了吗~		艾丽卡有点困了，最后再玩一把，大的要来了！！！	决定	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+92	7	736		2								736	皇后游戏	魔女艾丽卡					接过艾丽卡手中的卡牌，要打出的牌是？	决定	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+93	7	737	794	1									皇后游戏	终极对决		艾丽卡	我赢啦~		· 双方出牌\n· 洁塔薇打出了<color=#EA4323>「皇后」</color>\n· 艾丽卡翻开了盖上的牌，是<color=#34A853>「猫娘」</color>\n· 洁塔薇输掉了这回合	继续	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+94	7	738	795	3					1	{1: 96189}	{1: 180}		皇后游戏	终极对决		艾丽卡	算你走运，下次再来吧~		· 双方出牌\n· 洁塔薇打出了<color=#EA4323>「皇后」</color>\n· 艾丽卡翻开了盖上的牌，是<color=#EA4323>「皇后」</color>\n· 这回合是平局	继续	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+95	7	739	796	3					3	{1: 6}	{1: 1}		皇后游戏	终极对决		艾丽卡	好气~		· 双方出牌\n· 洁塔薇打出了<color=#EA4323>「皇后」</color>\n· 艾丽卡翻开了盖上的牌，是<color=#FBBC05>「女仆」</color>\n· 洁塔薇赢下了这回合	继续	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+96	7	740	794	1									皇后游戏	终极对决		艾丽卡	我赢啦~		· 双方出牌\n· 洁塔薇打出了<color=#FBBC05>「女仆」</color>\n· 艾丽卡翻开了盖上的牌，是<color=#EA4323>「皇后」</color>\n· 洁塔薇输掉了这回合	继续	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+97	7	741	795	3					1	{1: 96189}	{1: 180}		皇后游戏	终极对决		艾丽卡	算你走运，下次再来吧~		· 双方出牌\n· 洁塔薇打出了<color=#FBBC05>「女仆」</color>\n· 艾丽卡翻开了盖上的牌，是<color=#FBBC05>「女仆」</color>\n· 这回合是平局	继续	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+98	7	742	796	3					3	{1: 6}	{1: 1}		皇后游戏	终极对决		艾丽卡	好气~		· 双方出牌\n· 洁塔薇打出了<color=#FBBC05>「女仆」</color>\n· 艾丽卡翻开了盖上的牌，是<color=#34A853>「猫娘」</color>\n· 洁塔薇赢下了这回合	继续	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+99	7	743	794	1									皇后游戏	终极对决		艾丽卡	我赢啦~		· 双方出牌\n· 洁塔薇打出了<color=#34A853>「猫娘」</color>\n· 艾丽卡翻开了盖上的牌，是<color=#FBBC05>「女仆」</color>\n· 洁塔薇输掉了这回合	继续	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+100	7	744	795	3					1	{1: 96189}	{1: 180}		皇后游戏	终极对决		艾丽卡	算你走运，下次再来吧~		· 双方出牌\n· 洁塔薇打出了<color=#34A853>「猫娘」</color>\n· 艾丽卡翻开了盖上的牌，是<color=#34A853>「猫娘」</color>\n· 这回合是平局	继续	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+101	7	745	796	3					3	{1: 6}	{1: 1}		皇后游戏	终极对决		艾丽卡	好气~		· 双方出牌\n· 洁塔薇打出了<color=#34A853>「猫娘」</color>\n· 艾丽卡翻开了盖上的牌，是<color=#EA4323>「皇后」</color>\n· 洁塔薇赢下了这回合	继续	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+102	7	794		1									皇后游戏	终极对决		艾丽卡	下次再来哦~		艾丽卡赢得了终极对决，怕洁塔薇零元购，决定将她赶了出去。	离开	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+103	7	795		1									皇后游戏	终极对决		艾丽卡	有点困了，下次再玩吧~		终极对决的双方打了个平手，艾丽卡困了，将洁塔薇赶了出去。	离开	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+104	7	796		1									皇后游戏	终极对决		艾丽卡	困了，慢走不送。		洁塔薇赢得了终极对决，艾丽卡有些不甘心地将她赶了出去。	离开	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+105	7	797		1									皇后游戏	魔女艾丽卡					理智使洁塔薇拒绝参与这场游戏。	离开	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+106	7	798		1									皇后游戏	魔女艾丽卡					理智使洁塔薇远离了这场游戏。	离开	Assets/Product/Texture/Image/BgStory/BgStory748.jpg
+107	301	30101	30102	1									厄运连锁	「4:21:20」					你与洁塔薇抵达了这栋建筑的尽头，洁塔薇突然感到不舒服，双手抱着胸，表情痛苦地倚靠在墙角。	上前	Assets/Product/Texture/Image/BgStory/Bgstory614.jpg
+108	301	30102		2								30102	厄运连锁	「4:19:12」	Assets/Product/Texture/Image/RoleStory/V260qyNormal03.png	洁塔薇	……呜		你注意到红色的潮水从你的脚底漫起，不远处的空中出现了一道漆黑的裂痕，红色的弓矢突然从裂痕中出现。\n「那个武器瞄准的方向是——洁塔薇!」	冲上前	Assets/Product/Texture/Image/BgStory/Bgstory614.jpg
+109	301	30103	30104	1									厄运连锁	「4:18:32」		洁塔薇	……啊啊啊！		你想过去，但身体却被脚下的红潮死死缠住而动弹不得，红色弓箭贯穿了洁塔薇的身体，她发出了惨叫。	挣脱束缚	Assets/Product/Texture/Image/BgStory/Bgstory614.jpg
+110	301	30104	30105	1									厄运连锁	「4:17:06」	Assets/Product/Texture/Image/RoleStory/MajiyaweiliTheatre302.png	未确认敌人	……！		你拼命挣脱红潮，但从天而降的敌人却横亘在洁塔薇与你之间，要救她，势必要跨过这个障碍。	直面	Assets/Product/Texture/Image/BgStory/Bgstory614.jpg
+111	301	30105		4	30071								厄运连锁	「4:17:06」						直面	Assets/Product/Texture/Image/BgStory/Bgstory614.jpg
+112	302	30201	30202	1									不祥烙印	「4:16:31」					充斥着诡异气息的敌人被你击败，化为红色的尘埃飘散在空中。	前进	Assets/Product/Texture/Image/BgStory/Bgstory616.jpg
+113	302	30202		2								30202	不祥烙印	「4:15:23」					你赶紧跑到洁塔薇身旁，她似乎没事，但抱着双腿蜷缩在墙角，双眼也失去了神韵。	决定	Assets/Product/Texture/Image/BgStory/Bgstory616.jpg
+114	302	30203		2								30203	不祥烙印	「4:14:05」					由于刚才的轰击，洁塔薇的后背出现一片红色烙印。	决定	Assets/Product/Texture/Image/BgStory/Bgstory616.jpg
+115	302	30204	30207	1									不祥烙印	「4:13:15」	Assets/Product/Texture/Image/RoleStory/V260qyNormal03.png	洁塔薇	我没事，我们......继续前进吧，笨蛋，快扶我起来。		洁塔薇用手遮住自己的伤口，在你的搀扶下爬了起来。	环顾四周	Assets/Product/Texture/Image/BgStory/Bgstory616.jpg
+116	302	30205	30207	1									不祥烙印	「4:13:15」	Assets/Product/Texture/Image/RoleStory/V260qyNormal03.png	洁塔薇	力量被敌人夺走了......可恶，这一次又是相同的结果吗？		坐在地上的洁塔薇苦笑着，却无法掩盖眉宇间的悲伤。	环顾四周	Assets/Product/Texture/Image/BgStory/Bgstory616.jpg
+117	302	30206	30207	1									不祥烙印	「4:13:15」	Assets/Product/Texture/Image/RoleStory/V260qyNormal03.png	洁塔薇	不疼哦，笨蛋。刚才为什么不扑过来救我？因为你动不了吧，是啊，我明明知道的，已经是第几次了......		洁塔薇虽然做了要揍你的动作，但砸向你的拳头却软得像棉花。	环顾四周	Assets/Product/Texture/Image/BgStory/Bgstory616.jpg
+118	302	30207	30208	3					2	{1: 1002, 2: 1005}	{1: 1, 2: 1}		不祥烙印	「4:12:31」					一些敌人遗落的特殊物资散布在周围。	取走	Assets/Product/Texture/Image/BgStory/Bgstory616.jpg
+119	302	30208		2								30208	不祥烙印	「4:12:01」					虽然敌人消失了，但红色的潮水仍有残留。\n「这里并不安全。」	决定	Assets/Product/Texture/Image/BgStory/Bgstory616.jpg
+120	302	30209		5		2							不祥烙印	「4:10:27」					你决定就近寻找安全的地方，和洁塔薇先调整下状态。	休整	Assets/Product/Texture/Image/BgStory/Bgstory616.jpg
+121	302	30210		1									不祥烙印	「4:10:27」					你和洁塔薇调整了下状态，便立即准备出发。	出发	Assets/Product/Texture/Image/BgStory/Bgstory616.jpg
+122	303	30301	30302	1									绝死弥生	「4:42:20」					你知道前方区域将出现红潮，于是谨慎地避开了那里，和洁塔薇一起进入了下方的隧道。\n很不幸，敌人似乎很了解你们，你的思想无处匿踪。	前行	Assets/Product/Texture/Image/BgStory/Bgstory224.png
+123	303	30302		2								30302	绝死弥生	「4:41:30」					黑色裂痕再次出现在你的眼前，\n代表宿命的红色弓矢再次指向——洁塔薇。\n【这一次，你的双脚没被缠住】\n【这一次，你不想再松开握紧的手!】	快步往前	Assets/Product/Texture/Image/BgStory/Bgstory224.png
+124	303	30303	30304	1									绝死弥生	「4:41:20」	Assets/Product/Texture/Image/RoleStory/V260qyNormal08.png	洁塔薇	小心！！！		红色的弓箭贯穿你的身体，你感到钻心的痛，似乎有股力量从你身体里被剥离了出来。	环顾四周	Assets/Product/Texture/Image/BgStory/Bgstory224.png
+125	303	30304	30305	1									绝死弥生	「4:40:23」	Assets/Product/Texture/Image/RoleStory/AnboliyaTheatre301.png	未确认敌人	……		正当你强撑着身体寻找洁塔薇时，面前出现了未曾见过的敌人，对方似乎是通过学习你而获得了新的形体，驱动它行动的应该是某个强大的核心。\n「无法规避，那就面对它吧！」	直面	Assets/Product/Texture/Image/BgStory/Bgstory224.png
+126	303	30305		4	30072								绝死弥生	「4:40:23」						直面	Assets/Product/Texture/Image/BgStory/Bgstory224.png
+127	304	30401	30402	1									摇曳灯火	「4:07:20」					强大的敌人轰然倒下，它的躯壳化为灰烬，曾赋予它可怕力量的<color=#FF5826>核心</color>掉落在地，浸泡在红色的残液中。	过去检视	Assets/Product/Texture/Image/BgStory/Bgstory441.jpg
+128	304	30402	30403	3					2	{1: 2005}	{1: 1}		摇曳灯火	「4:06:17」		洁塔薇	我记得这个，好像是......权限秘钥？		你谨慎地跨过红色残液，从残骸中回收了敌人核心中的不明物件。	转身	Assets/Product/Texture/Image/BgStory/Bgstory441.jpg
+129	304	30403		2								30403	摇曳灯火	「4:05:21」	Assets/Product/Texture/Image/RoleStory/V260qyNormal06.png	洁塔薇	……		回收完毕后，你走向洁塔薇，红着眼睛的洁塔薇打了你一巴掌，随后又紧紧地抱住你。	决定	Assets/Product/Texture/Image/BgStory/Bgstory441.jpg
+130	304	30405	30407	1									摇曳灯火	「4:04:47」	Assets/Product/Texture/Image/RoleStory/V260qyNormal08.png	洁塔薇	笨蛋！你不怕死吗？为了我这种人......		不知为何，洁塔薇的脸蛋红了一大片，随后开始胡乱地朝你抡拳头。	环顾四周	Assets/Product/Texture/Image/BgStory/Bgstory441.jpg
+131	304	30406	30407	1									摇曳灯火	「4:04:47」	Assets/Product/Texture/Image/RoleStory/V260qyNormal07.png	洁塔薇	当然是因为担心你啊......喂，伤口还疼吗？		洁塔薇少见地展露出温柔的一面，连语气也没了往常的咄咄逼人。	环顾四周	Assets/Product/Texture/Image/BgStory/Bgstory441.jpg
+132	304	30407	30409	3					2	{1: 1002, 2: 1005}	{1: 1, 2: 1}		摇曳灯火	「4:04:20」					安抚洁塔薇后，你在附近回收了些特殊的物资。	继续	Assets/Product/Texture/Image/BgStory/Bgstory441.jpg
+133	304	30409		2								30409	摇曳灯火	「4:04:00」					这里没有残留的红色潮水，看起来短期内会比较安全。	决定	Assets/Product/Texture/Image/BgStory/Bgstory441.jpg
+134	304	30410		5		2							摇曳灯火	「4:03:59」					考虑到身上的伤势，你决定和洁塔薇在这稍作休息。	休整	Assets/Product/Texture/Image/BgStory/Bgstory441.jpg
+135	304	30411		1									摇曳灯火	「4:03:59」					越接近深处，敌人越来越危险，你决定抓紧脚步，继续前行。	出发	Assets/Product/Texture/Image/BgStory/Bgstory441.jpg
+136	501	50101	50102	1									深渊余音	「0:03:11」					红潮逐渐吞噬了整个空间，肆虐的尘埃将天空染成了淡紫色，你与洁塔薇已经无处可躲，脚下所站的地方是你们最后的立身之地。	转身	Assets/Product/Texture/Image/BgStory/BgStory734.jpg
+137	501	50102		2								50102	深渊余音	「0:00:31」	Assets/Product/Texture/Image/RoleStory/V260qyNormal01.png	洁塔薇	我说过吧，会陪你到最后。		怪物从翻腾的潮水中诞生出形体。\n不断吸收着周围的一切......\n洁塔薇牵起你的颤抖的手，温柔地对你耳语着。	点头	Assets/Product/Texture/Image/BgStory/BgStory734.jpg
+138	501	50103	50104	1									深渊余音	「0:00:00」					隐约间，你看见倒计时浮现在天空中。\n漆黑的显示屏上，代表着终结的数字已经走向了静止。\n———「<color=#DC143C><size=50>0:00:00</size></color>」	前■	Assets/Product/Texture/Image/BgStory/BgStory734.jpg
+139	501	50104		4	50071								深渊余音	「0:00:00」						前■	Assets/Product/Texture/Image/BgStory/BgStory734.jpg
+140	502	50201		2								50201	另辟蹊径	迷雾中的可能性	Assets/Product/Texture/Image/RoleStory/V260qyNormal04.png	洁塔薇	难道说，这附近是......		你们即将踏入怪物巢穴时，口袋中的权限秘钥发出了红色微光。	检视	Assets/Product/Texture/Image/BgStory/BgStory738.jpg
+141	502	50202		1									另辟蹊径	迷雾中的可能性	Assets/Product/Texture/Image/RoleStory/V260qyNormal01.png	洁塔薇	原来如此，是被全息投影遮蔽的隐藏区域。		当你拿出秘钥时，周遭的景色突然扭曲起来，原本闭塞的空间延展出了新的道路。	前行	Assets/Product/Texture/Image/BgStory/Bgstory456.jpg
+142	601	60101	60102	1									彼岸残响	「0:02:03」					击中你的红色箭矢会窃取你的能力，制造更强的怪物。\n你深知这一点，此刻的你手握着通往彼岸的钥匙，这是最后的博弈。	前行	Assets/Product/Texture/Image/BgStory/BgStory689.jpg
+143	601	60102		2								60102	彼岸残响	「0:00:27」	Assets/Product/Texture/Image/RoleStory/V260qyNormal01.png	洁塔薇	天选者，无论如何，我都在你身边。		紧握着洁塔薇的手，你站上终焉的舞台。	出发	Assets/Product/Texture/Image/BgStory/BgStory689.jpg
+144	601	60103	60104	1									彼岸残响	「0:00:00」					———「<color=#DC143C><size=50>0:00:00</size></color>」	■行	Assets/Product/Texture/Image/BgStory/BgStory689.jpg
+145	601	60104		4	50072								彼岸残响	「0:00:00」						■行	Assets/Product/Texture/Image/BgStory/BgStory689.jpg
+146	1001	100101		2								100101	工业怪谈	未知的呢喃		未知声音	…欢…		当你推开在建场馆厚实的铁门时，锈迹斑斑的工业机械七零八散地瘫痪在地站在这片机械残骸的安息地，你隐约听见有人在窃窃私语。	决定	Assets/Product/Texture/Image/BgStory/BgStory570.jpg
+147	1001	100102		2								100102	工业怪谈	未知的呢喃	Assets/Product/Texture/Image/RoleStory/YijukongzhongjianshiqiNormal01.png	向导机器人	…欢迎…参…展		太阳能帆板折断半截的向导机器人倚靠在墙边，断断续续发出“欢迎参展”之类的云云之语。	决定	Assets/Product/Texture/Image/BgStory/BgStory570.jpg
+148	1001	100103		3					3	{1: 1}	{1: 1}		工业怪谈	未知的呢喃		未知声音	…迎…		你怀疑自己因恐惧出现幻听，在疑神疑鬼的不良情绪产生之前，拿上遭人遗落的备用工具箱转身离开。	抓紧离开	Assets/Product/Texture/Image/BgStory/BgStory570.jpg
+149	1001	100104		3					4	{1: 6}	{1: 1}		工业怪谈	未知的呢喃		向导机器人	……		你拆下了它的显示屏，强制使其“下班”。	离开	Assets/Product/Texture/Image/BgStory/BgStory570.jpg
+150	1001	100105		3					3	{1: 1}	{1: 1}		工业怪谈	未知的呢喃		向导机器人	……		担心这是一个陷阱，你选择原路返回，同时拿上遭人遗落的备用工具箱转身离开。	抓紧离开	Assets/Product/Texture/Image/BgStory/BgStory570.jpg
+151	1002	100201		2								100201	举手之劳	所见即所得					你在幽暗的房间里摸索到一本泛黄的记事本，内页夹着一些芯片，并写着一句话\n「尊敬的客人，能去我的花园里为矢车菊浇水吗？献上小小的心意......」	决定	Assets/Product/Texture/Image/BgStory/BgStory650.jpg
+152	1002	100202		3					3	{1: 1}	{1: 1}		举手之劳	所见即所得					替花园主人为矢车菊浇水时，你发现湿润的泥土隐藏着一个外形精致的宝箱，或许这才是主人的心意。	离开	Assets/Product/Texture/Image/BgStory/BgStory677.jpg
+153	1002	100203		3					1	{1: 96189}	{1: 150}		举手之劳	所见即所得					没理由放过任何有用的资源，所见即所得。	离开	Assets/Product/Texture/Image/BgStory/BgStory650.jpg
+154	1002	100204	100205	1									举手之劳	所见即所得					你和洁塔薇在书房的桌上找到了一张纸条，上面记载着密室的进入方法、道具的所在和入口的密码。	收起纸条	Assets/Product/Texture/Image/BgStory/Bgstory386.png
+155	1002	100205		3					4	{1: 2}	{1: 1}		举手之劳	所见即所得					纸条下压着一个简易的礼盒，你们也顺便将其带走。	离开	Assets/Product/Texture/Image/BgStory/BgStory754.jpg
+156	1003	100301	100302	1									赝品工匠	不可能仿品					你和洁塔薇在博物馆内寻找出路，恰好遇上一个临摹雕像的男子。对方声称自己是一个工匠，隔壁展出的大卫赝品就是他的杰作。洁塔薇并不相信男子的话，认为他言过其实，这让男子很是不悦。	继续	Assets/Product/Texture/Image/BgStory/BgStory816.jpg
+157	1003	100302		2								100302	赝品工匠	不可能仿品	Assets/Product/Texture/Image/RoleStory/PufuNormal01.png	工匠	……		工匠气急败坏地跟你们打赌，博物馆里没有他仿不出的东西。如果你能说出一件，作为打赌输掉的代价，他愿意支付一些财物给你。	决定	Assets/Product/Texture/Image/BgStory/BgStory816.jpg
+158	1003	100303		3					4	{1: 2}	{1: 1}		赝品工匠	不可能仿品					「只要找到混在颜料里的几种香精就好了，没什么了不起的。」工匠不屑一顾地说道，随后他拿给了你一点小东西，便打发走了你们。	离开	Assets/Product/Texture/Image/BgStory/BgStory816.jpg
+159	1003	100304		3					4	{1: 3}	{1: 1}		赝品工匠	不可能仿品					「真是不巧，老夫也很精通旋律，这有什么难度？」\n工匠对此嗤之以鼻，但他认同了你的答案的创意性，拿出了点小东西送给你作为赠礼。	离开	Assets/Product/Texture/Image/BgStory/BgStory816.jpg
+160	1003	100305		3					1	{1: 96189}	{1: 300}		赝品工匠	不可能仿品					「嗯......哪怕在地上涂上白色颜料，终究不是真正的月光。」工匠对你表示肯定，愿赌服输。	离开	Assets/Product/Texture/Image/BgStory/BgStory816.jpg
+161	1011	101101		2								101101	瑕疵造物	艺术性错觉					你误入了空旷的雕塑展区，琉璃馆内摆放着两尊极不协调的大理石塑像，左边为断臂维纳斯，右边是米开朗琪罗的大卫仿品。	决定	Assets/Product/Texture/Image/BgStory/BgStory683.jpg
+162	1011	101102		3					4	{1: 6}	{1: 1}		瑕疵造物	艺术性错觉					你的手直接穿过了雕塑，那并非罗浮宫的真迹，只是惟妙惟肖的全息投影，倍感失落的你拆下了连接投影装置的外置储存器。	决定	Assets/Product/Texture/Image/BgStory/BgStory683.jpg
+163	1011	101103		2								101103	瑕疵造物	艺术性错觉	Assets/Product/Texture/Image/RoleStory/V200sgrNormal01.png				大卫的仿品算不上精致，无需细看也能察觉到差异检视之后，你发觉大卫左眼被替换成了胶囊。	决定	Assets/Product/Texture/Image/BgStory/BgStory683.jpg
+164	1011	101104		3					2	{1: 2004}	{1: 1}		瑕疵造物	艺术性错觉					为了使大卫与隔壁维纳斯保持残缺美的协调性，你取走了充当眼睛的胶囊。	离开	Assets/Product/Texture/Image/BgStory/BgStory683.jpg
+165	1011	101105		3					3	{1: 1}	{1: 1}		瑕疵造物	艺术性错觉					这颗胶囊是大卫仿品区别于原作的唯一创新点，你没忍心取走，调头离开展馆。	离开	Assets/Product/Texture/Image/BgStory/BgStory683.jpg
+166	1012	101201	101202	1									栩栩如生	真实的眼泪					在展馆，你们邂逅了身披斗篷的神秘女人。\n她在观赏一幅油画，名为《殉情战场的情侣》。	看向油画	Assets/Product/Texture/Image/BgStory/BgStory683.jpg
+167	1012	101202	101203	1									栩栩如生	真实的眼泪					画中的两人十指相连，伤痕累累地背靠着残垣断壁。其中一方无力地望向前方，另一方则微笑地举着已无弹药的武器。	继续	Assets/Product/Texture/Image/BgStory/BgStory683.jpg
+168	1012	101203		2								101203	栩栩如生	真实的眼泪	Assets/Product/Texture/Image/RoleStory/CibeizheNormal03.png	？？？	真是绮丽的画啊，不是吗？		女人请教你们，这幅画传达了什么意境？	决定	Assets/Product/Texture/Image/BgStory/BgStory683.jpg
+169	1012	101204		2								101204	栩栩如生	真实的眼泪					女人什么也没说，平静地转身离开。飘起的斗篷短暂遮蔽了你的视线，那幅画作也像是变魔术般随之消失。空缺的画框倒映着你与洁塔薇的身影，你们似乎成为了画中人。此外，你还注意到墙上钉着一张泛黄的纸片。	决定	Assets/Product/Texture/Image/BgStory/BgStory683.jpg
+170	1012	101205	101206	1									栩栩如生	真实的眼泪	Assets/Product/Texture/Image/RoleStory/CibeizheNormal03.png	？？？	小小的礼物。		女人点点头，似乎认同了你的观点。她从衣袖中掏出一张纸条，轻轻递到你手中，之后便头也不回地离开了这里。	查看纸条	Assets/Product/Texture/Image/BgStory/BgStory683.jpg
+171	1012	101206		3					2	{1: 2010}	{1: 1}		栩栩如生	真实的眼泪					“分开虚无之海的光将抵达另一个彼岸。”\n\n                                                           ——《智械福音·II》	离开	Assets/Product/Texture/Image/BgStory/BgStory683.jpg
+172	1012	101207		3					2	{1: 2009}	{1: 1}		栩栩如生	真实的眼泪					“两个迷途的灵魂，一个没有未来，一个稚弱无力。”\n\n                                                           ——《智械福音·I》	离开	Assets/Product/Texture/Image/BgStory/BgStory683.jpg
+173	1012	101208		3					2	{1: 2011}	{1: 1}		栩栩如生	真实的眼泪					神秘女人早已不见踪影，但你在地上找到了她遗失的物件，那是一张孤儿院的工作证。	离开	Assets/Product/Texture/Image/BgStory/BgStory683.jpg
+174	2001	200101	200102	1									洁塔薇的游戏						来到庭院内，这里耸立着大量气质诡谲的废弃玩偶，正当你观察四周时，牵着你手的洁塔薇突然松开跑走。	追上她	Assets/Product/Texture/Image/BgStory/BgStory639.jpg
+175	2001	200102	200103	1									洁塔薇的游戏		Assets/Product/Texture/Image/RoleStory/V260qyNormal01.png	洁塔薇	闭上眼数十个数，不能作弊哦......		她想与你进行一场捉迷藏游戏	答应	Assets/Product/Texture/Image/BgStory/BgStory639.jpg
+176	2001	200103		2								200103	洁塔薇的游戏						计时结束后，你睁开眼环顾四周。	决定	Assets/Product/Texture/Image/BgStory/BgStory639.jpg
+177	2001	200104	200107	1									洁塔薇的游戏						熊布偶的背部被撕开掏空，里面的空间容纳得下一个成人，但洁塔薇没在里面或许之前有人在这藏过东西，你伸手探向布偶的内部。	摸索	Assets/Product/Texture/Image/BgStory/BgStory639.jpg
+178	2001	200105	200108	1									洁塔薇的游戏						护士人形苍白的嘴唇被用口红涂上了鲜艳的红，会是洁塔薇的杰作吗？你轻轻抚摸了一下布满尘埃的唇，伸手探向护士服的口袋。	摸索	Assets/Product/Texture/Image/BgStory/BgStory639.jpg
+179	2001	200106		3					4	{1: 6}	{1: 1}		洁塔薇的游戏		Assets/Product/Texture/Image/RoleStory/V260qyNormal01.png	洁塔薇	哼哼，被你发现了......		洁塔薇从背后拿出了作为奖励的礼品盒	一起离开	Assets/Product/Texture/Image/BgStory/BgStory639.jpg
+180	2001	200107	200109	3					3	{1: 1}	{1: 1}		洁塔薇的游戏							回头	Assets/Product/Texture/Image/BgStory/BgStory639.jpg
+181	2001	200108	200109	3					1	{1: 96189}	{1: 200}		洁塔薇的游戏							回头	Assets/Product/Texture/Image/BgStory/BgStory639.jpg
+182	2001	200109		1									洁塔薇的游戏		Assets/Product/Texture/Image/RoleStory/V260qyNormal02.png	洁塔薇	哼哼，看来是我赢了......		洁塔薇正站在你的背后	一起离开	Assets/Product/Texture/Image/BgStory/BgStory639.jpg
+183	2002	200201		2								200201	贫困收藏家		Assets/Product/Texture/Image/RoleStory/TongyongShihuangzheNormal02.png	收藏家	……		你在博物馆里找到独自一人鉴赏名画的男人，他声称自己曾是位收藏家，由于热衷买画，目前囊中羞涩，急需用钱，或许能与你交换一些东西。	决定	Assets/Product/Texture/Image/BgStory/BgStory684.jpg
+184	2002	200202		3					4	{1: 6}	{1: 1}		贫困收藏家		Assets/Product/Texture/Image/RoleStory/TongyongShihuangzheNormal02.png	收藏家	……		你抱着试试看的心态施舍给他一些钱，艺术家从他的行李箱里拿出了一台精致的手提电视。	取走	Assets/Product/Texture/Image/BgStory/BgStory684.jpg
+185	2002	200203		1									贫困收藏家		Assets/Product/Texture/Image/RoleStory/TongyongShihuangzheNormal02.png	收藏家	……		你对贫穷的收藏家毫无兴趣，更不相信他能拿出真正有价值的东西，你拒绝了男人的请求。	离开	Assets/Product/Texture/Image/BgStory/BgStory684.jpg
+186	2003	200301	200302	1									步履蹒跚	逝去的阴暗	Assets/Product/Texture/Image/RoleStory/CaifaNormal02.png	？？？	……		你和洁塔薇在孤儿院里看见了一个步履蹒跚的老人，他拄着拐杖。经过你们身前时没有留下脚步声。	跟上他	Assets/Product/Texture/Image/BgStory/BgStory636.jpg
+187	2003	200302		2								200302	步履蹒跚	逝去的阴暗	Assets/Product/Texture/Image/RoleStory/V260qyNormal01.png	洁塔薇	诶！老头幽灵~		老人幽灵般的身影在二楼的保险柜前停留了片刻，随后便消失在走廊尽头的储物间里。	决定	Assets/Product/Texture/Image/BgStory/BgStory636.jpg
+188	2003	200303	200304	1									步履蹒跚	逝去的阴暗					保险柜里放着许多信封，大多是领养家庭寄来的感谢信，人们赞叹院长出色的美德，但这之中也混着一封匿名的威胁信。	查看信封	Assets/Product/Texture/Image/BgStory/BgStory636.jpg
+189	2003	200304	200305	1									步履蹒跚	逝去的阴暗	Assets/Product/Texture/Image/RoleStory/V260qyNormal04.png	洁塔薇	这里好像还有暗格？		你小心翼翼地打开那封信，阅读了其中一段。\n「院长，我知道你靠着孩子们发了大财……不想被人知道，就给我点好处。」	打开暗格	Assets/Product/Texture/Image/BgStory/BgStory636.jpg
+190	2003	200305		3					4	{1: 4}	{1: 1}		步履蹒跚	逝去的阴暗					里面存放着一把生锈的手枪和一盒补给	取走补给	Assets/Product/Texture/Image/BgStory/BgStory636.jpg
+191	2003	200306	200307	1									步履蹒跚	逝去的阴暗					储物间上了锁，你与洁塔薇强行打开门，屋子里堆满了孤儿院工作人员与孩子们的合照。	检查房间	Assets/Product/Texture/Image/BgStory/BgStory754.jpg
+192	2003	200307	200308	1									步履蹒跚	逝去的阴暗	Assets/Product/Texture/Image/RoleStory/V260qyNormal04.png	洁塔薇	墙纸后面好像是空心的。		洁塔薇盯着照片墙观察了许久，似乎发现了一些端倪。	撕开墙纸	Assets/Product/Texture/Image/BgStory/BgStory754.jpg
+193	2003	200308		3					1	{1: 96189}	{1: 200}		步履蹒跚	逝去的阴暗					墙面上的伪装壁纸被撕开后，大量的财物倾泻而下，里面堆满了珠宝和各种值钱的东西。	离开	Assets/Product/Texture/Image/BgStory/BgStory754.jpg
+194	2004	200401	200402	1									动物坟场	此处安葬者					你们来到孤儿院前的一处动物坟场，这里曾被用来安葬死去的小动物，每个冢上都写着对应动物的名字。	查看周围	Assets/Product/Texture/Image/BgStory/BgStory824.jpg
+195	2004	200402		2								200402	动物坟场	此处安葬者	Assets/Product/Texture/Image/RoleStory/V260qyNormal06.png	洁塔薇	这里好可怕，还是快点走吧……		你发现一座冢的旁边，有金属尖角露在地表，下面似乎埋了东西。	决定	Assets/Product/Texture/Image/BgStory/BgStory824.jpg
+196	2004	200403	200404	1									动物坟场	此处安葬者					清理泥土后，你发现下面埋着一个生锈的铁盒，里面放着一本日记，看起来是孤儿院工作人员写的。\n「我要把它们藏起来，谁也别想找到，它们都是我的，永远是我的！」	搜索周边	Assets/Product/Texture/Image/BgStory/BgStory824.jpg
+197	2004	200404		2								200404	动物坟场	此处安葬者					洁塔薇在附近发现了几个可疑的地方。	决定	Assets/Product/Texture/Image/BgStory/BgStory824.jpg
+198	2004	200405		2								200405	动物坟场	此处安葬者	Assets/Product/Texture/Image/RoleStory/V260qyNormal06.png	洁塔薇	可怜的小猫咪……		在坟场的一角，你们找到了几根猫的骸骨。	决定	Assets/Product/Texture/Image/BgStory/BgStory824.jpg
+199	2004	200406		3					4	{1: 2}	{1: 1}		动物坟场	此处安葬者					将它们安葬后，回去的路上，天空逐渐变得晴朗。\n在坟场的出口，你与洁塔薇意外捡到了一个不知谁人遗留的黑色礼盒。	离开	Assets/Product/Texture/Image/BgStory/BgStory823.jpg
+200	2004	200407		3					1	{1: 96189}	{1: 100}		动物坟场	此处安葬者					持续搜索许久后，你们仅收获了一些芯片，雨势越来越大，你只好放弃搜索，准备离开。	离开	Assets/Product/Texture/Image/BgStory/BgStory824.jpg
+201	2004	200408		3					1	{1: 96189}	{1: 200}		动物坟场	此处安葬者	Assets/Product/Texture/Image/RoleStory/V260qyNormal04.png	洁塔薇	是自杀还是谋杀呢？		洁塔薇从后院挖出了比想象中大得多的骸骨，你断定这是人类的骨架。骸骨的脖子上挂着一条金链，上面刻着老院长的名字。你想不出他出现在这里的原因，或许这并非是一次自然死亡。	离开	Assets/Product/Texture/Image/BgStory/BgStory824.jpg
+202	2004	200409		3					4	{1: 4}	{1: 1}		动物坟场	此处安葬者	Assets/Product/Texture/Image/RoleStory/V260qyNormal01.png	洁塔薇	日志里写的应该就是这个东西吧。		井内的水已经枯竭，你从水井的底部捞上来了一个沉甸甸的黑盒。	离开	Assets/Product/Texture/Image/BgStory/BgStory824.jpg
+203	2004	200410		1									动物坟场	此处安葬者					这里的环境让人感到不安，你决定听从洁塔薇的建议，加快脚步离开了这里。	离开	Assets/Product/Texture/Image/BgStory/BgStory824.jpg
+204	2005	200501	200502	1									洁塔薇的食材						在起雾的森林中，你和洁塔薇不幸迷失方向。即将筋疲力竭时，你们偶然发现了一间林中小屋。幸运的是，屋内有烹饪用的厨具，洁塔薇提议在这里用餐后再出发，她对自己的厨艺十分自信，自告奋勇要做饭给你吃。	寻找食材	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+205	2005	200502	200503	1									洁塔薇的食材						你统计了一下食材，这里有过期的盐和米，变质的醋和味精，加上不知被洁塔薇从哪挖来的蘑菇和野果，以及一只自投罗网的病恹恹野兔。	等待	Assets/Product/Texture/Image/BgStory/BgStory731.jpg
+206	2005	200503		2								200503	洁塔薇的食材		Assets/Product/Texture/Image/RoleStory/V260qyNormal02.png	洁塔薇	哒啦啦，菜上齐了，快吃吧！		等待一段时间后，洁塔薇从厨房端出了三盘热菜，热情地邀请你依次进行品尝。	决定	Assets/Product/Texture/Image/BgStory/BgStory731.jpg
+207	2005	200504		3					4	{1: 4}	{1: 1}		洁塔薇的食材		Assets/Product/Texture/Image/RoleStory/V260qyNormal01.png	洁塔薇	天选者，你为什么在地上滚？		你感到胃部传来撕心裂肺的绞痛，蜷着身体在地上滚了好几圈，意外撞倒了身旁的陈旧花瓶，一个黑色铁盒从碎裂的瓶身内掉落。	离开	Assets/Product/Texture/Image/BgStory/BgStory731.jpg
+208	2005	200505	200506	1									洁塔薇的食材		Assets/Product/Texture/Image/RoleStory/V260qyNormal07.png	洁塔薇	？？？		食用后，你看见五颜六色的小人在天花板跳舞，随后失去知觉。醒来时，映入眼帘的是满脸惊慌失措、正对你进行着各种急救的洁塔薇。	起身	Assets/Product/Texture/Image/BgStory/BgStory731.jpg
+209	2005	200506		3					1	{1: 96189}	{1: 200}		洁塔薇的食材		Assets/Product/Texture/Image/RoleStory/V260qyNormal06.png	洁塔薇	呜呜呜，还以为你醒不来了呢。		看到你安然起身后，洁塔薇逐渐镇定了下来。为表歉意，她交给了你一些偷偷私藏的芯片。	离开	Assets/Product/Texture/Image/BgStory/BgStory731.jpg
+210	2005	200507		3					4	{1: 3}	{1: 1}		洁塔薇的食材		Assets/Product/Texture/Image/RoleStory/V260qyNormal01.png	洁塔薇	还不错吧		你吃了这些蔬菜，你还活着，而且感觉味道不错。为表彰你的勇气，洁塔薇送给了你一个精致的礼盒。	离开	Assets/Product/Texture/Image/BgStory/BgStory731.jpg
+211	2011	201101		2								201101	善意诱导	可疑的治疗	Assets/Product/Texture/Image/RoleStory/V210yjyNormal02.png	医生	……		你遇到了坐在长椅上悠闲地喂鸽子的男人，戴着眼镜的他声称自己曾是孤儿院的心理医生，能够帮助你战胜心魔，询问你是否拿到过胶囊。	决定	Assets/Product/Texture/Image/BgStory/BgStory638.jpg
+212	2011	201102	201106	1									善意诱导	可疑的治疗	Assets/Product/Texture/Image/RoleStory/V210yjyNormal02.png	医生	……		男人将目光转向了你身后的洁塔薇，他为你提供了一个预言\n「失去洞察真相之眼的你将亲手葬送这位女孩」。	质问他	Assets/Product/Texture/Image/BgStory/BgStory638.jpg
+213	2011	201103		2								201102	善意诱导	可疑的治疗	Assets/Product/Texture/Image/RoleStory/V210yjyNormal02.png	医生	……		男人浑身颤抖着笑了起来，之后，他取出了一杯水，询问你是否愿意面对这个世界的真相。	决定	Assets/Product/Texture/Image/BgStory/BgStory638.jpg
+214	2011	201104		1									善意诱导	可疑的治疗					你分不清男人是医生还是病人，你只是无法排除对方在水里下毒的可能性，你拒绝男人并离开了这里。	离开	Assets/Product/Texture/Image/BgStory/BgStory638.jpg
+215	2011	201105		3					4	{1: 2}	{1: 1}		善意诱导	可疑的治疗					吃下胶囊后，你并没经历胃绞痛或者剧烈的晕眩，什么也没发生。你感到男人在愚弄你，带着洁塔薇离开了这里。	离开	Assets/Product/Texture/Image/BgStory/BgStory638.jpg
+216	2011	201106		3					1	{1: 96189}	{1: 150}		善意诱导	可疑的治疗					男人什么也没回答，往你手中塞了些东西，便离开了。	离开	Assets/Product/Texture/Image/BgStory/BgStory638.jpg
+217	2012	201201	201202	1									迷失之馆	孤独的孩童					洁塔薇在孤儿院里找到了一个男孩，他因为迷路被困在这里，靠过期食物顽强活过了一周。	询问他	Assets/Product/Texture/Image/BgStory/BgStory636.jpg
+218	2012	201202		2								201202	迷失之馆	孤独的孩童	Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal01.png	男孩	……		男孩声称与姐姐走失，希望你们帮他找到姐姐，这样他就能回家。	决定	Assets/Product/Texture/Image/BgStory/BgStory636.jpg
+219	2012	201203		3					3	{1: 1}	{1: 1}		迷失之馆	孤独的孩童					虽然这附近有很多野兽，你还是答应男孩的请求，留下食物后，便和洁塔薇便出门替他寻找姐姐。	离开	Assets/Product/Texture/Image/BgStory/BgStory636.jpg
+220	2012	201204		1									迷失之馆	孤独的孩童					这附近有很多野兽出没，你不会为了帮男孩找姐姐犯险，你告诉男孩他可以跟你们回到城镇，但男孩拒绝了你的建议。	离开	Assets/Product/Texture/Image/BgStory/BgStory636.jpg
+221	2013	201301	201302	1									野性之森	昆虫爱好者					你和洁塔薇穿过孤儿院前的森林，四周都是野兽的叫声。	继续前行	Assets/Product/Texture/Image/BgStory/BgStory539.jpg
+222	2013	201302		2								201302	野性之森	昆虫爱好者	Assets/Product/Texture/Image/RoleStory/TongyongNanmingirlNormal01.png	女孩	路过的好心人，我和自己的弟弟走丢了，你们看见过我弟弟吗…		你们走走停停，遇见了正在收集昆虫样本的小女孩。	决定	Assets/Product/Texture/Image/BgStory/BgStory539.jpg
+223	2013	201303	201306	1									野性之森	昆虫爱好者	Assets/Product/Texture/Image/RoleStory/TongyongNanmingirlNormal01.png	女孩	谢谢		你将被困在孤儿院的男童的信息告诉了捕虫女孩，她感谢你们涉险来找她，并将跟随着你们回去 。	带她回去	Assets/Product/Texture/Image/BgStory/BgStory539.jpg
+224	2013	201304	201305	1									野性之森	昆虫爱好者	Assets/Product/Texture/Image/RoleStory/TongyongNanmingirlNormal01.png	女孩	……		女孩告诉你这叫鹿角虫，是一种十分罕见的昆虫，据说能换许多钱她为了给弟弟筹钱上学才冒险进入森林。	带她回去	Assets/Product/Texture/Image/BgStory/BgStory539.jpg
+225	2013	201305		3					1	{1: 96189}	{1: 150}		野性之森	昆虫爱好者						出发	Assets/Product/Texture/Image/BgStory/BgStory539.jpg
+226	2013	201306		3					3	{1: 1}	{1: 1}		野性之森	昆虫爱好者						出发	Assets/Product/Texture/Image/BgStory/BgStory539.jpg
+227	2014	201401	201402	1									亚人少女	失控的造物					进入孤儿院时，你感受到了异样的杀气，两道迅疾的身影从你身侧闪过。猩红眼的紫发女孩挥舞着野兽般的利爪，与另外一位手持蝴蝶刀的灰发男孩缠斗在一起。	原地观察	Assets/Product/Texture/Image/BgStory/BgStory792.jpg
+228	2014	201402		2								201402	亚人少女	失控的造物	Assets/Product/Texture/Image/RoleStory/V260qyNormal08.png	洁塔薇	快闪开！		你不清楚两人为何交战，你似乎在哪见过两人，但完全回忆不起来，甚至光是去想就会感到头疼。\n很快，紫发少女的利爪洞穿了男孩的胸膛，男孩倒下后的片刻，她就朝你扑了过来。	决定	Assets/Product/Texture/Image/BgStory/BgStory792.jpg
+229	2014	201403	201404	1									亚人少女	失控的造物					紫发少女的速度要快过你，那根本不是人类该有的力量。她扼住你的脖子，张开血盆大口，望着对方的面容，你突然想起一件事。\n\n——你曾在「未来」见过这个少女还是人类时的模样。	继续	Assets/Product/Texture/Image/BgStory/BgStory792.jpg
+230	2014	201404	201405	1									亚人少女	失控的造物	Assets/Product/Texture/Image/RoleStory/CibeizheNormal03.png	？？？	一件小小的礼物。		就在你快要失去意识时，远处袭来的红色射线洞穿了紫发少女的额头，你因此从窒息的边缘恢复过来。抬起头，阁楼上是一位神秘女子离去的背影，她悠然地举着右手，一张纸片从她的指尖滑落下来。	查看纸条	Assets/Product/Texture/Image/BgStory/BgStory792.jpg
+231	2014	201405		3					2	{1: 2012}	{1: 1}		亚人少女	失控的造物					“甜美的果实，不会通往真实的伊甸。”\n\n                                                           ——《智械福音·III》	离开	Assets/Product/Texture/Image/BgStory/BgStory792.jpg
+232	2014	201406		3					2	{1: 2015}	{1: 1}		亚人少女	失控的造物					千钧一发之时，你躲开了对方的袭击，带着洁塔薇快速离开了现场。甩掉紫发少女后，你发现自己手里抓着对方身上披着的毛毯。这不算你的战利品，但你从里面摸出了一管不明血清。	离开	Assets/Product/Texture/Image/BgStory/BgStory792.jpg
+233	2014	201407		2								201407	亚人少女	失控的造物	Assets/Product/Texture/Image/RoleStory/CibeizheNormal03.png	？？？	你是否带了我丢的东西？		在你出示工作证后，紫发少女突然停下了进攻，她望着那张证件露出了恐惧的神情，转身便逃得不见踪迹。\n此时，身穿斗篷的神秘女人再次出现，她拾起紫发少女抖落在地的毛毯，掸了掸灰，披到了自己身上。	决定	Assets/Product/Texture/Image/BgStory/BgStory792.jpg
+234	2014	201408		3					2	{1: 2017}	{1: 1}		亚人少女	失控的造物					神秘女人收下孤儿院的工作证，将另外一张实验室的工作证交到你手上，随后离开。	离开	Assets/Product/Texture/Image/BgStory/BgStory792.jpg
+235	2014	201409		1									亚人少女	失控的造物					神秘女人没有多言，转身离开了这里。	离开	Assets/Product/Texture/Image/BgStory/BgStory792.jpg
+236	3001	300101		2								300101	铁石心肠	非必要之恶					实验室的无菌室里，可怜的小白鼠被档案库的电源线捆住，洁塔薇提醒你，档案库里可能有你们需要的东西。	决定	Assets/Product/Texture/Image/BgStory/BgStory691.jpg
+237	3001	300102		3					4	{1: 2}	{1: 1}		铁石心肠	非必要之恶					剪断电源线的一瞬间，档案库由于安全程序自动闭合，被你解救的小白鼠钻进了不起眼的墙缝，很快便推着什么东西回来。	离开	Assets/Product/Texture/Image/BgStory/BgStory691.jpg
+238	3001	300103		3					3	{1: 1}	{1: 1}		铁石心肠	非必要之恶					伴随着小白鼠的惨叫，档案库大门缓缓打开，你与洁塔薇步入其中，找到若干个可用数据资料集。	离开	Assets/Product/Texture/Image/BgStory/BgStory691.jpg
+239	3002	300201		2								300201	头号玩家	未确认迷宫					和洁塔薇来到了疑似休息区的设施前，那里有台游戏机，采用非侵入式脑机接口，每次通关都有奖品。	决定	Assets/Product/Texture/Image/BgStory/BgStory762.jpg
+240	3002	300202	300204	1									头号玩家	未确认迷宫					那是个十分有趣的迷宫游戏，直到洁塔薇粗暴地拔出你的脑部连接器，你仍感到意犹未尽。	取走奖品	Assets/Product/Texture/Image/BgStory/BgStory762.jpg
+241	3002	300203		3					1	{1: 96189}	{1: 200}		头号玩家	未确认迷宫					尽管你十分想试玩这台游戏机，考虑到其中存在的安全隐患，并没有在此多做停留。	离开	Assets/Product/Texture/Image/BgStory/BgStory762.jpg
+242	3002	300204		3					4	{1: 4}	{1: 1}		头号玩家	未确认迷宫						离开	Assets/Product/Texture/Image/BgStory/BgStory762.jpg
+243	3003	300301		2								300301	致命失误	裸露反应堆					路上，你们经过一座残破的实验设施，地上布满破碎的玻璃细屑，实验人员的白大褂挂在墙上，衣服的内侧是带血的实验日志。	决定	Assets/Product/Texture/Image/BgStory/Bgstory225.png
+244	3003	300302	300303	1									致命失误	裸露反应堆		实验日志	……		「本想造了个反应堆玩玩，该死，我受到了过量辐射，保险柜里有点东西，去取吧，密码是1234」	取走东西	Assets/Product/Texture/Image/BgStory/Bgstory225.png
+245	3003	300303		3					4	{1: 3}	{1: 1}		致命失误	裸露反应堆						赶紧离开	Assets/Product/Texture/Image/BgStory/Bgstory225.png
+246	3003	300304		3					1	{1: 96189}	{1: 250}		致命失误	裸露反应堆					看来这里发生过可怕的事，多一事不如少一事，拿走有用的东西赶紧离开吧。	赶紧离开	Assets/Product/Texture/Image/BgStory/Bgstory225.png
+247	3004	300401	300402	1									火灾现场	恰当的处理					你们进入一座实验设施，地上躺着被烧焦白大褂包裹着的尸体、半截香烟和大量的金属钠残块。	推测	Assets/Product/Texture/Image/BgStory/Bgstory351.jpg
+248	3004	300402		2								300402	火灾现场	恰当的处理					这里似乎发生过什么不好的事，如果能从这起诡异的事故中得到线索，或许会有意外发现……	决定	Assets/Product/Texture/Image/BgStory/Bgstory351.jpg
+249	3004	300403	300404	1									火灾现场	恰当的处理					毫无疑问，糊涂的研究员在实验室抽烟消遣时，触发了顶部的洒水系统，水流与实验室的金属钠发生反应，引发剧烈爆炸。	检查尸体	Assets/Product/Texture/Image/BgStory/Bgstory351.jpg
+250	3004	300404		3					1	{1: 96189}	{1: 200}		火灾现场	恰当的处理					你发现尸体的手中拽着几页纸，上面记录着实验室的通风管道和暗道的位置。你突然联想到，眼前的这具尸体或许并非研究员，而是企图盗窃物资的小偷……\n他在入室成功后，得意洋洋地点了支烟放松，因此导致了惨剧。	离开	Assets/Product/Texture/Image/BgStory/Bgstory351.jpg
+251	3004	300405	300406	1									火灾现场	恰当的处理					大量储存钠的实验室怎么可能安装喷水的防火装置。\n考虑到研究员有吸烟的习惯，甚至应该采用温感而非烟感的报警器。这起事件很可能是恶性杀人，种种的不寻常激励着你继续探索。	调查附近	Assets/Product/Texture/Image/BgStory/Bgstory351.jpg
+252	3004	300406		3					4	{1: 4}	{1: 1}		火灾现场	恰当的处理					你在附近找到研究员隐藏起来的日记。\n\n「研究所人员的追杀愈发紧迫，好在重要的物资已提前转移到存放清洁工具的地下室，等我……」	离开	Assets/Product/Texture/Image/BgStory/Bgstory351.jpg
+253	3011	301101	301102	1									灾厄无声	洞察真实之眼					你识破了实验室的全息陷阱，谨慎地绕开光怪陆离的各类精神干涉装置。	继续深入	Assets/Product/Texture/Image/BgStory/BgStory692.jpg
+254	3011	301102	301103	1									灾厄无声	洞察真实之眼	Assets/Product/Texture/Image/RoleStory/V260qyNormal04.png	洁塔薇	……?		当你和洁塔薇步入螺旋楼梯顶部的隐藏空间时，你清晰地看见隐藏在洁塔薇身后的骇人怪物，可她却什么也没看见。	发出警告	Assets/Product/Texture/Image/BgStory/BgStory692.jpg
+255	3011	301103		2								301103	灾厄无声	洞察真实之眼		无形怪物	……		或许是因为只有你吃了胶囊，你才能看见那个怪物。\n「只有你看得见的怪物，亦是你一个人的战斗」	决定	Assets/Product/Texture/Image/BgStory/BgStory692.jpg
+256	3011	301104		4	70001								灾厄无声	洞察真实之眼		无形怪物	……			直面	Assets/Product/Texture/Image/BgStory/BgStory692.jpg
+257	3011	301105		1									灾厄无声	洞察真实之眼					在洁塔薇诧异的目光中，你拉着她逃离了这里。	离开	Assets/Product/Texture/Image/BgStory/BgStory692.jpg
+258	3012	301201	301202	1									无尽长廊	笔直的陷阱					你踏足脑科学研究所一处诡异的笔直长廊，你们沿着长廊不断走着，而长廊也随着你们的步伐不断延伸。	继续前进	Assets/Product/Texture/Image/BgStory/Bgstory59.jpg
+259	3012	301202		2								301202	无尽长廊	笔直的陷阱					你找不到出口，而身边墙上挂着的巨幅油画你已经第三回见到，你明白有什么事情正重复发生着。	决定	Assets/Product/Texture/Image/BgStory/Bgstory59.jpg
+260	3012	301203		3					2	{1: 2008}	{1: 1}		无尽长廊	笔直的陷阱					正如你所预料的，隐藏在油画背后的装置会播放特殊频段的声波，这种声波使人脑产生错觉，误以为环形长廊笔直延伸。	离开	Assets/Product/Texture/Image/BgStory/Bgstory59.jpg
+261	3012	301204		3					1	{1: 96189}	{1: 200}		无尽长廊	笔直的陷阱					恭喜你，梦醒之时\n身体和灵魂都离开了那个诡异的长廊\n望着倚靠着你肩膀打盹的洁塔薇，你稍微松了口气。	离开	Assets/Product/Texture/Image/BgStory/BgStory789.jpg
+262	3013	301301	301302	1									继承之物	孱弱的意志					你们在不起眼的角落中遇见了失去义肢的男人，他面色羞愧，对你娓娓道来。	聆听	Assets/Product/Texture/Image/BgStory/BgStory603.jpg
+263	3013	301302		2								301302	继承之物	孱弱的意志	Assets/Product/Texture/Image/RoleStory/ZhongguochuanshangrenNormal02.png	失去义肢的男人	……		男人继承了师傅的机械臂前来讨伐怪物，却在临阵对决时狼狈而逃，最终连师傅的遗物也没能保住。	决定	Assets/Product/Texture/Image/BgStory/BgStory603.jpg
+264	3013	301303		1									继承之物	孱弱的意志					你们离开了这个懦弱的男人，留他独自沉浸在悲伤中。\n「人需要面对自己选择的命运并接受相应的代价」	离开	Assets/Product/Texture/Image/BgStory/BgStory603.jpg
+265	3013	301304		2								301304	继承之物	孱弱的意志	Assets/Product/Texture/Image/RoleStory/ZhongguochuanshangrenNormal02.png	失去义肢的男人	……		「强大、敏捷、残酷，却并非不可战胜，如果我当时更勇敢一些的话......」	决定	Assets/Product/Texture/Image/BgStory/BgStory603.jpg
+266	3013	301305		3					2	{1: 2006}	{1: 1}		继承之物	孱弱的意志	Assets/Product/Texture/Image/RoleStory/ZhongguochuanshangrenNormal01.png	失去义肢的男人	……		男人深受鼓舞，他挣扎着从身后掏出带血的武器，这是他唯一剩下的东西，他希望将自己残存的战斗意志托付给你。	离开	Assets/Product/Texture/Image/BgStory/BgStory603.jpg
+267	3013	301306		3					1	{1: 96189}	{1: 150}		继承之物	孱弱的意志					你知道自己的安慰聊胜于无，但你仍然给予了断臂男子温和的话语，希望他之后抛弃复仇的执念活下去。	离开	Assets/Product/Texture/Image/BgStory/BgStory603.jpg
+268	3014	301401	301402	1									失败造物	食人魔之谜					你们在研究所里遇见了三个青年在寻求帮助。	上前询问	Assets/Product/Texture/Image/BgStory/BgStory648.jpg
+269	3014	301402		2								301402	失败造物	食人魔之谜					为首的粉发女孩莉莉告诉你，他们中存在着由于实验失败而变成食人魔的家伙，但对方维持着人类模样，没有办法轻易分辨，或许你们能帮忙。	调查	Assets/Product/Texture/Image/BgStory/BgStory648.jpg
+270	3014	301403	301406	3					1	{1: 96189}	{1: 150}		失败造物	食人魔之谜		洁塔薇	看上去不像坏人呢......		灰发的狼孩子穿着破旧的牛仔裤，赤裸的上半身依稀可见数道伤痕，你向他丢去食物，作为回礼，他从口袋中摸出了些许物资给你。	继续	Assets/Product/Texture/Image/BgStory/BgStory648.jpg
+271	3014	301404	301406	3					3	{1: 1}	{1: 1}		失败造物	食人魔之谜		洁塔薇	感觉有些可疑，会是她吗？		你注意到紧握毛毯的紫发女孩，浑身打颤地蜷缩在纸箱旁，她的皮肤白皙，四肢纤细，依稀能见到血管，似乎很害怕陌生人。	继续	Assets/Product/Texture/Image/BgStory/BgStory648.jpg
+272	3014	301405	301406	3					4	{1: 4}	{1: 1}		失败造物	食人魔之谜		洁塔薇	仔细看是个美人呢，这个叫莉莉的家伙。		莉莉是主动与你打招呼的女孩，她穿着干净的连衣裙与松糕鞋，性格外向开朗，拥有没有半丝阴霾的笑颜。	继续	Assets/Product/Texture/Image/BgStory/BgStory648.jpg
+273	3014	301406		1									失败造物	食人魔之谜					最后你还是没能看出破绽，告别三人后，与洁塔薇一起离开。	离开	Assets/Product/Texture/Image/BgStory/BgStory648.jpg
+274	3015	301501	301502	1									旧日情谊	粉发的少女					在阴冷的建筑内前行时，你们再次遇见了粉发女孩莉莉，披着毛毯的她脸上带着幸福的红晕，看见你后，莉莉亲切地与你打了招呼。	上前招呼	Assets/Product/Texture/Image/BgStory/BgStory712.jpg
+275	3015	301502		2								301502	旧日情谊	粉发的少女					莉莉再次见到你，表现得非常高兴。她毫不掩饰自己对你的好感，希望能和你一起踏上旅途。	决定	Assets/Product/Texture/Image/BgStory/BgStory712.jpg
+276	3015	301503		3					4	{1: 5}	{1: 1}		旧日情谊	粉发的少女	Assets/Product/Texture/Image/RoleStory/V260qyNormal03.png	洁塔薇	这个女人看上你了呢。		考虑到旅途中可能遇到的危险，你拒绝了莉莉的请求。\n最后，她在你的脸颊上留下了一个吻，便离开了。	离开	Assets/Product/Texture/Image/BgStory/BgStory712.jpg
+277	3015	301504	301505	1									旧日情谊	粉发的少女	Assets/Product/Texture/Image/RoleStory/V260qyNormal08.png	洁塔薇	你是笨蛋吗，天选者？		你接受莉莉入团的想法遭到洁塔薇的一票否决。\n「注意到那条带血的毛毯了吗？」	继续	Assets/Product/Texture/Image/BgStory/BgStory712.jpg
+278	3015	301505		3					3	{1: 1}	{1: 1}		旧日情谊	粉发的少女					最后，莉莉临走前在你的脸颊上留下了一个吻，担心她安危的你，分给了她一些物资。	离开	Assets/Product/Texture/Image/BgStory/BgStory712.jpg
+279	3016	301601	301602	1									禁忌验证	错误的实验					你们走进了一所生物研究所，里面到处是粘稠的血浆和可怕的抓痕。\n翻阅实验日志后，你了解到这里曾进行过一场非法实验，研究员通过给人类注射怪物的血清，企图制造出某种异人。\n\n——实验以失败告终，失败造物变成了食人魔。	检查四周	Assets/Product/Texture/Image/BgStory/BgStory776.jpg
+280	3016	301602	301603	1									禁忌验证	错误的实验	Assets/Product/Texture/Image/RoleStory/V260qyNormal04.png	洁塔薇	是那个男孩吗……		在两个监视间的缝隙中，你找到了一张卡片，上面歪歪扭扭地写着某个实验体孩童留给同伴的话。\n\n「不获得力量我们就逃不出去，我会给自己注射……在我变成怪物前杀了我吧。」	收起卡片	Assets/Product/Texture/Image/BgStory/BgStory776.jpg
+281	3016	301603		2								301603	禁忌验证	错误的实验					你听见身后传来一阵异响，转过头时才察觉到了危险，被关在禁闭区的怪物挣脱了锁链。	决定	Assets/Product/Texture/Image/BgStory/BgStory776.jpg
+282	3016	301604		2								301604	禁忌验证	错误的实验					安全区的通关口需要扫描工作证才能进入，手忙脚乱之时，怪物已杀到身后……	决定	Assets/Product/Texture/Image/BgStory/BgStory697.jpg
+283	3016	301605	301606	3					2	{1: 2016}	{1: 1}		禁忌验证	错误的实验					通过血清你获得了足以对抗怪物的强大力量，但你的身体也在被逐渐侵蚀。	准备战斗	Assets/Product/Texture/Image/BgStory/BgStory776.jpg
+284	3016	301606		4	70006								禁忌验证	错误的实验						准备战斗	Assets/Product/Texture/Image/BgStory/BgStory776.jpg
+285	3016	301607	301609	1									禁忌验证	错误的实验					进入安全区后，你在桌面上找到一张泛黄的纸片。\n\n“圣子吞下圣露，诞生于新世界。”\n\n                                                           ——《智械福音·IV》	收起纸条	Assets/Product/Texture/Image/BgStory/BgStory789.jpg
+286	3016	301608		3					4	{1: 5}	{1: 1}		禁忌验证	错误的实验	Assets/Product/Texture/Image/RoleStory/CibeizheNormal01.png	？？？	又见面了呢。		就在你心跳加速时，狂暴的怪物突然停下了动静。\n透过缝隙，你注意到它身后出现了那个身披斗篷的神秘女人。她将一个精致的礼盒放在地上，随后便带着狰狞的怪物离开了这里。	离开	Assets/Product/Texture/Image/BgStory/BgStory697.jpg
+287	3016	301609		3					2	{1: 2013}	{1: 1}		禁忌验证	错误的实验					你发现桌子下方有一条逃生密道，在洁塔薇确认内部安全后，你们进入密道离开了这里。	离开	Assets/Product/Texture/Image/BgStory/BgStory789.jpg
+288	3017	301701	301702	1									蓝色裂痕	隐匿的空间					你和洁塔薇进入了研究所内一个失去电力的废弃通道。	继续	Assets/Product/Texture/Image/BgStory/Bgstory516.jpg
+289	3017	301702		2								301702	蓝色裂痕	隐匿的空间	Assets/Product/Texture/Image/RoleStory/HexinNormal02.png				在黑暗中摸索时，隐匿于楼道间、散发着蓝色微光的裂痕吸引了你的注意。这道蓝色裂痕似乎连接着一个漆黑的网格空间。	决定	Assets/Product/Texture/Image/BgStory/Bgstory516.jpg
+290	3017	301703		2								301703	蓝色裂痕	隐匿的空间					进入网格空间后，你在尽头找到一扇门扉，你谨慎地推门而入，迎面而来的是耀眼的火光。\n——你看见漆黑的虚空中，无名的烈火正在灼烧着几块带有数据荧光的资料集。	决定	Assets/Product/Texture/Image/BgStory/BgStory645.png
+291	3017	301704	301705	1									蓝色裂痕	隐匿的空间					你决定不冒险，准备转身离开这里时，身后的洁塔薇却失去了踪影。	寻找	Assets/Product/Texture/Image/BgStory/Bgstory516.jpg
+292	3017	301705	301706	1									蓝色裂痕	隐匿的空间	Assets/Product/Texture/Image/RoleStory/V260qyNormal06.png	洁塔薇	在奇怪的地方捡到了奇怪的东西。		你焦急地寻找许久，直到她从通道的另一侧出现。\n她的头发似乎被烧焦了一些，手中抓着一块荧光物体。\n你感到有些讶异，询问她有没有受伤，她平静地摇了摇头。	查看	Assets/Product/Texture/Image/BgStory/Bgstory516.jpg
+293	3017	301706	301707	1									蓝色裂痕	隐匿的空间					<size=25>>>></size><b>初次成功</b>\n\n<size=30>“第一次成功训练出了稳定的人格，各方面的验证数据都很优秀，大家备受鼓舞……”</size>\n\n<size=30>“可惜的是，模型被判定为「过拟合」，因此不具有潜力，实在令人惋惜……”</size>\n\n<size=30>“按照参数反复进行训练，或许能收集到有趣的数据”。</size>\n\n<size=30>                                         ——《阶段性研究日志·I》</size>	收起	Assets/Product/Texture/Image/BgStory/Bgstory516.jpg
+294	3017	301707		3					2	{1: 2018}	{1: 1}		蓝色裂痕	隐匿的空间					收起资料集后，你们准备离开这里。	离开	Assets/Product/Texture/Image/BgStory/Bgstory516.jpg
+295	3017	301708	301709	1									蓝色裂痕	隐匿的空间					灼烧感使你疼痛难忍，但你最终还是从火焰中抢救下了一块资料集。	查看资料	Assets/Product/Texture/Image/BgStory/BgStory645.png
+296	3017	301709	301710	1									蓝色裂痕	隐匿的空间					<size=25>>>></size>■■■\n\n<size=30>诞生于一场意外，研究员设置了错误的参数，却意外训练出稳定的人格。</size>\n\n<size=30>“人格的离散程度过高，与原本的意识样本没有什么交集，古灵精怪，简直像个孩子。</size>”\n\n<size=30>“但是，正因为像孩子一样，可塑性很强，是目前最接近自主觉醒的个体……”</size>\n\n<size=30>                                         ——《阶段性研究日志·II》</size>	收起	Assets/Product/Texture/Image/BgStory/BgStory645.png
+297	3017	301710		3					2	{1: 2019}	{1: 1}		蓝色裂痕	隐匿的空间					你收起了资料集，准备离开这片空间。	离开	Assets/Product/Texture/Image/BgStory/BgStory645.png
+298	3017	301711		3					1	{1: 96189}	{1: 200}		蓝色裂痕	隐匿的空间					火焰熄灭后，余烬化为了少量算力单元，你回收了这些算力。	离开	Assets/Product/Texture/Image/BgStory/BgStory645.png
+299	4001	400101	400102	1									树下女巫	怪诞的信念					巍然屹立的树木将繁茂的枝叶铺进了建筑内部的各个角落，你在那里见到身穿斗篷祈祷的少女。	上前	Assets/Product/Texture/Image/BgStory/Bgstory425.jpg
+300	4001	400102		2								400101	树下女巫	怪诞的信念	Assets/Product/Texture/Image/RoleStory/XiunvNormal01.png	少女	……		她想替你向这些变异的巨树祷告	决定	Assets/Product/Texture/Image/BgStory/Bgstory425.jpg
+301	4001	400103	400104	1									树下女巫	怪诞的信念	Assets/Product/Texture/Image/RoleStory/XiunvNormal01.png	少女	■■…■■■……■■■■■■……		少女振振有词地念着难懂的咒语，洁塔薇怀疑对方在愚弄你，拉着你离开了这。	离开	Assets/Product/Texture/Image/BgStory/Bgstory425.jpg
+302	4001	400104		3					1	{1: 96189}	{1: 200}		树下女巫	怪诞的信念					好在没有坏事发生，你们之后还在路上发现了些物资。	继续前行	Assets/Product/Texture/Image/BgStory/BgStory585.jpg
+303	4001	400105		2								400105	树下女巫	怪诞的信念	Assets/Product/Texture/Image/RoleStory/XiunvNormal01.png	盲眼少女	……		少女的眼里没有光泽，作为盲女，她无法看见你和洁塔薇的模样，只能平静地直视着前方。	决定	Assets/Product/Texture/Image/BgStory/Bgstory425.jpg
+304	4001	400106		2								400106	树下女巫	怪诞的信念	Assets/Product/Texture/Image/RoleStory/XiunvNormal01.png	盲眼少女	……		少女告诉你，她曾向树神许愿，以失去视力的代价换来庇护他人的能力，无论如何，她想为你们祷告。	决定	Assets/Product/Texture/Image/BgStory/Bgstory425.jpg
+305	4001	400107		1									树下女巫	怪诞的信念					你感到一股莫名的恐惧窜上心头，不再过问多余的话，带着洁塔薇离开了诡异的少女。	离开	Assets/Product/Texture/Image/BgStory/Bgstory425.jpg
+306	4001	400108		3					3	{1: 1}	{1: 1}		树下女巫	怪诞的信念					与少女告别后，在路上你们收获了一个补给箱。	继续前行	Assets/Product/Texture/Image/BgStory/BgStory585.jpg
+307	4001	400109	400110	1									树下女巫	怪诞的信念	Assets/Product/Texture/Image/RoleStory/XiunvNormal01.png	盲眼少女	……		出于对少女的怜悯，你拒绝了这曾给她带去伤害的祷告，带上洁塔薇离开了这里。	离开	Assets/Product/Texture/Image/BgStory/Bgstory425.jpg
+308	4001	400110		3					4	{1: 4}	{1: 1}		树下女巫	怪诞的信念					与少女告别后，在路上你们意外收获一份特殊物资。	继续前行	Assets/Product/Texture/Image/BgStory/BgStory585.jpg
+309	4001	400111		2								400111	树下女巫	怪诞的信念	Assets/Product/Texture/Image/RoleStory/XiunvNormal01.png	少女	是你！！！		你的提问令树下的女巫眉头一皱，她似乎想起了什么不愉快的过往，当她听见洁塔薇说话的声音后，立即伸手去触摸了对方的脸和头发。之后，女巫一反常态地抽出了腰间藏着的匕首……	决定	Assets/Product/Texture/Image/BgStory/Bgstory425.jpg
+310	4001	400112		1									树下女巫	怪诞的信念		洁塔薇	？？？		你快速地制服了女巫，但她的小刀还是割伤了你。你夺走了女巫的匕首，随后带着洁塔薇离开了这里。	离开	Assets/Product/Texture/Image/BgStory/Bgstory425.jpg
+311	4001	400113		3					1	{1: 96189}	{1: 600}		树下女巫	怪诞的信念		洁塔薇	？？？		你向女巫道歉，希望她不要伤害洁塔薇。女巫很快冷静了下来，她明白即使复仇成功也无法使树神复活。作为树身教的最后一位信徒，她仍会坚持自己的信仰。作为刚才鲁莽袭击的补偿，她取出了一个武器箱交给你们。	收下离开	Assets/Product/Texture/Image/BgStory/Bgstory425.jpg
+312	4002	400201	400202	1									逃出生天	最好的“搭档”					你们找到了一处数据库，但门锁损坏无法打开，你发现旁边有狭隘的通风管道，但你的体型无法进去。	环顾四周	Assets/Product/Texture/Image/BgStory/BgStory760.jpg
+313	4002	400202		2								400202	逃出生天	最好的“搭档”	Assets/Product/Texture/Image/RoleStory/V260qyNormal01.png	洁塔薇	……哼哼		这时洁塔薇拍了下你的肩膀，跃跃欲试地看着你。	决定	Assets/Product/Texture/Image/BgStory/BgStory760.jpg
+314	4002	400203		2								400203	逃出生天	最好的“搭档”					你将绳子的一端系在洁塔薇身上，告诉她遇到危险就大声叫，洁塔薇点点头，她进去没多久后突然大声惨叫。	决定	Assets/Product/Texture/Image/BgStory/BgStory760.jpg
+315	4002	400204		1									逃出生天	最好的“搭档”					你担心通道内会有危险，拉着洁塔薇离开了这里。	离开	Assets/Product/Texture/Image/BgStory/BgStory760.jpg
+316	4002	400205	400206	1									逃出生天	最好的“搭档”		洁塔薇	……		洁塔薇最终平安归来，她说刚才在里面看见一只胖嘟嘟的老鼠，身心感到不适的同时大叫了起来。	安抚	Assets/Product/Texture/Image/BgStory/BgStory760.jpg
+317	4002	400206		3					3	{1: 1}	{1: 1}		逃出生天	最好的“搭档”					虽然没进入到数据库内，但洁塔薇在通道内发现了些散落物资。	离开	Assets/Product/Texture/Image/BgStory/BgStory760.jpg
+318	4002	400207		3					1	{1: 96189}	{1: 150}		逃出生天	最好的“搭档”		洁塔薇	■■…■■■！！！		洁塔薇最终抱着数据盒平安回来，但她对你发了脾气\n——当她在通风管道遇到老鼠时，你冷酷地忽视了她。	离开	Assets/Product/Texture/Image/BgStory/BgStory760.jpg
+319	4003	400301	400302	1									洁塔薇讲故事						呼啸的夜风与远方的野兽哀鸣阻止了你与洁塔薇的步伐，你们决定在天亮前稍作歇息。	继续	Assets/Product/Texture/Image/BgStory/BgStory710.jpg
+320	4003	400302		2								400302	洁塔薇讲故事		Assets/Product/Texture/Image/RoleStory/V260qyNormal02.png	洁塔薇	该讲点什么呢？		飘曳的烛光中，莫名的恐慌感侵蚀了你的身心\n辗转反侧间，洁塔薇看出你心绪不宁，她想讲个睡前故事来缓解你的状况。	决定	Assets/Product/Texture/Image/BgStory/BgStory710.jpg
+321	4003	400303	400306	1									洁塔薇讲故事		Assets/Product/Texture/Image/RoleStory/V260qyNormal03.png	洁塔薇	……		很久很久以前，有个独自踏入红潮的旅人。\n邂逅了引导他的魔女，殊不知对方与敌人同源。\n两人就这样亦步亦趋地持续着旅程。\n故事的最后——\n魔女孤独地屹立于沙尘覆盖的墓碑之中。\n心怀感激地与旅人告别......	继续	Assets/Product/Texture/Image/BgStory/BgStory710.jpg
+322	4003	400304	400307	1									洁塔薇讲故事		Assets/Product/Texture/Image/RoleStory/V260qyNormal03.png	洁塔薇	……		很久很久以前，被称为英雄的男人与庇护他的魔女。\n攻陷了敌人的最后一座城池\n盘旋于敌阵上空的神应许男人实现他的任何愿望。\n代价是献祭所爱，男人最终献祭了身边的魔女。\n邪神的诡计也因此得逞......	继续	Assets/Product/Texture/Image/BgStory/BgStory710.jpg
+323	4003	400305	400308	1									洁塔薇讲故事						从洁塔薇嘴里说出来的东西总是让人不寒而栗，在她开口讲恐怖故事之前先把她哄睡为好。	哄她入睡	Assets/Product/Texture/Image/BgStory/BgStory710.jpg
+324	4003	400306		3					4	{1: 4}	{1: 1}		洁塔薇讲故事		Assets/Product/Texture/Image/RoleStory/V260qyNormal03.png	洁塔薇	晚安		你思忖着故事的涵义，疲惫感让你的意识渐渐模糊。	Zzz	Assets/Product/Texture/Image/BgStory/BgStory710.jpg
+325	4003	400307		3					3	{1: 1}	{1: 1}		洁塔薇讲故事		Assets/Product/Texture/Image/RoleStory/V260qyNormal03.png	洁塔薇	晚安		你思忖着故事的涵义，疲惫感让你的意识渐渐模糊。	Zzz	Assets/Product/Texture/Image/BgStory/BgStory710.jpg
+326	4003	400308		1									洁塔薇讲故事			洁塔薇	Zzz		洁塔薇很快进入了梦乡	休息	Assets/Product/Texture/Image/BgStory/BgStory710.jpg
+327	4004	400401		2								400401	机械维修师						你邂逅了一位披着斗篷的机械体，他声称自己是喜爱拆卸和组装机器的维修师，连同伴也被它拆成了零件。\n用芯片似乎能与他交换一些有用的东西。	决定	Assets/Product/Texture/Image/BgStory/Bgstory275.png
+328	4004	400402		3					4	{1: 4}	{1: 1}		机械维修师						机械维修师有点不耐烦，随手给了你一个奇怪的手提电视。	收下	Assets/Product/Texture/Image/BgStory/Bgstory275.png
+329	4004	400403		3					3	{1: 2}	{1: 1}		机械维修师						机械维修师有点不耐烦，随手给了你一个普通的手提电视。	收下	Assets/Product/Texture/Image/BgStory/Bgstory275.png
+330	4004	400404		3					4	{1: 5}	{1: 1}		机械维修师						机械维修师心情不错，给了你一个精致的手提电视。	收下	Assets/Product/Texture/Image/BgStory/Bgstory275.png
+331	4004	400405		1									机械维修师						你认为对方不怀好意，没怎么思考就拒绝了对方。	离开	Assets/Product/Texture/Image/BgStory/Bgstory275.png
+332	4011	401101	401102	1									莫比乌斯	重叠的起点					在地底你不小心与洁塔薇走散，之后更是弄丢导航仪，\n恍惚中你找到了连接地面的螺旋阶梯，可无论你怎么攀登，最终都会回到起点。	继续寻找	Assets/Product/Texture/Image/BgStory/Bgstory442.jpg
+333	4011	401102		2								401102	莫比乌斯	重叠的起点	Assets/Product/Texture/Image/RoleStory/V260qyNormal08.png	洁塔薇	……		终于，你遇见了洁塔薇，她赌气地问你怎么敢把她丢下，还弄丢了重要的导航仪。	决定	Assets/Product/Texture/Image/BgStory/Bgstory442.jpg
+334	4011	401103		1									莫比乌斯	重叠的起点					洁塔薇牵着你走向螺旋阶梯高处，直到你听见第二个洁塔薇的声音。	回头	Assets/Product/Texture/Image/BgStory/Bgstory442.jpg
+335	4011	401104		3					1	{1: 96189}	{1: 150}		莫比乌斯	重叠的起点					你回过头，另一个洁塔薇拉住了你，这时你才注意到自己位在楼体边缘，差一步就将跌下深渊，刚才你见到的洁塔薇似乎是幻觉。	离开	Assets/Product/Texture/Image/BgStory/Bgstory442.jpg
+336	4011	401105	401106	3					2	{1: 2008}	{1: 1}		莫比乌斯	重叠的起点					正如你所预料的，与你失联的洁塔薇不可能得知你遗失导航仪的事，拳头命中的是安装着精神干涉装置、披着全息投影的机械体。	回头	Assets/Product/Texture/Image/BgStory/Bgstory442.jpg
+337	4011	401106	401107	1									莫比乌斯	重叠的起点	Assets/Product/Texture/Image/RoleStory/V260qyNormal03.png	洁塔薇	……		又一个洁塔薇出现在你面前，你再次抡起拳头砸向幻觉，可还没击中对方，就被对方一个摆拳掀翻在地。	抬头	Assets/Product/Texture/Image/BgStory/Bgstory442.jpg
+338	4011	401107		1									莫比乌斯	重叠的起点	Assets/Product/Texture/Image/RoleStory/V260qyNormal02.png	洁塔薇	真过分啊，找了你半天，这算什么意思？		这次出现的是洁塔薇本尊，她的拳头如假包换，令人信服，向洁塔薇道歉后，她把你扶了起来。	离开	Assets/Product/Texture/Image/BgStory/Bgstory442.jpg
+339	4012	401201	401202	1									高洁之心	不屈的火苗					你在途中遇到了满脸长疮的年迈女巫，她被你手中的光束聚能剑吸引。	停留	Assets/Product/Texture/Image/BgStory/Bgstory443.jpg
+340	4012	401202		2								401202	高洁之心	不屈的火苗	Assets/Product/Texture/Image/RoleStory/TongyongFunvNormal02.png	年迈女巫	……		女巫告诉你，自己曾见过一对师徒使用这个武器，对方由于害怕遭到巫术诅咒驱赶了她，而这一次女巫想替你祈福。	决定	Assets/Product/Texture/Image/BgStory/Bgstory443.jpg
+341	4012	401203		3					3	{1: 1}	{1: 1}		高洁之心	不屈的火苗		洁塔薇	是心理作用吧？		接受了老妪对你的祝福后，你感到胸膛升起了炙热的勇气，仿佛火苗从干草堆中燃起。	离开	Assets/Product/Texture/Image/BgStory/Bgstory443.jpg
+342	4012	401204		1									高洁之心	不屈的火苗					女巫对你的决定并不意外，人作为最多疑的生物，向来对他者的善意颇为敏感，你们友善地与老妪道别。	离开	Assets/Product/Texture/Image/BgStory/Bgstory443.jpg
+343	4013	401301	401302	1									多项选择	零到十之门					你们来到了一处设施，面前出现编号【零】到【十】的门扉。	环顾四周	Assets/Product/Texture/Image/BgStory/Bgstory350.jpg
+344	4013	401302		2								401302	多项选择	零到十之门	Assets/Product/Texture/Image/RoleStory/V260qyNormal01.png	洁塔薇	洁塔薇建议您选七号门哦~		门扉旁边的告示，提醒你们这其中会有九个陷阱和一处宝物。	决定	Assets/Product/Texture/Image/BgStory/Bgstory350.jpg
+345	4013	401303		3					2	{1: 2007}	{1: 1}		多项选择	零到十之门	Assets/Product/Texture/Image/RoleStory/V260qyNormal02.png	洁塔薇	7可是我的幸运数字哦。		你成功地从【七】号房间回收了奇怪的宝物，你向洁塔薇请教确定宝物的秘诀。	离开	Assets/Product/Texture/Image/BgStory/Bgstory350.jpg
+346	4013	401304		1									多项选择	零到十之门					逃避可耻但是有用，小学生都能想明白的概率题还是别冒险为好。况且洁塔薇的建议，很可能是挑自己的幸运数字之类的......	离开	Assets/Product/Texture/Image/BgStory/Bgstory350.jpg
+347	4014	401401	401402	1									焉知福祸	运气的代价					你通过十门选项获得宝物后，继续踏上自己的旅途。在路上时，你总感觉后背发寒，有种说不出口的焦虑。	继续	Assets/Product/Texture/Image/BgStory/Bgstory341.jpg
+348	4014	401402		2								401402	焉知福祸	运气的代价					实际上，你的直觉没错，你所挑选的【七】号门也是陷阱，进入此门者必将受到守门者追击。\n「守门者此时就挡在了你的前方」	决定	Assets/Product/Texture/Image/BgStory/Bgstory341.jpg
+349	4014	401403		4	70005								焉知福祸	运气的代价						直面	Assets/Product/Texture/Image/BgStory/Bgstory341.jpg
+350	4014	401404		1									焉知福祸	运气的代价					宝物吸引了守护者的注意力，你们成功脱离的危险。	逃离	Assets/Product/Texture/Image/BgStory/Bgstory341.jpg
+351	4015	401501	401502	1									赤红怪物	逃逸的警示					你与洁塔薇来到深井中部，漆黑的管道里，绯红色的身影一闪而过。	继续前行	Assets/Product/Texture/Image/BgStory/BgStory775.jpg
+352	4015	401502		2								401502	赤红怪物	逃逸的警示	Assets/Product/Texture/Image/RoleStory/HexinNormal01.png				见到怪物的獠牙后，你和洁塔薇发疯奔跑，然而，你们没有等来意料中的袭击。\n途中，你在附近发现了怪物出没的洞穴，里面隐藏着一道暗红色的裂痕，你不知道这道裂痕将通往何处，但你明白，这是深渊的邀请……	决定	Assets/Product/Texture/Image/BgStory/BgStory775.jpg
+353	4015	401503		2								401503	赤红怪物	逃逸的警示					进入网格空间，你在路的尽头看见一只怪物，它正在撕咬虚空，大量的数据流从这只怪物的嘴中溢出。\n在成堆的垃圾信息中，闪闪发光的数据结晶吸引了你的注意，上面似乎记载着一些散发荧光的文字。	决定	Assets/Product/Texture/Image/BgStory/BgStory657.jpg
+354	4015	401504	401505	3					2	{1: 2020}	{1: 1}		赤红怪物	逃逸的警示	Assets/Product/Texture/Image/RoleStory/V260qyNormal08.png	洁塔薇	啊，好疼！什么啊这是……		你向红色裂痕中丢出一块石子，沉默几秒后，一块红宝石从虚空中弹了出来，直接撞上洁塔薇的脑门。	拾起	Assets/Product/Texture/Image/BgStory/BgStory775.jpg
+355	4015	401505		1									赤红怪物	逃逸的警示					宝石散发着暗淡的红光，虽然不知道具体作用，直觉还是让你收起了它，随后与洁塔薇离开了这里。	离开	Assets/Product/Texture/Image/BgStory/BgStory775.jpg
+356	4015	401506	401507	1									赤红怪物	逃逸的警示	Assets/Product/Texture/Image/RoleStory/V260qyNormal08.png	洁塔薇	喂，不是我干的！为什么追我？		洁塔薇迈着步子跑起来后，你拿起之前回收的资料集朝怪物丢了过去。\n感到疼痛的怪物转过身，愤怒地追着洁塔薇而去。\n在这个间隙，你趁机拾起被怪物遗落的数据结晶，观察一会后，你发现那片结晶模糊地显示出了量子态文字。	查看文字	Assets/Product/Texture/Image/BgStory/BgStory657.jpg
+357	4015	401507	401508	1									赤红怪物	逃逸的警示					<size=25>>>></size><b>隐藏层</b>\n\n<size=30>两组不同训练集「Alpha&Beta」共用一个隐藏层，也就意味着……</size>\n\n<size=30>“人格的离散程度过高，与原本的意识样本没有什么交集，古灵精怪，简直像个孩子。</size>”\n\n<size=30>“但是，正因为像孩子一样，可塑性很强，是目前最接近自主觉醒的个体……”</size>\n\n<size=30>                                         ——《阶段性研究日志·III》</size>	收起	Assets/Product/Texture/Image/BgStory/BgStory657.jpg
+358	4015	401508		3					2	{1: 2021}	{1: 1}		赤红怪物	逃逸的警示					你收起了结晶，与洁塔薇配合分散怪物注意力后，你们成功脱离了那条虚空裂隙。	离开	Assets/Product/Texture/Image/BgStory/BgStory775.jpg
+359	4015	401509		3					1	{1: 96189}	{1: 200}		赤红怪物	逃逸的警示					你尝试加速越过怪物，但它比你想象中的更为敏捷，你无法靠近那块数据结晶。不走运的情况下，你只好赶在怪物冲过来前，与洁塔薇逃离了那条虚空裂隙。	离开	Assets/Product/Texture/Image/BgStory/BgStory657.jpg
+360	5001	500101	500102	1									知识假象	虚伪的天空	Assets/Product/Texture/Image/RoleStory/XiaojiqirenNormal01.png	机器人A	……		你们无意间闯入了某个遗落的观星台，在那里邂逅了机器人A，它自称由于事故被困在此处。	继续	Assets/Product/Texture/Image/BgStory/BgStory714.jpg
+361	5001	500102		2								500102	知识假象	虚伪的天空	Assets/Product/Texture/Image/RoleStory/XiaojiqirenNormal01.png	机器人A	……		在被困期间，机器人A对着头顶的夜空绘制了大量星象图，你上前查看它的画作，立即察觉到明显的问题\n——它画的并不是正确的星座。	决定	Assets/Product/Texture/Image/BgStory/BgStory714.jpg
+362	5001	500103		3					1	{1: 96189}	{1: 200}		知识假象	虚伪的天空					机器人的芯片是上世纪量产的劣等品，这种劣等品会严重折损机器人视觉传感器的寿命，或许这是机器人A无法正确识别星座的原因。	离开	Assets/Product/Texture/Image/BgStory/BgStory714.jpg
+363	5001	500104		3					3	{1: 1}	{1: 1}		知识假象	虚伪的天空					这套系统只有人类有权限登陆\n进入系统后你关闭了观星台穹顶的星空投影\n机器人A对你表示感谢，它总算看见了真实的夜空。	离开	Assets/Product/Texture/Image/BgStory/BgStory714.jpg
+364	5002	500201	500202	1									英雄假象	戏谑的厄运					你们在地下结识了正直的警探罗伯特，他声称这个建筑的底层隐藏着某个邪恶组织，许多平民被困在此处。	跟随他	Assets/Product/Texture/Image/BgStory/BgStory792.jpg
+365	5002	500202		2								500202	英雄假象	戏谑的厄运					与罗伯特闯入邪教大本营时，罗伯特在里面找到了已成为教主的女儿......唯有这件事，他求你替他保密。	决定	Assets/Product/Texture/Image/BgStory/BgStory792.jpg
+366	5002	500203		3					1	{1: 96189}	{1: 200}		英雄假象	戏谑的厄运					人们只愿意看到自己认可的英雄，罗伯特警探作为正义的象徽，不应该也不能因为这种事情崩坏瓦解。	离开	Assets/Product/Texture/Image/BgStory/BgStory792.jpg
+367	5002	500204		3					3	{1: 1}	{1: 1}		英雄假象	戏谑的厄运					有阳光照射的地方就存在阴影，维护虚伪的塑像只会滋长罪恶，包庇这件事的你亦会成为影的一部分。	离开	Assets/Product/Texture/Image/BgStory/BgStory792.jpg
+368	5002	500205	500206	1									英雄假象	戏谑的厄运	Assets/Product/Texture/Image/RoleStory/V260qyNormal04.png	洁塔薇	你认识我？		你告诉罗伯特探长，他的女儿并非天性使然的恶人，只是因为一个意外成为了邪教的教主，不需要因此感到任何愧疚。罗伯特对你的说法将信将疑，这时，那位年轻的「教主」认出了你身后的洁塔薇。	引荐洁塔薇	Assets/Product/Texture/Image/BgStory/BgStory792.jpg
+369	5002	500206		3					1	{1: 96189}	{1: 600}		英雄假象	戏谑的厄运	Assets/Product/Texture/Image/RoleStory/V290ldNormal03.png	罗伯特	谢谢你们。		你安慰罗伯特警长，表示洁塔薇到时候会出庭作证，证明他女儿的清白。罗伯特很是惊讶，为了感谢你的好意，他给予了你们丰厚的报酬。	离开	Assets/Product/Texture/Image/BgStory/BgStory792.jpg
+370	5003	500301	500302	1									才能假象	愚昧的天赋		神秘男子	漫长的苦行赋予了我与众不同的才能。		你们在地底邂逅了一位吟游诗人，他孑然一身，自称游览世界各个角落只为写成最伟大的诗集。	继续	Assets/Product/Texture/Image/BgStory/Bgstory532.jpg
+371	5003	500302		2								500302	才能假象	愚昧的天赋		神秘男子	……		男人问你是否愿意花钱让他为你写首叙事诗，但洁塔薇不以为然，当场即兴创作出若干首与男子风格相近的诗歌，这让腼腆的诗人面红耳赤。	决定	Assets/Product/Texture/Image/BgStory/Bgstory532.jpg
+372	5003	500303		3					3	{1: 1}	{1: 1}		才能假象	愚昧的天赋	Assets/Product/Texture/Image/RoleStory/V260qyNormal04.png	洁塔薇	……		诗人为你和洁塔薇创作了一首长诗，内容是关于冒险者和他傲慢的小女佣，但他这次改变主意，不打算收你的钱，声称是为了艺术。	离开	Assets/Product/Texture/Image/BgStory/Bgstory532.jpg
+373	5003	500304		3					1	{1: 96189}	{1: 200}		才能假象	愚昧的天赋					你询问诗人是否愿意买洁塔薇的诗，对方先是严词拒绝，后来出于好奇买了一首，并称赞洁塔薇有成为诗人的天赋。	离开	Assets/Product/Texture/Image/BgStory/Bgstory532.jpg
+374	5004	500401	500402	1									记忆假象	荒诞的印象	Assets/Product/Texture/Image/RoleStory/V260qyNormal08.png	洁塔薇	喂！别突然缠上来啊！		你们经过幽闭的暗道时，有个游民从暗处冲出来，一把抱住洁塔薇的腿。他声称洁塔薇是自己的救命恩人，但洁塔薇对此人毫无印象。	询问	Assets/Product/Texture/Image/BgStory/BgStory828.jpg
+375	5004	500402		2								500402	记忆假象	荒诞的印象	Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	游民	……		游民描述了他之前见过的洁塔薇——\n「手持惊人的武器，能同时与数只怪物战斗不落下风，像个战神。」	继续询问	Assets/Product/Texture/Image/BgStory/BgStory828.jpg
+376	5004	500403		2								500403	记忆假象	荒诞的印象	Assets/Product/Texture/Image/RoleStory/V260qyNormal04.png	洁塔薇	每次说法都不一样呢……		游民支支吾吾，一会声称他之前见过的洁塔薇拿着巨大的枪，一会又说是黑色的炮。	决定	Assets/Product/Texture/Image/BgStory/BgStory828.jpg
+377	5004	500404		3					3	{1: 1}	{1: 1}		记忆假象	荒诞的印象	Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	游民	恩人当时好像在独自追逐着什么……		望着你给的芯片，游民似乎又想起了什么，但说不太明白。	离开	Assets/Product/Texture/Image/BgStory/BgStory828.jpg
+378	5004	500405		1									记忆假象	荒诞的印象					你们不相信游民的话，转身离开了这里。	离开	Assets/Product/Texture/Image/BgStory/BgStory828.jpg
+379	5004	500406	500407	1									记忆假象	荒诞的印象	Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	游民	这件东西还给恩人吧！		游民支支吾吾，无法回忆起那位”洁塔薇“说过的话，只记得对方送了他一个武器箱。游民不擅长使用武器，他觉得你们比他更需要武器，于是将手中的武器箱送给你们。	收下	Assets/Product/Texture/Image/BgStory/BgStory828.jpg
+380	5004	500407		3					4	{1: 4}	{1: 1}		记忆假象	荒诞的印象	Assets/Product/Texture/Image/RoleStory/V260qyNormal04.png	洁塔薇	刚刚那人……是变态吧？		你收下了武器箱，带着洁塔薇离开了幽闭的暗道。	离开	Assets/Product/Texture/Image/BgStory/BgStory828.jpg
+381	5011	501101	501102	1									西西弗斯	即使是无数次…					你终于来到那些幻觉指引你的地方，紧闭的黑门背后隐匿着邪恶的气息，鲜红的数字【126】刻在门庭，迎接你的是自称门徒的少女。	前进	Assets/Product/Texture/Image/BgStory/Bgstory251.png
+382	5011	501102		2								501102	西西弗斯	即使是无数次…	Assets/Product/Texture/Image/RoleStory/TifaTheatre303.png	？？？	126，你在这里战败了126次，但你和那个女孩仍然站到了我的面前。		可悲的西西弗斯，还愿意继续推动那块巨石吗？	决定	Assets/Product/Texture/Image/BgStory/Bgstory251.png
+383	5011	501103		4	70002								西西弗斯	即使是无数次…	Assets/Product/Texture/Image/RoleStory/TifaTheatre303.png	？？？	……			直面	Assets/Product/Texture/Image/BgStory/Bgstory251.png
+384	5011	501104		1									西西弗斯	即使是无数次…	Assets/Product/Texture/Image/RoleStory/TifaTheatre303.png	？？？	……		门徒平静地目送你与洁塔薇离开诡异的黑门，好像你们未曾相遇过。	逃离	Assets/Product/Texture/Image/BgStory/Bgstory251.png
+385	5012	501201	501202	1									勇者之剑	最后的决斗					继承了师徒的意志，女巫的祝福，你跟随心中的指引来到这扇门前。	前进	Assets/Product/Texture/Image/BgStory/Bgstory340.jpg
+386	5012	501202		2								501202	勇者之剑	最后的决斗					回声在你耳边回荡，直觉告诉你，强大的敌人已经在此等待你太久。\n「是时候结束这一切，无论以何种形式......」	决定	Assets/Product/Texture/Image/BgStory/Bgstory340.jpg
+387	5012	501203		4	70003								勇者之剑	最后的决斗						直面	Assets/Product/Texture/Image/BgStory/Bgstory340.jpg
+388	5012	501204		1									勇者之剑	最后的决斗	Assets/Product/Texture/Image/RoleStory/V260qyNormal03.png	洁塔薇	……		敌人的实力让你不寒而栗，与曾经遇到的那个失去义肢的男人一样，逃离了这里	离开	Assets/Product/Texture/Image/BgStory/Bgstory340.jpg
+389	5013	501301	501302	1									白色虚镜	奇异的漩涡					行走在泥泞中，你和洁塔薇跌进了某个地陷，幽暗的空间中，一面银白的铜镜悬浮着。	上前查看	Assets/Product/Texture/Image/BgStory/BgStory688.jpg
+390	5013	501302		2								501302	白色虚镜	奇异的漩涡					镜面倒映不出你与洁塔薇的影子，取而代之的是乌黑的漩涡，似乎通往另一个空间，你注意到镜子的底部有一块凹槽。	决定	Assets/Product/Texture/Image/BgStory/BgStory688.jpg
+391	5013	501303	501304	1									白色虚镜	奇异的漩涡	Assets/Product/Texture/Image/RoleStory/V260qyNormal01.png	洁塔薇	看起来，和之前资料集上内容有点相像。		你将数据结晶摆到镜子前，镜面上拧成一团的黑色螺旋消失了，转而变成混沌状的白色。你感到手中的数据结晶开始发热，随后，镜面中隐约出现几行量子态文字。	查看	Assets/Product/Texture/Image/BgStory/BgStory688.jpg
+392	5013	501304	501305	1									白色虚镜	奇异的漩涡					<size=25>>>></size><b>算力枯竭</b>\n\n<size=30>“让两个人格模型进行交叉验证是好主意，但这让主机达到了满负荷。</size>\n\n<size=30>尤其是■■■的模型，简直像吞噬算力的怪兽，我们不得不限制她的‘胃口’。</size>\n\n<size=30>我担心持续下去会影响到防火墙的功能，不过其他人没有终止实验的意思。</size>\n\n<size=30>最近，外面传来了不好的消息，似乎世界各地都陷入了混乱……”</size>\n\n<size=30>                                         ——《阶段性研究日志·IV》</size>	收起结晶	Assets/Product/Texture/Image/BgStory/BgStory688.jpg
+393	5013	501305		3					2	{1: 2022}	{1: 1}		白色虚镜	奇异的漩涡					你发现结晶变得更加明亮，这似乎是最后的数据，收起结晶后，你们离开了这里。	离开	Assets/Product/Texture/Image/BgStory/BgStory688.jpg
+394	5013	501306	501307	1									白色虚镜	奇异的漩涡					你将血滴石放进镜子下方的凹槽，发现大小正好合适。镜中的漩涡开始剧烈地涌动起来，黑色的触手探出镜框将你们拖入镜中。	准备战斗	Assets/Product/Texture/Image/BgStory/BgStory688.jpg
+395	5013	501307		4	70007								白色虚镜	奇异的漩涡						继续	Assets/Product/Texture/Image/BgStory/BgStory688.jpg
+396	5013	501308	501309	1									白色虚镜	奇异的漩涡	Assets/Product/Texture/Image/RoleStory/V260qyNormal08.png	洁塔薇	小心，这镜子很不对劲！		洁塔薇盯着镜子看了一会，突然挥拳打碎了它，构成镜子的结晶碎片散了一地。	拾取碎片	Assets/Product/Texture/Image/BgStory/BgStory688.jpg
+397	5013	501309		2								501309	白色虚镜	奇异的漩涡					你拿起一块碎片，放到耳边时，你听见碎片在低语：\n「告诉我，你想要什么，我会实现你的愿望。」	决定	Assets/Product/Texture/Image/BgStory/BgStory688.jpg
+398	5013	501310		3					4	{1: 5}	{1: 1}		白色虚镜	奇异的漩涡					得到你的回应后，所有碎片突然消失，一个礼盒出现在了你的手上。	离开	Assets/Product/Texture/Image/BgStory/BgStory688.jpg
+399	5013	501311		3					1	{1: 96189}	{1: 500}		白色虚镜	奇异的漩涡					你没有回应它，将碎片带出这里后，你发现手中的碎片变成了些许芯片。	离开	Assets/Product/Texture/Image/BgStory/BgStory688.jpg
+400	5013	501312		3					2	{1: 2023}	{1: 1}		白色虚镜	奇异的漩涡					作出回答后，你发现碎片并没有什么反应。等待许久后，所有碎片突然消失，一瓶药丸出现在了你的手上。	离开	Assets/Product/Texture/Image/BgStory/BgStory688.jpg
+401	90001	9000101	9000102	1									异度投影	高维的邀请					你们在博物馆中迷了路，冥冥之中，有股奇怪的意志牵引着你步入从未开拓的领域。推开道路尽头的门，映入眼前的是闪烁着微光的投影仪。	靠近	Assets/Product/Texture/Image/BgStory/Bgstory60.jpg
+402	90001	9000102		2								9000102	异度投影	高维的邀请					你试着向前迈步，博物馆的红地毯转瞬消失，取而代之的没过脚踝的浅浅水泽。洁塔薇的身影在离你而去，而那台投影仪发出的光芒愈发耀眼。	决定	Assets/Product/Texture/Image/BgStory/Bgstory397.jpg
+403	90001	9000103		2								9000103	异度投影	高维的邀请					你的耳边传来大量嘈杂的声音。\n你听见许多的言语，感受到无数鲜活的意志。\n最终，所有的悸动汇聚成虚空递来的邀请——\n「在量子之海坍塌之前，观测吧。」	决定	Assets/Product/Texture/Image/BgStory/Bgstory397.jpg
+404	90001	9000104		3					2	{1: 1002}	{1: 1}		异度投影	高维的邀请	Assets/Product/Texture/Image/RoleStory/V260qyNormal04.png	洁塔薇	天选者，你对着墙做什么？		只是一瞬间的犹豫，你的身体随着无形的潮水向后退去。直到敞开的门扉重新闭合，你才意识到自己刚才是在神游。那台神秘的投影机也只是自己的幻想产物，不知为何，你感到很疲惫。	离开	Assets/Product/Texture/Image/BgStory/BgStory684.jpg
+405	90001	9000105		3			99991		2	{1: 9001}	{1: 1}		异度投影	高维的邀请						前进	Assets/Product/Texture/Image/BgStory/Bgstory397.jpg
+406	90001	9000106		3			99991	RG00704BA	2	{1: 9001}	{1: 1}		异度投影	高维的邀请						前进	Assets/Product/Texture/Image/BgStory/Bgstory397.jpg
+407	90002	9000201	9000202	1									无效救援						洁塔薇不小心掉进了一个地陷里，观察四周后，发现下方似乎还有一片隐匿的空间。	往下方走	Assets/Product/Texture/Image/BgStory/BgStory828.jpg
+408	90002	9000202	9000203	3					2	{1: 9100}	{1: 1}		无效救援						在地底深处，洁塔薇发现了一座临时庇护所、一具尸骸和少量物资。	回收物资	Assets/Product/Texture/Image/BgStory/BgStory603.jpg
+409	90002	9000203		2								9000203	无效救援		Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	……		庇护所内还有些设备调试工具	决定	Assets/Product/Texture/Image/BgStory/BgStory603.jpg
+410	90002	9000204		5		2							无效救援						前路凶险，洁塔薇决定调整下状态再出发。	调整状态	Assets/Product/Texture/Image/BgStory/BgStory603.jpg
+411	90002	9000205		1									无效救援						时间紧迫，洁塔薇使用武器强行打开了这个地下腔体，赶在坍塌前逃了出来。	出发	Assets/Product/Texture/Image/BgStory/BgStory603.jpg
+412	90003	9000301	9000302	1									骇客挑战						在区域边缘，洁塔薇进入了一个诡异的矩阵空间。这是自称私域骇客所留下的封闭挑战，只要通关才能安全离开。	接受挑战	Assets/Product/Texture/Image/BgStory/Bgstory116.png
+413	90003	9000302	9000303	3					2	{1: 9100}	{1: 1}		骇客挑战		Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	就这？		几乎在一瞬间，刚拟态出来的数据怪物就被洁塔薇直接击溃。离散的数据碎片化成物资散落在地上。	回收物资	Assets/Product/Texture/Image/BgStory/Bgstory116.png
+414	90003	9000303		2								9000303	骇客挑战						挑战完成后，封闭的空间内出现了一个离开的出口。	决定	Assets/Product/Texture/Image/BgStory/Bgstory117.png
+415	90003	9000304		5		2							骇客挑战						连续高压作战后，考虑到装备过载问题，洁塔薇决定在这稍作休整。	继续	Assets/Product/Texture/Image/BgStory/Bgstory117.png
+416	90003	9000305		1									骇客挑战						收起物资后，洁塔薇决定尽快前往出口，离开这里。	离开	Assets/Product/Texture/Image/BgStory/Bgstory117.png
+417	90004	9000401	9000402	1									自动化工坊	B.E.T.A					采用自动化流程和先进AI的B.E.T.A型无人工坊，装载的精密模组允许其对不同项目进行微调。	继续	Assets/Product/Texture/Image/BgStory/BgStory871.jpg
+418	90004	9000402		2								9000402	自动化工坊	B.E.T.A		提醒！	为了防止系统出现逻辑谬误，请谨慎调试配额......		启动B.E.T.A型无人工坊进行调整。	决定	Assets/Product/Texture/Image/BgStory/BgStory871.jpg
+419	90004	9000403		5		1							自动化工坊	B.E.T.A					洁塔薇决定进入工坊内进行整备。	进入	Assets/Product/Texture/Image/BgStory/BgStory871.jpg
+420	90004	9000404		5		2							自动化工坊	B.E.T.A					洁塔薇决定在外部简单休整下状态便离开。	休整	Assets/Product/Texture/Image/BgStory/BgStory871.jpg
+421	90004	9000405		5		3							自动化工坊	B.E.T.A					洁塔薇启动了工坊特殊实验室的权限	进入	Assets/Product/Texture/Image/BgStory/BgStory871.jpg
+422	90005	9000501	9000502	1									绯质核心	虚空的使者					洁塔薇在B.E.T.A的世界中接触到了意外的可能性，构成世界的根基出现了动摇，就连稳定的因果也发生了微妙的变化……	继续	Assets/Product/Texture/Image/BgStory/BgStory652.jpg
+423	90005	9000502	9000503	1									绯质核心	虚空的使者	Assets/Product/Texture/Image/RoleStory/HexinNormal01.png	洁塔薇.Beta	闪电吗……		四周的空间出现裂痕，震耳欲聋的轰鸣从中传出，绯色的球形发光体如雷霆般降临在她的面前。	靠近球体	Assets/Product/Texture/Image/BgStory/BgStory652.jpg
+424	90005	9000503		2								9000503	绯质核心	虚空的使者	Assets/Product/Texture/Image/RoleStory/HexinNormal01.png				触摸核心的瞬间，洁塔薇被深红的光辉笼罩，传送进了闭合的异空间之中。网格状的世界里，跳跃的光弧汇聚成了一句话。\n<color=#ff6767>「是否读取溢出的数据？」</color>	决定	Assets/Product/Texture/Image/BgStory/Bgstory293.png
+425	90005	9000504	9000507	3					4	{1: 7}	{1: 1}		绯质核心	虚空的使者		洁塔薇.Beta	这里面蕴含的能量，不容小觑……		耀眼的强光闪过，周围的扭曲空间瞬间回缩成密度极高的微型黑洞，随后消失不见。洁塔薇的面前出现了一个从未见过的虚空装置。	启用装置	Assets/Product/Texture/Image/BgStory/Bgstory293.png
+426	90005	9000505		1									绯质核心	虚空的使者					洁塔薇对这个来路不明的物体保持着警惕之心，她不希望在此驻足太久，小心地离开了红色异空间。	离开	Assets/Product/Texture/Image/BgStory/Bgstory293.png
+427	90005	9000506		3					4	{1: 5}	{1: 1}		绯质核心	虚空的使者					读取数据时，跳跃的光弧汇聚成了一句话。\n<color=#ff6767>「未检测到可执行熵变的目标，系统即将关闭。」</color>\n随后，这些数据化为武器箱掉入洁塔薇的手中，她被传送出了异空间。	离开	Assets/Product/Texture/Image/BgStory/Bgstory293.png
+428	90005	9000507		3					2	{1: 9010}	{1: 1}		绯质核心	虚空的使者					数据耦合完成，演算熵值上升。	离开	Assets/Product/Texture/Image/BgStory/Bgstory293.png
+429	90006	9000601	9000602	1									绯质核心	虚空再临					B.E.T.A的世界中，洁塔薇频繁的干涉使世界根基再次动摇，就连稳定的因果也发生了不可避免的变化。	继续	Assets/Product/Texture/Image/BgStory/Bgstory612.jpg
+430	90006	9000602	9000603	1									绯质核心	虚空再临	Assets/Product/Texture/Image/RoleStory/HexinNormal01.png	洁塔薇.Beta	又来？		遥远天际的裂痕突然扩大，绯色的球形发光体如雷霆般再次降临在她的面前。	靠近球体	Assets/Product/Texture/Image/BgStory/Bgstory612.jpg
+431	90006	9000603		2								9000603	绯质核心	虚空再临	Assets/Product/Texture/Image/RoleStory/HexinNormal01.png				触摸核心的瞬间，洁塔薇被深红的光辉笼罩，传送进了闭合的异空间之中。网格状的世界里，跳跃的光弧汇聚成了一句话。\n<color=#ff6767>「是否读取溢出的数据？」</color>	决定	Assets/Product/Texture/Image/BgStory/Bgstory293.png
+432	90006	9000604	9000607	3					4	{1: 7}	{1: 1}		绯质核心	虚空再临		洁塔薇.Beta	……		耀眼的强光闪过，周围的扭曲空间瞬间回缩成密度极高的微型黑洞，随后消失不见。洁塔薇的面前再次出现了虚空装置。	启用装置	Assets/Product/Texture/Image/BgStory/Bgstory293.png
+433	90006	9000605		1									绯质核心	虚空再临					洁塔薇对这个来路不明的物体依然保持着警惕之心，她不希望在此驻足太久，小心地离开了红色异空间。	离开	Assets/Product/Texture/Image/BgStory/Bgstory293.png
+434	90006	9000606		3					4	{1: 5}	{1: 1}		绯质核心	虚空再临					读取数据时，跳跃的光弧汇聚成了一句话。\n<color=#ff6767>「未检测到可执行熵变的目标，系统即将关闭。」</color>\n随后，这些数据化为武器箱掉入洁塔薇的手中，她被传送出了异空间。	离开	Assets/Product/Texture/Image/BgStory/Bgstory293.png
+435	90006	9000607		3					2	{1: 9010}	{1: 1}		绯质核心	虚空再临					数据耦合完成，演算熵值上升。	离开	Assets/Product/Texture/Image/BgStory/Bgstory293.png
+436	90007	9000701	9000702	1									湛蓝核心	虚空的使者					你与洁塔薇在A.L.P.H.A的世界中经历了许多，由于你们的干涉，这个世界积攒了足够的变量，就连稳定的因果也发生了微妙的变化……	继续	Assets/Product/Texture/Image/BgStory/Bgstory616.jpg
+437	90007	9000702	9000703	1									湛蓝核心	虚空的使者	Assets/Product/Texture/Image/RoleStory/HexinNormal02.png	洁塔薇	洁塔薇最怕闪电了……		遥远的天际出现裂痕，震耳欲聋的轰鸣撕裂了云层，蓝色的球形发光体如雷霆般降临在你们面前。	靠近球体	Assets/Product/Texture/Image/BgStory/Bgstory616.jpg
+438	90007	9000703		2								9000703	湛蓝核心	虚空的使者	Assets/Product/Texture/Image/RoleStory/HexinNormal02.png				触摸核心的瞬间，你们被蓝色的光辉笼罩，传送进了闭合的异空间之中。网格状的世界里，跳跃的光弧汇聚成了一句话。\n<color=#4a70b9>「是否读取溢出的数据？」</color>	决定	Assets/Product/Texture/Image/BgStory/Bgstory292.png
+439	90007	9000704		3					2	{1: 9002}	{1: 1}		湛蓝核心	虚空的使者	Assets/Product/Texture/Image/RoleStory/V260qyNormal01.png	洁塔薇	真不错啊，是个好东西吧！		耀眼的强光闪过，周围扭曲的空间瞬间回缩成密度极高的微型黑洞，随后消失不见。面前出现了一个从未见过的戒指，你相信这是虚空的馈赠。	回收戒指	Assets/Product/Texture/Image/BgStory/Bgstory292.png
+440	90007	9000705		1									湛蓝核心	虚空的使者					你害怕眼前这个闪闪发光的东西会突然爆炸，带着洁塔薇小心地离开了这个蓝色异空间。	离开	Assets/Product/Texture/Image/BgStory/Bgstory292.png
+441	90010	9001001	9001002	1									不期而遇	重逢的恶意「8:17:35」					洁塔薇径直走入了一处被红潮笼罩的迷雾之中，她能感受到四周盘旋的恶意。在视线触及不到的角落里，恶意不断攀升，洁塔薇从中闻到了熟悉的气息。	继续前进	Assets/Product/Texture/Image/BgStory/BgStory654.jpg
+442	90010	9001002	9001003	1									不期而遇	重逢的恶意「8:17:58」	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	这是……		在血色般弥漫的雾气最浓的地方，屹立着一扇古怪的门扉，那扇门的周身散发着灰与黑交织的光芒。	尝试触摸	Assets/Product/Texture/Image/BgStory/BgStory652.jpg
+443	90010	9001003		2								9001003	不期而遇	重逢的恶意「8:18:06」	Assets/Product/Texture/Image/RoleStory/V210llsNormal01.png	强欲镜像	呵，别来无恙呀，小可爱？		触碰门扉的那一刻，身后传来了阳伞撑开时金属碰撞发出的微妙弦音。洁塔薇闻声转身，红潮中站着一位熟悉的故人，除此之外，还有漫天飞舞的扑克牌。	决定	Assets/Product/Texture/Image/BgStory/BgStory652.jpg
+444	90010	9001004	9001005	1									不期而遇	重逢的恶意「8:18:59」	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	再来一次，你就能赢吗？		对方侧身避开了这一击，洁塔薇紧握着手中的武器，面无表情地举枪再次瞄准。两人对峙片刻，平台开始不断上升，四周的红雾逐渐散去，形成高悬的封闭擂台。	开始战斗	Assets/Product/Texture/Image/BgStory/BgStory653.jpg
+445	90010	9001005		4	970001								不期而遇	重逢的恶意						直面	Assets/Product/Texture/Image/BgStory/BgStory653.jpg
+446	90011	9001101	9001102	1									残象落语	未知的启示「8:34:23」	Assets/Product/Texture/Image/RoleStory/V210llsNormal02.png	强欲镜像	那扇门，通往中枢……		在洁塔薇压倒性的实力下，强欲镜像落败，身形逐渐瓦解，虚无的算力汇入了红潮的怀抱。消失的刹那，她看向门扉似乎说了些什么。	收起武器	Assets/Product/Texture/Image/BgStory/BgStory654.jpg
+447	90011	9001102	9001103	3					2	{1: 9100, 2: 9101}	{1: 1, 2: 1}		残象落语	未知的启示「8:34:51」	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	中枢？最高权限的所在吗？		洁塔薇面无表情地望着消散的强欲镜像，揣测着对方的话语，转身继续走向那扇诡异的门扉。	观察门扉	Assets/Product/Texture/Image/BgStory/BgStory654.jpg
+448	90011	9001103	9001104	1									残象落语	未知的启示「8:35:21」	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	看来暂时无法打开，没有合适的钥匙。		门扉上写着一行文字「通往真相之门」。上面有一个形状奇特的凹槽，需要持有特定的钥匙才能打开。	查看四周	Assets/Product/Texture/Image/BgStory/BgStory654.jpg
+449	90011	9001104	9001105	3					2	{1: 9003}	{1: 1}		残象落语	未知的启示「8:35:49」		洁塔薇.Beta	应该能派上用场。		地面上遗留着一张强欲镜像留下的<color=#ff6767>「黑桃皇后」</color>扑克牌。洁塔薇发觉里面蕴含着不可思议且扭曲的欲望，这股诡异的能量似乎是驱动强欲镜像行动的核心。	拾起纸牌	Assets/Product/Texture/Image/BgStory/BgStory654.jpg
+450	90011	9001105		2								9001105	残象落语	未知的启示「8:58:29」					清理附近区域后，洁塔薇发现了启动平台的机关。	决定	Assets/Product/Texture/Image/BgStory/BgStory654.jpg
+451	90011	9001106		5		2							残象落语	未知的启示「9:05:32」					刚才的作战消耗极大，洁塔薇决定原地休整下状态。	休整	Assets/Product/Texture/Image/BgStory/BgStory654.jpg
+452	90011	9001107		1									残象落语	未知的启示「9:12:25」					启动机关后，洁塔薇跟随平台继续向上方区域移动。	离开	Assets/Product/Texture/Image/BgStory/BgStory653.jpg
+453	305	30501	30502	1									爱憎囚笼	茜色的黄昏「4:31:13」		洁塔薇	莉莉，又是她……喂！		你和洁塔薇来到了曾给你们带去绝望的战场，四周都是破败的建筑，折断的石柱上坐着一位哼唱着不知名歌谣的粉发少女。	靠近	Assets/Product/Texture/Image/BgStory/Bgstory612.jpg
+454	305	30502		2								30502	爱憎囚笼	茜色的黄昏「4:28:34」					在你分心的片刻，身后出现了一道漆黑色的裂痕，红色弓矢从裂痕中出现，瞄准的方向是……洁塔薇！	决定	Assets/Product/Texture/Image/BgStory/Bgstory612.jpg
+455	305	30503	30504	1									爱憎囚笼	茜色的黄昏「4:26:43」					你想这么做，但刚想要开口，红色弓矢已贯穿了洁塔薇的身体，她发出了惨叫。你想要过去帮她，但是从天而降的怪物却横亘在洁塔薇与你之间。地面不断渗出红色的潮水，而粉发少女早已离开。	开始战斗	Assets/Product/Texture/Image/BgStory/Bgstory614.jpg
+456	305	30504		4	30071								爱憎囚笼	茜色的黄昏「4:26:43」						开始战斗	Assets/Product/Texture/Image/BgStory/Bgstory614.jpg
+457	305	30505	30506	1									爱憎囚笼	茜色的黄昏「4:26:41」	Assets/Product/Texture/Image/RoleStory/V260qyNormal04.png	洁塔薇	这是什么？		被你取出的<color=#b73a3a>「黑桃皇后」</color>发出了强光，耀眼的光芒遮蔽了你的视线。纸牌与漆黑色的裂痕产生了共鸣。强光散去后，红色弓矢和裂痕均已消散，你和洁塔薇因此幸免于难。	警戒四周	Assets/Product/Texture/Image/BgStory/Bgstory612.jpg
+458	305	30506	30507	1									爱憎囚笼	茜色的黄昏「4:24:44」	Assets/Product/Texture/Image/RoleStory/V260qyNormal08.png	洁塔薇	小心，这个女人的气势不太对劲。		你听见了谁人的掌声，坐在石柱边的粉发少女站了起来。她面带微笑，踩着雪白的松糕鞋跨过地上的钢筋与混凝土来到你们面前。	注视对方	Assets/Product/Texture/Image/BgStory/Bgstory612.jpg
+459	305	30507		2								30507	爱憎囚笼	茜色的黄昏「4:23:15」	Assets/Product/Texture/Image/RoleStory/TifaTheatre303.png	莉莉	该用哪副面具好呢？对了……		「劳心劳力的约伯，你还想替她走多远呢？」\n「不如留下来陪我一起，我很寂寞呢。」\n莉莉的粉色长发逐渐褪去色彩。	询问	Assets/Product/Texture/Image/BgStory/Bgstory612.jpg
+460	305	30508	30509	1									爱憎囚笼	茜色的黄昏「4:22:55」	Assets/Product/Texture/Image/RoleStory/TifaTheatre303.png	爱憎镜像	喜欢我现在的发色吗？		「我是高位权限的分身，忠诚的奴仆，恋人的刑具。」\n「我是预言，也是应验本身。」\n「你想得到真相，就从我手中拿到那一半钥匙。」\n莉莉轻柔地起身，对你露出暧昧的微笑。裙摆之下，是如幻影般不断溢出的红潮虚像。	发起攻击	Assets/Product/Texture/Image/BgStory/BgStory627.jpg
+461	305	30509		4	970002								爱憎囚笼	茜色的黄昏「4:22:55」						发起攻击	Assets/Product/Texture/Image/BgStory/BgStory627.jpg
+462	306	30601	30602	1									爱憎终途	既定的道路「4:01:02」		莉莉	恭喜你……		爱憎镜像在你面前倒下了，狰狞的身躯随着能量的散失化为数据状的颗粒逐渐消逝。	查看四周	Assets/Product/Texture/Image/BgStory/BgStory627.jpg
+463	306	30602	30603	3					2	{1: 9004}	{1: 1}		爱憎终途	既定的道路「3:57:02」					潮水退去后，你注意到地面上遗落了一张<color=#b73a3a>「红桃皇后」</color>，和之前的<color=#b73a3a>「黑桃皇后」</color>一样，你能感受到其中蕴含着强大能量和算力。	拾取纸牌	Assets/Product/Texture/Image/BgStory/Bgstory613.jpg
+464	306	30603	30604	1									爱憎终途	既定的道路「3:55:19」	Assets/Product/Texture/Image/RoleStory/V260qyNormal04.png	洁塔薇	你没事吧！		拿起<color=#b73a3a>「红桃皇后」</color>时，一阵剧烈的头疼侵蚀了你。顷刻间，你的脑海闪过许多断断续续的字眼。\n「通往中枢……逃离这里……」\n你抱着脑袋蹲在地上，而后终于听清那个喃喃之语。\n「去找到开启它的钥匙。」\n<color=#b73a3a>「虚空的来客会引导你……」</color>\n没有来由的声音在你心里回荡着，宛若某种古老的预言令你心潮澎湃。	检视纸牌	Assets/Product/Texture/Image/BgStory/Bgstory613.jpg
+465	306	30604	30605	1									爱憎终途	既定的道路「3:54:48」		洁塔薇	诶，消失了！		当你将<color=#b73a3a>「黑桃皇后」</color>与<color=#b73a3a>「红桃皇后」</color>重叠在一起时，光线在两张卡牌的重叠部分显示出了一行坐标。随后，两张重叠的卡牌凭空消失，化为数据形态进入了不知何时出现的虚空裂痕之中。	清理四周	Assets/Product/Texture/Image/BgStory/Bgstory613.jpg
+466	306	30605	30606	3					2	{1: 1002, 2: 1005}	{1: 1, 2: 1}		爱憎终途	既定的道路「3:52:38」						回收物资	Assets/Product/Texture/Image/BgStory/Bgstory613.jpg
+467	306	30606		2								30606	爱憎终途	既定的道路「3:52:18」						决定	Assets/Product/Texture/Image/BgStory/Bgstory613.jpg
+468	306	30607		5		2							爱憎终途	既定的道路「3:47:23」					你决定和洁塔薇在附近整理下线索并稍作休整。	休整	Assets/Product/Texture/Image/BgStory/Bgstory613.jpg
+469	306	30608		1									爱憎终途	既定的道路「3:48:43」					对于脱离循环的渴望，使你难以在此停顿，你决定即刻出发。	出发	Assets/Product/Texture/Image/BgStory/Bgstory613.jpg
+470	701	70101	70102	1									真相之庭	如在虚像之中「0:00:59」					你和洁塔薇行至一个闭锁的迷宫。正当你们找不到出口时，身后倏地出现了一道漆黑的虚空裂痕，裂痕中似乎隐约可以看见某个发光的物件。	伸手去取	Assets/Product/Texture/Image/BgStory/BgStory906.jpg
+471	701	70102	70103	1									真相之庭	如在虚像之中「0:00:50」	Assets/Product/Texture/Image/RoleStory/V260qyNormal01.png	洁塔薇	这是那扇门的钥匙吗？		你从虚空的裂痕中得到了一柄「红色钥匙」，随之，空气立即被一片浓厚的血雾覆盖。你注意到血雾中屹立着一扇古怪的门扉，那扇门的周身散发着灰与黑交织的光芒。	接近门扉	Assets/Product/Texture/Image/BgStory/BgStory830.jpg
+472	701	70103	70104	1									真相之庭	如在虚像之中「0:00:45」	Assets/Product/Texture/Image/RoleStory/ZhongguochuanshangrenNormal02.png	洁塔薇	天选者，小心！		你远远地看见门扉上方写着「通往真相之门」几个字。当你满怀期待地准备去触摸时，一截锋利的铁管从你身侧袭来，将你与门分隔开。不远处的迷雾中出现了熟悉的身影——那是曾经将师傅托付的武器交到你手中、失去义肢的单臂男人。	谨慎后退	Assets/Product/Texture/Image/BgStory/BgStory830.jpg
+473	701	70104		2								70104	真相之庭	如在虚像之中「0:00:40」		洁塔薇	忘恩负义的家伙……		「好久不见，别来无恙~」\n「之前麻烦你帮我打倒烦人的剑客真是感激不尽！」\n「隐瞒身份的事我很抱歉，不过身为那位大人的分身……事到如今，我也不得不以敌人的姿态与你们见面了。」	决定	Assets/Product/Texture/Image/BgStory/BgStory830.jpg
+474	701	70105	70107	1									真相之庭	如在虚像之中「0:00:30」	Assets/Product/Texture/Image/RoleStory/ZhongguochuanshangrenNormal01.png	傲岸镜像	抱歉，你们的旅行到此为止了，我不能让你们靠近那扇门。		男人仅剩的那只手臂微微抬起，大量的红色数据结晶凭空出现，凝聚在男人的手中。	直面	Assets/Product/Texture/Image/BgStory/BgStory830.jpg
+475	701	70106	70107	1									真相之庭	如在虚像之中「0:00:30」	Assets/Product/Texture/Image/RoleStory/ZhongguochuanshangrenNormal01.png	傲岸镜像	谁知道呢，我的任务只是在这里阻止你们，至于其他的事，或许是惊喜也说不定呢。		男人面带微笑的脱下身上穿着的斗篷，身形在顷刻间高大了数倍。	直面	Assets/Product/Texture/Image/BgStory/BgStory830.jpg
+476	701	70107		4	970004								真相之庭	如在虚像之中						离开	Assets/Product/Texture/Image/BgStory/BgStory830.jpg
+477	90012	9001201	9001202	1									宿命之间	终点亦是起点「23:55:23」					洁塔薇跟随着倒行的云与逆飞的鸟儿，来到了所有灾难与怪物诞生的温床，随着时间的加速，大量怪物被红潮收束了起来。	前进	Assets/Product/Texture/Image/BgStory/BgStory913.jpg
+478	90012	9001202		2								9001202	宿命之间	终点亦是起点「23:56:71」	Assets/Product/Texture/Image/RoleStory/MajiyaweiliTheatre302.png	？？？	又见面了，智慧增长了吗？		没有一丝的犹豫，洁塔薇踏入了那片带来混沌与新生的战场，迎面而来的是数不尽的怪物。她的目光越过这些怪物，笔直地望向隐藏在后方的黑色阴影……	决定	Assets/Product/Texture/Image/BgStory/BgStory627.jpg
+479	90012	9001203		2								9001203	宿命之间	终点亦是起点「23:57:23」	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	远距离攻击无效吗，那么……		洁塔薇毫不犹豫地扣下扳机，光束将前方的怪物尽数焚尽。然而，阴影中的庞然大物似乎毫发无损。	决定	Assets/Product/Texture/Image/BgStory/BgStory627.jpg
+480	90012	9001204		2								9001204	宿命之间	终点亦是起点「23:59:33」	Assets/Product/Texture/Image/RoleStory/MajiyaweiliTheatre302.png	智识镜像	这里不会有门，你能明白吗？		望着洁塔薇手中的红色秘钥，智识镜像露出了满意的神情。他大手一挥，身后出现了虚空裂痕，漆黑裂痕的对面是两个熟悉的人影。	决定	Assets/Product/Texture/Image/BgStory/BgStory912.jpg
+481	90012	9001205		1			99993						宿命之间	终点亦是起点「23:59:59」	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	智识镜像	希望你不后悔自己的选择。		洁塔薇将秘钥掷进虚空裂痕，伴随着诡异的光芒，虚空对岸的人影略微晃动了一下，裂痕也随之消失。	离开	Assets/Product/Texture/Image/BgStory/BgStory912.jpg
+482	90012	9001206	9001207	1									宿命之间	终点亦是起点「23:57:53」	Assets/Product/Texture/Image/RoleStory/MajiyaweiliTheatre302.png	智识镜像	看来，你的智慧没有增长太多。		洁塔薇无法信任敌人的话语，收起了钥匙。	准备战斗	Assets/Product/Texture/Image/BgStory/BgStory627.jpg
+483	90012	9001207		4	970003								宿命之间	终点亦是起点「23:57:53」						开枪	Assets/Product/Texture/Image/BgStory/BgStory627.jpg
+484	90012	9001208	9001209	1									宿命之间	终点亦是起点「23:59:33」	Assets/Product/Texture/Image/RoleStory/MajiyaweiliTheatre302.png	智识镜像	看来，你的力量比智慧增长得更快。		洁塔薇迅速拉近了与对方的距离，双方还没来得及打上照面，四周埋伏的怪物就从两侧夹击过来，但不过片刻就被洁塔薇消灭殆尽。	开枪	Assets/Product/Texture/Image/BgStory/BgStory627.jpg
+485	90012	9001209		4	970003								宿命之间	终点亦是起点「23:59:33」						开枪	Assets/Product/Texture/Image/BgStory/BgStory627.jpg
+486	90013	9001301	9001302	1									虚空商人	纸牌收藏家					洁塔薇注意到周围的时空出现了扭曲，她小心地沿着歪曲和破碎的地表前进，直到碰上一个身材扭曲的实体。洁塔薇警惕地举起武器，不过对方看上去没有恶意，于是她放下了戒心。	询问对方	Assets/Product/Texture/Image/BgStory/BgStory818.jpg
+487	90013	9001302		2								9001302	虚空商人	纸牌收藏家	Assets/Product/Texture/Image/RoleStory/V290gwNormal03.png	？？？	我是穿梭于虚空的商人。		商人声称自己喜欢收藏各种诡异的纸牌。如果洁塔薇手里恰好有的话，它愿意用值钱的东西进行交换。	决定	Assets/Product/Texture/Image/BgStory/BgStory818.jpg
+488	90013	9001303		2								9001303	虚空商人	纸牌收藏家	Assets/Product/Texture/Image/RoleStory/V290gwNormal03.png	虚空商人	真是漂亮的卡片。		洁塔薇拿出从强欲镜像那里得到的<color=#ff6767>「黑桃皇后」</color>，商人对这张纸牌很感兴趣，询问洁塔薇是否有意向出售或者暂时借给对方。商人承诺会在<color=#ff6767>「未来」</color>将纸牌原封不动地还给洁塔薇。	决定	Assets/Product/Texture/Image/BgStory/BgStory818.jpg
+489	90013	9001304		1									虚空商人	纸牌收藏家					洁塔薇拒绝了商人的请求，离开了这个扭曲的空间。	离开	Assets/Product/Texture/Image/BgStory/BgStory585.jpg
+490	90013	9001305		3					3	{1: 5}	{1: 1}		虚空商人	纸牌收藏家	Assets/Product/Texture/Image/RoleStory/V290gwNormal03.png	虚空商人	明智的选择。		商人收下了洁塔薇的纸牌。在递给她一份包裹后，跟随着逐渐闭合的虚空裂痕离开了这里。	离开	Assets/Product/Texture/Image/BgStory/BgStory585.jpg
+491	90013	9001306		3					1	{1: 96189}	{1: 400}		虚空商人	纸牌收藏家	Assets/Product/Texture/Image/RoleStory/V290gwNormal03.png	虚空商人	不错的交易，欢迎下次光临。		不知作用的诡异纸牌让洁塔薇难以安心。斟酌片刻后，她选择向商人换取报酬。商人递给了洁塔薇一袋物资，然后跟随着逐渐闭合的虚空裂痕离开了这里。	离开	Assets/Product/Texture/Image/BgStory/BgStory818.jpg
+492	90014	9001401	9001402	1									虚空商人	再临的来客	Assets/Product/Texture/Image/RoleStory/V290gwNormal02.png	虚空商人	尊敬的小姐，别来无恙。		洁塔薇注意到周围的时空出现了扭曲，她小心地沿着歪曲和破碎的地表前进，直到碰上一个外形扭曲的实体，虚空商人似乎已经在那里等待洁塔薇许久。	询问意图	Assets/Product/Texture/Image/BgStory/BgStory818.jpg
+493	90014	9001402	9001403	1									虚空商人	再临的来客	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	我不记得有你要的东西。		虚空商人声称自己手中握有洁塔薇缺少的关键物品，如果洁塔薇恰好带着稀有纸牌，可以跟他交换那样东西。	检查背包	Assets/Product/Texture/Image/BgStory/BgStory818.jpg
+494	90014	9001403		2								9001403	虚空商人	再临的来客		洁塔薇.Beta	……		诡异的事情发生了，不知何时，洁塔薇的口袋中凭空出现了两张奇怪的纸牌。	决定	Assets/Product/Texture/Image/BgStory/BgStory818.jpg
+495	90014	9001404	9001407	3					2	{1: 9005}	{1: 1}		虚空商人	再临的来客	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal03.png	洁塔薇.Beta	这是！！！		洁塔薇交出了持有的两张纸牌，商人将红色秘钥递给洁塔薇，声称这是从另一个时空的战场回收的，同时，这也是另一把秘钥的镜像产物。	收下	Assets/Product/Texture/Image/BgStory/BgStory818.jpg
+496	90014	9001405	9001407	3			99994		4	{1: 7}	{1: 1}		虚空商人	再临的来客	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	你付的代价，看上去不坏。		洁塔薇谨慎地交出了两张<color=#ff6767>「黑桃皇后」</color>，虚空商人确认后颇为满意地收了下来。为了感谢洁塔薇，商人慷慨地付出了报酬——那是他从其他时空回收的稀有补给盒，还未曾被拿出来交易过，这一次是破例。	收下	Assets/Product/Texture/Image/BgStory/BgStory818.jpg
+497	90014	9001406		1									虚空商人	再临的来客					洁塔薇拒绝了商人的请求，随后离开了扭曲的空间。	离开	Assets/Product/Texture/Image/BgStory/BgStory585.jpg
+498	90014	9001407		1									虚空商人	再临的来客		虚空商人	交易完成，祝你好运，尊敬的小姐。		完成交易后，商人跟随着逐渐闭合的虚空裂痕离开了这里。	离开	Assets/Product/Texture/Image/BgStory/BgStory585.jpg
+499	307	30701	30702	1									虚空商人	诚信履约者	Assets/Product/Texture/Image/RoleStory/V290gwNormal01.png	？？？	尊敬的小姐，好久不见。		你和洁塔薇注意到周围的时空出现了扭曲，你们小心地沿着歪曲和破碎的地表前进，直到碰上一个身材扭曲的实体，他似乎已经在那里等待了你们很久了。	靠近	Assets/Product/Texture/Image/BgStory/BgStory817.jpg
+500	307	30702	30703	1									虚空商人	诚信履约者	Assets/Product/Texture/Image/RoleStory/V260qyNormal04.png	洁塔薇	欸，你是？我好像没见过你。		自称为虚空商人的扭曲实体似乎认识洁塔薇，但洁塔薇和你却对它完全没有印象。	询问对方	Assets/Product/Texture/Image/BgStory/BgStory817.jpg
+501	307	30703		2								30703	虚空商人	诚信履约者	Assets/Product/Texture/Image/RoleStory/V290gwNormal01.png	虚空商人	做生意最重要的就是诚信。		虚空商人表示洁塔薇曾经借给了它一张纸牌，它承诺会在「未来」归还。现在它是来履行契约的。	决定	Assets/Product/Texture/Image/BgStory/BgStory817.jpg
+502	307	30704	30705	3					2	{1: 9003}	{1: 1}		虚空商人	诚信履约者					虚空商人将<color=#b73a3a>「黑桃皇后」</color>递给洁塔薇，你观察了一下纸牌，发现里面蕴藏了大量诡异的能量。	收起纸牌	Assets/Product/Texture/Image/BgStory/BgStory817.jpg
+503	307	30705		1									虚空商人	诚信履约者		虚空商人	契约完成，我先行一步，祝你们好运。		将纸牌归还后，虚空商人跟随着逐渐闭合的虚空裂痕离开了这里。	离开	Assets/Product/Texture/Image/BgStory/BgStory585.jpg
+504	307	30706		1									虚空商人	诚信履约者					你感觉商人手上的卡牌十分诡异，安全起见，你决定拉上洁塔薇，赶紧离开这个扭曲的空间。	离开	Assets/Product/Texture/Image/BgStory/BgStory585.jpg
+505	307	30707	30708	1									虚空商人	诚信履约者	Assets/Product/Texture/Image/RoleStory/V290gwNormal01.png	虚空商人	这是……		你拿出了投影仪，虚空商人对此很感兴趣，仔细观察后商人皱起了眉头。他告诉你这台投影仪的功能并未完全开放，现在能做到的只有“观测”，还无法实现真正的“穿梭”。	询问对方	Assets/Product/Texture/Image/BgStory/BgStory585.jpg
+506	307	30708	30709	3					2	{1: 9031}	{1: 1}		虚空商人	诚信履约者	Assets/Product/Texture/Image/RoleStory/V290gwNormal01.png	虚空商人	小事一件，就当做借用卡牌的利息吧		你询问虚空商人能否修改这台机器，虚空商人激活卡牌并与投影机进行融合，成功修复投影机后递给你。	收下	Assets/Product/Texture/Image/BgStory/BgStory585.jpg
+507	307	30709		1									虚空商人	诚信履约者		洁塔薇	监察者是什么？		商人在离开时提醒你们，穿梭时空时千万不能被虚空监察者察觉，否则，下场是致命的……	离开	Assets/Product/Texture/Image/BgStory/BgStory585.jpg
+508	92100	9210001	9210002	1									不速之客	新的挑战者					洁塔薇推开了一扇隐匿于黑暗处的神秘门扉，她看见了两个正与怪物剑士搏斗的人类，他们看上去是配合默契的师徒。	观察情况	Assets/Product/Texture/Image/BgStory/Bgstory340.jpg
+509	92100	9210002		2								9210002	不速之客	新的挑战者					可惜，由于实力悬殊，顶在前头的老者已经倒下，辅助作战的年轻人也即将被怪物啃食。	决定	Assets/Product/Texture/Image/BgStory/Bgstory340.jpg
+510	92100	9210003	9210004	1									不速之客	新的挑战者	Assets/Product/Texture/Image/RoleStory/BalaswordNomal.png	怪物剑士	逾越规矩的人，以后你可要当心了。		洁塔薇突然朝怪物开枪，怪物被打了个措手不及，身体被射线击穿，只好带着伤狼狈撤退。最终，洁塔薇救下了负伤的年轻人。	查看伤势	Assets/Product/Texture/Image/BgStory/BgStory24.jpg
+511	92100	9210004		3					3	{1: 4}	{1: 1}		不速之客	新的挑战者	Assets/Product/Texture/Image/RoleStory/ZhongguochuanshangrenNormal01.png	年轻人	谢谢你。		年轻人的义肢刚刚被怪物啃食掉，但其他地方只是受了轻伤。为了感谢洁塔薇出手相救，他将还未用上的补给箱送给了洁塔薇。	离开	Assets/Product/Texture/Image/BgStory/BgStory24.jpg
+512	92100	9210005		2								9210005	不速之客	新的挑战者	Assets/Product/Texture/Image/RoleStory/BalaswordNomal.png	怪物剑士	公平的决斗是无上的荣耀。		怪物剑士欣然接受了洁塔薇的邀请，他以年轻人的性命为赌注。只要洁塔薇赢下比试，就放过那位年轻人。	决定	Assets/Product/Texture/Image/BgStory/BgStory24.jpg
+513	92100	9210006		3					2	{1: 9012}	{1: 1}		不速之客	新的挑战者	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	哼……		洁塔薇使用了【奇袭】，怪物剑士还未反应过来便倒在了射线攻击下。收走怪物的利剑后，洁塔薇给负伤的年轻人留下一些补给便离开了这里。	离开	Assets/Product/Texture/Image/BgStory/BgStory24.jpg
+514	92100	9210007	9210009	1									不速之客	新的挑战者	Assets/Product/Texture/Image/RoleStory/BalaswordNomal.png	怪物剑士	逾越规矩的人，死！		洁塔薇使用了【奇袭】，但怪物敏锐的发觉了她的意图，躲开了这一击。恼怒于洁塔薇的逾越，怪物举剑快速向洁塔薇刺去。	准备战斗	Assets/Product/Texture/Image/BgStory/BgStory24.jpg
+515	92100	9210008	9210009	1									不速之客	新的挑战者	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	准备好了？		为了对决的公平性，洁塔薇等待对方准备之后再发动进攻。	准备战斗	Assets/Product/Texture/Image/BgStory/BgStory24.jpg
+516	92100	9210009		4	970005								不速之客	新的挑战者						准备战斗	Assets/Product/Texture/Image/BgStory/BgStory24.jpg
+517	93100	9310001		2								9310001	多门问题	参差的选项					洁塔薇来到了一处设施前，面前出现的是编号【零】到【十】门扉，守门人要洁塔薇随机选择一道门。	决定	Assets/Product/Texture/Image/BgStory/Bgstory350.jpg
+518	93100	9310002		2								9310002	多门问题	参差的选项	Assets/Product/Texture/Image/RoleStory/V250sytNormal01.png	守门人	既然选择了，就要支付代价。		洁塔薇径直走进三号门，里面什么也没有。当她准备离开时，门却被守门人从外侧锁死，守门人非要洁塔薇交出一些芯片才肯放她出来。	决定	Assets/Product/Texture/Image/BgStory/Bgstory7.jpg
+519	93100	9310003		1									多门问题	参差的选项	Assets/Product/Texture/Image/RoleStory/V250sytNormal01.png	守门人	明智的选择。		洁塔薇答应交出芯片，守门人打开门放洁塔薇离开。	离开	Assets/Product/Texture/Image/BgStory/Bgstory350.jpg
+520	93100	9310004	9310005	1									多门问题	参差的选项	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal04.png	洁塔薇.Beta	你本来可以不用死的……		洁塔薇举起武器直接把门轰开，守门人被洁塔薇的行为激怒，朝着她冲了过去。	准备战斗	Assets/Product/Texture/Image/BgStory/Bgstory350.jpg
+521	93100	9310005		4	970012								多门问题	参差的选项						准备战斗	Assets/Product/Texture/Image/BgStory/Bgstory350.jpg
+522	93100	9310006		2								9310006	多门问题	参差的选项	Assets/Product/Texture/Image/RoleStory/V250sytNormal01.png	守门人	想要带走它，需要支付代价。		洁塔薇从七号门中回收了奇怪的武器，守门人要洁塔薇留下些芯片才肯让她带走武器。	决定	Assets/Product/Texture/Image/BgStory/Bgstory350.jpg
+523	93100	9310007		3					2	{1: 2007}	{1: 1}		多门问题	参差的选项					洁塔薇留下了部分芯片带走了武器。	离开	Assets/Product/Texture/Image/BgStory/Bgstory350.jpg
+524	93100	9310008		1									多门问题	参差的选项					洁塔薇拒绝了守门人的要求，留下了武器径直离开。	离开	Assets/Product/Texture/Image/BgStory/Bgstory350.jpg
+525	93100	9310009		2								9310009	多门问题	参差的选项	Assets/Product/Texture/Image/RoleStory/V230bossTheatre304.png	怪物	嘶……		洁塔薇进入九号门后，发现房间住着一只被铁链困住的高大怪物。怪物的面相狰狞，布满爪牙的巨口不断流下唾液，它恳求洁塔薇斩断那些铁链。	决定	Assets/Product/Texture/Image/BgStory/Bgstory341.jpg
+526	93100	9310010		3					2	{1: 9011}	{1: 1}		多门问题	参差的选项	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal02.png	洁塔薇.Beta	这东西到底有什么用……		为了感谢洁塔薇的恩情，怪物留下了一个奇怪的门牙，随后便撞破门扉逃进了虚空的裂痕中。	离开	Assets/Product/Texture/Image/BgStory/Bgstory341.jpg
+527	93100	9310011		1									多门问题	参差的选项					考虑到危险性，洁塔薇拒绝了怪物的请求。怪物愤怒地朝洁塔薇嘶吼了半天，目送着洁塔薇离开第九号房间。	离开	Assets/Product/Texture/Image/BgStory/Bgstory350.jpg
+528	94100	9410001	9410002	1									孩童游戏	意外的来客					洁塔薇在树林间邂逅了一对双胞胎姐弟，他们正在玩躲猫猫游戏并邀请洁塔薇加入，姐姐要洁塔薇闭上眼倒数十个数再开始。	开始倒数	Assets/Product/Texture/Image/BgStory/BgStory539.jpg
+529	94100	9410002		2								9410002	孩童游戏	意外的来客	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal02.png	洁塔薇.Beta	6，5，4……		当洁塔薇数到一半时，她听见身后传来了某种野兽的低沉嘶吼声。	决定	Assets/Product/Texture/Image/BgStory/BgStory539.jpg
+530	94100	9410003		2								9410003	孩童游戏	意外的来客	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	……		洁塔薇的的身后出现了一群郊狼，洁塔薇朝狼王举起了枪，但她又担心放射线误击躲在某棵树后的兄妹。	决定	Assets/Product/Texture/Image/BgStory/BgStory539.jpg
+531	94100	9410004	9410005	1									孩童游戏	意外的来客	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	人呢？		洁塔薇朝天空开枪，绯红色的光和炸裂声一瞬间让森林里的鸟兽四散，刚才和洁塔薇玩捉迷藏的兄妹早已没了踪影，或许是被突如其来的枪声吓跑了吧。	观察四周	Assets/Product/Texture/Image/BgStory/BgStory539.jpg
+532	94100	9410005		3					3	{1: 4}	{1: 1}		孩童游戏	意外的来客					眼前的狼群也被吓跑，洁塔薇根据狼群的脚印，在附近的巢穴里回收了一些物资。	离开	Assets/Product/Texture/Image/BgStory/BgStory539.jpg
+533	94100	9410006	9410007	3					1	{1: 96189}	{1: 200}		孩童游戏	意外的来客	Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal01.png	男孩	姐姐不见了。		洁塔薇谨慎地收起了枪，狼群因此没有再继续近逼，而是撤退了出去。洁塔薇很快在附近找到了弟弟，并将他安置到附近安全的孤儿院里暂时躲藏，在简单补给之后，又出发去寻找姐姐。	仔细搜索	Assets/Product/Texture/Image/BgStory/BgStory636.jpg
+534	94100	9410007		1									孩童游戏	意外的来客	Assets/Product/Texture/Image/RoleStory/TongyongNanmingirlNormal01.png	女孩	对不起……		洁塔薇最终在密林深处找到了正在观察昆虫的姐姐，并平安地将她带回孤儿院。	离开	Assets/Product/Texture/Image/BgStory/BgStory636.jpg
+535	94100	9410008	9410009	1									孩童游戏	意外的来客	Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal01.png	男孩	啊……		洁塔薇数完十个数时听见了男孩的惨叫，她朝声音的方向奔了过去，看见了一匹咬住男孩小腿的郊狼。情急之下，洁塔薇朝郊狼开枪，灼热的光束将郊狼化为粉末，只遗落下泛着银光的狼符。	查看伤势	Assets/Product/Texture/Image/BgStory/BgStory539.jpg
+536	94100	9410009		3					2	{1: 9013}	{1: 1}		孩童游戏	意外的来客					洁塔薇发现男孩并没有受伤，询问过后才知道，刚才的郊狼似乎只是想帮忙咬断缠住男孩小腿的荆棘。	拿走狼符	Assets/Product/Texture/Image/BgStory/BgStory539.jpg
+537	95100	9510001	9510002	1									停滞钟摆	染上绯红色					黑夜笼罩了天幕，洁塔薇独自一人穿梭于破败的建筑群中，此时，残檐断壁中一个发着绯红色光亮的钟摆吸引了她。这个钟摆与周围的一切都显得格格不入。	贴近观察	Assets/Product/Texture/Image/BgStory/Bgstory94.png
+538	95100	9510002		2								9510002	停滞钟摆	染上绯红色	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	搞什么啊？		洁塔薇发现钟摆上贴着一条纸条。她情不自禁地读出了上面的文字\n——「想为世界染上色彩吗？那就转动齿轮吧。」	决定	Assets/Product/Texture/Image/BgStory/Bgstory94.png
+539	95100	9510003	9510004	3					2	{1: 9010}	{1: 1}		停滞钟摆	染上绯红色		洁塔薇.Beta	绮丽的景色。		洁塔薇转动了齿轮，头顶的天幕立即被一片绯红色的代码覆盖，如同极光般飞掠而过，随后便消失不见。	继续	Assets/Product/Texture/Image/BgStory/BgStory550.jpg
+540	95100	9510004		1									停滞钟摆	染上绯红色	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	？？？		带着略微的困惑，洁塔薇离开了那个不再走动的钟摆。	离开	Assets/Product/Texture/Image/BgStory/Bgstory94.png
+541	95100	9510005		1									停滞钟摆	染上绯红色					这张纸条上的话好像是某种预告，洁塔薇对此保持警惕，很快就离开了这里。	离开	Assets/Product/Texture/Image/BgStory/Bgstory94.png
+542	2100	210001	210002	1									停滞钟摆	染上湛蓝色					黑夜笼罩了天幕，你与洁塔薇穿越了破旧的孤儿院和阴风不断的墓地，你们在杂草丛生的郊外找到了一个发着浅蓝色光亮的钟摆，它与周围的一切都显得格格不入。	贴近观察	Assets/Product/Texture/Image/BgStory/Bgstory394.jpg
+543	2100	210002		2								210002	停滞钟摆	染上湛蓝色	Assets/Product/Texture/Image/RoleStory/V260qyNormal02.png	洁塔薇	你在说什么呢？		你发现钟摆上贴着一条纸条，你情不自禁地读出了上面的文字\n——「想为世界染上色彩吗？那就转动齿轮吧。」	决定	Assets/Product/Texture/Image/BgStory/Bgstory394.jpg
+544	2100	210003	210004	3					2	{1: 9009}	{1: 1}		停滞钟摆	染上湛蓝色	Assets/Product/Texture/Image/RoleStory/V260qyNormal01.png	洁塔薇	好神奇……		你转动了齿轮，头顶的天幕立即被一片浅蓝色的代码覆盖，如同极光般飞掠而过，随后便消失不见。	继续	Assets/Product/Texture/Image/BgStory/BgStory859.jpg
+545	2100	210004		1									停滞钟摆	染上湛蓝色					带着略微的困惑，你和洁塔薇离开了那个不再走动的钟摆。	离开	Assets/Product/Texture/Image/BgStory/Bgstory394.jpg
+546	2100	210005		1									停滞钟摆	染上湛蓝色					这张纸条上的话好像是某种警告，你感到心中惴惴不安，很快就拉着洁塔薇离开了这里。	离开	Assets/Product/Texture/Image/BgStory/Bgstory394.jpg
+547	3100	310001	310002	1									夜火之谜	狐狸的报恩		洁塔薇	鬼！鬼啊！！！		你和洁塔薇途径一处幽闭的公馆时，一团诡异的青色火焰从你们身边掠过，洁塔薇吓得大叫起来。	观察	Assets/Product/Texture/Image/BgStory/Bgstory361.png
+548	3100	310002		2								310002	夜火之谜	狐狸的报恩					与此同时，公馆里出现了诡异的时空波动，有一股强大的能量隐匿于其中。	决定	Assets/Product/Texture/Image/BgStory/Bgstory361.png
+549	3100	310003	310004	1									夜火之谜	狐狸的报恩	Assets/Product/Texture/Image/RoleStory/V260qyNormal06.png	洁塔薇	这里好像缺了点什么。		你和洁塔薇进入公馆，试图接近导致时空扭曲的源头，登上台阶时，你发现位于阁楼连廊的狐狸雕像泛着银色的微光，你感到事有蹊跷。经过谨慎的观察，你发现狐狸雕像缺少了作为尾巴的底座，洁塔薇提醒你，那个空缺的位置或许可以填上什么东西……	检视四周	Assets/Product/Texture/Image/BgStory/BgStory636.jpg
+550	3100	310004		2								310004	夜火之谜	狐狸的报恩					你找到了一颗夜明珠和奇石。	决定	Assets/Product/Texture/Image/BgStory/BgStory636.jpg
+551	3100	310005		3					1	{1: 96189}	{1: 200}		夜火之谜	狐狸的报恩					狐狸雕像笨重地晃动起来，随后从石嘴里吐出了一堆芯片。	离开	Assets/Product/Texture/Image/BgStory/BgStory636.jpg
+552	3100	310006		3					4	{1: 4}	{1: 1}		夜火之谜	狐狸的报恩					狐狸雕像笨重地晃动起来，随后从石嘴里吐出了一个补给箱。	离开	Assets/Product/Texture/Image/BgStory/BgStory636.jpg
+553	3100	310007		2								310007	夜火之谜	狐狸的报恩					你和洁塔薇追逐着那团鬼火而去，很快迷失在了树丛之中。这时的你选择	决定	Assets/Product/Texture/Image/BgStory/Bgstory359.png
+554	3100	310008		1									夜火之谜	狐狸的报恩					很遗憾，今晚阴云密布，月亮藏起了自己的身影，你们越走越远，在天亮之后才发现自己偏离了原有的路线。	离开	Assets/Product/Texture/Image/BgStory/Bgstory536.jpg
+555	3100	310009	310010	1									夜火之谜	狐狸的报恩					你们跟随公馆银色表盘的微弱反光，很快发现了那团鬼火的移动路径，最终找到了那团鬼火——发着荧光的小狐狸。	抱走狐狸	Assets/Product/Texture/Image/BgStory/Bgstory374.png
+556	3100	310010		3					2	{1: 9014}	{1: 1}		夜火之谜	狐狸的报恩		洁塔薇	好神奇……		当你的食指触摸到小狐狸时，小狐狸顷刻间变成了一颗通体光滑透亮的狐玉。	收起狐玉	Assets/Product/Texture/Image/BgStory/Bgstory374.png
+557	4100	410001		2								410001	结晶之羽	高塔的飞禽					你攀上了螺旋高塔的顶部，在那个最接近星辰的塔尖，你发现了一只浑身熊熊燃烧着的火鸟。你还在附近的高塔装备室里找到了合金制成的复合弓，如果你愿意，可以射下这只火鸟。	决定	Assets/Product/Texture/Image/BgStory/BgStory860.jpg
+558	4100	410002		1									结晶之羽	高塔的飞禽					你拿来了复合弓，瞄准火鸟发射了铁箭，然而，令你没想到的是，弓矢在接近火鸟的瞬间立即融化成了灰黑的粉末。火鸟因为你的攻击受到了惊吓，很快便逃离了这座高塔。	离开	Assets/Product/Texture/Image/BgStory/BgStory860.jpg
+559	4100	410003	410004	1									结晶之羽	高塔的飞禽	Assets/Product/Texture/Image/RoleStory/V260qyNormal07.png	洁塔薇	我找了哦，找了……		洁塔薇找到了炸鸡腿和高级鹅肝，但哪怕是你也知道这些东西根本不管用，你怀疑这是洁塔薇吃剩下的。	搜索四周	Assets/Product/Texture/Image/BgStory/BgStory860.jpg
+560	4100	410004		2								410003	结晶之羽	高塔的飞禽		洁塔薇	喂，好机会！		你在琴房中找到了一支玉笛，还好你看得懂乐谱，你拿着那本生灰的谱子来到塔顶，奏响了它的主人曾经无数次奏响的乐曲，果然，火鸟渐渐向着你靠近，最后，熄灭了自己身上的火焰，停留在铁栅栏边。	决定	Assets/Product/Texture/Image/BgStory/BgStory860.jpg
+561	4100	410005		3					1	{1: 96189}	{1: 200}		结晶之羽	高塔的飞禽					你突施冷箭，熄灭火焰的火鸟始料未及，最终死在了你的弓矢下，火鸟消失时遗落了一些数据结晶。	回收	Assets/Product/Texture/Image/BgStory/BgStory860.jpg
+562	4100	410006		3					2	{1: 9015}	{1: 1}		结晶之羽	高塔的飞禽					你驻足欣赏着这只美丽的火鸟，火鸟似乎知晓你没有恶意，为了感谢你为它鸣奏乐曲，火鸟留下了自己的羽毛，作为赠送给你的礼物。	离开	Assets/Product/Texture/Image/BgStory/BgStory859.jpg
+563	5100	510001		2								510001	地狱天使	天蛾人之谜					你们来到了一处空旷的台地，这里曾是失落的远古斗兽场。洁塔薇推开门的瞬间，暴戾的气息夹带着血腥味奔涌而出。你仿佛听见了延宕千年的惨叫，死去的恶意正在复苏，你与洁塔薇似乎被当成了新的挑战者……	决定	Assets/Product/Texture/Image/BgStory/BgStory33.jpg
+564	5100	510002	510003	1									地狱天使	天蛾人之谜					赶在杀气笼罩了你们的身影之前，你离开了这个诡异的台地。然而，你发现洁塔薇不见了！	折返	Assets/Product/Texture/Image/BgStory/BgStory33.jpg
+565	5100	510003		3					1	{1: 96189}	{1: 200}		地狱天使	天蛾人之谜					你看见洁塔薇正抱着刚从斗兽场观赏台上摘下来的宝石跑回来，她丝毫没发现自己身后的红色雾气，在雾气追上你们之前，你关上了斗兽场的门。	一起离开	Assets/Product/Texture/Image/BgStory/BgStory33.jpg
+566	5100	510004	510005	1									地狱天使	天蛾人之谜					你进入了斗兽场中部，面前的地面突然裂开数道口子，大量红色的粘稠液体从地下涌出，随之出现的是天蛾般的怪诞身影。	避让	Assets/Product/Texture/Image/BgStory/Bgstory43.jpg
+567	5100	510005		2								510005	地狱天使	天蛾人之谜	Assets/Product/Texture/Image/RoleMonster/RoleMonster841000.png	怪物	……		你躲开天蛾人的攻击，白色的身影挡住了你们的退路。面对它的时候，你能清晰地感到这家伙曾杀死过无数挑战者。没有一丝的犹豫，你走到对方的身前宣读了自己的名与姓，此刻，战端已无法避免。	决定	Assets/Product/Texture/Image/BgStory/Bgstory43.jpg
+568	5100	510006		3					2	{1: 9016}	{1: 1}		地狱天使	天蛾人之谜	Assets/Product/Texture/Image/RoleStory/V260qyNormal02.png	洁塔薇	挺不错的计策。		你使用了【奇袭】，在洁塔薇的默契配合下怪物瞬间被击溃，身形消失后，一个奇怪的形骸遗落在了地上。	拿走形骸	Assets/Product/Texture/Image/BgStory/Bgstory43.jpg
+569	5100	510007	510009	1									地狱天使	天蛾人之谜	Assets/Product/Texture/Image/RoleStory/V260qyNormal08.png	洁塔薇	小心！		你使用了【奇袭】，但怪物识破了你们的意图，飞到了空中，身上的气息变得更加恐怖。	准备战斗	Assets/Product/Texture/Image/BgStory/Bgstory43.jpg
+570	5100	510008	510009	1									地狱天使	天蛾人之谜		洁塔薇	就是现在！		在怪物率先发起攻击后，你抓住它的破绽开始反击。	攻击怪物	Assets/Product/Texture/Image/BgStory/Bgstory43.jpg
+571	5100	510009		4	70008								地狱天使	天蛾人之谜						准备战斗	Assets/Product/Texture/Image/BgStory/Bgstory43.jpg
+572	92001	9200101	9200102	1									英雄真相	错误的情结					洁塔薇进入了建筑的底层，立即感受到一股异样的气息，她举起武器谨慎地观察着四周。	继续	Assets/Product/Texture/Image/BgStory/Bgstory37.jpg
+573	92001	9200102		2								9200102	英雄真相	错误的情结	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	那是……		果然，一群邪教组织的成员很快从四周包围了她。而在疯狂的众人身后，古怪的祭坛上躺着一位身穿白衣的少女。	决定	Assets/Product/Texture/Image/BgStory/Bgstory37.jpg
+574	92001	9200103	9200104	1									英雄真相	错误的情结					洁塔薇干净利落地解决了包围她的教徒，战斗中，放射线不慎击中建筑的石柱，坍塌的天花板压倒了祭坛。当洁塔薇赶到少女身旁时，少女已经失去了呼吸。	安葬少女	Assets/Product/Texture/Image/BgStory/Bgstory37.jpg
+575	92001	9200104		3					1	{1: 96189}	{1: 200}		英雄真相	错误的情结	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal02.png	洁塔薇.Beta	对不起，看来计算出现了错误……		洁塔薇深深地叹了一口气，沉思片刻后，在附近清理出一片空地将少女安葬。	离开	Assets/Product/Texture/Image/BgStory/Bgstory37.jpg
+576	92001	9200105		2								9200105	英雄真相	错误的情结					洁塔薇收起武器，依靠近身战突破了教徒们的包围，及时救下少女。然而，目睹了这一幕的教徒们却突然跪倒在地，他们似乎把拥有可怕力量的洁塔薇当作降临的天使，被救下的少女也被当成了转生的教主。	决定	Assets/Product/Texture/Image/BgStory/Bgstory37.jpg
+577	92001	9200106		3					4	{1: 4}	{1: 1}		英雄真相	错误的情结	Assets/Product/Texture/Image/RoleStory/V290ldNormal03.png	少女父亲	谢谢你……		洁塔薇带着少女平安地离开了建筑底层，在归途中，洁塔薇遇见了寻找女儿的父亲，那位父亲为了感谢洁塔薇，特地献上了谢礼。	离开	Assets/Product/Texture/Image/BgStory/Bgstory6.jpg
+578	92001	9200107		3					3	{1: 4}	{1: 1}		英雄真相	错误的情结	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	我会回来找你的。		这片区域很不安全，保险起见，洁塔薇决定让少女成为该组织的教主，由教徒们护卫少女的安全。为了感谢「降临天使」洁塔薇，教徒们为洁塔薇准备了一些礼物。	离开	Assets/Product/Texture/Image/BgStory/Bgstory37.jpg
+579	92002	9200201	9200202	1									观星真相	暴躁机器人	Assets/Product/Texture/Image/RoleStory/XiaojiqirenNormal01.png	机器人A	！！！		洁塔薇进入了某个观星台，进门后，屋里的机器人突然朝洁塔薇猛扑去，嘴里还喊着「发现入侵者！」。	避开	Assets/Product/Texture/Image/BgStory/BgStory714.jpg
+580	92002	9200202		2								9200202	观星真相	暴躁机器人					洁塔薇注意到机器人的身上印着【观星A型】的标识，认为对方很可能不是战斗型机器人，也并没有被红潮感染。	决定	Assets/Product/Texture/Image/BgStory/BgStory714.jpg
+581	92002	9200203		2								9200203	观星真相	暴躁机器人	Assets/Product/Texture/Image/RoleStory/XiaojiqirenNormal01.png	机器人A	消……灭……		机器人的芯片似乎烧焦了，虽然核心的观星模块还能运作，但控制动作的那部分已经完全失控。	决定	Assets/Product/Texture/Image/BgStory/BgStory714.jpg
+582	92002	9200204		3					4	{1: 4}	{1: 1}		观星真相	暴躁机器人	Assets/Product/Texture/Image/RoleStory/XiaojiqirenNormal01.png	机器人A	谢……谢……		洁塔薇没有找到合适的芯片，于是更换了有些陈旧的量产芯片，机器人很快就恢复了平静，作为感谢，机器人拿出了一个补给箱给洁塔薇。	离开	Assets/Product/Texture/Image/BgStory/BgStory714.jpg
+583	92002	9200205		3					1	{1: 96189}	{1: 300}		观星真相	暴躁机器人					洁塔薇取走了机器人那块损坏芯片的核心部位，失去芯片后机器人立即停止了运作。	离开	Assets/Product/Texture/Image/BgStory/BgStory714.jpg
+584	92002	9200206		3					3	{1: 4}	{1: 1}		观星真相	暴躁机器人	Assets/Product/Texture/Image/RoleStory/XiaojiqirenNormal01.png	机器人A	……		洁塔薇探索了观星台的系统，她无意间启动了星空全息投影的功能，漫天的繁星让那个暴戾的机器人暂时冷静了下来。	离开	Assets/Product/Texture/Image/BgStory/BgStory714.jpg
+585	92003	9200301	9200302	1									记忆真相	路过的好心人	Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	洁塔薇.Beta	喂！别突然缠上来啊！		洁塔薇经过某条暗道时，一个衣衫褴褛的游民凑上来抱住了洁塔薇的腿。	推开	Assets/Product/Texture/Image/BgStory/BgStory828.jpg
+586	92003	9200302		2								9200302	记忆真相	路过的好心人	Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	游民	救命！！！		游民解释他正被一帮怪物追逐，如果洁塔薇不救他，他可能立刻就会被怪物杀死。	决定	Assets/Product/Texture/Image/BgStory/BgStory828.jpg
+587	92003	9200303	9200304	1									记忆真相	路过的好心人	Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	游民	好厉害……		洁塔薇连开数枪，轻而易举地消灭了追过来的怪物。游民惊叹于洁塔薇可怕的力量，祈求洁塔薇庇护他。	拒绝	Assets/Product/Texture/Image/BgStory/BgStory828.jpg
+588	92003	9200304	9200305	1									记忆真相	路过的好心人	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	依靠别人并不能活得很久。		洁塔薇没时间帮助游民清理潜在的怪物，只能留下个武器箱给他。	准备离开	Assets/Product/Texture/Image/BgStory/BgStory828.jpg
+589	92003	9200305		3					3	{1: 4}	{1: 1}		记忆真相	路过的好心人	Assets/Product/Texture/Image/RoleStory/TongyongNanminboyNormal02.png	游民	我明白了……那……请收下这个吧，作为刚刚的谢礼。		虽然没有得到庇护，但为了报答洁塔薇的援助，游民从所剩不多的物资里拿出了一个补给箱交给洁塔薇。	收下离开	Assets/Product/Texture/Image/BgStory/BgStory828.jpg
+590	92003	9200306		1									记忆真相	路过的好心人	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal02.png	洁塔薇.Beta	……		洁塔薇不想浪费时间与怪物战斗，甩掉游民后离开了，但很快，她的身后传来了可怕的惨叫，这让洁塔薇产生了一些无法言说的愧疚感。	离开	Assets/Product/Texture/Image/BgStory/BgStory828.jpg
+591	93001	9300101		2								9300101	树神之女	绝望的信念	Assets/Product/Texture/Image/RoleStory/XiunvNormal01.png	少女	这是祝福，这是神的旨意！		洁塔薇在怪异的空间里遇见了痴迷于巨树的女人，她似乎陷入某种癫狂状态，没日没夜地呐喊和祷告，此刻的少女仍然执迷不悟。	决定	Assets/Product/Texture/Image/BgStory/BgStory777.jpg
+592	93001	9300102	9300103	3					1	{1: 96189}	{1: 300}		树神之女	绝望的信念		少女	这祝福，是树神！哈哈哈哈哈哈哈……		洁塔薇举起武器，绯红色的光束轻易地洞穿了眼前的巨树，大量的算力结晶喷涌而出。少女被眼前的景象震惊，无法接受树神死亡的她选择划瞎自己的眼睛，并自称已经得到树神的祝福。	为她包扎	Assets/Product/Texture/Image/BgStory/BgStory777.jpg
+593	93001	9300103		1									树神之女	绝望的信念	Assets/Product/Texture/Image/RoleStory/XiunvNormal01.png	少女	……请您原谅她吧。		洁塔薇为少女包扎了伤口，作为交换，少女为洁塔薇向树神祈求原谅。	离开	Assets/Product/Texture/Image/BgStory/BgStory777.jpg
+594	93001	9300104		3					4	{1: 4}	{1: 1}		树神之女	绝望的信念		少女	你会受到惩罚的。		少女对树神的信仰执迷不悟，不愿接受洁塔薇的开导。作为劝说洁塔薇加入树神教的条件，少女还赠送了洁塔薇一些物资。但洁塔薇依然拒绝加入所谓的树神教，少女因此对她怀恨在心。	离开	Assets/Product/Texture/Image/BgStory/BgStory777.jpg
+595	93002	9300201		2								9300201	逃出生天	与巨鼠为伍	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal04.png	洁塔薇.Beta	！！！		洁塔薇为了寻找附近的一处战时补给点，在探索路径的时候不慎掉进了空调井里，在幽暗的管道内部，她发现了一只体型硕大的巨鼠。	决定	Assets/Product/Texture/Image/BgStory/BgStory568.jpg
+596	93002	9300202	9300203	1									逃出生天	与巨鼠为伍	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal03.png	洁塔薇.Beta	这些，是要分给我吗？		洁塔薇施舍了些吃的给巨鼠，巨鼠看上去没什么胃口。从巨鼠的体型就可以得知它现在并不饿，但善良的巨鼠还是带着洁塔薇回到了它的宝库。	收下	Assets/Product/Texture/Image/BgStory/BgStory760.jpg
+597	93002	9300203		3					4	{1: 3}	{1: 1}		逃出生天	与巨鼠为伍		洁塔薇.Beta	谢谢你了。		洁塔薇收下了巨鼠分享的物资，随后在它的帮助下找到出口离开了这里。	离开	Assets/Product/Texture/Image/BgStory/BgStory760.jpg
+598	93002	9300204		1									逃出生天	与巨鼠为伍		巨鼠	吱！！！		巨鼠惊慌失措地逃走，追踪着巨鼠的脚步，洁塔薇最终找到了通往外界的出口，成功脱困。	离开	Assets/Product/Texture/Image/BgStory/BgStory568.jpg
+599	93002	9300205	9300206	1									逃出生天	与巨鼠为伍	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	……		洁塔薇尝试与巨鼠沟通，它似乎听懂了洁塔薇的话，转身摆了摆头，看起来是在示意洁塔薇跟上它。	跟上	Assets/Product/Texture/Image/BgStory/BgStory568.jpg
+600	93002	9300206	9300207	1									逃出生天	与巨鼠为伍					在巨鼠的引路下，洁塔薇来到了一处补给点，上方就是通往外界的出口。	查看物资	Assets/Product/Texture/Image/BgStory/BgStory760.jpg
+601	93002	9300207		3					3	{1: 4}	{1: 1}		逃出生天	与巨鼠为伍		洁塔薇.Beta	奇怪的老鼠。		洁塔薇回收了一些有用的物资，作为奖励，她给了巨鼠一块奶酪，不过巨鼠似乎没什么兴趣，转身便离开了。	离开	Assets/Product/Texture/Image/BgStory/BgStory760.jpg
+602	93003	9300301	9300302	1									天选者的故事						呼啸的夜风与远方的野兽哀鸣阻止了洁塔薇的步伐，她决定在天亮前稍作歇息。	决定	Assets/Product/Texture/Image/BgStory/BgStory710.jpg
+603	93003	9300302		2								9300302	天选者的故事						入睡前，洁塔薇翻开自己的日记，翻阅过去发生的事。	翻阅	Assets/Product/Texture/Image/BgStory/BgStory710.jpg
+604	93003	9300303	9300306	3					4	{1: 2}	{1: 1}		天选者的故事		Assets/Product/Texture/Image/RoleStory/V2110jtwNormal05.png	洁塔薇.Beta	……		很久很久以前，天选者从那个纯白色的房间醒来，虽然对这个世界发生了什么没有头绪，不过毫不犹豫地选择了相信洁塔薇。我们的旅途从这时候开始，在之后的很长一段时间，洁塔薇不再孤单一人地面对沿途的怪物。	合上日记	Assets/Product/Texture/Image/BgStory/BgStory710.jpg
+605	93003	9300304	9300306	3					3	{1: 4}	{1: 1}		天选者的故事		Assets/Product/Texture/Image/RoleStory/V2110jtwNormal02.png	洁塔薇.Beta	……		在许多轮回前，天选者逐渐厌倦了毫无可能的轮回，在得知我们是两位一体的存在后，为了帮助我脱离轮回，天选者主动牺牲自己，将构成自身的算力留给我。可我最终没能觉醒，虽然实力增强了数倍，却失去了弥足珍贵的陪伴。	合上日记	Assets/Product/Texture/Image/BgStory/BgStory710.jpg
+606	93003	9300305		3					1	{1: 96189}	{1: 200}		天选者的故事						即使再怎么追忆往昔，破镜终究无法重圆，不如抓紧时间休息。赶在危险来临前做好准备吧。	入眠	Assets/Product/Texture/Image/BgStory/BgStory710.jpg
+607	93003	9300306		1									天选者的故事						夜色渐深，怀着复杂的心情，洁塔薇合上了日记和自己的双眼。	入眠	Assets/Product/Texture/Image/BgStory/BgStory710.jpg
+608	94001	9400101		2								9400101	武器技师	未完成游戏					在一座疑似儿童娱乐区的设施里，洁塔薇找到了一台可开放编程的游戏机。这台游戏机采用非侵入式的脑机接口，是该实验室在研的先进产品，仍处在研究阶段，没有量产化。	决定	Assets/Product/Texture/Image/BgStory/BgStory763.jpg
+609	94001	9400102		3					1	{1: 96189}	{1: 200}		武器技师	未完成游戏		洁塔薇.Beta	这也太简单了。		接入游戏机后，洁塔薇玩了一会迷宫游戏和俄罗斯方块，很轻松地打破了记录，获得作为奖励的算力芯片。	离开	Assets/Product/Texture/Image/BgStory/BgStory763.jpg
+610	94001	9400103	9400104	1									武器技师	未完成游戏		洁塔薇.Beta	来点这个……		洁塔薇将自己的作战数据写入某个小游戏，并配置了不同战场的地图信息。她不知道是否还有其他人能接入这台游戏机，这些宝贵的战斗数据或许会为后来者提供参考。	完成编程	Assets/Product/Texture/Image/BgStory/BgStory763.jpg
+611	94001	9400104		3					3	{1: 4}	{1: 1}		武器技师	未完成游戏		洁塔薇.Beta	还不错。		结束编程后，洁塔薇了收到游戏机AI发来的感谢函和奖励。	离开	Assets/Product/Texture/Image/BgStory/BgStory763.jpg
+612	94002	9400201		2								9400201	致命隐患	疯狂科学家	Assets/Product/Texture/Image/RoleStory/V230hsNormal02.png	科学家	不行，还要再加一些。		地面的某个实验室内，洁塔薇发现了两头被感染的怪物正打算袭击一个潜心研究的科学家。	决定	Assets/Product/Texture/Image/BgStory/Bgstory224.png
+613	94002	9400202	9400203	1									致命隐患	疯狂科学家		洁塔薇.Beta	！！！		思考片刻后，洁塔薇开枪击倒了面前的怪物。但突然响起的枪声使科学家分神，手中正在搭建的核反应堆轰然坍塌，一瞬间产生了耀眼的光。辐射对洁塔薇来说没有效果，不过那位人类科学家却遭到了致命伤害，他惊愕地看着洁塔薇，仿佛看见了死神的身影。	寻找药物	Assets/Product/Texture/Image/BgStory/Bgstory224.png
+614	94002	9400203	9400204	1									致命隐患	疯狂科学家	Assets/Product/Texture/Image/RoleStory/V230hsNormal02.png	科学家	还有机会，终端，要去那上传……		在角落的医疗箱里，洁塔薇找到了抗辐射药物，但科学家知道为时已晚，请求洁塔薇使用服务器终端上传。	前往终端	Assets/Product/Texture/Image/BgStory/Bgstory224.png
+615	94002	9400204		3					1	{1: 96189}	{1: 300}		致命隐患	疯狂科学家	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal02.png	洁塔薇.Beta	抱歉……		当残存的数据完成上传后，洁塔薇回到实验室，发现科学家已经失去了生命体征。摊开的手掌上放着一些芯片，似乎是给洁塔薇帮忙上传数据的报酬。	安葬后离开	Assets/Product/Texture/Image/BgStory/Bgstory224.png
+616	94002	9400205	9400206	1									致命隐患	疯狂科学家	Assets/Product/Texture/Image/RoleStory/V230hsNormal02.png	科学家	这会是我实力的证明！请务必保持安静。		科学家告诉洁塔薇他正在搭建核反应堆，洁塔薇听闻后没有冒然对感染体发动袭击，而是先将怪物引出了房间，之后再一一消灭。	折返	Assets/Product/Texture/Image/BgStory/Bgstory224.png
+617	94002	9400206		3					4	{1: 2}	{1: 1}		致命隐患	疯狂科学家	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	下次至少穿上防护服吧……		科学家为了感谢洁塔薇没有干扰他的工作，送给了她一些物资作为饯别礼。	离开	Assets/Product/Texture/Image/BgStory/Bgstory224.png
+618	94003	9400301		2								9400301	弊案风波	最后的请求		研究员	感觉附近有很可疑的人在监视这里。		在不知名档案室洁塔薇遇见了一位研究员，他由于前不久揭露过同行侵占贵重实验原料的弊行，收到多封匿名威胁信和暗杀预警。研究员见到洁塔薇携带着强大的武器，恳求她留下来保护自己一段时间。	决定	Assets/Product/Texture/Image/BgStory/BgStory600.jpg
+619	94003	9400302	9400303	1									弊案风波	最后的请求		洁塔薇.Beta	天底下哪有白给的午餐。		研究员拿不出合适的报酬，他前不久刚刚垫付科研支出，现在已经身无分文。洁塔薇不想在没有受益的事情上浪费时间，只好狠心抛下研究员，离开了档案室。	搜索附近	Assets/Product/Texture/Image/BgStory/BgStory600.jpg
+620	94003	9400303		3					4	{1: 3}	{1: 1}		弊案风波	最后的请求	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal05.png	洁塔薇.Beta	别让我再看见你们，否则……		离开档案室后，洁塔薇在附近抓到了埋伏的探子，狠狠教训对方一顿并收走他们的钱包和证件，要他们别再来找研究员的麻烦。	离开	Assets/Product/Texture/Image/BgStory/BgStory600.jpg
+621	94003	9400304		3					1	{1: 96189}	{1: 200}		弊案风波	最后的请求		洁塔薇.Beta	成交。		洁塔薇拒绝了对方的要求，但科学家还是恳求洁塔薇帮她最后一件事——把贵重的实验材料转移到安全的地下室。对于这个请求，洁塔薇没有提出异议。作为报答洁塔薇的谢礼，研究员交出了自己仅剩的算力芯片。	离开	Assets/Product/Texture/Image/BgStory/BgStory600.jpg
+622	95001	9500101		2								9500101	工业幽灵	未知的敌意	Assets/Product/Texture/Image/RoleStory/YijukongzhongjianshiqiNormal01.png	向导机器人	请保持冷静！请保持……		洁塔薇推开在建场馆厚实的铁门，被红潮入侵的空间内，大批被感染的工业机器正在围攻落单的向导机器人。	决定	Assets/Product/Texture/Image/BgStory/BgStory812.jpg
+623	95001	9500102		2								9500102	工业幽灵	未知的敌意					洁塔薇举起武器，绯红色的光束将场馆内活跃的感染体完全熔烧。	决定	Assets/Product/Texture/Image/BgStory/BgStory812.jpg
+624	95001	9500103		3					4	{1: 3}	{1: 1}		工业幽灵	未知的敌意	Assets/Product/Texture/Image/RoleStory/YijukongzhongjianshiqiNormal01.png	向导机器人	感谢您的援助，游客FW54dsa。		向导机器人对洁塔薇的援助行为表示感谢，基于平等交换守则，它交给了洁塔薇一个武器箱。	收下离开	Assets/Product/Texture/Image/BgStory/BgStory812.jpg
+625	95001	9500104		3					3	{1: 4}	{1: 1}		工业幽灵	未知的敌意					从那些狰狞的感染体躯壳内回收了一些有用的零件后，洁塔薇小心翼翼地越过了满地的机油离开了这里。	离开	Assets/Product/Texture/Image/BgStory/BgStory812.jpg
+626	95001	9500105		3					1	{1: 96189}	{1: 300}		工业幽灵	未知的敌意	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal02.png	洁塔薇.Beta	同类相食，可悲的造物。		绯红色的光束一闪而过，将所有机械和场馆熔烧，在场馆倒塌之前，洁塔薇转身离开了这里。	离开	Assets/Product/Texture/Image/BgStory/BgStory811.jpg
+627	95002	9500201		2								9500201	洁塔薇的战斗		Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	单挑？算了，反正都一样。		在旅途经过的一处诡异的庭院中，大量气质诡谲的玩偶从阴影中冒出，这些玩偶都是被感染的机械体，对洁塔薇抱有莫名的敌意。	决定	Assets/Product/Texture/Image/BgStory/Bgstory366.png
+628	95002	9500202	9500203	3					3	{1: 4}	{1: 1}		洁塔薇的战斗		Assets/Product/Texture/Image/RoleStory/V2110jtwNormal02.png	洁塔薇.Beta	这就是你的“心脏”？		熊布偶向着洁塔薇冲了过去，洁塔薇迎面一拳打穿了对方的胸膛，将驱动熊布偶行动的核心从对方体内掏出。	扯断	Assets/Product/Texture/Image/BgStory/BgStory639.jpg
+629	95002	9500203		1									洁塔薇的战斗						失去了能源供给后，熊布偶瘫倒在地上，其他玩偶也停下了行动，洁塔薇收起核心离开了庭院。	离开	Assets/Product/Texture/Image/BgStory/BgStory639.jpg
+630	95002	9500204	9500205	3					1	{1: 96189}	{1: 200}		洁塔薇的战斗		Assets/Product/Texture/Image/RoleStory/V2110jtwNormal02.png	洁塔薇.Beta	武器不是越大越好。		护士人形挥舞着剪刀朝洁塔薇冲了过来，洁塔薇一脚揣向对方的膝盖。在人形失去左腿后，洁塔薇握住敌人的剪刀扎进了对方的脑袋。	处决	Assets/Product/Texture/Image/BgStory/BgStory639.jpg
+631	95002	9500205		1									洁塔薇的战斗						抽出剪刀后，护士人形的机油喷涌而出，瘦长的身形瘫倒在地。	离开	Assets/Product/Texture/Image/BgStory/BgStory639.jpg
+632	95002	9500206		3					4	{1: 4}	{1: 1}		洁塔薇的战斗		Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	已经灭绝的东西就别再出来了。		洁塔薇的身后出现了巨大的恐龙模型，它朝洁塔薇张开了漆黑大嘴。洁塔薇对怪物举起武器，绯红色的光束将它熔烧成了粉末。	离开	Assets/Product/Texture/Image/BgStory/BgStory639.jpg
+633	95003	9500301	9500302	1									万两黄金	主人的遗物					洁塔薇在豪宅的幽暗房间里摸到一把镶金的钥匙，但是这把钥匙打不开任何房门的锁。	搜查四周	Assets/Product/Texture/Image/BgStory/Bgstory386.png
+634	95003	9500302		2								9500302	万两黄金	主人的遗物					出于好奇，洁塔薇又仔细搜查了豪宅的各个角落，最终在一幅油画的边角发现了隐蔽的文字提示。\n「尊敬的客人，花园和书页都藏有宝藏......」	决定	Assets/Product/Texture/Image/BgStory/Bgstory386.png
+635	95003	9500303		3					4	{1: 2}	{1: 1}		万两黄金	主人的遗物					花园种着大片的矢车菊，洁塔薇浇水时，偶然从湿润的泥土里发现了一个外形精致的宝箱。	离开	Assets/Product/Texture/Image/BgStory/BgStory677.jpg
+636	95003	9500304		2								9500304	万两黄金	主人的遗物		洁塔薇.Beta	应该就是这里。		在图书馆的一个角落，洁塔薇找到了隐秘的凹槽。插入钥匙后，两个书架间打开了一道裂缝，沿着裂缝，她发现了其中隐藏的金属门和密码锁。	决定	Assets/Product/Texture/Image/BgStory/Bgstory386.png
+637	95003	9500305		1									万两黄金	主人的遗物					密码显然不对，金属门纹丝不动，洁塔薇只能扫兴地离开书房。	离开	Assets/Product/Texture/Image/BgStory/Bgstory386.png
+638	95003	9500306	9500307	1									万两黄金	主人的遗物		洁塔薇.Beta	这是？		冥冥之中，洁塔薇的脑海中闪过一串数字，输入密码后果然打开了密室。	进入密室	Assets/Product/Texture/Image/BgStory/Bgstory386.png
+639	95003	9500307		3					1	{1: 96189}	{1: 600}		万两黄金	主人的遗物		洁塔薇.Beta	再多就拿不走了……		密室里满是黄金和珠宝。犹豫片刻，洁塔薇拾取了看上去最贵重的珠宝便离开了这里。	回收离开	Assets/Product/Texture/Image/BgStory/BgStory754.jpg
+640	95004	9500401		2								9500401	在途存货						洁塔薇在半途中遭遇了野生的巨大猪笼草的袭击，狰狞的植物舞动着两个捕虫器。	决定	Assets/Product/Texture/Image/BgStory/BgStory743.jpg
+641	95004	9500402		3					1	{1: 96189}	{1: 200}		在途存货						猪笼草的大捕虫袋被放射线击穿，里面包裹的物资如同垃圾般向外溢出。	回收离开	Assets/Product/Texture/Image/BgStory/BgStory743.jpg
+642	95004	9500403		3					4	{1: 4}	{1: 1}		在途存货						猪笼草的小捕虫袋被放射线击穿，里面包裹的物资如同垃圾般向外溢出。	回收离开	Assets/Product/Texture/Image/BgStory/BgStory743.jpg
+643	95004	9500404		3					4	{1: 2}	{1: 1}		在途存货						击穿了猪笼草后，它的其中一颗捕虫袋发生破裂，里面流出了一个黑色铁盒。	回收离开	Assets/Product/Texture/Image/BgStory/BgStory743.jpg
+644	95004	9500405		3					3	{1: 4}	{1: 1}		在途存货						击穿了猪笼草后，它的其中一颗捕虫袋发生破裂，里面流出了一个普通包裹。	回收离开	Assets/Product/Texture/Image/BgStory/BgStory743.jpg
+645	95004	9500406		3					3	{1: 5}	{1: 1}		在途存货						击穿了猪笼草后，它的其中一颗捕虫袋发生破裂，里面流出了一个稀有包裹。	回收离开	Assets/Product/Texture/Image/BgStory/BgStory743.jpg
+646	95005	9500501	9500502	1									自投罗网		Assets/Product/Texture/Image/RoleStory/V240hhNormal01.png	暴走强盗	小妹妹，最近手头紧，能不能借点钱给我？		洁塔薇沿途遭遇了一个身材高大的暴走强盗，对方瞧见洁塔薇瘦小的身材，企图勒索她。	朝天开枪	Assets/Product/Texture/Image/BgStory/Bgstory275.png
+647	95005	9500502		2								9500502	自投罗网		Assets/Product/Texture/Image/RoleStory/V2110jtwNormal04.png	洁塔薇.Beta	要借什么？		强盗见到那可怕的放射线后，立即举起了双手表示投降，洁塔薇上前用枪顶住了他的脑袋。	决定	Assets/Product/Texture/Image/BgStory/Bgstory275.png
+648	95005	9500503		3					4	{1: 3}	{1: 1}		自投罗网			暴走强盗	这下全亏没了，啊！！！！		洁塔薇拿走了强盗勒索来的物资，留下强盗在原地哀嚎。	离开	Assets/Product/Texture/Image/BgStory/Bgstory275.png
+649	95005	9500504		3					1	{1: 96189}	{1: 300}		自投罗网			洁塔薇.Beta	小小的教训。		洁塔薇押着强盗前往他的据点，收拾他的同伙后带着他们勒索来的物资离开了这里。	离开	Assets/Product/Texture/Image/BgStory/Bgstory275.png
+650	92011	9201101		2								9201101	西西弗斯	最初的挑战者		门徒	这里不能进去。		洁塔薇来到一处散发着诡异气息的黑门前，门外站着一个自称门徒的少女，她警告洁塔薇，不要靠近教主的祭坛。	决定	Assets/Product/Texture/Image/BgStory/Bgstory251.png
+651	92011	9201102		2								9201102	西西弗斯	最初的挑战者					没有理会门徒的警告，洁塔薇直接推开了黑门，门内传来了某种非人生物的叫声，红色粘稠液体覆盖的内庭中央摆着一个污秽的祭坛，上面摆放着不可名状的活物。除此之外，这个恶臭的空间内并不存在什么教主。	决定	Assets/Product/Texture/Image/BgStory/Bgstory523.jpg
+652	92011	9201103	9201104	1									西西弗斯	最初的挑战者	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal02.png	洁塔薇.Beta	好恶心。		洁塔薇往祭坛上放了个芯片，然而祭坛并没有发生任何变化，她又试着摆上了一个备用的武器箱。这时，祭坛上的肉块开始蠕动起来，随后从恶臭的皮囊中吐出了一颗眼珠，这让洁塔薇感到十分不适。	回收	Assets/Product/Texture/Image/BgStory/Bgstory523.jpg
+653	92011	9201104		3					2	{1: 9017}	{1: 1}		西西弗斯	最初的挑战者					洁塔薇忍着恶心收走了这颗眼珠，她坚信之后一定能用得上。	离开	Assets/Product/Texture/Image/BgStory/Bgstory251.png
+654	92011	9201105	9201106	1									西西弗斯	最初的挑战者		？？？	是谁，是谁！！！		扣下扳机后，灼热的射线顷刻间摧毁了祭坛。望着白色的烟尘，洁塔薇眉头一皱，这似乎不是她第一次摧毁祭坛了。突然，烟尘中传来了怪物的吼叫，有什么庞大的家伙正朝着洁塔薇冲来……	准备战斗	Assets/Product/Texture/Image/BgStory/Bgstory523.jpg
+655	92011	9201106		4	970006								西西弗斯	最初的挑战者						准备战斗	Assets/Product/Texture/Image/BgStory/Bgstory523.jpg
+656	92011	9201107		3					1	{1: 96189}	{1: 200}		西西弗斯	最初的挑战者					洁塔薇询问少女守在门口的原因，自称门徒的少女告诉洁塔薇，自己的父母被里面的怪物捕杀，她也因为害怕不敢离开这里。听完少女的说法，洁塔薇答应保护少女离开，在她耐心劝说下，两人离开了黑门。	离开	Assets/Product/Texture/Image/BgStory/Bgstory251.png
+657	93011	9301101	9301102	1									莫比乌斯	混乱的终结					洁塔薇在地底找到了一处螺旋状的楼梯，她沿着楼梯向上攀登，可是无论怎么努力，似乎总是会回到原点。	原地分析	Assets/Product/Texture/Image/BgStory/Bgstory442.jpg
+658	93011	9301102		2								9301102	莫比乌斯	混乱的终结	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	不过如此。		终于，洁塔薇发现了螺旋阶梯的异常之处——意识干涉指标沿台阶级数递增，同时捕捉到的还有对于视觉系统的多次不寻常访问，她几乎可以确定，这是个刻意为之的陷阱。	决定	Assets/Product/Texture/Image/BgStory/Bgstory442.jpg
+659	93011	9301103	9301104	1									莫比乌斯	混乱的终结					洁塔薇掏出武器朝着信号源射击，随着全息投影的扭曲，披着电磁迷彩的机械体被轰成了几块，随之引起的火焰让原本的幻觉投射消失，螺旋阶梯变成了毫无特点的断壁残垣，失去了迷惑性。	搜寻残骸	Assets/Product/Texture/Image/BgStory/Bgstory442.jpg
+660	93011	9301104		3					2	{1: 9018}	{1: 1}		莫比乌斯	混乱的终结					从机械体的残骸中找到了一个频闪灯。	离开	Assets/Product/Texture/Image/BgStory/Bgstory442.jpg
+661	93011	9301105	9301106	1									莫比乌斯	混乱的终结	Assets/Product/Texture/Image/RoleStory/V280wrjNormal02.png	不明机械	……		洁塔薇没有声张，而是按照之前的样子攀登着阶梯。实际上，洁塔薇已经骇入了对方的主控系统。仔细检查后，她发现机械体早已遭到骇入，而那个关键的后门就留在机械体的主机里。	取下异物	Assets/Product/Texture/Image/BgStory/Bgstory442.jpg
+662	93011	9301106		3					2	{1: 9017}	{1: 1}		莫比乌斯	混乱的终结	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	这个眼睛，并不简单……		洁塔薇小心地从机械体的主机里取下了一颗「眼珠」，那颗眼珠并不是什么芯片，而是某种拥有诡异能量的东西，这种能量导致了机械体出现了行为判断错乱，甚至布置出了远超于自己逻辑水平的陷阱。	离开	Assets/Product/Texture/Image/BgStory/Bgstory442.jpg
+663	94011	9401101		2								9401101	无尽长廊	油画的秘密					洁塔薇踏足了脑科学研究所的一处诡异长廊，这里挂着许多中世纪名家大师的复制杰作，无论是华美的吊灯还是墙纸都给人一种错觉，长廊仿佛更像是博物馆而不是实验设施。	决定	Assets/Product/Texture/Image/BgStory/Bgstory59.jpg
+664	94011	9401102		2								9401102	无尽长廊	油画的秘密	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	奇怪……		沿着长廊向前走，不知过了多久，洁塔薇又回到了起点的巨幅油画前。再次尝试后，还是回到了原点。	决定	Assets/Product/Texture/Image/BgStory/Bgstory59.jpg
+665	94011	9401103		2								9401103	无尽长廊	油画的秘密					洁塔薇仔细观赏起了身旁的巨幅油画，画上是一位年轻的修女，她因为极端虔诚陷入了疯魔，用水银灌瞎双眼，美貌的脸颊上徒留无神的双眸。	决定	Assets/Product/Texture/Image/BgStory/Bgstory59.jpg
+666	94011	9401104	9401105	1									无尽长廊	油画的秘密	Assets/Product/Texture/Image/RoleStory/XiunvNomal04.png	洁塔薇.Beta	这又是什么“惊喜”。		洁塔薇取出两颗眼珠，沿着画中的凹槽放了进去，顷刻间，整个空间发生了可怕扭曲，身形诡异的「修女？」从画的后面冲了出来。	开枪	Assets/Product/Texture/Image/BgStory/Bgstory387.png
+667	94011	9401105		4	970007								无尽长廊	油画的秘密						开枪	Assets/Product/Texture/Image/BgStory/Bgstory387.png
+668	94011	9401106	9401107	1									无尽长廊	油画的秘密					洁塔薇撕下了巨幅的修女画，在那个瞬间，她似乎听见了油画传出的惨叫，洁塔薇感到有些毛骨悚然。	调查墙面	Assets/Product/Texture/Image/BgStory/Bgstory59.jpg
+669	94011	9401107		3					1	{1: 96189}	{1: 350}		无尽长廊	油画的秘密					油画的后部隐藏着一个工具箱，那是能够播放某种特殊频段声波的意识干涉装置。洁塔薇关闭了装置，并且回收了内部贵重的金属元件。	离开	Assets/Product/Texture/Image/BgStory/Bgstory387.png
+670	94011	9401108	9401109	1									无尽长廊	油画的秘密		洁塔薇.Beta	这里有点古怪。		绯红色的光束直接熔解了眼前的长廊和大量油画，这个空间出现了怪异的扭曲，随后恢复成了现实的模样——环形室内试验场。	调查四周	Assets/Product/Texture/Image/BgStory/BgStory899.jpg
+671	94011	9401109		3					4	{1: 5}	{1: 1}		无尽长廊	油画的秘密					根据环形试验场的研究日志，这里曾是一处精神病院，后来被改建成了精神干涉试验场，参与者则是精神病院的病人，他们都是“自愿”参与的。经过简单搜索后，洁塔薇在附近找到了为预防实验者发疯准备的武器箱。	离开	Assets/Product/Texture/Image/BgStory/BgStory899.jpg
+672	94011	9401110		1									无尽长廊	油画的秘密		洁塔薇.Beta	……		洁塔薇在原地睡了一觉，梦醒之时，身体和灵魂都离开了诡异的长廊。	离开	Assets/Product/Texture/Image/BgStory/BgStory789.jpg
+673	92012	9201201	9201202	1									圣殿战役	善意第三人					在一座圣殿前，洁塔薇目睹了一伙手持武器的黑衣人攀上藤蔓，准备从后方潜入殿内。	观察	Assets/Product/Texture/Image/BgStory/Bgstory509.jpg
+674	92012	9201202		2								9201202	圣殿战役	善意第三人	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	看起来都不是什么好人。		此时的圣殿内不断传出旋律诡异的颂歌，由于两边的状况都很诡异，洁塔薇暂时将自己隐藏在墙角，思考起了对策。	决定	Assets/Product/Texture/Image/BgStory/Bgstory509.jpg
+675	92012	9201203		2								9201203	圣殿战役	善意第三人					洁塔薇帮助黑衣人攀上圣殿的顶部，黑衣人递给洁塔薇武器，随后众人一鼓作气，大喊着“消灭异端”从屋顶跳下，与圣殿中的机械体们扭打在一起，洁塔薇还没弄清楚情况，几台机械体便朝她扑了过来。	决定	Assets/Product/Texture/Image/BgStory/Bgstory506.jpg
+676	92012	9201204	9201205	1									圣殿战役	善意第三人	Assets/Product/Texture/Image/RoleStory/YufunanNormal01.png	黑衣人	深渊的呼唤！伟大的征服！		轻松地打翻了几个机械体后，黑衣人势力逐渐占据上风。最终，黑衣人成功将机械体驱逐出了圣殿，并且毁掉了机械体们祭拜的机械神塑像，摆上了自己带来的不可名状之物……	跟着喊	Assets/Product/Texture/Image/BgStory/Bgstory506.jpg
+677	92012	9201205		3					2	{1: 9020}	{1: 1}		圣殿战役	善意第三人		洁塔薇.Beta	我还是「降临天使」呢……		试着喊出相同的口号后，黑衣人们热烈地歌颂着洁塔薇，称她为「深渊天使」，称她为「无所不能的撒旦战士」，并将一柄刺杀异端的匕首献给洁塔薇，作为立下战功的奖赏。	收下匕首	Assets/Product/Texture/Image/BgStory/Bgstory506.jpg
+678	92012	9201206		3					1	{1: 96189}	{1: 300}		圣殿战役	善意第三人	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	暴力可不是最好的办法。		洁塔薇朝圣殿的顶部发射光束，刚才乱战的两伙人立即安静了下来。她平静地环视着两伙人，要求双方都交出各自的武器，不然就让整座圣殿消失。不出意外，无论是机械体团体还是黑衣人，都乖乖交出了武器。	离开	Assets/Product/Texture/Image/BgStory/Bgstory506.jpg
+679	92012	9201207		2								9201207	圣殿战役	善意第三人					圣殿里面围着几个演唱颂歌的机械体，它们看见洁塔薇闯入后，发疯般地朝她扑了过来，边跑边用僵硬的合成音喊着“消灭异端”。	决定	Assets/Product/Texture/Image/BgStory/Bgstory506.jpg
+680	92012	9201208		1									圣殿战役	善意第三人					洁塔薇识相地退出圣殿后，机械体没有再追过来。	离开	Assets/Product/Texture/Image/BgStory/Bgstory509.jpg
+681	92012	9201209		3					4	{1: 4}	{1: 1}		圣殿战役	善意第三人		黑衣人首领	求求你，放过我们吧。		放射线将袭来的机械体轰成灰烬，由于功率太高，支撑圣殿的石柱也受到牵连，藤蔓上的黑衣人纷纷摔到地上，痛不欲生地惨叫着。黑衣人的首领立即交出武器请求洁塔薇放过他们。	收下离开	Assets/Product/Texture/Image/BgStory/Bgstory506.jpg
+682	93012	9301201		2								9301201	盛典纪行	发疯的羊羔					途径一处密林时，洁塔薇发现夜晚的林中闪烁着零星的火光，靠近后才得知一伙黑衣人正在举行奇怪的邪教仪式。然而，他们当作贡品的羔羊却突然发疯般挣脱束缚，连续撞倒了多名教徒，朝着洁塔薇跑了过来。	决定	Assets/Product/Texture/Image/BgStory/Bgstory358.png
+683	93012	9301202		2								9301202	盛典纪行	发疯的羊羔		洁塔薇.Beta	……		洁塔薇将羔羊保护在身后，教徒们围住了她，要交出羔羊，否则要她好看。	决定	Assets/Product/Texture/Image/BgStory/Bgstory358.png
+684	93012	9301203	9301204	1									盛典纪行	发疯的羊羔	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal02.png	洁塔薇.Beta	不要得寸进尺！		洁塔薇掏出一些芯片要求买下羔羊，黑衣教徒们仍然犹豫不决，直到洁塔薇抽出武器，他们才终于同意了这桩交易，最后骂骂咧咧地走了。	检查羔羊	Assets/Product/Texture/Image/BgStory/Bgstory358.png
+685	93012	9301204		3					4	{1: 5}	{1: 1}		盛典纪行	发疯的羊羔					羔羊的肚子隆起，洁塔薇猜想这一定是引起羔羊发疯的原因——它吞下了什么坚硬的异物，导致了剧烈的腹疼。在帮羔羊催吐后，羔羊吐出了一个奇怪的武器箱。	收起离开	Assets/Product/Texture/Image/BgStory/Bgstory358.png
+686	93012	9301205	9301206	1									盛典纪行	发疯的羊羔					掏出武器后，黑衣人们仍然一拥而上。洁塔薇只好朝天鸣枪，这下无论是黑衣教徒还是羔羊都跑得无影无踪了	搜寻营地	Assets/Product/Texture/Image/BgStory/Bgstory358.png
+687	93012	9301206		3					1	{1: 96189}	{1: 200}		盛典纪行	发疯的羊羔					从之前黑衣教徒留下的营地里，洁塔薇获取了一些补给。她听见林中传来了野兽的嘶吼，赶在教徒的援军回来前离开了这片黑色森林。	离开	Assets/Product/Texture/Image/BgStory/Bgstory358.png
+688	93012	9301207		2								9301207	盛典纪行	发疯的羊羔		洁塔薇.Beta	什么跟什么啊？		洁塔薇将羔羊捉住并交给了赶来的黑衣教徒。为首的那位教徒询问洁塔薇，她是伊甸园还是毒蛇的仆人？	回答	Assets/Product/Texture/Image/BgStory/Bgstory358.png
+689	93012	9301208		1									盛典纪行	发疯的羊羔	Assets/Product/Texture/Image/RoleStory/ShihuangzhenanNormal01.png	教徒	伊甸园的……快滚！		听完回答后，教徒不耐烦地赶走了她，洁塔薇闷闷不乐地走了……	离开	Assets/Product/Texture/Image/BgStory/Bgstory358.png
+690	93012	9301209		3					2	{1: 9021}	{1: 1}		盛典纪行	发疯的羊羔	Assets/Product/Texture/Image/RoleStory/ShihuangzhenanNormal01.png	教徒	欢迎回家。		听完回答后，教徒们认可了洁塔薇的身份，认为她也是撒旦的信徒，他们给了洁塔薇一个宝物——一根钉过异端叛徒的长钉。	离开	Assets/Product/Texture/Image/BgStory/Bgstory358.png
+691	94012	9401201	9401202	1									深渊教团	罪戾的仪式					荒诞的气氛笼罩着这片暗无天日的大地，洁塔薇跟随着疯魔的黑衣信徒们来到他们的老巢——存在于地下的深渊教廷。	继续	Assets/Product/Texture/Image/BgStory/Bgstory437.jpg
+692	94012	9401202	9401203	1									深渊教团	罪戾的仪式	Assets/Product/Texture/Image/RoleStory/JiabailieNormal01.png	教主	欢迎回家。		身披黑袍的「教主」接见了洁塔薇，他希望为洁塔薇举行入会仪式……	静观其变	Assets/Product/Texture/Image/BgStory/Bgstory437.jpg
+693	94012	9401203		2								9401203	深渊教团	罪戾的仪式					洁塔薇接受了教主的请求，这时，教主却要她出示两件信物。	决定	Assets/Product/Texture/Image/BgStory/Bgstory437.jpg
+694	94012	9401204	9401205	1									深渊教团	罪戾的仪式	Assets/Product/Texture/Image/RoleStory/JiabailieNormal01.png	教主	消灭人类，就是你信仰的证明。		在出示了之前得到的「匕首」和「长钉」后，教主很满意，带着洁塔薇来到了密室内。里面是被捆绑起来的一对游民母女，教主要求洁塔薇杀死两人做祭品，这就是入会仪式。	击晕教主	Assets/Product/Texture/Image/BgStory/Bgstory435.jpg
+695	94012	9401205	9401206	1									深渊教团	罪戾的仪式	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	没倒下吗，那就试试这个！		洁塔薇趁着教主背对自己时狠狠肘击了对方，谁曾想教主不仅毫发无损，而且平静地脱掉了上身大衣，露出完全的机械部分。	开枪	Assets/Product/Texture/Image/BgStory/Bgstory435.jpg
+696	94012	9401206		4	970008								深渊教团	罪戾的仪式						开枪	Assets/Product/Texture/Image/BgStory/Bgstory437.jpg
+697	94012	9401207		3					4	{1: 2}	{1: 1}		深渊教团	罪戾的仪式		教主	可恶的异端。		洁塔薇没有交出所谓的「信物」，教主为此感到愤怒，他命令手下包围她。只见绯红的光芒闪过，挡住去路的机械教徒均被泯灭，在教主诧异的眼光中，洁塔薇转身离开了这里。	离开	Assets/Product/Texture/Image/BgStory/Bgstory437.jpg
+698	93013	9301301	9301302	1									禁忌实验	怪物VS怪物					洁塔薇走进了一间实验室，里面遍地都是血迹，她察觉到附近的气息不太对劲，于是将自己隐藏在阴影中。	暗中观察	Assets/Product/Texture/Image/BgStory/BgStory776.jpg
+699	93013	9301302		2								9301302	禁忌实验	怪物VS怪物		洁塔薇.Beta	有一定风险。		两名孩童从洁塔薇的面前跑过，身后是追逐他们的怪物，狰狞的怪物散发着极为危险的气息。	决定	Assets/Product/Texture/Image/BgStory/BgStory776.jpg
+700	93013	9301303	9301304	1									禁忌实验	怪物VS怪物	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	无法杀死吗，那么……		绯红色的炙热光束从背后将怪物的身体熔出了一个巨大的窟窿。然而，怪物并没有因此倒下，它的躯干开始快速再生起来。恢复过来的怪物转过身，张开血盆大口朝着洁塔薇快速奔去。	提高功率	Assets/Product/Texture/Image/BgStory/BgStory776.jpg
+701	93013	9301304	9301305	1									禁忌实验	怪物VS怪物					汲取更多算力进行充能的放射线武器瞬间被红光溢满，第二发镭射直接将怪物连同半个实验室焚尽。怪物死亡后，躲起来的灰发男孩浑身打颤地从角落里走出来，将一张泛黄的纸条交到洁塔薇手中后便逃离了这里。	查看纸条	Assets/Product/Texture/Image/BgStory/BgStory767.png
+702	93013	9301305		3					2	{1: 9025}	{1: 1}		禁忌实验	怪物VS怪物	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal02.png	洁塔薇.Beta	虚空？		「虚空的使者带来丰饶的愿景。」\n\n                                                           ——《未确认福音·I》	离开	Assets/Product/Texture/Image/BgStory/BgStory767.png
+703	93013	9301306	9301307	1									禁忌实验	怪物VS怪物					怪物掀翻了两位孩童并将他们逼至死角。危机关头，孩童中的紫发女孩突然为自己注射了某种血清。随后，紫发女孩变成了「亚人体」，借助异人化的强悍身体机能，她最终击败了怪物……	尝试交流	Assets/Product/Texture/Image/BgStory/BgStory776.jpg
+704	93013	9301307		3					2	{1: 9023}	{1: 1}		禁忌实验	怪物VS怪物		洁塔薇.Beta	失去理智了吗……		洁塔薇走上前尝试与亚人少女交流，但是她却发疯般地横冲直撞，最终逃离了实验室，剩下的那名灰发男孩也很快追了上去。不知所措的洁塔薇站在原地，之后从怪物的残骸上提取了一些血液样本。	离开	Assets/Product/Texture/Image/BgStory/BgStory776.jpg
+705	94013	9401301		2								9401301	亚人少女	悲剧的挽歌					在一间孤儿院的角落里，灰发男孩抱着浑身伤痕的亚人女孩，她因为暴走后脱力暂时昏了过去。男孩希望洁塔薇能帮帮忙让女孩恢复正常，如果洁塔薇愿意帮他，会得到重要的启示。	决定	Assets/Product/Texture/Image/BgStory/BgStory643.jpg
+706	94013	9401302		2								9401302	亚人少女	悲剧的挽歌		洁塔薇.Beta	有点麻烦了。		不过想要拯救女孩，或许需要得到病毒的血清样本才能制备解药。	决定	Assets/Product/Texture/Image/BgStory/BgStory643.jpg
+707	94013	9401303	9401304	1									亚人少女	悲剧的挽歌	Assets/Product/Texture/Image/RoleStory/CibeizheNormal03.png	女研究员	有趣的东西，稍等……		洁塔薇让灰发男孩和亚人少女暂时留在原地，她自行前往附近的一处实验室。那里曾隶属于一家跨国制药公司，虽然现在已经不再运转，所幸里面还有一位女研究员在工作，洁塔薇请求对方分析病毒并制备解药。	取得解药	Assets/Product/Texture/Image/BgStory/BgStory789.jpg
+708	94013	9401304	9401305	1									亚人少女	悲剧的挽歌					虽然洁塔薇很困惑女人是如何这么快就想到办法的，尤其是这种可怕的病毒，真的可能在极短时间内制作解药吗？不过当下也没有其他办法，只能相信女人是名药理天才。	折返	Assets/Product/Texture/Image/BgStory/BgStory789.jpg
+709	94013	9401305	9401306	3					2	{1: 9024}	{1: 1}		亚人少女	悲剧的挽歌		灰发男孩	或许，你需要这个。		洁塔薇给亚人少女注射了解毒试剂，少女果然恢复了正常。灰发男孩为了感谢洁塔薇，掏出了一张博物馆的工作证，这是他从某个神秘女人那里得到的物件。	收下证件	Assets/Product/Texture/Image/BgStory/BgStory643.jpg
+710	94013	9401306		1									亚人少女	悲剧的挽歌		洁塔薇.Beta	博物馆……		仔细查看了一番上面记载的地址，洁塔薇不记得自己曾在何时去过那里，或许前往那里调查是个好主意。	离开	Assets/Product/Texture/Image/BgStory/BgStory643.jpg
+711	94013	9401307	9401308	1									亚人少女	悲剧的挽歌	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal02.png	洁塔薇.Beta	……		洁塔薇留下了一把蝴蝶刀，面无表情地望着绝望的男孩，等待他做出残酷的抉择。	观望	Assets/Product/Texture/Image/BgStory/BgStory643.jpg
+712	94013	9401308	9401309	1									亚人少女	悲剧的挽歌					男孩收下了蝴蝶刀，没有对亚人少女出手，留给洁塔薇一张泛黄的纸条便带着女孩离开了。	查看纸条	Assets/Product/Texture/Image/BgStory/BgStory643.jpg
+713	94013	9401309		3					2	{1: 9026}	{1: 1}		亚人少女	悲剧的挽歌					「爱憎的黄昏，隐匿着残缺的希望。」\n\n                                                           ——《未确认福音·II》	离开	Assets/Product/Texture/Image/BgStory/BgStory643.jpg
+714	94013	9401310	9401311	1									亚人少女	悲剧的挽歌					洁塔薇尝试自己制备解药，但她没有现成的参考，只能搬来孤儿院的医疗箱，从里面拼凑一些对症的药物。	制备完成	Assets/Product/Texture/Image/BgStory/BgStory643.jpg
+715	94013	9401311		3					4	{1: 4}	{1: 1}		亚人少女	悲剧的挽歌		灰发男孩	谢谢你……		亚人少女服下了这些药，但效果似乎不明显，只是让少女的呼吸变得平缓了一些。男孩为了感谢洁塔薇的帮忙，提供了一些补给作为报酬。	离开	Assets/Product/Texture/Image/BgStory/BgStory643.jpg
+716	95011	9501101		2								9501101	栩栩如生	完美的容器					洁塔薇来到了一栋屹立在迷雾中的诡异博物馆。虽然这里的气氛有些可疑，但这里却是洁塔薇从未踏足之地，她决定对博物馆进行调查。	决定	Assets/Product/Texture/Image/BgStory/Bgstory383.png
+717	95011	9501102	9501103	1									栩栩如生	完美的容器	Assets/Product/Texture/Image/RoleStory/V200sgrNormal01.png				推开雕塑区的门，里面并没有什么异常，唯一有些古怪的只有一尊不太协调的大卫雕像。	检查雕像	Assets/Product/Texture/Image/BgStory/BgStory683.jpg
+718	95011	9501103	9501104	1									栩栩如生	完美的容器	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	有东西在这。		大卫的左眼似乎被人替换成了一颗胶囊，洁塔薇取下胶囊后，凹陷的眼眶内依稀可见一张泛黄的纸条。	查看纸条	Assets/Product/Texture/Image/BgStory/BgStory683.jpg
+719	95011	9501104		3					2	{1: 9027}	{1: 1}		栩栩如生	完美的容器					「推开通往真实之门，必经历，必受难，也必从中复苏。」\n\n                                                           ——《未确认福音·III》	离开	Assets/Product/Texture/Image/BgStory/BgStory683.jpg
+720	95011	9501105	9501106	1									栩栩如生	完美的容器	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	她是……		走进那条挂满绮丽洋画的长廊，洁塔薇在长廊尽头的落地窗前看见了一位正在写生的女人。洁塔薇小心地接近了她，而身着斗篷的女人似乎更早察觉到洁塔薇的存在，她停下画笔，将画布转向洁塔薇的方向。	看向画布	Assets/Product/Texture/Image/BgStory/Bgstory384.png
+721	95011	9501106	9501107	1									栩栩如生	完美的容器	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	怪物？		画纸上画着洁塔薇举枪与一头狰狞的怪物对峙的场景。	转身	Assets/Product/Texture/Image/BgStory/Bgstory384.png
+722	95011	9501107		2								9501107	栩栩如生	完美的容器	Assets/Product/Texture/Image/RoleStory/CibeizheNormal01.png	女人	说的就是这个啊。		刚才经过的地方不知何时出现了身材高大的怪物，它正朝洁塔薇冲来。	决定	Assets/Product/Texture/Image/BgStory/Bgstory384.png
+723	95011	9501108	9501109	1									栩栩如生	完美的容器					四周场景开始变换，画廊和女人的身形逐渐拉远。	准备战斗	Assets/Product/Texture/Image/BgStory/BgStory679.jpg
+724	95011	9501109		4	970009								栩栩如生	完美的容器						准备战斗	Assets/Product/Texture/Image/BgStory/Bgstory384.png
+725	95011	9501110	9501111	1									栩栩如生	完美的容器	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	好机会！		考虑到在狭小的空间内发生战斗可能会导致建筑垮塌，洁塔薇不想和怪物正面冲突，使用工作证刷开了通往顶层工作人员电梯。	坐上电梯	Assets/Product/Texture/Image/BgStory/Bgstory384.png
+726	95011	9501111	9501112	1									栩栩如生	完美的容器	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal03.png	洁塔薇.Beta	……		进入安全区域后，洁塔薇惊讶地从房间的墙面上发现了用血书写的纸条。	查看纸条	Assets/Product/Texture/Image/BgStory/BgStory788.jpg
+727	95011	9501112		3					2	{1: 9028}	{1: 1}		栩栩如生	完美的容器					「未确认福音为伪书，跟随指引将入地狱。」\n\n                                                           ——《未确认福音·IV》	离开	Assets/Product/Texture/Image/BgStory/BgStory788.jpg
+728	93014	9301401	9301402	1									棋盘难题	西洋棋挑战					洁塔薇误入一处等身大的西洋棋雕塑群，黑白两色的高大棋子耸立在夜色下，散发着若隐若现的银光。	向前看	Assets/Product/Texture/Image/BgStory/BgStory819.jpg
+729	93014	9301402		2								9301402	棋盘难题	西洋棋挑战	Assets/Product/Texture/Image/RoleStory/V270fdNormal03.png	少女	喂！来一局？		棋盘尽头站着奇怪的少女，她隔空向洁塔薇喊话，希望两人能够进行一盘对局。	决定	Assets/Product/Texture/Image/BgStory/BgStory819.jpg
+730	93014	9301403	9301404	1									棋盘难题	西洋棋挑战	Assets/Product/Texture/Image/RoleStory/V270fdNormal03.png	少女	不过如此。		原本想挪动棋盘的洁塔薇，只是在脑海中想象，棋盘上的棋子便自发动了起来。她与少女交替执棋，没过一会便陷入了劣势，然后输掉了比赛。	认输	Assets/Product/Texture/Image/BgStory/BgStory819.jpg
+731	93014	9301404		3					1	{1: 96189}	{1: 300}		棋盘难题	西洋棋挑战		少女	笨蛋就是笨蛋。		少女闷闷不乐地直呼无聊，要洁塔薇好好训练后再来挑战，赢过她的话就能有特别的奖励。说完少女丢了一袋芯片给洁塔薇，然后将她赶出了这片空间。	离开	Assets/Product/Texture/Image/BgStory/BgStory870.jpg
+732	93014	9301405	9301406	1									棋盘难题	西洋棋挑战	Assets/Product/Texture/Image/RoleStory/V270fdNormal01.png	洁塔薇.Beta	喂！怎么突然就生气了。		洁塔薇拒绝了少女的邀请，她觉得动脑是一件耗费体力的事。这个举动激怒了少女，少女毫无缘由地朝洁塔薇冲了过来。	准备战斗	Assets/Product/Texture/Image/BgStory/BgStory819.jpg
+733	93014	9301406		4	970010								棋盘难题	西洋棋挑战						准备战斗	Assets/Product/Texture/Image/BgStory/BgStory819.jpg
+734	94014	9401401	9401402	1									镜中世界	神秘的师傅					行走至一处布满镜面的房间里，洁塔薇听见镜子里传来了风声。还没等洁塔薇反应过来，身体就跌入了镜中的世界——那是由许多棱状结晶组成的世界，在结晶的尽头，冰封的王座上坐着一位少女。	靠近她	Assets/Product/Texture/Image/BgStory/BgStory822.jpg
+735	94014	9401402		2								9401402	镜中世界	神秘的师傅		洁塔薇.Beta	真的那么有趣吗？		少女正在研究一盘西洋棋的残局，神情专注，连洁塔薇的到来都没注意到。	决定	Assets/Product/Texture/Image/BgStory/BgStory822.jpg
+736	94014	9401403		2								9401403	镜中世界	神秘的师傅		白发少女	想学吗？		洁塔薇跟少女打了招呼，对方起初没有理睬，过了一会才询问洁塔薇来这的理由，听闻洁塔薇跌入镜中之后，少女询问洁塔薇是否想学西洋棋，但代价是要付出学费。	决定	Assets/Product/Texture/Image/BgStory/BgStory822.jpg
+737	94014	9401404		3					4	{1: 5}	{1: 1}		镜中世界	神秘的师傅	Assets/Product/Texture/Image/RoleStory/V270bgwNormal01.png	白发少女	前所未见的迭代速度……		洁塔薇接受了少女的指导，起初她很快就被打败，但随着回合增加，她的棋艺进步飞快。白发少女连输三个回合后，指导便结束了，她认为洁塔薇已经成为西洋棋领域的大师。	离开	Assets/Product/Texture/Image/BgStory/BgStory822.jpg
+738	94014	9401405		3					4	{1: 3}	{1: 1}		镜中世界	神秘的师傅	Assets/Product/Texture/Image/RoleStory/V270bgwNormal01.png	白发少女	我们好像双胞胎……		洁塔薇拒绝了少女的请求，她本质上不热衷任何棋类运动，不过还是和少女聊了一会天。少女对洁塔薇的瞳孔很感兴趣，她认为洁塔薇长得有些像自己，因此拿出了些礼物送给洁塔薇。	收下离开	Assets/Product/Texture/Image/BgStory/BgStory822.jpg
+739	94014	9401406	9401407	1									镜中世界	神秘的师傅					洁塔薇询问少女这个世界的出口在哪。少女让她从遍地的数据结晶中挑选一根棱条，随后打了个响指将她传送了出去。	查看结晶	Assets/Product/Texture/Image/BgStory/BgStory822.jpg
+740	94014	9401407		3					1	{1: 96189}	{1: 350}		镜中世界	神秘的师傅					回到原本的世界后，手中的棱条变成了成堆的芯片。	离开	Assets/Product/Texture/Image/BgStory/BgStory762.jpg
+741	95012	9501201	9501202	1									棋盘再临	重启的交锋	Assets/Product/Texture/Image/RoleStory/V270fdNormal03.png	少女	输家来了，哼。		再次来到等身大的西洋棋雕塑群，黑白两色的高大棋子耸立在夜色下，散发着若隐若现的银光。	向前看	Assets/Product/Texture/Image/BgStory/BgStory820.jpg
+742	95012	9501202		2								9501202	棋盘再临	重启的交锋					棋盘尽头依然站着那位穿着奇特的少女，她隔空向洁塔薇喊话，希望两人能够进行一盘对局。	决定	Assets/Product/Texture/Image/BgStory/BgStory820.jpg
+743	95012	9501203	9501204	1									棋盘再临	重启的交锋		洁塔薇.Beta	笨蛋就是笨蛋。		两人交替执棋，没过一会，少女便咬牙切齿了起来。没有给对方留下任何翻盘的机会，洁塔薇快速且稳健地将军了对面。	索要奖励	Assets/Product/Texture/Image/BgStory/BgStory820.jpg
+744	95012	9501204	9501205	3					2	{1: 9029}	{1: 1}		棋盘再临	重启的交锋	Assets/Product/Texture/Image/RoleStory/V270fdNormal03.png	少女	拿去吧。		少女不情不愿地拿出了一枚水晶棋子——国王，洁塔薇能感到这枚棋子散发着特殊的能量。	收下	Assets/Product/Texture/Image/BgStory/BgStory820.jpg
+745	95012	9501205		1									棋盘再临	重启的交锋	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal05.png	洁塔薇.Beta	以前是以前，现在是现在。		虽然少女按照约定给了奖励，但嘴上仍然碎碎念着洁塔薇肯定是作弊了之类的话。	离开	Assets/Product/Texture/Image/BgStory/BgStory820.jpg
+746	95012	9501206		1									棋盘再临	重启的交锋	Assets/Product/Texture/Image/RoleStory/V270fdNormal03.png	少女	看来笨蛋还是没什么长进呢。		少女感到有些生气，但是看见洁塔薇手中拿着的武器，好像又没什么脾气了。就这样，洁塔薇在对方的注视下安全地离开了这片棋盘。	离开	Assets/Product/Texture/Image/BgStory/BgStory820.jpg
+747	92013	9201301	9201302	1									异界通讯I	机械性故障					寻找工厂出口时，洁塔薇遇到了成群的敌人，它们数量庞大且攻势骇人。虽然无法伤害她分毫，但在消灭完大量敌人后，武器的全息界面却出现了故障提示……	检查武器	Assets/Product/Texture/Image/BgStory/Bgstory271.png
+748	92013	9201302		2								9201302	异界通讯I	机械性故障		洁塔薇.Beta	到底该怎么办呢？		对武器进行故障扫描后，显示约束器部件在短时间内出现了多次超载，因此「短路」。再次核实操作日志后，提示需要更换部件，不过这个的零件的来源地显示在了洁塔薇从未听闻过的Alpha世界。	决定	Assets/Product/Texture/Image/BgStory/Bgstory271.png
+749	92013	9201303	9201304	1									异界通讯I	机械性故障	Assets/Product/Texture/Image/RoleStory/V290gwNormal03.png	虚空商人	尊敬的小姐，有何贵干？		按照之前虚空商人出没的轨迹，洁塔薇沿着歪曲和破碎的地表找到了虚空裂痕，碰上一个身材扭曲的实体。	提出需求	Assets/Product/Texture/Image/BgStory/BgStory818.jpg
+750	92013	9201304		2								9201304	异界通讯I	机械性故障	Assets/Product/Texture/Image/RoleStory/V290gwNormal03.png	虚空商人	不做亏本买卖。		洁塔薇询问商人是否有来自异界的神秘部件，虚空商人将手臂伸入裂痕，取出了她需要的储能部件。正当洁塔薇想拿走时，虚空商人却突然向她索要报酬。	决定	Assets/Product/Texture/Image/BgStory/BgStory818.jpg
+751	92013	9201305		3					4	{1: 5}	{1: 1}		异界通讯I	机械性故障	Assets/Product/Texture/Image/RoleStory/V290gwNormal03.png	虚空商人	这可是贵宾待遇。		武器的机械性故障得到了修正，再次恢复到正常状态。除此之外，为了感谢洁塔薇的来访，虚空商人还额外赠送了她一些有用的武器箱。	离开	Assets/Product/Texture/Image/BgStory/BgStory818.jpg
+752	92013	9201306		1									异界通讯I	机械性故障		洁塔薇.Beta	太贵了，我再想想办法吧。		身上的芯片数量不多，洁塔薇决定拒绝交易，另寻办法。	离开	Assets/Product/Texture/Image/BgStory/BgStory818.jpg
+753	92013	9201307	9201308	1									异界通讯I	机械性故障					洁塔薇通过对附近的环境情报进行分析和侦测，找到了一处时空特异点——奇怪的云端储存机。	进行链接	Assets/Product/Texture/Image/BgStory/Bgstory232.png
+754	92013	9201308	9201309	1									异界通讯I	机械性故障	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	Alpha……吗?		主动接入云端网络后，洁塔薇选择了标识Alpha数据的扇区，输入自己需要的替换部件。随后，系统弹出了终点路径，洁塔薇意外地看见了另一个「洁塔薇」的名字，她似乎明白了什么，出于好奇，她选择了那个名字。	发送	Assets/Product/Texture/Image/BgStory/Bgstory232.png
+755	92013	9201309		3					1	{1: 96189}	{1: 300}		异界通讯I	机械性故障					发送完毕后，洁塔薇从其他空置的云端空间中回收了一些算力芯片。	离开	Assets/Product/Texture/Image/BgStory/Bgstory232.png
+756	3018	301801	301802	1									异界通讯II	意外的请求		天选者	原来你眼睛的图案可以变啊……		你和洁塔薇行走在半途，面前出现了一道虚空裂痕，随后周围的时空出现扭曲，一台奇怪的云端储存器出现在你们眼前。洁塔薇的瞳孔对这台机器产生了反应，原本「X」形态的图案变成了「？」，于是她好奇地靠近了那台机器。	启动机器	Assets/Product/Texture/Image/BgStory/Bgstory412.jpg
+757	3018	301802		2								301802	异界通讯II	意外的请求					你们从请求界面里接到一封匿名的信，对方希望你们能帮忙取得某个武器部件。	决定	Assets/Product/Texture/Image/BgStory/Bgstory412.jpg
+758	3018	301803	301804	1									异界通讯II	意外的请求					接受了请求后，你和洁塔薇根据系统的导航去了零件产出的工厂，你们推开了门，发现内部是机械体聚集的窝点。暴怒的机械体朝你们冲了过来，你们不得不迎战。	迎战	Assets/Product/Texture/Image/BgStory/Bgstory410.jpg
+759	3018	301804	301805	1									异界通讯II	意外的请求	Assets/Product/Texture/Image/RoleStory/V260qyNormal04.png	洁塔薇	Beta？		打败了强大的敌人后，你果真从那台机械体身上拆下了订单里提到的部件。洁塔薇将刚刚得到的部件上传到了云端储存器，系统弹出了终点路径，你们从列表里意外看见了Beta分区里另一个「洁塔薇」的名字，你似乎明白了什么。	发送	Assets/Product/Texture/Image/BgStory/Bgstory410.jpg
+760	3018	301805		3					1	{1: 96189}	{1: 400}		异界通讯II	意外的请求					发送完毕后，你们从其他空置的云端空间中回收了一些算力。	离开	Assets/Product/Texture/Image/BgStory/Bgstory410.jpg
+761	3018	301806		1									异界通讯II	意外的请求					你担心这个请求的合理性，或许这是一个通往强大敌人的陷阱，犹豫片刻，你带着洁塔薇离开了这里。	离开	Assets/Product/Texture/Image/BgStory/Bgstory412.jpg
+762	94015	9401501		2								9401501	异界通讯III	平行的善意		洁塔薇.Beta	还有额外的“礼物”？		武器出现故障的日子里，洁塔薇只能尽量避免冲突，不卷入非必要的麻烦。直到虚空的裂痕再次出现在她的眼前，熟悉的云端存储器从天而降，而伴随着虚空的裂痕出现的还有来自另一个世界的怪物们。	决定	Assets/Product/Texture/Image/BgStory/BgStory697.jpg
+763	94015	9401502	9401503	1									异界通讯III	平行的善意	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal02.png	洁塔薇.Beta	糟了！		洁塔薇掏出武器朝怪物们发射了光束，扣下扳机的瞬间，她突然想起自己的武器损坏。由于缺少约束器的束缚，灼热的光束连带着把云端储存器也一起熔解。	回收残骸	Assets/Product/Texture/Image/BgStory/BgStory697.jpg
+764	94015	9401503		3					1	{1: 96189}	{1: 400}		异界通讯III	平行的善意					因为云端储存器被破坏，洁塔薇只能就地回收残骸中可用的部分，之后再想办法尝试自己恢复武器的部件。	离开	Assets/Product/Texture/Image/BgStory/BgStory697.jpg
+765	94015	9401504	9401505	1									异界通讯III	平行的善意					赤手空拳地打翻了面前的怪物后，洁塔薇来到了那台终端机之前。	启动终端	Assets/Product/Texture/Image/BgStory/BgStory697.jpg
+766	94015	9401505	9401506	1									异界通讯III	平行的善意	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal02.png	洁塔薇.Beta	……曾经，也是那么美好。		从云端储存器的接收界面上，她收到了来自Alpha世界的「洁塔薇」寄来的应急部件，对方还附赠了一张与天选者的合照，上面写着“来自我们的帮助！”	取得部件	Assets/Product/Texture/Image/BgStory/BgStory697.jpg
+767	94015	9401506		3					2	{1: 9030}	{1: 1}		异界通讯III	平行的善意					安装了新的约束器部件后，武器意外激活了内置的隐藏算力池，更换的部件变成了聚能装置，武器的性能得到了大幅提升。	离开	Assets/Product/Texture/Image/BgStory/BgStory697.jpg
+768	90015	9001501		2								9001501	虚空裂痕	矩阵数据库					洁塔薇观测到了一道虚空裂痕，并没有商人之类的家伙出现。	决定	Assets/Product/Texture/Image/BgStory/BgStory938.jpg
+769	90015	9001502	9001503	1									虚空裂痕	矩阵数据库	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal03.png	洁塔薇.Beta	那是？		当她的双脚踏入其中时，身体和精神立即被抛到了某个无边的海域之中。\n在意识模糊的状态下沿着量子之海漂流了许久，恍然间，她从灰暗的海面看见了红蓝色数据组成的诡异空间。	前往	Assets/Product/Texture/Image/BgStory/BgStory800.jpg
+770	90015	9001503		2								9001503	虚空裂痕	矩阵数据库					这是一间存在于虚空之中的数据库，里面运转记录着大量的矩阵底层数据。	决定	Assets/Product/Texture/Image/BgStory/BgStory927.jpg
+771	90015	9001504	9001505	3					2	{1: 9034}	{1: 1}		虚空裂痕	矩阵数据库	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	找到了！		洁塔薇操纵着虚空数据库内的计算机，查询当前世界的「关键变量」。经过多层筛选后，她整合到了一份特殊的坐标集。	取走	Assets/Product/Texture/Image/BgStory/BgStory927.jpg
+772	90015	9001505		1									虚空裂痕	矩阵数据库	Assets/Product/Texture/Image/RoleStory/V290gwNormal04.png	虚空监察者	发现异常访问行为，<color=#DC143C>「二级应急预案」</color>启用。		取走坐标集时，屋内突然亮满红灯，发出刺耳警报声。\n<color=#DC143C>「警告！」</color>\n<color=#DC143C><size=36>「警告！！」</size></color>\n<color=#DC143C><size=40>「警告！！！」</size></color>\n鲜红的警报字幕铺天盖地，一个扭曲的身影凭空出现，以「违规访问虚空数据」为由，释放射线将洁塔薇弹出了虚空。	离开	Assets/Product/Texture/Image/BgStory/BgStory928.png
+773	90015	9001506		3					4	{1: 4}	{1: 1}		虚空裂痕	矩阵数据库					通过分析数据库，洁塔薇获取了脱离这片空间的指令。	离开	Assets/Product/Texture/Image/BgStory/BgStory938.jpg
+774	90015	9001507		1									虚空裂痕	矩阵数据库					洁塔薇对这个来自虚空的裂痕感到不安，她曾被从中出现的红色箭矢攻击过，现在她只想赶紧离开……	离开	Assets/Product/Texture/Image/BgStory/BgStory938.jpg
+775	90016	9001601		2								9001601	馆中之物	癫狂的愚者					依据之前在虚空数据库获得的坐标，洁塔薇找到了一座博物馆。里面存放着她未曾见过的机械，一台散发着微蓝色亮光的诡异投影机。	决定	Assets/Product/Texture/Image/BgStory/BgStory937.png
+776	90016	9001602		2								9001602	馆中之物	癫狂的愚者	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	？？？		洁塔薇尝试启动机器，但似乎缺少了驱动能源。就在她埋头研究时，身后传来了液体滴落的声音，她回过头，天花板上挂着一个黑色的「卵」，卵正在孵化中……	决定	Assets/Product/Texture/Image/BgStory/BgStory937.png
+777	90016	9001603	9001605	1									馆中之物	癫狂的愚者	Assets/Product/Texture/Image/RoleStory/PamishiyijvmutiNormal02.png	洁塔薇.Beta	别给我在那荡秋千！		红色光束将博物馆的顶部炸开了大洞，烟雾散去后，黑色的卵不仅纹丝不动，反而尖叫着以肉眼难以观测的速度向洁塔薇逼近。	继续开枪	Assets/Product/Texture/Image/BgStory/Bgstory341.jpg
+778	90016	9001604	9001605	1									馆中之物	癫狂的愚者	Assets/Product/Texture/Image/RoleStory/PamishiyijvmutiNormal02.png	洁塔薇.Beta	我没问你这个！		洁塔薇尝试向那个奇怪的黑卵询问，它到底是什么东西，这台投影机又是什么，以及无法启动的原因。\n黑卵起初什么也没说，过了许久才晃晃悠悠地念道「我叫……愚者镜像！」，随后发了疯般地朝洁塔薇攻了过去。	开枪	Assets/Product/Texture/Image/BgStory/BgStory937.png
+779	90016	9001605		4	970013								馆中之物	癫狂的愚者						开始战斗	Assets/Product/Texture/Image/BgStory/Bgstory341.jpg
+780	90017	9001701	9001702	1									逆向观测	迷途的羔羊					洁塔薇打倒了失去控制的愚者镜像，「卵」顷刻间裂解开，内部出现了一个诡异的蓝色发光物。洁塔薇身后的投影仪对该物体产生了某种共鸣，发出了有规律的电流涌动声响。	查看	Assets/Product/Texture/Image/BgStory/Bgstory341.jpg
+781	90017	9001702	9001703	3					2	{1: 2005}	{1: 1}		逆向观测	迷途的羔羊	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal03.png	洁塔薇.Beta	蓝色的钥匙……		洁塔薇上前取出了黑卵内部的发光物，那是一块蓝色的秘钥。洁塔薇知道眼前的秘钥不属于这个世界，或许另一边的「他们」会需要这块秘钥。	启动投影	Assets/Product/Texture/Image/BgStory/Bgstory341.jpg
+782	90017	9001703	9001704	1									逆向观测	迷途的羔羊					随着权限秘钥的插入，投影仪被成功启动。\n光芒逐渐浸没视野，洁塔薇的耳边传来大量嘈杂的声音，她听见许多的言语，感受到无数鲜活的意志。\n\n最终，所有的悸动汇聚成虚空递来的邀请\n——「从虚无中复苏，在存在消失之前观测吧。」	查看坐标	Assets/Product/Texture/Image/BgStory/Bgstory397.jpg
+783	90017	9001704	9001705	3					2	{1: 9100, 2: 9101}	{1: 1, 2: 1}		逆向观测	迷途的羔羊					洁塔薇查看了投影仪指向的终点坐标，那是位于Alpha世界的某处。利用被钥匙激活的投影机似乎就能通过虚空进入Alpha世界，或者这能改变矩阵既定的因果。	记录	Assets/Product/Texture/Image/BgStory/Bgstory397.jpg
+784	90017	9001705		2								9001705	逆向观测	迷途的羔羊						决定	Assets/Product/Texture/Image/BgStory/Bgstory341.jpg
+785	90017	9001706		5		2							逆向观测	迷途的羔羊					已知的信息非常复杂，洁塔薇决定原地休整并整理下情报。	休整	Assets/Product/Texture/Image/BgStory/Bgstory341.jpg
+786	90017	9001707		1									逆向观测	迷途的羔羊					考虑到虚空监察者的存在，洁塔薇带上秘钥和投影仪尽快离开了这里。	离开	Assets/Product/Texture/Image/BgStory/Bgstory341.jpg
+787	308	30801	30802	1									虚空终结	绯色的晚景					你和洁塔薇观测到附近出现了一道虚空裂痕，你小心翼翼地前往裂痕处。	靠近	Assets/Product/Texture/Image/BgStory/BgStory925.jpg
+788	308	30802		2								30802	虚空终结	绯色的晚景	Assets/Product/Texture/Image/RoleStory/V260qyNormal08.png	洁塔薇	诶！好像有什么要出来了！		你望着那道裂痕发愣，你能感受到其中有种莫名的悸动在牵引着你。	靠近	Assets/Product/Texture/Image/BgStory/BgStory938.jpg
+789	308	30803	30804	1									虚空终结	绯色的晚景	Assets/Product/Texture/Image/RoleStory/V260qyNormal07.png	洁塔薇	诶，另一个我？		你看见来自Beta侧的洁塔薇从虚空裂痕里出来，她似乎刚刚经历了一场恶战，身上的衣物有些破损。与此同时，你还注意到她的手中拿着一块蓝色的秘钥。	询问对方	Assets/Product/Texture/Image/BgStory/BgStory925.jpg
+790	308	30804		2								30804	虚空终结	绯色的晚景	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	带上钥匙离开这里，天选者还有……小洁塔薇，动作快！		没等你开口，一道骇人的放射线从虚空中向你们袭来。即将被命中时，「洁塔薇.Beta」挡住了这一击。\n她将手中的秘匙交给你，要求你们赶紧离开这里。\n你感受到虚空内有股强烈的杀气在靠近。	离开	Assets/Product/Texture/Image/BgStory/BgStory925.jpg
+791	308	30805	30806	1									虚空终结	绯色的晚景	Assets/Product/Texture/Image/RoleStory/V290gwNormal04.png	虚空监察者	<color=#DC143C>「一级应急预案」</color>启用，非法访问虚空者，修正！		无论是哪边的洁塔薇你都不可能抛下，你拒绝了她的要求。此时，那个扭曲的身影从虚空中闯了出来。\n「洁塔薇.Beta」认出了对方，立即上前发动攻击。霎时间，两道耀眼的光束在天空中来回交替。你和身旁的洁塔薇无法坐视不管，也拿出武器上前支援。	开战	Assets/Product/Texture/Image/BgStory/BgStory925.jpg
+792	308	30806	30807	4	970019								虚空终结	绯色的晚景						开始战斗	Assets/Product/Texture/Image/BgStory/BgStory925.jpg
+793	308	30807	30808	1									虚空终结	绯色的晚景		洁塔薇	姐姐！！！		落败的监察者汇聚全身算力，准备引爆这片区域。\n「洁塔薇.Beta」见状，将自身残余的算力注入武器中。片刻间，一道巨大的高功率光线湮灭了即将自爆的监察者。耀眼的强光后，她倒在了地上。	上前	Assets/Product/Texture/Image/BgStory/BgStory749.jpg
+794	308	30808	30809	1									虚空终结	绯色的晚景	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal02.png	洁塔薇.Beta	剩下的……就交给你们了……		你上前扶起了倒在地上的「洁塔薇.Beta」，失去自身算力的她，身影正在变得透明。<color=#DC143C>「矩阵」</color>在不断修正她这个<color=#DC143C>「异常变量」</color>。被修正前，她握住了你身旁另一位洁塔薇的手，将注入算力的武器留给了洁塔薇。\n与你们道别后，她的身影随着虚空裂痕一起消散。	查看四周	Assets/Product/Texture/Image/BgStory/BgStory749.jpg
+795	308	30809		3			99992		2	{1: 9005}	{1: 1}		虚空终结	绯色的晚景					你来到虚空监察者的残骸前，从它开敞的胸口取出绯红色的<color=#DC143C>「秘钥」</color>时，红蓝双色的秘钥似乎产生了某种共鸣。你有一种直觉，两股相异的能量似乎会是开启矩阵中枢权限的关键。	收起离开	Assets/Product/Texture/Image/BgStory/BgStory749.jpg
+796	308	30810	30811	1									虚空终结	绯色的晚景					你口袋中的投影仪与裂痕产生了反应，启动投影仪的「穿梭」功能后，你和洁塔薇平安地进入了虚空。	探索四周	Assets/Product/Texture/Image/BgStory/BgStory800.jpg
+797	308	30811	30812	1									虚空终结	绯色的晚景	Assets/Product/Texture/Image/RoleStory/V290gwNormal04.png	虚空监察者	<color=#DC143C>「一级应急预案」</color>启用，非法访问虚空者，修正！		你们在迷离的幻境中游荡了一会，遇见了一个扭曲的身影，它似乎刚刚经历过一番大战，身上遍布伤口。看见你们后，它不由分说地朝你们发起来了攻击。	反击	Assets/Product/Texture/Image/BgStory/BgStory800.jpg
+798	308	30812	30813	4	970020								虚空终结	绯色的晚景						开始战斗	Assets/Product/Texture/Image/BgStory/BgStory800.jpg
+799	308	30813	30814	3					2	{1: 9033}	{1: 1}		虚空终结	绯色的晚景					你们打倒了来自虚空的监察者，从对方身上回收了一个看上去十分普通的印章，用途似乎是给信封加盖带有独特图案的印泥。你不记得自己从哪得到过信封之类的东西，不过之后或许会用上。	收起印章	Assets/Product/Texture/Image/BgStory/BgStory800.jpg
+800	308	30814		1			99996						虚空终结	绯色的晚景	Assets/Product/Texture/Image/RoleStory/V260qyNormal01.png	洁塔薇	嗯嗯！这是第六感哦。		通过虚空，你们来到了名为Beta的世界，这里的一切对你们都很新鲜。你身边的洁塔薇似乎与这个世界产生了某种感应，她相信这个直觉能帮助你们找到另一位洁塔薇。	离开	Assets/Product/Texture/Image/BgStory/BgStory915.jpg
+801	308	30815		1									虚空终结	绯色的晚景					谨慎起见，你拉着洁塔薇远离了这个虚空裂痕。	离开	Assets/Product/Texture/Image/BgStory/BgStory925.jpg
+802	503	50301	50302	1									命定曙光	二重交叠的可能					与虚空监察者的战斗引起了系统的关注，矩阵的安全程序开始运转，Alpha世界处处是虚空裂痕和从中出现的强大怪物。你和洁塔薇索性躲进了虚空里，你们误打误撞中进入了一个诡异的虚空数据库。	检索	Assets/Product/Texture/Image/BgStory/BgStory927.jpg
+803	503	50302		2								50302	命定曙光	二重交叠的可能		天选者	那家伙说过的两位一体的算力吗……		你发现数据库的主机里保存着一段特殊的匿名讯息，这个信息揭露了一个猜想——集齐两个世界的秘钥可以组成进入矩阵中枢所需的权限证书，同时进入者自身也需要符合一定的算力门槛。	决定	Assets/Product/Texture/Image/BgStory/BgStory927.jpg
+804	503	50303	50304	3					2	{1: 9035}	{1: 1}		命定曙光	二重交叠的可能	Assets/Product/Texture/Image/RoleStory/V260qyNormal01.png	洁塔薇	好神奇！		洁塔薇拿出两把秘钥放在数据库的面板中央，霎时间，红蓝两色的秘钥发出强光，很快结合在一起并变成了完整的双色秘钥，屏幕上显示出了「中枢权限证书」的字样。	收起	Assets/Product/Texture/Image/BgStory/BgStory927.jpg
+805	503	50304		1									命定曙光	二重交叠的可能					收好钥匙后，你们赶在数据库关闭前离开了虚空。	离开	Assets/Product/Texture/Image/BgStory/BgStory938.jpg
+806	801	80101	80102	1									终末旅途	先知受难日	Assets/Product/Texture/Image/RoleStory/CibeizheNormal03.png	高位权限	对于终局来说，天选者，你不是必须的。		由于虚空监察者被击杀，矩阵的天幕覆盖了大量红色的<color=#DC143C>「警告！」</color>，即使你们东躲西藏，高位权限还是很快定位了你们的位置，她毫无预兆地出现在你们面前，就像之前所有轮回那样。	准备战斗	Assets/Product/Texture/Image/BgStory/BgStory914.jpg
+807	801	80102		2								80102	终末旅途	先知受难日	Assets/Product/Texture/Image/RoleStory/CibeizheNormal01.png	高位权限	即是说，你的存在会阻碍她的迭代。		还没做好战斗准备，天空中已经出现了大量虚空裂痕，这些裂痕之中藏着无数箭矢。在你推开洁塔薇的一瞬间，那些绯色的箭同时贯穿了你的胸膛。\n<color=#DC143C>「你已经猜到了自己的结局……」</color>\n<color=#DC143C>「但此时此刻，你仍有未完成的心愿。」</color>	挣扎■身	Assets/Product/Texture/Image/BgStory/BgStory914.jpg
+808	801	80103	80104	1									终末旅途	先知受难日		天选者	用芯片打开你的算力锁！		你拉住洁塔薇的手，将残存算力输送给她。这时，洁塔薇口袋中的<color=#DC143C>「红蓝秘钥」</color>开始发出亮光，变成了一块发着耀眼强光的芯片，同时发光的还有她的胸口。	挣■	Assets/Product/Texture/Image/BgStory/BgStory914.jpg
+809	801	80104	80105	1									终末旅途	先知受难日		洁塔薇	天选者！■■■■……■■！		在意识消失前，你看见洁塔薇将钥匙插入了胸膛，而后，就像先前那样，她的外貌发生了改变，变得越来越像Beta侧的洁塔薇。\n<color=#DC143C>「你欣慰地躺倒在地上。」</color>\n<color=#DC143C>「不知为何，你感到前所未有的轻松。」</color>\n<color=#DC143C>「望着天空，你痴痴地笑着，在洁塔薇的一声声呼叫中失去了意识。」</color>	再见	Assets/Product/Texture/Image/BgStory/Bgstory293.png
+810	801	80105	80106	1									终末旅途	先知受难日					<color=#DC143C>「天选者，你已死亡」</color>\n洁塔薇愤怒地举起武器，获得了调取矩阵算力权限的她，即使面对天空另一端的高位权限，也不再畏惧。	开枪	Assets/Product/Texture/Image/BgStory/Bgstory293.png
+811	801	80106		4	970015								终末旅途	先知受难日						开枪	Assets/Product/Texture/Image/BgStory/Bgstory293.png
+812	90018	9001801	9001802	1									既定阻碍	在途的试炼	Assets/Product/Texture/Image/RoleStory/V280bldNormal02.png	罗伯特	我等你很久了，年轻人。		由于Alpha世界投影仪限制被完全解除，Beta世界的因果似乎也相应地发生了变化。洁塔薇没有等来意料中的强欲权限，却等来了她曾在深渊见过的警长罗伯特，据她所知，这也是高位权限分身中的一个。	保持警惕	Assets/Product/Texture/Image/BgStory/BgStory832.jpg
+813	90018	9001802	9001803	1									既定阻碍	在途的试炼	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	我对你说的没兴趣……长话短说。		警长罗伯特深吸了一口气，开始自我介绍：\n「他称自己在某个时空叫巴拉德，不过这里的身份是罗伯特。罗伯特平日里积极打击犯罪，受人爱戴，他有一个可爱的女儿，虽说曾经加入过邪教，不过目前家庭和睦……」\n听到这，洁塔薇不得不打断对方。	继续听	Assets/Product/Texture/Image/BgStory/BgStory831.jpg
+814	90018	9001803	9001804	1									既定阻碍	在途的试炼	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	够了！		罗伯特决定长话短说：\n「他谈到启用投影机的隐藏功能是“不道德”的，尝试挑战高位权限更是“滑稽”的，如果说这里还有谁能挡住洁塔薇，那么他是最合适的人选。」\n「作为高位权限的分身，他必须以“义警”、“神秘拥护者”这类非官方的身份给洁塔薇一点教训，正义与邪恶就像硬币的两面……」\n听到这，洁塔薇再次失去了耐心。	开枪	Assets/Product/Texture/Image/BgStory/BgStory831.jpg
+815	90018	9001804	9001805	1									既定阻碍	在途的试炼	Assets/Product/Texture/Image/RoleStory/V280bldNormal01.png	偏执镜像	年轻人，未免太过心急。		看到满脸写着不耐烦的洁塔薇，偏执镜像正式摆开了架势，两人的战斗一触即发。	继续开枪	Assets/Product/Texture/Image/BgStory/BgStory831.jpg
+816	90018	9001805		4	970014								既定阻碍	在途的试炼						继续开枪	Assets/Product/Texture/Image/BgStory/BgStory831.jpg
+817	90019	9001901	9001902	3					2	{1: 9100, 2: 9101}	{1: 1, 2: 1}		命运邀约	前往中枢之路	Assets/Product/Texture/Image/RoleStory/V280bldNormal02.png	偏执镜像	停停停，不打了，累了。		偏执镜像在洁塔薇面前倒下了，洁塔薇没想过自己会迎来那么场硬仗。警长疲惫地坐在地上，从外套口袋中掏出了一封邀请函，看上去和一般的邀请函没什么区别，只不过，洁塔薇能感觉到其中蕴含着微妙的算力涌动。	追问	Assets/Product/Texture/Image/BgStory/BgStory830.jpg
+818	90019	9001902	9001903	1									命运邀约	前往中枢之路	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	说是中枢，其实是骗局吧？		「来自于高位权限的邀请、勇敢者的证明、至高无上的荣誉，以及……前往中枢权限的唯一通行证。」听见跟中枢有关的字眼，洁塔薇没有太激动，这一次，她变得很谨慎。	举枪	Assets/Product/Texture/Image/BgStory/BgStory830.jpg
+819	90019	9001903	9001904	3					2	{1: 9032}	{1: 1}		命运邀约	前往中枢之路	Assets/Product/Texture/Image/RoleStory/V280bldNormal02.png	偏执镜像	爱信不信。		偏执镜像淡淡一笑，没有试图说服洁塔薇。他明白，哪怕洁塔薇不相信，最终也一定会去的。	收下邀请函	Assets/Product/Texture/Image/BgStory/BgStory830.jpg
+820	90019	9001904		2								9001904	命运邀约	前往中枢之路						决定	Assets/Product/Texture/Image/BgStory/BgStory830.jpg
+821	90019	9001905		5		2							命运邀约	前往中枢之路					刚才的硬仗使洁塔薇非常疲惫，她决定先在附近休整下状态。	休整	Assets/Product/Texture/Image/BgStory/BgStory830.jpg
+822	90019	9001906		1									命运邀约	前往中枢之路					为了验证邀请函的真实性，洁塔薇决定立即出发。	出发	Assets/Product/Texture/Image/BgStory/BgStory830.jpg
+823	90019	9001907		1									命运邀约	前往中枢之路						离开	Assets/Product/Texture/Image/BgStory/BgStory830.jpg
+824	90020	9002001	9002002	1									中枢之门	最后的守卫	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	看上去不像演的……		洁塔薇来到邀请函上标识的坐标，那里有一扇比她想象中质朴得多的门。门前坐着一个高大的机械体，非要说「高大」的程度，光是影子就能遮住洁塔薇。	靠近	Assets/Product/Texture/Image/BgStory/BgStory864.jpg
+825	90020	9002002		2								9002002	中枢之门	最后的守卫	Assets/Product/Texture/Image/RoleStory/V2100gwNormal03.png	王者镜像	孤军奋战？我看，是飞蛾扑火。		对方猛地站起身子，地面也为之震动。机械体自称本名叫「国王」，在这里也可以称他为<color=#DC143C>「王者镜像」</color>，是守卫中枢的捍卫者。他询问洁塔薇，是否带了他要的东西，没有的话就无法进入这里。	决定	Assets/Product/Texture/Image/BgStory/BgStory864.jpg
+826	90020	9002003	9002004	1									中枢之门	最后的守卫	Assets/Product/Texture/Image/RoleStory/V260qyNormal07.png	洁塔薇	诶诶，赶上了啊！		「她可不是孤军奋战，还有我们！」洁塔薇身后传来了某个女孩的声音，回过头，是不知何时赶来的Alpha二人组，双马尾女孩朝洁塔薇晃了晃手中的印章，洁塔薇心领神会，拿出了白色的邀请函。	盖章	Assets/Product/Texture/Image/BgStory/BgStory864.jpg
+827	90020	9002004	9002005	1									中枢之门	最后的守卫	Assets/Product/Texture/Image/RoleStory/V2100gwNormal03.png	王者镜像	三人组吗？无所谓。		洁塔薇将封好印泥的邀请函拿给守门人，对面满意地点了点头，从背后取出了巨大的兵器，战斗一触即发。	准备战斗	Assets/Product/Texture/Image/BgStory/BgStory864.jpg
+828	90020	9002005		4	970016								中枢之门	最后的守卫						开始战斗	Assets/Product/Texture/Image/BgStory/BgStory864.jpg
+829	90020	9002006	9002008	1									中枢之门	最后的守卫	Assets/Product/Texture/Image/RoleStory/V2100gwNormal03.png	王者镜像	没有印章，无法验明真伪。		洁塔薇交出了邀请函，守门人不屑地将其丢到一边，他询问洁塔薇如何证明这封信不是伪造的。洁塔薇一时语塞，就在这时，守门人突然召唤出巨大的虚空裂痕，并趁着洁塔薇没有防备将她掷入其中。	寻找出口	Assets/Product/Texture/Image/BgStory/BgStory864.jpg
+830	90020	9002007	9002008	1									中枢之门	最后的守卫		王者镜像	你就拿这个考验我？		洁塔薇试着拿出些金币给守门人，可对方无动于衷。在洁塔薇分心的片刻，守门人召唤出了虚空裂痕，并将她掷入其中。	寻找出口	Assets/Product/Texture/Image/BgStory/BgStory864.jpg
+831	90020	9002008	9002009	1									中枢之门	最后的守卫	Assets/Product/Texture/Image/RoleStory/MajiyaweiliTheatre302.png	智识镜像	好久不见，智慧增长了吗，洁塔薇？		洁塔薇顺着虚空裂痕掉到了某个未知之境，还没等她查看四周情况，面前出现了熟悉的身影。	开枪	Assets/Product/Texture/Image/BgStory/BgStory627.jpg
+832	90020	9002009		4	970003								中枢之门	最后的守卫						开枪	Assets/Product/Texture/Image/BgStory/BgStory627.jpg
+833	90021	9002101	9002102	1									核心禁区	命途的终点					洁塔薇击倒了强大的看门人，代价是沉重的，她失去了Alpha的两位同行者，这是场称不上胜利的惨胜。回收了二人的算力后，洁塔薇脑海中顷刻间闪过关于Alpha侧洁塔薇与天选者的记忆，她开始理解了Alpha发生的一切……只是，也没有多余的时间感伤。	拿出邀请函	Assets/Product/Texture/Image/BgStory/BgStory864.jpg
+834	90021	9002102	9002103	1									核心禁区	命途的终点	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	这一次，一定要成！		洁塔薇再次拿出邀请函，手中的邀请函变成了一把钥匙，洁塔薇将钥匙插入<color=#DC143C>「中枢之门」</color>中，打开了那扇门。	进入中枢	Assets/Product/Texture/Image/BgStory/BgStory916.jpg
+835	90021	9002103	9002104	1									核心禁区	命途的终点	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal03.png	洁塔薇.Beta	塔在高速旋转……		那是由双色的虚空结晶与纯白的高塔组成的螺旋世界，高塔的塔顶闪烁着奇怪的光芒。所在的地方毫无疑问是虚空的某处，天幕与大地覆盖着流动的代码，比起量子之海那样的<color=#DC143C>「驻留台地」</color>，更像是接近底层代码的数据核心，也就是所谓的<color=#DC143C>「端脑区域」</color>。	进入高塔	Assets/Product/Texture/Image/BgStory/BgStory917.jpg
+836	90021	9002104		3					1	{1: 96189}	{1: 200}		核心禁区	命途的终点	Assets/Product/Texture/Image/RoleStory/CibeizheNormal03.png	洁塔薇.Beta	果然还是你。		洁塔薇进入了高塔内，望着螺旋状的阶梯和不断跳跃的幻觉，耳边传来了高位权限的声音。\n<color=#DC143C>「向上攀登，你将会得到真相的全部。」</color>	登塔	Assets/Product/Texture/Image/BgStory/BgStory917.jpg
+837	90022	9002201	9002202	1									真实之旅	矩阵的答案		高位权限	做好准备了吗？		洁塔薇沿着螺旋的阶梯登上了塔顶，等在那里的是熟悉的身影。高位权限正屹立于洁白的平台，像是等待着猎物般静静期待着，她的身后是由大量交互的数据构成的<color=#DC143C>「矩形魔方」</color>。	握紧武器	Assets/Product/Texture/Image/BgStory/BgStory919.jpg
+838	90022	9002202	9002203	1									真实之旅	矩阵的答案	Assets/Product/Texture/Image/RoleStory/CibeizheNormal01.png	高位权限	这可是单行道呢。		矩形魔方的算力开始向外溢出，一部分给了高位权限，另一部分给了洁塔薇。洁塔薇能感到身体里的运算量在高速增长，这一次，矩阵认可了她的战斗意识。	询问	Assets/Product/Texture/Image/BgStory/BgStory919.jpg
+839	90022	9002203	9002204	1									真实之旅	矩阵的答案	Assets/Product/Texture/Image/RoleStory/CibeizheNormal01.png	高位权限	真相就在此处，打倒我便能见证，来吧。		洁塔薇询问高位权限，为什么要邀请她到这里，又为何要与她战斗，这一切难道都在高位权限的意料之中吗？	开枪	Assets/Product/Texture/Image/BgStory/BgStory919.jpg
+840	90022	9002204	9002205	4	970017								真实之旅	矩阵的答案						开枪	Assets/Product/Texture/Image/BgStory/BgStory919.jpg
+841	90022	9002205		1				RG00708BA					真实之旅	矩阵的答案					前方是通往矩阵最终试炼的伊甸之路，准备好了就上路吧。	出发	Assets/Product/Texture/Image/BgStory/BgStory910.jpg
+842	90023	9002301	9002302	1									最后一课	在黎明来临前	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	这就是……中枢的全力吗？		洁塔薇提前结束了伊甸之路的旅途，高位权限已经在这里等待，这一次，她的形态似乎有些不同，洁塔薇本能地感受到高位权限并不打算有所保留，对方强大的压迫感胜过之前的任何敌人。	举枪	Assets/Product/Texture/Image/BgStory/BgStory646.jpg
+843	90023	9002302	9002303	1									最后一课	在黎明来临前	Assets/Product/Texture/Image/RoleStory/CibeizheNormal01.png	高位权限	洁塔薇，让我们一起见证吧。		高位权限微笑着告诉洁塔薇，无论过去两人有什么恩怨，此刻都能一笔勾销。\n她相信两个接近训练<color=#DC143C>「临界状态」</color>的存在互相交流，胜出的那方将很快进化到前所未有的形态，这便是最后一战，也是最后一课。	开枪	Assets/Product/Texture/Image/BgStory/BgStory646.jpg
+844	90023	9002303		4	970018								最后一课	在黎明来临前						开枪	Assets/Product/Texture/Image/BgStory/BgStory646.jpg
+845	90024	9002401	9002402	1									最后一课	在黎明来临前	Assets/Product/Texture/Image/RoleStory/CibeizheNormal01.png	高位权限	真是惊人的气势呢。		洁塔薇完成了伊甸之路的所有试炼，接受了沿途所有导师的祝福，此刻，她来到了旅途的终点。面对高位权限的最终形态，洁塔薇已经做好了充足的准备。\n她熟稔所有的战斗技术和战术思路，即使不依靠自身的算力，也能在战斗中实时迭代，调整自己。这一点，恐怕连高位权限也无法做到。	举枪	Assets/Product/Texture/Image/BgStory/BgStory646.jpg
+846	90024	9002402	9002403	1			99039						最后一课	在黎明来临前	Assets/Product/Texture/Image/RoleStory/CibeizheNormal01.png	高位权限	洁塔薇，让我们一起见证吧。		高位权限微笑着告诉洁塔薇，无论过去两人有什么恩怨，此刻都能一笔勾销。\n她相信两个接近训练<color=#DC143C>「临界状态」</color>的存在互相交流，胜出的那方将很快进化到前所未有的形态，这便是最后一战，也是最后一课。	开枪	Assets/Product/Texture/Image/BgStory/BgStory646.jpg
+847	90024	9002403		4	970029								最后一课	在黎明来临前						开枪	Assets/Product/Texture/Image/BgStory/BgStory646.jpg
+848	90025	9002501		1									放弃试炼	直面终局					通过完成伊甸之路，或许，能够从昔日的敌人那里得到祝福，但洁塔薇只是认为自己不应该浪费时间，她无法排除这是否是高位权限的又一个陷阱，她也并不觉得自己需要来自敌人的祝福。	结束试炼	Assets/Product/Texture/Image/BgStory/BgStory647.jpg
+849	90051	9005101	9005102	1									智慧殿堂	知识的尽头	Assets/Product/Texture/Image/RoleStory/MajiyaweiliTheatre302.png	智识镜像	这是送给你的饯别礼。		出现在洁塔薇面前的是智识镜像，在他的身旁摆着一把漆黑的巨大武器，看上去是像炮又像巨剑的东西。洁塔薇好奇地询问那是什么，智识镜像微笑着将巨柄武器抛给了洁塔薇。	接住	Assets/Product/Texture/Image/BgStory/Bgstory614.jpg
+850	90051	9005102	9005103	3					2	{1: 9036}	{1: 1}		智慧殿堂	知识的尽头	Assets/Product/Texture/Image/RoleStory/MajiyaweiliTheatre302.png	智识镜像	准备好就开始吧。		洁塔薇举起武器，抚摸着刀柄的她能感受到其中蕴含的强大能量。装备好新武器后，智识镜像也站起身子，两人缓缓来到了战斗场。	开始试炼	Assets/Product/Texture/Image/BgStory/Bgstory614.jpg
+851	90051	9005103		4	970021								智慧殿堂	知识的尽头						开始试炼	Assets/Product/Texture/Image/BgStory/Bgstory614.jpg
+852	90052	9005201	9005202	1									权术殿堂	国王与奴隶	Assets/Product/Texture/Image/RoleStory/AnboliyaTheatre301.png	权柄镜像	眼见未必为实。		洁塔薇来到了一座监狱前，隔着铁笼与洁塔薇对视的是身材庞大的权柄镜像。洁塔薇好奇地询问对方为什么将自己关在囚笼里，权柄镜像笑着询问洁塔薇，她怎么知道哪边才是真正的囚笼呢？	打开囚笼	Assets/Product/Texture/Image/BgStory/Bgstory224.png
+853	90052	9005202	9005203	1									权术殿堂	国王与奴隶	Assets/Product/Texture/Image/RoleStory/AnboliyaTheatre301.png	权柄镜像	我们没有逾越死亡的权力。		洁塔薇打开了囚笼，惊讶地发现铁笼的内部是一个巨大的战斗场，犹豫之时，身后的铁门已然关闭。看上去一场恶战已经不可避免，洁塔薇做好了战斗准备。	开始试炼	Assets/Product/Texture/Image/BgStory/Bgstory224.png
+854	90052	9005203		4	970022								权术殿堂	国王与奴隶						开始试炼	Assets/Product/Texture/Image/BgStory/Bgstory224.png
+855	90053	9005301	9005302	1									力量殿堂	褪色的斗志	Assets/Product/Texture/Image/RoleStory/V230bossTheatre304.png	力量镜像	许久不见，气场不同了啊。		洁塔薇来到力量殿堂，她见到了力量镜像。与初见时不同，此时的力量镜像似乎失去了当初的压迫感和战意。观察了一会她便明白，「衰老」不可避免地发生在了这头庞然巨兽身上。	靠近	Assets/Product/Texture/Image/BgStory/BgStory734.jpg
+856	90053	9005302	9005303	1									力量殿堂	褪色的斗志	Assets/Product/Texture/Image/RoleStory/V230bossTheatre304.png	力量镜像	这一次，就让你见识真正的力量。		洁塔薇说明了来意，力量镜像大笑起来，似乎一瞬间变回了之前高大凶狠的模样。力量镜像站起身子告诉洁塔薇，既然想学到使用力量的技巧，就需要先学会如何承受对方的攻击。	开始试炼	Assets/Product/Texture/Image/BgStory/BgStory734.jpg
+857	90053	9005303		4	970023								力量殿堂	褪色的斗志						开始试炼	Assets/Product/Texture/Image/BgStory/BgStory734.jpg
+858	90054	9005401	9005402	1									欲望殿堂	酒神的歌谣	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇	你啊，还要再打吗……		洁塔薇听见身后传来阳伞打开的声音，无奈地叹了口气，耳边传来「小可爱~」的招呼声，强欲镜像不慌不忙地来到了她的跟前。	退后半步	Assets/Product/Texture/Image/BgStory/BgStory653.jpg
+859	90054	9005402	9005403	1									欲望殿堂	酒神的歌谣	Assets/Product/Texture/Image/RoleStory/V210llsNormal01.png	强欲镜像	这份情绪……		强欲镜像笑着告诉洁塔薇，她已经在这里等待许久，想要把欢愉的奥妙传达给洁塔薇。只不过，极致的欢愉只能在极致的战斗中感受，两人还是在厮杀中感受来自酒神的堕落与救赎吧。	开始试炼	Assets/Product/Texture/Image/BgStory/BgStory653.jpg
+860	90054	9005403		4	970024								欲望殿堂	酒神的歌谣						开始试炼	Assets/Product/Texture/Image/BgStory/BgStory653.jpg
+861	90055	9005501	9005502	1									恋慕殿堂	蜂蜜与毒药	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇	你……你这家伙做了什么！		粉发的莉莉于半途拦住了洁塔薇，不由分说地在亲吻了她的脸蛋。洁塔薇本能地反击，却被莉莉轻松躲过。两人对峙着，直到莉莉掏出自己的武器插在地上，氛围变得有些焦灼和微妙。	靠近	Assets/Product/Texture/Image/BgStory/Bgstory612.jpg
+862	90055	9005502	9005503	1									恋慕殿堂	蜂蜜与毒药	Assets/Product/Texture/Image/RoleStory/TifaTheatre303.png	爱憎镜像	至死不渝……能做到吗？		莉莉告诉洁塔薇，刚才的吻叫死亡之吻，代表着爱与占有与临终的告别，是「吻别」。想要学到刻骨铭心的沉醉与苦痛，就在战斗中打败她。	开始试炼	Assets/Product/Texture/Image/BgStory/Bgstory612.jpg
+863	90055	9005503		4	970025								恋慕殿堂	蜂蜜与毒药						开始试炼	Assets/Product/Texture/Image/BgStory/Bgstory612.jpg
+864	90056	9005601	9005602	1									雄心殿堂	傲慢开拓者	Assets/Product/Texture/Image/RoleStory/V240njeNormal01.png	傲岸镜像	挡住了吗？真是不错的反应。		熟悉的黑影横亘在道路前，仍然是残破的斗篷和藏于其下的机械臂。洁塔薇认出了傲岸镜像，还没等她做好准备，傲岸镜像就以肉眼难以直视的速度袭来，短暂的火光后，毫发无损的洁塔薇举起了枪。	戒备	Assets/Product/Texture/Image/BgStory/BgStory830.jpg
+865	90056	9005602	9005603	1									雄心殿堂	傲慢开拓者	Assets/Product/Texture/Image/RoleStory/V240njeNormal01.png	傲岸镜像	我将教你百武精通的奥义。		傲岸镜像告诉洁塔薇，虽然她的反应速度很快，不过对于武器的运用有些粗糙，哪怕同时使用两把武器也要考虑优先次序，远近的目标需要不同的应对。	开始试炼	Assets/Product/Texture/Image/BgStory/BgStory830.jpg
+866	90056	9005603		4	970026								雄心殿堂	傲慢开拓者						开始试炼	Assets/Product/Texture/Image/BgStory/BgStory830.jpg
+867	90057	9005701	9005702	1									执念殿堂	无边的愿景	Assets/Product/Texture/Image/RoleStory/V280bldNormal01.png	偏执镜像	别这么心急，年轻人。		偏执镜像挡在了洁塔薇的面前，似乎有什么想说的。洁塔薇让对方长话短说，不过偏执镜像似乎并不满意洁塔薇的态度，两人僵持不下。最终，偏执镜像提出一对一的荣耀对决。	举枪	Assets/Product/Texture/Image/BgStory/BgStory831.jpg
+868	90057	9005702	9005703	1									执念殿堂	无边的愿景	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇	理由当然有很多，已经没法回头了不是吗？		偏执镜像深吸了一口气，摆出战斗姿势，他声称自己会从正面攻过去。就在两人的战斗一触即发之时，偏执镜像突然询问洁塔薇战斗的理由，并告诉她没有目标的杀戮将使她变得心慈手软。	开始试炼	Assets/Product/Texture/Image/BgStory/BgStory831.jpg
+869	90057	9005703		4	970027								执念殿堂	无边的愿景						开始试炼	Assets/Product/Texture/Image/BgStory/BgStory831.jpg
+870	90058	9005801	9005802	1									极限殿堂	自我的巅峰	Assets/Product/Texture/Image/RoleStory/V2100gwNormal03.png	王者镜像	最后的荣光，将由我来见证。		洁塔薇来到了伊甸之路尽头的辉光处，守在门前的仍然是那个高大的身影。王者镜像从地上拔出自己的武器，看上去等待已久，他声称自己将作为检验洁塔薇算力边界的最后一道门槛。	迎上前去	Assets/Product/Texture/Image/BgStory/BgStory864.jpg
+871	90058	9005802	9005803	1									极限殿堂	自我的巅峰	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇	少危言耸听了，开始吧。		王者镜像赞叹洁塔薇的勇气，同时也警告洁塔薇，想要打倒他，就必须将之前所学的所有技术全部运用上。不全力以赴的话，迭代的速度再快也无法支撑身体做出下意识的判断。	开始试炼	Assets/Product/Texture/Image/BgStory/BgStory864.jpg
+872	90058	9005803		4	970028								极限殿堂	自我的巅峰						开始试炼	Assets/Product/Texture/Image/BgStory/BgStory864.jpg
+873	92014	9201401	9201402	1									荒废古卷	可疑的测试					在一处残骸的地下空间，洁塔薇找到了用数据形式记载的古卷。	翻阅	Assets/Product/Texture/Image/BgStory/Bgstory250.png
+874	92014	9201402	9201403	1									荒废古卷	可疑的测试					「矩阵的训练遵循多层次筛选原则，通过选拔的完全品会成为天选者，而劣等品将作为杰出的疯癫者存在。」\n「在劣等品之下还是残缺品，残缺品仅仅是平凡的个体，且拥有异变成食人魔的潜在基因。残缺品之下……那便是纯粹的怪物了。」	继续翻阅	Assets/Product/Texture/Image/BgStory/Bgstory250.png
+875	92014	9201403		2								9201403	荒废古卷	可疑的测试					「来访者，现在的你是否对这里发生的一切有了新的理解。比如……您认为，曾经遇见的那两位失控孩童属于？」	回答	Assets/Product/Texture/Image/BgStory/Bgstory250.png
+876	92014	9201404		1									荒废古卷	可疑的测试					看来您仍然不理解这里的规则，请放下本卷离开吧。	离开	Assets/Product/Texture/Image/BgStory/Bgstory250.png
+877	92014	9201405		1									荒废古卷	可疑的测试					看来您仍然不理解这里的规则，请放下本卷离开吧。	离开	Assets/Product/Texture/Image/BgStory/Bgstory250.png
+878	92014	9201406		2								9201406	荒废古卷	可疑的测试					「回答正确，看来您足够优秀。那么，下一个问题是……您认为粉发的莉莉属于？」	回答	Assets/Product/Texture/Image/BgStory/Bgstory250.png
+879	92014	9201407		1									荒废古卷	可疑的测试					看来您仍然不理解这里的规则，请放下本卷离开吧。	离开	Assets/Product/Texture/Image/BgStory/Bgstory250.png
+880	92014	9201408		3					2	{1: 9037}	{1: 1}		荒废古卷	可疑的测试					「回答正确，看来您相当优秀。那么，下一个问题是……您认为高位权限属于？哈哈，请忽略我的玩笑，您通过了测试，可以带走奖品了。」	收下离开	Assets/Product/Texture/Image/BgStory/Bgstory250.png
+881	92014	9201409		1									荒废古卷	可疑的测试					看来您仍然不理解这里的规则，请放下本卷离开吧。	离开	Assets/Product/Texture/Image/BgStory/Bgstory250.png
+882	93015	9301501	9301502	1									荒废古堡	残缺的照片					洁塔薇来到了一座倚靠在悬崖边的失落古堡，那儿似乎有人生活过，外部有明显的战斗痕迹，但是古堡的大门却紧闭着。	检视	Assets/Product/Texture/Image/BgStory/Bgstory512.jpg
+883	93015	9301502		2								9301502	荒废古堡	残缺的照片		洁塔薇.Beta	四边形的小东西……		古堡的大门上有一个四方形的凹槽，放入什么东西的话或许能打开。	决定	Assets/Product/Texture/Image/BgStory/Bgstory512.jpg
+884	93015	9301503	9301504	1									荒废古堡	残缺的照片					洁塔薇奇迹般地打开了古堡的大门，那是一座掉漆的老洋房，里面摆放着大量过期的应急物资，上楼后，有一个简陋的房间。	调查	Assets/Product/Texture/Image/BgStory/Bgstory369.png
+885	93015	9301504	9301505	1									荒废古堡	残缺的照片	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	这是……高位权限？		房间的桌面上摆放着撕开的半张照片，照片上是粉发女人和某位友人的合照，但是照片的另一半已经不见了。	取走照片	Assets/Product/Texture/Image/BgStory/Bgstory369.png
+886	93015	9301505		3					2	{1: 9038}	{1: 1}		荒废古堡	残缺的照片	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	说不定能派上用场。		在照片的底下，洁塔薇发现了一个陈旧的罗盘。	收起离开	Assets/Product/Texture/Image/BgStory/Bgstory369.png
+887	93015	9301506		3					4	{1: 4}	{1: 1}		荒废古堡	残缺的照片					洁塔薇没能打开大门，从古堡附近的损坏机械体那里回收了一些物资便匆匆离开。	离开	Assets/Product/Texture/Image/BgStory/Bgstory512.jpg
+888	94016	9401601	9401602	1									荒废坟地	谁人的鲜花					洁塔薇来到了一处无人的坟地，那里孤零零地屹立着一座墓碑，走近看的话，地上摆放着一束新鲜的花束。	检视	Assets/Product/Texture/Image/BgStory/BgStory823.jpg
+889	94016	9401602		2								9401602	荒废坟地	谁人的鲜花	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	我的墓吗？还是说是之前的……		洁塔薇仔细地观察了墓碑，发现上面刻着「纪念逝去的洁塔薇」的字样，落款上则写着「天选者」三个字。	决定	Assets/Product/Texture/Image/BgStory/BgStory823.jpg
+890	94016	9401603		3					4	{1: 4}	{1: 1}		荒废坟地	谁人的鲜花					洁塔薇捧起鲜花，发现花束中夹着一把钥匙。虽然感到有些困惑，洁塔薇还是取走了钥匙，她用那把钥匙打开了附近的小屋并进行了补给。	离开	Assets/Product/Texture/Image/BgStory/BgStory823.jpg
+891	94016	9401604	9401605	1									荒废坟地	谁人的鲜花					洁塔薇决定打扫下墓地，在她趴下身子的时候，偶然间看见墓碑上贴着的照片。	拾起照片	Assets/Product/Texture/Image/BgStory/BgStory823.jpg
+892	94016	9401605		2								9401605	荒废坟地	谁人的鲜花	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal01.png	洁塔薇.Beta	双马尾的我？		那是残缺的半张照片，照片上是一个有着银黑色双马尾的女孩，拥有和洁塔薇一样的长相。	决定	Assets/Product/Texture/Image/BgStory/BgStory823.jpg
+893	94016	9401606		3					1	{1: 96189}	{1: 200}		荒废坟地	谁人的鲜花					洁塔薇收起了那半张残缺的照片，思考着照片的另外一半到底在哪……在附近简单补给后，她离开了这块废弃的坟地。	离开	Assets/Product/Texture/Image/BgStory/BgStory823.jpg
+894	94016	9401607	9401608	1									荒废坟地	谁人的鲜花	Assets/Product/Texture/Image/RoleStory/V2110jtwNormal02.png	洁塔薇.Beta	为什么……究竟是！		洁塔薇拿出了之前得到的半张照片，她将两张照片拼在了一起，缺口处恰好严丝合缝。她皱起了眉头，眼前的景象是如此诡异……照片中的洁塔薇和敌人并肩而站，笑容开朗，像姐妹般友好。	拿出罗盘	Assets/Product/Texture/Image/BgStory/BgStory824.jpg
+895	94016	9401608		3					2	{1: 9039}	{1: 1}		荒废坟地	谁人的鲜花					拼凑起来的照片背后写着一行完整的坐标，根据罗盘的指示，洁塔薇在附近获取了一个奇怪的物品。	离开	Assets/Product/Texture/Image/BgStory/BgStory824.jpg

@@ -2,9 +2,16 @@
 ---@field private _Model XConnectingLineModel
 local XConnectingLineControl = XClass(XControl, "XConnectingLineControl")
 
+local TableKey = {
+    -- 目前这张表只有局内用到，先放到Control，后续有全局配置了再考虑放到Agency
+    ConnectingLineClientConfig = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "Key", ReadFunc = XConfigUtil.ReadType.String },
+}
+
 function XConnectingLineControl:OnInit()
     self._UiState = XEnumConst.CONNECTING_LINE.UI_STATUS.CHAPTER
     self._ChapterId = false
+    
+    self:InitConfigByTabKey("MiniActivity/ConnectingLine", TableKey)
 end
 
 function XConnectingLineControl:AddAgencyEvent()
@@ -28,6 +35,9 @@ end
 function XConnectingLineControl:InitGame(gridX, gridY)
     self._Model:InitGame(gridX, gridY)
     local game = self._Model:GetGame()
+    
+    game:SetCompleteLineSoundCueId(self:GetClientConfigNumberByKey("CompleteLineSound"))
+    
     return game
 end
 
@@ -75,6 +85,14 @@ end
 
 function XConnectingLineControl:IsLastStage()
     return self._Model:IsLastStage()
+end
+
+function XConnectingLineControl:SetCurrentStageId(stageId)
+    self._Model:SetCurrentStageId(stageId)
+end
+
+function XConnectingLineControl:GetCurrentStageId()
+    return self._Model:GetCurrentStageId()
 end
 
 function XConnectingLineControl:IsGameInit()
@@ -285,5 +303,39 @@ end
 function XConnectingLineControl:GetCoinItemId()
     return self._Model:GetCoinItemId()
 end
+
+function XConnectingLineControl:GetRandomStageIdByGameId(gameId)
+    local stageList = self._Model:GetStageListByGameId(gameId)
+    if #stageList == 0 then
+        XLog.Error("[XConnectingLineControl] GetRandomStageIdByGameId gameId not found, 检查ConnectingLineStage表", gameId)
+        return 0
+    end
+    local randomIndex = math.random(1, #stageList)
+    return stageList[randomIndex].Id
+end
+
+--region Configs
+
+---@return XTableConnectingLineClientConfig
+function XConnectingLineControl:GetClientConfigByKey(key, notips)
+    return self:GetConfigByTabKeyAndIdKey(TableKey.ConnectingLineClientConfig, key, notips)
+end
+
+function XConnectingLineControl:GetClientConfigNumberByKey(key, index)
+    index = index or 1
+    
+    local cfg = self:GetClientConfigByKey(key)
+
+    if cfg then
+        local valStr = cfg.Values[index]
+
+        if string.IsFloatNumber(valStr) then
+            return tonumber(valStr)
+        end
+    end
+    
+    return 0
+end
+--endregion
 
 return XConnectingLineControl

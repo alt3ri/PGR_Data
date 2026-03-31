@@ -37,13 +37,16 @@ function XUiBountyChallengeChapterDetailTask:UpdateContent(data)
         self.ImgMask.gameObject:SetActive(false)
     end
 
-    if self.ImgBgComplete then
-        self.ImgBgComplete.gameObject:SetActiveEx(data.IsCanFinish)
+    local difficulty = 1
+    if data.Difficulty then
+        difficulty = data.Difficulty
     end
-
-    if self.ImgBgNormal then
-        self.ImgBgNormal.gameObject:SetActiveEx(not data.IsCanFinish)
+    self.ImgBgComplete.gameObject:SetActiveEx(data.IsCanFinish)
+    self.ImgBgNormal.gameObject:SetActiveEx(not data.IsCanFinish and difficulty ~= 4)
+    if not self.ImgBgLianYu then
+        self.ImgBgLianYu = self.Transform:Find("All/ImgBgLianYu")
     end
+    self.ImgBgLianYu.gameObject:SetActiveEx(not data.IsCanFinish and difficulty == 4)
 
     -- 可领取特效
     if data.IsCanFinish then

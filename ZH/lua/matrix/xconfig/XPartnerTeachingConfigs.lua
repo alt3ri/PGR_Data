@@ -2,6 +2,7 @@ XPartnerTeachingConfigs = XPartnerTeachingConfigs or {}
 
 local TABLE_PARTNER_TEACHING_CHAPTER = "Share/Fuben/PartnerTeaching/PartnerTeachingChapter.tab"
 
+---@type XTablePartnerTeachingChapter[]
 local PartnerTeachingChapter = {}
 
 function XPartnerTeachingConfigs.Init()
@@ -22,8 +23,15 @@ end
 --- 获取所有的教学章节Id
 function XPartnerTeachingConfigs.GetAllChapterId()
     local result = {}
-    for id, _ in pairs(PartnerTeachingChapter) do
-        table.insert(result, id)
+    for id, cfg in pairs(PartnerTeachingChapter) do
+        if XTool.IsNumberValidEx(cfg.PartnerId) then
+            -- 辅助机在可获得时间内或者已拥有
+            if XDataCenter.PartnerManager.CheckPartnerIsInAvaliableTimeById(cfg.PartnerId) or XDataCenter.PartnerManager.CheckIsOwnPartnerByTemplateId(cfg.PartnerId) then
+                table.insert(result, id)
+            end
+        else
+            table.insert(result, id)
+        end
     end
     return result
 end

@@ -6,6 +6,7 @@ local XUiPhotographPanel = require("XUi/XUiPhotograph/XUiPhotographPanel")
 local XUiPhotographCapturePanel = require("XUi/XUiPhotograph/XUiPhotographCapturePanel")
 local XUiPhotographSDKPanel = require("XUi/XUiPhotograph/XUiPhotographSDKPanel")
 local XUiPanelRoleModel = require("XUi/XUiCharacter/XUiPanelRoleModel")
+local XUiPanelLackResources = require("XUi/XUiSubPackage/XUiPanel/XUiPanelLackResources")
 
 local Vector2 = CS.UnityEngine.Vector2
 local OffsetX, OffsetY = 50, 50
@@ -46,6 +47,11 @@ function XUiPhotograph:OnAwake()
     ---@type XUiPanelPhotographSceneChange
     self._SceneChange = require("XUi/XUiPhotograph/XUiPanelPhotographSceneChange").New(self.PanelSceneChange, self)
     self._SceneChange:SetUpdateBatteryMode(handler(self, self.UpdateBatteryMode))
+
+    -- PanelLackResources 初始化
+    if self.PanelLackResources then
+        self._PanelLackRes = XUiPanelLackResources.New(self.PanelLackResources, self)
+    end
 end
 
 function XUiPhotograph:OnStart()
@@ -99,6 +105,9 @@ function XUiPhotograph:OnEnable()
     -- 开启时钟
     self.ClockTimer = XUiHelper.SetClockTimeTempFun(self)
     XUiHelper.SetSceneAnimHandler(self)
+
+    -- 监听下载完成事件
+    XEventManager.AddEventListener(XEventId.EVENT_RES_COMPLETE, self.OnFashionDownloadComplete, self)
 end
 
 function XUiPhotograph:Update()
@@ -162,6 +171,9 @@ function XUiPhotograph:OnDisable()
     self.Enable = false
     XEventManager.DispatchEvent(XEventId.EVENT_PHOTO_LEAVE)
     XMVCA.XFavorability:RemoveRoleActionUiAnimListener(self)
+
+    -- 移除下载完成事件监听
+    XEventManager.RemoveEventListener(XEventId.EVENT_RES_COMPLETE, self.OnFashionDownloadComplete, self)
 
     -- 关闭时钟
     if self.ClockTimer then
@@ -341,6 +353,7 @@ function XUiPhotograph:UpdateRoleModel(charId, fashionId)
     self.RoleAnimator = self.RoleModel:GetAnimator()
 
     self.RoleModel:SetXPostFaicalControllerActive(true)
+    self:CheckAndUpdateLackResourcesPanel()
 end
 
 function XUiPhotograph:UpdatePartner(templateId)
@@ -840,4 +853,43 @@ function XUiPhotograph:OnAnimationEnter(evt, args)
     self.RoleModel:LoadCharacterUiEffect(self.SelectCharacterId, actionId)
 end
 
--- ===================================================
+-- ===================================================
+
+--region 资源缺失面板
+
+function XUiPhotograph:CheckAndUpdateLackResourcesPanel()
+    if not self._PanelLackRes then return end
+    local fashionId = self.SelectFashionId
+    local characterId = self.SelectCharacterId
+    if not XTool.IsNumberValid(fashionId) then
+        self._PanelLackRes:Close()
+        self._isFashionLacking = false
+        return
+    end
+    local isDownloaded = XMVCA.XSubPackage:CheckFashionDownloaded(fashionId)
+    if isDownloaded then
+        self._PanelLackRes:Close()
+        self._isFashionLacking = false
+    else
+        self._PanelLackRes:SetData(characterId, fashionId)
+        self._PanelLackRes:Open()
+        self._isFashionLacking = true
+    end
+end
+
+function XUiPhotograph:OnFashionDownloadComplete()
+    if not self._isFashionLacking then
+        self:CheckAndUpdateLackResourcesPanel()
+        return
+    end
+    local fashionId = self.SelectFashionId
+    if XTool.IsNumberValid(fashionId)
+       and XMVCA.XSubPackage:CheckFashionDownloaded(fashionId) then
+        self:UpdateRoleModel(self.SelectCharacterId, fashionId)
+        local fashionTemplate = XDataCenter.FashionManager.GetFashionTemplate(fashionId)
+        XUiManager.PopupLeftTip(CS.XTextManager.GetText("DownloadFashionFinishedRefresh", fashionTemplate and fashionTemplate.Name or ""))
+    end
+    self:CheckAndUpdateLackResourcesPanel()
+end
+
+--endregion

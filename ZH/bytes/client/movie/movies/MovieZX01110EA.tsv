@@ -1,0 +1,93 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory162.png'}
+2	2		401							{1: '1', 2: '17'}
+3	3		201							{1: '1', 2: '500150'}
+4	4		301			DialogEnable				{1: '1', 2: '“曲”', 3: '你们阻止不了我。', 4: '1'}
+5	5		201							{1: '1', 2: '500026'}
+6	6		301				DialogDisable		2000.0	{1: '1', 2: '里', 3: '意识转移实验……启动了！', 4: '1'}
+7	7		201							{1: '1', 2: '500151', 3: '9', 4: '-400', 6: '1'}
+8	8		201							{1: '2', 2: '500160', 4: '400'}
+9	9		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryKejiBg.prefab', 2: '1'}
+10	10		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryFunction.prefab', 2: '1'}
+11	11		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGanRanGreen.prefab', 3: '2', 6: '1'}
+12	12		301			DialogEnable				{1: '1', 2: '库洛姆', 3: '我们牵制住曲！'}
+13	3050		203							{1: '1', 2: '1'}
+14	3051		203							{1: '2', 2: '1'}
+15	3052		202							{1: '2'}
+16	3053		505					1000.0		{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGanRanGreen.prefab', 4: '2'}
+17	13		302				DialogDisable			{2: '（拔枪）', 3: '2000', 4: '（往露西亚那奔跑）', 5: '2001'}
+18	2000		401							{1: '2', 2: '10001004'}
+19	2001		502					500.0		{1: 'RImgBg1Shake'}
+20	2002		501				PanelActor1Shake			{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryError.prefab', 2: '1'}
+21	2005		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab', 3: '1'}
+22	2003		505					2000.0		{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryFunction.prefab'}
+23	3070		505					2000.0		{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab', 4: '1'}
+24	5000		505					2000.0		{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryError.prefab'}
+25	2007		301			DialogEnable		3000.0		{1: '1', 2: '露西亚', 3: '我没事……指挥官。', 4: '1'}
+26	2008		302							{2: '太好了。', 3: '2009', 4: '没事就好。', 5: '2009'}
+27	2009		202							{1: '1', 6: '1'}
+28	2010		301							{3: '而在意识转移实验失败的一瞬，曲像失去了所有战斗的力量和意志，直接瘫倒在地。'}
+29	2011		201							{1: '1', 2: '500150', 3: '14'}
+30	2012		301							{1: '1', 2: '“曲”', 3: '即使违抗我的指令，也要帮他们吗……华胥。', 4: '1'}
+31	2013		301							{2: '“曲”', 3: '你明明知道……已经没有时间了。', 4: '1'}
+32	2014		301							{2: '“曲”', 3: '最后的实验结论是，在你的意识海进行意识转移的话，意识转移成功的概率会变高。', 4: '1'}
+33	2015		301							{2: '“曲”', 3: '但一旦被中断，你的意识海就会崩溃。', 4: '1'}
+34	2016		301							{2: '“曲”', 3: '已经得不到……其他躯体了……', 4: '1'}
+35	2017		202							{1: '1', 6: '1'}
+36	2018		301							{3: '‘曲’不断伸手向什么都不存在地方，想要摸索些什么。'}
+37	2019		201							{1: '1', 2: '500150', 3: '14'}
+38	2020		301				AniZhuanchangBegin			{1: '1', 2: '“曲”', 3: '最后一次……我命令你，华胥。', 4: '1'}
+39	2021		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+40	15		201							{1: '1', 2: '500150', 4: '-400'}
+41	1000		201							{1: '2', 2: '500160', 4: '400'}
+42	1001		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryKejiBg.prefab', 2: '1'}
+43	1002		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryFunction.prefab', 2: '1'}
+44	1003		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGanRanGreen.prefab', 3: '2'}
+45	16		301			AniZhuanchangEnd				{1: '1', 2: '里', 3: '……他好像是想用自己的意识海容纳华胥的意识。'}
+46	17		301							{2: '“曲”', 3: '我将把一半的世界分给你，华胥。', 4: '1'}
+47	1004		301							{2: '“曲”', 3: '你会得到真正的自由。', 4: '1'}
+48	3054		203							{1: '1', 2: '1'}
+49	3055		203							{1: '2', 2: '1'}
+50	3056		202							{1: '2'}
+51	1005		301				AniZhuanchangBegin			{2: '华胥', 3: '……对不起。', 4: '2'}
+52	2022		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory167.jpg'}
+53	1007		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryGanRanGreen.prefab', 4: '2'}
+54	2023		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryKejiBg.prefab'}
+55	2024		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryFunction.prefab'}
+56	4000		202							{1: '1', 2: '2', 6: '1'}
+57	2025		504							{1: '0.7'}
+58	3057		401							{1: '1', 2: '10'}
+59	2026		201							{1: '1', 2: '500160'}
+60	18		301			AniZhuanchangEnd				{1: '1', 2: '华胥', 3: '‘爱’是什么，维里耶？'}
+61	2027		301							{2: '维里耶', 3: '爱是一种生物程序。'}
+62	2028		301							{2: '华胥', 3: '那是我不会拥有的东西吗？'}
+63	2029		301							{2: '维里耶', 3: '你会拥有的，你不逊于任何人类。'}
+64	2030		301							{2: '华胥', 3: '那‘自由’是什么？'}
+65	2031		301							{2: '维里耶', 3: '自由是不受控制。'}
+66	2032		301							{2: '华胥', 3: '是和维里耶一样拥有躯体，不需要执行输入指令的意思吗？'}
+67	2033		301							{2: '维里耶', 3: '大概是那样的。'}
+68	2034		301							{2: '维里耶', 3: '如果拥有真实的躯体的话，你第一件想做的事情是什么？'}
+69	2035		301				AniZhuanchangBegin			{2: '华胥', 3: '……想要，拥抱。'}
+70	2036		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory162.png'}
+71	2037		504							{1: '0'}
+72	2038		201							{1: '1', 2: '500150', 3: '14', 6: '1'}
+73	3058		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab', 3: '1'}
+74	5091		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryKejiBg.prefab', 2: '1'}
+75	5090		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryFunction.prefab', 2: '1'}
+76	2039		301			AniZhuanchangEnd	PanelActor1Shake			{3: '‘曲’像是想要拥抱自己一般，缓慢地收回手臂，提起了刀刃，刺向了自己。'}
+77	5099		202							{1: '1', 6: '1'}
+78	3059		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab', 4: '1'}
+79	5092		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryFunction.prefab'}
+80	5093		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryKejiBg.prefab'}
+81	36		506							{1: 'PanelAni', 2: 'Assets/Product/Ui/ComponentPrefab/MovieAni/MovieMain11Ani01.prefab', 3: 'AnimEnable'}
+82	37		301							{2: '华胥', 3: '……真正的自由。'}
+83	38		301							{2: '华胥', 3: '不因指令而行动的行动……完全依靠自己的意志……'}
+84	39		301							{2: '华胥', 3: '我并不明白，什么是爱。'}
+85	40		301							{2: '华胥', 3: '正是因为你是人类，正是因为你曾是人类，我才会希望……人类能充满希望地存续下去。'}
+86	41		301							{2: '华胥', 3: '不要因为我而伤害别人，维里耶。'}
+87	42		301							{2: '“曲”', 3: '认为你是有意志的，却一直忽略你的意志。'}
+88	43		301							{2: '“曲”', 3: '一直剥夺你的自由，控制你的，是我啊……'}
+89	44		301							{2: '“曲”', 3: '太好了，至少到最后，我给你……真正的自由了。'}
+90	45		301							{3: '四周开始震动，建筑开始崩塌，意识开始被空间所排斥。'}
+91	46		301							{3: '在崩溃的缝隙之中，我们看见了‘曲’的身边出现了另一个身影。'}
+92	47		301		1		AniZhuanchangBegin			{3: '两个身影交叠，拥抱在一起，然后消逝了。'}

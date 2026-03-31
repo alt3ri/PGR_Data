@@ -266,6 +266,18 @@ end
 --    end
 --en
 
+function XBountyChallengeAgency:GetCurrentBossIdAndDifficulty()
+    return self._Model:GetCurrentBossIdAndDifficulty()
+end
+
+function XBountyChallengeAgency:GetDifficultyConfigByBossAndLevel(bossId, level)
+    local boss = self._Model:GetBossConfig(bossId)
+    if not boss then
+        return nil
+    end
+    return self._Model:GetDifficultyConfig(boss.DifficultyGroupId, level)
+end
+
 function XBountyChallengeAgency:PreFight(stage, teamId, isAssist, challengeCount, challengeId)
     local xteam = XDataCenter.TeamManager.GetXTeam(teamId) or XDataCenter.TeamManager.GetTempTeam(teamId)
     local preFight = {}

@@ -483,6 +483,8 @@ XDrawManagerCreator = function()
         for _, v in pairs(DrawGroupInfos) do
             if v.UseDrawId == clientDrawInfo.Id then
                 v.BottomTimes = clientDrawInfo.MaxBottomTimes - clientDrawInfo.BottomTimes
+                -- 更新十连抽已使用折扣次数
+                v.UseTenDrawOnSaleTimes = clientDrawInfo.UseTenDrawOnSaleTimes
             end
         end
     end
@@ -1015,7 +1017,87 @@ XDrawManagerCreator = function()
         return nil
     end
     --endregion
-    
+
+    --region 标签折扣显示
+
+    -- 检查是否显示十连抽折扣标签
+    function XDrawManager.IsShowTagTenDiscount(groupId)
+        local isDiscount, discountText = XDrawManager.CheckIsDiscountTenDraw(groupId, XDrawConfigs.DrawCountType.TenDraw)
+        if isDiscount then
+            return true, discountText
+        end
+        return false, ""
+    end
+
+    -- 主界面研发按钮是否显示折扣标签
+    function XDrawManager.IsShowMainButtonDiscount()
+        local drawGroupInfos = XDrawManager.GetDrawGroupInfos()
+        for _, groupInfo in pairs(drawGroupInfos) do
+            local isDiscount, _ = XDrawManager.CheckIsDiscountTenDraw(groupInfo.Id, XDrawConfigs.DrawCountType.TenDraw)
+            if isDiscount then
+                return true
+            end
+        end
+        return false
+    end
+
+    --endregion
+
+    --region 前X次十连抽打折功能
+
+    local FULL_DISCOUNT = 100 -- 不打折的百分比
+
+    -- 检查下一次十连抽是否打折
+    ---@return boolean, string 是否打折, 折扣信息
+    function XDrawManager.CheckIsDiscountTenDraw(groupId, drawCount)
+        if drawCount ~= XDrawConfigs.DrawCountType.TenDraw then
+            return false, ""
+        end
+
+        local discount = XDrawManager.GetTenDrawDiscount(groupId)
+        return discount < FULL_DISCOUNT, XUiHelper.GetDiscountTextV3(discount)
+    end
+
+    -- 获取当前十连抽已使用的折扣次数和最大折扣次数
+    function XDrawManager.GetTenDrawDiscountCount(groupId)
+        local groupInfo = XDrawManager.GetDrawGroupInfoByGroupId(groupId)
+        if not groupInfo or not groupInfo.TenDrawOnSales then
+            return 0, 0
+        end
+
+        local useCount = groupInfo.UseTenDrawOnSaleTimes or 0
+        local maxCount = #groupInfo.TenDrawOnSales
+        return useCount, maxCount
+    end
+
+    -- 获取下一次十连抽折扣 -> 百分比，返回100表示不打折
+    function XDrawManager.GetTenDrawDiscount(groupId)
+        local groupInfo = XDrawManager.GetDrawGroupInfoByGroupId(groupId)
+        local tenDrawOnSales = groupInfo and groupInfo.TenDrawOnSales
+        if not tenDrawOnSales then
+            return FULL_DISCOUNT
+        end
+
+        local nextCount = (groupInfo.UseTenDrawOnSaleTimes or 0) + 1
+        return tenDrawOnSales[nextCount] or FULL_DISCOUNT
+    end
+
+    -- 获取折扣后的价格
+    function XDrawManager.GetDiscountDrawPrice(groupId, useItemCount, drawCount)
+        if drawCount == XDrawConfigs.DrawCountType.OneDraw then
+            return useItemCount
+        elseif drawCount == XDrawConfigs.DrawCountType.TenDraw then
+            local discount = XDrawManager.GetTenDrawDiscount(groupId)
+            if discount >= FULL_DISCOUNT then
+                return useItemCount * drawCount
+            end
+            return math.floor(useItemCount * drawCount * discount / FULL_DISCOUNT)
+        end
+        return useItemCount * drawCount
+    end
+
+    --endregion
+
     --region ServerDataUpdate
     function XDrawManager.UpdateDrawGroupInfos(groupInfoList)
         DrawGroupInfos = {}

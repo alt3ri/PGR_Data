@@ -1,0 +1,62 @@
+Id	UiResGroupId	UiType	ProxyName	ProxyEnumName	PrefabUrl	ScriptName	OpenOrder	InitState	HasNode
+1	1	UiFightComponentDLC						1	
+2	1	UiFightTipsDLC							
+3	1	UiFightGuideDLC							
+4	1	UiFightDlcLevelPlayTimer						1	
+5	1	UiFightRebornDLC							
+6	1	UiFightOnlineMsgDLC						1	
+7	1	UiFightDlcResilience						1	
+8	1	UiFightControlDLC						1	
+9	1	UiFightRelinkControl					1	1	
+10	1	UiDlcRelinkFightCharacterEnergy	XUiFightRelinkCharacterEnergy					1	
+11	2	UiFightComponentDLC						1	
+12	2	UiFightTipsDLC							
+13	2	UiFightGuideDLC							
+14	2	UiFightDlcLevelPlayTimer						1	
+15	2	UiFightControlDLC						1	
+16	2	UiFightDlcCasualGames						1	
+17	3	UiFightComponentDLC						1	
+18	3	UiFightTipsDLC							
+19	3	UiFightGuideDLC							
+20	3	UiFightDlcLevelPlayTimer						1	
+21	3	UiFightControlDLC						1	
+22	3	UiFightDlcMouseHunter						1	
+23	4	UiBigWorldFightComponentDLC	XUiFightComponentDLC					1	
+24	4	UiFightTipsDLC							
+25	4	UiBigWorldFightGuideDLC	XUiFightGuideDLC						
+26	4	UiFightDlcLevelPlayTimer						1	
+27	4	UiFightDlcDrama						1	
+28	4	UiFightDlcDramaLog							
+29	4	UiFightDlcExplorationControl						1	
+30	4	UiFightDlcNavigation						1	
+31	4	UiFightDlcVideoPlayer							
+32	4	UiBigWorldBeamCannonControl							
+33	5	UiFightTipsDLC					3		
+34	5	UiFightControlDLC						1	
+35	5	UiFightDlcAutoChess						1	
+36	5	UiFightDlcLevelPlayTimer					2	1	
+37	6	UiFightComponentDLC						1	
+38	6	UiFightControlDLC						1	
+39	6	UiFightDlcCommonJoystick		CommonJoystick	Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkJoystickNode.prefab	XUiFightDlcRelinkJoystickNode		1	True
+40	6	UiFightDlcCommonControl		CommonControl	Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkCharacterControlPanel3.prefab	XUiFightDlcRelink3SkillNode		1	True
+41	6	UiFightDlcCommonControl		CommonControl	Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkCharacterControlPanel3.prefab	XUiFightDlcRelink4SkillNode		1	True
+42	6	UiFightDlcCommonEnergy		CommonEnergy	Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiNpcFillBar/Lifu/UiDlcRelinkEnergyR4Lifu.prefab	XUiFightDlcRelinkEnergyNode		1	True
+43	6	UiFightDlcCommonTeamInfo		RelinkTeamInfo	Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkTeamInfo.prefab	XUiFightDlcRelinkTeamInformationNode		1	True
+44	6	UiFightDlcCommonUiDlcStagePanel		CommonTip	Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkStagePanel.prefab	XUiFightDlcRelinkStagePanelNode			True
+45	6	UiFightDlcCommonTargetPanel		CommonTargetInfo	Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkTargetPanel.prefab	XUiFightDlcCommonTargetPanelNode		1	True
+46	6	UiFightDlcRelinkExtraControl		RelinkControl	Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkControlPanel.prefab	XUiFightDlcExtraControlNode		1	True
+47	6	UiFightDlcCommonMenu		CommonMenu	Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkMenu.prefab	XUiFightDlcMenuNode	2	1	True
+48	6	UiDlcGuide	XUiFightDlcCommonGuide	CommonGuide	Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkGuideTipsTypeGuide.prefab	XUiNormalGuideNode		1	True
+49	6	UiDlcGuide	XUiFightDlcCommonGuide	CommonGuide	Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkGuideTipsTypeConversation.prefab	XUiGuideConversationNode		1	True
+50	6	UiDlcGuide	XUiFightDlcCommonGuide	CommonGuide	Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkGuideTipsTypeTips.prefab	XUiGuideTextNode		1	True
+51	6	UiDlcGuide	XUiFightDlcCommonGuide	CommonGuide	Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkGuideTipsTypeTutorial.prefab	XUiGuideImageVideoNode		1	True
+52	6	UiFightDlcRelinkGameplay		RelinkGameplay	Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkGameplay.prefab	XUiFightDlcRelinkGameplayNode		1	True
+53	6	UiFightDlcCommonReborn		CommonReborn			1	1	True
+54	6	UiFightDlcCommonDialogue		CommonDialog	Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkDialogue.prefab	XUiFightDlcRelinkDialogueNode			True
+55	6	UiFightDlcRelinkStageInfo		RelinkTips	Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkStageInfo.prefab	XUiFightDlcRelinkStageInfoNode			True
+56	6	UiFightDlcCommonLockTarget		CommonLockTarget	Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkLockTarget.prefab	XUiFightDlcLockTargetNode		1	True
+57	6	UiFightDlcRelinkChatRoulette		RelinkRoulette	Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkChatRoulette.prefab	XUiFightDlcRelinkChatRouletteNode	3	1	True
+58	6	UiFightDlcRelinkPlayerInfo		RelinkPlayerInfo	Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkScenePlayer.prefab	XUiFightDlcRelinkPlayerInfoNode	3	1	True
+59	6	UiFightDlcRelinkTeammateIndicator		RelinkTeammateIndicator	Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkScenePlayerTeammate.prefab	XUiFightDlcRelinkTeammateIndicatorNode		1	True
+60	6	UiFightDlcRelinkTeammateInfo		RelinkTeammateInfo	Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkTeammateInfo.prefab	XUiFightDlcRelinkTeammateInfoNode		1	True
+61	6	UiFightDlcRelinkMechanicInfo		RelinkMechanicInfo	Assets/Product/Ui/ComponentPrefab/UiFightDlc/UiDlcRelink/UiDlcRelinkMechanicInfo.prefab	XUiFightDlcRelinkMechanicInfoNode		1	True

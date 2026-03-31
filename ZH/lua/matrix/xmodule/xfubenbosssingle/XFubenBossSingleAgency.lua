@@ -48,6 +48,10 @@ function XFubenBossSingleAgency:InitEvent()
 
     -- 监听副本结算奖励事件（参考 XTransfiniteManager）
     XEventManager.AddEventListener(XEventId.EVENT_FUBEN_SETTLE_REWARD, self.OnFightSettle, self)
+
+    self._OnBehaviorDoExitFightHandler = handler(self, self.OnBehaviorDoExitFight)
+
+    CsXGameEventManager.Instance:RegisterEvent(CS.XEventId.EVENT_BEHAVIOR_DO_EXIT_FIGHT, self._OnBehaviorDoExitFightHandler)
 end
 
 function XFubenBossSingleAgency:OnRelease()
@@ -57,10 +61,11 @@ function XFubenBossSingleAgency:OnRelease()
 
     -- 移除事件监听
     XEventManager.RemoveEventListener(XEventId.EVENT_FUBEN_SETTLE_REWARD, self.OnFightSettle, self)
+    CsXGameEventManager.Instance:RemoveEvent(CS.XEventId.EVENT_BEHAVIOR_DO_EXIT_FIGHT, self._OnBehaviorDoExitFightHandler)
 end
 
 function XFubenBossSingleAgency:ResetAll()
-    self:StopPopSettleUITimer()
+    self._FightSettleDataCache = nil
 end
 
 -- region Getter/Setter
@@ -947,31 +952,31 @@ function XFubenBossSingleAgency:_ShowReward(winData)
     if XMain.IsEditorDebug then
         self._DebugWinData = winData
     end
-    
-    self:StopPopSettleUITimer()
 
-    local delayTime = XMVCA.XFuben:GetFightSettleAnimationDuration()
-
-    if XTool.IsNumberValidEx(delayTime) then
-        local delayTimeRaw = math.floor(delayTime * XScheduleManager.SECOND)
-
-        self._PopSettleUITimerId = XScheduleManager.ScheduleOnce(function()
-            self._PopSettleUITimerId = nil
-            self:_OpenRewardUi(winData)
-        end, delayTimeRaw)
-    else
-        self:_OpenRewardUi(winData)
-    end
+    self._FightSettleDataCache = winData
 end
 
-function XFubenBossSingleAgency:StopPopSettleUITimer()
-    if self._PopSettleUITimerId then
-        XScheduleManager.UnSchedule(self._PopSettleUITimerId)
-        self._PopSettleUITimerId = nil
+function XFubenBossSingleAgency:OnBehaviorDoExitFight(event, args)
+    if not args or args.Length <= 0 then
+        return
     end
+
+    -- C#数组，从0开始
+    local stageId = args[0]
+
+
+    -- 检查是否是 BossSingle 的关卡
+    if not self:IsBossSingleStage(stageId) then
+        return
+    end
+
+    self:_OpenRewardUi(self._FightSettleDataCache)
+    self._FightSettleDataCache = nil
 end
 
 function XFubenBossSingleAgency:_OpenRewardUi(winData)
+    XMVCA.XFuben:SetMouseVisible()
+    
     if XMVCA.XFuben:CheckHasFlopReward(winData) then
         XLuaUiManager.Open("UiFubenFlopReward", function()
             XLuaUiManager.PopThenOpen("UiFubenBossSingleSettlement", winData)

@@ -289,6 +289,9 @@ XGuildDormManagerCreator = function()
     end
     -- 获取当前房间Npc组Id
     function GuildDormManager.GetNpcGroupId()
+        if not DormData then
+            return 0
+        end
         return DormData.NpcGroupId or 0
     end
     --=============

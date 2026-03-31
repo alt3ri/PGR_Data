@@ -28,6 +28,8 @@ XMovieManagerCreator = function()
     local IsAutoPlay
     local IsLongPressAutoPlay
     local WaitToPlayList = {}
+    
+    ---@type XMovieActionBase[]
     local PassedActions = {}        -- 从剧情中间开始播时，前面播过的Action
     local PassedOptionDic = {}      -- 从剧情中间开始播时，前面选项的选择
     local DelaySelectionDic = {}
@@ -545,11 +547,7 @@ XMovieManagerCreator = function()
     function XMovieManager.StartPassedActions()
         if #PassedActions > 0 then
             for index, passedAction in ipairs(PassedActions) do
-                if passedAction:IsPassedActionRun(index) then
-                    passedAction:RunPassedAction()
-                else
-                    passedAction:SkipPassedAction()
-                end
+                passedAction:OnPassedActionExecute(index)
             end
         end
     end
@@ -570,12 +568,12 @@ XMovieManagerCreator = function()
     
     -- 后面是否存在PassedAction会覆盖当前Action的UI显示
     ---@param curIndex number 当前Action位于PassedActions下标
-    ---@param filterCoverFunc function 筛选符合条件的Action
-    function XMovieManager.IsBehindPassedActionCover(curIndex, filterCoverFunc)
+    function XMovieManager.IsBehindPassedActionCover(curIndex)
         local allActionCnt = #PassedActions
+        local action = PassedActions[curIndex]
         for actionIndex = curIndex + 1, allActionCnt do
-            local action = PassedActions[actionIndex]
-            if filterCoverFunc(action) then
+            local behindAction = PassedActions[actionIndex]
+            if action:IsPassedActionCovered(behindAction) then
                 return true
             end
         end

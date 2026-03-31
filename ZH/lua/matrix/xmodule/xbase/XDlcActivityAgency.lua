@@ -159,38 +159,41 @@ function XDlcActivityAgency:DlcGetAttribIdByNpcId(npcId)
 end
 
 function XDlcActivityAgency:DlcParseToXAttribs(attribConfig)
-    local result = {}
+    local attribCount = 0
+    local attribValues = {}
     local nonnegativeAttribs = self:DlcGetNonnegativeAttribs() or {}
     local enlargedAttribs = self:DlcGetEnlargedAttribs() or {}
 
     for attribStr, attribId in pairs(XDlcNpcAttribType) do
-        result[attribId + 1] = 0
+        attribValues[attribId] = 0
+        attribCount = attribCount + 1
     end
+    local attribs = CS.StatusSyncFight.XAttrib.CreateArray(attribCount)
     for attrStr, attrValue in pairs(attribConfig) do
         if attrValue then
             local attribId = XDlcNpcAttribType[attrStr]
 
             if attribId then
                 if enlargedAttribs[attribId] then
-                    result[attribId + 1] = attrValue * 1000
+                    attribValues[attribId] = attrValue * 1000
                 else
-                    result[attribId + 1] = attrValue
+                    attribValues[attribId] = attrValue
                 end
             end
         end
     end
-    for attribId, attrValue in pairs(result) do
-        local allowNegative = not (nonnegativeAttribs[attribId - 1] or false)
+    for attribId, attrValue in pairs(attribValues) do
+        local allowNegative = not (nonnegativeAttribs[attribId] or false)
 
         -- 必须取整，因为XAttrib.Value为int
         attrValue = math.floor(attrValue + 0.5)
-        result[attribId] = CS.StatusSyncFight.XAttrib.Ctor(attrValue, allowNegative)
+        CS.StatusSyncFight.XAttrib.CtorToArray(attribs, attribId, attrValue, allowNegative)
     end
 
     --- 特殊处理 先保留例子
     -- xAttribs[RunSpeedIndex]:SetBase(FixToInt(attribs[RunSpeedIndex] * fix.thousand / FPS_FIX))
 
-    return result
+    return attribs
 end
 
 function XDlcActivityAgency:DlcOpenInviteUi(inviteData)

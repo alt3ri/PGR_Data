@@ -52,7 +52,6 @@ end
 
 function XUiMainAprilFoolsV403:OnEnable()
     XMVCA.XMainLine2:ClearCacheDatasUiFubenMainLineChapter()
-    CS.XResourceRecord.Stop();
     XRedPointManager.AutoReleaseRedPointEvent()
     XLoginManager.ResetHearbeatInterval()
 

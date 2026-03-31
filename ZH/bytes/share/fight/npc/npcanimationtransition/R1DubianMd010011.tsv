@@ -1,0 +1,81 @@
+Role	Layer	State	Target	TransitionDuration
+R1DubianMd010011		AnyState	Born	
+R1DubianMd010011		AnyState	Stand2	
+R1DubianMd010011		AnyState	Stand1	
+R1DubianMd010011		AnyState	Stand3	
+R1DubianMd010011		AnyState	Standchange	
+R1DubianMd010011		AnyState	Run	
+R1DubianMd010011		AnyState	Walk	
+R1DubianMd010011		AnyState	Death	
+R1DubianMd010011		AnyState	Hit1	
+R1DubianMd010011		AnyState	Hit2	
+R1DubianMd010011		AnyState	Behitfly	
+R1DubianMd010011		AnyState	Hoverhit	
+R1DubianMd010011		AnyState	Falldown	0.1
+R1DubianMd010011		AnyState	Hitdown	
+R1DubianMd010011		AnyState	Lieonfloor	
+R1DubianMd010011		AnyState	Standup	
+R1DubianMd010011		AnyState	Straight	
+R1DubianMd010011		AnyState	Stun	
+R1DubianMd010011		AnyState	TurnLeft	
+R1DubianMd010011		AnyState	TurnRight	
+R1DubianMd010011		AnyState	StraightBefore	
+R1DubianMd010011		AnyState	StraightAfter	
+R1DubianMd010011		AnyState	UiStand1	
+R1DubianMd010011		AnyState	Win	
+R1DubianMd010011		AnyState	Win2	
+R1DubianMd010011		AnyState	Runb	
+R1DubianMd010011		AnyState	Runl	
+R1DubianMd010011		AnyState	Runr	
+R1DubianMd010011		AnyState	Attack01	
+R1DubianMd010011		AnyState	Attack02	
+R1DubianMd010011		AnyState	Attack03	
+R1DubianMd010011		AnyState	Attack04	
+R1DubianMd010011		AnyState	Attack05	
+R1DubianMd010011		AnyState	Attack06	
+R1DubianMd010011		AnyState	Attack11	
+R1DubianMd010011		AnyState	Attack21	
+R1DubianMd010011		AnyState	Attack23	
+R1DubianMd010011		AnyState	Attack31	
+R1DubianMd010011		AnyState	Move1	
+R1DubianMd010011		AnyState	Move2	
+R1DubianMd010011		AnyState	Move3	
+R1DubianMd010011		Stand2	Standchange	
+R1DubianMd010011		Stand2	Run	0.2
+R1DubianMd010011		Stand2	Walk	
+R1DubianMd010011		Stand1	Run	0.2
+R1DubianMd010011		Stand1	Walk	
+R1DubianMd010011		Standchange	Stand1	
+R1DubianMd010011		Standchange	Run	0.2
+R1DubianMd010011		Standchange	Walk	
+R1DubianMd010011		Run	Stand2	0.3
+R1DubianMd010011		Run	Runb	
+R1DubianMd010011		Run	Runl	
+R1DubianMd010011		Run	Runr	
+R1DubianMd010011		Walk	Stand2	0.3
+R1DubianMd010011		Hit1	Stand2	0.3
+R1DubianMd010011		Hit1	Hit2	
+R1DubianMd010011		Hit2	Stand2	0.3
+R1DubianMd010011		Behitfly	Hoverhit	
+R1DubianMd010011		Behitfly	Falldown	0.1
+R1DubianMd010011		Hoverhit	Falldown	0.1
+R1DubianMd010011		Falldown	Lieonfloor	
+R1DubianMd010011		Hitdown	Lieonfloor	
+R1DubianMd010011		Standup	Stand2	0.3
+R1DubianMd010011		Straight	Stand2	0.3
+R1DubianMd010011		Stun	Stand2	0.1
+R1DubianMd010011		TurnLeft	Stand2	0.3
+R1DubianMd010011		TurnRight	Stand2	0.3
+R1DubianMd010011		Win	Win2	
+R1DubianMd010011		Runb	Stand2	0.2
+R1DubianMd010011		Runb	Run	
+R1DubianMd010011		Runb	Runl	
+R1DubianMd010011		Runb	Runr	
+R1DubianMd010011		Runl	Stand2	
+R1DubianMd010011		Runl	Run	
+R1DubianMd010011		Runl	Runb	
+R1DubianMd010011		Runl	Runr	
+R1DubianMd010011		Runr	Stand2	
+R1DubianMd010011		Runr	Run	
+R1DubianMd010011		Runr	Runb	
+R1DubianMd010011		Runr	Runl	

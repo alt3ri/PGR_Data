@@ -6,8 +6,8 @@ local XDlcRelinkOtherMemberControl = require("XModule/XDlcRelink/SubControl/XDlc
 local XDlcRelinkControl = XClass(XControl, "XDlcRelinkControl")
 function XDlcRelinkControl:OnInit()
     --性能大盘内存标记
-    CS.XProfilingLuaUtils.PerfSightRelinkProcessEnter()
-    CS.XProfilingLuaUtils.MarkPerfSightRelinkProcessInStart()
+    CS.XProfilingLuaUtils.PerfSightRegionEnter("RelinkProcess")
+    CS.XProfilingLuaUtils.MarkPerfSightProcessPss("RelinkStart")
     self.OtherMemberControl = self:AddSubControl(XDlcRelinkOtherMemberControl)
 
     self.RequestName = {
@@ -78,8 +78,8 @@ function XDlcRelinkControl:OnRelease()
     self.QueryRankData = nil
     self.EquipSlotIndexMap = nil
     self.EquipSlotIndexMapMeta = nil
-    CS.XProfilingLuaUtils.MarkPerfSightRelinkProcessInEnd()
-    CS.XProfilingLuaUtils.PerfSightRelinkProcessExit()
+    CS.XProfilingLuaUtils.MarkPerfSightProcessPss("RelinkEnd")
+    CS.XProfilingLuaUtils.PerfSightRegionExit()
 end
 
 --- 使用UI栈同步control的卸载
@@ -3045,73 +3045,6 @@ function XDlcRelinkControl:CheckEquipIsPresetByEquipUid(equipUid)
         end
     end
     return false
-end
-
---endregion
-
---region World表相关
-
-function XDlcRelinkControl:GetWorldId()
-    local worldId, levelId = self:GetCurrentWorldIdAndLevelId()
-    if not XTool.IsNumberValid(worldId) or not XTool.IsNumberValid(levelId) then
-        return nil
-    end
-    return string.format("%s%s", worldId, levelId)
-end
-
-function XDlcRelinkControl:GetCurrentWorldScene(worldId, levelId)
-    local id
-    if XTool.IsNumberValid(worldId) and XTool.IsNumberValid(levelId) then
-        id = string.format("%s%s", worldId, levelId)
-    else
-        id = self:GetWorldId()
-    end
-    if not id then
-        return ""
-    end
-    return self._Model:GetWorldSceneUrl(id)
-end
-
-function XDlcRelinkControl:GetCurrentWorldSceneModel(worldId, levelId)
-    local id
-    if XTool.IsNumberValid(worldId) and XTool.IsNumberValid(levelId) then
-        id = string.format("%s%s", worldId, levelId)
-    else
-        id = self:GetWorldId()
-    end
-    if not id then
-        return ""
-    end
-    return self._Model:GetWorldSceneModelUrl(id)
-end
-
-function XDlcRelinkControl:GetCurrentMaskLoadingType(worldId, levelId)
-    local id
-    if XTool.IsNumberValid(worldId) and XTool.IsNumberValid(levelId) then
-        id = string.format("%s%s", worldId, levelId)
-    else
-        id = self:GetWorldId()
-    end
-    if not id then
-        return ""
-    end
-    return self._Model:GetWorldMaskLoadingType(id)
-end
-
-function XDlcRelinkControl:GetCurrentWorldArtName()
-    local id = self:GetWorldId()
-    if not id then
-        return ""
-    end
-    return self._Model:GetWorldArtName(id)
-end
-
-function XDlcRelinkControl:GetCurrentWorldLoadingBackground()
-    local id = self:GetWorldId()
-    if not id then
-        return ""
-    end
-    return self._Model:GetWorldLoadingBackground(id)
 end
 
 --endregion

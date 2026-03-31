@@ -1,18 +1,14 @@
-local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 ---@class XUiPanelAuthentication
 ---@field _Control XReCallActivityControl
-local XUiPanelAuthentication = XClass(nil, "XUiPanelAuthentication")
+local XUiPanelAuthentication = XClass(XUiNode, "XUiPanelAuthentication")
 
 local GridType = {
     Invite = 0,--填写邀请码奖励格子
     Share = 1,--分享活动奖励格子
 }
-function XUiPanelAuthentication:Ctor(ui, parent, control)
-    self.GameObject = ui.gameObject
-    self.Transform = ui.transform
-    self.Parent = parent
-    self._Control = control
-    XTool.InitUiObject(self)
+
+function XUiPanelAuthentication:OnStart()
     self:AutoAddListener()
     self.GridCommon1.gameObject:SetActiveEx(false)
     self.GridCommon2.gameObject:SetActiveEx(false)
@@ -78,7 +74,7 @@ function XUiPanelAuthentication:OnBtnReceiveClick()
     if code and code ~= "" then
         code = string.upper(code)
     end
-    if code == self._Control:PlayIdToHexUpper() then
+    if code == XMVCA.XReCallActivity:PlayIdToHexUpper() then
         XUiManager.TipText("HoldRegressionInvite")
         return 
     end
@@ -116,11 +112,11 @@ function XUiPanelAuthentication:Refresh()
         self:SetupReward(config.RegressionRewardId,GridType.Invite)
         self:SetupReward(config.InviteRewardId,GridType.Share)
     end
-    self.CodeText.text = CS.XTextManager.GetText("HoldRegressionInviteCode",self._Control:PlayIdToHexUpper())
+    self.CodeText.text = CS.XTextManager.GetText("HoldRegressionInviteCode", XMVCA.XReCallActivity:PlayIdToHexUpper())
 end
 
 function XUiPanelAuthentication:OnBtnCopyClick()
-    XTool.CopyToClipboard(self._Control:PlayIdToHexUpper())
+    XTool.CopyToClipboard(XMVCA.XReCallActivity:PlayIdToHexUpper())
 end
 
 function XUiPanelAuthentication:OnBtnShareClick()

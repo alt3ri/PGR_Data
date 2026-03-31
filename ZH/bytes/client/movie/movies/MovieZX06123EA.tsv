@@ -1,0 +1,156 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory1344.jpg'}
+2	2		401							{1: '1', 2: '6245'}
+3	3		201							{1: '1', 2: '501389'}
+4	4		301			DialogEnable				{1: '1', 2: '墨利诺厄', 3: '…………', 4: '1'}
+5	5		204							{1: '1'}
+6	6		301							{2: '墨利诺厄', 3: '没关系，她应该……已经离开这里了。', 4: '1'}
+7	7		202							{1: '1'}
+8	8		301							{3: '她哀叹般笑着，勉力支撑着身体站起来。'}
+9	9		201							{1: '1', 2: '501385', 3: '12'}
+10	10		301							{1: '1', 2: '丽芙', 3: '为什么要这样做……', 4: '1'}
+11	11		202							{1: '1', 6: '1'}
+12	12		201							{1: '1', 2: '501389'}
+13	13		301							{1: '1', 2: '墨利诺厄', 3: '为什么……吗？', 4: '1'}
+14	14		301							{2: '墨利诺厄', 3: '我也不知道。', 4: '1'}
+15	15		204							{1: '1', 2: '8'}
+16	16		301							{2: '墨利诺厄', 3: '或许是为了弥补艾丝琳，又或者是为了让自己距离“人类”更加接近，也可能是为了释放无处安放的爱……', 4: '1'}
+17	17		204							{1: '1', 2: '14'}
+18	18		301							{2: '墨利诺厄', 3: '是为什么呢？我也不知道啊……', 4: '1'}
+19	19		204							{1: '1', 2: '4'}
+20	20		301							{2: '墨利诺厄', 3: '难道……这些，不都是“爱”吗？', 4: '1'}
+21	21		202							{1: '1', 6: '1'}
+22	22		201							{1: '1', 2: '501385', 3: '4'}
+23	23		301							{1: '1', 2: '丽芙', 3: '…………', 4: '1'}
+24	24		202							{1: '1', 6: '1'}
+25	25		201							{1: '1', 2: '501389', 3: '8'}
+26	26		301							{1: '1', 2: '墨利诺厄', 3: '也许这也是一种解脱吧。', 4: '1'}
+27	27		401							{1: '2', 2: '5810'}
+28	28		301							{3: '金属关节吱呀作响，正如墨利诺厄之前所说，她并不擅长战斗，只能以命相搏。'}
+29	29		402							{1: '5810'}
+30	30		204							{1: '1'}
+31	31		301							{2: '墨利诺厄', 3: '丽芙，你走得更远，见到的更多，你能不能告诉我……', 4: '1'}
+32	32		301							{2: '墨利诺厄', 3: '机械体，会有灵魂吗？', 4: '1'}
+33	33		202							{1: '1'}
+34	34		201							{1: '1', 2: '501385', 3: '7'}
+35	35		301							{1: '1', 2: '丽芙', 3: '墨利诺厄……？！', 4: '1'}
+36	36		202							{1: '1'}
+37	37		301							{3: '来不及阻止，墨利诺厄惨笑着按下自毁按钮。'}
+38	38		201							{1: '1', 2: '501389', 3: '2'}
+39	39		301							{1: '1', 2: '墨利诺厄', 3: '再见……艾丝琳……', 4: '1'}
+40	40		202							{1: '1', 6: '1'}
+41	41		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+42	42		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1210.jpg'}
+43	43		401							{1: '2', 2: '2647'}
+44	44		301			RImgBg1Shake				{3: '轰——！'}
+45	45		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab', 2: '2'}
+46	46		401							{1: '2', 2: '4537'}
+47	47		301			RImgBg1Shake	AniZhuanchangBegin			{3: '剧烈爆炸在矿洞中震颤，许久才停息。'}
+48	48		502							{1: 'DialogDisable'}
+49	49		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1344.jpg'}
+50	50		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab'}
+51	51		401						2000.0	{1: '1', 2: '36'}
+52	52		401							{1: '1', 2: '169'}
+53	53		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab', 2: '2'}
+54	54		302			AniZhuanchangEnd				{2: '…………', 3: '55', 4: '咳……', 5: '55'}
+55	55		301			DialogEnable				{3: '漫天烟尘中，已经不见墨利诺厄的身影。'}
+56	56		201							{1: '1', 2: '501385', 3: '14'}
+57	57		301							{1: '1', 2: '丽芙', 3: '……她在这里。', 4: '1'}
+58	58		202							{1: '1'}
+59	59		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHuijinNew.prefab'}
+60	60		301				AniZhuanchangBegin			{3: '从坍塌石块中捡出一个储存数据的匣子，丽芙叹了口气。'}
+61	61		304			AniZhuanchangEnd				{1: '是那个孩子在利用她。', 2: 'ffffffff', 3: '0.4', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1344.jpg', 7: '1'}
+62	62		304							{1: '利用她的爱，来满足自己的愿望。', 2: 'ffffffff', 3: '0.5', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1344.jpg', 7: '1'}
+63	63		304							{1: '不知如何诞生的小怪物，出现在了墨利诺厄孩子的墓碑边。', 2: 'ffffffff', 3: '1.1', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1344.jpg', 7: '1'}
+64	64		304							{1: '墨利诺厄带走了它，给了它所有的爱。', 2: 'ffffffff', 3: '0.6', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1344.jpg', 7: '1', 8: '1'}
+65	65		304							{1: '她想要爱，想要“被养育”，想要一个安全的家，然后……', 2: 'ffffffff', 3: '1.3', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1344.jpg', 7: '1'}
+66	66		304							{1: '然后墨利诺厄给了那孩子所有她能得到的。', 2: 'ffffffff', 3: '0.4', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1344.jpg', 7: '1'}
+67	67		304				AniZhuanchangBegin			{1: '她织出一张巨大又缜密的网，将孩子包裹在里面……也将自己包裹在了里面。', 2: 'ffffffff', 3: '1.3', 4: 'Assets/Product/Texture/Image/BgStory/BgStory1344.jpg', 7: '1', 8: '1', 9: '1'}
+68	68		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1340.jpg'}
+69	69		301			AniZhuanchangEnd	DialogDisable			{3: '附近寻找了许久，两人都没有找到“艾丝琳”的踪迹。'}
+70	70		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+71	71		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg6001_17.jpg'}
+72	72		301			DialogEnable				{3: '墨利诺厄残留的金属零件被丽芙搜集起来，擦拭地干干净净，掩埋在了真正艾丝琳的墓碑旁边。'}
+73	73		201							{1: '1', 2: '501385', 3: '16'}
+74	74		301							{1: '1', 2: '丽芙', 3: '或许这样，艾丝琳能睡的更安稳一点吧。', 4: '1'}
+75	75		202							{1: '1'}
+76	76		301				AniZhuanchangBegin			{3: '在这个梦里，不会再有为了贪下物资而收养她的父母，只会有一个真心爱她的妈妈。'}
+77	77		401						2000.0	{1: '1', 2: '36'}
+78	78		401							{1: '1', 2: '175'}
+79	79		501						1800.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}
+80	80		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1347.jpg'}
+81	81		301			AniZhuanchangEnd				{3: '随着墨利诺厄的消失，针对丽芙意识海和人类思维信标的攻击也不复存在。'}
+82	82		201							{1: '1', 2: '501385', 3: '12'}
+83	83		301							{1: '1', 2: '丽芙', 3: '指挥官猜的没错，幕后的操纵者就是那个孩子。', 4: '1'}
+84	84		204							{1: '1', 2: '3'}
+85	85		301							{2: '丽芙', 3: '墨利诺厄编织的幻境……应该也是借用了她的力量。', 4: '1'}
+86	86		302							{2: '但为什么……你的意识海仍然存在轻微波动？', 3: '87'}
+87	87		204							{1: '1', 2: '8'}
+88	88		301							{2: '丽芙', 3: '……或许是和那孩子留下的东西有关。', 4: '1'}
+89	89		302							{2: '留下的东西？', 3: '90', 4: '你做了什么？', 5: '90'}
+90	90		202							{1: '1', 6: '1'}
+91	91		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+92	92		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg2601_11.jpg'}
+93	93		501							{1: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiMemoryInformation.prefab', 2: '2'}
+94	94		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}
+95	95		301							{3: '思维信标彼端，丽芙的意识海缓慢沉浮。'}
+96	96		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+97	97		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1347.jpg'}
+98	98		505							{2: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiMemoryInformation.prefab'}
+99	99		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}
+100	100		401							{1: '2', 2: '558'}
+101	101		201							{1: '1', 2: '501385', 3: '12', 7: '1'}
+102	102		301							{1: '1', 2: '丽芙', 3: '她太急切了，想要获得我的意识海，冒险潜入了我的意识海外层。', 4: '1'}
+103	103		204							{1: '1', 2: '8'}
+104	104		301							{2: '丽芙', 3: '但她什么都没能带走，反而……还被我留下了些东西。', 4: '1'}
+105	105		302							{2: '这也太冒险了。', 3: '106', 4: '丽芙……', 5: '106'}
+106	106		204							{1: '1'}
+107	107		301							{2: '丽芙', 3: '……指挥官，我没事的。', 4: '1'}
+108	108		301							{3: '看出自己的担心，她微微笑起来。'}
+109	109		204							{1: '1', 2: '2'}
+110	110		301				DialogDisable			{2: '丽芙', 3: '你看，我这不是好好地在这里吗。', 4: '1'}
+111	111		302							{2: '…………', 3: '112'}
+112	112		302							{2: '还是要尽快返回空中花园。', 3: '113'}
+113	113		301			DialogEnable				{2: '丽芙', 3: '放心吧，指挥官。', 4: '1'}
+114	114		301							{3: '她看向自己，眸中含着什么无法诉说的情绪。'}
+115	115		301							{2: '丽芙', 3: '我不会拿生命作为希望的赌注。', 4: '1'}
+116	116		302							{2: '那就好。', 3: '117'}
+117	117		204							{1: '1'}
+118	118		301							{2: '丽芙', 3: '但是……我希望你也不要这样做，可以吗？', 4: '1'}
+119	119		302							{2: '…………', 3: '120', 4: '我尽量。', 5: '120', 6: '我会的。', 7: '120'}
+120	120		204							{1: '1', 2: '2'}
+121	121		301							{2: '丽芙', 3: '好啦，我们去那边的实验室看看吧。', 4: '1'}
+122	122		204							{1: '1', 2: '3'}
+123	123		301							{2: '丽芙', 3: '刚刚忙着追过来，那里应该还有一些能用的上的资料。', 4: '1'}
+124	124		202							{1: '1'}
+125	125		301				DialogDisable			{3: '她轻描淡写地揭过了这个话题，但……'}
+126	126		205						800.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg6001_06.jpg', 3: '0', 4: '1', 5: '0.8'}
+127	127		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg6001_06.jpg'}
+128	128		205							{1: '999'}
+129	129		301			DialogEnable				{3: '回忆起那处噩梦中，丽芙绝望如幽魂的神情……'}
+130	130		301							{3: '假如自己真的“死”在某处，丽芙……也会这样痛苦吧？'}
+131	131		301				DialogDisable			{3: '但是……'}
+132	132		401							{1: '2', 2: '558'}
+133	133		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+134	134		101						400.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg5101_01.jpg'}
+135	135		401							{1: '2', 2: '558'}
+136	136		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+137	137		101						400.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg5101_06.jpg'}
+138	138		401							{1: '2', 2: '558'}
+139	139		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+140	140		101						400.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg5101_04.jpg'}
+141	141		301			DialogEnable				{3: '30年后的余音回荡在人类的脑海中。'}
+142	142		401							{1: '2', 2: '558'}
+143	143		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+144	144		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg5101_03.jpg'}
+145	145		301							{3: '假如命定的终局一定要自己的死亡来打破……'}
+146	146		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+147	147		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1351.jpg'}
+148	148		201							{1: '1', 2: '501385', 3: '7', 7: '1'}
+149	149		301							{1: '1', 2: '丽芙', 3: '……指挥官？', 4: '1'}
+150	150		301							{3: '前行的丽芙疑惑地回过头，仿佛在询问自己为什么没有跟上。'}
+151	151		302							{2: '……来了。', 3: '152'}
+152	152		204							{1: '1', 2: '2'}
+153	153		301							{2: '丽芙', 3: '嗯。', 4: '1'}
+154	154		202							{1: '1'}
+155	155		301		1		AniZhuanchangBegin			{3: '漆黑矿洞中，两人继续前进。'}

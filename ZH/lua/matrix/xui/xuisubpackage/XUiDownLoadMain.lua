@@ -21,6 +21,8 @@ end
 
 function XUiDownLoadMain:OnEnable()
     CS.UnityEngine.Screen.sleepTimeout = CS.UnityEngine.SleepTimeout.NeverSleep
+    -- 修复：重进UI时同步脏的下载状态，避免显示幽灵下载中
+    XMVCA.XSubPackage:SyncSubpackageStates()
 end
 
 function XUiDownLoadMain:OnDisable()

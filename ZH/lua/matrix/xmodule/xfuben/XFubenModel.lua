@@ -190,6 +190,9 @@ function XFubenModel:ResetAll()
     self.TempCustomFunc = {}
     
     self._CurStageIdInBattleRoom = nil
+
+    self:SetFubenSettling(false)
+    self:SetFubenSettleResult(nil)
 end
 
 ----------public start----------

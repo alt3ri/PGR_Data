@@ -795,7 +795,12 @@ XTaskManagerCreator = function()
         return 0
     end
 
-    local function GetTaskList(tasks)
+    local function GetTaskList(tasks, isSort)
+        if isSort == nil then
+            -- 最好显式要求排序，防止外部漏传参时反复排序，目前这个方法已经有很多地方用先默认排序
+            isSort = true
+        end
+        
         local list = {}
         local type
         for _, task in pairs(tasks) do
@@ -829,7 +834,31 @@ XTaskManagerCreator = function()
             end
         end
 
-        tableSort(list, function(a, b)
+        if isSort then
+            tableSort(list, function(a, b)
+                local cA = XTaskConfig.GetTaskCfgById(a.Id)
+                local cB = XTaskConfig.GetTaskCfgById(b.Id)
+                local pa, pb = cA.Priority, cB.Priority
+                local stateA = TotalTaskData[a.Id] and TotalTaskData[a.Id].State or 0
+                local stateB = TotalTaskData[b.Id] and TotalTaskData[b.Id].State or 0
+                local compareResult = CompareState(stateA, stateB)
+                if compareResult == 0 then
+                    if pa ~= pb then
+                        return pa > pb
+                    else
+                        return a.Id > b.Id
+                    end
+                else
+                    return compareResult > 0
+                end
+            end)
+        end
+
+        return list
+    end
+    
+    function XTaskManager.CommonTaskDataSort(taskDataList)
+        tableSort(taskDataList, function(a, b)
             local cA = XTaskConfig.GetTaskCfgById(a.Id)
             local cB = XTaskConfig.GetTaskCfgById(b.Id)
             local pa, pb = cA.Priority, cB.Priority
@@ -846,8 +875,8 @@ XTaskManagerCreator = function()
                 return compareResult > 0
             end
         end)
-
-        return list
+        
+        return taskDataList
     end
 
 
@@ -1153,7 +1182,12 @@ XTaskManagerCreator = function()
         return GetTaskList(tasks)
     end
 
-    function XTaskManager.GetCanLiverTaskList()
+    function XTaskManager.GetCanLiverTaskList(isSort)
+        if isSort == nil then
+            -- 要求必须显式定义排序
+            isSort = false
+        end
+        
         local taskGroupIds = XMVCA.XItemRestrict:GetTaskGroupIdList(XEnumConst.ItemRestrict.Type.DrawCanLiver)
         if XTool.IsTableEmpty(taskGroupIds) then
             return {}
@@ -1162,7 +1196,7 @@ XTaskManagerCreator = function()
         local tasks = {}
         for index, groupId in ipairs(taskGroupIds) do
             if XTool.IsNumberValid(groupId) then
-                local list = XTaskManager.GetTimeLimitTaskListByGroupId(groupId)
+                local list = XTaskManager.GetTimeLimitTaskListByGroupId(groupId, false)
                 if list then
                     for _, task in pairs(list) do
                         table.insert(tasks, task)
@@ -1170,8 +1204,8 @@ XTaskManagerCreator = function()
                 end
             end
         end
-
-        return GetTaskList(tasks)
+        
+        return GetTaskList(tasks, isSort)
     end
 
     function XTaskManager.GetActivityTaskList()
@@ -2591,6 +2625,21 @@ XTaskManagerCreator = function()
     function XTaskManager.CheckTaskAchieved(taskId)
         local taskData = XTaskManager.GetTaskDataById(taskId)
         return taskData and taskData.State == XTaskManager.TaskState.Achieved
+    end
+
+    ---检查任务ID列表中是否有任务可领取（State == Achieved）
+    ---@param taskIdList number[] 任务ID列表
+    ---@return boolean
+    function XTaskManager.CheckAnyTaskAchievedByTaskIdList(taskIdList)
+        if XTool.IsTableEmpty(taskIdList) then
+            return false
+        end
+        for _, taskId in ipairs(taskIdList) do
+            if XTaskManager.CheckTaskAchieved(taskId) then
+                return true
+            end
+        end
+        return false
     end
 
     function XTaskManager.GetFinalChapterId()

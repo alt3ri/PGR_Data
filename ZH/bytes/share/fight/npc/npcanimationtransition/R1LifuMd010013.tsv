@@ -1,0 +1,222 @@
+Role	Layer	State	Target	TransitionDuration
+R1LifuMd010013			Born	
+R1LifuMd010013			Stand1	0.1
+R1LifuMd010013			Stand2	0.1
+R1LifuMd010013			Stand3	0.1
+R1LifuMd010013			Death	0.1
+R1LifuMd010013			Standchange	0.1
+R1LifuMd010013			Run	0.1
+R1LifuMd010013			Walk	0.1
+R1LifuMd010013			Runb	0.2
+R1LifuMd010013			Runl	0.2
+R1LifuMd010013			Runr	0.2
+R1LifuMd010013			Walkb	0.1
+R1LifuMd010013			Walkl	0.1
+R1LifuMd010013			Walkr	0.1
+R1LifuMd010013			TurnLeft	0.1
+R1LifuMd010013			TurnRight	0.1
+R1LifuMd010013			Move1	0.1
+R1LifuMd010013			Move2	0.1
+R1LifuMd010013			Move3	0.1
+R1LifuMd010013			RunStart	0.1
+R1LifuMd010013			RunStartEnd01	0.1
+R1LifuMd010013			Hit1	0.05
+R1LifuMd010013			Hit2	0.05
+R1LifuMd010013			Hit3	0.05
+R1LifuMd010013			Hit4	0.05
+R1LifuMd010013			Behitfly	0.05
+R1LifuMd010013			Hoverhit	0.05
+R1LifuMd010013			Falldown	0.1
+R1LifuMd010013			Hitdown	0.05
+R1LifuMd010013			Lieonfloor	0.1
+R1LifuMd010013			Standup	0.1
+R1LifuMd010013			Straight	0.1
+R1LifuMd010013			Stun	0.1
+R1LifuMd010013			StraightBefore	0.1
+R1LifuMd010013			StraightAfter	0.1
+R1LifuMd010013			Win	
+R1LifuMd010013			Win2	0.1
+R1LifuMd010013			Stop	0.1
+R1LifuMd010013			Fail	0.1
+R1LifuMd010013			Save	0.1
+R1LifuMd010013			AttackQte	
+R1LifuMd010013			Caught	0.1
+R1LifuMd010013			RunStartEnd02	0.1
+R1LifuMd010013			StopR	0.1
+R1LifuMd010013			Attack01	0.1
+R1LifuMd010013			Attack02	0.1
+R1LifuMd010013			Attack03	0.1
+R1LifuMd010013			Attack04	0.1
+R1LifuMd010013			Attack05	0.1
+R1LifuMd010013			Attack11	0.1
+R1LifuMd010013			Attack21	0.1
+R1LifuMd010013			Attack31	0.1
+R1LifuMd010013			Attack33	0.1
+R1LifuMd010013			Attack41	0.1
+R1LifuMd010013			Attack51	0.1
+R1LifuMd010013			Attack52	0.1
+R1LifuMd010013			Attack91	0.1
+R1LifuMd010013		Stand1	Run	0.2
+R1LifuMd010013		Stand1	Walk	0.1
+R1LifuMd010013		Stand2	Standchange	0.1
+R1LifuMd010013		Stand2	Run	0.2
+R1LifuMd010013		Stand2	Walk	0.3
+R1LifuMd010013		Stand2	Walkb	0.3
+R1LifuMd010013		Stand2	Walkl	0.3
+R1LifuMd010013		Stand2	Walkr	0.3
+R1LifuMd010013		Standchange	Stand1	0.1
+R1LifuMd010013		Standchange	Run	0.1
+R1LifuMd010013		Standchange	Walk	0.1
+R1LifuMd010013		Run	Stop	0.2
+R1LifuMd010013		Run	Stand2	0.2
+R1LifuMd010013		Run	Runb	0.2
+R1LifuMd010013		Run	Runl	0.2
+R1LifuMd010013		Run	Runr	0.2
+R1LifuMd010013		Walk	Stand2	0.1
+R1LifuMd010013		Runb	Stand2	0.2
+R1LifuMd010013		Runb	Run	0.2
+R1LifuMd010013		Runb	Runl	0.2
+R1LifuMd010013		Runb	Runr	0.2
+R1LifuMd010013		Runl	Stand2	0.2
+R1LifuMd010013		Runl	Run	0.2
+R1LifuMd010013		Runl	Runb	0.2
+R1LifuMd010013		Runl	Runr	0.2
+R1LifuMd010013		Runr	Stand2	0.2
+R1LifuMd010013		Runr	Run	0.2
+R1LifuMd010013		Runr	Runb	0.2
+R1LifuMd010013		Runr	Runl	0.2
+R1LifuMd010013		Walkb	Stand2	0.1
+R1LifuMd010013		Walkb	Walk	0.2
+R1LifuMd010013		Walkb	Walkl	0.1
+R1LifuMd010013		Walkb	Walkr	0.1
+R1LifuMd010013		Walkl	Stand2	0.1
+R1LifuMd010013		Walkl	Walk	0.1
+R1LifuMd010013		Walkl	Walkb	0.1
+R1LifuMd010013		Walkl	Walkr	0.2
+R1LifuMd010013		Walkr	Stand2	0.1
+R1LifuMd010013		Walkr	Walk	0.1
+R1LifuMd010013		Walkr	Walkb	0.1
+R1LifuMd010013		Walkr	Walkl	0.2
+R1LifuMd010013		TurnLeft	Stand2	0.1
+R1LifuMd010013		TurnRight	Stand2	0.1
+R1LifuMd010013		RunStart	Run	0.1
+R1LifuMd010013		RunStart	RunStartEnd01	0.1
+R1LifuMd010013		Hit1	Stand2	
+R1LifuMd010013		Hit2	Stand2	
+R1LifuMd010013		Hit3	Stand2	
+R1LifuMd010013		Hit4	Stand2	
+R1LifuMd010013		Behitfly	Hoverhit	0.1
+R1LifuMd010013		Behitfly	Falldown	0.1
+R1LifuMd010013		Hoverhit	Falldown	0.1
+R1LifuMd010013		Falldown	Lieonfloor	0.1
+R1LifuMd010013		Hitdown	Lieonfloor	0.1
+R1LifuMd010013		Standup	Stand2	0.1
+R1LifuMd010013		Straight	Stand2	0.1
+R1LifuMd010013		Stun	Stand2	0.1
+R1LifuMd010013		Win	Win2	0.1
+R1LifuMd010013		Stop	Stand2	0.1
+R1LifuMd010013		Caught	Stand2	0.1
+R1LifuMd010013	1		Born	
+R1LifuMd010013	1		Stand1	0.1
+R1LifuMd010013	1		Stand2	0.1
+R1LifuMd010013	1		Stand3	0.1
+R1LifuMd010013	1		Death	0.1
+R1LifuMd010013	1		Standchange	0.1
+R1LifuMd010013	1		Run	0.1
+R1LifuMd010013	1		Walk	0.1
+R1LifuMd010013	1		Runb	0.2
+R1LifuMd010013	1		Runl	0.2
+R1LifuMd010013	1		Runr	0.2
+R1LifuMd010013	1		Walkb	0.1
+R1LifuMd010013	1		Walkl	0.1
+R1LifuMd010013	1		Walkr	0.1
+R1LifuMd010013	1		TurnLeft	0.1
+R1LifuMd010013	1		TurnRight	0.1
+R1LifuMd010013	1		Move1	0.1
+R1LifuMd010013	1		Move2	0.1
+R1LifuMd010013	1		Move3	0.1
+R1LifuMd010013	1		RunStart	0.1
+R1LifuMd010013	1		RunStartEnd01	0.1
+R1LifuMd010013	1		Hit1	0.05
+R1LifuMd010013	1		Hit2	0.05
+R1LifuMd010013	1		Hit3	0.05
+R1LifuMd010013	1		Hit4	0.05
+R1LifuMd010013	1		Behitfly	0.05
+R1LifuMd010013	1		Hoverhit	0.05
+R1LifuMd010013	1		Falldown	0.1
+R1LifuMd010013	1		Hitdown	0.05
+R1LifuMd010013	1		Lieonfloor	0.1
+R1LifuMd010013	1		Standup	0.1
+R1LifuMd010013	1		Straight	0.1
+R1LifuMd010013	1		Stun	0.1
+R1LifuMd010013	1		StraightBefore	0.1
+R1LifuMd010013	1		StraightAfter	0.1
+R1LifuMd010013	1		Win	
+R1LifuMd010013	1		Win2	0.1
+R1LifuMd010013	1		Stop	0.1
+R1LifuMd010013	1		Fail	0.1
+R1LifuMd010013	1		Save	0.1
+R1LifuMd010013	1		Caught	0.1
+R1LifuMd010013	1		RunStartEnd02	0.1
+R1LifuMd010013	1		StopR	0.1
+R1LifuMd010013	1		Attack01	0.1
+R1LifuMd010013	1	Stand1	Run	0.2
+R1LifuMd010013	1	Stand1	Walk	0.1
+R1LifuMd010013	1	Stand2	Standchange	0.1
+R1LifuMd010013	1	Stand2	Run	0.2
+R1LifuMd010013	1	Stand2	Walk	0.3
+R1LifuMd010013	1	Stand2	Walkb	0.3
+R1LifuMd010013	1	Stand2	Walkl	0.3
+R1LifuMd010013	1	Stand2	Walkr	0.3
+R1LifuMd010013	1	Standchange	Stand1	0.1
+R1LifuMd010013	1	Standchange	Run	0.1
+R1LifuMd010013	1	Standchange	Walk	0.1
+R1LifuMd010013	1	Run	Stop	0.2
+R1LifuMd010013	1	Run	Stand2	0.2
+R1LifuMd010013	1	Run	Runb	0.2
+R1LifuMd010013	1	Run	Runl	0.2
+R1LifuMd010013	1	Run	Runr	0.2
+R1LifuMd010013	1	Walk	Stand2	0.1
+R1LifuMd010013	1	Runb	Stand2	0.2
+R1LifuMd010013	1	Runb	Run	0.2
+R1LifuMd010013	1	Runb	Runl	0.2
+R1LifuMd010013	1	Runb	Runr	0.2
+R1LifuMd010013	1	Runl	Stand2	0.2
+R1LifuMd010013	1	Runl	Run	0.2
+R1LifuMd010013	1	Runl	Runb	0.2
+R1LifuMd010013	1	Runl	Runr	0.2
+R1LifuMd010013	1	Runr	Stand2	0.2
+R1LifuMd010013	1	Runr	Run	0.2
+R1LifuMd010013	1	Runr	Runb	0.2
+R1LifuMd010013	1	Runr	Runl	0.2
+R1LifuMd010013	1	Walkb	Stand2	0.1
+R1LifuMd010013	1	Walkb	Walk	0.2
+R1LifuMd010013	1	Walkb	Walkl	0.1
+R1LifuMd010013	1	Walkb	Walkr	0.1
+R1LifuMd010013	1	Walkl	Stand2	0.1
+R1LifuMd010013	1	Walkl	Walk	0.1
+R1LifuMd010013	1	Walkl	Walkb	0.1
+R1LifuMd010013	1	Walkl	Walkr	0.2
+R1LifuMd010013	1	Walkr	Stand2	0.1
+R1LifuMd010013	1	Walkr	Walk	0.1
+R1LifuMd010013	1	Walkr	Walkb	0.1
+R1LifuMd010013	1	Walkr	Walkl	0.2
+R1LifuMd010013	1	TurnLeft	Stand2	0.1
+R1LifuMd010013	1	TurnRight	Stand2	0.1
+R1LifuMd010013	1	RunStart	Run	0.1
+R1LifuMd010013	1	RunStart	RunStartEnd01	0.1
+R1LifuMd010013	1	Hit1	Stand2	
+R1LifuMd010013	1	Hit2	Stand2	
+R1LifuMd010013	1	Hit3	Stand2	
+R1LifuMd010013	1	Hit4	Stand2	
+R1LifuMd010013	1	Behitfly	Hoverhit	0.1
+R1LifuMd010013	1	Behitfly	Falldown	0.1
+R1LifuMd010013	1	Hoverhit	Falldown	0.1
+R1LifuMd010013	1	Falldown	Lieonfloor	0.1
+R1LifuMd010013	1	Hitdown	Lieonfloor	0.1
+R1LifuMd010013	1	Standup	Stand2	0.1
+R1LifuMd010013	1	Straight	Stand2	0.1
+R1LifuMd010013	1	Stun	Stand2	0.1
+R1LifuMd010013	1	Win	Win2	0.1
+R1LifuMd010013	1	Stop	Stand2	0.1
+R1LifuMd010013	1	Caught	Stand2	0.1

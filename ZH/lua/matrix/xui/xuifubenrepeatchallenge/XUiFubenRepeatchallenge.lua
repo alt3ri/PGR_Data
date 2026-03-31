@@ -1,27 +1,17 @@
 local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
 local CsXTextManagerGetText = CS.XTextManager.GetText
-local CsXScheduleManager = XScheduleManager
 ---@class XUiFubenRepeatchallenge
 local XUiFubenRepeatchallenge = XLuaUiManager.Register(XLuaUi, "UiFubenRepeatchallenge")
 
 local XUiPanelRepeatChallengeShowGoods = require('XUi/XUiFubenRepeatchallenge/XUiPanelRepeatChallengeShowGoods')
 
-local PanelState = {
-    None = 1, --主界面状态
-    ShowDetail = 2 --打开详细页的状态
-}
----记录界面状态，该值不随界面销毁而清除，保证状态的还原
---local CurPanelState=PanelState.None
-
 function XUiFubenRepeatchallenge:OnAwake()
     self.AssetPanel = XUiPanelAsset.New(self, self.PanelAsset, XDataCenter.ItemManager.ItemId.FreeGem, XDataCenter.ItemManager.ItemId.ActionPoint, XDataCenter.ItemManager.ItemId.Coin)
     --主面板
     self:RegisterClickEvent(self.BtnBack, self.Close)
-    --self:RegisterClickEvent(self.TouMing, self.OnBtnTouMingClick)
     self:RegisterClickEvent(self.BtnMainUi, self.OnBtnMainUiClick)
     self:RegisterClickEvent(self.BtnHelp, self.OnBtnHelpClick)
     self:RegisterClickEvent(self.BtnRewardInfo, self.OnBtnRewardInfo)
-    --self:RegisterClickEvent(self.BtnLevel, self.ShowStageDetail)
     --待机面板(显示等级 奖励 商店)
     local panel = self.PanelStandByInfo
     self.PanelStandByInfo = {}
@@ -60,13 +50,23 @@ function XUiFubenRepeatchallenge:OnAwake()
     end)
 
     XEventManager.DispatchEvent(XEventId.EVENT_REPEAT_CHALLENGE_ENTER)
+    
+    -- 拉人回流-回归玩家显示上限
+    if self.PanelDouble then
+        self.PanelDouble.gameObject:SetActiveEx(false)
+
+        if XMVCA.XReCallActivity:CheckIsRegressionPlayer() then
+            ---@type XUiGridFubenRepeatDouble
+            self.GridDouble = require("XUi/XUiFubenRepeatchallenge/XUiGridFubenRepeatDouble").New(self.PanelDouble, self)
+            self.GridDouble:Open()
+        end
+    end
 end
 
 function XUiFubenRepeatchallenge:OnStart()
     self.ChallengeCount = 1 --复刷关复刷次数
     self.RewardDatas = {} --奖励获取得情况数据
     if XDataCenter.FubenRepeatChallengeManager.IsResetPanelState() then
-        --CurPanelState=PanelState.None
         XDataCenter.FubenRepeatChallengeManager.ResetPanelState(false)
     end
 
@@ -114,20 +114,17 @@ function XUiFubenRepeatchallenge:Refresh()
             self.RImgClosed.gameObject:SetActiveEx(false)
         end
     end
-    --当期货币
-    --local versionItemId = XFubenConfigs.GetMainPanelItemId()
-    --self.BtnRewardInfo:SetRawImage(XDataCenter.ItemManager.GetItemIcon(versionItemId))
 
     self:RefreshPanelStandByInfo()
     self:RefreshPanelStageDetail()
     self:RefreshChallengeTimes()
-    --if CurPanelState==PanelState.ShowDetail then
-    --    self:ShowStageDetail()
-    --else
-    --    self:CloseStageDetail()
-    --end
+
     self:SetMaxChallengeTimes()
     self:RefreshPanelStageDetail()
+
+    if self.GridDouble then
+        self.GridDouble:RefreshShow(stageCfg.StageId)
+    end
 end
 --刷新待机面板界面(显示等级 奖励 商店)
 function XUiFubenRepeatchallenge:RefreshPanelStandByInfo()
@@ -175,48 +172,9 @@ function XUiFubenRepeatchallenge:RefreshChallengeTimes()
     local actionPointTotal = actionPoint * self.ChallengeCount
     self.TxtActionPoint.text = actionPointTotal
 end
---打开关卡详情
---function XUiFubenRepeatchallenge:ShowStageDetail()
---    self._ShowGoodsPanel:Close()
---    --判断是否在战斗时间内
---    local isFightTime= XDataCenter.FubenRepeatChallengeManager.IsOpen()
---    if isFightTime then
---        CurPanelState=PanelState.ShowDetail
---        self.PanelStandByInfo.GameObject:SetActiveEx(false)
---        self.PanelStageDetail.GameObject:SetActiveEx(true)
---        self.BtnLevel:SetDisable(true,false)
---        self:SetMaxChallengeTimes()
---        self:RefreshPanelStageDetail()
---    else
---        XUiManager.TipText('FubenRepeatchallengeEndFightTime')
---    end
---end
---关闭关卡详情
---function XUiFubenRepeatchallenge:CloseStageDetail()
---    CurPanelState=PanelState.None
---    self.PanelStandByInfo.GameObject:SetActiveEx(true)
---    self.PanelStageDetail.GameObject:SetActiveEx(false)
---    self.BtnLevel:SetDisable(false)
---    self:RefreshPanelStandByInfo()
---    self._ShowGoodsPanel:Open()
---end
---后退按钮
-function XUiFubenRepeatchallenge:Close()
-    --if CurPanelState==PanelState.ShowDetail then
-    --    self:CloseStageDetail()
-    --    return
-    --end
-    self.Super.Close(self)
-end
--- 大透明后退按钮(点开关卡后后退使用)
---function XUiFubenRepeatchallenge:OnBtnTouMingClick()
---    if CurPanelState==PanelState.ShowDetail then
---        self:CloseStageDetail()
---    end
---end
+
 --主界面按钮
 function XUiFubenRepeatchallenge:OnBtnMainUiClick()
-    --CurPanelState=PanelState.None
     XLuaUiManager.RunMain()
 end
 --帮助按钮（感叹号）
@@ -225,10 +183,6 @@ function XUiFubenRepeatchallenge:OnBtnHelpClick()
 end
 --点击关卡奖励预览 显示奖励货币的道具详情
 function XUiFubenRepeatchallenge:OnBtnRewardInfo()
-    --local stageId = XDataCenter.FubenRepeatChallengeManager.GetStageId()
-    --local stageCfg = XDataCenter.FubenManager.GetStageCfg(stageId)
-    --local itemList = XRewardManager.GetRewardList(stageCfg.FinishRewardShow)
-    --XUiManager.OpenUiTipReward(itemList)
     local itemID = XFubenConfigs.GetMainPanelItemId()
     XLuaUiManager.Open("UiTip", itemID)
 end

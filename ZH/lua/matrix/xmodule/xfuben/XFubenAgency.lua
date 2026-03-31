@@ -534,6 +534,7 @@ function XFubenAgency:IsStageCute(stageId)
     if stageType == XEnumConst.FuBen.StageType.TaikoMaster
             or stageType == XEnumConst.FuBen.StageType.MoeWarParkour
             or stageType == XEnumConst.FuBen.StageType.Maze
+            or stageType == XEnumConst.FuBen.StageType.PBRGame
     then
         return true
     end
@@ -1126,6 +1127,7 @@ function XFubenAgency:RecordFightBeginData(stageId, preFightData, charList, assi
         FightData = fightData,
         FirstFightPos = firstFightPos,
         SpeedrunStageId = speedrunStageId,
+        FightStartTime = XTime.GetServerNowTimestamp(),
     }
     self._Model:SetBeginData(beginData)
 
@@ -1286,13 +1288,18 @@ function XFubenAgency:DoEnterRealFight(preFightData, fightData)
     -- 功能开启&新手加锁
     XDataCenter.FunctionEventManager.LockFunctionEvent()
 
-    self._Model:SetFubenSettleResult(nil)
+    self:ResetSettle()
 
     local args = self:CtorFightArgs(fightData.StageId, fightData.RoleData)
     --args.ChallengeCount = preFightData.ChallengeCount or 0 --向XFight传入连战次数 方便作弊实现功能
     XEventManager.DispatchEvent(XEventId.EVENT_PRE_ENTER_FIGHT, fightData.StageId)
 
-    CS.XFight.Enter(fightData, args)
+    local stageType = self:GetStageType(fightData.StageId)
+    
+    if not self:CallCustomFunc(stageType, ProcessFunc.CustomOnCallFight, fightData, args) then
+        CS.XFight.Enter(fightData, args)
+    end
+    
     self._Model:SetEnterFightStartTime(CS.UnityEngine.Time.time)
     XEventManager.DispatchEvent(XEventId.EVENT_ENTER_FIGHT)
 end
@@ -1561,13 +1568,14 @@ function XFubenAgency:ChallengeLose(settleData)
 end
 
 -- 请求战斗通用结算
+---@param result XFightResult
 function XFubenAgency:SettleFight(result)
     if self._Model:GetFubenSettling() then
         --有副本正在结算中
         XLog.Warning("XFubenAgency:SettleFight Warning, fuben is settling!")
         return
     end
-
+    
     self:StatisticsFightResultDps(result)
     self._Model:SetFubenSettling(true) --正在结算
     local fightResBytes = result:GetFightsResultsBytes()
@@ -4034,6 +4042,115 @@ function XFubenAgency:Log()
     self._Model:PrintLog()
 end
 
+-- 涂装分包：检查战斗角色涂装是否已下载，未下载则弹窗提示或静默换成默认涂装后继续
+function XFubenAgency:_CheckBattleFashionUndownloaded(preFightData, downloadedCb)
+    -- 分包未开启，跳过所有检查
+    if not XMVCA.XSubPackage:IsOpen() then
+        downloadedCb()
+        return
+    end
+
+    local hasUndownloaded = false
+    local useFashionInfos = {}  -- 仅玩家角色，需要换装
+    -- 检查玩家角色
+    local cardIds = preFightData.CardIds
+    if not XTool.IsTableEmpty(cardIds) then
+        for _, charId in ipairs(cardIds) do
+            if XTool.IsNumberValid(charId) then
+                local char = XMVCA.XCharacter:GetCharacter(charId)
+                if char then
+                    local fashionId = char.FashionId
+                    if fashionId and not XMVCA.XSubPackage:CheckFashionDownloaded(fashionId) then
+                        local charTemplate = XMVCA.XCharacter:GetCharacterTemplate(char.Id)
+                        if charTemplate then
+                            local defaultFashionId = charTemplate.DefaultNpcFashtionId
+                            if defaultFashionId and defaultFashionId ~= fashionId then
+                                hasUndownloaded = true
+                                table.insert(useFashionInfos, { defaultFashionId = defaultFashionId })
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+    -- 检查机器人（仅参与弹窗判断，不换装）
+    local robotIds = preFightData.RobotIds
+    if not XTool.IsTableEmpty(robotIds) then
+        for _, robotId in ipairs(robotIds) do
+            if XTool.IsNumberValid(robotId) then
+                local robotTemplate = XRobotManager.GetRobotTemplate(robotId)
+                if robotTemplate then
+                    local fashionId = robotTemplate.FashionId
+                    if not XTool.IsNumberValid(fashionId) then
+                        local characterId = XRobotManager.GetCharacterId(robotId)
+                        local charTemplate = XMVCA.XCharacter:GetCharacterTemplate(characterId)
+                        fashionId = charTemplate and charTemplate.DefaultNpcFashtionId
+                    end
+                    if fashionId and not XMVCA.XSubPackage:CheckFashionDownloaded(fashionId) then
+                        hasUndownloaded = true
+                        XLog.Warning("_CheckBattleFashionUndownloaded: 机器人涂装未下载, robotId:" .. tostring(robotId) .. ", fashionId:" .. tostring(fashionId))
+                    end
+                end
+            end
+        end
+    end
+
+    -- 无未下载涂装
+    if not hasUndownloaded then
+        downloadedCb()
+        return
+    end
+
+    -- 并行发送玩家角色换装请求，全部完成后回调
+    local function sendAllUseFashionAndContinue(finalCb)
+        if XTool.IsTableEmpty(useFashionInfos) then
+            finalCb()
+            return
+        end
+        local total = #useFashionInfos
+        local doneCount = 0
+        local function onOneDone()
+            doneCount = doneCount + 1
+            if doneCount >= total then
+                finalCb()
+            end
+        end
+        for _, info in ipairs(useFashionInfos) do
+            XDataCenter.FashionManager.UseFashion(info.defaultFashionId, onOneDone, onOneDone, true)
+        end
+    end
+
+    -- 已选"本次登录不再提示"，静默换装
+    if XMVCA.XSubPackage:IsBattleFashionTipDismissed() then
+        sendAllUseFashionAndContinue(downloadedCb)
+        return
+    end
+
+    -- 弹窗提示玩家涂装将变为默认
+    XUiManager.DialogHintTip(
+        CS.XTextManager.GetText("TipTitle"),
+        CS.XTextManager.GetText("BattleFashionUndownloadedTip"),
+        nil,
+        nil,
+        function()
+            sendAllUseFashionAndContinue(downloadedCb)
+        end,
+        {
+            SetHintCb = function(isSelect)
+                XMVCA.XSubPackage:SetBattleFashionTipDismissed(isSelect)
+            end,
+            Status = false,
+            HintText = CS.XTextManager.GetText("BattleFashionUndownloadedHit"),
+        },
+        CS.XTextManager.GetText("BattleFashionUndownloadedConfirmButton"),
+        nil,
+        true,
+        true,
+        false
+    )
+end
+
 function XFubenAgency:NetWorkPreFightRequest(request, ...)
     local args = { ... }
     local originStageId = request.PreFightData.StageId
@@ -4085,7 +4202,9 @@ function XFubenAgency:NetWorkPreFightRequest(request, ...)
     XMVCA.XMainLine2:SetLastExhibitionChapterByStageId(originStageId)
 
     XMVCA.XSubPackage:CheckStageIdListResIdListDownloadComplete({ stageId }, function()
-        XNetwork.Call("PreFightRequest", request, args and table.unpack(args))
+        self:_CheckBattleFashionUndownloaded(request.PreFightData, function()
+            XNetwork.Call("PreFightRequest", request, args and table.unpack(args))
+        end)
     end)
 end
 
@@ -4093,10 +4212,15 @@ function XFubenAgency:SetStagePassed(stageId)
     self._Model:SetStagePassed(stageId)
 end
 
---- 获取主线战斗结算动画时长(秒）
-function XFubenAgency:GetFightSettleAnimationDuration()
-    --todo 4.3临时处理，读固定配置
-    return CS.XGame.ClientConfig:GetFloat("ArenaAndBossSingleFightSettleAnimDuration")
+--- 战斗内显示鼠标
+function XFubenAgency:SetMouseVisible()
+    -- 这里只有PC端开启了键鼠以后才能获取到设备
+    if CS.XFight.Instance and CS.XFight.Instance.InputSystem then
+        local inputKeyboard = CS.XFight.Instance.InputSystem:GetDevice(typeof(CS.XInputKeyboard))
+        inputKeyboard.HideMouseEvenByDrag = false
+    end
+    CS.UnityEngine.Cursor.lockState = CS.UnityEngine.CursorLockMode.None
+    CS.UnityEngine.Cursor.visible = true
 end
 
 return XFubenAgency

@@ -1,0 +1,17 @@
+Id	Name	Icon	Type	BaseDesc	UpgradeDesc	StatusDict
+10001	阿修v1.0	Assets/Product/Texture/Image/Role/RoleHeadBanshouQ.png	1	持续向玩家移动，碰撞时造成伤害。	生命+8/波；\n碰撞伤害+0.75/波。	{50: 80, 51: 10, 52: 3}
+10002	阿修v2.0	Assets/Product/Texture/Image/UiPBR/PBRMonster10007.png	1	血量更高。\n持续向玩家移动，碰撞时造成伤害。	生命+12/波；\n碰撞伤害+0.75/波。	{50: 60, 51: 15, 52: 3}
+10003	阿修v3.0	Assets/Product/Texture/Image/UiPBR/PBRMonster10008.png	1	移速更高。\n持续向玩家移动，碰撞时造成伤害。	生命+8/波；\n碰撞伤害+0.75/波。	{50: 120, 51: 9, 52: 3}
+10004	阿修v4.0	Assets/Product/Texture/Image/UiPBR/PBRMonster10010.png	1	礼盒掉落概率更高。\n持续向玩家移动，碰撞时造成伤害。	生命+10/波。	{50: 80, 51: 11, 52: 1}
+10005	阿修v5.0	Assets/Product/Texture/Image/UiPBR/PBRMonster10009.png	1	信号球掉落概率更高。\n持续向玩家移动，碰撞时造成伤害。	生命+8/波；\n碰撞伤害+0.5/波。	{50: 80, 51: 9, 52: 2}
+20001	阿箭v1.0	Assets/Product/Texture/Image/Role/RoleChangmaoQ.png	1	碰撞时造成伤害；\n持续以较远距离环绕玩家移动，周期性射出直线轨迹弹幕。	生命+5/波；\n碰撞伤害+0.5/波。	{50: 40, 51: 6, 52: 2}
+20002	阿箭v2.0	Assets/Product/Texture/Image/UiPBR/PBRMonster10005.png	1	血量更高。\n碰撞时造成伤害；\n持续以较远距离环绕玩家移动，周期性射出直线轨迹弹幕。	生命+6/波；\n碰撞伤害+0.5/波。	{50: 40, 51: 7, 52: 2}
+20003	阿箭v3.0	Assets/Product/Texture/Image/UiPBR/PBRMonster10006.png	1	移速更高。\n碰撞时造成伤害；\n持续以较远距离环绕玩家移动，周期性射出直线轨迹弹幕。	生命+6/波；\n碰撞伤害+0.5/波。	{50: 60, 51: 5, 52: 2}
+30001	阿枪v1.0	Assets/Product/Texture/Image/Role/RoleChangQiangQ.png	1	碰撞时造成伤害；\n持续向距玩家较近距离坐标移动，随后向玩家坐标冲刺一段距离并释放圆形范围伤害。	生命+24/波；\n碰撞伤害+2/波。	{50: 110, 51: 28, 52: 5}
+30002	阿枪v2.0	Assets/Product/Texture/Image/UiPBR/PBRMonster10003.png	1	血量更高。\n碰撞时造成伤害；\n持续向距玩家较近距离坐标移动，随后向玩家坐标冲刺一段距离并释放圆形范围伤害。	生命+35/波；\n碰撞伤害+2/波。	{50: 110, 51: 30, 52: 5}
+30003	阿枪v3.0	Assets/Product/Texture/Image/UiPBR/PBRMonster10002.png	1	移速更高。\n碰撞时造成伤害；\n持续向距玩家较近距离坐标移动，随后向玩家坐标冲刺一段距离并释放圆形范围伤害。	生命+20/波；\n碰撞伤害+2/波。	{50: 125, 51: 22, 52: 5}
+30004	阿枪v4.0	Assets/Product/Texture/Image/UiPBR/PBRMonster10004.png	1	信号球掉落概率更高。\n碰撞时造成伤害；\n持续向距玩家较近距离坐标移动，随后向玩家坐标冲刺一段距离并释放圆形范围伤害。	生命+20/波；\n碰撞伤害+2/波。	{50: 110, 51: 22, 52: 5}
+40001	阿剑	Assets/Product/Texture/Image/Role/RoleHeadGuanjiaQ.png	2	碰撞造成伤害；\n持续靠近玩家；\n距离玩家较近时，连续三次向玩家身后坐标冲刺，形成矩形攻击；\n距离玩家较远时，向玩家冲刺，随后发动扇形攻击。	生命+36/波；\n碰撞伤害+2.8/波。	{50: 120, 51: 42, 52: 7}
+50001	阿烟	Assets/Product/Texture/Image/Role/RoleHeadHuanQ.png	2	碰撞造成伤害；\n远离玩家，一定距离后，向玩家扇形范围内释放多道直线弹道子弹；\n玩家接近时，向玩家扇形角度发射两道矩形攻击。	生命+36/波；\n碰撞伤害+2.8/波。	{50: 120, 51: 42, 52: 7}
+60001	阿涂	Assets/Product/Texture/Image/Role/RoleHeadGuerQ.png	3	碰撞造成伤害；\n进入玩家近距离范围时，向相反方向冲刺，随后向玩家方向扇形范围内发射多道直线弹道子弹；\n进入玩家中距离范围时，在以玩家为圆心的圆形范围内，生成多个抛射线子弹；\n-当血量来到50%，或存活40s后：\n增加移动速度，移动方式变为持续向玩家近距离坐标移动；且在较长时间内，朝360°方向旋转发射直线弹道子弹弹幕，发射一周，初始方向为玩家方向。	生命+250/波；\n碰撞伤害+3/波。	{50: 135, 51: 275, 52: 10}
+70001	鲨士碧儿	Assets/Product/Texture/Image/Role/RoleHeadShashibierQ.png	3	碰撞造成伤害；\n进入玩家近距离范围时，转圈攻击；\n进入玩家中距离范围时，周期性向以玩家为圆心的圆形范围内生成多条延迟矩形攻击；\n-当血量来到75%，或存活30s后：\n①周期性向以自身为圆心的圆形范围一周发射短暂延迟抛物线弹道；\n②周期性短暂延迟后向玩家坐标冲刺一段距离；\n-当血量来到30%，或存活60s后，移动逻辑变为远离玩家，移速提升；	生命+250/波；\n碰撞伤害+3/波。	{50: 135, 51: 275, 52: 10}

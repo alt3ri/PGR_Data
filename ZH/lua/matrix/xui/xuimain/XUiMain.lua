@@ -83,7 +83,7 @@ function XUiMain:OnAwake()
     self.PanelLeftBottom.gameObject:SetActiveEx(not XUiManager.IsHideFunc)
 
     -- 设置修复-设置关掉空花高帧（开启游戏调用一次）
-    XDataCenter.XQualityManager.CloseBigWorldHighFrameSettings()
+    -- XDataCenter.XQualityManager.CloseBigWorldHighFrameSettings()
 end
 
 function XUiMain:OnStart()
@@ -120,8 +120,6 @@ function XUiMain:OnEnable()
 
     -- 刷新二级菜单
     self:UpdateRightMenu()
-
-    CS.XResourceRecord.Stop();
 
     XDataCenter.PhotographManager.GetNextRandomSceneId() -- 进行一次场景随机
 
@@ -170,6 +168,7 @@ function XUiMain:OnEnable()
 
     XMVCA.XSwitchableScene:CheckShowGyroTip()
     XEventManager.DispatchEvent(XEventId.EVENT_SCENE_UIMAIN_ENABLE)
+
 end
 
 function XUiMain:ForceChangeUiMainRightMidType(arg)

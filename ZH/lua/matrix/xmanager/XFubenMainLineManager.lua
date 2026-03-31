@@ -418,8 +418,6 @@ XFubenMainLineManagerCreator = function()
         else
             return ChapterMainTemplates[chapterMainId].ChapterId[difficult]
         end
-        local tempStr = "XFubenMainLineManager.GetChapterIdByChapterMain函数参数difficult应该是，"
-        XLog.Error(tempStr .. "config表：Share/Config/Config.tab, 中字段FubenDifficultNormal、FubenDifficultHard、FubenDifficultNightmare、DifficultVariations对应的值中的一个")
     end
 
     function XFubenMainLineManager.GetChapterCfgByChapterMain(chapterMainId, difficult)
@@ -428,8 +426,6 @@ XFubenMainLineManagerCreator = function()
         else
             return ChapterCfg[ChapterMainTemplates[chapterMainId].ChapterId[difficult]]
         end
-        local tempStr = "XFubenMainLineManager.GetChapterCfgByChapterMain函数参数difficult应该是，"
-        XLog.Error(tempStr .. "config表：Share/Config/Config.tab, 中字段FubenDifficultNormal、FubenDifficultHard、FubenDifficultNightmare、DifficultVariations对应的值中的一个")
     end
 
     function XFubenMainLineManager.GetChapterInfoByChapterMain(chapterMainId, difficult)
@@ -438,8 +434,6 @@ XFubenMainLineManagerCreator = function()
         else
             return ChapterInfos[ChapterMainTemplates[chapterMainId].ChapterId[difficult]]
         end
-        local tempStr = "XFubenMainLineManager.GetChapterInfoByChapterMain函数参数difficult应该是，"
-        XLog.Error(tempStr .. "config表：Share/Config/Config.tab, 中字段FubenDifficultNormal、FubenDifficultHard、FubenDifficultNightmare、DifficultVariations对应的值中的一个")
     end
 
     function XFubenMainLineManager.GetStageDifficult(stageId)

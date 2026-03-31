@@ -1,6 +1,12 @@
 local XUiSettleLose = XLuaUiManager.Register(XLuaUi, "UiSettleLose")
 
 local GridLoseTip = require("XUi/XUiSettleLose/XUiGridLoseTip")
+
+local RestartBtnStageTypes = { --需要打开“重新挑战”按钮的模式
+    [XDataCenter.FubenManager.StageType.BabelTower] = true,
+    [XDataCenter.FubenManager.StageType.PracticeBoss] = true,
+    [XDataCenter.FubenManager.StageType.BountyChallenge] = true,
+}
 local XUiStageSettleSound = require("XUi/XUiSettleWin/XUiStageSettleSound")
 
 function XUiSettleLose:OnAwake()
@@ -18,6 +24,12 @@ function XUiSettleLose:OnStart()
         self:SetTips(0)
         return
     end
+
+    -- 记录战斗时长用于埋点
+    if beginData.FightStartTime then
+        self._FightDuration = XTime.GetServerNowTimestamp() - beginData.FightStartTime
+    end
+
     local count = 0
     for _, v in pairs(beginData.CharList) do
         if v ~= 0 then
@@ -33,8 +45,10 @@ function XUiSettleLose:OnStart()
     self.TxtStageName.text = stageCfg.Name
 
     local type = XMVCA.XFuben:GetStageType(stageId)
-    local showBtnRestart = type == XDataCenter.FubenManager.StageType.BabelTower or type == XDataCenter.FubenManager.StageType.PracticeBoss
-    self.BtnRestart.gameObject:SetActiveEx(showBtnRestart)
+    self.BtnRestart.gameObject:SetActiveEx(RestartBtnStageTypes[type] or false)
+    self.BtnExit.gameObject:SetActiveEx(RestartBtnStageTypes[type] or false)
+    self.BtnLose.gameObject:SetActiveEx(not RestartBtnStageTypes[type])
+    self.Text.gameObject:SetActiveEx(not RestartBtnStageTypes[type])
     self.BtnTongRed.gameObject:SetActiveEx(type == XDataCenter.FubenManager.StageType.BabelTower)
     self:SetTips(stageCfg.SettleLoseTipId)
     ---@type XUiStageSettleSound
@@ -117,7 +131,7 @@ function XUiSettleLose:RegisterListener(uiNode, eventName, func)
     local listener = self.AutoCreateListeners[key]
     if listener ~= nil then
         uiNode[eventName]:RemoveListener(listener)
-    end
+        end
 
     if func ~= nil then
         if type(func) ~= "function" then
@@ -139,6 +153,7 @@ function XUiSettleLose:AutoAddListener()
     self:RegisterClickEvent(self.BtnLose, self.OnBtnLoseClick)
     self.BtnRestart.CallBack = function() self:OnClickBtnRestart() end
     self:RegisterClickEvent(self.BtnTongRed, self.OnBtnTongRed)
+    self:RegisterClickEvent(self.BtnExit, self.OnBtnLoseClick)
 end
 -- auto
 function XUiSettleLose:OnBtnLoseClick()
@@ -201,6 +216,21 @@ function XUiSettleLose:OnClickBtnRestart()
     elseif type == XDataCenter.FubenManager.StageType.PracticeBoss then
         local beginPreData = XDataCenter.FubenManager.GetFightBeginClientPreData()
         XDataCenter.FubenManager.EnterPracticeBoss(beginPreData[1],beginPreData[2],beginPreData[3])
+    elseif type == XDataCenter.FubenManager.StageType.BountyChallenge then
+        local bossId, difficulty = XMVCA.XBountyChallenge:GetCurrentBossIdAndDifficulty()
+        XMVCA.XBountyChallenge:BountyChallengeSelectDifficultyMonsterRequest(bossId, difficulty, function()
+            local stageConfig = XDataCenter.FubenManager.GetStageCfg(self.StageId)
+            local team = XDataCenter.TeamManager.GetXTeamByTypeId(XEnumConst.TeamTypeId.BountyChallenge)
+            XDataCenter.FubenManager.EnterFight(stageConfig, team:GetId())
+        end)
+        local dict = {
+            pve_type = type,
+            stage_id = self.StageId,
+            difficulty = difficulty,
+            restart_type = "AfterSettlement",
+            duration = self._FightDuration
+        }
+        CS.XRecord.Record(dict, "1000028", "BountyChallengeRestart")
     end
 end
 

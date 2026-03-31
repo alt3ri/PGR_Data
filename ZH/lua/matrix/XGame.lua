@@ -129,6 +129,11 @@ XGame.Start6 = function()
     LuaGC()
 end
 
+XGame.TryDownloadFail = function()
+    XLuaUiManager.RunMain()
+    XUiManager.TipText("TryDownloadFailTip")
+end
+
 local BreakPointTimerId = nil
 local BreakSocketHandle = nil
 XGame.InitBreakPointTimer = function()
@@ -146,4 +151,4 @@ XGame.InitBreakPointTimer = function()
     -- end
     -- BreakPointTimerId = XScheduleManager.ScheduleForever(BreakSocketHandle, 0)
 end
-XGame.InitBreakPointTimer()
+XGame.InitBreakPointTimer()

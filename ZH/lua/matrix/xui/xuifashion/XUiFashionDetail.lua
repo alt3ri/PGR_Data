@@ -3,6 +3,7 @@ local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTable
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local CSXTextManagerGetText = CS.XTextManager.GetText
 local XUiPanelRoleModel = require("XUi/XUiCharacter/XUiPanelRoleModel")
+local XUiPanelLackResources = require("XUi/XUiSubPackage/XUiPanel/XUiPanelLackResources")
 local CameraIndex = {
     Normal = 1,
     Near = 2,
@@ -44,6 +45,11 @@ function XUiFashionDetail:OnAwake()
     self.OnUiSceneLoadedCB = function() self:OnUiSceneLoaded() end
     self.OnDragModel = handler(self, self.DragModel)
     self:InitPriceHandler()
+
+    -- PanelLackResources 初始化
+    if self.PanelLackResources then
+        self._PanelLackRes = XUiPanelLackResources.New(self.PanelLackResources, self)
+    end
 end
 
 function XUiFashionDetail:OnStart(fashionId, isWeaponFashion, buyData, isShowFashionIconWithoutGift, isNeedCD, customWeaponFashionId, customDesc)
@@ -90,7 +96,7 @@ function XUiFashionDetail:OnEnable()
     if self._StartRun then
         self._StartRun = false
     else
-        -- 二次显示需要重新刷新已拥有状态    
+        -- 二次显示需要重新刷新已拥有状态
         if XWeaponFashionConfigs.IsWeaponFashion(self.FashionId) then
             --武器时装
             local newIsHaveFashion = XDataCenter.WeaponFashionManager.CheckHasFashion(self.FashionId) and
@@ -104,8 +110,9 @@ function XUiFashionDetail:OnEnable()
             self.IsHaveFashion = newIsHaveFashion
         end
     end
-    
+
     XEventManager.AddEventListener(XEventId.EVENT_PURCHASE_QUICK_BUY_SKIP, self.Close, self)
+    XEventManager.AddEventListener(XEventId.EVENT_RES_COMPLETE, self.OnFashionDownloadComplete, self)
     CS.XGraphicManager.UseUiLightDir = true
     if self.IsWeaponFashion then
         self:LoadModelScene(true)
@@ -115,6 +122,8 @@ function XUiFashionDetail:OnEnable()
         self:UpdateCharacterModel()
     end
     self:InitBuyData()
+
+    self:CheckAndUpdateLackResourcesPanel()
 end
 
 function XUiFashionDetail:Close()
@@ -128,6 +137,7 @@ end
 
 function XUiFashionDetail:OnDisable()
     XEventManager.RemoveEventListener(XEventId.EVENT_PURCHASE_QUICK_BUY_SKIP, self.Close, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_RES_COMPLETE, self.OnFashionDownloadComplete, self)
     CS.XGraphicManager.UseUiLightDir = false
 end
 
@@ -723,6 +733,50 @@ function XUiFashionDetail:BuyFashionGroup()
     end
     self.BuyData.GroupBuyCallBack(self.FashionGroup.Id)
     self:OnBtnBackClick()
+end
+
+--endregion
+
+--region 资源缺失面板
+
+function XUiFashionDetail:CheckAndUpdateLackResourcesPanel()
+    if not self._PanelLackRes then return end
+    local fashionId = self.FashionId
+    if not XTool.IsNumberValid(fashionId) then
+        self._PanelLackRes:Close()
+        self._isFashionLacking = false
+        return
+    end
+    local isDownloaded = XMVCA.XSubPackage:CheckFashionDownloaded(fashionId)
+    if isDownloaded then
+        self._PanelLackRes:Close()
+        self._isFashionLacking = false
+    else
+        local template = XDataCenter.FashionManager.GetFashionTemplate(fashionId)
+        local characterId = template and template.CharacterId or 0
+        self._PanelLackRes:SetData(characterId, fashionId)
+        self._PanelLackRes:Open()
+        self._isFashionLacking = true
+    end
+end
+
+function XUiFashionDetail:OnFashionDownloadComplete()
+    if not self._isFashionLacking then
+        self:CheckAndUpdateLackResourcesPanel()
+        return
+    end
+    local fashionId = self.FashionId
+    if XTool.IsNumberValid(fashionId)
+       and XMVCA.XSubPackage:CheckFashionDownloaded(fashionId) then
+        if self.IsWeaponFashion then
+            self:UpdateWeaponModel()
+        else
+            self:UpdateCharacterModel()
+        end
+        local fashionTemplate = XDataCenter.FashionManager.GetFashionTemplate(fashionId)
+        XUiManager.PopupLeftTip(CS.XTextManager.GetText("DownloadFashionFinishedRefresh", fashionTemplate and fashionTemplate.Name or ""))
+    end
+    self:CheckAndUpdateLackResourcesPanel()
 end
 
 --endregion

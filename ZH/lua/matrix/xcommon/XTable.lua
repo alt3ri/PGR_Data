@@ -7,11 +7,11 @@ local Type2KeyTypestringValueTypestring = {Type = 2, KeyType = "string", ValueTy
 local Type2KeyTypeintValueTypestring = {Type = 2, KeyType = "int", ValueType = "string"}
 local Type2KeyTypeintValueTypeint = {Type = 2, KeyType = "int", ValueType = "int"}
 local Type2KeyTypeintValueTypefloat = {Type = 2, KeyType = "int", ValueType = "float"}
-local Type1ValueTypestring = {Type = 1, ValueType = "string"}
-local Type1ValueTypeint = {Type = 1, ValueType = "int"}
-local Type1ValueTypefloat = {Type = 1, ValueType = "float"}
-local Type1ValueTypefix = {Type = 1, ValueType = "fix"}
-local Type1ValueTypebool = {Type = 1, ValueType = "bool"}
+local Type1ValueTypestring = {Type = 1, ValueType = "string"}
+local Type1ValueTypeint = {Type = 1, ValueType = "int"}
+local Type1ValueTypefloat = {Type = 1, ValueType = "float"}
+local Type1ValueTypefix = {Type = 1, ValueType = "fix"}
+local Type1ValueTypebool = {Type = 1, ValueType = "bool"}
 XTable = {
     BindLauncherNpc = {
         BindBone = ValueTypestring,
@@ -1222,6 +1222,8 @@ XTable = {
         DodgeIncreaseP = ValueTypeint,
         BlockIncreaseP = ValueTypeint,
         RelinkChainSkillAmpP = ValueTypeint,
+        BonusDmgP2 = ValueTypeint,
+        BonusDmgP3 = ValueTypeint,
     },
     XTableAttribDesc = {
         Index = ValueTypeint,
@@ -3521,6 +3523,7 @@ XTable = {
         CharacterMaximumNum = ValueTypeint,
         FightEventIdList = Type1ValueTypeint,
         StageDescId = ValueTypeint,
+        IsCloseGeneral = ValueTypebool,
     },
     XTableBountyChallengeMonster = {
         Id = ValueTypeint,
@@ -3530,8 +3533,6 @@ XTable = {
         StageId = ValueTypeint,
         Icon1 = ValueTypestring,
         Icon2 = ValueTypestring,
-        Icon3 = ValueTypestring,
-        Description = ValueTypestring,
     },
     XTableBountyChallengeStage = {
         Id = ValueTypeint,
@@ -3546,6 +3547,7 @@ XTable = {
         Priority = ValueTypeint,
         StageDescId = ValueTypeint,
         StageDescIndex = ValueTypeint,
+        Difficulty = ValueTypeint,
     },
     XTableBountyChallengeTrialCharacterGroup = {
         Id = ValueTypeint,
@@ -3990,6 +3992,11 @@ XTable = {
         TreasureId = ValueTypeint,
         RequireStar = ValueTypeint,
         RewardId = ValueTypeint,
+    },
+    XTableChapterFashionRelative = {
+        ChapterId = ValueTypeint,
+        FashionIds = Type1ValueTypeint,
+        IsWeakInterput = ValueTypebool,
     },
     XTableChapterMain = {
         Id = ValueTypeint,
@@ -4728,6 +4735,10 @@ XTable = {
         Duration = ValueTypeint,
         Priority = ValueTypeint,
     },
+    XTableChatChannelTimeLimit = {
+        Id = ValueTypeint,
+        TimeId = ValueTypeint,
+    },
     XTableChatEffect = {
         Id = ValueTypeint,
         BeginTimeStr = ValueTypestring,
@@ -5280,8 +5291,6 @@ XTable = {
         Id = ValueTypeint,
         ChannelId = ValueTypeint,
     },
-    XTableCommunityH5Activity = {
-    },
     XTableComposeClientConfig = {
         Id = ValueTypeint,
         ActId = ValueTypeint,
@@ -5358,6 +5367,10 @@ XTable = {
         ActivityId = ValueTypeint,
         PassCG = ValueTypestring,
         TimeId = ValueTypeint,
+    },
+    XTableConnectingLineClientConfig = {
+        Key = ValueTypestring,
+        Values = Type1ValueTypestring,
     },
     XTableConnectingLineGrid = {
         Id = ValueTypeint,
@@ -6514,16 +6527,6 @@ XTable = {
         ImageUrl = Type2KeyTypeintValueTypestring,
         Desc = Type2KeyTypeintValueTypestring,
     },
-    XTableDlcRelinkWorld = {
-        Id = ValueTypestring,
-        Icon = ValueTypestring,
-        SceneUrl = ValueTypestring,
-        SceneModelUrl = ValueTypestring,
-        LoadingBackground = ValueTypestring,
-        ArtName = ValueTypestring,
-        MaskLoadingType = ValueTypestring,
-        SettlementUiName = ValueTypestring,
-    },
     XTableDlcServerStageThreadMaxLoad = {
         StageNo = ValueTypeint,
         MaxLoad = ValueTypeint,
@@ -7310,6 +7313,7 @@ XTable = {
         ExtraRewardId = ValueTypeint,
         ExtraRewardCycleTimes = ValueTypeint,
         ShowPredictType = ValueTypeint,
+        TenDrawOnSaleStr = ValueTypestring,
     },
     XTableDrawGroupLogName = {
         Id = ValueTypeint,
@@ -7564,10 +7568,12 @@ XTable = {
     },
     XTableEmoji = {
         Id = ValueTypeint,
+        Type = ValueTypeint,
         Order = ValueTypeint,
         Name = ValueTypestring,
         BigIcon = ValueTypestring,
         Path = ValueTypestring,
+        GIFAsset = ValueTypestring,
         Description = ValueTypestring,
         WorldDesc = ValueTypestring,
         IsFree = ValueTypeint,
@@ -8480,8 +8486,6 @@ XTable = {
         FashionSuitResourcePicPath = ValueTypestring,
         FashionSuitResourceSpinePath = ValueTypestring,
         FashionSuitPic = ValueTypestring,
-        FashionGainType = ValueTypeint,
-        FashionGainParams = Type1ValueTypeint,
         Icon = ValueTypestring,
         BigIcon = ValueTypestring,
         SkipIdParams = Type1ValueTypeint,
@@ -8516,6 +8520,11 @@ XTable = {
         EffectPath = ValueTypestring,
         Icon = ValueTypestring,
         Condition = Type1ValueTypeint,
+    },
+    XTableFashionDownloadConfig = {
+        FashionId = ValueTypeint,
+        ResId = ValueTypeint,
+        AutoDownload = ValueTypebool,
     },
     XTableFashionGroup = {
         Id = ValueTypeint,
@@ -8605,6 +8614,9 @@ XTable = {
         RolePosX = ValueTypefloat,
         RolePosY = ValueTypefloat,
         RolePosZ = ValueTypefloat,
+        RoleRotationX = ValueTypefloat,
+        RoleRotationY = ValueTypefloat,
+        RoleRotationZ = ValueTypefloat,
         WeaponPosX = ValueTypefloat,
         WeaponPosY = ValueTypefloat,
         WeaponPosZ = ValueTypefloat,
@@ -8615,6 +8627,7 @@ XTable = {
         BtnGetBg = ValueTypestring,
         BtnWearBg = ValueTypestring,
         LineColor = ValueTypestring,
+        SuitLogo = ValueTypestring,
     },
     XTableFashionSuitClientConfig = {
         Id = ValueTypestring,
@@ -9158,6 +9171,11 @@ XTable = {
         CostTime = ValueTypeint,
         FunctionParam = Type1ValueTypeint,
     },
+    XTableFunctionIdFashionRelative = {
+        FunctionId = ValueTypeint,
+        FashionIds = Type1ValueTypeint,
+        IsWeakInterput = ValueTypebool,
+    },
     XTableFurniture = {
         Id = ValueTypeint,
         MaxCount = ValueTypeint,
@@ -9387,7 +9405,13 @@ XTable = {
         Id = ValueTypeint,
         Desc = ValueTypestring,
         TimeId = ValueTypeint,
-        GachaId = Type1ValueTypeint,
+        GachaGroupIds = Type1ValueTypeint,
+    },
+    XTableGachaFashionSelfChoiceGroup = {
+        Id = ValueTypeint,
+        Desc = ValueTypestring,
+        TimeId = ValueTypeint,
+        GachaIds = Type1ValueTypeint,
         RuleTitle = Type1ValueTypestring,
         RuleText = Type1ValueTypestring,
     },
@@ -10946,10 +10970,18 @@ XTable = {
         NeedLevel = ValueTypeint,
         MaxInviteNum = ValueTypeint,
         InviteTimeId = ValueTypeint,
-        RegressionRewardId = ValueTypeint,
-        InviteRewardId = ValueTypeint,
         BgIcon = ValueTypestring,
         Text = Type1ValueTypestring,
+        RegressionRewardId = ValueTypeint,
+        InviteRewardId = ValueTypeint,
+        OpenChatChannel = ValueTypebool,
+        ChatChannelId = ValueTypeint,
+        TaskGroupId = ValueTypeint,
+        MultiRewardCount = ValueTypeint,
+    },
+    XTableHoldRegressionClientConfig = {
+        Key = ValueTypestring,
+        Values = Type1ValueTypestring,
     },
     XTableHoldRegressionCondition = {
         Id = ValueTypeint,
@@ -11360,8 +11392,6 @@ XTable = {
         Id = ValueTypeint,
         Count = ValueTypeint,
     },
-    XTableItemRestrict = {
-    },
     XTableItemUsePackage = {
         Id = ValueTypeint,
         PackageIds = Type1ValueTypeint,
@@ -11588,6 +11618,12 @@ XTable = {
         X = ValueTypeint,
         Y = ValueTypeint,
     },
+    XTableLineArithmetic3Help = {
+        Id = ValueTypeint,
+        MapId = ValueTypeint,
+        X = ValueTypeint,
+        Y = ValueTypeint,
+    },
     XTableLineArithmeticActivity = {
         Id = ValueTypeint,
         TimeId = ValueTypeint,
@@ -11596,19 +11632,18 @@ XTable = {
         Help = ValueTypeint,
         TaskIds = Type1ValueTypeint,
     },
+    XTableLineArithmeticCar = {
+        Id = ValueTypeint,
+        Carriages = Type1ValueTypeint,
+    },
     XTableLineArithmeticCell = {
         Id = ValueTypeint,
         Type = ValueTypeint,
         Color = ValueTypeint,
-        InitialScore = ValueTypeint,
-        CanMerge = ValueTypebool,
-        CanDye = ValueTypebool,
-        BulletColorType = ValueTypeint,
         BulletNum = ValueTypeint,
-        DyeAddScore = ValueTypeint,
-        Capacity = ValueTypeint,
-        ManifestId = ValueTypeint,
-        CellName = ValueTypestring,
+        GridName = ValueTypestring,
+        CharacterId = ValueTypeint,
+        Name = ValueTypestring,
     },
     XTableLineArithmeticChapter = {
         Id = ValueTypeint,
@@ -14391,6 +14426,7 @@ XTable = {
         RecommendCharacterId = ValueTypeint,
         NoCameraSwitchDuringTransformation = ValueTypebool,
         PartnerType = ValueTypeint,
+        AvaliableTimeId = ValueTypeint,
     },
     XTablePartnerBreakThrough = {
         Id = ValueTypeint,
@@ -14506,8 +14542,8 @@ XTable = {
         Id = ValueTypeint,
         Name = ValueTypestring,
         ActivityTimeId = ValueTypeint,
-        StagePrefix = ValueTypestring,
         ActivityCondition = Type1ValueTypeint,
+        StagePrefix = ValueTypestring,
         OpenCondition = Type1ValueTypeint,
         BannerIcon = ValueTypestring,
         Background = ValueTypestring,
@@ -14520,6 +14556,7 @@ XTable = {
         StageIds = Type1ValueTypeint,
         Order = ValueTypeint,
         NewTag = ValueTypestring,
+        PartnerId = ValueTypeint,
     },
     XTablePartnerUiEffect = {
         Id = ValueTypeint,
@@ -14615,27 +14652,152 @@ XTable = {
         PayId = ValueTypeint,
         ShowUIType = ValueTypeint,
     },
-    XTablePBRItem = {
+    XTablePBRActivity = {
         Id = ValueTypeint,
+        TimeId = ValueTypeint,
+        StageIds = Type1ValueTypeint,
+        TaskGroupIds = Type1ValueTypeint,
+    },
+    XTablePBRArchiveMonster = {
+        Id = ValueTypeint,
+        Name = ValueTypestring,
+        Icon = ValueTypestring,
+        Type = ValueTypeint,
+        BaseDesc = ValueTypestring,
+        UpgradeDesc = ValueTypestring,
+        StatusDict = Type2KeyTypeintValueTypeint,
+    },
+    XTablePBRCharacter = {
+        CharacterId = ValueTypeint,
+        CharacterName = ValueTypestring,
+        CharacterIcon = ValueTypestring,
+        ShowPriority = ValueTypeint,
+        IsHide = ValueTypebool,
+        CharacterType = ValueTypeint,
+        BasicAttackDesc = ValueTypestring,
+        CorePassiveDesc = ValueTypestring,
+        ComboBoostDesc = ValueTypestring,
+        CharacterUnlockStage = ValueTypeint,
+        CuteModelName = ValueTypestring,
+        RecommendStatus = Type1ValueTypeint,
+    },
+    XTablePBRCharacterLevel = {
+        Id = ValueTypeint,
+        CharacterId = ValueTypeint,
+        Level = ValueTypeint,
+        NeedExp = ValueTypeint,
+    },
+    XTablePBRCharacterStats = {
+        CharacterId = ValueTypeint,
+        Status = Type2KeyTypeintValueTypeint,
+    },
+    XTablePBRClientConfig = {
+        Key = ValueTypestring,
+        Values = Type1ValueTypestring,
+    },
+    XTablePBRConfig = {
+        Key = ValueTypestring,
+        Values = Type1ValueTypeint,
+    },
+    XTablePBRDrop = {
+        DropType = ValueTypeint,
+        MagicId = ValueTypeint,
+        Radius = ValueTypefix,
+        Effect = ValueTypestring,
+    },
+    XTablePBRItem = {
+        ItemId = ValueTypeint,
         ItemType = ValueTypeint,
+        OrbColor = ValueTypeint,
         OrbGroup = ValueTypeint,
         ItemTier = ValueTypeint,
-        ItemMagic = ValueTypeint,
-        PreferencesType = ValueTypeint,
         ItemName = ValueTypestring,
         ItemDesc = ValueTypestring,
-        Radius = ValueTypefix,
-        Effect = ValueTypestring,
-        EffectHeight = ValueTypefloat,
+        UnlockProgressionNodeId = ValueTypeint,
+        Icon = ValueTypestring,
+        SkillId = ValueTypeint,
+        SaveSkillNote = ValueTypeint,
+        ItemMagic = ValueTypeint,
+        Tags = Type1ValueTypestring,
     },
-    XTablePBRMissile = {
+    XTablePBRItemGroup = {
+        OrbGroup = ValueTypeint,
+        ItemIds = Type1ValueTypeint,
+    },
+    XTablePBRMetaProgression = {
+        NodeId = ValueTypeint,
+        PreNode = ValueTypeint,
+        NodeName = ValueTypestring,
+        NodeType = ValueTypeint,
+        NodeGroup = ValueTypeint,
+        NodeCost = ValueTypeint,
+        NodeCondition = ValueTypeint,
+        TextUnlock = ValueTypestring,
+        TextLocked = ValueTypestring,
+        NodeIcon = ValueTypestring,
+        NodeStats = Type1ValueTypeint,
+        NodeStatsNum = Type1ValueTypeint,
+        ShopFreshCount = ValueTypeint,
+        RewardItemIds = Type1ValueTypeint,
+    },
+    XTablePBRMetaProgressionNodeGroup = {
+        NodeGroup = ValueTypeint,
+        NodeIds = Type1ValueTypeint,
+    },
+    XTablePBRMonsterWave = {
+        WaveId = ValueTypeint,
+        WaveType = ValueTypeint,
+        WaveReward = ValueTypeint,
+        WaveFinishCondition = ValueTypestring,
+        MaxMonsterCount = ValueTypeint,
+        IconType = ValueTypeint,
+        IconAssets = ValueTypestring,
+        SpawnGroup = Type1ValueTypeint,
+        SpawnTime = Type1ValueTypefix,
+    },
+    XTablePBRRichTextIconConfig = {
+        Key = ValueTypestring,
+        IconRes = ValueTypestring,
+    },
+    XTablePBRShopRefresh = {
+        WaveId = ValueTypeint,
+    },
+    XTablePBRSkillGroupDesc = {
         Id = ValueTypeint,
-        Radius = ValueTypefix,
-        Effect = ValueTypestring,
-        DamageCoe = ValueTypefix,
-        LifeTime = ValueTypefix,
-        Speed = ValueTypefix,
-        EffectHeight = ValueTypefloat,
+        Name = ValueTypestring,
+        BaseDesc = ValueTypestring,
+        Icon = ValueTypestring,
+        LevelDescList = Type1ValueTypestring,
+    },
+    XTablePBRStage = {
+        StageId = ValueTypeint,
+        TimeId = ValueTypeint,
+        PreStageId = ValueTypeint,
+        StageName = ValueTypestring,
+        GridStyle = ValueTypeint,
+        StageType = ValueTypeint,
+        FinishWaves = ValueTypeint,
+        FinishRewards = ValueTypeint,
+        RecommendChar = ValueTypeint,
+        MonsterWaves = Type1ValueTypeint,
+        MaxWaves = ValueTypeint,
+    },
+    XTablePBRStatsDesc = {
+        StatsId = ValueTypeint,
+        StatsName = ValueTypestring,
+        StatsDesc = ValueTypestring,
+        ValueBase = ValueTypeint,
+        ShowPriority = ValueTypeint,
+        IsHide = ValueTypebool,
+        MaxValue = ValueTypeint,
+        FightValueSrc = ValueTypeint,
+        Icon = ValueTypestring,
+    },
+    XTablePBRTaskGroup = {
+        Id = ValueTypeint,
+        Name = ValueTypestring,
+        GroupType = ValueTypeint,
+        TaskIds = Type1ValueTypeint,
     },
     XTablePcgActivity = {
         Id = ValueTypeint,
@@ -15726,8 +15888,6 @@ XTable = {
         CoverTitle = ValueTypestring,
         CoverDescription = ValueTypestring,
         ChallengeBg = ValueTypestring,
-    },
-    XTablePurchaseComboPackage = {
     },
     XTablePurchaseExchangeUiConfig = {
         Id = ValueTypeint,
@@ -21086,6 +21246,7 @@ XTable = {
         Desc = ValueTypestring,
         Banner = ValueTypestring,
         AllowDelete = ValueTypebool,
+        CustomSkipId = ValueTypeint,
         PreIds = Type1ValueTypeint,
         DownloadTaskId = ValueTypeint,
     },
@@ -21102,6 +21263,7 @@ XTable = {
         Note = ValueTypestring,
         MainSubPackageId = ValueTypeint,
         ExtraSubPackageIds = Type1ValueTypeint,
+        WeakSubPackageIds = Type1ValueTypeint,
         EntryType = ValueTypeint,
         Params = Type1ValueTypeint,
     },
@@ -23747,8 +23909,6 @@ XTable = {
         Skill = Type1ValueTypeint,
         EquipId = Type1ValueTypeint,
     },
-    XTableTheatre5PveRoundRefresh = {
-    },
     XTableTheatre5PveSceneChat = {
         Id = ValueTypeint,
         Group = ValueTypeint,
@@ -23833,6 +23993,10 @@ XTable = {
         PvpBonusRating = ValueTypeint,
         PvpPerfectRating = ValueTypeint,
         RewardId = ValueTypeint,
+        KExWin = ValueTypeint,
+        KExLose = ValueTypeint,
+        PvpExBonusRating = ValueTypeint,
+        PvpExLoseRating = ValueTypeint,
     },
     XTableTheatre5RankMajor = {
         Id = ValueTypeint,
@@ -24848,6 +25012,14 @@ XTable = {
         IsShow = ValueTypebool,
         KeyCode = Type1ValueTypeint,
         KeyText = Type1ValueTypestring,
+    },
+    XTableUiDownloadPreviewControl = {
+        Id = ValueTypeint,
+        OptionName = ValueTypestring,
+        Desc = ValueTypestring,
+        IgnoreInterput = ValueTypebool,
+        Order = ValueTypeint,
+        ResType = ValueTypeint,
     },
     XTableUiFightAchievement = {
         Id = ValueTypeint,

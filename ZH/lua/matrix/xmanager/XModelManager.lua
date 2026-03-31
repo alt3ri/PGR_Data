@@ -176,6 +176,14 @@ local function GetUiModelOffWeaponBoneBindConfig(modelId)
 end
 
 local function GetUiModelConfig(modelId)
+    -- 涂装分包安全网：未下载的涂装模型回退到默认模型
+    if XMVCA and XMVCA.XSubPackage then
+        local fallbackModelId = XMVCA.XSubPackage:GetFashionModelFallback(modelId)
+        if fallbackModelId then
+            modelId = fallbackModelId
+        end
+    end
+
     local config = UIModelTemplates[modelId]--UI模型配置
             or ModelTemplates[modelId]--战斗模型配置（保底配置）
             or DlcModelTemplates[modelId] --DLC模型

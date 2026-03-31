@@ -1531,6 +1531,36 @@ XItemManagerCreator = function()
         end
         return true
     end
+
+    ---检查道具是否不足，不足时打开购买界面
+    ---@param useItemId number 道具Id
+    ---@param needCount number 需要的道具数量
+    ---@param callBack function 回调
+    ---@param errorTxt string 错误提示文本Key
+    ---@param isNotSkipBuyAsset boolean 是否不跳过购买界面
+    ---@return boolean 道具是否足够
+    function XItemManager.DoNotEnoughBuyAssetByNeedCount(useItemId, needCount, callBack, errorTxt, isNotSkipBuyAsset)
+        local ownItemCount = XDataCenter.ItemManager.GetCount(useItemId)
+        local lackItemCount = needCount - ownItemCount
+        if lackItemCount > 0 then
+            local template = XDataCenter.ItemManager.GetBuyAssetTemplate(useItemId, 0, true)
+            if template ~= nil then
+                if not isNotSkipBuyAsset then
+                    if BuyAssetTemplates[useItemId] and #BuyAssetTemplates[useItemId] > 1 then
+                        XItemManager.SelectBuyAssetType(useItemId, callBack, nil, 1, true)
+                    else
+                        lackItemCount = mathCeil(lackItemCount / template.GainCount)
+                        XItemManager.SelectBuyAssetType(useItemId, callBack, nil, lackItemCount, true)
+                    end
+                end
+            else
+                XUiManager.TipError(CS.XTextManager.GetText(errorTxt))
+            end
+            return false
+        end
+        return true
+    end
+
     function XItemManager.SelectBuyAssetType(useItemId, callBack, challengeCountData, buyAmount, isAutoClose)
         if useItemId == XDataCenter.ItemManager.ItemId.ActionPoint and
                 XDataCenter.ItemManager.CheckBatteryIsHave() then

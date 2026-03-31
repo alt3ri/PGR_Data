@@ -106,7 +106,7 @@ function XUiSoloReformKillChapterDetail:RefreshGridItem(stageItemGo, stageId)
             grid.ImgStarOff.gameObject:SetActiveEx(not starStateList[index])
             grid.ImgStarOn.gameObject:SetActiveEx(starStateList[index])
         end)
-    stageItemUi.BtnBoss:SetNameByGroup(0, stageCfg.TitleName)
+    stageItemUi.BtnBoss:SetNameByGroup(0, stageCfg.TitleName[1])
     local score = self._Control:GetKillStageScore(self._ChapterId, stageId)
     stageItemUi.BtnBoss:SetNameByGroup(1, score or "") --score
     stageItemUi.BtnBoss:SetRawImageVisible(score ~= nil)

@@ -44,7 +44,7 @@ end
 function XLevelScript9007:HandleEvent(eventType, eventArgs)
     if eventType == EWorldEvent.ActorTrigger then
         if eventArgs.HostSceneObjectPlaceId == self._deathZoneId and eventArgs.TriggerState == 1 then 
-            if self._proxy:GetNpcCamp(eventArgs.EnteredActorUUID) == ENpcCampType.Camp1 then   --阵营为1的玩家方才会重置
+            if eventArgs.EnteredActorUUID == self._proxy:GetLocalPlayerNpcId() then   --是本端玩家就会重置并提示
                 self._proxy:SetNpcPosition(eventArgs.EnteredActorUUID,self._spawnPoint[2],false)
                 self._proxy:ShowTip(90204)
             end
@@ -160,7 +160,13 @@ function XLevelScript9007:Update(dt)
             self._timer:Schedule(1, self, function()
                 self._proxy:PlayNpcCV(self._localPlayerNpc,0,EFightCVAction.NotifyEnemyDead,EAudioLuaFuncSyncType.NpcController)       --播放角色自己的胜利语音
             end)
-            self._proxy:SetLevelUiState(EFightUiType.CommonJoystick,self._localPlayerNpc,1)            --只显示摇杆，屏蔽其他
+            self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Move,self._localPlayerNpc,true)
+            self._proxy:SetLevelOperationUiState(EFightUiType.CommonJoystick,ENpcOperationKey.Move,self._localPlayerNpc,1)
+            self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Jump,self._localPlayerNpc,true)
+            self._proxy:SetLevelOperationUiState(EFightUiType.CommonJoystick,ENpcOperationKey.Jump,self._localPlayerNpc,1)
+            self._proxy:SetLevelUiState(EFightUiType.CommonJoystick,self._localPlayerNpc,1)            --只显示摇杆和跳跃，屏蔽其他
+            self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.ExSkill,self._localPlayerNpc,false)
+            self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.RelinkLimitSkill,self._localPlayerNpc,false)
             self._proxy:StopAudioByUid(self._backGrounSoundUid)--停止环境音
             self._WinStartPhaseUiOff = true
         elseif self.haruCore == 100 and self._initLosedStartPhase == false then 

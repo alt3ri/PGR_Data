@@ -289,6 +289,7 @@ function XPartnerConfigs.GetPartnerQualityCfg()
     return PartnerQualityCfg
 end
 
+---@return XTablePartner
 function XPartnerConfigs.GetPartnerTemplateById(id)
     if not PartnerTemplateCfg[id] then
         XLog.Error("id is not exist in "..TABLE_PARTNER.." id = " .. tostring(id))

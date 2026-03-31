@@ -155,7 +155,7 @@ function XUiPanelTaskCanLiver:GetTasks()
     for index, groupId in ipairs(taskGroupIds) do
         if XTool.IsNumberValid(groupId) then
             if CS.XGame.ClientConfig:GetInt("DrawCanLiverWeekTaskGroupIdIndex") == index then
-                local list = XDataCenter.TaskManager.GetTimeLimitTaskListByGroupId(groupId)
+                local list = XDataCenter.TaskManager.GetTimeLimitTaskListByGroupId(groupId, false)
                 self.CurrDrawCanLiverWeekTaskList = self.CurrDrawCanLiverWeekTaskList or {}
                 for k, task in pairs(list) do
                     self.CurrDrawCanLiverWeekTaskList[task.Id] = true
@@ -163,7 +163,12 @@ function XUiPanelTaskCanLiver:GetTasks()
             end
         end
     end
+    
+    -- 额外的任务显示：来自其他系统，因为UI整合而放到一起
+    tasks = XMVCA.XReCallActivity:GetRegressionTaskDataList(tasks)
 
+    -- 合并后最终再排序
+    tasks = XDataCenter.TaskManager.CommonTaskDataSort(tasks)
     ----------------------------
     -- 2. 找出可领取任务
     ----------------------------

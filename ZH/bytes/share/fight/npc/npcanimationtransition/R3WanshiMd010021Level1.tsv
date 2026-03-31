@@ -1,0 +1,235 @@
+Role	Layer	State	Target	TransitionDuration
+R3WanshiMd010021			Born	
+R3WanshiMd010021			Stand1	0.1
+R3WanshiMd010021			Stand2	0.1
+R3WanshiMd010021			Stand3	0.1
+R3WanshiMd010021			Death	0.1
+R3WanshiMd010021			Standchange	0.1
+R3WanshiMd010021			Run	0.1
+R3WanshiMd010021			Walk	0.1
+R3WanshiMd010021			Runb	0.2
+R3WanshiMd010021			Runl	0.2
+R3WanshiMd010021			Runr	0.2
+R3WanshiMd010021			Walkb	0.1
+R3WanshiMd010021			Walkl	0.1
+R3WanshiMd010021			Walkr	0.1
+R3WanshiMd010021			TurnLeft	0.1
+R3WanshiMd010021			TurnRight	0.1
+R3WanshiMd010021			Move1	0.1
+R3WanshiMd010021			Move2	0.1
+R3WanshiMd010021			Move3	0.1
+R3WanshiMd010021			RunStart	0.1
+R3WanshiMd010021			RunStartEnd01	0.1
+R3WanshiMd010021			Hit1	0.05
+R3WanshiMd010021			Hit2	0.05
+R3WanshiMd010021			Hit3	0.05
+R3WanshiMd010021			Hit4	0.05
+R3WanshiMd010021			Behitfly	0.05
+R3WanshiMd010021			Hoverhit	0.05
+R3WanshiMd010021			Falldown	0.1
+R3WanshiMd010021			Hitdown	0.05
+R3WanshiMd010021			Lieonfloor	0.1
+R3WanshiMd010021			Standup	0.1
+R3WanshiMd010021			Straight	0.1
+R3WanshiMd010021			Stun	0.1
+R3WanshiMd010021			StraightBefore	0.1
+R3WanshiMd010021			StraightAfter	0.1
+R3WanshiMd010021			Win	
+R3WanshiMd010021			Win2	0.1
+R3WanshiMd010021			Stop	0.1
+R3WanshiMd010021			Fail	0.1
+R3WanshiMd010021			Save	0.1
+R3WanshiMd010021			Caught	0.1
+R3WanshiMd010021			RunStartEnd02	0.1
+R3WanshiMd010021			StopR	0.1
+R3WanshiMd010021			WalkStart	0.1
+R3WanshiMd010021			WalkStop	0.1
+R3WanshiMd010021			WalkStartEnd	0.1
+R3WanshiMd010021			LTurn90	0.1
+R3WanshiMd010021			LTurn180	0.1
+R3WanshiMd010021			RTurn90	0.1
+R3WanshiMd010021			RTurn180	0.1
+R3WanshiMd010021			Attack01	0.1
+R3WanshiMd010021			Attack02	0.1
+R3WanshiMd010021			Attack03	0.1
+R3WanshiMd010021			Attack04	0.1
+R3WanshiMd010021			Attack05	0.1
+R3WanshiMd010021			Attack11	0.1
+R3WanshiMd010021			Attack12	0.1
+R3WanshiMd010021			Attack13	0.1
+R3WanshiMd010021			Attack14	0.1
+R3WanshiMd010021			Attack15	0.1
+R3WanshiMd010021			Attack16	0.1
+R3WanshiMd010021			Attack21	0.1
+R3WanshiMd010021			Attack22	0.1
+R3WanshiMd010021			Attack31	0.1
+R3WanshiMd010021			Attack32	0.1
+R3WanshiMd010021			Attack33	0.1
+R3WanshiMd010021			Attack34	0.1
+R3WanshiMd010021			Attack41	0.1
+R3WanshiMd010021			Attack42	0.1
+R3WanshiMd010021			Attack44	0.1
+R3WanshiMd010021			Attack45	0.1
+R3WanshiMd010021			Attack46	0.1
+R3WanshiMd010021			Attack47	0.1
+R3WanshiMd010021			Attack48	0.1
+R3WanshiMd010021			Attack49	0.1
+R3WanshiMd010021			Attack51	
+R3WanshiMd010021			Attack52	0.1
+R3WanshiMd010021			Attack90	0.1
+R3WanshiMd010021			Attack91	0.1
+R3WanshiMd010021			Attack92	0.1
+R3WanshiMd010021			Attack98	0.1
+R3WanshiMd010021			Attack99	0.1
+R3WanshiMd010021		Stand1	Run	0.2
+R3WanshiMd010021		Stand1	Walk	0.1
+R3WanshiMd010021		Stand2	Standchange	0.1
+R3WanshiMd010021		Stand2	Run	0.2
+R3WanshiMd010021		Stand2	Walk	0.3
+R3WanshiMd010021		Stand2	Walkb	0.3
+R3WanshiMd010021		Stand2	Walkl	0.3
+R3WanshiMd010021		Stand2	Walkr	0.3
+R3WanshiMd010021		Standchange	Stand1	0.1
+R3WanshiMd010021		Standchange	Run	0.1
+R3WanshiMd010021		Standchange	Walk	0.1
+R3WanshiMd010021		Run	Stop	0.2
+R3WanshiMd010021		Run	Stand2	0.2
+R3WanshiMd010021		Run	Runb	0.2
+R3WanshiMd010021		Run	Runl	0.2
+R3WanshiMd010021		Run	Runr	0.2
+R3WanshiMd010021		Walk	Stand2	0.1
+R3WanshiMd010021		Runb	Stand2	0.2
+R3WanshiMd010021		Runb	Run	0.2
+R3WanshiMd010021		Runb	Runl	0.2
+R3WanshiMd010021		Runb	Runr	0.2
+R3WanshiMd010021		Runl	Stand2	0.2
+R3WanshiMd010021		Runl	Run	0.2
+R3WanshiMd010021		Runl	Runb	0.2
+R3WanshiMd010021		Runl	Runr	0.2
+R3WanshiMd010021		Runr	Stand2	0.2
+R3WanshiMd010021		Runr	Run	0.2
+R3WanshiMd010021		Runr	Runb	0.2
+R3WanshiMd010021		Runr	Runl	0.2
+R3WanshiMd010021		Walkb	Stand2	0.1
+R3WanshiMd010021		Walkb	Walk	0.2
+R3WanshiMd010021		Walkb	Walkl	0.1
+R3WanshiMd010021		Walkb	Walkr	0.1
+R3WanshiMd010021		Walkl	Stand2	0.1
+R3WanshiMd010021		Walkl	Walk	0.1
+R3WanshiMd010021		Walkl	Walkb	0.1
+R3WanshiMd010021		Walkl	Walkr	0.2
+R3WanshiMd010021		Walkr	Stand2	0.1
+R3WanshiMd010021		Walkr	Walk	0.1
+R3WanshiMd010021		Walkr	Walkb	0.1
+R3WanshiMd010021		Walkr	Walkl	0.2
+R3WanshiMd010021		TurnLeft	Stand2	0.1
+R3WanshiMd010021		TurnRight	Stand2	0.1
+R3WanshiMd010021		Move1	Attack48	
+R3WanshiMd010021		Move1	Attack49	
+R3WanshiMd010021		Move2	Attack48	0.1
+R3WanshiMd010021		Move2	Attack49	0.1
+R3WanshiMd010021		RunStart	Run	0.1
+R3WanshiMd010021		RunStart	RunStartEnd01	0.1
+R3WanshiMd010021		Hit1	Stand2	
+R3WanshiMd010021		Hit2	Stand2	
+R3WanshiMd010021		Hit3	Stand2	
+R3WanshiMd010021		Hit4	Stand2	
+R3WanshiMd010021		Behitfly	Hoverhit	0.1
+R3WanshiMd010021		Behitfly	Falldown	0.1
+R3WanshiMd010021		Hoverhit	Falldown	0.1
+R3WanshiMd010021		Falldown	Lieonfloor	0.1
+R3WanshiMd010021		Hitdown	Lieonfloor	0.1
+R3WanshiMd010021		Standup	Stand2	0.1
+R3WanshiMd010021		Straight	Stand2	0.1
+R3WanshiMd010021		Stun	Stand2	0.1
+R3WanshiMd010021		Win	Win2	0.1
+R3WanshiMd010021		Stop	Stand2	0.1
+R3WanshiMd010021		Caught	Stand2	0.1
+R3WanshiMd010021		WalkStart	Stand2	0.1
+R3WanshiMd010021		WalkStop	Stand2	0.1
+R3WanshiMd010021		WalkStartEnd	Stand2	0.1
+R3WanshiMd010021		LTurn90	Stand2	0.1
+R3WanshiMd010021		LTurn180	Stand2	0.1
+R3WanshiMd010021		RTurn90	Stand2	0.1
+R3WanshiMd010021		RTurn180	Stand2	0.1
+R3WanshiMd010021		Attack13	Attack21	
+R3WanshiMd010021		Attack21	Attack21	
+R3WanshiMd010021		Attack21	Attack32	
+R3WanshiMd010021		Attack21	Attack33	
+R3WanshiMd010021		Attack22	Attack22	0.5
+R3WanshiMd010021		Attack32	Attack48	
+R3WanshiMd010021		Attack32	Attack49	
+R3WanshiMd010021		Attack33	Attack48	
+R3WanshiMd010021		Attack33	Attack49	
+R3WanshiMd010021	1		Attack81	0.1
+R3WanshiMd010021	1		Attack82	0.1
+R3WanshiMd010021	1	Attack81	Attack81	0.1
+R3WanshiMd010021	1	Attack81	Attack82	
+R3WanshiMd010021	1	Attack82	Attack81	
+R3WanshiMd010021	1	Attack82	Attack82	
+R3WanshiMd010021	2		Attack81	0.1
+R3WanshiMd010021	2		Attack82	0.1
+R3WanshiMd010021	2	Attack81	Attack81	0.1
+R3WanshiMd010021	2	Attack81	Attack82	
+R3WanshiMd010021	2	Attack82	Attack81	
+R3WanshiMd010021	2	Attack82	Attack82	
+R3WanshiMd010021	3		Attack82	0.1
+R3WanshiMd010021	3	Attack82	Attack82	
+R3WanshiMd010021	4		Attack81	0.1
+R3WanshiMd010021	4		Attack83	0.1
+R3WanshiMd010021	4	Attack81	Attack81	0.1
+R3WanshiMd010021	4	Attack81	Attack83	
+R3WanshiMd010021	4	Attack83	Attack81	
+R3WanshiMd010021	4	Attack83	Attack83	0.1
+R3WanshiMd010021	5		Attack120	0.1
+R3WanshiMd010021	5		Attack121	0.1
+R3WanshiMd010021	5		Attack122	0.1
+R3WanshiMd010021	5		Attack123	0.1
+R3WanshiMd010021	5		Attack125	0.1
+R3WanshiMd010021	5		Attack126	0.1
+R3WanshiMd010021	5		Attack127	0.1
+R3WanshiMd010021	5		Attack128	0.1
+R3WanshiMd010021	5		Attack129	0.1
+R3WanshiMd010021	5		Attack130	0.1
+R3WanshiMd010021	5		Attack131	0.1
+R3WanshiMd010021	5		Attack132	0.1
+R3WanshiMd010021	5		Attack133	0.1
+R3WanshiMd010021	5		Attack134	0.1
+R3WanshiMd010021	5		Attack135	0.1
+R3WanshiMd010021	5		Attack136	0.1
+R3WanshiMd010021	5		Attack137	0.1
+R3WanshiMd010021	5		Attack138	0.1
+R3WanshiMd010021	5		Attack139	0.1
+R3WanshiMd010021	6		Born	
+R3WanshiMd010021	6		Stand1	0.1
+R3WanshiMd010021	6		Stand2	0.1
+R3WanshiMd010021	6		Stand3	0.1
+R3WanshiMd010021	6		Walk	0.1
+R3WanshiMd010021	6		Walkb	0.1
+R3WanshiMd010021	6		Walkl	0.1
+R3WanshiMd010021	6		Walkr	0.1
+R3WanshiMd010021	6		WalkStart	0.1
+R3WanshiMd010021	6		WalkStop	0.1
+R3WanshiMd010021	6		WalkStartEnd	0.1
+R3WanshiMd010021	6		Attack122	0.1
+R3WanshiMd010021	6	Stand1	Walk	0.1
+R3WanshiMd010021	6	Stand2	Walk	0.3
+R3WanshiMd010021	6	Stand2	Walkb	0.3
+R3WanshiMd010021	6	Stand2	Walkl	0.3
+R3WanshiMd010021	6	Stand2	Walkr	0.3
+R3WanshiMd010021	6	Walk	Stand2	0.1
+R3WanshiMd010021	6	Walkb	Stand2	0.1
+R3WanshiMd010021	6	Walkb	Walk	0.2
+R3WanshiMd010021	6	Walkb	Walkl	0.1
+R3WanshiMd010021	6	Walkb	Walkr	0.1
+R3WanshiMd010021	6	Walkl	Stand2	0.1
+R3WanshiMd010021	6	Walkl	Walk	0.1
+R3WanshiMd010021	6	Walkl	Walkb	0.1
+R3WanshiMd010021	6	Walkl	Walkr	0.2
+R3WanshiMd010021	6	Walkr	Stand2	0.1
+R3WanshiMd010021	6	Walkr	Walk	0.1
+R3WanshiMd010021	6	Walkr	Walkb	0.1
+R3WanshiMd010021	6	Walkr	Walkl	0.2
+R3WanshiMd010021	6	WalkStart	Stand2	0.1
+R3WanshiMd010021	6	WalkStop	Stand2	0.1
+R3WanshiMd010021	6	WalkStartEnd	Stand2	0.1

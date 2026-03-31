@@ -22,7 +22,7 @@ end
 
 function XUiReCallActivityShare:SetPlayerInfo(RecallPhotoPanel)
     self.NameTxt.text = XPlayer.Name
-    local code = self._Control:PlayIdToHexUpper()
+    local code = XMVCA.XReCallActivity:PlayIdToHexUpper()
     self.CodeTxt.text = CS.XTextManager.GetText("HoldRegressionInviteCode", code)
     if RecallPhotoPanel then
         RecallPhotoPanel.ShareCodeTxt.text = CS.XTextManager.GetText("HoldRegressionInviteCode", code)
@@ -124,7 +124,7 @@ end
 function XUiReCallActivityShare:ReCallRecord(share_type)
     local dict = {}
     dict.share_type = share_type
-    dict.invitation_code = self._Control:PlayIdToHexUpper()
+    dict.invitation_code = XMVCA.XReCallActivity:PlayIdToHexUpper()
     dict.invitation_user_id = XPlayer.Id
     CS.XRecord.Record(dict, "900008", "returnActivity2024")
 end

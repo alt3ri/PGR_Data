@@ -25,7 +25,7 @@ function XUiSoloReformChapterStarInfo:Update(stageId)
     end
     if not self.Parent.IsKillMode then
         self.Title.gameObject:SetActiveEx(true)
-        self.Time.gameObject:SetActiveEx(maxDifficultyStageId == stageId)
+        self.Time.gameObject:SetActiveEx(true)
     end
     
     if self.TxtNum then

@@ -227,9 +227,11 @@ function XLevelScript9007:OnUpdatePhase(dt)
             XLog.Debug("战斗超时，判负处理")
             self._isPlayerWin = false
             self._isFinishFight = true
-            self:SetMonsterHasLostLife(self.monster_UUID) --怪物剩余血量获取传值
             self._proxy:SetLevelMemoryInt(133027,0)  --是否胜利黑板值传值
-            self._proxy:ApplyMagic(self.monster_UUID,self.monster_UUID,9001022)--BOSS锁血
+            if self._proxy:CheckNpc(self.monster_UUID) == true then
+                self:SetMonsterHasLostLife(self.monster_UUID)
+                self._proxy:ApplyMagic(self.monster_UUID,self.monster_UUID,9001022)--玩家死了BOSS锁血
+            end
             self._audioPlayer:PlayAudioFightLose()
             self._eventRecord:SetResultData(self._proxy)
             self._proxy:SettleFight(self._isPlayerWin)          --后端结算通知API
@@ -369,9 +371,11 @@ function XLevelScript9007:CheckLevelEnd() --检查关卡结束
         if self:CheckAllPlayerDead() then
             self._isPlayerWin = false                               --玩家失败传参修改
             self._isFinishFight = true
-            self:SetMonsterHasLostLife(self.monster_UUID)
             self._proxy:SetLevelMemoryInt(133027,0)  --是否胜利黑板值传值
-            self._proxy:ApplyMagic(self.monster_UUID,self.monster_UUID,9001022)--玩家死了BOSS锁血
+            if self._proxy:CheckNpc(self.monster_UUID) == true then
+                self:SetMonsterHasLostLife(self.monster_UUID)
+                self._proxy:ApplyMagic(self.monster_UUID,self.monster_UUID,9001022)--玩家死了BOSS锁血
+            end
             XLog.Debug("检测到所有玩家死亡")
             self._proxy:DispatchLuaEvent(ELuaEventTarget.Npc,EFightLuaEvent.RelinkSetAIActivate, {NpcUUid=self.monster_UUID,IsActivated=false})                  --关闭白龙AI
             self._audioPlayer:PlayAudioFightLose()
@@ -388,7 +392,6 @@ function XLevelScript9007:LevelEnd(isPlayerWin)
     if not self._hasSettleLevel then
         self._hasSettleLevel = true
         self.isLeveEnd = true
-        self._eventRecord:Destory()
         self._proxy:FinishFight() --仅客户端完成战斗
     end
     
@@ -413,7 +416,7 @@ function XLevelScript9007:InitialPlayerSet(npc, index)
 end
 
 function XLevelScript9007:Terminate() --脚本结束逻辑（脚本被卸载、Npc死亡、关卡结束......）
-
+    self._eventRecord:Destory()
 end
 
 return XLevelScript9007

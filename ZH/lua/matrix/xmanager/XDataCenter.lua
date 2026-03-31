@@ -65,6 +65,8 @@
 ---@field InputManagerPc InputManagerPc
 ---@field FubenActivityBossSingleManager XFubenActivityBossSingleManager
 ---@field CloudGameManager XCloudGameManager
+---@field AutoWindowManager XAutoWindowManager
+---@field NoticeManager XNoticeManager
 XDataCenter = XDataCenter or {}
 
 local IsWindowsEditor = XMain.IsWindowsEditor

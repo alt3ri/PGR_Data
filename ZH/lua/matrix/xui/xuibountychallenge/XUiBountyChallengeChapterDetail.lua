@@ -11,6 +11,9 @@ function XUiBountyChallengeChapterDetail:OnAwake()
     self:BindHelpBtn(nil, "BountyChallengeHelp")
     XUiHelper.RegisterClickEvent(self, self.BtnDetail, self._OnClickDetail)
     XUiHelper.RegisterClickEvent(self, self.BtnTongBlack, self._OnClickFight)
+    XUiHelper.RegisterClickEvent(self, self.BtnLianyu, self._OnClickFight)
+    XUiHelper.RegisterClickEvent(self, self.BtnTask, self._OnClickTask)
+    XUiHelper.RegisterClickEvent(self, self.BtnCloseTask, self._OnClickCloseTask)
 
     ---@type XUiBountyChallengeChapterDetailCharacter[]
     self._GridCharacters = {}
@@ -20,8 +23,13 @@ function XUiBountyChallengeChapterDetail:OnAwake()
 
     ---@type XUiBountyChallengeChapterDetailDifficulty[]
     self._GridDifficulty = {}
-
-    self.RImgBoss = self.RImgBoss or XUiHelper.TryGetComponent(self.Transform, "SafeAreaContentPane/PanelLeft/RImgBoss", "RawImage")
+    
+    self.RImgBossList = {
+        self.RImgBoss_A,
+        self.RImgBoss_B,
+        self.RImgBoss_C,
+        self.RImgBoss_D,
+    }
 
     self.PanelList:Init({}, function(index)
     end)
@@ -50,7 +58,6 @@ function XUiBountyChallengeChapterDetail:Update()
     local data = self._Control:GetUiChapterDetail()
     self._Data = data
     self.TxtName.text = data.Name
-    --self.TxtDetail1.text = data.Description
 
     if self.TxtTitle then
         self.TxtTitle.gameObject:SetActiveEx(not self._Data.IsRobot)
@@ -101,7 +108,9 @@ function XUiBountyChallengeChapterDetail:Update()
     end
 
     -- 任务
-    XTool.UpdateDynamicItem(self._GridTasks, data.TaskList, self.GridTask, XUiBountyChallengeChapterDetailTask, self)
+    if self.PanelTaskBg.gameObject.activeInHierarchy then
+        XTool.UpdateDynamicItem(self._GridTasks, data.TaskList, self.GridTask, XUiBountyChallengeChapterDetailTask, self)
+    end
     
     -- 任务序列动画
     if not self._HadPlayTaskUiAnim then
@@ -112,10 +121,37 @@ function XUiBountyChallengeChapterDetail:Update()
             end
         end
     end
+    
+    self:UpdateButton()
 
-    if self.RImgBoss then
-        self.RImgBoss:SetRawImage(data.Icon)
+    local bossIndex = self._Control:GetBossIndexInTable(data.BossId)
+    for i, rimgBoss in ipairs(self.RImgBossList) do
+        if rimgBoss then
+            rimgBoss.gameObject:SetActiveEx(i == bossIndex)
+        end
     end
+
+    self:UpdateDifficultyUI()
+end
+
+function XUiBountyChallengeChapterDetail:UpdateButton()
+    local taskCount = #self._Data.TaskList
+    local finishCount = 0
+    local reddotCount = 0
+    for k,v in pairs(self._Data.TaskList) do
+        if v.IsClear or v.IsCanFinish then
+            finishCount = finishCount + 1
+            if v.IsCanFinish then
+                reddotCount = reddotCount + 1
+            end
+        end
+    end
+    self.ImgJindu.fillAmount = finishCount/taskCount
+    self.TxtFinish.text = finishCount
+    self.TxtAll.text ="/" .. taskCount
+    self.BtnTask:ShowReddot(reddotCount > 0)
+    self.IconComplete.gameObject:SetActiveEx(finishCount == taskCount)
+    self.IconNormal.gameObject:SetActiveEx(finishCount ~= taskCount)
 end
 
 function XUiBountyChallengeChapterDetail:_OnClickDetail()
@@ -124,6 +160,15 @@ end
 
 function XUiBountyChallengeChapterDetail:_OnClickFight()
     self._Control:OpenRoom()
+end
+
+function XUiBountyChallengeChapterDetail:_OnClickTask()
+    self.PanelTaskBg.gameObject:SetActiveEx(true)
+    XTool.UpdateDynamicItem(self._GridTasks, self._Data.TaskList, self.GridTask, XUiBountyChallengeChapterDetailTask, self)
+end
+
+function XUiBountyChallengeChapterDetail:_OnClickCloseTask()
+    self.PanelTaskBg.gameObject:SetActiveEx(false)
 end
 
 function XUiBountyChallengeChapterDetail:SetLine(index)
@@ -135,6 +180,15 @@ function XUiBountyChallengeChapterDetail:SetLine(index)
             child.gameObject:SetActive(i == index)
         end
     end
+end
+
+function XUiBountyChallengeChapterDetail:UpdateDifficultyUI()
+    local currentLevel = self._Control._DifficultyLevel
+    local isLianyuDifficulty = (currentLevel == 4)
+
+    self.PanelLianyu.gameObject:SetActiveEx(isLianyuDifficulty)
+    self.BtnLianyu.gameObject:SetActiveEx(isLianyuDifficulty)
+    self.BtnTongBlack.gameObject:SetActiveEx(not isLianyuDifficulty)
 end
 
 return XUiBountyChallengeChapterDetail

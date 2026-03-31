@@ -40,10 +40,10 @@ function XFashionSuitAgency:OpenMain()
     if #needCloseIds > 0 then
         --玩家主动进入套装界面后，强制完成指定ID的强引导
         XDataCenter.GuideManager.ReqMultiGuideComplete(needCloseIds, function()
-            XLuaUiManager.Open("UiFashionSuitMain")
+            XLuaUiManager.Open("UiFashionSuitLobby")
         end)
     else
-        XLuaUiManager.Open("UiFashionSuitMain")
+        XLuaUiManager.Open("UiFashionSuitLobby")
     end
 end
 
@@ -154,7 +154,7 @@ function XFashionSuitAgency:GetGroupSalesShopIds(fashionId)
     if config.GainType ~= XEnumConst.FashionSuit.GainType.Shop then
         return nil
     end
-    return { config.FashionGainParams[1], config.WeaponFashionGainParams[1] }
+    return { config.FashionGainParams[1], config.WeaponFashionGainParams[1] }    
 end
 
 ---该套装是否允许整套购买

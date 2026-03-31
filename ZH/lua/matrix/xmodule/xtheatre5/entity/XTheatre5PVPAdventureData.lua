@@ -4,8 +4,9 @@ local XTheatre5AdventureDataBase = require('XModule/XTheatre5/Entity/XTheatre5Ad
 ---@class XTheatre5PVPAdventureData: XTheatre5AdventureDataBase
 ---@field TrophyNum number
 ---@field EnemyData
+---@field IsPvpExtra boolean 加时赛是否开始
+---@field NormalOriginRating number 常规赛原始分
 local XTheatre5PVPAdventureData = XClass(XTheatre5AdventureDataBase, 'XTheatre5PVPAdventureData')
-
 
 function XTheatre5PVPAdventureData:Ctor()
     self._GameMode = XTheatre5EnumConst.GameMode.PVP
@@ -24,10 +25,10 @@ function XTheatre5PVPAdventureData:UpdatePVPAdventureData(adventureData)
         for k, v in pairs(adventureData) do
             self[k] = v
         end
-        
+
         self.HasData = true
 
-        self:SetNeedUpdateAdds()   
+        self:SetNeedUpdateAdds()
     end
 end
 
@@ -40,6 +41,29 @@ end
 
 function XTheatre5PVPAdventureData:GetTrophyNum()
     return self.TrophyNum or 0
+end
+
+-- 更新是否开始加时赛（局内）
+function XTheatre5PVPAdventureData:UpdateIsPvpExtra(isPvpExtra)
+    self.IsPvpExtra = isPvpExtra
+end
+
+-- 检查是否开始加时赛
+function XTheatre5PVPAdventureData:CheckIsPvpExtra()
+    return self.IsPvpExtra or false
+end
+
+-- 更新常规赛原始分（局内）
+function XTheatre5PVPAdventureData:UpdateNormalOriginRating(normalOriginRating)
+    if not XTool.IsNumberValid(normalOriginRating) then
+        return
+    end
+    self.NormalOriginRating = normalOriginRating
+end
+
+-- 获取常规赛原始分
+function XTheatre5PVPAdventureData:GetNormalOriginRating()
+    return self.NormalOriginRating or 0
 end
 
 --endregion
@@ -78,7 +102,7 @@ function XTheatre5PVPAdventureData:GetEnemyRuneIds()
         else
             XLog.Error("[XTheatre5PVPAdventureData] 结算时RuneEvolves字段为空")
         end
-        
+
         return runeIds
     end
 end
@@ -90,4 +114,4 @@ function XTheatre5PVPAdventureData:GetEnemyCharacterId()
 end
 --endregion
 
-return XTheatre5PVPAdventureData
+return XTheatre5PVPAdventureData

@@ -373,6 +373,16 @@ function XUiFightCommonInterBtnList:SetFollowNpc(...)
     self:Refresh()
 end
 
+function XUiFightCommonInterBtnList:SetPosition(...)
+    local data = {...}
+    local anchorPos = Vector2(data[1] / XEnumConst.GOLDEN_MINER.TEN_THOUSAND_PERCENT, 
+            data[2] / XEnumConst.GOLDEN_MINER.TEN_THOUSAND_PERCENT)
+    self.OriginOptionsAnchorMin = anchorPos
+    self.OriginOptionsAnchorMax = anchorPos
+    self.OriginOptionsPos = Vector2.zero
+    self:ResetPos()
+end
+
 function XUiFightCommonInterBtnList:RemoveCommonInterBtn(id)
     if (XTool.UObjIsNil(self.GameObject)) or (XTool.IsTableEmpty(self.GridDatas)) or (id and self.GridDatas[id] == nil) then
         return
@@ -387,12 +397,16 @@ function XUiFightCommonInterBtnList:RemoveCommonInterBtn(id)
     if XTool.IsTableEmpty(self.GridDatas) then
         self.FollowNpc = nil
         self.FollowNode = nil
-        self.Options.transform.anchorMin = self.OriginOptionsAnchorMin
-        self.Options.transform.anchorMax = self.OriginOptionsAnchorMax
-        self.Options.transform.anchoredPosition = self.OriginOptionsPos
+        self:ResetPos()
         self.Options.gameObject:SetActiveEx(true)
         self:Hide()
         return
     end
     self:Refresh()
-end
+end
+
+function XUiFightCommonInterBtnList:ResetPos()
+    self.Options.transform.anchorMin = self.OriginOptionsAnchorMin
+    self.Options.transform.anchorMax = self.OriginOptionsAnchorMax
+    self.Options.transform.anchoredPosition = self.OriginOptionsPos
+end 

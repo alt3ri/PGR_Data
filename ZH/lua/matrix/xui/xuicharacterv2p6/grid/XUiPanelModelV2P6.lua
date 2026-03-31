@@ -15,7 +15,6 @@ function XUiPanelModelV2P6:OnStart()
     self.BigBallGridDic = {}
     self.NodeAllTagsDic = {}    --每次切换球都要刷新
     self.TagBtnSkillEventDic = {} --记录是否注册过bubble里的skillBtn事件，每次切换球都要刷新
-    self.ResourcesUrl = {}
     
     self:InitCamera()
 end
@@ -140,9 +139,7 @@ function XUiPanelModelV2P6:InitQualitySingleRelatedBtn()
 
     -- 初始化大球预置体
     local bigBallPath = CS.XGame.ClientConfig:GetString("PanelEffectBallBig")
-    local resource = self._Control:GetLoader():Load(bigBallPath)
-    table.insert(self.ResourcesUrl, bigBallPath)
-    local allBigBall = CS.UnityEngine.Object.Instantiate(resource, self.EffectBallRoot).transform
+    local allBigBall = self.EffectBallRoot.gameObject:LoadPrefabEx(bigBallPath).transform
     local childCount = allBigBall.childCount
     local gridList = {}
     for i = 0, childCount - 1 do
@@ -471,9 +468,7 @@ end
 
 function XUiPanelModelV2P6:InitDynamicTable3D(uiNodeParentUi)
     local smallBallPath = CS.XGame.ClientConfig:GetString("PanelEffectBallSmall")
-    local resource = self._Control:GetLoader():Load(smallBallPath)
-    table.insert(self.ResourcesUrl, smallBallPath)
-    local allSmallBall = CS.UnityEngine.Object.Instantiate(resource, self.EffectBallRoot.transform).transform
+    local allSmallBall = self.EffectBallRoot.gameObject:LoadPrefabEx(smallBallPath).transform
     local childCount = allSmallBall.childCount
     local gridList = {}
     for i = 0, childCount - 1 do
@@ -601,9 +596,6 @@ function XUiPanelModelV2P6:LoadQualityEffectIcon(transform, quality)
 end
 
 function XUiPanelModelV2P6:OnDestroy()
-    for k, url in pairs(self.ResourcesUrl) do
-        self._Control:GetLoader():Unload(url)
-    end
     self:ResetBtnNodeData()
 end
 

@@ -51,7 +51,7 @@ end
 -- data传值支持以下两种方式
 --  id（配置VideoConfig.tab中id）
 --  {VideoUrl, Width, Height}
-function XUiVideoPlayer:OnStart(data, closeCb, needAuto, needSkip)
+function XUiVideoPlayer:OnStart(data, closeCb, needAuto, needSkip, defaultHideButtons)
     self.CloseCb = closeCb
     
     if needAuto == nil then
@@ -59,6 +59,14 @@ function XUiVideoPlayer:OnStart(data, closeCb, needAuto, needSkip)
     end
     if needSkip == nil then
         needSkip = true
+    end
+
+    if defaultHideButtons then
+        self._DefaultNeedAuto = needAuto
+        self._DefaultNeedSkip = needSkip
+        self._DefaultHideButtons = true
+        needAuto = false
+        needSkip = false
     end
 
     local movieId = data
@@ -120,6 +128,11 @@ end
 function XUiVideoPlayer:OnClickBtnMask()
     if self.DisplayTime <= 0 then
         self:PlayAnimation("UiEnable")
+
+        if self._DefaultHideButtons then
+            self.BtnAuto.gameObject:SetActiveEx(self._DefaultNeedAuto)
+            self.BtnSkip.gameObject:SetActiveEx(self._DefaultNeedSkip)
+        end
     end
     self.DisplayTime = self.DisplayTimeConfig
 end

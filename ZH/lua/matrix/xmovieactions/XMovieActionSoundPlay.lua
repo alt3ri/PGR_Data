@@ -107,15 +107,13 @@ function XMovieActionSoundPlay:IsPassedActionRun(index)
         return false
     end
     
-    local isCover = XDataCenter.MovieManager.IsBehindPassedActionCover(index, function(action)
-        return self:IsActionCover(action)
-    end)
+    local isCover = XDataCenter.MovieManager.IsBehindPassedActionCover(index)
     return not isCover
 end
 
 -- 传入Action是否可覆盖当前Action的UI显示，可覆盖则OnPassedActionRun不用再刷新UI界面
 ---@param action XMovieActionBase
-function XMovieActionSoundPlay:IsActionCover(action)
+function XMovieActionSoundPlay:IsPassedActionCovered(action)
     if action:GetType() == XMVCA.XMovie.EnumConst.ACTION_TYPE.AUDIO_PLAY then
         return action:GetSoundType() == self:GetSoundType() and action:GetSoundType() == XLuaAudioManager.SoundType.Music
     elseif action:GetType() == XMVCA.XMovie.EnumConst.ACTION_TYPE.AUDIO_INTERRUPT then

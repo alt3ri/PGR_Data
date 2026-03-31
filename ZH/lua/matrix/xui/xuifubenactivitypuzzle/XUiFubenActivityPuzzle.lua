@@ -104,7 +104,14 @@ function XUiFubenActivityPuzzle:RegisterHelpBtn()
 end
 
 function XUiFubenActivityPuzzle:InitBtnGroup()
-    local tmpBtnTabs = {self.BtnTab1, self.BtnTab2, self.BtnTab3, self.BtnTab4,}
+     local tmpBtnTabs = {}
+    for i = 0, self.PanelTab.transform.childCount - 1  do
+        local childTrans = self.PanelTab.transform:GetChild(i)
+        if childTrans.gameObject.name:sub(1, 6) =="BtnTab" then
+            table.insert(tmpBtnTabs,childTrans:GetComponent("XUiButton"))
+        end
+    end
+
     self.BtnTabs = {}
     local puzzleTemplates = XDataCenter.FubenActivityPuzzleManager.GetPuzzleTemplates()
     for i=1, #tmpBtnTabs, 1 do

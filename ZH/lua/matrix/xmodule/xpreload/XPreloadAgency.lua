@@ -22,7 +22,7 @@ local SingleThread = 1 --单线程数量
 local MultiThread = 5 --多线程数量
 
 local State = XEnumConst.Preload.State
-local CSXMTDownloadTaskGroupState = CS.XMTDownloadTaskGroupState
+local CSXMTDownloadTaskGroupState = XTool.GetDownloadStateEnum()
 local XLaunchPreloadModuleCls = require("XLaunchPreloadModule")
 
 ---@class XPreloadAgency : XAgency
@@ -736,9 +736,10 @@ function XPreloadAgency:MultiThreadDownload()
     --self._CurDownloadThreadCount = SingleThread --开始的时候是单线程的(不在只是单线程了)
     self._AutoResumeDownload = false
 
-    self._CurDownloader = CS.XMTDownloadCenter()
+    self._CurDownloader = XTool.CreateDownloadManager()
     self._CurDownloader:SetThreadNumber(self._CurDownloadThreadCount) --先设置一次线程数量
-    self._CurTaskGroup = CS.XMTDownloadTaskGroup(1)
+    self._CurTaskGroup = XTool.CreateDownloadTaskGroup(1, true)
+    self._CurTaskGroup:SetClientCDNsSkip(true)
     self._CurTaskGroup.NotifyStateChanged = self._OnDownloadStateUpdate
     --self._CurTaskGroup.NotifyProgressChanged = self._OnDownloadProgressUpdate --使用定时器
 

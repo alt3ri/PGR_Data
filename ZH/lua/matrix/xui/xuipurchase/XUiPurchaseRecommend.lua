@@ -8,7 +8,8 @@ local XUiRecommendGrid = XClass(nil, "XUiRecommendGrid")
 local RecommendUiProxy = {
     [CS.XGame.ClientConfig:GetInt(XEnumConst.Purchase.Recommend.Luna)] = require("XUi/XUiPurchase/XUiPanelRecommend/XUiPanelRecommendLuna"),
     [CS.XGame.ClientConfig:GetInt(XEnumConst.Purchase.Recommend.CompanyPackage)] = require("XUi/XUiPurchase/XUiPanelRecommend/XUiPanelRecommendCompanyPackage"),
-    [CS.XGame.ClientConfig:GetInt(XEnumConst.Purchase.Recommend.ComboPackage)] = require("XUi/XUiPurchase/XUiPanelRecommend/XUiPanelRecommendComboPackage/XUiPanelRecommendComboPackage")
+    [CS.XGame.ClientConfig:GetInt(XEnumConst.Purchase.Recommend.ComboPackage)] = require("XUi/XUiPurchase/XUiPanelRecommend/XUiPanelRecommendComboPackage/XUiPanelRecommendComboPackage"),
+    [CS.XGame.ClientConfig:GetInt(XEnumConst.Purchase.Recommend.DynamicFace)] = require("XUi/XUiPurchase/XUiPanelRecommend/XUiPanelRecommendDynamicFace")
 }
 
 function XUiRecommendGrid:Ctor(ui)

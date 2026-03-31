@@ -3,6 +3,7 @@
 ---@field _TaskGroup XMTDownloadTaskGroup
 local XResource = XClass(nil, "XResource")
 local XLaunchDlcManager = require("XLaunchDlcManager")
+local CSXMTDownloadTaskGroupState = XTool.GetDownloadStateEnum()
 
 function XResource:Ctor(resId)
     self._Id = resId
@@ -10,7 +11,7 @@ function XResource:Ctor(resId)
     self._DownSize = 0
     self._TotalSize = 0
     self._MaxProgress = 0
-    self._TaskGroup = CS.XMTDownloadTaskGroup(resId) -- 以ResId为唯一标识
+    self._TaskGroup = XTool.CreateDownloadTaskGroup(resId) -- 以ResId为唯一标识
     self._WaitPause = false
 end
 
@@ -49,9 +50,25 @@ function XResource:PrepareDownload()
         XLog.Warning("XResource:PrepareDownload, already complete, id = " .. self._Id .. ", state = " .. self._State)
         return
     end
-    
+
     XLaunchDlcManager.RemoveUninstalledResId(self._Id)
     self._State = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.PREPARE_DOWNLOAD
+
+    -- [F1] 通知父分包更新聚合状态（从 UNINSTALLED/NOT_DOWNLOAD 恢复）
+    local subpackageIdList = XMVCA.XSubPackage:GetSubpackageIdByResId(self._Id)
+    if not XTool.IsTableEmpty(subpackageIdList) then
+        for _, subPackageId in pairs(subpackageIdList) do
+            local subpackageItem = XMVCA.XSubPackage:GetSubpackageItem(subPackageId)
+            if subpackageItem then
+                local subState = subpackageItem:GetState()
+                if subState == XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.UNINSTALLED
+                    or subState == XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.NOT_DOWNLOAD then
+                    subpackageItem:UpdateAggregateState()
+                    XEventManager.DispatchEvent(XEventId.EVENT_SUBPACKAGE_PREPARE, subPackageId)
+                end
+            end
+        end
+    end
 end
 
 function XResource:StartDownload()
@@ -112,6 +129,18 @@ end
 function XResource:Complete()
     self._State = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.COMPLETE
     XEventManager.DispatchEvent(XEventId.EVENT_RES_COMPLETE, self._Id)
+    -- 在Release前使所属Subpackage的TaskGroups缓存失效，避免缓存已释放的C#对象
+    -- 同时通知Sub级进度更新，确保UiDownLoadMain的进度条在单个res完成时也能刷新
+    local subpackageIdList = XMVCA.XSubPackage:GetSubpackageIdByResId(self._Id)
+    if not XTool.IsTableEmpty(subpackageIdList) then
+        for _, subPackageId in pairs(subpackageIdList) do
+            local subpackageItem = XMVCA.XSubPackage:GetSubpackageItem(subPackageId)
+            if subpackageItem then
+                subpackageItem:InvalidateTaskGroupsCache()
+                XEventManager.DispatchEvent(XEventId.EVENT_SUBPACKAGE_UPDATE, subPackageId, subpackageItem:GetProgress())
+            end
+        end
+    end
     self:Release()
     XMVCA.XSubPackage:Print(string.format("[SubPackage] Resource(%s) Download Complete!", self._Id))
 end
@@ -203,23 +232,23 @@ function XResource:GetDownloadSize()
 end
 
 function XResource:IsComplete()
-    return self._TaskGroup.State == CS.XMTDownloadTaskGroupState.Complete
+    return self._TaskGroup.State == CSXMTDownloadTaskGroupState.Complete
 end
 
 ---@param center XMTDownloadCenter
 function XResource:OnStateChanged()
     local state = self._TaskGroup.State
     -- print("SP/DN XResource:OnStateChanged", self._Id, state)
-    if state == CS.XMTDownloadTaskGroupState.Registered and self._WaitPause then
+    if state == CSXMTDownloadTaskGroupState.Registered and self._WaitPause then
         XMVCA.XSubPackage:OnResDownloadRelease()
         self._WaitPause = false
-    elseif state == CS.XMTDownloadTaskGroupState.Complete then
+    elseif state == CSXMTDownloadTaskGroupState.Complete then
         self:Complete()
         XMVCA.XSubPackage:OnResDownloadRelease()
         self._WaitPause = false
-    elseif state == CS.XMTDownloadTaskGroupState.Pausing then
+    elseif state == CSXMTDownloadTaskGroupState.Pausing then
         self._WaitPause = true
-    elseif state == CS.XMTDownloadTaskGroupState.CompleteError then
+    elseif state == CSXMTDownloadTaskGroupState.CompleteError then
         XMVCA.XSubPackage:OnResDownloadRelease()
     end
 

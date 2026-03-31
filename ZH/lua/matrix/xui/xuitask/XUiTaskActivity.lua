@@ -1,8 +1,9 @@
-local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
-local XDynamicGridTask = require("XUi/XUiTask/XDynamicGridTask")
-local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
----@field _Control XControl
+local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
+local XDynamicGridTask = require("XUi/XUiTask/XDynamicGridTask")
+local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
+
 ---@class XUiTaskActivity : XLuaUi
+---@field _Control XControl
 local XUiTaskActivity = XLuaUiManager.Register(XLuaUi, "UiTaskActivity")
 
 function XUiTaskActivity:OnAwake()
@@ -63,11 +64,25 @@ function XUiTaskActivity:OnSelectedTog(index)
 end
 
 function XUiTaskActivity:GetTaskGroupIds()
-    return {}
+    return false
+end
+
+function XUiTaskActivity:GetTaskIdList()
+    return false
 end
 
 function XUiTaskActivity:InitDynamicTable()
-    self.TaskGroupIds = self:GetTaskGroupIds()
+    -- 兼容TaskGroupIds 和 GetTaskList 两种方式
+    local taskGroupIds = self:GetTaskGroupIds()
+    if taskGroupIds then
+        self.TaskGroupIds = taskGroupIds
+    else
+        self.TaskIdList = self:GetTaskIdList()
+    end
+    if not self.TaskGroupIds and not self.TaskIdList then
+        self.TaskGroupIds = {}
+    end
+
     self.DynamicTable = XDynamicTableNormal.New(self.TaskList)
     self.DynamicTable:SetProxy(XDynamicGridTask, self)
     self.DynamicTable:SetDelegate(self)
@@ -112,12 +127,27 @@ function XUiTaskActivity:OnDisable()
     end
 end
 
-function XUiTaskActivity:UpdateDynamicTable()
+function XUiTaskActivity:GetTaskDataList()
     local index = self.SelectIndex
-    if not self.TaskGroupIds[index] then
+    if self.TaskGroupIds then
+        if not self.TaskGroupIds[index] then
+            return
+        end
+        return XDataCenter.TaskManager.GetTimeLimitTaskListByGroupId(self.TaskGroupIds[index])
+    else
+        local taskIdList = self.TaskIdList[index]
+        if taskIdList then
+            return XDataCenter.TaskManager.GetTaskIdListData(taskIdList, true)
+        end
+    end
+end
+
+function XUiTaskActivity:UpdateDynamicTable()
+    local taskDataList = self:GetTaskDataList()
+    if not taskDataList then
         return
     end
-    self.TaskDataList = XDataCenter.TaskManager.GetTimeLimitTaskListByGroupId(self.TaskGroupIds[index])
+    self.TaskDataList = taskDataList
     local allAchieveTasks = {}
     for _, v in pairs(self.TaskDataList) do
         if v.State == XDataCenter.TaskManager.TaskState.Achieved then
@@ -145,7 +175,15 @@ end
 function XUiTaskActivity:UpdateRedPoint()
     for i = 1, 2 do
         if self.TabBtns[i] then
-            if self.TaskGroupIds[i] then
+            if self.TaskIdList then
+                -- TaskIdList：任务ID列表，检查是否有任务可领取
+                local taskIdList = self.TaskIdList[i]
+                if taskIdList then
+                    local isShowRed = XDataCenter.TaskManager.CheckAnyTaskAchievedByTaskIdList(taskIdList)
+                    self.TabBtns[i]:ShowReddot(isShowRed)
+                end
+            elseif self.TaskGroupIds and self.TaskGroupIds[i] then
+                -- TaskGroupIds：限时任务组ID，检查是否有任务可领取
                 local isShowRed = XDataCenter.TaskManager.CheckLimitTaskList(self.TaskGroupIds[i])
                 self.TabBtns[i]:ShowReddot(isShowRed)
             else

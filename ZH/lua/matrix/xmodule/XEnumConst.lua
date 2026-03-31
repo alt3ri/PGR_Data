@@ -162,6 +162,7 @@ XEnumConst = {
             InitStageInfo = "InitStageInfo",
             CheckPreFight = "CheckPreFight",
             CustomOnEnterFight = "CustomOnEnterFight",
+            CustomOnCallFight = "CustomOnCallFight",
             PreFight = "PreFight",
             FinishFight = "FinishFight",
             CallFinishFight = "CallFinishFight",
@@ -281,6 +282,7 @@ XEnumConst = {
             ScoreTower = 98, -- 新矿区
             BountyChallenge = 99, -- 悬赏挑战
             SoloReform = 100, -- mini改造
+            PBRGame = 101, -- 战双兄弟
         },
         ChapterType = {
             MainLine = 0,
@@ -1354,7 +1356,6 @@ XEnumConst = {
             CG = 3,
         },
         HELP_KEY = "ConnectingLineGame",
-        COMPLETE_LINE_SOUND = 4271,
         TASK = 327
     },
     ---临时处理常量，一些特殊情况如：特定物品文本有误时特殊处理，将物品Id定义在这里，写明注释
@@ -1408,6 +1409,12 @@ XEnumConst = {
         SUBPACKAGE_TYPE = {
             NECESSARY = 1, --必要资源
             OPTIONAL = 2, --可选资源
+        },
+        FLOW_STATE = {
+            NONE = "None", --无流程
+            ACTIVE = "Active", --正在下载
+            QUEUED = "Queued", --排队等待
+            PAUSING = "Pausing", --暂停中
         },
     },
     CV_TYPE = {
@@ -3553,6 +3560,7 @@ XEnumConst = {
             Luna = 'PurchaseLunaRecommendId', --新手超S限定补给包（露娜）
             CompanyPackage = 'PurchaseCompanyPackRecommendId', --新手三日限定补给+月卡Plus
             ComboPackage = 'PurchaseComboPackRecommendId', -- 捆绑包，折扣需要动态计算
+            DynamicFace = "XUiPanelRecommendDynamicFaceId", --动态表情包
         },
     },
     FashionSuit = {

@@ -1,5 +1,5 @@
 local Quaternion = CS.UnityEngine.Quaternion
-local Gizmos = CS.UnityEngine.Gizmos
+local Gizmos
 local Debug = CS.UnityEngine.Debug
 
 XPlanetDebugTool = XPlanetDebugTool or {}
@@ -145,6 +145,9 @@ end
 
 function XPlanetDebugTool.DrawArrowEnd(drawGizmos, arrowEndPosition, direction, color, arrowHeadLength, arrowHeadAngle)
     if (direction == Vector3.zero) then return end
+    if not Gizmos then
+        Gizmos = CS.UnityEngine.Gizmos
+    end
     arrowHeadLength = arrowHeadLength or 0.25
     arrowHeadAngle = arrowHeadAngle or 40
     local right = Quaternion.LookRotation(direction) * Quaternion.Euler(arrowHeadAngle, 0, 0) * Vector3.back

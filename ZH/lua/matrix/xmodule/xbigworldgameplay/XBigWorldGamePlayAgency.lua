@@ -263,7 +263,7 @@ function XBigWorldGamePlayAgency:DoEnterGame(worldData, fightData, levelData)
         XLog.Error("fightData or levelData is nil, 进入大世界失败!")
         return
     end
-    CS.XProfilingLuaUtils.PerfSightSkyGardenProcessEnter()
+    CS.XProfilingLuaUtils.PerfSightRegionEnter("SkyGardenProcess")
     -- 设置当前大世界类型
     self:InitCurrentBigWorldType()
     -- 对应大世界执行进入战斗前逻辑
@@ -295,7 +295,7 @@ function XBigWorldGamePlayAgency:ExitGame()
         --- 清理试用角色
         XMVCA.XBigWorldCharacter:ClearTrialCharacterIds()
     end)
-    CS.XProfilingLuaUtils.PerfSightSkyGardenProcessExit()
+    CS.XProfilingLuaUtils.PerfSightRegionExit()
 end
 
 --- 战斗事件通知，进入战斗（已经进入）
@@ -1126,6 +1126,11 @@ function XBigWorldGamePlayAgency:GetDebugLevelId()
     return self._DebugLevelId
 end
 
+function XBigWorldGamePlayAgency:DebugEnterWorld()
+    self._IsInDebugGame = true
+    self:LaunchWorld()
+end
+
 function XBigWorldGamePlayAgency:EnterDebugGame(worldId, levelId)
     self._IsInDebugGame = true
     self._DebugWorldId = worldId
@@ -1150,6 +1155,10 @@ end
 
 function XBigWorldGamePlayAgency.DebugEnter(worldId, levelId)
     XMVCA.XBigWorldGamePlay:EnterDebugGame(worldId, levelId)
+end
+
+function XBigWorldGamePlayAgency.DebugLaunchWorld()
+    XMVCA.XBigWorldGamePlay:DebugEnterWorld()
 end
 
 function XBigWorldGamePlayAgency.InDebugGame()

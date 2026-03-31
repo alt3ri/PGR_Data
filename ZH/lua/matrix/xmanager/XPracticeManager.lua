@@ -507,6 +507,21 @@ XPracticeManagerCreator = function()
         else
             characterId = XRobotManager.GetCharacterId(characterId)
         end
+        -- 如果当前编队房间的关卡就是该角色的教学关，则不弹教学提示
+        local curStageId = XMVCA.XFuben:GetCurStageIdInBattleRoom()
+        if XTool.IsNumberValid(curStageId) then
+            local teachRobotIds = XFubenNewCharConfig:GetTryCharacterIds(curStageId)
+            if teachRobotIds then
+                for _, robotId in pairs(teachRobotIds) do
+                    if XTool.IsNumberValid(robotId) then
+                        local teachCharId = XRobotManager.GetCharacterId(robotId)
+                        if teachCharId == characterId then
+                            return false
+                        end
+                    end
+                end
+            end
+        end
         local bOwned, ability, bPassed = CheckCelicaTeachCondition(characterId)
         local bHasCookie = XPracticeManager.HaveDiglogHintCookie()
         local bOpenCelicaTeach = XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.Practice)

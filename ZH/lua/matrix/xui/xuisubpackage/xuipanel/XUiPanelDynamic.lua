@@ -7,10 +7,10 @@ local XUiPanelDynamic = XClass(XUiNode, "XUiPanelDynamic")
 local XUiGridDownload = require("XUi/XUiSubPackage/XUiGrid/XUiGridDownload")
 
 
-function XUiPanelDynamic:OnStart(isPreview)
+function XUiPanelDynamic:OnStart()
     self.DynamicTable = XDynamicTableNormal.New(self.Transform)
     self.DynamicTable:SetDelegate(self)
-    self.DynamicTable:SetProxy(XUiGridDownload, self, isPreview)
+    self.DynamicTable:SetProxy(XUiGridDownload, self)
 end
 
 -- 简略版是在非主下载界面显示，要在格子里的文本加上可选/必选的前缀
@@ -26,6 +26,7 @@ function XUiPanelDynamic:OnGetLuaEvents()
         XEventId.EVENT_SUBPACKAGE_COMPLETE,
         XEventId.EVENT_SUBPACKAGE_PREPARE,
         XEventId.EVENT_CLIENT_TASK_FINISH,
+        XEventId.EVENT_RES_COMPLETE,
     }
 end
 
@@ -38,6 +39,15 @@ function XUiPanelDynamic:OnNotify(evt, ...)
         self:SetupDynamicTable(self.DataList)
     elseif evt == XEventId.EVENT_SUBPACKAGE_UPDATE then
         self:RefreshSingleProgress(...)
+    elseif evt == XEventId.EVENT_RES_COMPLETE then
+        -- 单个Res完成时，刷新所属Subpackage的Grid（更新按钮状态和大小）
+        local resId = ...
+        local subpackageIds = XMVCA.XSubPackage:GetSubpackageIdByResId(resId)
+        if not XTool.IsTableEmpty(subpackageIds) then
+            for _, subId in pairs(subpackageIds) do
+                self:RefreshSingleGrid(subId)
+            end
+        end
     end
 end
 

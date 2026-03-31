@@ -558,7 +558,7 @@ local type = {
     CONDITION_MECHANISM_NEWCHAPTER = "XMechanismActivity/XRedPointMechanismNewChapter",
     CONDITION_MECHANISM_EXCHANGEABLE = "XMechanismActivity/XRedPointMechanismExchangeable",
     -- 大连线
-    CONDITION_LINE_ARITHMETIC = "XRedPointConditionLineArithmetic2",
+    CONDITION_LINE_ARITHMETIC = "XRedPointConditionLineArithmetic3",
     -- 敦煌
     CONDITION_DUNHUANG = "XRedPointConditionDunhuang",
     -- 猫鼠游戏Dlc
@@ -694,6 +694,9 @@ local type = {
     
     -- relink玩法
     CONDITION_DLC_RELINK_MAIN = "XDlcRelink/XRedPointDlcRelinkMain",
+    
+    -- 战双兄弟
+    CONDITION_PBRGAME_MAIN = "XPBRGame/XPBRGameRedPointMain",
 }
 XRedPointConditions.Conditions = type
 

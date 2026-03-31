@@ -261,10 +261,10 @@ function XUiManager.DialogDragTip(title, content, dialogType, closeCallback, sur
 end
 
 --带今日内不再提示选项的提示框
-function XUiManager.DialogHintTip(title, content, content2, closeCallback, sureCallback, hintInfo)
+function XUiManager.DialogHintTip(title, content, content2, closeCallback, sureCallback, hintInfo, closeBtnText, cancelBtnText, isHideCloseBtn, isHideCancelBtn, isHideSureBtn)
     CsXGameEventManager.Instance:Notify(XEventId.EVENT_UIDIALOG_VIEW_ENABLE)
     XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.Tip_Big)
-    XLuaUiManager.Open("UiCueMark", title, content, content2, closeCallback, sureCallback, hintInfo)
+    XLuaUiManager.Open("UiCueMark", title, content, content2, closeCallback, sureCallback, hintInfo, closeBtnText, cancelBtnText, isHideCloseBtn, isHideCancelBtn, isHideSureBtn)
 end
 
 --弹出系统提示

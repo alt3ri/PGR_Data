@@ -215,6 +215,11 @@ function XFashionSuitModel:GetFashionSuitNoticeConfigs()
     return self._ConfigUtil:GetByTableKey(TableKey.FashionSuitNotice)
 end
 
+---@return XTableFashionSuitNotice
+function XFashionSuitModel:GetFashionSuitNoticeConfigById(id)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.FashionSuitNotice, id)
+end
+
 ---@return XTableFashionSuitClientConfig
 function XFashionSuitModel:GetClientConfigById(id)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.FashionSuitClientConfig, id)

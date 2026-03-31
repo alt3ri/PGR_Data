@@ -71,6 +71,47 @@ useMultiModel)
     self._AnimaCrossTimes = 0
 end
 
+--- 获取有效的涂装ID（分包检查）
+--- 若指定涂装未下载，返回角色默认涂装ID
+---@param fashionId number 原始涂装ID
+---@param characterId number 角色ID（可选，用于获取默认涂装）
+---@return number 有效的涂装ID
+function XUiPanelRoleModel:_GetValidFashionId(fashionId, characterId)
+    -- 无效fashionId直接返回
+    if not XTool.IsNumberValid(fashionId) then
+        return fashionId
+    end
+
+    -- 检查分包是否开启
+    if not XMVCA.XSubPackage:IsOpen() then
+        return fashionId
+    end
+
+    -- 检查涂装资源是否已下载
+    if XMVCA.XSubPackage:CheckFashionDownloaded(fashionId) then
+        return fashionId
+    end
+
+    -- 未下载，获取角色默认涂装
+    local targetCharacterId = characterId
+    if not XTool.IsNumberValid(targetCharacterId) then
+        -- 从Fashion表获取CharacterId
+        local fashionTemplate = XDataCenter.FashionManager.GetFashionTemplate(fashionId)
+        if fashionTemplate then
+            targetCharacterId = fashionTemplate.CharacterId
+        end
+    end
+
+    if XTool.IsNumberValid(targetCharacterId) then
+        local charTemplate = XMVCA.XCharacter:GetCharacterTemplate(targetCharacterId)
+        if charTemplate then
+            return charTemplate.DefaultNpcFashtionId
+        end
+    end
+
+    return fashionId
+end
+
 --设置默认动画
 function XUiPanelRoleModel:SetDefaultAnimation(animationName)
     self.DefaultAnimation = animationName
@@ -1076,11 +1117,19 @@ weaponId)
 
     local resourcesId
     if XTool.IsNumberValid(fashionId) then
-        resourcesId = XDataCenter.FashionManager.GetResourcesId(fashionId)
-        self.NowFashionId = fashionId
+        -- 分包检查：若涂装未下载则使用默认涂装
+        local validFashionId = self:_GetValidFashionId(fashionId, characterId)
+        resourcesId = XDataCenter.FashionManager.GetResourcesId(validFashionId)
+        self.NowFashionId = validFashionId
     else
         resourcesId = XDataCenter.FashionManager.GetFashionResourceIdByCharId(characterId, isNotSelf)
         self.NowFashionId = XDataCenter.FashionManager.GetFashionIdByResId(resourcesId)
+        -- 分包检查：若涂装未下载则使用默认涂装
+        local validFashionId = self:_GetValidFashionId(self.NowFashionId, characterId)
+        if validFashionId ~= self.NowFashionId then
+            resourcesId = XDataCenter.FashionManager.GetResourcesId(validFashionId)
+            self.NowFashionId = validFashionId
+        end
     end
 
     local modelName
@@ -1300,8 +1349,10 @@ function XUiPanelRoleModel:UpdateRobotModel(robotId, characterId, weaponCb, fash
     local resourcesId
     local nowFashionId
     if fashionId then
-        resourcesId = XDataCenter.FashionManager.GetResourcesId(fashionId)
-        nowFashionId = fashionId
+        -- 分包检查：若涂装未下载则使用默认涂装
+        local validFashionId = self:_GetValidFashionId(fashionId, characterId)
+        resourcesId = XDataCenter.FashionManager.GetResourcesId(validFashionId)
+        nowFashionId = validFashionId
     else
         resourcesId = XDataCenter.FashionManager.GetFashionResourceIdByCharId(characterId)
         nowFashionId = XDataCenter.FashionManager.GetFashionIdByResId(resourcesId)
@@ -1344,7 +1395,9 @@ function XUiPanelRoleModel:UpdateRobotModelNew(robotId, characterId, weaponCb, f
     if XRobotManager.CheckUseFashion(robotId) and isOwn then
         local character = XMVCA.XCharacter:GetCharacter(characterId)
         local robot2CharViewModel = character:GetCharacterViewModel()
-        fashionId = robot2CharViewModel:GetFashionId()
+        local rawFashionId = robot2CharViewModel:GetFashionId()
+        -- 分包检查：若涂装未下载则使用默认涂装
+        fashionId = self:_GetValidFashionId(rawFashionId, characterId)
         weaponFashionId = XDataCenter.WeaponFashionManager.GetCharacterWearingWeaponFashionId(characterId)
     else
         weaponFashionId = XRobotManager.GetRobotWeaponFashionId(robotId)
@@ -1362,7 +1415,9 @@ function XUiPanelRoleModel:UpdateRobotModelWithWeapon(robotId, characterId, weap
     if XRobotManager.CheckUseFashion(robotId) and isOwn then
         local character = XMVCA.XCharacter:GetCharacter(characterId)
         local robot2CharViewModel = character:GetCharacterViewModel()
-        fashionId = robot2CharViewModel:GetFashionId()
+        local rawFashionId = robot2CharViewModel:GetFashionId()
+        -- 分包检查：若涂装未下载则使用默认涂装
+        fashionId = self:_GetValidFashionId(rawFashionId, characterId)
         weaponFashionId = XDataCenter.WeaponFashionManager.GetCharacterWearingWeaponFashionId(characterId)
     else
         weaponFashionId = XRobotManager.GetRobotWeaponFashionId(robotId)
@@ -1371,7 +1426,7 @@ function XUiPanelRoleModel:UpdateRobotModelWithWeapon(robotId, characterId, weap
     if not XTool.IsNumberValid(weaponFashionId) then
         weaponFashionId = XRobotManager.GetRobotWeaponFashionId(robotId)
     end
-    
+
     self:UpdateRobotModelPublicNew(weaponFashionId,characterId, weaponCb, fashionId, equipTemplateId, modelCb, needDisplayController, targetPanelRole, targetUiName)
 end
 
@@ -1381,7 +1436,10 @@ end
 function XUiPanelRoleModel:UpdateRobotModelPublicNew(weaponFashionId,characterId, weaponCb, fashionId, equipTemplateId, modelCb, needDisplayController, targetPanelRole, targetUiName)
     local resourcesId
     if fashionId then
-        resourcesId = XDataCenter.FashionManager.GetResourcesId(fashionId)
+        -- 分包检查：若涂装未下载则使用默认涂装
+        local validFashionId = self:_GetValidFashionId(fashionId, characterId)
+        resourcesId = XDataCenter.FashionManager.GetResourcesId(validFashionId)
+        fashionId = validFashionId  -- 更新fashionId供后续使用
     else
         resourcesId = XDataCenter.FashionManager.GetFashionResourceIdByCharId(characterId)
     end
@@ -1411,16 +1469,26 @@ function XUiPanelRoleModel:UpdateRobotModelPublicNew(weaponFashionId,characterId
 end
 
 function XUiPanelRoleModel:UpdateCharacterResModel(resId, characterId, targetUiName, cb, growUpLevel, weaponFashionId)
-    local modelName = XMVCA.XCharacter:GetCharResModel(resId)
     local fashionId = XDataCenter.FashionManager.GetFashionIdByResId(resId)
-    
+
+    -- 分包检查：若涂装未下载则使用默认涂装
+    local validFashionId = self:_GetValidFashionId(fashionId, characterId)
+    local validResId = resId
+    if validFashionId ~= fashionId then
+        -- 涂装未下载，使用默认涂装的resId
+        validResId = XDataCenter.FashionManager.GetResourcesId(validFashionId)
+        fashionId = validFashionId
+    end
+
+    local modelName = XMVCA.XCharacter:GetCharResModel(validResId)
+
     if modelName then
         self:SetCueIdByFashionId(fashionId)
         self:UpdateRoleModel(modelName, nil, targetUiName, function(model)
             if not self.HideWeapon then
                 self:UpdateCharacterWeaponModels(characterId, modelName, nil, nil, nil, weaponFashionId)
             end
-            
+
             self:UpdateCharacterLiberationLevelEffect(modelName, characterId, growUpLevel, fashionId)
 
             if cb then
@@ -1594,7 +1662,8 @@ function XUiPanelRoleModel:UpdateCharacterModelByFightNpcData(fightNpcData, cb, 
         end
 
         local modelName
-        local fashionId = char.FashionId
+        -- 分包检查：若涂装未下载则使用默认涂装
+        local fashionId = self:_GetValidFashionId(char.FashionId, char.Id)
         if isCute then
             modelName = XCharacterCuteConfig.GetCuteModelModelName(char.Id)
         elseif fashionId then
@@ -2955,7 +3024,9 @@ function XUiPanelRoleModel:UpdateCuteModel(robotId, characterId, weaponCb, fashi
     end
     local modelName = XCharacterCuteConfig.GetCuteModelModelName(characterId)
     local weaponFashionId = XRobotManager.GetRobotWeaponFashionId(robotId)
-    self:UpdateCuteModelByModelName(characterId, fashionId, equipTemplateId, weaponFashionId, weaponCb, modelName,
+    -- 分包检查：若涂装未下载则使用默认涂装
+    local validFashionId = self:_GetValidFashionId(fashionId, characterId)
+    self:UpdateCuteModelByModelName(characterId, validFashionId, equipTemplateId, weaponFashionId, weaponCb, modelName,
             modelCb, needDisplayController, targetPanelRole, targetUiName, isNotCuteUiEffect)
 end
 
@@ -2977,6 +3048,8 @@ function XUiPanelRoleModel:UpdateCuteModelByModelName(characterId, fashionId, eq
     if not modelName or modelName == "" then
         return
     end
+    -- 分包检查：若涂装未下载则使用默认涂装
+    fashionId = self:_GetValidFashionId(fashionId, characterId)
     self:UpdateRoleModel(modelName, targetPanelRole, targetUiName, function(model)
         if not self.HideWeapon and XTool.IsNumberValid(equipTemplateId) then
             self:UpdateCharacterWeaponModels(

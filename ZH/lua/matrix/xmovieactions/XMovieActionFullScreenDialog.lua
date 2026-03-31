@@ -54,7 +54,7 @@ function XMovieActionFullScreenDialog:OnUiRootDestroy()
     self:StopLastCv()
 end
 
-function XMovieActionFullScreenDialog:OnEnter(isPassAction)
+function XMovieActionFullScreenDialog:OnEnter()
     self.IsAutoPlay = XDataCenter.MovieManager.GetIsAutoPlay()
     self.UiRoot:SetBtnNextCallback(function() self:OnClickBtnSkipDialog() end)
     self.UiRoot.PanelFullScreenDialog.gameObject:SetActiveEx(true)
@@ -92,7 +92,7 @@ function XMovieActionFullScreenDialog:OnEnter(isPassAction)
     end
 
     local cvId = self.CvId
-    if cvId ~= 0 and not isPassAction then
+    if cvId ~= 0 and not not self.IsPassedRunning then
         self:StopLastCv()
         PlayingCvInfo = XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.Voice, cvId)
     end
@@ -283,15 +283,13 @@ end
 function XMovieActionFullScreenDialog:IsPassedActionRun(index)
     if self.IsClose then return false end
     
-    local isCover = XDataCenter.MovieManager.IsBehindPassedActionCover(index, function(action)
-        return self:IsActionCover(action)
-    end)
+    local isCover = XDataCenter.MovieManager.IsBehindPassedActionCover(index)
     return not isCover
 end
 
 -- 传入Action是否可覆盖当前Action的UI显示，可覆盖则OnPassedActionRun不用再刷新UI界面
 ---@param action XMovieActionBase
-function XMovieActionFullScreenDialog:IsActionCover(action)
+function XMovieActionFullScreenDialog:IsPassedActionCovered(action)
     if action:GetType() == self:GetType() then
         return action:GetIsClose()
     end
@@ -299,7 +297,9 @@ function XMovieActionFullScreenDialog:IsActionCover(action)
 end
 
 function XMovieActionFullScreenDialog:OnPassedActionRun()
+    self.IsPassedRunning = true
     self:OnEnter()
+    self.IsPassedRunning = false
 end
 
 return XMovieActionFullScreenDialog

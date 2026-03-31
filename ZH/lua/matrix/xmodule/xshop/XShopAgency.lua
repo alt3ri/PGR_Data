@@ -61,7 +61,17 @@ end
 --endregion
 
 --region 涂装商店打开涂装详情
-
+---@param fashionid number 角色涂装Id、武器涂装Id
+---@param buyData table 购买数据
+---@param params table 可选项参数table，包含以下字段：
+---@param params.isShowFashionIconWithoutGift boolean 是否显示时装图标
+---@param params.isNeedCD boolean 是否需要购买冷却
+---@param params.customWeaponFashionId number 自定义武器涂装Id
+---@param params.customDesc string 自定义描述
+---@param params.suitId number 套装Id，默认获取时装套装Id
+---@param params.isWeaponFashion boolean 是否是武器涂装，默认false
+---@param params.updateCb function 更新回调，默认nil
+---@param params.skipType number 跳过类型，默认nil
 function XShopAgency:OpenFashionDetailUi(fashionid, buyData, params)
     local isShowFashionIconWithoutGift, isNeedCD, customWeaponFashionId, customDesc, suitId, isWeaponFashion, updateCb, skipType
     if params then

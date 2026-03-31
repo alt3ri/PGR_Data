@@ -11,7 +11,7 @@ function XUiGridMovieBg:Ctor(uiMovie, link, bgIndex)
     self.UiMovie = uiMovie
     self.Link = link -- 挂点
     self.BgIndex = bgIndex
-    self.GameObject = XUiHelper.Instantiate(self.UiMovie.UiMovieRImgBg, self.Link.transform)
+    self.GameObject = XUiHelper.Instantiate(self.UiMovie.UiMovieRImgBg, self.Link.transform).gameObject
     self.Transform = self.GameObject.transform
     self.GameObject.gameObject:SetActiveEx(true)
     XTool.InitUiObject(self)
@@ -29,6 +29,11 @@ function XUiGridMovieBg:OnDestroy()
     
 end
 
+-- 设置GameObject显示
+function XUiGridMovieBg:SetGameObjectShow(isShow)
+    self.GameObject:SetActiveEx(isShow)
+end
+
 -- 显示背景图
 function XUiGridMovieBg:Show()
     self.Link.gameObject:SetActiveEx(true)
@@ -40,6 +45,11 @@ function XUiGridMovieBg:Hide()
 
     -- 隐藏时重置旋转
     self.RImgBg.transform.localRotation = Quaternion.identity
+end
+
+-- 动画主要控制BgRoot，程序主要控制RImgBg，程序实现的振动动画控制的是BgRoot
+function XUiGridMovieBg:SetBgRootLocalPosition(pos)
+    self.BgRoot.transform.localPosition = pos
 end
 
 -- 动画主要控制BgRoot，程序主要控制RImgBg
@@ -67,6 +77,10 @@ end
 
 function XUiGridMovieBg:SetNativeSize()
     self.RImgBg:SetNativeSize()
+end
+
+function XUiGridMovieBg:SetAsLastSibling()
+    self.Transform:SetAsLastSibling()
 end
 
 -- 修改对齐方式和位置
@@ -156,7 +170,8 @@ function XUiGridMovieBg:_CheckPlayMoveAnimation()
     end
 end
 
-function XUiGridMovieBg:DoRotate(targetRotation, duration)
+-- 播放旋转动画
+function XUiGridMovieBg:DoRotate(eulerAngles, duration)
     -- 完成上一个旋转动画
     if self.DORotateTween then
         self.DORotateTween:Complete()
@@ -165,10 +180,10 @@ function XUiGridMovieBg:DoRotate(targetRotation, duration)
     
     local transform = self.RImgBg.transform
     if not duration or duration == 0 then
-        transform.eulerAngles = targetRotation
+        transform.eulerAngles = eulerAngles
     else
-        self.DORotateTween = transform:DORotate(targetRotation, duration):OnComplete(function()
-            transform.eulerAngles = targetRotation
+        self.DORotateTween = transform:DORotate(eulerAngles, duration):OnComplete(function()
+            transform.eulerAngles = eulerAngles
         end)
     end
 end
@@ -239,7 +254,13 @@ function XUiGridMovieBg:SetAlpha(alpha, duration)
         self.DOFadeTween = nil
     end
 
-    self.DOFadeTween = self.RImgBg:DOFade(alpha, duration)
+    if XTool.IsNumberValidEx(duration) then
+        self.DOFadeTween = self.RImgBg:DOFade(alpha, duration)
+    else
+        local color = self.RImgBg.color
+        color.a = alpha
+        self.RImgBg.color = color
+    end
 end
 
 -- 设置灰度值

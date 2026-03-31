@@ -192,14 +192,14 @@ end
 ---伙伴读配置
 function XDlcPartnerBase:PartnerReadConfig()
     if not self.partnerId then
-        XLog.Warning("伙伴初始化失败，请给一个ID")
+        --XLog.Warning("伙伴初始化失败，请给一个ID")
         return
     end
     self.partnerConfig = PartnerConfigs[self.partnerId]
     local config = self.partnerConfig
     if not self.partnerId then
-        XLog.Warning("没有读到对应的伙伴配置ID，伙伴配置ID是:")
-        XLog.Warning(self.partnerId)
+        --XLog.Warning("没有读到对应的伙伴配置ID，伙伴配置ID是:")
+        --XLog.Warning(self.partnerId)
         return
     end
     
@@ -548,7 +548,7 @@ end
 function XDlcPartnerBase:EnterCombatByNpc(triggerNpc)
     self.isCombatState = true --进入战斗状态
     self:SetTarget(triggerNpc) --将目标设置为触发战斗的Npc
-    XLog.Warning(self._uuid.."进入战斗")
+    --XLog.Warning(self._uuid.."进入战斗")
 end
 
 ---寻找最低的敌人
@@ -614,7 +614,7 @@ end
 --设置伙伴目标
 function XDlcPartnerBase:SetTarget(npc)
     if (not npc) or (npc == 0) then
-        XLog.Warning("设置目标非法")
+        --XLog.Warning("设置目标非法")
         return
     end
     self.target = npc
@@ -663,7 +663,7 @@ end
 function XDlcPartnerBase:OutCombatState()
     self.isCombatState = false
     self:ClearTarget() --清除目标相关东西
-    XLog.Warning(self._uuid.."退出战斗")
+    --XLog.Warning(self._uuid.."退出战斗")
 end
 --endregion
 
@@ -1024,11 +1024,11 @@ end
 function XDlcPartnerBase:HandleLuaEvent(eventType, eventArgs)
     -- 响应AI开启和停止
     if eventType == EFightLuaEvent.RelinkSetAIActivate then --只处理传给自己的
-        XLog.Warning("eventArgs")
-        XLog.Warning(eventArgs)
-        XLog.Warning(self._uuid)
+        --XLog.Warning("eventArgs")
+        --XLog.Warning(eventArgs)
+        --XLog.Warning(self._uuid)
         if eventArgs.NpcUUid == self._uuid then
-            XLog.Warning(self._uuid.."收到了设置AI的事件")
+            --XLog.Warning(self._uuid.."收到了设置AI的事件")
             self:SetAiActive(eventArgs.IsActivated)
         end
     end
@@ -1308,7 +1308,7 @@ function XDlcPartnerBase:IsSkillODStateValid(skill)
         return true
     end
     if config.IsLockInODState and self:CheckCurIsOverDrive() then --OD锁定且在OD,返回F
-        XLog.Warning("技能"..skill.."释放失败，因为OD锁定且当前在OD")
+        --XLog.Warning("技能"..skill.."释放失败，因为OD锁定且当前在OD")
         return false
     end
     if config.IsNeedODState and (not self:CheckCurIsOverDrive()) then --需要OD且不在OD,返回F
@@ -1404,7 +1404,7 @@ end
 ---检查Npc的距离
 function XDlcPartnerBase:CheckSkillDisByNpc(skill, npc)
     if not self._proxy:CheckNpc(npc) then
-        XLog.Warning("NPC非法,CheckSkillDisByNpc不通过" .. npc)
+        --XLog.Warning("NPC非法,CheckSkillDisByNpc不通过" .. npc)
         return false
     end
     local dis = self._proxy:CalcNpcDistance(self._uuid, npc)
@@ -1508,12 +1508,12 @@ end
 ---获取NpcA向前朝向和NpcB的夹角
 function XDlcPartnerBase:GetNpcTargetAngle(npc,target)
     local npcAPos = self._proxy:GetNpcPosition(npc)
-    XLog.Warning("获取目标的朝向2")
-    XLog.Warning("npc1是："..npc)
-    XLog.Warning("目标是："..target)
+    --XLog.Warning("获取目标的朝向2")
+    --XLog.Warning("npc1是："..npc)
+    --XLog.Warning("目标是："..target)
     local npcAFace = self._proxy:GetNpcOffsetPositionByFacing(npc,{x=0,y=0,z=0},1) - npcAPos --NpcA的朝向
-    XLog.Warning(npcAFace)
-    XLog.Warning("获取完毕")
+    --XLog.Warning(npcAFace)
+    --XLog.Warning("获取完毕")
     local npcBPos =self._proxy:GetNpcPosition(target)
     return self:GetAngleByPosFace(npcAPos,npcAFace,npcBPos)
 end
@@ -1692,7 +1692,7 @@ end
 ---伙伴对npc释放技能,会进行一系列伙伴侧配置的条件判断
 function XDlcPartnerBase:CastSkillToNpc(skill, npc)
     if not self._proxy:CheckNpc(npc) then
-        XLog.Warning("释放技能" .. skill .. "失败,Npc非法")
+        --XLog.Warning("释放技能" .. skill .. "失败,Npc非法")
         return false
     end
     local isSuccess = false
@@ -1717,7 +1717,7 @@ function XDlcPartnerBase:PartnerForceSkillToTarget(skill)
     local isSuccess = false
     if not self._proxy:CheckNpc(target) then
         --目标不合法
-        XLog.Warning("强制释放技能目标非法"..target)
+        --XLog.Warning("强制释放技能目标非法"..target)
         return false
     end
     

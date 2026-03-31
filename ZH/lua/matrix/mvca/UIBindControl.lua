@@ -172,6 +172,7 @@ local UIBindControl = {
     UiConnectingLineGame = ModuleId.XConnectingLine,
     UiConnectingLineReward = ModuleId.XConnectingLine,
     UiConnectingLineTableTask = ModuleId.XConnectingLine,
+    UiFightHackerGameV440 = ModuleId.XConnectingLine,
     --endregion
 
     --region 分包下载
@@ -790,6 +791,7 @@ local UIBindControl = {
     --region 拉人回流活动
     UiReCallActivity = ModuleId.XReCallActivity,
     UiReCallActivityShare = ModuleId.XReCallActivity,
+    XUiGridFubenRepeatDouble = ModuleId.XReCallActivity,
     --endregion
 
     --region 3.1可肝卡池
@@ -971,13 +973,6 @@ local UIBindControl = {
     --endregion
 
     --region 联机共斗
-    UiRelinkLoading = ModuleId.XDlcRelink,
-    UiRelinkPlayerRoom = ModuleId.XDlcRelink,
-    UiRelinkPopupPlayerInvite = ModuleId.XDlcRelink,
-    UiRelinkSettlement = ModuleId.XDlcRelink,
-    UiRelinkPopupChooseCharacter = ModuleId.XDlcRelink,
-    UiRelinkPopupChooseRoom = ModuleId.XDlcRelink,
-
     UiDlcRelinkMain = ModuleId.XDlcRelink,
     UiDlcRelinkRoom = ModuleId.XDlcRelink,
     UiDlcRelinkPopupPlayerInvite = ModuleId.XDlcRelink,
@@ -1078,8 +1073,10 @@ local UIBindControl = {
     
     --region 涂装套装
     UiFashionSuitMain = ModuleId.XFashionSuit,
+    UiFashionSuitLobby = ModuleId.XFashionSuit,
     UiFashionSuitDetail = ModuleId.XFashionSuit,
     UiFashionSuitPopupPic = ModuleId.XFashionSuit,
+    UiFashionSuitPopupNew = ModuleId.XFashionSuit,
     --endregion
     
     --region 全境特遣
@@ -1150,6 +1147,28 @@ local UIBindControl = {
     --region 物品
     UiCommonPopupUsePackage = ModuleId.XItem,
     UiCommonPopupBuyAsset = ModuleId.XItem,
+    --endregion
+
+    --region XPBRGame
+    UiPBRMain = ModuleId.XPBRGame,
+    UiPBRChapter = ModuleId.XPBRGame,
+    UiPBRCharacterSelection = ModuleId.XPBRGame,
+    UiPBRCharacterDetail = ModuleId.XPBRGame,
+    UiPBRPause = ModuleId.XPBRGame,
+    UiPBRPopupEndless = ModuleId.XPBRGame,
+    UiPBRSettlement = ModuleId.XPBRGame,
+    UiPBRShopNew = ModuleId.XPBRGame,
+    UiPBRCollection = ModuleId.XPBRGame,
+    UiPBRGenius = ModuleId.XPBRGame,
+    UiPBRTask = ModuleId.XPBRGame,
+    --endregion
+    --region XLineArithmetic3
+    UiLineArithmetic3Chapter = ModuleId.XLineArithmetic3,
+    UiLineArithmetic3Game = ModuleId.XLineArithmetic3,
+    UiLineArithmetic3Main = ModuleId.XLineArithmetic3,
+    UiLineArithmetic3PopupCommon = ModuleId.XLineArithmetic3,
+    UiLineArithmetic3PopupSettlement = ModuleId.XLineArithmetic3,
+    UiLineArithmetic3Task = ModuleId.XLineArithmetic3,
     --endregion
 }
 

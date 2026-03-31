@@ -299,8 +299,17 @@ function XMovieActionBase:StopAnimtion(anim)
 end
 
 --region PassAction 跳到某个节点开始播放，前面Action需要执行的函数
--- 是走Run还是Skip函数。会被后面Action覆盖，则不需要刷新UI，走Skip做数据记录
+
+-- 是走Run还是Skip函数
+-- 跳过：后续Action覆盖/后续Action关闭显示，不需要刷新UI，只做数据记录
 function XMovieActionBase:IsPassedActionRun(index)
+    return false
+end
+
+-- 传入Action是否可覆盖当前Action的UI显示，可覆盖则OnPassedActionRun不用再刷新UI界面
+---@param action XMovieActionBase
+function XMovieActionBase:IsPassedActionCovered(action)
+    XLog.Error(string.format("Action Type %s 未实现IsPassedActionCovered函数!", self.Type))
     return false
 end
 
@@ -309,20 +318,21 @@ function XMovieActionBase:IsAdvanceStartAction()
     return false
 end
 
--- 执行Run函数
-function XMovieActionBase:RunPassedAction()
-    self:OnPassedActionRun()
+-- 作为跳过Action执行
+function XMovieActionBase:OnPassedActionExecute(index)
+    if self:IsPassedActionRun(index) then
+        self:OnPassedActionRun()
+    else
+        self:OnPassedActionSkip()
+    end
 end
 
+-- 执行Action的UI刷新
 function XMovieActionBase:OnPassedActionRun()
 
 end
 
--- 执行Skip函数
-function XMovieActionBase:SkipPassedAction()
-    self:OnPassedActionSkip()
-end
-
+-- 跳过Action的UI刷新
 function XMovieActionBase:OnPassedActionSkip()
 
 end

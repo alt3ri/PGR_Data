@@ -338,7 +338,7 @@ function XUiPurchaseBuyTips:InitAndCheckNormalDiscount()
             elseif self.Data.Price then
                 self:PayCoinStates(self.Data.ConsumeId,self.Data.Price)
                 -- self._BtnBuy:SetText("PanelTxt/TxtPrice", self.Data.Price)
-                if self.Data.OriginalPrice then
+                if self.Data.OriginalPrice and self.Data.OriginalPrice ~= self.Data.Price then
                     self._BtnBuy:SetText("PanelTxt/TxtPriceOri", self.Data.OriginalPrice)
                     self._BtnBuy:SetActive("PanelTxt/TxtPriceOri", true)
                 else

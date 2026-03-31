@@ -1,5 +1,6 @@
 local XDynamicTableCurve = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableCurve")
 local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
+local XUiPanelLackResources = require("XUi/XUiSubPackage/XUiPanel/XUiPanelLackResources")
 
 local XUiFashionRandom = XLuaUiManager.Register(XLuaUi, "UiFashionRandom")
 
@@ -11,6 +12,11 @@ function XUiFashionRandom:OnAwake()
     self:InitModel()
     self:InitButton()
     self:InitDynamicTable()
+
+    -- PanelLackResources 初始化
+    if self.PanelLackResources then
+        self._PanelLackRes = XUiPanelLackResources.New(self.PanelLackResources, self)
+    end
 end
 
 function XUiFashionRandom:InitModel()
@@ -76,6 +82,11 @@ end
 
 function XUiFashionRandom:OnEnable()
     self:RefreshDynamicTable()
+    XEventManager.AddEventListener(XEventId.EVENT_RES_COMPLETE, self.OnFashionDownloadComplete, self)
+end
+
+function XUiFashionRandom:OnDisable()
+    XEventManager.RemoveEventListener(XEventId.EVENT_RES_COMPLETE, self.OnFashionDownloadComplete, self)
 end
 
 function XUiFashionRandom:RefreshDynamicTable(luaIndex)
@@ -162,6 +173,7 @@ function XUiFashionRandom:OnCurSelect(fashionId, curSelectIndex)
     self.CurSelectIndex = curSelectIndex or self.CurSelectIndex
 
     self:OnlyRefreshDynamicTableFData(curSelectIndex)
+    self:CheckAndUpdateLackResourcesPanel()
 end
 
 -- 绑定的武器涂装切换时调用，由动态列表的gridProxy调用
@@ -346,5 +358,45 @@ end
 
 function XUiFashionRandom:OnDestroy()
 end
+
+--region 资源缺失面板
+
+function XUiFashionRandom:CheckAndUpdateLackResourcesPanel()
+    if not self._PanelLackRes then return end
+    local fashionId = self.CurSelectFashionId
+    if not XTool.IsNumberValid(fashionId) then
+        self._PanelLackRes:Close()
+        self._isFashionLacking = false
+        return
+    end
+    local isDownloaded = XMVCA.XSubPackage:CheckFashionDownloaded(fashionId)
+    if isDownloaded then
+        self._PanelLackRes:Close()
+        self._isFashionLacking = false
+    else
+        self._PanelLackRes:SetData(self.CharacterId, fashionId)
+        self._PanelLackRes:Open()
+        self._isFashionLacking = true
+    end
+end
+
+function XUiFashionRandom:OnFashionDownloadComplete()
+    if not self._isFashionLacking then
+        self:CheckAndUpdateLackResourcesPanel()
+        return
+    end
+    local fashionId = self.CurSelectFashionId
+    if XTool.IsNumberValid(fashionId)
+       and XMVCA.XSubPackage:CheckFashionDownloaded(fashionId) then
+        -- RefreshModel 有防重入判断(fashionId == CurSelectFashionId)，需设脏标记绕过
+        self.ChangedBindWeaponTrigger = true
+        self:RefreshModel(fashionId)
+        local fashionTemplate = XDataCenter.FashionManager.GetFashionTemplate(fashionId)
+        XUiManager.PopupLeftTip(CS.XTextManager.GetText("DownloadFashionFinishedRefresh", fashionTemplate and fashionTemplate.Name or ""))
+    end
+    self:CheckAndUpdateLackResourcesPanel()
+end
+
+--endregion
 
 return XUiFashionRandom

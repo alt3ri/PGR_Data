@@ -7,6 +7,7 @@ function XBuffScript8060010:Ctor()
     self.magicId=8060011
     self.attribType=0--生命属性
     self.thresholdNum=16000; --触发需要的生命值门槛
+    self.timer=3
 end
 
 function XBuffScript8060010:ScriptInit(isGainControl)
@@ -22,6 +23,8 @@ function XBuffScript8060010:Update(dt)
     --每帧执行
     Base.Update(self, dt)
     ------------执行-------------
+    if self._proxy:GetFightTime()<self.timer then return end --延迟3秒上BUFF
+
     if self.hasLevel==false then
         self.hasLevel,self.magicLevel=self._proxy:TryQueryBuffLevel(self._uuid,8060010)--获取自身的BUFF等级
         local hpNum=self._proxy:GetNpcAttribValue(self._uuid,self.attribType) --血量门槛判断

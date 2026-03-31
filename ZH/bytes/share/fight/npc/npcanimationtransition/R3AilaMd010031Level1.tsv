@@ -1,0 +1,242 @@
+Role	Layer	State	Target	TransitionDuration
+R3AilaMd010031			Born	
+R3AilaMd010031			Stand1	0.1
+R3AilaMd010031			Stand2	0.1
+R3AilaMd010031			Stand3	0.1
+R3AilaMd010031			Death	0.1
+R3AilaMd010031			Standchange	0.1
+R3AilaMd010031			Run	0.1
+R3AilaMd010031			Walk	0.1
+R3AilaMd010031			Runb	0.2
+R3AilaMd010031			Runl	0.2
+R3AilaMd010031			Runr	0.2
+R3AilaMd010031			Walkb	0.1
+R3AilaMd010031			Walkl	0.1
+R3AilaMd010031			Walkr	0.1
+R3AilaMd010031			TurnLeft	0.1
+R3AilaMd010031			TurnRight	0.1
+R3AilaMd010031			Move1	0.1
+R3AilaMd010031			Move2	0.1
+R3AilaMd010031			Move3	0.1
+R3AilaMd010031			RunStart	0.1
+R3AilaMd010031			RunStartEnd01	0.1
+R3AilaMd010031			Hit1	0.05
+R3AilaMd010031			Hit2	0.05
+R3AilaMd010031			Hit3	0.05
+R3AilaMd010031			Hit4	0.05
+R3AilaMd010031			Behitfly	0.05
+R3AilaMd010031			Hoverhit	0.05
+R3AilaMd010031			Falldown	0.1
+R3AilaMd010031			Hitdown	0.05
+R3AilaMd010031			Lieonfloor	0.1
+R3AilaMd010031			Standup	0.1
+R3AilaMd010031			Straight	0.1
+R3AilaMd010031			Stun	0.1
+R3AilaMd010031			StraightBefore	0.1
+R3AilaMd010031			StraightAfter	0.1
+R3AilaMd010031			Win	
+R3AilaMd010031			Win2	0.1
+R3AilaMd010031			Stop	0.1
+R3AilaMd010031			Fail	0.1
+R3AilaMd010031			Save	0.1
+R3AilaMd010031			AttackQte	
+R3AilaMd010031			Caught	0.1
+R3AilaMd010031			RunStartEnd02	0.1
+R3AilaMd010031			StopR	0.1
+R3AilaMd010031			Attack01	0.1
+R3AilaMd010031			Attack02	0.1
+R3AilaMd010031			Attack03	0.1
+R3AilaMd010031			Attack04	0.1
+R3AilaMd010031			Attack05	0.1
+R3AilaMd010031			Attack06	0.1
+R3AilaMd010031			Attack11	0.1
+R3AilaMd010031			Attack21	0.1
+R3AilaMd010031			Attack31	0.05
+R3AilaMd010031			Attack41	0.1
+R3AilaMd010031			Attack42	0.1
+R3AilaMd010031			Attack43	0.1
+R3AilaMd010031			Attack44	0.1
+R3AilaMd010031			Attack45	0.1
+R3AilaMd010031			Attack46	0.1
+R3AilaMd010031			Attack47	0.1
+R3AilaMd010031			Attack48	0.1
+R3AilaMd010031			Attack49	0.1
+R3AilaMd010031			Attack50	0.1
+R3AilaMd010031			Attack51	0.1
+R3AilaMd010031			Attack52	
+R3AilaMd010031			Attack53	
+R3AilaMd010031			Attack61	
+R3AilaMd010031			Attack71	0.1
+R3AilaMd010031			Attack82	0.1
+R3AilaMd010031			Attack83	0.1
+R3AilaMd010031			Attack84	0.1
+R3AilaMd010031		Stand1	Run	0.2
+R3AilaMd010031		Stand1	Walk	0.1
+R3AilaMd010031		Stand2	Standchange	0.1
+R3AilaMd010031		Stand2	Run	0.2
+R3AilaMd010031		Stand2	Walk	0.3
+R3AilaMd010031		Stand2	Walkb	0.3
+R3AilaMd010031		Stand2	Walkl	0.3
+R3AilaMd010031		Stand2	Walkr	0.3
+R3AilaMd010031		Standchange	Stand1	0.1
+R3AilaMd010031		Standchange	Run	0.1
+R3AilaMd010031		Standchange	Walk	0.1
+R3AilaMd010031		Run	Stop	0.2
+R3AilaMd010031		Run	Stand2	0.2
+R3AilaMd010031		Run	Runb	0.2
+R3AilaMd010031		Run	Runl	0.2
+R3AilaMd010031		Run	Runr	0.2
+R3AilaMd010031		Walk	Stand2	0.1
+R3AilaMd010031		Runb	Stand2	0.2
+R3AilaMd010031		Runb	Run	0.2
+R3AilaMd010031		Runb	Runl	0.2
+R3AilaMd010031		Runb	Runr	0.2
+R3AilaMd010031		Runl	Stand2	0.2
+R3AilaMd010031		Runl	Run	0.2
+R3AilaMd010031		Runl	Runb	0.2
+R3AilaMd010031		Runl	Runr	0.2
+R3AilaMd010031		Runr	Stand2	0.2
+R3AilaMd010031		Runr	Run	0.2
+R3AilaMd010031		Runr	Runb	0.2
+R3AilaMd010031		Runr	Runl	0.2
+R3AilaMd010031		Walkb	Stand2	0.1
+R3AilaMd010031		Walkb	Walk	0.2
+R3AilaMd010031		Walkb	Walkl	0.1
+R3AilaMd010031		Walkb	Walkr	0.1
+R3AilaMd010031		Walkl	Stand2	0.1
+R3AilaMd010031		Walkl	Walk	0.1
+R3AilaMd010031		Walkl	Walkb	0.1
+R3AilaMd010031		Walkl	Walkr	0.2
+R3AilaMd010031		Walkr	Stand2	0.1
+R3AilaMd010031		Walkr	Walk	0.1
+R3AilaMd010031		Walkr	Walkb	0.1
+R3AilaMd010031		Walkr	Walkl	0.2
+R3AilaMd010031		TurnLeft	Stand2	0.1
+R3AilaMd010031		TurnRight	Stand2	0.1
+R3AilaMd010031		RunStart	Run	0.1
+R3AilaMd010031		RunStart	RunStartEnd01	0.1
+R3AilaMd010031		Hit1	Stand2	
+R3AilaMd010031		Hit2	Stand2	
+R3AilaMd010031		Hit3	Stand2	
+R3AilaMd010031		Hit4	Stand2	
+R3AilaMd010031		Behitfly	Hoverhit	0.1
+R3AilaMd010031		Behitfly	Falldown	0.1
+R3AilaMd010031		Hoverhit	Falldown	0.1
+R3AilaMd010031		Falldown	Lieonfloor	0.1
+R3AilaMd010031		Hitdown	Lieonfloor	0.1
+R3AilaMd010031		Standup	Stand2	0.1
+R3AilaMd010031		Straight	Stand2	0.1
+R3AilaMd010031		Stun	Stand2	0.1
+R3AilaMd010031		Win	Win2	0.1
+R3AilaMd010031		Stop	Stand2	0.1
+R3AilaMd010031		Caught	Stand2	0.1
+R3AilaMd010031	1		Born	
+R3AilaMd010031	1		Stand1	0.1
+R3AilaMd010031	1		Stand2	0.1
+R3AilaMd010031	1		Stand3	0.1
+R3AilaMd010031	1		Death	0.1
+R3AilaMd010031	1		Standchange	0.1
+R3AilaMd010031	1		Run	0.1
+R3AilaMd010031	1		Walk	0.1
+R3AilaMd010031	1		Runb	0.2
+R3AilaMd010031	1		Runl	0.2
+R3AilaMd010031	1		Runr	0.2
+R3AilaMd010031	1		Walkb	0.1
+R3AilaMd010031	1		Walkl	0.1
+R3AilaMd010031	1		Walkr	0.1
+R3AilaMd010031	1		TurnLeft	0.1
+R3AilaMd010031	1		TurnRight	0.1
+R3AilaMd010031	1		Move1	0.1
+R3AilaMd010031	1		Move2	0.1
+R3AilaMd010031	1		Move3	0.1
+R3AilaMd010031	1		RunStart	0.1
+R3AilaMd010031	1		RunStartEnd01	0.1
+R3AilaMd010031	1		Hit1	0.05
+R3AilaMd010031	1		Hit2	0.05
+R3AilaMd010031	1		Hit3	0.05
+R3AilaMd010031	1		Hit4	0.05
+R3AilaMd010031	1		Behitfly	0.05
+R3AilaMd010031	1		Hoverhit	0.05
+R3AilaMd010031	1		Falldown	0.1
+R3AilaMd010031	1		Hitdown	0.05
+R3AilaMd010031	1		Lieonfloor	0.1
+R3AilaMd010031	1		Standup	0.1
+R3AilaMd010031	1		Straight	0.1
+R3AilaMd010031	1		Stun	0.1
+R3AilaMd010031	1		StraightBefore	0.1
+R3AilaMd010031	1		StraightAfter	0.1
+R3AilaMd010031	1		Win	
+R3AilaMd010031	1		Win2	0.1
+R3AilaMd010031	1		Stop	0.1
+R3AilaMd010031	1		Fail	0.1
+R3AilaMd010031	1		Save	0.1
+R3AilaMd010031	1		Caught	0.1
+R3AilaMd010031	1		RunStartEnd02	0.1
+R3AilaMd010031	1		StopR	0.1
+R3AilaMd010031	1		Attack82	0.1
+R3AilaMd010031	1		Attack83	0.1
+R3AilaMd010031	1		Attack84	0.1
+R3AilaMd010031	1	Stand1	Run	0.2
+R3AilaMd010031	1	Stand1	Walk	0.1
+R3AilaMd010031	1	Stand2	Standchange	0.1
+R3AilaMd010031	1	Stand2	Run	0.2
+R3AilaMd010031	1	Stand2	Walk	0.3
+R3AilaMd010031	1	Stand2	Walkb	0.3
+R3AilaMd010031	1	Stand2	Walkl	0.3
+R3AilaMd010031	1	Stand2	Walkr	0.3
+R3AilaMd010031	1	Standchange	Stand1	0.1
+R3AilaMd010031	1	Standchange	Run	0.1
+R3AilaMd010031	1	Standchange	Walk	0.1
+R3AilaMd010031	1	Run	Stop	0.2
+R3AilaMd010031	1	Run	Stand2	0.2
+R3AilaMd010031	1	Run	Runb	0.2
+R3AilaMd010031	1	Run	Runl	0.2
+R3AilaMd010031	1	Run	Runr	0.2
+R3AilaMd010031	1	Walk	Stand2	0.1
+R3AilaMd010031	1	Runb	Stand2	0.2
+R3AilaMd010031	1	Runb	Run	0.2
+R3AilaMd010031	1	Runb	Runl	0.2
+R3AilaMd010031	1	Runb	Runr	0.2
+R3AilaMd010031	1	Runl	Stand2	0.2
+R3AilaMd010031	1	Runl	Run	0.2
+R3AilaMd010031	1	Runl	Runb	0.2
+R3AilaMd010031	1	Runl	Runr	0.2
+R3AilaMd010031	1	Runr	Stand2	0.2
+R3AilaMd010031	1	Runr	Run	0.2
+R3AilaMd010031	1	Runr	Runb	0.2
+R3AilaMd010031	1	Runr	Runl	0.2
+R3AilaMd010031	1	Walkb	Stand2	0.1
+R3AilaMd010031	1	Walkb	Walk	0.2
+R3AilaMd010031	1	Walkb	Walkl	0.1
+R3AilaMd010031	1	Walkb	Walkr	0.1
+R3AilaMd010031	1	Walkl	Stand2	0.1
+R3AilaMd010031	1	Walkl	Walk	0.1
+R3AilaMd010031	1	Walkl	Walkb	0.1
+R3AilaMd010031	1	Walkl	Walkr	0.2
+R3AilaMd010031	1	Walkr	Stand2	0.1
+R3AilaMd010031	1	Walkr	Walk	0.1
+R3AilaMd010031	1	Walkr	Walkb	0.1
+R3AilaMd010031	1	Walkr	Walkl	0.2
+R3AilaMd010031	1	TurnLeft	Stand2	0.1
+R3AilaMd010031	1	TurnRight	Stand2	0.1
+R3AilaMd010031	1	RunStart	Run	0.1
+R3AilaMd010031	1	RunStart	RunStartEnd01	0.1
+R3AilaMd010031	1	Hit1	Stand2	
+R3AilaMd010031	1	Hit2	Stand2	
+R3AilaMd010031	1	Hit3	Stand2	
+R3AilaMd010031	1	Hit4	Stand2	
+R3AilaMd010031	1	Behitfly	Hoverhit	0.1
+R3AilaMd010031	1	Behitfly	Falldown	0.1
+R3AilaMd010031	1	Hoverhit	Falldown	0.1
+R3AilaMd010031	1	Falldown	Lieonfloor	0.1
+R3AilaMd010031	1	Hitdown	Lieonfloor	0.1
+R3AilaMd010031	1	Standup	Stand2	0.1
+R3AilaMd010031	1	Straight	Stand2	0.1
+R3AilaMd010031	1	Stun	Stand2	0.1
+R3AilaMd010031	1	Win	Win2	0.1
+R3AilaMd010031	1	Stop	Stand2	0.1
+R3AilaMd010031	1	Caught	Stand2	0.1
+R3AilaMd010031	2		Attack82	0.1
+R3AilaMd010031	2		Attack83	0.1
+R3AilaMd010031	2		Attack84	0.1
+R3AilaMd010031	2		Attack101	0.1

@@ -1,4 +1,4 @@
-local XChessPursuitCtrl = require("XUi/XUiChessPursuit/XChessPursuitCtrl")
+--local XChessPursuitCtrl = require("XUi/XUiChessPursuit/XChessPursuitCtrl")
 --local XChessPursuitMapDb = require("XUi/XUiChessPursuit/XData/XChessPursuitMapDb")
 --local XChessPursuitMapBoss = require("XUi/XUiChessPursuit/XData/XChessPursuitMapBoss")
 --local XChessPursuitSyncActionQueue = require("XUi/XUiChessPursuit/XData/XChessPursuitSyncActionQueue")

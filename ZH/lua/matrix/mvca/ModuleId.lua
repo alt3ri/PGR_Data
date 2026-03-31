@@ -136,4 +136,6 @@ ModuleId = {
   XItemRestrict = "XItemRestrict",
   XShop = "XShop",
   XItem = "XItem",
+  XPBRGame = "XPBRGame",
+  XLineArithmetic3 = "XLineArithmetic3",
 }

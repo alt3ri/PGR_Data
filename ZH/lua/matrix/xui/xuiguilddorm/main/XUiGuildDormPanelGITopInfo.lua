@@ -16,6 +16,9 @@ end
 --data : XUiGuildDormMainData
 --==========
 function XUiGuildDormPanelGITopInfo:Refresh()
+    if not XDataCenter.GuildManager.IsJoinGuild() then
+        return
+    end
     local curGuildHeadId = XDataCenter.GuildManager.GetGuildHeadPortrait()
     if XTool.IsNumberValid(curGuildHeadId) then
         local guildHeadPortrait = XGuildConfig.GetGuildHeadPortraitById(curGuildHeadId)

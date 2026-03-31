@@ -89,6 +89,9 @@ XBackManagerCreator = function()
         UiBattleRoleRoom = {
             BtnCloseDifficulty = true
         },
+        UiGuildBossStage = {
+            BtnExitDetail = true
+        }
     }
 
     -- 这些界面的这些键 不是返回键

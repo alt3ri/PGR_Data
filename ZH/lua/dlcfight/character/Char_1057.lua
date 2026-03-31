@@ -94,7 +94,6 @@ end
 ---@param dt number @ delta time
 function XCharR5Nanami2:Update(dt)
     Base.Update(self, dt)
-
     --self:TestInputLogic()
     self:CheckInputDuringAxeWrestle()
     self:EnergyBarChangeColorCheck()
@@ -202,6 +201,11 @@ function XCharR5Nanami2:OnNpcSkillActionKeyframeSendEvent(launcher,eventName,ski
         self._proxy:ShowQuickMessage(messageid)
     end
 
+    if eventName == "StandUp" then
+        self._proxy:AbortAction(self._uuid,true)
+        --XLog.Warning("斧角力失败保底")
+        self._proxy:CastActionEx(self._uuid,105279,0,5)
+    end
 end
 
 function XCharR5Nanami2:XNpcChangeProtectorArgs(LauncherId, TargetId, Value, TotalValue)
@@ -254,7 +258,7 @@ function XCharR5Nanami2:ChangeDamageBeforeCalc(eventArgs)
         local hasOverReleaseDamageModifyCoe,OverReleaseDamageModifyCoe = self:TryGetBBFloat(1057001)
         local hasCustomPower2,CustomPower2 = self:TryGetBBInt(1057002)
         local FinalDMGRate = math.floor(eventArgs.PhysicalPermyraid *(1+(CustomPower2 * OverReleaseDamageModifyCoe)))
-        self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate, eventArgs.ElementPermyraid, eventArgs.HackDamage, eventArgs.HackPermyraid, eventArgs.isCrit)
+        self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate, eventArgs.ElementPermyraid, eventArgs.HackDamage, eventArgs.HackPermyraid, eventArgs.IsCrit)
         --XLog.Warning("修正后："..FinalDMGRate)
     end
 end
@@ -300,15 +304,21 @@ function XCharR5Nanami2:OnNpcRemoveBuffEvent(casterNpcUUID, npcUUID, buffId, buf
         return
     end
     if buffId == 105219 then
-        self._proxy:SetSkillGroup(self._uuid,ENpcOperationKey.Ball1,105703)
+        if self._proxy:CheckBuffByKind(self._uuid,105217) then
+            self._proxy:SetSkillGroup(self._uuid,ENpcOperationKey.Ball1,105703)
+        end
     end
     if buffId == 1057001 then
         --XLog.Warning("退出红球派生")
-        self._proxy:SetSkillGroup(self._uuid,ENpcOperationKey.Ball2,105704)
+        if self._proxy:CheckBuffByKind(self._uuid,105217) then
+            self._proxy:SetSkillGroup(self._uuid,ENpcOperationKey.Ball2,105704)
+        end
     end
     if buffId == 1057003 then
         --XLog.Warning("退出斧红球派生")
-        self._proxy:SetSkillGroup(self._uuid,ENpcOperationKey.Ball2,105715)
+        if self._proxy:CheckBuffByKind(self._uuid,105218) then
+            self._proxy:SetSkillGroup(self._uuid,ENpcOperationKey.Ball2,105715)
+        end
     end
     if buffId == 1057005 then
         --XLog.Warning("退出龙车派生")
@@ -603,36 +613,68 @@ function XCharR5Nanami2:SkillAtuoCombo()
         self._proxy:CastActionEx(self._uuid,105245,0,5)
         --XLog.Warning("完成攻击动作后回到僵持循环")
     end
-----[[
+    ----[[
     if self._proxy:CheckNpcCurrentAction(self._uuid,105262) and self._skillTimer >= 0.8 then --斧角力攻击动作完成时回到僵持循环的内容
         self._proxy:AbortAction(self._uuid,true)
         self._proxy:CastActionEx(self._uuid,105259,0,5)
         --XLog.Warning("斧完成攻击动作后回到僵持循环")
     end
-----]]
+    ----]]
 
     if self._proxy:CheckNpcCurrentAction(self._uuid,105252) and self._skillTimer >= 1 then
         self._proxy:AbortAction(self._uuid,true)
         --XLog.Warning("终结移动后攻击流程")
-        if self._proxy:CheckBuffByKind(self._uuid,105217) then
-            self._proxy:CastActionEx(self._uuid,105253,0,5)
+        local _,locktargetUUID = self._proxy:GetLockTarget(self._uuid)
+        if locktargetUUID ~= 0 then
+            self._proxy:CastActionToTargetEx(self._uuid,105253,locktargetUUID,0,5)
         else
-            self._proxy:CastActionEx(self._uuid,105254,0,5)
+            local searchtarget = self._proxy:GetFirstSearchTarget(self._uuid,ENpcTargetType.Enemy)
+            if searchtarget == 0 then
+                return
+            end
+            self._proxy:SetSoftLock(self._uuid,searchtarget)
+            local _,locktargetUUID = self._proxy:GetLockTarget(self._uuid)
+            self._proxy:CastActionToTargetEx(self._uuid,105253,locktargetUUID,0,5)
         end
     end
 
     if self._proxy:CheckNpcCurrentAction(self._uuid,105276) and self._skillTimer >= 0.9 then
         self._proxy:AbortAction(self._uuid,true)
         --XLog.Warning("斧终结移动后攻击流程")
-        if self._proxy:CheckBuffByKind(self._uuid,105218) then
-            self._proxy:CastActionEx(self._uuid,105253,0,5)
+        local _,locktargetUUID = self._proxy:GetLockTarget(self._uuid)
+        if locktargetUUID ~= 0 then
+            self._proxy:CastActionToTargetEx(self._uuid,105254,locktargetUUID,0,5)
         else
-            self._proxy:CastActionEx(self._uuid,105254,0,5)
+            local searchtarget = self._proxy:GetFirstSearchTarget(self._uuid,ENpcTargetType.Enemy)
+            if searchtarget == 0 then
+                return
+            end
+            self._proxy:SetSoftLock(self._uuid,searchtarget)
+            local _,locktargetUUID = self._proxy:GetLockTarget(self._uuid)
+            self._proxy:CastActionToTargetEx(self._uuid,105254,locktargetUUID,0,5)
         end
     end
+
+    if self._proxy:CheckNpcCurrentAction(self._uuid,105247) and self._skillTimer >= 1.05 then
+        --XLog.Warning("角力成功清除镜头")
+        self._proxy:ApplyMagic(self._uuid,self._uuid,1052171,1)
+    end
+
+    if self._proxy:CheckNpcCurrentAction(self._uuid,105246) and self._skillTimer >= 0.7 then
+        --XLog.Warning("角力失败清除镜头")
+        self._proxy:ApplyMagic(self._uuid,self._uuid,1052171,1)
+    end
+
+    if self._proxy:CheckNpcCurrentAction(self._uuid,105260) and self._skillTimer >= 0.7 then
+        --XLog.Warning("角力失败清除镜头")
+        self._proxy:ApplyMagic(self._uuid,self._uuid,1052171,1)
+    end
+
+    if self._proxy:CheckNpcCurrentAction(self._uuid,105261) and self._skillTimer >= 0.95 then
+        --XLog.Warning("角力失败清除镜头")
+        self._proxy:ApplyMagic(self._uuid,self._uuid,1052171,1)
+    end
 end
-
-
 --endregion
 
 --region 角力相关表现镜头

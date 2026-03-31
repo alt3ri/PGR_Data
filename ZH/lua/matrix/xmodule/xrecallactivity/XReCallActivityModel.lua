@@ -14,6 +14,12 @@ local TableKey = {
     HoldRegressionShareConfig = {
         CacheType = XConfigUtil.CacheType.Normal,
     },
+    HoldRegressionClientConfig = {
+        CacheType = XConfigUtil.CacheType.Normal,
+        DirPath = XConfigUtil.DirectoryType.Client,
+        Identifier = "Key",
+        ReadFunc = XConfigUtil.ReadType.String,
+    },
 }
 
 function XReCallActivityModel:OnInit()
@@ -135,6 +141,22 @@ function XReCallActivityModel:GetIgnoreChannelIds()
     return self.ignoreChannelIds
 end
 
+---@return XTableHoldRegressionActivity | nil
+function XReCallActivityModel:GetCurActivityCfg()
+    if not self.recallData then
+        return
+    end
+    
+    local activityId = self.recallData.ActivityId
+
+    if not XTool.IsNumberValidEx(activityId) then
+        return
+    end
+    
+    return self:GetActivityConfigById(activityId)
+end
+
+---@return XTableHoldRegressionActivity
 function XReCallActivityModel:GetActivityConfigById(id)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.HoldRegressionActivity, id, false) or {}
 end
@@ -144,6 +166,20 @@ function XReCallActivityModel:GetActivityTimeIdById(id)
 
     return config.TimeId
 end
+
+--- 获得回流活动专属聊天频道Id
+function XReCallActivityModel:GetActivityChatChannelId(id)
+    local config = self:GetActivityConfigById(id)
+
+    return config and config.ChatChannelId or 0
+end
+
+function XReCallActivityModel:GetActivityIsOpenChatChannel(id)
+    local config = self:GetActivityConfigById(id)
+
+    return config and config.OpenChatChannel or false
+end
+
 
 --获取渠道显示配置
 function XReCallActivityModel:GetRegressionChannelConfigById(id)
@@ -171,5 +207,73 @@ function XReCallActivityModel:GetCurInviteInTime()
     end
     return false
 end
+
+function XReCallActivityModel:GetCurReCallChatChannelId()
+    if self.recallData and self.recallData.ActivityId then
+        return self:GetActivityChatChannelId(self.recallData.ActivityId)
+    end
+    return nil
+end
+
+function XReCallActivityModel:GetCurReCallIsOpenChatChannel()
+    if self.recallData and self.recallData.ActivityId then
+        return self:GetActivityIsOpenChatChannel(self.recallData.ActivityId)
+    end
+    
+    return false
+end
+
+--region ClientConfig
+
+function XReCallActivityModel:GetReCallTableClientConfigByKey(key, notips)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.HoldRegressionClientConfig, key, notips)
+end
+
+function XReCallActivityModel:GetClientConfigReCallText(key, index)
+    index = index or 1
+    
+    local cfg = self:GetReCallTableClientConfigByKey(key)
+
+    if cfg then
+        return cfg.Values[index] or ''
+    end
+    
+    return ''
+end
+
+function XReCallActivityModel:GetClientConfigReCallNumber(key, index)
+    index = index or 1
+    
+    local cfg = self:GetReCallTableClientConfigByKey(key)
+
+    if cfg and not XTool.IsTableEmpty(cfg.Values) then
+        local valStr = cfg.Values[index]
+
+        if string.IsFloatNumber(valStr) then
+            return tonumber(valStr)
+        end
+    end
+
+    return 0
+end
+
+function XReCallActivityModel:GetClientConfigReCallNumArray(key)
+    local cfg = self:GetReCallTableClientConfigByKey(key)
+
+    if cfg and not XTool.IsTableEmpty(cfg.Values) then
+        local numberList = {}
+
+        for i, v in pairs(cfg.Values) do
+            if string.IsFloatNumber(v) then
+                table.insert(numberList, tonumber(v))
+            else
+                table.insert(numberList, 0)
+            end
+        end
+        
+        return numberList
+    end
+end
+--endregion
 
 return XReCallActivityModel

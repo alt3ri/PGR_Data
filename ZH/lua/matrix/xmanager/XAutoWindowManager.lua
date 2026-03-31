@@ -1,4 +1,5 @@
 XAutoWindowManagerCreator = function()
+    ---@class XAutoWindowManager
     local XAutoWindowManager = {}
 
     local AutoWindowList = {}               -- 当前自动弹窗列表
