@@ -2050,6 +2050,21 @@
         "Text": "\u52e4\u52a1\u8bc1\u660e\u83b7\u53d6\u6570\u91cf\u5df2\u8fbe\u4e0a\u9650\uff0c\u53ea\u83b7\u53d6\u672a\u8d85\u4e0a\u9650\u90e8\u5206\u5956\u52b1"
     },
     {
+        "Id": 20012038.0,
+        "Key": "ItemExchangeTemplateNotFound",
+        "Text": "20012038\u9053\u5177\u5151\u6362\u914d\u7f6e\u4e0d\u5b58\u5728"
+    },
+    {
+        "Id": 20012039.0,
+        "Key": "ItemExchangeCountNotEnough",
+        "Text": "20012039\u672a\u8fbe\u5230\u6700\u4f4e\u5151\u6362\u6570\u91cf"
+    },
+    {
+        "Id": 20012040.0,
+        "Key": "ItemExchangeCountIllegal",
+        "Text": "20012040\u9053\u5177\u5151\u6362\u6570\u91cf\u975e\u6cd5"
+    },
+    {
         "Id": 20014001.0,
         "Key": "ArrangeManagerCalTypeFail",
         "Text": "ID\u4e0d\u6b63\u786e\uff0c\u65e0\u6cd5\u8bc6\u522b\u7c7b\u578b"
@@ -3488,6 +3503,11 @@
         "Id": 20032014.0,
         "Key": "FightCheckManagerNotUseSegmentCheckError",
         "Text": "20032014\u6ca1\u6709\u4f7f\u7528\u5206\u6bb5\u6821\u9a8c"
+    },
+    {
+        "Id": 20032015.0,
+        "Key": "FightCheckManagerCvTypeIsError",
+        "Text": "20032015\u8bed\u97f3\u7c7b\u578b\u9519\u8bef"
     },
     {
         "Id": 20033001.0,
@@ -5018,6 +5038,11 @@
         "Id": 20045048.0,
         "Key": "MatchRoomEnterWorldNotReady",
         "Text": "\u6709\u73a9\u5bb6\u5c1a\u672a\u51c6\u5907\u5b8c\u6210"
+    },
+    {
+        "Id": 20045049.0,
+        "Key": "MatchFrequentOperation",
+        "Text": "20045049\u64cd\u4f5c\u9891\u7e41\uff0c\u8bf7\u7a0d\u540e\u518d\u8bd5"
     },
     {
         "Id": 20046001.0,
@@ -14598,81 +14623,6 @@
         "Id": 20137015.0,
         "Key": "PassportBuyExpTranscend",
         "Text": "20137015\u65e0\u6cd5\u8d2d\u4e70\u65e0\u9650\u533a\u7684\u7b49\u7ea7"
-    },
-    {
-        "Id": 20137101.0,
-        "Key": "CombPassportActivityNotOpen",
-        "Text": "20137101\u6d3b\u52a8\u672a\u5f00\u542f"
-    },
-    {
-        "Id": 20137102.0,
-        "Key": "CombPassportInfoNotExist",
-        "Text": "20137102\u901a\u884c\u8bc1\u4fe1\u606f\u4e0d\u5b58\u5728"
-    },
-    {
-        "Id": 20137103.0,
-        "Key": "CombPassportNotUnlock",
-        "Text": "20137103\u901a\u884c\u8bc1\u672a\u89e3\u9501"
-    },
-    {
-        "Id": 20137104.0,
-        "Key": "CombPassportAlreadyUnlocked",
-        "Text": "20137104\u901a\u884c\u8bc1\u5df2\u89e3\u9501"
-    },
-    {
-        "Id": 20137105.0,
-        "Key": "CombPassportInfoActivityIdNotMatch",
-        "Text": "20137105\u672c\u671f\u6d3b\u52a8\u4e0d\u5b58\u5728\u8be5\u901a\u884c\u8bc1"
-    },
-    {
-        "Id": 20137106.0,
-        "Key": "CombPassportLevelNotEnough",
-        "Text": "20137106\u9886\u5956\u6240\u9700\u7b49\u7ea7\u4e0d\u8db3"
-    },
-    {
-        "Id": 20137107.0,
-        "Key": "CombPassportNoRewardCanGet",
-        "Text": "20137107\u65e0\u53ef\u9886\u53d6\u5956\u52b1"
-    },
-    {
-        "Id": 20137108.0,
-        "Key": "CombPassportAlreadyMaxLevel",
-        "Text": "20137108\u5df2\u8fbe\u5230\u6700\u5927\u7b49\u7ea7"
-    },
-    {
-        "Id": 20137109.0,
-        "Key": "CombPassportLevelCfgNotExist",
-        "Text": "20137109\u7b49\u7ea7\u4fe1\u606f\u4e0d\u5b58\u5728"
-    },
-    {
-        "Id": 20137110.0,
-        "Key": "CombPassportRewardTemplateNotExist",
-        "Text": "20137110\u5956\u52b1\u4e0d\u5b58\u5728"
-    },
-    {
-        "Id": 20137111.0,
-        "Key": "CombPassportBuyLevelMustBiggerThanNow",
-        "Text": "20137111\u8d2d\u4e70\u7b49\u7ea7\u4e0d\u80fd\u5c0f\u4e8e\u73b0\u6709\u7b49\u7ea7"
-    },
-    {
-        "Id": 20137112.0,
-        "Key": "CombPassportExpConfigError",
-        "Text": "20137112\u7ecf\u9a8c\u503c\u914d\u7f6e\u9519\u8bef"
-    },
-    {
-        "Id": 20137113.0,
-        "Key": "CombPassportRewardAlreadyGot",
-        "Text": "20137113\u5956\u52b1\u5df2\u9886\u53d6"
-    },
-    {
-        "Id": 20137114.0,
-        "Key": "CombPassportBuyTimeAlreadyEnd",
-        "Text": "20137114\u672c\u671f\u6d3b\u52a8\u8d2d\u4e70\u65f6\u95f4\u5df2\u7ed3\u675f"
-    },
-    {
-        "Id": 20137115.0,
-        "Key": "CombPassportBuyExpTranscend",
-        "Text": "20137115\u65e0\u6cd5\u8d2d\u4e70\u65e0\u9650\u533a\u7684\u7b49\u7ea7"
     },
     {
         "Id": 20138001.0,
@@ -28055,6 +28005,171 @@
         "Text": "20324004"
     },
     {
+        "Id": 20325001.0,
+        "Key": "PbrNotOpen",
+        "Text": "20325001\u529f\u80fd\u672a\u5f00\u542f"
+    },
+    {
+        "Id": 20325002.0,
+        "Key": "MetaProgressionTemplateNoFound",
+        "Text": "20325002\u5c40\u5916\u517b\u6210\u914d\u7f6e\u4e0d\u5b58\u5728"
+    },
+    {
+        "Id": 20325003.0,
+        "Key": "MetaProgressionPreNodeUnlock",
+        "Text": "20325003\u5c40\u5916\u517b\u6210\u524d\u7f6e\u8282\u70b9\u672a\u89e3\u9501"
+    },
+    {
+        "Id": 20325004.0,
+        "Key": "MetaProgressionConditionLimit",
+        "Text": "20325004\u5c40\u5916\u517b\u6210\u89e3\u9501\u6761\u4ef6\u9650\u5236"
+    },
+    {
+        "Id": 20325005.0,
+        "Key": "MetaProgressionNodeHasLock",
+        "Text": "20325005\u5c40\u5916\u517b\u6210\u8282\u70b9\u5df2\u89e3\u9501"
+    },
+    {
+        "Id": 20325006.0,
+        "Key": "PbrStateNoInShopping",
+        "Text": "20325006\u4e0d\u5728\u5546\u5e97\u4e2d"
+    },
+    {
+        "Id": 20325007.0,
+        "Key": "PbrNoShopData",
+        "Text": "20325007\u6ca1\u6709\u5546\u5e97\u6570\u636e"
+    },
+    {
+        "Id": 20325008.0,
+        "Key": "PbrNoSegmentSettleData",
+        "Text": "20325008\u6218\u53cc\u5144\u5f1f \u6ca1\u6709\u5c40\u5185\u6570\u636e"
+    },
+    {
+        "Id": 20325009.0,
+        "Key": "PbrShopFreshTemplateNoFound",
+        "Text": "20325009\u627e\u4e0d\u5230\u5546\u5e97\u5237\u65b0\u914d\u7f6e\u8868"
+    },
+    {
+        "Id": 20325010.0,
+        "Key": "PbrShopTierWeightCfgError",
+        "Text": "20325010\u5546\u5e97\u54c1\u9636\u6743\u91cd\u914d\u7f6e\u9519\u8bef"
+    },
+    {
+        "Id": 20325011.0,
+        "Key": "PbrShopCanNotFreshGood",
+        "Text": "20325011\u5546\u5e97\u65e0\u6cd5\u968f\u673a\u8d27\u7269"
+    },
+    {
+        "Id": 20325012.0,
+        "Key": "PbrShopFreshCountLimit",
+        "Text": "20325012\u5546\u5e97\u5237\u65b0\u6b21\u6570\u4e0d\u8db3"
+    },
+    {
+        "Id": 20325013.0,
+        "Key": "PbrShopFreshRepeatReq",
+        "Text": "20325013\u5546\u5e97\u5237\u65b0\u91cd\u590d\u8bf7\u6c42"
+    },
+    {
+        "Id": 20325014.0,
+        "Key": "PbrShopSellItemNoExit",
+        "Text": "20325014\u5546\u5e97\u8d27\u7269\u4e0d\u5b58\u5728"
+    },
+    {
+        "Id": 20325015.0,
+        "Key": "PbrShopChooseTimeLimit",
+        "Text": "20325015\u5546\u5e97\u8d2d\u4e70\u6b21\u6570\u9650\u5236"
+    },
+    {
+        "Id": 20325016.0,
+        "Key": "PbrItemCfgNoFound",
+        "Text": "20325016\u6218\u53cc\u5144\u5f1f\u9053\u5177\u914d\u7f6e\u4e0d\u5b58\u5728"
+    },
+    {
+        "Id": 20325017.0,
+        "Key": "PbrItemTypeCfgError",
+        "Text": "20325017\u6218\u53cc\u5144\u5f1f\u9053\u5177\u7c7b\u578b\u914d\u7f6e\u9519\u8bef"
+    },
+    {
+        "Id": 20325018.0,
+        "Key": "PbrShopChooseOpLimit",
+        "Text": "20325018\u6218\u53cc\u5144\u5f1f\u5546\u5e97\u9009\u62e9\u64cd\u4f5c\u9650\u5236"
+    },
+    {
+        "Id": 20325019.0,
+        "Key": "PbrStageTemplateNoFound",
+        "Text": "20325019\u6218\u53cc\u5144\u5f1f\u526f\u672c\u627e\u4e0d\u5230\u5173\u5361\u914d\u7f6e\u8868"
+    },
+    {
+        "Id": 20325020.0,
+        "Key": "PbrFubenPreStageLimit",
+        "Text": "20325020\u6218\u53cc\u5144\u5f1f\u524d\u7f6e\u5173\u5361\u9650\u5236"
+    },
+    {
+        "Id": 20325021.0,
+        "Key": "PbrFubenCharacterCountLimit",
+        "Text": "20325021\u6218\u53cc\u5144\u5f1f \u8fdb\u5165\u6218\u6597 \u89d2\u8272\u4e2a\u6570\u5fc5\u987b\u4e3a\u4e00\u4e2a"
+    },
+    {
+        "Id": 20325022.0,
+        "Key": "PbrFubenCharacterCfgNoFound",
+        "Text": "20325022\u6218\u53cc\u5144\u5f1f \u8fdb\u5165\u6218\u6597 \u89d2\u8272\u914d\u7f6e\u4e0d\u5b58\u5728"
+    },
+    {
+        "Id": 20325023.0,
+        "Key": "PbrFubenCharacterStatsCfgNoFound",
+        "Text": "20325023\u6218\u53cc\u5144\u5f1f \u8fdb\u5165\u6218\u6597 \u89d2\u8272\u5c5e\u6027\u914d\u7f6e\u4e0d\u5b58\u5728"
+    },
+    {
+        "Id": 20325024.0,
+        "Key": "PbrFubenCharacterUnLock",
+        "Text": "20325024\u6218\u53cc\u5144\u5f1f \u8fdb\u5165\u6218\u6597 \u89d2\u8272\u672a\u89e3\u9501"
+    },
+    {
+        "Id": 20325025.0,
+        "Key": "PbrFubenSettleDataNoFound",
+        "Text": "20325025\u6218\u53cc\u5144\u5f1f \u6218\u6597\u7ed3\u7b97 \u6218\u6597\u6ca1\u6709\u4f20\u51fa\u7ed3\u7b97\u6570\u636e"
+    },
+    {
+        "Id": 20325026.0,
+        "Key": "PbrFubenStageTimeLimit",
+        "Text": "20325026\u6218\u53cc\u5144\u5f1f \u5173\u5361 \u65f6\u95f4\u5f00\u653e\u9650\u5236"
+    },
+    {
+        "Id": 20325027.0,
+        "Key": "PbrFubenPassWaveLimit",
+        "Text": "20325027\u6218\u53cc\u5144\u5f1f \u672a\u8fbe\u5230\u6ce2\u6b21\u65e0\u6cd5\u901a\u5173"
+    },
+    {
+        "Id": 20325028.0,
+        "Key": "PbrFubenSegmentSettleLimit",
+        "Text": "20325028\u6218\u53cc\u5144\u5f1f \u8fbe\u5230\u6ce2\u6b21\u65e0\u6cd5\u5206\u6bb5\u7ed3\u7b97"
+    },
+    {
+        "Id": 20325029.0,
+        "Key": "PbrFubenRestartLimit",
+        "Text": "20325029\u6218\u53cc\u5144\u5f1f\u91cd\u5f00\u9650\u5236"
+    },
+    {
+        "Id": 20325030.0,
+        "Key": "PbrFubenRebootLimit",
+        "Text": "20325030\u6218\u53cc\u5144\u5f1f\u590d\u6d3b\u9650\u5236"
+    },
+    {
+        "Id": 20325031.0,
+        "Key": "PbrFubenPreFightInShop",
+        "Text": "20325031\u6218\u53cc\u5144\u5f1f\u5728\u5546\u5e97\u72b6\u6001\u4e0d\u80fd\u53d1\u8d77\u6218\u6597"
+    },
+    {
+        "Id": 20325032.0,
+        "Key": "ConditionPbrPassStageLimit",
+        "Text": "20325032\u6218\u53cc\u5144\u5f1f\u5173\u5361\u6761\u4ef6\u9650\u5236"
+    },
+    {
+        "Id": 20325033.0,
+        "Key": "ConditionPbrProgressionNodeCountLimit",
+        "Text": "20325033\u6218\u53cc\u5144\u5f1f\u517b\u6210\u8282\u70b9\u6761\u4ef6\u9650\u5236"
+    },
+    {
         "Id": 20420001.0,
         "Key": "RadioSignActivityNotOpen",
         "Text": "20420001\u6d3b\u52a8\u672a\u5f00\u542f"
@@ -28083,6 +28198,11 @@
         "Id": 20421001.0,
         "Key": "FunctionalEntranceConfigNotFound",
         "Text": "20421001\u529f\u80fd\u5165\u53e3\u914d\u7f6e\u4e0d\u5b58\u5728"
+    },
+    {
+        "Id": 20422001.0,
+        "Key": "CommunityH5NotOpen",
+        "Text": "20422001\u6d3b\u52a8\u672a\u5f00\u542f"
     },
     {
         "Id": 25000001.0,

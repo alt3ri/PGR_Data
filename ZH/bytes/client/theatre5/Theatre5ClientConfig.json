@@ -261,7 +261,7 @@
     },
     {
         "Key": "PvpPopUpTitle",
-        "Values": "['\u4ea1\u547d\u6b7b\u7ade', '\u5168\u65b0\u8d5b\u5b63']"
+        "Values": "['\u4ea1\u547d\u6b7b\u7ade', '{0} \u5929\u542f\u5f52\u6765']"
     },
     {
         "Key": "PvpPopUpContent1",
@@ -269,11 +269,11 @@
     },
     {
         "Key": "PvpPopUpContent2",
-        "Values": "['\u65b0\u589e\u739b\u95e8\u7684\u5609\u8d4f']"
+        "Values": "['\u8d5b\u5b63\u9650\u65f6\u5956\u52b1']"
     },
     {
         "Key": "PvpPopUpContent3",
-        "Values": "['\u8d5b\u5b63\u9650\u65f6\u5956\u52b1']"
+        "Values": "['\u5347\u7ea7\u4e0e\u9970\u54c1\u56de\u5f52']"
     },
     {
         "Key": "PvpPopUpImgNameplate",
@@ -297,7 +297,7 @@
     },
     {
         "Key": "PopUpversion",
-        "Values": "['1']"
+        "Values": "['2']"
     },
     {
         "Key": "MissionLevelUpCostLinks",
@@ -357,7 +357,7 @@
     },
     {
         "Key": "PVPReasonTips",
-        "Values": "['{0}  {1}\u540e\u5f00\u542f', '{0}  \u8d5b\u5b63\u5df2\u5f00\u542f']"
+        "Values": "['{0}\u540e\u5f00\u542f', '\u5168\u5c40\u79ef\u5206\u83b7\u53d6\u52a0\u901f\uff0c\u53ef\u6311\u6218\u989d\u5916\u5bf9\u5c40']"
     },
     {
         "Key": "PVPReasonTimeDuration",
@@ -382,5 +382,33 @@
     {
         "Key": "MissionStateLabelInFinalSettle",
         "Values": "['\u672a\u63a5\u53d6\u59d4\u6258', '\u59d4\u6258\u8fdb\u884c\u4e2d']"
+    },
+    {
+        "Key": "PvpRoundEndTips",
+        "Values": "['{0}\u79ef\u5206']"
+    },
+    {
+        "Key": "PvpExtraRoundTips",
+        "Values": "['{0}~{1}\u79ef\u5206']"
+    },
+    {
+        "Key": "PvpExMinRating",
+        "Values": "['0', '0', '-20', '-20', '-20', '-20', '-20', '-20', '-20', '-20', '-20', '-20', '-20']"
+    },
+    {
+        "Key": "PvpExMaxRating",
+        "Values": "['99', '99', '99', '87', '87', '87', '71', '71', '71', '61', '50', '50', '60']"
+    },
+    {
+        "Key": "PvpExtraPopupContent",
+        "Values": "['\u5f53\u524d\u5df2\u6ee1\u8db3\u57fa\u672c\u5bf9\u5c40\u80dc\u5229\u7ed3\u7b97\u6761\u4ef6,\u662f\u5426\u8fdb\u884c{0}\u573a\u989d\u5916\u5bf9\u5c40?']"
+    },
+    {
+        "Key": "PvpExtraPopupTxtTip",
+        "Values": "['\u5f53\u524d\u7ed3\u7b97\u79ef\u5206\u4e3a{0},\u5b8c\u6210\u989d\u5916\u5bf9\u5c40\u540e,\u79ef\u5206\u8303\u56f4\u4e3a{1}~{2}']"
+    },
+    {
+        "Key": "PvpExtraPopupTxtTipColor",
+        "Values": "['1F85D8']"
     }
 ]
