@@ -20,7 +20,7 @@ function XUiPanelRecommendEmojiItem:Update(package)
     end
 
     --礼包icon
-    if package.Data then
+    if package.Data and hasDynamicEmoji then
         local iconPath = XPurchaseConfigs.GetIconPathByIconName(package.Data.Icon)
         if iconPath and iconPath.AssetPath then
             self.ImgIconLb:SetRawImage(iconPath.AssetPath, function() self.ImgIconLb:SetNativeSize() end)

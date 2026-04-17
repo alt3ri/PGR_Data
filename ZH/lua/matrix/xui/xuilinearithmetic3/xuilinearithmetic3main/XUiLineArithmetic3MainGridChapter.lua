@@ -15,7 +15,7 @@
 local XUiLineArithmetic3MainGridChapter = XClass(XUiNode, "XUiLineArithmetic3MainGridChapter")
 
 function XUiLineArithmetic3MainGridChapter:OnStart()
-    ---@type XLineArithmetic3ControlChapterData
+    ---@type XLineArithmetic3ControlDataChapter
     self._Data = false
     self:InitComponents()
 end
@@ -26,7 +26,7 @@ function XUiLineArithmetic3MainGridChapter:InitComponents()
 end
 
 --- 更新章节数据
----@param data XLineArithmetic3ControlChapterData
+---@param data XLineArithmetic3ControlDataChapter
 function XUiLineArithmetic3MainGridChapter:Update(data)
     self._Data = data
 

@@ -171,6 +171,7 @@ function XUiPanelPlayerInfoEx:AutoAddListener()
         self.BtnAchievement.gameObject:SetActiveEx(false)
         self.BtnExhibition.gameObject:SetActiveEx(false)
         self.BtnArchive.gameObject:SetActiveEx(false)
+        self.BtnAssistModify.gameObject:SetActiveEx(false)
     else
         self:RegisterClickEvent(self.BtnDetails, self.OnBtnDetailsClick)
     end

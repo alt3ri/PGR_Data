@@ -152,6 +152,10 @@ end
 function XUiBodyCombineGamePlay:OnEnable()
     XEventManager.AddEventListener(XEventId.EVENT_BODYCOMBINEGAME_ACTIVITY_END, 
         XDataCenter.BodyCombineGameManager.OnActivityEnd)
+
+    if self.TxtTime then
+        self.TxtTime.text = XDataCenter.BodyCombineGameManager.GetActivityLeftTime()
+    end
 end
 
 function XUiBodyCombineGamePlay:OnDisable()

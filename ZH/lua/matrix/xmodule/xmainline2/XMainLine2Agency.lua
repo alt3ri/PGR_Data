@@ -37,6 +37,10 @@ function XMainLine2Agency:ExGetChapterType()
     return XEnumConst.FuBen.ChapterType.MainLine2
 end
 
+function XMainLine2Agency:ExGetFunctionNameType()
+    return XFunctionManager.FunctionName.MainLine
+end
+
 --- 通过章节Id，获取主章节实例
 function XMainLine2Agency:ExGetChapterViewModelBySubChapterId(chapterId)
     local mainCfgs = self._Model:GetConfigMain()

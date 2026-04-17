@@ -106,7 +106,13 @@ function XUiPBRPause:OnBtnSettleClick()
         self._Control.InGameControl:SetFightExitType(XMVCA.XPBRGame.EnumConst.FightExitType.Settle)
         self:_ForceExitFight(false)
     end
-    XUiManager.DialogTip(title, content, XUiManager.DialogType.Normal, nil, confirmCb)
+
+    if self._Control.InGameControl:CheckIsInEndlessMode() then
+        -- 无尽模式无需二次确认
+        confirmCb()
+    else
+        XUiManager.DialogTip(title, content, XUiManager.DialogType.Normal, nil, confirmCb)
+    end
 end
 
 function XUiPBRPause:OnBtnQuitClick()

@@ -16,6 +16,9 @@ function XLineArithmetic3ActivateEndCommand:Execute(game, onComplete)
     local endGrid = uiGame:GetGridElement(self._EndKey)
 
     if endGrid then
+        -- 播放到达终点特效（与缩放同时开始，不等待）
+        local worldPos = uiGame:GetGridWorldPosition(self._GridX, self._GridY)
+        uiGame:PlayArriveEffect(worldPos)
         local duration = 0.2
         uiGame:CreateTween(duration, function(progress)
             local gridItem = uiGame:GetGridElement(self._EndKey)

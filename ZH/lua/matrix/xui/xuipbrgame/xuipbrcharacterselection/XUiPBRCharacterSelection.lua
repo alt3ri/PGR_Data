@@ -2,7 +2,7 @@ local XUiPBRCharacterDetail = require('XUi/XUiPBRGame/XUiPBRCharacterDetail/XUiP
 
 --- 进关卡前的角色选择界面，预制体用的是 UiPBRCharacterDetail
 ---@class XUiPBRCharacterSelection: XUiPBRCharacterDetail
----@field protected _Control
+---@field protected _Control XPBRGameControl
 local XUiPBRCharacterSelection = XLuaUiManager.Register(XUiPBRCharacterDetail, "UiPBRCharacterSelection")
 
 function XUiPBRCharacterSelection:OnStart(stageId)
@@ -34,6 +34,15 @@ end
 function XUiPBRCharacterSelection:OnEnable()
     XUiPBRCharacterDetail.OnEnable(self)
     self:RefreshReddot()
+
+    if XTool.IsNumberValidEx(self.CurCharacterId) then
+        local charCfg = self._Control.CharacterControl:GetCharacterCfg(self.CurCharacterId)
+
+        if charCfg then
+            self.PanelAttribute:RefreshStatusShow(charCfg.CharacterId)
+            self.PanelExclusive:RefreshCharacterExclusiveDesc(charCfg.CharacterId)
+        end
+    end
 end
 
 ---@overload

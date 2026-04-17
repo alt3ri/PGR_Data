@@ -41,11 +41,16 @@ function XUiGridDownloadFashion:Refresh(data)
     self:RefreshProgress(nil)
 end
 
--- 刷新Tag显隐（TagDownloaded/TagDownloading/TagNotOwn 三选一互斥，TagSelect 独立）
+-- 刷新Tag显隐（TagNotOwn 独立判断拥有状态，TagDownloaded/TagDownloading 互斥显示下载状态，TagSelect 独立）
 function XUiGridDownloadFashion:RefreshTags(data)
+    -- 未拥有标记独立判断（不受下载状态影响）
+    local showNotOwn = not data.IsOwn
+    
+    -- 已下载标记
     local showDownloaded = data.IsDownloaded
+    
+    -- 下载中标记（仅在未下载时显示）
     local showDownloading = data.IsDownloading and not data.IsDownloaded
-    local showNotOwn = not showDownloaded and not showDownloading and not data.IsOwn
 
     if self.TagDownloaded then
         self.TagDownloaded.gameObject:SetActiveEx(showDownloaded)

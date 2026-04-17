@@ -6,6 +6,7 @@ local TableKey = {
     LineArithmeticStage = { DirPath = XConfigUtil.DirectoryType.Share, CacheType = XConfigUtil.CacheType.Normal },
     LineArithmeticCar = { DirPath = XConfigUtil.DirectoryType.Client, CacheType = XConfigUtil.CacheType.Normal },
     LineArithmetic3Help = { DirPath = XConfigUtil.DirectoryType.Client, CacheType = XConfigUtil.CacheType.Normal },
+    LineArithmeticClientConfig = { DirPath = XConfigUtil.DirectoryType.Client, CacheType = XConfigUtil.CacheType.Normal, ReadFunc = XConfigUtil.ReadType.String, Identifier = "Key", },
 }
 
 ---@class XLineArithmetic3Model : XModel
@@ -20,11 +21,13 @@ function XLineArithmetic3Model:OnInit()
 end
 
 function XLineArithmetic3Model:ClearPrivate()
+    self:SetCurrentGameStageId(nil)
 end
 
 function XLineArithmetic3Model:ResetAll()
     self._ActivityId = 0
     self._PassedStages = {}
+    self._CurrentGameStageId = nil
 end
 
 ----------public start----------
@@ -239,6 +242,39 @@ function XLineArithmetic3Model:GetHelpConfig(helpId)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.LineArithmetic3Help, helpId, true)
 end
 
+---@return XTableLineArithmeticClientConfig
+function XLineArithmetic3Model:GetClientConfigCfgByKey(key, notips)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.LineArithmeticClientConfig, key, notips)
+end
+
+function XLineArithmetic3Model:GetClientConfigTextByKey(key, index)
+    index = index or 1
+
+    local cfg = self:GetClientConfigCfgByKey(key)
+
+    if cfg then
+        return cfg.Values[index] or ''
+    end
+
+    return ''
+end
+
+function XLineArithmetic3Model:GetClientConfigNumberByKey(key, index)
+    index = index or 1
+    
+    local cfg = self:GetClientConfigCfgByKey(key)
+
+    if cfg then
+        local valStr = cfg.Values[index]
+
+        if not string.IsNilOrEmpty(valStr) and string.IsFloatNumber(valStr) then
+            return tonumber(valStr)
+        end
+    end
+    
+    return 0
+end
+
 --- 根据地图ID获取帮助配置列表（ID 规则：mapId*1000+1, mapId*1000+2, ... 直到无配置）
 ---@param mapId number 地图ID
 ---@return table[] 帮助配置数组，按序号 0001、0002... 顺序
@@ -320,6 +356,13 @@ function XLineArithmetic3Model:IsChapterUnlock(chapterId)
     if not chapterConfig then
         return false
     end
+    
+    -- 如果有时间，则需要在时间内
+    if XTool.IsNumberValidEx(chapterConfig.TimeId) and not XFunctionManager.CheckInTimeByTimeId(chapterConfig.TimeId, false) then
+        local startTime = XFunctionManager.GetStartTimeByTimeId(chapterConfig.TimeId)
+        local leftTime = math.max(0, startTime - XTime.GetServerNowTimestamp())
+        return false, XUiHelper.FormatTextEx(self:GetClientConfigTextByKey('ChapterTimeUnlockFormat'), XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.ACTIVITY))
+    end
 
     -- 如果没有解锁条件，默认解锁
     if not chapterConfig.UnlockCondition or #chapterConfig.UnlockCondition == 0 then
@@ -329,7 +372,7 @@ function XLineArithmetic3Model:IsChapterUnlock(chapterId)
     -- 检查解锁条件
     for _, conditionId in ipairs(chapterConfig.UnlockCondition) do
         if not XConditionManager.CheckCondition(conditionId) then
-            return false
+            return false, XConditionManager.GetConditionDescById(conditionId)
         end
     end
 
@@ -461,12 +504,12 @@ end
 
 --- 是否过期
 ---@return boolean
-function XLineArithmetic3Model:GetActivityConfig()
-    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.LineArithmeticActivity, self._ActivityId)
+function XLineArithmetic3Model:GetActivityConfig(notips)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.LineArithmeticActivity, self._ActivityId, notips)
 end
 
 function XLineArithmetic3Model:IsExpire()
-    local activityConfig = self:GetActivityConfig()
+    local activityConfig = self:GetActivityConfig(true)
     if not activityConfig then
         return false
     end
@@ -482,7 +525,7 @@ function XLineArithmetic3Model:IsExpire()
 end
 
 function XLineArithmetic3Model:GetTaskList()
-    if not self._ActivityId then
+    if not XTool.IsNumberValidEx(self._ActivityId) then
         return {}
     end
     local config = self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.LineArithmeticActivity, self._ActivityId)
@@ -490,6 +533,14 @@ function XLineArithmetic3Model:GetTaskList()
         return {}
     end
     return config.TaskIds
+end
+
+function XLineArithmetic3Model:SetCurrentGameStageId(stageId)
+    self._CurrentGameStageId = stageId
+end
+
+function XLineArithmetic3Model:IsOnGame(stageId)
+    return self._CurrentGameStageId == stageId
 end
 
 return XLineArithmetic3Model

@@ -790,6 +790,8 @@ function XUiPanelRoleModel:LoadCurrentCharacterDefaultUiEffect()
     self:SetCurrentUiEffectActive(model.UiEffect, false)
     self:SetCurrentUiEffectActive(model.UiEquipEffect, false)
     local fashionId = XMVCA.XCharacter:GetShowFashionId(model.CharacterId)
+    -- 分包检查：若涂装未下载则使用默认涂装
+    fashionId = self:_GetValidFashionId(fashionId, model.CharacterId)
     local _, rootName, effectPath = XCharacterUiEffectConfig.GetEffectInfo(model.CharacterId, fashionId)
     self:LoadCharacterUiEquipEffect(model, model.CharacterId, fashionId)
     self:PlayCharacterUiEffect(model, model.UiDefaultId, rootName, effectPath)
@@ -1312,6 +1314,8 @@ function XUiPanelRoleModel:LoadCharacterUiEffectOther(character, actionId, weapo
         return
     end
     local fashionId = character.FashionId or XMVCA.XCharacter:GetCharacterTemplate(character.Id).DefaultNpcFashtionId
+    -- 分包检查：若涂装未下载则使用默认涂装
+    fashionId = self:_GetValidFashionId(fashionId, character.Id)
     local equipModelIdList = XMVCA.XEquip:GetWeaponEquipModelIdListByTemplateId(weapon.TemplateId, weaponFashionId)
     local id, rootName, effectPath = XCharacterUiEffectConfig.GetEffectInfo(character.Id, fashionId, actionId, equipModelIdList)
     local model = self.RoleModelPool[self.CurRoleName]
@@ -1383,7 +1387,7 @@ function XUiPanelRoleModel:UpdateRobotModel(robotId, characterId, weaponCb, fash
         end
     end, nil, needDisplayController)
     
-    self:LoadResCharacterUiEffect(characterId, fashionId, weaponFashionId, nil, equipTemplateId)
+    self:LoadResCharacterUiEffect(characterId, nowFashionId, weaponFashionId, nil, equipTemplateId)
 end
 
 --==============================--

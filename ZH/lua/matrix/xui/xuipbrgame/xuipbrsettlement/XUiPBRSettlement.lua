@@ -30,7 +30,7 @@ function XUiPBRSettlement:InitComponents()
     self.BtnAttribute:AddEventListener(function() self:OnBtnAttributeClick() end)
     self.BtnAgain:AddEventListener(function() self:OnBtnAgainClick() end)
     self.BtnQuit:AddEventListener(function() self:OnBtnQuitClick() end)
-
+    self.BtnNext:AddEventListener(function() self:OnBtnNextClick()  end)
     -- XUiNode
     ---@type XUiPBRSettlementPanelData
     self.PanelData = XUiPBRSettlementPanelData.New(self.PanelData, self)
@@ -92,6 +92,15 @@ function XUiPBRSettlement:OnStart(stageId, settleData, isWin)
     end
     
     self.RoleModel:RefreshShowBySettle(isWin)
+
+    -- 判断是否开启连战
+    local hasValidNextStage, nextStageId = self._Control:CheckNextStageExistAndUnlockByStageId(self.StageId)
+    local isCanNext = hasValidNextStage and isWin
+
+    self.BtnAgain.gameObject:SetActiveEx(not isCanNext)
+    self.BtnNext.gameObject:SetActiveEx(isCanNext)
+    
+    self.NextStageId = nextStageId
 end
 
 function XUiPBRSettlement:OnEnable()
@@ -122,6 +131,17 @@ function XUiPBRSettlement:OnBtnQuitClick()
     -- 需要手动清理一下上一局的数据
     self._Control:ClearInGameData()
     self:Close()
+end
+
+function XUiPBRSettlement:OnBtnNextClick()
+    -- 需要手动清理一下上一局的数据
+    self._Control:ClearInGameData()
+
+    if XTool.IsNumberValidEx(self.NextStageId) then
+        XLuaUiManager.PopThenOpen("UiPBRCharacterSelection", self.NextStageId)
+    else
+        self:Close()
+    end
 end
 
 function XUiPBRSettlement:OnItemDetailOpenEvent(posUi, itemId)

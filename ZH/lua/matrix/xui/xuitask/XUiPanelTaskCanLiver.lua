@@ -168,6 +168,7 @@ function XUiPanelTaskCanLiver:GetTasks()
     tasks = XMVCA.XReCallActivity:GetRegressionTaskDataList(tasks)
 
     -- 合并后最终再排序
+    tasks = XDataCenter.TaskManager.FliterFinishedTaskData(tasks)
     tasks = XDataCenter.TaskManager.CommonTaskDataSort(tasks)
     ----------------------------
     -- 2. 找出可领取任务
@@ -234,7 +235,18 @@ function XUiPanelTaskCanLiver:OnDynamicTableEvent(event, index, grid)
         grid:SetIsUpdateWeeklyTime(isSetUpdateWeeklyTime)
         grid:SetTxtTaskLimitVisible(XMVCA.XItemRestrict:IsItemReachMaxByIndex(XEnumConst.ItemRestrict.Type.DrawCanLiver, 1))
         grid:ResetData(data)
+        
+        self:ShowGridEx(grid, data)
     end
+end
+
+---@param grid XDynamicDrawCanLiverTask
+---@param data XTaskData
+function XUiPanelTaskCanLiver:ShowGridEx(grid, data)
+    -- 手动判断是不是回归任务
+    local taskId = data.Id
+
+    grid:SetExLabelShow("PanelDouble", XMVCA.XReCallActivity:CheckIsRegressionTaskById(taskId))
 end
 
 return XUiPanelTaskCanLiver

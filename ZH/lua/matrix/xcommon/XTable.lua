@@ -1,12 +1,12 @@
-local ValueTypestring = {ValueType = "string"}
-local ValueTypeint = {ValueType = "int"}
-local ValueTypefloat = {ValueType = "float"}
-local ValueTypefix = {ValueType = "fix"}
-local ValueTypebool = {ValueType = "bool"}
-local Type2KeyTypestringValueTypestring = {Type = 2, KeyType = "string", ValueType = "string"}
-local Type2KeyTypeintValueTypestring = {Type = 2, KeyType = "int", ValueType = "string"}
-local Type2KeyTypeintValueTypeint = {Type = 2, KeyType = "int", ValueType = "int"}
-local Type2KeyTypeintValueTypefloat = {Type = 2, KeyType = "int", ValueType = "float"}
+local ValueTypestring = {ValueType = "string"}
+local ValueTypeint = {ValueType = "int"}
+local ValueTypefloat = {ValueType = "float"}
+local ValueTypefix = {ValueType = "fix"}
+local ValueTypebool = {ValueType = "bool"}
+local Type2KeyTypestringValueTypestring = {Type = 2, KeyType = "string", ValueType = "string"}
+local Type2KeyTypeintValueTypestring = {Type = 2, KeyType = "int", ValueType = "string"}
+local Type2KeyTypeintValueTypeint = {Type = 2, KeyType = "int", ValueType = "int"}
+local Type2KeyTypeintValueTypefloat = {Type = 2, KeyType = "int", ValueType = "float"}
 local Type1ValueTypestring = {Type = 1, ValueType = "string"}
 local Type1ValueTypeint = {Type = 1, ValueType = "int"}
 local Type1ValueTypefloat = {Type = 1, ValueType = "float"}
@@ -8598,19 +8598,18 @@ XTable = {
         FashionIds = Type1ValueTypeint,
         Sort = ValueTypeint,
         Type = ValueTypeint,
-        SuitBanner = ValueTypestring,
-        SuitBackground = ValueTypestring,
         SuitDescription = ValueTypestring,
         SuitTabText = ValueTypestring,
         SubTabTimeId = ValueTypeint,
+    },
+    XTableFashionSuitUiConfig = {
+        Id = ValueTypeint,
+        SuitLogo = ValueTypestring,
+        SuitBanner = ValueTypestring,
+        SuitBackground = ValueTypestring,
+        SuitTabText = ValueTypestring,
         PrefabPath = ValueTypestring,
         ScenePrefabPath = ValueTypestring,
-        CameraPosX = ValueTypefloat,
-        CameraPosY = ValueTypefloat,
-        CameraPosZ = ValueTypefloat,
-        CameraRotationX = ValueTypefloat,
-        CameraRotationY = ValueTypefloat,
-        CameraRotationZ = ValueTypefloat,
         RolePosX = ValueTypefloat,
         RolePosY = ValueTypefloat,
         RolePosZ = ValueTypefloat,
@@ -8620,14 +8619,15 @@ XTable = {
         WeaponPosX = ValueTypefloat,
         WeaponPosY = ValueTypefloat,
         WeaponPosZ = ValueTypefloat,
-        CameraFov = ValueTypefloat,
-        DetailBg = ValueTypestring,
         LogoBg = ValueTypestring,
         BtnBuyBg = ValueTypestring,
         BtnGetBg = ValueTypestring,
         BtnWearBg = ValueTypestring,
+        DetailBg = Type1ValueTypestring,
         LineColor = ValueTypestring,
-        SuitLogo = ValueTypestring,
+        FirstBg = ValueTypestring,
+        CameraPrefabPath = ValueTypestring,
+        SliderMax = ValueTypefloat,
     },
     XTableFashionSuitClientConfig = {
         Id = ValueTypestring,
@@ -8686,9 +8686,8 @@ XTable = {
         StageStyle = Type2KeyTypeintValueTypestring,
     },
     XTableFestivalCharacterGroup = {
-        Id = ValueTypeint,
-        GroupId = ValueTypeint,
         CharacterId = ValueTypeint,
+        GroupId = ValueTypeint,
         MailId = ValueTypeint,
         ArchiveMailId = ValueTypeint,
         CommunicationId = ValueTypeint,
@@ -10997,7 +10996,7 @@ XTable = {
         InvitationBg = Type1ValueTypestring,
     },
     XTableHoldRegressionShareConfig = {
-        Id = ValueTypeint,
+        Key = ValueTypestring,
         PlatformName = ValueTypestring,
         IconPath = ValueTypestring,
         Text = ValueTypestring,
@@ -11635,6 +11634,7 @@ XTable = {
     XTableLineArithmeticCar = {
         Id = ValueTypeint,
         Carriages = Type1ValueTypeint,
+        RoleImgs = Type1ValueTypestring,
     },
     XTableLineArithmeticCell = {
         Id = ValueTypeint,
@@ -11652,6 +11652,10 @@ XTable = {
         Name = ValueTypestring,
         TitleImg = ValueTypestring,
         BgChapter = ValueTypestring,
+    },
+    XTableLineArithmeticClientConfig = {
+        Key = ValueTypestring,
+        Values = Type1ValueTypestring,
     },
     XTableLineArithmeticHelp = {
         Id = ValueTypeint,
@@ -14704,6 +14708,7 @@ XTable = {
         MagicId = ValueTypeint,
         Radius = ValueTypefix,
         Effect = ValueTypestring,
+        BeHitEffect = ValueTypestring,
     },
     XTablePBRItem = {
         ItemId = ValueTypeint,

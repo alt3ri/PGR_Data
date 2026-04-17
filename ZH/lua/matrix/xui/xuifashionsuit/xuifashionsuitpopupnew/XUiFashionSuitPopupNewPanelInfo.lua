@@ -42,11 +42,11 @@ end
 
 function XUiFashionSuitPopupNewPanelInfo:Refresh(fashionId)
     local fashionConfig = XFashionConfigs.GetFashionTemplate(fashionId)
-    
     self._FashionSuitId = XMVCA.XFashionSuit:GetFashionSuitId(fashionId)
     local suitConfig = self._Control:GetFashionSuitById(self._FashionSuitId)
+    local uiConfig = self._Control:GetFashionSuitUiConfigById(self._FashionSuitId)
     local characterName = XMVCA.XCharacter:GetCharacterTemplate(fashionConfig.CharacterId).Name
-    self.UiRImgIcon:SetRawImage(suitConfig.SuitLogo)
+    self.UiRImgIcon:SetSprite(uiConfig.SuitLogo)
     self.UiTxtSeriesName.text = suitConfig.Name
     self.UiTxtSkinName.text = fashionConfig.Name
     self.UiTxtCharacterName.text = characterName

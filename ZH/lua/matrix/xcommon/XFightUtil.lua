@@ -39,4 +39,36 @@ function XFightUtil.SetCameraOpEnabled(isEnabled)
     end
 end
 
+--- 断线重连失败后针对战斗的处理
+function XFightUtil.DoOnReconnectFailed()
+    if XFightUtil.IsFighting() then
+        if not XFightUtil.IsDlcFighting() then
+            if not XFightUtil._TryCustomOnReconnectFailExit() then
+                XLuaUiManager.Open("UiSettleLose")
+            end
+        end
+        XFightUtil.ClearFight()
+    end
+end
+
+function XFightUtil._TryCustomOnReconnectFailExit()
+    if CS.XFight.Instance.FightData then
+        -- 获取当前关卡
+        local stageId = CS.XFight.Instance.FightData.StageId
+
+        if XTool.IsNumberValidEx(stageId) then
+            local stageType = XMVCA.XFuben:GetStageType(stageId)
+
+            -- 尝试执行玩法自定义的断线退出逻辑
+            if stageType then
+                local ok, result = XMVCA.XFuben:CallCustomFunc(stageType, XEnumConst.FuBen.ProcessFunc.OnReconnectFailExit)
+
+                return ok, result
+            end
+        end
+    end
+    
+    return false
+end
+
 return XFightUtil

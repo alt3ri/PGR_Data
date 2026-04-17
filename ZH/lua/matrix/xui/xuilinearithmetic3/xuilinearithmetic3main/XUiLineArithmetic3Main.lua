@@ -6,6 +6,7 @@
 
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XUiLineArithmetic3MainGridChapter = require("XUi/XUiLineArithmetic3/XUiLineArithmetic3Main/XUiLineArithmetic3MainGridChapter")
+local XUiPanelFurnitureBG = require("XUi/XUiLineArithmetic3/XUiLineArithmetic3Main/XUiPanelFurnitureBG")
 
 ---@class XUiLineArithmetic3Main : XLuaUi
 ---@field _Control XLineArithmetic3Control
@@ -51,6 +52,11 @@ function XUiLineArithmetic3Main:InitComponents()
     self._GridChapters[2] = XUiLineArithmetic3MainGridChapter.New(self.GridChapter2, self)
     self._GridChapters[3] = XUiLineArithmetic3MainGridChapter.New(self.GridChapter3, self)
     self._GridChapters[4] = XUiLineArithmetic3MainGridChapter.New(self.GridChapter4, self)
+
+    ---@type XUiLineArithmetic3.XUiPanelFurnitureBG
+    if self.FurnitureBG then
+        self.PanelFurnitureBg = XUiPanelFurnitureBG.New(self.FurnitureBG, self)
+    end
 end
 
 function XUiLineArithmetic3Main:OnStart(...)
@@ -122,8 +128,16 @@ function XUiLineArithmetic3Main:UpdateChapter()
             XLog.Error("[XUiLineArithmetic3Main] 章节节点不够了，加多个吧:", i)
             break
         end
+        
+        ---@type XLineArithmetic3ControlDataChapter
+        local chapterData = chapters[i]
+        
         grid:Open()
         grid:Update(chapters[i])
+
+        if self.PanelFurnitureBg then
+            self.PanelFurnitureBg:SetChapterBgShow(chapterData.ChapterIndex, chapterData.IsOpen)
+        end
     end
     for i = #chapters + 1, #self._GridChapters do
         local grid = self._GridChapters[i]

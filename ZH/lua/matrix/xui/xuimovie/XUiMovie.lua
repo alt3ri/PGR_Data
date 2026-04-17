@@ -559,6 +559,9 @@ function XUiMovie:OnClickBtnAuto()
     end
     
     local isAutoPlay = not XDataCenter.MovieManager.GetIsAutoPlay()
+    XDataCenter.MovieManager.SetMoviePause(false)
+    XDataCenter.MovieManager.SetAutoPlay(isAutoPlay)
+    
     self.BtnTurn:SetDisable(isAutoPlay, not isAutoPlay)
     self.PanelMask.gameObject:SetActiveEx(isAutoPlay)
     self.ImgPauseIcon.gameObject:SetActiveEx(false)
@@ -580,8 +583,7 @@ function XUiMovie:OnClickBtnAuto()
         self:RefreshTextPause()
     end
 
-    XDataCenter.MovieManager.SetMoviePause(false)
-    XDataCenter.MovieManager.SetAutoPlay(isAutoPlay)
+    XDataCenter.MovieManager.DispatchAutoPlayEvent()
 end
 
 function XUiMovie:OnClickBtnAutoing()
@@ -602,6 +604,7 @@ function XUiMovie:OnClickBtnAutoing()
     self.BtnAutoing.gameObject:SetActiveEx(false)
     
     self:ClearAutoTimer()
+    XDataCenter.MovieManager.DispatchAutoPlayEvent()
 end
 
 -- 刷新暂停文本

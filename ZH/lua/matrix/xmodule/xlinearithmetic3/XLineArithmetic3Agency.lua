@@ -181,7 +181,7 @@ end
 --- 是否显示红点
 ---@return boolean 是否显示红点
 function XLineArithmetic3Agency:IsShowRedDot()
-    if not self._Model:GetActivityId() then
+    if not self._Model:CheckHasValidActivityId() then
         return false
     end
 
@@ -219,6 +219,9 @@ end
 ---@param stageId number 关卡ID
 ---@return boolean 是否在关卡中
 function XLineArithmetic3Agency:IsOnStage(stageId)
+    if self._Model:IsOnGame(stageId) then
+        return true
+    end
     return false
 end
 
@@ -266,6 +269,17 @@ function XLineArithmetic3Agency:ExCheckInTime()
     return inTime
 end
 
+
+--region ClientConfig
+
+function XLineArithmetic3Agency:GetClientConfigText(key, index)
+    return self._Model:GetClientConfigTextByKey(key, index)
+end
+
+function XLineArithmetic3Agency:GetClientConfigNumberByKey(key, index)
+    return self._Model:GetClientConfigNumberByKey(key, index)
+end
+--endregion
 ----------public end----------
 
 ----------private start----------

@@ -97,6 +97,7 @@ function XFashionSuitAgency:CheckFashionShopOpen(suitId, cb)
         if cb then
             cb()
         end
+        return
     end
     local shopIds = self._Model:GetSuitShopIds(suitId)
     if XTool.IsTableEmpty(shopIds) then

@@ -5,6 +5,8 @@ local TableKey = {
     ConnectingLineStage = { CacheType = XConfigUtil.CacheType.Normal },
     ConnectingLineBubble = { DirPath = XConfigUtil.DirectoryType.Client },
     ConnectingLineChapter = { CacheType = XConfigUtil.CacheType.Normal },
+
+    ConnectingLineClientConfig = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "Key", ReadFunc = XConfigUtil.ReadType.String, CacheType = XConfigUtil.CacheType.Private },
 }
 
 ---@class XConnectingLineModel : XModel
@@ -445,6 +447,11 @@ end
 function XConnectingLineModel:GetChapterConfig(chapterId)
     local chapterConfig = self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.ConnectingLineChapter, chapterId)
     return chapterConfig
+end
+
+---@return XTableConnectingLineClientConfig
+function XConnectingLineModel:GetClientConfigByKey(key, notips)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.ConnectingLineClientConfig, key, notips)
 end
 
 function XConnectingLineModel:GetChapterJustUnlockKey(chapterId)

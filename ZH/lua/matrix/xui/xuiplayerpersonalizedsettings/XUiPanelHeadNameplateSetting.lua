@@ -57,8 +57,12 @@ function XUiPanelHeadNameplateInfo:SetHeadNameplateDesc(info, Id ,curId)
     local descTab = {}
     local HintList = XMedalConfigs.GetNameplateHint(Id)
     for index, text in pairs(HintList) do
-        table.insert(descTab, XMedalConfigs.GetNameplateMapText(text))
-        table.insert(descTab, '\n\n')
+        local mapText = XMedalConfigs.GetNameplateMapText(text)
+
+        if not string.IsNilOrEmpty(mapText) then
+            table.insert(descTab, mapText)
+            table.insert(descTab, '\n\n')
+        end
     end
     local formatContent = XUiHelper.ReplaceTextNewLine(XUiHelper.GetText('NameplateDescFormat', XMedalConfigs.GetNameplateDescription(Id), table.concat(descTab)))
     self.TxtDecs.text = formatContent

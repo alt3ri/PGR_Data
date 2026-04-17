@@ -43,15 +43,29 @@ function XUiFashionSuitLobbyPanelRight:Refresh(cfg)
     self:UpdateReddot()
     self:UpdateReward()
     self.Grid256New.gameObject:SetActiveEx(false)
-    
 
     self.BtnClick:SetNameByGroup(0, cfg.Name)
-    local txtDesc = ""
-    if not cfg.IsComplete then
-        txtDesc = XUiHelper.GetText("FashionSuitProgress3")
+
+    local uiConfig = self._Control:GetFashionSuitUiConfigById(cfg.Id)
+    self.BtnClick:SetRawImage(uiConfig.SuitBackground)
+    self.UiRImgPicCG:SetRawImage(uiConfig.FirstBg)
+    self:HideUiByComplete()
+end
+
+function XUiFashionSuitLobbyPanelRight:HideUiByComplete()
+
+    if not self._Cfg then
+        return
     end
-    self.BtnClick:SetNameByGroup(1, txtDesc)
-    self.BtnClick:SetRawImage(cfg.SuitBackground)
+    -- self.BtnClick:ActiveTextByGroup(1,not self._Cfg.IsComplete)
+    if self.PanelTxtDesc then
+        self.PanelTxtDesc.gameObject:SetActiveEx(not self._Cfg.IsComplete)
+    end
+    self.BtnClick:SetNameByGroup(1,  XUiHelper.GetText("FashionSuitProgress3"))
+    self.PanelRewardContent.gameObject:SetActiveEx(self._Cfg.IsComplete)
+    if self._Cfg.IsComplete then
+        return
+    end
 end
 
 function XUiFashionSuitLobbyPanelRight:SetUiSprite(imgQuality, spriteName)
@@ -62,41 +76,45 @@ function XUiFashionSuitLobbyPanelRight:OnBtnClickClick(eventData)
     XLuaUiManager.Open("UiFashionSuitMain", self._Cfg.Id)
 end
 
+
 function XUiFashionSuitLobbyPanelRight:UpdateReddot()
     if not self._Cfg then
+        self.BtnClick:ShowReddot(false)
+        self.BtnClick:ShowTag(false)
         return
     end
-    local isRed = false
-    for _, fashionId in pairs(self._Cfg.FashionIds) do
-        if not XMVCA.XFashionSuit:IsFashionViewed(fashionId) then
-            isRed = true
-            break
-        end
+    local hasNew = self._Control:IsSuitHasNew(self._Cfg.Id)
+    local canGetReward =self._Cfg.IsComplete and self._Control:IsSuitRewardCanGain(self._Cfg.Id)
+    if canGetReward then
+        hasNew = false
     end
-    self.BtnClick:ShowReddot(isRed)
+    self.BtnClick:ShowReddot(canGetReward)
+    self.BtnClick:ShowTag(hasNew)
 end
 
 function XUiFashionSuitLobbyPanelRight:UpdateReward()
     if not self._Cfg then
         return
     end
-self.RewardPanelList = self.RewardPanelList or {}
+    self.RewardPanelList = self.RewardPanelList or {}
     for i = 1, #self.RewardPanelList do
         self.RewardPanelList[i].GameObject:SetActiveEx(false)
     end
-    local temp = {
-        ShowReceived = self._Control:IsSuitRewardGain(self._Cfg.Id)
-    }
-    local rewardsList = XRewardManager.GetRewardList(self._Cfg.RewardId)
-    for i = 1, #rewardsList do
-        if not self.RewardPanelList[i] then
-            local grid = XUiHelper.Instantiate(self.Grid256New, self.Grid256New.transform.parent)
-            local item = XUiGridCommon.New(self, grid)
-            table.insert(self.RewardPanelList, item)
+    if self._Cfg.IsComplete then
+        local rewards = XRewardManager.GetRewardList(self._Cfg.RewardId)
+        for i = 1, #rewards do
+            local grid = self.RewardPanelList[i]
+            if not grid then
+                local ui = XUiHelper.Instantiate(self.Grid256New, self.Grid256New.transform.parent)
+                grid = XUiGridCommon.New(self, ui)
+                table.insert(self.RewardPanelList, grid)
+            end
+            grid:Refresh(rewards[i])
+            local isRewardGain = self._Control:IsSuitRewardGain(self._Cfg.Id)
+            grid:SetReceived(isRewardGain)
+            grid.GameObject:SetActiveEx(true)
         end
-        local gridUi = self.RewardPanelList[i]
-        gridUi.GameObject:SetActiveEx(true)
-        gridUi:Refresh(rewardsList[i],temp)
     end
 end
+
 return XUiFashionSuitLobbyPanelRight

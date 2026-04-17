@@ -123,6 +123,9 @@ function XUiPBRShopNew:RefreshShopShow()
     local itemIds = self._Control.InGameControl:GetShopSellItemIds()
 
     self.PanelItem:RefreshGoodsShow(itemIds)
+    
+    -- 刷新了商品后需要手动检查引导
+    XDataCenter.GuideManager.CheckGuideOpen()
 end
 
 function XUiPBRShopNew:RefreshCharacterInfo()

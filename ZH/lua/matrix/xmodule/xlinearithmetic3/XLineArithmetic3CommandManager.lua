@@ -15,6 +15,86 @@ function XLineArithmetic3CommandManager:Ctor(uiGame, game)
     self._IsPlaying = false
     -- 是否正在倒放
     self._IsRewinding = false
+    -- 移动音效 CueId
+    self._MoveCueId = nil
+end
+
+--- 播放移动音效（公开方法，供 UiGame 调用）
+function XLineArithmetic3CommandManager:PlayMoveSound()
+    self:_PlayMoveSound()
+end
+
+--- 停止移动音效（公开方法，供 UiGame 调用）
+function XLineArithmetic3CommandManager:StopMoveSound()
+    self:_StopMoveSound()
+end
+
+--- 获取移动音效 CueId
+function XLineArithmetic3CommandManager:_GetMoveCueId()
+    if not self._MoveCueId then
+        self._MoveCueId = XMVCA.XLineArithmetic3:GetClientConfigNumberByKey("MoveCueId") or 0
+    end
+    return self._MoveCueId
+end
+
+--- 获取撤回音效 CueId
+function XLineArithmetic3CommandManager:_GetRevokeCueId()
+    return XMVCA.XLineArithmetic3:GetClientConfigNumberByKey("RevokeCueId") or 0
+end
+
+--- 获取选择路径音效 CueId
+function XLineArithmetic3CommandManager:_GetSelectPathCueId()
+    return XMVCA.XLineArithmetic3:GetClientConfigNumberByKey("SelectPathCueId") or 0
+end
+
+--- 获取点击障碍音效
+function XLineArithmetic3CommandManager:_GetClickObstacleCueId()
+    return XMVCA.XLineArithmetic3:GetClientConfigNumberByKey('ClickObstacleCueId')
+end
+
+--- 播放移动音效
+function XLineArithmetic3CommandManager:_PlayMoveSound()
+    local cueId = self:_GetMoveCueId()
+    XLog.Debug("[CommandManager] _PlayMoveSound called, cueId=" .. tostring(cueId))
+    if XTool.IsNumberValidEx(cueId) then
+        XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, cueId)
+    end
+end
+
+--- 停止移动音效
+function XLineArithmetic3CommandManager:_StopMoveSound()
+    local cueId = self:_GetMoveCueId()
+    XLog.Debug("[CommandManager] _StopMoveSound called, cueId=" .. tostring(cueId))
+    if XTool.IsNumberValidEx(cueId) then
+        XLuaAudioManager.StopAudioByCueId(cueId)
+    end
+end
+
+--- 播放撤回音效
+function XLineArithmetic3CommandManager:_PlayRevokeSound()
+    local cueId = self:_GetRevokeCueId()
+    XLog.Debug("[CommandManager] _PlayRevokeSound called, cueId=" .. tostring(cueId))
+    if XTool.IsNumberValidEx(cueId) then
+        XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, cueId)
+    end
+end
+
+--- 播放选择路径的音效
+function XLineArithmetic3CommandManager:PlaySelectPathSound()
+    local cueId = self:_GetSelectPathCueId()
+
+    if XTool.IsNumberValidEx(cueId) then
+        XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, cueId)
+    end
+end
+
+--- 播放点击障碍的音效
+function XLineArithmetic3CommandManager:PlayClickObstacleSound()
+    local cueId = self:_GetClickObstacleCueId()
+
+    if XTool.IsNumberValidEx(cueId) then
+        XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, cueId)
+    end
 end
 
 --- 记录一组操作的起始索引（在播放一组指令前调用）
@@ -47,10 +127,14 @@ end
 ---@param groupCount number 要撤销的组数
 ---@param onComplete function
 function XLineArithmetic3CommandManager:UndoGroups(groupCount, onComplete)
+    XLog.Debug("[CommandManager] UndoGroups called, groupCount=" .. tostring(groupCount) .. ", groupSizes=" .. #self._GroupSizes .. ", currentIndex=" .. self._CurrentIndex)
     if groupCount <= 0 or #self._GroupSizes <= 0 or self._CurrentIndex <= 0 then
         if onComplete then onComplete() end
         return
     end
+
+    -- 播放撤回音效（整个撤回操作只播放一次）
+    self:_PlayRevokeSound()
 
     -- 合并多组的命令总数
     local totalSteps = 0
@@ -83,6 +167,7 @@ end
 ---@param commands XLineArithmetic3Command[]
 ---@param onAllComplete function
 function XLineArithmetic3CommandManager:ExecuteCommands(commands, onAllComplete)
+    XLog.Debug("[CommandManager] ExecuteCommands called, commands count=" .. tostring(commands and #commands or 0))
     if not commands or #commands == 0 then
         if onAllComplete then onAllComplete() end
         return
@@ -93,6 +178,9 @@ function XLineArithmetic3CommandManager:ExecuteCommands(commands, onAllComplete)
     self._PendingIndex = 0
     self._OnAllComplete = onAllComplete
 
+    -- 开始播放移动音效
+    self:_PlayMoveSound()
+
     self:_ExecuteNextCommand()
 end
 
@@ -101,6 +189,8 @@ function XLineArithmetic3CommandManager:_ExecuteNextCommand()
 
     if self._PendingIndex > #self._PendingCommands then
         self._IsPlaying = false
+        -- 所有命令执行完成，停止移动音效
+        self:_StopMoveSound()
         if self._OnAllComplete then self._OnAllComplete() end
         return
     end
@@ -163,6 +253,8 @@ function XLineArithmetic3CommandManager:Stop()
     self._IsPlaying = false
     self._IsRewinding = false
     self._UiGame:StopAllTweens()
+    -- 停止移动音效
+    self:_StopMoveSound()
 end
 
 --- 是否正在播放

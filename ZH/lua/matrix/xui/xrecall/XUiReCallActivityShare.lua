@@ -53,7 +53,7 @@ end
 
 function XUiReCallActivityShare:InitUiAfterAuto()
     self.CapturePanel = XUiPhotographCapturePanel.New(self, self.PanelCapture)
-    self.SDKPanel = XUiPhotographSDKPanel.New(self, self.PanelSDK)
+    self.SDKPanel = XUiPhotographSDKPanel.New(self, self.PanelSDK, true)
 
     self.OnShareSuccessCb = handler(self, self.OnShareSuccess)
     XEventManager.AddEventListener(XEventId.EVENT_PHOTO_SHARE_SUCCESS, self.OnShareSuccessCb)
@@ -130,7 +130,7 @@ function XUiReCallActivityShare:ReCallRecord(share_type)
 end
 
 function XUiReCallActivityShare:GetPlatformType2CustomText(platformType)
-    local config = self._Control:GetRegressionPlatformConfigById(platformType)
+    local config = self._Control:GetRegressionPlatformConfigByKey(platformType)
     if config == nil then
         return nil
     end

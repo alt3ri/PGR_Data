@@ -222,6 +222,7 @@ function XTaskConfig.GetWeeklyActivenessRewardIds()
     return WeeklyActivenessTemplate.RewardId
 end
 
+---@return XTableTaskTimeLimit
 function XTaskConfig.GetTimeLimitTaskCfg(id)
     local cfg = TimeLimitTaskTemplate[id]
     if not cfg then

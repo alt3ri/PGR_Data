@@ -102,16 +102,22 @@ function XUiFashionSuitDetail:OnDestroy()
 end
 
 function XUiFashionSuitDetail:InitView()
-    local color = XUiHelper.Hexcolor2Color(self._SuitConfig.LineColor)
+    local uiConfig = self._Control:GetFashionSuitUiConfigById(self._SuitId)
+    local color = XUiHelper.Hexcolor2Color(uiConfig.LineColor)
     self.Grid256New.gameObject:SetActiveEx(false)
-    self.RImgDetailBg:SetRawImage(self._SuitConfig.DetailBg)
-    self.RImgLogoBg:SetRawImage(self._SuitConfig.LogoBg)
+    self.RImgDetailBg:SetRawImage(uiConfig.DetailBg[1])
+    self.RImgDetailBg1:SetRawImage(uiConfig.DetailBg[2])
+    self.RImgDetailBg2:SetRawImage(uiConfig.DetailBg[3])
+    self.RImgLogoBg:SetRawImage(uiConfig.LogoBg)
     self.ImgLine1.color = color
     self.ImgLine2.color = color
     self.ImgWord1.color = color
     self.ImgWord2.color = color
-    self._ButtonGroup:SetButtonBg(self._SuitConfig.BtnBuyBg, self._SuitConfig.BtnGetBg, self._SuitConfig.BtnWearBg)
-    
+    self._ButtonGroup:SetButtonBg(uiConfig.BtnBuyBg, uiConfig.BtnGetBg, uiConfig.BtnWearBg)
+    if uiConfig.SliderMax and uiConfig.SliderMax > 0 then
+        self.SliderCharacterHight.maxValue = uiConfig.SliderMax
+    end
+
     self:OnBtnShowUiClick()
     self:OnBtnTipsCloseClick()
 end
@@ -141,8 +147,15 @@ function XUiFashionSuitDetail:UpdateBuyBtn()
 end
 
 function XUiFashionSuitDetail:UpdateGroupSales(id)
+    
     local isVisible = XMVCA.XFashionSuit:IsAllowGroupSales(id)
-    self._ButtonGroup:SetBtnBuySuitVisible(isVisible)
+    local skipUpdateView = true
+    if self._RecordId then
+        skipUpdateView = self._RecordId == id
+    end
+    self._RecordId = id
+    self._ButtonGroup:SetBtnBuySuitVisible(isVisible, skipUpdateView)
+
 end
 
 function XUiFashionSuitDetail:UpdateFashionDetail()
@@ -150,8 +163,12 @@ function XUiFashionSuitDetail:UpdateFashionDetail()
     self.TxtFashionName.text = self._Helper:GetName()
     self.TxtCharacterName.text = self._Helper:GetCharacterName()
     self.ImgTagNew.gameObject:SetActiveEx(self._Helper:IsTagNewVisible())
+    local uiConfig = self._Control:GetFashionSuitUiConfigById(self._SuitId)
+    local color = XUiHelper.Hexcolor2Color(uiConfig.LineColor)
+    self.TxtSuitName.color = color
     self.TxtSuitName.text = self._SuitConfig.Name
-    self.RImgSuitIcon:SetRawImage(self._SuitConfig.SuitBanner)
+    local uiConfig = self._Control:GetFashionSuitUiConfigById(self._SuitId)
+    self.RImgSuitIcon:SetRawImage(uiConfig.SuitBanner)
     self.TxtStoryTips.text = self._Helper:GetDesc()
     self.PanelLeftBtnGroup.gameObject:SetActiveEx(not self._Helper:IsWeapon())
     self.BtnPic.gameObject:SetActiveEx(self._Helper:IsBtnPicVisible())
@@ -243,12 +260,10 @@ function XUiFashionSuitDetail:UpdateCamera(camera)
 end
 
 function XUiFashionSuitDetail:OnSliderCharacterHightChanged()
-    local near = self.ModelCamera[self._IsHideUi and CameraIndex.HideNear or CameraIndex.Near]
-    local far = self.ModelCamera[self._IsHideUi and CameraIndex.FarHideNear or CameraIndex.Far]
-    local pos = near.position
-    local target = CS.UnityEngine.Vector3(pos.x, 1.7 - self.SliderCharacterHight.value, pos.z)
-    near.position = target
-    far.position = target
+    local pos = self.OriginalCameraPosition[self._IsHideUi and CameraIndex.HideNear or CameraIndex.Near]
+    local posX, posY, posZ = pos.x, pos.y - self.SliderCharacterHight.value, pos.z
+    self.ModelCamera[self._IsHideUi and CameraIndex.HideNear or CameraIndex.Near]:SetLocalPosition(posX, posY, posZ)
+    self.ModelCamera[self._IsHideUi and CameraIndex.FarHideNear or CameraIndex.Far]:SetLocalPosition(posX, posY, posZ)
 end
 
 --endregion
@@ -256,9 +271,10 @@ end
 --region 场景
 
 function XUiFashionSuitDetail:InitSceneRoot(id)
-    local cameraPath = self._Control:GetClientConfig("CameraPrefabPath")
+    local uiConfig = self._Control:GetFashionSuitUiConfigById(self._SuitId)
+    local cameraPath = uiConfig.CameraPrefabPath
     self.ModelCamera = {}
-    self:LoadUiScene(self._SuitConfig.ScenePrefabPath, cameraPath, function()
+    self:LoadUiScene(uiConfig.ScenePrefabPath, cameraPath, function()
         local root = self.UiModelGo.transform
         local uiObject = {}
         XUiHelper.InitUiClass(uiObject, root)
@@ -276,18 +292,25 @@ function XUiFashionSuitDetail:InitSceneRoot(id)
         self.ModelCamera[CameraIndex.FarHideNear] = uiObject.UiFarHideUiCameraFarest
         self.WeaponDOFBurAnim = root:Find("Animation/WeaponDOFBur")
         
+            
         self.ImgEffectHuanren = uiObject.ImgEffectHuanren
         self.ImgEffectHuanren1 = uiObject.ImgEffectHuanren1
         self:OnBtnLensInClick()
-        self:InitCameraTransform()
+        self.OriginalCameraPosition = {}
+        self.OriginalCameraPosition[CameraIndex.Far] = self.ModelCamera[CameraIndex.Far].transform.localPosition
+        self.OriginalCameraPosition[CameraIndex.Near] = self.ModelCamera[CameraIndex.Near].transform.localPosition
+        self.OriginalCameraPosition[CameraIndex.HideNear] = self.ModelCamera[CameraIndex.HideNear].transform.localPosition
+        self.OriginalCameraPosition[CameraIndex.FarHideNear] = self.ModelCamera[CameraIndex.FarHideNear].transform.localPosition
+        -- self:InitCameraTransform()
         self:UpdateGroupSales(id)
     end)
 end
 
 function XUiFashionSuitDetail:InitModelHandler()
-    self._FashionModelPos = Vector3(self._SuitConfig.RolePosX, self._SuitConfig.RolePosY, self._SuitConfig.RolePosZ)
-    self._WeaponModelPos = Vector3(self._SuitConfig.WeaponPosX, self._SuitConfig.WeaponPosY, self._SuitConfig.WeaponPosZ)
-    self._FashionModleRotation = Vector3(self._SuitConfig.RoleRotationX, self._SuitConfig.RoleRotationY, self._SuitConfig.RoleRotationZ)
+    local uiConfig = self._Control:GetFashionSuitUiConfigById(self._SuitId)
+    self._FashionModelPos = Vector3(uiConfig.RolePosX, uiConfig.RolePosY, uiConfig.RolePosZ)
+    self._WeaponModelPos = Vector3(uiConfig.WeaponPosX, uiConfig.WeaponPosY, uiConfig.WeaponPosZ)
+    self._FashionModleRotation = Vector3(uiConfig.RoleRotationX, uiConfig.RoleRotationY, uiConfig.RoleRotationZ)
     self._UiFashionNearCamAngle = Vector3(2.25, 0, 0)
 
     self._ModelHander = {}
@@ -302,7 +325,10 @@ end
 
 function XUiFashionSuitDetail:UpdateFashionModel()
     local fashionConfig = XFashionConfigs.GetFashionTemplate(self._Context.FashionId)
-    self._VirtualNearCameraTran.localEulerAngles = self._VirtualNearCameraAngles --使用策划配置的相机旋转角度
+    local uiConfig = self._Control:GetFashionSuitUiConfigById(self._SuitId)
+    local angles = Vector3(uiConfig.RoleRotationX, uiConfig.RoleRotationY, uiConfig.RoleRotationZ)
+    local virtualNearCameraTran = self.ModelCamera[CameraIndex.Normal].transform
+    virtualNearCameraTran.localEulerAngles = angles --使用策划配置的相机旋转角度
     self.PanelWeapon.gameObject:SetActiveEx(false)
     self.UiModelParent.gameObject:SetActiveEx(true)
     self.RoleModelPanel:UpdateCharacterResModel(fashionConfig.ResourcesId, fashionConfig.CharacterId, XModelManager.MODEL_UINAME.XUiFashionSuitDetail, function(model)
@@ -323,6 +349,7 @@ function XUiFashionSuitDetail:UpdateFashionModel()
 end
 
 function XUiFashionSuitDetail:UpdateWeaponModel()
+    self._VirtualNearCameraTran = self.ModelCamera[CameraIndex.Normal].transform
     self._VirtualNearCameraTran.localEulerAngles = self._UiFashionNearCamAngle --使用UiFashionDetail界面的相机旋转角度
     self.PanelWeapon.gameObject:SetActiveEx(true)
     self.PanelWeapon.localPosition = self._WeaponModelPos
@@ -347,30 +374,44 @@ function XUiFashionSuitDetail:ShowImgEffectHuanren(templateId)
 end
 
 function XUiFashionSuitDetail:InitCameraTransform(modelUrl)
-    local virtualNearCameraTran = self.UiModelGo.transform:FindTransform("FashionCamNearMain")
-    local virtualFarCameraTran = self.UiModelGo.transform:FindTransform("FashionCamFarMain")
+    local virtualNearCameraTran = self.ModelCamera[CameraIndex.Normal].transform
+    local virtualFarCameraTran = self.ModelCamera[CameraIndex.FarNormal]
+    local hideUiNearCameraTran = self.ModelCamera[CameraIndex.Hide]
+    local hideUiFarCameraTran = self.ModelCamera[CameraIndex.FarHide]
     if XTool.UObjIsNil(virtualNearCameraTran) or XTool.UObjIsNil(virtualFarCameraTran) then
         XLog.Error("虚拟相机【FashionCamNearMain】不存在")
         return
     end
+    if XTool.UObjIsNil(hideUiNearCameraTran) or XTool.UObjIsNil(hideUiFarCameraTran) then
+        XLog.Error("隐藏相机【UiNearHideUiCamera】不存在")
+        return
+    end
 
-    local position = Vector3(self._SuitConfig.CameraPosX, self._SuitConfig.CameraPosY, self._SuitConfig.CameraPosZ)
-    local angles = Vector3(self._SuitConfig.CameraRotationX, self._SuitConfig.CameraRotationY, self._SuitConfig.CameraRotationZ)
+    local uiConfig = self._Control:GetFashionSuitUiConfigById(self._SuitId)
+    local position = Vector3(uiConfig.CameraPosX, uiConfig.CameraPosY, uiConfig.CameraPosZ)
+    local angles = Vector3(uiConfig.CameraRotationX, uiConfig.CameraRotationY, uiConfig.CameraRotationZ)
+
     virtualNearCameraTran.localPosition = position
     virtualFarCameraTran.localPosition = position
     virtualFarCameraTran.localEulerAngles = angles
 
+    local nearPosition = Vector3(uiConfig.HideCameraPosX, uiConfig.HideCameraPosY, uiConfig.HideCameraPosZ)
+    local nearAngles = Vector3(uiConfig.HideCameraRotationX, uiConfig.HideCameraRotationY, uiConfig.HideCameraRotationZ)
+    hideUiNearCameraTran.localPosition = nearPosition
+    hideUiFarCameraTran.localPosition = nearPosition
+    hideUiFarCameraTran.localEulerAngles = nearAngles
+
     local nearVirtualCamera = virtualNearCameraTran:GetComponent("CinemachineVirtualCamera")
     if not XTool.UObjIsNil(nearVirtualCamera) then
         local newLens = nearVirtualCamera.m_Lens
-        newLens.FieldOfView = self._SuitConfig.CameraFov
+        newLens.FieldOfView = uiConfig.CameraFov
         nearVirtualCamera.m_Lens = newLens
     end
 
     local farVirtualCamera = virtualFarCameraTran:GetComponent("CinemachineVirtualCamera")
     if not XTool.UObjIsNil(farVirtualCamera) then
         local newLens = farVirtualCamera.m_Lens
-        newLens.FieldOfView = self._SuitConfig.CameraFov
+        newLens.FieldOfView = uiConfig.CameraFov
         farVirtualCamera.m_Lens = newLens
     end
     self._VirtualNearCameraTran = virtualNearCameraTran
@@ -484,7 +525,7 @@ end
 
 --endregion
 
-function XUiFashionSuitDetail:SetGroupSales(isVisible, isEnable)
+function XUiFashionSuitDetail:ApplyGroupSalesState(isVisible, isEnable)
     local isOpen = isVisible and isEnable
     if isOpen then
         self._Context:SwitchToGroup()
@@ -492,6 +533,10 @@ function XUiFashionSuitDetail:SetGroupSales(isVisible, isEnable)
         self._Context:SwitchToSingle()
     end
     self._Helper:SetGroupSales(isOpen)
+end
+
+function XUiFashionSuitDetail:SetGroupSales(isVisible, isEnable)
+    self:ApplyGroupSalesState(isVisible, isEnable)
     self:UpdateView()
 end
 

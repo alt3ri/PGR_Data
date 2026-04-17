@@ -36,6 +36,8 @@ function XUiFashionSuitPopupNew:InitComponents()
     self.BtnNext:AddEventListener(function() self:OnBtnNextClick() end)
     self.BtnLast:AddEventListener(function() self:OnBtnLastClick() end)
     self.PanelInfo = XUiFashionSuitPopupNewPanelInfo.New(self.PanelInfo, self)
+    self.BtnPicUi = {}
+    XTool.InitUiObjectByUi(self.BtnPicUi,self.BtnPic)
 end
 
 function XUiFashionSuitPopupNew:OnStart(noticeIds)
@@ -66,6 +68,13 @@ end
 function XUiFashionSuitPopupNew:Refresh(lastIndex)
     local cfg = XFashionConfigs.GetFashionTemplate(self._ShowFashionId)
     self.BtnPic:SetRawImage(cfg.FashionSuitResourcePicPath)
+
+    local suitId = XMVCA.XFashionSuit:GetFashionSuitId(self._ShowFashionId)
+    local tex = self._Control:GetClientConfig("LockSuitImageBorder"..suitId, cfg.FashionSuitRare)
+    self.BtnPicUi.Kuang1:SetRawImage(tex)
+    self.BtnPicUi.Kuang2:SetRawImage(tex)
+    
+
     self._BtnDots[self._CurIndex]:SetButtonState(CS.UiButtonState.Select)
     if XTool.IsNumberValid(lastIndex) and lastIndex > -1 then
         self._BtnDots[lastIndex]:SetButtonState(CS.UiButtonState.Normal)

@@ -15,13 +15,14 @@ function XUiFashionSuitMain:OnAwake()
 end
 
 function XUiFashionSuitMain:OnStart(suitId)
-    XUiHelper.NewPanelTopControl(self, self.TopControlWhite)
+    XUiHelper.NewPanelTopControl(self, self.TopControlWhite)    
 
     local config = self._Control:GetFashionSuitById(suitId)
-    local go = self.PanelSuit:LoadPrefab(config.PrefabPath)
+    local uiConfig = self._Control:GetFashionSuitUiConfigById(suitId)
+    local go = self.PanelSuit:LoadPrefab(uiConfig.PrefabPath)
+   
     ---@type XUiPanelFashionSuitNormal
-    self._SuitView = require("XUi/XUiFashionSuit/Panel/XUiPanelFashionSuitNormal").New(go, self)
-    self._SuitView:SetSuitId(suitId)
+    self._SuitView = require("XUi/XUiFashionSuit/Panel/XUiPanelFashionSuitNormal").New(go,self,suitId)
 
     --请求商店开启信息
     XMVCA.XFashionSuit:CheckFashionShopOpen(suitId)

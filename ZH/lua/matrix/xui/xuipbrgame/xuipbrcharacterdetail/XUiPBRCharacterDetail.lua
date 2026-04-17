@@ -83,6 +83,8 @@ function XUiPBRCharacterDetail:OnCharacterSelectChanged(cfg)
     
     -- 切换模型
     self.RoleModel:InitShowCharacter(cfg.CuteModelName)
+    
+    self.CurCharacterId = cfg.CharacterId
 end
 
 return XUiPBRCharacterDetail

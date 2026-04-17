@@ -46,12 +46,13 @@ function XBigWorldQuestAgency:NotifyDlcInviteQuestResultReward(data)
         return
     end
     local questId, resultId, rewardItems = data.QuestId, data.ResultId, data.RewardItems
+    local showNewTag = not self._Model:CheckInviteResultFinish(resultId)
     self._Model:AddFinishInviteResult(resultId)
     self._Model:InitInviteInfo(data.InviteQuestInfo)
     if rewardItems and not XTool.IsTableEmpty(rewardItems) then
         XMVCA.XBigWorldUI:OpenBigWorldRewardGoods(rewardItems)
     end
-    self:OpenInvitationDetail(questId, resultId, true)
+    self:OpenInvitationDetail(questId, resultId, true, showNewTag)
 end
 
 function XBigWorldQuestAgency:NotifyDlcInviteQuestResultNumReward(data)

@@ -41,6 +41,8 @@ function XSubPackageAgency:OnInit()
     self._DownloadingResId = 0
     self._IsDownloadGroup = false --是否为一组同时下载
     self._PreparePauseSubpackageId = 0 --准备暂停的Id
+    self._PreparePauseResId = nil -- Res级异步暂停中的resId（对标Sub级的_PreparePauseSubpackageId）
+    self._PendingResumeResId = nil -- 暂停窗口期内缓存的恢复请求resId
     self._IsPause = false
 
     self._CheckTypeCountThisLogin = {}  -- 本次登录检测类型触发次数
@@ -387,6 +389,10 @@ end
 function XSubPackageAgency:AddResToDownload(resId)
     -- XLog.Warning("SP/DN AddResToDownload", resId, self._ResWaitDnLdQueue)
     if self._DownloadingResId == resId then
+        -- [修复] 如果该res正在异步暂停中，缓存恢复请求而不是丢弃
+        if self._PreparePauseResId == resId then
+            self._PendingResumeResId = resId
+        end
         return
     end
     -- 队列去重：检查resId是否已在等待队列中
@@ -397,8 +403,6 @@ function XSubPackageAgency:AddResToDownload(resId)
     end
     local resItem = self._Model:GetResourceItem(resId)
     resItem:PrepareDownload()
-    -- [F10最终] 标记游戏内下载意图（专用持久化，不污染 Launch 层）
-    self:MarkInGameResIntent(resId)
     table.insert(self._ResWaitDnLdQueue, resId)
     self:DoResDownload()
 end
@@ -407,6 +411,12 @@ function XSubPackageAgency:DoResDownload()
     -- XLog.Warning("SP/DN DoResDownload", self._DownloadingResId, self._ResWaitDnLdQueue)
     if XTool.IsNumberValid(self._DownloadingResId) then
         return
+    end
+
+    -- [安全网] 清理残留的Res级暂停标记（回调可能被Sub级接管跳过）
+    if self._PreparePauseResId then
+        self._PreparePauseResId = nil
+        self._PendingResumeResId = nil
     end
 
     -- 跳过已完成的res，用限次循环防止意外无限
@@ -432,22 +442,41 @@ function XSubPackageAgency:DoResDownload()
     self:StartDownload()
 end
 
-function XSubPackageAgency:OnResDownloadRelease()
-    -- XLog.Warning("SP/DN OnResDownloadRelease", self._ResWaitDnLdQueue, self._PreparePauseSubpackageId, self._DownloadingResId)
+function XSubPackageAgency:OnResDownloadRelease(callbackResId)
+    -- XLog.Warning("SP/DN OnResDownloadRelease", callbackResId, self._ResWaitDnLdQueue, self._PreparePauseSubpackageId, self._DownloadingResId)
 
     if self._DownloadCenter then
         self._DownloadCenter:SetFailedTaskGroupMethod(2)
     end
+    -- 优先使用回调传入的resId，兜底用_DownloadingResId（兼容历史调用）
+    local releasedResId = callbackResId or self._DownloadingResId
     -- 记录下载完成 不然登录会变成热更新
     if self._DownloadingResId then
         local resItem = self._Model:GetResourceItem(self._DownloadingResId)
         if resItem:IsComplete() then
             self._LaunchDlcManager.SetLaunchDownloadRecord(self._DownloadingResId)
-            -- [F10最终] res 完成后清除进行中 intent（COMPLETE 态走 CheckNeedDownload 语义）
-            self:ClearInGameResIntent(self._DownloadingResId)
             CS.UnityEngine.PlayerPrefs.Save()
         end
         self._DownloadingResId = nil
+    end
+
+    -- [修复] Res级暂停收口（对标Sub级的_PreparePauseSubpackageId逻辑）
+    if self._PreparePauseResId and self._PreparePauseResId == releasedResId then
+        self._PreparePauseResId = nil
+        -- 检查是否有暂停窗口期内缓存的恢复请求
+        if self._PendingResumeResId == releasedResId then
+            self._PendingResumeResId = nil
+            -- 暂停已完成，立即恢复下载（不派发PAUSE事件）
+            self:AddResToDownload(releasedResId)
+            return
+        end
+        -- 无待恢复请求，正常落入PAUSE终态
+        local resItem = self._Model:GetResourceItem(releasedResId)
+        if resItem and not resItem:IsComplete() then
+            resItem:Pause()
+        end
+        XEventManager.DispatchEvent(XEventId.EVENT_RES_PAUSE_COMPLETE, releasedResId)
+        -- 注意：不return，继续走下方队列逻辑（Res级暂停不阻塞其他Res的队列）
     end
 
     if XTool.IsNumberValid(self._PreparePauseSubpackageId) then
@@ -640,6 +669,9 @@ end
 --标记为暂停状态
 function XSubPackageAgency:PauseDownload(subpackageId)
     -- XLog.Warning("SP/DN PauseDownload", subpackageId, self._SubpackageWaitDnLdQueue)
+    -- [修复] Sub级暂停接管时，清除Res级暂停标记，避免残留
+    self._PreparePauseResId = nil
+    self._PendingResumeResId = nil
     local subpackageItem = self._Model:GetSubpackageItem(subpackageId)
     subpackageItem:PreparePause()
     subpackageItem._WaitPause = true
@@ -748,6 +780,8 @@ function XSubPackageAgency:OnDownloadRelease()
     self._IsDownloadGroup = false
     self._DownloadPackageId = 0
     self._PreparePauseSubpackageId = 0
+    self._PreparePauseResId = nil
+    self._PendingResumeResId = nil
     self._Downloader = nil
 
     -- 先清完所有 Sub 级标记，再派发事件，确保 Grid 刷新时 IsSubOrResDownloading 能正确判定
@@ -757,7 +791,7 @@ function XSubPackageAgency:OnDownloadRelease()
 
     -- 保底若 OnResDownloadRelease 被拦截了 这里还能再处理一次队列下载
     if not XTool.IsNumberValid(self._DownloadingResId) then
-        self:StartDownload()
+        self:DoResDownload()
     end
 end
 
@@ -858,80 +892,80 @@ function XSubPackageAgency:IsResUsedByOtherProcessSubpackage(checkResId, exclude
     return false
 end
 
--- [重构] 外部调用的单个资源卸载接口（自动异步）
-function XSubPackageAgency:UninstallResourceById(resId, cb)
-    if not resId or resId <= 0 then return end
+-- 批量资源卸载接口（替代原 UninstallResourceById，复刻 UninstallSubpackageById 的稳定模式）
+-- 单协程串行处理，每个 Res 之间无条件让帧，保证遮罩可见
+function XSubPackageAgency:UninstallResourcesByIds(resIds, cb)
+    if not resIds or #resIds == 0 then
+        if cb then cb() end
+        return
+    end
 
-    -- 如果正在进行批量卸载（锁住了），则不允许单独插队
     if self._IsUninstalling then
         XLog.Warning("正在卸载资源，请稍候...")
         return
     end
 
-    -- 该资源正在下载中，不允许卸载（仅拦截目标资源，不影响其他已完成资源的卸载）
-    if self._DownloadingResId == resId then
+    if self._IsDownloading or XTool.IsNumberValid(self._DownloadingResId) then
         XUiManager.TipText("SubpackageUninstallRejectDownloading")
         return
-    end
-    for _, queueResId in ipairs(self._ResWaitDnLdQueue) do
-        if queueResId == resId then
-            XUiManager.TipText("SubpackageUninstallRejectDownloading")
-            return
-        end
     end
 
     -- 递增版本号，使旧协程失效
     self._UninstallVersion = self._UninstallVersion + 1
     local currentVersion = self._UninstallVersion
 
-    -- 定义执行体
-    local execute = function()
-        self._IsUninstalling = true -- 加上锁
+    RunAsyn(function()
+        self._IsUninstalling = true
 
-        -- 调用核心逻辑
-        local cancelled = self:_UninstallResCore(resId, currentVersion)
-        if cancelled then return end
+        XLog.Warning(string.format("[XSubPackageAgency] 开始批量卸载 ResIds 数量=%d", #resIds))
 
-        -- 版本号校验
+        for _, resId in ipairs(resIds) do
+            -- 版本号校验
+            if self._UninstallVersion ~= currentVersion then
+                XLog.Warning("[XSubPackageAgency] UninstallResourcesByIds 协程被取消")
+                return
+            end
+
+            -- 调用核心逻辑（内含 _IsFileProtected 文件保护判断）
+            local cancelled = self:_UninstallResCore(resId, currentVersion)
+            if cancelled then return end
+
+            -- 无条件让出一帧，保证遮罩可渲染（复刻 UninstallSubpackageById:979）
+            asynWaitSecond(0)
+            -- yield 恢复后再次校验
+            if self._UninstallVersion ~= currentVersion then
+                XLog.Warning("[XSubPackageAgency] UninstallResourcesByIds 协程被取消")
+                return
+            end
+
+            -- 逐个刷新事件
+            local affectedSubpackageIds = self._Model:GetSubpackageIdByResId(resId)
+            if affectedSubpackageIds then
+                for _, subId in ipairs(affectedSubpackageIds) do
+                    local subItem = self._Model:GetSubpackageItem(subId)
+                    if subItem then
+                        XEventManager.DispatchEvent(XEventId.EVENT_SUBPACKAGE_UPDATE, subId, subItem:GetProgress())
+                        XEventManager.DispatchEvent(XEventId.EVENT_SUBPACKAGE_PREPARE, subId)
+                    end
+                end
+            end
+            XEventManager.DispatchEvent(XEventId.EVENT_RES_UPDATE, resId, 0)
+        end
+
+        -- 最终校验
         if self._UninstallVersion ~= currentVersion then
-            XLog.Warning("[XSubPackageAgency] UninstallResourceById 协程被取消")
             return
         end
 
-        -- 刷新事件
-        local affectedSubpackageIds = self._Model:GetSubpackageIdByResId(resId)
-        if affectedSubpackageIds then
-            for _, subId in ipairs(affectedSubpackageIds) do
-                local subItem = self._Model:GetSubpackageItem(subId)
-                if subItem then
-                    XEventManager.DispatchEvent(XEventId.EVENT_SUBPACKAGE_UPDATE, subId, subItem:GetProgress())
-                    XEventManager.DispatchEvent(XEventId.EVENT_SUBPACKAGE_PREPARE, subId)
-                end
-            end
-        end
-        XEventManager.DispatchEvent(XEventId.EVENT_RES_UPDATE, resId, 0)
-        
         -- 卸载后销毁下载器，确保下次下载时重新创建并注册新的 TaskGroup
         if self._DownloadCenter then
             self._DownloadCenter = nil
         end
 
-        self._IsUninstalling = false -- 解锁
-        -- [F10最终] 清除游戏内下载意图
-        self:ClearInGameResIntent(resId)
-        XLog.Warning(string.format("[XSubPackageAgency] 单资源异步卸载完成 ResId=%d", resId))
+        self._IsUninstalling = false
+        XLog.Warning("[XSubPackageAgency] 批量资源卸载完成")
         if cb then cb() end
-    end
-
-    -- [智能环境判断]
-    local co = coroutine.running()
-    if co then
-        -- 情况A：已经在协程里了（极少情况，除非有其他系统调它），直接跑
-        execute()
-    else
-        -- 情况B：主线程调用的（如按钮点击），启动协程包裹它
-        RunAsyn(execute)
-    end
+    end)
 end
 
 -- [重构] 分包卸载接口
@@ -1010,8 +1044,6 @@ function XSubPackageAgency:UninstallSubpackageById(subpackageId, cb)
         end
 
         self._IsUninstalling = false
-        -- [F10最终] 清除该 sub 下全部游戏内下载意图
-        self:ClearInGameResIntentBySub(subpackageId)
         XLog.Warning("[XSubPackageAgency] 卸载完成")
         -- 用户卸载分包，标记为非激活状态
         self._LaunchDlcManager.SetSubPackageActive(subpackageId, false)
@@ -1188,7 +1220,7 @@ function XSubPackageAgency:ResolveResIndex()
     end
     
     -- 初始化文件反向索引表：Key = FileName, Value = {ResId1, ResId2, ...}
-    -- 用于在 UninstallResourceById 中快速判断文件是否被其他 ResId 引用
+    -- 用于在卸载时快速判断文件是否被其他 ResId 引用
     self._FileToResIds = self._FileToResIds or {}
 
     XLog.Warning("XSubPackageAgency:ResolveResIndex Start")
@@ -1240,7 +1272,7 @@ end
 
 function XSubPackageAgency:InitDownloader()
     if not self._DownloadCenter then
-        self._DownloadCenter = XTool.CreateDownloadManager()
+        self._DownloadCenter = CS.XMTDownloadCenter()
         self._DownloadCenter:SetThreadNumber(self._ThreadCount)
         local groupIds = self._Model:GetGroupIdList()
         for _, groupId in ipairs(groupIds) do
@@ -1252,11 +1284,6 @@ function XSubPackageAgency:InitDownloader()
                     for k, taskGroup in pairs(taskGroups) do
                         taskGroup.NotifyStateChanged = handler(self, self.OnStateChanged)
                         taskGroup.NotifyProgressChanged = handler(self, self.OnProgressUpdate)
-                        if taskGroup.NotifyTaskComplete then
-                            taskGroup.NotifyTaskComplete = function(resName)
-                                self:OnSingleTaskFinish(nil, resName)
-                            end
-                        end
                         self._DownloadCenter:RegisterTaskGroup(taskGroup)
                     end
                 end
@@ -1922,6 +1949,14 @@ function XSubPackageAgency:IsPreparePause()
     return XTool.IsNumberValid(self._PreparePauseSubpackageId)
 end
 
+--- Res级是否正在异步暂停中
+function XSubPackageAgency:IsResPausing(resId)
+    if resId then
+        return self._PreparePauseResId == resId
+    end
+    return self._PreparePauseResId ~= nil
+end
+
 --是否为可选资源
 function XSubPackageAgency:IsOptional(subpackageId)
     local template = self._Model:GetSubpackageTemplate(subpackageId)
@@ -2338,6 +2373,18 @@ function XSubPackageAgency:IsResInDownloadQueue(resId)
     return false
 end
 
+--- 检查resId是否在等待队列中（不含正在下载的那个）
+---@param resId number
+---@return boolean
+function XSubPackageAgency:IsResWaitingInQueue(resId)
+    for _, queueResId in ipairs(self._ResWaitDnLdQueue) do
+        if queueResId == resId then
+            return true
+        end
+    end
+    return false
+end
+
 --- 获取Sub模式排序后的配置（代理层透传）
 ---@return table[]
 function XSubPackageAgency:GetSortedSubModeConfigs()
@@ -2444,12 +2491,11 @@ function XSubPackageAgency:PauseResListDownload(resIdList)
     end
 
     -- 情况B：resId正在被下载（_DownloadingResId），通过PauseById暂停C#下载
+    -- [修复] 不再立即resItem:Pause()，标记为"正在暂停"，等OnResDownloadRelease有序收尾
     if resIdSet[self._DownloadingResId] and self._DownloadCenter then
         self._DownloadCenter:PauseById(self._DownloadingResId)
-        local resItem = self._Model:GetResourceItem(self._DownloadingResId)
-        if resItem then
-            resItem:Pause()
-        end
+        self._PreparePauseResId = self._DownloadingResId
+        self._PendingResumeResId = nil -- 新的暂停请求清除之前的待恢复
     end
 end
 
@@ -2607,84 +2653,6 @@ function XSubPackageAgency:IsSubOrResDownloading(subpackageId)
             end
         end
     end
-    return false
-end
-
---- [F10最终] 游戏内 Res 下载意图标记（专用持久化，不污染 Launch 层）
---- 语义：用户在游戏内主动发起了该 res 的下载请求
-
-local InGameResIntentKey = "InGameResIntent_"
-
-function XSubPackageAgency:MarkInGameResIntent(resId)
-    XSaveTool.SaveData(InGameResIntentKey .. resId, true)
-end
-
-function XSubPackageAgency:HasInGameResIntent(resId)
-    return XSaveTool.GetData(InGameResIntentKey .. resId) == true
-end
-
-function XSubPackageAgency:ClearInGameResIntent(resId)
-    XSaveTool.SaveData(InGameResIntentKey .. resId, nil)
-end
-
-function XSubPackageAgency:ClearInGameResIntentBySub(subpackageId)
-    local template = self._Model:GetSubpackageTemplate(subpackageId)
-    if not template or not template.ResIds then return end
-    for _, resId in ipairs(template.ResIds) do
-        self:ClearInGameResIntent(resId)
-    end
-end
-
---- [F10最终] 检查单个 Res 是否在逻辑上有过下载行为
---- PREPARE_DOWNLOAD / DOWNLOADING => true（运行时活跃）
---- PAUSE => HasInGameResIntent(resId) 且 not HasUninstalledResId（用户主动发起的暂停）
---- COMPLETE => CheckNeedDownload(resId, false) 且 not HasUninstalledResId（已完成的下载）
---- 其他 => false
-function XSubPackageAgency:IsResLogicallyDownloadedOrInProgress(resId)
-    local resItem = self._Model:GetResourceItem(resId)
-    if not resItem then
-        return false
-    end
-
-    local state = resItem:GetState()
-    local STATE = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE
-
-    -- 1. 运行时活跃
-    if state == STATE.PREPARE_DOWNLOAD
-        or state == STATE.DOWNLOADING then
-        return true
-    end
-
-    -- 2. PAUSE：必须有游戏内下载意图标记（不靠物理字节）
-    if state == STATE.PAUSE
-        and self:HasInGameResIntent(resId)
-        and not self._LaunchDlcManager.HasUninstalledResId(resId) then
-        return true
-    end
-
-    -- 3. COMPLETE：使用 Launch 层的下载完成记录
-    if state == STATE.COMPLETE
-        and self._LaunchDlcManager.CheckNeedDownload(resId, false)
-        and not self._LaunchDlcManager.HasUninstalledResId(resId) then
-        return true
-    end
-
-    return false
-end
-
---- [F10] 检查分包下是否有任何 Res 有真实下载行为
-function XSubPackageAgency:HasSubpackageLogicalDownloadedRes(subpackageId)
-    local template = self._Model:GetSubpackageTemplate(subpackageId)
-    if not template or not template.ResIds then
-        return false
-    end
-
-    for _, resId in ipairs(template.ResIds) do
-        if self:IsResLogicallyDownloadedOrInProgress(resId) then
-            return true
-        end
-    end
-
     return false
 end
 

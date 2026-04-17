@@ -31,7 +31,8 @@ function XUiPurchaseBundle:InitGoodsShow(data)
     -- 因为折扣标签只有一个且在捆绑包选项上，这里折扣显示统一以捆绑包数据为准
     local mainData = XTool.IsTableEmpty(data.MainComboData) and data or data.MainComboData
     
-    if mainData.Discount then
+    -- 策划说没有折扣不显示，这里判断一下
+    if mainData.Discount and data.Discount < 100 then
         self.Tag.gameObject:SetActiveEx(true)
         self.TxtDiscount.text = XUiHelper.GetDiscountTextV2(data.Discount)
     else

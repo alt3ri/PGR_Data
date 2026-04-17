@@ -66,6 +66,8 @@ end
 --- -> CallFinishFight
 ---@param result XFightResult
 function XPBRGameAgency:SettleFight(result)
+    result:GetFightResult()
+    
     --- 如果是暂停界面退出的，走特殊逻辑
     local fightExitType = self._Model:GetFightExitType()
 
@@ -122,8 +124,10 @@ end
 --- -> FinishFight
 function XPBRGameAgency:CallFinishFight()
     local fightExitType = self._Model:GetFightExitType()
+    
+    local hasValidResult = XMVCA.XFuben:CheckValidSettleFight()
 
-    if fightExitType == XMVCA.XPBRGame.EnumConst.FightExitType.GiveUp then
+    if not hasValidResult or fightExitType == XMVCA.XPBRGame.EnumConst.FightExitType.GiveUp then
         -- 不请求结算，只退出
         XMVCA.XFuben:ResetSettle()
 
@@ -150,6 +154,10 @@ function XPBRGameAgency:FinishFight(settleData)
     self:_ShowWinSettle(settleData)
 end
 
+function XPBRGameAgency:OnReconnectFailExit()
+    --- 断线退出什么窗口都不打开
+    return
+end
 
 --endregion
 
@@ -186,6 +194,11 @@ function XPBRGameAgency:_OnFightSettle(settleData, res)
 end
 
 function XPBRGameAgency:_ShowWinSettle(settleData)
+    if not settleData then
+        self:DoSafeFightExit()
+        return
+    end
+    
     local stageId = settleData.StageId
     local stageType = XDataCenter.FubenManager.GetStageType(stageId)
 

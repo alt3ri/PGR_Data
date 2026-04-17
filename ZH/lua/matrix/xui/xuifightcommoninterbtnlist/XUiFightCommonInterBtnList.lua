@@ -377,10 +377,9 @@ function XUiFightCommonInterBtnList:SetPosition(...)
     local data = {...}
     local anchorPos = Vector2(data[1] / XEnumConst.GOLDEN_MINER.TEN_THOUSAND_PERCENT, 
             data[2] / XEnumConst.GOLDEN_MINER.TEN_THOUSAND_PERCENT)
-    self.OriginOptionsAnchorMin = anchorPos
-    self.OriginOptionsAnchorMax = anchorPos
-    self.OriginOptionsPos = Vector2.zero
-    self:ResetPos()
+    self.Options.transform.anchorMin = anchorPos
+    self.Options.transform.anchorMax = anchorPos
+    self.Options.transform.anchoredPosition = Vector2.zero
 end
 
 function XUiFightCommonInterBtnList:RemoveCommonInterBtn(id)

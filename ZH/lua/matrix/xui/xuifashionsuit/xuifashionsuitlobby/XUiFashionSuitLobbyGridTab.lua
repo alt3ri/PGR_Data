@@ -28,8 +28,24 @@ end
 function XUiFashionSuitLobbyGridTab:InitComponents()
     -- Button
     -- self.BtnTab:AddEventListener(function() self:OnBtnTabClick() end)
+    self.TagAllGet.gameObject:SetActiveEx(false)
+    self.TagNew.gameObject:SetActiveEx(false)
 end
 
+function XUiFashionSuitLobbyGridTab:UpdateReddot()
+    if not self._Cfg then
+        self.BtnTab:ShowReddot(false)
+        self.BtnTab:ShowTag(false)
+        return
+    end
+    local hasNew = self._Control:IsSuitHasNew(self._Cfg.Id)
+    local canGetReward =self._Cfg.IsComplete and self._Control:IsSuitRewardCanGain(self._Cfg.Id)
+    if canGetReward then
+        hasNew = false
+    end
+    self.BtnTab:ShowReddot(canGetReward)
+    self.BtnTab:ShowTag(false)
+end
 function XUiFashionSuitLobbyGridTab:OnStart(...)
     self:InitComponents()
 end
@@ -48,17 +64,32 @@ end
 
 --[=====[AUTO GENERATED START: INIT_COMPONENTS]=====]
 function XUiFashionSuitLobbyGridTab:Update(cfg)
+    self.BtnTab:SetRawImageVisible(cfg ~= nil)
+    self.BtnTab:SetDisable(cfg ~= nil)
+    self.TagAllGet.gameObject:SetActiveEx(false)
+    self.TagNew.gameObject:SetActiveEx(false)
+    if not cfg then
+        return
+    end
+
     self._Cfg = cfg
     self.Type = cfg.Type
     self.IsLock = cfg.Type == self._Control.FashionSuitType.Lock
-    self.BtnTab:SetDisable(self.IsLock)
-    if not self.IsLock then
-        self.BtnTab:SetNameByGroup(0, cfg.Name)
-        self.BtnTab:SetRawImage(cfg.SuitLogo)
+    
+    if self.IsLock then
+        self.BtnTab:SetDisable(true)
+    else
+        local uiConfig = self._Control:GetFashionSuitUiConfigById(cfg.Id)
+    
+        if uiConfig.SuitLogo then
+            self.BtnTab:SetRawImage(uiConfig.SuitLogo)
+        end
     end
-
-  
+    self.BtnTab:SetRawImageVisible(not self.IsLock)
+    self.BtnTab:SetNameByGroup(0, cfg.Name)
+   
     self:UpdateProgress()
+    self:UpdateReddot()
 end
 
 --[=====[AUTO GENERATED END: INIT_COMPONENTS]=====]
@@ -67,32 +98,41 @@ function XUiFashionSuitLobbyGridTab:UpdateProgress()
     if not self._Cfg then
         return
     end
+    self.TagNew.gameObject:SetActiveEx(false)
     if self.IsLock then
+        self.BtnTab:SetNameByGroup(1, "")
         return
     end
     local own = self._Control:GetCollectCount(self._Cfg.Id)
     self._IsAllFashionGain = #self._Cfg.FashionIds == own
-    local text = own .. "/" .. #self._Cfg.FashionIds
+    local text =":".. own .. "/" .. #self._Cfg.FashionIds
     if not self._Cfg.IsComplete then
-        text = own
+        text =":".. tostring(own)
     end
-    self.BtnTab:SetNameByGroup(1, XUiHelper.GetText("FashionSuitProgress1", text))
+    -- self.BtnTab:ActiveTextByGroup(1,  self._Cfg.IsComplete)
+    if self._IsAllFashionGain and self._Cfg.IsComplete then
+        self.BtnTab:SetNameByGroup(1, XUiHelper.GetText("FashionSuitProgressComplate"))
+    else
+        self.BtnTab:SetNameByGroup(1, XUiHelper.GetText("FashionSuitProgress1", text))
+    end
     for _, fashionId in pairs(self._Cfg.FashionIds) do
         if not self._Control:IsFashionViewed(fashionId) then
             self.TagNew.gameObject:SetActiveEx(true)
             break
         end
     end
-    self.TagAllGet.gameObject:SetActiveEx(self._IsAllFashionGain)
-    local isRewardGain = self._Control:IsSuitRewardGain(self._Cfg.Id)
-    self.BtnTab:ShowReddot( not isRewardGain)
+   
+end
+
+function XUiFashionSuitLobbyGridTab:SetSelect(isSelect)
+    if self.IsLock then
+        return
+    end
+    self.BtnTab:SetButtonState(isSelect and CS.UiButtonState.Select or CS.UiButtonState.Normal)
 end
 
 function XUiFashionSuitLobbyGridTab:OnBtnTabClick()
-    if self.Type == self._Control.FashionSuitType.Lock then
-        XUiManager.TipMsg(XUiHelper.GetText("FashionSuitProgress2"))
-        return
-    end
+
     self.Parent:OnGridTabClick(self._Cfg)
 end
 

@@ -64,10 +64,6 @@ function XUiPanelRecommendDynamicFace:SetData(data, skipFunc, buyFinished)
 
     --活动说明
     self.BtnHelp.CallBack = handler(self, self.OnRuleClick)
-
-    --活动描述
-    self.TxtActDesc1.text = XUiHelper.GetText("DynamicFaceActTip1")
-    self.TxtActDesc2.text = XUiHelper.GetText("DynamicFaceActTip2")
 end
 
 function XUiPanelRecommendDynamicFace:OnRuleClick()

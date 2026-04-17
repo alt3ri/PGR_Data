@@ -756,6 +756,11 @@ function XUiLuckyTenant2Game:StartGame(record)
 end
 
 function XUiLuckyTenant2Game:OnClickNextRound()
+    if self._IsPause then   -- 当点击对弈时强制关闭暂停状态
+        self:UnPause()
+        return
+    end
+
     if XMVCA.XLuckyTenant2:IsRequesting() then
         return
     end
@@ -821,14 +826,19 @@ function XUiLuckyTenant2Game:_OnGuideEvent(value)
         return
     end
     if value == 1 then
-        self._IsPause = false
-        -- 指引恢复时，补执行弹窗关闭时被暂停的 NextGameState（与 1 期 ShowNextQuestGoals 定时器行为一致）
-        if self._PendingNextStateFromPopupClose then
-            self._PendingNextStateFromPopupClose = false
-            self._Control:NextGameState()
-            self._Control:SetUiDataDirty(true)
-            self:UpdateInfo()
-        end
+        self:UnPause()
+    end
+end
+
+
+function XUiLuckyTenant2Game:UnPause()
+    self._IsPause = false
+    -- 指引恢复时，补执行弹窗关闭时被暂停的 NextGameState（与 1 期 ShowNextQuestGoals 定时器行为一致）
+    if self._PendingNextStateFromPopupClose then
+        self._PendingNextStateFromPopupClose = false
+        self._Control:NextGameState()
+        self._Control:SetUiDataDirty(true)
+        self:UpdateInfo()
     end
 end
 

@@ -80,6 +80,8 @@ function XLineArithmetic3ChangePassengerEmojCommand:Undo(game, onComplete)
         if headGrid then
             self._UiGame:UpdatePassengerEmoj(headGrid, self._EmojBefore)
         end
+        -- 恢复表情状态字典
+        game:SetEmojState(game:_GetHeadEmojKey(), self._EmojBefore)
         if onComplete then onComplete() end
         return
     end
@@ -93,6 +95,13 @@ function XLineArithmetic3ChangePassengerEmojCommand:Undo(game, onComplete)
     local passengerGrid = self._UiGame:GetPassengerByUid(self._PassengerUid)
     if passengerGrid then
         self._UiGame:UpdatePassengerEmoj(passengerGrid, self._EmojBefore)
+    end
+
+    -- 恢复表情状态字典
+    if self._GridX and self._GridY then
+        game:SetEmojState(game:_GetGridEmojKey(self._GridX, self._GridY), self._EmojBefore)
+    elseif self._CarriageIndex then
+        game:SetEmojState(game:_GetCarriageEmojKey(self._CarriageIndex), self._EmojBefore)
     end
 
     if onComplete then onComplete() end

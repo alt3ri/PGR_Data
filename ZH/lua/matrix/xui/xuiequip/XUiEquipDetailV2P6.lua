@@ -70,6 +70,10 @@ function XUiEquipDetailV2P6:SetButtonCallBack()
     self:RegisterClickEvent(self.BtnHelp, self.OnBtnHelpClick)
     self:RegisterClickEvent(self.BtnStrengthenMax, self.OnBtnStrengthenMax)
 
+    if XUiManager.IsHideFunc then
+        self.BtnHelp.gameObject:SetActiveEx(false)
+    end
+    
     -- 意识切换
     self:RegisterAwarenessSwitch()
 end

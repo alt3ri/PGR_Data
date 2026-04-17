@@ -9,6 +9,7 @@ local METHOD_NAME = {
 }
 function XReCallActivityControl:OnInit()
     --初始化内部变量
+    self._InviteCodeRequestCd = self._Model:GetClientConfigReCallNumber('InviteRequestCd') or 0
 end
 
 function XReCallActivityControl:AddAgencyEvent()
@@ -27,6 +28,16 @@ function XReCallActivityControl:AutoCloseHandler(isClose)
 end
 
 function XReCallActivityControl:InviteCodeRequest(code)
+    -- 请求CD
+    local now = XTime.GetServerNowTimestamp()
+    
+    if XTool.IsNumberValidEx(self._LastInviteCodeRequestTime) and (now - self._LastInviteCodeRequestTime) < self._InviteCodeRequestCd then
+        XUiManager.TipMsg(self._Model:GetClientConfigReCallText('InviteRequestCdTips'))
+        return
+    end
+
+    self._LastInviteCodeRequestTime = now
+    
     XNetwork.Call(METHOD_NAME.InviteCode, { InviteCode = code }, function(res)
         if res.Code ~= XCode.Success then
             XUiManager.TipCode(res.Code)
@@ -154,8 +165,8 @@ function XReCallActivityControl:GetRegressionChannelConfigById(id)
     return self._Model:GetRegressionChannelConfigById(id)
 end
 
-function XReCallActivityControl:GetRegressionPlatformConfigById(id)
-    return self._Model:GetRegressionPlatformConfigById(id)
+function XReCallActivityControl:GetRegressionPlatformConfigByKey(id)
+    return self._Model:GetRegressionPlatformConfigByKey(id)
 end
 
 function XReCallActivityControl:GetInviteCount()
@@ -195,5 +206,11 @@ function XReCallActivityControl:GetCurRegressionPlayerMultiRewardCount(stageId)
     
     return 0
 end
+
+--- 设置回归专属页签显示缓存
+function XReCallActivityControl:SetBackOnlyTagMark(mark)
+    self._Model:SetBackOnlyTagMark(mark)
+end
+
 
 return XReCallActivityControl

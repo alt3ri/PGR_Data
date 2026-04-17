@@ -1161,6 +1161,7 @@ local UIBindControl = {
     UiPBRCollection = ModuleId.XPBRGame,
     UiPBRGenius = ModuleId.XPBRGame,
     UiPBRTask = ModuleId.XPBRGame,
+    UiPBRMainFightTips = ModuleId.XPBRGame,
     --endregion
     --region XLineArithmetic3
     UiLineArithmetic3Chapter = ModuleId.XLineArithmetic3,

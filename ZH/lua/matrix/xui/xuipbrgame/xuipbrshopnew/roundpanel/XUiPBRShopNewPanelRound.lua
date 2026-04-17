@@ -99,21 +99,25 @@ function XUiPBRShopNewPanelRound:RefreshWavesShow()
             self.TxtWave.gameObject:SetActiveEx(true)
             self.TxtWave.text = XUiHelper.FormatTextEx(self._Control:GetClientPBRText('UIShopWavesProgress'), self.CurWave)
         else
-            for i, v in ipairs(stageCfg.MonsterWaves) do
-                local waveCfg = self._Control.InGameControl:GetTablePBRMonsterWaveCfgById(v)
+            -- 配置表该字段是数组，按索引即可
+            local count = math.min(#stageCfg.MonsterWaves, stageCfg.FinishWaves)
+
+            for i = 1, count do
+                local monsterWaveId = stageCfg.MonsterWaves[i]
+                local waveCfg = self._Control.InGameControl:GetTablePBRMonsterWaveCfgById(monsterWaveId)
 
                 if waveCfg then
                     ---@type XUiPBRBaseWaveGrid
                     local grid = nil
-                    
+
                     if waveCfg.IconType == XMVCA.XPBRGame.EnumConst.WaveShowType.Boss then
                         grid = self._BossWaveGridPool:GetItemFromPool()
                         grid:Open()
-                        grid:RefreshShow(v, i, self.CurWave)
+                        grid:RefreshShow(monsterWaveId, i, self.CurWave)
                     else
                         grid = self._NormalWaveGridPool:GetItemFromPool()
                         grid:Open()
-                        grid:RefreshShow(v, i, self.CurWave)
+                        grid:RefreshShow(monsterWaveId, i, self.CurWave)
                     end
 
                     if grid then
@@ -121,7 +125,8 @@ function XUiPBRShopNewPanelRound:RefreshWavesShow()
                     end
                 end
             end
-            
+
+            CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.ListRound.content)
             self:FocusCurWaveUI(self.CurWave, false)
         end
     end
@@ -140,8 +145,8 @@ function XUiPBRShopNewPanelRound:FocusCurWaveUI(index, onlyViewFull, cb)
             local halfGridWidth = grid.Transform.sizeDelta.x
             local boundsOffset = self._Control:GetClientPBRNumber('UiStageBoundsLeftOffset')
             -- 找出一个关卡UI完全显示出来的范围
-            local leftPos = - self.ScrollViewMoveComponent.HalfViewPortWidth - grid.Transform.parent.localPosition.x + boundsOffset + halfGridWidth
-            local rightPos = self.ScrollViewMoveComponent.HalfViewPortWidth - grid.Transform.parent.localPosition.x - boundsOffset - halfGridWidth
+            local leftPos = - self.ScrollViewMoveComponent.HalfViewPortWidth - grid.Transform.localPosition.x + boundsOffset + halfGridWidth
+            local rightPos = self.ScrollViewMoveComponent.HalfViewPortWidth - grid.Transform.localPosition.x - boundsOffset - halfGridWidth
 
             -- 限制坐标在它们之间
             tarPosX = XMath.Clamp(self.ListRound.content.localPosition.x, leftPos, rightPos)
@@ -150,7 +155,7 @@ function XUiPBRShopNewPanelRound:FocusCurWaveUI(index, onlyViewFull, cb)
             -- Conetnt锚点在最左侧， 希望聚焦关卡UI在屏幕中心（不强制）
             local contentToCenter = 0
 
-            tarPosX = contentToCenter - grid.Transform.parent.localPosition.x
+            tarPosX = contentToCenter - grid.Transform.localPosition.x
         end
 
         -- 越界检查，Content锚点在左侧时，即坐标为0时为起始，不可大于0，也不可小于自身长度的负数 - 屏幕宽度

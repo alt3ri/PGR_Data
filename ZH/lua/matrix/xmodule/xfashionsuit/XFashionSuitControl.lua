@@ -53,6 +53,12 @@ function XFashionSuitControl:IsSuitRewardGain(id)
     return self._Model:IsSuitRewardGain(id)
 end
 
+---套装奖励是否可领取（收集齐全且未领取）
+function XFashionSuitControl:IsSuitRewardCanGain(suitId)
+    local fashionIds = self:GetFashionSuitById(suitId).FashionIds
+    return self:GetCollectCount(suitId) == #fashionIds and not self._Model:IsSuitRewardGain(suitId)
+end
+
 function XFashionSuitControl:GetCollectCount(suitId)
     local count = 0
     local fashionIds = self:GetFashionSuitById(suitId).FashionIds
@@ -140,12 +146,11 @@ end
 function XFashionSuitControl:GetNoticeFashionSuitIds()
     local cfgs = self._Model:GetFashionSuitNoticeConfigs()
     local noticeSuitIds = {}
-    local saveData = XSaveTool.GetData("NoticeFashionSuitIds") or {}
+    local saveData = self._Model:GetData()
     for _, cfg in pairs(cfgs) do
         local beginTime, endTime = XFunctionManager.GetTimeByTimeId(cfg.TimeId)
         local now = XTime.GetServerNowTimestamp()
-        local today = XTime.GetTodayTime()
-        if not saveData[cfg.Id] or today ~= saveData[cfg.Id] then
+        if not saveData[cfg.Id] then
             if cfg.TimeId == 0 or (now >= beginTime and now < endTime) then
                 table.insert(noticeSuitIds, cfg.Id)
             end
@@ -155,9 +160,9 @@ function XFashionSuitControl:GetNoticeFashionSuitIds()
 end
 
 function XFashionSuitControl:MarkNoticeFashionSuitIdIsRead(noticeSuitId)
-    local saveData = XSaveTool.GetData("NoticeFashionSuitIds") or {}
-    saveData[noticeSuitId] = XTime.GetTodayTime()
-    XSaveTool.SaveData("NoticeFashionSuitIds", saveData)
+    local saveData = self._Model:GetData()
+    saveData[noticeSuitId] = true
+    self._Model:SaveData( saveData)
 end
 
 function XFashionSuitControl:GetNoticeIdByFashionId(fashionId)
@@ -172,4 +177,18 @@ function XFashionSuitControl:GetNoticeIdByFashionId(fashionId)
     return nil
 end
 --endregion
+
+function XFashionSuitControl:GetFashionSuitUiConfigById(id)
+    return self._Model:GetFashionSuitUiConfigById(id)
+end
+
+function XFashionSuitControl:IsSuitHasNew(suitId)
+    local fashionIds = self:GetFashionSuitById(suitId).FashionIds
+    for _, fashionId in pairs(fashionIds) do
+        if not XWeaponFashionConfigs.IsWeaponFashion(fashionId) and not self._Model:IsFashionViewed(fashionId) then
+            return true
+        end
+    end
+    return false
+end
 return XFashionSuitControl

@@ -36,6 +36,7 @@ XLineArithmetic3Enum.Instruction = {
     DyeStationPassenger = 6, -- 车站乘客被染色（格子坐标，新颜色）
     StationColorChanged = 7, -- 车站颜色变更（格子坐标，新颜色）
     ChangePassengerEmoj = 8, -- 修改乘客表情（格子坐标/车厢索引，表情类型）
+    Conflict = 9,            -- 上车冲突（车厢索引，冲突乘客坐标列表）
 }
 
 -- 表情

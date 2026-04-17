@@ -2045,6 +2045,13 @@ PlayerCondition = {
     -- 大连线 LineArithmetic 完成的终点数量
     [10236] = function(condition)
     end,
+    
+    -- 大连线3 LineArithmetic 当前处于某一关卡
+    [10237] = function(condition)
+        local stageId = condition.Params[1]
+        return XMVCA.XLineArithmetic3:IsOnStage(stageId), condition.Desc
+    end,
+    
     [10250] = function(condition)
         -- 判断处于某一矿区ID下的关卡详情界面
         local chapterId = condition.Params[1]
@@ -2744,7 +2751,7 @@ PlayerCondition = {
         return false, condition.Desc
     end,
     
-    --- 战双兄弟-局内商店判断是否有可升阶信号球
+    --- 战双兄弟-局内商店判断是否有可升阶信号球：约定只能在局内强化界面中判断
     [20303] = function(condition)
         local stageId = condition.Params[1]
         

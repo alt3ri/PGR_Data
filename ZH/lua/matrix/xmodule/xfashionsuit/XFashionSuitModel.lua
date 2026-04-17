@@ -7,6 +7,8 @@ local TableKey = {
     FashionSuitClientConfig = { CacheType = XConfigUtil.CacheType.Normal, DirPath = XConfigUtil.DirectoryType.Client, ReadFunc = XConfigUtil.ReadType.String },
     FashionGroup = { CacheType = XConfigUtil.CacheType.Normal }, --涂装组（角色涂装+武器涂装）
     FashionGroupAuto = { DirPath = XConfigUtil.DirectoryType.Client, CacheType = XConfigUtil.CacheType.Normal, Identifier = "FashionId" }, --key:角色涂装/武器涂装 value:FashionGroup表Id
+
+    FashionSuitUiConfig = { DirPath = XConfigUtil.DirectoryType.Client}
 }
 
 function XFashionSuitModel:OnInit()
@@ -195,6 +197,13 @@ function XFashionSuitModel:SetFashionSuitData(data)
     end
 end
 
+function XFashionSuitModel:SaveData(data)
+    self._SaveUtil:SaveData("NoticeFashionSuitIds", data)
+end
+
+function XFashionSuitModel:GetData()
+    return self._SaveUtil:GetData("NoticeFashionSuitIds") or {}
+end
 
 ----------private end----------
 
@@ -239,6 +248,11 @@ function XFashionSuitModel:GetGroupIdByFashion(fashionId)
     ---@type XTableFashionGroupAuto
     local cfg = self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.FashionGroupAuto, fashionId, true)
     return cfg and cfg.GroupId
+end
+
+---@return XTableFashionSuitUiConfig
+function XFashionSuitModel:GetFashionSuitUiConfigById(id)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.FashionSuitUiConfig, id)
 end
 
 ----------config end----------

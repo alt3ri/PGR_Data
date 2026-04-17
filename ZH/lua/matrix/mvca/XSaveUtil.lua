@@ -12,16 +12,35 @@ function XSaveUtil:Ctor(id)
     self._DataKeyPrefix = 'MVCAModule_' .. self._Id .. '_'
     self._DataBlockMap = {} -- 存储一系列相互独立的数据块(可能一个MVCA对应多个子系统，不同子系统缓存数据的生命周期不一致)
     self._CustomVersionGetFuncMap = {} -- 存储一系列自定义的版本获取委托
+    
+    self._DataBlockKey2FullKey = nil  -- 数据块的关键名和完整名的映射，用于减少每次的字符串拼接
 end
 
 function XSaveUtil:ReleaseData()
     self._DataBlockMap = {}
+    self._DataBlockKey2FullKey = nil
+end
+
+function XSaveUtil:_GetFullBlockKey(key)
+    if self._DataBlockKey2FullKey == nil then
+        self._DataBlockKey2FullKey = {}
+    end
+    
+    local fullKey = self._DataBlockKey2FullKey[key]
+
+    if fullKey == nil then
+        fullKey = self._DataKeyPrefix .. key .. '_' .. XPlayer.Id
+
+        self._DataBlockKey2FullKey[key] = fullKey
+    end
+    
+    return fullKey
 end
 
 ---@param key @自定义数据块的key，不传加载默认数据块
 function XSaveUtil:LoadData(key)
     local blockKey = key or DEFAULT_DATA_BLOCK_KEY
-    local dataKey = self._DataKeyPrefix .. blockKey .. '_' .. XPlayer.Id
+    local dataKey = self:_GetFullBlockKey(blockKey)
 
     local dataBlock = XSaveTool.GetData(dataKey)
 
@@ -102,17 +121,21 @@ function XSaveUtil:SaveDataByBlockKey(blockKey, key, value)
     local dataBlock = self._DataBlockMap[blockKey]
 
     if not dataBlock or XPlayer.Id ~= dataBlock.__OwnerId then
-        self:LoadData()
+        self:LoadData(blockKey)
     end
 
     dataBlock = self._DataBlockMap[blockKey]
 
     if dataBlock then
-        local dataKey = self._DataKeyPrefix .. blockKey .. '_' .. XPlayer.Id
+        local dataKey = self:_GetFullBlockKey(blockKey)
+        local oldValue = dataBlock[key]
 
-        dataBlock[key] = value
+        if oldValue ~= value then
+            -- 只有数值发生变化，才写入
+            dataBlock[key] = value
 
-        XSaveTool.SaveData(dataKey, dataBlock)
+            XSaveTool.SaveData(dataKey, dataBlock)
+        end
     end
 end
 
@@ -120,7 +143,7 @@ end
 function XSaveUtil:ClearDataByBlockKey(key)
     local blockKey = key or DEFAULT_DATA_BLOCK_KEY
 
-    local dataKey = self._DataKeyPrefix .. blockKey .. '_' .. XPlayer.Id
+    local dataKey = self:_GetFullBlockKey(blockKey)
 
     XSaveTool.RemoveData(dataKey)
 
@@ -139,7 +162,7 @@ end
 --- 自定义版本号获取接口
 --- 用于某些常驻活动，跨多个版本才换新一期的情况
 function XSaveUtil:SetCustomVersionGetFunc(versionGetFunc, customBlockKey)
-    if versionGetFunc == nil or not type(versionGetFunc) == 'function' then
+    if versionGetFunc == nil or type(versionGetFunc) ~= 'function' then
         XLog.Error('注册的自定义版本获取方法参数不是一个function类型：', versionGetFunc)
         return
     end

@@ -16,7 +16,7 @@ end
 
 function XUiGridBackTask:Init()
     -- 显示固定的内容
-    self.TxtDesc.text = XMVCA.XReCallActivity:GetClientConfigReCallText("BackOnlySkipDesc", self.TypeInex)
+    self.TxtDesc.text = XMVCA.XReCallActivity:GetClientConfigReCallText("BackOnlySkipDesc", self.TypeIndex)
     self.BtnGo:AddEventListener(handler(self, self.OnBtnGoClickEvent))
 end
 

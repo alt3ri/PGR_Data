@@ -613,7 +613,7 @@
         "Layer": null,
         "State": null,
         "Target": "Attack35",
-        "TransitionDuration": 0.1
+        "TransitionDuration": null
     },
     {
         "Role": "R4ShenweiMd010021",
@@ -723,6 +723,13 @@
     {
         "Role": "R4ShenweiMd010021",
         "Layer": null,
+        "State": "Stand1",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
         "State": "Stand2",
         "Target": "Standchange",
         "TransitionDuration": 0.1
@@ -765,6 +772,20 @@
     {
         "Role": "R4ShenweiMd010021",
         "Layer": null,
+        "State": "Stand2",
+        "Target": "Attack35",
+        "TransitionDuration": null
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Stand3",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
         "State": "Standchange",
         "Target": "Stand1",
         "TransitionDuration": 0.1
@@ -781,6 +802,13 @@
         "Layer": null,
         "State": "Standchange",
         "Target": "Walk",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Standchange",
+        "Target": "Attack35",
         "TransitionDuration": 0.1
     },
     {
@@ -821,6 +849,13 @@
     {
         "Role": "R4ShenweiMd010021",
         "Layer": null,
+        "State": "Run",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
         "State": "Walk",
         "Target": "Stand2",
         "TransitionDuration": 0.1
@@ -828,6 +863,13 @@
     {
         "Role": "R4ShenweiMd010021",
         "Layer": null,
+        "State": "Walk",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
         "State": "Runb",
         "Target": "Stand2",
         "TransitionDuration": 0.2
@@ -852,6 +894,13 @@
         "State": "Runb",
         "Target": "Runr",
         "TransitionDuration": 0.2
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Runb",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
     },
     {
         "Role": "R4ShenweiMd010021",
@@ -884,6 +933,13 @@
     {
         "Role": "R4ShenweiMd010021",
         "Layer": null,
+        "State": "Runl",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
         "State": "Runr",
         "Target": "Stand2",
         "TransitionDuration": 0.2
@@ -908,6 +964,13 @@
         "State": "Runr",
         "Target": "Runl",
         "TransitionDuration": 0.2
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Runr",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
     },
     {
         "Role": "R4ShenweiMd010021",
@@ -935,6 +998,13 @@
         "Layer": null,
         "State": "Walkb",
         "Target": "Walkr",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Walkb",
+        "Target": "Attack35",
         "TransitionDuration": 0.1
     },
     {
@@ -968,6 +1038,13 @@
     {
         "Role": "R4ShenweiMd010021",
         "Layer": null,
+        "State": "Walkl",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
         "State": "Walkr",
         "Target": "Stand2",
         "TransitionDuration": 0.1
@@ -992,6 +1069,13 @@
         "State": "Walkr",
         "Target": "Walkl",
         "TransitionDuration": 0.2
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Walkr",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
     },
     {
         "Role": "R4ShenweiMd010021",
@@ -1003,8 +1087,43 @@
     {
         "Role": "R4ShenweiMd010021",
         "Layer": null,
+        "State": "TurnLeft",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
         "State": "TurnRight",
         "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "TurnRight",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Move1",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Move2",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Move3",
+        "Target": "Attack35",
         "TransitionDuration": 0.1
     },
     {
@@ -1024,8 +1143,22 @@
     {
         "Role": "R4ShenweiMd010021",
         "Layer": null,
+        "State": "RunStart",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
         "State": "RunStartEnd01",
         "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "RunStartEnd01",
+        "Target": "Attack35",
         "TransitionDuration": 0.1
     },
     {
@@ -1038,9 +1171,23 @@
     {
         "Role": "R4ShenweiMd010021",
         "Layer": null,
+        "State": "Hit1",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
         "State": "Hit2",
         "Target": "Stand2",
         "TransitionDuration": null
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Hit2",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
     },
     {
         "Role": "R4ShenweiMd010021",
@@ -1052,9 +1199,23 @@
     {
         "Role": "R4ShenweiMd010021",
         "Layer": null,
+        "State": "Hit3",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
         "State": "Hit4",
         "Target": "Stand2",
         "TransitionDuration": null
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Hit4",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
     },
     {
         "Role": "R4ShenweiMd010021",
@@ -1073,8 +1234,22 @@
     {
         "Role": "R4ShenweiMd010021",
         "Layer": null,
+        "State": "Behitfly",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
         "State": "Hoverhit",
         "Target": "Falldown",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Hoverhit",
+        "Target": "Attack35",
         "TransitionDuration": 0.1
     },
     {
@@ -1087,8 +1262,29 @@
     {
         "Role": "R4ShenweiMd010021",
         "Layer": null,
+        "State": "Falldown",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
         "State": "Hitdown",
         "Target": "Lieonfloor",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Hitdown",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Lieonfloor",
+        "Target": "Attack35",
         "TransitionDuration": 0.1
     },
     {
@@ -1101,8 +1297,22 @@
     {
         "Role": "R4ShenweiMd010021",
         "Layer": null,
+        "State": "Standup",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
         "State": "Straight",
         "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Straight",
+        "Target": "Attack35",
         "TransitionDuration": 0.1
     },
     {
@@ -1115,8 +1325,29 @@
     {
         "Role": "R4ShenweiMd010021",
         "Layer": null,
+        "State": "Stun",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
         "State": "Win",
         "Target": "Win2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Win",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Win2",
+        "Target": "Attack35",
         "TransitionDuration": 0.1
     },
     {
@@ -1129,8 +1360,43 @@
     {
         "Role": "R4ShenweiMd010021",
         "Layer": null,
+        "State": "Stop",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Fail",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Save",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
         "State": "Caught",
         "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "RunStartEnd02",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "StopR",
+        "Target": "Attack35",
         "TransitionDuration": 0.1
     },
     {
@@ -1157,8 +1423,22 @@
     {
         "Role": "R4ShenweiMd010021",
         "Layer": null,
+        "State": "WalkStart",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
         "State": "WalkStop",
         "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "WalkStop",
+        "Target": "Attack35",
         "TransitionDuration": 0.1
     },
     {
@@ -1171,8 +1451,22 @@
     {
         "Role": "R4ShenweiMd010021",
         "Layer": null,
+        "State": "WalkStartEnd",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
         "State": "LTurn90",
         "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "LTurn90",
+        "Target": "Attack35",
         "TransitionDuration": 0.1
     },
     {
@@ -1185,6 +1479,13 @@
     {
         "Role": "R4ShenweiMd010021",
         "Layer": null,
+        "State": "LTurn180",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
         "State": "RTurn90",
         "Target": "Stand2",
         "TransitionDuration": 0.1
@@ -1192,8 +1493,22 @@
     {
         "Role": "R4ShenweiMd010021",
         "Layer": null,
+        "State": "RTurn90",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
         "State": "RTurn180",
         "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "RTurn180",
+        "Target": "Attack35",
         "TransitionDuration": 0.1
     },
     {
@@ -1213,8 +1528,22 @@
     {
         "Role": "R4ShenweiMd010021",
         "Layer": null,
+        "State": "Jumpfall1",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
         "State": "Jumpfalling1",
         "Target": "Jumpdown1",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Jumpfalling1",
+        "Target": "Attack35",
         "TransitionDuration": 0.1
     },
     {
@@ -1243,6 +1572,13 @@
         "Layer": null,
         "State": "Jumpdown1",
         "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Jumpdown1",
+        "Target": "Attack35",
         "TransitionDuration": 0.1
     },
     {
@@ -1269,6 +1605,13 @@
     {
         "Role": "R4ShenweiMd010021",
         "Layer": null,
+        "State": "Jumpfall2",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
         "State": "Jumpfalling2",
         "Target": "Jumpdown2",
         "TransitionDuration": 0.1
@@ -1278,6 +1621,13 @@
         "Layer": null,
         "State": "Jumpfalling2",
         "Target": "Jumpdown1",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Jumpfalling2",
+        "Target": "Attack35",
         "TransitionDuration": 0.1
     },
     {
@@ -1311,6 +1661,13 @@
     {
         "Role": "R4ShenweiMd010021",
         "Layer": null,
+        "State": "Jumpdown2",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
         "State": "Sprint",
         "Target": "SprintStop",
         "TransitionDuration": 0.1
@@ -1318,8 +1675,22 @@
     {
         "Role": "R4ShenweiMd010021",
         "Layer": null,
+        "State": "Sprint",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
         "State": "SprintStop",
         "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "SprintStop",
+        "Target": "Attack35",
         "TransitionDuration": 0.1
     },
     {
@@ -1339,8 +1710,22 @@
     {
         "Role": "R4ShenweiMd010021",
         "Layer": null,
+        "State": "SprintStart",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
         "State": "SprintStartEnd",
         "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "SprintStartEnd",
+        "Target": "Attack35",
         "TransitionDuration": 0.1
     },
     {
@@ -1369,6 +1754,223 @@
         "Layer": null,
         "State": "HitHF",
         "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Attack16",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Attack17",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Attack18",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Attack19",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Attack22",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Attack23",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Attack24",
+        "Target": "Jumpfall1",
+        "TransitionDuration": 0.2
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Attack24",
+        "Target": "Jumpfall2",
+        "TransitionDuration": 0.2
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Attack24",
+        "Target": "Jumpfalling1",
+        "TransitionDuration": 0.2
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Attack24",
+        "Target": "Jumpfalling2",
+        "TransitionDuration": 0.2
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Attack24",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Attack25",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Attack26",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Attack27",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Attack31",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Attack32",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Attack33",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Attack34",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Attack35",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Attack36",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Attack37",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Attack41",
+        "Target": "Attack43",
+        "TransitionDuration": 0.2
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Attack41",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Attack42",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Attack43",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Attack44",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Attack45",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Attack46",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Attack47",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Attack48",
+        "Target": "Attack35",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R4ShenweiMd010021",
+        "Layer": null,
+        "State": "Attack49",
+        "Target": "Attack35",
         "TransitionDuration": 0.1
     }
 ]

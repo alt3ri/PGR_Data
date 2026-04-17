@@ -531,7 +531,7 @@ XPracticeManagerCreator = function()
             且 没有选中今日不再提示
             且 已经开放赛利卡教学
         ]]--
-        local bTips = not bOwned or (bOwned and ability < CELICA_TEACHING_ABILITY_GRADE and not bPassed)
+        local bTips = (not bOwned and not bPassed) or (bOwned and ability < CELICA_TEACHING_ABILITY_GRADE and not bPassed)
         return bTips and not bHasCookie and bOpenCelicaTeach
     end
 

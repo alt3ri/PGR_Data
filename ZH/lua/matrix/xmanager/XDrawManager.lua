@@ -1224,6 +1224,7 @@ XDrawManagerCreator = function()
             else
                 XDataCenter.KickOutManager.Unlock(XEnumConst.KICK_OUT.LOCK.DRAW, true)
             end
+            XEventManager.DispatchEvent(XEventId.EVENT_PGS_DRAW_RESULT, drawId, count, res.RewardGoodsList)
         end)
     end
 

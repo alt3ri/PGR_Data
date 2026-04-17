@@ -878,6 +878,20 @@ XTaskManagerCreator = function()
         
         return taskDataList
     end
+    
+    function XTaskManager.FliterFinishedTaskData(taskDataList)
+        if not XTool.IsTableEmpty(taskDataList) then
+            for i = #taskDataList, 1, -1 do
+                local task = taskDataList[i]
+
+                if task.State == XTaskManager.TaskState.Finish or task.State == XTaskManager.TaskState.Invalid then
+                    table.remove(taskDataList, i)
+                end
+            end
+        end
+        
+        return taskDataList
+    end
 
 
     function XTaskManager.SetAchievedList()

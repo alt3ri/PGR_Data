@@ -408,7 +408,7 @@ function XArenaAgency:_ShowReward(winData)
 
     -- 保存结算数据（Point 和 OldPoint，用于新纪录检查）
     local arenaResult = winData and winData.SettleData and winData.SettleData.ArenaResult
-    if arenaResult and arenaResult.Point and arenaResult.OldPoint then
+    if arenaResult and arenaResult.Point and arenaResult.OldArenaMaxPoint then
         local areaId = self._Model:GetCurrentEnterAreaId()
         if areaId and areaId > 0 then
             -- 通过 ConfigModel 获取 DistributeType 数组
@@ -421,7 +421,7 @@ function XArenaAgency:_ShowReward(winData)
                         self._Model:SaveSettlePointByDistributeType(
                             distributeType,
                             arenaResult.Point,
-                            arenaResult.OldPoint
+                            arenaResult.OldArenaMaxPoint
                         )
                     end
                 end
@@ -806,6 +806,7 @@ function XArenaAgency:_SaveActivityNo()
     local oldNo = XSaveTool.GetData(self:_GetArenaActivityNoSaveKey())
 
     if activityNo ~= oldNo then
+        self._Model:ClearSettlePointCacheByActivityNo(oldNo)  -- 跨期清除旧期结算缓存
         XSaveTool.SaveData(self:_GetArenaActivityNoSaveKey(), activityNo)
         XSaveTool.SaveData(self:_GetArenaClearSelectBuffSaveKey(), true)
     end

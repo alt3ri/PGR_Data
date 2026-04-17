@@ -9,11 +9,11 @@ local XUiBountyChallengeChapterDetail = XLuaUiManager.Register(XLuaUi, "UiBounty
 function XUiBountyChallengeChapterDetail:OnAwake()
     self:BindExitBtns()
     self:BindHelpBtn(nil, "BountyChallengeHelp")
-    XUiHelper.RegisterClickEvent(self, self.BtnDetail, self._OnClickDetail)
-    XUiHelper.RegisterClickEvent(self, self.BtnTongBlack, self._OnClickFight)
-    XUiHelper.RegisterClickEvent(self, self.BtnLianyu, self._OnClickFight)
-    XUiHelper.RegisterClickEvent(self, self.BtnTask, self._OnClickTask)
-    XUiHelper.RegisterClickEvent(self, self.BtnCloseTask, self._OnClickCloseTask)
+    self.BtnDetail:AddEventListener(handler(self, self._OnClickDetail))
+    self.BtnTongBlack:AddEventListener(handler(self, self._OnClickFight))
+    self.BtnLianyu:AddEventListener(handler(self, self._OnClickFight))
+    self.BtnTask:AddEventListener(handler(self, self._OnClickTask))
+    self.BtnCloseTask:AddEventListener(handler(self, self._OnClickCloseTask))
 
     ---@type XUiBountyChallengeChapterDetailCharacter[]
     self._GridCharacters = {}
@@ -42,6 +42,8 @@ function XUiBountyChallengeChapterDetail:OnStart(data)
 end
 
 function XUiBountyChallengeChapterDetail:OnEnable()
+    XEventManager.AddEventListener(XEventId.EVENT_BOUNTYCHALLENGE_CLOSE_TASK, self._OnClickCloseTask, self)
+    
     local level = self._Control:SetDefaultDifficultyLevel()
     --self._Control:AutoFinishTask(function()
     --    self:Update()
@@ -51,7 +53,14 @@ function XUiBountyChallengeChapterDetail:OnEnable()
 end
 
 function XUiBountyChallengeChapterDetail:OnDisable()
-
+    XEventManager.RemoveEventListener(XEventId.EVENT_BOUNTYCHALLENGE_CLOSE_TASK, self._OnClickCloseTask, self)
+    
+    if not self.PanelTaskBg.gameObject.activeInHierarchy then
+        for i = 1, #self._GridTasks do
+            self._GridTasks[i]:Close()
+        end
+        self._GridTasks = {}
+    end
 end
 
 function XUiBountyChallengeChapterDetail:Update()

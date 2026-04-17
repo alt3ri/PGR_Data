@@ -1875,6 +1875,21 @@ function XFubenAgency:CheckSettleFight()
     return self._Model:GetFubenSettleResult() ~= nil
 end
 
+--- 检查是否有正常结算的数据
+function XFubenAgency:CheckValidSettleFight()
+    local result = self._Model:GetFubenSettleResult()
+
+    if not result then
+        return false
+    end
+
+    if result.Code ~= XCode.Success then
+        return false
+    end
+    
+    return true
+end
+
 ----------private end----------
 
 ----------协议相关
@@ -4221,6 +4236,8 @@ function XFubenAgency:SetMouseVisible()
     end
     CS.UnityEngine.Cursor.lockState = CS.UnityEngine.CursorLockMode.None
     CS.UnityEngine.Cursor.visible = true
+
+    XDataCenter.InputManagerPc.SetCurInputMap(CS.XInputMapId.System)
 end
 
 return XFubenAgency

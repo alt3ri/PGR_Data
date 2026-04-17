@@ -1602,6 +1602,7 @@ OnCharacterTrustInfoUpdate=function(response)
         if trustLvHasChanged then
             CsXGameEventManager.Instance:Notify(XEventId.EVENT_FAVORABILITY_LEVELCHANGED, response.TrustLv)
             XEventManager.DispatchEvent(XEventId.EVENT_FAVORABILITY_LEVELCHANGED)
+            XEventManager.DispatchEvent(XEventId.EVENT_PGS_FAVORABILITY_LEVELCHANGED, response.TemplateId, response.TrustLv)
         end
         CsXGameEventManager.Instance:Notify(XEventId.EVENT_FAVORABILITY_MAIN_REFRESH)
     end

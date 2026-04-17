@@ -74,6 +74,13 @@ function XUiPanelAuthentication:OnBtnReceiveClick()
     if code and code ~= "" then
         code = string.upper(code)
     end
+
+    -- 前端检查拦截
+    if not XMVCA.XReCallActivity:CheckInviteCodeFormatValid(code) then
+        XUiManager.TipMsg(XMVCA.XReCallActivity:GetClientConfigReCallText('InviteCodeFormatInvalidTips'))
+        return
+    end
+    
     if code == XMVCA.XReCallActivity:PlayIdToHexUpper() then
         XUiManager.TipText("HoldRegressionInvite")
         return 

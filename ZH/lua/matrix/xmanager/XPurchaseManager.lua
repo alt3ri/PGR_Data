@@ -430,11 +430,13 @@ XPurchaseManagerCreator = function()
                     for _, reward in pairs(purchaseInfo.RewardGoodsList) do
                         uiDataSub.RewardGoodsList[#uiDataSub.RewardGoodsList + 1] = reward
                     end
-
-                    -- RewardGoodsList
-                    for _, reward in pairs(purchaseInfo.RewardGoodsList) do
-                        uiDataCombo.RewardGoodsList[#uiDataCombo.RewardGoodsList + 1] = reward
-                    end
+                end
+            end
+            table.sort(uiDataCombo.SubDatas, function(a, b) return a.Id < b.Id end)
+            -- 按 SubDatas 排序后的顺序依次追加奖励，保证 RewardGoodsList 顺序与 uiDataSub 一致
+            for _, subData in ipairs(uiDataCombo.SubDatas) do
+                for _, reward in ipairs(subData.RewardGoodsList) do
+                    uiDataCombo.RewardGoodsList[#uiDataCombo.RewardGoodsList + 1] = reward
                 end
             end
         end
@@ -949,6 +951,8 @@ XPurchaseManagerCreator = function()
     -- Get月卡数据
     function XPurchaseManager.GetYKInfoData()
         local datas = XPurchaseManager.GetYKInfoDatas()
+        if not datas then return nil end
+
         if XOverseaManager.IsENRegion() then
             for _, data in pairs(datas) do
                 if not data.IsUseMail and data.DailyRewardRemainDay > 0 then
@@ -992,11 +996,15 @@ XPurchaseManagerCreator = function()
     -- 是否已经买过了
     function XPurchaseManager.IsYkBuyed()
         local datas = XPurchaseManager.GetYKInfoDatas()
-        for id, data in pairs(datas) do
-            if data.DailyRewardRemainDay > 0 then
-                return true
+
+        if datas then
+            for id, data in pairs(datas) do
+                if data.DailyRewardRemainDay > 0 then
+                    return true
+                end
             end
         end
+
         return false
     end
 

@@ -275,13 +275,34 @@ end
 --- 保存结算数据（Point 和 OldPoint，用于新纪录检查）
 ---@param distributeType number DistributeType值
 ---@param point number 当前分数
----@param oldPoint number 历史最高分
+---@param oldPoint number 历史最高分（Area维度）
 function XArenaModel:SaveSettlePointByDistributeType(distributeType, point, oldPoint)
     local key = self:_GetSettlePointKey(distributeType)
     self._SaveUtil:SaveData(key, {
         Point = point,
         OldPoint = oldPoint
     })
+    -- 将 distributeType 注册到当期索引，供跨期清除使用
+    local activityNo = 0
+    if self._ActivityData and not self._ActivityData:IsClear() then
+        activityNo = self._ActivityData:GetActivityNo() or 0
+    end
+    local indexKey = self:_GetSettleIndexKey(activityNo)
+    local index = self._SaveUtil:GetData(indexKey) or {}
+    index[distributeType] = true
+    self._SaveUtil:SaveData(indexKey, index)
+end
+
+--- 清除指定期数的所有结算缓存（跨期时传入旧期号调用）
+---@param activityNo number 旧期数
+function XArenaModel:ClearSettlePointCacheByActivityNo(activityNo)
+    local indexKey = self:_GetSettleIndexKey(activityNo)
+    local index = self._SaveUtil:GetData(indexKey)
+    if not index then return end
+    for distributeType, _ in pairs(index) do
+        self:ClearSettlePointByDistributeType(distributeType)
+    end
+    self._SaveUtil:SaveData(indexKey, nil)
 end
 
 --- 保存历史结算数据（用于新纪录检查）
@@ -356,6 +377,13 @@ end
 ---@return string
 function XArenaModel:_GetSettlePointKey(distributeType)
     return "ArenaSettlePoint_" .. distributeType
+end
+
+--- 获取期数结算索引的保存key
+---@param activityNo number 期数
+---@return string
+function XArenaModel:_GetSettleIndexKey(activityNo)
+    return "ArenaSettleIndex_" .. tostring(activityNo)
 end
 
 --- 获取历史数据的保存key

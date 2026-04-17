@@ -473,4 +473,16 @@ function XDynamicDrawCanLiverTask:SetTxtTaskLimitVisible(flag)
     end
 end
 
+function XDynamicDrawCanLiverTask:SetExLabelShow(labelName, isShow)
+    local label = self[labelName]
+
+    if isShow == nil then
+        isShow = true
+    end
+
+    if label then
+        label.gameObject:SetActiveEx(isShow)
+    end
+end
+
 return XDynamicDrawCanLiverTask

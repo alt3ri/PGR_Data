@@ -181,6 +181,7 @@ XEnumConst = {
             GetChapterId = "GetChapterId",
             GetOrderId = "GetOrderId",
             GetStarMap = "GetStarMap",
+            OnReconnectFailExit = "OnReconnectFailExit",
         },
         StageType = {
             Mainline = 1,

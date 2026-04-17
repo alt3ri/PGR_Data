@@ -82,9 +82,9 @@ function XUiPanelEmojiEx:GetEmojiByIndex(index)
     return self.Emojis[index]
 end
 
-function XUiPanelEmojiEx:OnClickTab(tab)
+function XUiPanelEmojiEx:OnClickTab(tab, forceRefresh)
     local selectIndex = tab.Index
-    if self.SelectIndex == selectIndex then return end
+    if self.SelectIndex == selectIndex and not forceRefresh then return end
     for _, tab in pairs(self.Tabs) do
         tab:SetSelect(tab.Index == selectIndex)
     end

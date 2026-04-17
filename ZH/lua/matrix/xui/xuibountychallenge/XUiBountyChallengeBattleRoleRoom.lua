@@ -43,6 +43,10 @@ function XUiBountyChallengeBattleRoleRoom:AOPOnStartAfter(ui)
         ui.PanelTeamLeader.gameObject:SetActiveEx(false)
         ui.BtnLeader.gameObject:SetActiveEx(false)
     end
+
+    if not self:CheckIsEnableGeneralSkillSelection() then
+        ui.Team:UpdateSelectGeneralSkill(0)
+    end
 end
 
 ---@param ui XUiBattleRoleRoom

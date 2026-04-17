@@ -6,17 +6,16 @@ function XUiDynamicFacePreview:OnAwake()
 end
 
 function XUiDynamicFacePreview:OnStart(package)
-    -- 表情包名字
-    local name = package:GetName()
-    self.TxtName.text = name
-
-    -- 表情包描述
-    local desc = package:GetDesc()
-    self.TxtDesc.text = desc
-
     -- 刷新动态表情
     local firstDynamicEmojiId = package:GetFirstDynamicEmojiId()
     if firstDynamicEmojiId then
+        -- 名字
+        local emojiName = XDataCenter.ChatManager.GetEmojiName(firstDynamicEmojiId)
+        self.TxtName.text = emojiName
+  
+        -- 描述
+        self.TxtDesc.text = XDataCenter.ChatManager.GetEmojiWorldDesc(firstDynamicEmojiId) 
+
         self:RefreshDynamicFace(firstDynamicEmojiId)
     end
 end

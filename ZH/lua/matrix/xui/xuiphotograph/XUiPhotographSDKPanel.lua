@@ -2,12 +2,13 @@
 local XUiPhotographSDKPanel = XClass(XSignalData, "XUiPhotographSDKPanel")
 local DBEUG_SHOW_CUSTOM_SHARE_TEXT = true
 
-function XUiPhotographSDKPanel:Ctor(rootUi, ui)
+function XUiPhotographSDKPanel:Ctor(rootUi, ui, isOverseaEnableExShare)
     self.GameObject = ui.gameObject
     self.Transform = ui.transform
     self.RootUi = rootUi
     XTool.InitUiObject(self)
 
+    self._IsOverseaEnableExShare = isOverseaEnableExShare -- 海外除了link外, 也允许后台开放的分享显示
     self:Init()
 end
 
@@ -27,12 +28,17 @@ end
 
 function XUiPhotographSDKPanel:AutoRegisterBtn()
     local shareSDKIds = XDataCenter.PhotographManager.GetShareSDKIds()
-    if XOverseaManager.IsOverSeaRegion() then 
+    if XOverseaManager.IsOverSeaRegion() then
         if XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.Pc then
-            shareSDKIds = 
+            shareSDKIds =
             {
                 [1] = XPhotographConfigs.OverseaSharePlatform.ShareLink,
             }
+        else
+            -- 如果被强制ban了，就清空
+            if not self._IsOverseaEnableExShare then
+                shareSDKIds = {}
+            end
         end
     end
     local shareBtnCount = #shareSDKIds
@@ -51,7 +57,7 @@ function XUiPhotographSDKPanel:AutoRegisterBtn()
             -- 存在数据且功能开启，需要显示入口
             local isShow = false
             if XOverseaManager.IsOverSeaRegion()  then
-                isShow = shareInfo and (shareInfo.Id == XPhotographConfigs.OverseaSharePlatform.ShareLink or XHeroSdkManager.SharePlatformIsEnable(shareInfo.Id) )
+                isShow = shareInfo and (shareInfo.Id == XPhotographConfigs.OverseaSharePlatform.ShareLink or (self._IsOverseaEnableExShare and XHeroSdkManager.SharePlatformIsEnable(shareInfo.Id)))
             else
                 isShow = shareInfo and XHeroSdkManager.SharePlatformIsEnable(shareInfo.Id)
             end

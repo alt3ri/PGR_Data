@@ -1859,6 +1859,7 @@ XNoticeManagerCreator = function()
             end
 
             local fileName = XNoticeManager.GetImgNameByUrl(url)
+            fileName = XTool.GetFileNameWithoutExtension(fileName)
             CS.XTool.SaveNoticeImg(fileName, texture)
 
             NoticePicList[url] = texture

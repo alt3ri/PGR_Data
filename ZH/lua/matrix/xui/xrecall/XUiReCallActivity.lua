@@ -79,7 +79,8 @@ function XUiReCallActivity:InitUiAfterAuto()
 
     self.RewardRedPoint = self:AddRedPointEvent(self.PanelTask, self.TaskRewardRedPoint, self, { XRedPointConditions.Types.CONDITION_RECALL_REWARD })
     self.InvitedRedPoint = self:AddRedPointEvent(self.PanelCertified, self.InviteRedPoint, self, { XRedPointConditions.Types.CONDITION_RECALL_INVITE })
-
+    self:RefreshBackOnlyReddot()
+    
     self.BtnBack.CallBack = function()
         self:OnBtnBackClick()
     end
@@ -120,7 +121,8 @@ function XUiReCallActivity:InitTabGroup()
     
     -- 第三个页签固定为回归专属
     if self.BtnTabPrefab3 then
-        self.BtnTabPrefab3.gameObject:SetActiveEx(XMVCA.XReCallActivity:CheckIsRegressionPlayer())
+        self._IsOpenBackOnlyTag = XMVCA.XReCallActivity:CheckIsRegressionPlayer()
+        self.BtnTabPrefab3.gameObject:SetActiveEx(self._IsOpenBackOnlyTag)
     end
 end
 
@@ -145,6 +147,9 @@ function XUiReCallActivity:OnTaskPanelSelect(index)
 
         self.PanelBackCtrl:Open()
         self.PanelBackCtrl:Refresh()
+        
+        self._Control:SetBackOnlyTagMark()
+        self:RefreshBackOnlyReddot()
     end
 end
 
@@ -156,6 +161,17 @@ end
 function XUiReCallActivity:InviteRedPoint(result)
     local button = self.TabGroup:GetButtonByIndex(self.PanelType.Authentication)
     button:ShowReddot(result >= 0)
+end
+
+--- 刷新回归专属页签的红点
+function XUiReCallActivity:RefreshBackOnlyReddot()
+    if self._IsOpenBackOnlyTag then
+        local button = self.TabGroup:GetButtonByIndex(self.PanelType.BackOnly)
+
+        if button then
+            button:ShowReddot(not XMVCA.XReCallActivity:GetBackOnlyTagIsMark())
+        end
+    end
 end
 
 function XUiReCallActivity:GetTaskReward(id)

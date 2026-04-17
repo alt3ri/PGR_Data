@@ -2373,6 +2373,7 @@ local UiRegistry = {
     UiPBRCollection = "XUi/XUiPBRGame/XUiPBRCollection/XUiPBRCollection",
     UiPBRGenius = "XUi/XUiPBRGame/XUiPBRGenius/XUiPBRGenius",
     UiPBRTask = "XUi/XUiPBRGame/XUiPBRTask/XUiPBRTask",
+    UiPBRMainFightTips = "XUi/XUiPBRGame/XUiPBRMainFightTips/XUiPBRMainFightTips",
     --endregion
 
     --动态表情包预览界面

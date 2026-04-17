@@ -552,7 +552,7 @@ XPhotographManagerCreator = function()
         XPermissionManager.TryGetPermission(CS.XPermissionEnum.WRITE_EXTERNAL_STORAGE, writeDesc, function(isWriteGranted, dontTip)
             if not isWriteGranted then
                 tipFunc("PremissionDesc")
-                XLog.Debug("获取权限错误_NotisWriteGranted")
+                XLog.Error("获取权限错误_NotisWriteGranted")
                 return
             end
 
@@ -560,7 +560,7 @@ XPhotographManagerCreator = function()
                 CS.XTool.SavePhotoAlbumImg(photoName, texture, function(errorCode)
                     if errorCode > 0 then
                         tipFunc("PremissionDesc") -- ios granted总是true, 权限未开通code返回1
-                        XLog.Debug("照片保存失败 Code："..errorCode)
+                        XLog.Error("照片保存失败 Code："..errorCode)
                         return
                     end
                     XPhotographManager.SetTextureCache(photoName)
@@ -579,7 +579,7 @@ XPhotographManagerCreator = function()
         else
             local cfg = XPhotographConfigs.GetShareInfoByType(shareId)
             local fileFullPath = string.format("%s%s%s", DirPath, photoName, ".png")
-            if shareText == nil then
+            if shareText == nil or shareText == "" then
                 shareText = cfg.Text
             end
             SharePhotoName = photoName

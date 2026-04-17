@@ -18,7 +18,7 @@ function XUiLineArithmetic3GameGridTarget:Update(data)
     if data.IsFinish then
         if self._IsFinish ~= true then
             self._IsFinish = true
-            self:PlayAnimation("SelectEnable")
+            self:PlayAnimation("CompleteEnable")
         end
         self.Normal.gameObject:SetActiveEx(false)
         self.Select.gameObject:SetActiveEx(true)

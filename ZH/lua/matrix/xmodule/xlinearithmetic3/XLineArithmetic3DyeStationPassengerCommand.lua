@@ -30,16 +30,16 @@ function XLineArithmetic3DyeStationPassengerCommand:Execute(game, onComplete)
     end
 
     local colorPrefab = uiGame:GetColorPrefab(self._Color)
-    if not colorPrefab then
-        if onComplete then onComplete() end
-        return
+    if colorPrefab then
+        -- 实例化颜色节点并添加到乘客GameObject下
+        local colorGo = CS.UnityEngine.Object.Instantiate(colorPrefab, passengerGo.transform)
+        colorGo.transform.localPosition = CS.UnityEngine.Vector3.zero
+        self._NewColorUid = uiGame:RegisterGameObject(colorGo)
     end
 
-    -- 实例化颜色节点并添加到乘客GameObject下
-    local colorGo = CS.UnityEngine.Object.Instantiate(colorPrefab, passengerGo.transform)
-    colorGo.transform.localPosition = CS.UnityEngine.Vector3.zero
-    self._NewColorUid = uiGame:RegisterGameObject(colorGo)
-
+    -- 播放感染特效（fire-and-forget，不阻塞指令链）
+    local worldPos = uiGame:GetGridWorldPosition(self._GridX, self._GridY)
+    uiGame:PlayInfectionEffect(worldPos, nil)
     if onComplete then onComplete() end
 end
 

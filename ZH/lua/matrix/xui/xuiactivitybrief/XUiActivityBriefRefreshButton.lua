@@ -213,6 +213,9 @@ function XUiActivityBriefRefreshButton:PlayBtnUnlockAnim()
         btn:PlayUnlockAnim(function()
             self:RefreshReward(activityGroupId)
             self:RefreshConstRewardShow(activityGroupId)
+            if XTool.IsNumberValid(btn._RedPointEventId) then
+                XRedPointManager.Check(btn._RedPointEventId)
+            end
             self:PlayBtnUnlockAnim()
         end)
     else

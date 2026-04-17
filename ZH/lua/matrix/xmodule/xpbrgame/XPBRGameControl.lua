@@ -3,7 +3,6 @@
 local XPBRGameControl = XClass(XControl, "XPBRGameControl")
 
 function XPBRGameControl:OnInit()
-    self:StartActivityTimer()
     ---@type XPBRCharacterControl
     self.CharacterControl = self:AddSubControl(require('XModule/XPBRGame/SubModules/Character/XPBRCharacterControl'))
     ---@type XPBRInGameControl
@@ -16,6 +15,8 @@ function XPBRGameControl:OnInit()
     
     ---@type XPBRTaskControl
     self.TaskControl = self:AddSubControl(require('XModule/XPBRGame/SubModules/Task/XPBRTaskControl'))
+
+    self:StartActivityTimer()
 end
 
 function XPBRGameControl:AddAgencyEvent()
@@ -28,6 +29,8 @@ end
 
 function XPBRGameControl:OnRelease()
     self:StopActivityTimer()
+
+    self:_StopTickOutTimer()
 end
 
 function XPBRGameControl:GetClientPBRText(key, index)
@@ -232,6 +235,40 @@ function XPBRGameControl:GetCuteModelNameShowInMain()
     end
 end
 
+--- 判断当前关卡的下一关是否存在且解锁
+function XPBRGameControl:CheckNextStageExistAndUnlockByStageId(stageId)
+    -- 找当前活动配置
+    local activityCfg = self._Model:GetCurActivityCfg()
+
+    if not activityCfg or XTool.IsTableEmpty(activityCfg.StageIds) then
+        return false
+    end
+    
+    -- 找到该关卡在列表中的索引
+    local index = 0
+
+    for i, id in pairs(activityCfg.StageIds) do
+        if id == stageId then
+            index = i
+            break
+        end
+    end
+
+    if not XTool.IsNumberValidEx(index) then
+        return false
+    end
+    
+    -- 查找下一关是否存在
+    local nextStageId = activityCfg.StageIds[index + 1]
+
+    if not XTool.IsNumberValidEx(nextStageId) then
+        return false
+    end
+    
+    -- 判断下一关是否解锁
+    return XMVCA.XPBRGame:GetIsStageUnlockById(nextStageId), nextStageId
+end
+
 --region 本地缓存
 
 function XPBRGameControl:ReddoSetStageMark(stageId)
@@ -304,7 +341,20 @@ function XPBRGameControl:TryDoTimeTickOut()
     if self._TimeTickOutCallBack then
         self._TimeTickOutCallBack()
     else
-        XLuaUiManager.RunMain()
+        self:_StopTickOutTimer()
+
+        if XMVCA.XPBRGame:DoSafeFightExit() then
+            self.InGameControl:SetFightExitType(XMVCA.XPBRGame.EnumConst.FightExitType.GiveUp)
+            XLuaUiManager.SetMask(true)
+            self._TickOutTimerId = XScheduleManager.ScheduleNextFrame(function()
+                XLuaUiManager.RunMain()
+                XLuaUiManager.SetMask(false)
+                self._TickOutTimerId = nil
+            end)
+        else
+            XLuaUiManager.RunMain()
+        end
+        
         XUiManager.TipText('ActivityMainLineEnd')
     end
     
@@ -336,6 +386,14 @@ function XPBRGameControl:RemoveTimeEventListener(func, obj)
     self:RemoveEventListener(XMVCA.XPBRGame.EventId.EVENT_PBR_INNER_ACTIVITY_TIMER_UPDATE, func, obj)
 end
 
+function XPBRGameControl:_StopTickOutTimer()
+    if self._TickOutTimerId then
+        XScheduleManager.UnSchedule(self._TickOutTimerId)
+        XLuaUiManager.SetMask(false)
+        
+        self._TickOutTimerId = nil
+    end
+end
 --endregion
 
 return XPBRGameControl

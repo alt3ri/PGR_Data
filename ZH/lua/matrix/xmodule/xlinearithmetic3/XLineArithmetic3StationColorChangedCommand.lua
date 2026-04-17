@@ -8,15 +8,22 @@ function XLineArithmetic3StationColorChangedCommand:Ctor(uiGame, gridX, gridY, c
     self._GridY = gridY
     self._Color = color
     self._StationColorBefore = stationColorBefore
+    -- 缓存指令产生时车站上是否有乘客，Execute 时状态已变，不可再读
+    self._HasPassengerWhenCreated = uiGame:GetPassengerUidByPos(gridX, gridY) ~= nil
 end
 
 --- 执行命令（用指令携带的颜色刷新车站显示，不从 Game 层读取）
 function XLineArithmetic3StationColorChangedCommand:Execute(game, onComplete)
     local uiGame = self._UiGame
-    local key = string.format("%d_%d", self._GridX, self._GridY)
-    local stationGo = uiGame:GetGridElement(key)
+    local stationGo = uiGame:GetStationGridElement(self._GridX, self._GridY)
     if stationGo then
         uiGame:UpdateStationColor(self._GridX, self._GridY, stationGo, self._Color)
+    end
+    -- 播放感染特效（fire-and-forget，不阻塞指令链）
+    -- 指令产生时车站上有乘客，则不播放感染动画
+    if not self._HasPassengerWhenCreated then
+        local worldPos = uiGame:GetGridWorldPosition(self._GridX, self._GridY)
+        uiGame:PlayInfectionEffect(worldPos, nil)
     end
     if onComplete then onComplete() end
 end
@@ -32,8 +39,7 @@ function XLineArithmetic3StationColorChangedCommand:Undo(game, onComplete)
     end
 
     -- 用旧颜色刷新 UI 层显示
-    local key = string.format("%d_%d", self._GridX, self._GridY)
-    local stationGo = uiGame:GetGridElement(key)
+    local stationGo = uiGame:GetStationGridElement(self._GridX, self._GridY)
     if stationGo then
         uiGame:UpdateStationColor(self._GridX, self._GridY, stationGo, self._StationColorBefore)
     end

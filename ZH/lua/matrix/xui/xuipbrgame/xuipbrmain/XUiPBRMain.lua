@@ -8,6 +8,7 @@
 ---@class XUiPBRMain : XLuaUi
 local XUiPBRMain = XLuaUiManager.Register(XLuaUi, "UiPBRMain")
 local XUiPBRRoleModel = require('XUi/XUiPBRGame/XUiPBRCharacterDetail/XUiPBRRoleModel')
+local XUiPanelPBRMainTitle = require("XUi/XUiPBRGame/XUiPBRMain/XUiPanelPBRMainTitle")
 
 function XUiPBRMain:OnAwake()
     self:InitComponents()
@@ -28,10 +29,28 @@ function XUiPBRMain:InitComponents()
     
     ---@type XUiPBRRoleModel
     self.RoleModel = XUiPBRRoleModel.New(self.GameObject, self)
+    
+    ---@type XUiPanelPBRMainTitle
+    self.PanelTitle = XUiPanelPBRMainTitle.New(self.TittleEasterEgg, self)
+    
+    
+    self._ContinueHandler = function()
+        self._Control.InGameControl:ContinueGame()
+    end
+    
+    self._SettleHandler = function()
+        XMVCA.XPBRGame.NetworkAgency:DoPbrForceSettleRequest(function(success)
+            self:RefreshAll()
+
+            if success then
+                XUiManager.TipMsg(self._Control:GetClientPBRText('SettleForceTips'))
+            end
+        end)
+    end
 end
 
 function XUiPBRMain:OnStart(...)
-    
+    self.IsCheckUpdateScene = false
 end
 
 function XUiPBRMain:OnEnable()
@@ -138,7 +157,7 @@ function XUiPBRMain:OnBtnFightClick()
 end
 
 function XUiPBRMain:OnBtnContinueFightClick()
-    self._Control.InGameControl:ContinueGame()
+    XLuaUiManager.Open("UiPBRMainFightTips", self._ContinueHandler, self._SettleHandler)
 end
 
 function XUiPBRMain:OnActivityTimeTimerUpdate(timeId)
@@ -149,8 +168,24 @@ function XUiPBRMain:OnActivityTimeTimerUpdate(timeId)
     local leftTime = math.max(0, endTime - now)
 
     self.TxtTime.text = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.ACTIVITY)
+
+    self:CheckUpdateScene()
 end
 
+-- 检查未退出战斗打开UI，等战斗退出了重新刷新UI场景
+function XUiPBRMain:CheckUpdateScene()
+    if not self.UiSceneInfo then
+        return
+    end
+    
+    if not self.IsCheckUpdateScene and XFightUtil.IsFighting() then
+        self.IsCheckUpdateScene = true
+    elseif self.IsCheckUpdateScene and not XFightUtil.IsFighting() then
+        self.UiSceneInfo.GameObject:SetActiveEx(false)
+        self.UiSceneInfo.GameObject:SetActiveEx(true)
+        self.IsCheckUpdateScene = false
+    end
+end
 --endregion
 
 return XUiPBRMain

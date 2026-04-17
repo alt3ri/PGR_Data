@@ -8,6 +8,7 @@ local NetworkLockFlagEnum = {
     PbrProgressionUnlockRequest = 1,
     PbrShopChooseRequest = 2,
     PbrShopFreshRequest = 3,
+    PbrForceSettleRequest = 4,
 }
 
 function XPBRNetworkAgency:OnInit()
@@ -175,6 +176,61 @@ function XPBRNetworkAgency:DoPbrShopFreshRequest(cb, isGiveUpChoose)
     end)
 end
 
+--- 局外手动结算
+function XPBRNetworkAgency:DoPbrForceSettleRequest(cb)
+    if self:CheckFlagIsLock(NetworkLockFlagEnum.PbrForceSettleRequest) then
+        return
+    end
+
+    self:LockWithFlag(NetworkLockFlagEnum.PbrForceSettleRequest)
+    
+    XNetwork.Call("PbrForceSettleRequest", nil, function(res)
+        self:UnlockWithFlag(NetworkLockFlagEnum.PbrForceSettleRequest)
+
+        if res.Code ~= XCode.Success then
+            if cb then
+                cb(false)
+            end
+            XUiManager.TipCode(res.Code)
+            return
+        end
+
+        -- 清空商店弹窗屏蔽缓存
+        self._Model:SetShopSelectGiveupIgnorePopup(nil)
+
+        ---@type PbrFightSettleShowData
+        local pbrSettleData = res.PbrFightSettleShowData
+
+        if pbrSettleData then
+            local stageId = self._Model:GetStageIdInSegmentSettleData()
+            
+            -- 通关数据本地缓存
+            self._Model:UpdateStageRecordByStageId(stageId, pbrSettleData.FinalSettleShowData.PbrStageRecord)
+            
+            -- 记录通关角色
+            if res.IsWin and XTool.IsNumberValidEx(pbrSettleData.FinalSettleShowData.CharacterId) then
+                self._Model:SetLastPassStageCharId(pbrSettleData.FinalSettleShowData.CharacterId)
+            end
+
+            -- 清理局内数据
+            self._Model:UpdateFullSegmentSettleData(nil)
+        end
+
+        if not XTool.IsTableEmpty(res.RewardGoodsList) then
+            XUiManager.OpenUiTipReward(res.RewardGoodsList)
+        end
+
+        if cb then
+            cb(true)
+        end
+
+    end, nil, function(exception)
+        self:UnlockWithFlag(NetworkLockFlagEnum.PbrForceSettleRequest)
+
+        -- 因为重写了这个回调，所以这里要手动处理错误提示，与C#端逻辑一致
+        XUiManager.SystemDialogTip("", CS.XTextManager.GetRpcExceptionCodeText(exception.Code), XUiManager.DialogType.OnlySure)
+    end)
+end
 
 --endregion
 

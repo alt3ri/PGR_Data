@@ -373,6 +373,23 @@ function XPBRInGameControl:GetFightExitType()
     return self._Model:GetFightExitType()
 end
 
+--- 判断当前波次是否是无尽模式
+function XPBRInGameControl:CheckIsInEndlessMode()
+    local stageId = self._Model:GetStageIdInSegmentSettleData()
+
+    if not XTool.IsNumberValidEx(stageId) then
+        return false
+    end
+    
+    local stageCfg = self._Model:GetTablePBRStageCfgById(stageId)
+    
+    if stageCfg and stageCfg.StageType == XMVCA.XPBRGame.EnumConst.StageCustomType.Challenge then
+        local wave = self._Model:GetWaveInSegmentSettleData()
+        
+        return XTool.IsNumberValidEx(wave) and wave >= stageCfg.FinishWaves
+    end
+end
+
 --region 商店弹窗提示控制
 
 function XPBRInGameControl:GetIsShopSelectGiveupIgnorePopup()

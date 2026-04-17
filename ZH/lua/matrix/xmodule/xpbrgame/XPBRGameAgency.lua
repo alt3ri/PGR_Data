@@ -188,6 +188,7 @@ end
 --- 检查局内商店是否有可升阶的技能
 --- 1. 合成升阶：商品中存在与已拥有技能相同且存在下一阶的技能
 --- 2. 替换升阶：商品中的技能是已拥有技能的同组高阶
+--- - **专门为引导开放的接口，涉及到局内配置表，约定只能在局内强化界面中判断**
 ---@param stageId number|nil @关卡Id，若指定则先判断当前关卡是否是目标关卡
 ---@return boolean
 function XPBRGameAgency:CheckInGameShopAnyGoodsHigher(stageId)
@@ -198,6 +199,11 @@ function XPBRGameAgency:CheckInGameShopAnyGoodsHigher(stageId)
 
     -- 再判断是不是在局内
     if not self._Model:GetIsHasSegmentSettleData() then
+        return false
+    end
+    
+    -- 最后确定是在局内强化界面
+    if not XLuaUiManager.IsUiShow("UiPBRShopNew") then
         return false
     end
 

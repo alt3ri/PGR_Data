@@ -35,6 +35,9 @@ function XUiTheatre5PopupNewSeason:Update()
 
     local pvpTimeId = XMVCA.XTheatre5:GetPVPActivityTimeId()
     if not XTool.IsNumberValid(pvpTimeId) then
+        pvpTimeId = self._Control.PVPControl:GetFuturePVPActivityTimeId()
+    end
+    if not XTool.IsNumberValid(pvpTimeId) then
         return
     end
     local startTime = XFunctionManager.GetStartTimeByTimeId(pvpTimeId)

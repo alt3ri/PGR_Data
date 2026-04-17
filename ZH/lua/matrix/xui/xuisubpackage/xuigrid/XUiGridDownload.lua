@@ -268,8 +268,8 @@ function XUiGridDownload:OnBtnCustomClick()
 end
 
 function XUiGridDownload:OnBtnDeleteClick()
-    -- [F8] 从全局 IsDownloading() 改为按 Sub 粒度检查
-    if XMVCA.XSubPackage:IsSubOrResDownloading(self.Id) then
+    -- 全局有下载任务时不允许卸载（与 Agency 层 UninstallSubpackageById 守卫一致）
+    if XMVCA.XSubPackage:IsDownloading() then
         XUiManager.TipText("SubpackageUninstallRejectDownloading")
         return
     end

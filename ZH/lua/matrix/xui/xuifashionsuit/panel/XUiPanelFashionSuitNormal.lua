@@ -3,26 +3,52 @@
 ---@field _Control XFashionSuitControl
 local XUiPanelFashionSuitNormal = XClass(XUiNode, "XUiPanelFashionSuitNormal")
 
-function XUiPanelFashionSuitNormal:OnStart()
+function XUiPanelFashionSuitNormal:OnStart(suitId)
     ---@type XUiGridCommon[]
     self._RewardGrids = {}
     self._Dots = {}
     self._SelectIndex = 0
+    self._OldSuit = false
+    self:SetSuitId(suitId)
+end
 
-    if not self.FullScreenBackground then
-        self.FullScreenBackground = self.Transform:FindTransform("FullScreenBackground")
+function XUiPanelFashionSuitNormal:SpecialSuitInit(suitId)
+    local oldSuitId = self._Control:GetClientConfig("TempSuitIdV41")
+    if tonumber(oldSuitId) == suitId then
+        self._OldSuit = true
     end
-    if not XTool.UObjIsNil(self.FullScreenBackground) then
-        self.FullScreenBackground:SetParent(self.Parent.FullScreenBackground)
-        self.FullScreenBackground.name = "Clone"
+    if self._OldSuit then
+        if not self.FullScreenBackground then
+            self.FullScreenBackground = self.Transform:FindTransform("FullScreenBackground")
+        end
+        if not XTool.UObjIsNil(self.FullScreenBackground) then
+            self.FullScreenBackground:SetParent(self.Parent.FullScreenBackground)
+            self.FullScreenBackground.name = "Clone"
+        end
+    end
+end
+
+function XUiPanelFashionSuitNormal:OnEnable()
+    self:PlayAnimationWithMask("AnimEnable")
+    self.GridFashion.gameObject:SetActiveEx(false)
+    if not self._OldSuit then
+        --延迟显示动态表
+        XScheduleManager.ScheduleOnce(function()
+            self:ShowDynamicTable()
+        end, 2300)
+    else
+        self:ShowDynamicTable()
     end
 end
 
 function XUiPanelFashionSuitNormal:SetSuitId(id)
+    self:SpecialSuitInit(id)
+
     self._Id = id
     self._Config = self._Control:GetFashionSuitById(id)
+    local uiConfig = self._Control:GetFashionSuitUiConfigById(id)
     self._FashionIds = self._Config.FashionIds
-    self.RImgIcon:SetRawImage(self._Config.SuitBanner)
+    self.RImgIcon:SetRawImage(uiConfig.SuitBanner)
     self.TxtSeriesName.text = self._Config.Name
     self.TxtSeriesDetail.text = XUiHelper.ReplaceTextNewLine(self._Config.SuitDescription)
 
@@ -38,11 +64,11 @@ function XUiPanelFashionSuitNormal:SetSuitId(id)
         end
     end
 
-    if self._Config.SuitBackground then
-        self.RImgBg:SetRawImage(self._Config.SuitBackground)
+    if uiConfig.SuitBackground then
+        self.RImgBg:SetRawImage(uiConfig.SuitBackground)
     end
 
-    self:ShowDynamicTable()
+  
 end
 
 function XUiPanelFashionSuitNormal:ShowDynamicTable()
@@ -70,12 +96,12 @@ function XUiPanelFashionSuitNormal:ShowDynamicTable()
         self.DynamicTable:ReloadData(self._SelectIndex)
         self.GridFashion.gameObject:SetActiveEx(false)
         self.PanelDot.gameObject:SetActiveEx(true)
-        for i = 1, count do
-            local dot = i == 1 and self.Dot or XUiHelper.Instantiate(self.Dot, self.Dot.parent)
+        XUiHelper.RefreshCustomizedList(self.PanelDot, self.Dot, count, function(index, go)
             local uiObj = {}
-            XUiHelper.InitUiClass(uiObj, dot)
-            self._Dots[i] = uiObj
-        end
+            XUiHelper.InitUiClass(uiObj, go)
+            self._Dots[index] = uiObj
+        end, false)
+
         self:UpdateFashionSelect(1)
     else
         self.GridFashion.gameObject:SetActiveEx(false)
@@ -98,6 +124,9 @@ function XUiPanelFashionSuitNormal:UpdateView()
     local total = #self._FashionIds
     local own = self._Control:GetCollectCount(self._Id)
     self._IsAllFashionGain = total == own
+    if self.PanelCollectionStatus then
+        self.PanelCollectionStatus.gameObject:SetActiveEx(self._Config.IsComplete)
+    end
     if self._Config.IsComplete then
         self.PanelReward.gameObject:SetActiveEx(true)
         self.PanelTips.gameObject:SetActiveEx(false)
@@ -112,6 +141,8 @@ function XUiPanelFashionSuitNormal:UpdateView()
             grid.BtnRewardGain.gameObject:SetActiveEx(bo)
         end
     else
+
+        self.Grid256New.gameObject:SetActiveEx(false)
         self.PanelReward.gameObject:SetActiveEx(false)
         self.PanelTips.gameObject:SetActiveEx(true)
         self.TxtNum.text = own

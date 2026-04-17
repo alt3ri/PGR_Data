@@ -297,7 +297,12 @@ function XUiDrawControl:RefreshTenDrawDiscount()
         self.RootUi.Panel10Discount.gameObject:SetActiveEx(isTenDiscount)
         if isTenDiscount then
             useCount = math.min(useCount, maxCount)
-            self.RootUi.Txt10DiscountDesc.text = XUiHelper.GetText("DrawTenDiscountDesc", useCount, maxCount)
+            local discountTextKeyMap = {
+                [23] = "DrawTenDiscountDescXuan",
+                [24] = "DrawTenDiscountDescMingyunXuan",
+            }
+            local textKey = discountTextKeyMap[self.DrawInfo.GroupId] or "DrawTenDiscountDesc"
+            self.RootUi.Txt10DiscountDesc.text = XUiHelper.GetText(textKey, useCount, maxCount)
         end
     end
 end

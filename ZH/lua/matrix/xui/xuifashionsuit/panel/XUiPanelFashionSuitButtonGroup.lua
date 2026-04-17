@@ -332,10 +332,14 @@ end
 --region 成套购买
 
 --只有从涂装套装主界面跳转过来时 才开启成套购买功能
-function XUiPanelFashionSuitButtonGroup:SetBtnBuySuitVisible(bo)
+function XUiPanelFashionSuitButtonGroup:SetBtnBuySuitVisible(bo, skipUpdateView)
     self._IsGroupSalesVisible = bo
     self.BtnBuySuit.gameObject:SetActiveEx(bo)
-    self.Parent:SetGroupSales(self._IsGroupSalesVisible, self._IsGroupSalesEnable)
+    if skipUpdateView then
+        self.Parent:ApplyGroupSalesState(self._IsGroupSalesVisible, self._IsGroupSalesEnable)
+    else
+        self.Parent:SetGroupSales(self._IsGroupSalesVisible, self._IsGroupSalesEnable)
+    end
 end
 
 function XUiPanelFashionSuitButtonGroup:OnBtnBuySuitClick()

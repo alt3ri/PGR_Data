@@ -40,43 +40,6 @@ XTool.GenTexture2DReleaseManually = function(width, height, textureFormat, mipCh
     return tex
 end
 
--- region 下载器测试
-
--- 下载器测试
-XTool.CreateDownloadManager = function()
-    if CS.XRemoteConfig.IsHaruDownloader then
-        local downloader = CS.XHaruDownloader.XDownloadManager()
-        downloader:Init()
-        return downloader
-    else
-        return CS.XMTDownloadCenter()
-    end
-end
-
--- 下载器测试任务组
-XTool.CreateDownloadTaskGroup = function(groupId, skipClientCdns, fileDownloadFinishCallback)
-    if CS.XRemoteConfig.IsHaruDownloader then
-        local taskGroup = CS.XHaruDownloader.XDownloadTaskGroup(groupId)
-        taskGroup.NotifyUrlDownloadFinish = fileDownloadFinishCallback
-        return taskGroup
-    else
-        local taskGroup = CS.XMTDownloadTaskGroup(groupId)
-        taskGroup:SetClientCDNsSkip(skipClientCdns or false)
-        return taskGroup
-    end
-end
-
--- 下载器测试状态
-XTool.GetDownloadStateEnum = function()
-    if CS.XRemoteConfig.IsHaruDownloader then
-        return CS.XHaruDownloader.XDownloadTaskGroupState
-    else
-        return CS.XMTDownloadTaskGroupState
-    end
-end
-
--- endregion 下载器测试
-
 XTool.UObjIsNil = function(uobj)
     return uobj == nil or not uobj:Exist()
 end

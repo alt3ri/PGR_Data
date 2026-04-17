@@ -138,7 +138,7 @@ end
 
 function XBigWorldServiceAgency:GetNarrativeAlignment(id)
     local template = self._Model:GetNarrativeTextTemplate(id)
-    return CS.UnityEngine.TextAnchor.__CastFrom(template and template.Alignment or 0)
+    return CS.UnityEngine.TextAnchor.__CastFrom(template and tonumber(template.Alignment) or 0)
 end
 
 function XBigWorldServiceAgency:GetNarrativeContent(id)

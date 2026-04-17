@@ -239,7 +239,15 @@ function XUiPanelFavorabilityAction:OnActionClick(clickAction, grid, index)
             end
         end
     else
-        XUiManager.TipMsg(clickAction.config.ConditionDescript)
+        local tipText = clickAction.config.ConditionDescript
+        for _, conditionId in pairs(clickAction.config.UnlockCondition) do
+            local desc = XConditionManager.GetConditionDescById(conditionId)
+            if desc then
+                tipText = desc
+                break
+            end
+        end
+        XUiManager.TipMsg(tipText)
     end
 end
 

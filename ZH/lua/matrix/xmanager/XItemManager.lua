@@ -428,7 +428,7 @@ XItemManagerCreator = function()
         local tab = XMVCA.XBigWorldService:GetItemTemplate(id)
         if tab == nil then
             XLog.ErrorTableDataNotFound("XItemManager.GetItemQuality", "ItemTemplate", " Share/Item/Item.tab", "id", tostring(id))
-            return
+            return 0
         end
         return tab.Quality
     end
@@ -446,7 +446,7 @@ XItemManagerCreator = function()
         local tab = XMVCA.XBigWorldService:GetItemTemplate(id)
         if tab == nil then
             XLog.ErrorTableDataNotFound("XItemManager.GetItemPriority", "ItemTemplate", " Share/Item/Item.tab", "id", tostring(id))
-            return
+            return 0
         end
         return tab.Priority
     end

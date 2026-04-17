@@ -1951,12 +1951,12 @@
     },
     {
         "Id": 10194,
-        "Name": "\u7eab\u7eba\u88c1\u827a",
+        "Name": "\u5c18\u6d6a\u9732\u8425",
         "Function": "LineArithmeticHelp",
-        "Describe": "\u659c\u594f\u8fde\u7ebf\u56fe\u6587\u6559\u7a0b",
+        "Describe": "\u795e\u5a01\u8fde\u7ebf\u56fe\u6587\u6559\u7a0b",
         "IsShowCourse": 3,
-        "ImageAsset": "['Assets/Product/Texture/Image/UiLineArithmetic2/UiLineArithmetic2Help01.png', 'Assets/Product/Texture/Image/UiLineArithmetic2/UiLineArithmetic2Help02.png', 'Assets/Product/Texture/Image/UiLineArithmetic2/UiLineArithmetic2Help03.png', 'Assets/Product/Texture/Image/UiLineArithmetic2/UiLineArithmetic2Help04.png']",
-        "TextGroupIds": "[1019401, 1019402, 1019403, 1019404]",
+        "ImageAsset": "['Assets/Product/Texture/Image/UiLineArithmetic3/UiLineArithmetic3Help01.png', 'Assets/Product/Texture/Image/UiLineArithmetic3/UiLineArithmetic3Help02.png']",
+        "TextGroupIds": "[1033001, 1033002]",
         "SubIds": null
     },
     {
@@ -2093,7 +2093,7 @@
         "Id": 21000,
         "Name": "\u89c4\u5219\u8bf4\u660e",
         "Function": "UiReCallActivity",
-        "Describe": "\u53c2\u52a0\u6761\u4ef6\\n\u6307\u6325\u5b98\u7b49\u7ea7\u226540\u7ea7\\n\\n\u56de\u5f52\u6307\u6325\u5b98\\n\u6307\u6325\u5b98\u7b49\u7ea7\u226540\u7ea7\u4e14\u8fde\u7eed\u672a\u767b\u5f55\u5929\u6570\u226530\u5929\\n\\n\u6d3b\u52a8\u65f6\u95f4\\n2026/05/30 05:00:00 \uff5e 2026/07/15 05:00:00\\n\u9080\u8bf7\u53ca\u4efb\u52a1\u65f6\u95f4\\n2026/05/30 05:00:00 \uff5e 2026/07/15 05:00:00\\n\\n\u6d3b\u52a8\u8bf4\u660e\\n1.\u6d3b\u52a8\u671f\u95f4\uff0c\u6536\u5230\u9080\u8bf7\u7684\u56de\u5f52\u6307\u6325\u5b98\u767b\u5f55\u6e38\u620f\u5e76\u6210\u529f\u8f93\u5165\u9080\u8bf7\u7801\u540e\uff0c\u88ab\u9080\u8bf7\u6307\u6325\u5b98\u53ef\u9886\u53d6\u76f8\u5e94\u7684\u5956\u52b1\\n2.\u9080\u8bf7\u7801\u53ef\u91cd\u590d\u4f7f\u7528\uff08\u6700\u591a\u540c\u65f6\u9080\u8bf710\u540d\u73a9\u5bb6\uff09\uff0c\u53d7\u9080\u56de\u5f52\u7684\u6307\u6325\u5b98\u5728\u6e38\u620f\u4e2d\u5b8c\u6210\u6307\u5b9a\u6d3b\u8dc3\u4efb\u52a1\uff0c\u9080\u8bf7\u6307\u6325\u5b98\u53ef\u83b7\u5f97\u76f8\u5e94\u5956\u52b1\\n3.\u9080\u8bf7\u6307\u6325\u5b98\u4e0e\u88ab\u9080\u8bf7\u6307\u6325\u5b98\u53ef\u901a\u8fc7\u9996\u6b21\u5206\u4eab\u6216\u4e0b\u8f7d\u4fdd\u5b58\u56fe\u7247\u540e\uff0c\u9886\u53d6\u5bf9\u5e94\u5956\u52b1\uff08\u4ec5\u9650\u4e00\u6b21\uff09\\n4.\u56de\u5f52\u6307\u6325\u5b98\u8f93\u5165\u9080\u8bf7\u7801\u540e\uff0c\u4e0d\u53ef\u89e3\u9664\u7ed1\u5b9a\u66f4\u6362\u9080\u8bf7\u7801\\n5.\u6d3b\u52a8\u671f\u95f4\uff0c\u56de\u5f52\u6307\u6325\u5b98\u4f1a\u9886\u53d6\u4e13\u5c5e\u52e4\u52a1\u4efb\u52a1\uff0c\u5b8c\u6210\u5373\u53ef\u83b7\u53d6\u5bf9\u5e94\u5956\u52b1\\n6.\u6d3b\u52a8\u671f\u95f4\uff0c\u56de\u5f52\u6307\u6325\u5b98\u4f1a\u83b7\u5f97\u300c\u62df\u6218\u573a\u57df\u300d\u53cc\u500d\u5956\u52b1\u673a\u4f1a\u3002\u6307\u5b9a\u6b21\u6570\u5185\uff0c\u5b8c\u6210\u300c\u62df\u6218\u573a\u57df\u300d\u6311\u6218\u5373\u53ef\u83b7\u53d6\u53cc\u500d\u62df\u6218\u79ef\u5206\u5956\u52b1\uff08\u4e0d\u542b\u9996\u901a\uff09\\n7.\u6d3b\u52a8\u671f\u95f4\u6307\u6325\u5b98\u4ec5\u80fd\u53c2\u52a0\u4e00\u6b21\u6d3b\u52a8\uff0c\u6d3b\u52a8\u7ed3\u675f\u540e\u5956\u52b1\u5c06\u65e0\u6cd5\u9886\u53d6",
+        "Describe": "\u53c2\u52a0\u6761\u4ef6\\n\u6307\u6325\u5b98\u7b49\u7ea7\u226540\u7ea7\\n\\n\u56de\u5f52\u6307\u6325\u5b98\\n\u6307\u6325\u5b98\u7b49\u7ea7\u226540\u7ea7\u4e14\u8fde\u7eed\u672a\u767b\u5f55\u5929\u6570\u226530\u5929\\n\\n\u6d3b\u52a8\u65f6\u95f4\\n2026/05/30 05:00:00 \uff5e 2026/07/15 05:00:00\\n\u9080\u8bf7\u53ca\u4efb\u52a1\u65f6\u95f4\\n2026/05/30 05:00:00 \uff5e 2026/07/15 05:00:00\\n\\n\u6d3b\u52a8\u8bf4\u660e\\n1.\u6d3b\u52a8\u671f\u95f4\uff0c\u6536\u5230\u9080\u8bf7\u7684\u56de\u5f52\u6307\u6325\u5b98\u767b\u5f55\u6e38\u620f\u5e76\u6210\u529f\u8f93\u5165\u9080\u8bf7\u7801\u540e\uff0c\u88ab\u9080\u8bf7\u6307\u6325\u5b98\u53ef\u9886\u53d6\u76f8\u5e94\u7684\u5956\u52b1\\n2.\u9080\u8bf7\u7801\u53ef\u91cd\u590d\u4f7f\u7528\uff08\u6700\u591a\u540c\u65f6\u9080\u8bf710\u540d\u73a9\u5bb6\uff09\uff0c\u53d7\u9080\u56de\u5f52\u7684\u6307\u6325\u5b98\u5728\u6e38\u620f\u4e2d\u5b8c\u6210\u6307\u5b9a\u6d3b\u8dc3\u4efb\u52a1\uff0c\u9080\u8bf7\u6307\u6325\u5b98\u53ef\u83b7\u5f97\u76f8\u5e94\u5956\u52b1\\n3.\u9080\u8bf7\u6307\u6325\u5b98\u4e0e\u88ab\u9080\u8bf7\u6307\u6325\u5b98\u53ef\u901a\u8fc7\u9996\u6b21\u5206\u4eab\u6216\u4e0b\u8f7d\u4fdd\u5b58\u56fe\u7247\u540e\uff0c\u9886\u53d6\u5bf9\u5e94\u5956\u52b1\uff08\u4ec5\u9650\u4e00\u6b21\uff09\\n4.\u56de\u5f52\u6307\u6325\u5b98\u8f93\u5165\u9080\u8bf7\u7801\u540e\uff0c\u4e0d\u53ef\u89e3\u9664\u7ed1\u5b9a\u66f4\u6362\u9080\u8bf7\u7801\\n5.\u6d3b\u52a8\u671f\u95f4\uff0c\u56de\u5f52\u6307\u6325\u5b98\u4f1a\u9886\u53d6\u4e13\u5c5e\u52e4\u52a1\u4efb\u52a1\uff0c\u5b8c\u6210\u5373\u53ef\u83b7\u53d6\u5bf9\u5e94\u5956\u52b1\\n6.\u6d3b\u52a8\u671f\u95f4\uff0c\u56de\u5f52\u6307\u6325\u5b98\u4f1a\u83b7\u5f97\u300c\u62df\u6218\u573a\u57df\u300d\u53cc\u500d\u5956\u52b1\u673a\u4f1a\u3002\u6307\u5b9a\u6b21\u6570\u5185\uff0c\u5b8c\u6210\u300c\u62df\u6218\u573a\u57df\u300d\u6311\u6218\u5373\u53ef\u83b7\u53d6\u53cc\u500d\u62df\u6218\u7ee9\u5206\u5956\u52b1\uff08\u4e0d\u542b\u9996\u901a\uff09\\n7.\u6d3b\u52a8\u671f\u95f4\u6307\u6325\u5b98\u4ec5\u80fd\u53c2\u52a0\u4e00\u6b21\u6d3b\u52a8\uff0c\u6d3b\u52a8\u7ed3\u675f\u540e\u5956\u52b1\u5c06\u65e0\u6cd5\u9886\u53d6",
         "IsShowCourse": 2,
         "ImageAsset": null,
         "TextGroupIds": "[0]",
@@ -2247,6 +2247,16 @@
         "IsShowCourse": 3,
         "ImageAsset": "['Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp1.png', 'Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp2.png', 'Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp3.png', 'Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp4.png', 'Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp5.png', 'Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp6.png', 'Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp7.png', 'Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp8.png', 'Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp9.png', 'Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp10.png', 'Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp11.png', 'Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp12.png', 'Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp13.png', 'Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkHelp14.png']",
         "TextGroupIds": "[1022301, 1022302, 1022303, 1022304, 1022305, 1022306, 1022307, 1022308, 1022309, 1022310, 1022311, 1022312, 1022313, 1022314]",
+        "SubIds": null
+    },
+    {
+        "Id": 10224,
+        "Name": "\u9ec4\u6cb9\u5496\u5561\u5947\u9047\u4e8b",
+        "Function": "UiPBRHelp",
+        "Describe": "\u9ec4\u6cb9\u5496\u5561\u5947\u9047\u4e8b\u56fe\u6587\u6559\u5b66",
+        "IsShowCourse": 3,
+        "ImageAsset": "['Assets/Product/Texture/Image/UiPBR/UiPBRHelp01.png', 'Assets/Product/Texture/Image/UiPBR/UiPBRHelp02.png', 'Assets/Product/Texture/Image/UiPBR/UiPBRHelp03.png', 'Assets/Product/Texture/Image/UiPBR/UiPBRHelp04.png', 'Assets/Product/Texture/Image/UiPBR/UiPBRHelp04.png', 'Assets/Product/Texture/Image/UiPBR/UiPBRHelp04.png']",
+        "TextGroupIds": "[1022401, 1022402, 1022403, 1022404, 1022405, 1022406]",
         "SubIds": null
     }
 ]

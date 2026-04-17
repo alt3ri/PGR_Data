@@ -39,7 +39,10 @@ end
 
 ---@param npc table@来自战斗的数据，无用
 ---@param gameId number@游戏ID，对应配置表ConnectingLineStage的ActivityId
-function XUiFightHackerGameV440:OnStart(npc, gameId, buttonIcon, buttonScaleX, buttonScaleY)
+function XUiFightHackerGameV440:OnGameInit(npc, gameId, buttonIcon, buttonScaleX, buttonScaleY)
+    -- 重置UI状态
+    self:ResetState()
+
     local stageId = self._Control:GetRandomStageIdByGameId(gameId)
     self._StageId = stageId
     if stageId > 0 then
@@ -52,7 +55,34 @@ function XUiFightHackerGameV440:OnStart(npc, gameId, buttonIcon, buttonScaleX, b
     self:SetButtonParams(buttonIcon, buttonScaleX, buttonScaleY)
 end
 
-function XUiFightHackerGameV440:OnEnable()
+--- 重置界面状态（解决战斗中Close不销毁导致的状态残留问题）
+function XUiFightHackerGameV440:ResetState()
+    -- 重置面板显示状态
+    self.PanelGame.gameObject:SetActiveEx(true)
+    self.PanelBtn.gameObject:SetActiveEx(false)
+
+    -- 隐藏所有连线
+    for i = 1, #self._LineNormal do
+        if self._LineNormal[i] then
+            self._LineNormal[i].gameObject:SetActiveEx(false)
+        end
+    end
+    for i = 1, #self._LineEnable do
+        if self._LineEnable[i] then
+            self._LineEnable[i].gameObject:SetActiveEx(false)
+        end
+    end
+
+    -- 清理游戏逻辑层状态
+    local game = self._Control:GetGame()
+    if game then
+        game:ClearBoard()
+    end
+end
+
+--- 战斗侧关闭不会销毁，传参依靠OnEnable
+function XUiFightHackerGameV440:OnEnable(...)
+    self:OnGameInit(...)
     self.Timer = XScheduleManager.ScheduleForever(function()
         -- 按下esc
         if CS.UnityEngine.Input.GetKeyDown(CS.UnityEngine.KeyCode.Escape) then
