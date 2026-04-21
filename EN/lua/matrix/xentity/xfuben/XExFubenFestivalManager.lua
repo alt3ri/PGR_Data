@@ -13,6 +13,11 @@ function XExFubenFestivalManager:ExCheckIsShowRedPoint(uiType)
 end
 
 function XExFubenFestivalManager:ExOpenChapterUi(viewModel)
+    -- 分包拦截检查
+    local functionName = self:ExGetFunctionNameType()
+    if functionName and not XMVCA.XSubPackage:CheckSubpackage(functionName) then
+        return
+    end
     local chapterTemplate = XFestivalActivityConfig.GetFestivalById(viewModel:GetId())
     if chapterTemplate.FunctionOpenId and (not XFunctionManager.DetectionFunction(chapterTemplate.FunctionOpenId)) then
         return

@@ -9,7 +9,6 @@ function XUiDrawControl:Ctor(rootUi, drawInfo, drawCb, uiDraw)
     self.DrawInfo = drawInfo
     self.DrawCb = drawCb
     self.UiDraw = uiDraw
-    self.DrawBtns = {}
     self.IsCanDraw = true
     self._DrawTime = 0
     self:InitRes()
@@ -30,6 +29,7 @@ function XUiDrawControl:InitButtons()
             self:InitButton(btn, i)
         end
     end
+    self:RefreshTenDrawDiscount()
     ---@type UnityEngine.RectTransform
     self.FreeBtn = XUiHelper.TryGetComponent(self.RootUi.PanelDrawButtons, "BtnDraw3")
     self.FreeTimeTip = self.FreeBtn:Find("Time/ImgBg/Txt"):GetComponent("Text")
@@ -88,16 +88,12 @@ end
 function XUiDrawControl:InitButton(btn, index)
     --@DATA
     local drawCount = self.DrawInfo.BtnDrawCount[index]
+    ---@type XUiComponent.XUiButton
     local btnComponent = btn:GetComponent(typeof(CS.XUiComponent.XUiButton))
     btnComponent:SetNameByGroup(0, CS.XTextManager.GetText("DrawCount", drawCount))
     btnComponent:SetRawImage(self.UseItemIcon)
-    btnComponent:SetNameByGroup(1, drawCount * self.DrawInfo.UseItemCount)
-
-    self.DrawBtns[index] = {
-        Tips = btn:FindTransform("ImgTips"),
-        DrawCount = drawCount,
-        Btn = btn
-    }
+    local itemCount = XDataCenter.DrawManager.GetDiscountDrawPrice(self.DrawInfo.GroupId, self.DrawInfo.UseItemCount, drawCount)
+    btnComponent:SetNameByGroup(1, itemCount)
 
     self.RootUi:RegisterClickEvent(btn:GetComponent("Button"), function()
         self:OnDraw(drawCount)
@@ -137,10 +133,11 @@ function XUiDrawControl:OnDraw(drawCount)
         end
         local groupUseDrawId = drawGroupInfo.UseDrawId
         local drawGroupRule = XDrawConfigs.GetDrawGroupRuleById(self.GroupId)
-        
+        local needItemCount = XDataCenter.DrawManager.GetDiscountDrawPrice(self.DrawInfo.GroupId, self.DrawInfo.UseItemCount, drawCount)
+
         if drawGroupRule and drawGroupRule.IsNotSelectDefault and not XTool.IsNumberValid(groupUseDrawId) then
             -- 有选择次数的卡池没选Up池
-            if not XDataCenter.ItemManager.DoNotEnoughBuyAsset(self.DrawInfo.UseItemId, self.DrawInfo.UseItemCount, drawCount, nil, "DrawNotEnoughError", true) then
+            if not XDataCenter.ItemManager.DoNotEnoughBuyAssetByNeedCount(self.DrawInfo.UseItemId, needItemCount, nil, "DrawNotEnoughError", true) then
                 XUiManager.TipText("DrawNeedChooseCharTip")
                 -- 没选择Up池研发券不足时先让玩家选择
                 if self.RootUi.OnBtnOptionDrawClick then
@@ -149,8 +146,7 @@ function XUiDrawControl:OnDraw(drawCount)
                 return
             end
         else
-            if not XDataCenter.ItemManager.DoNotEnoughBuyAsset(self.DrawInfo.UseItemId, self.DrawInfo.UseItemCount, drawCount, function()
-            end, "DrawNotEnoughError") then
+            if not XDataCenter.ItemManager.DoNotEnoughBuyAssetByNeedCount(self.DrawInfo.UseItemId, needItemCount, nil, "DrawNotEnoughError") then
                 return
             end
         end
@@ -249,9 +245,12 @@ function XUiDrawControl:Update(drawInfo, groupId)
             local drawCount = self.DrawInfo.BtnDrawCount[i]
             btnComponent:SetNameByGroup(0, CS.XTextManager.GetText("DrawCount", drawCount))
             btnComponent:SetRawImage(self.UseItemIcon)
-            btnComponent:SetNameByGroup(1, drawCount * self.DrawInfo.UseItemCount)
+            local itemCount = XDataCenter.DrawManager.GetDiscountDrawPrice(self.DrawInfo.GroupId, self.DrawInfo.UseItemCount, drawCount)
+            btnComponent:SetNameByGroup(1, itemCount)
         end
     end
+
+    self:RefreshTenDrawDiscount()
 
     if self.TxtDrawCount then
         self.TxtDrawCount.text = CS.XTextManager.GetText("DrawTotalCount", drawInfo.TotalCount)
@@ -282,4 +281,30 @@ function XUiDrawControl:Update(drawInfo, groupId)
     end
 end
 
-return XUiDrawControl
+-- 刷新十连抽的折扣显示
+function XUiDrawControl:RefreshTenDrawDiscount()
+    -- 十连抽的折扣标签
+    local isTenDiscount, discountText = XDataCenter.DrawManager.IsShowTagTenDiscount(self.DrawInfo.GroupId)
+    if self.RootUi.Tag10Discount then
+        self.RootUi.Tag10Discount.gameObject:SetActiveEx(isTenDiscount)
+        if isTenDiscount then
+            self.RootUi.Txt10Discount.text = discountText
+        end
+    end
+    -- 十连抽的折扣描述
+    local useCount, maxCount = XDataCenter.DrawManager.GetTenDrawDiscountCount(self.DrawInfo.GroupId)
+    if self.RootUi.Panel10Discount then
+        self.RootUi.Panel10Discount.gameObject:SetActiveEx(isTenDiscount)
+        if isTenDiscount then
+            useCount = math.min(useCount, maxCount)
+            local discountTextKeyMap = {
+                [23] = "DrawTenDiscountDescXuan",
+                [24] = "DrawTenDiscountDescMingyunXuan",
+            }
+            local textKey = discountTextKeyMap[self.DrawInfo.GroupId] or "DrawTenDiscountDesc"
+            self.RootUi.Txt10DiscountDesc.text = XUiHelper.GetText(textKey, useCount, maxCount)
+        end
+    end
+end
+
+return XUiDrawControl

@@ -13,7 +13,7 @@ local XUiHelper = XUiHelper
 local TabType = {
     None = 0,
     Bonds = 1,  -- 羁绊面板
-    Income = 2,  -- 得分记录面板
+    Income = 2, -- 得分记录面板
 }
 
 ---@class XUiLuckyTenant2GameUiLuckyTenant2Bonds : XUiNode
@@ -36,18 +36,31 @@ function XUiLuckyTenant2GameUiLuckyTenant2Bonds:InitComponents()
     if self.GridBondsIncome then
         self.GridBondsIncome.gameObject:SetActiveEx(false)
     end
-    
+
     -- 初始化羁绊详情面板
     if self.UiLuckyTenant2BondsDetail then
         self.UiLuckyTenant2BondsDetail.gameObject:SetActiveEx(false)
         ---@type XUiLuckyTenant2GameUiLuckyTenant2BondsDetail
         self._BondsDetail = XUiLuckyTenant2GameUiLuckyTenant2BondsDetail.New(self.UiLuckyTenant2BondsDetail, self)
         self._BondsDetail:Close()
-        
+
         -- 初始化关闭按钮
         if self.BtnClose then
             self.BtnClose.gameObject:SetActiveEx(false)
             XUiHelper.RegisterClickEvent(self, self.BtnClose, self.OnBtnCloseClick, nil, true)
+        end
+    end
+end
+
+function XUiLuckyTenant2GameUiLuckyTenant2Bonds:OnDisable()
+    -- 清空，否则会在从其他界面回来后，报错 “子节点 XUiLuckyTenant2GameGridBonds 显示后, activeInHierarchy依旧为false”
+    if self._CurrentTabType == TabType.Bonds then
+        if self.GridBondsIncome and self._BondsIncomeData then
+            XTool.UpdateDynamicItem(self._BondsIncomeGrids, {}, self.GridBondsIncome, XUiLuckyTenant2GameGridBondsIncome, self)
+        end
+    elseif self._CurrentTabType == TabType.Income then
+        if self.GridBonds and self._BondsData then
+            XTool.UpdateDynamicItem(self._BondsGrids, {}, self.GridBonds, XUiLuckyTenant2GameGridBonds, self)
         end
     end
 end
@@ -57,14 +70,14 @@ function XUiLuckyTenant2GameUiLuckyTenant2Bonds:OnStart(...)
     self._BondsGrids = {}
     ---@type XUiLuckyTenant2GameGridBondsIncome[]
     self._BondsIncomeGrids = {}
-    
+
     -- 当前选中的标签类型，默认为 Bonds
     self._CurrentTabType = TabType.None
-    
+
     -- 当前选中的羁绊BondId（使用BondId来追踪，避免Grid对象引用失效）
     ---@type number|nil
     self._SelectedBondId = nil
-    
+
     -- 保存的数据
     self._BondsData = {}
     self._ScoreThisRound = 0
@@ -81,12 +94,12 @@ function XUiLuckyTenant2GameUiLuckyTenant2Bonds:SwitchTab(tabType)
     if self._CurrentTabType == tabType then
         return
     end
-    
+
     self._CurrentTabType = tabType
-    
+
     -- 切换标签时清除选中状态
     self:ClearSelection()
-    
+
     -- 更新面板显示
     if self.ListBonds then
         self.ListBonds.gameObject:SetActiveEx(tabType == TabType.Bonds)
@@ -94,7 +107,7 @@ function XUiLuckyTenant2GameUiLuckyTenant2Bonds:SwitchTab(tabType)
     if self.ListIncome then
         self.ListIncome.gameObject:SetActiveEx(tabType == TabType.Income)
     end
-    
+
     -- 更新按钮状态（由 PanelTab 统一管理时同步选中索引）
     if self.PanelTab then
         self.PanelTab:SelectIndex(tabType)
@@ -106,7 +119,7 @@ function XUiLuckyTenant2GameUiLuckyTenant2Bonds:SwitchTab(tabType)
             self.BtnTabBondScoreRecord:SetButtonState(tabType == TabType.Income and CS.UiButtonState.Select or CS.UiButtonState.Normal)
         end
     end
-    
+
     -- 切换标签后，更新当前标签的数据显示
     self:_UpdateCurrentTab()
 end
@@ -191,7 +204,7 @@ function XUiLuckyTenant2GameUiLuckyTenant2Bonds:SetSelectedGrid(grid)
             g:SetSelected(false)
         end
     end
-    
+
     -- 设置新的选中grid
     if grid and grid:IsValid() and grid._Data then
         local bondId = grid._Data.BondId
@@ -218,7 +231,7 @@ function XUiLuckyTenant2GameUiLuckyTenant2Bonds:SetSelectedIncomeGrid(grid)
             g:SetSelected(false)
         end
     end
-    
+
     -- 设置新的选中grid
     if grid and grid:IsValid() and grid._Data then
         local bondId = grid._Data.BondId
@@ -245,10 +258,10 @@ function XUiLuckyTenant2GameUiLuckyTenant2Bonds:SetSelectedBondId(bondId)
             grid:SetSelected(false)
         end
     end
-    
+
     -- 设置新的选中BondId
     self._SelectedBondId = bondId
-    
+
     -- 找到对应的grid并设置选中状态（根据当前标签类型）
     if bondId then
         if self._CurrentTabType == TabType.Bonds then
@@ -280,14 +293,14 @@ function XUiLuckyTenant2GameUiLuckyTenant2Bonds:GetBondDataByBondId(bondId)
     if not bondId then
         return nil
     end
-    
+
     -- 从Bonds数据中查找
     for _, bondData in ipairs(self._BondsData) do
         if bondData and bondData.BondId == bondId then
             return bondData
         end
     end
-    
+
     return nil
 end
 
@@ -302,7 +315,7 @@ function XUiLuckyTenant2GameUiLuckyTenant2Bonds:OpenBondsDetail(data)
     if not data then
         return
     end
-    
+
     -- 打开详情面板
     if self._BondsDetail then
         self._BondsDetail:Open()

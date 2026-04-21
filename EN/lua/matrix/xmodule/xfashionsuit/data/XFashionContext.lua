@@ -98,7 +98,7 @@ function XFashionContext:GetAction()
     if self.FashionId and not XMVCA.XFashionSuit:IsFashionDressed(self.FashionId) then
         table.insert(params, self.FashionId)
     end
-    if self.WeaponFashionId and not XMVCA.XFashionSuit:IsWeaponFashionDressed(self.WeaponFashionId) then
+    if self.WeaponFashionId and not XMVCA.XFashionSuit:IsWeaponFashionDressed(self.WeaponFashionId, self.CharacterId) then
         table.insert(params, self.WeaponFashionId)
     end
     return XEnumConst.FashionSuit.Action.Wear, params

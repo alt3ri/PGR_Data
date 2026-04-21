@@ -21,9 +21,6 @@ end
 -- 活动结束时间
 ---@return number
 function XUiLuckyTenant2Task:GetActivityEndTime()
-    if XMVCA.XLuckyTenant2:IsOffline() then
-        return XTime.GetServerNowTimestamp() + 1000000000
-    end
     return self._Control:GetActivityEndTime()
 end
 

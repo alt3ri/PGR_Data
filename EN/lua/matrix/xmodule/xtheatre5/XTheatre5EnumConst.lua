@@ -166,6 +166,7 @@ local Theatre5EnumConst = {
         Matching = 5, -- 匹配中
         Battling = 6, -- 正在战斗
         BattleFinish = 7, -- 战斗结束（结算界面）
+        PvpExtraChoice = 8, -- pvp加时赛选择
     },
 
     --章节关卡状态
@@ -345,4 +346,4 @@ local Theatre5EnumConst = {
     }
 }
 
-return Theatre5EnumConst
+return Theatre5EnumConst

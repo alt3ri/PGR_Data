@@ -207,6 +207,11 @@ function XUiTeamPrefabMain:OnBtnCoverClick()
         XUiManager.TipText("RoomTeamPrefabNotSupport")
         return
     end
+
+    if self.XRealTeam:GetIsEmpty() then
+        XUiManager.TipText("TeamPrefabCannotCoverEmptyTeam")
+        return
+    end
     
     local curTeamPrefabEntity = XDataCenter.TeamManager.GetTeamPrefabDataByIndex(self.CurSelectIndex)
     XLuaUiManager.Open("UiTeamPrefabPopupCover", self.XRealTeam, curTeamPrefabEntity, function ()

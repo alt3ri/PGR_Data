@@ -151,6 +151,33 @@ function XChar8052:MonsterConfigMain() --怪物配置用
     -----------------------------
     self.bornSkill = 805282 --出生动画
     self:DashInit() --连续冲刺机制技能初始化
+    
+    self.makeSureSkillList = { --需要确认保底的技能列表，不在以下技能且有确认Buff时就移除。
+        805240,--DashStart开始的技能
+        805241,--DashLoop1
+        805242,--DashLoop2
+        805243,--DashLoop3
+        805251,--转身
+        805239,--Dash的瑟提锤
+        805258,--启动1
+        805250,--启动2
+        805208,--推进拳
+        805214,--二阶段格挡反击
+        805232,--瑟提锤
+        805249,--OD瑟提锤
+        805275,--不死斩用的瑟提锤
+    }
+    
+    self.makeSureSkillCheckBuffList = { -- 需要确认保底的技能的Buff列表
+        8052135,--免疫特殊伤害受击
+        1000465,--锁OD
+        1000469,--锁韧性
+        1000446,--锁一血
+        8052093,--无视场景障碍
+        8052089,--屏蔽被索敌
+        1000497,--狂暴技标记
+        8052075,--不能被Npc碰撞
+    }
 end
 
 --软狂暴配置
@@ -214,6 +241,12 @@ function XChar8052:SkillCastConfig()
             [805203]=10,   --上勾拳（0）
             [805234]=10,   --二连拳（0）
             [805202]=10,   --反身拳（0）
+        },
+        {--保底闪现调整位置
+            [805210]=40,   --前
+            [805211]=40,   --后
+            [805212]=10,   --左
+            [805213]=10,   --右
         },
     }
 end
@@ -333,7 +366,35 @@ function XChar8052:UpdateFightModeBefore()
     self:OdDashTickCheck() --OD机制技能每帧检测
     --self:AirFirePlayerShieldTickCheck() --浮空机制玩家护盾检查
     self:MoveFireTickCheck() --移动射击检查
+    self:MakeSureSkillRemoveBuffTickCheck() --技能移除Buff保底用
     --self:GoCenterCheck() --回中检查
+end
+
+---需要确保的技能移除buffTick检查
+function XChar8052:MakeSureSkillRemoveBuffTickCheck()
+    
+    local suc, curAction = self._proxy:TryGetCurrentAction(self._uuid) --获取当前的Action
+    if not suc then --不成功时直接检查
+        self:MakeSureSkillBuffTryRemoveBuffsOnCurIllegal()
+        return
+    end
+    for i , action in pairs(self.makeSureSkillList) do --在释放任何在列表里的技能就返回
+        if curAction == action then
+            return
+        end
+    end
+    self:MakeSureSkillBuffTryRemoveBuffsOnCurIllegal() --移除Buff检查
+    
+end
+
+---当前技能非法的时候尝试移除检查Buff列表里的Buff
+function XChar8052:MakeSureSkillBuffTryRemoveBuffsOnCurIllegal()
+    for i, buffID in pairs(self.makeSureSkillCheckBuffList) do
+        if self._proxy:CheckBuffByKind(self._uuid,buffID) then
+            self._proxy:RemoveBuff(self._uuid,buffID)
+            --XLog.Warning("行为非法移除Buff"..buffID)
+        end
+    end
 end
 
 --endregion
@@ -469,7 +530,19 @@ function XChar8052:DashInit()
         805258,--启动1
         805250,--启动2
     }
-    self:DashSetDashBoundaryState(XChar8052.DashBoundaryState.None)
+    self.dashAboutBuff = { --Dash相关Buff
+        8052135,--免疫特殊伤害受击
+        1000465,--锁OD
+        1000469,--锁韧性
+        1000446,--锁一血
+        8052093,--无视场景障碍
+        8052089,--屏蔽被索敌
+        1000497,--狂暴技标记
+        8052106,--狂暴特效
+        8052075,--不能被Npc碰撞
+        8052093,--无视场景碰撞
+    }
+    self.dashBoundaryState = 0
 end
 
 --OD机制技能每帧检测
@@ -495,15 +568,7 @@ end
 
 ---冲刺机制回区域检查
 function XChar8052:DashBackAreaCheck()
-    local isOutArea = false --是否在区域外
-    if self.curDashRound == 0 or self.curDashRound == 1 then --最开始的时候
-        if not self._proxy:CheckNpcPositionDistance(self._uuid,self.dashCenter,21,false) then
-            isOutArea = true
-        end
-    elseif not self._proxy:CheckNpcPositionDistance(self._uuid,self.dashCenter,30,false) then--其他情况
-            isOutArea = true
-    end
-    
+    local isOutArea = not self:IsNpcInDashArea(self._uuid) --不在范围内就是Out
     if isOutArea == false then --没有出区域
         return
     end
@@ -526,6 +591,66 @@ function XChar8052:DashBackAreaCheck()
         
     end
     self._proxy:SetNpcPosition(self._uuid,self.dashCenter,false) --出了场地传回场地中心
+end
+
+---判断Npc是否在冲刺范围内
+function XChar8052:IsNpcInDashArea(npc)
+    --传参检查
+    if not self._proxy:CheckNpc(npc) then
+        return false
+    end
+    
+    local pos1 = self.dashCenter
+    local pos2 = self._proxy:GetNpcPosition(npc)
+    local radius = 14.6 --内切圆半径
+    if self.dashBoundaryState == XChar8052.DashBoundaryState.Big then --如果当前是大圈的话
+        radius = 20.6
+    end
+    
+    -- 参数检查
+    if not pos1 or not pos2 or not radius then
+        return false
+    end
+
+    -- 提取坐标数据
+    local x1, z1 = pos1.x, pos1.z 
+    local x2, z2 = pos2.x, pos2.z 
+
+    -- 如果坐标以table形式传递（如{x=1,z=3}）
+    if type(pos1) == "table" then
+        x1 = pos1.x 
+        z1 = pos1.z 
+    end
+
+    if type(pos2) == "table" then
+        x2 = pos2.x 
+        z2 = pos2.z 
+    end
+
+    -- 计算正方形边长
+    local sideLength = radius * 2
+
+    -- 计算正方形的边界
+    local halfSide = sideLength / 2
+    local minX = x1 - halfSide
+    local maxX = x1 + halfSide
+    local minZ = z1 - halfSide
+    local maxZ = z1 + halfSide
+
+    -- 判断坐标2是否在正方形范围内
+    return (x2 >= minX and x2 <= maxX and z2 >= minZ and z2 <= maxZ)
+end
+
+---冲刺机制玩家回区域检查
+function XChar8052:DashPlayerBackAreaCheck()
+    if self.dashMode == XChar8052.DashMode.AlreadySetLevel then --开局的时候不处理
+        return
+    end
+    for i ,player in pairs(self._proxy:GetPlayerNpcList()) do
+        if not self:IsNpcInDashArea(player) then--如果超出范围了
+            self._proxy:SetNpcPosition(player,self.dashCenter,false) --传回场地中间
+        end
+    end
 end
 
 --检查是否有玩家在必杀
@@ -700,7 +825,6 @@ end
 
 ---小辉辉Dash机制ReadyToStart
 function XChar8052:DashReadyStart()
-    self._proxy:ApplyMagic(self._uuid,self._uuid,8052089) --不能被玩家索敌/锁定
     self._proxy:SetNpcPosition(self._uuid,self.dashMonsterPoint)   --设置冲刺时怪物位置
     self._proxy:SetNpcRotation(self._uuid,{x=0,y=180,z=0}) --设置冲刺时怪物朝向
     
@@ -709,7 +833,6 @@ function XChar8052:DashReadyStart()
     self:ApplyMagicAllPlayer(8052324) --所有玩家设置相机位置偏移
     self:ApplyMagicAllPlayer(8052325) --所有玩家设置相机旋转偏移
     self:ApplyMagicAllPlayer(8052134) --屏蔽所有玩家的UI
-    self._proxy:ApplyMagic(self._uuid,self._uuid,8052135) --免疫Relink特殊伤害受击
     self:DashSetDashMode(XChar8052.DashMode.ReadyStart)--状态变成了准备开始
     self:DashSetCurRound(1)
     self:ForceSkill(805250) --强制释放启动2
@@ -769,11 +892,7 @@ function XChar8052:DashHandleBoundary()
         self:RemoveBuffAllPlayer(8052134) --移除隐藏UI的Buff
         self:RemoveBuffAllPlayer(8052324) --移除位置偏移
         self:RemoveBuffAllPlayer(8052325)--移除旋转偏移
-        self._proxy:RemoveBuff(self._uuid,8052135) --移除免疫特殊伤害受击
-        self._proxy:RemoveBuff(self._uuid,1000465) --移除锁定Od
-        self._proxy:RemoveBuff(self._uuid,1000469) --取消锁韧
-        self._proxy:RemoveBuff(self._uuid,8052076) --移除不能被碰撞
-        self._proxy:RemoveBuff(self._uuid,8052093) --移除无视场景障碍
+        self:MonsterSelfTryOnlyRemoveBuffList(self.dashAboutBuff)--移除Dash相关的全部Buff
         self:DashSetCurRound(0)
         self:DashSetDashBoundaryState(XChar8052.DashBoundaryState.None) --结束
         self:DashSetDashMode(XChar8052.DashMode.None) --结束流程
@@ -795,6 +914,7 @@ function XChar8052:DashTickCheck()
     end
     --------在冲刺机制流程里面--------
     self:DashBackAreaCheck() --回区域检查
+    self:DashPlayerBackAreaCheck() --玩家回区域检查
     self:DashLoopTickCheck() --Dash循环检查
     self:DashReStartCheck() --Dash过程中重启检查
     
@@ -822,7 +942,6 @@ function XChar8052:EnterDashStart()
     table.insert(self.dashList,startPos)--插入开始的第一个点。
     
     self._proxy:ApplyMagic(self._uuid,self._uuid,8052075) --不能被碰撞
-    self._proxy:ApplyMagic(self._uuid,self._uuid,8052091) --无敌
     self._proxy:ApplyMagic(self._uuid,self._uuid,8052093) --无视场景障碍
     self:ForceSkillToPosition(805240,startPos)--向开始的点释放Start技能
     self._proxy:LookAtPositionImmediately(self._uuid,self.dashList[self.nextDashIndex])--看向要冲刺的第一个点
@@ -833,11 +952,9 @@ end
 ---DashReStart，重启重启流程
 function XChar8052:DashReStart()
     local startPos = nil --冲刺的开始点
-    
-    self._proxy:ApplyMagic(self._uuid,self._uuid,8052075) --不能被碰撞
-    self._proxy:ApplyMagic(self._uuid,self._uuid,8052091) --无敌
-    self._proxy:ApplyMagic(self._uuid,self._uuid,8052093) --无视场景障碍
-    
+    self:MonsterSelfTryOnlyApplyMagicList(self.dashAboutBuff) --尝试给小辉辉添加Dash相关的Buff
+    self._proxy:RemoveBuff(self._uuid,8052084) --重开的时候保证身上不能有镜头Buff
+    self:RemoveBuffAllPlayer(8052134) --重开的时候去掉所有玩家身上的隐藏UIBuff
     if #self.dashList == 0 then --冲刺列表为空就重新选一下点
         if self.curDashRound == 1 or self.curDashRound == 0 then
             ----Dash初次冲刺范围----
@@ -868,6 +985,7 @@ function XChar8052:DashReStart()
         self:CreatStartDashPosLink() --创建开始时的冲刺线
         self.nextDashIndex = 1 --重新选点重置下一个点
         self:ForceSkillToPosition(805240,startPos)--向开始的点释放Start技能
+        self:DashSetDashMode(XChar8052.DashMode.Start) --DashMode设置为Start
         self._proxy:LookAtPositionImmediately(self._uuid,self.dashList[self.nextDashIndex])--看向要冲刺的第一个点
         self.dashSelectCount = 2 --冲刺选点之后要选第二个点了
         return
@@ -967,14 +1085,25 @@ end
 
 ---DashLoop检查
 function XChar8052:DashLoopTickCheck()
-    if not self.dashMode == XChar8052.DashMode.Loop then --不在循环中跳过
-        return
+    local suc, curAction = self._proxy:TryGetCurrentAction(self._uuid) --获取当前的Action
+    if suc then
+        if (curAction == 805241 or curAction == 805242) and self.dashMode ~= XChar8052.DashMode.Loop then --在这两个技能过程中但状态不在Loop的话就切到Loop
+            self.dashMode = XChar8052.DashMode.Loop
+        end
     end
     
-    local nextPointDistance = self._proxy:GetNpcToPositionDistance(self._uuid,self.dashList[self.nextDashIndex])--获取和下一个点的距离
-    --判断到达目标点的条件
-    if nextPointDistance <= self.dashArriveCheckRange  then --小于这个距离就等于到达了目的地
-        self:OnArrivedDashPoint()
+    if self.dashMode ~= XChar8052.DashMode.Loop then --不在循环中跳过
+        return
+    end
+
+    if #self.dashList ==0 then
+        self:DashReStart() --重启重启！
+    else
+        local nextPointDistance = self._proxy:GetNpcToPositionDistance(self._uuid,self.dashList[self.nextDashIndex])--获取和下一个点的距离
+        --判断到达目标点的条件
+        if nextPointDistance <= self.dashArriveCheckRange  then --小于这个距离就等于到达了目的地
+            self:OnArrivedDashPoint()
+        end
     end
 end
 
@@ -1494,7 +1623,7 @@ function XChar8052:GetDashPoint(count)
             typeMap =self.dashRound3TypeMap
         end
         if self.dashSelectCount>#typeMap then --没有可选次数了
-            XLog.Warning("当前回合"..self.curDashRound..",没有剩余选点次数，溢出的选点次数为："..count - i)
+            --XLog.Warning("当前回合"..self.curDashRound..",没有剩余选点次数，溢出的选点次数为："..count - i)
             return
         end
         local type =typeMap[self.dashSelectCount] --根据typeMap当前Count来选点
@@ -1525,7 +1654,7 @@ function XChar8052:OnCurDashRoundEnd()
     self:DashSetDashMode(XChar8052.DashMode.End)--状态设置为中场可能会结束流程
     
     self.dashSelectCount = 2 --重置一下Count
-    self._proxy:RemoveBuff(self._uuid,8052091) --移除无敌
+
     
     self:SetPlayerHardLockSelf() --设置玩家强锁自己    
     self:ForceSkillToPosition(805239,self.dashCenter) --向Dash的中心点放瑟提锤用来结束流程。
@@ -1602,6 +1731,9 @@ end
 
 ---向Npc发射Dash的导弹
 function XChar8052:DashFireBulletToNpc(npc)
+    if not self._proxy:CheckNpc(npc) then --Npc合法性检查
+        return
+    end
     self._proxy:LaunchMissile(self._uuid,npc,80525806,80525013,1)
 end
 
@@ -1837,12 +1969,14 @@ end
 
 ---怪物自己死亡时
 function XChar8052:OnMonsterSelfDie()
-    self._proxy:ApplyMagic(self._uuid,self._uuid,1000513) --移除这个Buff
+    if self._proxy:CheckBuffByKind(self._uuid,1000512) then--有这个提示的时候
+        self._proxy:ApplyMagic(self._uuid,self._uuid,1000513) --移除这个Buff
+    end
 end
 
 ---处理怪物受到伤害时的受击
 function XChar8052:OnMonsterGetDamageBeHit(launcherId, targetId, magicId, kind, physicalDamage, elementDamage, elementType, realDamage, isCritical, skillId, magicTags)
-    XLog.Warning("受击")
+    --XLog.Warning("受击")
     if self:CheckNpcIsPlayer(launcherId) then
         self._proxy:LookAtPositionImmediately(self._uuid,self._proxy:GetNpcPosition(launcherId)) --看向目标所在位置
         self:ForceSkillToNpc(805245,launcherId)
@@ -2414,7 +2548,7 @@ function XChar8052:DodgeConnect()
     if (not canDodgeList.front) and (not canDodgeList.back) and  (not canDodgeList.left) and (not canDodgeList.right) then
         dodgeGroup = nil
     end
-    XLog.Warning(dodgeGroup)
+    --XLog.Warning(dodgeGroup)
     if not dodgeGroup  then --没有可以冲刺的就直接返回别冲刺了
         return false
     end
@@ -2442,7 +2576,7 @@ end
 
 ---上天：胸炮起跳版衔接
 function XChar8052:JumpLaserConnect()
-    XLog.Warning("胸炮起跳版")
+    --XLog.Warning("胸炮起跳版")
     --if self:GetCurPhase() < 2 then --一阶段空中不攻击
     --    return
     --end
@@ -2487,9 +2621,9 @@ end
 --空中：攻击衔接
 function XChar8052:AirAttackConnect()
     if self.airAttackRemainCount <= 0 then
-        XLog.Warning("没有攻击次数了要落地了")
+        --XLog.Warning("没有攻击次数了要落地了")
     else
-        XLog.Warning("还有攻击次数，继续攻击")
+        --XLog.Warning("还有攻击次数，继续攻击")
     end
 end
 

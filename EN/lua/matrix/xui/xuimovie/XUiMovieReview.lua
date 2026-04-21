@@ -94,3 +94,5 @@ end
 function XUiMovieReview:OnClickBtnClose()
     self:Close()
 end
+
+return XUiMovieReview

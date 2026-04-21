@@ -33,16 +33,16 @@ end
 function XMovieActionTextAppear:OnEnter()
     self.IsTyping = false
     local content = XMVCA.XMovie:ExtractGenderContent(self.TextContent)
-    local text = self.UiRoot:AppearText(self.Layer, self.TextId, content, self.PosX, self.PosY, self.Scale, self.Rotation, self.IsAnim, self.AnchorType)
+    local uiObj = self.UiRoot:AppearText(self.Layer, self.TextId, content, self.PosX, self.PosY, self.Scale, self.Rotation, self.IsAnim, self.AnchorType)
     if self.IsPlayTypeWriter then
         self.IsTyping = true
-        self.TypeWriter = text.transform:GetComponent("TextTypewriter")
+        self.TypeWriter = uiObj:GetObject("TypeWriter")
         self.TypeWriter.Duration = self.TypeWriterTime
         self.TypeWriter.CompletedHandle = function() self:OnTypeWriterComplete() end
         self.TypeWriter:Play()
     end
     self.UiRoot:SetBtnNextCallback(function() self:OnClickBtnNext() end)
-    text.alignment = self.Alignment
+    uiObj:GetObject("GridText").alignment = self.Alignment
 end
 
 function XMovieActionTextAppear:OnDestroy()
@@ -64,14 +64,12 @@ function XMovieActionTextAppear:OnTypeWriterComplete()
 end
 
 function XMovieActionTextAppear:IsPassedActionRun(index)
-    local isCover = XDataCenter.MovieManager.IsBehindPassedActionCover(index, function(action)
-        return self:IsActionCover(action)
-    end)
+    local isCover = XDataCenter.MovieManager.IsBehindPassedActionCover(index)
     return not isCover
 end
 
 ---@param action XMovieActionBase
-function XMovieActionTextAppear:IsActionCover(action)
+function XMovieActionTextAppear:IsPassedActionCovered(action)
     if action:GetType() == XMVCA.XMovie.EnumConst.ACTION_TYPE.TEXT_APPEAR then
         local params = action:GetParams()
         local textId = params[1]

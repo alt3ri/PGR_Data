@@ -3,11 +3,16 @@
 local XUiGridDownload = XClass(XUiNode, "XUiGridDownload")
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 
----@param isPreview bool
-function XUiGridDownload:OnStart(isPreview)
-    self.IsPreview = isPreview
+function XUiGridDownload:OnStart()
     self.GridDic = {}
     self:InitCb()
+
+    -- 缓存 BtnCustom 内部节点引用
+    local btnCustomObj = self.BtnCustom:GetComponent("UiObject")
+    self._CustomNormalTxtDownloading = btnCustomObj:GetObject("NormalTxtDownloading")
+    self._CustomNormalTxtDesc = btnCustomObj:GetObject("NormalTxtDesc")
+    self._CustomPressTxtDownloading = btnCustomObj:GetObject("PressTxtDownloading")
+    self._CustomPressTxtDesc = btnCustomObj:GetObject("PressTxtDesc")
 end
 
 function XUiGridDownload:InitCb()
@@ -31,30 +36,25 @@ function XUiGridDownload:InitCb()
         self:OnBtnDeleteClick()
     end
 
+    self.BtnCustom.CallBack = function()
+        self:OnBtnCustomClick()
+    end
+
     local DOWNLOAD_STATE = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE
     -- 按钮状态配置
     self.ButtonStateConfig = {
-        [true] = { -- IsPreview = true
-            [DOWNLOAD_STATE.PAUSE]            = { BtnPause = true },
-            [DOWNLOAD_STATE.NOT_DOWNLOAD]     = { BtnPause = true },
-            [DOWNLOAD_STATE.DOWNLOADING]      = { BtnPause = true },
-            [DOWNLOAD_STATE.COMPLETE]         = { BtnComplete = true },
-            [DOWNLOAD_STATE.PREPARE_DOWNLOAD] = { BtnPrepare = true },
-        },
-        [false] = { -- IsPreview = false
-            [DOWNLOAD_STATE.PAUSE]            = { BtnPause = true, BtnDelete = function(id) return XMVCA.XSubPackage:CheckSubpackageCanUninstall(id) and XMVCA.XSubPackage:GetSubpackageTemplate(id).AllowDelete end },
-            [DOWNLOAD_STATE.NOT_DOWNLOAD]     = { BtnDownLoad = true },
-            [DOWNLOAD_STATE.DOWNLOADING]      = { BtnDownLoading = true },
-            [DOWNLOAD_STATE.COMPLETE]         = { BtnComplete = true, BtnDelete = function(id) return XMVCA.XSubPackage:CheckSubpackageCanUninstall(id) and XMVCA.XSubPackage:GetSubpackageTemplate(id).AllowDelete end },
-            [DOWNLOAD_STATE.PREPARE_DOWNLOAD] = { BtnPrepare = true },
-            [DOWNLOAD_STATE.UNINSTALLED]        = { BtnDownLoad = true },
-        }
+        [DOWNLOAD_STATE.PAUSE]            = { BtnPause = true, BtnDelete = function(id) return XMVCA.XSubPackage:CheckSubpackageCanUninstall(id) and XMVCA.XSubPackage:GetSubpackageTemplate(id).AllowDelete and not XMVCA.XSubPackage:IsSubOrResDownloading(id) end },
+        [DOWNLOAD_STATE.NOT_DOWNLOAD]     = { BtnDownLoad = true },
+        [DOWNLOAD_STATE.DOWNLOADING]      = { BtnDownLoading = true },
+        [DOWNLOAD_STATE.COMPLETE]         = { BtnComplete = true, BtnDelete = function(id) return XMVCA.XSubPackage:CheckSubpackageCanUninstall(id) and XMVCA.XSubPackage:GetSubpackageTemplate(id).AllowDelete and not XMVCA.XSubPackage:IsSubOrResDownloading(id) end },
+        [DOWNLOAD_STATE.PREPARE_DOWNLOAD] = { BtnPrepare = true },
+        [DOWNLOAD_STATE.UNINSTALLED]      = { BtnDownLoad = true },
     }
 end
 
 -- 根据状态刷新按钮显示
 function XUiGridDownload:RefreshButtons(state, subpackageId)
-    local config = self.ButtonStateConfig[self.IsPreview or false][state] or {}
+    local config = self.ButtonStateConfig[state] or {}
 
     self.BtnDownLoad.gameObject:SetActiveEx(config.BtnDownLoad or false)
     self.BtnPause.gameObject:SetActiveEx(config.BtnPause or false)
@@ -62,6 +62,11 @@ function XUiGridDownload:RefreshButtons(state, subpackageId)
     self.BtnComplete.gameObject:SetActiveEx(config.BtnComplete or false)
     self.BtnPrepare.gameObject:SetActiveEx(config.BtnPrepare or false)
 
+    self:_RefreshDeleteButton(state, subpackageId)
+end
+
+function XUiGridDownload:_RefreshDeleteButton(state, subpackageId)
+    local config = self.ButtonStateConfig[state] or {}
     local deleteVisible = config.BtnDelete
     if type(deleteVisible) == "function" then
         self.BtnDelete.gameObject:SetActiveEx(deleteVisible(subpackageId))
@@ -97,7 +102,22 @@ function XUiGridDownload:Refresh(subpackageId)
 
     local progress = item:GetProgress()
     self:RefreshProgressOnly(progress)
-    self:RefreshButtons(state, subpackageId)
+    -- 按钮显隐：CustomSkipId 格子与普通格子互斥
+    local subConfig = XMVCA.XSubPackage:GetSubpackageTemplate(subpackageId)
+    local customSkipId = subConfig and subConfig.CustomSkipId or 0
+    local hasCustomSkip = XTool.IsNumberValid(customSkipId)
+    self.BtnCustom.gameObject:SetActiveEx(hasCustomSkip)
+    if hasCustomSkip then
+        self.BtnDownLoad.gameObject:SetActiveEx(false)
+        self.BtnDownLoading.gameObject:SetActiveEx(false)
+        self.BtnPause.gameObject:SetActiveEx(false)
+        self.BtnPrepare.gameObject:SetActiveEx(false)
+        self.BtnComplete.gameObject:SetActiveEx(false)
+        self:_RefreshDeleteButton(state, subpackageId)
+        self:_RefreshCustomButton(subpackageId)
+    else
+        self:RefreshButtons(state, subpackageId)
+    end
 
     -- 任务奖励
     if not self.GridCommon then return end
@@ -153,8 +173,28 @@ end
 
 function XUiGridDownload:RefreshProgressOnly(progress)
     local item = self._Control:GetSubpackageItem(self.Id)
-    if item and item:IsUninstalled() then -- 业务层强行设置卸载状态显示进度条为0
-        progress = 0
+    if item and item:IsUninstalled() then
+        -- [F3] UNINSTALLED 时检查是否有活跃下载的 Res（防御性兜底）
+        local hasActiveRes = false
+        local template = XMVCA.XSubPackage:GetSubpackageTemplate(self.Id)
+        local resIds = template and template.ResIds
+        if resIds then
+            for _, resId in ipairs(resIds) do
+                local resItem = XMVCA.XSubPackage:GetResourceItem(resId)
+                if resItem then
+                    local resState = resItem:GetState()
+                    if resState == XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.DOWNLOADING
+                        or resState == XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.PREPARE_DOWNLOAD
+                        or resState == XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.PAUSE then
+                        hasActiveRes = true
+                        break
+                    end
+                end
+            end
+        end
+        if not hasActiveRes then
+            progress = 0
+        end
     end
 
     local progressPercent = math.floor(progress * 100) .. "%"
@@ -166,35 +206,71 @@ function XUiGridDownload:RefreshProgressOnly(progress)
 end
 
 function XUiGridDownload:OnBtnDownLoadClick()
-    if self.IsPreview then
-        return
-    end
-    XMVCA.XSubPackage:AddToDownload(self.Id)
+    XMVCA.XSubPackage:AddToDownload(self.Id, true)
 end
 
 function XUiGridDownload:OnBtnPauseClick()
-    if self.IsPreview then
-        return
-    end
-    XMVCA.XSubPackage:AddToDownload(self.Id)
+    XMVCA.XSubPackage:AddToDownload(self.Id, true)
 end
 
 function XUiGridDownload:OnBtnDownLoadingClick()
-    if self.IsPreview then
-        return
-    end
     XMVCA.XSubPackage:PauseDownload(self.Id)
 end
 
 function XUiGridDownload:OnBtnPrepareClick()
-    if self.IsPreview then
-        return
-    end
     XMVCA.XSubPackage:ProcessPrepare(self.Id)
 end
 
+--- 刷新 BtnCustom 内部节点显隐（Desc 对与 Downloading 对互斥切换）
+function XUiGridDownload:_RefreshCustomButton(subpackageId)
+    local isDownloading = self:_IsCustomDownloading(subpackageId)
+    -- 下载中：显示 Downloading 对
+    self._CustomNormalTxtDownloading.gameObject:SetActiveEx(isDownloading)
+    self._CustomPressTxtDownloading.gameObject:SetActiveEx(isDownloading)
+    -- 非下载中：显示 Desc 对
+    self._CustomNormalTxtDesc.gameObject:SetActiveEx(not isDownloading)
+    self._CustomPressTxtDesc.gameObject:SetActiveEx(not isDownloading)
+end
+
+--- 判断 sub 或其包含的 res 是否处于下载中或等待队列中
+function XUiGridDownload:_IsCustomDownloading(subpackageId)
+    local DOWNLOAD_STATE = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE
+    -- Sub 级状态
+    local item = self._Control:GetSubpackageItem(subpackageId)
+    local subState = item:GetState()
+    if subState == DOWNLOAD_STATE.DOWNLOADING or subState == DOWNLOAD_STATE.PREPARE_DOWNLOAD then
+        return true
+    end
+    -- Res 级状态：遍历子资源，任一处于下载中/等待队列即判定为下载中
+    local template = XMVCA.XSubPackage:GetSubpackageTemplate(subpackageId)
+    if template and template.ResIds then
+        for _, resId in ipairs(template.ResIds) do
+            local resItem = XMVCA.XSubPackage:GetResourceItem(resId)
+            if resItem then
+                local resState = resItem:GetState()
+                if resState == DOWNLOAD_STATE.DOWNLOADING
+                    or resState == DOWNLOAD_STATE.PREPARE_DOWNLOAD then
+                    return true
+                end
+            end
+        end
+    end
+    return false
+end
+
+function XUiGridDownload:OnBtnCustomClick()
+    local subConfig = XMVCA.XSubPackage:GetSubpackageTemplate(self.Id)
+    local customSkipId = subConfig and subConfig.CustomSkipId or 0
+    if not XTool.IsNumberValid(customSkipId) then
+        return
+    end
+    XFunctionManager.SkipInterface(customSkipId)
+end
+
 function XUiGridDownload:OnBtnDeleteClick()
-    if self.IsPreview then
+    -- 全局有下载任务时不允许卸载（与 Agency 层 UninstallSubpackageById 守卫一致）
+    if XMVCA.XSubPackage:IsDownloading() then
+        XUiManager.TipText("SubpackageUninstallRejectDownloading")
         return
     end
 

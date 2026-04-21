@@ -41,7 +41,7 @@ end
 function XUiGridTheatre5Relic:OnClick()
     if self._Data.IsUnlock then
         self._Control:SetItemSelected(self)
-        self._Control:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_OPEN_ITEM_DETAIL, self._Data.Item, XMVCA.XTheatre5.EnumConst.ItemContainerType.NormalDetails)
+        self._Control:DispatchEvent(XMVCA.XTheatre5.EventId.EVENT_THEATRE5_OPEN_ITEM_DETAIL, self._Data.Item, XMVCA.XTheatre5.EnumConst.ItemContainerType.NormalDetails, self.DetailPos)
     end
 end
 
@@ -49,4 +49,4 @@ end
 function XUiGridTheatre5Relic:UnSelect()
 end
 
-return XUiGridTheatre5Relic
+return XUiGridTheatre5Relic

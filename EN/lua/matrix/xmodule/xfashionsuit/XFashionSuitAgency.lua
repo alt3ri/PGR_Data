@@ -40,10 +40,10 @@ function XFashionSuitAgency:OpenMain()
     if #needCloseIds > 0 then
         --玩家主动进入套装界面后，强制完成指定ID的强引导
         XDataCenter.GuideManager.ReqMultiGuideComplete(needCloseIds, function()
-            XLuaUiManager.Open("UiFashionSuitMain")
+            XLuaUiManager.Open("UiFashionSuitLobby")
         end)
     else
-        XLuaUiManager.Open("UiFashionSuitMain")
+        XLuaUiManager.Open("UiFashionSuitLobby")
     end
 end
 
@@ -97,6 +97,7 @@ function XFashionSuitAgency:CheckFashionShopOpen(suitId, cb)
         if cb then
             cb()
         end
+        return
     end
     local shopIds = self._Model:GetSuitShopIds(suitId)
     if XTool.IsTableEmpty(shopIds) then
@@ -154,7 +155,7 @@ function XFashionSuitAgency:GetGroupSalesShopIds(fashionId)
     if config.GainType ~= XEnumConst.FashionSuit.GainType.Shop then
         return nil
     end
-    return { config.FashionGainParams[1], config.WeaponFashionGainParams[1] }
+    return { config.FashionGainParams[1], config.WeaponFashionGainParams[1] }    
 end
 
 ---该套装是否允许整套购买
@@ -250,11 +251,11 @@ function XFashionSuitAgency:IsRandom(fashionId, weaponFashionId)
 end
 
 ---涂装是否已穿戴
-function XFashionSuitAgency:IsDressed(fashionId, weaponFashionId)
+function XFashionSuitAgency:IsDressed(fashionId, weaponFashionId, characterId)
     if fashionId and not self:IsFashionDressed(fashionId) then
         return false
     end
-    if weaponFashionId and not self:IsWeaponFashionDressed(weaponFashionId) then
+    if weaponFashionId and not self:IsWeaponFashionDressed(weaponFashionId, characterId) then
         return false
     end
     return true
@@ -332,7 +333,11 @@ function XFashionSuitAgency:OnMoneyNotEnough(skipIndex, leftTabIndex, payCount)
         if payCount then
             XLuaUiManager.Open("UiPurchaseQuickBuy", payCount, function(index)
                 XLuaUiManager.SafeClose("UiPurchaseQuickBuy")
-                XLuaUiManager.Open("UiPurchase", XPurchaseConfigs.TabsConfig.Pay, false, index)
+                if XLuaUiManager.IsUiLoad("UiPurchase") then
+                    XEventManager.DispatchEvent(XEventId.EVENT_PURCHASE_QUICK_BUY_SKIP, index)
+                else
+                    XLuaUiManager.Open("UiPurchase", XPurchaseConfigs.TabsConfig.Pay, false, index)
+                end
             end)
         end
     else
@@ -554,7 +559,7 @@ function XFashionSuitAgency:GetShopGoodsSale(shopId, goodsData)
     local sales = 100
     local activityOpen, needCount = self:GetDiscountActivityIsOpen(shopId, goodsData)
 
-    XTool.LoopMap(onSales, function(k, sales)
+    XTool.LoopMap(goodsData.OnSales, function(k, sales)
         onSales[k] = sales
     end)
 

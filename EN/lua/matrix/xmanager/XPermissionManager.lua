@@ -70,6 +70,11 @@ function XPermissionManager.TryGetPermission(permissionEnum, description, cb)
         end
     end
 
+    if(permissionEnum == CS.XPermissionEnum.WRITE_EXTERNAL_STORAGE and Platform == RuntimePlatform.Android and CS.XPlugin.OsVersion >= 130000) then
+        -- 安卓13及以上版本申请分区存储权限，权限申请结果不受之前用户选择的影响 
+        cb(true, false)
+        return
+    end
     local resultCB = function(isGranted, dontTip)
         local state = isGranted and PERMISSION_GRANTED or PERMISSION_CUSTOMER_DENIED
         if PermissionStateMap[code] ~= state then

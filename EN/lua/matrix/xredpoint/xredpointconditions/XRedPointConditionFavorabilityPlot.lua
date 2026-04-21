@@ -29,7 +29,9 @@ function XRedPointConditionFavorabilityPlot.Check(checkArgs)
         return false
     end
     
-    return XMVCA.XFavorability:HasStroyToBeUnlock(characterId) or XMVCA.XFavorability:HasStroyTaskCanFinish(characterId)
+    return XMVCA.XFavorability:HasStroyToBeUnlock(characterId) 
+        or XMVCA.XFavorability:HasStroyTaskCanFinish(characterId)
+        or XMVCA.XFavorability:CheckStoryGiftTaskRedPoint(characterId)
 end
 
 

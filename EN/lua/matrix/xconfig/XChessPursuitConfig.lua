@@ -1,4 +1,4 @@
-local XChessPursuitCtrl = require("XUi/XUiChessPursuit/XChessPursuitCtrl")
+--local XChessPursuitCtrl = require("XUi/XUiChessPursuit/XChessPursuitCtrl")
 XChessPursuitConfig = XTool.GetNoneSenseTable()--XChessPursuitConfig or {}
 
 --local TABLE_CHESSPURSUITBOSS_PATH = "Share/ChessPursuit/ChessPursuitBoss.tab"

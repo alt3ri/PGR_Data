@@ -94,15 +94,13 @@ function XMovieActionEffectPlay:GetEffectKey()
 end
 
 function XMovieActionEffectPlay:IsPassedActionRun(index)
-    local isCover = XDataCenter.MovieManager.IsBehindPassedActionCover(index, function(action)
-        return self:IsActionCover(action)
-    end)
+    local isCover = XDataCenter.MovieManager.IsBehindPassedActionCover(index)
     return not isCover
 end
 
 -- 传入Action是否可覆盖当前Action的UI显示，可覆盖则OnPassedActionRun不用再刷新UI界面
 ---@param action XMovieActionBase
-function XMovieActionEffectPlay:IsActionCover(action)
+function XMovieActionEffectPlay:IsPassedActionCovered(action)
     if action:GetType() == self:GetType() or action:GetType() == XMVCA.XMovie.EnumConst.ACTION_TYPE.EFFECT_UNLOAD then
         return action:GetEffectKey() == self:GetEffectKey()
     end

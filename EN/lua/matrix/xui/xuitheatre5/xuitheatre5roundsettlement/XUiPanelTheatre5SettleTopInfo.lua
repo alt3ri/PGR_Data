@@ -7,7 +7,12 @@ local XUiGridTheatre5SettleCup = require('XUi/XUiTheatre5/XUiTheatre5RoundSettle
 ---@overload
 function XUiPanelTheatre5SettleTopInfo:OnStart()
     XUiPanelTheatre5TopInfo.OnStart(self)
+    self.GridCup.gameObject:SetActiveEx(false)
+    if self.GridCupOvertime then
+        self.GridCupOvertime.gameObject:SetActiveEx(false)
+    end
     self._CupList = {}
+    self._CupOvertimeList = {}
 end
 
 ---@overload
@@ -22,39 +27,40 @@ function XUiPanelTheatre5SettleTopInfo:ShowBattleResult(isWin)
     self.TxtLost.gameObject:SetActiveEx(not isWin)
 end
 
----@overload
-function XUiPanelTheatre5SettleTopInfo:RefreshPVPCupsShow()
-    local cupsNum = self._Control:GetTrophyNum()
-    local targetCount = self._Control.PVPControl:GetPVPTargetCountFromConfig()
-
-    if not XTool.IsTableEmpty(self._CupList) then
-        for i, v in pairs(self._CupList) do
-            v:Close()
-        end
-    end
-    
-    XUiHelper.RefreshCustomizedList(self.ListCup.transform, self.GridCup, targetCount, function(index, go)
-        local grid = self._CupList[go]
-
+---@private
+function XUiPanelTheatre5SettleTopInfo:_RefreshCupList(cupList, cupsNum, targetCount, gridTemplate, listParent)
+    for index = 1, targetCount do
+        local grid = cupList[index]
         if not grid then
+            local go = XUiHelper.Instantiate(gridTemplate, listParent)
             grid = XUiGridTheatre5SettleCup.New(go, self)
+            cupList[index] = grid
         end
-        
         grid:Open()
         grid:SetCupIsOn(index <= cupsNum)
-        
         -- 如果赢了，最新的奖杯播放显示动画
-        if self.IsWin then
-            if index == cupsNum then
-                grid:PlayAnimation('StarEnable')
-            end
+        if self.IsWin and index == cupsNum then
+            grid:PlayAnimation('StarEnable')
         end
-    end)
-
-    -- 生成修饰用的UI
-    if self.GroupDian and self.ImgDian then
-        XUiHelper.RefreshCustomizedList(self.GroupDian.transform, self.ImgDian, targetCount - 1)
     end
+    for index = targetCount + 1, #cupList do
+        local grid = cupList[index]
+        if grid then
+            grid:Close()
+        end
+    end
+end
+
+function XUiPanelTheatre5SettleTopInfo:RefreshPVPNormalCups(cupsNum, targetCount)
+    self:_RefreshCupList(self._CupList, cupsNum, targetCount, self.GridCup, self.ListCup)
+    self:RefreshDianUI(targetCount)
+end
+
+function XUiPanelTheatre5SettleTopInfo:RefreshPVPExtraCups(cupsNum, targetCount)
+    local extraTargetCount = self._Control.PVPControl:GetPvpExtraTargetCount()
+    -- 额外杯
+    local extraCupsNum = math.max(0, cupsNum - targetCount)
+    self:_RefreshCupList(self._CupOvertimeList, extraCupsNum, extraTargetCount, self.GridCupOvertime, self.ListCupOvertime)
 end
 
 ---@overload
@@ -68,7 +74,7 @@ function XUiPanelTheatre5SettleTopInfo:RefreshPVECupsShow()
     if curChapterLevel == -1 then
         curChapterLevel = targetCount + 1
     end
-    
+
     if not XTool.IsTableEmpty(self._CupList) then
         for i, v in pairs(self._CupList) do
             v:Close()
@@ -126,7 +132,7 @@ end
 
 function XUiPanelTheatre5SettleTopInfo:StartLifeChangeTimer(health, healthMax)
     self:StopLifeChangeTimer()
-    
+
     self._LifeChangeTimerId = XScheduleManager.ScheduleOnce(function()
         self.TxtLifeNum.text = XUiHelper.FormatText(self._Control.PVPControl:GetHealthShowTextFromClientConfig(), health, healthMax)
         self._LifeChangeTimerId = nil
@@ -135,4 +141,4 @@ end
 
 --endregion
 
-return XUiPanelTheatre5SettleTopInfo
+return XUiPanelTheatre5SettleTopInfo

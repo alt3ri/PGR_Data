@@ -176,12 +176,12 @@ function XUiLuckyTenant2PopupStageDetail:OnBtnTongBlue02Click(eventData)
 
     -- 请求服务器开始游戏
     XMVCA.XLuckyTenant2:RequestStart(self._StageId, function(playingStage)
-        self:Close()
-        -- 服务器返回成功后打开游戏界面
-        -- playingStage 包含恢复游戏所需的 record 数据
-        local seed = XTime.GetServerNowTimestamp()
-        local isFirstTimeEntering = true
-        XLuaUiManager.Open("UiLuckyTenant2Game", self._StageId, seed, isFirstTimeEntering, playingStage)
+    -- 服务器返回成功后打开游戏界面
+    -- playingStage 包含恢复游戏所需的 record 数据
+    local seed = XTime.GetServerNowTimestamp()
+    local isFirstTimeEntering = self._Control:IsFirstTimeEntering(self._StageId)
+    self:Close()
+    XLuaUiManager.Open("UiLuckyTenant2Game", self._StageId, seed, isFirstTimeEntering, playingStage)
     end)
 end
 
@@ -213,7 +213,8 @@ function XUiLuckyTenant2PopupStageDetail:OpenBondDetail(bondId)
 
     -- 打开羁绊详情面板
     self._BondsDetail:Open()
-    self._BondsDetail:Update(bondData)
+    local hideChessRequire = true
+    self._BondsDetail:Update(bondData, hideChessRequire)
 end
 
 return XUiLuckyTenant2PopupStageDetail

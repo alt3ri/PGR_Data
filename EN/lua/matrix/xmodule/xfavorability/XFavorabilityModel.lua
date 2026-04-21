@@ -256,6 +256,12 @@ function XFavorabilityModel:GetCharacterStoryActivityConfig(characterId)
     local config = self._ConfigUtil:Get(TABLE_CHARACTER_STORY_ACTIVITY)
     return config[characterId]
 end
+
+function XFavorabilityModel:GetAllCharacterStoryActivityConfig()
+    return self._ConfigUtil:Get(TABLE_CHARACTER_STORY_ACTIVITY)
+end
+
+
 ----------public end----------
 
 ----------private start----------

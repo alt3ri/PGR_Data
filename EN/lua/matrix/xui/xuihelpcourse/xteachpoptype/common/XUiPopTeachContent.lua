@@ -95,7 +95,7 @@ function XUiPopTeachContent:_RefreshContent(index, oldIndex)
             hasValidTexts = true
             
             XUiHelper.RefreshCustomizedList(self.TxtTeach.transform.parent, self.TxtTeach, txtGroupCfg.Texts and #txtGroupCfg.Texts or 0, function(index, go)
-                local text = go:GetComponent(typeof(CS.UnityEngine.UI.Text))
+                local text = go:GetComponent(typeof(CS.UnityEngine.UI.Text)) or go:GetComponent(typeof(CS.XUiComponent.XUiRichTextCustomRender))
 
                 if text then
                     local fixContent = XUiHelper.ReplaceTextNewLine(txtGroupCfg.Texts[index])

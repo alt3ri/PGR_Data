@@ -1,8 +1,6 @@
 local XUiGachaFashionSelfChoiceEntrance = XLuaUiManager.Register(XLuaUi, "UiGachaFashionSelfChoiceEntrance")
 
 function XUiGachaFashionSelfChoiceEntrance:OnAwake()
-    self.ActivityId = XDataCenter.GachaManager.GetCurGachaFashionSelfChoiceActivityId()
-    self.ActivityConfig = XDataCenter.GachaManager.GetCurGachaFashionSelfChoiceActivityConfig()
     self.CurSelectGridIndex = 1
     self.LastClickTime = 0 -- 添加：上次点击时间戳
     self.SelectCDMs = CS.XGame.ClientConfig:GetInt("XUiGachaFashionSelectGridCD")
@@ -10,10 +8,21 @@ function XUiGachaFashionSelfChoiceEntrance:OnAwake()
     self.GridRewardDic = {}
     self:InitButton()
     self:InitDynamicTable()
-    self:InitTimes()
     XEventManager.AddEventListener(XEventId.EVENT_FIGHT_BEGIN_PLAYMOVIE, self.OnBeginBattleAutoRemove, self)
     XEventManager.AddEventListener(XEventId.EVENT_FIGHT_LOADINGFINISHED, self.OnBeginBattleAutoRemove, self)
     XEventManager.AddEventListener(XEventId.EVENT_MOVIE_BEGIN, self.OnBeginBattleAutoRemove, self)
+end
+
+function XUiGachaFashionSelfChoiceEntrance:OnStart(groupId)
+    self.GroupId = groupId
+    self.ActivityId = XDataCenter.GachaManager.GetCurGachaFashionSelfChoiceActivityId()
+    self.GroupConfig = XDataCenter.GachaManager.GetGroupConfig(groupId)
+    if not self.GroupConfig then
+        XLog.Error("XUiGachaFashionSelfChoiceEntrance: invalid GroupId: " .. tostring(groupId))
+        self:Close()
+        return
+    end
+    self:InitTimes()
 end
 
 function XUiGachaFashionSelfChoiceEntrance:OnDestroy()
@@ -27,7 +36,7 @@ function XUiGachaFashionSelfChoiceEntrance:OnBeginBattleAutoRemove()
 end
 
 function XUiGachaFashionSelfChoiceEntrance:InitButton()
-    self.BtnHelp.CallBack = function() XLuaUiManager.Open("UiGachaFashionSelfChoiceDescribe") end
+    self.BtnHelp.CallBack = function() XLuaUiManager.Open("UiGachaFashionSelfChoiceDescribe", self.GroupId) end
     self.BtnBack.CallBack = function() self:Close() end
     self.BtnMainUi.CallBack = function() XLuaUiManager.RunMain() end
     self.BtnChoose.CallBack = function() self:OnBtnChooseClick() end
@@ -43,7 +52,7 @@ function XUiGachaFashionSelfChoiceEntrance:InitDynamicTable()
 end
 
 function XUiGachaFashionSelfChoiceEntrance:InitTimes()
-    local endTime = XFunctionManager.GetEndTimeByTimeId(self.ActivityConfig.TimeId) or 0
+    local endTime = XFunctionManager.GetEndTimeByTimeId(self.GroupConfig.TimeId) or 0
     self.EndTime = endTime
     self:RefreshTitleByTimeId() -- 计时器启动比较慢 先提前刷新一次
     self:SetAutoCloseInfo(endTime, function(isClose)
@@ -62,18 +71,19 @@ function XUiGachaFashionSelfChoiceEntrance:RefreshTitleByTimeId()
 end
 
 function XUiGachaFashionSelfChoiceEntrance:OnEnable()
-    local curSelectGachaId = XDataCenter.GachaManager.GetCurSelfChoiceSelectGachId()
+    local curSelectGachaId = XDataCenter.GachaManager.GetCurSelfChoiceSelectGachId(self.GroupId)
     if XTool.IsNumberValid(curSelectGachaId) then
         self:Close()
         return
     end
 
     self:RefreshDynamicTable()
-    XSaveTool.SaveData("OpenUiGachaFashionSelfChoiceEntrance", {NextCanShowTimeStamp = XTime.GetSeverTomorrowFreshTime()})
+    local saveKey = "OpenUiGachaFashionSelfChoiceEntrance_" .. tostring(self.GroupId)
+    XSaveTool.SaveData(saveKey, {NextCanShowTimeStamp = XTime.GetSeverTomorrowFreshTime()})
 end
 
 function XUiGachaFashionSelfChoiceEntrance:RefreshDynamicTable()
-    local dataList = self.ActivityConfig.GachaId
+    local dataList = self.GroupConfig.GachaIds
     self.DynamicTable:SetDataSource(dataList)
     self.DynamicTable:ReloadDataSync()
 end

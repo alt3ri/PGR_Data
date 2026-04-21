@@ -433,9 +433,15 @@ end
 
 XTool.ReleaseUiObjectIndex = function(tbl)
     if tbl.Obj and tbl.Obj:Exist() then
+        
         local nameList = tbl.Obj.NameList
-        for _, v in pairs(nameList) do
-            tbl[v] = nil
+        --会调用c#的迭代器
+        --for _, v in pairs(nameList) do
+        --    tbl[v] = nil
+        --end
+        for i = 0, nameList.Count - 1 do
+            local k = nameList[i]
+            tbl[k] = nil
         end
         tbl.Obj = nil
     end

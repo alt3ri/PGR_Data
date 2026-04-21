@@ -229,6 +229,16 @@ function XTheatre5Control:CheckHasEquipSkill()
     return self._Model.CurAdventureData:CheckHasEquipSkill()
 end
 
+--- 判断是否在加时赛
+function XTheatre5Control:CheckIsPvpExtra()
+    return self._Model.CurAdventureData:CheckIsPvpExtra()
+end
+
+--- 获取常规赛原始分
+function XTheatre5Control:GetNormalOriginRating()
+    return self._Model.CurAdventureData:GetNormalOriginRating()
+end
+
 --endregion
 
 --- 设置当前正在游玩的模式, 用于玩法内各界面差异化逻辑判断
@@ -1089,7 +1099,16 @@ function XTheatre5Control:GetItemDataFromEquipBag(itemId)
 end
 
 function XTheatre5Control:CheckNewSeason()
-    if self._Model:IsNewSeason() then
+    local pvpTimeId = XMVCA.XTheatre5:GetPVPActivityTimeId()
+    if not XTool.IsNumberValid(pvpTimeId) then
+        pvpTimeId = self.PVPControl:GetFuturePVPActivityTimeId()
+    end
+    local isEnded = true
+    if XTool.IsNumberValid(pvpTimeId) then
+        local endTime = XFunctionManager.GetEndTimeByTimeId(pvpTimeId)
+        isEnded = XTime.GetServerNowTimestamp() >= endTime
+    end
+    if not isEnded and self._Model:IsNewSeason() then
         XLuaUiManager.Open("UiTheatre5PopupNewSeason")
     end
 end
@@ -1106,8 +1125,8 @@ function XTheatre5Control:GetActivityTime()
             local startTimeTab = os.date("*t", startTimeStamp)
             local endTimeTab = os.date("*t", endTimeStamp)
             return string.format("%.2d.%.2d-%.2d.%.2d",
-                    startTimeTab.month, startTimeTab.day,
-                    endTimeTab.month, endTimeTab.day)
+                startTimeTab.month, startTimeTab.day,
+                endTimeTab.month, endTimeTab.day)
         end
     end
     return ""
@@ -1120,7 +1139,7 @@ end
 function XTheatre5Control:GetUiPrefabPathByType(type)
     local curPriority = 0
     local curPath = nil
-    
+
     local cfgs = self._Model:GetTheatre5UiStyleCfgs()
 
     if cfgs then
@@ -1134,10 +1153,10 @@ function XTheatre5Control:GetUiPrefabPathByType(type)
                     end
                 end
             end
-        end 
+        end
     end
-    
+
     return curPath
 end
 
-return XTheatre5Control
+return XTheatre5Control

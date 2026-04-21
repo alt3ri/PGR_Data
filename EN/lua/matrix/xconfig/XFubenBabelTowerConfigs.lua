@@ -14,7 +14,7 @@ local SHARE_BABEL_STAGELEVEL = "Share/Fuben/BabelTower/BabelTowerStageLevel.tab"
 local SHARE_BABEL_STAGELEVELGLOBALUNLOCK = "Share/Fuben/BabelTower/BabelTowerStageLevelGlobalUnlock.tab"
 
 local CLIENT_BABEL_STAGEGUIDEDETAIL = "Client/Fuben/BabelTower/BabelTowerStageGuideDetails.tab"
-local CLIENT_BABEL_BUFFDETAIL = "Client/Fuben/BabelTower/BabelTowerBuffDetails.tab"
+local CLIENT_BABEL_BUFFDETAIL = "Client/Fuben/BabelTowerBuffDetails.tab"
 local CLIENT_BABEL_BUFFGROUPDETAIL = "Client/Fuben/BabelTower/BabelTowerBuffGroupDetails.tab"
 local CLIENT_BABEL_STAGEDETAIL = "Client/Fuben/BabelTower/BabelTowerStageDetails.tab"
 local CLIENT_BABEL_ACTIVITYDETAIL = "Client/Fuben/BabelTower/BabelTowerActivityDetails.tab"

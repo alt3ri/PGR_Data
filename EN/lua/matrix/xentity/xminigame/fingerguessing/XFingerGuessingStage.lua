@@ -1,7 +1,7 @@
 -- 猜拳小游戏关卡
 ---@class XFingerGuessingStage
 local XFingerGuessingStage = XClass(nil, "XFingerGuessingStage")
-local UNNAMED_STR = "未配置字段"
+local UNNAMED_STR = ""
 local FINGER_NUM_NOT_OPEN_TEXT = "?"
 local FINGER_TYPE = {
     Rock = 0, -- 石头

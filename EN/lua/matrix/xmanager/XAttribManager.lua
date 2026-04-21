@@ -39,9 +39,6 @@ local AttribDescTemplates = {}
 --属性值table对象池
 local AttriValueArrayPool = {}
 
-local AddFixEx = CS.XTool.AddFixEx
-local MultFixEx = CS.XTool.MultFixEx
-
 ---属性id接口注册
 ---@param inter function
 function XAttribManager.RegisterGrowRateIdInterface(inter)
@@ -320,32 +317,68 @@ local function ReviseAttribs(attribValues, reviseId)
     return XCode.Success
 end
 
+---将属性数组从RawValue转换成XAttrib，减少rawValue转fix传回lua的装箱操作
+---@param attribs long[] RawValue数组
+---@return XAttrib[] XAttrib属性数组
+local function RawValue2XAttrib(attribs)
+    local xAttribs = CS.XAttrib.CreateArray(AttribCount)
+    for attribIndex = 1, AttribCount - 1 do
+        if attribs[attribIndex] then
+            CS.XAttrib.CtorToArray(xAttribs, attribIndex, FixToIntEx(attribs[attribIndex]))
+        end
+    end
+
+    --- 提取常量
+    local thousandRaw = fix.thousand.RawValue
+    local fpsFixRaw = FPS_FIX.RawValue
+    local fpsReciprocalRaw = FPS_RECIPROCAL_FIX.RawValue
+    local radianPerAngleRaw = RADIAN_PER_ANGLE_FIX.RawValue
+
+    --- 特殊处理
+    CS.XAttrib.SetBaseInArray(xAttribs, RunSpeedIndex,
+            FixToIntEx(DivisionFixEx(MultFixEx(attribs[RunSpeedIndex], thousandRaw), fpsFixRaw)))
+
+    CS.XAttrib.SetBaseInArray(xAttribs, WalkSpeedIndex,
+            FixToIntEx(DivisionFixEx(MultFixEx(attribs[WalkSpeedIndex], thousandRaw), fpsFixRaw)))
+
+    CS.XAttrib.SetBaseInArray(xAttribs, SquatSpeedIndex,
+            FixToIntEx(DivisionFixEx(MultFixEx(attribs[SquatSpeedIndex], thousandRaw), fpsFixRaw)))
+
+    CS.XAttrib.SetBaseInArray(xAttribs, SprintSpeedIndex,
+            FixToIntEx(DivisionFixEx(MultFixEx(attribs[SprintSpeedIndex], thousandRaw), fpsFixRaw)))
+
+    CS.XAttrib.SetBaseInArray(xAttribs, TurnRoundSpeedIndex,
+            FixToIntEx(MultFixEx(MultFixEx(MultFixEx(attribs[TurnRoundSpeedIndex],
+                    fpsReciprocalRaw), radianPerAngleRaw), thousandRaw)))
+
+    CS.XAttrib.SetBaseInArray(xAttribs, BallIntervalIndex,
+            FixToIntEx(MultFixEx(attribs[BallIntervalIndex], fpsFixRaw)))
+
+    CS.XAttrib.SetBaseInArray(xAttribs, DodgeEnergyAutoRecoveryIndex,
+            FixToIntEx(MultFixEx(attribs[DodgeEnergyAutoRecoveryIndex], fpsReciprocalRaw)))
+
+    return xAttribs
+end
+
 ---将属性数组从fix转换成XAttrib
 ---@param attribs fix[] fix属性数组
 ---@return XAttrib[] XAttrib属性数组
 local function Fix2XAttrib(attribs)
-    local xAttribs = {}
+    local xAttribs = CS.XAttrib.CreateArray(AttribCount)
     for attribIndex = 1, AttribCount - 1 do
-        local xAttrib
         if attribs[attribIndex] then
-            xAttrib = CS.XAttrib.Ctor(FixToInt(attribs[attribIndex]))
-        else
-            xAttrib = CS.XAttrib()
+            CS.XAttrib.CtorToArray(xAttribs, attribIndex, FixToInt(attribs[attribIndex]))
         end
-        tableInsert(xAttribs, xAttrib)
     end
 
     --- 特殊处理
-    xAttribs[RunSpeedIndex]:SetBase(FixToInt(attribs[RunSpeedIndex] * fix.thousand / FPS_FIX))
-    xAttribs[WalkSpeedIndex]:SetBase(FixToInt(attribs[WalkSpeedIndex] * fix.thousand / FPS_FIX))
-    xAttribs[SquatSpeedIndex]:SetBase(FixToInt(attribs[SquatSpeedIndex] * fix.thousand / FPS_FIX))
-    xAttribs[SprintSpeedIndex]:SetBase(FixToInt(attribs[SprintSpeedIndex] * fix.thousand / FPS_FIX))
-    xAttribs[TurnRoundSpeedIndex]:SetBase(FixToInt(attribs[TurnRoundSpeedIndex] * FPS_RECIPROCAL_FIX * RADIAN_PER_ANGLE_FIX * fix.thousand))
-    xAttribs[BallIntervalIndex]:SetBase(FixToInt(attribs[BallIntervalIndex] * FPS_FIX))
-    xAttribs[DodgeEnergyAutoRecoveryIndex]:SetBase(FixToInt(attribs[DodgeEnergyAutoRecoveryIndex] * FPS_RECIPROCAL_FIX))
-
-    --- CS数组下标从0开始,补一位
-    tableInsert(xAttribs, 1, CS.XAttrib())
+    CS.XAttrib.SetBaseInArray(xAttribs, RunSpeedIndex, FixToInt(attribs[RunSpeedIndex] * fix.thousand / FPS_FIX))
+    CS.XAttrib.SetBaseInArray(xAttribs, WalkSpeedIndex, FixToInt(attribs[WalkSpeedIndex] * fix.thousand / FPS_FIX))
+    CS.XAttrib.SetBaseInArray(xAttribs, SquatSpeedIndex, FixToInt(attribs[SquatSpeedIndex] * fix.thousand / FPS_FIX))
+    CS.XAttrib.SetBaseInArray(xAttribs, SprintSpeedIndex, FixToInt(attribs[SprintSpeedIndex] * fix.thousand / FPS_FIX))
+    CS.XAttrib.SetBaseInArray(xAttribs, TurnRoundSpeedIndex, FixToInt(attribs[TurnRoundSpeedIndex] * FPS_RECIPROCAL_FIX * RADIAN_PER_ANGLE_FIX * fix.thousand))
+    CS.XAttrib.SetBaseInArray(xAttribs, BallIntervalIndex, FixToInt(attribs[BallIntervalIndex] * FPS_FIX))
+    CS.XAttrib.SetBaseInArray(xAttribs, DodgeEnergyAutoRecoveryIndex, FixToInt(attribs[DodgeEnergyAutoRecoveryIndex] * FPS_RECIPROCAL_FIX))
 
     return xAttribs
 end
@@ -383,8 +416,9 @@ end
 ---@param npcTemplate table npc配置
 ---@param level number 等级
 ---@param reviseId number 修正系数id
+---@param isReturnRawValue boolean 是否返回RawValue数据
 ---@return XCode,fix[] 状态码和属性数组
-local function GetNpcBaseAttribsWithReviseId(npcTemplate, level, reviseId)
+local function GetNpcBaseAttribsWithReviseId(npcTemplate, level, reviseId, isReturnRawValue)
     local code, attribValues = GetNpcBaseAttribValues(npcTemplate, level)
     if code ~= XCode.Success then
         return code, nil
@@ -396,8 +430,13 @@ local function GetNpcBaseAttribsWithReviseId(npcTemplate, level, reviseId)
             return code, nil
         end
     end
-    local attribs = RawValueToFixList(attribValues)
-    return XCode.Success, attribs
+
+    if isReturnRawValue then
+        return XCode.Success, attribValues
+    else
+        local attribs = RawValueToFixList(attribValues)
+        return XCode.Success, attribs
+    end
 end
 
 ---获取npc基础属性
@@ -418,15 +457,16 @@ end
 ---@param npcTemplateId number npc配置id
 ---@param level number 等级
 ---@param reviseId number 修正系数id
+---@param isReturnRawValue boolean 是否返回RawValue[]数据
 ---@return XCode,fix[] 状态码和属性数组
-local function GetNpcBaseAttribsByNpcIdWithReviseId(npcTemplateId, level, reviseId)
+local function GetNpcBaseAttribsByNpcIdWithReviseId(npcTemplateId, level, reviseId, isReturnRawValue)
     local npcTemplate = CS.XNpcManager.GetNpcTemplate(npcTemplateId)
     if not npcTemplate then
         XLog.Error("XAttribManager GetNpcBaseAttribsByNpcIdWithReviseId Error: can not found npc template, npc Id is " .. npcTemplateId)
         return XCode.AttribManagerGetNpcAttribNpcNotFound, nil
     end
 
-    return GetNpcBaseAttribsWithReviseId(npcTemplate, level, reviseId)
+    return GetNpcBaseAttribsWithReviseId(npcTemplate, level, reviseId, isReturnRawValue)
 end
 
 ---获取属性加成id列表
@@ -581,8 +621,9 @@ end
 
 ---获取npc属性
 ---@param npcData userdata npc数据
+---@param isReturnRawValue boolean 是否返回RawValue数据
 ---@return XCode,fix[] 状态码和属性数组
-local function GetNpcAttribs(npcData)
+local function GetNpcAttribs(npcData, isReturnRawValue)
     local attribValues
     local characterData = npcData.Character
 
@@ -618,28 +659,33 @@ local function GetNpcAttribs(npcData)
             return code, nil
         end
     end
-    local attribs = RawValueToFixList(attribValues)
-    return XCode.Success, attribs
+
+    if isReturnRawValue then
+        return XCode.Success, attribValues
+    else
+        local attribs = RawValueToFixList(attribValues)
+        return XCode.Success, attribs
+    end
 end
 
 local function TryGetNpcBaseAttribs(npcTemplateId, level, reviseId)
-    local code, attribs = GetNpcBaseAttribsByNpcIdWithReviseId(npcTemplateId, level, reviseId)
+    local code, attribs = GetNpcBaseAttribsByNpcIdWithReviseId(npcTemplateId, level, reviseId, true)
     if code ~= XCode.Success then
         XLog.Error("TryGetNpcBaseAttribs error: code is ", code)
         return nil
     end
 
-    return Fix2XAttrib(attribs)
+    return RawValue2XAttrib(attribs)
 end
 
 local function TryGetNpcAttribs(npcData)
-    local code, attribs = GetNpcAttribs(npcData)
+    local code, attribs = GetNpcAttribs(npcData, true)
     if code ~= XCode.Success then
         XLog.Error("TryGetNpcAttribs error: code is ", code)
         return nil
     end
 
-    return Fix2XAttrib(attribs)
+    return RawValue2XAttrib(attribs)
 end
 
 -------------------------------------------------------------------------------------------
@@ -937,7 +983,8 @@ local function DoAddPartnerPromotedAttribValues(partnerData, attribValues)
 end
 
 ---获取Partner属性
-local function GetPartnerAttribs(partnerData)
+---@param isReturnRawValue boolean 是否返回RawValue数
+local function GetPartnerAttribs(partnerData, isReturnRawValue)
     local attribValues = CreateAttribValueArray()
 
     local code = DoAddPartnerNumericAttribValues(partnerData, attribValues)
@@ -949,18 +996,23 @@ local function GetPartnerAttribs(partnerData)
     if code ~= XCode.Success then
         return code, nil
     end
-    local attribs = RawValueToFixList(attribValues)
-    return XCode.Success, attribs
+
+    if isReturnRawValue then
+        return XCode.Success, attribValues
+    else
+        local attribs = RawValueToFixList(attribValues)
+        return XCode.Success, attribs
+    end
 end
 
 local function TryGetPartnerAttribs(partnerData)
-    local code, attribs = GetPartnerAttribs(partnerData)
+    local code, attribs = GetPartnerAttribs(partnerData, true)
     if code ~= XCode.Success then
         XLog.Error("TryGetPartnerAttribs error: code is ", code)
         return nil
     end
 
-    return Fix2XAttrib(attribs)
+    return RawValue2XAttrib(attribs)
 end
 
 ------------------------------------------------------------------------------------------

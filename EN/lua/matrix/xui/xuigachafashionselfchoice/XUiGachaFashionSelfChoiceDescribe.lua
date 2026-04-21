@@ -9,9 +9,14 @@ function XUiGachaFashionSelfChoiceDescribe:InitButton()
     self.BtnClose.CallBack = function() self:Close() end
 end
 
-function XUiGachaFashionSelfChoiceDescribe:OnStart(activityId)
-    local config = XDataCenter.GachaManager.GetCurGachaFashionSelfChoiceActivityConfig()
-    self.ActivityConfig = config
+function XUiGachaFashionSelfChoiceDescribe:OnStart(groupId)
+    local config = XDataCenter.GachaManager.GetGroupConfig(groupId)
+    if not config then
+        XLog.Error("XUiGachaFashionSelfChoiceDescribe: invalid groupId: " .. tostring(groupId))
+        self:Close()
+        return
+    end
+    self.GroupConfig = config
 
     local XUiGachaGridRulePanel = require("XUi/XUiGachaFashionSelfChoice/Grid/XUiGachaGridRulePanel")
     for k, title in pairs(config.RuleTitle) do

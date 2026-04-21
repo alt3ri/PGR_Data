@@ -3,8 +3,7 @@
 local XLuckyTenant2Enum = require("XModule/XLuckyTenant2/Game/XLuckyTenant2Enum")
 local TriggerState = XLuckyTenant2Enum.TriggerState
 local SkillType = XLuckyTenant2Enum.Skill
-local PieceId = XLuckyTenant2Enum.PieceId or { Subworm = 2 }
-local PieceId = XLuckyTenant2Enum.PieceId or { Subworm = 2 }
+local PieceId = XLuckyTenant2Enum.PieceId
 
 local XLuckyTenant2StateApplier = {}
 
@@ -30,6 +29,9 @@ function XLuckyTenant2StateApplier.GetStateSpecFromSkillType(skillType, skillId,
     if skillType == SkillType.Type301 then
         return { stateType = TriggerState.Upgrade, skillId = skillId, rounds = params[1] or 4 }
     end
+    if skillType == SkillType.Type209 then
+        return { stateType = TriggerState.Production, skillId = skillId, rounds = params[1] or 4 }
+    end
     return nil
 end
 
@@ -52,9 +54,6 @@ function XLuckyTenant2StateApplier.ApplyType203ToPiece(piece, pieceId, skillId, 
     end
     if deletionValueDelta > 0 then
         piece:SetBondDeletionValueDelta(skillKey .. "_Delete", deletionValueDelta)
-    end
-    if XMVCA.XLuckyTenant2 then
-        XMVCA.XLuckyTenant2:Print(string.format("[StateApplier-Type203] 子虫ID=%d 技能=%d baseDelta=%d delDelta=%d", pieceId, skillId, baseValueDelta, deletionValueDelta))
     end
 end
 
@@ -153,7 +152,7 @@ end
 
 -- ==================== 入口 1：棋子配置 ====================
 
----根据棋子配置应用状态技能（原 _ApplyStateSkills 的完整逻辑）
+---根据棋子配置应用状态技能
 ---@param game XLuckyTenant2Game
 ---@param piece XLuckyTenant2Piece
 ---@param model XLuckyTenant2Model
@@ -168,101 +167,45 @@ function XLuckyTenant2StateApplier.ApplyStateSkillsFromPieceConfig(game, piece, 
         return
     end
 
-    local triggerStates = config.TriggerState or {}
-    local stateConditionIds = config.StateConditionId or {}
     local stateSkillIds = config.StateSkillId or {}
+    local se = game:GetSkillExecutor()
 
-    local context = {
-        piece = piece,
-        board = game._ChessBoard,
-        bag = game._Bag,
-        game = game,
-        model = model,
-    }
-
-    local XLuckyTenant2Condition = require("XModule/XLuckyTenant2/Game/XLuckyTenant2Condition")
-    local SkillExecutor = require("XModule/XLuckyTenant2/Game/Skill/XLuckyTenant2SkillExecutor")
-
-    -- 处理有 TriggerState 的状态技能（只更新已有状态的技能ID）
-    local maxLen = math.max(#triggerStates, math.max(#stateConditionIds, #stateSkillIds))
-    for i = 1, maxLen do
-        local configTriggerState = triggerStates[i]
-        if configTriggerState and configTriggerState > 0 then
-            if piece:HasState(configTriggerState) then
-                local stateConditionId = stateConditionIds[i]
-                local stateSkillId = stateSkillIds[i]
-                if stateSkillId and stateSkillId > 0 then
-                    local actualSkillId = SkillExecutor.ResolveStateSkillId(stateSkillId, model)
-                    local finalSkillId = actualSkillId or stateSkillId
-                    local shouldApply = true
-                    if stateConditionId and stateConditionId > 0 then
-                        shouldApply = XLuckyTenant2Condition.EvaluateById(model, stateConditionId, context)
-                    end
-                    if shouldApply then
-                        local state = piece:GetState(configTriggerState)
-                        if state then
-                            state:SetSkillId(finalSkillId)
-                        end
-                    end
-                end
-            end
-        end
-    end
-
-    -- 处理无 TriggerState 但配置了 StateSkillId 的情况（自动创建状态，如 202/209/508）
     for i = 1, #stateSkillIds do
         local stateSkillId = stateSkillIds[i]
-        if stateSkillId and stateSkillId > 0 then
-            local hasTriggerStateConfig = (i <= #triggerStates and triggerStates[i] and triggerStates[i] > 0)
-            if not hasTriggerStateConfig then
-                local actualSkillId, skillConfig = SkillExecutor.ResolveStateSkillId(stateSkillId, model)
-                if actualSkillId and actualSkillId ~= stateSkillId then
-                    -- XLog.Warning(string.format("[StateApplier] 配置表 StateSkillId 类型%d 已转换为技能ID %d，棋子ID: %d",
-                    --     stateSkillId, actualSkillId, pieceId))
-                end
-                if not skillConfig then
-                    XLog.Warning(string.format("[StateApplier] 技能ID %d 不存在，棋子ID: %d", stateSkillId, pieceId))
-                end
-                if skillConfig then
-                    local skillType = skillConfig.Type or 0
-                    local skillParams = skillConfig.Params or {}
-                    local finalSkillId = actualSkillId or stateSkillId
-                    -- 两边共用：所有 skillType 都走 HandleSkillType（棋子配置无 bondId，Type207 会 no-op）
-                    local result = XLuckyTenant2StateApplier.HandleSkillType(skillType, finalSkillId, skillParams, { piece = piece, pieceId = pieceId, model = model })
-                    if result and result.stateSpec then
-                        local stateSpec = result.stateSpec
-                        -- 死亡状态：仅当尚未有时创建，避免覆盖
-                        if stateSpec.stateType == TriggerState.Death then
-                            if not piece:HasState(TriggerState.Death) then
-                                local stateConditionId = (i <= #stateConditionIds) and stateConditionIds[i] or nil
-                                local applied = game:ApplyStateToPiece(piece, stateSpec.stateType, stateSpec.skillId, stateSpec.rounds, model, context, { conditionId = stateConditionId })
-                                if applied and XMVCA.XLuckyTenant2 then
-                                    XMVCA.XLuckyTenant2:Print("[StateApplier] 从棋子配置创建状态，棋子ID:", pieceId, "状态类型:", stateSpec.stateType, "技能ID:", stateSpec.skillId, "回合数:", stateSpec.rounds)
-                                end
-                            elseif pieceId == PieceId.Subworm and XMVCA.XLuckyTenant2 then
-                                local existingState = piece:GetState(TriggerState.Death)
-                                local existingRounds = existingState and existingState:GetRemainRounds() or -1
-                                local x, y = piece:GetPosition()
-                                local posStr = (x > 0 and y > 0) and string.format("位置(%d,%d)", x, y) or "背包"
-                                XMVCA.XLuckyTenant2:Print(string.format("[StateApplier] 子虫[ID:%d] %s 已有死亡状态，剩余回合数=%d", pieceId, posStr, existingRounds))
-                            end
-                        else
-                            -- 感染等其它状态：直接应用
-                            game:ApplyStateToPiece(piece, stateSpec.stateType, stateSpec.skillId, stateSpec.rounds, model, context, {})
-                            if XMVCA.XLuckyTenant2 then
-                                XMVCA.XLuckyTenant2:Print("[StateApplier] 从棋子配置创建状态，棋子ID:", pieceId, "状态类型:", stateSpec.stateType, "技能ID:", stateSpec.skillId)
-                            end
-                        end
-                    end
-                    if result and result.deathRounds ~= nil and piece:HasState(TriggerState.Death) then
-                        local state = piece:GetState(TriggerState.Death)
-                        if state then
-                            state:SetRemainRounds(result.deathRounds)
-                        end
-                    end
-                end
+        if not stateSkillId or stateSkillId <= 0 then
+            goto continue
+        end
+
+        local actualSkillId, skillConfig = nil, nil
+        if se then
+            actualSkillId, skillConfig = se:ResolveStateSkillId(stateSkillId, model)
+        end
+        local finalSkillId = actualSkillId or stateSkillId
+        if not skillConfig then
+            goto continue
+        end
+
+        local skillType = skillConfig.Type or 0
+        local skillParams = skillConfig.Params or {}
+
+        local result = XLuckyTenant2StateApplier.HandleSkillType(skillType, finalSkillId, skillParams, {
+            piece = piece, pieceId = pieceId, model = model,
+        })
+        if result and result.stateSpec then
+            local spec = result.stateSpec
+            -- 死亡状态不覆盖已有的
+            if not (spec.stateType == TriggerState.Death and piece:HasState(TriggerState.Death)) then
+                game:ApplyStateToPiece(piece, spec.stateType, spec.skillId, spec.rounds, model, nil, {})
             end
         end
+        if result and result.deathRounds ~= nil and piece:HasState(TriggerState.Death) then
+            local state = piece:GetState(TriggerState.Death)
+            if state then
+                state:SetRemainRounds(result.deathRounds)
+            end
+        end
+
+        ::continue::
     end
 end
 
@@ -280,19 +223,11 @@ function XLuckyTenant2StateApplier.ApplyStateSkillsFromSourceBond(ctx, piece, pi
     if not fromPieceUid or fromPieceUid <= 0 then
         if finalDeathSkillId and finalDeathRounds and finalDeathRounds > 0 then
             ctx:ApplyStateToPiece(piece, TriggerState.Death, finalDeathSkillId, finalDeathRounds, {})
-            if XMVCA.XLuckyTenant2 then
-                local x, y = piece:GetPosition()
-                local posStr = (x > 0 and y > 0) and string.format("位置(%d,%d)", x, y) or "背包"
-                XMVCA.XLuckyTenant2:Print(string.format("[StateApplier] 给子虫添加死亡状态: 棋子ID=%d, %s, 技能ID=%d, 回合数=%d", pieceId, posStr, finalDeathSkillId, finalDeathRounds))
-            end
         end
         return
     end
 
     local fromPiece = ctx:FindPieceByUid(fromPieceUid)
-    if XMVCA.XLuckyTenant2 then
-        XMVCA.XLuckyTenant2:Print(string.format("[StateApplier] 来源怪物 FromPieceUid=%d, fromPiece=%s", fromPieceUid, fromPiece and "存在" or "nil"))
-    end
     if not fromPiece then
         if finalDeathSkillId and finalDeathRounds and finalDeathRounds > 0 then
             ctx:ApplyStateToPiece(piece, TriggerState.Death, finalDeathSkillId, finalDeathRounds, {})
@@ -302,9 +237,6 @@ function XLuckyTenant2StateApplier.ApplyStateSkillsFromSourceBond(ctx, piece, pi
 
     local model = ctx.model
     local bondIdStr = fromPiece:GetBondId()
-    if XMVCA.XLuckyTenant2 then
-        XMVCA.XLuckyTenant2:Print(string.format("[StateApplier] 怪物羁绊 BondId=%s, 子虫ID=%d", bondIdStr or "无", pieceId))
-    end
 
     if not bondIdStr or bondIdStr == "" then
         if finalDeathSkillId and finalDeathRounds and finalDeathRounds > 0 then
@@ -331,9 +263,8 @@ function XLuckyTenant2StateApplier.ApplyStateSkillsFromSourceBond(ctx, piece, pi
             goto continue
         end
         local bondLevel = bond:GetLevel()
-        if bondLevel <= 0 then
-            goto continue
-        end
+        -- 移除 bondLevel <= 0 的提前跳过，允许 Level=0 的技能在羁绊等级=0时生效
+        -- 后续通过 bondLevel >= configLevel 判断来决定是否处理技能
 
         local bondSkillConfigs = model:GetLuckyTenant2BondSkillConfigsByBondIdAndMaxLevel(bondId, bondLevel)
         for _, bondSkillConfig in ipairs(bondSkillConfigs) do
@@ -366,16 +297,10 @@ function XLuckyTenant2StateApplier.ApplyStateSkillsFromSourceBond(ctx, piece, pi
             if result then
                 if result.deathRounds ~= nil then
                     finalDeathRounds = result.deathRounds
-                    if XMVCA.XLuckyTenant2 then
-                        XMVCA.XLuckyTenant2:Print("[StateApplier] Type205: 子虫死亡回合数=", result.deathRounds)
-                    end
                 end
                 if result.stateSpec then
                     local stateSpec = result.stateSpec
                     ctx:ApplyStateToPiece(piece, stateSpec.stateType, stateSpec.skillId, stateSpec.rounds, {})
-                    if XMVCA.XLuckyTenant2 then
-                        XMVCA.XLuckyTenant2:Print("[StateApplier] 来源羁绊应用状态，类型:", stateSpec.stateType, "技能ID:", stateSpec.skillId)
-                    end
                 end
             end
 
@@ -386,11 +311,6 @@ function XLuckyTenant2StateApplier.ApplyStateSkillsFromSourceBond(ctx, piece, pi
 
     if finalDeathSkillId and finalDeathRounds and finalDeathRounds > 0 then
         ctx:ApplyStateToPiece(piece, TriggerState.Death, finalDeathSkillId, finalDeathRounds, {})
-        if XMVCA.XLuckyTenant2 then
-            local x, y = piece:GetPosition()
-            local posStr = (x > 0 and y > 0) and string.format("位置(%d,%d)", x, y) or "背包"
-            XMVCA.XLuckyTenant2:Print(string.format("[StateApplier] 给子虫添加死亡状态: 棋子ID=%d, %s, 技能ID=%d, 回合数=%d", pieceId, posStr, finalDeathSkillId, finalDeathRounds))
-        end
     end
 end
 

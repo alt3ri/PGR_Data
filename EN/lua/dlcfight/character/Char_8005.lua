@@ -132,8 +132,11 @@ function XChar8005:GainControlActionRecoverHandler()
 
     -- Break恢复
     if stateId == XChar8005.EFightState.ODBreakStart then
-        -- 强制转入循环
+        -- 切换状态到循环
         self._fightSM:SetTrigger(self._fightSMTriggers.enterBreaking)
+        -- 恢复Breaking
+        self._isGainControlFullyHandled = false
+        self._gainControlActionToCast = self._odBreakLoopSkill
     end
 
     -- Breaking恢复
@@ -203,6 +206,36 @@ function XChar8005:Update(dt)
         return
     end
 
+    -- 固定频率更新仇恨目标
+    self:UpdateAggroSystem(dt)
+
+    -- 换主控流程
+    if not self._isGainControlFullyHandled then
+        if self._gainControlActionToCast == nil then
+            self._isGainControlFullyHandled = true
+        else
+            if not self._proxy:CheckNpcCurrentAction(self._uuid, self._gainControlActionToCast) then
+                if self._gainControlActionPos ~= nil then
+                    self._proxy:CastActionToPosition(self._uuid, self._gainControlActionToCast, self._gainControlActionPos)
+                elseif self._gainControlActionWaitSkillTarget then
+                    if self:GetSkillTarget() == nil or self:GetSkillTarget() == 0 then
+                        return
+                    end
+                    if self._gainControlUseRegularSkill then
+                        self:CastRegularSkill(self._gainControlActionToCast)
+                    else
+                        self._proxy:CastActionToTarget(self._uuid, self._gainControlActionToCast, self:GetSkillTarget())
+                    end
+                else
+                    self._proxy:CastAction(self._uuid, self._gainControlActionToCast)
+                end
+                return
+            else
+                self._isGainControlFullyHandled = true
+            end
+        end
+    end
+
     -- 状态更新
     self._fightSM:Update(dt)
 
@@ -247,49 +280,9 @@ function XChar8005:Update(dt)
         end
     end
 
-    -- 固定频率更新仇恨目标
-    self:UpdateAggroSystem(dt)
-
-    -- Break时阻断后续逻辑，并确保在break loop动作内(保底逻辑)
-    if self._fightSM:GetCurStateId() == XChar8005.EFightState.ODBreakStart or self._fightSM:GetCurStateId() == XChar8005.EFightState.ODBreaking then
-        local curActionId = self._bb:GetSyncVarLocal(self._syncKeys.curActionId)
-
-        if curActionId ~= self._odBreakEnterSkillSkill or curActionId ~= self._odBreakLoopSkill or curActionId ~= self._odBreakExitSkill then
-            self._proxy:CastAction(self._uuid, self._odBreakLoopSkill)
-            return
-        end
-    end
-
     -- 角力/多人弹刀状态阻断后续逻辑
     if self._bb:GetSyncVarLocal(self._syncKeys.IsInQTEInteract) then
         return
-    end
-
-    -- 换主控流程未处理完成，打断后续逻辑
-    if not self._isGainControlFullyHandled then
-        if self._gainControlActionToCast == nil then
-            self._isGainControlFullyHandled = true
-        else
-            if not self._proxy:CheckNpcCurrentAction(self._uuid, self._gainControlActionToCast) then
-                if self._gainControlActionPos ~= nil then
-                    self._proxy:CastActionToPosition(self._uuid, self._gainControlActionToCast, self._gainControlActionPos)
-                elseif self._gainControlActionWaitSkillTarget then
-                    if self:GetSkillTarget() == nil or self:GetSkillTarget() == 0 then
-                        return
-                    end
-                    if self._gainControlUseRegularSkill then
-                        self:CastRegularSkill(self._gainControlActionToCast)
-                    else
-                        self._proxy:CastActionToTarget(self._uuid, self._gainControlActionToCast, self:GetSkillTarget())
-                    end
-                else
-                    self._proxy:CastAction(self._uuid, self._gainControlActionToCast)
-                end
-                return
-            else
-                self._isGainControlFullyHandled = true
-            end
-        end
     end
 
     -- 追逐逻辑
@@ -2207,7 +2200,6 @@ function XChar8005:OnNpcCastActionAfterEvent(skillId, launcherId, targetId, targ
 
     -- 弹刀类技能触发预警事件，主要用于CV响应
     if self:Contain(self._counterSkills, skillId) then
-        --self:ApplyMagicsToSelf({self._cvEventMagics.CastCounterSkill}, 1)
         if targetId ~= nil and targetId ~= 0 then
             self._proxy:ApplyMagic(self._uuid, targetId, self._cvEventMagics.CastCounterSkill, 1)
         end
@@ -2500,15 +2492,19 @@ function XChar8005:OnNpcBeforeTriggerCounter(triggerNpcUUID, counterNpcUUID, tri
 
     self._proxy:DispatchLuaEvent(ELuaEventTarget.All, EFightLuaEvent.RelinkCounterSuccess, { TriggerNpcUUid = triggerNpcUUID, NpcUUid = counterNpcUUID })
 
-    local isSustain = GameplayTag.CSMatchAnyTag(triggerTag, {EGameplayTag.Missile_Parry_Trigger_Sustain}) or
-            GameplayTag.CSMatchAnyTag(counterTag, {EGameplayTag.Missile_Parry_Counter_Light})
+    local isSustain = GameplayTag.CSMatchAnyTag(triggerTag, {EGameplayTag.Missile_Parry_Trigger_Sustain})
+    local isTargetHeavyCounter = GameplayTag.CSMatchAnyTag(counterTag, {EGameplayTag.Missile_Parry_Counter_Heavy})
+
+    -- 远程没有弹刀表现
+    if not isTargetHeavyCounter then
+        return
+    end
+
     -- 不打断拼刀(触发盒为sustain或反制盒为light)
     if isSustain then
         -- 通用逻辑部分
         self._proxy:ApplyMagic(self._uuid, self._uuid, self._lightReflectSlomo, 1)    -- 弱顿帧（对自己）
         self._proxy:ApplyMagic(self._uuid, counterNpcUUID, self._lightReflectSlomo, 1)-- 弱顿帧（对目标）
-
-        -- 根据子弹ID的定制化表现,弹刀特效
         if triggerMissileTemplateId == 8005064 or triggerMissileTemplateId == 8005067 then
             self._proxy:LaunchMissile(self._uuid, counterNpcUUID, 8005012, 8005012,  1)
         end
@@ -2594,10 +2590,6 @@ function XChar8005:OnNpcWrestlePursuit(launcherNpcUUID, targetNpcUUID)
     if launcherNpcUUID ~= self._uuid then return end
 
     self:ExitQTEInteract()
-    -- 延迟通知赛利卡发出语音
-    self._proxy:AddTimerTask(1.5, function()
-        self:ApplyMagicsToSelf({self._cvEventMagics.MultiQTESuccess}, 1)
-    end)
 end
 
 function XChar8005:OnNpcWrestleReversal(launcherNpcUUID, targetNpcUUID)

@@ -3,6 +3,7 @@ local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTable
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local CSXTextManagerGetText = CS.XTextManager.GetText
 local XUiPanelRoleModel = require("XUi/XUiCharacter/XUiPanelRoleModel")
+local XUiPanelLackResources = require("XUi/XUiSubPackage/XUiPanel/XUiPanelLackResources")
 local CameraIndex = {
     Normal = 1,
     Near = 2,
@@ -44,6 +45,11 @@ function XUiFashionDetail:OnAwake()
     self.OnUiSceneLoadedCB = function() self:OnUiSceneLoaded() end
     self.OnDragModel = handler(self, self.DragModel)
     self:InitPriceHandler()
+
+    -- PanelLackResources 初始化
+    if self.PanelLackResources then
+        self._PanelLackRes = XUiPanelLackResources.New(self.PanelLackResources, self)
+    end
 end
 
 function XUiFashionDetail:OnStart(fashionId, isWeaponFashion, buyData, isShowFashionIconWithoutGift, isNeedCD, customWeaponFashionId, customDesc)
@@ -60,7 +66,6 @@ function XUiFashionDetail:OnStart(fashionId, isWeaponFashion, buyData, isShowFas
     else
         self.CharacterId = XDataCenter.FashionManager.GetCharacterId(fashionId)
     end
-    self:InitGroupSales()
 
     if XWeaponFashionConfigs.IsWeaponFashion(self.FashionId) then 
         --v1.31武器时装
@@ -75,7 +80,6 @@ function XUiFashionDetail:OnStart(fashionId, isWeaponFashion, buyData, isShowFas
     self.IsNeedCD = isNeedCD or false
     -- 记录初始时间
     self.LastBuyTime = CS.UnityEngine.Time.realtimeSinceStartup
-    self:SetDetailData()
     self:CheckWeaponFashionBtnShow()
 
     self.TrialLevelInfo = XDataCenter.FubenExperimentManager.GetTrialLevelByFashionID(fashionId)
@@ -86,10 +90,13 @@ function XUiFashionDetail:OnStart(fashionId, isWeaponFashion, buyData, isShowFas
 end
 
 function XUiFashionDetail:OnEnable()
+    self:InitGroupSales()
+    self:SetDetailData()
+    
     if self._StartRun then
         self._StartRun = false
     else
-        -- 二次显示需要重新刷新已拥有状态    
+        -- 二次显示需要重新刷新已拥有状态
         if XWeaponFashionConfigs.IsWeaponFashion(self.FashionId) then
             --武器时装
             local newIsHaveFashion = XDataCenter.WeaponFashionManager.CheckHasFashion(self.FashionId) and
@@ -103,8 +110,9 @@ function XUiFashionDetail:OnEnable()
             self.IsHaveFashion = newIsHaveFashion
         end
     end
-    
+
     XEventManager.AddEventListener(XEventId.EVENT_PURCHASE_QUICK_BUY_SKIP, self.Close, self)
+    XEventManager.AddEventListener(XEventId.EVENT_RES_COMPLETE, self.OnFashionDownloadComplete, self)
     CS.XGraphicManager.UseUiLightDir = true
     if self.IsWeaponFashion then
         self:LoadModelScene(true)
@@ -114,6 +122,8 @@ function XUiFashionDetail:OnEnable()
         self:UpdateCharacterModel()
     end
     self:InitBuyData()
+
+    self:CheckAndUpdateLackResourcesPanel()
 end
 
 function XUiFashionDetail:Close()
@@ -127,7 +137,16 @@ end
 
 function XUiFashionDetail:OnDisable()
     XEventManager.RemoveEventListener(XEventId.EVENT_PURCHASE_QUICK_BUY_SKIP, self.Close, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_RES_COMPLETE, self.OnFashionDownloadComplete, self)
     CS.XGraphicManager.UseUiLightDir = false
+end
+
+function XUiFashionDetail:OnReleaseInst()
+    return self.IsEnableGroupSales
+end
+
+function XUiFashionDetail:OnResume(value)
+    self.IsEnableGroupSales = value
 end
 
 function XUiFashionDetail:OnUiSceneLoaded()
@@ -147,8 +166,7 @@ function XUiFashionDetail:InitBuyData()
     -- 礼包中已拥有涂装文本
     self.TxtRepeatWith.gameObject:SetActiveEx(not self.BuyData.IsHave and self.IsHaveFashion)
     self:ShowBuyButton()
-    self.PanelInformation.gameObject:SetActiveEx(self.BuyData.LimitText ~= nil or self.BuyData.IsHave 
-        or not string.IsNilOrEmpty(self.BuyData.FashionLabel) or self.IsHaveFashion)
+    self:UpdatePanelInformation()
     
     self.RawImageConsume:SetRawImage(self.BuyData.ItemIcon)
     self.TxtLimitBuy.text = self.BuyData.LimitText or ""
@@ -237,12 +255,12 @@ function XUiFashionDetail:ShowBuyButton()
         local isWear, isMulti
         if self.IsEnableGroupSales then
             local fashionId, weaponFashionId = self:GetGroupFashionId()
-            isWear = XMVCA.XFashionSuit:IsDressed(fashionId, weaponFashionId)
+            isWear = XMVCA.XFashionSuit:IsDressed(fashionId, weaponFashionId, self.CharacterId)
         else
             if self.IsWeaponFashion then
-                isWear = XMVCA.XFashionSuit:IsDressed(nil, self.FashionId)
+                isWear = XMVCA.XFashionSuit:IsDressed(nil, self.FashionId, self.CharacterId)
             else
-                isWear = XMVCA.XFashionSuit:IsDressed(self.FashionId, nil)
+                isWear = XMVCA.XFashionSuit:IsDressed(self.FashionId, nil, self.CharacterId)
             end
         end
         
@@ -269,6 +287,13 @@ function XUiFashionDetail:ShowBuyButton()
     else
         self.BtnBuy.gameObject:SetActiveEx(true)
     end
+end
+
+function XUiFashionDetail:UpdatePanelInformation()
+    local isHave = self.BuyData.IsHave
+    local hasLimitText = self.BuyData.LimitText ~= nil
+    local hasFashionLabel = not string.IsNilOrEmpty(self.BuyData.FashionLabel)
+    self.PanelInformation.gameObject:SetActiveEx(not self.IsEnableGroupSales and (hasLimitText or isHave or hasFashionLabel or self.IsHaveFashion))
 end
 
 function XUiFashionDetail:OnSliderCharacterHightChanged()
@@ -392,6 +417,7 @@ function XUiFashionDetail:SetDetailData()
             self.GridItemObj = XUiGridCommon.New(self, self.GridItem)
         end
         self.GridItemObj:Refresh({ TemplateId = id, Count = 1 }, { Disable = true })
+        self.GridItemObj:SetUiActive(self.GridItemObj.ImgIsHave, self.GridItemObj.TxtHave.gameObject.activeSelf)
     end
 
     if self.IsEnableGroupSales then
@@ -424,10 +450,9 @@ function XUiFashionDetail:OnDynamicTableEvent(event, index, grid)
         -- 已拥有图标显示
         -- 涂装子道具随绑定涂装的拥有而显示已拥有状态
         if (gridData.IsSubItem and self.IsHaveFashion) or (self.BuyData and self.BuyData.ItemCount == 0) then
-            grid.TxtHave.gameObject:SetActiveEx(true)
+            grid:SetUiActive(grid.TxtHave, true)
         end
-        local isHave = grid.TxtHave.gameObject.activeSelf
-        grid.ImgIsHave.gameObject:SetActiveEx(isHave)
+        grid:SetUiActive(grid.ImgIsHave, grid.TxtHave.gameObject.activeSelf)
     end
 end
 
@@ -625,14 +650,12 @@ function XUiFashionDetail:InitGroupSales()
     local isVisible = XMVCA.XFashionSuit:IsAllowGroupSales(self.FashionId)
     if isVisible then
         self.FashionGroup = XMVCA.XFashionSuit:GetFashionGroupByFashionId(self.FashionId)
-        self.ShopId = self.IsWeaponFashion and self.FashionGroup.WeaponFashionGainParams[1] or self.FashionGroup.FashionGainParams[1]
         if not self.FashionGroup then
             XLog.Error(string.format("【涂装：%s 是否武器：%s】找不到对应配置！", self.FashionId, self.IsWeaponFashion))
         end
     end
-    self.IsEnableGroupSales = false
     self.BtnBuySuit.gameObject:SetActiveEx(isVisible)
-    self.BtnBuySuit:SetButtonState(XUiButtonState.Normal)
+    self.BtnBuySuit:SetButtonState(self.IsEnableGroupSales and XUiButtonState.Select or XUiButtonState.Normal)
 end
 
 ---角色涂装Id、武器涂装Id
@@ -710,6 +733,50 @@ function XUiFashionDetail:BuyFashionGroup()
     end
     self.BuyData.GroupBuyCallBack(self.FashionGroup.Id)
     self:OnBtnBackClick()
+end
+
+--endregion
+
+--region 资源缺失面板
+
+function XUiFashionDetail:CheckAndUpdateLackResourcesPanel()
+    if not self._PanelLackRes then return end
+    local fashionId = self.FashionId
+    if not XTool.IsNumberValid(fashionId) then
+        self._PanelLackRes:Close()
+        self._isFashionLacking = false
+        return
+    end
+    local isDownloaded = XMVCA.XSubPackage:CheckFashionDownloaded(fashionId)
+    if isDownloaded then
+        self._PanelLackRes:Close()
+        self._isFashionLacking = false
+    else
+        local template = XDataCenter.FashionManager.GetFashionTemplate(fashionId)
+        local characterId = template and template.CharacterId or 0
+        self._PanelLackRes:SetData(characterId, fashionId)
+        self._PanelLackRes:Open()
+        self._isFashionLacking = true
+    end
+end
+
+function XUiFashionDetail:OnFashionDownloadComplete()
+    if not self._isFashionLacking then
+        self:CheckAndUpdateLackResourcesPanel()
+        return
+    end
+    local fashionId = self.FashionId
+    if XTool.IsNumberValid(fashionId)
+       and XMVCA.XSubPackage:CheckFashionDownloaded(fashionId) then
+        if self.IsWeaponFashion then
+            self:UpdateWeaponModel()
+        else
+            self:UpdateCharacterModel()
+        end
+        local fashionTemplate = XDataCenter.FashionManager.GetFashionTemplate(fashionId)
+        XUiManager.PopupLeftTip(CS.XTextManager.GetText("DownloadFashionFinishedRefresh", fashionTemplate and fashionTemplate.Name or ""))
+    end
+    self:CheckAndUpdateLackResourcesPanel()
 end
 
 --endregion

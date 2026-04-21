@@ -30,8 +30,9 @@ function XUiGuildBossLog:Init(data)
             self.DescText.text = self.DescText.text .. "\n" .. string.format(self.GetText("GuildBossLogLine5"), data.EffectHp)
         end
     end
-    
-    self.LayoutNode:SetDirty()
+      -- 强制立即完成布局计算
+      CS.UnityEngine.Canvas.ForceUpdateCanvases()
+    -- self.LayoutNode:SetDirty()
 end
 
 return XUiGuildBossLog

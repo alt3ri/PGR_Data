@@ -2,211 +2,604 @@
     {
         "Id": 1,
         "Type": 1,
-        "Color": 3,
-        "InitialScore": 10.0,
-        "CanMerge": true,
-        "CanDye": true,
-        "BulletColorType": null,
+        "Color": null,
         "BulletNum": null,
-        "DyeAddScore": null,
-        "Capacity": null,
-        "ManifestId": null,
-        "CellName": "Basic Tile (Purple)"
+        "GridName": "GridStart",
+        "CharacterId": null,
+        "Name": "Starting Point"
     },
     {
-        "Id": 2,
-        "Type": 1,
-        "Color": 2,
-        "InitialScore": 1.0,
-        "CanMerge": true,
-        "CanDye": true,
-        "BulletColorType": null,
+        "Id": 99,
+        "Type": 2,
+        "Color": null,
         "BulletNum": null,
-        "DyeAddScore": null,
-        "Capacity": null,
-        "ManifestId": null,
-        "CellName": "Basic Tile (Red)"
+        "GridName": "GridEnd07",
+        "CharacterId": null,
+        "Name": "Kamui Destination 1"
     },
     {
-        "Id": 3,
-        "Type": 1,
-        "Color": 1,
-        "InitialScore": 1.0,
-        "CanMerge": true,
-        "CanDye": true,
-        "BulletColorType": null,
+        "Id": 100,
+        "Type": 2,
+        "Color": null,
         "BulletNum": null,
-        "DyeAddScore": null,
-        "Capacity": null,
-        "ManifestId": null,
-        "CellName": "Basic Tile (Blue)"
+        "GridName": "GridEnd07",
+        "CharacterId": null,
+        "Name": "Kamui Destination 2"
     },
     {
-        "Id": 20,
-        "Type": 7,
-        "Color": 3,
-        "InitialScore": null,
-        "CanMerge": true,
-        "CanDye": null,
-        "BulletColorType": 3.0,
-        "BulletNum": 2.0,
-        "DyeAddScore": null,
-        "Capacity": null,
-        "ManifestId": 1.0,
-        "CellName": "Filler Projectile (Purple) x2"
-    },
-    {
-        "Id": 4,
-        "Type": 7,
-        "Color": 3,
-        "InitialScore": null,
-        "CanMerge": true,
-        "CanDye": null,
-        "BulletColorType": 3.0,
-        "BulletNum": 1.0,
-        "DyeAddScore": null,
-        "Capacity": null,
-        "ManifestId": 1.0,
-        "CellName": "Filler Projectile (Purple)"
-    },
-    {
-        "Id": 5,
-        "Type": 7,
-        "Color": 2,
-        "InitialScore": null,
-        "CanMerge": true,
-        "CanDye": null,
-        "BulletColorType": 2.0,
-        "BulletNum": 1.0,
-        "DyeAddScore": null,
-        "Capacity": null,
-        "ManifestId": 2.0,
-        "CellName": "Filler Projectile (Red)"
-    },
-    {
-        "Id": 6,
-        "Type": 7,
-        "Color": 1,
-        "InitialScore": null,
-        "CanMerge": true,
-        "CanDye": null,
-        "BulletColorType": 1.0,
-        "BulletNum": 1.0,
-        "DyeAddScore": null,
-        "Capacity": null,
-        "ManifestId": 3.0,
-        "CellName": "Filler Projectile (Blue)"
-    },
-    {
-        "Id": 7,
+        "Id": 101,
         "Type": 3,
-        "Color": 3,
-        "InitialScore": 10.0,
-        "CanMerge": true,
-        "CanDye": true,
-        "BulletColorType": 3.0,
+        "Color": 1.0,
         "BulletNum": null,
-        "DyeAddScore": 3.0,
-        "Capacity": null,
-        "ManifestId": null,
-        "CellName": "Colored Bonus Tile (Purple)"
+        "GridName": "GridEnd01",
+        "CharacterId": null,
+        "Name": "Camu Destination 1"
     },
     {
-        "Id": 8,
+        "Id": 102,
         "Type": 3,
-        "Color": 2,
-        "InitialScore": 1.0,
-        "CanMerge": true,
-        "CanDye": true,
-        "BulletColorType": 2.0,
+        "Color": 2.0,
         "BulletNum": null,
-        "DyeAddScore": 5.0,
-        "Capacity": null,
-        "ManifestId": null,
-        "CellName": "Colored Bonus Tile (Red)"
+        "GridName": "GridEnd02",
+        "CharacterId": null,
+        "Name": "Camu Destination 2"
     },
     {
-        "Id": 9,
+        "Id": 103,
         "Type": 3,
-        "Color": 1,
-        "InitialScore": 1.0,
-        "CanMerge": true,
-        "CanDye": true,
-        "BulletColorType": 1.0,
+        "Color": 3.0,
         "BulletNum": null,
-        "DyeAddScore": 5.0,
-        "Capacity": null,
-        "ManifestId": null,
-        "CellName": "Colored Bonus Tile (Blue)"
+        "GridName": "GridEnd03",
+        "CharacterId": null,
+        "Name": "Chrome Destination 1"
     },
     {
-        "Id": 26,
-        "Type": 2,
-        "Color": 3,
-        "InitialScore": null,
-        "CanMerge": true,
-        "CanDye": null,
-        "BulletColorType": 3.0,
-        "BulletNum": 2.0,
-        "DyeAddScore": null,
-        "Capacity": null,
-        "ManifestId": null,
-        "CellName": "Colored Projectile (Purple) x2"
+        "Id": 104,
+        "Type": 3,
+        "Color": 4.0,
+        "BulletNum": null,
+        "GridName": "GridEnd04",
+        "CharacterId": null,
+        "Name": "Chrome Destination 2"
     },
     {
-        "Id": 10,
-        "Type": 2,
-        "Color": 3,
-        "InitialScore": null,
-        "CanMerge": true,
-        "CanDye": null,
-        "BulletColorType": 3.0,
-        "BulletNum": 1.0,
-        "DyeAddScore": null,
-        "Capacity": null,
-        "ManifestId": null,
-        "CellName": "Colored Projectile (Purple)"
+        "Id": 105,
+        "Type": 3,
+        "Color": 5.0,
+        "BulletNum": null,
+        "GridName": "GridEnd05",
+        "CharacterId": null,
+        "Name": "Wanshi Destination 1"
     },
     {
-        "Id": 11,
-        "Type": 2,
-        "Color": 2,
-        "InitialScore": null,
-        "CanMerge": true,
-        "CanDye": null,
-        "BulletColorType": 2.0,
-        "BulletNum": 1.0,
-        "DyeAddScore": null,
-        "Capacity": null,
-        "ManifestId": null,
-        "CellName": "Colored Projectile (Red)"
+        "Id": 106,
+        "Type": 3,
+        "Color": 6.0,
+        "BulletNum": null,
+        "GridName": "GridEnd06",
+        "CharacterId": null,
+        "Name": "Wanshi Destination 2"
     },
     {
-        "Id": 30,
-        "Type": 2,
-        "Color": 1,
-        "InitialScore": null,
-        "CanMerge": true,
-        "CanDye": null,
-        "BulletColorType": 1.0,
-        "BulletNum": 2.0,
-        "DyeAddScore": null,
-        "Capacity": null,
-        "ManifestId": null,
-        "CellName": "Colored Projectile (Blue) x2"
+        "Id": 404,
+        "Type": 6,
+        "Color": null,
+        "BulletNum": null,
+        "GridName": "GridObstacle",
+        "CharacterId": null,
+        "Name": "Obstacle"
     },
     {
-        "Id": 12,
-        "Type": 2,
-        "Color": 1,
-        "InitialScore": null,
-        "CanMerge": true,
-        "CanDye": null,
-        "BulletColorType": 1.0,
-        "BulletNum": 1.0,
-        "DyeAddScore": null,
-        "Capacity": null,
-        "ManifestId": null,
-        "CellName": "Colored Projectile (Blue)"
+        "Id": 666,
+        "Type": 5,
+        "Color": null,
+        "BulletNum": null,
+        "GridName": "GridStation07",
+        "CharacterId": null,
+        "Name": "Station"
+    },
+    {
+        "Id": 1000,
+        "Type": 10,
+        "Color": null,
+        "BulletNum": null,
+        "GridName": "GridCharacter01",
+        "CharacterId": 1.0,
+        "Name": "Kamui 1"
+    },
+    {
+        "Id": 1101,
+        "Type": 10,
+        "Color": 1.0,
+        "BulletNum": null,
+        "GridName": "GridCharacter02",
+        "CharacterId": 2.0,
+        "Name": "Camu 12"
+    },
+    {
+        "Id": 1102,
+        "Type": 10,
+        "Color": 2.0,
+        "BulletNum": null,
+        "GridName": "GridCharacter02",
+        "CharacterId": 2.0,
+        "Name": "Camu 12"
+    },
+    {
+        "Id": 1103,
+        "Type": 10,
+        "Color": 3.0,
+        "BulletNum": null,
+        "GridName": "GridCharacter03",
+        "CharacterId": 3.0,
+        "Name": "Chrome 34"
+    },
+    {
+        "Id": 1104,
+        "Type": 10,
+        "Color": 4.0,
+        "BulletNum": null,
+        "GridName": "GridCharacter03",
+        "CharacterId": 3.0,
+        "Name": "Chrome 34"
+    },
+    {
+        "Id": 2101,
+        "Type": 4,
+        "Color": 1.0,
+        "BulletNum": null,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1101.0,
+        "Name": "Camu 12"
+    },
+    {
+        "Id": 2102,
+        "Type": 4,
+        "Color": 2.0,
+        "BulletNum": null,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1102.0,
+        "Name": "Camu 12"
+    },
+    {
+        "Id": 2103,
+        "Type": 4,
+        "Color": 3.0,
+        "BulletNum": null,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1103.0,
+        "Name": "Chrome 34"
+    },
+    {
+        "Id": 2104,
+        "Type": 4,
+        "Color": 4.0,
+        "BulletNum": null,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1104.0,
+        "Name": "Chrome 34"
+    },
+    {
+        "Id": 1201,
+        "Type": 10,
+        "Color": 1.0,
+        "BulletNum": null,
+        "GridName": "GridCharacter02",
+        "CharacterId": 2.0,
+        "Name": "Camu 1"
+    },
+    {
+        "Id": 1202,
+        "Type": 10,
+        "Color": 2.0,
+        "BulletNum": null,
+        "GridName": "GridCharacter02",
+        "CharacterId": 2.0,
+        "Name": "Camu 2"
+    },
+    {
+        "Id": 1203,
+        "Type": 10,
+        "Color": 1.0,
+        "BulletNum": null,
+        "GridName": "GridCharacter03",
+        "CharacterId": 3.0,
+        "Name": "Chrome 1"
+    },
+    {
+        "Id": 1204,
+        "Type": 10,
+        "Color": 2.0,
+        "BulletNum": null,
+        "GridName": "GridCharacter03",
+        "CharacterId": 3.0,
+        "Name": "Chrome 2"
+    },
+    {
+        "Id": 1205,
+        "Type": 10,
+        "Color": 1.0,
+        "BulletNum": null,
+        "GridName": "GridCharacter04",
+        "CharacterId": 4.0,
+        "Name": "Wanshi 1"
+    },
+    {
+        "Id": 1206,
+        "Type": 10,
+        "Color": 2.0,
+        "BulletNum": null,
+        "GridName": "GridCharacter04",
+        "CharacterId": 4.0,
+        "Name": "Wanshi 2"
+    },
+    {
+        "Id": 2201,
+        "Type": 4,
+        "Color": 1.0,
+        "BulletNum": null,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1201.0,
+        "Name": "Camu 1"
+    },
+    {
+        "Id": 2202,
+        "Type": 4,
+        "Color": 2.0,
+        "BulletNum": null,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1202.0,
+        "Name": "Camu 2"
+    },
+    {
+        "Id": 2203,
+        "Type": 4,
+        "Color": 1.0,
+        "BulletNum": null,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1203.0,
+        "Name": "Chrome 1"
+    },
+    {
+        "Id": 2204,
+        "Type": 4,
+        "Color": 2.0,
+        "BulletNum": null,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1204.0,
+        "Name": "Chrome 2"
+    },
+    {
+        "Id": 2205,
+        "Type": 4,
+        "Color": 1.0,
+        "BulletNum": null,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1205.0,
+        "Name": "Wanshi 1"
+    },
+    {
+        "Id": 2206,
+        "Type": 4,
+        "Color": 2.0,
+        "BulletNum": null,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1206.0,
+        "Name": "Wanshi 2"
+    },
+    {
+        "Id": 1301,
+        "Type": 10,
+        "Color": 1.0,
+        "BulletNum": null,
+        "GridName": "GridCharacter02",
+        "CharacterId": 2.0,
+        "Name": "Camu 1"
+    },
+    {
+        "Id": 1302,
+        "Type": 10,
+        "Color": 2.0,
+        "BulletNum": null,
+        "GridName": "GridCharacter02",
+        "CharacterId": 2.0,
+        "Name": "Camu 2"
+    },
+    {
+        "Id": 1303,
+        "Type": 10,
+        "Color": 3.0,
+        "BulletNum": null,
+        "GridName": "GridCharacter03",
+        "CharacterId": 3.0,
+        "Name": "Chrome 3"
+    },
+    {
+        "Id": 1304,
+        "Type": 10,
+        "Color": 4.0,
+        "BulletNum": null,
+        "GridName": "GridCharacter03",
+        "CharacterId": 3.0,
+        "Name": "Chrome 4"
+    },
+    {
+        "Id": 1305,
+        "Type": 10,
+        "Color": 5.0,
+        "BulletNum": null,
+        "GridName": "GridCharacter04",
+        "CharacterId": 4.0,
+        "Name": "Wanshi 5"
+    },
+    {
+        "Id": 1306,
+        "Type": 10,
+        "Color": 6.0,
+        "BulletNum": null,
+        "GridName": "GridCharacter04",
+        "CharacterId": 4.0,
+        "Name": "Wanshi 6"
+    },
+    {
+        "Id": 2301,
+        "Type": 4,
+        "Color": 1.0,
+        "BulletNum": null,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1301.0,
+        "Name": "Camu 1"
+    },
+    {
+        "Id": 2302,
+        "Type": 4,
+        "Color": 2.0,
+        "BulletNum": null,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1302.0,
+        "Name": "Camu 2"
+    },
+    {
+        "Id": 2303,
+        "Type": 4,
+        "Color": 3.0,
+        "BulletNum": null,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1303.0,
+        "Name": "Chrome 3"
+    },
+    {
+        "Id": 2304,
+        "Type": 4,
+        "Color": 4.0,
+        "BulletNum": null,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1304.0,
+        "Name": "Chrome 4"
+    },
+    {
+        "Id": 2305,
+        "Type": 4,
+        "Color": 5.0,
+        "BulletNum": null,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1305.0,
+        "Name": "Wanshi 5"
+    },
+    {
+        "Id": 2306,
+        "Type": 4,
+        "Color": 6.0,
+        "BulletNum": null,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1306.0,
+        "Name": "Wanshi 6"
+    },
+    {
+        "Id": 1401,
+        "Type": 10,
+        "Color": 1.0,
+        "BulletNum": null,
+        "GridName": "GridCharacter02",
+        "CharacterId": 2.0,
+        "Name": "Camu 1"
+    },
+    {
+        "Id": 1402,
+        "Type": 10,
+        "Color": 2.0,
+        "BulletNum": null,
+        "GridName": "GridCharacter02",
+        "CharacterId": 2.0,
+        "Name": "Camu 2"
+    },
+    {
+        "Id": 1403,
+        "Type": 10,
+        "Color": 5.0,
+        "BulletNum": null,
+        "GridName": "GridCharacter02",
+        "CharacterId": 2.0,
+        "Name": "Camu 3"
+    },
+    {
+        "Id": 1404,
+        "Type": 10,
+        "Color": 3.0,
+        "BulletNum": null,
+        "GridName": "GridCharacter03",
+        "CharacterId": 3.0,
+        "Name": "Chrome 1"
+    },
+    {
+        "Id": 1405,
+        "Type": 10,
+        "Color": 4.0,
+        "BulletNum": null,
+        "GridName": "GridCharacter03",
+        "CharacterId": 3.0,
+        "Name": "Chrome 2"
+    },
+    {
+        "Id": 1406,
+        "Type": 10,
+        "Color": 5.0,
+        "BulletNum": null,
+        "GridName": "GridCharacter03",
+        "CharacterId": 3.0,
+        "Name": "Chrome 3"
+    },
+    {
+        "Id": 1407,
+        "Type": 10,
+        "Color": 5.0,
+        "BulletNum": null,
+        "GridName": "GridCharacter04",
+        "CharacterId": 4.0,
+        "Name": "Wanshi 1"
+    },
+    {
+        "Id": 1408,
+        "Type": 10,
+        "Color": 6.0,
+        "BulletNum": null,
+        "GridName": "GridCharacter04",
+        "CharacterId": 4.0,
+        "Name": "Wanshi 2"
+    },
+    {
+        "Id": 1409,
+        "Type": 10,
+        "Color": null,
+        "BulletNum": null,
+        "GridName": "GridCharacter05",
+        "CharacterId": 5.0,
+        "Name": "Kuroro"
+    },
+    {
+        "Id": 1410,
+        "Type": 10,
+        "Color": null,
+        "BulletNum": null,
+        "GridName": "GridCharacter05",
+        "CharacterId": 5.0,
+        "Name": "Kuroro"
+    },
+    {
+        "Id": 1411,
+        "Type": 10,
+        "Color": null,
+        "BulletNum": null,
+        "GridName": "GridCharacter03",
+        "CharacterId": 3.0,
+        "Name": "Chrome 3"
+    },
+    {
+        "Id": 2401,
+        "Type": 4,
+        "Color": 1.0,
+        "BulletNum": null,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1401.0,
+        "Name": "Camu 1"
+    },
+    {
+        "Id": 2402,
+        "Type": 4,
+        "Color": 2.0,
+        "BulletNum": null,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1402.0,
+        "Name": "Camu 2"
+    },
+    {
+        "Id": 2403,
+        "Type": 4,
+        "Color": 5.0,
+        "BulletNum": null,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1403.0,
+        "Name": "Camu 3"
+    },
+    {
+        "Id": 2404,
+        "Type": 4,
+        "Color": 3.0,
+        "BulletNum": null,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1404.0,
+        "Name": "Chrome 1"
+    },
+    {
+        "Id": 2405,
+        "Type": 4,
+        "Color": 4.0,
+        "BulletNum": null,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1405.0,
+        "Name": "Chrome 2"
+    },
+    {
+        "Id": 2406,
+        "Type": 4,
+        "Color": 5.0,
+        "BulletNum": null,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1406.0,
+        "Name": "Chrome 3"
+    },
+    {
+        "Id": 2407,
+        "Type": 4,
+        "Color": 5.0,
+        "BulletNum": null,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1407.0,
+        "Name": "Wanshi 1"
+    },
+    {
+        "Id": 2408,
+        "Type": 4,
+        "Color": 6.0,
+        "BulletNum": null,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1408.0,
+        "Name": "Wanshi 2"
+    },
+    {
+        "Id": 2409,
+        "Type": 4,
+        "Color": null,
+        "BulletNum": null,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1409.0,
+        "Name": "Kuroro"
+    },
+    {
+        "Id": 2410,
+        "Type": 4,
+        "Color": null,
+        "BulletNum": null,
+        "GridName": "GridObstacle1",
+        "CharacterId": 1410.0,
+        "Name": "Kuroro"
+    },
+    {
+        "Id": 2411,
+        "Type": 5,
+        "Color": null,
+        "BulletNum": null,
+        "GridName": "GridStation07",
+        "CharacterId": 1411.0,
+        "Name": "Station + Chrome"
+    },
+    {
+        "Id": 2412,
+        "Type": 5,
+        "Color": null,
+        "BulletNum": null,
+        "GridName": "GridStation07",
+        "CharacterId": 1407.0,
+        "Name": "Station + Wanshi"
     }
 ]

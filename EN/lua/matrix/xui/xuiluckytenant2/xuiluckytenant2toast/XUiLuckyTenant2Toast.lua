@@ -38,15 +38,6 @@ function XUiLuckyTenant2Toast:OnDisable()
     -- end
 end
 
-function XUiLuckyTenant2Toast:OnDestroy()
-    -- 取消自动关闭定时器
-    if self._AutoCloseTimer then
-        XScheduleManager.UnSchedule(self._AutoCloseTimer)
-        self._AutoCloseTimer = nil
-        XLog.Error("XUiLuckyTenant2Toast:OnDisable self._AutoCloseTimer is not nil")
-    end
-end
-
 function XUiLuckyTenant2Toast:Update()
     if not self._ToastData then
         return

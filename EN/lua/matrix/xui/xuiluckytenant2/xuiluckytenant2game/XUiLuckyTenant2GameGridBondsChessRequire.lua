@@ -24,23 +24,16 @@ function XUiLuckyTenant2GameGridBondsChessRequire:Update(data)
     
     -- 设置图标
     if self.RImgIcon then
-        if self.RImgIcon.SetRawImage then
-            self.RImgIcon:SetRawImage(data.Icon or "")
-        elseif self.RImgIcon.SetImage then
-            self.RImgIcon:SetImage(data.Icon or "")
+        if data.Icon and type(data.Icon) == "string" then
+            self.RImgIcon:SetImage(data.Icon)
         end
     end
     
     -- 设置品质
     if self.ImgQuality then
-        if data.QualityValue and self._Control.GetQualityIconCircle then
-            local qualityIcon = self._Control:GetQualityIconCircle(data.QualityValue)
-            if qualityIcon then
-                self.ImgQuality:SetSprite(qualityIcon)
-            end
-        elseif data.Quality and type(data.Quality) == "string" then
-            self.ImgQuality:SetSprite(data.Quality)
-        end
+        local quality = data.Quality
+        local qualityIcon = self._Control:GetQualityIconCircle(quality)
+        self.ImgQuality:SetImage(qualityIcon)
     end
     
     -- 设置未拥有标签

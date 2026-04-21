@@ -63,7 +63,6 @@ function XLuckyTenant2ChessBoard:SetPieceByIndex(piece, index, x, y)
     if pieceOnPos then
         if pieceOnPos ~= piece then
             pieceOnPos:ResetPosition()
-            XMVCA.XLuckyTenant2:Print("用", piece:GetName(), "替换了棋盘上的棋子", pieceOnPos:GetName(), ",他的位置是(" .. tostring(x) .. "," .. tostring(y) .. ")")
         end
     end
     self._Pieces[index] = piece
@@ -98,9 +97,6 @@ function XLuckyTenant2ChessBoard:SetTestCase(game, model, bag, testCase)
             if not piece or usedPiece[piece:GetUid()] then
                 local isSuccess
                 isSuccess, piece = game:AddNewPieceToBag(model, pieceId)
-                if isSuccess and piece then
-                    XMVCA.XLuckyTenant2:Print("[XLuckyTenant2ChessBoard] 作弊获得棋子:" .. piece:GetName())
-                end
             end
             if not piece then
                 XLog.Warning("[XLuckyTenant2ChessBoard] SetTestCase创建棋子失败，pieceId=" .. tostring(pieceId))
@@ -116,11 +112,6 @@ end
 
 ---@param bag XLuckyTenant2Bag
 function XLuckyTenant2ChessBoard:SetPieces(bag)
-    -- 调试日志
-    local XLuckyTenant2DebugLog = require("XModule/XLuckyTenant2/XLuckyTenant2DebugLog")
-    XLuckyTenant2DebugLog.Log("========== SetPieces 开始 ==========")
-    XLuckyTenant2DebugLog.LogFormat("棋盘容量: %d", self._PiecesAmount)
-    
     self:ClearEveryTurn()
 
     local pieces = bag:GetPieces()
@@ -134,14 +125,11 @@ function XLuckyTenant2ChessBoard:SetPieces(bag)
         piecesToEnter1[#piecesToEnter1 + 1] = piece
         ::continue::
     end
-    
-    XLuckyTenant2DebugLog.LogFormat("背包中棋子总数: %d", #piecesToEnter1)
-    
+
     -- 如果棋子数量>20，只取前20个
     local piecesToEnter2 = {}
     local maxPieces = math.min(#piecesToEnter1, self._PiecesAmount)
-    XLuckyTenant2DebugLog.LogFormat("将选择 %d 个棋子放置到棋盘", maxPieces)
-    
+
     for i = 1, maxPieces do
         local remaining = #piecesToEnter1
         if remaining > 0 then
@@ -151,9 +139,7 @@ function XLuckyTenant2ChessBoard:SetPieces(bag)
             piecesToEnter2[#piecesToEnter2 + 1] = piece
         end
     end
-    
-    XLuckyTenant2DebugLog.LogFormat("选择了 %d 个棋子放置到棋盘", #piecesToEnter2)
-    
+
     -- 随机位置
     local posToEnter = {}
     for i = 1, self._PiecesAmount do
@@ -168,26 +154,15 @@ function XLuckyTenant2ChessBoard:SetPieces(bag)
         self._Pieces[pos] = piece
         local x, y = self:GetXY(pos)
         piece:SetPosition(x, y)
-        
-        -- 调试日志：记录放置的棋子信息
-        XLuckyTenant2DebugLog.LogFormat("  放置棋子: PieceId=%d, Uid=%d, 位置=(%d,%d), 位置索引=%d", 
-            piece:GetId(), piece:GetUid(), x, y, pos)
-        
         -- 棋子进入棋盘，恢复状态倒计时
         bag:OnPieceEnterBoard(piece)
     end
     
     -- 剩余的棋子留在背包中，状态保持冻结
-    XLuckyTenant2DebugLog.LogFormat("剩余 %d 个棋子留在背包中", #piecesToEnter1)
     for i = 1, #piecesToEnter1 do
         local piece = piecesToEnter1[i]
         bag:OnPieceLeaveBoard(piece)
-        XLuckyTenant2DebugLog.LogFormat("  保留在背包: PieceId=%d, Uid=%d", 
-            piece:GetId(), piece:GetUid())
     end
-    
-    XLuckyTenant2DebugLog.Log("========== SetPieces 结束 ==========")
-    XMVCA.XLuckyTenant2:Print("设置棋盘结束")
 end
 
 ---@return XLuckyTenant2Piece|false

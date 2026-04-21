@@ -134,6 +134,10 @@ function XFightUiManager.DoSetCommonInterBtnListFollowNpc(npcId, jointName, offs
 	end
 	DoUiFunc("UiFightCommonInterBtnList", "SetFollowNpc", npc, jointName, offsetX, offsetY)
 end
+
+function XFightUiManager.DoSetCommonInterBtnListPos(posX, posY)
+	DoUiFunc("UiFightCommonInterBtnList", "SetPosition", posX, posY)
+end
 --endregion
 
 --region 关卡自定义轮盘选择器

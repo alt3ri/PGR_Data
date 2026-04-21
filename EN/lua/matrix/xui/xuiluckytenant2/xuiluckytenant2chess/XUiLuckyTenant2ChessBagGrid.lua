@@ -3,6 +3,8 @@
 -- 背包单个棋子组件
 --]]
 
+local XUiLuckyTenant2GameGridChess = require("XUi/XUiLuckyTenant2/XUiLuckyTenant2Game/XUiLuckyTenant2GameGridChess")
+
 ---@class XUiLuckyTenant2ChessBagGrid : XUiNode
 ---@field _Control XLuckyTenant2Control
 ---@field _Data table
@@ -68,6 +70,7 @@ function XUiLuckyTenant2ChessBagGrid:Update(data)
             end
         end
         self:UpdateTimePanels(data)
+        XUiLuckyTenant2GameGridChess.UpdateLevelDisplay(self, data)
     end
     
     if self.Select then

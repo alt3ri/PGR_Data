@@ -15,15 +15,13 @@ function XMovieActionSpineAnim:IsPassedActionRun(index)
     local isUnload = string.IsNilOrEmpty(self.SpinePath)
     if isUnload then return false end
 
-    local isCover = XDataCenter.MovieManager.IsBehindPassedActionCover(index, function(action)
-        return self:IsActionCover(action)
-    end)
+    local isCover = XDataCenter.MovieManager.IsBehindPassedActionCover(index)
     return not isCover
 end
 
 -- 传入Action是否可覆盖当前Action的UI显示，可覆盖则OnPassedActionRun不用再刷新UI界面
 ---@param action XMovieActionBase
-function XMovieActionSpineAnim:IsActionCover(action)
+function XMovieActionSpineAnim:IsPassedActionCovered(action)
     return action:GetType() == XMVCA.XMovie.EnumConst.ACTION_TYPE.SPINE_LOAD
 end
 

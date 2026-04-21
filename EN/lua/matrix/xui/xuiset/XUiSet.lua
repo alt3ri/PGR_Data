@@ -715,6 +715,7 @@ function XUiSet:OnBtnRestart()
         if CS.XFight.IsRunning then
             self:AddRecordStr(CS.XTextManager.GetLuaText("XUiSet.lua_716"))
             self:CsRecord(XSetConfigs.RecordOperationType.ReStart)
+            self:RecordBountyChallengeRestart("InBattle")
             CS.XFight.Instance:Restart(cb)
             XDataCenter.FightWordsManager.Stop(true)
         end
@@ -822,6 +823,26 @@ function XUiSet:AddRecordStr(str)
     end
     local frame = CS.XFight.Instance.Frame
     CS.XFight.Instance.RoleManager:CheckAddRecordStr(string.format("%s\t%s\tFalse\t%s", frame, str, ""))
+end
+
+function XUiSet:RecordBountyChallengeRestart(restartType)
+    local beginData = XDataCenter.FubenManager.GetFightBeginData()
+    if not beginData then return end
+
+    local stageId = beginData.StageId
+    local type = XMVCA.XFuben:GetStageType(stageId)
+    if type ~= XDataCenter.FubenManager.StageType.BountyChallenge then return end
+
+    local bossId, difficulty = XMVCA.XBountyChallenge:GetCurrentBossIdAndDifficulty()
+    local fightDuration = beginData.FightStartTime and (XTime.GetServerNowTimestamp() - beginData.FightStartTime) or 0
+    local dict = {
+        pve_type = type,
+        stage_id = stageId,
+        difficulty = difficulty,
+        restart_type = restartType,
+        duration = fightDuration
+    }
+    CS.XRecord.Record(dict, "1000028", "BountyChallengeRestart")
 end
 --endregion
 

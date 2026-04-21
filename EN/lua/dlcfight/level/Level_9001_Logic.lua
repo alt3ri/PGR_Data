@@ -46,7 +46,7 @@ function XLevelScript9001:ControlLevelUI(SwitchType)    --关卡内，控制UI�
         self._proxy:SetLevelUiState(EFightUiType.CommonMenu,self._localNpc,1)                --显示从菜单面板
         self._proxy:SetLevelUiState(EFightUiType.CommonEnergy,self._localNpc,1)          --显示能量条面板
         self._proxy:SetLevelUiState(EFightUiType.RelinkTeamInfo,self._localNpc,1)            --显示队伍信息面板
-        self._proxy:SetLevelUiState(EFightUiType.RelinkGameplay,self._localNpc,1)            --显示玩法面板
+        --self._proxy:SetLevelUiState(EFightUiType.RelinkGameplay,self._localNpc,1)            --显示玩法面板
         self._proxy:SetLevelUiState(EFightUiType.RelinkControl,self._localNpc,1)     --显示DLC额外面板
         self._proxy:SetLevelUiState(EFightUiType.RelinkChat,self._localNpc,1)    --显示聊天记录
         self._proxy:SetLevelUiState(EFightUiType.RelinkRoulette,self._localNpc,1)    --显示聊天轮盘
@@ -171,6 +171,7 @@ function XLevelScript9001:Init() --初始化逻辑
     self._audioPlayer:SetCvActionValidation(EFightCVAction.OverDriveBreak,false)  --ODbreak提示
     self._audioPlayer:SetCvActionValidation(EFightCVAction.PraiseConterSuccess,false) --拼刀语音提示
     self._audioPlayer:SetCvActionValidation(EFightCVAction.EnterOverDriveWarning,false) --OD状态开启提示
+    self._audioPlayer:SetCvActionValidation(EFightCVAction.NotifyEnemyDead,false) --BOSS死亡播报
 end
 
 --region 关卡阶段管理
@@ -243,7 +244,7 @@ function XLevelScript9001:OnEnterPhase(phase)
         self._proxy:SettleFight(true)  --胜利(无论如何都可以结算胜利)
         self._proxy:SetTeamWorkSkillActive(true,3,3)
         self._proxy:DispatchLuaEvent(2,EFightLuaEvent.RelinkAIBorn,{NpcUUid = self.monster_UUID})               --通知BOSS开始播入场动画
-        self._proxy:ShowDlcGuide(90005101,EFightUiType.Commentary)                      --准备进行第一次熵流运算模拟，本次模拟的战斗对象危险程度很高，请务必小心！
+        self._proxy:ShowDlcGuide(90005101,EGuideUiNodeType.GuideCommentary)                      --准备进行第一次熵流运算模拟，本次模拟的战斗对象危险程度很高，请务必小心！
         self._timer:Schedule(5.4, self, function()
                 self._proxy:PlayStayScreenEffectById(902999)
         end)
@@ -259,7 +260,7 @@ function XLevelScript9001:OnEnterPhase(phase)
         end)
         self._timer:Schedule(3.5, self, function()
             self._proxy:SetLevelUiState(EFightUiType.RelinkTips,self._localNpc,1)    --显示任务
-            self._proxy:ShowDlcGuide(90005102,EFightUiType.Commentary)                      --向前移动靠近模拟战斗目标.
+            self._proxy:ShowDlcGuide(90005102,EGuideUiNodeType.GuideCommentary)                      --向前移动靠近模拟战斗目标.
             self._proxy:SetLevelUiState(EFightUiType.CommonJoystick,self._localNpc,1)                   --显示摇杆
             self._proxy:SetLevelUiState(EFightUiType.CommonControl,self._localNpc,1)                   --显示右侧面板
             self._proxy:SetLevelUiState(EFightUiType.CommonMenu,self._localNpc,1)
@@ -295,7 +296,7 @@ function XLevelScript9001:OnEnterPhase(phase)
         self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Ball1,self._localNpc,true) 
         self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.Dodge,self._localNpc,1)           --闪避
         self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Dodge,self._localNpc,true)  
-        self._proxy:ShowDlcGuide(90005103,EFightUiType.Commentary)                                                  --迎战准备
+        self._proxy:ShowDlcGuide(90005103,EGuideUiNodeType.GuideCommentary)                                                  --迎战准备
         self._proxy:ApplyMagic(self._localNpc,self._localNpc,9001001)   --cv迎战准备                         
         self._proxy:SetLevelUiState(EFightUiType.CommonLockTarget,self._localNpc,1)
         self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.RelinkBreakQte,self._localNpc,true)
@@ -314,7 +315,7 @@ function XLevelScript9001:OnEnterPhase(phase)
         self.hasDodgeVideo = false 
         self._hasbossfirstskill = false
     elseif phase == Phase.Dodge_2 then
-        self._proxy:SetLevelUiState(EFightUiType.RelinkGameplay,self._localNpc,1)
+        --self._proxy:SetLevelUiState(EFightUiType.RelinkGameplay,self._localNpc,1)
         self._proxy:DispatchLuaEvent(ELuaEventTarget.Npc,EFightLuaEvent.RelinkSetAIActivate, {NpcUUid=self.monster_UUID,IsActivated=true})                  --打开白龙AI
         XLog.Debug("阶段进入!Phase.Dodge_2")
         self._proxy:SetLevelMemoryInt(40001, 6)
@@ -325,8 +326,8 @@ function XLevelScript9001:OnEnterPhase(phase)
         self.finishBGGuide = false
         self.startBGguide = false        
         self._timer:Schedule(1, self, function() 
-            --self._proxy:ShowDlcGuide(90005106,EFightUiType.Commentary)              --看韧性条
-            self._proxy:ShowDlcGuide(90005116,EFightUiType.Commentary)              --注视
+            --self._proxy:ShowDlcGuide(90005106,EGuideUiNodeType.GuideCommentary)              --看韧性条
+            self._proxy:ShowDlcGuide(90005116,EGuideUiNodeType.GuideCommentary)              --注视
             self._proxy:DispatchLuaEvent(ELuaEventTarget.Npc,EFightLuaEvent.RelinkSetAIActivate, {NpcUUid=self.monster_UUID,IsActivated=true})                  --打开白龙AI
             self._proxy:AddNpcAttribAdditive(self._localNpc,ENpcAttrib.BreakDmg,1000,0)    --增加白毛击破倍率
             self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Focus,self._localNpc,true)
@@ -335,7 +336,7 @@ function XLevelScript9001:OnEnterPhase(phase)
         XLog.Debug("阶段进入!Phase.QTEGuide")
     elseif phase == Phase.QTEGuide_2 then
         self._proxy:SetLevelMemoryInt(40001, 81)
-        self._proxy:ShowDlcGuide(90005107,EFightUiType.Commentary)     --敌人韧性条被击破
+        self._proxy:ShowDlcGuide(90005107,EGuideUiNodeType.GuideCommentary)     --敌人韧性条被击破
         self._proxy:ApplyMagic(self._localNpc,self._localNpc,9001007)   --干得好，失去平衡 
         XLog.Debug("阶段进入!Phase.QTEGuide_2")
     elseif phase == Phase.SuperSkill then
@@ -351,7 +352,7 @@ function XLevelScript9001:OnEnterPhase(phase)
         self._timer:Schedule(1, self, function()               
             self._proxy:AddNpcAttribAdditive(self.monster_UUID,ENpcAttrib.OverDriveStackP,4000,0)  --OD倍率
             self._proxy:SetLevelUiState(EFightUiType.CommonTargetInfo,self._localNpc,1)              --显示怪物血量
-            self._proxy:ShowDlcGuide(90005115,EFightUiType.Commentary)--这是OD
+            self._proxy:ShowDlcGuide(90005115,EGuideUiNodeType.GuideCommentary)--这是OD
         end)
         XLog.Debug("阶段进入!Phase.ODSkill")
 
@@ -388,7 +389,7 @@ function XLevelScript9001:OnEnterPhase(phase)
         self._timer:Schedule(2, self, function()  
             self._proxy:ApplyMagic(self._localNpc,self._localNpc,10519118)                  --白毛大招拉满
             self._proxy:AddNpcAttribAdditive(self._localNpc,ENpcAttrib.DodgeEnergyRegen,-4000,0)    --闪避值削弱
-            self._proxy:ShowDlcGuide(90005316,EFightUiType.ImageVideo)
+            self._proxy:ShowDlcGuide(90005316,EGuideUiNodeType.GuideImageVideo)
             self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.ExSkill,self._localNpc,true) 
             self._proxy:SetLevelOperationUiState(EFightUiType.CommonControl,ENpcOperationKey.ExSkill,self._localNpc,1)
         end)
@@ -403,8 +404,8 @@ function XLevelScript9001:OnEnterPhase(phase)
     elseif phase == Phase.End then
         XLog.Debug("阶段进入!Phase.End")
         self._audioPlayer:PlayAudioFightWin()
-        self._proxy:StopAudioByUid(self._backGrounSoundUid)
-        self._timer:Schedule(5, self, function()               
+        self._timer:Schedule(5, self, function() 
+            self._proxy:StopAudioByUid(self._backGrounSoundUid)              
             self._proxy:FinishFight()
         end)
     elseif phase == Phase.Test then   --OD阶段对应的配置
@@ -453,7 +454,7 @@ function XLevelScript9001:OnUpdatePhase(dt)
     elseif self._currentPhase == Phase.Skill then
         if self._proxy:CheckNpcCurActionIsDone(self.monster_UUID) and (self._hasbossscecondSkill ~= true) then
             self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Ball2,self._localNpc,true) 
-            self._proxy:ShowDlcGuide(90005105,EFightUiType.Commentary)                      --技能引导01
+            self._proxy:ShowDlcGuide(90005105,EGuideUiNodeType.GuideCommentary)                      --技能引导01
             self._proxy:ApplyMagic(self._localNpc,self._localNpc,9001005)
             self._proxy:DispatchLuaEvent(ELuaEventTarget.Npc,EFightLuaEvent.RelinkSetAIActivate, {NpcUUid=self.monster_UUID,IsActivated=false})                  --关闭白龙AI
             self._hasbossscecondSkill = true
@@ -472,18 +473,18 @@ function XLevelScript9001:OnUpdatePhase(dt)
     elseif self._currentPhase == Phase.Dodge then
         self._isSuccess , self._firstSkillTime = self._proxy:TryGetNpcCurrentActionElapsedTime(self.monster_UUID)
         if (self._isSuccess) and (self._firstSkillTime >= 0.8) and (self._hasbossfirstskill ~= true)  then
-            self._proxy:ShowDlcGuide(90005104,EFightUiType.Commentary)                      --闪避引导
+            self._proxy:ShowDlcGuide(90005104,EGuideUiNodeType.GuideCommentary)                      --闪避引导
             self._proxy:ApplyMagic(self._localNpc,self._localNpc,9001003)
             self._hasbossfirstskill = true
             self:SetPhase(Phase.Dodge_2)
         end
     elseif self._currentPhase == Phase.Dodge_2 then
         if self.timetoDodgeVideo == true and self.hasDodgeVideo == false then 
-            self._proxy:ShowDlcGuide(90005310,EFightUiType.ImageVideo)  --闪避图文
+            self._proxy:ShowDlcGuide(90005310,EGuideUiNodeType.GuideImageVideo)  --闪避图文
             self.hasDodgeVideo = true 
         end
         if self._nowDodgeTimes == 2 and self.hasShowGuide120 == false  then
-            self._proxy:ShowDlcGuide(90005120,EFightUiType.Commentary)  --“闪避成功有免伤”   
+            self._proxy:ShowDlcGuide(90005120,EGuideUiNodeType.GuideCommentary)  --“闪避成功有免伤”   
             self._proxy:ApplyMagic(self._localNpc,self._localNpc,9001004)
             self.hasShowGuide120 = true 
         end
@@ -527,12 +528,12 @@ function XLevelScript9001:OnUpdatePhase(dt)
                     self._proxy:DispatchLuaEvent(ELuaEventTarget.Npc,EFightLuaEvent.RelinkSetAIActivate, {NpcUUid=self.monster_UUID,IsActivated=false})                  --关闭白龙AI
                     self._proxy:CastActionToTarget(self.monster_UUID,8005525,self._localNpc)          --特制版横扫弹刀技能
                     self._timer:Schedule(0.3, self, function() 
-                        self._proxy:ShowDlcGuide(90005308,EFightUiType.ImageVideo)     --拼刀图文引导 
+                        self._proxy:ShowDlcGuide(90005308,EGuideUiNodeType.GuideImageVideo)     --拼刀图文引导 
                     end)
                     self.hasBossSuperSkill = true
                     self._timer:Schedule(1.55, self, function()
                         self._proxy:ApplyMagic(self._localNpc,self._localNpc,10511207)--刷新1技能
-                        self._proxy:ShowDlcGuide(90005109,EFightUiType.Commentary) --拼刀引导强制
+                        self._proxy:ShowDlcGuide(90005109,EGuideUiNodeType.GuideCommentary) --拼刀引导强制
                         self._proxy:ApplyMagic(self._localNpc,self._localNpc,9001008)
                     end)
                 end
@@ -554,7 +555,7 @@ function XLevelScript9001:OnUpdatePhase(dt)
     elseif self._currentPhase == Phase.ODSikll then 
         self._BOSSOD = self._proxy:GetNpcAttribValue(self.monster_UUID,ENpcAttrib.OverDrive)
         if self._BOSSOD >= 10000 and self.hasOD == false then  --boss狂暴了
-            self._proxy:ShowDlcGuide(90005113,EFightUiType.Commentary)--"改变进攻模式"
+            self._proxy:ShowDlcGuide(90005113,EGuideUiNodeType.GuideCommentary)--"改变进攻模式"
             self._proxy:ApplyMagic(self._localNpc,self._localNpc,9001010)
             self._proxy:SetLevelMemoryInt(40001, 71) 
             self.hasOD = true
@@ -612,8 +613,10 @@ function XLevelScript9001:OnUpdatePhase(dt)
                         self._proxy:AbortAction(self._localNpc,true)
                     end)
                     self._timer:Schedule(1.64, self, function()
-                        self._proxy:CastSkillActionToNpcNotCheck(self._localNpc,1051081,self.monster_UUID)      --拼刀技能
+                        self._proxy:AbortAction(self.monster_UUID,true)--打断白龙动作
+                        self._proxy:CastMultiParry(self.monster_UUID, self._localNpc, 800501) --强制两人拼刀
                         self._proxy:RemoveBuff(self.monster_UUID,8005906)                   --移除怪物的霸体
+                        self._proxy:ApplyMagic(self.monster_UUID,self.monster_UUID,8005907)                   --移除怪物的霸体
                     end)
                     self._timer:Schedule(2.7, self, function()
                         self._proxy:SetNpcPosition(self.NpcNanami,{x=self._proxy:GetNpcPosition(self._localNpc).x,y=5,z=self._proxy:GetNpcPosition(self._localNpc).z}) --传送nanami
@@ -621,7 +624,7 @@ function XLevelScript9001:OnUpdatePhase(dt)
                         self._proxy:AddThreat(self.NpcNanami,self.monster_UUID,100,1000)
                         self._proxy:AbortAction(self.NpcNanami,true)
                         self._proxy:CastSkillActionToNpcNotCheck(self.NpcNanami,106219,self.monster_UUID)   --七实登龙
-                        self._proxy:ShowDlcGuide(90005111,EFightUiType.Commentary)--七实登场
+                        self._proxy:ShowDlcGuide(90005111,EGuideUiNodeType.GuideCommentary)--七实登场
                         self._audioPlayer:PlayNpcCV(self.NpcNanami,1052,25,EAudioLuaFuncSyncType.All)
         
                     end)
@@ -630,7 +633,7 @@ function XLevelScript9001:OnUpdatePhase(dt)
                         self._proxy:TeleportResetNpcOnGround(self.NpcLiv)
                         self._proxy:AddThreat(self.NpcLiv,self.monster_UUID,100,1000)
                         self._proxy:AbortAction(self.NpcLiv,true)
-                        self._proxy:ShowDlcGuide(90005112,EFightUiType.Commentary)--丽芙登场
+                        self._proxy:ShowDlcGuide(90005112,EGuideUiNodeType.GuideCommentary)--丽芙登场
                 
                         self._audioPlayer:PlayNpcCV(self.NpcLiv,1053,25,EAudioLuaFuncSyncType.All)
                     end)
@@ -654,7 +657,7 @@ function XLevelScript9001:OnUpdatePhase(dt)
                         self._proxy:RemoveBuff(self._localNpc,10512106)
                     end)
                     self._timer:Schedule(10, self, function()
-                        self._proxy:ShowDlcGuide(90005124,EFightUiType.Commentary)--"太好了是七实和丽芙"
+                        self._proxy:ShowDlcGuide(90005124,EGuideUiNodeType.GuideCommentary)--"太好了是七实和丽芙"
                         self._proxy:ApplyMagic(self._localNpc,self._localNpc,9001014)
                     end)
                     self._timer:Schedule(15, self, function()
@@ -669,14 +672,14 @@ function XLevelScript9001:OnUpdatePhase(dt)
     elseif self._currentPhase == Phase.ODSikll_3 then
         if self._proxy:CheckNpcCurrentAction(self.monster_UUID,8005301) and self.ODfire == false then
             self.ODfire = true
-            self._proxy:ShowDlcGuide(90005123,EFightUiType.Commentary)--改变进攻模式！
+            self._proxy:ShowDlcGuide(90005123,EGuideUiNodeType.GuideCommentary)--改变进攻模式！
             self._proxy:ApplyMagic(self._localNpc,self._localNpc,9001011)
             self._timer:Schedule(4, self, function()
                     self._proxy:DispatchLuaEvent(ELuaEventTarget.Npc,EFightLuaEvent.RelinkSetAIActivate, {NpcUUid=self.NpcLiv,IsActivated=false})
                     self._proxy:AbortAction(self.NpcLiv,true)
                     self._proxy:SetNpcFocusTarget(self._localNpc,self.NpcLiv)
                     self._proxy:CastSkillActionToNpcNotCheck(self.NpcLiv,106341,self.NpcLiv)  --丽芙罩子
-                    self._proxy:ShowDlcGuide(90005114,EFightUiType.Commentary)--丽芙登场
+                    self._proxy:ShowDlcGuide(90005114,EGuideUiNodeType.GuideCommentary)--丽芙登场
                     self._audioPlayer:PlayNpcCV(self.NpcLiv,1053,18,EAudioLuaFuncSyncType.All)
             end)
             self._timer:Schedule(5.5, self, function()
@@ -703,14 +706,14 @@ function XLevelScript9001:OnUpdatePhase(dt)
             end
             if self._proxy:CheckNpcCurrentAction(self.monster_UUID,8005301) and self.hasODfire_PhaseBreak == false then
                 self.hasODfire_PhaseBreak = true
-                self._proxy:ShowDlcGuide(90005113,EFightUiType.Commentary)   --能量聚集
+                self._proxy:ShowDlcGuide(90005113,EGuideUiNodeType.GuideCommentary)   --能量聚集
                 self._proxy:ApplyMagic(self._localNpc,self._localNpc,9001011)
                 self._timer:Schedule(5, self, function()
                         self._proxy:DispatchLuaEvent(ELuaEventTarget.Npc,EFightLuaEvent.RelinkSetAIActivate, {NpcUUid=self.NpcLiv,IsActivated=false})
                         self._proxy:AbortAction(self.NpcLiv,true)
                         self._proxy:SetNpcFocusTarget(self._localNpc,self.NpcLiv)
                         self._proxy:CastSkillActionToNpcNotCheck(self.NpcLiv,106341,self.NpcLiv)  --丽芙罩子
-                        self._proxy:ShowDlcGuide(90005114,EFightUiType.Commentary)
+                        self._proxy:ShowDlcGuide(90005114,EGuideUiNodeType.GuideCommentary)
                         self._audioPlayer:PlayNpcCV(self.NpcLiv,1053,18,EAudioLuaFuncSyncType.All)
                 end)
                 self._timer:Schedule(5.5, self, function()
@@ -782,13 +785,13 @@ function XLevelScript9001:OnUpdatePhase(dt)
             end
             if self._proxy:CheckNpcCurrentAction(self.monster_UUID,8005301) and self.hasODfire_PhaseFinal == false then
                 self.hasODfire_PhaseFinal = true
-                self._proxy:ShowDlcGuide(90005113,EFightUiType.Commentary)--丽芙罩子
+                self._proxy:ShowDlcGuide(90005113,EGuideUiNodeType.GuideCommentary)--丽芙罩子
                 self._timer:Schedule(4, self, function()
                         self._proxy:DispatchLuaEvent(ELuaEventTarget.Npc,EFightLuaEvent.RelinkSetAIActivate, {NpcUUid=self.NpcLiv,IsActivated=false})
                         self._proxy:AbortAction(self.NpcLiv,true)
                         self._proxy:SetNpcFocusTarget(self._localNpc,self.NpcLiv)
                         self._proxy:CastSkillActionToNpcNotCheck(self.NpcLiv,106341,self.NpcLiv)  --丽芙罩子
-                        self._proxy:ShowDlcGuide(90005114,EFightUiType.Commentary)--丽芙身后
+                        self._proxy:ShowDlcGuide(90005114,EGuideUiNodeType.GuideCommentary)--丽芙身后
                         self._audioPlayer:PlayNpcCV(self.NpcLiv,1053,18,EAudioLuaFuncSyncType.All)
                 end)
                 self._timer:Schedule(5.5, self, function()
@@ -813,7 +816,7 @@ function XLevelScript9001:OnUpdatePhase(dt)
                     self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Move,self._localNpc,false)
                     self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.ExSkill,self._localNpc,false)
                     self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.t,self._localNpc,1)
-                    self._proxy:ShowDlcGuide(90005127,EFightUiType.Commentary)
+                    self._proxy:ShowDlcGuide(90005127,EGuideUiNodeType.GuideCommentary)
                     self._proxy:ApplyMagic(self._localNpc,self._localNpc,9001017)
                     self.hasEnd = true
                     self._backGrounSoundUid = self._proxy:PlaySound(7115)--胜利结算
@@ -864,7 +867,7 @@ function XLevelScript9001:HandleEvent(eventType, eventArgs) --事件响应逻辑
                 self._proxy:CastSkillActionToNpcNotCheck(self._localNpc,1051020,self.monster_UUID)        --2技能
                 self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Move,self._localNpc,true)
                 self._timer:Schedule(0.2, self, function()
-                    self._proxy:ShowDlcGuide(90005121,EFightUiType.Commentary)--"技能强大但是冷却"
+                    self._proxy:ShowDlcGuide(90005121,EGuideUiNodeType.GuideCommentary)--"技能强大但是冷却"
                     self._proxy:ApplyMagic(self._localNpc,self._localNpc,9001006)
                 end)
                 self._timer:Schedule(2, self, function()
@@ -885,7 +888,7 @@ function XLevelScript9001:HandleEvent(eventType, eventArgs) --事件响应逻辑
         elseif eventArgs.GuideId == 90005116 then -- 锁定键提示
             if self._guideFinishEventFlag.guide116 then 
                 self._timer:Schedule(0.9, self, function()
-                    self._proxy:ShowDlcGuide(90005106,EFightUiType.Commentary)              --看韧性条
+                    self._proxy:ShowDlcGuide(90005106,EGuideUiNodeType.GuideCommentary)              --看韧性条
                 end)
 
                 self._proxy:SetNpcFocusTarget(self._localNpc,self.monster_UUID)
@@ -910,18 +913,18 @@ function XLevelScript9001:HandleEvent(eventType, eventArgs) --事件响应逻辑
                 self._proxy:DispatchLuaEvent(ELuaEventTarget.Npc,EFightLuaEvent.RelinkSetAIActivate, {NpcUUid=self.monster_UUID,IsActivated=true}) --打开白龙AI
                 self._guideFinishEventFlag.guide109 = false 
                 self._timer:Schedule(0.2, self, function()
-                    self._proxy:ShowDlcGuide(90005122,EFightUiType.Commentary)--"时机刚刚好"
+                    self._proxy:ShowDlcGuide(90005122,EGuideUiNodeType.GuideCommentary)--"时机刚刚好"
                     self._proxy:ApplyMagic(self._localNpc,self._localNpc,9001009)
                 end)
             end                 
         elseif eventArgs.GuideId == 90005115 then -- 芝士OD
             self._proxy:SetLevelMemoryInt(40001, 7)
             self._timer:Schedule(1, self, function()    
-                self._proxy:ShowDlcGuide(90005315,EFightUiType.ImageVideo)  --OD图文
+                self._proxy:ShowDlcGuide(90005315,EGuideUiNodeType.GuideImageVideo)  --OD图文
             end)
         elseif eventArgs.GuideId == 90005316 then 
             self._timer:Schedule(0.2, self, function()    
-                self._proxy:ShowDlcGuide(90005126,EFightUiType.Commentary)--"充能完毕！" 
+                self._proxy:ShowDlcGuide(90005126,EGuideUiNodeType.GuideCommentary)--"充能完毕！" 
                 self._proxy:ApplyMagic(self._localNpc,self._localNpc,9001016)
             end)
         end

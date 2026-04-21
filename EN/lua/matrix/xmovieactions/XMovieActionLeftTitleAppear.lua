@@ -28,14 +28,12 @@ function XMovieActionLeftTitleAppear:OnRunning()
 end
 
 function XMovieActionLeftTitleAppear:IsPassedActionRun(index)
-    local isCover = XDataCenter.MovieManager.IsBehindPassedActionCover(index, function(action)
-        return self:IsActionCover(action)
-    end)
+    local isCover = XDataCenter.MovieManager.IsBehindPassedActionCover(index)
     return not isCover
 end
 
 ---@param action XMovieActionBase
-function XMovieActionLeftTitleAppear:IsActionCover(action)
+function XMovieActionLeftTitleAppear:IsPassedActionCovered(action)
     return action:GetType() == XMVCA.XMovie.EnumConst.ACTION_TYPE.LEFT_TITLE_DISAPPEAR
 end
 

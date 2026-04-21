@@ -82,9 +82,9 @@ function XUiPanelEmojiEx:GetEmojiByIndex(index)
     return self.Emojis[index]
 end
 
-function XUiPanelEmojiEx:OnClickTab(tab)
+function XUiPanelEmojiEx:OnClickTab(tab, forceRefresh)
     local selectIndex = tab.Index
-    if self.SelectIndex == selectIndex then return end
+    if self.SelectIndex == selectIndex and not forceRefresh then return end
     for _, tab in pairs(self.Tabs) do
         tab:SetSelect(tab.Index == selectIndex)
     end
@@ -160,13 +160,38 @@ function XUiPanelEmojiEx:Show()
             self.GameObject:SetActiveEx(true)
         end
         self:RefreshTabs()
-        self:OnClickTab(self.Tabs[self.SelectIndex or 1])
+
+        local tab = self.Tabs[self.SelectIndex or 1]
+        self:TryEnabledEmoji(tab)
+        self:OnClickTab(tab, true)
         self.FirstOpenFlag = false
     end
     if self.FirstOpenFlag then
         XDataCenter.ChatManager.GetEmojiPackOrder(_onShow)
     else
         _onShow()
+    end
+end
+
+-- 激活当前页签下的表情
+function XUiPanelEmojiEx:TryEnabledEmoji(tab)
+    if not tab then return end
+
+    -- 索引相同则说明是重新打开界面
+    if self.SelectIndex == tab.Index then
+        --当表情表被disabled后， 重新打开界面需要激活一下
+        local pack = tab.EmojiPack
+        local emojis = pack:GetEmojiList()
+        if emojis then
+            local index = 1
+            for _,_ in pairs(emojis) do
+                local emojiItem = self:GetEmojiByIndex(index)
+                if emojiItem then
+                    emojiItem:OnEnable()
+                end
+                index = index + 1
+            end
+        end
     end
 end
 

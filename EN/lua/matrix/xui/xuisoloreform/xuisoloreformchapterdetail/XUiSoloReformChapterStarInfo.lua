@@ -23,8 +23,11 @@ function XUiSoloReformChapterStarInfo:Update(stageId)
     if not XTool.IsNumberValid(maxDifficultyStageId) then
         return
     end
-    self.Title.gameObject:SetActiveEx(stageId ~= maxDifficultyStageId)
-    self.Time.gameObject:SetActiveEx(stageId == maxDifficultyStageId)
+    if not self.Parent.IsKillMode then
+        self.Title.gameObject:SetActiveEx(true)
+        self.Time.gameObject:SetActiveEx(true)
+    end
+    
     if self.TxtNum then
         self.TxtNum.text = XUiHelper.GetText("SoloReformTimeShowNoPass")
         local minPassTime = self._Control:GetChapterStageMinPassTime(chapterId)

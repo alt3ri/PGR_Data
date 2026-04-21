@@ -168,14 +168,15 @@ function XUiFubenExperimentDetail:OnBtnSingleClick()
 end
 
 function XUiFubenExperimentDetail:OnBtnSingleEnterClick()
+    local roomProxy = require("XUi/XUiFubenExperiment/BattleRoom/XUiFubenExperimentBattleRoomProxy")
     if self.TrialLevelInfo.TimeId and self.TrialLevelInfo.TimeId ~= 0 then
         if XFunctionManager.CheckInTimeByTimeId(self.TrialLevelInfo.TimeId) then
-            XLuaUiManager.Open("UiBattleRoleRoom", self.TrialLevelInfo.SingStageId)
+            XLuaUiManager.Open("UiBattleRoleRoom", self.TrialLevelInfo.SingStageId, nil, roomProxy)
         else
             XUiManager.TipText("ActivityBranchNotOpen")
         end
     else
-        XLuaUiManager.Open("UiBattleRoleRoom", self.TrialLevelInfo.SingStageId)
+        XLuaUiManager.Open("UiBattleRoleRoom", self.TrialLevelInfo.SingStageId, nil, roomProxy)
     end
 end
 
@@ -332,4 +333,4 @@ end
 
 function XUiFubenExperimentDetail:OnClickGetBtnStarReward(index)
     XDataCenter.FubenExperimentManager.GetStarReward(self.TrialLevelInfo.Id, index)
-end
+end

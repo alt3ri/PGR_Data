@@ -240,6 +240,13 @@ XDisplayManagerCreator = function()
             state.RollData = XDisplayManager.RandBehavior(state.ModelName)
         end
 
+        -- 分包检查：若涂装未下载则使用默认涂装（与XUiPanelRoleModel一致）
+        local validFashionId = panelRoleModel:_GetValidFashionId(fashionId, id)
+        if validFashionId ~= fashionId then
+            fashionId = validFashionId
+            colorId = nil
+        end
+
         --获取时装ModelName
         local resourcesId
         if fashionId then

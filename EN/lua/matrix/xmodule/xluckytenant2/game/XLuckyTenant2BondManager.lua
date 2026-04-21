@@ -8,6 +8,8 @@ function XLuckyTenant2BondManager:Ctor(bondConfigs)
     ---@type table<number, XLuckyTenant2Bond>
     self._Bonds = {}
     self._IsDirty = true
+    ---@type table<number, number> pieceId -> bondId 的缓存
+    self._PieceIdToBondIdCache = {}
     ---@type function|nil 等级变化回调函数 (bondId, oldLevel, newLevel)
     self._OnLevelChangedCallback = nil
 
@@ -90,6 +92,36 @@ function XLuckyTenant2BondManager:GetBondRelatedChessIds(bondId)
         return bond:GetRelatedChessIds()
     end
     return {}
+end
+
+---重建 pieceId -> bondId 缓存
+function XLuckyTenant2BondManager:_RebuildPieceIdToBondIdCache()
+    local cache = {}
+    for bondId, bond in pairs(self._Bonds) do
+        local relatedChessForScoreIds = bond and bond:GetRelatedChessForScoreIds() or {}
+        for _, relatedPieceId in ipairs(relatedChessForScoreIds) do
+            -- 可能存在多羁绊同配，取最小bondId保证结果稳定
+            if not cache[relatedPieceId] or bondId < cache[relatedPieceId] then
+                cache[relatedPieceId] = bondId
+            end
+        end
+    end
+    self._PieceIdToBondIdCache = cache
+end
+
+---根据棋子ID获取用于金币归因的羁绊ID（从 Bond._RelatedChessForScoreIds 匹配）
+---@param pieceId number 棋子ID
+---@return number|nil bondId 命中则返回羁绊ID，未命中返回nil
+function XLuckyTenant2BondManager:GetBondIdByPieceId(pieceId)
+    if not pieceId or pieceId <= 0 then
+        return nil
+    end
+
+    if self._IsDirty then
+        self:_RebuildPieceIdToBondIdCache()
+    end
+
+    return self._PieceIdToBondIdCache[pieceId]
 end
 
 function XLuckyTenant2BondManager:IsDirty()

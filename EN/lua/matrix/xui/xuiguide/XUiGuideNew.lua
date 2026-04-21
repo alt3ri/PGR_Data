@@ -177,6 +177,9 @@ function XUiGuideNew:OnBtnConfirmClick()
         XDataCenter.GuideManager.RecordBuryingPoint(XDataCenter.GuideManager.BuryingPointType.Skip)
         XDataCenter.GuideManager.ResetGuide()
         XEventManager.DispatchEvent(XEventId.EVENT_FUNCTION_EVENT_COMPLETE)
+        
+        -- 新增指引跳过事件
+        XEventManager.DispatchEvent(XEventId.EVENT_GUIDE_SKIP)
     end)
 end
 

@@ -960,15 +960,11 @@ function XRewardManager.CheckRewardOwn(rewardType, templateId)
 
     if XRewardManager.IsRewardFashion(rewardType, templateId) then
         isHave = true
-    elseif XRewardManager.IsRewardWeaponFashion(rewardType, templateId) then
+    elseif XRewardManager.IsRewardWeaponFashion(rewardType, templateId) then --id为Item表Id
         local weaponFashionId = XDataCenter.ItemManager.GetWeaponFashionId(templateId)
-        local ownWeaponFashion = XDataCenter.WeaponFashionManager.GetWeaponFashion(weaponFashionId)
-        if ownWeaponFashion then
-            isHave = XDataCenter.WeaponFashionManager.CheckHasFashion(weaponFashionId)
-            ownRewardIsLimitTime = ownWeaponFashion:IsTimeLimit()
-            rewardIsLimitTime = XDataCenter.ItemManager.IsWeaponFashionTimeLimit(templateId)
-            leftTime = ownWeaponFashion:GetLeftTime()
-        end
+        isHave, ownRewardIsLimitTime, rewardIsLimitTime, leftTime = XRewardManager._GetWeaponFashionInfo(templateId, weaponFashionId)
+    elseif XRewardManager.IsRewardWeaponFashionWithFashionId(rewardType, templateId) then --id为WeaponFashion表Id
+        isHave, ownRewardIsLimitTime, rewardIsLimitTime, leftTime = XRewardManager._GetWeaponFashionInfo(nil, templateId)
     elseif XRewardManager.IsRewardHeadPortrait(rewardType, templateId) then
         isHave = true
     elseif XRewardManager.IsRewardDormCharacter(rewardType, templateId) then
@@ -1080,6 +1076,10 @@ function XRewardManager.IsRewardWeaponFashion(rewardType, templateId) -- 是否�
     return (rewardType == XRewardManager.XRewardType.Item or rewardType == XRewardManager.XRewardType.WeaponFashion) and XDataCenter.ItemManager.IsWeaponFashion(templateId)
 end
 
+function XRewardManager.IsRewardWeaponFashionWithFashionId(rewardType, fashionId)
+    return (rewardType == XRewardManager.XRewardType.Item or rewardType == XRewardManager.XRewardType.WeaponFashion) and XWeaponFashionConfigs.IsWeaponFashion(fashionId)
+end
+
 function XRewardManager.IsRewardFashion(rewardType, templateId) -- 是否拥有涂装
     return (rewardType == XRewardManager.XRewardType.Fashion and XDataCenter.FashionManager.CheckHasFashion(templateId))
     or (rewardType == XRewardManager.XRewardType.Character and XMVCA.XCharacter:IsOwnCharacter(templateId))
@@ -1107,6 +1107,24 @@ end
 
 function XRewardManager.IsRewardEquip(rewardType, templateId) -- 是否拥有武器
     return (rewardType == XRewardManager.XRewardType.Equip and XMVCA.XEquip:GetFirstEquip(templateId))
+end
+
+---@private
+function XRewardManager._GetWeaponFashionInfo(templateId, weaponFashionId)
+    local isHave = false
+    local ownRewardIsLimitTime = false
+    local rewardIsLimitTime = false
+    local leftTime = 0
+    
+    local ownWeaponFashion = XDataCenter.WeaponFashionManager.GetWeaponFashion(weaponFashionId)
+    if ownWeaponFashion then
+        isHave = XDataCenter.WeaponFashionManager.CheckHasFashion(weaponFashionId)
+        ownRewardIsLimitTime = ownWeaponFashion:IsTimeLimit()
+        rewardIsLimitTime = templateId and XDataCenter.ItemManager.IsWeaponFashionTimeLimit(templateId)
+        leftTime = ownWeaponFashion:GetLeftTime()
+    end
+
+    return isHave, ownRewardIsLimitTime, rewardIsLimitTime, leftTime
 end
 
 XRewardManager.XRewardType = XRewardType

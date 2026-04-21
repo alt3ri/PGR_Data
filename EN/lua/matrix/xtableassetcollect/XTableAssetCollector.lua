@@ -12,6 +12,8 @@ local XTableAssetCollectConst = require("XTableAssetCollect/XTableAssetCollectCo
 local UiRegistry = require("UiRegistry")
 local UIBindControl = require("MVCA/UIBindControl")
 
+local IsEditorPlaying = false
+
 local FileType = XTableAssetCollectConst.FileType
 local FileTypeLogFileName = XTableAssetCollectConst.FileTypeLogFileName
 local CollectSourceType = XTableAssetCollectConst.CollectSourceType
@@ -21,8 +23,11 @@ local ManualFolderPath = XTableAssetCollectConst.ManualFolderPath
 
 local AllTableData
 local TableCollectDataDic
+local SortedTableCollectDataList
 local UiCollectDataDic
+local SortedUiCollectDataList
 local ModelNameDic
+local SortedModelNameList
 
 local CurFileType -- 当前文件类型
 local CurFileName -- 当前文件名
@@ -82,26 +87,43 @@ end
 --region XTableManager
 local InjectReadAllByIntKey = function(path, xTable, identifier)
     AddTableInfo(path)
+    -- return XTableManager._originalReadAllByIntKey(path, xTable, identifier)
 
-    return XTableManager._originalReadAllByIntKey(path, xTable, identifier)
+    if IsEditorPlaying then
+        return XTableManager._originalReadAllByIntKey(path, xTable, identifier)
+    else
+        return {}
+    end
 end
 
 local InjectReadByIntKey = function(path, xTable, identifier)
     AddTableInfo(path)
 
-    return XTableManager._originalReadByIntKey(path, xTable, identifier)
+    if IsEditorPlaying then
+        return XTableManager._originalReadByIntKey(path, xTable, identifier)
+    else
+        return {}
+    end
 end
 
 local InjectReadAllByStringKey = function(path, xTable, identifier)
     AddTableInfo(path)
 
-    return XTableManager._originalReadAllByStringKey(path, xTable, identifier)
+    if IsEditorPlaying then
+        return XTableManager._originalReadAllByStringKey(path, xTable, identifier)
+    else
+        return {}
+    end
 end
 
 local InjectReadByStringKey = function(path, xTable, identifier)
     AddTableInfo(path)
 
-    return XTableManager._originalReadByStringKey(path, xTable, identifier)
+    if IsEditorPlaying then
+        return XTableManager._originalReadByStringKey(path, xTable, identifier)
+    else
+        return {}
+    end
 end
 
 local RedirectXTableManager = function()
@@ -366,7 +388,11 @@ local CollectTableByModelId = function(modelId)
     
     --新建model，重新调用配置表初始化
     local modelClass = XMVCAUtil.GetModelCls(modelId)
-    local model = modelClass.New(modelId)
+    
+    local ok, err = pcall(modelClass.New, modelId)
+    if not ok then
+        XLog.Error(string.format("modelClass.New初始化报错:%s, 当前文件名：%s", err, CurFileName))
+    end
 
     local luaFilePath = XMVCAUtil.GetModelClsPath(modelId)
     --正则匹配
@@ -409,7 +435,11 @@ end
 local CollectConfigTableByInit = function()
     if _G[CurFileName].Init then
         CurSourceType = CollectSourceType.ConfigInit
-        _G[CurFileName].Init()
+
+        local ok, err = pcall(_G[CurFileName].Init)
+        if not ok then
+            XLog.Error(string.format("ConfigInit初始化报错:%s, 当前文件名：%s", err, CurFileName))
+        end
     end
 end
 
@@ -576,13 +606,72 @@ local CulculateCollectedTableData = function()
     UncollectedPercent = UnCollectedTableCount / AllFileTableCount * 100
 end
 
+local SortCollectData = function()
+    --排序模块名
+    SortedModelNameList = {}
+
+    for modelName, _ in pairs(ModelNameDic) do
+        table.insert(SortedModelNameList, modelName);
+    end
+
+    table.sort(SortedModelNameList, function(a, b)
+        return a < b
+    end)
+
+    --排序配置表数据
+    SortedTableCollectDataList = {}
+
+    for _, data in pairs(TableCollectDataDic) do
+        table.insert(SortedTableCollectDataList, data)
+    end
+
+    table.sort(SortedTableCollectDataList, function(a, b)
+        return a.fileType < b.fileType
+    end)
+
+    for _, collectData in pairs(SortedTableCollectDataList) do
+        table.sort(collectData.fileInfoList, function(a, b)
+            return a.fileName < b.fileName
+        end)
+
+        for _, fileInfo in ipairs(collectData.fileInfoList) do
+            table.sort(fileInfo.tableInfoList, function(a, b)
+                return a.tablePath < b.tablePath
+            end)
+        end
+    end
+
+    --排序Ui数据
+    SortedUiCollectDataList = {}
+
+    for _, data in pairs(UiCollectDataDic) do
+        table.insert(SortedUiCollectDataList, data)
+    end
+
+    table.sort(SortedUiCollectDataList, function(a, b)
+        return a.fileType < b.fileType
+    end)
+
+    for _, collectData in ipairs(SortedUiCollectDataList) do
+        table.sort(collectData.modelInfoList, function(a, b)
+            return a.modelName < b.modelName
+        end)
+
+        for _, modelInfo in ipairs(collectData.modelInfoList) do
+            table.sort(modelInfo.uiInfoList, function(a, b)
+                return a.uiKey < b.uiKey
+            end)
+        end
+    end
+end
+
 local SaveTabeCollectData = function()
     if not IO.Directory.Exists(AutoGenerateCollectTableFolder) then
         IO.Directory.CreateDirectory(AutoGenerateCollectTableFolder)
     end
 
-    for fileType, collectData in pairs(TableCollectDataDic) do
-        local fileName = FileTypeLogFileName[fileType]
+    for _, collectData in ipairs(SortedTableCollectDataList) do
+        local fileName = FileTypeLogFileName[collectData.fileType]
         local filePath = AutoGenerateCollectTableFolder .. fileName .. ".tab"
 
         local content = {}
@@ -608,7 +697,7 @@ local SaveAllTableData = function()
     content[#content+1] = string.format(lineDataPattern, "FileName","ModelName","TablePath","CollectSource")
     content[#content+1] = string.format(lineDataPattern, "文件名","模块名","配置表路径", "来源")
 
-    for _, collectData in pairs(TableCollectDataDic) do
+    for _, collectData in ipairs(SortedTableCollectDataList) do
         for _, fileInfo in ipairs(collectData.fileInfoList) do
             content[#content+1] = string.format(lineDataPattern, fileInfo.fileName, "", "", "")
 
@@ -625,7 +714,7 @@ end
 local SaveAllModelNameData = function()
     local content = {}
 
-    for modelName, _ in pairs(ModelNameDic) do
+    for _, modelName in ipairs(SortedModelNameList) do
         content[#content+1] = modelName
     end
 
@@ -642,8 +731,8 @@ local SaveModelTableStatisticData = function()
 
     content[#content+1] = string.format("配置表总数：%s, 已收集的配置表数：%s, 未收集的配置表数：%s, 未收集百分比：%s", AllFileTableCount, CollectedTableCount, UnCollectedTableCount, UncollectedPercent)
     
-    for fileType, collectData in pairs(TableCollectDataDic) do
-        content[#content+1] = string.format("%s配置表数量: %s", FileTypeLogFileName[fileType], collectData.totalTableCount)
+    for _, collectData in pairs(SortedTableCollectDataList) do
+        content[#content+1] = string.format("%s配置表数量: %s", FileTypeLogFileName[collectData.fileType], collectData.totalTableCount)
     end
 
     content[#content+1] = ""
@@ -670,8 +759,8 @@ local SaveUiCollectData = function()
         IO.Directory.CreateDirectory(AutoGenerateCollectUiFolder)
     end
 
-    for fileType, collectData in pairs(UiCollectDataDic) do
-        local fileName = FileTypeLogFileName[fileType]
+    for _, collectData in ipairs(SortedUiCollectDataList) do
+        local fileName = FileTypeLogFileName[collectData.fileType]
         local filePath = AutoGenerateCollectUiFolder .. fileName .. ".tab"
 
         local content = {}
@@ -697,7 +786,7 @@ local SaveAllUiData = function()
     content[#content+1] = string.format(lineDataPattern,"ModelName","uiKey","CollectSource")
     content[#content+1] = string.format(lineDataPattern,"模块名","UI表的id", "来源")
 
-    for _, collectData in pairs(UiCollectDataDic) do
+    for _, collectData in ipairs(SortedUiCollectDataList) do
         for _, modelInfo in ipairs(collectData.modelInfoList) do
             content[#content+1] = string.format(lineDataPattern, modelInfo.modelName, "", "")
 
@@ -735,6 +824,8 @@ local OnFinishCollect = function()
     CulculateCollectedTableData()
     CulculateCollectedUiData()
 
+    SortCollectData()
+
     --配置表
     SaveTabeCollectData()
     SaveAllTableData()
@@ -766,7 +857,9 @@ local CollectAsset = function()
     CollectUiByFile()
 end
 
-function XTableManager.CollectModelData()
+function XTableManager.CollectModelData(isEditorPlaying)
+    IsEditorPlaying = isEditorPlaying
+
     RedirectGMeta()
     RedirectXTableManager()
     RedirectXConfigUtil()

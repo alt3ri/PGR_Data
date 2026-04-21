@@ -11,6 +11,7 @@ local XUiLuckyTenant2ChessGridBuff = require("XUi/XUiLuckyTenant2/XUiLuckyTenant
 ---@field _BagUI XLuaUi|nil 背包 UI 引用（如果此 Detail 来自背包界面）
 ---@field _Buffs XUiLuckyTenant2ChessGridBuff[] 状态列表（用于动态Buff列表）
 ---@field _GridChess XUiLuckyTenant2GameGridChess|nil GridChess组件引用
+---@field _Control XLuckyTenant2Control
 local XUiLuckyTenant2GameUiLuckyTenant2ChessDetail = XClass(XUiNode, "XUiLuckyTenant2GameUiLuckyTenant2ChessDetail")
 
 function XUiLuckyTenant2GameUiLuckyTenant2ChessDetail:InitComponents()
@@ -139,6 +140,15 @@ function XUiLuckyTenant2GameUiLuckyTenant2ChessDetail:Update(data)
         self.TxtTipsCannotBeEliminated.gameObject:SetActiveEx(showCannotDelete)
     end
 
+    -- 不可升级
+    if self.PanelNoUpgrade then
+        self.PanelNoUpgrade.gameObject:SetActiveEx(not (data.IsCanUpgrade or false))
+    else
+        if self.TxtTipsNotUpgrade then
+            self.TxtTipsNotUpgrade.gameObject:SetActiveEx(not (data.IsCanUpgrade or false))
+        end
+    end
+
     if self.TxtCostDeletion then
         self.TxtCostDeletion.gameObject:SetActiveEx(showDeleteCost)
         local parent = self.TxtCostDeletion.transform and self.TxtCostDeletion.transform.parent
@@ -186,19 +196,10 @@ function XUiLuckyTenant2GameUiLuckyTenant2ChessDetail:Update(data)
 
     -- 更新羁绊图标（选棋界面使用）
     if self.IconBond then
-        local bondIcon = data.BondIcon or ""
-        if bondIcon ~= "" then
-            if self.IconBond.SetImage then
-                self.IconBond:SetImage(bondIcon)
-            elseif self.IconBond.SetSprite then
-                self.IconBond:SetSprite(bondIcon)
-            end
-        else
-            if self.IconBond.SetImage then
-                self.IconBond:SetImage("")
-            elseif self.IconBond.SetSprite then
-                self.IconBond:SetSprite("")
-            end
+        local pieceId = data.Id
+        local bondIcon = self._Control:GetBondIcon(pieceId)
+        if bondIcon and bondIcon ~= "" then
+            self.IconBond:SetImage(bondIcon)
         end
     end
 

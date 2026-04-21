@@ -11,8 +11,7 @@ function XMovieActionBgRotate:OnInit(actionData)
     self.BgIndex = XMVCA.XMovie:ParamToNumber(actionData.Params[4])
 end
 
----@param ignoreAnim boolean 是否忽略动画
-function XMovieActionBgRotate:OnRunning(ignoreAnim)
+function XMovieActionBgRotate:OnRunning()
     if self.BgIndex == 0 or self.BgIndex == INVALID_BG_INDEX then
         return
     end
@@ -26,7 +25,7 @@ function XMovieActionBgRotate:OnRunning(ignoreAnim)
     end
 
     local targetRotation = XLuaVector3.New(self.RotationParams[1], self.RotationParams[2], self.RotationParams[3])
-    local time = ignoreAnim and 0 or self.AnimTime
+    local time = self.IsPassedRunning and 0 or self.AnimTime
     bg:DoRotate(targetRotation, time)
 end
 
@@ -35,7 +34,9 @@ function XMovieActionBgRotate:IsPassedActionRun(index)
 end
 
 function XMovieActionBgRotate:OnPassedActionRun()
+    self.IsPassedRunning = true
     self:OnRunning(true)
+    self.IsPassedRunning = false
 end
 
 return XMovieActionBgRotate

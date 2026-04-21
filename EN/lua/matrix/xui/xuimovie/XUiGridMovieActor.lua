@@ -92,11 +92,16 @@ function XUiGridMovieActor:SetImage()
     end)
 end
 
+-- RImgActor控制位置，程序实现的振动动画控制的是PanelActorRoot，美术老师实现的动画是控制self.GameObject
 function XUiGridMovieActor:SetImagePos(pos)
     if self.Pos == pos then return end
-    local actorRoot = self.PanelActorRoot
     self.Pos = pos
-    actorRoot.anchoredPosition3D = pos
+    self.RImgActor.transform.anchoredPosition3D = pos
+end
+
+-- RImgActor控制位置，程序实现的振动动画控制的是PanelActorRoot，美术老师实现的动画是控制self.GameObject
+function XUiGridMovieActor:SetActorRootLocalPosition(pos)
+    self.PanelActorRoot.localPosition = pos
 end
 
 function XUiGridMovieActor:Reverse(isReverse)

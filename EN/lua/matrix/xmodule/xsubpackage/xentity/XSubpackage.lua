@@ -103,9 +103,13 @@ function XSubpackage:GetDownloadSize()
     return bytes
 end
 
-function XSubpackage:StartResDownload()
+function XSubpackage:StartResDownload(forceResumePausedRes)
     for resId, resItem in pairs(self._ResItemDic) do
-        if resItem:GetState() ~= XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.COMPLETE then
+        local state = resItem:GetState()
+        -- P5 原逻辑：跳过 COMPLETE 和 PAUSE
+        -- [F5] 扩展：当 forceResumePausedRes 为 true 时，PAUSE 也恢复入队
+        if state ~= XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.COMPLETE
+           and (forceResumePausedRes or state ~= XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.PAUSE) then
             XMVCA.XSubPackage:AddResToDownload(resId)
         end
     end
@@ -172,6 +176,56 @@ function XSubpackage:UpdateUninstallState()
     end
 end
 
+--- [F2] 根据所有子资源的实际状态，重新计算分包的聚合状态
+--- 用于 Res级操作后同步 Sub 状态（如从 UNINSTALLED/NOT_DOWNLOAD 恢复时）
+--- 调用时机：XResource:PrepareDownload 检测到父Sub为 UNINSTALLED/NOT_DOWNLOAD 时
+function XSubpackage:UpdateAggregateState()
+    if XTool.IsTableEmpty(self._ResItemDic) then return end
+
+    local hasDownloading = false
+    local hasPrepare = false
+    local hasPause = false
+    local allComplete = true
+    local allUninstalled = true
+
+    for _, resItem in pairs(self._ResItemDic) do
+        local state = resItem:GetState()
+        if state ~= XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.COMPLETE then
+            allComplete = false
+        end
+        if state ~= XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.UNINSTALLED then
+            allUninstalled = false
+        end
+        if state == XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.DOWNLOADING then
+            hasDownloading = true
+        elseif state == XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.PREPARE_DOWNLOAD then
+            hasPrepare = true
+        elseif state == XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.PAUSE then
+            hasPause = true
+        end
+    end
+
+    if allComplete then
+        self._State = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.COMPLETE
+    elseif allUninstalled then
+        self._State = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.UNINSTALLED
+    elseif hasDownloading or hasPrepare then
+        self._State = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.PAUSE
+    elseif hasPause then
+        self._State = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.PAUSE
+    else
+        local downloadSize = self:GetDownloadSize()
+        local totalSize = self:GetTotalSize()
+        if downloadSize > 0 and downloadSize < totalSize then
+            self._State = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.PAUSE
+        elseif downloadSize >= totalSize then
+            self._State = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.COMPLETE
+        else
+            self._State = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.NOT_DOWNLOAD
+        end
+    end
+end
+
 function XSubpackage:IsUninstalled()
     return self._State == XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.UNINSTALLED
 end
@@ -200,6 +254,10 @@ function XSubpackage:RemoveResCache(resId)
     -- 2. 清除 TaskGroups 缓存 (因为它里面存的是旧 Res 的 TaskGroup)
     -- 下次调用 GetTaskGroups 时会自动重新获取新的
     self._TaskGroups = nil 
+end
+
+function XSubpackage:InvalidateTaskGroupsCache()
+    self._TaskGroups = nil
 end
 
 function XSubpackage:FileInitComplete()

@@ -338,7 +338,7 @@ function XUiPurchaseBuyTips:InitAndCheckNormalDiscount()
             elseif self.Data.Price then
                 self:PayCoinStates(self.Data.ConsumeId,self.Data.Price)
                 -- self._BtnBuy:SetText("PanelTxt/TxtPrice", self.Data.Price)
-                if self.Data.OriginalPrice then
+                if self.Data.OriginalPrice and self.Data.OriginalPrice ~= self.Data.Price then
                     self._BtnBuy:SetText("PanelTxt/TxtPriceOri", self.Data.OriginalPrice)
                     self._BtnBuy:SetActive("PanelTxt/TxtPriceOri", true)
                 else
@@ -992,7 +992,8 @@ function XUiPurchaseBuyTips:CheckLBRewardIsHave()
         end
     else
         -- 默认检测是否已拥有逻辑
-        local isHave, isLimitTime = XRewardManager.CheckRewardGoodsListIsOwnForPackage(self.Data.RewardGoodsList)
+        local rewardList = self:GetRewardGoodsListForOwnCheck()
+        local isHave, isLimitTime = XRewardManager.CheckRewardGoodsListIsOwnForPackage(rewardList)
         local isShowHave = isHave and not isLimitTime
 
         -- 捆绑包逻辑
@@ -1190,9 +1191,28 @@ function XUiPurchaseBuyTips:CheckSelectionContainsOwn()
     return false
 end
 
+--- 获取用于"已拥有"检测的奖励列表
+--- 捆绑包：排除已购买（IsSoldOut）子礼包的道具，避免因已购子包的道具误判整包不可买
+--- 非捆绑包：原样返回 RewardGoodsList
+function XUiPurchaseBuyTips:GetRewardGoodsListForOwnCheck()
+    if self.Data.IsComboData and self.Data.SubDatas then
+        local result = {}
+        for _, subData in ipairs(self.Data.SubDatas) do
+            if not subData.IsSoldOut then
+                for _, reward in ipairs(subData.RewardGoodsList) do
+                    result[#result + 1] = reward
+                end
+            end
+        end
+        return result
+    end
+    return self.Data.RewardGoodsList
+end
+
 --- 检查普通和每日礼包是否存在已拥有
 function XUiPurchaseBuyTips:CheckNormalAndDailyContainsOwn()
-    if XRewardManager.CheckRewardGoodsListIsOwn(self.Data.RewardGoodsList) then
+    local rewardList = self:GetRewardGoodsListForOwnCheck()
+    if XRewardManager.CheckRewardGoodsListIsOwn(rewardList) then
         return true
     end
 

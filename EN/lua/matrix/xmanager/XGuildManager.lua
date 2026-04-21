@@ -161,6 +161,11 @@ XGuildManagerCreator = function()
         else
             -- 未加入公会，清除自定义职位信息
             GuildData:UpdateAllRankNames()
+            -- 如果正在公会宿舍中，强制退出回到主界面
+            if XDataCenter.GuildDormManager and XDataCenter.GuildDormManager.GetIsRunning() then
+                XDataCenter.GuildDormManager.Dispose()
+                XLuaUiManager.RunMain()
+            end
         end
         XEventManager.DispatchEvent(XEventId.EVENT_GUILD_NOTICE)
     end

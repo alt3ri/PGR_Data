@@ -2,6 +2,7 @@ local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
 local CSXTextManagerGetText = CS.XTextManager.GetText
 local XUiPanelFashionList = require("XUi/XUiFashion/XUiPanelFashionList")
 local XUiPanelRoleModel = require("XUi/XUiCharacter/XUiPanelRoleModel")
+local XUiPanelLackResources = require("XUi/XUiSubPackage/XUiPanel/XUiPanelLackResources")
 
 local stringFormat = string.format
 local tableInsert = table.insert
@@ -105,6 +106,11 @@ function XUiFashion:OnAwake()
     self:InitFilter()
 
     self:AutoAddListener()
+
+    -- PanelLackResources 初始化
+    if self.PanelLackResources then
+        self._PanelLackRes = XUiPanelLackResources.New(self.PanelLackResources, self)
+    end
 end
 
 function XUiFashion:InitFilter()
@@ -188,10 +194,16 @@ function XUiFashion:OnEnable()
         self.PanelTagGroup.gameObject:SetActiveEx(true)
     end
     self.PanelTagGroup:SelectIndex(LastSelectedTabIndex)
+
+    -- 监听下载完成事件
+    XEventManager.AddEventListener(XEventId.EVENT_RES_COMPLETE, self.OnFashionDownloadComplete, self)
 end
 
 function XUiFashion:OnDisable()
     CS.XGraphicManager.UseUiLightDir = false
+
+    -- 移除下载完成事件监听
+    XEventManager.RemoveEventListener(XEventId.EVENT_RES_COMPLETE, self.OnFashionDownloadComplete, self)
 end
 
 function XUiFashion:OnGetEvents()
@@ -465,6 +477,7 @@ end
 
 function XUiFashion:OnSelectCharacterFashion(fashionId, grid)
     self.CurFashionId = fashionId
+    self.CurSelectFashionId = fashionId
     XDataCenter.FashionManager.SetFashionIsOwnNewUnactive(fashionId)
 
     self:UpdatePreviewGroup()
@@ -475,6 +488,8 @@ function XUiFashion:OnSelectCharacterFashion(fashionId, grid)
     if grid then
         grid:SetRedPoint(XDataCenter.FashionManager.GetAllFashionIsOwnDic(fashionId).IsNew)
     end
+
+    self:CheckAndUpdateLackResourcesPanel()
 end
 
 function XUiFashion:UpdateSceneAndModel()
@@ -595,6 +610,7 @@ end
 
 function XUiFashion:OnSelectWeaponFashion(weaponFashionId, grid)
     self.CurWeaponFashionId = weaponFashionId
+    self.CurSelectFashionId = weaponFashionId
     XDataCenter.WeaponFashionManager.SetWeaponFashionIsOwnNewUnactive(weaponFashionId)
 
     self:OnSwitchWeaponViewType(true)
@@ -603,6 +619,8 @@ function XUiFashion:OnSelectWeaponFashion(weaponFashionId, grid)
     if grid then
         grid:SetRedPoint(XDataCenter.WeaponFashionManager.GetAllWeaponFashionIsOwnDic(weaponFashionId).IsNew)
     end
+
+    self:CheckAndUpdateLackResourcesPanel()
 end
 
 function XUiFashion:OnSwitchWeaponViewType(doNotReset)
@@ -1147,8 +1165,10 @@ function XUiFashion:OnBtnPreviewSuitClick()
     self.OpenPreviewDict[LastSelectedTabIndex] = self.BtnPreviewSuit.ButtonState == CS.UiButtonState.Select
     if LastSelectedTabIndex == BtnTabIndex.Character then
         self:UpdateCharacterModel()
+        self:OnBtnLensIn()
     elseif LastSelectedTabIndex == BtnTabIndex.Weapon then
         self:UpdateWeaponWithCharacterModel()
+        self:OnBtnLensIn()
     end
 end
 
@@ -1183,6 +1203,45 @@ function XUiFashion:UpdateCharacterResModel(characterId, fashionId, weaponFashio
         self.PanelDrag:GetComponent("XDrag").Target = model.transform
         self:ShowImgEffectHuanren(characterId)
     end, nil, weaponFashionId)
+end
+
+--endregion
+
+--region 资源缺失面板
+
+function XUiFashion:CheckAndUpdateLackResourcesPanel()
+    if not self._PanelLackRes then return end
+    local fashionId = self.CurSelectFashionId
+    local characterId = self.CharacterId
+    if not XTool.IsNumberValid(fashionId) then
+        self._PanelLackRes:Close()
+        self._isFashionLacking = false
+        return
+    end
+    local isDownloaded = XMVCA.XSubPackage:CheckFashionDownloaded(fashionId)
+    if isDownloaded then
+        self._PanelLackRes:Close()
+        self._isFashionLacking = false
+    else
+        self._PanelLackRes:SetData(characterId, fashionId)
+        self._PanelLackRes:Open()
+        self._isFashionLacking = true
+    end
+end
+
+function XUiFashion:OnFashionDownloadComplete()
+    if not self._isFashionLacking then
+        self:CheckAndUpdateLackResourcesPanel()
+        return
+    end
+    local fashionId = self.CurSelectFashionId
+    if XTool.IsNumberValid(fashionId)
+       and XMVCA.XSubPackage:CheckFashionDownloaded(fashionId) then
+        self:UpdateCharacterModel()
+        local fashionTemplate = XDataCenter.FashionManager.GetFashionTemplate(fashionId)
+        XUiManager.PopupLeftTip(CS.XTextManager.GetText("DownloadFashionFinishedRefresh", fashionTemplate and fashionTemplate.Name or ""))
+    end
+    self:CheckAndUpdateLackResourcesPanel()
 end
 
 --endregion

@@ -432,7 +432,7 @@ XFubenShortStoryChapterManagerCreator = function()
 
     -- 检查故事集章节是否可以跳转
     function XFubenShortStoryChapterManager.CheckCanGoTo(chapterId, stageId, specialTip)
-        specialTip = specialTip or "获取章节数据失败"
+        specialTip = specialTip or XUiHelper.GetText("ShortStoryChapterGetChapterDataFail")
         if not chapterId then return false, specialTip end
         if XFubenShortStoryChapterManager.IsActivity(chapterId) then
             if not XFubenShortStoryChapterManager.IsShortStoryActivityOpen() then
@@ -449,7 +449,7 @@ XFubenShortStoryChapterManagerCreator = function()
         end
         if stageId then
             local stageInfo = XMVCA.XFuben:GetStageInfo(stageId)
-            if not stageInfo then return false, "获取关卡数据失败" end
+            if not stageInfo then return false, XUiHelper.GetText("ShortStoryChapterGetStageDataFail") end
             if not stageInfo.Unlock then return false, XMVCA.XFuben:GetFubenOpenTips(stageId) end
         end
         return true

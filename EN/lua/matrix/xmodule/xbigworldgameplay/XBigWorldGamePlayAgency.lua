@@ -129,7 +129,7 @@ function XBigWorldGamePlayAgency:IsInstLevel()
     if not levelId or levelId <= 0 then
         return false
     end
-    
+
     return CS.StatusSyncFight.XLevelConfig.IsInstLevel(levelId)
 end
 
@@ -263,7 +263,7 @@ function XBigWorldGamePlayAgency:DoEnterGame(worldData, fightData, levelData)
         XLog.Error("fightData or levelData is nil, 进入大世界失败!")
         return
     end
-    CS.XProfilingLuaUtils.PerfSightSkyGardenProcessEnter()
+    CS.XProfilingLuaUtils.PerfSightRegionEnter("SkyGardenProcess")
     -- 设置当前大世界类型
     self:InitCurrentBigWorldType()
     -- 对应大世界执行进入战斗前逻辑
@@ -295,7 +295,7 @@ function XBigWorldGamePlayAgency:ExitGame()
         --- 清理试用角色
         XMVCA.XBigWorldCharacter:ClearTrialCharacterIds()
     end)
-    CS.XProfilingLuaUtils.PerfSightSkyGardenProcessExit()
+    CS.XProfilingLuaUtils.PerfSightRegionExit()
 end
 
 --- 战斗事件通知，进入战斗（已经进入）
@@ -316,6 +316,8 @@ function XBigWorldGamePlayAgency:OnEventExitFight()
     if not XLoginManager.IsLogin() then
         return
     end
+    XTableManager.ReleaseAll()
+    CS.BinaryManager.ReleaseAllCache()
     self:OnExitFight()
 end
 
@@ -758,7 +760,7 @@ function XBigWorldGamePlayAgency:OnFightGetPerspectiveState(data)
         levelId = data.LevelId
     end
     local isFirstPersonMode = XMVCA.XBigWorldGamePlay:GetCurrentAgency():GetPerspective(levelId) == first
-    
+
     return {
         IsFirstPersonMode = isFirstPersonMode,
         HasData = self:GetCurrentAgency():IsSavePerspective(levelId),
@@ -771,7 +773,7 @@ function XBigWorldGamePlayAgency:OnPerspectiveModeChanged(data)
         return
     end
     local success, isFirst, levelId = data.IsSuccess, data.IsFirstPersonMode, data.LevelId
-    
+
     if not levelId or levelId <= 0 then
         XLog.Error("OnSetFirstPersonMode levelId is invalid: " .. tostring(levelId))
         return
@@ -1124,6 +1126,11 @@ function XBigWorldGamePlayAgency:GetDebugLevelId()
     return self._DebugLevelId
 end
 
+function XBigWorldGamePlayAgency:DebugEnterWorld()
+    self._IsInDebugGame = true
+    self:LaunchWorld()
+end
+
 function XBigWorldGamePlayAgency:EnterDebugGame(worldId, levelId)
     self._IsInDebugGame = true
     self._DebugWorldId = worldId
@@ -1148,6 +1155,10 @@ end
 
 function XBigWorldGamePlayAgency.DebugEnter(worldId, levelId)
     XMVCA.XBigWorldGamePlay:EnterDebugGame(worldId, levelId)
+end
+
+function XBigWorldGamePlayAgency.DebugLaunchWorld()
+    XMVCA.XBigWorldGamePlay:DebugEnterWorld()
 end
 
 function XBigWorldGamePlayAgency.InDebugGame()

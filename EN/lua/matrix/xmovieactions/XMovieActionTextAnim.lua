@@ -17,14 +17,12 @@ function XMovieActionTextAnim:OnRunning()
 end
 
 function XMovieActionTextAnim:IsPassedActionRun(index)
-    local isCover = XDataCenter.MovieManager.IsBehindPassedActionCover(index, function(action)
-        return self:IsActionCover(action)
-    end)
+    local isCover = XDataCenter.MovieManager.IsBehindPassedActionCover(index)
     return not isCover
 end
 
 ---@param action XMovieActionBase
-function XMovieActionTextAnim:IsActionCover(action)
+function XMovieActionTextAnim:IsPassedActionCovered(action)
     if action:GetType() == XMVCA.XMovie.EnumConst.ACTION_TYPE.TEXT_APPEAR then
         local params = action:GetParams()
         local textId = params[1]

@@ -46,7 +46,7 @@ function XUiLuckyTenant2GameUiLuckyTenant2BondsDetail:OnChessRequireClick(chessD
 end
 
 ---@param data table 羁绊数据
-function XUiLuckyTenant2GameUiLuckyTenant2BondsDetail:Update(data)
+function XUiLuckyTenant2GameUiLuckyTenant2BondsDetail:Update(data, hideChessRequire)
     if not data then
         return
     end
@@ -62,10 +62,9 @@ function XUiLuckyTenant2GameUiLuckyTenant2BondsDetail:Update(data)
     -- 设置羁绊图标（兼容 Icon / BondIcon：游戏内列表用 Icon，关卡详情弹窗用 BondIcon）
     local icon = data.Icon or data.BondIcon or ""
     if self.BondsIcon then
-        if self.BondsIcon.SetRawImage then
-            self.BondsIcon:SetRawImage(icon)
-        elseif self.BondsIcon.SetImage then
-            self.BondsIcon:SetImage(icon)
+        local image = self.BondsIcon:GetComponent("RawImage")
+        if image then
+            image:SetImage(icon)
         end
     end
     
@@ -145,11 +144,16 @@ function XUiLuckyTenant2GameUiLuckyTenant2BondsDetail:Update(data)
         XTool.UpdateDynamicItem(self._BuffGrids, buffs, self.GridBuff, XUiLuckyTenant2GameGridBondsBuff, self)
     end
     
-    -- 更新关联棋子列表
-    if self.GridChessRequire then
-        local chessRequires = data.ChessRequires or {}
-        XTool.UpdateDynamicItem(self._ChessRequireGrids, chessRequires, self.GridChessRequire, XUiLuckyTenant2GameGridBondsChessRequire, self)
+    if not hideChessRequire then
+        -- 更新关联棋子列表
+        if self.GridChessRequire then
+            local chessRequires = data.ChessRequires or {}
+            XTool.UpdateDynamicItem(self._ChessRequireGrids, chessRequires, self.GridChessRequire, XUiLuckyTenant2GameGridBondsChessRequire, self)
+        end
     end
+
+    -- 切换其他羁绊后，要关闭棋子详情弹窗
+    self._ChessDetail:Close()
 end
 
 return XUiLuckyTenant2GameUiLuckyTenant2BondsDetail

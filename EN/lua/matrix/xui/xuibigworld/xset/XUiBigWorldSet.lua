@@ -50,6 +50,8 @@ function XUiBigWorldSet:OnBtnSaveClick()
     if currentTypeData then
         self._Control:SaveSettingBySetType(currentTypeData:GetType())
     end
+
+    XEventManager.DispatchEvent(XEventId.EVENT_CONTROLLER_TIPS_CHNAGE)
     XUiManager.TipText("SettingSave")
 end
 

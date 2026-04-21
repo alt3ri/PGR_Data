@@ -71,7 +71,9 @@ XFunctionEventManagerCreator = function()
         XDataCenter.CommunicationManager.SetFestivalCommunication()
         -- 当前是否在主界面(同时在最上层，避免像三周年签到自动弹窗界面 场景预览 双开UiMain)
         InMainUi = XLuaUiManager.IsUiShow("UiMain") and XLuaUiManager.GetTopUiName() == "UiMain"
-        if XDeeplinkManager.InvokeDeeplink() and not XOverseaManager.IsOverSeaRegion() then
+        if InMainUi and XMVCA.XSubPackage:CheckFashionDownloadPrompt() then  -- 涂装下载提示
+            FunctionState = FunctionEvenState.PLAYING
+        elseif XDeeplinkManager.InvokeDeeplink() and not XOverseaManager.IsOverSeaRegion() then
             FunctionState = FunctionEvenState.PLAYING
         elseif InMainUi and CS.XRemoteConfig.AFDeepLinkEnabled and XFunctionEventManager.TryDoDeepLinkInfo() then
             FunctionState = FunctionEvenState.PLAYING
@@ -106,6 +108,8 @@ XFunctionEventManagerCreator = function()
         elseif InMainUi and XDataCenter.PayManager.CheckShowWebTips() then -- 网页充值成功弹框
             FunctionState = FunctionEvenState.PLAYING
         elseif InMainUi and XDataCenter.AutoWindowManager.CheckAutoWindow() then -- 打脸
+            FunctionState = FunctionEvenState.PLAYING
+        elseif InMainUi and XDataCenter.NoticeManager.AutoOpenPopUpPicNotice() then -- 拍脸图公告
             FunctionState = FunctionEvenState.PLAYING
         elseif InMainUi and XMVCA.XDlcWorld:OnReconnectFight() then  --Dlc重连弹窗
             FunctionState = FunctionEvenState.PLAYING

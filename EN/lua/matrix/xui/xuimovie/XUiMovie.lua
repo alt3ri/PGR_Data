@@ -26,6 +26,7 @@ local InsertPanelDisableAnimationDic = {
 }
 
 function XUiMovie:OnAwake()
+    self.PanelFullScreenDialogNew.gameObject:SetActiveEx(false)
     self.UiMovieRImgBg.gameObject:SetActiveEx(false)
     self.UiMoviePanelActor.gameObject:SetActiveEx(false)
     self.BtnAutoing.gameObject:SetActiveEx(false)
@@ -86,6 +87,7 @@ function XUiMovie:OnDisable()
 end
 
 function XUiMovie:OnDestroy()
+    self:RemoveShakeTimer()
     self:RemoveLoadingTimer()
     XLuaAudioManager.StopAudioByType(XLuaAudioManager.SoundType.SFX | XLuaAudioManager.SoundType.Voice | XLuaAudioManager.SoundType.Music)
     self.UiMovieBg:OnDestroy()
@@ -552,6 +554,10 @@ end
 
 --============================================================== #region BtnAuto ==============================================================
 function XUiMovie:OnClickBtnAuto()
+    if self:SelectPanelShowing() or self:IsDestroy() then
+        return
+    end
+    
     local isAutoPlay = not XDataCenter.MovieManager.GetIsAutoPlay()
     XDataCenter.MovieManager.SetMoviePause(false)
     XDataCenter.MovieManager.SetAutoPlay(isAutoPlay)
@@ -576,9 +582,15 @@ function XUiMovie:OnClickBtnAuto()
         -- 自动播放和暂停文本
         self:RefreshTextPause()
     end
+
+    XDataCenter.MovieManager.DispatchAutoPlayEvent()
 end
 
 function XUiMovie:OnClickBtnAutoing()
+    if self:SelectPanelShowing() then
+        return
+    end
+    
     XDataCenter.MovieManager.SetLongPressAutoPlay(false)
     XDataCenter.MovieManager.SetMoviePause(false)
     XDataCenter.MovieManager.SetAutoPlay(false)
@@ -592,6 +604,7 @@ function XUiMovie:OnClickBtnAutoing()
     self.BtnAutoing.gameObject:SetActiveEx(false)
     
     self:ClearAutoTimer()
+    XDataCenter.MovieManager.DispatchAutoPlayEvent()
 end
 
 -- 刷新暂停文本
@@ -681,19 +694,26 @@ end
 --endregion
 
 --region PanelText
--- 显示文本
-function XUiMovie:AppearText(layer, id, content, posX, posY, scale, rotation, isAnim, anchorType)
+-- 初始化
+function XUiMovie:InitUiPanelText()
     if not self.UiPanelText then
         local XUiPanelText = require("XUi/XUiMovie/XUiPanelText")
         self.UiPanelText = XUiPanelText.New(self.PanelText, self)
         self.UiPanelText:Open()
     end
+end
+
+-- 显示文本
+function XUiMovie:AppearText(layer, id, content, posX, posY, scale, rotation, isAnim, anchorType)
+    self:InitUiPanelText()
     return self.UiPanelText:AppearText(layer, id, content, posX, posY, scale, rotation, isAnim, anchorType)
 end
 
 -- 隐藏指定id的文本
 function XUiMovie:DisAppearText(id, isAnim)
-    self.UiPanelText:DisAppearText(id, isAnim)
+    if self.UiPanelText then
+        self.UiPanelText:DisAppearText(id, isAnim)
+    end
 end
 
 -- 隐藏所有文本
@@ -705,10 +725,18 @@ end
 
 -- 播放文本动画
 function XUiMovie:TextPlayAnim(id, time, pos, rotation, scale)
+    self:InitUiPanelText()
     return self.UiPanelText:TextPlayAnim(id, time, pos, rotation, scale)
 end
 
+---@return XUiPanelText
+function XUiMovie:GetUiPanelText()
+    self:InitUiPanelText()
+    return self.UiPanelText
+end
+
 function XUiMovie:GetText(id)
+    self:InitUiPanelText()
     return self.UiPanelText:GetText(id)
 end
 --endregion
@@ -798,5 +826,63 @@ function XUiMovie:RequestAddStageBookmark()
     end)
 end
 --endregion
+
+--region XUiPanelFullScreenDialogNew
+
+-- 获取新全屏字母面板
+---@return XUiPanelFullScreenDialogNew
+function XUiMovie:GetPanelFullScreenDialogNew()
+    if not self.UiPanelFullScreenDialogNew then
+        local XUiPanelFullScreenDialogNew = require("XUi/XUiMovie/XUiPanelFullScreenDialogNew")
+        self.UiPanelFullScreenDialogNew = XUiPanelFullScreenDialogNew.New(self.PanelFullScreenDialogNew, self)
+    end
+    return self.UiPanelFullScreenDialogNew
+end
+
+--endregion
+
+--region BgGroup
+-- 获取背景组
+---@return XUiGridMovieBgGroup
+function XUiMovie:GetGridBgGroup(bgIndex)
+    self.UiGridBgGroupDic = self.UiGridBgGroupDic or {}
+    local uiGridBgGroup = self.UiGridBgGroupDic[bgIndex]
+    if not uiGridBgGroup then
+        -- 创建挂点
+        self.FullScreenBackground = self.FullScreenBackground or self.Transform:Find("FullScreenBackground")
+        local name = "PanelBgGroup" .. tostring(bgIndex)
+        local linkGo = CS.UnityEngine.GameObject(name)
+        linkGo.transform:SetParent(self.FullScreenBackground)
+        
+        -- 实例化脚本
+        local XUiGridMovieBgGroup = require("XUi/XUiMovie/XUiGridMovieBgGroup")
+        uiGridBgGroup = XUiGridMovieBgGroup.New(linkGo, self, bgIndex)
+        self.UiGridBgGroupDic[bgIndex] = uiGridBgGroup
+    end
+    return uiGridBgGroup
+end
+
+-- 背景组是否存在
+function XUiMovie:IsGridBgGroupExit(bgIndex)
+    return self.UiGridBgGroupDic and self.UiGridBgGroupDic[bgIndex]
+end
+--endregion
+
+--region Shake
+-- 开始振动
+function XUiMovie:SetShakeAction(shakeAction)
+    self:RemoveShakeTimer()
+    ---@type XMovieActionBgShake
+    self.ShakeAction = shakeAction
+end
+
+-- 停止振动
+function XUiMovie:RemoveShakeTimer()
+    if self.ShakeAction then
+        self.ShakeAction:RemoveShakeTimer()
+        self.ShakeAction = nil
+    end
+end
+--end
 
 return XUiMovie

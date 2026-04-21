@@ -176,7 +176,12 @@ function XUiPanelTheatre4SettlementPageTwo:GetTotalScore(data)
     local prosperityScore = math.floor(data[2].Count * data[2].Parameter)
     prosperityScore = math.min(prosperityScore, data[2].MaxScore)
     local exploreScore = math.floor(data[3].Count * data[3].Parameter)
-    return math.floor((chapterScore + prosperityScore + exploreScore) * data[4].Count * data[5].Count)
+    -- return math.floor((chapterScore + prosperityScore + exploreScore) * data[4].Count * data[5].Count)
+    -- 先计算难度倍率，再计算结局倍率, 计算顺序不能颠倒，要和服务端一致
+    -- data[4]	结局倍率	GetEndingFactor(Parent.EndingId) → GetEndingFactorById → 结局配置	Theatre4Ending	Factor
+    -- data[5]	难度倍率	GetDifficultyBPExpRateById(AdventureSettleData:GetDifficulty()) → 难度配置	Theatre4Difficulty	BP
+    local score = math.floor((chapterScore + prosperityScore + exploreScore) * data[4].Count)
+    return math.floor(score * data[5].Count)
 end
 
 -- 刷新奖励

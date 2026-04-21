@@ -40,12 +40,6 @@ function XUiLuckyTenant2ChessGridBuff:Update(data)
         local desc = data.Desc or ""
         self.TxtBuffDoc.text = XUiHelper.ReplaceTextNewLine(desc)
     end
-
-    if XMain.IsEditorDebug then
-        if self.TxtBuffName then
-            self.TxtBuffDoc.text = self.TxtBuffDoc.text .. string.format("[Id:%s]", data.SkillId)
-        end
-    end
 end
 
 return XUiLuckyTenant2ChessGridBuff

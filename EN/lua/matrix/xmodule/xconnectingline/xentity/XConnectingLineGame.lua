@@ -56,6 +56,10 @@ function XConnectingLineGame:SetStageId(stageId)
     self._StageId = stageId
 end
 
+function XConnectingLineGame:SetCompleteLineSoundCueId(cueId)
+    self._CompleteLineSoundCueId = cueId
+end
+
 function XConnectingLineGame:InitGrids(gridsConfig, avatarConfig)
     for i = 1, XEnumConst.CONNECTING_LINE.MAX_COLUMN do
         local id = self._StageId * 100 + i
@@ -266,7 +270,11 @@ function XConnectingLineGame:Execute(operation)
             end
 
             self:AddLine(linePainting)
-            XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XEnumConst.CONNECTING_LINE.COMPLETE_LINE_SOUND)
+
+            if XTool.IsNumberValidEx(self._CompleteLineSoundCueId) then
+                XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, self._CompleteLineSoundCueId)
+            end
+            
             if isRemoveExistLine then
                 XEventManager.DispatchEvent(XEventId.EVENT_CONNECTING_LINE_BUBBLE, XEnumConst.CONNECTING_LINE.BUBBLE.CONNECT_CHANGE)
             else

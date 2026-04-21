@@ -4,7 +4,7 @@
 local XTheatre5PVPControl = XClass(XControl, "XTheatre5PVPControl")
 
 function XTheatre5PVPControl:OnInit()
- 
+
 end
 
 function XTheatre5PVPControl:AddAgencyEvent()
@@ -29,7 +29,7 @@ end
 --- 判断是否有指定角色的数据
 function XTheatre5PVPControl:CheckHasPVPCharacterDataById(id)
     local data = self._Model.PVPCharacterData:GetPVPCharacterById(id, true)
-    
+
     return not XTool.IsTableEmpty(data)
 end
 
@@ -52,14 +52,14 @@ function XTheatre5PVPControl:GetCharacterDataForRank(charaId)
         if not XTool.IsTableEmpty(characterDatas) then
             local score = -1
             local charaData = nil
-            
+
             for i, v in pairs(characterDatas) do
                 if v.Rating > score then
                     score = v.Rating
                     charaData = v
                 end
             end
-            
+
             return charaData
         end
     end
@@ -78,13 +78,13 @@ function XTheatre5PVPControl:GetIsCharactersMultyMaxRating()
                 score = v.Rating
                 sameCount = 1
             elseif v.Rating == score then
-                sameCount = sameCount + 1    
+                sameCount = sameCount + 1
             end
         end
 
         return sameCount > 1
     end
-    
+
     -- 没数据当成积分一样
     return true
 end
@@ -118,7 +118,7 @@ function XTheatre5PVPControl:GetPVPRankCfgByRatingScore(score)
                 if maxRankCfg and score <= maxRankCfg.Rating then
                     -- 确定玩家分数在这个范围内，再逐一找到最接近的段位
                     local nearestRankCfg = minRankCfg
-                    
+
                     -- 这里必须Id连续，否则需要调整逻辑.
                     -- 遍历从最小段位的下一个段位开始
                     for i = 1, majorCfg.StarCount - 1 do
@@ -130,28 +130,28 @@ function XTheatre5PVPControl:GetPVPRankCfgByRatingScore(score)
                             break
                         end
                     end
-                    
+
                     return nearestRankCfg
                 end
             end
         end
     end
-    
+
     --- 以下逻辑保留，作为保底逻辑
     ---@type XTableTheatre5Rank[]
     local cfgs = self._Model:GetTheatre5RankCfgs()
 
     if not XTool.IsTableEmpty(cfgs) then
         local nearestRankCfg = nil
-        
+
         for i, v in pairs(cfgs) do
             if score >= v.Rating then
                 nearestRankCfg = v
             else
                 break
-            end    
+            end
         end
-        
+
         return nearestRankCfg
     end
 end
@@ -192,7 +192,7 @@ function XTheatre5PVPControl:GetPVPRankMajorIconResById(majorId)
             return rankCfg.IconRes
         end
     end
-    
+
     return ''
 end
 
@@ -203,7 +203,7 @@ function XTheatre5PVPControl:GetPVPRankMajorIdByRatingScore(score)
     local majorCfgs = self._Model:GetTheatre5RankMajorCfgs()
 
     local majorId = 0
-    
+
     if not XTool.IsTableEmpty(majorCfgs) then
         for i, majorCfg in pairs(majorCfgs) do
             local minRankCfg = self._Model:GetTheatre5RankCfgById(majorCfg.MinRank)
@@ -213,14 +213,14 @@ function XTheatre5PVPControl:GetPVPRankMajorIdByRatingScore(score)
 
                 -- 当积分大于该大段位的最低段位时，标记为候补
                 majorId = majorCfg.Id
-                
+
                 if maxRankCfg and score <= maxRankCfg.Rating then
                     return majorCfg.Id
                 end
             end
         end
     end
-    
+
     --- 在这里返回表示没有找到有效大段位，或处于大段位最高段位
     return majorId
 end
@@ -232,6 +232,11 @@ end
 --- 获取奖杯总数配置
 function XTheatre5PVPControl:GetPVPTargetCountFromConfig()
     return self._Model:GetTheatre5ConfigValByKey('PvpTarget')
+end
+
+--- 获取加时赛奖杯总数配置
+function XTheatre5PVPControl:GetPvpExtraTargetCountFromConfig()
+    return self._Model:GetTheatre5ConfigValByKey('PvpExtraTarget')
 end
 
 --- 获取生命最大值
@@ -259,6 +264,41 @@ function XTheatre5PVPControl:GetGemMaxSlot()
     return self._Model:GetTheatre5ConfigValByKey('RuneGridMaxNum')
 end
 
+--- PVP回合结束提示文本
+function XTheatre5PVPControl:GetPvpRoundEndTips()
+    return self._Model:GetTheatre5ClientConfigText('PvpRoundEndTips')
+end
+
+--- PVP额外回合提示文本
+function XTheatre5PVPControl:GetPvpExtraRoundTips()
+    return self._Model:GetTheatre5ClientConfigText('PvpExtraRoundTips')
+end
+
+--- PVP额外回合最小评分值配置
+function XTheatre5PVPControl:GetPvpExMinRating(index)
+    return self._Model:GetTheatre5ClientConfigNum('PvpExMinRating', index)
+end
+
+--- PVP额外回合最大评分值配置
+function XTheatre5PVPControl:GetPvpExMaxRating(index)
+    return self._Model:GetTheatre5ClientConfigNum('PvpExMaxRating', index)
+end
+
+--- PVP额外对局弹窗内容
+function XTheatre5PVPControl:GetPvpExtraPopupContent()
+    return self._Model:GetTheatre5ClientConfigText('PvpExtraPopupContent')
+end
+
+--- PVP额外对局弹框提示文本
+function XTheatre5PVPControl:GetPvpExtraPopupTxtTip()
+    return self._Model:GetTheatre5ClientConfigText('PvpExtraPopupTxtTip')
+end
+
+--- PVP额外对局弹框提示文本颜色
+function XTheatre5PVPControl:GetPvpExtraPopupTxtTipColor()
+    return self._Model:GetTheatre5ClientConfigText('PvpExtraPopupTxtTipColor')
+end
+
 --endregion
 
 --region 配置表 - 结算相关
@@ -266,11 +306,11 @@ end
 --- 获取段位积分变化文本
 function XTheatre5PVPControl:GetRatingProcessLabelFromClientConfig(isAdds)
     local index = isAdds and 1 or 2
-    
+
     local format = self._Model:GetTheatre5ClientConfigText('RatingProcessLabel', index)
-    
+
     format = string.gsub(format, '\\', '')
-    
+
     return format
 end
 
@@ -300,7 +340,7 @@ end
 
 function XTheatre5PVPControl:StartPVPTimer(tickCb)
     self:StopPVPTimer()
-    
+
     self._TickoutCallBack = tickCb
     self.PVPTimeId = XMVCA.XTheatre5:GetPVPActivityTimeId()
 
@@ -316,7 +356,7 @@ function XTheatre5PVPControl:UpdatePVPTimer()
     local endTime = XFunctionManager.GetEndTimeByTimeId(self.PVPTimeId)
 
     if endTime <= 0 then
-        XLog.Error('PVP结束时间异常，结束时间：'..tostring(endTime)..' TimeId:'..tostring(self.PVPTimeId))
+        XLog.Error('PVP结束时间异常，结束时间：' .. tostring(endTime) .. ' TimeId:' .. tostring(self.PVPTimeId))
         self:StopPVPTimer()
         self:DoTickoutCallBack()
     end
@@ -343,7 +383,7 @@ function XTheatre5PVPControl:CheckPVPInTime()
     if leftTime <= 0 then
         return false
     end
-    
+
     return true
 end
 
@@ -352,7 +392,7 @@ function XTheatre5PVPControl:DoTickoutCallBack()
         self._TickoutCallBack()
         self._TickoutCallBack = nil
     end
-    
+
     XLuaUiManager.CloseAllUpperUiWithCallback('UiTheatre5Main')
 
     XUiManager.TipText('ActivityMainLineEnd')
@@ -373,9 +413,57 @@ function XTheatre5PVPControl:GetFuturePVPActivityTimeId()
                 futureTimeId = cfg.TimeId
             end
         end
-        
+
         return futureTimeId
     end
 end
 
-return XTheatre5PVPControl
+--region PVP加时赛相关
+
+--- 获取当前角色PVP加时赛的最小和最大评分值
+function XTheatre5PVPControl:GetPvpExMinAndMaxRating()
+    local characterConfig = self._MainControl:GetCurCharacterCfg()
+    if not characterConfig then
+        return 0, 0
+    end
+
+    local characterData = self:GetPVPCharacterDataById(characterConfig.Id, true)
+    local rating = characterData and characterData.Rating or 0
+    ---@type XTableTheatre5Rank
+    local rankConfig = self:GetPVPRankCfgByRatingScore(rating)
+    if not rankConfig then
+        return 0, 0
+    end
+
+    local minRating = self:GetPvpExMinRating(rankConfig.Id)
+    local maxRating = self:GetPvpExMaxRating(rankConfig.Id)
+    return minRating, maxRating
+end
+
+--- 获取加时赛的奖杯数 使用加时赛奖杯数（配置） - 常规赛奖杯数（配置）
+function XTheatre5PVPControl:GetPvpExtraTargetCount()
+    local extraTarget = self:GetPvpExtraTargetCountFromConfig()
+    local normalTarget = self:GetPVPTargetCountFromConfig()
+    return math.max(extraTarget - normalTarget, 0)
+end
+
+--- 加时赛二级确认弹框
+function XTheatre5PVPControl:ShowPvpExtraSecondConfirm(endCb, extraCb, cancelCb)
+    local title = XUiHelper.GetText("TipTitle")
+    local content = self:GetPvpExtraPopupContent()
+    local tipContent = self:GetPvpExtraPopupTxtTip()
+    local tipColor = self:GetPvpExtraPopupTxtTipColor()
+
+    local extraTargetCount = self:GetPvpExtraTargetCount()
+    local fullContent = XUiHelper.FormatTextEx(content, extraTargetCount)
+
+    local originRating = self._MainControl:GetNormalOriginRating()
+    local minRating, maxRating = self:GetPvpExMinAndMaxRating()
+    local fullTipContent = XUiHelper.FormatTextEx(tipContent, originRating, originRating + minRating, originRating + maxRating)
+
+    XMVCA.XTheatre5:TryPopupDialog(title, fullContent, cancelCb, nil, cancelCb, nil, nil, nil, nil, true, fullTipContent, tipColor, true, endCb, true, true, extraCb)
+end
+
+--endregion
+
+return XTheatre5PVPControl

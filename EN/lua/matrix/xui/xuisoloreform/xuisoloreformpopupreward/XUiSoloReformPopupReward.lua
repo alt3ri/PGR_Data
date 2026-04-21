@@ -71,7 +71,7 @@ function XUiSoloReformPopupReward:InitDynamicTable()
 end
 
 function XUiSoloReformPopupReward:OnGainTaskReward()
-    self:Refresh()
+    self:OnClickTaskTypeCallBack(self.TaskType)
     self:RefreshReddot()
 end
 

@@ -54,13 +54,17 @@ end
 function XBuffScript1052905:OnNpcRemoveBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId) --删除buff事件
     Base.OnNpcRemoveBuffEvent(self,casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
     if buffId == 1052834 then
-        if not self._proxy:CheckNpcCurrentAction(self._uuid,105781) or not self._proxy:CheckBuffByKind(self._uuid,1052835) then
-            self._proxy:SetSkillGroup(self._uuid,ENpcOperationKey.Ball2,105704)
+        if self._proxy:CheckBuffByKind(self._uuid,105217) then
+            if not self._proxy:CheckNpcCurrentAction(self._uuid,105781) or not self._proxy:CheckBuffByKind(self._uuid,1052835) then
+                self._proxy:SetSkillGroup(self._uuid,ENpcOperationKey.Ball2,105704)
+            end
         end
     end
 
     if buffId == 1052835 then
-        self._proxy:SetSkillGroup(self._uuid,ENpcOperationKey.Ball2,105704)
+        if self._proxy:CheckBuffByKind(self._uuid,105217) then
+            self._proxy:SetSkillGroup(self._uuid,ENpcOperationKey.Ball2,105704)
+        end
     end
 end
 

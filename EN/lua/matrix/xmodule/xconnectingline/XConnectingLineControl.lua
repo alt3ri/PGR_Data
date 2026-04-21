@@ -28,6 +28,9 @@ end
 function XConnectingLineControl:InitGame(gridX, gridY)
     self._Model:InitGame(gridX, gridY)
     local game = self._Model:GetGame()
+    
+    game:SetCompleteLineSoundCueId(self:GetClientConfigNumberByKey("CompleteLineSound"))
+    
     return game
 end
 
@@ -75,6 +78,14 @@ end
 
 function XConnectingLineControl:IsLastStage()
     return self._Model:IsLastStage()
+end
+
+function XConnectingLineControl:SetCurrentStageId(stageId)
+    self._Model:SetCurrentStageId(stageId)
+end
+
+function XConnectingLineControl:GetCurrentStageId()
+    return self._Model:GetCurrentStageId()
 end
 
 function XConnectingLineControl:IsGameInit()
@@ -285,5 +296,39 @@ end
 function XConnectingLineControl:GetCoinItemId()
     return self._Model:GetCoinItemId()
 end
+
+function XConnectingLineControl:GetRandomStageIdByGameId(gameId)
+    local stageList = self._Model:GetStageListByGameId(gameId)
+    if #stageList == 0 then
+        XLog.Error("[XConnectingLineControl] GetRandomStageIdByGameId gameId not found, 检查ConnectingLineStage表", gameId)
+        return 0
+    end
+    local randomIndex = math.random(1, #stageList)
+    return stageList[randomIndex].Id
+end
+
+--region Configs
+
+---@return XTableConnectingLineClientConfig
+function XConnectingLineControl:GetClientConfigByKey(key, notips)
+    return self._Model:GetClientConfigByKey(key, notips)
+end
+
+function XConnectingLineControl:GetClientConfigNumberByKey(key, index)
+    index = index or 1
+    
+    local cfg = self:GetClientConfigByKey(key)
+
+    if cfg then
+        local valStr = cfg.Values[index]
+
+        if string.IsFloatNumber(valStr) then
+            return tonumber(valStr)
+        end
+    end
+    
+    return 0
+end
+--endregion
 
 return XConnectingLineControl

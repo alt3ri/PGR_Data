@@ -10,7 +10,7 @@ end
 
 function XLineArithmetic2Agency:InitRpc()
     --实现服务器事件注册
-    XRpc.NotifyLineArithmeticActivity = handler(self, self.NotifyLineArithmeticActivity)
+    -- XRpc.NotifyLineArithmeticActivity = handler(self, self.NotifyLineArithmeticActivity)
 end
 
 function XLineArithmetic2Agency:InitEvent()

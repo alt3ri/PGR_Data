@@ -77,7 +77,7 @@
     },
     {
         "Key": "NoRankTips",
-        "Values": "['Out of the ranking']"
+        "Values": "['Not Ranked']"
     },
     {
         "Key": "RankRefreshTips",
@@ -261,7 +261,7 @@
     },
     {
         "Key": "PvpPopUpTitle",
-        "Values": "['Desperado Clash', 'New Season']"
+        "Values": "['Desperado Clash', '{0} Apocalypse Returns']"
     },
     {
         "Key": "PvpPopUpContent1",
@@ -269,11 +269,11 @@
     },
     {
         "Key": "PvpPopUpContent2",
-        "Values": "[\"New Mammon's Blessings\"]"
+        "Values": "['Season Limited-Time Rewards']"
     },
     {
         "Key": "PvpPopUpContent3",
-        "Values": "['Season Limited-Time Rewards']"
+        "Values": "['Upgrade & Accessory Return']"
     },
     {
         "Key": "PvpPopUpImgNameplate",
@@ -297,7 +297,7 @@
     },
     {
         "Key": "PopUpversion",
-        "Values": "['1']"
+        "Values": "['2']"
     },
     {
         "Key": "MissionLevelUpCostLinks",
@@ -321,11 +321,11 @@
     },
     {
         "Key": "MissionMaxLevelLabel",
-        "Values": "['\u5df2\u5347\u81f3\u6700\u9ad8\u9636']"
+        "Values": "['Max rank reached']"
     },
     {
         "Key": "MissionCompleteLabel",
-        "Values": "['\u5df2\u6fc0\u6d3b\u739b\u95e8\u7684\u5609\u8d4f']"
+        "Values": "[\"Mammon's Blessing activated\"]"
     },
     {
         "Key": "MissionGridLevelLabel",
@@ -333,11 +333,11 @@
     },
     {
         "Key": "MissionLevelUpNoEnoughGold",
-        "Values": "['\u5347\u9636\u6240\u9700\u7684\u91d1\u5e01\u4e0d\u8db3']"
+        "Values": "['Insufficient coins to rank up']"
     },
     {
         "Key": "NoMissionTips",
-        "Values": "['1\u56de\u5408\u540e\u53ef\u63a5\u53d6\u59d4\u6258', 'Mammon Agency is preparing the commission.']"
+        "Values": "['Commission available after 1 round', 'Mammon Agency is preparing the commission.']"
     },
     {
         "Key": "MissionGridTitle",
@@ -349,7 +349,7 @@
     },
     {
         "Key": "MissionLevelUpNoTimes",
-        "Values": "['\u5f53\u524d\u56de\u5408\u5df2\u8fdb\u884c\u8fc7\u4e00\u6b21\u5609\u8d4f\u5347\u9636']"
+        "Values": "['Blessing already ranked up this round']"
     },
     {
         "Key": "PVPNotStartTips",
@@ -357,7 +357,7 @@
     },
     {
         "Key": "PVPReasonTips",
-        "Values": "['{0} Available in {1}', '{0}  Season has started']"
+        "Values": "['Available in {0}', 'Faster global point gain and access to extra games']"
     },
     {
         "Key": "PVPReasonTimeDuration",
@@ -365,7 +365,7 @@
     },
     {
         "Key": "MissionLevelUpInSkillSelectionPart",
-        "Values": "['\u5b8c\u6210\u6280\u80fd\u9009\u62e9\u524d\uff0c\u4e0d\u80fd\u5347\u9636\u5609\u8d4f']"
+        "Values": "['Cannot rank up Blessing before skill selection']"
     },
     {
         "Key": "MissionFinishTipsInSkillChoicePart",
@@ -382,5 +382,33 @@
     {
         "Key": "MissionStateLabelInFinalSettle",
         "Values": "['No Commission Accepted', 'Commission in Progress']"
+    },
+    {
+        "Key": "PvpRoundEndTips",
+        "Values": "['{0} Points']"
+    },
+    {
+        "Key": "PvpExtraRoundTips",
+        "Values": "['{0} to {1} Points']"
+    },
+    {
+        "Key": "PvpExMinRating",
+        "Values": "['0', '0', '-20', '-20', '-20', '-20', '-20', '-20', '-20', '-20', '-20', '-20', '-20']"
+    },
+    {
+        "Key": "PvpExMaxRating",
+        "Values": "['167', '167', '144', '144', '144', '144', '117', '117', '117', '95', '95', '95', '90']"
+    },
+    {
+        "Key": "PvpExtraPopupContent",
+        "Values": "[\"You've qualified for settlement. Play {0} extra games?\"]"
+    },
+    {
+        "Key": "PvpExtraPopupTxtTip",
+        "Values": "['Your current points are {0}. After completing the extra games, your points will range from {1} to {2}.']"
+    },
+    {
+        "Key": "PvpExtraPopupTxtTipColor",
+        "Values": "['1F85D8']"
     }
 ]

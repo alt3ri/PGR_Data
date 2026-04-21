@@ -21,10 +21,23 @@ function XUiShopFashionDiscountActivity:ResetDiscountActivityTime(shopId)
         XScheduleManager.UnSchedule(self._DiscountActivityTimeId)
         self._DiscountActivityTimeId = nil
     end
+
+    local shopInfo = nil
+    for _, info in pairs(self.Parent.TagBtnShopGroup) do
+        if info.Id == shopId then
+            shopInfo = info
+            break
+        end
+    end
+    if shopInfo and shopInfo.IsNeedHideCountdown then
+        self.Parent.TxtPanelFashionTime.gameObject:SetActiveEx(false)
+        return
+    end
+
     local activityStartTime = XShopManager.GetShopActivityStartTime(shopId)
     local activityEndTime = XShopManager.GetShopActivityEndTime(shopId)
     local now = XTime.GetServerNowTimestamp()
-    if activityEndTime >= now then
+    if activityEndTime and activityEndTime >= now then
         self:RefreshTimeStrFunc(shopId)
         self._DiscountActivityTimeId = XScheduleManager.ScheduleForever(function()
             self:RefreshTimeStrFunc(shopId)
@@ -107,7 +120,7 @@ function XUiShopFashionDiscountActivity:GroupBtnShowActivityTag(shopId)
         parentBtn:SetNameByGroup(1, XUiHelper.GetText("FashionActivitySecondTag"))
     end
     targetBtn:ShowTag(true)
-    targetBtn:SetNameByGroup(1, XUiHelper.GetText("FashionActivityFirstTag"))
+    targetBtn:SetNameByGroup(1, XUiHelper.GetText("UiShopBtnActivityTagName"))
 end
 
 function XUiShopFashionDiscountActivity:GroupBtnHideActivityTag(shopId)

@@ -48,7 +48,8 @@ end
 -- 检查是否有红点提示
 ---@overload
 function XNewCharStoryViewModel:CheckHasRedPoint()
-    local plotDatas = XMVCA.XFavorability:GetCharacterStoryById(self.Config.CharacterId)
+    local characterId = self.Config.CharacterId
+    local plotDatas = XMVCA.XFavorability:GetCharacterStoryById(characterId)
 
     if not XTool.IsTableEmpty(plotDatas) then
         for i, v in pairs(plotDatas) do
@@ -58,6 +59,11 @@ function XNewCharStoryViewModel:CheckHasRedPoint()
                 end
             end
         end
+    end
+    
+    -- 检查好感剧情限时送角色任务红点
+    if XMVCA.XFavorability:CheckStoryGiftTaskRedPoint(characterId) then
+        return true
     end
     
     return false

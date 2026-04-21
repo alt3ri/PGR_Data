@@ -99,14 +99,13 @@ function XMovieActionSelection:OnEnter()
     local btnIndexDic = {}
     local CSInstantiate = CS.UnityEngine.Object.Instantiate
     local CSUiButtonState = CS.UiButtonState
-    for _, selectData in ipairs(self.SelectList) do
+    for i, selectData in ipairs(self.SelectList) do
         local btnType = selectData.BtnType or self.DEFAULT_SELECTION_TYPE -- 不填使用默认按钮
 
         -- 初始化对应btnType的按钮列表
         local btnGoList = btnDic[btnType]
         if not btnGoList then
-            local btnSelect = panel:GetObject("BtnSelect"..btnType)
-            btnGoList = { btnSelect }
+            btnGoList = {}
             btnDic[btnType] = btnGoList
         end
 
@@ -115,7 +114,7 @@ function XMovieActionSelection:OnEnter()
         btnIndexDic[btnType] = index
         local btnGo = btnGoList[index]
         if not btnGo then
-            local cloneGo = btnGoList[1].gameObject
+            local cloneGo = panel:GetObject("BtnSelect"..btnType)
             btnGo = CSInstantiate(cloneGo.gameObject, cloneGo.transform.parent)
             table.insert(btnGoList, btnGo)
         end
@@ -147,12 +146,19 @@ function XMovieActionSelection:OnEnter()
             pressReadedLink.gameObject:SetActiveEx(isReaded)
         end
 
+        -- PC按键映射
+        local customKey = btnGo.gameObject:GetComponent(typeof(CS.XUiPc.XUiPcCustomKey))
+        if XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.Pc and customKey then
+            local keyEnumCode = XMVCA.XMovie.EnumConst.SELECTION_KEY_MAP_IDS[i]
+            customKey:SetKey(CS.XInputMapId.System, keyEnumCode, CS.XInputManager.XOperationType.System)
+        end
+
         table.insert(btnList, uiButton)
     end
     
     panel:GetObject("TabBtnSelectGroup"):Init(btnList, function(tabIndex) self:OnClickTabCallBack(tabIndex) end)
     self.UiRoot:SetBtnNextCallback(function() end)
-    CS.XUiManagerExtension.ManualStop("UiMovie")
+    --CS.XUiManagerExtension.ManualStop("UiMovie")
     self.SelectedActionId = 0
 end
 
@@ -162,7 +168,7 @@ end
 
 function XMovieActionSelection:OnDestroy()
     self.UiRoot:RemoveBtnNextCallback()
-    CS.XUiManagerExtension.ManualResume("UiMovie")
+    --CS.XUiManagerExtension.ManualResume("UiMovie")
     self.RepeatClick = nil
     self.UiRoot.PanelSelectLeft.gameObject:SetActiveEx(false)
     self.UiRoot.PanelSelectRight.gameObject:SetActiveEx(false)

@@ -64,10 +64,12 @@ function XMovieActionBgSwitch:OnEnter()
     rImgBg:Show()
 
     if self.NeedSupportAnim and self.RImgAnimBg then
-        local ratio = self.RImgBg:GetAspectRatio() * self.AspectRatioPercent
         self.RImgAnimBg:Reset()
         self.RImgAnimBg:SetBgPath(bgPath, self.AnchorType, self.PositionParams)
-        self.RImgAnimBg:SetAspectRatio(ratio)
+        if self.AspectRatioPercent > 0 then
+            local ratio = self.RImgBg:GetAspectRatio() * self.AspectRatioPercent
+            self.RImgAnimBg:SetAspectRatio(ratio)
+        end
         self.RImgAnimBg:Show()
     else
         rImgBg:SetBgPath(bgPath, self.AnchorType, self.PositionParams)
@@ -103,15 +105,13 @@ function XMovieActionBgSwitch:IsPassedActionRun(index)
     if self.IsHide then return false end
 
     -- 有下一个刷新背景，不论是显示/隐藏，都是跳过
-    local isCover = XDataCenter.MovieManager.IsBehindPassedActionCover(index, function(action)
-        return self:IsActionCover(action)
-    end)
+    local isCover = XDataCenter.MovieManager.IsBehindPassedActionCover(index)
     return not isCover
 end
 
 -- 传入Action是否可覆盖当前Action的UI显示，可覆盖则OnPassedActionRun不用再刷新UI界面
 ---@param action XMovieActionBase
-function XMovieActionBgSwitch:IsActionCover(action)
+function XMovieActionBgSwitch:IsPassedActionCovered(action)
     if action:GetType() ~= self:GetType() then
         return false
     end

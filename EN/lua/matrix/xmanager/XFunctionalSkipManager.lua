@@ -803,11 +803,11 @@ XFunctionalSkipManagerCreator = function()
     function XFunctionalSkipManager.SkipToCharacterStory(list)
         local charId = list.CustomParams[1]
 
-        local saveKey = "CharacterStoryGuide_" .. tostring(XPlayer.Id) .. "_" .. tostring(charId)
-        if not XSaveTool.GetData(saveKey) then
-            XSaveTool.SaveData(saveKey, 1)
-            return false
-        end
+        -- local saveKey = "CharacterStoryGuide_" .. tostring(XPlayer.Id) .. "_" .. tostring(charId)
+        -- if not XSaveTool.GetData(saveKey) then
+        --     XSaveTool.SaveData(saveKey, 1)
+        --     return false
+        -- end
 
         local result = XMVCA.XFavorability:OpenUiStory(charId, XEnumConst.Favorability.FavorabilityStoryEntranceType.Other)
         return result
@@ -2284,7 +2284,8 @@ XFunctionalSkipManagerCreator = function()
     
     function XFunctionalSkipManager:SkipToLineArithmetic()
         --XMVCA.XLineArithmetic:OpenMainUi()
-        return XMVCA.XLineArithmetic2:ExOnSkip()
+        -- return XMVCA.XLineArithmetic2:ExOnSkip()
+        return XMVCA.XLineArithmetic3:ExOnSkip()
     end
 
     function XFunctionalSkipManager:SkipToBossInshot()
@@ -2455,17 +2456,37 @@ XFunctionalSkipManagerCreator = function()
         XMVCA.XScoreTower:ExOpenMainUi()
     end
 
-    -- 跳转到自选Gacha卡池
-    function XFunctionalSkipManager.SkipToSelfChoiceGacha()
+    -- 跳转到自选Gacha卡池（CustomParams[1] = GroupId）
+    function XFunctionalSkipManager.SkipToSelfChoiceGacha(skipCfg)
         local curActivityId = XDataCenter.GachaManager.GetCurGachaFashionSelfChoiceActivityId()
         if not XTool.IsNumberValid(curActivityId) then
             XUiManager.TipMsg(XUiHelper.GetText("ActivityAlreadyOver"))
             return
         end
 
-        local curGachaId = XDataCenter.GachaManager.GetCurSelfChoiceSelectGachId()
+        local groupId = skipCfg and skipCfg.CustomParams[1] or nil
+        -- 兼容：如果CustomParams未配置GroupId，且当前活动只有1个Group，自动使用该Group
+        if not XTool.IsNumberValid(groupId) then
+            local activityConfig = XDataCenter.GachaManager.GetCurGachaFashionSelfChoiceActivityConfig()
+            if activityConfig and #activityConfig.GachaGroupIds == 1 then
+                groupId = activityConfig.GachaGroupIds[1]
+            end
+        end
+        if not XTool.IsNumberValid(groupId) then
+            XLog.Error("SkipToSelfChoiceGacha: groupId is invalid, check SkipFunctional.tab CustomParams[1]")
+            return
+        end
+
+        -- 检查Group时间是否有效
+        local groupConfig = XDataCenter.GachaManager.GetGroupConfig(groupId)
+        if not groupConfig or not XFunctionManager.CheckInTimeByTimeId(groupConfig.TimeId) then
+            XUiManager.TipMsg(XUiHelper.GetText("ActivityAlreadyOver"))
+            return
+        end
+
+        local curGachaId = XDataCenter.GachaManager.GetCurSelfChoiceSelectGachId(groupId)
         if not XTool.IsNumberValid(curGachaId) then
-            XLuaUiManager.Open("UiGachaFashionSelfChoiceEntrance")
+            XLuaUiManager.Open("UiGachaFashionSelfChoiceEntrance", groupId)
             return
         end
 

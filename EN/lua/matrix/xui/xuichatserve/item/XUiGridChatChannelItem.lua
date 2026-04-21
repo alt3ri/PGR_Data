@@ -14,13 +14,32 @@ function XUiGridChatChannelItem:Init(uiRoot)
 end
 
 function XUiGridChatChannelItem:SetItemData(itemData)
-    self.GridChannelItem:SetNameByGroup(0, CS.XTextManager.GetText(itemData.IsRecruitChannel and "ChannelRecruit" or "ChannelLabel"))
+    local title = ''
+
+    if itemData.IsRecruitChannel then
+        -- 优先招募频道
+        title =  CS.XTextManager.GetText("ChannelRecruit")
+    elseif itemData.IsInviteChannel then
+        -- 次级回归频道
+        local inivteTitle = XMVCA.XReCallActivity:GetClientConfigReCallText('InviteChannelTitle')
+
+        if not string.IsNilOrEmpty(inivteTitle) then
+            title = inivteTitle
+        end
+    else
+        title = CS.XTextManager.GetText("ChannelLabel")
+    end
+    
+    self.GridChannelItem:SetNameByGroup(0, title)
+    
+    local notShowId = itemData.IsRecruitChannel or itemData.IsInviteChannel
+    
     if XOverseaManager.IsOverSeaRegion() then 
-        self.GridChannelItem:SetNameByGroup(1, itemData.IsRecruitChannel and "" or tostring(itemData.ChannelId))
+        self.GridChannelItem:SetNameByGroup(1, notShowId and "" or tostring(itemData.ChannelId))
     else
           --特殊需求市网信办举报导致的频道5需要屏蔽显示
         local channelId = itemData.ChannelId >= 5 and (itemData.ChannelId + 1) or itemData.ChannelId
-        self.GridChannelItem:SetNameByGroup(1, itemData.IsRecruitChannel and "" or tostring(channelId))
+        self.GridChannelItem:SetNameByGroup(1, notShowId and "" or tostring(channelId))
     end
   
 

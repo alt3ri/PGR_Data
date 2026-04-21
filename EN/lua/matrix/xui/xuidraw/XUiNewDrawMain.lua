@@ -709,13 +709,17 @@ function XUiNewDrawMain:_RefreshBtnTag()
         local isShowTag = data:IsShowTag() and (not data:IsShowFreeTip())
 
         if data.DrawGroupList then  -- 一级页签
+            local isTenDiscount = false
             for _, drawData in ipairs(data.DrawGroupList) do
                 groupTargetData = XDataCenter.DrawManager.GetDrawGroupActivityTargetInfo(drawData.Id)
                 if groupTargetData then
                     isShowTag = true
                 end
+                if XDataCenter.DrawManager.IsShowTagTenDiscount(drawData.Id) then
+                    isTenDiscount = true
+                end
             end
-            uiButton:ShowTag(data:IsShowTag() and (not data:IsShowFreeTip()) or isShowTag)
+            uiButton:ShowTag(not isTenDiscount and (data:IsShowTag() and (not data:IsShowFreeTip()) or isShowTag))
         else                        -- 二级页签
             groupTargetData = XDataCenter.DrawManager.GetDrawGroupActivityTargetInfo(self.GroupId)
             
@@ -807,6 +811,7 @@ function XUiNewDrawMain:CreateMainBtn(data)
     local groupTargetData
     local isShowTag = false
     local isDevilCanReceive = false
+    local isTenDiscount = false
     for _, drawData in ipairs(data.DrawGroupList) do
         groupTargetData = XDataCenter.DrawManager.GetDrawGroupActivityTargetInfo(drawData.Id)
         if groupTargetData then
@@ -814,6 +819,9 @@ function XUiNewDrawMain:CreateMainBtn(data)
         end
         if XDataCenter.DrawManager.CheckIsCanReceiveCharacterByDrawId(drawData.Id) then
             isDevilCanReceive = true
+        end
+        if XDataCenter.DrawManager.IsShowTagTenDiscount(drawData.Id) then
+            isTenDiscount = true
         end
     end
 
@@ -827,6 +835,11 @@ function XUiNewDrawMain:CreateMainBtn(data)
         uiButton:SetNameByGroup(1, data:GetTxtName2())
         uiButton:SetNameByGroup(2, data:GetTxtName3())
         uiButton:SetRawImage(data:GetTabBg())
+        local uiObject = uiButton.transform:GetComponent("UiObject")
+        uiObject:GetObject("Tag10Discount").gameObject:SetActiveEx(isTenDiscount)
+        if isTenDiscount then
+            uiObject:GetObject("Txt10Discount").text = XUiHelper.GetText("SnapLabel")
+        end
 
         self.AfterRefreshPowerTagTimeId = XScheduleManager.ScheduleOnce(function()
             if XTool.UObjIsNil(uiButton) then
@@ -834,7 +847,7 @@ function XUiNewDrawMain:CreateMainBtn(data)
             end
 
             -- 检查Power标签是否需要显示
-            local tagPower = uiButton.transform:FindTransform("TagPower")
+            local tagPower = uiObject:GetObject("TagPower")
             local needShowPower = false
             if tagPower then
                 for _, drawGroup in ipairs(data.DrawGroupList) do
@@ -853,11 +866,11 @@ function XUiNewDrawMain:CreateMainBtn(data)
                 tagPower.gameObject:SetActiveEx(needShowPower)
             end
     
-            -- ✅ Power优先逻辑：Power显示时禁用NewImg
-            local canShowTag = (not needShowPower) and (data:IsShowTag() and (not data:IsShowFreeTip()) or isShowTag)
+            -- ✅ Power优先逻辑：Power显示时禁用NewImg, 折扣显示时禁用NewImg
+            local canShowTag = (not needShowPower) and (data:IsShowTag() and (not data:IsShowFreeTip()) or isShowTag) and (not isTenDiscount)
             uiButton:ShowTag(canShowTag)
             -- uiButton:ShowReddot(data:IsShowFreeTip()) -- [Fixed] Removed to prevent overwriting CanLiver RedDot
-            uiButton.transform:FindTransform("TagReceive").gameObject:SetActiveEx(isDevilCanReceive)
+            uiObject:GetObject("TagReceive").gameObject:SetActiveEx(isDevilCanReceive)
         end, XScheduleManager.SECOND * 0.7)
 
         table.insert(self.AllBtnList, uiButton)
@@ -957,6 +970,11 @@ function XUiNewDrawMain:CreateSubBtn(subGroupIndex, data)
             local isCanReceive = XDataCenter.DrawManager:CheckIsCanReceiveCharacterByDrawId(drawInfo and drawInfo.Id)
             uiObject:GetObject("TagReceive").gameObject:SetActiveEx(XTool.IsNumberValid(isCanReceive))
             uiObject:GetObject("TagDiscount").gameObject:SetActiveEx(XDataCenter.DrawManager:CheckIsDevilMayCryGroupId(data.Id))
+            local isTenDiscount, discountText = XDataCenter.DrawManager.IsShowTagTenDiscount(data:GetId())
+            uiObject:GetObject("Tag10Discount").gameObject:SetActiveEx(isTenDiscount)
+            if isTenDiscount then
+                uiObject:GetObject("Txt10Discount").text = discountText
+            end
             -- 检查Power标签是否需要显示
             local tagPower = uiObject:GetObject("TagPower")
             local needShowPower = false
@@ -1330,27 +1348,44 @@ end
 
 function XUiNewDrawMain:UpdateBtnDiscount()
     local isShowDiscount = XDataCenter.DrawManager:CheckIsShowDiscount(self.GroupId)
+    local isDiscountTenDraw = XDataCenter.DrawManager.CheckIsDiscountTenDraw(self.GroupId, XDrawConfigs.DrawCountType.TenDraw)
     if self.PanelDiscount1 then
         self.PanelDiscount1.gameObject:SetActiveEx(isShowDiscount)
     end
     if self.PanelDiscount2 then
-        self.PanelDiscount2.gameObject:SetActiveEx(isShowDiscount)
+        self.PanelDiscount2.gameObject:SetActiveEx(isShowDiscount or isDiscountTenDraw)
     end
 end
-
 
 function XUiNewDrawMain:CheckShopBubble()
     if not self.DrawInfo then return end
 
     local isShowBubble = self.DrawInfo.IsShowBubble
-    if not isShowBubble then return end
+    if not isShowBubble then
+        self:StopAnimation("ShowBtnShopBubble")
+        self:PlayAnimation("HideBtnShopBubble")
+        return
+    end
+
+    -- 校验卡池时间范围
+    local now = XTime.GetServerNowTimestamp()
+    local isDefaultTime = self.DrawInfo.StartTime <= 0 and self.DrawInfo.EndTime <= 0
+    if not isDefaultTime and (now < self.DrawInfo.StartTime or now > self.DrawInfo.EndTime) then
+        self:PlayAnimation("HideBtnShopBubble")
+        return
+    end
 
     local key = string.format("HasUiNewDrawMainClickBtnShop_%d_%d", self.DrawInfo.Id, XPlayer.Id)
     local hasClicked = XSaveTool.GetData(key)
 
     if not hasClicked then
         self:PlayAnimation("ShowBtnShopBubble")
+    else
+        self:StopAnimation("ShowBtnShopBubble")
+        self:PlayAnimation("HideBtnShopBubble")
     end
 end
 
---endregion
+--endregion
+
+return XUiNewDrawMain

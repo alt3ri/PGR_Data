@@ -16,6 +16,7 @@ function XUiActivityBriefRefreshButton:Ctor(rootUi, panelType)
     self.PanelType = panelType
 
     self._RewardGrids = {}
+    self._RewardConstGrids = {}
 
     XTool.InitUiObject(self)
 end
@@ -50,7 +51,8 @@ function XUiActivityBriefRefreshButton:RefreshButtonsWithRewardAnimation()
             else
                 self:RefreshNormal()
             end
-            self:RefreshReward()
+            self:RefreshReward(nil, true)
+            self:RefreshConstRewardShow()
             -- 重置临时ActivityGroupId
             self.ActivityGroupId = 0
         end
@@ -201,13 +203,19 @@ end
 
 ---动画递归回调方法
 function XUiActivityBriefRefreshButton:PlayBtnUnlockAnim()
-    local btn = self.TlActivityBrieButton[self.UnlockAcitvityList[self.UnLockAnimPlayIndex]]
+    local activityGroupId = self.UnlockAcitvityList[self.UnLockAnimPlayIndex]
+    local btn = self.TlActivityBrieButton[activityGroupId]
     if self.UnLockAnimPlayIndex == 1 then
         XLuaUiManager.SetMask(true)
     end
     self.UnLockAnimPlayIndex = self.UnLockAnimPlayIndex + 1
     if btn then
         btn:PlayUnlockAnim(function()
+            self:RefreshReward(activityGroupId)
+            self:RefreshConstRewardShow(activityGroupId)
+            if XTool.IsNumberValid(btn._RedPointEventId) then
+                XRedPointManager.Check(btn._RedPointEventId)
+            end
             self:PlayBtnUnlockAnim()
         end)
     else
@@ -1177,34 +1185,19 @@ end
 function XUiActivityBriefRefreshButton:RefreshActivityRepeateChallenge()
     -- 先走正常逻辑
     self:RefreshNormal()
-    local btn = self.TlActivityBrieButton[self.ActivityGroupId]
-    -- 处理气泡
-    if not self._PanelRepeatChallengeShowGoods then
-        local activityRewardId = XDataCenter.FubenRepeatChallengeManager.GetShowRewardId()
-        if XTool.IsNumberValid(activityRewardId) and btn then
-            XTool.InitUiObject(btn)
-            if btn.PanelReward then
-                self._PanelRepeatChallengeShowGoods = require('XUi/XUiActivityBrief/XUiPanelActivityBriefShowGooods').New(btn.PanelReward, activityRewardId)
-                self._PanelRepeatChallengeShowGoods:Open()
-            end
-        else
-            if btn then
-                XTool.InitUiObject(btn)
-                if btn.PanelReward then
-                    btn.PanelReward.gameObject:SetActiveEx(false)
-                end
-            end
-        end
-    else
-        self._PanelRepeatChallengeShowGoods:Open()
-    end
+    
+    --do nothing
 end
 --endregion
 
-function XUiActivityBriefRefreshButton:RefreshReward()
+function XUiActivityBriefRefreshButton:RefreshReward(activityGroupId, reOpen)
     -- 复刷关优先级更高
-    local activityGroupId = self.ActivityGroupId
+    activityGroupId = activityGroupId or self.ActivityGroupId
+    
     if self._RewardGrids[activityGroupId] then
+        if reOpen then
+            self._RewardGrids[activityGroupId]:Close()
+        end
         self._RewardGrids[activityGroupId]:Open()
         return
     end
@@ -1238,6 +1231,42 @@ function XUiActivityBriefRefreshButton:RefreshReward()
                 self._RewardGrids[activityGroupId] = rewardGrid
                 rewardGrid:Open()
             end
+        end
+    end
+end
+
+function XUiActivityBriefRefreshButton:RefreshConstRewardShow(activityGroupId)
+    activityGroupId = activityGroupId or self.ActivityGroupId
+    
+    if self._RewardConstGrids[activityGroupId] then
+        self._RewardConstGrids[activityGroupId]:Open()
+        return
+    end
+
+    -- 活动面板奖励显示优化——客户端
+    local btn = self.TlActivityBrieButton[activityGroupId]
+    XTool.InitUiObject(btn)
+
+    local panelReward = btn.PanelReward02
+
+    if panelReward then
+        -- 先默认隐藏
+        panelReward.gameObject:SetActiveEx(false)
+    end
+    
+    if btn:IsLock() then
+        return
+    end
+
+    local config = XActivityBriefConfigs.GetActivityGroupConfig(activityGroupId)
+    local constShowRewardId = config.ConstShowRewardId
+    if XTool.IsNumberValidEx(constShowRewardId) then
+        if panelReward then
+            panelReward.gameObject:SetActiveEx(true)
+
+            local rewardGrid = require('XUi/XUiActivityBrief/XUiPanelActivityBriefConstShowGoods').New(panelReward, constShowRewardId)
+            self._RewardConstGrids[activityGroupId] = rewardGrid
+            rewardGrid:Open()
         end
     end
 end

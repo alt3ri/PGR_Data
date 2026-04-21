@@ -156,7 +156,7 @@ function XUiBattleRoomRoleDetail:InitFilter()
     local onSeleTagCb = function (tagBtn)
         local isEmpty = self.PanelFilter:IsCurListEmpty()
         self.CharList.gameObject:SetActiveEx(not isEmpty)
-        self.BtnTeaching.gameObject:SetActiveEx(not isEmpty)
+        self.BtnTeaching.gameObject:SetActiveEx(not isEmpty and not XUiManager.IsHideFunc)
     end
 
     -- 刷新格子回调

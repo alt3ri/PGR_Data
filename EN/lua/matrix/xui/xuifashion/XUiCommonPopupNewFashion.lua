@@ -16,6 +16,30 @@ function XUiCommonPopupNewFashion:OnStart(rewardGoodDict)
     self:ShowNormalList()
 end
 
+function XUiCommonPopupNewFashion:OnEnable()
+    if self._GroupBtnWearDict then
+        for fashionGroup, btnWear in pairs(self._GroupBtnWearDict) do
+            local isFashionWear = XMVCA.XFashionSuit:IsFashionDressed(fashionGroup.FashionId)
+            local isWeaponFashionWear = XMVCA.XFashionSuit:IsWeaponFashionDressed(fashionGroup.WeaponFashionId, fashionGroup.CharacterId)
+            local isDisable = isFashionWear and isWeaponFashionWear
+            btnWear:SetDisable(isDisable, not isDisable)
+        end
+    end
+
+    if self._NormalBtnWearDict then
+        for btnWear, data in pairs(self._NormalBtnWearDict) do
+            local isWear = nil
+            local isWeaponFashion, id, characterId = data[1], data[2], data[3]
+            if isWeaponFashion then
+                isWear = XMVCA.XFashionSuit:IsWeaponFashionDressed(id, characterId)
+            else
+                isWear = XMVCA.XFashionSuit:IsFashionDressed(id)
+            end
+            btnWear:SetDisable(isWear, not isWear)
+        end
+    end
+end
+
 function XUiCommonPopupNewFashion:InitData(rewardGoodDict)
     for id, rewardData in pairs(rewardGoodDict) do
         self._NormalRewards[id] = rewardData
@@ -42,7 +66,9 @@ function XUiCommonPopupNewFashion:ShowGroupList()
         self.ListFashionGroup.gameObject:SetActiveEx(false)
         return
     end
-    
+
+    ---@type table<XTableFashionGroup,XUiComponent.XUiButton>
+    self._GroupBtnWearDict = {}
     self.ListFashionGroup.gameObject:SetActiveEx(true)
     local i = 1
     for fashionGroup, rewardDatas in pairs(self._GroupRewards) do
@@ -57,7 +83,7 @@ function XUiCommonPopupNewFashion:ShowGroupList()
         XUiHelper.InitUiClass(uiObject, list)
         XUiHelper.RefreshCustomizedList(uiObject.GridCommon.parent, uiObject.GridCommon, #fashionIds, function(i, go)
             local grid = XUiGridCommon.New(self, go)
-            grid:Refresh(rewardDatas[i], { Disable = true }, nil, false)
+            grid:Refresh(rewardDatas[i])
             grid:ShowCount(false)
         end, true)
         --注册点击按钮
@@ -67,11 +93,14 @@ function XUiCommonPopupNewFashion:ShowGroupList()
             end)
         else
             uiObject.BtnWear:AddEventListener(function()
-                self:OnWearFashions(characterId, fashionIds, uiObject.BtnWear)
+                self:OnWearFashions(characterId, fashionIds[1], fashionIds[2], uiObject.BtnWear)
             end)
         end
         uiObject.BtnRandom.gameObject:SetActiveEx(randomFashion)
         uiObject.BtnWear.gameObject:SetActiveEx(not randomFashion)
+        if not randomFashion then
+            self._GroupBtnWearDict[fashionGroup] = uiObject.BtnWear
+        end
         i = i + 1
     end
 end
@@ -81,7 +110,9 @@ function XUiCommonPopupNewFashion:ShowNormalList()
         self.ListFashion.gameObject:SetActiveEx(false)
         return
     end
-    
+
+    ---@type table<XUiComponent.XUiButton,table>
+    self._NormalBtnWearDict = {}
     local rewards = XRewardManager.MergeAndSortRewardGoodsList(self._NormalRewards)
     self.ListFashion.gameObject:SetActiveEx(true)
     XUiHelper.RefreshCustomizedList(self.GridCommon.parent, self.GridCommon, #rewards, function(i, go)
@@ -89,7 +120,7 @@ function XUiCommonPopupNewFashion:ShowNormalList()
         local isWeaponFashion = data.RewardType ~= XRewardManager.XRewardType.Fashion
         local id = isWeaponFashion and XDataCenter.ItemManager.GetWeaponFashionId(data.TemplateId) or data.TemplateId
         local grid = XUiGridCommon.New(self, go)
-        grid:Refresh(data, { Disable = true }, nil, false)
+        grid:Refresh(data)
         grid:ShowCount(false)
         --根据涂装Id获取角色Id
         local characterId
@@ -118,11 +149,21 @@ function XUiCommonPopupNewFashion:ShowNormalList()
         end
         grid.BtnRandom.gameObject:SetActiveEx(randomFashion)
         grid.BtnWear.gameObject:SetActiveEx(not randomFashion)
+        if not randomFashion then
+            self._NormalBtnWearDict[grid.BtnWear] = { isWeaponFashion, id, characterId }
+        end
     end)
 end
 
 ---@param btn XUiComponent.XUiButton 穿戴按钮
-function XUiCommonPopupNewFashion:OnWearFashions(characterId, fashionIds, btn)
+function XUiCommonPopupNewFashion:OnWearFashions(characterId, fashionId, weaponFashionId, btn)
+    local fashionIds = {}
+    if fashionId and not XMVCA.XFashionSuit:IsFashionDressed(fashionId) then
+        table.insert(fashionIds, fashionId)
+    end
+    if weaponFashionId and not XMVCA.XFashionSuit:IsWeaponFashionDressed(weaponFashionId, characterId) then
+        table.insert(fashionIds, weaponFashionId)
+    end
     XMVCA.XFashionSuit:RecursionUseFashion(characterId, fashionIds, function()
         XUiManager.TipText("UseSuccess")
         if btn then

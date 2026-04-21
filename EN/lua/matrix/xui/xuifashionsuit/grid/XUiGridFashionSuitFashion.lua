@@ -45,7 +45,7 @@ function XUiGridFashionSuitFashion:Refresh(fashionSuitId, fashionId)
         end
     end
 
-    local tex = self._Control:GetClientConfig("SuitImageBorder", config.FashionSuitRare)
+    local tex = self._Control:GetClientConfig("SuitImageBorder"..self._SuitId, config.FashionSuitRare)
     for _, rImg in ipairs(self._RImgOwnBoxs) do
         if string.IsNilOrEmpty(tex) then
             rImg.gameObject:SetActiveEx(false)
@@ -55,7 +55,7 @@ function XUiGridFashionSuitFashion:Refresh(fashionSuitId, fashionId)
         end
     end
 
-    tex = self._Control:GetClientConfig("LockSuitImageBorder", config.FashionSuitRare)
+    tex = self._Control:GetClientConfig("LockSuitImageBorder"..self._SuitId, config.FashionSuitRare)
     for _, rImg in ipairs(self._RImgNotOwnBoxs) do
         if string.IsNilOrEmpty(tex) then
             rImg.gameObject:SetActiveEx(false)

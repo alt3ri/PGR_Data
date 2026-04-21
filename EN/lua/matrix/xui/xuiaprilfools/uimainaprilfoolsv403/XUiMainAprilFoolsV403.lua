@@ -36,6 +36,7 @@ function XUiMainAprilFoolsV403:OnStart(...)
     self:SetBtnExpelActiveEnable(true)
     
     self.BtnQuit:AddEventListener(function()
+        self:StopActivityCheckTimer()
         XMVCA.XAprilFoolDay:RequestFoolsDayClearOutComplete()
         XLuaUiManager.RunMain()
         self._Control:RecordAprilFoolDayMainUiBtnClick(RecordBtnIndex.Quit)
@@ -46,11 +47,12 @@ function XUiMainAprilFoolsV403:OnStart(...)
     self:PlayAnimationWithMask('AnimEnter', function() 
         self:PlayAnimationWithMask('AnimEnter2')
     end)
+    
+    self:StartActivityCheckTimer()
 end
 
 function XUiMainAprilFoolsV403:OnEnable()
     XMVCA.XMainLine2:ClearCacheDatasUiFubenMainLineChapter()
-    CS.XResourceRecord.Stop();
     XRedPointManager.AutoReleaseRedPointEvent()
     XLoginManager.ResetHearbeatInterval()
 
@@ -91,6 +93,8 @@ function XUiMainAprilFoolsV403:OnDestroy()
     self.SwitchableScene:OnDestory()
     XEventManager.RemoveEventListener(XEventId.EVENT_SCENE_UIMAIN_RIGHTMIDTYPE_CHANGE, self.ForceChangeUiMainRightMidType, self)
     self._IsClose = true
+    
+    self:StopActivityCheckTimer()
 end
 
 
@@ -271,6 +275,31 @@ function XUiMainAprilFoolsV403:UpdateRoleModel(...)
     return self._Control:UpdateRoleModel(...)
 end
 
+--endregion
+
+--region 假界面定时器检查活动
+
+function XUiMainAprilFoolsV403:StopActivityCheckTimer()
+    if self._ActivityCheckTimerId then
+        XScheduleManager.UnSchedule(self._ActivityCheckTimerId)
+        self._ActivityCheckTimerId = nil
+    end
+end
+
+function XUiMainAprilFoolsV403:StartActivityCheckTimer()
+    self:StopActivityCheckTimer()
+    
+    self:UpdateActivityCheckTimer()
+    self._ActivityCheckTimerId = XScheduleManager.ScheduleForever(handler(self, self.UpdateActivityCheckTimer), XScheduleManager.SECOND)
+end
+
+
+function XUiMainAprilFoolsV403:UpdateActivityCheckTimer()
+    if not XMVCA.XAprilFoolDay:CheckCanEnterFailureMain() then
+        self:StopActivityCheckTimer()
+        XLuaUiManager.RunMain()
+    end
+end
 --endregion
 
 return XUiMainAprilFoolsV403

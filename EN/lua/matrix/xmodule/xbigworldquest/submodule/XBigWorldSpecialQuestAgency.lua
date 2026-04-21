@@ -87,8 +87,7 @@ function XBigWorldQuestAgency:OpenInvitationView(questId)
     XMVCA.XBigWorldUI:Open("UiBigWorldTaskMainInvitation", questId)
 end
 
-function XBigWorldQuestAgency:OpenInvitationDetail(questId, resultId, isSequence)
-    local showTagNew = not self._Model:CheckInviteResultFinish(resultId)
+function XBigWorldQuestAgency:OpenInvitationDetail(questId, resultId, isSequence, showTagNew)
     if isSequence then
         return XMVCA.XBigWorldUI:OpenWithFightSequence("UiBigWorldTaskPopupEndingDetail", false, questId, resultId, showTagNew)
     end

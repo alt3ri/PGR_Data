@@ -177,6 +177,7 @@ function XWeaponFashionConfigs.IsWeaponFashion(fashionId)
 end
 
 function XWeaponFashionConfigs.GetWeaponFashionEquipType(id)
+    XWeaponFashionConfigs.InitWeaponFashionTemplate()
     local cfg = WeaponFashionTemplates[id]
     return cfg and cfg.EquipType
 end

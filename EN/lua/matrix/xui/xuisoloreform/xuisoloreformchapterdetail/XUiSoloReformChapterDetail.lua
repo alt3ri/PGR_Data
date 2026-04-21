@@ -68,8 +68,20 @@ function XUiSoloReformChapterDetail:InitDifficultyList(chapterId)
     end
     
     -- XTool.UpdateDynamicItem(self._DifficultyCellList, chapterCfg.ChapterStageIds, self.BtnBoss, XUiSoloReformChapterDifficultyItem, self)
-    local defaultSelect = self._ResumetageId or chapterCfg.ChapterStageIds[1]  
-    self:OnClickDifficulty(defaultSelect) --默认选第一个
+    local defaultSelect = self._ResumetageId
+    if not defaultSelect then
+        -- 默认选中已解锁的最高难度关卡
+        local maxUnlockStageId, maxUnlockDifficulty = nil, -1
+        for _, stageId in ipairs(chapterCfg.ChapterStageIds) do
+            local stageCfg = self._Control:GetSoloReformStageCfg(stageId)
+            if self._Control:IsStageUnlock(chapterId, stageCfg.Difficulty) and stageCfg.Difficulty > maxUnlockDifficulty then
+                maxUnlockDifficulty = stageCfg.Difficulty
+                maxUnlockStageId = stageId
+            end
+        end
+        defaultSelect = maxUnlockStageId or chapterCfg.ChapterStageIds[1]
+    end
+    self:OnClickDifficulty(defaultSelect)
     self._ResumetageId = nil
 end
 

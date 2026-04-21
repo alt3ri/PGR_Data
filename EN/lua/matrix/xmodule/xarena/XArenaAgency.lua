@@ -26,6 +26,14 @@ function XArenaAgency:InitEvent()
 
     -- 监听副本结算奖励事件（参考 XFubenBossSingleAgency）
     XEventManager.AddEventListener(XEventId.EVENT_FUBEN_SETTLE_REWARD, self.OnFightSettle, self)
+    
+    self._OnBehaviorDoExitFightHandler = handler(self, self.OnBehaviorDoExitFight)
+    
+    CsXGameEventManager.Instance:RegisterEvent(CS.XEventId.EVENT_BEHAVIOR_DO_EXIT_FIGHT, self._OnBehaviorDoExitFightHandler)
+end
+
+function XArenaAgency:ResetAll()
+    self._FightSettleDataCache = nil
 end
 
 -- region Notify
@@ -61,6 +69,7 @@ end
 function XArenaAgency:OnRelease()
     -- 移除事件监听
     XEventManager.RemoveEventListener(XEventId.EVENT_FUBEN_SETTLE_REWARD, self.OnFightSettle, self)
+    CsXGameEventManager.Instance:RemoveEvent(CS.XEventId.EVENT_BEHAVIOR_DO_EXIT_FIGHT, self._OnBehaviorDoExitFightHandler)
 end
 
 -- region 副本入口
@@ -399,7 +408,7 @@ function XArenaAgency:_ShowReward(winData)
 
     -- 保存结算数据（Point 和 OldPoint，用于新纪录检查）
     local arenaResult = winData and winData.SettleData and winData.SettleData.ArenaResult
-    if arenaResult and arenaResult.Point and arenaResult.OldPoint then
+    if arenaResult and arenaResult.Point and arenaResult.OldArenaMaxPoint then
         local areaId = self._Model:GetCurrentEnterAreaId()
         if areaId and areaId > 0 then
             -- 通过 ConfigModel 获取 DistributeType 数组
@@ -412,13 +421,36 @@ function XArenaAgency:_ShowReward(winData)
                         self._Model:SaveSettlePointByDistributeType(
                             distributeType,
                             arenaResult.Point,
-                            arenaResult.OldPoint
+                            arenaResult.OldArenaMaxPoint
                         )
                     end
                 end
             end
         end
     end
+    
+    self._FightSettleDataCache = winData
+end
+
+function XArenaAgency:OnBehaviorDoExitFight(event, args)
+    if not args or args.Length <= 0 then
+        return
+    end
+    
+    -- C#数组，从0开始
+    local stageId = args[0]
+    
+    -- 检查是否是 Arena 的关卡
+    if not self:CheckIsArenaStage(stageId) then
+        return
+    end
+    
+    self:_OpenRewardUi(self._FightSettleDataCache)
+    self._FightSettleDataCache = nil
+end
+
+function XArenaAgency:_OpenRewardUi(winData)
+    XMVCA.XFuben:SetMouseVisible()
 
     if XMVCA.XFuben:CheckHasFlopReward(winData) then
         XLuaUiManager.Open("UiFubenFlopReward", function()
@@ -774,6 +806,7 @@ function XArenaAgency:_SaveActivityNo()
     local oldNo = XSaveTool.GetData(self:_GetArenaActivityNoSaveKey())
 
     if activityNo ~= oldNo then
+        self._Model:ClearSettlePointCacheByActivityNo(oldNo)  -- 跨期清除旧期结算缓存
         XSaveTool.SaveData(self:_GetArenaActivityNoSaveKey(), activityNo)
         XSaveTool.SaveData(self:_GetArenaClearSelectBuffSaveKey(), true)
     end

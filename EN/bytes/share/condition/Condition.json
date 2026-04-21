@@ -627,7 +627,14 @@
         "Type": 10102.0,
         "Params": "[1391003]",
         "Formula": null,
-        "Desc": "\u62e5\u6709\u6cdb\u7528\u673a\u4f53\u6d85\u7f07\u5a05\u00b7Null"
+        "Desc": "Own Omniframe Nirvatia: Dirge"
+    },
+    {
+        "Id": 380,
+        "Type": 10102.0,
+        "Params": "[1061004]",
+        "Formula": null,
+        "Desc": "Own Omniframe Kamui: Aeternion"
     },
     {
         "Id": 401,
@@ -802,7 +809,7 @@
         "Type": 11101.0,
         "Params": "[1201, 1]",
         "Formula": null,
-        "Desc": "Unlocks Display Poses"
+        "Desc": "Reach <color=#C14F38>10</color>\u2605 in <color=#C14F38>Arcade Anima - Heart-Lock Trial</color>"
     },
     {
         "Id": 10436021,
@@ -872,7 +879,7 @@
         "Type": 11101.0,
         "Params": "[1202, 1]",
         "Formula": null,
-        "Desc": "Unlocks Display Poses"
+        "Desc": "Reach <color=#C14F38>10</color>\u2605 in <color=#C14F38>Arcade Anima - Heart-Lock Trial</color>"
     },
     {
         "Id": 10436031,
@@ -942,7 +949,7 @@
         "Type": 11101.0,
         "Params": "[1203, 1]",
         "Formula": null,
-        "Desc": "Unlocks Display Poses"
+        "Desc": "Reach <color=#C14F38>10</color>\u2605 in <color=#C14F38>Arcade Anima - Heart-Lock Trial</color>"
     },
     {
         "Id": 10436041,
@@ -1012,7 +1019,7 @@
         "Type": 11101.0,
         "Params": "[1204, 1]",
         "Formula": null,
-        "Desc": "Unlocks Display Poses"
+        "Desc": "Reach <color=#C14F38>10</color>\u2605 in <color=#C14F38>Arcade Anima - Heart-Lock Trial</color>"
     },
     {
         "Id": 10436051,
@@ -1082,7 +1089,7 @@
         "Type": 11101.0,
         "Params": "[1205, 1]",
         "Formula": null,
-        "Desc": "Unlocks Display Poses"
+        "Desc": "Reach <color=#C14F38>10</color>\u2605 in <color=#C14F38>Arcade Anima - Heart-Lock Trial</color>"
     },
     {
         "Id": 10436061,
@@ -1152,7 +1159,7 @@
         "Type": 11101.0,
         "Params": "[1206, 1]",
         "Formula": null,
-        "Desc": "Unlocks Display Poses"
+        "Desc": "Reach <color=#C14F38>10</color>\u2605 in <color=#C14F38>Arcade Anima - Heart-Lock Trial</color>"
     },
     {
         "Id": 1046901,
@@ -5845,6 +5852,13 @@
         "Desc": "Luna: Oblivion reaches Lv.80"
     },
     {
+        "Id": 7339,
+        "Type": 13103.0,
+        "Params": "[80]",
+        "Formula": null,
+        "Desc": "Hanying: Solacetune"
+    },
+    {
         "Id": 18108001,
         "Type": 18108.0,
         "Params": "[20, 1]",
@@ -7830,14 +7844,21 @@
         "Type": 11102.0,
         "Params": "[1141004, 4]",
         "Formula": null,
-        "Desc": "\u6781\u950b\u8fbe\u5230\u7ec8\u9636\u89e3\u653e"
+        "Desc": "Awaken Arete's Ultima Rank"
     },
     {
         "Id": 60478,
         "Type": 11102.0,
         "Params": "[1391003, 4]",
         "Formula": null,
-        "Desc": "\u4ea1\u6b4c\u8fbe\u5230\u7ec8\u9636\u89e3\u653e"
+        "Desc": "Awaken Dirge's Ultima Rank"
+    },
+    {
+        "Id": 60479,
+        "Type": 11102.0,
+        "Params": "[1061004, 4]",
+        "Formula": null,
+        "Desc": "Awaken Aeternion's Ultima Rank"
     },
     {
         "Id": 60600,
@@ -10364,7 +10385,7 @@
         "Type": null,
         "Params": null,
         "Formula": "770401&770402",
-        "Desc": "Available after reaching Commandant Lv.40 and clearing Normal Story 1-8"
+        "Desc": "\u6307\u6325\u5b98\u7b49\u7ea7\u8fbe\u523040\u7ea7\u4e14\u901a\u5173\u666e\u901a\u5267\u60c51-8\u5f00\u542f"
     },
     {
         "Id": 770411,
@@ -10490,7 +10511,7 @@
         "Type": null,
         "Params": null,
         "Formula": "770422&770400",
-        "Desc": "\u6307\u6325\u5b98\u7b49\u7ea7\u8fbe\u523016\u7ea7\u4e14\u901a\u51731-12\u5f00\u542f"
+        "Desc": "Available after reaching Commandant Lv.16 and clearing 1-12"
     },
     {
         "Id": 770500,
@@ -19824,6 +19845,13 @@
         "Desc": "Coating owned"
     },
     {
+        "Id": 6005904,
+        "Type": 11105.0,
+        "Params": "[6005904]",
+        "Formula": null,
+        "Desc": "Coating owned"
+    },
+    {
         "Id": 6005405,
         "Type": 11105.0,
         "Params": "[6005405]",
@@ -19845,32 +19873,39 @@
         "Desc": "Coating owned"
     },
     {
+        "Id": 6006004,
+        "Type": 11105.0,
+        "Params": "[6006004]",
+        "Formula": null,
+        "Desc": "Coating owned"
+    },
+    {
         "Id": 7005804,
         "Type": null,
         "Params": null,
         "Formula": "770400&6005804",
-        "Desc": "\u672a\u62e5\u6709\u8be5\u6d82\u88c5\u4e14\u901a\u51731-12"
+        "Desc": "You do not own this Coating and have cleared 1-12."
     },
     {
         "Id": 7005405,
         "Type": null,
         "Params": null,
         "Formula": "770400&6005405",
-        "Desc": "\u672a\u62e5\u6709\u8be5\u6d82\u88c5\u4e14\u901a\u51731-12"
+        "Desc": "You do not own this Coating and have cleared 1-12."
     },
     {
         "Id": 7005305,
         "Type": null,
         "Params": null,
         "Formula": "770401&770402&6005305",
-        "Desc": "\u672a\u62e5\u6709\u8be5\u6d82\u88c5\u5e76\u8fbe\u523040\u7ea7\u4e14\u901a\u51731-8"
+        "Desc": "You do not own this Coating, have reached Lv.40, and have cleared 1-8."
     },
     {
         "Id": 7004506,
         "Type": null,
         "Params": null,
         "Formula": "770400&6004506",
-        "Desc": "\u672a\u62e5\u6709\u8be5\u6d82\u88c5\u4e14\u901a\u51731-12"
+        "Desc": "You do not own this Coating and have cleared 1-12."
     },
     {
         "Id": 30499,
@@ -21823,7 +21858,7 @@
         "Type": 10101.0,
         "Params": "[90]",
         "Formula": null,
-        "Desc": "Commandant reaches Lv.90"
+        "Desc": "Unlocks at Commandant Lv.90"
     },
     {
         "Id": 841211,
@@ -22321,6 +22356,13 @@
         "Params": "[1]",
         "Formula": null,
         "Desc": "Player is currently on Return Missions"
+    },
+    {
+        "Id": 845030,
+        "Type": 10192.0,
+        "Params": "[1]",
+        "Formula": null,
+        "Desc": "\u73a9\u5bb6\u662f\u56de\u5f52\u73a9\u5bb6"
     },
     {
         "Id": 850001,
@@ -25455,6 +25497,90 @@
         "Id": 990351,
         "Type": 15103.0,
         "Params": "[13019713, 4]",
+        "Formula": null,
+        "Desc": "Obtain 4"
+    },
+    {
+        "Id": 990352,
+        "Type": 15103.0,
+        "Params": "[13005006, 2]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 990353,
+        "Type": 15103.0,
+        "Params": "[13005006, 5]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 990354,
+        "Type": 15103.0,
+        "Params": "[13005006, 10]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 990355,
+        "Type": 15103.0,
+        "Params": "[13019715, 2]",
+        "Formula": null,
+        "Desc": "Obtain 2"
+    },
+    {
+        "Id": 990356,
+        "Type": 15103.0,
+        "Params": "[13019715, 3]",
+        "Formula": null,
+        "Desc": "Obtain 3"
+    },
+    {
+        "Id": 990357,
+        "Type": 15103.0,
+        "Params": "[13019715, 5]",
+        "Formula": null,
+        "Desc": "Obtain 5"
+    },
+    {
+        "Id": 990358,
+        "Type": 15103.0,
+        "Params": "[13019717, 2]",
+        "Formula": null,
+        "Desc": "Obtain 2"
+    },
+    {
+        "Id": 990359,
+        "Type": 15103.0,
+        "Params": "[13019717, 3]",
+        "Formula": null,
+        "Desc": "Obtain 3"
+    },
+    {
+        "Id": 990360,
+        "Type": 15103.0,
+        "Params": "[13019717, 4]",
+        "Formula": null,
+        "Desc": "Obtain 4"
+    },
+    {
+        "Id": 990361,
+        "Type": 15103.0,
+        "Params": "[13019718, 2]",
+        "Formula": null,
+        "Desc": "Obtain 2"
+    },
+    {
+        "Id": 990362,
+        "Type": 15103.0,
+        "Params": "[13019718, 3]",
+        "Formula": null,
+        "Desc": "Obtain 3"
+    },
+    {
+        "Id": 990363,
+        "Type": 15103.0,
+        "Params": "[13019718, 4]",
         "Formula": null,
         "Desc": "Obtain 4"
     },
@@ -31896,161 +32022,392 @@
         "Type": 10105.0,
         "Params": "[10390101]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c540-1\u540e\u89e3\u9501"
+        "Desc": "Clear Main Story (Normal) 40-1 to unlock"
     },
     {
         "Id": 84103335,
         "Type": 10105.0,
         "Params": "[10390102]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c540-2\u540e\u89e3\u9501"
+        "Desc": "Clear Main Story (Normal) 40-2 to unlock"
     },
     {
         "Id": 84103336,
         "Type": 10105.0,
         "Params": "[10390103]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c540-3\u540e\u89e3\u9501"
+        "Desc": "Clear Main Story (Normal) 40-3 to unlock"
     },
     {
         "Id": 84103337,
         "Type": 10105.0,
         "Params": "[10390104]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c540-4\u540e\u89e3\u9501"
+        "Desc": "Clear Main Story (Normal) 40-4 to unlock"
     },
     {
         "Id": 84103338,
         "Type": 10105.0,
         "Params": "[10390105]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c540-5\u540e\u89e3\u9501"
+        "Desc": "Clear Main Story (Normal) 40-5 to unlock"
     },
     {
         "Id": 84103339,
         "Type": 10105.0,
         "Params": "[10390106]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c540-6\u540e\u89e3\u9501"
+        "Desc": "Clear Main Story (Normal) 40-6 to unlock"
     },
     {
         "Id": 84103340,
         "Type": 10105.0,
         "Params": "[10390107]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c540-7\u540e\u89e3\u9501"
+        "Desc": "Clear Main Story (Normal) 40-7 to unlock"
     },
     {
         "Id": 84103341,
         "Type": 10105.0,
         "Params": "[10390108]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c540-8\u540e\u89e3\u9501"
+        "Desc": "Clear Main Story (Normal) 40-8 to unlock"
     },
     {
         "Id": 84103342,
         "Type": 10105.0,
         "Params": "[10390109]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c540-9\u540e\u89e3\u9501"
+        "Desc": "Clear Main Story (Normal) 40-9 to unlock"
     },
     {
         "Id": 84103343,
         "Type": 10105.0,
         "Params": "[10390110]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c540-10\u540e\u89e3\u9501"
+        "Desc": "Clear Main Story (Normal) 40-10 to unlock"
     },
     {
         "Id": 84103344,
         "Type": 10105.0,
         "Params": "[10390111]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c540-11\u540e\u89e3\u9501"
+        "Desc": "Clear Main Story (Normal) 40-11 to unlock"
     },
     {
         "Id": 84103345,
         "Type": 10105.0,
         "Params": "[10390112]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c540-12\u540e\u89e3\u9501"
+        "Desc": "Clear Main Story (Normal) 40-12 to unlock"
     },
     {
         "Id": 84103346,
         "Type": 10105.0,
         "Params": "[10390113]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c540-13\u540e\u89e3\u9501"
+        "Desc": "Clear Main Story (Normal) 40-13 to unlock"
     },
     {
         "Id": 84103347,
         "Type": 10105.0,
         "Params": "[10390114]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c540-14\u540e\u89e3\u9501"
+        "Desc": "Clear Main Story (Normal) 40-14 to unlock"
     },
     {
         "Id": 84103348,
         "Type": 10105.0,
         "Params": "[10390115]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c540-15\u540e\u89e3\u9501"
+        "Desc": "Clear Main Story (Normal) 40-15 to unlock"
     },
     {
         "Id": 84103349,
         "Type": 10105.0,
         "Params": "[10390116]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c540-16\u540e\u89e3\u9501"
+        "Desc": "Clear Main Story (Normal) 40-16 to unlock"
     },
     {
         "Id": 84103350,
         "Type": 10105.0,
         "Params": "[10390117]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c540-17\u540e\u89e3\u9501"
+        "Desc": "Clear Main Story (Normal) 40-17 to unlock"
     },
     {
         "Id": 84103351,
         "Type": 10105.0,
         "Params": "[10390118]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c540-18\u540e\u89e3\u9501"
+        "Desc": "Clear Main Story (Normal) 40-18 to unlock"
     },
     {
         "Id": 84103352,
         "Type": 10105.0,
         "Params": "[10390119]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c540-19\u540e\u89e3\u9501"
+        "Desc": "Clear Main Story (Normal) 40-19 to unlock"
     },
     {
         "Id": 84103353,
         "Type": 10105.0,
         "Params": "[10390120]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c540-20\u540e\u89e3\u9501"
+        "Desc": "Clear Main Story (Normal) 40-20 to unlock"
     },
     {
         "Id": 84103354,
         "Type": 10105.0,
         "Params": "[10390121]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c540-21\u540e\u89e3\u9501"
+        "Desc": "Clear Main Story (Normal) 40-21 to unlock"
     },
     {
         "Id": 84103355,
         "Type": 10105.0,
         "Params": "[10390122]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c540-22\u540e\u89e3\u9501"
+        "Desc": "Clear Main Story (Normal) 40-22 to unlock"
     },
     {
         "Id": 84103356,
         "Type": 10105.0,
         "Params": "[10390123]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c540-23\u540e\u89e3\u9501"
+        "Desc": "Clear Main Story (Normal) 40-23 to unlock"
+    },
+    {
+        "Id": 84103357,
+        "Type": 10105.0,
+        "Params": "[15021700]",
+        "Formula": null,
+        "Desc": "Clear Floating Record ER15-1 to unlock"
+    },
+    {
+        "Id": 84103358,
+        "Type": 10105.0,
+        "Params": "[15021704]",
+        "Formula": null,
+        "Desc": "Clear Floating Record ER15-5 to unlock"
+    },
+    {
+        "Id": 84103359,
+        "Type": 10105.0,
+        "Params": "[15021708]",
+        "Formula": null,
+        "Desc": "Clear Floating Record ER15-9 to unlock"
+    },
+    {
+        "Id": 84103360,
+        "Type": 10105.0,
+        "Params": "[15021714]",
+        "Formula": null,
+        "Desc": "Clear Floating Record ER15-15 to unlock"
+    },
+    {
+        "Id": 84103361,
+        "Type": 10105.0,
+        "Params": "[15021717]",
+        "Formula": null,
+        "Desc": "Clear Floating Record ER15-18 to unlock"
+    },
+    {
+        "Id": 84103362,
+        "Type": 10105.0,
+        "Params": "[15021718]",
+        "Formula": null,
+        "Desc": "Clear Floating Record ER15-19 to unlock"
+    },
+    {
+        "Id": 84103363,
+        "Type": 10105.0,
+        "Params": "[15021722]",
+        "Formula": null,
+        "Desc": "Clear Floating Record ER15-23 to unlock"
+    },
+    {
+        "Id": 84103364,
+        "Type": 10105.0,
+        "Params": "[15021723]",
+        "Formula": null,
+        "Desc": "Clear Floating Record ER15-24 to unlock"
+    },
+    {
+        "Id": 84103365,
+        "Type": 10105.0,
+        "Params": "[15021700]",
+        "Formula": null,
+        "Desc": "Clear Floating Record ER15-1 to unlock"
+    },
+    {
+        "Id": 84103366,
+        "Type": 10105.0,
+        "Params": "[15021701]",
+        "Formula": null,
+        "Desc": "Clear Floating Record ER15-2 to unlock"
+    },
+    {
+        "Id": 84103367,
+        "Type": 10105.0,
+        "Params": "[15021702]",
+        "Formula": null,
+        "Desc": "Clear Floating Record ER15-3 to unlock"
+    },
+    {
+        "Id": 84103368,
+        "Type": 10105.0,
+        "Params": "[15021703]",
+        "Formula": null,
+        "Desc": "Clear Floating Record ER15-4 to unlock"
+    },
+    {
+        "Id": 84103369,
+        "Type": 10105.0,
+        "Params": "[15021704]",
+        "Formula": null,
+        "Desc": "Clear Floating Record ER15-5 to unlock"
+    },
+    {
+        "Id": 84103370,
+        "Type": 10105.0,
+        "Params": "[15021705]",
+        "Formula": null,
+        "Desc": "Clear Floating Record ER15-6 to unlock"
+    },
+    {
+        "Id": 84103371,
+        "Type": 10105.0,
+        "Params": "[15021706]",
+        "Formula": null,
+        "Desc": "Clear Floating Record ER15-7 to unlock"
+    },
+    {
+        "Id": 84103372,
+        "Type": 10105.0,
+        "Params": "[15021707]",
+        "Formula": null,
+        "Desc": "Clear Floating Record ER15-8 to unlock"
+    },
+    {
+        "Id": 84103373,
+        "Type": 10105.0,
+        "Params": "[15021708]",
+        "Formula": null,
+        "Desc": "Clear Floating Record ER15-9 to unlock"
+    },
+    {
+        "Id": 84103374,
+        "Type": 10105.0,
+        "Params": "[15021709]",
+        "Formula": null,
+        "Desc": "Clear Floating Record ER15-10 to unlock"
+    },
+    {
+        "Id": 84103375,
+        "Type": 10105.0,
+        "Params": "[15021710]",
+        "Formula": null,
+        "Desc": "Clear Floating Record ER15-11 to unlock"
+    },
+    {
+        "Id": 84103376,
+        "Type": 10105.0,
+        "Params": "[15021711]",
+        "Formula": null,
+        "Desc": "Clear Floating Record ER15-12 to unlock"
+    },
+    {
+        "Id": 84103377,
+        "Type": 10105.0,
+        "Params": "[15021712]",
+        "Formula": null,
+        "Desc": "Clear Floating Record ER15-13 to unlock"
+    },
+    {
+        "Id": 84103378,
+        "Type": 10105.0,
+        "Params": "[15021713]",
+        "Formula": null,
+        "Desc": "Clear Floating Record ER15-14 to unlock"
+    },
+    {
+        "Id": 84103379,
+        "Type": 10105.0,
+        "Params": "[15021714]",
+        "Formula": null,
+        "Desc": "Clear Floating Record ER15-15 to unlock"
+    },
+    {
+        "Id": 84103380,
+        "Type": 10105.0,
+        "Params": "[15021715]",
+        "Formula": null,
+        "Desc": "Clear Floating Record ER15-16 to unlock"
+    },
+    {
+        "Id": 84103381,
+        "Type": 10105.0,
+        "Params": "[15021716]",
+        "Formula": null,
+        "Desc": "Clear Floating Record ER15-17 to unlock"
+    },
+    {
+        "Id": 84103382,
+        "Type": 10105.0,
+        "Params": "[15021717]",
+        "Formula": null,
+        "Desc": "Clear Floating Record ER15-18 to unlock"
+    },
+    {
+        "Id": 84103383,
+        "Type": 10105.0,
+        "Params": "[15021718]",
+        "Formula": null,
+        "Desc": "Clear Floating Record ER15-19 to unlock"
+    },
+    {
+        "Id": 84103384,
+        "Type": 10105.0,
+        "Params": "[15021719]",
+        "Formula": null,
+        "Desc": "Clear Floating Record ER15-20 to unlock"
+    },
+    {
+        "Id": 84103385,
+        "Type": 10105.0,
+        "Params": "[15021720]",
+        "Formula": null,
+        "Desc": "Clear Floating Record ER15-21 to unlock"
+    },
+    {
+        "Id": 84103386,
+        "Type": 10105.0,
+        "Params": "[15021721]",
+        "Formula": null,
+        "Desc": "Clear Floating Record ER15-22 to unlock"
+    },
+    {
+        "Id": 84103387,
+        "Type": 10105.0,
+        "Params": "[15021722]",
+        "Formula": null,
+        "Desc": "Clear Floating Record ER15-23 to unlock"
+    },
+    {
+        "Id": 84103388,
+        "Type": 10105.0,
+        "Params": "[15021723]",
+        "Formula": null,
+        "Desc": "Clear Floating Record ER15-24 to unlock"
+    },
+    {
+        "Id": 84103389,
+        "Type": 10105.0,
+        "Params": "[15021724]",
+        "Formula": null,
+        "Desc": "Clear Floating Record ER15-25 to unlock"
     },
     {
         "Id": 84200101,
@@ -34253,7 +34610,7 @@
     {
         "Id": 84330007,
         "Type": 10105.0,
-        "Params": "[10380110]",
+        "Params": "[10380116]",
         "Formula": null,
         "Desc": "Unlocks after clearing Main Story (Normal) 39-16"
     },
@@ -34339,56 +34696,63 @@
         "Type": 10105.0,
         "Params": "[10390106]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c540-6\u540e\u89e3\u9501"
+        "Desc": "Clear Main Story (Normal) 40-6 to unlock"
     },
     {
         "Id": 84330020,
         "Type": 10105.0,
         "Params": "[10390108]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c540-8\u540e\u89e3\u9501"
+        "Desc": "Clear Main Story (Normal) 40-8 to unlock"
     },
     {
         "Id": 84330021,
         "Type": 10105.0,
         "Params": "[10390115]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c540-15\u540e\u89e3\u9501"
+        "Desc": "Clear Main Story (Normal) 40-15 to unlock"
     },
     {
         "Id": 84330022,
         "Type": 10105.0,
         "Params": "[10390119]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c540-19\u540e\u89e3\u9501"
+        "Desc": "Clear Main Story (Normal) 40-19 to unlock"
     },
     {
         "Id": 84330023,
         "Type": 10105.0,
         "Params": "[10390120]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c540-20\u540e\u89e3\u9501"
+        "Desc": "Clear Main Story (Normal) 40-20 to unlock"
     },
     {
         "Id": 84330024,
         "Type": 10105.0,
         "Params": "[10390122]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c540-22\u540e\u89e3\u9501"
+        "Desc": "Clear Main Story (Normal) 40-22 to unlock"
     },
     {
         "Id": 84330025,
         "Type": 10105.0,
         "Params": "[10390123]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c540-23\u540e\u89e3\u9501"
+        "Desc": "Clear Main Story (Normal) 40-23 to unlock"
     },
     {
         "Id": 84330026,
         "Type": 11104.0,
         "Params": "[6005005]",
         "Formula": null,
-        "Desc": "\u62e5\u6709\u6d82\u88c5\u201c\u7130\u8840\u88c1\u51b3\u201d\u540e\u89e3\u9501"
+        "Desc": "Unlocks from owning the Coating \"Sanguine Justice\""
+    },
+    {
+        "Id": 84330027,
+        "Type": 11104.0,
+        "Params": "[6006004]",
+        "Formula": null,
+        "Desc": "Unlocks from owning Unending Pursuit"
     },
     {
         "Id": 84400101,
@@ -38449,6 +38813,279 @@
         "Params": "[377]",
         "Formula": null,
         "Desc": "Gift received from Jetavie after giving out [Heartfelt Letter]"
+    },
+    {
+        "Id": 84900001,
+        "Type": 10152.0,
+        "Params": "[378]",
+        "Formula": null,
+        "Desc": "Gift received from Lee after giving out [Dawning Diary]"
+    },
+    {
+        "Id": 84900002,
+        "Type": 10152.0,
+        "Params": "[379]",
+        "Formula": null,
+        "Desc": "Gift received from Lucia after giving out [Dawning Diary]"
+    },
+    {
+        "Id": 84900003,
+        "Type": 10152.0,
+        "Params": "[380]",
+        "Formula": null,
+        "Desc": "Gift received from Liv after giving out [Dawning Diary]"
+    },
+    {
+        "Id": 84900004,
+        "Type": 10152.0,
+        "Params": "[381]",
+        "Formula": null,
+        "Desc": "Gift received from Bianca after giving out [Dawning Diary]"
+    },
+    {
+        "Id": 84900005,
+        "Type": 10152.0,
+        "Params": "[382]",
+        "Formula": null,
+        "Desc": "Gift received from Nanami after giving out [Dawning Diary]"
+    },
+    {
+        "Id": 84900006,
+        "Type": 10152.0,
+        "Params": "[383]",
+        "Formula": null,
+        "Desc": "Gift received from Kamui after giving out [Dawning Diary]"
+    },
+    {
+        "Id": 84900007,
+        "Type": 10152.0,
+        "Params": "[384]",
+        "Formula": null,
+        "Desc": "Gift received from Karenina after giving out [Dawning Diary]"
+    },
+    {
+        "Id": 84900008,
+        "Type": 10152.0,
+        "Params": "[385]",
+        "Formula": null,
+        "Desc": "Gift received from Watanabe after giving out [Dawning Diary]"
+    },
+    {
+        "Id": 84900009,
+        "Type": 10152.0,
+        "Params": "[386]",
+        "Formula": null,
+        "Desc": "Gift received from \u03b1 after giving out [Dawning Diary]"
+    },
+    {
+        "Id": 84900010,
+        "Type": 10152.0,
+        "Params": "[387]",
+        "Formula": null,
+        "Desc": "Gift received from Ayla after giving out [Dawning Diary]"
+    },
+    {
+        "Id": 84900011,
+        "Type": 10152.0,
+        "Params": "[388]",
+        "Formula": null,
+        "Desc": "Gift received from Sophia after giving out [Dawning Diary]"
+    },
+    {
+        "Id": 84900012,
+        "Type": 10152.0,
+        "Params": "[389]",
+        "Formula": null,
+        "Desc": "Gift received from Chrome after giving out [Dawning Diary]"
+    },
+    {
+        "Id": 84900013,
+        "Type": 10152.0,
+        "Params": "[390]",
+        "Formula": null,
+        "Desc": "Gift received from Vera after giving out [Dawning Diary]"
+    },
+    {
+        "Id": 84900014,
+        "Type": 10152.0,
+        "Params": "[391]",
+        "Formula": null,
+        "Desc": "Gift received from Luna after giving out [Dawning Diary]"
+    },
+    {
+        "Id": 84900015,
+        "Type": 10152.0,
+        "Params": "[392]",
+        "Formula": null,
+        "Desc": "Gift received from Camu after giving out [Dawning Diary]"
+    },
+    {
+        "Id": 84900016,
+        "Type": 10152.0,
+        "Params": "[393]",
+        "Formula": null,
+        "Desc": "Gift received from Rosetta after giving out [Dawning Diary]"
+    },
+    {
+        "Id": 84900017,
+        "Type": 10152.0,
+        "Params": "[394]",
+        "Formula": null,
+        "Desc": "Gift received from Qu after giving out [Dawning Diary]"
+    },
+    {
+        "Id": 84900018,
+        "Type": 10152.0,
+        "Params": "[395]",
+        "Formula": null,
+        "Desc": "Gift received from Changyu after giving out [Dawning Diary]"
+    },
+    {
+        "Id": 84900019,
+        "Type": 10152.0,
+        "Params": "[396]",
+        "Formula": null,
+        "Desc": "Gift received from Wanshi after giving out [Dawning Diary]"
+    },
+    {
+        "Id": 84900020,
+        "Type": 10152.0,
+        "Params": "[397]",
+        "Formula": null,
+        "Desc": "Gift received from Selena after giving out [Dawning Diary]"
+    },
+    {
+        "Id": 84900021,
+        "Type": 10152.0,
+        "Params": "[398]",
+        "Formula": null,
+        "Desc": "Gift received from No. 21 after giving out [Dawning Diary]"
+    },
+    {
+        "Id": 84900022,
+        "Type": 10152.0,
+        "Params": "[399]",
+        "Formula": null,
+        "Desc": "Gift received from Roland after giving out [Dawning Diary]"
+    },
+    {
+        "Id": 84900023,
+        "Type": 10152.0,
+        "Params": "[400]",
+        "Formula": null,
+        "Desc": "Gift received from Pulao after giving out [Dawning Diary]"
+    },
+    {
+        "Id": 84900024,
+        "Type": 10152.0,
+        "Params": "[401]",
+        "Formula": null,
+        "Desc": "Gift received from Haicma after giving out [Dawning Diary]"
+    },
+    {
+        "Id": 84900025,
+        "Type": 10152.0,
+        "Params": "[402]",
+        "Formula": null,
+        "Desc": "Gift received from Noan after giving out [Dawning Diary]"
+    },
+    {
+        "Id": 84900026,
+        "Type": 10152.0,
+        "Params": "[403]",
+        "Formula": null,
+        "Desc": "Gift received from Bambinata after giving out [Dawning Diary]"
+    },
+    {
+        "Id": 84900027,
+        "Type": 10152.0,
+        "Params": "[404]",
+        "Formula": null,
+        "Desc": "Gift received from Hanying after giving out [Dawning Diary]"
+    },
+    {
+        "Id": 84900028,
+        "Type": 10152.0,
+        "Params": "[405]",
+        "Formula": null,
+        "Desc": "Gift received from Noctis after giving out [Dawning Diary]"
+    },
+    {
+        "Id": 84900029,
+        "Type": 10152.0,
+        "Params": "[406]",
+        "Formula": null,
+        "Desc": "Gift received from Echo after giving out [Dawning Diary]"
+    },
+    {
+        "Id": 84900030,
+        "Type": 10152.0,
+        "Params": "[407]",
+        "Formula": null,
+        "Desc": "Gift received from Lamia after giving out [Dawning Diary]"
+    },
+    {
+        "Id": 84900031,
+        "Type": 10152.0,
+        "Params": "[408]",
+        "Formula": null,
+        "Desc": "Gift received from Teddy after giving out [Dawning Diary]"
+    },
+    {
+        "Id": 84900032,
+        "Type": 10152.0,
+        "Params": "[409]",
+        "Formula": null,
+        "Desc": "Gift received from Bridget after giving out [Dawning Diary]"
+    },
+    {
+        "Id": 84900033,
+        "Type": 10152.0,
+        "Params": "[410]",
+        "Formula": null,
+        "Desc": "Gift received from Yata after giving out [Dawning Diary]"
+    },
+    {
+        "Id": 84900034,
+        "Type": 10152.0,
+        "Params": "[411]",
+        "Formula": null,
+        "Desc": "Gift received from Ishmael after giving out [Dawning Diary]"
+    },
+    {
+        "Id": 84900035,
+        "Type": 10152.0,
+        "Params": "[412]",
+        "Formula": null,
+        "Desc": "Gift received from Lilith after giving out [Dawning Diary]"
+    },
+    {
+        "Id": 84900036,
+        "Type": 10152.0,
+        "Params": "[413]",
+        "Formula": null,
+        "Desc": "Gift received from Jetavie after giving out [Dawning Diary]"
+    },
+    {
+        "Id": 84900037,
+        "Type": 10152.0,
+        "Params": "[414]",
+        "Formula": null,
+        "Desc": "Gift received from Discord after giving out [Dawning Diary]"
+    },
+    {
+        "Id": 84900038,
+        "Type": 10152.0,
+        "Params": "[415]",
+        "Formula": null,
+        "Desc": "Gift received from Veronica after giving out [Dawning Diary]"
+    },
+    {
+        "Id": 84900039,
+        "Type": 10152.0,
+        "Params": "[416]",
+        "Formula": null,
+        "Desc": "Gift received from Nirvatia after giving out [Dawning Diary]"
     },
     {
         "Id": 84602125,
@@ -43155,6 +43792,62 @@
         "Desc": "Coating owned"
     },
     {
+        "Id": 12480001,
+        "Type": 11113.0,
+        "Params": "[12480001]",
+        "Formula": null,
+        "Desc": "Coating owned"
+    },
+    {
+        "Id": 12440002,
+        "Type": 11113.0,
+        "Params": "[12440002]",
+        "Formula": null,
+        "Desc": "Coating owned"
+    },
+    {
+        "Id": 12510001,
+        "Type": 11113.0,
+        "Params": "[12510001]",
+        "Formula": null,
+        "Desc": "Coating owned"
+    },
+    {
+        "Id": 12420003,
+        "Type": 11113.0,
+        "Params": "[12420003]",
+        "Formula": null,
+        "Desc": "Coating owned"
+    },
+    {
+        "Id": 12530001,
+        "Type": 11113.0,
+        "Params": "[12530001]",
+        "Formula": null,
+        "Desc": "Coating owned"
+    },
+    {
+        "Id": 12470003,
+        "Type": 11113.0,
+        "Params": "[12470003]",
+        "Formula": null,
+        "Desc": "Coating owned"
+    },
+    {
+        "Id": 12540002,
+        "Type": 11113.0,
+        "Params": "[12540002]",
+        "Formula": null,
+        "Desc": "Coating owned"
+    },
+    {
+        "Id": 12640001,
+        "Type": 11113.0,
+        "Params": "[12640001]",
+        "Formula": null,
+        "Desc": "Coating owned"
+    },
+    {
         "Id": 84700201,
         "Type": 10101.0,
         "Params": "[52]",
@@ -46155,21 +46848,42 @@
         "Type": 10136.0,
         "Params": "[16370000, 0, 10]",
         "Formula": null,
-        "Desc": "\u4efb\u610f\u6469\u5229\u7518\u7b49\u7ea7\u5230\u8fbe10\u7ea7(\u65e0\u7a81\u7834)"
+        "Desc": "Have any Morigan reach Lv.10 (no Overclock)"
     },
     {
         "Id": 1000108,
         "Type": 10137.0,
         "Params": "[16370000, 4]",
         "Formula": null,
-        "Desc": "\u4efb\u610f\u6469\u5229\u7518\u54c1\u8d28\u8fbe\u5230SS"
+        "Desc": "Have any Morigan reach SS-Rank"
     },
     {
         "Id": 1000109,
         "Type": 10138.0,
         "Params": "[16370000, 10]",
         "Formula": null,
-        "Desc": "\u4efb\u610f\u6469\u5229\u7518\u603b\u6280\u80fd\u7b49\u7ea7\u8fbe\u523010\u7ea7"
+        "Desc": "Total skill level of any Morigan reaches Lv.10"
+    },
+    {
+        "Id": 1000110,
+        "Type": 10136.0,
+        "Params": "[16380000, 0, 10]",
+        "Formula": null,
+        "Desc": "Have any Ignis reach Lv.10 (no Overclock)"
+    },
+    {
+        "Id": 1000111,
+        "Type": 10137.0,
+        "Params": "[16380000, 4]",
+        "Formula": null,
+        "Desc": "Have any Ignis reach SS-Rank"
+    },
+    {
+        "Id": 1000112,
+        "Type": 10138.0,
+        "Params": "[16380000, 10]",
+        "Formula": null,
+        "Desc": "Total skill level of any Ignis reaches Lv.10"
     },
     {
         "Id": 1001001,
@@ -46410,39 +47124,53 @@
         "Desc": "Unlock Buzzling"
     },
     {
+        "Id": 1001035,
+        "Type": 10142.0,
+        "Params": "[16370000]",
+        "Formula": null,
+        "Desc": "Unlock Morigan"
+    },
+    {
+        "Id": 1001036,
+        "Type": 10142.0,
+        "Params": "[16380000]",
+        "Formula": null,
+        "Desc": "Unlock Ignis"
+    },
+    {
         "Id": 1002001,
         "Type": 10142.0,
         "Params": "[16010000]",
         "Formula": null,
-        "Desc": "Combine CUB \"Yuan Ye\" unlocked"
+        "Desc": "Combine CUB \"Yuan Ye\" to unlock"
     },
     {
         "Id": 1002002,
         "Type": 10142.0,
         "Params": "[16020000]",
         "Formula": null,
-        "Desc": "Combine CUB \"Noctua\" unlocked"
+        "Desc": "Combine CUB \"Noctua\" to unlock"
     },
     {
         "Id": 1002003,
         "Type": 10142.0,
         "Params": "[16030000]",
         "Formula": null,
-        "Desc": "Combine CUB \"Toniris\" unlocked"
+        "Desc": "Combine CUB \"Toniris\" to unlock"
     },
     {
         "Id": 1002004,
         "Type": 10142.0,
         "Params": "[16040000]",
         "Formula": null,
-        "Desc": "Combine CUB \"Frost Oath\" unlocked"
+        "Desc": "Combine CUB \"Frost Oath\" to unlock"
     },
     {
         "Id": 1002005,
         "Type": 10142.0,
         "Params": "[16050000]",
         "Formula": null,
-        "Desc": "Combine CUB \"Seeshell\" unlocked"
+        "Desc": "Combine CUB \"Seeshell\" to unlock"
     },
     {
         "Id": 1002006,
@@ -46456,42 +47184,42 @@
         "Type": 10142.0,
         "Params": "[16070000]",
         "Formula": null,
-        "Desc": "Combine CUB \"Sheep\" unlocked"
+        "Desc": "Combine CUB \"Sheep\" to unlock"
     },
     {
         "Id": 1002017,
         "Type": 10142.0,
         "Params": "[16080000]",
         "Formula": null,
-        "Desc": "Combine CUB \"Boreas\" unlocked"
+        "Desc": "Combine CUB \"Boreas\" to unlock"
     },
     {
         "Id": 1002118,
         "Type": 10142.0,
         "Params": "[16090000]",
         "Formula": null,
-        "Desc": "Combine CUB \"Thorny\" unlocked"
+        "Desc": "Combine CUB \"Thorny\" to unlock"
     },
     {
         "Id": 1002119,
         "Type": 10142.0,
         "Params": "[16100000]",
         "Formula": null,
-        "Desc": "Combine CUB \"Jet Jaeger\" unlocked"
+        "Desc": "Combine CUB \"Jet Jaeger\" to unlock"
     },
     {
         "Id": 1002120,
         "Type": 10142.0,
         "Params": "[16110000]",
         "Formula": null,
-        "Desc": "Combine CUB \"Moonhopper\" unlocked"
+        "Desc": "Combine CUB \"Moonhopper\" to unlock"
     },
     {
         "Id": 1002121,
         "Type": 10142.0,
         "Params": "[16120000]",
         "Formula": null,
-        "Desc": "Combine CUB \"Shimmer\" unlocked"
+        "Desc": "Combine CUB \"Shimmer\" to unlock"
     },
     {
         "Id": 1002122,
@@ -46540,7 +47268,7 @@
         "Type": 10142.0,
         "Params": "[16190000]",
         "Formula": null,
-        "Desc": "Combine CUB \"Shadow Wing\" unlocked"
+        "Desc": "Combine CUB \"Shadow Wing\" to unlock"
     },
     {
         "Id": 1002129,
@@ -46575,21 +47303,21 @@
         "Type": 10142.0,
         "Params": "[16240000]",
         "Formula": null,
-        "Desc": "Combine CUB \"Corvus\" unlocked"
+        "Desc": "Combine CUB \"Corvus\" to unlock"
     },
     {
         "Id": 1002134,
         "Type": 10142.0,
         "Params": "[16250000]",
         "Formula": null,
-        "Desc": "Combine CUB \"Bramble Angler\" unlocked"
+        "Desc": "Combine CUB \"Bramble Angler\" to unlock"
     },
     {
         "Id": 1002135,
         "Type": 10142.0,
         "Params": "[16260000]",
         "Formula": null,
-        "Desc": "Combine CUB \"Diamaton\" unlocked"
+        "Desc": "Combine CUB \"Diamaton\" to unlock"
     },
     {
         "Id": 1002136,
@@ -46638,7 +47366,7 @@
         "Type": 10142.0,
         "Params": "[16330000]",
         "Formula": null,
-        "Desc": "Combine CUB \"Scaled Rampart\" unlocked"
+        "Desc": "Combine CUB \"Scaled Rampart\" to unlock"
     },
     {
         "Id": 1002143,
@@ -46659,14 +47387,21 @@
         "Type": 10142.0,
         "Params": "[16360000]",
         "Formula": null,
-        "Desc": "\u5408\u6210\u8f85\u52a9\u673a\u201c\u6ce2\u7075\u201d\u89e3\u9501"
+        "Desc": "Combine CUB \"Buzzling\" to unlock"
     },
     {
         "Id": 1002146,
         "Type": 10142.0,
         "Params": "[16370000]",
         "Formula": null,
-        "Desc": "\u5408\u6210\u8f85\u52a9\u673a\u201c\u6469\u5229\u7518\u201d\u89e3\u9501"
+        "Desc": "Combine CUB \"Morigan\" to unlock"
+    },
+    {
+        "Id": 1002147,
+        "Type": 10142.0,
+        "Params": "[16380000]",
+        "Formula": null,
+        "Desc": "Combine CUB \"Ignis\" to unlock"
     },
     {
         "Id": 94031,
@@ -46848,14 +47583,14 @@
         "Type": 10150.0,
         "Params": "[6046]",
         "Formula": null,
-        "Desc": "\u89e3\u9501\u7b2c\u516d\u671f\u751f\u65e5\u5267\u60c5\u56fe\u9274"
+        "Desc": "Unlock Phase VI Birthday Story Replay"
     },
     {
         "Id": 1002912,
         "Type": 10150.0,
         "Params": "[6046]",
         "Formula": null,
-        "Desc": "\u7b2c\u516d\u671f\u751f\u65e5\u89e3\u9501"
+        "Desc": "Phase VI Birthday Unlocked"
     },
     {
         "Id": 1002027,
@@ -48407,9 +49142,9 @@
     {
         "Id": 1005045,
         "Type": 10101.0,
-        "Params": "[70]",
+        "Params": "[40]",
         "Formula": null,
-        "Desc": "Reach Commandant Lv.70"
+        "Desc": "Reach Commandant Level 40"
     },
     {
         "Id": 1005046,
@@ -51254,6 +51989,188 @@
         "Desc": "Clear Stage 13 within 120s to unlock"
     },
     {
+        "Id": 1006890,
+        "Type": 10210.0,
+        "Params": "[30165403, 6000]",
+        "Formula": null,
+        "Desc": "Clear Stage 1 to unlock"
+    },
+    {
+        "Id": 1006891,
+        "Type": 10210.0,
+        "Params": "[30165404, 6000]",
+        "Formula": null,
+        "Desc": "Clear Stage 2 to unlock"
+    },
+    {
+        "Id": 1006892,
+        "Type": 10210.0,
+        "Params": "[30165405, 6000]",
+        "Formula": null,
+        "Desc": "Clear Stage 3 to unlock"
+    },
+    {
+        "Id": 1006893,
+        "Type": 10210.0,
+        "Params": "[30165406, 6000]",
+        "Formula": null,
+        "Desc": "Clear Stage 4 to unlock"
+    },
+    {
+        "Id": 1006894,
+        "Type": 10210.0,
+        "Params": "[30165407, 6000]",
+        "Formula": null,
+        "Desc": "Clear Stage 5 to unlock"
+    },
+    {
+        "Id": 1006895,
+        "Type": 10210.0,
+        "Params": "[30165408, 6000]",
+        "Formula": null,
+        "Desc": "Clear Stage 6 to unlock"
+    },
+    {
+        "Id": 1006896,
+        "Type": 10210.0,
+        "Params": "[30165409, 6000]",
+        "Formula": null,
+        "Desc": "Clear Stage 7 to unlock"
+    },
+    {
+        "Id": 1006897,
+        "Type": 10210.0,
+        "Params": "[30165410, 6000]",
+        "Formula": null,
+        "Desc": "Clear Stage 8 to unlock"
+    },
+    {
+        "Id": 1006898,
+        "Type": 10210.0,
+        "Params": "[30165411, 6000]",
+        "Formula": null,
+        "Desc": "Clear Stage 9 to unlock"
+    },
+    {
+        "Id": 1006899,
+        "Type": 10210.0,
+        "Params": "[30165412, 6000]",
+        "Formula": null,
+        "Desc": "Clear Stage 10 to unlock"
+    },
+    {
+        "Id": 1006900,
+        "Type": 10210.0,
+        "Params": "[30165413, 6000]",
+        "Formula": null,
+        "Desc": "Clear Stage 11 to unlock"
+    },
+    {
+        "Id": 1006901,
+        "Type": 10210.0,
+        "Params": "[30165414, 6000]",
+        "Formula": null,
+        "Desc": "Clear Stage 12 to unlock"
+    },
+    {
+        "Id": 1006902,
+        "Type": 10210.0,
+        "Params": "[30165415, 120]",
+        "Formula": null,
+        "Desc": "Clear Stage 13 within 120s to unlock"
+    },
+    {
+        "Id": 1006903,
+        "Type": 10210.0,
+        "Params": "[30165417, 6000]",
+        "Formula": null,
+        "Desc": "Clear Stage 1 to unlock"
+    },
+    {
+        "Id": 1006904,
+        "Type": 10210.0,
+        "Params": "[30165418, 6000]",
+        "Formula": null,
+        "Desc": "Clear Stage 2 to unlock"
+    },
+    {
+        "Id": 1006905,
+        "Type": 10210.0,
+        "Params": "[30165419, 6000]",
+        "Formula": null,
+        "Desc": "Clear Stage 3 to unlock"
+    },
+    {
+        "Id": 1006906,
+        "Type": 10210.0,
+        "Params": "[30165420, 6000]",
+        "Formula": null,
+        "Desc": "Clear Stage 4 to unlock"
+    },
+    {
+        "Id": 1006907,
+        "Type": 10210.0,
+        "Params": "[30165421, 6000]",
+        "Formula": null,
+        "Desc": "Clear Stage 5 to unlock"
+    },
+    {
+        "Id": 1006908,
+        "Type": 10210.0,
+        "Params": "[30165422, 6000]",
+        "Formula": null,
+        "Desc": "Clear Stage 6 to unlock"
+    },
+    {
+        "Id": 1006909,
+        "Type": 10210.0,
+        "Params": "[30165423, 6000]",
+        "Formula": null,
+        "Desc": "Clear Stage 7 to unlock"
+    },
+    {
+        "Id": 1006910,
+        "Type": 10210.0,
+        "Params": "[30165424, 6000]",
+        "Formula": null,
+        "Desc": "Clear Stage 8 to unlock"
+    },
+    {
+        "Id": 1006911,
+        "Type": 10210.0,
+        "Params": "[30165425, 6000]",
+        "Formula": null,
+        "Desc": "Clear Stage 9 to unlock"
+    },
+    {
+        "Id": 1006912,
+        "Type": 10210.0,
+        "Params": "[30165426, 6000]",
+        "Formula": null,
+        "Desc": "Clear Stage 10 to unlock"
+    },
+    {
+        "Id": 1006913,
+        "Type": 10210.0,
+        "Params": "[30165427, 6000]",
+        "Formula": null,
+        "Desc": "Clear Stage 11 to unlock"
+    },
+    {
+        "Id": 1006914,
+        "Type": 10210.0,
+        "Params": "[30165428, 6000]",
+        "Formula": null,
+        "Desc": "Clear Stage 12 to unlock"
+    },
+    {
+        "Id": 1006915,
+        "Type": 10210.0,
+        "Params": "[30165429, 120]",
+        "Formula": null,
+        "Desc": "Clear Stage 13 within 120s to unlock"
+    },
+    {
         "Id": 1007001,
         "Type": 10105.0,
         "Params": "[10010003]",
@@ -52273,7 +53190,7 @@
         "Type": 10105.0,
         "Params": "[10380123]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u524d\u7f6e\u4e3b\u7ebf\u5173\u5361\u3010\u666e\u901a\u5267\u60c539-23\u3011"
+        "Desc": "Clear prerequisite Main Story [Normal Story 39-23]"
     },
     {
         "Id": 1007148,
@@ -52287,329 +53204,343 @@
         "Type": 10105.0,
         "Params": "[10390123]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u524d\u7f6e\u4e3b\u7ebf\u5173\u5361\u3010\u666e\u901a\u5267\u60c540-23\u3011"
+        "Desc": "Clear prerequisite Main Story [Normal Story 40-23]"
+    },
+    {
+        "Id": 1007150,
+        "Type": 15204.0,
+        "Params": "[10390117, 4321432, 1]",
+        "Formula": null,
+        "Desc": "Nirvatia Main Story Dossier Easter Egg Reward Condition"
+    },
+    {
+        "Id": 1007151,
+        "Type": 10105.0,
+        "Params": "[15021725]",
+        "Formula": null,
+        "Desc": "Clear prerequisite Floating Record [Normal Story ER15-25]"
     },
     {
         "Id": 1007200,
         "Type": 10105.0,
         "Params": "[10380101]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u5173\u536139-1"
+        "Desc": "Clear Main Stage 39-1"
     },
     {
         "Id": 1007201,
         "Type": 10105.0,
         "Params": "[10380102]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u5173\u536139-2"
+        "Desc": "Clear Main Stage 39-2"
     },
     {
         "Id": 1007202,
         "Type": 10105.0,
         "Params": "[10380103]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u5173\u536139-3"
+        "Desc": "Clear Main Stage 39-3"
     },
     {
         "Id": 1007203,
         "Type": 10105.0,
         "Params": "[10380104]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u5173\u536139-4"
+        "Desc": "Clear Main Stage 39-4"
     },
     {
         "Id": 1007204,
         "Type": 10105.0,
         "Params": "[10380105]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u5173\u536139-5"
+        "Desc": "Clear Main Stage 39-5"
     },
     {
         "Id": 1007205,
         "Type": 10105.0,
         "Params": "[10380106]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u5173\u536139-6"
+        "Desc": "Clear Main Stage 39-6"
     },
     {
         "Id": 1007206,
         "Type": 10105.0,
         "Params": "[10380107]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u5173\u536139-7"
+        "Desc": "Clear Main Stage 39-7"
     },
     {
         "Id": 1007207,
         "Type": 10105.0,
         "Params": "[10380108]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u5173\u536139-8"
+        "Desc": "Clear Main Stage 39-8"
     },
     {
         "Id": 1007208,
         "Type": 10105.0,
         "Params": "[10380109]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u5173\u536139-9"
+        "Desc": "Clear Main Stage 39-9"
     },
     {
         "Id": 1007209,
         "Type": 10105.0,
         "Params": "[10380110]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u5173\u536139-10"
+        "Desc": "Clear Main Stage 39-10"
     },
     {
         "Id": 1007210,
         "Type": 10105.0,
         "Params": "[10380111]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u5173\u536139-11"
+        "Desc": "Clear Main Stage 39-11"
     },
     {
         "Id": 1007211,
         "Type": 10105.0,
         "Params": "[10380112]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u5173\u536139-12"
+        "Desc": "Clear Main Stage 39-12"
     },
     {
         "Id": 1007212,
         "Type": 10105.0,
         "Params": "[10380113]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u5173\u536139-13"
+        "Desc": "Clear Main Stage 39-13"
     },
     {
         "Id": 1007213,
         "Type": 10105.0,
         "Params": "[10380114]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u5173\u536139-14"
+        "Desc": "Clear Main Stage 39-14"
     },
     {
         "Id": 1007214,
         "Type": 10105.0,
         "Params": "[10380115]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u5173\u536139-15"
+        "Desc": "Clear Main Stage 39-15"
     },
     {
         "Id": 1007215,
         "Type": 10105.0,
         "Params": "[10380116]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u5173\u536139-16"
+        "Desc": "Clear Main Stage 39-16"
     },
     {
         "Id": 1007216,
         "Type": 10105.0,
         "Params": "[10380117]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u5173\u536139-17"
+        "Desc": "Clear Main Stage 39-17"
     },
     {
         "Id": 1007217,
         "Type": 10105.0,
         "Params": "[10380118]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u5173\u536139-18"
+        "Desc": "Clear Main Stage 39-18"
     },
     {
         "Id": 1007218,
         "Type": 10105.0,
         "Params": "[10380119]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u5173\u536139-19"
+        "Desc": "Clear Main Stage 39-19"
     },
     {
         "Id": 1007219,
         "Type": 10105.0,
         "Params": "[10380120]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u5173\u536139-20"
+        "Desc": "Clear Main Stage 39-20"
     },
     {
         "Id": 1007220,
         "Type": 10105.0,
         "Params": "[10380121]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u5173\u536139-21"
+        "Desc": "Clear Main Stage 39-21"
     },
     {
         "Id": 1007221,
         "Type": 10105.0,
         "Params": "[10380122]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u4e3b\u7ebf\u5173\u536139-22"
+        "Desc": "Clear Main Stage 39-22"
     },
     {
         "Id": 1007222,
         "Type": 10191.0,
         "Params": "[203]",
         "Formula": null,
-        "Desc": "\u51fb\u8d25\u5f53\u524d\u6240\u6709\u654c\u4eba"
+        "Desc": "Defeat all enemies"
     },
     {
         "Id": 1007223,
         "Type": 10191.0,
         "Params": "[206]",
         "Formula": null,
-        "Desc": "\u51fb\u8d25\u5730\u56fe\u6700\u53f3\u4fa7\u7684\u654c\u4eba"
+        "Desc": "Defeat the enemies on the far right of the map"
     },
     {
         "Id": 1007224,
         "Type": 10191.0,
         "Params": "[208]",
         "Formula": null,
-        "Desc": "\u51fb\u8d25\u5f53\u524d\u6240\u6709\u654c\u4eba"
+        "Desc": "Defeat all enemies"
     },
     {
         "Id": 1007225,
         "Type": 10191.0,
         "Params": "[209]",
         "Formula": null,
-        "Desc": "\u51fb\u8d25\u5f53\u524d\u6240\u6709\u654c\u4eba"
+        "Desc": "Defeat all enemies"
     },
     {
         "Id": 1007226,
         "Type": 10191.0,
         "Params": "[210, 211, 212, 213]",
         "Formula": null,
-        "Desc": "\u51fb\u8d25\u5f53\u524d\u6240\u6709\u654c\u4eba"
+        "Desc": "Defeat all enemies"
     },
     {
         "Id": 1007227,
         "Type": 10191.0,
         "Params": "[214, 215]",
         "Formula": null,
-        "Desc": "\u51fb\u8d25\u5f53\u524d\u9632\u5fa1\u529b\u8f83\u4f4e\u7684\u654c\u4eba"
+        "Desc": "Defeat enemies whose DEF is currently lower"
     },
     {
         "Id": 1007228,
         "Type": 10191.0,
         "Params": "[224, 225, 226, 229, 230, 232, 234, 236, 237, 238]",
         "Formula": null,
-        "Desc": "\u51fb\u8d25\u5f53\u524d\u6240\u6709\u654c\u4eba"
+        "Desc": "Defeat all enemies"
     },
     {
         "Id": 1007229,
         "Type": 10191.0,
         "Params": "[224]",
         "Formula": null,
-        "Desc": "\u51fb\u8d25\u5f53\u524d\u6240\u6709\u654c\u4eba"
+        "Desc": "Defeat all enemies"
     },
     {
         "Id": 1007230,
         "Type": 10191.0,
         "Params": "[225]",
         "Formula": null,
-        "Desc": "\u51fb\u8d25\u5f53\u524d\u6240\u6709\u654c\u4eba"
+        "Desc": "Defeat all enemies"
     },
     {
         "Id": 1007231,
         "Type": 10191.0,
         "Params": "[226]",
         "Formula": null,
-        "Desc": "\u51fb\u8d25\u5f53\u524d\u6240\u6709\u654c\u4eba"
+        "Desc": "Defeat all enemies"
     },
     {
         "Id": 1007232,
         "Type": 10191.0,
         "Params": "[227]",
         "Formula": null,
-        "Desc": "\u51fb\u8d25\u5f53\u524d\u6240\u6709\u654c\u4eba"
+        "Desc": "Defeat all enemies"
     },
     {
         "Id": 1007233,
         "Type": 10191.0,
         "Params": "[228]",
         "Formula": null,
-        "Desc": "\u51fb\u8d25\u5f53\u524d\u6240\u6709\u654c\u4eba"
+        "Desc": "Defeat all enemies"
     },
     {
         "Id": 1007234,
         "Type": 10191.0,
         "Params": "[229]",
         "Formula": null,
-        "Desc": "\u51fb\u8d25\u5f53\u524d\u6240\u6709\u654c\u4eba"
+        "Desc": "Defeat all enemies"
     },
     {
         "Id": 1007235,
         "Type": 10191.0,
         "Params": "[230]",
         "Formula": null,
-        "Desc": "\u51fb\u8d25\u5f53\u524d\u6240\u6709\u654c\u4eba"
+        "Desc": "Defeat all enemies"
     },
     {
         "Id": 1007236,
         "Type": 10191.0,
         "Params": "[231]",
         "Formula": null,
-        "Desc": "\u51fb\u8d25\u5f53\u524d\u6240\u6709\u654c\u4eba"
+        "Desc": "Defeat all enemies"
     },
     {
         "Id": 1007237,
         "Type": 10191.0,
         "Params": "[232]",
         "Formula": null,
-        "Desc": "\u51fb\u8d25\u5f53\u524d\u6240\u6709\u654c\u4eba"
+        "Desc": "Defeat all enemies"
     },
     {
         "Id": 1007238,
         "Type": 10191.0,
         "Params": "[233]",
         "Formula": null,
-        "Desc": "\u51fb\u8d25\u5f53\u524d\u6240\u6709\u654c\u4eba"
+        "Desc": "Defeat all enemies"
     },
     {
         "Id": 1007239,
         "Type": 10191.0,
         "Params": "[234]",
         "Formula": null,
-        "Desc": "\u51fb\u8d25\u5f53\u524d\u6240\u6709\u654c\u4eba"
+        "Desc": "Defeat all enemies"
     },
     {
         "Id": 1007240,
         "Type": 10191.0,
         "Params": "[235]",
         "Formula": null,
-        "Desc": "\u51fb\u8d25\u5f53\u524d\u6240\u6709\u654c\u4eba"
+        "Desc": "Defeat all enemies"
     },
     {
         "Id": 1007241,
         "Type": 10191.0,
         "Params": "[236]",
         "Formula": null,
-        "Desc": "\u51fb\u8d25\u5f53\u524d\u6240\u6709\u654c\u4eba"
+        "Desc": "Defeat all enemies"
     },
     {
         "Id": 1007242,
         "Type": 10191.0,
         "Params": "[237]",
         "Formula": null,
-        "Desc": "\u51fb\u8d25\u5f53\u524d\u6240\u6709\u654c\u4eba"
+        "Desc": "Defeat all enemies"
     },
     {
         "Id": 1007243,
         "Type": 10191.0,
         "Params": "[238]",
         "Formula": null,
-        "Desc": "\u51fb\u8d25\u5f53\u524d\u6240\u6709\u654c\u4eba"
+        "Desc": "Defeat all enemies"
     },
     {
         "Id": 1007244,
         "Type": 10191.0,
         "Params": "[201]",
         "Formula": null,
-        "Desc": "\u51fb\u8d25\u5f53\u524d\u6240\u6709\u654c\u4eba"
+        "Desc": "Defeat all enemies"
     },
     {
         "Id": 1007245,
         "Type": 10191.0,
         "Params": "[202]",
         "Formula": null,
-        "Desc": "\u51fb\u8d25\u6307\u5b9a\u654c\u4eba"
+        "Desc": "Defeat the designated enemy"
     },
     {
         "Id": 1008102,
@@ -54133,9 +55064,9 @@
     {
         "Id": 1020005,
         "Type": 10101.0,
-        "Params": "[80]",
+        "Params": "[70]",
         "Formula": null,
-        "Desc": "Reach Commandant Level 80"
+        "Desc": "Reach Commandant Level 70"
     },
     {
         "Id": 1020007,
@@ -61856,35 +62787,35 @@
         "Type": 17402.0,
         "Params": "[70019, 1]",
         "Formula": null,
-        "Desc": "\u8fbe\u6210\u7ec8\u7ae0\u7ed3\u5c40\u6625\u6668\u6761\u4ef6-\u901a\u8fc7\u7ec8\u7ae0\u5730\u56feBoss\u524d\u4e8b\u4ef6"
+        "Desc": "Meet the conditions for the Spring Dawn ending by clearing the pre-boss event on the final chapter map"
     },
     {
         "Id": 1020920,
         "Type": null,
         "Params": null,
         "Formula": "1020772&1020838&1020856&1020626&1020769&1020919",
-        "Desc": "\u8fbe\u6210\u7ec8\u7ae0\u7ed3\u5c40-\u5927\u4e8e\u7b2c\u4e00\u7ae0\u9009\u62e9\u53d1\u5c55\u79d1\u6280\u8def\u7ebf\u8fbe\u6210\u8fc7\u771f\u5047\u7ed3\u5c40\u89c9\u9192\u503c\u5927\u4e8e200\u4e14\u5728\u7ec8\u7ae0\u5730\u56fe\u91cc\u8fbe\u6210\u8fc7boss\u524d\u4e8b\u4ef6"
+        "Desc": "Conditions of final chapter ending: Clear Chapter 1, select to develop tech route, achieved both true and false endings, reach 200+ Awaken Points, and complete the pre-boss event on the final chapter map"
     },
     {
         "Id": 1020921,
         "Type": null,
         "Params": null,
         "Formula": "1020772&1020837&1020838&1020856&1020718",
-        "Desc": "\u8fbe\u523070\u89c9\u9192\u503c\u4e14\u9009\u53d1\u5c55\u79d1\u6280\u4e14\u5df2\u901a\u5173\u771f\u5047\u7ed3\u5c40\u8fdb\u7ec8\u7ae0\u7ed3\u5c40\u56fe-\u4f4e\u96be"
+        "Desc": "Reach 70 Awaken Points, select to develop tech, clear both true and false endings, and enter the final chapter ending picture (Low difficulty)"
     },
     {
         "Id": 1020922,
         "Type": null,
         "Params": null,
         "Formula": "1020772&1020837&1020838&1020856&1020719",
-        "Desc": "\u8fbe\u523070\u89c9\u9192\u503c\u4e14\u9009\u53d1\u5c55\u79d1\u6280\u4e14\u5df2\u901a\u5173\u771f\u5047\u7ed3\u5c40\u8fdb\u7ec8\u7ae0\u7ed3\u5c40\u56fe-\u9ad8\u96be"
+        "Desc": "Reach 70 Awaken Points, select to develop tech, clear both true and false endings, and enter the final chapter ending picture (High difficulty)"
     },
     {
         "Id": 1020923,
         "Type": 17411.0,
         "Params": "[13, 1]",
         "Formula": null,
-        "Desc": "\u8fbe\u6210\u7ed3\u5c40\u3010\u6625\u6668\u3011"
+        "Desc": "Achieve the ending [Spring Dawn]"
     },
     {
         "Id": 1030001,
@@ -62939,35 +63870,35 @@
     {
         "Id": 1050107,
         "Type": 10333.0,
-        "Params": "[1, 32]",
+        "Params": "[1, 1, 32]",
         "Formula": null,
         "Desc": "Commandant selected Tsubaki"
     },
     {
         "Id": 1050108,
         "Type": 10333.0,
-        "Params": "[1, 33]",
+        "Params": "[1, 1, 33]",
         "Formula": null,
         "Desc": "Commandant selected Solitary Longings"
     },
     {
         "Id": 1050109,
         "Type": 10333.0,
-        "Params": "[1, 34]",
+        "Params": "[1, 1, 34]",
         "Formula": null,
         "Desc": "Commandant selected Solitary Dream"
     },
     {
         "Id": 1050110,
         "Type": 10334.0,
-        "Params": "[1]",
+        "Params": "[1, 1]",
         "Formula": null,
         "Desc": "3.3 Choice Pool not selected"
     },
     {
         "Id": 1050111,
         "Type": 10335.0,
-        "Params": "[1]",
+        "Params": "[1, 1]",
         "Formula": null,
         "Desc": "3.3 Choice Pool selected"
     },
@@ -63660,35 +64591,35 @@
     {
         "Id": 1050210,
         "Type": 10333.0,
-        "Params": "[2, 36]",
+        "Params": "[1, 2, 36]",
         "Formula": null,
         "Desc": "Commandant selected Love's Dawn"
     },
     {
         "Id": 1050211,
         "Type": 10333.0,
-        "Params": "[2, 37]",
+        "Params": "[1, 2, 37]",
         "Formula": null,
         "Desc": "Commandant selected Tsubaki"
     },
     {
         "Id": 1050212,
         "Type": 10333.0,
-        "Params": "[2, 38]",
+        "Params": "[1, 2, 38]",
         "Formula": null,
         "Desc": "Commandant selected Solitary Longings"
     },
     {
         "Id": 1050213,
         "Type": 10333.0,
-        "Params": "[2, 39]",
+        "Params": "[1, 2, 39]",
         "Formula": null,
         "Desc": "Commandant selected Solitary Dream"
     },
     {
         "Id": 1050214,
         "Type": 10334.0,
-        "Params": "[2]",
+        "Params": "[1, 2]",
         "Formula": null,
         "Desc": "3.8 Choice Pool not selected"
     },
@@ -64729,6 +65660,20 @@
         "Desc": "\u8089\u9e3d5\u4efb\u52a1\u5956\u52b1-6103x-\u8fde\u7eed\u80dc\u5229\u6b21\u6570>=4"
     },
     {
+        "Id": 1050364,
+        "Type": 17803.0,
+        "Params": "[2, 7]",
+        "Formula": null,
+        "Desc": "Roguelike 5 Accessory - 40201-40207 - Rounds>=7"
+    },
+    {
+        "Id": 1050365,
+        "Type": 17803.0,
+        "Params": "[3, 6]",
+        "Formula": null,
+        "Desc": "Roguelike 5 Accessory - 40201-40207 - Rounds<=6"
+    },
+    {
         "Id": 1060001,
         "Type": 10159.0,
         "Params": "[1, 1968, 1, 2, 2]",
@@ -64885,65 +65830,107 @@
     {
         "Id": 1060023,
         "Type": 10159.0,
-        "Params": "[1, 1742, 1, 2, 3, 1]",
+        "Params": "[1, 90842, 1, 2, 3, 1]",
         "Formula": null,
-        "Desc": "\u8d2d\u4e70lv20\u52cb\u4e1a\u793c\u5305"
+        "Desc": "Purchase Lv.20 Meritorious Pack"
     },
     {
         "Id": 1060024,
         "Type": 10159.0,
-        "Params": "[1, 1743, 1, 2, 3, 1]",
+        "Params": "[1, 90843, 1, 2, 3, 1]",
         "Formula": null,
-        "Desc": "\u8d2d\u4e70lv40\u52cb\u4e1a\u793c\u5305"
+        "Desc": "Purchase Lv.40 Meritorious Pack"
     },
     {
         "Id": 1060025,
         "Type": 10159.0,
-        "Params": "[1, 1744, 1, 2, 3, 1]",
+        "Params": "[1, 90844, 1, 2, 3, 1]",
         "Formula": null,
-        "Desc": "\u8d2d\u4e70lv60\u52cb\u4e1a\u793c\u5305"
+        "Desc": "Purchase Lv.60 Meritorious Pack"
     },
     {
         "Id": 1060026,
         "Type": 10159.0,
-        "Params": "[1, 1745, 1, 2, 3, 1]",
+        "Params": "[1, 90845, 1, 2, 3, 1]",
         "Formula": null,
-        "Desc": "\u8d2d\u4e70lv80\u52cb\u4e1a\u793c\u5305"
+        "Desc": "Purchase Lv.80 Meritorious Pack"
     },
     {
         "Id": 1060027,
         "Type": 10159.0,
-        "Params": "[1, 1746, 5, 2, 3, 1]",
+        "Params": "[1, 90846, 5, 2, 3, 1]",
         "Formula": null,
-        "Desc": "\u8d2d\u4e70\u6210\u5458\u52a0\u901f\u5305"
+        "Desc": "Purchase Construct Booster Pack"
     },
     {
         "Id": 1060028,
         "Type": 10159.0,
-        "Params": "[1, 1747, 3, 2, 3, 1]",
+        "Params": "[1, 90847, 3, 2, 3, 1]",
         "Formula": null,
-        "Desc": "\u8d2d\u4e70\u6b66\u5668\u52a0\u901f\u5305"
+        "Desc": "Purchase Weapon Booster Pack"
     },
     {
         "Id": 1060029,
         "Type": 10159.0,
-        "Params": "[1, 1748, 3, 2, 3, 1]",
+        "Params": "[1, 90848, 3, 2, 3, 1]",
         "Formula": null,
-        "Desc": "\u8d2d\u4e70\u8f85\u52a9\u673a\u52a0\u901f\u5305"
+        "Desc": "Purchase CUB Booster Pack"
     },
     {
         "Id": 1060030,
         "Type": null,
         "Params": null,
         "Formula": "1060023&1060024&1060025&1060026&1060027&1060028&1060029",
-        "Desc": "\u52cb\u4e1a\u8865\u7ed9\u5305\u5168\u90e8\u8d2d\u4e70\u5b8c\u6bd5"
+        "Desc": "All Meritorious Supply Packs purchased"
     },
     {
         "Id": 1060031,
         "Type": 10341.0,
-        "Params": "[3, 2, 1]",
+        "Params": "[1, 2, 1]",
         "Formula": null,
         "Desc": "4.3\u53ef\u809d\u5361\u6c60\u4efb\u52a1\u4ee3\u5e01\u4e0a\u9650\u5224\u65ad"
+    },
+    {
+        "Id": 1060032,
+        "Type": 10159.0,
+        "Params": "[1, 2049, 0, 1]",
+        "Formula": null,
+        "Desc": "BUTTER DOG Stamp 1"
+    },
+    {
+        "Id": 1060033,
+        "Type": 10159.0,
+        "Params": "[1, 2050, 0, 1]",
+        "Formula": null,
+        "Desc": "BUTTER DOG Stamp 2"
+    },
+    {
+        "Id": 1060034,
+        "Type": 10159.0,
+        "Params": "[1, 2051, 0, 1]",
+        "Formula": null,
+        "Desc": "BUTTER DOG Stamp 3"
+    },
+    {
+        "Id": 1060035,
+        "Type": 10159.0,
+        "Params": "[1, 2052, 0, 1]",
+        "Formula": null,
+        "Desc": "BUTTER DOG Stamp 4"
+    },
+    {
+        "Id": 1060036,
+        "Type": 10159.0,
+        "Params": "[1, 2053, 0, 1]",
+        "Formula": null,
+        "Desc": "BUTTER DOG Weapon Pack"
+    },
+    {
+        "Id": 1060037,
+        "Type": null,
+        "Params": null,
+        "Formula": "1060032|1060033|1060034|1060035|1060036",
+        "Desc": "\u9ec4\u6cb9\u5c0f\u72d7\u793c\u5305\u6709\u4e00\u4e2a\u6ca1\u4e70"
     },
     {
         "Id": 900000001,
@@ -65503,70 +66490,70 @@
         "Type": null,
         "Params": null,
         "Formula": "863124&863125",
-        "Desc": "\u6307\u6325\u5b98\u7b49\u7ea7\u8fbe\u523040\u7ea7\uff0c\u4e14\u5b8c\u6210\u7a7a\u4e2d\u82b1\u56ed\u5f15\u822a\u4efb\u52a1\u300c\u9038\u65f6\u9080\u7ea6\u300d"
+        "Desc": "Reach Commandant Lv.40 and complete Babylonia Pilotage mission [Leisure Time Invitation]"
     },
     {
         "Id": 863124,
         "Type": 10101.0,
         "Params": "[40]",
         "Formula": null,
-        "Desc": "\u6307\u6325\u5b98\u7b49\u7ea7\u8fbe\u523040\u7ea7\u540e\u89e3\u9501"
+        "Desc": "Unlocks at Commandant Lv.40"
     },
     {
         "Id": 863125,
         "Type": 10111.0,
         "Params": "[99712]",
         "Formula": null,
-        "Desc": "\u5b8c\u6210\u7a7a\u4e2d\u82b1\u56ed\u5f15\u822a\u4efb\u52a1\u300c\u9038\u65f6\u9080\u7ea6\u300d\u540e\u89e3\u9501"
+        "Desc": "Complete Babylonia Pilotage mission [Leisure Time Invitation] to unlock"
     },
     {
         "Id": 863126,
         "Type": 10111.0,
         "Params": "[99713]",
         "Formula": null,
-        "Desc": "\u3010\u5bf9\u73a9\u5bb6\u4e0d\u53ef\u89c1\u3011\u5b8c\u62104.2\u7f57\u585e\u5854\u4e3b\u7ebf\u4efb\u52a1"
+        "Desc": "[Not Visible to Players] Complete Rosetta Main Mission 4.2"
     },
     {
         "Id": 863127,
         "Type": null,
         "Params": null,
         "Formula": "863128&863129",
-        "Desc": "\u3010\u5bf9\u73a9\u5bb6\u4e0d\u53ef\u89c1\u3011\u7a7a\u4e2d\u82b1\u56ed\u662f\u5426\u9700\u8981\u89e6\u53d1\u4e3b\u754c\u9762\u5f3a\u5f15\u5bfc"
+        "Desc": "[Not Visible to Players] Whether Babylonia needs to trigger forced tutorial on main interface"
     },
     {
         "Id": 863128,
         "Type": 23101.0,
         "Params": "[400, 0]",
         "Formula": null,
-        "Desc": "\u3010\u5bf9\u73a9\u5bb6\u4e0d\u53ef\u89c1\u3011\u5224\u65ad\u73a9\u5bb6\u662f\u5426\u8fdb\u5165\u8fc7\u7a7a\u82b1\uff0c\u7528\u4ee5\u5224\u65ad\u662f\u5426\u9700\u8981\u89e6\u53d1\u4e3b\u754c\u9762\u5f3a\u5f15\u5bfc"
+        "Desc": "[Not Visible to Players] Check if the player has entered Babylonia before, to determine whether to trigger forced tutorial on main interface"
     },
     {
         "Id": 863129,
         "Type": 10101.0,
         "Params": "[40]",
         "Formula": null,
-        "Desc": "\u3010\u5bf9\u73a9\u5bb6\u4e0d\u53ef\u89c1\u3011\u6307\u6325\u5b98\u7b49\u7ea7\u8fbe\u523040\u7ea7"
+        "Desc": "[Not Visible to Players] Commandant reaches Lv.40"
     },
     {
         "Id": 863130,
         "Type": 10502.0,
         "Params": "[97078, 10]",
         "Formula": null,
-        "Desc": "\u7d2f\u8ba1\u83b7\u5f9710\u78ec\u7eb9\u5c81\u7b26"
+        "Desc": "Obtain 10 Chime Talismans in total"
     },
     {
         "Id": 863131,
         "Type": 10502.0,
         "Params": "[97078, 3000]",
         "Formula": null,
-        "Desc": "\u7d2f\u8ba1\u83b7\u5f973000\u78ec\u7eb9\u5c81\u7b26"
+        "Desc": "Obtain 3000 Chime Talismans in total"
     },
     {
         "Id": 863132,
         "Type": 10502.0,
         "Params": "[97078, 3000]",
         "Formula": null,
-        "Desc": "\u7d2f\u8ba1\u83b7\u5f973000\u78ec\u7eb9\u5c81\u7b26"
+        "Desc": "Obtain 3000 Chime Talismans in total"
     },
     {
         "Id": 863133,
@@ -65639,6 +66626,55 @@
         "Desc": "\u5f15\u5bfc-\u7f57\u585e\u5854\u4e3b\u7ebf-\u5df2\u5b8c\u6210\u5f15\u5bfc64421"
     },
     {
+        "Id": 863143,
+        "Type": 23001.0,
+        "Params": "[45502]",
+        "Formula": null,
+        "Desc": "Guide - Mini RPG 2.0 Watanabe Stage opening time"
+    },
+    {
+        "Id": 863144,
+        "Type": 20303.0,
+        "Params": null,
+        "Formula": null,
+        "Desc": "\u5f15\u5bfc-\u6218\u53cc\u571f\u8c46\u5144\u5f1f\u5224\u65ad\u5546\u5e97\u6709\u65e0\u53ef\u5347\u9636\u4fe1\u53f7\u7403"
+    },
+    {
+        "Id": 863145,
+        "Type": 10237.0,
+        "Params": "[101]",
+        "Formula": null,
+        "Desc": "\u5f15\u5bfc-\u795e\u5a01\u5927\u8fde\u7ebf\u5904\u4e8e\u5173\u5361101"
+    },
+    {
+        "Id": 863146,
+        "Type": 10237.0,
+        "Params": "[102]",
+        "Formula": null,
+        "Desc": "\u5f15\u5bfc-\u795e\u5a01\u5927\u8fde\u7ebf\u5904\u4e8e\u5173\u5361102"
+    },
+    {
+        "Id": 863147,
+        "Type": 10237.0,
+        "Params": "[201]",
+        "Formula": null,
+        "Desc": "\u5f15\u5bfc-\u795e\u5a01\u5927\u8fde\u7ebf\u5904\u4e8e\u5173\u5361201"
+    },
+    {
+        "Id": 863148,
+        "Type": 10237.0,
+        "Params": "[301]",
+        "Formula": null,
+        "Desc": "\u5f15\u5bfc-\u795e\u5a01\u5927\u8fde\u7ebf\u5904\u4e8e\u5173\u5361301"
+    },
+    {
+        "Id": 863149,
+        "Type": 10237.0,
+        "Params": "[401]",
+        "Formula": null,
+        "Desc": "\u5f15\u5bfc-\u795e\u5a01\u5927\u8fde\u7ebf\u5904\u4e8e\u5173\u5361401"
+    },
+    {
         "Id": 863200,
         "Type": 10101.0,
         "Params": "[30]",
@@ -65650,7 +66686,7 @@
         "Type": 10164.0,
         "Params": "[99037]",
         "Formula": null,
-        "Desc": "\u672a\u5b8c\u6210\u6d85\u7f07\u5a05\u597d\u611f\u9650\u65f6\u4efb\u52a1"
+        "Desc": "Nirvatia Affection limited-time mission incomplete"
     },
     {
         "Id": 863202,
@@ -65679,6 +66715,314 @@
         "Params": null,
         "Formula": "863200&863201&863204",
         "Desc": "\u6307\u6325\u5b98\u7b49\u7ea7\u5230\u8fbe30\u7ea7\u4e14\u672a\u5b8c\u6210\u6d85\u7f07\u5a05\u597d\u611f\u9650\u65f6\u4efb\u52a199037\u4e14\u5728\u6d3b\u52a8\u65f6\u95f4\u5185"
+    },
+    {
+        "Id": 863210,
+        "Type": 17427.0,
+        "Params": "[101, 1]",
+        "Formula": null,
+        "Desc": "\u6307\u5c16\u9632\u536b\u6218-101\u56de\u54081"
+    },
+    {
+        "Id": 863211,
+        "Type": 17427.0,
+        "Params": "[102, 1]",
+        "Formula": null,
+        "Desc": "\u6307\u5c16\u9632\u536b\u6218-102\u56de\u54081"
+    },
+    {
+        "Id": 863212,
+        "Type": 17427.0,
+        "Params": "[102, 4]",
+        "Formula": null,
+        "Desc": "\u6307\u5c16\u9632\u536b\u6218-102\u56de\u54084"
+    },
+    {
+        "Id": 863213,
+        "Type": 17427.0,
+        "Params": "[201, 1]",
+        "Formula": null,
+        "Desc": "\u6307\u5c16\u9632\u536b\u6218-201\u56de\u54081"
+    },
+    {
+        "Id": 863214,
+        "Type": 17427.0,
+        "Params": "[202, 1]",
+        "Formula": null,
+        "Desc": "\u6307\u5c16\u9632\u536b\u6218-202\u56de\u54081"
+    },
+    {
+        "Id": 863215,
+        "Type": 17427.0,
+        "Params": "[301, 1]",
+        "Formula": null,
+        "Desc": "\u6307\u5c16\u9632\u536b\u6218-301\u56de\u54081"
+    },
+    {
+        "Id": 863216,
+        "Type": 17427.0,
+        "Params": "[302, 1]",
+        "Formula": null,
+        "Desc": "\u6307\u5c16\u9632\u536b\u6218-302\u56de\u54081"
+    },
+    {
+        "Id": 863217,
+        "Type": 17427.0,
+        "Params": "[401, 1]",
+        "Formula": null,
+        "Desc": "\u6307\u5c16\u9632\u536b\u6218-401\u56de\u54081"
+    },
+    {
+        "Id": 863218,
+        "Type": 17427.0,
+        "Params": "[402, 1]",
+        "Formula": null,
+        "Desc": "\u6307\u5c16\u9632\u536b\u6218-402\u56de\u54081"
+    },
+    {
+        "Id": 863219,
+        "Type": 17427.0,
+        "Params": "[601, 1]",
+        "Formula": null,
+        "Desc": "\u6307\u5c16\u9632\u536b\u6218-601\u56de\u54081"
+    },
+    {
+        "Id": 863220,
+        "Type": 17427.0,
+        "Params": "[602, 1]",
+        "Formula": null,
+        "Desc": "\u6307\u5c16\u9632\u536b\u6218-602\u56de\u54081"
+    },
+    {
+        "Id": 863221,
+        "Type": 17429.0,
+        "Params": "[102]",
+        "Formula": null,
+        "Desc": "\u6307\u5c16\u9632\u536b\u6218-102\u4e14\u5173\u95ed\u56fe\u6587"
+    },
+    {
+        "Id": 863222,
+        "Type": 17429.0,
+        "Params": "[201]",
+        "Formula": null,
+        "Desc": "\u6307\u5c16\u9632\u536b\u6218-201\u4e14\u5173\u95ed\u56fe\u6587"
+    },
+    {
+        "Id": 863223,
+        "Type": 17429.0,
+        "Params": "[301]",
+        "Formula": null,
+        "Desc": "\u6307\u5c16\u9632\u536b\u6218-301\u4e14\u5173\u95ed\u56fe\u6587"
+    },
+    {
+        "Id": 863224,
+        "Type": 17429.0,
+        "Params": "[401]",
+        "Formula": null,
+        "Desc": "\u6307\u5c16\u9632\u536b\u6218-401\u4e14\u5173\u95ed\u56fe\u6587"
+    },
+    {
+        "Id": 863225,
+        "Type": 17429.0,
+        "Params": "[601]",
+        "Formula": null,
+        "Desc": "\u6307\u5c16\u9632\u536b\u6218-601\u4e14\u5173\u95ed\u56fe\u6587"
+    },
+    {
+        "Id": 863230,
+        "Type": 10333.0,
+        "Params": "[3, 3, 41]",
+        "Formula": null,
+        "Desc": "\u6307\u6325\u5b98\u5b8c\u6210\u9009\u62e9\u4e14\u4e3a\u7f18\u7eba\u7948\u7cf8"
+    },
+    {
+        "Id": 863231,
+        "Type": 10333.0,
+        "Params": "[3, 3, 42]",
+        "Formula": null,
+        "Desc": "Commandant selected Love's Dawn"
+    },
+    {
+        "Id": 863232,
+        "Type": 10333.0,
+        "Params": "[3, 3, 43]",
+        "Formula": null,
+        "Desc": "Commandant selected Tsubaki"
+    },
+    {
+        "Id": 863233,
+        "Type": 10333.0,
+        "Params": "[3, 3, 44]",
+        "Formula": null,
+        "Desc": "Commandant selected Solitary Longings"
+    },
+    {
+        "Id": 863234,
+        "Type": 10333.0,
+        "Params": "[3, 4, 45]",
+        "Formula": null,
+        "Desc": "Commandant selected Love's Dawn"
+    },
+    {
+        "Id": 863235,
+        "Type": 10333.0,
+        "Params": "[3, 4, 46]",
+        "Formula": null,
+        "Desc": "Commandant selected Tsubaki"
+    },
+    {
+        "Id": 863236,
+        "Type": 10333.0,
+        "Params": "[3, 4, 47]",
+        "Formula": null,
+        "Desc": "Commandant selected Solitary Longings"
+    },
+    {
+        "Id": 863237,
+        "Type": 10333.0,
+        "Params": "[3, 4, 48]",
+        "Formula": null,
+        "Desc": "Commandant selected Solitary Dream"
+    },
+    {
+        "Id": 863238,
+        "Type": 10334.0,
+        "Params": "[3, 3]",
+        "Formula": null,
+        "Desc": "4.4\u672a\u9009\u62e9\u81ea\u9009\u5361\u6c60\uff08\u6709\u8d5b"
+    },
+    {
+        "Id": 863239,
+        "Type": 10334.0,
+        "Params": "[3, 4]",
+        "Formula": null,
+        "Desc": "4.4\u672a\u9009\u62e9\u81ea\u9009\u5361\u6c60\uff08\u6709\u6bd4"
+    },
+    {
+        "Id": 863240,
+        "Type": null,
+        "Params": null,
+        "Formula": "100000&774800&863238",
+        "Desc": "\u6307\u6325\u5b9840\u7ea7\u4e14\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c51-8\u4e14\u672a\u9009\u62e9\u7814\u53d1\uff08\u6709\u8d5b"
+    },
+    {
+        "Id": 863241,
+        "Type": null,
+        "Params": null,
+        "Formula": "100000&774800&863239",
+        "Desc": "\u6307\u6325\u5b9840\u7ea7\u4e14\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c51-8\u4e14\u672a\u9009\u62e9\u7814\u53d1\uff08\u6709\u6bd4"
+    },
+    {
+        "Id": 863242,
+        "Type": null,
+        "Params": null,
+        "Formula": "100000&774800&863230",
+        "Desc": "\u6307\u6325\u5b9840\u7ea7\u4e14\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c51-8\u4e14\u5b8c\u6210\u9009\u62e9\u4e3a\u7f18\u7eba\u7948\u7cf8"
+    },
+    {
+        "Id": 863243,
+        "Type": null,
+        "Params": null,
+        "Formula": "100000&774800&863231",
+        "Desc": "Commandant Lv.40 & Clear Main Story (Normal) 1-8 & Selected Love's Dawn"
+    },
+    {
+        "Id": 863244,
+        "Type": null,
+        "Params": null,
+        "Formula": "100000&774800&863232",
+        "Desc": "Commandant Lv.40 & Clear Main Story (Normal) 1-8 & Selected Tsubaki"
+    },
+    {
+        "Id": 863245,
+        "Type": null,
+        "Params": null,
+        "Formula": "100000&774800&863233",
+        "Desc": "Commandant Lv.40 & Clear Main Story (Normal) 1-8 & Selected Solitary Longings"
+    },
+    {
+        "Id": 863246,
+        "Type": null,
+        "Params": null,
+        "Formula": "100000&774800&863234",
+        "Desc": "Commandant Lv.40 & Clear Main Story (Normal) 1-8 & Selected Love's Dawn"
+    },
+    {
+        "Id": 863247,
+        "Type": null,
+        "Params": null,
+        "Formula": "100000&774800&863235",
+        "Desc": "Commandant Lv.40 & Clear Main Story (Normal) 1-8 & Selected Tsubaki"
+    },
+    {
+        "Id": 863248,
+        "Type": null,
+        "Params": null,
+        "Formula": "100000&774800&863236",
+        "Desc": "Commandant Lv.40 & Clear Main Story (Normal) 1-8 & Selected Solitary Longings"
+    },
+    {
+        "Id": 863249,
+        "Type": null,
+        "Params": null,
+        "Formula": "100000&774800&863237",
+        "Desc": "Commandant Lv.40 & Clear Main Story (Normal) 1-8 & Selected Solitary Dream"
+    },
+    {
+        "Id": 863250,
+        "Type": null,
+        "Params": null,
+        "Formula": "100000&774800&863230&6004805",
+        "Desc": "\u6307\u6325\u5b9840\u7ea7\u4e14\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c51-8\u4e14\u5b8c\u6210\u9009\u62e9\u4e3a\u7f18\u7eba\u7948\u7cf8\u4e14\u672a\u62e5\u6709\u8be5\u6d82\u88c5"
+    },
+    {
+        "Id": 863251,
+        "Type": null,
+        "Params": null,
+        "Formula": "100000&774800&863231&6004305",
+        "Desc": "\u6307\u6325\u5b9840\u7ea7\u4e14\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c51-8\u4e14\u5b8c\u6210\u9009\u62e9\u4e3a\u62c2\u6653\u957f\u8a93\u4e14\u672a\u62e5\u6709\u8be5\u6d82\u88c5"
+    },
+    {
+        "Id": 863252,
+        "Type": null,
+        "Params": null,
+        "Formula": "100000&774800&863232&6002907",
+        "Desc": "\u6307\u6325\u5b9840\u7ea7\u4e14\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c51-8\u4e14\u5b8c\u6210\u9009\u62e9\u4e3a\u8d64\u6a17\u693f\u4e14\u672a\u62e5\u6709\u8be5\u6d82\u88c5"
+    },
+    {
+        "Id": 863253,
+        "Type": null,
+        "Params": null,
+        "Formula": "100000&774800&863233&6003405",
+        "Desc": "\u6307\u6325\u5b9840\u7ea7\u4e14\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c51-8\u4e14\u5b8c\u6210\u9009\u62e9\u4e3a\u8315\u5fc3\u6eaf\u613f\u4e14\u672a\u62e5\u6709\u8be5\u6d82\u88c5"
+    },
+    {
+        "Id": 863254,
+        "Type": null,
+        "Params": null,
+        "Formula": "100000&774800&863234&6004305",
+        "Desc": "\u6307\u6325\u5b9840\u7ea7\u4e14\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c51-8\u4e14\u5b8c\u6210\u9009\u62e9\u4e3a\u62c2\u6653\u957f\u8a93\u4e14\u672a\u62e5\u6709\u8be5\u6d82\u88c5"
+    },
+    {
+        "Id": 863255,
+        "Type": null,
+        "Params": null,
+        "Formula": "100000&774800&863235&6002907",
+        "Desc": "\u6307\u6325\u5b9840\u7ea7\u4e14\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c51-8\u4e14\u5b8c\u6210\u9009\u62e9\u4e3a\u8d64\u6a17\u693f\u4e14\u672a\u62e5\u6709\u8be5\u6d82\u88c5"
+    },
+    {
+        "Id": 863256,
+        "Type": null,
+        "Params": null,
+        "Formula": "100000&774800&863236&6003405",
+        "Desc": "\u6307\u6325\u5b9840\u7ea7\u4e14\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c51-8\u4e14\u5b8c\u6210\u9009\u62e9\u4e3a\u8315\u5fc3\u6eaf\u613f\u4e14\u672a\u62e5\u6709\u8be5\u6d82\u88c5"
+    },
+    {
+        "Id": 863257,
+        "Type": null,
+        "Params": null,
+        "Formula": "100000&774800&863237&6002505",
+        "Desc": "\u6307\u6325\u5b9840\u7ea7\u4e14\u901a\u5173\u4e3b\u7ebf\u666e\u901a\u5267\u60c51-8\u4e14\u5b8c\u6210\u9009\u62e9\u4e3a\u62fe\u68a6\u767d\u83c0\u4e14\u672a\u62e5\u6709\u8be5\u6d82\u88c5"
     },
     {
         "Id": 864000,
@@ -65777,5 +67121,691 @@
         "Params": null,
         "Formula": "864011|864012",
         "Desc": null
+    },
+    {
+        "Id": 865000,
+        "Type": 20301.0,
+        "Params": "[30063125]",
+        "Formula": null,
+        "Desc": "Unlocks after clearing Stage 01"
+    },
+    {
+        "Id": 865001,
+        "Type": 20302.0,
+        "Params": "[2, 1, 3]",
+        "Formula": null,
+        "Desc": "Unlocks after unlocking 3 nodes in this stage"
+    },
+    {
+        "Id": 865002,
+        "Type": 20301.0,
+        "Params": "[30063129]",
+        "Formula": null,
+        "Desc": "Unlocks after clearing Stage 05"
+    },
+    {
+        "Id": 865003,
+        "Type": 20302.0,
+        "Params": "[2, 1, 5]",
+        "Formula": null,
+        "Desc": "Unlocks after unlocking at least 5 nodes in Stage 1"
+    },
+    {
+        "Id": 865004,
+        "Type": null,
+        "Params": null,
+        "Formula": "865002&865003",
+        "Desc": "Unlocks after clearing Stage 05 and unlocking prerequisite nodes."
+    },
+    {
+        "Id": 865005,
+        "Type": 20302.0,
+        "Params": "[2, 2, 3]",
+        "Formula": null,
+        "Desc": "Unlocks after unlocking 3 nodes in this stage"
+    },
+    {
+        "Id": 865006,
+        "Type": 20301.0,
+        "Params": "[30063131]",
+        "Formula": null,
+        "Desc": "Unlocks after clearing Stage 07"
+    },
+    {
+        "Id": 865007,
+        "Type": 20302.0,
+        "Params": "[2, 2, 5]",
+        "Formula": null,
+        "Desc": "Unlocks after unlocking at least 5 nodes in Stage 2"
+    },
+    {
+        "Id": 865008,
+        "Type": null,
+        "Params": null,
+        "Formula": "865006&865007",
+        "Desc": "Unlocks after clearing Stage 07 and unlocking prerequisite nodes."
+    },
+    {
+        "Id": 865009,
+        "Type": 20302.0,
+        "Params": "[2, 3, 5]",
+        "Formula": null,
+        "Desc": "Unlocks after unlocking 5 nodes in this stage"
+    },
+    {
+        "Id": 865010,
+        "Type": 20302.0,
+        "Params": "[2, 3, 3]",
+        "Formula": null,
+        "Desc": "Unlocks after unlocking 3 nodes in this stage"
+    },
+    {
+        "Id": 866111,
+        "Type": 10229.0,
+        "Params": "[100]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866112,
+        "Type": 10236.0,
+        "Params": "[1]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866121,
+        "Type": 10229.0,
+        "Params": "[100]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866122,
+        "Type": 10236.0,
+        "Params": "[1]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866123,
+        "Type": 10236.0,
+        "Params": "[2]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866131,
+        "Type": 10229.0,
+        "Params": "[100]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866132,
+        "Type": 10236.0,
+        "Params": "[1]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866133,
+        "Type": 10236.0,
+        "Params": "[2]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866141,
+        "Type": 10229.0,
+        "Params": "[100]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866142,
+        "Type": 10236.0,
+        "Params": "[1]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866143,
+        "Type": 10236.0,
+        "Params": "[2]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866151,
+        "Type": 10229.0,
+        "Params": "[100]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866152,
+        "Type": 10236.0,
+        "Params": "[1]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866153,
+        "Type": 10236.0,
+        "Params": "[2]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866161,
+        "Type": 10229.0,
+        "Params": "[100]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866162,
+        "Type": 10236.0,
+        "Params": "[1]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866163,
+        "Type": 10236.0,
+        "Params": "[2]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866171,
+        "Type": 10229.0,
+        "Params": "[100]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866172,
+        "Type": 10236.0,
+        "Params": "[1]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866173,
+        "Type": 10236.0,
+        "Params": "[2]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866181,
+        "Type": 10229.0,
+        "Params": "[100]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866182,
+        "Type": 10236.0,
+        "Params": "[1]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866183,
+        "Type": 10236.0,
+        "Params": "[2]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866211,
+        "Type": 10229.0,
+        "Params": "[100]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866212,
+        "Type": 10236.0,
+        "Params": "[1]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866213,
+        "Type": 10236.0,
+        "Params": "[2]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866221,
+        "Type": 10229.0,
+        "Params": "[100]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866222,
+        "Type": 10236.0,
+        "Params": "[1]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866223,
+        "Type": 10236.0,
+        "Params": "[2]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866231,
+        "Type": 10229.0,
+        "Params": "[100]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866232,
+        "Type": 10236.0,
+        "Params": "[1]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866233,
+        "Type": 10236.0,
+        "Params": "[3]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866241,
+        "Type": 10229.0,
+        "Params": "[100]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866242,
+        "Type": 10236.0,
+        "Params": "[1]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866243,
+        "Type": 10236.0,
+        "Params": "[3]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866251,
+        "Type": 10229.0,
+        "Params": "[100]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866252,
+        "Type": 10236.0,
+        "Params": "[1]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866253,
+        "Type": 10236.0,
+        "Params": "[3]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866261,
+        "Type": 10229.0,
+        "Params": "[100]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866262,
+        "Type": 10236.0,
+        "Params": "[1]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866263,
+        "Type": 10236.0,
+        "Params": "[3]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866271,
+        "Type": 10229.0,
+        "Params": "[100]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866272,
+        "Type": 10236.0,
+        "Params": "[1]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866273,
+        "Type": 10236.0,
+        "Params": "[3]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866311,
+        "Type": 10229.0,
+        "Params": "[100]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866312,
+        "Type": 10236.0,
+        "Params": "[1]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866313,
+        "Type": 10236.0,
+        "Params": "[2]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866321,
+        "Type": 10229.0,
+        "Params": "[100]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866322,
+        "Type": 10236.0,
+        "Params": "[1]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866323,
+        "Type": 10236.0,
+        "Params": "[2]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866331,
+        "Type": 10229.0,
+        "Params": "[100]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866332,
+        "Type": 10236.0,
+        "Params": "[1]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866333,
+        "Type": 10236.0,
+        "Params": "[2]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866341,
+        "Type": 10229.0,
+        "Params": "[100]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866342,
+        "Type": 10236.0,
+        "Params": "[1]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866343,
+        "Type": 10236.0,
+        "Params": "[3]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866351,
+        "Type": 10229.0,
+        "Params": "[100]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866352,
+        "Type": 10236.0,
+        "Params": "[1]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866353,
+        "Type": 10236.0,
+        "Params": "[3]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866361,
+        "Type": 10229.0,
+        "Params": "[100]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866362,
+        "Type": 10236.0,
+        "Params": "[1]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866363,
+        "Type": 10236.0,
+        "Params": "[3]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866371,
+        "Type": 10229.0,
+        "Params": "[100]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866372,
+        "Type": 10236.0,
+        "Params": "[1]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866373,
+        "Type": 10236.0,
+        "Params": "[3]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866411,
+        "Type": 10229.0,
+        "Params": "[100]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866412,
+        "Type": 10236.0,
+        "Params": "[1]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866413,
+        "Type": 10236.0,
+        "Params": "[2]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866421,
+        "Type": 10229.0,
+        "Params": "[100]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866422,
+        "Type": 10236.0,
+        "Params": "[1]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866423,
+        "Type": 10236.0,
+        "Params": "[3]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866431,
+        "Type": 10229.0,
+        "Params": "[100]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866432,
+        "Type": 10236.0,
+        "Params": "[1]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866433,
+        "Type": 10236.0,
+        "Params": "[3]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866441,
+        "Type": 10229.0,
+        "Params": "[100]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866442,
+        "Type": 10236.0,
+        "Params": "[1]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866443,
+        "Type": 10236.0,
+        "Params": "[3]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866451,
+        "Type": 10229.0,
+        "Params": "[100]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866452,
+        "Type": 10236.0,
+        "Params": "[1]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866453,
+        "Type": 10236.0,
+        "Params": "[3]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866461,
+        "Type": 10229.0,
+        "Params": "[100]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866462,
+        "Type": 10236.0,
+        "Params": "[1]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866463,
+        "Type": 10236.0,
+        "Params": "[4]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866471,
+        "Type": 10229.0,
+        "Params": "[100]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866472,
+        "Type": 10236.0,
+        "Params": "[1]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866473,
+        "Type": 10236.0,
+        "Params": "[4]",
+        "Formula": null,
+        "Desc": null
+    },
+    {
+        "Id": 866500,
+        "Type": 20113.0,
+        "Params": null,
+        "Formula": null,
+        "Desc": "80294\u5168\u5305\u62e6\u622a"
     }
 ]

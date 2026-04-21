@@ -775,6 +775,23 @@ function XLuaUi:DoAlpha(canvasGroup, startAlpha, tarAlpha, duration, easeType, c
     self:_AddTimerId(tweenTimerId)
     return tweenTimerId
 end
+
+--- 延时执行方法（单位：秒）
+--- 自动管理定时器
+function XLuaUi:DelayCall(func, delayTime)
+    local delayTimeRaw = math.floor(delayTime * XScheduleManager.SECOND)
+    
+    local timeId = XScheduleManager.ScheduleOnce(func, delayTimeRaw)
+    self:_AddTimerId(timeId)
+end
+
+--- 延时执行方法（单位：毫秒）
+--- 自动管理定时器
+function XLuaUi:DelayCallRaw(func, delayTime)
+    local timeId = XScheduleManager.ScheduleOnce(func, delayTime)
+    self:_AddTimerId(timeId)
+end
+
 --endregion
 --endregion
 

@@ -3,9 +3,13 @@ local type = type
 
 local _class = {}
 local _classNameDic = nil
+local _className2Partial = nil
+local _partialClassPath2PartialKey = nil
 
 if XMain.IsEditorDebug then
     _classNameDic = {}
+    _className2Partial = {} -- 类名映射分部类路径，用于热重载
+    _partialClassPath2PartialKey = {} -- 分部类路径映射分部类自己定义的字段名，用于热重载
 end
 
 local _classNameDicForPartial = {}
@@ -41,6 +45,17 @@ function XClass(super, className, setPartial)
 
                 for i, k in ipairs(keyList) do
                     rawset(vtbl, k, nil)
+                end
+            end
+            
+            -- 热重载重定义时要将分部类的文件给卸载了
+            if setPartial then
+                local partialClassPaths = _className2Partial[className]
+
+                if not XTool.IsTableEmpty(partialClassPaths) then
+                    for path, _ in pairs(partialClassPaths) do
+                        package.loaded[path] = nil
+                    end
                 end
             end
             
@@ -132,8 +147,61 @@ function XClassPartial(className)
     if class == nil then
         XLog.Error('定义分部类时，该类未设置为分部类或不存在：' .. className)
     end
-    
+
+    if XMain.IsEditorDebug and class then
+        local path = string.gsub(getinfo(2, "S").source, '@', '')
+
+        -- debug环境下分部类的定义多套一层，用于记录分部类定义的key，在热重载时单独清空
+        local realCls = {}
+        
+        local metaUseClass = class
+
+        setmetatable(realCls, {
+            __index = function(tab, key)
+                return metaUseClass[key]
+            end,
+
+            __newindex = function(tab, key, value)
+                -- 记录
+                local partialKeyList = _partialClassPath2PartialKey[path] or {}
+
+                partialKeyList[key] = true
+
+                _partialClassPath2PartialKey[path] = partialKeyList
+
+                metaUseClass[key] = value
+            end
+        })
+
+        -- 针对热重载的情况，定义前先清空以往定义的内容
+        local partialKeyList = _partialClassPath2PartialKey[path]
+
+        if not XTool.IsTableEmpty(partialKeyList) then
+            local vtbl = _class[class]
+            
+            for key, _ in pairs(partialKeyList) do
+                vtbl[key] = nil
+            end
+        end
+        
+        -- 返回包了一层的实例
+        class = realCls
+    end
+
     return class
+end
+
+function XClassPartialRequire(path, className)
+    if XMain.IsEditorDebug then
+        -- 将该路径与对应的类关联起来，以便热重载时清空
+        local partialClassPath = _className2Partial[className] or {}
+        
+        partialClassPath[path] = true
+        
+        _className2Partial[className] = partialClassPath
+    end
+    
+    return require(path)
 end
 
 function GetClassVirtualTable(class)

@@ -295,12 +295,10 @@ function XUiGachaSelenaMain:PlayLongEnableAnim()
     local animEnableLong = self.Panel3D.AnimEnableLong:GetComponent("PlayableDirector")
     self._Volume:PlayStart()
     self.Panel3D.AnimStart1:StopTimelineAnimation()
+    self.Panel3D.AnimEnableLong.gameObject:SetActiveEx(true)
+    timeEnableLong.gameObject:SetActiveEx(true)
     self:PlayAnimation("AnimEnableLong")
-    self:_PlayAnimNextFrame(function()
-        self.Panel3D.AnimEnableLong.gameObject:SetActiveEx(true)
-        timeEnableLong.gameObject:SetActiveEx(true)
-        self:_PlayTimeLineAnim(self.Panel3D.AnimEnableLong)
-    end)
+    self:_PlayTimeLineAnim(self.Panel3D.AnimEnableLong)
     self.SafeAreaContentPane.blocksRaycasts = false
     self._LongAnimTimer = XScheduleManager.ScheduleOnce(function()
         self.Panel3D.AnimEnableLong.gameObject:SetActiveEx(false)
@@ -793,7 +791,10 @@ function XUiGachaSelenaMain:ShowWeaponFashion()
         XDataCenter.LottoManager.ClearWeaponFashionCacheReward()
         local data = cacheReward
         local rewards = { { TemplateId = data.ItemId, Count = data.ItemCount } }
-        XUiManager.OpenUiObtain(rewards)
+        -- 防止UiObtain截背景图截到黑幕
+        XScheduleManager.ScheduleOnce(function()
+            XUiManager.OpenUiObtain(rewards)
+        end, 500)
     end
 end
 

@@ -70,12 +70,38 @@ end
 
 function XUiPanelSocialMyMsgEmojiItem:Refresh(chatData)
     local icon = XDataCenter.ChatManager.GetEmojiIcon(chatData.Content)
-    if icon ~= nil then
-        self.RImgEmoji:SetRawImage(icon)
+    local emojiId = tonumber(chatData.Content)
+    if emojiId and icon then
+        local isDynamicEmoji = XDataCenter.ChatManager.IsDynamicEmoji(emojiId)
+        self.RImgEmoji.gameObject:SetActiveEx(not isDynamicEmoji)
+        self.ImgEmojiSprite.gameObject:SetActiveEx(isDynamicEmoji)
+        if isDynamicEmoji then
+            -- 刷新动态表情
+            self:RefreshDynamicFace(emojiId)
+        else
+            -- 静态表情
+            self.RImgEmoji:SetRawImage(icon)
+        end
     end
+
     self.TxtName.text = XDataCenter.SocialManager.GetPlayerRemark(chatData.SenderId, chatData.NickName)
     XUiPlayerHead.InitPortrait(chatData.Icon, chatData.HeadFrameId, self.Head)
     self.PlayerId = chatData.SenderId
+end
+
+function XUiPanelSocialMyMsgEmojiItem:RefreshDynamicFace(emojiId)
+    if not self.dynamicFaceId then
+        self.dynamicFaceId = XDataCenter.ChatManager.CreateDynamicFace(self.ImgEmojiSprite, emojiId)
+    else
+        XDataCenter.ChatManager.SetDynamicFaceAtlas(self.dynamicFaceId, emojiId)
+    end
+end
+
+function XUiPanelSocialMyMsgEmojiItem:ReleaseDynamicFace()
+    if self.dynamicFaceId then
+        XDataCenter.ChatManager.ReleaseDynamicFace(self.dynamicFaceId)
+        self.dynamicFaceId = nil
+    end
 end
 
 function XUiPanelSocialMyMsgEmojiItem:SetShow()

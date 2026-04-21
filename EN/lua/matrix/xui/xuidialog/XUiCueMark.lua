@@ -6,7 +6,7 @@ function XUiCueMark:OnAwake()
     self:AutoAddListener()
 end
 
-function XUiCueMark:OnStart(title, content, content2, closeCallback, sureCallback, hintInfo)
+function XUiCueMark:OnStart(title, content, content2, closeCallback, sureCallback, hintInfo, closeBtnText, cancelBtnText, isHideCloseBtn, isHideCancelBtn, isHideSureBtn)
     if title then
         self.TxtTitle.text = title
         self.TxtTitle.gameObject:SetActiveEx(true)
@@ -44,6 +44,26 @@ function XUiCueMark:OnStart(title, content, content2, closeCallback, sureCallbac
         end 
     else
         self.BtnHint.gameObject:SetActiveEx(false)
+    end
+
+    if closeBtnText then
+        self.BtnTcanchaungBlue:SetNameByGroup(0, closeBtnText)
+    end
+
+    if cancelBtnText then
+        self.BtnTcanchaungBlack:SetNameByGroup(0, cancelBtnText)
+    end
+
+    if isHideCloseBtn then
+        self.BtnTanchuangClose.gameObject:SetActiveEx(false)
+    end
+
+    if isHideCancelBtn then
+        self.BtnTcanchaungBlack.gameObject:SetActiveEx(false)
+    end
+
+    if isHideSureBtn then
+        self.BtnTcanchaungBlue.gameObject:SetActiveEx(false)
     end
 end
 

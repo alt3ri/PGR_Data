@@ -63,7 +63,7 @@ pcall(function()
     ---@class LuaProfiler
     ---@field BeginSampleCustom fun(name:string):void
     ---@field EndSampleCustom fun():void
-    LuaProfiler = require('MikuLuaProfiler').LuaProfiler
+    LuaProfiler = CS.MikuLuaProfiler.LuaProfiler
 end)
 
 print("LuaProfilerTool.Init Finish")

@@ -13,7 +13,18 @@ end
 function XUiEmojiItemEx:Refresh(emoji)
     self:Reset()
     self.EmojiData = emoji
-    self.RImgEmojiD:SetRawImage(self.EmojiData:GetEmojiIcon())
+
+    local isDynamicEmoji = XDataCenter.ChatManager.IsDynamicEmoji(emoji.Id)
+    self.RImgEmojiD.gameObject:SetActiveEx(not isDynamicEmoji)
+    self.ImgEmojiSprite.gameObject:SetActiveEx(isDynamicEmoji)
+    if isDynamicEmoji then
+        -- 刷新动态表情
+        self:RefreshDynamicFace()
+    else
+        -- 静态表情
+        self.RImgEmojiD:SetRawImage(self.EmojiData:GetEmojiIcon())
+    end
+    
     local isTimeLimit = self.EmojiData:IsLimitEmoji()
     self.ObjTime.gameObject:SetActiveEx(isTimeLimit)
     self.IsOverTime = false
@@ -28,6 +39,30 @@ function XUiEmojiItemEx:Refresh(emoji)
     if self.TxtName then
         self.TxtName.gameObject:SetActiveEx(not string.IsNilOrEmpty(connotationDesc))
         self.TxtName.text = connotationDesc or ''
+    end
+end
+
+function XUiEmojiItemEx:OnEnable()
+    --如果是动态表情表， 由于在OnDisable释放了资源， 所以这里需要刷新一下
+    local emojiType = self.EmojiData:GetEmojiType()
+    if emojiType == XChatConfigs.EmojiType.Dynamic then
+        self:RefreshDynamicFace()
+    end
+end
+
+function XUiEmojiItemEx:RefreshDynamicFace()
+    local emojiId = self.EmojiData:GetEmojiId()
+    if not self.dynamicFaceId then
+        self.dynamicFaceId = XDataCenter.ChatManager.CreateDynamicFace(self.ImgEmojiSprite, emojiId)
+    else
+        XDataCenter.ChatManager.SetDynamicFaceAtlas(self.dynamicFaceId, emojiId)
+    end
+end
+
+function XUiEmojiItemEx:ReleaseDynamicFace()
+    if self.dynamicFaceId then
+        XDataCenter.ChatManager.ReleaseDynamicFace(self.dynamicFaceId)
+        self.dynamicFaceId = nil
     end
 end
 
@@ -86,6 +121,7 @@ end
 
 function XUiEmojiItemEx:OnDisable()
     self:StopCountDownTimer()
+    self:ReleaseDynamicFace()
 end
 
 function XUiEmojiItemEx:Show()

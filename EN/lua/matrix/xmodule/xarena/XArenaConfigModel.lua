@@ -97,21 +97,10 @@ function XArenaConfigModel:GetAreaStageStageIdById(id)
     return config.StageId
 end
 
-function XArenaConfigModel:GetAreaStageActiveAutoFightStageStrById(id)
-    local config = self:GetAreaStageConfigById(id)
-
-    return config.ActiveAutoFightStageStr
-end
-
 function XArenaConfigModel:GetAreaStageMarkIdById(id)
     local config = self:GetAreaStageConfigById(id)
-    return config.MarkId[1]
-end
-
-function XArenaConfigModel:GetAreaStageAutoFightById(id)
-    local config = self:GetAreaStageConfigById(id)
-
-    return config.AutoFight
+    -- 4.2 从list:number改为了number，所以这里直接返回MarkId
+    return config.MarkId
 end
 
 function XArenaConfigModel:GetAreaStageDescById(id)

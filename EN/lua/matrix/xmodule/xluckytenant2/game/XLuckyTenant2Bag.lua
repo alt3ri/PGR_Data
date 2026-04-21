@@ -32,6 +32,9 @@ function XLuckyTenant2Bag:Ctor()
 
     self._IsTagDirty = true
     self._Tag = {}
+    ---@type XLuckyTenant2Piece[]|nil 缓存的可选棋子列表（排除道具），脏时重建
+    self._AllPiecesCache = nil
+    self._AllPiecesCacheDirty = true
 end
 
 ---@param config XTableLuckyTenant2Stage
@@ -42,61 +45,26 @@ function XLuckyTenant2Bag:Init(model, config, isResumeGame, game)
         return
     end
     self._MaxPiecesAmount = config.BagCapacity
-    
-    -- 调试日志（仅在非测试环境输出，减少日志量）
-    -- local XLuckyTenant2DebugLog = require("XModule/XLuckyTenant2/XLuckyTenant2DebugLog")
-    -- 注释掉清空日志，避免测试时日志被清空
-    -- XLuckyTenant2DebugLog.Clear()  -- 清空旧日志
-    -- XLuckyTenant2DebugLog.LogFormat("========== Bag Init 开始 ==========")
-    -- XLuckyTenant2DebugLog.LogFormat("StageId: %s, BagCapacity: %s, isResumeGame: %s", 
-    --     tostring(config.Id or "unknown"), tostring(self._MaxPiecesAmount), tostring(isResumeGame))
-    
+
     if isResumeGame then
-        -- XLuckyTenant2DebugLog.Log("恢复游戏，跳过初始棋子添加")
         return
     end
     
     local initialPiece = config.InitialPiece or {}
     local initialPieceAmount = config.InitialPieceNum or {}
-    
-    -- XLuckyTenant2DebugLog.LogFormat("初始棋子配置数量: %d", #initialPiece)
-    -- for i = 1, #initialPiece do
-    --     local pieceId = initialPiece[i]
-    --     local pieceAmount = initialPieceAmount[i] or 1
-    --     XLuckyTenant2DebugLog.LogFormat("  InitialPiece[%d] = %d, InitialPieceNum[%d] = %d", 
-    --         i, pieceId, i, pieceAmount)
-    -- end
-    
-    local addedCount = 0
+
     for i = 1, #initialPiece do
         local pieceId = initialPiece[i]
         local pieceAmount = initialPieceAmount[i] or 1
         if pieceId and pieceId > 0 then
             for j = 1, pieceAmount do
-                local success, piece = game:AddNewPieceToBag(model, pieceId)
-                if success and piece then
-                    addedCount = addedCount + 1
-                    -- XLuckyTenant2DebugLog.LogFormat("  添加棋子到背包: PieceId=%d, Uid=%d (第%d个)", 
-                    --     pieceId, piece:GetUid(), addedCount)
-                else
-                    -- XLuckyTenant2DebugLog.LogFormat("  添加棋子失败: PieceId=%d (第%d次尝试)", pieceId, j)
-                end
+                game:AddNewPieceToBag(model, pieceId)
             end
         end
     end
-    
-    -- XLuckyTenant2DebugLog.LogFormat("总共添加了 %d 个棋子到背包", addedCount)
-    local bagPieces = self:GetPieces()
-    local bagPieceCount = 0
-    for _ in pairs(bagPieces) do
-        bagPieceCount = bagPieceCount + 1
-    end
-    -- XLuckyTenant2DebugLog.LogFormat("背包中当前棋子数量: %d", bagPieceCount)
-    
+
     self:InitProps(game, model)
     self._IsTagDirty = true
-    
-    -- XLuckyTenant2DebugLog.Log("========== Bag Init 结束 ==========")
 end
 
 ---@param game XLuckyTenant2Game
@@ -172,14 +140,20 @@ end
 
 ---@return XLuckyTenant2Piece[]
 function XLuckyTenant2Bag:GetAllPieces()
+    if not self._AllPiecesCacheDirty and self._AllPiecesCache then
+        return self._AllPiecesCache
+    end
     local result = {}
+    local refreshProp = XLuckyTenant2Enum.PropId.RefreshProp
+    local deleteProp = XLuckyTenant2Enum.PropId.DeleteProp
     for _, piece in pairs(self._Pieces) do
-        -- 过滤掉道具（不参与游戏计算）
         local pieceId = piece:GetId()
-        if pieceId ~= XLuckyTenant2Enum.PropId.RefreshProp and pieceId ~= XLuckyTenant2Enum.PropId.DeleteProp then
+        if pieceId ~= refreshProp and pieceId ~= deleteProp then
             table.insert(result, piece)
         end
     end
+    self._AllPiecesCache = result
+    self._AllPiecesCacheDirty = false
     return result
 end
 
@@ -217,6 +191,7 @@ function XLuckyTenant2Bag:AddPiece(piece)
     -- 棋子进入背包时，暂停状态倒计时
     piece:PauseStates()
     self._IsTagDirty = true
+    self._AllPiecesCacheDirty = true
     return true
 end
 
@@ -231,6 +206,7 @@ function XLuckyTenant2Bag:RemovePiece(uid)
         -- 标记为删除，但不立即回收到对象池（延迟回收）
         piece:MarkAsDeleted()
         self._IsTagDirty = true
+        self._AllPiecesCacheDirty = true
         return true
     end
     return false
@@ -420,13 +396,12 @@ function XLuckyTenant2Bag:GetTag()
 end
 
 ---获取序列化消息（用于网络传输）
----@param log table|nil 日志表（可选，用于调试）
 ---@return table
-function XLuckyTenant2Bag:GetEncodeMessage(log)
+function XLuckyTenant2Bag:GetEncodeMessage()
     local grids = {}
     local pieces = self:GetPieces()
-    
-    -- 序列化背包中的棋子
+
+    -- 序列化背包中的棋子（道具也在 _Pieces 中，无需从 _Props 再次序列化，否则恢复时会重复添加）
     for uid, piece in pairs(pieces) do
         local pieceParams = piece:GetParamsEncodeMessage()
         local message = XMessagePack.Encode(pieceParams)
@@ -438,34 +413,9 @@ function XLuckyTenant2Bag:GetEncodeMessage(log)
                 Uid = piece:GetUid(),
                 ChessParams = message,
             }
-            if log then
-                log[#log + 1] = {
-                    ChessId = piece:GetId(),
-                    Uid = piece:GetUid(),
-                    ChessParams = pieceParams,
-                }
-            end
         end
     end
-    
-    -- 序列化道具
-    for type, piece in pairs(self._Props) do
-        local pieceParams = piece:GetParamsEncodeMessage()
-        local message = XMessagePack.Encode(pieceParams)
-        grids[#grids + 1] = {
-            ChessId = piece:GetId(),
-            Uid = piece:GetUid(),
-            ChessParams = message,
-        }
-        if log then
-            log[#log + 1] = {
-                ChessId = piece:GetId(),
-                Uid = piece:GetUid(),
-                ChessParams = pieceParams,
-            }
-        end
-    end
-    
+
     return grids
 end
 

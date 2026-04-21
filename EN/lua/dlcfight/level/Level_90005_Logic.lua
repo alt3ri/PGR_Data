@@ -199,13 +199,13 @@ function XLevelScript90005:OnEnterPhase(phase)
     --进入一个关卡阶段时需要做的事情在这里实现（最好不要在这里跳转关卡阶段
     if phase == Phase.Start then
         XLog.Debug("阶段进入!Phase.Start")
-        self._proxy:ShowDlcGuide(90005101,EFightUiType.Commentary)                      --准备进行第一次熵流运算模拟，本次模拟的战斗对象危险程度很高，请务必小心！
+        self._proxy:ShowDlcGuide(90005101,EGuideUiNodeType.GuideCommentary)                      --准备进行第一次熵流运算模拟，本次模拟的战斗对象危险程度很高，请务必小心！
         self:ControlLevelUI(UIControl.OnlyCommentary)
         self._timetoMoveGuide = self._levelTime   --记录时间
         self._monsterMaxHP = self._proxy:GetNpcAttribMaxValue(self.monster_UUID,ENpcAttrib.Life)    --获取boss当前血量
     elseif phase == Phase.Move then  
         XLog.Debug("阶段进入!Phase.Move")
-        self._proxy:ShowDlcGuide(90005102,EFightUiType.Commentary)                      --向前移动靠近模拟战斗目标.
+        self._proxy:ShowDlcGuide(90005102,EGuideUiNodeType.GuideCommentary)                      --向前移动靠近模拟战斗目标.
         self._proxy:SetLevelUiState(UIType.Joystick,self._localNpc,1)                   --显示摇杆
         self._proxy:SetLevelUiState(UIType.ControlPanel,self._localNpc,1)                   --显示右侧面板
         self._proxy:SetLevelOperationUiState(UIType.ControlPanel,ENpcOperationKey.Dodge,self._localNpc,3) 
@@ -228,7 +228,7 @@ function XLevelScript90005:OnEnterPhase(phase)
         XLog.Debug("阶段进入!Phase.Attack")
         self._proxy:SetLevelOperationUiState(UIType.ControlPanel,ENpcOperationKey.Attack,self._localNpc,1) 
         self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Attack,self._localNpc,true)                           --只显示普攻按钮
-        self._proxy:ShowDlcGuide(90005103,EFightUiType.Commentary)                                              --向前移动靠近模拟战斗目标.
+        self._proxy:ShowDlcGuide(90005103,EGuideUiNodeType.GuideCommentary)                                              --向前移动靠近模拟战斗目标.
         self._proxy:SetLevelUiState(UIType.Target,self._localNpc,1)
         self._proxy:SetLevelUiState(UIType.LockTarget,self._localNpc,1)
         self._proxy:SetLevelOperationUiState(UIType.LockTarget,ENpcOperationKey.Focus,self._localNpc,1)          --锁定
@@ -254,7 +254,7 @@ function XLevelScript90005:OnEnterPhase(phase)
     elseif phase == Phase.QTEGuide then
         self.hasSetPhaseSuperSkill = false
         self._hasbossscecondSkill = true
-        self._proxy:ShowDlcGuide(90005106,EFightUiType.Commentary)                      --敌人韧性条被击破了，抓住机会进攻！
+        self._proxy:ShowDlcGuide(90005106,EGuideUiNodeType.GuideCommentary)                      --敌人韧性条被击破了，抓住机会进攻！
         XLog.Debug("阶段进入!Phase.QTEGuide")
     elseif phase == Phase.SuperSkill then
         self.hasBossSuperSkill = false
@@ -303,7 +303,7 @@ function XLevelScript90005:OnUpdatePhase(dt)
         if (self._isSuccess) and (self._firstSkillTime >= 0.7) and (self._hasbossfirstskill ~= true) then
             self._proxy:SetLevelOperationUiState(UIType.ControlPanel,ENpcOperationKey.Dodge,self._localNpc,1)  --按键显示打开
             self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Dodge,self._localNpc,true) 
-            self._proxy:ShowDlcGuide(90005104,EFightUiType.Commentary)                      --闪避引导
+            self._proxy:ShowDlcGuide(90005104,EGuideUiNodeType.GuideCommentary)                      --闪避引导
             self._hasbossfirstskill = true
             self:SetPhase(Phase.Dodge_2)
         end
@@ -325,7 +325,7 @@ function XLevelScript90005:OnUpdatePhase(dt)
             self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Ball1,self._localNpc,true) 
             self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Ball2,self._localNpc,true) 
             self._proxy:SetLevelButtonOpEnabled(ENpcOperationKey.Ball3,self._localNpc,true) 
-            self._proxy:ShowDlcGuide(90005105,EFightUiType.Commentary)                      --技能引导
+            self._proxy:ShowDlcGuide(90005105,EGuideUiNodeType.GuideCommentary)                      --技能引导
             self._proxy:DispatchLuaEvent(ELuaEventTarget.Npc,EFightLuaEvent.RelinkSetAIActivate, {NpcUUid=self.monster_UUID,IsActivated=true})                  --关闭白龙AI
             self._hasbossscecondSkill = true
             self._proxy:AddNpcAttribAdditive(self._localNpc,ENpcAttrib.BreakDmg,150,0)    --增加白毛击破倍率
@@ -355,11 +355,11 @@ function XLevelScript90005:OnUpdatePhase(dt)
                 self._proxy:DispatchLuaEvent(ELuaEventTarget.Npc,EFightLuaEvent.RelinkSetAIActivate, {NpcUUid=self.monster_UUID,IsActivated=false})                  --关闭白龙AI
                 self._proxy:CastActionToTarget(self.monster_UUID,8005032,self._localNpc)          --横扫弹刀技能
                 self._timer:Schedule(0.5, self, function()
-                    self._proxy:ShowDlcGuide(90005108,EFightUiType.ImageVideo)     --拼刀图文引导 
+                    self._proxy:ShowDlcGuide(90005108,EGuideUiNodeType.GuideImageVideo)     --拼刀图文引导 
                 end)
                 self.hasBossSuperSkill = true
                 self._timer:Schedule(1.6, self, function()
-                    self._proxy:ShowDlcGuide(90005109,EFightUiType.Commentary) --拼刀引导强制
+                    self._proxy:ShowDlcGuide(90005109,EGuideUiNodeType.GuideCommentary) --拼刀引导强制
                 end)
             elseif self._proxy:GetNpcDistance(self._localNpc,self.monster_UUID,true) < 13 then
                 self._proxy:CastActionToTarget(self.monster_UUID,8005015,self._localNpc)          --后跳一下

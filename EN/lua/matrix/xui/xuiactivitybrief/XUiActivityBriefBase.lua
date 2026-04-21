@@ -48,6 +48,7 @@ function XUiActivityBriefBase:OnStart(type)
         else
             self:PlayEnterAnim(function() 
                 self.UiActivityBriefRefreshButton:CheckBtnUnlockAnim()
+                self.UiActivityBriefRefreshButton:RefreshButtonsWithRewardAnimation()
             end)
         end
     end

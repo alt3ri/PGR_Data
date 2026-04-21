@@ -48,12 +48,6 @@ function XLuckyTenant2OperationAddPieceValue:Do(ctx)
     
     -- 增加金币值（直接修改基础金币值）
     piece:AddValue(self._Value)
-    
-    if XMVCA.XLuckyTenant2 then
-        XMVCA.XLuckyTenant2:Print("[XLuckyTenant2OperationAddPieceValue] 棋子UID:", self._PieceUid, 
-            "增加金币:", self._Value, "技能ID:", self._SkillId)
-    end
-    
     return true, nil
 end
 

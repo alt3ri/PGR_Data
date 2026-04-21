@@ -127,87 +127,93 @@ function XAudioAgency:GetAlbumIdList()
     return self._Model.AlbumIdList
 end
 
-function XAudioAgency:GetAlbumTemplateById(id)
-    local AlbumTemplates = self:GetModelMusicPlayerAlbum()
-    if not AlbumTemplates or not XTool.IsNumberValid(id) or id == 0 then
-        return nil
-    end
-
-    local success, template = AlbumTemplates:TryGetValue(id)
-    if success then
-        return template
-    else
-        XLog.Error("GetAlbumTemplateById: 未找到配置, albumId=" .. tostring(id))
-        return nil
-    end
-end
+function XAudioAgency:GetAlbumTemplateById(id)
+    local AlbumTemplates = self:GetModelMusicPlayerAlbum()
+    if not AlbumTemplates or not XTool.IsNumberValid(id) or id == 0 then
+        return nil
+    end
 
-function XAudioAgency:IsHaveAlbumById(id)
-    local AlbumTemplates = self:GetModelMusicPlayerAlbum()
-    if not AlbumTemplates or not XTool.IsNumberValid(id) or id == 0 then
-        return false
-    end
-
-    return AlbumTemplates:ContainsKey(id)
-end
+    local success, template = AlbumTemplates:TryGetValue(id)
+    if success then
+        return template
+    else
+        XLog.Error("GetAlbumTemplateById: 未找到配置, albumId=" .. tostring(id))
+        return nil
+    end
+end
 
-function XAudioAgency:GetAlbumTemplateByCueId(cueId)
-    local albumId = self._Model:GetCueIdToMusicAlbumIdDic()[cueId]
-    if not albumId then
-        return nil
-    end
-
-    return self:GetAlbumTemplateById(albumId)
-end
+function XAudioAgency:IsHaveAlbumById(id)
+    local AlbumTemplates = self:GetModelMusicPlayerAlbum()
+    if not AlbumTemplates or not XTool.IsNumberValid(id) or id == 0 then
+        return false
+    end
+
+    return AlbumTemplates:ContainsKey(id)
+end
+
+function XAudioAgency:GetAlbumTemplateByCueId(cueId)
+    local albumId = self._Model:GetCueIdToMusicAlbumIdDic()[cueId]
+    if not albumId then
+        return nil
+    end
+
+    return self:GetAlbumTemplateById(albumId)
+end
 -- CD机 config end
 
 -- CD机 manager start
-function XAudioAgency:InitMainNeedCueId()
-    local albumId = XSaveTool.GetData(self._Model.UiMainSavedAlbumIdKey)
-
-    local isAlbumIdValid = XTool.IsNumberValid(albumId) and albumId ~= 0
-    if isAlbumIdValid and self:IsHaveAlbumById(albumId) then
-    else
-        if isAlbumIdValid then
-            XLog.Warning("InitMainNeedCueId: 存档中的 albumId=" .. tostring(albumId) .. " 在配置表中不存在,已重置为默认值")
-        end
-
-        XSaveTool.SaveData(self._Model.UiMainSavedAlbumIdKey, nil)
-        albumId = self._Model.DefaultAlbumId
-        if albumId == 0 then
-            XLog.Error("Client/Config/ClientConfig.tab 表里面的 MusicPlayerMainViewNeedPlayedAlbumId 字段对应的值不能为0")
-            return
-        end
-    end
-
-    local template = self:GetAlbumTemplateById(albumId)
-    if not template then
-        XLog.Error("InitMainNeedCueId: 无法获取专辑配置, albumId=" .. tostring(albumId))
-        return
-    end
-
-    local cueId = template.CueId
-    if self:CheckMusicCanPlayByAlbum(cueId) then
-        self._Model.UiMainNeedPlayedAlbumId = albumId
-        CS.XAudioManager.UiMainNeedPlayedBgmCueId = cueId
-    else
-        self._Model.UiMainNeedPlayedAlbumId = self._Model.DefaultAlbumId
-        local defaultTemplate = self:GetAlbumTemplateById(self._Model.DefaultAlbumId)
-        if defaultTemplate then
-            CS.XAudioManager.UiMainNeedPlayedBgmCueId = defaultTemplate.CueId
-        else
-            XLog.Error("InitMainNeedCueId: 默认专辑配置无效, DefaultAlbumId=" .. tostring(self._Model.DefaultAlbumId))
-        end
-    end
-end
+function XAudioAgency:InitMainNeedCueId()
+    local albumId = XSaveTool.GetData(self._Model.UiMainSavedAlbumIdKey)
+
+    local isAlbumIdValid = XTool.IsNumberValid(albumId) and albumId ~= 0
+    if isAlbumIdValid and self:IsHaveAlbumById(albumId) then
+    else
+        if isAlbumIdValid then
+            XLog.Warning("InitMainNeedCueId: 存档中的 albumId=" .. tostring(albumId) .. " 在配置表中不存在,已重置为默认值")
+        end
+
+        XSaveTool.SaveData(self._Model.UiMainSavedAlbumIdKey, nil)
+        albumId = self._Model.DefaultAlbumId
+        if albumId == 0 then
+            XLog.Error("Client/Config/ClientConfig.tab 表里面的 MusicPlayerMainViewNeedPlayedAlbumId 字段对应的值不能为0")
+            return
+        end
+    end
+
+    local template = self:GetAlbumTemplateById(albumId)
+    if not template then
+        XLog.Error("InitMainNeedCueId: 无法获取专辑配置, albumId=" .. tostring(albumId))
+        return
+    end
+
+    local cueId = template.CueId
+    if self:CheckMusicCanPlayByAlbum(cueId) then
+        self._Model.UiMainNeedPlayedAlbumId = albumId
+        CS.XAudioManager.UiMainNeedPlayedBgmCueId = cueId
+    else
+        self._Model.UiMainNeedPlayedAlbumId = self._Model.DefaultAlbumId
+        local defaultTemplate = self:GetAlbumTemplateById(self._Model.DefaultAlbumId)
+        if defaultTemplate then
+            CS.XAudioManager.UiMainNeedPlayedBgmCueId = defaultTemplate.CueId
+        else
+            XLog.Error("InitMainNeedCueId: 默认专辑配置无效, DefaultAlbumId=" .. tostring(self._Model.DefaultAlbumId))
+        end
+    end
+end
 
 function XAudioAgency:ChangeUiMainAlbumId(albumId)
     local template = self:GetAlbumTemplateById(albumId)
     local cueId = template.CueId
-    
+
+    -- 检测CD机分包是否下载完成，未完成则拦截切换操作
+    if not XMVCA.XSubPackage:CheckSubpackageDownloadByFunctionType(XFunctionManager.FunctionName.UiMainMusicAlbum) then
+        return false
+    end
+
     self._Model.UiMainNeedPlayedAlbumId = albumId
     XSaveTool.SaveData(self._Model.UiMainSavedAlbumIdKey, albumId)
     CS.XAudioManager.UiMainNeedPlayedBgmCueId = cueId
+    return true
 end
 
 function XAudioAgency:GetUiMainNeedPlayedAlbumId()

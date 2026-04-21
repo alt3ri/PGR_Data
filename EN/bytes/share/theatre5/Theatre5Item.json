@@ -5973,7 +5973,7 @@
         "Name": "Second Chance",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneSpecial.png",
         "Info": "Duplicate effects do not stack. Only the highest rarity applies.",
-        "Desc": "Stat boost effects from Life-Risking Trick Runes trigger {0} additional times. This effect is stackable.",
+        "Desc": "Stat boost effects from Life-Risking Trick Runes trigger {0} additional time. This effect is stackable.",
         "DescDigit": "['1']",
         "EvolveDescDigit": null,
         "AddDesc": "After [Life-Risking Trick] Runes trigger {0} times, summons a demon to attack enemies, dealing {1}% <color=#ecd7bd>Physical</color> DMG. This is stackable.",
@@ -7073,7 +7073,7 @@
         "Name": "Born From Ashes",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5RuneSpecial.png",
         "Info": "Duplicate effects do not stack. Only the highest rarity applies.",
-        "Desc": "No Time to Bleed Rune effects can trigger {0} additional times.",
+        "Desc": "No Time to Bleed Rune effects can trigger {0} additional time.",
         "DescDigit": "['1']",
         "EvolveDescDigit": null,
         "AddDesc": "When a [No Time to Bleed] Rune is triggered, lightning randomly strikes both parties every second. When hitting enemies, directly deals {0}% <color=#ecd7bd>Physical</color> DMG. When hitting the user, increases ATK by {1}%, up to {2}%. The damage boost ends when [No Time to Bleed] Rune effects end. This is stackable.",
@@ -7359,7 +7359,7 @@
         "Name": "Rune Chest: Minor",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5TreasureboxGreen.png",
         "Info": "This mysterious rune chest hums with an otherworldly aura.",
-        "Desc": "Crack it open to get a random Minor Sigil.",
+        "Desc": "Crack it open to get a random Minor Rune.",
         "DescDigit": null,
         "EvolveDescDigit": null,
         "AddDesc": null,
@@ -7381,7 +7381,7 @@
         "Name": "Rune Chest: Medium",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5TreasureboxBlue.png",
         "Info": "This mysterious rune chest hums with an otherworldly aura.",
-        "Desc": "Crack it open to get a random Medium Sigil.",
+        "Desc": "Crack it open to get a random Medium Rune.",
         "DescDigit": null,
         "EvolveDescDigit": null,
         "AddDesc": null,
@@ -7403,7 +7403,7 @@
         "Name": "Rune Chest: Major",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconRougeItem05.png",
         "Info": "This mysterious rune chest hums with an otherworldly aura.",
-        "Desc": "Crack it open to get a random Major Sigil.",
+        "Desc": "Crack it open to get a random Major Rune.",
         "DescDigit": null,
         "EvolveDescDigit": null,
         "AddDesc": null,
@@ -7425,7 +7425,7 @@
         "Name": "Rune Chest: Extreme",
         "IconRes": "Assets/Product/Texture/Image/UiTheatre5/UiTheatre5TreasureboxOrange.png",
         "Info": "This mysterious rune chest hums with an otherworldly aura.",
-        "Desc": "Crack it open to get a random Extreme Sigil.",
+        "Desc": "Crack it open to get a random Extreme Rune.",
         "DescDigit": null,
         "EvolveDescDigit": null,
         "AddDesc": null,
@@ -7447,7 +7447,7 @@
         "Name": "Rune Chest: Random",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconRougeItem04.png",
         "Info": "This mysterious rune chest hums with an otherworldly aura.",
-        "Desc": "Crack it open to get a random sigil.",
+        "Desc": "Crack it open to get a random Rune.",
         "DescDigit": null,
         "EvolveDescDigit": null,
         "AddDesc": null,
@@ -7469,7 +7469,7 @@
         "Name": "Rune Chest: Random",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconRougeItem04.png",
         "Info": "This mysterious rune chest hums with an otherworldly aura.",
-        "Desc": "Crack it open to get a random sigil.",
+        "Desc": "Crack it open to get a random Rune.",
         "DescDigit": null,
         "EvolveDescDigit": null,
         "AddDesc": null,
@@ -7931,8 +7931,8 @@
         "Name": "Dice of Fate",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiDragPuzzleItem08.png",
         "Info": null,
-        "Desc": "When you enter the Mysterious Tavern, the Rune in the rightmost inventory slot will be randomly replaced with another of the same rarity.",
-        "DescDigit": null,
+        "Desc": "Each time you enter the Mysterious Tavern, the Rune in the leftmost inventory slot is randomly replaced with a different Rune of one higher rarity, but you lose {0} Coins.",
+        "DescDigit": "['2']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
@@ -7961,7 +7961,7 @@
         "Tags": null,
         "Keywords": null,
         "IsShow": true,
-        "Order": 22.0
+        "Order": 20.0
     },
     {
         "Id": 40023,
@@ -7983,7 +7983,7 @@
         "Tags": null,
         "Keywords": null,
         "IsShow": true,
-        "Order": 23.0
+        "Order": 21.0
     },
     {
         "Id": 40101,
@@ -7998,14 +7998,14 @@
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconMaverick3Activity01.png",
         "Info": null,
         "Desc": "[Silent Annihilation] fires {1} bullets for the first {0} casts.",
-        "DescDigit": "['4', '2']",
+        "DescDigit": "['2', '2']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
         "IsShow": true,
-        "Order": 24.0
+        "Order": 22.0
     },
     {
         "Id": 40102,
@@ -8027,7 +8027,7 @@
         "Tags": null,
         "Keywords": null,
         "IsShow": true,
-        "Order": 25.0
+        "Order": 23.0
     },
     {
         "Id": 40103,
@@ -8049,7 +8049,7 @@
         "Tags": null,
         "Keywords": null,
         "IsShow": true,
-        "Order": 26.0
+        "Order": 24.0
     },
     {
         "Id": 40104,
@@ -8071,7 +8071,7 @@
         "Tags": null,
         "Keywords": null,
         "IsShow": true,
-        "Order": 27.0
+        "Order": 25.0
     },
     {
         "Id": 40105,
@@ -8093,7 +8093,7 @@
         "Tags": null,
         "Keywords": null,
         "IsShow": true,
-        "Order": 28.0
+        "Order": 26.0
     },
     {
         "Id": 40106,
@@ -8115,7 +8115,7 @@
         "Tags": null,
         "Keywords": null,
         "IsShow": true,
-        "Order": 29.0
+        "Order": 27.0
     },
     {
         "Id": 40107,
@@ -8137,7 +8137,7 @@
         "Tags": null,
         "Keywords": null,
         "IsShow": true,
-        "Order": 30.0
+        "Order": 28.0
     },
     {
         "Id": 40108,
@@ -8151,15 +8151,15 @@
         "Name": "Phoenix Tail",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2028001.png",
         "Info": null,
-        "Desc": "When equipped with [Phoenix Rising], its HP recovery increases by an additional {1}% every {0}s. This effect stacks up to {2} times. During the Death Speed phase, the accumulated bonus recovery instantly increases by {3}%.",
-        "DescDigit": "['5', '6', '6', '100']",
+        "Desc": "When equipped with [Phoenix Rising], its HP recovery increases by {0}%. During the Death Speed phase, the HP recovery bonus increases to {1}%.",
+        "DescDigit": "['32', '64']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
         "IsShow": true,
-        "Order": 31.0
+        "Order": 29.0
     },
     {
         "Id": 40109,
@@ -8181,7 +8181,7 @@
         "Tags": null,
         "Keywords": null,
         "IsShow": true,
-        "Order": 32.0
+        "Order": 30.0
     },
     {
         "Id": 40110,
@@ -8203,7 +8203,7 @@
         "Tags": null,
         "Keywords": null,
         "IsShow": true,
-        "Order": 33.0
+        "Order": 31.0
     },
     {
         "Id": 40111,
@@ -8217,15 +8217,15 @@
         "Name": "Armor-Piercing Round",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconMaverick3Activity02.png",
         "Info": null,
-        "Desc": "In battle, each time damage is dealt, additionally deals damage equal to {0}% of the damage value to enemy shields.",
-        "DescDigit": "['100']",
+        "Desc": "In battle, each time DMG is dealt, additionally deals DMG equal to {0}% of that DMG to enemy shields. When the enemy has no shield, restores HP equal to {1}% of the DMG dealt.",
+        "DescDigit": "['60', '12']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
         "IsShow": true,
-        "Order": 34.0
+        "Order": 32.0
     },
     {
         "Id": 40112,
@@ -8247,7 +8247,7 @@
         "Tags": null,
         "Keywords": null,
         "IsShow": true,
-        "Order": 35.0
+        "Order": 33.0
     },
     {
         "Id": 40113,
@@ -8269,7 +8269,7 @@
         "Tags": null,
         "Keywords": null,
         "IsShow": true,
-        "Order": 36.0
+        "Order": 34.0
     },
     {
         "Id": 40114,
@@ -8291,7 +8291,7 @@
         "Tags": null,
         "Keywords": null,
         "IsShow": true,
-        "Order": 37.0
+        "Order": 35.0
     },
     {
         "Id": 40115,
@@ -8313,7 +8313,7 @@
         "Tags": null,
         "Keywords": null,
         "IsShow": true,
-        "Order": 38.0
+        "Order": 36.0
     },
     {
         "Id": 40116,
@@ -8335,7 +8335,7 @@
         "Tags": null,
         "Keywords": null,
         "IsShow": true,
-        "Order": 39.0
+        "Order": 37.0
     },
     {
         "Id": 40124,
@@ -8349,7 +8349,7 @@
         "Name": "Vitrum Crystal",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiLivWarmItem02.png",
         "Info": null,
-        "Desc": "Gain {1} bonus ATK upon entering battle for every {0} archetype Runes equipped.",
+        "Desc": "Upon entering battle, gain {1} bonus ATK for every {0} archetype Rune equipped.",
         "DescDigit": "['1', '18']",
         "EvolveDescDigit": null,
         "AddDesc": null,
@@ -8357,7 +8357,7 @@
         "Tags": null,
         "Keywords": null,
         "IsShow": true,
-        "Order": 47.0
+        "Order": 38.0
     },
     {
         "Id": 40125,
@@ -8379,7 +8379,7 @@
         "Tags": null,
         "Keywords": null,
         "IsShow": true,
-        "Order": 48.0
+        "Order": 39.0
     },
     {
         "Id": 40126,
@@ -8401,7 +8401,293 @@
         "Tags": null,
         "Keywords": null,
         "IsShow": true,
+        "Order": 40.0
+    },
+    {
+        "Id": 40201,
+        "Type": 7,
+        "Price": 16.0,
+        "DiscountPrice": 12.0,
+        "SellPrice": 12.0,
+        "Quality": 1.0,
+        "BuffType": null,
+        "CharacterId": null,
+        "Name": "Undeath Mark",
+        "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon10.png",
+        "Info": null,
+        "Desc": "Each time you enter the Mysterious Tavern, {0} \"Suicidal Maniac\" Orange Rune may appear in the shop (Alchemy Hammer may appear starting from Round {1}), until all qualifying items have been purchased.",
+        "DescDigit": "['1', '7']",
+        "EvolveDescDigit": null,
+        "AddDesc": null,
+        "AddDigit": null,
+        "Tags": null,
+        "Keywords": null,
+        "IsShow": true,
+        "Order": 41.0
+    },
+    {
+        "Id": 40202,
+        "Type": 7,
+        "Price": 16.0,
+        "DiscountPrice": 12.0,
+        "SellPrice": 12.0,
+        "Quality": 1.0,
+        "BuffType": null,
+        "CharacterId": null,
+        "Name": "Boiling Blood Mark",
+        "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon12.png",
+        "Info": null,
+        "Desc": "Each time you enter the Mysterious Tavern, {0} \"No Time to Bleed\" Orange Rune may appear in the shop (Alchemy Hammer may appear starting from Round {1}), until all qualifying items have been purchased.",
+        "DescDigit": "['1', '7']",
+        "EvolveDescDigit": null,
+        "AddDesc": null,
+        "AddDigit": null,
+        "Tags": null,
+        "Keywords": null,
+        "IsShow": true,
+        "Order": 42.0
+    },
+    {
+        "Id": 40203,
+        "Type": 7,
+        "Price": 16.0,
+        "DiscountPrice": 12.0,
+        "SellPrice": 12.0,
+        "Quality": 1.0,
+        "BuffType": null,
+        "CharacterId": null,
+        "Name": "Deathscape Mark",
+        "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon13.png",
+        "Info": null,
+        "Desc": "Each time you enter the Mysterious Tavern, {0} \"Beyond Death\" Orange Rune may appear in the shop (Alchemy Hammer may appear starting from Round {1}), until all qualifying items have been purchased.",
+        "DescDigit": "['1', '7']",
+        "EvolveDescDigit": null,
+        "AddDesc": null,
+        "AddDigit": null,
+        "Tags": null,
+        "Keywords": null,
+        "IsShow": true,
+        "Order": 43.0
+    },
+    {
+        "Id": 40204,
+        "Type": 7,
+        "Price": 16.0,
+        "DiscountPrice": 12.0,
+        "SellPrice": 12.0,
+        "Quality": 1.0,
+        "BuffType": null,
+        "CharacterId": null,
+        "Name": "Rapid Mark",
+        "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon15.png",
+        "Info": null,
+        "Desc": "Each time you enter the Mysterious Tavern, {0} \"Speed Prologue\" Orange Rune may appear in the shop (Alchemy Hammer may appear starting from Round {1}), until all qualifying items have been purchased.",
+        "DescDigit": "['1', '7']",
+        "EvolveDescDigit": null,
+        "AddDesc": null,
+        "AddDigit": null,
+        "Tags": null,
+        "Keywords": null,
+        "IsShow": true,
+        "Order": 44.0
+    },
+    {
+        "Id": 40205,
+        "Type": 7,
+        "Price": 16.0,
+        "DiscountPrice": 12.0,
+        "SellPrice": 12.0,
+        "Quality": 1.0,
+        "BuffType": null,
+        "CharacterId": null,
+        "Name": "Deathhunt Mark",
+        "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon16.png",
+        "Info": null,
+        "Desc": "Each time you enter the Mysterious Tavern, {0} \"Death Hunter\" Orange Rune may appear in the shop (Alchemy Hammer may appear starting from Round {1}), until all qualifying items have been purchased.",
+        "DescDigit": "['1', '7']",
+        "EvolveDescDigit": null,
+        "AddDesc": null,
+        "AddDigit": null,
+        "Tags": null,
+        "Keywords": null,
+        "IsShow": true,
+        "Order": 45.0
+    },
+    {
+        "Id": 40206,
+        "Type": 7,
+        "Price": 16.0,
+        "DiscountPrice": 12.0,
+        "SellPrice": 12.0,
+        "Quality": 1.0,
+        "BuffType": null,
+        "CharacterId": null,
+        "Name": "Calamity Mark",
+        "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon11.png",
+        "Info": null,
+        "Desc": "Each time you enter the Mysterious Tavern, {0} \"Rhythmic Suffering\" Orange Rune may appear in the shop (Alchemy Hammer may appear starting from Round {1}), until all qualifying items have been purchased.",
+        "DescDigit": "['1', '7']",
+        "EvolveDescDigit": null,
+        "AddDesc": null,
+        "AddDigit": null,
+        "Tags": null,
+        "Keywords": null,
+        "IsShow": true,
+        "Order": 46.0
+    },
+    {
+        "Id": 40207,
+        "Type": 7,
+        "Price": 16.0,
+        "DiscountPrice": 12.0,
+        "SellPrice": 12.0,
+        "Quality": 1.0,
+        "BuffType": null,
+        "CharacterId": null,
+        "Name": "Life-Risking Mark",
+        "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon14.png",
+        "Info": null,
+        "Desc": "Each time you enter the Mysterious Tavern, {0} \"Life-Risking Trick\" Orange Rune may appear in the shop (Alchemy Hammer may appear starting from Round {1}), until all qualifying items have been purchased.",
+        "DescDigit": "['1', '7']",
+        "EvolveDescDigit": null,
+        "AddDesc": null,
+        "AddDigit": null,
+        "Tags": null,
+        "Keywords": null,
+        "IsShow": true,
+        "Order": 47.0
+    },
+    {
+        "Id": 40208,
+        "Type": 7,
+        "Price": 16.0,
+        "DiscountPrice": 12.0,
+        "SellPrice": 12.0,
+        "Quality": 1.0,
+        "BuffType": null,
+        "CharacterId": null,
+        "Name": "Bloodthirsty Vessel",
+        "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2038001.png",
+        "Info": null,
+        "Desc": "In battle, loses {0}% HP upon entry (will not fall below 1%) and gains a shield equal to the original amount of HP lost. All DMG increases by {1}% for 10s afterward.",
+        "DescDigit": "['40', '45']",
+        "EvolveDescDigit": null,
+        "AddDesc": null,
+        "AddDigit": null,
+        "Tags": null,
+        "Keywords": null,
+        "IsShow": true,
+        "Order": 48.0
+    },
+    {
+        "Id": 40209,
+        "Type": 7,
+        "Price": 16.0,
+        "DiscountPrice": 12.0,
+        "SellPrice": 12.0,
+        "Quality": 1.0,
+        "BuffType": null,
+        "CharacterId": null,
+        "Name": "Fate Wheel Pact",
+        "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2020001.png",
+        "Info": null,
+        "Desc": "When HP first drops below 80% in battle, deals Physical DMG equal to {1}% of ATK once for every {0} skill previously triggered, up to 5 times.",
+        "DescDigit": "['1', '175']",
+        "EvolveDescDigit": null,
+        "AddDesc": null,
+        "AddDigit": null,
+        "Tags": null,
+        "Keywords": null,
+        "IsShow": true,
         "Order": 49.0
+    },
+    {
+        "Id": 40210,
+        "Type": 7,
+        "Price": 16.0,
+        "DiscountPrice": 12.0,
+        "SellPrice": 12.0,
+        "Quality": 1.0,
+        "BuffType": null,
+        "CharacterId": null,
+        "Name": "Blessing Talisman",
+        "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityRPG02.png",
+        "Info": null,
+        "Desc": "In battle, becomes immune to all DMG for {0}s after entering Death Speed state.",
+        "DescDigit": "['4']",
+        "EvolveDescDigit": null,
+        "AddDesc": null,
+        "AddDigit": null,
+        "Tags": null,
+        "Keywords": null,
+        "IsShow": true,
+        "Order": 50.0
+    },
+    {
+        "Id": 40211,
+        "Type": 7,
+        "Price": 16.0,
+        "DiscountPrice": 12.0,
+        "SellPrice": 12.0,
+        "Quality": 1.0,
+        "BuffType": null,
+        "CharacterId": null,
+        "Name": "Temporal Rift",
+        "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2026001.png",
+        "Info": null,
+        "Desc": "In battle, for every {0} activations of \"Rhythmic Suffering\" or \"Life-Risking Trick\" Runes, gains {1}% all-DMG boost for 2s. This effect can stack.",
+        "DescDigit": "['1', '65']",
+        "EvolveDescDigit": null,
+        "AddDesc": null,
+        "AddDigit": null,
+        "Tags": null,
+        "Keywords": null,
+        "IsShow": true,
+        "Order": 51.0
+    },
+    {
+        "Id": 40212,
+        "Type": 7,
+        "Price": 16.0,
+        "DiscountPrice": 12.0,
+        "SellPrice": 12.0,
+        "Quality": 1.0,
+        "BuffType": null,
+        "CharacterId": null,
+        "Name": "Acheron Guardian",
+        "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityPointQuest2004001.png",
+        "Info": null,
+        "Desc": "Increases Max HP by {0}% in battle. If the character differs from the enemy's, gains an additional {1}% Max HP.",
+        "DescDigit": "['30', '15']",
+        "EvolveDescDigit": null,
+        "AddDesc": null,
+        "AddDigit": null,
+        "Tags": null,
+        "Keywords": null,
+        "IsShow": true,
+        "Order": 52.0
+    },
+    {
+        "Id": 40213,
+        "Type": 7,
+        "Price": 16.0,
+        "DiscountPrice": 12.0,
+        "SellPrice": 12.0,
+        "Quality": 1.0,
+        "BuffType": null,
+        "CharacterId": null,
+        "Name": "Devil's Contract",
+        "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2006002.png",
+        "Info": null,
+        "Desc": "Demons and fireballs summoned by Rune enhancement effects deal {0}% more DMG.",
+        "DescDigit": "['60']",
+        "EvolveDescDigit": null,
+        "AddDesc": null,
+        "AddDigit": null,
+        "Tags": null,
+        "Keywords": null,
+        "IsShow": true,
+        "Order": 53.0
     },
     {
         "Id": 50001,
@@ -8701,14 +8987,14 @@
         "Name": "Arena Coin",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiFingerGuessing2Img6.png",
         "Info": null,
-        "Desc": "\u83b7\u5f97{0}\u679a\u91d1\u5e01\uff0c\u6b64\u540e\u6bcf\u6b21\u8fdb\u5165\u8be1\u9b47\u5ba2\u6808\u65f6\uff0c\u53ef\u83b7\u5f97{1}\u679a\u91d1\u5e01\uff0c\u8fde\u7eed\u80dc\u5229\u65f6\u53ef\u989d\u5916\u83b7\u5f97{2}\u679a\u91d1\u5e01",
+        "Desc": "Gain {0} coins. Afterwards, obtain {1} coins each time you enter the Mysterious Tavern. Earn an additional {2} coins during winning streaks.",
         "DescDigit": "['6', '3', '2']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 1.0
     },
     {
@@ -8723,14 +9009,14 @@
         "Name": "Arena Coin",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiFingerGuessing2Img6.png",
         "Info": null,
-        "Desc": "\u83b7\u5f97{0}\u679a\u91d1\u5e01\uff0c\u6b64\u540e\u6bcf\u6b21\u8fdb\u5165\u8be1\u9b47\u5ba2\u6808\u65f6\uff0c\u53ef\u83b7\u5f97{1}\u679a\u91d1\u5e01\uff0c\u8fde\u7eed\u80dc\u5229\u65f6\u53ef\u989d\u5916\u83b7\u5f97{2}\u679a\u91d1\u5e01",
+        "Desc": "Gain {0} coins. Afterwards, obtain {1} coins each time you enter the Mysterious Tavern. Earn an additional {2} coins during winning streaks.",
         "DescDigit": "['14', '3', '2']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 2.0
     },
     {
@@ -8745,14 +9031,14 @@
         "Name": "Arena Coin",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiFingerGuessing2Img6.png",
         "Info": null,
-        "Desc": "\u83b7\u5f97{0}\u679a\u91d1\u5e01\uff0c\u6b64\u540e\u6bcf\u6b21\u8fdb\u5165\u8be1\u9b47\u5ba2\u6808\u65f6\uff0c\u53ef\u83b7\u5f97{1}\u679a\u91d1\u5e01\uff0c\u8fde\u7eed\u80dc\u5229\u65f6\u53ef\u989d\u5916\u83b7\u5f97{2}\u679a\u91d1\u5e01",
+        "Desc": "Gain {0} coins. Afterwards, obtain {1} coins each time you enter the Mysterious Tavern. Earn an additional {2} coins during winning streaks.",
         "DescDigit": "['22', '3', '2']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 3.0
     },
     {
@@ -8767,14 +9053,14 @@
         "Name": "Arena Coin",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiFingerGuessing2Img6.png",
         "Info": null,
-        "Desc": "\u83b7\u5f97{0}\u679a\u91d1\u5e01\uff0c\u6b64\u540e\u6bcf\u6b21\u8fdb\u5165\u8be1\u9b47\u5ba2\u6808\u65f6\uff0c\u53ef\u83b7\u5f97{1}\u679a\u91d1\u5e01\uff0c\u8fde\u7eed\u80dc\u5229\u65f6\u53ef\u989d\u5916\u83b7\u5f97{2}\u679a\u91d1\u5e01",
+        "Desc": "Gain {0} coins. Afterwards, obtain {1} coins each time you enter the Mysterious Tavern. Earn an additional {2} coins during winning streaks.",
         "DescDigit": "['30', '3', '2']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 4.0
     },
     {
@@ -8789,14 +9075,14 @@
         "Name": "Arena Coin",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiFingerGuessing2Img6.png",
         "Info": null,
-        "Desc": "\u83b7\u5f97{0}\u679a\u91d1\u5e01\uff0c\u6b64\u540e\u6bcf\u6b21\u8fdb\u5165\u8be1\u9b47\u5ba2\u6808\u65f6\uff0c\u53ef\u83b7\u5f97{1}\u679a\u91d1\u5e01\uff0c\u8fde\u7eed\u80dc\u5229\u65f6\u53ef\u989d\u5916\u83b7\u5f97{2}\u679a\u91d1\u5e01",
+        "Desc": "Gain {0} coins. Afterwards, obtain {1} coins each time you enter the Mysterious Tavern. Earn an additional {2} coins during winning streaks.",
         "DescDigit": "['38', '3', '2']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 5.0
     },
     {
@@ -8811,14 +9097,14 @@
         "Name": "Tavern VIP Card",
         "IconRes": "Assets/Product/Texture/Image/IconTools/ItPointFriend001.png",
         "Info": null,
-        "Desc": "\u83b7\u5f97{0}\u679a\u91d1\u5e01\uff0c\u6b64\u540e\u6bcf\u6b21\u8fdb\u5165\u8be1\u9b47\u5ba2\u6808\u65f6\uff0c\u53ef\u83b7\u5f97{1}\u6b21\u514d\u8d39\u5237\u65b0\u673a\u4f1a",
+        "Desc": "Gain {0} coins. Afterwards, obtain {1} free refreshes each time you enter the Mysterious Tavern.",
         "DescDigit": "['24', '2']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 7.0
     },
     {
@@ -8833,14 +9119,14 @@
         "Name": "Tavern VIP Card",
         "IconRes": "Assets/Product/Texture/Image/IconTools/ItPointFriend001.png",
         "Info": null,
-        "Desc": "\u83b7\u5f97{0}\u679a\u91d1\u5e01\uff0c\u6b64\u540e\u6bcf\u6b21\u8fdb\u5165\u8be1\u9b47\u5ba2\u6808\u65f6\uff0c\u53ef\u83b7\u5f97{1}\u6b21\u514d\u8d39\u5237\u65b0\u673a\u4f1a",
+        "Desc": "Gain {0} coins. Afterwards, obtain {1} free refreshes each time you enter the Mysterious Tavern.",
         "DescDigit": "['32', '2']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 8.0
     },
     {
@@ -8855,14 +9141,14 @@
         "Name": "Tavern VIP Card",
         "IconRes": "Assets/Product/Texture/Image/IconTools/ItPointFriend001.png",
         "Info": null,
-        "Desc": "\u83b7\u5f97{0}\u679a\u91d1\u5e01\uff0c\u6b64\u540e\u6bcf\u6b21\u8fdb\u5165\u8be1\u9b47\u5ba2\u6808\u65f6\uff0c\u53ef\u83b7\u5f97{1}\u6b21\u514d\u8d39\u5237\u65b0\u673a\u4f1a",
+        "Desc": "Gain {0} coins. Afterwards, obtain {1} free refreshes each time you enter the Mysterious Tavern.",
         "DescDigit": "['40', '2']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 9.0
     },
     {
@@ -8877,14 +9163,14 @@
         "Name": "Tavern VIP Card",
         "IconRes": "Assets/Product/Texture/Image/IconTools/ItPointFriend001.png",
         "Info": null,
-        "Desc": "\u83b7\u5f97{0}\u679a\u91d1\u5e01\uff0c\u6b64\u540e\u6bcf\u6b21\u8fdb\u5165\u8be1\u9b47\u5ba2\u6808\u65f6\uff0c\u53ef\u83b7\u5f97{1}\u6b21\u514d\u8d39\u5237\u65b0\u673a\u4f1a",
+        "Desc": "Gain {0} coins. Afterwards, obtain {1} free refreshes each time you enter the Mysterious Tavern.",
         "DescDigit": "['48', '2']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 10.0
     },
     {
@@ -8899,14 +9185,14 @@
         "Name": "Tavern VIP Card",
         "IconRes": "Assets/Product/Texture/Image/IconTools/ItPointFriend001.png",
         "Info": null,
-        "Desc": "\u83b7\u5f97{0}\u679a\u91d1\u5e01\uff0c\u6b64\u540e\u6bcf\u6b21\u8fdb\u5165\u8be1\u9b47\u5ba2\u6808\u65f6\uff0c\u53ef\u83b7\u5f97{1}\u6b21\u514d\u8d39\u5237\u65b0\u673a\u4f1a",
+        "Desc": "Gain {0} coins. Afterwards, obtain {1} free refreshes each time you enter the Mysterious Tavern.",
         "DescDigit": "['56', '2']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 11.0
     },
     {
@@ -8921,14 +9207,14 @@
         "Name": "Lucky Ring",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconTheatre16.png",
         "Info": null,
-        "Desc": "\u83b7\u5f97{0}\u679a\u91d1\u5e01\uff0c\u968f\u540e\u6bcf\u5f53\u4f60\u8fde\u80dc\u540e\u8fdb\u5165\u8be1\u9b47\u5ba2\u6808\u65f6\uff0c\u53ef\u83b7\u5f97{1}\u500d\u8fde\u80dc\u573a\u6b21\u7684\u91d1\u5e01\uff0c\u6bcf\u6b21\u6700\u9ad8\u83b7\u5f97{2}\u679a",
+        "Desc": "Gain {0} coins. Afterwards, whenever you enter the Mysterious Tavern on a winning streak, earn coins equal to {1}x your streak count, up to {2} coins each time.",
         "DescDigit": "['6', '2', '8']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 13.0
     },
     {
@@ -8943,14 +9229,14 @@
         "Name": "Lucky Ring",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconTheatre16.png",
         "Info": null,
-        "Desc": "\u83b7\u5f97{0}\u679a\u91d1\u5e01\uff0c\u968f\u540e\u6bcf\u5f53\u4f60\u8fde\u80dc\u540e\u8fdb\u5165\u8be1\u9b47\u5ba2\u6808\u65f6\uff0c\u53ef\u83b7\u5f97{1}\u500d\u8fde\u80dc\u573a\u6b21\u7684\u91d1\u5e01\uff0c\u6bcf\u6b21\u6700\u9ad8\u83b7\u5f97{2}\u679a",
+        "Desc": "Gain {0} coins. Afterwards, whenever you enter the Mysterious Tavern on a winning streak, earn coins equal to {1}x your streak count, up to {2} coins each time.",
         "DescDigit": "['14', '2', '8']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 14.0
     },
     {
@@ -8965,14 +9251,14 @@
         "Name": "Lucky Ring",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconTheatre16.png",
         "Info": null,
-        "Desc": "\u83b7\u5f97{0}\u679a\u91d1\u5e01\uff0c\u968f\u540e\u6bcf\u5f53\u4f60\u8fde\u80dc\u540e\u8fdb\u5165\u8be1\u9b47\u5ba2\u6808\u65f6\uff0c\u53ef\u83b7\u5f97{1}\u500d\u8fde\u80dc\u573a\u6b21\u7684\u91d1\u5e01\uff0c\u6bcf\u6b21\u6700\u9ad8\u83b7\u5f97{2}\u679a",
+        "Desc": "Gain {0} coins. Afterwards, whenever you enter the Mysterious Tavern on a winning streak, earn coins equal to {1}x your streak count, up to {2} coins each time.",
         "DescDigit": "['22', '2', '8']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 15.0
     },
     {
@@ -8987,14 +9273,14 @@
         "Name": "Lucky Ring",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconTheatre16.png",
         "Info": null,
-        "Desc": "\u83b7\u5f97{0}\u679a\u91d1\u5e01\uff0c\u968f\u540e\u6bcf\u5f53\u4f60\u8fde\u80dc\u540e\u8fdb\u5165\u8be1\u9b47\u5ba2\u6808\u65f6\uff0c\u53ef\u83b7\u5f97{1}\u500d\u8fde\u80dc\u573a\u6b21\u7684\u91d1\u5e01\uff0c\u6bcf\u6b21\u6700\u9ad8\u83b7\u5f97{2}\u679a",
+        "Desc": "Gain {0} coins. Afterwards, whenever you enter the Mysterious Tavern on a winning streak, earn coins equal to {1}x your streak count, up to {2} coins each time.",
         "DescDigit": "['30', '2', '8']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 16.0
     },
     {
@@ -9009,14 +9295,14 @@
         "Name": "Lucky Ring",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconTheatre16.png",
         "Info": null,
-        "Desc": "\u83b7\u5f97{0}\u679a\u91d1\u5e01\uff0c\u968f\u540e\u6bcf\u5f53\u4f60\u8fde\u80dc\u540e\u8fdb\u5165\u8be1\u9b47\u5ba2\u6808\u65f6\uff0c\u53ef\u83b7\u5f97{1}\u500d\u8fde\u80dc\u573a\u6b21\u7684\u91d1\u5e01\uff0c\u6bcf\u6b21\u6700\u9ad8\u83b7\u5f97{2}\u679a",
+        "Desc": "Gain {0} coins. Afterwards, whenever you enter the Mysterious Tavern on a winning streak, earn coins equal to {1}x your streak count, up to {2} coins each time.",
         "DescDigit": "['38', '2', '8']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 17.0
     },
     {
@@ -9031,14 +9317,14 @@
         "Name": "Veteran Medal",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2031001.png",
         "Info": null,
-        "Desc": "\u83b7\u5f97{0}\u679a\u91d1\u5e01\uff0c\u8fdb\u5165\u6218\u6597\u65f6\u83b7\u5f97{1}\u70b9\u653b\u51fb\u548c{2}\u70b9\u751f\u547d",
+        "Desc": "Gain {0} coins. When entering battle, gain {1} ATK and {2} HP.",
         "DescDigit": "['12', '18', '600']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 19.0
     },
     {
@@ -9053,14 +9339,14 @@
         "Name": "Veteran Medal",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2031001.png",
         "Info": null,
-        "Desc": "\u83b7\u5f97{0}\u679a\u91d1\u5e01\uff0c\u8fdb\u5165\u6218\u6597\u65f6\u83b7\u5f97{1}\u70b9\u653b\u51fb\u548c{2}\u70b9\u751f\u547d",
+        "Desc": "Gain {0} coins. When entering battle, gain {1} ATK and {2} HP.",
         "DescDigit": "['12', '24', '600']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 20.0
     },
     {
@@ -9075,14 +9361,14 @@
         "Name": "Veteran Medal",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2031001.png",
         "Info": null,
-        "Desc": "\u83b7\u5f97{0}\u679a\u91d1\u5e01\uff0c\u8fdb\u5165\u6218\u6597\u65f6\u83b7\u5f97{1}\u70b9\u653b\u51fb\u548c{2}\u70b9\u751f\u547d",
+        "Desc": "Gain {0} coins. When entering battle, gain {1} ATK and {2} HP.",
         "DescDigit": "['12', '30', '700']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 21.0
     },
     {
@@ -9097,14 +9383,14 @@
         "Name": "Veteran Medal",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2031001.png",
         "Info": null,
-        "Desc": "\u83b7\u5f97{0}\u679a\u91d1\u5e01\uff0c\u8fdb\u5165\u6218\u6597\u65f6\u83b7\u5f97{1}\u70b9\u653b\u51fb\u548c{2}\u70b9\u751f\u547d",
+        "Desc": "Gain {0} coins. When entering battle, gain {1} ATK and {2} HP.",
         "DescDigit": "['12', '36', '800']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 22.0
     },
     {
@@ -9119,14 +9405,14 @@
         "Name": "Veteran Medal",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2031001.png",
         "Info": null,
-        "Desc": "\u83b7\u5f97{0}\u679a\u91d1\u5e01\uff0c\u8fdb\u5165\u6218\u6597\u65f6\u83b7\u5f97{1}\u70b9\u653b\u51fb\u548c{2}\u70b9\u751f\u547d",
+        "Desc": "Gain {0} coins. When entering battle, gain {1} ATK and {2} HP.",
         "DescDigit": "['12', '42', '900']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 23.0
     },
     {
@@ -9148,7 +9434,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 25.0
     },
     {
@@ -9170,7 +9456,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 26.0
     },
     {
@@ -9192,7 +9478,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 27.0
     },
     {
@@ -9214,7 +9500,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 28.0
     },
     {
@@ -9236,7 +9522,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 29.0
     },
     {
@@ -9258,7 +9544,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 31.0
     },
     {
@@ -9280,7 +9566,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 32.0
     },
     {
@@ -9302,7 +9588,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 33.0
     },
     {
@@ -9324,7 +9610,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 34.0
     },
     {
@@ -9346,7 +9632,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 35.0
     },
     {
@@ -9361,14 +9647,14 @@
         "Name": "Dice of Fate",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiDragPuzzleItem08.png",
         "Info": null,
-        "Desc": "\u83b7\u5f97{0}\u679a\u91d1\u5e01\uff0c\u6b64\u540e\u6bcf\u6b21\u8fdb\u5165\u8be1\u9b47\u5ba2\u6808\u65f6\uff0c\u80cc\u5305\u680f\u6700\u5de6\u4fa7\u680f\u4f4d\u4e2d\u7684\u7b26\u7eb9\u4f1a\u968f\u673a\u66ff\u6362\u4e3a\u9ad8\u4e00\u7ea7\u7a00\u6709\u5ea6\u7684\u5176\u4ed6\u7b26\u7eb9",
+        "Desc": "Gain {0} coins. Afterwards, each time you enter the Mysterious Tavern, the Rune in the leftmost inventory slot will be randomly replaced with another of one higher rarity level.",
         "DescDigit": "['6']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 37.0
     },
     {
@@ -9383,14 +9669,14 @@
         "Name": "Dice of Fate",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiDragPuzzleItem08.png",
         "Info": null,
-        "Desc": "\u83b7\u5f97{0}\u679a\u91d1\u5e01\uff0c\u6b64\u540e\u6bcf\u6b21\u8fdb\u5165\u8be1\u9b47\u5ba2\u6808\u65f6\uff0c\u80cc\u5305\u680f\u6700\u5de6\u4fa7\u680f\u4f4d\u4e2d\u7684\u7b26\u7eb9\u4f1a\u968f\u673a\u66ff\u6362\u4e3a\u9ad8\u4e00\u7ea7\u7a00\u6709\u5ea6\u7684\u5176\u4ed6\u7b26\u7eb9",
+        "Desc": "Gain {0} coins. Afterwards, each time you enter the Mysterious Tavern, the Rune in the leftmost inventory slot will be randomly replaced with another of one higher rarity level.",
         "DescDigit": "['14']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 38.0
     },
     {
@@ -9405,14 +9691,14 @@
         "Name": "Dice of Fate",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiDragPuzzleItem08.png",
         "Info": null,
-        "Desc": "\u83b7\u5f97{0}\u679a\u91d1\u5e01\uff0c\u6b64\u540e\u6bcf\u6b21\u8fdb\u5165\u8be1\u9b47\u5ba2\u6808\u65f6\uff0c\u80cc\u5305\u680f\u6700\u5de6\u4fa7\u680f\u4f4d\u4e2d\u7684\u7b26\u7eb9\u4f1a\u968f\u673a\u66ff\u6362\u4e3a\u9ad8\u4e00\u7ea7\u7a00\u6709\u5ea6\u7684\u5176\u4ed6\u7b26\u7eb9",
+        "Desc": "Gain {0} coins. Afterwards, each time you enter the Mysterious Tavern, the Rune in the leftmost inventory slot will be randomly replaced with another of one higher rarity level.",
         "DescDigit": "['20']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 39.0
     },
     {
@@ -9427,14 +9713,14 @@
         "Name": "Dice of Fate",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiDragPuzzleItem08.png",
         "Info": null,
-        "Desc": "\u83b7\u5f97{0}\u679a\u91d1\u5e01\uff0c\u6b64\u540e\u6bcf\u6b21\u8fdb\u5165\u8be1\u9b47\u5ba2\u6808\u65f6\uff0c\u80cc\u5305\u680f\u6700\u5de6\u4fa7\u680f\u4f4d\u4e2d\u7684\u7b26\u7eb9\u4f1a\u968f\u673a\u66ff\u6362\u4e3a\u9ad8\u4e00\u7ea7\u7a00\u6709\u5ea6\u7684\u5176\u4ed6\u7b26\u7eb9",
+        "Desc": "Gain {0} coins. Afterwards, each time you enter the Mysterious Tavern, the Rune in the leftmost inventory slot will be randomly replaced with another of one higher rarity level.",
         "DescDigit": "['26']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 40.0
     },
     {
@@ -9449,14 +9735,14 @@
         "Name": "Dice of Fate",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiDragPuzzleItem08.png",
         "Info": null,
-        "Desc": "\u83b7\u5f97{0}\u679a\u91d1\u5e01\uff0c\u6b64\u540e\u6bcf\u6b21\u8fdb\u5165\u8be1\u9b47\u5ba2\u6808\u65f6\uff0c\u80cc\u5305\u680f\u6700\u5de6\u4fa7\u680f\u4f4d\u4e2d\u7684\u7b26\u7eb9\u4f1a\u968f\u673a\u66ff\u6362\u4e3a\u9ad8\u4e00\u7ea7\u7a00\u6709\u5ea6\u7684\u5176\u4ed6\u7b26\u7eb9",
+        "Desc": "Gain {0} coins. Afterwards, each time you enter the Mysterious Tavern, the Rune in the leftmost inventory slot will be randomly replaced with another of one higher rarity level.",
         "DescDigit": "['32']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 41.0
     },
     {
@@ -9471,14 +9757,14 @@
         "Name": "Rune Chest: Epic",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconRougeItem029.png",
         "Info": null,
-        "Desc": "\u968f\u673a\u83b7\u5f97{0}\u4e2a\u6a59\u8272\u7b26\u7eb9",
+        "Desc": "Gain {0} random Orange Runes.",
         "DescDigit": "['2']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 43.0
     },
     {
@@ -9493,14 +9779,14 @@
         "Name": "Rune Chest: Epic",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconRougeItem029.png",
         "Info": null,
-        "Desc": "\u968f\u673a\u83b7\u5f97{0}\u4e2a\u6a59\u8272\u7b26\u7eb9",
+        "Desc": "Gain {0} random Orange Runes.",
         "DescDigit": "['3']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 44.0
     },
     {
@@ -9515,14 +9801,14 @@
         "Name": "Rune Chest: Epic",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconRougeItem029.png",
         "Info": null,
-        "Desc": "\u968f\u673a\u83b7\u5f97{0}\u4e2a\u6a59\u8272\u7b26\u7eb9",
+        "Desc": "Gain {0} random Orange Runes.",
         "DescDigit": "['3']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 45.0
     },
     {
@@ -9537,14 +9823,14 @@
         "Name": "Rune Chest: Epic",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconRougeItem029.png",
         "Info": null,
-        "Desc": "\u968f\u673a\u83b7\u5f97{0}\u4e2a\u6a59\u8272\u7b26\u7eb9",
+        "Desc": "Gain {0} random Orange Runes.",
         "DescDigit": "['4']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 46.0
     },
     {
@@ -9559,14 +9845,14 @@
         "Name": "Giant Killer",
         "IconRes": "Assets/Product/Texture/Image/IconTools/ItPointEvent004.png",
         "Info": null,
-        "Desc": "\u5728\u6218\u6597\u4e2d\u5bf9\u751f\u547d\u6700\u5927\u503c\u5927\u4e8e\u7b49\u4e8e\u81ea\u8eab\u751f\u547d\u6700\u5927\u503c\u7684{0}%\u7684\u654c\u4eba\uff0c\u53ef\u9020\u6210\u4f24\u5bb3\u63d0\u5347{1}%",
+        "Desc": "In battle, deals {1}% more DMG against enemies whose Max HP is greater than or equal to {0}% of your character's Max HP.",
         "DescDigit": "['100', '15']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 47.0
     },
     {
@@ -9581,14 +9867,14 @@
         "Name": "Giant Killer",
         "IconRes": "Assets/Product/Texture/Image/IconTools/ItPointEvent004.png",
         "Info": null,
-        "Desc": "\u5728\u6218\u6597\u4e2d\u5bf9\u751f\u547d\u6700\u5927\u503c\u5927\u4e8e\u7b49\u4e8e\u81ea\u8eab\u751f\u547d\u6700\u5927\u503c\u7684{0}%\u7684\u654c\u4eba\uff0c\u53ef\u9020\u6210\u4f24\u5bb3\u63d0\u5347{1}%",
+        "Desc": "In battle, deals {1}% more DMG against enemies whose Max HP is greater than or equal to {0}% of your character's Max HP.",
         "DescDigit": "['100', '30']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 48.0
     },
     {
@@ -9603,14 +9889,14 @@
         "Name": "Giant Killer",
         "IconRes": "Assets/Product/Texture/Image/IconTools/ItPointEvent004.png",
         "Info": null,
-        "Desc": "\u5728\u6218\u6597\u4e2d\u5bf9\u751f\u547d\u6700\u5927\u503c\u5927\u4e8e\u7b49\u4e8e\u81ea\u8eab\u751f\u547d\u6700\u5927\u503c\u7684{0}%\u7684\u654c\u4eba\uff0c\u53ef\u9020\u6210\u4f24\u5bb3\u63d0\u5347{1}%",
+        "Desc": "In battle, deals {1}% more DMG against enemies whose Max HP is greater than or equal to {0}% of your character's Max HP.",
         "DescDigit": "['100', '45']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 49.0
     },
     {
@@ -9625,14 +9911,14 @@
         "Name": "Giant Killer",
         "IconRes": "Assets/Product/Texture/Image/IconTools/ItPointEvent004.png",
         "Info": null,
-        "Desc": "\u5728\u6218\u6597\u4e2d\u5bf9\u751f\u547d\u6700\u5927\u503c\u5927\u4e8e\u7b49\u4e8e\u81ea\u8eab\u751f\u547d\u6700\u5927\u503c\u7684{0}%\u7684\u654c\u4eba\uff0c\u53ef\u9020\u6210\u4f24\u5bb3\u63d0\u5347{1}%",
+        "Desc": "In battle, deals {1}% more DMG against enemies whose Max HP is greater than or equal to {0}% of your character's Max HP.",
         "DescDigit": "['100', '60']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 50.0
     },
     {
@@ -9654,7 +9940,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 51.0
     },
     {
@@ -9669,14 +9955,14 @@
         "Name": "Armor-Piercing Round",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconMaverick3Activity02.png",
         "Info": null,
-        "Desc": "\u5728\u6218\u6597\u4e2d\u6bcf\u6b21\u9020\u6210\u4f24\u5bb3\u65f6\uff0c\u989d\u5916\u5bf9\u654c\u65b9\u7684\u62a4\u76fe\u9020\u6210{0}%\u4f24\u5bb3\u503c\u7684\u4f24\u5bb3\uff0c\u654c\u65b9\u65e0\u62a4\u76fe\u65f6\u56de\u590d\u4f24\u5bb3{1}%\u7684\u751f\u547d\u503c",
+        "Desc": "In battle, each time DMG is dealt, additionally deals DMG equal to {0}% of that DMG to enemy shields. When the enemy has no shield, restores HP equal to {1}% of the DMG dealt.",
         "DescDigit": "['20', '4']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 52.0
     },
     {
@@ -9691,14 +9977,14 @@
         "Name": "Armor-Piercing Round",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconMaverick3Activity02.png",
         "Info": null,
-        "Desc": "\u5728\u6218\u6597\u4e2d\u6bcf\u6b21\u9020\u6210\u4f24\u5bb3\u65f6\uff0c\u989d\u5916\u5bf9\u654c\u65b9\u7684\u62a4\u76fe\u9020\u6210{0}%\u4f24\u5bb3\u503c\u7684\u4f24\u5bb3\uff0c\u654c\u65b9\u65e0\u62a4\u76fe\u65f6\u56de\u590d\u4f24\u5bb3{1}%\u7684\u751f\u547d\u503c",
+        "Desc": "In battle, each time DMG is dealt, additionally deals DMG equal to {0}% of that DMG to enemy shields. When the enemy has no shield, restores HP equal to {1}% of the DMG dealt.",
         "DescDigit": "['40', '8']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 53.0
     },
     {
@@ -9713,14 +9999,14 @@
         "Name": "Armor-Piercing Round",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconMaverick3Activity02.png",
         "Info": null,
-        "Desc": "\u5728\u6218\u6597\u4e2d\u6bcf\u6b21\u9020\u6210\u4f24\u5bb3\u65f6\uff0c\u989d\u5916\u5bf9\u654c\u65b9\u7684\u62a4\u76fe\u9020\u6210{0}%\u4f24\u5bb3\u503c\u7684\u4f24\u5bb3\uff0c\u654c\u65b9\u65e0\u62a4\u76fe\u65f6\u56de\u590d\u4f24\u5bb3{1}%\u7684\u751f\u547d\u503c",
+        "Desc": "In battle, each time DMG is dealt, additionally deals DMG equal to {0}% of that DMG to enemy shields. When the enemy has no shield, restores HP equal to {1}% of the DMG dealt.",
         "DescDigit": "['60', '12']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 54.0
     },
     {
@@ -9735,14 +10021,14 @@
         "Name": "Armor-Piercing Round",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconMaverick3Activity02.png",
         "Info": null,
-        "Desc": "\u5728\u6218\u6597\u4e2d\u6bcf\u6b21\u9020\u6210\u4f24\u5bb3\u65f6\uff0c\u989d\u5916\u5bf9\u654c\u65b9\u7684\u62a4\u76fe\u9020\u6210{0}%\u4f24\u5bb3\u503c\u7684\u4f24\u5bb3\uff0c\u654c\u65b9\u65e0\u62a4\u76fe\u65f6\u56de\u590d\u4f24\u5bb3{1}%\u7684\u751f\u547d\u503c",
+        "Desc": "In battle, each time DMG is dealt, additionally deals DMG equal to {0}% of that DMG to enemy shields. When the enemy has no shield, restores HP equal to {1}% of the DMG dealt.",
         "DescDigit": "['80', '16']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 55.0
     },
     {
@@ -9757,14 +10043,14 @@
         "Name": "Armor-Piercing Round",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconMaverick3Activity02.png",
         "Info": null,
-        "Desc": "\u5728\u6218\u6597\u4e2d\u6bcf\u6b21\u9020\u6210\u4f24\u5bb3\u65f6\uff0c\u989d\u5916\u5bf9\u654c\u65b9\u7684\u62a4\u76fe\u9020\u6210{0}%\u4f24\u5bb3\u503c\u7684\u4f24\u5bb3\uff0c\u654c\u65b9\u65e0\u62a4\u76fe\u65f6\u56de\u590d\u4f24\u5bb3{1}%\u7684\u751f\u547d\u503c",
+        "Desc": "In battle, each time DMG is dealt, additionally deals DMG equal to {0}% of that DMG to enemy shields. When the enemy has no shield, restores HP equal to {1}% of the DMG dealt.",
         "DescDigit": "['100', '20']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 56.0
     },
     {
@@ -9786,7 +10072,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 57.0
     },
     {
@@ -9808,7 +10094,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 58.0
     },
     {
@@ -9830,7 +10116,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 59.0
     },
     {
@@ -9852,7 +10138,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 60.0
     },
     {
@@ -9874,7 +10160,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 61.0
     },
     {
@@ -9889,14 +10175,14 @@
         "Name": "Berserker's Blood",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiNonogramItem09.png",
         "Info": null,
-        "Desc": "\u5728\u6218\u6597\u4e2d\u6bcf\u79d2\u635f\u5931{0}%\u751f\u547d\u503c\uff0c\u540c\u65f6\u5bf9\u654c\u4eba\u9020\u6210{1}%\u81ea\u8eab\u635f\u5931\u503c\u7684\u4f24\u5bb3\uff0c\u6301\u7eed10\u79d2",
+        "Desc": "In battle, loses {0}% HP every second while dealing DMG to enemies equal to {1}% of the HP lost for 10s.",
         "DescDigit": "['3', '100']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 62.0
     },
     {
@@ -9911,14 +10197,14 @@
         "Name": "Berserker's Blood",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiNonogramItem09.png",
         "Info": null,
-        "Desc": "\u5728\u6218\u6597\u4e2d\u6bcf\u79d2\u635f\u5931{0}%\u751f\u547d\u503c\uff0c\u540c\u65f6\u5bf9\u654c\u4eba\u9020\u6210{1}%\u81ea\u8eab\u635f\u5931\u503c\u7684\u4f24\u5bb3\uff0c\u6301\u7eed10\u79d2",
+        "Desc": "In battle, loses {0}% HP every second while dealing DMG to enemies equal to {1}% of the HP lost for 10s.",
         "DescDigit": "['4', '100']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 63.0
     },
     {
@@ -9933,14 +10219,14 @@
         "Name": "Berserker's Blood",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiNonogramItem09.png",
         "Info": null,
-        "Desc": "\u5728\u6218\u6597\u4e2d\u6bcf\u79d2\u635f\u5931{0}%\u751f\u547d\u503c\uff0c\u540c\u65f6\u5bf9\u654c\u4eba\u9020\u6210{1}%\u81ea\u8eab\u635f\u5931\u503c\u7684\u4f24\u5bb3\uff0c\u6301\u7eed10\u79d2",
+        "Desc": "In battle, loses {0}% HP every second while dealing DMG to enemies equal to {1}% of the HP lost for 10s.",
         "DescDigit": "['5', '100']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 64.0
     },
     {
@@ -9955,14 +10241,14 @@
         "Name": "Berserker's Blood",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiNonogramItem09.png",
         "Info": null,
-        "Desc": "\u5728\u6218\u6597\u4e2d\u6bcf\u79d2\u635f\u5931{0}%\u751f\u547d\u503c\uff0c\u540c\u65f6\u5bf9\u654c\u4eba\u9020\u6210{1}%\u81ea\u8eab\u635f\u5931\u503c\u7684\u4f24\u5bb3\uff0c\u6301\u7eed10\u79d2",
+        "Desc": "In battle, loses {0}% HP every second while dealing DMG to enemies equal to {1}% of the HP lost for 10s.",
         "DescDigit": "['5', '115']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 65.0
     },
     {
@@ -9977,14 +10263,14 @@
         "Name": "Berserker's Blood",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiNonogramItem09.png",
         "Info": null,
-        "Desc": "\u5728\u6218\u6597\u4e2d\u6bcf\u79d2\u635f\u5931{0}%\u751f\u547d\u503c\uff0c\u540c\u65f6\u5bf9\u654c\u4eba\u9020\u6210{1}%\u81ea\u8eab\u635f\u5931\u503c\u7684\u4f24\u5bb3\uff0c\u6301\u7eed10\u79d2",
+        "Desc": "In battle, loses {0}% HP every second while dealing DMG to enemies equal to {1}% of the HP lost for 10s.",
         "DescDigit": "['5', '130']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 66.0
     },
     {
@@ -9996,7 +10282,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u566c\u8840\u796d\u5668",
+        "Name": "Bloodthirsty Vessel",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2038001.png",
         "Info": null,
         "Desc": "In battle, loses {0}% HP upon entry (will not fall below 1%) and gains a shield equal to the original amount of HP lost. All DMG increases by {1}% for 10s afterward.",
@@ -10006,7 +10292,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 67.0
     },
     {
@@ -10018,17 +10304,17 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u566c\u8840\u796d\u5668",
+        "Name": "Bloodthirsty Vessel",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2038001.png",
         "Info": null,
-        "Desc": "\u5728\u6218\u6597\u4e2d\u5165\u573a\u5931\u53bb{0}%\u751f\u547d\u503c\uff08\u4e0d\u4f1a\u4f4e\u4e8e1%\uff09\uff0c\u83b7\u53d6\u539f\u59cb\u635f\u5931\u91cf\u7684\u7b49\u503c\u62a4\u76fe\uff0c\u6b64\u540e10\u79d2\u5185\u5168\u4f24\u5bb3\u63d0\u5347{1}%",
+        "Desc": "In battle, loses {0}% HP upon entry (will not fall below 1%) and gains a shield equal to the original amount of HP lost. All DMG increases by {1}% for 10s afterward.",
         "DescDigit": "['40', '30']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 68.0
     },
     {
@@ -10040,17 +10326,17 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u566c\u8840\u796d\u5668",
+        "Name": "Bloodthirsty Vessel",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2038001.png",
         "Info": null,
-        "Desc": "\u5728\u6218\u6597\u4e2d\u5165\u573a\u5931\u53bb{0}%\u751f\u547d\u503c\uff08\u4e0d\u4f1a\u4f4e\u4e8e1%\uff09\uff0c\u83b7\u53d6\u539f\u59cb\u635f\u5931\u91cf\u7684\u7b49\u503c\u62a4\u76fe\uff0c\u6b64\u540e10\u79d2\u5185\u5168\u4f24\u5bb3\u63d0\u5347{1}%",
+        "Desc": "In battle, loses {0}% HP upon entry (will not fall below 1%) and gains a shield equal to the original amount of HP lost. All DMG increases by {1}% for 10s afterward.",
         "DescDigit": "['40', '45']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 69.0
     },
     {
@@ -10062,17 +10348,17 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u566c\u8840\u796d\u5668",
+        "Name": "Bloodthirsty Vessel",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2038001.png",
         "Info": null,
-        "Desc": "\u5728\u6218\u6597\u4e2d\u5165\u573a\u5931\u53bb{0}%\u751f\u547d\u503c\uff08\u4e0d\u4f1a\u4f4e\u4e8e1%\uff09\uff0c\u83b7\u53d6\u539f\u59cb\u635f\u5931\u91cf\u7684\u7b49\u503c\u62a4\u76fe\uff0c\u6b64\u540e10\u79d2\u5185\u5168\u4f24\u5bb3\u63d0\u5347{1}%",
+        "Desc": "In battle, loses {0}% HP upon entry (will not fall below 1%) and gains a shield equal to the original amount of HP lost. All DMG increases by {1}% for 10s afterward.",
         "DescDigit": "['40', '60']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 70.0
     },
     {
@@ -10084,17 +10370,17 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u566c\u8840\u796d\u5668",
+        "Name": "Bloodthirsty Vessel",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2038001.png",
         "Info": null,
-        "Desc": "\u5728\u6218\u6597\u4e2d\u5165\u573a\u5931\u53bb{0}%\u751f\u547d\u503c\uff08\u4e0d\u4f1a\u4f4e\u4e8e1%\uff09\uff0c\u83b7\u53d6\u539f\u59cb\u635f\u5931\u91cf\u7684\u7b49\u503c\u62a4\u76fe\uff0c\u6b64\u540e10\u79d2\u5185\u5168\u4f24\u5bb3\u63d0\u5347{1}%",
+        "Desc": "In battle, loses {0}% HP upon entry (will not fall below 1%) and gains a shield equal to the original amount of HP lost. All DMG increases by {1}% for 10s afterward.",
         "DescDigit": "['40', '75']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 71.0
     },
     {
@@ -10106,7 +10392,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u547d\u8f6e\u4e4b\u5951",
+        "Name": "Fate Wheel Pact",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2020001.png",
         "Info": null,
         "Desc": "When HP first drops below 80% in battle, deals Physical DMG equal to {1}% of ATK once for every {0} skill previously triggered, up to 5 times.",
@@ -10116,7 +10402,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 72.0
     },
     {
@@ -10128,7 +10414,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u547d\u8f6e\u4e4b\u5951",
+        "Name": "Fate Wheel Pact",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2020001.png",
         "Info": null,
         "Desc": "When HP first drops below 80% in battle, deals Physical DMG equal to {1}% of ATK once for every {0} skill previously triggered, up to 5 times.",
@@ -10138,7 +10424,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 73.0
     },
     {
@@ -10150,7 +10436,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u547d\u8f6e\u4e4b\u5951",
+        "Name": "Fate Wheel Pact",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2020001.png",
         "Info": null,
         "Desc": "When HP first drops below 80% in battle, deals Physical DMG equal to {1}% of ATK once for every {0} skill previously triggered, up to 5 times.",
@@ -10160,7 +10446,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 74.0
     },
     {
@@ -10172,7 +10458,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u547d\u8f6e\u4e4b\u5951",
+        "Name": "Fate Wheel Pact",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2020001.png",
         "Info": null,
         "Desc": "When HP first drops below 80% in battle, deals Physical DMG equal to {1}% of ATK once for every {0} skill previously triggered, up to 5 times.",
@@ -10182,7 +10468,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 75.0
     },
     {
@@ -10194,7 +10480,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u547d\u8f6e\u4e4b\u5951",
+        "Name": "Fate Wheel Pact",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2020001.png",
         "Info": null,
         "Desc": "When HP first drops below 80% in battle, deals Physical DMG equal to {1}% of ATK once for every {0} skill previously triggered, up to 5 times.",
@@ -10204,7 +10490,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 76.0
     },
     {
@@ -10216,17 +10502,17 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u8d50\u798f\u62a4\u7b26",
+        "Name": "Blessing Talisman",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityRPG02.png",
         "Info": null,
-        "Desc": "\u5728\u6218\u6597\u4e2d\u8fdb\u5165\u7edd\u547d\u65f6\u901f\u540e\uff0c\u63a5\u4e0b\u6765\u7684{0}\u79d2\u5185\uff0c\u514d\u75ab\u6240\u6709\u4f24\u5bb3",
+        "Desc": "In battle, becomes immune to all DMG for {0}s after entering Death Speed state.",
         "DescDigit": "['2']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 77.0
     },
     {
@@ -10238,17 +10524,17 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u8d50\u798f\u62a4\u7b26",
+        "Name": "Blessing Talisman",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityRPG02.png",
         "Info": null,
-        "Desc": "\u5728\u6218\u6597\u4e2d\u8fdb\u5165\u7edd\u547d\u65f6\u901f\u540e\uff0c\u63a5\u4e0b\u6765\u7684{0}\u79d2\u5185\uff0c\u514d\u75ab\u6240\u6709\u4f24\u5bb3",
+        "Desc": "In battle, becomes immune to all DMG for {0}s after entering Death Speed state.",
         "DescDigit": "['3']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 78.0
     },
     {
@@ -10260,17 +10546,17 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u8d50\u798f\u62a4\u7b26",
+        "Name": "Blessing Talisman",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityRPG02.png",
         "Info": null,
-        "Desc": "\u5728\u6218\u6597\u4e2d\u8fdb\u5165\u7edd\u547d\u65f6\u901f\u540e\uff0c\u63a5\u4e0b\u6765\u7684{0}\u79d2\u5185\uff0c\u514d\u75ab\u6240\u6709\u4f24\u5bb3",
+        "Desc": "In battle, becomes immune to all DMG for {0}s after entering Death Speed state.",
         "DescDigit": "['4']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 79.0
     },
     {
@@ -10282,17 +10568,17 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u8d50\u798f\u62a4\u7b26",
+        "Name": "Blessing Talisman",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityRPG02.png",
         "Info": null,
-        "Desc": "\u5728\u6218\u6597\u4e2d\u8fdb\u5165\u7edd\u547d\u65f6\u901f\u540e\uff0c\u63a5\u4e0b\u6765\u7684{0}\u79d2\u5185\uff0c\u514d\u75ab\u6240\u6709\u4f24\u5bb3",
+        "Desc": "In battle, becomes immune to all DMG for {0}s after entering Death Speed state.",
         "DescDigit": "['5']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 80.0
     },
     {
@@ -10304,17 +10590,17 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u8d50\u798f\u62a4\u7b26",
+        "Name": "Blessing Talisman",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityRPG02.png",
         "Info": null,
-        "Desc": "\u5728\u6218\u6597\u4e2d\u8fdb\u5165\u7edd\u547d\u65f6\u901f\u540e\uff0c\u63a5\u4e0b\u6765\u7684{0}\u79d2\u5185\uff0c\u514d\u75ab\u6240\u6709\u4f24\u5bb3",
+        "Desc": "In battle, becomes immune to all DMG for {0}s after entering Death Speed state.",
         "DescDigit": "['6']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 81.0
     },
     {
@@ -10326,17 +10612,17 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u65f6\u9699\u6c99\u6f0f",
+        "Name": "Temporal Rift",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2026001.png",
         "Info": null,
-        "Desc": "\u5728\u6218\u6597\u4e2d\u6bcf\u89e6\u53d1\u5384\u96be\u8282\u62cd\u7c7b\u6216\u8d4c\u547d\u620f\u6cd5\u7c7b\u7b26\u7eb9{0}\u6b21\uff0c\u83b7\u5f972\u79d2{1}%\u5168\u4f24\u5bb3\u63d0\u5347\uff0c\u91cd\u590d\u751f\u6548\u53ef\u53e0\u52a0",
+        "Desc": "In battle, for every {0} activations of \"Rhythmic Suffering\" or \"Life-Risking Trick\" Runes, gains {1}% all-DMG boost for 2s. This effect can stack.",
         "DescDigit": "['1', '40']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 82.0
     },
     {
@@ -10348,17 +10634,17 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u65f6\u9699\u6c99\u6f0f",
+        "Name": "Temporal Rift",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2026001.png",
         "Info": null,
-        "Desc": "\u5728\u6218\u6597\u4e2d\u6bcf\u89e6\u53d1\u5384\u96be\u8282\u62cd\u7c7b\u6216\u8d4c\u547d\u620f\u6cd5\u7c7b\u7b26\u7eb9{0}\u6b21\uff0c\u83b7\u5f972\u79d2{1}%\u5168\u4f24\u5bb3\u63d0\u5347\uff0c\u91cd\u590d\u751f\u6548\u53ef\u53e0\u52a0",
+        "Desc": "In battle, for every {0} activations of \"Rhythmic Suffering\" or \"Life-Risking Trick\" Runes, gains {1}% all-DMG boost for 2s. This effect can stack.",
         "DescDigit": "['1', '52.5']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 83.0
     },
     {
@@ -10370,17 +10656,17 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u65f6\u9699\u6c99\u6f0f",
+        "Name": "Temporal Rift",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2026001.png",
         "Info": null,
-        "Desc": "\u5728\u6218\u6597\u4e2d\u6bcf\u89e6\u53d1\u5384\u96be\u8282\u62cd\u7c7b\u6216\u8d4c\u547d\u620f\u6cd5\u7c7b\u7b26\u7eb9{0}\u6b21\uff0c\u83b7\u5f972\u79d2{1}%\u5168\u4f24\u5bb3\u63d0\u5347\uff0c\u91cd\u590d\u751f\u6548\u53ef\u53e0\u52a0",
+        "Desc": "In battle, for every {0} activations of \"Rhythmic Suffering\" or \"Life-Risking Trick\" Runes, gains {1}% all-DMG boost for 2s. This effect can stack.",
         "DescDigit": "['1', '65']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 84.0
     },
     {
@@ -10392,17 +10678,17 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u65f6\u9699\u6c99\u6f0f",
+        "Name": "Temporal Rift",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2026001.png",
         "Info": null,
-        "Desc": "\u5728\u6218\u6597\u4e2d\u6bcf\u89e6\u53d1\u5384\u96be\u8282\u62cd\u7c7b\u6216\u8d4c\u547d\u620f\u6cd5\u7c7b\u7b26\u7eb9{0}\u6b21\uff0c\u83b7\u5f972\u79d2{1}%\u5168\u4f24\u5bb3\u63d0\u5347\uff0c\u91cd\u590d\u751f\u6548\u53ef\u53e0\u52a0",
+        "Desc": "In battle, for every {0} activations of \"Rhythmic Suffering\" or \"Life-Risking Trick\" Runes, gains {1}% all-DMG boost for 2s. This effect can stack.",
         "DescDigit": "['1', '77.5']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 85.0
     },
     {
@@ -10414,17 +10700,17 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u65f6\u9699\u6c99\u6f0f",
+        "Name": "Temporal Rift",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2026001.png",
         "Info": null,
-        "Desc": "\u5728\u6218\u6597\u4e2d\u6bcf\u89e6\u53d1\u5384\u96be\u8282\u62cd\u7c7b\u6216\u8d4c\u547d\u620f\u6cd5\u7c7b\u7b26\u7eb9{0}\u6b21\uff0c\u83b7\u5f972\u79d2{1}%\u5168\u4f24\u5bb3\u63d0\u5347\uff0c\u91cd\u590d\u751f\u6548\u53ef\u53e0\u52a0",
+        "Desc": "In battle, for every {0} activations of \"Rhythmic Suffering\" or \"Life-Risking Trick\" Runes, gains {1}% all-DMG boost for 2s. This effect can stack.",
         "DescDigit": "['1', '90']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 86.0
     },
     {
@@ -10436,17 +10722,17 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u51a5\u6cb3\u62a4\u5951",
+        "Name": "Acheron Guardian",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityPointQuest2004001.png",
         "Info": null,
-        "Desc": "\u5728\u6218\u6597\u4e2d\u63d0\u5347{0}%\u6700\u5927\u751f\u547d\u503c\uff0c\u4e0e\u654c\u4eba\u89d2\u8272\u4e0d\u540c\u65f6\u8fd8\u4f1a\u989d\u5916\u63d0\u5347{1}%\u6700\u5927\u751f\u547d\u503c",
+        "Desc": "Increases Max HP by {0}% in battle. If the character differs from the enemy's, gains an additional {1}% Max HP.",
         "DescDigit": "['20', '5']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 87.0
     },
     {
@@ -10458,17 +10744,17 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u51a5\u6cb3\u62a4\u5951",
+        "Name": "Acheron Guardian",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityPointQuest2004001.png",
         "Info": null,
-        "Desc": "\u5728\u6218\u6597\u4e2d\u63d0\u5347{0}%\u6700\u5927\u751f\u547d\u503c\uff0c\u4e0e\u654c\u4eba\u89d2\u8272\u4e0d\u540c\u65f6\u8fd8\u4f1a\u989d\u5916\u63d0\u5347{1}%\u6700\u5927\u751f\u547d\u503c",
+        "Desc": "Increases Max HP by {0}% in battle. If the character differs from the enemy's, gains an additional {1}% Max HP.",
         "DescDigit": "['25', '10']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 88.0
     },
     {
@@ -10480,17 +10766,17 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u51a5\u6cb3\u62a4\u5951",
+        "Name": "Acheron Guardian",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityPointQuest2004001.png",
         "Info": null,
-        "Desc": "\u5728\u6218\u6597\u4e2d\u63d0\u5347{0}%\u6700\u5927\u751f\u547d\u503c\uff0c\u4e0e\u654c\u4eba\u89d2\u8272\u4e0d\u540c\u65f6\u8fd8\u4f1a\u989d\u5916\u63d0\u5347{1}%\u6700\u5927\u751f\u547d\u503c",
+        "Desc": "Increases Max HP by {0}% in battle. If the character differs from the enemy's, gains an additional {1}% Max HP.",
         "DescDigit": "['30', '15']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 89.0
     },
     {
@@ -10502,17 +10788,17 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u51a5\u6cb3\u62a4\u5951",
+        "Name": "Acheron Guardian",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityPointQuest2004001.png",
         "Info": null,
-        "Desc": "\u5728\u6218\u6597\u4e2d\u63d0\u5347{0}%\u6700\u5927\u751f\u547d\u503c\uff0c\u4e0e\u654c\u4eba\u89d2\u8272\u4e0d\u540c\u65f6\u8fd8\u4f1a\u989d\u5916\u63d0\u5347{1}%\u6700\u5927\u751f\u547d\u503c",
+        "Desc": "Increases Max HP by {0}% in battle. If the character differs from the enemy's, gains an additional {1}% Max HP.",
         "DescDigit": "['35', '20']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 90.0
     },
     {
@@ -10524,17 +10810,17 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u51a5\u6cb3\u62a4\u5951",
+        "Name": "Acheron Guardian",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityPointQuest2004001.png",
         "Info": null,
-        "Desc": "\u5728\u6218\u6597\u4e2d\u63d0\u5347{0}%\u6700\u5927\u751f\u547d\u503c\uff0c\u4e0e\u654c\u4eba\u89d2\u8272\u4e0d\u540c\u65f6\u8fd8\u4f1a\u989d\u5916\u63d0\u5347{1}%\u6700\u5927\u751f\u547d\u503c",
+        "Desc": "Increases Max HP by {0}% in battle. If the character differs from the enemy's, gains an additional {1}% Max HP.",
         "DescDigit": "['40', '25']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 91.0
     },
     {
@@ -10546,17 +10832,17 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u9b54\u9b3c\u5951\u7ea6",
+        "Name": "Devil's Contract",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2006002.png",
         "Info": null,
-        "Desc": "\u83b7\u5f97{0}\u679a\u91d1\u5e01\uff0c\u5347\u81f3\u6700\u9ad8\u7b49\u7ea7\u65f6\uff0c\u7531\u7b26\u7eb9\u5f3a\u5316\u6548\u679c\u53ec\u5524\u7684\u6211\u65b9\u6076\u9b54\u548c\u706b\u7403\uff0c\u4f24\u5bb3\u63d0\u5347{1}%",
+        "Desc": "Gain {0} coins. When reaching the maximum level, demons and fireballs summoned by Rune enhancement effects deal {1}% more DMG.",
         "DescDigit": "['6', '60']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 92.0
     },
     {
@@ -10568,17 +10854,17 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u9b54\u9b3c\u5951\u7ea6",
+        "Name": "Devil's Contract",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2006002.png",
         "Info": null,
-        "Desc": "\u83b7\u5f97{0}\u679a\u91d1\u5e01\uff0c\u5347\u81f3\u6700\u9ad8\u7b49\u7ea7\u65f6\uff0c\u7531\u7b26\u7eb9\u5f3a\u5316\u6548\u679c\u53ec\u5524\u7684\u6211\u65b9\u6076\u9b54\u548c\u706b\u7403\uff0c\u4f24\u5bb3\u63d0\u5347{1}%",
+        "Desc": "Gain {0} coins. When reaching the maximum level, demons and fireballs summoned by Rune enhancement effects deal {1}% more DMG.",
         "DescDigit": "['16', '60']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 93.0
     },
     {
@@ -10590,17 +10876,17 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u9b54\u9b3c\u5951\u7ea6",
+        "Name": "Devil's Contract",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2006002.png",
         "Info": null,
-        "Desc": "\u83b7\u5f97{0}\u679a\u91d1\u5e01\uff0c\u5347\u81f3\u6700\u9ad8\u7b49\u7ea7\u65f6\uff0c\u7531\u7b26\u7eb9\u5f3a\u5316\u6548\u679c\u53ec\u5524\u7684\u6211\u65b9\u6076\u9b54\u548c\u706b\u7403\uff0c\u4f24\u5bb3\u63d0\u5347{1}%",
+        "Desc": "Gain {0} coins. When reaching the maximum level, demons and fireballs summoned by Rune enhancement effects deal {1}% more DMG.",
         "DescDigit": "['26', '60']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 94.0
     },
     {
@@ -10612,17 +10898,17 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u9b54\u9b3c\u5951\u7ea6",
+        "Name": "Devil's Contract",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2006002.png",
         "Info": null,
-        "Desc": "\u83b7\u5f97{0}\u679a\u91d1\u5e01\uff0c\u5347\u81f3\u6700\u9ad8\u7b49\u7ea7\u65f6\uff0c\u7531\u7b26\u7eb9\u5f3a\u5316\u6548\u679c\u53ec\u5524\u7684\u6211\u65b9\u6076\u9b54\u548c\u706b\u7403\uff0c\u4f24\u5bb3\u63d0\u5347{1}%",
+        "Desc": "Gain {0} coins. When reaching the maximum level, demons and fireballs summoned by Rune enhancement effects deal {1}% more DMG.",
         "DescDigit": "['36', '60']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 95.0
     },
     {
@@ -10634,17 +10920,17 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u9b54\u9b3c\u5951\u7ea6",
+        "Name": "Devil's Contract",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2006002.png",
         "Info": null,
-        "Desc": "\u83b7\u5f97{0}\u679a\u91d1\u5e01\uff0c\u5347\u81f3\u6700\u9ad8\u7b49\u7ea7\u65f6\uff0c\u7531\u7b26\u7eb9\u5f3a\u5316\u6548\u679c\u53ec\u5524\u7684\u6211\u65b9\u6076\u9b54\u548c\u706b\u7403\uff0c\u4f24\u5bb3\u63d0\u5347{1}%",
+        "Desc": "Gain {0} coins. When reaching the maximum level, demons and fireballs summoned by Rune enhancement effects deal {1}% more DMG.",
         "DescDigit": "['46', '60']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 96.0
     },
     {
@@ -10659,14 +10945,14 @@
         "Name": "Bloodwar Crystal",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2001001.png",
         "Info": null,
-        "Desc": "After commission completion",
+        "Desc": "After commission completion, choose 1 of Watanabe's exclusive skills [Fallback Firing (Holy)] or [Blast Strike (Recovery)] to enhance. Enhancement scales with blessing rank.",
         "DescDigit": null,
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 98.0
     },
     {
@@ -10681,14 +10967,14 @@
         "Name": "Bloodfall Crystal",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2001001.png",
         "Info": null,
-        "Desc": "After commission completion",
+        "Desc": "After commission completion, choose 1 of Vera's exclusive skills [Thunder Cleave (Spirit)] or [Abyssal Penalty (Shield)] to enhance. Enhancement scales with blessing rank.",
         "DescDigit": null,
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 109.0
     },
     {
@@ -10703,14 +10989,14 @@
         "Name": "Bloodplague Crystal",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2001001.png",
         "Info": null,
-        "Desc": "After commission completion",
+        "Desc": "After commission completion, choose 1 of Wanshi's exclusive skills [Blinding Oblivion (Spirit)] or [Assault Reform (Shield)] to enhance. Enhancement scales with blessing rank.",
         "DescDigit": null,
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 120.0
     },
     {
@@ -10725,14 +11011,14 @@
         "Name": "Bloodhunger Crystal",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityConsume2001001.png",
         "Info": null,
-        "Desc": "After commission completion",
+        "Desc": "After commission completion, choose 1 of Lilith's exclusive skills [Crystal Sanctum (Holy)] or [Phoenix Rising (Recovery)] to enhance. Enhancement scales with blessing rank.",
         "DescDigit": null,
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 131.0
     },
     {
@@ -10744,7 +11030,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u547d\u8fd0\u7ec7\u5fbd",
+        "Name": "Fate Sigil",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityPointQuest2002001.png",
         "Info": null,
         "Desc": "Gain {0} coin(s). Choose an archetype upon commission completion. Afterward, each time you enter the shop, {1} item(s) of the chosen archetype will appear on the shelves. It starts as a Purple Rune, upgrades to Orange at Level 3, and can include an Alchemy Hammer at Level 5.",
@@ -10754,7 +11040,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 142.0
     },
     {
@@ -10766,7 +11052,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u547d\u8fd0\u7ec7\u5fbd",
+        "Name": "Fate Sigil",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityPointQuest2002001.png",
         "Info": null,
         "Desc": "Gain {0} coin(s). Choose an archetype upon commission completion. Afterward, each time you enter the shop, {1} item(s) of the chosen archetype will appear on the shelves. It starts as a Purple Rune, upgrades to Orange at Level 3, and can include an Alchemy Hammer at Level 5.",
@@ -10776,7 +11062,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 143.0
     },
     {
@@ -10788,7 +11074,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u547d\u8fd0\u7ec7\u5fbd",
+        "Name": "Fate Sigil",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityPointQuest2002001.png",
         "Info": null,
         "Desc": "Gain {0} coin(s). Choose an archetype upon commission completion. Afterward, each time you enter the shop, {1} item(s) of the chosen archetype will appear on the shelves. It starts as a Purple Rune, upgrades to Orange at Level 3, and can include an Alchemy Hammer at Level 5.",
@@ -10798,7 +11084,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 144.0
     },
     {
@@ -10810,7 +11096,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u547d\u8fd0\u7ec7\u5fbd",
+        "Name": "Fate Sigil",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityPointQuest2002001.png",
         "Info": null,
         "Desc": "Gain {0} coin(s). Choose an archetype upon commission completion. Afterward, each time you enter the shop, {1} item(s) of the chosen archetype will appear on the shelves. It starts as a Purple Rune, upgrades to Orange at Level 3, and can include an Alchemy Hammer at Level 5.",
@@ -10820,7 +11106,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 145.0
     },
     {
@@ -10832,7 +11118,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u547d\u8fd0\u7ec7\u5fbd",
+        "Name": "Fate Sigil",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconActivityPointQuest2002001.png",
         "Info": null,
         "Desc": "Gain {0} coin(s). Choose an archetype upon commission completion. Afterward, each time you enter the shop, {1} item(s) of the chosen archetype will appear on the shelves. It starts as a Purple Rune, upgrades to Orange at Level 3, and can include an Alchemy Hammer at Level 5.",
@@ -10842,7 +11128,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 146.0
     },
     {
@@ -10857,14 +11143,14 @@
         "Name": "Ranger Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconPokerGuessing02.png",
         "Info": null,
-        "Desc": "\u6210\u529f\u95ea\u907f\u540e\uff0c\u8fde\u7eed\u4f7f\u7528{0}\u6b21\u3010\u503e\u7ffc\u5c04\u51fb\u3011\uff0c\u4e14\u6280\u80fd\u7684\u4f24\u5bb3\u500d\u7387\u63d0\u5347{1}%\uff08\u6bcf{2}\u79d2\u53ef\u89e6\u53d1\u4e00\u6b21\uff0c\u6700\u9ad8\u63d0\u5347{3}\u6b21\uff09",
+        "Desc": "After a successful Dodge, consecutively uses [Fallback Firing] {0} times, and the skill's damage multiplier increases by {1}% (can trigger once every {2}s, up to {3} times).",
         "DescDigit": "['1', '5', '3', '4']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 99.0
     },
     {
@@ -10879,14 +11165,14 @@
         "Name": "Ranger Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconPokerGuessing02.png",
         "Info": null,
-        "Desc": "\u6210\u529f\u95ea\u907f\u540e\uff0c\u8fde\u7eed\u4f7f\u7528{0}\u6b21\u3010\u503e\u7ffc\u5c04\u51fb\u3011\uff0c\u4e14\u6280\u80fd\u7684\u4f24\u5bb3\u500d\u7387\u63d0\u5347{1}%\uff08\u6bcf{2}\u79d2\u53ef\u89e6\u53d1\u4e00\u6b21\uff0c\u6700\u9ad8\u63d0\u5347{3}\u6b21\uff09",
+        "Desc": "After a successful Dodge, consecutively uses [Fallback Firing] {0} times, and the skill's damage multiplier increases by {1}% (can trigger once every {2}s, up to {3} times).",
         "DescDigit": "['1', '10', '3', '4']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 100.0
     },
     {
@@ -10901,14 +11187,14 @@
         "Name": "Ranger Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconPokerGuessing02.png",
         "Info": null,
-        "Desc": "\u6210\u529f\u95ea\u907f\u540e\uff0c\u8fde\u7eed\u4f7f\u7528{0}\u6b21\u3010\u503e\u7ffc\u5c04\u51fb\u3011\uff0c\u4e14\u6280\u80fd\u7684\u4f24\u5bb3\u500d\u7387\u63d0\u5347{1}%\uff08\u6bcf{2}\u79d2\u53ef\u89e6\u53d1\u4e00\u6b21\uff0c\u6700\u9ad8\u63d0\u5347{3}\u6b21\uff09",
+        "Desc": "After a successful Dodge, consecutively uses [Fallback Firing] {0} times, and the skill's damage multiplier increases by {1}% (can trigger once every {2}s, up to {3} times).",
         "DescDigit": "['1', '15', '3', '4']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 101.0
     },
     {
@@ -10923,14 +11209,14 @@
         "Name": "Ranger Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconPokerGuessing02.png",
         "Info": null,
-        "Desc": "\u6210\u529f\u95ea\u907f\u540e\uff0c\u8fde\u7eed\u4f7f\u7528{0}\u6b21\u3010\u503e\u7ffc\u5c04\u51fb\u3011\uff0c\u4e14\u6280\u80fd\u7684\u4f24\u5bb3\u500d\u7387\u63d0\u5347{1}%\uff08\u6bcf{2}\u79d2\u53ef\u89e6\u53d1\u4e00\u6b21\uff0c\u6700\u9ad8\u63d0\u5347{3}\u6b21\uff09",
+        "Desc": "After a successful Dodge, consecutively uses [Fallback Firing] {0} times, and the skill's damage multiplier increases by {1}% (can trigger once every {2}s, up to {3} times).",
         "DescDigit": "['1', '20', '3', '4']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 102.0
     },
     {
@@ -10945,14 +11231,14 @@
         "Name": "Ranger Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/IconPokerGuessing02.png",
         "Info": null,
-        "Desc": "\u6210\u529f\u95ea\u907f\u540e\uff0c\u8fde\u7eed\u4f7f\u7528{0}\u6b21\u3010\u503e\u7ffc\u5c04\u51fb\u3011\uff0c\u4e14\u6280\u80fd\u7684\u4f24\u5bb3\u500d\u7387\u63d0\u5347{1}%\uff08\u6bcf{2}\u79d2\u53ef\u89e6\u53d1\u4e00\u6b21\uff0c\u6700\u9ad8\u63d0\u5347{3}\u6b21\uff09",
+        "Desc": "After a successful Dodge, consecutively uses [Fallback Firing] {0} times, and the skill's damage multiplier increases by {1}% (can trigger once every {2}s, up to {3} times).",
         "DescDigit": "['1', '25', '3', '4']",
         "EvolveDescDigit": null,
         "AddDesc": null,
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 103.0
     },
     {
@@ -10974,7 +11260,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 104.0
     },
     {
@@ -10996,7 +11282,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 105.0
     },
     {
@@ -11018,7 +11304,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 106.0
     },
     {
@@ -11040,7 +11326,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 107.0
     },
     {
@@ -11062,7 +11348,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 108.0
     },
     {
@@ -11084,7 +11370,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 110.0
     },
     {
@@ -11106,7 +11392,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 111.0
     },
     {
@@ -11128,7 +11414,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 112.0
     },
     {
@@ -11150,7 +11436,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 113.0
     },
     {
@@ -11172,7 +11458,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 114.0
     },
     {
@@ -11194,7 +11480,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 115.0
     },
     {
@@ -11216,7 +11502,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 116.0
     },
     {
@@ -11238,7 +11524,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 117.0
     },
     {
@@ -11260,7 +11546,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 118.0
     },
     {
@@ -11282,7 +11568,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 119.0
     },
     {
@@ -11304,7 +11590,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 121.0
     },
     {
@@ -11326,7 +11612,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 122.0
     },
     {
@@ -11348,7 +11634,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 123.0
     },
     {
@@ -11370,7 +11656,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 124.0
     },
     {
@@ -11392,7 +11678,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 125.0
     },
     {
@@ -11414,7 +11700,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 126.0
     },
     {
@@ -11436,7 +11722,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 127.0
     },
     {
@@ -11458,7 +11744,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 128.0
     },
     {
@@ -11480,7 +11766,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 129.0
     },
     {
@@ -11502,7 +11788,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 130.0
     },
     {
@@ -11524,7 +11810,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 132.0
     },
     {
@@ -11546,7 +11832,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 133.0
     },
     {
@@ -11568,7 +11854,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 134.0
     },
     {
@@ -11590,7 +11876,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 135.0
     },
     {
@@ -11612,7 +11898,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 136.0
     },
     {
@@ -11634,7 +11920,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 137.0
     },
     {
@@ -11656,7 +11942,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 138.0
     },
     {
@@ -11678,7 +11964,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 139.0
     },
     {
@@ -11700,7 +11986,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 140.0
     },
     {
@@ -11722,7 +12008,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 141.0
     },
     {
@@ -11734,7 +12020,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u6b7b\u5f92\u5fbd\u8bb0",
+        "Name": "Undeath Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon10.png",
         "Info": null,
         "Desc": "Gain {0} coin(s). Each time you enter the shop, {1} \"Suicidal Maniac\" Purple Rune(s) will appear on the shelves, until all qualifying Runes have been purchased.",
@@ -11744,7 +12030,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 147.0
     },
     {
@@ -11756,7 +12042,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u6b7b\u5f92\u5fbd\u8bb0",
+        "Name": "Undeath Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon10.png",
         "Info": null,
         "Desc": "Gain {0} coin(s). Each time you enter the shop, {1} \"Suicidal Maniac\" Purple Rune(s) will appear on the shelves, until all qualifying Runes have been purchased.",
@@ -11766,7 +12052,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 148.0
     },
     {
@@ -11778,7 +12064,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u6b7b\u5f92\u5fbd\u8bb0",
+        "Name": "Undeath Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon10.png",
         "Info": null,
         "Desc": "Gain {0} coin(s). Each time you enter the shop, {1} \"Suicidal Maniac\" Orange Rune(s) will appear on the shelves, until all qualifying Runes have been purchased.",
@@ -11788,7 +12074,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 149.0
     },
     {
@@ -11800,7 +12086,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u6b7b\u5f92\u5fbd\u8bb0",
+        "Name": "Undeath Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon10.png",
         "Info": null,
         "Desc": "Gain {0} coin(s). Each time you enter the shop, {1} \"Suicidal Maniac\" Orange Rune(s) will appear on the shelves, until all qualifying Runes have been purchased.",
@@ -11810,7 +12096,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 150.0
     },
     {
@@ -11822,7 +12108,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u6b7b\u5f92\u5fbd\u8bb0",
+        "Name": "Undeath Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon10.png",
         "Info": null,
         "Desc": "Gain {0} coin(s). Each time you enter the shop, {1} \"Suicidal Maniac\" Orange item(s) (including Alchemy Hammer) will appear on the shelves.",
@@ -11832,7 +12118,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 151.0
     },
     {
@@ -11844,7 +12130,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u6cb8\u8840\u5fbd\u8bb0",
+        "Name": "Boiling Blood Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon12.png",
         "Info": null,
         "Desc": "Gain {0} Coin(s). Each time you enter the tavern, {1} \"No Time to Bleed\" Purple Rune(s) will appear on the shelves, until all qualifying Runes have been purchased.",
@@ -11854,7 +12140,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 152.0
     },
     {
@@ -11866,7 +12152,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u6cb8\u8840\u5fbd\u8bb0",
+        "Name": "Boiling Blood Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon12.png",
         "Info": null,
         "Desc": "Gain {0} Coin(s). Each time you enter the tavern, {1} \"No Time to Bleed\" Purple Rune(s) will appear on the shelves, until all qualifying Runes have been purchased.",
@@ -11876,7 +12162,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 153.0
     },
     {
@@ -11888,7 +12174,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u6cb8\u8840\u5fbd\u8bb0",
+        "Name": "Boiling Blood Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon12.png",
         "Info": null,
         "Desc": "Gain {0} Coin(s). Each time you enter the tavern, {1} \"No Time to Bleed\" Orange Rune(s) will appear on the shelves, until all qualifying Runes have been purchased.",
@@ -11898,7 +12184,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 154.0
     },
     {
@@ -11910,7 +12196,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u6cb8\u8840\u5fbd\u8bb0",
+        "Name": "Boiling Blood Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon12.png",
         "Info": null,
         "Desc": "Gain {0} Coin(s). Each time you enter the tavern, {1} \"No Time to Bleed\" Orange Rune(s) will appear on the shelves, until all qualifying Runes have been purchased.",
@@ -11920,7 +12206,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 155.0
     },
     {
@@ -11932,7 +12218,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u6cb8\u8840\u5fbd\u8bb0",
+        "Name": "Boiling Blood Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon12.png",
         "Info": null,
         "Desc": "Gain {0} Coin(s). Each time you enter the tavern, {1} \"No Time to Bleed\" Orange item(s) (including Alchemy Hammer) will appear on the shelves.",
@@ -11942,7 +12228,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 156.0
     },
     {
@@ -11954,7 +12240,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u6b7b\u5883\u5fbd\u8bb0",
+        "Name": "Deathscape Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon13.png",
         "Info": null,
         "Desc": "Gain {0} coin(s). Each time you enter the shop, {1} \"Beyond Death\" Purple Rune(s) will appear on the shelves, until all qualifying Runes have been purchased.",
@@ -11964,7 +12250,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 157.0
     },
     {
@@ -11976,7 +12262,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u6b7b\u5883\u5fbd\u8bb0",
+        "Name": "Deathscape Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon13.png",
         "Info": null,
         "Desc": "Gain {0} coin(s). Each time you enter the shop, {1} \"Beyond Death\" Purple Rune(s) will appear on the shelves, until all qualifying Runes have been purchased.",
@@ -11986,7 +12272,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 158.0
     },
     {
@@ -11998,7 +12284,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u6b7b\u5883\u5fbd\u8bb0",
+        "Name": "Deathscape Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon13.png",
         "Info": null,
         "Desc": "Gain {0} coin(s). Each time you enter the shop, {1} \"Beyond Death\" Orange Rune(s) will appear on the shelves, until all qualifying Runes have been purchased.",
@@ -12008,7 +12294,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 159.0
     },
     {
@@ -12020,7 +12306,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u6b7b\u5883\u5fbd\u8bb0",
+        "Name": "Deathscape Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon13.png",
         "Info": null,
         "Desc": "Gain {0} coin(s). Each time you enter the shop, {1} \"Beyond Death\" Orange Rune(s) will appear on the shelves, until all qualifying Runes have been purchased.",
@@ -12030,7 +12316,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 160.0
     },
     {
@@ -12042,7 +12328,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u6b7b\u5883\u5fbd\u8bb0",
+        "Name": "Deathscape Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon13.png",
         "Info": null,
         "Desc": "Gain {0} coin(s). Each time you enter the shop, {1} \"Beyond Death\" Orange item(s) (including Alchemy Hammer) will appear on the shelves.",
@@ -12052,7 +12338,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 161.0
     },
     {
@@ -12064,7 +12350,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u75be\u901f\u5fbd\u8bb0",
+        "Name": "Rapid Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon15.png",
         "Info": null,
         "Desc": "Gain {0} coin(s). Each time you enter the Shop, {1} \"Speed Prologue\" Purple Rune(s) will appear on the shelves, until all qualifying Runes have been purchased.",
@@ -12074,7 +12360,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 162.0
     },
     {
@@ -12086,7 +12372,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u75be\u901f\u5fbd\u8bb0",
+        "Name": "Rapid Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon15.png",
         "Info": null,
         "Desc": "Gain {0} coin(s). Each time you enter the Shop, {1} \"Speed Prologue\" Purple Rune(s) will appear on the shelves, until all qualifying Runes have been purchased.",
@@ -12096,7 +12382,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 163.0
     },
     {
@@ -12108,7 +12394,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u75be\u901f\u5fbd\u8bb0",
+        "Name": "Rapid Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon15.png",
         "Info": null,
         "Desc": "Gain {0} coin(s). Each time you enter the Shop, {1} \"Speed Prologue\" Orange Rune(s) will appear on the shelves, until all qualifying Runes have been purchased.",
@@ -12118,7 +12404,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 164.0
     },
     {
@@ -12130,7 +12416,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u75be\u901f\u5fbd\u8bb0",
+        "Name": "Rapid Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon15.png",
         "Info": null,
         "Desc": "Gain {0} coin(s). Each time you enter the Shop, {1} \"Speed Prologue\" Orange Rune(s) will appear on the shelves, until all qualifying Runes have been purchased.",
@@ -12140,7 +12426,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 165.0
     },
     {
@@ -12152,7 +12438,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u75be\u901f\u5fbd\u8bb0",
+        "Name": "Rapid Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon15.png",
         "Info": null,
         "Desc": "Gain {0} coin(s). Each time you enter the shop, {1} \"Speed Prologue\" Orange item(s) (including Alchemy Hammer) will appear on the shelves.",
@@ -12162,7 +12448,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 166.0
     },
     {
@@ -12174,7 +12460,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u72e9\u4ea1\u5fbd\u8bb0",
+        "Name": "Deathhunt Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon16.png",
         "Info": null,
         "Desc": "Gain {0} coin(s). Each time you enter the Shop, {1} \"Death Hunter\" Purple Rune(s) will appear on the shelves, until all qualifying Runes have been purchased.",
@@ -12184,7 +12470,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 167.0
     },
     {
@@ -12196,7 +12482,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u72e9\u4ea1\u5fbd\u8bb0",
+        "Name": "Deathhunt Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon16.png",
         "Info": null,
         "Desc": "Gain {0} coin(s). Each time you enter the Shop, {1} \"Death Hunter\" Purple Rune(s) will appear on the shelves, until all qualifying Runes have been purchased.",
@@ -12206,7 +12492,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 168.0
     },
     {
@@ -12218,7 +12504,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u72e9\u4ea1\u5fbd\u8bb0",
+        "Name": "Deathhunt Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon16.png",
         "Info": null,
         "Desc": "Gain {0} coin(s). Each time you enter the Shop, {1} \"Death Hunter\" Orange Rune(s) will appear on the shelves, until all qualifying Runes have been purchased.",
@@ -12228,7 +12514,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 169.0
     },
     {
@@ -12240,7 +12526,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u72e9\u4ea1\u5fbd\u8bb0",
+        "Name": "Deathhunt Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon16.png",
         "Info": null,
         "Desc": "Gain {0} coin(s). Each time you enter the Shop, {1} \"Death Hunter\" Orange Rune(s) will appear on the shelves, until all qualifying Runes have been purchased.",
@@ -12250,7 +12536,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 170.0
     },
     {
@@ -12262,7 +12548,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u72e9\u4ea1\u5fbd\u8bb0",
+        "Name": "Deathhunt Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon16.png",
         "Info": null,
         "Desc": "Gain {0} coin(s). Each time you enter the shop, {1} \"Death Hunter\" Orange item(s) (including Alchemy Hammer) will appear on the shelves.",
@@ -12272,7 +12558,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 171.0
     },
     {
@@ -12284,7 +12570,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u5384\u5f8b\u5fbd\u8bb0",
+        "Name": "Calamity Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon11.png",
         "Info": null,
         "Desc": "Gain {0} coin(s). Each time you enter the Shop, {1} \"Rhythmic Suffering\" Purple Rune(s) will appear on the shelves, until all qualifying Runes have been purchased.",
@@ -12294,7 +12580,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 172.0
     },
     {
@@ -12306,7 +12592,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u5384\u5f8b\u5fbd\u8bb0",
+        "Name": "Calamity Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon11.png",
         "Info": null,
         "Desc": "Gain {0} coin(s). Each time you enter the Shop, {1} \"Rhythmic Suffering\" Purple Rune(s) will appear on the shelves, until all qualifying Runes have been purchased.",
@@ -12316,7 +12602,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 173.0
     },
     {
@@ -12328,7 +12614,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u5384\u5f8b\u5fbd\u8bb0",
+        "Name": "Calamity Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon11.png",
         "Info": null,
         "Desc": "Gain {0} coin(s). Each time you enter the Shop, {1} \"Rhythmic Suffering\" Orange Rune(s) will appear on the shelves, until all qualifying Runes have been purchased.",
@@ -12338,7 +12624,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 174.0
     },
     {
@@ -12350,7 +12636,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u5384\u5f8b\u5fbd\u8bb0",
+        "Name": "Calamity Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon11.png",
         "Info": null,
         "Desc": "Gain {0} coin(s). Each time you enter the Shop, {1} \"Rhythmic Suffering\" Orange Rune(s) will appear on the shelves, until all qualifying Runes have been purchased.",
@@ -12360,7 +12646,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 175.0
     },
     {
@@ -12372,7 +12658,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u5384\u5f8b\u5fbd\u8bb0",
+        "Name": "Calamity Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon11.png",
         "Info": null,
         "Desc": "Gain {0} coin(s). Each time you enter the shop, {1} \"Rhythmic Suffering\" Orange item(s) (including Alchemy Hammer) will appear on the shelves.",
@@ -12382,7 +12668,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 176.0
     },
     {
@@ -12394,7 +12680,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u8d4c\u547d\u5fbd\u8bb0",
+        "Name": "Life-Risking Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon14.png",
         "Info": null,
         "Desc": "Gain {0} coin(s). Each time you enter the Shop, {1} \"Life-Risking Trick\" Purple Rune(s) will appear on the shelves, until all qualifying Runes have been purchased.",
@@ -12404,7 +12690,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 177.0
     },
     {
@@ -12416,7 +12702,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u8d4c\u547d\u5fbd\u8bb0",
+        "Name": "Life-Risking Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon14.png",
         "Info": null,
         "Desc": "Gain {0} coin(s). Each time you enter the Shop, {1} \"Life-Risking Trick\" Purple Rune(s) will appear on the shelves, until all qualifying Runes have been purchased.",
@@ -12426,7 +12712,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 178.0
     },
     {
@@ -12438,7 +12724,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u8d4c\u547d\u5fbd\u8bb0",
+        "Name": "Life-Risking Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon14.png",
         "Info": null,
         "Desc": "Gain {0} coin(s). Each time you enter the Shop, {1} \"Life-Risking Trick\" Orange Rune(s) will appear on the shelves, until all qualifying Runes have been purchased.",
@@ -12448,7 +12734,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 179.0
     },
     {
@@ -12460,7 +12746,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u8d4c\u547d\u5fbd\u8bb0",
+        "Name": "Life-Risking Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon14.png",
         "Info": null,
         "Desc": "Gain {0} coin(s). Each time you enter the Shop, {1} \"Life-Risking Trick\" Orange Rune(s) will appear on the shelves, until all qualifying Runes have been purchased.",
@@ -12470,7 +12756,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 180.0
     },
     {
@@ -12482,7 +12768,7 @@
         "Quality": 1.0,
         "BuffType": null,
         "CharacterId": null,
-        "Name": "\u8d4c\u547d\u5fbd\u8bb0",
+        "Name": "Life-Risking Mark",
         "IconRes": "Assets/Product/Texture/Image/IconTools/UiTheatre5Icon14.png",
         "Info": null,
         "Desc": "Gain {0} coin(s). Each time you enter the shop, {1} \"Life-Risking Trick\" Orange item(s) (including Alchemy Hammer) will appear on the shelves.",
@@ -12492,7 +12778,7 @@
         "AddDigit": null,
         "Tags": null,
         "Keywords": null,
-        "IsShow": true,
+        "IsShow": null,
         "Order": 181.0
     }
 ]

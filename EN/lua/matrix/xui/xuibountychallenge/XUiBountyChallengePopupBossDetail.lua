@@ -16,9 +16,13 @@ function XUiBountyChallengePopupBossDetail:OnStart(detail)
     if not detail then
         detail = self._Control:GetUiBossDetail()
         detail.Index = 1
+        self._IsFromControl = true
+    else
+        self._IsFromControl = false
     end
-    
+
     self._Detail = detail
+    self._OpenTime = XTime.GetServerNowTimestamp()
 end
 
 function XUiBountyChallengePopupBossDetail:OnEnable()
@@ -26,7 +30,17 @@ function XUiBountyChallengePopupBossDetail:OnEnable()
 end
 
 function XUiBountyChallengePopupBossDetail:OnDisable()
-
+    if self._OpenTime and self._Detail then
+        local duration = XTime.GetServerNowTimestamp() - self._OpenTime
+        local bossId = self._Detail.BossId or 0
+        local type = self._IsFromControl and "BossDetail" or "TargetSkill"
+        local dict = {
+            boss_id = bossId,
+            duration = duration,
+            type = type
+        }
+        CS.XRecord.Record(dict, "1000027", "BountyChallengeCheckDetail")
+    end
 end
 
 function XUiBountyChallengePopupBossDetail:Update()

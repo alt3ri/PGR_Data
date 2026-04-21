@@ -14,6 +14,11 @@ function XUiDrawPanelCanLiverJourneyReward:CheckToShow(drawInfo)
     end
 
     local config = XDrawConfigs.GetDrawCanLiverActivityCfgById(canLiverActivityId)
+    if not XFunctionManager.CheckInTimeByTimeId(config.TimeId) then
+        self:Close()
+        return
+    end
+
     local isShow = false
     for k, v in pairs(config.DrawIds) do
         if v == drawId then
@@ -62,12 +67,9 @@ function XUiDrawPanelCanLiverJourneyReward:RefreshJourneyRewardDynamicTable(auto
     local rewardIds = config.RewardIds
     self.CurCanLiverRewardCfg = config
     self.DynamicTableReward:SetDataSource(rewardIds)
-    local index = nil
-    if autoToCanGetIndex then
-        index = XDataCenter.DrawManager.GetFirstCanJourneyRewardIndex(drawId)
-    else
-        index = XDataCenter.DrawManager.GetFirstUnGetJourneyRewardIndex(drawId)
-    end
+    -- 优先定位到可领取的奖励，否则定位到第一个未领取的奖励
+    local index = (autoToCanGetIndex and XDataCenter.DrawManager.GetFirstCanJourneyRewardIndex(drawId))
+            or XDataCenter.DrawManager.GetFirstUnGetJourneyRewardIndex(drawId)
     self.DynamicTableReward:ReloadDataSync(index)
 end
 
@@ -77,7 +79,6 @@ function XUiDrawPanelCanLiverJourneyReward:RefreshJourneyRewardProgressBar()
     local maxCount = self.CurCanLiverRewardCfg.Schedules[#self.CurCanLiverRewardCfg.Schedules]
     local progressPercent = curProgressCount / maxCount
     progressPercent = (progressPercent > 1) and 1 or progressPercent
-    curProgressCount = (curProgressCount > maxCount) and maxCount or curProgressCount
     self.TxtDrawCount.text = curProgressCount
     self.ImgProgress.fillAmount = progressPercent
     

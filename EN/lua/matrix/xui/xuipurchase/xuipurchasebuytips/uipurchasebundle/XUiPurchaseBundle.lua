@@ -31,7 +31,8 @@ function XUiPurchaseBundle:InitGoodsShow(data)
     -- 因为折扣标签只有一个且在捆绑包选项上，这里折扣显示统一以捆绑包数据为准
     local mainData = XTool.IsTableEmpty(data.MainComboData) and data or data.MainComboData
     
-    if mainData.Discount then
+    -- 策划说没有折扣不显示，这里判断一下
+    if mainData.Discount and data.Discount < 100 then
         self.Tag.gameObject:SetActiveEx(true)
         self.TxtDiscount.text = XUiHelper.GetDiscountTextV2(data.Discount)
     else
@@ -168,11 +169,17 @@ function XUiPurchaseBundle:BeforeBuyFunc(realBuyFunc)
     if self._Data.MainComboData then
         -- 是子包
         -- 提示引导玩家可以购买捆绑包
-        XLuaUiManager.Open('UiPurchaseDialog', function()
+
+        -- 新增判断，如果父捆绑包没有折扣，则不引导买捆绑包
+        if self._Data.MainComboData.Price == self._Data.MainComboData.OriginalPrice then
             realBuyFunc()
-        end, function()
-            XEventManager.DispatchEvent(XEventId.EVENT_PURCHASE_SELECT_COMBO_MAIN)
-        end)
+        else
+             XLuaUiManager.Open('UiPurchaseDialog', function()
+                realBuyFunc()
+            end, function()
+                XEventManager.DispatchEvent(XEventId.EVENT_PURCHASE_SELECT_COMBO_MAIN)
+            end)
+        end
     else
         -- 是捆绑包
         -- 替代作为实际购买的逻辑

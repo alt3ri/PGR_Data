@@ -13,7 +13,6 @@ local RewardStateEnum = {
     Complete = 'Complete',
 }
 
-
 ---@param resultData XDlcFightSettleData
 function XUiPanelTheatre5SettleGameDetail:OnStart(resultData)
     self.ResultData = resultData
@@ -32,8 +31,6 @@ function XUiPanelTheatre5SettleGameDetail:OnStart(resultData)
 
     self:InitCharacter()
 
-    -- 4.2屏蔽饰品展示
-    --[[
     self._GridRelics = {}
     self.RelicContainer = self.RelicContainer or XUiHelper.TryGetComponent(self.Transform, "PanelRight/PanelListRelic/PanelRelic/RelicContainer", "RectTransform")
     if self.RelicContainer then
@@ -46,7 +43,6 @@ function XUiPanelTheatre5SettleGameDetail:OnStart(resultData)
         end
         XTool.UpdateDynamicItem(self._GridRelics, relics, self.RelicContainer, XUiGridTheatre5Relic, self)
     end
-    --]]
 
     self:RefreshMissionShow()
 
@@ -115,12 +111,27 @@ function XUiPanelTheatre5SettleGameDetail:RefreshGameProgressShow()
         -- PVP奖杯进度
         local cupsNum = self.ResultData.XAutoChessGameplayResult.TrophyNum
         local targetCount = self._Control.PVPControl:GetPVPTargetCountFromConfig()
+        local isPvpExtra = self.ResultData.XAutoChessGameplayResult.IsPvpExtra
 
-        self._CupList = XUiHelper.RefreshUiObjectList(self._CupList, self.ListCup, self.GridCup, targetCount, function(index, grid)
-            if grid.ImgOn then
-                grid.ImgOn.gameObject:SetActiveEx(index <= cupsNum)
-            end
-        end)
+        self.ListCup.gameObject:SetActiveEx(not isPvpExtra)
+        self.PanelOvertime.gameObject:SetActiveEx(isPvpExtra)
+
+        if isPvpExtra then
+            local extraTargetCount = self._Control.PVPControl:GetPvpExtraTargetCount()
+            -- 额外杯
+            local extraCupsNum = math.max(0, cupsNum - targetCount)
+            self._CupOvertimeList = XUiHelper.RefreshUiObjectList(self._CupOvertimeList, self.ListCupOvertime, self.GridCupOvertime, extraTargetCount, function(index, grid)
+                if grid.ImgOn then
+                    grid.ImgOn.gameObject:SetActiveEx(index <= extraCupsNum)
+                end
+            end)
+        else
+            self._CupList = XUiHelper.RefreshUiObjectList(self._CupList, self.ListCup, self.GridCup, targetCount, function(index, grid)
+                if grid.ImgOn then
+                    grid.ImgOn.gameObject:SetActiveEx(index <= cupsNum)
+                end
+            end)
+        end
 
         -- 显示最终血量
         local healthMax = self._Control.PVPControl:GetPVPHealthMaxFromConfig()
@@ -219,7 +230,7 @@ function XUiPanelTheatre5SettleGameDetail:RefreshMissionShow()
                 end
             end
         end
-        
+
         self.Mission = mission
     end
 end
@@ -252,4 +263,4 @@ function XUiPanelTheatre5SettleGameDetail:OnBtnNextPageClickEvent()
     self.Parent:OnGameDetailNextEvent()
 end
 
-return XUiPanelTheatre5SettleGameDetail
+return XUiPanelTheatre5SettleGameDetail

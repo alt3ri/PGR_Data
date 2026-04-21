@@ -270,6 +270,9 @@ function XPurchasePackage:GetUiFashionDetailBuyData(buyFinishedFunc, notEnoughCb
     buyData.IsHave = XRewardManager.CheckRewardGoodsListIsOwnForPackage(self.Data.RewardGoodsList)
     buyData.ItemIcon = XDataCenter.ItemManager.GetItemIcon(self.Data.ConsumeId)
     buyData.ItemCount = math.modf(self.Data.ConvertSwitch * disCountValue)
+    if disCountValue ~= 1 then
+        buyData.OriginCount = self.Data.ConvertSwitch
+    end
     buyData.BuyCallBack = function() 
         if self:CheckCanBuy(nil, nil, notEnoughCb) then
             if self.Data and self.Data.Id then
@@ -358,5 +361,24 @@ function XPurchasePackage:GetIsHave()
 
     return false
 end
+
+--获取礼包中，第一个动态表情包，用于展示
+function XPurchasePackage:GetFirstDynamicEmojiId()
+    --一个礼包中可能会有多个物品，只展示里面的动态表情包
+    local goodsList = self:GetRewardGoodsList()
+    for _, v in pairs(goodsList) do
+        local emojiId = v.TemplateId
+        local arrangeType = XArrangeConfigs.GetType(emojiId)
+        --是表情包类型
+        if arrangeType == XArrangeConfigs.Types.ChatEmoji then
+            local isDynamicEmoji = XDataCenter.ChatManager.IsDynamicEmoji(emojiId)
+            --是动态表情包
+            if isDynamicEmoji then
+                return v.TemplateId
+            end
+        end
+    end
+end
+
 
 return XPurchasePackage

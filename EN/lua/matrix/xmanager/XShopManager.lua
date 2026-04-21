@@ -176,7 +176,8 @@ function XShopManager.GetShopBaseInfoByTypeAndTag(type)
                     tagData.SecondType = 0
                     tagData.Name = shopGroup[v.SecondType].TagName
                     tagData.IsHasSnd = true
-                    tagData.IsNeedFirstBluePoint = v.IsNeedFirstBluePoint
+                    local shopDetail = XShopConfigs.GetShopDetailById(v.Id)
+                    tagData.IsNeedFirstBluePoint = shopDetail and shopDetail.IsNeedFirstBluePoint or false
                     tableInsert(list, tagData)
                     tagList[v.SecondType] = v.SecondType
                 end

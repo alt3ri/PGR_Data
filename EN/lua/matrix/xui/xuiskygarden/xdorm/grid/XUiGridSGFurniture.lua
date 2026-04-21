@@ -127,6 +127,9 @@ function XUiGridSGFurniture:OnRecycle()
             self.RImgPhoto.texture = nil
         end
     end
+    if not XTool.UObjIsNil(self._CanvasGroup) then
+        self._CanvasGroup.alpha = 1
+    end
 end
 
 function XUiGridSGFurniture:InitUi()

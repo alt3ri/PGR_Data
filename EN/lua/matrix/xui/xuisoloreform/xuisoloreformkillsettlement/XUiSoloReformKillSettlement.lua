@@ -42,6 +42,9 @@ function XUiSoloReformKillSettlement:RefreshScore(score)
     self.TxtScore.text = score
     local stageCfg = self._Control:GetSoloReformStageCfg(self._StageId)
     self.RImgRate:SetRawImage(self._Control:GetScoreLevelIcon(score,stageCfg.Difficulty))
+    local effectPath = self._Control:GetScoreUIEffectPath(score,stageCfg.Difficulty)
+    self.RImgBg.gameObject:SetActiveEx(effectPath ~= nil)
+    self.RImgBg:LoadPrefabEx(effectPath)
 end
 
 

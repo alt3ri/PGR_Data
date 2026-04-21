@@ -35,6 +35,16 @@ function XChatEmoji:GetEmojiIcon()
     return XChatConfigs.GetEmojiIcon(self.Id)
 end
 
+-- 获取表情类型
+function XChatEmoji:GetEmojiType()
+    return XChatConfigs.GetEmojiType(self.Id)
+end
+
+-- 获取动态表情资源
+function XChatEmoji:GetEmojiGIFAsset()
+    return XChatConfigs.GetEmojiGIFAsset(self.Id)
+end
+
 function XChatEmoji:GetPackId()
     return XChatConfigs.GetEmojiPackId(self.Id)
 end

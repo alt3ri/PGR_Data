@@ -11,6 +11,7 @@ XGachaConfigs = XConfigCenter.CreateTableConfig(XGachaConfigs, "XGachaConfigs", 
 XGachaConfigs.TableKey = enum({
     GachaShow = { DirType = XConfigCenter.DirectoryType.Client },
     GachaFashionSelfChoiceActivity = {},
+    GachaFashionSelfChoiceGroup = {},
     GachaFashionSelfChoiceResources = { DirType = XConfigCenter.DirectoryType.Client, ReadKeyName = "GachaId" },
 })
 

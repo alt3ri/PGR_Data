@@ -159,6 +159,10 @@ end
 function XUiEquipDetailChildV2P6:RegisterHelpBtn()
     local keyStr = self.IsWeapon and "EquipWeapon" or "EquipAwareness"
     self:BindHelpBtn(self.BtnHelp, keyStr)
+
+    if XUiManager.IsHideFunc then
+        self.BtnHelp.gameObject:SetActiveEx(false)
+    end
 end
 
 function XUiEquipDetailChildV2P6:OnBtnBackClick()

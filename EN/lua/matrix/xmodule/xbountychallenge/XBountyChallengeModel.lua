@@ -260,6 +260,14 @@ function XBountyChallengeModel:GetCurrentBossIdAndDifficulty()
     return self._CurrentBossId, self._CurrentDifficulty
 end
 
+function XBountyChallengeModel:GetDifficultyConfigByBossAndLevel(bossId, level)
+    local boss = self:GetBossConfig(bossId)
+    if not boss then
+        return nil
+    end
+    return self:GetDifficultyConfig(boss.DifficultyGroupId, level)
+end
+
 -- 返回false代表可使用全部,返回table代表使用的角色有限制
 function XBountyChallengeModel:GetCharacters(bossId, level)
     --（3）每个难度限定玩家选择角色

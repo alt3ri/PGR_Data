@@ -73,8 +73,10 @@ function XUiPanelFashionSuitPurchase:ShowDiscount()
         if XPurchaseConfigs.GetTagType(tag) == XPurchaseConfigs.PurchaseTagType.Discount then
             local disCountValue = XDataCenter.PurchaseManager.GetLBDiscountValue(self._ItemData)
             if disCountValue < 1 then
-                if XOverseaManager.IsOverSeaRegion() and not XOverseaManager.IsTWRegion() then
+                if  XOverseaManager.IsJPRegion() then
                     tagText = XUiHelper.GetDiscountTextV2(disCountValue)
+                elseif XOverseaManager.IsKRRegion() or XOverseaManager.IsENRegion() then
+                    tagText = tostring(math.floor((1-disCountValue) * 100))..tagText
                 else
                     local disCountStr = string.format("%.1f", disCountValue * 10)
                     if self._ItemData.DiscountShowStr and self._ItemData.DiscountShowStr ~= "" then

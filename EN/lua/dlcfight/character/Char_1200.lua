@@ -62,6 +62,7 @@ function XChar1200:OnFullChainSkillStart(gameplayActive, isInChain, chainRemainT
 
     local players = self._proxy:GetPlayerNpcList()
     for i, playerID in pairs(players) do
+        if playerID == curChainStartNpcId then goto continue end
         --XLog.Warning("添加能量 " .. tostring(curChainStartNpcId) .. " " .. tostring(playerID))
         if self._proxy:CheckBuffByKind(playerID, 1200008) then goto continue end
         --XLog.Error("添加能量" .. playerID)
@@ -98,6 +99,9 @@ end
 function XChar1200:OnFullChainShowStart(gameplayActive, chainNpcList, chainLevel)
     --给所有人加无敌
     self:ApplyMagicToAllPlayer(12001001,1)
+end
+
+function XChar1200:OnFullChainStageEnd(gameplayActive, isInChain, chainRemainTime, chainNpcList, chainLevel)
     --删除充能限制
     self:ApplyMagicToAllPlayer(1200009, 1)
 end

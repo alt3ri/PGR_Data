@@ -504,6 +504,8 @@ local OnLoginSuccess = function()
     StartTcpPingGate()
     XEventManager.DispatchEvent(XEventId.EVENT_LOGIN_SUCCESS)
     CS.XGameEventManager.Instance:Notify(XEventId.EVENT_LOGIN_SUCCESS)
+    -- PGS成就事件监听初始化（在InitBeforeLogin清空事件之后注册）
+    XPgsAchievementManager.InitEventListeners()
 end
 
 OnLogin = function(errCode)
@@ -1270,12 +1272,7 @@ function XLoginManager.OnReconnectFailed()
     XLuaUiManager.ClearAllMask(true)
     XLuaUiManager.SetAnimationMask("DoLogin", true, 1)
 
-    if XFightUtil.IsFighting() then
-        if not XFightUtil.IsDlcFighting() then
-            XLuaUiManager.Open("UiSettleLose")
-        end
-        XFightUtil.ClearFight()
-    end
+    XFightUtil.DoOnReconnectFailed()
     
     --if XNetwork.IsShowNetLog then
     CS.XLog.Debug("断线重连失败，尝试自动重登")

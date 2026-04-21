@@ -3,36 +3,42 @@
         "ActorSignificance": 1,
         "NeedLod": 1.0,
         "NeedStreaming": 1.0,
-        "NeedMove": 1.0
+        "NeedMove": 1.0,
+        "MinTickDelta": 1000
     },
     {
         "ActorSignificance": 2,
         "NeedLod": 1.0,
         "NeedStreaming": 1.0,
-        "NeedMove": 1.0
+        "NeedMove": 1.0,
+        "MinTickDelta": 100000
     },
     {
         "ActorSignificance": 3,
         "NeedLod": 1.0,
         "NeedStreaming": 1.0,
-        "NeedMove": null
+        "NeedMove": null,
+        "MinTickDelta": 100000
     },
     {
         "ActorSignificance": 4,
         "NeedLod": null,
         "NeedStreaming": 1.0,
-        "NeedMove": 1.0
+        "NeedMove": 1.0,
+        "MinTickDelta": 5000
     },
     {
         "ActorSignificance": 5,
         "NeedLod": 1.0,
         "NeedStreaming": 1.0,
-        "NeedMove": null
+        "NeedMove": null,
+        "MinTickDelta": 100000
     },
     {
         "ActorSignificance": 6,
         "NeedLod": null,
         "NeedStreaming": null,
-        "NeedMove": null
+        "NeedMove": null,
+        "MinTickDelta": 100000
     }
 ]

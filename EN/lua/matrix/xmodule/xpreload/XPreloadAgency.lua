@@ -739,6 +739,7 @@ function XPreloadAgency:MultiThreadDownload()
     self._CurDownloader = CS.XMTDownloadCenter()
     self._CurDownloader:SetThreadNumber(self._CurDownloadThreadCount) --先设置一次线程数量
     self._CurTaskGroup = CS.XMTDownloadTaskGroup(1)
+    self._CurTaskGroup:SetClientCDNsSkip(true)
     self._CurTaskGroup.NotifyStateChanged = self._OnDownloadStateUpdate
     --self._CurTaskGroup.NotifyProgressChanged = self._OnDownloadProgressUpdate --使用定时器
 

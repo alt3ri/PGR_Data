@@ -105,7 +105,8 @@ function XUiPaintingExperiencePassV4P2:OnBtnSingleEnterClick()
 end
 
 function XUiPaintingExperiencePassV4P2:OnBtnPurchase()
-    if XLuaUiManager.IsUiLoad("UiFashionDetail") or XLuaUiManager.IsUiLoad("UiFashionSuitDetail") then
+    if XLuaUiManager.IsUiLoad("UiFashionDetail") or XLuaUiManager.IsUiLoad("UiFashionSuitDetail") 
+            or XLuaUiManager.IsStackUiOpen("UiFashionDetail") or XLuaUiManager.IsStackUiOpen("UiFashionSuitDetail") then
         self:Close()
     else
         XFunctionManager.SkipInterface(self.SkipIds[1], "UiPaintingExperiencePassV4P2")

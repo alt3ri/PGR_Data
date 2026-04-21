@@ -1,5 +1,4 @@
 local XLuckyTenant2Enum = require("XModule/XLuckyTenant2/Game/XLuckyTenant2Enum")
-local PieceId = XLuckyTenant2Enum.PieceId or { Subworm = 2 }
 local XLuckyTenant2State = require("XModule/XLuckyTenant2/Game/XLuckyTenant2State")
 local XLuckyTenant2ChessSkill = require("XModule/XLuckyTenant2/Game/XLuckyTenant2ChessSkill")
 
@@ -44,7 +43,6 @@ function XLuckyTenant2Piece:Ctor(uid, config)
     self._Name = ""
     self._Desc = false
     self._InitialValue = 0
-    self._ScoreValidThisRound = 0
     self._Icon = false
     self._IsCanDelete = false
     self._IsCanDie = false
@@ -84,6 +82,8 @@ function XLuckyTenant2Piece:Ctor(uid, config)
 
     -- 删除标记：标记棋子是否已被删除（延迟回收）
     self._IsDeleted = false
+    -- 刚升级标记：供Type504等技能检测，每回合重置
+    self._JustLeveledUp = false
 
     -- 如果提供了config，则设置配置
     if config then
@@ -165,9 +165,6 @@ function XLuckyTenant2Piece:IsOnBoard()
 end
 
 function XLuckyTenant2Piece:GetName()
-    if XMain.IsZlbDebug then
-        return self._Name .. "\nid:" .. self._Id .. " Uid:" .. self._Uid
-    end
     return self._Name
 end
 
@@ -212,7 +209,6 @@ function XLuckyTenant2Piece:GetLevel()
 end
 
 function XLuckyTenant2Piece:SetLevel(level)
-    local XLuckyTenant2Enum = require("XModule/XLuckyTenant2/Game/XLuckyTenant2Enum")
     local constants = XLuckyTenant2Enum.GameConstants
 
     -- 根据羁绊类型确定等级上限（角色羁绊棋子使用缓存的上限，其他棋子最大等级99）
@@ -315,7 +311,6 @@ end
 function XLuckyTenant2Piece:ReduceStateRounds(amount)
     local expiredStates = {}
     local statesToRemove = {}
-    local TriggerState = require("XModule/XLuckyTenant2/Game/XLuckyTenant2Enum").TriggerState
 
     for stateType, state in pairs(self._States) do
         local remainRoundsBefore = state:GetRemainRounds()
@@ -323,12 +318,6 @@ function XLuckyTenant2Piece:ReduceStateRounds(amount)
         local remainRoundsAfter = state:GetRemainRounds()
         local isExpired = state:IsExpired()
         local stateSkillId = state:GetSkillId()
-
-        -- 添加调试日志（仅对子虫和死亡状态）
-        if self:GetId() == PieceId.Subworm and stateType == TriggerState.Death then
-            XMVCA.XLuckyTenant2:Print(string.format("[ReduceStateRounds] 子虫[ID:%d] 死亡状态: 减少前=%d, 减少后=%d, 是否过期=%s, 状态技能ID=%d",
-                self:GetId(), remainRoundsBefore, remainRoundsAfter, tostring(isExpired), stateSkillId))
-        end
 
         if isExpired then
             table.insert(expiredStates, {
@@ -355,7 +344,6 @@ end
 function XLuckyTenant2Piece:GetSkills(model)
     if not self._Skills then
         if not model then
-            XMVCA.XLuckyTenant2:Print("[XLuckyTenant2Piece] 删除技能未初始化的棋子")
             return {}
         end
         self._Skills = {}
@@ -390,7 +378,6 @@ function XLuckyTenant2Piece:Clear()
     self._Name = ""
     self._Desc = false
     self._InitialValue = 0
-    self._ScoreValidThisRound = 0
     self._Icon = false
     self._IsCanDelete = false
     self._IsCanDie = false
@@ -430,8 +417,18 @@ function XLuckyTenant2Piece:ClearButRetainPositionAndUid()
 end
 
 function XLuckyTenant2Piece:ClearEveryTurn()
-    self._ScoreValidThisRound = 0
-    -- 状态倒计时在回合结束时统一处理
+    self._JustLeveledUp = false
+end
+
+---标记棋子刚升级（供Type504等技能检测）
+function XLuckyTenant2Piece:MarkJustLeveledUp()
+    self._JustLeveledUp = true
+end
+
+---检查棋子是否刚升级
+---@return boolean
+function XLuckyTenant2Piece:IsJustLeveledUp()
+    return self._JustLeveledUp == true
 end
 
 function XLuckyTenant2Piece:GetPosition()
@@ -482,16 +479,10 @@ function XLuckyTenant2Piece:GetInitialValue()
     return self._InitialValue
 end
 
----获取本回合额外金币值（临时值）
----@return number
-function XLuckyTenant2Piece:GetRoundBonusValue()
-    return self._ScoreValidThisRound
-end
-
----获取总金币值（基础值 + 回合加成）
+---获取总金币值
 ---@return number
 function XLuckyTenant2Piece:GetTotalValue()
-    return self._Value + self._ScoreValidThisRound
+    return self._Value
 end
 
 ---获取消除时的得分
@@ -551,7 +542,6 @@ function XLuckyTenant2Piece:ApplyBondBaseValueDelta(key, value)
     local newSum = self:_GetBondBaseValueDeltaSum()
     if newSum ~= oldSum then
         self._Value = self._Value + (newSum - oldSum)
-        -- XLog.Error(string.format("[ApplyBondBaseValueDelta] 棋子[ID:%d] 基础金币增益变化: 旧=%d, 新=%d, 新值=%d", self:GetId(), oldSum, newSum, self._Value))
     end
 end
 
@@ -592,14 +582,6 @@ function XLuckyTenant2Piece:ResetBondValueDeltas()
     self._BondDeletionValueDeltas = {}
 end
 
-function XLuckyTenant2Piece:SetScoreValidThisRound(value)
-    self._ScoreValidThisRound = math.min(999, value)
-end
-
-function XLuckyTenant2Piece:AddScoreValidThisRound(value)
-    self._ScoreValidThisRound = math.min(999, self._ScoreValidThisRound + value)
-end
-
 function XLuckyTenant2Piece:SetValue(value)
     self._Value = value
 end
@@ -633,12 +615,6 @@ function XLuckyTenant2Piece:GetParamsEncodeMessage()
         level = nil
     end
 
-    local scoreValidThisRound = self._ScoreValidThisRound
-    -- 如果本回合临时分数为0，不序列化
-    if scoreValidThisRound == 0 then
-        scoreValidThisRound = nil
-    end
-
     -- 序列化状态信息（二期新增）
     local states = nil
     local stateList = self:GetAllStates()
@@ -660,7 +636,6 @@ function XLuckyTenant2Piece:GetParamsEncodeMessage()
         Value = value,
         ValueUponDeletion = valueUponDeletion,
         Level = level,
-        ScoreValidThisRound = scoreValidThisRound,
         States = states,
     }
 
@@ -705,12 +680,7 @@ function XLuckyTenant2Piece:DecodeMessage(message)
     if message.Level then
         self:SetLevel(message.Level)
     end
-    
-    -- 恢复本回合临时分数
-    if message.ScoreValidThisRound then
-        self:SetScoreValidThisRound(message.ScoreValidThisRound)
-    end
-    
+
     -- 恢复状态信息（二期新增）
     if message.States and #message.States > 0 then
         for i = 1, #message.States do
@@ -721,6 +691,79 @@ function XLuckyTenant2Piece:DecodeMessage(message)
             end
         end
     end
+end
+
+function XLuckyTenant2Piece:Clone()
+    ---@type XLuckyTenant2Piece
+    local clone = XLuckyTenant2Piece.New()
+
+    -- 基础配置相关（静态信息）
+    clone._Id = self._Id
+    clone._PieceType = self._PieceType
+    clone._Quality = self._Quality
+    clone._Name = self._Name
+    clone._Desc = self._Desc
+    clone._InitialValue = self._InitialValue
+    clone._Value = self._Value
+    clone._Icon = self._Icon
+    clone._IsCanDelete = self._IsCanDelete
+    clone._IsCanDie = self._IsCanDie
+    clone._SkillId = self._SkillId
+    clone._Tag = self._Tag
+
+    -- 数量与分值
+    clone._Amount = self._Amount
+    clone._ValueUponDeletion = self._ValueUponDeletion
+    clone._InitialValueUponDeletion = self._InitialValueUponDeletion
+
+    -- 标记棋子/道具
+    clone._IsPiece = self._IsPiece
+    clone._IsProp = self._IsProp
+
+    -- 唯一ID与位置
+    clone._Uid = self._Uid
+    clone._X = self._X
+    clone._Y = self._Y
+    clone._IsOnBoard = self._IsOnBoard
+    clone._IsDeleted = self._IsDeleted
+
+    -- 羁绊与等级
+    clone._BondId = self._BondId
+    clone._CanUseForBond = self._CanUseForBond
+    clone._Level = self._Level
+    clone._DefaultLevel = self._DefaultLevel
+    clone._CanUpgrade = self._CanUpgrade
+    clone._CanBeEliminated = self._CanBeEliminated
+
+    -- 羁绊加成（拷贝一份新表，避免引用共享）
+    clone._BondBaseValueDeltas = {}
+    for k, v in pairs(self._BondBaseValueDeltas or {}) do
+        clone._BondBaseValueDeltas[k] = v
+    end
+    clone._BondDeletionValueDeltas = {}
+    for k, v in pairs(self._BondDeletionValueDeltas or {}) do
+        clone._BondDeletionValueDeltas[k] = v
+    end
+
+    -- 状态（重新构造 XLuckyTenant2State，避免共享引用）
+    clone._States = {}
+    for _, state in pairs(self._States or {}) do
+        local stateType = state:GetStateType()
+        local skillId = state:GetSkillId()
+        local remainRounds = state:GetRemainRounds()
+        clone:AddStateByType(stateType, skillId, remainRounds)
+    end
+
+    -- 其他标记
+    clone._IsDescDynamic = self._IsDescDynamic
+    clone._DynamicDesc = self._DynamicDesc
+    clone._IsHideRound = self._IsHideRound
+    clone._JustLeveledUp = self._JustLeveledUp
+
+    -- 技能缓存不要直接拷贝，保持懒加载
+    clone._Skills = false
+
+    return clone
 end
 
 return XLuckyTenant2Piece

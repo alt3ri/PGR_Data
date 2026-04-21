@@ -15,7 +15,6 @@ function XUiLuckyTenant2GameGridChess:OnStart()
             self:OnClick()
         end
     end
-
 end
 
 function XUiLuckyTenant2GameGridChess:InitComponents()
@@ -42,7 +41,7 @@ function XUiLuckyTenant2GameGridChess:InitComponents()
         -- 宝盒棋子被消除时播放，播放后再消失
         self.FxUiLuckyTenant209 = effect:Find("FxUiLuckyTenant209")
 
-        -- 武器类技能发动，消除其他棋子时，发动技能的棋子播放
+        -- 武器类技能（Type401-407）、角色升级（Type301）发动时，发动技能的棋子播放（复用同一特效）
         self.FxUiLuckyTenant213 = effect:Find("FxUiLuckyTenant213")
 
         -- 子虫和红朝发动传染技能时，播放
@@ -50,6 +49,9 @@ function XUiLuckyTenant2GameGridChess:InitComponents()
 
         -- 被角色消除的棋子，播放一次这个特效，播放后再消失
         self.FxUiLuckyTenant215 = effect:Find("FxUiLuckyTenant215")
+
+        -- 技能发动时, 播放这个特效
+        self.FxGridChessDuang = effect:Find("FxGridChessDuang")
     end
 end
 
@@ -74,9 +76,6 @@ end
 ---更新倒计时效果（显示前两个有剩余回合数的状态）
 ---@param data table 棋子数据
 function XUiLuckyTenant2GameGridChess:UpdateTimePanels(data)
-    local XLuckyTenant2Enum = require("XModule/XLuckyTenant2/Game/XLuckyTenant2Enum")
-    local TriggerState = XLuckyTenant2Enum.TriggerState
-
     local states = data.States or {}
     local rounds = {}
     for _, state in ipairs(states) do
@@ -166,8 +165,14 @@ function XUiLuckyTenant2GameGridChess:Update(data)
 
             -- 设置品质
             if self.ImgQuality then
-                local qualityIcon = self._Control:GetQualityIconCircle(data.Quality)
-                self.ImgQuality:SetSprite(qualityIcon)
+                if type(data.Quality) == "number" then
+                    local qualityIcon = self._Control:GetQualityIconCircle(data.Quality)
+                    if qualityIcon and qualityIcon ~= "" then
+                        self.ImgQuality:SetSprite(qualityIcon)
+                    end
+                elseif type(data.Quality) == "string" and data.Quality ~= "" then
+                    self.ImgQuality:SetImage(data.Quality)
+                end
             end
 
             -- 设置分数/价值
@@ -351,22 +356,39 @@ function XUiLuckyTenant2GameGridChess:UpdateEffectVisibility(data)
         if self.FxUiLuckyTenant212Ganrao01 then
             self.FxUiLuckyTenant212Ganrao01.gameObject:SetActiveEx(showInfection)
             if showInfection then
-                local x, y = (data and data.X), (data and data.Y)
-                XLog.Debug(string.format("[XUiLuckyTenant2GameGridChess] PlayEffect FxUiLuckyTenant212Ganrao01 (感染常驻) [%s,%s]", tostring(x), tostring(y)))
+                -- todo：临时改为代码设置层级，在之后等待美术修复UI特效层级问题
+                local uiEffectLayer = self.FxUiLuckyTenant212Ganrao01:GetComponent("XUiEffectLayer")
+                if uiEffectLayer then
+                    uiEffectLayer.enabled = false
+                end
+
+                local gr1 = self.FxUiLuckyTenant212Ganrao01:Find("1/gr1")
+                if gr1 then
+                    local renderer = gr1.transform:GetComponent("Renderer")
+                    if renderer then
+                        local canvas = self.Parent.Transform:GetComponent("Canvas")
+                        if canvas then
+                            renderer.sortingOrder = canvas.sortingOrder + 2
+                        end
+                    end
+                end
             end
         end
     end
-    -- 无数据或空位时隐藏一次性特效节点，避免残留
-    if not data or not data.IsValid then
-        local hide = function(node)
-            if node then node.gameObject:SetActiveEx(false) end
-        end
-        hide(self.FxUiLuckyTenant214Shalou01)
-        hide(self.FxUiLuckyTenant208)
-        hide(self.FxUiLuckyTenant209)
-        hide(self.FxUiLuckyTenant213)
-        hide(self.FxUiLuckyTenant211)
-        hide(self.FxUiLuckyTenant215)
+    -- 每次刷新时先隐藏所有一次性特效，避免上回合残留
+    self:_HideEffectNode(self.FxUiLuckyTenant214Shalou01)
+    self:_HideEffectNode(self.FxUiLuckyTenant208)
+    self:_HideEffectNode(self.FxUiLuckyTenant209)
+    self:_HideEffectNode(self.FxUiLuckyTenant213)
+    self:_HideEffectNode(self.FxUiLuckyTenant211)
+    self:_HideEffectNode(self.FxUiLuckyTenant215)
+end
+
+---隐藏单个特效节点（空安全）
+---@param node userdata|nil 特效节点（Unity Transform）
+function XUiLuckyTenant2GameGridChess:_HideEffectNode(node)
+    if node and node.gameObject then
+        node.gameObject:SetActiveEx(false)
     end
 end
 
@@ -396,25 +418,36 @@ function XUiLuckyTenant2GameGridChess:_PlayOneShotEffect(timerKey, node, delayMs
     end
 end
 
----取消本格所有一次性特效定时器（OnDisable/OnDestroy 时调用）
+---取消本格所有一次性特效定时器并隐藏特效节点（OnDisable/OnDestroy 时调用）
 function XUiLuckyTenant2GameGridChess:CancelAllEffectTimers()
-    if not self._EffectTimers then return end
-    for key, timerId in pairs(self._EffectTimers) do
-        if timerId then
-            XScheduleManager.UnSchedule(timerId)
+    if self._EffectTimers then
+        for key, timerId in pairs(self._EffectTimers) do
+            if timerId then
+                XScheduleManager.UnSchedule(timerId)
+            end
+            self._EffectTimers[key] = nil
         end
-        self._EffectTimers[key] = nil
     end
+    -- 隐藏所有特效节点，避免残留
+    self:_HideEffectNode(self.FxUiLuckyTenant214Shalou01)
+    self:_HideEffectNode(self.FxUiLuckyTenant208)
+    self:_HideEffectNode(self.FxUiLuckyTenant209)
+    self:_HideEffectNode(self.FxUiLuckyTenant213)
+    self:_HideEffectNode(self.FxUiLuckyTenant211)
+    self:_HideEffectNode(self.FxUiLuckyTenant215)
+    self:_HideEffectNode(self.FxGridChessDuang)
 end
 
----倒计时减少时播放一次，1500ms 后隐藏；不等待播完，onFinish 若传入则立即调用，直接下一动画
+---倒计时减少时播放一次，不主动隐藏节点，依赖后续 UpdateEffectVisibility 重置
 ---@param skillId number|nil 来源技能ID（动画组传入，用于日志）
----@param onFinish function|nil 若传入则立即调用，不等待 1500ms
+---@param onFinish function|nil 若传入则立即调用
 function XUiLuckyTenant2GameGridChess:PlayEffectCountdownDecrease(skillId, onFinish)
     if not self.FxUiLuckyTenant214Shalou01 then return end
     local x, y = (self._Data and self._Data.X), (self._Data and self._Data.Y)
-    XLog.Debug(string.format("[XUiLuckyTenant2GameGridChess] PlayEffect FxUiLuckyTenant214Shalou01 (倒计时减少) [%s,%s] 来自技能:%s", tostring(x), tostring(y), tostring(skillId)))
-    self:_PlayOneShotEffect("214Shalou01", self.FxUiLuckyTenant214Shalou01, 1500, onFinish)
+    self.FxUiLuckyTenant214Shalou01.gameObject:SetActiveEx(true)
+    if type(onFinish) == "function" then
+        onFinish()
+    end
 end
 
 ---宝盒以外棋子被消除时播放一次，1200ms 后隐藏；onFinish 若传入则立即调用
@@ -423,7 +456,6 @@ end
 function XUiLuckyTenant2GameGridChess:PlayEffectEliminatedNormal(skillId, onFinish)
     if not self.FxUiLuckyTenant208 then return end
     local x, y = (self._Data and self._Data.X), (self._Data and self._Data.Y)
-    XLog.Debug(string.format("[XUiLuckyTenant2GameGridChess] PlayEffect FxUiLuckyTenant208 (宝盒以外棋子消除) [%s,%s] 来自技能:%s", tostring(x), tostring(y), tostring(skillId)))
     self:_PlayOneShotEffect("208", self.FxUiLuckyTenant208, 1200, onFinish)
 end
 
@@ -433,17 +465,33 @@ end
 function XUiLuckyTenant2GameGridChess:PlayEffectEliminatedBox(skillId, onFinish)
     if not self.FxUiLuckyTenant209 then return end
     local x, y = (self._Data and self._Data.X), (self._Data and self._Data.Y)
-    XLog.Debug(string.format("[XUiLuckyTenant2GameGridChess] PlayEffect FxUiLuckyTenant209 (宝盒棋子消除) [%s,%s] 来自技能:%s", tostring(x), tostring(y), tostring(skillId)))
     self:_PlayOneShotEffect("209", self.FxUiLuckyTenant209, 1200, onFinish)
 end
 
----武器类技能发动、消除其他棋子时，发动技能的棋子播放，1200ms 后隐藏；onFinish 若传入则立即调用
+---武器类（Type401-407）、角色升级（Type301）发动时播放 FxUiLuckyTenant213，1200ms 后隐藏；onFinish 若传入则立即调用
 ---@param skillId number|nil 来源技能ID（用于日志）
 ---@param onFinish function|nil 若传入则立即调用
 function XUiLuckyTenant2GameGridChess:PlayEffectWeaponSkill(skillId, onFinish)
     if not self.FxUiLuckyTenant213 then return end
     local x, y = (self._Data and self._Data.X), (self._Data and self._Data.Y)
-    XLog.Debug(string.format("[XUiLuckyTenant2GameGridChess] PlayEffect FxUiLuckyTenant213 (武器技能消除) [%s,%s] 来自技能:%s", tostring(x), tostring(y), tostring(skillId)))
+    self:_PlayOneShotEffect("213", self.FxUiLuckyTenant213, 1200, onFinish)
+end
+
+---宝盒品质提升（Type507品质+1）时播放 FxUiLuckyTenant213，1200ms 后隐藏；onFinish 若传入则立即调用
+---@param skillId number|nil 来源技能ID（用于日志）
+---@param onFinish function|nil 若传入则立即调用
+function XUiLuckyTenant2GameGridChess:PlayEffectBoxUpgrade(skillId, onFinish)
+    if not self.FxUiLuckyTenant213 then return end
+    local x, y = (self._Data and self._Data.X), (self._Data and self._Data.Y)
+    self:_PlayOneShotEffect("213", self.FxUiLuckyTenant213, 1200, onFinish)
+end
+
+---宝盒重生品质提升（Type502重生时品质提升）时播放 FxUiLuckyTenant213，1200ms 后隐藏；onFinish 若传入则立即调用
+---@param skillId number|nil 来源技能ID（用于日志）
+---@param onFinish function|nil 若传入则立即调用
+function XUiLuckyTenant2GameGridChess:PlayEffectBoxReborn(skillId, onFinish)
+    if not self.FxUiLuckyTenant213 then return end
+    local x, y = (self._Data and self._Data.X), (self._Data and self._Data.Y)
     self:_PlayOneShotEffect("213", self.FxUiLuckyTenant213, 1200, onFinish)
 end
 
@@ -453,7 +501,6 @@ end
 function XUiLuckyTenant2GameGridChess:PlayEffectInfectionSkill(skillId, onFinish)
     if not self.FxUiLuckyTenant211 then return end
     local x, y = (self._Data and self._Data.X), (self._Data and self._Data.Y)
-    XLog.Debug(string.format("[XUiLuckyTenant2GameGridChess] PlayEffect FxUiLuckyTenant211 (传染技能) [%s,%s] 来自技能:%s", tostring(x), tostring(y), tostring(skillId)))
     self:_PlayOneShotEffect("211", self.FxUiLuckyTenant211, 1200, onFinish)
 end
 
@@ -463,8 +510,21 @@ end
 function XUiLuckyTenant2GameGridChess:PlayEffectRoleEliminate(skillId, onFinish)
     if not self.FxUiLuckyTenant215 then return end
     local x, y = (self._Data and self._Data.X), (self._Data and self._Data.Y)
-    XLog.Debug(string.format("[XUiLuckyTenant2GameGridChess] PlayEffect FxUiLuckyTenant215 (角色消除) [%s,%s] 来自技能:%s", tostring(x), tostring(y), tostring(skillId)))
     self:_PlayOneShotEffect("215", self.FxUiLuckyTenant215, 1200, onFinish)
+end
+
+---播放棋子抖动动画
+function XUiLuckyTenant2GameGridChess:PlayShakeAnimation()
+    if self.PlayAnimation then
+        self:PlayAnimation("Shake")
+    end
+end
+
+---播放 Duang 特效
+function XUiLuckyTenant2GameGridChess:PlayEffectDuang()
+    if not self.FxGridChessDuang then return end
+    local x, y = (self._Data and self._Data.X), (self._Data and self._Data.Y)
+    self:_PlayOneShotEffect("Duang", self.FxGridChessDuang, 2000)
 end
 
 function XUiLuckyTenant2GameGridChess:ShowEffect()

@@ -56,6 +56,7 @@ function XUiLuckyTenant2Main:InitComponents()
     end
 
     self._CurrentChapterData = nil
+    self._RemainTimeTimerId = nil
 end
 
 function XUiLuckyTenant2Main:OnEnable()
@@ -64,12 +65,39 @@ function XUiLuckyTenant2Main:OnEnable()
         self._Control:UpdateActivityTimeLeft()
     end
     self:Update()
+    self:StartRemainTimeTimer()
 end
 
 function XUiLuckyTenant2Main:OnDisable()
+    self:StopRemainTimeTimer()
 end
 
 function XUiLuckyTenant2Main:OnDestroy()
+    self:StopRemainTimeTimer()
+end
+
+---启动剩余时间定时器（每分钟刷新一次）
+function XUiLuckyTenant2Main:StartRemainTimeTimer()
+    self:StopRemainTimeTimer()
+    if not self._Control or not self.TxtTime then
+        return
+    end
+    local function refreshTime()
+        if not self._Control or not self.TxtTime then
+            return
+        end
+        self.TxtTime.text = self._Control:GetRemainTimeFormatted()
+    end
+    -- 60 秒间隔，与 GridChapter 一致使用毫秒
+    self._RemainTimeTimerId = XScheduleManager.ScheduleForever(refreshTime, 60 * 1000)
+end
+
+---停止剩余时间定时器
+function XUiLuckyTenant2Main:StopRemainTimeTimer()
+    if self._RemainTimeTimerId then
+        XScheduleManager.UnSchedule(self._RemainTimeTimerId)
+        self._RemainTimeTimerId = nil
+    end
 end
 
 function XUiLuckyTenant2Main:Update()
@@ -78,7 +106,11 @@ function XUiLuckyTenant2Main:Update()
     -- 更新按钮状态
     self.BtnBack:SetButtonState(CS.UiButtonState.Normal)
     self.BtnMainUi:SetButtonState(CS.UiButtonState.Normal)
+    
+    
+    -- 更新任务和红点状态
     self.BtnTask:SetButtonState(CS.UiButtonState.Normal)
+    self.BtnTask:ShowReddot(XMVCA.XLuckyTenant2:IsShowRedDotTask())
 
     -- 更新剩余时间
     self.TxtTime.text = uiData.RemainTime or "00:00:00"
@@ -171,15 +203,26 @@ end
 ---点击章节
 ---@param chapterData table 章节数据
 function XUiLuckyTenant2Main:OnClickChapter(chapterData)
+    self:PlayAnimation("AnimGridChapterSelect")
+
     if not chapterData then
         return
     end
 
+    -- 不可选时提示并返回（先时间，再上一章）
+    if chapterData.IsDisabledByTime then
+        XUiManager.TipMsg(self._Control:GetChapterTimeTipText(chapterData.TimeId))
+        return
+    end
+    if chapterData.IsLockedByPrevChapter then
+        XUiManager.TipText("BfrtChapterUnlockCondition")
+        return
+    end
+
     self._CurrentChapterData = chapterData
-    -- 更新关卡列表
     self:UpdateStageList(chapterData.Stages or {})
-    -- 刷新章节列表以更新选中状态
-    local chapters = self._Control and self._Control:GetUiMain() and self._Control:GetUiMain().Chapters or {}
+    local uiData = self._Control:GetUiMain()
+    local chapters = uiData and uiData.Chapters or {}
     for i, grid in ipairs(self._GridChapters) do
         if chapters[i] then
             grid:Update(chapters[i])
@@ -196,7 +239,7 @@ function XUiLuckyTenant2Main:OnClickStage(stageData)
 
     if not stageData.IsCanChallenge then
         if not stageData.IsPreStagePass then
-            XUiManager.TipText("LuckyTenant2PreStageNotPass")
+            XUiManager.TipText("FubenPreStageNotPass")
         elseif not stageData.IsOnTime then
             XUiManager.TipText("ActivityNotInTime")
         end
@@ -204,7 +247,7 @@ function XUiLuckyTenant2Main:OnClickStage(stageData)
     end
 
     if stageData.IsOtherStagePlaying then
-        XUiManager.TipText("LuckyTenant2OtherStagePlaying")
+        XUiManager.TipText("LuckyTenantOtherStageIsPlaying")
         return
     end
 

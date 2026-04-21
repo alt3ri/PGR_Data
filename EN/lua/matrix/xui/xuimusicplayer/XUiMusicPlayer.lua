@@ -187,7 +187,8 @@ end
 function XUiMusicPlayer:OnBtnChangeClick()
     local selelctedId = self.DynamicTableDataList[self.SelectedIndex]
     if selelctedId == XMVCA.XAudio:GetUiMainNeedPlayedAlbumId() then return end
-    XMVCA.XAudio:ChangeUiMainAlbumId(selelctedId)
+    local success = XMVCA.XAudio:ChangeUiMainAlbumId(selelctedId)
+    if not success then return end
     self.BtnChange.gameObject:SetActiveEx(false)
     self.ImgChangeDisable.gameObject:SetActiveEx(true)
     XUiManager.TipError(CS.XTextManager.GetText("MusicPlayerAlbumSetSuccess"))

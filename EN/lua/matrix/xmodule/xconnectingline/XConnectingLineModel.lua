@@ -5,6 +5,8 @@ local TableKey = {
     ConnectingLineStage = { CacheType = XConfigUtil.CacheType.Normal },
     ConnectingLineBubble = { DirPath = XConfigUtil.DirectoryType.Client },
     ConnectingLineChapter = { CacheType = XConfigUtil.CacheType.Normal },
+
+    ConnectingLineClientConfig = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "Key", ReadFunc = XConfigUtil.ReadType.String, CacheType = XConfigUtil.CacheType.Private },
 }
 
 ---@class XConnectingLineModel : XModel
@@ -204,6 +206,10 @@ end
 
 function XConnectingLineModel:GetCurrentStageId()
     return self._CurrentStageId
+end
+
+function XConnectingLineModel:SetCurrentStageId(stageId)
+    self._CurrentStageId = stageId
 end
 
 function XConnectingLineModel:IsChapterUnlock(chapterId)
@@ -443,6 +449,11 @@ function XConnectingLineModel:GetChapterConfig(chapterId)
     return chapterConfig
 end
 
+---@return XTableConnectingLineClientConfig
+function XConnectingLineModel:GetClientConfigByKey(key, notips)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.ConnectingLineClientConfig, key, notips)
+end
+
 function XConnectingLineModel:GetChapterJustUnlockKey(chapterId)
     return "XConnectingLineNotJustUnlock" .. self._ActivityId .. XPlayer.Id .. tostring(chapterId)
 end
@@ -457,6 +468,17 @@ function XConnectingLineModel:IsChapterJustUnlock(chapterId)
         return true
     end
     return false
+end
+
+function XConnectingLineModel:GetStageListByGameId(gameId)
+    local stageConfigs = self._ConfigUtil:GetByTableKey(TableKey.ConnectingLineStage)
+    local list = {}
+    for i, config in pairs(stageConfigs) do
+        if config.ActivityId == gameId then
+            list[#list + 1] = config
+        end
+    end
+    return list
 end
 
 return XConnectingLineModel

@@ -60,7 +60,7 @@ function XBuffScript1016018:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, bu
 end
 
 function XBuffScript1016018:AfterDamageCalc(eventArgs)
-    if eventArgs.Launcher == self._uuid and eventArgs.Id then
+    if eventArgs.Launcher == self._uuid and eventArgs.Id==self.magicId then
         local damage = self.damageRate * self._proxy:GetNpcAttribMaxValue(self._uuid,ENpcAttrib.Life)
         self._proxy:SetAfterDamageMagicContext(eventArgs.ContextId, damage, eventArgs.ElementDamage, eventArgs.FinalHackDamage)
     end

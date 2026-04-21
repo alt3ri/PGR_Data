@@ -1,0 +1,198 @@
+[
+    {
+        "Id": 1,
+        "Name": "Shifting Nimbus",
+        "BaseDesc": "Performs 3 sweeping melee attacks against nearby enemies, centered on the character.",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2kuluomuhong1.png",
+        "LevelDescList": "['I. DMG: <color=#3ACC3B>10/10/10.</color>', 'II. Passive: Red Orb drop rate <color=#3ACC3B>+25%.</color>', 'III. Increases DMG to <color=#3ACC3B>15/15/15.</color> When the last hit lands, gains <color=#3ACC3B>1</color> Sprint Charge.', 'IV. After casting, summons a clone that casts the skill one extra time in place.']"
+    },
+    {
+        "Id": 2,
+        "Name": "Stinger",
+        "BaseDesc": "Performs a thrusting melee attack on the nearest enemy.",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R1luxiyahong1.png",
+        "LevelDescList": "['I. DMG: <color=#3ACC3B>35.</color>', 'II. Passive: Red Orb drop rate <color=#3ACC3B>+25%.</color>', 'III. Increases DMG to <color=#3ACC3B>50</color>. Greatly expands thrust range. Passive upgrade: Red Orb drop rate <color=#3ACC3B>+25%</color>.', 'IV. Passive: When picking up Signal Orbs, gains <color=#3ACC3B>1</color> bonus EXP.']"
+    },
+    {
+        "Id": 3,
+        "Name": "Swipe",
+        "BaseDesc": "Performs a fan-shaped slashing melee attack on the nearest enemy in an area centered on the character.",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2shenweihong1.png",
+        "LevelDescList": "['I. DMG: <color=#3ACC3B>25 +</color> Max HP <color=#3ACC3B>x 10%</color>.', 'II. Passive: Red Orb drop rate <color=#3ACC3B>+25%.</color>', 'III. DMG increases to <color=#3ACC3B>35 + </color>Max HP<color=#3ACC3B> x 15%</color>. Passive: Each cast increases max HP by <color=#3ACC3B>1</color>.', 'IV. Greatly increases the fan-shaped attack area.']"
+    },
+    {
+        "Id": 4,
+        "Name": "Vibrant Stroke",
+        "BaseDesc": "Continuously deals DMG to nearby enemies in an area centered on the character.",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2ailahong1.png",
+        "LevelDescList": "['I. Lasts <color=#3ACC3B>2</color>s. DMG per second: <color=#3ACC3B>24.</color>', 'II. Passive: Red Orb drop rate <color=#3ACC3B>+25%.</color>', 'III. Increases DMG per second to <color=#3ACC3B>32</color>. Each time an enemy is hit, Movement Speed <color=#3ACC3B>+20,</color> for <color=#3ACC3B>5</color>s. Duration resets every time it is triggered.', 'IV. Greatly increases the DMG duration and DMG area.']"
+    },
+    {
+        "Id": 5,
+        "Name": "Dazzle",
+        "BaseDesc": "The next several basic attacks have a higher Signal Orb drop rate. Triggering this effect again adds more basic attack hits. Max <color=#3ACC3B>99</color> stacks.",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2luxiyahong1.png",
+        "LevelDescList": "['I. Lasts <color=#3ACC3B>5</color> basic attacks, Signal Orb drop rate <color=#3ACC3B>+15%.</color>', 'II. Passive: Red Orb drop rate <color=#3ACC3B>+25%.</color>', 'III. Signal Orb drop rate increases by <color=#3ACC3B>30%</color>. The effect now lasts for <color=#3ACC3B>7</color> basic attacks. Passive: Basic Attack DMG increases by <color=#3ACC3B>25%</color>.', 'IV. Passive: When picking up Signal Orbs, gains <color=#3ACC3B>1</color> bonus EXP.']"
+    },
+    {
+        "Id": 6,
+        "Name": "Thundering Rush",
+        "BaseDesc": "Performs a thrusting melee attack on the nearest enemy. When hitting more than <color=#3ACC3B>3</color> enemies, Basic Attack DMG Bonus <color=#3ACC3B>+10%</color>.",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R5Luxiyahong1.png",
+        "LevelDescList": "['I. DMG: <color=#3ACC3B>35.</color>', 'II. Passive: Red Orb drop rate <color=#3ACC3B>+25%.</color>', 'III. Increases DMG to <color=#3ACC3B>50.</color>', 'IV. After a skill hits, Basic Attack Speed <color=#3ACC3B>+50%</color> for <color=#3ACC3B>5</color>s.']"
+    },
+    {
+        "Id": 7,
+        "Name": "Reactive Fire",
+        "BaseDesc": "Fires <color=#3ACC3B>3</color> straight-line shots at the nearest enemy.",
+        "Icon": "Assets/Product/Texture/Image/UiPBR/PBRItemsIcon100.png",
+        "LevelDescList": "['I. DMG per hit: <color=#3ACC3B>30.</color>', 'II. Passive: Red Orb drop rate <color=#3ACC3B>+25%.</color>', 'III. Increases DMG per hit to <color=#3ACC3B>50</color>. CRIT Rate <color=#3ACC3B>+25%</color> for <color=#3ACC3B>2</color>s.', 'IV. Increases shot count to <color=#3ACC3B>6</color>, and increases DMG per hit to <color=#3ACC3B>60 +</color> Luck <color=#3ACC3B>x 50%</color>.']"
+    },
+    {
+        "Id": 8,
+        "Name": "Ricochet Rounds",
+        "BaseDesc": "Fires tracking bullets at the nearest enemy. The bullets ricochet between enemies.",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2lifuhong1.png",
+        "LevelDescList": "['I. Ricochet count is capped at <color=#3ACC3B>3</color>. DMG equals <color=#3ACC3B>25 +</color> Range <color=#3ACC3B>x 200%</color>.', 'II. Passive: Red Orb drop rate <color=#3ACC3B>+25%.</color>', 'III. Increases ricochet count to <color=#3ACC3B>5</color>, and increases DMG to <color=#3ACC3B>35 +</color> Range <color=#3ACC3B>x 300%</color>.', 'IV. Removes the ricochet limit.']"
+    },
+    {
+        "Id": 9,
+        "Name": "Explosive Throw",
+        "BaseDesc": "Fires explosive rounds at the nearest enemy. The blast leaves behind a burning area that deals continuous DMG.",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2Sufeiyahong1.png",
+        "LevelDescList": "['I. Deals <color=#3ACC3B>20</color> DMG per second for <color=#3ACC3B>3</color>s.', 'II. Passive: Red Orb drop rate <color=#3ACC3B>+25%.</color>', 'III. Increases DMG duration to <color=#3ACC3B>6</color>s, and increases DMG per second to <color=#3ACC3B>24</color>.', 'IV. Greatly increases the DMG area, and DMG rises over the duration.']"
+    },
+    {
+        "Id": 10,
+        "Name": "Active Guard",
+        "BaseDesc": "Summons a chess piece that fires tracking bullets at the nearest enemy.",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R5Lifuhong1.png",
+        "LevelDescList": "['I. The chess piece lasts <color=#3ACC3B>8</color>s. DMG: <color=#3ACC3B>10.</color>', 'II. Passive: Red Orb drop rate <color=#3ACC3B>+25%.</color>', 'III. Increases chess piece DMG to <color=#3ACC3B>13</color>. Bullets explode in a small area on hit, dealing the same DMG.', 'IV. Greatly increases the explosion radius.']"
+    },
+    {
+        "Id": 11,
+        "Name": "Blazing Burst",
+        "BaseDesc": "Summons a chess piece that performs thrusting melee attacks on the nearest enemy.",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4Dubianhong1.png",
+        "LevelDescList": "['I. The chess piece lasts <color=#3ACC3B>6</color>s. DMG: <color=#3ACC3B>15.</color>', 'II. Passive: Red Orb drop rate <color=#3ACC3B>+25%.</color>', 'III. Expands chess piece thrust range, and increases DMG to <color=#3ACC3B>18.</color>', \"IV. Greatly increases the chess piece's Attack Speed Bonus.\"]"
+    },
+    {
+        "Id": 12,
+        "Name": "Countering Swordplay",
+        "BaseDesc": "Summons a chess piece that performs slashing melee attacks on the nearest enemy.",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3shenweihong1.png",
+        "LevelDescList": "['I. The chess piece lasts <color=#3ACC3B>6</color>s. DMG: <color=#3ACC3B>12.</color>', 'II. Passive: Red Orb drop rate <color=#3ACC3B>+25%.</color>', 'III. Expands chess piece slash range, and increases DMG to <color=#3ACC3B>15.</color>', 'IV. Chess pieces switch to sweeping attacks.']"
+    },
+    {
+        "Id": 13,
+        "Name": "Armored Assault",
+        "BaseDesc": "While active, the character gains increased Armor. Duration resets every time it is triggered.",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2shenweilan1.png",
+        "LevelDescList": "['I. Lasts <color=#3ACC3B>5</color>s. Armor <color=#3ACC3B>+2.</color>', 'II. Passive: Blue Orb drop rate <color=#3ACC3B>+25%.</color>', 'III. Increases duration to <color=#3ACC3B>8</color>s, and increases Armor to <color=#3ACC3B>4.</color>', 'IV. Passive: While in Combo State, Armor increases with combo count.']"
+    },
+    {
+        "Id": 14,
+        "Name": "Swift Wave",
+        "BaseDesc": "While active, the character gains increased Attack Speed. Duration resets every time it is triggered.",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R1luxiyalan1.png",
+        "LevelDescList": "['I. Lasts <color=#3ACC3B>5</color>s. Attack Speed Bonus <color=#3ACC3B>+25%</color>.', 'II. Passive: Blue Orb drop rate <color=#3ACC3B>+25%.</color>', 'III. Increases duration to <color=#3ACC3B>8</color>s, and increases Attack Speed Bonus to <color=#3ACC3B>40%.</color>', 'IV. Passive: While in Combo State, Attack Speed increases with combo count.']"
+    },
+    {
+        "Id": 15,
+        "Name": "Thunderflash Stab",
+        "BaseDesc": "While active, the character gains increased Sprint Charge. Duration resets every time it is triggered.",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3Weilalan1.png",
+        "LevelDescList": "['I. Lasts <color=#3ACC3B>5</color>s. Sprint Charge <color=#3ACC3B>+40%.</color>', 'II. Passive: Blue Orb drop rate <color=#3ACC3B>+25%.</color>', 'III. Increases duration to <color=#3ACC3B>8</color>s, and increases Sprint Charge to <color=#3ACC3B>60%.</color>', 'IV. Passive: While in Combo State, Sprint Charge increases with combo count.']"
+    },
+    {
+        "Id": 16,
+        "Name": "Life Appetency",
+        "BaseDesc": "While active, the character gains increased Lifesteal Efficiency. Duration resets every time it is triggered.",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2Hanyinlan1.png",
+        "LevelDescList": "['I. Lasts <color=#3ACC3B>5</color>s. Lifesteal Efficiency <color=#3ACC3B>+2%.</color>', 'II. Passive: Blue Orb drop rate <color=#3ACC3B>+25%.</color>', 'III. Increases duration to <color=#3ACC3B>8</color>s, and increases Lifesteal Efficiency to <color=#3ACC3B>3%.</color>', 'IV. Passive: While in Combo State, Lifesteal Efficiency increases with combo count.']"
+    },
+    {
+        "Id": 17,
+        "Name": "Lightbreak Walk",
+        "BaseDesc": "While active, the character gains increased speed. Duration resets every time it is triggered.",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3luxiyalan1.png",
+        "LevelDescList": "['I. Lasts <color=#3ACC3B>5</color>s. Speed <color=#3ACC3B>+25%</color>.', 'II. Passive: Blue Orb drop rate <color=#3ACC3B>+25%.</color>', 'III. Increases duration to <color=#3ACC3B>8</color>s, and increases Speed to <color=#3ACC3B>37.5%.</color>', 'IV. Passive: While in Combo State, Speed increases with combo count.']"
+    },
+    {
+        "Id": 18,
+        "Name": "Hardstop Resonance",
+        "BaseDesc": "For <color=#3ACC3B>10</color>s, greatly increases CRIT Rate while the character is standing still. Duration resets every time it is triggered.",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2yongyechaolan1.png",
+        "LevelDescList": "['I. CRIT Rate <color=#3ACC3B>+30%</color>.', 'II. Passive: Blue Orb drop rate <color=#3ACC3B>+25%.</color>', 'III. Increases CRIT Rate to <color=#3ACC3B>50%.</color>', 'IV. While the character is standing still, CRIT DMG <color=#3ACC3B>+75%</color>. The skill effect becomes a global passive.']"
+    },
+    {
+        "Id": 19,
+        "Name": "Magnetic Shot",
+        "BaseDesc": "The next several basic attacks gain extra hits. Triggering this effect again adds more basic attack hits. Max <color=#3ACC3B>99</color> stacks.",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2lilan1.png",
+        "LevelDescList": "['I. Lasts for <color=#3ACC3B>3</color> basic attacks. DMG of extra hits equals <color=#3ACC3B>50%</color> of Basic Attack DMG.', 'II. Passive: Blue Orb drop rate <color=#3ACC3B>+25%.</color>', 'III. The effect now lasts for <color=#3ACC3B>7</color> basic attacks.', 'IV. Increases DMG of extra hits to <color=#3ACC3B>125%</color> of Basic Attack DMG.']"
+    },
+    {
+        "Id": 20,
+        "Name": "Healing Particle",
+        "BaseDesc": "Summons a chess piece that restores HP to nearby characters.",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R1lifulan1.png",
+        "LevelDescList": "['I. The chess piece lasts <color=#3ACC3B>10</color>s and restores <color=#3ACC3B>2</color> HP.', 'II. Passive: Blue Orb drop rate <color=#3ACC3B>+25%.</color>', 'III. Increases HP recovery to <color=#3ACC3B>3.</color>', 'IV. Greatly increases the recovery area. The chess piece also grants <color=#3ACC3B>+25%</color> Speed to characters within range.']"
+    },
+    {
+        "Id": 21,
+        "Name": "Gravity Beacon",
+        "BaseDesc": "After a brief delay, pulls enemies toward an area centered on the character's current position.",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4Kalieninahuang1.png",
+        "LevelDescList": "['I. Pulls enemies in over a small area.', 'II. Passive: Yellow Orb drop rate <color=#3ACC3B>+25%.</color>', 'III. Pulls enemies in over a large area.', 'IV. After casting, the character gains <color=#3ACC3B>+5</color> Armor for <color=#3ACC3B>5</color>s.']"
+    },
+    {
+        "Id": 22,
+        "Name": "Sanctum",
+        "BaseDesc": "Briefly enters the Matrix, immobilizing all enemies.",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2lifuhuang1.png",
+        "LevelDescList": "['I. Immobilizes for <color=#3ACC3B>0.5</color>s.', 'II. Passive: Yellow Orb drop rate <color=#3ACC3B>+25%.</color>', 'III. Increases immobilization duration to <color=#3ACC3B>1</color>s.', 'IV. After casting, enemies suffer <color=#DB1D1A>-3</color> Armor for <color=#3ACC3B>3</color>s.']"
+    },
+    {
+        "Id": 23,
+        "Name": "High-Energy Invasion",
+        "BaseDesc": "Instantly restores Sprint Charge.",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3shenweihuang1.png",
+        "LevelDescList": "['I. Restores <color=#3ACC3B>1</color> Sprint Charge.', 'II. Passive: Yellow Orb drop rate <color=#3ACC3B>+25%.</color>', 'III. Restores <color=#3ACC3B>3</color> Sprint Charges.', 'IV. Passive: After sprinting, the character gains <color=#3ACC3B>+8</color> Range for <color=#3ACC3B>5</color>s. Duration resets every time it is triggered.']"
+    },
+    {
+        "Id": 24,
+        "Name": "Guard Counter",
+        "BaseDesc": "While active, the character gains increased Knockback. Duration resets every time it is triggered.",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R3Luosaitahuang1.png",
+        "LevelDescList": "['I. Lasts <color=#3ACC3B>5</color>s. Knockback <color=#3ACC3B>+1.</color>', 'II. Passive: Yellow Orb drop rate <color=#3ACC3B>+25%.</color>', 'III. Increases Knockback to <color=#3ACC3B>2</color>, and increases duration to <color=#3ACC3B>7</color>s.', 'IV. Increases Knockback to <color=#3ACC3B>3</color>, and increases duration to <color=#3ACC3B>9</color>s.']"
+    },
+    {
+        "Id": 25,
+        "Name": "Corrupting Slash",
+        "BaseDesc": "Summons a chess piece that reduces the Armor of nearby enemies.",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2yongyechaohuang1.png",
+        "LevelDescList": "['I. The chess piece lasts <color=#3ACC3B>10</color>s and reduces Armor by <color=#3ACC3B>2</color> in a small area.', 'II. Passive: Yellow Orb drop rate <color=#3ACC3B>+25%.</color>', 'III. Increases Armor reduction to <color=#3ACC3B>3.</color>', 'IV. Expands the effect to a medium area.']"
+    },
+    {
+        "Id": 26,
+        "Name": "Glimpse Maneuver",
+        "BaseDesc": "For <color=#3ACC3B>10</color>s, greatly increases Dodge while the character is standing still. Duration resets every time it is triggered.",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4Lianghuang1.png",
+        "LevelDescList": "['I. Dodge <color=#3ACC3B>+15%.</color>', 'II. Passive: Yellow Orb drop rate <color=#3ACC3B>+25%.</color>', 'III. Dodge <color=#3ACC3B>+25%.</color>', 'IV. While the character is standing still, Range <color=#3ACC3B>+5</color>. The skill effect becomes a global passive.']"
+    },
+    {
+        "Id": 27,
+        "Name": "Acalanatha",
+        "BaseDesc": "For <color=#3ACC3B>10</color>s, greatly increases Armor while the character is standing still. Duration resets every time it is triggered.",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R2shenweihuang1.png",
+        "LevelDescList": "['I. Armor <color=#3ACC3B>+4</color>.', 'II. Passive: Yellow Orb drop rate <color=#3ACC3B>+25%.</color>', 'III. Armor <color=#3ACC3B>+6</color>.', 'IV. While the character is standing still, Lifesteal Efficiency <color=#3ACC3B>+3%</color>. The skill effect becomes a global passive.']"
+    },
+    {
+        "Id": 28,
+        "Name": "Holywings Scatter",
+        "BaseDesc": "Summons a chess piece that continuously generates random Signal Orbs.",
+        "Icon": "Assets/Product/Texture/Image/IconSkill/R4Lifuhuang1.png",
+        "LevelDescList": "['I. The chess piece lasts <color=#3ACC3B>5</color>s and generates <color=#3ACC3B>1</color> random Signal Orb each time.', 'II. Passive: Yellow Orb drop rate <color=#3ACC3B>+25%.</color>', 'III. Generates <color=#3ACC3B>2</color> Signal Orbs each time.', 'IV. The chess piece continuously reduces enemy Movement Speed by <color=#DB1D1A>50</color> within a medium area.']"
+    }
+]

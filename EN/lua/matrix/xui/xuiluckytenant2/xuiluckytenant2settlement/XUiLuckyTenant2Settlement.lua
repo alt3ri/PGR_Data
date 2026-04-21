@@ -174,10 +174,9 @@ function XUiLuckyTenant2Settlement:OnBtnAgainClick(eventData)
 end
 
 function XUiLuckyTenant2Settlement:OnBtnQuitClick(eventData)
-    -- 退出：关闭结算界面和游戏界面，再打开主界面以触发主界面刷新（关卡完成状态、上锁、最高得分）
+    -- 退出：关闭结算界面和游戏界面，主界面在UI栈中会自动恢复显示并在OnEnable中刷新
     self:Close()
-    XLuaUiManager.Close("UiLuckyTenant2Game")
-    XLuaUiManager.Open("UiLuckyTenant2Main")
+    XLuaUiManager.SafeClose("UiLuckyTenant2Game")
 end
 
 function XUiLuckyTenant2Settlement:OnBtnTanchuangCloseBigClick(eventData)

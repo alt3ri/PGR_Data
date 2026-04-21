@@ -45,6 +45,9 @@ function XUiWelfare:OnEnable()
         self:RefreshRightView()
     end
     self.AfterStart = false
+
+    -- 可以通过UiObtain重复跳转UiWelfare，所以需要关闭UiObtain
+    XLuaUiManager.SafeClose("UiObtain")
 end
 
 function XUiWelfare:OnDestroy()

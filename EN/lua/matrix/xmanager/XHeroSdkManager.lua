@@ -583,4 +583,8 @@ function XHeroSdkManager.GetCurPkgId()
     end
     
     return ''
-end 
+end
+
+function XHeroSdkManager.OnKRPluginCallback(responseData)
+    XPgsAchievementManager.OnKRPluginCallback(responseData)
+end

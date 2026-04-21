@@ -514,7 +514,7 @@ XFubenExtraChapterCreator = function()
     end
     -- 检查番外章节是否可以跳转
     function ExtraChapterManager.CheckCanGoTo(chapterId, stageId, specialTip)
-        specialTip = specialTip or "获取章节数据失败"
+        specialTip = specialTip or XUiHelper.GetText("ExtraChapterGetChapterDataFail")
 
         if not chapterId then return false, specialTip end
         local chapterInfo = ExtraChapterManager.GetChapterInfo(chapterId)
@@ -531,7 +531,7 @@ XFubenExtraChapterCreator = function()
         if not chapterInfo.Unlock then return false, XDataCenter.FubenManager.GetFubenOpenTips(chapterInfo.FirstStage) end
         if stageId then
             local stageInfo = XDataCenter.FubenManager.GetStageInfo(stageId)
-            if not stageInfo then return false, "获取关卡数据失败" end
+            if not stageInfo then return false, XUiHelper.GetText("ExtraChapterGetStageDataFail") end
             if not stageInfo.Unlock then return false, XDataCenter.FubenManager.GetFubenOpenTips(stageId) end
         end
         return true

@@ -58,6 +58,12 @@ XDrawConfigs.DrawShowPredictType = {
     Predict = 1, -- 预测轮换池
 }
 
+-- 抽卡次数类型
+XDrawConfigs.DrawCountType = {
+    OneDraw = 1,
+    TenDraw = 10,
+}
+
 local TABLE_DRAW_PREVIEW = "Client/Draw/DrawPreview.tab"
 local TABLE_DRAW_PREVIEW_GOODS = "Client/Draw/DrawPreviewGoods.tab"
 local TABLE_DRAW_PROB = "Client/Draw/DrawProbShow.tab"

@@ -50,7 +50,7 @@ end
 function XUiSoloReformChapterFightEvent:ResumeCurFightEventId(fightEventId)
     if XTool.IsNumberValid(fightEventId) then
         self:OnClickStrength(fightEventId)
-    end    
+    end
 end
 
 function XUiSoloReformChapterFightEvent:GetCurFightEventId()
@@ -60,12 +60,12 @@ end
 function XUiSoloReformChapterFightEvent:OnClickStrength(fightEventId)
     if self._FightEventId == fightEventId then
         return
-    end    
+    end
     self._FightEventId = fightEventId
     for _, cell in pairs(self._StrengthCellList) do
         cell:SetSelect(fightEventId)
     end
-    self:RefreshFightEventInfo(fightEventId)    
+    self:RefreshFightEventInfo(fightEventId)
 end
 
 function XUiSoloReformChapterFightEvent:RefreshFightEventInfo(fightEventId)
@@ -86,14 +86,19 @@ function XUiSoloReformChapterFightEvent:RefreshFightEventInfo(fightEventId)
             local battleStageCfg = XMVCA.XFuben:GetStageCfg(stageId)
             self.TxtOffTips.text = XUiHelper.GetText("SoloReformHardUnlock", battleStageCfg.Name)
             break
-        end    
+        end
     end
-    
+
     self.TxtDetail.text = fightEventCfg.Desc
-    if XTool.IsNumberValid(fightEventCfg.VideoId) and not XTool.UObjIsNil(self.VideoPlayer.VideoPlayerInst) then
-        self.VideoPlayer:SetInfoByVideoId(fightEventCfg.VideoId)
-        self.VideoPlayer:RePlay()
-    end    
+    
+    local videoPlayer = self.VideoPlayer
+    if XTool.IsNumberValid(fightEventCfg.VideoId) and not XTool.UObjIsNil(videoPlayer) then
+        local videoPlayerInst = videoPlayer.VideoPlayerInst
+        if not XTool.UObjIsNil(videoPlayerInst) then
+            videoPlayer:SetInfoByVideoId(fightEventCfg.VideoId)
+            videoPlayer:RePlay()
+        end
+    end
 end
 
 function XUiSoloReformChapterFightEvent:OnDestroy()

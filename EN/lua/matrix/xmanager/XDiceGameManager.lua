@@ -186,6 +186,15 @@ XDiceGameManagerCreator = function()
 	end
 
 	function XDiceGameManager.OpenDiceGame()
+		-- 4.3处理循环跳转问题
+		if XLuaUiManager.IsUiLoad("UiDiceGame") then
+			if XLuaUiManager.IsUiShow("UiWelfare") then
+				XLuaUiManager.Close("UiWelfare")
+				return
+			end
+			return
+		end
+
 		local isOpen, reason = XDiceGameManager.IsOpen()
 		if isOpen then
 			XLuaUiManager.Open("UiDiceGame")

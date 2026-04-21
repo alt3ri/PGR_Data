@@ -6,26 +6,50 @@ local XSubpackage
 
 local TableKey = {
     --分包分组
-    SubPackageGroup = { 
-        CacheType = XConfigUtil.CacheType.Normal, 
+    SubPackageGroup = {
+        CacheType = XConfigUtil.CacheType.Normal,
         DirPath = XConfigUtil.DirectoryType.Client,
         ReadFunc = XConfigUtil.ReadType.IntAll,
     },
     --分包
-    SubPackage = { 
-        CacheType = XConfigUtil.CacheType.Normal, 
+    SubPackage = {
+        CacheType = XConfigUtil.CacheType.Normal,
         ReadFunc = XConfigUtil.ReadType.IntAll,
     },
     --分包拦截检测
-    SubPackageIntercept = { 
-        CacheType = XConfigUtil.CacheType.Temp, 
+    SubPackageIntercept = {
+        CacheType = XConfigUtil.CacheType.Temp,
         DirPath = XConfigUtil.DirectoryType.Client,
         ReadFunc = XConfigUtil.ReadType.IntAll,
     },
-    StageIdToResIdList = { 
-        CacheType = XConfigUtil.CacheType.Normal, 
+    StageIdToResIdList = {
+        CacheType = XConfigUtil.CacheType.Normal,
         DirPath = XConfigUtil.DirectoryType.Client,
         Identifier = "StageId",
+    },
+    --涂装下载配置
+    FashionDownloadConfig = {
+        CacheType = XConfigUtil.CacheType.Normal,
+        DirPath = XConfigUtil.DirectoryType.Client,
+        Identifier = "FashionId",
+    },
+    --下载预览控制配置
+    UiDownloadPreviewControl = {
+        CacheType = XConfigUtil.CacheType.Normal,
+        DirPath = XConfigUtil.DirectoryType.Client,
+        ReadFunc = XConfigUtil.ReadType.IntAll,
+    },
+    --玩法涂装关联配置
+    FunctionIdFashionRelative = {
+        CacheType = XConfigUtil.CacheType.Temp,
+        DirPath = XConfigUtil.DirectoryType.Client,
+        Identifier = "FunctionId",
+    },
+    --章节涂装关联配置
+    ChapterFashionRelative = {
+        CacheType = XConfigUtil.CacheType.Temp,
+        DirPath = XConfigUtil.DirectoryType.Client,
+        Identifier = "ChapterId",
     },
 }
 
@@ -104,6 +128,15 @@ function XSubPackageModel:InitSubIntercept()
             self._SubIntercept["ExtraSubPackageIds"][template.EntryType] = {}
         end
 
+        -- 新增：WeakSubPackageIds 维度
+        if not self._SubIntercept["WeakSubPackageIds"] then
+            self._SubIntercept["WeakSubPackageIds"] = {}
+        end
+
+        if not self._SubIntercept["WeakSubPackageIds"][template.EntryType] then
+            self._SubIntercept["WeakSubPackageIds"][template.EntryType] = {}
+        end
+
         if XTool.IsTableEmpty(template.Params) then
             self._SubIntercept[template.EntryType][0] = template.MainSubPackageId
         else
@@ -114,6 +147,11 @@ function XSubPackageModel:InitSubIntercept()
 
         if not XTool.IsTableEmpty(template.ExtraSubPackageIds) then
             self._SubIntercept["ExtraSubPackageIds"][template.EntryType][template.MainSubPackageId] = template.ExtraSubPackageIds
+        end
+
+        -- 新增：存储 WeakSubPackageIds
+        if not XTool.IsTableEmpty(template.WeakSubPackageIds) then
+            self._SubIntercept["WeakSubPackageIds"][template.EntryType][template.MainSubPackageId] = template.WeakSubPackageIds
         end
     end
 end
@@ -177,6 +215,10 @@ function XSubPackageModel:GetSubpackageItem(subpackageId)
     end
 
     return item
+end
+
+function XSubPackageModel:GetSubpackageDict()
+    return self._SubpackageDict
 end
 
 ---@return XResource
@@ -361,6 +403,41 @@ function XSubPackageModel:GetAllSubpackageIds(entryType, param)
     end
 end
 
+--- 获取玩法入口的弱拦截SubPackageIds
+--- 注意：不走GetEntrySubpackageId，因为MainSubPackageId=-1(INVALID)时仍可能配有WeakSubPackageIds
+---@param entryType number 入口类型
+---@param param number 附加参数
+---@return table|nil 弱拦截subId列表
+function XSubPackageModel:GetWeakSubpackageIds(entryType, param)
+    if not entryType then
+        return nil
+    end
+    if not self._SubIntercept then
+        self:InitSubIntercept()
+    end
+
+    -- 直接用entryType+param查原始MainSubPackageId作为key
+    if not self._SubIntercept[entryType] then
+        return nil
+    end
+    param = param or 0
+    local mainSubId = self._SubIntercept[entryType][param]
+    if mainSubId == nil then
+        -- param未命中，尝试用0作为默认key
+        mainSubId = self._SubIntercept[entryType][0]
+    end
+    if mainSubId == nil then
+        return nil
+    end
+
+    local weakDict = self._SubIntercept["WeakSubPackageIds"]
+    if not weakDict or not weakDict[entryType] then
+        return nil
+    end
+
+    return weakDict[entryType][mainSubId]
+end
+
 function XSubPackageModel:GetCookieKey(key)
     --资源只与包体有关，跟账号无关联
     return string.format("SUBPACKAGE_LOCAL_RECORD_%s", key)
@@ -379,5 +456,88 @@ function XSubPackageModel:SaveWifiAutoSelect(groupId, value)
     local key = self:GetCookieKey("WIFI_SELECT" .. groupId)
     XSaveTool.SaveData(key, value)
 end
+
+--region 涂装分包配置
+
+--- 获取涂装下载配置
+---@param fashionId number 涂装Id
+---@return XTableFashionDownloadConfig|nil
+function XSubPackageModel:GetFashionDownloadConfig(fashionId)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.FashionDownloadConfig, fashionId, true)
+end
+
+--- 获取所有涂装下载配置
+---@return table<number, XTableFashionDownloadConfig>
+function XSubPackageModel:GetAllFashionDownloadConfigs()
+    return self._ConfigUtil:GetByTableKey(TableKey.FashionDownloadConfig)
+end
+
+--endregion
+
+--region 玩法涂装关联配置
+
+--- 获取玩法涂装关联配置
+---@param functionId number 玩法/功能Id
+---@return XTableFunctionIdFashionRelative|nil
+function XSubPackageModel:GetFunctionIdFashionRelativeConfig(functionId)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.FunctionIdFashionRelative, functionId, true)
+end
+
+--- 获取章节涂装关联配置
+---@param chapterId number 章节Id
+---@return XTableChapterFashionRelative|nil
+function XSubPackageModel:GetChapterFashionRelativeConfig(chapterId)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.ChapterFashionRelative, chapterId, true)
+end
+
+--endregion
+
+--region 下载预览控制配置
+
+--- 获取下载预览控制配置
+---@param id number 配置Id
+---@return XTableUiDownloadPreviewControl|nil
+function XSubPackageModel:GetDownloadPreviewControlConfig(id)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.UiDownloadPreviewControl, id)
+end
+
+--- 获取所有下载预览控制配置
+---@return table<number, XTableUiDownloadPreviewControl>
+function XSubPackageModel:GetAllDownloadPreviewControlConfigs()
+    return self._ConfigUtil:GetByTableKey(TableKey.UiDownloadPreviewControl)
+end
+
+--- 根据ResType获取下载预览控制配置
+---@param resType number 资源类型枚举
+---@return number|nil controlId
+---@return XTableUiDownloadPreviewControl|nil config
+function XSubPackageModel:GetControlConfigByResType(resType)
+    local configs = self:GetAllDownloadPreviewControlConfigs()
+    for id, config in pairs(configs) do
+        if config.ResType == resType then
+            return id, config
+        end
+    end
+    return nil, nil
+end
+
+--- 获取Sub模式（ResType为空或0）的配表行，按Order升序排列
+--- 约定：返回列表中第1个为强Sub选项，第2个为弱Sub选项
+---@return table[] {Id=number, Config=XTableUiDownloadPreviewControl}
+function XSubPackageModel:GetSortedSubModeConfigs()
+    local configs = self:GetAllDownloadPreviewControlConfigs()
+    local result = {}
+    for id, config in pairs(configs) do
+        if not XTool.IsNumberValid(config.ResType) or config.ResType == 0 then
+            table.insert(result, {Id = id, Config = config})
+        end
+    end
+    table.sort(result, function(a, b)
+        return (a.Config.Order or 0) < (b.Config.Order or 0)
+    end)
+    return result
+end
+
+--endregion
 
 return XSubPackageModel

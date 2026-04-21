@@ -7,4 +7,12 @@ function XUiMovie2D:OnInitScene()
     
 end
 
+function XUiMovie2D:OnClickBtnReview()
+    if self:SelectPanelShowing() then
+        return
+    end
+    self:OpenChildUi("UiMovieReview2D")
+    self:ResetAutoPlay()
+end
+
 return XUiMovie2D

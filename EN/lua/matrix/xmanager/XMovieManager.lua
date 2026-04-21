@@ -28,6 +28,8 @@ XMovieManagerCreator = function()
     local IsAutoPlay
     local IsLongPressAutoPlay
     local WaitToPlayList = {}
+    
+    ---@type XMovieActionBase[]
     local PassedActions = {}        -- 从剧情中间开始播时，前面播过的Action
     local PassedOptionDic = {}      -- 从剧情中间开始播时，前面选项的选择
     local DelaySelectionDic = {}
@@ -545,11 +547,7 @@ XMovieManagerCreator = function()
     function XMovieManager.StartPassedActions()
         if #PassedActions > 0 then
             for index, passedAction in ipairs(PassedActions) do
-                if passedAction:IsPassedActionRun(index) then
-                    passedAction:RunPassedAction()
-                else
-                    passedAction:SkipPassedAction()
-                end
+                passedAction:OnPassedActionExecute(index)
             end
         end
     end
@@ -570,12 +568,12 @@ XMovieManagerCreator = function()
     
     -- 后面是否存在PassedAction会覆盖当前Action的UI显示
     ---@param curIndex number 当前Action位于PassedActions下标
-    ---@param filterCoverFunc function 筛选符合条件的Action
-    function XMovieManager.IsBehindPassedActionCover(curIndex, filterCoverFunc)
+    function XMovieManager.IsBehindPassedActionCover(curIndex)
         local allActionCnt = #PassedActions
+        local action = PassedActions[curIndex]
         for actionIndex = curIndex + 1, allActionCnt do
-            local action = PassedActions[actionIndex]
-            if filterCoverFunc(action) then
+            local behindAction = PassedActions[actionIndex]
+            if action:IsPassedActionCovered(behindAction) then
                 return true
             end
         end
@@ -878,20 +876,24 @@ XMovieManagerCreator = function()
     --region 自动播放
     
     -- 切换自动播放
-    function XMovieManager.SwitchAutoPlay()
+    function XMovieManager.SwitchAutoPlay(speed)
         if not IsAutoPlay then
-            -- TODO 改成事件触发XUiMovie:OnClickBtnAuto()
-            XMovieManager.SetAutoPlay(true)
+            if speed then
+                XMovieManager.SetSpeed(speed)
+            end
+            
+            local ui = XLuaUiManager.FindTopUi("UiMovie")
+            if ui then
+                ---@type XUiMovie
+                local uiMovie = ui.UiProxy.UiLuaTable
+                uiMovie:OnClickBtnAuto()
+            end
         end
     end
     
     -- 设置自动播放
     function XMovieManager.SetAutoPlay(isAutoPlay)
         IsAutoPlay = isAutoPlay
-        local action = WaitToPlayList[CurPlayingActionIndex]
-        if action then
-            XEventManager.DispatchEvent(XEventId.EVENT_MOVIE_AUTO_PLAY, IsAutoPlay)
-        end
 
         -- 打点
         local dict = {}
@@ -903,6 +905,14 @@ XMovieManagerCreator = function()
             CS.XRecord.Record(dict, "200011", "StoryAutoplayStart")
         else
             CS.XRecord.Record(dict, "200012", "StoryAutoplayEnd")
+        end
+    end
+    
+    -- 发送自动播放事件
+    function XMovieManager.DispatchAutoPlayEvent()
+        local action = WaitToPlayList[CurPlayingActionIndex]
+        if action then
+            XEventManager.DispatchEvent(XEventId.EVENT_MOVIE_AUTO_PLAY, IsAutoPlay)
         end
     end
 

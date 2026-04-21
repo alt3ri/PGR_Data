@@ -510,6 +510,12 @@ PlayerCondition = {
             return not isEnd    
         end
     end,
+    
+    --- 拉人回流活动，玩家是否是回归玩家
+    [10192] = function(condition)
+        return XMVCA.XReCallActivity:CheckIsRegressionPlayer()
+    end,
+    
     [10200] = function(condition)
         -- 三头犬玩法关卡是否达到星级目标
         if not condition.Params then
@@ -1435,7 +1441,7 @@ PlayerCondition = {
     [17427] = function(condition)
         local stageId = condition.Params[1]
         local round = condition.Params[2]
-        local value = XMVCA.XLuckyTenant:IsInStageAndRound(stageId, round)
+        local value = XMVCA.XLuckyTenant2:IsInStageAndRound(stageId, round)
         return value, condition.Desc
     end,
     [17429] = function(condition)
@@ -2039,6 +2045,13 @@ PlayerCondition = {
     -- 大连线 LineArithmetic 完成的终点数量
     [10236] = function(condition)
     end,
+    
+    -- 大连线3 LineArithmetic 当前处于某一关卡
+    [10237] = function(condition)
+        local stageId = condition.Params[1]
+        return XMVCA.XLineArithmetic3:IsOnStage(stageId), condition.Desc
+    end,
+    
     [10250] = function(condition)
         -- 判断处于某一矿区ID下的关卡详情界面
         local chapterId = condition.Params[1]
@@ -2122,28 +2135,31 @@ PlayerCondition = {
         return result, condition.Desc
     end,
 
-    -- 目标活动id是否选中了指定gachaId
+    -- 目标活动的指定Group是否选中了指定gachaId（Params: [1]=activityId, [2]=groupId, [3]=targetGachaId）
     [10333] = function(condition)
         local activityId = condition.Params[1]
-        local targetGachaId = condition.Params[2]
+        local groupId = condition.Params[2]
+        local targetGachaId = condition.Params[3]
         local isCurActivity = XDataCenter.GachaManager.GetCurGachaFashionSelfChoiceActivityId() == activityId
-        local isCurGachaId = XDataCenter.GachaManager.GetCurSelfChoiceSelectGachId() == targetGachaId
-        return isCurActivity and isCurGachaId, condition.Desc
+        local selectedGachaId = XDataCenter.GachaManager.GetCurSelfChoiceSelectGachId(groupId)
+        return isCurActivity and selectedGachaId == targetGachaId, condition.Desc
     end,
 
-    -- 该期自选gacha卡池活动未选择卡池
+    -- 该期自选gacha卡池活动的指定Group未选择卡池（Params: [1]=activityId, [2]=groupId）
     [10334] = function(condition)
         local activityId = condition.Params[1]
+        local groupId = condition.Params[2]
         local isCurActivity = XDataCenter.GachaManager.GetCurGachaFashionSelfChoiceActivityId() == activityId
-        local curGachaId = XDataCenter.GachaManager.GetCurSelfChoiceSelectGachId()
+        local curGachaId = XDataCenter.GachaManager.GetCurSelfChoiceSelectGachId(groupId)
         return isCurActivity and not XTool.IsNumberValid(curGachaId), condition.Desc
     end,
 
-    -- 该期自选gacha卡池活动已选择卡池
+    -- 该期自选gacha卡池活动的指定Group已选择卡池（Params: [1]=activityId, [2]=groupId）
     [10335] = function(condition)
         local activityId = condition.Params[1]
+        local groupId = condition.Params[2]
         local isCurActivity = XDataCenter.GachaManager.GetCurGachaFashionSelfChoiceActivityId() == activityId
-        local curGachaId = XDataCenter.GachaManager.GetCurSelfChoiceSelectGachId()
+        local curGachaId = XDataCenter.GachaManager.GetCurSelfChoiceSelectGachId(groupId)
         return isCurActivity and XTool.IsNumberValid(curGachaId), condition.Desc
     end,
 
@@ -2705,6 +2721,45 @@ PlayerCondition = {
         return true, condition.Desc
     end,
     --endregion
+    
+    --region 战双兄弟
+    
+    --- 战双兄弟-判断关卡是否通关
+    [20301] = function(condition)
+        local stageId = condition.Params[1]
+        
+        return XMVCA.XPBRGame:CheckPassedByStageId(stageId), condition.Desc
+    end,
+    
+    --- 战双兄弟-判断局外养成对应阶段解锁的节点数是否满足条件
+    [20302] = function(condition)
+        local op = condition.Params[1]
+        local groupId = condition.Params[2]
+        local targetCount = condition.Params[3]
+        
+        local curCount = XMVCA.XPBRGame:GetMetaNodeGroupUnlockCount(groupId)
+        
+        if op == 1 then
+            return curCount == targetCount, condition.Desc
+        elseif op == 2 then
+            return curCount >= targetCount, condition.Desc
+        elseif op == 3 then
+            return curCount <= targetCount, condition.Desc    
+        end
+        
+        XLog.Error('无效的操作数，conditionId：' .. tostring(condition.Id) .. ' op: ' .. tostring(op))
+        return false, condition.Desc
+    end,
+    
+    --- 战双兄弟-局内商店判断是否有可升阶信号球：约定只能在局内强化界面中判断
+    [20303] = function(condition)
+        local stageId = condition.Params[1]
+        
+        return XMVCA.XPBRGame:CheckInGameShopAnyGoodsHigher(stageId), condition.Desc
+    end,
+    
+    --endregion
+    
     --判断是否进入过DlcWorld
     [23101] = function(condition) 
         local worldId = condition.Params[1]
@@ -3061,15 +3116,24 @@ local CharacterCondition = {
     end,
     -- 判断角色是否穿着指定fashion
     -- 该判断可以兼容试穿角色，传入试穿时装优先检测试穿的时装
+    -- 增加涂装分包下载完成判断
     [13119] = function(condition, characterId, tryFashionId)
         local targetFashionId = condition.Params[1] or 1
         local char = GetCharAgency():GetCharacter(characterId)
         if not char then
             return false
         end
-        return (tryFashionId or char.FashionId) == targetFashionId
+        if (tryFashionId or char.FashionId) ~= targetFashionId then
+            return false
+        end
+        -- 检查涂装是否已下载
+        if not XMVCA.XSubPackage:CheckFashionDownloaded(targetFashionId) then
+            return false
+        end
+        return true
     end,
     -- 判断当前使用场景和当前角色穿着指定涂装
+    -- 增加涂装分包下载完成判断
     [13120] = function(condition, characterId, tryFashionId, trySceneId)
         local targetFashionId = condition.Params[1] or 1
         local char = GetCharAgency():GetCharacter(characterId)
@@ -3077,10 +3141,18 @@ local CharacterCondition = {
             return false
         end
 
+        if (tryFashionId or char.FashionId) ~= targetFashionId then
+            return false
+        end
+        -- 检查涂装是否已下载
+        if not XMVCA.XSubPackage:CheckFashionDownloaded(targetFashionId) then
+            return false
+        end
+
         local targetBgId = condition.Params[2]
         local curBgId = trySceneId or XDataCenter.PhotographManager.GetCurSceneId()
 
-        return ((tryFashionId or char.FashionId) == targetFashionId) and curBgId == targetBgId
+        return curBgId == targetBgId
     end,
     [13121] = function(condition)
         local type = tonumber(condition.Params[1])

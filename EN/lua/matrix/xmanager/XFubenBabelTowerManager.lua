@@ -992,20 +992,6 @@ XFubenBabelTowerManagerCreator = function()
         return LastOpenStageId
     end
 
-    function XFubenBabelTowerManager.FilterPrefabTeamData(stageId, teamId, team)
-        local hasBan = false
-        for pos, characterId in ipairs(team.TeamData) do
-            if XFubenBabelTowerManager.IsCharacterLockByStageId(characterId, stageId, teamId) then
-                team.TeamData[pos] = 0
-                hasBan = true
-            end
-        end
-        if hasBan then
-            XUiManager.TipError("TODO, 部分成员已锁定，无法应用")
-        end
-        return team
-    end
-
     function XFubenBabelTowerManager.GetMaxTeamMemberCount()
         return CurrentTeamMaxMemberCount
     end

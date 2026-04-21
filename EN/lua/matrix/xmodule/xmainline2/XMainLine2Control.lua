@@ -116,6 +116,16 @@ function XMainLine2Control:GetChapterLastStageId(chapterId)
     return self._Model:GetChapterLastStageId(chapterId)
 end
 
+-- 获取章节背景图Spine进度的关卡下标
+function XMainLine2Control:GetChapterBgSpineStageIndexs(chapterId)
+    return self._Model:GetChapterBgSpineStageIndexs(chapterId)
+end
+
+-- 获取章节背景图Spine进度
+function XMainLine2Control:GetChapterBgSpineProgressWans(chapterId)
+    return self._Model:GetChapterBgSpineProgressWans(chapterId)
+end
+
 -- 获取章节Spine进度的关卡下标
 function XMainLine2Control:GetChapterSpineStageIndexs(chapterId)
     return self._Model:GetChapterSpineStageIndexs(chapterId)

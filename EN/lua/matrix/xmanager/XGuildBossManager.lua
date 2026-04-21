@@ -801,7 +801,7 @@ XGuildBossManagerCreator = function()
 
     -- 打开工会boss之前先请求服务端 不能直接通过UiManager打开
     function XGuildBossManager.OpenGuildBossHall(skipId)
-        if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.Guild) then
+        if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.GuildBoss) then
             return false
         end
         

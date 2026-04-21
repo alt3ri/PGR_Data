@@ -136,6 +136,12 @@ function XActivityBrieButton:ShowReddot(value)
         value = false
     end
 
+    local isWaitLockAnim = XTool.IsNumberValid(XActivityBriefConfigs.GetActivityBriefGroupIsRemindWhenOpen(self.activityGroupId))
+        and not XDataCenter.ActivityBriefManager.GetIsPlayedUnlockAnim(self.activityGroupId)
+    if isWaitLockAnim then
+        value = false
+    end
+
     self.BtnCom:ShowReddot(value)
 end
 

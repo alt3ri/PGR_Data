@@ -180,6 +180,12 @@ function XCharR5Nanami1:OnNpcSkillActionKeyframeSendEvent(launcher,eventName,ski
         end
             self._proxy:ShowQuickMessage(messageid)
     end
+
+    if eventName == "StandUp" then
+        self._proxy:AbortAction(self._uuid,true)
+        --XLog.Warning("斧角力失败保底")
+        self._proxy:CastActionEx(self._uuid,105279,0,5)
+    end
 end
 
 function XCharR5Nanami1:Terminate()
@@ -240,7 +246,10 @@ end
     Base.ChangeDamageBeforeCalc( self, eventArgs)
     self._uuid = self._proxy:GetSelfNpcId()
     ----超解伤害修正
+---
     if eventArgs.Id == 1052001 then
+        --XLog.Warning("暴击与否："..eventArgs.isCrit)
+        --XLog.Warning(eventArgs)
         --self.CustomPower1 = self._proxy:GetNpcAttribValue(self._uuid,ENpcAttrib.CustomEnergyGroup1) -- 确认消耗后的能量状况
         local CurCustomPower1 =  self._proxy:GetNpcAttribValue(self._uuid,ENpcAttrib.CustomEnergyGroup1) --获取当前的能量
         local HasCustomPower, customPower = self._proxy:TryGetBBInt(1,self._uuid, 1052001) --获取黑板记录的峰值
@@ -250,12 +259,13 @@ end
             --XLog.Warning("强化修正前伤害倍率："..eventArgs.PhysicalPermyraid)
             local FinalDMGRate = eventArgs.PhysicalPermyraid * (1 +(customPower-CurCustomPower1)* OverReleaseCoe *(1+OverReleaseCoeAdd))
             --XLog.Warning("强化修正后伤害倍率："..FinalDMGRate)
-            self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate , eventArgs.ElementPermyraid, eventArgs.HackDamage, eventArgs.HackPermyraid, eventArgs.isCrit)
+            self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate , eventArgs.ElementPermyraid, eventArgs.HackDamage, eventArgs.HackPermyraid, eventArgs.IsCrit)
+
         else
             --XLog.Warning("修正前伤害倍率："..eventArgs.PhysicalPermyraid)
             local FinalDMGRate = eventArgs.PhysicalPermyraid * (1 +(customPower-CurCustomPower1)* OverReleaseCoe)
             --XLog.Warning("修正后伤害倍率："..FinalDMGRate)
-            self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate, eventArgs.ElementPermyraid, eventArgs.HackDamage, eventArgs.HackPermyraid, eventArgs.isCrit)
+            self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate, eventArgs.ElementPermyraid, eventArgs.HackDamage, eventArgs.HackPermyraid, eventArgs.IsCrit)
         end
         self._proxy:SetBBInt(1, self._uuid, self._proxy:GetNpcAttribValue(self._uuid,ENpcAttrib.CustomEnergyGroup1)) -- 清除黑板中的峰值
     end
@@ -265,7 +275,7 @@ end
         --XLog.Warning("修正前伤害倍率：".. eventArgs.PhysicalPermyraid)
         local FinalDMGRate =  eventArgs.PhysicalPermyraid * (1 + (100 * BladeReleaseCoe))
         --XLog.Warning("修正后伤害倍率："..FinalDMGRate)
-        self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate, eventArgs.ElementPermyraid, eventArgs.HackDamage, eventArgs.HackPermyraid, eventArgs.isCrit)
+        self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate, eventArgs.ElementPermyraid, eventArgs.HackDamage, eventArgs.HackPermyraid, eventArgs.IsCrit)
     end
 
 ----防御减伤相关逻辑处理
@@ -709,10 +719,10 @@ end
 function XCharR5Nanami1:TestInputLogic()
 
     if self._proxy:IsKeyDown(ENpcOperationKey.Ball4) then
-        local TestAction = 105253
+        local TestAction = 105268
         local _,locktargetUUID = self._proxy:GetLockTarget()
-        --self._proxy:CastSkillActionNotCheck(self._uuid,TestAction,0,999)
-        self._proxy:CastSkillActionToNpcNotCheck(self._uuid,TestAction,locktargetUUID,0,999)
+        self._proxy:CastSkillActionNotCheck(self._uuid,TestAction,0,999)
+        --self._proxy:CastSkillActionToNpcNotCheck(self._uuid,TestAction,locktargetUUID,0,999)
         --XLog.Warning("测试技能"..TestAction)
     end
 
@@ -799,15 +809,35 @@ function XCharR5Nanami1:SkillAtuoCombo()
         self._proxy:AbortAction(self._uuid,true)
         --XLog.Warning("终结移动后攻击流程")
         local _,locktargetUUID = self._proxy:GetLockTarget(self._uuid)
-        self._proxy:CastActionToTargetEx(self._uuid,105253,locktargetUUID,0,5)
-
+        if locktargetUUID ~= 0 then
+            self._proxy:CastActionToTargetEx(self._uuid,105253,locktargetUUID,0,5)
+        else
+            local searchtarget = self._proxy:GetFirstSearchTarget(self._uuid,ENpcTargetType.Enemy)
+            if searchtarget == 0 then
+                return
+            end
+            self._proxy:SetSoftLock(self._uuid,searchtarget)
+            local _,locktargetUUID = self._proxy:GetLockTarget(self._uuid)
+            self._proxy:CastActionToTargetEx(self._uuid,105253,locktargetUUID,0,5)
+        end
     end
 
     if self._proxy:CheckNpcCurrentAction(self._uuid,105276) and self._skillTimer >= 0.9 then
         self._proxy:AbortAction(self._uuid,true)
         --XLog.Warning("斧终结移动后攻击流程")
         local _,locktargetUUID = self._proxy:GetLockTarget(self._uuid)
-        self._proxy:CastActionToTargetEx(self._uuid,105254,locktargetUUID,0,5)
+        if locktargetUUID ~= 0 then
+            self._proxy:CastActionToTargetEx(self._uuid,105254,locktargetUUID,0,5)
+        else
+            local searchtarget = self._proxy:GetFirstSearchTarget(self._uuid,ENpcTargetType.Enemy)
+            if searchtarget == 0 then
+                return
+            end
+            self._proxy:SetSoftLock(self._uuid,searchtarget)
+            local _,locktargetUUID = self._proxy:GetLockTarget(self._uuid)
+            self._proxy:CastActionToTargetEx(self._uuid,105254,locktargetUUID,0,5)
+        end
+
     end
 
 --[[

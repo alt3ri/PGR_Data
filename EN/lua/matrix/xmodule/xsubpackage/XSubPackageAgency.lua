@@ -35,12 +35,19 @@ function XSubPackageAgency:OnInit()
     self._FileToResIds = {}
 
     self._IsUninstalling = false
+    self._UninstallVersion = 0
     self._IsDownloading = false
     self._DownloadPackageId = 0
     self._DownloadingResId = 0
     self._IsDownloadGroup = false --是否为一组同时下载
     self._PreparePauseSubpackageId = 0 --准备暂停的Id
+    self._PreparePauseResId = nil -- Res级异步暂停中的resId（对标Sub级的_PreparePauseSubpackageId）
+    self._PendingResumeResId = nil -- 暂停窗口期内缓存的恢复请求resId
     self._IsPause = false
+
+    self._CheckTypeCountThisLogin = {}  -- 本次登录检测类型触发次数
+    self._BattleFashionTipDismissedThisLogin = false  -- 战斗涂装未下载提示本次登录不再提示
+    self._FashionDownloadPromptCacheKeyPrefix = "FashionDownloadPrompt_"  -- 涂装下载提示缓存Key前缀
 
     self._ThreadCount = SingleThreadCount --线程数
 
@@ -74,6 +81,82 @@ end
 
 function XSubPackageAgency:GetSubIndexInfo()
     return self._SubIndexInfo
+end
+
+--- 获取涂装下载提示缓存Key
+---@return string
+function XSubPackageAgency:GetFashionDownloadPromptCacheKey()
+    if not XPlayer.Id then
+        return nil
+    end
+    return string.format("%s%d", self._FashionDownloadPromptCacheKeyPrefix, XPlayer.Id)
+end
+
+--- 检查是否已提示过涂装下载
+---@return boolean
+function XSubPackageAgency:HasPromptedFashionDownload()
+    local cacheKey = self:GetFashionDownloadPromptCacheKey()
+    if not cacheKey then
+        return false
+    end
+    return XSaveTool.GetData(cacheKey) ~= nil
+end
+
+--- 标记已提示过涂装下载
+function XSubPackageAgency:MarkFashionDownloadPrompted()
+    local cacheKey = self:GetFashionDownloadPromptCacheKey()
+    if cacheKey then
+        XSaveTool.SaveData(cacheKey, true)
+    end
+end
+
+--- 检查并弹出涂装下载提示（由FunctionEventManager打脸链调用）
+---@return boolean 是否弹出了弹窗
+function XSubPackageAgency:CheckFashionDownloadPrompt()
+    -- 1. 获取配置的涂装数量阈值
+    local threshold = CS.XGame.ClientConfig:GetInt("FashionDownloadPromptOwnCount") or 0
+    if threshold <= 0 then
+        return false
+    end
+
+    -- 2. 统计玩家拥有的涂装数量（仅计入 FashionDownloadConfig 中的涂装，剔除默认皮肤）
+    local allConfigs = self._Model:GetAllFashionDownloadConfigs()
+    local fashionCount = 0
+    for fashionId in pairs(allConfigs) do
+        if XDataCenter.FashionManager.CheckHasFashion(fashionId) then
+            fashionCount = fashionCount + 1
+        end
+    end
+    if fashionCount < threshold then
+        return false
+    end
+
+    -- 3. 检查本地缓存是否已提示过
+    if self:HasPromptedFashionDownload() then
+        return false
+    end
+
+    -- 4. 检查涂装分包(SubId=4000)是否已下载完成
+    if self:CheckSubpackageComplete(4000) then
+        return false
+    end
+
+    -- 5. 标记并打开
+    self:MarkFashionDownloadPrompted()
+    XLuaUiManager.Open("UiDownloadFashion")
+    return true
+end
+
+--- 清除涂装下载提示标记（用于测试）
+function XSubPackageAgency:ClearFashionDownloadPrompt()
+    local cacheKey = self:GetFashionDownloadPromptCacheKey()
+    if cacheKey then
+        XSaveTool.SaveData(cacheKey, nil)
+    end
+end
+
+function XSubPackageAgency:GetFileToResIds()
+    return self._FileToResIds
 end
 
 function XSubPackageAgency:InitRpc()
@@ -132,6 +215,38 @@ function XSubPackageAgency:IsOpen()
         return true
     end
     return self._LaunchDlcManager.CheckSubpackageOpen()
+end
+
+--- 检查当前是否有下载任务正在进行
+function XSubPackageAgency:IsDownloading()
+    return self._IsDownloading or XTool.IsNumberValid(self._DownloadingResId)
+end
+
+--- 同步分包下载状态：将不在下载队列中但状态为DOWNLOADING/PREPARE_DOWNLOAD的分包重置
+--- 用于UI打开时修正脏状态（如上次关闭UI后下载完成但实体状态未回退）
+function XSubPackageAgency:SyncSubpackageStates()
+    local allItems = self._Model:GetSubpackageDict()
+    if XTool.IsTableEmpty(allItems) then return end
+
+    for subId, item in pairs(allItems) do
+        local state = item:GetState()
+        if state == XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.DOWNLOADING
+                or state == XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.PREPARE_DOWNLOAD then
+            -- 检查是否确实在下载中
+            local isActive = (self._DownloadPackageId == subId)
+            if not isActive then
+                for _, queueId in ipairs(self._SubpackageWaitDnLdQueue) do
+                    if queueId == subId then
+                        isActive = true
+                        break
+                    end
+                end
+            end
+            if not isActive then
+                item:InitState()
+            end
+        end
+    end
 end
 
 function XSubPackageAgency:OpenUiMain(groupId)
@@ -240,12 +355,51 @@ function XSubPackageAgency:GetResTotalSize(resId)
     return size
 end
 
+--- 批量ResId总大小（跨ResId去重共享文件）
+--- 用于涂装分包UI全选时显示准确的总大小
+function XSubPackageAgency:GetResListTotalSize(resIdTable)
+    local size = 0
+    local dict = self._tempDict
+    if not dict then
+        dict = {}
+        self._tempDict = dict
+    else
+        for k in pairs(dict) do
+            dict[k] = nil
+        end
+    end
+
+    for resId, _ in pairs(resIdTable) do
+        local indexInfo = self._SubIndexInfo[resId]
+        if indexInfo then
+            for _, info in pairs(indexInfo) do
+                local fileName = info[1]
+                if not dict[fileName] then
+                    dict[fileName] = true
+                    size = size + info[3]
+                end
+            end
+        end
+    end
+    return size
+end
+
 --- Res粒度开始下载
 --------------------------
 function XSubPackageAgency:AddResToDownload(resId)
     -- XLog.Warning("SP/DN AddResToDownload", resId, self._ResWaitDnLdQueue)
     if self._DownloadingResId == resId then
+        -- [修复] 如果该res正在异步暂停中，缓存恢复请求而不是丢弃
+        if self._PreparePauseResId == resId then
+            self._PendingResumeResId = resId
+        end
         return
+    end
+    -- 队列去重：检查resId是否已在等待队列中
+    for _, id in ipairs(self._ResWaitDnLdQueue) do
+        if id == resId then
+            return
+        end
     end
     local resItem = self._Model:GetResourceItem(resId)
     resItem:PrepareDownload()
@@ -259,22 +413,43 @@ function XSubPackageAgency:DoResDownload()
         return
     end
 
-    local index = 1
-    local targetResId = self._ResWaitDnLdQueue[index]
-    table.remove(self._ResWaitDnLdQueue, index)
-    local resItem = self._Model:GetResourceItem(targetResId)
-    resItem:StartDownload()
-    self:InitDownloader()
-    self._DownloadingResId = targetResId
-    self._DownloadCenter:StartById(targetResId)
+    -- [安全网] 清理残留的Res级暂停标记（回调可能被Sub级接管跳过）
+    if self._PreparePauseResId then
+        self._PreparePauseResId = nil
+        self._PendingResumeResId = nil
+    end
+
+    -- 跳过已完成的res，用限次循环防止意外无限
+    local maxLoop = #self._ResWaitDnLdQueue
+    for _ = 1, maxLoop do
+        if XTool.IsTableEmpty(self._ResWaitDnLdQueue) then
+            break
+        end
+        local targetResId = self._ResWaitDnLdQueue[1]
+        table.remove(self._ResWaitDnLdQueue, 1)
+
+        local resItem = self._Model:GetResourceItem(targetResId)
+        if resItem and resItem:GetState() ~= XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.COMPLETE then
+            resItem:StartDownload()
+            self:InitDownloader()
+            self._DownloadingResId = targetResId
+            self._DownloadCenter:StartById(targetResId)
+            return
+        end
+    end
+
+    -- 队列已空或全部已完成，尝试启动下一个Sub
+    self:StartDownload()
 end
 
-function XSubPackageAgency:OnResDownloadRelease()
-    -- XLog.Warning("SP/DN OnResDownloadRelease", self._ResWaitDnLdQueue, self._PreparePauseSubpackageId, self._DownloadingResId)
+function XSubPackageAgency:OnResDownloadRelease(callbackResId)
+    -- XLog.Warning("SP/DN OnResDownloadRelease", callbackResId, self._ResWaitDnLdQueue, self._PreparePauseSubpackageId, self._DownloadingResId)
 
     if self._DownloadCenter then
         self._DownloadCenter:SetFailedTaskGroupMethod(2)
     end
+    -- 优先使用回调传入的resId，兜底用_DownloadingResId（兼容历史调用）
+    local releasedResId = callbackResId or self._DownloadingResId
     -- 记录下载完成 不然登录会变成热更新
     if self._DownloadingResId then
         local resItem = self._Model:GetResourceItem(self._DownloadingResId)
@@ -285,10 +460,53 @@ function XSubPackageAgency:OnResDownloadRelease()
         self._DownloadingResId = nil
     end
 
+    -- [修复] Res级暂停收口（对标Sub级的_PreparePauseSubpackageId逻辑）
+    if self._PreparePauseResId and self._PreparePauseResId == releasedResId then
+        self._PreparePauseResId = nil
+        -- 检查是否有暂停窗口期内缓存的恢复请求
+        if self._PendingResumeResId == releasedResId then
+            self._PendingResumeResId = nil
+            -- 暂停已完成，立即恢复下载（不派发PAUSE事件）
+            self:AddResToDownload(releasedResId)
+            return
+        end
+        -- 无待恢复请求，正常落入PAUSE终态
+        local resItem = self._Model:GetResourceItem(releasedResId)
+        if resItem and not resItem:IsComplete() then
+            resItem:Pause()
+        end
+        XEventManager.DispatchEvent(XEventId.EVENT_RES_PAUSE_COMPLETE, releasedResId)
+        -- 注意：不return，继续走下方队列逻辑（Res级暂停不阻塞其他Res的队列）
+    end
+
     if XTool.IsNumberValid(self._PreparePauseSubpackageId) then
         local item = self._Model:GetSubpackageItem(self._PreparePauseSubpackageId)
         item:Pause()
         self._TipDialog = false
+
+        -- [修正] Sub pause 完成收口：确保该 sub 下所有非 COMPLETE 的 res 都稳定落成 PAUSE
+        -- 防止 PREPARE_DOWNLOAD 残留导致 IsSubOrResDownloading 误判
+        local pauseTemplate = self._Model:GetSubpackageTemplate(self._PreparePauseSubpackageId)
+        if pauseTemplate and pauseTemplate.ResIds then
+            local resQueueSet = {}
+            for _, qId in ipairs(self._ResWaitDnLdQueue) do
+                resQueueSet[qId] = true
+            end
+            for _, resId in ipairs(pauseTemplate.ResIds) do
+                if resId ~= self._DownloadingResId and not resQueueSet[resId] then
+                    local resItem = self._Model:GetResourceItem(resId)
+                    if resItem then
+                        local resState = resItem:GetState()
+                        if resState ~= XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.COMPLETE
+                            and resState ~= XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.PAUSE
+                            and resState ~= XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.UNINSTALLED
+                            and resState ~= XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.NOT_DOWNLOAD then
+                            resItem:Pause()
+                        end
+                    end
+                end
+            end
+        end
 
         XEventManager.DispatchEvent(XEventId.EVENT_SUBPACKAGE_PAUSE, self._PreparePauseSubpackageId)
     end
@@ -306,9 +524,10 @@ function XSubPackageAgency:OnResDownloadRelease()
 end
 
 --- 添加到下载队列
----@param subpackageId number  分包Id
+---@param subpackageId number 分包Id
+---@param forceResumePausedRes boolean|nil [F5] 是否强制恢复该Sub下被Fashion暂停的Res
 --------------------------
-function XSubPackageAgency:AddToDownload(subpackageId)
+function XSubPackageAgency:AddToDownload(subpackageId, forceResumePausedRes)
     -- XLog.Warning("SP/DN AddToDownload", subpackageId, self._IsDownloading, self._SubpackageWaitDnLdQueue)
     if not self:IsOpen() then
         return
@@ -316,6 +535,18 @@ function XSubPackageAgency:AddToDownload(subpackageId)
     if not self._SubpackageWaitDnLdQueue then
         self._SubpackageWaitDnLdQueue = {}
     end
+
+    -- [F5] 记录 forceResume 标记
+    if forceResumePausedRes then
+        self._ForceResumePausedSubpackages = self._ForceResumePausedSubpackages or {}
+        -- 若该Sub已经处于Active态，立刻恢复被PAUSE的Res
+        if self._IsDownloading and self._DownloadPackageId == subpackageId then
+            self:ResumePausedResInSubpackage(subpackageId)
+            return
+        end
+        self._ForceResumePausedSubpackages[subpackageId] = true
+    end
+
     if self._IsDownloading and self._DownloadPackageId == subpackageId then
         return
     end
@@ -334,11 +565,29 @@ function XSubPackageAgency:AddToDownload(subpackageId)
 
     -- 用户点击下载，标记分包为激活状态
     self._LaunchDlcManager.SetSubPackageActive(subpackageId, true)
+    -- [修正] 清除陈旧的 Finished 标记（历史上完整下载过，但后来部分卸载导致不完整）
+    if self._LaunchDlcManager.IsSubPackageFinished(subpackageId) then
+        self._LaunchDlcManager.SetSubPackageFinished(subpackageId, false)
+    end
 
     if not self._IsDownloading and not self._IsShowingWifiTip and XTool.IsTableEmpty(self._ResWaitDnLdQueue) then
         self:StartDownload()
     end
     XEventManager.DispatchEvent(XEventId.EVENT_SUBPACKAGE_PREPARE, subpackageId)
+end
+
+--- [F5] 恢复指定Sub下所有被Fashion暂停的Res到下载队列
+function XSubPackageAgency:ResumePausedResInSubpackage(subpackageId)
+    local template = self._Model:GetSubpackageTemplate(subpackageId)
+    if not template or not template.ResIds then return end
+    for _, resId in ipairs(template.ResIds) do
+        local resItem = self._Model:GetResourceItem(resId)
+        if resItem
+            and resItem:GetState() == XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.PAUSE
+            and not resItem:IsComplete() then
+            self:AddResToDownload(resId)
+        end
+    end
 end
 
 --- 将必要资源添加到下载队列
@@ -403,10 +652,16 @@ function XSubPackageAgency:DoDownload()
     -- XLog.Warning("SP/DN DoDownload 3 ", subpackageId, item:GetState())
     item:StartDownload()
     -- XLog.Warning("SP/DN DoDownload 4 ", subpackageId, item:GetState())
+    -- [F5] 读取并消费 forceResumePausedRes 标记
+    local forceResumePausedRes = false
+    if self._ForceResumePausedSubpackages and self._ForceResumePausedSubpackages[subpackageId] then
+        forceResumePausedRes = true
+        self._ForceResumePausedSubpackages[subpackageId] = nil
+    end
     --恢复下载状态
     self._IsPause = false
     --开始下载
-    item:StartResDownload()
+    item:StartResDownload(forceResumePausedRes)
     --事件通知
     XEventManager.DispatchEvent(XEventId.EVENT_SUBPACKAGE_START, subpackageId)
 end
@@ -414,6 +669,9 @@ end
 --标记为暂停状态
 function XSubPackageAgency:PauseDownload(subpackageId)
     -- XLog.Warning("SP/DN PauseDownload", subpackageId, self._SubpackageWaitDnLdQueue)
+    -- [修复] Sub级暂停接管时，清除Res级暂停标记，避免残留
+    self._PreparePauseResId = nil
+    self._PendingResumeResId = nil
     local subpackageItem = self._Model:GetSubpackageItem(subpackageId)
     subpackageItem:PreparePause()
     subpackageItem._WaitPause = true
@@ -437,7 +695,13 @@ function XSubPackageAgency:PauseDownload(subpackageId)
         return a < b
     end)
 
+    -- [修正] 被从队列移除的 res，同步设为 PAUSE（不留 PREPARE_DOWNLOAD 脏状态）
     for i = #removeIndices, 1, -1 do
+        local removedResId = self._ResWaitDnLdQueue[removeIndices[i]]
+        local removedResItem = self._Model:GetResourceItem(removedResId)
+        if removedResItem and removedResItem:GetState() == XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.PREPARE_DOWNLOAD then
+            removedResItem:Pause()
+        end
         table.remove(self._ResWaitDnLdQueue, removeIndices[i])
     end
     if self._DownloadCenter and targetPauseResId then
@@ -499,12 +763,11 @@ function XSubPackageAgency:OnDownloadRelease()
         return
     end
 
-    if XTool.IsNumberValid(self._PreparePauseSubpackageId) then
-        local item = self._Model:GetSubpackageItem(self._PreparePauseSubpackageId)
+    local pausedSubpackageId = self._PreparePauseSubpackageId
+    if XTool.IsNumberValid(pausedSubpackageId) then
+        local item = self._Model:GetSubpackageItem(pausedSubpackageId)
         item:Pause()
         self._TipDialog = false
-
-        XEventManager.DispatchEvent(XEventId.EVENT_SUBPACKAGE_PAUSE, self._PreparePauseSubpackageId)
     end
 
     --下载队列为空了
@@ -517,11 +780,18 @@ function XSubPackageAgency:OnDownloadRelease()
     self._IsDownloadGroup = false
     self._DownloadPackageId = 0
     self._PreparePauseSubpackageId = 0
+    self._PreparePauseResId = nil
+    self._PendingResumeResId = nil
     self._Downloader = nil
+
+    -- 先清完所有 Sub 级标记，再派发事件，确保 Grid 刷新时 IsSubOrResDownloading 能正确判定
+    if XTool.IsNumberValid(pausedSubpackageId) then
+        XEventManager.DispatchEvent(XEventId.EVENT_SUBPACKAGE_PAUSE, pausedSubpackageId)
+    end
 
     -- 保底若 OnResDownloadRelease 被拦截了 这里还能再处理一次队列下载
     if not XTool.IsNumberValid(self._DownloadingResId) then
-        self:StartDownload()
+        self:DoResDownload()
     end
 end
 
@@ -622,50 +892,80 @@ function XSubPackageAgency:IsResUsedByOtherProcessSubpackage(checkResId, exclude
     return false
 end
 
--- [重构] 外部调用的单个资源卸载接口（自动异步）
-function XSubPackageAgency:UninstallResourceById(resId, cb)
-    if not resId or resId <= 0 then return end
+-- 批量资源卸载接口（替代原 UninstallResourceById，复刻 UninstallSubpackageById 的稳定模式）
+-- 单协程串行处理，每个 Res 之间无条件让帧，保证遮罩可见
+function XSubPackageAgency:UninstallResourcesByIds(resIds, cb)
+    if not resIds or #resIds == 0 then
+        if cb then cb() end
+        return
+    end
 
-    -- 如果正在进行批量卸载（锁住了），则不允许单独插队
     if self._IsUninstalling then
         XLog.Warning("正在卸载资源，请稍候...")
         return
     end
 
-    -- 定义执行体
-    local execute = function()
-        self._IsUninstalling = true -- 加上锁
-        
-        -- 调用核心逻辑
-        self:_UninstallResCore(resId)
-        
-        -- 刷新事件
-        local affectedSubpackageIds = self._Model:GetSubpackageIdByResId(resId)
-        if affectedSubpackageIds then
-            for _, subId in ipairs(affectedSubpackageIds) do
-                local subItem = self._Model:GetSubpackageItem(subId)
-                if subItem then
-                    XEventManager.DispatchEvent(XEventId.EVENT_SUBPACKAGE_UPDATE, subId, subItem:GetProgress())
-                    XEventManager.DispatchEvent(XEventId.EVENT_SUBPACKAGE_PREPARE, subId)
-                end
-            end
-        end
-        XEventManager.DispatchEvent(XEventId.EVENT_RES_UPDATE, resId, 0)
-        
-        self._IsUninstalling = false -- 解锁
-        XLog.Warning(string.format("[XSubPackageAgency] 单资源异步卸载完成 ResId=%d", resId))
-        if cb then cb() end
+    if self._IsDownloading or XTool.IsNumberValid(self._DownloadingResId) then
+        XUiManager.TipText("SubpackageUninstallRejectDownloading")
+        return
     end
 
-    -- [智能环境判断]
-    local co = coroutine.running()
-    if co then
-        -- 情况A：已经在协程里了（极少情况，除非有其他系统调它），直接跑
-        execute()
-    else
-        -- 情况B：主线程调用的（如按钮点击），启动协程包裹它
-        RunAsyn(execute)
-    end
+    -- 递增版本号，使旧协程失效
+    self._UninstallVersion = self._UninstallVersion + 1
+    local currentVersion = self._UninstallVersion
+
+    RunAsyn(function()
+        self._IsUninstalling = true
+
+        XLog.Warning(string.format("[XSubPackageAgency] 开始批量卸载 ResIds 数量=%d", #resIds))
+
+        for _, resId in ipairs(resIds) do
+            -- 版本号校验
+            if self._UninstallVersion ~= currentVersion then
+                XLog.Warning("[XSubPackageAgency] UninstallResourcesByIds 协程被取消")
+                return
+            end
+
+            -- 调用核心逻辑（内含 _IsFileProtected 文件保护判断）
+            local cancelled = self:_UninstallResCore(resId, currentVersion)
+            if cancelled then return end
+
+            -- 无条件让出一帧，保证遮罩可渲染（复刻 UninstallSubpackageById:979）
+            asynWaitSecond(0)
+            -- yield 恢复后再次校验
+            if self._UninstallVersion ~= currentVersion then
+                XLog.Warning("[XSubPackageAgency] UninstallResourcesByIds 协程被取消")
+                return
+            end
+
+            -- 逐个刷新事件
+            local affectedSubpackageIds = self._Model:GetSubpackageIdByResId(resId)
+            if affectedSubpackageIds then
+                for _, subId in ipairs(affectedSubpackageIds) do
+                    local subItem = self._Model:GetSubpackageItem(subId)
+                    if subItem then
+                        XEventManager.DispatchEvent(XEventId.EVENT_SUBPACKAGE_UPDATE, subId, subItem:GetProgress())
+                        XEventManager.DispatchEvent(XEventId.EVENT_SUBPACKAGE_PREPARE, subId)
+                    end
+                end
+            end
+            XEventManager.DispatchEvent(XEventId.EVENT_RES_UPDATE, resId, 0)
+        end
+
+        -- 最终校验
+        if self._UninstallVersion ~= currentVersion then
+            return
+        end
+
+        -- 卸载后销毁下载器，确保下次下载时重新创建并注册新的 TaskGroup
+        if self._DownloadCenter then
+            self._DownloadCenter = nil
+        end
+
+        self._IsUninstalling = false
+        XLog.Warning("[XSubPackageAgency] 批量资源卸载完成")
+        if cb then cb() end
+    end)
 end
 
 -- [重构] 分包卸载接口
@@ -677,9 +977,19 @@ function XSubPackageAgency:UninstallSubpackageById(subpackageId, cb)
         return
     end
 
+    -- 正在下载中，不允许卸载（避免下载与卸载并发导致状态异常）
+    if self._IsDownloading or XTool.IsNumberValid(self._DownloadingResId) then
+        XUiManager.TipText("SubpackageUninstallRejectDownloading")
+        return
+    end
+
+    -- 递增版本号，使旧协程失效
+    self._UninstallVersion = self._UninstallVersion + 1
+    local currentVersion = self._UninstallVersion
+
     RunAsyn(function()
         self._IsUninstalling = true
-        
+
         local template = self:GetSubpackageTemplate(subpackageId)
         if not template or not template.ResIds then
             self._IsUninstalling = false
@@ -690,17 +1000,34 @@ function XSubPackageAgency:UninstallSubpackageById(subpackageId, cb)
         XLog.Warning(string.format("[XSubPackageAgency] 开始协程卸载 SubpackageId=%d", subpackageId))
 
         for _, resId in ipairs(template.ResIds) do
+            -- 版本号校验
+            if self._UninstallVersion ~= currentVersion then
+                XLog.Warning("[XSubPackageAgency] UninstallSubpackageById 协程被取消")
+                return
+            end
+
             local isLocked = self:IsResUsedByOtherProcessSubpackage(resId, subpackageId)
-            
+
             if isLocked then
                 XLog.Warning(string.format("跳过 ResId=%d", resId))
             else
                 -- [关键] 直接调用 Core，因为它已经支持 yield，且当前已经在协程里
-                self:_UninstallResCore(resId)
-                
+                local cancelled = self:_UninstallResCore(resId, currentVersion)
+                if cancelled then return end
+
                 -- Res 之间的额外休息（可选）
                 asynWaitSecond(0)
+                -- yield 恢复后再次校验
+                if self._UninstallVersion ~= currentVersion then
+                    XLog.Warning("[XSubPackageAgency] UninstallSubpackageById 协程被取消")
+                    return
+                end
             end
+        end
+
+        -- 最终校验
+        if self._UninstallVersion ~= currentVersion then
+            return
         end
 
         -- 统一刷新
@@ -710,7 +1037,12 @@ function XSubPackageAgency:UninstallSubpackageById(subpackageId, cb)
             XEventManager.DispatchEvent(XEventId.EVENT_SUBPACKAGE_PREPARE, subpackageId)
         end
         XEventManager.DispatchEvent(XEventId.EVENT_SUBPACKAGE_COMPLETE)
-        
+
+        -- 卸载后销毁下载器，确保下次下载时重新创建并注册新的 TaskGroup
+        if self._DownloadCenter then
+            self._DownloadCenter = nil
+        end
+
         self._IsUninstalling = false
         XLog.Warning("[XSubPackageAgency] 卸载完成")
         -- 用户卸载分包，标记为非激活状态
@@ -720,11 +1052,11 @@ function XSubPackageAgency:UninstallSubpackageById(subpackageId, cb)
     end)
 end
 
--- [新增] 内部辅助：检查某个文件是否被“当前操作目标以外”的活跃资源占用
--- @param fileName 文件名
+-- [修复] 内部辅助：检查某个物理文件是否被"当前操作目标以外"的活跃资源占用
+-- @param physicalFileName 物理文件名（hash名，即 info[1]），与 _FileToResIds 的 key 维度一致
 -- @param excludeResIds table 需要排除的资源ID列表（通常是当前要卸载的分包包含的所有ResId）
-function XSubPackageAgency:_IsFileProtected(fileName, excludeResIds)
-    local owners = self._FileToResIds[fileName]
+function XSubPackageAgency:_IsFileProtected(physicalFileName, excludeResIds)
+    local owners = self._FileToResIds[physicalFileName]
     if not owners then return false end
 
     for _, ownerResId in ipairs(owners) do
@@ -770,9 +1102,10 @@ function XSubPackageAgency:GetUninstallableFileInfoBySubpackageId(subpackageId)
             local indexInfo = self._SubIndexInfo[resId]
             if indexInfo then
                 local deletableFiles = {}
-                for fileName, info in pairs(indexInfo) do
-                    -- 这里的判定逻辑必须与 CheckSubpackageCanUninstall 完全一致
-                    if not self:_IsFileProtected(fileName, currentSubResIds) and CS.System.IO.File.Exists(self:GetSavePath(info[1])) then
+                for assetPath, info in pairs(indexInfo) do
+                    local physicalFileName = info[1]
+                    -- 判定逻辑：传入物理文件名（与 _FileToResIds 的 key 维度一致）
+                    if not self:_IsFileProtected(physicalFileName, currentSubResIds) and CS.System.IO.File.Exists(self:GetSavePath(physicalFileName)) then
                         -- info[1] 通常是文件的全路径或相对路径名
                         table.insert(deletableFiles, info[1])
                     end
@@ -789,11 +1122,11 @@ function XSubPackageAgency:GetUninstallableFileInfoBySubpackageId(subpackageId)
     return result
 end
 
--- [修改] 检查分包是否有可卸载的资源 (控制删除按钮显示)
--- 逻辑：只要分包有进度，且处于暂停或完成状态，即视为可卸载
+-- [F10 重构] 检查分包是否有可卸载的资源 (控制删除按钮显示)
+-- 逻辑：状态为暂停或完成，且有真实下载过的 Res（排除共享文件假象）
 function XSubPackageAgency:CheckSubpackageCanUninstall(subpackageId)
-    if not subpackageId or subpackageId <= 0 then 
-        return false 
+    if not subpackageId or subpackageId <= 0 then
+        return false
     end
 
     local item = self._Model:GetSubpackageItem(subpackageId)
@@ -801,28 +1134,23 @@ function XSubPackageAgency:CheckSubpackageCanUninstall(subpackageId)
         return false
     end
 
-    -- 1. 检查是否有下载进度
-    local downloadSize = item:GetDownloadSize()
-    if downloadSize <= 0 then
+    -- 1. 检查状态 (暂停 或 完成)
+    local state = item:GetState()
+    local STATE_ENUM = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE
+    if state ~= STATE_ENUM.PAUSE and state ~= STATE_ENUM.COMPLETE then
         return false
     end
 
-    -- 2. 检查状态 (暂停 或 完成)
-    local state = item:GetState()
-    local STATE_ENUM = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE
-
-    if state == STATE_ENUM.PAUSE or state == STATE_ENUM.COMPLETE then
-        return true
-    end
-
-    return false
+    -- 2. 检查是否有下载过的内容
+    local downloadSize = item:GetDownloadSize()
+    return downloadSize > 0
 end
 
 -- [新增] 核心卸载逻辑（私有，必须在协程中运行）
 --- @param resId number 资源Id
-function XSubPackageAgency:_UninstallResCore(resId)
+function XSubPackageAgency:_UninstallResCore(resId, currentVersion)
     local indexInfo = self._SubIndexInfo[resId]
-    if not indexInfo then return end
+    if not indexInfo then return false end
 
     local allRelatedResIds = { resId } -- 至少排除自己
     -- 这里可以根据业务需求扩展，通常单资源卸载只排除自己，分包卸载则排除整个分包的 ResIds
@@ -835,23 +1163,28 @@ function XSubPackageAgency:_UninstallResCore(resId)
     unistallResItem:Uninstall()
 
     local deleteCount = 0
-    local batchCounter = 0 
-    
-    for fileName, info in pairs(indexInfo) do
-        local savePath = self:GetSavePath(info[1])
-        
-        -- 2. 依赖检查：调用统一的私有函数
-        -- 此时我们判定“物理删除”的标准是：该文件是否被【除本 ResId 以外】的其他活跃资源引用
-        if not self:_IsFileProtected(fileName, allRelatedResIds) then
+    local batchCounter = 0
+
+    for assetPath, info in pairs(indexInfo) do
+        local physicalFileName = info[1]
+        local savePath = self:GetSavePath(physicalFileName)
+
+        -- 2. 依赖检查：传入物理文件名（与 _FileToResIds 的 key 维度一致）
+        if not self:_IsFileProtected(physicalFileName, allRelatedResIds) then
             -- 3. 物理删除
             CS.XFileTool.DeleteFile(savePath)
             deleteCount = deleteCount + 1
-            
+
             -- [关键] 强制分帧：每删 10 个文件，向当前协程申请休息
             batchCounter = batchCounter + 1
             if batchCounter >= BATCH_DELETE_COUNT then
                 batchCounter = 0
                 asynWaitSecond(0) -- 让出控制权给下一帧
+                -- 版本号校验：重连/登出后旧协程应立即退出
+                if currentVersion and self._UninstallVersion ~= currentVersion then
+                    XLog.Warning("[XSubPackageAgency] _UninstallResCore 协程被取消")
+                    return true -- true 表示被取消
+                end
             end
         end
     end
@@ -870,6 +1203,12 @@ function XSubPackageAgency:_UninstallResCore(resId)
             end
         end
     end
+
+    -- 补调新 XResource 的 FileInitComplete，确保状态正确初始化
+    local newResItem = self._Model:GetResourceItem(resId)
+    if newResItem then
+        newResItem:FileInitComplete()
+    end
 end
 
 function XSubPackageAgency:ResolveResIndex()
@@ -881,7 +1220,7 @@ function XSubPackageAgency:ResolveResIndex()
     end
     
     -- 初始化文件反向索引表：Key = FileName, Value = {ResId1, ResId2, ...}
-    -- 用于在 UninstallResourceById 中快速判断文件是否被其他 ResId 引用
+    -- 用于在卸载时快速判断文件是否被其他 ResId 引用
     self._FileToResIds = self._FileToResIds or {}
 
     XLog.Warning("XSubPackageAgency:ResolveResIndex Start")
@@ -889,12 +1228,25 @@ function XSubPackageAgency:ResolveResIndex()
     for resId, indexInfo in pairs(self._SubIndexInfo) do
         if resId and resId > 0 then
             
-            -- 【新增逻辑】构建文件 -> ResIdList 的映射
-            for fileName, info in pairs(indexInfo) do
-                if not self._FileToResIds[fileName] then
-                    self._FileToResIds[fileName] = {}
+            -- 【修复】构建 物理文件名(hash) -> ResIdList 的映射
+            -- key 必须是 info[1]（物理文件名），而非 assetPath（indexInfo 的 key）
+            -- 因为不同 assetPath 可能映射到同一个物理文件，按 assetPath 建索引会遗漏跨 assetPath 的共享
+            for assetPath, info in pairs(indexInfo) do
+                local physicalFileName = info[1]
+                if not self._FileToResIds[physicalFileName] then
+                    self._FileToResIds[physicalFileName] = {}
                 end
-                table.insert(self._FileToResIds[fileName], resId)
+                -- 去重：同一 resId 下多个 assetPath 可能指向同一物理文件
+                local alreadyExists = false
+                for _, existingResId in ipairs(self._FileToResIds[physicalFileName]) do
+                    if existingResId == resId then
+                        alreadyExists = true
+                        break
+                    end
+                end
+                if not alreadyExists then
+                    table.insert(self._FileToResIds[physicalFileName], resId)
+                end
             end
 
             -- 原有的 Item 初始化逻辑
@@ -1030,10 +1382,6 @@ function XSubPackageAgency:IsChangingThread()
     return self._DownloadCenter:GetCurrentRunningTaskNumber() ~= self._ThreadCount
 end
 
-function XSubPackageAgency:IsDownloading()
-    return self._IsDownloading
-end
-
 function XSubPackageAgency:OnStateChanged(taskGpId, state)
     local item = self._Model:GetResourceItem(taskGpId)
     if item then
@@ -1048,7 +1396,7 @@ function XSubPackageAgency:CheckSubpackageComplete(subpackageId)
         return true
     end
 
-    if not XTool.IsNumberValid(subpackageId) then
+    if type(subpackageId) ~= "number" then
         return true
     end
 
@@ -1246,50 +1594,130 @@ function XSubPackageAgency:CheckSubpackageDownloadByFunctionType(enterType, para
 end
 
 function XSubPackageAgency:CheckSubpackage(enterType, param, ignorePopUi)
+    -- 1. 功能未开启，直接放行
     if not self:IsOpen() then
         return true
     end
+
+    -- 2. 收集强Sub选项数据
     local subIds = self._Model:GetAllSubpackageIds(enterType, param)
-    local complete = true
+    local hasStrongSub = false
     if not XTool.IsTableEmpty(subIds) then
         for _, subId in pairs(subIds) do
-            complete = self:CheckSubpackageComplete(subId)
-            if not complete then
+            if not self:CheckSubpackageComplete(subId) then
+                hasStrongSub = true
                 break
             end
         end
     end
-    if IsDebugBuild then
-        local strSubId = XTool.IsTableEmpty(subIds) and "nil" or table.concat(subIds, ", ")
-        local log = stringFormat("[拦截] 拦截类型：%s 拦截参数：%s 分包Id: %s, 下载完成：%s"
-        , enterType, param, strSubId, tostring(complete))
-        XLog.Error(log)
-    end
-    --需要拦截
-    if not complete then
-        if not ignorePopUi then
-            self:DoRecordIntercept(enterType, param)
-            XLuaUiManager.Open("UiDownloadPreview", subIds)
-            -- XLog.Debug("SP/DN 打开UiDownloadPreview ", enterType, subIds)
-        end
-        return false
-    end
-    return true
-end
 
--- 拦截则返回false tips:目前基本是给系统侧临时拦截视频分包用(已弃用)
-function XSubPackageAgency:CheckSubpackageByIdAndIntercept(subpackageId)
-    if not self:IsOpen() then
+    -- 3. 收集弱Sub选项数据
+    local weakSubIds = self._Model:GetWeakSubpackageIds(enterType, param)
+    local hasWeakSub = false
+    if not XTool.IsTableEmpty(weakSubIds) then
+        for _, subId in pairs(weakSubIds) do
+            if not self:CheckSubpackageComplete(subId) then
+                hasWeakSub = true
+                break
+            end
+        end
+    end
+
+    -- 4. 收集散装涂装Res数据（传入Sub的resIdSet用于去重）
+    local subResIdSet = self:_BuildSubResIdSet(subIds, weakSubIds)
+    local fashionResIds, fashionIsWeak = self:CollectFashionResIds(enterType, param, subResIdSet)
+    local hasExtraRes = not XTool.IsTableEmpty(fashionResIds)
+    -- 散装强Res视为强选项
+    local hasStrongExtraRes = hasExtraRes and not fashionIsWeak
+
+    -- 5. 判断是否全部完成
+    local hasAnyContent = hasStrongSub or hasWeakSub or hasExtraRes
+    if not hasAnyContent then
         return true
     end
 
-    local isComplete = self:CheckSubpackageComplete(subpackageId)
-    if not isComplete then
-        self:DoRecordIntercept(nil, subpackageId)
-        XLuaUiManager.Open("UiDownloadPreview", {subpackageId})
-        return false
+    -- 6. Debug日志
+    if IsDebugBuild then
+        local strSubId = XTool.IsTableEmpty(subIds) and "nil" or table.concat(subIds, ", ")
+        local strWeakSubId = XTool.IsTableEmpty(weakSubIds) and "nil" or table.concat(weakSubIds, ", ")
+        local strFashionRes = XTool.IsTableEmpty(fashionResIds) and "nil" or table.concat(fashionResIds, ", ")
+        local log = stringFormat("[拦截] 类型:%s 参数:%s 强Sub:%s 弱Sub:%s 散装Res:%s(weak=%s)",
+            enterType, param, strSubId, strWeakSubId, strFashionRes, tostring(fashionIsWeak))
+        XLog.Error(log)
     end
-    return true
+
+    -- 7. 如果参数要求忽略弹窗，则只检查强选项是否完成
+    -- （弱选项不应拦截ignorePopUi=true的调用，如CheckSubpackageDownloadByFunctionType）
+    if ignorePopUi then
+        local hasStrong = hasStrongSub or hasStrongExtraRes
+        return not hasStrong
+    end
+
+    -- 8. 构建checkResult
+    local hasStrong = hasStrongSub or hasStrongExtraRes
+    local checkResult = {
+        subIds = subIds,
+        weakSubIds = weakSubIds,
+        extraResOptions = {},
+        enterType = enterType,
+        param = param,
+        hasStrong = hasStrong,
+    }
+
+    -- 填充散装Res选项
+    if hasExtraRes then
+        table.insert(checkResult.extraResOptions, {
+            resType = 1,  -- 涂装Res
+            resIds = fashionResIds,
+            isWeak = fashionIsWeak,
+        })
+    end
+
+    -- 8.5 防误配校验：强选项不应配置IgnoreInterput
+    if IsDebugBuild then
+        local sortedSubConfigs = self._Model:GetSortedSubModeConfigs()
+        -- 选项1（强Sub）
+        if hasStrongSub and #sortedSubConfigs >= 1 then
+            local cfg = self._Model:GetDownloadPreviewControlConfig(sortedSubConfigs[1].Id)
+            if cfg and cfg.IgnoreInterput then
+                XLog.Error("[分包配置错误] 强选项(Id=" .. sortedSubConfigs[1].Id .. ")不应配置IgnoreInterput=1")
+            end
+        end
+        -- 散装强Res
+        if hasStrongExtraRes then
+            for _, extraOpt in ipairs(checkResult.extraResOptions) do
+                if not extraOpt.isWeak then
+                    local ctrlId, cfg = self._Model:GetControlConfigByResType(extraOpt.resType)
+                    if cfg and cfg.IgnoreInterput then
+                        XLog.Error("[分包配置错误] 强选项(ResType=" .. extraOpt.resType .. ")不应配置IgnoreInterput=1")
+                    end
+                end
+            end
+        end
+    end
+
+    -- 9. 三层拦截决策：检查是否应该跳过弹窗
+    if self:_ShouldSkipPreviewPopup(checkResult) then
+        return true
+    end
+
+    -- 10. 触发拦截弹窗逻辑
+    local checkTypeKey = self:_GenerateCheckTypeKey(enterType, {param})
+
+    -- 记录本次登录触发次数
+    self._CheckTypeCountThisLogin[checkTypeKey] = (self._CheckTypeCountThisLogin[checkTypeKey] or 0) + 1
+
+    -- 记录本地缓存触发次数
+    local playerId = XPlayer.Id
+    local countCacheKey = "SubPackageCheckCount_" .. playerId .. "_" .. checkTypeKey
+    local currentCount = XSaveTool.GetData(countCacheKey) or 0
+    XSaveTool.SaveData(countCacheKey, currentCount + 1)
+
+    -- 埋点并打开界面
+    self:DoRecordIntercept(enterType, param)
+    XLuaUiManager.Open("UiDownloadPreview", checkResult)
+
+    return false
 end
 
 function XSubPackageAgency:CheckSubpackageByCvType(cvType)
@@ -1299,7 +1727,15 @@ function XSubPackageAgency:CheckSubpackageByCvType(cvType)
         if not XTool.IsTableEmpty(subpackageIds) then
             XLog.Warning(stringFormat("[Subpackage Intercept(CV)]:\n\tCVType:%s\tSubpackageIds:%s",
                     tostring(cvType), table.concat(subpackageIds, ", ")))
-            XLuaUiManager.Open("UiDownloadPreview", subpackageIds)
+            local checkResult = {
+                subIds = subpackageIds,
+                weakSubIds = nil,
+                extraResOptions = {},
+                enterType = XFunctionManager.FunctionName.CharacterVoice,
+                param = cvType,
+                hasStrong = true,
+            }
+            XLuaUiManager.Open("UiDownloadPreview", checkResult)
         else
             isComplete = true
         end
@@ -1342,7 +1778,7 @@ function XSubPackageAgency:DownloadAllByGroup(groupId)
         return a < b
     end)
     for _, subId in ipairs(need) do
-        self:AddToDownload(subId)
+        self:AddToDownload(subId, true)
     end
     self._IsDownloadGroup = true
 end
@@ -1403,7 +1839,7 @@ function XSubPackageAgency:OnExitFight()
         return
     end
     self:ErrorDialog("FileManagerInitFileTableInGameDownloadError", nil, function()
-        self:AddToDownload(self._ErrorSubpackageId)
+        self:AddToDownload(self._ErrorSubpackageId, true)
         self._ErrorSubpackageId = nil
     end, nil, CsXApplication.GetText("Retry"))
 
@@ -1422,7 +1858,7 @@ function XSubPackageAgency:DoDownloadError(subpackageId)
     end
     self:PauseAll()
     self:ErrorDialog("FileManagerInitFileTableInGameDownloadError", nil, function()
-        self:AddToDownload(subpackageId)
+        self:AddToDownload(subpackageId, true)
     end, nil, CsXApplication.GetText("Retry"))
 end
 
@@ -1463,6 +1899,7 @@ function XSubPackageAgency:OnNetworkReachabilityChanged()
 end
 
 function XSubPackageAgency:OnLoginSuccess()
+    self._BattleFashionTipDismissedThisLogin = false
     if not self:IsOpen() then
         return
     end
@@ -1491,6 +1928,10 @@ function XSubPackageAgency:OnLoginOut()
         return
     end
 
+    -- 递增版本号，使正在运行的卸载协程失效
+    self._UninstallVersion = (self._UninstallVersion or 0) + 1
+    self._IsUninstalling = false
+    self._FashionModelFallbackMap = nil
     self:PauseAll()
 end
 
@@ -1506,6 +1947,14 @@ end
 
 function XSubPackageAgency:IsPreparePause()
     return XTool.IsNumberValid(self._PreparePauseSubpackageId)
+end
+
+--- Res级是否正在异步暂停中
+function XSubPackageAgency:IsResPausing(resId)
+    if resId then
+        return self._PreparePauseResId == resId
+    end
+    return self._PreparePauseResId ~= nil
 end
 
 --是否为可选资源
@@ -1770,6 +2219,441 @@ end
 
 function XSubPackageAgency:Print(info)
     CsLog.Debug(info)
+end
+
+--region 涂装分包相关接口
+
+--- 获取涂装对应的资源Id
+---@param fashionId number 涂装Id
+---@return number 资源Id，无配置返回0
+function XSubPackageAgency:GetFashionResId(fashionId)
+    local config = self._Model:GetFashionDownloadConfig(fashionId)
+    if config then
+        return config.ResId
+    end
+    return 0
+end
+
+--- 构建涂装ModelId → 默认ModelId的反向映射表（懒加载）
+function XSubPackageAgency:_BuildFashionModelFallbackMap()
+    self._FashionModelFallbackMap = {}
+    local allConfigs = self._Model:GetAllFashionDownloadConfigs()
+    if not allConfigs then
+        return
+    end
+
+    for fashionId, config in pairs(allConfigs) do
+        local resId = config.ResId
+        if XTool.IsNumberValid(resId) then
+            -- fashionId → resourcesId → modelId
+            local fashionTemplate = XDataCenter.FashionManager.GetFashionTemplate(fashionId)
+            if fashionTemplate then
+                local resourcesId = fashionTemplate.ResourcesId
+                local modelId = XMVCA.XCharacter:GetCharResModel(resourcesId)
+
+                if modelId then
+                    -- fashionId → characterId → DefaultNpcFashtionId → defaultResourcesId → defaultModelId
+                    local characterId = fashionTemplate.CharacterId
+                    local charTemplate = XMVCA.XCharacter:GetCharacterTemplate(characterId, true)
+                    if charTemplate and XTool.IsNumberValid(charTemplate.DefaultNpcFashtionId) then
+                        local defaultResourcesId = XDataCenter.FashionManager.GetResourcesId(charTemplate.DefaultNpcFashtionId)
+                        if defaultResourcesId then
+                            local defaultModelId = XMVCA.XCharacter:GetCharResModel(defaultResourcesId)
+                            if defaultModelId then
+                                self._FashionModelFallbackMap[modelId] = {
+                                    ResId = resId,
+                                    DefaultModelId = defaultModelId,
+                                }
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end
+end
+
+--- 查询涂装modelId的回退modelId（供XModelManager底层拦截用）
+--- 如果modelId对应未下载的涂装，返回默认皮肤的modelId；否则返回nil
+---@param modelId string 模型ID
+---@return string|nil 回退的默认modelId，nil表示不需要回退
+function XSubPackageAgency:GetFashionModelFallback(modelId)
+    if not self:IsOpen() then
+        return nil
+    end
+
+    -- 懒加载反向表
+    if not self._FashionModelFallbackMap then
+        self:_BuildFashionModelFallbackMap()
+    end
+
+    local entry = self._FashionModelFallbackMap[modelId]
+    if not entry then
+        return nil
+    end
+
+    -- 已下载则不需要回退
+    if self:CheckResDownloadComplete(entry.ResId) then
+        return nil
+    end
+
+    return entry.DefaultModelId
+end
+
+--- 设置战斗涂装未下载提示本次登录不再提示
+---@param value boolean
+function XSubPackageAgency:SetBattleFashionTipDismissed(value)
+    self._BattleFashionTipDismissedThisLogin = value
+end
+
+--- 获取战斗涂装未下载提示是否本次登录不再提示
+---@return boolean
+function XSubPackageAgency:IsBattleFashionTipDismissed()
+    return self._BattleFashionTipDismissedThisLogin
+end
+
+--- 检查涂装资源是否已下载
+---@param fashionId number 涂装Id
+---@return boolean 是否已下载（无配置或分包未开启时返回true）
+function XSubPackageAgency:CheckFashionDownloaded(fashionId)
+    if not self:IsOpen() then
+        return true
+    end
+    local resId = self:GetFashionResId(fashionId)
+    if not XTool.IsNumberValid(resId) then
+        return true
+    end
+    return self:CheckResDownloadComplete(resId)
+end
+
+--- 获取涂装资源大小（格式化字符串）
+---@param fashionId number 涂装Id
+---@return string 格式化后的大小字符串
+function XSubPackageAgency:GetFashionResSizeText(fashionId)
+    local resId = self:GetFashionResId(fashionId)
+    if not XTool.IsNumberValid(resId) then
+        return "0MB"
+    end
+    local size = self:GetResTotalSize(resId)
+    local num, unit = self:TransformSize(size)
+    return string.format("%d%s", num, unit)
+end
+
+--- 下载涂装资源
+---@param fashionId number 涂装Id
+function XSubPackageAgency:DownloadFashionRes(fashionId)
+    local resId = self:GetFashionResId(fashionId)
+    if XTool.IsNumberValid(resId) then
+        self:AddResToDownload(resId)
+    end
+end
+
+--- 获取所有下载预览控制配置
+---@return table<number, XTableUiDownloadPreviewControl>
+function XSubPackageAgency:GetAllDownloadPreviewControlConfigs()
+    return self._Model:GetAllDownloadPreviewControlConfigs()
+end
+
+function XSubPackageAgency:GetAllFashionDownloadConfigs()
+    return self._Model:GetAllFashionDownloadConfigs()
+end
+
+--- 检查指定resId是否在下载队列或正在下载中
+---@param resId number
+---@return boolean
+function XSubPackageAgency:IsResInDownloadQueue(resId)
+    if self._DownloadingResId == resId then
+        return true
+    end
+    for _, queueResId in ipairs(self._ResWaitDnLdQueue) do
+        if queueResId == resId then
+            return true
+        end
+    end
+    return false
+end
+
+--- 检查resId是否在等待队列中（不含正在下载的那个）
+---@param resId number
+---@return boolean
+function XSubPackageAgency:IsResWaitingInQueue(resId)
+    for _, queueResId in ipairs(self._ResWaitDnLdQueue) do
+        if queueResId == resId then
+            return true
+        end
+    end
+    return false
+end
+
+--- 获取Sub模式排序后的配置（代理层透传）
+---@return table[]
+function XSubPackageAgency:GetSortedSubModeConfigs()
+    return self._Model:GetSortedSubModeConfigs()
+end
+
+--- 收集玩法关联的散装涂装ResIds
+--- 会对比subResIdSet去重：如果散装resId已存在于Sub选项的resIds中，跳过并输出warning
+---@param enterType number 入口类型（对应FunctionIdFashionRelative的FunctionId）
+---@param param number|nil 附加参数（ChapterMainId等，注意不是ChapterFashionRelative的拼接主键）
+---@param subResIdSet table<number, boolean>|nil Sub选项已包含的resId集合，用于去重
+---@return table|nil resIds列表
+---@return boolean|nil isWeak 是否弱拦截
+function XSubPackageAgency:CollectFashionResIds(enterType, param, subResIdSet)
+    if not enterType then
+        return nil, nil
+    end
+
+    local resIds = {}
+    local resIdDict = {}
+    local hasStrongConfig = false
+
+    -- 1. 收集玩法关联配置（FunctionIdFashionRelative）
+    local funcConfig = self._Model:GetFunctionIdFashionRelativeConfig(enterType)
+    if funcConfig then
+        self:_AppendFashionResIds(resIds, resIdDict, funcConfig.FashionIds, funcConfig.IsWeakInterput, subResIdSet)
+        if not funcConfig.IsWeakInterput and not XTool.IsTableEmpty(funcConfig.FashionIds) then
+            hasStrongConfig = true
+        end
+    end
+
+    -- 2. 收集章节关联配置（ChapterFashionRelative）
+    -- 注意：ChapterFashionRelative的主键是拼接Id = enterType * 10000 + param
+    -- 参见 XSubPackageEditorTool.CollectRawChapterStages() 的注释:
+    -- Key: FunctionType * 10000 + ChapterMainId/ChapterId
+    if param and type(param) == "number" then
+        local chapterHashId = enterType * 10000 + param
+        local chapterConfig = self._Model:GetChapterFashionRelativeConfig(chapterHashId)
+        if chapterConfig then
+            local chapterIsWeak = chapterConfig.IsWeakInterput
+            self:_AppendFashionResIds(resIds, resIdDict, chapterConfig.FashionIds, chapterIsWeak, subResIdSet)
+            if not chapterIsWeak and not XTool.IsTableEmpty(chapterConfig.FashionIds) then
+                hasStrongConfig = true
+            end
+        end
+    end
+
+    if XTool.IsTableEmpty(resIds) then
+        return nil, nil
+    end
+
+    local finalIsWeak = not hasStrongConfig
+    return resIds, finalIsWeak
+end
+
+--- 内部方法：将fashionIds对应的resIds追加到结果列表中（自动去重+Sub去重）
+---@param outResIds table 输出的resId列表
+---@param outResIdDict table<number, boolean> 已收集的resId字典（用于去重）
+---@param fashionIds number[]|nil 待处理的fashionId列表
+---@param isWeak boolean 是否弱拦截（本参数仅用于外部判断，此方法内不使用）
+---@param subResIdSet table<number, boolean>|nil Sub选项已包含的resId集合
+function XSubPackageAgency:_AppendFashionResIds(outResIds, outResIdDict, fashionIds, isWeak, subResIdSet)
+    if XTool.IsTableEmpty(fashionIds) then
+        return
+    end
+
+    for _, fashionId in ipairs(fashionIds) do
+        local resId = self:GetFashionResId(fashionId)
+        if XTool.IsNumberValid(resId) and not self:CheckResDownloadComplete(resId) then
+            -- 散装resId与Sub选项resId去重
+            if subResIdSet and subResIdSet[resId] then
+                XLog.Warning(stringFormat("[分包配置警告] 散装涂装resId=%d(fashionId=%d)与Sub选项resId重复，已从散装选项中去除", resId, fashionId))
+            elseif not outResIdDict[resId] then
+                outResIdDict[resId] = true
+                table.insert(outResIds, resId)
+            end
+        end
+    end
+end
+
+-- 暂停指定的resId列表（从下载队列移除）
+function XSubPackageAgency:PauseResListDownload(resIdList)
+    if XTool.IsTableEmpty(resIdList) then
+        return
+    end
+
+    local resIdSet = {}
+    for _, resId in ipairs(resIdList) do
+        resIdSet[resId] = true
+    end
+
+    -- 情况A：resId在等待队列中，每个resId只移除一个匹配项，保留Sub级入队的副本
+    local removedSet = {}
+    for i = #self._ResWaitDnLdQueue, 1, -1 do
+        local queueResId = self._ResWaitDnLdQueue[i]
+        if resIdSet[queueResId] and not removedSet[queueResId] then
+            local resItem = self._Model:GetResourceItem(queueResId)
+            if resItem then
+                resItem:Pause()
+            end
+            table.remove(self._ResWaitDnLdQueue, i)
+            removedSet[queueResId] = true
+        end
+    end
+
+    -- 情况B：resId正在被下载（_DownloadingResId），通过PauseById暂停C#下载
+    -- [修复] 不再立即resItem:Pause()，标记为"正在暂停"，等OnResDownloadRelease有序收尾
+    if resIdSet[self._DownloadingResId] and self._DownloadCenter then
+        self._DownloadCenter:PauseById(self._DownloadingResId)
+        self._PreparePauseResId = self._DownloadingResId
+        self._PendingResumeResId = nil -- 新的暂停请求清除之前的待恢复
+    end
+end
+
+--- 构建Sub选项涉及的resId集合（用于散装Res去重）
+---@param subIds table|nil 强Sub的subId列表
+---@param weakSubIds table|nil 弱Sub的subId列表
+---@return table<number, boolean> resId集合
+function XSubPackageAgency:_BuildSubResIdSet(subIds, weakSubIds)
+    local resIdSet = {}
+    local function collectFromSubIds(ids)
+        if XTool.IsTableEmpty(ids) then return end
+        for _, subId in ipairs(ids) do
+            local template = self._Model:GetSubpackageTemplate(subId)
+            if template and template.ResIds then
+                for _, resId in ipairs(template.ResIds) do
+                    resIdSet[resId] = true
+                end
+            end
+        end
+    end
+    collectFromSubIds(subIds)
+    collectFromSubIds(weakSubIds)
+    return resIdSet
+end
+
+--- 生成检测类型唯一key
+function XSubPackageAgency:_GenerateCheckTypeKey(enterType, params)
+    local paramsStr = params and table.concat(params, "_") or ""
+    return tostring(enterType) .. "_" .. paramsStr
+end
+
+--- 三层拦截决策：检查是否应该跳过弹窗
+---@param checkResult table CheckSubpackage组装的结果
+---@return boolean 是否跳过弹窗
+function XSubPackageAgency:_ShouldSkipPreviewPopup(checkResult)
+    -- 1. 有强选项内容，必须弹窗
+    if checkResult.hasStrong then
+        return false
+    end
+
+    -- 2. 走到这里说明只有弱选项有内容
+    local enterType = checkResult.enterType
+    local param = checkResult.param
+    local playerId = XPlayer.Id
+
+    -- 3. 检查是否所有弱选项都已升级为"版本忽略选项"
+    local allIgnored = true
+    local weakControlIds = self:_CollectWeakControlIds(checkResult)
+
+    if not XTool.IsTableEmpty(weakControlIds) then
+        for _, controlId in ipairs(weakControlIds) do
+            local config = self._Model:GetDownloadPreviewControlConfig(controlId)
+            if config and config.IgnoreInterput then
+                local cacheKey = "SubPackageIgnoreVersion_" .. playerId .. "_" .. tostring(enterType or "") .. "_" .. tostring(param or "") .. "_" .. controlId
+                if not XSaveTool.GetData(cacheKey) then
+                    allIgnored = false
+                    break
+                end
+            else
+                -- 该弱选项没有IgnoreInterput，不可能升级为版本忽略选项
+                allIgnored = false
+                break
+            end
+        end
+    end
+
+    if allIgnored and not XTool.IsTableEmpty(weakControlIds) then
+        return true  -- 永久跳过
+    end
+
+    -- 4. 本次登录第二次同类型Check，跳过
+    local checkTypeKey = self:_GenerateCheckTypeKey(enterType, {param})
+    local countThisLogin = self._CheckTypeCountThisLogin[checkTypeKey] or 0
+    if countThisLogin >= 1 then
+        return true
+    end
+
+    return false
+end
+
+--- 收集checkResult中所有弱选项对应的controlId
+---@param checkResult table
+---@return table controlId列表
+function XSubPackageAgency:_CollectWeakControlIds(checkResult)
+    local controlIds = {}
+    local controlIdSet = {}
+
+    -- 弱Sub选项：取Sub模式中Order第二小的行（选项2）
+    if not XTool.IsTableEmpty(checkResult.weakSubIds) then
+        local sortedConfigs = self._Model:GetSortedSubModeConfigs()
+        if #sortedConfigs >= 2 and not controlIdSet[sortedConfigs[2].Id] then
+            controlIdSet[sortedConfigs[2].Id] = true
+            table.insert(controlIds, sortedConfigs[2].Id)
+        end
+    end
+
+    -- 散装Res弱选项：通过ResType匹配
+    for _, extraOpt in ipairs(checkResult.extraResOptions or {}) do
+        if extraOpt.isWeak then
+            local controlId = self._Model:GetControlConfigByResType(extraOpt.resType)
+            if controlId and not controlIdSet[controlId] then
+                controlIdSet[controlId] = true
+                table.insert(controlIds, controlId)
+            end
+        end
+    end
+
+    return controlIds
+end
+
+--endregion
+
+--- [F5/F6辅助] 获取Sub的运行时流程状态
+---@return number XEnumConst.SUBPACKAGE.FLOW_STATE
+function XSubPackageAgency:GetSubpackageFlowState(subpackageId)
+    local FLOW = XEnumConst.SUBPACKAGE.FLOW_STATE
+    if self._DownloadPackageId == subpackageId then
+        return FLOW.ACTIVE
+    end
+    if self._PreparePauseSubpackageId == subpackageId then
+        return FLOW.PAUSING
+    end
+    for _, queueId in ipairs(self._SubpackageWaitDnLdQueue or {}) do
+        if queueId == subpackageId then
+            return FLOW.QUEUED
+        end
+    end
+    return FLOW.NONE
+end
+
+--- [F5/F6辅助] 检查Sub是否曾被用户激活（持久化标记）
+function XSubPackageAgency:IsSubpackageActivated(subpackageId)
+    return self._LaunchDlcManager.IsSubPackageActive(subpackageId)
+end
+
+--- [F9/F4修正] 检查Sub是否已完成过下载（持久化标记）
+function XSubPackageAgency:IsSubpackageFinished(subpackageId)
+    return self._LaunchDlcManager.IsSubPackageFinished(subpackageId)
+end
+
+--- [F8] 检查指定 Sub 或其下的 Res 是否有正在下载中的
+--- 用于 Main 卡片删除按钮的显隐判定（替代全局 IsDownloading）
+function XSubPackageAgency:IsSubOrResDownloading(subpackageId)
+    -- Sub级：正在下载 或 在等待队列中
+    if self._DownloadPackageId == subpackageId then return true end
+    for _, queueId in ipairs(self._SubpackageWaitDnLdQueue or {}) do
+        if queueId == subpackageId then return true end
+    end
+    -- Res级：只检查当前正在下载的 Res 是否属于该 sub（不依赖 Res 实体状态，避免暂停后残留误判）
+    if self._DownloadingResId then
+        local template = self._Model:GetSubpackageTemplate(subpackageId)
+        if template and template.ResIds then
+            for _, resId in ipairs(template.ResIds) do
+                if self._DownloadingResId == resId then return true end
+            end
+        end
+    end
+    return false
 end
 
 return XSubPackageAgency

@@ -1503,7 +1503,7 @@ local function AddSubPackageFunction()
     end)
 
     Panel:AddButton("卸载ResId", function()
-        XMVCA.XSubPackage:UninstallResourceById(ResId)
+        XMVCA.XSubPackage:UninstallResourcesByIds({ ResId })
     end)
 
     local SubPackageId

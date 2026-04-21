@@ -346,6 +346,16 @@ function XMainLine2Model:GetChapterEggIds(chapterId)
     return config and config.EggIds or {}
 end
 
+function XMainLine2Model:GetChapterBgSpineStageIndexs(chapterId)
+    local config = self:GetConfigChapter(chapterId)
+    return config and config.BgSpineStageIndexs or {}
+end
+
+function XMainLine2Model:GetChapterBgSpineProgressWans(chapterId)
+    local config = self:GetConfigChapter(chapterId)
+    return config and config.BgSpineProgressWans or {}
+end
+
 function XMainLine2Model:GetChapterSpineStageIndexs(chapterId)
     local config = self:GetConfigChapter(chapterId)
     return config and config.SpineStageIndexs or {}

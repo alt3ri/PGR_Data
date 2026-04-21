@@ -115,7 +115,16 @@ function XUiPanelWorldChatMyMsgEmoji:Refresh(chatData)
     end
 
     if icon ~= nil then
-        self.RImgEmoji:SetRawImage(icon)
+        local isDynamicEmoji = XDataCenter.ChatManager.IsDynamicEmoji(chatData.Content)
+        self.RImgEmoji.gameObject:SetActiveEx(not isDynamicEmoji)
+        self.ImgEmojiSprite.gameObject:SetActiveEx(isDynamicEmoji)
+        if isDynamicEmoji then
+            -- 刷新动态表情
+            self:RefreshDynamicFace(chatData)
+        else
+            -- 静态表情
+            self.RImgEmoji:SetRawImage(icon)
+        end
     end
     if medalIcon ~= nil then
         self.ImgMedalIcon:SetRawImage(medalIcon)
@@ -137,6 +146,29 @@ function XUiPanelWorldChatMyMsgEmoji:Refresh(chatData)
         --表情Ui翻转
         self.RImgEmoji.transform.localScale = self._PanelChatBoard._IsMirror and Vector3(-1, 1, 1) or Vector3(1, 1, 1)
     end
+end
+
+--刷新动态表情
+function XUiPanelWorldChatMyMsgEmoji:RefreshDynamicFace(chatData)
+    local emojiId = chatData.Content
+    if not self.dynamicFaceId then
+        self.dynamicFaceId = XDataCenter.ChatManager.CreateDynamicFace(self.ImgEmojiSprite, emojiId)
+    else
+        XDataCenter.ChatManager.SetDynamicFaceAtlas(self.dynamicFaceId, emojiId)
+    end
+end
+
+--释放动态表情
+function XUiPanelWorldChatMyMsgEmoji:ReleaseDynamicFace()
+    if self.dynamicFaceId then
+        XDataCenter.ChatManager.ReleaseDynamicFace(self.dynamicFaceId)
+        self.dynamicFaceId = nil
+    end
+end
+
+--重写父类释放
+function XUiPanelWorldChatMyMsgEmoji:OnRelease()
+    self:ReleaseDynamicFace()
 end
 
 return XUiPanelWorldChatMyMsgEmoji

@@ -257,13 +257,15 @@ function XPartnerSort.CarrySortFunction(partnerList, carrierId)
             return aRecommend
         end
 
-        if a:GetCharacterId() == carrierId or b:GetCharacterId() == carrierId then
-            return a:GetCharacterId() == carrierId
-        else
-            for index, sort in pairs(tmpSortList) do
-                if sort(a, b, orderList[index]) ~= nil then
-                    return sort(a, b, orderList[index])
-                end
+        local aCarry = a:GetCharacterId() == carrierId
+        local bCarry = b:GetCharacterId() == carrierId
+        if aCarry ~= bCarry then
+            return aCarry
+        end
+
+        for index, sort in pairs(tmpSortList) do
+            if sort(a, b, orderList[index]) ~= nil then
+                return sort(a, b, orderList[index])
             end
         end
 

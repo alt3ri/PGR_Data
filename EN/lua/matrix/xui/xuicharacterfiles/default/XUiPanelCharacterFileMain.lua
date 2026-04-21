@@ -1,6 +1,6 @@
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XUiPanelCharacterFileMainBase = require('XUi/XUiCharacterFiles/Base/XUiPanelCharacterFileMainBase')
-local XUiPanelCharacter = require("XUi/XUiCharacterFiles/XUiPanelCharacter")
+local XUiPanelCharacterFileMainCharacter = require("XUi/XUiCharacterFiles/Default/XUiPanelCharacterFileMainCharacter")
 --- 试玩角色主界面的实际控制代码默认版本
 --- 后续若有增量功能可直接在这里加。如果要改结构建议派生解决
 ---@class XUiPanelCharacterFileMain: XUiPanelCharacterFileMainBase
@@ -15,9 +15,8 @@ function XUiPanelCharacterFileMain:OnStart(cfg)
     self:InitButtons()
     self:InitReddot()
     if self.PanelCharacter then
-        self.PanelCharacterNode = XUiPanelCharacter.New(self.PanelCharacter, self.Parent)
+        self.PanelCharacterNode = XUiPanelCharacterFileMainCharacter.New(self.PanelCharacter, self)
         self.PanelCharacterNode:SetCharacterId(self.ActivityCfg.CharacterId)
-        self.PanelCharacterNode:SetClickEnable(false)
     end
 
     self._StartRun = true

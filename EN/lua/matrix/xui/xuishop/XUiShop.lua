@@ -387,20 +387,14 @@ function XUiShop:UpdateTog()
                 table.insert(self.BtnGoList, uiButton)
                 -- key 与当前 info.Id 绑定
                 self.ShopIndex2IdDic[#self.BtnGoList] = info.Id
-                if not XTool.IsTableEmpty(info.ShopBtnRedPointConditions) then
+                local shopDetail = XShopConfigs.GetShopDetailById(info.Id)
+                if shopDetail and not XTool.IsTableEmpty(shopDetail.ShopBtnRedPointConditions) then
+                    local redPointArgs = { Id = info.Id, IsNeedFirstBluePoint = shopDetail.IsNeedFirstBluePoint }
                     self:AddRedPointEvent(uiButton, function(_, count) uiButton:ShowReddot(count >= 0) end, self,
-                        info.ShopBtnRedPointConditions, info)
+                        shopDetail.ShopBtnRedPointConditions, redPointArgs)
                 end
                 self.TagBtnShopGroup[uiButton] = info
                 btn.gameObject.name = info.Id
-
-                local isShowTag = XShopManager.CheckShopActivityPeriod(info.Id)
-                uiButton:ShowTag(isShowTag)
-                local tagObj = uiButton.TagObj
-                if not XTool.UObjIsNil(tagObj) then
-                    local txObjg = tagObj:FindTransform("TxtTag")
-                    txObjg:GetComponent("Text").text = XUiHelper.GetText("UiShopBtnActivityTagName")
-                end
             end
         end
 

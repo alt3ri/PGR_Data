@@ -7,6 +7,8 @@ local TableKey = {
     FashionSuitClientConfig = { CacheType = XConfigUtil.CacheType.Normal, DirPath = XConfigUtil.DirectoryType.Client, ReadFunc = XConfigUtil.ReadType.String },
     FashionGroup = { CacheType = XConfigUtil.CacheType.Normal }, --涂装组（角色涂装+武器涂装）
     FashionGroupAuto = { DirPath = XConfigUtil.DirectoryType.Client, CacheType = XConfigUtil.CacheType.Normal, Identifier = "FashionId" }, --key:角色涂装/武器涂装 value:FashionGroup表Id
+
+    FashionSuitUiConfig = { DirPath = XConfigUtil.DirectoryType.Client}
 }
 
 function XFashionSuitModel:OnInit()
@@ -110,11 +112,11 @@ function XFashionSuitModel:IsAllowGroupSales(fashionId)
         return false
     end
     if config.GainType == XEnumConst.FashionSuit.GainType.Shop then
-        if not self:CheckGoodsValid(config.FashionGainParams[1], config.FashionGainParams[2]) then
+        if not isHaveFashion and not self:CheckGoodsValid(config.FashionGainParams[1], config.FashionGainParams[2]) then
             --角色涂装商品无效
             return false
         end
-        if not self:CheckGoodsValid(config.WeaponFashionGainParams[1], config.WeaponFashionGainParams[2]) then
+        if not isHaveWeaponFashion and not self:CheckGoodsValid(config.WeaponFashionGainParams[1], config.WeaponFashionGainParams[2]) then
             --武器涂装商品无效
             return false
         end
@@ -143,7 +145,7 @@ function XFashionSuitModel:CheckGoodsValid(shopId, goodsId)
         return false
     end
     local selloutTime = data.SelloutTime
-    if selloutTime and selloutTime > 0 and ShopManager.GetLeftTime(selloutTime) <= 0 then
+    if selloutTime and selloutTime > 0 and XShopManager.GetLeftTime(selloutTime) <= 0 then
         --涂装商品已下架
         return false
     end
@@ -195,6 +197,13 @@ function XFashionSuitModel:SetFashionSuitData(data)
     end
 end
 
+function XFashionSuitModel:SaveData(data)
+    self._SaveUtil:SaveData("NoticeFashionSuitIds", data)
+end
+
+function XFashionSuitModel:GetData()
+    return self._SaveUtil:GetData("NoticeFashionSuitIds") or {}
+end
 
 ----------private end----------
 
@@ -213,6 +222,11 @@ end
 ---@return XTableFashionSuitNotice[]
 function XFashionSuitModel:GetFashionSuitNoticeConfigs()
     return self._ConfigUtil:GetByTableKey(TableKey.FashionSuitNotice)
+end
+
+---@return XTableFashionSuitNotice
+function XFashionSuitModel:GetFashionSuitNoticeConfigById(id)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.FashionSuitNotice, id)
 end
 
 ---@return XTableFashionSuitClientConfig
@@ -234,6 +248,11 @@ function XFashionSuitModel:GetGroupIdByFashion(fashionId)
     ---@type XTableFashionGroupAuto
     local cfg = self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.FashionGroupAuto, fashionId, true)
     return cfg and cfg.GroupId
+end
+
+---@return XTableFashionSuitUiConfig
+function XFashionSuitModel:GetFashionSuitUiConfigById(id)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.FashionSuitUiConfig, id)
 end
 
 ----------config end----------

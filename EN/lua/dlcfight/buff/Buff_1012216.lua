@@ -20,7 +20,7 @@ function XBuffScript1012216:Update(dt)
         local biaoji5 =  self._proxy:CheckBuffByKind(self._uuid, 1016415)
         if biaoji1 == true  or biaoji2 == true or biaoji3 == true or biaoji4 == true or biaoji5 == true  then  -- 拥有任意标记buff时
             self.kaiguan1 = false
-            self._proxy:ApplyMagic(self._uuid, self._uuid, 1012319, 1) --旧buff删除
+            self._proxy:ApplyMagic(self._uuid, self._uuid, 1012219, 1) --旧buff删除
         end
     end
 

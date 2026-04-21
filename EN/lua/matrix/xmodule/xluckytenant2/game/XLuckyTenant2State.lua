@@ -7,7 +7,6 @@ local XLuckyTenant2State = XClass(nil, "XLuckyTenant2State")
 ---@param skillId number 状态绑定的技能id
 ---@param remainRounds number 剩余回合数（可选）
 function XLuckyTenant2State:Ctor(stateType, skillId, remainRounds)
-    XMVCA.XLuckyTenant2:Print("[XLuckyTenant2State] SetRemainRounds", self._SkillId, remainRounds)
     self._StateType = stateType
     self._SkillId = skillId
     self._RemainRounds = remainRounds or 0
@@ -31,7 +30,6 @@ function XLuckyTenant2State:GetRemainRounds()
 end
 
 function XLuckyTenant2State:SetRemainRounds(rounds)
-    XMVCA.XLuckyTenant2:Print("[XLuckyTenant2State] SetRemainRounds", self._SkillId, rounds)
     self._RemainRounds = rounds
 end
 
@@ -62,20 +60,6 @@ end
 
 function XLuckyTenant2State:IsPaused()
     return self._IsPaused
-end
-
----@return string 状态名称
-function XLuckyTenant2State:GetStateName()
-    local stateNames = {
-        [XLuckyTenant2Enum.TriggerState.Infection] = "感染",
-        [XLuckyTenant2Enum.TriggerState.Revive] = "复活",
-        [XLuckyTenant2Enum.TriggerState.Death] = "死亡",
-        [XLuckyTenant2Enum.TriggerState.Immortal] = "不死",
-        [XLuckyTenant2Enum.TriggerState.Upgrade] = "升级",
-        [XLuckyTenant2Enum.TriggerState.Eliminated] = "被消除",
-        [XLuckyTenant2Enum.TriggerState.Fission] = "裂变",
-    }
-    return stateNames[self._StateType] or "未知状态"
 end
 
 return XLuckyTenant2State

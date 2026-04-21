@@ -69,7 +69,7 @@ function XLuckyTenant2Model:GetStages()
     local result = {}
     local stages = self:GetLuckyTenant2StageConfigs()
     for id, stage in pairs(stages) do
-        if stage.ActivityId == activityId or XMVCA.XLuckyTenant2:IsOffline() then
+        if stage.ActivityId == activityId then
             result[#result + 1] = stage
         end
     end
@@ -111,7 +111,6 @@ function XLuckyTenant2Model:GetRoundsToNormalClear(stageId)
             return stage.Round, stage.Score
         end
     end
-    XMVCA.XLuckyTenant2:Print("[XLuckyTenant2Model] stage表没有配置NormalClear", tostring(stageId))
     return 0, 0
 end
 
@@ -129,7 +128,6 @@ function XLuckyTenant2Model:GetRoundsToPerfectClear(stageId)
             return stage.Round, stage.Score
         end
     end
-    XMVCA.XLuckyTenant2:Print("[XLuckyTenant2Model] stage表没有配置PerfectClear", tostring(stageId))
     if stageQuests[#stageQuests] then
         return stageQuests[#stageQuests].Round, 0
     end
@@ -161,7 +159,7 @@ end
 function XLuckyTenant2Model:IsStagePassed(stageId)
     local record = self:GetStageRecord(stageId)
     if record then
-        if record.IsNormalClear then
+        if record.IsNormalClear or record.IsPerfectClear then
             return true
         end
     end
@@ -185,18 +183,10 @@ end
 
 function XLuckyTenant2Model:SetStageRecord(record)
     if not record or not record.StageId then
-        XMVCA.XLuckyTenant2:Print("[XLuckyTenant2Model] SetStageRecord: record or StageId is nil")
         return
     end
     self._StageRecord = self._StageRecord or {}
     self._StageRecord[record.StageId] = record
-end
-
-function XLuckyTenant2Model:DebugClearStageRecord(stageId)
-    if self._StageRecord then
-        self._StageRecord[stageId] = nil
-        XMVCA.XLuckyTenant2:Print("删除本地记录成功:" .. tostring(stageId))
-    end
 end
 
 function XLuckyTenant2Model:SetPlayingStageId(value)
@@ -214,7 +204,6 @@ end
 
 function XLuckyTenant2Model:OnStagePassed(recordNew)
     if not recordNew or not recordNew.StageId then
-        XMVCA.XLuckyTenant2:Print("[XLuckyTenant2Model] OnStagePassed: recordNew or StageId is nil")
         return
     end
     local record = self:GetStageRecord(recordNew.StageId)

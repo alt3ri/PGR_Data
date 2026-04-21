@@ -71,6 +71,8 @@ function XUiDlcMultiPlayerCompetition:Refresh()
         --展示期
         self:RefreshShow(discussion)
         self:_CheckGetReward()
+    else
+        self:Close()
     end
 
     -- 弹幕

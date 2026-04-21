@@ -43,6 +43,10 @@ function XUiBountyChallengeBattleRoleRoom:AOPOnStartAfter(ui)
         ui.PanelTeamLeader.gameObject:SetActiveEx(false)
         ui.BtnLeader.gameObject:SetActiveEx(false)
     end
+
+    if not self:CheckIsEnableGeneralSkillSelection() then
+        ui.Team:UpdateSelectGeneralSkill(0)
+    end
 end
 
 ---@param ui XUiBattleRoleRoom
@@ -135,6 +139,18 @@ end
 
 function XUiBountyChallengeBattleRoleRoom:CheckShowAnimationSet()
     return XMVCA.XBountyChallenge:GetCharacterCanSelectAmount() > 1
+end
+
+function XUiBountyChallengeBattleRoleRoom:CheckIsEnableGeneralSkillSelection()
+    local bossId, difficulty = XMVCA.XBountyChallenge:GetCurrentBossIdAndDifficulty()
+    if not bossId or not difficulty then
+        return true
+    end
+    local difficultyConfig = XMVCA.XBountyChallenge:GetDifficultyConfigByBossAndLevel(bossId, difficulty)
+    if difficultyConfig and difficultyConfig.IsCloseGeneral then
+        return false
+    end
+    return true
 end
 
 -- 进入战斗

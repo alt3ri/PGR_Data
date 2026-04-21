@@ -48,7 +48,7 @@ XPayManagerCreator = function()
     function XPayManager.Pay(productKey)
         if XUserManager.HasLoginError() then
             -- 临时兼容sdk会回调多次登陆成功的问题
-            XUiManager.SystemDialogTip(CS.XTextManager.GetText("TipTitle"), "账号信息过期，请重新登陆", XUiManager.DialogType.OnlySure, nil, function()
+            XUiManager.SystemDialogTip(CS.XTextManager.GetText("TipTitle"), CS.XTextManager.GetText("PayWithLoginErrorTips"), XUiManager.DialogType.OnlySure, nil, function()
                 XUserManager.ClearLoginData()
             end)
             return

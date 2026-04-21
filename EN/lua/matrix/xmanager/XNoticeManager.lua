@@ -3,6 +3,7 @@ local tableInsert = table.insert
 XNoticeManagerCreator = function()
     local Json = require("XCommon/Json")
     local pcall = pcall
+    ---@class XNoticeManager
     local XNoticeManager = {}
 
     local NoticePicList = {}
@@ -52,6 +53,19 @@ XNoticeManagerCreator = function()
     local TextNoticeHideCache = {}
     local TextNoticeHideCacheKey = "_TextNotice"
 
+    ---@type XPopUpPicNotice
+    local NowPopUpPicNotice
+    -- 每次登录类型的展示记录（本次登录有效）
+    local PopUpPicShownPerLogin = {}
+    -- 拍脸图弹出队列与当前索引
+    local PopUpPicQueue = {}
+    local PopUpPicQueueIndex = 0
+    -- 拍脸图弹出时机枚举（对应 XPopUpPicNoticeContent.AppearanceType）
+    local PopUpPicAppearanceType = {
+        EachLogin = 1, -- 每次登录弹出
+        EachDay = 2, -- 每天首次登录弹出
+    }
+
     local LoginNoticAutoOpenKey = "_LoginNoticeNotOpenKey"
     ------------------------------------------------------
     local NoticeRequestTimer = nil
@@ -74,6 +88,8 @@ XNoticeManagerCreator = function()
         Login = 3,
         -- 主界面二级菜单
         SubMenu = 4,
+        -- 拍脸图公告
+        PopUpPic = 5,
     }
     
     XNoticeManager.NoticeType = XNoticeType
@@ -84,7 +100,7 @@ XNoticeManagerCreator = function()
         Activity = 0,
         --游戏
         Game = 1,
-         --外部链接
+        --外部链接
         Link = 2
     }
 
@@ -97,6 +113,7 @@ XNoticeManagerCreator = function()
         [XNoticeType.InGame] = 120,
         -- [XNoticeType.Login] = 0, Login公告有独立的处理逻辑，不应该在定时器中请求
         [XNoticeType.SubMenu] = 120,
+        [XNoticeType.PopUpPic] = 120,
     }
 
     local LastRequestTime = {
@@ -104,6 +121,7 @@ XNoticeManagerCreator = function()
         [XNoticeType.ScrollPic] = 0,
         [XNoticeType.InGame] = 0,
         [XNoticeType.SubMenu] = 0,
+        [XNoticeType.PopUpPic] = 0,
     }
 
     local NoticeRequestHandler = {
@@ -118,6 +136,9 @@ XNoticeManagerCreator = function()
         end,
         [XNoticeType.SubMenu] = function(notice)
             XNoticeManager.HandleRequestSubMenuNotice(notice)
+        end,
+        [XNoticeType.PopUpPic] = function(notice)
+            XNoticeManager.HandleRequestPopUpPicNotice(notice)
         end,
     }
 
@@ -134,6 +155,9 @@ XNoticeManagerCreator = function()
         [XNoticeType.SubMenu] = function()
             XNoticeManager.HandleRequestSubMenuNotice()
         end,
+        [XNoticeType.PopUpPic] = function()
+            XNoticeManager.HandleRequestPopUpPicNotice()
+        end,
     }
 
     local IsCheckOutDateClear
@@ -145,6 +169,7 @@ XNoticeManagerCreator = function()
         [XNoticeType.InGame] = "GameNotice.json",
         [XNoticeType.Login] = "LoginNotice.json",
         [XNoticeType.SubMenu] = "SecondMenuNotice.json",
+        [XNoticeType.PopUpPic] = "PopUpPicNotice.json",
     }
 
     function XNoticeManager.GetNoticeUrl(noticeType)
@@ -1364,6 +1389,11 @@ XNoticeManagerCreator = function()
                 return false
             end
 
+            -- 云游戏不弹出登录公告
+            if XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.CloudGame then
+                return false
+            end
+
             XLuaUiManager.Open("UiLoginNotice", LoginNotice, true)
             XNoticeManager.RefreshLoginNoticeTime()
             return true
@@ -1382,6 +1412,11 @@ XNoticeManagerCreator = function()
     end
 
     function XNoticeManager.OpenLoginNotice()
+        -- 云游戏不弹出登录公告
+        if XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.CloudGame then
+            return
+        end
+
         if not LoginNotice then
             XNoticeManager.RequestLoginNotice(function(isValid)
                 if isValid then
@@ -1449,6 +1484,170 @@ XNoticeManagerCreator = function()
     end
 
     ----------------------------------------login end----------------------------------------
+    --region 拍脸图公告
+
+    ---@class XPopUpPicNotice 公告中用于拍脸图的Content结构
+    ---@field ModifyTime number 公告修改时间
+    ---@field Id string 公告Id
+    ---@field LoginPlatformList number[] 登录平台列表，平台：0-桌面端  1-安卓端  2-苹果端
+    ---@field PkgInfoList string[] 字段不存在或为空数组，则对所有pkgId可见，反之需要包含具体pkgId才可见
+    ---@field ChannelInfoList number[] 字段不存在或为空数组，则对所有channelId可见，反之需要包含具体channelId才可见
+    ---@field Content XPopUpPicNoticeContent[] 公告内容，数组顺序即为图片显示的先后顺序
+
+    ---@class XPopUpPicNoticeContent 公告内容
+    ---@field Id number
+    ---@field PicType string
+    ---@field PicAddr string 图片链接
+    ---@field JumpType string 跳转类型：1-网页链接；2-游戏链接
+    ---@field JumpAddr string 链接地址（外链或游戏链接）
+    ---@field BeginTime number 开始时间（秒）
+    ---@field EndTime number 结束时间（秒）
+    ---@field AppearanceType number 弹出时机:1-每次登录;2-每天首次登录
+    ---@field AppearanceDay number[] 星期几显示，1~7分别代表周一到周日
+    ---@field AppearanceTime number[] 当天哪个时间段显示，二维数组：外层为有几个时间段，内层（数组长度为2）为开始时间（当天的秒数）和结束时间（当天的秒数）
+    ---@field AppearanceCondition number[] 出现条件（同时满足才出现）
+    ---@field DisappearanceCondition number[] 消失条件（满足任意一个就消失）
+    ---@field WhiteLists string[] 白名单IP，字段不存在则不需要判断；字段为空数组，即对所有人都不可见；字段不为空数组，则包含的IP可见
+    ---@field DeviceLists string[] 白名单设备ID，判断规则与白名单IP类似。并且满足白名单IP或白名单设备ID任意一个，即对该玩家可见
+
+    ---处理拍脸图公告请求结果，更新当前拍脸图公告数据
+    function XNoticeManager.HandleRequestPopUpPicNotice(notice)
+        if not notice then
+            NowPopUpPicNotice = nil
+            return
+        end
+
+        if NowPopUpPicNotice and NowPopUpPicNotice.Id == notice.Id and NowPopUpPicNotice.ModifyTime == notice.ModifyTime then
+            return
+        end
+
+        if not XNoticeManager.CheckNoticeValid(notice) then
+            NowPopUpPicNotice = nil
+            return
+        end
+
+        NowPopUpPicNotice = notice
+    end
+
+    --- 获取单条拍脸图内容的唯一标识，用于记录展示状态等
+    ---@param content XPopUpPicNoticeContent
+    ---@return string
+    function XNoticeManager.GetPopUpPicContentKey(content)
+        local noticeId = NowPopUpPicNotice and NowPopUpPicNotice.Id or ""
+        local modifyTime = NowPopUpPicNotice and NowPopUpPicNotice.ModifyTime or ""
+        return string.format("PopUpPic_%s_%s_%s", noticeId, modifyTime, content.Id or "")
+    end
+
+    --- 获取单条拍脸图内容每天展示的唯一标识，包含玩家ID和当天日期，用于记录每天展示状态
+    ---@param contentKey string
+    ---@return string
+    function XNoticeManager.GetPopUpPicDailyKey(contentKey)
+        local dayZero = XTime.GetTodayTime(0, 0, 0)
+        return string.format("PopUpPicDaily_%s_%s_%s", XPlayer.Id, dayZero, contentKey)
+    end
+
+    --- 检查单条拍脸图内容是否需要展示
+    ---@param content XPopUpPicNoticeContent
+    ---@return boolean
+    function XNoticeManager.CheckPopUpPicAppearance(content)
+        local appearanceType = content.AppearanceType or PopUpPicAppearanceType.EachLogin
+        local contentKey = XNoticeManager.GetPopUpPicContentKey(content)
+
+        if appearanceType == PopUpPicAppearanceType.EachLogin then
+            return not PopUpPicShownPerLogin[contentKey]
+        elseif appearanceType == PopUpPicAppearanceType.EachDay then
+            local dailyKey = XNoticeManager.GetPopUpPicDailyKey(contentKey)
+            return not XSaveTool.GetData(dailyKey)
+        end
+        -- 未知类型默认展示
+        return true
+    end
+
+    --- 标记单条拍脸图内容已展示
+    ---@param content XPopUpPicNoticeContent
+    function XNoticeManager.MarkPopUpPicAppearanceShown(content)
+        local appearanceType = content.AppearanceType or PopUpPicAppearanceType.EachLogin
+        local contentKey = XNoticeManager.GetPopUpPicContentKey(content)
+
+        if appearanceType == PopUpPicAppearanceType.EachLogin then
+            PopUpPicShownPerLogin[contentKey] = true
+        elseif appearanceType == PopUpPicAppearanceType.EachDay then
+            local dailyKey = XNoticeManager.GetPopUpPicDailyKey(contentKey)
+            XSaveTool.SaveData(dailyKey, true)
+        end
+    end
+
+    ---获取当前有效的拍脸图公告内容列表（保持数组顺序）
+    ---@return table|nil
+    function XNoticeManager.GetPopUpPicContentList()
+        XNoticeManager.RequestNoticeByType(XNoticeType.PopUpPic, true)
+        if not NowPopUpPicNotice or not NowPopUpPicNotice.Content then
+            return nil
+        end
+
+        local now = XTime.GetServerNowTimestamp()
+        local contentList = {}
+        for _, v in ipairs(NowPopUpPicNotice.Content) do
+            if XNoticeManager.CheckNoticeContentValid(v, now) and XNoticeManager.CheckPopUpPicAppearance(v) then
+                tableInsert(contentList, v)
+            end
+        end
+
+        return contentList
+    end
+
+    ---自动弹出拍脸图公告
+    ---在OnFunctionEventValueChange中CheckAutoWindow之后调用
+    ---@return boolean 是否弹出了拍脸图
+    function XNoticeManager.AutoOpenPopUpPicNotice()
+        local contentList = XNoticeManager.GetPopUpPicContentList()
+        if XTool.IsTableEmpty(contentList) then
+            return false
+        end
+
+        -- 保存队列，逐个弹出
+        PopUpPicQueue = contentList
+        PopUpPicQueueIndex = 1
+
+        local content = PopUpPicQueue[PopUpPicQueueIndex]
+        XNoticeManager.MarkPopUpPicAppearanceShown(content)
+        XLuaUiManager.Open("UiAutoWindowNotice", content)
+        return true
+    end
+
+    ---展示下一个拍脸图公告，如果队列中还有则继续弹出，否则触发结束事件
+    ---@return boolean 是否继续弹出下一个拍脸图
+    function XNoticeManager.ShowNextPopUpPicNotice()
+        if XTool.IsTableEmpty(PopUpPicQueue) then
+            return false
+        end
+
+        local now = XTime.GetServerNowTimestamp()
+        for i = PopUpPicQueueIndex + 1, #PopUpPicQueue do
+            local content = PopUpPicQueue[i]
+            -- 重新校验有效性，跳过已过期或不符合条件的内容
+            if XNoticeManager.CheckNoticeContentValid(content, now) then
+                PopUpPicQueueIndex = i
+                XNoticeManager.MarkPopUpPicAppearanceShown(content)
+                XLuaUiManager.Open("UiAutoWindowNotice", content)
+                return true
+            end
+        end
+
+        -- 全部展示完毕或剩余内容均已失效，清理队列
+        PopUpPicQueue = {}
+        PopUpPicQueueIndex = 0
+        XEventManager.DispatchEvent(XEventId.EVENT_AUTO_WINDOW_END)
+        return false
+    end
+
+    ---停止拍脸图公告弹出，清理队列并触发结束事件
+    function XNoticeManager.StopPopUpPicNotice()
+        PopUpPicQueue = {}
+        PopUpPicQueueIndex = 0
+        XEventManager.DispatchEvent(XEventId.EVENT_AUTO_WINDOW_STOP)
+    end
+    --endregion
     --region   ------------------游戏公告 start-------------------
 
     ---@desc 打开公告界面，公告类型可能为空，只要有公告就打开界面
@@ -1660,6 +1859,7 @@ XNoticeManagerCreator = function()
             end
 
             local fileName = XNoticeManager.GetImgNameByUrl(url)
+            fileName = XTool.GetFileNameWithoutExtension(fileName)
             CS.XTool.SaveNoticeImg(fileName, texture)
 
             NoticePicList[url] = texture
@@ -2071,6 +2271,10 @@ XNoticeManagerCreator = function()
         _SyncQueue = {}
         _HasSyncedGameNoticeToServer = false
         _HasCleanedOnFirstRequest = false
+        NowPopUpPicNotice = nil
+        PopUpPicShownPerLogin = {}
+        PopUpPicQueue = {}
+        PopUpPicQueueIndex = 0
 
         for _, v in pairs(NoticePicList) do
             if v and v:Exist() then
@@ -2095,7 +2299,8 @@ XNoticeManagerCreator = function()
     end
 
     function XNoticeManager.HandleKRPCNotice(data)
-        if  XDataCenter.UiPcManager.IsPc() then
+        if XDataCenter.UiPcManager.GetUiPcMode() ~= XDataCenter.UiPcManager.XUiPcMode.Pc then
+            XLog.Error("not pc return")
             return
         end
         -- 延迟时间
@@ -2132,4 +2337,4 @@ XNoticeManagerCreator = function()
 
     XNoticeManager.Init()
     return XNoticeManager
-end
+end

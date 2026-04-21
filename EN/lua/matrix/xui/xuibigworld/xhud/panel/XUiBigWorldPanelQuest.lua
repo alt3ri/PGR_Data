@@ -395,6 +395,9 @@ function XUiBigWorldPanelQuest:OnBtnTrackClick()
     if not self.BtnTrack.gameObject.activeInHierarchy then
         return
     end
+    if XMVCA.XBigWorldQuest:CheckQuestFinish(self._DisplayQuestId) then
+        return
+    end
     self._OperateBehavior:Clear()
     self._ActionContainer:Clear()
     XMVCA.XBigWorldQuest:TrackQuest(self._DisplayQuestId, self._OnTrackFinishListener)

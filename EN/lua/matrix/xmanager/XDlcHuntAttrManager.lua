@@ -44,10 +44,13 @@ XDlcHuntAttrManagerCreator = function()
     }
 
     local function ToXAttrib(attrTable)
-        local result = {}
+        local attribCount = 0
+        local attribValues = {}
         for attrStr, attrId in pairs(XDlcNpcAttribType) do
-            result[attrId + 1] = 0
+            attribValues[attrId] = 0
+            attribCount = attribCount + 1
         end
+        local attribs = XAttrib.CreateArray(attribCount)
         for attrStr, attrValue in pairs(attrTable) do
             if attrValue then
                 local attrId = XDlcNpcAttribType[attrStr]
@@ -61,27 +64,27 @@ XDlcHuntAttrManagerCreator = function()
                         attrId == XDlcNpcAttribType.WalkSpeedCOE or attrId == XDlcNpcAttribType.SprintSpeed or
                         attrId == XDlcNpcAttribType.SprintSpeedCOE
                     then
-                        result[attrId + 1] = attrValue * 1000
+                        attribValues[attrId] = attrValue * 1000
                     else
-                        result[attrId + 1] = attrValue
+                        attribValues[attrId] = attrValue
                     end
                 end
             end
         end
-        for attrId, attrValue in pairs(result) do
+        for attrId, attrValue in pairs(attribValues) do
             local allowNegative = true
             if AttrNonnegative[attrId] then
                 allowNegative = false
             end
             -- 必须取整，因为XAttrib.Value为int
             attrValue = math.floor(attrValue + 0.5)
-            result[attrId] = XAttrib.Ctor(attrValue, allowNegative)
+            XAttrib.CtorToArray(attribs, attrId, attrValue, allowNegative)
         end
 
         --- 特殊处理 先保留例子
         -- xAttribs[RunSpeedIndex]:SetBase(FixToInt(attribs[RunSpeedIndex] * fix.thousand / FPS_FIX))
 
-        return result
+        return attribs
     end
 
     function XDlcHuntAttrManager.GetNpcBaseAttrib(npcTemplateId)

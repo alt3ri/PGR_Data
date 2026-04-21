@@ -34,7 +34,9 @@ function XUiPanelFashionSuitShop:SetGroupGoodsData()
         local shopId = params[1]
         if XShopManager.IsShopOpen(shopId) then
             local data = XShopManager.GetShopGoodsInfo(shopId, params[2])
-            self._GoodsDataDict[data] = shopId
+            if data then
+                self._GoodsDataDict[data] = shopId
+            end
         end
     end
 end
@@ -90,7 +92,7 @@ function XUiPanelFashionSuitShop:ShowGoodsDiscount()
         if gameTime > 0 then
             local leftTimeStr = XUiHelper.GetText("FashionSuitDiscountActivityTip",
                 XUiHelper.GetTime(gameTime, XUiHelper.TimeFormatType.ACTIVITY))
-            self:SetDiscountCountDown(leftTimeStr)
+            self._Parent:SetDiscountCountDown(leftTimeStr)
         end
     end
 end
@@ -143,6 +145,9 @@ end
 --region V4.2商店打折
 
 function XUiPanelFashionSuitShop:GetDiscountActivityIsOpen(shopId, goodsData)
+    if not goodsData then
+        return
+    end
     self.ActivityOpen, self.NeedCount = XMVCA.XFashionSuit:GetDiscountActivityIsOpen(shopId, goodsData)
     if self.ActivityOpen and goodsData.ActivityConsumeCount == 0 then
         XShopManager.GetShopInfo(shopId, function()

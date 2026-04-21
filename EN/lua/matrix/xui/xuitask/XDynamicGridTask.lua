@@ -95,7 +95,7 @@ function XDynamicGridTask:ResetData(data)
                 panel = XUiGridCommon.New(self.RootUi, self.GridCommon)
             else
                 local ui = CS.UnityEngine.Object.Instantiate(self.GridCommon)
-                ui.transform:SetParent(self.GridCommon.parent, false)
+                ui.transform:SetParent(self.GridCommon.transform.parent, false)
                 panel = XUiGridCommon.New(self.RootUi, ui)
             end
             

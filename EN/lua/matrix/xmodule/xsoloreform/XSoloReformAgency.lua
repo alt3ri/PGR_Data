@@ -67,21 +67,26 @@ function XSoloReformAgency:GetTeam(chapterId)
 end
 
 function XSoloReformAgency:SettleFight(result)
+    if XMVCA.XFuben:GetFubenSettling() then
+        --有副本正在结算中
+        XLog.Warning("XSoloReformAgency:SettleFight Warning, fuben is settling!")
+        return
+    end
+    self:DebugLog("fight settle start")
+    XMVCA.XFuben:SetCurFightResult(result:GetFightResult())
     local settleData = result and result.Data
     if settleData then
+        self:DebugLog("get settleData success")
         local stageId = settleData.StageId
         local stageType = self._Model:GetSoloReformStageCfg(stageId).StageType
         if stageType == 0 or not settleData.IsWin then
             XMVCA.XFuben:SettleFight(result)
             return
         end
-
+        self:DebugLog("stageType is kill stage")
         XMVCA.XFuben:StatisticsFightResultDps(result)
         XMVCA.XFuben:SetFubenSettling(true) --正在结算
         local fightResBytes = result:GetFightsResultsBytes()
-
-        XMVCA.XFuben:SetCurFightResult(result:GetFightResult())
-
         XNetwork.Call("FightSettleRequest", fightResBytes, function(res)
             local soloReformSettleResult = res.Settle.SoloReformSettleResult
             local passTime = soloReformSettleResult and soloReformSettleResult.PassTime or 0
@@ -92,6 +97,7 @@ function XSoloReformAgency:SettleFight(result)
                 Score = score,
                 ScoreDetail = scoreDetail
             }
+            self:DebugLog("open kill settlement ui")
             XLuaUiManager.Open("UiSoloReformKillSettlement", stageId, passTime, isNew, scoreparams, function()
                 --战斗结算清除数据的判断依据
                 XMVCA.XFuben:SetFubenSettleResult(res)
@@ -166,9 +172,11 @@ function XSoloReformAgency:ShowReward(data)
             if stageType == 0 then
                 XLuaUiManager.Open("UiSoloReformSettlement", stageId, passTime, isNew)
             else
-                CS.XFight.ExitForClient(true)--胜利结算退出战斗
+                self:DebugLog("exit fight for client")
+                CS.XFight.ExitForClient(true) --胜利结算退出战斗
             end
         else
+            self:DebugLog("exit fight")
             XMVCA.XFuben:ExitFight()
         end
     end
@@ -310,5 +318,12 @@ function XSoloReformAgency:OnRelease()
     self._CurEnterChapterId = nil
     self._TeamDic = nil
 end
+
+--region 调试日志
+function XSoloReformAgency:DebugLog(log)
+    print("[XSoloReformAgency] " .. log)
+end
+
+--endregion
 
 return XSoloReformAgency

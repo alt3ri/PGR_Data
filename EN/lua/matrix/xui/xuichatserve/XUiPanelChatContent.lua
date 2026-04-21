@@ -164,6 +164,10 @@ end
 
 function XUiPanelChatContent:ScrollCallBack()
     self.RootUi:SetBtnReportActive(false)
+
+    if self.RootUi.BubbleCopy then
+        self.RootUi.BubbleCopy:Close()
+    end
 end
 
 return XUiPanelChatContent

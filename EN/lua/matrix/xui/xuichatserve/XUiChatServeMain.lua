@@ -25,6 +25,14 @@ local XUiGridChatChannelItem = require("XUi/XUiChatServe/Item/XUiGridChatChannel
 
 local ChatRoomChannelNotOpen = CS.XTextManager.GetText("ChatRoomChannelNotOpen")
 local IsMessageTipShow = false
+
+function XUiChatServeMain:OnGetLuaEvents()
+    return {
+        XEventId.EVENT_CHAT_MSG_COPY_SHOW,
+    }
+end
+
+
 function XUiChatServeMain:OnAwake()
     self:InitAutoScript()
     self.BtnRoom.CallBack = function() self:OnBtnRoomClick() end
@@ -40,6 +48,11 @@ function XUiChatServeMain:OnAwake()
     if self.BtnSettings then
         self.BtnSettings.CallBack = function() XLuaUiManager.Open('UiPlayerPersonalizedSetting', XHeadPortraitConfigs.HeadType.ChatBoard) end
         self.BtnSettings:ShowReddot(XDataCenter.ChatManager.CheckHasNewChatBoard())
+    end
+
+    if self.PanelCopyRoot then
+        self.PanelCopyRoot.gameObject:SetActiveEx(false)
+        self.BubbleCopy = require('XUi/XUiChatServe/XUiPanelChatCopyBubble').New(self.PanelCopyRoot, self)
     end
 end
 
@@ -177,7 +190,7 @@ function XUiChatServeMain:OnGetEvents()
     return { XEventId.EVENT_CHAT_RECEIVE_WORLD_MSG, XEventId.EVENT_CHAT_RECEIVE_ROOM_MSG,
              XEventId.EVENT_PULL_SCROLLVIEW_END, XEventId.EVENT_CHAT_CHANNEL_CHANGED,
              XEventId.EVENT_CHAT_SERVER_CHANNEL_CHANGED, XEventId.EVENT_GUILD_RECEIVE_CHAT,
-             XEventId.EVENT_CHAT_RECEIVE_MENTOR_MSG, XEventId.EVENT_CHAT_MATCH_EFFECT, XEventId.EVENT_CHAT_EMOJI_REFRESH_RED, XEventId.EVENT_CHAT_BOARD_REFRESH_RED }
+             XEventId.EVENT_CHAT_RECEIVE_MENTOR_MSG, XEventId.EVENT_CHAT_MATCH_EFFECT, XEventId.EVENT_CHAT_EMOJI_REFRESH_RED, XEventId.EVENT_CHAT_BOARD_REFRESH_RED, }
 end
 
 function XUiChatServeMain:OnNotify(evt, ...)
@@ -209,6 +222,11 @@ function XUiChatServeMain:OnNotify(evt, ...)
         self:RefreshRedPoint()
     elseif evt == XEventId.EVENT_CHAT_BOARD_REFRESH_RED then
         self.BtnSettings:ShowReddot(XDataCenter.ChatManager.CheckHasNewChatBoard())
+    elseif evt == XEventId.EVENT_CHAT_MSG_COPY_SHOW then
+        if self.BubbleCopy then
+            self.BubbleCopy:Open()
+            self.BubbleCopy:ShowCopyByCopyContent(...)
+        end
     end
 end
 -------------------------------Event end-------------------------------
@@ -291,7 +309,10 @@ function XUiChatServeMain:SendChat(sendChat)
     local callBack = function(refreshCoolingTime)
         self:RefreshCoolTime(refreshCoolingTime)
     end
-    XDataCenter.ChatManager.SendChat(sendChat, callBack, true)
+
+    if not XMVCA.XReCallActivity:CheckInviteCodeSendInvalidChannel(sendChat.Content, sendChat.ChannelType) then
+        XDataCenter.ChatManager.SendChat(sendChat, callBack, true)
+    end
 end
 
 function XUiChatServeMain:Close()
@@ -553,8 +574,29 @@ end
 
 function XUiChatServeMain:InitChannelInfos(channelInfos)
     local currentChannelId = XDataCenter.ChatManager.GetCurrentChatChannelId()
+    
+    --- 读缓存时需要剔除某些时效性的频道
+    local needRemoveChannelIndexList = nil
+    
     for _, info in pairs(channelInfos) do
         info.IsSelected = currentChannelId == info.ChannelId
+        if info.IsInviteChannel then
+            -- 检查活动开启了没
+            if not XMVCA.XReCallActivity:CheckOpenChatChannel() then
+                -- 移除，目前只会有一个频道是回归频道
+                needRemoveChannelIndexList = needRemoveChannelIndexList or {}
+                
+                table.insert(needRemoveChannelIndexList, _)
+            end
+        end
+    end
+
+    if not XTool.IsTableEmpty(needRemoveChannelIndexList) then
+        for i = #needRemoveChannelIndexList, 1, -1 do
+            local index = needRemoveChannelIndexList[i]
+            
+            table.remove(channelInfos, index)
+        end
     end
 end
 
@@ -629,10 +671,24 @@ end
 
 function XUiChatServeMain:UpdateCurrentChannel()
     local currentChannelId = XDataCenter.ChatManager.GetCurrentChatChannelId()
+    local showChannelId = currentChannelId
     if not XOverseaManager.IsOverSeaRegion() then
-        currentChannelId = currentChannelId >= 5 and (currentChannelId + 1) or currentChannelId
+        showChannelId = currentChannelId >= 5 and (currentChannelId + 1) or currentChannelId
     end
-    self.TxtRoomNumber.text = XDataCenter.ChatManager.GetRecruitChannelId() ~= currentChannelId and currentChannelId or CS.XTextManager.GetText("ChannelRecruitIdStr")
+    
+    local roomNumStr = ''
+
+    if showChannelId == XDataCenter.ChatManager.GetRecruitChannelId() then
+        -- 优先招募频道
+        roomNumStr = CS.XTextManager.GetText("ChannelRecruitIdStr")
+    elseif XMVCA.XReCallActivity:CheckInviteActivityOpen() and currentChannelId == XMVCA.XReCallActivity:GetCurReCallChatChannelId() + 1 then -- 客户端缓存的频道id在服务端基础上+1，所以配置也要+1保持一致
+        -- 回归频道次之
+        roomNumStr = XMVCA.XReCallActivity:GetClientConfigReCallText('InviteChannelTitle', 2)
+    else
+        roomNumStr = tostring(showChannelId)
+    end
+    
+    self.TxtRoomNumber.text = roomNumStr
 end
 
 function XUiChatServeMain:UpdateChannelTotalCount()

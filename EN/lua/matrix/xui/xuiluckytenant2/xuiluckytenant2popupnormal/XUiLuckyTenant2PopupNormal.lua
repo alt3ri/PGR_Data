@@ -29,7 +29,6 @@ function XUiLuckyTenant2PopupNormal:InitComponents()
 end
 
 function XUiLuckyTenant2PopupNormal:OnStart(...)
-    self:Update()
 end
 
 function XUiLuckyTenant2PopupNormal:OnEnable()
@@ -39,16 +38,6 @@ function XUiLuckyTenant2PopupNormal:OnDisable()
 end
 
 function XUiLuckyTenant2PopupNormal:OnDestroy()
-end
-
-function XUiLuckyTenant2PopupNormal:Update()
-    -- self.TxtTitle.text = "重新开始"
-    -- self.BtnCancel:SetButtonState(CS.UiButtonState.Normal)
-    -- self.BtnRestart:SetButtonState(CS.UiButtonState.Normal)
-    -- self.TxtDoc.text = "确定结束本局游戏，并且重新开始一局新游戏?"
-    -- self.BtnTanchuangCloseBig:SetButtonState(CS.UiButtonState.Normal)
-    -- self.BtnOver:SetButtonState(CS.UiButtonState.Normal)
-    -- self.TxtDocNotClear.text = "(暂未完成通关目标)"
 end
 
 -- 取消按钮 - 关闭弹窗
@@ -98,9 +87,14 @@ end
 
 -- 结束游戏按钮 - 退出到关卡选择界面
 function XUiLuckyTenant2PopupNormal:OnBtnOverClick(eventData)
-    -- 调用 Control 的方法结束游戏（会自动处理离线模式和收集结算数据）
+    local isNormalClear = self._Control:IsCurrentGameNormalClear() or false
+
     self._Control:RequestEndGame(function(success)
-        -- 无论成功失败，都关闭弹窗和游戏界面
+        if success and isNormalClear and self._Control:EnterNormalClearState() then
+            self:Close()
+            return
+        end
+
         XLuaUiManager.Remove("UiLuckyTenant2Game")
         self:Close()
     end)

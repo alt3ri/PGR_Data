@@ -89,7 +89,7 @@ XPartnerManagerCreator = function()
             end
 
             if IsSameType then
-                if entity:GetIsByOneself() and IsShowStack then
+                if entity:GetIsByOneself() and IsShowStack and XPartnerManager.CheckPartnerIsCanShow(entity:GetTemplateId()) then
 
                     -- 将可以堆叠的伙伴全部放入一个虚拟的伙伴中，如果堆叠伙伴中有在列表中被选中的那么将此伙伴ID赋给虚拟的堆叠伙伴
                     if not stackCount[entity:GetTemplateId()] then
@@ -125,19 +125,21 @@ XPartnerManagerCreator = function()
         local tmpId = 1
         local templateList = XPartnerConfigs.GetPartnerTemplateCfg()
         for _, template in pairs(templateList or {}) do
-            local chipCurCount = XDataCenter.ItemManager.GetCount(template.ChipItemId)
-            local chipNeedCount = template.ChipNeedCount
-            local count = math.floor(chipCurCount / chipNeedCount)
+            if XPartnerManager.CheckPartnerIsCanShow(template.Id) then
+                local chipCurCount = XDataCenter.ItemManager.GetCount(template.ChipItemId)
+                local chipNeedCount = template.ChipNeedCount
+                local count = math.floor(chipCurCount / chipNeedCount)
 
-            if count > 0 then
-                table.insert(canComposeIdList, template.Id)
-                canComposeCount = canComposeCount + count
+                if count > 0 then
+                    table.insert(canComposeIdList, template.Id)
+                    canComposeCount = canComposeCount + count
+                end
+
+                local entity = XPartner.New(tmpId, template.Id, false)
+                tmpId = tmpId + 1
+                entity:UpdateData({ ChipBaseCount = chipCurCount })
+                table.insert(composeDataList, entity)
             end
-
-            local entity = XPartner.New(tmpId, template.Id, false)
-            tmpId = tmpId + 1
-            entity:UpdateData({ ChipBaseCount = chipCurCount })
-            table.insert(composeDataList, entity)
         end
 
         return composeDataList, canComposeIdList, canComposeCount
@@ -202,6 +204,20 @@ XPartnerManagerCreator = function()
 
     function XPartnerManager.GetPartnerEntityById(partnerId)
         return PartnerEntityDic[partnerId]
+    end
+
+    function XPartnerManager.CheckIsOwnPartnerByTemplateId(partnerId)
+        if XTool.IsTableEmpty(PartnerEntityDic) then
+            return false
+        end
+
+        for id, entity in pairs(PartnerEntityDic) do
+            if entity.TemplateId == partnerId then
+                return true
+            end
+        end
+        
+        return false
     end
 
     function XPartnerManager.CreatePartnerEntityByPartnerData(partnerData, IsPreview)
@@ -285,11 +301,13 @@ XPartnerManagerCreator = function()
     end
 
     function XPartnerManager.UpdatePartnerEntity(dataList)
-        for _, data in pairs(dataList or {}) do
-            if not PartnerEntityDic[data.Id] then
-                PartnerEntityDic[data.Id] = XPartner.New(data.Id, data.TemplateId, true)
+        if not XTool.IsTableEmpty(dataList) then
+            for _, data in pairs(dataList) do
+                if not PartnerEntityDic[data.Id] then
+                    PartnerEntityDic[data.Id] = XPartner.New(data.Id, data.TemplateId, true)
+                end
+                PartnerEntityDic[data.Id]:UpdateData(data)
             end
-            PartnerEntityDic[data.Id]:UpdateData(data)
         end
 
         XPartnerManager.UpdateCarrierIdDic()
@@ -415,6 +433,21 @@ XPartnerManagerCreator = function()
         end)
 
         return expItemList
+    end
+    
+    function XPartnerManager.CheckPlayerHasLinkPartner()
+        local hasLinkPartner = false
+        
+        if not XTool.IsTableEmpty(PartnerEntityDic) then
+            for i, v in pairs(PartnerEntityDic) do
+                if XPartnerConfigs.GetPartnerType(v.TemplateId) == XPartnerConfigs.PartnerType.Link then
+                    hasLinkPartner = true
+                    break
+                end
+            end
+        end
+        
+        return hasLinkPartner
     end
 
     local SetDecomposeBackItem = function(itemDic, partner)
@@ -1269,6 +1302,51 @@ XPartnerManagerCreator = function()
         else
             XLuaUiManager.Open("UiPartnerMain", ...)
         end
+    end
+    
+    --- 判断辅助机是否已过可获取时间
+    function XPartnerManager.CheckPartnerIsInAvaliableTimeById(partnerId)
+        local cfg = XPartnerConfigs.GetPartnerTemplateById(partnerId)
+
+        if cfg then
+            if not XTool.IsNumberValidEx(cfg.AvaliableTimeId) or XFunctionManager.CheckInTimeByTimeId(cfg.AvaliableTimeId, false) then
+                return true
+            end
+        end
+        
+        return false
+    end
+    
+    --- 判断辅助机是否能够合成
+    function XPartnerManager.CheckPartnerIsCanComposeById(partnerId)
+        local cfg = XPartnerConfigs.GetPartnerTemplateById(partnerId)
+
+        if cfg then
+            local chipCurCount = XDataCenter.ItemManager.GetCount(cfg.ChipItemId) or 0
+            local chipNeedCount = cfg.ChipNeedCount or 0
+            
+            return chipCurCount >= chipNeedCount
+        end
+        
+        return false
+    end
+    
+    --- 判断辅助机是否可以显示
+    function XPartnerManager.CheckPartnerIsCanShow(partnerId)
+        if not XPartnerManager.CheckPartnerIsInAvaliableTimeById(partnerId) then
+            -- 不在时间内，只有拥有或能够拥有才显示
+            if XPartnerManager.CheckIsOwnPartnerByTemplateId(partnerId) then
+                return true
+            end
+
+            if XPartnerManager.CheckPartnerIsCanComposeById(partnerId) then
+                return true
+            end
+            
+            return false
+        end
+        
+        return true
     end
 
     XPartnerManager.Init()

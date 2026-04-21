@@ -53,16 +53,23 @@ function XArenaModel:OnInit()
     self._IsRefreshMainPage = false
     self._CurrentEnterAreaId = 0
     self._CurrentFightEventGroupId = 0
-
+    
     self:_InitTableKey()
 end
 
 function XArenaModel:ClearPrivate()
+    -- 清空数据前，将清空前的数据作为历史数据缓存，用于后续比较
+    if self._ArenaAreaDataCache then
+        self:InitOldArenaMaxPointCaches(self._ArenaAreaDataCache:GetAreaDistributeMaxPoint())
+    end
+        
     -- 这里执行内部数据清理
     self._ArenaAreaDataCache = nil
     self._ArenaGroupMemberCache = nil
     self._LocalPlayerResultRankMap = nil
     -- XLog.Error("请对内部数据进行清理")
+    
+    -- 需要记录历史最高
 end
 
 function XArenaModel:ResetAll()
@@ -268,13 +275,62 @@ end
 --- 保存结算数据（Point 和 OldPoint，用于新纪录检查）
 ---@param distributeType number DistributeType值
 ---@param point number 当前分数
----@param oldPoint number 历史最高分
+---@param oldPoint number 历史最高分（Area维度）
 function XArenaModel:SaveSettlePointByDistributeType(distributeType, point, oldPoint)
     local key = self:_GetSettlePointKey(distributeType)
     self._SaveUtil:SaveData(key, {
         Point = point,
         OldPoint = oldPoint
     })
+    -- 将 distributeType 注册到当期索引，供跨期清除使用
+    local activityNo = 0
+    if self._ActivityData and not self._ActivityData:IsClear() then
+        activityNo = self._ActivityData:GetActivityNo() or 0
+    end
+    local indexKey = self:_GetSettleIndexKey(activityNo)
+    local index = self._SaveUtil:GetData(indexKey) or {}
+    index[distributeType] = true
+    self._SaveUtil:SaveData(indexKey, index)
+end
+
+--- 清除指定期数的所有结算缓存（跨期时传入旧期号调用）
+---@param activityNo number 旧期数
+function XArenaModel:ClearSettlePointCacheByActivityNo(activityNo)
+    local indexKey = self:_GetSettleIndexKey(activityNo)
+    local index = self._SaveUtil:GetData(indexKey)
+    if not index then return end
+    for distributeType, _ in pairs(index) do
+        self:ClearSettlePointByDistributeType(distributeType)
+    end
+    self._SaveUtil:SaveData(indexKey, nil)
+end
+
+--- 保存历史结算数据（用于新纪录检查）
+---@param areaDistributeMaxPointDict number 各区的历史最高分
+function XArenaModel:InitOldArenaMaxPointCaches(areaDistributeMaxPointDict)
+    if areaDistributeMaxPointDict == nil then
+        return
+    end
+    
+    local data = self:_GetOldArenaMaxPointCaches()
+
+    if data == nil then
+        self._SaveUtil:SaveData(self:_GetArenaMaxPointCachesKey(), XTool.Clone(areaDistributeMaxPointDict))
+    end
+end
+
+--- 保存结算数据（Point 和 OldPoint，用于新纪录检查）
+---@param distributeType number DistributeType值
+---@param point number 当前分数
+---@param oldPoint number 历史最高分
+function XArenaModel:SaveArenaOldMaxPointByDistributeType(distributeType, point)
+    local data = self:_GetOldArenaMaxPointCaches() or {}
+
+    data[distributeType] = point
+    
+    local key = self:_GetArenaMaxPointCachesKey()
+    
+    self._SaveUtil:SaveData(key, data)
 end
 
 --- 获取结算数据（Point 和 OldPoint，用于新纪录检查）
@@ -282,6 +338,30 @@ end
 ---@return table|nil 包含 Point 和 OldPoint 的表格，如果不存在则返回 nil
 function XArenaModel:GetSettlePointByDistributeType(distributeType)
     local key = self:_GetSettlePointKey(distributeType)
+    return self._SaveUtil:GetData(key)
+end
+
+--- 获取历史数据（用于新纪录检查）
+---@param distributeType number DistributeType值
+---@return number
+function XArenaModel:GetOldArenaMaxPointCacheByDistributeType(distributeType)
+    local key = self:_GetArenaMaxPointCachesKey()
+    
+    local data = self._SaveUtil:GetData(key)
+
+    if not data then
+        return nil
+    end
+    
+    return data[distributeType]
+end
+
+--- 获取历史数据（用于新纪录检查）
+---@param distributeType number DistributeType值
+---@return number
+function XArenaModel:_GetOldArenaMaxPointCaches()
+    local key = self:_GetArenaMaxPointCachesKey()
+
     return self._SaveUtil:GetData(key)
 end
 
@@ -297,6 +377,19 @@ end
 ---@return string
 function XArenaModel:_GetSettlePointKey(distributeType)
     return "ArenaSettlePoint_" .. distributeType
+end
+
+--- 获取期数结算索引的保存key
+---@param activityNo number 期数
+---@return string
+function XArenaModel:_GetSettleIndexKey(activityNo)
+    return "ArenaSettleIndex_" .. tostring(activityNo)
+end
+
+--- 获取历史数据的保存key
+---@return string
+function XArenaModel:_GetArenaMaxPointCachesKey()
+    return "ArenaOldMaxPointCaches"
 end
 
 function XArenaModel:ClearAll()
@@ -339,6 +432,8 @@ function XArenaModel:AreaDataRequest(callback, failCallback)
         else
             self._ArenaAreaDataCache = XArenaAreaData.New(res)
         end
+
+        self:InitOldArenaMaxPointCaches(self._ArenaAreaDataCache:GetAreaDistributeMaxPoint())
 
         XEventManager.DispatchEvent(XEventId.EVENT_ARENA_REFRESH_AREA_INFO, self._ArenaAreaDataCache)
 

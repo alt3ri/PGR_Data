@@ -17,7 +17,7 @@ function XUiLuckyTenant2GameGridBonds:OnStart(...)
     end
 
     -- 羁绊等级增加时播放的特效，播一段时间后隐藏
-    self.FxUiLuckyTenant21Jiban01 = self.Transform:Find("FxUiLuckyTenant21Jiban01")
+    self.FxUiLuckyTenant21Jiban01 = self.FxUiLuckyTenant21Jiban01 or self.Transform:Find("Image/ImageBg/FxUiLuckyTenant21Jiban01")
     if self.FxUiLuckyTenant21Jiban01 then
         self.FxUiLuckyTenant21Jiban01.gameObject:SetActiveEx(false)
     end
@@ -32,7 +32,10 @@ function XUiLuckyTenant2GameGridBonds:OnEnable()
 end
 
 function XUiLuckyTenant2GameGridBonds:OnDisable()
-    self:_CancelLevelUpTimer()
+    -- hide effect
+    if self.FxUiLuckyTenant21Jiban01 then
+        self.FxUiLuckyTenant21Jiban01.gameObject:SetActiveEx(false)
+    end
 end
 
 function XUiLuckyTenant2GameGridBonds:OnDestroy()
@@ -53,9 +56,8 @@ function XUiLuckyTenant2GameGridBonds:Update(data)
         return
     end
 
-    -- 羁绊等级增加时显示 FxUiLuckyTenant21Jiban01，一段时间后隐藏（定时器回收、不重播同一等级）
-    local newLevel = type(data.Level) == "number" and data.Level or nil
-    if newLevel ~= nil and (self._LastLevel == nil or newLevel > self._LastLevel) then
+    -- 是否播放羁绊升级特效：由 Control 在 bondData.ShouldPlayLevelUpFx 中预先计算
+    if data.ShouldPlayLevelUpFx then
         self:_CancelLevelUpTimer()
         if self.FxUiLuckyTenant21Jiban01 then
             self.FxUiLuckyTenant21Jiban01.gameObject:SetActiveEx(true)
@@ -69,7 +71,6 @@ function XUiLuckyTenant2GameGridBonds:Update(data)
             end, delayMs)
         end
     end
-    self._LastLevel = newLevel
 
     self._Data = data
 

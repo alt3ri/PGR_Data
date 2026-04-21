@@ -204,8 +204,9 @@ function XUiAnnouncement:CreateTable(parameters)
     local tableHeader = self.TableHeader
     local tableRow = self.TableRow
     local rootRectTransform = tableRoot:GetComponent("RectTransform")
+    local tableHorizontalPadding = 20
     local paddingX = 20
-    local paddingY = 20
+    local paddingY = 40
     local borderThickness = 2
     -- 存储每列的最大宽度
     local maxWidths = {}
@@ -284,6 +285,8 @@ function XUiAnnouncement:CreateTable(parameters)
         else
             preferredWidth = tonumber(cellInfo.cellData.width)
         end
+        local cellRect = cell:GetComponent("RectTransform")
+        cellRect:SetUISizeDelta(preferredWidth, 0)
         local preferredHeight = textComponent.preferredHeight
         maxWidths[colIndex] = math.ceil(math.max(maxWidths[colIndex] or 0, preferredWidth + paddingX))
         maxHeights[rowIndex] = math.ceil(math.max(maxHeights[rowIndex] or 0, preferredHeight + paddingY))
@@ -293,9 +296,9 @@ function XUiAnnouncement:CreateTable(parameters)
         totalWidth = totalWidth + (maxWidths[i] or 0)
     end
     -- 表格宽度拉伸填满整个容器
+    local parentWidth = self.PanelWebView:GetComponent("RectTransform").rect.width - tableHorizontalPadding
     if isTableExpend then
         -- 获取父容器可用宽度
-        local parentWidth = self.PanelWebView:GetComponent("RectTransform").rect.width - 20
         local extraSpace = math.ceil((parentWidth - totalWidth) / widthAutoCount)
         -- 和父节点比较宽度后把多余的空间分配给auto
         for index = 1, #maxWidths do
@@ -304,6 +307,15 @@ function XUiAnnouncement:CreateTable(parameters)
             end
         end
         totalWidth = parentWidth
+    else
+        -- 限制最大宽度为父容器宽度
+        if totalWidth > parentWidth then
+            local scale = parentWidth / totalWidth
+            for i = 1, #maxWidths do
+                maxWidths[i] = math.floor(maxWidths[i] * scale)
+            end
+            totalWidth = parentWidth
+        end
     end
     for i = 1, #allRows do
         totalHeight = totalHeight + (maxHeights[i] or 0)
