@@ -25,6 +25,8 @@ function XTeamPrefab:Ctor(data)
     -- 调用 InitXX 进行本地初始化
     self:InitPartnerData(data.PartnerData)
     self:InitEquipData(data.EquipData)
+    self:InitTagsData(data.TagsSet)
+    self:InitSwitchSkillsData(data.SwitchSkills)
     self:RefreshGeneralSkills(true, true)  -- 假设此方法本身不需要上行
 end
 
@@ -130,6 +132,7 @@ end
 function XTeamPrefab:ClearPosData(pos)
     self.WeaponData[pos] = nil
     self.AwarenessData[pos] = nil
+    self.SwitchSkills[pos] = nil
     local charId = self:GetEntityIdByTeamPos(pos)
     self:UpdateEntityTeamPos(charId, pos)
 end
@@ -429,6 +432,75 @@ function XTeamPrefab:GetPartnerData()
     return self.PartnerPrefab
 end
 
+--- 初始化标签数据
+function XTeamPrefab:InitTagsData(tagsData)
+    self.TagsSet = {}
+    if tagsData then
+        for _, tagId in pairs(tagsData) do
+            self.TagsSet[tagId] = true
+        end
+    end
+end
+
+function XTeamPrefab:GetTagsSet()
+    return self.TagsSet or {}
+end
+
+--- 返回有序数组，用于 UI 遍历（属性标签优先）
+function XTeamPrefab:GetTagsList()
+    local list = {}
+    for tagId in pairs(self.TagsSet or {}) do
+        table.insert(list, tagId)
+    end
+    table.sort(list, function(a, b)
+        local cfgA = XTeamConfig.GetTeamPrefabTagCfgById(a)
+        local cfgB = XTeamConfig.GetTeamPrefabTagCfgById(b)
+        if not cfgA or not cfgB then return a < b end
+        if cfgA.TagType ~= cfgB.TagType then
+            return cfgA.TagType > cfgB.TagType
+        end
+        return cfgA.Order < cfgB.Order
+    end)
+    return list
+end
+
+function XTeamPrefab:HasTag(tagId)
+    return self.TagsSet and self.TagsSet[tagId] or false
+end
+
+--- 检查是否匹配筛选条件（预设的 TagsSet 包含所有 filterTags）
+function XTeamPrefab:MatchFilter(filterTags)
+    if not filterTags then return true end
+    for tagId in pairs(filterTags) do
+        if not self:HasTag(tagId) then
+            return false
+        end
+    end
+    return true
+end
+
+--- 初始化形态技能数据（Dictionary<站位,技能ID>）
+function XTeamPrefab:InitSwitchSkillsData(data)
+    self.SwitchSkills = {}
+    if data then
+        for pos, skillId in pairs(data) do
+            self.SwitchSkills[pos] = skillId
+        end
+    end
+end
+
+--- 返回完整 SwitchSkills dict，供全量同步序列化
+function XTeamPrefab:GetSwitchSkills()
+    return self.SwitchSkills
+end
+
+--- 返回指定站位的选定技能ID，未设置时返回 nil
+---@param pos int
+---@return int|nil
+function XTeamPrefab:GetSwitchSkillByPos(pos)
+    return self.SwitchSkills and self.SwitchSkills[pos]
+end
+
 -- 每次换人调用，检测当前首发位和队长位是否为空，空的话找到按顺序找到最近的一个有角色的pos,自动换上去
 function XTeamPrefab:CheckOnlyOneEntityToSyncFirstAndCaptainPos()
     -- 找第一个有效角色位置
@@ -475,6 +547,9 @@ function XTeamPrefab:SwapPosData(posA, posB, notSyncToServer)
     if self.PartnerPrefab then
         self.PartnerPrefab:SwapPosData(posA, posB)
     end
+
+    -- 5. 交换形态技能数据
+    self.SwitchSkills[posA], self.SwitchSkills[posB] = self.SwitchSkills[posB], self.SwitchSkills[posA]
 
     self:CheckOnlyOneEntityToSyncFirstAndCaptainPos()
 
@@ -588,6 +663,19 @@ function XTeamPrefab:CopyRealCharacterToPos(characterId, pos, notSyncToServer)
         else
             self:GetPartnerData():Unload(pos)
         end
+        -- 同步角色当前真实激活的切换技能
+        local switchSkillId = XMVCA.XCharacter:GetSkillExchangeDesSkillIdAndConfigByCharacterId(characterId)
+        if switchSkillId then
+            local groupSkillIds = XMVCA.XCharacter:GetGroupSkillIds(switchSkillId)
+            for _, skillId in ipairs(groupSkillIds) do
+                if XMVCA.XCharacter:IsSkillUsing(skillId) then
+                    self.SwitchSkills[pos] = skillId
+                    break
+                end
+            end
+        else
+            self.SwitchSkills[pos] = nil
+        end
     else
         -- 卸载
         -- 清空武器
@@ -596,6 +684,8 @@ function XTeamPrefab:CopyRealCharacterToPos(characterId, pos, notSyncToServer)
         self:ClearAwarenessData(pos, true)
         -- 清空辅助机
         self:GetPartnerData():Unload(pos)
+        -- 清空切换技能
+        self.SwitchSkills[pos] = nil
     end
     
     if not notSyncToServer then
@@ -690,7 +780,20 @@ function XTeamPrefab:SetSettleCgIndex(index, notSyncToServer, cb)
     end
 end
 
--- 加一层“快照保护模式”
+--- 更新指定站位的形态技能，可选全量同步服务器
+---@param pos int 站位
+---@param skillId int 目标技能ID
+---@param notSyncToServer boolean|nil 为 true 时只写本地，不触发网络请求
+---@param cb function|nil 成功回调
+function XTeamPrefab:UpdateSwitchSkillAtPos(pos, skillId, notSyncToServer, cb)
+    self:BeginSnapshotBatch()
+    self.SwitchSkills[pos] = skillId
+    if not notSyncToServer then
+        self:SyncFullDataToServer(cb)
+    end
+end
+
+-- 加一层”快照保护模式”
 function XTeamPrefab:BeginSnapshotBatch()
     self:GetFullSnapshot()
     self._InSnapshotBatch = true
@@ -718,7 +821,9 @@ function XTeamPrefab:GetFullSnapshot()
             TeamName = "",
             SelectedGeneralSkill = 0,
             EnterCgIndex = 0,
-            SettleCgIndex = 0
+            SettleCgIndex = 0,
+            TagsSet = {},
+            SwitchSkills = {}
         }
     end
     local snapshot = self._LastSnapshot
@@ -819,6 +924,26 @@ function XTeamPrefab:GetFullSnapshot()
     snapshot.EnterCgIndex = self.EnterCgIndex
     snapshot.SettleCgIndex = self.SettleCgIndex
 
+    -- 5. 处理标签数据
+    for k in pairs(snapshot.TagsSet) do
+        snapshot.TagsSet[k] = nil
+    end
+    if self.TagsSet then
+        for tagId in pairs(self.TagsSet) do
+            snapshot.TagsSet[tagId] = true
+        end
+    end
+
+    -- 6. 处理形态技能数据
+    for k in pairs(snapshot.SwitchSkills) do
+        snapshot.SwitchSkills[k] = nil
+    end
+    if self.SwitchSkills then
+        for pos, skillId in pairs(self.SwitchSkills) do
+            snapshot.SwitchSkills[pos] = skillId
+        end
+    end
+
     return snapshot
 end
 
@@ -874,6 +999,22 @@ function XTeamPrefab:RestoreFromSnapshot()
     self.SelectedGeneralSkill = snapshot.SelectedGeneralSkill
     self.EnterCgIndex = snapshot.EnterCgIndex
     self.SettleCgIndex = snapshot.SettleCgIndex
+
+    -- 还原标签数据
+    self.TagsSet = {}
+    if snapshot.TagsSet then
+        for tagId in pairs(snapshot.TagsSet) do
+            self.TagsSet[tagId] = true
+        end
+    end
+
+    -- 还原形态技能数据
+    self.SwitchSkills = {}
+    if snapshot.SwitchSkills then
+        for pos, skillId in pairs(snapshot.SwitchSkills) do
+            self.SwitchSkills[pos] = skillId
+        end
+    end
 end
 
 --- 同步接口
@@ -887,7 +1028,7 @@ end
 
 function XTeamPrefab:SyncPartnerDataToServer(pos, cb)
     local partnerData = self:GetPartnerData()
-    if not partnerData or not pos then return end
+    if not partnerData or not XTool.IsNumberValid(pos) then return end
 
     local partnerId = partnerData:GetPartnerIdByPos(pos)
     XDataCenter.PartnerManager.TeamPreSetPartnerRequest(self:GetId(), pos, partnerId, partnerData:GetSkillData(partnerId), cb)
@@ -895,11 +1036,15 @@ end
 
 function XTeamPrefab:SyncMetaDataToServer(cb)
     local name = self:GetName()
-    if string.IsNilOrEmpty(name) then 
-        return 
+    if string.IsNilOrEmpty(name) then
+        return
     end
 
     XDataCenter.TeamManager.TeamPrefabUpdateMetadataRequest(self, cb)
+end
+
+function XTeamPrefab:SyncTagsToServer(tagIds, cb)
+    XDataCenter.TeamManager.TeamPrefabSetTagsRequest(self:GetId(), tagIds, cb)
 end
 
 --region 禁用方法

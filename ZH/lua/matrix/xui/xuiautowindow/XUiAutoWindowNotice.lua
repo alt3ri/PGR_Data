@@ -46,12 +46,12 @@ function XUiAutoWindowNotice:RefreshView()
     local picAddr = self.ContentData.PicAddr
     if not string.IsNilOrEmpty(picAddr) then
         XDataCenter.NoticeManager.LoadPicFromLocal(picAddr, function(texture)
-            if XTool.UObjIsNil(self.GameObject) then
+            if XTool.UObjIsNil(self.GameObject) or not texture then
                 return
             end
             self.PanelBigSkin.gameObject:SetActiveEx(true)
-            self.RImgBgNormal.texture = texture
-            self.RImgBgPress.texture = texture
+            self.RImgBgNormal:SetRawImageTexture(texture)
+            self.RImgBgPress:SetRawImageTexture(texture)
         end)
     end
 end

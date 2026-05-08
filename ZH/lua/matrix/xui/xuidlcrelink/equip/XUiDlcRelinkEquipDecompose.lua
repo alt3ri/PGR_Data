@@ -352,6 +352,7 @@ end
 
 function XUiDlcRelinkEquipDecompose:OnEquipFilterChange()
     self:SetupDynamicTable()
+    self:RefreshReward()
     self:CancelSelectAll()
 end
 
@@ -363,6 +364,8 @@ function XUiDlcRelinkEquipDecompose:CheckFilterCache()
 
     if XTool.IsNumberValid(self.EquipFilterCache.ReformedType)
         or XTool.IsNumberValid(self.EquipFilterCache.EquipType)
+        or XTool.IsNumberValid(self.EquipFilterCache.EquipQuality)
+        or XTool.IsNumberValid(self.EquipFilterCache.EquipDiscard)
         or not XTool.IsTableEmpty(self.EquipFilterCache.FactorIds) then
         return true
     end

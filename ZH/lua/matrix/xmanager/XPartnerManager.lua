@@ -896,8 +896,8 @@ XPartnerManagerCreator = function()
      ---@cb 回调 
     --==============================
     function XPartnerManager.TeamPreSetPartnerRequest(teamId, pos, partnerId, skillData, cb)
-        if not XTool.IsNumberValid(teamId) 
-                or not XTool.IsNumberValid(teamId)
+        if not XTool.IsNumberValid(teamId)
+                or not XTool.IsNumberValid(pos)
                 or not skillData then
             return
         end

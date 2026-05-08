@@ -49,12 +49,13 @@ function XUiBigWorldDIY:OnAwake()
 
     ---@type XBWCommanderDIYTypeEntity[]
     self._TypeEntitys = self._Control:GetTypeEntitys()
-    self._TabGroupList = { self.BtnFashion, self.BtnHeadPortrait, self.BtnEyes, self.BtnHand }
+    self._TabGroupList = {self.BtnFashion, self.BtnHeadPortrait, self.BtnEyes, self.BtnHand}
 
     ---@type XDynamicTableNormal
     self._PartDynamicTable = XDynamicTableNormal.New(self.ListPosition)
     self._CurrentSelectTypeIndex = 0
     self._CurrentSelectPartIndex = 0
+    self._LastMaterialName = ""
     ---@type XBWCommanderDIYColorEntity[]
     self._CurrentColorEntitys = false
 
@@ -62,6 +63,9 @@ function XUiBigWorldDIY:OnAwake()
     self._CurrentSelectColorGrid = false
     ---@type XUiBigWorldDIYGridColour[]
     self._ColorGridList = {}
+
+    ---@type XBWCommanderDIYColorEntity
+    self._LastUsedColorEntity = false
 
     ---@type XUiBigWorldDIYModelHelper
     self._ModelHelper = XUiBigWorldDIYModelHelper.New(self.UiModelGo, self.PanelDrag)
@@ -79,11 +83,19 @@ function XUiBigWorldDIY:OnAwake()
 
     self:_InitUi()
     self:_RegisterButtonClicks()
-    self._Control:TemporaryFashionInfo()
+
 end
 
 function XUiBigWorldDIY:OnStart()
     self.BtnMainUi.gameObject:SetActiveEx(false)
+
+    for index, btn in ipairs(self.outfitButtonList) do
+        local cfg = self._Control:GetDlcPlayerFashionOutfitConfigById(index)
+        if cfg ~= nil then
+            btn:SetName(cfg.Name)
+        end
+    end
+
     self:_InitFirstPanel()
     self:_ShowPanel()
     self:ClosePreview()
@@ -93,6 +105,7 @@ function XUiBigWorldDIY:OnEnable()
     self:_RegisterSchedules()
     self:_RegisterListeners()
     self:_RegisterRedPointEvents()
+    self:OnBackpackUpdate()
 end
 
 function XUiBigWorldDIY:OnDisable()
@@ -120,12 +133,10 @@ function XUiBigWorldDIY:ChangeSelect(index, isIncompatible)
 end
 
 function XUiBigWorldDIY:ChangeSelectPart(index, isIncompatible)
-    if index ~= self._CurrentSelectPartIndex then
-        self:_ChangeSelectPart(index, self._CurrentSelectPartIndex, isIncompatible)
-        self._CurrentSelectPartIndex = index
-        self:_PlayCurrentEffect()
-        self:ClosePreview()
-    end
+    self:_ChangeSelectPart(index, self._CurrentSelectPartIndex, isIncompatible)
+    self._CurrentSelectPartIndex = index
+    self:_PlayCurrentEffect()
+    self:ClosePreview()
 end
 
 ---@param entity XBWCommanderDIYColorEntity
@@ -137,6 +148,14 @@ function XUiBigWorldDIY:ChangeSelectColor(grid, entity)
     local gender = self._Control:GetCurrentGender()
 
     self._CurrentSelectColorGrid = grid
+    self._LastMaterialName = entity:GetMaterialName()
+    self._ModelHelper:ChangeMaterials(gender, entity)
+
+end
+
+function XUiBigWorldDIY:SelectColor(gender, grid, entity)
+    self._CurrentSelectColorGrid = grid
+    self._LastUsedColorEntity = entity
     self._ModelHelper:ChangeMaterials(gender, entity)
 end
 
@@ -190,22 +209,16 @@ end
 -- region 按钮事件
 
 function XUiBigWorldDIY:OnBtnBackClick()
-    if self._Control:CheckNeedSyncInfo() then
-        local confirmData = XMVCA.XBigWorldCommon:GetPopupConfirmData()
-
-        confirmData:InitInfo(nil, XMVCA.XBigWorldService:GetText("DIYConfirmTips"))
-        confirmData:InitToggleActive(false)
-        confirmData:InitCancelClick(nil, function()
+    self._Control:AskSaveAndFinishCallBack(function(isSuccess)
+        if isSuccess then
+            if not XMVCA.XBigWorldCommanderDIY:IsFromOpenGuide() then
+                XUiManager.TipMsg(XMVCA.XBigWorldService:GetText("DIYSaveSuccessTip"))
+            end
+        else
             self._Control:ResetCommanderFashion()
-            self:Close()
-        end)
-        confirmData:InitSureClick(nil, function()
-            self._Control:TrySaveFashionInfo(Handler(self, self.Close))
-        end)
-        XMVCA.XBigWorldUI:OpenConfirmPopup(confirmData)
-    else
+        end
         self:Close()
-    end
+    end)
 end
 
 function XUiBigWorldDIY:OnBtnResettingClick()
@@ -228,20 +241,21 @@ function XUiBigWorldDIY:OnBtnSaveClick()
     if self._IsFrist then
         self._Control:TryOpenPreviewSavePopup(function()
             self:_TryOpenPerspectiveUi(function()
-                local confirmData = XMVCA.XBigWorldCommon:GetPopupConfirmData()
-
-                confirmData:InitInfo(nil, XMVCA.XBigWorldService:GetText("DIYConfirmTips"))
-                confirmData:InitToggleActive(false)
-                confirmData:InitSureClick(nil, function()
-                    self._Control:SaveFashionInfo(Handler(self, self.Close))
+                self._Control:AskSaveAndFinishCallBack(function()
+                    if not XMVCA.XBigWorldCommanderDIY:IsFromOpenGuide() then
+                        XUiManager.TipMsg(XMVCA.XBigWorldService:GetText("DIYSaveSuccessTip"))
+                    end
+                    self:Close()
                 end)
-                XMVCA.XBigWorldUI:OpenConfirmPopup(confirmData)
             end)
         end)
     else
         self._Control:TrySaveFashionInfo(function()
             self:_ReloadCurrentModel()
             self:_RefreshTabGroup()
+            if not XMVCA.XBigWorldCommanderDIY:IsFromOpenGuide() then
+                XUiManager.TipMsg(XMVCA.XBigWorldService:GetText("DIYSaveSuccessTip"))
+            end
         end)
     end
 end
@@ -348,6 +362,10 @@ function XUiBigWorldDIY:_RegisterButtonClicks()
     self:RegisterClickEvent(self.BtnPreviewClose, self.OnBtnPreviewCloseClick, true)
     XUiHelper.RegisterSliderChangeEvent(self, self.SliderCharacter, self.OnSliderCharacterChange, true)
     self.PanelTabGroup:Init(self._TabGroupList, Handler(self, self.OnTabGroupClick))
+
+    self.outfitButtonList = {self.BtnCasual, self.BtnFight}
+    self.PanelOutfitTab:Init(self.outfitButtonList, Handler(self, self.OnOutfitTabChanged))
+
 end
 
 function XUiBigWorldDIY:_RegisterSchedules()
@@ -360,10 +378,18 @@ end
 
 function XUiBigWorldDIY:_RegisterListeners()
     -- 在此处注册事件监听
+    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_COMMANDER_DIY_RESET,
+        self.OnCommanderDiyReset, self)
+    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_COMMANDER_DIY_BACKPACK_UPDATE,
+        self.OnBackpackUpdate, self)
 end
 
 function XUiBigWorldDIY:_RemoveListeners()
     -- 在此处移除事件监听
+    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_COMMANDER_DIY_RESET,
+        self.OnCommanderDiyReset, self)
+    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_COMMANDER_DIY_BACKPACK_UPDATE,
+        self.OnBackpackUpdate, self)
 end
 
 function XUiBigWorldDIY:_RegisterRedPointEvents()
@@ -377,6 +403,48 @@ function XUiBigWorldDIY:_InitUi()
     self.SliderCharacter.gameObject:SetActiveEx(false)
 end
 
+function XUiBigWorldDIY:OnOutfitTabChanged(tabIndex)
+    if self.currentOutfitTab ~= tabIndex then
+        if self._Control:CheckNeedSyncInfo() then
+            self._Control:OpenConfirmDiscardChangesPopup(nil, function(isSaveSuccess, isCancel)
+                self:_OnOutfitTabSwitch(tabIndex, isSaveSuccess, isCancel)
+            end)
+        else
+            self:_OnOutfitTabSwitch(tabIndex, true, false)
+        end
+
+    end
+end
+
+-- AskSaveAndFinishCallBack 结束后的分支：处理搭配页签切换结果。
+-- @param tabIndex number 玩家意图切换到的搭配页签下标
+-- @param _ 占位：保存是否成功，与 Control 回调签名对齐，当前逻辑未使用
+-- @param isCancel boolean 用户是否取消；为 true 时仅恢复页签 UI，不改动搭配数据
+function XUiBigWorldDIY:_OnOutfitTabSwitch(tabIndex, _, isCancel)
+    if isCancel then
+        -- 取消切换，恢复原来的页签
+        self.PanelOutfitTab:SelectIndex(self.currentOutfitTab)
+    else
+        -- 真正执行页签切换逻辑，并更新当前记录的搭配页签
+        self:_HandleOutfitTabChanged(tabIndex)
+        self.currentOutfitTab = tabIndex
+        -- 在切换完成后，再次执行保存逻辑，确保最新的搭配信息已落盘
+        self._Control:SaveFashionInfo(function()
+            -- 提示玩家：搭配切换成功
+            XUiManager.TipMsg(XMVCA.XBigWorldService:GetText("OutfitSwitchedSuccessfully"))
+        end)
+    end
+end
+
+function XUiBigWorldDIY:_HandleOutfitTabChanged(tabIndex)
+    self._Control:SetCurrentModifiedOutfitType(tabIndex)
+    self._Control:TemporaryFashionInfo()
+    self.PanelTabGroup:SelectIndex(1)
+    self:RefreshModel()
+    self:_RefreshComponentPanel()
+    self:_PlayCurrentEffect()
+end
+
 function XUiBigWorldDIY:_InitTypeTab()
     if not XTool.IsTableEmpty(self._TypeEntitys) then
         for i, tab in pairs(self._TabGroupList) do
@@ -387,8 +455,12 @@ function XUiBigWorldDIY:_InitTypeTab()
             end
         end
     end
+end
 
-    self.PanelTabGroup:SelectIndex(1)
+function XUiBigWorldDIY:_InitOutfitTab()
+    self.currentOutfitTab = self._Control:GetCurrentModifiedOutfitType()
+    self.PanelOutfitTab:SelectIndex(self._Control:GetCurrentModifiedOutfitType())
+    self:_HandleOutfitTabChanged(self.currentOutfitTab)
 end
 
 function XUiBigWorldDIY:_InitSexGroup()
@@ -406,7 +478,9 @@ function XUiBigWorldDIY:_InitComponent()
     self:_InitTypeTab()
     self:_InitSexGroup()
     self:_InitDynamicTable()
+    self:_InitOutfitTab()
     self._IsInit = true
+    XDataCenter.GuideManager.CheckGuideOpen()
 end
 
 function XUiBigWorldDIY:_InitFirstPanel()
@@ -465,6 +539,7 @@ function XUiBigWorldDIY:_ChangeSex(index)
     self:_PlayCurrentEffect()
 end
 
+-- 强制刷新TabGroup
 function XUiBigWorldDIY:_RefreshTabGroup()
     local currentIndex = self._CurrentSelectTypeIndex or 1
 
@@ -486,7 +561,8 @@ function XUiBigWorldDIY:_RefreshPartList(index)
         self:_RefreshAnimation(entity:GetTypeId())
         self:_PlayDragRotationTween()
         if entity and not entity:IsNil() then
-            local entitys = entity:GetDisplayPartEntitys()
+            local outfitType = self._Control:GetCurrentModifiedOutfitType()
+            local entitys = self._Control:GetFilteredDisplayPartEntitys(entity, outfitType)
 
             if XTool.IsTableEmpty(entitys) then
                 self:_HideColorPanel()
@@ -494,7 +570,29 @@ function XUiBigWorldDIY:_RefreshPartList(index)
             self._CurrentSelectTypeIndex = index
             self._CurrentSelectPartIndex = 0
             self._PartDynamicTable:SetDataSource(entitys)
+            -- 需要在ReloadDataSync前把用到的数据都刷新好,刷新时会触发选中颜色Enitiy
+            self:_RefreshLastMaterialName()
             self._PartDynamicTable:ReloadDataSync()
+            self:RefreshCurrentModel()
+        end
+    end
+end
+
+--- func 切换部位时，默认选中的颜色设置为当前选中部位的材质名称
+function XUiBigWorldDIY:_RefreshLastMaterialName()
+    self._LastMaterialName = ""
+    local partId = self._Control:GetTypeCurrentUsePart(self._CurrentSelectTypeIndex)
+    -- partId为空是无佩戴这种情况下应该是啥事不做
+    if XTool.IsNumberValid(partId) then
+        -- 获取当前选中部位的穿戴数据
+        local colorId = self._Control:GetPartCurrentUseColor(partId)
+        if colorId then
+            -- 获取材质名称
+            local materialName = ""
+            if XTool.IsNumberValid(colorId) then
+                materialName = self._Control:GetMaterialNameById(colorId)
+            end
+            self._LastMaterialName = materialName
         end
     end
 end
@@ -548,7 +646,13 @@ function XUiBigWorldDIY:_RefreshColorList(isPlayEnable)
             if isPlayEnable then
                 grid:PlayEnableAnimation(i - 1)
             end
+            -- 切换部位时，选中当前部位的默认颜色
+            if entity:GetMaterialName() == self._LastMaterialName then
+                local gender = self._Control:GetCurrentGender()
+                self._ModelHelper:ChangeMaterials(gender, entity)
+            end
         end
+
         for i = table.nums(self._CurrentColorEntitys) + 1, table.nums(self._ColorGridList) do
             self._ColorGridList[i]:Close()
         end
@@ -559,9 +663,16 @@ function XUiBigWorldDIY:_RefreshColorList(isPlayEnable)
     end
 end
 
+function XUiBigWorldDIY:RefreshModel()
+    local entitys = self._Control:GetUsePartEntitys()
+    local gender = self._Control:GetCurrentGender()
+    self._ModelHelper:ChangeModel(gender, entitys, true)
+end
+
 function XUiBigWorldDIY:_ChangeModel(gender, entitys)
     entitys = entitys or self._Control:GetUsePartEntitys()
-    self._Control:ChangeGender(gender)
+    local outfitType = self._Control:GetCurrentModifiedOutfitType()
+    self._Control:ChangeGender(gender, outfitType)
     self._ModelHelper:ChangeModel(gender, entitys, true)
     self:_PlayChangeSexAction(gender)
 end
@@ -653,13 +764,20 @@ end
 
 function XUiBigWorldDIY:_LoadCurrentModel()
     self:_TryLoadModel(self._Control:GetCurrentGender())
+    self._ModelHelper:PlayAppearAnimation(self._Control:GetCurrentGender())
+end
+
+function XUiBigWorldDIY:RefreshCurrentModel()
+    self:_TryLoadModel(self._Control:GetCurrentGender())
 end
 
 function XUiBigWorldDIY:_LoadAllModel()
     local entitys = self._Control:GetUsePartEntitys()
 
     self:_TryLoadModel(XEnumConst.PlayerFashion.Gender.Male, entitys)
+    self._ModelHelper:PlayAppearAnimation(XEnumConst.PlayerFashion.Gender.Male)
     self:_TryLoadModel(XEnumConst.PlayerFashion.Gender.Female, entitys)
+    self._ModelHelper:PlayAppearAnimation(XEnumConst.PlayerFashion.Gender.Female)
 end
 
 function XUiBigWorldDIY:_ReloadCurrentModel()
@@ -673,11 +791,9 @@ end
 function XUiBigWorldDIY:_ChangeSelectPart(selectIndex, oldSelectIndex, isIncompatible)
     ---@type XBWCommanderDIYPartEntity
     local entity = self._PartDynamicTable:GetData(selectIndex)
-
     if entity then
         if entity:IsTemporary() then
             local wearEntity = self._Control:GetUsePartEntityByTypeId(entity:GetTypeId())
-
             if wearEntity and not wearEntity:IsNil() then
                 local gender = self._Control:GetCurrentGender()
 
@@ -687,16 +803,19 @@ function XUiBigWorldDIY:_ChangeSelectPart(selectIndex, oldSelectIndex, isIncompa
             end
         elseif not entity:IsNil() then
             local gender = self._Control:GetCurrentGender()
-
             if entity:IsFashion() or entity:IsSuit() or isIncompatible then
                 local entitys = self._Control:GetUsePartEntitys()
-
                 self._ModelHelper:ChangeModel(gender, entitys, true)
-                self:_RefreshCurrentPartList()
                 self:_RefreshAnimation(entity:GetTypeId(), gender)
             else
                 self._ModelHelper:ChangePartModel(gender, entity, XEnumConst.PlayerFashion.PartType.Fashion)
+                for i, colorEntity in ipairs(entity:GetColorEntitys()) do
+                    if colorEntity:GetMaterialName() == self._LastMaterialName then
+                        self._Control:SetUsePartColor(entity:GetPartId(), colorEntity:GetColorId())
+                    end
+                end
             end
+            self:_RefreshCurrentPartList()
         end
     end
 end
@@ -704,9 +823,7 @@ end
 ---@param entitys XBWCommanderDIYPartEntity[]
 function XUiBigWorldDIY:_TryLoadModel(gender, entitys)
     entitys = entitys or self._Control:GetUsePartEntitys()
-
     self._ModelHelper:LoadModel(gender, entitys)
-    self._ModelHelper:PlayAppearAnimation(gender)
 end
 
 function XUiBigWorldDIY:_GetCurrentModelId()
@@ -737,14 +854,34 @@ end
 
 function XUiBigWorldDIY:_TryOpenPerspectiveUi(confirmCb)
     if not self._IsFrist then
-        if confirmCb then confirmCb() end
+        if confirmCb then
+            confirmCb()
+        end
         return false
     end
     if not XMVCA.XBigWorldCommanderDIY:IsFromOpenGuide() then
-        if confirmCb then confirmCb() end
+        if confirmCb then
+            confirmCb()
+        end
         return false
     end
     XMVCA.XBigWorldUI:OpenPerspectiveUi(XMVCA.XBigWorldGamePlay:GetCurrentLevelId(), true, nil, confirmCb)
+end
+
+function XUiBigWorldDIY:OnCommanderDiyReset()
+    self._ModelHelper:Release()
+    self:_LoadCurrentModel()
+    self:_RefreshTabGroup()
+    self:_PlayResettingAction()
+end
+
+function XUiBigWorldDIY:OnBackpackUpdate()
+    ---@type XUiBigWorldDIYGridPosition
+    local selectGrid = self._PartDynamicTable:GetGridByIndex(self._CurrentSelectPartIndex)
+
+    if selectGrid then
+        selectGrid:RefreshCurrent()
+    end
 end
 
 function XUiBigWorldDIY:_PlayPreviewEnable(callback)

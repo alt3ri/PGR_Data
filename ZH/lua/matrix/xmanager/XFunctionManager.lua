@@ -280,6 +280,9 @@ XFunctionManager.FunctionName = {
     FashionSuit = 10496, --涂装套装
     AprilFoolsDayClearOut = 10499, -- 愚人节假界面小活动
     PBRGame = 10500, -- 战双兄弟
+    Theatre6 = 10501, -- 肉鸽6.0
+    LifeTree = 10502, -- 生命树图鉴
+    GameCollection = 10503, -- 小游戏合集
 }   
 
 XFunctionManager.FunctionType = {

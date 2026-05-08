@@ -27,11 +27,37 @@ function XBigWorldMessageControl:OnRelease()
 end
 
 function XBigWorldMessageControl:GetContactsName(contactsId)
-    return self._Model:GetBigWorldMessageContactsNameById(contactsId)
+    local conditionIds = self._Model:GetBigWorldMessageContactsConditionIdsById(contactsId)
+    local name = nil
+
+    if not XTool.IsTableEmpty(conditionIds) then
+        local names = self._Model:GetBigWorldMessageContactsNamesById(contactsId)
+
+        for i, conditionId in pairs(conditionIds) do
+            if XTool.IsNumberValid(conditionId) and XMVCA.XBigWorldService:CheckCondition(conditionId) then
+                name = names[i]
+            end
+        end
+    end
+
+    return name or self._Model:GetBigWorldMessageContactsNameById(contactsId)
 end
 
 function XBigWorldMessageControl:GetContactsIcon(contactsId)
-    return self._Model:GetBigWorldMessageContactsIconById(contactsId)
+    local conditionIds = self._Model:GetBigWorldMessageContactsConditionIdsById(contactsId)
+    local icon = nil
+
+    if not XTool.IsTableEmpty(conditionIds) then
+        local icons = self._Model:GetBigWorldMessageContactsIconsById(contactsId)
+        
+        for i, conditionId in pairs(conditionIds) do
+            if XTool.IsNumberValid(conditionId) and XMVCA.XBigWorldService:CheckCondition(conditionId) and icons[i] then
+                icon = icons[i]
+            end
+        end
+    end
+
+    return icon or self._Model:GetBigWorldMessageContactsIconById(contactsId)
 end
 
 function XBigWorldMessageControl:GetContactsIconByMessageId(messageId)
@@ -41,7 +67,24 @@ function XBigWorldMessageControl:GetContactsIconByMessageId(messageId)
 end
 
 function XBigWorldMessageControl:GetContactsText(contactsId)
-    return self._Model:GetBigWorldMessageContactsTextById(contactsId)
+    local conditionIds = self._Model:GetBigWorldMessageContactsConditionIdsById(contactsId)
+    local text = nil
+
+    if not XTool.IsTableEmpty(conditionIds) then
+        local texts = self._Model:GetBigWorldMessageContactsTextsById(contactsId)
+        
+        for i, conditionId in pairs(conditionIds) do
+            if XTool.IsNumberValid(conditionId) and XMVCA.XBigWorldService:CheckCondition(conditionId) and texts[i] then
+                text = texts[i]
+            end
+        end
+    end
+
+    return text or self._Model:GetBigWorldMessageContactsTextById(contactsId)
+end
+
+function XBigWorldMessageControl:GetIconByKey(key)
+    return self._Model:GetBigWorldMessageIconIconByKey(key)
 end
 
 function XBigWorldMessageControl:GetMessageQuestId(messageId)
@@ -187,7 +230,7 @@ function XBigWorldMessageControl:CheckMessageIsForcePlay(messageId)
 end
 
 function XBigWorldMessageControl:ReplaceMessageContentPlayerName(text)
-    return XUiHelper.ReplaceWithPlayerName(text, "%[PlayerName%]")
+    return XUiHelper.ReplaceWithPlayerName(XUiHelper.ReplaceWithPlayerName(text, "【kuroname】"), "%[PlayerName%]")
 end
 
 function XBigWorldMessageControl:SendMessageComplete(messageId)

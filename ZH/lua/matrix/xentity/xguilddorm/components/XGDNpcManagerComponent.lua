@@ -49,7 +49,7 @@ function XGDNpcManagerComponent:CreateRLNpc(npc)
     -- 加载自身的动画状态机
     local controllerPath = npc:GetAnimControllerPath()
     if not string.IsNilOrEmpty(controllerPath) then
-        local runtimeController = CS.LoadHelper.LoadUiController(controllerPath, "UiGuildDormMain")
+        local runtimeController = CS.LoadHelper.LoadUiController(controllerPath, rlRole:GetGameObject())
         rlRole:SetAnimatorController(runtimeController)
     end
     -- 出生

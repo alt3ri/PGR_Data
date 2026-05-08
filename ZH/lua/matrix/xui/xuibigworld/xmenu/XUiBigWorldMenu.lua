@@ -104,7 +104,7 @@ end
 
 function XUiBigWorldMenu:ExitGarden()
     XLuaUiManager.Remove(self.Name)
-    XMVCA.XBigWorldGamePlay:ExitGame()
+    XMVCA.XBigWorldGamePlay:ExitWorld()
 end
 
 function XUiBigWorldMenu:RegisterListeners()

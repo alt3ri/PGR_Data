@@ -7,7 +7,7 @@ function XUiGridBwQuestTitle:RefreshView(typeId)
     self:Open()
     self.Bg.color = XUiHelper.Hexcolor2Color(self._Control:GetQuestTypeColorStr(typeId))
     self.TxtTitle.text = self._Control:GetQuestTypeName(typeId)
-    self.ImgIcon:SetSprite(self._Control:GetQuestTypeIcon(typeId))
+    self.ImgIcon:SetSprite(self._Control:GetQuestTypeBriefIcon(typeId))
 end
 
 local IsDebugBuild = CS.XApplication.Debug
@@ -81,11 +81,14 @@ function XUiPanelBWTaskGroup:RefreshSelect()
     --记录上次点击的
     local questId = self.Parent:GetSelectData(self._TypeId)
     local result
-    if questId and questId > 0 then
-        result = self:TryClickSecondButton(questId)
-    else --没有则用追踪的
+    if not questId or questId <= 0 then
         questId = XMVCA.XBigWorldQuest:GetTrackQuestId()
-        result = self:TryClickSecondButton(questId)
+    end
+    if questId and questId > 0 then
+        local questData = XMVCA.XBigWorldQuest:GetQuestData(questId)
+        if questData:IsInProgress() then
+            result = self:TryClickSecondButton(questId)
+        end
     end
     if result then
         return
@@ -94,7 +97,7 @@ function XUiPanelBWTaskGroup:RefreshSelect()
     questId = self:GetFirstQuestId()
     if not questId or questId <= 0 then
         -- 刷新空
-        self.Parent:RefreshTaskContent(0, 0, 0)
+        self.Parent:RefreshTaskContent(self._TypeId, 0, 0)
         return
     end
     result = self:TryClickSecondButton(questId)
@@ -102,7 +105,7 @@ function XUiPanelBWTaskGroup:RefreshSelect()
         return
     end
     -- 刷新空
-    self.Parent:RefreshTaskContent(0, 0, 0)
+    self.Parent:RefreshTaskContent(self._TypeId, 0, 0)
 end
 
 function XUiPanelBWTaskGroup:RefreshButton()
@@ -283,7 +286,7 @@ function XUiPanelBWTaskGroup:CreateAndRefreshSecondBtn(typeId, groupId, questId)
     end
     btn.gameObject:SetActiveEx(true)
     btn:SetNameByGroup(0, self._Control:GetQuestName(questId))
-    btn:SetSprite(self._Control:GetQuestIcon(questId))
+    btn:SetSprite(self._Control:GetQuestTypeIcon(self._Control:GetQuestType(questId)))
     btn:ShowReddot(self:CheckQuestRedPoint(questId))
     component:SetVisibleWithGroup(1, XMVCA.XBigWorldQuest:IsTrackQuest(questId))
     local step = XMVCA.XBigWorldQuest:GetQuestData(questId):GetActiveStepData()

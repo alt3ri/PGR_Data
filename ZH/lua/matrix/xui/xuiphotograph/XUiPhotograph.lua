@@ -6,6 +6,7 @@ local XUiPhotographPanel = require("XUi/XUiPhotograph/XUiPhotographPanel")
 local XUiPhotographCapturePanel = require("XUi/XUiPhotograph/XUiPhotographCapturePanel")
 local XUiPhotographSDKPanel = require("XUi/XUiPhotograph/XUiPhotographSDKPanel")
 local XUiPanelRoleModel = require("XUi/XUiCharacter/XUiPanelRoleModel")
+local XUiPhotographFashionColor = require("XUi/XUiPhotograph/Panel/XUiPhotographFashionColor")
 local XUiPanelLackResources = require("XUi/XUiSubPackage/XUiPanel/XUiPanelLackResources")
 
 local Vector2 = CS.UnityEngine.Vector2
@@ -28,13 +29,15 @@ function XUiPhotograph:OnAwake()
     self.PhotoSetData = XDataCenter.PhotographManager.GetSetData()
     XDataCenter.PhotographManager.SetCurSelectSceneId()
     ---@type XUiPhotographPanel
+    self.FashionColorPanel = XUiPhotographFashionColor.New(self.PanelDot, self)
     self.PhotographPanel = XUiPhotographPanel.New(self, self.PanelPhotograph, self.PhotoSetData, self.CurCharacterId)
     self.CapturePanel = XUiPhotographCapturePanel.New(self, self.PanelCapture)
+
     ---@type XUiPanelCharacterCG
     self.CG = require("XUi/XUiCharacterCG/XUiPanelCharacterCG").New(self.PanelVideo, self)
     self.SDKPanel = XUiPhotographSDKPanel.New(self, self.PanelSDK)
     ---@type XUiPanelSwitchableSceneAnim
-    self.SwitchableScene = require("XUi/XUiSwitchableScene/Panel/XUiPanelSwitchableSceneAnim").New()
+    self.SwitchableScene = require("XUi/XUiSwitchableScene/XUiPanelSwitchableSceneAnim").New()
     self.PanelAutoLayout = self.PanelName:GetComponent("XAutoLayoutGroup")
     self.TxtRank = self.TxtLevel.transform.parent:Find("TxtLv"):GetComponent("Text")
     self.ImgGlory = self.TxtLevel.transform.parent:Find("Icon")
@@ -319,7 +322,8 @@ function XUiPhotograph:OnUiSceneLoaded()
     self:PlayAnimation("Loading2")
     --self:SetGameObject()
     self:InitSceneRoot()
-    self:UpdateRoleModel(self.SelectCharacterId, self.SelectFashionId)
+    local colorId = XDataCenter.FashionManager.GetOwnFashionDataById(self.SelectFashionId).ColorId
+    self:UpdateRoleModel(self.SelectCharacterId, self.SelectFashionId, colorId)
     self:UpdatePartner(self.PartnerTemplateId)
     self:UpdateCamera()
     self:UpdateBatteryMode()
@@ -339,7 +343,7 @@ function XUiPhotograph:InitSceneRoot()
     self.PartnerModelPanel = XUiPanelRoleModel.New(self.UiModelParent, self.Name, false, true, true, true, false)
 end
 
-function XUiPhotograph:UpdateRoleModel(charId, fashionId)
+function XUiPhotograph:UpdateRoleModel(charId, fashionId, colorId)
     if self.SelectCharacterId ~= charId then
         self.SignBoardActionId = nil
         self.SignBoardPlayer.PlayerData.PlayingElement = nil
@@ -349,10 +353,17 @@ function XUiPhotograph:UpdateRoleModel(charId, fashionId)
     --self.CurFashionId = fashionId
     self.SelectFashionId = fashionId
     self.CG.LastPlayId = nil
-    XDataCenter.DisplayManager.UpdateRoleModel(self.RoleModel, charId, nil, fashionId)
+    if not XTool.IsNumberValid(colorId) then
+        colorId = 0
+    end
+    XDataCenter.DisplayManager.UpdateRoleModel(self.RoleModel, charId, nil, fashionId, colorId)
     self.RoleAnimator = self.RoleModel:GetAnimator()
 
     self.RoleModel:SetXPostFaicalControllerActive(true)
+    -- 保存角色和时装id不知道为什么这里和竖屏的字段不一样
+    self.CharacterId = charId
+    self.FashionId = fashionId
+    self.FashionColorPanel:Refresh(fashionId)
     self:CheckAndUpdateLackResourcesPanel()
 end
 
@@ -675,7 +686,9 @@ function XUiPhotograph:CheckHasChanged()
             or self.CurFashionId ~= self.SelectFashionId then
         return true
     end
-
+    if self.FashionColorPanel:ChangeFashionColor() then
+        return true
+    end
     return false
 end
 
@@ -885,7 +898,8 @@ function XUiPhotograph:OnFashionDownloadComplete()
     local fashionId = self.SelectFashionId
     if XTool.IsNumberValid(fashionId)
        and XMVCA.XSubPackage:CheckFashionDownloaded(fashionId) then
-        self:UpdateRoleModel(self.SelectCharacterId, fashionId)
+        local colorId = XDataCenter.FashionManager.GetOwnFashionDataById(fashionId).ColorId
+        self:UpdateRoleModel(self.SelectCharacterId, fashionId, colorId)
         local fashionTemplate = XDataCenter.FashionManager.GetFashionTemplate(fashionId)
         XUiManager.PopupLeftTip(CS.XTextManager.GetText("DownloadFashionFinishedRefresh", fashionTemplate and fashionTemplate.Name or ""))
     end

@@ -49,4 +49,10 @@ function XBigWorldSkipFunctionConfigModel:GetBigWorldSkipFunctionParamsById(id)
     return config.Params
 end
 
+function XBigWorldSkipFunctionConfigModel:GetBigWorldSkipFunctionTimeIdById(id)
+    local config = self:GetBigWorldSkipFunctionConfigById(id)
+
+    return config.TimeId
+end
+
 return XBigWorldSkipFunctionConfigModel

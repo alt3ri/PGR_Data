@@ -49,6 +49,7 @@ end
 
 function XUiSkyGardenSGDroneCheckpointSettlement:OnBtnCancelClick()
     self._Control:TryRestoreStageUI(self._StageEntity)
+    self._Control:OpenBlackMask()
 
     self.Parent:Close()
 
@@ -57,13 +58,14 @@ end
 
 function XUiSkyGardenSGDroneCheckpointSettlement:OnBtnConfirmClick()
     self._Control:TryRestoreStageUI(self._NextStageEntity)
+    self._Control:OpenBlackMask()
 
     self.Parent:Close()
 
     CS.XBigWorldGame.XSkyGarden.XDroneGame.XSGDGInstance.ReleaseGame()
 end
 
-function XUiSkyGardenSGDroneCheckpointSettlement:Refresh(stageId, score, targetMap)
+function XUiSkyGardenSGDroneCheckpointSettlement:Refresh(stageId, score, targetMap, achieveTargetMap)
     self.TxtScore.text = tostring(score)
 
     self._StageEntity = self._Control:GetStageEntity(stageId)
@@ -73,7 +75,7 @@ function XUiSkyGardenSGDroneCheckpointSettlement:Refresh(stageId, score, targetM
     end
 
     self:_RefreshTarget(targetMap)
-    self:_RefreshReward(stageId, targetMap)
+    self:_RefreshReward(stageId, targetMap, achieveTargetMap)
 
     self.BtnConfirm.gameObject:SetActiveEx(self._NextStageEntity and self._NextStageEntity:IsUnlock())
 end
@@ -134,8 +136,8 @@ function XUiSkyGardenSGDroneCheckpointSettlement:_RefreshTarget(targetMap)
     end
 end
 
-function XUiSkyGardenSGDroneCheckpointSettlement:_RefreshReward(stageId, targetMap)
-    local rewards = self._Control:GetStageRewardsByTargets(stageId, targetMap)
+function XUiSkyGardenSGDroneCheckpointSettlement:_RefreshReward(stageId, targetMap, achieveTargetMap)
+    local rewards = self._Control:GetStageRewardsByTargets(stageId, targetMap, achieveTargetMap)
 
     if not XTool.IsTableEmpty(rewards) then
         local index = 1

@@ -131,9 +131,12 @@ function XUiFashionRandom:OnDynamicTableEvent(event, index, grid, curSelectLuaIn
             self:OnCurSelect(fashionId, curSelectLuaIndex)
         end, 0)
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_TOUCHED then
-        -- local luaIndex = index + 1
+        local luaIndex = index + 1
         -- local fashionId = self.DynamicTableF.DataSource[luaIndex]
         -- self:OnCurSelect(fashionId, luaIndex)
+        if curSelectLuaIndex == luaIndex  then
+            grid:NormalClick()
+        end
     end
 end
 
@@ -198,15 +201,31 @@ function XUiFashionRandom:OnRecordDataChange()
     self.BtnSave:SetDisable(isDataSame)
 end
 
+
+
+function XUiFashionRandom:SetSwitchNormal(flag)
+    self.SwitchNormal = flag
+end
+
+function XUiFashionRandom:GetResourcesId(fashionId)
+    local colorId = XDataCenter.FashionManager.GetOwnFashionDataById(fashionId).ColorId
+    if not colorId or colorId == 0 then
+        local template = XDataCenter.FashionManager.GetFashionTemplate(fashionId)
+        return template.ResourcesId
+    end
+    local resourcesId = self._Control:GetFashionColorResourcesId(colorId)
+    return resourcesId
+end
 function XUiFashionRandom:RefreshModel(fashionId)
-    if fashionId == self.CurSelectFashionId and not self.ChangedBindWeaponTrigger then
+    if fashionId == self.CurSelectFashionId and not self.ChangedBindWeaponTrigger and not self.SwitchNormal then
         return
     end
     self.ChangedBindWeaponTrigger = false -- 绑定武器的脏标记检测
 
     local targetWeaponFashionId = self.BindWeaponFashionDic[fashionId]
     local template = XDataCenter.FashionManager.GetFashionTemplate(fashionId)
-    self.RoleModelPanel:UpdateCharacterResModel(template.ResourcesId, template.CharacterId, XModelManager.MODEL_UINAME.XUiFashion, function (model)
+    self.RoleModelPanel:UpdateCharacterResModel(self:GetResourcesId(fashionId), template.CharacterId, XModelManager.MODEL_UINAME.XUiFashion, function (model)
+        self:SetSwitchNormal(false)
         if model == self.CurModel and self.CurWeaponId == targetWeaponFashionId then
             return
         end
@@ -388,8 +407,8 @@ function XUiFashionRandom:OnFashionDownloadComplete()
     local fashionId = self.CurSelectFashionId
     if XTool.IsNumberValid(fashionId)
        and XMVCA.XSubPackage:CheckFashionDownloaded(fashionId) then
-        -- RefreshModel 有防重入判断(fashionId == CurSelectFashionId)，需设脏标记绕过
-        self.ChangedBindWeaponTrigger = true
+        -- RefreshModel 有防重入判断，需设置 SwitchNormal 绕过
+        self:SetSwitchNormal(true)
         self:RefreshModel(fashionId)
         local fashionTemplate = XDataCenter.FashionManager.GetFashionTemplate(fashionId)
         XUiManager.PopupLeftTip(CS.XTextManager.GetText("DownloadFashionFinishedRefresh", fashionTemplate and fashionTemplate.Name or ""))

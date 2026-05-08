@@ -4,11 +4,13 @@
 ---
 local IsWindowsEditor = XMain.IsWindowsEditor
 
----@class XControl : XMVCAEvent
+---@class XControl
 ---@field protected _Model XModel
+---@field protected _Event XMVCAEvent
 ---@field private _Agency XAgency
 ---@field private _Loader XLoaderUtil
-XControl = XClass(XMVCAEvent, "XControl")
+---@field private _TabConfig XTabConfig
+XControl = XClass(nil, "XControl")
 local LockRefKey = "__LockRefKey__"
 function XControl:Ctor(id, mainControl)
     self._Id = id
@@ -22,6 +24,7 @@ function XControl:Ctor(id, mainControl)
     self._SubControls = {} --子control, 支持多个control
     self._DelayReleaseTime = 0 --延迟释放时间, 默认不延迟
     self._LastUseTime = 0 --最后使用时间
+    self._Event = XMVCAEvent.New()
     self._IsRelease = false
 end
 
@@ -79,7 +82,6 @@ end
 
 ---初始化函数,提供给子类重写
 function XControl:OnInit()
-
 end
 
 ---获取模块的Agency
@@ -138,12 +140,10 @@ end
 
 ---control在生命周期启动的时候需要对Agency及对外的Agency进行添加监听
 function XControl:AddAgencyEvent()
-
 end
 
 ---controld在生命周期结束的时候需要对Agency及对外的Agency进行移除监听
 function XControl:RemoveAgencyEvent()
-
 end
 
 ---添加界面引用
@@ -211,7 +211,12 @@ function XControl:Release()
 
     if self._MainControl == nil then
         self._Model:ClearAllPrivate()
-        self._Model:ClearPrivateConfig()
+        if self._TabConfig then --新版清理配置
+            self._TabConfig:ClearControl()
+        else
+            self._Model:ClearPrivateConfig() --旧版清理配置
+        end
+        
         if self._Loader then --只有主loader才需要从C#层释放
             CS.XLoaderUtil.ClearModuleLoader(self._Id)
         end
@@ -223,8 +228,10 @@ function XControl:Release()
     self._Loader = nil
     self._Model = nil
     self._Agency = nil
+    self._Event = nil
     self._SubControls = nil
     self._MainControl = nil
+    self._TabConfig = nil
     self:OnRelease()
     if IsWindowsEditor then
         WeakRefCollector.AddRef(WeakRefCollector.Type.Control, self)
@@ -241,6 +248,7 @@ function XControl:_HotReloadRelease()
     for _, subControl in pairs(self._SubControls) do
         subControl:_HotReloadRelease()
     end
+    self._Event = nil
     self._Agency = nil
     self._SubControls = nil
     self._MainControl = nil
@@ -267,13 +275,126 @@ function XControl:_HotReloadControl(oldCls, newCls)
     end
 end
 
+---保留函数, 热重载model
+---@param model XModel
+function XControl:_HotReloadModel(model)
+    if self._Model then
+        self._Model = model
+    end
+    for _, control in pairs(self._SubControls) do
+        control:_HotReloadModel(model)
+    end
+end
+
 ---给子类重写, 当模块没有引用时触发
 function XControl:OnRefClear()
-
 end
 
 
 ---给子类重写的, 当Control释放的时候执行
 function XControl:OnRelease()
     XLog.Error("请在子类重写Control.OnRelease方法")
-end
+end
+
+--region Event
+
+function XControl:Clear()
+    if not self._Event then
+        return
+    end
+    self._Event:Clear()
+end
+
+function XControl:AddEventListener(eventId, func, obj)
+    if not self._Event then
+        XLog.Error("添加事件失败，事件对象已被释放", self._Id)
+        return
+    end
+    self._Event:AddEventListener(eventId, func, obj)
+end
+
+function XControl:RemoveEventListener(eventId, func, obj)
+    if not self._Event then
+        XLog.Error("移除事件失败，事件对象已被释放", self._Id)
+        return
+    end
+    self._Event:RemoveEventListener(eventId, func, obj)
+end
+
+function XControl:DispatchEvent(eventId, ...)
+    if not self._Event then
+        XLog.Error("推送事件失败，事件对象已被释放", self._Id)
+        return
+    end
+    self._Event:DispatchEvent(eventId, ...)
+end
+
+--endregion
+
+--region TabConfig
+--[[
+配置表使用规范
+0. 配置表需要先Init，不然后XTabConfig不会被创建出来
+1. 初始化通过self:InitConfigByTabKey()或self:InitConfigByArgs()来初始化
+2. 因为涉及到表格作用域，通过self:GetAllConfig... 或 self:GetConfigBy... 来获取配置
+3. 调用配置模块的其他方法 self:GetConfigInst():xxxx()来执行
+]]--
+
+function XControl:InitConfigByTabKey(parentPath, tabKey)
+    if not self._TabConfig then
+        self._TabConfig = XMVCA:_GetOrRegisterTabConfig(self._Id)
+    end
+    self._TabConfig:InitConfigByTabKey(parentPath, tabKey, XConfigUtil.TabScope.Control)
+end
+
+function XControl:InitConfigByArgs(args)
+    if not self._TabConfig then
+        self._TabConfig = XMVCA:_GetOrRegisterTabConfig(self._Id)
+    end
+    self._TabConfig:InitConfigByArgs(args)
+end
+
+function XControl:GetAllConfigByTabKey(tabKey)
+    if not self._TabConfig then
+        XLog.Error(string.format("请先初始化配置: %s", self._Id))
+        return
+    end
+    return self._TabConfig:GetByTabKey(tabKey, XConfigUtil.TabScope.Control)
+end
+
+function XControl:GetConfigByTabKeyAndIdKey(tabKey, idKey, noTips)
+    if not self._TabConfig then
+        XLog.Error(string.format("请先初始化配置: %s", self._Id))
+        return
+    end
+    return self._TabConfig:GetConfigByTabKeyAndId(tabKey, idKey, XConfigUtil.TabScope.Control, noTips)
+end
+
+function XControl:GetAllConfigByPath(path)
+    if not self._TabConfig then
+        XLog.Error(string.format("请先初始化配置: %s", self._Id))
+        return
+    end
+    return self._TabConfig:Get(path, XConfigUtil.TabScope.Control)
+end
+
+function XControl:GetConfigByPathAndIdKey(tabKey, idKey, noTips)
+    if not self._TabConfig then
+        XLog.Error(string.format("请先初始化配置: %s", self._Id))
+        return
+    end
+    return self._TabConfig:GetConfigByPathAndId(tabKey, idKey, XConfigUtil.TabScope.Control, noTips)
+end
+
+--- 获取配置实例
+---@return XTabConfig
+--------------------------
+function XControl:GetConfigInst()
+    if not self._TabConfig then
+        XLog.Error(string.format("请先初始化配置: %s", self._Id))
+        return
+    end
+    return self._TabConfig
+end
+
+--endregion

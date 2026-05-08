@@ -53,6 +53,14 @@ function XBigWorldNewsModel:SetNewsPopup(newsId)
     self._PopupNews[newsId] = true
 end
 
+function XBigWorldNewsModel:SetMultipleNewsPopup(newsIds)
+    if not XTool.IsTableEmpty(newsIds) then
+        for _, id in pairs(newsIds) do
+            self:SetNewsPopup(id)
+        end
+    end
+end
+
 function XBigWorldNewsModel:InitPopupNews(data)
     if not data then
         return

@@ -29,7 +29,12 @@ function XUiPaintingExperiencePassV4P2:OnStart(trialLevelId)
             end
         end
     end
-    self.BtnPurchase.gameObject:SetActiveEx(#self.SkipIds > 0)
+    local isShield = XMVCA.XBigWorldGamePlay:IsInGame() and XMVCA.XBigWorldFunction:GetShieldOfMainBusiness()
+    if isShield then
+        self.BtnPurchase.gameObject:SetActiveEx(false)
+    else
+        self.BtnPurchase.gameObject:SetActiveEx(#self.SkipIds > 0)
+    end
     self:UpdateFirstReward()
     self:UpdateDes()
 end

@@ -12,6 +12,11 @@ local BossSingleTableKey = {
         -- 先用private缓存，如有必要，后面再改回normal
         CacheType = XConfigUtil.CacheType.Private,
     },
+    BossSingleChallengeBuffGroupIndex = {
+        Identifier = "BuffGroupId",
+        CacheType = XConfigUtil.CacheType.Private,
+        DirPath = XConfigUtil.DirectoryType.Client
+    },
     BossSingleChallengeGrade = {
         Identifier = "LevelType",
     },
@@ -111,9 +116,10 @@ function XFubenBossSingleConfigModel:GetBossSingleChallengeFeatureGroupBuffGroup
     return config.BuffGroupIds or {}
 end
 
+---@deprecated
 function XFubenBossSingleConfigModel:GetBossSingleChallengeBuffGroupBuffById(id)
+    XLog.Error("XFubenBossSingleConfigModel:GetBossSingleChallengeBuffGroupBuffById is deprecated.")
     local config = self:GetBossSingleChallengeBuffGroupConfigById(id)
-
     return config.Buff or {}
 end
 
@@ -155,14 +161,41 @@ function XFubenBossSingleConfigModel:GetBossSingleChallengeFeatureGroupConfigByF
     return nil
 end
 
+---@deprecated
 ---@return XTableBossSingleChallengeBuffGroup[]
 function XFubenBossSingleConfigModel:GetBossSingleChallengeBuffGroupConfigs()
+    XLog.Error("XFubenBossSingleConfigModel:GetBossSingleChallengeBuffGroupConfigs is deprecated.")
     return self._ConfigUtil:GetByTableKey(BossSingleTableKey.BossSingleChallengeBuffGroup) or {}
 end
 
+---@deprecated
 ---@return XTableBossSingleChallengeBuffGroup
 function XFubenBossSingleConfigModel:GetBossSingleChallengeBuffGroupConfigById(id)
+    XLog.Error("XFubenBossSingleConfigModel:GetBossSingleChallengeBuffGroupConfigById is deprecated.")
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(BossSingleTableKey.BossSingleChallengeBuffGroup, id, false) or {}
+end
+
+---@return XTableBossSingleChallengeBuffGroup[]
+function XFubenBossSingleConfigModel:GetBossSingleChallengeBuffGroupConfigByBuffGroupId(
+    buffGroupId)
+
+    local buffGroupIndex = self._ConfigUtil:GetCfgByTableKeyAndIdKey(
+        BossSingleTableKey.BossSingleChallengeBuffGroupIndex,
+        buffGroupId,
+        true)
+
+    local result = {}
+
+    for i, id in pairs(buffGroupIndex.Index) do
+        local buffGroup = self._ConfigUtil:GetCfgByTableKeyAndIdKey(
+            BossSingleTableKey.BossSingleChallengeBuffGroup,
+            id,
+            true)
+
+        result[i] = buffGroup
+    end
+
+    return result
 end
 
 ---@return XTableBossSingleChallengeGrade[]

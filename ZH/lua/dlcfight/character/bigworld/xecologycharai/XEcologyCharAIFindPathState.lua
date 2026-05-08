@@ -12,7 +12,7 @@ function XEcologyCharAIFindPathState:SetPath(path, checkDistance)
     -- 记录寻路目标状态
     for enum, pos in pairs(self.StateConfig.PathTargetPosDict) do
         if XScriptTool.EqualVector3(pos, self.StartPos) then
-            --XLog.Error("[脚本: "..self._proxy.Id.."]记录寻路目标枚举："..enum)
+            --XScriptTool.EcologyError("记录寻路目标枚举："..enum)
             self._proxy:SetBBInt(XVarDomain.Npc, self._uuid, EEcologySaveKey.FindPathStartStateEnum, enum)
         end
     end
@@ -20,14 +20,14 @@ end
 
 ---@overload
 function XEcologyCharAIFindPathState:OnMoveNext()
-    --XLog.Error("[脚本: "..self._proxy.Id.."]记录当前为第"..self._curPathPointIndex.."个路径点", self._curTargetPathPoint)
+    --XScriptTool.EcologyError("记录当前为第"..self._curPathPointIndex.."个路径点", self._curTargetPathPoint)
     self._proxy:SetBBInt(XVarDomain.Npc, self._uuid, EEcologySaveKey.FindPathCuePathIndex, self._curPathPointIndex)
 end
 
 ---@overload
 function XEcologyCharAIFindPathState:OnStateEnter(lastStateEnum)
     if self.StateConfig == nil then
-        XLog.Error("[脚本: "..self._proxy.Id.."]生态AI没有初始化数据 PlaceId = "..self._placeId)
+        XScriptTool.EcologyError(self, "生态AI没有初始化数据")
         return
     end
     self.StateEnum = self.StateConfig.StateEnum

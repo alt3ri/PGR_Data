@@ -174,7 +174,7 @@ function XUiGridMulitiplayerRoomChar:RefreshPlayer(playerData, callback)
         local resourcesId
         local fashionId = char.FashionId
         if XTool.IsNumberValid(fashionId) then
-            resourcesId = XDataCenter.FashionManager.GetResourcesId(fashionId)
+            resourcesId = XMVCA.XFashion:GetOwnFashionColorResourcesId(fashionId)
         else
             resourcesId = XDataCenter.FashionManager.GetFashionResourceIdByCharId(char.Id)
         end

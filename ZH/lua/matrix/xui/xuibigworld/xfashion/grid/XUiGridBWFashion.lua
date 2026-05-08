@@ -1,9 +1,8 @@
-
 ---@class XUiGridBWFashion : XUiNode
 ---@field GameObject UnityEngine.GameObject
 ---@field Transform UnityEngine.Transform
 ---@field Parent XUiPanelBWCoating
----@field _Control 
+---@field _Control
 local XUiGridBWFashion = XClass(XUiNode, "XUiGridBWFashion")
 
 local GridType = {
@@ -46,7 +45,7 @@ end
 function XUiGridBWFashion:RefreshFashion(charId, fashion, select)
     local t = XDataCenter.FashionManager.GetFashionTemplate(fashion)
     self.RImgIcon:SetRawImage(t.Icon)
-    
+
     local dressFashion = XMVCA.XBigWorldCharacter:GetFashionId(charId)
     if dressFashion == fashion then
         self.ImgLock.gameObject:SetActiveEx(false)
@@ -62,10 +61,10 @@ function XUiGridBWFashion:RefreshFashion(charId, fashion, select)
         self.RImgIcon.color = ColorEnum.WhiteWithAlpha
     end
     self:SetSelect(select == fashion)
+    self.ImgColor.gameObject:SetActiveEx(XMVCA.XBigWorldCharacter:CheckFashionHasColor(fashion))
 end
 
 function XUiGridBWFashion:RefreshWeapon(charId, fashion, select)
-    
 end
 
 function XUiGridBWFashion:RefreshHead(charId, fashion, select)

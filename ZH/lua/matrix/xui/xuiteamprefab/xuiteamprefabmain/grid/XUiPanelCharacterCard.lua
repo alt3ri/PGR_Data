@@ -18,6 +18,7 @@ function XUiPanelCharacterCard:OnStart(pos)
     self.BtnPartnerSkill5.CallBack = function() self:OnBtnPartnerPassiveSkillClick(5) end
     self.BtnPartnerSkill6.CallBack = function() self:OnBtnPartnerPassiveSkillClick(6) end
     self.BtnFirst.CallBack = function() self:OnBtnFirstClick() end
+    self.BtnMode.CallBack = function() self:OnBtnModeClick() end
     self.SA_ImgSelect2.color = XDataCenter.TeamManager.GetTeamMemberSelectColor(pos)
 
     self.ProxyTable = {
@@ -144,13 +145,20 @@ function XUiPanelCharacterCard:OnBtnFirstClick()
     self.Parent:RefreshRightInfo()
 end
 
+function XUiPanelCharacterCard:OnBtnModeClick()
+    XLuaUiManager.Open("UiTeamPrefabSkillSwitch", self.TeamPrefab, self.Pos, function()
+        self.Parent:RefreshRightInfo()
+    end)
+end
+
 --- func desc
 ---@param xTeamPrefab XTeamPrefab
 function XUiPanelCharacterCard:Refresh(xTeamPrefab, pos)
     local characterId = xTeamPrefab:GetEntityIdByTeamPos(pos)
     local hasCharacter = XTool.IsNumberValid(characterId)
     self.IsYellowConflict = false
-    self.IsWeaponResonanceBindConflict = false
+    self.IsWeaponResonanceBindCharConflict = false
+    self.IsWeaponResonanceBindSkillIdConflict = false
     self.IsWeaponResonanceCountConflict = false
     self.IsWeaponOverrunConflict = false
     self.IsEquipAwarenessConflict = false
@@ -275,10 +283,13 @@ function XUiPanelCharacterCard:Refresh(xTeamPrefab, pos)
         self.WeaponGrid = self.WeaponGrid or XUiGridEquip.New(self.GridWeapon, self.Parent, function ()
             XLuaUiManager.Open("UiTeamPrefabWeapon", self.TeamPrefab, self.Pos)
         end)
-        local usingWeaponId = XMVCA.XEquip:GetCharacterWeaponId(characterId)
-            if weaponData then
-                usingWeaponId = weaponData.EquipId
-            end
+        local realWeaponId = XMVCA.XEquip:GetCharacterWeaponId(characterId)
+        local usingWeaponId = realWeaponId
+        if weaponData then
+            usingWeaponId = weaponData.EquipId
+        end
+        -- 预设武器与实穿武器是否一致，①②③④冲突检测的前置条件
+        local isWeaponSameAsReal = (usingWeaponId == realWeaponId)
         local xWeaponEquip = XMVCA.XEquip:GetEquip(usingWeaponId)
         if xWeaponEquip then
             self.WeaponGrid:Refresh(usingWeaponId)
@@ -287,12 +298,12 @@ function XUiPanelCharacterCard:Refresh(xTeamPrefab, pos)
             self.BtnEquipResonance1:SetButtonState(CS.UiButtonState.Disable)
             self.BtnEquipResonance2:SetButtonState(CS.UiButtonState.Disable)
             self.BtnEquipResonance3:SetButtonState(CS.UiButtonState.Disable)
-			local resonanceDict = nil
-            if weaponData then
-                resonanceDict = weaponData.ResonanceDict
-            end
-            local isHasResonance = not XTool.IsTableEmpty(resonanceDict)
-            if isHasResonance then
+			local resonanceDict = nil
+            if weaponData then
+                resonanceDict = weaponData.ResonanceDict
+            end
+            local isHasResonance = not XTool.IsTableEmpty(resonanceDict)
+            if isHasResonance then
                 local XSkillInfoObj = require("XEntity/XEquip/XSkillInfoObj")
                 -- 获取当前预设角色ID（用于区分角色专属共鸣技能）
                 local characterId = self.TeamPrefab:GetEntityIdByTeamPos(pos)
@@ -305,28 +316,44 @@ function XUiPanelCharacterCard:Refresh(xTeamPrefab, pos)
                     self["BtnEquipResonance"..i]:SetButtonState(CS.UiButtonState.Normal)
                 end
             end
-			-- 武器谐振
-            self.BtnOverrunBlind:SetButtonState(CS.UiButtonState.Disable)
-            local hasOverrunSuitId = false
-            if weaponData then
-                hasOverrunSuitId = XTool.IsNumberValid(weaponData.WeaponOverrunSuitId)
-            end
-            if xWeaponEquip:CanOverrun() and hasOverrunSuitId then
-                local icon = XMVCA.XEquip:GetEquipSuitIconPath(weaponData.WeaponOverrunSuitId)
-                self.BtnOverrunBlind:SetRawImage(icon)
-                self.BtnOverrunBlind:SetButtonState(CS.UiButtonState.Normal)
-            end
+			-- 武器谐振
+            self.BtnOverrunBlind:SetButtonState(CS.UiButtonState.Disable)
+            local hasOverrunSuitId = false
+            if weaponData then
+                hasOverrunSuitId = XTool.IsNumberValid(weaponData.WeaponOverrunSuitId)
+            end
+            if xWeaponEquip:CanOverrun() and hasOverrunSuitId then
+                local icon = XMVCA.XEquip:GetEquipSuitIconPath(weaponData.WeaponOverrunSuitId)
+                self.BtnOverrunBlind:SetRawImage(icon)
+                self.BtnOverrunBlind:SetButtonState(CS.UiButtonState.Normal)
+            end
             -- 武器共鸣黄标:
-            -- 1.equip实际共鸣的角色与当前预设里的角色不一致则显示
-            local isWeaponResonanceCharBindConflict = false
+            -- 1.共鸣绑定角色冲突：equip实际共鸣绑定的角色与当前预设里的角色不一致则显示
+            -- 4.共鸣绑定技能冲突：预设里绑定的技能Id不在实际装备当前可选技能列表中则显示
+            -- ①④任意触发则对应槽位显示不共鸣标签
+            local isWeaponResonanceBindCharConflict = false
+            local isWeaponResonanceBindSkillIdConflict = false
+            local validSkillIdSet = {}
+            local previewList = XMVCA.XEquip:GetResonancePreviewSkillInfoList(usingWeaponId, characterId, 1)
+            for _, info in ipairs(previewList) do
+                validSkillIdSet[info.Id] = true
+            end
             for slot = 1, XEnumConst.EQUIP.WEAPON_RESONANCE_COUNT, 1 do
+                -- ① 绑定角色冲突（需预设武器与实穿一致）
                 local charId = xWeaponEquip:GetResonanceBindCharacterId(slot)
                 local isCurSlotCharIdConflict = XTool.IsNumberValid(charId) and charId ~= characterId
                 if isCurSlotCharIdConflict then
-                    isWeaponResonanceCharBindConflict = true
-                    self.IsWeaponResonanceBindConflict = true
+                    isWeaponResonanceBindCharConflict = true
+                    self.IsWeaponResonanceBindCharConflict = true
                 end
-                self["BtnEquipResonance"..slot]:ShowReddot(isCurSlotCharIdConflict)
+                -- ④ 绑定技能冲突（需预设武器与实穿一致）
+                local prefabSkillId = resonanceDict and resonanceDict[slot]
+                local isCurSlotSkillIdConflict = isWeaponSameAsReal and XTool.IsNumberValid(prefabSkillId) and not validSkillIdSet[prefabSkillId]
+                if isCurSlotSkillIdConflict then
+                    isWeaponResonanceBindSkillIdConflict = true
+                    self.IsWeaponResonanceBindSkillIdConflict = true
+                end
+                self["BtnEquipResonance"..slot]:ShowReddot(isCurSlotCharIdConflict or isCurSlotSkillIdConflict)
             end
             
             -- 2.预设里的共鸣数量与实际装备共鸣数量不一致则显示
@@ -342,22 +369,22 @@ function XUiPanelCharacterCard:Refresh(xTeamPrefab, pos)
                 self.IsWeaponResonanceCountConflict = true
             end
     
-            local isWeaponResonanceConflict = isWeaponResonanceCountConflict or isWeaponResonanceCharBindConflict
+            local isWeaponResonanceConflict = isWeaponResonanceCountConflict or isWeaponResonanceBindCharConflict
             self.BtnEquipResonance1:ShowTag(isWeaponResonanceConflict)
             if isWeaponResonanceConflict then
                 self.IsYellowConflict = true
             end
     
-			-- 武器谐振黄标:预设里没解锁，但是实际装备有
-            local isWeaponOverrunConfilict = false
-            if weaponData then
-                isWeaponOverrunConfilict = (not XTool.IsNumberValid(weaponData.WeaponOverrunSuitId)) and (XTool.IsNumberValid(xWeaponEquip:GetOverrunChoseSuit()))
-            end
-            self.BtnOverrunBlind:ShowTag(isWeaponOverrunConfilict)
-            if isWeaponOverrunConfilict then
-                self.IsYellowConflict = true
-                self.IsWeaponOverrunConflict = true
-            end
+			-- 武器谐振冲突:预设里没有配置谐振套装（WeaponOverrunSuitId 无效），但实际装备已选择了谐振套装
+            local isWeaponOverrunConfilict = false
+            if weaponData then
+                isWeaponOverrunConfilict = (not XTool.IsNumberValid(weaponData.WeaponOverrunSuitId)) and (XTool.IsNumberValid(xWeaponEquip:GetOverrunChoseSuit()))
+            end
+            self.BtnOverrunBlind:ShowTag(isWeaponOverrunConfilict)
+            if isWeaponOverrunConfilict then
+                self.IsYellowConflict = true
+                self.IsWeaponOverrunConflict = true
+            end
         else
             -- 没有武器装备时，重置所有显示状态
             self.WeaponGrid:ShowCharacterDefaultWeapon(characterId)
@@ -435,6 +462,28 @@ function XUiPanelCharacterCard:Refresh(xTeamPrefab, pos)
         --首发按钮
         local isFirst = xTeamPrefab:GetFirstFightPos() == pos
         self.BtnFirst:SetButtonState(isFirst and CS.UiButtonState.Disable or CS.UiButtonState.Normal)
+
+        -- 形态切换按钮（仅支持 CharacterSkillExchangeDes 配置的角色，如比安卡）
+        local switchSkillId, skillExchangeConfig = XMVCA.XCharacter:GetSkillExchangeDesSkillIdAndConfigByCharacterId(characterId)
+        self.BtnMode.gameObject:SetActiveEx(switchSkillId ~= nil)
+        if switchSkillId then
+            -- 确定当前选中的变体：读预设存储，nil 时 fallback 到 group 第一个（不读全局态，保持数据独立）
+            local currentSkillId = xTeamPrefab:GetSwitchSkillByPos(pos)
+            local groupSkillIds = XMVCA.XCharacter:GetGroupSkillIds(switchSkillId)
+            if not currentSkillId then
+                currentSkillId = groupSkillIds[1]
+            end
+            -- 填充图标与形态名
+            local skillLevel = XMVCA.XCharacter:GetSkillLevel(currentSkillId)
+            local skillDetail = XMVCA.XCharacter:GetSkillGradeDesWithDetailConfig(currentSkillId, skillLevel)
+            self.BtnMode:SetRawImage(skillDetail.Icon)
+            -- Title 按 group 内顺序索引，需要找到 currentSkillId 的位置
+            local titleIndex = 1
+            for i, skillId in ipairs(groupSkillIds) do
+                if skillId == currentSkillId then titleIndex = i break end
+            end
+            self.BtnMode:SetNameByGroup(0, skillExchangeConfig.Title[titleIndex])
+        end
     end
     if self.WeaponGrid then
         if hasCharacter then
@@ -451,6 +500,14 @@ end
 
 function XUiPanelCharacterCard:GetIsEquipAwarenessConflict()
     return self.IsEquipAwarenessConflict
+end
+
+function XUiPanelCharacterCard:GetIsWeaponResonanceBindCharConflict()
+    return self.IsWeaponResonanceBindCharConflict
+end
+
+function XUiPanelCharacterCard:GetIsWeaponResonanceBindSkillIdConflict()
+    return self.IsWeaponResonanceBindSkillIdConflict
 end
 
 function XUiPanelCharacterCard:GetIsWeaponResonanceCountConflict()

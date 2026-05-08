@@ -217,7 +217,7 @@ function XLoginManager.ClearGame()
     end
     CS.Movie.XMovieManager.Instance:Clear()
     CsXUiManager.Instance:Clear()
-    XMVCA.XBigWorldGamePlay:OnExitFight()
+    XMVCA.XBigWorldGamePlay:ExitFight()
     XHomeSceneManager.LeaveScene()
 end
 
@@ -1058,6 +1058,7 @@ XRpc.NotifyLogin = function(data)
     local fashionProfiler = loginProfiler:CreateChild("FashionManager")
     fashionProfiler:Start()
     XDataCenter.FashionManager.InitFashions(data.FashionList)
+    XMVCA.XFashion:LoginNotify(data)
     fashionProfiler:Stop()
 
     local baseEquipProfiler = loginProfiler:CreateChild("BaseEquipManager")
@@ -1222,8 +1223,7 @@ end
 function XLoginManager.GetCurrentLoginPromoFeature()
     local allConfigs = XLoginManager.GetLoginPromoFeatureTemplate()
     for _, config in pairs(allConfigs) do
-        if XConditionManager.CheckCondition(config.ConditionId)
-        and XFunctionManager.CheckInTimeByTimeId(config.EnterTimeId) then
+        if XConditionManager.CheckCondition(config.ConditionId) and XFunctionManager.CheckInTimeByTimeId(config.EnterTimeId) then
             return config
         end
     end
@@ -1347,7 +1347,7 @@ XRpc.ForceLogoutNotify = function(res)
         end
         CS.Movie.XMovieManager.Instance:Clear()
         CsXUiManager.Instance:Clear()
-        XMVCA.XBigWorldGamePlay:OnExitFight()
+        XMVCA.XBigWorldGamePlay:ExitFight()
         XHomeSceneManager.LeaveScene()
         XLoginManager.BackToUiLogin(error_txt)
     end)
@@ -1388,7 +1388,7 @@ XRpc.GameUpdateNotify = function(res)
 
         CS.Movie.XMovieManager.Instance:Clear()
         CsXUiManager.Instance:Clear()
-        XMVCA.XBigWorldGamePlay:OnExitFight()
+        XMVCA.XBigWorldGamePlay:ExitFight()
         XHomeSceneManager.LeaveScene()
         XLoginManager.BackToUiLogin(res.Msg)
     end)

@@ -1,4 +1,4 @@
-
+
 local XRedPointConditionPassport = {}
 local SubConditions = nil
 
@@ -8,6 +8,7 @@ function XRedPointConditionPassport.GetSubEvents()
     Events = Events or
     {
         XRedPointEventElement.New(XEventId.EVENT_AUTO_GET_TASK_REWARD_LIST),
+        XRedPointEventElement.New(XEventId.EVENT_NOTIFY_PASSPORT_DATA),
     }
     return Events
 end

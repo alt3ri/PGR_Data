@@ -11,7 +11,7 @@ local MenuType = {
 
 local UI_NAMES = {
     MAIN = "UiMain",
-    DLC_RELINK = { "UiDlcRelinkMain", "UiDlcRelinkRoom" },
+    DLC_RELINK = { "UiDlcRelinkRoom" },
 }
 
 function XUiDlcRelinkPopupInvitation:OnAwake()

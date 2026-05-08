@@ -1,0 +1,570 @@
+local XUiPanelTheatre6SkilBagDetail = require("XUi/XUiTheatre6/Character/Panel/XUiPanelTheatre6SkilBagDetail")
+local XUiGridTheatre6SkillBag = require("XUi/XUiTheatre6/Character/Grid/XUiGridTheatre6SkillBag")
+
+---@class XUiPanelTheatre6CharacterAttrDetail : XUiNode 角色详情面板
+---@field _Control XTheatre6Control
+local XUiPanelTheatre6CharacterAttrDetail = XClass(XUiNode, "XUiPanelTheatre6CharacterAttrDetail")
+
+function XUiPanelTheatre6CharacterAttrDetail:OnStart(data, mode, isInShop, taskUpgradeSkillIds)
+    self._Mode = mode or self._Control:GetCurPlayMode()
+    self._IsInShop = isInShop or false
+    self._IsUseParamData = data ~= nil
+    self._ModelData = (data and data.CharacterId) and data or self._Control:GetPlayModeData(self._Mode)
+    self._MaxRelicCount = self._Control:GetIntClientConfigValue("MaxRelicCount")
+    self._MaxBuffCount = self._Control:GetIntClientConfigValue("MaxBuffCount")
+    self._AttrIds = {}
+    self._ExternalAreas = {}
+    self._TaskUpgradeSkillIds = taskUpgradeSkillIds
+    self._OnScrollCb = handler(self, self.CheckScoreTopVisible)
+
+    self:CacheSkillData()
+    self:CacheBuffData()
+
+    local characterId = self._ModelData.CharacterId
+    local characterConfig = self._Control:GetCharacterConfig(characterId)
+    self.UiTxtName.text = characterConfig.Name
+    if self._IsUseParamData then
+        local defaultFashion = self._Control:GetFashionConfig(characterConfig.FashionIds[1]).BigPortrait
+        self.RImgRole:SetRawImage(defaultFashion)
+        self:HideBtnBackpack()
+    else
+        self.RImgRole:SetRawImage(self._Control:GetBigHeadIconByMode(self._Mode))
+    end
+
+    self:RefreshRoleDetail()
+
+    self.PanelSkillBag.gameObject:SetActiveEx(false)
+    self.BtnAttribute:AddEventListener(handler(self, self.OnBtnAttributeClick))
+    self.BtnBackpack:AddEventListener(handler(self, self.ShowSkillBag))
+    self.ListRoleDetail.onValueChanged:AddListener(self._OnScrollCb)
+
+    self:InitScoreTopCheck()
+    -- self:UpdateReddot()
+end
+
+function XUiPanelTheatre6CharacterAttrDetail:OnEnable()
+    self:CacheSkillData()
+    self:CacheBuffData()
+    if self._IsDirty then
+        self._IsDirty = false
+    end
+    self:UpdateView()
+    -- self:UpdateReddot()
+end
+
+function XUiPanelTheatre6CharacterAttrDetail:CacheSkillData()
+    if self._IsUseParamData then
+        local activeSkillIds, insertSkillIds, specialSkillIds, skillBagIds = {}, {}, {}, {}
+        local SlotType = XEnumConst.Theatre6.SlotType
+        for _, data in ipairs(self._ModelData.Skills or table.empty) do
+            if data.SlotType == SlotType.Active then
+                activeSkillIds[data.Position] = data.SkillId
+            elseif data.SlotType == SlotType.Insert then
+                insertSkillIds[data.Position] = data.SkillId
+            elseif data.SlotType == SlotType.Special then
+                specialSkillIds[data.Position] = data.SkillId
+            elseif data.SlotType == SlotType.Bag then
+                skillBagIds[data.Position] = data.SkillId
+            end
+        end
+        self._ActiveSkillIds = activeSkillIds
+        self._InsertSkillIds = insertSkillIds
+        self._SpecialSkillIds = specialSkillIds
+        self._SkillBagIds = skillBagIds
+    else
+        self._ActiveSkillIds = self._Control:GetActiveSkillIds()
+        self._InsertSkillIds = self._Control:GetInsertSkillIds()
+        self._SpecialSkillIds = self._Control:GetSpecialSkillIds()
+        self._SkillBagIds = self._Control:GetCharacterSkillBagIds()
+    end
+    self._ActiveSlotMax = self._Control:GetSlotMaxLimit(XEnumConst.Theatre6.SlotType.Active)
+    self._InsertSlotMax = self._Control:GetSlotMaxLimit(XEnumConst.Theatre6.SlotType.Insert)
+    self._SpecialSlotMax = self._Control:GetSlotMaxLimit(XEnumConst.Theatre6.SlotType.Special)
+    self._BagSlotMax = self._Control:GetSlotMaxLimit(XEnumConst.Theatre6.SlotType.Bag)
+end
+
+function XUiPanelTheatre6CharacterAttrDetail:CacheBuffData()
+    if self._IsUseParamData then
+        local rawBuffs = self._ModelData.Buffs or table.empty
+        local filtered = {}
+        for _, data in ipairs(rawBuffs) do
+            local config = self._Control:GetBuffConfig(data.BuffId)
+            if config and config.IsNotShow == 0 then
+                table.insert(filtered, data)
+            end
+        end
+        self._BuffDatas = filtered
+    else
+        self._BuffDatas = self._Control:GetSortCharacterShowBuffs()
+    end
+end
+
+function XUiPanelTheatre6CharacterAttrDetail:OnGetLuaEvents()
+    return {
+        XEventId.EVENT_THEATRE6_UPDATE_SKILL,
+        XEventId.EVENT_THEATRE6_BUY_GOOD,
+        XEventId.EVENT_THEATRE6_SKILL_NOT_NEW,
+        XEventId.EVENT_THEATRE6_SHOP_REFRESH,
+    }
+end
+
+function XUiPanelTheatre6CharacterAttrDetail:OnNotify(evt, ...)
+    if evt == XEventId.EVENT_THEATRE6_UPDATE_SKILL then
+        local addedIdsBySlot, upgradeIds = ...
+        self:CacheSkillData()
+        self:ShowSkill()
+        self:DispatchSkillEffects(addedIdsBySlot, upgradeIds)
+        -- self:UpdateReddot()
+    elseif evt == XEventId.EVENT_THEATRE6_SHOP_REFRESH then
+        self:CacheSkillData()
+        self:ShowSkill()
+        -- self:UpdateReddot()
+    elseif evt == XEventId.EVENT_THEATRE6_BUY_GOOD then
+        self:CacheSkillData()
+        self:CacheBuffData()
+        self:UpdateView()
+        -- self:UpdateReddot()
+    elseif evt == XEventId.EVENT_THEATRE6_SKILL_NOT_NEW then
+        -- self:UpdateReddot()
+    end
+end
+
+-- function XUiPanelTheatre6CharacterAttrDetail:UpdateReddot()
+--     if self._IsUseParamData then
+--         return
+--     end
+--     local hasNewSkill = self._Control:BagHasNewSkill()
+--     self.BtnBackpack:ShowReddot(hasNewSkill)
+-- end
+
+function XUiPanelTheatre6CharacterAttrDetail:RefreshRoleDetail()
+    local score = self._ModelData.Score or self._ModelData.ScoreTotal or 0
+    self.UiTxtScore.text = score
+    self.UiTxtScoreTop.text = score
+    self:ShowScoreChange(false, false)
+    self:UpdateView()
+end
+
+function XUiPanelTheatre6CharacterAttrDetail:UpdateView()
+    --属性
+    self:ShowAttribute()
+    --技能
+    if not self.ListRoleDetail.gameObject.activeInHierarchy then
+        self._IsDirty = true
+        return
+    end
+    self:ShowSkill()
+    --遗物
+    self:ShowRelic()
+    --Buff
+    self:ShowBuff()
+end
+
+---设置战力上升/下降
+function XUiPanelTheatre6CharacterAttrDetail:ShowScoreChange(isUp, isDown)
+    self.ImgArrowUp.gameObject:SetActiveEx(isUp)
+    self.ImgArrowDown.gameObject:SetActiveEx(isDown)
+end
+
+function XUiPanelTheatre6CharacterAttrDetail:ShowAttribute()
+    ---@type XTableTheatre6Attr[]
+    local attrConfigs = {}
+    local attrValues = {}
+    self._AttrIds = {}
+    for _, data in pairs(self._ModelData.Attrs) do
+        local attrId, attrValue = data.AttrId, data.Value
+        local attrConfig = self._Control:GetAttrConfig(attrId)
+        if XTool.IsNumberValid(attrConfig.Priority) then
+            table.insert(attrConfigs, attrConfig)
+            attrValues[attrId] = attrValue
+        end
+    end
+
+    table.sort(attrConfigs, function(a, b)
+        if a.Priority ~= b.Priority then
+            return a.Priority > b.Priority
+        end
+        return a.Id > b.Id
+    end)
+
+    XUiHelper.RefreshCustomizedList(self.GridAttribute.parent, self.GridAttribute, #attrConfigs, function(i, go)
+        local attrConfig = attrConfigs[i]
+        local attrId = attrConfig.Id
+        local uiObject = {}
+        XUiHelper.InitUiClass(uiObject, go)
+        uiObject.UiImgIcon:SetRawImage(attrConfig.Icon)
+        uiObject.UiTxtNum.text = self._Control:FormatNumberWithUnit(attrValues[attrId])
+        table.insert(self._AttrIds, attrId)
+    end)
+end
+
+function XUiPanelTheatre6CharacterAttrDetail:GetSkillSlotInfo(index)
+    local skillId = nil
+    local slotType = nil
+    local pos = index
+    if index <= self._ActiveSlotMax then
+        skillId = self._ActiveSkillIds[index]
+        slotType = XEnumConst.Theatre6.SlotType.Active
+    elseif index <= self._InsertSlotMax + self._ActiveSlotMax then
+        skillId = self._InsertSkillIds[index - self._ActiveSlotMax]
+        slotType = XEnumConst.Theatre6.SlotType.Insert
+        pos = index - self._ActiveSlotMax
+    else
+        skillId = self._SpecialSkillIds[index - self._ActiveSlotMax - self._InsertSlotMax]
+        slotType = XEnumConst.Theatre6.SlotType.Special
+        pos = index - self._ActiveSlotMax - self._InsertSlotMax
+    end
+    return skillId, slotType, pos
+end
+
+function XUiPanelTheatre6CharacterAttrDetail:EnsureSkillGrids(skillsCount)
+    if self.SkillGrids and #self.SkillGrids >= skillsCount then
+        return
+    end
+    ---@type XUiGridTheatre6SkillBag[]
+    self.SkillGrids = self.SkillGrids or {}
+    self.AreaGo = self.AreaGo or {}
+    self.AreaData = self.AreaData or {}
+    self.GridSkill.gameObject:SetActiveEx(false)
+
+    for i = #self.SkillGrids + 1, skillsCount do
+        local go = XUiHelper.Instantiate(self.GridSkill, self.GridSkill.parent)
+        local uiObject = XUiGridTheatre6SkillBag.New(go, self)
+        uiObject:Open()
+        self.SkillGrids[i] = uiObject
+        self.AreaGo[i] = go
+    end
+end
+
+function XUiPanelTheatre6CharacterAttrDetail:ShowSkill()
+    local bagSkillCount = XTool.GetTableCount(self._SkillBagIds)
+    if self.FullBg then
+        self.FullBg.gameObject:SetActiveEx(bagSkillCount == self._BagSlotMax)
+    end
+    self.BtnBackpack:SetNameByGroup(0, bagSkillCount)
+    self.BtnBackpack:SetNameByGroup(1, "/" .. self._BagSlotMax)
+    local skillsCount = self._ActiveSlotMax + self._InsertSlotMax + self._SpecialSlotMax
+    self._SkillsCount = skillsCount
+    self._CurrentGrid = nil
+    self:EnsureSkillGrids(skillsCount)
+    for i = 1, skillsCount do
+        local uiObject = self.SkillGrids[i]
+        local skillId, slotType, pos = self:GetSkillSlotInfo(i)
+
+        uiObject:Open()
+        uiObject:ClearData()
+        uiObject:Refresh(pos, slotType, skillId, self._ModelData.CharacterId, self._IsUseParamData)
+        if self._IsInShop and XTool.IsNumberValid(skillId) then
+            uiObject:CanUpgrade(self._Control:CharacterHasCanUpGradeSkills(skillId))
+        end
+        if self._TaskUpgradeSkillIds and XTool.IsNumberValid(skillId) and self._TaskUpgradeSkillIds[skillId] then
+            uiObject:CanUpgrade(true)
+        end
+        uiObject.ImgIconArrow.gameObject:SetActiveEx(slotType == XEnumConst.Theatre6.SlotType.Active and i < self._ActiveSlotMax)
+        self.AreaGo[i] = uiObject.GameObject
+        self.AreaData[i] = { slotType = slotType, position = pos }
+        self:SetGridClick(uiObject, slotType)
+
+        if not self._IsUseParamData and XTool.IsNumberValid(uiObject:GetSkillId()) and not uiObject:IsBaseSkill() then
+            self:SetGridDrag(uiObject, self.AreaGo)
+            self:_ApplyExternalAreasToGrid(uiObject)
+        else
+            uiObject:ClearDrag()
+        end
+    end
+    for i = skillsCount + 1, #self.SkillGrids do
+        self.SkillGrids[i]:ClearDrag()
+        self.SkillGrids[i]:Close()
+        self.AreaGo[i] = nil
+        self.AreaData[i] = nil
+    end
+end
+
+function XUiPanelTheatre6CharacterAttrDetail:DispatchSkillEffects(addedIdsBySlot, upgradeIds)
+    if not addedIdsBySlot and not upgradeIds then return end
+    if not self.SkillGrids or not self._SkillsCount then return end
+    for i = 1, self._SkillsCount do
+        local grid = self.SkillGrids[i]
+        if grid then
+            if addedIdsBySlot then grid:TryShowTagEffect(addedIdsBySlot) end
+            if upgradeIds then grid:TryShowUpgradeEffect(upgradeIds) end
+        end
+    end
+end
+
+---把已注册的外部拖拽区域追加到指定 grid 的目标区域中
+function XUiPanelTheatre6CharacterAttrDetail:_ApplyExternalAreasToGrid(grid)
+    if not self._ExternalAreas or not grid then
+        return
+    end
+    local baseId = self._SkillsCount or 0
+    for index, area in ipairs(self._ExternalAreas) do
+        if area.areaGo and area.areaGo.transform then
+            grid:AddDragTargetArea(area.areaGo.transform, baseId + index)
+        end
+    end
+end
+
+---运行中追加外部区域时,把新增区域注册到当前所有有效 grid
+function XUiPanelTheatre6CharacterAttrDetail:_ApplyExternalAreasToCurrentGrids()
+    if not self.SkillGrids or not self._SkillsCount then
+        return
+    end
+    for i = 1, self._SkillsCount do
+        local grid = self.SkillGrids[i]
+        if grid and XTool.IsNumberValid(grid:GetSkillId()) and not grid:IsBaseSkill() then
+            self:_ApplyExternalAreasToGrid(grid)
+        end
+    end
+end
+
+function XUiPanelTheatre6CharacterAttrDetail:SetGridDrag(grid, area)
+    local startCb = function()
+        self:OnStartDrag(grid)
+        self.ListRoleDetail.enabled = false
+    end
+    local endCb = function(id)
+        self:OnEndDrag(grid, id)
+         self.ListRoleDetail.enabled = true
+    end
+    -- SetDragCb(area,cloneParent,startCb,endCb,enterCb,leaveCb)
+    grid:SetDragCb(area, self.Transform, startCb, endCb)
+end
+
+function XUiPanelTheatre6CharacterAttrDetail:SetGridClick(grid, slotType)
+    grid:SetClickCb(function(skillId)
+        if XTool.IsNumberValid(skillId) then
+            self._Control:OpenSkillTip(skillId, grid.Transform, { SlotType = slotType, ReadOnly = self._IsUseParamData, IsBaseSkill = grid:IsBaseSkill() })
+        end
+    end)
+end
+
+--region 拖拽事件
+function XUiPanelTheatre6CharacterAttrDetail:OnStartDrag(grid)
+    for key, posGrid in pairs(self.SkillGrids) do
+        local slotType, pos = posGrid:GetGridData()
+        local curslotType, curpos = grid:GetGridData()
+        if curslotType == slotType then
+            posGrid:SetHighlightEffect(true)
+        end
+    end
+    if self._ExternalAreas then
+        local skillId = grid:GetSkillId()
+        for _, area in ipairs(self._ExternalAreas) do
+            if area.dragStateCb then
+                area.dragStateCb(true, skillId)
+            end
+        end
+    end
+end
+
+function XUiPanelTheatre6CharacterAttrDetail:OnEndDrag(grid, targetAreaId)
+    if self._ExternalAreas then
+        for _, area in ipairs(self._ExternalAreas) do
+            if area.dragStateCb then
+                area.dragStateCb(false)
+            end
+        end
+    end
+    local curslotType, curpos = grid:GetGridData()
+    if XTool.IsNumberValid(targetAreaId) then
+        local baseId = self._SkillsCount or 0
+        if targetAreaId > baseId then
+            local external = self._ExternalAreas and self._ExternalAreas[targetAreaId - baseId]
+            if external and external.endCb then
+                external.endCb(grid:GetSkillId())
+            end
+        else
+            local areaData = self.AreaData[targetAreaId]
+            if areaData ~= nil and areaData.slotType ~= curslotType then
+                return
+            end
+            --打开遮罩
+            XLuaUiManager.SetMask(true)
+            self._Control:SkillMoveOrSwapRequest(grid:GetSkillId(), areaData.slotType, areaData.position, function()
+                XLuaUiManager.SetMask(false)
+            end)
+        end
+    end
+    for key, posGrid in pairs(self.SkillGrids) do
+        local slotType, pos = posGrid:GetGridData()
+
+        if curslotType == slotType then
+            posGrid:SetHighlightEffect(false)
+        end
+    end
+end
+
+--endregion
+
+---转发外部拖拽区域注册到技能背包，支持 UiPanelSkill 懒创建时的 pending 注册
+---@param areaGo UnityEngine.GameObject 区域 GameObject
+---@param endCb function(skillId) 拖拽到此区域松手时的回调
+---@param dragStateCb function(isDragging, skillId) 拖拽状态变化时回调
+function XUiPanelTheatre6CharacterAttrDetail:AddExternalDragAreaToSkillBag(areaGo, endCb, dragStateCb)
+    if not self._ExternalAreas then
+        self._ExternalAreas = {}
+    end
+    table.insert(self._ExternalAreas, { areaGo = areaGo, endCb = endCb, dragStateCb = dragStateCb })
+    self:_ApplyExternalAreasToCurrentGrids()
+    if self.UiPanelSkill then
+        self.UiPanelSkill:AddExternalDragArea(areaGo, endCb, dragStateCb)
+    end
+end
+
+function XUiPanelTheatre6CharacterAttrDetail:ShowSkillBag()
+    self.ListRoleDetail.gameObject:SetActiveEx(false)
+    self.PanelSkillBag.gameObject:SetActiveEx(true)
+    if not self.UiPanelSkill then
+        self.UiPanelSkill = XUiPanelTheatre6SkilBagDetail.New(self.PanelSkill, self)
+        self.UiPanelSkill:SetCloseCb(function()
+            self.ListRoleDetail.gameObject:SetActiveEx(true)
+            self.PanelSkillBag.gameObject:SetActiveEx(false)
+            if self._IsDirty then
+                self._IsDirty = false
+                self:ShowSkill()
+                self:ShowRelic()
+                self:ShowBuff()
+            end
+        end)
+        self.UiPanelSkill:Open()
+        if self._ExternalAreas then
+            for _, data in ipairs(self._ExternalAreas) do
+                self.UiPanelSkill:AddExternalDragArea(data.areaGo, data.endCb, data.dragStateCb)
+            end
+        end
+    end
+    self.UiPanelSkill:Open()
+ 
+end
+
+function XUiPanelTheatre6CharacterAttrDetail:ShowRelic()
+    ---@type XTheatre6AttrPackProtocol[]
+    local attrPackDict
+    if self._IsUseParamData then
+        attrPackDict = self._ModelData.AttrPacks
+    else
+        attrPackDict = self._Control:GetCharacterAttrPacks()
+    end
+
+    ---@type XTableTheatre6AttrPack[]
+    local attrPacks = {}
+    local attrPackNums = {}
+    for _, data in pairs(attrPackDict) do
+        local config = self._Control:GetAttrPackCfgById(data.PackId)
+        if not config.IsHide then
+            table.insert(attrPacks, config)
+            attrPackNums[data.PackId] = data.Num
+        end
+    end
+
+    --优先级＞数量＞Id
+    table.sort(attrPacks, function(a, b)
+        if a.Priority ~= b.Priority then
+            return a.Priority > b.Priority
+        end
+        local aNum = attrPackNums[a.Id]
+        local bNum = attrPackNums[b.Id]
+        if aNum ~= bNum then
+            return aNum > bNum
+        end
+        return a.Id > b.Id
+    end)
+
+    local totalCount = #attrPacks
+    local showCount = math.min(self._MaxRelicCount, totalCount)
+    local extraCount = totalCount - self._MaxRelicCount
+
+    XUiHelper.RefreshCustomizedList(self.GridRelic.parent, self.GridRelic, showCount, function(i, go)
+        ---@type XUiGridTheatre6Relic
+        local grid = require("XUi/XUiTheatre6/Character/Grid/XUiGridTheatre6Relic").New(go, self)
+        local relicId = attrPacks[i].Id
+        grid:SetRelic(relicId, attrPackNums[relicId])
+        if i == showCount and extraCount > 0 then
+            grid:ShowMore(extraCount)
+        end
+        grid:SetClickCb(function()
+            local ids, counts = {}, {}
+            for k, v in ipairs(attrPacks) do
+                table.insert(ids, v.Id)
+                table.insert(counts, attrPackNums[v.Id])
+            end
+            XLuaUiManager.Open("UiTheatre6PopupRelicDetail", ids, counts)
+        end)
+    end)
+    self.TxtRelicEmpty.gameObject:SetActiveEx(showCount == 0)
+end
+
+function XUiPanelTheatre6CharacterAttrDetail:ShowBuff()
+    local isEmpty = #self._BuffDatas == 0
+    self.TxtBuffEmpty.gameObject:SetActiveEx(isEmpty)
+
+    local totalCount = #self._BuffDatas
+    local showCount = math.min(self._MaxBuffCount, totalCount)
+    local extraCount = totalCount - self._MaxBuffCount
+
+    XUiHelper.RefreshCustomizedList(self.GridBuff.parent, self.GridBuff, showCount, function(i, go)
+        ---@type XUiGridTheatre6Buff
+        local grid = require("XUi/XUiTheatre6/Character/Grid/XUiGridTheatre6Buff").New(go, self)
+        if self._IsUseParamData then
+            grid:Update(self._BuffDatas[i].BuffId)
+            grid:SetFileSaveBuffs(self._ModelData.Buffs)
+        else
+            grid:UpdateByUid(self._BuffDatas[i].Uid)
+            grid:ShowRemainingTimes()
+            grid:CheckShowBuffDisable()
+        end
+        grid:IsCanClick(true)
+        if i == showCount and extraCount > 0 then
+            grid:ShowMore(extraCount)
+        end
+    end)
+end
+
+--region 分数置顶
+function XUiPanelTheatre6CharacterAttrDetail:InitScoreTopCheck()
+    local Array = CS.System.Array
+    local Vector3Type = typeof(CS.UnityEngine.Vector3)
+    self.ImgBgScoreTop.gameObject:SetActiveEx(false)
+    self._ViewportCorners = Array.CreateInstance(Vector3Type, 4)
+    self._ScoreCorners = Array.CreateInstance(Vector3Type, 4)
+end
+
+function XUiPanelTheatre6CharacterAttrDetail:CheckScoreTopVisible()
+    local viewport = self.ListRoleDetail.viewport
+    viewport:GetWorldCorners(self._ViewportCorners)
+    self.ImgBgScore:GetWorldCorners(self._ScoreCorners)
+    
+    local scoreBottom = self._ScoreCorners[0].y
+    local viewportTop = self._ViewportCorners[1].y
+    self.ImgBgScoreTop.gameObject:SetActiveEx(scoreBottom > viewportTop)
+end
+--endregion
+
+function XUiPanelTheatre6CharacterAttrDetail:OnBtnAttributeClick()
+    if self.Parent.OpenAttrBubble then
+        self.Parent:OpenAttrBubble(self._AttrIds)
+    else
+        XLuaUiManager.Open("UiTheatre6BubbleAttributeDetail", self._AttrIds, self.BtnAttribute.transform)
+    end
+end
+
+function XUiPanelTheatre6CharacterAttrDetail:OnDestroy()
+    self.ListRoleDetail.onValueChanged:RemoveListener(self._OnScrollCb)
+    self._OnScrollCb = nil
+    self.SkillGrids = nil
+    self.AreaGo = nil
+    self.AreaData = nil
+end
+
+function XUiPanelTheatre6CharacterAttrDetail:ClearSkillNewFlag()
+    for _, v in pairs(self.SkillGrids) do
+        v:ClearNewFlag()
+    end
+end
+
+function XUiPanelTheatre6CharacterAttrDetail:HideBtnBackpack()
+    self.BtnBackpack.gameObject:SetActiveEx(false)
+end
+
+return XUiPanelTheatre6CharacterAttrDetail

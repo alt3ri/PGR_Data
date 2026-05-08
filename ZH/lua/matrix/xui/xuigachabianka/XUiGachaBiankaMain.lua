@@ -39,7 +39,7 @@ function XUiGachaBiankaMain:OnStart(gachaId, isPlayEnterAnim, isPlayStoryAnim)
     self._Volume:HideAll()
     self._Scene = require("XUi/XUiGachaBianka/Grid/XUiPanelGachaBiankaScene").New(self.Transform, self)
     ---@type XUiPanelSwitchableSceneAnim
-    self._SwitchableScene = require("XUi/XUiSwitchableScene/Panel/XUiPanelSwitchableSceneAnim").New()
+    self._SwitchableScene = require("XUi/XUiSwitchableScene/XUiPanelSwitchableSceneAnim").New()
     
     -- 跳过按钮,只有在进入ui时自动刷新1次
     local isSelect = XSaveTool.GetData(self._SkipBtnKey)
@@ -71,6 +71,8 @@ function XUiGachaBiankaMain:OnStart(gachaId, isPlayEnterAnim, isPlayStoryAnim)
     self.AssetPanel:SetButtonCb(3, function()
         self:OpenGachaItemShop()
     end)
+    
+    self._SceneId = XGachaConfigs.GetClientConfigNumber('Bianka4P2SceneId')
 end
 
 function XUiGachaBiankaMain:OnEnable()
@@ -107,7 +109,7 @@ function XUiGachaBiankaMain:OnEnable()
     self._IsGachaReturnMain = false
     self._CanPlayStoryAnim = false
     if isAutoPlayGyro then
-        self._SwitchableScene:AutoPlay(self.UiSceneInfo.Transform)
+        self._SwitchableScene:AutoPlay(self._SceneId, self.UiSceneInfo.Transform)
     end
 end
 
@@ -214,7 +216,7 @@ function XUiGachaBiankaMain:PlayLongEnableAnim()
         self.SafeAreaContentPane.blocksRaycasts = true
         self._Scene:SetXPostFaicalControllerActive(true)
     end, function()
-        self._SwitchableScene:AutoPlay(self.UiSceneInfo.Transform)
+        self._SwitchableScene:AutoPlay(self._SceneId, self.UiSceneInfo.Transform)
     end)
 end
 

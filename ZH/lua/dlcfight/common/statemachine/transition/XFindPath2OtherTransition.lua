@@ -1,5 +1,6 @@
 local XLevelNpcStateTransition = require("Common/StateMachine/Transition/XLevelNpcStateTransition")
 
+---v空花1.5期 寻路到其他状态-状态转移方程
 ---@class XFindPath2OtherTransition: XLevelNpcStateTransition 寻路到其他状态
 ---@field _fromState XFindPathState
 ---@field _targetPos Vector3 目标点

@@ -31,6 +31,8 @@ local RewardType = {
 -- region 生命周期
 
 function XUiAccumulateDrawGrid:OnStart()
+    self.CanvasGroup = self.CanvasGroup or XUiHelper.TryAddComponent(self.GameObject, typeof(CS.UnityEngine.CanvasGroup))
+
     ---@type XUiAccumulateDrawRewardGrid[]
     self._PanelRewardList = {
         [RewardType.Normal] = XUiAccumulateDrawRewardGrid.New(self.PanelBgNormal, self, self.Parent),

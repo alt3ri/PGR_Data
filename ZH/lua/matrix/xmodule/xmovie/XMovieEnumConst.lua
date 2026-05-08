@@ -5,6 +5,23 @@ local XMovieEnumConst = {
         BODY = "Body",
         KOU = "Kou",
     },
+    -- Spine动画亮暗分类
+    SPINE_ACTOR_ANIM_TYPE = {
+        LIGHT = 1, -- 变亮
+        DARK = 2,  -- 变暗
+    },
+    -- Spine动画名 -> 亮暗分类映射
+    SPINE_ACTOR_ANIM_TYPE_MAP = {
+        -- 变亮动画
+        ["PanelActorEnable"] = 1,
+        ["PanelActorBlowUp"] = 1,
+        ["PanelActorDarkDisable"] = 1,
+        -- 变暗动画
+        ["PanelActorDark"] = 2,
+        ["PanelActorDarkNor"] = 2,
+        ["PanelActorBlowUpNor"] = 2,
+        ["PanelActorDisable"] = 2,
+    },
     -- 剧情跳过类型
     SkipType = {
         OnlyTips = 1, -- 仅跳过提示
@@ -37,6 +54,8 @@ local XMovieEnumConst = {
         SPINE_SHIFT = 213,              -- Spine位移
         SPINE_CHANGE_ANIM = 214,        -- Spine切换动画
         SPINE_ANIMATION_PLAY = 215,     -- Spine动画播放
+        SPINE_CHANGE_BODY_ANIM = 216,   -- Spine切换Body动画
+        SPINE_CHANGE_ROLE_ANIM = 217,   -- Spine切换Role动画
         
         DIALOG = 301,                   -- 对话
         SELECTION = 302,                -- 选择分支对话
@@ -79,7 +98,7 @@ local XMovieEnumConst = {
         BOTTOM_LEFT = 7,                -- 左下角
         BOTTOM_CENTER = 8,              -- 下中
         BOTTOM_RIGHT = 9,               -- 右下角
-        FULL_DISABLE_ADAPTER = 10,      -- 全部撑开，且禁用适配
+        FULL_DISABLE_ADAPTER = 10,      -- 全部撑开，且禁用XAspectRatioFitter适配
     },
     -- 锚点对齐类型对应参数 (anchorMinX, anchorMinY, anchorMaxX, anchorMaxY)
     ANCHOR_ALIGNMENT_TYPE_TO_PARAM = {
@@ -122,12 +141,14 @@ function XMovieEnumConst:GetActionClass(actionType)
         [202] = require("XMovieActions/XMovieActionActorDisappear"), --演员消失
         [203] = require("XMovieActions/XMovieActionActorShift"), --演员位移
         [204] = require("XMovieActions/XMovieActionActorChangeFace"), --演员表情
-        [205] = require("XMovieActions/XMovieActionActorAlphaChange"), --演员背景
+        [205] = require("XMovieActions/XMovieActionActorAlphaChange"), --演员透明度变化
         [211] = require("XMovieActions/XMovieActionSpineActorAppear"), --spine演员出现
         [212] = require("XMovieActions/XMovieActionSpineActorDisappear"), --spine演员消失
         [213] = require("XMovieActions/XMovieActionSpineActorShift"), --spine演员位移
         [214] = require("XMovieActions/XMovieActionSpineActorChangeAnim"), --spine演员切换动画
         [215] = require("XMovieActions/XMovieActionSpineActorAnimationPlay"), --spine演员预置的UI动画播放
+        [216] = require("XMovieActions/XMovieActionSpineActorChangeBodyAnim"), --spine演员切换Body动画
+        [217] = require("XMovieActions/XMovieActionSpineActorChangeRoleAnim"), --spine演员切换Role动画
 
         [301] = require("XMovieActions/XMovieActionDialog"), --普通对话
         [302] = require("XMovieActions/XMovieActionSelection"), --选择分支对话
@@ -145,7 +166,7 @@ function XMovieEnumConst:GetActionClass(actionType)
 
         [501] = require("XMovieActions/XMovieActionEffectPlay"), --特效播放
         [502] = require("XMovieActions/XMovieActionAnimationPlay"), --UI动画播放
-        [503] = require("XMovieActions/XMovieActionVideoPlay"), --视频播放
+        [503] = require("XMovieActions/XMovieActionVideoPlay"), --视频播放(通用的视频播放界面，隐藏UiMovie界面)
         [504] = require("XMovieActions/XMovieActionSetGray"), --灰度设置
         [505] = require("XMovieActions/XMovieActionUnLoad"), --动效卸载
         [506] = require("XMovieActions/XMovieActionPrefabAnimation"), --预制体动画
@@ -154,6 +175,7 @@ function XMovieEnumConst:GetActionClass(actionType)
         [509] = require("XMovieActions/XMovieActionShowInsertPanel"), --显示两边插入分屏
         [510] = require("XMovieActions/XMovieActionHideInsertPanel"), --隐藏插入分屏
         [511] = require("XMovieActions/XMovieActionEffectMove"), --特效位移
+        [512] = require("XMovieActions/XMovieActionVideoPlayNew"), --视频播放(UiMovie内置视频播放，可叠加UiMovie的其他UI表现)
 
         [601] = require("XMovieActions/XMovieActionStaff"), --staff职员表
 

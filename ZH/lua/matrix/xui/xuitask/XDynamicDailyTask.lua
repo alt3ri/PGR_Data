@@ -353,7 +353,7 @@ end
 function XDynamicDailyTask:UpdateGuildBossWeelyTime()
     self.PanelTime.gameObject:SetActive(true)
     local nowTime = XTime.GetServerNowTimestamp()
-    local endTime = XDataCenter.GuildBossManager.GetWeeklyTaskTime()
+    local endTime = XDataCenter.GuildBossManager.GetWeeklyTaskTime() or 0
 
     local needTime = endTime - nowTime
     if needTime > 0 then

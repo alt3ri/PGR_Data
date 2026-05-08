@@ -78,13 +78,7 @@ function XUiPanelRoleStationed:_RefreshStationProgressShow()
     end
     
     -- 驻扎进度及效果
-    local curStationedCount = self._Control.RoleStationControl:GetCurNodeStationedRoleCount(self.NodeId)
-    local stationedMaxCount = self._Control.RoleStationControl:GetCurNodeStationedMaxCount(self.NodeId)
-    local buffNum = self._Control.RoleStationControl:GetCurNodeDeployPercentNumByStationedCount(self.NodeId, curStationedCount)
-    
-    buffNum = buffNum * 100
-    
-    self.TxtDetails.text = self._Control.RoleStationControl:GetClientConfigPanelRoleStationProgressShow(curStationedCount, stationedMaxCount, string.format('%.1f', buffNum))
+    self.TxtDetails.text = self._Control.RoleStationControl:GetClientConfigPanelRoleStationProgressShow(self.NodeId)
 end
 
 function XUiPanelRoleStationed:_OnBtnStayClickEvent()

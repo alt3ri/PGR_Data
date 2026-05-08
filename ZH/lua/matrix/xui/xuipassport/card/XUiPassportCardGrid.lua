@@ -1,16 +1,13 @@
-local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 ---@field _Control XPassportControl
 ---@class XUiPassportCardGrid:XUiNode
 local XUiPassportCardGrid = XClass(XUiNode, "XUiPassportCardGrid")
 
 local CSXTextManagerGetText = CS.XTextManager.GetText
 
-function XUiPassportCardGrid:Ctor(ui)
-    self.RewardPanelList = {}
-end
-
 function XUiPassportCardGrid:Init(rootUi)
     self.RootUi = rootUi
+    self.RewardPanelList = {}
 end
 
 function XUiPassportCardGrid:Refresh(passportBuyRewardShowId)

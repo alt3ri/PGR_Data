@@ -169,6 +169,8 @@ function XUiPurchaseRecommend:OnDynamicTableEvent(event, index, grid)
         end
         self.CurrentIndex = self.DynamicTable:GetTweenIndex() + 1
         self.PanelTabGroup:SelectIndex(self.CurrentIndex)
+        -- 尝试滑动聚焦到该按钮
+        self:TryFocusStage(self.PanelTabGroup:GetButtonByIndex(self.CurrentIndex))
     end
 end
 

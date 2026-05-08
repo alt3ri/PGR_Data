@@ -12,6 +12,14 @@ local EmptyVector3 = { x=0, y=0, z=0 }
 ---@field IgnoreCharCollider bool 进入状态后是否要忽略玩家碰撞
 ---@field PathBubbleName string 寻路气泡
 ---@field PathTargetPosDict table<number, Vector3> 寻路目标点字典, Key = 状态枚举, value = 坐标
+---@field FindPathConfig XEcologyCharAIFindPathStateConfig 寻路状态数据配置
+
+---@class XEcologyCharAIFindPathStateConfig
+---@field OpenNavigateFindPath bool 开启网格寻路
+---@field RecheckFindPathTime number 行走时重新寻路时间间隔
+---@field MeetCommanderBubbleName number 遇见指挥官时气泡
+---@field CombineRouteFadeOutTime number 路线跳转的淡出时间
+---@field CombineRouteFadeInTime number 路线跳转的淡入时间
 
 ---@class XEcologyCharAIBaseState: XLevelNpcState @生态状态基类
 ---@field StateConfig XEcologyCharAIStateConfig
@@ -22,7 +30,7 @@ local XEcologyCharAIBaseState = XClass(XLevelNpcState, "XEcologyCharAIBaseState"
 ---@param lastStateEnum number 上个状态
 function XEcologyCharAIBaseState:OnStateEnter(lastStateEnum)
     if self.StateConfig == nil then
-        XLog.Error("[脚本: "..self._proxy.Id.."]生态AI没有初始化数据 PlaceId = "..self._placeId)
+        XScriptTool.EcologyError(self, "生态AI没有初始化数据")
         return
     end
     self.StateEnum = self.StateConfig.StateEnum
@@ -204,6 +212,9 @@ function XEcologyCharAIBaseState:CreateAiBubbleInfo(bubbleName, bubbleType, Trig
 end
 
 function XEcologyCharAIBaseState:UpdateAiBubble(dt)
+    if self.StateConfig.BubbleDict == nil then
+        return
+    end
     local playerDistance = self:GetWithPlayerDistance()
     local distance = 0
     local triggerBubbleType = EEcologyBubbleType.None

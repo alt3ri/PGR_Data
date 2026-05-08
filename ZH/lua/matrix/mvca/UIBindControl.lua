@@ -131,6 +131,8 @@ local UIBindControl = {
     UiPassportCard = ModuleId.XPassport,
     UiPassportReward = ModuleId.XPassport,
     UiPassportUpLevel = ModuleId.XPassport,
+    UiPassportGetReward = ModuleId.XPassport,
+    UiPassportAutoWindow = ModuleId.XPassport,
     --endregion
 
     --region TaikoMaster 音游
@@ -361,6 +363,8 @@ local UIBindControl = {
     UiMainLine2EggsTreasureTips = ModuleId.XMainLine2,
     UiMainLine2EggsTreasureMail = ModuleId.XMainLine2,
     UiMainLine2Task = ModuleId.XMainLine2,
+    UiMainLinePopupExplore = ModuleId.XMainLine2,
+    UiMainLine41PopupSkyGardenDetail = ModuleId.XMainLine2,
     --endregion
 
     --region 幻痛囚笼
@@ -372,6 +376,9 @@ local UIBindControl = {
     UiFubenBossSingleHide = ModuleId.XFubenBossSingle,
     UiFubenBossSingleTrial = ModuleId.XFubenBossSingle,
     UiFubenBossSingleTrialDetail = ModuleId.XFubenBossSingle,
+    UiFubenBossSingleDetailV4P5 = ModuleId.XFubenBossSingle,
+    UiFubenBossSingleTrialDetailV4P5 = ModuleId.XFubenBossSingle,
+    UiFubenBossSingleBestiaryDetailV4P5 = ModuleId.XFubenBossSingle,
     UiSettleWinSingleBoss = ModuleId.XFubenBossSingle,
     UiFubenBossSingleModeBossDetail = ModuleId.XFubenBossSingle,
     UiFubenBossSingleModeDetail = ModuleId.XFubenBossSingle,
@@ -637,6 +644,8 @@ local UIBindControl = {
     UiBigWorldTaskObtain = ModuleId.XBigWorldQuest,
     UiBigWorldTaskObtainDrama = ModuleId.XBigWorldQuest,
     UiBigWorldTaskObtainDramaHeart = ModuleId.XBigWorldQuest,
+    UiBigWorldTaskObtainDramaWander = ModuleId.XBigWorldQuest,
+    UiBigWorldTaskObtainDramaPilotage = ModuleId.XBigWorldQuest,
     UiBigWorldLineChapter = ModuleId.XBigWorldQuest,
     UiBigWorldStoryStageDetail = ModuleId.XBigWorldQuest,
     UiBigWorldPopupDelivery = ModuleId.XBigWorldQuest,
@@ -645,10 +654,13 @@ local UIBindControl = {
     UiBigWorldTaskPopupEndingDetail  = ModuleId.XBigWorldQuest,
     UiBigWorldTaskObtainInvitation  = ModuleId.XBigWorldQuest,
     UiBigWorldPopupEnvironmentalStory  = ModuleId.XBigWorldQuest,
+    UiBigWorldPopupTaskInterception = ModuleId.XBigWorldQuest,
     --endregion SkyGarden - Quest
 
     --region 指挥官DIY系统
     UiBigWorldDIY = ModuleId.XBigWorldCommanderDIY,
+    UiShopPopupSkyGardenFashion = ModuleId.XBigWorldCommanderDIY,
+    UiBigWorldFashionPreview = ModuleId.XBigWorldCommanderDIY,
     --endregion
 
     --region 2048玩法
@@ -660,6 +672,8 @@ local UIBindControl = {
     UiGame2048PopupSettlement = ModuleId.XGame2048,
     UiGame2048ToastLvUp = ModuleId.XGame2048,
     --endregion
+
+
 
     --region 数织小游戏
     UiNonogramMain = ModuleId.XNonogram,
@@ -926,6 +940,7 @@ local UIBindControl = {
     
     --region 空花历程
     UiBigWorldProcess = ModuleId.XBigWorldCourse,
+    UiBigWorldProcessSwitch = ModuleId.XBigWorldCourse,
     UiBigWorldPopupAdvance = ModuleId.XBigWorldCourse,
     --endregion
     
@@ -1012,6 +1027,7 @@ local UIBindControl = {
     UiDlcRelinkEncyclopedia = ModuleId.XDlcRelink,
     UiDlcRelinkPopupChooseAttribute = ModuleId.XDlcRelink,
     UiDlcRelinkPopupTutorial = ModuleId.XDlcRelink,
+    UiDlcRelinkPopupAutoSetting = ModuleId.XDlcRelink,
     --endregion
 
     --region mini改造
@@ -1170,6 +1186,73 @@ local UIBindControl = {
     UiLineArithmetic3PopupCommon = ModuleId.XLineArithmetic3,
     UiLineArithmetic3PopupSettlement = ModuleId.XLineArithmetic3,
     UiLineArithmetic3Task = ModuleId.XLineArithmetic3,
+    --endregion
+    --region XLifeTree
+    UiLifeTreeCard = ModuleId.XLifeTree,
+    UiLifeTreeCardUnlock = ModuleId.XLifeTree,
+    UiLifeTreeChapterUnlock = ModuleId.XLifeTree,
+    UiLifeTreeMain = ModuleId.XLifeTree,
+    UiLifeTreeOpen = ModuleId.XLifeTree,
+    UiLifeTreePopupTeach = ModuleId.XLifeTree,
+    UiLifeTreeTask = ModuleId.XLifeTree,
+    UiLifeTreeGuide = ModuleId.XLifeTree,
+    UiLifeTreeUnlockType = ModuleId.XLifeTree,
+    --endregion
+
+    --region 肉鸽6
+    UiTheatre6ChooseCharacter = ModuleId.XTheatre6,
+    UiTheatre6Main = ModuleId.XTheatre6,
+    UiTheatre6RewardShop = ModuleId.XTheatre6,
+    UiTheatre6PopupUpgradePreview = ModuleId.XTheatre6,
+    UiTheatre6BossPreview = ModuleId.XTheatre6,
+    UiTheatre6ChooseDifficulty = ModuleId.XTheatre6,
+    UiTheatre6ChapterPreview = ModuleId.XTheatre6,
+    UiTheatre6PopupBossCompare = ModuleId.XTheatre6,
+    UiTheatre6PopupRelicDetail = ModuleId.XTheatre6,
+    UiTheatre6PopupGetBuff = ModuleId.XTheatre6,
+    UiTheatre6PopupBuffDetail = ModuleId.XTheatre6,
+    UiTheatre6PopupSanDetail = ModuleId.XTheatre6,
+    UiTheatre6ToastCommon = ModuleId.XTheatre6,
+    UiTheatre6BattleShop = ModuleId.XTheatre6,
+    UiTheatre6PopupSkillLevelUp = ModuleId.XTheatre6,
+    UiTheatre6Settlement = ModuleId.XTheatre6,
+    UiTheatre6FightReward = ModuleId.XTheatre6,
+    UiTheatre6PopupRoleDetail = ModuleId.XTheatre6,
+    UiTheatre6RoomEitheror = ModuleId.XTheatre6,
+    UiTheatre6PopupSellSkill = ModuleId.XTheatre6,
+    UiTheatre6RoomChooseTask = ModuleId.XTheatre6,
+    UiTheatre6PopupCoverArchive = ModuleId.XTheatre6,
+    UiTheatre6RoomTaskSettlement = ModuleId.XTheatre6,
+    UiTheatre6RoomBoss = ModuleId.XTheatre6,
+    UiTheatre6Loading = ModuleId.XTheatre6,
+    UiTheatre6BubbleBuffDetail = ModuleId.XTheatre6,
+    UiTheatre6BubbleRelicDetail = ModuleId.XTheatre6,
+    UiTheatre6BubbleSkillDetail = ModuleId.XTheatre6,
+    UiTheatre6BubbleTagDetail = ModuleId.XTheatre6,
+    UiTheatre6PopupGoodsDetail = ModuleId.XTheatre6,
+    UiTheatre6RoundSettlement = ModuleId.XTheatre6,
+    UiTheatre6Archive = ModuleId.XTheatre6,
+    UiTheatre6BubbleAttackDetail = ModuleId.XTheatre6,
+    UiTheatre6BubbleAttributeDetail = ModuleId.XTheatre6,
+    UiTheatre6GainTips = ModuleId.XTheatre6,
+    --endregion
+    --region XCommanderCollege
+    UiBigWorldCollegeBanner = ModuleId.XCommanderCollege,
+    --endregion
+
+    --region 涂装
+    UiFashion = ModuleId.XFashion,
+    UiFashionRandom = ModuleId.XFashion,
+    --endregion
+
+    --region XShop
+    UiShopFashionObtain = ModuleId.XShop,
+    --endregion
+
+    --region 小游戏合集
+    UiMiniGamesCollectionMain = ModuleId.XGameCollection,
+    UiMiniGamesCollectionRewardShop = ModuleId.XGameCollection,
+    UiGameCollectionRecord = ModuleId.XGameCollection,
     --endregion
 }
 

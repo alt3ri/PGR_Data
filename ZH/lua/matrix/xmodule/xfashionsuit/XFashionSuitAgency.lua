@@ -64,7 +64,7 @@ function XFashionSuitAgency:IsRed()
                 ownCount = ownCount + 1
             end
         end
-        if ownCount == #config.FashionIds and not self._Model:IsSuitRewardGain(config.Id) then
+        if config.IsComplete and ownCount == #config.FashionIds and not self._Model:IsSuitRewardGain(config.Id) then
             return true
         end
     end

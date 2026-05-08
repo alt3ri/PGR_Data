@@ -37,19 +37,19 @@ end
 function XFightBase:HandleEvent(eventType, eventArgs)
     if eventType == EWorldEvent.NpcDamage then
         self:OnNpcDamageEvent(eventArgs.LauncherId, eventArgs.TargetId, eventArgs.MagicId, eventArgs.Kind,
-                eventArgs.PhysicalDamage, eventArgs.ElementDamage, eventArgs.ElementType, eventArgs.RealDamage, eventArgs.IsCritical, eventArgs.SkillId, eventArgs.MagicTags)
+                eventArgs.PhysicalDamage, eventArgs.ElementDamage, eventArgs.ElementType, eventArgs.RealDamage, eventArgs.IsCritical, eventArgs.SkillActionId, eventArgs.MagicTags, eventArgs.CustomValue)
     end
     if eventType == EWorldEvent.NpcCure then
-        self:OnNpcCureEvent(eventArgs.LauncherId, eventArgs.TargetId, eventArgs.MagicId, eventArgs.Kind, eventArgs.Value, eventArgs.SkillId)
+        self:OnNpcCureEvent(eventArgs.LauncherId, eventArgs.TargetId, eventArgs.MagicId, eventArgs.Kind, eventArgs.Value, eventArgs.SkillActionId)
     end
     if eventType == EWorldEvent.NpcCastActionBefore then
-        self:OnNpcCastActionBeforeEvent(eventArgs.SkillId, eventArgs.LauncherId, eventArgs.TargetId, eventArgs.TargetSceneObjId, eventArgs.IsAbort)
+        self:OnNpcCastActionBeforeEvent(eventArgs.SkillActionId, eventArgs.LauncherId, eventArgs.TargetId, eventArgs.TargetSceneObjId, eventArgs.IsAbort)
     end
     if eventType == EWorldEvent.NpcCastActionAfter then
-        self:OnNpcCastActionAfterEvent(eventArgs.SkillId, eventArgs.LauncherId, eventArgs.TargetId, eventArgs.TargetSceneObjId, eventArgs.IsAbort)
+        self:OnNpcCastActionAfterEvent(eventArgs.SkillActionId, eventArgs.LauncherId, eventArgs.TargetId, eventArgs.TargetSceneObjId, eventArgs.IsAbort)
     end
     if eventType == EWorldEvent.NpcExitAction then
-        self:OnNpcExitActionEvent(eventArgs.SkillId, eventArgs.LauncherId, eventArgs.TargetId, eventArgs.TargetSceneObjId, eventArgs.IsAbort)
+        self:OnNpcExitActionEvent(eventArgs.SkillActionId, eventArgs.LauncherId, eventArgs.TargetId, eventArgs.TargetSceneObjId, eventArgs.IsAbort)
     end
     if eventType == EWorldEvent.NpcGoingDie then
         self:OnNpcGoingDieEvent(eventArgs.NpcId, eventArgs.NpcPlaceId, eventArgs.NpcKind, eventArgs.IsPlayer, eventArgs.KillerUUID, eventArgs.MagicId, eventArgs.DeathType, eventArgs.DeathId, eventArgs.RebootType, eventArgs.RebootId)
@@ -88,13 +88,16 @@ function XFightBase:HandleEvent(eventType, eventArgs)
         self:OnNpcRemoveBuffEvent(eventArgs.CasterUUID, eventArgs.NpcUUID, eventArgs.BuffTableId, eventArgs.BuffKinds, eventArgs.BuffId)
     end
     if eventType == EWorldEvent.MissileHit then
-        self:OnMissileHitEvent(eventArgs.MissileUUID, eventArgs.TargetUUID)
+        self:OnMissileHitEvent(eventArgs.MissileUUID, eventArgs.TargetUUID, eventArgs.LauncherUUID)
     end
     if eventType == EWorldEvent.MissileDead then
         self:OnMissileDeadEvent(eventArgs.MissileUUID)
     end
     if eventType == EWorldEvent.MissileCreate then
         self:OnMissileCreateEvent(eventArgs.MissileUUID)
+    end
+    if eventType == EWorldEvent.OnMissileColliderNpc then
+        self:OnMissileColliderNpc(eventArgs.ContextId, eventArgs.MissileUUID, eventArgs.LauncherNpcUUID, eventArgs.TargetNpcUUID, eventArgs.Result, eventArgs.Type)
     end
     if eventType == EWorldEvent.NpcCalcDamageBefore then
         self:BeforeDamageCalc(eventArgs)
@@ -244,9 +247,10 @@ end
 ---@param elementType number 元素伤害类型
 ---@param realDamage number 真实伤害
 ---@param isCritical boolean 是否暴击
----@param skillId number 技能Id
+---@param skillActionId number 技能Id
 ---@param MagicTags table Magic配置的Tags
-function XFightBase:OnNpcDamageEvent(launcherId, targetId, magicId, kind, physicalDamage, elementDamage, elementType, realDamage, isCritical, skillId, magicTags)
+---@param customValue table 自定义值
+function XFightBase:OnNpcDamageEvent(launcherId, targetId, magicId, kind, physicalDamage, elementDamage, elementType, realDamage, isCritical, skillActionId, magicTags, customValue)
 end
 
 ---Npc进行治疗
@@ -255,35 +259,35 @@ end
 ---@param magicId number 治疗Magic的配表Id
 ---@param kind number 策划定义的伤害类型
 ---@param value number 治疗值
----@param skillId number 技能Id
-function XFightBase:OnNpcCureEvent(launcherId, targetId, magicId, kind, value, skillId)
+---@param skillActionId number 技能Id
+function XFightBase:OnNpcCureEvent(launcherId, targetId, magicId, kind, value, skillActionId)
 end
 
 ---Npc释放技能前
----@param skillId number 技能ID
+---@param skillActionId number 技能ID
 ---@param launcherId number 发动者UUID
 ---@param targetId number 目标UUID
 ---@param targetSceneObjId number 目标场景物件PlaceId
 ---@param isAbort number 目标场景物件PlaceId，仅在技能退出事件中有效？
-function XFightBase:OnNpcCastActionBeforeEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
+function XFightBase:OnNpcCastActionBeforeEvent(skillActionId, launcherId, targetId, targetSceneObjId, isAbort)
 end
 
 ---Npc释放技能后
----@param skillId number 技能ID
+---@param skillActionId number 技能ID
 ---@param launcherId number 发动者UUID
 ---@param targetId number 目标UUID
 ---@param targetSceneObjId number 目标场景物件PlaceId
 ---@param isAbort number 目标场景物件PlaceId，仅在技能退出事件中有效？
-function XFightBase:OnNpcCastActionAfterEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
+function XFightBase:OnNpcCastActionAfterEvent(skillActionId, launcherId, targetId, targetSceneObjId, isAbort)
 end
 
 ---Npc退出技能
----@param skillId number 技能ID
+---@param skillActionId number 技能ID
 ---@param launcherId number 发动者UUID
 ---@param targetId number 目标UUID
 ---@param targetSceneObjId number 目标场景物件PlaceId
 ---@param isAbort number 目标场景物件PlaceId，仅在技能退出事件中有效？
-function XFightBase:OnNpcExitActionEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
+function XFightBase:OnNpcExitActionEvent(skillActionId, launcherId, targetId, targetSceneObjId, isAbort)
 end
 
 ---Npc将要死亡前
@@ -416,10 +420,11 @@ end
 function XFightBase:OnNpcRemoveBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
 end
 
----Npc移除Buff
+---子弹命中NPC
 ---@param missileUUID number
 ---@param targetNpcUUID number 子弹目标NpcUUID
-function XFightBase:OnMissileHitEvent(missileUUID, targetNpcUUID)
+---@param launcherNpcUUID number 子弹释放单位NpcUUID
+function XFightBase:OnMissileHitEvent(missileUUID, targetNpcUUID, launcherNpcUUID)
 end
 
 ---Npc移除Buff
@@ -432,6 +437,16 @@ end
 function XFightBase:OnMissileCreateEvent(missileUUID)
 end
 
+---Npc子弹命中
+---@param contextId number 伤害上下文Id
+---@param missileUUID number
+---@param launcherNpcUUID number 发起者NpcUUID
+---@param targetNpcUUID number 目标NpcUUID
+---@param result EMissileCollideNpcResult 命中结果
+---@param type number 命中类型
+function XFightBase:OnMissileColliderNpc(contextId, missileUUID, launcherNpcUUID, targetNpcUUID, result, type)
+end
+    
 ---计算伤害前
 ---@class BeforeDamageCalcEventArgs
 ---@field ContextId integer 伤害上下文Id
@@ -440,13 +455,14 @@ end
 ---@field Part number 部位ID
 ---@field Id number MagicId
 ---@field Kind number 伤害类型
----@field PhysicalPermyraid number 物理伤害倍率 
----@field ElementPermyraid number 元素伤害倍率
+---@field PhysicalPermyriad number 物理伤害倍率 
+---@field ElementPermyriad number 元素伤害倍率
 ---@field HackDamage number 击破伤害基础值
----@field HackPermyraid number 击破倍率
+---@field HackPermyriad number 击破倍率
 ---@field IsCrit bool 是否暴击
 ---@field ElementType number 元素类型
 ---@field Additive table 附加值数组 （可更改）
+---@field SkillActionId integer 触发伤害的动作Id
 ---@param eventArgs BeforeDamageCalcEventArgs
 function XFightBase:BeforeDamageCalc(eventArgs)
 end
@@ -458,10 +474,10 @@ end
 ---@field Part number 部位ID
 ---@field Id number MagicId
 ---@field Kind number 伤害类型
----@field PhysicalPermyraid number 物理伤害倍率
----@field ElementPermyraid number 元素伤害倍率
+---@field PhysicalPermyriad number 物理伤害倍率
+---@field ElementPermyriad number 元素伤害倍率
 ---@field HackDamage number 击破伤害基础值
----@field HackPermyraid number 击破倍率
+---@field HackPermyriad number 击破倍率
 ---@field IsCrit bool 是否暴击
 ---@field ElementType number 元素类型
 ---@field Additive table 附加值数组 （可更改）
@@ -479,14 +495,15 @@ end
 ---@field Kind number 伤害类型
 ---@field PhysicalDamage number 物理伤害（可更改）
 ---@field ElementDamage number 元素伤害（可更改）
----@field PhysicalPermyraid number 物理伤害倍率 
----@field ElementPermyraid number 元素伤害倍率 
+---@field PhysicalPermyriad number 物理伤害倍率 
+---@field ElementPermyriad number 元素伤害倍率 
 ---@field HackDamage number 击破伤害基础值
----@field HackPermyraid number 击破倍率
+---@field HackPermyriad number 击破倍率
 ---@field FinalHackDamage number 最终破击伤害（可更改）
 ---@field RealDamage number 真实伤害 （Relink暂时无用）
 ---@field ElementType number 元素类型
 ---@field IsCrit bool 是否暴击
+---@field SkillActionId integer 触发伤害的动作Id
 ---@param eventArgs AfterDamageCalcEventArgs
 function XFightBase:AfterDamageCalc(eventArgs)
 end

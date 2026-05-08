@@ -3861,6 +3861,24 @@ function XCharacterAgency:GetStarUseCount(characterType, quality, star)
     return starUseCount[star] or 0
 end
 
+-- 获取角色碎片晋升到下一等阶还需购买的碎片数量，已是最高等阶或未拥有角色时返回 nil
+function XCharacterAgency:GetNextQualityNeedToBuyCount(characterId)
+    if not self:IsOwnCharacter(characterId) then
+        return nil
+    end
+    local currentQuality = self:GetCharacterQuality(characterId)
+    if currentQuality >= self:GetCharMaxQuality(characterId) then
+        return nil
+    end
+    local character = self:GetCharacter(characterId)
+    local characterType = self:GetCharacterType(characterId)
+    local remainingStarCost = 0
+    for i = character.Star + 1, XEnumConst.CHARACTER.MAX_QUALITY_STAR do
+        remainingStarCost = remainingStarCost + self:GetStarUseCount(characterType, currentQuality, i)
+    end
+    return math.max(0, remainingStarCost - self:GetCharUnlockFragment(characterId))
+end
+
 function XCharacterAgency:GetPromoteUseCoin(characterType, quality)
     local config = self._Model:GetCharQualityFragmentConfig(characterType, quality)
     return config.PromoteUseCoin

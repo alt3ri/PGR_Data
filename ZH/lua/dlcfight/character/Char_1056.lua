@@ -893,7 +893,7 @@ function XCharR5Lucia2:ChangeDamageBeforeCalc(eventArgs)
         if eventArgs.Id == 1056037 then
             local FinalKenkiBuffDmg = self._proxy:GetBuffStacks(eventArgs.Target, 1056025)
             local FinalDMGRate = 1447 * FinalKenkiBuffDmg
-            self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate, eventArgs.ElementPermyraid, eventArgs.HackDamage, eventArgs.HackPermyraid, eventArgs.isCrity)
+            self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate, eventArgs.ElementPermyriad, eventArgs.HackDamage, eventArgs.HackPermyriad, eventArgs.isCrity)
             self._proxy:RemoveBuffByKindAndCount(eventArgs.Target, 1056025, 0)
         end
     end

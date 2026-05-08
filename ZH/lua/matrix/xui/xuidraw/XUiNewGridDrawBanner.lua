@@ -15,6 +15,7 @@ function XUiNewGridDrawBanner:Ctor(ui, parent, data)
     self.Data = data
     ---@type XUiNewDrawMain
     self.Base = parent
+    self.OptionKey = (data.GetOptionKey and data:GetOptionKey()) or ""
 
     self.BtnSkipList = {}
 
@@ -33,6 +34,8 @@ function XUiNewGridDrawBanner:Refresh()
     self:SetSwitchInfo()
     self:SetNewHandTag()
     self:SetTime()
+    self:SetCharacterBg()
+    self:SetDrawName()
 end
 
 function XUiNewGridDrawBanner:TryGetComponent()
@@ -71,6 +74,8 @@ function XUiNewGridDrawBanner:TryGetComponent()
     local btnDrawRule = self.Transform:FindTransform("BtnDrawRule")
     if btnDrawRule then
         self.BtnDrawRule = btnDrawRule:GetComponent("XUiButton")
+        -- 迁移到XUiNewDrawMain里的BtnDrawRule上，旧的BtnDrawRule先隐藏
+        self.BtnDrawRule.gameObject:SetActiveEx(false)
     end
     local btnSkip = self.Transform:FindTransform("BtnSkip1")
     if btnSkip then
@@ -152,6 +157,16 @@ function XUiNewGridDrawBanner:TryGetComponent()
         self.TxtTips = txtTips:GetComponent("Text")
     end
 
+    local txtDrawName = self.Transform:FindTransform("TxtDrawName")
+    if txtDrawName then
+        self.TxtDrawName = txtDrawName:GetComponent("Text")
+    end
+
+    local rImgCharacterBg = self.Transform:FindTransform("RImgCharacterBg")
+    if rImgCharacterBg then
+        self.RImgCharacterBg = rImgCharacterBg:GetComponent("RawImage")
+    end
+
     -- 校准活动
     local targetBtnDetails = self.Transform:FindTransformWithSplit("SafeAreaContentPane/BtnDetails")
     self.TargetBtnDetails = targetBtnDetails and targetBtnDetails:GetComponent("XUiButton") or false
@@ -182,11 +197,6 @@ function XUiNewGridDrawBanner:SetButtonCallBack()
         end
     end
 
-    if self.BtnDrawRule then
-        self.BtnDrawRule.CallBack = function() 
-            self:OnClickBtnRule()
-        end
-    end
     -- 校准活动
     if self.TargetBtnDetails then
         self.TargetBtnDetails.CallBack = function()
@@ -197,12 +207,12 @@ function XUiNewGridDrawBanner:SetButtonCallBack()
     -- 添加跳转逻辑并显示跳转按钮
     if self.BtnSkip then
         self.BtnSkip.CallBack = function()
-            local drawInfo = XDataCenter.DrawManager.GetUseDrawInfoByGroupId(self.Data:GetId())
+            local drawInfo = self:_GetDrawInfo()
             local drawId = drawInfo.Id
             local skipId = XDrawConfigs.GetDrawSkip(drawId)
             XFunctionManager.SkipInterface(skipId)
         end
-        local drawInfo = XDataCenter.DrawManager.GetUseDrawInfoByGroupId(self.Data:GetId())
+        local drawInfo = self:_GetDrawInfo()
         local drawId = drawInfo.Id
         local skipId = XDrawConfigs.GetDrawSkip(drawId)
         self.BtnSkip.gameObject:SetActiveEx(XTool.IsNumberValid(skipId))
@@ -228,7 +238,9 @@ end
 
 function XUiNewGridDrawBanner:OnClickWeaponShow()
     local bo = not self.BtnShow:GetToggleState()
-    self.BtnDrawRule.gameObject:SetActiveEx(bo)
+    if self.Base.BtnDrawRule then
+        self.Base.BtnDrawRule.gameObject:SetActiveEx(bo)
+    end
     self.PanelNumber.gameObject:SetActiveEx(bo)
     self.Base:HideOrShowOthers(bo)
     self.PanelWeaponShow.gameObject:SetActiveEx(not bo)
@@ -250,21 +262,13 @@ function XUiNewGridDrawBanner:OnBtnGoClick()
     end)
 end
 
-function XUiNewGridDrawBanner:OnClickBtnRule()
-    self.BtnDrawRule.interactable = false
-    local drawInfo = XDataCenter.DrawManager.GetUseDrawInfoByGroupId(self.Data:GetId())
-    XLuaUiManager.Open("UiDrawLog",drawInfo, SkipToDrawLogTabIndex.BaseRule,function()
-        self.BtnDrawRule.interactable = true
-    end)
-end
-
 function XUiNewGridDrawBanner:OnClickBtnTargetRule()
     self.TargetBtnDetails.interactable = false
-    local drawInfo = XDataCenter.DrawManager.GetUseDrawInfoByGroupId(self.Data:GetId())
+    local drawInfo = self:_GetDrawInfo()
     local data = XDataCenter.DrawManager.GetDrawGroupActivityTargetInfo(drawInfo.GroupId)
     XLuaUiManager.Open("UiDrawLog",drawInfo,data and SkipToDrawLogTabIndex.EventRule or SkipToDrawLogTabIndex.BaseRule,function()
         self.TargetBtnDetails.interactable = true
-    end)
+    end, self.OptionKey)
 end
 
 function XUiNewGridDrawBanner:SetUpBottomTimes()
@@ -357,6 +361,38 @@ function XUiNewGridDrawBanner:SetSwitchInfo()
     end
 end
 
+function XUiNewGridDrawBanner:SetCharacterBg()
+    if not self.RImgCharacterBg then
+        return
+    end
+    local isShow = false
+    local drawGroupRule = XDrawConfigs.GetDrawGroupRuleById(self.Base.GroupId)
+    if drawGroupRule and XTool.IsNumberValid(drawGroupRule.IsCharacterImage) then
+        local drawSceneCfg = XDrawConfigs.GetDrawSceneCfg(self.Base.DrawInfo.Id)
+        if drawSceneCfg and not string.IsNilOrEmpty(drawSceneCfg.DrawShowRImg) then
+            isShow = true
+            if self.RImgCharacterBg then
+                self.RImgCharacterBg:SetRawImageEx(drawSceneCfg.DrawShowRImg)
+            end
+        end
+    end
+    if self.RImgCharacterBg then
+        self.RImgCharacterBg.transform.parent.gameObject:SetActiveEx(isShow)
+    end
+end
+
+function XUiNewGridDrawBanner:SetDrawName()
+    if not self.TxtDrawName then
+        return
+    end
+    local drawGroupRule = XDrawConfigs.GetDrawGroupRuleById(self.Base.GroupId)
+    local hasDrawName = drawGroupRule and not string.IsNilOrEmpty(drawGroupRule.DrawName)
+    self.TxtDrawName.gameObject:SetActiveEx(hasDrawName)
+    if hasDrawName then
+        self.TxtDrawName.text = drawGroupRule.DrawName
+    end
+end
+
 function XUiNewGridDrawBanner:SetImage(imageList)
     if self.Base:CheckIsNewDraw() then
         if self.RImgName then
@@ -365,7 +401,7 @@ function XUiNewGridDrawBanner:SetImage(imageList)
         return
     end
 
-    if self.TargetBtnDetails or XDataCenter.DrawManager:CheckIsDevilMayCryGroupId(self.Base.GroupId) then
+    if self.TargetBtnDetails or XDataCenter.DrawManager:CheckIsDevilMayCryDrawId(self.Base.DrawInfo.Id) then
         if self.RImgBg then self.RImgBg.gameObject:SetActiveEx(false) end
         if self.RImgRole then self.RImgRole.gameObject:SetActiveEx(false) end
         if self.RImgName then self.RImgName.gameObject:SetActiveEx(false) end
@@ -422,7 +458,7 @@ function XUiNewGridDrawBanner:SetTextByResourceIds(resourceIds)
         return
     end
 
-    if self.TargetBtnDetails or XDataCenter.DrawManager:CheckIsDevilMayCryGroupId(self.Base.GroupId) then
+    if self.TargetBtnDetails or XDataCenter.DrawManager:CheckIsDevilMayCryDrawId(self.Base.DrawInfo.Id) then
         self:SetTextActive(false)
         return
     end
@@ -586,7 +622,7 @@ end
 
 function XUiNewGridDrawBanner:SetTime()
 
-    local drawInfo = XDataCenter.DrawManager.GetUseDrawInfoByGroupId(self.Data:GetId())
+    local drawInfo = self:_GetDrawInfo()
 
     local beginTimeStr = drawInfo.StartTime
     local endTimeStr = drawInfo.EndTime
@@ -679,7 +715,12 @@ function XUiNewGridDrawBanner:UpdateNewDrawView(drawCfg, modelId)
         return
     end
     local groupInfo = XDataCenter.DrawManager.GetDrawGroupInfoByGroupId(self.Base.GroupId)
-    local hasChosen = XTool.IsNumberValid(groupInfo.UseDrawId)
+    local hasChosen
+    if not string.IsNilOrEmpty(self.OptionKey) then
+        hasChosen = XTool.IsNumberValid(XDataCenter.DrawManager.GetRealUseDrawIdByOptionKey(self.OptionKey))
+    else
+        hasChosen = XTool.IsNumberValid((groupInfo.UseDrawIdDict or {})[0])
+    end
     self.NewDrawUiObject.PanelChar.gameObject:SetActiveEx(hasChosen)
     self.NewDrawUiObject.PanelRole.gameObject:SetActiveEx(hasChosen)
     self.NewDrawUiObject.PanelEmpty.gameObject:SetActiveEx(not hasChosen)
@@ -713,5 +754,14 @@ function XUiNewGridDrawBanner:OnBtnChooseClick()
 end
 
 --endregion
+
+--- 获取当前 DrawInfo（优先使用 OptionKey 维度）
+function XUiNewGridDrawBanner:_GetDrawInfo()
+    if not string.IsNilOrEmpty(self.OptionKey) then
+        return XDataCenter.DrawManager.GetUseDrawInfoByOptionKey(self.OptionKey)
+    else
+        return XDataCenter.DrawManager.GetUseDrawInfoByGroupId(self.Data:GetId())
+    end
+end
 
 return XUiNewGridDrawBanner

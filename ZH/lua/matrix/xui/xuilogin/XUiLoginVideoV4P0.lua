@@ -18,19 +18,24 @@ function XUiLoginVideoV4P0:OnAwake()
             self.VideoPlayerUgui1.gameObject:SetActiveEx(false)
         end, XScheduleManager.SECOND * 8.2)
     end
-
-    self.VideoPlayerUgui1.DestroyOnPlayEnd = false
-    self.VideoPlayerUgui1.DestroyOnDisable = true
-    self.VideoPlayerUgui2.PlayAfterPrepare = false
 end
 
-function XUiLoginVideoV4P0:OnStart()
+function XUiLoginVideoV4P0:OnStart(forceId)
     ---@type XTableLoginPromoFeature
-    local targetGotoConfig = XLoginManager.GetCurrentLoginPromoFeature()
+    local targetGotoConfig
+    -- 优先使用外部传入的指定Id
+    if forceId then
+        self.ForceId = forceId
+        local allConfigs = XLoginManager.GetLoginPromoFeatureTemplate()
+        targetGotoConfig = allConfigs[forceId]
+    end
+    if not targetGotoConfig then
+        targetGotoConfig = XLoginManager.GetCurrentLoginPromoFeature()
+    end
     self.LoginPromoFeatureConfig = targetGotoConfig
 
-    self.VideoPlayerUgui1:SetInfoByVideoId(targetGotoConfig.VideoConfigId1)
-    self.VideoPlayerUgui2:SetInfoByVideoId(targetGotoConfig.VideoConfigId2)
+    self.VideoPlayerUgui1:SetInfoByVideoId(targetGotoConfig.VideoConfigId[1])
+    self.VideoPlayerUgui2:SetInfoByVideoId(targetGotoConfig.VideoConfigId[2])
     self.VideoPlayerUgui1:Prepare()
     self.VideoPlayerUgui2:Prepare()
 
@@ -41,6 +46,10 @@ function XUiLoginVideoV4P0:OnStart()
 end
 
 function XUiLoginVideoV4P0:InitTimes()
+    if XTool.IsNumberValid(self.ForceId) then
+        return
+    end
+
     local endTime = XFunctionManager.GetEndTimeByTimeId(self.LoginPromoFeatureConfig.ShowTimeId) or 0
     self.EndTime = endTime
     self:RefreshTitleByTimeId() -- 计时器启动比较慢 先提前刷新一次

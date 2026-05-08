@@ -10,6 +10,7 @@ local RequestProto = {
     DlcCancelMatchRequest = "DlcCancelMatchRequest", -- 取消匹配
     DlcQuitRoomRequest = "DlcQuitRoomRequest", -- 退出房间
     DlcReadyRequest = "DlcReadyRequest", -- 准备
+    DlcSetShowStateRequest = "DlcSetShowStateRequest", -- 设置房间界面显示状态
     DlcCancelReadyRequest = "DlcCancelReadyRequest", -- 取消准备
     DlcEnterWorldRequest = "DlcEnterWorldRequest", -- 进入大世界
     DlcSelectRequest = "DlcSelectRequest",
@@ -816,6 +817,27 @@ function XDlcRoomAgency:ReqReady()
     end
 
     XNetwork.Call(RequestProto.DlcReadyRequest, {}, function(res)
+        if res.Code ~= XCode.Success then
+            XUiManager.TipCode(res.Code)
+            return
+        end
+    end)
+end
+
+---@param showState number 显示状态 关联XEnumConst.DlcRoom.PlayerShowState
+function XDlcRoomAgency:ReqSetShowState(showState)
+    if not self:IsInRoom() then
+        return
+    end
+
+    if self:__CheckHasChangeProtocol("ReqSetShowState", showState) then
+        return
+    end
+
+    local req = {
+        ShowState = showState,
+    }
+    XNetwork.Call(RequestProto.DlcSetShowStateRequest, req, function(res)
         if res.Code ~= XCode.Success then
             XUiManager.TipCode(res.Code)
             return

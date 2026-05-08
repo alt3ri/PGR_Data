@@ -67,6 +67,41 @@ function XSwitchableSceneAgency:GetIntClientConfigById(key, index)
     return nil
 end
 
+---@return XTableSwitchableSceneSettings
+function XSwitchableSceneAgency:GetTableSwitchableSceneSettingsCfgById(id)
+    return self._Model:GetTableSwitchableSceneSettingsCfgById(id)
+end
+
+--- 获取指定场景的交互提示（自动按照当前环境:PC/云游戏/移动端 选择对应的提示）
+function XSwitchableSceneAgency:GetCfgSwitchableSceneSettingsTipsById(id)
+    local mode = XDataCenter.UiPcManager.GetUiPcMode()
+
+    local switchSceneCfg = self._Model:GetTableSwitchableSceneSettingsCfgById(id)
+
+    if not switchSceneCfg then
+        return ''
+    end
+
+    if mode == XDataCenter.UiPcManager.XUiPcMode.Pc then
+        return switchSceneCfg.TipsOpInPc
+    elseif mode == XDataCenter.UiPcManager.XUiPcMode.CloudGame then
+        return switchSceneCfg.TipsOpInCloud
+    elseif mode == XDataCenter.UiPcManager.XUiPcMode.Default then
+        return switchSceneCfg.TipsOpInPhone
+    end
+    
+    return ''
+end
+
+---@return XTableSwitchableSceneSettings
+function XSwitchableSceneAgency:GetSwitchableSceneProxyTypeById(id, notips)
+   local cfg = self._Model:GetTableSwitchableSceneSettingsCfgById(id, notips)
+
+    if cfg then
+        return cfg.SwitchType
+    end
+end
+
 ---[场景设置（昼夜/电量），环境音设置，交互设置]
 function XSwitchableSceneAgency:GetSetting(sceneId)
     return self._Model:GetSetting(sceneId)

@@ -27,7 +27,11 @@ function XBigWorldInstanceAgency:OnInit()
         SaveExit = 1, -- 保存
         NoSaveExit = 2 -- 不保存
     }
-    
+    self.EExplorationAbilityType = {
+        None = 0,
+        Scan = 1, --扫描系统（鹰眼）
+        ScanPlus = 2, --扫描系统（检索系统 可以检索玩家或物体信息）
+    }
 end
 
 function XBigWorldInstanceAgency:InitRpc()

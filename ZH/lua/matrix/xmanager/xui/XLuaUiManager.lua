@@ -9,6 +9,9 @@ Vector2 = CS.UnityEngine.Vector2
 Vector3 = CS.UnityEngine.Vector3
 
 local Registry = require("UiRegistry")
+local XUiRunMainUtil = require("XManager/XUi/XLuaUiRunMainUtil")
+require("XUi/XUiBase/XLuaUi")
+require("XUi/XUiBase/XUiNode")
 
 local IsWindowsEditor = XMain.IsWindowsEditor
 local Uid2UiNameMap = {}
@@ -41,9 +44,9 @@ function XLuaUiManager.Register(super, uiName)
     return uiObject
 end
 
---创建一个LuaUI的实例
---@name LuaUI脚本名字
---@gameUI C#的GameUI
+-- 创建一个LuaUI的实例
+-- @name LuaUI脚本名字
+-- @gameUI C#的GameUI
 function XLuaUiManager.New(uiName, uiProxy)
     local baseName = uiName
     local class = ClassType[baseName]
@@ -78,49 +81,49 @@ function XLuaUiManager.New(uiName, uiProxy)
     return obj
 end
 
---打开UI
---@uiName 打开的UI名字
+-- 打开UI
+-- @uiName 打开的UI名字
 function XLuaUiManager.Open(uiName, ...)
     XLuaUiManager.RecordTryDownload(uiName)
     CsXUiManager.Instance:Open(uiName, ...)
 end
 
---打开UI，完成后执行回调
---@uiName 打开的UI名称
---@callback 打开完成回调
---@... 传递到OnStart的参数
+-- 打开UI，完成后执行回调
+-- @uiName 打开的UI名称
+-- @callback 打开完成回调
+-- @... 传递到OnStart的参数
 function XLuaUiManager.OpenWithCallback(uiName, callback, ...)
     XLuaUiManager.RecordTryDownload(uiName)
     CsXUiManager.Instance:OpenWithCallback(uiName, callback, ...)
 end
 
---打开UI，关闭后执行回调
---@uiName 打开的UI名称
---@callback 关闭后执行的回调
---@... 传递到OnStart的参数
+-- 打开UI，关闭后执行回调
+-- @uiName 打开的UI名称
+-- @callback 关闭后执行的回调
+-- @... 传递到OnStart的参数
 function XLuaUiManager.OpenWithCloseCallback(uiName, callback, ...)
     XLuaUiManager.RecordTryDownload(uiName)
     CsXUiManager.Instance:OpenWithCloseCallback(uiName, callback, ...)
 end
 
---关闭UI，完成后执行回调
---@uiName 打开的UI名称
---@callback 打开完成回调
+-- 关闭UI，完成后执行回调
+-- @uiName 打开的UI名称
+-- @callback 打开完成回调
 function XLuaUiManager.CloseWithCallback(uiName, callback)
     CsXUiManager.Instance:CloseWithCallback(uiName, callback)
 end
 
---针对Normal类型的管理，关闭上一个界面，然后打开下一个界面（无缝切换）
---@uiName 需要打开的UI名字
---@... 传递到OnStart的参数
+-- 针对Normal类型的管理，关闭上一个界面，然后打开下一个界面（无缝切换）
+-- @uiName 需要打开的UI名字
+-- @... 传递到OnStart的参数
 function XLuaUiManager.PopThenOpen(uiName, ...)
     XLuaUiManager.RecordTryDownload(uiName)
     CsXUiManager.Instance:PopThenOpen(uiName, ...)
 end
 
---针对Normal类型的管理，关闭栈中所有界面，然后打开下一个界面（无缝切换）
---@uiName 需要打开的UI名字
---@... 传递到OnStart的参数
+-- 针对Normal类型的管理，关闭栈中所有界面，然后打开下一个界面（无缝切换）
+-- @uiName 需要打开的UI名字
+-- @... 传递到OnStart的参数
 function XLuaUiManager.PopAllThenOpen(uiName, ...)
     XLuaUiManager.RecordTryDownload(uiName)
     CsXUiManager.Instance:PopAllThenOpen(uiName, ...)
@@ -143,35 +146,35 @@ function XLuaUiManager._CloseAllUpperUi(uiName, callback)
     CsXUiManager.Instance:CloseAllUpperUi(uiName, callback, XLuaUiManager.RemoveUiData)
 end
 
---关闭UI
---@uiName 关闭的UI名字(只能关闭当前显示的UI)
+-- 关闭UI
+-- @uiName 关闭的UI名字(只能关闭当前显示的UI)
 function XLuaUiManager.Close(uiName)
     CsXUiManager.Instance:Close(uiName)
 end
 
---立即关闭UI
---@uiName 关闭的UI名字(只能关闭当前显示的UI)
+-- 立即关闭UI
+-- @uiName 关闭的UI名字(只能关闭当前显示的UI)
 function XLuaUiManager.CloseImmediately(uiName)
     CsXUiManager.Instance:CloseImmediately(uiName)
 end
 
---移除UI,移除的UI不会播放进场、退场动画
---@uiName 关闭的UI名字（可以关闭非当前显示UI）
+-- 移除UI,移除的UI不会播放进场、退场动画
+-- @uiName 关闭的UI名字（可以关闭非当前显示UI）
 function XLuaUiManager.Remove(uiName)
     CsXUiManager.Instance:Remove(uiName)
 end
 
---某个UI是否显示
+-- 某个UI是否显示
 function XLuaUiManager.IsUiShow(uiName)
     return CsXUiManager.Instance:IsUiShow(uiName)
 end
 
---某个UI是否正在推入中，打开即推入，Awake推出
+-- 某个UI是否正在推入中，打开即推入，Awake推出
 function XLuaUiManager.IsUiPushing(uiName)
     return CsXUiManager.Instance:IsUiPushing(uiName)
 end
 
---某个UI是否已经加载
+-- 某个UI是否已经加载
 function XLuaUiManager.IsUiLoad(uiName)
     return CsXUiManager.Instance:IsUiLoad(uiName)
 end
@@ -181,7 +184,7 @@ function XLuaUiManager.IsStackUiOpen(uiName)
 end
 
 local _MaskCount = {}
---设置mask，visible=true时不能操作
+-- 设置mask，visible=true时不能操作
 function XLuaUiManager.SetMask(visible, key)
     visible = visible and true or false
     CsXUiManager.Instance:SetMask(visible)
@@ -207,7 +210,7 @@ function XLuaUiManager.IsMaskShow(key)
     return (_MaskCount[key] or 0) > 0
 end
 
---设置animationMask，tag标签,visible=true时不能操作，delay(默认2秒)后会展示菊花
+-- 设置animationMask，tag标签,visible=true时不能操作，delay(默认2秒)后会展示菊花
 function XLuaUiManager.SetAnimationMask(tag, visible, delay)
     visible = visible and true or false
     delay = delay or 2
@@ -242,112 +245,10 @@ function XLuaUiManager.TryImportLuaFile(name)
     ImportModule[name] = 1
 end
 
---返回主界面
+-- 返回主界面
 function XLuaUiManager.RunMain(notDialogTip)
-    --CsXUiManager.Instance:Clear()
-    local needClearUiName = {
-        "UiFubenMainLineChapter",
-        "UiFubenMainLineChapterFw",
-        "UiFubenMainLineChapterDP",
-        "UiPrequel",
-        "UiTheatre5PVEClueBoard",
-        "XUiSoloReformChapterDetail",
-    }
-    for _, uiName in pairs(needClearUiName) do
-        XLuaUiManager.RemoveUiData(uiName)
-    end
-
-    if XDataCenter.RoomManager.RoomData then
-        if notDialogTip then
-            XDataCenter.RoomManager.Quit(
-                    function()
-                        CsXUiManager.Instance:RunMain()
-                    end
-            )
-
-            return
-        end
-
-        -- 如果在房间中，需要先弹确认框
-        local title = CsXTextManagerGetText("TipTitle")
-        local cancelMatchMsg
-        local stageId = XDataCenter.RoomManager.RoomData.StageId
-        local stageInfo = XDataCenter.FubenManager.GetStageInfo(stageId)
-        cancelMatchMsg = CsXTextManagerGetText("OnlineInstanceQuitRoom")
-
-        XUiManager.DialogTip(
-                title,
-                cancelMatchMsg,
-                XUiManager.DialogType.Normal,
-                nil,
-                function()
-                    XDataCenter.RoomManager.Quit(
-                            function()
-                                CsXUiManager.Instance:RunMain()
-                            end
-                    )
-                end
-        )
-    elseif XDataCenter.RoomManager.Matching then
-        if notDialogTip then
-            XDataCenter.RoomManager.CancelMatch(
-                    function()
-                        CsXUiManager.Instance:RunMain()
-                    end
-            )
-
-            return
-        end
-
-        local title = CsXTextManagerGetText("TipTitle")
-        local cancelMatchMsg = CsXTextManagerGetText("OnlineInstanceCancelMatch")
-        XUiManager.DialogTip(
-                title,
-                cancelMatchMsg,
-                XUiManager.DialogType.Normal,
-                nil,
-                function()
-                    XDataCenter.RoomManager.CancelMatch(
-                            function()
-                                CsXUiManager.Instance:RunMain()
-                            end
-                    )
-                end
-        )
-    elseif XDataCenter.DlcRoomManager.IsInRoom() then
-        XDataCenter.DlcRoomManager.DialogTipQuitRoom(function()
-            CsXUiManager.Instance:RunMain()
-        end)
-    elseif XMVCA.XDlcRoom:IsInRoom() then
-        if notDialogTip then
-            XMVCA.XDlcRoom:Quit(function()
-                CsXUiManager.Instance:RunMain()
-            end)
-        else
-            XMVCA.XDlcRoom:DialogTipQuit(function()
-                CsXUiManager.Instance:RunMain()
-            end)
-        end
-    elseif XMVCA.XDlcRoom:IsMatching() then
-        if notDialogTip then
-            XMVCA.XDlcRoom:CancelMatch(function()
-                CsXUiManager.Instance:RunMain()
-            end)
-        else
-            XMVCA.XDlcRoom:DialogTipCancelMatch(function()
-                CsXUiManager.Instance:RunMain()
-            end)
-        end
-
-    elseif XMVCA.XBigWorldGamePlay:IsInGame() then
-        XMVCA.XBigWorldGamePlay:ExitGame()
-    else
-        if XLoginManager.IsFirstOpenMainUi() then
-            CS.XCustomUi.Instance:GetData()
-        end
-        CsXUiManager.Instance:RunMain()
-    end
-    
+    -- 使用工具文件处理返回主界面的逻辑
+    XUiRunMainUtil.HandleRunMain(notDialogTip)
     XMVCA.XFunction:ExitCurrentFunction()
 end
 
@@ -355,14 +256,14 @@ function XLuaUiManager.ShowTopUi()
     CsXUiManager.Instance:ShowTopUi()
 end
 
---获取ui状态
+-- 获取ui状态
 function XLuaUiManager.GetUiData(uiName)
     if UiData then
         return UiData[uiName]
     end
 end
 
---缓存ui状态
+-- 缓存ui状态
 function XLuaUiManager.SetUiData(uiName, data)
     UiData = UiData and UiData or {}
     UiData[uiName] = data
@@ -382,12 +283,12 @@ function XLuaUiManager.GetTopUiName()
     return CsXUiManager.Instance:GetTopUiName()
 end
 
---拿到栈容器的顶部UI
+-- 拿到栈容器的顶部UI
 function XLuaUiManager.GetUIStackTopUiName()
     local xui = CsXUiManager.Instance:GetTopUi(CS.XUiType.Normal)
     if xui and xui.UiData then
         return xui.UiData.UiName
-    end    
+    end
 end
 
 -- 等待uiname页面signalName信号
@@ -425,10 +326,10 @@ end
 
 function XLuaUiManager.SafeClose(uiName)
     if XLuaUiManager.IsUiShow(uiName) then
-        --if XLuaUiManager.GetTopUiName() ~= uiName then
+        -- if XLuaUiManager.GetTopUiName() ~= uiName then
         --    XLuaUiManager.Remove(uiName)
         --    return
-        --end
+        -- end
         XLuaUiManager.Close(uiName)
         return
     end

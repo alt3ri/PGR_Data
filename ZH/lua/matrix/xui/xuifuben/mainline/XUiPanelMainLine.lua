@@ -65,7 +65,7 @@ function XUiPanelMainLine:OnEnable()
         grid:RefreshRedPoint()
     end
     -- 章节列表刷新
-    self:RefreshChapterList(self.CurrentChapterIndex, true)
+    self:RefreshChapterList(self.CurrentGroupId, self.CurrentChapterIndex, true)
 
     if self._SetDataRun then
         self._SetDataRun = false
@@ -81,15 +81,28 @@ end
 function XUiPanelMainLine:OnDisable()
     self.IsEnable = false
     self.CurrentChapterListControl:SetCurrGridOpen() -- 退出时要强设一遍展开样式，防止在滑动侧边栏过程中，快速切换底部标签再切回来导致open动画播放错误
+
+    self.RootUi.BgmMusicPlayer:ClearTempMusic()
 end
 
-function XUiPanelMainLine:RefreshChapterList(index, isFirstChange)
+function XUiPanelMainLine:RefreshBgm(groupConfig)
+    local bgmCueId = groupConfig.BgmCueId
+    if bgmCueId ~= 0 then
+        self.RootUi.BgmMusicPlayer:SetTempMusic(bgmCueId)
+    else
+        self.RootUi.BgmMusicPlayer:ClearTempMusic()
+    end
+end
+
+function XUiPanelMainLine:RefreshChapterList(groupId, index, isFirstChange)
     if index == nil then
         local _, i = self.MainLineManager:ExGetCurrentGroupIndexAndChapterIndex(self.CurrentGroupId)
         index = i
     end
     local chapterViewModels = self.MainLineManager:ExGetChapterViewModels(self.CurrentGroupId, self.CurrentFubenDifficulty)
     self.CurrentChapterListControl:RefreshList(chapterViewModels, index - 1, isFirstChange)
+
+    self:RefreshBgm(self.MainLineManager:ExGetChapterGroupConfigs()[groupId])
 end
 
 function XUiPanelMainLine:RefreshTabList(index)
@@ -127,7 +140,7 @@ function XUiPanelMainLine:OnBtnTabClicked(index, groupConfig)
     self.UiFubenSideDynamicTable:TweenToIndex(index)
     self.CurrentGroupId = groupConfig.Id
     self:EmitSignal("SetMainUiFirstIndexArgs", self.FirstTagIndex, self.CurrentGroupId, self:GetHistoryChapterIndex(self.CurrentGroupId)) -- 点击侧边栏不记录chapter，只记录2级标签
-    self:RefreshChapterList(self:GetHistoryChapterIndex(self.CurrentGroupId))
+    self:RefreshChapterList(self.CurrentGroupId, self:GetHistoryChapterIndex(self.CurrentGroupId))
 end
 
 function XUiPanelMainLine:OnBtnChapterClicked(index, viewModel)
@@ -156,7 +169,7 @@ function XUiPanelMainLine:OnSideDynamicTableTweenOver(index)
     if self.CurrentGroupId == groupConfig.Id then return end
     local isUp = groupConfig.Id > self.CurrentGroupId
     self.CurrentGroupId = groupConfig.Id
-    self:RefreshChapterList(self:GetHistoryChapterIndex(self.CurrentGroupId))
+    self:RefreshChapterList(self.CurrentGroupId, self:GetHistoryChapterIndex(self.CurrentGroupId))
 end
 
 function XUiPanelMainLine:SetHistoryChapterIndex(groupId, chapterIndex)

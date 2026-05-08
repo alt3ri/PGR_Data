@@ -47,7 +47,7 @@ end
 
 function XUiGridFashion:UpdateStatus()
     local status = XDataCenter.FashionManager.GetFashionStatus(self.FashionId)
-    
+
     if self.OpenUiType and self.OpenUiType == XUiConfigs.OpenUiType.NieRCharacterUI then
         local nieRCharacter = XDataCenter.NieRManager.GetSelNieRCharacter()
         if nieRCharacter:GetNieRFashionId() == self.FashionId then
@@ -56,7 +56,7 @@ function XUiGridFashion:UpdateStatus()
             status = XDataCenter.FashionManager.FashionStatus.UnLock
         end
     end
-    
+
     if status == XDataCenter.FashionManager.FashionStatus.UnOwned then -- 未获得
         self.ImgLock.gameObject:SetActiveEx(true)
         self.ImgUse.gameObject:SetActiveEx(false)
@@ -87,6 +87,11 @@ function XUiGridFashion:Refresh(fashionId, characterId, rootUi)
     self.RImgIcon:SetRawImage(template.Icon)
 
     self:UpdateStatus()
+    self:RefreshColorDot(template.FashionColorIds)
+end
+
+function XUiGridFashion:RefreshColorDot(colorIds)
+    self.ColorTag.gameObject:SetActiveEx(colorIds and #colorIds > 0)
 end
 
 return XUiGridFashion

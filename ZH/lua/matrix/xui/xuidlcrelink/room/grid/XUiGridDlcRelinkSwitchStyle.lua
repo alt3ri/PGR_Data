@@ -3,11 +3,15 @@
 ---@field Parent XUiDlcRelinkPopupSwitchCareer
 local XUiGridDlcRelinkSwitchStyle = XClass(XUiNode, "XUiGridDlcRelinkSwitchStyle")
 
-function XUiGridDlcRelinkSwitchStyle:OnStart()
+function XUiGridDlcRelinkSwitchStyle:OnStart(isNotSelf)
+    self.IsNotSelf = isNotSelf
     self.BtnSelect:AddEventListener(handler(self, self.OnBtnSelectClick))
 end
 
 function XUiGridDlcRelinkSwitchStyle:OnDisable()
+    if self.IsNotSelf then
+        return
+    end
     -- 记录红点状态
     local isUnlock, _ = self:IsCharacterStyleUnlock(self.Config.Condition)
     if isUnlock then
@@ -70,7 +74,7 @@ function XUiGridDlcRelinkSwitchStyle:IsCharacterStyleUnlock(conditionIds)
 end
 
 function XUiGridDlcRelinkSwitchStyle:OnBtnSelectClick()
-    if not self.Config then
+    if not self.Config or self.IsNotSelf then
         return
     end
 
@@ -90,6 +94,22 @@ function XUiGridDlcRelinkSwitchStyle:OnBtnSelectClick()
             self.Parent:OnBtnCloseClick()
         end
     end)
+end
+
+function XUiGridDlcRelinkSwitchStyle:RefreshOther(characterId, styleType)
+    self.Normal.gameObject:SetActiveEx(true)
+    self.Select.gameObject:SetActiveEx(false)
+    self.Lock.gameObject:SetActiveEx(false)
+    self.BtnSelect.gameObject:SetActiveEx(false)
+    self.Red.gameObject:SetActiveEx(false)
+
+    -- 风格图标、名称、描述
+    local styleIcon = self._Control:GetCharacterStyleIcon(characterId, styleType)
+    local styleName = self._Control:GetCharacterStyleName(characterId, styleType)
+    local styleDesc = self._Control:GetCharacterStyleDesc(characterId, styleType)
+    self.Normal:GetObject("RImgIcon"):SetRawImageEx(styleIcon)
+    self.Normal:GetObject("TxtName").text = styleName
+    self.Normal:GetObject("TxtContent").text = XUiHelper.ConvertLineBreakSymbol(styleDesc)
 end
 
 return XUiGridDlcRelinkSwitchStyle

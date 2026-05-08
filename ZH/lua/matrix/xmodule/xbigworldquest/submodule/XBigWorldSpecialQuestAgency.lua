@@ -1,4 +1,3 @@
-
 ---@type XBigWorldQuestAgency
 local XBigWorldQuestAgency = XClassPartial("XBigWorldQuestAgency")
 
@@ -89,7 +88,8 @@ end
 
 function XBigWorldQuestAgency:OpenInvitationDetail(questId, resultId, isSequence, showTagNew)
     if isSequence then
-        return XMVCA.XBigWorldUI:OpenWithFightSequence("UiBigWorldTaskPopupEndingDetail", false, questId, resultId, showTagNew)
+        return XMVCA.XBigWorldUI:OpenWithFightSequence("UiBigWorldTaskPopupEndingDetail", false, questId, resultId,
+            showTagNew)
     end
     return XMVCA.XBigWorldUI:Open("UiBigWorldTaskPopupEndingDetail", questId, resultId, showTagNew)
 end
@@ -110,8 +110,37 @@ end
 
 --region 环境任务
 
+function XBigWorldQuestAgency:RequestEnvironmentQuestGroupChange(levelId, groupId, callback)
+    if not XTool.IsNumberValid(levelId) or not XTool.IsNumberValid(groupId) then
+        return
+    end
+
+    XNetwork.Call("DlcEnvironmentQuestGroupChangeRequest", {
+        LevelId = levelId,
+        QuestGroupId = groupId,
+    }, function(res)
+        if res.Code ~= XCode.Success then
+            XUiManager.TipCode(res.Code)
+            return
+        end
+
+        self._Model:UpdateEnvironmentOnDuty(res.EnvironmentQuestData)
+        if callback then
+            callback()
+        end
+    end)
+end
+
+function XBigWorldQuestAgency:UpdateEnvironmentOnDuty(data)
+    self._Model:UpdateEnvironmentOnDuty(data)
+end
+
 function XBigWorldQuestAgency:GetEnvironmentIds()
     return self._Model:GetEnvironmentIds()
+end
+
+function XBigWorldQuestAgency:GetEnvironmentIdsByGroup(groupId)
+    return self._Model:GetEnvironmentIdsByGroup(groupId)
 end
 
 function XBigWorldQuestAgency:CheckAllEnvironmentFinish()
@@ -174,7 +203,7 @@ function XBigWorldQuestAgency:OpenEnvironmentPopupView(id)
     XMVCA.XBigWorldUI:Open("UiBigWorldPopupEnvironmentalStory", id)
 end
 
---endregion 环境任务 
+--endregion 环境任务
 
 --region 配置相关
 function XBigWorldQuestAgency:GetInviteQuestRoleIcon(inviteId, noTips)
@@ -200,6 +229,10 @@ function XBigWorldQuestAgency:GetEnvironmentQuestPriority(id)
     return self._Model:GetEnvironmentQuestPriority(id)
 end
 
+function XBigWorldQuestAgency:GetEnvironmentQuestGroupId(id)
+    return self._Model:GetEnvironmentQuestGroupId(id)
+end
+
 function XBigWorldQuestAgency:GetEnvironmentQuestShowReward(id)
     return self._Model:GetEnvironmentQuestShowReward(id)
 end
@@ -212,6 +245,47 @@ function XBigWorldQuestAgency:GetEnvironmentQuestSkipId(id)
     return self._Model:GetEnvironmentQuestSkipId(id)
 end
 
+---@return XTableDlcEnvironmentQuestLevel[]
+function XBigWorldQuestAgency:GetEnvironmentQuestGroupLevelConfigs()
+    local levelConfigs = self._Model:GetEnvironmentQuestGroupLevelConfigs()
+    local result = {}
+
+    for _, config in pairs(levelConfigs) do
+            local conditionId = config.ConditionId
+
+            if not XTool.IsNumberValid(conditionId) or XMVCA.XBigWorldService:CheckCondition(conditionId) then
+                table.insert(result, config)
+            end
+        end
+
+    return result
+end
+
+---@return XTableDlcEnvironmentQuestGroup
+function XBigWorldQuestAgency:GetEnvironmentQuestGroupTemplate(groupId)
+    return self._Model:GetEnvironmentQuestGroupTemplate(groupId)
+end
+
+function XBigWorldQuestAgency:GetEnvironmentQuestGroupLevelId(groupId)
+    return self._Model:GetEnvironmentQuestGroupLevelId(groupId)
+end
+
+function XBigWorldQuestAgency:GetRecordEnvironmentalGroup(levelId)
+    return self._Model:GetRecordEnvironmentalGroup(levelId)
+end
+
+function XBigWorldQuestAgency:SetRecordEnvironmentalGroup(levelId)
+    return self._Model:SetRecordEnvironmentalGroup(levelId)
+end
+
+function XBigWorldQuestAgency:SaveEnvironmentalGroupNews(levelId)
+    return self._Model:SaveEnvironmentalGroupNews(levelId)
+end
+
+function XBigWorldQuestAgency:GetEnvironmentQuestGroupOnDuty(levelId)
+    return self._Model:GetEnvironmentOnDuty(levelId)
+end
+
 --endregion
 
 function XBigWorldQuestAgency:IsInvitePopped(questId)
@@ -220,4 +294,4 @@ end
 
 function XBigWorldQuestAgency:SetInvitePopup(questId)
     RecordInvitePopup[questId] = true
-end
+end

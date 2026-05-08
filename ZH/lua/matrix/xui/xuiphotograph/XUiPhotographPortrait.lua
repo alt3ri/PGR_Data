@@ -6,10 +6,11 @@ local XUiGridPhotographOtherBtn = require("XUi/XUiPhotograph/XUiGridPhotographOt
 local XUiGridPhotographFashionBtn = require("XUi/XUiPhotograph/XUiGridPhotographFashionBtn")
 local XUiPhotographActionPanel = require("XUi/XUiPhotograph/XUiPhotographActionPanel")
 local XUiPhotographSDKPanel = require("XUi/XUiPhotograph/XUiPhotographSDKPanel")
-local XUiPanelLackResources = require("XUi/XUiSubPackage/XUiPanel/XUiPanelLackResources")
 
 local XUiPhotographPortrait = XLuaUiManager.Register(XLuaUi, "UiPhotographPortrait")
 local XUiPanelRoleModel = require("XUi/XUiCharacter/XUiPanelRoleModel")
+local XUiPhotographFashionColor = require("XUi/XUiPhotograph/Panel/XUiPhotographFashionColor")
+local XUiPanelLackResources = require("XUi/XUiSubPackage/XUiPanel/XUiPanelLackResources")
 local OffsetX, OffsetY = 60, 60
 
 local MAX_FASHION_MEMBER_LINE = 3 --涂装表每行个数
@@ -339,11 +340,15 @@ function XUiPhotographPortrait:InitUi()
     self.SDKPanel = XUiPhotographSDKPanel.New(self, self.PanelSDK)
     ---@type XUiPanelCharacterCG
     self.CG = require("XUi/XUiCharacterCG/XUiPanelCharacterCG").New(self.PanelVideo, self)
+    -- 竖屏默认隐藏字幕
+    self.CG:SetSubtitlesEnable(false)
+    
     ---@type XUiPanelSwitchableSceneAnim
-    self.SwitchableScene = require("XUi/XUiSwitchableScene/Panel/XUiPanelSwitchableSceneAnim").New()
+    self.SwitchableScene = require("XUi/XUiSwitchableScene/XUiPanelSwitchableSceneAnim").New()
     ---@type XUiPanelPhotographSceneChange
     self._SceneChange = require("XUi/XUiPhotograph/XUiPanelPhotographSceneChange").New(self.PanelSceneChange, self)
     self._SceneChange:SetUpdateBatteryMode(handler(self, self.UpdateBatteryMode))
+    self.FashionColorPanel = XUiPhotographFashionColor.New(self.PanelDot, self)
 end
 
 --region   ------------------动态列表 start-------------------
@@ -544,12 +549,11 @@ function XUiPhotographPortrait:OnDynamicActionTableEvent(evt, index, grid)
             action_id = self.ActionList[index].config.Id,
             character_id = self.CharacterId
         })
-        if XMVCA.XFavorability:CheckCGBoardAct(self.FashionId, self.ActionList[index].config.SignBoardActionId) then
-            if CS.UnityEngine.Application.platform == CS.UnityEngine.RuntimePlatform.Android then
-                self.CG:PlayCG(1015301) -- 临时处理 安卓播1k视频
-            else
-                self.CG:PlayCG(10153)  -- ios和pc播2k视频
-            end
+
+        local videoId = XMVCA.XFavorability:CheckCGBoardAct(self.ActionList[index].config.SignBoardActionId)
+
+        if XTool.IsNumberValidEx(videoId) then
+            self.CG:PlayCG(videoId)
             self.ShotMode = CGMode
         else
             self.ShotMode = SceneMode
@@ -791,15 +795,19 @@ function XUiPhotographPortrait:Replay()
     self.CG:ReplayCG()
 end
 
-function XUiPhotographPortrait:UpdateRoleModel(charId, fashionId)
+function XUiPhotographPortrait:UpdateRoleModel(charId, fashionId, colorId)
     self:ClearAnimationCache(charId)
     self.CharacterId = charId
     self.FashionId = fashionId
-    XDataCenter.DisplayManager.UpdateRoleModel(self.RoleModel, charId, nil, fashionId)
+    if not XTool.IsNumberValid(colorId) then
+        colorId = 0
+    end
+    XDataCenter.DisplayManager.UpdateRoleModel(self.RoleModel, charId, nil, fashionId, colorId)
     self.RoleAnimator = self.RoleModel:GetAnimator()
     self.CG.LastPlayId = nil
 
     self.RoleModel:SetXPostFaicalControllerActive(true)
+    self.FashionColorPanel:Refresh(fashionId)
     self:CheckAndUpdateLackResourcesPanel()
 end
 

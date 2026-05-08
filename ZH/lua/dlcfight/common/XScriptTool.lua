@@ -22,7 +22,6 @@ function XScriptTool.CheckNpcInteractStart(proxy, eventArgs, targetNpcId)
 end
 --endregion
 
-
 --region DoTeleport
 ---Npc传送(不带转向)
 ---@param proxy XDlcCSharpFuncs
@@ -208,5 +207,25 @@ end
 ---@return boolean
 function XScriptTool.EqualVector3(vector1, vector2)
     return vector1.x == vector2.x and vector1.y == vector2.y and vector1.z == vector2.z
+end
+--endregion
+
+--region 生态AI 日志
+---@param script XEcologyCharAIBaseState
+function XScriptTool.EcologyError(script, str, ...)
+    local placeId = script._proxy:GetNpcPlaceId() or 0
+    XLog.Error("[生态构造体AI][PlaceId:"..placeId.."][脚本:"..script._proxy.Id.."]"..tostring(str), ...)
+end
+
+---@param script XEcologyCharAIBaseState
+function XScriptTool.EcologyWarning(script, str, ...)
+    local placeId = script._proxy:GetNpcPlaceId() or 0
+    XLog.Warning("[生态构造体AI][PlaceId:"..placeId.."][脚本:"..script._proxy.Id.."]"..tostring(str), ...)
+end
+
+---@param script XEcologyCharAIBaseState
+function XScriptTool.EcologyDebug(script, str, ...)
+    local placeId = script._proxy:GetNpcPlaceId() or 0
+    XLog.Debug("[生态构造体AI][PlaceId:"..placeId.."][脚本:"..script._proxy.Id.."]"..tostring(str), ...)
 end
 --endregion

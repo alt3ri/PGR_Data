@@ -235,4 +235,22 @@ function XUiModelDisplayHelper.CheckComponentDerived(componentType, derivedType)
     return (componentFlag & derivedFlag) == componentFlag
 end
 
+--- func 播放角色表情
+---@param uiModelDisplayController XUiModelDisplayController
+---@param uiModelId int
+---@param fashionId int
+---@param animaName string
+function XUiModelDisplayHelper.PlayExpression(uiModelDisplayController, uiModelId, fashionId, animaName)
+    local uIModelAnimExpressionSOGroupId = XMVCA.XBigWorldCharacter:GetUIModelAnimExpressionSOGroupId(fashionId)
+    local expressionIds = XMVCA.XBigWorldResource:GetBigWorldAnimationExpressionSOIdList(uIModelAnimExpressionSOGroupId)
+    for i, expressionId in ipairs(expressionIds) do
+        local expressionSOConfig = XMVCA.XBigWorldResource:GetBigWorldAnimationExpressionSOById(expressionId)
+        if expressionSOConfig.AnimateState == animaName then
+            local url = expressionSOConfig.Url
+            uiModelDisplayController:PlayExpression(uiModelId, url)
+        end
+    end
+end
+
+
 return XUiModelDisplayHelper

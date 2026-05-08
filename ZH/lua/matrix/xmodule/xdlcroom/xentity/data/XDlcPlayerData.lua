@@ -8,6 +8,7 @@ function XDlcPlayerData:Ctor(worldType, roomData, worldData)
     self._CharacterDataList = {}
     self._Level = nil
     self._State = XEnumConst.DlcRoom.PlayerState.None
+    self._ShowState = XEnumConst.DlcRoom.PlayerShowState.Normal
     self._Name = nil
     self._NickName = nil
     self._IsLeader = false
@@ -46,6 +47,10 @@ end
 
 function XDlcPlayerData:GetState()
     return self._State
+end
+
+function XDlcPlayerData:GetShowState()
+    return self._ShowState
 end
 
 function XDlcPlayerData:IsLeader()
@@ -165,6 +170,10 @@ function XDlcPlayerData:SetState(value)
     self._State = value
 end
 
+function XDlcPlayerData:SetShowState(value)
+    self._ShowState = value
+end
+
 function XDlcPlayerData:SetCharacterListBySource(characterList)
     if not XTool.IsTableEmpty(characterList) then
         self._CharacterDataList = {}
@@ -183,6 +192,7 @@ function XDlcPlayerData:Clone(other)
     self._PlayerId = other._PlayerId
     self._Level = other._Level
     self._State = other._State
+    self._ShowState = other._ShowState
     self._Name = other._Name
     self._NickName = other._NickName
     self._IsLeader = other._IsLeader
@@ -226,6 +236,7 @@ function XDlcPlayerData:Clear()
     self._CharacterDataList = {}
     self._Level = nil
     self._State = XEnumConst.DlcRoom.PlayerState.None
+    self._ShowState = XEnumConst.DlcRoom.PlayerShowState.Normal
     self._Name = nil
     self._NickName = nil
     self._IsLeader = false
@@ -247,6 +258,7 @@ function XDlcPlayerData:_InitWithRoomData(data)
         self._Name = data.Name
         self._NickName = XDataCenter.SocialManager.GetPlayerRemark(self:GetPlayerId(), self:GetName())
         self._State = data.State
+        self._ShowState = data.ShowState
         self._IsLeader = data.Leader
         self._Level = data.Level
         self._IsClear = false

@@ -177,14 +177,14 @@ function XLevelScriptHunt01:HandleEvent(eventType, eventArgs)
         end
     elseif eventType == EWorldEvent.NpcCastActionAfter and eventArgs.LauncherId == self._npc then
         --角色使用猎矛
-        if eventArgs.SkillId == 100241 or eventArgs.SkillId == 101439 or eventArgs.SkillId == 100736 then
+        if eventArgs.SkillActionId == 100241 or eventArgs.SkillActionId == 101439 or eventArgs.SkillActionId == 100736 then
             -- 玩家放出对勾点猎锚第一段 读取玩家猎矛勾选的对象
             self._playerFocusAnchor = self._proxy:GetNpcNoteInt(self._npc, self._camLockAnchorIndex)
             --print("<color=#F0D800>[黑龙BOSS战本地模块]</color>缓存玩家" .. tostring(self._npc) .. "勾取对象： " .. tostring(self._playerFocusAnchor))
             self._proxy:RemoveNpcFocusTarget(self._npc)
         end
     elseif eventType == EWorldEvent.NpcExitAction and eventArgs.LauncherId == self._npc then
-        if eventArgs.SkillId == 100242 or eventArgs.SkillId == 101440 or eventArgs.SkillId == 100737 then
+        if eventArgs.SkillActionId == 100242 or eventArgs.SkillActionId == 101440 or eventArgs.SkillActionId == 100737 then
             if self._playerInBossLockTrigger then
                 --自动锁定boss
                 --print("<color=#F0D800>[黑龙BOSS战本地模块]</color>触发玩家自动锁定boss")

@@ -37,7 +37,11 @@ function XCharR5Bianka:Init()
         --- 见切成功标记
         ForeSightSuccess = 10540022,
         --- 见切成功护盾值
-        ForeSightShield = 10542505
+        ForeSightShield = 10542505,
+        --- 进入角力相机位置偏移
+        EnterWrestleCamPos = 10543003,
+        --- 进入角力相机旋转偏移
+        EnterWrestleCamRot = 10543005,
     }
 
     --- 效果移除ID
@@ -45,7 +49,9 @@ function XCharR5Bianka:Init()
         --- 移除防御标记
         [10540006] = 10540007,
         [10540020] = 10540021,
-        [10540022] = 10540023
+        [10540022] = 10540023,
+        [10543003] = 10543004,
+        [10543005] = 10543006
     }
 
     --- 技能组ID
@@ -71,6 +77,11 @@ function XCharR5Bianka:Init()
         --- 强化普攻
         LightExAttack = 7
     }
+
+    self._keyframeEvents = {
+
+    }
+
     -- 技能组ID加前缀
     for k, v in pairs(self._skillGroupIds) do
         self._skillGroupIds[k] = 105400 + v
@@ -81,6 +92,8 @@ function XCharR5Bianka:InitEventCallBackRegister()
     Base.InitEventCallBackRegister(self)
     self._proxy:RegisterEventByTarget(EWorldEvent.NpcCalcDamageBefore,self._uuid) --注册伤害前事件
     self._proxy:RegisterEventByTarget(EWorldEvent.NpcSkillActionKeyframeSendEvent, self._uuid) --注册技能事件
+    self._proxy:RegisterEvent(EWorldEvent.NpcWrestleReversal)
+    self._proxy:RegisterEvent(EWorldEvent.NpcWrestlePursuit)
 end
 
 function XCharR5Bianka:HandleEvent(eventType, eventArgs)
@@ -101,29 +114,31 @@ function XCharR5Bianka:Update(dt)
     -- 能量测试
     local curEnergy = self._proxy:GetNpcAttribValue(self._uuid, ENpcAttrib.CustomEnergyGroup1)
     local maxEnergy = self._proxy:GetNpcAttribMaxValue(self._uuid, ENpcAttrib.CustomEnergyGroup1)
-    --self:LogDebug(string.format("能量值[%d/%d]", curEnergy, maxEnergy))
+
+    --XLog.Debug(string.format("比安卡能量：[{%d} / {%d}], 是否在剑舞形态: ", curEnergy, maxEnergy) .. tostring(self._proxy:CheckBuffByKind(self._uuid, self._magics.BladeDanceStateMark)))
 end
 
+--region 事件
 function XCharR5Bianka:OnNpcDamageEvent(launcherId, targetId, magicId, kind, physicalDamage, elementDamage, elementType, realDamage, isCritical)
     Base.OnNpcDamageEvent(self, launcherId, targetId, magicId, kind, physicalDamage, elementDamage, elementType, realDamage, isCritical)
 
     if launcherId ~= targetId and targetId == self._uuid then
-        self.GetNpcFocusTarget = self._proxy:GetNpcFocusTarget(self._uuid)
-        if self._proxy:CheckBuffByKind(self._uuid, 10540006)  then
+        self._curFocusTarget = self._proxy:GetNpcFocusTarget(self._uuid)
+        if self._proxy:CheckBuffByKind(self._uuid, 10540006) then
              if self.GeDangRL ==  false then
                  self.GeDangRL =  true
                  self._proxy:AbortAction(self._uuid, true)
-                 self._proxy:CastActionToTarget(self._uuid, 105420, self.GetNpcFocusTarget) --长按闪避受击触发弹刀释放右格挡
+                 self._proxy:CastActionToTarget(self._uuid, 105420, self._curFocusTarget) --长按闪避受击触发弹刀释放右格挡
              else
-                 self.GeDangRL =  false
+                 self.GeDangRL = false
                  self._proxy:AbortAction(self._uuid, true)
-                 self._proxy:CastActionToTarget(self._uuid, 105419, self.GetNpcFocusTarget) --长按闪避受击触发弹刀释放左格挡
+                 self._proxy:CastActionToTarget(self._uuid, 105419, self._curFocusTarget) --长按闪避受击触发弹刀释放左格挡
              end
-         end
+        end
 
         if self._proxy:CheckBuffByKind(self._uuid, 10540008)  then --2技能受击标记，buff持续期间受击则会打出反击技能。
             self._proxy:AbortAction(self._uuid, true)
-            self._proxy:CastActionToTarget(self._uuid, 105424, self.GetNpcFocusTarget)
+            self._proxy:CastActionToTarget(self._uuid, 105424, self._curFocusTarget)
         end
     end
 end
@@ -152,16 +167,19 @@ function XCharR5Bianka:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffTab
         self:ApplyMagicToSelf(self._magics.DefenseDmgReduction, 1)
     end
 
-    if buffId == 10540015 then --切换技能组
-        self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Ball1, 105422)
+    -- 切换1技能至第2段
+    if buffId == 10540015 then
+        self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Ball1, self._skillGroupIds.LightSkill1_2)
     end
 
+    -- 切换1技能至第3段
     if buffId == 10540016 then --切换技能组
-        self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Ball1, 105423)
+        self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Ball1, self._skillGroupIds.LightSkill1_3)
     end
 
+    -- 切换1技能至第1段
     if buffId == 10540017 then --切换技能组
-        self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Ball1, 105402)
+        self._proxy:SetSkillGroup(self._uuid, ENpcOperationKey.Ball1, self._skillGroupIds.LightSkill1_1)
     end
 
 end
@@ -172,7 +190,7 @@ function XCharR5Bianka:OnNpcRemoveBuffEvent(casterNpcUUID, npcUUID, buffId, buff
         return
     end
 
-    -- 进入防御状态
+    -- 退出防御状态
     if buffId == self._magics.DefenseMark then
         -- 移除防御减伤
         self:RemoveBuffForSelf(self._magics.DefenseDmgReduction)
@@ -246,28 +264,28 @@ function XCharR5Bianka:OnNpcSkillActionKeyframeSendEvent(launcher, eventName, sk
     end
 
     if (eventName == "Skill2XuliEnd") then
-        self.GetNpcFocusTarget = self._proxy:GetNpcFocusTarget(self._uuid)  -- 2技能蓄力完毕，释放大斩击
-        self._proxy:CastActionToTarget(self._uuid, 105424, self.GetNpcFocusTarget)
+        self._curFocusTarget = self._proxy:GetNpcFocusTarget(self._uuid)  -- 2技能蓄力完毕，释放大斩击
+        self._proxy:CastActionToTarget(self._uuid, 105424, self._curFocusTarget)
     end
 
     if (eventName == "ShanbiXuliStart") then
-        self.GetNpcFocusTarget = self._proxy:GetNpcFocusTarget(self._uuid) -- 长按闪避格挡姿态开始
-        self._proxy:CastActionToTarget(self._uuid, 105427, self.GetNpcFocusTarget)
+        self._curFocusTarget = self._proxy:GetNpcFocusTarget(self._uuid) -- 长按闪避格挡姿态开始
+        self._proxy:CastActionToTarget(self._uuid, 105427, self._curFocusTarget)
     end
 
     if (eventName == "ShanbiXuliLoop") then
-        self.GetNpcFocusTarget = self._proxy:GetNpcFocusTarget(self._uuid) --长按闪避格挡姿态维持中
-        self._proxy:CastActionToTarget(self._uuid, 105428, self.GetNpcFocusTarget)
+        self._curFocusTarget = self._proxy:GetNpcFocusTarget(self._uuid) --长按闪避格挡姿态维持中
+        self._proxy:CastActionToTarget(self._uuid, 105428, self._curFocusTarget)
     end
 
     if (eventName == "ReDeFense1") then  -- 播放格挡动作后，重新回到格挡姿态维持动作（在按住闪避键时）
-        self.GetNpcFocusTarget = self._proxy:GetNpcFocusTarget(self._uuid)
-        self._proxy:CastActionToTarget(self._uuid, 105428, self.GetNpcFocusTarget)
+        self._curFocusTarget = self._proxy:GetNpcFocusTarget(self._uuid)
+        self._proxy:CastActionToTarget(self._uuid, 105428, self._curFocusTarget)
     end
 
     if (eventName == "Reidle") then -- 播放格挡动作后，回到idle动作（在抬起闪避键时）
-        self.GetNpcFocusTarget = self._proxy:GetNpcFocusTarget(self._uuid)
-        self._proxy:CastActionToTarget(self._uuid, 105429, self.GetNpcFocusTarget)
+        self._curFocusTarget = self._proxy:GetNpcFocusTarget(self._uuid)
+        self._proxy:CastActionToTarget(self._uuid, 105429, self._curFocusTarget)
     end
 end
 
@@ -286,6 +304,29 @@ function XCharR5Bianka:OnNpcCounterSuccess(triggerNpcUUID, counterNpcUUID, trigg
             self._magics.OffsetShield}, 1)
     end
 end
+
+function XCharR5Bianka:OnNpcWrestleReversal(launcherNpcUUID, targetNpcUUID)
+    Base.OnNpcWrestleReversal(self, launcherNpcUUID, targetNpcUUID)
+    if self._uuid ~= targetNpcUUID then
+        return
+    end
+
+    -- 保底移除相机偏移
+    self:RemoveBuffForSelf(self._magics.EnterWrestleCamPos)
+    self:RemoveBuffForSelf(self._magics.EnterWrestleCamRot)
+end
+
+function XCharR5Bianka:OnNpcWrestlePursuit(launcherNpcUUID, targetNpcUUID)
+    Base.OnNpcWrestlePursuit(self, launcherNpcUUID, targetNpcUUID)
+    if self._uuid ~= targetNpcUUID then
+        return
+    end
+
+    -- 保底移除相机偏移
+    self:RemoveBuffForSelf(self._magics.EnterWrestleCamPos)
+    self:RemoveBuffForSelf(self._magics.EnterWrestleCamRot)
+end
+--endregion
 
 --region 常用函数封装
 --- 施加一个效果，免写代理

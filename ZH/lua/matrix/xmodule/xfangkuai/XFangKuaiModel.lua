@@ -18,7 +18,6 @@ local TableKey = {
     FangKuaiClientConfig = { ReadFunc = XConfigUtil.ReadType.String, DirPath = XConfigUtil.DirectoryType.Client, Identifier = "Key" },
     FangKuaiBlockTexture = { DirPath = XConfigUtil.DirectoryType.Client },
     FangKuaiBlockPoint = { CacheType = XConfigUtil.CacheType.Normal },
-    FangKuaiStageBlockRule = {},
     FangKuaiStageItemRule = {},
     FangKuaiDropBlock = {},
     FangKuaiStageGroup = { CacheType = XConfigUtil.CacheType.Normal },
@@ -247,6 +246,10 @@ function XFangKuaiModel:IsStagePlaying(stageId)
 end
 
 function XFangKuaiModel:GetCurStageId(chapterId)
+    if not self.ActivityData then
+        XLog.Error("XFangKuaiModel:GetCurStageId 活动数据为空")
+        return nil
+    end
     local stageData = self.ActivityData:GetStageData(chapterId)
     return stageData and stageData:GetStageId() or nil
 end

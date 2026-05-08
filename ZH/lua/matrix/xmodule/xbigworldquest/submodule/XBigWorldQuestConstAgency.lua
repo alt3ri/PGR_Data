@@ -241,6 +241,14 @@ function XBigWorldQuestAgency:ConditionCheckInviteResultFinish(template)
     return sum >= count, template.Desc
 end
 
+function XBigWorldQuestAgency:CheckNormalQuestFinish(questId)
+    return self._Model:CheckNormalQuestFinish(questId)
+end
+
+function XBigWorldQuestAgency:CheckInviteQuestNotInProgress(questId)
+    return self._Model:CheckInviteQuestNotInProgress(questId)
+end
+
 function XBigWorldQuestAgency:CheckQuestFinish(questId)
     return self._Model:CheckQuestFinish(questId)
 end

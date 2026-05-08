@@ -28,6 +28,8 @@ function XUiDrawOptional:OnStart(parentUi, optionalCb, allTimeOverCb, notSelectC
     self.AllTimeOverCb = allTimeOverCb
     self.NotSelectCb = notSelectCb
     self.CurSuitId = 0
+    -- 兼容 CurrentOptionKey 和 OptionKey 两种字段名
+    self.OptionKey = parentUi.CurrentOptionKey or parentUi.OptionKey or ""
     self:AutoAddListener()
 
     self._IsTargetActivity = isTargetActivity
@@ -55,9 +57,21 @@ end
 --region Ui - SelectGroup
 function XUiDrawOptional:SetData(groupId)
     self.GroupInfo = XDataCenter.DrawManager.GetDrawGroupInfoByGroupId(groupId)
-    self.AllInfoList = XDataCenter.DrawManager.GetDrawInfoListByGroupId(groupId) -- 所有商品
+    -- 使用 option 维度获取 drawInfo 列表
+    if not string.IsNilOrEmpty(self.OptionKey) then
+        self.AllInfoList = XDataCenter.DrawManager.GetDrawInfoListByOptionKey(self.OptionKey)
+    else
+        self.AllInfoList = XDataCenter.DrawManager.GetDrawInfoListByGroupId(groupId)
+    end
     self.GoodsType = self:GetGoodType(self.AllInfoList)
-    self.LastSelectDrawId = self:IsMustSelectDefault() and self.ParentUi.DrawInfo.Id or self.GroupInfo.UseDrawId
+    -- 获取真实选择的 drawId（不带 fallback）
+    local useDrawId = 0
+    if not string.IsNilOrEmpty(self.OptionKey) then
+        useDrawId = XDataCenter.DrawManager.GetRealUseDrawIdByOptionKey(self.OptionKey)
+    else
+        useDrawId = (self.GroupInfo.UseDrawIdDict or {})[0] or 0
+    end
+    self.LastSelectDrawId = self:IsMustSelectDefault() and self.ParentUi.DrawInfo.Id or useDrawId
     self.CurSelectDrawId = self.LastSelectDrawId
 
     -- 刷新界面
@@ -836,8 +850,13 @@ function XUiDrawOptional:OnBtnCloseClick()
         self.CurSelectDrawId = self._TargetActivityData:GetTargetId()
         isDoNotSelectCb = self.CurSelectDrawId == 0
     else
-        -- 重新获取当前选中
-        self.CurSelectDrawId = self:IsHaveSwitchLimit() and self.GroupInfo.UseDrawId or self.ParentUi.DrawInfo.Id
+        -- 重新获取当前选中（使用 option 维度）
+        if not string.IsNilOrEmpty(self.OptionKey) then
+            local realUseDrawId = XDataCenter.DrawManager.GetRealUseDrawIdByOptionKey(self.OptionKey)
+            self.CurSelectDrawId = self:IsHaveSwitchLimit() and realUseDrawId or self.ParentUi.DrawInfo.Id
+        else
+            self.CurSelectDrawId = self:IsHaveSwitchLimit() and ((self.GroupInfo.UseDrawIdDict or {})[0] or 0) or self.ParentUi.DrawInfo.Id
+        end
         local groupRuleCfg = XDrawConfigs.GetDrawGroupRuleById(self.GroupInfo.Id)
         isDoNotSelectCb = self.CurSelectDrawId == 0 and not groupRuleCfg.IsNotSelectDefault
 
@@ -897,12 +916,19 @@ function XUiDrawOptional:_OnBtnComfirmSelectDrawAnim()
         return
     end
 
+    -- 解析 groupSubtype 用于 SaveDrawAimId
+    local groupSubtype = 0
+    if not string.IsNilOrEmpty(self.OptionKey) then
+        local _, sub = string.match(self.OptionKey, "^(%d+)_(%d+)$")
+        groupSubtype = tonumber(sub) or 0
+    end
+
     local sureFun = function(IsChange)
         if IsChange then
             XDataCenter.DrawManager.SaveDrawAimId(self.CurSelectDrawId, self.ParentUi.GroupId, function()
                 self:Close()
                 self.OptionalCb(self.CurSelectDrawId)
-            end)
+            end, groupSubtype)
         end
     end
 
@@ -912,7 +938,14 @@ function XUiDrawOptional:_OnBtnComfirmSelectDrawAnim()
     local maxSwitchCount = self.GroupInfo.MaxSwitchDrawIdCount
     local curSwitchCount = self.GroupInfo.SwitchDrawIdCount
     local count = maxSwitchCount - curSwitchCount
-    local IsChang = self.GroupInfo.UseDrawId ~= self.CurSelectDrawId
+    -- 按 option 维度判断是否变更（不带 fallback）
+    local lastUseDrawId = 0
+    if not string.IsNilOrEmpty(self.OptionKey) then
+        lastUseDrawId = XDataCenter.DrawManager.GetRealUseDrawIdByOptionKey(self.OptionKey)
+    else
+        lastUseDrawId = (self.GroupInfo.UseDrawIdDict or {})[0] or 0
+    end
+    local IsChang = lastUseDrawId ~= self.CurSelectDrawId
     if (IsChang or IsRandom) and maxSwitchCount > 0 then
         XLuaUiManager.Open("UiChangeCombination", self.CurSelectDrawId, count, IsChang, sureFun)
     else

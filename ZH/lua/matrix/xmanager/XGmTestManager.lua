@@ -927,6 +927,18 @@ local function AddBigWorldUse()
     Panel:AddButton("无人机玩法", function()
         XMVCA.XBigWorldUI:Open("UiSkyGardenSGDroneMain")
     end)
+
+    local tipId
+    Panel:AddInput("主线跳过提示TipId", function(value)
+        tipId = tonumber(value)
+    end)
+    Panel:AddButton("打开任务拦截面板", function()
+        if tipId and tipId > 0 then
+            XMVCA.XBigWorldQuest:OnOpenMainlineSkipTip({ TipId = tipId })
+        else
+            XUiManager.TipMsg("请输入正确的TipId")
+        end
+    end)
 end
 
 -- 日志打印
@@ -1478,7 +1490,9 @@ local function AddSubPackageFunction()
         XMVCA.XSubPackage:SetDebugForceOpenSubpackage(not flag)
     end)
 
-    forceOpenSubpack.isOn = XMVCA.XSubPackage:IsOpen()
+    if forceOpenSubpack then
+        forceOpenSubpack.isOn = XMVCA.XSubPackage:IsOpen()
+    end
     
     Panel:AddButton("Item信息", function()
         XMVCA.XSubPackage:PrintAllItemInfo()
@@ -1521,6 +1535,12 @@ local function AddSubPackageFunction()
     Panel:AddButton("卸载SubPackageId", function()
         XMVCA.XSubPackage:UninstallSubpackageById(SubPackageId)
     end)
+
+    local skipGmToggle = Panel:AddToggle("测试跳转", function()
+        XMVCA.XSubPackage:ToggleSkipGMTest()
+        XMVCA.XSubPackage:SkipGMTest()
+    end)
+    skipGmToggle.isOn = XMVCA.XSubPackage:IsSkipGMTest()
 end
 
 --------------Ui组件创建 begin----------------

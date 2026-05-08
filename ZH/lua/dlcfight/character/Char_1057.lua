@@ -253,12 +253,12 @@ function XCharR5Nanami2:ChangeDamageBeforeCalc(eventArgs)
     self._uuid = self._proxy:GetSelfNpcId()
     ----超解伤害修正
     if eventArgs.Id == 1057201 then
-        --XLog.Warning("修正前："..eventArgs.PhysicalPermyraid)
+        --XLog.Warning("修正前："..eventArgs.PhysicalPermyriad)
         --XLog.Warning("能量点："..self.CustomPower2)
         local hasOverReleaseDamageModifyCoe,OverReleaseDamageModifyCoe = self:TryGetBBFloat(1057001)
         local hasCustomPower2,CustomPower2 = self:TryGetBBInt(1057002)
-        local FinalDMGRate = math.floor(eventArgs.PhysicalPermyraid *(1+(CustomPower2 * OverReleaseDamageModifyCoe)))
-        self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate, eventArgs.ElementPermyraid, eventArgs.HackDamage, eventArgs.HackPermyraid, eventArgs.IsCrit)
+        local FinalDMGRate = math.floor(eventArgs.PhysicalPermyriad *(1+(CustomPower2 * OverReleaseDamageModifyCoe)))
+        self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate, eventArgs.ElementPermyriad, eventArgs.HackDamage, eventArgs.HackPermyriad, eventArgs.IsCrit)
         --XLog.Warning("修正后："..FinalDMGRate)
     end
 end

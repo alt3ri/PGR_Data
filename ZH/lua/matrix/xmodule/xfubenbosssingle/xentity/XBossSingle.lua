@@ -42,6 +42,14 @@ function XBossSingle:SetBossSingleData(data)
     end
 end
 
+function XBossSingle:SetBossSingleChallengeBuffGroup(bossSingleChallengeBuffGroup)
+    self._BossSingleChallengeBuffGroup = bossSingleChallengeBuffGroup
+end
+
+function XBossSingle:GetBossSingleChallengeBuffGroup()
+    return self._BossSingleChallengeBuffGroup
+end
+
 function XBossSingle:IsBossSingleEmpty()
     return not self._BossSingleData or self._BossSingleData:GetIsEmpty()
 end
@@ -217,10 +225,24 @@ function XBossSingle:GetBossSingleTrialStageInfoMap()
     end
 end
 
+---@return table<number, XBossSingleTrialStageInfo>
+function XBossSingle:GetBossSingleBestiraryStageInfoMap()
+    if self:IsBossSingleEmpty() then
+        return {}
+    else
+        return self._BossSingleData:GetBestiraryStageInfoMap()
+    end
+end
+
 ---@return XBossSingleTrialStageInfo
 function XBossSingle:GetBossSingleTrialStageInfoByStageId(stageId)
     local infoMap = self:GetBossSingleTrialStageInfoMap()
+    return infoMap[stageId]
+end
 
+---@return XBossSingleTrialStageInfo
+function XBossSingle:GetBossSingleBestiraryStageInfoByStageId(stageId)
+    local infoMap = self:GetBossSingleBestiraryStageInfoMap()
     return infoMap[stageId]
 end
 

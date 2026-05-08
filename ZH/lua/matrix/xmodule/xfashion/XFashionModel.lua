@@ -24,7 +24,14 @@ end
 ----------private start----------
 
 function XFashionModel:NotifyFashionColorData(data)
-    -- #237794 涂装换色已还原，Entity 已移除
+   if not data or not data.FashionColors then
+        XLog.Error("XFashionColor:NotifyFashionColorData data is nil or data.FasionColors is nil")
+        return
+    end
+    if not self.ColorData then
+        self.ColorData = require("XModule/XFashion/XEntity/XFashionColor").New()
+    end
+    self.ColorData:NotifyFashionColorData(data)
 end
 
 ----------private end----------

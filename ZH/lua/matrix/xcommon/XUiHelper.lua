@@ -263,7 +263,7 @@ end
 ---@param rootUi XLuaUi
 function XUiHelper.SetQualityIcon(rootUi, imgQuality, quality)
     local spriteName = XArrangeConfigs.GeQualityPath(quality)
-    if rootUi then
+    if rootUi and rootUi.SetUiSprite ~= nil then
         rootUi:SetUiSprite(imgQuality, spriteName)
     else
         imgQuality:SetSprite(spriteName)
@@ -2665,4 +2665,112 @@ function XUiHelper.ReplaceDecodeDecimalToString(content)
         end
         return string.char(table.unpack(bytes))
     end)
+end
+
+---将气泡显示在UI节点右侧
+---@param bubble UnityEngine.RectTransform 气泡对象
+---@param target UnityEngine.RectTransform 目标对象
+---@param canvasTran UnityEngine.RectTransform
+---@param avoidTransforms UnityEngine.RectTransform|UnityEngine.RectTransform[] 需要避让的UI节点
+function XUiHelper.ShowBubbleToTarget(bubble, target, canvasTran, avoidTransforms)
+    local right = target.rect.width * (1 - target.pivot.x)
+    local top = target.rect.height * (1 - target.pivot.y)
+    local worldPos = target:TransformPoint(Vector3(right, top, 0))
+
+    local localPos = bubble.parent:InverseTransformPoint(worldPos)
+    local pos = Vector3(localPos.x, localPos.y, 0)
+
+    local bubbleSize = bubble.rect.size
+    local parentSize = canvasTran.rect.size
+    local halfW = parentSize.x / 2
+    local halfH = parentSize.y / 2
+
+    local function getBubbleLocalRect(checkPos)
+        return {
+            MinX = checkPos.x,
+            MaxX = checkPos.x + bubbleSize.x,
+            MinY = checkPos.y - bubbleSize.y,
+            MaxY = checkPos.y,
+        }
+    end
+
+    local function getTransformLocalRect(rectTransform)
+        if not rectTransform then
+            return nil
+        end
+        local rect = rectTransform.rect
+        local minX = -rect.width * rectTransform.pivot.x
+        local maxX = rect.width * (1 - rectTransform.pivot.x)
+        local minY = -rect.height * rectTransform.pivot.y
+        local maxY = rect.height * (1 - rectTransform.pivot.y)
+        local leftBottom = bubble.parent:InverseTransformPoint(rectTransform:TransformPoint(Vector3(minX, minY, 0)))
+        local leftTop = bubble.parent:InverseTransformPoint(rectTransform:TransformPoint(Vector3(minX, maxY, 0)))
+        local rightBottom = bubble.parent:InverseTransformPoint(rectTransform:TransformPoint(Vector3(maxX, minY, 0)))
+        local rightTop = bubble.parent:InverseTransformPoint(rectTransform:TransformPoint(Vector3(maxX, maxY, 0)))
+
+        return {
+            MinX = math.min(leftBottom.x, leftTop.x, rightBottom.x, rightTop.x),
+            MaxX = math.max(leftBottom.x, leftTop.x, rightBottom.x, rightTop.x),
+            MinY = math.min(leftBottom.y, leftTop.y, rightBottom.y, rightTop.y),
+            MaxY = math.max(leftBottom.y, leftTop.y, rightBottom.y, rightTop.y),
+        }
+    end
+
+    local function isRectOverlap(rectA, rectB)
+        return rectA.MinX < rectB.MaxX
+                and rectA.MaxX > rectB.MinX
+                and rectA.MinY < rectB.MaxY
+                and rectA.MaxY > rectB.MinY
+    end
+
+    local function isOverlapAvoidTransforms(checkPos)
+        if not avoidTransforms then
+            return false
+        end
+
+        local bubbleRect = getBubbleLocalRect(checkPos)
+        if #avoidTransforms >= 1 then
+            for _, avoidTransform in pairs(avoidTransforms) do
+                local avoidRect = getTransformLocalRect(avoidTransform)
+                if avoidRect and isRectOverlap(bubbleRect, avoidRect) then
+                    return true
+                end
+            end
+            return false
+        end
+
+        local avoidRect = getTransformLocalRect(avoidTransforms)
+        return avoidRect and isRectOverlap(bubbleRect, avoidRect) or false
+    end
+
+    -- 右边超出 → 翻到 target 左侧;若左侧也放不下,贴 viewport 左边缘显示,优于覆盖 target
+    if pos.x + bubbleSize.x > halfW or isOverlapAvoidTransforms(pos) then
+        local left = -target.rect.width * target.pivot.x
+        local leftWorldPos = target:TransformPoint(Vector3(left, top, 0))
+        local targetLeftX = bubble.parent:InverseTransformPoint(leftWorldPos).x
+        local flippedX = targetLeftX - bubbleSize.x
+        local flippedPos = Vector3(flippedX, pos.y, 0)
+        if flippedX >= -halfW and not isOverlapAvoidTransforms(flippedPos) then
+            pos.x = flippedX
+        else
+            pos.x = -halfW
+        end
+    end
+
+    -- 左边超出（极端情况）
+    if pos.x < -halfW then
+        pos.x = -halfW
+    end
+
+    -- 上边超出
+    if pos.y > halfH then
+        pos.y = halfH
+    end
+
+    -- 下边超出
+    if pos.y - bubbleSize.y < -halfH then
+        pos.y = -halfH + bubbleSize.y
+    end
+
+    bubble.localPosition = pos
 end

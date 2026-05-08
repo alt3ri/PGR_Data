@@ -116,6 +116,7 @@ local type = {
     CONDITION_PURCHASE_LB_RED = "XRedPointConditionPurchaseLB",
     CONDITION_PURCHASE_GET_RERARGE = "XRedPointConditionGetFirstRecharge", -- 是否有首充奖励领取
     CONDITION_PURCHASE_GET_CARD = "XRedPointConditionGetCard", -- 是否有月卡奖励领取
+    CONDITION_PURCHASE_YK_RETROACTIVE = "XRedPointConditionPurchaseYKRetroactive", -- 月卡是否可补签
     CONDITION_PURCHASE_GET_WEEK_CARD = "XRedPointConditionGetWeekCard", -- 是否有周卡奖励领取
     CONDITION_ACCUMULATE_PAY_RED = "XRedPointConditionPurchaseAccumulate", -- 是否有累计奖励领取
     --宿舍红点
@@ -579,7 +580,9 @@ local type = {
     CONDITION_GAME2048_MAIN = "XGame2048/XRedPointGame2048Main",
     CONDITION_GAME2048_STORE = "XGame2048/XRedPointGame2048Store",
     CONDITION_GAME2048_NEWCHAPTER = "XGame2048/XRedPointGame2048NewChapter",
-    
+    -- 小游戏合集
+    CONDITION_GAMECOLLECTION_CAN_REWARD_OR_BUY = "XGameCollection/XRedPointGameCollectionCanReward",
+
     -- 超难关玩法 SucceedBoss
     CONDITION_SUCCEED_BOSS = "XRedPointConditionSucceedBoss",
     CONDITION_SUCCEED_BOSS_TASK_TAB = "XRedPointConditionSucceedBossTaskTab",
@@ -697,6 +700,11 @@ local type = {
     
     -- 战双兄弟
     CONDITION_PBRGAME_MAIN = "XPBRGame/XPBRGameRedPointMain",
+
+    -- 肉鸽6
+    CONDITION_THEATRE6_NEW_STORY = "XTheatre6/XRedPointTheatre6NewStory",
+    CONDITION_THEATRE6_REWARD = "XTheatre6/XRedPointTheatre6Reward", -- 任务奖励可领取
+    CONDITION_THEATRE6_MAIN = "XTheatre6/XRedPointTheatre6Main", -- 外部入口总蓝点
 }
 XRedPointConditions.Conditions = type
 

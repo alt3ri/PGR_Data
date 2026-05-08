@@ -5,7 +5,14 @@ local MessageTableKey = {
     BigWorldMessage = {
         CacheType = XConfigUtil.CacheType.Normal,
     },
-    BigWorldMessageContacts = {},
+    BigWorldMessageContacts = {
+        DirPath = XConfigUtil.DirectoryType.Client,
+    },
+    BigWorldMessageIcon = {
+        Identifier = "Key",
+        ReadFunc = XConfigUtil.ReadType.String,
+        DirPath = XConfigUtil.DirectoryType.Client,
+    },
     BigWorldMessageStep = {
         CacheType = XConfigUtil.CacheType.Normal,
     },
@@ -73,6 +80,20 @@ function XBigWorldMessageConfigModel:GetBigWorldMessageConditionIdsById(id)
     return config.ConditionIds
 end
 
+---@return XTableBigWorldMessageIcon[]
+function XBigWorldMessageConfigModel:GetBigWorldMessageIconConfigs()
+    return self._ConfigUtil:GetByTableKey(MessageTableKey.BigWorldMessageIcon) or {}
+end
+
+---@return XTableBigWorldMessageIcon
+function XBigWorldMessageConfigModel:GetBigWorldMessageIconConfigByKey(key)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(MessageTableKey.BigWorldMessageIcon, key, false) or {}
+end
+function XBigWorldMessageConfigModel:GetBigWorldMessageIconIconByKey(key)
+    local config = self:GetBigWorldMessageIconConfigByKey(key)
+
+    return config.Icon
+end
 ---@return XTableBigWorldMessageContacts[]
 function XBigWorldMessageConfigModel:GetBigWorldMessageContactsConfigs()
     return self._ConfigUtil:GetByTableKey(MessageTableKey.BigWorldMessageContacts) or {}
@@ -99,6 +120,30 @@ function XBigWorldMessageConfigModel:GetBigWorldMessageContactsTextById(id)
     local config = self:GetBigWorldMessageContactsConfigById(id)
 
     return config.Text
+end
+
+function XBigWorldMessageConfigModel:GetBigWorldMessageContactsConditionIdsById(id)
+    local config = self:GetBigWorldMessageContactsConfigById(id)
+
+    return config.ConditionIds
+end
+
+function XBigWorldMessageConfigModel:GetBigWorldMessageContactsNamesById(id)
+    local config = self:GetBigWorldMessageContactsConfigById(id)
+
+    return config.Names
+end
+
+function XBigWorldMessageConfigModel:GetBigWorldMessageContactsIconsById(id)
+    local config = self:GetBigWorldMessageContactsConfigById(id)
+
+    return config.Icons
+end
+
+function XBigWorldMessageConfigModel:GetBigWorldMessageContactsTextsById(id)
+    local config = self:GetBigWorldMessageContactsConfigById(id)
+
+    return config.Texts
 end
 
 ---@return XTableBigWorldMessageStep[]

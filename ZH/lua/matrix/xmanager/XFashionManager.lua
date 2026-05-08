@@ -801,9 +801,16 @@ XFashionManagerCreator = function()
         end
         
         local fashionId = char and char.FashionId or XMVCA.XCharacter:GetShowFashionId(charId, isNotSelf)
+
         local template = XFashionManager.GetFashionTemplate(fashionId)
         if template then
-            return template.ResourcesId
+            local fashionData = XFashionManager.GetOwnFashionDataById(fashionId)
+            local colorId = fashionData and fashionData.ColorId or nil
+            if XTool.IsNumberValid(colorId) and colorId ~= 0 then
+                return XMVCA.XFashion:GetFashionColorResourcesId(colorId)
+            else
+                return template.ResourcesId
+            end
         end
     end
 
@@ -856,11 +863,32 @@ XFashionManagerCreator = function()
             fashionId = XMVCA.XCharacter:GetCharacterTemplate(charId).DefaultNpcFashtionId
         end
 
-        local resId = XFashionManager.GetFashionTemplate(fashionId).ResourcesId
+        local resId = XMVCA.XFashion:GetOwnFashionColorResourcesId(fashionId)
 
         return XMVCA.XCharacter:GetCharResModel(resId)
     end
+    
+    --==============================--
+    --desc: 通过XFightNpcData返回原始涂装资源
+    --@fightNpcData: 角色数据
+    --@return: 角色模型名称
+    --==============================--
+    function XFashionManager.GetCharacterOriginModelName(fightNpcData)
+        if not fightNpcData then
+            XLog.Error("XFashionManager.GetCharacterModelName 错误: 参数fightNpcData不能为空")
+            return
+        end
 
+        local fashionId = fightNpcData.Character.FashionId
+        if fashionId <= 0 then
+            local charId = fightNpcData.Character.Id
+            fashionId = XMVCA.XCharacter:GetCharacterTemplate(charId).DefaultNpcFashtionId
+        end
+       
+        local resId =  XDataCenter.FashionManager.GetResourcesId(fashionId)--无换色
+
+        return XMVCA.XCharacter:GetCharResModel(resId)
+    end
     --==============================--
     --desc: 通过fashionId拿取头像信息
     --@fightNpcData: fashionId
@@ -1192,7 +1220,3 @@ XFashionManagerCreator = function()
     XFashionManager.Init()
     return XFashionManager
 end
-
-XRpc.FashionSyncNotify = function(data)
-    XDataCenter.FashionManager.NotifyFashionDict(data)
-end

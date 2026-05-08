@@ -30,6 +30,9 @@ function XDynamicBackgroundGrid:RefreshDisplay(backgroundId)
         self.TagRandom.gameObject:SetActiveEx(isRandom and XDataCenter.PhotographManager.GetIsRandomBackground())
     end
     
+    -- 常驻标签
+    self:_RefreshTabTags()
+    
     self:RefreshRedPoint()
 end
 
@@ -57,6 +60,27 @@ end
 
 function XDynamicBackgroundGrid:SetSelect(bool)
     self.Sel.gameObject:SetActiveEx(bool)
+end
+
+function XDynamicBackgroundGrid:_RefreshTabTags()
+    if not self.TagEx then
+        return
+    end
+
+    if not self.TagExGrid then
+        self.TagEx.gameObject:SetActiveEx(false)
+        ---@type XSceneTabTagGrid
+        self.TagExGrid = require("XUi/XUiSceneSettingMain/Grid/XSceneTabTagGrid").New(self.TagEx, self)
+    end
+    
+    local tabTag = XPhotographConfigs.GetBackgroundTabTag(self.Id)
+
+    if not string.IsNilOrEmpty(tabTag) then
+        self.TagExGrid:Open()
+        self.TagExGrid:RefreshText(tabTag)
+    else
+        self.TagExGrid:Close()
+    end
 end
 
 return XDynamicBackgroundGrid

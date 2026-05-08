@@ -65,6 +65,7 @@ function XUiShopItem:InitPanel()
     end)
 
     self:RefreshCommon()
+    self:RefreshRoleTips()
     self:RefreshPrice()
     self:GetSalesInfo()
     self:GetMaxCount()
@@ -325,6 +326,27 @@ function XUiShopItem:RefreshCommon()
     local rewardGoods = self.Data.RewardGoods
     self.Grid:Refresh(rewardGoods, nil, true)
     self.Grid:ShowCount(true)
+end
+
+function XUiShopItem:RefreshRoleTips()
+    local itemId = self.Data.RewardGoods.TemplateId
+    local characterId = XMVCA.XCharacter:GetCharcterIdByFragmentItemId(itemId)
+    if not characterId or not XMVCA.XCharacter:IsOwnCharacter(characterId) then
+        self.RoleTips.gameObject:SetActiveEx(false)
+        return
+    end
+    local currentQuality = XMVCA.XCharacter:GetCharacterQuality(characterId)
+    local maxQuality = XMVCA.XCharacter:GetCharMaxQuality(characterId)
+    if currentQuality >= maxQuality then
+        self.RoleTips.gameObject:SetActiveEx(false)
+        return
+    end
+    local nextQuality = currentQuality + 1
+    local currentLevel = XMVCA.XCharacter:GetCharacterQualityDesc(currentQuality)
+    local nextLevel = XMVCA.XCharacter:GetCharacterQualityDesc(nextQuality)
+    local needToBuy = XMVCA.XCharacter:GetNextQualityNeedToBuyCount(characterId)
+    self.RoleTips.gameObject:SetActiveEx(true)
+    self.TextRoleTips.text = CS.XTextManager.GetText("ShopItemRoleTips", currentLevel, needToBuy, nextLevel)
 end
 
 function XUiShopItem:RefreshPrice()

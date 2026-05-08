@@ -1,7 +1,7 @@
 local XFubenActivityAgency = require("XModule/XBase/XFubenActivityAgency")
 ---@class XMainLine2Agency : XFubenActivityAgency
 ---@field _Model XMainLine2Model
-local XMainLine2Agency = XClass(XFubenActivityAgency, "XMainLineAgency")
+local XMainLine2Agency = XClass(XFubenActivityAgency, "XMainLine2Agency")
 
 function XMainLine2Agency:OnInit()
     --初始化一些变量
@@ -208,6 +208,7 @@ end
 
 --- 获取主章节实例
 ---@param mainId number 主章节Id
+---@return XMainLine2Main
 function XMainLine2Agency:GetMain(mainId)
     return self._Model:GetMain(mainId)
 end
@@ -806,32 +807,62 @@ end
 
 --region open ui
 
+-- 内部校验：章节是否满足打开条件
+---@param chapterId number|nil 章节Id（可选）
+---@param mainId number 主章节Id
+---@return boolean canOpen
+---@return string tips
+function XMainLine2Agency:_CheckChapterOpenCondition(chapterId, mainId)
+    if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.MainLine, chapterId) then
+        return false
+    end
+
+    if chapterId then
+        local isUnlock, tips = self:IsChapterUnlock(chapterId)
+        if not isUnlock then
+            return false, tips
+        end
+    end
+
+    local isMainUnlock, mainTips = self:IsMainUnlock(mainId)
+    if not isMainUnlock then
+        return false, mainTips
+    end
+
+    return true
+end
+
+--- 检查章节是否可以打开（不实际打开）
+---@param chapterId number 章节Id
+---@return boolean canOpen 是否可以打开
+---@return string tips 失败提示
+function XMainLine2Agency:CheckCanOpenChapter(chapterId)
+    if not chapterId then
+        return false
+    end
+
+    local mainId = self:GetChapterMainId(chapterId, true)
+    if not mainId then
+        return false
+    end
+
+    return self:_CheckChapterOpenCondition(chapterId, mainId)
+end
+
 -- 打开章节UI界面
 ---@param mainId number 主章节Id
 ---@param chapterId number 章节Id
 ---@param stageId number 关卡Id
 ---@param isOpenStageDetail boolean 是否打开关卡详情
 function XMainLine2Agency:OpenChapterUi(mainId, chapterId, stageId, isOpenStageDetail)
-    if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.MainLine, chapterId) then
-        return
-    end
-
-    -- 章节未解锁
-    if chapterId then
-        local isUnlock, tips = self:IsChapterUnlock(chapterId)
-        if not isUnlock then
+    local canOpen, tips = self:_CheckChapterOpenCondition(chapterId, mainId)
+    if not canOpen then
+        if tips then
             XUiManager.TipError(tips)
-            return
         end
-    end
-
-    -- 主章节未解锁
-    local isMainUnlock, mainTips = self:IsMainUnlock(mainId)
-    if not isMainUnlock then
-        XUiManager.TipError(mainTips)
         return
     end
-    
+
     if self:OpenSpecialChapterUi(mainId) then
         return
     end
@@ -954,6 +985,11 @@ end
 -- 获取时间轴章节配置
 function XMainLine2Agency:GetConfigExhibitionChapter(id)
     return self._Model:GetConfigExhibitionChapter(id)
+end
+
+-- 根据副本类型和配置表Id，获取对应MainLine2ExhibitionChapter.tab的Id
+function XMainLine2Agency:GetFubenExhibitionId(exhibitionFubenType, exhibitionFubenConfigId)
+    return self._Model:GetFubenExhibitionId(exhibitionFubenType, exhibitionFubenConfigId)
 end
 
 -- 获取时间轴的ViewModel

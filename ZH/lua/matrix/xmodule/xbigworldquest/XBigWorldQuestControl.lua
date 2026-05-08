@@ -17,6 +17,15 @@ end
 function XBigWorldQuestControl:OnRelease()
 end
 
+function XBigWorldQuestControl:GetMainLineTipDesc(tipId)
+    local template = self._Model:GetMainLineTipTemplate(tipId)
+    return template and template.Desc or ""
+end
+
+function XBigWorldQuestControl:GetMainLineTipTemplate(tipId)
+    return self._Model:GetMainLineTipTemplate(tipId)
+end
+
 function XBigWorldQuestControl:GetQuestTypeIds()
     return self._Model:GetQuestTypeIds()
 end
@@ -35,6 +44,14 @@ function XBigWorldQuestControl:GetQuestTypeIcon(typeId)
     end
     local template = self._Model:GetQuestTypeTemplate(typeId)
     return template and template.Icon or ""
+end
+
+function XBigWorldQuestControl:GetQuestTypeBriefIcon(typeId)
+    if typeId <= 0 then
+        return ""
+    end
+    local template = self._Model:GetQuestTypeTemplate(typeId)
+    return template and template.BriefIcon or ""
 end
 
 function XBigWorldQuestControl:GetQuestTypeName(typeId)
@@ -76,7 +93,7 @@ function XBigWorldQuestControl:GetQuestRewardId(questId)
 end
 
 function XBigWorldQuestControl:GetQuestType(questId)
-    return self._Model:GetQuestType(questId)
+    return self:GetAgency():GetQuestTypeByQuestId(questId)
 end
 
 function XBigWorldQuestControl:GetQuestDesc(questId)

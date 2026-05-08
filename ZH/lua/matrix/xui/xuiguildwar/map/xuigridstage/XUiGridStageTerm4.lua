@@ -6,7 +6,7 @@ local XUiGridStageTerm4 = XClass(XUiGridStage, "XUiGridStageTerm4")
 
 function XUiGridStageTerm4:OnBtnStageClick(selectedNodeId)
     if self.IsPathEdit then
-        self.Base:AddPath(self.StageNodeId, self)
+        self.Parent:AddPath(self.StageNodeId, self)
     else
         local nodeEntity = XDataCenter.GuildWarManager.GetNode(self.StageNodeId)
 

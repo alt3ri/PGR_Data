@@ -784,7 +784,8 @@ local function MergeRewardGoodsList(rewardGoodsList)
 
     for _, goods in pairs(rewardGoodsList) do
         if goods.RewardType == XRewardType.Character or
-        goods.RewardType == XRewardType.Equip then
+        goods.RewardType == XRewardType.Equip or
+        goods.ExtraData then
             tableInsert(mergeList, goods)
         else
             local templateId = goods.TemplateId

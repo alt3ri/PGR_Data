@@ -248,6 +248,12 @@ function XSignInConfigs.CheckWelfareRedPoint(functionType, config)
     if functionType == XAutoWindowConfigs.AutoFunctionType.FirstRecharge then
         return not XDataCenter.PayManager.IsGotFirstReCharge()
     elseif functionType == XAutoWindowConfigs.AutoFunctionType.Card then
+        local retroactiveRedPoint =
+            XRedPointConditions.Check(
+                XRedPointConditions.Types.CONDITION_PURCHASE_YK_RETROACTIVE)
+
+        if retroactiveRedPoint then return true end
+
         local monthlyCardId = GetMonthlyCardIdByWelfareId(config.WelfareId)
         return not XDataCenter.PayManager.IsGotCard(monthlyCardId)
     elseif functionType == XAutoWindowConfigs.AutoFunctionType.WeekChallenge then
@@ -336,6 +342,25 @@ function XSignInConfigs.GetSignCardConfig(id)
     end
 
     return cfg
+end
+
+function XSignInConfigs.GetSignCardConfigByPurchasePackageId(purchasePackageId)
+    for _, v in pairs(SignCard) do
+        if v.Param[2] == purchasePackageId then
+            return v
+        end
+    end
+end
+
+function XSignInConfigs.GetWelfareIdByPurchasePackageId(purchasePackageId)
+    local signCardConfig = XSignInConfigs.GetSignCardConfigByPurchasePackageId(purchasePackageId)
+    if not signCardConfig then return nil end
+    for _, v in pairs(SignWelfareDir) do
+        if v.SubConfigId == signCardConfig.Id and v.FunctionType == XAutoWindowConfigs.AutoFunctionType.Card then
+            return v.Id
+        end
+    end
+    return nil
 end
 
 -- 获取首充签到配置表

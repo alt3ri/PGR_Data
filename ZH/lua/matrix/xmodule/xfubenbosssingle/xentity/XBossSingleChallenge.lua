@@ -35,12 +35,13 @@ function XBossSingleChallenge:SetDataWithBossSingleData(bossSingle)
     for i = 1, count do
         local history = bossSingle:FindChallengeStageHistoryByStageId(stageIds[i])
         local characters = history and history:GetCharacterList() or nil
+        local buffGroup = history and history:GetBuffGroup() or nil
         local feature = self._FeatureList[i]
 
         if not feature then
-            self._FeatureList[i] = XBossSingleFeature.New(featureIds[i], stageIds[i], characters)
+            self._FeatureList[i] = XBossSingleFeature.New(featureIds[i], stageIds[i], characters, buffGroup)
         else
-            feature:SetData(featureIds[i], stageIds[i], characters)
+            feature:SetData(featureIds[i], stageIds[i], characters, buffGroup)
         end
         self._FeatureMap[featureIds[i]] = self._FeatureList[i]
     end

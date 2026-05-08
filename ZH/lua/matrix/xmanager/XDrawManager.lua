@@ -43,6 +43,10 @@ XDrawManagerCreator = function()
     local DrawDevilMayCryGroupIds = nil
     local DrawHideOptionalBtnGroupIds = nil
 
+    -- ExtraOption 相关数据
+    local DisplayOptionCacheByGroup = {}
+    local LostSelectOptionKey = ""
+
     -- 可肝卡池相关数据
     local CanLiverActivityId = nil
     local CanLiverDrawCount = nil
@@ -59,15 +63,23 @@ XDrawManagerCreator = function()
     end
 
     --region Ui
-    function XDrawManager.OpenDrawUi(ruleType, groupId, defaultDrawId, isPop,groupPool)
+    function XDrawManager.OpenDrawUi(ruleType, groupId, defaultDrawId, isPop, groupPool, optionKey)
         if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.DrawCard) then
             return
         end
         XDrawManager.GetDrawGroupList(function()
-            if isPop then
-                XLuaUiManager.PopThenOpen("UiNewDrawMain", ruleType, groupId, defaultDrawId,groupPool)
+            -- 先确保目标 group 的 DrawInfo 就绪，再透传 optionKey 给 UI 层决定默认落点
+            local function doOpen()
+                if isPop then
+                    XLuaUiManager.PopThenOpen("UiNewDrawMain", ruleType, groupId, defaultDrawId, groupPool, optionKey)
+                else
+                    XLuaUiManager.Open("UiNewDrawMain", ruleType, groupId, defaultDrawId, groupPool, optionKey)
+                end
+            end
+            if groupId and groupId ~= 0 then
+                XDrawManager.GetDrawInfoList(groupId, doOpen)
             else
-                XLuaUiManager.Open("UiNewDrawMain", ruleType, groupId, defaultDrawId,groupPool)
+                doOpen()
             end
         end)
     end
@@ -276,6 +288,7 @@ XDrawManagerCreator = function()
         return DrawInfos[drawId]
     end
 
+    ---@return XTableDrawShowCharacter
     function XDrawManager.GetDrawShowCharacter(id)
         return DrawShowCharacter[id]
     end
@@ -322,14 +335,18 @@ XDrawManagerCreator = function()
 
     function XDrawManager.GetUseDrawInfoByGroupId(groupId)
         local groupInfo = DrawGroupInfos[groupId]
-        local UseDrawInfo = groupInfo.UseDrawId > 0 and XDrawManager.GetDrawInfo(groupInfo.UseDrawId) or nil
-
-        if UseDrawInfo then
-            return UseDrawInfo
-        else
-            local list = XDrawManager.GetDrawInfoListByGroupId(groupId)
-            return list[1]
+        if not groupInfo then
+            return nil
         end
+        local dict = groupInfo.UseDrawIdDict or {}
+        local useDrawId = dict[0] or 0
+        if useDrawId > 0 then
+            local drawInfo = XDrawManager.GetDrawInfo(useDrawId)
+            if drawInfo then
+                return drawInfo
+            end
+        end
+        return nil
     end
 
     function XDrawManager.GetDrawGroupInfoByGroupId(groupId)
@@ -481,10 +498,31 @@ XDrawManagerCreator = function()
 
     function XDrawManager.UpdateDrawGroupByInfo(clientDrawInfo)
         for _, v in pairs(DrawGroupInfos) do
-            if v.UseDrawId == clientDrawInfo.Id then
+            -- 统一从 UseDrawIdDict 匹配（服务端已废弃 UseDrawId，全面转为 UseDrawIdDict）
+            local isMatch = false
+            if v.UseDrawIdDict then
+                for _, useDrawId in pairs(v.UseDrawIdDict) do
+                    if useDrawId == clientDrawInfo.Id then
+                        isMatch = true
+                        break
+                    end
+                end
+            end
+            if isMatch then
                 v.BottomTimes = clientDrawInfo.MaxBottomTimes - clientDrawInfo.BottomTimes
                 -- 更新十连抽已使用折扣次数
                 v.UseTenDrawOnSaleTimes = clientDrawInfo.UseTenDrawOnSaleTimes
+            end
+        end
+        -- 根据 GroupSubType 更新 UseDrawIdDict
+        if clientDrawInfo.GroupSubType and clientDrawInfo.GroupSubType > 0 then
+            local groupId = clientDrawInfo.GroupId
+            if groupId and DrawGroupInfos[groupId] then
+                local useDrawIdDict = DrawGroupInfos[groupId].UseDrawIdDict or {}
+                useDrawIdDict[clientDrawInfo.GroupSubType] = clientDrawInfo.Id
+                DrawGroupInfos[groupId].UseDrawIdDict = useDrawIdDict
+                -- 失效该 group 的 DisplayOption 缓存
+                XDrawManager._InvalidateDisplayOptionCacheForGroup(groupId)
             end
         end
     end
@@ -634,6 +672,427 @@ XDrawManagerCreator = function()
             XSaveTool.SaveData(string.format("%d%s%d%d", XPlayer.Id, "DrawShowNewTag", ruleType, groupId), time)
         end
     end
+
+    --region ExtraOption 新标记（option维度）
+    --- option维度的新标记判断
+    function XDrawManager.IsShowNewTagForOption(time, ruleType, optionKey)
+        local groupId, groupSubtype = XDrawManager._ParseOptionKey(optionKey)
+        -- 原始option(groupSubtype=0)兼容旧的group维度key
+        if groupSubtype == 0 then
+            return XDrawManager.IsShowNewTag(time, ruleType, groupId)
+        end
+        local data = XSaveTool.GetData(string.format("%d%s%d%s", XPlayer.Id, "DrawShowNewTag", ruleType, optionKey))
+        if data then
+            return time > data
+        end
+        return true
+    end
+
+    --- option维度的新标记写入
+    function XDrawManager.MarkNewTagForOption(time, ruleType, optionKey)
+        local groupId, groupSubtype = XDrawManager._ParseOptionKey(optionKey)
+        -- 原始option(groupSubtype=0)兼容旧的group维度key
+        if groupSubtype == 0 then
+            XDrawManager.MarkNewTag(time, ruleType, groupId)
+            return
+        end
+        local data = XSaveTool.GetData(string.format("%d%s%d%s", XPlayer.Id, "DrawShowNewTag", ruleType, optionKey))
+        if data then
+            if time > data then
+                XSaveTool.SaveData(string.format("%d%s%d%s", XPlayer.Id, "DrawShowNewTag", ruleType, optionKey), time)
+            end
+        else
+            XSaveTool.SaveData(string.format("%d%s%d%s", XPlayer.Id, "DrawShowNewTag", ruleType, optionKey), time)
+        end
+    end
+    --endregion
+
+    --region ExtraOption 核心：OptionKey 解析
+    --- 解析 OptionKey -> groupId, groupSubtype
+    function XDrawManager._ParseOptionKey(optionKey)
+        if not optionKey or optionKey == "" then
+            return 0, 0
+        end
+        local groupId, groupSubtype = string.match(optionKey, "^(%d+)_(%d+)$")
+        groupId = tonumber(groupId) or 0
+        groupSubtype = tonumber(groupSubtype) or 0
+        return groupId, groupSubtype
+    end
+
+    --- 构建 OptionKey
+    function XDrawManager._MakeOptionKey(groupId, groupSubtype)
+        return string.format("%d_%d", groupId, groupSubtype or 0)
+    end
+    --endregion
+
+    --region ExtraOption 核心：DisplayOption 构建系统
+    --- 获取指定 Group 的所有可显示 Option（带缓存）
+    function XDrawManager.GetDisplayOptionsByGroupId(groupId)
+        if DisplayOptionCacheByGroup[groupId] then
+            return DisplayOptionCacheByGroup[groupId]
+        end
+        local options = XDrawManager._BuildDisplayOptionsForGroup(groupId)
+        DisplayOptionCacheByGroup[groupId] = options
+        return options
+    end
+
+    --- 根据 OptionKey 获取 DisplayOption
+    function XDrawManager.GetDisplayOptionByKey(optionKey)
+        if not optionKey or optionKey == "" then
+            return nil
+        end
+        local groupId, _ = XDrawManager._ParseOptionKey(optionKey)
+        local options = XDrawManager.GetDisplayOptionsByGroupId(groupId)
+        for _, option in ipairs(options) do
+            if option.OptionKey == optionKey then
+                return option
+            end
+        end
+        return nil
+    end
+
+    --- 获取指定 Group 的默认 OptionKey
+    function XDrawManager.GetDefaultOptionKeyByGroupId(groupId)
+        local options = XDrawManager.GetDisplayOptionsByGroupId(groupId)
+        if options and #options > 0 then
+            return options[1].OptionKey
+        end
+        return nil
+    end
+
+    --- 构建 Group 的 DisplayOption 列表
+    function XDrawManager._BuildDisplayOptionsForGroup(groupId, extraEndTimeOffset)
+        local groupInfo = DrawGroupInfos[groupId]
+        if not groupInfo then
+            return {}
+        end
+
+        local options = {}
+
+        -- 1. 构建原选项（剔除黑名单 Draw）
+        local originalOption = XDrawManager._BuildOriginalOption(groupId, groupInfo)
+        if originalOption then
+            tableInsert(options, originalOption)
+        end
+
+        -- 2. 构建 ExtraOptions
+        local extraOptions = XDrawManager._BuildExtraOptions(groupId, groupInfo, extraEndTimeOffset)
+        for _, opt in ipairs(extraOptions) do
+            tableInsert(options, opt)
+        end
+
+        -- 3. 按 Priority 降序排序
+        tableSort(options, function(a, b)
+            return a.Priority > b.Priority
+        end)
+
+        return options
+    end
+
+    --- 构建原选项（GroupSubtype=0）
+    function XDrawManager._BuildOriginalOption(groupId, groupInfo)
+        local allDrawList = XDrawManager.GetDrawInfoListByGroupId(groupId)
+        if not allDrawList or #allDrawList == 0 then
+            return nil
+        end
+
+        -- 获取黑名单
+        local blackListSet = {}
+        local blackList = groupInfo.TagBlackListDrawIds or {}
+        for _, drawId in ipairs(blackList) do
+            blackListSet[drawId] = true
+        end
+
+        -- 剔除黑名单 Draw
+        local drawIdList = {}
+        for _, drawInfo in ipairs(allDrawList) do
+            if not blackListSet[drawInfo.Id] then
+                tableInsert(drawIdList, drawInfo.Id)
+            end
+        end
+
+        -- 如果全被剔除了，不创建空 option
+        if #drawIdList == 0 then
+            return nil
+        end
+
+        local groupRule = XDrawConfigs.GetDrawGroupRuleById(groupId)
+        local option = {
+            OptionKey = XDrawManager._MakeOptionKey(groupId, 0),
+            GroupId = groupId,
+            GroupSubtype = 0,
+            Name = (groupRule and groupRule.TitleCN) or "",
+            Tag = groupInfo.Tag,
+            Priority = groupInfo.Priority or 0,
+            DrawIdList = drawIdList,
+            BannerBeginTime = groupInfo.BannerBeginTime or 0,
+            BannerEndTime = groupInfo.BannerEndTime or 0,
+            IsExtraOption = false,
+        }
+        return option
+    end
+
+    --- 构建 ExtraOption 列表（GroupSubtype>0）
+    --- extraEndTimeOffset: 可选，EndTime 过期宽限秒数（记录页使用）
+    function XDrawManager._BuildExtraOptions(groupId, groupInfo, extraEndTimeOffset)
+        local allDrawList = XDrawManager.GetDrawInfoListByGroupId(groupId)
+        if not allDrawList or #allDrawList == 0 then
+            return {}
+        end
+
+        -- 按 GroupSubtype 分组聚合 Draw
+        local subtypeToDrawList = {}
+        for _, drawInfo in ipairs(allDrawList) do
+            local subtype = drawInfo.GroupSubType or 0
+            if subtype > 0 then
+                subtypeToDrawList[subtype] = subtypeToDrawList[subtype] or {}
+                tableInsert(subtypeToDrawList[subtype], drawInfo.Id)
+            end
+        end
+
+        local options = {}
+        local nowTime = XTime.GetServerNowTimestamp()
+
+        for subtype, drawIdList in pairs(subtypeToDrawList) do
+            local extraTagCfg = XDrawConfigs.GetDrawExtraTagGroupCfgById(subtype)
+            if extraTagCfg then
+                -- 检查时间窗口
+                local startTime = XTime.ParseToTimestamp(extraTagCfg.StartTime)
+                local endTime = XTime.ParseToTimestamp(extraTagCfg.EndTime)
+                local isTimeValid = true
+                if startTime and startTime > 0 and nowTime < startTime then
+                    isTimeValid = false
+                end
+                if endTime and endTime > 0 then
+                    local effectiveEndTime = endTime
+                    if extraEndTimeOffset and extraEndTimeOffset > 0 then
+                        effectiveEndTime = endTime + extraEndTimeOffset
+                    end
+                    if nowTime >= effectiveEndTime then
+                        isTimeValid = false
+                    end
+                end
+
+                if isTimeValid then
+                    local option = {
+                        OptionKey = XDrawManager._MakeOptionKey(groupId, subtype),
+                        GroupId = groupId,
+                        GroupSubtype = subtype,
+                        Name = extraTagCfg.Name or "",
+                        Tag = extraTagCfg.Tag or groupInfo.Tag,
+                        Priority = extraTagCfg.Priority or 0,
+                        DrawIdList = drawIdList,
+                        BannerBeginTime = startTime or 0,
+                        BannerEndTime = endTime or 0,
+                        IsExtraOption = true,
+                    }
+                    tableInsert(options, option)
+                end
+            end
+        end
+
+        return options
+    end
+
+    local RECORD_EXTRA_END_TIME_OFFSET = 90 * 24 * 3600
+
+    --- 记录页专用：ExtraOption 从配置表构建，不依赖服务端 DrawInfo，过期后延长 90 天仍可见
+    function XDrawManager.GetDisplayOptionsForRecord(groupId)
+        local options = {}
+
+        local groupInfo = DrawGroupInfos[groupId]
+        if groupInfo then
+            local originalOption = XDrawManager._BuildOriginalOption(groupId, groupInfo)
+            if originalOption then
+                tableInsert(options, originalOption)
+            end
+        end
+
+        local nowTime = XTime.GetServerNowTimestamp()
+        local allExtraCfgs = XDrawConfigs.GetDrawExtraTagGroupCfgs()
+        for _, cfg in pairs(allExtraCfgs) do
+            if cfg.GroupId == groupId then
+                local startTime = XTime.ParseToTimestamp(cfg.StartTime)
+                local endTime = XTime.ParseToTimestamp(cfg.EndTime)
+                local effectiveEndTime = (endTime and endTime > 0) and (endTime + RECORD_EXTRA_END_TIME_OFFSET) or 0
+
+                local isTimeValid = true
+                if startTime and startTime > 0 and nowTime < startTime then
+                    isTimeValid = false
+                end
+                if effectiveEndTime > 0 and nowTime >= effectiveEndTime then
+                    isTimeValid = false
+                end
+
+                if isTimeValid then
+                    tableInsert(options, {
+                        OptionKey = XDrawManager._MakeOptionKey(groupId, cfg.Id),
+                        GroupId = groupId,
+                        GroupSubtype = cfg.Id,
+                        Name = cfg.Name or "",
+                        Tag = cfg.Tag or 0,
+                        Priority = cfg.Priority or 0,
+                        DrawIdList = cfg.DrawId or {},
+                        BannerBeginTime = startTime or 0,
+                        BannerEndTime = endTime or 0,
+                        IsExtraOption = true,
+                    })
+                end
+            end
+        end
+
+        tableSort(options, function(a, b)
+            return a.Priority > b.Priority
+        end)
+
+        return options
+    end
+
+    --- 失效指定 Group 的 DisplayOption 缓存
+    function XDrawManager._InvalidateDisplayOptionCacheForGroup(groupId)
+        DisplayOptionCacheByGroup[groupId] = nil
+    end
+
+    --- 失效所有 DisplayOption 缓存
+    function XDrawManager._InvalidateAllDisplayOptionCache()
+        DisplayOptionCacheByGroup = {}
+    end
+    --endregion
+
+    --region ExtraOption 核心：Option 维度查询接口
+    --- 获取 Option 当前使用的 DrawInfo（带fallback，用于展示）
+    function XDrawManager.GetUseDrawInfoByOptionKey(optionKey)
+        if not optionKey or optionKey == "" then
+            return nil
+        end
+        local groupId, groupSubtype = XDrawManager._ParseOptionKey(optionKey)
+        local groupInfo = DrawGroupInfos[groupId]
+        if not groupInfo then
+            return nil
+        end
+
+        -- 获取 UseDrawId（统一从 UseDrawIdDict 获取，服务端已废弃 UseDrawId）
+        local dict = groupInfo.UseDrawIdDict or {}
+        local useDrawId = dict[groupSubtype]
+
+        -- 检查 useDrawId 是否有效
+        if useDrawId and useDrawId > 0 then
+            local drawInfo = XDrawManager.GetDrawInfo(useDrawId)
+            if drawInfo then
+                return drawInfo
+            end
+        end
+
+        -- fallback：使用该 option 的第一个有效 draw
+        local option = XDrawManager.GetDisplayOptionByKey(optionKey)
+        if option and option.DrawIdList and #option.DrawIdList > 0 then
+            return XDrawManager.GetDrawInfo(option.DrawIdList[1])
+        end
+
+        -- 最终兜底：直接使用 group 级（仅当 option 存在但 DrawIdList 为空时不兜底，避免黑名单 Draw 复活）
+        if not option then
+            return XDrawManager.GetUseDrawInfoByGroupId(groupId)
+        end
+
+        return nil
+    end
+
+    --- 获取 Option 真实选择的 drawId（不带fallback，用于状态判断）
+    function XDrawManager.GetRealUseDrawIdByOptionKey(optionKey)
+        if not optionKey or optionKey == "" then
+            return 0
+        end
+        local groupId, groupSubtype = XDrawManager._ParseOptionKey(optionKey)
+        local groupInfo = DrawGroupInfos[groupId]
+        if not groupInfo then
+            return 0
+        end
+
+        local dict = groupInfo.UseDrawIdDict or {}
+        return dict[groupSubtype] or 0
+    end
+
+    --- 获取 Option 展示用 UseDrawId（带fallback）
+    function XDrawManager.GetUseDrawIdByOptionKey(optionKey)
+        local drawInfo = XDrawManager.GetUseDrawInfoByOptionKey(optionKey)
+        if drawInfo then
+            return drawInfo.Id
+        end
+        return 0
+    end
+
+    --- 获取 Option 包含的所有 DrawInfo 列表
+    function XDrawManager.GetDrawInfoListByOptionKey(optionKey)
+        if not optionKey or optionKey == "" then
+            return {}
+        end
+        local option = XDrawManager.GetDisplayOptionByKey(optionKey)
+        if not option or not option.DrawIdList then
+            return {}
+        end
+
+        local list = {}
+        for _, drawId in ipairs(option.DrawIdList) do
+            local drawInfo = XDrawManager.GetDrawInfo(drawId)
+            if drawInfo then
+                tableInsert(list, drawInfo)
+            end
+        end
+        return list
+    end
+
+    --- 判断 option 维度是否可自动打开狙击选择
+    function XDrawManager.IsCanAutoOpenAimOptionSelect(time, optionKey)
+        local data = XSaveTool.GetData(string.format("%d%s%s", XPlayer.Id, "AimAutoOpenOptionState", optionKey))
+        if data then
+            if time > data then
+                XSaveTool.SaveData(string.format("%d%s%s", XPlayer.Id, "AimAutoOpenOptionState", optionKey), time)
+                return true
+            else
+                return false
+            end
+        else
+            XSaveTool.SaveData(string.format("%d%s%s", XPlayer.Id, "AimAutoOpenOptionState", optionKey), time)
+            return true
+        end
+    end
+
+    --- 获取 Option 名称
+    function XDrawManager.GetOptionNameByKey(optionKey)
+        local option = XDrawManager.GetDisplayOptionByKey(optionKey)
+        if option then
+            return option.Name
+        end
+        return ""
+    end
+
+    --- 检查 Option 维度是否为新
+    function XDrawManager.CheckIsNewDrawForOption(optionKey)
+        local groupId, _ = XDrawManager._ParseOptionKey(optionKey)
+        return XDrawManager:CheckIsNewDraw(groupId)
+    end
+    --endregion
+
+    --region ExtraOption：上次选中 OptionKey 记忆
+    function XDrawManager.SetLostSelectOptionKey(optionKey)
+        LostSelectOptionKey = optionKey or ""
+    end
+
+    function XDrawManager.GetLostSelectOptionKey()
+        return LostSelectOptionKey
+    end
+    --endregion
+
+    --region ExtraOption：DrawId 级特性判断
+    --- 判断具体 Draw 是否为鬼泣卡池（draw级特性）
+    function XDrawManager:CheckIsDevilMayCryDrawId(drawId)
+        local drawInfo = XDrawManager.GetDrawInfo(drawId)
+        if not drawInfo then
+            return false
+        end
+        return XDrawManager:CheckIsDevilMayCryGroupId(drawInfo.GroupId)
+    end
+    --endregion
 
     function XDrawManager.GetDrawPurchase(drawId)
         local drawInfo = XDrawManager.GetDrawInfo(drawId)
@@ -1105,6 +1564,14 @@ XDrawManagerCreator = function()
         local isExpired = true
 
         for _, info in pairs(groupInfoList) do
+            -- 归一化 UseDrawIdDict 的 key 为 number，防止反序列化产生 string key
+            if info.UseDrawIdDict then
+                local normalized = {}
+                for k, v in pairs(info.UseDrawIdDict) do
+                    normalized[tonumber(k)] = v
+                end
+                info.UseDrawIdDict = normalized
+            end
             DrawGroupInfos[info.Id] = info
             DrawGroupInfos[info.Id].BottomTimes = DrawGroupInfos[info.Id].MaxBottomTimes - DrawGroupInfos[info.Id].BottomTimes
             if CurSelectTabInfo then
@@ -1117,6 +1584,9 @@ XDrawManagerCreator = function()
         if isExpired then
             CurSelectTabInfo = nil
         end
+
+        -- group 信息整体刷新后失效所有 DisplayOption 缓存
+        XDrawManager._InvalidateAllDisplayOptionCache()
     end
 
     function XDrawManager.UpdateDrawInfos(drawInfoList)
@@ -1133,6 +1603,11 @@ XDrawManagerCreator = function()
 
         for _, info in pairs(drawInfoList) do
             XDrawManager.UpdateDrawInfo(info)
+        end
+
+        -- DrawInfo 更新后失效对应 group 的 DisplayOption 缓存
+        if drawInfoList[1] then
+            XDrawManager._InvalidateDisplayOptionCacheForGroup(drawInfoList[1].GroupId)
         end
     end
 
@@ -1171,6 +1646,9 @@ XDrawManagerCreator = function()
         XNetwork.Call("DrawGetDrawInfoListRequest", { GroupId = groupId }, function(res)
             if res.Code ~= XCode.Success then
                 XUiManager.TipCode(res.Code)
+                if cb then
+                    cb()
+                end
                 return
             end
             XDrawManager.UpdateDrawInfos(res.DrawInfoList)
@@ -1228,15 +1706,22 @@ XDrawManagerCreator = function()
         end)
     end
 
-    function XDrawManager.SaveDrawAimId(drawId, groupId, cb)
+    function XDrawManager.SaveDrawAimId(drawId, groupId, cb, groupSubtype)
         --保存狙击目标
         XNetwork.Call("DrawSetUseDrawIdRequest", { DrawId = drawId }, function(res)
             if res.Code ~= XCode.Success then
                 XUiManager.TipCode(res.Code)
                 return
             end
-            XDrawManager.GetDrawGroupInfoByGroupId(groupId).UseDrawId = drawId
-            XDrawManager.GetDrawGroupInfoByGroupId(groupId).SwitchDrawIdCount = res.SwitchDrawIdCount
+            local groupInfo = XDrawManager.GetDrawGroupInfoByGroupId(groupId)
+            -- 统一更新 UseDrawIdDict（服务端已废弃 UseDrawId）
+            local useDrawIdDict = groupInfo.UseDrawIdDict or {}
+            local subtype = (groupSubtype and groupSubtype > 0) and groupSubtype or 0
+            useDrawIdDict[subtype] = drawId
+            groupInfo.UseDrawIdDict = useDrawIdDict
+            groupInfo.SwitchDrawIdCount = res.SwitchDrawIdCount
+            -- 失效该 group 的 DisplayOption 缓存
+            XDrawManager._InvalidateDisplayOptionCacheForGroup(groupId)
             if cb then
                 cb()
             end
@@ -1261,11 +1746,20 @@ XDrawManagerCreator = function()
     end
     
     --- 获取指定卡池组的历史记录
-    function XDrawManager.RequestDrawGroupGetHistory(groupId, successCb, errorCb)
-        XNetwork.Call("DrawGroupGetHistoryRequest", { GroupId = groupId }, function(res)
+    function XDrawManager.RequestDrawGroupGetHistory(groupId, groupSubType, successCb, errorCb)
+        -- 兼容旧调用：第二个参数如果是 function 说明没传 groupSubType
+        if type(groupSubType) == "function" then
+            errorCb = successCb
+            successCb = groupSubType
+            groupSubType = 0
+        end
+        -- 始终发送 GroupSubType（含 0），服务端按 HistoryRewardDict[GroupSubType] 查询
+        XNetwork.Call("DrawGroupGetHistoryRequest", {
+            GroupId = groupId,
+            GroupSubType = groupSubType or 0
+        }, function(res)
             if res.Code ~= XCode.Success then
                 XUiManager.TipCode(res.Code)
-
                 if errorCb then
                     errorCb()
                 end
@@ -1327,6 +1821,33 @@ XDrawManagerCreator = function()
     end
 
     -- WindEnd --
+
+    --- 从奖励信息中提取物品ID（优先级：ConvertFrom > Id > TemplateId）
+    function XDrawManager.GetRewardGoodsId(rewardInfo)
+        if not rewardInfo then
+            return nil
+        end
+        if rewardInfo.ConvertFrom and rewardInfo.ConvertFrom > 0 then
+            return rewardInfo.ConvertFrom
+        end
+        if rewardInfo.Id and rewardInfo.Id > 0 then
+            return rewardInfo.Id
+        end
+        return rewardInfo.TemplateId
+    end
+
+    --- 判断指定奖励是否有角色表演配置（S角色）
+    function XDrawManager.CheckHasPerformance(rewardInfo)
+        local id = XDrawManager.GetRewardGoodsId(rewardInfo)
+        if not XTool.IsNumberValid(id) then
+            return false
+        end
+        if XTypeManager.GetTypeById(id) ~= XArrangeConfigs.Types.Character then
+            return false
+        end
+        return XDrawConfigs.GetDrawRolePerformance(id) ~= nil
+    end
+
     XDrawManager.Init()
     return XDrawManager
 end

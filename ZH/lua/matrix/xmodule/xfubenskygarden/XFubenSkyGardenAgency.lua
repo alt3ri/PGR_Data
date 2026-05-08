@@ -4,7 +4,6 @@ local XFubenSimulationChallengeAgency = require("XModule/XBase/XFubenSimulationC
 ---@field private _Model XFubenSkyGardenModel
 local XFubenSkyGardenAgency = XClass(XFubenSimulationChallengeAgency, "XFubenSkyGardenAgency")
 function XFubenSkyGardenAgency:OnInit()
-    
     self:RegisterChapterAgency()
 
     self.ExChapterType = self:ExGetChapterType()
@@ -31,9 +30,10 @@ function XFubenSkyGardenAgency:ExGetRunningTimeStr()
     if endTime <= 0 then
         return ""
     end
-    
+
     local nowTime = XTime.GetServerNowTimestamp()
-    return XUiHelper.GetText("ActivityEndLeftText", XUiHelper.GetTime(math.max(0, endTime - nowTime), XUiHelper.TimeFormatType.ACTIVITY))
+    return XUiHelper.GetText("ActivityEndLeftText",
+        XUiHelper.GetTime(math.max(0, endTime - nowTime), XUiHelper.TimeFormatType.ACTIVITY))
 end
 
 function XFubenSkyGardenAgency:ExCheckInTime()
@@ -43,7 +43,7 @@ function XFubenSkyGardenAgency:ExCheckInTime()
     end
     local endTime = XFunctionManager.GetEndTimeByTimeId(timeId)
     local nowTime = XTime.GetServerNowTimestamp()
-    
+
     return endTime <= 0 or endTime > nowTime
 end
 
@@ -64,14 +64,15 @@ function XFubenSkyGardenAgency:ExGetLockTip()
         local beginTime = XFunctionManager.GetStartTimeByTimeId(timeId)
         local nowTime = XTime.GetServerNowTimestamp()
         if beginTime > nowTime then
-            return XUiHelper.GetText("ScheOpenCountdown", XUiHelper.GetTime(math.max(0, beginTime - nowTime), XUiHelper.TimeFormatType.ACTIVITY))
+            return XUiHelper.GetText("ScheOpenCountdown",
+                XUiHelper.GetTime(math.max(0, beginTime - nowTime), XUiHelper.TimeFormatType.ACTIVITY))
         end
     end
-    
+
     if not XFunctionManager.JudgeOpen(XFunctionManager.FunctionName.SkyGarden) then
         return XFunctionManager.GetFunctionOpenCondition(XFunctionManager.FunctionName.SkyGarden)
     end
-    
+
     return ""
 end
 
@@ -106,7 +107,58 @@ function XFubenSkyGardenAgency:ExGetTimerShowStr()
     if not self:ExCheckInTimerShow() then
         return nil
     end
-    return XMVCA.XFunction:GetEntryFunctionalLabel(XFunctionManager.FunctionName.SkyGarden)
+
+    local label = XMVCA.XFunction:GetEntryFunctionalLabel(XFunctionManager.FunctionName.SkyGarden)
+    local taskIds = XMVCA.XFunction:GetEntryFunctionalTaskId(XFunctionManager.FunctionName.SkyGarden)
+
+    if not XTool.IsTableEmpty(taskIds) then
+        for i, taskId in pairs(taskIds) do
+            if XTool.IsNumberValid(taskId) then
+                local taskData = XDataCenter.TaskManager.GetTaskDataById(taskId)
+
+                if taskData and taskData.State == XDataCenter.TaskManager.TaskState.Achieved
+                    or taskData.State == XDataCenter.TaskManager.TaskState.Accepted
+                    or taskData.State == XDataCenter.TaskManager.TaskState.Active then
+                    return label[i]
+                end
+            else
+                return label[i]
+            end
+        end
+    else
+        return label[1]
+    end
+
+    return nil
+end
+
+function XFubenSkyGardenAgency:ExGetTimerShowIcon()
+    if not self:ExCheckInTimerShow() then
+        return nil
+    end
+
+    local icon = XMVCA.XFunction:GetEntryFunctionalIcon(XFunctionManager.FunctionName.SkyGarden)
+    local taskIds = XMVCA.XFunction:GetEntryFunctionalTaskId(XFunctionManager.FunctionName.SkyGarden)
+
+    if not XTool.IsTableEmpty(taskIds) then
+        for i, taskId in pairs(taskIds) do
+            if XTool.IsNumberValid(taskId) then
+                local taskData = XDataCenter.TaskManager.GetTaskDataById(taskId)
+
+                if taskData and taskData.State == XDataCenter.TaskManager.TaskState.Achieved
+                    or taskData.State == XDataCenter.TaskManager.TaskState.Accepted
+                    or taskData.State == XDataCenter.TaskManager.TaskState.Active then
+                    return icon[i]
+                end
+            else
+                return icon[i]
+            end
+        end
+    else
+        return icon[1]
+    end
+
+    return nil
 end
 
 function XFubenSkyGardenAgency:ExCheckInTimerShow()
@@ -117,5 +169,4 @@ function XFubenSkyGardenAgency:ExCheckInTimerShow()
     return XFunctionManager.CheckInTimeByTimeId(timeId)
 end
 
-
-return XFubenSkyGardenAgency
+return XFubenSkyGardenAgency

@@ -45,6 +45,11 @@ function XUiBigWorldTaskPopupEndingDetail:InitView()
     self.BtnAgain.gameObject:SetActiveEx(not self._IsFromInvitation and not XMVCA.XBigWorldQuest:IsFirstFinishResult())
     
     self:RefreshTagNew(self._ShowTag)
+
+    if self.Panel then
+        local resultIds = self._Control:GetInviteQuestResultIds(self._QuestId)
+        self.Panel.gameObject:SetActiveEx(XTool.IsTableEmpty(resultIds) or #resultIds <= 1)
+    end
 end
 
 function XUiBigWorldTaskPopupEndingDetail:RefreshReward(rewardId)

@@ -145,6 +145,14 @@ function XDlcRelinkOtherMemberControl:GetEquipIsLockedByEquipUid(equipUid)
     return equip and equip.IsLocked or false
 end
 
+--- 获取其他成员装备是否被弃置
+---@param equipUid number
+---@return boolean
+function XDlcRelinkOtherMemberControl:GetEquipIsDiscardedByEquipUid(equipUid)
+    local equip = self:GetEquipByEquipUid(equipUid)
+    return equip and equip.IsDiscarded or false
+end
+
 --- 获取其他成员装备所有主属性
 ---@param equipUid number
 ---@return table
@@ -211,23 +219,13 @@ function XDlcRelinkOtherMemberControl:GetEquipMaxAbilityByEquipUid(equipUid)
 
     -- 主属性战力
     for _, attribute in pairs(equip.MainFactors or {}) do
-        local mainSkillFactorId = self._MainControl:GetEquipMainSkillFactorId(attribute.EquipTemplate)
-        if mainSkillFactorId ~= attribute.FactorId then
-            ability = ability + self._MainControl:GetAttributeAbilityInternal(attribute)
-        else
-            ability = ability + self._MainControl:GetEquipMainSkillFactorAbility(attribute.EquipTemplate)
-        end
+        ability = ability + self._MainControl:GetAttributeAbilityInternal(attribute)
     end
 
     -- 副属性战力
     for _, slotsValue in pairs(equip.AttributeSlots or {}) do
         for _, attribute in pairs(slotsValue.Attributes) do
-            local mainSkillFactorId = self._MainControl:GetEquipMainSkillFactorId(attribute.EquipTemplate)
-            if mainSkillFactorId ~= attribute.FactorId then
-                ability = ability + self._MainControl:GetAttributeAbilityInternal(attribute)
-            else
-                ability = ability + self._MainControl:GetEquipMainSkillFactorAbility(attribute.EquipTemplate)
-            end
+            ability = ability + self._MainControl:GetAttributeAbilityInternal(attribute)
         end
     end
 
@@ -299,6 +297,19 @@ function XDlcRelinkOtherMemberControl:GetCharacterSkillIdsByCharacterId(characte
         end
     end
     return skillIds
+end
+
+--- 检查装备的副属性槽位是否已满
+function XDlcRelinkOtherMemberControl:CheckEquipDeputyFactorSlotsIsFull(equipUid)
+    local equip = self:GetEquipByEquipUid(equipUid)
+    if not equip then
+        return false
+    end
+
+    local quality = self._MainControl:GetEquipQuality(equip.TemplateId)
+    local maxSlotsNum = self._MainControl:GetEquipQualityDeputyFactorNum(quality)
+    local curSlotsNum = equip.AttributeSlots and table.nums(equip.AttributeSlots) or 0
+    return curSlotsNum >= maxSlotsNum
 end
 
 --endregion

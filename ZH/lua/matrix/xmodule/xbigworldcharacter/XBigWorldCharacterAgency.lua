@@ -33,7 +33,7 @@ function XBigWorldCharacterAgency:InitRpc()
 end
 
 function XBigWorldCharacterAgency:InitEvent()
-    
+
 end
 
 function XBigWorldCharacterAgency:OnTrialNpcJoinTeam(data)
@@ -54,6 +54,7 @@ function XBigWorldCharacterAgency:UpdateCharacter(fashionDict)
         for _, info in pairs(fashionDict) do
             local char = self._Model:GetDlcCharacter(info.Character)
             char:SetFashionId(info.FashionId)
+            char:SetFashionColorId(info.FashionColorId)
             local headInfo = info.DlcCharacterHeadInfo
             if headInfo then
                 char:SetHeadInfo(headInfo.HeadFashionId, headInfo.HeadFashionType)
@@ -74,7 +75,7 @@ function XBigWorldCharacterAgency:GetFashionId(characterId)
 end
 
 function XBigWorldCharacterAgency:GetCharacterName(characterId)
-    characterId = XEntityHelper.GetCharacterIdByEntityId(characterId) 
+    characterId = XEntityHelper.GetCharacterIdByEntityId(characterId)
     if self:IsCommandant(characterId) then
         return XPlayer.Name
     end
@@ -145,7 +146,7 @@ function XBigWorldCharacterAgency:GetHalfBodyImage(characterId)
 end
 
 --- 战斗侧获取角色头像
----@param worldNpcData XWorldNpcData  
+---@param worldNpcData XWorldNpcData
 ---@return string
 --------------------------
 function XBigWorldCharacterAgency:GetFightCharHeadIcon(worldNpcData)
@@ -156,7 +157,7 @@ function XBigWorldCharacterAgency:GetFightCharHeadIcon(worldNpcData)
     if not character then
         return ""
     end
-    
+
     return self:GetFightCharHeadIconWithCharacterId(character.Id)
 end
 
@@ -189,7 +190,7 @@ function XBigWorldCharacterAgency:GetCommandantNpcData()
     }
     data.IsPlayerSelf = true
     data.PartData = XMVCA.XBigWorldCommanderDIY:GetNpcPartData()
-    
+
     return data
 end
 
@@ -224,9 +225,27 @@ function XBigWorldCharacterAgency:GetUiModelId(characterId)
     return self:GetUiModelIdByFashionId(fashionId)
 end
 
-function XBigWorldCharacterAgency:GetUiModelIdByFashionId(fashionId)
-    local t = self._Model:GetDlcFashionTemplate(fashionId)
-    return t and t.UiModelId or ""
+function XBigWorldCharacterAgency:GetUiModelIdByFashionId(fashionId, colorId)
+    local templete = self._Model:GetDlcFashionTemplate(fashionId)
+    local modelId = templete.UiModelId
+    
+    if not XTool.IsNumberValid(colorId) then
+        local characterId = self:GetCharacterIdByFashionId(fashionId)
+
+        if XTool.IsNumberValid(characterId) and not self:IsCommandant(characterId) then
+            local character = self._Model:GetDlcCharacter(characterId)
+            
+            if character then
+                colorId = character:GetFashionColorId()
+            end
+        end
+    end
+
+    if XTool.IsNumberValid(colorId) then
+        modelId = self._Model:GetFashionColorUiModelId(colorId) or modelId
+    end
+
+    return modelId
 end
 
 function XBigWorldCharacterAgency:GetModelIdByFashionId(fashionId)
@@ -237,11 +256,11 @@ end
 
 function XBigWorldCharacterAgency:ExGetDlcModelIdByCharacterData(characterData)
     local fashionId = characterData.FashionId
-    
-    if fashionId <= 0 then
-        local characterId = characterData.Id
 
-        fashionId = XMVCA.XBigWorldCharacter:GetFashionId(characterId)
+    if fashionId <= 0 then --小于0时，战斗侧做了兼容
+        --local characterId = characterData.Id
+        --fashionId = XMVCA.XBigWorldCharacter:GetFashionId(characterId)
+        return nil
     end
 
     return XMVCA.XBigWorldCharacter:GetModelIdByFashionId(fashionId)
@@ -249,7 +268,12 @@ end
 
 function XBigWorldCharacterAgency:GetAnimExpressionSOGroupId(fashionId)
     local template = self._Model:GetDlcFashionTemplate(fashionId)
-    return  template and template.AnimExpressionSOGroupId or 0
+    return template and template.AnimExpressionSOGroupId or 0
+end
+
+function XBigWorldCharacterAgency:GetUIModelAnimExpressionSOGroupId(fashionId)
+    local template = self._Model:GetDlcFashionTemplate(fashionId)
+    return template and template.UIModelAnimExpressionSOGroupId or 0
 end
 
 --endregion 角色配置
@@ -288,12 +312,12 @@ function XBigWorldCharacterAgency:GetCurrentTeam()
         end
         team:Sync()
     end
-    
+
     return team
 end
 
 --- 通用编队id
----@param index number 通用编队下标  
+---@param index number 通用编队下标
 ---@return number
 --------------------------
 function XBigWorldCharacterAgency:GetCommonTeamId(index)
@@ -325,7 +349,7 @@ function XBigWorldCharacterAgency:SortTeamList(teamId, isContainCommandant)
         end
         return a > b
     end)
-    
+
     return list
 end
 
@@ -347,7 +371,7 @@ function XBigWorldCharacterAgency:UpdateTeam(currentTeamId, teamData)
             local teamId = data.TeamId
             local team = self:GetDlcTeam(teamId)
             team:UpdateTeam(data.CharacterList)
-            
+
             team:Sync()
         end
     end
@@ -363,7 +387,7 @@ function XBigWorldCharacterAgency:MarkCurrentTeamNeedSync(characterId)
 end
 
 --- 设置登场队伍
----@param teamId number 队伍Id 
+---@param teamId number 队伍Id
 --------------------------
 function XBigWorldCharacterAgency:RequestSetFightingTeam(teamId, cb)
     XNetwork.Call("BigWorldTeamIndexChangeRequest", { CurrentTeamId = teamId }, function(res)
@@ -380,7 +404,7 @@ function XBigWorldCharacterAgency:RequestSetFightingTeam(teamId, cb)
 end
 
 --- 保存队伍数据
----@param teamId number 队伍Id  
+---@param teamId number 队伍Id
 --------------------------
 function XBigWorldCharacterAgency:RequestUpdateTeam(teamId, cb)
     local team = self:GetDlcTeam(teamId)
@@ -403,7 +427,7 @@ function XBigWorldCharacterAgency:RequestUpdateTeam(teamId, cb)
         team:Restore()
         return
     end
-    
+
     local teamData = {
         TeamId = teamId,
         CharacterList = team:ToServerEntityIds()
@@ -419,7 +443,7 @@ function XBigWorldCharacterAgency:RequestUpdateTeam(teamId, cb)
         team:Sync()
 
         if cb then cb() end
-        
+
         XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_ROLE_TEAM_STATUS_REFRESH)
     end)
 end
@@ -452,8 +476,8 @@ function XBigWorldCharacterAgency:CheckFashionUnlock(characterId, fashionId)
     if t.DefaultFashionId == fashionId then
         return true
     end
-    return XDataCenter.FashionManager.IsFashionInTime 
-            and XDataCenter.FashionManager.CheckHasFashion(fashionId)
+    return XDataCenter.FashionManager.IsFashionInTime
+        and XDataCenter.FashionManager.CheckHasFashion(fashionId)
 end
 
 function XBigWorldCharacterAgency:CheckHeadUsing(characterId, headFashionId, headFashionType)
@@ -470,15 +494,50 @@ function XBigWorldCharacterAgency:CheckHeadUnlock(characterId, headFashionId, he
     end
     if headFashionType == XFashionConfigs.HeadPortraitType.Default then
         return true
-
     elseif headFashionType == XFashionConfigs.HeadPortraitType.Liberation then
         if not XTool.IsNumberValid(characterId) then
             return false
         end
-        return  XDataCenter.ExhibitionManager.IsAchieveLiberation(characterId, XEnumConst.CHARACTER.GrowUpLevel.Higher)
+        return XDataCenter.ExhibitionManager.IsAchieveLiberation(characterId, XEnumConst.CHARACTER.GrowUpLevel.Higher)
+    end
+
+    return true
+end
+
+function XBigWorldCharacterAgency:CheckFashionHasColor(fashionId)
+    local colorIds = self._Model:GetFashionColorIds(fashionId)
+
+    if not XTool.IsTableEmpty(colorIds) then
+        for _, colorId in pairs(colorIds) do
+            if XMVCA.XFashion:IsFashionColorHas(fashionId, colorId) then
+                return true
+            end
+        end
     end
     
-    return true
+    return false
+end
+
+function XBigWorldCharacterAgency:GetCharacterIdByFashionId(fashionId)
+    --- 兼容指挥官情况
+    local templete = XFashionConfigs.GetAllConfigs(XFashionConfigs.TableKey.Fashion)[fashionId]
+
+    return templete and templete.CharacterId or 0
+end
+
+function XBigWorldCharacterAgency:GetFashionDefaultColor(characterId, fashionId)
+    local character = self._Model:GetDlcCharacter(characterId)
+
+    if character then
+        local currentFashionId = character:GetFashionId()
+        local colorId = character:GetFashionColorId()
+        
+        if currentFashionId == fashionId and XTool.IsNumberValid(colorId) then
+            return colorId
+        end
+    end
+
+    return 0
 end
 
 function XBigWorldCharacterAgency:GetUnlockFashionList(characterId)
@@ -495,23 +554,21 @@ function XBigWorldCharacterAgency:GetUnlockFashionList(characterId)
     for _, fashionId in pairs(fashionIds) do
         local config = self._Model:GetDlcFashionTemplate(fashionId, true)
         --时间内 & 解锁 & 必须配置
-        if config and XDataCenter.FashionManager.IsFashionInTime(fashionId) 
-                and XDataCenter.FashionManager.CheckHasFashion(fashionId) then
-
-            if  defaultFashionId == fashionId then
+        if config and XDataCenter.FashionManager.IsFashionInTime(fashionId)
+            and XDataCenter.FashionManager.CheckHasFashion(fashionId) then
+            if defaultFashionId == fashionId then
                 containDefault = true
             end
             list[#list + 1] = fashionId
         end
     end
-    
+
     if not containDefault and defaultFashionId and defaultFashionId > 0 then
         list[#list + 1] = defaultFashionId
     end
 
     local useId = self:GetFashionId(characterId)
     if #list > 1 then
-        
         tableSort(list, function(a, b)
             local isUsaA = a == useId
             local isUsaB = b == useId
@@ -520,14 +577,14 @@ function XBigWorldCharacterAgency:GetUnlockFashionList(characterId)
             end
             local pA = XDataCenter.FashionManager.GetFashionPriority(a)
             local pB = XDataCenter.FashionManager.GetFashionPriority(b)
-            
+
             if pA ~= pB then
                 return pA > pB
             end
             return a < b
         end)
     end
-    
+
     return list
 end
 
@@ -543,7 +600,7 @@ function XBigWorldCharacterAgency:GetUnlockHeadList(characterId)
             }
         end
     end
-    
+
     if #list > 1 then
         tableSort(list, function(a, b)
             local isUsaA = self:CheckHeadUsing(characterId, a.HeadFashionId, a.HeadFashionType)
@@ -560,21 +617,79 @@ function XBigWorldCharacterAgency:GetUnlockHeadList(characterId)
             return a.HeadFashionId < b.HeadFashionId
         end)
     end
-   
-    
+
+
     return list
 end
 
-function XBigWorldCharacterAgency:RequestSetFashion(characterId, fashionId, cb)
-    XNetwork.Call("BigWorldCharacterFashionUseRequest", {FashionId = fashionId}, function(res)
+function XBigWorldCharacterAgency:GetFashionColor(fashionId, colorId)
+    local color = nil
+
+    if XTool.IsNumberValid(colorId) then
+        color = self._Model:GetFashionColorColor(colorId)
+    else
+        local template = self._Model:GetDlcFashionTemplate(fashionId)
+
+        if template then
+            color = template.DefaultColor
+        end
+    end
+
+    if string.IsNilOrEmpty(color) then
+        color = "FFFFFF"
+    end
+
+    return XUiHelper.Hexcolor2Color(color)
+end
+
+
+function XBigWorldCharacterAgency:GetUnlockFashionColorList(fashionId, isIncludeDefault)
+    local colorIds = self._Model:GetFashionColorIds(fashionId)
+
+    if not XTool.IsTableEmpty(colorIds) then
+        local result = {}
+
+        for _, colorId in pairs(colorIds) do
+            if XMVCA.XFashion:IsFashionColorHas(fashionId, colorId) then
+                table.insert(result, colorId)
+            end
+        end
+
+        tableSort(result, function(colorA, colorB)
+            local priorityA = self._Model:GetFashionColorPriority(colorA)
+            local priorityB = self._Model:GetFashionColorPriority(colorB)
+
+            if priorityA ~= priorityB then
+                return priorityA < priorityB
+            end
+
+            return colorA < colorB
+        end)
+
+        if not XTool.IsTableEmpty(result) and isIncludeDefault then
+            table.insert(result, 1, 0)
+        end
+
+        return result
+    end
+
+    return nil
+end
+
+function XBigWorldCharacterAgency:RequestSetFashion(characterId, fashionId, fashionColorId, cb)
+    XNetwork.Call("BigWorldCharacterFashionUseRequest", {
+        FashionId = fashionId,
+        FashionColorId = fashionColorId or 0,
+    }, function(res)
         if res.Code ~= XCode.Success then
             XUiManager.TipCode(res.Code)
             return
         end
         self:MarkCurrentTeamNeedSync(characterId)
-        
+
         local char = self._Model:GetDlcCharacter(characterId)
         char:SetFashionId(fashionId)
+        char:SetFashionColorId(fashionColorId)
 
         if cb then cb() end
     end)
@@ -593,14 +708,14 @@ function XBigWorldCharacterAgency:RequestSetHeadInfo(characterId, headFashionId,
             XUiManager.TipCode(res.Code)
             return
         end
-        
+
         local char = self._Model:GetDlcCharacter(characterId)
         char:SetHeadInfo(headFashionId, headFashionType)
         if cb then cb() end
-        
+
         local teamId = self:GetCurrentTeamId()
         local team = self:GetDlcTeam(teamId)
-        
+
         if team:HasSameEntity(characterId) then
             --同步战斗
             XMVCA.X3CProxy:Send(CsX3CCommand.CMD_CHANGE_PLAYER_NPC_HEAD_ICON, {
@@ -634,4 +749,4 @@ end
 
 -- endregion
 
-return XBigWorldCharacterAgency
+return XBigWorldCharacterAgency

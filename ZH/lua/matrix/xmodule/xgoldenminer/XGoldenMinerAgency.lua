@@ -1,18 +1,27 @@
-local XFubenActivityAgency = require("XModule/XBase/XFubenActivityAgency")
-
----@class XGoldenMinerAgency : XFubenActivityAgency
----@field private _Model XGoldenMinerModel
-local XGoldenMinerAgency = XClass(XFubenActivityAgency, "XGoldenMinerAgency")
-
-function XGoldenMinerAgency:OnInit()
-    if XMain.IsEditorDebug then
-        self.IsDebug = XSaveTool.GetData('GoldenMinerDebug')
-        self.LogEnableDict = {}
-    end
-    self:RegisterActivityAgency()
-    self.EnumConst = require('XModule/XGoldenMiner/XGoldenMinerEnumConst')
-    self.EventId = require('XModule/XGoldenMiner/XGoldenMinerEventId')
-end
+local XFubenActivityAgency = require("XModule/XBase/XFubenActivityAgency")
+
+---@class XGoldenMinerAgency : XFubenActivityAgency
+---@field private _Model XGoldenMinerModel
+local XGoldenMinerAgency = XClass(XFubenActivityAgency, "XGoldenMinerAgency")
+local METHOD_NAME = {
+    GoldenMinerEnterGameRequest = "GoldenMinerEnterGameRequest",
+    GoldenMinerExitGameRequest = "GoldenMinerExitGameRequest",
+    GoldenMinerEnterStageRequest = "GoldenMinerEnterStageRequest",
+}
+local CSTimeManager = CS.XTimerManager
+local TicksPerSecond = 10000000
+local CDTime = 0.2
+
+function XGoldenMinerAgency:OnInit()
+    if XMain.IsEditorDebug then
+        self.IsDebug = XSaveTool.GetData('GoldenMinerDebug')
+        self.LogEnableDict = {}
+    end
+    self._ReqCdDir = {}
+    self:RegisterActivityAgency()
+    self.EnumConst = require('XModule/XGoldenMiner/XGoldenMinerEnumConst')
+    self.EventId = require('XModule/XGoldenMiner/XGoldenMinerEventId')
+end
 
 function XGoldenMinerAgency:InitRpc()
     --实现服务器事件注册
@@ -176,18 +185,191 @@ end
 --endregion
 
 --region Activity
-function XGoldenMinerAgency:GetCurActivityHexMapStages(index)
-    return self._Model:GetCurActivityHexMapStages(index)
-end
-
-function XGoldenMinerAgency:CheckIsOpen()
-    return self._Model:CheckIsOpen()
-end
---endregion
-
---region RedPoint
-function XGoldenMinerAgency:CheckHaveTaskCanRecv()
-    return self._Model:CheckHaveTaskCanRecv()
+function XGoldenMinerAgency:GetCurActivityHexMapStages(index)
+    return self._Model:GetCurActivityHexMapStages(index)
+end
+
+function XGoldenMinerAgency:CheckIsOpen()
+    return self._Model:CheckIsOpen()
+end
+
+function XGoldenMinerAgency:_CheckIsRecordRequestCD(request, time)
+    time = time or CDTime
+    if self._ReqCdDir[request] then
+        if CSTimeManager.Ticks - self._ReqCdDir[request] < (time * TicksPerSecond) then
+            return true
+        end
+    end
+    self._ReqCdDir[request] = CSTimeManager.Ticks
+    return false
+end
+
+function XGoldenMinerAgency:GetUseCharacterId()
+    local characterId = self._Model:GetMineDb():GetCurPlayCharacterId()
+    if XTool.IsNumberValid(characterId) and self:IsCharacterUnLock(characterId) then
+        return characterId
+    end
+
+    characterId = self._Model:GetCacheData("_CurCharacterId")
+    if XTool.IsNumberValid(characterId) and self:IsCharacterUnLock(characterId) then
+        return characterId
+    end
+
+    local characterConfig = self._Model:GetCharacterCfgList()
+    for _, cfg in pairs(characterConfig) do
+        if self:IsCharacterUnLock(cfg.Id) then
+            characterId = cfg.Id
+            break
+        end
+    end
+
+    self:CatchCurCharacterId(characterId)
+    return characterId
+end
+
+function XGoldenMinerAgency:RequestGoldenMinerEnterGame(useCharacter, cb)
+    if self:_CheckIsRecordRequestCD(METHOD_NAME.GoldenMinerEnterGameRequest) then
+        return
+    end
+
+    XNetwork.CallWithAutoHandleErrorCode(METHOD_NAME.GoldenMinerEnterGameRequest, {
+        UseCharacter = useCharacter,
+    }, function(res)
+        self:_SetCharacterUsed(useCharacter)
+        self._Model:GetMineDb():UpdateData(res.MinerDataDb)
+        if cb then
+            cb()
+        end
+    end)
+end
+
+function XGoldenMinerAgency:OpenGameUi()
+    local dataDb = self:GetMainDb()
+    local curStageId = dataDb:GetCurStageId()
+    local curState = dataDb:GetCurrentState()
+
+    if curState == self.EnumConst.GameState.CommonHexSelect or curState == self.EnumConst.GameState.CoreHexSelect then
+        XLuaUiManager.PopThenOpen("UiGoldenMinerHexSelect")
+        return
+    end
+
+    self:RequestGoldenMinerEnterStage(curStageId, function()
+        XLuaUiManager.PopThenOpen("UiGoldenMinerBattle")
+    end)
+end
+
+function XGoldenMinerAgency:ContinueGame()
+    local dataDb = self:GetMainDb()
+
+    dataDb:CoverItemColumns()
+    if XTool.IsNumberValid(dataDb:GetCurrentPlayStage()) then
+        XLuaUiManager.PopThenOpen("UiGoldenMinerBattle")
+        return
+    end
+
+    self:OpenGameUi()
+end
+
+function XGoldenMinerAgency:RequestGoldenMinerExitGame(stageId, cb, settlementInfo, curMapScore, beforeScore)
+    if self:_CheckIsRecordRequestCD(METHOD_NAME.GoldenMinerExitGameRequest) then
+        return
+    end
+
+    local settlementInfoReq
+    if not settlementInfo then
+        settlementInfoReq = {
+            Scores = curMapScore,
+            LaunchingClawCount = 0,
+            CostTime = 0,
+            MoveCount = 0,
+            SettlementItems = {},
+            GrabDataInfos = {},
+            UpdateTaskInfo = {},
+            SlotMachineCount = 0,
+        }
+    else
+        settlementInfoReq = settlementInfo:GetReqServerData()
+    end
+
+    local score = curMapScore
+    XNetwork.Call(METHOD_NAME.GoldenMinerExitGameRequest, {
+        StageId = stageId,
+        SettlementInfo = settlementInfoReq,
+    }, function(res)
+        if res.Code ~= XCode.Success and res.Code ~= XCode.GoldenMinerSaveRankError then
+            XUiManager.TipCode(res.Code)
+            score = beforeScore
+        end
+
+        if res.Code == XCode.GoldenMinerSaveRankError then
+            XUiManager.TipCode(res.Code)
+        end
+
+        local dataDb = self._Model:GetMineDb()
+        dataDb:UpdateCurClearData(score)
+        dataDb:ResetData()
+        dataDb:UpdateTotalMaxScores(res.TotalMaxScores)
+        dataDb:UpdateTotalMaxScoresHexes(res.TotalMaxScoresHexes)
+        dataDb:UpdateTotalMaxScoresCharacter(res.CharacterId)
+        if cb then
+            cb()
+        end
+    end)
+end
+
+function XGoldenMinerAgency:RequestGoldenMinerEnterStage(stageId, cb)
+    if self:_CheckIsRecordRequestCD(METHOD_NAME.GoldenMinerEnterStageRequest) then
+        return
+    end
+
+    XNetwork.CallWithAutoHandleErrorCode(METHOD_NAME.GoldenMinerEnterStageRequest, {
+        StageId = stageId,
+    }, function()
+        self._Model:GetMineDb():BackupsItemColumns()
+        if cb then
+            cb()
+        end
+    end)
+end
+
+function XGoldenMinerAgency:CheckIsHaveGameStage()
+    local dataDb = self._Model:GetMineDb()
+    return dataDb and dataDb:CheckIsInStage() or false
+end
+
+function XGoldenMinerAgency:GetStageScores()
+    local dataDb = self._Model:GetMineDb()
+    return dataDb and dataDb:GetStageScores() or 0
+end
+
+function XGoldenMinerAgency:GetMainDb()
+    return self._Model:GetMineDb()
+end
+
+function XGoldenMinerAgency:CatchCurCharacterId(characterId)
+    self._Model:SetCacheData("_CurCharacterId", characterId)
+end
+
+function XGoldenMinerAgency:IsCharacterUsed(characterId)
+    if not self:IsCharacterUnLock(characterId) then
+        return true
+    end
+
+    return self._Model:GetCacheData("IsCharacterUsed" .. characterId)
+end
+
+function XGoldenMinerAgency:_SetCharacterUsed(characterId)
+    if self:IsCharacterUsed(characterId) then
+        return
+    end
+
+    self._Model:SetCacheData("IsCharacterUsed" .. characterId, true)
+end
+--endregion
+
+--region RedPoint
+function XGoldenMinerAgency:CheckHaveTaskCanRecv()
+    return self._Model:CheckHaveTaskCanRecv()
 end
 
 ---角色是否解锁

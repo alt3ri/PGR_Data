@@ -61,4 +61,14 @@ function XPassportAgency:GetPassportMaxLevel()
     return self._Model:GetPassportMaxLevel()
 end
 
+function XPassportAgency:HasAnyPassportTaskExReward()
+    local configs = self._Model:GetAllPassportTimeLimitTaskRewardConfigs()
+    for _, config in pairs(configs) do
+        if XFunctionManager.CheckInTimeByTimeId(config.ExTimeId) then
+            return true
+        end
+    end
+    return false
+end
+
 return XPassportAgency

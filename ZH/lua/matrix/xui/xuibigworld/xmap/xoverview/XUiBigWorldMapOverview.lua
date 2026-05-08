@@ -1,41 +1,46 @@
+local XUiBigWorldMapOverviewPanel = require("XUi/XUiBigWorld/XMap/XOverview/XUiBigWorldMapOverviewPanel")
 
----@class XUiBigWorldMapOverview : XLuaUi
+---@class XUiBigWorldMapOverview : XBigWorldUi
 ---@field MapName UnityEngine.UI.Text
 ---@field BtnClose XUiComponent.XUiButtonExt
----@field BtnDetailClose XUiComponent.XUiButtonExt
----@field BtnSkyGarden4001 XUiComponent.XUiButtonExt
----@field BtnSkyGarden5001 XUiComponent.XUiButtonExt
----@field PanelMapBtn XUiButtonGroup
+---@field BtnArea XUiComponent.XUiButtonExt
+---@field RImgBgCurrent UnityEngine.RectTransform
+---@field RImgBgNext UnityEngine.RectTransform
+---@field PanelCurrent UnityEngine.RectTransform
+---@field PanelNext UnityEngine.RectTransform
+---@field PanelMap UnityEngine.RectTransform
+---@field PanelMapBg UnityEngine.RectTransform
+---@field PanelAreaChangeTab XUiButtonGroup
 ---@field _Control XBigWorldMapControl
 local XUiBigWorldMapOverview = XMVCA.XBigWorldUI:Register(nil, "UiBigWorldMapOverview")
 
 
 function XUiBigWorldMapOverview:OnAwake()
     self._CurrentLevelId = 0
-    self._MapButtons = {}
-    self._MapLevelIdIndexMap = {}
+    self._CurrentOverviewIndex = 0
 
-    self:_Init()
+    self._AreaButtons = {}
+
+    self._OverviewIndexMap = {}
+
+    self._LockTips = {}
+
+    ---@type table<number, XUiBigWorldMapOverviewPanel>
+    self._PanelMap = {}
+
+    ---@type XUiBigWorldMapOverviewPanel
+    self._CurrentPanel = false
+
+    self:_InitUi()
     self:_RegisterButtonClicks()
 end
 
-function XUiBigWorldMapOverview:OnStart(currentLevelId)
-    local mapLinkLevelId = self._Control:GetMapLinkLevelIdByLevelId(currentLevelId)
-
-    if XTool.IsNumberValid(mapLinkLevelId) then
-        currentLevelId = mapLinkLevelId
-    end
-
-    local levelId = XMVCA.XBigWorldGamePlay:GetCurrentLevelId()
-    if XMVCA.XBigWorldMap:CheckLevelHasMap(levelId) then
-        self._CurrentLevelId = levelId
-    else
-        self._CurrentLevelId = XMVCA.XBigWorldMap:GetMapLinkLevelIdByLevelId(levelId)
-    end
+function XUiBigWorldMapOverview:OnStart()
+    self:_InitLevelId()
+    self:_Init()
 end
 
 function XUiBigWorldMapOverview:OnEnable()
-    self:_Init()
     self:_RegisterListeners()
     self:_RegisterSchedules()
     self:_RegisterRedPointEvents()
@@ -49,20 +54,62 @@ end
 function XUiBigWorldMapOverview:OnDestroy()
 end
 
-function XUiBigWorldMapOverview:OnPanelMapBtnClick(index)
-    local levelId = self._MapLevelIdIndexMap[index]
-    
-    if XTool.IsNumberValid(levelId) then
-        XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_SWITCH, levelId)
+function XUiBigWorldMapOverview:OnPanelAreaChangeTabClick(index)
+    if index == self._CurrentOverviewIndex then
+        return
     end
 
-    self:Close()
+    local nextId = self._OverviewIndexMap[index]
+
+    if self._LockTips[nextId] then
+        XMVCA.XBigWorldUI:TipMsg(self._LockTips[nextId])
+        return
+    end
+
+    local currentId = self._OverviewIndexMap[self._CurrentOverviewIndex]
+    local currentPosX = self._Control:GetOverviewPosX(currentId)
+    local currentPosY = self._Control:GetOverviewPosY(currentId)
+    local nextPosX = self._Control:GetOverviewPosX(nextId)
+    local nextPosY = self._Control:GetOverviewPosY(nextId)
+    local offsetX = nextPosX - currentPosX
+    local offsetY = nextPosY - currentPosY
+    local animationName = nil
+    local nextPanel = self._PanelMap[nextId]
+
+    if math.abs(offsetX) > math.abs(offsetY) then
+        if offsetX > 0 then
+            animationName = "QiehuanLtoR"
+        else
+            animationName = "QiehuanRtoL"
+        end
+    elseif math.abs(offsetX) < math.abs(offsetY) then
+        if offsetY > 0 then
+            animationName = "QiehuanTtoD"
+        else
+            animationName = "QiehuanDtoT"
+        end
+    else
+        animationName = "Qiehuan05"
+    end
+
+    nextPanel:SetParent(self.PanelNext)
+    nextPanel:SetBackgroundParent(self.RImgBgCurrent)
+    nextPanel:PlayEnableAnimation(self.PanelCurrent)
+    self._CurrentPanel:SetBackgroundParent(self.RImgBgNext)
+    self._CurrentPanel:PlayDisableAnimation(self.PanelMap, self.PanelMapBg)
+
+    self:PlayAnimationWithMask(animationName, function()
+        self:PlayAnimation("Loop")
+    end, nil, CS.UnityEngine.Playables.DirectorWrapMode.None)
+    self:PlayAnimation("QiehuanBG")
+
+    self._CurrentPanel = nextPanel
+    self._CurrentOverviewIndex = index
 end
 
 function XUiBigWorldMapOverview:_RegisterButtonClicks()
     --在此处注册按钮事件
     self.BtnClose:AddEventListener(Handler(self, self.Close))
-    self.BtnDetailClose:AddEventListener(Handler(self, self.Close))
 end
 
 function XUiBigWorldMapOverview:_RegisterListeners()
@@ -86,29 +133,103 @@ function XUiBigWorldMapOverview:_RegisterRedPointEvents()
     -- self:AddRedPointEvent(...)
 end
 
+function XUiBigWorldMapOverview:_InitLevelId()
+    local currentLevelId = XMVCA.XBigWorldGamePlay:GetCurrentLevelId()
+
+    if XMVCA.XBigWorldMap:CheckLevelHasMap(currentLevelId) then
+        self._CurrentLevelId = currentLevelId
+    else
+        self._CurrentLevelId = XMVCA.XBigWorldMap:GetMapLinkLevelIdByLevelId(currentLevelId)
+    end
+end
+
+function XUiBigWorldMapOverview:_InitUi()
+    self.BtnArea.gameObject:SetActiveEx(false)
+end
+
 function XUiBigWorldMapOverview:_Init()
-    local mapConfigs = self._Control:GetAllMapConfigs()
+    local index = 1
+    local overviewMapConfigs = self._Control:GetOverviewMapConfigs()
+    local currentOverviewId = self._Control:GetOverviewIdByLevelId(self._CurrentLevelId)
 
-    self._MapButtons = {}
-    self._MapLevelIdIndexMap = {}
-    if not XTool.IsTableEmpty(mapConfigs) then
-        local index = 1
+    self._OverviewIndexMap = {}
+    self._CurrentOverviewIndex = 1
+    if not XTool.IsTableEmpty(overviewMapConfigs) then
+        local buttons = {}
 
-        for levelId, mapConfig in pairs(mapConfigs) do
-            local mapButton = self["BtnSkyGarden" .. tostring(levelId)]
+        for overviewId, mapConfigs in pairs(overviewMapConfigs) do
+            local btn = self._AreaButtons[index]
+            local isUnlock = false
+            local lockTip = nil
 
-            if mapButton then
-                self._MapLevelIdIndexMap[index] = levelId
-                mapButton:SetNameByGroup(0, mapConfig.MapName)
-                mapButton:ShowTag(levelId == self._CurrentLevelId)
+            if not XTool.IsTableEmpty(mapConfigs) then
+                for _, mapConfig in pairs(mapConfigs) do
+                    local conditionId = mapConfig.ConditionId
 
-                table.insert(self._MapButtons, mapButton)
+                    if XTool.IsNumberValid(conditionId) then
+                        local isSuccess, tip = XMVCA.XBigWorldService:CheckCondition(conditionId)
 
-                index = index + 1
+                        isUnlock = isSuccess
+                        if not isSuccess and not lockTip then
+                            lockTip = tip or ""
+                        end
+                    else
+                        isUnlock = true
+                        break
+                    end
+                end
             end
+
+            if isUnlock then
+                local prefab = self.PanelMap:LoadPrefabEx(self._Control:GetOverviewPrefab(overviewId))
+                local background = self.PanelMapBg:LoadPrefabEx(self._Control:GetOverviewBackground(overviewId))
+
+                prefab.gameObject:SetActiveEx(true)
+                background.gameObject:SetActiveEx(true)
+
+                ---@type XUiBigWorldMapOverviewPanel
+                local panel = XUiBigWorldMapOverviewPanel.New(prefab, self, self._CurrentLevelId)
+
+                self._PanelMap[overviewId] = panel
+                panel:Refresh(overviewId, mapConfigs, background)
+                if overviewId == currentOverviewId then
+                    self._CurrentPanel = panel
+                    self._CurrentPanel:PlayEnableAnimation(self.PanelCurrent)
+                    self._CurrentPanel:SetBackgroundParent(self.RImgBgCurrent)
+                    self:PlayAnimation("QiehuanBG")
+                    self._CurrentOverviewIndex = index
+                else
+                    panel:ShowBackground(false)
+                    panel:Close()
+                end
+            else
+                self._LockTips[overviewId] = lockTip
+            end
+
+            if not btn then
+                btn = XUiHelper.Instantiate(self.BtnArea, self.PanelAreaChangeTab.transform)
+
+                self._AreaButtons[index] = btn
+            end
+
+            self._OverviewIndexMap[index] = overviewId
+            table.insert(buttons, btn)
+            btn.gameObject:SetActiveEx(true)
+            btn:SetNameByGroup(0, self._Control:GetOverviewName(overviewId))
+            btn:SetRawImage(self._Control:GetOverviewIcon(overviewId))
+            btn:SetDisable(not isUnlock)
+            index = index + 1
         end
 
-        self.PanelMapBtn:Init(self._MapButtons, Handler(self, self.OnPanelMapBtnClick))
+        self.PanelAreaChangeTab.gameObject:SetActiveEx(true)
+        self.PanelAreaChangeTab:Init(buttons, Handler(self, self.OnPanelAreaChangeTabClick))
+        self.PanelAreaChangeTab:SelectIndex(self._CurrentOverviewIndex)
+    else
+        self.PanelAreaChangeTab.gameObject:SetActiveEx(false)
+    end
+
+    for i = index, #self._AreaButtons do
+        self._AreaButtons[i].gameObject:SetActiveEx(false)
     end
 end
 

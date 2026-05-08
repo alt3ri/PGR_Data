@@ -44,6 +44,7 @@ XModelManager.MODEL_UINAME = {
     XUiFashionSuitDetail = "UiFashionSuitDetail",
     XUiNewPlayerTask = "UiNewPlayerTask",
     XUiBossSingle = "UiPanelBossDetail",
+    XUiBossSingleV4P5 = "UiPanelBossDetailV4P5",
     XUiOnlineBoss = "UiOnlineBoss",
     XUiDormCharacterDetail = "UiDormCharacterDetail",
     XUiFurnitureDetail = "UiDormFurnitureDetail",
@@ -850,7 +851,7 @@ function XModelManager.PlayWeaponShowing(target, modelId, uiName, go, param)
 
     if animController and uiName then
         animator = target:GetComponent("Animator")
-        animator.runtimeAnimatorController = CS.LoadHelper.LoadUiController(animController, uiName)
+        animator.runtimeAnimatorController = CS.LoadHelper.LoadUiController(animController, animator.gameObject)
 
         if animator.runtimeAnimatorController and roleModelId then
             local params = XMVCA.XEquip:GetEquipAnimParams(roleModelId)

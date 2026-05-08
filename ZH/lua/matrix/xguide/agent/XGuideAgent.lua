@@ -134,10 +134,10 @@ function XGuideAgent:IsUiActive(uiName, panel)
 end
 
 --聚焦UI
-function XGuideAgent:FocusOn(uiName, panel, eulerAngles, passEvent, sizeDelta, offset)
+function XGuideAgent:FocusOn(uiName, panel, eulerAngles, passEvent, sizeDelta, offset, focusStyle, bubbleIndex, bubbleTextId, bubblePosOffset, imgIconId)
     local target = self:FindActiveTransformInUi(uiName, panel)
     local uiGuide = self:GetUiGuide()
-    uiGuide:FocusOnPanel(target, eulerAngles, passEvent, sizeDelta, offset)
+    uiGuide:FocusOnPanel(target, eulerAngles, passEvent, sizeDelta, offset, nil, focusStyle, bubbleIndex, bubbleTextId, bubblePosOffset, imgIconId)
 end
 
 function XGuideAgent:FocusOn3D(sceneRoot, camera, panel, eulerAngles, passEvent, offset, sizeDelta)
@@ -148,7 +148,7 @@ function XGuideAgent:FocusOn3D(sceneRoot, camera, panel, eulerAngles, passEvent,
     uiGuide:FocusOn3DPanel(cam, tar, offset, eulerAngles, passEvent, sizeDelta)
 end
 
-function XGuideAgent:FocusOnChild(uiName, parentPath, index, eulerAngles, passEvent, sizeDelta, offset, childName, focusStyle, bubbleIndex, bubbleTextId, bubblePosOffset)
+function XGuideAgent:FocusOnChild(uiName, parentPath, index, eulerAngles, passEvent, sizeDelta, offset, childName, focusStyle, bubbleIndex, bubbleTextId, bubblePosOffset, imgIconId)
     local parent = self:FindActiveTransformInUi(uiName, parentPath)
     if not parent then
         return
@@ -172,7 +172,7 @@ function XGuideAgent:FocusOnChild(uiName, parentPath, index, eulerAngles, passEv
         end
     end
     local uiGuide = self:GetUiGuide()
-    uiGuide:FocusOnPanel(target, eulerAngles, passEvent, sizeDelta, offset, nil, focusStyle, bubbleIndex, bubbleTextId, bubblePosOffset)
+    uiGuide:FocusOnPanel(target, eulerAngles, passEvent, sizeDelta, offset, nil, focusStyle, bubbleIndex, bubbleTextId, bubblePosOffset, imgIconId)
 end
 
 --索引动态列表
@@ -421,6 +421,67 @@ function XGuideAgent:CheckAnimIsPlaying(uiName, animName)
         return false
     end
     return component.IsPlaying
+end
+
+--- 从From拖拽到To
+---@param uiName string
+---@param fromNode string
+---@param fromChildIndex number
+---@param fromOffset UnityEngine.Vector2
+---@param toNode string
+---@param toChildIndex number
+---@param toOffset UnityEngine.Vector2
+---@param passType number
+--------------------------
+function XGuideAgent:DragFromTo(uiName, fromNode, fromChildIndex, fromOffset, toNode, toChildIndex, toOffset, passType)
+    local ui = self:GetUi(uiName)
+    if not ui then
+        return false
+    end
+    local fromTransform = ui.Transform:FindActiveTransformWithSplit(fromNode)
+    if not fromTransform then
+        XLog.Error("未找到已激活的起始节点: " .. fromNode)
+        return false
+    end
+
+    local toTransform = ui.Transform:FindActiveTransformWithSplit(toNode)
+    if not toTransform then
+        XLog.Error("未找到已激活的目标节点: " .. toNode)
+        return false
+    end
+
+    if fromChildIndex then
+        local temp = fromTransform:GetChild(fromChildIndex - 1)
+        if not temp then
+            XLog.Error(string.format("起始不存在第%s个子节点", fromChildIndex))
+        else
+            fromTransform = temp
+        end
+    end
+
+    if toChildIndex then
+        local temp = toTransform:GetChild(toChildIndex - 1)
+        if not temp then
+            XLog.Error(string.format("目标节点不存在第%s个子节点", toChildIndex))
+        else
+            toTransform = temp
+        end
+    end
+    if not fromOffset then
+        fromOffset = Vector2.zero
+    end
+    if not toOffset then
+        toOffset = Vector2.zero
+    end
+    self.UiGuide:ShowDragFromToPanel(fromTransform, fromOffset, toTransform, toOffset, passType)
+    return true
+end
+
+function XGuideAgent:ResetDragPanel()
+    if not self.UiGuide then
+        return
+    end
+    self.UiGuide:ResetDragPanel()
 end
 
 -- 节点记录埋点

@@ -1,5 +1,6 @@
 local XLevelNpcStateTransition = require("Common/StateMachine/Transition/XLevelNpcStateTransition")
 
+---v空花1.5期 其他状态到寻路状态-状态转移方程
 ---@class XOther2FindPathTransition: XLevelNpcStateTransition 其他状态到寻路状态
 ---@field _stayTime number 持续时长
 ---@field _path Vector3[] 寻路参数：寻路路径
@@ -47,7 +48,7 @@ end
 
 ---@overload
 function XOther2FindPathTransition:OnTransitionAfter()
-    if self._toState then
+    if self._toState and self._path then
         self._toState:SetPath(self._path, self._checkDistance)
         self._toState:StartMove()
     end

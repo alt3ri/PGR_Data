@@ -2349,6 +2349,11 @@ XFunctionalSkipManagerCreator = function()
         return XMVCA.XTheatre5:ExOnSkip(skipData)
     end
 
+    -- 肉鸽6
+    function XFunctionalSkipManager:SkipToTheatre6(skipData)
+        return XMVCA.XTheatre6:ExOnSkip(skipData)
+    end
+
     --跳转日志上传
     function XFunctionalSkipManager.SkipToLogUpload()
         XMVCA.XLogUpload:OpenLogUploadUi()
@@ -2380,7 +2385,7 @@ XFunctionalSkipManagerCreator = function()
             enterOperateType = params[3]
             enterOperateParam = params[4]
         end
-        XMVCA.XBigWorldGamePlay:EnterGame(worldId, levelId, enterOperateType, enterOperateParam)
+        XMVCA.XBigWorldGamePlay:EnterWorld(worldId, levelId, enterOperateType, enterOperateParam)
     end
     
     -- 数织小游戏

@@ -23,6 +23,7 @@ local TABLE_GACHA_SHOW_REWARD_CONFIG = "Client/Gacha/GachaShowRewardConfig.tab"
 local TABLE_GACHA_CLIENT_CONFIG = "Client/Gacha/GachaClientConfig.tab"
 local TABLE_GACHA_ITEM_EXCHANGE = "Share/Gacha/GachaItemExchange.tab"
 local TABLE_GACHA_COURSE_REWARD = "Share/Gacha/GachaCourseReward.tab"
+local TABLE_GACHA_SCENE_INTERACT = "Client/Gacha/GachaSceneInteract.tab"
 
 local Gachas = {}
 local GachaRewards = {}
@@ -32,6 +33,7 @@ local GachaItemExchange = {}
 local GachaCourseReward = {}
 local GachaShowRewardConfig = {}
 local GachaClientConfig = {}
+local GachaSceneInteract = {}
 
 -- Gacha卡池组字典
 -- Key:OrganizeId
@@ -69,7 +71,8 @@ function XGachaConfigs.Init()
     GachaCourseReward = XTableManager.ReadByIntKey(TABLE_GACHA_COURSE_REWARD, XTable.XTableGachaCourseReward, "Id")
     GachaShowRewardConfig = XTableManager.ReadByIntKey(TABLE_GACHA_SHOW_REWARD_CONFIG, XTable.XTableGachaShowRewardConfig, "Id")
     GachaClientConfig = XTableManager.ReadByStringKey(TABLE_GACHA_CLIENT_CONFIG, XTable.XTableGachaClientConfig, "Key")
-
+    GachaSceneInteract = XTableManager.ReadByIntKey(TABLE_GACHA_SCENE_INTERACT, XTable.XTableGachaSceneInteract, "Id")
+    
     for _, gacha in pairs(Gachas) do
         if gacha.OrganizeId and gacha.OrganizeId ~= 0 then
             if not GachaOrganizeDic[gacha.OrganizeId] then
@@ -167,20 +170,24 @@ function XGachaConfigs.GetClientConfigList(key)
     return GachaClientConfig[key].Value
 end
 
-function XGachaConfigs.GetClientConfigNumber(key, index)
+function XGachaConfigs.GetClientConfigNumber(key, index, notips)
     index = index or 1
 
     if not GachaClientConfig[key] then
-        XLog.ErrorTableDataNotFound("XGachaConfigs.GetClientConfig", "GachaClientConfig", TABLE_GACHA_CLIENT_CONFIG, "key", tostring(key))
+        if not notips then
+            XLog.ErrorTableDataNotFound("XGachaConfigs.GetClientConfig", "GachaClientConfig", TABLE_GACHA_CLIENT_CONFIG, "key", tostring(key))
+        end
         return 0
     end
     
     local value = GachaClientConfig[key].Value[index]
 
-    if string.IsFloatNumber(value) then
+    if not string.IsNilOrEmpty(value) and string.IsFloatNumber(value) then
         return tonumber(value)
     else
-        XLog.Error('GachaClientConfig.tab中，key：'..tostring(key)..'index:'..tostring(index)..'的配置不是个数值：'..tostring(value))
+        if not notips then
+            XLog.Error('GachaClientConfig.tab中，key：'..tostring(key)..', index:'..tostring(index)..'的配置不是个数值：'..tostring(value))
+        end
         return 0
     end
 end
@@ -314,3 +321,15 @@ function XGachaConfigs.GetOrganizeGachaIcon(gachaId)
     local gacha = XGachaConfigs.GetGachaCfgById(gachaId)
     return gacha.GachaIcon
 end
+
+--- 获取卡池入场视频
+function XGachaConfigs.GetGachaEnterVideoId(gachaId)
+    local gacha = XGachaConfigs.GetGachaCfgById(gachaId)
+
+    return gacha and gacha.EnterVideoId or 0
+end
+
+---@return XTableGachaSceneInteract
+function XGachaConfigs.GetConfigGachaSceneInteractById(gachaId)
+    return GachaSceneInteract[gachaId]
+end 

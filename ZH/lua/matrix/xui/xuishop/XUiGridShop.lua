@@ -116,6 +116,8 @@ function XUiGridShop:OnBuyGoods()
                     self:RefreshOnSales()
                     self:RefreshPrice()
                     self:RefreshBuyCount()
+                    --检查是否有特殊的购买成功提示
+
                 end
         )
     else
@@ -145,6 +147,7 @@ function XUiGridShop:UpdateData(data, shopItemTextColor, shopId)
     self:RemoveOnSaleTimer()
     self:RefreshBuyCount()
     self:RefreshAlreadyTip()
+    self:RefreshRoleLevel()
     -- 全部隐藏，如果<开售时间显示开售时间，如果>=开售时间，显示结束时间
     self:HideAllTimeGos()
     -- 未到开售时间
@@ -517,7 +520,6 @@ end
 
 function XUiGridShop:RefreshShowLock()
     local isLock = self.ConditionDesc ~= nil
-
     if self.ImgLock then
         self.ImgLock.gameObject:SetActiveEx(isLock)
     end
@@ -569,6 +571,31 @@ function XUiGridShop:RefreshAlreadyTip()
     else
         self.PanelAlreadyownedRole.gameObject:SetActiveEx(false)
     end
+end
+
+function XUiGridShop:RefreshRoleLevel()
+    local itemId = self.Data.RewardGoods.TemplateId
+    local characterId = XMVCA.XCharacter:GetCharcterIdByFragmentItemId(itemId)
+    if not characterId or not XMVCA.XCharacter:IsOwnCharacter(characterId) then
+        if self.PanelRoleLevel then
+            self.PanelRoleLevel.gameObject:SetActiveEx(false)
+        end
+        return
+    end
+    if self.PanelRoleLevel then
+        self.PanelRoleLevel.gameObject:SetActiveEx(true)
+    end
+    if self.RImgRoleHead then
+        self.RImgRoleHead:SetRawImage(XMVCA.XCharacter:GetCharSmallHeadIcon(characterId))
+    end
+    local currentQuality = XMVCA.XCharacter:GetCharacterQuality(characterId)
+    local maxQuality = XMVCA.XCharacter:GetCharMaxQuality(characterId)
+    local nextQuality = currentQuality < maxQuality and currentQuality + 1 or currentQuality
+    if self.RImgQuality then
+    self.RImgQuality:SetRawImage(XMVCA.XCharacter:GetCharacterQualityIcon(currentQuality))
+    end
+    local characterType = XMVCA.XCharacter:GetCharacterType(characterId)
+    self._NeedFragmentCount = XMVCA.XCharacter:GetComposeCount(characterType, nextQuality)
 end
 
 -- 这一段复制自  XUiShopItem:GetMaxCount()

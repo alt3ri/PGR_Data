@@ -16,6 +16,9 @@ function XDlcRelinkActivity:Ctor()
     -- 装备仓库 key:EquipUid
     ---@type XDlcRelinkEquipData[]
     self.EquipsDatas = {}
+    -- 装备 锁定/舍弃 配置 key:EquipRuleType
+    ---@type table<number, XDlcRelinkEquipMarkSettingData>
+    self.EquipsMarkSettingDatas = {}
     -- 等级信息 key:levelId
     ---@type table<number, XDlcRelinkLevelInfo>
     self.LevelDict = {}
@@ -38,6 +41,7 @@ function XDlcRelinkActivity:NotifyActivityData(data)
     self.FinishedTutorial = data.FinishedTutorial or false
     self:UpdateCharacters(data.Characters)
     self:UpdateEquipsDatas(data.EquipsDatas)
+    self.EquipsMarkSettingDatas = data.EquipsMarkSettingDatas or {}
     self.LevelDict = data.LevelDict or {}
     self.EmojiWheelIds = data.EmojiWheelIds or {}
     self.EquipPresetSets = data.EquipPresetSets or {}
@@ -147,6 +151,14 @@ function XDlcRelinkActivity:SetEquipIsLocked(equipUid, isLock)
     end
 end
 
+-- 设置装备弃置状态
+function XDlcRelinkActivity:SetEquipIsDiscarded(equipUid, isDiscarded)
+    local equipData = self:GetEquipsDataByUid(equipUid)
+    if equipData then
+        equipData:SetIsDiscarded(isDiscarded)
+    end
+end
+
 -- 设置表情轮盘Id列表
 function XDlcRelinkActivity:SetEmojiWheelIds(emojiWheelIds)
     self.EmojiWheelIds = emojiWheelIds or {}
@@ -170,6 +182,17 @@ end
 -- 设置今日全局匹配奖励获取次数
 function XDlcRelinkActivity:SetGlobalMatchRewardTimes(times)
     self.GlobalMatchRewardTimes = times or 0
+end
+
+-- 设置装备 锁定/舍弃 配置
+function XDlcRelinkActivity:SetEquipMarkSettingDataByType(ruleType, equipType, equipQuality, equipFactorIds)
+    if not XTool.IsNumberValid(ruleType) then
+        return
+    end
+    self.EquipsMarkSettingDatas[ruleType] = self.EquipsMarkSettingDatas[ruleType] or {}
+    self.EquipsMarkSettingDatas[ruleType].EquipTypes = equipType or 0
+    self.EquipsMarkSettingDatas[ruleType].QualityTypes = equipQuality or 0
+    self.EquipsMarkSettingDatas[ruleType].FactorIds = equipFactorIds or {}
 end
 
 --endregion
@@ -230,6 +253,11 @@ end
 -- 获取装备数量
 function XDlcRelinkActivity:GetEquipsDataCount()
     return table.nums(self.EquipsDatas)
+end
+
+-- 获取装备锁定/弃置配置列表
+function XDlcRelinkActivity:GetEquipsMarkSettingDataList()
+    return self.EquipsMarkSettingDatas
 end
 
 -- 获取等级信息字典
@@ -321,3 +349,8 @@ return XDlcRelinkActivity
 ---@class XDlcRelinkEquipPreset
 ---@field Slot2EquipUid table<number, number> key:装备槽位 value:装备Uid
 ---@field Name string 预设名称
+
+---@class XDlcRelinkEquipMarkSettingData
+---@field EquipTypes number 装备类型状态，二进制表示，关联 EquipType 例如全选则为 (1 << 1) | (1 << 2) = 6
+---@field QualityTypes number 品质类型状态，二进制表示，关联 EquipQualityType
+---@field FactorIds number[] 词条Id列表

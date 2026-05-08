@@ -105,7 +105,7 @@ function XChar8052:MonsterConfigMain() --怪物配置用
         dashBoundaryState = {Base.SyncValueType.int},
     }
     self.monsterScriptInitSyncRegisterSkillCdList = { --需要同步的技能CD
-        [805201] = {25,25},--格挡
+        [805201] = {0,4},--格挡
         [805202] = {0,5},--反身拳
         [805203] = {0,5},--上勾拳
         [805204] = {45,35},--欧拉拳
@@ -253,11 +253,11 @@ end
 
 ---技能测试配置
 function XChar8052:SkillTestConfig()
-    --self:SetSkillTestActive(true)
+    self:SetSkillTestActive(true)
     --self.skillTestType = Base.SkillTestType.CustomFuc --开启了就会只执行这个函数里面的内容
     --self:InitSkillCd(805201,0,0) --格挡
     
-    self.skillTestId = 805277
+    self.skillTestId = 9999999999
     self.skillTestInitialCd = 10--测试初始CD
     --self.skillTestInitialCd = 1.5--测试初始CD
     self.skillTestCd = 10
@@ -2268,9 +2268,9 @@ function XChar8052:CheckParryNpc(npc)
     if not self._proxy:CheckNpcInAngle(self._uuid,npc,angle) then--角度范围检查
         return false
     end
-    if not  self._proxy:CheckBuffByKind(self._uuid,buffKind) then--可格挡标记检查
-        return false
-    end
+    -- if not  self._proxy:CheckBuffByKind(self._uuid,buffKind) then--可格挡标记检查
+    --     return false
+    -- end
     return true
 end
 

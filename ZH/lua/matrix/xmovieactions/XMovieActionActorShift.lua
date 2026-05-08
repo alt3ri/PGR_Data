@@ -26,6 +26,7 @@ function XMovieActionActorShift:OnInit(actionData)
 end
 
 function XMovieActionActorShift:OnRunning()
+    ---@type XUiGridMovieActor
     local actor = self.UiRoot:GetActor(self.ActorIndex)
     local startPos = actor:GetImagePos()
     self.Record = {

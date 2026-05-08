@@ -175,6 +175,7 @@ function XUiPanelFashionSuitPurchase:OnPurchaseBuyViewRefresh(rewardList)
     self._Parent:UpdateView()
     self._Parent.Parent:ShowGift()
     self._Parent.Parent:CallPurchaseCb(rewardList)
+    XEventManager.DispatchEvent(XEventId.EVENT_FASHION_SUIT_PURCHASE_BUY, rewardList)
 end
 
 --endregion

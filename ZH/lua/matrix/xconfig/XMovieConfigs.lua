@@ -44,12 +44,14 @@ XMovieConfigs.MAX_ACTOR_NUM = 21
 XMovieConfigs.MAX_SPINE_ACTOR_NUM = 18
 
 -- 通用的spine动画
-XMovieConfigs.SpineActorAnim = 
+XMovieConfigs.SpineActorAnim =
 {
     PanelActorEnable = "PanelActorEnable",
     PanelActorDisable = "PanelActorDisable",
     PanelActorBlowUp = "PanelActorBlowUp",
+    PanelActorDark = "PanelActorDark",
     PanelActorDarkNor = "PanelActorDarkNor",
+    PanelActorBlowUpNor = "PanelActorBlowUpNor",
     PanelActorDarkDisable = "PanelActorDarkDisable",
 }
 

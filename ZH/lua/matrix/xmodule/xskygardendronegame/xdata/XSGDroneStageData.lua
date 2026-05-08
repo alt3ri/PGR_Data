@@ -33,6 +33,10 @@ function XSGDroneStageData:IsTargetFinish(targetId)
     return self._FinishTarget[targetId] or false
 end
 
+function XSGDroneStageData:GetFinishTarget()
+    return self._FinishTarget
+end
+
 function XSGDroneStageData:GetStageId()
     return self._StageId or 0
 end

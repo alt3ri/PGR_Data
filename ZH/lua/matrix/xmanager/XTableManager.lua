@@ -1,5 +1,12 @@
 XTableManager = XTableManager or {}
 
+local BinaryConfigMonitorEnable = CS.HaruPerformance.Runtime.Agent.HaruPerformanceMonitor.IsBinaryConfigMonitorEnabled()
+---@type LuaTableConfigMonitor
+local LuaTableConfigMonitor
+if BinaryConfigMonitorEnable then
+    LuaTableConfigMonitor = require("XDebug/LuaTableConfigMonitor") 
+end
+
 XTableManager.TableLoadType =
 {
     Tab = 1,
@@ -96,4 +103,92 @@ function XTableManager.ReleaseTable(path)
     elseif loadType == XTableManager.TableLoadType.Pack then
         packLoader.ReleaseFull(path)
     end
-end
+end
+
+--region Table Monitor
+
+function XTableManager.OnLoadBinary(tablePath, binary)
+    if not BinaryConfigMonitorEnable then
+        return
+    end
+    LuaTableConfigMonitor.Init(tablePath, binary)
+end
+
+function XTableManager.OnLoadBinaryWithSize(tablePath, binarySize)
+    if not BinaryConfigMonitorEnable then
+        return
+    end
+    LuaTableConfigMonitor.InitWithSize(tablePath, binarySize)
+end
+
+function XTableManager.OnUnloadBinary(tablePath)
+    if not BinaryConfigMonitorEnable then
+        return
+    end
+    LuaTableConfigMonitor.Release(tablePath)
+end
+
+function XTableManager.OnUnloadBinaryBytes(tablePath)
+    if not BinaryConfigMonitorEnable then
+        return
+    end
+    LuaTableConfigMonitor.ReleaseBytes(tablePath)
+end
+
+function XTableManager.RegisterFixedStructuralSize(tablePath, structural, obj, isSelf)
+    if not BinaryConfigMonitorEnable then
+        return
+    end
+    LuaTableConfigMonitor.RegisterFixedStructuralSize(tablePath, structural, obj, isSelf)
+end
+
+function XTableManager.UpdateVolatileStructuralSize(tablePath, structural, obj, isSelf)
+    if not BinaryConfigMonitorEnable then
+        return
+    end
+    LuaTableConfigMonitor.UpdateVolatileStructuralSize(tablePath, structural, obj, isSelf)
+end
+
+function XTableManager.UpdateStringSize(tablePath, obj, isSelf)
+    if not BinaryConfigMonitorEnable then
+        return
+    end
+    LuaTableConfigMonitor.UpdateStringSize(tablePath, obj, isSelf)
+end
+
+function XTableManager.UpdateBinaryRows(tablePath, row)
+    if not BinaryConfigMonitorEnable then
+        return
+    end
+    LuaTableConfigMonitor.UpdateBinaryRows(tablePath, row)
+end
+
+function XTableManager.UpdateBinaryFields(tablePath, obj)
+    if not BinaryConfigMonitorEnable then
+        return
+    end
+    LuaTableConfigMonitor.UpdateBinaryFields(tablePath, obj)
+end
+
+function XTableManager.ReleaseBinaryFields(tablePath)
+    if not BinaryConfigMonitorEnable then
+        return
+    end
+    LuaTableConfigMonitor.ReleaseBinaryFields(tablePath)
+end
+
+function XTableManager.SetModuleByTabConfig(tablePath, module, tabScope)
+    if not BinaryConfigMonitorEnable then
+        return
+    end
+    LuaTableConfigMonitor.SetModuleByTabConfig(tablePath, module, tabScope)
+end
+
+function XTableManager.SetModuleByCacheType(tablePath, module, cacheType)
+    if not BinaryConfigMonitorEnable then
+        return
+    end
+    LuaTableConfigMonitor.SetModuleByCacheType(tablePath, module, cacheType)
+end
+
+--endregion

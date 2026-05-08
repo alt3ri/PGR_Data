@@ -164,8 +164,78 @@ function XGame2048Agency:GetCurPlayingStageId()
     if not XTool.IsTableEmpty(curStageData) then
         return curStageData.StageId
     end
-    
+
     return 0
+end
+
+function XGame2048Agency:GetCurStageData()
+    return self._Model:GetCurStageData()
+end
+
+function XGame2048Agency:GetStageMaxScoreById(stageId)
+    local info = self._Model:GetStageInfoById(stageId)
+    if info then
+        return info.Score or 0
+    end
+
+    return 0
+end
+
+function XGame2048Agency:SetCurStageId(stageId)
+    self._Model:SetCurStageId(stageId)
+    if XTool.IsNumberValid(stageId) then
+        self._Model:SetCurChapterId(self._Model:GetChapterIdByStageId(stageId))
+    end
+end
+
+function XGame2048Agency:SetCurChapterId(chapterId)
+    self._Model:SetCurChapterId(chapterId)
+end
+
+function XGame2048Agency:GetCurChapterId()
+    return self._Model:GetCurChapterId()
+end
+
+function XGame2048Agency:RequestGame2048EnterStage(stageId, cb)
+    XNetwork.Call('Game2048EnterStageRequest', { StageId = stageId }, function(res)
+        if res.Code ~= XCode.Success then
+            XUiManager.TipCode(res.Code)
+            return
+        end
+
+        self._Model:UpdateCurStageData(res.StageContext)
+        if cb then
+            cb(res)
+        end
+    end)
+end
+
+function XGame2048Agency:RequestGame2048Settle(settleType, cb)
+    XNetwork.Call('Game2048SettleRequest', { SettleType = settleType }, function(res)
+        if res.Code ~= XCode.Success then
+            XUiManager.TipCode(res.Code)
+            return
+        end
+
+        if cb then
+            cb(res)
+        end
+    end)
+end
+
+
+function XGame2048Agency:RequestGame2048GiveUp(cb)
+    XNetwork.Call('Game2048GiveUpRequest', nil, function(res)
+        if res.Code ~= XCode.Success then
+            XUiManager.TipCode(res.Code)
+            return
+        end
+
+        self._Model:UpdateCurStageData(nil)
+        if cb then
+            cb(res)
+        end
+    end)
 end
 
 function XGame2048Agency:CheckPassStageAchieveStarCount(stageId, count)
@@ -218,4 +288,4 @@ end
 
 --endregion <<<------------------------------------------------------
 
-return XGame2048Agency
+return XGame2048Agency

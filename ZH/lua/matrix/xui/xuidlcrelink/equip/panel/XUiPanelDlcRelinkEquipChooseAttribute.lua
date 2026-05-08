@@ -6,6 +6,12 @@ local XUiPanelDlcRelinkEquipChooseAttribute = XClass(XUiNode, "XUiPanelDlcRelink
 function XUiPanelDlcRelinkEquipChooseAttribute:OnStart()
     self.BtnChoose:AddEventListener(handler(self, self.OnBtnChooseClick))
     self.BtnClear:AddEventListener(handler(self, self.OnBtnClearClick))
+    if self.BtnDetail then
+        self.BtnDetail:AddEventListener(handler(self, self.OnBtnDetailClick))
+    end
+    if self.BtnDetailClose then
+        self.BtnDetailClose:AddEventListener(handler(self, self.OnBtnDetailCloseClick))
+    end
     ---@type XUiGridDlcRelinkEquipment
     self._Equip = require("XUi/XUiDlcRelink/Equip/Grid/XUiGridDlcRelinkEquipment").New(self.GridRelinkEquipment, self)
     self:CheckFuncUnlock()
@@ -44,6 +50,12 @@ function XUiPanelDlcRelinkEquipChooseAttribute:UpdateAttribute()
         self.ImgNone.gameObject:SetActiveEx(false)
         self.PanelNormal.gameObject:SetActiveEx(true)
         self.TxtData.text = self._Control:GetFactorDescName(self._CurAttrId)
+        local characterIcon = self._Control:GetFactorDescCharacterIcon(self._CurAttrId)
+        local isShowIcon = not string.IsNilOrEmpty(characterIcon)
+        self.ImgAvatar.gameObject:SetActiveEx(isShowIcon)
+        if isShowIcon then
+            self.ImgAvatar:SetSprite(characterIcon)
+        end
         self.BtnChoose.gameObject:SetActiveEx(false)
         self.BtnClear.gameObject:SetActiveEx(true)
         self._Equip:Open()
@@ -80,6 +92,25 @@ function XUiPanelDlcRelinkEquipChooseAttribute:OnBtnClearClick()
     self._CurAttrId = nil
     self:UpdateAttribute()
     self.Parent:OnChooseAttrChange()
+end
+
+function XUiPanelDlcRelinkEquipChooseAttribute:OnBtnDetailClick()
+    if not XTool.IsNumberValid(self._CurAttrId) then
+        return
+    end
+    self.TxtDesc.text = self._Control:GetFactorDescDesc(self._CurAttrId)
+    -- 计算目标格子左上角的世界坐标
+    local rect = self.PanelNormal.transform.rect
+    local tempVec3 = CS.UnityEngine.Vector3(rect.xMin, rect.yMax, 0)
+    local bottomLeftWorld = self.PanelNormal.transform:TransformPoint(tempVec3)
+    -- 将世界坐标转换为PanelBubbleDetail的局部坐标
+    local localPos = self.PanelBubbleDetail.transform:InverseTransformPoint(bottomLeftWorld)
+    self.TxtDesc.transform.parent.anchoredPosition = CS.UnityEngine.Vector2(localPos.x, localPos.y)
+    self.PanelBubbleDetail.gameObject:SetActiveEx(true)
+end
+
+function XUiPanelDlcRelinkEquipChooseAttribute:OnBtnDetailCloseClick()
+    self.PanelBubbleDetail.gameObject:SetActiveEx(false)
 end
 
 return XUiPanelDlcRelinkEquipChooseAttribute

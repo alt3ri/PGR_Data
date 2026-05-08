@@ -16,7 +16,16 @@ function XUiGridFashionSuitFashion:OnEnable()
     end
 end
 
+function XUiGridFashionSuitFashion:OnDisable()
+    if self.AnimEnable and not XTool.UObjIsNil(self.AnimEnable.gameObject) then
+        self.AnimEnable.gameObject:SetActiveEx(false)
+    end
+end
+
 function XUiGridFashionSuitFashion:Refresh(fashionSuitId, fashionId)
+    if self.AnimEnable and not XTool.UObjIsNil(self.AnimEnable.gameObject) then
+        self.AnimEnable.gameObject:SetActiveEx(true)
+    end
     self._Id = fashionId
     self._SuitId = fashionSuitId
     local config = XFashionConfigs.GetFashionTemplate(fashionId)

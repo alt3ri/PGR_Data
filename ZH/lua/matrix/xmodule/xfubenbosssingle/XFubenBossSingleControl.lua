@@ -234,9 +234,14 @@ end
 
 -- endregion
 
-function XFubenBossSingleControl:SetEnterBossInfo(bossId, bossLevel, featureId)
+function XFubenBossSingleControl:SetEnterBossInfo(
+    bossId,
+    bossLevel,
+    featureId,
+    bossSingleChallengeBuffGroup)
     self._Model:SetEnterBossInfo(bossId, bossLevel)
     self._Model:SetCurrentFeatureId(featureId or 0)
+    self._Model:SetBossSingleChallengeBuffGroup(bossSingleChallengeBuffGroup)
 end
 
 function XFubenBossSingleControl:GetCurrentFeatureId()
@@ -249,11 +254,19 @@ end
 
 function XFubenBossSingleControl:OnEnterNormalFight()
     self:SetFightStageType(XEnumConst.BossSingle.StageType.Normal)
+    self._Model:SetBossSingleChallengeBuffGroup(nil)
 end
 
 function XFubenBossSingleControl:OnEnterTrialFight()
     self:SetFightStageType(XEnumConst.BossSingle.StageType.Trial)
+    self._Model:SetBossSingleChallengeBuffGroup(nil)
 end
+
+function XFubenBossSingleControl:OnEnterBestiaryFight()
+    self:SetFightStageType(XEnumConst.BossSingle.StageType.Bestiary)
+    self._Model:SetBossSingleChallengeBuffGroup(nil)
+end
+
 
 function XFubenBossSingleControl:OnEnterChallengeFight()
     self:SetFightStageType(XEnumConst.BossSingle.StageType.Challenge)
@@ -279,6 +292,19 @@ end
 
 function XFubenBossSingleControl:GetTrialTotalScoreInfoById(sectionId)
     return self._Model:GetTrialTotalScore(sectionId)
+end
+
+function XFubenBossSingleControl:GetBestiraryTotalScoreById(sectionId)
+    local totalScore = 0
+    local sectionConf = self:GetBossSectionConfigByBossId(sectionId)
+    local data = self:GetBossSingleData()
+
+    for _, stageId in pairs(sectionConf.StageId) do
+        local stageData = data:GetBossSingleBestiraryStageInfoByStageId(stageId)
+        totalScore = totalScore + (stageData and stageData:GetScore() or 0)
+    end
+
+    return totalScore
 end
 
 function XFubenBossSingleControl:OnActivityEnd()
@@ -753,6 +779,13 @@ function XFubenBossSingleControl:GetBossIcon(bossId)
     local sectionConfig = self._Model:GetBossSingleSectionConfigById(sectionId)
 
     return sectionConfig.BossHeadIcon or ""
+end
+
+function XFubenBossSingleControl:GetBossUnlockChallengeBannerImage(bossId)
+    local sectionId = self._Model:GetBossSectionConfigIdBySectionId(bossId)
+    local sectionConfig = self._Model:GetBossSingleSectionConfigById(sectionId)
+
+    return sectionConfig.UnlockChallengeBannerImage or ""
 end
 
 function XFubenBossSingleControl:GetBossRankIcon(bossId)

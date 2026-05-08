@@ -3,6 +3,13 @@
 ---@field private _QueueHelper XBigWorldQueueUiHelper
 local XBigWorldUIAgency = XClass(XAgency, "XBigWorldUIAgency")
 
+local ExitIgnoreCloseUiName = {
+    ["UiDialogCanvasDialog"] = true,
+    ["UiDialog"] = true,
+    ["UiSuperWaterMarks"] = true,
+    ["UiWaterMask"] = true,
+}
+
 local XBigWorldUi = require("XModule/XBigWorldUI/Base/XBigWorldUi")
 
 function XBigWorldUIAgency:OnInit()
@@ -35,6 +42,32 @@ function XBigWorldUIAgency:OnExitBigWorld()
         self._FightUiCb[key] = nil
     end
     CS.XGameEventManager.Instance:RemoveEvent(CS.XEventId.EVENT_UI_DESTROY, self._UiDestroyHandler)
+end
+
+function XBigWorldUIAgency:ClearBigWorldUI()
+    self:RunMain()
+    local index = 0
+    while true do
+        local uiName = CS.XUiManager.Instance:GetTopXUiName(index)
+        if string.IsNilOrEmpty(uiName) then
+            break
+        end
+        ---@type XUiData
+        local uiData = CS.XUiManager.Instance:FindUiData(uiName)
+        --子界面直接通过关掉父界面处理
+        if uiData and uiData.IsChildUi then
+            index = index + 1
+            goto continue
+        end
+        --这些界面不关闭 || 战斗界面不关闭，交由战斗管理
+        if ExitIgnoreCloseUiName[uiName] or XUiManager.IsFightUi(uiName) then
+            index = index + 1
+            goto continue
+        end
+        self:CloseImmediately(uiName)
+        
+        ::continue::
+    end
 end
 
 function XBigWorldUIAgency:IsPauseFight(uiName)
@@ -133,6 +166,16 @@ function XBigWorldUIAgency:CloseAllUpperUiWithCallback(uiName, cb)
     XLuaUiManager.CloseAllUpperUiWithCallback(uiName, cb)
 end
 
+--- 关闭目标 UI 上方所有层，可能带有刷新事件。
+--- 若目标UI不在栈中，则直接打开
+function XBigWorldUIAgency:PopToAndOpen(uiName, ...)
+    if XLuaUiManager.IsStackUiOpen(uiName) then
+        XLuaUiManager.CloseAllUpperUi(uiName)
+    else
+        self:Open(uiName, ...)
+    end
+end
+
 function XBigWorldUIAgency:Close(uiName, callback)
     if self:IsLockOperation() then
         return
@@ -142,6 +185,10 @@ function XBigWorldUIAgency:Close(uiName, callback)
     else
         XLuaUiManager.Close(uiName)
     end
+end
+
+function XBigWorldUIAgency:CloseImmediately(uiName)
+    CS.XUiManager.Instance:CloseImmediately(uiName)
 end
 
 function XBigWorldUIAgency:Remove(uiName)
@@ -317,12 +364,30 @@ function XBigWorldUIAgency:OpenBigWorldObtainWithCmd(data)
 end
 
 function XBigWorldUIAgency:OpenBigWorldRewardGoods(rewardData, title, closeCb)
+    if type(rewardData) == "number" then
+        local dataType = XMVCA.XBigWorldService.RewardDisplayDataType.Reward
+
+        if XMVCA.XBigWorldService:CheckSpecialReward(rewardData, dataType) then
+            self:OpenBigWorldObtainSpecial(rewardData, title, nil, nil, true)
+        elseif XMVCA.XBigWorldService:CheckExpensiveReward(rewardData, dataType) then
+            self:OpenBigWorldObtain(rewardData, title, nil, nil, true)
+        else
+            self:OpenBigWorldRewardSidebar(rewardData, closeCb, true)
+        end
+
+        return
+    end
+
     local expensiveRewards = {}
     local specialRewards = {}
+    local rewardGoodsType = XMVCA.XBigWorldService.RewardDisplayDataType.RewardGoods
+
     for _, reward in ipairs(rewardData) do
-        if XMVCA.XBigWorldService:CheckExpensiveReward(reward.TemplateId) then
+        if XMVCA.XBigWorldService:CheckExpensiveReward(reward.TemplateId) 
+            or XMVCA.XBigWorldService:CheckExpensiveReward(reward.Id, rewardGoodsType) then
             table.insert(expensiveRewards, reward)
-        elseif XMVCA.XBigWorldService:CheckSpecialReward(reward.TemplateId) then
+        elseif XMVCA.XBigWorldService:CheckSpecialReward(reward.TemplateId) 
+            or XMVCA.XBigWorldService:CheckSpecialReward(reward.Id, rewardGoodsType)then
             table.insert(specialRewards, reward)
         end
     end

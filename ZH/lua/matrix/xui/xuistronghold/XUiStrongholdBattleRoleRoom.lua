@@ -197,15 +197,15 @@ function XUiStrongholdBattleRoleRoom:OnTeamEntityChange()
     self.Team = self.TeamList[self.TeamPropId]:GetOrCreateTempTeam()
     
     -- 刷新角色显示
-    self:RefreshRoleInfos()
-    self.FirstEnterBtnGroup:SelectIndex(self.Team:GetFirstFightPos(), false)
-    self:RefreshFirstFightInfo()
-    self:RefreshTipGrids()
-    self:RefreshFightControlState()
-    self.PanelGeneralSkill:Refresh()
-    self:RefreshRoleDetalInfo(true)
-    self:OnAnimationSetChange()
-end
+    self:RefreshRoleInfos()
+    self.FirstEnterBtnGroup:SelectIndex(self.Team:GetFirstFightPos(), false)
+    self:RefreshFirstFightInfo()
+    self:RefreshTipGrids()
+    self:RefreshFightControlState()
+    self.PanelGeneralSkill:Refresh()
+    self:RefreshRoleDetalInfo(true)
+    self:OnAnimationSetChange()
+end
 
 function XUiStrongholdBattleRoleRoom:OnBtnTeamPrefabClicked()
     local stageId
@@ -406,6 +406,8 @@ function XUiStrongholdBattleRoleRoom:RefreshRoleModels()
         else
             uiPanelRoleModel:HideRoleModel()
         end
+
+        self:RefreshSelectColorEffect(pos)
     end
 
     -- 最后再刷新q版状态机
@@ -514,16 +516,37 @@ function XUiStrongholdBattleRoleRoom:GetPartnerByEntityId(id)
     return result
 end
 
-function XUiStrongholdBattleRoleRoom:RefreshRoleEffects()
-
+-- 刷新脚底特效显隐
+function XUiStrongholdBattleRoleRoom:RefreshSelectColorEffect(index)
+    local uiModelRoot = self.UiModelGo.transform
+    local panelRoleEffect = uiModelRoot:FindTransform("PanelRoleEffect" .. index)
+    local shengmingshuEffect = panelRoleEffect:FindTransform("FxUiShengmingshuFormation" .. index)
+    local footEffect = panelRoleEffect:FindTransform("FxUiCharacterV2Foot0" .. index)
+    panelRoleEffect.gameObject:SetActiveEx(true)
+    local entityId = self.Team:GetEntityIdByTeamPos(index)
+    local characterId = XRobotManager.GetCharacterId(entityId)
+    local powerConfig = XMVCA.XCharacter:GetCharacterPowerConfig(characterId)
+    if powerConfig and not XTool.IsTableEmpty(powerConfig) then
+        shengmingshuEffect.gameObject:SetActiveEx(true)
+        footEffect.gameObject:SetActiveEx(false)
+    else
+        shengmingshuEffect.gameObject:SetActiveEx(false)
+        footEffect.gameObject:SetActiveEx(true)
+    end
 end
 
--- 激活脚底选人特效
+-- 激活脚底选人特效（含选中动画）
 function XUiStrongholdBattleRoleRoom:ActiveSelectColorEffect(index)
+    self:RefreshSelectColorEffect(index)
     local uiModelRoot = self.UiModelGo.transform
-    local panelRoleBGEffect = uiModelRoot:FindTransform("PanelRoleEffect" .. index)
-    local activeAnim = panelRoleBGEffect:FindTransform("DimianStart")
-    activeAnim:GetComponent(typeof(CS.UnityEngine.ParticleSystem)):Play()
+    local panelRoleEffect = uiModelRoot:FindTransform("PanelRoleEffect" .. index)
+    local entityId = self.Team:GetEntityIdByTeamPos(index)
+    local characterId = XRobotManager.GetCharacterId(entityId)
+    local powerConfig = XMVCA.XCharacter:GetCharacterPowerConfig(characterId)
+    if not (powerConfig and not XTool.IsTableEmpty(powerConfig)) then
+        local activeAnim = panelRoleEffect:FindTransform("DimianStart")
+        activeAnim:GetComponent(typeof(CS.UnityEngine.ParticleSystem)):Play()
+    end
 end
 
 function XUiStrongholdBattleRoleRoom:RefreshFirstFightInfo()
@@ -553,8 +576,6 @@ end
 function XUiStrongholdBattleRoleRoom:RefreshRoleInfos()
     -- 刷新角色模型
     self:RefreshRoleModels()
-    -- 刷新角色特效
-    self:RefreshRoleEffects()
     -- 刷新伙伴
     self:RefreshPartners()
     -- 刷新队长信息
@@ -1024,8 +1045,8 @@ function XUiStrongholdBattleRoleRoom:CheckIsCloseView()
     end
 end
 
-function XUiStrongholdBattleRoleRoom:OnBtnAnimationSetClick()
-    XLuaUiManager.Open("UiPopupAnimationSet", self.Team)
-end
-
-return XUiStrongholdBattleRoleRoom
+function XUiStrongholdBattleRoleRoom:OnBtnAnimationSetClick()
+    XLuaUiManager.Open("UiPopupAnimationSet", self.Team)
+end
+
+return XUiStrongholdBattleRoleRoom

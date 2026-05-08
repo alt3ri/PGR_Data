@@ -51,13 +51,13 @@ end
 
 function XUiBigWorldDIYGridPosition:RefreshCurrent()
     local entity = self._Entity
-
     self:_Refresh(entity, false)
 end
 
 function XUiBigWorldDIYGridPosition:SetSelect(isSelect, isPlayEnable)
     self.ImgSelect.gameObject:SetActiveEx(isSelect)
     if isSelect then
+        self._Entity:Dress()
         self.Parent:ShowColor(self._Entity, isPlayEnable)
     end
 end
@@ -83,27 +83,30 @@ end
 
 -- region 按钮事件
 
+function XUiBigWorldDIYGridPosition:_ApplyDress(isIncompatible)
+    self._Entity:Dress()
+    self.Parent:ChangeSelect(self._Index, isIncompatible)
+end
+
 function XUiBigWorldDIYGridPosition:OnBtnClickClick()
     if self._Entity:IsIncompatible() then
-        local confirmData = XMVCA.XBigWorldCommon:GetPopupConfirmData()
+        local currentEntity = self._Control:GetUsePartEntityByTypeId(self._Entity:GetTypeId())
 
-        confirmData:InitInfo(nil, XMVCA.XBigWorldService:GetText("DIYChangeSuitTip"))
-        confirmData:InitSureClick(nil, function()
-            self._Entity:Dress()
-            self.Parent:ChangeSelect(self._Index, true)
-            self:SetSelect(true, false)
-        end)
-        confirmData:InitToggleActive(true):InitKey("XUiBigWorldDIYGridPosition")
-
-        if not XMVCA.XBigWorldUI:OpenConfirmPopup(confirmData) then
-            self._Entity:Dress()
-            self.Parent:ChangeSelect(self._Index, true)
-            self:SetSelect(true, false)
+        local outfitType = self._Control:GetCurrentModifiedOutfitType()
+        local defaultPartId = XMVCA.XBigWorldCommanderDIY:GetTypeDefaultPartId(XEnumConst.PlayerFashion.PartType.Suit,
+            outfitType)
+        -- 默认部位为默认套装时，互斥仅提示不可穿戴
+        if defaultPartId > 0 then
+            XUiManager.TipMsg(XMVCA.XBigWorldService:GetText("DIYDoNotSupportWearingTips"))
+        else
+            if currentEntity and currentEntity:IsSuit() then
+                self:_ConfirmApplyDress("DIYChangeSuitTip")
+            else
+                self:_ConfirmApplyDress("DIYConfirmTakeOffToDefaultConflicts")
+            end
         end
     else
-        self._Entity:Dress()
-        self.Parent:ChangeSelect(self._Index)
-        self:SetSelect(true, false)
+        self:_ApplyDress()
     end
     self._Entity:Record()
     self:_RefreshRedDot(false)
@@ -114,6 +117,18 @@ end
 -- endregion
 
 -- region 私有方法
+function XUiBigWorldDIYGridPosition:_ConfirmApplyDress(textKey)
+    local confirmData = XMVCA.XBigWorldCommon:GetPopupConfirmData()
+    confirmData:InitInfo(nil, XMVCA.XBigWorldService:GetText(textKey))
+    confirmData:InitSureClick(nil, function()
+        self:_ApplyDress(true)
+    end)
+    confirmData:InitToggleActive(true):InitKey("XUiBigWorldDIYGridPosition")
+    if not XMVCA.XBigWorldUI:OpenConfirmPopup(confirmData) then
+        self:_ApplyDress(true)
+    end
+end
+
 function XUiBigWorldDIYGridPosition:_RegisterButtonClicks()
     -- 在此处注册按钮事件
     XUiHelper.RegisterClickEvent(self, self.BtnClick, self.OnBtnClickClick, true)

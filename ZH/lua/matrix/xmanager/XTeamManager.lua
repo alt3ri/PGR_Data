@@ -584,6 +584,17 @@ XTeamManagerCreator = function()
         end
 
         ----------------------------------------
+        -- 【构建标签数据 TagSet】
+        ----------------------------------------
+        request.TagsSet = xTeamPrefab:GetTagsList()
+
+        ----------------------------------------
+        -- 【构建形态技能数据 SwitchSkills】
+        ----------------------------------------
+        request.SwitchSkills = xTeamPrefab:GetSwitchSkills()
+        XMessagePack.MarkAsTable(request.SwitchSkills)
+
+        ----------------------------------------
         -- ✅ 发送请求
         ----------------------------------------
         XNetwork.Call("TeamPrefabSetTeamRequest", {TeamPrefabData = request}, function(response)
@@ -720,6 +731,31 @@ XTeamManagerCreator = function()
                 return
             end
             
+            if cb then cb() end
+        end)
+    end
+
+    --- 设置编队预设标签
+    ---@param teamId number 预设队伍Id
+    ---@param tags table 数组形式 {tagId1, tagId2}
+    ---@param cb function 成功回调
+    function XTeamManager.TeamPrefabSetTagsRequest(teamId, tags, cb)
+        local request = {
+            TeamId = teamId,
+            Tags = tags or {}
+        }
+
+        XNetwork.Call("TeamPrefabSetTagsRequest", request, function(res)
+            if res.Code ~= XCode.Success then
+                XUiManager.TipCode(res.Code)
+                return
+            end
+
+            local xTeamPrefab = XTeamManager.GetTeamPrefabDataByTeamId(teamId)
+            if xTeamPrefab then
+                xTeamPrefab:InitTagsData(tags)
+            end
+
             if cb then cb() end
         end)
     end

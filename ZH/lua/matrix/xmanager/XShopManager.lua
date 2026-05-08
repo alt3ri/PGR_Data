@@ -98,6 +98,7 @@ XShopManager.ActivityShopType = {
     Theatre5Shop = 13, --肉鸽5商店
     RaceShop = 14, --赛马商店
     FashionShop = 15, --涂装商店
+    Theatre6Shop = 16, --肉鸽6商店
 }
 
 --分解商店分类

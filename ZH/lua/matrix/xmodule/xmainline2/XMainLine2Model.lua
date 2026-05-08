@@ -27,6 +27,9 @@ function XMainLine2Model:OnInit()
     
     -- 设置更新版本不需要重置
     self._SaveUtil:SetVersionCheckEnable(false)
+    
+    ---@type XMainLine2MessageModel
+    self.MessageModel = self:AddSubModel(require("XModule/XMainLine2/SubModules/Message/XMainLine2MessageModel"))
 end
 
 function XMainLine2Model:ClearPrivate()
@@ -53,6 +56,7 @@ function XMainLine2Model:ResetAll()
     self.StageGroupIdDic = nil
     self.CacheMainReleaseDataDic = nil
     self.CacheDatasUiFubenMainLineChapter = nil
+    self.FubenToExhibitionId = nil
 end
 
 --#region 服务端数据 -------------------------------------------------------------------------------------------------
@@ -74,6 +78,8 @@ function XMainLine2Model:OnLoginNotify(fubenMainLine2Data)
         end
     end
     self:RefreshEggsData(fubenMainLine2Data.EggsTreasureDistributeData)
+    
+    self.MessageModel:UpdateServerData(fubenMainLine2Data)
 end
 
 -- 收到主章节成就
@@ -416,9 +422,14 @@ function XMainLine2Model:GetStageDetailType(stageId)
     return config and config.StageDetailType or 0
 end
 
-function XMainLine2Model:GetStageVideoId(stageId)
+function XMainLine2Model:GetStageVideoIds(stageId)
     local config = self:GetConfigStage(stageId)
-    return config and config.VideoId or 0
+    return config and config.VideoIds or 0
+end
+
+function XMainLine2Model:GetStageVideoConditions(stageId)
+    local config = self:GetConfigStage(stageId)
+    return config and config.VideoConditions or 0
 end
 
 function XMainLine2Model:GetStageSpecialorder(stageId)
@@ -595,6 +606,7 @@ function XMainLine2Model:GetConfigExhibitionModule(id)
     end
 end
 
+---@return XTableMainLine2ExhibitionChapter|XTableMainLine2ExhibitionChapter[]
 function XMainLine2Model:GetConfigExhibitionChapter(id)
     local cfgs = self._ConfigUtil:GetByTableKey(TableKey.MainLine2ExhibitionChapter)
     if id then
@@ -606,6 +618,33 @@ function XMainLine2Model:GetConfigExhibitionChapter(id)
     else
         return cfgs
     end
+end
+
+-- 根据副本类型和配置表Id，获取对应MainLine2ExhibitionChapter.tab的Id
+function XMainLine2Model:GetFubenExhibitionId(exhibitionFubenType, exhibitionFubenConfigId)
+    self:InitConfigExhibitionChapter()
+
+    local key = self:GetFubenKey(exhibitionFubenType, exhibitionFubenConfigId)
+    return self.FubenToExhibitionId[key]
+end
+
+function XMainLine2Model:InitConfigExhibitionChapter()
+    if self.FubenToExhibitionId then return end
+    
+    self.FubenToExhibitionId = {}
+    local configs = self:GetConfigExhibitionChapter()
+    for i, config in pairs(configs) do
+        local key = self:GetFubenKey(config.ExhibitionFubenType, config.ExhibitionFubenConfigId)
+        if self.FubenToExhibitionId[key] then
+            XLog.Error("ExhibitionFubenType和ExhibitionFubenConfigId生成相同的Key，请客户端检查配置表是否需要重新设计Key的计算方式！")
+        else
+            self.FubenToExhibitionId[key] = config.Id
+        end
+    end
+end
+
+function XMainLine2Model:GetFubenKey(exhibitionFubenType, exhibitionFubenConfigId)
+    return exhibitionFubenType * 100000 + exhibitionFubenConfigId
 end
 
 function XMainLine2Model:GetConfigMainLine2EggsTreasure(id)
@@ -649,6 +688,7 @@ end
 --#endregion 配置表 -----------------------------------------------------------------------------------------------
 
 --- 获取主章节实例
+---@return XMainLine2Main
 function XMainLine2Model:GetMain(mainId)
     if not self:IsMainExit(mainId) then
         return

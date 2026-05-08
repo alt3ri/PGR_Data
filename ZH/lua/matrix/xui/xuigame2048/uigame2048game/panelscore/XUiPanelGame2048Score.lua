@@ -90,7 +90,8 @@ function XUiPanelGame2048Score:InitScore()
     self._LastScore = curScore
     self._CurBarEffect.gameObject:SetActiveEx(false)
     
-    self.Parent:SetGiveUpBtnShow(self._CurStarCount >= XTool.GetTableCount(scores))
+    local isFromCollection = XMVCA.XGameCollection:IsLaunchedFromCollection(XEnumConst.GameCollection.GameType.Game2048)
+    self.Parent:SetGiveUpBtnShow(isFromCollection or self._CurStarCount >= XTool.GetTableCount(scores))
 end
 
 function XUiPanelGame2048Score:InitTheme()
@@ -151,7 +152,8 @@ function XUiPanelGame2048Score:RefreshStar()
 
     self._LastScore = curScore
 
-    self.Parent:SetGiveUpBtnShow(self._CurStarCount >= XTool.GetTableCount(scores))
+    local isFromCollection = XMVCA.XGameCollection:IsLaunchedFromCollection(XEnumConst.GameCollection.GameType.Game2048)
+    self.Parent:SetGiveUpBtnShow(isFromCollection or self._CurStarCount >= XTool.GetTableCount(scores))
 end
 
 --region 动画特效

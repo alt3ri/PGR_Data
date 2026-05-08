@@ -6,6 +6,7 @@ local XUiPanelBossStage = require("XUi/XUiFubenBossSingle/XUiPanelBossStage")
 local XUiPanelBossRankInfo = require("XUi/XUiFubenBossSingle/XUiPanelBossRankInfo")
 local XUiPanelBossEnter = require("XUi/XUiFubenBossSingle/XUiPanelBossEnter")
 local XUiPanelRankReward = require("XUi/XUiFubenBossSingle/XUiPanelRankReward")
+local XUiFubenBossSingleDetailV4P5 = require("XUi/XUiFubenBossSingle/XUiFubenBossSingleDetailV4P5")
 
 function XUiFubenBossSingle:OnAwake()
     self:_HideEffect()
@@ -126,7 +127,8 @@ function XUiFubenBossSingle:ShowRankRewardPanel(levelType, myRankData)
 end
 
 function XUiFubenBossSingle:ShowBossDetail(bossId)
-    XLuaUiManager.Open("UiFubenBossSingleDetail", bossId)
+    XLuaUiManager.Open("UiFubenBossSingleDetailV4P5", bossId)
+    -- XLuaUiManager.Open("UiFubenBossSingleDetail", bossId)
 end
 
-return XUiFubenBossSingle
+return XUiFubenBossSingle

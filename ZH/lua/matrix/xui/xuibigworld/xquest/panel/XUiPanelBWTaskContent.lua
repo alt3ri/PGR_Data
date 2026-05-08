@@ -52,6 +52,8 @@ function XUiPanelBWTaskContent:InitCb()
     self.BtnTrack:AddEventListener(handler(self, self.OnBtnTrackClick))
 
     self.BtnUntrack:AddEventListener(handler(self, self.OnBtnUntrackClick))
+
+    self.BtnOccupy:AddEventListener(handler(self, self.OnBtnOccupyClick))
 end
 
 function XUiPanelBWTaskContent:InitView()
@@ -65,6 +67,7 @@ function XUiPanelBWTaskContent:InitView()
     self.BtnGo:ShowReddot(false)
     self.BtnTrack:ShowReddot(false)
     self.BtnUntrack:ShowReddot(false)
+    self.BtnOccupy:ShowReddot(false)
 end
 
 function XUiPanelBWTaskContent:RefreshView(questId)
@@ -84,10 +87,13 @@ end
 
 function XUiPanelBWTaskContent:RefreshBtn()
     local questId = self._QuestId
+    local isOccupy = XMVCA.XBigWorldQuest:IsQuestOccupied(questId)
     local isTrack = self._Control:IsTrackQuest(questId)
-    self.BtnGo.gameObject:SetActiveEx(isTrack)
-    self.BtnTrack.gameObject:SetActiveEx(not isTrack)
-    self.BtnUntrack.gameObject:SetActiveEx(isTrack)
+    self.ImgTips.gameObject:SetActiveEx(isOccupy)
+    self.BtnOccupy.gameObject:SetActiveEx(isOccupy)
+    self.BtnGo.gameObject:SetActiveEx(not isOccupy and isTrack)
+    self.BtnTrack.gameObject:SetActiveEx(not isOccupy and not isTrack)
+    self.BtnUntrack.gameObject:SetActiveEx(not isOccupy and isTrack)
 end
 
 ---@param questId number
@@ -209,6 +215,11 @@ function XUiPanelBWTaskContent:OnBtnUntrackClick()
         self:RefreshBtn()
         self.Parent:RefreshTabButton()
     end)
+end
+
+function XUiPanelBWTaskContent:OnBtnOccupyClick()
+    local holderIds = XMVCA.XBigWorldQuest:GetQuestOccupationHolderIds(self._QuestId)
+    XMVCA.XBigWorldUI:Open("UiBigWorldPopupAdvance", nil, nil, holderIds)
 end
 
 return XUiPanelBWTaskContent

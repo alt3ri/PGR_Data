@@ -1,3 +1,4 @@
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XUiGridDlcRelinkMultiPlayerChar = require("XUi/XUiDlcRelink/Room/Grid/XUiGridDlcRelinkMultiPlayerChar")
 local XUiPanelDlcRelinkBoss = require("XUi/XUiDlcRelink/Room/Panel/XUiPanelDlcRelinkBoss")
 local XUiPanelDlcRelinkGlobal = require("XUi/XUiDlcRelink/Room/Panel/XUiPanelDlcRelinkGlobal")
@@ -22,6 +23,8 @@ local ButtonRightState = {
 
 function XUiDlcRelinkRoom:OnAwake()
     self.GridMulitiplayerRoomChar.gameObject:SetActiveEx(false)
+    self.GridReward.gameObject:SetActiveEx(false)
+    self.GridDot.gameObject:SetActiveEx(false)
 
     self.ButtonLeftState = {
         [ButtonLeftState.Leave] = self.BtnLeave,
@@ -41,7 +44,7 @@ function XUiDlcRelinkRoom:OnAwake()
 
     self:RegisterUiEvents()
 
-    local itemIds = { XDataCenter.ItemManager.ItemId.DlcRelinkGameplayCoin }
+    local itemIds = { XDataCenter.ItemManager.ItemId.DlcRelinkStoreCoin, XDataCenter.ItemManager.ItemId.DlcRelinkGameplayCoin }
     self.AssetPanel = XUiHelper.NewPanelActivityAssetSafe(itemIds, self.PanelSpecialTool, self, nil, function(data, index)
         local itemId = itemIds[index]
         XLuaUiManager.Open("UiDlcRelinkPopupItemDetail", itemId)
@@ -49,31 +52,45 @@ function XUiDlcRelinkRoom:OnAwake()
 end
 
 function XUiDlcRelinkRoom:OnStart()
+    self.EndTime = self._Control:GetActivityEndTime()
     -- 设置自动关闭
-    self:SetAutoCloseInfo(self._Control:GetActivityEndTime(), function(isClose)
+    self:SetAutoCloseInfo(self.EndTime, function(isClose)
         if isClose then
             self._Control:HandleActivityEnd()
+        else
+            self:RefreshTime()
         end
     end)
 
     self:InitSceneModel()
     self:InitMultiPlayerChar()
+    self:InitRewardPreview()
 
     if XMVCA.XDlcRoom:IsInRoom() then
         XMVCA.XDlcRoom:CancelReconnectToWorld()
     end
 
     self._Control:CheckNeedPopWifiTips()
+    self:GlobalMatchAutoSendHandle()
+
+    self.Tips = self._Control:GetActivityTips()
+    self.TipIcons = self._Control:GetActivityTipIcons()
+    self.TipSwitchInterval = tonumber(self._Control:GetClientConfig("MainTipsSwitchInterval"))
+    self.CurrentTipIndex = -1
+    self:InitDot()
 end
 
 function XUiDlcRelinkRoom:OnEnable()
     self.Super.OnEnable(self)
+    self:RefreshTime()
+    self:StartTipsTimer()
     self:ClearTeachingLevel()
     self:RefreshMultiPlayerChar()
     self:RefreshButtonState()
     self:RefreshPanelBoss()
     self:RefreshPanelExp()
     self:RefreshBtnTask()
+    self:RefreshBtnBox()
     self:CheckShowMechanismTeach()
     self._Control:OnReceiveInvite()
     XEventManager.AddEventListener(XEventId.EVENT_DLC_RELINK_TEACHING_LEVEL_PASS, self.RefreshAfterTeachingLevelPass, self)
@@ -126,11 +143,13 @@ function XUiDlcRelinkRoom:OnNotify(event, ...)
         self:RefreshPanelBoss()
     elseif event == XEventId.EVENT_DLC_RELINK_DAILY_RESET then
         self:RefreshPanelGlobal()
+        self:RefreshBtnBox()
     end
 end
 
 function XUiDlcRelinkRoom:OnDisable()
     self.Super.OnDisable(self)
+    self:StopTipsTimer()
     self:MarkTeachingLevel()
     XEventManager.RemoveEventListener(XEventId.EVENT_DLC_RELINK_TEACHING_LEVEL_PASS, self.RefreshAfterTeachingLevelPass, self)
 end
@@ -161,9 +180,43 @@ function XUiDlcRelinkRoom:InitMultiPlayerChar()
     end
 end
 
+function XUiDlcRelinkRoom:InitRewardPreview()
+    local rewardId = tonumber(self._Control:GetClientConfig("MainPreviewRewardId"))
+    if not XTool.IsNumberValid(rewardId) then
+        self.PanelReward.gameObject:SetActiveEx(false)
+        return
+    end
+
+    self.PanelReward.gameObject:SetActiveEx(true)
+    local rewardList = XRewardManager.GetRewardList(rewardId)
+    local rewardCount = #rewardList
+    for i = 1, rewardCount do
+        local go = XUiHelper.Instantiate(self.GridReward, self.PanelReward)
+        ---@type XUiGridCommon
+        local grid = XUiGridCommon.New(self, go)
+        grid:Refresh(rewardList[i])
+        grid:SetProxyClickFunc(function()
+            XLuaUiManager.Open("UiDlcRelinkPopupItemDetail", grid.TemplateId)
+        end)
+        grid.GameObject:SetActiveEx(true)
+    end
+end
+
 --endregion
 
 --region 刷新
+
+function XUiDlcRelinkRoom:RefreshTime()
+    if XTool.UObjIsNil(self.TxtTime) then
+        return
+    end
+    local timeLeft = self.EndTime - XTime.GetServerNowTimestamp()
+    if timeLeft < 0 then
+        timeLeft = 0
+    end
+    local timeStr = XUiHelper.GetTime(timeLeft, XUiHelper.TimeFormatType.DEFAULT)
+    self.TxtTime.text = string.format(self._Control:GetClientConfig("MainCountDownDesc"), timeStr)
+end
 
 function XUiDlcRelinkRoom:RefreshMultiPlayerChar()
     for _, grid in pairs(self.GridMultiPlayerChar) do
@@ -294,6 +347,23 @@ function XUiDlcRelinkRoom:RefreshBtnTask()
     -- 红点
     local isShowRedPoint = XMVCA.XDlcRelink:CheckAllTaskRedPoint()
     self.BtnTask:ShowReddot(isShowRedPoint)
+end
+
+function XUiDlcRelinkRoom:RefreshBtnBox()
+    local isSign = self._Control:CheckDailySign()
+    self.BtnBox:ShowReddot(not isSign)
+    self.IconBox.gameObject:SetActiveEx(not isSign)
+end
+
+-- 全局匹配自动发送处理
+function XUiDlcRelinkRoom:GlobalMatchAutoSendHandle()
+    if XMVCA.XDlcRoom:IsInRoom() or XMVCA.XDlcRoom:IsMatching() then
+        return
+    end
+    if not self._Control:CheckGlobalMatchEnableCondition() then
+        return
+    end
+    self._Control:RequestSwitchGlobalMatchFlag(self._Control:IsGlobalMatchEnabled())
 end
 
 --endregion
@@ -475,11 +545,31 @@ function XUiDlcRelinkRoom:RegisterUiEvents()
     self.BtnCreate:AddEventListener(handler(self, self.OnBtnCreateClick), true, true, 0.5)
     self.BtnExp:AddEventListener(handler(self, self.OnBtnExpClick))
     self.BtnEncyclopedia:AddEventListener(handler(self, self.OnBtnEncyclopediaClick))
+    self.BtnRank:AddEventListener(handler(self, self.OnBtnRankClick))
+    self.BtnBox:AddEventListener(handler(self, self.OnBtnBoxClick))
     self:BindHelpBtn(self.BtnHelp, self._Control:GetClientConfig("HelpKey"))
 end
 
 function XUiDlcRelinkRoom:OnBtnBackClick()
-    XLuaUiManager.CloseAllUpperUi("UiDlcRelinkMain")
+    if XMVCA.XDlcRoom:IsInRoom() then
+        local team = XMVCA.XDlcRoom:GetRoomProxy():GetTeam()
+        if not team then
+            self:Close()
+            return
+        end
+        if team:GetMemberAmount() == 1 then
+            XMVCA.XDlcRoom:Quit(function() self:Close() end)
+        else
+            XMVCA.XDlcRoom:DialogTipQuit(function() self:Close() end)
+        end
+        return
+    end
+
+    if XMVCA.XDlcRoom:IsMatching() then
+        XMVCA.XDlcRoom:DialogTipCancelMatch(function() self:Close() end)
+    else
+        self:Close()
+    end
 end
 
 function XUiDlcRelinkRoom:OnBtnTaskClick()
@@ -750,6 +840,33 @@ function XUiDlcRelinkRoom:OnBtnEncyclopediaClick()
     XLuaUiManager.Open("UiDlcRelinkEncyclopedia")
 end
 
+function XUiDlcRelinkRoom:OnBtnRankClick()
+    XLuaUiManager.Open("UiDlcRelinkRank")
+end
+
+function XUiDlcRelinkRoom:OnBtnBoxClick()
+    if self._Control:CheckDailySign() then
+        return
+    end
+    self._Control:RequestSign(function(rewardList)
+        self:RefreshBtnBox()
+        if XTool.IsTableEmpty(rewardList) then
+            return
+        end
+        local rewardGoodsList = {}
+        local equipUidList = {}
+        for _, reward in ipairs(rewardList) do
+            if not XTool.IsTableEmpty(reward.RewardGoods) then
+                table.insert(rewardGoodsList, reward.RewardGoods)
+            end
+            if XTool.IsNumberValid(reward.EquipUid) then
+                table.insert(equipUidList, reward.EquipUid)
+            end
+        end
+        XLuaUiManager.Open("UiDlcRelinkPopupGetReward", rewardGoodsList, equipUidList)
+    end)
+end
+
 --endregion
 
 --region 机制教学
@@ -794,6 +911,75 @@ function XUiDlcRelinkRoom:RefreshAfterTeachingLevelPass()
     self:RefreshMultiPlayerChar()
     self:RefreshButtonState()
     self:RefreshPanelBoss()
+end
+
+--endregion
+
+--region 提示信息相关
+
+function XUiDlcRelinkRoom:InitDot()
+    if XTool.IsTableEmpty(self.Tips) then
+        self.PanelDot.gameObject:SetActiveEx(false)
+        return
+    end
+    ---@type UiObject[]
+    self.GridDotList = {}
+    self.PanelDot.gameObject:SetActiveEx(true)
+    local dotCount = #self.Tips
+    for i = 1, dotCount do
+        local go = XUiHelper.Instantiate(self.GridDot, self.PanelDot)
+        go.gameObject:SetActiveEx(true)
+        self.GridDotList[i] = go
+    end
+end
+
+function XUiDlcRelinkRoom:StartTipsTimer()
+    if XTool.IsTableEmpty(self.Tips) then
+        self.PanelBanner.gameObject:SetActiveEx(false)
+        return
+    end
+    self:StopTipsTimer()
+    self.PanelBanner.gameObject:SetActiveEx(true)
+    self.TipsTimer = XScheduleManager.ScheduleForeverEx(function()
+        self:RefreshTip()
+    end, self.TipSwitchInterval)
+end
+
+function XUiDlcRelinkRoom:RefreshTip()
+    if XTool.UObjIsNil(self.TxtBannerTitle) then
+        return
+    end
+    self.CurrentTipIndex = self:GetNextIndex()
+    -- 刷新文本和图片
+    self.TxtBannerTitle.text = self.Tips[self.CurrentTipIndex]
+    local tipIcon = self.TipIcons[self.CurrentTipIndex]
+    self.RImgBanner:SetRawImageEx(tipIcon)
+    -- 刷新指示点
+    for index, go in pairs(self.GridDotList) do
+        local isActive = index == self.CurrentTipIndex
+        go:GetObject("ImgOff").gameObject:SetActiveEx(not isActive)
+        go:GetObject("ImgOn").gameObject:SetActiveEx(isActive)
+    end
+end
+
+function XUiDlcRelinkRoom:StopTipsTimer()
+    if self.TipsTimer then
+        XScheduleManager.UnSchedule(self.TipsTimer)
+        self.TipsTimer = nil
+    end
+    self.CurrentTipIndex = -1
+end
+
+function XUiDlcRelinkRoom:GetNextIndex()
+    local totalTips = #self.Tips
+    if totalTips <= 1 then
+        return 1
+    end
+    local nextIndex = self.CurrentTipIndex + 1
+    if nextIndex < 1 or nextIndex > totalTips then
+        nextIndex = 1
+    end
+    return nextIndex
 end
 
 --endregion

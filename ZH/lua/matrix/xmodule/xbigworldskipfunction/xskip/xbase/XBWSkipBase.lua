@@ -40,6 +40,16 @@ function XBWSkipBase:IsAllowSkip(isNoTips)
             end
         end
         
+        --TimeId
+        local timeId = XMVCA.XBigWorldSkipFunction:GetSkipTimeIdBySkipId(self:GetId())
+        if XMVCA.XBigWorldService:CheckInTimeByTimeId(timeId, true) == false then
+            if not isNoTips then
+                local text = XMVCA.XBigWorldService:GetText("SkipFailByTime")
+                XMVCA.XBigWorldUI:TipMsg(text)
+            end
+            return false
+        end
+        
         conditionId = XMVCA.XBigWorldSkipFunction:GetSkipFinishConditionIdBySkipId(self:GetId())
         if XTool.IsNumberValid(conditionId) then
             --完成了就不跳转了
@@ -55,15 +65,15 @@ function XBWSkipBase:IsAllowSkip(isNoTips)
     return false
 end
 
-function XBWSkipBase:SkipTo(isNoTips, ...)
+function XBWSkipBase:SkipTo(isNoTips, skipParams)
     if self:IsAllowSkip(isNoTips) then
-        return self:Skip(...)
+        return self:Skip(skipParams or table.empty)
     end
 
     return false
 end
 
-function XBWSkipBase:Skip(...)
+function XBWSkipBase:Skip(skipParams)
     -- 重写该方法更加安全
     return false
 end

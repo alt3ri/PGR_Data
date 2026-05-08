@@ -117,6 +117,9 @@ local dlcEventId = {
     -- 更新图钉位置
     EVENT_MAP_PIN_POSITION_UPDATE = NewId(),
 
+    -- 更新图钉样式
+    EVENT_MAP_PIN_STYLE_UPDATE = NewId(),
+
     -- 图钉详情关闭
     EVENT_MAP_PIN_DETAIL_CLOSE = NewId(),
 
@@ -258,6 +261,15 @@ local dlcEventId = {
     -- DIY界面关闭
     EVENT_UI_BIG_WORLD_DIY_DESTROY = NewId(),
 
+    -- 指挥官DIY保存完成(刷新指挥官模型)
+    EVENT_BIG_WORLD_COMMANDER_DIY_MODEL_UPDATE = NewId(),
+
+    -- 指挥官DIY重置完成
+    EVENT_BIG_WORLD_COMMANDER_DIY_RESET = NewId(),
+
+    -- 指挥官DIY背包更新
+    EVENT_BIG_WORLD_COMMANDER_DIY_BACKPACK_UPDATE = NewId(),
+
     -- 历程界面红点刷新
     EVENT_COURSE_RED_POINT_REFRESH = NewId(),
 
@@ -266,6 +278,9 @@ local dlcEventId = {
 
     -- 历程切换页签
     EVENT_COURSE_CHANGE_PAGE = NewId(),
+
+    -- 历程切换版本
+    EVENT_COURSE_CHANGE_VERSION = NewId(),
 
     -- 图文教程解锁触发
     EVENT_HELP_COURSE_UNLOCK_TRIGGER = NewId(),
@@ -302,6 +317,12 @@ local dlcEventId = {
 
     -- 商店购买
     EVENT_BIG_WORLD_SHOP_BUY = NewId(),
+
+    -- 提前体验
+    EVENT_BIG_WORLD_ADVANCE_UPDATE = NewId(),
+
+    -- 环境角色加载完毕
+    EVENT_BIG_WORLD_ECOLOGY_LOAD_COMPLETE = NewId(),
 }
 
 return dlcEventId

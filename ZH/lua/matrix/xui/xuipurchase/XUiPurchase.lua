@@ -46,7 +46,13 @@ end
 
 function XUiPurchase:OnEnable()
     if self.CurUiView then
-        self.CurUiView:ShowPanel()
+        if self.CurUiView == self.UiPanel[PanelNameConfig.PanelYk] then
+            self.CurUiView:OnRefresh()
+        elseif self.CurUiView == self.UiPanel[PanelExNameConfig.PanelYk] then
+            self.CurUiView:OnRefresh(self.CurUiView.CurUiType)
+        else
+            self.CurUiView:ShowPanel()
+        end
     end
     XEventManager.AddEventListener(XEventId.EVENT_PURCHASE_RECOMMEND_RED, self.UpdateRecommendRed, self)
     XEventManager.AddEventListener(XEventId.EVENT_LB_UPDATE, self.RefreshLBGroupTab, self)
@@ -107,6 +113,7 @@ function XUiPurchase:OnStart(tab, isClearData, childTabIndex, customParams)
     
     XEventManager.AddEventListener(XEventId.EVENT_PURCHASE_QUICK_BUY_SKIP, self.SkipToPayPage, self)
     XEventManager.AddEventListener(XEventId.EVENT_FIGHT_BEFORE_ENTER, self.SignDontClearDataOnFight, self)
+    XEventManager.AddEventListener(XEventId.EVENT_FASHION_SUIT_PURCHASE_BUY, self.UpdateFashionSuitBuy, self)
 end
 
 function XUiPurchase:AddListener()
@@ -675,7 +682,6 @@ function XUiPurchase:OnDisable()
     end
     XEventManager.RemoveEventListener(XEventId.EVENT_PURCHASE_RECOMMEND_RED, self.UpdateRecommendRed, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_LB_UPDATE, self.RefreshLBGroupTab, self)
-
     if self.TimeId then
         XScheduleManager.UnSchedule(self.TimeId)
         self.TimeId = nil
@@ -685,6 +691,7 @@ end
 function XUiPurchase:OnDestroy()
     XEventManager.RemoveEventListener(XEventId.EVENT_PURCHASE_QUICK_BUY_SKIP, self.SkipToPayPage, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_FIGHT_BEFORE_ENTER, self.SignDontClearDataOnFight, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_FASHION_SUIT_PURCHASE_BUY, self.UpdateFashionSuitBuy, self)
     self.Btns = nil
     if self.IsClearData and not XLuaUiManager.IsUiLoad("UiPurchase")  then
         XDataCenter.PurchaseManager.ClearData()
@@ -861,4 +868,14 @@ end
 
 function XUiPurchase:SignDontClearDataOnFight()
     self.IsClearData = false
-end
+end
+
+function XUiPurchase:UpdateFashionSuitBuy(rewardList)
+    ---@type XUiPurchaseCoatingLB
+    local panel = self.UiPanel[PanelExNameConfig.PanelCoatingLb]
+    if panel then
+        panel:OnUpdate(rewardList)
+    end
+end
+
+return XUiPurchase

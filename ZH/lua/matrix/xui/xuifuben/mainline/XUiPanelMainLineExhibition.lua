@@ -31,51 +31,57 @@ function XUiPanelMainLineExhibition:OnEnable()
     if self.IsEnable then
         return
     end
+
     self.IsEnable = true
-
-    self:RefreshBgByPos()
-    self:RefreshBriefAndDetailUiShow()
-    self:RefreshBtnBookmark()
-    self:RefreshBtnGoLastPassedChapter()
-    self:CheckShowChapterPrefab()
-
-    -- 新手提示，新手期间禁用拖拽和缩放
-    local isNewable, tips = self:IsNewbie()
-    self.LockText.text = tips
-    self.LockTips.gameObject:SetActiveEx(isNewable)
-    self:SetAreaScaleDragEnable(not isNewable)
-    if isNewable then
-        -- 新手期间保持默认位置，隐藏下拉列表和滑动条
-        self.UiPanelModuleDropdown:Close()
-        self:HideScrollBar()
-    else
-        -- 默认的定位规则
-        if not self.CurModuleIndex then
-            local curModuleIndex, curChapterIndex = XMVCA.XMainLine2:GetExhibitionCurrentModuleIndexAndChapterIndex()
-            self:LocateByIndex(curModuleIndex, curChapterIndex)
-        end
-    end
-
+    
     -- 子界面OnEnable
     for _, module in pairs(self.ModuleList) do
         module:OnEnable()
+    end
+
+    -- 强制刷新BG和BGM
+    self._OldModuleId = -1
+    -- 刷新书签
+    self:RefreshBtnBookmark()
+    -- 新手期间增加提示，禁用拖拽和缩放
+    local isNewable, tips = self:IsNewbie()
+    self.LockTips.gameObject:SetActiveEx(isNewable)
+    self:SetAreaScaleDragEnable(not isNewable)
+    
+    -- 新手期间保持默认位置，隐藏下拉列表和滑动条，增加上锁提示
+    if isNewable then
+        self:Refresh()
+        self.UiPanelModuleDropdown:Close()
+        self:HideScrollBar()
+        self.LockText.text = tips
+        
+    -- 默认的定位规则
+    elseif not self.CurModuleIndex then
+        local curModuleIndex, curChapterIndex = XMVCA.XMainLine2:GetExhibitionCurrentModuleIndexAndChapterIndex()
+        self:LocateByIndex(curModuleIndex, curChapterIndex)
+        
+    -- 返回界面重新刷新
+    else
+        self:Refresh()    
     end
 end
 
 function XUiPanelMainLineExhibition:OnDisable()
     self.IsEnable = false
-    self.UiPanelModuleDropdown:CloseDropdown()
 
     -- 子界面OnDisable
     for _, module in pairs(self.ModuleList) do
         module:OnDisable()
     end
 
+    self.UiPanelModuleDropdown:CloseDropdown()
     self.firstNewTagExhibitionChapterId = nil
+    self.RootUi.BgmMusicPlayer:ClearTempMusic()
 end
 
 function XUiPanelMainLineExhibition:OnDestroy()
     XEventManager.RemoveEventListener(XEventId.EVENT_MAINLINE_EXHIBITION_LOCATE, self.OnEventLocate, self)
+    self:StopLocateTimer()
 end
 
 function XUiPanelMainLineExhibition:RegisterUiEvents()
@@ -83,6 +89,7 @@ function XUiPanelMainLineExhibition:RegisterUiEvents()
     XUiHelper.RegisterClickEvent(self, self.BtnCharacterStory, self.OnBtnCharacterStoryClick, nil, true)
     XUiHelper.RegisterClickEvent(self, self.BtnGoRight, self.OnBtnGoLastPassedChapter, nil, true)
     XUiHelper.RegisterClickEvent(self, self.BtnGoLeft, self.OnBtnGoLastPassedChapter, nil, true)
+    self.BtnLifeTree:AddEventListener(function() self:OnBtnLifeTreeClick() end)
     XEventManager.AddEventListener(XEventId.EVENT_MAINLINE_EXHIBITION_LOCATE, self.OnEventLocate, self)
 
     -- 滑动条
@@ -142,12 +149,7 @@ function XUiPanelMainLineExhibition:OnTranslateValueChanged(pos)
     self.ScrollBar.value = progress
     self.IsUpdateScrollBarProgress = false
 
-    -- 更新背景图
-    self:RefreshBgByPos()
-    -- 更新跳转按钮
-    self:RefreshBtnGoLastPassedChapter()
-    -- 检测显示章节预制体
-    self:CheckShowChapterPrefab()
+    self:Refresh()
 end
 
 function XUiPanelMainLineExhibition:IsDragOperation()
@@ -156,12 +158,20 @@ end
 
 -- 缩放发生变化
 function XUiPanelMainLineExhibition:OnScrollValueChanged()
+    self:Refresh()
+end
+
+function XUiPanelMainLineExhibition:Refresh()
+    -- 检测显示章节预制体
+    self:CheckShowChapterPrefab()
     -- 更新简略/详细信息显示
     self:RefreshBriefAndDetailUiShow()
     -- 更新背景图
     self:RefreshBgByPos()
     -- 更新跳转按钮
     self:RefreshBtnGoLastPassedChapter()
+    -- 刷新生命树跳转按钮状态
+    self:RefreshBtnLifeTreeState()
 end
 
 -- 事件触发定位
@@ -230,6 +240,7 @@ function XUiPanelMainLineExhibition:SwitchBriefUi()
 end
 
 function XUiPanelMainLineExhibition:InitDragArea()
+    self.DragAreaRectTransform = self.DragArea:GetComponent("RectTransform")
     self.PanelAreaScaleDrag.MaxScale = XEnumConst.MAINLINE2.EXHIBITION_MAX_SCALE
     self.PanelAreaScaleDrag.MinScale = XEnumConst.MAINLINE2.EXHIBITION_MIN_SCALE
     local scale = XEnumConst.MAINLINE2.EXHIBITION_SHOW_INIT_SCALE
@@ -275,7 +286,7 @@ function XUiPanelMainLineExhibition:GetModuleByModuleId(moduleId)
 end
 
 -- 通过下标定位
-function XUiPanelMainLineExhibition:LocateByIndex(moduleIndex, chapterIndex)
+function XUiPanelMainLineExhibition:LocateByIndex(moduleIndex, chapterIndex, finishCb)
     -- 设置锚点和缩放
     local scale = self:GetCurrentScale()
     local moduleId = self.ModuleList[moduleIndex]:GetModuleId()
@@ -314,9 +325,30 @@ function XUiPanelMainLineExhibition:LocateByIndex(moduleIndex, chapterIndex)
     self.PanelModule.anchoredPosition = XLuaVector2.New(-moveWidth, 0)
 
     -- 更新背景
-    self:RefreshBg(moduleId)
+    self:RefreshBgAndBgm(moduleId)
     -- 更新下拉列表
     self:SetDropdownModuleId(moduleId)
+
+    -- 定位完成回调
+    if finishCb then
+        self:Refresh() -- 禁用拖拽组件会导致不触发OnTranslateValueChanged，手动刷新一次
+        XLuaUiManager.SetMask(true)
+        self:SetAreaScaleDragEnable(false)
+        self.LocateTimer = XScheduleManager.ScheduleOnce(function()
+            self.LocateTimer = nil
+            XLuaUiManager.SetMask(false)
+            self:SetAreaScaleDragEnable(true)
+            finishCb()
+        end, 400)
+    end
+end
+
+-- 停止定位定时器
+function XUiPanelMainLineExhibition:StopLocateTimer()
+    if self.LocateTimer then
+        XScheduleManager.UnSchedule(self.LocateTimer)
+        self.LocateTimer = nil
+    end
 end
 
 function XUiPanelMainLineExhibition:GetObject(name)
@@ -333,7 +365,7 @@ function XUiPanelMainLineExhibition:RefreshBriefAndDetailUiShow()
 end
 
 -- 刷新背景图
-function XUiPanelMainLineExhibition:RefreshBg(moduleId)
+function XUiPanelMainLineExhibition:RefreshBgAndBgm(moduleId)
     if self._OldModuleId == moduleId then
         return
     end
@@ -344,6 +376,13 @@ function XUiPanelMainLineExhibition:RefreshBg(moduleId)
     local moduleConfig = XMVCA.XMainLine2:GetConfigExhibitionModule(moduleId)
     self.BgImage:SetRawImage(moduleConfig.BgImage)
     self:SetDropdownModuleId(moduleId)
+
+    local bgmCueId = moduleConfig.BgmCueId
+    if bgmCueId ~= 0 then
+        self.RootUi.BgmMusicPlayer:SetTempMusic(bgmCueId)
+    else
+        self.RootUi.BgmMusicPlayer:ClearTempMusic()
+    end
 end
 
 -- 刷新背景图
@@ -359,7 +398,7 @@ function XUiPanelMainLineExhibition:RefreshBgByPos()
         local moduleWidth = module:GetWidth() * scale
         if moveWidth >= 0 and moveWidth - moduleWidth <= 0 then
             local moduleId = module:GetModuleId()
-            self:RefreshBg(moduleId)
+            self:RefreshBgAndBgm(moduleId)
             return
         end
         moveWidth = moveWidth - moduleWidth - spacing
@@ -458,22 +497,22 @@ function XUiPanelMainLineExhibition:IsExhibitionChapterInShowArea(moduleIndex, c
 
     -- 左边到模块开始的长度
     local scale = self:GetCurrentScale()
-    local moduleStartWidth = self:GetMoveToModuleStartWidth(moduleIndex) * scale
+    local moduleStartWidth = self:GetMoveToModuleStartWidth(moduleIndex)
 
-    -- 最大移动长度
+    -- 计算章节所在长度
     local gridModule = self.ModuleList[moduleIndex]
     local moduleWidth = gridModule:GetWidth()
     local gridChapter = gridModule:GetGridChapter(chapterIndex)
     local chapterPosX = gridChapter:GetLocalPosition().x
-    local maxMoveWidth = moduleStartWidth + (moduleWidth / 2 + chapterPosX) * scale
+    local chapterMoveWidth = (moduleStartWidth + moduleWidth / 2 + chapterPosX) * scale
 
-    -- 最小移动长度
-    local showAreaWidth = self:GetShowAreaWidth()
-    local minMoveWidth = maxMoveWidth - showAreaWidth
+    -- 拖拽列表的移动长度，一开始贴着左边的时候是0，拖拽Width对应anchoredPosition.x
+    local showAreaWidthLeft = math.abs(self.PanelModule.anchoredPosition.x)
+    local showAreaWidthRight = showAreaWidthLeft + self:GetShowAreaWidth()
 
-    local curMoveWidth = math.abs(self.PanelModule.anchoredPosition.x)
-    local isInArea = curMoveWidth >= (minMoveWidth - offset) and curMoveWidth <= (maxMoveWidth + offset)
-    local isInAreaLeft = curMoveWidth > maxMoveWidth
+    local isInAreaLeft = chapterMoveWidth < (showAreaWidthLeft - offset)
+    local isInAreaRight = chapterMoveWidth > (showAreaWidthRight + offset)
+    local isInArea = not isInAreaLeft and not isInAreaRight
     return isInArea, isInAreaLeft
 end
 
@@ -500,7 +539,7 @@ end
 -- 获取可拖拽区域的长度
 function XUiPanelMainLineExhibition:GetAllDragAreaWidth()
     local scale = self:GetCurrentScale()
-    CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.PanelModule)
+    --CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.PanelModule)
     return self.PanelModule.rect.width * scale - self:GetShowAreaWidth()
 end
 
@@ -509,28 +548,15 @@ function XUiPanelMainLineExhibition:GetCurrentScale()
     return self.PanelModule.localScale.x
 end
 
--- 获取显示区域的长度
+-- 获取显示区域的长度（不进行缓存，界面打开的下一帧会刷新布局，width发生变化）
 function XUiPanelMainLineExhibition:GetShowAreaWidth()
-    if not self.ShowAreaWidth then
-        self.ShowAreaWidth = self.DragArea:GetComponent("RectTransform").rect.width
-    end
-    return self.ShowAreaWidth
+    local width = self.DragAreaRectTransform.rect.width
+    return width
 end
 
--- 获取显示区域的一半
+-- 获取显示区域的一半（不进行缓存，界面打开的下一帧会刷新布局，width发生变化）
 function XUiPanelMainLineExhibition:GetHalfShowAreaWidth()
-    if not self.HalfShowAreaWidth then
-        self.HalfShowAreaWidth = self:GetShowAreaWidth() / 2
-    end
-    return self.HalfShowAreaWidth
-end
-
--- 获取显示区域的高度
-function XUiPanelMainLineExhibition:GetShowAreaHeigh()
-    if not self.ShowAreaHeight then
-        self.ShowAreaHeight = self.DragArea:GetComponent("RectTransform").rect.height
-    end
-    return self.ShowAreaHeight
+    return self:GetShowAreaWidth() / 2
 end
 
 --region 模块下拉列表
@@ -595,6 +621,65 @@ function XUiPanelMainLineExhibition:RefreshBtnBookmark()
             self.BtnBookmark:SetName(name)
         end
     end)
+end
+--endregion
+
+--region 生命树
+-- 刷新生命树按钮
+function XUiPanelMainLineExhibition:RefreshBtnLifeTree()
+    local isOpen = XMVCA.XLifeTree:IsOpen()
+    self.BtnLifeTree.gameObject:SetActiveEx(isOpen)
+
+    if isOpen then
+        local isRed = XMVCA.XLifeTree:IsRed()
+        self.BtnLifeTree:ShowReddot(isRed)
+    end
+end
+
+-- 刷新生命树按钮状态
+function XUiPanelMainLineExhibition:RefreshBtnLifeTreeState()
+    -- 获取生命树按钮跳转的章节Id
+    if not self.IsInitLifeTreeSkipData then
+        self.IsInitLifeTreeSkipData = true
+        local config = XMVCA.XLifeTree:GetLifeTreeClientConfigConfigById("MainLineExhibitionSkipChapterId")
+        local chapterId = tonumber(config.Values[1])
+        if XTool.IsNumberValidEx(chapterId) then
+            self.LifeTreeSkipModuleIndex, self.LifeTreeSkipChapterIndex = self:GetExhibitionChapterIndex(chapterId)
+        end
+    end
+
+    -- 未配置跳转章节，不需要刷新按钮状态
+    if not self.LifeTreeSkipModuleIndex and not self.LifeTreeSkipChapterIndex then
+        return
+    end
+
+    -- 根据是否在显示区域内刷新状态
+    local isInShowArea, isInShowAreaLeft = self:IsExhibitionChapterInShowArea(self.LifeTreeSkipModuleIndex, self.LifeTreeSkipChapterIndex)
+    local isHighlight = isInShowArea or isInShowAreaLeft
+    self.BtnLifeTree:SetDisable(not isHighlight)
+end
+
+function XUiPanelMainLineExhibition:OnBtnLifeTreeClick()
+    -- 运营埋点
+    local dict = {}
+    dict["way"] = 1
+    CS.XRecord.Record(dict, "1000041", "LifeTreeEnterWay")
+
+    -- 配置了跳转章节，跳转章节不在显示范围内时，先跳转章节
+    if self.LifeTreeSkipModuleIndex and self.LifeTreeSkipChapterIndex then
+        local isInShowArea, isInShowAreaLeft = self:IsExhibitionChapterInShowArea(self.LifeTreeSkipModuleIndex, self.LifeTreeSkipChapterIndex)
+        local isHighlight = isInShowArea or isInShowAreaLeft
+        if not isHighlight then
+            -- 定位到生命树开始的章节，然后打开生命树图鉴功能
+            self:LocateByIndex(self.LifeTreeSkipModuleIndex, self.LifeTreeSkipChapterIndex, function()
+                XMVCA.XLifeTree:ExOpenMainUi()
+            end)
+            return
+        end
+    end
+    
+    -- 打开生命树图鉴功能
+    XMVCA.XLifeTree:ExOpenMainUi()
 end
 --endregion
 

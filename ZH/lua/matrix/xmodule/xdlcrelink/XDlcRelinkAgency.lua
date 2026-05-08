@@ -147,7 +147,14 @@ function XDlcRelinkAgency:OpenMainUi()
             return
         end
 
-        XLuaUiManager.Open("UiDlcRelinkMain")
+        local loadingType = self._Model:GetClientConfig("RoomUiLoadingType", 1)
+        XLuaUiManager.Open("UiLoading", loadingType)
+        XScheduleManager.ScheduleOnce(function()
+            -- TODO 战斗初始化，先临时放在这里，后续等战斗那边优化后在调整。
+            XMVCA.XDlcRelink:DlcInitFight()
+            XLuaUiManager.Open("UiDlcRelinkRoom")
+            XLuaUiManager.Remove("UiLoading")
+        end, 2000)
     end)
     return true
 end
@@ -228,15 +235,15 @@ end
 
 --- 自定义进入条件检测
 function XDlcRelinkAgency:DlcCheckCustomEnterCondition(roomId, nodeId, worldId, levelId, createTime)
-    -- 未完成教学, 跳转到主界面并提示
+    -- 未完成教学, 跳转到房间并提示
     local teachingLevelId = self._Model:GetTeachingLevelId()
     if XTool.IsNumberValid(teachingLevelId) and not self._Model:IsTutorialPassed() then
         local tipContext = self._Model:GetClientConfig("TeachingNotPassedTips", 1)
-        if XLuaUiManager.IsUiShow("UiDlcRelinkMain") or XLuaUiManager.IsUiShow("UiDlcRelinkRoom") then
+        if XLuaUiManager.IsUiShow("UiDlcRelinkRoom") then
             XUiManager.TipMsg(tipContext)
             return false
         end
-        self:CommonRunRelinkMainUiHandle(function()
+        self:CommonRunRelinkRoomUiHandle(function()
             XUiManager.TipMsg(tipContext)
         end)
         return false
@@ -359,32 +366,15 @@ end
 
 --endregion
 
---region 主界面和房间逻辑
+--region 房间逻辑
 
---- 回到主界面
-function XDlcRelinkAgency:CommonRunRelinkMainUiHandle(callback)
-    local uiName = "UiDlcRelinkMain"
-    if XLuaUiManager.IsStackUiOpen(uiName) then
-        XLuaUiManager.CloseAllUpperUiWithCallback(uiName, callback)
-    else
-        XLuaUiManager.OpenWithCallback(uiName, callback)
-    end
-end
-
---- 回到房间界面 需要先回到主界面再打开房间界面
+--- 回到房间界面
 function XDlcRelinkAgency:CommonRunRelinkRoomUiHandle(callback)
-    local mainUiName = "UiDlcRelinkMain"
     local roomUiName = "UiDlcRelinkRoom"
-    if XLuaUiManager.IsStackUiOpen(mainUiName) then
-        if XLuaUiManager.IsStackUiOpen(roomUiName) then
-            XLuaUiManager.CloseAllUpperUiWithCallback(roomUiName, callback)
-        else
-            XLuaUiManager.OpenWithCallback(roomUiName, callback)
-        end
+    if XLuaUiManager.IsStackUiOpen(roomUiName) then
+        XLuaUiManager.CloseAllUpperUiWithCallback(roomUiName, callback)
     else
-        XLuaUiManager.OpenWithCallback(mainUiName, function()
-            XLuaUiManager.OpenWithCallback(roomUiName, callback)
-        end)
+        XLuaUiManager.OpenWithCallback(roomUiName, callback)
     end
 end
 

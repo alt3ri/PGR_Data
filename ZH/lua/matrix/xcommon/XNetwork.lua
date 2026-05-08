@@ -38,37 +38,6 @@ function XNetwork.CheckIsChangedGate()
     return LastIp ~= Ip or LastPort ~= Port
 end
 
-local LogTableFunc = IsDebug and XLog.Debug or XLog.Error
-
-local function TipTableDiff(sha1Table)
-    if not CS.XTableManager.NeedSha1 then -- 开发环境下不解析Sha1
-        return
-    end
-
-    XTool.LoopMap(CS.XTableManager.Sha1Table, function(k, v)
-        local sha1 = sha1Table[k]
-        if not sha1 then
-            LogTableFunc("多余表格: " .. k)
-            return
-        end
-
-        if v ~= sha1 then
-            LogTableFunc("差异表格: " .. k .. ", 客户端sha1: " .. v .. " , 服务端sha1: " .. sha1)
-        end
-
-        sha1Table[k] = nil
-    end)
-
-    for k, _ in pairs(sha1Table) do
-        LogTableFunc("缺少表格: " .. k)
-    end
-end
-
-XRpc.NotifyCheckTableSha1 = function(data)
-    -- 讨论后先屏蔽 - 【#173976】屏蔽表格sha1校验的输出
-    -- TipTableDiff(data.Sha1Table)
-end
-
 function XNetwork.ConnectGateServer(args)
     if not args then
         return
@@ -127,7 +96,6 @@ function XNetwork.ConnectGateServer(args)
             XNetwork.Call("HandshakeRequest", {
                 ApplicationVersion = CS.XRemoteConfig.ApplicationVersion,
                 DocumentVersion = CS.XRemoteConfig.DocumentVersion,
-                Sha1 = CS.XTableManager.Sha1
             }, function(response)
                 if args.RemoveHandshakeTimerCb then
                     args.RemoveHandshakeTimerCb()
@@ -164,11 +132,6 @@ function XNetwork.ConnectGateServer(args)
                         end)
                     else
                         XUiManager.DialogTip("", CS.XTextManager.GetCodeText(response.Code), XUiManager.DialogType.OnlySure)
-                    end
-
-                    if response.Code == XCode.LoginTableError then
-                        XLog.Error("配置表客户端和服务端不一致")
-                        TipTableDiff(response.Sha1Table)
                     end
 
                     CS.XNetwork.Disconnect()

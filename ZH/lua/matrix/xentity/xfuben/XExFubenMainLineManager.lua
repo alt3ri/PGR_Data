@@ -160,6 +160,9 @@ end
 
 -- 检查是否展示红点
 function XExFubenMainLineManager:ExCheckIsShowRedPoint()
+    -- 生命树图鉴
+    if XMVCA.XLifeTree:IsRed() then return true end
+
     for _, config in ipairs(self:ExGetChapterGroupConfigs()) do
         if self:ExCheckChapterGroupHasRedPoint(config.Id) then
             return true

@@ -11,6 +11,7 @@ function XBossSingleStageHistory:SetData(data)
         self._Score = data.Score
         self._Characters = data.Characters
         self._Partners = data.Partners
+        self._BuffGroup = data.BuffGroup
     end
 end
 
@@ -24,7 +25,12 @@ end
 
 function XBossSingleStageHistory:GetCharacterList()
     return self._Characters
-end 
+end
+
+-- returns nullable
+function XBossSingleStageHistory:GetBuffGroup()
+    return self._BuffGroup
+end
 
 function XBossSingleStageHistory:GetPartnerList()
     return self._Partners

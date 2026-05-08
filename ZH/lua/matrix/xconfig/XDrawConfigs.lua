@@ -73,6 +73,7 @@ local TABLE_DRAW_SHOW = "Client/Draw/DrawShow.tab"
 local TABLE_DRAW_CAMERA = "Client/Draw/DrawCamera.tab"
 local TABLE_DRAW_TABS = "Client/Draw/DrawTabs.tab"
 local TABLE_DRAW_SHOW_CHARACTER = "Client/Draw/DrawShowCharacter.tab"
+local TABLE_DRAW_ROLE_PERFORMANCE = "Client/Draw/DrawRolePerformance.tab"
 local TABLE_DRAW_TYPE_CHANGE = "Client/Draw/DrawTypeChange.tab"
 local TABLE_DRAW_SHOW_EFFECT = "Client/Draw/DrawShowEffect.tab"
 local TABLE_DRAW_SHOW_PICTURE = "Client/Draw/DrawShowPicture.tab"
@@ -92,6 +93,7 @@ local TABLE_DRAW_COMBINATIONS = "Share/Draw/DrawCombinations.tab"
 local TABLE_DRAW_TICKET = "Share/DrawTicket/DrawTicket.tab"
 local TABLE_DEVILMAYCRY_ACTIVITY = "Share/Draw/DevilMayCryActivity.tab"
 local TABLE_DRAW_CAN_LIVER_ACTIVITY  = "Share/Draw/DrawCanLiverActivity.tab"
+local TABLE_DRAW_EXTRA_TAG_GROUP = "Client/Draw/DrawExtraTagGroup.tab"
 
 local DrawPreviews = {}
 local DrawCombinations = {}
@@ -105,6 +107,7 @@ local DrawWaferShow = {}
 local DrawCamera = {}
 local DrawTabs = {}
 local DrawShowCharacter = {}
+local DrawRolePerformance = {}
 local DrawTypeChangeCfg = {}
 local DrawSubGroupDic = {}
 local DrawGroupRelationCfg = {}
@@ -133,7 +136,9 @@ local DrawPreviewGoodsCfg = {}
 ---@type XTableDevilMayCryActivity[]
 local DevilMayCryActivityCfg = {}
 ---@type XTableDrawCanLiverActivity[]
-local DrawCanLiverActivityCfg = {} 
+local DrawCanLiverActivityCfg = {}
+---@type table<number, XTableDrawExtraTagGroup>
+local DrawExtraTagGroupCfg = {}
 
 function XDrawConfigs.Init()
     DrawCombinations = XTableManager.ReadByIntKey(TABLE_DRAW_COMBINATIONS, XTable.XTableDrawCombinations, "Id")
@@ -142,6 +147,7 @@ function XDrawConfigs.Init()
     DrawCamera = XTableManager.ReadByIntKey(TABLE_DRAW_CAMERA, XTable.XTableDrawCamera, "Id")
     DrawTabs = XTableManager.ReadByIntKey(TABLE_DRAW_TABS, XTable.XTableDrawTabs, "Id")
     DrawShowCharacter = XTableManager.ReadByIntKey(TABLE_DRAW_SHOW_CHARACTER, XTable.XTableDrawShowCharacter, "Id")
+    DrawRolePerformance = XTableManager.ReadByIntKey(TABLE_DRAW_ROLE_PERFORMANCE, XTable.XTableDrawRolePerformance, "Id")
     DrawAimProbability = XTableManager.ReadByIntKey(TABLE_AIMPROBABILITY, XTable.XTableDrawAimProbability, "Id")
     DrawTypeChangeCfg = XTableManager.ReadByIntKey(TABLE_DRAW_TYPE_CHANGE, XTable.XTableDrawTypeChange, "MainGroupId")
     DrawShowEffect = XTableManager.ReadByIntKey(TABLE_DRAW_SHOW_EFFECT, XTable.XTableDrawShowEffect, "EffectGroupId")
@@ -163,6 +169,7 @@ function XDrawConfigs.Init()
     DrawProbs = XTableManager.ReadByIntKey(TABLE_DRAW_PROB, XTable.XTableDrawProbShow, "DrawId")
     DrawPower = XTableManager.ReadByIntKey(TABLE_DRAW_DRAW_POWER, XTable.XTableDrawPower, "DrawId")
     DrawCanLiverActivityCfg = XTableManager.ReadByIntKey(TABLE_DRAW_CAN_LIVER_ACTIVITY, XTable.XTableDrawCanLiverActivity, "Id")
+    DrawExtraTagGroupCfg = XTableManager.ReadByIntKey(TABLE_DRAW_EXTRA_TAG_GROUP, XTable.XTableDrawExtraTagGroup, "Id")
 
     XDrawConfigs.SetDrawSubGroupDic()
     XDrawConfigs.SetGroupRelationDic()
@@ -241,6 +248,11 @@ function XDrawConfigs.GetDrawShowCharacter()
     return DrawShowCharacter
 end
 
+---@return XTableDrawRolePerformance
+function XDrawConfigs.GetDrawRolePerformance(characterId)
+    return DrawRolePerformance[characterId]
+end
+
 function XDrawConfigs.GetDrawCamera()
     return DrawCamera
 end
@@ -312,6 +324,7 @@ function XDrawConfigs.GetDrawTabById(id)
     return DrawTabs[id]
 end
 
+---@return XTableDrawGroupRule
 function XDrawConfigs.GetDrawGroupRuleById(id)
     if not DrawGroupRule[id] then
         XLog.Error("Client/Draw/DrawGroupRule.tab Id = " .. id .. " Is Null")
@@ -403,6 +416,7 @@ function XDrawConfigs.GetDrawCardNameBg(id)
     return XDrawConfigs.GetDrawShowPictureById(id).NameBg
 end
 
+---@return XTableDrawScene
 function XDrawConfigs.GetDrawSceneCfg(id)
     return DrawSceneCfg[id]
 end 
@@ -518,4 +532,14 @@ end
 
 function XDrawConfigs.GetDrawCanLiverActivityCfgById(id)
     return DrawCanLiverActivityCfg[id]
-end
+end
+
+--region DrawExtraTagGroup
+function XDrawConfigs.GetDrawExtraTagGroupCfgById(id)
+    return DrawExtraTagGroupCfg[id]
+end
+
+function XDrawConfigs.GetDrawExtraTagGroupCfgs()
+    return DrawExtraTagGroupCfg
+end
+--endregion

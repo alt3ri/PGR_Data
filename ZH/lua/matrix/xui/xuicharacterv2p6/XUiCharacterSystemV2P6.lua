@@ -1,4 +1,4 @@
-local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
+local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
 local XUiCharacterSystemV2P6 = XLuaUiManager.Register(XLuaUi, "UiCharacterSystemV2P6")
 local XUiPanelModelV2P6 = require("XUi/XUiCharacterV2P6/Grid/XUiPanelModelV2P6")
 local XUiPanelRoleModel = require("XUi/XUiCharacter/XUiPanelRoleModel")
@@ -90,7 +90,8 @@ function XUiCharacterSystemV2P6:RefreshRoleModel(cb)
         -- 适配看特效球text的相机位置
         self.PanelModel:FixUiCameraMainToEffectBall()
         self.CurModelTransform = model
-        
+        self:RefreshLifeTreeEffect()
+
         if cb then
             cb(model)
         end
@@ -172,12 +173,14 @@ function XUiCharacterSystemV2P6:OpenChildUi(uiname, ...)
     self:OpenOneChildUi(uiname, ...)
     -- 打开子界面时转正model
     if self.OpenChildStack:Peek() == uiname then
+        self:RefreshLifeTreeEffect()
         return
     end
     self.OpenChildStack:Push(uiname)
 
     -- 打开子ui时转正角色
     self:ReturnModelToInitRotation()
+    self:RefreshLifeTreeEffect()
 end
 
 -- 回正角色转向
@@ -197,6 +200,27 @@ function XUiCharacterSystemV2P6:OpenLastChildUi()
     uiName = self.OpenChildStack:Peek()
 
     self:OpenChildUi(uiName)
+end
+
+-- 刷新生命树特效
+function XUiCharacterSystemV2P6:RefreshLifeTreeEffect()
+    if not self.CurCharacter then
+        self.PanelModel:SetLifeTreeEffectIndex(nil)
+        return
+    end
+
+    local powerConfig = XMVCA.XCharacter:GetCharacterPowerConfig(self.CurCharacter.Id)
+    if not powerConfig then
+        self.PanelModel:SetLifeTreeEffectIndex(nil)
+        return
+    end
+
+    local curChildUiName = self.OpenChildStack:Peek()
+    if curChildUiName == "UiCharacterV2P6" then
+        self.PanelModel:SetLifeTreeEffectIndex(1)
+    else
+        self.PanelModel:SetLifeTreeEffectIndex(2)
+    end
 end
 
 function XUiCharacterSystemV2P6:OnBtnBackClick()

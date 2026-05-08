@@ -34,7 +34,7 @@ function XUiFavorabilityNew:OnAwake()
     local curSceneUrl, _ = XSceneModelConfigs.GetSceneAndModelPathById(curSceneTemplate.SceneModelId)
     local modelUrl = self:GetDefaultUiModelUrl()
     ---@type XUiPanelSwitchableSceneAnim
-    self.SwitchableScene = require("XUi/XUiSwitchableScene/Panel/XUiPanelSwitchableSceneAnim").New()
+    self.SwitchableScene = require("XUi/XUiSwitchableScene/XUiPanelSwitchableSceneAnim").New()
     self:LoadUiScene(curSceneUrl, modelUrl, function() self:OnUiSceneLoaded() end, false)
     self.ThemeCtrl=XUiMainPanelBase.New(self.PanelTheme,self)
     self.ThemeCtrl:InitTheme(self.PanelTheme.transform)

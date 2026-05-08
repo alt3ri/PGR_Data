@@ -9,11 +9,12 @@ local INDEX = {
     ACTIVITY_TARGET = 4,
 }
 
-function XUiDrawLog:OnStart(drawInfo, selectIndex, cb)
+function XUiDrawLog:OnStart(drawInfo, selectIndex, cb, optionKey)
     self.DrawId = drawInfo.Id
     self.DrawInfo = drawInfo
     self.SelectIndex = selectIndex or 1
     self.Cb = cb
+    self.OptionKey = optionKey or ""
     self:InitData()
     self:InitBtnTab()
     self:AddBtnListener()
@@ -94,7 +95,13 @@ function XUiDrawLog:InitDrawPreview()
     
     local groupInfo = XDataCenter.DrawManager.GetDrawGroupInfoByGroupId(self.DrawInfo.GroupId)
     local drawGroupRule = XDrawConfigs.GetDrawGroupRuleById(self.DrawInfo.GroupId)
-    local isNotSelectUp = drawGroupRule and drawGroupRule.IsNotSelectDefault and not XTool.IsNumberValid(groupInfo.UseDrawId)
+    local useDrawId = 0
+    if not string.IsNilOrEmpty(self.OptionKey) then
+        useDrawId = XDataCenter.DrawManager.GetRealUseDrawIdByOptionKey(self.OptionKey)
+    else
+        useDrawId = (groupInfo.UseDrawIdDict or {})[0] or 0
+    end
+    local isNotSelectUp = drawGroupRule and drawGroupRule.IsNotSelectDefault and not XTool.IsNumberValid(useDrawId)
     
     local upGoods = previewList.UpGoods
     local goods = previewList.Goods

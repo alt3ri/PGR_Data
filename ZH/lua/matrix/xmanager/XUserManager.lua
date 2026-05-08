@@ -153,7 +153,7 @@ local DoRunLogin = function()
     end
     CS.Movie.XMovieManager.Instance:Clear()
     CsXUiManager.Instance:Clear()
-    XMVCA.XBigWorldGamePlay:OnExitFight()
+    XMVCA.XBigWorldGamePlay:ExitFight()
     XHomeSceneManager.LeaveScene()
 
     XDataCenter.InitRepeat()

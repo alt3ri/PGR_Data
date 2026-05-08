@@ -38,6 +38,22 @@ function XUiMainAgency:GetUiLoginVideoV4P0OpenTrigger()
     return flag
 end
 
+-- 强制打开指定Id的登录推广功能，跳过Condition和EnterTime等检查
+function XUiMainAgency:ForceOpenLoginPromoFeature(id)
+    local allConfigs = XLoginManager.GetLoginPromoFeatureTemplate()
+    local config = allConfigs[id]
+    if not config then
+        XLog.Error("ForceOpenLoginPromoFeature: config not found, id = " .. tostring(id))
+        return
+    end
+    local skipCfg = XFunctionConfig.GetSkipFuncCfg(config.EnterSkipId)
+    if not skipCfg then
+        XLog.Error("ForceOpenLoginPromoFeature: skip config not found, EnterSkipId = " .. tostring(config.EnterSkipId))
+        return
+    end
+    XLuaUiManager.Open(skipCfg.UiName, id)
+end
+
 function XUiMainAgency:SetLastPlaySignBoardCfgId(id)
     self._Model.LastPlaySignBoardCfgId = id
 end

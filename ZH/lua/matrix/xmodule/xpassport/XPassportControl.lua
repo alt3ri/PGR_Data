@@ -2,12 +2,17 @@ local tableInsert = table.insert
 local ipairs = ipairs
 local pairs = pairs
 
+local XFashionControl = require("XModule/XFashion/XFashionControl")
+local FashionType = XFashionControl.FashionType
+
 ---@class XPassportControl : XControl
 ---@field private _Model XPassportModel
 local XPassportControl = XClass(XControl, "XPassportControl")
 
 function XPassportControl:OnInit()
     self._Model:Init()
+    -- 预缓存私有表，避免 Agency 首次访问时无 Control 实例导致编辑器报错
+    self._Model:GetAllPassportTimeLimitTaskRewardConfigs()
 end
 
 function XPassportControl:AddAgencyEvent()
@@ -52,6 +57,12 @@ function XPassportControl:GetPassportBuyPassPortEarlyEndTime()
     return config.BuyPassPortEarlyEndTime
 end
 
+function XPassportControl:GetPassportActivityName()
+    local activityId = self:GetDefaultActivityId()
+    local config = self._Model:GetPassportActivityConfig(activityId)
+    return config.Name or ""
+end
+
 function XPassportControl:GetPassportBPTask()
     return self._Model:GetPassportBPTask()
 end
@@ -59,6 +70,36 @@ end
 function XPassportControl:GetPassportBPTaskTotalCount()
     local taskList = self:GetPassportBPTask()
     return #taskList
+end
+
+function XPassportControl:GetPassportActivityTaskIdList()
+    local result = {}
+    for _, id in ipairs(self._Model:GetPassportBPTask()) do
+        table.insert(result, id)
+    end
+
+    local function showTask(id)
+        local data = XDataCenter.TaskManager.GetTaskDataById(id)
+        if not data then return false end
+        if not data.InitializedByServer then return false end
+
+        local state = data.State
+        local taskState = XDataCenter.TaskManager.TaskState
+        if state == taskState.InActive then return false end
+        if state == taskState.Standby then return false end
+        if state == taskState.Invalid then return false end
+        return true
+    end
+
+    for _, id in ipairs(self._Model:GetPassportRegressionTasks()) do
+        if showTask(id) then table.insert(result, id) end
+    end
+
+    for _, id in ipairs(self._Model:GetPassportNewbieTasks()) do
+        if showTask(id) then table.insert(result, id) end
+    end
+
+    return result
 end
 -----------------PassportActivity 活动相关 end-------------------------
 
@@ -200,29 +241,31 @@ function XPassportControl:GetPassportTypeInfoRewardId(id)
     return config.RewardId
 end
 
-function XPassportControl:GetPassportTypeInfoBuyDesc(id)
+function XPassportControl:GetPassportTypeInfoBuyDescBase(id)
     local config = self._Model:GetPassportTypeInfoConfig(id)
+    return config.BuyDesc or ""
+end
 
-    -- 云游戏
-    if config.BuyDescCloudGame and config.BuyDescCloudGame ~= "" then
-        -- 在这些官方渠道下，额外显示云游戏说明
-        local channelId = CS.XHeroSdkAgent.GetChannelId()
-        local found = false
-        local channelIds = CS.XGame.Config:GetString("CloudGameChannelIds")
-        if channelIds then
-            for v in string.gmatch(channelIds, "[^|]+") do
-                if tonumber(v) == channelId then
-                    found = true
-                    break
-                end
+function XPassportControl:GetPassportTypeInfoBuyDescCloudGame(id)
+    local config = self._Model:GetPassportTypeInfoConfig(id)
+    if not config.BuyDescCloudGame or config.BuyDescCloudGame == "" then
+        return ""
+    end
+    local channelId = CS.XHeroSdkAgent.GetChannelId()
+    local found = false
+    local channelIds = CS.XGame.Config:GetString("CloudGameChannelIds")
+    if channelIds then
+        for v in string.gmatch(channelIds, "[^|]+") do
+            if tonumber(v) == channelId then
+                found = true
+                break
             end
         end
-        if found or XMain.IsEditorDebug then
-            return string.format("%s\n%s", config.BuyDesc, config.BuyDescCloudGame)
-        end
     end
-
-    return config.BuyDesc or ""
+    if found or XMain.IsEditorDebug then
+        return config.BuyDescCloudGame
+    end
+    return ""
 end
 
 function XPassportControl:GetPassportTypeInfoIcon(id)
@@ -280,6 +323,21 @@ end
 -----------------PassportTaskGroup 任务 end----------------------------
 
 -----------------PassportBuyFashionShowConfig 购买通行证界面展示的时装相关 start----------------------------
+function XPassportControl:GetPassportBuyFashionName(passportId)
+    local config = self._Model:GetPassportBuyFashionShowConfig(passportId)
+    if not config or not XTool.IsNumberValid(config.FashionId) then
+        return ""
+    end
+    if XTool.IsNumberValid(config.FashionType) then
+        if config.FashionType == FashionType.Color then
+            return XMVCA.XFashion:GetFashionColorName(config.FashionId)
+        else
+            return XWeaponFashionConfigs.GetFashionName(config.FashionId) or ""
+        end
+    end
+    local fashionTemplate = XFashionConfigs.GetFashionTemplate(config.FashionId)
+    return fashionTemplate and fashionTemplate.Name or ""
+end
 
 function XPassportControl:GetPassportBuyFashionShowIcon(id)
     local config = self._Model:GetPassportBuyFashionShowConfig(id)
@@ -291,9 +349,33 @@ function XPassportControl:GetPassportBuyFashionShowFashionId(id)
     return config.FashionId
 end
 
-function XPassportControl:IsPassportBuyFashionShowIsWeaponFahion(id)
+-- 返回 FashionType 原始数值：0=普通时装, 1=武器投影, 2=FashionColor
+function XPassportControl:GetPassportBuyFashionShowType(id)
     local config = self._Model:GetPassportBuyFashionShowConfig(id)
-    return XTool.IsNumberValid(config.IsWeaponFahion) and true or false
+    return config.FashionType or 0
+end
+
+function XPassportControl:GetPassportFashionBuyData(typeInfoId, buyCallBack)
+    local fashionId = self:GetPassportBuyFashionShowFashionId(typeInfoId)
+    local fashionType = self:GetPassportBuyFashionShowType(typeInfoId)
+    local isHave
+    if fashionType == FashionType.Weapon then
+        isHave = XDataCenter.WeaponFashionManager.CheckHasFashion(fashionId)
+            and not XDataCenter.WeaponFashionManager.IsFashionTimeLimit(fashionId)
+    elseif fashionType == FashionType.Color then
+        local originalFashionId = XMVCA.XFashion:GetFashionColorOriginalFashionId(fashionId)
+        isHave = XTool.IsNumberValid(originalFashionId) and XMVCA.XFashion:IsFashionColorHas(originalFashionId, fashionId)
+    else
+        isHave = XRewardManager.CheckRewardGoodsListIsOwnWithAll(
+            { XGoodsCommonManager.GetGoodsShowParamsByTemplateId(fashionId) }
+        )
+    end
+    local buyData = {}
+    buyData.IsHave = isHave
+    buyData.ItemCount = CS.XTextManager.GetText("PassportFashionBuyBtnText")
+    buyData.CloseByBuyCallBack = true
+    buyData.BuyCallBack = buyCallBack
+    return buyData
 end
 -----------------PassportBuyFashionShowConfig 购买通行证界面展示的时装相关 end------------------------------
 
@@ -441,8 +523,35 @@ end
 ---------------------主界面 end-----------------------
 
 ---------------------任务 begin------------------
+function XPassportControl:GetAllPassportTimeLimitTaskRewardConfigs()
+    return self._Model:GetAllPassportTimeLimitTaskRewardConfigs()
+end
+
+-- 获取任务在限时时间内的额外奖励 id，不在时间内或无配置返回 nil
+function XPassportControl:GetPassportTaskExRewardId(taskId)
+    local config = self._Model:GetPassportTimeLimitTaskRewardConfig(taskId)
+    if not config then
+        return nil
+    end
+    if not XFunctionManager.CheckInTimeByTimeId(config.ExTimeId) then
+        return nil
+    end
+    return config.ExRewardId
+end
+
+function XPassportControl:HasPassportTaskExReward(taskType)
+    local tasks = self:GetPassportTask(taskType)
+    for _, taskData in ipairs(tasks) do
+        if self:GetPassportTaskExRewardId(taskData.Id) then
+            return true
+        end
+    end
+    return false
+end
+
+
 function XPassportControl:GetClearTaskCount(taskType)
-    local taskIdList = taskType == XEnumConst.PASSPORT.TASK_TYPE.ACTIVITY and self:GetPassportBPTask()
+    local taskIdList = taskType == XEnumConst.PASSPORT.TASK_TYPE.ACTIVITY and self:GetPassportActivityTaskIdList()
             or self:GetPassportTaskGroupCurrOpenTaskIdList(taskType)
     local clearTotalCount = 0
     for _, taskId in ipairs(taskIdList) do
@@ -454,7 +563,7 @@ function XPassportControl:GetClearTaskCount(taskType)
 end
 
 function XPassportControl:GetPassportTask(taskType)
-    local taskIdList = taskType == XEnumConst.PASSPORT.TASK_TYPE.ACTIVITY and self:GetPassportBPTask()
+    local taskIdList = taskType == XEnumConst.PASSPORT.TASK_TYPE.ACTIVITY and self:GetPassportActivityTaskIdList()
             or self:GetPassportTaskGroupCurrOpenTaskIdList(taskType)
     local taskList = {}
     local tastData
@@ -523,7 +632,7 @@ function XPassportControl:GetPassportTaskExp(passportTaskGroupId)
 end
 
 function XPassportControl:GetPassportAchievedTaskIdList(taskType)
-    local taskIdList = taskType == XEnumConst.PASSPORT.TASK_TYPE.ACTIVITY and self:GetPassportBPTask()
+    local taskIdList = taskType == XEnumConst.PASSPORT.TASK_TYPE.ACTIVITY and self:GetPassportActivityTaskIdList()
             or self:GetPassportTaskGroupCurrOpenTaskIdList(taskType)
     local achievedTaskIdList = {}
     local tastData
@@ -592,8 +701,18 @@ function XPassportControl:RequestPassportBuyExp(toLevel, cb)
     end)
 end
 
+function XPassportControl:IsOwnHighestPassport()
+    local typeInfoIdList = self:GetPassportActivityIdToTypeInfoIdList()
+    for _, typeId in ipairs(typeInfoIdList) do
+        if not self:GetPassportInfos(typeId) then
+            return false
+        end
+    end
+    return true
+end
+
 --领取单个奖励请求
-function XPassportControl:RequestPassportRecvReward(passportRewardId, cb)
+function XPassportControl:RequestPassportRecvReward(passportRewardId, cb, uiPassport)
     XNetwork.Call("PassportRecvRewardRequest", { Id = passportRewardId }, function(res)
         if res.Code ~= XCode.Success then
             XUiManager.TipCode(res.Code)
@@ -603,7 +722,11 @@ function XPassportControl:RequestPassportRecvReward(passportRewardId, cb)
         local passportId = self:GetPassportRewardPassportId(passportRewardId)
         self._Model:SetPassportReceiveReward(passportId, passportRewardId)
 
-        XUiManager.OpenUiObtain(res.RewardList or {})
+        if self:IsOwnHighestPassport() then
+            XUiManager.OpenUiObtain(res.RewardList or table.empty)
+        else
+            XLuaUiManager.Open("UiPassportGetReward", res.RewardList or table.empty, uiPassport)
+        end
 
         if cb then
             cb()
@@ -614,15 +737,18 @@ function XPassportControl:RequestPassportRecvReward(passportRewardId, cb)
 end
 
 --一键领取奖励请求
-function XPassportControl:RequestPassportRecvAllReward(cb)
+function XPassportControl:RequestPassportRecvAllReward(cb, uiPassport)
     XNetwork.Call("PassportRecvAllRewardRequest", nil, function(res)
         if res.Code ~= XCode.Success then
             XUiManager.TipCode(res.Code)
             return
         end
 
-        local horizontalNormalizedPosition = 0
-        XUiManager.OpenUiObtain(res.RewardList or {}, nil, nil, nil, horizontalNormalizedPosition)
+        if self:IsOwnHighestPassport() then
+            XUiManager.OpenUiObtain(res.RewardList or table.empty)
+        else
+            XLuaUiManager.Open("UiPassportGetReward", res.RewardList or table.empty, uiPassport)
+        end
         self._Model:UpdatePassportInfosDic(res.PassportInfos)
 
         if cb then
@@ -683,6 +809,10 @@ function XPassportControl:GetRewardIdByPassportIdAndLevel(passportId, level)
     return self._Model:GetRewardIdByPassportIdAndLevel(passportId, level)
 end
 
+function XPassportControl:GetIsGetSupplyReward()
+    return self._Model:GetIsGetSupplyReward()
+end
+
 function XPassportControl:CheckStopToBuyBeforeTheEnd()
     if not self:CheckActivityIsOpen() then
         return false
@@ -697,6 +827,30 @@ function XPassportControl:CheckStopToBuyBeforeTheEnd()
         return false
     end
     return true
-end 
+end
+
+--领取补给奖励请求
+function XPassportControl:RequestPassportGetSupplyReward(cb)
+    XNetwork.Call("PassportGetSupplyRewardRequest", {}, function(res)
+        if res.Code == XCode.PassportSupplyRewardNotExist then    -- 预期内
+            return
+        end
+
+        if res.Code ~= XCode.Success then
+            XUiManager.TipCode(res.Code)
+            return
+        end
+
+        self._Model:SetIsGetSupplyReward(true)
+
+        if not XTool.IsTableEmpty(res.RewardGoodsList) then
+            XLuaUiManager.Open("UiPassportObtain", res.RewardGoodsList)
+        end
+
+        if cb then
+            cb()
+        end
+    end)
+end
 
 return XPassportControl

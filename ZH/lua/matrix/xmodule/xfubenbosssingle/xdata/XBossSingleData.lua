@@ -48,6 +48,7 @@ function XBossSingleData:SetData(data)
         --endregion
         
         local trialStageInfoList = data.TrialStageInfoList
+        local bestiraryStageInfoList = data.BestiraryStageInfoList
         local challengeHistoryList = data.ChallengeStageHistoryList
 
         self._IsEmpty = false
@@ -93,6 +94,8 @@ function XBossSingleData:SetData(data)
         self._ChallengeStageHistoryList = {}
         ---@type table<number, XBossSingleTrialStageInfo>
         self._TrialStageInfoMap = {}
+        ---@type table<number, XBossSingleTrialStageInfo>
+        self._BestiraryStageInfoMap = {}
 
         if not XTool.IsTableEmpty(historyList) then
             for _, historyData in pairs(historyList) do
@@ -102,6 +105,11 @@ function XBossSingleData:SetData(data)
         if not XTool.IsTableEmpty(trialStageInfoList) then
             for _, trialStageInfo in pairs(trialStageInfoList) do
                 self._TrialStageInfoMap[trialStageInfo.StageId] = XBossSingleTrialStageInfo.New(trialStageInfo)
+            end
+        end
+        if not XTool.IsTableEmpty(bestiraryStageInfoList) then
+            for _, bestiraryStageInfo in pairs(bestiraryStageInfoList) do
+                self._BestiraryStageInfoMap[bestiraryStageInfo.StageId] = XBossSingleTrialStageInfo.New(bestiraryStageInfo)
             end
         end
         if not XTool.IsTableEmpty(challengeHistoryList) then
@@ -185,6 +193,11 @@ end
 ---@return table<number, XBossSingleTrialStageInfo>
 function XBossSingleData:GetTrialStageInfoMap()
     return self._TrialStageInfoMap
+end
+
+---@return table<number, XBossSingleTrialStageInfo>
+function XBossSingleData:GetBestiraryStageInfoMap()
+    return self._BestiraryStageInfoMap
 end
 
 function XBossSingleData:GetIsEmpty()

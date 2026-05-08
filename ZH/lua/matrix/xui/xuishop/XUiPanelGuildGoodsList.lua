@@ -1,4 +1,4 @@
-local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
+local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
 
 local XUiPanelGuildGoodsList = XClass(nil, "XUiPanelGuildGoodsList")
 local XUiGridGuildGoodsShop = require("XUi/XUiShop/XUiGridGuildGoodsShop")
@@ -32,20 +32,15 @@ end
 
 function XUiPanelGuildGoodsList:ShowScreenPanel(shopId, groupId, selectTag, isKeepOrder)
     XEventManager.AddEventListener(XEventId.EVENT_GUILD_GOODS_COIN_CHANGED, self.RefreshBuy, self)
-    local shopShowTypeCfg = XShopConfigs.GetShopShowTypeTemplateById(shopId)
-    if shopShowTypeCfg and shopShowTypeCfg.ShowType == XShopConfigs.ShowType.GuildScene then
-        self.GoodsList = XShopManager.GetScreenGoodsListByTag(shopId, groupId, selectTag)
-        self.GameObject:SetActiveEx(true)
-        if isKeepOrder then
-            self:SortByOldGoodsOrder()
-        else
-            self:SaveGoodsOrder()
-        end
-        self:ShowGoods()
-        self:SetupDynamicTable()
+    self.GoodsList = XShopManager.GetScreenGoodsListByTag(shopId, groupId, selectTag)
+    self.GameObject:SetActiveEx(true)
+    if isKeepOrder then
+        self:SortByOldGoodsOrder()
     else
-        self:HidePanel()
+        self:SaveGoodsOrder()
     end
+    self:ShowGoods()
+    self:SetupDynamicTable()
 end
 
 function XUiPanelGuildGoodsList:SetupDynamicTable()

@@ -4,10 +4,36 @@ local XUiGridStage = require("XUi/XUiGuildWar/Map/XUiGridStage/XUiGridStage")
 ---@class XUiGridStageBlock:XUiGridStage
 local XUiGridStageBlock = XClass(XUiGridStage, "XUiGridStageBlock")
 
-function XUiGridStageBlock:Ctor()
+function XUiGridStageBlock:OnStart()
+    XUiGridStage.OnStart(self)
+    
     self._EffectLine1 = XUiHelper.TryGetComponent(self.Transform.parent, "EffectBlock1", "RectTransform")
     self._EffectLine2 = XUiHelper.TryGetComponent(self.Transform.parent, "EffectBlock2", "RectTransform")
     self._EffectLine3 = XUiHelper.TryGetComponent(self.Transform.parent, "EffectBlock3", "RectTransform")
+end
+
+function XUiGridStageBlock:OnEnable()
+    if XTool.IsNumberValidEx(self.StageNodeId) then
+        local nodeEntity = XDataCenter.GuildWarManager.GetNode(self.StageNodeId)
+
+        if nodeEntity and not nodeEntity:GetIsDead() then
+            self:SetEffectBlockActive(true)
+            if self._EffectLine1 then
+                self._EffectLine1.gameObject:SetActiveEx(self._PanelStage and self._PanelStage.StageGroupLine1.gameObject.activeSelf)
+                self._EffectLine2.gameObject:SetActiveEx(self._PanelStage and self._PanelStage.StageGroupLine2.gameObject.activeSelf)
+                self._EffectLine3.gameObject:SetActiveEx(self._PanelStage and self._PanelStage.StageGroupLine3.gameObject.activeSelf)
+            end
+        end
+    end
+end
+
+function XUiGridStageBlock:OnDisable()
+    self:SetEffectBlockActive(false)
+    if self._EffectLine1 then
+        self._EffectLine1.gameObject:SetActiveEx(false)
+        self._EffectLine2.gameObject:SetActiveEx(false)
+        self._EffectLine3.gameObject:SetActiveEx(false)
+    end
 end
 
 ---@param nodeEntity XGWNode
@@ -41,26 +67,6 @@ function XUiGridStageBlock:SetEffectBlockActive(value)
     end
 end
 
-function XUiGridStageBlock:OnHide()
-    self:SetEffectBlockActive(false)
-    if self._EffectLine1 then
-        self._EffectLine1.gameObject:SetActiveEx(false)
-        self._EffectLine2.gameObject:SetActiveEx(false)
-        self._EffectLine3.gameObject:SetActiveEx(false)
-    end
-end
 
-function XUiGridStageBlock:OnShow()
-    local nodeEntity = XDataCenter.GuildWarManager.GetNode(self.StageNodeId)
-    
-    if nodeEntity and not nodeEntity:GetIsDead() then
-        self:SetEffectBlockActive(true)
-        if self._EffectLine1 then
-            self._EffectLine1.gameObject:SetActiveEx(self._PanelStage and self._PanelStage.StageGroupLine1.gameObject.activeSelf)
-            self._EffectLine2.gameObject:SetActiveEx(self._PanelStage and self._PanelStage.StageGroupLine2.gameObject.activeSelf)
-            self._EffectLine3.gameObject:SetActiveEx(self._PanelStage and self._PanelStage.StageGroupLine3.gameObject.activeSelf)
-        end
-    end
-end
 
 return XUiGridStageBlock

@@ -11,6 +11,7 @@ local TableKey = {
     PassportReward = { CacheType = XConfigUtil.CacheType.Normal },
     PassportTypeInfo = { CacheType = XConfigUtil.CacheType.Normal },
     PassportTaskGroup = { CacheType = XConfigUtil.CacheType.Normal },
+    PassportTimeLimitTaskReward = { CacheType = XConfigUtil.CacheType.Normal, ReadType = XConfigUtil.ReadType.IntAll, Identifier = "TaskId" },
     PassportBuyFashionShow = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "PassportId" },
     PassportBuyRewardShow = { DirPath = XConfigUtil.DirectoryType.Client },
 }
@@ -38,6 +39,7 @@ function XPassportModel:OnInit()
     ---@type XPassportBaseInfo[]
     self._LastTimeBaseInfo = XPassportBaseInfo.New()    --上一期活动基础信息
     self.CurrMainViewSelectTagIndex = nil              --缓存主界面选择的页签
+    self._IsGetSupplyReward = false                    --是否已领取补给奖励
 end
 
 function XPassportModel:Init()
@@ -64,6 +66,7 @@ function XPassportModel:ResetAll()
     self._PassportInfosDic = {}
     self._LastTimeBaseInfo = XPassportBaseInfo.New()
     self.CurrMainViewSelectTagIndex = nil
+    self._IsGetSupplyReward = false
 end
 
 ----------public start----------
@@ -221,7 +224,16 @@ function XPassportModel:NotifyPassportData(data)
     self._BaseInfo:SetToLevel(data.Level or data.BaseInfo.Level)
     self._LastTimeBaseInfo:UpdateData(data.LastTimeBaseInfo)
     self:UpdatePassportInfosDic(data.PassportInfos)
+    self._IsGetSupplyReward = data.IsGetSupplyReward or false
     XEventManager.DispatchEvent(XEventId.EVENT_NOTIFY_PASSPORT_DATA)
+end
+
+function XPassportModel:GetIsGetSupplyReward()
+    return self._IsGetSupplyReward
+end
+
+function XPassportModel:SetIsGetSupplyReward(value)
+    self._IsGetSupplyReward = value
 end
 
 function XPassportModel:NotifyPassportBaseInfo(data)
@@ -312,6 +324,14 @@ end
 function XPassportModel:GetPassportTaskGroupConfigs()
     local configs = self._ConfigUtil:GetByTableKey(TableKey.PassportTaskGroup)
     return configs
+end
+
+function XPassportModel:GetPassportTimeLimitTaskRewardConfig(taskId)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.PassportTimeLimitTaskReward, taskId, true)
+end
+
+function XPassportModel:GetAllPassportTimeLimitTaskRewardConfigs()
+    return self._ConfigUtil:GetByTableKey(TableKey.PassportTimeLimitTaskReward) or table.empty
 end
 
 function XPassportModel:GetPassportBuyFashionShowConfig(id)
@@ -425,7 +445,11 @@ function XPassportModel:IsActivityClose()
 end
 
 function XPassportModel:CheckPassportAchievedTaskRedPoint(taskType)
-    local taskIdList = taskType == XEnumConst.PASSPORT.TASK_TYPE.ACTIVITY and self:GetPassportBPTask()
+    local taskIdList = taskType == XEnumConst.PASSPORT.TASK_TYPE.ACTIVITY
+            and XTool.MergeArray(
+                self:GetPassportBPTask(),
+                self:GetPassportNewbieTasks(),
+                self:GetPassportRegressionTasks())
             or self:GetPassportTaskGroupCurrOpenTaskIdList(taskType)
     for _, taskId in pairs(taskIdList) do
         if XDataCenter.TaskManager.CheckTaskAchieved(taskId) then
@@ -438,7 +462,19 @@ end
 function XPassportModel:GetPassportBPTask()
     local activityId = self:GetDefaultActivityId()
     local config = self:GetPassportActivityConfig(activityId)
-    return config and config.BPTask or {}
+    return config and config.BPTask or table.empty
+end
+
+function XPassportModel:GetPassportNewbieTasks()
+    local activityId = self:GetDefaultActivityId()
+    local config = self:GetPassportActivityConfig(activityId)
+    return config and config.NewbieTasks or table.empty
+end
+
+function XPassportModel:GetPassportRegressionTasks()
+    local activityId = self:GetDefaultActivityId()
+    local config = self:GetPassportActivityConfig(activityId)
+    return config and config.RegressionTasks or table.empty
 end
 
 function XPassportModel:GetPassportTaskGroupCurrOpenTaskIdList(type)

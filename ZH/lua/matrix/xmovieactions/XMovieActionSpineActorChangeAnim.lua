@@ -16,6 +16,7 @@ function XMovieActionSpineActorChangeAnim:OnInit(actionData)
 end
 
 function XMovieActionSpineActorChangeAnim:OnRunning()
+    ---@type XUiGridMovieSpineActor
     local actor = self.UiRoot:GetSpineActor(self.ActorIndex)
     actor:PlayAnim(self.AnimId, self.TransitionAnimId)
 end

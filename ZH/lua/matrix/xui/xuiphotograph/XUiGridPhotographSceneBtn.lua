@@ -16,6 +16,10 @@ function XUiGridPhotographSceneBtn:Refrash(data)
     self.TxSceneName.text = data.Name
     self.TxtLock.text = data.LockDec
     self:SetLock(not XDataCenter.PhotographManager.CheckSceneIsHaveById(data.Id))
+    
+    self.Id = data.Id
+    
+    self:_RefreshTabTags()
 end
 
 function XUiGridPhotographSceneBtn:OnTouched(data)
@@ -39,6 +43,27 @@ end
 function XUiGridPhotographSceneBtn:Reset()
     self:SetSelect(false)
     self:SetLock(false)
+end
+
+function XUiGridPhotographSceneBtn:_RefreshTabTags()
+    if not self.TagEx then
+        return
+    end
+
+    if not self.TagExGrid then
+        self.TagEx.gameObject:SetActiveEx(false)
+        ---@type XSceneTabTagGrid
+        self.TagExGrid = require("XUi/XUiPhotograph/XUiGridPhotographSceneTabTag").New(self.TagEx, self)
+    end
+
+    local tabTag = XPhotographConfigs.GetBackgroundTabTag(self.Id)
+
+    if not string.IsNilOrEmpty(tabTag) then
+        self.TagExGrid.GameObject:SetActiveEx(true)
+        self.TagExGrid:RefreshText(tabTag)
+    else
+        self.TagExGrid.GameObject:SetActiveEx(false)
+    end
 end
 
 return XUiGridPhotographSceneBtn

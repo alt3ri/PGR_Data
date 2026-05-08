@@ -7,7 +7,7 @@ local TableKey = {
     --- Game Buff
     GoldenMinerBuff = { CacheType = XConfigUtil.CacheType.Normal, Identifier = "BuffId", },
     --- Game 角色
-    GoldenMinerCharacter = { },
+    GoldenMinerCharacter = { CacheType = XConfigUtil.CacheType.Normal},
     --- Game 关卡隐藏任务
     GoldenMinerHideTask = { CacheType = XConfigUtil.CacheType.Normal },
     --- Game 玩法道具

@@ -23,7 +23,7 @@ function XUiDlcRelinkPopupEquipReformResult:OnStart(attributeSlot)
         ---@type XUiGridDlcRelinkEquipAttribute
         local grid = XUiGridDlcRelinkEquipAttribute.New(self["GridAttribute" .. i], self)
         grid:Open()
-        grid:Refresh(attributeSlot.Attributes[i])
+        grid:Refresh2(attributeSlot.Attributes[i])
     end
 end
 

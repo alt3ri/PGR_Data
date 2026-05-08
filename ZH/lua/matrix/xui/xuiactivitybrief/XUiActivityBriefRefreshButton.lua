@@ -1237,12 +1237,27 @@ end
 
 function XUiActivityBriefRefreshButton:RefreshConstRewardShow(activityGroupId)
     activityGroupId = activityGroupId or self.ActivityGroupId
-    
+
+    local claimConditionId = XActivityBriefConfigs.GetActivityBriefGroupConstRewardClaimCondition(activityGroupId)
+    local isRewardClaimed = XTool.IsNumberValidEx(claimConditionId) and XConditionManager.CheckCondition(claimConditionId)
+
     if self._RewardConstGrids[activityGroupId] then
-        self._RewardConstGrids[activityGroupId]:Open()
+        -- 已有复用
+        local btn = self.TlActivityBrieButton[activityGroupId]
+        local panelReward = btn.PanelReward02
+        
+        if panelReward then
+            panelReward.gameObject:SetActiveEx(not isRewardClaimed)
+        end
+        
+        if not isRewardClaimed then
+            self._RewardConstGrids[activityGroupId]:Open()
+        end
+        
         return
     end
 
+    -- 按钮初始化
     -- 活动面板奖励显示优化——客户端
     local btn = self.TlActivityBrieButton[activityGroupId]
     XTool.InitUiObject(btn)
@@ -1253,8 +1268,12 @@ function XUiActivityBriefRefreshButton:RefreshConstRewardShow(activityGroupId)
         -- 先默认隐藏
         panelReward.gameObject:SetActiveEx(false)
     end
-    
+
     if btn:IsLock() then
+        return
+    end
+
+    if isRewardClaimed then
         return
     end
 

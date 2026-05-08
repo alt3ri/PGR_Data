@@ -1,4 +1,3 @@
-
 ---@class XUiBigWorldTaskMain : XBigWorldUi
 ---@field GameObject UnityEngine.GameObject
 ---@field Transform UnityEngine.Transform
@@ -53,7 +52,7 @@ function XUiBigWorldTaskMain:InitUi()
     local tabList = {}
     for index, typeId in ipairs(self._TypeIds) do
         local btn = index == 1 and self.BtnTab or XUiHelper.Instantiate(self.BtnTab, self.PanelTabBtnGroup.transform)
-        local icon = self._Control:GetQuestTypeIcon(typeId)
+        local icon = self._Control:GetQuestTypeBriefIcon(typeId)
         if not string.IsNilOrEmpty(icon) then
             btn:SetSprite(icon)
         end
@@ -109,9 +108,7 @@ function XUiBigWorldTaskMain:GetSelectData(typeId)
     if self._DefaultQuestId then
         local questId = self._DefaultQuestId
         self._DefaultQuestId = nil
-        --Type2TabIndex[typeId] = questId
         LastSelectQuest = questId
-        return questId
     end
     if LastSelectQuest and LastSelectQuest > 0 then
         local questData = XMVCA.XBigWorldQuest:GetQuestData(LastSelectQuest)
@@ -130,12 +127,25 @@ function XUiBigWorldTaskMain:RefreshTaskContent(typeId, groupId, questId)
     if not self._PanelTaskContent then
         self._PanelTaskContent = require("XUi/XUiBigWorld/XQuest/Panel/XUiPanelBWTaskContent").New(self.PanelTask, self)
     end
-    if typeId > 0 and groupId > 0 and questId > 0 then
+    if groupId > 0 and questId > 0 then
         self._PanelTaskContent:Open()
         self._PanelTaskContent:RefreshView(questId)
         self.PaneNothing.gameObject:SetActiveEx(false)
     else
         self.PaneNothing.gameObject:SetActiveEx(true)
+        if typeId == 0 then
+            self.ImgLogo.gameObject:SetActiveEx(false)
+            self.ImgAllTaskLogo.gameObject:SetActiveEx(true)
+            self.TxtNone.text = XMVCA.XBigWorldService:GetText("NoTask")
+        else
+            self.ImgLogo.gameObject:SetActiveEx(true)
+            self.ImgAllTaskLogo.gameObject:SetActiveEx(false)
+            local image = self._Control:GetQuestTypeBigIcon(typeId)
+            local name = self._Control:GetQuestTypeName(typeId)
+            self.ImgLogo:SetImage(image)
+            self.TxtNone.text = XMVCA.XBigWorldService:GetText("TemporarilyNone") .. name
+        end
+
         self._PanelTaskContent:Close()
     end
 end
@@ -197,4 +207,7 @@ function XUiBigWorldTaskMain:SetSelectQuestId(questId)
         end
     end
     self._DefaultQuestId = questId
+    if self.GameObject and self.GameObject.activeInHierarchy then
+        self.PanelTabBtnGroup:SelectIndex(self._DefaultIndex)
+    end
 end

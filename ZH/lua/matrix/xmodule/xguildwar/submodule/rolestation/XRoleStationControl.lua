@@ -105,8 +105,29 @@ function XRoleStationControl:GetCurNodeDeployBuffNumByStationedCount(nodeId, cou
     ---@type XTableGuildWarNode
     local nodeCfg = XGuildWarConfig.GetNodeConfig(nodeId)
 
-    if nodeCfg then
-        return nodeCfg.DeployBuff[count] or 0
+    if not nodeCfg then
+        return 0
+    end
+
+    local deployCharacterNum = nodeCfg.DeployCharacterNum
+    local deployBuff = nodeCfg.DeployBuff
+
+    if not deployCharacterNum or not deployBuff then
+        return 0
+    end
+
+    -- 找到count大于等于DeployCharacterNum[i]的最高索引
+    local maxIndex = 0
+    for i, num in ipairs(deployCharacterNum) do
+        if count >= num then
+            maxIndex = i
+        else
+            break -- 升序排列，可提前退出
+        end
+    end
+
+    if maxIndex > 0 then
+        return deployBuff[maxIndex] or 0
     end
 
     return 0
@@ -148,12 +169,24 @@ function XRoleStationControl:GetClientConfigPanelRoleStationStateShow(hasStation
 end
 
 --- 关卡详情面板，驻扎进度及效果描述文本
-function XRoleStationControl:GetClientConfigPanelRoleStationProgressShow(curNum, maxNum, percentStr)
-    local format = XGuildWarConfig.GetClientConfigValue('PanelRoleStationProgressShow')
+function XRoleStationControl:GetClientConfigPanelRoleStationProgressShow(nodeId)
+    local format = self:_GetPanelRoleStationProgressShowFormat(nodeId)
     
     format = XUiHelper.ReplaceTextNewLine(format)
+
+    local curStationedCount = self:GetCurNodeStationedRoleCount(nodeId)
+    local stationedMaxCount = self:GetCurNodeStationedMaxCount(nodeId)
+    local buffNum = self:GetCurNodeDeployPercentNumByStationedCount(nodeId, curStationedCount)
+
+    buffNum = buffNum * 100
     
-    return XUiHelper.FormatText(format, curNum, maxNum, percentStr)
+    return XUiHelper.FormatTextEx(format, curStationedCount, stationedMaxCount, string.format('%.1f', buffNum))
+end
+
+function XRoleStationControl:_GetPanelRoleStationProgressShowFormat(nodeId)
+    local isBuffMax = self:CheckNodeStationedEffectIsMax(nodeId)
+    
+    return XGuildWarConfig.GetClientConfigValue('PanelRoleStationProgressShow', nil, isBuffMax and 2 or 1)
 end
 
 --- 移除驻扎角色成功的飘窗
@@ -215,9 +248,68 @@ function XRoleStationControl:CheckCharacterIsStationedAnyNode(characterId)
     return XTool.IsNumberValidEx(nodeId)
 end
 
+--- 判断节点驻扎效果是否达到最高档位
+--- 最高档位定义：当前驻扎人数对应的DeployBuff值是数组中的最大值
+---@param nodeId number 节点ID
+---@return boolean 是否达到最高档位效果
+function XRoleStationControl:CheckNodeStationedEffectIsMax(nodeId)
+    local count = self:GetCurNodeStationedRoleCount(nodeId)
+    local nodeCfg = XGuildWarConfig.GetNodeConfig(nodeId)
+
+    if not nodeCfg then
+        return false
+    end
+
+    local deployCharacterNum = nodeCfg.DeployCharacterNum
+    local deployBuff = nodeCfg.DeployBuff
+
+    if not deployCharacterNum or not deployBuff then
+        return false
+    end
+
+    -- 找到count对应的索引
+    local curIndex = 0
+    for i, num in ipairs(deployCharacterNum) do
+        if count >= num then
+            curIndex = i
+        else
+            break
+        end
+    end
+
+    if curIndex == 0 then
+        return false
+    end
+
+    local curBuff = deployBuff[curIndex]
+    if not curBuff then
+        return false
+    end
+
+    -- 判断当前buff值是否是数组中的最大值
+    for i = curIndex + 1, #deployBuff do
+        if deployBuff[i] and deployBuff[i] > curBuff then
+            return false
+        end
+    end
+
+    return true
+end
+
+--- 判断节点是否有任意公会成员驻扎（包括自己）
+---@param nodeId number 节点ID
+---@return boolean 是否有人驻扎
+function XRoleStationControl:CheckNodeHasOtherMemberStationed(nodeId)
+    return XTool.IsNumberValidEx(self:GetCurNodeStationedRoleCount(nodeId))
+end
+
+--- 判断节点自己是否有角色驻扎
+--- 注意：接口命名虽有歧义，但实际判断的是自己是否驻扎
+---@param nodeId number 节点ID
+---@return boolean 自己是否有角色驻扎
 function XRoleStationControl:CheckNodeIsAnyCharacterStationed(nodeId)
     local stationedCharacterId = self:GetMyRoleStationCharacterIdByNodeId(nodeId)
-    
+
     return XTool.IsNumberValidEx(stationedCharacterId)
 end
 

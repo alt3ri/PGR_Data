@@ -126,7 +126,8 @@ function XRoleStationAgency:CheckCharacterIsStationedAnyNode(characterId)
     return XTool.IsNumberValidEx(nodeId)
 end
 
-function XRoleStationAgency:CheckNodeIsAnyCharacterStationed(nodeId)
+--- 检查指定节点是否有自己的驻扎
+function XRoleStationAgency:CheckNodeIsAnySelfCharacterStationed(nodeId)
     local stationedCharacterId = self._Model.RoleStationModel:GetMyRoleStationCharacterIdByNodeId(nodeId)
 
     return XTool.IsNumberValidEx(stationedCharacterId)

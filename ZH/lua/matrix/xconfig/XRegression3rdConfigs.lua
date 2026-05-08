@@ -18,6 +18,7 @@ XRegression3rdConfigs.ActivityType = {
     Shop = 5,
     Activity = 6,
     Questionnaire = 7,
+    GiftShop = 8
 }
 
 --- 任务类型

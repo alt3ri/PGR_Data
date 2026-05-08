@@ -814,7 +814,7 @@ function XRelinkCharBase:OnNpcDamageEvent(launcherId, targetId, magicId, kind, p
     end
 end
 
-function XRelinkCharBase:OnNpcCureEvent(launcherId, targetId, magicId, kind, value, skillId)
+function XRelinkCharBase:OnNpcCureEvent(launcherId, targetId, magicId, kind, value, skillActionId)
     if targetId ~= self._uuid then
         return
     end

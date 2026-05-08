@@ -49,6 +49,7 @@ end
 function XUiSettleWin:OnDestroy()
     XDataCenter.AntiAddictionManager.EndFightAction()
     self.UiStageSettleSound:StopSettleSound()
+    XEventManager.DispatchEvent(XEventId.EVENT_FIGHT_FINISH_SETTLE)
 end
 
 -- 奖励动画

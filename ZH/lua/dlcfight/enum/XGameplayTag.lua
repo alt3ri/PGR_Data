@@ -1,4 +1,7 @@
 --自动生成，请勿手动更改
+
+---[XGamePlayTag枚举](https://kurogame.feishu.cn/sheets/Ma88su1BThVPawtGEEPc0oolnec?sheet=b3f22f)
+---@enum EGameplayTag
 local EGameplayTag = {
     root = 0,
     Missile = 1,
@@ -49,5 +52,20 @@ local EGameplayTag = {
     Buff_BuffType_Dodge_Normal = 46,
     Buff_BuffType_Dodge_Extreme = 47,
     Magic_RelinkDamage_DamageType_ChainSkill = 48,
+    Magic_Theatre6 = 49,
+    Magic_Theatre6_Damage = 50,
+    Magic_Theatre6_Damage_BuffType = 51,
+    Magic_Theatre6_Damage_BuffType_Burn = 52,
+    Magic_Theatre6_Damage_BuffType_Poison = 53,
+    Missile_Theatre6 = 54,
+    Missile_Theatre6_HitAffixType = 55,
+    Missile_Theatre6_HitAffixType_Activate = 56,
+    Missile_Theatre6_HitAffixType_HitFly = 57,
+    Missile_Theatre6_HitAffixType_HitDown = 58,
+    Missile_Theatre6_HitAffixType_Burn = 59,
+    Missile_Theatre6_HitAffixType_Poison = 60,
+    Missile_Theatre6_HitAffixType_Block = 61,
+    Missile_Theatre6_HitAffixType_Crit = 62,
+    Missile_Theatre6_HitAffixType_Kill = 63,
 }
 return EGameplayTag

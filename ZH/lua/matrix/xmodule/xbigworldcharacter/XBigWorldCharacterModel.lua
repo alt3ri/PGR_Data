@@ -23,6 +23,9 @@ local TableFashion = {
     BigWorldFashion = {
         CacheType = XConfigUtil.CacheType.Normal,
     },
+    BigWorldFashionColor = {
+        CacheType = XConfigUtil.CacheType.Normal,
+    },
 }
 
 function XBigWorldCharacterModel:OnInit()
@@ -126,7 +129,7 @@ function XBigWorldCharacterModel:GetFashionId(characterId)
         return 0
     end
     if self:IsCommandant(characterId) then
-        return XMVCA.XBigWorldCommanderDIY:GetCurrentFashionId()
+        return XMVCA.XBigWorldCommanderDIY:GetCurrentFashionId() or 0
     end
     -- 空花单独设置的涂装
     local char = self:GetDlcCharacter(characterId)
@@ -175,6 +178,13 @@ function XBigWorldCharacterModel:GetHeadInfo(characterId)
     return info
 end
 
+function XBigWorldCharacterModel:GetFashionColorIds(fashionId)
+    local templete = self:GetDlcFashionTemplate(fashionId)
+
+    return templete and templete.FashionColorIds or nil
+end
+
+---@return XBigWorldCharacter
 function XBigWorldCharacterModel:GetDlcCharacter(id)
     if self._CharDict[id] then
         return self._CharDict[id]
@@ -259,6 +269,33 @@ end
 
 function XBigWorldCharacterModel:CheckTrialCharacter(characterId)
     return self._TrialCharacterData:IsTrialCharacter(characterId)
+end
+
+-- endregion
+
+-- region 涂装换色
+
+---@return XTableBigWorldFashionColor
+function XBigWorldCharacterModel:GetDlcFashionColorTemplete(colorId, noTips)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableFashion.BigWorldFashionColor, colorId, noTips)
+end
+
+function XBigWorldCharacterModel:GetFashionColorColor(colorId)
+    local templete = self:GetDlcFashionColorTemplete(colorId, true)
+
+    return templete and templete.Color or nil
+end
+
+function XBigWorldCharacterModel:GetFashionColorPriority(colorId)
+    local templete = self:GetDlcFashionColorTemplete(colorId, true)
+
+    return templete and templete.Priority or nil
+end
+
+function XBigWorldCharacterModel:GetFashionColorUiModelId(colorId)
+    local templete = self:GetDlcFashionColorTemplete(colorId, true)
+
+    return templete and templete.UiModelId or nil
 end
 
 -- endregion

@@ -152,6 +152,17 @@ function XUiGridSimulationBranchStyleChallenge:UpdateTimer(timeId, forceUpdate)
         end
     end
 
+    if self.ImgTimeIcon then
+        local icon = self.Manager.ExGetTimerShowIcon and self.Manager:ExGetTimerShowIcon() or nil
+
+        if icon then
+            self.ImgTimeIcon.gameObject:SetActiveEx(true)
+            self.ImgTimeIcon:SetImage(icon)
+        else
+            self.ImgTimeIcon.gameObject:SetActiveEx(false)
+        end
+    end
+
     if self.Manager.ExCheckInTimerShow and not self.Manager:ExCheckInTimerShow() then
         self:StopTimer()
     end

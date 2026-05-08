@@ -127,6 +127,7 @@ ModuleId = {
 
   XPlotExhibition = "XPlotExhibition",
 
+  XCommanderCollege = "XCommanderCollege",
   XSkyGardenDroneGame = "XSkyGardenDroneGame",
   XBigWorldNews = "XBigWorldNews",
   XFashionSuit = "XFashionSuit",
@@ -138,4 +139,10 @@ ModuleId = {
   XItem = "XItem",
   XPBRGame = "XPBRGame",
   XLineArithmetic3 = "XLineArithmetic3",
+  XLifeTree = "XLifeTree",
+  XFashion = "XFashion",
+  XTheatre6 = "XTheatre6",
+  XGameCollection = "XGameCollection",
+  XBigWorldMemory = "XBigWorldMemory",
+  XLowMemory = "XLowMemory",
 }

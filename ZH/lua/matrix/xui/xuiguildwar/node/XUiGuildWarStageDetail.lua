@@ -134,7 +134,8 @@ function XUiGuildWarStageDetail:OnEnable()
     if not self.TimeId then
         self.TimeId = XScheduleManager.ScheduleForever(function()
             return
-            self:RefreshTimeData()
+            -- 4期的时候这里的逻辑就是不生效了，不确定是不是设计如此，先只注释掉不会生效的代码
+            -- self:RefreshTimeData()
         end, XScheduleManager.SECOND, 0)
     end
 

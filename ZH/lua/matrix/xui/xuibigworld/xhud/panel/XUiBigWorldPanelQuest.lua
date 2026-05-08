@@ -96,7 +96,7 @@ function XUiBigWorldPanelQuest:Enqueue(operate, questId, stepId, objectiveId)
 end
 
 function XUiBigWorldPanelQuest:Dequeue()
-    if not self:CheckDequeue() then
+    if not self:CheckDequeue() then 
         return
     end
     if self._ActionContainer:IsRunning() then
@@ -395,7 +395,10 @@ function XUiBigWorldPanelQuest:OnBtnTrackClick()
     if not self.BtnTrack.gameObject.activeInHierarchy then
         return
     end
-    if XMVCA.XBigWorldQuest:CheckQuestFinish(self._DisplayQuestId) then
+    if XMVCA.XBigWorldQuest:CheckNormalQuestFinish(self._DisplayQuestId) then
+        return
+    end
+    if XMVCA.XBigWorldQuest:CheckInviteQuestNotInProgress(self._DisplayQuestId) then
         return
     end
     self._OperateBehavior:Clear()

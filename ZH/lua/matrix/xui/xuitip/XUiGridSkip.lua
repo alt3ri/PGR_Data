@@ -9,7 +9,12 @@ end
 
 function XUiGridSkip:InitAutoScript()
     XTool.InitUiObject(self)
-    self.BtnSkip.CallBack = function()
+    self.BtnSkip.CallBack = handler(self, self.OnClickSkip)
+end
+
+function XUiGridSkip:OnClickSkip()
+    local isShieldBusiness = XMVCA.XBigWorldGamePlay:IsInGame() and XMVCA.XBigWorldFunction:GetShieldOfMainBusiness()
+    if not isShieldBusiness then
         if XMVCA.XDlcRoom and XMVCA.XDlcRoom:IsMatching() then
             XUiManager.TipText("MatchingSkipTip")
         elseif XMVCA.XDlcRoom and XMVCA.XDlcRoom:IsSelfReady() then
@@ -38,20 +43,20 @@ function XUiGridSkip:Refresh(skipId, hideSkipBtn, skipCb, ...)
 
     local canSkip = XFunctionManager.IsCanSkip(skipId) and not XFunctionManager.CheckSkipPanelIsLoad(skipId)
     local template = XFunctionConfig.GetSkipList(skipId)
-    --时间控制跳转显示
+    -- 时间控制跳转显示
     if XTool.IsNumberValid(template.TimeId) then
-        local isoutTime=XFunctionManager.CheckInTimeByTimeId(template.TimeId,true)
+        local isoutTime = XFunctionManager.CheckInTimeByTimeId(template.TimeId, true)
         if not isoutTime then
             self.GameObject:SetActiveEx(false)
             return
         end
     else
-        local now=XTime.GetServerNowTimestamp()
-        local startTime=XTime.ParseToTimestamp(template.StartTime)
-        local endTime=XTime.ParseToTimestamp(template.CloseTime)
-        local lateForBegin= XTool.IsNumberValid(startTime) and now>=startTime or not startTime
-        local earlyForEnd=XTool.IsNumberValid(endTime) and now<endTime or not endTime
-        if not(lateForBegin and earlyForEnd) then
+        local now = XTime.GetServerNowTimestamp()
+        local startTime = XTime.ParseToTimestamp(template.StartTime)
+        local endTime = XTime.ParseToTimestamp(template.CloseTime)
+        local lateForBegin = XTool.IsNumberValid(startTime) and now >= startTime or not startTime
+        local earlyForEnd = XTool.IsNumberValid(endTime) and now < endTime or not endTime
+        if not (lateForBegin and earlyForEnd) then
             self.GameObject:SetActiveEx(false)
             return
         end
@@ -60,8 +65,14 @@ function XUiGridSkip:Refresh(skipId, hideSkipBtn, skipCb, ...)
     if hideSkipBtn then
         self.BtnSkip.gameObject:SetActive(false)
     else
-        self.BtnSkip.gameObject:SetActive(true)
-        self.BtnSkip:SetDisable(not canSkip,canSkip)
+        local isShieldBusiness = XMVCA.XBigWorldGamePlay:IsInGame() and
+                                     XMVCA.XBigWorldFunction:GetShieldOfMainBusiness()
+        if isShieldBusiness then
+            self.BtnSkip.gameObject:SetActive(false)
+        else
+            self.BtnSkip.gameObject:SetActive(true)
+            self.BtnSkip:SetDisable(not canSkip, canSkip)
+        end
     end
 end
 

@@ -35,12 +35,12 @@ function XUiPanelDlcRelinkBoss:RefreshInfo()
             self.BtnBoss:SetNameByGroup(0, self._Control:GetChapterName(self.ChapterId))
         end
         self.BtnBoss:SetRawImageEx(self._Control:GetChapterRoomIcon(self.ChapterId))
-        self:RefreshType(self._Control:GetLevelType(self.LevelId))
+        self:RefreshDifficulty(self._Control:GetLevelDifficulty(self.LevelId))
         self:RefreshAbilityLimitTips()
         self:RefreshCareerMatchingTips()
     else
         self.BtnBoss:SetNameByGroup(1, self._Control:GetClientConfig("ChooseBossBtnName", isGlobalMatch and 2 or 1))
-        self:RefreshType(0)
+        self:RefreshDifficulty(0)
     end
 
     local isInRoom = XMVCA.XDlcRoom:IsInRoom()
@@ -55,11 +55,11 @@ function XUiPanelDlcRelinkBoss:RefreshInfo()
     end
 end
 
-function XUiPanelDlcRelinkBoss:RefreshType(levelType)
+function XUiPanelDlcRelinkBoss:RefreshDifficulty(levelDifficulty)
     for i = 1, 5 do
         local typeObj = self[string.format("PanelDif0%s", i)]
         if typeObj then
-            typeObj.gameObject:SetActiveEx(i == levelType)
+            typeObj.gameObject:SetActiveEx(i == levelDifficulty)
         end
     end
 end

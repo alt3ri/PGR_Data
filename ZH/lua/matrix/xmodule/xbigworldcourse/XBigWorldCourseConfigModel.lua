@@ -31,6 +31,7 @@ local CourseTableKey = {
     BigWorldCourseCoreElement = {},
     BigWorldCourseCoreGroup = {
         Identifier = "GroupId",
+        DirPath = XConfigUtil.DirectoryType.Client,
     },
 }
 
@@ -70,6 +71,12 @@ function XBigWorldCourseConfigModel:GetBigWorldCourseTaskConditionIdByTaskId(tas
     local config = self:GetBigWorldCourseTaskConfigByTaskId(taskId)
 
     return config.ConditionId
+end
+
+function XBigWorldCourseConfigModel:GetBigWorldCourseTaskUnlockTagConditionIdByTaskId(taskId)
+    local config = self:GetBigWorldCourseTaskConfigByTaskId(taskId)
+
+    return config.UnlockTagConditionId
 end
 
 function XBigWorldCourseConfigModel:GetBigWorldCourseTaskTitleByTaskId(taskId)
@@ -182,6 +189,12 @@ function XBigWorldCourseConfigModel:GetBigWorldCourseContentExploreRewardIdByCon
     return config.ExploreRewardId
 end
 
+function XBigWorldCourseConfigModel:GetBigWorldCourseContentExploreTitleByContentId(contentId)
+    local config = self:GetBigWorldCourseContentConfigByContentId(contentId)
+
+    return config.ExploreTitle
+end
+
 function XBigWorldCourseConfigModel:GetBigWorldCourseTypeConditionIdsByContentId(contentId)
     local config = self:GetBigWorldCourseContentConfigByContentId(contentId)
 
@@ -226,6 +239,18 @@ function XBigWorldCourseConfigModel:GetBigWorldCourseVersionConditionIdByVersion
     local config = self:GetBigWorldCourseVersionConfigByVersionId(versionId)
 
     return config.ConditionId
+end
+
+function XBigWorldCourseConfigModel:GetBigWorldCourseVersionPriorityByVersionId(versionId)
+    local config = self:GetBigWorldCourseVersionConfigByVersionId(versionId)
+
+    return config.Priority
+end
+
+function XBigWorldCourseConfigModel:GetBigWorldCourseVersionSwitchIconByVersionId(versionId)
+    local config = self:GetBigWorldCourseVersionConfigByVersionId(versionId)
+
+    return config.SwitchIcon
 end
 
 ---@return XTableBigWorldCourseExplore[]

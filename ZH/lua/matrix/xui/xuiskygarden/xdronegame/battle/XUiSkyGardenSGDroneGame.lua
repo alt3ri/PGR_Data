@@ -166,7 +166,7 @@ function XUiSkyGardenSGDroneGame:OnDestroy()
         self.AudioPlayer:StopByKeyName(self._CurrentDialogueAudioKey)
     end
 
-    CS.XAudioManager.BgmAreaTriggerEnable = true
+    CS.XAudioManager.ResumeBgmAreaTrigger("SkyGardenDrone")
 end
 
 function XUiSkyGardenSGDroneGame:OnBtnSpeedUpClick()
@@ -1071,6 +1071,7 @@ function XUiSkyGardenSGDroneGame:RequestStageSettle(isWin, stageData)
         Score = XSGDGInstance.Instance.Engine.Score,
         HasArchive = XSGDGInstance.Instance.Engine.HasArchive,
         TargetMap = {},
+        AchieveTargetMap = self._Control:GetAchieveTargetMap(self._StageId),
     }
 
     local targetIds = self._Control:GetStageTargetIds(self._StageId)

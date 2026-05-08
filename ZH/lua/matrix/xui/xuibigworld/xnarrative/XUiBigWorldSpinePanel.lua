@@ -8,7 +8,8 @@ function XUiBigWorldSpinePanel:OnInitCb()
 end
 
 function XUiBigWorldSpinePanel:Refresh(narrativeId)
-    self.TxtTitle.text = XMVCA.XBigWorldService:GetNarrativeTitle(narrativeId)
+    local title = XMVCA.XBigWorldService:GetNarrativeTitle(narrativeId)
+    self.TxtTitle.text = XUiHelper.ReplaceWithPlayerName(title, "【kuroname】")
     local assetUrl = XMVCA.XBigWorldService:GetNarrativeAssetUrl(narrativeId)
     if not string.IsNilOrEmpty(assetUrl) then
         self.SpineRoot:LoadPrefab(assetUrl)

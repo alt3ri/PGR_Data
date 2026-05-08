@@ -1,8 +1,8 @@
-local XUiGridFashionShop = require("XUi/XUiShop/XUiGridFashionShop")
-local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
+local XUiGridFashionShop = require("XUi/XUiShop/XUiGridFashionShop")
+local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
 local XUiPanelFashionList = XClass(nil, "XUiPanelFashionList")
 
-function XUiPanelFashionList:Ctor(ui, parent,rootUi)
+function XUiPanelFashionList:Ctor(ui, parent, rootUi)
     self.GameObject = ui.gameObject
     self.Transform = ui.transform
     self.Ui = ui
@@ -16,12 +16,16 @@ function XUiPanelFashionList:Ctor(ui, parent,rootUi)
 end
 
 function XUiPanelFashionList:SetCountUpdateListener()
-    XDataCenter.ItemManager.AddCountUpdateListener(XDataCenter.ItemManager.ItemId.FreeGem, function() self:RefreshGoodsPrice() end, self.Ui)
-    XDataCenter.ItemManager.AddCountUpdateListener(XDataCenter.ItemManager.ItemId.Coin,function() self:RefreshGoodsPrice() end, self.Ui)
+    XDataCenter.ItemManager.AddCountUpdateListener(XDataCenter.ItemManager.ItemId.FreeGem, function()
+        self:RefreshGoodsPrice()
+    end, self.Ui)
+    XDataCenter.ItemManager.AddCountUpdateListener(XDataCenter.ItemManager.ItemId.Coin, function()
+        self:RefreshGoodsPrice()
+    end, self.Ui)
 end
 
 function XUiPanelFashionList:RefreshGoodsPrice()
-    for _,v in pairs(self.DynamicTable:GetGrids()) do
+    for _, v in pairs(self.DynamicTable:GetGrids()) do
         v:RefreshPrice()
     end
 end
@@ -42,35 +46,28 @@ end
 function XUiPanelFashionList:ShowPanel(id)
     self.GameObject:SetActive(true)
     self.GoodsList = XShopManager.GetShopGoodsList(id)
-
     self:ShowGoods()
     self.DynamicTable:SetDataSource(self.GoodsList)
     self.DynamicTable:ReloadDataASync()
 end
 
-function XUiPanelFashionList:ShowScreenPanel(shopId,groupId,selectTag,isKeepOrder)
-    local shopShowTypeCfg = XShopConfigs.GetShopShowTypeTemplateById(shopId)
-    if shopShowTypeCfg and shopShowTypeCfg.ShowType == XShopConfigs.ShowType.Fashion then
-        self.GameObject:SetActive(true)
-        self.GoodsList = XShopManager.GetScreenGoodsListByTag(shopId,groupId,selectTag)
-        if isKeepOrder then
-            self:SortByOldGoodsOrder()
-        else
-            self:SaveGoodsOrder()
-        end
-        self:ShowGoods()
-        self.DynamicTable:SetDataSource(self.GoodsList)
-        self.DynamicTable:ReloadDataASync()
+function XUiPanelFashionList:ShowScreenPanel(shopId, groupId, selectTag, isKeepOrder)
+    self.GameObject:SetActive(true)
+    self.GoodsList = XShopManager.GetScreenGoodsListByTag(shopId, groupId, selectTag)
+    if isKeepOrder then
+        self:SortByOldGoodsOrder()
     else
-        self.GameObject:SetActive(false)
+        self:SaveGoodsOrder()
     end
+    self:ShowGoods()
+    self.DynamicTable:SetDataSource(self.GoodsList)
+    self.DynamicTable:ReloadDataASync()
 end
 
-
---动态列表事件
+-- 动态列表事件
 function XUiPanelFashionList:OnDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_INIT then
-        grid:Init(self.Parent,self.RootUi)
+        grid:Init(self.Parent, self.RootUi)
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         local data = self.GoodsList[index]
         grid:UpdateData(data)
@@ -79,9 +76,9 @@ function XUiPanelFashionList:OnDynamicTableEvent(event, index, grid)
     end
 end
 
---初始化列表
+-- 初始化列表
 function XUiPanelFashionList:ShowGoods()
-    --商品数量显示
+    -- 商品数量显示
     if not self.GoodsList or #self.GoodsList <= 0 then
         self.TxtDesc.gameObject:SetActive(true)
         self.TxtHint.text = CS.XTextManager.GetText("ShopNoGoodsDesc")
@@ -90,10 +87,10 @@ function XUiPanelFashionList:ShowGoods()
         self.TxtHint.text = ""
     end
 
-    --self:UpdateGoods()
+    -- self:UpdateGoods()
 end
 
---更新商品信息
+-- 更新商品信息
 function XUiPanelFashionList:UpdateGoods(goodsId)
     for k, v in pairs(self.GoodsList) do
         if v.Id == goodsId then
@@ -110,6 +107,6 @@ end
 
 function XUiPanelFashionList:SortByOldGoodsOrder()
     self.GoodsList = XShopManager.SortByOldGoodsOrder(self.GoodsList, self.GoodsOrder)
-end
-
-return XUiPanelFashionList
+end
+
+return XUiPanelFashionList

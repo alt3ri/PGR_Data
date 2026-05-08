@@ -30,21 +30,12 @@ end
 function XUiGridStageContainer:SetShowOnly(nodeId)
     if not XTool.IsTableEmpty(self._NodeDict) then
         for id, grid in pairs(self._NodeDict) do
-            -- 暂未继承XUiNode
             if id == nodeId then
-                grid.GameObject:SetActiveEx(true)
-
-                if grid.OnShow then
-                    grid:OnShow()
-                end
+                grid:Open()
                 
                 self._CurShowGrid = grid
             else
-                grid.GameObject:SetActiveEx(false)
-
-                if grid.OnHide then
-                    grid:OnHide()
-                end
+                grid:Close()
             end
         end
     end

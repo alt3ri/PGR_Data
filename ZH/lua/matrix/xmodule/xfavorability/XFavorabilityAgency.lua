@@ -1270,12 +1270,17 @@ function XFavorabilityAgency:GetPassiveSignBoardConfig(roleId)
 end
 
 -- 因为Id可能因为配置表改造而发生变化 所以改为通过涂装Id和动作名进行判断（策划说下次再加字段判断
-function XFavorabilityAgency:CheckCGBoardAct(fashionId, id)
+function XFavorabilityAgency:CheckCGBoardAct(id)
     local config = self:GetSignBoardConfigById(id)
     if not config then
         return false
     end
-    return fashionId == 6002907 and config.ActionId == "BoardAct0204"
+
+    if CS.UnityEngine.Application.platform == CS.UnityEngine.RuntimePlatform.Android and XTool.IsNumberValidEx(config.VideoIdInAndriod) then
+        return config.VideoIdInAndriod
+    end
+    
+    return config.VideoId
 end
 
 --获取互动的事件

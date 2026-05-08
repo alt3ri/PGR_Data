@@ -41,7 +41,7 @@ end
 
 function XUiMovieSummary:RefreshSummary()
     self.TxtSummaryTitle.text = XUiHelper.ReplaceTextNewLine(self.Cfg.Title)
-    self.TxtSummary.text = XDataCenter.MovieManager.GetSummaryContentByGenderCheck(XUiHelper.ReplaceTextNewLine(self.Cfg.SummaryContent))
+    self.TxtSummary.text = XMVCA.XMovie:FormatContent(self.Cfg.SummaryContent)
     CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.SummaryContent)
 end
 

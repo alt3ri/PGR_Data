@@ -8,16 +8,24 @@ local MouseMode = {
 
 local CurrMode -- 1左键攻击 2右键攻击
 
-function XUiMouseButtonConfig:OnAwake()
+function XUiMouseButtonConfig:OnStart(mouseButtonKeyItem)
+    self.InputMapId = mouseButtonKeyItem.CurInputMapId
+    self.OperationType = mouseButtonKeyItem.CurOperationType
+    self.DataId = mouseButtonKeyItem:GetDataId()
+    XInputManager.StartEditKey(CS.InputDeviceType.Keyboard, 0, 0, nil, self.InputMapId, self.OperationType, self.DataId)
     self:Init()
+end
+
+function XUiMouseButtonConfig:OnDestroy()
+    XInputManager.EndEdit()
 end
 
 function XUiMouseButtonConfig:Init()
     self.BtnClose.CallBack = function() self:Close() end
     self.BtnConfirm.CallBack = function()
-        local currMode = XInputManager.IsModifyMouse() and MouseMode.AttackLeft or MouseMode.AttackRight
+        local currMode = XInputManager.IsModifyMouse(self.InputMapId) and MouseMode.AttackLeft or MouseMode.AttackRight
         if CurrMode ~= currMode then
-            XInputManager.SwitchKeyboardMouseFunc()
+            XInputManager.SwitchKeyboardMouseFunc(self.InputMapId)
             CS.XGameEventManager.Instance:Notify(XEventId.EVENT_SETTING_KEYBOARD_KEY_CHANGED, CS.InputDeviceType.Keyboard)
         end
         self:Close()
@@ -25,7 +33,7 @@ function XUiMouseButtonConfig:Init()
 
     local ButtonSetGroup = { self.MouseButton1, self.MouseButton2 }
     self.ToggleGroup:Init(ButtonSetGroup, handler(self, self.OnMouseClickModeChanged))
-    self.ToggleGroup:SelectIndex(XInputManager.IsModifyMouse() and MouseMode.AttackLeft or MouseMode.AttackRight)
+    self.ToggleGroup:SelectIndex(XInputManager.IsModifyMouse(self.InputMapId) and MouseMode.AttackLeft or MouseMode.AttackRight)
 end
 
 function XUiMouseButtonConfig:OnMouseClickModeChanged(index)

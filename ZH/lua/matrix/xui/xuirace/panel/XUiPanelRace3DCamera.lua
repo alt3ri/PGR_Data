@@ -188,7 +188,7 @@ function XUiPanelRace3DCamera:LoadCar(node, roleId)
     charGo.transform.localEulerAngles = Vector3(90, 0, 0)
     ---@type UnityEngine.Animator
     local charAnim = charGo:GetComponent("Animator")
-    local charControllerAsset = CS.LoadHelper.LoadUiController(characterCfg.AnimPath, "UiRaceFightSettlement")
+    local charControllerAsset = CS.LoadHelper.LoadUiController(characterCfg.AnimPath, charAnim.gameObject)
     charAnim.runtimeAnimatorController = charControllerAsset
     charAnim.applyRootMotion = false
 end

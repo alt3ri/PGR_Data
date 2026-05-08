@@ -5,6 +5,7 @@ XTaskConfig.ActivenessRewardType = {
     Weekly = 2,
     Newbie = 3,
     NewbieTwo = 4, -- 新手任务二期
+    WeeklyTwo = 5  -- 周任务二期
 }
 
 XTaskConfig.PANELINDEX = {
@@ -18,6 +19,7 @@ local NewPlayerTaskGroupTemplate = {}
 local NewPlayerTaskTalkTemplate = {}
 local TaskNewbieActivenessTemplate = {}
 local NewbieTaskTwoActivenessTemplate = {}
+local WeeklyTwoActivenessTemplate = {}
 local CourseTemplate = {}
 local DailyActivenessTemplate = {}
 local WeeklyActivenessTemplate = {}
@@ -88,6 +90,7 @@ function XTaskConfig.Init()
     WeeklyActivenessTemplate = TaskActivenessTemplate[XTaskConfig.ActivenessRewardType.Weekly]
     TaskNewbieActivenessTemplate = TaskActivenessTemplate[XTaskConfig.ActivenessRewardType.Newbie]
     NewbieTaskTwoActivenessTemplate = TaskActivenessTemplate[XTaskConfig.ActivenessRewardType.NewbieTwo]
+    WeeklyTwoActivenessTemplate = TaskActivenessTemplate[XTaskConfig.ActivenessRewardType.WeeklyTwo]
 
     local count = #DailyActivenessTemplate.Activeness
     DailyActivenessTotal = DailyActivenessTemplate.Activeness[count]
@@ -162,6 +165,10 @@ end
 -- 新手任务二期
 function XTaskConfig.GetNewbieTaskTwoActivenessTemplate()
     return NewbieTaskTwoActivenessTemplate
+end
+
+function XTaskConfig.GetWeeklyTwoActivenessTemplate()
+    return WeeklyTwoActivenessTemplate
 end
 
 --- 主界面任务界面页签控制配置表

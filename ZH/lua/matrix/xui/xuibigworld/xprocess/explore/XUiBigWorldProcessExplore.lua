@@ -6,9 +6,12 @@ local XUiBigWorldProcessExploreGrid = require("XUi/XUiBigWorld/XProcess/Explore/
 ---@field BtnReward XUiComponent.XUiButton
 ---@field ListExplore UnityEngine.RectTransform
 ---@field GridExplore UnityEngine.RectTransform
+---@field PanelReceive UnityEngine.RectTransform
+---@field TxtTips UnityEngine.UI.Text
+---@field TxtTitle UnityEngine.UI.Text
+---@field PanelTips UnityEngine.RectTransform
 ---@field Parent XUiBigWorldProcess
 ---@field _Control XBigWorldCourseControl
----@field TxtTips UnityEngine.UI.Text
 local XUiBigWorldProcessExplore = XClass(XUiBWProcessPlayerBase, "XUiBigWorldProcessExplore")
 
 function XUiBigWorldProcessExplore:OnStart()
@@ -124,19 +127,27 @@ end
 
 ---@param contentEntity XBWCourseContentEntity
 function XUiBigWorldProcessExplore:_RefreshProgress(contentEntity)
-    local rewardList = contentEntity:GetExploreRewardList()
+    local rewardId = contentEntity:GetExploreRewardId()
 
-    self.TxtExploreProgress.text = contentEntity:GetExploreProgressText()
-    if table.nums(rewardList) == 1 then
-        self.BtnReward:ShowTag(false)
-        self.BtnReward:SetRawImageVisible(true)
-        self.BtnReward:SetRawImage(contentEntity:GetExploreRewardIcon())
-    else
-        self.BtnReward:SetRawImageVisible(false)
-        self.BtnReward:ShowTag(true)
-    end
-    if self.PanelReceive then
+    if XTool.IsNumberValid(rewardId) then
+        local rewardList = contentEntity:GetExploreRewardList()
+
+        self.TxtExploreProgress.text = contentEntity:GetExploreProgressText()
+        self.BtnReward.gameObject:SetActiveEx(true)
+        if table.nums(rewardList) == 1 then
+            self.BtnReward:ShowTag(false)
+            self.BtnReward:SetRawImageVisible(true)
+            self.BtnReward:SetRawImage(contentEntity:GetExploreRewardIcon())
+        else
+            self.BtnReward:SetRawImageVisible(false)
+            self.BtnReward:ShowTag(true)
+        end
         self.PanelReceive.gameObject:SetActiveEx(contentEntity:IsComplete())
+    else
+        self.BtnReward.gameObject:SetActiveEx(false)
+        self.PanelReceive.gameObject:SetActiveEx(false)
+        self.TxtExploreProgress.gameObject:SetActiveEx(false)
+        self.PanelTips.gameObject:SetActiveEx(false)
     end
 end
 
@@ -159,19 +170,17 @@ end
 
 ---@param exploreEntity XBWCourseContentEntity
 function XUiBigWorldProcessExplore:_RefreshBannerBg(exploreEntity)
-    if not self.ImgBg then
-        return
-    end
     self.ImgBg:SetRawImage(exploreEntity:GetBigWorldCourseContentBannerBg())
+    self.TxtTitle.text = exploreEntity:GetExploreTitle()
 end
 
 ---@param exploreEntity XBWCourseContentEntity
 function XUiBigWorldProcessExplore:_RefreshTips(exploreEntity)
     local tip = exploreEntity:GetBigWorldCourseContentTip()
     if string.IsNilOrEmpty(tip) then
-        self.TxtTips.gameObject:SetActiveEx(false)
+        self.PanelTips.gameObject:SetActiveEx(false)
     else
-        self.TxtTips.gameObject:SetActiveEx(true)
+        self.PanelTips.gameObject:SetActiveEx(true)
         self.TxtTips.text = tip
     end
 end

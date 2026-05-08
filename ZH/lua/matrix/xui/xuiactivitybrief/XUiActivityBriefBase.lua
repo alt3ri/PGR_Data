@@ -38,17 +38,23 @@ function XUiActivityBriefBase:OnStart(type)
                 self:PlayMovie(function()
                     self:PlaySpecialEnterAnim()
                     self.UiActivityBriefRefreshButton:RefreshButtonsWithRewardAnimation()
+                    -- 检测打开当期生命树章节弹窗
+                    XMVCA.XLifeTree:CheckOpenUiLifeTreeChapterUnlockCurVersion()
                 end)
             else
                 self:PlaySpecialEnterAnim(function() 
                     self.UiActivityBriefRefreshButton:CheckBtnUnlockAnim()
                     self.UiActivityBriefRefreshButton:RefreshButtonsWithRewardAnimation()
+                    -- 检测打开当期生命树章节弹窗
+                    XMVCA.XLifeTree:CheckOpenUiLifeTreeChapterUnlockCurVersion()
                 end)
             end
         else
             self:PlayEnterAnim(function() 
                 self.UiActivityBriefRefreshButton:CheckBtnUnlockAnim()
                 self.UiActivityBriefRefreshButton:RefreshButtonsWithRewardAnimation()
+                -- 检测打开当期生命树章节弹窗
+                XMVCA.XLifeTree:CheckOpenUiLifeTreeChapterUnlockCurVersion()
             end)
         end
     end

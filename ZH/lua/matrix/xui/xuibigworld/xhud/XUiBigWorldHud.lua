@@ -17,6 +17,7 @@ local BtnIndex = {
     BtnQuest = 13,
 }
 
+
 function XUiBigWorldHud:OnAwake()
     self:InitUi()
     self:InitCb()
@@ -115,6 +116,7 @@ function XUiBigWorldHud:AddEventHandler()
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_PERSPECTIVE_CHANGED, self.RefreshPerspective, self)
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_PERSPECTIVE_DISABLE, self.RefreshPerspective, self)
     XEventManager.AddEventListener(XEventId.EVENT_TASK_SYNC, self.OnRefreshCourseRedPoint, self)
+    XEventManager.AddEventListener(XEventId.EVENT_ETCD_TIME_CHANGE, self.RefreshNewsTag, self)
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_BACKPACK_UPDATE, self.OnBackpackUpdate, self)
     XEventManager.AddEventListener("EVENT_GUIDE_BIG_WORLD_OPEN_COURSE_UI", self.OnOpenCourseUi, self)
 end
@@ -136,38 +138,48 @@ function XUiBigWorldHud:RemoveEventHandler()
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_PERSPECTIVE_CHANGED, self.RefreshPerspective, self)
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_PERSPECTIVE_DISABLE, self.RefreshPerspective, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_TASK_SYNC, self.OnRefreshCourseRedPoint, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_ETCD_TIME_CHANGE, self.RefreshNewsTag, self)
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_BACKPACK_UPDATE, self.OnBackpackUpdate, self)
     XEventManager.RemoveEventListener("EVENT_GUIDE_BIG_WORLD_OPEN_COURSE_UI", self.OnOpenCourseUi, self)
 end
 
 
 --region 按钮交互
-
 function XUiBigWorldHud:OnBtnQuitClick()
-    if XMVCA.XBigWorldGamePlay:IsInstLevel() then
+    local EExplorationAbilityType = XMVCA.XBigWorldInstance.EExplorationAbilityType
+    local isEExplorationAbilityEnable = XMVCA.X3CProxy:Send(CS.X3CCommand.CMD_CHECK_EXPLORATION_ABILITY_ENABLE, {
+        ExplorationAbilityEnum = EExplorationAbilityType.ScanPlus
+    })
+    if isEExplorationAbilityEnable.Enabled then
+        XMVCA.X3CProxy:Send(CS.X3CCommand.CMD_ENABLE_EXPLORATION_ABILITY, {
+            ExplorationAbilityEnum = EExplorationAbilityType.ScanPlus,
+            Enable = false
+        })
+    elseif XMVCA.XBigWorldGamePlay:IsInstLevel() then
         self:RecordHudClick(BtnIndex.BtnQuitInst)
         XMVCA.XBigWorldInstance:ShowExitLevelPopup()
     else
         self:RecordHudClick(BtnIndex.BtnQuit)
         if self:IsShowConfirm() then
             local data = XMVCA.XBigWorldCommon:GetPopupConfirmData()
-            --local toggleTip = XMVCA.XBigWorldService:GetText("NoTipToday")
+            -- local toggleTip = XMVCA.XBigWorldService:GetText("NoTipToday")
             local tip = XMVCA.XBigWorldService:GetText("WordTipExit")
             local exitCb = function()
                 self:SaveConfirm()
-                XMVCA.XBigWorldGamePlay:ExitGame()
+                XMVCA.XBigWorldGamePlay:ExitWorld()
             end
-            --local toggleCb = handler(self, self.UpdateConfirm)
-            data:InitInfo(nil, tip):InitSureClick(nil, exitCb):InitToggleActive(false)--InitToggle(toggleTip, toggleCb)
-            --打开界面失败，直接退出空花
+            -- local toggleCb = handler(self, self.UpdateConfirm)
+            data:InitInfo(nil, tip):InitSureClick(nil, exitCb):InitToggleActive(false) -- InitToggle(toggleTip, toggleCb)
+            -- 打开界面失败，直接退出空花
             if not XMVCA.XBigWorldUI:OpenConfirmPopup(data) then
-                XMVCA.XBigWorldGamePlay:ExitGame()
+                XMVCA.XBigWorldGamePlay:ExitWorld()
             end
         else
-            XMVCA.XBigWorldGamePlay:ExitGame()
+            XMVCA.XBigWorldGamePlay:ExitWorld()
         end
     end
 end
+
     
 function XUiBigWorldHud:OnBtnTaskClick()
     if XMVCA.XBigWorldGamePlay:IsInstLevel() then
@@ -339,7 +351,16 @@ function XUiBigWorldHud:RefreshMainMenuRedPoint()
 end
 
 function XUiBigWorldHud:RefreshNewsTag()
-    self.BtnNews:ShowTag(XMVCA.XBigWorldNews:HasNewNews())
+    local isNewNews = XMVCA.XBigWorldNews:HasNewNews()
+    local isTimeNews = XMVCA.XBigWorldNews:HasTimeNews()
+    local isReddotNews = XMVCA.XBigWorldNews:HasReddotNews()
+
+    self.BtnNews:ShowReddot(isReddotNews)
+    self.BtnNews:ShowTag(not isReddotNews and isNewNews)
+
+    if self.BtnNewsTagTime then
+        self.BtnNewsTagTime.gameObject:SetActiveEx(not isReddotNews and not isNewNews and isTimeNews)
+    end
 end
 
 function XUiBigWorldHud:OnQuestStateChanged()

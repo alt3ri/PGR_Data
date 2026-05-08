@@ -33,6 +33,7 @@ require("Common/XLog")
 require("Common/XScriptTool")
 require("Common/XDlcFightLuaEvent")
 require("Common/XDlcFightConst")
+require("Common/XGlobalFunc")
 
 XMain.StepDlc = function()
     require("Common/XDlcNpcAttribType")

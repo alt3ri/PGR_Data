@@ -65,7 +65,13 @@ function XAFKCharBase:Init() --初始化
     --技能距离要求配置--------------------------------------------------------------------------------------------------
     self.skillCastDistanceDic = {  --配置技能的释放距离
     }
-    self:AddItemSkill(self.afkCharConfig.NormalAttack) --给自己添加普攻技能
+
+    if self.afkCharConfig == nil then
+        XLog.Error("没有找到肉鸽5角色技能配置:" .. self._uuid)
+    else
+        self:AddItemSkill(self.afkCharConfig.NormalAttack) --给自己添加普攻技能
+    end
+    
     --Como执行-----------------------------------------------------------------------------------------------------
     self.ItemSkillComboDic = {  --根据ItemSkillID保存ComboList的字典，用来读取
 
@@ -163,6 +169,10 @@ end
 
 function XAFKCharBase:OnNpcCastActionBeforeEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
     if launcherId ~= self._uuid then --不是自己放的技能不用管
+        return
+    end
+
+    if self.targetUUID == 0 or self.targetUUID == nil then
         return
     end
 

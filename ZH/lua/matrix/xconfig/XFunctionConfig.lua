@@ -167,6 +167,13 @@ function XFunctionConfig.GetSkipList(id)
     return SkipFunctionalTemplates[id]
 end
 
+function XFunctionConfig.GetAllSkipFunctionalTemplate()
+    if not CS.XApplication.Debug then
+        XLog.Error("该接口仅提供给Debug模式GM测试用")
+    end
+    return SkipFunctionalTemplates
+end
+
 function XFunctionConfig.GetExplain(id)
     local cfg = XFunctionConfig.TryGetSkipFuncCfg(id)
 

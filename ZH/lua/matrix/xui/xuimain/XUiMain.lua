@@ -63,7 +63,7 @@ function XUiMain:InitPanel()
     ---@type XUiMainBoardEffect
     self.MainBoardEffect = XUiMainBoardEffect.New(self)
     ---@type XUiPanelSwitchableSceneAnim
-    self.SwitchableScene = require("XUi/XUiSwitchableScene/Panel/XUiPanelSwitchableSceneAnim").New()
+    self.SwitchableScene = require("XUi/XUiSwitchableScene/XUiPanelSwitchableSceneAnim").New()
     
     -- self.AreanOnline = XUiPanelArenaOnline.New(self, self.PanelArenaOnline)  --屏蔽合众战局
 end
@@ -779,13 +779,11 @@ end
 --region CG
 
 function XUiMain:TryPlayCG(fashionId, id)
-    if XMVCA.XFavorability:CheckCGBoardAct(fashionId, id) then
+    local videoId = XMVCA.XFavorability:CheckCGBoardAct(id)
+
+    if XTool.IsNumberValidEx(videoId) then
         self:HideBoardEffect()
-        if CS.UnityEngine.Application.platform == CS.UnityEngine.RuntimePlatform.Android then
-            self.CG:PlayCG(1015301)
-        else
-            self.CG:PlayCG(10153)
-        end
+        self.CG:PlayCG(videoId)
     end
 end
 

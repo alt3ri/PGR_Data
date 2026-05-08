@@ -226,6 +226,14 @@ function XFubenBossSingleModel:SetEnterBossInfo(bossId, bossLevel)
     self._BossSingle:SetEnterBossLevel(bossLevel)
 end
 
+function XFubenBossSingleModel:SetBossSingleChallengeBuffGroup(bossSingleChallengeBuffGroup)
+    self._BossSingle:SetBossSingleChallengeBuffGroup(bossSingleChallengeBuffGroup)
+end
+
+function XFubenBossSingleModel:GetBossSingleChallengeBuffGroup()
+    return self._BossSingle:GetBossSingleChallengeBuffGroup()
+end
+
 function XFubenBossSingleModel:SetCurrentFeatureId(value)
     self._CurrentFeatureId = value
 end

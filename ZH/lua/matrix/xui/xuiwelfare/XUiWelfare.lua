@@ -75,11 +75,14 @@ function XUiWelfare:OnGetEvents()
     }
 end
 
+XUiWelfare.OnGetLuaEvents = XUiWelfare.OnGetEvents
+
 function XUiWelfare:OnNotify(evt, ...)
     if evt == XEventId.EVENT_FINISH_TASK or evt == XEventId.EVENT_VIP_CARD_BUY_SUCCESS
             or evt == XEventId.EVENT_CARD_REFRESH_WELFARE_BTN
             or evt == XEventId.EVENT_ACTIVITY_INFO_UPDATE then
         self:RefreshRightView()
+        self:RefreshWelfareCardRed()
     end
 end
 
@@ -146,7 +149,7 @@ function XUiWelfare:InitTabButton()
                     ui = XUiHelper.Instantiate(prefab, self.PanelTitleBtnGroup.transform)
                     ui.gameObject:SetActiveEx(true)
                     ui.gameObject.name = ui.gameObject.name .. tostring(subCfg.FunctionType) .. '_' .. tostring(subCfg.Id)
-                    
+
                     local btnSecondary = ui:GetComponent("XUiButton")
                     btnSecondary:SetNameByGroup(0, subCfg.Name)
                     btnSecondary.SubGroupIndex = firstIndex
@@ -173,18 +176,29 @@ function XUiWelfare:InitTabButton()
     end)
     --如果有外界传值，否则打开第一个红点处，没有红点则打开默认选中
     if self._Params2SelectTab then
+        local fallbackIndex
         for i = 1, #self.TabIndex2Config do
             local config = self.TabIndex2Config[i]
             if config.FunctionType == self._Params2SelectTab.FunctionType then
+                if not fallbackIndex then
+                    fallbackIndex = i
+                end
+
                 if not self._Params2SelectTab.WelfareId then
                     self.PanelTitleBtnGroup:SelectIndex(i)
                     break
                 end
+
                 if config.WelfareId == self._Params2SelectTab.WelfareId then
                     self.PanelTitleBtnGroup:SelectIndex(i)
+                    fallbackIndex = nil
                     break
                 end
             end
+        end
+
+        if fallbackIndex then
+            self.PanelTitleBtnGroup:SelectIndex(fallbackIndex)
         end
     else
         self.PanelTitleBtnGroup:SelectIndex(self.DefaultTabIndex or firstRedPointIndex or DefaultSelectIndex)
@@ -667,11 +681,24 @@ end
 -- 刷新月卡红点
 function XUiWelfare:RefreshWelfareCardRed()
     local btn = self.TabButtons[self.TabIndex]
+    btn:ShowReddot(false)
+
+    local retroactiveRedPoint =
+        XRedPointConditions.Check(
+            XRedPointConditions.Types.CONDITION_PURCHASE_YK_RETROACTIVE)
+
+    if retroactiveRedPoint then
+        btn:ShowReddot(true)
+        return
+    end
+
     local config = self.TabIndex2Config[self.TabIndex]
+
     if not config then
         btn:ShowReddot(not XDataCenter.PayManager.IsGotCard())
         return
     end
+
     local firstRedPoint = XSignInConfigs.CheckWelfareRedPoint(config.FunctionType, config)
     if btn then
         btn:ShowReddot(firstRedPoint)

@@ -43,12 +43,36 @@ function XBigWorldCourseControl:GetVersionEntitys()
         end
     end
 
+    table.sort(self._VersionEntitys, function(versionA, versionB)
+        local isValidA = versionA:IsValid()
+        local isValidB = versionB:IsValid()
+
+        if isValidA ~= isValidB then
+            return isValidA
+        end
+
+        local isCompleteA = versionA:IsComplete()
+        local isCompleteB = versionB:IsComplete()
+
+        if isCompleteA ~= isCompleteB then
+            return not isCompleteA
+        end
+
+        local priorityA = versionA:GetPriority()
+        local priorityB = versionB:GetPriority()
+
+        if priorityA ~= priorityB then
+            return priorityA > priorityB
+        end
+
+        return versionA:GetVersionId() > versionB:GetVersionId()
+    end)
+
     return self._VersionEntitys
 end
 
 function XBigWorldCourseControl:GetValidVersionEntitys()
     local versionEntitys = self:GetVersionEntitys()
-    --todo zjx 这里每帧会执行，这个table考虑从外部传进来
     local result = {}
 
     if not XTool.IsTableEmpty(versionEntitys) then
@@ -118,10 +142,26 @@ end
 
 function XBigWorldCourseControl:GetSelectVersion()
     local version = self._Model:GetSelectVersion()
-    if not version then
-        return XEnumConst.BWCourse.Version.One
+
+    if not XTool.IsNumberValid(version) then
+        version = 1
     end
+
     return version
+end
+
+---@return XBWCourseVersionEntity
+function XBigWorldCourseControl:GetSelectVersionEntity(targetId)
+    local versionId = targetId or self:GetSelectVersion()
+    local versionEntities = self:GetVersionEntitys()
+
+    for _, versionEntity in pairs(versionEntities) do
+        if versionEntity:GetVersionId() == versionId and versionEntity:IsValid() then
+            return versionEntity
+        end
+    end
+
+    return versionEntities[1]
 end
 
 --- region 历程任务

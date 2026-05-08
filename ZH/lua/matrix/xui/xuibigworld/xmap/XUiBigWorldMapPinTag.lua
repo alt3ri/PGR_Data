@@ -49,8 +49,10 @@ end
 ---@param pinData XBWMapPinData
 function XUiBigWorldMapPinTag:_RefreshStyle(styleId, isActive)
     local icon = XMVCA.XBigWorldMap:GetPinIconByStyleId(styleId, isActive)
-    
-    self.ImgTag:SetImage(icon)
+
+    if not string.IsNilOrEmpty(icon) then
+        self.ImgTag:SetImage(icon)
+    end
 end
 
 function XUiBigWorldMapPinTag:_RefreshQuest(questId)

@@ -1,10 +1,10 @@
-local XLaunchDlcManager = require("XLaunchDlcManager")
-
 ---@class XSubpackage 分包数据
 ---@field _Id number
 ---@field _State number
 ---@field _TotalSize number
 local XSubpackage = XClass(nil, "XSubpackage")
+
+local CSXMTDownloadTaskGroupState
 
 function XSubpackage:Ctor(packageId)
     self._Id = packageId
@@ -180,21 +180,37 @@ end
 --- 用于 Res级操作后同步 Sub 状态（如从 UNINSTALLED/NOT_DOWNLOAD 恢复时）
 --- 调用时机：XResource:PrepareDownload 检测到父Sub为 UNINSTALLED/NOT_DOWNLOAD 时
 function XSubpackage:UpdateAggregateState()
-    if XTool.IsTableEmpty(self._ResItemDic) then return end
+    if XTool.IsTableEmpty(self._ResItemDic) then
+        local downloadSize = self:GetDownloadSize()
+        local totalSize = self:GetTotalSize()
+        if downloadSize <= 0 then
+            if totalSize <= 0 then
+                self._State = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.COMPLETE
+            else
+                self._State = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.NOT_DOWNLOAD
+            end
+        elseif downloadSize < totalSize then
+            self._State = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.PAUSE
+        else
+            self._State = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.COMPLETE
+        end
+        return
+    end
+
+    self:UpdateUninstallState()
+    if self:IsUninstalled() then
+        return
+    end
 
     local hasDownloading = false
     local hasPrepare = false
     local hasPause = false
     local allComplete = true
-    local allUninstalled = true
 
     for _, resItem in pairs(self._ResItemDic) do
         local state = resItem:GetState()
         if state ~= XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.COMPLETE then
             allComplete = false
-        end
-        if state ~= XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.UNINSTALLED then
-            allUninstalled = false
         end
         if state == XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.DOWNLOADING then
             hasDownloading = true
@@ -207,8 +223,6 @@ function XSubpackage:UpdateAggregateState()
 
     if allComplete then
         self._State = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.COMPLETE
-    elseif allUninstalled then
-        self._State = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.UNINSTALLED
     elseif hasDownloading or hasPrepare then
         self._State = XEnumConst.SUBPACKAGE.DOWNLOAD_STATE.PAUSE
     elseif hasPause then
@@ -261,9 +275,7 @@ function XSubpackage:InvalidateTaskGroupsCache()
 end
 
 function XSubpackage:FileInitComplete()
-    -- self._TaskGroup:AddFinishedSizeAfterAddTask(self._DownSize)
-    self:InitState()
-    -- self._RepeatName = nil
+    self:UpdateAggregateState()
 end
 
 ---@return XMTDownloadTaskGroup
@@ -282,22 +294,25 @@ end
 
 ---@param center XMTDownloadCenter
 function XSubpackage:OnStateChanged(resState)
+    if not CSXMTDownloadTaskGroupState then
+        CSXMTDownloadTaskGroupState = XTool.GetDownloadStateEnum()
+    end
     local state = nil
     local taskGroups = self:GetTaskGroups()
-    if resState == CS.XMTDownloadTaskGroupState.CompleteError then
-        state = CS.XMTDownloadTaskGroupState.CompleteError
+    if resState == CSXMTDownloadTaskGroupState.CompleteError then
+        state = CSXMTDownloadTaskGroupState.CompleteError
     elseif self._WaitPause then
         local hasRegistered = false
         local hasComplete = false
         local hasOtherState = false
         for i = 1, #taskGroups do
-            if taskGroups[i].State == CS.XMTDownloadTaskGroupState.Registered then
+            if taskGroups[i].State == CSXMTDownloadTaskGroupState.Registered then
                 hasRegistered = true
             end
-            if taskGroups[i].State == CS.XMTDownloadTaskGroupState.Complete then
+            if taskGroups[i].State == CSXMTDownloadTaskGroupState.Complete then
                 hasComplete = true
             end
-            if taskGroups[i].State ~= CS.XMTDownloadTaskGroupState.Registered and taskGroups[i].State ~= CS.XMTDownloadTaskGroupState.Complete then
+            if taskGroups[i].State ~= CSXMTDownloadTaskGroupState.Registered and taskGroups[i].State ~= CSXMTDownloadTaskGroupState.Complete then
                 hasOtherState = true
             end
 
@@ -306,7 +321,7 @@ function XSubpackage:OnStateChanged(resState)
             end
         end
         if hasRegistered or hasComplete then
-            state = CS.XMTDownloadTaskGroupState.Registered
+            state = CSXMTDownloadTaskGroupState.Registered
         end
     else
         -- 同步所有ResItem的TaskGroup状态
@@ -319,7 +334,7 @@ function XSubpackage:OnStateChanged(resState)
         end
 
         if isResStateComplete then
-            state = CS.XMTDownloadTaskGroupState.Complete
+            state = CSXMTDownloadTaskGroupState.Complete
         else
             state = taskGroups[1].State
             if #taskGroups > 1 then
@@ -335,10 +350,10 @@ function XSubpackage:OnStateChanged(resState)
 
     -- print("SP/DN OnStateChanged", self._Id, resState, state, self._WaitPause)
 
-    if state == CS.XMTDownloadTaskGroupState.Registered and self._WaitPause then
+    if state == CSXMTDownloadTaskGroupState.Registered and self._WaitPause then
         XMVCA.XSubPackage:OnDownloadRelease()
         self._WaitPause = false
-    elseif state == CS.XMTDownloadTaskGroupState.Complete then
+    elseif state == CSXMTDownloadTaskGroupState.Complete then
         local formattedStrings = {}
         for i = 1, #taskGroups do
             -- 使用 string.format 来格式化单个任务组的信息，并将其添加到表中
@@ -352,9 +367,9 @@ function XSubpackage:OnStateChanged(resState)
         XMVCA.XSubPackage:OnComplete(self._Id)
         XMVCA.XSubPackage:OnDownloadRelease()
         self._WaitPause = false
-    elseif state == CS.XMTDownloadTaskGroupState.Pausing then
+    elseif state == CSXMTDownloadTaskGroupState.Pausing then
         self._WaitPause = true
-    elseif state == CS.XMTDownloadTaskGroupState.CompleteError then
+    elseif state == CSXMTDownloadTaskGroupState.CompleteError then
         XMVCA.XSubPackage:DoDownloadError(self._Id)
         XMVCA.XSubPackage:OnDownloadRelease()
     end

@@ -49,6 +49,10 @@ function XDlcMember:IsSelecting()
     return self:GetState() == XEnumConst.DlcRoom.PlayerState.Select
 end
 
+function XDlcMember:IsPreparing()
+    return self:GetShowState() == XEnumConst.DlcRoom.PlayerShowState.Preparing
+end
+
 function XDlcMember:GetPlayerId()
     if not self:IsEmpty() then
         return self._PlayerData:GetPlayerId()
@@ -71,6 +75,13 @@ function XDlcMember:GetState()
     end
 
     return XEnumConst.DlcRoom.PlayerState.None
+end
+
+function XDlcMember:GetShowState()
+    if not self:IsEmpty() then
+        return self._PlayerData:GetShowState()
+    end
+    return XEnumConst.DlcRoom.PlayerShowState.Normal
 end
 
 function XDlcMember:GetCharacterId(pos)

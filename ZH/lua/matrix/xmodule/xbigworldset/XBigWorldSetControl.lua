@@ -59,7 +59,13 @@ function XBigWorldSetControl:SaveSettingBySetType(setType)
     if setting then
         setting:SaveChange()
         local dict = setting:RecordDataToDict()
-        CS.XRecord.Record(dict, "1010001", "BigSystemSetting")
+
+        if XMain.IsWindowsEditor then
+            CS.XRecord.RecordTest(dict, "1010001", "BigSystemSetting")
+        else
+            CS.XRecord.Record(dict, "1010001", "BigSystemSetting")
+        end
+        
         XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_SETTING_SAVE, setType)
     end
 end

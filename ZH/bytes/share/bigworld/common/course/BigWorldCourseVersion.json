@@ -1,16 +1,29 @@
 [
     {
         "VersionId": 1,
+        "Name": "\u884c\u52a8\u6307\u5357",
+        "ContentIds": "[101, 102, 103]",
         "TimeId": 100,
         "ConditionId": null,
-        "Name": "\u884c\u52a8\u6307\u5357",
-        "ContentIds": "[101, 102, 103]"
+        "Priority": 1,
+        "SwitchIcon": null
     },
     {
         "VersionId": 2,
-        "TimeId": 44107,
-        "ConditionId": 50002051.0,
         "Name": "\u884c\u52a8\u6307\u5357\u2161",
-        "ContentIds": "[201, 202, 203]"
+        "ContentIds": "[201, 202, 203]",
+        "TimeId": 100,
+        "ConditionId": 50002051.0,
+        "Priority": 2,
+        "SwitchIcon": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldProcess/UiBigWorldProcessImg02.png"
+    },
+    {
+        "VersionId": 3,
+        "Name": "\u884c\u52a8\u6307\u5357\u2162",
+        "ContentIds": "[301, 302, 303]",
+        "TimeId": 100,
+        "ConditionId": 50003221.0,
+        "Priority": 3,
+        "SwitchIcon": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldProcess/UiBigWorldProcessImg02.png"
     }
 ]

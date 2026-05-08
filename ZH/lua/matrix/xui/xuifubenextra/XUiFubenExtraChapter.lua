@@ -91,6 +91,11 @@ function XUiFubenExtraChapter:OnStart(chapter, stageId, hideDiffTog)
     end
     self:InitPanelBottom()
     self:InitPanelStoryJump()
+
+    -- 检测打开当期生命树章节弹窗
+    XMVCA.XLifeTree:CheckOpenUiLifeTreeChapterUnlock(XEnumConst.MAINLINE2.EXHIBITION_FUBEN_TYPE.EXTRA, self.MainId)
+    -- 检测打开卡牌解锁弹窗
+    XMVCA.XLifeTree:CheckOpenUiLifeTreeCardUnlock(XEnumConst.MAINLINE2.EXHIBITION_FUBEN_TYPE.EXTRA, self.MainId)
 end
 
 function XUiFubenExtraChapter:OnEnable()

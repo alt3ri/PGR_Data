@@ -10,6 +10,9 @@ function XUiDlcRelinkChooseBoss:OnAwake()
     self:RegisterUiEvents()
     ---@type table<number, XUiGridDlcRelinkChooseBoss>
     self.BossGridList = {}
+
+    -- 进入选择Boss界面时，设置玩家状态为准备中
+    XMVCA.XDlcRoom:ReqSetShowState(XEnumConst.DlcRoom.PlayerShowState.Preparing)
 end
 
 function XUiDlcRelinkChooseBoss:OnStart()
@@ -41,6 +44,10 @@ end
 
 function XUiDlcRelinkChooseBoss:OnDisable()
     self.Super.OnDisable(self)
+end
+
+function XUiDlcRelinkChooseBoss:OnDestroy()
+    XMVCA.XDlcRoom:ReqSetShowState(XEnumConst.DlcRoom.PlayerShowState.Normal)
 end
 
 function XUiDlcRelinkChooseBoss:InitChapterGrid()

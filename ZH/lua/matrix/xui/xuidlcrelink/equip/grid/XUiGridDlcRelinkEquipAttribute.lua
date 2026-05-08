@@ -4,7 +4,6 @@ local XUiGridDlcRelinkEquipAttribute = XClass(XUiNode, "XUiGridDlcRelinkEquipAtt
 
 function XUiGridDlcRelinkEquipAttribute:OnStart(detailGo)
     self.DetailGo = detailGo
-
     if self.DetailGo then
         self.DetailGo.gameObject:SetActiveEx(false)
         ---@type UiObject
@@ -27,79 +26,116 @@ end
 
 ---@param attribute XDlcRelinkEquipAttribute
 function XUiGridDlcRelinkEquipAttribute:Refresh(attribute)
-    --self:SetBg(isSkillAttribute)
-    self:SetLevelText(attribute.Level)
+    self.NormalTxt.text = attribute.Level
     self:SetName(attribute.FactorId)
-    local isMaxLevel = self._Control:CheckEquipAttributeIsMaxLevel(attribute)
-    self:SetNormal(attribute.FactorId, attribute.Level, isMaxLevel)
+    self.Normal.gameObject:SetActiveEx(true)
+    self:SetNum(attribute.FactorId, attribute.Level)
+    -- 背景
+    if self.ImgBg then
+        local levelTypeIcon = self._Control:GetAttributeLevelTypeIcon(attribute)
+        self.ImgBg:SetRawImageEx(levelTypeIcon)
+    end
+    if self.Dark and self.Parent.CheckEquipFactorIsUnlock then
+        -- 刷新是否解锁
+        local factorIsUnLock, desc = self.Parent:CheckEquipFactorIsUnlock(attribute)
+        self.Dark.gameObject:SetActiveEx(not factorIsUnLock)
+        self.BtnNoEffective.gameObject:SetActiveEx(not factorIsUnLock)
+        if not factorIsUnLock then
+            self.BtnNoEffective:AddEventListener(function()
+                if self.Parent and self.Parent.OnShowPanelDetail then
+                    self.Parent:OnShowPanelDetail(self.Transform, desc)
+                end
+            end)
+        end
+    end
 end
 
+---@param attribute XDlcRelinkEquipAttribute
+function XUiGridDlcRelinkEquipAttribute:Refresh2(attribute)
+    self.NormalTxt.text = attribute.Level
+    self.MaxTxt.text = attribute.Level
+    self:SetName(attribute.FactorId)
+    local isMaxLevel = self._Control:CheckEquipAttributeIsMaxLevel(attribute)
+    self.Normal.gameObject:SetActiveEx(not isMaxLevel)
+    self.Max.gameObject:SetActiveEx(isMaxLevel)
+    self:SetNum(attribute.FactorId, attribute.Level)
+end
+
+---@param attribute XDlcRelinkEquipAttribute
 function XUiGridDlcRelinkEquipAttribute:RefreshDetailShow(isShow, attribute, forceRefresh)
     if not self:IsNodeShow() then
         return
     end
 
-    if isShow then
-        local validShow = false
-        
-        if self.DetailGoUiObject then
-            local txt = self.DetailGoUiObject:GetObject('DetailTxt')
-
-            if txt then
-                local desc = self._Control:GetFactorDescDesc(attribute.FactorId, attribute.Level)
-
-                if not string.IsNilOrEmpty(desc) then
-                    txt.text =  desc
-
-                    validShow = true
-                end
-            end
-        end
-
-        if self.DetailGo then
-            self.DetailGo.gameObject:SetActiveEx(validShow)
-
-            if validShow and forceRefresh then
-                CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.DetailGo)
-            end
-        end
-    else
+    if not isShow then
         if self.DetailGo then
             self.DetailGo.gameObject:SetActiveEx(false)
+        end
+        return
+    end
+
+    local validShow = false
+    if self.DetailGoUiObject then
+        local factorDesc = self._Control:GetFactorDescDesc(attribute.FactorId)
+        if not string.IsNilOrEmpty(factorDesc) then
+            local txt = self.DetailGoUiObject:GetObject("DetailTxt")
+            if txt then
+                txt.text = factorDesc
+                validShow = true
+            end
+            local txtDark = self.DetailGoUiObject:GetObject("DetailTxtDark", false)
+            if txtDark and self.Parent.CheckEquipFactorIsUnlock then
+                local factorIsUnLock = self.Parent:CheckEquipFactorIsUnlock(attribute)
+                txtDark.text = factorDesc
+                txtDark.gameObject:SetActiveEx(not factorIsUnLock)
+                txt.gameObject:SetActiveEx(factorIsUnLock)
+                validShow = true
+            end
+        end
+    end
+
+    if self.DetailGo then
+        self.DetailGo.gameObject:SetActiveEx(validShow)
+        if validShow and forceRefresh then
+            CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.DetailGo)
         end
     end
 end
 
 ---@param data { FactorId: number, IsSkill:boolean, CurLevel:number }
 function XUiGridDlcRelinkEquipAttribute:CustomRefresh(data)
-    --self:SetBg(data.IsSkill)
-    self:SetLevelText(data.CurLevel)
+    self.NormalTxt.text = data.CurLevel
+    self.MaxTxt.text = data.CurLevel
     self:SetName(data.FactorId)
     local maxLevel = self._Control:GetFactorDescMaxLevel(data.FactorId)
-    local isMaxLevel = data.CurLevel >= maxLevel
-    self:SetNormal(data.FactorId, data.CurLevel, isMaxLevel)
+    self.TxtMaxLevel.text = maxLevel
+    local isOverMaxLevel = data.CurLevel > maxLevel
+    self.Normal.gameObject:SetActiveEx(not isOverMaxLevel)
+    self.Max.gameObject:SetActiveEx(isOverMaxLevel)
+    self:SetNum(data.FactorId, data.CurLevel)
 end
 
 ---@param data { FactorId: number, IsSkill:boolean, IsCur:boolean, Level:number, IsShowSkillDesc: boolean }
 function XUiGridDlcRelinkEquipAttribute:RefreshAttributeDetails(data)
     self.PanelCur.gameObject:SetActiveEx(data.IsCur)
-    self:SetLevelText(data.Level)
-    if data.IsSkill then
-        local maxLevel = self._Control:GetFactorDescMaxLevel(data.FactorId)
-        local isMaxLevel = data.Level >= maxLevel
-        self.Normal.gameObject:SetActiveEx(not isMaxLevel)
-        self.Max.gameObject:SetActiveEx(isMaxLevel)
+    self.NormalTxt.text = data.Level
+    self.MaxTxt.text = data.Level
 
+    local maxLevel = self._Control:GetFactorDescMaxLevel(data.FactorId)
+    local isMaxLevel = data.Level >= maxLevel
+    self.Normal.gameObject:SetActiveEx(not isMaxLevel)
+    self.Max.gameObject:SetActiveEx(isMaxLevel)
+
+    if data.IsSkill then
         if data.IsShowSkillDesc then
             self.TxtNum.text = self._Control:GetFactorSkillDesc(data.FactorId, data.Level)
         else
             self.TxtNum.text = self._Control:GetFactorDesc(data.FactorId, data.Level)
         end
     else
-        local maxLevel = self._Control:GetFactorDescMaxLevel(data.FactorId)
-        local isMaxLevel = data.Level >= maxLevel
-        self:SetNormal(data.FactorId, data.Level, isMaxLevel)
+        self:SetNum(data.FactorId, data.Level)
     end
+
     -- 设置背景交替显示
     local isShowBg1 = data.Level % 2 ~= 0
     if self.Image1 then
@@ -125,35 +161,22 @@ function XUiGridDlcRelinkEquipAttribute:ShowBg2()
     self.ImgBg02.gameObject:SetActiveEx(true)
 end
 
-function XUiGridDlcRelinkEquipAttribute:SetLevelText(level)
-    self.NormalTxt.text = level
-    self.MaxTxt.text = level
-end
-
 function XUiGridDlcRelinkEquipAttribute:SetName(factorId)
     self.TxtName.text = self._Control:GetFactorDescName(factorId)
 end
 
-function XUiGridDlcRelinkEquipAttribute:SetSkill(factorId)
-    self.Normal.gameObject:SetActiveEx(false)
-    self.Max.gameObject:SetActiveEx(true)
-    self.TxtNum.text = self._Control:GetEquipSkillFactorName(factorId)
-end
-
-function XUiGridDlcRelinkEquipAttribute:SetNormal(factorId, level, isMaxLevel)
-    self.Normal.gameObject:SetActiveEx(not isMaxLevel)
-    self.Max.gameObject:SetActiveEx(isMaxLevel)
-
-    if self.TxtNum then
-        local factorType = self._Control:GetFactorType(factorId, level)
-        if factorType == 1 then
-            self.TxtNum.text = self._Control:GetFactorDesc(factorId, level)
-        else
-            local isPercent = self._Control:GetFactorDescIsPercent(factorId)
-            local params = self._Control:GetFactorParams(factorId, level)
-            local num = params[1] or 0
-            self.TxtNum.text = self:Format(num, isPercent)
-        end
+function XUiGridDlcRelinkEquipAttribute:SetNum(factorId, level)
+    if not self.TxtNum then
+        return
+    end
+    local factorType = self._Control:GetFactorType(factorId, level)
+    if factorType == XEnumConst.DlcRelink.FactorType.MainSkill then
+        self.TxtNum.text = self._Control:GetFactorDesc(factorId, level)
+    else
+        local isPercent = self._Control:GetFactorDescIsPercent(factorId)
+        local params = self._Control:GetFactorParams(factorId, level)
+        local num = params[1] or 0
+        self.TxtNum.text = self:Format(num, isPercent)
     end
 end
 

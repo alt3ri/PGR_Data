@@ -5,7 +5,7 @@ local XBWCommanderDIYTypeEntity = require("XModule/XBigWorldCommanderDIY/XEntity
 local XBigWorldCommanderDIYControl = XClass(XEntityControl, "XBigWorldCommanderDIYControl")
 
 local Protocol = {
-    BigWorldCommanderFashionUpdateRequest = "BigWorldCommanderFashionUpdateRequest",
+    BigWorldCommanderFashionUpdateRequest = "BigWorldCommanderFashionUpdateRequest"
 }
 
 function XBigWorldCommanderDIYControl:OnInit()
@@ -16,8 +16,7 @@ function XBigWorldCommanderDIYControl:OnInit()
     self._Gender = 0
     ---@type table<number, XBWCommanderDIYWearData>
     self._WearDataMap = {}
-
-    self:_InitRecordPartMap()
+    self._CurrentModifiedIndex = self._Model:GetCurrentOutfitType()
 end
 
 function XBigWorldCommanderDIYControl:AddAgencyEvent()
@@ -31,8 +30,6 @@ end
 function XBigWorldCommanderDIYControl:OnRelease()
     self._Gender = 0
     self._WearDataMap = {}
-
-    self:_RecordPartMapToLocal()
 end
 
 -- region Entity
@@ -80,6 +77,59 @@ function XBigWorldCommanderDIYControl:GetSuitPartEntitys()
     end
 
     return nil
+end
+
+---@param typeEntity XBWCommanderDIYTypeEntity
+---@param outfitType number
+---@return XBWCommanderDIYPartEntity[]
+function XBigWorldCommanderDIYControl:GetFilteredDisplayPartEntitys(typeEntity, outfitType)
+    -- 按Outfit进行筛选，目前只针对衣装进行筛选
+
+    local entitys = typeEntity:GetDisplayPartEntitys()
+    if not typeEntity:IsFashion() then
+        return entitys
+    end
+    local config = self._Model:GetDlcPlayerFashionOutfitConfigById(outfitType)
+    local allowedFashionIds = config and config.AllowFashionIds
+    if not allowedFashionIds or XTool.IsTableEmpty(allowedFashionIds) then
+        return entitys
+    end
+    if not self._allowedDicts then
+        self._allowedDicts = {}
+    end
+    if not self._allowedDicts[outfitType] then
+        local allowedDict = {}
+        for _, id in ipairs(allowedFashionIds) do
+            allowedDict[id] = true
+        end
+        self._allowedDicts[outfitType] = allowedDict
+    end
+    local allowedDict = self._allowedDicts[outfitType]
+    for i = #entitys, 1, -1 do
+        local ent = entitys[i]
+        local fashionId = ent:GetFashionId()
+        -- 如果是套装，修正一下检查的FashionId
+        if ent:IsSuit() then
+            local partIds = self._Model:GetDlcPlayerFashionPartPartsById(ent:GetPartId())
+            for _, partId in ipairs(partIds) do
+                local typeId = self._Model:GetDlcPlayerFashionPartTypeIdById(partId)
+                if typeId == XEnumConst.PlayerFashion.PartType.Fashion then
+                    local gender = self._Model:GetValidGender(self:GetCurrentGender())
+                    local resId = self._Model:GetResIdByPartId(partId, gender)
+                    fashionId = self._Model:GetDlcPlayerFashionResFashionIdById(resId)
+                    break
+                end
+            end
+        end
+        if not allowedDict[fashionId] then
+            table.remove(entitys, i)
+        end
+    end
+    return entitys
+end
+
+function XBigWorldCommanderDIYControl:GetDlcPlayerFashionOutfitConfigById(outfitType)
+    return self._Model:GetDlcPlayerFashionOutfitConfigById(outfitType)
 end
 
 ---@param entity XBWCommanderDIYPartEntity
@@ -176,10 +226,39 @@ function XBigWorldCommanderDIYControl:CheckIncompatibleType(entity)
     return false
 end
 
+---@param entity XBWCommanderDIYEmptyPartEntity
+function XBigWorldCommanderDIYControl:CheckIncompatibleParts(entity)
+    -- 从模型中读取当前 Outfit 的穿戴数据，遍历当前部件配置的不兼容部件列表；
+    -- 只要发现有任一不兼容部件已在对应类型上穿戴，则认为存在冲突并返回 true，否则返回 false。
+    if entity:IsEmpty() then
+        return false
+    end
+    local partId = entity:GetPartId()
+    local incompatibleParts = self._Model:GetDlcPlayerFashionPartIncompatiblePartsByTypeId(partId)
+    if XTool.IsTableEmpty(incompatibleParts) then
+        return false
+    end
+    local outfitType = self._CurrentModifiedIndex
+    local wearDataMap = self._Model:GetWearDataMap(outfitType)
+    if XTool.IsTableEmpty(wearDataMap) then
+        return false
+    end
+    for _, incompatiblePartId in ipairs(incompatibleParts) do
+        local typeId = self._Model:GetDlcPlayerFashionPartTypeIdById(incompatiblePartId)
+        local wearData = wearDataMap[typeId]
+        if wearData and wearData:IsWaeredPart() and wearData:GetPartId() == incompatiblePartId then
+            return true
+        end
+    end
+    return false
+end
+
 ---@param entity XBWCommanderDIYPartEntity
 function XBigWorldCommanderDIYControl:SetUsePartEntity(entity)
     if entity and not entity:IsNil() then
         self:SetUsePart(entity:GetTypeId(), entity:GetPartId())
+    else
+        XLog.Error("XBigWorldCommanderDIYControl:SetUsePartEntity - Entity is nil or invalid")
     end
 end
 
@@ -187,6 +266,8 @@ end
 function XBigWorldCommanderDIYControl:ClearUsePartEntity(entity)
     if entity then
         self:SetUsePart(entity:GetTypeId())
+    else
+        XLog.Error("XBigWorldCommanderDIYControl:ClearUsePartEntity - Entity is nil")
     end
 end
 
@@ -266,11 +347,11 @@ end
 -- region Data
 
 function XBigWorldCommanderDIYControl:SetUsePart(typeId, partId)
-    self._Model:SetUsePart(typeId, partId)
+    self._Model:SetUsePart(typeId, partId, self._CurrentModifiedIndex)
 end
 
 function XBigWorldCommanderDIYControl:GetTypeCurrentUsePart(typeId)
-    return self._Model:GetUsePart(typeId)
+    return self._Model:GetUsePart(typeId, self._CurrentModifiedIndex)
 end
 
 function XBigWorldCommanderDIYControl:ResetUsePart(typeId)
@@ -281,15 +362,40 @@ function XBigWorldCommanderDIYControl:ResetUsePart(typeId)
 end
 
 function XBigWorldCommanderDIYControl:GetPartCurrentUseColor(partId)
-    return self._Model:GetUsePartColor(partId)
+    return self._Model:GetUsePartColor(partId, self._CurrentModifiedIndex)
 end
 
 function XBigWorldCommanderDIYControl:GetPartUseColorByGender(partId, gender)
-    return self._Model:GetUsePartColorByGender(partId, gender)
+    return self._Model:GetUsePartColorByGender(partId, gender, self._CurrentModifiedIndex)
 end
 
 function XBigWorldCommanderDIYControl:SetUsePartColor(partId, colorId)
-    self._Model:SetUsePartColor(partId, colorId)
+    self._Model:SetUsePartColor(partId, colorId, self._CurrentModifiedIndex)
+end
+
+function XBigWorldCommanderDIYControl:GetResIdByGender(partId, gender)
+    return self._Model:GetResIdByPartId(partId, gender)
+end
+
+function XBigWorldCommanderDIYControl:GetDlcPlayerFashionResColorGroupIdById(resId)
+    return self._Model:GetDlcPlayerFashionResColorGroupIdById(resId)
+end
+
+---@return number[]
+function XBigWorldCommanderDIYControl:GetDlcPlayerFashionColorGroupColorIdByGroupId(groupId)
+    return self._Model:GetDlcPlayerFashionColorGroupColorIdByGroupId(groupId)
+end
+
+function XBigWorldCommanderDIYControl:GetDlcPlayerFashionColorConfigById(colorId)
+    return self._Model:GetDlcPlayerFashionColorConfigById(colorId)
+end
+
+function XBigWorldCommanderDIYControl:GetCurrentModifiedOutfitType()
+    return self._CurrentModifiedIndex
+end
+
+function XBigWorldCommanderDIYControl:SetCurrentModifiedOutfitType(outfitType)
+    self._CurrentModifiedIndex = outfitType
 end
 
 function XBigWorldCommanderDIYControl:GetCurrentCharacterId()
@@ -308,8 +414,8 @@ function XBigWorldCommanderDIYControl:GetCurrentValidGender()
     return self._Model:GetValidGender()
 end
 
-function XBigWorldCommanderDIYControl:ChangeGender(value)
-    self._Model:ChangeGender(value)
+function XBigWorldCommanderDIYControl:ChangeGender(value, outfitType)
+    self._Model:ChangeGender(value, outfitType)
 end
 
 function XBigWorldCommanderDIYControl:GetUseSuitPart()
@@ -350,57 +456,97 @@ end
 function XBigWorldCommanderDIYControl:ResetCommanderFashion()
     if not XTool.IsTableEmpty(self._WearDataMap) then
         for typeId, wearData in pairs(self._WearDataMap) do
-            self._Model:SetWearData(typeId, wearData)
+            local outfitId = wearData:GetOutfitType()
+            self._Model:SetWearData(typeId, wearData, outfitId)
         end
     end
     if XTool.IsNumberValid(self._Gender) then
         self._Model:SetGender(self._Gender)
     end
+
+    XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_COMMANDER_DIY_RESET)
 end
 
-function XBigWorldCommanderDIYControl:TemporaryFashionInfo()
-    local wearDataMap = self._Model:GetWearDataMap()
-
-    self._WearDataMap = {}
+function XBigWorldCommanderDIYControl:TemporaryFashionInfo(forceIndex)
+    self._CurrentModifiedIndex = forceIndex or self._CurrentModifiedIndex
+    local wearDataMap = self._Model:GetWearDataMap(self._CurrentModifiedIndex)
+    self._WearDataMap = self._WearDataMap or {}
     self._Gender = self._Model:GetValidGender()
     if not XTool.IsTableEmpty(wearDataMap) then
         for typeId, waerData in pairs(wearDataMap) do
-            self._WearDataMap[typeId] = waerData:Clone()
+            if self._WearDataMap[typeId] then
+                self._WearDataMap[typeId]:SetOutfitType(waerData:GetOutfitType())
+                self._WearDataMap[typeId]:SetTypeId(waerData:GetTypeId())
+                self._WearDataMap[typeId]:SetPartId(waerData:GetPartId())
+                self._WearDataMap[typeId]:SetColorId(waerData:GetColorId())
+            else
+                self._WearDataMap[typeId] = waerData:Clone()
+            end
         end
     end
 end
 
+function XBigWorldCommanderDIYControl:GetCurrentOutfitType()
+    return self._Model:GetCurrentOutfitType()
+end
+
+-- 这个流程 callback 就是必然成功
 function XBigWorldCommanderDIYControl:SaveFashionInfo(callback)
-    self:RequestUpdate(self:GetCurrentGender(), self:GetDIYInfo(), callback)
+    self:RequestUpdate(self._CurrentModifiedIndex, self:GetCurrentGender(), self:GetDIYInfo(), callback)
 end
 
-function XBigWorldCommanderDIYControl:TrySaveFashionInfo(callback)
-    self:TryOpenPreviewSavePopup(function()
-        self:SaveFashionInfo(callback)
-    end)
-end
-
-function XBigWorldCommanderDIYControl:TryOpenPreviewSavePopup(callback)
-    if not self:CheckWearPreview() then
-        if callback then
-            callback()
+function XBigWorldCommanderDIYControl:TrySaveFashionInfo(callback, tipText)
+    self:TryOpenPreviewSavePopup(function(isSaveSuccess, isCancel)
+        if isCancel then
+            if callback then
+                callback(isSaveSuccess, isCancel)
+            end
+        else
+            self:SaveFashionInfo(callback)
         end
+    end, tipText)
+end
 
-        return
-    end
-
+--- 弹出「是否确认放弃修改」确认框（文案默认取 DiscardChanges，也可由 tipText 覆盖）。
+--- 确定：视为放弃修改，RestorePreviewPart 后 callback(true, false)。
+--- 取消：保留当前编辑，callback(false, true)。
+function XBigWorldCommanderDIYControl:OpenConfirmDiscardChangesPopup(tipText, callback)
+    tipText = tipText or XMVCA.XBigWorldService:GetText("DIYDiscardChanges")
     local confirmData = XMVCA.XBigWorldCommon:GetPopupConfirmData()
-
-    confirmData:InitInfo(nil, XMVCA.XBigWorldService:GetText("DIYPreviewConfirmTips"))
+    confirmData:InitInfo(nil, tipText)
     confirmData:InitToggleActive(false)
     confirmData:InitSureClick(nil, function()
-        self:RestorePreviewPart()
+        self:ResetCommanderFashion()
         if callback then
-            callback()
+            local isSaveSuccess = true
+            local isCancel = false
+            callback(isSaveSuccess, isCancel)
+        end
+    end)
+    confirmData:InitCancelClick(nil, function()
+        if callback then
+            local isSaveSuccess = false
+            local isCancel = true
+            callback(isSaveSuccess, isCancel)
         end
     end)
 
     XMVCA.XBigWorldUI:OpenConfirmPopup(confirmData)
+end
+
+-- 问询是否恢复到可保存状态
+function XBigWorldCommanderDIYControl:TryOpenPreviewSavePopup(callback, tipText)
+    -- DIYPreviewConfirmTips 穿戴了未获得部件，是否恢复未获得部件并保存其他部件？
+    tipText = tipText or XMVCA.XBigWorldService:GetText("DIYPreviewConfirmTips")
+    if not self:CheckWearPreview() then
+        local isSaveSuccess = true
+        local isCancel = false
+        if callback then
+            callback(isSaveSuccess, isCancel)
+        end
+        return
+    end
+    self:OpenConfirmDiscardChangesPopup(tipText, callback)
 end
 
 function XBigWorldCommanderDIYControl:CheckIsInitDIY()
@@ -412,7 +558,7 @@ function XBigWorldCommanderDIYControl:SetInitDiy(value)
 end
 
 function XBigWorldCommanderDIYControl:RestorePreviewPart()
-    local wearDataMap = self._Model:GetWearDataMap()
+    local wearDataMap = self._Model:GetWearDataMap(self._CurrentModifiedIndex)
 
     if not XTool.IsTableEmpty(wearDataMap) then
         for typeId, wearData in pairs(wearDataMap) do
@@ -473,6 +619,11 @@ function XBigWorldCommanderDIYControl:RestorePreviewPart()
     end
 end
 
+function XBigWorldCommanderDIYControl:CreateTemporaryWearDataMap(outfitType)
+    local wearDataMap = self._Model:CreateTemporaryWearDataMap(outfitType)
+    return wearDataMap
+end
+
 function XBigWorldCommanderDIYControl:CheckCurrentMaleGender()
     return self:GetCurrentGender() == XEnumConst.PlayerFashion.Gender.Male
 end
@@ -485,15 +636,25 @@ function XBigWorldCommanderDIYControl:GetNpcPartData()
 end
 
 function XBigWorldCommanderDIYControl:CheckNeedSyncInfo()
+    -- 如果没有数据就认为还没开始修改，直接返回不需要保存
+    if XTool.IsTableEmpty(self._WearDataMap) then
+        return false
+    end
     if self._Gender ~= self:GetCurrentGender() then
         return true
     end
-
-    local wearDataMap = self._Model:GetWearDataMap()
+    local currentOutfitType = self._Model:GetCurrentOutfitType()
+    if currentOutfitType ~= self._CurrentModifiedIndex then
+        return true
+    end
+    local wearDataMap = self._Model:GetWearDataMap(self._CurrentModifiedIndex)
 
     if not XTool.IsTableEmpty(wearDataMap) then
         for typeId, wearData in pairs(wearDataMap) do
             if not wearData:IsEqual(self._WearDataMap[typeId]) then
+                XLog.Debug(typeId .. "[from]:" .. self._WearDataMap[typeId]:GetPartId() .. " " ..
+                               self._WearDataMap[typeId]:GetColorId() .. "[to]:" .. wearData:GetPartId() .. " " ..
+                               wearData:GetColorId())
                 return true
             end
         end
@@ -503,7 +664,7 @@ function XBigWorldCommanderDIYControl:CheckNeedSyncInfo()
 end
 
 function XBigWorldCommanderDIYControl:CheckWearPreview()
-    local wearDataMap = self._Model:GetWearDataMap()
+    local wearDataMap = self._Model:GetWearDataMap(self._CurrentModifiedIndex)
 
     if not XTool.IsTableEmpty(wearDataMap) then
         for typeId, wearData in pairs(wearDataMap) do
@@ -537,80 +698,74 @@ function XBigWorldCommanderDIYControl:GetMaterialConfigs(partModelId, colorId)
     return XTool.CsList2LuaTable(result)
 end
 
+function XBigWorldCommanderDIYControl:GetMaterialNameById(colorId)
+    return self._Model:GetDlcPlayerFashionColorMaterialNameById(colorId)
+end
+
 function XBigWorldCommanderDIYControl:GetDIYInfo()
     local info = {}
-    local wearDataMap = self._Model:GetWearDataMap()
+    local wearDataMap = self._Model:GetWearDataMap(self._CurrentModifiedIndex)
     local suitData = wearDataMap[XEnumConst.PlayerFashion.PartType.Suit]
+    for typeId, wearData in pairs(wearDataMap) do
+        if wearData:IsWaeredPart() then
+            info[typeId] = wearData:ToData()
+        end
+    end
 
     if suitData and suitData:IsWaeredPart() then
         local partId = suitData:GetPartId()
         local incompatibleTypes = self._Model:GetIncompatibleTypeMap(partId)
         local partIds = self._Model:GetDlcPlayerFashionPartPartsById(partId)
-        local suitTypeMap = {}
+
+        for typeId in pairs(incompatibleTypes) do
+            info[typeId] = nil
+        end
+        for _, suitPartId in pairs(partIds) do
+            local typeId = self._Model:GetDlcPlayerFashionPartTypeIdById(suitPartId)
+            local wearData = wearDataMap[typeId]
+            if wearData:GetPartId() == suitPartId then
+                info[typeId] = nil
+            end
+        end
 
         info[suitData:GetTypeId()] = suitData:ToData()
-        for _, partId in pairs(partIds) do
-            local typeId = self._Model:GetDlcPlayerFashionPartTypeIdById(partId)
-
-            suitTypeMap[typeId] = true
-            if not incompatibleTypes[typeId] then
-                local wearData = wearDataMap[typeId]
-
-                if wearData:IsWaeredPart() and wearData:GetPartId() ~= partId then
-                    info[typeId] = wearData:ToData()
-                end
-            end
-        end
-        for typeId, wearData in pairs(wearDataMap) do
-            if not suitTypeMap[typeId] and wearData:IsWaeredPart() then
-                info[typeId] = wearData:ToData()
-            end
-        end
-    else
-        for typeId, wearData in pairs(wearDataMap) do
-            if not wearData:IsSuit() and wearData:IsWaeredPart() then
-                info[typeId] = wearData:ToData()
-            end
-        end
     end
 
     return info
 end
 
 function XBigWorldCommanderDIYControl:RecordPart(partId)
-    if self._RecordPartMap then
-        self._RecordPartMap[partId] = true
-    end
+    self._Model:SetRecordPart(partId)
 end
 
 function XBigWorldCommanderDIYControl:CheckPartRecord(partId)
-    if self._RecordPartMap then
-        return self._RecordPartMap[partId] or false
-    end
+    local record = self._Model:GetRecordPartMap()
 
-    return false
+    return record[partId] or false
 end
 
 -- endregion
 
 -- region Protocol
 
-function XBigWorldCommanderDIYControl:RequestUpdate(gender, fashionList, callback)
+function XBigWorldCommanderDIYControl:RequestUpdate(outfitType, gender, fashionList, callback)
     XMessagePack.MarkAsTable(fashionList)
     XNetwork.Call(Protocol.BigWorldCommanderFashionUpdateRequest, {
+        OutfitType = outfitType,
         Gender = gender,
-        CommanderFashionList = fashionList,
+        CommanderFashionList = fashionList
     }, function(res)
         if res.Code ~= XCode.Success then
             XUiManager.TipCode(res.Code)
-        end
-        self:TemporaryFashionInfo()
-        self:SetInitDiy(true)
-        if not XMVCA.XBigWorldCommanderDIY:IsFromOpenGuide() then
-            XUiManager.TipMsg(XMVCA.XBigWorldService:GetText("DIYSaveSuccessTip"))
-        end
-        if callback then
-            callback()
+        else
+            self._Model:DoSetCommanderFashionOutfitsData(fashionList, outfitType)
+            self._Model:SetCurrentOutfitType(outfitType)
+            self:TemporaryFashionInfo(outfitType)
+            self:SetInitDiy(true)
+            XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_COMMANDER_DIY_MODEL_UPDATE)
+            if callback then
+                callback(res.Code == XCode.Success)
+            end
         end
     end)
 end
@@ -619,37 +774,31 @@ end
 
 -- region Private
 
-function XBigWorldCommanderDIYControl:_InitRecordPartMap()
-    local record = XSaveTool.GetData(self:_GetRecordPartKey())
-
-    self._RecordPartMap = {}
-    if not string.IsNilOrEmpty(record) then
-        local records = string.Split(record, "|")
-
-        if not XTool.IsTableEmpty(records) then
-            for _, partId in pairs(records) do
-                self._RecordPartMap[tonumber(partId)] = true
-            end
-        end
+--- 处理保存和完成回调
+--- 如果需要同步信息，则弹出确认框；否则直接调用回调
+---@param callback function 完成后的回调函数 
+---@return isSuccess boolean 是否发送协议保存成功
+function XBigWorldCommanderDIYControl:AskSaveAndFinishCallBack(callback)
+    if self:CheckNeedSyncInfo() then
+        local confirmData = XMVCA.XBigWorldCommon:GetPopupConfirmData()
+        -- DIYConfirmTips 是否保存修改？
+        confirmData:InitInfo(nil, XMVCA.XBigWorldService:GetText("DIYConfirmTips"))
+        confirmData:InitToggleActive(false)
+        confirmData:InitCancelClick(nil, function()
+            local isSaveSuccess = false
+            local isCancel = true
+            callback(isSaveSuccess, isCancel)
+        end)
+        confirmData:InitSureClick(nil, function()
+            self:TrySaveFashionInfo(callback)
+        end)
+        XMVCA.XBigWorldUI:OpenConfirmPopup(confirmData)
+    else
+        local isSaveSuccess = false
+        local isCancel = false
+        callback(isSaveSuccess, isCancel)
     end
-end
-
-function XBigWorldCommanderDIYControl:_RecordPartMapToLocal()
-    if self._RecordPartMap then
-        local result = {}
-
-        for partId, _ in pairs(self._RecordPartMap) do
-            table.insert(result, partId)
-        end
-
-        XSaveTool.SaveData(self:_GetRecordPartKey(), table.concat(result, "|"))
-    end
-end
-
-function XBigWorldCommanderDIYControl:_GetRecordPartKey()
-    return "BW_DIY_PART_UNLOCK_" .. tostring(XPlayer.Id)
 end
 
 -- endregion
-
 return XBigWorldCommanderDIYControl

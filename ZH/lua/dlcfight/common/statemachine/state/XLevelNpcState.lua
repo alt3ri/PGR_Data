@@ -8,8 +8,8 @@ local XLevelNpcState = XClass(XMachineBaseState, "XNpcState")
 
 ---@overload
 ---@param proxy XDlcCSharpFuncs
-function XLevelNpcState:Init(proxy, ...)
-    XMachineBaseState.Init(self, proxy, ...)
+function XLevelNpcState:Init(proxy, stateMachine, ...)
+    XMachineBaseState.Init(self, proxy, stateMachine, ...)
     self._placeId = self._proxy:GetNpcPlaceId()
     self._uuid = self._proxy:GetSelfNpcId()
 end

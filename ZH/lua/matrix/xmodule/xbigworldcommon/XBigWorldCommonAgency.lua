@@ -11,18 +11,23 @@ function XBigWorldCommonAgency:OnInit()
     self._QuitConfirmPopupDataPool = XQueue.New()
     ---@type XQueue
     self._PreviewDataPool = XQueue.New()
-    
+
     self.CoolTimeFormat = {
         -- 显示为 00:00:01
         Clock = 1,
+        ---	x ≥ 24小时         :  显示为{0}天，舍弃小数
+        --- 1小时 ≤ x < 24小时 :  显示为{0}小时，舍弃小数
+        --- 1分钟 ≤ x < 1小时  :  显示为{0}分钟，舍弃小数
+        --- x < 1分钟          :  显示为"小于1分钟"
+        NewsReward = 2,
     }
-    
+
     self.ModelInfoType = {
         LookAtIK = 1,
         AnimationIK = 2,
         Effect = 3,
     }
-    
+
     self.ESequentialJobsSerial = {
         Main = CS.StatusSyncFight.ESequentialJobsSerial.Main:GetHashCode(),
         Drama = CS.StatusSyncFight.ESequentialJobsSerial.Drama:GetHashCode(),
@@ -131,13 +136,13 @@ end
 ---@return XCoolTime
 function XBigWorldCommonAgency:GetCoolTime()
     if not self._CoolTime then
-        self._CoolTime  = require("XModule/XBigWorldCommon/XCoolTime/XCoolTime").New()
+        self._CoolTime = require("XModule/XBigWorldCommon/XCoolTime/XCoolTime").New()
     end
     return self._CoolTime
 end
 
-function XBigWorldCommonAgency:GetCoolTimeStr(second)
-    return self:GetCoolTime():GetClockTimeStr(second)
+function XBigWorldCommonAgency:GetCoolTimeStr(second, timeFormatType)
+    return self:GetCoolTime():GetTimeStr(second, timeFormatType)
 end
 
 ---@return string[]
@@ -148,13 +153,17 @@ end
 -- region 任务流水线
 
 function XBigWorldCommonAgency:AddCommonSequentialJob(serial)
-    serial = serial or CS.StatusSyncFight.ESequentialJobsSerial.Main
+    if CS.StatusSyncFight.XFightClient.FightInstance ~= nil then
+        serial = serial or CS.StatusSyncFight.ESequentialJobsSerial.Main
 
-    local id = CS.StatusSyncFight.XFightClient.DelayedJobManager:CreateAndExecuteCommonSequentialJob(serial)
+        local id = CS.StatusSyncFight.XFightClient.DelayedJobManager:CreateAndExecuteCommonSequentialJob(serial)
 
-    self._Model:AddCommonSequentialJob(id)
+        self._Model:AddCommonSequentialJob(id)
 
-    return id
+        return id
+    end
+
+    return 0
 end
 
 function XBigWorldCommonAgency:AddSequentialJobBehavior(id, behavior)

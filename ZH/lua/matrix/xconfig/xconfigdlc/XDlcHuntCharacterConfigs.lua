@@ -91,7 +91,7 @@ end
 
 function XDlcHuntCharacterConfigs.GetCharacterModelId(characterId)
     local fashionId = XDlcHuntCharacterConfigs.GetFashionId(characterId)
-    local resourcesId = XDataCenter.FashionManager.GetResourcesId(fashionId)
+    local resourcesId = XMVCA.XFashion:GetOwnFashionColorResourcesId(fashionId)
     local model = XMVCA.XCharacter:GetCharResModel(resourcesId)
     return model
 end

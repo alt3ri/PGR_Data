@@ -129,6 +129,7 @@ function XUiFubenPractice:OnEnable()
     end
 
     self:CheckRedPoint()
+    self:SelectPanel(self.CurrentSelect)
 end
 
 function XUiFubenPractice:OnDisable()
@@ -222,7 +223,7 @@ function XUiFubenPractice:SelectPanel(id)
         XDataCenter.PracticeManager.SaveClickBossNewChallenger(id)
         self:CheckBossRedPoint()
     end
-
+    
     self.PracticeBasics:SetPanelActive(self.CurrentType == XPracticeConfigs.PracticeType.Basics, id)
     self.PracticeAdvanced:SetPanelActive(self.CurrentType == XPracticeConfigs.PracticeType.Advanced, id)
     self.PracticeCharacter:SetPanelActive(self.CurrentType == XPracticeConfigs.PracticeType.Character, id, self.SelectStageId)

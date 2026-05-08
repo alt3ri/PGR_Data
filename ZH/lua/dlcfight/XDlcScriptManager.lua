@@ -182,7 +182,7 @@ end
 
 ---@param scriptClassId number @脚本类的id
 ---@param name string
----@param super table
+---@param super table|nil
 function XDlcScriptManager.RegLevelLogicScript(scriptClassId, name, super)
     name = string.format("XLevelLogicScript_%04d", scriptClassId)
     return XDlcScriptManager._RegisterScript("Level_Logic", scriptClassId, name, super)

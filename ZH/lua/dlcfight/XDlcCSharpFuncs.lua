@@ -225,6 +225,13 @@ end
 function XDlcCSharpFuncs:GetNpcActive(uuid)
 end
 
+---@desc 设置Npc表现层显隐
+---@param uuid int
+---@param active bool
+---@return void 
+function XDlcCSharpFuncs:SetRLNpcActive(uuid, active)
+end
+
 ---@desc 移除Npc
 ---@param uuid int
 ---@return void 
@@ -246,8 +253,9 @@ end
 ---@desc 使Npc死亡
 ---@param npcId int
 ---@param magicId int
+---@param killerId int
 ---@return void 
-function XDlcCSharpFuncs:NpcDie(npcId, magicId)
+function XDlcCSharpFuncs:NpcDie(npcId, magicId, killerId)
 end
 
 ---@desc 使Npc开始移动并看向lookPosition
@@ -263,6 +271,26 @@ end
 ---@param moveType ENpcMoveType
 ---@return void 
 function XDlcCSharpFuncs:NpcMoveTo(npcUUID, destination, moveType)
+end
+
+---@desc Npc 以当前朝向为 z 轴，使用 MoveDirection 的方向移动
+---@param npcUUID int
+---@return void 
+function XDlcCSharpFuncs:NpcStartDirectionMove(npcUUID)
+end
+
+---@desc Npc 以自机当前朝向为 z 轴，使用 MoveDirection 的方向移动。同时以自身旋转速度向目标角色旋转
+---@param npcUUID int
+---@param targetNpcUUID int
+---@return void 
+function XDlcCSharpFuncs:NpcDirectionMoveByNpc(npcUUID, targetNpcUUID)
+end
+
+---@desc Npc 以自机到目标方向为 z 轴，使用 MoveDirection 的方向移动。同时以自身旋转速度向目标角色旋转
+---@param npcUUID int
+---@param targetNpcUUID int
+---@return void 
+function XDlcCSharpFuncs:NpcDirectionMoveByNpcIgnoreFacing(npcUUID, targetNpcUUID)
 end
 
 ---@desc 使Npc开始沿着给定的路线移动
@@ -686,12 +714,6 @@ end
 function XDlcCSharpFuncs:SetNpcCheckPoint(npcId, checkPointPlaceId)
 end
 
----@desc 获取Npc记录的检查点
----@param npcId int
----@return void , float x:, float y:, float z:
-function XDlcCSharpFuncs:GetNpcLastCheckPoint(npcId)
-end
-
 ---@desc 添加技能球
 ---@param npcId int 目标NPC的UUID
 ---@param key int 三色球的ID
@@ -827,6 +849,12 @@ end
 ---@param state int 受击状态枚举，详见EHitType
 ---@return bool 
 function XDlcCSharpFuncs:CheckNpcBeHitState(uuid, state)
+end
+
+---@desc 获取Npc的受击状态
+---@param uuid int Npc对象的UUID
+---@return int hitType #受击状态枚举，详见EHitType
+function XDlcCSharpFuncs:GetNpcBeHitState(uuid)
 end
 
 ---@desc 判断Npc是否处于后台
@@ -1413,7 +1441,45 @@ end
 function XDlcCSharpFuncs:DoNpcSitUpByPlaceId(npcPlaceId)
 end
 
+---@desc 检查Npc是否有指定Flag
+---@param npcUUID int
+---@param flag ENpcFlag
+---@return bool 
+function XDlcCSharpFuncs:CheckNpcFlag(npcUUID, flag)
+end
+
+---@desc 设置Npc淡入淡出
+---@param npcUUID int
+---@param isFadeIn bool
+---@param duration float
+---@return void 
+function XDlcCSharpFuncs:SetNpcFade(npcUUID, isFadeIn, duration)
+end
+
+---@desc 生态构造体AI - 当状态切换时组件变化
+---@param placeId int
+---@param stateId int
+---@return bool 
+function XDlcCSharpFuncs:OnEcologyConstructCmpChangeState(placeId, stateId)
+end
+
+---@desc 生态构造体AI - 读取寻路路径数据
+---@param uuid int npcuid
+---@param startStateId int 路径起点状态Id
+---@param endStateId int 路径终点状态Id
+---@return List<List<Vector3>> 
+function XDlcCSharpFuncs:GetEcologyConstructStateRouteData(uuid, startStateId, endStateId)
+end
+
+---@desc 生态构造体AI - 读取状态初始坐标
+---@param uuid int npcuid
+---@param stateId int
+---@return Vector3 
+function XDlcCSharpFuncs:GetEcologyConstructStateInitPos(uuid, stateId)
+end
+
 ---@desc 通过PlaceId设置npc的交互选项开启状态
+---@desc 无法和选项的显示条件组兼容
 ---@param placeId int
 ---@param optionId int
 ---@param active bool
@@ -1422,6 +1488,7 @@ function XDlcCSharpFuncs:SetNpcInteractOptionActive(placeId, optionId, active)
 end
 
 ---@desc 通过PlaceId设置npc的交互选项仅有OptionId显示
+---@desc 无法和选项的显示条件组兼容
 ---@param placeId int
 ---@param optionId int
 ---@return bool 
@@ -1457,13 +1524,13 @@ end
 
 ---@desc 设置计算伤害前上下文
 ---@param contextId int 上下文Id
----@param physicalPermyraid double 物理倍率
----@param elementPermyraid double 元素倍率
+---@param PhysicalPermyriad double 物理倍率
+---@param ElementPermyriad double 元素倍率
 ---@param hackDamage int hack伤害
----@param hackPermyraid int hack倍率
+---@param HackPermyriad int hack倍率
 ---@param isCrit bool 是否暴击
 ---@return void 
-function XDlcCSharpFuncs:SetBeforeDamageMagicContext(contextId, physicalPermyraid, elementPermyraid, hackDamage, hackPermyraid, isCrit)
+function XDlcCSharpFuncs:SetBeforeDamageMagicContext(contextId, PhysicalPermyriad, ElementPermyriad, hackDamage, HackPermyriad, isCrit)
 end
 
 ---@desc 设置计算伤害前上下文 韧性倍率
@@ -1944,6 +2011,26 @@ end
 function XDlcCSharpFuncs:RemoveCurrentNpcMissileByTemplateId(templateId)
 end
 
+---@desc 设置子弹碰撞Npc上下文
+---@param contextId int 上下文ID
+---@param colliderResult EMissileCollideNpcResult 碰撞结果
+---@param type int 闪避或格挡类型
+---@return void 
+function XDlcCSharpFuncs:SetMissileCollideNpcContext(contextId, colliderResult, type)
+end
+
+---@desc 获取子弹配置标签
+---@param missileTemplateId int 子弹配置Id
+---@return IReadOnlyList<int> 子弹配置标签
+function XDlcCSharpFuncs:GetMissileTemplateTags(missileTemplateId)
+end
+
+---@desc 获取子弹skillActionId
+---@param missileUUID int
+---@return bool , int actionId:
+function XDlcCSharpFuncs:GetMissileActionId(missileUUID)
+end
+
 ---@desc 激活虚拟相机
 ---@desc （激活指定玩家npc对应端的虚拟相机
 ---@desc （priority为优先级，一般取100，上限9999
@@ -2045,6 +2132,20 @@ end
 ---@param enable bool 是否可用
 ---@return void 
 function XDlcCSharpFuncs:SetCameraOpEnable(enable)
+end
+
+---@desc 再聚焦相机最大最小角度限制下，再挖空一个区间 填0则为关闭 按要求填写，否则失无效 https://kurogame.feishu.cn/wiki/LBlowROsciO3nrkiuRXcJT3bnWe
+---@param limitFocusMinAngle float 最小角度必须大于锁定状态下摄像机与参考方向的最小角度
+---@param limitFocusMaxAngle float 最大角度必须小于锁定状态下摄像机与参考方向的最大角度
+---@return void 
+function XDlcCSharpFuncs:SetInternalLimitFocusAngle(limitFocusMinAngle, limitFocusMaxAngle)
+end
+
+---@desc 设置锁定相机目标
+---@param sourceUUID int 当前NpcUUID
+---@param targetUUID int 目标NpcUUID
+---@return void 
+function XDlcCSharpFuncs:SetCameraFocusTarget(sourceUUID, targetUUID)
 end
 
 ---@desc 获取当前世界ID
@@ -2235,6 +2336,18 @@ end
 ---@param targetId int
 ---@return void 
 function XDlcCSharpFuncs:StopCameraTimeline(name, targetId)
+end
+
+---@desc 设置当前Boss 会同步关卡的当前Boss到所有端（会修改当前显示的Boss血条）
+---@param uuid int 当前Boss的UUID
+---@return void 
+function XDlcCSharpFuncs:SetCurrentBoss(uuid)
+end
+
+---@desc 设置当前关卡是否能够根据命中的Boss切换BossUI
+---@param can bool
+---@return void 
+function XDlcCSharpFuncs:ChangeCanSetBossUIByHitTarget(can)
 end
 
 ---@desc 播放场景动画（场景美术事先在场景里编辑好的动画
@@ -2678,6 +2791,11 @@ end
 function XDlcCSharpFuncs:GetMagicTags(magicId)
 end
 
+---@desc 获取buff等级
+---@return int 
+function XDlcCSharpFuncs:GetBuffLevel()
+end
+
 ---@desc 加载场景物件
 ---@param placeId int 场景物件的PlaceId
 ---@return bool true成功，false失败
@@ -2748,11 +2866,24 @@ end
 function XDlcCSharpFuncs:MoveSceneObjectToNode(sceneObjectPlaceId, nodeId, moveSpeed)
 end
 
+---@desc 获取场景物体的移动节点
+---@param sceneObjectPlaceId int
+---@param nodeId int
+---@return bool , Vector3 result:
+function XDlcCSharpFuncs:TryGetSceneObjectMoveNode(sceneObjectPlaceId, nodeId)
+end
+
 ---@desc 判断场景物体是否移动到第几个点（不建议每帧调用）
 ---@param sceneObjectPlaceId int
 ---@param nodeId int
 ---@return bool 
 function XDlcCSharpFuncs:CheckSceneObjectInNode(sceneObjectPlaceId, nodeId)
+end
+
+---@desc 场景物体的移动
+---@param sceneObjectPlaceId int
+---@return void 
+function XDlcCSharpFuncs:StopSceneObjectMove(sceneObjectPlaceId)
 end
 
 ---@desc 开启SceneObj的自动旋转
@@ -3007,6 +3138,7 @@ function XDlcCSharpFuncs:SetNpcTopInfoActive(npcId, active)
 end
 
 ---@desc 开关假结算（黑白龙转场演出用
+---@desc 已弃用
 ---@param active bool
 ---@return void 
 function XDlcCSharpFuncs:SetFakeSettleActive(active)
@@ -3029,6 +3161,13 @@ end
 ---@param processArgs LuaTable 默认值:null
 ---@return void 
 function XDlcCSharpFuncs:ShowStageInfo(textId, processId, sortPosition, isComplete, textArgs, processArgs)
+end
+
+---@desc 设置小怪是否可以显示血条
+---@param npcUUID int
+---@param canShow bool
+---@return void 
+function XDlcCSharpFuncs:SetMonsterCanShowHpInfo(npcUUID, canShow)
 end
 
 ---@desc 打开通用黑幕特效
@@ -3092,6 +3231,14 @@ end
 ---@param effectName string 特效名
 ---@return void 
 function XDlcCSharpFuncs:UnBindNpcEffect(npcPlaceId, effectName)
+end
+
+---@desc 创建特效
+---@param effectName string 特效名
+---@param position Vector3 位置
+---@param rotation Vector3 旋转
+---@return void 
+function XDlcCSharpFuncs:CreateCommonEffect(effectName, position, rotation)
 end
 
 ---@desc 设置关卡实体所有空间音效开关
@@ -4047,6 +4194,15 @@ end
 function XDlcCSharpFuncs:ClearAllMechanismBars()
 end
 
+---@desc 设置战斗UI显示状态
+---@param uiType int UI类型（EFightUiType枚举值）
+---@param npcId int Npc的ID（绑定Npc的UI会用到，非绑定UI忽略此参数）
+---@param controlSource int 控制来源（EUiStateControlSource枚举值）
+---@param uiState int 目标状态（EUiState枚举值）
+---@return void 
+function XDlcCSharpFuncs:SetFightUiState(uiType, npcId, controlSource, uiState)
+end
+
 ---@desc 在矩形区域内生成泊松盘采样点
 ---@param width float 区域宽度（X方向）
 ---@param height float 区域高度（Y方向）
@@ -4100,6 +4256,272 @@ end
 ---@param npcUUID int
 ---@return List<int> 
 function XDlcCSharpFuncs:GetNpcAidsList(npcUUID)
+end
+
+---@desc 导航网格添加连接点
+---@param startPoint Vector3 连接点起点
+---@param endPoint Vector3 连接点终点
+---@param extents Vector3 连接点寻路容差范围
+---@return void 
+function XDlcCSharpFuncs:NavMeshAddOffMeshLink(startPoint, endPoint, extents)
+end
+
+---@desc 获取Npc的玩法属性值
+---@param npcUUID int Npc的UUID
+---@param attribType int Npc属性类型枚举
+---@return int 
+function XDlcCSharpFuncs:GetNpcGameplayAttribValue(npcUUID, attribType)
+end
+
+---@desc 获取Npc的玩法属性最大值
+---@param npcUUID int Npc的UUID
+---@param attribType int Npc属性类型枚举
+---@return int 
+function XDlcCSharpFuncs:GetNpcGameplayAttribMaxValue(npcUUID, attribType)
+end
+
+---@desc 获取Npc的玩法属性百分比
+---@param npcUUID int Npc的UUID
+---@param attribType int Npc属性类型枚举
+---@return float 
+function XDlcCSharpFuncs:GetNpcGameplayAttribRate(npcUUID, attribType)
+end
+
+---@desc 增加Npc玩法属性的加成值
+---@param npcUUID int Npc的UUID
+---@param attribType int 属性类型
+---@param value double 基础值
+---@param percent double 万分比加成
+---@return void 
+function XDlcCSharpFuncs:AddNpcGameplayAttribAdditive(npcUUID, attribType, value, percent)
+end
+
+---@desc 改变Npc玩法属性的能量值
+---@param npcUUID int Npc的UUID
+---@param attribType int 属性类型
+---@param value double 值
+---@return void 
+function XDlcCSharpFuncs:ChangeNpcGameplayEnergy(npcUUID, attribType, value)
+end
+
+---@desc 设置Npc玩法属性的能量值
+---@param npcUUID int Npc的UUID
+---@param attribType int 属性类型
+---@param value double 值
+---@return void 
+function XDlcCSharpFuncs:SetNpcGameplayEnergy(npcUUID, attribType, value)
+end
+
+---@desc 获取肉鸽6Npc
+---@param self bool 是否自身
+---@return int 
+function XDlcCSharpFuncs:Theatre6GetNpc(self)
+end
+
+---@desc 肉鸽6获取角色主动技能列表
+---@param npcUUID int
+---@return List<int> 
+function XDlcCSharpFuncs:Theatre6GetMainSkill(npcUUID)
+end
+
+---@desc 肉鸽6获取角色拼刀成功技能
+---@param npcUUID int
+---@return int 
+function XDlcCSharpFuncs:Theatre6GetWrestleDeriveSkill(npcUUID)
+end
+
+---@desc 肉鸽6获取角色超算成功技能
+---@param npcUUID int
+---@return int 
+function XDlcCSharpFuncs:Theatre6GetDodgeDeriveSkill(npcUUID)
+end
+
+---@desc 肉鸽6根据配置Id获取角色配置
+---@param id int
+---@return XTable.XTableTheatre6Character 
+function XDlcCSharpFuncs:Theatre6GetCharacterConfig(id)
+end
+
+---@desc 肉鸽6根据配置Id获取技能配置
+---@param id int
+---@return XTable.XTableTheatre6Skill 
+function XDlcCSharpFuncs:Theatre6GetSkillConfig(id)
+end
+
+---@desc 肉鸽6启动拼刀拼点流程(配合拼点结束lua事件)
+---@desc <param name="time">表演时间</param>
+---@param time float
+---@return void 
+function XDlcCSharpFuncs:Theatre6StartWrestleRollDice(time)
+end
+
+---@desc 肉鸽6启动超算拼点流程(配合拼点结束lua事件)
+---@desc <param name="launcherUUID">发起拼点的角色</param>
+---@desc <param name="time">表演时间</param>
+---@param launcherUUID int
+---@param time float
+---@return void 
+function XDlcCSharpFuncs:Theatre6StartDodgeRollDice(launcherUUID, time)
+end
+
+---@desc 肉鸽6更新技能UI
+---@param npcUUID int 角色UUID
+---@param nowSkillId int 当前技能ID
+---@param nextSkillId int 下个技能ID
+---@return void 
+function XDlcCSharpFuncs:Theatre6UpdateSkillUI(npcUUID, nowSkillId, nextSkillId)
+end
+
+---@desc 肉鸽6开关连击数UI
+---@param npcUUID int 角色UUID
+---@param enable bool 是否开启
+---@return void 
+function XDlcCSharpFuncs:Theatre6SwitchComboCountUI(npcUUID, enable)
+end
+
+---@desc 肉鸽6更新连击数UI
+---@param npcUUID int 角色UUID
+---@return void 
+function XDlcCSharpFuncs:Theatre6UpdateComboCountUI(npcUUID)
+end
+
+---@desc 肉鸽6更新出手方UI
+---@param npcUUID int
+---@param assetName string 资源名
+---@return void 
+function XDlcCSharpFuncs:Theatre6UpdateHandSideUI(npcUUID, assetName)
+end
+
+---@desc 肉鸽6切换UI阶段
+---@param stage XGameplayTheatre6.ETheatre6UiStage
+---@return void 
+function XDlcCSharpFuncs:Theatre6SwitchUiStage(stage)
+end
+
+---@desc 打开肉鸽6倒计时UI
+---@param seconds int
+---@return void 
+function XDlcCSharpFuncs:Theatre6CountDownMessageTip(seconds)
+end
+
+---@desc 打开肉鸽6计时器
+---@param active bool
+---@param offset int
+---@return void 
+function XDlcCSharpFuncs:Theatre6SetTimerTipsActive(active, offset)
+end
+
+---@desc 肉鸽6添加角色运行超算
+---@param npcUUID int 角色UUID
+---@param value double 添加量
+---@return void 
+function XDlcCSharpFuncs:Theatre6AddNpcRuntimeOverClock(npcUUID, value)
+end
+
+---@desc 肉鸽6获取角色运行超算
+---@param npcUUID int
+---@return int 
+function XDlcCSharpFuncs:Theatre6GetNpcRuntimeOverClock(npcUUID)
+end
+
+---@desc 肉鸽6消耗角色运行超算
+---@param npcUUID int 角色UUID
+---@param value double 消耗量
+---@return bool 
+function XDlcCSharpFuncs:Theatre6CastNpcRuntimeOverClock(npcUUID, value)
+end
+
+---@desc 肉鸽6给角色添加眩晕状态
+---@param npcUUID int 角色UUID
+---@param time float 眩晕时间
+---@return void 
+function XDlcCSharpFuncs:Theatre6AddNpcStun(npcUUID, time)
+end
+
+---@desc 肉鸽6检查角色是否眩晕
+---@param npcUUID int 角色UUID
+---@return bool 
+function XDlcCSharpFuncs:Theatre6CheckNpcStun(npcUUID)
+end
+
+---@desc 肉鸽6改变角色体力值
+---@param npcUUID int 角色UUID
+---@param value double 体力值变化量带符号
+---@param permyriad double 体力值万分比带符号
+---@return void 
+function XDlcCSharpFuncs:Theatre6ChangeStaminaValue(npcUUID, value, permyriad)
+end
+
+---@desc 添加技能使用次数记录
+---@param npcUUID int
+---@param skillId int
+---@return void 
+function XDlcCSharpFuncs:Theatre6AddSkillCastCount(npcUUID, skillId)
+end
+
+---@desc 肉鸽6添加技能体力伤害记录
+---@param npcUUID int
+---@param skillId int
+---@param dmgValue double
+---@return void 
+function XDlcCSharpFuncs:Theatre6AddSkillEnergyDmg(npcUUID, skillId, dmgValue)
+end
+
+---@desc 肉鸽6添加Buff体力伤害记录
+---@param npcUUID int
+---@param buffTag int
+---@param dmgValue double
+---@return void 
+function XDlcCSharpFuncs:Theatre6AddDebuffEnergyDmg(npcUUID, buffTag, dmgValue)
+end
+
+---@desc 肉鸽6漂字
+---@param npcUUID int 伤害来源UUID
+---@param targetUUID int 目标伤害UUID
+---@param rollId int 漂字ID
+---@param partId int 目标骨骼ID
+---@return void 
+function XDlcCSharpFuncs:Theatre6PopDamage(npcUUID, targetUUID, rollId, partId)
+end
+
+---@desc 肉鸽6获取通过MagicId获取技能Id
+---@param magicId int
+---@param lv int 等级，buff里通过GetBuffLevel获得
+---@return int 
+function XDlcCSharpFuncs:Theatre6GetSkillIdByMagicId(magicId, lv)
+end
+
+---@desc 肉鸽6添加技能
+---@param npcUUID int
+---@param skillId int 肉鸽6技能配表Id
+---@return void 
+function XDlcCSharpFuncs:Theatre6AddSkill(npcUUID, skillId)
+end
+
+---@desc 通过comboList中配置的acionId来获取技能Id
+---@param npcUUID int
+---@param actionId int
+---@return int 
+function XDlcCSharpFuncs:Theatre6GetSkillByAction(npcUUID, actionId)
+end
+
+---@desc 肉鸽6 技能UI销毁动效
+---@param npcUUID int npcUUID
+---@param playAnimation bool 默认值:true 是否播放破碎动效
+---@return void 
+function XDlcCSharpFuncs:Theatre6BrokenSkill(npcUUID, playAnimation)
+end
+
+---@desc 肉鸽6 界面整体动效
+---@param active bool npcUUID
+---@return void 
+function XDlcCSharpFuncs:Theatre6UIShowAnimation(active)
+end
+
+---@desc 肉鸽6 播放San特效
+---@param npcUUID int npcUUID
+---@return void 
+function XDlcCSharpFuncs:Theatre6PlaySanEffect(npcUUID)
 end
 
 return XDlcCSharpFuncs;

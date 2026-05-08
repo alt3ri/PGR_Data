@@ -4,6 +4,7 @@ local XUiFubenBossSingleModeDetailGridBuff = require(
 local XUiGridBossRankReward = require("XUi/XUiFubenBossSingle/XUiGridBossRankReward")
 local XUiPanelRoleModel = require("XUi/XUiCharacter/XUiPanelRoleModel")
 local XUiModelUtility = require("XUi/XUiCharacter/XUiModelUtility")
+local XUiPanelBossRightV4P5 = require("XUi/XUiFubenBossSingle/XUiFubenBossSingleMode/XUiPanelBossRightV4P5")
 
 ---@class XUiFubenBossSingleModeDetail : XLuaUi
 ---@field BtnHelp XUiComponent.XUiButton
@@ -23,6 +24,7 @@ local XUiModelUtility = require("XUi/XUiCharacter/XUiModelUtility")
 ---@field PanelLeft UnityEngine.RectTransform
 ---@field BtnTitle XUiComponent.XUiButton
 ---@field ImgTitleIcon UnityEngine.UI.RawImage
+---@field _BossRightPanelV4P5 XUiPanelBossRightV4P5
 ---@field _Control XFubenBossSingleControl
 local XUiFubenBossSingleModeDetail = XLuaUiManager.Register(XLuaUi, "UiFubenBossSingleModeDetail")
 
@@ -40,6 +42,7 @@ function XUiFubenBossSingleModeDetail:OnAwake()
     self._IsSelecting = false
     self._IsBuffPlaying = false
     self._RankRewardUi = XUiGridBossRankReward.New(self.GridBossRankReward, self, self)
+    self._BossRightPanelV4P5 = XUiPanelBossRightV4P5.New(self.PanelBossRightV4P5, self)
     self._RankRewardUi:Close()
     self:_RegisterButtonClicks()
 end
@@ -51,7 +54,7 @@ end
 
 function XUiFubenBossSingleModeDetail:OnEnable()
     self:_RefreshModel()
-    self:_RefreshBuffGrid()
+    -- self:_RefreshBuffGrid()  -- 禁用旧版 Buff Grid
     self:_RefreshRankInfo()
     self:_RefreshRankReward()
     self:_RegisterEventListener()
@@ -101,7 +104,11 @@ function XUiFubenBossSingleModeDetail:ChangeCamera(isSelecting, selectIndex, isF
     if self.PanelLeft then
         self.PanelLeft.gameObject:SetActiveEx(not isSelecting)
     end
-    self:_PlayAllBuffAnimation(isSelecting, selectIndex, isForce)
+
+    if self.PanelRight.gameObject.activeInHierarchy then
+        self:_PlayAllBuffAnimation(isSelecting, selectIndex, isForce)
+    end
+
     self._IsSelecting = isSelecting
     self._SelectIndex = selectIndex
 
@@ -133,6 +140,7 @@ end
 function XUiFubenBossSingleModeDetail:OnBtnTanchuangCloseBigClick()
     if self._IsSelecting and not self._IsBuffPlaying then
         self:ChangeBuffGrid()
+        self._BossRightPanelV4P5:Select(0)
     end
 end
 
@@ -145,6 +153,7 @@ function XUiFubenBossSingleModeDetail:Close()
         self.Super.Close(self)
     else
         self:ChangeBuffGrid()
+        self._BossRightPanelV4P5:Select(0)
     end
 end
 

@@ -5,7 +5,7 @@ local XMessagePlayer = require("XModule/XBigWorldMessage/Common/XMessagePlayer")
 ---@class XUiBigWorldMessageChat : XUiNode
 ---@field PanelTop UnityEngine.RectTransform
 ---@field TxtName UnityEngine.UI.Text
----@field TxtSign UnityEngine.UI.Text
+---@field TxtSign XUiComponent.XUiRichTextCustomRender
 ---@field ListChat UnityEngine.RectTransform
 ---@field ChatContent UnityEngine.RectTransform
 ---@field PanelLeft UnityEngine.RectTransform
@@ -72,6 +72,7 @@ function XUiBigWorldMessageChat:OnDisable()
 end
 
 function XUiBigWorldMessageChat:OnDestroy()
+    self.TxtSign.requestImage = nil
     self:_RemoveSchedules()
     self._Player:Destroy()
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_PREVIEW_CLOSE,
@@ -186,10 +187,19 @@ function XUiBigWorldMessageChat:OnScrollEnd()
     end
 end
 
+function XUiBigWorldMessageChat:OnTxtSignRequestImage(key, image)
+    local icon = self._Control:GetIconByKey(key)
+
+    if not string.IsNilOrEmpty(icon) then
+        image:SetImage(icon)
+    end
+end
+
 -- region 私有方法
 
 function XUiBigWorldMessageChat:_RegisterButtonClicks()
     -- 在此处注册按钮事件
+    self.TxtSign.requestImage = Handler(self, self.OnTxtSignRequestImage)
 end
 
 function XUiBigWorldMessageChat:_RegisterSchedules()

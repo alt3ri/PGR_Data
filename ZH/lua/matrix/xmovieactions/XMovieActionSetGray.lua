@@ -23,7 +23,7 @@ function XMovieActionSetGray:OnInit(actionData)
             tableInsert(self.IndexList, id)
         end
     end
-    
+
     -- 灰度值变化时间
     self.Time = paramToNumber(params[8])
 end
@@ -36,10 +36,12 @@ function XMovieActionSetGray:OnRunning()
 
     for _, index in pairs(indexList) do
         if index > 0 and index <= maxActorNum then
+            ---@type XUiGridMovieActor
             local actor = self.UiRoot:GetActor(index)
             actor:SetGrayScale(value, self.Time)
             setValue = true
         elseif index > SPINE_INDEX_OFFSET and index <= SPINE_INDEX_OFFSET + maxActorNum then
+            ---@type XUiGridMovieSpineActor
             local actor = self.UiRoot:GetSpineActor(index - SPINE_INDEX_OFFSET)
             actor:SetGrayScale(value, self.Time)
             setValue = true
@@ -54,11 +56,13 @@ function XMovieActionSetGray:OnRunning()
         self:SetAllBgGray(value, self.Time)
         self:SetLeftTitleGray(value, self.Time)
         for index = 1, maxActorNum do
+            ---@type XUiGridMovieActor
             local actor = self.UiRoot:GetActor(index)
             actor:SetGrayScale(value, self.Time)
         end
 
         for index = 1, XMovieConfigs.MAX_SPINE_ACTOR_NUM do
+            ---@type XUiGridMovieSpineActor
             local actor = self.UiRoot:GetSpineActor(index)
             actor:SetGrayScale(value, self.Time)
         end

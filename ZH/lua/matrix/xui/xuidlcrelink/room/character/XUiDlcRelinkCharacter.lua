@@ -11,6 +11,9 @@ function XUiDlcRelinkCharacter:OnAwake()
     self.PanelRight.gameObject:SetActiveEx(false)
     self.GridCharacter.gameObject:SetActiveEx(false)
     self:RegisterUiEvents()
+
+    -- 进入角色选择界面，设置玩家状态为准备中
+    XMVCA.XDlcRoom:ReqSetShowState(XEnumConst.DlcRoom.PlayerShowState.Preparing)
 end
 
 function XUiDlcRelinkCharacter:OnStart(characterId)
@@ -39,6 +42,10 @@ end
 function XUiDlcRelinkCharacter:OnDisable()
     self.Super.OnDisable(self)
     self.CurSelectGrid = nil
+end
+
+function XUiDlcRelinkCharacter:OnDestroy()
+    XMVCA.XDlcRoom:ReqSetShowState(XEnumConst.DlcRoom.PlayerShowState.Normal)
 end
 
 function XUiDlcRelinkCharacter:InitSceneModel()

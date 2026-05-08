@@ -123,6 +123,10 @@ function XShopAgency:OpenFashionDetailUi(fashionid, buyData, params)
     end
 end
 
+function XShopAgency:OpenCommanderDIYDetailUi(partId,buyData, params)
+    XMVCA.XBigWorldUI:Open("UiShopPopupSkyGardenFashion", partId, buyData, params)
+end
+
 function XShopAgency:_CheckFashionShopOpen(suitId, context, next)
     XMVCA.XFashionSuit:CheckFashionShopOpen(suitId, function()
         context.hasOpenShopIds = {}

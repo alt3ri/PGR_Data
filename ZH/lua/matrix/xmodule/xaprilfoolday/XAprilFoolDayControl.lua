@@ -147,25 +147,23 @@ function XAprilFoolDayControl:UpdateRoleModel(panelRoleModel, resId, cb)
 
     -- 加载animationController
     if not string.IsNilOrEmpty(state.RuntimeControllerName) then
-        local runtimeController = CS.LoadHelper.LoadUiController(state.RuntimeControllerName, panelRoleModel.RefName)
+        local animator = panelRoleModel:GetAnimator()
+        if not animator then
+            return
+        end
 
+        local runtimeController = CS.LoadHelper.LoadUiController(state.RuntimeControllerName, animator.gameObject)
         if runtimeController == nil or not runtimeController:Exist() then
             XLog.Error("XUiPanelDisplay RefreshSelf 错误: 展示角色的动画状态机加载失败: 状态机名称 " .. state.RuntimeControllerName .. " Ui名称：" .. panelRoleModel.RefName)
             return
         end
 
         state.RunTimeController = runtimeController
-
-        local animator = panelRoleModel:GetAnimator()
-
-        if animator then
-            animator.runtimeAnimatorController = runtimeController
-            ---@type UnityEngine.GameObject
-            local loadAnimatioClip = animator.gameObject:GetComponent(typeof(CS.XLoadAnimationClip))
-
-            if loadAnimatioClip then
-                CS.UnityEngine.Component.Destroy(loadAnimatioClip)
-            end
+        animator.runtimeAnimatorController = runtimeController
+        ---@type UnityEngine.GameObject
+        local loadAnimationClip = animator.gameObject:GetComponent(typeof(CS.XLoadAnimationClip))
+        if loadAnimationClip then
+            CS.UnityEngine.Component.Destroy(loadAnimationClip)
         end
     end
     

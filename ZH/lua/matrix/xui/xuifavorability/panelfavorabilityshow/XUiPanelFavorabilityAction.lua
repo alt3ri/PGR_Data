@@ -227,16 +227,11 @@ function XUiPanelFavorabilityAction:OnActionClick(clickAction, grid, index)
                 end
             end, 20)
         end)
-
-        -- v2.15特殊处理 后续改成通用逻辑
-        local roleId = self.UiRoot.SignBoard.DisplayCharacterId
-        local fashionId = XDataCenter.FashionManager.GetFashionIdByCharId(roleId)
-        if XMVCA.XFavorability:CheckCGBoardAct(fashionId, clickAction.config.SignBoardActionId) then
-            if CS.UnityEngine.Application.platform == CS.UnityEngine.RuntimePlatform.Android then
-                self.UiRoot.FavorabilityCG:PlayCG(1015301)
-            else
-                self.UiRoot.FavorabilityCG:PlayCG(10153)
-            end
+        
+        local videoId = XMVCA.XFavorability:CheckCGBoardAct(clickAction.config.SignBoardActionId)
+        
+        if XTool.IsNumberValidEx(videoId) then
+            self.UiRoot.FavorabilityCG:PlayCG(videoId)
         end
     else
         local tipText = clickAction.config.ConditionDescript

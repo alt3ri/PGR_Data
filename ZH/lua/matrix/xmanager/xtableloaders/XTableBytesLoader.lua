@@ -1,7 +1,14 @@
 local loader = {}
 
-local BinaryTable = require("Binary/BinaryTable")
+local BinaryTable
+if XMain.UseNativePtrReader then
+    BinaryTable = require("Binary/PtrBinaryTable")
+else
+    BinaryTable = require("Binary/BinaryTable")
+end
 
+
+---@type table<string, BinaryTable>
 local AllTables = {}
 
 local EmptyTable = {}
@@ -131,6 +138,7 @@ function loader.ReleaseFull(path)
     end
     v:ReleaseFull()
     AllTables[path] = nil
+    XTableManager.OnUnloadBinary(path)
 end
 
 

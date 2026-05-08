@@ -92,7 +92,7 @@ function XUiSkyGardenSGDroneStageDetail:OnClickBtnFight()
     local isEnableAssistance = stageEntity:IsEnableAssistance()
 
     self._Control:RequestStageStart(stageId, isHardMode, function(stageData)
-        CS.XAudioManager.BgmAreaTriggerEnable = false
+        CS.XAudioManager.SuppressBgmAreaTrigger("SkyGardenDrone")
         XMVCA.XBigWorldUI:Open("UiSkyGardenSGDroneLoading")
         XMVCA.XBigWorldUI:Open("UiSkyGardenSGDroneGame", stageId, stageEntity:GetMapId(), stageData, isHardMode,
             easyDroneHp, isEnableAssistance)
