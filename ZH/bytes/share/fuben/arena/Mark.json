@@ -4,7 +4,7 @@
         "MinPoint": null,
         "MaxPoint": 10000,
         "EnemyHpPoint": "KillNum/TotalNum * 1500",
-        "MyHpPoint": null,
+        "MyHpPoint": "Hp*30",
         "TimePoint": "LeftTime*90",
         "MaxEnemyHpPoint": 1500.0,
         "MaxMyHpPoint": 3000,
@@ -17,7 +17,7 @@
         "MinPoint": null,
         "MaxPoint": 20000,
         "EnemyHpPoint": "KillNum/TotalNum * 3000",
-        "MyHpPoint": "Hp*200",
+        "MyHpPoint": "Hp*60",
         "TimePoint": "LeftTime*125",
         "MaxEnemyHpPoint": 3000.0,
         "MaxMyHpPoint": 6000,
@@ -35,7 +35,7 @@
         "MaxEnemyHpPoint": null,
         "MaxMyHpPoint": 20000,
         "MaxTimePoint": null,
-        "NpcGroupPoint": null,
+        "NpcGroupPoint": "NpcGroup*50000",
         "MaxNpcGroupPoint": null
     },
     {
@@ -48,7 +48,7 @@
         "MaxEnemyHpPoint": null,
         "MaxMyHpPoint": 20000,
         "MaxTimePoint": null,
-        "NpcGroupPoint": null,
+        "NpcGroupPoint": "NpcGroup*50000",
         "MaxNpcGroupPoint": null
     },
     {
@@ -61,7 +61,7 @@
         "MaxEnemyHpPoint": null,
         "MaxMyHpPoint": 20000,
         "MaxTimePoint": null,
-        "NpcGroupPoint": null,
+        "NpcGroupPoint": "NpcGroup*50000",
         "MaxNpcGroupPoint": null
     }
 ]

@@ -6,11 +6,11 @@
         "Type": 101,
         "IsBlock": null,
         "IsEnd": null,
-        "BeginAnim": null,
+        "BeginAnim": "AniZhuanchangEnd",
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: ''}"
+        "Params": "{1: 'Assets/Product/Texture/Image/BgCg/Cg5101_16.jpg'}"
     },
     {
         "Id": 2,
@@ -23,7 +23,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '', 2: ''}"
+        "Params": "{1: '1', 2: '5074'}"
     },
     {
         "Id": 3,
@@ -32,11 +32,11 @@
         "Type": 301,
         "IsBlock": null,
         "IsEnd": null,
-        "BeginAnim": null,
-        "EndAnim": null,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '', 3: ''}"
+        "Params": "{2: '\u4f0a\u4ec0\u6885\u5c14', 3: '\u2026\u2026\u2026\u2026'}"
     },
     {
         "Id": 4,
@@ -49,7 +49,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": 700.0,
-        "Params": "{1: '', 2: ''}"
+        "Params": "{1: '-350|-325|-300', 2: '4'}"
     },
     {
         "Id": 5,
@@ -62,7 +62,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": 1500.0,
-        "Params": "{1: ''}"
+        "Params": "{1: '1'}"
     },
     {
         "Id": 6,
@@ -71,11 +71,11 @@
         "Type": 301,
         "IsBlock": null,
         "IsEnd": null,
-        "BeginAnim": null,
+        "BeginAnim": "DialogEnable",
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: ''}"
+        "Params": "{3: '\u6062\u5f18\u5f27\u7ebf\u7ec4\u6210\u5f62\u6001\u5404\u5f02\u7684\u201c\u5efa\u7b51\u201d\uff0c\u5de8\u5927\u56db\u7ffc\u767d\u9e26\u7ff1\u7fd4\u5728\u57ce\u5e02\u4e2d\u592e\u3002'}"
     },
     {
         "Id": 7,
@@ -88,7 +88,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: ''}"
+        "Params": "{3: '\u6052\u661f\u548c\u884c\u661f\u7ec4\u6210\u6563\u53d1\u5f02\u5f69\u7684\u5149\u5e26\uff0c\u73af\u7ed5\u5728\u9ed1\u8272\u5e7b\u65e5\u56db\u5468\u3002'}"
     },
     {
         "Id": 8,
@@ -98,10 +98,10 @@
         "IsBlock": null,
         "IsEnd": null,
         "BeginAnim": null,
-        "EndAnim": null,
+        "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: ''}"
+        "Params": "{3: '\u201c\u57ce\u5e02\u201d\u4e2d\u661f\u5149\u6ee1\u5e03\uff0c\u4f46\u4e5f\u6b7b\u5bc2\u6c89\u6c89\u3002'}"
     },
     {
         "Id": 9,
@@ -114,7 +114,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": 700.0,
-        "Params": "{1: '', 2: ''}"
+        "Params": "{1: '0|0|0', 2: '4'}"
     },
     {
         "Id": 10,
@@ -136,11 +136,11 @@
         "Type": 301,
         "IsBlock": null,
         "IsEnd": null,
-        "BeginAnim": null,
+        "BeginAnim": "DialogEnable",
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: ''}"
+        "Params": "{3: '\u4f0a\u4ec0\u6885\u5c14\u5750\u5728\u57ce\u5e02\u6700\u9ad8\u7684\u5efa\u7b51\u4e0a\u2014\u2014'}"
     },
     {
         "Id": 12,
@@ -153,7 +153,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: ''}"
+        "Params": "{3: '\u8fd9\u662f\u5979\u949f\u7231\u7684\u533a\u57df\uff0c\u5728\u5979\u95f2\u6687\u7684\u65f6\u5019\uff0c\u603b\u662f\u559c\u6b22\u8fd4\u56de\u8fd9\u91cc\u3002'}"
     },
     {
         "Id": 13,
@@ -166,7 +166,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: ''}"
+        "Params": "{3: '\u53ea\u6709\u8fd9\u91cc\uff0c\u5979\u624d\u80fd\u611f\u89c9\u5230\u2026\u2026\u81ea\u5df1\u5e76\u4e0d\u5b64\u72ec\u3002'}"
     },
     {
         "Id": 14,
@@ -179,7 +179,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '', 3: ''}"
+        "Params": "{2: '\u4f0a\u4ec0\u6885\u5c14', 3: '\u55ef\uff1f'}"
     },
     {
         "Id": 15,
@@ -192,7 +192,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: ''}"
+        "Params": "{3: '\u5947\u5f02\u7684\uff0c\u751f\u547d\u7684\u6c14\u606f\u8ba9\u4f0a\u4ec0\u6885\u5c14\u5fae\u5fae\u62ac\u5934\uff0c\u5374\u7acb\u523b\u538c\u6076\u5730\u76b1\u8d77\u7709\u5934\u3002'}"
     },
     {
         "Id": 16,
@@ -205,7 +205,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '', 2: ''}"
+        "Params": "{1: '2', 2: '4411'}"
     },
     {
         "Id": 17,
@@ -218,7 +218,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: ''}"
+        "Params": "{3: '\u51e0\u53ea\u5f02\u5408\u751f\u7269\u7f13\u6162\u5730\u81ea\u4e0d\u77e5\u4ece\u54ea\u5904\u88c2\u9699\u6d41\u6dcc\u8fdb\u6765\u7684\u5f02\u8272\u7ea2\u6f6e\u4e2d\u8bde\u751f\u3002'}"
     },
     {
         "Id": 18,
@@ -231,7 +231,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '', 2: ''}"
+        "Params": "{1: '2', 2: '15027034'}"
     },
     {
         "Id": 19,
@@ -244,7 +244,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: ''}"
+        "Params": "{3: '\u5979\u62bd\u51fa\u94a5\u6756\uff0c\u51b7\u6f20\u5730\u6ce8\u89c6\u7740\u90a3\u4e9b\u6ecb\u751f\u51fa\u7684\u5b7d\u7269\u3002'}"
     },
     {
         "Id": 20,
@@ -254,9 +254,9 @@
         "IsBlock": null,
         "IsEnd": 1.0,
         "BeginAnim": null,
-        "EndAnim": null,
+        "EndAnim": "AniZhuanchangBegin",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '', 3: ''}"
+        "Params": "{2: '\u4f0a\u4ec0\u6885\u5c14', 3: '\u90a3\u5c31\u7559\u4e0b\u6765\u2026\u2026\u6210\u4e3a\u517b\u5206\u5427\u3002'}"
     }
 ]

@@ -1,37 +1,37 @@
 [
     {
         "Id": 1,
-        "Names": "['', '', 'FocusMaxDistance', '']",
+        "Names": "['FocusMaxAngle', 'FocusMinDistance', 'FocusMaxDistance', 'DefaultToFocusDuration']",
         "Values": "[15.0, 3.0, 4.0, 0.15]"
     },
     {
         "Id": 2,
-        "Names": "['FocusMaxDistance']",
+        "Names": "['MinVerticalAngle']",
         "Values": "[17.0]"
     },
     {
         "Id": 3,
-        "Names": "['']",
+        "Names": "['FocusMaxAngle']",
         "Values": "[15.0]"
     },
     {
         "Id": 4,
-        "Names": "['']",
+        "Names": "['MaxHeight']",
         "Values": "[10.0]"
     },
     {
         "Id": 5,
-        "Names": "['']",
+        "Names": "['MaxHeight']",
         "Values": "[2.5]"
     },
     {
         "Id": 6,
-        "Names": "['']",
+        "Names": "['FocusMaxAngle']",
         "Values": "[45.0]"
     },
     {
         "Id": 7,
-        "Names": "['']",
+        "Names": "['FocusMaxAngle']",
         "Values": "[60.0]"
     },
     {
@@ -41,47 +41,47 @@
     },
     {
         "Id": 9,
-        "Names": "['']",
+        "Names": "['FocusMaxAngle']",
         "Values": "[180.0]"
     },
     {
         "Id": 10,
-        "Names": "['']",
+        "Names": "['FocusMaxAngle']",
         "Values": "[180.0]"
     },
     {
         "Id": 11,
-        "Names": "['FocusMaxDistance']",
+        "Names": "['MinVerticalAngle']",
         "Values": "[5.0]"
     },
     {
         "Id": 12,
-        "Names": "['']",
+        "Names": "['MaxHeight']",
         "Values": "[30.0]"
     },
     {
         "Id": 13,
-        "Names": "['', 'FocusMaxDistance', '']",
+        "Names": "['FocusMaxAngle', 'MaxVerticalAngle', 'DefaultToFocusDuration']",
         "Values": "[45.0, 45.0, 0.15]"
     },
     {
         "Id": 14,
-        "Names": "['', '', 'FocusMaxDistance']",
+        "Names": "['FocusMaxAngle', 'FocusMinDistance', 'FocusMaxDistance']",
         "Values": "[25.0, 1.0, 30.0]"
     },
     {
         "Id": 15,
-        "Names": "['', '', 'FocusMaxDistance']",
+        "Names": "['FocusMaxAngle', 'FocusMinDistance', 'FocusMaxDistance']",
         "Values": "[10.0, 1.0, 30.0]"
     },
     {
         "Id": 16,
-        "Names": "['', '', 'FocusMaxDistance']",
+        "Names": "['FocusHorizontalCoefficient', 'FocusVerticalCoefficient', 'FocusMaxDistance']",
         "Values": "[0.25, 0.15, 30.0]"
     },
     {
         "Id": 17,
-        "Names": "['', 'FocusMaxDistance', '', '', 'FocusMaxDistance', '', 'FocusMaxDistance', 'FocusMaxDistance']",
+        "Names": "['FocusMinDistance', 'FocusMaxDistance', 'FocusHorizontalCoefficient', 'FocusVerticalCoefficient', 'FocusHeight', 'MaxHeight', 'MinVerticalAngle', 'MaxVerticalAngle']",
         "Values": "[4.8, 30.0, 0.5, 0.3, 3.0, 30.0, -90.0, 90.0]"
     },
     {
@@ -91,107 +91,107 @@
     },
     {
         "Id": 101901,
-        "Names": "['']",
+        "Names": "['RotationSpeed']",
         "Values": "[3.0]"
     },
     {
         "Id": 101902,
-        "Names": "['']",
+        "Names": "['RotationSpeed']",
         "Values": "[0.0]"
     },
     {
         "Id": 849502,
-        "Names": "['', '', '', '', '', '', 'FocusMaxDistance', '', '', '', 'Fo', 'FocusMaxDistance', '', '', '', '', '', 'FocusMaxDistance', '', '', '', '', '', 'FocusMaxDistance', '', '', '', '', 'FocusMaxDistance', '']",
+        "Names": "['DefaultMovementCoefficient', 'FocusMovementCoefficient', 'DollyInCoefficient', 'DollyOutCoefficient', 'DefaultRotationCoefficient', 'RotationSpeed', 'ExpBase', 'BufferRadian', 'DeadZoneRadius', 'HardZoneRadius', 'DeadZoneHeight', 'DefaultOffset', 'DefaultDistance', 'DefaultMinDistance', 'DefaultMaxDistance', 'MaxDistance', 'FocusMinDistance', 'FocusMaxDistance', 'FocusHorizontalCoefficient', 'FocusVerticalCoefficient', 'FocusMaxAngle', 'DefaultHeight', 'MaxHeight', 'HeightUpCoefficient', 'HeightDownCoefficient', 'MaxScaleSpeed', 'ScaleAcceleration', 'DefaultToFocusDuration', 'MaxVerticalAngle', 'DampTerrainHeightType']",
         "Values": "[10.0, 10.0, 6.0, 10.0, 0.1, 6.0, 1.7999, 3.14, 0.1, 8.0, 0.3499, 3.0, 3.7, 3.5, 25.0, 25.0, 8.0, 30.0, 2.0, 1.2, 180.0, 0.6, 7.5, 10.0, 6.0, 5.0, 30.0, 3.0, 40.0, 2.0]"
     },
     {
         "Id": 849601,
-        "Names": "['', 'FocusMaxDistance', '', '']",
+        "Names": "['DollyInCoefficient', 'DefaultOffset', 'FocusVerticalCoefficient', 'DefaultFOV']",
         "Values": "[8.0, 10.0, 0.3, 45.0]"
     },
     {
         "Id": 831310,
-        "Names": "['', '', 'FocusMaxDistance', '', '']",
+        "Names": "['FocusMovementCoefficient', 'DollyOutCoefficient', 'DefaultOffset', 'MaxHeight', 'HeightOffset']",
         "Values": "[60.0, 30.0, -3.0, 4.0, -0.5]"
     },
     {
         "Id": 831443,
-        "Names": "['FocusMaxDistance', 'FocusMaxDistance', 'FocusMaxDistance', '', 'FocusMaxDistance', '']",
+        "Names": "['DefaultOffset', 'FocusMaxDistance', 'MinVerticalAngle', 'FocusVerticalCoefficient', 'FocusHeight', 'HeightOffset']",
         "Values": "[2.0, 6.0, -90.0, 5.0, 1.0, -0.5]"
     },
     {
         "Id": 831444,
-        "Names": "['FocusMaxDistance', 'FocusMaxDistance', 'FocusMaxDistance', '', 'FocusMaxDistance', '', '', '']",
+        "Names": "['DefaultOffset', 'FocusMaxDistance', 'MinVerticalAngle', 'FocusVerticalCoefficient', 'FocusHeight', 'HeightOffset', 'MaxDistance', 'MaxHeight']",
         "Values": "[2.0, 10.0, -90.0, 5.0, 1.0, -0.5, 10.0, 10.0]"
     },
     {
         "Id": 831610,
-        "Names": "['', '', '', 'FocusMaxDistance', 'FocusMaxDistance']",
+        "Names": "['FocusVerticalCoefficient', 'MinHeight', 'MaxHeight', 'HeightUpCoefficient', 'MaxVerticalAngle']",
         "Values": "[0.5, 0.5, 0.5, 30.0, 90.0]"
     },
     {
         "Id": 831643,
-        "Names": "['FocusMaxDistance', '', '', 'FocusMaxDistance', '', 'FocusMaxDistance', 'FocusMaxDistance']",
+        "Names": "['FocusMaxDistance', 'FocusVerticalCoefficient', 'MaxHeight', 'MaxVerticalAngle', 'MaxDistance', 'HeightUpCoefficient', 'MinVerticalAngle']",
         "Values": "[20.0, 1.5, 6.0, 45.0, 3.5, 25.0, -45.0]"
     },
     {
         "Id": 831490,
-        "Names": "['']",
+        "Names": "['MaxHeight']",
         "Values": "[4.0]"
     },
     {
         "Id": 849602,
-        "Names": "['']",
+        "Names": "['DefaultFOV']",
         "Values": "[65.0]"
     },
     {
         "Id": 849603,
-        "Names": "['', 'FocusMaxDistance', '', '', 'FocusMaxDistan', '', '']",
+        "Names": "['DollyInCoefficient', 'DefaultOffset', 'FocusVerticalCoefficient', 'DefaultFOV', 'HorizontalDragSensitivity', 'RotationSpeed', 'VerticalDragSensitivity']",
         "Values": "[8.0, 10.0, 0.3, 40.0, 0.8, 7.0, 0.8]"
     },
     {
         "Id": 856703,
-        "Names": "['', 'FocusMaxDistance', 'FocusMaxDistance', '']",
+        "Names": "['FocusMovementCoefficient', 'FocusMaxDistance', 'MaxVerticalAngle', 'MaxHeight']",
         "Values": "[25.0, 4.0, 45.0, 2.5]"
     },
     {
         "Id": 856709,
-        "Names": "['', 'FocusMaxDistance', '']",
+        "Names": "['FocusMovementCoefficient', 'MaxVerticalAngle', 'MaxHeight']",
         "Values": "[25.0, 80.0, 1.0]"
     },
     {
         "Id": 856741,
-        "Names": "['', 'FocusMaxDistance']",
+        "Names": "['FocusMovementCoefficient', 'MaxVerticalAngle']",
         "Values": "[25.0, 45.0]"
     },
     {
         "Id": 856743,
-        "Names": "['', 'FocusMaxDistance', 'FocusMaxDistance']",
+        "Names": "['DefaultMaxDistance', 'MaxVerticalAngle', 'FocusMaxDistance']",
         "Values": "[15.0, 45.0, 30.0]"
     },
     {
         "Id": 856807,
-        "Names": "['', 'FocusMaxDistance', '', '', '', '', '', '', 'FocusMaxDistance']",
+        "Names": "['FocusMovementCoefficient', 'MaxVerticalAngle', 'FocusMovementCoefficient', 'DollyOutCoefficient', 'DefaultDistance', 'DefaultMinDistance', 'DefaultMaxDistance', 'FocusMinDistance', 'FocusMaxDistance']",
         "Values": "[25.0, 45.0, 40.0, 15.0, 5.0, 5.0, 10.0, 5.0, 10.0]"
     },
     {
         "Id": 856809,
-        "Names": "['', 'FocusMaxDistance', 'FocusMaxDistance', '', 'FocusMaxDistance', '', 'FocusMaxDistance', '']",
+        "Names": "['FocusMovementCoefficient', 'MaxVerticalAngle', 'MinVerticalAngle', 'FocusMinDistance', 'FocusMaxDistance', 'FocusVerticalCoefficient', 'FocusHeight', 'MinHeight']",
         "Values": "[25.0, 60.0, -45.0, 3.0, 8.0, 0.5, 0.3, 0.3]"
     },
     {
         "Id": 856811,
-        "Names": "['', 'FocusMaxDistance', '', '']",
+        "Names": "['FocusMovementCoefficient', 'MaxVerticalAngle', 'FocusMovementCoefficient', 'DollyOutCoefficient']",
         "Values": "[25.0, 45.0, 40.0, 15.0]"
     },
     {
         "Id": 856812,
-        "Names": "['', 'FocusMaxDistance']",
+        "Names": "['FocusMovementCoefficient', 'MaxVerticalAngle']",
         "Values": "[25.0, 45.0]"
     },
     {
         "Id": 856813,
-        "Names": "['', 'FocusMaxDistance', '']",
+        "Names": "['FocusMovementCoefficient', 'MaxVerticalAngle', 'MaxHeight']",
         "Values": "[25.0, 45.0, 2.0]"
     },
     {
@@ -201,1187 +201,1187 @@
     },
     {
         "Id": 878201,
-        "Names": "['', 'FocusMaxDistance', '', 'FocusMaxDistance', '', '']",
+        "Names": "['FocusMinDistance', 'FocusMaxDistance', 'DefaultHeight', 'FocusHeight', 'MinHeight', 'MaxHeight']",
         "Values": "[4.0, 8.0, 0.5, 0.0, 0.0, 5.0]"
     },
     {
         "Id": 878202,
-        "Names": "['', 'FocusMaxDistance', '', '']",
+        "Names": "['FocusMinDistance', 'FocusMaxDistance', 'MinHeight', 'MaxHeight']",
         "Values": "[6.0, 8.0, 5.0, 5.0]"
     },
     {
         "Id": 878301,
-        "Names": "['', 'FocusMaxDistance', '', '']",
+        "Names": "['FocusMinDistance', 'FocusHeight', 'MinHeight', 'MaxHeight']",
         "Values": "[8.0, 6.0, 6.0, 6.0]"
     },
     {
         "Id": 878311,
-        "Names": "['', 'FocusMaxDistance', '', '']",
+        "Names": "['FocusMinDistance', 'FocusMaxDistance', 'MinHeight', 'MaxHeight']",
         "Values": "[10.0, 10.0, 5.0, 5.0]"
     },
     {
         "Id": 19,
-        "Names": "['', '', 'FocusMaxDistance', 'FocusMaxDistance']",
+        "Names": "['RotationSpeed', 'FocusMovementCoefficient', 'FocusHeight', 'HeightUpCoefficient']",
         "Values": "[1.0, 1.0, 0.5, 3.0]"
     },
     {
         "Id": 20,
-        "Names": "['', 'FocusMaxDistance']",
+        "Names": "['FocusMinDistance', 'FocusMaxDistance']",
         "Values": "[2.0, 4.0]"
     },
     {
         "Id": 21,
-        "Names": "['FocusMaxDistance', '']",
+        "Names": "['FocusHeight', 'HeightDownCoefficient']",
         "Values": "[0.5, 30.0]"
     },
     {
         "Id": 22,
-        "Names": "['', '']",
+        "Names": "['FocusMinDistance', 'FocusMovementCoefficient']",
         "Values": "[0.8, 4.0]"
     },
     {
         "Id": 23,
-        "Names": "['', '']",
+        "Names": "['FocusMinDistance', 'FocusMovementCoefficient']",
         "Values": "[4.5, 7.0]"
     },
     {
         "Id": 24,
-        "Names": "['', 'FocusMaxDistance', 'FocusMaxDistance', '', '', 'FocusMaxDistance', 'FocusMaxDistance']",
+        "Names": "['FocusMinDistance', 'FocusMaxDistance', 'FocusHeight', 'MinHeight', 'MaxHeight', 'MinVerticalAngle', 'MaxVerticalAngle']",
         "Values": "[4.0, 20.0, 2.2999, 0.6, 12.0, -30.0, 90.0]"
     },
     {
         "Id": 25,
-        "Names": "['', 'FocusMaxDistance', 'FocusMaxDistance']",
+        "Names": "['FocusMinDistance', 'FocusMaxDistance', 'FocusHeight']",
         "Values": "[0.0, 1.0, 0.0]"
     },
     {
         "Id": 26,
-        "Names": "['']",
+        "Names": "['FocusMaxAngle']",
         "Values": "[25.0]"
     },
     {
         "Id": 27,
-        "Names": "['', 'FocusMaxDistance']",
+        "Names": "['FocusMinDistance', 'FocusHeight']",
         "Values": "[6.0, 1.2999]"
     },
     {
         "Id": 28,
-        "Names": "['', 'FocusMaxDistance']",
+        "Names": "['FocusMinDistance', 'FocusHeight']",
         "Values": "[2.0, 0.0]"
     },
     {
         "Id": 29,
-        "Names": "['', 'FocusMaxDistance']",
+        "Names": "['FocusMinDistance', 'FocusHeight']",
         "Values": "[0.0, -0.4]"
     },
     {
         "Id": 30,
-        "Names": "['']",
+        "Names": "['FocusMaxAngle']",
         "Values": "[10.0]"
     },
     {
         "Id": 31,
-        "Names": "['', '', 'FocusMaxDistance', 'FocusMaxDistance']",
+        "Names": "['MinHeight', 'MaxHeight', 'MinVerticalAngle', 'MaxVerticalAngle']",
         "Values": "[0.6, 12.0, -30.0, 90.0]"
     },
     {
         "Id": 32,
-        "Names": "['', '', 'FocusMaxDistance', 'FocusMaxDistance', '', 'FocusMaxDistance', '']",
+        "Names": "['MaxDistance', 'FocusMinDistance', 'FocusMaxDistance', 'FocusHeight', 'MaxHeight', 'HeightUpCoefficient', 'HeightDownCoefficient']",
         "Values": "[16.0, 5.0, 16.0, 0.3, 8.0, 30.0, 6.0]"
     },
     {
         "Id": 33,
-        "Names": "['']",
+        "Names": "['FocusMovementCoefficient']",
         "Values": "[0.1]"
     },
     {
         "Id": 34,
-        "Names": "['']",
+        "Names": "['FocusMaxAngle']",
         "Values": "[0.0]"
     },
     {
         "Id": 35,
-        "Names": "['', '', '', '', '']",
+        "Names": "['FocusMaxAngle', 'DefaultDistance', 'DefaultMinDistance', 'DefaultMaxDistance', 'MaxDistance']",
         "Values": "[0.0, 1.0, 1.0, 1.0, 1.0]"
     },
     {
         "Id": 857501,
-        "Names": "['', '', 'FocusMaxDistan']",
+        "Names": "['FocusMovementCoefficient', 'RotationSpeed', 'HorizontalDragSensitivity']",
         "Values": "[3.5, 2.5, 0.2]"
     },
     {
         "Id": 749906,
-        "Names": "['FocusMaxDistance', '', '', '', '', '', 'FocusMaxDistance', '', '', '', 'FocusMaxDistance', '', '', '', '']",
+        "Names": "['DefaultOffset', 'DefaultDistance', 'DefaultMinDistance', 'DefaultMaxDistance', 'MaxDistance', 'FocusMinDistance', 'FocusMaxDistance', 'FocusHorizontalCoefficient', 'FocusVerticalCoefficient', 'DefaultHeight', 'FocusHeight', 'MinHeight', 'DefaultFOV', 'DefaultToFocusDuration', 'FocusToDefaultDuration']",
         "Values": "[3.2, 4.0999, 4.0999, 4.5, 5.9, 4.0999, 7.5, 2.0, 1.2999, 0.8, 1.3999, 0.6999, 75.0, 0.4, 1.2]"
     },
     {
         "Id": 875940,
-        "Names": "['', '', '', 'FocusMaxDistance', '']",
+        "Names": "['DefaultHeight', 'MinHeight', 'MaxHeight', 'FocusHeight', 'FocusMaxAngle']",
         "Values": "[0.4, 0.4, 3.0, 0.5, 90.0]"
     },
     {
         "Id": 875910,
-        "Names": "['']",
+        "Names": "['FocusMaxAngle']",
         "Values": "[10.0]"
     },
     {
         "Id": 875963,
-        "Names": "['', '', '', 'FocusMaxDistance', '']",
+        "Names": "['DefaultHeight', 'MinHeight', 'MaxHeight', 'FocusHeight', 'FocusMaxAngle']",
         "Values": "[0.4, 0.4, 3.0, 0.5, 360.0]"
     },
     {
         "Id": 36,
-        "Names": "['', 'FocusMaxDistance', 'FocusMaxDistance', '', '', '', '', '']",
+        "Names": "['FocusMinDistance', 'FocusMaxDistance', 'FocusHeight', 'MinHeight', 'MaxHeight', 'DefaultHeight', 'MaxDistance', 'DeadZoneRadius']",
         "Values": "[8.0, 99.0, 3.45, 0.6, 12.0, 2.0, 15.0, 2.5]"
     },
     {
         "Id": 37,
-        "Names": "['', 'FocusMaxDistance', 'FocusMaxDistance', '', '', '', '']",
+        "Names": "['FocusMinDistance', 'FocusMaxDistance', 'FocusHeight', 'MinHeight', 'MaxHeight', 'DefaultHeight', 'MaxDistance']",
         "Values": "[4.0, 99.0, 3.45, 0.6, 12.0, 2.0, 15.0]"
     },
     {
         "Id": 38,
-        "Names": "['', 'FocusMaxDistance', 'FocusMaxDistance', '', '', '', '']",
+        "Names": "['FocusMinDistance', 'FocusMaxDistance', 'FocusHeight', 'MinHeight', 'MaxHeight', 'DefaultHeight', 'MaxDistance']",
         "Values": "[6.0, 99.0, 4.0, 0.6, 12.0, 2.0, 15.0]"
     },
     {
         "Id": 39,
-        "Names": "['', 'FocusMaxDistance', 'FocusMaxDistance', '', '', '', '']",
+        "Names": "['FocusMinDistance', 'FocusMaxDistance', 'FocusHeight', 'MinHeight', 'MaxHeight', 'DefaultHeight', 'MaxDistance']",
         "Values": "[6.0, 99.0, 4.25, 0.6, 12.0, 2.0, 15.0]"
     },
     {
         "Id": 40,
-        "Names": "['', 'FocusMaxDistance', '', '', '']",
+        "Names": "['FocusMinDistance', 'FocusMaxDistance', 'MaxDistance', 'DeadZoneRadius', 'DefaultMaxDistance']",
         "Values": "[3.0, 8.0, 10.0, 3.0, 6.0]"
     },
     {
         "Id": 41,
-        "Names": "['', '', '', '', 'FocusMaxDistance', '', '', '', 'FocusMaxDistance', '', 'FocusMaxDistance', '']",
+        "Names": "['FocusMovementCoefficient', 'DeadZoneRadius', 'HardZoneRadius', 'FocusMinDistance', 'FocusMaxDistance', 'FocusHorizontalCoefficient', 'FocusVerticalCoefficient', 'FocusMaxAngle', 'FocusHeight', 'MaxHeight', 'HeightUpCoefficient', 'HeightDownCoefficient']",
         "Values": "[10.0, 0.1, 10.0, 4.0, 4.0, 2.0, 1.2, 20.0, 1.5, 150.0, 2.0, 2.0]"
     },
     {
         "Id": 42,
-        "Names": "['', '', '', '', 'FocusMaxDistance', '', '', '', 'FocusMaxDistance', '', 'FocusMaxDistance', '']",
+        "Names": "['FocusMovementCoefficient', 'DeadZoneRadius', 'HardZoneRadius', 'FocusMinDistance', 'FocusMaxDistance', 'FocusHorizontalCoefficient', 'FocusVerticalCoefficient', 'FocusMaxAngle', 'FocusHeight', 'MaxHeight', 'HeightUpCoefficient', 'HeightDownCoefficient']",
         "Values": "[10.0, 0.1, 10.0, 2.0, 2.0, 2.0, 1.2, 20.0, 1.0, 150.0, 2.0, 2.0]"
     },
     {
         "Id": 43,
-        "Names": "['', '', '', '', 'FocusMaxDistance', '', '', '', 'FocusMaxDistance', '', 'FocusMaxDistance', '']",
+        "Names": "['FocusMovementCoefficient', 'DeadZoneRadius', 'HardZoneRadius', 'FocusMinDistance', 'FocusMaxDistance', 'FocusHorizontalCoefficient', 'FocusVerticalCoefficient', 'FocusMaxAngle', 'FocusHeight', 'MaxHeight', 'HeightUpCoefficient', 'HeightDownCoefficient']",
         "Values": "[10.0, 0.1, 10.0, 1.0, 1.0, 2.0, 1.2, 20.0, 0.5, 150.0, 2.0, 2.0]"
     },
     {
         "Id": 44,
-        "Names": "['', '', 'FocusMaxDistance', 'FocusMaxDistance', '']",
+        "Names": "['MinHeight', 'MaxHeight', 'MinVerticalAngle', 'MaxVerticalAngle', 'MaxDistance']",
         "Values": "[0.6, 12.0, -30.0, 90.0, 15.0]"
     },
     {
         "Id": 877700,
-        "Names": "['', '', '', 'FocusMaxDistance']",
+        "Names": "['FocusMaxAngle', 'FocusMinDistance', 'MaxHeight', 'MinVerticalAngle']",
         "Values": "[10.0, 4.0, 2.0, -45.0]"
     },
     {
         "Id": 877701,
-        "Names": "['']",
+        "Names": "['FocusMaxAngle']",
         "Values": "[10.0]"
     },
     {
         "Id": 877707,
-        "Names": "['']",
+        "Names": "['FocusMaxAngle']",
         "Values": "[10.0]"
     },
     {
         "Id": 877727,
-        "Names": "['']",
+        "Names": "['FocusMaxAngle']",
         "Values": "[10.0]"
     },
     {
         "Id": 877709,
-        "Names": "['', '', 'FocusMaxDistance', 'FocusMaxDistance']",
+        "Names": "['FocusMovementCoefficient', 'DollyOutCoefficient', 'HeightUpCoefficient', 'MaxVerticalAngle']",
         "Values": "[100.0, 100.0, 100.0, 45.0]"
     },
     {
         "Id": 877710,
-        "Names": "['', '', '', 'FocusMaxDistance']",
+        "Names": "['MinHeight', 'MaxHeight', 'FocusMinDistance', 'FocusMaxDistance']",
         "Values": "[1.0, 1.0, 2.0, 6.0]"
     },
     {
         "Id": 877712,
-        "Names": "['', '']",
+        "Names": "['FocusMovementCoefficient', 'FocusVerticalCoefficient']",
         "Values": "[2.0, 20.0]"
     },
     {
         "Id": 877720,
-        "Names": "['']",
+        "Names": "['MaxHeight']",
         "Values": "[2.0]"
     },
     {
         "Id": 111989,
-        "Names": "['']",
+        "Names": "['FocusMaxAngle']",
         "Values": "[5.0]"
     },
     {
         "Id": 113922,
-        "Names": "['', 'FocusMaxDistance', '', 'FocusMaxDistance', 'FocusMaxDistance']",
+        "Names": "['MaxDistance', 'FocusMaxDistance', 'DefaultHeight', 'FocusHeight', 'FocusHeight']",
         "Values": "[20.0, 20.0, 1.0, 1.2, 0.6]"
     },
     {
         "Id": 113950,
-        "Names": "['']",
+        "Names": "['RotationSpeed']",
         "Values": "[0.0]"
     },
     {
         "Id": 113961,
-        "Names": "['', '', 'FocusMaxDistance', '', '', '', 'FocusMaxDistance', '', 'FocusMaxDistance', '', '']",
+        "Names": "['DefaultMovementCoefficient', 'DollyInCoefficient', 'DefaultOffset', 'DefaultDistance', 'DefaultMinDistance', 'DefaultMaxDistance', 'FocusMaxDistance', 'DefaultHeight', 'FocusHeight', 'MinHeight', 'MaxHeight']",
         "Values": "[99.0, 99.0, 1.0, 0.75, 0.5, 1.0, 1.0, 0.3, 0.3, 0.3, 0.3]"
     },
     {
         "Id": 194225,
-        "Names": "['FocusMaxDistance', 'FocusMaxDistance', '', '', 'FocusMaxDistance', '', '', '', '']",
+        "Names": "['FocusMaxDistance', 'FocusHeight', 'MaxDistance', 'MaxHeight', 'DefaultOffset', 'DefaultDistance', 'DefaultMinDistance', 'DefaultMaxDistance', 'DefaultHeight']",
         "Values": "[10.0, 1.0, 8.0, 150.0, -1.0, 4.0, 4.0, 10.0, 1.5]"
     },
     {
         "Id": 194215,
-        "Names": "['', '', 'FocusMaxDistance', '', '', 'FocusMaxDistance', '', 'FocusMaxDistance', '', '', '', '', 'FocusMaxDistance', '', 'FocusMaxDistance', '']",
+        "Names": "['FocusMovementCoefficient', 'FocusMinDistance', 'FocusMaxDistance', 'FocusHorizontalCoefficient', 'FocusVerticalCoefficient', 'FocusHeight', 'MaxHeight', 'HeightUpCoefficient', 'HeightDownCoefficient', 'MaxDistance', 'FocusMovementCoefficient', 'RotationSpeed', 'HeightUpCoefficient', 'HeightDownCoefficient', 'FocusMinAngle', 'FocusMaxAngle']",
         "Values": "[10.0, 5.0, 4.0, 2.0, 1.2, 3.0, 150.0, 2.0, 2.0, 5.25, 3.0, 3.0, 5.0, 1.5, 15.0, 90.0]"
     },
     {
         "Id": 194216,
-        "Names": "['', '', 'FocusMaxDistance', '', '', 'FocusMaxDistance', '', 'FocusMaxDistance', '', '', '', 'FocusMaxDistance', '', 'FocusMaxDistance', '']",
+        "Names": "['FocusMovementCoefficient', 'FocusMinDistance', 'FocusMaxDistance', 'FocusHorizontalCoefficient', 'FocusVerticalCoefficient', 'FocusHeight', 'MaxHeight', 'HeightUpCoefficient', 'HeightDownCoefficient', 'FocusMovementCoefficient', 'RotationSpeed', 'HeightUpCoefficient', 'HeightDownCoefficient', 'FocusMinAngle', 'FocusMaxAngle']",
         "Values": "[10.0, 4.0, 3.0, 2.0, 1.2, 2.5, 150.0, 2.0, 2.0, 3.0, 3.0, 5.0, 1.5, 15.0, 60.0]"
     },
     {
         "Id": 194217,
-        "Names": "['', '', 'FocusMaxDistance', '', '', 'FocusMaxDistance', '', 'FocusMaxDistance', '', '', '', 'FocusMaxDistance', '', 'FocusMaxDistance', '']",
+        "Names": "['FocusMovementCoefficient', 'FocusMinDistance', 'FocusMaxDistance', 'FocusHorizontalCoefficient', 'FocusVerticalCoefficient', 'FocusHeight', 'MaxHeight', 'HeightUpCoefficient', 'HeightDownCoefficient', 'FocusMovementCoefficient', 'RotationSpeed', 'HeightUpCoefficient', 'HeightDownCoefficient', 'FocusMinAngle', 'FocusMaxAngle']",
         "Values": "[10.0, 2.0, 2.0, 2.0, 1.2, 2.0, 150.0, 2.0, 2.0, 3.0, 3.0, 5.0, 1.5, 15.0, 30.0]"
     },
     {
         "Id": 194218,
-        "Names": "['', '', 'FocusMaxDistance', '', '', 'FocusMaxDistance', '', 'FocusMaxDistance', '', '', '', '', 'FocusMaxDistance', '', 'FocusMaxDistance', '']",
+        "Names": "['FocusMovementCoefficient', 'FocusMinDistance', 'FocusMaxDistance', 'FocusHorizontalCoefficient', 'FocusVerticalCoefficient', 'FocusHeight', 'MaxHeight', 'HeightUpCoefficient', 'HeightDownCoefficient', 'MaxDistance', 'FocusMovementCoefficient', 'RotationSpeed', 'HeightUpCoefficient', 'HeightDownCoefficient', 'FocusMinAngle', 'FocusMaxAngle']",
         "Values": "[10.0, 1.25, 1.25, 2.0, 1.2, 1.25, 150.0, 2.0, 2.0, 6.0, 3.0, 3.0, 5.0, 1.5, 15.0, 20.0]"
     },
     {
         "Id": 194219,
-        "Names": "['', '', 'FocusMaxDistance', '', '', 'FocusMaxDistance', '', 'FocusMaxDistance', '', '', '', '', 'FocusMaxDistance', '', 'FocusMaxDistance', '']",
+        "Names": "['FocusMovementCoefficient', 'FocusMinDistance', 'FocusMaxDistance', 'FocusHorizontalCoefficient', 'FocusVerticalCoefficient', 'FocusHeight', 'MaxHeight', 'HeightUpCoefficient', 'HeightDownCoefficient', 'MaxDistance', 'FocusMovementCoefficient', 'RotationSpeed', 'HeightUpCoefficient', 'HeightDownCoefficient', 'FocusMinAngle', 'FocusMaxAngle']",
         "Values": "[10.0, 1.0, 1.0, 2.0, 1.2, 1.0, 150.0, 2.0, 2.0, 8.0, 3.0, 3.0, 5.0, 1.5, 7.0, 10.0]"
     },
     {
         "Id": 194238,
-        "Names": "['', '']",
+        "Names": "['HeightDownCoefficient', 'FocusMaxAngle']",
         "Values": "[10.0, 25.0]"
     },
     {
         "Id": 194251,
-        "Names": "['', 'FocusMaxDistance', 'FocusMaxDistance', '']",
+        "Names": "['FocusMinDistance', 'FocusMaxDistance', 'FocusHeight', 'FocusMaxAngle']",
         "Values": "[2.0, 4.0, 0.0, 15.0]"
     },
     {
         "Id": 194254,
-        "Names": "['FocusMaxDistance']",
+        "Names": "['FocusHeight']",
         "Values": "[0.25]"
     },
     {
         "Id": 194255,
-        "Names": "['']",
+        "Names": "['MaxDistance']",
         "Values": "[6.0]"
     },
     {
         "Id": 194258,
-        "Names": "['', '']",
+        "Names": "['MaxDistance', 'FocusMaxAngle']",
         "Values": "[7.0, 45.0]"
     },
     {
         "Id": 194263,
-        "Names": "['', 'FocusMaxDistance', '', 'FocusMaxDistance']",
+        "Names": "['FocusMinDistance', 'FocusMaxDistance', 'FocusMaxAngle', 'FocusHeight']",
         "Values": "[2.0, 4.0, 30.0, 0.5]"
     },
     {
         "Id": 115968,
-        "Names": "['']",
+        "Names": "['FocusMaxAngle']",
         "Values": "[0.5]"
     },
     {
         "Id": 194274,
-        "Names": "['FocusMaxDistance']",
+        "Names": "['HeightUpCoefficient']",
         "Values": "[3.0]"
     },
     {
         "Id": 194275,
-        "Names": "['']",
+        "Names": "['MaxHeight']",
         "Values": "[8.0]"
     },
     {
         "Id": 936419,
-        "Names": "['']",
+        "Names": "['FocusMovementCoefficient']",
         "Values": "[30.0]"
     },
     {
         "Id": 194297,
-        "Names": "['', 'Fo', '', '', 'FocusMaxDistance', 'FocusMaxDistance']",
+        "Names": "['HardZoneRadius', 'DeadZoneHeight', 'MaxDistance', 'FocusMinDistance', 'FocusMaxDistance', 'FocusMinAngle']",
         "Values": "[10.0, 0.1, 7.5, 2.0, 3.0, -2.0]"
     },
     {
         "Id": 936432,
-        "Names": "['', '', 'FocusMaxDistance', '', '', 'FocusMaxDistance', '', 'FocusMaxDistance', '', '', '', '', 'FocusMaxDistance', '', 'FocusMaxDistance', '']",
+        "Names": "['FocusMovementCoefficient', 'FocusMinDistance', 'FocusMaxDistance', 'FocusHorizontalCoefficient', 'FocusVerticalCoefficient', 'FocusHeight', 'MaxHeight', 'HeightUpCoefficient', 'HeightDownCoefficient', 'MaxDistance', 'FocusMovementCoefficient', 'RotationSpeed', 'HeightUpCoefficient', 'HeightDownCoefficient', 'FocusMinAngle', 'FocusMaxAngle']",
         "Values": "[10.0, 1.0, 1.0, 2.0, 1.2, 1.0, 150.0, 2.0, 2.0, 5.0, 3.0, 3.0, 5.0, 1.5, 0.0, 5.0]"
     },
     {
         "Id": 116990,
-        "Names": "['']",
+        "Names": "['FocusMaxAngle']",
         "Values": "[180.0]"
     },
     {
         "Id": 131843,
-        "Names": "['', '']",
+        "Names": "['FocusMaxAngle', 'FocusMovementCoefficient']",
         "Values": "[20.0, 20.0]"
     },
     {
         "Id": 936467,
-        "Names": "['']",
+        "Names": "['HeightDownCoefficient']",
         "Values": "[6.0]"
     },
     {
         "Id": 186250,
-        "Names": "['', '', 'FocusMaxDistance', 'FocusMaxDistance']",
+        "Names": "['MaxDistance', 'FocusMinDistance', 'FocusMaxDistance', 'FocusHeight']",
         "Values": "[9.0, 8.0, 15.0, 2.0]"
     },
     {
         "Id": 186254,
-        "Names": "['', '', '', 'FocusMaxDistance', '', '']",
+        "Names": "['MaxDistance', 'FocusHorizontalCoefficient', 'FocusVerticalCoefficient', 'FocusMaxDistance', 'FocusMinDistance', 'FocusMaxAngle']",
         "Values": "[8.0, 0.25, 0.15, 10.0, 4.0, 90.0]"
     },
     {
         "Id": 186255,
-        "Names": "['', '']",
+        "Names": "['RotationSpeed', 'FocusMovementCoefficient']",
         "Values": "[3.0, 3.0]"
     },
     {
         "Id": 108567,
-        "Names": "['']",
+        "Names": "['DefaultMovementCoefficient']",
         "Values": "[100.0]"
     },
     {
         "Id": 186262,
-        "Names": "['', '']",
+        "Names": "['RotationSpeed', 'FocusMovementCoefficient']",
         "Values": "[10.0, 10.0]"
     },
     {
         "Id": 131875,
-        "Names": "['', 'FocusMaxDistance', '', 'FocusMaxDistance']",
+        "Names": "['FocusMinDistance', 'FocusMaxDistance', 'FocusMaxAngle', 'FocusHeight']",
         "Values": "[1.0, 2.0, 30.0, 0.2]"
     },
     {
         "Id": 131877,
-        "Names": "['', 'FocusMaxDistance', '', 'FocusMaxDistance']",
+        "Names": "['FocusMinDistance', 'FocusMaxDistance', 'FocusMaxAngle', 'FocusHeight']",
         "Values": "[1.0, 2.0, 30.0, 0.2]"
     },
     {
         "Id": 131882,
-        "Names": "['', 'FocusMaxDistance', 'FocusMaxDistance', '', 'FocusMaxDistance', '']",
+        "Names": "['FocusMinDistance', 'FocusMaxDistance', 'FocusHeight', 'FocusMaxAngle', 'FocusMinAngle', 'FocusMovementCoefficient']",
         "Values": "[2.0, 3.0, 0.1, 45.0, 25.0, 10.0]"
     },
     {
         "Id": 186275,
-        "Names": "['', '', 'FocusMaxDistance', 'FocusMaxDistance', 'FocusMaxDistance']",
+        "Names": "['MaxDistance', 'FocusMinDistance', 'FocusMaxDistance', 'FocusHeight', 'FocusMinAngle']",
         "Values": "[6.5, 6.0, 10.0, 3.25, 20.0]"
     },
     {
         "Id": 131897,
-        "Names": "['', 'FocusMaxDistance', 'FocusMaxDistance', '']",
+        "Names": "['FocusMinDistance', 'FocusMaxDistance', 'FocusHeight', 'FocusMaxAngle']",
         "Values": "[1.0, 2.0, 0.1, 40.0]"
     },
     {
         "Id": 131942,
-        "Names": "['', 'FocusMaxDistance', '']",
+        "Names": "['FocusMovementCoefficient', 'FocusHeight', 'DefaultHeight']",
         "Values": "[1.0, 2.0, 1.2]"
     },
     {
         "Id": 876901,
-        "Names": "['', 'FocusMaxDistance']",
+        "Names": "['MaxHeight', 'HeightUpCoefficient']",
         "Values": "[3.0, 0.6]"
     },
     {
         "Id": 876902,
-        "Names": "['FocusMaxDistance']",
+        "Names": "['HeightUpCoefficient']",
         "Values": "[0.1]"
     },
     {
         "Id": 876903,
-        "Names": "['FocusMaxDistance', '', '']",
+        "Names": "['FocusMaxDistance', 'FocusVerticalCoefficient', 'MaxHeight']",
         "Values": "[50.0, 0.3, 5.0]"
     },
     {
         "Id": 186289,
-        "Names": "['FocusMaxDistance', '']",
+        "Names": "['HeightUpCoefficient', 'HeightDownCoefficient']",
         "Values": "[8.0, 4.0]"
     },
     {
         "Id": 175231,
-        "Names": "['FocusMaxDistance', 'FocusMaxDistance', 'FocusMaxDistance', '', '', 'FocusMaxDistance', '', '', '', '', '', '']",
+        "Names": "['FocusHeight', 'MinVerticalAngle', 'MaxVerticalAngle', 'FocusMovementCoefficient', 'RotationSpeed', 'FocusMaxDistance', 'FocusMinDistance', 'DefaultFOV', 'DefaultHeight', 'DefaultDistance', 'DefaultMovementCoefficient', 'DefaultRotationCoefficient']",
         "Values": "[-5.0, -4.0, -4.0, 0.2, 0.1, 3.0, 3.0, 70.0, -5.0, 3.0, 0.2, 0.0]"
     },
     {
         "Id": 175230,
-        "Names": "['', '', '', '', '', 'FocusMaxDistance', '', '', '']",
+        "Names": "['DefaultMovementCoefficient', 'FocusMovementCoefficient', 'DefaultRotationCoefficient', 'RotationSpeed', 'DefaultHeight', 'FocusHeight', 'MaxHeight', 'DefaultFOV', 'HeightDownCoefficient']",
         "Values": "[0.0, 0.0, 0.0, 0.0, 3.0, 3.0, 10.0, 70.0, 0.0]"
     },
     {
         "Id": 879011,
-        "Names": "['', '', '', '', 'FocusMaxDistance', 'FocusMaxDistance']",
+        "Names": "['DefaultHeight', 'DefaultMinDistance', 'DefaultMaxDistance', 'FocusMinDistance', 'FocusMaxDistance', 'FocusHeight']",
         "Values": "[0.3, 2.0, 4.0, 2.0, 6.0, 0.3]"
     },
     {
         "Id": 103001,
-        "Names": "['', '', '', '', 'FocusMaxDistance']",
+        "Names": "['DollyInCoefficient', 'DefaultMinDistance', 'DefaultMaxDistance', 'MaxDistance', 'FocusMaxDistance']",
         "Values": "[30.0, 2.0, 3.0, 3.0, 5.0]"
     },
     {
         "Id": 103002,
-        "Names": "['', '', '', '']",
+        "Names": "['FocusMinDistance', 'MinHeight', 'MaxHeight', 'HeightDownCoefficient']",
         "Values": "[4.0, 4.0, 6.0, 0.0]"
     },
     {
         "Id": 103003,
-        "Names": "['', 'FocusMaxDistance', '', 'FocusMaxDistance', 'FocusMaxDistance', '', '']",
+        "Names": "['MaxDistance', 'FocusMaxDistance', 'DefaultHeight', 'FocusHeight', 'FocusHeight', 'FocusMaxAngle', 'RotationSpeed']",
         "Values": "[25.0, 25.0, 1.0, 1.2, 0.6, 2.5, 0.0]"
     },
     {
         "Id": 103004,
-        "Names": "['', 'FocusMaxDistance', '', 'FocusMaxDistance', 'FocusMaxDistance', '', '', '']",
+        "Names": "['MaxDistance', 'FocusMaxDistance', 'DefaultHeight', 'FocusHeight', 'FocusHeight', 'RotationSpeed', 'FocusMaxAngle', 'DefaultToFocusDuration']",
         "Values": "[25.0, 25.0, 1.0, 1.2, 0.6, 0.0, 0.0, 0.05]"
     },
     {
         "Id": 103005,
-        "Names": "['', '', '', '', '', 'FocusMaxDistance', '', 'FocusMaxDistance', 'FocusMaxDistance', '', '']",
+        "Names": "['DefaultDistance', 'DefaultMinDistance', 'DefaultMaxDistance', 'MaxDistance', 'FocusMinDistance', 'FocusMaxDistance', 'FocusMaxAngle', 'FocusMinAngle', 'FocusHeight', 'MinHeight', 'MaxHeight']",
         "Values": "[6.0, 6.0, 12.0, 12.0, 6.0, 15.0, 20.0, 0.0, 6.0, 4.0, 8.0]"
     },
     {
         "Id": 103006,
-        "Names": "['']",
+        "Names": "['FocusMaxAngle']",
         "Values": "[30.0]"
     },
     {
         "Id": 103007,
-        "Names": "['', '', '', '', '', '', 'FocusMaxDistance', '', '', 'FocusMaxDistance', '']",
+        "Names": "['FocusMaxAngle', 'DefaultDistance', 'DefaultMinDistance', 'DefaultMaxDistance', 'MaxDistance', 'FocusMinDistance', 'FocusMaxDistance', 'FocusMaxAngle', 'DefaultHeight', 'FocusHeight', 'MinHeight']",
         "Values": "[20.0, 2.0, 2.0, 8.0, 8.0, 2.0, 8.0, 0.0, 0.05, 0.05, 0.05]"
     },
     {
         "Id": 190881,
-        "Names": "['', 'FocusMaxDistance', '']",
+        "Names": "['FocusMaxAngle', 'FocusHeight', 'FocusMinDistance']",
         "Values": "[15.0, 1.2, 2.0]"
     },
     {
         "Id": 133001,
-        "Names": "['']",
+        "Names": "['MaxHeight']",
         "Values": "[10.0]"
     },
     {
         "Id": 133002,
-        "Names": "['', '', '', '', '', '']",
+        "Names": "['DefaultMovementCoefficient', 'FocusMovementCoefficient', 'DollyInCoefficient', 'DollyOutCoefficient', 'DefaultRotationCoefficient', 'RotationSpeed']",
         "Values": "[0.0, 0.0, 0.0, 0.0, 0.0, 0.0]"
     },
     {
         "Id": 133003,
-        "Names": "['FocusMaxDistance']",
+        "Names": "['MinVerticalAngle']",
         "Values": "[5.5]"
     },
     {
         "Id": 182552,
-        "Names": "['', '', '', '', '', 'FocusMaxDistance']",
+        "Names": "['MaxScaleSpeed', 'MaxDistance', 'FocusMovementCoefficient', 'RotationSpeed', 'FocusMinDistance', 'FocusMaxDistance']",
         "Values": "[40.0, 5.0, 10.0, 1.0, 4.0, 5.0]"
     },
     {
         "Id": 182553,
-        "Names": "['', '', '', '', '', '', 'FocusMaxDistance', '', '']",
+        "Names": "['MaxScaleSpeed', 'MaxDistance', 'FocusMovementCoefficient', 'RotationSpeed', 'MaxDistance', 'DeadZoneRadius', 'FocusMaxDistance', 'FocusHorizontalCoefficient', 'FocusVerticalCoefficient']",
         "Values": "[40.0, 5.0, 10.0, 1.0, 15.0, 2.0, 15.0, 0.25, 1.2]"
     },
     {
         "Id": 182535,
-        "Names": "['']",
+        "Names": "['FocusMovementCoefficient']",
         "Values": "[13.0]"
     },
     {
         "Id": 182563,
-        "Names": "['', 'FocusMaxDistance', '']",
+        "Names": "['MaxDistance', 'FocusMaxDistance', 'RotationSpeed']",
         "Values": "[8.0, 20.0, 1.0]"
     },
     {
         "Id": 182590,
-        "Names": "['', '']",
+        "Names": "['RotationSpeed', 'MaxScaleSpeed']",
         "Values": "[15.0, 10.0]"
     },
     {
         "Id": 182560,
-        "Names": "['', '', '', '', '', '']",
+        "Names": "['DefaultMovementCoefficient', 'FocusMovementCoefficient', 'DollyInCoefficient', 'DollyOutCoefficient', 'DefaultRotationCoefficient', 'RotationSpeed']",
         "Values": "[0.0, 0.0, 0.0, 0.0, 0.0, 0.2]"
     },
     {
         "Id": 182576,
-        "Names": "['']",
+        "Names": "['FocusMaxAngle']",
         "Values": "[5.0]"
     },
     {
         "Id": 803301,
-        "Names": "['', '', '', '', 'FocusMaxDistance', 'FocusMaxDistance']",
+        "Names": "['DefaultDistance', 'DefaultMinDistance', 'DefaultMaxDistance', 'MaxDistance', 'MinVerticalAngle', 'MaxVerticalAngle']",
         "Values": "[8.0, 8.0, 8.0, 8.0, 22.0, 22.0]"
     },
     {
         "Id": 804001,
-        "Names": "['', 'FocusMaxDistance', '']",
+        "Names": "['FocusMinDistance', 'FocusMaxDistance', 'MaxHeight']",
         "Values": "[6.0, 10.0, 6.0]"
     },
     {
         "Id": 804002,
-        "Names": "['', 'FocusMaxDistance', '']",
+        "Names": "['FocusMinDistance', 'FocusMaxDistance', 'MaxHeight']",
         "Values": "[10.0, 13.0, 6.0]"
     },
     {
         "Id": 112362,
-        "Names": "['', 'FocusMaxDistance', 'FocusMaxDistance', '', '']",
+        "Names": "['FocusMaxAngle', 'FocusMinAngle', 'FocusHeight', 'RotationSpeed', 'FocusMovementCoefficient']",
         "Values": "[15.0, 0.0, 3.0, 18.0, 18.0]"
     },
     {
         "Id": 112383,
-        "Names": "['FocusMaxDistance', '']",
+        "Names": "['FocusHeight', 'FocusMovementCoefficient']",
         "Values": "[2.5, 20.0]"
     },
     {
         "Id": 501902,
-        "Names": "['', '', '', 'FocusMaxDistance', '', '', '', '', 'FocusMaxDistance', '', '', '', 'Fo', '', '', '']",
+        "Names": "['DeadZoneRadius', 'DefaultMinDistance', 'DefaultMaxDistance', 'FocusMaxDistance', 'FocusHorizontalCoefficient', 'FocusVerticalCoefficient', 'FocusMaxAngle', 'DefaultHeight', 'FocusHeight', 'MaxHeight', 'DampTerrainHeightType', 'DeadZoneRadius', 'DeadZoneHeight', 'DefaultDistance', 'FocusMaxAngle', 'MaxDistance']",
         "Values": "[0.4, 4.5, 6.5, 12.0, 1.3999, 1.2999, 180.0, 0.6999, 1.2, 10.0, 2.0, 0.1, 0.4, 5.0, 180.0, 10.0]"
     },
     {
         "Id": 501901,
-        "Names": "['', '', '', 'FocusMaxDistance', '', '', '', '', 'FocusMaxDistance', '', '', '', 'Fo', '', '', '']",
+        "Names": "['DeadZoneRadius', 'DefaultMinDistance', 'DefaultMaxDistance', 'FocusMaxDistance', 'FocusHorizontalCoefficient', 'FocusVerticalCoefficient', 'FocusMaxAngle', 'DefaultHeight', 'FocusHeight', 'MaxHeight', 'DampTerrainHeightType', 'DeadZoneRadius', 'DeadZoneHeight', 'DefaultDistance', 'FocusMaxAngle', 'MaxDistance']",
         "Values": "[0.4, 4.5, 6.5, 12.0, 1.3999, 1.2999, 180.0, 0.6999, 1.2, 10.0, 2.0, 0.1, 0.4, 5.0, 180.0, 10.0]"
     },
     {
         "Id": 196409,
-        "Names": "['']",
+        "Names": "['FocusMaxAngle']",
         "Values": "[60.0]"
     },
     {
         "Id": 196415,
-        "Names": "['', 'FocusMaxDistance', '']",
+        "Names": "['FocusMinDistance', 'FocusMaxDistance', 'MaxDistance']",
         "Values": "[6.0, 30.0, 10.0]"
     },
     {
         "Id": 803001,
-        "Names": "['', '', '', 'FocusMaxDistance', '', 'FocusMaxDistance', '', '', 'FocusMaxDistance', '', 'FocusMaxDistance', 'FocusMaxDistance', '']",
+        "Names": "['RotationSpeed', 'MaxDistance', 'FocusMinDistance', 'FocusMaxDistance', 'MaxHeight', 'FocusHeight', 'MinHeight', 'DefaultFOV', 'FocusMinAngle', 'FocusMaxAngle', 'MinVerticalAngle', 'MaxVerticalAngle', 'FocusMovementCoefficient']",
         "Values": "[10.0, 14.0, 2.0, 14.0, 12.0, 0.8, -2.0, 30.0, 5.0, 120.0, -180.0, 180.0, 10.0]"
     },
     {
         "Id": 112335,
-        "Names": "['', 'FocusMaxDistance', '', 'FocusMaxDistance']",
+        "Names": "['FocusMaxAngle', 'FocusMinAngle', 'FocusMinDistance', 'FocusMaxDistance']",
         "Values": "[15.0, 0.0, 2.0, 4.0]"
     },
     {
         "Id": 112250,
-        "Names": "['', '']",
+        "Names": "['DefaultMovementCoefficient', 'FocusMovementCoefficient']",
         "Values": "[1.0, 1.0]"
     },
     {
         "Id": 112254,
-        "Names": "['', 'FocusMaxDistance']",
+        "Names": "['FocusMaxAngle', 'FocusMinAngle']",
         "Values": "[60.0, 25.0]"
     },
     {
         "Id": 196435,
-        "Names": "['', '', 'FocusMaxDistance', '', '']",
+        "Names": "['FocusHorizontalCoefficient', 'FocusVerticalCoefficient', 'FocusMaxDistance', 'MaxDistance', 'FocusMaxAngle']",
         "Values": "[0.25, 0.15, 30.0, 8.0, 60.0]"
     },
     {
         "Id": 803002,
-        "Names": "['', 'FocusMaxDistance', 'FocusMaxDistance', '', '', '', '', 'FocusMaxDistance']",
+        "Names": "['FocusMaxAngle', 'FocusMinAngle', 'FocusHeight', 'MinHeight', 'MaxHeight', 'HeightOffset', 'DefaultFOV', 'FocusMaxDistance']",
         "Values": "[90.0, 25.0, 0.6, 0.0, 10.0, -0.6, 30.0, 6.0]"
     },
     {
         "Id": 803003,
-        "Names": "['', 'FocusMaxDistance', 'FocusMaxDistance', '', '', '', '', 'FocusMaxDistance']",
+        "Names": "['FocusMaxAngle', 'FocusMinAngle', 'FocusHeight', 'MinHeight', 'MaxHeight', 'HeightOffset', 'DefaultFOV', 'FocusMaxDistance']",
         "Values": "[90.0, 25.0, 0.6, 0.0, 0.0, -0.6, 30.0, 10.0]"
     },
     {
         "Id": 803004,
-        "Names": "['', 'FocusMaxDistance', 'FocusMaxDistance', '', '', '', '', 'FocusMaxDistance', '']",
+        "Names": "['FocusMaxAngle', 'FocusMinAngle', 'FocusHeight', 'MinHeight', 'MaxHeight', 'HeightOffset', 'DefaultFOV', 'FocusMaxDistance', 'FocusMinDistance']",
         "Values": "[90.0, 22.0, 0.6, 0.0, 10.0, -0.6, 30.0, 8.0, 6.0]"
     },
     {
         "Id": 803005,
-        "Names": "['', 'FocusMaxDistance', 'FocusMaxDistance', '', '', '', '', 'FocusMaxDistance', '']",
+        "Names": "['FocusMaxAngle', 'FocusMinAngle', 'FocusHeight', 'MinHeight', 'MaxHeight', 'HeightOffset', 'DefaultFOV', 'FocusMaxDistance', 'FocusMinDistance']",
         "Values": "[90.0, 18.0, 0.6, 0.0, 10.0, -0.6, 30.0, 12.0, 2.0]"
     },
     {
         "Id": 803006,
-        "Names": "['', 'FocusMaxDistance', 'FocusMaxDistance', '', '', '', '', 'FocusMaxDistance']",
+        "Names": "['FocusMaxAngle', 'FocusMinAngle', 'FocusHeight', 'MinHeight', 'MaxHeight', 'HeightOffset', 'DefaultFOV', 'FocusMaxDistance']",
         "Values": "[90.0, 25.0, 0.6, 4.0, 9.0, -0.6, 30.0, 15.0]"
     },
     {
         "Id": 803007,
-        "Names": "['', 'FocusMaxDistance', 'FocusMaxDistance', '', '', '', '', 'FocusMaxDistance']",
+        "Names": "['FocusMaxAngle', 'FocusMinAngle', 'FocusHeight', 'MinHeight', 'MaxHeight', 'HeightOffset', 'DefaultFOV', 'FocusMaxDistance']",
         "Values": "[90.0, 25.0, 0.6, 6.0, 15.0, -0.6, 30.0, 15.0]"
     },
     {
         "Id": 803008,
-        "Names": "['', 'FocusMaxDistance', 'FocusMaxDistance', '', '', '', '', 'FocusMaxDistance']",
+        "Names": "['FocusMaxAngle', 'FocusMinAngle', 'FocusHeight', 'MinHeight', 'MaxHeight', 'HeightOffset', 'DefaultFOV', 'FocusMaxDistance']",
         "Values": "[90.0, 25.0, 0.6, 4.5, 10.0, -0.6, 30.0, 15.0]"
     },
     {
         "Id": 803009,
-        "Names": "['', 'FocusMaxDistance', 'FocusMaxDistance', '', '', '', '', 'FocusMaxDistance']",
+        "Names": "['FocusMaxAngle', 'FocusMinAngle', 'FocusHeight', 'MinHeight', 'MaxHeight', 'HeightOffset', 'DefaultFOV', 'FocusMaxDistance']",
         "Values": "[90.0, 25.0, 0.6, 7.0, 10.0, -0.6, 30.0, 15.0]"
     },
     {
         "Id": 803010,
-        "Names": "['', 'FocusMaxDistance', 'FocusMaxDistance', '', '', '', '', 'FocusMaxDistance']",
+        "Names": "['FocusMaxAngle', 'FocusMinAngle', 'FocusHeight', 'MinHeight', 'MaxHeight', 'HeightOffset', 'DefaultFOV', 'FocusMaxDistance']",
         "Values": "[90.0, 15.0, 0.6, 5.0, 9.0, -0.6, 30.0, 15.0]"
     },
     {
         "Id": 803011,
-        "Names": "['', 'FocusMaxDistance', 'FocusMaxDistance', '', '', '', '', 'FocusMaxDistance']",
+        "Names": "['FocusMaxAngle', 'FocusMinAngle', 'FocusHeight', 'MinHeight', 'MaxHeight', 'HeightOffset', 'DefaultFOV', 'FocusMaxDistance']",
         "Values": "[90.0, 15.0, 0.6, 6.0, 15.0, -0.6, 30.0, 15.0]"
     },
     {
         "Id": 803012,
-        "Names": "['', 'FocusMaxDistance', 'FocusMaxDistance', '', '', '', '', 'FocusMaxDistance', '']",
+        "Names": "['FocusMaxAngle', 'FocusMinAngle', 'FocusHeight', 'MinHeight', 'MaxHeight', 'HeightOffset', 'DefaultFOV', 'FocusMaxDistance', 'FocusMinDistance']",
         "Values": "[90.0, 15.0, 0.6, 0.0, 10.0, -0.6, 30.0, 20.0, 2.0]"
     },
     {
         "Id": 112298,
-        "Names": "['', 'FocusMaxDistance', 'FocusMaxDistance']",
+        "Names": "['FocusMinDistance', 'FocusMaxDistance', 'FocusHeight']",
         "Values": "[2.5, 2.5, 1.5]"
     },
     {
         "Id": 803013,
-        "Names": "['', 'FocusMaxDistance', 'FocusMaxDistance', '', '', '', '', 'FocusMaxDistance', '']",
+        "Names": "['FocusMaxAngle', 'FocusMinAngle', 'FocusHeight', 'MinHeight', 'MaxHeight', 'HeightOffset', 'DefaultFOV', 'FocusMaxDistance', 'FocusMinDistance']",
         "Values": "[180.0, 0.0, 0.6, 0.0, 99.0, -0.6, 55.0, 99.0, 10.0]"
     },
     {
         "Id": 176401,
-        "Names": "['', '', 'FocusMaxDistance', 'FocusMaxDistance', '', 'FocusMaxDistance', '', '', '', '']",
+        "Names": "['MaxDistance', 'FocusMinDistance', 'FocusMaxDistance', 'FocusHeight', 'MaxHeight', 'HeightUpCoefficient', 'HeightDownCoefficient', 'FocusHorizontalCoefficient', 'FocusVerticalCoefficient', 'FocusMaxAngle']",
         "Values": "[8.0, 5.0, 16.0, 0.0, 8.0, 30.0, 6.0, 0.8999, 0.15, 90.0]"
     },
     {
         "Id": 176402,
-        "Names": "['', 'FocusMaxDistance', '', '']",
+        "Names": "['FocusMaxAngle', 'FocusHeight', 'MaxHeight', 'FocusMinDistance']",
         "Values": "[5.0, 0.0, 8.0, 0.0]"
     },
     {
         "Id": 176403,
-        "Names": "['', '']",
+        "Names": "['FocusHorizontalCoefficient', 'FocusVerticalCoefficient']",
         "Values": "[0.8999, 0.15]"
     },
     {
         "Id": 196442,
-        "Names": "['', '', '']",
+        "Names": "['FocusMaxAngle', 'RotationSpeed', 'FocusMovementCoefficient']",
         "Values": "[25.0, 12.0, 12.0]"
     },
     {
         "Id": 176415,
-        "Names": "['', '', 'FocusMaxDistance', 'FocusMaxDistance']",
+        "Names": "['MaxDistance', 'FocusMinDistance', 'FocusMaxDistance', 'FocusHeight']",
         "Values": "[10.0, 5.0, 15.0, 2.0]"
     },
     {
         "Id": 176420,
-        "Names": "['']",
+        "Names": "['RotationSpeed']",
         "Values": "[2.0]"
     },
     {
         "Id": 803014,
-        "Names": "['', '', '', 'FocusMaxDistance', '', 'FocusMaxDistance', '', 'FocusMaxDistan', '']",
+        "Names": "['DefaultFOV', 'HeightOffset', 'FocusMaxAngle', 'FocusMinAngle', 'MaxHeight', 'FocusMaxDistance', 'FocusMinDistance', 'HorizontalDragSensitivity', 'VerticalDragSensitivity']",
         "Values": "[60.0, 0.0, 180.0, 0.0, 10.0, 8.0, 4.0, 0.4, 0.1]"
     },
     {
         "Id": 126501,
-        "Names": "['', '', '', '', '', '', '', '', '', '']",
+        "Names": "['FocusMinDistance', 'MinHeight', 'MaxHeight', 'HeightDownCoefficient', 'FocusMaxAngle', 'DefaultDistance', 'DefaultMinDistance', 'DefaultMinDistance', 'DefaultMaxDistance', 'MaxDistance']",
         "Values": "[5.0, 4.5, 7.0, 0.0, 75.0, 5.0, 5.0, 5.0, 7.0, 7.0]"
     },
     {
         "Id": 126502,
-        "Names": "['FocusMaxDistance']",
+        "Names": "['FocusMinAngle']",
         "Values": "[60.0]"
     },
     {
         "Id": 176468,
-        "Names": "['']",
+        "Names": "['MaxDistance']",
         "Values": "[7.0]"
     },
     {
         "Id": 804801,
-        "Names": "['']",
+        "Names": "['FocusVerticalCoefficient']",
         "Values": "[2.0]"
     },
     {
         "Id": 912201,
-        "Names": "['']",
+        "Names": "['MaxHeight']",
         "Values": "[1.7999]"
     },
     {
         "Id": 912202,
-        "Names": "['FocusMaxDistance', '', 'FocusMaxDistance', '', '']",
+        "Names": "['SingleFocusWeight', 'FocusMinDistance', 'FocusMaxDistance', 'MaxHeight', 'DefaultFOV']",
         "Values": "[0.6999, 6.0, 10.0, 0.8, 70.0]"
     },
     {
         "Id": 912203,
-        "Names": "['', 'FocusMaxDistance', '', '']",
+        "Names": "['FocusMinDistance', 'FocusMaxDistance', 'MaxHeight', 'DefaultFOV']",
         "Values": "[4.0, 8.0, 1.7999, 60.0]"
     },
     {
         "Id": 912204,
-        "Names": "['', 'FocusMaxDistance', '', '', 'FocusMaxDistance']",
+        "Names": "['FocusMinDistance', 'FocusMaxDistance', 'MaxHeight', 'DefaultFOV', 'SingleFocusWeight']",
         "Values": "[6.0, 8.0, 1.7999, 60.0, 0.5]"
     },
     {
         "Id": 912205,
-        "Names": "['', 'FocusMaxDistance', '', '']",
+        "Names": "['FocusMinDistance', 'FocusMaxDistance', 'MaxHeight', 'DefaultFOV']",
         "Values": "[8.0, 12.0, 1.7999, 60.0]"
     },
     {
         "Id": 912206,
-        "Names": "['FocusMaxDistance', '', 'FocusMaxDistance', '', '']",
+        "Names": "['SingleFocusWeight', 'FocusMinDistance', 'FocusMaxDistance', 'MaxHeight', 'DefaultFOV']",
         "Values": "[0.6999, 6.0, 8.0, 1.7999, 70.0]"
     },
     {
         "Id": 912207,
-        "Names": "['', 'FocusMaxDistance', '', '', 'FocusMaxDistance']",
+        "Names": "['FocusMinDistance', 'FocusMaxDistance', 'MaxHeight', 'DefaultFOV', 'SingleFocusWeight']",
         "Values": "[6.0, 10.0, 1.7999, 60.0, 0.6999]"
     },
     {
         "Id": 912208,
-        "Names": "['', 'FocusMaxDistance', '', '', 'FocusMaxDistance']",
+        "Names": "['FocusMinDistance', 'FocusMaxDistance', 'MaxHeight', 'DefaultFOV', 'SingleFocusWeight']",
         "Values": "[6.0, 8.0, 1.7999, 60.0, 0.8]"
     },
     {
         "Id": 912209,
-        "Names": "['', 'FocusMaxDistance', '', '', 'FocusMaxDistance', '', '']",
+        "Names": "['FocusMinDistance', 'FocusMaxDistance', 'MaxHeight', 'DefaultFOV', 'SingleFocusWeight', 'RotationSpeed', 'FocusHorizontalCoefficient']",
         "Values": "[6.0, 8.0, 1.7999, 60.0, 0.8999, 0.5, 0.5]"
     },
     {
         "Id": 912210,
-        "Names": "['', '', 'FocusMaxDistance', '', '']",
+        "Names": "['DefaultFOV', 'FocusMinDistance', 'FocusMaxDistance', 'MaxHeight', 'MinHeight']",
         "Values": "[60.0, 6.0, 10.0, 1.5, 0.6]"
     },
     {
         "Id": 912211,
-        "Names": "['', '', 'FocusMaxDistance', '', '']",
+        "Names": "['DefaultFOV', 'FocusMinDistance', 'FocusMaxDistance', 'MaxHeight', 'MinHeight']",
         "Values": "[60.0, 6.0, 10.0, 1.7, 0.6]"
     },
     {
         "Id": 912212,
-        "Names": "['', '', 'FocusMaxDistance', '', '']",
+        "Names": "['DefaultFOV', 'FocusMinDistance', 'FocusMaxDistance', 'MaxHeight', 'MinHeight']",
         "Values": "[60.0, 6.0, 10.0, 1.8999, 0.6]"
     },
     {
         "Id": 912213,
-        "Names": "['', '', 'FocusMaxDistance', '', '']",
+        "Names": "['DefaultFOV', 'FocusMinDistance', 'FocusMaxDistance', 'MinHeight', 'MaxHeight']",
         "Values": "[60.0, 6.0, 10.0, 2.5, 2.5]"
     },
     {
         "Id": 912214,
-        "Names": "['', '', 'FocusMaxDistance', '', '']",
+        "Names": "['DefaultFOV', 'FocusMinDistance', 'FocusMaxDistance', 'MinHeight', 'MaxHeight']",
         "Values": "[60.0, 6.0, 10.0, 2.0, 2.0]"
     },
     {
         "Id": 912215,
-        "Names": "['', '', 'FocusMaxDistance', '', '']",
+        "Names": "['DefaultFOV', 'FocusMinDistance', 'FocusMaxDistance', 'MinHeight', 'MaxHeight']",
         "Values": "[60.0, 6.0, 10.0, 1.5, 1.5]"
     },
     {
         "Id": 912216,
-        "Names": "['', '', 'FocusMaxDistance', '', '']",
+        "Names": "['DefaultFOV', 'FocusMinDistance', 'FocusMaxDistance', 'MinHeight', 'MaxHeight']",
         "Values": "[60.0, 6.0, 10.0, 3.0, 3.0]"
     },
     {
         "Id": 912217,
-        "Names": "['', '', 'FocusMaxDistance', '', '']",
+        "Names": "['DefaultFOV', 'FocusMinDistance', 'FocusMaxDistance', 'MinHeight', 'MaxHeight']",
         "Values": "[60.0, 6.0, 10.0, 2.5, 2.5]"
     },
     {
         "Id": 912218,
-        "Names": "['', '', 'FocusMaxDistance', '', '']",
+        "Names": "['DefaultFOV', 'FocusMinDistance', 'FocusMaxDistance', 'MinHeight', 'MaxHeight']",
         "Values": "[60.0, 6.0, 10.0, 2.0, 2.0]"
     },
     {
         "Id": 912219,
-        "Names": "['', '', 'FocusMaxDistance', '', '']",
+        "Names": "['DefaultFOV', 'FocusMinDistance', 'FocusMaxDistance', 'MinHeight', 'MaxHeight']",
         "Values": "[60.0, 6.0, 10.0, 0.0, 0.4]"
     },
     {
         "Id": 912220,
-        "Names": "['', '', 'FocusMaxDistance', '', '']",
+        "Names": "['DefaultFOV', 'FocusMinDistance', 'FocusMaxDistance', 'MinHeight', 'MaxHeight']",
         "Values": "[60.0, 6.0, 10.0, 0.0, 0.6]"
     },
     {
         "Id": 912221,
-        "Names": "['', '', 'FocusMaxDistance', '', '']",
+        "Names": "['DefaultFOV', 'FocusMinDistance', 'FocusMaxDistance', 'MinHeight', 'MaxHeight']",
         "Values": "[60.0, 6.0, 10.0, 0.0, 0.8]"
     },
     {
         "Id": 912222,
-        "Names": "['', '', 'FocusMaxDistance', '', '']",
+        "Names": "['DefaultFOV', 'FocusMinDistance', 'FocusMaxDistance', 'MinHeight', 'MaxHeight']",
         "Values": "[60.0, 8.0, 12.0, 0.0, 0.2]"
     },
     {
         "Id": 912223,
-        "Names": "['', '', 'FocusMaxDistance', '', '']",
+        "Names": "['DefaultFOV', 'FocusMinDistance', 'FocusMaxDistance', 'MinHeight', 'MaxHeight']",
         "Values": "[60.0, 6.0, 10.0, 0.0, 0.4]"
     },
     {
         "Id": 912224,
-        "Names": "['', '', 'FocusMaxDistance', '', '']",
+        "Names": "['DefaultFOV', 'FocusMinDistance', 'FocusMaxDistance', 'MinHeight', 'MaxHeight']",
         "Values": "[60.0, 6.0, 10.0, 0.0, 0.6]"
     },
     {
         "Id": 166431,
-        "Names": "['FocusMaxDistance']",
+        "Names": "['FocusMinAngle']",
         "Values": "[1.0]"
     },
     {
         "Id": 166432,
-        "Names": "['FocusMaxDistance']",
+        "Names": "['FocusMinAngle']",
         "Values": "[2.0]"
     },
     {
         "Id": 166433,
-        "Names": "['FocusMaxDistance']",
+        "Names": "['FocusMinAngle']",
         "Values": "[3.0]"
     },
     {
         "Id": 166434,
-        "Names": "['FocusMaxDistance']",
+        "Names": "['FocusMinAngle']",
         "Values": "[4.0]"
     },
     {
         "Id": 166435,
-        "Names": "['FocusMaxDistance']",
+        "Names": "['FocusMinAngle']",
         "Values": "[5.0]"
     },
     {
         "Id": 166436,
-        "Names": "['FocusMaxDistance']",
+        "Names": "['FocusMinAngle']",
         "Values": "[6.0]"
     },
     {
         "Id": 166437,
-        "Names": "['FocusMaxDistance']",
+        "Names": "['FocusMinAngle']",
         "Values": "[7.0]"
     },
     {
         "Id": 166438,
-        "Names": "['FocusMaxDistance']",
+        "Names": "['FocusMinAngle']",
         "Values": "[8.0]"
     },
     {
         "Id": 166439,
-        "Names": "['FocusMaxDistance']",
+        "Names": "['FocusMinAngle']",
         "Values": "[9.0]"
     },
     {
         "Id": 166440,
-        "Names": "['FocusMaxDistance']",
+        "Names": "['FocusMinAngle']",
         "Values": "[10.0]"
     },
     {
         "Id": 166427,
-        "Names": "['FocusMaxDistance', '']",
+        "Names": "['FocusMinAngle', 'FocusMaxAngle']",
         "Values": "[10.0, 15.0]"
     },
     {
         "Id": 166428,
-        "Names": "['FocusMaxDistance', '']",
+        "Names": "['FocusMinAngle', 'FocusMaxAngle']",
         "Values": "[15.0, 25.0]"
     },
     {
         "Id": 166429,
-        "Names": "['FocusMaxDistance', '']",
+        "Names": "['FocusMinAngle', 'FocusMaxAngle']",
         "Values": "[25.0, 35.0]"
     },
     {
         "Id": 166454,
-        "Names": "['', '', '', '']",
+        "Names": "['FocusMovementCoefficient', 'DollyInCoefficient', 'DollyOutCoefficient', 'RotationSpeed']",
         "Values": "[2.0, 2.0, 2.0, 2.0]"
     },
     {
         "Id": 166498,
-        "Names": "['FocusMaxDistance', '']",
+        "Names": "['FocusMinAngle', 'FocusMaxAngle']",
         "Values": "[0.0, 180.0]"
     },
     {
         "Id": 15021597,
-        "Names": "['FocusMaxDistance', '', '']",
+        "Names": "['FocusMinAngle', 'DefaultFOV', 'FocusMinDistance']",
         "Values": "[30.0, 30.0, 0.0]"
     },
     {
         "Id": 805501,
-        "Names": "['', 'FocusMaxDistance']",
+        "Names": "['FocusMinDistance', 'FocusHeight']",
         "Values": "[1.25, -1.0]"
     },
     {
         "Id": 183645,
-        "Names": "['']",
+        "Names": "['FocusMovementCoefficient']",
         "Values": "[20.0]"
     },
     {
         "Id": 103901,
-        "Names": "['FocusMaxDistance', 'FocusMaxDistance', '', '', 'FocusMaxDistance', '', '', '', '']",
+        "Names": "['FocusMaxDistance', 'FocusHeight', 'MaxDistance', 'MaxHeight', 'DefaultOffset', 'DefaultDistance', 'DefaultMinDistance', 'DefaultMaxDistance', 'DefaultHeight']",
         "Values": "[10.0, 1.0, 8.0, 150.0, -1.0, 4.0, 4.0, 10.0, 1.5]"
     },
     {
         "Id": 103902,
-        "Names": "['', 'FocusMaxDistance', 'FocusMaxDistance']",
+        "Names": "['DollyInCoefficient', 'FocusMaxDistance', 'FocusMinAngle']",
         "Values": "[10.0, 6.0, 25.0]"
     },
     {
         "Id": 115374,
-        "Names": "['', '', 'FocusMaxDistance']",
+        "Names": "['FocusMovementCoefficient', 'FocusMaxAngle', 'FocusMinAngle']",
         "Values": "[15.0, 30.0, 5.0]"
     },
     {
         "Id": 115376,
-        "Names": "['', '', 'FocusMaxDistance']",
+        "Names": "['FocusMovementCoefficient', 'FocusMaxAngle', 'FocusMinAngle']",
         "Values": "[15.0, 10.0, 0.0]"
     },
     {
         "Id": 103903,
-        "Names": "['FocusMaxDistance', '']",
+        "Names": "['FocusMinAngle', 'FocusMovementCoefficient']",
         "Values": "[32.0, 20.0]"
     },
     {
         "Id": 806301,
-        "Names": "['', '', 'FocusMaxDistance', '', '']",
+        "Names": "['DefaultFOV', 'FocusMinDistance', 'FocusMaxDistance', 'MaxHeight', 'MinHeight']",
         "Values": "[60.0, 4.0, 10.0, 6.0, 0.6]"
     },
     {
         "Id": 806302,
-        "Names": "['', '', 'FocusMaxDistance', '', '']",
+        "Names": "['DefaultFOV', 'FocusMinDistance', 'FocusMaxDistance', 'MaxHeight', 'MinHeight']",
         "Values": "[60.0, 5.0, 10.0, 7.0, 0.6]"
     },
     {
         "Id": 806303,
-        "Names": "['', '', 'FocusMaxDistance', '', '']",
+        "Names": "['DefaultFOV', 'FocusMinDistance', 'FocusMaxDistance', 'MaxHeight', 'MinHeight']",
         "Values": "[60.0, 6.0, 10.0, 8.0, 0.6]"
     },
     {
         "Id": 806304,
-        "Names": "['', '', 'FocusMaxDistance', '', '']",
+        "Names": "['DefaultFOV', 'FocusMinDistance', 'FocusMaxDistance', 'MaxHeight', 'MinHeight']",
         "Values": "[60.0, 4.0, 10.0, 8.0, 2.5]"
     },
     {
         "Id": 806305,
-        "Names": "['', '', 'FocusMaxDistance', '', '']",
+        "Names": "['DefaultFOV', 'FocusMinDistance', 'FocusMaxDistance', 'MaxHeight', 'MinHeight']",
         "Values": "[60.0, 5.0, 10.0, 9.0, 2.0]"
     },
     {
         "Id": 806306,
-        "Names": "['', '', 'FocusMaxDistance', '', '']",
+        "Names": "['DefaultFOV', 'FocusMinDistance', 'FocusMaxDistance', 'MaxHeight', 'MinHeight']",
         "Values": "[60.0, 6.0, 10.0, 10.0, 1.5]"
     },
     {
         "Id": 806307,
-        "Names": "['', '', 'FocusMaxDistance', '', '']",
+        "Names": "['DefaultFOV', 'FocusMinDistance', 'FocusMaxDistance', 'MaxHeight', 'MinHeight']",
         "Values": "[60.0, 3.0, 10.0, 10.0, 3.0]"
     },
     {
         "Id": 806308,
-        "Names": "['', '', 'FocusMaxDistance', '', '']",
+        "Names": "['DefaultFOV', 'FocusMinDistance', 'FocusMaxDistance', 'MaxHeight', 'MinHeight']",
         "Values": "[60.0, 3.0, 10.0, 11.0, 2.5]"
     },
     {
         "Id": 806309,
-        "Names": "['', '', 'FocusMaxDistance', '', '']",
+        "Names": "['DefaultFOV', 'FocusMinDistance', 'FocusMaxDistance', 'MaxHeight', 'MinHeight']",
         "Values": "[60.0, 3.0, 10.0, 12.0, 2.0]"
     },
     {
         "Id": 806310,
-        "Names": "['', '', 'FocusMaxDistance', '', '']",
+        "Names": "['DefaultFOV', 'FocusMinDistance', 'FocusMaxDistance', 'MaxHeight', 'MinHeight']",
         "Values": "[60.0, 4.0, 10.0, 4.0, 0.4]"
     },
     {
         "Id": 806311,
-        "Names": "['', '', 'FocusMaxDistance', '', '']",
+        "Names": "['DefaultFOV', 'FocusMinDistance', 'FocusMaxDistance', 'MaxHeight', 'MinHeight']",
         "Values": "[60.0, 5.0, 10.0, 5.0, 0.6]"
     },
     {
         "Id": 806312,
-        "Names": "['', '', 'FocusMaxDistance', '', '']",
+        "Names": "['DefaultFOV', 'FocusMinDistance', 'FocusMaxDistance', 'MaxHeight', 'MinHeight']",
         "Values": "[60.0, 6.0, 10.0, 6.0, 0.8]"
     },
     {
         "Id": 806313,
-        "Names": "['', '', 'FocusMaxDistance', '', '']",
+        "Names": "['DefaultFOV', 'FocusMinDistance', 'FocusMaxDistance', 'MaxHeight', 'MinHeight']",
         "Values": "[60.0, 3.0, 12.0, 1.0, 0.2]"
     },
     {
         "Id": 806314,
-        "Names": "['', '', 'FocusMaxDistance', '', '']",
+        "Names": "['DefaultFOV', 'FocusMinDistance', 'FocusMaxDistance', 'MaxHeight', 'MinHeight']",
         "Values": "[60.0, 3.0, 10.0, 2.0, 0.4]"
     },
     {
         "Id": 806315,
-        "Names": "['', '', 'FocusMaxDistance', '', '']",
+        "Names": "['DefaultFOV', 'FocusMinDistance', 'FocusMaxDistance', 'MaxHeight', 'MinHeight']",
         "Values": "[60.0, 3.0, 10.0, 3.0, 0.6]"
     },
     {
         "Id": 125373,
-        "Names": "['', '', 'FocusMaxDistance']",
+        "Names": "['FocusMovementCoefficient', 'FocusMaxAngle', 'FocusMinAngle']",
         "Values": "[15.0, 60.0, 30.0]"
     },
     {
         "Id": 145315,
-        "Names": "['', '']",
+        "Names": "['DefaultMovementCoefficient', 'FocusMovementCoefficient']",
         "Values": "[0.1, 0.1]"
     },
     {
         "Id": 107223,
-        "Names": "['FocusMaxDistance', '']",
+        "Names": "['FocusMinAngle', 'FocusMaxAngle']",
         "Values": "[10.0, 15.0]"
     },
     {
         "Id": 806316,
-        "Names": "['', '', 'FocusMaxDistance', '', '']",
+        "Names": "['DefaultFOV', 'FocusMinDistance', 'FocusMaxDistance', 'MaxHeight', 'MinHeight']",
         "Values": "[60.0, 3.0, 12.0, 1.0, 0.2]"
     },
     {
         "Id": 806317,
-        "Names": "['', '', 'FocusMaxDistance', '', '']",
+        "Names": "['DefaultFOV', 'FocusMinDistance', 'FocusMaxDistance', 'MaxHeight', 'MinHeight']",
         "Values": "[60.0, 3.0, 12.0, 1.0, 0.2]"
     },
     {
         "Id": 145342,
-        "Names": "['', '']",
+        "Names": "['FocusMaxAngle', 'FocusMovementCoefficient']",
         "Values": "[10.0, 15.0]"
     },
     {
         "Id": 114258,
-        "Names": "['', 'FocusMaxDistance', 'FocusMaxDistance', '', '', '']",
+        "Names": "['FocusMinDistance', 'FocusMaxDistance', 'FocusHeight', 'MaxHeight', 'DefaultHeight', 'MaxDistance']",
         "Values": "[6.0, 16.0, 2.5, 12.0, 2.0, 10.0]"
     },
     {
         "Id": 114259,
-        "Names": "['']",
+        "Names": "['FocusMaxAngle']",
         "Values": "[25.0]"
     },
     {
         "Id": 114268,
-        "Names": "['', 'FocusMaxDistance', 'FocusMaxDistance', '', '', '']",
+        "Names": "['FocusMinDistance', 'FocusMaxDistance', 'FocusHeight', 'MaxHeight', 'DefaultHeight', 'MaxDistance']",
         "Values": "[1.0, 16.0, 1.0, 12.0, 0.6, 5.5]"
     },
     {
         "Id": 114284,
-        "Names": "['', 'FocusMaxDistance', 'FocusMaxDistance', '', '', '']",
+        "Names": "['FocusMinDistance', 'FocusMaxDistance', 'FocusHeight', 'MaxHeight', 'DefaultHeight', 'MaxDistance']",
         "Values": "[0.0, 16.0, 1.0, 12.0, 0.6, 5.5]"
     },
     {
         "Id": 194635,
-        "Names": "['']",
+        "Names": "['FocusMovementCoefficient']",
         "Values": "[10.0]"
     },
     {
         "Id": 194636,
-        "Names": "['']",
+        "Names": "['FocusMovementCoefficient']",
         "Values": "[20.0]"
     },
     {
         "Id": 194640,
-        "Names": "['']",
+        "Names": "['FocusMovementCoefficient']",
         "Values": "[7.0]"
     },
     {
         "Id": 104901,
-        "Names": "['FocusMaxDistance']",
+        "Names": "['FocusMinAngle']",
         "Values": "[30.0]"
     },
     {
         "Id": 104902,
-        "Names": "['', 'FocusMaxDistance']",
+        "Names": "['MaxHeight', 'HeightUpCoefficient']",
         "Values": "[5.0, 6.0]"
     },
     {
         "Id": 104903,
-        "Names": "['', 'FocusMaxDistance', '']",
+        "Names": "['MaxHeight', 'HeightUpCoefficient', 'HeightDownCoefficient']",
         "Values": "[2.0, 6.0, 0.0]"
     },
     {
         "Id": 104904,
-        "Names": "['', 'FocusMaxDistance', '']",
+        "Names": "['MaxHeight', 'HeightUpCoefficient', 'HeightDownCoefficient']",
         "Values": "[5.0, 4.0, 0.0]"
     },
     {
         "Id": 104905,
-        "Names": "['', '']",
+        "Names": "['MaxHeight', 'FocusMaxAngle']",
         "Values": "[3.0, 45.0]"
     },
     {
         "Id": 104906,
-        "Names": "['', 'FocusMaxDistance', '', '']",
+        "Names": "['FocusMinDistance', 'FocusMaxDistance', 'DollyInCoefficient', 'MinHeight']",
         "Values": "[6.0, 8.0, 1.0, 3.0]"
     },
     {
         "Id": 104907,
-        "Names": "['']",
+        "Names": "['FocusMaxAngle']",
         "Values": "[45.0]"
     },
     {
         "Id": 104908,
-        "Names": "['', 'FocusMaxDistance']",
+        "Names": "['FocusMinDistance', 'FocusMaxDistance']",
         "Values": "[2.0, 4.0]"
     },
     {
         "Id": 104909,
-        "Names": "['FocusMaxDistance']",
+        "Names": "['FocusMinAngle']",
         "Values": "[30.0]"
     },
     {
         "Id": 104910,
-        "Names": "['', 'FocusMaxDistance']",
+        "Names": "['FocusMaxAngle', 'FocusMinAngle']",
         "Values": "[45.0, 30.0]"
     },
     {
         "Id": 380111,
-        "Names": "['FocusMaxDistance', 'FocusMaxDistance']",
+        "Names": "['MinVerticalAngle', 'MaxVerticalAngle']",
         "Values": "[-90.0, 45.0]"
     },
     {
         "Id": 197200,
-        "Names": "['', '', 'FocusMaxDistance', '']",
+        "Names": "['FocusHorizontalCoefficient', 'FocusVerticalCoefficient', 'FocusMaxDistance', 'MaxDistance']",
         "Values": "[0.25, 0.15, 30.0, 7.0]"
     },
     {
         "Id": 107246,
-        "Names": "['', '', '', '']",
+        "Names": "['FocusMovementCoefficient', 'DollyInCoefficient', 'DollyOutCoefficient', 'RotationSpeed']",
         "Values": "[1.0, 1.0, 1.0, 6.0]"
     },
     {
         "Id": 106801,
-        "Names": "['FocusMaxDistance', '', '']",
+        "Names": "['FocusMinAngle', 'RotationSpeed', 'FocusMaxAngle']",
         "Values": "[50.0, 1.1, 50.0]"
     },
     {
         "Id": 197220,
-        "Names": "['', 'FocusMaxDistance', '', '', 'FocusMaxDistance', 'FocusMaxDistance']",
+        "Names": "['FocusMaxAngle', 'FocusMinAngle', 'MaxHeight', 'FocusMinDistance', 'FocusMaxDistance', 'FocusHeight']",
         "Values": "[20.0, 5.0, 15.0, 6.0, 10.0, 2.0]"
     },
     {
         "Id": 107280,
-        "Names": "['', '', '', '', '', 'FocusMaxDistance']",
+        "Names": "['FocusMovementCoefficient', 'DollyInCoefficient', 'DollyOutCoefficient', 'RotationSpeed', 'FocusMaxAngle', 'FocusHeight']",
         "Values": "[9.0, 4.5, 7.5, 9.0, 3.0, 0.0]"
     },
     {
         "Id": 197228,
-        "Names": "['']",
+        "Names": "['RotationSpeed']",
         "Values": "[4.0]"
     },
     {
         "Id": 197229,
-        "Names": "['', '', 'FocusMaxDistance', 'FocusMaxDistance', 'FocusMaxDistance']",
+        "Names": "['FocusMaxAngle', 'FocusMinDistance', 'FocusMaxDistance', 'FocusHeight', 'FocusMinAngle']",
         "Values": "[25.0, 1.0, 30.0, 0.5, 5.0]"
     },
     {
         "Id": 197258,
-        "Names": "['']",
+        "Names": "['HeightDownCoefficient']",
         "Values": "[6.0]"
     },
     {
         "Id": 197263,
-        "Names": "['']",
+        "Names": "['FocusMaxAngle']",
         "Values": "[10.0]"
     }
 ]

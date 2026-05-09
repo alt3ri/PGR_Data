@@ -1,762 +1,762 @@
 [
     {
-        "Key": "\u63d0\u793a",
+        "Key": "HelpKey",
         "Note": "\u5e2e\u52a9Key",
-        "Params": "['\u63d0\u793a']"
+        "Params": "['RogueSim']"
     },
     {
-        "Key": null,
+        "Key": "MainCountDownDesc",
         "Note": "\u5012\u8ba1\u65f6\u63cf\u8ff0",
-        "Params": "['']"
+        "Params": "['\u7ecf\u8425\u5269\u4f59\u65f6\u95f4\uff1a%s']"
     },
     {
-        "Key": null,
+        "Key": "ExchangeCountDownDesc",
         "Note": "\u5012\u8ba1\u65f6\u63cf\u8ff0",
-        "Params": "['']"
+        "Params": "['\u5546\u5e97\u5151\u6362\u5269\u4f59\u65f6\u95f4\uff1a%s']"
     },
     {
-        "Key": null,
+        "Key": "StageNotUnlockDesc",
         "Note": "\u5173\u5361\u672a\u89e3\u9501\u63cf\u8ff0",
-        "Params": "['', '']"
+        "Params": "['%s\u540e\u89e3\u9501', '\u901a\u5173\u201c%s\u201d\u540e\u89e3\u9501']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "StageRoundDesc",
         "Note": "\u5173\u5361\u5b63\u5ea6\u63cf\u8ff0",
-        "Params": "['\u63d0\u793a']"
+        "Params": "['<color=#ff0000>%s</color>\u5b63\u5ea6']"
     },
     {
-        "Key": null,
+        "Key": "ScenePath",
         "Note": "\u573a\u666f\u9884\u7f6e\uff0c\u5305\u62ec\u683c\u5b50\u6302\u70b9\u548c\u955c\u5934",
-        "Params": "['']"
+        "Params": "['Assets/Product/Scene/ScenePrefab/SystemRogueSim3d01.prefab']"
     },
     {
-        "Key": null,
+        "Key": "SceneLoadGridSpeed",
         "Note": "\u573a\u666f\u6bcf\u5e27\u52a0\u8f7d\u683c\u5b50\u9884\u5236\u4f53\u7684\u6570\u91cf",
-        "Params": "['']"
+        "Params": "['20']"
     },
     {
-        "Key": null,
+        "Key": "ProduceContent",
         "Note": "\u751f\u4ea7\u754c\u9762\u63cf\u8ff0",
-        "Params": "['']"
+        "Params": "['\u5b63\u5ea6\u5f00\u59cb\u65f6\u4f1a\u6839\u636e\u6b64\u8bbe\u7f6e\u751f\u4ea7\u5546\u54c1']"
     },
     {
-        "Key": null,
+        "Key": "ProduceBtnYesTips",
         "Note": "\u751f\u4ea7\u6309\u94ae\u63d0\u793a\u4fe1\u606f",
-        "Params": "['\u63d0\u793a', '', '']"
+        "Params": "['\u8bf7\u9009\u62e9\u8981\u751f\u4ea7\u5546\u54c1', '\u672c\u5b63\u5ea6\u4ea7\u54c1\u751f\u4ea7\u65f6\uff0c\u6ea2\u51fa\u4ed3\u5e93\u5bb9\u91cf\u7684\u90e8\u5206\u820d\u5f03\uff0c\u4e0d\u8ba1\u5165\u4ed3\u5e93', '%s\u5e93\u5b58\u5df2\u8fbe\u4e0a\u9650\uff0c\u65e0\u6cd5\u7ee7\u7eed\u751f\u4ea7']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "ProduceDialogTitle",
         "Note": "\u5f39\u6846\u6807\u9898",
         "Params": "['\u63d0\u793a']"
     },
     {
-        "Key": null,
+        "Key": "ProduceChangeContent",
         "Note": "\u751f\u4ea7\u53d8\u66f4\u63cf\u8ff0",
-        "Params": "['']"
+        "Params": "['\u751f\u4ea7\u5546\u54c1\u66f4\u6362\u6210\u529f']"
     },
     {
-        "Key": null,
+        "Key": "ProduceNotSelectTips",
         "Note": "\u672a\u9009\u62e9\u751f\u4ea7\u63d0\u793a",
-        "Params": "['']"
+        "Params": "['\u8bf7\u9009\u62e9\u8981\u751f\u4ea7\u7684\u5546\u54c1']"
     },
     {
-        "Key": null,
+        "Key": "SellContent",
         "Note": "\u8d38\u6613\u754c\u9762\u63cf\u8ff0",
-        "Params": "['\u63d0\u793a']"
+        "Params": "['\u5546\u54c1\u9500\u552e\u83b7\u5f97\u7684\u91d1\u8d1d\u4f1a\u5728\u4e0b\u5b63\u5ea6\u5165\u8d26']"
     },
     {
-        "Key": null,
+        "Key": "SellSingleValue",
         "Note": "\u8d38\u6613\u5355\u6b21\u51cf\u5c11/\u589e\u52a0\u7684\u6570\u503c",
-        "Params": "['']"
+        "Params": "['9999999']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "SellChangeContent",
         "Note": "\u8d38\u6613\u53d8\u66f4\u63cf\u8ff0",
-        "Params": "['', '']"
+        "Params": "['\u88c5\u8f66\u6210\u529f', '\u6682\u65e0\u5546\u54c1\u88c5\u8f66']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "BattleRoundNumDesc",
         "Note": "\u5b63\u5ea6\u6570\u63cf\u8ff0",
-        "Params": "['\u63d0\u793a']"
+        "Params": "['\u5b63\u5ea6 <color=#ffeb9b>%d</color>']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "BattleRoundLine10",
         "Note": null,
-        "Params": "['']"
+        "Params": "['Assets/Product/Texture/Image/UiRogueSim/UiRogueSimBattleLine10.png']"
     },
     {
-        "Key": null,
+        "Key": "BattleRoundLine20",
         "Note": null,
-        "Params": "['']"
+        "Params": "['Assets/Product/Texture/Image/UiRogueSim/UiRogueSimBattleLine20.png']"
     },
     {
-        "Key": null,
+        "Key": "BattleRoundLine30",
         "Note": null,
-        "Params": "['']"
+        "Params": "['Assets/Product/Texture/Image/UiRogueSim/UiRogueSimBattleLine30.png']"
     },
     {
-        "Key": null,
+        "Key": "BattleRoundLine5",
         "Note": null,
-        "Params": "['\u63d0\u793a']"
+        "Params": "['Assets/Product/Texture/Image/UiRogueSim/UiRogueSimBattleLine5.png']"
     },
     {
-        "Key": null,
+        "Key": "BattleRoundLine15",
         "Note": null,
-        "Params": "['\u63d0\u793a']"
+        "Params": "['Assets/Product/Texture/Image/UiRogueSim/UiRogueSimBattleLine15.png']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "BattleRoundLine25",
         "Note": null,
-        "Params": "['']"
+        "Params": "['Assets/Product/Texture/Image/UiRogueSim/UiRogueSimBattleLine25.png']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "TransitionDuration",
         "Note": "\u8fc7\u573a\u6301\u7eed\u65f6\u95f4",
-        "Params": "['\u63d0\u793a']"
+        "Params": "['2']"
     },
     {
-        "Key": null,
+        "Key": "TransitionDesc",
         "Note": "\u8fc7\u573a\u63cf\u8ff0",
-        "Params": "['', '']"
+        "Params": "['\u7ecf\u8425\u65f6\u95f4\u8fd8\u6709\uff1a%d\u4e2a\u5b63\u5ea6', '\u6700\u540e\u4e00\u4e2a\u5b63\u5ea6\uff01']"
     },
     {
-        "Key": null,
+        "Key": "BtnExplore",
         "Note": "\u63a2\u7d22\u6309\u94ae",
-        "Params": "['']"
+        "Params": "['\u524d\u5f80\u63a2\u7d22']"
     },
     {
-        "Key": null,
+        "Key": "BtnDetail",
         "Note": "\u8be6\u60c5\u6309\u94ae",
-        "Params": "['']"
+        "Params": "['\u67e5\u770b\u8be6\u60c5']"
     },
     {
-        "Key": null,
+        "Key": "LandBubbleBtnName",
         "Note": "\u683c\u5b50\u5f39\u6846\u6309\u94ae\u540d\u79f0",
-        "Params": "['', '', '', '']"
+        "Params": "['\u524d\u5f80\u63a2\u7d22', '\u67e5\u770b\u8be6\u60c5', '\u67e5\u770b\u5347\u7ea7', '\u7ee7\u7eed\u9009\u62e9']"
     },
     {
-        "Key": null,
+        "Key": "LandNotExplorableTips",
         "Note": "\u683c\u5b50\u4e0d\u53ef\u63a2\u7d22\u63d0\u793a",
-        "Params": "['']"
+        "Params": "['\u9700\u8981\u5148\u901a\u8fc7\u63a2\u7d22\u8fde\u901a\u9053\u8def']"
     },
     {
-        "Key": null,
+        "Key": "North",
         "Note": "\u4f20\u95fb\u70b9\u4f4d\u5317\u65b9\u5411",
-        "Params": "['']"
+        "Params": "['\u5317\u65b9\u5411']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "South",
         "Note": "\u4f20\u95fb\u70b9\u4f4d\u5357\u65b9\u5411",
-        "Params": "['']"
+        "Params": "['\u5357\u65b9\u5411']"
     },
     {
-        "Key": null,
+        "Key": "East",
         "Note": "\u4f20\u95fb\u70b9\u4f4d\u4e1c\u65b9\u5411",
-        "Params": "['\u63d0\u793a']"
+        "Params": "['\u4e1c\u65b9\u5411']"
     },
     {
-        "Key": null,
+        "Key": "West",
         "Note": "\u4f20\u95fb\u70b9\u4f4d\u897f\u65b9\u5411",
-        "Params": "['']"
+        "Params": "['\u897f\u65b9\u5411']"
     },
     {
-        "Key": null,
+        "Key": "Northeast",
         "Note": "\u4f20\u95fb\u70b9\u4f4d\u4e1c\u5317\u65b9\u5411",
-        "Params": "['']"
+        "Params": "['\u4e1c\u5317\u65b9\u5411']"
     },
     {
-        "Key": null,
+        "Key": "Southeast",
         "Note": "\u4f20\u95fb\u70b9\u4f4d\u4e1c\u5357\u65b9\u5411",
-        "Params": "['']"
+        "Params": "['\u4e1c\u5357\u65b9\u5411']"
     },
     {
-        "Key": null,
+        "Key": "Northwest",
         "Note": "\u4f20\u95fb\u70b9\u4f4d\u897f\u5317\u65b9\u5411",
-        "Params": "['']"
+        "Params": "['\u897f\u5317\u65b9\u5411']"
     },
     {
-        "Key": null,
+        "Key": "Southwest",
         "Note": "\u4f20\u95fb\u70b9\u4f4d\u897f\u5357\u65b9\u5411",
-        "Params": "['\u63d0\u793a']"
+        "Params": "['\u897f\u5357\u65b9\u5411']"
     },
     {
-        "Key": null,
+        "Key": "MainMaxLevelDesc",
         "Note": "\u4e3b\u57ce\u6700\u5927\u7b49\u7ea7\u63cf\u8ff0",
-        "Params": "['']"
+        "Params": "['MAX']"
     },
     {
-        "Key": null,
+        "Key": "MainLevelUpExpTips",
         "Note": "\u4e3b\u57ce\u7ecf\u9a8c\u63d0\u793a",
-        "Params": "['\u63d0\u793a', '']"
+        "Params": "['\u53ef\u5347\u7ea7', '\u5df2\u6ee1\u7ea7\uff01']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "MainLevelUpAdditionDesc",
         "Note": "\u4e3b\u57ce\u7b49\u7ea7\u52a0\u6210\u63cf\u8ff0",
-        "Params": "['\u63d0\u793a', '\u63d0\u793a', '']"
+        "Params": "['%s + %d', '\u79d1\u6280\u7b49\u7ea7\u89e3\u9501 Lv.%d', '\u63a2\u7d22\u533a\u57df\u89e3\u9501 Lv.%d']"
     },
     {
-        "Key": null,
+        "Key": "MainLevelCanLevelUpTips",
         "Note": "\u4e3b\u57ce\u4e0d\u53ef\u5347\u7ea7\u63d0\u793a",
-        "Params": "['', '', '']"
+        "Params": "['\u5df2\u8fbe\u6700\u9ad8\u7b49\u7ea7', '\u884c\u5546\u7ecf\u9a8c\u672a\u6ee1\u8db3\u5347\u7ea7\u9700\u6c42', '\u91d1\u8d1d\u4e0d\u8db3']"
     },
     {
-        "Key": null,
+        "Key": "MainLevelBtnLvUpText",
         "Note": "\u5347\u7ea7\u6309\u94ae\u6587\u672c",
-        "Params": "['', '']"
+        "Params": "['\u5347\u7ea7', '\u5df2\u6ee1\u7ea7']"
     },
     {
-        "Key": null,
+        "Key": "MainLevelRewardColor",
         "Note": "\u4e3b\u57ce\u7b49\u7ea7\u5956\u52b1\u989c\u8272",
-        "Params": "['', '']"
+        "Params": "['524C3F', 'FF6500']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "MainLevelUpgradeGoldColor",
         "Note": "\u4e3b\u57ce\u7b49\u7ea7\u5347\u7ea7\u91d1\u5e01\u989c\u8272",
-        "Params": "['', '']"
+        "Params": "['524C3F', 'FF6500']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "ShopId",
         "Note": "\u5546\u5e97Id",
-        "Params": "['\u63d0\u793a']"
+        "Params": "['1434']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "PreviewShopGoodIds",
         "Note": "\u5546\u5e97\u9884\u89c8\u5546\u54c1id\u5217\u8868",
-        "Params": "['', '']"
+        "Params": "['143366', '143367']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "TaskGroupId",
         "Note": "\u4efb\u52a1\u7ec4Id",
-        "Params": "['']"
+        "Params": "['268']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "EventTurnNumberDesc",
         "Note": "\u4e8b\u4ef6\u5b63\u5ea6\u6570\u63cf\u8ff0",
-        "Params": "['\u63d0\u793a']"
+        "Params": "['\u9650\u65f6\uff1a\u9700\u8981%d\u5b63\u5ea6\u5185\u5b8c\u6210']"
     },
     {
-        "Key": null,
+        "Key": "BuildingGoldNotEnough",
         "Note": "\u5efa\u9020\u5efa\u7b51\u91d1\u8d1d\u4e0d\u8db3\u63d0\u793a",
-        "Params": "['']"
+        "Params": "['\u91d1\u8d1d\u4e0d\u8db3']"
     },
     {
-        "Key": null,
+        "Key": "StoryLockText",
         "Note": "\u6545\u4e8b\u672a\u89e3\u9501",
-        "Params": "['']"
+        "Params": "['\u6682\u672a\u89e3\u9501']"
     },
     {
-        "Key": null,
+        "Key": "TechLevelUnlockTips",
         "Note": "\u79d1\u6280\u6811\u7b49\u7ea7\u4e0d\u8db3\u7684\u63d0\u793a",
-        "Params": "['']"
+        "Params": "['\u9700\u8981\u4e3b\u57ce\u8fbe\u5230\u7b49\u7ea7%s\u89e3\u9501\uff01']"
     },
     {
-        "Key": null,
+        "Key": "TechPreLevelUnlockTips",
         "Note": "\u79d1\u6280\u6811\u5173\u952e\u79d1\u6280\u9700\u8981\u5148\u6fc0\u6d3b\u7684\u63d0\u793a",
-        "Params": "['']"
+        "Params": "['\u9700\u8981\u5148\u6fc0\u6d3b\u5de6\u4fa7\u7684\u5173\u952e\u79d1\u6280!']"
     },
     {
-        "Key": null,
+        "Key": "TechPreUnlockTips",
         "Note": "\u79d1\u6280\u6811\u524d\u7f6e\u79d1\u6280\u9700\u8981\u5148\u6fc0\u6d3b\u7684\u63d0\u793a",
-        "Params": "['']"
+        "Params": "['\u8bf7\u5148\u70b9\u4eae\u524d\u7f6e\u79d1\u6280\uff01']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "TechGoldUnlockTips",
         "Note": "\u79d1\u6280\u6811\u91d1\u8d1d\u4e0d\u8db3\u63d0\u793a",
-        "Params": "['']"
+        "Params": "['\u91d1\u8d1d\u4e0d\u591f\u5347\u7ea7\uff01']"
     },
     {
-        "Key": null,
+        "Key": "TechLevelNextUnlockTips",
         "Note": "\u79d1\u6280\u6811\u5173\u952e\u79d1\u6280\u4e0b\u6b21\u89e3\u9501\u63d0\u793a",
-        "Params": "['']"
+        "Params": "['\u5269\u4f59\u79d1\u6280\u5c06\u5728\u4e3b\u57ceLv.%s\u518d\u6b21\u89e3\u9501']"
     },
     {
-        "Key": null,
+        "Key": "TechCanUnlockTips",
         "Note": "\u53ef\u89e3\u9501\u63d0\u793a",
-        "Params": "['']"
+        "Params": "['\u53ef\u89e3\u9501\uff1a%s/%s']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "TechSelectFull",
         "Note": "\u5173\u952e\u79d1\u6280\u5df2\u9009\u6ee1",
-        "Params": "['']"
+        "Params": "['\u5f53\u524d\u9009\u62e9\u5df2\u8fbe\u5230\u6700\u5927\u6570\u91cf\uff01']"
     },
     {
-        "Key": null,
+        "Key": "TechActivePreLevelTechTips",
         "Note": "\u5173\u952e\u79d1\u6280\u524d\u9762\u672a\u6fc0\u6d3b",
-        "Params": "['\u63d0\u793a']"
+        "Params": "['\u8bf7\u5148\u6fc0\u6d3b\u524d\u9762\u7684\u5173\u952e\u79d1\u6280\uff01']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "TechNoSelectFullTips",
         "Note": "\u5173\u952e\u79d1\u6280\u672a\u9009\u6ee1\u79d1\u6280",
-        "Params": "['']"
+        "Params": "['\u8bf7\u4ece\u4e2d\u9009\u62e9%s\u4e2a\u79d1\u6280\uff01']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "RoundStartSellHistogramColor",
         "Note": "\u76f4\u65b9\u56fe\u989c\u8272",
-        "Params": "['', '']"
+        "Params": "['DBCBA0', '74CABD']"
     },
     {
-        "Key": null,
+        "Key": "RoundStartSellPriceColor",
         "Note": "\u5229\u6da6\u989c\u8272",
-        "Params": "['\u63d0\u793a', '']"
+        "Params": "['FFA600', 'FF0015']"
     },
     {
-        "Key": null,
+        "Key": "RoundStarProduceColor",
         "Note": "\u4ea7\u51fa\u989c\u8272",
-        "Params": "['\u63d0\u793a', '']"
+        "Params": "['0F70BC', 'FF0015']"
     },
     {
-        "Key": null,
+        "Key": "SettlementDataContent",
         "Note": "\u7ed3\u7b97\u6570\u636e\u6587\u672c",
-        "Params": "['\u63d0\u793a', '', '', '', '', '']"
+        "Params": "['\u83b7\u5f97\u91d1\u8d1d', '\u4e3b\u57ce\u7b49\u7ea7', '\u5efa\u9020\u5efa\u7b51', '\u57ce\u90a6\u603b\u661f\u7ea7', '\u4e8b\u4ef6\u4e0e\u79d8\u85cf', '\u8d2d\u4e70\u533a\u57df']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "ActivityEntryProgressTips",
         "Note": "\u6d3b\u52a8\u5165\u53e3\u8fdb\u5ea6\u63d0\u793a",
-        "Params": "['', '']"
+        "Params": "['\u8fdb\u5ea6:%s/%s', '%s\u6311\u6218\u4e2d:%s/%s\u5b63\u5ea6']"
     },
     {
-        "Key": null,
+        "Key": "HandbookProgress",
         "Note": "\u56fe\u9274\u754c\u9762\u89e3\u9501\u8fdb\u5ea6\u6587\u672c",
-        "Params": "['']"
+        "Params": "['%s<color=#FFFFFF>/%s</color>']"
     },
     {
-        "Key": null,
+        "Key": "AreaUnlockTips",
         "Note": "\u70b9\u51fb\u672a\u89e3\u9501\u533a\u57df\u7684\u63d0\u793a",
-        "Params": "['\u63d0\u793a']"
+        "Params": "['\u4e3b\u57ce\u63d0\u5347\u5230%s\u7ea7\u65f6\u89e3\u9501\u533a\u57df\uff01']"
     },
     {
-        "Key": null,
+        "Key": "GridUnlockTips",
         "Note": "\u70b9\u51fb\u672a\u89e3\u9501\u683c\u5b50\u7684\u63d0\u793a",
-        "Params": "['']"
+        "Params": "['\u8bf7\u5148\u63a2\u7d22\u8fde\u901a!']"
     },
     {
-        "Key": null,
+        "Key": "CameraPanelDragSizeOffset",
         "Note": "\u76f8\u673a\u62d6\u62fd\u533a\u57df\u5927\u5c0f\u504f\u79fb\uff0c\u53c2\u65701\u662f\u5bbd\u5ea6\uff0c\u53c2\u65702\u662f\u9ad8\u5ea6",
-        "Params": "['', '']"
+        "Params": "['-6', '-2']"
     },
     {
-        "Key": null,
+        "Key": "CameraDistance",
         "Note": "\u6444\u50cf\u673a\u8ddd\u79bb\u5730\u9762\u8ddd\u79bb\uff0c\u8ddd\u79bb\u8d8a\u8fdc\uff0c\u770b\u5230\u7684\u683c\u5b50\u6570\u91cf\u8d8a\u591a",
-        "Params": "['']"
+        "Params": "['14']"
     },
     {
-        "Key": null,
+        "Key": "CameraDistanceRange",
         "Note": "\u6444\u50cf\u673a\u8ddd\u79bb\u5730\u9762\u8ddd\u79bb\u8303\u56f4\uff0c\u53c2\u65701\u4e3a\u6700\u5c0f\u503c\uff0c\u53c2\u65702\u4e3a\u6700\u5927\u503c\uff0c\u53c2\u65703\u4e3a\u52a0\u51cf\u53f7\u6309\u94ae\u4e00\u6b21\u53d8\u5316\u7684\u503c\uff0c\u53c2\u65704\u4e3a\u9f20\u6807\u6eda\u8f6e\u6ed1\u52a8\u7684\u500d\u6570",
-        "Params": "['', '', '', '']"
+        "Params": "['10', '25', '2.5', '10']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "CameraRotationX",
         "Note": "\u6444\u50cf\u673aX\u65b9\u5411\u4e0a\u7684\u65cb\u8f6c",
-        "Params": "['\u63d0\u793a']"
+        "Params": "['45']"
     },
     {
-        "Key": null,
+        "Key": "CityExploredEffect",
         "Note": "\u57ce\u90a6\u89e3\u9501\u7279\u6548",
-        "Params": "['']"
+        "Params": "['Assets/Product/Effect/Prefab/FxSceneEffect/FxSceneRougePrefab/FxRogueSimBuildingLevelUp.prefab']"
     },
     {
-        "Key": null,
+        "Key": "BuildingEffect",
         "Note": "\u5efa\u7b51\u5efa\u9020\u6210\u529f\u7279\u6548",
-        "Params": "['']"
+        "Params": "['Assets/Product/Effect/Prefab/FxSceneEffect/FxSceneRougePrefab/FxRogueSimBuildingFog.prefab']"
     },
     {
-        "Key": null,
+        "Key": "MainLevelUpEffect",
         "Note": "\u4e3b\u57ce\u5347\u7ea7\u7279\u6548",
-        "Params": "['']"
+        "Params": "['Assets/Product/Effect/Prefab/FxSceneEffect/FxSceneRougePrefab/FxRogueSimBuildingLevelUp.prefab']"
     },
     {
-        "Key": null,
+        "Key": "GridCanExploreEffect",
         "Note": "\u683c\u5b50\u53ef\u63a2\u7d22\u7279\u6548",
-        "Params": "['\u63d0\u793a']"
+        "Params": "['Assets/Product/Effect/Prefab/FxSceneEffect/FxSceneRougePrefab/FxRogueSimGridTip.prefab']"
     },
     {
-        "Key": null,
+        "Key": "StageMaxScoreEmpty",
         "Note": "\u5173\u5361\u65e0\u6700\u9ad8\u5206\u6570",
-        "Params": "['\u63d0\u793a']"
+        "Params": "['\u6682\u672a\u901a\u5173']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "StageMaxScore",
         "Note": "\u5173\u5361\u6700\u9ad8\u5206\u6570",
-        "Params": "['']"
+        "Params": "['\u6700\u9ad8\u5206\u6570 %s']"
     },
     {
-        "Key": null,
+        "Key": "MainLevelUpExpAnimTime",
         "Note": "\u4e3b\u57ce\u5347\u7ea7\u7ecf\u9a8c\u589e\u52a0\u52a8\u753b\u65f6\u957f",
-        "Params": "['']"
+        "Params": "['0.5']"
     },
     {
-        "Key": null,
+        "Key": "RoundSettlementConfirmTitle",
         "Note": "\u5b63\u5ea6\u7ed3\u675f\u786e\u8ba4\u6807\u9898",
-        "Params": "['\u63d0\u793a', '\u63d0\u793a', '']"
+        "Params": "['\u63d0\u793a', '\u63d0\u793a', '\u5b63\u5ea6\u7ed3\u675f']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "RoundSettlementConfirmContent",
         "Note": "\u5b63\u5ea6\u7ed3\u675f\u786e\u8ba4\u63cf\u8ff0",
-        "Params": "['\u63d0\u793a', '\u63d0\u793a', '']"
+        "Params": "['\u5f53\u524d\u8fd8\u6709\u5c1a\u672a\u5b8c\u6210\u7684\u63a2\u7d22\u8282\u70b9\uff0c\u662f\u5426\u786e\u8ba4\u7ed3\u675f\u56de\u5408\uff1f', '%s\u672c\u5b63\u5ea6\u7684\u751f\u4ea7\u91cf\u5927\u4e8e\u5269\u4f59\u4ed3\u5e93\u5bb9\u91cf\uff0c\u786e\u5b9a\u8981\u7ed3\u675f\u672c\u5b63\u5ea6\u5417\uff1f', '\u8fd8\u6709\u533a\u57df\u53ef\u4ee5\u8d2d\u4e70\uff0c\u662f\u5426\u786e\u8ba4\u7ed3\u675f\u5f53\u524d\u5b63\u5ea6\uff1f']"
     },
     {
-        "Key": null,
+        "Key": "RoundSettlementExceedLimitTips",
         "Note": "\u8d85\u51fa\u50a8\u5b58\u4e0a\u9650\u63d0\u793a",
-        "Params": "['']"
+        "Params": "['%s\u5e93\u5b58\u5df2\u8fbe\u4e0a\u9650\uff0c\u65e0\u6cd5\u7ee7\u7eed\u751f\u4ea7']"
     },
     {
-        "Key": null,
+        "Key": "AllTargetCompleteTips",
         "Note": "\u6e38\u620f\u5185\u6240\u6709\u76ee\u6807\u5b8c\u6210\u7684\u63d0\u793a",
-        "Params": "['\u63d0\u793a']"
+        "Params": "['\u5df2\u5b8c\u6210\u6240\u6709\u76ee\u6807']"
     },
     {
-        "Key": null,
+        "Key": "Lv",
         "Note": "\u79d1\u6280\u6811\u4e3b\u57ce\u7b49\u7ea7\u663e\u793a",
-        "Params": "['\u63d0\u793a']"
+        "Params": "['Lv.%s']"
     },
     {
-        "Key": null,
+        "Key": "PropBuffCumulativeMarkupTip",
         "Note": "buff\u7d2f\u8ba1\u52a0\u6210\u63d0\u793a\u4fe1\u606f",
-        "Params": "['', '', '\u63d0', '']"
+        "Params": "['(\u5df2\u52a0\u6210%d%%)', '(\u5df2\u52a0\u6210%d)', '\u5df2\u751f\u6548', '\u672a\u751f\u6548']"
     },
     {
-        "Key": null,
+        "Key": "CityTaskSuccessContent",
         "Note": "\u57ce\u90a6\u4efb\u52a1\u5b8c\u6210\u63cf\u8ff0",
-        "Params": "['']"
+        "Params": "['%s \u4efb\u52a1\u5df2\u5b8c\u6210\uff0c\u5b8c\u6210\u5168\u90e8\u4efb\u52a1\u540e\u53ef\u524d\u5f80\u57ce\u90a6\u5347\u7ea7']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "CityTaskSuccessAnimTime",
         "Note": "\u4efb\u52a1\u5b8c\u6210\u52a8\u753b\u65f6\u957f",
-        "Params": "['']"
+        "Params": "['0.5']"
     },
     {
-        "Key": null,
+        "Key": "ShopRedPointCoinNumber",
         "Note": "\u5546\u5e97\u84dd\u70b9\u4ee3\u5e01\u9608\u503c",
-        "Params": "['']"
+        "Params": "['150']"
     },
     {
-        "Key": null,
+        "Key": "ShopRedPointTimerId",
         "Note": "\u5546\u5e97\u84dd\u70b9\u7684\u663e\u793a\u65f6\u95f4",
-        "Params": "['\u63d0\u793a']"
+        "Params": "['33701']"
     },
     {
-        "Key": null,
+        "Key": "ExploreFail",
         "Note": "\u63a2\u7d22\u5b8c\u6210\u672a\u4e0b\u53d1\u5956\u52b1",
-        "Params": "['\u63d0\u793a']"
+        "Params": "['\u672a\u77e5\u9519\u8bef\uff0c\u63a2\u7d22\u5931\u8d25\uff01']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "CameraMoveSpeed",
         "Note": "\u955c\u5934\u79fb\u52a8\u7684\u901f\u5ea6",
-        "Params": "['\u63d0\u793a']"
+        "Params": "['30']"
     },
     {
-        "Key": null,
+        "Key": "CameraMoveMaxTime",
         "Note": "\u955c\u5934\u79fb\u52a8\u7684\u6700\u5927\u65f6\u95f4(\u79d2)",
-        "Params": "['\u63d0\u793a']"
+        "Params": "['0.6']"
     },
     {
-        "Key": null,
+        "Key": "CameraMoveSpeedOverlook",
         "Note": "\u533a\u57df\u89e3\u9501\uff0c\u955c\u5934\u8fdc\u773a\u60c5\u51b5\u4e0b\uff0c\u79fb\u52a8\u7684\u901f\u5ea6",
-        "Params": "['\u63d0\u793a']"
+        "Params": "['30']"
     },
     {
-        "Key": null,
+        "Key": "CameraMoveMaxTimeOverlook",
         "Note": "\u533a\u57df\u89e3\u9501\uff0c\u955c\u5934\u8fdc\u773a\u60c5\u51b5\u4e0b\uff0c\u79fb\u52a8\u7684\u6700\u5927\u65f6\u95f4(\u79d2)",
-        "Params": "['']"
+        "Params": "['0.5']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "CameraFocusGridOffsetXWan",
         "Note": "\u805a\u7126\u683c\u5b50\u5728X\u65b9\u5411\u7684\u504f\u79fb(\u6570\u503c\u4e5810000\u914d\u7f6e)\uff0c\u683c\u5b50\u5f80\u5c4f\u5e55\u4e2d\u5fc3\u70b9\u5de6\u8fb9\u504f\u79fb\u662f\u8d1f\u6570\uff0c\u53f3\u8fb9\u662f\u6b63\u6570",
-        "Params": "['']"
+        "Params": "['-4000']"
     },
     {
-        "Key": null,
+        "Key": "ActivityNotOpenTip",
         "Note": "\u6d3b\u52a8\u672a\u5f00\u542f\u63d0\u793a",
-        "Params": "['\u63d0\u793a']"
+        "Params": "['\u4e0d\u5728\u6d3b\u52a8\u65f6\u95f4\u5185']"
     },
     {
-        "Key": null,
+        "Key": "PopupBuildIcon",
         "Note": "\u5efa\u7b51\u5f39\u6846\u56fe\u7247",
-        "Params": "['\u63d0\u793a']"
+        "Params": "['Assets/Product/Texture/Atlas/UiRogueSim/UiRogueSimBuild.png']"
     },
     {
-        "Key": null,
+        "Key": "PopupBuildTitle",
         "Note": "\u5efa\u7b51\u5f39\u6846\u6807\u9898",
-        "Params": "['\u63d0\u793a']"
+        "Params": "['\u533a \u57df \u5efa \u9020']"
     },
     {
-        "Key": null,
+        "Key": "PopupBuildTips",
         "Note": "\u5efa\u7b51\u5f39\u6846\u63d0\u793a",
-        "Params": "['\u63d0\u793a']"
+        "Params": "['\u6d88\u8017\u56fe\u7eb8\u4e0e\u91d1\u8d1d\u53ef\u5728\u5f53\u524d\u533a\u57df\u8fdb\u884c\u5efa\u9020']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "MainEffectProduce",
         "Note": "\u4e3b\u57ce\u5347\u7ea7\u5c55\u793a\u6548\u679c",
-        "Params": "['', '\u63d0']"
+        "Params": "['\u751f\u4ea7\u529b', 'Assets/Product/Texture/Atlas/UiRogueSim/UiRogueSimProduceIcon01.png']"
     },
     {
-        "Key": null,
+        "Key": "MainEffectArea",
         "Note": "\u4e3b\u57ce\u5347\u7ea7\u5c55\u793a\u6548\u679c",
-        "Params": "['', '']"
+        "Params": "['\u53ef\u8d2d\u5c9b\u5c7f', 'Assets/Product/Texture/Atlas/UiRogueSim/UiRogueSimPurchaseArea.png']"
     },
     {
-        "Key": null,
+        "Key": "MainEffectBuild",
         "Note": "\u4e3b\u57ce\u5347\u7ea7\u5c55\u793a\u6548\u679c",
-        "Params": "['', '']"
+        "Params": "['\u5efa\u9020\u533a\u57df', 'Assets/Product/Texture/Atlas/UiRogueSim/UiRogueSimProduceConstruction.png']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "PopulationTextColor",
         "Note": "\u751f\u4ea7\u529b\u6587\u672c\u989c\u8272",
-        "Params": "['\u63d0\u793a', '']"
+        "Params": "['0F70BC', 'FF0015']"
     },
     {
-        "Key": null,
+        "Key": "RoundEndRemainPopulationTips",
         "Note": "\u56de\u5408\u7ed3\u675f\u5c1a\u4f59\u751f\u4ea7\u529b\u63d0\u793a",
-        "Params": "['\u63d0\u793a']"
+        "Params": "['\u8fd8\u6709\u751f\u4ea7\u529b\u672a\u5206\u914d\u5b8c']"
     },
     {
-        "Key": null,
+        "Key": "RoundEndPopulationOverFlowTips",
         "Note": "\u56de\u5408\u7ed3\u675f\u751f\u4ea7\u529b\u6ea2\u51fa\u63d0\u793a",
-        "Params": "['']"
+        "Params": "['\u751f\u4ea7\u529b\u5206\u914d\u8d85\u51fa\u4e0a\u9650\uff0c\u8bf7\u91cd\u65b0\u8fdb\u884c\u5206\u914d\uff01']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "RoundEndMainCanLevelUpTips",
         "Note": "\u56de\u5408\u7ed3\u675f\u4e3b\u57ce\u53ef\u5347\u7ea7\u63d0\u793a",
-        "Params": "['']"
+        "Params": "['\u4e3b\u57ce\u53ef\u5347\u7ea7\uff0c\u8bf7\u524d\u5f80\u5f85\u529e\u4e8b\u9879\u5904\u7406\uff01']"
     },
     {
-        "Key": null,
+        "Key": "RoundEndPendingEventTips",
         "Note": "\u56de\u5408\u7ed3\u675f\u4ee3\u529e\u4e8b\u4ef6\u63d0\u793a",
-        "Params": "['']"
+        "Params": "['\u5f85\u529e\u4e8b\u9879\u4e2d\u6709\u4e8b\u4ef6\u5c1a\u672a\u5904\u7406\uff01']"
     },
     {
-        "Key": null,
+        "Key": "RoundEndEventGambleRewardTips",
         "Note": "\u56de\u5408\u7ed3\u675f\u4e8b\u4ef6\u6295\u673a\u63d0\u793a",
-        "Params": "['']"
+        "Params": "['\u6295\u8d44\u5956\u52b1\u5c1a\u672a\u9886\u53d6\uff0c\u8bf7\u524d\u5f80\u5f85\u529e\u4e8b\u9879\u5904\u7406\uff01']"
     },
     {
-        "Key": null,
+        "Key": "RoundEndCityCanLevelUpTips",
         "Note": "\u56de\u5408\u7ed3\u675f\u57ce\u90a6\u53ef\u5347\u7ea7\u63d0\u793a",
-        "Params": "['\u63d0\u793a']"
+        "Params": "['\u57ce\u90a6\u53ef\u5347\u7ea7\uff0c\u8bf7\u901a\u8fc7\u57ce\u90a6\u59d4\u6258\u524d\u5f80\u5904\u7406\uff01']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "BuildingBluePrintNotSelectTips",
         "Note": "\u81ea\u5efa\u5efa\u7b51\u672a\u9009\u62e9\u63d0\u793a",
-        "Params": "['']"
+        "Params": "['\u8bf7\u9009\u62e9\u5efa\u7b51']"
     },
     {
-        "Key": null,
+        "Key": "AutoSellNoProfitTips",
         "Note": "\u81ea\u52a8\u51fa\u552e\u6ca1\u6709\u5229\u6da6\u63d0\u793a",
-        "Params": "['']"
+        "Params": "['\u8bf7\u8bbe\u7f6e\u51fa\u552e\u6570\u91cf']"
     },
     {
-        "Key": null,
+        "Key": "CityLevelCanLevelUpTips",
         "Note": "\u57ce\u90a6\u4e0d\u53ef\u5347\u7ea7\u63d0\u793a",
-        "Params": "['', '', '']"
+        "Params": "['\u57ce\u90a6\u672a\u8d2d\u4e70', '\u5df2\u8fbe\u6700\u9ad8\u7b49\u7ea7', '\u57ce\u90a6\u4efb\u52a1\u672a\u5b8c\u6210']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "TemporaryBagRewardDropIcon",
         "Note": "\u4e34\u65f6\u80cc\u5305\u5956\u52b1\u6389\u843d\u56fe\u6807",
-        "Params": "['']"
+        "Params": "['Assets/Product/Texture/Image/IconTools/IconRogueSimTwo08.png']"
     },
     {
-        "Key": null,
+        "Key": "TemporaryBagRewardTips",
         "Note": "\u4e34\u65f6\u80cc\u5305\u5956\u52b1\u63d0\u793a",
-        "Params": "['', '\u63d0\u793a']"
+        "Params": "['\u4e34\u65f6\u80cc\u5305\u4e3a\u7a7a', '%s\u4ed3\u5e93\u5df2\u6ee1']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "NoCityTip",
         "Note": "\u6ca1\u6709\u57ce\u90a6\u63d0\u793a",
-        "Params": "['']"
+        "Params": "['\u6682\u672a\u8d2d\u4e70\u57ce\u90a6']"
     },
     {
-        "Key": null,
+        "Key": "NewsShowTime",
         "Note": "\u4f20\u95fb\u663e\u793a\u65f6\u957f\uff08\u5355\u4f4d\uff1a\u6beb\u79d2\uff09",
-        "Params": "['\u63d0\u793a']"
+        "Params": "['10000']"
     },
     {
-        "Key": null,
+        "Key": "GambleLoading",
         "Note": "\u914d\u7f6eloading\u6587\u672c",
-        "Params": "['']"
+        "Params": "['\u6b63\u5728\u68c0\u67e5\u6536\u76ca\u3002\u3002\u3002']"
     },
     {
-        "Key": null,
+        "Key": "GambleResultWin",
         "Note": "\u500d\u7387\uff1e10000\u65f6\u7684\u6587\u672c",
-        "Params": "['\u63d0\u793a']"
+        "Params": "['\u5e02\u573a\u5927\u6da8']"
     },
     {
-        "Key": null,
+        "Key": "GambleResultLose",
         "Note": "\u500d\u7387\uff1c10000\u65f6\u7684\u6587\u672c",
-        "Params": "['']"
+        "Params": "['\u5e02\u573a\u5927\u964d']"
     },
     {
-        "Key": null,
+        "Key": "GambleImgWin",
         "Note": "\u4e0a\u6da8\u65f6\u7684\u914d\u56fe",
-        "Params": "['\u63d0\u793a']"
+        "Params": "['Assets/Product/Texture/Image/UiRogueSim/UiRogueSimIconZy13.png']"
     },
     {
-        "Key": null,
+        "Key": "GambleDescWin",
         "Note": "\u4e0a\u6da8\u65f6\u7684\u6587\u672c",
-        "Params": "['\u63d0\u793a']"
+        "Params": "['\u5e02\u573a\u5927\u6da8']"
     },
     {
-        "Key": null,
+        "Key": "GambleImgLose",
         "Note": "\u4e0b\u8dcc\u65f6\u7684\u914d\u56fe",
-        "Params": "['']"
+        "Params": "['Assets/Product/Texture/Image/UiRogueSim/UiRogueSimIconZy14.png']"
     },
     {
-        "Key": null,
+        "Key": "GambleDescLose",
         "Note": "\u4e0b\u8dcc\u65f6\u7684\u6587\u672c",
-        "Params": "['']"
+        "Params": "['\u5e02\u573a\u5927\u964d']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "GambleGainTips",
         "Note": "\u6536\u76ca\u6bd4\u4f8b",
-        "Params": "['\u63d0\u793a']"
+        "Params": "['\u6295\u8d44\u6536\u76ca{0}%']"
     },
     {
-        "Key": null,
+        "Key": "GambleEventOptionsCost",
         "Note": "\u8d4c\u535a\u4e8b\u4ef6\u9009\u9879\u6d88\u8017",
-        "Params": "['']"
+        "Params": "['{0}({1}%\u5f53\u524d\u8d27\u5e01)']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "GambleNotReady",
         "Note": null,
-        "Params": "['\u63d0\u793a']"
+        "Params": "['\u4e8b\u4ef6\u6295\u673a\u672a\u5230\u56de\u5408\u6570']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "GridChangeAnim",
         "Note": "\u683c\u5b50\u53d8\u5316\u7684\u52a8\u753b\u3002\u53c2\u65701|3|5...\u662f\u9ad8\u5ea6\uff0c\u53c2\u65702|4|6...\u662f\u65f6\u95f4",
-        "Params": "['', '', '\u63d0\u793a', '\u63d0\u793a', '', '']"
+        "Params": "['-0.2', '0.2', '0.6', '0.6', '0', '0.4']"
     },
     {
-        "Key": null,
+        "Key": "GridChangeTimeInterval",
         "Note": "\u683c\u5b50\u9519\u5f00\u64ad\u653e\u52a8\u753b\u65f6\u95f4",
-        "Params": "['']"
+        "Params": "['0.2']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "BuildingQualityIcon",
         "Note": "\u5efa\u7b51\u54c1\u8d28\u56fe\u6807",
-        "Params": "['', '', '']"
+        "Params": "['Assets/Product/Texture/Image/UiRogueSim/UiRogueSimIconJzbb01.png', 'Assets/Product/Texture/Image/UiRogueSim/UiRogueSimIconJzbb02.png', 'Assets/Product/Texture/Image/UiRogueSim/UiRogueSimIconJzbb03.png']"
     },
     {
-        "Key": null,
+        "Key": "ResourceNotEnoughTip",
         "Note": "\u8d44\u6e90\u4e0d\u591f\u63d0\u793a",
-        "Params": "['']"
+        "Params": "['%s\u4e0d\u8db3']"
     },
     {
-        "Key": null,
+        "Key": "BattleEarlySettlementTitle",
         "Note": "\u63d0\u524d\u7ed3\u7b97\u6807\u9898",
         "Params": "['\u63d0\u793a', '\u63d0\u793a']"
     },
     {
-        "Key": null,
+        "Key": "BattleEarlySettlementContent",
         "Note": "\u63d0\u524d\u7ed3\u7b97\u5185\u5bb9",
-        "Params": "['', '\u63d0\u793a']"
+        "Params": "['\u5f53\u524d\u6311\u6218\u76ee\u6807\u5df2\u5168\u90e8\u8fbe\u6210\uff0c\u662f\u5426\u63d0\u524d\u8fdb\u884c\u5173\u5361\u7ed3\u7b97', '\u662f\u5426\u653e\u5f03\u6e38\u620f\u5e76\u8fdb\u5165\u7ed3\u7b97']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "BattleEarlySettlementBtnName",
         "Note": "\u63d0\u524d\u7ed3\u7b97\u6309\u94ae\u6587\u672c",
-        "Params": "['', '']"
+        "Params": "['\u63d0\u524d\u7ed3\u7b97', '\u653e\u5f03\u6e38\u620f']"
     },
     {
-        "Key": null,
+        "Key": "StageStarConditionTips",
         "Note": "\u5173\u5361\u4e09\u661f\u6761\u4ef6\u63d0\u793a",
-        "Params": "['']"
+        "Params": "['\u4e09\u661f\u6761\u4ef6\u672a\u5b8c\u6210']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "CommodityAttributeType",
         "Note": "\u8d27\u7269\u5c5e\u6027\u7c7b\u578b",
-        "Params": "['', '', '', '\u63d0\u793a', '\u63d0\u793a', '', '']"
+        "Params": "['1002', '1003', '1005', '1006', '2003', '2005', '2006']"
     },
     {
-        "Key": null,
+        "Key": "CommodityAttributeScore",
         "Note": "\u8d27\u7269\u5c5e\u6027\u8bc4\u5206",
-        "Params": "['', '', '', '', '', '', '']"
+        "Params": "['100', '10', '5', '1.5', '10', '5', '1.5']"
     },
     {
-        "Key": null,
+        "Key": "CommodityFluctuationScore",
         "Note": "\u8d27\u7269\u6ce2\u52a8\u8bc4\u5206",
-        "Params": "['']"
+        "Params": "['10']"
     },
     {
-        "Key": null,
+        "Key": "CommodityScoreInterval1",
         "Note": "\u8d27\u7269\u8bc4\u5206\u533a\u95f4",
-        "Params": "['', '', '']"
+        "Params": "['-1000', '0', '00C314']"
     },
     {
-        "Key": null,
+        "Key": "CommodityScoreInterval2",
         "Note": "\u8d27\u7269\u8bc4\u5206\u533a\u95f4",
-        "Params": "['', '', '']"
+        "Params": "['0', '1000', '808080']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "CommodityScoreInterval3",
         "Note": "\u8d27\u7269\u8bc4\u5206\u533a\u95f4",
-        "Params": "['', '', '']"
+        "Params": "['1000', '-1', 'FF0000']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "AreaDefaultIcon",
         "Note": "\u5bfc\u822a\u529f\u80fd\u91cc\u533a\u57df\u9ed8\u8ba4\u56fe\u6807",
-        "Params": "['\u63d0\u793a']"
+        "Params": "['Assets/Product/Texture/Atlas/UiRogueSim/UiRogueSimBuild.png']"
     },
     {
-        "Key": null,
+        "Key": "DelayOpenNextTipsTime",
         "Note": "\u5ef6\u8fdf\u6253\u5f00\u8fdb\u5165\u4e0b\u4e00\u5b63\u5ea6\u7684\u63d0\u793a\u65f6\u95f4\uff0c\u914d\u7f6e\u5355\u4f4d\u4e3a\u6beb\u79d2",
-        "Params": "['']"
+        "Params": "['1500']"
     },
     {
-        "Key": null,
+        "Key": "RollingNumberTime",
         "Note": "\u6eda\u52a8\u6570\u5b57\u65f6\u957f\uff08ms\uff09",
-        "Params": "['']"
+        "Params": "['500']"
     },
     {
-        "Key": null,
+        "Key": "LandBubbleCommonBgIcon",
         "Note": "\u754c\u9762\u5de6\u4fa7\u5f39\u6846\u901a\u7528\u80cc\u666f\u56fe\u6807",
-        "Params": "['']"
+        "Params": "['Assets/Product/Texture/Image/UiRogueSim/UiRogueSimTu.png']"
     },
     {
-        "Key": null,
+        "Key": "TemporaryBagParticleInterval1",
         "Note": "\u4e34\u65f6\u80cc\u5305\u7c92\u5b50\u533a\u95f4\uff08\u8d27\u72691\uff09",
-        "Params": "['', '\u63d0\u793a', '', '', '', '', '', '\u63d0\u793a']"
+        "Params": "['0|10|1', '10|50|5', '50|100|8', '100|200|12', '200|300|15', '300|400|20', '400|500|25', '500|-1|30']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "TemporaryBagParticleInterval2",
         "Note": "\u4e34\u65f6\u80cc\u5305\u7c92\u5b50\u533a\u95f4\uff08\u8d27\u72692\uff09",
-        "Params": "['', '\u63d0\u793a', '', '', '', '']"
+        "Params": "['0|25|1', '25|100|8', '100|250|12', '250|400|20', '400|600|25', '600|-1|30']"
     },
     {
-        "Key": null,
+        "Key": "TemporaryBagParticleInterval3",
         "Note": "\u4e34\u65f6\u80cc\u5305\u7c92\u5b50\u533a\u95f4\uff08\u8d27\u72693\uff09",
-        "Params": "['\u63d0\u793a', '\u63d0', '\u63d0\u793a', '', '\u63d0\u793a', '', '', '']"
+        "Params": "['0|2|1', '2|30|4', '30|50|8', '50|80|10', '80|150|15', '150|200|18', '200|300|25', '300|-1|30']"
     },
     {
-        "Key": null,
+        "Key": "TemporaryBagParticleTotalLimit",
         "Note": "\u4e34\u65f6\u80cc\u5305\u7c92\u5b50\u603b\u4e0a\u9650",
-        "Params": "['']"
+        "Params": "['100']"
     },
     {
-        "Key": null,
+        "Key": "TemporaryBagParticleDuration",
         "Note": "\u4e34\u65f6\u80cc\u5305\u7c92\u5b50\u65f6\u957f\uff08ms\uff09",
-        "Params": "['']"
+        "Params": "['2500']"
     },
     {
-        "Key": null,
+        "Key": "LandformIdsCommodity1",
         "Note": "\u8d27\u72691\u5bf9\u5e94\u7684\u5730\u8c8cId\u5217\u8868",
-        "Params": "['', '\u63d0\u793a', '']"
+        "Params": "['3341', '3342', '3343']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "LandformIdsCommodity2",
         "Note": "\u8d27\u72692\u5bf9\u5e94\u7684\u5730\u8c8cId\u5217\u8868",
-        "Params": "['', '', '\u63d0\u793a']"
+        "Params": "['3351', '3352', '3353']"
     },
     {
-        "Key": null,
+        "Key": "LandformIdsCommodity3",
         "Note": "\u8d27\u72693\u5bf9\u5e94\u7684\u5730\u8c8cId\u5217\u8868",
-        "Params": "['', '', '']"
+        "Params": "['3361', '3362', '3363']"
     },
     {
-        "Key": "\u63d0\u793a",
+        "Key": "CommodityFullTitle",
         "Note": "\u8d27\u7269\u5df2\u6ee1\u6807\u9898",
         "Params": "['\u63d0\u793a']"
     },
     {
-        "Key": null,
+        "Key": "CommodityFullContent",
         "Note": "\u8d27\u7269\u5df2\u6ee1\u5185\u5bb9",
-        "Params": "['']"
+        "Params": "['%s\u4ed3\u5e93\u5df2\u6ee1\uff0c\u662f\u5426\u7ee7\u7eed\u63a2\u7d22\u3002']"
     }
 ]

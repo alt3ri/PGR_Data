@@ -10,7 +10,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: ''}"
+        "Params": "{1: 'Assets/Product/Texture/Image/BgStory/BgStory1026.jpg'}"
     },
     {
         "Id": 2,
@@ -23,7 +23,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '', 2: ''}"
+        "Params": "{1: '1', 2: '5029'}"
     },
     {
         "Id": 3,
@@ -32,11 +32,11 @@
         "Type": 101,
         "IsBlock": null,
         "IsEnd": null,
-        "BeginAnim": null,
+        "BeginAnim": "AniZhuanchangEnd",
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '', 4: ''}"
+        "Params": "{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront22.png', 4: '5'}"
     },
     {
         "Id": 4,
@@ -49,7 +49,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '', 2: '', 3: '', 4: '', 6: '', 7: '', 9: ''}"
+        "Params": "{1: '1', 2: '<size=60>\u544a\u522b\u4e86\u5979\u6700\u4e3a\u91cd\u8981\u7684\u4eba\uff0c</size>', 3: '-350', 4: '50', 6: '1', 7: '1', 9: '3'}"
     },
     {
         "Id": 5,
@@ -59,10 +59,10 @@
         "IsBlock": 1.0,
         "IsEnd": null,
         "BeginAnim": null,
-        "EndAnim": null,
+        "EndAnim": "AniZhuanchangBegin",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '', 2: '', 3: '', 4: '', 6: '', 7: '', 9: ''}"
+        "Params": "{1: '2', 2: '<size=60>\u9732\u897f\u4e9a\u8e0f\u8fdb\u4e86\u6f2b\u957f\u7684\u7262\u7b3c\u8d77\u70b9\u3002</size>', 3: '-350', 4: '-50', 6: '1', 7: '1', 9: '3'}"
     },
     {
         "Id": 6,
@@ -71,11 +71,11 @@
         "Type": 301,
         "IsBlock": null,
         "IsEnd": null,
-        "BeginAnim": null,
+        "BeginAnim": "DialogDisable",
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: ''}"
+        "Params": "{3: '\u544a\u522b\u4e86\u5979\u6700\u4e3a\u91cd\u8981\u7684\u4eba\uff0c\u9732\u897f\u4e9a\u8e0f\u8fdb\u4e86\u6f2b\u957f\u7684\u7262\u7b3c\u8d77\u70b9\u3002'}"
     },
     {
         "Id": 7,
@@ -101,7 +101,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '', 4: '', 5: ''}"
+        "Params": "{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront22.png', 4: '5', 5: '1'}"
     },
     {
         "Id": 9,
@@ -114,7 +114,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '', 2: ''}"
+        "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '2'}"
     },
     {
         "Id": 10,
@@ -127,7 +127,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '', 2: ''}"
+        "Params": "{1: '2', 2: '4278'}"
     },
     {
         "Id": 11,
@@ -136,11 +136,11 @@
         "Type": 105,
         "IsBlock": null,
         "IsEnd": null,
-        "BeginAnim": null,
+        "BeginAnim": "AniZhuanchangEnd",
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: ''}"
+        "Params": "{1: 'Assets/Product/Ui/Spine/2-15Spine/ActivityLuxiya/UimovieActivityLuxiya.prefab'}"
     },
     {
         "Id": 12,
@@ -149,11 +149,11 @@
         "Type": 301,
         "IsBlock": null,
         "IsEnd": null,
-        "BeginAnim": null,
+        "BeginAnim": "DialogEnable",
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: ''}"
+        "Params": "{3: '\u4ece\u201c\u672a\u6765\u7684\u4fe1\u606f\u201d\u4e2d\uff0c\u5979\u7aa5\u89c1\u8fc7\u81ea\u5df1\u7ad9\u5728\u88c2\u9699\u524d\u7684\u8eab\u5f71\uff0c\u5979\u77e5\u9053\u5728\u90a39\u4e2a\u672a\u6765\u4e2d\uff0c\u8fd9\u662f\u4e00\u6761\u635f\u5931\u6700\u5c0f\u7684\u8def\u3002'}"
     },
     {
         "Id": 13,
@@ -163,10 +163,10 @@
         "IsBlock": null,
         "IsEnd": null,
         "BeginAnim": null,
-        "EndAnim": null,
+        "EndAnim": "AniZhuanchangBegin",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: ''}"
+        "Params": "{3: '\u5373\u4f7f\u5982\u6b64\uff0c\u8fd9\u6761\u8def\u7684\u7ec8\u70b9\u4f9d\u7136\u5b58\u5728\u5206\u6b67\u3002'}"
     },
     {
         "Id": 14,
@@ -179,7 +179,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: ''}"
+        "Params": "{1: 'DialogDisable'}"
     },
     {
         "Id": 15,
@@ -205,7 +205,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: ''}"
+        "Params": "{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}"
     },
     {
         "Id": 17,
@@ -218,7 +218,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '', 2: ''}"
+        "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '3'}"
     },
     {
         "Id": 18,
@@ -231,7 +231,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '', 2: ''}"
+        "Params": "{1: '2', 2: '4792'}"
     },
     {
         "Id": 19,
@@ -244,7 +244,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: ''}"
+        "Params": "{1: '1'}"
     },
     {
         "Id": 20,
@@ -253,11 +253,11 @@
         "Type": 101,
         "IsBlock": null,
         "IsEnd": null,
-        "BeginAnim": null,
+        "BeginAnim": "AniZhuanchangEnd",
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: ''}"
+        "Params": "{1: 'Assets/Product/Texture/Image/BgCg/Cg1701_1.jpg'}"
     },
     {
         "Id": 21,
@@ -266,11 +266,11 @@
         "Type": 301,
         "IsBlock": 1.0,
         "IsEnd": null,
-        "BeginAnim": null,
-        "EndAnim": null,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "AniZhuanchangBegin",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: ''}"
+        "Params": "{3: '\u5979\u770b\u89c1\u8fc7\u6218\u6597\u80dc\u5229\u540e\uff0c\u4e24\u4eba\u5e26\u7740\u6838\u5fc3\u56de\u5230\u6b63\u786e\u65f6\u4ee3\u548c\u5927\u5bb6\u56e2\u805a\u7684\u6837\u5b50\u3002'}"
     },
     {
         "Id": 22,
@@ -283,7 +283,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": 400.0,
-        "Params": "{1: ''}"
+        "Params": "{1: 'DialogDisable'}"
     },
     {
         "Id": 23,
@@ -296,7 +296,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: ''}"
+        "Params": "{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}"
     },
     {
         "Id": 24,
@@ -309,7 +309,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '', 2: ''}"
+        "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '3'}"
     },
     {
         "Id": 25,
@@ -322,7 +322,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '', 2: ''}"
+        "Params": "{1: '2', 2: '4792'}"
     },
     {
         "Id": 26,
@@ -331,11 +331,11 @@
         "Type": 101,
         "IsBlock": null,
         "IsEnd": null,
-        "BeginAnim": null,
+        "BeginAnim": "AniZhuanchangEnd",
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: ''}"
+        "Params": "{1: 'Assets/Product/Texture/Image/BgCg/Cg109_1.jpg'}"
     },
     {
         "Id": 27,
@@ -344,11 +344,11 @@
         "Type": 301,
         "IsBlock": 1.0,
         "IsEnd": null,
-        "BeginAnim": null,
-        "EndAnim": null,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "AniZhuanchangBegin",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: ''}"
+        "Params": "{3: '\u4e5f\u770b\u5230\u8fc7\u5979\u672a\u80fd\u5b88\u4f4f\u8fd9\u4e09\u5341\u4f59\u5e74\uff0c\u5bfc\u81f4\u4e16\u754c\u4e00\u7247\u6df7\u4e71\u7684\u6837\u5b50\u3002'}"
     },
     {
         "Id": 28,
@@ -361,7 +361,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": 400.0,
-        "Params": "{1: ''}"
+        "Params": "{1: 'DialogDisable'}"
     },
     {
         "Id": 29,
@@ -374,7 +374,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: ''}"
+        "Params": "{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}"
     },
     {
         "Id": 30,
@@ -400,7 +400,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '', 2: ''}"
+        "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab', 2: '3'}"
     },
     {
         "Id": 32,
@@ -413,7 +413,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '', 2: ''}"
+        "Params": "{1: '0.8', 2: '999'}"
     },
     {
         "Id": 33,
@@ -422,11 +422,11 @@
         "Type": 101,
         "IsBlock": null,
         "IsEnd": null,
-        "BeginAnim": null,
+        "BeginAnim": "AniZhuanchangEnd",
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: ''}"
+        "Params": "{1: 'Assets/Product/Texture/Image/BgStory/BgStory1012.jpg'}"
     },
     {
         "Id": 34,
@@ -435,11 +435,11 @@
         "Type": 301,
         "IsBlock": null,
         "IsEnd": null,
-        "BeginAnim": null,
-        "EndAnim": null,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "AniZhuanchangBegin",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: ''}"
+        "Params": "{3: '\u66f4\u591a\u7684\u2026\u2026\u662f\u8fd4\u56de\u5f02\u805a\u5854\u540e\uff0c\u548c\u51af\u00b7\u5185\u53e4\u7279\u53cd\u590d\u6218\u6597\u5e76\u88ab\u4ed6\u51fb\u8d25\u7684\u6837\u5b50\u3002'}"
     },
     {
         "Id": 35,
@@ -452,7 +452,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: ''}"
+        "Params": "{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab'}"
     },
     {
         "Id": 36,
@@ -478,7 +478,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: ''}"
+        "Params": "{1: 'Assets/Product/Ui/Spine/2-15Spine/ActivityLuxiya/UimovieActivityLuxiya.prefab'}"
     },
     {
         "Id": 38,
@@ -491,7 +491,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: ''}"
+        "Params": "{1: 'Assets/Product/Texture/Image/BgStory/BgStory1026.jpg'}"
     },
     {
         "Id": 39,
@@ -500,11 +500,11 @@
         "Type": 301,
         "IsBlock": null,
         "IsEnd": null,
-        "BeginAnim": null,
+        "BeginAnim": "AniZhuanchangEnd",
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '', 3: ''}"
+        "Params": "{2: '\u9732\u897f\u4e9a', 3: '\u2026\u2026\u2026\u2026'}"
     },
     {
         "Id": 40,
@@ -517,7 +517,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: ''}"
+        "Params": "{3: '\u2014\u2014\u6307\u6325\u5b98\u5e73\u5b89\u56de\u53bb\u4e86\u5417\uff1f'}"
     },
     {
         "Id": 41,
@@ -530,7 +530,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: ''}"
+        "Params": "{3: '\u2014\u2014\u5f97\u5230\u6cbb\u7597\u4e86\u5417\uff1f'}"
     },
     {
         "Id": 42,
@@ -543,7 +543,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: ''}"
+        "Params": "{3: '\u2014\u2014\u5728\u6ca1\u6709\u67ef\u857e\u591a\u5c14\u963b\u6320\u7684\u60c5\u51b5\u4e0b\u548c\u4e3d\u8299\u8fd8\u6709\u91cc\u6c47\u5408\u4e86\u5417\uff1f'}"
     },
     {
         "Id": 43,
@@ -556,7 +556,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: ''}"
+        "Params": "{3: '\u8fd9\u4e9b\u95ee\u9898\u5979\u90fd\u5f97\u4e0d\u5230\u7b54\u6848\uff0c\u800c\u8fd9\u4efd\u5fd0\u5fd1\u8fd8\u5c06\u6301\u7eed\u5f88\u4e45\u5f88\u4e45\u3002'}"
     },
     {
         "Id": 44,
@@ -569,7 +569,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: ''}"
+        "Params": "{3: '\u5982\u679c\u5728\u8fd9\u6f2b\u957f\u7684\u4e09\u5341\u4f59\u5e74\u4e2d\uff0c\u5979\u6ca1\u80fd\u575a\u6301\u4e0b\u53bb\uff0c\u8f9c\u8d1f\u4e86\u6240\u6709\u4eba\u7684\u671f\u5f85\uff0c\u53c8\u8be5\u600e\u4e48\u9762\u5bf9\u81ea\u5df1\uff1f'}"
     },
     {
         "Id": 45,
@@ -582,7 +582,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: ''}"
+        "Params": "{3: '\u53ef\u8fd8\u6709\u4ec0\u4e48\u529e\u6cd5\uff1f\u5982\u679c\u6ca1\u6709\u4eba\u6765\u590d\u539f\u88ab\u837c\u6bd2\u7684\u8fc7\u53bb\uff0c\u90a3\u4e2a\u4eba\u6240\u80fd\u5230\u8fbe\u7684\u201c\u73b0\u5728\u201d\u4e5f\u4f1a\u8361\u7136\u65e0\u5b58\u3002'}"
     },
     {
         "Id": 46,
@@ -595,7 +595,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: ''}"
+        "Params": "{3: '\u2014\u2014\u5c31\u5f53\u662f\u653e\u624b\u4e00\u640f\u5427\u3002'}"
     },
     {
         "Id": 47,
@@ -608,7 +608,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: ''}"
+        "Params": "{3: '\u5979\u548c\u6307\u6325\u5b98\u5df2\u7ecf\u5728\u6478\u7d22\u4e2d\u627e\u5230\u4e86\u635f\u5931\u6700\u5c0f\u7684\u8def\uff0c\u5e94\u8be5\u4e3a\u6b64\u5e86\u5e78\u3002'}"
     },
     {
         "Id": 48,
@@ -621,7 +621,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '', 3: ''}"
+        "Params": "{2: '\u9732\u897f\u4e9a', 3: '\u2026\u2026\u2026\u2026'}"
     },
     {
         "Id": 49,
@@ -634,7 +634,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '', 2: ''}"
+        "Params": "{1: '2', 2: '2936'}"
     },
     {
         "Id": 50,
@@ -647,7 +647,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: ''}"
+        "Params": "{3: '\u9732\u897f\u4e9a\u53d6\u51fa\u6000\u4e2d\u7684\u56db\u53f6\u8349\u6298\u7eb8\uff0c\u653e\u5728\u624b\u5fc3\u6469\u6332\uff0c\u5411\u5f92\u5211\u7684\u7ec8\u70b9\u7948\u76fc\u7740\u4e00\u4efd\u5947\u8ff9\u3002'}"
     },
     {
         "Id": 51,
@@ -660,7 +660,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '', 3: ''}"
+        "Params": "{2: '\u9732\u897f\u4e9a', 3: '\u2026\u2026\u65e0\u8bba\u53d1\u751f\u4e86\u4ec0\u4e48\uff0c\u7070\u9e26\u90fd\u4f1a\u518d\u6b21\u805a\u5230\u4e00\u8d77\u3002'}"
     },
     {
         "Id": 52,
@@ -673,7 +673,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: ''}"
+        "Params": "{3: '\u5979\u770b\u7740\u56db\u53f6\u8349\u6298\u7eb8\uff0c\u628a\u8fd9\u53e5\u8bdd\u8bf4\u7ed9\u81ea\u5df1\u542c\u3002'}"
     },
     {
         "Id": 53,
@@ -686,7 +686,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: ''}"
+        "Params": "{3: '\u5979\u9700\u8981\u76f8\u4fe1\u8fd9\u53e5\u8bdd\uff0c\u5fc5\u987b\u5f97\u76f8\u4fe1\u8fd8\u6709\u5c5e\u4e8e\u5947\u8ff9\u7684\u53ef\u80fd\u6027\u3002'}"
     },
     {
         "Id": 54,
@@ -696,10 +696,10 @@
         "IsBlock": null,
         "IsEnd": null,
         "BeginAnim": null,
-        "EndAnim": null,
+        "EndAnim": "AniZhuanchangBegin",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '', 3: ''}"
+        "Params": "{2: '\u9732\u897f\u4e9a', 3: '\u2026\u2026\u2026\u2026'}"
     },
     {
         "Id": 55,
@@ -708,7 +708,7 @@
         "Type": 105,
         "IsBlock": null,
         "IsEnd": null,
-        "BeginAnim": null,
+        "BeginAnim": "DialogDisable",
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
@@ -721,11 +721,11 @@
         "Type": 101,
         "IsBlock": null,
         "IsEnd": null,
-        "BeginAnim": null,
+        "BeginAnim": "AniZhuanchangEnd",
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: ''}"
+        "Params": "{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}"
     },
     {
         "Id": 57,
@@ -738,7 +738,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": 1500.0,
-        "Params": "{1: ''}"
+        "Params": "{1: 'RImgBg1BlowUp'}"
     },
     {
         "Id": 58,
@@ -751,7 +751,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '', 2: '', 3: '', 6: '', 7: '', 9: ''}"
+        "Params": "{1: '1', 2: '<size=60>\u4e0e\u6b64\u540c\u65f6\uff0c\u5979\u4e5f\u505a\u597d\u4e86\u51c6\u5907\u3002</size>', 3: '0', 6: '1', 7: '1', 9: '3'}"
     },
     {
         "Id": 59,
@@ -764,7 +764,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '', 2: '', 3: '', 4: '', 6: '', 7: '', 9: ''}"
+        "Params": "{1: '1', 2: '<size=60>\u65e0\u8bba\u5982\u4f55\uff0c\u90fd\u8981\u5c65\u884c\u6700\u540e\u7684\u7ea6\u5b9a\u2014\u2014</size>', 3: '0', 4: '70', 6: '1', 7: '1', 9: '3'}"
     },
     {
         "Id": 60,
@@ -777,7 +777,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: ''}"
+        "Params": "{3: '\u4e0e\u6b64\u540c\u65f6\uff0c\u5979\u4e5f\u505a\u597d\u4e86\u51c6\u5907\u3002\u65e0\u8bba\u5982\u4f55\uff0c\u90fd\u8981\u5c65\u884c\u6700\u540e\u7684\u7ea6\u5b9a\u2014\u2014'}"
     },
     {
         "Id": 61,
@@ -790,7 +790,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '', 2: '', 3: '', 4: '', 6: '', 7: '', 9: ''}"
+        "Params": "{1: '2', 2: '<size=60>\u628a\u6838\u5fc3\u9001\u8fd8\u56de\u53bb\u3002</size>', 3: '0', 4: '-30', 6: '1', 7: '1', 9: '3'}"
     },
     {
         "Id": 62,
@@ -800,9 +800,9 @@
         "IsBlock": null,
         "IsEnd": 1.0,
         "BeginAnim": null,
-        "EndAnim": null,
+        "EndAnim": "AniZhuanchangBegin",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: ''}"
+        "Params": "{3: '\u628a\u6838\u5fc3\u9001\u8fd8\u56de\u53bb\u3002'}"
     }
 ]

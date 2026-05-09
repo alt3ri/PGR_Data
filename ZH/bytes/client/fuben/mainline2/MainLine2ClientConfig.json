@@ -1,162 +1,162 @@
 [
     {
-        "Key": null,
+        "Key": "StageAchievementUnlockDesc",
         "Note": "\u5173\u5361\u6210\u5c31\u672a\u89e3\u9501\u63cf\u8ff0",
-        "Params": "['']"
+        "Params": "['\uff1f\uff1f\uff1f']"
     },
     {
-        "Key": null,
+        "Key": "AchievementProgress",
         "Note": "\u7ae0\u8282\u6210\u5c31\u8fdb\u5ea6",
-        "Params": "['']"
+        "Params": "['<color=#0a82de><size=60>%s</size></color> /%s']"
     },
     {
-        "Key": 1.0,
+        "Key": "SwitchEffectMainId",
         "Note": "\u5207\u6362\u7ae0\u8282\u64ad\u7279\u6548\u7684MainId",
-        "Params": "['']"
+        "Params": "['1031']"
     },
     {
-        "Key": null,
+        "Key": "SwitchChapterEffect",
         "Note": "\u5207\u6362\u7ae0\u8282\u64ad\u7279\u6548",
-        "Params": "['1']"
+        "Params": "['Assets/Product/Ui/Prefab/UiEffect/UiMainLine2Chapter/FxUiMainLine2ChapterHudie215.prefab']"
     },
     {
-        "Key": null,
+        "Key": "FirstEnterEffectMainId",
         "Note": "\u7b2c\u4e00\u6b21\u8fdb\u7ae0\u8282\u64ad\u7279\u6548\u7684MainId",
-        "Params": "['']"
+        "Params": "['1031']"
     },
     {
-        "Key": null,
+        "Key": "FirstEnterPrefab",
         "Note": "\u7b2c\u4e00\u6b21\u8fdb\u7ae0\u8282\u52a0\u8f7d\u7684\u5047\u7ae0\u8282\u9884\u7f6e",
-        "Params": "['']"
+        "Params": "['Assets/Product/Ui/ComponentPrefab/FuBenNor/FuBenNor31A.prefab']"
     },
     {
-        "Key": 1.0,
+        "Key": "FirstEnterSwitchEffect",
         "Note": "\u7b2c\u4e00\u6b21\u8fdb\u7ae0\u8282\u5047\u7ae0\u8282\u5207\u6362\u771f\u7ae0\u8282\u64ad\u7279\u6548",
-        "Params": "['1']"
+        "Params": "['Assets/Product/Ui/Prefab/UiEffect/UiMainLine2Chapter/FxUiMainLine2ChapterHudie215.prefab']"
     },
     {
-        "Key": null,
+        "Key": "BgPaths1036",
         "Note": "1036\u7ae0\u7684\u80cc\u666f\u56fe\u8d44\u6e90",
-        "Params": "['', '', '', '', '', '', '1', '', '', '', '', '', '', '', '1']"
+        "Params": "['Assets/Product/Texture/Image/UiFubenMainTabChapter/InstanceIconPic36B.png', 'Assets/Product/Texture/Image/UiFubenMainTabChapter/InstanceIconPicER03.png', 'Assets/Product/Texture/Image/BgCg/Cg3201_01.jpg', 'Assets/Product/Texture/Image/UiFubenMainTabChapter/InstanceIconPic22.png', 'Assets/Product/Texture/Image/UiFubenMainTabChapter/InstanceIconPic23.png', 'Assets/Product/Texture/Image/UiFubenMainTabChapter/InstanceIconPic24.png', 'Assets/Product/Texture/Image/UiFubenMainTabChapter/InstanceIconPic25.png', 'Assets/Product/Texture/Image/UiFubenMainTabChapter/InstanceIconPic26.png', 'Assets/Product/Texture/Image/UiFubenMainMapTab/MainLineActive17A.png', 'Assets/Product/Texture/Image/UiFubenMainTabChapter/InstanceIconPic28.png', 'Assets/Product/Texture/Image/UiFubenMainTabChapter/InstanceIconPic29.png', 'Assets/Product/Texture/Image/UiFubenMainTabChapter/InstanceIconPic30.png', 'Assets/Product/Texture/Image/UiFubenMainTabChapter/InstanceIconPic31.png', 'Assets/Product/Texture/Image/UiFubenMainTabChapter/InstanceIconPic32.png', 'Assets/Product/Texture/Image/UiFubenMainTabChapter/InstanceIconPic33.png']"
     },
     {
-        "Key": null,
+        "Key": "BgUnlockIndexs1036",
         "Note": "1036\u7ae0\u7684\u80cc\u666f\u56fe\u5bf9\u5e94\u5173\u5361Index\u901a\u5173\u89e3\u9501",
-        "Params": "['', '1', '1', '', '', '', '', '', '', '', '', '', '', '1', '1']"
+        "Params": "['0', '1', '1', '3', '4', '4', '5', '5', '6', '6', '8', '9', '10', '13', '13']"
     },
     {
-        "Key": 1.0,
+        "Key": "BgUnlockCueId1036",
         "Note": "1036\u7ae0\u7684\u80cc\u666f\u56fe\u89e3\u9501\u97f3\u6548",
-        "Params": "['1', '1']"
+        "Params": "['5825', '1000']"
     },
     {
-        "Key": null,
+        "Key": "NewbieMainLineLockCondition",
         "Note": "\u65b0\u624b\u4e3b\u7ebf\u9501\u5b9a\u6587\u672c\u663e\u793a\u7684condition",
-        "Params": "['']"
+        "Params": "['770412']"
     },
     {
-        "Key": null,
+        "Key": "NewbiePreChapterSkipParams",
         "Note": "\u52a8\u6001\u6f2b\u8df3\u8f6c\u4f20\u53c2\uff1a\u7d22\u5f151\u56fa\u5b9a\u8868\u793a\u8df3\u4e3b\u7ebf\uff0c\u7d22\u5f152\u8868\u793a\u7ae0\u8282\u7ec4\uff0c\u7d22\u5f153\u8868\u793a\u7ec4\u5185\u7b2c\u51e0\u4e2a\u7ae0\u8282",
-        "Params": "['', '1', '']"
+        "Params": "['0', '1', '3']"
     },
     {
-        "Key": 1.0,
+        "Key": "NewbiePreChapterCGLinkCharacterIds",
         "Note": "\u52a8\u6001\u6f2b\u5173\u8054\u89d2\u8272Id",
-        "Params": "['1', '', '']"
+        "Params": "['1021001', '1011002', '1031001']"
     },
     {
-        "Key": null,
+        "Key": "NewbiePreChapterExStageNameFormat",
         "Note": "\u5e8f\u7ae0\u52a8\u6001\u6f2b\u540d\u79f0\u683c\u5f0f",
-        "Params": "['']"
+        "Params": "['{0}']"
     },
     {
-        "Key": 1.0,
+        "Key": "NewbiePreChapterExStageName",
         "Note": "\u5e8f\u7ae0\u52a8\u6001\u6f2b\u5165\u53e3\u540d\u79f0",
-        "Params": "['1']"
+        "Params": "['\u5408\u96c6']"
     },
     {
-        "Key": 1.0,
+        "Key": "NoBookmarkTips",
         "Note": "\u6ca1\u6709\u5267\u60c5\u4e66\u7b7e\u65f6\u70b9\u51fb\u63d0\u793a",
-        "Params": "['']"
+        "Params": "['\u5f53\u524d\u672a\u5bf9\u5173\u5361\u6807\u8bb0\u4e66\u7b7e\uff0c\u65e0\u6cd5\u4f7f\u7528']"
     },
     {
-        "Key": null,
+        "Key": "NewbiePreChapterExStageLabels",
         "Note": "\u5e8f\u7ae0\u52a8\u6001\u6f2b\u6807\u7b7e\uff0c\u53ef\u914d\u7f6e\u591a\u4e2a",
-        "Params": "['']"
+        "Params": "['\u52a8\u6001\u6f2b']"
     },
     {
-        "Key": null,
+        "Key": "NewbiePreChapterExStageImg",
         "Note": "\u5e8f\u7ae0\u52a8\u6001\u6f2b\u5165\u53e3\u5e95\u56fe",
-        "Params": "['1']"
+        "Params": "['Assets/Product/Texture/Image/UiFubenMainTab/FubenMainTabNormal06.png']"
     },
     {
-        "Key": null,
+        "Key": "NewbiePreChapterSkipCondition",
         "Note": "\u53c2\u65701:MainLine2ExhibitionChapter.tab\u7684\u7ae0\u8282Id\uff0c\u53c2\u65702:ConditionId\uff0c\u53c2\u65703\u4e3a\u52a8\u6001\u6f2b\u5bf9\u5e94\u5173\u5361Id\u3002\u8fdb\u5165\u7ae0\u8282\u524d\u6ee1\u8db3\u6761\u4ef6\u65f6\u6253\u5f00\u52a8\u6001\u6f2b\u8df3\u8f6c\u754c\u9762",
-        "Params": "['', '1', '']"
+        "Params": "['3', '863081', '10010005']"
     },
     {
-        "Key": null,
+        "Key": "DownloadEntranceRewardTips",
         "Note": "\u4e0b\u8f7d\u5165\u53e3\u5956\u52b1\u63d0\u793a",
-        "Params": "['']"
+        "Params": "['\u53ef\u9886\u53d6\u5fc5\u8981\u8d44\u6e90\u4e0b\u8f7d\u5956\u52b1']"
     },
     {
-        "Key": 1.0,
+        "Key": "DownloadingEntranceTips",
         "Note": "\u4e0b\u8f7d\u5165\u53e3\u4e0b\u8f7d\u4e2d\u7684\u63d0\u793a",
-        "Params": "['']"
+        "Params": "['\u4e0b\u8f7d\u4e2d: {0}%']"
     },
     {
-        "Key": 1.0,
+        "Key": "DownloadEntrancePauseTips",
         "Note": "\u4e0b\u8f7d\u5165\u53e3\u6682\u505c\u65f6\u7684\u663e\u793a",
-        "Params": "['']"
+        "Params": "['\u5df2\u6682\u505c\u4e0b\u8f7d: {0}%']"
     },
     {
-        "Key": null,
+        "Key": "DownloadBg",
         "Note": "\u4e0b\u8f7d\u754c\u9762\u80cc\u666f\u56fe",
-        "Params": "['1']"
+        "Params": "['Assets/Product/Texture/Image/UiloginBg/LoginBg.png']"
     },
     {
-        "Key": null,
+        "Key": "DownloadTipsGroup",
         "Note": "\u4e0b\u8f7d\u754c\u9762\u4e0a\u65b9\u63d0\u793a\u6587\u672c\uff0c\u6bcf\u4e2a\u53c2\u6570\u5bf9\u5e94\u6bcf\u4e00\u884c",
-        "Params": "['', '1']"
+        "Params": "['\u7b2c\u4e00\u7ae0\u901a\u5173\u540e\u53ef\u89e3\u9501\u6240\u6709\u4e3b\u7ebf\u5267\u60c5\u5185\u5bb9\uff0c\u53ef\u4e0d\u6309\u7ebf\u6027\u6d41\u7a0b\u6311\u6218', '\u7b2c\u56db\u7ae0\u53ca\u540e\u7eed\u4e3b\u7ebf\u9700\u8981\u4e0b\u8f7d\u5fc5\u8981\u7684\u4e3b\u7ebf\u5305\uff0c\u4e0b\u8f7d\u53ef\u83b7\u5f97<color=#00a1ff>\u6d3b\u52a8\u7814\u53d1\u5238*250</color>']"
     },
     {
-        "Key": 1.0,
+        "Key": "DownloadTotalSizeLabel",
         "Note": null,
-        "Params": "['1']"
+        "Params": "['{0}MB']"
     },
     {
-        "Key": null,
+        "Key": "DownloadProgressLabel",
         "Note": "\u4e0b\u8f7d\u754c\u9762\u663e\u793a\u7684\u8fdb\u5ea6",
-        "Params": "['']"
+        "Params": "['{0}%']"
     },
     {
-        "Key": null,
+        "Key": "DownloadEntranceShowCondition",
         "Note": "\u4e0b\u8f7d\u5165\u53e3\u663e\u793a\u6761\u4ef6",
-        "Params": "['']"
+        "Params": "['1007142']"
     },
     {
-        "Key": null,
+        "Key": "PanelTaskStoryListBottom",
         "Note": "UiMainLine2Task\u754c\u9762\u4e0d\u9700\u8981\u663e\u793aPanelCourse\u65f6\uff0cPanelTaskStoryList\u7684Bottom\u5e94\u7528\u7684\u53c2\u6570",
-        "Params": "['']"
+        "Params": "['32']"
     },
     {
-        "Key": null,
+        "Key": "MessageTypeIcon",
         "Note": "\u65b0\u589e\u5c0f\u5173\u5361\u56fe\u6807\uff0c\u7d22\u5f15\u5173\u8054Type",
-        "Params": "['1', '']"
+        "Params": "['Assets/Product/Texture/Atlas/Common/CommonGuideFightSanjiao.png', 'Assets/Product/Texture/Atlas/Common/CommonGuideSlide.png']"
     },
     {
-        "Key": null,
+        "Key": "FaoSkyGardenEntry",
         "Note": "\u7a7a\u82b1\u5165\u53e3\u914d\u7f6e\uff0c1\u4efb\u52a1id\uff0c2\u6807\u9898\uff0c3\u63cf\u8ff0",
-        "Params": "['', '', '']"
+        "Params": "['99713', '\u3010\u7a7a\u4e2d\u82b1\u56ed\u3011\u7279\u522b\u9080\u7ea6', '\u8de8\u8d8a\u52ab\u96be\u540e\uff0c\u519b\u90e8\u51c6\u5907\u5411\u6240\u6709\u594b\u6218\u8fc7\u7684\u4eba\u4eec\u9881\u53d1\u52cb\u7ae0\u3002\u6574\u7406\u88c5\u675f\uff0c\u4ee5\u6bd5\u4e1a\u751f\u4ee3\u8868\u7684\u8eab\u4efd\u518d\u5ea6\u8e0f\u5165\u6cd5\u5965\u65af\u5427\u3002']"
     },
     {
-        "Key": null,
+        "Key": "FaoSkyGardenEntryCondition",
         "Note": "\u5165\u53e3\u89e3\u9501\uff08\u663e\u793a\uff09\u6761\u4ef6",
-        "Params": "['']"
+        "Params": "['1050141']"
     },
     {
-        "Key": 1.0,
+        "Key": "FaoSkyGardenEntryRewardId",
         "Note": "\u5c55\u793a\u5956\u52b1\u5185\u5bb9",
-        "Params": "['']"
+        "Params": "['7000234']"
     }
 ]
