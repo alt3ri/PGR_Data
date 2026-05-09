@@ -1,0 +1,11 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory40.jpg'}
+2	100		401							{1: '1', 2: '201'}
+3	2		201							{1: '1', 2: '500002', 4: '400'}
+4	3		201							{1: '2', 2: '1091001', 4: '-400'}
+5	4		301			DialogEnable				{1: '1', 2: '薇拉', 3: '比我想的要有些水平。', 4: '1'}
+6	5		201							{1: '2', 2: '1011001', 4: '-400'}
+7	6		301							{1: '1', 2: '里', 3: '你不亲自参战？', 4: '2'}
+8	7		301							{2: '薇拉', 3: '没办法，谁让我答应过不会亲自插手。', 4: '1'}
+9	8		301							{2: '薇拉', 3: '既然败了那就是败了，我也会乖乖退场。', 4: '1'}
+10	9		301		1		AniZhuanchangBegin			{2: '薇拉', 3: '只不过，这份结果是好是坏，你们可要考虑清楚。', 4: '1'}

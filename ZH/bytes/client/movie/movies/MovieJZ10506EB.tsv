@@ -1,0 +1,8 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory5.jpg'}
+2	2		401							{1: '1', 2: '203'}
+3	3		201							{1: '1', 2: '500005'}
+4	4		301			DialogEnable				{1: '1', 2: '警卫A', 3: '她要逃走了！', 4: '1'}
+5	5		301							{2: '警卫B', 3: '我们真的要对她开枪吗？她看起来好像还没有……'}
+6	6		301							{2: '警卫A', 3: '她逃进感染体堆里了！', 4: '1'}
+7	7		301		1		AniZhuanchangBegin			{2: '警卫B', 3: '可恶，我们……先撤吧……'}

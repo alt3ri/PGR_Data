@@ -1,0 +1,17 @@
+Id	GroupId	Note	ConditionType	ConditionArg	ConditionState	ShowButtonName	ButtonType	ButtonArg	InteractPoint	BehaviorType
+1	1	床类家具交互				躺下	1		1	SLEEP
+2	2	椅子类家具交互				坐下	1		1	CHAIR
+3	3	板凳类家具交互（动作高度和椅子不同）				坐下	1		1	BENCH
+4	4	柜子类家具交互				翻一翻	1		1	CABINET
+5	5	烟花家具交互				放烟花	1		1	FIREWORK
+101	100	战术终端家具交互，打开拟真围剿界面				拟真围剿	2	84040	1	
+102	200	音乐播放器交互，打开播放器界面				播放器	2	85014	1	
+103	300	妙算神机未签到交互，主要是按钮显示内容不同	3	CONDITION_GUILD_SIGN_REWARD	1	算一签	2	88001	1	
+104	300	妙算神机已签到交互，主要是按钮显示内容不同	3	CONDITION_GUILD_SIGN_REWARD		查看签文	2	88001	1	
+6	6	烟花家具交互				放烟花	1		1	NEWFIREWORK
+7	7	垃圾桶交互				翻一翻	4		1	
+8	8	饮料机				喝什么	5		1	
+9	9	雕像				凝视雕像	4		1	
+10	10	欧式茶桌				仔细查看	4		1	
+11	11	荷花				仔细查看	4		1	
+12	400	我要弹钢琴				弹钢琴	1	90019	1	PLAYPIANO

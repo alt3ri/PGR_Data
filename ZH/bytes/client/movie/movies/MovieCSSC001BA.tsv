@@ -1,0 +1,32 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+2	2		401							{1: '1', 2: '36'}
+3	3		301			DialogEnable	DialogDisable			{3: 'V4.3'}
+4	4		105	1						{1: 'Assets/Product/Ui/Spine/4_3Spine/V43UiMovieCG_NietiyaBin/V43UiMovieCG_NietiyaBin.prefab'}
+5	5		301			DialogEnable				{3: '涅缇娅 病'}
+6	6		105							
+7	7		301				DialogDisable			{3: 'V4.2'}
+8	8		105	1						{1: 'Assets/Product/Ui/Spine/4_2Spine/UiMovieLuoSaiTaHuiShouV42/UiMovieLuoSaiTaHuiShouV42Normal.prefab'}
+9	9		301			DialogEnable	DialogDisable			{3: '罗塞塔 回首（正常）'}
+10	10		106	1						{1: 'idle_closeeyes', 2: '1', 3: 'Root/Role', 4: '1'}
+11	11		301			DialogEnable	DialogDisable			{3: '罗塞塔 回首（闭眼）'}
+12	12		106	1						{1: 'idle_smile', 2: '1', 3: 'Root/Role', 4: '1'}
+13	13		301			DialogEnable	DialogDisable			{3: '罗塞塔 回首（笑）'}
+14	14		106	1						{1: 'idle_think', 2: '1', 3: 'Root/Role', 4: '1'}
+15	15		301			DialogEnable	DialogDisable			{3: '罗塞塔 回首（思索）'}
+16	16		105	1						{1: 'Assets/Product/Ui/Spine/4_2Spine/V42UiMovieCG_BiAnKaJX/V42UiMovieCG_BiAnKaJX.prefab'}
+17	17		301			DialogEnable	DialogDisable			{3: '比安卡卡池 “光与暗的交响”'}
+18	18		105	1						{1: 'Assets/Product/Ui/Spine/4_2Spine/V42UiMovieCG_BiAnKaMeiYing/V42UiMovieCG_BiAnKaMeiYing.prefab'}
+19	19		301			DialogEnable				{3: '比安卡卡池 “舞台上的魅影”'}
+20	20		105							
+21	21		301				DialogDisable			{3: 'V4.1'}
+22	22		105	1						{1: 'Assets/Product/Ui/Spine/4_1Spine/UiMovie_S_BuouxiongHJTV41/UiMovie_S_BuouxiongHJTV41.prefab'}
+23	23		301			DialogEnable				{3: '布偶熊 换机体'}
+24	24		105							
+25	25		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+26	26		301				DialogDisable			{3: 'V4.0'}
+27	27		105	1						{1: 'Assets/Product/Ui/Spine/4-0Spine/CiBeiZheYHPassportSkinV40/CiBeiZheYHPassportSkinV40.prefab'}
+28	28		301			DialogEnable	DialogDisable			{3: '慈悲者 羽化'}
+29	29		105	1						{1: 'Assets/Product/Ui/Spine/4-0Spine/UiMovieLiFuJRV40/UiMovieLiFuJRV40.prefab'}
+30	30		301			DialogEnable				{3: '丽芙 家人'}
+31	31		301		1		AniZhuanchangBegin			{3: '测试结束'}

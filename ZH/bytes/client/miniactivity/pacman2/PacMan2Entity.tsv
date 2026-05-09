@@ -1,0 +1,17 @@
+Id	Desc	Type	Name	Speed	TurningDuration	AlertX	AlertY	AlertVisibility	Params	Score	Icon
+1	能跑起来的代码，良性代码块的数量是判断是否抢险成功的重要指标。	1	良性代码块								Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon07.png
+2	收集指定数量良性代码块后，进入即可结束工程。	2	逻辑块结束点								Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon15.png
+3	拾取后可恢复生命。	3	语法高亮						[1]		Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon04.png
+4	进入追击阶段后可拾取，拾取后短时间内可以通过触碰击杀怪物。	4	故障排除模式						[5, 10]		Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon12.png
+5	拾取后，一定时间内移动速度变快，地图上的怪物都会变成跑鞋，触碰跑鞋即可刷新持续时间。	5	加速冲刺						[5]		Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon14.png
+6	最常见，最好排障的报错，根据固定路线巡逻。	6	语法报错	55							Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon02.png
+7	算力世界里的怪兽，会在直线范围内横冲直撞。但是貌似不怎么灵活。	7	月蚀怪	30	1	4	4	True			Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon05.png
+8	算力世界里的怪兽，能让自身一定范围内的流速变慢。靠近它的时候会自动获得减速效果。	8	异魔怪	18		4	4		[90, 3, 3]		Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon03.png
+9	跑鞋（1=持续时间（待删除），2=吃的时候变成多少速度，3=叠层加速）	9	鞋子	18					[5, 35, 2]		Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon20.png
+10	拾取后，马上在地图上创造一个吸引怪兽的分身，触碰分身的怪物会被眩晕。分身一样拥有可吞噬算力结晶的效果。	10	幻影分身	30					[2, 1]		Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon08.png
+11	食物怪	11	食物	30							Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon06.png
+12	通过触碰，可以在相同颜色的断点间传送。	12	循环断点								Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon11.png
+13	很像另一款游戏的会出现的存在，会根据固定路线巡逻，吃掉代码块后会变长。	13	栈溢出	60					[7]		Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon03.png
+14	报错界的大胃袋，开局会高速吞噬良性代码块，吃饱后会降低移速，无固定路线。	14	内存泄漏	80					[55, 12]		Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon05.png
+15	拾取后，可令所有报错移动速度降低，更好排查问题。	15	单步调试						[5000, 5]		Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon10.png
+16	拾取后，可在持续时间内提升移动速度。	16	快速遍历						[5000, 5]		Assets/Product/TileMap/PacMan2/PacMan2Asset/PacMan2Icon/UIPacman2Icon14.png

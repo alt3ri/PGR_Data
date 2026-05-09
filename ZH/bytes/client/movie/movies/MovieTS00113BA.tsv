@@ -1,0 +1,18 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory28.jpg'}
+2	2		401							{1: '1', 2: '202'}
+3	3		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}
+4	4		201							{1: '1', 2: '1031001', 3: '7', 4: '-400'}
+5	5		201							{1: '2', 2: '500028', 4: '400'}
+6	6		301			DialogEnable				{1: '1', 2: '丽芙', 3: '布朗宁……？', 4: '1'}
+7	7		301							{2: '布朗宁', 3: '……', 4: '2'}
+8	8		301							{2: '丽芙', 3: '我的武器？！', 4: '1'}
+9	9		301							{2: '布朗宁', 3: '为什么、你还要出来……我不想这样……', 4: '2'}
+10	10		301							{2: '布朗宁', 3: '我不想、伤害你……可是、女王不允许……', 4: '2'}
+11	11		301							{2: '布朗宁', 3: '你就应该呆在里面、不出来……', 4: '2'}
+12	12		301							{2: '丽芙', 3: '（丽芙被自己的武器锁定）这个距离……根本没办法躲……', 4: '1'}
+13	13		301			PanelActor2Shake				{1: '1', 2: '布朗宁', 3: '女王不允许……她要你死……', 4: '2'}
+14	14		301							{2: '丽芙', 3: '布朗宁……', 4: '1'}
+15	15		202							{1: '2', 6: '1'}
+16	16		203							{1: '1', 2: '0.25'}
+17	17		301		1	PanelActor1Shake	AniZhuanchangBegin			{2: '丽芙', 3: '执行武器自爆程序！', 4: '1'}

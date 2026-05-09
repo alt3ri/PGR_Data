@@ -1,0 +1,636 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101							{1: 'Assets/Product/Texture/Image/BgComic/V300cibeizhe/V300_00.png', 4: '5'}
+2	2		101							{1: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_01_01.png', 4: '4'}
+3	3		101							{1: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_01_02.jpg'}
+4	4		104							{1: '100|-85|-200', 2: '0'}
+5	5		401			AniZhuanchangEnd			1000.0	{1: '1', 2: '12'}
+6	6		301			DialogEnable				{3: '走过几处破瓦颓垣后，赛琳娜再次在一棵枯萎的苹果树面前停了下来。'}
+7	7		502						500.0	{1: 'DialogDisable'}
+8	8		104							{1: '0|0|0', 2: '2.5'}
+9	9		104						2000.0	{1: '-150|100|-500', 2: '2.5', 4: '4'}
+10	10		301			DialogEnable			1000.0	{3: '被红潮浸润过的土地已经再也不能开出鲜花，但浮土上依然能感受到生命逝去的时候留下的温度。'}
+11	11		502						500.0	{1: 'DialogDisable'}
+12	12		101							{4: '4', 5: '1'}
+13	13		401							{1: '2', 2: '4833'}
+14	14		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_01_03.png', 3: '0', 4: '1', 5: '1.2'}
+15	15		104							{1: '0|50|0', 2: '0', 4: '3'}
+16	16		104						1800.0	{1: '0|0|0', 2: '1.2', 4: '3'}
+17	17		101							{1: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_01_04.jpg'}
+18	18		205							{1: '999'}
+19	19		401							{1: '2', 2: '4052'}
+20	20		301			DialogEnable				{3: '她俯下身，用白皙的指尖拂过地面，再次启动岚音机体中读取红潮信息的能力，轻轻带起走过此处的人未说尽的故事。'}
+21	21		502						500.0	{1: 'DialogDisable'}
+22	22		401							{1: '2', 2: '1543'}
+23	23		101							{1: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_01_05.jpg'}
+24	24		502						1000.0	{1: 'AniZhuanchangEnd'}
+25	25		401							{1: '2', 2: '967'}
+26	26		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_01_06.jpg', 3: '0', 4: '1', 5: '1.2'}
+27	27		101							{1: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_01_06.jpg'}
+28	28		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_01_07.jpg', 3: '0', 4: '1', 5: '1.2'}
+29	29		101							{1: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_01_07.jpg'}
+30	30		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_01_08.jpg', 3: '0', 4: '1', 5: '1.2'}
+31	31		101							{1: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_01_08.jpg'}
+32	32		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_01_09.jpg', 3: '0', 4: '1', 5: '1.2'}
+33	33		101							{1: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_01_09.jpg'}
+34	34		205							{1: '999'}
+35	35		402							{1: '967'}
+36	36		301			DialogEnable				{3: '这次，她在幻境中看到了一个衣衫褴褛的小女孩。'}
+37	37		502						500.0	{1: 'DialogDisable'}
+38	38		104						1000.0	{1: '280|0|0', 2: '1'}
+39	39		101							{1: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_01_10.png', 4: '4'}
+40	40		205						550.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_01_11.jpg', 3: '0', 4: '1', 5: '0.5'}
+41	41		104						2600.0	{1: '0|85|-250', 2: '2.2', 4: '3'}
+42	42		101							{1: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_01_11.jpg'}
+43	43		104							{1: '0|85|-250', 2: '0'}
+44	44		205							{1: '999'}
+45	45		104							{1: '0|0|0', 2: '0', 4: '3'}
+46	46		301			DialogEnable				{3: '长期食不果腹的肢体像木柴一样瘦弱的她在荒原上行走着，一直四处打量地上会不会有自己错过的食物。'}
+47	47		502						500.0	{1: 'DialogDisable'}
+48	48		101							{1: 'Assets/Product/Texture/Image/BgComic/V300cibeizhe/V300_00.png', 4: '5'}
+49	49		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_01_10.png', 3: '0', 4: '1', 5: '0'}
+50	50		101							{1: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_02_01.png', 4: '4'}
+51	51		104							{1: '-600|0|0', 2: '0', 4: '4'}
+52	52		104						600.0	{1: '0|0|0', 2: '0.8', 4: '4'}
+53	53		301			DialogEnable				{2: '小女孩', 3: '啊，有吃的！', 18: '100008676'}
+54	54		502						500.0	{1: 'DialogDisable'}
+55	55		401							{1: '2', 2: '1516'}
+56	56		205							{1: '999'}
+57	57		101							{1: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_02_02.png', 4: '4'}
+58	58		101							{1: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_02_03.jpg'}
+59	59		104				AniZhuanchangEnd		200.0	{1: '-120|0|-250', 2: '0'}
+60	60		402							{1: '1516'}
+61	61		401							{1: '2', 2: '4462'}
+62	62		104							{1: '0|0|0', 2: '2'}
+63	63		104						2200.0	{1: '-280|110|-450', 2: '2', 4: '4'}
+64	64		402							{1: '4462'}
+65	65		101							{4: '4', 5: '1'}
+66	66		301			DialogEnable				{3: '终于，她眼前一亮，冲着某个小土坡跑了过去。'}
+67	67		502						500.0	{1: 'DialogDisable'}
+68	68		401							{1: '2', 2: '2935'}
+69	69		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_02_04.png', 3: '0', 4: '1', 5: '0.8'}
+70	70		104							{1: '400|0|0', 2: '0', 4: '3'}
+71	71		104						1500.0	{1: '0|0|0', 2: '1', 4: '3'}
+72	72		101							{1: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_02_12.jpg'}
+73	73		205							{1: '999'}
+74	74		301			DialogEnable				{3: '脚底的伤疤在短暂的加速奔跑后撕裂出血。'}
+75	75		502						500.0	{1: 'DialogDisable'}
+76	76		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_02_05.jpg', 3: '0', 4: '1', 5: '1.2'}
+77	77		101							{1: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_02_05.jpg'}
+78	78		205							{1: '999'}
+79	79		301			DialogEnable				{3: '但小女孩依然全然无觉，眼巴巴地盯着苹果树上挂着的一个青苹果。'}
+80	80		502						500.0	{1: 'DialogDisable'}
+81	81		401							{1: '2', 2: '2779'}
+82	82		101			AniZhuanchangEnd			200.0	{1: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_02_06.jpg'}
+83	83		301			DialogEnable				{3: '她吃力地垒起了几块散落的砖块，顺着砖块铺起的阶梯踩上去。'}
+84	84		502						500.0	{1: 'DialogDisable'}
+85	85		401							{1: '2', 2: '1505'}
+86	86		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_02_07.jpg', 3: '0', 4: '1', 5: '0.8'}
+87	87		101							{1: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_02_07.jpg'}
+88	88		205							{1: '999'}
+89	89		101							{1: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_02_08.png', 4: '4'}
+90	90		104						200.0	{1: '-10|0|0', 2: '0.15', 4: '4'}
+91	91		104						200.0	{1: '10|0|0', 2: '0.15', 4: '4'}
+92	92		104						150.0	{1: '0|0|0', 2: '0.15', 4: '4'}
+93	93		301			DialogEnable				{2: '小女孩', 3: '好痛！', 18: '100008677'}
+94	94		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+95	95		101							{1: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_02_09.png', 4: '4'}
+96	96		301							{3: '踩上砖块之后，脚底的剧痛骤然加剧，让她的小脸拧成了一块。'}
+97	97		502						500.0	{1: 'DialogDisable'}
+98	98		104						2500.0	{1: '812|-472|0', 2: '2', 4: '4'}
+99	99		101							{1: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_02_10.png', 4: '5'}
+100	100		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_02_11.jpg', 3: '0', 4: '1', 5: '0.8'}
+101	101		104						1000.0	{1: '-385|485|0', 2: '0', 4: '3'}
+102	102		101							{1: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_02_11.jpg'}
+103	103		104							{1: '-385|485|0', 2: '0'}
+104	104		205							{1: '999'}
+105	105		104							{1: '0|0|0', 2: '0', 4: '3'}
+106	106		104						2500.0	{1: '-385|20|0', 2: '2'}
+107	107		301			DialogEnable				{3: '她可怜巴巴地一边吸着气，一边忍着剧痛，踮着脚继续用枝条一次次地敲打着那颗果实。'}
+108	108		502						500.0	{1: 'DialogDisable'}
+109	109		401							{1: '2', 2: '2704'}
+110	110		104						200.0	{1: '-395|20|0', 2: '0.15'}
+111	111		104						200.0	{1: '-385|20|0', 2: '0.15'}
+112	112		401							{1: '2', 2: '2704'}
+113	113		104						200.0	{1: '-395|20|0', 2: '0.15'}
+114	114		104						500.0	{1: '-385|20|0', 2: '0.15'}
+115	115		101							{1: 'Assets/Product/Texture/Image/BgComic/V300cibeizhe/V300_00.png', 4: '5'}
+116	116		101							{4: '4', 5: '1'}
+117	117		101			AniZhuanchangEnd			100.0	{1: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_02_11.jpg'}
+118	118		101							{1: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_03_01.png', 4: '4'}
+119	119		104							{1: '0|500|0', 2: '0', 4: '4'}
+120	120		401							{1: '2', 2: '2704'}
+121	121		104						1200.0	{1: '0|0|0', 2: '0.6', 4: '4'}
+122	122		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_03_02.png', 3: '0', 4: '1', 5: '1'}
+123	123		101							{4: '4', 5: '1'}
+124	124		301			DialogEnable				{3: '终于，果柄松动了，她脸上露出了惊喜的笑容。'}
+125	125		301							{2: '小女孩', 3: '快好了……', 18: '100008678'}
+126	126		502						500.0	{1: 'DialogDisable'}
+127	127		205							{1: '999'}
+128	128		401							{1: '2', 2: '4203'}
+129	129		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_03_03.jpg'}
+130	130		301			DialogEnable				{3: '果实从枝条上掉了下来，顺着坡道滑走了。'}
+131	131		301							{2: '小女孩', 3: '等，等等——', 18: '100008680'}
+132	132		401							{1: '1', 2: '36'}
+133	133		502						500.0	{1: 'DialogDisable'}
+134	134		101							{1: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_03_05.png', 4: '4'}
+135	135		104							{1: '0|1200|0', 2: '0', 4: '4'}
+136	136		104						600.0	{1: '0|0|0', 2: '0.6', 4: '4'}
+137	137		301			DialogEnable				{2: '赛琳娜', 3: '——啊！', 18: '100008679'}
+138	138		401							{1: '1', 2: '6155'}
+139	139		301							{3: '赛琳娜不自觉地惊叫出了声，这个小山坡的坑底下面翻涌着红潮，这个苹果一定会滚落到坡底。'}
+140	140		502						500.0	{1: 'DialogDisable'}
+141	141		401							{1: '2', 2: '4636'}
+142	142		205						1500.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_03_07.jpg', 3: '0', 4: '1', 5: '1'}
+143	143		101							{1: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_03_07.jpg'}
+144	144		205							{1: '999'}
+145	145		101							{4: '4', 5: '1'}
+146	146		301			DialogEnable				{3: '小女孩从砖块上跳下来，追着从树上滚落的苹果跑了过去。'}
+147	147		502						500.0	{1: 'DialogDisable'}
+148	148		401							{1: '2', 2: '9342045'}
+149	149		104							{1: '400|0|0', 2: '0.6'}
+150	150		101							{1: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_03_06.png', 4: '4'}
+151	151		104							{1: '-400|0|0', 2: '0', 4: '4'}
+152	152		104						800.0	{1: '0|0|0', 2: '0.6', 4: '4'}
+153	153		301			DialogEnable				{3: '那瞬间，赛琳娜忘记了这里只是一个幻境世界，这里发生的一切都只是过去的记录，她下意识地朝着小女孩追了出去。'}
+154	154		502						500.0	{1: 'DialogDisable'}
+155	155		401							{1: '2', 2: '4895'}
+156	156		101							{1: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_03_08.png', 4: '4'}
+157	157		101							{1: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_03_06.png', 4: '5'}
+158	158		104							{1: '84|0|-100', 2: '0.6', 4: '5'}
+159	159		104							{1: '480|0|0', 2: '0.6'}
+160	160		301			DialogEnable	AniZhuanchangBegin			{2: '赛琳娜', 3: '别过去！', 18: '100008681'}
+161	161		502						500.0	{1: 'DialogDisable'}
+162	162		101							{1: 'Assets/Product/Texture/Image/BgComic/V300cibeizhe/V300_00.png', 4: '5'}
+163	163		101							{4: '4', 5: '1'}
+164	164		401							{1: '2', 2: '4331'}
+165	165		101			AniZhuanchangEnd			200.0	{1: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_04_01.jpg'}
+166	166		301			DialogEnable				{3: '赛琳娜不停在奔跑着，满脑子的念头都是必须救下这个孩子，绝不能让红潮吞噬这条年轻的生命。'}
+167	167		502						500.0	{1: 'DialogDisable'}
+168	168		401							{1: '2', 2: '4833'}
+169	169		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_04_02.png', 3: '0', 4: '1', 5: '0.8'}
+170	170		104							{1: '300|0|0', 2: '0', 4: '3'}
+171	171		104						1200.0	{1: '0|0|0', 2: '1', 4: '3'}
+172	172		101							{1: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_04_03.jpg'}
+173	173		104							{1: '0|0|0', 2: '0'}
+174	174		205							{1: '999'}
+175	175		104							{1: '0|0|0', 2: '0', 4: '3'}
+176	176		301			DialogEnable				{3: '她终于在巨坑边缘追上了这个幼小的幻影。'}
+177	177		502						500.0	{1: 'DialogDisable'}
+178	178		104						1200.0	{1: '0|600|0', 2: '1'}
+179	179		101							{1: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_04_03.jpg', 4: '4'}
+180	180		104							{1: '0|600|0', 2: '0', 4: '4'}
+181	181		401							{1: '2', 2: '1543'}
+182	182		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_04_04.png', 3: '0', 4: '1', 5: '1'}
+183	183		101							{1: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_04_04.png'}
+184	184		401							{1: '2', 2: '4426'}
+185	185		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_04_05.png', 3: '0', 4: '1', 5: '0.8'}
+186	186		101							{1: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_04_05.png'}
+187	187		205							{1: '999'}
+188	188		301			DialogEnable				{3: '手指再次撕裂了空洞的幻影， 构造体的金属指尖碰触到虚拟图像的那瞬间，巨坑边缘的小女孩身影便飘散消失了。'}
+189	189		502						500.0	{1: 'DialogDisable'}
+190	190		205						1200.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_04_06.png', 3: '0', 4: '1', 5: '1'}
+191	191		101							{1: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_04_06.png'}
+192	192		205							{1: '999'}
+193	193		301			DialogEnable				{3: '但赛琳娜的手掌在穿越过虚影之后，彼方却不是一无所有的空洞——'}
+194	194		502						500.0	{1: 'DialogDisable'}
+195	195		104							{1: '0|1400|0', 2: '1.2', 4: '4'}
+196	196		104						1800.0	{1: '35|180|-120', 2: '1.5'}
+197	197		101							{4: '4', 5: '1'}
+198	198		301			DialogEnable				{3: '她稳稳地抓住了一条手臂。'}
+199	199		502						500.0	{1: 'DialogDisable'}
+200	200		401							{1: '2', 2: '4536'}
+201	201		205						2000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_04_07.jpg', 3: '0', 4: '1', 5: '1.5'}
+202	202		101							{1: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_04_07.jpg'}
+203	203		205							{1: '999'}
+204	204		301			DialogEnable				{3: '幻境解开，赛琳娜这才看到，自己抓住了一位即将跳进红潮巨坑里的女性构造体。'}
+205	205		301							{3: '不知为何，现实中这位女性构造体的位置和幻境中那位小女孩的身影几乎完全重叠。'}
+206	206		301							{3: '阴差阳错地，她意外救下了一位被红潮诱惑，差点跳入巨坑中的空中花园军人。'}
+207	207		301							{3: '那位得救的军人脸上写满了劫后余生的惊惧，正悬在巨坑的边缘，死死地抓紧了赛琳娜伸出的手。'}
+208	208		502						500.0	{1: 'DialogDisable'}
+209	209		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_04_08.png', 3: '0', 4: '1', 5: '0.5'}
+210	210		104							{1: '0|0|100', 2: '0', 4: '3'}
+211	211		104						1000.0	{1: '0|0|0', 2: '0.8', 4: '3'}
+212	212		101							{1: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_04_09.jpg'}
+213	213		205							{1: '999'}
+214	214		301			DialogEnable				{2: '女性构造体', 3: '别，别放开我……', 18: '100008682'}
+215	215		502						500.0	{1: 'DialogDisable'}
+216	216		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_04_10.png', 3: '0', 4: '1', 5: '0.5'}
+217	217		104							{1: '0|0|100', 2: '0', 4: '3'}
+218	218		104						1000.0	{1: '0|0|0', 2: '0.8', 4: '3'}
+219	219		101							{1: 'Assets/Product/Texture/Image/BgComic/V320Selena/V320_04_11.jpg'}
+220	220		205							{1: '999'}
+221	221		301			DialogEnable				{2: '赛琳娜', 3: '我会把你拉上来的！', 18: '100008683'}
+222	222		301							{3: '赛琳娜使尽全力，尽力将她的身躯从巨坑边缘拉上来。'}
+223	223		301				AniZhuanchangBegin			{2: '赛琳娜', 3: '抓紧我的手，跟我一起，用，用力——！', 18: '100008684'}
+224	224		401						2000.0	{1: '1', 2: '36'}
+225	225		401							{1: '1', 2: '120'}
+226	226		101							{4: '5', 5: '1'}
+227	227		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory393.jpg'}
+228	228		301			AniZhuanchangEnd				{3: '几分钟后，精疲力竭的赛琳娜和那位陌生的女性构造体一起瘫坐在了巨坑旁边的土地上。'}
+229	229		201							{1: '1', 2: '500405'}
+230	230		301							{1: '1', 2: '？？', 3: '呼，呼……真是多谢你了！', 4: '1', 18: '100008685'}
+231	231		202							{1: '1', 6: '1'}
+232	232		201							{1: '1', 2: '500291', 3: '4'}
+233	233		301							{1: '1', 2: '赛琳娜', 3: '没关系……呃！', 4: '1', 18: '100008686'}
+234	234		203						450.0	{1: '1', 2: '0.4', 4: '-20', 5: '50'}
+235	235		401							{1: '2', 2: '5286'}
+236	236		202							{1: '1', 6: '1'}
+237	237		201							{1: '1', 2: '500584'}
+238	238		301							{1: '1', 3: '回过神之后，赛琳娜才反应过来自己的特殊性，连忙披起身上的兜帽，试图离开此处。'}
+239	239		203							{1: '1', 2: '0.25', 3: '-400'}
+240	240		201							{1: '2', 2: '500405', 4: '400'}
+241	241		301							{1: '1', 3: '但那位女性构造体已经站起身，向赛琳娜走来。'}
+242	242		301							{2: '？？', 3: '你没事吧？刚刚差点就掉下去了，多亏你把我拉上来。', 4: '2', 18: '100008687'}
+243	243		301							{2: '？？', 3: '你也是构造体吧？多谢你了！你是在附近执行任务的吗？', 4: '2', 18: '100008688'}
+244	244		301							{2: '赛琳娜', 3: '……我也只是路过而已，没有关系。', 4: '1', 18: '100008689'}
+245	245		401							{1: '2', 2: '2936'}
+246	246		301							{3: '谨慎地拉上兜帽，赛琳娜轻声开口。'}
+247	247		306							{1: '1'}
+248	248		203							{1: '1', 2: '0.4', 5: '-100'}
+249	249		203							{1: '2', 2: '0.4', 3: '800', 5: '-100'}
+250	250		301							{3: '这副机体是代行者的礼物，由红潮构成，她并不想影响到这位构造体……'}
+251	251		203							{1: '1', 2: '0.4', 3: '-400'}
+252	252		203							{1: '2', 2: '0.4', 3: '400'}
+253	253		306						200.0	
+254	254		301							{2: '？？', 3: '别客气，我们山雀小队的作风向来是有恩必报……要来我们的保育区休息一下吗？刚刚可真险！', 4: '2', 18: '100008690'}
+255	255		301							{2: '利亚', 3: '哦对了，又忘记自我介绍了，哈哈，我叫利亚，山雀小队的。', 4: '2', 18: '100008691'}
+256	256		301							{2: '利亚', 3: '等下，我现在就给你申请进入保育区的资格……', 4: '2', 18: '100008692'}
+257	257		202							{1: '1', 2: '2'}
+258	258		401							{1: '2', 2: '4544'}
+259	259		301							{3: '还没来得及制止，名叫利亚的女性构造体已经啪啪啪在终端上完成了一连串的操作。'}
+260	260		402							{1: '4544'}
+261	261		201							{1: '1', 2: '500584', 4: '-400'}
+262	262		201							{1: '2', 2: '500405', 4: '400'}
+263	263		301							{1: '1', 2: '利亚', 3: '嗯，可能需要你的机体编号……你的机体编号是多少？', 4: '2', 18: '100008693'}
+264	264		301							{2: '赛琳娜', 3: '机体编号……', 4: '1', 18: '100008694'}
+265	265		301							{3: '赛琳娜有些困惑地皱着眉头，她的记忆缺失很多，理应是不记得这个有些陌生的词……'}
+266	266		301							{2: '赛琳娜', 3: '机体编号……BPF-06……咦？', 4: '1', 18: '100008695'}
+267	267		202							{1: '1', 2: '2'}
+268	268		401							{1: '2', 2: '2936'}
+269	269		301							{3: '完全不明白为什么这串编号脱口而出，赛琳娜试探着揭开斗篷——'}
+270	270		301							{3: '胸前的苍蓝色核心前所未有的澄澈。'}
+271	271		201							{1: '1', 2: '500405'}
+272	272		401							{1: '2', 2: '4544'}
+273	273		301							{1: '1', 2: '利亚', 3: 'BPF-06……', 4: '1', 18: '100008696'}
+274	274		402						200.0	{1: '4544'}
+275	275		301							{2: '利亚', 3: '奇怪，无法识别？这明明应该是一个正确的序列号……', 4: '1', 18: '100008697'}
+276	276		203							{1: '1', 2: '0.25', 3: '400'}
+277	277		201							{1: '2', 2: '500584', 4: '-400'}
+278	278		301							{1: '1', 3: '摆弄了几下终端，大约是认为终端出现问题，利亚丢开那个恼人的小机器，转身看向赛琳娜。'}
+279	279		301							{2: '利亚', 3: '大概是数据库在维护吧，既然编号属于空中花园，那就是朋友！我们先回去吧——', 4: '1', 18: '100008698'}
+280	280		203						500.0	{1: '1', 2: '0.5', 3: '65'}
+281	281		401							{1: '2', 2: '4044'}
+282	282		301							{3: '她伸手拍了拍赛琳娜的肩膀——'}
+283	283		301							{2: '赛琳娜', 3: '小心！', 4: '2', 18: '100008699'}
+284	284		306							{1: '1'}
+285	285		301							{3: '赛琳娜下意识地警告出声，她转身想要躲避利亚的触碰，但利亚已然接触到了她的机体——'}
+286	286		306							
+287	287		203							{1: '1', 2: '0.4', 3: '200'}
+288	288		301							{2: '利亚', 3: '怎么了？是刚刚被红潮幻影吓到了吗？', 4: '1', 18: '100008700'}
+289	289		306							{1: '1'}
+290	290		301							{3: '显然，面前的构造体没有任何被帕弥什病毒感染的痕迹，她的机体也并没有向她发出帕弥什浓度超标的警示……'}
+291	291		306							
+292	292		203							{1: '2', 2: '0.25', 3: '-500'}
+293	293		301							{2: '赛琳娜', 3: '没……没有……', 4: '2', 18: '100008701'}
+294	294		202							{1: '1', 2: '2'}
+295	295		301							{3: '惊魂未定地后退一步，赛琳娜藏在斗篷下的手指轻轻活动着。'}
+296	296		301							{3: '隐藏在仿生皮肤下的，依旧是猩红的色彩——那是组成她躯体的一部分，帕弥什。'}
+297	297		301							{3: '帕弥什并没有消失，但为什么……'}
+298	298		301							{3: '手指再次曲折，她能清晰地感觉到，空气中的帕弥什不再像从前那样紧紧包裹着她。'}
+299	299		201							{1: '1', 2: '500584', 4: '-400'}
+300	300		201							{1: '2', 2: '500405', 4: '400'}
+301	301		301							{1: '1', 2: '赛琳娜', 3: '帕弥什……空中花园……', 4: '1', 18: '100008702'}
+302	302		301							{2: '利亚', 3: '喂，你真的没事吧？需要我帮你找构造体医生来看看吗？', 4: '2', 18: '100008703'}
+303	303		301							{2: '赛琳娜', 3: '……没有关系，我很好。', 4: '1', 18: '100008704'}
+304	304		202							{1: '1', 2: '2'}
+305	305		301							{3: '意识到有什么已经改变了，赛琳娜逼着自己露出一个稍显僵硬的微笑。'}
+306	306		306							{1: '1'}
+307	307		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '0.4', 5: '0.4'}
+308	308		201							{1: '1', 2: '500291', 3: '4'}
+309	309		301							{1: '1', 3: '她不想离开了，她……突然有些想要去保育区看看。'}
+310	310		204							{1: '1', 2: '8'}
+311	311		301							{3: '如果，如果真的能够控制好机体中的帕弥什，让她可以像一个普通的“构造体”一样……'}
+312	312		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0.4', 4: '0', 5: '0.4'}
+313	313		306							
+314	314		202							{1: '1'}
+315	315		301				AniZhuanchangBegin			{3: '咬了咬嘴唇，赛琳娜怀抱隐隐的期望，一边小心翼翼地监测着周围的帕弥什浓度，一边跟上了利亚的脚步。'}
+316	316		205							{1: '999'}
+317	317		401						2000.0	{1: '1', 2: '36'}
+318	318		401							{1: '1', 2: '83'}
+319	319		502						400.0	{1: 'DialogDisable'}
+320	320		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+321	321		502							{1: 'AniZhuanchangEnd'}
+322	322		501						250.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryLianyi.prefab', 2: '2'}
+323	323		401						3000.0	{1: '2', 2: '9339045'}
+324	324		301			DialogEnable				{3: '一步。'}
+325	325		401							{1: '2', 2: '4387'}
+326	326		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+327	327		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+328	328		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+329	329		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront39.png', 4: '5'}
+330	330		201							{1: '1', 2: '500291', 5: '160', 6: '-300', 7: '1'}
+331	331		301				DialogDisable			{1: '1', 3: '苍蓝色核心散发着清澈的光芒。', 4: '1'}
+332	332		202							{1: '1', 6: '1'}
+333	333		101							{4: '5', 5: '1'}
+334	334		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+335	335		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}
+336	336		109							{1: '1', 2: '<i><color=#0066CC><size=40>亲爱的陌生人：</size></color><i>', 3: '-670', 4: '335'}
+337	337		109							{1: '2', 2: '<i><color=#0066CC><size=40>我知道你在收件箱里看见这封邮件的时候，一定感到相当困惑。</size></color><i>', 3: '-234', 4: '250'}
+338	338		109							{1: '3', 2: '<i><color=#0066CC><size=40>如果你事务繁忙，无暇将时间耽搁在这种事情上，就将这封信丢掉吧。</size></color><i>', 3: '-171', 4: '165'}
+339	339		109							{1: '4', 2: '<i><color=#0066CC><size=40>……</size></color><i>', 3: '-774', 4: '80'}
+340	340		301							{3: '亲爱的陌生人：\\n我知道你在收件箱里看见这封邮件的时候，一定感到相当困惑。\\n如果你事务繁忙，无暇将时间耽搁在这种事情上，就将这封信丢掉吧\\n……'}
+341	341		110							
+342	342		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+343	343		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+344	344		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+345	345		501						250.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryLianyi.prefab', 2: '2'}
+346	346		401						3000.0	{1: '2', 2: '9339045'}
+347	347		301			DialogEnable				{3: '两步。'}
+348	348		401							{1: '2', 2: '4276'}
+349	349		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+350	350		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz2301.jpg'}
+351	351		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+352	352		301							{3: '审判的“天光”从穹顶倾泻而入……'}
+353	353		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+354	354		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory15.jpg'}
+355	355		201							{1: '1', 2: '500108', 3: '7', 4: '450', 7: '1'}
+356	356		201							{1: '2', 2: '500019', 4: '-450', 7: '1'}
+357	357		301							{1: '1', 2: '赛琳娜', 3: '请告诉我，那场歌剧到底哪里让您心生不悦了？', 4: '1', 18: '100008705'}
+358	358		301							{2: '构造体', 3: '那我还想问你，你想通过那场歌剧表达什么？', 4: '2', 18: '100008706'}
+359	359		301				DialogDisable			{2: '构造体', 3: '讴歌英雄的无畏?还是赞扬战争的伟大？抑或是抒发自己对逝者居高临下的悲悯和同情？', 4: '2', 18: '100008707'}
+360	360		202							{1: '1', 2: '2', 6: '1'}
+361	361		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+362	362		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+363	363		307							{1: '你和钽-193共聚物相性程度良好，成为构造体手术的成功率最后被判定为：高。', 3: '44', 4: 'ffffffff'}
+364	364		301							{3: '你和钽-193共聚物相性程度良好，成为构造体手术的成功率最后被判定为：高。'}
+365	365		307							{2: '1'}
+366	366		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+367	367		401							{1: '2', 2: '100008708'}
+368	368		304							{1: '<i>我挚爱的【kuroname】：<i>', 2: '0066CC', 3: '1', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 7: '1'}
+369	369		401							{1: '2', 2: '100008709'}
+370	370		304							{1: '<i>没想到我真的还有机会向你写信。<i>', 2: '0066CC', 3: '1', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 7: '1'}
+371	371		401							{1: '2', 2: '100008710'}
+372	372		304							{1: '<i>谢谢你的安慰，即便我是在阔别几个月之后才收到它的，我的心灵依然得到了些许慰藉。<i>', 2: '0066CC', 3: '2', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 7: '1'}
+373	373		401							{1: '2', 2: '100008711'}
+374	374		304							{1: '<i>有件事我必须告诉你——现在的我，已经是一名构造体了。<i>', 2: '0066CC', 3: '1.5', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 6: '1', 7: '1', 9: '1'}
+375	375		402							{1: '100008711'}
+376	376		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+377	377		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+378	378		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+379	379		501						250.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryLianyi.prefab', 2: '2'}
+380	380		401						3000.0	{1: '2', 2: '9339045'}
+381	381		301			DialogEnable				{3: '三步。'}
+382	382		401							{1: '2', 2: '4386'}
+383	383		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+384	384		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+385	385		501							{1: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiMemoryInformation.prefab', 2: '2'}
+386	386		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory627.jpg'}
+387	387		301							{3: '像是笼罩在意识海中的一片迷雾逐渐散去。'}
+388	388		505							{2: 'Assets/Product/Effect/Prefab/FxTongyong/FxUiMemoryInformation.prefab'}
+389	389		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+390	390		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory627.jpg'}
+391	391		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory118.png'}
+392	392		201							{1: '1', 2: '500282', 3: '4', 7: '1'}
+393	393		301							{1: '1', 2: '赛琳娜', 3: '考古小队呼叫空中花园，我是小队成员赛琳娜，我方部队于国际空间站内遭遇不明新形式帕弥什敌人并与之交火，现正携带该物体的一块碎片撤退，路上有大量的敌人阻截，请求支援！', 4: '1', 18: '100008712'}
+394	394		202							{1: '1', 6: '1'}
+395	395		401							{1: '2', 2: '4306'}
+396	396		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+397	397		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz2302.jpg'}
+398	398		301							{3: '最后一名考古小队的同伴也倒在了自己面前。'}
+399	399		301							{2: '赛琳娜', 3: '坚持一下，就快到了，不要倒下，赛琳娜，你不能倒下……', 18: '100008713'}
+400	400		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}
+401	401		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory117.png'}
+402	402		201							{1: '1', 2: '500006', 7: '1'}
+403	403		301				DialogDisable			{1: '1', 2: '执行部队队长', 3: '很抱歉，我们没能把你们带出去，但是，赛琳娜，你身上带着的那块碎片，可能是一把极其关键的钥匙，你一定要把它送回空中花园，不论付出什么代价……', 4: '1', 18: '100008714'}
+404	404		202							{1: '1', 6: '1'}
+405	405		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+406	406		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+407	407		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+408	408		501						250.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryLianyi.prefab', 2: '2'}
+409	409		401						3000.0	{1: '2', 2: '9339045'}
+410	410		301			DialogEnable	DialogDisable			{3: '四步。'}
+411	411		109							{1: '1', 2: '<color=#ffffffff><size=60><i>放置已久的水晶球被拂去尘埃。</i></size></color>', 4: '50'}
+412	412		301							{3: '放置已久的水晶球被拂去尘埃。'}
+413	413		110							
+414	414		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+415	415		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+416	416		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory339.png'}
+417	417		301			DialogEnable				{2: '？？？', 3: '——▅▂——▃▅▇——'}
+418	418		301							{3: '怀抱着那个既熟悉又陌生的人类留下的黑色指针，她用力地将它捅进了自己的动力源中。'}
+419	419		301				DialogDisable			{3: '让所有的一切在这一刻结束吧。'}
+420	420		401							{1: '2', 2: '4276'}
+421	421		501						1200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '2'}
+422	422		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg'}
+423	423		501						200.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '2'}
+424	424		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}
+425	425		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz2303.jpg'}
+426	426		301			DialogEnable				{3: '仰起头的时候，她似乎窥见了天光。'}
+427	427		301							{3: '那一刻，她忘却了一切苦难……'}
+428	428		301				DialogDisable			{3: '一粒沙里看见了世界，一朵花中窥见到天国。'}
+429	429		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+430	430		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+431	431		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+432	432		501						250.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryLianyi.prefab', 2: '2'}
+433	433		401						3000.0	{1: '2', 2: '9339045'}
+434	434		301			DialogEnable				{3: '五步。'}
+435	435		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+436	436		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg2401_10.jpg'}
+437	437		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+438	438		301							{3: '少女行走在大地之上。'}
+439	439		301							{3: '她听见了那个人的呼唤，<M>他</M><W>她</W>在呼唤她……'}
+440	440		301							{3: '一切美好得近乎虚假，是勇者的梦境吗？是吹笛人的妄想吗？亦或是链接两者的共享幻觉？'}
+441	441		301							{2: '赛琳娜', 3: '是……你吗？', 18: '100008716'}
+442	442		301				DialogDisable			{3: '长久以来信件的“发送者”，她精神的全部寄托……【kuroname】。'}
+443	443		205						1800.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgCg/Cg2401_4.jpg', 3: '0', 4: '1', 5: '1.5'}
+444	444		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg2401_4.jpg'}
+445	445		205							{1: '999'}
+446	446		301			DialogEnable				{2: '赛琳娜', 3: '是你吧……【kuroname】。', 18: '100008717'}
+447	447		301							{3: '她的唇畔泛上了明媚的笑意。'}
+448	448		301							{2: '赛琳娜', 3: '我……我会给予你孤独的黄昏，绽放的晚霞。', 18: '100008718'}
+449	449		301							{2: '赛琳娜', 3: '我会给予你荒野的寂月，湍流的盛夏。', 18: '100008719'}
+450	450		301							{2: '赛琳娜', 3: '我会给予你我看到每一朵鸢尾花绽放的记忆。', 18: '100008720'}
+451	451		301							{2: '赛琳娜', 3: '我会给予你……我的悲伤，我的喜悦，我的哀愁。', 18: '100008721'}
+452	452		301				DialogDisable			{2: '赛琳娜', 3: '……在我们再次见面的时候。', 18: '100008722'}
+453	453		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+454	454		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+455	455		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}
+456	456		501						250.0	{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryLianyi.prefab', 2: '2'}
+457	457		401						3000.0	{1: '2', 2: '9339045'}
+458	458		301			DialogEnable				{3: '六步。'}
+459	459		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+460	460		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory391.jpg'}
+461	461		104							{1: '-187|-116|-150', 2: '0'}
+462	462		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}
+463	463		301							{3: '她听到了鲸鱼的歌声。'}
+464	464		301				DialogDisable			{3: '世界仿佛在这个瞬间静默，只余下她独自搁浅在深海。'}
+465	465		104						1500.0	{1: '0|0|0', 2: '5'}
+466	466		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiRegressionInvitation/FxUiRegressionInvitationShine.prefab', 2: '2'}
+467	467		301			DialogEnable			2000.0	{3: '倏忽，一簇明亮的阳光照射进来——'}
+468	468		301				AniZhuanchangBegin		2000.0	{3: '赛琳娜从来没有如此“清醒”过。'}
+469	469		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiRegressionInvitation/FxUiRegressionInvitationShine.prefab'}
+470	470		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+471	471		401						2000.0	{1: '1', 2: '36'}
+472	472		401							{1: '1', 2: '6153'}
+473	473		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory393.jpg'}
+474	474		201							{1: '1', 2: '500584', 7: '1'}
+475	475		301			AniZhuanchangEnd				{1: '1', 2: '赛琳娜', 3: '我……赛琳娜……伊利斯……', 4: '1', 18: '100008723'}
+476	476		301							{3: '手指不自觉地颤抖着，她无法确认究竟发生了什么，但……'}
+477	477		202							{1: '1', 6: '1'}
+478	478		401							{1: '2', 2: '4387'}
+479	479		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront39.png', 4: '4'}
+480	480		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+481	481		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory955.png'}
+482	482		301							{3: '世界上“冗余”的分支，似乎都被尽数清除。'}
+483	483		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+484	484		101							{1: 'Assets/Product/Texture/Image/BgCg/Cg2601_11.jpg'}
+485	485		301				DialogDisable			{3: '她锚定到了自己的存在，寻找到了自己和这个世界的链接点，她找回了她自己。'}
+486	486		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+487	487		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz2301.jpg'}
+488	488		109							{1: '11', 2: '<color=#ffffffff><size=90><i>她叫赛琳娜。</i></size></color>', 3: '0', 4: '100', 9: '3'}
+489	489		109							{1: '1', 2: '<color=#4d4d4dff><size=90><b><i>她叫赛琳娜。</i></b></size></color>', 3: '4', 4: '98'}
+490	490		301							{3: '她叫赛琳娜。'}
+491	491		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+492	492		101							{1: 'Assets/Product/Texture/Image/BgCg/Cgqz2905.jpg'}
+493	493		109							{1: '11', 2: '<color=#ffffffff><size=90><i>也是“伊利斯”。</i></size></color>', 3: '0', 4: '100', 9: '3'}
+494	494		109							{1: '1', 2: '<color=#4d4d4dff><size=90><b><i>也是“伊利斯”。</i></b></size></color>', 3: '4', 4: '98'}
+495	495		301							{3: '也是“伊利斯”。'}
+496	496		101							{4: '4', 5: '1'}
+497	497		110							
+498	498		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+499	499		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory393.jpg'}
+500	500		201							{1: '1', 2: '500584', 7: '1'}
+501	501		301			DialogEnable				{1: '1', 3: '她终于完整地回想起了一切，回想起了所有的惊惧，绝望，接纳了所有的痛苦，迷茫。'}
+502	502		301							{3: '……还有那份被她小心翼翼地藏在意识海深处，像宝匣一样珍重地密封起来的，珠宝色的回忆。'}
+503	503		203							{1: '1', 2: '0.25', 3: '-400'}
+504	504		201							{1: '2', 2: '500405', 4: '400'}
+505	505		301							{1: '1', 2: '利亚', 3: '喂……喂？你还好吗？', 4: '2', 18: '100008724'}
+506	506		301							{3: '利亚意外地在赛琳娜面前挥挥手，想要唤回突然站住不动开始发呆的赛琳娜。'}
+507	507		301							{2: '赛琳娜', 3: '我……我很好，谢谢你。', 4: '1', 18: '100008725'}
+508	508		202							{1: '1', 2: '2'}
+509	509		301				AniZhuanchangBegin			{3: '被外力打断思绪，赛琳娜勉强按捺住已经激动到开始过载的意识海，跟上利亚的脚步。'}
+510	510		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory751.jpg'}
+511	511		301			AniZhuanchangEnd				{3: '抵达保育区之后，赛琳娜向利亚提出借用通讯终端以联络空中花园，利亚和山雀小队的其他成员都痛快答应了。'}
+512	512		401							{1: '2', 2: '4884'}
+513	513		301							{3: '她奔跑到终端的前面，顺着模糊记忆的指引，拨打了一个号码——'}
+514	514		201							{1: '1', 2: '500584'}
+515	515		301				AniZhuanchangBegin			{1: '1', 2: '赛琳娜', 3: '你好，请问……是艺术协会吗？', 4: '1', 18: '100008726'}
+516	516		202							{1: '1', 6: '1'}
+517	517		502							{1: 'DialogDisable'}
+518	518		401						2000.0	{1: '1', 2: '36'}
+519	519		401							{1: '1', 2: '201'}
+520	520		101							{1: 'Assets/Product/Texture/Image/BgStory/Bgstory69.jpg'}
+521	521		107			AniZhuanchangEnd				{1: '附近的保育区', 2: '同一时间'}
+522	522		301							{3: '同一时间\\n附近的保育区'}
+523	523		108							{1: '1'}
+524	524		301			DialogEnable				{3: '距离上一次因为“战争后遗症”而被送进生命之星的事情已经过去了一阵子。'}
+525	525		301							{3: '军方有意识减少了灰鸦的任务，但在自己的要求下，赛利卡偶尔会分一些简单的事情过来。'}
+526	526		302							{2: '后续的事宜，会移交给保育区处理。', 3: '527'}
+527	527		401							{1: '2', 2: '4421'}
+528	528		301							{3: '交接完这里的事情，正要登上转移的运输机，终端突然弹出急促的提示音。'}
+529	529		302							{2: '嗯？', 3: '530', 4: '是……艾伦？', 5: '530'}
+530	530		301				DialogDisable			{3: '艺术协会怎么会突然找来……'}
+531	531		401							{1: '2', 2: '4422'}
+532	532		509							{1: 'Assets/Product/Texture/Image/BgStory/BgStory545.jpg', 2: '1'}
+533	533		201						300.0	{1: '11', 2: '500111', 3: '4', 4: '-500'}
+534	534		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 2: '2', 3: '11'}
+535	535		301			DialogEnable				{1: '1', 2: '艾伦', 3: '灰鸦的指挥官，现在有空吗？有个紧急任务要派给你。', 4: '11', 18: '100008727'}
+536	536		302							{2: '艺术协会的任务？', 3: '537', 4: '赛利卡呢？', 5: '537'}
+537	537		301							{2: '艾伦', 3: '嗯，军方已经知悉，我提前告知你大概情况。', 4: '11', 18: '100008728'}
+538	538		301							{2: '艾伦', 3: '时间紧张，我就长话短说，有一支在地表执行任务的小队发现了一位机体编号属于空中花园编制，但查询不到具体编号的构造体。', 4: '11', 18: '100008729'}
+539	539		301							{2: '艾伦', 3: '这个编号属于……属于之前在宇宙空间站失踪的，艺术协会考古小队的队员，赛琳娜。', 4: '11', 18: '100008730'}
+540	540		302							{2: '……', 3: '541', 4: '她现在在哪里？', 5: '541'}
+541	541		301							{2: '艾伦', 3: '她的具体位置我会稍后同步到你的终端。', 4: '11', 18: '100008731'}
+542	542		302							{2: '信息对比过了吗？', 3: '543', 4: '确实是赛琳娜吗？', 5: '543'}
+543	543		301							{2: '艾伦', 3: '赛琳娜的机体编号只有少数人知道，另外，我们对比过了地表传回的影像数据，尽管容貌和机体有些差别，但……', 4: '11', 18: '100008732'}
+544	544		301							{2: '艾伦', 3: '我认为那就是赛琳娜。', 4: '11', 18: '100008733'}
+545	545		302							{2: '……', 3: '546', 4: '我明白了。', 5: '546'}
+546	546		301				DialogDisable			{2: '艾伦', 3: '……抱歉，有些失态。', 4: '11', 18: '100008734'}
+547	547		302							{2: '没关系。', 3: '548', 4: '我能理解。', 5: '548'}
+548	548		401							{1: '2', 2: '558'}
+549	549		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '3'}
+550	550		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+551	551		101						200.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg2401_7.jpg', 4: '5'}
+552	552		401							{1: '2', 2: '558'}
+553	553		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+554	554		101						200.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg2401_3.jpg', 4: '5'}
+555	555		401							{1: '2', 2: '558'}
+556	556		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+557	557		101						200.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg2401_6.jpg', 4: '5'}
+558	558		401							{1: '2', 2: '558'}
+559	559		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+560	560		101						200.0	{1: 'Assets/Product/Texture/Image/BgCg/Cg2401_10.jpg', 4: '5'}
+561	561		401							{1: '2', 2: '558'}
+562	562		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+563	563		101						200.0	{1: 'Assets/Product/Texture/Image/BgCg/Cgqz2905.jpg', 4: '5'}
+564	564		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+565	565		101							{4: '5', 5: '1'}
+566	566		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}
+567	567		301			DialogEnable				{1: '1', 3: '遥远鲸歌在耳边回响，曾经在哈姆雷特中经历过的一幕幕再次在脑海中浮现。'}
+568	568		302							{2: '赛琳娜……', 3: '569', 4: '伊利斯……', 5: '569'}
+569	569		301							{3: '昭示着近乎幻梦的名字已然抵在唇边，脱口而出之后，却又意识到不知应该如何继续话题。'}
+570	570		302							{2: '任务内容是什么？', 3: '571'}
+571	571		204							{1: '11'}
+572	572		301							{2: '艾伦', 3: '我希望你能够将赛琳娜带回空中花园……完好无损的。', 4: '11', 18: '100008735'}
+573	573		301							{2: '艾伦', 3: '她的外貌已经和之前构造体的时候大相径庭，并且，她一度被认定已然在空间站任务中牺牲。', 4: '11', 18: '100008736'}
+574	574		301							{2: '艾伦', 3: '尽管利用哈姆雷特，我们采集到了“鲸歌”，认定她仍然存活，但这个消息几乎也只流传在艺术协会之中。', 4: '11', 18: '100008737'}
+575	575		301							{2: '艾伦', 3: '虽然我能够确认那名构造体确实是赛琳娜，但我也不得不承认，她的身份依旧存在许多无法解释的疑点。', 4: '11', 18: '100008738'}
+576	576		301							{2: '艾伦', 3: '空中花园军方不会对一个未知构造体置之不理，所以……我抢先拦截了这个消息，在知会尼科拉总司令之后，我期望由你来执行这个任务。', 4: '11', 18: '100008739'}
+577	577		302							{2: '没问题。', 3: '578', 4: '好的。', 5: '578'}
+578	578		204							{1: '11', 2: '4'}
+579	579		301							{2: '艾伦', 3: '如果……', 4: '11', 18: '100008740'}
+580	580		301							{3: '艾伦的声音有些迟疑，片刻之后，他还是说出了后面的话。'}
+581	581		301							{2: '艾伦', 3: '我的判断出现问题，那只是升格者伪装成的赛琳娜，或是……', 4: '11', 18: '100008741'}
+582	582		301							{2: '艾伦', 3: '……如果她确实不是赛琳娜，那……我也仍旧希望你能将她带回来，哪怕只是为了继续寻找赛琳娜的下落。', 4: '11', 18: '100008742'}
+583	583		301							{2: '艾伦', 3: '……', 4: '11', 18: '100008743'}
+584	584		301							{3: '通讯对面的声音顿住，随后，轻微叹息声从那边传来。'}
+585	585		301							{2: '艾伦', 3: '请用你的双眼去亲自确认吧……【kuroname】。', 4: '11', 18: '100008744'}
+586	586		204							{1: '11'}
+587	587		301							{2: '艾伦', 3: '希望……你能带回一个好消息。', 4: '11', 18: '100008745'}
+588	588		401							{1: '2', 2: '4423'}
+589	589		510							{1: '1'}
+590	590		505							{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '11'}
+591	591		202							{1: '11'}
+592	592		301							{3: '滋。说完最后一句话后，通讯主动断开了。'}
+593	593		302							{2: '赛琳娜……', 3: '594'}
+594	594		401							{1: '2', 2: '4112'}
+595	595		301							{3: '坐在床上沉思了半顷，随后将手伸向制服内袋的深处，掏出了一个老旧的信封。'}
+596	596		301							{3: '这是一封印有漂亮鸢尾花图案，用皇室蓝墨水和娟秀的花体字写就，古色古香的信函。'}
+597	597		301				AniZhuanchangBegin			{3: '打开早就已经被精心分离好的火漆印，将柔软光滑的信纸摊开，便看到了这些熟悉的字迹。'}
+598	598		304			AniZhuanchangEnd				{1: '<i>久别的人啊，愿你寻回天空的颜色。<i>', 2: '0066CC', 3: '1.5', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 5: '100008746', 6: '1', 7: '1'}
+599	599		304							{1: '<i>流浪倒影中，我听见了鲸鱼的谣歌。<i>', 2: '0066CC', 3: '1.5', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 5: '100008747', 6: '1', 7: '1'}
+600	600		304				AniZhuanchangBegin			{1: '<i>旅人——我的朋友，我终于回到了这里。<i>', 2: '0066CC', 3: '1.5', 4: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 5: '100008748', 6: '1', 9: '1'}
+601	601		301			AniZhuanchangEnd				{3: '这封不知道何时投递到空中花园指挥官宿舍信箱里的信函，有着和她一模一样的笔迹，连会在句尾将笔尖轻轻提起的习惯都完全一致。'}
+602	602		301							{3: '抚摸着信纸背面凹凸不平的笔印，甚至能想象到她是以怎样的力度，将笔痕划下的。'}
+603	603		302							{2: '……会是你吗？赛琳娜。', 3: '604'}
+604	604		301							{3: '这句疑问，理所当然地没有任何回答。'}
+605	605		302							{2: '……这一次，我保证一定不会再是一步之遥。', 3: '606'}
+606	606		401							{1: '2', 2: '4112'}
+607	607		301				AniZhuanchangBegin			{3: '人类指挥官再次珍重地叠起了这封信，将它放回了胸口附近。'}
+608	608		401						2000.0	{1: '1', 2: '36'}
+609	609		401							{1: '1', 2: '5072'}
+610	610		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1116.jpg'}
+611	611		201							{1: '1', 2: '500410', 7: '1'}
+612	612		301			AniZhuanchangEnd				{1: '1', 2: '？？？？', 3: '…………', 4: '1'}
+613	613		202							{1: '1'}
+614	614		301							{3: '无名的观察室内，星河流动，一个人影走过，抬手拂起一池漪澜。'}
+615	615		301							{3: '在那片水波之中，她看到了一个微弱的光点，渐渐明亮了起来。'}
+616	616		201							{1: '1', 2: '500410'}
+617	617		301							{1: '1', 2: '？？？？', 3: '鸢尾花……', 4: '1', 18: '100008749'}
+618	618		301							{3: '她记得这个“收藏”，这是她在无数个轮回里面，不经意打捞起的其中一个亮点。'}
+619	619		301							{3: '她从来不会去刻意要求救助行为的回报，但，若这些亮点能燃为明灯，她也非常乐于看到后续的发展。'}
+620	620		301							{2: '？？？？', 3: '是异聚塔“消失”的影响……', 4: '1', 18: '100008750'}
+621	621		202							{1: '1', 6: '1'}
+622	622		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+623	623		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory71.jpg'}
+624	624		504							{1: '0.7'}
+625	625		301							{3: '曾经，她使用了红潮重塑那位残破的构造体，但时间线纷杂，红潮逐渐异化，迷路的旅人也无法寻找到回家的方向。'}
+626	626		301							{3: '机体可以被重塑，但记忆和意识海却无法通过物理层面的手段来弥补。'}
+627	627		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}
+628	628		101							{1: 'Assets/Product/Texture/Image/BgStory/BgStory1116.jpg'}
+629	629		504							
+630	630		201							{1: '1', 2: '500410', 7: '1'}
+631	631		301							{1: '1', 2: '？？？？', 3: '时间线收束之后，你也寻找到了你的记忆吗？真是……', 4: '1', 18: '100008751'}
+632	632		301							{3: '梦幻般紫色纤弱的花瓣微微蜷曲着，层层叠成一个优美的形状，漂浮在玻璃罩中。'}
+633	633		301							{2: '？？？？', 3: '故事会继续下去。', 4: '1', 18: '100008752'}
+634	634		301							{3: '粉色头发的女性露出一个兴味盎然的笑容。'}
+635	635		301		1		AniZhuanchangBegin			{2: '？？？？', 3: '就让我看看……这一次的“结局”吧。', 4: '1', 18: '100008753'}

@@ -1,0 +1,103 @@
+Role	Layer	State	Target	TransitionDuration
+Me1DestroyerMd001001			Born	
+Me1DestroyerMd001001			Stand1	0.1
+Me1DestroyerMd001001			Stand2	0.1
+Me1DestroyerMd001001			Stand3	0.1
+Me1DestroyerMd001001			Death	0.1
+Me1DestroyerMd001001			Standchange	0.1
+Me1DestroyerMd001001			Run	0.1
+Me1DestroyerMd001001			Walk	0.1
+Me1DestroyerMd001001			Runb	0.2
+Me1DestroyerMd001001			Runl	0.2
+Me1DestroyerMd001001			Runr	0.2
+Me1DestroyerMd001001			Walkb	0.1
+Me1DestroyerMd001001			Walkl	0.1
+Me1DestroyerMd001001			Walkr	0.1
+Me1DestroyerMd001001			TurnLeft	0.1
+Me1DestroyerMd001001			TurnRight	0.1
+Me1DestroyerMd001001			Move1	0.1
+Me1DestroyerMd001001			Move2	0.1
+Me1DestroyerMd001001			Move3	0.1
+Me1DestroyerMd001001			RunStart	0.1
+Me1DestroyerMd001001			RunStartEnd01	0.1
+Me1DestroyerMd001001			Hit1	0.05
+Me1DestroyerMd001001			Hit2	0.05
+Me1DestroyerMd001001			Hit3	0.05
+Me1DestroyerMd001001			Hit4	0.05
+Me1DestroyerMd001001			Behitfly	0.05
+Me1DestroyerMd001001			Hoverhit	0.05
+Me1DestroyerMd001001			Falldown	0.1
+Me1DestroyerMd001001			Hitdown	0.05
+Me1DestroyerMd001001			Lieonfloor	0.1
+Me1DestroyerMd001001			Standup	0.1
+Me1DestroyerMd001001			Straight	0.1
+Me1DestroyerMd001001			Stun	0.1
+Me1DestroyerMd001001			StraightBefore	0.1
+Me1DestroyerMd001001			StraightAfter	0.1
+Me1DestroyerMd001001			Win	
+Me1DestroyerMd001001			Win2	0.1
+Me1DestroyerMd001001			Stop	0.1
+Me1DestroyerMd001001			Fail	0.1
+Me1DestroyerMd001001			Save	0.1
+Me1DestroyerMd001001			Attack01	0.1
+Me1DestroyerMd001001			Attack02	0.1
+Me1DestroyerMd001001			Attack03	0.1
+Me1DestroyerMd001001		Stand1	Run	0.2
+Me1DestroyerMd001001		Stand1	Walk	0.1
+Me1DestroyerMd001001		Stand2	Standchange	0.1
+Me1DestroyerMd001001		Stand2	Run	0.2
+Me1DestroyerMd001001		Stand2	Walk	0.3
+Me1DestroyerMd001001		Stand2	Walkb	0.3
+Me1DestroyerMd001001		Stand2	Walkl	0.3
+Me1DestroyerMd001001		Stand2	Walkr	0.3
+Me1DestroyerMd001001		Standchange	Stand1	0.1
+Me1DestroyerMd001001		Standchange	Run	0.1
+Me1DestroyerMd001001		Standchange	Walk	0.1
+Me1DestroyerMd001001		Run	Stop	0.2
+Me1DestroyerMd001001		Run	Stand2	0.2
+Me1DestroyerMd001001		Run	Runb	0.2
+Me1DestroyerMd001001		Run	Runl	0.2
+Me1DestroyerMd001001		Run	Runr	0.2
+Me1DestroyerMd001001		Walk	Stand2	0.1
+Me1DestroyerMd001001		Runb	Stand2	0.2
+Me1DestroyerMd001001		Runb	Run	0.2
+Me1DestroyerMd001001		Runb	Runl	0.2
+Me1DestroyerMd001001		Runb	Runr	0.2
+Me1DestroyerMd001001		Runl	Stand2	0.2
+Me1DestroyerMd001001		Runl	Run	0.2
+Me1DestroyerMd001001		Runl	Runb	0.2
+Me1DestroyerMd001001		Runl	Runr	0.2
+Me1DestroyerMd001001		Runr	Stand2	0.2
+Me1DestroyerMd001001		Runr	Run	0.2
+Me1DestroyerMd001001		Runr	Runb	0.2
+Me1DestroyerMd001001		Runr	Runl	0.2
+Me1DestroyerMd001001		Walkb	Stand2	0.1
+Me1DestroyerMd001001		Walkb	Walk	0.2
+Me1DestroyerMd001001		Walkb	Walkl	0.1
+Me1DestroyerMd001001		Walkb	Walkr	0.1
+Me1DestroyerMd001001		Walkl	Stand2	0.1
+Me1DestroyerMd001001		Walkl	Walk	0.1
+Me1DestroyerMd001001		Walkl	Walkb	0.1
+Me1DestroyerMd001001		Walkl	Walkr	0.2
+Me1DestroyerMd001001		Walkr	Stand2	0.1
+Me1DestroyerMd001001		Walkr	Walk	0.1
+Me1DestroyerMd001001		Walkr	Walkb	0.1
+Me1DestroyerMd001001		Walkr	Walkl	0.2
+Me1DestroyerMd001001		TurnLeft	Stand2	0.1
+Me1DestroyerMd001001		TurnRight	Stand2	0.1
+Me1DestroyerMd001001		RunStart	Run	
+Me1DestroyerMd001001		RunStart	RunStartEnd01	0.1
+Me1DestroyerMd001001		Hit1	Stand2	
+Me1DestroyerMd001001		Hit2	Stand2	
+Me1DestroyerMd001001		Hit3	Stand2	
+Me1DestroyerMd001001		Hit4	Stand2	
+Me1DestroyerMd001001		Behitfly	Hoverhit	0.1
+Me1DestroyerMd001001		Behitfly	Falldown	0.1
+Me1DestroyerMd001001		Hoverhit	Falldown	0.1
+Me1DestroyerMd001001		Falldown	Lieonfloor	0.1
+Me1DestroyerMd001001		Hitdown	Lieonfloor	0.1
+Me1DestroyerMd001001		Standup	Stand2	0.1
+Me1DestroyerMd001001		Straight	Stand2	0.1
+Me1DestroyerMd001001		Stun	Stand2	0.1
+Me1DestroyerMd001001		Win	Win2	0.1
+Me1DestroyerMd001001		Stop	Stand2	0.1

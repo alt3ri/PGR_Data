@@ -1,0 +1,16 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory281.png'}
+2	2		401							{1: '1', 2: '203'}
+3	3		301			DialogEnable				{3: '比之前更强烈的震动传到两人所在的位置。一个突如起来的阴影渐渐笼罩在头上。'}
+4	4		302							{2: '发生了什么！？', 3: '5'}
+5	5		201							{1: '1', 2: '500166'}
+6	6		301							{1: '1', 2: '露西亚', 3: '指挥官，上面！', 4: '1'}
+7	7		202							{1: '1', 6: '1'}
+8	8		301				DialogDisable			{3: '聚噬体正在举起右手，向着两人所在的位置砸下来。'}
+9	9		305							{1: '10', 2: '15'}
+10	10		301			DialogEnable				{2: '聚噬体', 3: '嘎啊啊啊啊啊啊！！！！'}
+11	11		301							{3: '聚噬体的攻击并没攻击到两人，反而因为用力过猛而让右手陷入瘫痪。'}
+12	12		201							{1: '1', 2: '500166'}
+13	13		301							{1: '1', 2: '露西亚', 3: '趁这个机会，指挥官！', 4: '1'}
+14	14		302		1		AniZhuanchangBegin			{2: '一口气冲到最上面的地方吧！'}
+15	15		502		1					{1: 'AniZhuanchangBegin'}

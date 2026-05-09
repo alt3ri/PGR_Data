@@ -1,0 +1,12 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/BgStory24.jpg'}
+2	100		401							{1: '1', 2: '201'}
+3	2		201							{1: '1', 2: '500097'}
+4	3		301			DialogEnable				{1: '1', 2: '庄园管家', 3: '主人，感染体已经攻破最外侧的大门了。', 4: '1'}
+5	4		301							{2: '科波菲尔', 3: '民众都撤离完成了吗？'}
+6	5		301							{2: '庄园管家', 3: '都撤离了。', 4: '1'}
+7	6		301							{2: '科波菲尔', 3: '防御机关呢，都启动了吗？'}
+8	7		301							{2: '庄园管家', 3: '已经全部启动，但预计最多只能撑40分钟。', 4: '1'}
+9	8		301							{2: '科波菲尔', 3: '很好，那我也该走了。'}
+10	9		301							{2: '庄园管家', 3: '等等……', 4: '1'}
+11	10		301		1		AniZhuanchangBegin			{2: '庄园管家', 3: '大小姐的信号……出现在了中庭……', 4: '1'}

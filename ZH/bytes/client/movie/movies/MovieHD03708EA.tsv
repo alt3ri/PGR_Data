@@ -1,0 +1,37 @@
+Id	ActionId	NextActionId	Type	IsBlock	IsEnd	BeginAnim	EndAnim	BeginDelay	EndDelay	Params
+1	1		101			AniZhuanchangEnd				{1: 'Assets/Product/Texture/Image/BgStory/Bgstory360.png'}
+2	2		401							{1: '1', 2: '250'}
+3	3		301			DialogEnable				{3: '二人来到了路途的终点，象征着出口的光斑就在山麓中央闪烁着。'}
+4	4		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1003.jpg', 3: '0', 4: '1', 5: '1'}
+5	5		301							{3: '站在山峦向远方眺望，一尊雄伟而诡异的高塔赫然映入眼帘——'}
+6	6		301							{3: '它在夜幕下睥睨着大地，散发的诡异红光晕染了云层与夜幕，压抑地笼罩着整颗星球。'}
+7	7		205						1000.0	{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory1003.jpg', 3: '1', 4: '0', 5: '1'}
+8	8		201							{1: '1', 2: '501070', 3: '14'}
+9	9		301							{1: '1', 2: '七实', 3: '这里是……被异聚塔毁灭的世界。', 4: '1'}
+10	10		301							{2: '七实', 3: '它会不断散发出特殊的能量束，生命体在它的影响下神志不清，互相伤害。', 4: '1'}
+11	11		301							{2: '七实', 3: '即便是躲在太空中，也无法逃脱它的控制，不用很长的时间，人类文明就会陷入自毁。', 4: '1'}
+12	12		301							{2: '七实', 3: '直到最后，无人生还……', 4: '1'}
+13	13		301							{2: '七实', 3: '……看到那些红光，七实总感觉哪里不舒服。', 4: '1'}
+14	14		301							{2: '七实', 3: '指挥官，我们赶快离开这里吧。', 4: '1'}
+15	15		301							{2: '七实', 3: '“很能吃”筛选的维域已经足够多了，从这里返回出发站，应该就能遇到奇■■■——', 4: '1'}
+16	16		202							{1: '1'}
+17	17		111						1000.0	{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+18	18		205							{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront30.png', 3: '0', 4: '1', 5: '2'}
+19	19		401							{1: '2', 2: '5024'}
+20	20		301							{3: '蓦地，面前的光景突然开始扭曲变形，缓缓浮现出了一层透明的隔膜。'}
+21	21		302							{2: '七实！', 3: '22'}
+22	22		205							{1: '999'}
+23	23		101							{1: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront30.png', 4: '5'}
+24	24		201							{1: '1', 2: '501070', 3: '15'}
+25	25		301							{1: '1', 2: '七实', 3: '■■■■■■！', 4: '1'}
+26	26		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySugorokuScreen03.prefab', 2: '3'}
+27	27		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryHuiyisha01.prefab', 2: '3'}
+28	28		401							{1: '2', 2: '2604'}
+29	29		301			RImgBg1Shake				{3: '斑驳的色彩中，七实与自己一样，被一颗彩色的泡沫缓缓吞没，她努力拍打着面前的壁垒，却无法撼动其分毫。'}
+30	30		301							{2: '七实', 3: '——指■■■■■……', 4: '1'}
+31	31		111							{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}
+32	32		401							{1: '2', 2: '9389034'}
+33	33		501							{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew01.prefab', 2: '3'}
+34	34		301							{3: '眼前的世界渐渐模糊，天旋地转，不断响起刺耳的嗡鸣——'}
+35	35		502							{1: 'RImgBg1Shake'}
+36	36		301		1		AniZhuanchangBegin			{2: '七实', 3: '——指挥官——！！', 4: '1'}
