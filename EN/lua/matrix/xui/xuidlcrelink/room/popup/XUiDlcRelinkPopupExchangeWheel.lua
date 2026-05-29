@@ -1,4 +1,5 @@
 local XUiGridDlcRelinkExchangeWheelEmoji = require("XUi/XUiDlcRelink/Room/Grid/XUiGridDlcRelinkExchangeWheelEmoji")
+local XUiPanelLongPressProgress = require("XUi/XUiDlcRelink/Common/XUiPanelLongPressProgress")
 ---@class XUiDlcRelinkPopupExchangeWheel : XLuaUi
 ---@field private _Control XDlcRelinkControl
 ---@field BtnTab XUiButtonGroup
@@ -32,9 +33,22 @@ function XUiDlcRelinkPopupExchangeWheel:OnAwake()
     -- 交换面板打开时禁止拖拽
     self.DragLocked = false
 
-    -- 列表区域hover监听，用于判断拖拽释放位置
+    -- 长按状态变量
+    ---@type XUiGridDlcRelinkExchangeWheelEmoji
+    self.PressingGrid = nil             -- 当前正在长按交互的Grid引用
+    self.IsPressing = false             -- 是否正在长按加载进度
+    self.DragTriggered = false          -- 是否已触发拖拽
+    self.PressCancelled = false         -- 本次按压是否已取消长按
+
+    self._screenVec2 = CS.UnityEngine.Vector2(0, 0)
+    self._dragVec2 = CS.UnityEngine.Vector2(0, 0)
+    self._hideVec2 = CS.UnityEngine.Vector2(-99999, -99999)
+
     if self.PanelEmojiList then
+        -- 列表区域hover监听，用于判断拖拽释放位置
         self:AddPointerEnterExitClick(self.PanelEmojiList.gameObject, handler(self, self.OnPointerEnterList), handler(self, self.OnPointerExitList), handler(self, self.OnPointerClickList))
+        ---@type UnityEngine.UI.ScrollRect
+        self.EmojiListScrollRect = self.PanelEmojiList.transform:GetComponent(typeof(CS.UnityEngine.UI.ScrollRect))
     end
 end
 
@@ -44,6 +58,8 @@ function XUiDlcRelinkPopupExchangeWheel:OnStart()
     self.CurSelectIndex = 2
     ---@type XUiGridDlcRelinkExchangeWheelEmoji[]
     self.EmojiGridList = {}
+    -- 缓存ImgSelect引用，避免频繁调用Find
+    self.ImgSelectList = {}
 
     -- 轮盘最大槽位数
     self.MaxEmojiWheelCount = self._Control:GetActivityEmojiWheelMaxCount()
@@ -60,26 +76,31 @@ function XUiDlcRelinkPopupExchangeWheel:OnEnable()
     self:RefreshPanelWheel()
 end
 
+function XUiDlcRelinkPopupExchangeWheel:OnDestroy()
+    self:StopDragTracking()
+    self:ClearPressState()
+end
+
 -- 进入/离开/点击监听绑定
 function XUiDlcRelinkPopupExchangeWheel:AddPointerEnterExitClick(go, onEnter, onExit, onClick)
     if not go then
         return
     end
-    ---@type XGoInputHandler
-    local handler = go:GetComponent(typeof(CS.XGoInputHandler))
-    if XTool.UObjIsNil(handler) then
-        handler = go:AddComponent(typeof(CS.XGoInputHandler))
+    ---@type XUguiPointerEventListener
+    local listener = go:GetComponent(typeof(CS.XUguiPointerEventListener))
+    if XTool.UObjIsNil(listener) then
+        listener = go:AddComponent(typeof(CS.XUguiPointerEventListener))
     end
     if onEnter then
-        handler:AddPointerEnterListener(onEnter)
+        listener.OnEnter = onEnter
     end
     if onExit then
-        handler:AddPointerExitListener(onExit)
+        listener.OnExit = onExit
     end
     if onClick then
-        handler:AddPointerClickListener(onClick)
+        listener.OnClick = onClick
     end
-    return handler
+    return listener
 end
 
 function XUiDlcRelinkPopupExchangeWheel:InitBtnTab()
@@ -128,8 +149,11 @@ function XUiDlcRelinkPopupExchangeWheel:OnDynamicTableEvent(event, index, grid)
 end
 
 function XUiDlcRelinkPopupExchangeWheel:IsUsed(emojiId)
+    if not XTool.IsNumberValid(emojiId) then
+        return false
+    end
     for _, id in ipairs(self.TempEmojiWheelIds) do
-        if XTool.IsNumberValid(emojiId) and XTool.IsNumberValid(id) and id == emojiId then
+        if id == emojiId then
             return true
         end
     end
@@ -147,6 +171,7 @@ function XUiDlcRelinkPopupExchangeWheel:RefreshPanelWheel()
             end
             -- 槽位hover监听
             self:AddPointerEnterExitClick(parent.gameObject, function() self:OnPointerEnterWheel(i) end, function() self:OnPointerExitWheel(i) end)
+            self.ImgSelectList[i] = self[string.format("ImgSelect0%s", i)]
             -- 实例化格子
             local go = XUiHelper.Instantiate(self.GridEmoji2, parent)
             grid = XUiGridDlcRelinkExchangeWheelEmoji.New(go, self)
@@ -175,10 +200,11 @@ end
 
 -- 刷新轮盘选择状态
 function XUiDlcRelinkPopupExchangeWheel:UpdateWheelSelectableState(emojiId)
+    local isValid = XTool.IsNumberValid(emojiId)
     for i, grid in ipairs(self.EmojiGridList) do
         if grid then
-            local isCanSelect = XTool.IsNumberValid(emojiId) and grid:GetEmojiId() == emojiId
-            local imgSelect = self[string.format("ImgSelect0%s", i)]
+            local isCanSelect = isValid and grid:GetEmojiId() == emojiId
+            local imgSelect = self.ImgSelectList[i]
             if imgSelect then
                 imgSelect.gameObject:SetActiveEx(isCanSelect)
             end
@@ -188,12 +214,12 @@ end
 
 -- 刷新轮盘悬停状态
 function XUiDlcRelinkPopupExchangeWheel:UpdateWheelHoverState()
+    local hoverIndex = self.Dragging and self.HoverWheelIndex or 0
     for i, grid in ipairs(self.EmojiGridList) do
         if grid then
-            local isDragHover = self.Dragging and self.HoverWheelIndex == i
-            local imgSelect = self[string.format("ImgSelect0%s", i)]
+            local imgSelect = self.ImgSelectList[i]
             if imgSelect then
-                imgSelect.gameObject:SetActiveEx(isDragHover)
+                imgSelect.gameObject:SetActiveEx(hoverIndex == i)
             end
         end
     end
@@ -280,6 +306,7 @@ function XUiDlcRelinkPopupExchangeWheel:StartDrag(grid)
     end
     dragGrid:Open()
     dragGrid:SetIsDragClone(true)
+    dragGrid:SetOnDrag(true)
     dragGrid:Refresh(emojiId)
     -- 提升拖拽格子层级
     local order = self:GetExchangeBaseOrder() + 5
@@ -292,26 +319,81 @@ function XUiDlcRelinkPopupExchangeWheel:StartDrag(grid)
         canvasGroup = dragGrid.GameObject:AddComponent(typeof(CS.UnityEngine.CanvasGroup))
     end
     canvasGroup.blocksRaycasts = false
+
+    -- 禁用列表滑动，开始拖拽追踪
+    self:SetScrollEnabled(false)
+    self:StartDragTracking()
 end
 
-function XUiDlcRelinkPopupExchangeWheel:GetPosByEventData(eventData)
-    local transform = self.PanelInfo.transform
-    local ok, point = CS.UnityEngine.RectTransformUtility.ScreenPointToLocalPointInRectangle(transform, eventData.position, CS.XUiManager.Instance.UiCamera)
-    if not ok then
-        return -99999, -99999
+-- 获取当前手指/鼠标屏幕坐标
+function XUiDlcRelinkPopupExchangeWheel:GetScreenPoint()
+    if CS.UnityEngine.Input.touchCount > 0 then
+        return CS.UnityEngine.Input.GetTouch(0).position
+    elseif CS.UnityEngine.Input.GetMouseButton(0) then
+        return CS.UnityEngine.Input.mousePosition
     end
-    return point.x, point.y
+    return nil
 end
 
-function XUiDlcRelinkPopupExchangeWheel:OnDragMove(eventData)
+-- 获取当前手指/鼠标在PanelInfo下的本地坐标
+function XUiDlcRelinkPopupExchangeWheel:GetScreenLocalPos(screenPos)
+    screenPos = screenPos or self:GetScreenPoint()
+    if not screenPos then
+        return nil
+    end
+    self._screenVec2.x = screenPos.x
+    self._screenVec2.y = screenPos.y
+    local ok, point = CS.UnityEngine.RectTransformUtility.ScreenPointToLocalPointInRectangle(self.PanelInfo.transform, self._screenVec2, CS.XUiManager.Instance.UiCamera)
+    if not ok then
+        return nil
+    end
+    return point
+end
+
+-- 开始拖拽追踪（用定时器读取屏幕坐标，代替Drag事件，避免拦截ScrollRect）
+-- 定时器同时负责：1)位置追踪 2)手指抬起检测
+function XUiDlcRelinkPopupExchangeWheel:StartDragTracking()
+    self:StopDragTracking()
+    self:RefreshDragClonePos()
+    self.DragTrackingTimer = XScheduleManager.ScheduleForeverEx(function()
+        if XTool.UObjIsNil(self.GameObject) then
+            self:StopDragTracking()
+            return
+        end
+        -- 获取屏幕坐标
+        local screenPos = self:GetScreenPoint()
+        if not screenPos then
+            -- 手指真正抬起（Input.touchCount=0 且鼠标未按下）
+            self:EndDrag()
+            return
+        end
+        self:RefreshDragClonePos(screenPos)
+    end, 0)
+end
+
+function XUiDlcRelinkPopupExchangeWheel:RefreshDragClonePos(screenPos)
     if not self.Dragging or not self.DragCloneGrid then
         return
     end
-    local x, y = self:GetPosByEventData(eventData)
-    self.DragCloneGrid.Transform.anchoredPosition = CS.UnityEngine.Vector2(x, y)
+    local localPos = self:GetScreenLocalPos(screenPos)
+    if localPos then
+        self._dragVec2.x = localPos.x
+        self._dragVec2.y = localPos.y
+        self.DragCloneGrid.Transform.anchoredPosition = self._dragVec2
+    else
+        self.DragCloneGrid.Transform.anchoredPosition = self._hideVec2
+    end
 end
 
-function XUiDlcRelinkPopupExchangeWheel:EndDrag(eventData)
+-- 停止拖拽追踪
+function XUiDlcRelinkPopupExchangeWheel:StopDragTracking()
+    if self.DragTrackingTimer then
+        XScheduleManager.UnSchedule(self.DragTrackingTimer)
+        self.DragTrackingTimer = nil
+    end
+end
+
+function XUiDlcRelinkPopupExchangeWheel:EndDrag()
     if not self.Dragging then
         return
     end
@@ -333,6 +415,10 @@ function XUiDlcRelinkPopupExchangeWheel:EndDrag(eventData)
 end
 
 function XUiDlcRelinkPopupExchangeWheel:ClearDragState()
+    self:StopDragTracking()
+    self:SetScrollEnabled(true)
+    -- 重置长按状态
+    self:ClearPressState()
     self.Dragging = false
     self.DraggingEmojiId = nil
     self.DraggingFrom = nil
@@ -517,6 +603,142 @@ end
 function XUiDlcRelinkPopupExchangeWheel:CloseExchangePanel()
     self.PanelExchange.gameObject:SetActiveEx(false)
     self.DragLocked = false
+end
+
+--endregion
+
+--region 列表滚动控制
+
+-- 启用/禁用列表滚动（拖拽emoji时需禁用，避免列表跟着滚动）
+function XUiDlcRelinkPopupExchangeWheel:SetScrollEnabled(enabled)
+    if self.EmojiListScrollRect then
+        self.EmojiListScrollRect.enabled = enabled
+    end
+end
+
+--endregion
+
+--region 长按进度条
+
+-- Grid刷新前：若正在长按该Grid，则取消长按状态，避免刷新重置时长按残留
+---@param grid XUiGridDlcRelinkExchangeWheelEmoji
+function XUiDlcRelinkPopupExchangeWheel:OnGridBeforeRefresh(grid)
+    if self.PressingGrid == grid then
+        self:CancelPress()
+        self.PressingGrid = nil
+    end
+end
+
+-- Grid手指按下，开始长按流程
+---@param grid XUiGridDlcRelinkExchangeWheelEmoji
+function XUiDlcRelinkPopupExchangeWheel:OnGridPointerDown(grid)
+    if self.PressingGrid and self.PressingGrid ~= grid then
+        return
+    end
+    -- 正在拖拽或拖拽被锁定时不响应
+    if self.Dragging or self.DragLocked then
+        return
+    end
+    -- 注册为当前长按交互Grid，重置状态标记
+    self.PressingGrid = grid
+    self.PressCancelled = false
+    self.DragTriggered = false
+end
+
+-- Grid长按持续回调：触发拖拽进度条
+---@param grid XUiGridDlcRelinkExchangeWheelEmoji
+function XUiDlcRelinkPopupExchangeWheel:OnGridPress(grid)
+    if self.DragTriggered then
+        return
+    end
+    if self.PressingGrid ~= grid then
+        return
+    end
+    if self.PressCancelled then
+        return
+    end
+    -- 拖拽被锁定时（交换面板打开），不响应长按
+    if self.DragLocked then
+        return
+    end
+    -- 开始长按，显示进度条
+    if not self.IsPressing then
+        self.IsPressing = true
+        self:ShowPressProgress(grid.PressProgressTarget, function()
+            self.IsPressing = false
+            if not self.DragLocked then
+                self.DragTriggered = true
+                self:StartDrag(grid)
+            else
+                self.DragTriggered = false
+            end
+            self:HidePressProgress()
+        end)
+    end
+end
+
+-- Grid手指抬起
+---@param grid XUiGridDlcRelinkExchangeWheelEmoji
+function XUiDlcRelinkPopupExchangeWheel:OnGridPointerUp(grid)
+    if self.PressingGrid ~= grid then
+        return
+    end
+    self:CancelPress()
+    self.PressingGrid = nil
+end
+
+-- Grid移出范围取消长按和进度条
+---@param grid XUiGridDlcRelinkExchangeWheelEmoji
+function XUiDlcRelinkPopupExchangeWheel:OnGridPointerExit(grid)
+    if self.PressingGrid ~= grid then
+        return
+    end
+    -- 仅在长按阶段（未触发拖拽）时取消
+    if self.IsPressing and not self.DragTriggered then
+        self:CancelPress()
+    end
+end
+
+-- 显示长按进度条并开始加载
+---@param targetTransform UnityEngine.RectTransform 目标格子的RectTransform
+---@param onComplete function 进度完成回调
+function XUiDlcRelinkPopupExchangeWheel:ShowPressProgress(targetTransform, onComplete)
+    if not self.PressProgress then
+        local path = self._Control:GetClientConfig("LongPressProgressBarPath")
+        local panelTimerGo = self.PanelInfo.transform:LoadPrefabEx(path)
+        local order = self:GetExchangeBaseOrder() + 3
+        ---@type XUiPanelLongPressProgress
+        self.PressProgress = XUiPanelLongPressProgress.New(panelTimerGo, self, order)
+    end
+    self.PressProgress:Open()
+    self.PressProgress:Refresh(targetTransform, onComplete)
+end
+
+-- 隐藏长按进度条
+function XUiDlcRelinkPopupExchangeWheel:HidePressProgress()
+    if self.PressProgress then
+        self.PressProgress:Close()
+    end
+end
+
+-- 取消长按
+function XUiDlcRelinkPopupExchangeWheel:CancelPress()
+    if self.IsPressing then
+        self.IsPressing = false
+        self.PressCancelled = true
+        self:HidePressProgress()
+    end
+end
+
+-- 重置所有长按状态变量
+function XUiDlcRelinkPopupExchangeWheel:ClearPressState()
+    if self.IsPressing then
+        self:HidePressProgress()
+    end
+    self.PressingGrid = nil
+    self.IsPressing = false
+    self.DragTriggered = false
+    self.PressCancelled = false
 end
 
 --endregion

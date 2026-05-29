@@ -348,9 +348,14 @@ end
 --一键重登全部干掉
 function XMVCACls:_HotReloadAll()
     if self._OneKeyReLogin then
+        -- agency 实例会被 _ReleaseAll 销毁、InitModule 重建，InitAllAgencyRpc 再次走 Agency:InitRpc
+        -- 这些 InitRpc 多用裸 XRpc.X = handler（绕过 AddRpc），__newindex 会判定为重复并拒绝注册
+        -- 这里在窗口期内关闭重复检测，让新实例的 handler 顺利覆盖旧实例的；XManager 静态注册不参与该窗口
+        XRpc.SetSuppressDuplicateCheck(true)
         self:_ReleaseAll()
         self:InitModule()
         self:InitAllAgencyRpc()
+        XRpc.SetSuppressDuplicateCheck(false)
         self._OneKeyReLogin = false
     end
 end

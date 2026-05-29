@@ -101,6 +101,9 @@ local GoodsName = {
         if not template then return "" end
         return template.Name
     end,
+    [XArrangeConfigs.Types.FashionColor] = function(templateId)
+        return XMVCA.XFashion:GetFashionColorName(templateId)
+    end
 }
 
 local GoodsQuality = {
@@ -175,6 +178,10 @@ local GoodsQuality = {
     [XArrangeConfigs.Types.SgDormFurniture] = function(templateId)
         return XMVCA.XSkyGardenDorm:GetFurnitureQuality(templateId)
     end,
+
+    [XArrangeConfigs.Types.FashionColor] = function(templateId)
+        return XMVCA.XFashion:GetFashionColorQuality(templateId)
+    end
 }
 
 local GoodsIcon = {
@@ -266,6 +273,9 @@ local GoodsIcon = {
         if not template then return "" end
         return template.Icon
     end,
+    [XArrangeConfigs.Types.FashionColor] = function(templateId)
+        return XMVCA.XFashion:GetFashionColorIcon(templateId)
+    end
 }
 
 local GoodsDescription = {
@@ -376,6 +386,9 @@ local GoodsDescription = {
         if not template then return "" end
         return template.Desc
     end,
+    [XArrangeConfigs.Types.FashionColor] = function(templateId)
+        return XMVCA.XFashion:GetFashionColorDescription(templateId)
+    end
 }
 
 local GoodsWorldDesc = {
@@ -461,6 +474,9 @@ local GoodsWorldDesc = {
         if not template then return "" end
         return template.WorldDesc
     end,
+    [XArrangeConfigs.Types.FashionColor] = function(templateId)
+        return XMVCA.XFashion:GetFashionColorWorldDescription(templateId)
+    end
 }
 
 local GoodsSkipIdParams = {
@@ -479,6 +495,10 @@ local GoodsSkipIdParams = {
     [XArrangeConfigs.Types.WeaponFashion] = function(templateId)
         return XWeaponFashionConfigs.GetFashionSkipIdParams(templateId)
     end,
+
+    [XArrangeConfigs.Types.FashionColor] = function(templateId)
+        return XMVCA.XFashion:GetFashionColorSkipIdParams(templateId)
+    end
 }
 
 local GoodsCurrentCount = {
@@ -584,6 +604,13 @@ local GoodsCurrentCount = {
     [XArrangeConfigs.Types.Filter] = function(templateId)
         return XMVCA.XBigWorldAlbum:IsUnlockFilterId(templateId) and 1 or 0
     end,
+    [XArrangeConfigs.Types.FashionColor] = function(templateId)
+        if XMVCA.XFashion:IsFashionColorHas(templateId) then
+            return 1
+        else
+            return 0
+        end
+    end
 }
 
 --==============================--
@@ -1001,6 +1028,19 @@ GoodsShowParams[XArrangeConfigs.Types.Filter] = function(templateId)
         return
     end
     return XMVCA.XBigWorldAlbum:GetFilterParams(templateId)
+end
+
+GoodsShowParams[XArrangeConfigs.Types.FashionColor] = function(templateId)
+    local fashionColorConf = XMVCA.XFashion:GetFashionColorById(templateId)
+
+    return {
+        RewardType = XRewardManager.XRewardType.FashionColor,
+        TemplateId = templateId,
+        Name = fashionColorConf.FashionName,
+        Icon = fashionColorConf.FashionIcon,
+        Quality = fashionColorConf.Quality
+    }
+
 end
 
 --==============================--

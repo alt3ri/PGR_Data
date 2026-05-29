@@ -81,6 +81,12 @@ function XUiTeamPrefabPopupTagSelector:GetTagsByType(tagType)
     return result
 end
 
+function XUiTeamPrefabPopupTagSelector:InitTagGridStateNode(grid)
+    grid.NormalNode = grid.Transform:Find("Normal")
+    grid.PressNode = grid.Transform:Find("Press")
+    grid.SelectNode = grid.Transform:Find("Select")
+end
+
 function XUiTeamPrefabPopupTagSelector:InitTagGrids()
     -- 属性标签
     local attributeTags = self:GetTagsByType(XEnumConst.TeamPrefab.TagTypeAttribute)
@@ -98,7 +104,10 @@ function XUiTeamPrefabPopupTagSelector:InitTagGrids()
         btn.CallBack = function()
             self:OnTagGridClick(tagId, XEnumConst.TeamPrefab.TagTypeAttribute)
         end
-        self.AttributeGrids[i] = { Go = go, Btn = btn, TagId = cfg.Id }
+        local grid = { GameObject = go, Transform = go.transform, Btn = btn, TagId = cfg.Id }
+        self:InitTagGridStateNode(grid)
+        self:SetTagGridSelectState(grid, false)
+        self.AttributeGrids[i] = grid
     end
 
     -- 玩法标签
@@ -114,7 +123,10 @@ function XUiTeamPrefabPopupTagSelector:InitTagGrids()
         btn.CallBack = function()
             self:OnTagGridClick(tagId, XEnumConst.TeamPrefab.TagTypeGameplay)
         end
-        self.ModeGrids[i] = { Go = go, Btn = btn, TagId = cfg.Id }
+        local grid = { GameObject = go, Transform = go.transform, Btn = btn, TagId = cfg.Id }
+        self:InitTagGridStateNode(grid)
+        self:SetTagGridSelectState(grid, false)
+        self.ModeGrids[i] = grid
     end
 end
 
@@ -129,14 +141,26 @@ function XUiTeamPrefabPopupTagSelector:OnTagGridClick(tagId, tagType)
     self:RefreshAllGridSelectState()
 end
 
+function XUiTeamPrefabPopupTagSelector:SetTagGridSelectState(grid, isSelected)
+    if grid.NormalNode then
+        grid.NormalNode.gameObject:SetActiveEx(not isSelected)
+    end
+    if grid.PressNode then
+        grid.PressNode.gameObject:SetActiveEx(false)
+    end
+    if grid.SelectNode then
+        grid.SelectNode.gameObject:SetActiveEx(isSelected)
+    end
+end
+
 function XUiTeamPrefabPopupTagSelector:RefreshAllGridSelectState()
     for _, grid in ipairs(self.AttributeGrids) do
         local isSelected = (grid.TagId == self.SelectedAttributeTagId)
-        grid.Btn:SetButtonState(isSelected and CS.UiButtonState.Select or CS.UiButtonState.Normal)
+        self:SetTagGridSelectState(grid, isSelected)
     end
     for _, grid in ipairs(self.ModeGrids) do
         local isSelected = (grid.TagId == self.SelectedModeTagId)
-        grid.Btn:SetButtonState(isSelected and CS.UiButtonState.Select or CS.UiButtonState.Normal)
+        self:SetTagGridSelectState(grid, isSelected)
     end
 end
 

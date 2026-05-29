@@ -115,7 +115,7 @@ end
 function XUiBigWorldCoating:UpdateCharacterModel()
     self:PlayChangeEffect()
     local fashionId = self._FashionId
-    local uiModelId = XMVCA.XBigWorldCharacter:GetUiModelIdByFashionId(fashionId, self._FashionColorId)
+    local uiModelId = XMVCA.XBigWorldCharacter:GetUiModelIdByFashionId(fashionId, self._FashionColorId, true)
     local helper = self._DisplayController:GetDisplayHelper()
     local modelInfo = helper.CreateBWCommonModelDisplayInfo(uiModelId, self.NearCamera, nil, 0)
 

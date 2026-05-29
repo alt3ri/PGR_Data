@@ -354,7 +354,7 @@ function XUiGridEchelonMember:OnBtnClickClick()
     XDataCenter.BfrtManager.SetCurSelectFightType(self.EchelonType)
     
     -- 传入这个真正的 team 对象
-    XLuaUiManager.Open("UiBattleRoleRoom", self.StageId, team, XUiBattleRoleRoomDefaultProxy)
+    XMVCA.XFuben:OpenUiBattleRoleRoom(self.StageId, team, XUiBattleRoleRoomDefaultProxy)
 end
 --endregion
 

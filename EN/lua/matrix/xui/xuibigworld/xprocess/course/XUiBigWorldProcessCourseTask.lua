@@ -81,7 +81,7 @@ function XUiBigWorldProcessCourseTask:Refresh(entity, content)
     self.TxtProgress.text = entity:GetProgressText()
     self:_RefreshNewTag(entity)
     self:_RefreshState(entity)
-    self:_RefreshUnlockText(entity:GetUnlockText())
+    self:_RefreshUnlockText(entity:GetUnlockText(), entity:IsUnlockTagShow())
 end
 
 function XUiBigWorldProcessCourseTask:_RegisterButtonClicks()
@@ -136,15 +136,16 @@ function XUiBigWorldProcessCourseTask:_RefreshReward(rewardData)
     end
 end
 
-function XUiBigWorldProcessCourseTask:_RefreshUnlockText(unlockText)
+function XUiBigWorldProcessCourseTask:_RefreshUnlockText(unlockText, isShow)
+    if not isShow then
+        self.PanelCondition.gameObject:SetActiveEx(false)
+        return
+    end
+
     if string.IsNilOrEmpty(unlockText) then
-        if self.PanelCondition then
-            self.PanelCondition.gameObject:SetActiveEx(false)
-        end
+        self.PanelCondition.gameObject:SetActiveEx(false)
     else
-        if self.PanelCondition then
-            self.PanelCondition.gameObject:SetActiveEx(true)
-        end
+        self.PanelCondition.gameObject:SetActiveEx(true)
         self.TxtCondition.text = unlockText
     end
 end
@@ -155,7 +156,7 @@ function XUiBigWorldProcessCourseTask:_RefreshState(entity)
     local isSkip = entity:IsSkip()
     local isActive = entity:IsActive()
     local isAchieved = entity:IsAchieved()
-    
+
     self.ImgComplete.gameObject:SetActiveEx(isFinish)
     self.BtnOngoing.gameObject:SetActiveEx(isActive and not isSkip)
     self.BtnFinish.gameObject:SetActiveEx(isAchieved)

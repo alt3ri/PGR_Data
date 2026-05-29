@@ -7,6 +7,7 @@ local XBWLittleMapInterface = require("XModule/XBigWorldMap/XInterface/XBWLittle
 ---@field PlayerPos UnityEngine.RectTransform
 ---@field BtnBigMap XUiComponent.XUiButton
 ---@field MapPin UnityEngine.RectTransform
+---@field MapPath UnityEngine.RectTransform
 ---@field PinNode UnityEngine.RectTransform
 ---@field MapLevel UnityEngine.RectTransform
 ---@field ImgLevelMap UnityEngine.UI.Image
@@ -15,6 +16,8 @@ local XBWLittleMapInterface = require("XModule/XBigWorldMap/XInterface/XBWLittle
 ---@field MapPinTarget UnityEngine.RectTransform
 ---@field PinTarget UnityEngine.RectTransform
 ---@field PanelTrack UnityEngine.RectTransform
+---@field EmptyMap UnityEngine.RectTransform
+---@field LittleMap UnityEngine.RectTransform
 ---@field Parent XUiBigWorldHud
 local XUiBigWorldPanelLittleMap = XClass(XUiNode, "XUiBigWorldPanelLittleMap")
 
@@ -46,6 +49,8 @@ function XUiBigWorldPanelLittleMap:OnStart()
 
     ---@type XBWLittleMapInterface
     self._Interface = XBWLittleMapInterface.New(self)
+
+    self._PathDrawer = self.MapPath.gameObject:AddComponent(typeof(CS.XDrawPathOnMap))
 
     self:_InitUi()
     self:_InitTrack()
@@ -180,43 +185,53 @@ end
 function XUiBigWorldPanelLittleMap:_RegisterListeners()
     -- 在此处注册事件监听
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_SCENE_OBJECT_ACTIVATE, self.OnPinStateChange,
-            self)
+        self)
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_TRACK_CHANGE, self.OnPinStateChange,
-            self)
+        self)
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_ADD, self.OnPinStateChange, self)
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_REMOVE, self.OnPinStateChange, self)
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_ASSISTED_TRACK_UPDATE,
-            self.OnPinStateChange, self)
+        self.OnPinStateChange, self)
+    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_STYLE_UPDATE,
+        self.OnPinStateChange, self)
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_POSITION_UPDATE,
-            self.OnPositionChange, self)
+        self.OnPositionChange, self)
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_FIGHT_LEVEL_BEGIN_UPDATE, self.OnLevelUpdate,
-            self)
+        self)
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_PLAYER_ENTER_AREA, self.OnPlayerEnterArea,
-            self)
+        self)
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_SET_MAP_PIN_SHOW_TYPE, self.OnPinStateChange,
-            self)
+        self)
+    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_AI_MEMORY_DISPLAY_CHANGE, self.OnPinStateChange,
+        self)
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_LITTLE_MAP_PIN_HIDE, self.OnPinHide, self)
 end
 
 function XUiBigWorldPanelLittleMap:_RemoveListeners()
     -- 在此处移除事件监听
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_SCENE_OBJECT_ACTIVATE,
-            self.OnPinStateChange, self)
+        self.OnPinStateChange, self)
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_TRACK_CHANGE,
-            self.OnPinStateChange, self)
+        self.OnPinStateChange, self)
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_ADD, self.OnPinStateChange, self)
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_REMOVE, self.OnPinStateChange,
-            self)
+        self)
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_ASSISTED_TRACK_UPDATE,
-            self.OnPinStateChange, self)
+        self.OnPinStateChange, self)
+    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_STYLE_UPDATE,
+        self.OnPinStateChange, self)
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_POSITION_UPDATE,
-            self.OnPositionChange, self)
+        self.OnPositionChange, self)
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_FIGHT_LEVEL_BEGIN_UPDATE,
-            self.OnLevelUpdate, self)
+        self.OnLevelUpdate, self)
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_PLAYER_ENTER_AREA, self.OnPlayerEnterArea,
-            self)
-    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_SET_MAP_PIN_SHOW_TYPE, self.OnPinStateChange,
-            self)
+        self)
+    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_SET_MAP_PIN_SHOW_TYPE,
+        self.OnPinStateChange,
+        self)
+    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_AI_MEMORY_DISPLAY_CHANGE,
+        self.OnPinStateChange,
+        self)
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_LITTLE_MAP_PIN_HIDE, self.OnPinHide, self)
 end
 
@@ -227,9 +242,7 @@ end
 
 function XUiBigWorldPanelLittleMap:_InitUi()
     self.PinNode.gameObject:SetActiveEx(false)
-    if self.PinArea then
-        self.PinArea.gameObject:SetActiveEx(false)
-    end
+    self.PinArea.gameObject:SetActiveEx(false)
     self.ImgLevelMap.gameObject:SetActiveEx(false)
 end
 
@@ -238,18 +251,31 @@ function XUiBigWorldPanelLittleMap:_InitTrack()
     XMVCA.XBigWorldMap:UpdateLittleMapRadius(self._TrackRadius)
 end
 
+function XUiBigWorldPanelLittleMap:_InitMapPath(levelId)
+    local binder = self.MapPath.gameObject:GetOrAddComponent(typeof(CS.XTransformBind))
+    local originX = XMVCA.XBigWorldMap:GetMapPosXByLevelId(levelId) or 0
+    local originY = XMVCA.XBigWorldMap:GetMapPosZByLevelId(levelId) or 0
+    local pixelRatio = XMVCA.XBigWorldMap:GetMapPixelRatioByLevelId(levelId) or 1
+
+    binder:SetTarget(self.ImgMapBase.transform)
+    self._PathDrawer.OriginX = originX
+    self._PathDrawer.OriginY = originY
+    self._PathDrawer.PixelRatio = pixelRatio
+    self._PathDrawer.Scale = self._Scale
+end
+
 function XUiBigWorldPanelLittleMap:_InitMap(levelId)
     self._LevelId = levelId
     self._IsEmpty = not XMVCA.XBigWorldMap:CheckLevelHasMap(levelId)
-    self._AutoTransform = self.GameObject:GetComponent(typeof(CS.XLittleMapAutoTransform))
+    self._AutoTransform = self.GameObject:GetOrAddComponent(typeof(CS.XLittleMapAutoTransform))
+    self._PathDrawer:ClearPath()
+    self._PathDrawer:SetActiveWithoutRefresh(not self._IsEmpty)
 
-    if XTool.UObjIsNil(self._AutoTransform) then
-        self._AutoTransform = self.GameObject:AddComponent(typeof(CS.XLittleMapAutoTransform))
-    end
     if not self._IsEmpty then
         self._AxisConversion:ChangeAxis(levelId)
         self._Scale = XMVCA.XBigWorldMap:GetLittleMapScaleByLevelId(levelId)
         self:_InitAreaImage(levelId)
+        self:_InitMapPath(levelId)
     end
 end
 
@@ -279,7 +305,7 @@ function XUiBigWorldPanelLittleMap:_InitAreaImage(levelId)
                         imageList[index] = areaImage
                     end
 
-                    local xOffset, yOffset =  self._AxisConversion:WorldToMapPosition2D(posX, posZ, pixelRatio)
+                    local xOffset, yOffset = self._AxisConversion:WorldToMapPosition2D(posX, posZ, pixelRatio)
                     areaImage.transform:SetAnchoredPosition(xOffset, yOffset)
                     areaImage.gameObject:SetActiveEx(true)
                     areaImage:SetImage(XMVCA.XBigWorldMap:GetAreaImageByAreaId(areaId), function()
@@ -334,6 +360,11 @@ function XUiBigWorldPanelLittleMap:_RefreshContent()
         self:_RefreshMap()
         self:_RefreshPin()
         self:_RefreshCurrentGroup(XMVCA.XBigWorldMap:GetCurrentAreaGroupId(), true)
+
+        --- 重新初始化下遮罩
+        if self.MaskMap then
+            self.MaskMap:RecollectComponent()
+        end
     end
 end
 
@@ -352,6 +383,8 @@ end
 function XUiBigWorldPanelLittleMap:_RefreshMap()
     local rectTransform = self.ImgMapBase.transform
 
+    self.LittleMap.gameObject:SetActiveEx(true)
+    self.EmptyMap.gameObject:SetActiveEx(false)
     self.ImgMapBase:SetSprite(XMVCA.XBigWorldMap:GetMapImageByLevelId(self._LevelId))
     self.ImgMapBase.gameObject:SetActiveEx(true)
     if not XTool.UObjIsNil(rectTransform) then
@@ -359,6 +392,7 @@ function XUiBigWorldPanelLittleMap:_RefreshMap()
         local height = XMVCA.XBigWorldMap:GetMapHeightByLevelId(self._LevelId)
 
         rectTransform.sizeDelta = Vector2(width, height)
+        self.MapPath.sizeDelta = Vector2(width, height)
     end
 
     if not XTool.UObjIsNil(self._AutoTransform) then
@@ -373,6 +407,8 @@ function XUiBigWorldPanelLittleMap:_RefreshMap()
 end
 
 function XUiBigWorldPanelLittleMap:_RefreshEmptyMap()
+    local isLinkOther = XMVCA.XBigWorldMap:CheckLevelLinkOther(self._LevelId)
+
     self.ImgMapBase.gameObject:SetActiveEx(false)
 
     if not XTool.UObjIsNil(self._AutoTransform) then
@@ -389,6 +425,8 @@ function XUiBigWorldPanelLittleMap:_RefreshEmptyMap()
             v:Close()
         end
     end
+    self.LittleMap.gameObject:SetActiveEx(isLinkOther)
+    self.EmptyMap.gameObject:SetActiveEx(not isLinkOther)
 end
 
 function XUiBigWorldPanelLittleMap:_RefreshPin()
@@ -404,7 +442,6 @@ function XUiBigWorldPanelLittleMap:_RefreshPin()
 
     self._PinNodeMap = {}
     if not XTool.IsTableEmpty(pinDatas) then
-
         for _, pinData in pairs(pinDatas) do
             local isDisplay = pinData:IsDisplaying()
             local isOut = pinData:IsOut()
@@ -497,7 +534,7 @@ function XUiBigWorldPanelLittleMap:_RefreshTrackPin(posX, posY)
 
                 if pinData:IsVirtual() then
                     local bindPinData = XMVCA.XBigWorldMap:GetPinDataByLevelIdAndPinId(pinData.BindLevelId,
-                            pinData.BindPinId)
+                        pinData.BindPinId)
 
                     pinNode = self._PinNodeMap[pinData.BindPinId]
 

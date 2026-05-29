@@ -264,6 +264,10 @@ function XUiModelDisplayController:SetLookAtIKWithInfo(id, componentId, target, 
     ikInfo:InitModelController(self, modelInfo)
 end
 
+function XUiModelDisplayController:PlayExpression(id, expressionPath)
+    self.Controller:PlayExpression(id, expressionPath)
+end
+
 function XUiModelDisplayController:SetLookAtIKTarget(id, componentId, target)
     self.Controller:SetLookAtIKTarget(id, componentId, target)
 end

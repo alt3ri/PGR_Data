@@ -40,7 +40,7 @@ local XNirvatiaTeachingBuildingState = XClass(BaseState, "XNirvatiaTeachingBuild
 function XNirvatiaTeachingBuildingState:InitStateConfig()
     self.StateConfig = {}
     self.StateConfig.StateEnum = StateEnum.TeachingBuilding
-    self.StateConfig.StateAnim = "Drama_Stand_15"
+    self.StateConfig.StateAnim = "Drama_Stand_05"
     self.StateConfig.TriggerId = 1
     self.StateConfig.ShowOptionId = 2
     self.StateConfig.RegisterWorldEventList = {
@@ -51,28 +51,28 @@ function XNirvatiaTeachingBuildingState:InitStateConfig()
     }
     self.StateConfig.BubbleDict = {
         [EEcologyBubbleType.Around] = {
-            Name = "201707",
+            Name = "201704",
             TriggerDistance = 2.5,
-            TriggerCD = 2,
-            LoopTime = 3,
+            TriggerCD = 10,
+            LoopTime = 9,
         },
     }
 end
 
 function XNirvatiaTeachingBuildingState:OnStateEnter(lastStateEnum)
     BaseState.OnStateEnter(self, lastStateEnum)
-    self.StateMachine:SetDataBoard(DataBoardKey.DroneClub, 0)
+    self.StateMachine:SetDataBoard(DataBoardKey.TeachingBuilding, 0)
 end
 
 function XNirvatiaTeachingBuildingState:HandleEvent(eventType, eventArgs)
     BaseState.HandleEvent(self, eventType, eventArgs)
     if eventType == EWorldEvent.DramaFinish and eventArgs.DramaName == "Drama_3018_001" then
-        if not eventArgs.HistoryDecisionDict[31] then -- 跳过剧情的情况
-            self.StateMachine:SetDataBoard(DataBoardKey.DroneClub, 1) ----无人机
+        if not eventArgs.HistoryDecisionDict[31] then ----跳过剧情的情况
+            self.StateMachine:SetDataBoard(DataBoardKey.TeachingBuilding, 1) ----无人机
         elseif table.indexof(eventArgs.HistoryDecisionDict[31], 1) then
-            self.StateMachine:SetDataBoard(DataBoardKey.DroneClub, 3) ----二楼逮捕指挥官
+            self.StateMachine:SetDataBoard(DataBoardKey.TeachingBuilding, 3) ----二楼逮捕指挥官
         elseif table.indexof(eventArgs.HistoryDecisionDict[31], 2) then
-            self.StateMachine:SetDataBoard(DataBoardKey.DroneClub, 4) ----教室讲台
+            self.StateMachine:SetDataBoard(DataBoardKey.TeachingBuilding, 4) ----教室讲台
         end
     end
 end
@@ -89,9 +89,9 @@ local XNirvatiaDroneClubState = XClass(BaseState, "XNirvatiaDroneClubState")
 function XNirvatiaDroneClubState:InitStateConfig()
     self.StateConfig = {}
     self.StateConfig.StateEnum = StateEnum.DroneClub
-    self.StateConfig.StateAnim = "Drama_Stand_06"
+    self.StateConfig.StateAnim = "Drama_LookUp"
     self.StateConfig.TriggerId = 1
-    self.StateConfig.ShowOptionId = 1
+    self.StateConfig.ShowOptionId = 6
     self.StateConfig.RegisterWorldEventList = {
         EWorldEvent.ActorTrigger,
         EWorldEvent.NpcInteractStart,
@@ -101,15 +101,9 @@ function XNirvatiaDroneClubState:InitStateConfig()
         [EEcologyBubbleType.Around] = {
             Name = "201701",
             TriggerDistance = 6,
-            TriggerCD = 2,
-            LoopTime = 3,
+            TriggerCD = 10,
+            LoopTime = 4,
         },
-        [EEcologyBubbleType.Near] = {
-            Name = "201702",
-            TriggerDistance = 2.5,
-            TriggerCD = 2,
-            LoopTime = 3,
-        }
     }
 end
 
@@ -117,46 +111,74 @@ function XNirvatiaDroneClubState:OnStateEnter(lastStateEnum)
     BaseState.OnStateEnter(self, lastStateEnum)
     self.StateMachine:SetDataBoard(DataBoardKey.DroneClub, 0)
 end
+
+function XNirvatiaDroneClubState:OnActorTrigger(eventArgs)
+    -- 重写空响应关闭注视
+end
 --endregion
 
 
 --region 状态-涅缇娅-二楼逮捕指挥官
+---起初隐藏自己Render，但不隐藏mapin图标
+---指挥官靠近一段距离并按下交互键，播放Drama后显示Render，或，不交互。10秒后自动显示自身Render
+
 ---@class XNirvatiaSecondFloorState: XEcologyConstructAIBaseState
 local XNirvatiaSecondFloorState = XClass(BaseState, "XNirvatiaSecondFloorState")
 
 ---数据配置
 ---@overload
+---初始化数据属性
 function XNirvatiaSecondFloorState:InitStateConfig()
     self.StateConfig = {}
     self.StateConfig.StateEnum = StateEnum.SecondFloor
-    self.StateConfig.StateAnim = "Drama_Stand_07"
+    self.StateConfig.StateAnim = "Drama_Stand_09"
     self.StateConfig.TriggerId = 1
     self.StateConfig.ShowOptionId = 3
+
     self.StateConfig.RegisterWorldEventList = {
         EWorldEvent.ActorTrigger,
         EWorldEvent.NpcInteractStart,
         EWorldEvent.NpcInteractComplete,
     }
-    self.StateConfig.BubbleDict = {
-        [EEcologyBubbleType.Around] = {
-            Name = "201703",
-            TriggerDistance = 6,
-            TriggerCD = 2,
-            LoopTime = 3,
-        },
-        [EEcologyBubbleType.Near] = {
-            Name = "201704",
-            TriggerDistance = 2.5,
-            TriggerCD = 2,
-            LoopTime = 3,
-        }
-    }
+
 end
 
+---进入状态初
 function XNirvatiaSecondFloorState:OnStateEnter(lastStateEnum)
     BaseState.OnStateEnter(self, lastStateEnum)
     self.StateMachine:SetDataBoard(DataBoardKey.SecondFloor, 0)
+    ----隐藏涅缇娅Render
+    self:SetNirvatiaActive(false)
 end
+
+function XNirvatiaSecondFloorState:OnStateLeave(nextStateEnum)
+    BaseState.OnStateLeave(self, nextStateEnum)
+    if self.StateMachine:CheckDataBoard(DataBoardKey.SecondFloor, 0) then
+        self:SetNirvatiaActive(true)
+    end
+end
+
+function XNirvatiaSecondFloorState:OnActorTrigger(eventArgs)
+    BaseState.OnActorTrigger(self,eventArgs)
+
+    ----每个状态下的DataBoardKey用于存储下一个要进入的状态是什么
+    ----如果进入触发器范围的gameobj的uuid是涅缇娅自己的uuid，即：如果玩家进入涅缇娅触发范围
+    if eventArgs.TriggerState == ETriggerState.Enter and eventArgs.TriggerHolderUUID == self._uuid and self.StateMachine:CheckDataBoard(DataBoardKey.SecondFloor, 0) then
+        self.StateMachine:SetDataBoard(DataBoardKey.SecondFloor, 1)
+        self._proxy:PlayDrama("Drama_3018_003")
+        self:SetNirvatiaActive(true)
+    end
+end
+
+function XNirvatiaSecondFloorState:SetNirvatiaActive(active)
+    if active then
+        self._proxy:SetRLNpcActive(self._uuid, true)
+        self._proxy:SetNpcFade(self._uuid, true, 0.3)
+    else
+        self._proxy:SetNpcFade(self._uuid, false, 0.5)
+    end
+end
+
 --endregion
 
 
@@ -179,11 +201,11 @@ function XNirvatiaInClassState:InitStateConfig()
     }
     self.StateConfig.BubbleDict = {
         [EEcologyBubbleType.Around] = {
-            Name = "201705",
+            Name = "201703",
             TriggerDistance = 6,
-            TriggerCD = 2,
-            LoopTime = 3,
-        }
+            TriggerCD = 10,
+            LoopTime = 14,
+        },
     }
 end
 
@@ -212,7 +234,7 @@ function XNirvatiaFindPathState:InitStateConfig()
     }
 
     self.StateConfig.FindPathConfig = {}
-    self.StateConfig.FindPathConfig.MeetCommanderBubbleName = "201708"
+    self.StateConfig.FindPathConfig.MeetCommanderBubbleName = "201705"
 end
 --endregion
 
@@ -235,6 +257,9 @@ end
 function XCharNirvatiaEcology:RegisterMachineStateTransition()
     -- 设置寻路状态枚举值
     self.FindPathStateEnum = StateEnum.FindPath
+    self.NextStateList = {
+        StateEnum.DroneClub, StateEnum.TeachingBuilding, StateEnum.SecondFloor, StateEnum.InClass
+    }
     -- 其他状态到寻路状态
 
     -- 存储在无人机(DroneClub)处做的选项，判断在这里的去向：
@@ -242,32 +267,60 @@ function XCharNirvatiaEcology:RegisterMachineStateTransition()
     --无人机→教学楼
     self:RegisterInFindPathStateTransition(StateEnum.DroneClub, function()
         return StateEnum.TeachingBuilding
-    end, 5, 1)
+    end, 30, 1)
 
 
     -- 教学楼→2楼/讲台/无人机
+    -- 如果在教学楼前通过分歧节点选1，则去终端室3；选2则去讲台4，否则去无人机
     self:RegisterInFindPathStateTransition(StateEnum.TeachingBuilding, function()
-        if DataBoardKey.TeachingBuilding == 1 then return  StateEnum.SecondFloor end
-        if DataBoardKey.TeachingBuilding == 2 then return StateEnum.InClass end
+        if self._stateMachine:CheckDataBoard(DataBoardKey.TeachingBuilding, 3) then return  StateEnum.SecondFloor end
+        if self._stateMachine:CheckDataBoard(DataBoardKey.TeachingBuilding, 4) then return StateEnum.InClass end
         return StateEnum.DroneClub
-    end, 5, 1)
+    end, 30, 1)
 
 
     --2楼→无人机
     self:RegisterInFindPathStateTransition(StateEnum.SecondFloor, function()
         return StateEnum.DroneClub
-    end, 5, 1)
+    end, 30, 1)
 
     --讲台→无人机
     self:RegisterInFindPathStateTransition(StateEnum.InClass, function()
         return StateEnum.DroneClub
-    end, 5, 1)
+    end, 30, 1)
     
     -- 寻路状态到其他状态
     self:RegisterOutFindPathStateTransition(StateEnum.TeachingBuilding)
     self:RegisterOutFindPathStateTransition(StateEnum.DroneClub)
     self:RegisterOutFindPathStateTransition(StateEnum.SecondFloor)
     self:RegisterOutFindPathStateTransition(StateEnum.InClass)
+
+    self.IsFirstMeet = false
+end
+
+function XCharNirvatiaEcology:Update(dt)
+    Base.Update(self, dt)
+    -- 限定触发条件
+    if not self._stateMachine:CheckDataBoard(DataBoardKey.SecondFloor, 1) 
+            and not self.IsFirstMeet
+            and self._stateMachine.CurStateEnum ~= StateEnum.SecondFloor
+            and not self._proxy:IsQuestObjectiveFinished(30180104)
+            and self._proxy:CheckNpcDistanceWithPos(self._proxy:GetLocalPlayerNpcId(), 349.50, 211.48, 173.91, 2.5)
+    then
+        self.IsFirstMeet = true
+        -- 设置涅缇娅到当前位置和旋转
+        self._proxy:SetNpcPosition(self._uuid, self._proxy:GetEcologyConstructStateInitPos(self._uuid, StateEnum.SecondFloor), false)
+        if self.NextStateRotDict then
+            self._proxy:SetNpcRotation(self._uuid, self.NextStateRotDict[StateEnum.SecondFloor])
+        end
+        -- 设置涅缇娅进入二楼状态
+        self._stateMachine:SwitchState(StateEnum.SecondFloor)
+        -- 设置涅缇娅黑板值
+        self._stateMachine:SetDataBoard(DataBoardKey.SecondFloor, 1)
+        self._proxy:PlayDrama("Drama_3018_003")
+
+        self._proxy:SetNpcFade(self._uuid, true, 0.3)
+    end
 end
 
 return XCharNirvatiaEcology

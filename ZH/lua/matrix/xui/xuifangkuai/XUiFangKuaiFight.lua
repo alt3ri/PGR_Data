@@ -30,6 +30,7 @@ function XUiFangKuaiFight:TryExitToCollection(score)
 
     XMVCA.XGameCollection:OnGameExitToCollection(gameType, {
         Score = score,
+        IsSettled = false,
     })
     return true
 end

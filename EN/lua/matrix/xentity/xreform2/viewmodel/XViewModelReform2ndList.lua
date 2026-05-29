@@ -361,7 +361,7 @@ function XViewModelReform2ndList:RequestSaveReformData()
             XLog.Error(string.format("[XViewModelReform2ndList] 触发替换, %s替换为:%s", self._Stage:GetId(), replaceStageId4Affix))
         end
     end
-    XLuaUiManager.Open("UiBattleRoleRoom", stageId, team, require("XUi/XUiReform2nd/MainPage/XUiReform2ndBattleRoleRoom"))
+    XMVCA.XFuben:OpenUiBattleRoleRoom(stageId, team, require("XUi/XUiReform2nd/MainPage/XUiReform2ndBattleRoleRoom"))
 end
 
 ---@param data UiReformMobData

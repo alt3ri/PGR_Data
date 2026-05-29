@@ -386,6 +386,18 @@ XTool.MaxBy = function(t, maxBy)
     return maxK, maxV
 end
 
+-- 根据大小创建一个含有指定数量元素的数组，并使用valueFactory填充其中的值
+-- size -> (index -> value) -> value array
+XTool.MakeArray = function(arraySize, valueFactory)
+    local array = {}
+
+    for i = 1, arraySize do
+        array[i] = valueFactory(i)
+    end
+
+    return array
+end
+
 XTool.ToArray = function(t)
     local array = {}
     for _, v in pairs(t) do
@@ -1388,14 +1400,18 @@ function XTool.SetDataForGenericGrid(
         end
 
         grid:SetData(table.unpack(data))
+        grid:Open()
     end
 end
 
 function XTool.UpdateDynamicGridCommon(gridArray, dataArray, uiObject, parent, params)
-    if #gridArray == 0 then
+    if not gridArray or #gridArray == 0 then
         uiObject.gameObject:SetActiveEx(false)
     end
-    for i = 1, #dataArray do
+    
+    local dataCount = dataArray and #dataArray or 0
+    
+    for i = 1, dataCount do
         local grid = gridArray[i]
         if not grid then
             local ui = CS.UnityEngine.Object.Instantiate(uiObject, uiObject.transform.parent)
@@ -1405,7 +1421,9 @@ function XTool.UpdateDynamicGridCommon(gridArray, dataArray, uiObject, parent, p
         grid.GameObject:SetActiveEx(true)
         grid:Refresh(dataArray[i], params)
     end
-    for i = #dataArray + 1, #gridArray do
+    
+    -- 隐藏多余的UI
+    for i = dataCount + 1, #gridArray do
         local grid = gridArray[i]
         grid.GameObject:SetActiveEx(false)
     end

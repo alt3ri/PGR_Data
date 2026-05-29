@@ -79,6 +79,10 @@ function XUiPanelStage:OnStart(base, battleManager)
     self.TimerBaseBeHitByBoss2 = false
 
     self.TimerMap = {}
+
+    if self.LineEndExShowRoot then
+        self.LineEndExShowRoot.gameObject:SetActiveEx(false)
+    end
 end
 
 --关卡地图和路线引用初始化
@@ -464,7 +468,7 @@ end
 function XUiPanelStage:UpdateLine()
     local moveDistanceMap = self._Control:GetMoveDistanceMap()
     local preNodes = self._Control:GetMovePreNodes(moveDistanceMap)
-    
+
     for _, lineUi in pairs(self.GridLineList or {}) do
         local node1 = self.AllNodeDic[lineUi.StageName1]
         local node2 = self.AllNodeDic[lineUi.StageName2]
@@ -476,7 +480,7 @@ function XUiPanelStage:UpdateLine()
         if XTool.IsNumberValid(node2:GetRootId()) then
             node2 = XDataCenter.GuildWarManager.GetNode(node2:GetRootId())
         end
-        
+
         lineUi:UpdateViewByStageNode(node1, node2, preNodes)
         lineUi:SetLineInPlan(false)
     end
@@ -496,6 +500,56 @@ function XUiPanelStage:UpdateLine()
         local gridLine = self.NodeNameToGridLineDic[nodeIndexName1] and self.NodeNameToGridLineDic[nodeIndexName1][nodeIndexName2] or nil
         if gridLine then
             gridLine:SetLineInPlan(true)
+        end
+    end
+
+    --刷新路线终点节点额外UI显示
+    self:RefreshPathEndNodeUI(pathList)
+end
+
+--刷新路线终点节点额外UI显示
+---@param pathList number[] 路线节点ID列表
+function XUiPanelStage:RefreshPathEndNodeUI(pathList)
+    --获取路线终点节点UI对象
+    ---@type XUiGridStage
+    local endNodeGrid = nil
+    if pathList and #pathList > 0 then
+        local endNodeId = pathList[#pathList]
+        endNodeGrid = self.NodeId2GridStageDic[endNodeId]
+    end
+
+    --如果终点节点发生变化，更新UI挂载位置
+    if self._LastPathEndNodeGrid ~= endNodeGrid then
+        --示例：将全局共用的UI节点显示并挂载到终点节点身上
+        if self.LineEndExShowRoot then
+            --todo 临时逻辑，具体等正式UI再调整
+            if endNodeGrid then
+                local nodeId = endNodeGrid:GetNodeId()
+
+                if self._Control:CheckNodeIsCanFight(nodeId) then
+                    local posX, posY, posZ = endNodeGrid.Transform:GetPosition()
+                    self.LineEndExShowRoot.transform:SetPosition(posX, posY, posZ)
+                    self.LineEndExShowRoot.gameObject:SetActiveEx(true)
+                else
+                    self.LineEndExShowRoot.gameObject:SetActiveEx(false)
+                end
+            else
+                self.LineEndExShowRoot.gameObject:SetActiveEx(false)
+            end
+        end
+
+        self._LastPathEndNodeGrid = endNodeGrid
+    else
+        -- 若终点没有发生变化，则判断终点状态是否需要显示    
+        if self.LineEndExShowRoot then
+            --todo 临时逻辑，具体等正式UI再调整
+            if endNodeGrid then
+                local nodeId = endNodeGrid:GetNodeId()
+
+                self.LineEndExShowRoot.gameObject:SetActiveEx(self._Control:CheckNodeIsCanFight(nodeId))
+            else
+                self.LineEndExShowRoot.gameObject:SetActiveEx(false)
+            end
         end
     end
 end
@@ -1372,6 +1426,9 @@ function XUiPanelStage:AddPath(nodeId, grid)
         end
     end
     XEventManager.DispatchEvent(XEventId.EVENT_GUILDWAR_PATHEDIT_PATHCHANGE, self:CheckPathChange(self.PathList))
+
+    --编辑模式下实时刷新路线终点节点额外UI显示
+    self:RefreshPathEndNodeUI(self.PathList)
 end
 
 --检查路线是否变更

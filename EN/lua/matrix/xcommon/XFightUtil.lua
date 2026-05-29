@@ -7,7 +7,6 @@ function XFightUtil.ClearFight()
     end
     if CS.StatusSyncFight.XFightClient.FightInstance ~= nil then
         CS.StatusSyncFight.XFightClient.ExitFight(true, true)
-        --XMVCA.XBigWorldGamePlay:OnExitFight()
     end
 end
 

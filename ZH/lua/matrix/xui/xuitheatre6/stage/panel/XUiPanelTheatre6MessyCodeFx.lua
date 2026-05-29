@@ -87,4 +87,8 @@ function XUiPanelTheatre6MessyCodeFx:DestroyAll()
     self._FxNodeDict = {}
 end
 
+function XUiPanelTheatre6MessyCodeFx:IsExist(effectId)
+    return self._FxNodeDict[effectId] ~= nil
+end
+
 return XUiPanelTheatre6MessyCodeFx

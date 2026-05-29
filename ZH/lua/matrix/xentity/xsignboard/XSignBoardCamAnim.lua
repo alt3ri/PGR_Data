@@ -339,8 +339,11 @@ end
 function XSignBoardCamAnim:_SetAnimPlayableSpeed(speed)
     local setSpeed_generic = xlua.get_generic_method(CS.UnityEngine.Playables.PlayableExtensions, 'SetSpeed')
     local setSpeed = setSpeed_generic(CS.UnityEngine.Playables.Playable)
-    for i = 0, self.AnimPlayer.playableGraph:GetRootPlayableCount() - 1 do
-        setSpeed(self.AnimPlayer.playableGraph:GetRootPlayable(i), speed)
+
+    if self.AnimPlayer.playableGraph:IsValid() then
+        for i = 0, self.AnimPlayer.playableGraph:GetRootPlayableCount() - 1 do
+            setSpeed(self.AnimPlayer.playableGraph:GetRootPlayable(i), speed)
+        end
     end
 end
 

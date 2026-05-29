@@ -318,6 +318,29 @@ function XTime.CheckWeekend()
     end
 end
 
+-- 获得当月一号00:00:00的时间戳
+function XTime.GetCurrentMonthFirstDay()
+    local now = XTime.GetServerNowTimestamp()
+    local dt = CS.XDateUtil.GetGameDateTime(now)
+    return XTime.GetGameDateTimestamp(dt.Year, dt.Month, 1)
+end
+
+-- 获得下个月一号00:00:00的时间戳
+function XTime.GetNextMonthFirstDay()
+    local now = XTime.GetServerNowTimestamp()
+    local dt = CS.XDateUtil.GetGameDateTime(now)
+    local year = dt.Year
+    local month = dt.Month
+
+    -- 计算下个月的年月
+    local nextMonth = month < 12 and month + 1 or 1
+    local nextYear = month < 12 and year or year + 1
+
+    -- 下个月1日 00:00:00 的时间戳
+    local nextMonthStart = XTime.GetGameDateTimestamp(nextYear, nextMonth, 1)
+    return nextMonthStart
+end
+
 -- 判断时间戳是周几
 function XTime.GetWeekDay(time, isNormlSunDay)
     local dateTime = CS.XDateUtil.GetGameDateTime(time)

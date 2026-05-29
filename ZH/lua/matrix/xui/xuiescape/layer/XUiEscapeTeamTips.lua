@@ -71,8 +71,8 @@ function XUiEscapeTeamTips:OpenBattleRoleRoom()
         return
     end
     XDataCenter.EscapeManager.SetCurSelectChapterId(self.ChapterId)
-    XLuaUiManager.Open("UiBattleRoleRoom"
-        , self.StageId
+    XMVCA.XFuben:OpenUiBattleRoleRoom(
+        self.StageId
         , XDataCenter.EscapeManager.GetTeam()
         , require("XUi/XUiEscape/BattleRoom/XUiEscapeBattleRoleRoom")
     )

@@ -10,7 +10,7 @@ XBigWorldGamePlayAgency.FAOS_LEVEL_ID = 6001
 
 --region 部分类
 XClassPartialRequire("XModule/XBigWorldGamePlay/Partial/XBigWorldGamePlayProcess", "XBigWorldGamePlayAgency") --流程相关放这里
---endregion 
+--endregion
 
 local XBigWorldActivityAgency = require("XModule/XBase/XBigWorldActivityAgency")
 local IsWindowsEditor = XMain.IsWindowsEditor
@@ -39,9 +39,9 @@ function XBigWorldGamePlayAgency:OnInit()
     }
 
     self.BigWorldGamePlayState = {
-        None = 1, --不在大世界中
+        None = 1,       --不在大世界中
         InBigWorld = 2, --在大世界中
-        InFight = 4, --在主线战斗中
+        InFight = 4,    --在主线战斗中
     }
 
     self._GamePlayState = self.BigWorldGamePlayState.None
@@ -70,17 +70,21 @@ function XBigWorldGamePlayAgency:InitEvent()
     CS.XGameEventManager.Instance:RegisterEvent(CS.XEventId.EVENT_DLC_FIGHT_ENTER, self._OnEnterFight)
     CS.XGameEventManager.Instance:RegisterEvent(CS.XEventId.EVENT_DLC_FIGHT_EXIT, self._OnExitFight)
 
-    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_OPEN_GUIDE_FINISH, self.OnOpenGuideFinished, self)
+    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_OPEN_GUIDE_FINISH,
+        self.OnOpenGuideFinished, self)
     -- 大世界内关卡切换（如传送出/入法奥斯）时同步流式纹理 / LOD mesh 状态
-    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_FIGHT_ENTER_LEVEL, self._OnRefreshStreamingOnLevelEnter)
+    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_FIGHT_ENTER_LEVEL,
+        self._OnRefreshStreamingOnLevelEnter)
 end
 
 function XBigWorldGamePlayAgency:RemoveEvent()
     CS.XGameEventManager.Instance:RemoveEvent(CS.XEventId.EVENT_DLC_FIGHT_ENTER, self._OnEnterFight)
     CS.XGameEventManager.Instance:RemoveEvent(CS.XEventId.EVENT_DLC_FIGHT_EXIT, self._OnExitFight)
 
-    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_OPEN_GUIDE_FINISH, self.OnOpenGuideFinished, self)
-    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_FIGHT_ENTER_LEVEL, self._OnRefreshStreamingOnLevelEnter)
+    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_OPEN_GUIDE_FINISH,
+        self.OnOpenGuideFinished, self)
+    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_FIGHT_ENTER_LEVEL,
+        self._OnRefreshStreamingOnLevelEnter)
 end
 
 function XBigWorldGamePlayAgency:SetCurrentGameAgency(worldId)
@@ -92,6 +96,7 @@ function XBigWorldGamePlayAgency:SetCurrentGameAgency(worldId)
     end
 
     self._CurrentModuleId = moduleId
+    XEventManager.DispatchEvent(XEventId.EVENT_BIG_WORLD_GAME_PLAY_CHANGED, moduleId)
 end
 
 ---@return XBigWorldAgency
@@ -104,9 +109,9 @@ function XBigWorldGamePlayAgency:GetCurrentAgency()
         XLog.Warning("当前不在进入大世界玩法中!")
     end
 
+    -- 纯查询：注册职责归 _InitMVCA / DoRegisterMVCA，避免懒注册副作用绕过 _IsMVCARegistered 状态机
     if not XMVCA:IsRegisterAgency(moduleId) then
-        XMVCA:RegisterAgency(moduleId)
-        XMVCA:GetAgency(moduleId):InitDynamicRegister()
+        return nil
     end
     return XMVCA:GetAgency(moduleId)
 end
@@ -202,7 +207,10 @@ end
 
 function XBigWorldGamePlayAgency:ExitGameAsync(cb)
     CS.StatusSyncFight.XFightClient.RequestExitFight()
-    self:GetCurrentAgency():Exit()
+    local gameAgency = self:GetCurrentAgency()
+    if gameAgency then
+        gameAgency:Exit()
+    end
     local value = true
     while value do
         asynWaitSecond(0.1)
@@ -223,7 +231,11 @@ function XBigWorldGamePlayAgency:UpdatePlayerData(res)
         return
     end
 
-    self:GetCurrentAgency():UpdatePlayerData(res)
+    local gameAgency = self:GetCurrentAgency()
+    if not gameAgency then
+        return
+    end
+    gameAgency:UpdatePlayerData(res)
 end
 
 --- 更新世界数据
@@ -232,7 +244,11 @@ function XBigWorldGamePlayAgency:UpdateWorldData(res)
     if not self:IsInGame() then
         return
     end
-    self:GetCurrentAgency():UpdateWorldData(res)
+    local gameAgency = self:GetCurrentAgency()
+    if not gameAgency then
+        return
+    end
+    gameAgency:UpdateWorldData(res)
 end
 
 --endregion
@@ -320,7 +336,10 @@ function XBigWorldGamePlayAgency:OnEnterLevel(data)
         agency:OnEnterLevel()
     end
     self._Model:SetCurrentLevelId(levelId)
-    self:GetCurrentAgency():EnterLevel(levelId)
+    local gameAgency = self:GetCurrentAgency()
+    if gameAgency then
+        gameAgency:EnterLevel(levelId)
+    end
     XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_FIGHT_ENTER_LEVEL, levelId)
 end
 
@@ -333,7 +352,10 @@ function XBigWorldGamePlayAgency:OnLeaveLevel(data)
     end
 
     self._Camera = false
-    self:GetCurrentAgency():LeaveLevel(levelId)
+    local gameAgency = self:GetCurrentAgency()
+    if gameAgency then
+        gameAgency:LeaveLevel(levelId)
+    end
 
     XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_FIGHT_LEAVE_LEVEL, levelId)
 end
@@ -345,8 +367,11 @@ function XBigWorldGamePlayAgency:OnLevelBeginUpdate()
     if agency then
         agency:OnLevelBeginUpdate()
     end
-    self:GetCurrentAgency():LevelBeginUpdate(levelId)
-    self:SetFightPerspective(self:GetCurrentAgency():GetPerspective(self:GetCurrentLevelId()), false)
+    local gameAgency = self:GetCurrentAgency()
+    if gameAgency then
+        gameAgency:LevelBeginUpdate(levelId)
+        self:SetFightPerspective(gameAgency:GetPerspective(self:GetCurrentLevelId()), false)
+    end
     XMVCA.XBigWorldQuest:DoLevelChangeComplete()
     XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_FIGHT_LEVEL_BEGIN_UPDATE, levelId)
 end
@@ -373,7 +398,11 @@ function XBigWorldGamePlayAgency:ChangeFightInput()
     if not self:IsInGame() then
         return
     end
-    self:GetCurrentAgency():OnInputMapResume()
+    local gameAgency = self:GetCurrentAgency()
+    if not gameAgency then
+        return
+    end
+    gameAgency:OnInputMapResume()
     self:TrySetControlCameraByDrag(false)
 end
 
@@ -381,7 +410,11 @@ function XBigWorldGamePlayAgency:ChangeSystemInput()
     if not self:IsInGame() then
         return
     end
-    self:GetCurrentAgency():OnInputMapChanged(CS.XInputMapId.SkyGardenSystem)
+    local gameAgency = self:GetCurrentAgency()
+    if not gameAgency then
+        return
+    end
+    gameAgency:OnInputMapChanged(CS.XInputMapId.SkyGardenSystem)
     self:TrySetControlCameraByDrag(true)
 end
 
@@ -402,7 +435,10 @@ function XBigWorldGamePlayAgency:OnFightUiDisable(data)
     end
     local name = data.UiName
     self._MarkUiName[name] = true
-    self:GetCurrentAgency():SetHudActive(false)
+    local gameAgency = self:GetCurrentAgency()
+    if gameAgency then
+        gameAgency:SetHudActive(false)
+    end
 end
 
 function XBigWorldGamePlayAgency:OnFightUiEnable(data)
@@ -413,7 +449,10 @@ function XBigWorldGamePlayAgency:OnFightUiEnable(data)
     local name = data.UiName
     self._MarkUiName[name] = nil
     if XTool.IsTableEmpty(self._MarkUiName) then
-        self:GetCurrentAgency():SetHudActive(true)
+        local gameAgency = self:GetCurrentAgency()
+        if gameAgency then
+            gameAgency:SetHudActive(true)
+        end
     end
 end
 
@@ -477,22 +516,29 @@ end
 function XBigWorldGamePlayAgency:OnFightGetPerspectiveState(data)
     local first = XMVCA.XBigWorldGamePlay.PerspectiveType.FirstPerson
     local levelId
+    local gameAgency = self:GetCurrentAgency()
+    if not gameAgency then
+        return {
+            IsFirstPersonMode = false,
+            HasData = false,
+        }
+    end
     if not data then
         XLog.Error("OnFightGetPerspectiveState data is nil")
         levelId = self:GetCurrentLevelId()
         return {
-            IsFirstPersonMode = XMVCA.XBigWorldGamePlay:GetCurrentAgency():GetPerspective(levelId)
-                    == XMVCA.XBigWorldGamePlay.PerspectiveType.FirstPerson,
-            HasData = self:GetCurrentAgency():IsSavePerspective(levelId),
+            IsFirstPersonMode = gameAgency:GetPerspective(levelId)
+                == XMVCA.XBigWorldGamePlay.PerspectiveType.FirstPerson,
+            HasData = gameAgency:IsSavePerspective(levelId),
         }
     else
         levelId = data.LevelId
     end
-    local isFirstPersonMode = XMVCA.XBigWorldGamePlay:GetCurrentAgency():GetPerspective(levelId) == first
-    
+    local isFirstPersonMode = gameAgency:GetPerspective(levelId) == first
+
     return {
         IsFirstPersonMode = isFirstPersonMode,
-        HasData = self:GetCurrentAgency():IsSavePerspective(levelId),
+        HasData = gameAgency:IsSavePerspective(levelId),
     }
 end
 
@@ -502,13 +548,14 @@ function XBigWorldGamePlayAgency:OnPerspectiveModeChanged(data)
         return
     end
     local success, isFirst, levelId = data.IsSuccess, data.IsFirstPersonMode, data.LevelId
-    
+
     if not levelId or levelId <= 0 then
         XLog.Error("OnSetFirstPersonMode levelId is invalid: " .. tostring(levelId))
         return
     end
     if success then
-        local perspective = isFirst and XMVCA.XBigWorldGamePlay.PerspectiveType.FirstPerson or XMVCA.XBigWorldGamePlay.PerspectiveType.ThirdPerson
+        local perspective = isFirst and XMVCA.XBigWorldGamePlay.PerspectiveType.FirstPerson or
+        XMVCA.XBigWorldGamePlay.PerspectiveType.ThirdPerson
         self:SavePerspectiveRequest(levelId, perspective)
     end
 end
@@ -565,14 +612,18 @@ function XBigWorldGamePlayAgency:RequestAgainChallengeInst(callback)
 end
 
 function XBigWorldGamePlayAgency:SavePerspectiveRequest(levelId, perspectiveId, func)
-    local groupId = self:GetCurrentAgency():GetPerspectiveGroupId(levelId)
+    local gameAgency = self:GetCurrentAgency()
+    if not gameAgency then
+        return
+    end
+    local groupId = gameAgency:GetPerspectiveGroupId(levelId)
     local req = {
         FovType = perspectiveId,
         FovGroupId = groupId
     }
     local now = XTime.GetServerNowTimestamp()
     --只管发，不管返回
-    self:GetCurrentAgency():UpdatePerspective(groupId, perspectiveId)
+    gameAgency:UpdatePerspective(groupId, perspectiveId)
     --增加CD，避免频繁请求，如果多次请求，取最后一次，如果最后一次没有请求成功，则不更新（策划接受）
     if now - LastRequestSavePerspectiveTime < SavePerspectiveInterval then
         return
@@ -662,9 +713,12 @@ function XBigWorldGamePlayAgency:NotifyExternalRequiredBigWorldPlayerData(data)
         worldIds = data.EnteredBigWorldIds
     end
     self._Model:UpdateEntranceWorldMark(worldIds)
-    
+
     if data.Gender then
         XMVCA.XBigWorldCommanderDIY:SetCurrentGender(data.Gender)
+    end
+    if data.CommanderFashionBags then
+        XMVCA.XBigWorldCommanderDIY:UpdateUnlockParts(data.CommanderFashionBags)
     end
 end
 
@@ -719,6 +773,7 @@ end
 function XBigWorldGamePlayAgency:GetSkyGardenOpenGuideIdList()
     return self._Model:GetSkyGardenOpenGuideIdList()
 end
+
 --endregion
 
 --region Debug/黑幕进战斗
@@ -745,15 +800,21 @@ function XBigWorldGamePlayAgency:EnterDebugGame(worldId, levelId)
     self._DebugWorldId = worldId
     self._DebugLevelId = levelId
     self._CurrentModuleId = ModuleId.XBigWorld
+    XEventManager.DispatchEvent(XEventId.EVENT_BIG_WORLD_GAME_PLAY_CHANGED, ModuleId.XBigWorld)
     self:_InitMVCA()
     self:_LoadGuide()
 
     self:_InitX3C()
     self:_InitConfig()
     self:_InitWorld()
-    self:GetCurrentAgency():BeforeEnterGame()
+    local gameAgency = self:GetCurrentAgency()
+    if gameAgency then
+        gameAgency:BeforeEnterGame()
+    end
     XMVCA.XDlcWorld:OnEnterFight(self:GetCurrentWorldId())
-    self:GetCurrentAgency():AfterEnterGame()
+    if gameAgency then
+        gameAgency:AfterEnterGame()
+    end
 end
 
 function XBigWorldGamePlayAgency:ClearDebugState()

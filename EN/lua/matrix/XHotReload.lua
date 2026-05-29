@@ -78,16 +78,13 @@ local function TryReplaceMVCA(filePath, oldModule, newModule)
     local moduleSplit = string.Split(modulePath, "/")
     local moduleId = moduleSplit[1]
     local fileName = moduleSplit[2]
-    --XLog.Error("fileName: ".. fileName)
     if string.find(fileName, "Agency") then
-        if fileName == moduleId .. "Agency" then --这样可以过滤基类
+        if fileName ~= "XAgency" then --这样可以过滤基类
             XMVCA:_HotReloadAgency(moduleId)
         end
     elseif string.find(fileName, "Control") then
-        if fileName == moduleId .. "Control" then
-            XMVCA:_HotReloadControl(moduleId)
-        else
-            XMVCA:_HotReloadSubControl(moduleId, oldModule, newModule)
+        if fileName ~= "XControl" then --这样可以过滤基类
+            XMVCA:_HotReloadControl(moduleId, oldModule, newModule)
         end
     elseif string.find(fileName, "Model") then
         XMVCA:_HotReloadModel(moduleId)

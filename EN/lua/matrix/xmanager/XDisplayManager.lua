@@ -225,8 +225,21 @@ XDisplayManagerCreator = function()
         return XMVCA.XCharacter:GetCharModel(id, quality)
     end
 
+    function XDisplayManager.GetResourcesId(fashionId,characterId,colorId)
+        local resourcesId = nil
+        if fashionId then
+            if XTool.IsNumberValid(colorId) and colorId ~= 0 then
+                resourcesId = XMVCA.XFashion:GetFashionColorResourcesId(colorId)
+            else
+                resourcesId = XDataCenter.FashionManager.GetResourcesId(fashionId)
+            end
+        else
+            resourcesId = XDataCenter.FashionManager.GetFashionResourceIdByCharId(characterId)
+        end
+        return resourcesId
+    end
     -- 更换模型和加载展示状态机，完成后调用回调。
-    function XDisplayManager.UpdateRoleModel(panelRoleModel, id, cb, fashionId)
+    function XDisplayManager.UpdateRoleModel(panelRoleModel, id, cb, fashionId,colorId)
         local state = {}
 
         -- 初始化信息
@@ -248,12 +261,7 @@ XDisplayManagerCreator = function()
         end
 
         --获取时装ModelName
-        local resourcesId
-        if fashionId then
-            resourcesId = XDataCenter.FashionManager.GetResourcesId(fashionId)
-        else
-            resourcesId = XDataCenter.FashionManager.GetFashionResourceIdByCharId(id)
-        end
+        local resourcesId =  XDisplayManager.GetResourcesId(fashionId, id,colorId)
 
         local fashionModelName
 
@@ -268,7 +276,6 @@ XDisplayManagerCreator = function()
         if isSpecialModel and not isMultiModel then
             fashionModelName = XModelManager.GetSpecialModelId(fashionModelName, panelRoleModel.RefName)
         end
-        
         --获取Controller名字
         state.RuntimeControllerName = XModelManager.GetUiDisplayControllerPath(fashionModelName)
 
@@ -276,6 +283,13 @@ XDisplayManagerCreator = function()
         local callback = function(model)
             state.Model = model
             state.Animator = state.Model:GetComponent("Animator")
+            -- 加载 animationController
+            local runtimeController = CS.LoadHelper.LoadUiController(state.RuntimeControllerName, state.Animator.gameObject)
+            if runtimeController == nil or not runtimeController:Exist() then
+                XLog.Error("XUiPanelDisplay RefreshSelf 错误: 展示角色的动画状态机加载失败: 状态机名称 " .. state.RuntimeControllerName .. " Ui名称：" .. panelRoleModel.RefName)
+                return
+            end
+            state.RunTimeController = runtimeController
             XDisplayManager.OnAssetLoaded(state)
         end
         state.Callback = function()
@@ -293,20 +307,7 @@ XDisplayManagerCreator = function()
 
             if cb then cb() end
         end
-        panelRoleModel:UpdateCharacterModel(id, nil, panelRoleModel.RefName, callback, nil, fashionId)
-
-        -- 加载animationController
-        local runtimeController = CS.LoadHelper.LoadUiController(state.RuntimeControllerName, panelRoleModel.RefName)
-        
-        if runtimeController == nil or not runtimeController:Exist() then
-            XLog.Error("XUiPanelDisplay RefreshSelf 错误: 展示角色的动画状态机加载失败: 状态机名称 " .. state.RuntimeControllerName .. " Ui名称：" .. panelRoleModel.RefName)
-            return
-        end
-        state.RunTimeController = runtimeController
-        if not state.Model then
-            return
-        end
-        XDisplayManager.OnAssetLoaded(state)
+        panelRoleModel:UpdateCharacterModel(id, nil, panelRoleModel.RefName, callback, nil, fashionId,nil,nil,nil,nil,nil,colorId)
 
         -- 两个都OK的时候触发回调
         return state

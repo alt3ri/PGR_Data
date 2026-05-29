@@ -395,6 +395,7 @@ XEnumConst = {
             SkyGarden = 106, --空花
             DlcRelink = 107, -- 联机共斗
             FavorabilityStory = 108, -- 好感度剧情
+            Theatre6 = 109, -- 肉鸽6.0
         },
         CharacterLimitType = {
             All = 0, --构造体/感染体
@@ -1586,6 +1587,10 @@ XEnumConst = {
             Settle = 5,
             None = 1001,
         },
+        PlayerShowState = {
+            Normal = 1,
+            Preparing = 2, -- 备战中
+        },
         RoomState = {
             Normal = 0,
             Match = 1, --匹配
@@ -1616,6 +1621,7 @@ XEnumConst = {
             BigWorld = 4, --大世界
             AutoChess = 5, -- 肉鸽5 自走棋
             Relink  = 6, --联机共斗
+            Theatre6 = 7, --肉鸽6
         },
         SettleState = {
             None = 0, --正常结算
@@ -2489,6 +2495,7 @@ XEnumConst = {
             Normal = 1, -- 常规挑战
             Trial = 2, -- 离群点
             Challenge = 3, -- 凹分区
+            Bestiary = 4    -- 现有威胁
         },
         RankType = {
             Normal = 1, -- 普通排行榜
@@ -2913,7 +2920,11 @@ XEnumConst = {
         Gender = {
             Male = 1, -- 男性
             Female = 2, -- 女性
-        }
+        },
+        OutfitType = {
+            Normal = 1, -- 普通
+            Fight = 2, -- 战斗
+        },
     },
     -- 2.17 数织小游戏
     Nonogram = {
@@ -3425,13 +3436,17 @@ XEnumConst = {
         BountyChallenge = 170,
         --友情提示，需要在TeamType.tab增加配置，这是保存在服务端的队伍数据，不然会报错
     },
+    TeamPrefab = {
+        TagTypeGameplay = 1,   -- 玩法标签
+        TagTypeAttribute = 2,  -- 属性标签
+    }
+    ,
     DlcRelink = {
         DefaultSelfIndex = 1, -- 默认自己在队伍中的位置
         MaxAttributeCount = 5, -- 最大属性词条数量
         FactorType = {
             MainSkill = 1, -- 技能词条
-            SkillAddition = 2, -- 技能伤害加成词条
-            Attribute = 3, -- 属性词条
+            Attribute = 2, -- 属性词条
         },
         ChatType = {
             Text = 1, -- 文本
@@ -3451,10 +3466,21 @@ XEnumConst = {
             Main = 1, -- 主要装备
             Normal = 2, -- 普通装备
         },
+        EquipQualityType = {
+            None = 0,
+            Rare = 1, -- 精良
+            Epic = 2, -- 史诗
+            Legendary = 3, -- 传说
+            Mythic = 4, -- 神话
+        },
         EquipSlotIndex = {
             MainSlot = 1, -- 主控装备
             NormalExpandBegin = 11, -- 扩展普通装备槽
             NormalSlotBegin = 111, -- 普通装备槽
+        },
+        EquipRuleType = {
+            Lock = 1, -- 锁定
+            Discard = 2, -- 弃置
         },
         ShopTaskType = {
             Shop = 1, --商店
@@ -3611,5 +3637,140 @@ XEnumConst = {
         {
             DrawCanLiver = 1
         }
-    }
+    },
+    Theatre6 = {
+        PlayMode = {
+            GamePlay = 1, --玩法模式
+            Story = 2, --剧情模式
+            Pvp = 3, --pvp模式
+        },
+        StageStatus = {
+            Purchased = 2, --需要购买
+            Normal = 3, --开启中
+            Passed = 4, --已通关
+        },
+        AttrType = {
+            Dlc = 1,
+            Activity = 2,
+        },
+        TaskShopType = {
+            Shop = 1, --商店
+            Task = 2, --任务
+        },
+        DragAction = {
+            Start = 1, --开始拖动
+            EnterTargetArea = 2, --进入目标区域
+            LeaveTargetArea = 3, --离开目标区域
+            PlayEnd = 4, --拖动到目标区域且松开点击后 播放自定义表现
+            End = 5, --结束拖动
+            Click = 6, --短按点击（未触发拖拽）
+            Dragging = 7, --拖动中
+        },
+        SkillType = {
+            Active = 1, --主动技
+            Parry = 2, --拼刀技
+            OverClock = 3, --超算技
+            Insert = 4, --插入技
+        },
+        SlotType = {
+            Special = 1, --特殊
+            Active = 2, --主动
+            Insert = 3, --插入
+            Bag = 4, --背包
+        },
+        BuffType = {
+            SkillLevelUp = 12, --技能升级
+        },
+        RoomType = {
+            ChooseTask = 1, --选择任务
+            ChooseOption = 2, --二择
+            BattleShop = 3, --局内商店
+            Monster = 4, --挑战小怪
+            Boss = 5, --挑战BOSS
+            Avg = 6, --AVG
+            ChapterPreview = 9, --报幕（客户端用）
+            NewFloorAvg = 11, --新楼层开始的AVG（客户端用）
+        },
+        DebuffType = {
+            Front = 1, --正面
+            Negative = 2, --负面
+        },
+        FightType = {
+            Win = 1, --胜利
+            Lose = 2, --被击败但没似
+            Dead = 3, --被击败且似了
+        },
+        RewardType = {
+            Relic = 1, --遗物
+            Skill = 2, --技能
+            Buff = 3, --Buff
+        },
+        TaskState = {
+            Init = 0,
+            Activated = 1, --已接取
+            Achieved = 2, --达成
+            Finished = 3 --已完成（服务端没用到）
+        },
+        EventRewardType = {
+            Goods = 1,
+            San = 2,
+            Coin = 3,
+            BuffPool = 4,
+            SkillPool = 5,
+            Hp = 6,
+            Fight = 7,
+            Avg = 100,
+        },
+        Direction = {
+            Left = 1,
+            Right = 2,
+        },
+        FightGetType = {
+            Gold = 3, --金币
+            BuffPack = 4, --Buff包
+            SkillPool = 5, --技能遗物池
+            ChangeHp = 6, --更改血量
+        },
+        SHOW_TYPE = {
+            MyRole = 1,
+            Enemy = 2,
+        },
+        SanType = {
+            Normal = 1, --正常
+            Below = 2, --低于正常
+            Above = 3, --高于正常
+            Death = 4, --死亡
+        },
+        ChooseRoomStatus = {
+            Init = 0,
+            TaskRecv = 1, --任务领取中，弹出任务接取界面
+            ChooseEvent = 2, --二择选择界面
+            TaskFinish = 3, --任务完成，弹出任务奖励领取界面
+            ChooseRoomFinish = 4, --二择全部完成，弹出任务奖励领取界面
+            Finished = 5, --二择最后的任务已领取，二择事件全部结束
+        },
+        BuffDeathType = {
+            Destroy = 1,
+            AddToDestroyedBuffs = 2,
+        },
+        NpcAttrib = {
+            [0] = "Life",
+            [1] = "Attack",
+        },
+        GameplayAttrib = {
+            [0] = "Stamina",
+            [1] = "WrestlePoint",
+            [2] = "OverClock",
+        },
+        TaskConditionType = {
+            Goods = 3, --所需材料
+        },
+    },
+    GameCollection = {
+        GameType = {
+            GoldenMiner = 1,
+            Game2048 = 2,
+            FangKong = 3,
+        },
+    },
 }

@@ -423,7 +423,7 @@ function XUiSettleWin:SetBtnByType(btnType)
             agency:OpenBattleRoom(self.CurrentStageId)
             return
         end
-        XLuaUiManager.PopThenOpen("UiBattleRoleRoom", self.StageCfg.StageId, nil, nil, nil, true)
+        XMVCA.XFuben:PopThenOpenUiBattleRoleRoom(self.StageCfg.StageId, nil, nil, nil, true)
     elseif btnType == XRoomSingleManager.BtnType.Next then
         self:OnBtnEnterNextClick()
     elseif btnType == XRoomSingleManager.BtnType.Main then
@@ -435,7 +435,7 @@ function XUiSettleWin:OnBtnEnterNextClick()
     if self.StageInfos.Type == XDataCenter.FubenManager.StageType.Tower then
         local stageId = XDataCenter.TowerManager.GetTowerData().CurrentStageId
         if XDataCenter.TowerManager.CheckStageCanEnter(stageId) then
-            XLuaUiManager.PopThenOpen("UiBattleRoleRoom", stageId, nil, nil, nil, true)
+            XMVCA.XFuben:PopThenOpenUiBattleRoleRoom(stageId, nil, nil, nil, true)
         else
             local text = CS.XTextManager.GetText("TowerCannotEnter")
             XUiManager.TipMsg(text, XUiManager.UiTipType.Tip)

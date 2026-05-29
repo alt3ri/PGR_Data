@@ -3,10 +3,18 @@ XMain = XMain or {}
 XMain.IsWindowsEditor = CS.UnityEngine.Application.platform == CS.UnityEngine.RuntimePlatform.WindowsEditor
 local IsWindowsPlayer = CS.UnityEngine.Application.platform == CS.UnityEngine.RuntimePlatform.WindowsPlayer
 
+--远程配置是否为Debug环境
 XMain.IsDebug = CS.XRemoteConfig.Debug
+-- (Editor or PCWin包) and 远程配置是否为Debug环境
 XMain.IsEditorDebug = (XMain.IsWindowsEditor or IsWindowsPlayer) and XMain.IsDebug
+--DevBuild 构建，不包含HARU_DEBUG宏
+XMain.IsDevBuild = CS.XApplication.DevBuild
+--Debug构建 约等于 HARU_DEBUG。在DevBuild构建模式下不成立
+XMain.IsDebugBuild = CS.XApplication.Debug
 --是否为内部版本
 XMain.IsInternal = CS.XApplication.IsInternal
+--是否使用原生层指针读取
+XMain.UseNativePtrReader = CS.XRemoteConfig.UseNativePtrReader
 
 local lockGMeta = {
     __newindex = function(t, k)
@@ -20,8 +28,6 @@ local lockGMeta = {
 function LuaLockG()
     setmetatable(_G, lockGMeta)
 end
-
-local import = CS.XLuaEngine.Import
 
 local function ImportXCommonDir()
     -- 默认基础模块
@@ -74,7 +80,7 @@ local function ImportXCommonDir()
     require("XCommon/XSignBoardPlayer")
     require("XCommon/XStack")
     require("XCommon/XString")
-
+    require("XCommon/XTableExtension")
     -- XTable名字排序位置，只给配置引用，放到最前面
     require("XCommon/XTime")
     require("XCommon/XTool")
@@ -100,38 +106,59 @@ XMain.Step1 = function()
         require("XDebug/LuaProfilerTool")
         require("XHotReload")
         require("XDebug/WeakRefCollector")
+
     end
 
     ImportXCommonDir()
     require("Binary/ReaderPool")
     require("Binary/CryptoReaderPool")
-    import("XConfig")
+    require("XConfig/RequireConfig")
     require("XModule/XEnumConst")
     require("MVCA/XMVCA") --MVCA入口
+    
     require("XGame")
 
+    require("XBehavior/XLuaBehaviorManager")
+    require("XBehavior/XLuaBehaviorAgent")
+    require("XBehavior/XLuaBehaviorNode")
+    
     require("XEntity/ImportXEntity")
     
-    import("XBehavior")
-    --import("XGuide")
+    
     require("XMovieActions/XMovieActionBase")
     CS.XApplication.SetProgress(0.52)
 end
 
 XMain.Step2 = function()
-    require("XManager/XUi/XLuaUiManager")
-    import("XManager")
+    require("XManager/RequireManager")
 
     XMVCA:InitModule()
     XMVCA:InitAllAgencyRpc()
 
-    import("XNotify")
     CS.XApplication.SetProgress(0.54)
 end
 
 XMain.Step3 = function()
-    import("XHome")
-    import("XScene")
+    require("XHome/XDorm/XHomeChar/XHomeBehaviorState")
+    require("XHome/XDorm/XHomeChar/XHomeCharAgent")
+    require("XHome/XDorm/XHomeChar/XHomeCharFSMFactory")
+    require("XHome/XDorm/XHomeChar/XHomeFSM/XHomeCharFSM")
+    require("XHome/XDorm/XHomeChar/XHomeFSM/XHomeCharFSMControl")
+    require("XHome/XDorm/XHomeChar/XHomeFSM/XHomeCharFSMEmpty")
+    require("XHome/XDorm/XHomeChar/XHomeFSM/XHomeCharFSMIdle")
+    require("XHome/XDorm/XHomeChar/XHomeFSM/XHomeCharFSMInteract")
+    require("XHome/XDorm/XHomeChar/XHomeFSM/XHomeCharFSMMood")
+    require("XHome/XDorm/XHomeCharManager")
+    require("XHome/XDorm/XHomeDormManager")
+    require("XHome/XDorm/XHomeFurniture/XHomeFurnitureAgent")
+    require("XHome/XDorm/XHomePet/XHomePetAgent")
+    require("XHome/XHomeScene")
+    require("XHome/XHomeSceneManager")
+    require("XHome/XInfrastructure/XDeviceObject")
+    require("XHome/XInfrastructure/XHomeInfrastructureManager")
+    require("XHome/XInfrastructure/XRoomObject")
+    require("XHome/XSceneEntityManager")
+    require("XHome/XSceneResourceManager")
     require("XUi/XUiCommon/XUiCommonEnum")
     CS.XApplication.SetProgress(0.68)
 end

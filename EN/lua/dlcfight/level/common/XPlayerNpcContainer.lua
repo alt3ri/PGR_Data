@@ -1,3 +1,4 @@
+---@class XPlayerNpcContainer
 local XPlayerNpcContainer = XClass(nil, "XPlayerNpcContainer")
 
 ---@param proxy XDlcCSharpFuncs

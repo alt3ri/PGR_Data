@@ -36,6 +36,8 @@ EFightLuaEvent = {
     Theatre6AffixBlock = 1016,
     --- 肉鸽6触发破防
     Theatre6AffixBlockBreak = 1017,
+    --- 肉鸽6触发怒火攻击
+    Theatre6AffixAngerDamage = 1018,
 }
 
 --region Define - GetEventArgs
@@ -172,9 +174,9 @@ local emptyTable = {}
 ---@class Theatre6HitAffixArgs : LuaEventArgs
 local Theatre6HitAffixArgs = {
     ---@private
-    __type = EFightLuaEvent.Theatre6AffixCritDamage,
+    __type = EFightLuaEvent.Theatre6SpecialHit,
     ---@private
-    __name = EventNamesById[EFightLuaEvent.Theatre6AffixCritDamage],
+    __name = EventNamesById[EFightLuaEvent.Theatre6SpecialHit],
     -- _contextId = 0, ---@type integer
     _missileUUID = 0, ---@type integer
     _missileHitCount = 0, ---@type integer 这是该子弹的第几次命中

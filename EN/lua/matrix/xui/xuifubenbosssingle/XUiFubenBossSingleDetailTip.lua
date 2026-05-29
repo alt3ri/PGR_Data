@@ -12,7 +12,8 @@ local XUiFubenBossSingleDetailTip = XClass(XUiNode, "XUiFubenBossSingleDetailTip
 local XUiFubenBossSingleChooseDetailBuff = require("XUi/XUiFubenBossSingle/XUiFubenBossSingleChooseDetailBuff")
 
 --region 生命周期
-function XUiFubenBossSingleDetailTip:OnStart(bossStageConfig)
+function XUiFubenBossSingleDetailTip:OnStart(sectionConf, bossStageConfig)
+    self._SectionConf = sectionConf
     self._BossStageConfig = bossStageConfig or self._BossStageConfig
     ---@type XUiFubenBossSingleChooseDetailBuff[]
     self._GridBuffList = self._GridBuffList or {}
@@ -28,7 +29,10 @@ end
 
 --region 按钮事件
 function XUiFubenBossSingleDetailTip:OnBtnDetailClick()
-    XLuaUiManager.Open("UiFubenBossSingleHide", self._BossStageConfig)
+    XLuaUiManager.Open(
+        "UiFubenBossSingleHide",
+        self._SectionConf,
+        self._BossStageConfig)
 end
 
 --endregion

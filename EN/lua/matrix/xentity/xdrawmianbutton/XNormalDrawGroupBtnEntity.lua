@@ -3,7 +3,7 @@ local XDrawGroupBtnBaseEntity = require("XEntity/XDrawMianButton/XDrawGroupBtnBa
 local XNormalDrawGroupBtnEntity = XClass(XDrawGroupBtnBaseEntity, "XNormalDrawGroupBtnEntity")
 local CSTextManagerGetText = CS.XTextManager.GetText
 function XNormalDrawGroupBtnEntity:Ctor()
-    
+    self.OptionKey = ""
 end
 
 function XNormalDrawGroupBtnEntity:GetCfg()
@@ -21,10 +21,12 @@ function XNormalDrawGroupBtnEntity:UpdateData(data)
     self.BottomTimes = data.BottomTimes;
     self.MaxBottomTimes = data.MaxBottomTimes;
     self.SwitchDrawIdCount = data.SwitchDrawIdCount
-    self.MaxSwitchDrawIdCount = data.MaxSwitchDrawIdCount
-    self.Order = data.Order
-
-    self.UseItemIdList = {}
+    self.MaxSwitchDrawIdCount = data.MaxSwitchDrawIdCount
+    self.Order = data.Order
+    self.OptionKey = data.OptionKey or ""
+    self.ConditionId = data.ConditionId or 0
+
+    self.UseItemIdList = {}
     table.insert(self.UseItemIdList, XDataCenter.ItemManager.ItemId.FreeGem)
     table.insert(self.UseItemIdList, data.UseItemId)
 end
@@ -89,8 +91,15 @@ function XNormalDrawGroupBtnEntity:IsShowTag()
     local IsShowNewTag = false
 
     if self.BannerBeginTime > 0 then
-        if XDataCenter.DrawManager.IsShowNewTag(self.BannerBeginTime, XDrawConfigs.RuleType.Normal, self.Id) then
-            IsShowNewTag = true
+        -- 有 OptionKey 时使用 option 维度的新标签检查
+        if not string.IsNilOrEmpty(self.OptionKey) then
+            if XDataCenter.DrawManager.IsShowNewTagForOption(self.BannerBeginTime, XDrawConfigs.RuleType.Normal, self.OptionKey) then
+                IsShowNewTag = true
+            end
+        else
+            if XDataCenter.DrawManager.IsShowNewTag(self.BannerBeginTime, XDrawConfigs.RuleType.Normal, self.Id) then
+                IsShowNewTag = true
+            end
         end
     end
     return IsShowNewTag
@@ -98,6 +107,10 @@ end
 
 function XNormalDrawGroupBtnEntity:IsShowFreeTip()
     return XDataCenter.DrawManager.CheckHasFreeTicket(self:GetId())
+end
+
+function XNormalDrawGroupBtnEntity:GetOptionKey()
+    return self.OptionKey
 end
 
 return XNormalDrawGroupBtnEntity

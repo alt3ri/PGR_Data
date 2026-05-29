@@ -123,6 +123,7 @@ function XUiMainLeftTop:OnEnable()
     -- self:OnSummerSignOpenStatusUpdate()
     -- self:OnAccumulateExpendUpdate()
     self:BtnWeeklyChallengeUpdate()
+    self:UpdatePassportExRewardMark()
     self:AddEventListener()
     self._PanelActivityBtns:CheckActivityBtnTimerStart()
 end
@@ -216,6 +217,10 @@ function XUiMainLeftTop:OnCheckPassportRedPoint(count)
     self.BtnPassport:ShowReddot(count >= 0)
 end
 
+function XUiMainLeftTop:UpdatePassportExRewardMark()
+    self.PanleUP.gameObject:SetActiveEx(not XMVCA.XPassport:IsActivityClose() and XMVCA.XPassport:HasAnyPassportTaskExReward())
+end
+
 --region   ------------------通行证 start-------------------
 
 function XUiMainLeftTop:UpdatePassportLeftTime()
@@ -277,15 +282,21 @@ end
 function XUiMainLeftTop:AddEventListener()
     XEventManager.AddEventListener(XEventId.EVENT_PLAYER_LEVEL_CHANGE, self.UpdateInfo, self)
     XEventManager.AddEventListener(XEventId.EVENT_NOTIFY_PASSPORT_DATA, self.OnPassportOpenStatusUpdate, self)
+    XEventManager.AddEventListener(XEventId.EVENT_NOTIFY_PASSPORT_DATA, self.UpdatePassportExRewardMark, self)
     XEventManager.AddEventListener(XEventId.EVENT_FUNCTION_EVENT_END, self.OnNewActivityCalendarPlayEffect, self)
     XEventManager.AddEventListener(XEventId.EVENT_NEW_ACTIVITY_CALENDAR_UPDATE, self.OnNewActivityCalendarOpenStatusUpdate, self)
+    XEventManager.AddEventListener(XEventId.EVENT_FINISH_TASK, self.UpdatePassportExRewardMark, self)
+    XEventManager.AddEventListener(XEventId.EVENT_TASK_SYNC, self.UpdatePassportExRewardMark, self)
 end
 
 function XUiMainLeftTop:RemoveEventListener()
     XEventManager.RemoveEventListener(XEventId.EVENT_PLAYER_LEVEL_CHANGE, self.UpdateInfo, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_NOTIFY_PASSPORT_DATA, self.OnPassportOpenStatusUpdate, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_NOTIFY_PASSPORT_DATA, self.UpdatePassportExRewardMark, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_FUNCTION_EVENT_END, self.OnNewActivityCalendarPlayEffect, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_NEW_ACTIVITY_CALENDAR_UPDATE, self.OnNewActivityCalendarOpenStatusUpdate, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_FINISH_TASK, self.UpdatePassportExRewardMark, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_TASK_SYNC, self.UpdatePassportExRewardMark, self)
 end
 --endregion------------------事件监听 finish------------------
 

@@ -8,7 +8,7 @@ function XUiTheatre6Loading:OnStart()
     local characterId = self._Control:GetMonsterConfig(monsterId).CharacterId
     local characterConfig = self._Control:GetCharacterConfig(characterId)
     local portrait = self._Control:GetFashionConfig(characterConfig.FashionIds[1]).BigPortrait
-    
+
     local starCount = 0
     if XTool.IsNumberValid(roomData.FightId) then
         local fightConfig = self._Control:GetStageFightCfgById(roomData.FightId)
@@ -27,11 +27,9 @@ function XUiTheatre6Loading:OnStart()
     XUiHelper.RefreshCustomizedList(self.ImgStat.parent, self.ImgStat, starCount, nil, true)
 
     --LevelId暂时没用到
-    XMVCA.XTheatre6.Battle:RequestDlcSingleEnterFight(0, function()
-        XLuaUiManager.SafeClose("UiTheatre6RoomBoss")
-    end, function()
+    XMVCA.XTheatre6.Battle:RequestDlcSingleEnterFight(0, nil, function()
         self:Close()
     end)
 end
 
-return XUiTheatre6Loading
+return XUiTheatre6Loading

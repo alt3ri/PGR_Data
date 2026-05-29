@@ -102,7 +102,7 @@ function XUiFunbenKoroTutoriaChallengeDetail:OnBtnEnterClick()
         end
         self.RootUi:CloseStageDetails()
         --self:Close()
-        XLuaUiManager.Open("UiBattleRoleRoom", self.StageCfg.StageId
+        XMVCA.XFuben:OpenUiBattleRoleRoom(self.StageCfg.StageId
             , XDataCenter.FubenNewCharActivityManager.LoadTeamLocal(self.Id)
             , require("XUi/XUiNewChar/XUiTutoriaBattleRoleRoom"))
     end

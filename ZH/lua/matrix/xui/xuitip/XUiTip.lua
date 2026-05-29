@@ -339,6 +339,12 @@ function XUiTip:Refresh(data)
         self:SetUiActive(self.BtnAction, XTool.IsNumberValid(signBoardActionId))
     end
 
+    --DIY套装
+    if self.PanelSuit then
+        local isSuit = XMVCA.XBigWorldCommanderDIY:CheckTemplateIsSuit(self.TemplateId)
+        self.PanelSuit.gameObject:SetActiveEx(isSuit)
+    end
+
     self:RefreshLabel(self.TemplateId)
 
     if XTool.DebugIsShowItemIdOnUi() then

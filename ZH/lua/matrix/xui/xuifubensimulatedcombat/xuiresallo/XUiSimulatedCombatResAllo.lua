@@ -1,5 +1,5 @@
-local XUiPanelActivityAsset = require("XUi/XUiShop/XUiPanelActivityAsset")
-local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
+local XUiPanelActivityAsset = require("XUi/XUiShop/XUiPanelActivityAsset")
+local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
 local XUiGridRes =  require("XUi/XUiFubenSimulatedCombat/ChildItem/XUiGridRes")
 local XUiPanelCombatMembers = require("XUi/XUiFubenSimulatedCombat/XUiResAllo/XUiPanelCombatMembers")
 local XUiPanelCombatAdditions = require("XUi/XUiFubenSimulatedCombat/XUiResAllo/XUiPanelCombatAdditions")
@@ -205,7 +205,7 @@ function XUiSimulatedCombatResAllo:OnBtnEnterRoomClick()
     end
     XDataCenter.FubenSimulatedCombatManager.SaveShopMap()
     XDataCenter.FubenSimulatedCombatManager.SendPreFightRequest(function()
-        XLuaUiManager.Open("UiBattleRoleRoom", self.StageInterCfg.StageId)
+        XMVCA.XFuben:OpenUiBattleRoleRoom(self.StageInterCfg.StageId)
     end)
 end
 

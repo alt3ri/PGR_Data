@@ -1,6 +1,7 @@
 local XUiGridDlcRelinkEquipment = require("XUi/XUiDlcRelink/Equip/Grid/XUiGridDlcRelinkEquipment")
 local XUiPanelDlcRelinkEquipDetail = require("XUi/XUiDlcRelink/Equip/Panel/XUiPanelDlcRelinkEquipDetail")
 local XUiGridDlcRelinkEquipAttribute = require("XUi/XUiDlcRelink/Equip/Grid/XUiGridDlcRelinkEquipAttribute")
+local XUiPanelLongPressProgress = require("XUi/XUiDlcRelink/Common/XUiPanelLongPressProgress")
 ---@class XUiDlcRelinkEquipBag : XLuaUi
 ---@field private _Control XDlcRelinkControl
 ---@field PanelTab XUiButtonGroup
@@ -12,6 +13,16 @@ local BtnOperateType = {
     Replace = 1, -- 替换（同角色不同槽位，交换）
     Wear = 2, -- 穿戴（当前槽为空）
     Change = 3, -- 更换（当前槽有装备，用背包选中装备覆盖）
+}
+local DraggingFromType = {
+    EquipSlot = 1, -- 从装备槽位拖出
+    BagEquip = 2, -- 从背包装备拖出
+}
+local DragAction = {
+    Cancel = 0, -- 取消/无效操作
+    Equip = 1, -- 背包装备穿戴到槽位
+    Swap = 2, -- 槽位间交换
+    Unequip = 3, -- 从槽位卸下到背包
 }
 
 function XUiDlcRelinkEquipBag:OnAwake()
@@ -27,10 +38,39 @@ function XUiDlcRelinkEquipBag:OnAwake()
     self.EquipBtnTabList = {}
     ---@type XUiGridDlcRelinkEquipAttribute[]
     self.EquipTotalAttributeGridList = {}
+    ---@type UiObject[]
+    self.PanelGlowList = {}
 
     --- 装备筛选数据缓存
     ---@type XDlcRelinkEquipFilterCache
     self.EquipFilterCache = {}
+
+    -- 拖拽状态变量
+    self.Dragging = false               -- 是否正在拖拽
+    self.DraggingEquipUid = nil         -- 正在拖拽的装备Uid
+    self.DraggingFrom = nil             -- 拖拽来源（装备槽位或背包装备）
+    self.DraggingFromIndex = nil        -- 拖拽来源的索引（槽位索引）
+    ---@type XUiGridDlcRelinkEquipment
+    self.DragCloneGrid = nil            -- 拖拽中的克隆格子
+    self.HoverSlotIndex = nil           -- 当前悬停的槽位索引
+    self.HoverInList = false            -- 当前是否悬停在背包列表区域
+    -- 长按状态变量
+    ---@type XUiGridDlcRelinkEquipment
+    self.PressingGrid = nil             -- 当前正在长按交互的Grid引用
+    self.IsPressing = false             -- 是否正在长按加载进度
+    self.DragTriggered = false          -- 是否已触发拖拽
+    self.PressCancelled = false         -- 本次按压是否已取消长按
+
+    self._screenVec2 = CS.UnityEngine.Vector2(0, 0)
+    self._dragVec2 = CS.UnityEngine.Vector2(0, 0)
+    self._hideVec2 = CS.UnityEngine.Vector2(-99999, -99999)
+
+    if self.PanelEquipScroll then
+        -- 列表区域hover监听，用于判断拖拽释放位置
+        self:AddPointerEnterExitListener(self.PanelEquipScroll.gameObject, handler(self, self.OnPointerEnterBgList), handler(self, self.OnPointerExitBgList))
+        ---@type UnityEngine.UI.ScrollRect
+        self.EquipScrollRect = self.PanelEquipScroll.transform:GetComponent(typeof(CS.UnityEngine.UI.ScrollRect))
+    end
 end
 
 function XUiDlcRelinkEquipBag:OnStart(characterId, slotIndex)
@@ -89,6 +129,10 @@ function XUiDlcRelinkEquipBag:OnDisable()
     self._Control:RecordAllEquipViewed()
     -- 是否进行槽位数据验证
     self.IsNeedValidateEquipSlotData = true
+    -- 清理待选装备状态
+    self._PendingSelectEquipUid = nil
+    -- 清理拖拽状态
+    self:ClearDragState()
 end
 
 --region 进入默认选择逻辑
@@ -208,6 +252,10 @@ function XUiDlcRelinkEquipBag:RefreshPanelEquipment()
                 XLog.Error("XUiDlcRelinkEquipBag:RefreshPanelEquipment - GridEquipment0" .. index .. " not found")
                 return
             end
+            -- 缓存 PanelGlow 引用
+            self.PanelGlowList[index] = self[string.format("PanelGlow0%s", index)]
+            -- 槽位hover监听（用于拖拽悬停检测）
+            self:AddPointerEnterExitListener(parent.gameObject, function() self:OnPointerEnterSlot(slotIndex) end, function() self:OnPointerExitSlot(slotIndex) end)
             local go = XUiHelper.Instantiate(self.GridEquipment, parent)
             grid = XUiGridDlcRelinkEquipment.New(go, self, handler(self, self.OnEquipSlotCallBack))
             self.EquipmentGridList[index] = grid
@@ -219,11 +267,16 @@ function XUiDlcRelinkEquipBag:RefreshPanelEquipment()
         grid:SetLock(not isUnLock)
         grid:SetAdd(isUnLock and not XTool.IsNumberValid(equipUid))
         grid:SetSelect(self.CurSelectSlotIndex == slotIndex)
+        grid:SetIsEquipSlot(true)
     end
 end
 
 ---@param grid XUiGridDlcRelinkEquipment
 function XUiDlcRelinkEquipBag:OnEquipSlotCallBack(grid)
+    if self.Dragging then
+        return
+    end
+
     local slotIndex = grid:GetSlotIndex()
     local isUnLock, unlockDesc = self._Control:CheckEquipSlotIsUnlocked(self.CharacterId, slotIndex)
     if not isUnLock then
@@ -231,7 +284,7 @@ function XUiDlcRelinkEquipBag:OnEquipSlotCallBack(grid)
         return
     end
 
-    if self.CurSelectSlotIndex == slotIndex then
+    if self.CurSelectSlotIndex == slotIndex and self.CurSelectSlotEquipUid == self.CurSelectEquipUid then
         return
     end
     self:SetCurrentSlot(slotIndex)
@@ -316,7 +369,7 @@ end
 
 function XUiDlcRelinkEquipBag:RefreshEquipTotalAttribute()
     local equipUids = self:BuildEquipUidsSnapshot()
-    local totalAttributes = self._Control:GetEquipTotalAttributeList(equipUids)
+    local totalAttributes = self._Control:GetEquipTotalAttributeList(self.CharacterId, equipUids)
     for index, attribute in ipairs(totalAttributes) do
         local grid = self.EquipTotalAttributeGridList[index]
         if not grid then
@@ -406,12 +459,60 @@ function XUiDlcRelinkEquipBag:SetupDynamicTable()
         return
     end
 
+    self:SortNewEquipFirst(self.EquipUidList)
+
     self.CurSelectEquipUid = self.CurSelectSlotEquipUid
     self.CurSelectGrid = nil
     local index = self:GetDefaultSelectEquipUidIndex()
 
+    -- 若有待选装备（如卸下后自动选中），优先使用
+    if XTool.IsNumberValid(self._PendingSelectEquipUid) then
+        for i, uid in ipairs(self.EquipUidList) do
+            if uid == self._PendingSelectEquipUid then
+                self.CurSelectEquipUid = self._PendingSelectEquipUid
+                index = i
+                break
+            end
+        end
+        self._PendingSelectEquipUid = nil
+    end
+
     self.DynamicTable:SetDataSource(self.EquipUidList)
     self.DynamicTable:ReloadDataSync(index)
+end
+
+--- 将新获得（未查看）的装备按原来的顺序排在列表最前面
+---@param equipUidList number[]
+function XUiDlcRelinkEquipBag:SortNewEquipFirst(equipUidList)
+    local n = #equipUidList
+    if n <= 1 then
+        return
+    end
+    local newList = {}
+    local newCount = 0
+    local oldList = {}
+    local oldCount = 0
+    for i = 1, n do
+        local uid = equipUidList[i]
+        if not self._Control:CheckEquipViewed(uid) then
+            newCount = newCount + 1
+            newList[newCount] = uid
+        else
+            oldCount = oldCount + 1
+            oldList[oldCount] = uid
+        end
+    end
+    -- 全部同类型（全新或全旧）无需重排
+    if newCount == 0 or oldCount == 0 then
+        return
+    end
+    -- 回写：新装备在前，旧装备在后
+    for i = 1, newCount do
+        equipUidList[i] = newList[i]
+    end
+    for i = 1, oldCount do
+        equipUidList[newCount + i] = oldList[i]
+    end
 end
 
 function XUiDlcRelinkEquipBag:GetDefaultSelectEquipUidIndex()
@@ -454,6 +555,10 @@ end
 
 ---@param grid XUiGridDlcRelinkEquipment
 function XUiDlcRelinkEquipBag:OnEquipItemCallBack(grid)
+    if self.Dragging then
+        return
+    end
+
     local equipUid = grid:GetEquipUid()
     if equipUid == self.CurSelectEquipUid then
         return
@@ -539,6 +644,73 @@ end
 
 --endregion
 
+--region 词条等级溢出检查
+
+--- 构建穿戴指定装备到指定槽位后的装备快照
+---@param targetSlotIndex number 目标槽位
+---@param equipUid number 要穿戴的装备Uid
+---@return table<number, number> 穿戴后的装备Uid映射 key: 槽位索引, value: 装备Uid
+function XUiDlcRelinkEquipBag:BuildWearEquipSnapshot(targetSlotIndex, equipUid)
+    local equipDict = self._Control:GetWearEquipUidsByCharacterId(self.CharacterId)
+    local equipUids = {}
+    local fromSlot = 0
+
+    -- 先拷贝现有穿戴并定位被选装备所在槽位
+    local equipSlotIndexMap = self._Control:GetEquipSlotIndexMap()
+    for _, slotIndex in ipairs(equipSlotIndexMap) do
+        local uid = equipDict[slotIndex]
+        if XTool.IsNumberValid(uid) then
+            equipUids[slotIndex] = uid
+            if uid == equipUid then
+                fromSlot = slotIndex
+            end
+        end
+    end
+
+    -- 将装备放入目标槽位
+    equipUids[targetSlotIndex] = equipUid
+
+    -- 如果装备原本穿戴在其他槽位，需要处理原槽位
+    if fromSlot > 0 and fromSlot ~= targetSlotIndex then
+        -- 清除来源槽位
+        equipUids[fromSlot] = nil
+    end
+
+    return equipUids
+end
+
+--- 检查穿戴装备后词条等级是否溢出，如溢出则弹二次确认
+---@param targetSlotIndex number 目标槽位
+---@param equipUid number 要穿戴的装备Uid
+---@param callback function 确认或无溢出时的回调
+function XUiDlcRelinkEquipBag:CheckAndConfirmFactorOverflow(targetSlotIndex, equipUid, callback)
+    local equipUids = self:BuildWearEquipSnapshot(targetSlotIndex, equipUid)
+    local overflowList = self._Control:CheckEquipFactorLevelOverflow(self.CharacterId, equipUids, equipUid)
+    if not XTool.IsTableEmpty(overflowList) then
+        local title = self._Control:GetClientConfig("TipTitle")
+        local data = self._Control:GetClientConfigParams("EquipFactorOverflowWearTipContent")
+        local content = data[1] or ""
+        local extraData = { ConfirmText = data[2] or "", CancelText = data[3] or "", TipsKey = "EquipFactorOverflowWearTip" }
+
+        local descriptions = {}
+        local factorOverflowDesc = self._Control:GetClientConfig("EquipFactorOverflowDesc")
+        for _, info in ipairs(overflowList) do
+            table.insert(descriptions, string.format(factorOverflowDesc, info.Name, info.CurLevel, info.MaxLevel))
+        end
+
+        local factorStr = table.concat(descriptions, "\n")
+        content = XUiHelper.ConvertLineBreakSymbol(content)
+        content = XUiHelper.FormatText(content, factorStr)
+        self._Control:OpenCommonTipDialog(title, content, nil, callback, extraData)
+        return
+    end
+    if callback then
+        callback()
+    end
+end
+
+--endregion
+
 --region 右侧装备详情
 
 function XUiDlcRelinkEquipBag:RefreshEquipDetail()
@@ -556,6 +728,19 @@ function XUiDlcRelinkEquipBag:RefreshEquipDetail()
     self:RefreshEquipTotalAttribute()
     self:RefreshBtn()
     self:RefreshFilterBtn()
+    self:RefreshOneClickEquipBtn()
+end
+
+---@param attribute XDlcRelinkEquipAttribute
+function XUiDlcRelinkEquipBag:CheckEquipFactorIsUnlock(attribute)
+    if not XTool.IsNumberValid(self.CurSelectEquipUid) then
+        return true, ""
+    end
+    if not self._Control:CheckFactorIsConditionalFactor(attribute.FactorId) then
+        return true, ""
+    end
+    local equipUids = self:BuildWearEquipSnapshot(self.CurSelectSlotIndex, self.CurSelectEquipUid)
+    return self._Control:CheckEquipFactorIsUnlock(attribute.FactorId, self.CharacterId, equipUids)
 end
 
 --endregion
@@ -572,6 +757,9 @@ function XUiDlcRelinkEquipBag:RefreshBtn()
         self.BtnRemove.gameObject:SetActiveEx(false)
         return
     end
+
+    local isHasSlot = self._Control:CheckEquipHasDeputyFactorSlot(self.CurSelectEquipUid)
+    self.BtnReform:SetDisable(not isHasSlot)
 
     local isCanWear = self:CheckCurrentEquipCanWear()
     self.BtnReplace.gameObject:SetActiveEx(isCanWear)
@@ -595,11 +783,20 @@ function XUiDlcRelinkEquipBag:CheckFilterCache()
         return false
     end
 
-    if XTool.IsNumberValid(self.EquipFilterCache.ReformedType) or not XTool.IsTableEmpty(self.EquipFilterCache.FactorIds) then
+    if XTool.IsNumberValid(self.EquipFilterCache.ReformedType)
+        or XTool.IsNumberValid(self.EquipFilterCache.EquipQuality)
+        or XTool.IsNumberValid(self.EquipFilterCache.EquipDiscard)
+        or not XTool.IsTableEmpty(self.EquipFilterCache.FactorIds) then
         return true
     end
 
     return false
+end
+
+function XUiDlcRelinkEquipBag:RefreshOneClickEquipBtn()
+    local equipInfoList = self._Control:CalcOneKeyEquipPlan(self.CharacterId)
+    local _, hasAnyChange = self:CheckOneKeyEquipPlanChanged(equipInfoList)
+    self.BtnOneClickEquip:ShowReddot(hasAnyChange)
 end
 
 --endregion
@@ -617,6 +814,546 @@ end
 
 --endregion
 
+--region 拖拽逻辑
+
+-- 进入/离开监听绑定（用于拖拽悬停检测）
+function XUiDlcRelinkEquipBag:AddPointerEnterExitListener(go, onEnter, onExit)
+    if not go then
+        return
+    end
+    ---@type XUguiPointerEventListener
+    local listener = go:GetComponent(typeof(CS.XUguiPointerEventListener))
+    if XTool.UObjIsNil(listener) then
+        listener = go:AddComponent(typeof(CS.XUguiPointerEventListener))
+    end
+    if onEnter then
+        listener.OnEnter = onEnter
+    end
+    if onExit then
+        listener.OnExit = onExit
+    end
+    return listener
+end
+
+--region 拖拽 hover 监听
+
+function XUiDlcRelinkEquipBag:OnPointerEnterBgList()
+    if not self.Dragging then
+        return
+    end
+    self.HoverInList = true
+end
+
+function XUiDlcRelinkEquipBag:OnPointerExitBgList()
+    if not self.Dragging then
+        return
+    end
+    self.HoverInList = false
+end
+
+function XUiDlcRelinkEquipBag:OnPointerEnterSlot(slotIndex)
+    if not self.Dragging then
+        return
+    end
+    self.HoverSlotIndex = slotIndex
+    self:UpdateSlotHoverState()
+end
+
+function XUiDlcRelinkEquipBag:OnPointerExitSlot(slotIndex)
+    if not self.Dragging then
+        return
+    end
+    if self.HoverSlotIndex == slotIndex then
+        self.HoverSlotIndex = nil
+        self:UpdateSlotHoverState()
+    end
+end
+
+--endregion
+
+--region 拖拽辅助方法
+
+-- 判断拖拽来源是否为装备槽位
+function XUiDlcRelinkEquipBag:IsDragFromSlot()
+    return self.DraggingFrom == DraggingFromType.EquipSlot
+end
+
+--- 根据当前拖拽状态和悬停位置，解析应执行的拖拽操作
+---@return number action DragAction 枚举值
+---@return number|nil targetIndex 目标槽位索引（Equip/Swap）或来源槽位索引（Unequip）
+function XUiDlcRelinkEquipBag:ResolveDragAction()
+    local toSlot = self.HoverSlotIndex and self.HoverSlotIndex > 0
+    if toSlot then
+        if self:IsDragFromSlot() and self.DraggingFromIndex then
+            -- 槽位 → 槽位：交换
+            return DragAction.Swap, self.HoverSlotIndex
+        else
+            -- 背包 → 槽位：穿戴/更换
+            return DragAction.Equip, self.HoverSlotIndex
+        end
+    elseif self:IsDragFromSlot() and self.DraggingFromIndex and self.HoverInList then
+        -- 槽位 → 背包列表：卸下
+        return DragAction.Unequip, self.DraggingFromIndex
+    end
+    return DragAction.Cancel, nil
+end
+
+--endregion
+
+--region 拖拽生命周期
+
+---@param grid XUiGridDlcRelinkEquipment
+function XUiDlcRelinkEquipBag:StartDrag(grid)
+    if self.Dragging then
+        return
+    end
+    local equipUid = grid and grid:GetEquipUid() or 0
+    if not XTool.IsNumberValid(equipUid) then
+        return
+    end
+
+    self.Dragging = true
+    self.DraggingEquipUid = equipUid
+    local isEquipSlot = grid:GetIsEquipSlot()
+    self.DraggingFrom = isEquipSlot and DraggingFromType.EquipSlot or DraggingFromType.BagEquip
+    self.DraggingFromIndex = isEquipSlot and grid:GetSlotIndex() or nil
+
+    -- 创建拖拽克隆
+    ---@type XUiGridDlcRelinkEquipment
+    local dragGrid = self.DragCloneGrid
+    if not dragGrid then
+        local go = XUiHelper.Instantiate(self.GridEquipment, self.PanelDrag.transform)
+        dragGrid = XUiGridDlcRelinkEquipment.New(go, self)
+        self.DragCloneGrid = dragGrid
+
+        -- 提升层级
+        local order = self.PanelDrag.sortingOrder + 5
+        dragGrid:SetOverrideSorting(true, order)
+        -- 禁用射线检测
+        ---@type UnityEngine.CanvasGroup
+        local canvasGroup = dragGrid.GameObject:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
+        if XTool.UObjIsNil(canvasGroup) then
+            canvasGroup = dragGrid.GameObject:AddComponent(typeof(CS.UnityEngine.CanvasGroup))
+        end
+        canvasGroup.blocksRaycasts = false
+    end
+    dragGrid:Open()
+    dragGrid:SetIsDragClone(true)
+    dragGrid:SetOnDrag(true)
+    dragGrid:Refresh(equipUid)
+
+    -- 禁用列表滑动，显示槽位可放入状态，开始追踪
+    self:SetScrollEnabled(false)
+    self:UpdateSlotCanDropState()
+    self:StartDragTracking()
+end
+
+function XUiDlcRelinkEquipBag:EndDrag()
+    if not self.Dragging then
+        return
+    end
+
+    local action, targetIndex = self:ResolveDragAction()
+    if action == DragAction.Equip then
+        self:HandleDragEquip(targetIndex, self.DraggingEquipUid)
+    elseif action == DragAction.Swap then
+        self:HandleDragSwap(self.DraggingFromIndex, targetIndex, self.DraggingEquipUid)
+    elseif action == DragAction.Unequip then
+        self:HandleDragUnequip(targetIndex)
+    end
+
+    self:ClearDragState()
+end
+
+function XUiDlcRelinkEquipBag:ClearDragState()
+    self:StopDragTracking()
+    self:SetScrollEnabled(true)
+    -- 重置长按状态
+    self:ClearPressState()
+    self.Dragging = false
+    self.DraggingEquipUid = nil
+    self.DraggingFrom = nil
+    self.DraggingFromIndex = nil
+    self.HoverSlotIndex = nil
+    self.HoverInList = false
+    if self.DragCloneGrid then
+        self.DragCloneGrid:Close()
+    end
+    self:ClearSlotDragStates()
+end
+
+--endregion
+
+--region 拖拽追踪
+
+-- 获取当前手指/鼠标屏幕坐标
+function XUiDlcRelinkEquipBag:GetScreenPoint()
+    if CS.UnityEngine.Input.touchCount > 0 then
+        return CS.UnityEngine.Input.GetTouch(0).position
+    elseif CS.UnityEngine.Input.GetMouseButton(0) then
+        return CS.UnityEngine.Input.mousePosition
+    end
+    return nil
+end
+
+-- 获取当前手指/鼠标在UI根节点下的本地坐标
+function XUiDlcRelinkEquipBag:GetScreenLocalPos(screenPos)
+    screenPos = screenPos or self:GetScreenPoint()
+    if not screenPos then
+        return nil
+    end
+    self._screenVec2.x = screenPos.x
+    self._screenVec2.y = screenPos.y
+    local ok, point = CS.UnityEngine.RectTransformUtility.ScreenPointToLocalPointInRectangle(self.PanelDrag.transform, self._screenVec2, CS.XUiManager.Instance.UiCamera)
+    if not ok then
+        return nil
+    end
+    return point
+end
+
+-- 开始拖拽追踪（用定时器读取屏幕坐标，代替Drag事件，避免拦截ScrollRect）
+-- 定时器同时负责：1)位置追踪 2)手指抬起检测
+function XUiDlcRelinkEquipBag:StartDragTracking()
+    self:StopDragTracking()
+    self:RefreshDragClonePos()
+    self.DragTrackingTimer = XScheduleManager.ScheduleForeverEx(function()
+        if XTool.UObjIsNil(self.GameObject) then
+            self:StopDragTracking()
+            return
+        end
+        -- 获取屏幕坐标
+        local screenPos = self:GetScreenPoint()
+        if not screenPos then
+            -- 手指真正抬起
+            self:EndDrag()
+            return
+        end
+        self:RefreshDragClonePos(screenPos)
+    end, 0)
+end
+
+function XUiDlcRelinkEquipBag:RefreshDragClonePos(screenPos)
+    if not self.Dragging or not self.DragCloneGrid then
+        return
+    end
+    local localPos = self:GetScreenLocalPos(screenPos)
+    if localPos then
+        self._dragVec2.x = localPos.x
+        self._dragVec2.y = localPos.y
+        self.DragCloneGrid.Transform.anchoredPosition = self._dragVec2
+    else
+        self.DragCloneGrid.Transform.anchoredPosition = self._hideVec2
+    end
+end
+
+function XUiDlcRelinkEquipBag:StopDragTracking()
+    if self.DragTrackingTimer then
+        XScheduleManager.UnSchedule(self.DragTrackingTimer)
+        self.DragTrackingTimer = nil
+    end
+end
+
+--endregion
+
+--region 槽位拖拽视觉状态
+
+-- 更新所有槽位的「可放入」状态
+function XUiDlcRelinkEquipBag:UpdateSlotCanDropState()
+    if not self.Dragging then
+        return
+    end
+    for index, grid in ipairs(self.EquipmentGridList) do
+        if grid then
+            local canDrop = self:CheckEquipCanDropToSlot(self.DraggingEquipUid, grid:GetSlotIndex(), grid:GetEquipUid())
+            local panelGlow = self.PanelGlowList[index]
+            if panelGlow then
+                panelGlow.gameObject:SetActiveEx(true)
+                panelGlow:GetObject("ImgAvailableGlow").gameObject:SetActiveEx(canDrop)
+                panelGlow:GetObject("ImgConfirmGlow").gameObject:SetActiveEx(false)
+            end
+        end
+    end
+end
+
+-- 更新槽位的「将放入」悬停状态
+function XUiDlcRelinkEquipBag:UpdateSlotHoverState()
+    local hoverSlotIndex = self.Dragging and self.HoverSlotIndex or 0
+    for index, grid in ipairs(self.EquipmentGridList) do
+        if grid then
+            local slotIndex = grid:GetSlotIndex()
+            local isHover = hoverSlotIndex == slotIndex
+            if isHover then
+                isHover = self:CheckEquipCanDropToSlot(self.DraggingEquipUid, slotIndex, grid:GetEquipUid())
+            end
+            local panelGlow = self.PanelGlowList[index]
+            if panelGlow then
+                panelGlow:GetObject("ImgConfirmGlow").gameObject:SetActiveEx(isHover)
+            end
+        end
+    end
+end
+
+-- 清除所有槽位的拖拽视觉状态
+function XUiDlcRelinkEquipBag:ClearSlotDragStates()
+    for index, _ in ipairs(self.EquipmentGridList) do
+        local panelGlow = self.PanelGlowList[index]
+        if panelGlow then
+            panelGlow.gameObject:SetActiveEx(false)
+        end
+    end
+end
+
+-- 检查装备是否可以放入指定槽位
+function XUiDlcRelinkEquipBag:CheckEquipCanDropToSlot(equipUid, slotIndex, curSlotEquipUid)
+    if not XTool.IsNumberValid(equipUid) or not XTool.IsNumberValid(slotIndex) then
+        return false
+    end
+    -- 当前槽位已穿戴该装备
+    if XTool.IsNumberValid(curSlotEquipUid) and curSlotEquipUid == equipUid then
+        return false
+    end
+    -- 槽位未解锁
+    local isUnLock = self._Control:CheckEquipSlotIsUnlocked(self.CharacterId, slotIndex)
+    if not isUnLock then
+        return false
+    end
+    -- 装备类型匹配
+    local templateId = self._Control:GetEquipTemplateIdByEquipUid(equipUid)
+    if not XTool.IsNumberValid(templateId) then
+        return false
+    end
+    local equipType = self._Control:GetEquipType(templateId)
+    local isMainSlot = slotIndex == EquipSlotIndex.MainSlot
+    if isMainSlot then
+        return equipType == XEnumConst.DlcRelink.EquipType.Main
+    else
+        return equipType == XEnumConst.DlcRelink.EquipType.Normal
+    end
+end
+
+--endregion
+
+--region 拖拽结果处理
+
+--- 装备变更后统一刷新界面
+function XUiDlcRelinkEquipBag:RefreshAfterEquipChange()
+    -- 强制验证槽位数据一致性
+    self.IsNeedValidateEquipSlotData = true
+    self:ValidateEquipSlotData()
+    self:RefreshPanelEquipment()
+    self:SetupDynamicTable()
+    XDataCenter.GuideManager.CheckGuideOpen()
+end
+
+--- 执行穿戴请求，若装备被其他角色穿戴则弹确认框
+---@param targetSlotIndex number 目标槽位
+---@param equipUid number 装备Uid
+---@param onComplete function 穿戴成功回调
+function XUiDlcRelinkEquipBag:RequestWearEquipWithConfirm(targetSlotIndex, equipUid, onComplete)
+    local wearCharacterId = self._Control:GetEquipWearCharacterId(equipUid)
+    if XTool.IsNumberValid(wearCharacterId) and wearCharacterId ~= self.CharacterId then
+        local characterName = XMVCA.XCharacter:GetCharacterName(wearCharacterId)
+        local title = self._Control:GetClientConfig("TipTitle")
+        local data = self._Control:GetClientConfigParams("EquipReplaceWearTipContent")
+        local content = string.format(data[1] or "", characterName)
+        local extraData = { ConfirmText = data[2] or "", CancelText = data[3] or "", TipsKey = "EquipReplaceWearTip" }
+        self._Control:OpenCommonTipDialog(title, content, nil, function()
+            self._Control:RequestWearEquip(self.CharacterId, targetSlotIndex, equipUid, onComplete)
+        end, extraData)
+        return
+    end
+    self._Control:RequestWearEquip(self.CharacterId, targetSlotIndex, equipUid, onComplete)
+end
+
+--- 处理穿戴前的二次确认弹框，按顺序执行：
+--- 1. 词条等级溢出检查
+--- 2. 装备被其他角色穿戴检查
+--- 全部通过后执行穿戴请求
+---@param targetSlotIndex number 目标槽位
+---@param equipUid number 装备Uid
+---@param onComplete function 穿戴成功回调
+function XUiDlcRelinkEquipBag:WearEquipWithAllConfirms(targetSlotIndex, equipUid, onComplete)
+    self:CheckAndConfirmFactorOverflow(targetSlotIndex, equipUid, function()
+        self:RequestWearEquipWithConfirm(targetSlotIndex, equipUid, onComplete)
+    end)
+end
+
+-- 背包装备拖拽到槽位 → 穿戴/更换
+function XUiDlcRelinkEquipBag:HandleDragEquip(targetSlotIndex, equipUid)
+    if not self._Control:AbleSyncDataToMatchServer() then
+        return
+    end
+    -- 验证可放入目标槽位
+    local curSlotEquipUid = self._Control:GetEquipUidByCharacterId(self.CharacterId, targetSlotIndex)
+    if not self:CheckEquipCanDropToSlot(equipUid, targetSlotIndex, curSlotEquipUid) then
+        return
+    end
+    self:WearEquipWithAllConfirms(targetSlotIndex, equipUid, handler(self, self.RefreshAfterEquipChange))
+end
+
+-- 槽位间拖拽 → 交换装备
+function XUiDlcRelinkEquipBag:HandleDragSwap(fromSlotIndex, toSlotIndex, equipUid)
+    if not self._Control:AbleSyncDataToMatchServer() then
+        return
+    end
+    -- 验证来源槽位仍持有该装备
+    local fromEquipUid = self._Control:GetEquipUidByCharacterId(self.CharacterId, fromSlotIndex)
+    if fromEquipUid ~= equipUid then
+        return
+    end
+    -- 验证可放入目标槽位
+    local toSlotEquipUid = self._Control:GetEquipUidByCharacterId(self.CharacterId, toSlotIndex)
+    if not self:CheckEquipCanDropToSlot(equipUid, toSlotIndex, toSlotEquipUid) then
+        return
+    end
+    self:WearEquipWithAllConfirms(toSlotIndex, equipUid, handler(self, self.RefreshAfterEquipChange))
+end
+
+-- 从槽位拖到背包列表区域 → 卸下装备
+function XUiDlcRelinkEquipBag:HandleDragUnequip(fromSlotIndex)
+    if not self._Control:AbleSyncDataToMatchServer() then
+        return
+    end
+    -- 验证该槽位确实穿戴了装备
+    local equipUid = self._Control:GetEquipUidByCharacterId(self.CharacterId, fromSlotIndex)
+    if not XTool.IsNumberValid(equipUid) then
+        return
+    end
+
+    self._Control:RequestUnWearEquip(self.CharacterId, fromSlotIndex, function()
+        -- 强制验证槽位数据一致性
+        self.IsNeedValidateEquipSlotData = true
+        self:ValidateEquipSlotData()
+        -- 卸下后在背包列表中自动选中该装备
+        self._PendingSelectEquipUid = equipUid
+        self:RefreshPanelEquipment()
+        self:SetupDynamicTable()
+    end)
+end
+
+--endregion
+
+--region 长按进度条
+
+-- 装备格子按下
+---@param grid XUiGridDlcRelinkEquipment
+function XUiDlcRelinkEquipBag:OnGridPointerDown(grid)
+    if self.PressingGrid and self.PressingGrid ~= grid then
+        return
+    end
+    -- 正在拖拽不响应
+    if self.Dragging then
+        return
+    end
+    -- 注册为当前长按交互Grid，重置状态标记
+    self.PressingGrid = grid
+    self.PressCancelled = false
+    self.DragTriggered = false
+end
+
+-- 装备格子长按触发（持续按压达到长按时间后调用）
+---@param grid XUiGridDlcRelinkEquipment
+function XUiDlcRelinkEquipBag:OnGridPress(grid)
+    if self.DragTriggered then
+        return
+    end
+    if self.PressingGrid ~= grid then
+        return
+    end
+    if self.PressCancelled then
+        return
+    end
+    -- 开始长按，显示进度条
+    if not self.IsPressing then
+        self.IsPressing = true
+        self:ShowPressProgress(grid.PressProgressTarget, function()
+            self.IsPressing = false
+            self.DragTriggered = true
+            self:StartDrag(grid)
+            self:HidePressProgress()
+        end)
+    end
+end
+
+-- 装备格子取消长按（如拖出范围）或抬起
+---@param grid XUiGridDlcRelinkEquipment
+function XUiDlcRelinkEquipBag:OnGridPointerUp(grid)
+    if self.PressingGrid ~= grid then
+        return
+    end
+    self:CancelPress()
+    self.PressingGrid = nil
+end
+
+-- 装备格子取消（如拖出范围）
+---@param grid XUiGridDlcRelinkEquipment
+function XUiDlcRelinkEquipBag:OnGridPointerExit(grid)
+    if self.PressingGrid ~= grid then
+        return
+    end
+    -- 仅在长按阶段（未触发拖拽）时取消
+    if self.IsPressing and not self.DragTriggered then
+        self:CancelPress()
+    end
+end
+
+-- 显示长按进度条并开始加载
+---@param targetTransform UnityEngine.RectTransform 目标格子的RectTransform
+---@param onComplete function 进度完成回调
+function XUiDlcRelinkEquipBag:ShowPressProgress(targetTransform, onComplete)
+    if not self.PressProgress then
+        local path = self._Control:GetClientConfig("LongPressProgressBarPath")
+        local panelTimerGo = self.PanelDrag.transform:LoadPrefabEx(path)
+        local order = self.PanelDrag.sortingOrder + 3
+        ---@type XUiPanelLongPressProgress
+        self.PressProgress = XUiPanelLongPressProgress.New(panelTimerGo, self, order)
+    end
+    self.PressProgress:Open()
+    self.PressProgress:Refresh(targetTransform, onComplete)
+end
+
+-- 隐藏长按进度条
+function XUiDlcRelinkEquipBag:HidePressProgress()
+    if self.PressProgress then
+        self.PressProgress:Close()
+    end
+end
+
+-- 取消长按
+function XUiDlcRelinkEquipBag:CancelPress()
+    if self.IsPressing then
+        self.IsPressing = false
+        self.PressCancelled = true
+        self:HidePressProgress()
+    end
+end
+
+-- 重置所有长按状态变量
+function XUiDlcRelinkEquipBag:ClearPressState()
+    if self.IsPressing then
+        self:HidePressProgress()
+    end
+    self.PressingGrid = nil
+    self.IsPressing = false
+    self.DragTriggered = false
+    self.PressCancelled = false
+end
+
+--endregion
+
+--region 列表滚动控制
+
+-- 启用/禁用列表滚动（拖拽时需禁用，避免列表跟着滚动）
+function XUiDlcRelinkEquipBag:SetScrollEnabled(enabled)
+    if self.EquipScrollRect then
+        self.EquipScrollRect.enabled = enabled
+    end
+end
+
+--endregion
+
+--endregion
+
 function XUiDlcRelinkEquipBag:RegisterUiEvents()
     self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
     self.BtnAttribute:AddEventListener(handler(self, self.OnBtnAttributeClick))
@@ -626,6 +1363,7 @@ function XUiDlcRelinkEquipBag:RegisterUiEvents()
     self.BtnFilter:AddEventListener(handler(self, self.OnBtnFilterClick))
     self.BtnBreakdown:AddEventListener(handler(self, self.OnBtnBreakdownClick))
     self.BtnSynthesis:AddEventListener(handler(self, self.OnBtnSynthesisClick))
+    self.BtnOneClickEquip:AddEventListener(handler(self, self.OnBtnOneClickEquipClick))
 end
 
 function XUiDlcRelinkEquipBag:OnBtnBackClick()
@@ -639,12 +1377,21 @@ function XUiDlcRelinkEquipBag:OnBtnAttributeClick()
     if XTool.IsTableEmpty(equipUids) then
         return
     end
-    XLuaUiManager.Open("UiDlcRelinkPopupEquipAttributeDetail", equipUids, self.CharacterId)
+    local totalAttributes = self._Control:GetEquipTotalAttributeList(self.CharacterId, equipUids)
+    if XTool.IsTableEmpty(totalAttributes) then
+        return
+    end
+    XLuaUiManager.Open("UiDlcRelinkPopupEquipAttributeDetail", self.CharacterId, totalAttributes)
 end
 
 -- 改造装备
 function XUiDlcRelinkEquipBag:OnBtnReformClick()
     if not XTool.IsNumberValid(self.CurSelectEquipUid) then
+        return
+    end
+    local isHasSlot = self._Control:CheckEquipHasDeputyFactorSlot(self.CurSelectEquipUid)
+    if not isHasSlot then
+        self._Control:OpenCommonTipText("EquipReformAbsorbFullTips")
         return
     end
     XLuaUiManager.Open("UiDlcRelinkEquipReform", self.CurSelectEquipUid)
@@ -665,28 +1412,13 @@ function XUiDlcRelinkEquipBag:OnBtnReplaceClick()
         return
     end
 
-    local onWearEquip = function()
+    self:WearEquipWithAllConfirms(self.CurSelectSlotIndex, self.CurSelectEquipUid, function()
         self.CurSelectSlotEquipUid = self.CurSelectEquipUid
         self:RefreshPanelEquipment()
         self:SetupDynamicTable()
         -- 检查引导
         XDataCenter.GuideManager.CheckGuideOpen()
-    end
-
-    local operateType, wearCharacterId = self:GetOperateType()
-    if (operateType == BtnOperateType.Wear or operateType == BtnOperateType.Change) and XTool.IsNumberValid(wearCharacterId) then
-        local characterName = XMVCA.XCharacter:GetCharacterName(wearCharacterId)
-        local title = self._Control:GetClientConfig("TipTitle")
-        local data = self._Control:GetClientConfigParams("EquipReplaceWearTipContent")
-        local content = string.format(data[1] or "", characterName)
-        local extraData = { ConfirmText = data[2] or "", CancelText = data[3] or "", TipsKey = "EquipReplaceWearTip" }
-        self._Control:OpenCommonTipDialog(title, content, nil, function()
-            self._Control:RequestWearEquip(self.CharacterId, self.CurSelectSlotIndex, self.CurSelectEquipUid, onWearEquip)
-        end, extraData)
-        return
-    end
-
-    self._Control:RequestWearEquip(self.CharacterId, self.CurSelectSlotIndex, self.CurSelectEquipUid, onWearEquip)
+    end)
 end
 
 -- 卸下装备
@@ -741,5 +1473,105 @@ function XUiDlcRelinkEquipBag:OnBtnSynthesisClick()
     end
     XLuaUiManager.Open("UiDlcRelinkPopupEquipCompose", composeId)
 end
+
+--region 一键穿戴
+
+--- 检查一键装备计划是否有实际变化
+---@param equipInfoList table[] 装备计划列表
+---@return boolean, boolean hasReplace, hasAnyChange
+function XUiDlcRelinkEquipBag:CheckOneKeyEquipPlanChanged(equipInfoList)
+    local hasReplace = false
+    local hasAnyChange = false
+    for _, info in pairs(equipInfoList) do
+        local newValid = XTool.IsNumberValid(info.NewEquipUid)
+        local curValid = XTool.IsNumberValid(info.CurrentEquipUid)
+        if newValid and curValid and info.NewEquipUid ~= info.CurrentEquipUid then
+            hasReplace = true
+            hasAnyChange = true
+            break
+        elseif newValid and not curValid then
+            -- 空槽位填充新装备
+            hasAnyChange = true
+        end
+    end
+
+    return hasReplace, hasAnyChange
+end
+
+--- 根据一键装备计划构建槽位->装备Uid的映射
+---@param equipInfoList table[] 装备计划列表
+---@param isReplace boolean 是否替换已有装备
+---@return table<number, number> slotIndex -> equipUid
+function XUiDlcRelinkEquipBag:BuildOneKeyEquipMap(equipInfoList, isReplace)
+    local slotId2EquipUid = {}
+    -- 已分配的装备Uid集合
+    local usedEquipUids = {}
+    for _, info in ipairs(equipInfoList) do
+        local equipUid
+        if not XTool.IsNumberValid(info.NewEquipUid) then
+            -- 无新装备可分配，保留当前装备
+            equipUid = info.CurrentEquipUid
+        elseif not XTool.IsNumberValid(info.CurrentEquipUid) then
+            -- 槽位无当前装备，直接穿戴新装备
+            equipUid = info.NewEquipUid
+        elseif info.NewEquipUid ~= info.CurrentEquipUid then
+            -- 新旧装备不同，根据isReplace决定是否替换
+            equipUid = isReplace and info.NewEquipUid or info.CurrentEquipUid
+        else
+            -- 新旧装备相同，保持不变
+            equipUid = info.NewEquipUid
+        end
+        -- 同一装备只能分配给一个槽位，如果已被分配则该槽位不穿戴任何装备
+        if XTool.IsNumberValid(equipUid) and usedEquipUids[equipUid] then
+            equipUid = 0
+        end
+        if XTool.IsNumberValid(equipUid) then
+            usedEquipUids[equipUid] = true
+            slotId2EquipUid[info.SlotIndex] = equipUid
+        end
+    end
+    return slotId2EquipUid
+end
+
+--- 执行一键穿戴请求
+---@param equipInfoList table[] 装备计划列表
+---@param isReplace boolean 是否替换已有装备
+function XUiDlcRelinkEquipBag:DoOneClickEquip(equipInfoList, isReplace)
+    local slotId2EquipUid = self:BuildOneKeyEquipMap(equipInfoList, isReplace)
+    self._Control:RequestWearMultiEquip(self.CharacterId, slotId2EquipUid, handler(self, self.RefreshAfterEquipChange))
+end
+
+--- 一键穿戴入口
+function XUiDlcRelinkEquipBag:OnBtnOneClickEquipClick()
+    if not self._Control:AbleSyncDataToMatchServer() then
+        return
+    end
+
+    local equipInfoList = self._Control:CalcOneKeyEquipPlan(self.CharacterId)
+    local hasReplace, hasAnyChange = self:CheckOneKeyEquipPlanChanged(equipInfoList)
+
+    -- 没有任何变化时提示并返回
+    if not hasAnyChange then
+        self._Control:OpenCommonLeftTipDialog(self._Control:GetClientConfig("EquipOneClickWearNoChangeTip"))
+        return
+    end
+
+    if hasReplace then
+        local title = self._Control:GetClientConfig("TipTitle")
+        local data = self._Control:GetClientConfigParams("EquipOneClickWearTipContent")
+        local content = data[1] or ""
+        local extraData = { ConfirmText = data[2] or "", CancelText = data[3] or "", TipsKey = "EquipOneClickWearTip" }
+        self._Control:OpenCommonTipDialog(title, content, function()
+            self:DoOneClickEquip(equipInfoList, false)
+        end, function()
+            self:DoOneClickEquip(equipInfoList, true)
+        end, extraData)
+        return
+    end
+
+    self:DoOneClickEquip(equipInfoList, true)
+end
+
+--endregion
 
 return XUiDlcRelinkEquipBag

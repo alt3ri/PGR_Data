@@ -91,7 +91,7 @@ function XUiTwoSideTowerEndStageDetail:OnBtnCombatClick()
     if not XTool.IsNumberValid(self.CurStageId) then
         return
     end
-    XLuaUiManager.Open("UiBattleRoleRoom", self.CurStageId, self._Control:GetTeam(),
+    XMVCA.XFuben:OpenUiBattleRoleRoom(self.CurStageId, self._Control:GetTeam(),
         require("XUi/XUiTwoSideTower/XUiTwoSideTowerBattleRoleRoom"))
 end
 

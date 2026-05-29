@@ -1,5 +1,6 @@
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XUiSignGridDay = XClass(nil, "XUiSignGridDay")
+local XUiObtain = require("XUi/XUiObtain/XUiObtain")
 
 function XUiSignGridDay:Ctor(ui, rootUi)
     self.GameObject = ui.gameObject
@@ -136,6 +137,7 @@ function XUiSignGridDay:AnimaStart()
     self:SetEffectActive(true)
     -- 2.10 先领月卡奖励再领签到奖励，领一半掉线重登仍有弹窗继续领取
     self:GetYKReward(function(rewardItems)
+        XUiObtain.SetRewardsIsShowYKTag(rewardItems)
         self:GetSignReward(rewardItems)
     end)
 end

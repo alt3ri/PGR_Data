@@ -1,5 +1,5 @@
 ---@class XUiGachaLiv4P5Show : XLuaUi
-local XUiGachaLiv4P5Show = XLuaUiManager.Register(XLuaUi, "UiGachaLiv4P5Show")
+local XUiGachaLiv4P5Show = XLuaUiManager.Register(XLuaUi, "UiGachaLifu405Show")
 
 local ODD_MAX = 9
 local ODD_TYPE = 1
@@ -158,7 +158,7 @@ function XUiGachaLiv4P5Show:ShowResult()
         if XTool.UObjIsNil(obj) then
             XLog.Error(string.format("Grid%02d", index) .. " not found. 很大可能是赠品的问题 策划老师看看")
         end
-        local grid = require("XUi/XUiGachaLiv4P5/Grid/XUiGridGachaLifu405Result").New(obj, self)
+        local grid = require("XUi/XUiGachaLiv4P5/Grid/XUiGridGachaLiv4P5Result").New(obj, self)
         grid:SetData(self._RewardList[i])
         showObjs[index] = true
     end

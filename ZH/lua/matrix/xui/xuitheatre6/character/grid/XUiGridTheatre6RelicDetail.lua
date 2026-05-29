@@ -36,8 +36,9 @@ function XUiGridTheatre6RelicDetail:InitComponents()
     self.UiTxtDescEffect.requestImage = XMVCA.XTheatre6.RichTextImageCallBack
 end
 
-function XUiGridTheatre6RelicDetail:SetData(id)
+function XUiGridTheatre6RelicDetail:SetData(id, readOnly)
     self._Id = id
+    self._ReadOnly = readOnly and true or false
     self._Config = self._Control:GetAttrPackCfgById(id)
 
     self:ShowBaseInfo()
@@ -47,22 +48,24 @@ function XUiGridTheatre6RelicDetail:SetData(id)
     self:ShowOwn()
 end
 
----@param cb fun(tagId:number, allTagConfigs:XTableTheatre6BuildTag[], keyWordIds:number[])
-function XUiGridTheatre6RelicDetail:SetClickBuildTagCb(cb)
-    self._ClickBuildTagCb = cb
-end
+
 
 function XUiGridTheatre6RelicDetail:ShowBaseInfo()
-    local spriteName = self._Control:GetQualityIcon(self._Config.Quality)
-    self.ImgQuality:SetRawImage(spriteName)
+    local spriteName = self._Control:GetRelicQualityIcon(self._Config.Quality)
+    if self.ImgQuality.SetSprite then
+        self.ImgQuality:SetSprite(spriteName)
+    else
+        self.ImgQuality:SetRawImage(spriteName)
+    end
     self.UiTxtName.text = self._Config.Name
     self.UiTxtType.text = XUiHelper.GetText("Theatre6AttrPackTypeName")
-    self.UiRImgIcon:SetSprite(self._Config.Icon)
+    self.UiRImgIcon:SetRawImage(self._Config.Icon)
 end
 
 function XUiGridTheatre6RelicDetail:ShowAttribute()
     local attrConfigs, attrValues = self._Control:GetShowAttribute(self._Config.AttrTypes, self._Config.AttrNums)
-    self._AttrGrids = XUiHelper.RefreshUiObjectList(self._AttrGrids, self.GridAttribute.parent, self.GridAttribute, #attrConfigs, function(i, grid)
+    self._AttrGrids = XUiHelper.RefreshUiObjectList(self._AttrGrids, self.GridAttribute.parent, self.GridAttribute,
+        #attrConfigs, function(i, grid)
         local config = attrConfigs[i]
         local attrValue = attrValues[i]
         grid.ImgIcon:SetSprite(config.Icon)
@@ -77,25 +80,32 @@ end
 function XUiGridTheatre6RelicDetail:ShowDesc()
     self.UiTxtDescEffect.text = self._Control:GetAttrPackDesc(self._Id, false)
     self.UiTxtDesc.text = self._Config.PlotDesc
-    if self.BtnBuy then
-        self.BtnBuy:SetNameByGroup(0, self._Config.BuyPrice)
+    if self.BtnBuy and not self._ReadOnly then
+        local showPrice = tostring(self._Config.BuyPrice)
+        local coinEnough = self._Control:IsCoinEnough(self._Config.BuyPrice)
+        if not coinEnough then
+            showPrice = string.format("<color=%s>%s</color>", self._Control:GetClientConfigValue("NotEnough"),
+                self._Config.BuyPrice)
+        end
+        self.BtnBuy:SetNameByGroup(0, showPrice)
     end
 end
 
 function XUiGridTheatre6RelicDetail:ShowBuildTag()
     local buildTagConfigs = self._Control:GetShowBuildTagWithSort(self._Config.BuildTags)
     local keyWordIds = self._Config.KeyWordIds
-    self._TagGrids = XUiHelper.RefreshUiObjectList(self._TagGrids, self.GridTag.parent, self.GridTag, #buildTagConfigs,
-        function(i, grid)
-            local config = buildTagConfigs[i]
-            grid.ImgIcon:SetSprite(config.Icon)
-            grid.TxtName.text = config.Name
-            grid.GridTag:AddEventListener(function()
-                if self._ClickBuildTagCb then
-                    self._ClickBuildTagCb(config.Id, buildTagConfigs, keyWordIds)
-                end
-            end)
-        end)
+    self._TagGrids = XUiHelper.RefreshUiObjectList(self._TagGrids, self.GridTag.parent, self.GridTag, #buildTagConfigs, function (i, grid)
+    local config = buildTagConfigs[i]
+    grid.ImgIcon:SetSprite(config.Icon)
+    grid.TxtName.text = config.Name
+    grid.GridTag:AddEventListener(function ()
+        if XLuaUiManager.IsUiShow("UiTheatre6BubbleTagDetail") then
+            XLuaUiManager.Close("UiTheatre6BubbleTagDetail")
+            return
+        end
+        self._Control:OpenTagTip(self._Config.BuildTags, self.Transform, keyWordIds)
+    end)
+end)
 end
 
 function XUiGridTheatre6RelicDetail:ShowOwn(count)
@@ -103,7 +113,8 @@ function XUiGridTheatre6RelicDetail:ShowOwn(count)
         self.PanelOwn.gameObject:SetActiveEx(false)
         return
     end
-    self.PanelOwn.gameObject:SetActiveEx(self._Control:IsOwnRelic(self._Id) and count > 1)
+    local isOwn = self._ReadOnly or self._Control:IsOwnRelic(self._Id)
+    self.PanelOwn.gameObject:SetActiveEx(isOwn and count > 1)
     self.UiTxtNum.text = count
 end
 
@@ -124,7 +135,7 @@ function XUiGridTheatre6RelicDetail:SetBtnStatus(params)
     self:SetPanelBtnVisible(not readOnly)
 
     if not readOnly then
-        self:SetBtnFreezeVisible(self.IsInShop, self.IsLock and CS.UiButtonState.Select or CS.UiButtonState.Normal)
+        self:SetBtnFreezeVisible(self.IsInShop, self.IsLock and CS.UiButtonState.Normal or CS.UiButtonState.Select)
         self:SetBtnBuyVisible(self.IsInShop)
         self.PanelOwn.gameObject:SetActiveEx(false)
     end
@@ -143,7 +154,8 @@ function XUiGridTheatre6RelicDetail:OnBtnBuyClick()
 end
 
 function XUiGridTheatre6RelicDetail:Refresh(id, param)
-    self:SetData(id)
+    local readOnly = param and param.ReadOnly or false
+    self:SetData(id, readOnly)
     self:SetBtnStatus(param)
 end
 
@@ -161,6 +173,11 @@ function XUiGridTheatre6RelicDetail:SetBtnFreezeVisible(isVisible, buttonStatus)
     self.BtnFreeze.gameObject:SetActiveEx(isVisible)
     if buttonStatus then
         self.BtnFreeze:SetButtonState(buttonStatus)
+        if buttonStatus == CS.UiButtonState.Select then
+            self.BtnFreeze:SetNameByGroup(0, XUiHelper.GetText("Theatre6Lock"))
+        elseif buttonStatus == CS.UiButtonState.Normal then
+            self.BtnFreeze:SetNameByGroup(0, XUiHelper.GetText("Theatre6UnLock"))
+        end
     end
 end
 

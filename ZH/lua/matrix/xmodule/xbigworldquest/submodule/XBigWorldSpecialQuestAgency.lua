@@ -125,6 +125,7 @@ function XBigWorldQuestAgency:RequestEnvironmentQuestGroupChange(levelId, groupI
         end
 
         self._Model:UpdateEnvironmentOnDuty(res.EnvironmentQuestData)
+        XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_AI_MEMORY_DISPLAY_CHANGE)
         if callback then
             callback()
         end
@@ -133,6 +134,16 @@ end
 
 function XBigWorldQuestAgency:UpdateEnvironmentOnDuty(data)
     self._Model:UpdateEnvironmentOnDuty(data)
+end
+
+function XBigWorldQuestAgency:CheckEnvironmentPlaceIdOnDuty(levelId, placeId)
+    local placeIds = self._Model:GetEnvironmentOnDutyPlaceIds(levelId)
+
+    if not XTool.IsTableEmpty(placeIds) then
+        return placeIds[placeId] or false
+    end
+
+    return false
 end
 
 function XBigWorldQuestAgency:GetEnvironmentIds()
@@ -162,11 +173,41 @@ function XBigWorldQuestAgency:CheckEnvironmentFinish(id)
         return true
     end
     for _, objectiveId in ipairs(objectiveIds) do
-        local questId = XMVCA.XBigWorldQuest:GetQuestIdByObjectiveId(objectiveId)
-        if not self:CheckObjectiveFinish(questId, objectiveId) then
+        local isFinish = false
+        local ids = string.ToIntArray(objectiveId)
+
+        for _, targetId in pairs(ids) do
+            local questId = XMVCA.XBigWorldQuest:GetQuestIdByObjectiveId(targetId)
+            if self:CheckObjectiveFinish(questId, targetId) then
+                isFinish = true
+                break
+            end
+        end
+
+        if not isFinish then
             return false
         end
     end
+    return true
+end
+
+function XBigWorldQuestAgency:CheckEnvironmentGroupFinish(groupId)
+    local environmentIds = self._Model:GetEnvironmentIds()
+
+    if XTool.IsTableEmpty(environmentIds) then
+        return true
+    end
+
+    for _, environmentId in ipairs(environmentIds) do
+        local environmentGroupId = self._Model:GetEnvironmentQuestGroupId(environmentId)
+
+        if environmentGroupId == groupId then
+            if not self:CheckEnvironmentFinish(environmentId) then
+                return false
+            end
+        end
+    end
+
     return true
 end
 
@@ -189,10 +230,21 @@ function XBigWorldQuestAgency:GetEnvironmentProgress(id)
     local objectiveIds = self._Model:GetEnvironmentQuestObjectiveIds(id)
     if not XTool.IsTableEmpty(objectiveIds) then
         for _, objectiveId in ipairs(objectiveIds) do
-            local questId = XMVCA.XBigWorldQuest:GetQuestIdByObjectiveId(objectiveId)
-            if self:CheckObjectiveFinish(questId, objectiveId) then
+            local ids = string.ToIntArray(objectiveId)
+            local isFinish = false
+
+            for _, targetId in pairs(ids) do
+                local questId = XMVCA.XBigWorldQuest:GetQuestIdByObjectiveId(targetId)
+                if self:CheckObjectiveFinish(questId, targetId) then
+                    isFinish = true
+                    break
+                end
+            end
+
+            if isFinish then
                 finish = finish + 1
             end
+
             sum = sum + 1
         end
     end
@@ -251,12 +303,12 @@ function XBigWorldQuestAgency:GetEnvironmentQuestGroupLevelConfigs()
     local result = {}
 
     for _, config in pairs(levelConfigs) do
-            local conditionId = config.ConditionId
+        local conditionId = config.ConditionId
 
-            if not XTool.IsNumberValid(conditionId) or XMVCA.XBigWorldService:CheckCondition(conditionId) then
-                table.insert(result, config)
-            end
+        if not XTool.IsNumberValid(conditionId) or XMVCA.XBigWorldService:CheckCondition(conditionId) then
+            table.insert(result, config)
         end
+    end
 
     return result
 end

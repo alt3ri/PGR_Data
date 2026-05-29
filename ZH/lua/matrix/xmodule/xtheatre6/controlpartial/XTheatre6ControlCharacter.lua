@@ -6,9 +6,23 @@ local ReqMethodName = {
     OverQueueSell = "Theatre6SkillOverQueueSellRequest",
     BuffLevelUpSkill = "Theatre6BuffLevelUpSkillRequest"
 }
+local MoveSkillMaskKey = "XTheatre6Control:SkillMoveOrSwapRequest"
+XTheatre6Control.ImgHighlightKey = 2
+
+local SkillTypeBgConfigName = {
+    [XEnumConst.Theatre6.SlotType.Special] = "SkillType4Bg",
+    [XEnumConst.Theatre6.SlotType.Insert] = "SkillType2a3Bg",
+    [XEnumConst.Theatre6.SlotType.Active] = "SkillType1Bg"
+}
 
 function XTheatre6Control:OnInitCharacter()
 
+end
+
+---当前模式是否已收到后端结算下发(只读态)
+function XTheatre6Control:IsCurModeSettle()
+    local modelData = self._Model:GetCurPlayModeData()
+    return modelData ~= nil and modelData.IsSettle == true
 end
 
 ---是否使用肉鸽涂装
@@ -70,6 +84,7 @@ function XTheatre6Control:GetActiveBuffInfo(data)
     info.Uid = data.Uid
     info.StackCount = 0
     info.RemainCount = data.RemainCount
+    info.TriggerCount = data.TriggerCount
 
     local modeData = self:GetCurPlayModeData()
     for _, buff in pairs(modeData.Buffs) do
@@ -111,7 +126,6 @@ function XTheatre6Control:FilterCharacterShowBuffs(buffDatas)
     end
     ---@type XTheatre6BuffData[]
     local buffs = {}
-    local isLimitTime = {}
     local buffIdDict = {}
     for _, data in pairs(buffDatas) do
         local config = self:GetBuffConfig(data.BuffId)
@@ -128,6 +142,7 @@ function XTheatre6Control:FilterCharacterShowBuffs(buffDatas)
                 buff.StackCount = 1
                 buff.RemainCount = data.RemainCount
                 buff.isLimitTime = config.DurationType ~= 1
+                buff.TriggerCount = data.TriggerCount
                 table.insert(buffs, buff)
                 buffIdDict[data.BuffId] = #buffs
             end
@@ -227,6 +242,26 @@ function XTheatre6Control:SkillMoveOrSwapRequest(skillId, dstSlotType, dstPositi
         end
         return
     end
+    --槽位类型校验:1.拖入技能能否装到目标槽 2.替换时被挤走的技能能否装回源装备槽
+    if dstSlotType ~= SlotType.Bag then
+        local srcSlots = self:GetSkillInstallSlots(skillId)
+        if not srcSlots or not table.contains(srcSlots, dstSlotType) then
+            XUiManager.TipText("Theatre6SkillMoveError")
+            if cb then cb() end
+            return
+        end
+    end
+    if dstSkillData and XTool.IsNumberValid(dstSkillData.SkillId) and dstSkillData.SkillId ~= skillId then
+        local srcSlotType = skillModel:GetSkillEquippedPosition(skillId)
+        if srcSlotType and srcSlotType ~= SlotType.Bag then
+            local dstSlots = self:GetSkillInstallSlots(dstSkillData.SkillId)
+            if not dstSlots or not table.contains(dstSlots, srcSlotType) then
+                XUiManager.TipText("Theatre6SkillMoveError")
+                if cb then cb() end
+                return
+            end
+        end
+    end
     --装入装备槽时校验:1.目标位置低不能换高;2.其他装备位不允许出现同名技能
     if dstSlotType ~= SlotType.Bag then
         local skillKey = skillModel:GetSkillKey(skillId)
@@ -267,15 +302,21 @@ function XTheatre6Control:SkillMoveOrSwapRequest(skillId, dstSlotType, dstPositi
         DstSlotType = dstSlotType,
         DstPosition = dstPosition
     }
+    XLuaUiManager.SetMask(true, MoveSkillMaskKey)
     XNetwork.Call(ReqMethodName.SkillMoveOrSwap, req, function(response)
         if response.Code ~= XCode.Success then
             XUiManager.TipCode(response.Code)
         end
-        self._Model.Skill:UpdateSkills(response.SkillUpdate)
+        self._Model.Skill:UpdateSkills(response.SkillUpdate, true)
         if cb then
             cb()
         end
     end)
+    XScheduleManager.ScheduleOnce(function()
+        if XLuaUiManager.IsMaskShow(MoveSkillMaskKey) then
+            XLuaUiManager.SetMask(false, MoveSkillMaskKey)
+        end
+    end, 200)
 end
 
 ---溢出技能出售请求
@@ -285,29 +326,36 @@ function XTheatre6Control:OverQueueSellRequest(cb)
             XUiManager.TipCode(response.Code)
             return
         end
-        self._Model.Skill:ClearSkillOverQueue()
+        self._Model.Skill:ClearSkillOverQueue()
         if cb then
             cb()
         end
     end)
 end
 
-function XTheatre6Control:BuffLevelUpSkillRequest(skillId, cb)
+function XTheatre6Control:BuffLevelUpSkillRequest(buffId,skillId, cb)
     local req = {
+        BuffId = buffId,
         SkillId = skillId
     }
     XNetwork.Call(ReqMethodName.BuffLevelUpSkill, req, function(response)
-        if response.Code ~= XCode.Success then
-            XUiManager.TipCode(response.Code)
-            return
-        end
-        if response.SkillUpdates then
-            self._Model.Skill:UpdateSkillListWithOverQueue(response.SkillUpdates)
-        end
-        if cb then
-            cb()
-        end
-        XLuaUiManager.Open("UiTheatre6GainTips", 1, skillId, true)
+        if response.Code ~= XCode.Success then
+            XUiManager.TipCode(response.Code)
+            return
+        end
+        if XTool.IsNumberValid(skillId) and skillId ~= 0 then
+            local nextSkillId = self:GetNextLevelSkillId(skillId)
+            if XTool.IsNumberValid(nextSkillId) then
+                XLuaUiManager.Open("UiTheatre6GainTips", 1, nextSkillId, true)
+            end
+        end
+        if response.SkillUpdates then
+            self._Model.Skill:UpdateSkillListWithOverQueue(response.SkillUpdates)
+        end
+        if cb then
+            cb()
+        end
+ 
     end)
 end
 
@@ -320,16 +368,18 @@ function XTheatre6Control:IsSkillBagFull()
     return self._Model.Skill:IsSkillBagFull()
 end
 
----各界面拦截入口:当前玩法溢出队列未处理时重新弹出 SellSkill 弹窗并返回 true
-function XTheatre6Control:CheckForceSellSkillBlock()
-    if not self._Model.Skill:IsForceSellSkillBlock() then
-        return false
-    end
-
-    self._Model.Skill:OpenSellSkillPanel(self._Model.Skill:GetForceSellSkillOverQueue())
-    return true
-end
-
+---各界面拦截入口:当前玩法溢出队列未处理时重新弹出 SellSkill 弹窗并返回 true
+function XTheatre6Control:CheckForceSellSkillBlock()
+    if not self._Model.Skill:IsForceSellSkillBlock() then
+        return false
+    end
+    if self:IsCurModeSettle() then
+        return false
+    end
+    self._Model.Skill:OpenSellSkillPanel(self._Model.Skill:GetForceSellSkillOverQueue())
+    return true
+end
+
 --#region 技能相关
 function XTheatre6Control:GetCharacterSkillBagIds()
     return self._Model.Skill:GetCharacterSkillBagIds()
@@ -437,9 +487,25 @@ function XTheatre6Control:BagHasNewSkill()
     return false
 end
 
+function XTheatre6Control:GetSkillTypeBgConfigName(skillId)
+    local slotTypes = self:GetSkillInstallSlots(skillId)
+    local skillConfig = self:GetSkillCfgById(skillId)
+    if not slotTypes or #slotTypes < 1 then
+        return self:GetQualityIcon(skillConfig.Quality)
+    end
+    return self:GetClientConfigValue(SkillTypeBgConfigName[slotTypes[1]], skillConfig.Quality)
+end
+
 function XTheatre6Control:SetNewSkillViewed(skillId)
     self._Model.Skill:SetNewSkillViewed(skillId)
     XEventManager.DispatchEvent(XEventId.EVENT_THEATRE6_SKILL_NOT_NEW)
+end
+
+---清空当前背包的新技能标记并刷新红点
+function XTheatre6Control:ClearBagNewSkillViewed()
+    if self._Model.Skill:ClearBagNewSkillFlags() then
+        XEventManager.DispatchEvent(XEventId.EVENT_THEATRE6_SKILL_NOT_NEW)
+    end
 end
 
 --region 遗物
@@ -481,11 +547,28 @@ function XTheatre6Control:GetModeSelectRoleIndex(mode, roleConfigs)
     return 1
 end
 
---#endregion
-return XTheatre6Control
+function XTheatre6Control:SaveBuffChooseIndex(mode, characterId, index)
+    self._Model:SaveBuffChooseIndex(mode, characterId, index)
+end
+
+function XTheatre6Control:GetBuffChooseIndex(mode, characterId)
+    return self._Model:GetBuffChooseIndex(mode, characterId)
+end
+
+function XTheatre6Control:SaveDifficultyChooseIndex(characterId, index)
+    self._Model:SaveDifficultyChooseIndex(characterId, index)
+end
+
+function XTheatre6Control:GetDifficultyChooseIndex(characterId)
+    return self._Model:GetDifficultyChooseIndex(characterId)
+end
+
+--#endregion
+return XTheatre6Control
 
 ---@class XTheatre6BuffData
 ---@field Uid number 唯一Id
 ---@field StackCount number 堆叠数量（为0时不显示）
 ---@field RemainCount number 剩余生效次数（堆叠时以最小为准）
 ---@field isLimitTime boolean 是否限时（仅排序用）
+---@field TriggerCount number 触发次数

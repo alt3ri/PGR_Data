@@ -1,4 +1,4 @@
-local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
+local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
 local XUiPanelStrongholdRoomCharacterOthersV2P6 = require("XUi/XUiStronghold/XUiPanelStrongholdRoomCharacterOthersV2P6")
 local XUiPanelStrongholdRoomCharacterSelfV2P6 = require("XUi/XUiStronghold/XUiPanelStrongholdRoomCharacterSelfV2P6")
 
@@ -186,14 +186,13 @@ end
 function XUiStrongholdRoomCharacterV2P6:UpdateRoleModel()
     local characterId = self.CharacterId
     local playerId = nil
-    if XRobotManager.CheckIsRobotId(self.CharacterId) then
-        characterId = XRobotManager.GetCharacterId(self.CharacterId)
-    end
 
-    --别人的角色信息
+    --别人的角色信息：支援页签下 self.CharacterId 实际是 playerId，不能走 robot 改写
     if self:CheckIsOtherPlayer() then
         playerId = self.CharacterId
-        characterId = XDataCenter.StrongholdManager.GetAssistantPlayerCharacterId(characterId)
+        characterId = XDataCenter.StrongholdManager.GetAssistantPlayerCharacterId(playerId)
+    elseif XRobotManager.CheckIsRobotId(self.CharacterId) then
+        characterId = XRobotManager.GetCharacterId(self.CharacterId)
     end
 
     if not IsNumberValid(characterId) then

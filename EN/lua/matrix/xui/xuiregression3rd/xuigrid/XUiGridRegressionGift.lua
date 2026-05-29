@@ -3,8 +3,15 @@ local XUiGridRegressionGift = XClass(nil, "XUiGridRegressionGift")
 
 function XUiGridRegressionGift:Ctor(ui)
     XTool.InitUiObjectByUi(self, ui)
-    
+
     XUiHelper.RegisterClickEvent(self, self.BtnBuy, self.OnBtnBuyClick)
+
+    self.DiffPanelNames = { "Panel", "PanelTab", "PanelSellOut" }
+    self.DiffComponents = { "TxtTittle", "TxtSaleRate", "TxtLimit", "Text", "ImgSellOut" }
+
+    for _, compName in pairs(self.DiffComponents) do
+        self[compName .. "1"] = self[compName]
+    end
 end
 
 function XUiGridRegressionGift:Init(onBuy)
@@ -13,6 +20,22 @@ end
 
 function XUiGridRegressionGift:Refresh(data)
     self.Data = data
+
+    local littleYkGiftId = CS.XGame.ClientConfig:GetInt("RegressionLittleYKPurchaseGiftId")
+    local isSpecial = data.Id == littleYkGiftId
+
+    for _, panelName in pairs(self.DiffPanelNames) do
+        self[panelName .. "Normal"].gameObject:SetActiveEx(not isSpecial)
+        self[panelName .. "MonthCard"].gameObject:SetActiveEx(isSpecial)
+    end
+
+    local compNameSuffix = "1"
+    if isSpecial then compNameSuffix = "2" end
+
+    for _, compName in pairs(self.DiffComponents) do
+        self[compName] = self[compName .. compNameSuffix]
+    end
+
     self:RefreshGoods()
     self:RefreshPrices()
     self:RefreshSellOut()

@@ -40,6 +40,12 @@ local PurchaseLBByPassIDDic = nil
 -- 月卡Id
 XPurchaseConfigs.YKID = CS.XGame.Config:GetInt("YKPurchasePackageId")
 
+-- 小月卡Id
+XPurchaseConfigs.LittleYKID = CS.XGame.Config:GetInt("LittleYKPurchasePackageId")
+
+-- 英文服月卡C ID
+XPurchaseConfigs.EnYKCID = CS.XGame.Config:GetInt("YKPurchasePackageEnCID")
+
 XPurchaseConfigs.PurchaseDataConfig = {
     Pay = 1, --充值
     LB = 2, --礼包
@@ -65,7 +71,7 @@ XPurchaseConfigs.UiPurchaseTopType = {
 }
 
 XPurchaseConfigs.ConsumeTypeConfig = {
-    RMB = 1, --人名币
+    RMB = 1, --人民币
     ITEM = 2, --道具
     FREE = 3, --免费
 }
@@ -76,6 +82,7 @@ XPurchaseConfigs.RestTypeConfig = {
     Month = 2, --每月
     Interval = 3, --间隔
     RemainDay = 4,
+    BuyRemainDay = 5
 }
 
 XPurchaseConfigs.LBGetTypeConfig = {
@@ -209,9 +216,9 @@ end
 function XPurchaseConfigs.IsYKID(id)
     -- 海外月卡Id
     if not XOverseaManager.IsENRegion() then
-        return id == XPurchaseConfigs.YKID
+        return id == XPurchaseConfigs.YKID or id == XPurchaseConfigs.LittleYKID
     else
-        return id == 83028 or id == 90032 -- todo 需要配表
+        return id == 83028 or id == XPurchaseConfigs.EnYKCID or id == XPurchaseConfigs.LittleYKID
     end
 end
 

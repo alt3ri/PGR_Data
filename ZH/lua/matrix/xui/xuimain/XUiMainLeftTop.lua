@@ -177,7 +177,7 @@ function XUiMainLeftTop:OnBtnPassportClick()
         return
     end
     XUiHelper.RecordBuriedSpotTypeLevelOne(XGlobalVar.BtnBuriedSpotTypeLevelOne.BtnUiMainBtnPassport)
-    XLuaUiManager.Open("UiPassport")
+    XLuaUiManager.Open("UiPassport", { WithStartEnableAnimation = true })
 end
 
 --@region 更新等级经验等

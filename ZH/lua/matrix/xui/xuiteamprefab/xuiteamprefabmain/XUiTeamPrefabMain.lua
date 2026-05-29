@@ -373,7 +373,7 @@ function XUiTeamPrefabMain:OnBtnUseClick()
         local isResonanceOrOverrunConflict = false
         local conflictPosList = {}
         for pos, v in ipairs(self.CharacterCardList) do
-            if v:GetIsWeaponResonanceCountConflict() or v:GetIsWeaponOverrunConflict() or v:GetIsWeaponResonanceBindSkillIdConflict() then
+            if v:GetIsWeaponResonanceCountConflict() or v:GetIsWeaponOverrunConflict() or v:GetIsWeaponResonanceSkillNeedConfirm() then
                 isResonanceOrOverrunConflict = true
                 table.insert(conflictPosList, pos)
             end
@@ -383,18 +383,25 @@ function XUiTeamPrefabMain:OnBtnUseClick()
             XLuaUiManager.Open("UiDialog", XUiHelper.GetText("TipTitle"),
             XUiHelper.GetText("TeamPrefabEquipConflictConfirm"),
             XUiManager.DialogType.Normal, nil, function ()
-                if not XTool.IsTableEmpty(conflictPosList) then
-                    -- 点击确认，用实际装备数据覆盖预设中的共鸣与谐振数据
-                    for k, pos in ipairs(conflictPosList) do
-                        local charId = curTeamPrefabEntity:GetEntityIdByTeamPos(pos)
-                        local curCharUsingWeaponId = XMVCA.XEquip:GetCharacterWeaponId(charId)
-                        curTeamPrefabEntity:CopyRealWeaponData(curCharUsingWeaponId, pos, k < #conflictPosList, function()
-                            CheckEquipConflictAndConfirm()
-                        end)
-                    end
-                else
-                    CheckEquipConflictAndConfirm()
-                end
+                if not XTool.IsTableEmpty(conflictPosList) then
+                    -- 点击确认，用实际装备数据覆盖预设中的共鸣与谐振数据
+                    -- 每个冲突位都要单独发一次 TeamPrefabUpdateEquipRequest，串行执行避免并发覆盖
+                    local function SyncNextConflictPos(conflictIndex)
+                        if conflictIndex > #conflictPosList then
+                            CheckEquipConflictAndConfirm()
+                            return
+                        end
+                        local pos = conflictPosList[conflictIndex]
+                        local charId = curTeamPrefabEntity:GetEntityIdByTeamPos(pos)
+                        local curCharUsingWeaponId = XMVCA.XEquip:GetCharacterWeaponId(charId)
+                        curTeamPrefabEntity:CopyRealWeaponData(curCharUsingWeaponId, pos, false, function()
+                            SyncNextConflictPos(conflictIndex + 1)
+                        end)
+                    end
+                    SyncNextConflictPos(1)
+                else
+                    CheckEquipConflictAndConfirm()
+                end
             end)
         else
             -- 无弹窗时，静默修复共鸣数量与谐振数据
@@ -774,7 +781,6 @@ end
 function XUiTeamPrefabMain:RefreshFilterState()
     self.BtnFilter:SetButtonState(self.IsFiltering and CS.UiButtonState.Select or CS.UiButtonState.Normal)
     self.BtnAdd.gameObject:SetActiveEx(not self.IsFiltering)
-    self.BtnSkipToTeamRecommendation.gameObject:SetActiveEx(not self.IsFiltering)
     self.BtnTopUp.gameObject:SetActiveEx(not self.IsFiltering)
 end
 

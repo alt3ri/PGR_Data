@@ -627,7 +627,7 @@ XPhotographManagerCreator = function()
         TextureCache = {}
     end
 
-    function XPhotographManager.ChangeDisplay(sceneId, charId, fashionId, cb)
+    function XPhotographManager.ChangeDisplay(sceneId, charId, fashionId, cb,colorId)
         if not XPhotographManager.CheckSceneIsHaveById(sceneId) then -- 场景未拥有
             XUiManager.TipError(CSTextManagerGetText("PhotoModeChangeFailedNotHasBackground"))
             return
@@ -668,9 +668,14 @@ XPhotographManagerCreator = function()
             -- 同步按钮点击后 下一次随机要用当前同步的角色
             XDataCenter.DisplayManager.SetNextDisplayChar(charId)
             XEventManager.DispatchEvent(XEventId.EVENT_PHOTO_SYNC_CHANGE_TO_MAIN)
-            if cb then
-                cb()
+            if colorId ~= nil then
+                XMVCA.XFashion:FashionSwitchColorRequest(fashionId, colorId, cb)
+            else
+                if cb then
+                    cb()
+                end
             end
+            
         end)
     end
 

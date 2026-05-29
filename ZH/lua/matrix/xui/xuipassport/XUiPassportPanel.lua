@@ -7,12 +7,14 @@ local XUiPassportPanelGrid = require("XUi/XUiPassport/XUiPassportPanelGrid")
 local XUiPassportPanel = XClass(XUiNode, "XUiPassportPanel")
 
 --通行证面板
-function XUiPassportPanel:OnStart()
+function XUiPassportPanel:OnStart(onGridClick)
+    self.OnGridClick = onGridClick or function() end
     self.LevelIdList = false
     self:InitRightGrids()
     self:InitDynamicList()
     self:AutoAddListener()
     self:InitData()
+    self:Refresh()
 end
 
 function XUiPassportPanel:InitRightGrids()
@@ -38,6 +40,8 @@ function XUiPassportPanel:OnRightGridClick(i)
             grid:OnBtnClickClick()
         end
     end
+
+    self.OnGridClick()
 end
 
 function XUiPassportPanel:InitData()
@@ -185,7 +189,7 @@ end
 
 function XUiPassportPanel:OnDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_INIT then
-        grid:Init(self.Parent)
+        grid:Init(self.Parent, self.OnGridClick)
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         local levelId = self.LevelIdList[index]
         grid:Refresh(levelId)

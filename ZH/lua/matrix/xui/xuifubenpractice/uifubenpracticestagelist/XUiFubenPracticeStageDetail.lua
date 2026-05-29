@@ -1,5 +1,5 @@
-local XUiGridStageStar = require("XUi/XUiFubenMainLineDetail/XUiGridStageStar")
-local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local XUiGridStageStar = require("XUi/XUiFubenMainLineDetail/XUiGridStageStar")
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 --- UiFubenPracticeStageListRoot的子界面，关卡详情页
 local XUiFubenPracticeStageDetail = XLuaUiManager.Register(XLuaUi, "UiFubenPracticeStageDetail")
 local DescCount = 3
@@ -84,7 +84,7 @@ function XUiFubenPracticeStageDetail:OnBtnEnterClick()
         end
         self.RootUi:CloseStageDetails()
         --self:Close() 
-        XLuaUiManager.Open("UiBattleRoleRoom", self.StageCfg.StageId
+        XMVCA.XFuben:OpenUiBattleRoleRoom(self.StageCfg.StageId
         , XDataCenter.TeamManager.GetXTeamByStageId(self.StageCfg.StageId)
         , require("XUi/XUiNewChar/XUiTutoriaBattleRoleRoom"))
     end

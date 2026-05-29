@@ -1,6 +1,5 @@
 local XUiTheatre6ShopPanel = require("XUi/XUiTheatre6/OutSider/Panel/XUiTheatre6ShopPanel")
 local XUiTheatre6TaskPanel = require("XUi/XUiTheatre6/OutSider/Panel/XUiTheatre6TaskPanel")
-local XUiPanelActivityAsset = require("XUi/XUiShop/XUiPanelActivityAsset")
 
 ---@field _Control XTheatre6Control
 ---@class XUiTheatre6RewardShop : XLuaUi
@@ -22,11 +21,13 @@ function XUiTheatre6RewardShop:OnAwake()
     self.TabBtns = {}
     self.SelectIndex = nil
     self._TimerId = nil
+    self.TimelimitIds = {}
+    self._LimitShopIds = {}
     self.BtnBack:AddEventListener(handler(self, self.Close))
     self.BtnMainUi:AddEventListener(handler(self, self.OnBtnMainUiClick))
-    local itemId = self._Control:GetRewardShopCoin()
-    XUiHelper.NewPanelActivityAssetSafe({ itemId }, self.PanelSpecialTool, self, nil, function(_, index)
-        XLuaUiManager.Open("UiTheatre6PopupRewardDetail", itemId)
+    local itemIds = self._Control:GetRewardShopCoin()
+    XUiHelper.NewPanelActivityAssetSafe(itemIds, self.PanelSpecialTool, self, nil, function(_, index)
+        XLuaUiManager.Open("UiTheatre6PopupRewardDetail", itemIds[index])
     end)
 end
 
@@ -49,6 +50,7 @@ end
 function XUiTheatre6RewardShop:_OnShopValidInfoReady()
     self:InitTags()
     self:UpdateRedDot()
+    self:StartTotalTimer()
     if XTool.IsTableEmpty(self.TabBtns) then
         return
     end
@@ -105,9 +107,10 @@ function XUiTheatre6RewardShop:InitTags()
     local btnIndex = 0
 
     self.TimelimitIds = {}
+    self._LimitShopIds = {}
 
     for _, taskShopType in pairs(firstTags) do
-        local secondTagCfgs = self._Control:GetValidShopOrTaskList(taskShopType)
+        local secondTagCfgs = XMVCA.XTheatre6:GetValidShopOrTaskList(taskShopType)
         if not XTool.IsTableEmpty(secondTagCfgs) then
             --过滤掉未开启的限时商店
             local validCfgs = {}
@@ -115,9 +118,20 @@ function XUiTheatre6RewardShop:InitTags()
                 if taskShopType == TaskShopType.Shop then
                     if XTool.IsNumberValid(rewardCfg.ShopId) and XShopManager.IsShopOpen(rewardCfg.ShopId) then
                         table.insert(validCfgs, rewardCfg)
+                        local shopOpenInfo = XShopManager.GetShopOpenInfo(rewardCfg.ShopId)
+                        if XTool.IsNumberValid(shopOpenInfo.EndTime) then
+                            self._LimitShopIds[rewardCfg.ShopId] = true
+                        end
                     end
                 else
-                    table.insert(validCfgs, rewardCfg)
+                    local taskListCfg = XTaskConfig.GetTimeLimitTaskCfg(rewardCfg.TaskTimeLimitId)
+                    local timeId = taskListCfg.TimeId
+                    if not XTool.IsNumberValid(timeId) or XFunctionManager.CheckInTimeByTimeId(timeId) then
+                        table.insert(validCfgs, rewardCfg)
+                        if XTool.IsNumberValid(timeId) then
+                            self.TimelimitIds[timeId] = true
+                        end
+                    end
                 end
             end
 
@@ -144,9 +158,6 @@ function XUiTheatre6RewardShop:InitTags()
 
                     self.TabIndexDic[btnIndex] = rewardCfg
 
-                    if XTool.IsNumberValid(rewardCfg.TaskTimeLimitId) then
-                        self.TimelimitIds[rewardCfg.TaskTimeLimitId] = true
-                    end
                 end
             end
         end
@@ -174,6 +185,33 @@ function XUiTheatre6RewardShop:RemoveTag(taskShopId)
     end
 end
 
+function XUiTheatre6RewardShop:GetTaskTimeId(taskTimeLimitId)
+    if not XTool.IsNumberValid(taskTimeLimitId) then
+        return 0
+    end
+
+    local taskListCfg = XTaskConfig.GetTimeLimitTaskCfg(taskTimeLimitId)
+    return taskListCfg.TimeId
+end
+
+function XUiTheatre6RewardShop:CheckRewardCfgIsPermanent(cfg)
+    if GetRewardCfgType(cfg) == TaskShopType.Shop then
+        local shopOpenInfo = XShopManager.GetShopOpenInfo(cfg.ShopId)
+        return not XTool.IsNumberValid(shopOpenInfo.EndTime)
+    end
+
+    return not XTool.IsNumberValid(self:GetTaskTimeId(cfg.TaskTimeLimitId))
+end
+
+function XUiTheatre6RewardShop:GetPermanentSelectIndex(taskShopType)
+    for index = 1, #self.TabBtns do
+        local rewardCfg = self.TabIndexDic[index]
+        if rewardCfg and GetRewardCfgType(rewardCfg) == taskShopType and self:CheckRewardCfgIsPermanent(rewardCfg) then
+            return index
+        end
+    end
+end
+
 function XUiTheatre6RewardShop:ClearTags()
     for i = 1, #self.TabBtns do
         self.TabBtns[i].gameObject:SetActiveEx(false)
@@ -193,14 +231,12 @@ function XUiTheatre6RewardShop:OnSelectedTag(index)
     self.UiTheatre6TaskPanel:SetVisible(cfgType == TaskShopType.Task)
     if cfgType == TaskShopType.Shop then
         self.UiTheatre6ShopPanel:UpdateShopShow(rewardCfg.ShopId, true)
-        self._Control:RemoveShopNewReddot(rewardCfg)
         self.TxtTitle.text=XUiHelper.GetText("Theatre6Shop")
         self:UpdateRedDot()
     else
         local taskTimeLimitCfg = XTaskConfig.GetTimeLimitTaskCfg(rewardCfg.TaskTimeLimitId)
         local taskIds = taskTimeLimitCfg and taskTimeLimitCfg.TaskId or {}
         self.UiTheatre6TaskPanel:UpdateTaskShow(taskIds)
-        self._Control:RemoveTaskNewReddot(rewardCfg)
         self.TxtTitle.text=XUiHelper.GetText("Theatre6Task")
         self:UpdateRedDot()
     end
@@ -268,7 +304,7 @@ end
 
 --region 全局过期定时器
 function XUiTheatre6RewardShop:StartTotalTimer()
-    if XTool.IsTableEmpty(self.TimelimitIds) then
+    if XTool.IsTableEmpty(self.TimelimitIds) and XTool.IsTableEmpty(self._LimitShopIds) then
         return
     end
     self:StopTotalTimer()
@@ -284,30 +320,56 @@ function XUiTheatre6RewardShop:StopTotalTimer()
 end
 
 function XUiTheatre6RewardShop:UpdateTotalTimer()
-    local endTimeId = nil
+    local endTimeId = {}
+    local endShopId = {}
 
-    for id, v in pairs(self.TimelimitIds) do
+    for id in pairs(self.TimelimitIds) do
         if not XFunctionManager.CheckInTimeByTimeId(id, true) then
-            if endTimeId == nil then
-                endTimeId = {}
-            end
             table.insert(endTimeId, id)
         end
     end
 
-    if not XTool.IsTableEmpty(endTimeId) then
+    for shopId in pairs(self._LimitShopIds) do
+        if not XShopManager.IsShopOpen(shopId) then
+            table.insert(endShopId, shopId)
+        end
+    end
+
+    if not XTool.IsTableEmpty(endTimeId) or not XTool.IsTableEmpty(endShopId) then
+        local expiredType
+        local selectedRewardCfg = self.TabIndexDic[self.SelectIndex]
+        if selectedRewardCfg then
+            local selectedType = GetRewardCfgType(selectedRewardCfg)
+            if selectedType == TaskShopType.Shop and table.contains(endShopId, selectedRewardCfg.ShopId) then
+                expiredType = TaskShopType.Shop
+            elseif selectedType == TaskShopType.Task and table.contains(endTimeId, self:GetTaskTimeId(selectedRewardCfg.TaskTimeLimitId)) then
+                expiredType = TaskShopType.Task
+            end
+        end
+
+        if not expiredType and not XTool.IsTableEmpty(endShopId) then
+            expiredType = TaskShopType.Shop
+        elseif not expiredType and not XTool.IsTableEmpty(endTimeId) then
+            expiredType = TaskShopType.Task
+        end
+
         for i = 1, #endTimeId do
             self.TimelimitIds[endTimeId[i]] = nil
         end
+        for i = 1, #endShopId do
+            self._LimitShopIds[endShopId[i]] = nil
+        end
 
-        local oldSelectIndex = self.SelectIndex
         self:ClearTags()
         self:InitTags()
 
-        local newSelectIndex = math.min(oldSelectIndex, self.BtnTabGroup.TabBtnList.Count)
-        self.BtnTabGroup:SelectIndex(newSelectIndex)
+        if XTool.IsTableEmpty(self.TimelimitIds) and XTool.IsTableEmpty(self._LimitShopIds) then
+            self:StopTotalTimer()
+        end
+        
+        self.BtnTabGroup:SelectIndex(self:GetPermanentSelectIndex(expiredType) or 1)
 
-        XUiManager.TipMsg(self._Control:GetClientConfigTaskShopUpdateTips())
+        --XUiManager.TipMsg(self._Control:GetClientConfigTaskShopUpdateTips())
         --self:RefreshResourceBar()
     end
 end
@@ -394,15 +456,6 @@ function XUiTheatre6RewardShop:UpdateRedDot()
                         break
                     end
                 end
-            end
-            if not isRed then
-                if self._Control:CheckNewTaskByTaskConfig(config) then
-                    isRed = true
-                end
-            end
-        elseif cfgType == TaskShopType.Shop then
-            if self._Control:CheckShopNewGoodsByShopConfig(config) then
-                isRed = true
             end
         end
 

@@ -7,28 +7,26 @@ local XBuffScript10261010 = XDlcScriptManager.RegBuffScript(10261010, "XBuffScri
 function XBuffScript10261010:ScriptInit(isGainControl) --初始化
     self.skilCnt = 2                                   --技能使用次数
     self.extraPermyriad = 8000                         --额外伤害倍数，8000即80%
-    self.dmgMagicId = 1026391                          --#TODO 需要修改为实际伤害的MagicId
+    self.dmgMagicId = 1026391                          --#TODO 需要修改为实际伤害的MagicId，5.10已确认
     self.dmgTrigger = false                            --是否触发伤害调整
     self.stackCountHitDown = 1                         --击倒层数
 end
 
 function XBuffScript10261010:OnEnterLevel(levelId)
     XTheatre6SkillBase.OnEnterLevel(self, levelId)
-    self._HitDownController = self:GetEnemyNpc():GetHitDownController()
+    self._HitDownController = self:GetNpc():GetHitDownController()
 end
 
-function XBuffScript10261010:OnLuaSpecialHit(eventArgs)
-    ------------执行------------
+function XBuffScript10261010:OnLuaSkillStart(eventArgs)
     if eventArgs._skillId ~= self._skillId then return end
     if eventArgs._launcherUUID ~= self._npcUUID then return end
-    if eventArgs._missileHitCount ~= 1 then return end
-    if self.skilCnt > 0 then
-        --击倒
-        self._HitDownController:AddSkillCount(self.stackCountHitDown)
-        self.dmgTrigger = true
-        self.skilCnt = self.skilCnt - 1
-    end
+    if self.skilCnt <= 0 then return end
+    self.dmgTrigger = true
+    --本次技能添加击倒效果
+    self._HitDownController:AddSkillCount(self.stackCountHitDown)
+    self.skilCnt = self.skilCnt - 1
 end
+
 
 function XBuffScript10261010:InitEventCallBackRegister()
     --调整技能倍率

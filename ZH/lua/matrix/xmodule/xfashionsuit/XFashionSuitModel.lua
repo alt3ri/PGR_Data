@@ -205,6 +205,13 @@ function XFashionSuitModel:GetData()
     return self._SaveUtil:GetData("NoticeFashionSuitIds") or {}
 end
 
+function XFashionSuitModel:SaveDataEx(key,data)
+    self._SaveUtil:SaveData("NoticeFashionSuitId"..key, data)
+end
+
+function XFashionSuitModel:GetDataEx(key)
+    return self._SaveUtil:GetData("NoticeFashionSuitId"..key) or nil
+end
 ----------private end----------
 
 ----------config start----------

@@ -74,8 +74,8 @@ end
 function XABattleNode:Trigger()
     XABattleNode.Super.Trigger(self, function()
         if self:GetTeamCount() <= 1 then
-            XLuaUiManager.Open("UiBattleRoleRoom"
-                , self.TheatreStageConfig.StageId[1]
+            XMVCA.XFuben:OpenUiBattleRoleRoom(
+                self.TheatreStageConfig.StageId[1]
                 , XDataCenter.TheatreManager.GetCurrentAdventureManager():GetSingleTeam()
                 , require("XUi/XUiTheatre/XUiTheatreBattleRoleRoom"))
         else

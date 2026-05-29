@@ -55,6 +55,10 @@ function XUiExhibitionInfo:InitModelRoot()
     self.EffectHuanren = root:FindTransform("ImgEffectHuanren")
     self.EffectHuanren.gameObject:SetActiveEx(false)
     self.EffectHuanren1.gameObject:SetActiveEx(false)
+    self.FxUiShengmingshuTx2 = root:FindTransform("FxUiShengmingshuTx2")
+    if self.FxUiShengmingshuTx2 then
+        self.FxUiShengmingshuTx2.gameObject:SetActiveEx(false)
+    end
     self.RoleModelPanel = XUiPanelRoleModel.New(self.PanelRoleModel, self.Name, nil, true, nil, true)
 end
 
@@ -195,6 +199,11 @@ function XUiExhibitionInfo:UpdateCharacterModel(growUpLevel)
             self.EffectHuanren1.gameObject:SetActiveEx(true)
         else
             self.EffectHuanren.gameObject:SetActiveEx(true)
+        end
+        -- 生命树特效
+        if self.FxUiShengmingshuTx2 then
+            local powerConfig = XMVCA.XCharacter:GetCharacterPowerConfig(characterId)
+            self.FxUiShengmingshuTx2.gameObject:SetActiveEx(powerConfig ~= nil)
         end
     end, growUpLevel, true)
 end

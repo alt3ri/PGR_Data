@@ -2,68 +2,70 @@ local XTheatre6SkillBase = require("Gameplay/Theatre6/XTheatre6SkillBase")
 ---@class XBuffScript10262030 : XTheatre6SkillBase
 local XBuffScript10262030 = XDlcScriptManager.RegBuffScript(10262030, "XBuffScript10262030", XTheatre6SkillBase)
 
---效果说明：每次进入【狂暴】后触发：
---· 造成120%攻击伤害；
---· 消耗50点【怒火】，造成【击倒】；
---· 每次使用此技能，伤害额外提高80%攻击。
+--效果说明：
+--狂暴期间，每次怒火=50点时触发：
+--恢复50点怒火。每次使用此技能，本场战斗中此技能的怒火恢复减少30/20/15点
 
-function XBuffScript10262030:ScriptInit(isGainControl) --初始化
-    self.TargetSkill = self._skillId
-    self._Count = 0
-    self.AngerCheck = 50
-    self._stackCountHitDown = 0
-    self._angerCost = 50
-    self._angerRecover = 50
-    self._angerCostPerHappened = 15
-    self._damageMagicId = 10250044 --注册超算成功技1伤害id，目前是临时的
-    if self._skillId == 10262021 then self._exDamageRateBase = 8000
-    else if self._skillId == 10262022 then self._exDamageRateBase = 8000
-    else self._exDamageRateBase = 8000
-    end
-    end
+function XBuffScript10262030:ScriptInit(isGainControl)
+    self.count = 0            --触发计数
+    self.angerCheck = 50      --怒火值检查点
+    self.angerRecover = 50    --恢复基础值
+    self.checkTrigger = false --检查重复触发开关，高于50时打开，低于50时关闭
+    self.isAdded = false      --重复触发统计
+    self.selfTrigger = true  --是否允许自己触发自己
+    --每次使用技能后，减少的值
+    self.dictAngerRecoverReduce = {
+        [1] = 30,
+        [2] = 20,
+        [3] = 15,
+    }
+    --注册怒火控制器
+    self.angerController = self:GetNpc():GetAngerController()
 end
 
-function XBuffScript10262030:OnEnterLevel(levelId)
-    XTheatre6SkillBase.OnEnterLevel(self, levelId)
-    self._HitDownController = self:GetEnemyNpc():GetHitDownController()
-end
-
-function XBuffScript10262030:OnLuaAttackerChange(eventArgs)
-    ---出手权交换时重置计数
-    if eventArgs._newAttackerUUID == self._npcUUID then
-    self.ChanceCheck = 1
-    end
-end
-
-function XBuffScript10262030:OnLuaSkillEnd(eventArgs)
+function XBuffScript10262030:OnLuaSkillStart(eventArgs)
     ------------执行------------
     if eventArgs._launcherUUID ~= self._npcUUID then return end
-    self.originAttrib1 = self._proxy:GetBuffStacks( self._npcUUID,XTheatre6AngerController.StackBuffAnger)
-    if self.originAttrib1 <= self.AngerCheck then
-        self._level:RequestInsertSkill(self._uuid,self.TargetSkill)
-    end
+    self.isAdded = false
+    --如果是自己释放的技能，进行怒火恢复逻辑
     if eventArgs._skillId ~= self._skillId then return end
-    self._AngerController:CastStackBuff(self._angerRecover, self._npcUUID)
-    self._angerRecover = self._angerRecover - self._angerCostPerHappened
-    if self._angerRecover <= 0 then self._angerRecover = 0
-    end
+    local calAngerRecover = math.max(0, self.angerRecover - self.dictAngerRecoverReduce[self._lv] * self.count)
+    self.angerController:CastStackBuff(calAngerRecover, self._npcUUID)
+    self.count = self.count + 1
+    --如果不允许触发自己，则释放本技能时，不判断触发技能
+    if not self.selfTrigger then self.isAdded = true end
 end
 
 function XBuffScript10262030:InitEventCallBackRegister()
-    --按需求解除注释进行注册
-    self._proxy:RegisterEventByTarget(EWorldEvent.NpcCalcDamageBefore, self._npcUUID)
+    self._proxy:RegisterEvent(EWorldEvent.NpcAddBuff)
+    self._proxy:RegisterEvent(EWorldEvent.NpcRemoveBuff)
 end
 
-function XBuffScript10262030:ChangeDamageBeforeCalc(eventArgs)
-    if eventArgs.Launcher ~= self._npcUUID then return end
-    if eventArgs.Id ~= self._damageMagicId then return end
-    if self._hasChangedDamage then return end
-    self._exDamageRate = self._Count * self._exDamageRateBase
-    local FinalDMGRate = eventArgs.PhysicalPermyriad + self._exDamageRate
-    self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate, eventArgs.ElementPermyriad, eventArgs.HackDamage, eventArgs.HackPermyriad, eventArgs.isCrity)
-    self._hasChangedDamage = true
+function XBuffScript10262030:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
+    if buffId ~= self.angerController.StackBuffAnger then return end
+    if npcUUID ~= self._npcUUID then return end
+    --如果开关已经打开，直接返回
+    if self.checkTrigger then return end
+    --判断怒火值是否达到目标值以上，以上则开启
+    local angerStacks = self._proxy:GetBuffStacks(self._npcUUID, self.angerController.StackBuffAnger)
+    if angerStacks > self.angerCheck then
+        self.checkTrigger = true
+    end
+end
+
+function XBuffScript10262030:OnNpcRemoveBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
+    if buffId ~= self.angerController.StackBuffAnger then return end
+    if npcUUID ~= self._npcUUID then return end
+    --每当怒火从检查点以上，降低至检查点以下时，触发一次技能
+    local angerStacks = self._proxy:GetBuffStacks(self._npcUUID, self.angerController.StackBuffAnger)
+    --当触发开关打开，且当前值小于检查值时，进行一次触发
+    local isAngry = self._proxy:GetBuffStacks(self._npcUUID, self.angerController.StackBuffAngry) >= 1
+    local isRequest = (angerStacks <= self.angerCheck) and self.checkTrigger and isAngry and not self.isAdded
+    if isRequest then
+        self._level:RequestInsertSkill(self._npcUUID, self._skillId)
+        self.isAdded = true
+        self.checkTrigger = false
+    end
 end
 
 return XBuffScript10262030
-
---无法获取到击飞事件

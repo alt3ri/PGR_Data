@@ -3,23 +3,21 @@
 ---@field private _Camera UnityEngine.Camera
 ---@field private _ActivityAgency table<number, XBigWorldActivityAgency> 活动Id -> 活动Agency
 ---@field private _Level2Agency table<number, XBigWorldActivityAgency> LevelId -> 活动Agency
-local XBigWorldGamePlayAgency = XClass(XAgency, "XBigWorldGamePlayAgency")
+local XBigWorldGamePlayAgency = XClass(XAgency, "XBigWorldGamePlayAgency", true)
+
+-- 法奥斯关卡 LevelId
+XBigWorldGamePlayAgency.FAOS_LEVEL_ID = 6001
+
+--region 部分类
+XClassPartialRequire("XModule/XBigWorldGamePlay/Partial/XBigWorldGamePlayProcess", "XBigWorldGamePlayAgency") --流程相关放这里
+--endregion
 
 local XBigWorldActivityAgency = require("XModule/XBase/XBigWorldActivityAgency")
 local IsWindowsEditor = XMain.IsWindowsEditor
 
----@type XBigWorldHelper
-local CsHelper = CS.XBigWorldHelper
 local CsSetViewPosToTransformLocalPosition = CS.XUiHelper.SetViewPosToTransformLocalPosition
 local DisableOpenGuide = false
 local LocalKey = "BIG_WORLD_OPEN_GUIDE_ENABLE"
-
-local ExitIgnoreCloseUiName = {
-    ["UiDialogCanvasDialog"] = true,
-    ["UiDialog"] = true,
-    ["UiSuperWaterMarks"] = true,
-    ["UiWaterMask"] = true,
-}
 
 local LastRequestSavePerspectiveTime = 0
 local SavePerspectiveInterval = 1.2
@@ -27,7 +25,7 @@ local SavePerspectiveInterval = 1.2
 function XBigWorldGamePlayAgency:OnInit()
     -- 初始化一些变量
     self._ClientArgs = false
-    self._CurrentModuleId = 0
+    self._CurrentModuleId = false
     -- 场景相机
     self._Camera = false
 
@@ -39,7 +37,19 @@ function XBigWorldGamePlayAgency:OnInit()
         FirstPerson = 1, --第一人称
         ThirdPerson = 2, --第三人称
     }
+
+    self.BigWorldGamePlayState = {
+        None = 1,       --不在大世界中
+        InBigWorld = 2, --在大世界中
+        InFight = 4,    --在主线战斗中
+    }
+
+    self._GamePlayState = self.BigWorldGamePlayState.None
     XMVCA.XBigWorldGamePlay.CheckOpenGuideDisable()
+end
+
+function XBigWorldGamePlayAgency:ResetAll()
+    self._GamePlayState = self.BigWorldGamePlayState.None
 end
 
 function XBigWorldGamePlayAgency:InitRpc()
@@ -49,19 +59,32 @@ function XBigWorldGamePlayAgency:InitRpc()
 end
 
 function XBigWorldGamePlayAgency:InitEvent()
+    self._OnEnterWorldResponse = handler(self, self.OnEnterWorldResponse)
+    self._OnModuleLoadComplete = handler(self, self.OnModuleLoadComplete)
+    self._OnEnterWorldFailure = handler(self, self.DoEnterWorldFailure)
+    self._OnReceivedWorldSaveData = handler(self, self.OnReceivedWorldSaveData)
     self._OnEnterFight = Handler(self, self.OnEventEnterFight)
     self._OnExitFight = Handler(self, self.OnEventExitFight)
+    self._OnRefreshStreamingOnLevelEnter = handler(self, self._RefreshStreamingOnLevelEnter)
+
     CS.XGameEventManager.Instance:RegisterEvent(CS.XEventId.EVENT_DLC_FIGHT_ENTER, self._OnEnterFight)
     CS.XGameEventManager.Instance:RegisterEvent(CS.XEventId.EVENT_DLC_FIGHT_EXIT, self._OnExitFight)
 
-    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_OPEN_GUIDE_FINISH, self.InitAfterOpenGuide, self)
+    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_OPEN_GUIDE_FINISH,
+        self.OnOpenGuideFinished, self)
+    -- 大世界内关卡切换（如传送出/入法奥斯）时同步流式纹理 / LOD mesh 状态
+    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_FIGHT_ENTER_LEVEL,
+        self._OnRefreshStreamingOnLevelEnter)
 end
 
 function XBigWorldGamePlayAgency:RemoveEvent()
     CS.XGameEventManager.Instance:RemoveEvent(CS.XEventId.EVENT_DLC_FIGHT_ENTER, self._OnEnterFight)
     CS.XGameEventManager.Instance:RemoveEvent(CS.XEventId.EVENT_DLC_FIGHT_EXIT, self._OnExitFight)
 
-    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_OPEN_GUIDE_FINISH, self.InitAfterOpenGuide, self)
+    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_OPEN_GUIDE_FINISH,
+        self.OnOpenGuideFinished, self)
+    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_FIGHT_ENTER_LEVEL,
+        self._OnRefreshStreamingOnLevelEnter)
 end
 
 function XBigWorldGamePlayAgency:SetCurrentGameAgency(worldId)
@@ -121,7 +144,7 @@ function XBigWorldGamePlayAgency:GetCurrentLevelId()
 end
 
 function XBigWorldGamePlayAgency:IsInGame()
-    return XTool.IsNumberValid(self._CurrentModuleId)
+    return self._CurrentModuleId
 end
 
 function XBigWorldGamePlayAgency:IsInstLevel()
@@ -133,355 +156,65 @@ function XBigWorldGamePlayAgency:IsInstLevel()
     return CS.StatusSyncFight.XLevelConfig.IsInstLevel(levelId)
 end
 
+--- 是否在法奥斯场景
+---@return boolean
+function XBigWorldGamePlayAgency:IsInFaos()
+    if not self:IsInGame() then
+        return false
+    end
+    if not CS.XBigWorldHelper.IsInsideSkyGarden() then
+        return false
+    end
+    return self:GetCurrentLevelId() == self.FAOS_LEVEL_ID
+end
+
 --- 大世界玩法是否开启
 ---@return boolean
 function XBigWorldGamePlayAgency:IsBigWorldOpen()
     return true
 end
 
---region 进入大世界流程
-
---- 发送进入大世界入口协议
-function XBigWorldGamePlayAgency:EnterGame(worldId, levelId, enterOperateType, enterOperateParam)
-    if not self:IsBigWorldOpen() then
-        XUiManager.TipText("CommonNotOpen")
-        return
-    end
-    XNetwork.Call("BigWorldEnterWorldRequest", {
-        WorldId = worldId,
-        LevelId = levelId,
-    }, function(res)
-        if res.Code ~= XCode.Success then
-            XUiManager.TipCode(res.Code)
-            return
-        end
-        local enterData = res.EnterResultData
-
-        if not enterData then
-            XLog.Error("EnterResultData is nil, 进入大世界失败!")
-            return
-        end
-        if not enterData.WorldData then
-            XLog.Error("WorldData is nil, 进入大世界失败!")
-            return
-        end
-
-        local worldData = enterData.WorldData
-        self:_InitWorldId(worldData.WorldId)
-        self:_InitLevelId(worldData.LevelId)
-        self:RegisterMVCA()
-        self:InitConfig()
-        self:LaunchWorld()
-        self:PullModuleData(res, enterOperateType, enterOperateParam)
-    end)
+function XBigWorldGamePlayAgency:TryActiveGuide()
+    XDataCenter.GuideManager.CheckGuideOpen()
 end
 
-function XBigWorldGamePlayAgency:PullModuleData(response, enterOperateType, enterOperateParam)
-    XNetwork.Call("BigWorldOnModuleLoadCompleteRequest", nil, function(res)
-        --错误代码
-        if res.Code ~= XCode.Success then
-            XUiManager.TipCode(res.Code)
-            self:EnterGameError()
-            return
-        end
-        self._EnterResponse = response
-        self:UpdatePlayerData(response.PlayerData)
-        self:CsStatusSyncFightInit()
+function XBigWorldGamePlayAgency:CmdRequestEnterInstLevel(data)
+    local worldId = data.WorldId or 0
+    local levelId = data.InstLevelId
+    local team = data.Team
+    local targetPos = data.TargetPos
+    local targetRot = data.TargetRot
 
-        self:GetCurrentAgency():BeginOpenGuide()
-        XMVCA.XBigWorldFunction:AddEnterOperate(enterOperateType, enterOperateParam)
-    end, nil, function()
-        self:EnterGameError()
-    end)
-end
+    if not team then
+        local currentTeam = XMVCA.XBigWorldCharacter:GetCurrentTeam()
 
-function XBigWorldGamePlayAgency:RequestGetEnterBigWorldData(callback)
-    if not self:IsInGame() then
-        XLog.Error("尚未进入大世界，无法获取玩法数据!")
-        return
-    end
-    XNetwork.Call("BigWorldGetEnterWorldDataRequest", nil, function(res)
-        if res.Code ~= XCode.Success then
-            XUiManager.TipCode(res.Code)
-            return
-        end
-        self._EnterResponse = res
-        if callback then
-            callback()
-        end
-    end)
-end
-
-function XBigWorldGamePlayAgency:EnterGameError()
-    if not self:IsInGame() then
-        return
-    end
-    --函数异常
-    self:DisposeConfig()
-    --移除掉MVCA
-    self:UnRegisterMVCA()
-    self:UnLaunchWorld()
-    self:ExitGame()
-end
-
-function XBigWorldGamePlayAgency:InitAfterOpenGuide()
-    local response = self._EnterResponse
-
-    local enterData = response.EnterResultData
-    self:DoWorldSaveRequest(enterData.WorldData, enterData.FightData, enterData.LevelData)
-    XMVCA.XBigWorldService:InitQuestItemMap(response.DlcQuestBag)
-    self:InitX3C()
-    self:InitActivityAgency()
-    self:TryExitOpenGuide()
-    self._EnterResponse = nil
-end
-
-function XBigWorldGamePlayAgency:DoPlayerDataRequest()
-    XNetwork.Call("BigWorldPlayerDataRequest", nil, function(res)
-        self:UpdatePlayerData(res)
-    end)
-end
-
---- 大世界总协议返回后的请求
-function XBigWorldGamePlayAgency:DoWorldSaveRequest(worldData, fightData, levelData)
-    local worldId = self:GetCurrentWorldId()
-
-    self:RegisterWorldSaveDataRequest(worldData, fightData, levelData)
-    CS.StatusSyncFight.XWorldSaveSystem.RequestWorldSave(worldId)
-end
-
-function XBigWorldGamePlayAgency:DoQuestBagRequest()
-    -- 背包数据
-    XNetwork.Call("DlcQuestBagRequest", nil, function(res)
-        XMVCA.XBigWorldService:InitQuestItemMap(res.DlcQuestBag)
-    end)
-end
-
---- 正式进入到大世界
-function XBigWorldGamePlayAgency:DoEnterGame(worldData, fightData, levelData)
-    if not fightData or not levelData then
-        XLog.Error("fightData or levelData is nil, 进入大世界失败!")
-        return
-    end
-    CS.XProfilingLuaUtils.PerfSightRegionEnter("SkyGardenProcess")
-    -- 设置当前大世界类型
-    self:InitCurrentBigWorldType()
-    -- 对应大世界执行进入战斗前逻辑
-    self:GetCurrentAgency():BeforeEnterGame()
-    -- 通知进入大世界
-    XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_BEFORE_ENTER_GAME)
-    -- 进入战斗
-    self:CsStatusSyncEnterFight(worldData, fightData, levelData, XPlayer.Id)
-    -- 进入战斗前会清理掉系统行为树数据
-    XMVCA.XDlcWorld:OnEnterFight(self:GetCurrentWorldId())
-    -- 在这里加载大世界引导数据
-    self:LoadGuide()
-    --首次进入战斗会有黑幕进行开场引导，这里尝试关闭
-    XMVCA.XBigWorldUI:SafeClose("UiBigWorldBlackMaskNormal")
-    -- 对应大世界执行进入战斗后逻辑
-    self:GetCurrentAgency():AfterEnterGame()
-end
-
---- 退出大世界
-function XBigWorldGamePlayAgency:ExitGame()
-    if not self:IsInGame() then
-        return
+        team = currentTeam:ToServerTeam()
     end
 
-    --退出玩法前，先将相关界面全部关闭
-    self:ClearBigWorldUI(function()
-        self:CsStatusSyncExitFight()
-        self:GetCurrentAgency():Exit()
-        --- 清理试用角色
-        XMVCA.XBigWorldCharacter:ClearTrialCharacterIds()
-    end)
-    CS.XProfilingLuaUtils.PerfSightRegionExit()
+    self:RequestEnterInstLevel(worldId, levelId, team, targetPos, targetRot)
 end
 
---- 战斗事件通知，进入战斗（已经进入）
-function XBigWorldGamePlayAgency:OnEventEnterFight()
-    if not self:IsInGame() then
-        return
-    end
-    self:GetCurrentAgency():EnterFight()
-    -- 通知进入大世界
-    XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_AFTER_ENTER_GAME)
-end
-
---- 战斗事件通知，退出战斗
-function XBigWorldGamePlayAgency:OnEventExitFight()
-    --战斗事件通知的退出战斗，如果此时已经登出了，则不通过事件去清除数据
-    --会在登出时调用 OnExitFight
-    --否则会出现，界面还引用control,但是已经去释放Agency了
-    if not XLoginManager.IsLogin() then
-        return
-    end
-    XTableManager.ReleaseAll()
-    CS.BinaryManager.ReleaseAllCache()
-    self:OnExitFight()
-end
-
-function XBigWorldGamePlayAgency:OnExitFight()
-    if not self:IsInGame() then
-        return
-    end
-    self:GetCurrentAgency():ExitFight()
-end
-
-function XBigWorldGamePlayAgency:CompletelyExit()
-    if not self:IsInGame() then
-        return
-    end
-    self:RequestRefreshBigWorldMainRedPoint()
-    self._Camera = false
-    self:DeinitCurrentBigWorldType()
-    self:ClearX3C()
-    self:ClearActivityAgency()
-    self:ClearDebugState()
-    self._Model:Clear()
-    CS.StatusSyncFight.XWorldSaveSystem.Cleanup()
-    self:UnloadGuide()
-    self:TryExitOpenGuide()
-    self:DisposeConfig()
-    self:UnLaunchWorld()
-    self:UnRegisterMVCA()
-    XMVCA:ReleaseModule(self._CurrentModuleId)
-    self._CurrentModuleId = 0
-end
-
---- 注册玩家进入DlcWorld时，服务器返回消息的回调
-function XBigWorldGamePlayAgency:RegisterWorldSaveDataRequest(worldData, fightData, levelData)
-    self._OnReceivedWorldSaveDataCb = function(worldSaveData)
-        self:UpdateWorldData(worldSaveData)
-        self:DoEnterGame(worldData, fightData, levelData)
-        self:UnRegisterWorldSaveDataRequest()
-    end
-
-    local CsWorldSystem = CS.StatusSyncFight.XWorldSaveSystem
-
-    if CsWorldSystem.ReceivedWorldSaveDataCb == nil then
-        CsWorldSystem.ReceivedWorldSaveDataCb = self._OnReceivedWorldSaveDataCb
-    else
-        CsWorldSystem.ReceivedWorldSaveDataCb = CsWorldSystem.ReceivedWorldSaveDataCb + self._OnReceivedWorldSaveDataCb
-    end
-end
-
---- 取消注册玩家进入DlcWorld时，服务器返回消息的回调
-function XBigWorldGamePlayAgency:UnRegisterWorldSaveDataRequest()
-    local CsWorldSystem = CS.StatusSyncFight.XWorldSaveSystem
-    if CsWorldSystem.ReceivedWorldSaveDataCb == nil then
-        return
-    end
-    if not self._OnReceivedWorldSaveDataCb then
-        return
-    end
-    CsWorldSystem.ReceivedWorldSaveDataCb = CsWorldSystem.ReceivedWorldSaveDataCb - self._OnReceivedWorldSaveDataCb
-end
-
---- 初始化X3C，服务器DlcWorldSaveDataResponse协议返回时调用
-function XBigWorldGamePlayAgency:InitX3C()
-    if not self:IsInGame() then
-        return
-    end
-
-    self:ClearX3C()
-    self:GetCurrentAgency():InitX3C()
-end
-
-function XBigWorldGamePlayAgency:ClearX3C()
-    XMVCA.X3CProxy:ClearHandlers()
-end
-
-function XBigWorldGamePlayAgency:ClearBigWorldUI(allCloseCb)
-    local index = 0
-    local runCount = 0
-    local onCloseCb
-    onCloseCb = function()
-        local uiName = CS.XUiManager.Instance:GetTopXUiName(index)
-        runCount = runCount + 1
-        --正常来说不会超过100个界面，加一层保底
-        if string.IsNilOrEmpty(uiName) or runCount > 100 then
-            return allCloseCb and allCloseCb()
-        end
-        ---@type XUiData
-        local uiData = CS.XUiManager.Instance:FindUiData(uiName)
-        --子界面直接通过关掉父界面处理
-        if uiData and uiData.IsChildUi then
-            index = index + 1
-            return onCloseCb()
-        end
-        --此界面不关闭
-        if ExitIgnoreCloseUiName[uiName] then
-            index = index + 1
-            return onCloseCb()
-        end
-        --战斗界面不关闭，交由战斗管理
-        if XUiManager.IsFightUi(uiName) then
-            index = index + 1
-            return onCloseCb()
-        end
-        XMVCA.XBigWorldUI:Close(uiName, onCloseCb)
-    end
-    onCloseCb()
-end
-
---- 初始化大世界类型
-function XBigWorldGamePlayAgency:InitCurrentBigWorldType()
-    local worldId = self:GetCurrentWorldId()
-    local worldType = XMVCA.XDlcWorld:GetWorldTypeById(worldId)
-
-    if XTool.IsNumberValid(worldType) then
-        CsHelper.SetBigWorldType(worldType)
-    else
-        XLog.Error("当前WroldId = " .. tostring(worldId) .. "未配置WorldType!")
-    end
-end
-
-function XBigWorldGamePlayAgency:DeinitCurrentBigWorldType()
-    CsHelper.SetBigWorldType(CsHelper.BigWorldType.None)
-end
-
---- 初始化战斗
-function XBigWorldGamePlayAgency:CsStatusSyncFightInit()
-    CS.StatusSyncFight.XFight.Init()
-end
-
-function XBigWorldGamePlayAgency:CsStatusSyncEnterFight(worldData, fightData, levelData, playerId)
-    local args = self:CreateClientArgs()
-    CS.StatusSyncFight.XFightClient.EnterFight(worldData, fightData, levelData, playerId, args)
-end
-
-function XBigWorldGamePlayAgency:CsStatusSyncExitFight()
-    CS.StatusSyncFight.XFightClient.RequestExitFight()
+function XBigWorldGamePlayAgency:CmdRequestLeaveInstLevel(data)
+    self:RequestLeaveInstLevel(data.ResetSaveDataExit or false)
 end
 
 function XBigWorldGamePlayAgency:IsCurrentNpcSit()
     return CS.StatusSyncFight.XFightClient.IsCurrentNpcSit()
 end
 
-function XBigWorldGamePlayAgency:CreateClientArgs()
-    if not self._ClientArgs then
-        self._ClientArgs = CS.StatusSyncFight.XFightClientArgs()
+--region 进入大世界流程
+
+function XBigWorldGamePlayAgency:ExitGameAsync(cb)
+    CS.StatusSyncFight.XFightClient.RequestExitFight()
+    self:GetCurrentAgency():Exit()
+    local value = true
+    while value do
+        asynWaitSecond(0.1)
+        if not self:IsInGame() then
+            value = false
+            if cb then cb() end
+        end
     end
-
-    self._ClientArgs.LoadProgressCb = Handler(self, self.OnLoadingProgress)
-    self._ClientArgs.OpenLoadingUiCb = Handler(self, self.OnOpenLoadingUi)
-    self._ClientArgs.CloseLoadingUiCb = Handler(self, self.OnCloseLoadingUi)
-
-    return self._ClientArgs
-end
-
--- 进大世界加载进度
----@param progress number
-function XBigWorldGamePlayAgency:OnLoadingProgress(progress)
-end
-
-function XBigWorldGamePlayAgency:OnOpenLoadingUi(worldId, levelId, groupId)
-    XMVCA.XBigWorldLoading:OpenLoadingByGroupId(groupId)
-end
-
-function XBigWorldGamePlayAgency:OnCloseLoadingUi()
-    XMVCA.XBigWorldLoading:CloseCurrentLoading()
 end
 
 --endregion
@@ -511,26 +244,26 @@ end
 --region 关卡切换事件
 
 -- 设置虚拟摄像机
-function XBigWorldGamePlayAgency:ActivateVCamera(VCameraName, Duration, DeactivateAllPreVCam, DepthOfFieldId)
-    if string.IsNilOrEmpty(VCameraName) then
+function XBigWorldGamePlayAgency:ActivateVCamera(vCameraName, duration, deactivateAllPreVCam, depthOfFieldId)
+    if string.IsNilOrEmpty(vCameraName) then
         return
     end
     XMVCA.X3CProxy:Send(CS.X3CCommand.CMD_CAMERA_ACTIVATE_VIRTUAL_CAMERA, {
-        VCameraName = VCameraName,
-        Duration = Duration or 0,
-        DeactivateAllPreVCam = DeactivateAllPreVCam or false,
-        DepthOfFieldId = DepthOfFieldId or 0,
+        VCameraName = vCameraName,
+        Duration = duration or 0,
+        DeactivateAllPreVCam = deactivateAllPreVCam or false,
+        DepthOfFieldId = depthOfFieldId or 0,
     })
 end
 
 -- 取消设置虚拟摄像机（看看后面玩法是不是通用的，玩法主界面关闭后设置回去）
-function XBigWorldGamePlayAgency:DeactivateVCamera(VCameraName, IsIgnoreBlendOut)
-    if string.IsNilOrEmpty(VCameraName) then
+function XBigWorldGamePlayAgency:DeactivateVCamera(vCameraName, isIgnoreBlendOut)
+    if string.IsNilOrEmpty(vCameraName) then
         return
     end
     XMVCA.X3CProxy:Send(CS.X3CCommand.CMD_CAMERA_DEACTIVATE_VIRTUAL_CAMERA, {
-        VCameraName = VCameraName,
-        IsIgnoreBlendOut = IsIgnoreBlendOut or false,
+        VCameraName = vCameraName,
+        IsIgnoreBlendOut = isIgnoreBlendOut or false,
     })
 end
 
@@ -542,10 +275,10 @@ function XBigWorldGamePlayAgency:SetCameraProjection(isOrthographic)
 end
 
 --设置相机物理模式
-function XBigWorldGamePlayAgency:SetCameraPhysicalMode(IsPhysical, GateFitMode)
+function XBigWorldGamePlayAgency:SetCameraPhysicalMode(isPhysical, gateFitMode)
     XMVCA.X3CProxy:Send(CS.X3CCommand.CMD_CAMERA_SET_CAMERA_PHYSICAL_MODE, {
-        IsPhysical = IsPhysical,
-        GateFitMode = GateFitMode,
+        IsPhysical = isPhysical,
+        GateFitMode = gateFitMode,
     })
 end
 
@@ -563,10 +296,10 @@ function XBigWorldGamePlayAgency:GetCurNpcActive()
 end
 
 --- 设置除了当前编队NPC和跟随的Npc之外的显隐
----@param IsActive boolean 显示/隐藏
-function XBigWorldGamePlayAgency:SetNpcActiveExcludePlayerNpc(IsActive)
+---@param isActive boolean 显示/隐藏
+function XBigWorldGamePlayAgency:SetNpcActiveExcludePlayerNpc(isActive)
     XMVCA.X3CProxy:Send(CS.X3CCommand.CMD_SET_NPC_ACTIVE_EXCLUDE_PLAYER_NPC, {
-        IsActive = IsActive,
+        IsActive = isActive,
     })
 end
 
@@ -753,7 +486,7 @@ function XBigWorldGamePlayAgency:OnFightGetPerspectiveState(data)
         levelId = self:GetCurrentLevelId()
         return {
             IsFirstPersonMode = XMVCA.XBigWorldGamePlay:GetCurrentAgency():GetPerspective(levelId)
-                    == XMVCA.XBigWorldGamePlay.PerspectiveType.FirstPerson,
+                == XMVCA.XBigWorldGamePlay.PerspectiveType.FirstPerson,
             HasData = self:GetCurrentAgency():IsSavePerspective(levelId),
         }
     else
@@ -779,90 +512,10 @@ function XBigWorldGamePlayAgency:OnPerspectiveModeChanged(data)
         return
     end
     if success then
-        local perspective = isFirst and XMVCA.XBigWorldGamePlay.PerspectiveType.FirstPerson or XMVCA.XBigWorldGamePlay.PerspectiveType.ThirdPerson
+        local perspective = isFirst and XMVCA.XBigWorldGamePlay.PerspectiveType.FirstPerson or
+        XMVCA.XBigWorldGamePlay.PerspectiveType.ThirdPerson
         self:SavePerspectiveRequest(levelId, perspective)
     end
-end
-
---endregion
-
---region Private
-
-function XBigWorldGamePlayAgency:_InitWorldId(worldId)
-    self._Model:SetCurrentWorldId(worldId)
-    self:SetCurrentGameAgency(worldId)
-end
-
-function XBigWorldGamePlayAgency:_InitLevelId(levelId)
-    self._Model:SetCurrentLevelId(levelId)
-end
-
-function XBigWorldGamePlayAgency:LaunchWorld()
-    CS.XWorldEngine.Launch()
-end
-
-function XBigWorldGamePlayAgency:UnLaunchWorld()
-    CS.XWorldEngine.Exit()
-end
-
-function XBigWorldGamePlayAgency:InitConfig()
-    local gameAgency = self:GetCurrentAgency()
-    if not gameAgency then
-        return
-    end
-    gameAgency:InitConfig()
-end
-
-function XBigWorldGamePlayAgency:DisposeConfig()
-    local gameAgency = self:GetCurrentAgency()
-    if not gameAgency then
-        return
-    end
-    gameAgency:DisposeConfig()
-end
-
-function XBigWorldGamePlayAgency:RegisterMVCA()
-    local gameAgency = self:GetCurrentAgency()
-    if not gameAgency then
-        return
-    end
-    gameAgency:DoRegisterMVCA()
-end
-
-function XBigWorldGamePlayAgency:UnRegisterMVCA()
-    local gameAgency = self:GetCurrentAgency()
-    if not gameAgency then
-        return
-    end
-    gameAgency:DoUnRegisterMVCA()
-end
-
-function XBigWorldGamePlayAgency:LoadGuide()
-    local gameAgency = self:GetCurrentAgency()
-    if not gameAgency then
-        return
-    end
-    gameAgency:LoadGuide()
-end
-
-function XBigWorldGamePlayAgency:UnloadGuide()
-    local gameAgency = self:GetCurrentAgency()
-    if not gameAgency then
-        return
-    end
-    gameAgency:UnloadGuide()
-end
-
-function XBigWorldGamePlayAgency:TryExitOpenGuide()
-    local gameAgency = self:GetCurrentAgency()
-    if not gameAgency then
-        return
-    end
-    gameAgency:TryExitOpenGuide()
-end
-
-function XBigWorldGamePlayAgency:TryActiveGuide()
-    XDataCenter.GuideManager.CheckGuideOpen()
 end
 
 --endregion
@@ -966,26 +619,6 @@ function XBigWorldGamePlayAgency:RegisterActivityAgency(agency)
     end
 end
 
-function XBigWorldGamePlayAgency:InitActivityAgency()
-    local templates = self._Model:GetAllActivityTemplates()
-    for _, t in pairs(templates) do
-        local moduleId = t.ModuleId
-        if moduleId then
-            ---@type XBigWorldActivityAgency
-            local agency = XMVCA:GetAgency(moduleId)
-            agency:SetConfig(t)
-            agency:RegisterActivityAgency()
-        else
-            XLog.Error(string.format("活动：%s 未找到对应模块", t.Id))
-        end
-    end
-end
-
-function XBigWorldGamePlayAgency:ClearActivityAgency()
-    self._ActivityAgency = {}
-    self._Level2Agency = {}
-end
-
 ---@return XBigWorldActivityAgency
 function XBigWorldGamePlayAgency:GetActivityAgencyById(id)
     local agency = self._ActivityAgency[id]
@@ -996,6 +629,7 @@ function XBigWorldGamePlayAgency:GetActivityAgencyById(id)
     return agency
 end
 
+---@return XBigWorldActivityAgency
 function XBigWorldGamePlayAgency:GetActivityAgencyByLevelId(levelId, noTips)
     local agency = self._Level2Agency[levelId]
     if not agency and not noTips then
@@ -1005,28 +639,18 @@ function XBigWorldGamePlayAgency:GetActivityAgencyByLevelId(levelId, noTips)
     return agency
 end
 
---endregion
-
---region X3C
-
-function XBigWorldGamePlayAgency:CmdRequestEnterInstLevel(data)
-    local worldId = data.WorldId or 0
-    local levelId = data.InstLevelId
-    local team = data.Team
-    local targetPos = data.TargetPos
-    local targetRot = data.TargetRot
-
-    if not team then
-        local currentTeam = XMVCA.XBigWorldCharacter:GetCurrentTeam()
-
-        team = currentTeam:ToServerTeam()
-    end
-
-    self:RequestEnterInstLevel(worldId, levelId, team, targetPos, targetRot)
+--- 获取大世界活动物品通过活动id
+---@param activityId number
+---@return table
+function XBigWorldGamePlayAgency:GetBigWorldActivityGoodsByActivityId(activityId)
+    return self._Model:GetBigWorldActivityGoodsByActivityId(activityId)
 end
 
-function XBigWorldGamePlayAgency:CmdRequestLeaveInstLevel(data)
-    self:RequestLeaveInstLevel(data.ResetSaveDataExit or false)
+--- 获取活动物品通过展示组id
+---@param groupId number
+---@return table
+function XBigWorldGamePlayAgency:GetBigWorldGoodsByGroupId(groupId)
+    return self._Model:GetBigWorldGoodsByGroupId(groupId)
 end
 
 --endregion
@@ -1043,6 +667,13 @@ function XBigWorldGamePlayAgency:NotifyExternalRequiredBigWorldPlayerData(data)
         worldIds = data.EnteredBigWorldIds
     end
     self._Model:UpdateEntranceWorldMark(worldIds)
+
+    if data.Gender then
+        XMVCA.XBigWorldCommanderDIY:SetCurrentGender(data.Gender)
+    end
+    if data.CommanderFashionBags then
+        XMVCA.XBigWorldCommanderDIY:UpdateUnlockParts(data.CommanderFashionBags)
+    end
 end
 
 function XBigWorldGamePlayAgency:NotifyNewEnteredBigWorldId(data)
@@ -1073,7 +704,7 @@ function XBigWorldGamePlayAgency:RequestRefreshBigWorldMainRedPoint()
     end)
 end
 
---- 检车空花入口蓝点, 由于未进入空花，所以没有对应的Module初始化，只能封装到不同接口里
+--- 检车空花入口蓝点, 由于未进入空花，所以没有对应的Module初始化，只能封装到对应世界里
 ---@return boolean
 function XBigWorldGamePlayAgency:CheckSkyGardenEntranceRedPoint()
     if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.SkyGarden, false, true) then
@@ -1096,21 +727,8 @@ end
 function XBigWorldGamePlayAgency:GetSkyGardenOpenGuideIdList()
     return self._Model:GetSkyGardenOpenGuideIdList()
 end
+
 --endregion
-
---- 获取大世界活动物品通过活动id
----@param activityId number
----@return table
-function XBigWorldGamePlayAgency:GetBigWorldActivityGoodsByActivityId(activityId)
-    return self._Model:GetBigWorldActivityGoodsByActivityId(activityId)
-end
-
---- 获取活动物品通过展示组id
----@param groupId number
----@return table
-function XBigWorldGamePlayAgency:GetBigWorldGoodsByGroupId(groupId)
-    return self._Model:GetBigWorldGoodsByGroupId(groupId)
-end
 
 --region Debug/黑幕进战斗
 
@@ -1126,9 +744,9 @@ function XBigWorldGamePlayAgency:GetDebugLevelId()
     return self._DebugLevelId
 end
 
-function XBigWorldGamePlayAgency:DebugEnterWorld()
+function XBigWorldGamePlayAgency:LaunchWorldDebug()
     self._IsInDebugGame = true
-    self:LaunchWorld()
+    self:_InitWorld()
 end
 
 function XBigWorldGamePlayAgency:EnterDebugGame(worldId, levelId)
@@ -1136,12 +754,12 @@ function XBigWorldGamePlayAgency:EnterDebugGame(worldId, levelId)
     self._DebugWorldId = worldId
     self._DebugLevelId = levelId
     self._CurrentModuleId = ModuleId.XBigWorld
-    self:RegisterMVCA()
-    self:LoadGuide()
+    self:_InitMVCA()
+    self:_LoadGuide()
 
-    self:InitX3C()
-    self:InitConfig()
-    self:LaunchWorld()
+    self:_InitX3C()
+    self:_InitConfig()
+    self:_InitWorld()
     self:GetCurrentAgency():BeforeEnterGame()
     XMVCA.XDlcWorld:OnEnterFight(self:GetCurrentWorldId())
     self:GetCurrentAgency():AfterEnterGame()
@@ -1158,7 +776,7 @@ function XBigWorldGamePlayAgency.DebugEnter(worldId, levelId)
 end
 
 function XBigWorldGamePlayAgency.DebugLaunchWorld()
-    XMVCA.XBigWorldGamePlay:DebugEnterWorld()
+    XMVCA.XBigWorldGamePlay:LaunchWorldDebug()
 end
 
 function XBigWorldGamePlayAgency.InDebugGame()

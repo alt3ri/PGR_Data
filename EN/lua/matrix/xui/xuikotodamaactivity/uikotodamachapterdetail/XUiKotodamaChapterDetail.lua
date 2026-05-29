@@ -15,7 +15,7 @@ function XUiKotodamaChapterDetail:OnAwake()
         self:Close()
     end
     self.BtnTongBlack.CallBack = function()
-        XLuaUiManager.Open('UiBattleRoleRoom', self._Control:GetCurStageId(), XMVCA.XKotodamaActivity:LoadTeamLocal(), require('XUi/XUiKotodamaActivity/XUiKotodamaActivityBattleRoomProxy'))
+        XMVCA.XFuben:OpenUiBattleRoleRoom(self._Control:GetCurStageId(), XMVCA.XKotodamaActivity:LoadTeamLocal(), require('XUi/XUiKotodamaActivity/XUiKotodamaActivityBattleRoomProxy'))
     end
     self.GridMonster.gameObject:SetActiveEx(false)
     self.MonsterGridList = {}

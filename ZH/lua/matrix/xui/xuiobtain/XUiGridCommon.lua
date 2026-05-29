@@ -434,7 +434,7 @@ function XUiGridCommon:Refresh(data, params, isBigIcon, hideSkipBtn, curCount)
 
     --DIY套装
     if self.PanelSuit then
-        local isSuit = XMVCA.XBigWorldCommanderDIY:GetPartIsSuit(self.TemplateId)
+        local isSuit = XMVCA.XBigWorldCommanderDIY:CheckTemplateIsSuit(self.TemplateId)
         self.PanelSuit.gameObject:SetActiveEx(isSuit)
     end
     self:RefreshLabel()

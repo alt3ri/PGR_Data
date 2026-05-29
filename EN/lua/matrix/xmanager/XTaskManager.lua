@@ -79,6 +79,11 @@ TaskType = {
     DevilMayCryDraw = 102, -- 鬼泣联动卡池
 }
 
+TaskTag = {
+    None = 0,
+    Weekly = 1
+}
+
 XTaskManagerCreator = function()
     local tableInsert = table.insert
     local tableSort = table.sort
@@ -157,11 +162,16 @@ XTaskManagerCreator = function()
     local TimeLimitTaskData = {}
     local ArenaOnlineWeeklyTaskData = {}
     local InfestorWeeklyTaskData = {}
-
     local StoryGroupTaskData = {}
     local DormStoryGroupTaskData = {}
     local DormDailyGroupTaskData = {}
     local FinishedTasks = {}
+
+    -- 周活跃度，实际对应5号Type，即WeeklyTwo系统中的周活跃度
+    ---- 该表的 Key 为 TaskActiveness.tab 中 Type = 5 列里每个 Activeness 列的数值
+    ---- 该表的 Value 为 true 或 nil
+    local WeeklyTaskActivenessProgress = {}
+
 
     -- 宿舍任务
     local DormNormalTaskData = {}
@@ -335,10 +345,14 @@ XTaskManagerCreator = function()
         XTaskManager.InitCourseData(data.Course)
 
         for _, value in pairs(taskdata) do
+            value.InitializedByServer = true
             TotalTaskData[value.Id] = value
-            
         end
-        
+
+        -- 注意，这里的周活跃度对应的是5号Type，即WeeklyTwo，而非之前的Weekly
+        XTaskManager.SetWeeklyTaskActivenessProgress(
+            data.WeeklyTaskActivenessProgress)
+
         XTaskManager.InitTaskSchedule(XTaskConfig.GetTaskTemplate())
         if XMVCA.XBigWorldGamePlay:IsBigWorldOpen() then
             XTaskManager.InitTaskSchedule(XMVCA.XBigWorldService:GetBigWorldTaskTemplates())
@@ -456,6 +470,36 @@ XTaskManagerCreator = function()
         XEventManager.DispatchEvent(XEventId.EVENT_TASK_SYNC)
         XEventManager.DispatchEvent(XEventId.EVENT_NOTICE_TASKINITFINISHED)--上面那个事件触发太频繁，这里只需要监听初始完成
         CsXGameEventManager.Instance:Notify(XEventId.EVENT_TASK_SYNC)
+    end
+
+    function XTaskManager:GetWeeklyActivenessRewardRequest(cb)
+        XNetwork.Call(
+            "GetWeeklyActivenessRewardRequest",
+            {},
+            function(resp)
+                if resp.Code ~= XCode.Success then
+                    XUiManager.TipCode(resp.Code)
+                    return
+                end
+
+                WeeklyTaskActivenessProgress = {}
+                for _, v in pairs(resp.WeeklyTaskActivenessProgress) do
+                    WeeklyTaskActivenessProgress[v] = true
+                end
+
+                XEventManager.DispatchEvent(XEventId.EVENT_TASK_SYNC)
+
+                if cb then cb(resp) end
+            end)
+    end
+
+    -- 返回 WeeklyTwo （Type = 5） 体系下的周任务对应Activeness的奖励是否已领取
+    function XTaskManager.WeeklyActivenessProgressRewardGot(activeness)
+        if WeeklyTaskActivenessProgress[activeness] then
+            return true
+        else
+            return false
+        end
     end
 
     function XTaskManager.InitCourseInfos()
@@ -1170,6 +1214,7 @@ XTaskManagerCreator = function()
         return GetTaskList(XTaskManager.GetTaskDataByTaskType(XTaskManager.TaskType.Daily))
     end
 
+    ---@deprecated
     function XTaskManager.GetWeeklyTaskList()
         local weeklyTasks = XTaskManager.GetTaskDataByTaskType(XTaskManager.TaskType.Weekly) or {}
         local arenaOnlineWeeklyTasks = XTaskManager.GetTaskDataByTaskType(XTaskManager.TaskType.ArenaOnlineWeekly) or {}
@@ -1194,6 +1239,22 @@ XTaskManagerCreator = function()
         end
 
         return GetTaskList(tasks)
+    end
+
+    -- 获取每日活跃度，适用于 Type = 5 (WeeklyTwo) 体系下的周活跃
+    function XTaskManager.GetWeeklyTaskActiveness()
+        local activeness = 0
+
+        for k, v in pairs(FinishedTasks) do
+            if v then
+                local task = XTaskConfig.GetTaskCfgById(k)
+                if task.Tag == TaskTag.Weekly then
+                    activeness = activeness + 1
+                end
+            end
+        end
+
+        return activeness
     end
 
     function XTaskManager.GetCanLiverTaskList(isSort)
@@ -2109,6 +2170,13 @@ XTaskManagerCreator = function()
         end
     end
 
+    function XTaskManager.IsTaskInitializedByServer(taskId)
+        local task = XTaskManager.GetTaskDataById(taskId)
+        if not task then return false end
+        if not task.InitializedByServer then return false end
+        return true
+    end
+
     function XTaskManager.SyncTasks(data)
         if data.TaskLimitIdActiveInfos then
             for _, v in pairs(data.TaskLimitIdActiveInfos) do
@@ -2118,8 +2186,10 @@ XTaskManagerCreator = function()
                 XEventManager.DispatchEvent(XEventId.EVENT_ACTIVITY_INFO_UPDATE)
             end
         end
+
         local tasks = data.Tasks
         XTool.LoopCollection(tasks.Tasks, function(value)
+            value.InitializedByServer = true
             FinishedTasks[value.Id] = value.State == XTaskManager.TaskState.Finish
             local taskType = XTaskConfig.GetTaskType(value.Id)
             if taskType then
@@ -3161,6 +3231,15 @@ XTaskManagerCreator = function()
         return false
     end
 
+    function XTaskManager.SetWeeklyTaskActivenessProgress(data)
+        WeeklyTaskActivenessProgress = {}
+        if data then
+            for _, v in pairs(data) do
+                WeeklyTaskActivenessProgress[v] = true
+            end
+        end
+    end
+
     XTaskManager.Init()
     return XTaskManager
 end
@@ -3175,4 +3254,12 @@ XRpc.NotifyTaskData = function(data)
     XDataCenter.TaskManager.InitTaskData(data.TaskData)
     XDataCenter.NewbieTaskManager.InitTaskData(data.TaskData)
     XDataCenter.ActivityManager.SetBackFlowEndTime(data.TaskData)
-end
+end
+
+XRpc.NotifyWeeklyTaskActivenessProgress = function(data)
+    XDataCenter.TaskManager.SetWeeklyTaskActivenessProgress(
+        data.WeeklyTaskActivenessProgress)
+
+    XEventManager.DispatchEvent(XEventId.EVENT_TASK_SYNC)
+    CsXGameEventManager.Instance:Notify(XEventId.EVENT_TASK_SYNC)
+end

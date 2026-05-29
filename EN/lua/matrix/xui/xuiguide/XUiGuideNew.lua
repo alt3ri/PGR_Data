@@ -3,6 +3,7 @@
 ---@field BtnPassStyleCtrl XUiComponent.XUiStateControl
 local XUiGuideNew = XLuaUiManager.Register(XLuaUi, "UiGuide")
 local XUiPanelGuideBubble = require('XUi/XUiGuide/XUiPanelGuideBubble')
+local XUiPanelGuideBubbleWithHead = require('XUi/XUiGuide/XUiPanelGuideBubbleWithHead')
 
 --V3.6 点击继续指引的 遮罩区域形式
 XUiGuideNew.XUIGuideMaskClickAreaType = {
@@ -13,11 +14,13 @@ XUiGuideNew.XUIGuideMaskClickAreaType = {
 local FocusStyle = {
     Base = 0, -- 默认样式框
     Bubble = 1, -- 气泡框
+    BubbleWithHead = 2, -- 带头像的气泡框
 }
 
 local FocusStyleEnum2StateName = {
     [FocusStyle.Base] = 'BaseStyle',
     [FocusStyle.Bubble] = 'BubbleStyle',
+    [FocusStyle.BubbleWithHead] = 'BubbleStyleBlack',
 }
 
 function XUiGuideNew:OnAwake()
@@ -70,7 +73,6 @@ function XUiGuideNew:OnStart(targetImg, isWeakGuide, guideDesc, icon, name, call
         
         self.UiWidget = self.BtnPass.gameObject:AddComponent(typeof(CS.XUiWidget))
         self.UiWidget:AddPointerDownListener(function(eventData)
-            --todo 针对UI资源未打包的兼容
             if self.SafeAreaContentPane then
                 self.SafeAreaContentPane.gameObject:SetActive(false)
             else
@@ -95,9 +97,7 @@ function XUiGuideNew:OnStart(targetImg, isWeakGuide, guideDesc, icon, name, call
         end)
         --V3.6 增加点击区域设置 
         self.UiWidget:AddPointerUpListener(function(eventData)
-            if(self.MaskClickAreaType == XUiGuideNew.XUIGuideMaskClickAreaType.ClickMaskArea) then
-                self:OnBtnPassClick()
-            end
+            self:OnBtnPassClick()
         end)
 
         local maskWidget = self.Transform:Find("FullScreenBackground/BtnPanelMaskGuide").gameObject:AddComponent(typeof(CS.XUiWidget))
@@ -129,6 +129,12 @@ function XUiGuideNew:OnStart(targetImg, isWeakGuide, guideDesc, icon, name, call
         ---@type XUiPanelGuideBubble
         self.PanelBubbleRoot.gameObject:SetActiveEx(false)
         self.PanelBubble = XUiPanelGuideBubble.New(self.PanelBubbleRoot, self)
+    end
+
+    --- 初始化带头像气泡框
+    if self.PanelBubbleRoot2 then
+        self.PanelBubbleRoot2.gameObject:SetActiveEx(false)
+        self.PanelBubble2 = XUiPanelGuideBubbleWithHead.New(self.PanelBubbleRoot2, self)
     end
 end
 
@@ -204,11 +210,13 @@ function XUiGuideNew:OnBtnCancelClick()
 end
 
 function XUiGuideNew:OnBtnPassClick()
-    self.Guide:Reset()
+    if self.Guide:IsRespondPassClick() then
+        self.Guide:Reset()
 
-    if self.Callback and not self.IsWeakGuide then
-        self.Callback()
-        self.Callback = nil
+        if self.Callback and not self.IsWeakGuide then
+            self.Callback()
+            self.Callback = nil
+        end
     end
 end
 
@@ -238,7 +246,7 @@ function XUiGuideNew:HideDialog()
 end
 
 --聚焦panel
-function XUiGuideNew:FocusOnPanel(panel, eulerAngles, passEvent, sizeDelta, offset, passAll, focusStyle, bubbleIndex, bubbleTextId, bubblePosOffset)
+function XUiGuideNew:FocusOnPanel(panel, eulerAngles, passEvent, sizeDelta, offset, passAll, focusStyle, bubbleIndex, bubbleTextId, bubblePosOffset, imgIconId)
     eulerAngles = eulerAngles or CS.UnityEngine.Vector3.zero
     sizeDelta = sizeDelta or CS.UnityEngine.Vector2.zero
     offset = offset or CS.UnityEngine.Vector2.zero
@@ -279,9 +287,34 @@ function XUiGuideNew:FocusOnPanel(panel, eulerAngles, passEvent, sizeDelta, offs
             self.PanelBubble:Open()
             self.PanelBubble:ShowBubble(bubbleIndex, textCfg, bubblePosOffset)
         end
+        if self.PanelBubble2 then
+            self.PanelBubble2:Close()
+        end
+    elseif focusStyle == FocusStyle.BubbleWithHead then
+        local textCfg = XDataCenter.GuideManager.GetGuideTextTemplate(bubbleTextId)
+
+        if not textCfg or string.IsNilOrEmpty(textCfg.Content) then
+            XLog.Error('无效文本，切换回默认样式')
+
+            if self.BtnPassStyleCtrl then
+                self.BtnPassStyleCtrl:ChangeState(FocusStyleEnum2StateName[FocusStyle.Base])
+            end
+            return
+        end
+
+        if self.PanelBubble then
+            self.PanelBubble:Close()
+        end
+        if self.PanelBubble2 then
+            self.PanelBubble2:Open()
+            self.PanelBubble2:ShowBubble(bubbleIndex, textCfg, bubblePosOffset, imgIconId)
+        end
     else
         if self.PanelBubble then
             self.PanelBubble:Close()
+        end
+        if self.PanelBubble2 then
+            self.PanelBubble2:Close()
         end
     end
 end
@@ -329,4 +362,16 @@ end
 function XUiGuideNew:ShowBtnMask(Enable)
     self.BtnMaskAll.gameObject:SetActive(Enable)
 end 
+
+function XUiGuideNew:ShowDragFromToPanel(fromTransform, fromOffset, toTransform, toOffset, passType)
+    self.Guide:SetPass(false)
+    self.Guide:SetDragFromTo(fromTransform, fromOffset, toTransform, toOffset, passType)
+    self.BtnPass.gameObject:SetActive(true)
+    CS.XGuideEventPass.IsPassEvent = true   
+end
+
+function XUiGuideNew:ResetDragPanel()
+    self.Guide:Reset()
+    self.Guide:ResetDragPanel()
+end
 

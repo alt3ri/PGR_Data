@@ -47,6 +47,6 @@ function XUiPivotCombatNormalDetail:InitCB()
         self.Stage:EnterBattleRoleRoom(region:GetRegionId())
     end
     self.BtnTeachStage.CallBack = function()
-        XLuaUiManager.Open("UiBattleRoleRoom", XPivotCombatConfigs.TeachStageId)
+        XMVCA.XFuben:OpenUiBattleRoleRoom(XPivotCombatConfigs.TeachStageId)
     end
 end 

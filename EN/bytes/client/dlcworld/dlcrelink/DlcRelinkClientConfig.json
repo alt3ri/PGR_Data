@@ -232,6 +232,26 @@
         "Params": "[\"Some teammates' gear is below the recommended level. Continue?\", 'Continue', 'Cancel']"
     },
     {
+        "Key": "EquipOneClickWearTipContent",
+        "Params": "['Better gear available for current character. Auto-equip?', 'Confirm', 'Cancel']"
+    },
+    {
+        "Key": "AutoSettingUnsavedTipContent",
+        "Params": "['You have unsaved changes. Exit anyway?', 'Confirm', 'Cancel']"
+    },
+    {
+        "Key": "EquipFactorOverflowWearTipContent",
+        "Params": "['The following affixes exceed your current Level Limit. Any affixes beyond the cap will not take effect. Equip anyway?\\\\n{0}', 'Equip', 'Cancel']"
+    },
+    {
+        "Key": "EquipFactorOverflowAbsorbTipContent",
+        "Params": "['The following affixes exceed your current Level Limit. Any affixes beyond the cap will not take effect. Equip anyway?\\\\n{0}', 'Enhance', 'Cancel']"
+    },
+    {
+        "Key": "EquipFactorOverflowDesc",
+        "Params": "['%s\uff08<color=#fa7d81>%s</color>/%s\uff09']"
+    },
+    {
         "Key": "LikeSuccessDesc",
         "Params": "['%s gives you a like']"
     },
@@ -405,7 +425,11 @@
     },
     {
         "Key": "TipsNotEffective",
-        "Params": "['Extra enhancement not applied (incompatible class gear type)']"
+        "Params": "['Extra enhancement not applied']"
+    },
+    {
+        "Key": "EquipSlotNotEffectiveDesc",
+        "Params": "['Current gear class type does not match. Bonus effect requirements not met.']"
     },
     {
         "Key": "WifiSwitchTips",
@@ -445,7 +469,7 @@
     },
     {
         "Key": "GlobalMatchRewardDesc",
-        "Params": "['Extra Gear Rewards (<color=#a1b9ff>%s</color><color=#a1b9ff>/%s</color>)', 'Extra Gear Rewards (<color=#fa7d81>%s</color><color=#a1b9ff>/%s</color>)']"
+        "Params": "['Extra Gear Rewards (<color=#a1b9ff>%s</color><color=#a1b9ff>/%s</color>)', 'Extra Gear Rewards (<color=#fa7d81>%s</color><color=#fa7d81>/%s</color>)']"
     },
     {
         "Key": "GlobalMatchDetailTipContent",
@@ -458,5 +482,65 @@
     {
         "Key": "ChooseBossBtnName",
         "Params": "['Stage not selected', 'Random Stage']"
+    },
+    {
+        "Key": "CustomRichTextDesc",
+        "Params": "['<b><u><color=#34aff8ff><link={0}>{1}</link></color></u></b>']"
+    },
+    {
+        "Key": "LongPressProgressBarPath",
+        "Params": "['Assets/Product/Ui/ComponentPrefab/UiDlcRelink/PanelTimer.prefab']"
+    },
+    {
+        "Key": "LongPressProgressBarShowTime",
+        "Params": "['0.3']"
+    },
+    {
+        "Key": "EquipCancelDiscardTips",
+        "Params": "['Gear discard canceled']"
+    },
+    {
+        "Key": "EquipUnlockAndDiscardTips",
+        "Params": "['Gear lock-on canceled and set for discard']"
+    },
+    {
+        "Key": "EquipSetDiscardTips",
+        "Params": "['Gear set for discard']"
+    },
+    {
+        "Key": "EquipOneClickWearNoChangeTip",
+        "Params": "['No Swap Needed']"
+    },
+    {
+        "Key": "AutoSettingTabName",
+        "Params": "['Auto Lock-On', 'Auto Discard']"
+    },
+    {
+        "Key": "AutoSettingTabImage",
+        "Params": "['Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkEquipLocked.png', 'Assets/Product/Texture/Atlas/UiDlcRelink/UiDlcRelinkExchangeWheelDelete.png']"
+    },
+    {
+        "Key": "AutoSettingEquipTypeName",
+        "Params": "['Main Control Gear', 'Normal Gear']"
+    },
+    {
+        "Key": "AutoSettingQualityTypeName",
+        "Params": "['Blue', '4\u2605', 'Gold', 'Red']"
+    },
+    {
+        "Key": "RoomUiLoadingType",
+        "Params": "['1071062']"
+    },
+    {
+        "Key": "AutoSettingDesc",
+        "Params": "['Once settings are saved, the obtained gear will be automatically locked.', 'Once settings are saved, the obtained gear will be automatically discarded.']"
+    },
+    {
+        "Key": "AutoSettingSavedTip",
+        "Params": "['Settings saved']"
+    },
+    {
+        "Key": "FactorLevelTypeIcon",
+        "Params": "['Assets/Product/Texture/Image/UiDlcRelink/UiDlcRelinkMainBtn02.png']"
     }
 ]

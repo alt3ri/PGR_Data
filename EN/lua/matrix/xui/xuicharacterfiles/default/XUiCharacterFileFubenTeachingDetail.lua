@@ -1,5 +1,5 @@
-local XUiGridStageStar = require("XUi/XUiFubenMainLineDetail/XUiGridStageStar")
-local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local XUiGridStageStar = require("XUi/XUiFubenMainLineDetail/XUiGridStageStar")
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XUiCharacterFileFubenTeachingDetail = XLuaUiManager.Register(XLuaUi, "UiCharacterFileFubenTeachingDetail")
 local DescCount = 3
 
@@ -83,7 +83,7 @@ function XUiCharacterFileFubenTeachingDetail:OnBtnEnterClick()
         end
         self.RootUi:CloseStageDetails()
         --self:Close() 
-        XLuaUiManager.Open("UiBattleRoleRoom", self.StageCfg.StageId
+        XMVCA.XFuben:OpenUiBattleRoleRoom(self.StageCfg.StageId
         , XDataCenter.TeamManager.GetXTeamByStageId(self.StageCfg.StageId)
         , require("XUi/XUiNewChar/XUiTutoriaBattleRoleRoom"))
     end

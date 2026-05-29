@@ -1,4 +1,4 @@
-local XUiGridStageStar = require("XUi/XUiFubenMainLineDetail/XUiGridStageStar")
+local XUiGridStageStar = require("XUi/XUiFubenMainLineDetail/XUiGridStageStar")
 local XUiFunbenKoroTutoriaChallengeDetail = XLuaUiManager.Register(XLuaUi, "UiFunbenKoroTutoriaChallengeDetail")
 local XUiGridStageBuffIcon = require("XUi/XUiFubenSimulatedCombat/ChildItem/XUiGridStageBuffIcon")
 local DescCount = 3
@@ -107,7 +107,7 @@ function XUiFunbenKoroTutoriaChallengeDetail:OnBtnEnterClick()
         end
         self.RootUi:CloseStageDetails()
         --self:Close()
-        XLuaUiManager.Open("UiBattleRoleRoom", self.StageCfg.StageId
+        XMVCA.XFuben:OpenUiBattleRoleRoom(self.StageCfg.StageId
             , XDataCenter.FubenNewCharActivityManager.LoadTeamLocal(self.Id)
             , require("XUi/XUiNewChar/XUiTutoriaBattleRoleRoom"))
     end

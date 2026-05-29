@@ -20,6 +20,9 @@ function XUiDlcRelinkEquipReform:OnAwake()
     self.Spacing.gameObject:SetActiveEx(false)
     self.BtnTab.gameObject:SetActiveEx(false)
     self.MaskDelete.gameObject:SetActiveEx(false)
+    if self.AttributeDetail then
+        self.AttributeDetail.gameObject:SetActiveEx(false)
+    end
     self:RegisterUiEvents()
 
     ---@type XUiComponent.XUiButton[]
@@ -336,12 +339,14 @@ function XUiDlcRelinkEquipReform:RefreshAttributes()
         for i = 1, #mainAttrs do
             if not self.MainAttributes[i] then
                 local grid = XUiHelper.Instantiate(self.GridAttribute, self.PanelGroup)
-                self.MainAttributes[i] = XUiGridDlcRelinkEquipAttribute.New(grid, self)
+                local detailGo = self.AttributeDetail and XUiHelper.Instantiate(self.AttributeDetail, self.PanelGroup) or nil
+                self.MainAttributes[i] = XUiGridDlcRelinkEquipAttribute.New(grid, self, detailGo)
             end
             self.MainAttributes[i]:Open()
             self.MainAttributes[i]:Refresh(mainAttrs[i])
+            self.MainAttributes[i]:RefreshDetailShow(true, mainAttrs[i])
+            self.MainAttributes[i]:MoveToParentLatest()
             self.MainAttributes[i]:SetBg(bgIndex % 2 ~= 0)
-            self.MainAttributes[i].Transform:SetAsLastSibling()
             bgIndex = bgIndex + 1
         end
 
@@ -357,18 +362,27 @@ function XUiDlcRelinkEquipReform:RefreshAttributes()
             local attrCount = #slot.Attributes
 
             grid:GetObject("GridAttribute1").gameObject:SetActiveEx(attrCount >= 1)
+            local panelDetail1 = grid:GetObject("PanelDetail1", false)
+            if panelDetail1 then
+                panelDetail1.gameObject:SetActiveEx(attrCount >= 1)
+            end
             local hasSecond = attrCount >= 2
             grid:GetObject("Line").gameObject:SetActiveEx(hasSecond)
             grid:GetObject("GridAttribute2").gameObject:SetActiveEx(hasSecond)
+            local panelDetail2 = grid:GetObject("PanelDetail2", false)
+            if panelDetail2 then
+                panelDetail2.gameObject:SetActiveEx(hasSecond)
+            end
 
             self.DeputyAttributeNodes[index] = self.DeputyAttributeNodes[index] or {}
             for i = 1, math.min(attrCount, 2) do
                 if not self.DeputyAttributeNodes[index][i] then
-                    self.DeputyAttributeNodes[index][i] = XUiGridDlcRelinkEquipAttribute.New(grid:GetObject("GridAttribute" .. i), self)
+                    self.DeputyAttributeNodes[index][i] = XUiGridDlcRelinkEquipAttribute.New(grid:GetObject("GridAttribute" .. i), self, grid:GetObject("PanelDetail" .. i, false))
                 end
                 local node = self.DeputyAttributeNodes[index][i]
                 node:Open()
                 node:Refresh(slot.Attributes[i])
+                node:RefreshDetailShow(true, slot.Attributes[i], true)
                 node:SetBg(bgIndex % 2 ~= 0)
                 bgIndex = bgIndex + 1
             end
@@ -538,6 +552,8 @@ function XUiDlcRelinkEquipReform:CheckFilterCache()
 
     if XTool.IsNumberValid(self.EquipFilterCache.ReformedType)
         or XTool.IsNumberValid(self.EquipFilterCache.EquipType)
+        or XTool.IsNumberValid(self.EquipFilterCache.EquipQuality)
+        or XTool.IsNumberValid(self.EquipFilterCache.EquipDiscard)
         or not XTool.IsTableEmpty(self.EquipFilterCache.FactorIds) then
         return true
     end
@@ -662,15 +678,54 @@ function XUiDlcRelinkEquipReform:OnBtnAbsorbClick()
         return
     end
 
-    self._Control:RequestEquipAbsorb(self.CurReformSlotEquipUid, self.CurAbsorbSlotEquipUid, function()
-        self:UnloadAbsorbSlot()
-        self:RefreshEquipReform()
-        self:RefreshEquipDetail()
-        self.EquipFilterCache = {}
-        self:SetupDynamicTable()
-        self:RefreshFilterBtn()
-        XLuaUiManager.SafeClose("UiDlcRelinkPopupFilter")
+    self:CheckAndConfirmAbsorbFactorOverflow(function()
+        self._Control:RequestEquipAbsorb(self.CurReformSlotEquipUid, self.CurAbsorbSlotEquipUid, function()
+            self:UnloadAbsorbSlot()
+            self:RefreshEquipReform()
+            self:RefreshEquipDetail()
+            self.EquipFilterCache = {}
+            self:SetupDynamicTable()
+            self:RefreshFilterBtn()
+            XLuaUiManager.SafeClose("UiDlcRelinkPopupFilter")
+        end)
     end)
+end
+
+--- 检查吸收装备词条等级溢出并弹二次确认
+--- 遍历待吸收装备上的所有词条进行判断，不按吸收结果来判断
+---@param callback function 确认或无溢出时的回调
+function XUiDlcRelinkEquipReform:CheckAndConfirmAbsorbFactorOverflow(callback)
+    local wearCharacterId = self._Control:GetEquipWearCharacterId(self.CurReformSlotEquipUid)
+    if not XTool.IsNumberValid(wearCharacterId) then
+        -- 改造装备未被任何角色穿戴，无需检查溢出
+        if callback then
+            callback()
+        end
+        return
+    end
+
+    local overflowList = self._Control:CheckAbsorbFactorLevelOverflow(wearCharacterId, self.CurAbsorbSlotEquipUid)
+    if not XTool.IsTableEmpty(overflowList) then
+        local title = self._Control:GetClientConfig("TipTitle")
+        local data = self._Control:GetClientConfigParams("EquipFactorOverflowAbsorbTipContent")
+        local content = data[1] or ""
+        local extraData = { ConfirmText = data[2] or "", CancelText = data[3] or "", TipsKey = "EquipFactorOverflowAbsorbTip" }
+
+        local descriptions = {}
+        local factorOverflowDesc = self._Control:GetClientConfig("EquipFactorOverflowDesc")
+        for _, info in ipairs(overflowList) do
+            table.insert(descriptions, string.format(factorOverflowDesc, info.Name, info.CurLevel, info.MaxLevel))
+        end
+
+        local factorStr = table.concat(descriptions, "\n")
+        content = XUiHelper.ConvertLineBreakSymbol(content)
+        content = XUiHelper.FormatText(content, factorStr)
+        self._Control:OpenCommonTipDialog(title, content, nil, callback, extraData)
+        return
+    end
+    if callback then
+        callback()
+    end
 end
 
 function XUiDlcRelinkEquipReform:OnBtnCloseClick()

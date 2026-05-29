@@ -1,5 +1,5 @@
-local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
-local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XUiPracticeBossDetail = XLuaUiManager.Register(XLuaUi, "UiPracticeBossDetail")
 local CSTextManager = CS.XTextManager.GetText
 local Select_Tag_Type = -- 选择tag类型
@@ -188,7 +188,7 @@ function XUiPracticeBossDetail:OnBtnEnterClick()
         xTeam:UpdateSaveCallback(function(inTeam)
             XDataCenter.PracticeManager.SaveBossTeamLocal(inTeam:SwithToOldTeamData())
         end)
-        XLuaUiManager.Open("UiBattleRoleRoom", self.StageId, xTeam, {
+        XMVCA.XFuben:OpenUiBattleRoleRoom(self.StageId, xTeam, {
             -- 处理自己进入战斗的逻辑
             EnterFight = function(proxy, team, stageId, challengeCount, isAssist)
                 local teamData = team:SwithToOldTeamData()

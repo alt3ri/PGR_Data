@@ -1,35 +1,36 @@
-local XTheatre6SkillBase = require("Gameplay/Theatre6/XTheatre6SkillBase")
----@class XBuffScript1025413 : XTheatre6SkillBase
-local XBuffScript1025413 = XDlcScriptManager.RegBuffScript(1025413, "XBuffScript1025413", XTheatre6SkillBase)
+local XTheatre6BuffBase = require("Gameplay/Theatre6/XTheatre6BuffBase")
+---@class XBuffScript1025413 : XTheatre6BuffBase
+local XBuffScript1025413 = XDlcScriptManager.RegBuffScript(1025413, "XBuffScript1025413", XTheatre6BuffBase)
 
---效果说明：【狂暴】状态下使用主动技能时，额外获得3点【体力值】。
+--效果说明：获得【怒火】时，使自身【攻击】属性在本场战斗中提升2点。
 
 function XBuffScript1025413:Init()
     --初始化
-    Base.Init(self)
+    XTheatre6BuffBase.Init(self)
     ------------配置------------
-    --self.magicId = 1015335
-    --self.magicKind = 1015335
-    --self.attrib = ENpcAttrib.HealAmpP
-    self.signalId = 1025107
-    --公用的怒火id
-    self.originAttrib1 = 0
+    self.signalId = 1025107        --公用的怒火id
+    self.trigger = false           --重复触发开关，每个技能仅能触发1次
+    self.value = 2
     ------------执行------------
 end
 
-function XBuffScript1025413:Update(dt)
-    --每帧执行
+function XBuffScript1025413:OnLuaSkillStart(eventArgs)
+    ------------执行------------
+    if eventArgs._launcherUUID ~= self._npcUUID then return end
+    --防重复检测
+    self.trigger = false
+end
+
+function XBuffScript1025413:InitEventCallBackRegister()
+    self._proxy:RegisterEvent(EWorldEvent.NpcAddBuff) -- OnNpcAddBuffEvent
 end
 
 function XBuffScript1025413:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
-    if self._uuid == npcUUID and self.signalId == buffId then
-        self._proxy:ApplyMagic(self._uuid, self._uuid, 1025903,1,0,3)
+    if self.trigger then return end
+    if self._npcUUID == npcUUID and self.signalId == buffId then
+        self:AddAttrib(ENpcAttrib.Attack, self.value, self._npcUUID, self._npcUUID)
+        self.trigger = true
     end
-
 end
 
 return XBuffScript1025413
-
---25行命名不对
---25行逻辑不对, 应该从主动技能启动的事件中触发
---主动技能启动的事件来自于肉鸽6的buff基类, 需要先继承肉鸽6的buff基类

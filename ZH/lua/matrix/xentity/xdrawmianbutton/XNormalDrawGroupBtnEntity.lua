@@ -21,11 +21,12 @@ function XNormalDrawGroupBtnEntity:UpdateData(data)
     self.BottomTimes = data.BottomTimes;
     self.MaxBottomTimes = data.MaxBottomTimes;
     self.SwitchDrawIdCount = data.SwitchDrawIdCount
-    self.MaxSwitchDrawIdCount = data.MaxSwitchDrawIdCount
-    self.Order = data.Order
-    self.OptionKey = data.OptionKey or ""
-
-    self.UseItemIdList = {}
+    self.MaxSwitchDrawIdCount = data.MaxSwitchDrawIdCount
+    self.Order = data.Order
+    self.OptionKey = data.OptionKey or ""
+    self.ConditionId = data.ConditionId or 0
+
+    self.UseItemIdList = {}
     table.insert(self.UseItemIdList, XDataCenter.ItemManager.ItemId.FreeGem)
     table.insert(self.UseItemIdList, data.UseItemId)
 end

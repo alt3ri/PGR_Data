@@ -9,11 +9,12 @@ local BuyState = {
 local TotalCountLimit -- 2
 local CountLimit -- 30
 
-function XUiPurchaseYK:Ctor(ui, uiRoot, notEnoughCb)
+function XUiPurchaseYK:Ctor(ui, uiRoot, notEnoughCb, customParam)
     self.GameObject = ui.gameObject
     self.Transform = ui.transform
     self.UiRoot = uiRoot
     self.NotEnoughCb = notEnoughCb
+    self.CustomParam = customParam
     TotalCountLimit = CS.XGame.ClientConfig:GetInt("PurchaseYKTotalCount") or 1
     CountLimit = CS.XGame.ClientConfig:GetInt("PurchaseYKLimtCount") or 30
     XTool.InitUiObject(self)

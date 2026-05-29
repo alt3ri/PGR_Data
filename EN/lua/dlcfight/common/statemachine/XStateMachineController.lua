@@ -4,6 +4,7 @@
 ---@field _nextStateEnum number 下个状态枚举
 ---@field _transitionDict table<number, table<number, XStateMachineTransition>> 状态转移方程 key1=fromState, key2=toState value = transition
 ---@field _stateDict table<number, XMachineBaseState> 状态字典 key = stateEnum, value = state
+---@field _dataBoard table<number, number> 数据版 key = 键值, value = 数据（可以是bool、number、table等）
 ---@field _proxy XDlcCSharpFuncs
 local XStateMachineController = XClass(nil, "XStateMachineController")
 
@@ -18,6 +19,7 @@ function XStateMachineController:Init()
     self._nextStateEnum = 0
     self._transitionDict = {}
     self._stateDict = {}
+    self._dataBoard = {}
 end
 
 function XStateMachineController:Update(dt)
@@ -46,6 +48,7 @@ end
 function XStateMachineController:Terminate()
     self:TerminateTransition()
     self:TerminateState()
+    self:TerminateDataBoard()
     self._proxy = nil
 end
 
@@ -54,7 +57,7 @@ end
 ---@param stateEnum number
 ---@param state XMachineBaseState
 function XStateMachineController:AddState(stateEnum, state, ...)
-    state:Init(self._proxy, ...)
+    state:Init(self._proxy, self, ...)
     self._stateDict[stateEnum] = state
 end
 
@@ -121,6 +124,23 @@ function XStateMachineController:GetState(stateEnum)
     XLog.Error("[脚本: "..self._proxy.Id.."]XStateMachineController.GetState()Error 未注册状态: "..stateEnum)
 end
 
+function XStateMachineController:SetDataBoard(key, value)
+    self._dataBoard[key] = value
+end
+
+function XStateMachineController:GetDataBoard(key)
+    return self._dataBoard[key]
+end
+
+---判断数据黑板值
+---@return boolean
+function XStateMachineController:CheckDataBoard(key, value)
+    if not self._dataBoard[key] then
+        return false
+    end
+    return self._dataBoard[key] == value
+end
+
 ---@protected
 function XStateMachineController:BeforeSwitchState()
 
@@ -133,7 +153,7 @@ end
 --endregion
 
 
---region State
+--region State - 状态逻辑
 ---根据当前状态初始化
 ---@protected
 function XStateMachineController:InitStateController(curStateEnum)
@@ -170,7 +190,7 @@ end
 --endregion
 
 
---region Transition
+--region Transition - 状态转移方程
 ---清理状态切换方程
 ---@private
 function XStateMachineController:TerminateTransition()
@@ -180,6 +200,14 @@ function XStateMachineController:TerminateTransition()
         end
     end
     self._transitionDict = nil
+end
+--endregion
+
+
+--region DataBoard - 数据黑板
+---@private
+function XStateMachineController:TerminateDataBoard()
+    self._dataBoard = nil
 end
 --endregion
 

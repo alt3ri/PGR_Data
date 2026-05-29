@@ -17,6 +17,9 @@ function XBWMapPinData:Ctor()
     self.Radius = 0
     self.DisplayType = XMVCA.XBigWorldMap.MapPinDisplayType.Point
     self.IsOptionalQuestObjective = false
+    self.IsInteract = true
+    self.IsAiMemoryClear = false
+    self.QuestState = -1
     self._IsOut = false
 end
 
@@ -43,6 +46,7 @@ function XBWMapPinData:UpdateData(worldId, levelId, config, textConfig)
     self.ConditionId = config.ConditionId or 0
     self.AiMemoryGroupId = config.AiMemoryGroupId or 0
     self.ControlledByMapSwitch = config.ControlledByMapSwitch or 0
+    self.IsInteract = config.CanInteract or 0
 
     self:UpdateOther()
 end
@@ -68,6 +72,16 @@ function XBWMapPinData:UpdateWorldPosition(position)
     self.WorldPosition.x = position.x
     self.WorldPosition.y = position.y
     self.WorldPosition.z = position.z
+end
+
+function XBWMapPinData:UpdateAreaGroup(groupId)
+    self.MapAreaGroupId = groupId
+end
+
+function XBWMapPinData:UpdateAiMemoryClear(isClear)
+    if self:IsAiMemoryGroup() then
+        self.IsAiMemoryClear = isClear or false
+    end
 end
 
 function XBWMapPinData:IsActive()
@@ -96,6 +110,10 @@ end
 
 function XBWMapPinData:IsQuest()
     return XTool.IsNumberValid(self.QuestId)
+end
+
+function XBWMapPinData:IsReadyQuest()
+    return self:IsQuest() and self.QuestState == XMVCA.XBigWorldQuest.QuestState.Ready
 end
 
 function XBWMapPinData:IsVirtual()
@@ -138,6 +156,18 @@ function XBWMapPinData:IsDisplaying()
     if XTool.IsNumberValid(self.ConditionId) then
         if not XMVCA.XBigWorldService:CheckCondition(self.ConditionId) then
             return false
+        end
+    end
+
+    if self:IsAiMemoryGroup() then
+        if self.IsAiMemoryClear then
+            return false
+        end
+
+        if self:IsNpc() then
+            return XMVCA.XBigWorldQuest:CheckEnvironmentPlaceIdOnDuty(self.LevelId, self.NpcPlaceId)
+        elseif self:IsSceneObject() then
+            return XMVCA.XBigWorldQuest:CheckEnvironmentPlaceIdOnDuty(self.LevelId, self.SceneObjectPlaceId)
         end
     end
 

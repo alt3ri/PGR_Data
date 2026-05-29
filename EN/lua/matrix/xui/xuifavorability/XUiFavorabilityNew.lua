@@ -34,7 +34,7 @@ function XUiFavorabilityNew:OnAwake()
     local curSceneUrl, _ = XSceneModelConfigs.GetSceneAndModelPathById(curSceneTemplate.SceneModelId)
     local modelUrl = self:GetDefaultUiModelUrl()
     ---@type XUiPanelSwitchableSceneAnim
-    self.SwitchableScene = require("XUi/XUiSwitchableScene/Panel/XUiPanelSwitchableSceneAnim").New()
+    self.SwitchableScene = require("XUi/XUiSwitchableScene/XUiPanelSwitchableSceneAnim").New()
     self:LoadUiScene(curSceneUrl, modelUrl, function() self:OnUiSceneLoaded() end, false)
     self.ThemeCtrl=XUiMainPanelBase.New(self.PanelTheme,self)
     self.ThemeCtrl:InitTheme(self.PanelTheme.transform)
@@ -121,6 +121,13 @@ function XUiFavorabilityNew:InitUiAfterAuto()
     self.FavorabilityMain:Close()
     ---@type XUiPanelCharacterCG
     self.FavorabilityCG = require("XUi/XUiCharacterCG/XUiPanelCharacterCG").New(self.PanelVideo, self)
+    self.FavorabilityCG.VideoPlayer.DestroyOnStopWithoutLanguagePreparing = true
+
+    self._CGFinishCallBack = function()
+        self.SwitchableScene:OnVideoEnd()
+    end
+
+    self.FavorabilityCG:AddVideoDestroyCallBack(self._CGFinishCallBack)
 
     self.BtnMask.CallBack = function() self:OnBtnMaskClick() end
     self.BtnSwitch.CallBack = function() self:OnBtnSwitchClick() end
@@ -273,6 +280,7 @@ function XUiFavorabilityNew:OnNotify(evt, ...)
     elseif evt == XEventId.EVENT_FAVORABILITY_ON_GIFT_CHANGED then
         self.FavorabilityMain:UpdatePreviewExp(args)
     elseif evt == CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYING then
+        self.SwitchableScene:OnVideoStart()
         self.FavorabilityCG:OnCGPlay()
     elseif evt == CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYEND then
         self.FavorabilityCG:OnCGStop()

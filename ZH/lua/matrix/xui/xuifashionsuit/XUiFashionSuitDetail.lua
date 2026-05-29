@@ -113,7 +113,7 @@ function XUiFashionSuitDetail:InitView()
     self.ImgLine2.color = color
     self.ImgWord1.color = color
     self.ImgWord2.color = color
-    self._ButtonGroup:SetButtonBg(uiConfig.BtnBuyBg, uiConfig.BtnGetBg, uiConfig.BtnWearBg)
+    self._ButtonGroup:SetButtonBg(uiConfig.BtnBuyBg, uiConfig.BtnGetBg, uiConfig.BtnWearBg,uiConfig.BtnWearBg)
     if uiConfig.SliderMax and uiConfig.SliderMax > 0 then
         self.SliderCharacterHight.maxValue = uiConfig.SliderMax
     end

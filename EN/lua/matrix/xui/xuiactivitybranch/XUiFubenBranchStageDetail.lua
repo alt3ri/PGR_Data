@@ -1,5 +1,5 @@
-local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
-local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XUiFubenBranchStageDetail = XLuaUiManager.Register(XLuaUi, "UiFubenBranchStageDetail")
 
 function XUiFubenBranchStageDetail:OnAwake()
@@ -144,7 +144,7 @@ function XUiFubenBranchStageDetail:OnBtnEnterClick()
     local stage = self.Stage
     if XDataCenter.FubenManager.CheckPreFight(stage) then
         self.Parent:CloseStageDetail()
-        XLuaUiManager.Open("UiBattleRoleRoom", stage.StageId)
+        XMVCA.XFuben:OpenUiBattleRoleRoom(stage.StageId)
     end
 end
 

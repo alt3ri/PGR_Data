@@ -1,10 +1,8 @@
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XDrawPerformanceBinder = require("XUi/XUiDraw/XDrawPerformanceBinder")
 
--- 进入表演的临时延迟（毫秒），后续替换为进入表演动画后可移除
-local ENTER_PERFORMANCE_DELAY = 2000
-
 ---@class XUiNewDrawMainV4P5Performance : XLuaUi
+---@field VideoPlayer XVideoPlayerUGUI
 local XUiNewDrawMainV4P5Performance = XLuaUiManager.Register(XLuaUi, "UiNewDrawMainV4P5Performance")
 
 function XUiNewDrawMainV4P5Performance:OnAwake()
@@ -25,6 +23,8 @@ function XUiNewDrawMainV4P5Performance:OnStart(rewardInfo, closeCb)
     self.PanelPerformance.gameObject:SetActiveEx(false)
     self.RImgIcon.gameObject:SetActiveEx(false)
     self.GridGeneralSkills = {}
+    self.EnterPerformanceVideoId = tonumber(XDrawConfigs.GetDrawClientConfig("EnterPerformanceVideoId"))
+    self:InitHideSceneCharacterIds()
     self:Refresh(rewardInfo)
 end
 
@@ -40,10 +40,53 @@ function XUiNewDrawMainV4P5Performance:InitScene()
     self.CameraRoot = self.PerformanceRoot:Find("CameraRoot")
     self.EffectRoot = self.PerformanceRoot:Find("EffectRoot")
     self.PerformancePlayable = self.PerformanceRoot:Find("PerformancePlayable")
+    self.AnimEventSender = self.PerformancePlayable:GetComponent(typeof(CS.XTimeLine.XTimeLineAnimEventSender))
     self.Loader = self.PerformanceRoot:GetLoader()
 
     self.UiModel.UiFarCamera.gameObject:SetActiveEx(false)
     self.UiModel.UiNearCamera.gameObject:SetActiveEx(false)
+
+    self.TerrainRendering = nil
+    self.SceneHidden = false
+    if self.UiSceneInfo and self.UiSceneInfo.Transform then
+        self.TerrainRendering = CS.XRLTerrainRendering(self.UiSceneInfo.Transform, true)
+    end
+end
+
+-- 读取需要隐藏场景的角色 ID 列表
+function XUiNewDrawMainV4P5Performance:InitHideSceneCharacterIds()
+    self.HideSceneCharacterIds = {}
+    local hideIds = XDrawConfigs.GetDrawClientConfigs("HideScenePerformanceRoleIds")
+    if not XTool.IsTableEmpty(hideIds) then
+        for _, v in pairs(hideIds) do
+            local id = tonumber(v)
+            if id then
+                self.HideSceneCharacterIds[id] = true
+            end
+        end
+    end
+
+    self.DelayHideSceneCharacterIds = {}
+    local delayIds = XDrawConfigs.GetDrawClientConfigs("DelayHideScenePerformanceRoleIds")
+    if not XTool.IsTableEmpty(delayIds) then
+        for _, v in pairs(delayIds) do
+            local parts = string.Split(v, "|")
+            local id = tonumber(parts[1])
+            local delay = tonumber(parts[2])
+            if id and delay and delay > 0 then
+                self.DelayHideSceneCharacterIds[id] = delay
+            end
+        end
+    end
+end
+
+-- 隐藏 / 恢复 UI 场景渲染。
+function XUiNewDrawMainV4P5Performance:HideScene(hide)
+    if not self.TerrainRendering then
+        return
+    end
+    self.TerrainRendering:HideRendering(hide)
+    self.SceneHidden = hide and true or false
 end
 
 function XUiNewDrawMainV4P5Performance:Refresh(rewardInfo)
@@ -63,8 +106,8 @@ function XUiNewDrawMainV4P5Performance:Refresh(rewardInfo)
     end
     self:RefreshInfo()
     self:LoadAsset()
-
     self:PlayEnterPerformance(function()
+        self.PanelPerformance.gameObject:SetActiveEx(false)
         self:PlayCharacterPerformance()
     end)
 end
@@ -90,7 +133,7 @@ function XUiNewDrawMainV4P5Performance:RefreshInfo()
         end
         grid.gameObject:SetActiveEx(true)
         local generalSkillConfig = XMVCA.XCharacter:GetModelCharacterGeneralSkill()[id]
-        grid:SetRawImageEx(generalSkillConfig.Icon)
+        grid:SetRawImageEx(generalSkillConfig.IconTranspose)
     end
 
     for index = #generalSkillIds + 1, #self.GridGeneralSkills do
@@ -120,7 +163,6 @@ function XUiNewDrawMainV4P5Performance:RefreshInfo()
 end
 
 function XUiNewDrawMainV4P5Performance:LoadAsset()
-    self:CleanupPerformance()
     ---@type XDrawPerformanceBinder
     self.Binder = XDrawPerformanceBinder.New(self)
     self.Binder:Bind()
@@ -131,14 +173,16 @@ function XUiNewDrawMainV4P5Performance:PlayEnterPerformance(callback)
     self.PanelInfo.gameObject:SetActiveEx(false)
     self.PanelPerformance.gameObject:SetActiveEx(true)
     self.BtnSkip.gameObject:SetActiveEx(true)
-    -- 临时延后，后续替换为进入表演动画
-    self.EnterTimerId = XScheduleManager.ScheduleOnce(function()
-        self.EnterTimerId = nil
-        self.PanelPerformance.gameObject:SetActiveEx(false)
+    if XTool.IsNumberValid(self.EnterPerformanceVideoId) then
+        self.VideoPlayer.ActionEnded = callback
+        self.VideoPlayer.ActionError = callback
+        self.VideoPlayer:SetInfoByVideoId(self.EnterPerformanceVideoId)
+        self.VideoPlayer:Prepare()
+    else
         if callback then
             callback()
         end
-    end, ENTER_PERFORMANCE_DELAY)
+    end
 end
 
 function XUiNewDrawMainV4P5Performance:PlayCharacterPerformance()
@@ -146,27 +190,59 @@ function XUiNewDrawMainV4P5Performance:PlayCharacterPerformance()
         self:ShowCharacterInfo()
         return
     end
+    -- 命中配置的角色，演出期间隐藏 UI 场景渲染
+    if self.HideSceneCharacterIds[self.CharacterId] then
+        self:HideScene(true)
+    end
     -- 播放表演
-    self.PlayTimerId = self.Binder:Play(function()
-        self.PlayTimerId = nil
-        -- Timeline 结束后兜底显示角色信息（防止 UIShowTime > Timeline 时长导致空白等待）
-        self:ShowCharacterInfo()
-    end)
+    self.Binder:Play()
     -- 播放音频
     local voiceId = self.RolePerformanceConfig.VoiceId or 0
     if voiceId > 0 then
         self.VoiceInfo = XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.Voice, voiceId)
     end
-    -- 根据 UiShowTime 延迟显示角色信息
+    -- 根据 UiShowTime 延迟显示角色信息；与 Timeline 时长取最小值，避免 UiShowTime > Timeline 时长导致空白等待
     local showTime = self.RolePerformanceConfig.UiShowTime or 0
+    local duration = self.Binder:GetDuration()
+    if duration > 0 and showTime > duration then
+        showTime = duration
+    end
     if showTime > 0 then
-        local delay = math.ceil(showTime * XScheduleManager.SECOND)
+        local delay = math.floor(showTime * XScheduleManager.SECOND)
         self.ShowInfoTimerId = XScheduleManager.ScheduleOnce(function()
+            if XTool.UObjIsNil(self.GameObject) then
+                return
+            end
             self.ShowInfoTimerId = nil
             self:ShowCharacterInfo()
         end, delay)
     else
         self:ShowCharacterInfo()
+    end
+
+    -- Timeline 跑完后（Hold 定格瞬间）把仍显示的特效也定格。
+    if duration > 0 then
+        local pauseDelay = math.floor(duration * XScheduleManager.SECOND)
+        self.PauseEffectsTimerId = XScheduleManager.ScheduleOnce(function()
+            if XTool.UObjIsNil(self.GameObject) then
+                return
+            end
+            self.PauseEffectsTimerId = nil
+            if self.Binder then
+                self.Binder:PauseActiveEffects()
+            end
+        end, pauseDelay)
+
+        local hideDelay = self.DelayHideSceneCharacterIds[self.CharacterId]
+        if hideDelay and hideDelay < pauseDelay then
+            self.DelayHideSceneTimerId = XScheduleManager.ScheduleOnce(function()
+                if XTool.UObjIsNil(self.GameObject) then
+                    return
+                end
+                self.DelayHideSceneTimerId = nil
+                self:HideScene(true)
+            end, hideDelay)
+        end
     end
 end
 
@@ -180,45 +256,41 @@ function XUiNewDrawMainV4P5Performance:ShowCharacterInfo()
     self.PanelInfo.gameObject:SetActiveEx(true)
 end
 
---- 取消所有进行中的定时器
-function XUiNewDrawMainV4P5Performance:CancelTimers()
-    if self.EnterTimerId then
-        XScheduleManager.UnSchedule(self.EnterTimerId)
-        self.EnterTimerId = nil
-    end
-    if self.PlayTimerId then
-        XScheduleManager.UnSchedule(self.PlayTimerId)
-        self.PlayTimerId = nil
+function XUiNewDrawMainV4P5Performance:CleanupPerformance()
+    if self.SceneHidden then
+        self:HideScene(false)
     end
     if self.ShowInfoTimerId then
         XScheduleManager.UnSchedule(self.ShowInfoTimerId)
         self.ShowInfoTimerId = nil
     end
-end
-
-function XUiNewDrawMainV4P5Performance:CleanupPerformance()
-    self:CancelTimers()
+    if self.PauseEffectsTimerId then
+        XScheduleManager.UnSchedule(self.PauseEffectsTimerId)
+        self.PauseEffectsTimerId = nil
+    end
+    if self.DelayHideSceneTimerId then
+        XScheduleManager.UnSchedule(self.DelayHideSceneTimerId)
+        self.DelayHideSceneTimerId = nil
+    end
     if self.Binder then
         self.Binder:Stop()
         self.Binder = nil
+    end
+    if not XTool.UObjIsNil(self.AnimEventSender) then
+        self.AnimEventSender:StopAllFramePlayedAudio()
     end
     if self.VoiceInfo then
         self.VoiceInfo:Stop()
         self.VoiceInfo = nil
     end
+    if self.VideoPlayer then
+        self.VideoPlayer:Stop()
+    end
 end
 
 function XUiNewDrawMainV4P5Performance:RegisterUiEvents()
-    self.BtnClose:AddEventListener(handler(self, self.OnBtnBackClick))
-    self.BtnSkip:AddEventListener(handler(self, self.OnBtnSkipClick))
-end
-
-function XUiNewDrawMainV4P5Performance:OnBtnBackClick()
-    self:DoClose()
-end
-
-function XUiNewDrawMainV4P5Performance:OnBtnSkipClick()
-    self:DoClose()
+    self.BtnClose:AddEventListener(handler(self, self.DoClose))
+    self.BtnSkip:AddEventListener(handler(self, self.DoClose))
 end
 
 function XUiNewDrawMainV4P5Performance:DoClose()
@@ -226,7 +298,6 @@ function XUiNewDrawMainV4P5Performance:DoClose()
         return
     end
     self.IsClosed = true
-    self:CleanupPerformance()
     self:Close()
     if self.CloseCb then
         self.CloseCb()

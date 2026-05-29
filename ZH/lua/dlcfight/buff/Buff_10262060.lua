@@ -2,24 +2,22 @@ local XTheatre6SkillBase = require("Gameplay/Theatre6/XTheatre6SkillBase")
 ---@class XBuffScript10262060 : XTheatre6SkillBase
 local XBuffScript10262060 = XDlcScriptManager.RegBuffScript(10262060, "XBuffScript10262060", XTheatre6SkillBase)
 
---效果说明：自身处于【狂暴】期间，每使用3个任意技能触发：
+--效果说明：自身处于【狂暴】期间，每使用4个任意技能触发：
 --· 造成150%攻击伤害；
---· 消耗30点【怒火】；
---· 自身每有1点【拼刀】属性，恢复1点【体力值】；
+--· 消耗50点【怒火】；
+--· 自身每有X点【拼刀】属性，恢复1点【体力值】；
 
 function XBuffScript10262060:ScriptInit(isGainControl) --初始化
-    self.TargetSkill = self._skillId
-    self._damageMagicId = 10250044 --注册超算成功技1伤害id，目前是临时的
     self.attackCount = 0
-    self.targetCount = 3
-    self._angerCost = 30
+    self.targetCount = 4
+    self._angerCost = 50
     self.StackBuffAnger = 1025107
     self.StackBuffAngry = 1025108
-end
-
-function XBuffScript10262060:OnEnterLevel(levelId)
-    XTheatre6SkillBase.OnEnterLevel(self, levelId)
-    self._HitDownController = self:GetEnemyNpc():GetHitDownController()
+    self.dictTLRecoverRate = {
+        [1] = 40,
+        [2] = 30,
+        [3] = 20
+    }
 end
 
 function XBuffScript10262060:OnLuaSkillStart(eventArgs)
@@ -35,7 +33,7 @@ function XBuffScript10262060:OnLuaSkillStart(eventArgs)
     end
     if eventArgs._skillId ~= self._skillId then return end
     self._proxy:RemoveBuffByKindAndCount(self._npcUUID, self.StackBuffAnger, self._angerCost)
-    self.TLRecover = self._proxy:GetNpcGameplayAttribValue(self._npcUUID,ETheatre6AttribType.WrestlePoint)
+    self.TLRecover = self._proxy:GetNpcGameplayAttribValue(self._npcUUID,ETheatre6AttribType.WrestlePoint) // self.dictTLRecoverRate[self._lv]
     self._proxy:Theatre6ChangeStaminaValue(self._npcUUID, self.TLRecover, 0) --恢复5体力
 end
 

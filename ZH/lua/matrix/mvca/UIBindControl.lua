@@ -1252,7 +1252,9 @@ local UIBindControl = {
     --region 小游戏合集
     UiMiniGamesCollectionMain = ModuleId.XGameCollection,
     UiMiniGamesCollectionRewardShop = ModuleId.XGameCollection,
+    UiMiniGamesCollectionBreakTheRecord = ModuleId.XGameCollection,
     UiGameCollectionRecord = ModuleId.XGameCollection,
+    UiGoldenMinerGiveUp = ModuleId.XGameCollection,
     --endregion
 }
 

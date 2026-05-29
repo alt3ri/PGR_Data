@@ -299,7 +299,7 @@ function XUiSimulatedCombatSettleWin:OnBtnEnterNextClick()
     if self.StageInfos.Type == XDataCenter.FubenManager.StageType.Tower then
         local stageId = XDataCenter.TowerManager.GetTowerData().CurrentStageId
         if XDataCenter.TowerManager.CheckStageCanEnter(stageId) then
-            XLuaUiManager.PopThenOpen("UiBattleRoleRoom", stageId)
+            XMVCA.XFuben:PopThenOpenUiBattleRoleRoom(stageId)
         else
             local text = CS.XTextManager.GetText("TowerCannotEnter")
             XUiManager.TipMsg(text, XUiManager.UiTipType.Tip)

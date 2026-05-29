@@ -11,6 +11,12 @@ function XUiDlcRelinkPopupEquipCompose:OnAwake()
     self._ItemId = tonumber(self._Control:GetConfig("TargetingComposeConsumeId"))
     self._ItemCount = tonumber(self._Control:GetConfig("TargetingComposeConsumeCount"))
     self:RegisterUiEvents()
+
+    local itemIds = { XDataCenter.ItemManager.ItemId.DlcRelinkGameplayCoin }
+    self.AssetPanel = XUiHelper.NewPanelActivityAssetSafe(itemIds, self.PanelSpecialTool, self, nil, function(data, index)
+        local itemId = itemIds[index]
+        XLuaUiManager.Open("UiDlcRelinkPopupItemDetail", itemId)
+    end)
 end
 
 function XUiDlcRelinkPopupEquipCompose:OnStart(composeId)

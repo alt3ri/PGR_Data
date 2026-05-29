@@ -69,6 +69,16 @@ function XBWCourseTaskEntity:IsNew()
     return false
 end
 
+function XBWCourseTaskEntity:IsUnlockTagShow()
+    local conditionId = self:GetUnlockTagConditionId()
+
+    if XTool.IsNumberValid(conditionId) then
+        return not XMVCA.XBigWorldService:CheckCondition(conditionId)
+    end
+
+    return true
+end
+
 function XBWCourseTaskEntity:SetTaskId(taskId)
     self._TaskId = taskId or 0
 end
@@ -120,6 +130,14 @@ end
 function XBWCourseTaskEntity:GetConditionId()
     if not self:IsNil() then
         return self._Model:GetBigWorldCourseTaskConditionIdByTaskId(self:GetTaskId())
+    end
+
+    return 0
+end
+
+function XBWCourseTaskEntity:GetUnlockTagConditionId()
+    if not self:IsNil() then
+        return self._Model:GetBigWorldCourseTaskUnlockTagConditionIdByTaskId(self:GetTaskId())
     end
 
     return 0

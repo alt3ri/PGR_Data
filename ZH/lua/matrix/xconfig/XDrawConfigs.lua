@@ -88,6 +88,7 @@ local TABLE_DRAW_PREDICT = "Client/Draw/DrawPredict.tab"
 local TABLE_DRAW_PREDICT_POS = "Client/Draw/DrawPredictPos.tab"
 local TABLE_DRAW_NEW_PLAYER_ASSIGN_TAG = "Client/Draw/DrawNewPlayerAssignTag.tab"
 local TABLE_DRAW_DRAW_POWER = "Client/Draw/DrawPower.tab"
+local TABLE_DRAW_CHARACTER_IMAGE = "Client/Draw/DrawCharacterImage.tab"
 
 local TABLE_DRAW_COMBINATIONS = "Share/Draw/DrawCombinations.tab"
 local TABLE_DRAW_TICKET = "Share/DrawTicket/DrawTicket.tab"
@@ -139,6 +140,8 @@ local DevilMayCryActivityCfg = {}
 local DrawCanLiverActivityCfg = {}
 ---@type table<number, XTableDrawExtraTagGroup>
 local DrawExtraTagGroupCfg = {}
+---@type XTableDrawCharacterImage[]
+local DrawCharacterImageCfg = {}
 
 function XDrawConfigs.Init()
     DrawCombinations = XTableManager.ReadByIntKey(TABLE_DRAW_COMBINATIONS, XTable.XTableDrawCombinations, "Id")
@@ -170,6 +173,7 @@ function XDrawConfigs.Init()
     DrawPower = XTableManager.ReadByIntKey(TABLE_DRAW_DRAW_POWER, XTable.XTableDrawPower, "DrawId")
     DrawCanLiverActivityCfg = XTableManager.ReadByIntKey(TABLE_DRAW_CAN_LIVER_ACTIVITY, XTable.XTableDrawCanLiverActivity, "Id")
     DrawExtraTagGroupCfg = XTableManager.ReadByIntKey(TABLE_DRAW_EXTRA_TAG_GROUP, XTable.XTableDrawExtraTagGroup, "Id")
+    DrawCharacterImageCfg = XTableManager.ReadByIntKey(TABLE_DRAW_CHARACTER_IMAGE, XTable.XTableDrawCharacterImage, "Id")
 
     XDrawConfigs.SetDrawSubGroupDic()
     XDrawConfigs.SetGroupRelationDic()
@@ -542,4 +546,14 @@ end
 function XDrawConfigs.GetDrawExtraTagGroupCfgs()
     return DrawExtraTagGroupCfg
 end
---endregion
+--endregion
+
+-- 获取角色立绘配置
+function XDrawConfigs.GetDrawShowImageCfgById(id)
+    local cfg = DrawCharacterImageCfg[id]
+    if not cfg then
+        XLog.Error("Client/Draw/DrawCharacterImage.tab Id = " .. id .. " Is Null")
+        return nil
+    end
+    return cfg.DrawShowRImg
+end

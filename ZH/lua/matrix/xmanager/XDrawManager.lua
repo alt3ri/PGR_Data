@@ -856,24 +856,12 @@ XDrawManagerCreator = function()
         for subtype, drawIdList in pairs(subtypeToDrawList) do
             local extraTagCfg = XDrawConfigs.GetDrawExtraTagGroupCfgById(subtype)
             if extraTagCfg then
-                -- 检查时间窗口
-                local startTime = XTime.ParseToTimestamp(extraTagCfg.StartTime)
-                local endTime = XTime.ParseToTimestamp(extraTagCfg.EndTime)
-                local isTimeValid = true
-                if startTime and startTime > 0 and nowTime < startTime then
-                    isTimeValid = false
-                end
-                if endTime and endTime > 0 then
-                    local effectiveEndTime = endTime
-                    if extraEndTimeOffset and extraEndTimeOffset > 0 then
-                        effectiveEndTime = endTime + extraEndTimeOffset
-                    end
-                    if nowTime >= effectiveEndTime then
-                        isTimeValid = false
-                    end
-                end
+                local timeId = extraTagCfg.TimeId or 0
+                local isTimeValid = not XTool.IsNumberValid(timeId) or XFunctionManager.CheckInTimeByTimeId(timeId)
 
                 if isTimeValid then
+                    local startTime = XTool.IsNumberValid(timeId) and XFunctionManager.GetStartTimeByTimeId(timeId) or 0
+                    local endTime = XTool.IsNumberValid(timeId) and XFunctionManager.GetEndTimeByTimeId(timeId) or 0
                     local option = {
                         OptionKey = XDrawManager._MakeOptionKey(groupId, subtype),
                         GroupId = groupId,
@@ -882,8 +870,8 @@ XDrawManagerCreator = function()
                         Tag = extraTagCfg.Tag or groupInfo.Tag,
                         Priority = extraTagCfg.Priority or 0,
                         DrawIdList = drawIdList,
-                        BannerBeginTime = startTime or 0,
-                        BannerEndTime = endTime or 0,
+                        BannerBeginTime = startTime,
+                        BannerEndTime = endTime,
                         IsExtraOption = true,
                     }
                     tableInsert(options, option)
@@ -912,12 +900,17 @@ XDrawManagerCreator = function()
         local allExtraCfgs = XDrawConfigs.GetDrawExtraTagGroupCfgs()
         for _, cfg in pairs(allExtraCfgs) do
             if cfg.GroupId == groupId then
-                local startTime = XTime.ParseToTimestamp(cfg.StartTime)
-                local endTime = XTime.ParseToTimestamp(cfg.EndTime)
-                local effectiveEndTime = (endTime and endTime > 0) and (endTime + RECORD_EXTRA_END_TIME_OFFSET) or 0
+                local timeId = cfg.TimeId or 0
+                local startTime = 0
+                local endTime = 0
+                if XTool.IsNumberValid(timeId) then
+                    startTime = XFunctionManager.GetStartTimeByTimeId(timeId)
+                    endTime = XFunctionManager.GetEndTimeByTimeId(timeId)
+                end
+                local effectiveEndTime = (endTime > 0) and (endTime + RECORD_EXTRA_END_TIME_OFFSET) or 0
 
                 local isTimeValid = true
-                if startTime and startTime > 0 and nowTime < startTime then
+                if startTime > 0 and nowTime < startTime then
                     isTimeValid = false
                 end
                 if effectiveEndTime > 0 and nowTime >= effectiveEndTime then
@@ -933,8 +926,8 @@ XDrawManagerCreator = function()
                         Tag = cfg.Tag or 0,
                         Priority = cfg.Priority or 0,
                         DrawIdList = cfg.DrawId or {},
-                        BannerBeginTime = startTime or 0,
-                        BannerEndTime = endTime or 0,
+                        BannerBeginTime = startTime,
+                        BannerEndTime = endTime,
                         IsExtraOption = true,
                     })
                 end

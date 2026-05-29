@@ -6,7 +6,6 @@ function XMovieActionAutoSkip:OnInit(actionData)
     self.WomanSkipActionId = XMVCA.XMovie:ParamToNumber(params[2]) -- 女指挥官跳转ActionId
     self.SkipActionId = XMVCA.XMovie:ParamToNumber(params[3]) -- 无论性别直接跳转ActionId
     self.SecrecyActionId = XMVCA.XMovie:ParamToNumber(params[4]) -- 第三性别跳转ActionId
-
 end
 
 function XMovieActionAutoSkip:OnEnter()
@@ -15,29 +14,35 @@ end
 
 -- 生成跳转ActionId
 function XMovieActionAutoSkip:GenSelectedActionId()
-    local OpenMovieThirdGender = XMVCA.XMovie:GetOpenMovieThirdGender()
-    --OpenMovieThirdGender配置1第三性别功能开启，且玩家选择的性别为保密时
-    local gender = XPlayer.GetShowGender()
-    if OpenMovieThirdGender and gender == XEnumConst.PLAYER.GENDER_TYPE.SECRECY then
-        --如果段落剧情差分中，只配置了男女两种性别，没有保密性别的文本差分配置
-        if self.SecrecyActionId == 0 and self.ManSkipActionId ~=0 and self.WomanSkipActionId ~=0 then
-            self.SelectedActionId = self.ManSkipActionId
-            return
-        end
-    end
-
+    -- 如果配置了无论性别直接跳转的ActionId，则优先使用该ActionId
     if self.SkipActionId ~= 0 then
         self.SelectedActionId = self.SkipActionId
         return
     end
 
-    if gender == XEnumConst.PLAYER.GENDER_TYPE.MAN then
-        self.SelectedActionId = self.ManSkipActionId
-    elseif gender == XEnumConst.PLAYER.GENDER_TYPE.SECRECY then
-        self.SelectedActionId = self.SecrecyActionId
-    else
-        self.SelectedActionId = self.WomanSkipActionId
+    local gender = XPlayer.GetShowGender()
+
+    -- 若玩家选择的性别既不是男性也不是女性，则尝试获取大世界指挥官DIY的当前性别
+    if gender ~= XEnumConst.PLAYER.GENDER_TYPE.MAN and gender ~= XEnumConst.PLAYER.GENDER_TYPE.WOMAN then
+        local bigWorldGender = XMVCA.XBigWorldCommanderDIY:GetCurrentGender()
+        if bigWorldGender == XEnumConst.PLAYER.GENDER_TYPE.MAN or bigWorldGender == XEnumConst.PLAYER.GENDER_TYPE.WOMAN then
+            gender = bigWorldGender
+        end
     end
+
+    -- 如果配置了第三性别跳转的ActionId，且玩家选择的性别为保密，则使用第三性别跳转的ActionId
+    if gender == XEnumConst.PLAYER.GENDER_TYPE.SECRECY and self.SecrecyActionId ~= 0 then
+        self.SelectedActionId = self.SecrecyActionId
+        return
+
+    -- 如果配置了女指挥官跳转的ActionId，且玩家选择的性别为女性，则使用女指挥官跳转的ActionId
+    elseif gender == XEnumConst.PLAYER.GENDER_TYPE.WOMAN and self.WomanSkipActionId ~= 0 then
+        self.SelectedActionId = self.WomanSkipActionId
+        return
+    end
+
+    -- 默认跳转男指挥官跳转的ActionId
+    self.SelectedActionId = self.ManSkipActionId
 end
 
 function XMovieActionAutoSkip:GetSelectedActionId()

@@ -70,7 +70,7 @@ function XNpcInteraction:OnSkillExit(eventArgs)
     end
 
     --交互中退出交互技能，交互被中断
-    if eventArgs.LauncherId == self._npc and eventArgs.SkillId == self._interactionSkillId then
+    if eventArgs.LauncherId == self._npc and eventArgs.SkillActionId == self._interactionSkillId then
         self:StopInteraction()
         XLog.Debug("XNpcInteraction.OnSkillExit skill was aborted, stop interaction.")
     end

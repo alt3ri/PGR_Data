@@ -77,6 +77,7 @@ end
 function XUiDownloadPreviewForTips:GetCharacterDownloadableResIds()
     local resIds = {}
     -- 从分包配置表出发，只遍历有分包配置的涂装，避免对默认/基础涂装查表报错
+    -- 包含已下载和未下载的，使总进度不变
     local allFashionConfigs = XMVCA.XSubPackage:GetAllFashionDownloadConfigs()
     if XTool.IsTableEmpty(allFashionConfigs) then
         return resIds
@@ -85,11 +86,9 @@ function XUiDownloadPreviewForTips:GetCharacterDownloadableResIds()
         local fashionId = config.FashionId
         local template = XDataCenter.FashionManager.GetFashionTemplate(fashionId)
         if template and template.CharacterId == self._CharacterId then
-            if not XMVCA.XSubPackage:CheckFashionDownloaded(fashionId) then
-                local resId = config.ResId
-                if XTool.IsNumberValid(resId) then
-                    table.insert(resIds, resId)
-                end
+            local resId = config.ResId
+            if XTool.IsNumberValid(resId) then
+                table.insert(resIds, resId)
             end
         end
     end

@@ -115,7 +115,8 @@ function XUiGame2048Game:OnExitGame(isRunMain, isOverGame)
             and XMVCA.XGameCollection:IsLaunchedFromCollection(XEnumConst.GameCollection.GameType.Game2048) then
         local score = self._Control:GetStageMaxScoreById(self._Control:GetCurStageId())
         XMVCA.XGameCollection:OnGameExitToCollection(
-            XEnumConst.GameCollection.GameType.Game2048, { Score = score })
+            XEnumConst.GameCollection.GameType.Game2048,
+            { Score = score, IsSettled = isOverGame and true or false })
         self:Close()
         return
     end

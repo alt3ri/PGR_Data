@@ -706,15 +706,15 @@ XFashionManagerCreator = function()
         local timeStamp = XTime.GetServerNowTimestamp()
         for _, id in pairs(fashions) do
             local fashionTemplate = XFashionManager.GetFashionTemplate(id)
-            if fashionTemplate then
-                local showTimeStr = fashionTemplate.ShowTimeStr
-                if showTimeStr then
-                    local showTimeStamp = XTime.ParseToTimestamp(showTimeStr)
-                    if (timeStamp >= showTimeStamp) then
+            if fashionTemplate and  not fashionTemplate.DefaultHide then
+                    local showTimeStr = fashionTemplate.ShowTimeStr
+                    if showTimeStr then
+                        local showTimeStamp = XTime.ParseToTimestamp(showTimeStr)
+                        if (timeStamp >= showTimeStamp) then
+                            tableInsert(fashionIdList, id)
+                        end
+                    else
                         tableInsert(fashionIdList, id)
-                    end
-                else
-                    tableInsert(fashionIdList, id)
                 end
             end
         end

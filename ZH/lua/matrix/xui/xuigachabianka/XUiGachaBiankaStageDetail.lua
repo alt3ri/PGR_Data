@@ -66,7 +66,7 @@ function XUiGachaBiankaStageDetail:OnBtnEnterClick()
     local stageType = stageCfg.StageType
     self:Close()
     if stageType == XDataCenter.FubenFestivalActivityManager.StageFuben then
-        XLuaUiManager.Open("UiBattleRoleRoom", self._StageId)
+        XMVCA.XFuben:OpenUiBattleRoleRoom(self._StageId)
     elseif stageType == XDataCenter.FubenFestivalActivityManager.StageStory then
         local stageInfo = XDataCenter.FubenManager.GetStageInfo(self._StageId)
         if not stageInfo then

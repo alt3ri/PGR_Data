@@ -44,6 +44,24 @@ local PgsAchievementIdConfig = {
 local UnlockedCache = {} -- 已解锁成就缓存（仅当前会话），避免重复调用SDK
 local IncrementReportedCache = {} -- 增量成就已上报项缓存，key=achievementEnum，value=已上报id集合
 
+-- 增量成就缓存清理阈值（防止本地存档无限增长）
+local IncrementReportedCacheLimit = {
+    ThreeMembersLv15 = 6,
+    SixAwarenessLv20 = 12,
+}
+
+-- 统计哈希表元素数量（reported 以 id 为 key，不能用 #）
+local function GetTableCount(t)
+    if not t then
+        return 0
+    end
+    local count = 0
+    for _ in pairs(t) do
+        count = count + 1
+    end
+    return count
+end
+
 local function GetReportedSaveKey(achievementEnum)
     return "PgsReported_" .. achievementEnum .. "_" .. XPlayer.Id
 end
@@ -115,7 +133,6 @@ local function TryUnlock(achievementEnum)
     end
     XLog.Debug("[PGS] UnlockAchievement: " .. achievementEnum .. " id=" .. achievementId)
     local result = CS.XHeroSdkAgent.PGSUnlockAchievement(achievementId)
-    XLog.Error("[PGS] UnlockAchievement result: " .. tostring(result))
     if IsSDKResultSuccessful(result) then
         UnlockedCache[achievementId] = true
     end
@@ -131,7 +148,6 @@ local function TryIncrement(achievementEnum, step)
     end
     XLog.Debug("[PGS] IncrementAchievement: " .. achievementEnum .. " step=" .. tostring(step) .. " id=" .. achievementId)
     local result = CS.XHeroSdkAgent.PGSIncrementAchievement(achievementId, step)
-    XLog.Error("[PGS] IncrementAchievement result: " .. tostring(result))
 end
 
 -------------------------------
@@ -166,6 +182,12 @@ local function CheckThreeMembersLv15(characterId)
         return
     end
     local reported = IncrementReportedCache[PgsAchievementEnum.ThreeMembersLv15] or {}
+    -- 超过上限时清空缓存并保存，防止本地存档无限增长
+    if GetTableCount(reported) > IncrementReportedCacheLimit.ThreeMembersLv15 then
+        reported = {}
+        IncrementReportedCache[PgsAchievementEnum.ThreeMembersLv15] = reported
+        SaveReportedCache(PgsAchievementEnum.ThreeMembersLv15)
+    end
     if reported[characterId] then
         return
     end
@@ -195,6 +217,12 @@ local function CheckSixAwarenessLv20(equipId)
         return
     end
     local reported = IncrementReportedCache[PgsAchievementEnum.SixAwarenessLv20] or {}
+    -- 超过上限时清空缓存并保存，防止本地存档无限增长
+    if GetTableCount(reported) > IncrementReportedCacheLimit.SixAwarenessLv20 then
+        reported = {}
+        IncrementReportedCache[PgsAchievementEnum.SixAwarenessLv20] = reported
+        SaveReportedCache(PgsAchievementEnum.SixAwarenessLv20)
+    end
     if reported[equipId] then
         return
     end

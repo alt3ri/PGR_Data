@@ -16,9 +16,9 @@ function XUiGridTheatre6TaskReward:OnStart()
 
     ---@type XUiGridTheatre6Relic
     self._GridRelic = require("XUi/XUiTheatre6/Character/Grid/XUiGridTheatre6Relic").New(self.GridRelic, self)
-    -- self._GridRelic:SetClickCb(function()
-    --     self._Control:OpenRelicTip(self._Id, self.GridRelic)
-    -- end)
+    self._GridRelic:SetClickCb(function()
+        self._Control:OpenRelicTip(self._Id, self.GridRelic)
+    end)
 
     ---@type XUiGridTheatre6Skill
     self._GridSkill = require("XUi/XUiTheatre6/Character/Grid/XUiGridTheatre6Skill").New(self.GridSkill, self)
@@ -34,10 +34,68 @@ function XUiGridTheatre6TaskReward:OnStart()
     end
 end
 
+function XUiGridTheatre6TaskReward:OnGetLuaEvents()
+    return {
+        XEventId.EVENT_THEATRE6_UPDATE_SKILL,
+        XEventId.EVENT_THEATRE6_TAG_HIGHLIGHT_SOURCE_CHANGE,
+    }
+end
+
+function XUiGridTheatre6TaskReward:OnNotify(evt)
+    if evt == XEventId.EVENT_THEATRE6_UPDATE_SKILL then
+        self:RefreshCanUpgrade()
+        -- self:RefreshTagHightLight()
+    elseif evt == XEventId.EVENT_THEATRE6_TAG_HIGHLIGHT_SOURCE_CHANGE then
+        self:RefreshTagHightLight()
+    end
+end
+
+function XUiGridTheatre6TaskReward:RefreshCanUpgrade()
+    if self._IsFinished then return end
+    if not self._IsSkillReward then return end
+    self._GridSkill:CanUpgrade(self._Control:ShopHasCanUpGradeSkills(self._Id))
+end
+
+function XUiGridTheatre6TaskReward:RefreshTagHightLight()
+    local highlightSourceTagIds = self._Control:GetEffectiveTagHighlightSourceTagIds(
+        self._Control:GetTagHighlightSourceTagIds()
+    )
+    if self._IsRelicReward then
+        if not self._EnableTagHighlight then
+            self._GridRelic:ShowTagHightLight(nil)
+            return
+        end
+        local relicCfg = self._Control:GetAttrPackCfgById(self._Id)
+        self._GridRelic:ShowTagHightLight(
+            self._Control:CalcSkillHighlightTagsBySource(relicCfg, highlightSourceTagIds)
+        )
+        return
+    end
+    if not self._IsSkillReward then return end
+    if not self._EnableTagHighlight then
+        self._GridSkill:ShowTagHightLight(nil)
+        return
+    end
+    local skillCfg = self._Control:GetSkillCfgById(self._Id)
+    self._GridSkill:ShowTagHightLight(
+        self._Control:CalcSkillHighlightTagsBySource(skillCfg, highlightSourceTagIds)
+    )
+end
+
 ---XTool.UpdateDynamicItem调用
 ---@param data Theatre6PreviewRewardGoodsProtocol
 function XUiGridTheatre6TaskReward:Update(data)
+    self._EnableTagHighlight = self.Parent and self.Parent.IsChooseMode and self.Parent:IsChooseMode() == true
     self._Id = data.TemplateId
+    self._IsSkillReward = false
+    self._IsRelicReward = false
+    self._IsFinished = false
+    if self.UiPanelFinish then
+        self.UiPanelFinish.gameObject:SetActiveEx(false)
+    end
+    if self.UiPanelUnFinish then
+        self.UiPanelUnFinish.gameObject:SetActiveEx(false)
+    end
     self._GridResource:Close()
     self._GridBuff:Close()
     self._GridRelic:Close()
@@ -94,8 +152,10 @@ end
 function XUiGridTheatre6TaskReward:SetRelicData(data)
     if XTool.IsNumberValid(data.AttrPack) then
         self._Id = data.AttrPack
+        self._IsRelicReward = true
         self._GridRelic:Open()
         self._GridRelic:Update(data.AttrPack)
+        self:RefreshTagHightLight()
         return true
     end
 
@@ -106,59 +166,36 @@ end
 function XUiGridTheatre6TaskReward:SetSkillData(data)
     if XTool.IsNumberValid(data.SkillId) then
         self._Id = data.SkillId
+        self._IsSkillReward = true
         self._GridSkill:Open()
         self._GridSkill:Update(data.SkillId)
         self._GridSkill:CanUpgrade(self._Control:ShopHasCanUpGradeSkills(data.SkillId))
-        self._GridSkill:ShowTagEffect(self:GetSameBuildTagIdsWithEquipped(data.SkillId))
+        self:RefreshTagHightLight()
         return true
     end
 
     return false
 end
 
----@param skillId number
----@return number[] 与角色同槽位已装备技能 BuildTag 的交集 Id 列表(剔除背包中同 SkillId 的技能;不同槽位的同 tag 不计入)
-function XUiGridTheatre6TaskReward:GetSameBuildTagIdsWithEquipped(skillId)
-    local skillCfg = self._Control:GetSkillCfgById(skillId)
-    local selfTags = skillCfg and skillCfg.BuildTags
-    if not selfTags or #selfTags == 0 then
-        return {}
-    end
-    local installSlots = self._Control:GetSkillInstallSlots(skillId)
-    if not installSlots or #installSlots == 0 then
-        return {}
-    end
-    local equippedTagSet = {}
-    for _, slotType in ipairs(installSlots) do
-        local ownedIds = self._Control:GetCharacterDressSkillIds(slotType)
-        if ownedIds then
-            for _, ownedSkillId in pairs(ownedIds) do
-                if XTool.IsNumberValid(ownedSkillId) and ownedSkillId ~= skillId then
-                    local ownedCfg = self._Control:GetSkillCfgById(ownedSkillId)
-                    if ownedCfg and ownedCfg.BuildTags then
-                        for _, tagId in ipairs(ownedCfg.BuildTags) do
-                            equippedTagSet[tagId] = true
-                        end
-                    end
-                end
-            end
-        end
-    end
-    local result = {}
-    for _, tagId in ipairs(selfTags) do
-        if equippedTagSet[tagId] then
-            table.insert(result, tagId)
-        end
-    end
-    return result
-end
-
 function XUiGridTheatre6TaskReward:SetFinish(isFinish)
+    self._IsFinished = isFinish
     self.UiPanelFinish.gameObject:SetActiveEx(isFinish)
     self.UiPanelUnFinish.gameObject:SetActiveEx(not isFinish)
     if isFinish then
         self._GridSkill:CanUpgrade(false)
     end
 end
+
+function XUiGridTheatre6TaskReward:ShowFinish(data, isFinish)
+    self._IsFinished = isFinish
+    if self._GridSkill then
+        if isFinish then
+            self._GridSkill:CanUpgrade(false)
+        else
+            self._GridSkill:CanUpgrade(self._Control:ShopHasCanUpGradeSkills(data.SkillId))
+        end
+    end
+end
+
 
 return XUiGridTheatre6TaskReward

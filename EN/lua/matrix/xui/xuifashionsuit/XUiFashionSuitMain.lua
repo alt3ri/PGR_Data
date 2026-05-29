@@ -15,7 +15,7 @@ function XUiFashionSuitMain:OnAwake()
 end
 
 function XUiFashionSuitMain:OnStart(suitId)
-    XUiHelper.NewPanelTopControl(self, self.TopControlWhite)    
+    XUiHelper.NewPanelTopControl(self, self.TopControlWhite)
 
     local config = self._Control:GetFashionSuitById(suitId)
     local uiConfig = self._Control:GetFashionSuitUiConfigById(suitId)

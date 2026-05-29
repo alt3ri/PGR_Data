@@ -17,7 +17,7 @@ function XUiGridTheatre6SettlementEnemy:Update(data, index)
     local characterConfig = self._Control:GetCharacterConfig(monsterConfig.CharacterId)
     local fashionConfig = self._Control:GetFashionConfig(characterConfig.FashionIds[1])
     self.UiRImgEnemy:SetRawImage(fashionConfig.Portrait)
-    self.UiTxtDifficulty.text = self._Control:GetDifficultyText(data.DifficultyType)
+    self.UiTxtDifficulty.text = XUiHelper.GetText(data.DifficultyType == 1 and "Theatre6DifficultyEasy" or "Theatre6DifficultyHard")
 
     self:ChangeState(data.FightResultType)
 end

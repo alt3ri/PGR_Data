@@ -65,6 +65,7 @@ XSetManagerCreator = function()
         XSetManager.SetCaptionType(XSetManager.CaptionType)
         XSetManager.SetFightCameraVibration(XSetManager.FightCameraVibration)
         XEventManager.AddEventListener(XEventId.EVNET_FAIL_PAY, XSetManager.SetSceneUIType)
+        XEventManager.AddEventListener(XEventId.EVENT_LOGIN_DATA_LOAD_COMPLETE, XSetManager.TryRecordDailySystemSetting)
     end
 
     --region focus
@@ -391,6 +392,28 @@ XSetManagerCreator = function()
         XLuaUiManager.Open("UiSet", isFight, panelIndex, secondIndex)
     end
     
+    --- @desc 判断当前是否开启主线高帧率模式，非移动端返回nil
+    function XSetManager.IsMainLineHighFrameRateEnable()
+        if XDataCenter.UiPcManager.IsPc() then
+            return nil
+        end
+        local XQualityManager = CS.XQualityManager.Instance
+        local level = XQualityManager:GetCurQualitySettings()
+        local cQuality = XQualityManager:GetQualitySettings(level)
+        return cQuality:GetFrameRateLevel() >= 2
+    end
+
+    --- @desc 判断当前是否开启空花（大世界）高帧率模式，非移动端返回nil
+    function XSetManager.IsBigWorldHighFrameRateEnable()
+        if XDataCenter.UiPcManager.IsPc() then
+            return nil
+        end
+        local XQualityManager = CS.XQualityManager.Instance
+        local level = XQualityManager:GetCurQualitySettings()
+        local cQuality = XQualityManager:GetQualitySettings(level)
+        return cQuality:GetBigWorldFrameRateLevel() >= 2
+    end
+
     --region   ------------------系统设置埋点 start-------------------
     function XSetManager.SystemSettingBuriedPoint(dict)
         dict = dict or {}
@@ -398,9 +421,34 @@ XSetManagerCreator = function()
         dict["role_id"]     = XPlayer.Id
         dict["role_level"]  = XPlayer.GetLevel()
         dict["server_id"]   = XServerManager.Id
-        CS.XRecord.Record(dict, "200009", "SystemSetting")
+        --主线高帧率（仅移动端，PC端为nil）
+        dict["IsMainLineHighFrameRate"] = XDataCenter.SetManager.IsMainLineHighFrameRateEnable()
+        --空花高帧率（仅移动端，PC端为nil）
+        dict["IsSGHighFrameRate"] = XDataCenter.SetManager.IsBigWorldHighFrameRateEnable()
+        dict["GraphicsDeviceName"] = CS.UnityEngine.SystemInfo.graphicsDeviceName
+        dict["DeviceModel"] = CS.UnityEngine.SystemInfo.deviceModel
+        
+        if XMain.IsWindowsEditor then
+            CS.XRecord.RecordTest(dict, "200009", "SystemSetting")
+        else
+            CS.XRecord.Record(dict, "200009", "SystemSetting")
+        end
     end
     --endregion------------------系统设置埋点 finish------------------
+
+    --- @desc 每日首次登录时上报系统设置埋点
+    function XSetManager.TryRecordDailySystemSetting()
+        local key = "SystemSettingDailyRecord_" .. XPlayer.Id
+        if not XMVCA.XDailyReset:CheckDailyRedPoint(key) then
+            return
+        end
+        XMVCA.XDailyReset:SaveDailyRedPoint(key)
+
+        local dict = {}
+        dict["IsDailyLoginRecord"] = true
+        
+        XSetManager.SystemSettingBuriedPoint(dict)
+    end
 
     XSetManager.Init()
     return XSetManager

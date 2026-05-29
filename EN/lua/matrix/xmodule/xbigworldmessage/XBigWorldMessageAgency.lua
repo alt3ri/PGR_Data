@@ -171,6 +171,7 @@ function XBigWorldMessageAgency:TryOpenMessageTipUi()
                 self._Model:EnqueueFrontForceMessageData(messageData)
             end
         end)
+        return true
     end
     
     return false

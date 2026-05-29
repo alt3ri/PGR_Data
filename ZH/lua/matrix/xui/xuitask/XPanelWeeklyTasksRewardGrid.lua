@@ -13,21 +13,22 @@ XPanelWeeklyTasksRewardGrid.ButtonStates = {
     Got = 2,        -- 已领取
 }
 
-function XPanelWeeklyTasksRewardGrid:SetData(
-    currentActiveness,
-    targetActiveness,
-    rewardId,
-    fnGetReward)
+function XPanelWeeklyTasksRewardGrid:SetData(args)
+    local targetActiveness = args.TargetActiveness
+    local orgPos = self.Transform.anchoredPosition3D
+
+    self.Transform.anchoredPosition3D = CS.UnityEngine.Vector3(
+        args.PositionX, orgPos.y, orgPos.z)
 
     self.targetActiveness = targetActiveness
-    self.rewardId = rewardId
-    self.GetReward = fnGetReward
+    self.rewardId = args.RewardId
+    self.GetReward = args.OnGetReward
     self.TxtValue.text = tostring(targetActiveness)
 
     if XDataCenter.TaskManager.WeeklyActivenessProgressRewardGot(targetActiveness) then
         self:SetButtonState(
             XPanelWeeklyTasksRewardGrid.ButtonStates.Got)
-    elseif currentActiveness >= targetActiveness then
+    elseif args.Activeness >= targetActiveness then
         self:SetButtonState(
             XPanelWeeklyTasksRewardGrid.ButtonStates.Active)
     else

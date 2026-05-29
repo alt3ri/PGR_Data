@@ -25,9 +25,12 @@ function XUiMainLine2PanelEntranceList:OnStart(chapterId, mainId, skipStageId, l
     self:InitPaneBgList()
     self:InitSpineAndTimeline()
     self:RegisterUiEvents()
+    
+    self:InitComponents()
 end
 
 function XUiMainLine2PanelEntranceList:OnEnable()
+    self._Control:AddEventListener(self._Control.EventIds.FOCUS_STAGE_WITH_AREA_GROUP, self.FocusStageByStageId, self)
     self:RefreshEntrances()
     self:RefreshBgs()
 
@@ -53,7 +56,7 @@ function XUiMainLine2PanelEntranceList:OnEnable()
 end
 
 function XUiMainLine2PanelEntranceList:OnDisable()
-    
+    self._Control:RemoveEventListener(self._Control.EventIds.FOCUS_STAGE_WITH_AREA_GROUP, self.FocusStageByStageId, self)
 end
 
 function XUiMainLine2PanelEntranceList:OnDestroy()
@@ -71,6 +74,48 @@ function XUiMainLine2PanelEntranceList:InitUi()
     self.ViewPort = self.ViewPort or XUiHelper.TryGetComponent(self.Transform, "PaneStageList/ViewPort", "RectTransform")
     self.PanelStageContent = self.PanelStageContent or XUiHelper.TryGetComponent(self.Transform, "PaneStageList/ViewPort/PanelStageContent", "RectTransform")
     self.LocateOffsetX = self.ScrollRect.viewport.rect.width * 0.5
+end
+
+--- 初始化扩展的组件
+function XUiMainLine2PanelEntranceList:InitComponents()
+    -- Message
+    if self._Control.MessageControl:CheckChapterHasMessage(self.ChapterId) then
+        self._MessageCom = require("XUi/XUiMainLine2/Component/UiMainLine2PanelMessageCom/XUiMainLine2PanelMessageCom").New(self.GameObject, self, self.ChapterId, self.MainId)
+    end
+    
+    -- Area
+    if self._Control.UiStageAreaControl:CheckChapterHasAreaGroup(self.ChapterId) then
+        self._StageAreaCom = require("XUi/XUiMainLine2/Component/UiMainLine2StageAreaCom/XUiMainLine2StageAreaCom").New(self.GameObject, self, self.ChapterId, self.MainId)
+
+        if self.PaneStageList then
+            CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.PaneStageList.content)
+
+            ---@type XUiCommonScrollView
+            self._ScrollView = require("XUi/XUiCommon/XUiCommonScrollView").New(self.PaneStageList, self, self.PaneStageList)
+            self._ScrollView:Init()
+            self._ScrollView:RegisterCallBack(nil, nil, nil, handler(self, self._OnScrollEndDrag), handler(self, self._OnScrollBeginDrag))
+        end
+
+        self:_InjectAreaClickInterceptor()
+    end
+end
+
+function XUiMainLine2PanelEntranceList:_InjectAreaClickInterceptor()
+    for _, entrance in ipairs(self.GridEntrances) do
+        entrance:SetAreaClickInterceptor(function(stageId)
+            return self._StageAreaCom:TryInterceptStageClick(stageId)
+        end)
+    end
+end
+
+function XUiMainLine2PanelEntranceList:_OnScrollBeginDrag()
+    if not self._StageAreaCom then return end
+    self._StageAreaCom:RecordBeginDragAreaIndex()
+end
+
+function XUiMainLine2PanelEntranceList:_OnScrollEndDrag(dragDeltaX)
+    if not self._StageAreaCom then return end
+    self._StageAreaCom:CheckAutoFocusOnEndDrag(dragDeltaX)
 end
 
 function XUiMainLine2PanelEntranceList:RegisterUiEvents()
@@ -267,6 +312,54 @@ function XUiMainLine2PanelEntranceList:GetMaxUnlockEntranceMaxPosX()
     local maxPosX = lastStageGo.anchoredPosition.x - self.LocateOffsetX -- 关卡拖动到中间视为结束
     if maxPosX < 0 then maxPosX = 0 end
     return maxPosX
+end
+
+function XUiMainLine2PanelEntranceList:FocusStageByStageId(stageId)
+    if not self._ScrollView then
+        -- 没有处理聚焦的组件，不处理
+        return
+    end
+    
+    if XTool.IsTableEmpty(self.GridEntrances) then
+        return
+    end
+    
+    local stageGrid = nil
+
+    -- 查找对应的关卡UI
+    for _, grid in pairs(self.GridEntrances) do
+        if grid.StageId == stageId then
+            stageGrid = grid
+            break
+        elseif not XTool.IsTableEmpty(grid.StageIds) then
+            for i, id in pairs(grid.StageIds) do
+                if id == stageId then
+                    stageGrid = grid
+                    break
+                end
+            end
+
+            if stageGrid ~= nil then
+                break
+            end
+        end
+    end
+
+    if stageGrid == nil then
+        return
+    end
+
+    -- 聚焦到中间
+    -- Conetnt锚点在最左侧， 希望聚焦关卡UI在屏幕中心（不强制）
+    local contentToCenter = 0
+
+    local targetPosX = contentToCenter - stageGrid.Transform.parent.localPosition.x
+    -- 越界检查，Content锚点在左侧时，即坐标为0时为起始，不可大于0，也不可小于自身长度的负数 - 屏幕宽度
+    targetPosX = XMath.Clamp(targetPosX, - self.PaneStageList.content.transform.sizeDelta.x + self._ScrollView.HalfViewPortWidth , - self._ScrollView.HalfViewPortWidth)
+
+    -- 按照当前布局计算聚焦位置
+    
+    self._ScrollView:PlayScrollViewMove(targetPosX, nil, true)
 end
 
 --region 背景列表 ------------------------------------------------------------------------------------------------------

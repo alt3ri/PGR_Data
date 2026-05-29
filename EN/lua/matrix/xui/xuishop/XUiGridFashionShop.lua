@@ -5,18 +5,10 @@ function XUiGridFashionShop:Ctor(ui)
     self.Transform = ui.transform
     XTool.InitUiObject(self)
     self:SetButtonCallback()
-    self.PanelPrice = {
-        self.PanelPrice1
-    }
-    self.TxtOldPrice = {
-        self.TxtOldPrice1
-    }
-    self.TxtNewPrice = {
-        self.TxtNewPrice1
-    }
-    self.RImgPrice = {
-        self.RImgPrice1
-    }
+    self.PanelPrice = {self.PanelPrice1}
+    self.TxtOldPrice = {self.TxtOldPrice1}
+    self.TxtNewPrice = {self.TxtNewPrice1}
+    self.RImgPrice = {self.RImgPrice1}
     self.Timer = nil
 end
 
@@ -75,7 +67,7 @@ function XUiGridFashionShop:OnBtnBuyClick()
         XShopManager.BuyShop(self.Parent:GetCurShopId(), self.Data.Id, BuyCount, function(res)
             self:OnBuyShopSuccessCb(res.GoodList, res.IsShowBuyResult)
         end, function(errorCode)
-            if errorCode == 20030022 then --写死活动过期错误码
+            if errorCode == XCode.ShopActivityStatusInconsistent then -- 写死活动过期错误码
                 XLuaUiManager.RunMain()
             end
         end, self.ActivityIsOpen)
@@ -85,7 +77,9 @@ function XUiGridFashionShop:OnBtnBuyClick()
             self:OnBuyShopSuccessCb(goodList, true)
         end)
     end
-    XMVCA.XShop:OpenFashionDetailUi(self.Id, buyData, { isWeaponFashion = self.IsWeaponFashion })
+    XMVCA.XShop:OpenFashionDetailUi(self.Id, buyData, {
+        isWeaponFashion = self.IsWeaponFashion
+    })
 end
 
 function XUiGridFashionShop:OnBuyShopSuccessCb(goodList, isShowBuyResult)
@@ -147,10 +141,14 @@ function XUiGridFashionShop:RefreshBuyCount()
 end
 
 function XUiGridFashionShop:RefreshCondition()
-    if not self.BtnCondition then return end
+    if not self.BtnCondition then
+        return
+    end
     self.BtnCondition.gameObject:SetActiveEx(false)
     local conditionIds = self.Data.ConditionIds
-    if not conditionIds or #conditionIds <= 0 then return end
+    if not conditionIds or #conditionIds <= 0 then
+        return
+    end
 
     for _, id in pairs(conditionIds) do
         local ret, desc = XConditionManager.CheckCondition(id)
@@ -199,8 +197,7 @@ function XUiGridFashionShop:RefreshIcon()
         self.TemplateId = self.Data.RewardGoods
     else
         self.TemplateId = (self.Data.RewardGoods.TemplateId and self.Data.RewardGoods.TemplateId > 0) and
-            self.Data.RewardGoods.TemplateId or
-            self.Data.RewardGoods.Id
+                              self.Data.RewardGoods.TemplateId or self.Data.RewardGoods.Id
     end
 
     self.IsWeaponFashion = XDataCenter.ItemManager.IsWeaponFashion(self.TemplateId)
@@ -382,7 +379,7 @@ function XUiGridFashionShop:RefreshTimer(time)
 end
 
 function XUiGridFashionShop:RefreshGift()
-    --2.10 涂装赠品
+    -- 2.10 涂装赠品
     if self.Data.RewardGoods.RewardType == XRewardManager.XRewardType.Fashion then
         local fashionId = self.Data.RewardGoods.TemplateId
         local fashionCfg = XFashionConfigs.GetFashionTemplate(fashionId)

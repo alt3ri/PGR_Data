@@ -50,6 +50,7 @@ end
 function XUiPanelCollegeStudy:InitData()
     self.FirstTagId = self.Config.Id
     self.AllSecondTag = XFubenConfigs.GetSecondTagConfigsByFirstTagId(self.FirstTagId) -- 拿到该模式下所有的二级标签
+    ---@type table<number, XExFubenBaseManager[]>
     self.TagManagerDic = {}
     for _, secondTagconfig in pairs(self.AllSecondTag) do
         if not self.TagManagerDic[secondTagconfig.Id] then
@@ -77,10 +78,14 @@ function XUiPanelCollegeStudy:InitDynamicTable()
     self.DynamicTable:SetProxy(XUiGridCollegeStudy)
     self.DynamicTable:SetDelegate(self)
     self.GridCollegeBanner.gameObject:SetActive(false)
+    ---@type XExFubenBaseManager[]
     self.CurrentManagerList = self.TagManagerDic[self.AllSecondTag[1].Id]  -- 目前只有一个二级标签，所有不显示二级标签
 end
 
 --动态列表事件
+---@param event string
+---@param index number
+---@param grid XUiGridCollegeStudy
 function XUiPanelCollegeStudy:OnDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         grid:UpdateGrid(self.CurrentManagerList[index], index, self.DynamicTable:GetFirstUseGridIndexAndUseCount())
@@ -111,11 +116,13 @@ function XUiPanelCollegeStudy:PlayGridEnableAnime()
 end
 
 --设置动态列表
+---@param bReload boolean|nil
 function XUiPanelCollegeStudy:SetupDynamicTable(bReload)
     self.DynamicTable:SetDataSource(self.CurrentManagerList)
     self.DynamicTable:ReloadDataSync(bReload and 1 or -1)
 end
 
+---@param manager XExFubenBaseManager
 function XUiPanelCollegeStudy:OnClickChapterGrid(manager)
     manager:ExOpenMainUi()
 end

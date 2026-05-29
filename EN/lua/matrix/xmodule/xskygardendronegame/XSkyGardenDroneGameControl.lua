@@ -33,6 +33,8 @@ function XSkyGardenDroneGameControl:OnInit()
 
     self._Dialogues = false
 
+    self._MaskTimer = false
+
     self._PcPressHandle = Handler(self, self.OnPressPCKeyHandle)
 
     self:SendEnterGameCmd()
@@ -46,9 +48,18 @@ function XSkyGardenDroneGameControl:RemoveAgencyEvent()
 
 end
 
+function XSkyGardenDroneGameControl:RemoveMaskTimer()
+    if self._MaskTimer then
+        XScheduleManager.UnSchedule(self._MaskTimer)
+        XMVCA.XBigWorldLoading:CloseCurrentLoading()
+        self._MaskTimer = false
+    end
+end
+
 function XSkyGardenDroneGameControl:OnRelease()
     -- XLog.Error("这里执行Control的释放")
     self._Dialogues = false
+    self:RemoveMaskTimer()
     self:SendLeaveGameCmd()
 end
 
@@ -332,13 +343,30 @@ function XSkyGardenDroneGameControl:GetRandomDialogues()
     return result
 end
 
-function XSkyGardenDroneGameControl:GetStageRewardsByTargets(stageId, targetMap)
+function XSkyGardenDroneGameControl:GetAchieveTargetMap(stageId)
+    local result = {}
+    local stageData = self._Model:GetStageData(stageId)
+
+    if stageData then
+        local finishTarget = stageData:GetFinishTarget()
+
+        if not XTool.IsTableEmpty(finishTarget) then
+            for targetId, _ in pairs(finishTarget) do
+                result[targetId] = true
+            end
+        end
+    end
+
+    return result
+end
+
+function XSkyGardenDroneGameControl:GetStageRewardsByTargets(stageId, targetMap, achieveTargetMap)
     local rewardIds = self:GetStageTargetRewardIds(stageId)
     local targetIds = self:GetStageTargetIds(stageId)
     local rewards = {}
 
     for index, targetId in pairs(targetIds) do
-        if targetMap[targetId] then
+        if targetMap[targetId] and (not achieveTargetMap or not achieveTargetMap[targetId]) then
             local rewardId = rewardIds[index]
 
             if XTool.IsNumberValid(rewardId) then
@@ -376,6 +404,16 @@ function XSkyGardenDroneGameControl:OpenShopUi()
     XMVCA.XBigWorldService:RequestShopInfo(shopId, function()
         XMVCA.XBigWorldUI:Open("UiSkyGardenSGDroneShop", shopId)
     end)
+end
+
+function XSkyGardenDroneGameControl:OpenBlackMask()
+    if not self._MaskTimer then
+        XMVCA.XBigWorldLoading:OpenLoadingByType(XMVCA.XBigWorldLoading.LoadingType.BlackMask)
+        self._MaskTimer = XScheduleManager.ScheduleOnce(function()
+            self._MaskTimer = false
+            XMVCA.XBigWorldLoading:CloseCurrentLoading()
+        end, 2 * XScheduleManager.SECOND)
+    end
 end
 
 function XSkyGardenDroneGameControl:TryRestoreStageUI(stageEntity)

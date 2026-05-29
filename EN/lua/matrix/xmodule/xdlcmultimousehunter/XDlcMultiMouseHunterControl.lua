@@ -116,7 +116,14 @@ function XDlcMultiMouseHunterControl:OpenUiDlcMultiPlayerCompetition(matchingTim
     if not XLuaUiManager.IsUiShow("UiDlcMultiPlayerRoomCute") then
         return
     end
-        XLuaUiManager.Open("UiDlcMultiPlayerCompetition")
+    local discussion = self:GetDiscussion()
+    if not discussion  then
+        return
+    end
+    if discussion:GetStatus() == XMVCA.XDlcMultiMouseHunter.DlcMultiplayerDiscussionStatus.None then  --status 异常，理论上不应该出现进入界面了还没有投票数据的情况，如果出现了，先不上界面
+        return
+    end
+    XLuaUiManager.Open("UiDlcMultiPlayerCompetition")
 end
 
 function XDlcMultiMouseHunterControl:OpenShopUi(matchingTime)

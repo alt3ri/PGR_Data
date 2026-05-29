@@ -17,8 +17,10 @@ end
 function XUiBigWorldNarrativePhotoPanel:Refresh(narrativeId)
     self._narrativeId = narrativeId
     self._IsFullScreenPhoto = false
-    self.TxtTitle.text = XMVCA.XBigWorldService:GetNarrativeTitle(narrativeId)
-    self.TxtContent.text = XMVCA.XBigWorldService:GetNarrativeContent(narrativeId)
+    local title = XMVCA.XBigWorldService:GetNarrativeTitle(narrativeId)
+    local content = XMVCA.XBigWorldService:GetNarrativeContent(narrativeId)
+    self.TxtTitle.text = XUiHelper.ReplaceWithPlayerName(title, "【kuroname】")
+    self.TxtContent.text = XUiHelper.ReplaceWithPlayerName(content, "【kuroname】")
     self.RImgPhoto:SetRawImage(XMVCA.XBigWorldService:GetNarrativeAssetUrl(narrativeId))
     self.RImgPhoto.gameObject:SetActiveEx(true)
     self.PanelBig.gameObject:SetActiveEx(false)

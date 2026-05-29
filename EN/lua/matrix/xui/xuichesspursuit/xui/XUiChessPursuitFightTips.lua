@@ -1,4 +1,4 @@
-local XChessPursuitCtrl = require("XUi/XUiChessPursuit/XChessPursuitCtrl")
+local XChessPursuitCtrl = require("XUi/XUiChessPursuit/XChessPursuitCtrl")
 local XUiChessPursuitFightTips = XLuaUiManager.Register(XLuaUi, "UiChessPursuitFightTips")
 local CSXTextManagerGetText = CS.XTextManager.GetText
 
@@ -72,7 +72,7 @@ function XUiChessPursuitFightTips:OnBtnTeamChangeClick()
         CaptainPos = curTeamData.CaptainPos,
         FirstFightPos = curTeamData.FirstFightPos,
     }
-    XLuaUiManager.Open("UiBattleRoleRoom", stageId)
+    XMVCA.XFuben:OpenUiBattleRoleRoom(stageId)
 end
 
 function XUiChessPursuitFightTips:OnBtnResetClick()

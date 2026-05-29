@@ -4,7 +4,8 @@ local XUiPanelRoleModel = require("XUi/XUiCharacter/XUiPanelRoleModel")
 ---@field _Control XPassportControl
 local XUiPassport3D = XClass(XUiNode, "XUiPassport3D")
 
-function XUiPassport3D:OnStart(uiModel)
+function XUiPassport3D:OnStart(uiModel, isFirstOpenInThisActivity)
+    local aspectRatioId = self:AdaptScreenAspectRatio()
     local farRoot = self.Transform:FindTransform("UiFarRoot")
     local nearRoot = self.Transform:FindTransform("UiNearRoot")
     self.CamFar = farRoot:FindTransform("UiFarCamera")
@@ -23,16 +24,45 @@ function XUiPassport3D:OnStart(uiModel)
         nil,
         true)
 
-    local activityId = tostring(self._Control:GetDefaultActivityId())
-    local saveKey = "XUiPassport3D.OnStart.saveKey"
-    local prevActivityId = XSaveTool.GetData(saveKey)
-    if prevActivityId ~= activityId then
-        XSaveTool.SaveData(saveKey, activityId)
-        self.FashionCamNearMain.gameObject:SetActiveEx(false)
-        self.FashionCamNew.gameObject:SetActiveEx(true)
-        XScheduleManager.ScheduleNextFrame(function()
-            self.FashionCamNearMain.gameObject:SetActiveEx(true)
-        end)
+    if isFirstOpenInThisActivity then
+        self:PlayAnimation("Start" .. aspectRatioId)
+    end
+end
+
+-- 简易适配分辨率
+function XUiPassport3D:AdaptScreenAspectRatio()
+    self.FashionCamNearMain.gameObject:SetActiveEx(false)
+
+    local currentCameraId = 1
+    local ratios = string.Split(
+        CS.XGame.ClientConfig:GetString("PassportModelAdapt"))
+
+    local width  = CS.XUiManager.RealScreenWidth
+    local height = CS.XUiManager.RealScreenHeight
+    local realRatio = math.max(width, height) / math.min(width, height)
+
+    for _, targetRatio in pairs(ratios) do
+        if realRatio > tonumber(targetRatio) then
+            currentCameraId = currentCameraId + 1
+        else
+            break
+        end
+    end
+
+    self.FashionCamNearMain = self["FashionCamNearMain" .. currentCameraId]
+    self.FashionCamNearMain.gameObject:SetActiveEx(true)
+    return currentCameraId
+end
+
+function XUiPassport3D:OnDestroy()
+    if self._NewBPCharacterAnimationSchedule1 then
+        XScheduleManager.UnSchedule(self._NewBPCharacterAnimationSchedule1)
+        self._NewBPCharacterAnimationSchedule1 = false
+    end
+
+    if self._NewBPCharacterAnimationSchedule2 then
+        XScheduleManager.UnSchedule(self._NewBPCharacterAnimationSchedule2)
+        self._NewBPCharacterAnimationSchedule2 = false
     end
 end
 
@@ -50,7 +80,6 @@ function XUiPassport3D:SetModel(fashionId, fashionType)
             "UiPassport3D",
             nil)
 
-
     elseif fashionType == 1 then
         -- 武器投影：从 WeaponFashionRes.tab 取 ModelId 加载武器模型
         local modelConfig = XDataCenter.WeaponFashionManager.GetWeaponModelCfg(fashionId, nil, "UiPassport3D")
@@ -65,14 +94,23 @@ function XUiPassport3D:SetModel(fashionId, fashionType)
             "UiPassport3D",
             nil,
             {gameObject = self.GameObject})
+
     elseif fashionType == 2 then
         -- FashionColor：从 FashionColor.tab 取 ResourcesId，再查 NpcRes 得到 ModelId
-        local resId = XMVCA.XFashion:GetFashionColorResourcesId(fashionId)
+        local fashionColor = XMVCA.XFashion:GetFashionColorById(fashionId)
+        local resId = fashionColor.ResourcesId
         if not XTool.IsNumberValid(resId) then
             return
         end
-        local modelId = XMVCA.XCharacter:GetCharResModel(resId)
-        self.PanelRoleModel:UpdateCharacterModelByModelId(modelId, nil, nil, "UiPassport3D", nil)
+
+        self.PanelRoleModel:SetDefaultAnimation(fashionColor.PreviewAnimation)
+
+        self.PanelRoleModel:UpdateCharacterModelByModelId(
+            XMVCA.XCharacter:GetCharResModel(resId),
+            nil,
+            nil,
+            "UiPassport3D",
+            nil)
     end
 end
 

@@ -244,6 +244,11 @@ function XUiPanelDlcRelinkCharacterRight:RefreshBtn()
     local btnDesc = self._Control:GetClientConfig("CharacterBtnBattleDesc", isOriginal and 2 or 1)
     self.BtnBattle:SetNameByGroup(0, btnDesc)
     self.BtnBattle:SetButtonState(isOriginal and CS.UiButtonState.Disable or CS.UiButtonState.Normal)
+
+    -- 掉落设置是否有冲突
+    local markSettingDataList = self._Control:GetEquipsMarkSettingDataList()
+    local hasConflict = self._Control:HasEquipsMarkSettingDataConflict(markSettingDataList)
+    self.BtnAutoSetting:ShowTag(hasConflict)
 end
 
 function XUiPanelDlcRelinkCharacterRight:RegisterUiEvents()
@@ -253,6 +258,7 @@ function XUiPanelDlcRelinkCharacterRight:RegisterUiEvents()
     self.BtnBattle:AddEventListener(handler(self, self.OnBtnBattleClick))
     self.BtnLv:AddEventListener(handler(self, self.OnBtnLvClick))
     self.BtnWiki:AddEventListener(handler(self, self.OnBtnWikiClick))
+    self.BtnAutoSetting:AddEventListener(handler(self, self.OnBtnAutoSettingClick))
 end
 
 function XUiPanelDlcRelinkCharacterRight:OnBtnSwitchClick()
@@ -287,12 +293,20 @@ function XUiPanelDlcRelinkCharacterRight:OnBtnLvClick()
     if XTool.IsTableEmpty(equipDict) then
         return
     end
-    XLuaUiManager.Open("UiDlcRelinkPopupEquipAttributeDetail", XTool.CloneEx(equipDict), self.CharacterId)
+    local totalAttributes = self._Control:GetEquipTotalAttributeList(self.CharacterId, XTool.CloneEx(equipDict))
+    if XTool.IsTableEmpty(totalAttributes) then
+        return
+    end
+    XLuaUiManager.Open("UiDlcRelinkPopupEquipAttributeDetail", self.CharacterId, totalAttributes)
 end
 
 function XUiPanelDlcRelinkCharacterRight:OnBtnWikiClick()
     local wikiId = self._Control:GetCharacterJumpWikiId(self.CharacterId, self.StyleType)
     XLuaUiManager.Open("UiDlcRelinkEncyclopedia", wikiId)
+end
+
+function XUiPanelDlcRelinkCharacterRight:OnBtnAutoSettingClick()
+    XLuaUiManager.Open("UiDlcRelinkPopupAutoSetting")
 end
 
 return XUiPanelDlcRelinkCharacterRight

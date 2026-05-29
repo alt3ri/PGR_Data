@@ -53,7 +53,7 @@ function XUiModelTheatre5ChooseCharacter3D:LoadCharacters(characterCfgs)
             local mainlineFashionId = self._Control.CharacterControl:GetMainlineFashionIdByCharacterIdCurMode(cfg.Id)
             local animatorController = self._Control.CharacterControl:GetAnimatorControllerByCharacterIdCurMode(cfg.Id)
 
-            self.UiPanelRoleModels[i] = XUiPanelRoleModel.New(root, 'UiTheatre5ChooseCharacter', true, true)
+            self.UiPanelRoleModels[i] = XUiPanelRoleModel.New(root, 'UiTheatre5ChooseCharacter', true, true, false)
             self:UpdateRoleModelByHand(self.UiPanelRoleModels[i], cfg.CharacterId, mainlineFashionId, animatorController)
             self.UiPanelRoleModels[i]:ShowRoleModel()
 
@@ -129,7 +129,7 @@ function XUiModelTheatre5ChooseCharacter3D:UpdateRoleModelByHand(panelRoleModel,
     --获取时装ModelName
     local resourcesId
     if fashionId then
-        resourcesId = XDataCenter.FashionManager.GetResourcesId(fashionId)
+        resourcesId = XMVCA.XFashion:GetOwnFashionColorResourcesId(fashionId)
     else
         resourcesId = XDataCenter.FashionManager.GetFashionResourceIdByCharId(characterId)
     end
@@ -150,36 +150,35 @@ function XUiModelTheatre5ChooseCharacter3D:UpdateRoleModelByHand(panelRoleModel,
 
     panelRoleModel:UpdateCharacterModel(characterId, nil, panelRoleModel.RefName, nil, nil, fashionId, nil, nil, nil, true)
     -- 加载animationController
-    local runtimeController = CS.LoadHelper.LoadUiController(runtimeControllerName, panelRoleModel.RefName)
+    local animator = panelRoleModel:GetAnimator()
+    if not animator then
+        return
+    end
 
+    local runtimeController = CS.LoadHelper.LoadUiController(runtimeControllerName, animator.gameObject)
     if runtimeController == nil or not runtimeController:Exist() then
         XLog.Error("XUiPanelDisplay RefreshSelf 错误: 展示角色的动画状态机加载失败: 状态机名称 " .. runtimeControllerName .. " Ui名称：" .. panelRoleModel.RefName)
         return
     end
 
-    local animator = panelRoleModel:GetAnimator()
-
-    if animator then
-        XModelManager.HandleUiModelNodeActive(DefaultRoleAnimaName, panelRoleModel.CurRoleName, panelRoleModel:GetCurRoleModel(), false)
-        animator.runtimeAnimatorController = runtimeController
-        ---@type UnityEngine.GameObject
-        local loadAnimatioClip = animator.gameObject:GetComponent(typeof(CS.XLoadAnimationClip))
-
-        if loadAnimatioClip then
-            CS.UnityEngine.Component.Destroy(loadAnimatioClip)
-        end
-
-        -- 重新加载特效
-        local actionId = panelRoleModel:GetPlayingStateName(0) -- 0:只展示身体
-
-        local weaponFashionId
-        if XRobotManager.CheckIsRobotId(characterId) then
-            local robotId = characterId
-            characterId = XRobotManager.GetCharacterId(robotId)
-            weaponFashionId = XRobotManager.GetRobotWeaponFashionId(robotId)
-        end
-        panelRoleModel:LoadCharacterUiEffect(characterId, actionId, nil, weaponFashionId, nil)
+    XModelManager.HandleUiModelNodeActive(DefaultRoleAnimaName, panelRoleModel.CurRoleName, panelRoleModel:GetCurRoleModel(), false)
+    animator.runtimeAnimatorController = runtimeController
+    ---@type UnityEngine.GameObject
+    local loadAnimationClip = animator.gameObject:GetComponent(typeof(CS.XLoadAnimationClip))
+    if loadAnimationClip then
+        CS.UnityEngine.Component.Destroy(loadAnimationClip)
     end
+
+    -- 重新加载特效
+    local actionId = panelRoleModel:GetPlayingStateName(0) -- 0:只展示身体
+
+    local weaponFashionId
+    if XRobotManager.CheckIsRobotId(characterId) then
+        local robotId = characterId
+        characterId = XRobotManager.GetCharacterId(robotId)
+        weaponFashionId = XRobotManager.GetRobotWeaponFashionId(robotId)
+    end
+    panelRoleModel:LoadCharacterUiEffect(characterId, actionId, nil, weaponFashionId, nil)
 end
 
 function XUiModelTheatre5ChooseCharacter3D:SetCharacterFocus(index)

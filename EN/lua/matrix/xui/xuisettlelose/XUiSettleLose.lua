@@ -77,6 +77,7 @@ function XUiSettleLose:OnDestroy()
         self.UiStageSettleSound:StopSettleSound()
         self.UiStageSettleSound = nil
     end
+    XEventManager.DispatchEvent(XEventId.EVENT_FIGHT_FINISH_SETTLE)
 end
 
 ---

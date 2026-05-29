@@ -255,7 +255,7 @@ function XViewModelTransfiniteRoom:OnClickMember()
     local stage = stageGroup:GetStageByIndex(self._StageIndex)
     local stageId = stage:GetId()
     self._IsOpenRoom = true
-    XLuaUiManager.Open("UiBattleRoleRoom", stageId, team, XUiTransfiniteRoomProxy)
+    XMVCA.XFuben:OpenUiBattleRoleRoom(stageId, team, XUiTransfiniteRoomProxy)
 end
 
 function XViewModelTransfiniteRoom:OnAwake()

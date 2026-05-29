@@ -63,10 +63,11 @@ end
 
 -- 获取每日奖励领取剩余天数
 function XPurchasePackage:GetDailyRewardRemainDay()
-    if self.Data.BuyTimes > 0 then
-        return self.Data.DailyRewardRemainDay
-    end
-    return 0
+    return self.Data.DailyRewardRemainDay
+end
+
+function XPurchasePackage:GetBuyLimitRemainDay()
+    return self.Data.BuyLimitRemainDay
 end
 
 function XPurchasePackage:GetConsumeCount()

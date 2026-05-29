@@ -142,7 +142,7 @@ function XUiFubenBossSingleModeDetailGridBuff:OnBtnTongBlackClick()
         --self.Parent:SetIsNeedResetAnimation(true)
         self._Control:SetEnterBossInfo(self.Parent:GetBossId(), XEnumConst.BossSingle.LevelType.Challenge, self._Feature:GetFeatureId())
         self._Control:OnEnterChallengeFight()
-        XLuaUiManager.Open("UiBattleRoleRoom", stageId, nil, require(
+        XMVCA.XFuben:OpenUiBattleRoleRoom(stageId, nil, require(
             "XUi/XUiFubenBossSingle/XUiFubenBossSingleMode/XUiFubenBossSingleModeBattleRoleRoom"))
     end
 end

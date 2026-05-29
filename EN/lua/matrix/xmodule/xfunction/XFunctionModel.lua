@@ -140,7 +140,17 @@ end
 
 function XFunctionModel:GetEntryFunctionalLabel(functionId)
     local t = self:GetEntryFunctionalTemplate(functionId)
-    return t and t.Label or "???"
+    return t and t.Label or nil
+end
+
+function XFunctionModel:GetEntryFunctionalTaskId(functionId)
+    local t = self:GetEntryFunctionalTemplate(functionId)
+    return t and t.TaskId or 0
+end
+
+function XFunctionModel:GetEntryFunctionalIcon(functionId)
+    local t = self:GetEntryFunctionalTemplate(functionId)
+    return t and t.Icon or nil
 end
 
 function XFunctionModel:GetEntryFunctionalLabelTimeId(functionId)

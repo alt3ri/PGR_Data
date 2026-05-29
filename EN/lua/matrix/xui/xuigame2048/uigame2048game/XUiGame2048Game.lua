@@ -110,6 +110,17 @@ end
 function XUiGame2048Game:OnExitGame(isRunMain, isOverGame)
     self._Control:ExitGameRelease(isOverGame)
     self._IsDoGameExitRelease = true
+
+    if XMVCA.XGameCollection
+            and XMVCA.XGameCollection:IsLaunchedFromCollection(XEnumConst.GameCollection.GameType.Game2048) then
+        local score = self._Control:GetStageMaxScoreById(self._Control:GetCurStageId())
+        XMVCA.XGameCollection:OnGameExitToCollection(
+            XEnumConst.GameCollection.GameType.Game2048,
+            { Score = score, IsSettled = isOverGame and true or false })
+        self:Close()
+        return
+    end
+
     if isRunMain then
         XLuaUiManager.RunMain()
     else
@@ -283,4 +294,4 @@ function XUiGame2048Game:SetGiveUpBtnShow(isShow)
     self.BtnGiveUp.gameObject:SetActiveEx(isShow)
 end
 
-return XUiGame2048Game
+return XUiGame2048Game

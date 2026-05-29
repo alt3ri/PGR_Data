@@ -1,6 +1,6 @@
-local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
-local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
-local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
+local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local CsXTextManager = CS.XTextManager
 local XUiPanelRoleModel = require("XUi/XUiCharacter/XUiPanelRoleModel")
 local XUiModelUtility = require("XUi/XUiCharacter/XUiModelUtility")
@@ -165,7 +165,7 @@ function XUiReformReadyPanel:OnBtnEnterClicked()
     if diff > 1 then
         evolvableStage:InheritTeamFromEvolableStage(self.BaseStage:GetEvolvableStageByDiffIndex(diff - 1))
     end
-    XLuaUiManager.Open("UiBattleRoleRoom",
+    XMVCA.XFuben:OpenUiBattleRoleRoom(
     self.BaseStage:GetId(),
     evolvableStage:GetTeam(),
     require("XUi/XUiReform/XUiReformBattleRoleRoom"))

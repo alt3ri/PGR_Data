@@ -39,7 +39,7 @@ function XUiPhotographPanel:Init()
     self.Btn.CallBack = function() self:OnBtnClick() end
     
     if XOverseaManager.IsOverSeaRegion() then
-        self.BtnPhotograph:SetButtonState(3) -- 海外隐藏拍照按钮
+        self.BtnPhotograph:SetButtonState(CS.UiButtonState.Disable) -- 海外隐藏拍照按钮
         local raycastComponent = self.BtnPhotograph:GetComponent(typeof(CS.UnityEngine.UI.XEmpty4Raycast))
         raycastComponent.raycastTarget = false
     else
@@ -473,8 +473,26 @@ function XUiPhotographPanel:RefreshActionPanel(isPlaying, cacheAnim)
 end
 
 function XUiPhotographPanel:ClearActionCache()
+    if self.CurActionGrid ~= nil then
+        self.CurActionGrid:SetSelect(false)
+    end
     self.CurActionIndex = nil
     self.CurActionGrid = nil
+end
+
+function XUiPhotographPanel:RefreshFashionGridSelect()
+    if self.CurMenuType ~= MenuBtnType.Fashion then
+        return
+    end
+    local curIndex = self.CurFashionIndex
+    self.CurFashionGrid = nil
+    for index, grid in pairs(self.DynamicTableOther:GetGrids()) do
+        local isSelect = curIndex and curIndex == index
+        grid:SetSelect(isSelect)
+        if isSelect then
+            self.CurFashionGrid = grid
+        end
+    end
 end
 
 function XUiPhotographPanel:SetInfoTextName(textName)

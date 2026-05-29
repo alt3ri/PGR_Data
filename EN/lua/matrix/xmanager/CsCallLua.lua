@@ -20,6 +20,7 @@ local VideoManager = {}
 local CommonGuide = {}
 local Movie = {}
 local Function = {}
+local Theatre6 = {}
 local Time = {}
 
 local TrueString = "True"
@@ -142,6 +143,22 @@ function DlcFuben.GetModelIdByWorldNpcData(worldType, npcData)
     return modelId
 end
 
+function DlcFuben.GetModelIdByFashionId(worldType, fashionId)
+    if not XTool.IsNumberValid(fashionId) then
+        XLog.Error("CsCallLua.DlcFuben.GetModelIdByFashionId 参数错误: fashionId is invalid")
+
+        return nil
+    end
+    
+    local modelId = XMVCA.XDlcHelper:GetDlcModelIdWithWorldTypeAndFashionId(worldType, fashionId)
+
+    if string.IsNilOrEmpty(modelId) then
+        return nil
+    end
+
+    return modelId
+end
+
 function DlcFuben.GetAnimExpressionSOGroupIdByWorldType(worldType, fashionId)
     if not fashionId then
         XLog.Error("CsCallLua.DlcFuben.GetAnimExpressionSOGroupIdByWorldType 参数错误: fashionId == null")
@@ -237,6 +254,10 @@ end
 
 function Player.GetLevel()
     return XPlayer.GetLevel()
+end
+
+function Player.GetGender()
+    return XPlayer.Gender
 end
 
 --- 获取玩家头像、头像框
@@ -648,6 +669,39 @@ function Function.BiwWorldSkipInterface(skipId)
     XMVCA.XBigWorldSkipFunction:SkipTo(skipId)
 end
 
+--region 肉鸽6
+
+---@param xautoChessData XAutoChessData
+function Theatre6.TestCalNpcAttribsAndBackXAutoChessData(xautoChessData)
+    ---@type XTheatre6NpcData
+    local autoChessData = {}
+
+    autoChessData.CharacterId = xautoChessData.CharacterId
+    autoChessData.Attribs = {}
+    autoChessData.Skills = {}
+    autoChessData.Relics = {}
+    autoChessData.GameplayAttribs = {}
+
+    for i = 0, xautoChessData.Relics.Count - 1 do
+        autoChessData.Relics[i + 1] = xautoChessData.Relics[i]
+    end
+
+    for i = 0, xautoChessData.Skills.Count - 1 do
+        autoChessData.Skills[i + 1] = xautoChessData.Skills[i]
+    end
+
+    return XMVCA.XTheatre6.Battle:TestCalNpcAttribsAndBackXAutoChessData(autoChessData)
+end
+
+function Theatre6.GetTheatre6CharacterFashion(characterId)
+    return XMVCA.XTheatre6:GetFashionByCharacterId(characterId)
+end
+
+function Theatre6.GetBuildTagConfig(buildTagId)
+    return XMVCA.XTheatre6:GetBuildTagConfig(buildTagId)
+end
+--endregion
+
 function Time.GetServerNowTimestamp()
     return XTime.GetServerNowTimestamp()
 end
@@ -675,4 +729,5 @@ CsCallLua.VideoManager = VideoManager
 CsCallLua.CommonGuide = CommonGuide
 CsCallLua.Movie = Movie
 CsCallLua.Function = Function
+CsCallLua.Theatre6 = Theatre6
 CsCallLua.Time = Time

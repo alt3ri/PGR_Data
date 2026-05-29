@@ -6,7 +6,8 @@ local XTheatre6SkillComboCaster = require("Gameplay/Theatre6/XTheatre6SkillCombo
 local XTheatre6CharBase = XClass(XTheatre6FightBase, "XTheatre6CharBase")
 
 local DOGE_COST = 100 --触发超算时的超算值消耗(临时方案, 正式方案应该读配置表)
-local ARMOR_BUFF = 105244
+local ARMOR_BUFF = 1025012
+local InTraction_BUFF = 1025018
 
 --region 状态机框架搭建
 
@@ -23,12 +24,12 @@ local StateEnum = {
     WrestleSucSkill = 9, --拼刀成功技能
     DodgeSucSkill = 10   --超算成功技能
 }
+
 XTheatre6CharBase.StateEnum = StateEnum
 
 ---@class XTheatre6CharBase.State:XTheatre6State
 ---@field _owner XTheatre6CharBase
 ---@field _stateMachine XTheatre6CharBase.StateMachine
-
 ---@class XTheatre6CharBase.StateMachine:XTheatre6StateMachine
 
 local StateMachine, States = XLevelStateMachine:CreateClassByEnum(StateEnum, "XTheatre6CharBase")
@@ -55,6 +56,12 @@ end
 ---@param stateId integer StateEnum中定义的状态Ida
 ---@param needDelay bool|nil 是否跳过延迟直接进入目标状态
 function XTheatre6CharBase:SetState(stateId, needDelay)
+    -- 禁止通过这个接口直接设置为delay状态
+    if stateId == StateEnum.Delay then
+        self:LogError("XTheatre6CharBase:SetState Error: Directly Set State to Delay")
+        return
+    end
+
     if needDelay == nil then needDelay = self._states.Delay.NeedDelayStates[stateId] end
     if not needDelay then return self._stateMachine:SetStateById(stateId) end
     local oldStateId = self._stateMachine:GetCurStateId()
@@ -72,6 +79,120 @@ end
 ---@param stateId integer StateEnum中定义的状态Ida
 function XTheatre6CharBase:CheckState(stateId)
     return self._stateMachine:CheckStateById(stateId)
+end
+
+--endregion
+
+--region 状态通用UI流程接口
+
+---部分状态结束时, 尝试关闭出手权头像Ux
+---@param state XTheatre6CharBase.State
+---@param newState XTheatre6CharBase.State
+function XTheatre6CharBase.TryShutDownHandSideUxOnStateEnd(state, newState)
+    if newState.CheckCanRemainHandSideUx and newState:CheckCanRemainHandSideUx() then return end
+    state._owner:ToggleHandSideUx(false)
+end
+
+---部分状态中, 攻击命中敌人时增加连击数
+---@param state XTheatre6CharBase.State
+function XTheatre6CharBase.IncComboCountOnDamgeInState(state, launcherId, targetId, actionId)
+    if not actionId or actionId == 0 then return end
+    local npc = state._owner
+    if launcherId ~= npc._uuid then return end
+    return npc:IncComboCount()
+end
+
+--endregion
+
+--region UI表现修改接口
+
+---设置出手权头像UI动效
+function XTheatre6CharBase:SetHandSideUx(newUx)
+    if self._handSideUx == newUx then return end
+    self._handSideUx = newUx
+    -- self._level:TryUdpateHandSideUx(self)
+    self:TryRefreshHandSideUx()
+end
+
+---获取出手权头像UI动效
+function XTheatre6CharBase:GetHandSideUx()
+    return self._handSideUx
+end
+
+--开关出手权头像特效
+function XTheatre6CharBase:ToggleHandSideUx(isOn)
+    if isOn == nil then isOn = false end
+    if self._uiStates.handSide == isOn then return end
+    self._uiStates.handSide = isOn
+    if isOn then
+        -- self:LogError("Activate Hand Side Ux")
+        self._proxy:Theatre6UpdateHandSideUI(self._uuid, self._handSideUx)
+    else
+        -- self:LogError("ShutDown Hand Side Ux")
+        self._proxy:Theatre6UpdateHandSideUI(0)
+    end
+end
+
+--尝试刷新出手权头像特效
+function XTheatre6CharBase:TryRefreshHandSideUx()
+    if not self._uiStates.handSide then return end
+    self._proxy:Theatre6UpdateHandSideUI(self._uuid, self._handSideUx)
+end
+
+--增加连击数
+function XTheatre6CharBase:IncComboCount()
+    if not self._uiStates.Combo then self:ShowComboUi() end
+    self._proxy:Theatre6UpdateComboCountUI(self._uuid)
+end
+
+--开启连击数UI
+function XTheatre6CharBase:ShowComboUi()
+    if self._uiStates.Combo then return end
+    self._uiStates.Combo = true
+    self._proxy:Theatre6SwitchComboCountUI(self._uuid, true)
+end
+
+--关闭连击数UI(需要补充破碎效果)
+function XTheatre6CharBase:BreakComboUi()
+    if not self._uiStates.Combo then return end
+    self._uiStates.Combo = false
+    self._proxy:Theatre6SwitchComboCountUI(self._uuid, false)
+end
+
+--关闭连击数UI(无破碎效果)
+function XTheatre6CharBase:HideComboUi()
+    if not self._uiStates.Combo then return end
+    self._uiStates.Combo = false
+    self._proxy:Theatre6SwitchComboCountUI(self._uuid, false)
+end
+
+--更新技能播报UI
+function XTheatre6CharBase:UpdateSkillUi(curSkillId, previewMainSkillId)
+    if not self._uiStates.skill then self:ShowSkillUi() end
+    self._proxy:Theatre6UpdateSkillUI(self._uuid, curSkillId, previewMainSkillId)
+end
+
+--开启技能播报UI
+--暂且没有[开启一个空的技能播报]的表现, 只处理布尔标志位
+function XTheatre6CharBase:ShowSkillUi()
+    if self._uiStates.skill then return end
+    self._uiStates.skill = true
+    -- self._proxy:Theatre6UpdateSkillUI(self._uuid, 0, 0)
+end
+
+--关闭技能播报UI(携带破碎效果)
+function XTheatre6CharBase:BreakSkillUi()
+    if not self._uiStates.skill then return end
+    self._uiStates.skill = false
+    self._proxy:Theatre6BrokenSkill(self._uuid)
+end
+
+--关闭技能播报UI(无破碎效果)
+function XTheatre6CharBase:HideSkillUi()
+    if not self._uiStates.skill then return end
+    self._uiStates.skill = false
+    self._proxy:Theatre6BrokenSkill(self._uuid, false)
+    -- self._proxy:Theatre6UpdateSkillUI(self._uuid, 0, 0)
 end
 
 --endregion
@@ -98,6 +219,20 @@ do
     ---自己已完成前置状态清理,自己进入拼刀状态
     function Wrestle:Start()
         self._owner._level:OnCharWrestleReady(self._owner._uuid) --通知控制中心自己已经完成前置状态清理
+    end
+
+    ---控制中心进入二次拼刀重置状态
+    ---@param fighter1UUID number 战斗发起方(Fighter1)的UUID
+    ---@param fighter2UUID number 战斗接收方(Fighter2)的UUID
+    ---@param Position1 Vector3 战斗发起方(Fighter1)的技能目标位置
+    ---@param Position2 Vector3 战斗发起方(Fighter2)的技能目标位置
+    function XTheatre6CharBase:OnSecondWrestleReset(fighter1UUID, fighter2UUID, Position1, Position2)
+        if self._uuid == fighter1UUID then
+            self._proxy:CastSkillActionToPositionNotCheck(self._uuid, self._states.Wrestle.SecondWrestleReset, Position1)
+            self._isFighter1 = true
+        elseif self._uuid == fighter2UUID then
+            self._proxy:CastSkillActionToPositionNotCheck(self._uuid, self._states.Wrestle.SecondWrestleReset, Position2)
+        end
     end
 
     ---控制中心已进入拼刀状态,并且双方均已完成前置状态清理
@@ -142,8 +277,6 @@ do
         if winnerUUID == UUID then
             self:CastWrestleEndSucced();
         else
-            --todo: 这里要根据韧性属性决定眩晕时长, 具体逻辑还要等系统设计
-            self._proxy:Theatre6AddNpcStun(UUID, 1)
             self:CastWrestleEndFailed();
         end
 
@@ -152,11 +285,22 @@ do
     end
 
     --释放拼刀失败的终结动作
-    function XTheatre6CharBase:CastWrestleEndFailed() end
+    function XTheatre6CharBase:CastWrestleEndFailed()
+        local timeSlow = 1025010
+        self._proxy:AbortAction(self._uuid, true)
+        self._proxy:ApplyMagic(self._uuid, self._uuid, timeSlow)
+        self:CastAction(self._states.Wrestle.SucceedActionId)
+    end
 
     --释放拼刀成功的终结动作
     function XTheatre6CharBase:CastWrestleEndSucced()
+        local MonsterTag = 8025000
         self._proxy:AbortAction(self._uuid, true)
+        if self._proxy:CheckBuffByKind(self._uuid, MonsterTag) then 
+            self:CastAction(self._states.Wrestle.SucceedActionId);
+            return
+        end
+        self._proxy:SetCameraFocusTarget(self._uuid, self._enemyUUID)
         self:CastAction(self._states.Wrestle.SucceedActionId);
     end
 
@@ -171,6 +315,7 @@ do
     ---@class XTheatre6CharBase.State.WrestleSucSkill:XTheatre6CharBase.State
     local WrestleSucSkill = States.WrestleSucSkill
     WrestleSucSkill.CheckInterval = 0.05 --技能结束的轮询检查间隔(临时方案)
+    function WrestleSucSkill.CheckCanRemainHandSideUx() return true end
 
     ---@param launcherUUID XTheatre6CharBase
     function XTheatre6CharBase:OnCenterCastWrestleSucSkill(launcherUUID)
@@ -190,12 +335,16 @@ do
             return
         end
 
+        npc:ToggleHandSideUx(true)
         self._skillId = skillId
         self._actionId = actionId
-        self._dmgIncValue = self._proxy:GetNpcGameplayAttribValue(npc._uuid, ETheatre6AttribType.WrestlePoint) * 60
+        self._dmgIncRatio = self._proxy:Theatre6GetConfig():GetInt("PDDmg+")
+        -- self._dmgIncValue = self._proxy:GetNpcGameplayAttribValue(npc._uuid, ETheatre6AttribType.WrestlePoint) * 60
+        self._dmgIncValue = self._proxy:GetNpcGameplayAttribValue(npc._uuid, ETheatre6AttribType.WrestlePoint) *
+            self._dmgIncRatio
         self:RefreshForceContinueTime(actionId)
         self:RefreshCheckTime(); --临时方案
-        self._owner._level:RefreshWrestleSucSkillForceContinueTime(npc._skillComboCaster:GetSkillTime(skillId))
+        npc._level:RefreshWrestleSucSkillForceContinueTime(npc._skillComboCaster:GetSkillTime(skillId))
         self:BroadCastWrestleSucSkillStart()
     end
 
@@ -281,13 +430,16 @@ do
         -- self:LogError("checkTime is set to " .. self._checkTime)
     end
 
----释放拼刀成功技能时增伤(乘区14)
----@param eventArgs BeforeDamageCalcEventArgs
+    ---释放拼刀成功技能时增伤(乘区71)
+    ---@param eventArgs BeforeDamageCalcEventArgs
     function WrestleSucSkill:BeforeDamageCalc(eventArgs)
         local npc = self._owner
         if eventArgs.Launcher ~= npc._uuid then return end
-        self._proxy:AddDamageMagicContextValue(eventArgs.ContextId, ENpcAttrib.Attack1AmpP, self._dmgIncValue, 0)
+        self._proxy:AddDamageMagicContextValue(eventArgs.ContextId, ENpcAttrib.Attack2AmpP, self._dmgIncValue, 0)
     end
+
+    WrestleSucSkill.OnCsNpcDamageEvent = XTheatre6CharBase.IncComboCountOnDamgeInState
+    WrestleSucSkill.End = XTheatre6CharBase.TryShutDownHandSideUxOnStateEnd
 end
 
 -- Dodge 状态逻辑
@@ -375,6 +527,7 @@ do
     ---@class XTheatre6CharBase.State.DodgeSucSkill:XTheatre6CharBase.State
     local DodgeSucSkill = States.DodgeSucSkill
     DodgeSucSkill.CheckInterval = 0.05 --技能结束的轮询检查间隔(临时方案)
+    function DodgeSucSkill.CheckCanRemainHandSideUx() return true end
 
     ---@param launcherUUID XTheatre6CharBase
     function XTheatre6CharBase:OnCenterCastDodgeSucSkill(launcherUUID)
@@ -394,11 +547,13 @@ do
             return
         end
 
+        npc:ToggleHandSideUx(true)
+
         self._skillId = skillId
         self._actionId = actionId
         self:RefreshForceContinueTime(actionId)
         self:RefreshCheckTime(); --临时方案
-        self._owner._level:RefreshDodgeSucSkillForceContinueTime(npc._skillComboCaster:GetSkillTime(skillId))
+        npc._level:RefreshDodgeSucSkillForceContinueTime(npc._skillComboCaster:GetSkillTime(skillId))
         self:BroadCastDodgeSucSkillStart()
     end
 
@@ -483,6 +638,9 @@ do
         self._checkTime = self._owner._npcTime + self.CheckInterval
         -- self:LogError("checkTime is set to " .. self._checkTime)
     end
+
+    DodgeSucSkill.OnCsNpcDamageEvent = XTheatre6CharBase.IncComboCountOnDamgeInState
+    DodgeSucSkill.End = XTheatre6CharBase.TryShutDownHandSideUxOnStateEnd
 end
 
 -- MainSkill 状态逻辑
@@ -490,6 +648,7 @@ do
     ---@class XTheatre6CharBase.State.MainSkill:XTheatre6CharBase.State
     local MainSkill = States.MainSkill
     MainSkill.CheckInterval = 0.05 --技能结束的轮询检查间隔(临时方案)
+    function MainSkill.CheckCanRemainHandSideUx() return true end
 
     ---@param launcherUUID XTheatre6CharBase
     function XTheatre6CharBase:OnCenterCastMainSkill(launcherUUID)
@@ -509,12 +668,13 @@ do
             return
         end
         npc:AddArmor()
+        npc:ToggleHandSideUx(true)
         self._skillId = skillId
         self._actionId = actionId
         self:RefreshForceContinueTime(actionId)
         self:RefreshCheckTime(); --临时方案
         npc._level:RefreshMainSkillForceContinueTime(npc._skillComboCaster:GetSkillTime(skillId))
-        self._proxy:Theatre6SwitchComboCountUI(npc._uuid, true)
+        -- self._proxy:Theatre6SwitchComboCountUI(npc._uuid, true)
         self:BroadCastMainSkillStart()
     end
 
@@ -600,6 +760,10 @@ do
     function MainSkill:RefreshCheckTime()
         self._checkTime = self._owner._npcTime + self.CheckInterval
     end
+
+    MainSkill.OnCsNpcDamageEvent = XTheatre6CharBase.IncComboCountOnDamgeInState
+
+    MainSkill.End = XTheatre6CharBase.TryShutDownHandSideUxOnStateEnd
 end
 
 -- InsertSkill 状态逻辑
@@ -607,6 +771,7 @@ do
     ---@class XTheatre6CharBase.State.InsertSkill:XTheatre6CharBase.State
     local InsertSkill = States.InsertSkill
     InsertSkill.CheckInterval = 0.05 --技能结束的轮询检查间隔(临时方案)
+    function InsertSkill.CheckCanRemainHandSideUx() return true end
 
     ---@param launcherUUID XTheatre6CharBase
     function XTheatre6CharBase:OnCenterCastInsertSkill(launcherUUID, skillId)
@@ -633,6 +798,7 @@ do
         end
 
         npc:AddArmor()
+        npc:ToggleHandSideUx(true)
         self._actionId = actionId
         self:RefreshForceContinueTime(actionId)
         self:RefreshCheckTime(); --临时方案
@@ -722,6 +888,9 @@ do
     function InsertSkill:RefreshCheckTime()
         self._checkTime = self._owner._npcTime + self.CheckInterval
     end
+
+    InsertSkill.OnCsNpcDamageEvent = XTheatre6CharBase.IncComboCountOnDamgeInState
+    InsertSkill.End = XTheatre6CharBase.TryShutDownHandSideUxOnStateEnd
 end
 
 --endregion
@@ -734,6 +903,13 @@ do
     local WaitHit = States.WaitHit
     function WaitHit:ReEnter()
         return self:LogError("WaitHit:ReEnter Error: Repeat Enter")
+    end
+
+    function WaitHit:CheckCanRemainHandSideUx()
+        --如果从前置状态衔接waitHit里面,说明出手方已交换给敌人
+        --如果敌人是从受击状态释放的插入式技能,则暂时保持出手权特效,以防剧透
+        if self._owner._level:IsInsertSkillFromDefend(self._owner._enemyUUID) then return true end
+        return false
     end
 end
 
@@ -782,6 +958,18 @@ do
         [EHitType.Suppress] = nil, -- 压制
     }
 
+    Hit.CanBlockStates = {
+        [SubState.HitEnd] = true,
+        [SubState.HitLight] = true,
+        [SubState.HitHeavy] = true,
+    }
+
+    function Hit:Start()
+        local npc = self._owner
+        npc:BreakSkillUi()
+        npc:BreakComboUi()
+    end
+
     function Hit:GetSubState()
         local hitType = self._proxy:GetNpcBeHitState(self._owner._uuid)
         local subState = self.HitTypeMap[hitType]
@@ -791,15 +979,15 @@ do
         return subState
     end
 
-    function Hit:IsFreeToAct()
-        return self:GetSubState() == self.SubState.HitEnd
+    function Hit:CanBlock()
+        return self.CanBlockStates[self:GetSubState()]
     end
 end
 
 -- Block 状态逻辑
 do
     ---@class XTheatre6CharBase.State.Block:XTheatre6CharBase.State
-    ---@field ActionId integer 格挡成功时触发的动作id
+    ---@field Actions integer[] 格挡成功时触发的动作id列表
     local Block = States.Block
 
     -- 格挡控制器触发格挡的通知
@@ -812,8 +1000,14 @@ do
         self:SetState(StateEnum.Hit)
     end
 
+    function Block:Ctor()
+        self._actIndex = 0
+    end
+
     function Block:Start()
-        self._owner:CastAction(self.ActionId)
+        self._actIndex = (self._actIndex + 1) % (#self.Actions)
+        local actionId = self.Actions[self._actIndex + 1]
+        self._owner:CastAction(actionId)
     end
 
     function Block:ReEnter()
@@ -831,6 +1025,8 @@ do
         [StateEnum.InsertSkill] = "InsertSkill",
         [StateEnum.Wrestle] = "Wrestle",
         [StateEnum.Dodge] = "Dodge",
+        [StateEnum.WrestleSucSkill] = "WrestleSucSkill",
+        [StateEnum.DodgeSucSkill] = "DodgeSucSkill",
     }
     Delay.DelayTimeConfig =
     {
@@ -849,6 +1045,7 @@ do
         },
 
         HitFly = {
+            Wrestle = { 0.2, 0.3, 1.2, 1.4},
             Dodge = { nil, nil, 0.4 },
             Default = { nil, nil, 0.8, 1.5 }
         },
@@ -868,6 +1065,16 @@ do
         },
 
         InsertSkill = {
+            Wrestle = { 0.2, 0.3, 0.3 },
+            Default = { nil, nil, 0 }
+        },
+
+        WrestleSucSkill = {
+            Wrestle = { 0.2, 0.3, 0.3 },
+            Default = { nil, nil, 0 }
+        },
+
+        DodgeSucSkill = {
             Wrestle = { 0.2, 0.3, 0.3 },
             Default = { nil, nil, 0 }
         },
@@ -902,7 +1109,7 @@ do
     function Delay:Start()
         local oldState, newState = self:GetOldStateName(), self.NeedDelayStates[self._newStateId]
         if (not (oldState and newState)) or (oldState == "WaitHit") then
-            self:LogError("Delay:Start Error: Illegal Old State or New State, Record is:\n" .. self:DebugInfo())
+            -- self:LogError("Delay:Start Error: Illegal Old State or New State, Record is:\n" .. self:DebugInfo())
             return self._stateMachine:SetStateById(self._newStateId)
         end
 
@@ -951,6 +1158,37 @@ do
     function Delay:Continue()
         self._stateMachine:SetStateById(self._newStateId)
     end
+
+    function Delay:CheckCanRemainHandSideUx()
+        local newState = self._owner._states[self._newStateId]
+        return newState.CheckCanRemainHandSideUx and newState:CheckCanRemainHandSideUx()
+    end
+end
+
+-- Die 死亡状态逻辑
+do
+    ---@class XTheatre6CharBase.State.Die:XTheatre6CharBase.State
+    local Die = States.Die
+
+    function Die:Prepare(deadUuid, livingUuid)
+        self._isDead = (self._owner._uuid == deadUuid)
+        self._killerUuid = livingUuid
+    end
+
+    function Die:Start()
+        local uuid = self._owner._uuid
+        if self._isDead then
+            -- self:LogError("setNpcDie")
+            self._proxy:NpcDie(uuid, nil, self._killerUuid)
+        else
+            self._proxy:ApplyMagic(uuid, uuid, 1010051, 0, 1) --锁血
+        end
+    end
+
+    function XTheatre6CharBase:OnCenterEnterDieState(deadUuid, livingUuid)
+        self._states.Die:Prepare(deadUuid, livingUuid)
+        self:SetState(StateEnum.Die)
+    end
 end
 
 --endregion
@@ -968,19 +1206,29 @@ function XTheatre6CharBase:Ctor(proxy)
     self._atkModifyTags = {}
     self._defModifyTags = {}
     self._isInited = false
+    self._uiStates = {
+        handSide = false,  -- 出手权UI
+        skill = false,     -- 技能播报UI
+        combo = false,     -- 连击数UI
+    }
+    self._isActive = false --是否为出手方的标记
     self._handSideUx = nil --角色的出手权头像UI动效
+    self.StaminaDmgReducRatio = proxy:Theatre6GetConfig():GetInt("TLDmg-")
+    self._overclockvalue = 0
+    self._TLvalue = 0
 end
 
 function XTheatre6CharBase:_BaseInit()
     XTheatre6FightBase._BaseInit(self)
-    self._name = self.__cname .. "." .. self._proxy:GetNpcTemplate(self._uuid).Id .. "." .. self._uuid
+    self._name = self.__cname .. "." .. self._proxy:GetNpcTemplate(self._uuid).Id .. "." .. self._uuid 
 end
 
 function XTheatre6CharBase:OnEnterLevel(levelId)
     if self._isInited then return end
     self._isInited = true
     XTheatre6FightBase.OnEnterLevel(self, levelId)
-    local caster = XTheatre6SkillComboCaster.New(self._proxy, self._uuid, self._enemyUUID) --[[@as XTheatre6SkillComboCaster]]
+    local caster = XTheatre6SkillComboCaster.New(self) --[[@as XTheatre6SkillComboCaster]]
+    -- local caster = XTheatre6SkillComboCaster.New(self._proxy, self._uuid, self._enemyUUID) --[[@as XTheatre6SkillComboCaster]]
     self._skillComboCaster = caster
     if caster:GetSingleSkillConfig(ETheatre6SkillType.Wrestle) then self._hasWrestleSuccSkill = true end
     if caster:GetSingleSkillConfig(ETheatre6SkillType.Dodge) then self._hasDodgeSuccSkill = true end
@@ -994,6 +1242,7 @@ function XTheatre6CharBase:InitEventCallBackRegister()
     self._proxy:RegisterEvent(EWorldEvent.OnNpcBeHitBegin)                                     --受击事件
     self._proxy:RegisterEvent(EWorldEvent.NpcAddBuff)                                          --Buff添加事件
     self._proxy:RegisterEvent(EWorldEvent.NpcRemoveBuff)                                       --Buff删除事件
+    self._proxy:RegisterEvent(EWorldEvent.NpcCastActionAfter)
     local uuid = self._uuid
     self._proxy:RegisterEventByTarget(EWorldEvent.NpcSkillActionKeyframeSendEvent, uuid)       --注册技能事件
     self._proxy:RegisterEventByTarget(EWorldEvent.NpcCalcDamageBefore, uuid)
@@ -1088,35 +1337,25 @@ end
 function XTheatre6CharBase:AddArmor()
     if self._hasArmor then return end
     self._proxy:ApplyMagic(self._uuid, self._uuid, ARMOR_BUFF)
+    self._proxy:ApplyMagic(self._uuid, self._uuid, InTraction_BUFF)
     self._hasArmor = true
 end
 
 function XTheatre6CharBase:RemoveArmor()
     if not self._hasArmor then return end
     self._proxy:RemoveBuff(self._uuid, ARMOR_BUFF)
+    self._proxy:RemoveBuff(self._uuid, InTraction_BUFF)
     self._hasArmor = false
 end
 
---检查单位是否处于一个可以释放动作的自由态
-function XTheatre6CharBase:IsFreeToAct()
-    return self._states.Hit:IsFreeToAct()
+--检查单位是否处于可以触发格挡的状态
+function XTheatre6CharBase:CanBlock()
+    return self._states.Hit:CanBlock()
 end
 
 --检查单位是否已经处于格挡状态
 function XTheatre6CharBase:IsInBlock()
     return self:CheckState(StateEnum.Block)
-end
-
----设置出手权头像UI动效
-function XTheatre6CharBase:SetHandSideUx(newUx)
-    if self._handSideUx == newUx then return end
-    self._handSideUx = newUx
-    self._level:TryUdpateHandSideUx(self)
-end
-
----获取出手权头像UI动效
-function XTheatre6CharBase:GetHandSideUx()
-    return self._handSideUx
 end
 
 --endregion
@@ -1232,6 +1471,10 @@ function XTheatre6CharBase:OnNpcSkillActionKeyframeSendEvent(launcher, eventName
     -- self:LogError(eventName .. launcher)
     if eventName == "WrestleSuccEndFinish" then return self:OnWrestleSuccEndFinish(skillActionId, keyFrameId) end
     if eventName == "DodgeSuccEndFinish" then return self:OnDodgeSuccEndFinish(self._uuid) end
+    if eventName == "ChangeCamera" then
+        XLog.Warning("切换镜头")
+        self._proxy:SetCameraFocusTarget(self._uuid, self._enemyUUID)
+    end
 end
 
 ---释放拼刀成功技能时增伤(乘区14)
@@ -1251,11 +1494,12 @@ function XTheatre6CharBase:AfterDamageCalc(eventArgs)
     local stamina = self._proxy:GetNpcGameplayAttribValue(self._uuid, ETheatre6AttribType.Stamina)
     if stamina < 0 then return end
 
-    local value = 30
-    local ratio = 1 - stamina * value / 10000
+    -- local value = 30
+    -- local ratio = 1 - stamina * value / 10000
+    local ratio = 1 - stamina * self.StaminaDmgReducRatio / 10000
     if ratio < 0.7 then ratio = 0.7 end
     self._proxy:SetAfterDamageMagicContext(eventArgs.ContextId, eventArgs.PhysicalDamage * ratio, eventArgs
-    .ElementDamage, eventArgs.FinalHackDamage)
+        .ElementDamage, eventArgs.FinalHackDamage)
 end
 
 ---受到伤害时 增加实时超算值
@@ -1274,16 +1518,20 @@ end
 function XTheatre6CharBase:OnNpcDamageEvent(launcherId, targetId, magicId, kind, physicalDamage, elementDamage,
                                             elementType, realDamage, isCritical, actionId, magicTags, customValue)
     --todo:超算值获取逻辑追加读取技能配置&局内动态调整
+
+    local curState = self._stateMachine._curState
+    if curState and curState.OnCsNpcDamageEvent then curState:OnCsNpcDamageEvent(launcherId, targetId, actionId) end
+
     --todo:连击数更新逻辑迁移
-    if launcherId == self._uuid and targetId == self._enemyUUID then
-        if actionId ~= 0 then
-            self._proxy:Theatre6UpdateComboCountUI(launcherId)
-        end
-    elseif launcherId == self._enemyUUID and targetId == self._uuid then
-        if actionId ~= 0 then
-            self._proxy:Theatre6SwitchComboCountUI(targetId, false)
-        end
-    end
+    -- if launcherId == self._uuid and targetId == self._enemyUUID then
+    --     if actionId ~= 0 then
+    --         self._proxy:Theatre6UpdateComboCountUI(launcherId)
+    --     end
+    -- elseif launcherId == self._enemyUUID and targetId == self._uuid then
+    --     if actionId ~= 0 then
+    --         self._proxy:Theatre6SwitchComboCountUI(targetId, false)
+    --     end
+    -- end
 
     if targetId ~= self._uuid then return end
 
@@ -1314,8 +1562,12 @@ function XTheatre6CharBase:OnNpcBeHitBegin(launcherUUID, targetUUID, hitType)
     self:SetState(StateEnum.Hit)
 end
 
-function XTheatre6CharBase:OnNpcDieEvent(npcUUID, npcPlaceId, npcKind, isPlayer)
-    self:SetState(StateEnum.Die)
+function XTheatre6CharBase:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
+    if casterNpcUUID ~= self._uuid then return end
+    if buffId == 10254103 or buffId == 10253107 then
+        XLog.Error("镜头跟随目标发生更改")
+        self._proxy:SetCameraFocusTarget(self._uuid, self._enemyUUID)
+    end
 end
 
 --endregion
@@ -1326,6 +1578,22 @@ function XTheatre6CharBase:Update(dt)
     for _, affixController in pairs(self._updateControllers) do
         affixController:Update(dt)
     end
+
+    local curOverClockValue = self._proxy:Theatre6GetNpcRuntimeOverClock(self._uuid)
+    if self._overclockvalue ~= curOverClockValue then
+        if self._overclockvalue < 100 and curOverClockValue >= 100 then
+            self._proxy:Theatre6PopDamage(self._uuid, self._uuid, 10, 0)
+        end
+        self._overclockvalue = curOverClockValue
+    end
+
+    local curTLValue = self._proxy:GetNpcGameplayAttribValue(self._uuid, ETheatre6AttribType.Stamina)
+    if self._TLvalue ~= curTLValue then
+        if self._TLvalue > 0 and curTLValue <= 0 then
+            self._proxy:Theatre6PopDamage(self._uuid, self._uuid, 9, 0)
+        end
+        self._TLvalue = curTLValue
+    end
 end
 
-return XTheatre6CharBase
+return XTheatre6CharBase

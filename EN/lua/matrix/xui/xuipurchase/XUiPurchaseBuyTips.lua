@@ -106,6 +106,16 @@ function XUiPurchaseBuyTips:OnStart(data, checkBuyFun, updateCb, beforeBuyReqFun
     self:SetBuyDes()
 
     self:StartTimer()
+
+    -- 如果是月卡，则在不能购买时强制置灰按钮
+    if XPurchaseConfigs.IsYKID(self.Data.Id) then
+        local signCardConf = XSignInConfigs.GetSignCardConfigByPurchasePackageId(self.Data.Id)
+        if self.Data.BuyLimitRemainDay > signCardConf.CanBuyDay then
+            self._BtnBuy:SetButtonState(CS.UiButtonState.Disable)
+            self.BtnBuy:SetButtonState(CS.UiButtonState.Disable)
+        end
+    end
+
 end
 
 function XUiPurchaseBuyTips:OnEnable()

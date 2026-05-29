@@ -3,7 +3,7 @@
 Region: `CN`
 > Status: Release/Beta</br>
 > Resource Version: 4.5.0</br>
-> Document Version: 4.5.10</br>
+> Document Version: 4.5.8</br>
 
 Region: `EN/Global`
 > Status: Release</br>

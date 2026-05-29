@@ -390,9 +390,10 @@ XRegression3rdManagerCreator = function()
             return false
         end
 
-        if not XRegression3rdManager.CheckGiftShopRedPointData() then
-            return true
-        end
+        -- v4.5 回归活动中主页红点不再包含礼品商城
+        -- if not XRegression3rdManager.CheckGiftShopRedPointData() then
+        --     return true
+        -- end
 
         return false
     end

@@ -4,7 +4,7 @@ local XUiPanelRegressionBase = require("XUi/XUiRegression3rd/XUiPanel/XUiPanelRe
 local XUiPanelRegressionMain = XClass(XUiPanelRegressionBase, "XUiPanelRegressionMain")
 
 --region   ------------------重写父类方法 start-------------------
-function XUiPanelRegressionBase:OnEnable()
+function XUiPanelRegressionMain:OnEnable()
     self:RefreshView()
 end
 

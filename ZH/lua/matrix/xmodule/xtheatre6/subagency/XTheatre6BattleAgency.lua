@@ -279,9 +279,7 @@ function XTheatre6BattleAgency:_GetXWorldGameplayData(npcDataServer)
     end
 
     if not XTool.IsTableEmpty(npcDataServer.WeaponIds) then
-        for i, v in ipairs(npcDataServer.WeaponIds) do
-            npcData.WeaponIds[i] = v
-        end
+        npcData.WeaponIds = npcDataServer.WeaponIds
     end
 
     if not XTool.IsTableEmpty(npcDataServer.Relics) then

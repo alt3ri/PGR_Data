@@ -7,8 +7,11 @@ local XConditionArithmetic = XClass(XArithmetic, "XConditionArithmetic")
 function XConditionArithmetic:Ctor()
     self.OperatorLevel["&"] = 0
     self.OperatorLevel["|"] = 0
+    self.OperatorLevel["!"] = 1     -- 非：一元运算符，优先级高于 & |
     self.OperatorPattern["%&"] = "&"
     self.OperatorPattern["%|"] = "|"
+    self.OperatorPattern["!"]  = "!"
+    self.UnaryOperators["!"]   = true
     self.ConditionArgs = nil
     self.Desc = nil
     -- XTableCondition
@@ -23,6 +26,13 @@ function XConditionArithmetic:GetValue(left, right, operator)
     else
         return XConditionArithmetic.Super.GetValue(self, left, right, operator)
 	end
+end
+
+function XConditionArithmetic:GetUnaryValue(operand, operator)
+    if "!" == operator then
+        return not self:CheckCondition(operand)
+    end
+    return XConditionArithmetic.Super.GetUnaryValue(self, operand, operator)
 end
 
 function XConditionArithmetic:SetConfig(config)

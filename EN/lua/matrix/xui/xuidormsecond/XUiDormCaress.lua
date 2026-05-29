@@ -152,7 +152,7 @@ function XUiDormCaress:Update()
         return
     end
 
-    local point = self:GetPisont()
+    local point = self:GetPiston()
     if not XTool.UObjIsNil(self.Camera) and point then
         local ray = self.Camera:ScreenPointToRay(point)
         local layerMask = CS.UnityEngine.LayerMask.GetMask("HomeCharacter")
@@ -169,56 +169,68 @@ function XUiDormCaress:Update()
     end
 end
 
-function XUiDormCaress:GetPisont()
+-- 鼠标输入处理（Windows / 模拟器原生键盘鼠标）
+function XUiDormCaress:_HandleMouseInput()
     local screenPoint
-
-    local platform = CS.UnityEngine.Application.platform
-    local runtimePlatform = CS.UnityEngine.RuntimePlatform
-
-    if platform == runtimePlatform.WindowsEditor or platform == runtimePlatform.WindowsPlayer then
-        if self.CurTouchState == XDormConfig.TouchState.WaterGun then
-            if CS.UnityEngine.Input.GetMouseButtonDown(0) then
-                screenPoint = CS.UnityEngine.Vector3(CS.UnityEngine.Input.mousePosition.x, CS.UnityEngine.Input.mousePosition.y, 0)
-            elseif CS.UnityEngine.Input.GetMouseButtonUp(0) then
-                XEventManager.DispatchEvent(XEventId.EVENT_DORM_TOUCH_SHOW, XDormConfig.TouchState.Hide, self.CharacterId, nil)
-            end
-        else
-            if CS.UnityEngine.Input.GetMouseButtonDown(0) then
-                self:RefreshData()
-            elseif CS.UnityEngine.Input.GetMouseButtonUp(0) then
-                XEventManager.DispatchEvent(XEventId.EVENT_DORM_TOUCH_SHOW, XDormConfig.TouchState.Hide, self.CharacterId, nil)
-            end
-
-            if CS.UnityEngine.Input.GetMouseButton(0) then
-                screenPoint = CS.UnityEngine.Vector3(CS.UnityEngine.Input.mousePosition.x, CS.UnityEngine.Input.mousePosition.y, 0)
-            end
+    if self.CurTouchState == XDormConfig.TouchState.WaterGun then
+        if CS.UnityEngine.Input.GetMouseButtonDown(0) then
+            screenPoint = CS.UnityEngine.Vector3(CS.UnityEngine.Input.mousePosition.x, CS.UnityEngine.Input.mousePosition.y, 0)
+        elseif CS.UnityEngine.Input.GetMouseButtonUp(0) then
+            XEventManager.DispatchEvent(XEventId.EVENT_DORM_TOUCH_SHOW, XDormConfig.TouchState.Hide, self.CharacterId, nil)
         end
     else
-        if CS.UnityEngine.Input.touchCount > 0 then
-            if self.CurTouchState == XDormConfig.TouchState.WaterGun then
-                if CS.UnityEngine.Input.GetTouch(0).phase == CS.UnityEngine.TouchPhase.Began then
-                    local p = CS.UnityEngine.Input.GetTouch(0).position
-                    screenPoint = CS.UnityEngine.Vector3(p.x, p.y, 0)
-                elseif CS.UnityEngine.Input.GetTouch(0).phase == CS.UnityEngine.TouchPhase.Ended then
-                    XEventManager.DispatchEvent(XEventId.EVENT_DORM_TOUCH_SHOW, XDormConfig.TouchState.Hide, self.CharacterId, nil)
-                end
-            else
-                if CS.UnityEngine.Input.GetTouch(0).phase == CS.UnityEngine.TouchPhase.Began then
-                    self:RefreshData()
-                elseif CS.UnityEngine.Input.GetTouch(0).phase == CS.UnityEngine.TouchPhase.Ended then
-                    XEventManager.DispatchEvent(XEventId.EVENT_DORM_TOUCH_SHOW, XDormConfig.TouchState.Hide, self.CharacterId, nil)
-                end
+        if CS.UnityEngine.Input.GetMouseButtonDown(0) then
+            self:RefreshData()
+        elseif CS.UnityEngine.Input.GetMouseButtonUp(0) then
+            XEventManager.DispatchEvent(XEventId.EVENT_DORM_TOUCH_SHOW, XDormConfig.TouchState.Hide, self.CharacterId, nil)
+        end
 
-                if CS.UnityEngine.Input.GetTouch(0).phase == CS.UnityEngine.TouchPhase.Stationary or
-                CS.UnityEngine.Input.GetTouch(0).phase == CS.UnityEngine.TouchPhase.Moved then
-                    local p = CS.UnityEngine.Input.GetTouch(0).position
-                    screenPoint = CS.UnityEngine.Vector3(p.x, p.y, 0)
-                end
-            end
+        if CS.UnityEngine.Input.GetMouseButton(0) then
+            screenPoint = CS.UnityEngine.Vector3(CS.UnityEngine.Input.mousePosition.x, CS.UnityEngine.Input.mousePosition.y, 0)
         end
     end
-
     return screenPoint
+end
+
+-- 触摸输入处理（手机 / 平板）
+function XUiDormCaress:_HandleTouchInput()
+    local screenPoint
+    local touch = CS.UnityEngine.Input.GetTouch(0)
+    local phase = touch.phase
+    if self.CurTouchState == XDormConfig.TouchState.WaterGun then
+        if phase == CS.UnityEngine.TouchPhase.Began then
+            local p = touch.position
+            screenPoint = CS.UnityEngine.Vector3(p.x, p.y, 0)
+        elseif phase == CS.UnityEngine.TouchPhase.Ended then
+            XEventManager.DispatchEvent(XEventId.EVENT_DORM_TOUCH_SHOW, XDormConfig.TouchState.Hide, self.CharacterId, nil)
+        end
+    else
+        if phase == CS.UnityEngine.TouchPhase.Began then
+            self:RefreshData()
+        elseif phase == CS.UnityEngine.TouchPhase.Ended then
+            XEventManager.DispatchEvent(XEventId.EVENT_DORM_TOUCH_SHOW, XDormConfig.TouchState.Hide, self.CharacterId, nil)
+        end
+
+        if phase == CS.UnityEngine.TouchPhase.Stationary or phase == CS.UnityEngine.TouchPhase.Moved then
+            local p = touch.position
+            screenPoint = CS.UnityEngine.Vector3(p.x, p.y, 0)
+        end
+    end
+    return screenPoint
+end
+
+-- 判断是否有鼠标输入事件
+function XUiDormCaress:_HasMouseInput()
+    return CS.UnityEngine.Input.GetMouseButton(0) or CS.UnityEngine.Input.GetMouseButtonDown(0) or CS.UnityEngine.Input.GetMouseButtonUp(0)
+end
+
+function XUiDormCaress:GetPiston()
+    -- 有触摸输入时走触摸逻辑，无触摸输入时走鼠标逻辑（兼容安卓模拟器原生键盘/鼠标）
+    if CS.UnityEngine.Input.touchCount > 0 then
+        return self:_HandleTouchInput()
+    elseif self:_HasMouseInput() then
+        return self:_HandleMouseInput()
+    end
 end
 
 function XUiDormCaress:RefreshData()
@@ -332,4 +344,4 @@ function XUiDormCaress:JudgeLeftCount()
     return false
 end
 
-return XUiDormCaress
+return XUiDormCaress

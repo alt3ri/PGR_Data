@@ -1,5 +1,8 @@
 local XMovieActionVideoPlay = XClass(XMovieActionBase, "XMovieActionVideoPlay")
 
+---视频播放(通用的视频播放界面，隐藏UiMovie界面)
+---@class XMovieActionVideoPlay
+---@field UiRoot XUiMovie
 function XMovieActionVideoPlay:OnInit(actionData)
     local params = actionData.Params
     local paramToNumber = XDataCenter.MovieManager.ParamToNumber

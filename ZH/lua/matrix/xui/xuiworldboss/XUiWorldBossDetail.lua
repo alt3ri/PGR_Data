@@ -1,6 +1,6 @@
-local XUiGridStageStar = require("XUi/XUiFubenMainLineDetail/XUiGridStageStar")
-local XUiStageFightControl = require("XUi/XUiCommon/XUiStageFightControl")
-local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local XUiGridStageStar = require("XUi/XUiFubenMainLineDetail/XUiGridStageStar")
+local XUiStageFightControl = require("XUi/XUiCommon/XUiStageFightControl")
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XUiWorldBossDetail = XLuaUiManager.Register(XLuaUi, "UiWorldBossDetail")
 local XUiGridBuff = require("XUi/XUiWorldBoss/XUiGridBuff")
 local CSTextManagerGetText = CS.XTextManager.GetText
@@ -107,10 +107,10 @@ function XUiWorldBossDetail:OnBtnEnterClick()
     local data = { WorldBossTeamDatas = attributeArea:GetCharacterDatas() }
     if IsFinish then
         self:TipDialog(nil, function()
-            XLuaUiManager.Open("UiBattleRoleRoom", self.Stage.StageId, data)
+            XMVCA.XFuben:OpenUiBattleRoleRoom(self.Stage.StageId, data)
         end)
     else
-        XLuaUiManager.Open("UiBattleRoleRoom", self.Stage.StageId, data)
+        XMVCA.XFuben:OpenUiBattleRoleRoom(self.Stage.StageId, data)
     end
 
 

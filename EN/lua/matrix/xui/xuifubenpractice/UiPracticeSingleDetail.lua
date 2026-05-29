@@ -1,5 +1,5 @@
-local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
-local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 -- 家具建造主界面
 local XUiPracticeSingleDetail = XLuaUiManager.Register(XLuaUi, "UiPracticeSingleDetail")
 
@@ -43,7 +43,7 @@ end
 function XUiPracticeSingleDetail:OnBtnEnterClick()
     local stageCfg = XDataCenter.FubenManager.GetStageCfg(self.StageId)
     if XDataCenter.FubenManager.CheckPreFight(stageCfg) then
-        XLuaUiManager.Open("UiBattleRoleRoom", stageCfg.StageId)
+        XMVCA.XFuben:OpenUiBattleRoleRoom(stageCfg.StageId)
         self:Close()
     end
 end

@@ -28,6 +28,10 @@ function XBigWorldMapModel:OnInit()
     self._CoincidenceNpcPlaceMap = {}
     self._CoincidenceReferenceMap = {}
 
+    self._SceneObjectShowInfos = {}
+
+    self._CurrentTrackReadyQuestId = 0
+
     self._IsShieldBigMap = false
 
     self._CurrentAreaGroupData = {
@@ -41,8 +45,14 @@ function XBigWorldMapModel:OnInit()
 
     self._AIMemoryGroups = {}
 
+    self._UnlockLevelMap = false
+
     --- 如果在小地图打开前获取，则用默认值
     self._LittleMapRadius = 114
+
+    self._OverviewMapConfigs = false
+
+    self._MapPinDefaultActiveCache = {}
 
     self:_InitTableKey()
 end
@@ -66,6 +76,10 @@ function XBigWorldMapModel:ResetAll()
     self._CoincidenceNpcPlaceMap = {}
     self._CoincidenceReferenceMap = {}
 
+    self._SceneObjectShowInfos = {}
+
+    self._CurrentTrackReadyQuestId = 0
+
     self._IsShieldBigMap = false
 
     self._MapScaleCache = 0
@@ -76,6 +90,12 @@ function XBigWorldMapModel:ResetAll()
     }
 
     self._AIMemoryGroups = {}
+
+    self._UnlockLevelMap = false
+
+    self._OverviewMapConfigs = false
+
+    self._MapPinDefaultActiveCache = {}
 end
 
 function XBigWorldMapModel:UpdateServerTrackMapPin(data)
@@ -86,8 +106,30 @@ function XBigWorldMapModel:UpdateServerTrackMapPin(data)
     end
 end
 
+function XBigWorldMapModel:UpdateServerTrackReadyQuestMapPin(data)
+    if data then
+        self._CurrentTrackReadyQuestId = data.CurrentTraceReadyQuestId or 0
+    end
+end
+
 function XBigWorldMapModel:UpdateLittleMapRadius(radius)
     self._LittleMapRadius = radius
+end
+
+function XBigWorldMapModel:UpdateUnlockLevelMap(levelIds)
+    self._UnlockLevelMap = {}
+
+    if not XTool.IsTableEmpty(levelIds) then
+        for _, levelId in pairs(levelIds) do
+            self:AddUnlockLevel(levelId)
+        end
+    end
+end
+
+function XBigWorldMapModel:AddUnlockLevel(levelId)
+    if XTool.IsNumberValid(levelId) then
+        self._UnlockLevelMap[levelId] = levelId
+    end
 end
 
 function XBigWorldMapModel:InitPinData(worldId, levelId)
@@ -190,6 +232,14 @@ function XBigWorldMapModel:GetVirtualPinDatasByBindId(bindId, isNoTip)
     return pinDatas
 end
 
+function XBigWorldMapModel:GetCurrentTrackReadyQuestId()
+    return self._CurrentTrackReadyQuestId
+end
+
+function XBigWorldMapModel:GetLevelUnlock(levelId)
+    return self._UnlockLevelMap and self._UnlockLevelMap[levelId] or false
+end
+
 function XBigWorldMapModel:AddQuestMapPin(data)
     local levelId = data.LevelId
     local pinDatas = self:GetPinDatasByLevelId(levelId, true)
@@ -206,7 +256,8 @@ function XBigWorldMapModel:AddQuestMapPin(data)
         if pinData:IsBindPlace() then
             for bindPinId, bindPinData in pairs(pinDatas) do
                 if bindPinData:IsSceneObject() and bindPinData.SceneObjectPlaceId == pinData.TargetSceneObjectPlaceId then
-                    self:_AddCoincidenceSceneObjectPlace(levelId, pinData.TargetSceneObjectPlaceId, bindPinId, pinData.PinId)
+                    self:_AddCoincidenceSceneObjectPlace(levelId, pinData.TargetSceneObjectPlaceId, bindPinId,
+                        pinData.PinId)
                     pinData.NearbyPinId = bindPinId
                     break
                 end
@@ -229,6 +280,10 @@ function XBigWorldMapModel:AddQuestMapPin(data)
 
     if self._TrackTemplateQuestIds[data.QuestId] then
         self:_TrackQuestMapPins(questPinDatas)
+    end
+
+    if self._CurrentTrackReadyQuestId == data.QuestId then
+        self:_TrackReadyQuestMapPins(questPinDatas)
     end
 
     return pinId
@@ -270,22 +325,27 @@ function XBigWorldMapModel:RemoveQuestMapPin(data)
 end
 
 function XBigWorldMapModel:RemoveQuestAllMapPin(questId)
-    local questPinDatas = self:GetQuestPinDatasByQuestId(questId, true)
+    if self._CurrentTrackReadyQuestId == questId then
+        self:CancelTrackReadyQuestMapPin()
+    else
+        local questPinDatas = self:GetQuestPinDatasByQuestId(questId, true)
 
-    self._TrackTemplateQuestIds[questId] = nil
-    if not XTool.IsTableEmpty(questPinDatas) then
-        for _, pinData in pairs(questPinDatas) do
-            local pinDatas = self:GetPinDatasByLevelId(pinData.LevelId)
+        self._TrackTemplateQuestIds[questId] = nil
 
-            self:_RemoveCoincidencePlace(pinData)
-            self:RemoveVirtualMapPin(pinData.LevelId, pinData.PinId)
-            self:TryCancelQuestTrackPins(pinData.LevelId, pinData.PinId)
-            if not XTool.IsTableEmpty(pinDatas) then
-                pinDatas[pinData.PinId] = nil
+        if not XTool.IsTableEmpty(questPinDatas) then
+            for _, pinData in pairs(questPinDatas) do
+                local pinDatas = self:GetPinDatasByLevelId(pinData.LevelId)
+
+                self:_RemoveCoincidencePlace(pinData)
+                self:RemoveVirtualMapPin(pinData.LevelId, pinData.PinId)
+                self:TryCancelQuestTrackPins(pinData.LevelId, pinData.PinId)
+                if not XTool.IsTableEmpty(pinDatas) then
+                    pinDatas[pinData.PinId] = nil
+                end
             end
-        end
 
-        self._QuestPinDataMap[questId] = nil
+            self._QuestPinDataMap[questId] = nil
+        end
     end
 end
 
@@ -343,7 +403,7 @@ function XBigWorldMapModel:RemoveVirtualMapPin(levelId, referPinId)
         for _, pinData in pairs(virtualPinDatas) do
             if pinData.LevelId == levelId then
                 local bindDatas = self:GetVirtualPinDatasByBindId(pinData.BindPinId, true)
-                
+
                 if pinDatas then
                     pinDatas[pinData.PinId] = nil
                 end
@@ -359,23 +419,87 @@ function XBigWorldMapModel:RemoveVirtualMapPin(levelId, referPinId)
 end
 
 function XBigWorldMapModel:TrackQuestMapPins(questId)
-    local questPinDatas = self:GetQuestPinDatasByQuestId(questId, true)
+    local questData = XMVCA.XBigWorldQuest:GetQuestData(questId)
 
-    self._TrackTemplateQuestIds[questId] = true
-    if not XTool.IsTableEmpty(questPinDatas) then
-        self:_TrackQuestMapPins(questPinDatas)
+    if questData then
+        if questData:IsReady() then
+            self:TrackReadyQuestMapPin(questId)
+        else
+            local questPinDatas = self:GetQuestPinDatasByQuestId(questId, true)
+
+            self._TrackTemplateQuestIds[questId] = true
+            self:_TrackQuestMapPins(questPinDatas)
+        end
     end
 end
 
 function XBigWorldMapModel:CancelTrackQuestMapPins(questId)
-    local questPinDatas = self:GetQuestPinDatasByQuestId(questId, true)
+    local questData = XMVCA.XBigWorldQuest:GetQuestData(questId)
 
-    self._TrackTemplateQuestIds[questId] = nil
-    if not XTool.IsTableEmpty(questPinDatas) then
-        for _, pinData in pairs(questPinDatas) do
-            self:TryCancelQuestTrackPins(pinData.LevelId, pinData.PinId)
+    if questData then
+        if questData:IsReady() then
+            if questId == self._CurrentTrackReadyQuestId then
+                self:CancelTrackReadyQuestMapPin()
+            end
+        else
+            local questPinDatas = self:GetQuestPinDatasByQuestId(questId, true)
+
+            self._TrackTemplateQuestIds[questId] = nil
+            if not XTool.IsTableEmpty(questPinDatas) then
+                for _, pinData in pairs(questPinDatas) do
+                    local virtualDatas = self:GetVirtualPinDatasByReferId(pinData.PinId, true)
+
+                    if not XTool.IsTableEmpty(virtualDatas) then
+                        for _, virtualData in pairs(virtualDatas) do
+                            self:TryCancelQuestTrackPins(virtualData.LevelId, virtualData.PinId)
+                        end
+                    end
+
+                    self:TryCancelQuestTrackPins(pinData.LevelId, pinData.PinId)
+                end
+            end
         end
     end
+end
+
+function XBigWorldMapModel:TrackReadyQuestMapPin(questId, isSendCMD)
+    if XTool.IsNumberValid(self._CurrentTrackReadyQuestId) then
+        local currentQuestPinDatas = self:GetQuestPinDatasByQuestId(self._CurrentTrackReadyQuestId, true)
+
+        if not XTool.IsTableEmpty(currentQuestPinDatas) then
+            for _, pinData in pairs(currentQuestPinDatas) do
+                local virtualDatas = self:GetVirtualPinDatasByReferId(pinData.PinId, true)
+
+                if not XTool.IsTableEmpty(virtualDatas) then
+                    for _, virtualData in pairs(virtualDatas) do
+                        self:CancelTrackSinglePin(virtualData.LevelId, XEnumConst.BWMap.TrackType.Normal,
+                            virtualData.PinId)
+                    end
+                end
+
+                self:CancelTrackSinglePin(pinData.LevelId, XEnumConst.BWMap.TrackType.Normal, pinData.PinId)
+
+                if isSendCMD then
+                    XMVCA.X3CProxy:Send(CS.X3CCommand.CMD_STOP_TRACK_MAP_PIN, {
+                        MapPinLevelId = pinData.LevelId,
+                        MapPinId = pinData.PinId,
+                    })
+                end
+            end
+        end
+    end
+
+    self._CurrentTrackReadyQuestId = questId or 0
+
+    if XTool.IsNumberValid(self._CurrentTrackReadyQuestId) then
+        local questPinDatas = self:GetQuestPinDatasByQuestId(questId, true)
+
+        self:_TrackReadyQuestMapPins(questPinDatas, isSendCMD)
+    end
+end
+
+function XBigWorldMapModel:CancelTrackReadyQuestMapPin(isSendCMD)
+    self:TrackReadyQuestMapPin(0, isSendCMD)
 end
 
 function XBigWorldMapModel:DisplayMapPin(data)
@@ -466,6 +590,16 @@ function XBigWorldMapModel:UpdatePinPosition(levelId, pinId, position)
 
     if pinData then
         pinData:UpdateWorldPosition(position)
+    end
+end
+
+function XBigWorldMapModel:UpdatePinAreaGroup(levelId, pinId, groupId)
+    if XTool.IsNumberValid(groupId) then
+        local pinData = self:GetPinDataByLevelIdAndPinId(levelId, pinId)
+
+        if pinData then
+            pinData:UpdateAreaGroup(groupId)
+        end
     end
 end
 
@@ -630,8 +764,84 @@ function XBigWorldMapModel:GetAIMemoryIdsByGroupId(groupId)
     return self._AIMemoryGroups[groupId]
 end
 
+---@return table<number, XTableBigWorldMap[]>
+function XBigWorldMapModel:GetOverviewMapConfigs()
+    if not self._OverviewMapConfigs then
+        local configs = self:GetBigWorldMapConfigs()
+
+        self._OverviewMapConfigs = {}
+        for _, mapConfig in pairs(configs) do
+            self._OverviewMapConfigs[mapConfig.OverviewId] = self._OverviewMapConfigs[mapConfig.OverviewId] or {}
+
+            table.insert(self._OverviewMapConfigs[mapConfig.OverviewId], mapConfig)
+        end
+
+        for _, mapConfigList in pairs(self._OverviewMapConfigs) do
+            table.sort(mapConfigList, function(mapA, mapB)
+                if mapA.SortIndex ~= mapB.SortIndex then
+                    return mapA.SortIndex < mapB.SortIndex
+                end
+                return mapA.LevelId < mapB.LevelId
+            end)
+        end
+    end
+
+    return self._OverviewMapConfigs
+end
+
 function XBigWorldMapModel:GetLittleMapRadius()
     return self._LittleMapRadius
+end
+
+function XBigWorldMapModel:GetMapPinDefaultActiveCache(levelId, placeId)
+    if not self._MapPinDefaultActiveCache[levelId] then
+        return nil
+    end
+
+    return self._MapPinDefaultActiveCache[levelId][placeId]
+end
+
+function XBigWorldMapModel:SetMapPinDefaultActiveCache(levelId, placeId, isActive)
+    self._MapPinDefaultActiveCache[levelId] = self._MapPinDefaultActiveCache[levelId] or {}
+    self._MapPinDefaultActiveCache[levelId][placeId] = isActive
+end
+
+function XBigWorldMapModel:GetMapSceneObjectShowInfos(levelId)
+    local result = self._SceneObjectShowInfos[levelId]
+
+    if not result then
+        local showInfoData = XMVCA.X3CProxy:Send(CS.X3CCommand.CMD_GET_SCENEOBJECTS_MAP_SHOW_INFO_IN_LEVEL, {
+            LevelId = levelId,
+        })
+        local showInfos = showInfoData.Datas
+
+        result = {}
+        if not XTool.IsTableEmpty(showInfos) then
+            for _, showInfo in pairs(showInfos) do
+                table.insert(result, {
+                    PlaceId = showInfo.PlaceId,
+                    Position = {
+                        x = showInfo.Position.x,
+                        y = showInfo.Position.y,
+                        z = showInfo.Position.z,
+                    },
+                    Info = {
+                        Id = showInfo.MapShowInfo.Id,
+                        Name = showInfo.MapShowInfo.Name,
+                        GroupIdList = XTool.CsList2LuaTable(showInfo.MapShowInfo.GroupIdList),
+                        ConditionId = showInfo.MapShowInfo.Condition,
+                        MinScale = showInfo.MapShowInfo.MinScale,
+                        MaxScale = showInfo.MapShowInfo.MaxScale,
+                        ShowType = showInfo.MapShowInfo.ShowType,
+                    }
+                })
+            end
+        end
+
+        self._SceneObjectShowInfos[levelId] = result
+    end
+
+    return result
 end
 
 function XBigWorldMapModel:_GetGeneratePinIdByLevelId(levelId)
@@ -748,6 +958,37 @@ function XBigWorldMapModel:_TrackQuestMapPins(questPinDatas)
 
         for levelId, pinIdMap in pairs(trackPinIdMap) do
             self:TrackPins(levelId, pinIdMap, XEnumConst.BWMap.TrackType.Quest)
+        end
+    end
+end
+
+function XBigWorldMapModel:_TrackReadyQuestMapPins(questPinDatas, isSendCMD)
+    if not XTool.IsTableEmpty(questPinDatas) then
+        local trackPinIdMap = {}
+
+        for _, pinData in pairs(questPinDatas) do
+            local virtualDatas = self:GetVirtualPinDatasByReferId(pinData.PinId, true)
+
+            if not XTool.IsTableEmpty(virtualDatas) then
+                for _, virtualData in pairs(virtualDatas) do
+                    trackPinIdMap[virtualData.LevelId] = trackPinIdMap[virtualData.LevelId] or {}
+                    trackPinIdMap[virtualData.LevelId][virtualData.PinId] = true
+                end
+            end
+
+            if isSendCMD then
+                XMVCA.X3CProxy:Send(CS.X3CCommand.CMD_START_TRACK_MAP_PIN, {
+                    MapPinLevelId = pinData.LevelId,
+                    MapPinId = pinData.PinId,
+                })
+            end
+
+            trackPinIdMap[pinData.LevelId] = trackPinIdMap[pinData.LevelId] or {}
+            trackPinIdMap[pinData.LevelId][pinData.PinId] = true
+        end
+
+        for levelId, pinIdMap in pairs(trackPinIdMap) do
+            self:TrackPins(levelId, pinIdMap)
         end
     end
 end

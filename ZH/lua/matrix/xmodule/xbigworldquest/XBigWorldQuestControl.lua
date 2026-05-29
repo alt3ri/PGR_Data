@@ -245,6 +245,15 @@ function XBigWorldQuestControl:GetInviteQuestPriority(id)
     return self._Model:GetInviteQuestPriority(id)
 end
 
+function XBigWorldQuestControl:GetInviteQuestType(id)
+    return self._Model:GetInviteQuestType(id)
+end
+
+function XBigWorldQuestControl:IsSingle2MultiInviteQuest(id)
+    local type = self:GetInviteQuestType(id)
+    return type == XMVCA.XBigWorldQuest.InviteQuestType.Single2Multi
+end
+
 function XBigWorldQuestControl:GetInviteQuestCondition(id)
     return self._Model:GetInviteQuestCondition(id)
 end

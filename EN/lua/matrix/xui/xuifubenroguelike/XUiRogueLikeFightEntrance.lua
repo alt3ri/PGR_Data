@@ -1,4 +1,4 @@
-local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XUiRogueLikeFightEntrance = XClass(nil, "XUiRogueLikeFightEntrance")
 local STAR_LENGTH = 3
 
@@ -122,7 +122,7 @@ function XUiRogueLikeFightEntrance:OnFightClick(stageId)
 
     self.UiRoot:Close()
     local data = {NodeId = self.Node.Id}
-    XLuaUiManager.Open("UiBattleRoleRoom", stageId, data)
+    XMVCA.XFuben:OpenUiBattleRoleRoom(stageId, data)
 end
 
 

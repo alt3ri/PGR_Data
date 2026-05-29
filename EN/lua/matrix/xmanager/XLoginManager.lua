@@ -216,9 +216,9 @@ function XLoginManager.ClearGame()
         XDataCenter.MovieManager.StopMovie()
     end
     CS.Movie.XMovieManager.Instance:Clear()
-    CsXUiManager.Instance:Clear()
-    XMVCA.XBigWorldGamePlay:OnExitFight()
+    XMVCA.XBigWorldGamePlay:ClearGame()
     XHomeSceneManager.LeaveScene()
+    CsXUiManager.Instance:Clear()
 end
 
 -- 清理返回登陆界面
@@ -1058,6 +1058,7 @@ XRpc.NotifyLogin = function(data)
     local fashionProfiler = loginProfiler:CreateChild("FashionManager")
     fashionProfiler:Start()
     XDataCenter.FashionManager.InitFashions(data.FashionList)
+    XMVCA.XFashion:LoginNotify(data)
     fashionProfiler:Stop()
 
     local baseEquipProfiler = loginProfiler:CreateChild("BaseEquipManager")
@@ -1222,8 +1223,7 @@ end
 function XLoginManager.GetCurrentLoginPromoFeature()
     local allConfigs = XLoginManager.GetLoginPromoFeatureTemplate()
     for _, config in pairs(allConfigs) do
-        if XConditionManager.CheckCondition(config.ConditionId)
-        and XFunctionManager.CheckInTimeByTimeId(config.EnterTimeId) then
+        if XConditionManager.CheckCondition(config.ConditionId) and XFunctionManager.CheckInTimeByTimeId(config.EnterTimeId) then
             return config
         end
     end
@@ -1341,14 +1341,7 @@ XRpc.ForceLogoutNotify = function(res)
     end
     XUiManager.SystemDialogTip(CS.XTextManager.GetText("TipTitle"),error_txt, XUiManager.DialogType.OnlySure, nil, function()
         XEventManager.DispatchEvent(XEventId.EVENT_LOGIN_UI_OPEN)
-        XFightUtil.ClearFight()
-        if XDataCenter.MovieManager then
-            XDataCenter.MovieManager.StopMovie()
-        end
-        CS.Movie.XMovieManager.Instance:Clear()
-        CsXUiManager.Instance:Clear()
-        XMVCA.XBigWorldGamePlay:OnExitFight()
-        XHomeSceneManager.LeaveScene()
+        XLoginManager.ClearGame()
         XLoginManager.BackToUiLogin(error_txt)
     end)
 end
@@ -1388,7 +1381,7 @@ XRpc.GameUpdateNotify = function(res)
 
         CS.Movie.XMovieManager.Instance:Clear()
         CsXUiManager.Instance:Clear()
-        XMVCA.XBigWorldGamePlay:OnExitFight()
+        XMVCA.XBigWorldGamePlay:ClearGame()
         XHomeSceneManager.LeaveScene()
         XLoginManager.BackToUiLogin(res.Msg)
     end)

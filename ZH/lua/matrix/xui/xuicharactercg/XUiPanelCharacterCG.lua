@@ -18,7 +18,13 @@ function XUiPanelCharacterCG:InitLoadVideoPlayerPrefab()
         self.VideoPlayer.DestroyOnPlayEnd = true
         self.VideoPlayerRawImg = self.VideoPlayer:GetComponent(typeof(CS.UnityEngine.UI.RawImage))
         self.VideoPlayerRawImg.enabled = false
+    
+    
+        self.VideoPlayer.DestroyOnStopWithoutLanguagePreparing = self._IsDestroyOnStopWithoutLanguagePreparing or false
     end
+    
+    -- 同步初始化前添加的回调
+    self:_SyncAllVideoDestroyCallBack()
 end
 
 function XUiPanelCharacterCG:OnEnable()
@@ -57,6 +63,14 @@ function XUiPanelCharacterCG:OnDestroy()
     self:RemoveEffectTimer()
     self:RemoveReplayTimer()
     self:CloseClickMask()
+end
+
+function XUiPanelCharacterCG:SetDestroyOnStopWithoutLanguagePreparing(isDestroyOnStopWithoutLanguagePreparing)
+    self._IsDestroyOnStopWithoutLanguagePreparing = isDestroyOnStopWithoutLanguagePreparing
+
+    if self.VideoPlayer then
+        self.VideoPlayer.DestroyOnStopWithoutLanguagePreparing = isDestroyOnStopWithoutLanguagePreparing
+    end
 end
 
 --region Event
@@ -305,23 +319,83 @@ function XUiPanelCharacterCG:SetSubtitlesEnable(enable)
 end
 
 function XUiPanelCharacterCG:AddVideoDestroyCallBack(cb)
+    if self.PreActionDestroyedList == nil then
+        self.PreActionDestroyedList = { cb }
+    else
+        -- 注意去重
+        if table.contains(self.PreActionDestroyedList, cb) then
+            return
+        end
+        
+        table.insert(self.PreActionDestroyedList, cb)
+    end
+    
+    self:_SyncVideoDestroyCallBack(cb, true)
+end
+
+function XUiPanelCharacterCG:RemoveVideoDestroyCallBack(cb)
+    if not XTool.IsTableEmpty(self.PreActionDestroyedList) then
+        local isin, index = table.contains(self.PreActionDestroyedList, cb)
+
+        if isin then
+            table.remove(self.PreActionDestroyedList, index)
+        end
+    end
+    
+    self:_SyncVideoDestroyCallBack(cb, false)
+end
+
+--- 同步全部，注意该方法仅用于videoplayer初始化时，后续不能全量同步
+function XUiPanelCharacterCG:_SyncAllVideoDestroyCallBack()
+    if XTool.IsTableEmpty(self.PreActionDestroyedList) then
+        return
+    end
+    
     if self.VideoPlayer then
-        if self.VideoPlayer.ActionDestroyed then
-            self.VideoPlayer.ActionDestroyed = self.VideoPlayer.ActionDestroyed + cb
+        for i, cb in pairs(self.PreActionDestroyedList) do
+            if self.VideoPlayer.ActionDestroyed then
+                self.VideoPlayer.ActionDestroyed = self.VideoPlayer.ActionDestroyed + cb
+            else
+                self.VideoPlayer.ActionDestroyed = cb
+            end
+        end
+        
+    end
+end
+
+--- 增量同步，适用于任何时期，但需要注意不要叠加（主要是不要和全量同步叠加）
+function XUiPanelCharacterCG:_SyncVideoDestroyCallBack(cb, isAdd)
+    if self.VideoPlayer then
+        if isAdd then
+            if self.VideoPlayer.ActionDestroyed then
+                self.VideoPlayer.ActionDestroyed = self.VideoPlayer.ActionDestroyed + cb
+            else
+                self.VideoPlayer.ActionDestroyed = cb
+            end
         else
-            self.VideoPlayer.ActionDestroyed = cb
+            if self.VideoPlayer.ActionDestroyed then
+                self.VideoPlayer.ActionDestroyed = self.VideoPlayer.ActionDestroyed - cb
+            end
         end
     end
 end
 
-function XUiPanelCharacterCG:RemoveVideoDestroyCallBack(cb)
-    if self.VideoPlayer then
-        if self.VideoPlayer.ActionDestroyed then
-            self.VideoPlayer.ActionDestroyed = self.VideoPlayer.ActionDestroyed - cb
-        else
-            self.VideoPlayer.ActionDestroyed = cb
-        end
+--region 视频音量控制
+
+function XUiPanelCharacterCG:SetVolume(value)
+    if self.VideoPlayer and self.VideoPlayer.VideoPlayerInst and self.VideoPlayer.VideoPlayerInst.player then
+        self.VideoPlayer.VideoPlayerInst.player:SetVolume(value)
     end
 end
+
+function XUiPanelCharacterCG:GetVolume()
+    if self.VideoPlayer and self.VideoPlayer.VideoPlayerInst and self.VideoPlayer.VideoPlayerInst.player then
+        return self.VideoPlayer.VideoPlayerInst.player:GetVolume()
+    end
+    
+    return 0
+end
+
+--endregion
 
 return XUiPanelCharacterCG

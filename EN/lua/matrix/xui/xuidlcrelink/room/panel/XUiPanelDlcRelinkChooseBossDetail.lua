@@ -253,8 +253,8 @@ function XUiPanelDlcRelinkChooseBossDetail:RefreshLevelIds()
             end
         end
         -- 背景颜色
-        local levelType = self._Control:GetLevelType(levelId)
-        local bgColor = self._Control:GetClientConfig("RoomBossLevelBgColor", levelType)
+        local levelDifficulty = self._Control:GetLevelDifficulty(levelId)
+        local bgColor = self._Control:GetClientConfig("RoomBossLevelBgColor", levelDifficulty)
         for i = 1, 3 do
             local rImgBg = grid:GetObject(string.format("RImgBg%s", i))
             if rImgBg then

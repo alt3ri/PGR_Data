@@ -29,8 +29,12 @@ end
 
 function XUiLifeTreeCardGridDivineCard:InitComponents()
     self.Button:AddEventListener(function() self:OnBtnButtonClick() end)
-    
+
     self:InitLine()
+end
+
+function XUiLifeTreeCardGridDivineCard:GetCardType()
+    return XMVCA.XLifeTree.EnumConst.CARD_TYPE.DIVINE
 end
 
 function XUiLifeTreeCardGridDivineCard:Refresh()
@@ -92,19 +96,20 @@ function XUiLifeTreeCardGridDivineCard:OnCharacterUnlock(unlockIndex)
     local characterConfig = self._Control:GetLifeTreeCharacterConfigById(catalogConfig.CharacterId)
     local uiUnlockAnim = characterConfig.UiLifeTreeCardUnlockAnims[unlockIndex]
     if uiUnlockAnim then
-        self.Parent:PlayAnimation(uiUnlockAnim)
+        self.Parent:PlayAnimationWithMask(uiUnlockAnim)
     end
     -- 卡牌动画
     local gridUnlockAnim = characterConfig.GridDivineCardUnlockAnims[unlockIndex]
     if gridUnlockAnim then
         self.IsAnimPlaying = true
-        self.Parent:PlayAnimation("HideUI")
-        self:PlayAnimation(gridUnlockAnim, function()
+        self.Parent:PlayNonDivineCardsAnimHide()
+        self:PlayAnimationWithMask(gridUnlockAnim, function()
             -- 超过1个状态的神卡解锁，自动切换到下一状态描述
             if unlockIndex > 1 then
                 self.Parent:OnBtnSwitchClick()
             end
-            self.Parent:PlayAnimation("ShowUI")
+            self.Parent:PlayNonDivineCardsAnimShow()
+            self.Parent:RefreshBtnTask()
             self.IsAnimPlaying = false
         end)
     end

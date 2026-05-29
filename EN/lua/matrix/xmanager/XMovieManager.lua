@@ -811,6 +811,7 @@ XMovieManagerCreator = function()
         return XMovieConfigs.TryGetMovieSkipSummaryCfg(CurPlayingMovieId)
     end
     
+    --[[ 改成XMVCA.XMovie:FormatContent
     --- 针对传入的文本，根据玩家当前的性别类型进行处理，返回处理过后的文本
     function XMovieManager.GetSummaryContentByGenderCheck(content)
         local OpenMovieThirdGender = XMVCA.XMovie:GetOpenMovieSkipThirdGender()
@@ -846,6 +847,7 @@ XMovieManagerCreator = function()
             return result
         end
     end
+    ]]
 
     function XMovieManager.GetCurPlayingMovieId()
         return CurPlayingMovieId

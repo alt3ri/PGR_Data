@@ -24,7 +24,7 @@ local MapTableKey = {
     BigWorldMapQuestPin = {
         DirPath = XConfigUtil.DirectoryType.Client,
         CacheType = XConfigUtil.CacheType.Normal,
-        Identifier = "QuestId",
+        Identifier = "QuestType",
     },
     BigWorldMapLink = {
         DirPath = XConfigUtil.DirectoryType.Client,
@@ -34,6 +34,10 @@ local MapTableKey = {
     BigworldAIMemory = {
         DirPath = XConfigUtil.DirectoryType.Client,
         CacheType = XConfigUtil.CacheType.Normal,
+    },
+    BigWorldMapOverview = {
+        DirPath = XConfigUtil.DirectoryType.Client,
+        CacheType = XConfigUtil.CacheType.Private,
     },
 }
 
@@ -81,6 +85,12 @@ function XBigWorldMapConfigModel:GetBigWorldMapHeightByLevelId(levelId)
     return config.Height
 end
 
+function XBigWorldMapConfigModel:GetBigWorldMapAreaGroupTypeByLevelId(levelId)
+    local config = self:GetBigWorldMapConfigByLevelId(levelId)
+
+    return config.AreaGroupType
+end
+
 function XBigWorldMapConfigModel:GetBigWorldMapMapNameByLevelId(levelId)
     local config = self:GetBigWorldMapConfigByLevelId(levelId)
 
@@ -117,6 +127,12 @@ function XBigWorldMapConfigModel:GetBigWorldMapDefaultScaleByLevelId(levelId)
     return config.DefaultScale
 end
 
+function XBigWorldMapConfigModel:GetBigWorldMapOverviewIdByLevelId(levelId)
+    local config = self:GetBigWorldMapConfigByLevelId(levelId)
+
+    return config.OverviewId
+end
+
 function XBigWorldMapConfigModel:GetBigWorldMapAreaGroupIdsByLevelId(levelId)
     local config = self:GetBigWorldMapConfigByLevelId(levelId)
 
@@ -147,6 +163,12 @@ function XBigWorldMapConfigModel:GetBigWorldMapAreaGroupGroupNameByGroupId(group
     local config = self:GetBigWorldMapAreaGroupConfigByGroupId(groupId)
 
     return config.GroupName
+end
+
+function XBigWorldMapConfigModel:GetBigWorldMapAreaGroupIconByGroupId(groupId)
+    local config = self:GetBigWorldMapAreaGroupConfigByGroupId(groupId)
+
+    return config.Icon
 end
 
 function XBigWorldMapConfigModel:GetBigWorldMapAreaGroupAreaIdsByGroupId(groupId)
@@ -241,16 +263,16 @@ function XBigWorldMapConfigModel:GetBigWorldMapQuestPinConfigs()
 end
 
 ---@return XTableBigWorldMapQuestPin
-function XBigWorldMapConfigModel:GetBigWorldMapQuestPinConfigByQuestId(questId)
-    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(MapTableKey.BigWorldMapQuestPin, questId, false)
+function XBigWorldMapConfigModel:GetBigWorldMapQuestPinConfigByQuestType(questType)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(MapTableKey.BigWorldMapQuestPin, questType, false)
 end
 
-function XBigWorldMapConfigModel:GetBigWorldMapQuestPinStyleIdByQuestId(questId)
-    local config = self:GetBigWorldMapQuestPinConfigByQuestId(questId)
+function XBigWorldMapConfigModel:GetBigWorldMapQuestPinStyleIdByQuestType(questType)
+    local config = self:GetBigWorldMapQuestPinConfigByQuestType(questType)
 
     if not config then
-        XLog.Error("XBigWorldMapConfigModel:GetBigWorldMapQuestPinStyleIdByQuestId questId = " .. questId ..
-                       " not found!")
+        XLog.Error("XBigWorldMapConfigModel:GetBigWorldMapQuestPinStyleIdByQuestType questType = " .. questType ..
+            " not found!")
 
         return 0
     end
@@ -258,19 +280,38 @@ function XBigWorldMapConfigModel:GetBigWorldMapQuestPinStyleIdByQuestId(questId)
     return config.StyleId
 end
 
-function XBigWorldMapConfigModel:GetBigWorldMapQuestPinSecondStyleIdByQuestId(questId)
-    local config = self:GetBigWorldMapQuestPinConfigByQuestId(questId)
+function XBigWorldMapConfigModel:GetBigWorldMapQuestPinSecondStyleIdByQuestType(questType)
+    local config = self:GetBigWorldMapQuestPinConfigByQuestType(questType)
 
     if not config then
-        XLog.Error("XBigWorldMapConfigModel:GetBigWorldMapQuestPinSecondStyleIdByQuestId questId = " .. questId .. " not found!")
+        XLog.Error("XBigWorldMapConfigModel:GetBigWorldMapQuestPinSecondStyleIdByQuestType questType = " ..
+        questType .. " not found!")
         return 0
     end
 
     if config.SecondStyleId == 0 then
-        XLog.Error("XBigWorldMapConfigModel:GetBigWorldMapQuestPinSecondStyleIdByQuestId questId = " .. questId .. ", SecondStyleId = 0 !")
+        XLog.Error("XBigWorldMapConfigModel:GetBigWorldMapQuestPinSecondStyleIdByQuestType questType = " ..
+        questType .. ", SecondStyleId = 0 !")
     end
 
     return config.SecondStyleId
+end
+
+function XBigWorldMapConfigModel:GetBigWorldMapQuestPinReadyStyleIdByQuestType(questType)
+    local config = self:GetBigWorldMapQuestPinConfigByQuestType(questType)
+
+    if not config then
+        XLog.Error("XBigWorldMapConfigModel:GetBigWorldMapQuestPinSecondStyleIdByQuestType questType = " ..
+        questType .. " not found!")
+        return 0
+    end
+
+    if config.ReadyStyleId == 0 then
+        XLog.Error("XBigWorldMapConfigModel:GetBigWorldMapQuestPinSecondStyleIdByQuestType questType = " ..
+        questType .. ", ReadyStyleId = 0 !")
+    end
+
+    return config.ReadyStyleId
 end
 
 ---@return XTableBigWorldMapLink[]
@@ -367,6 +408,52 @@ function XBigWorldMapConfigModel:GetBigworldAIMemorysByGroupId(groupId)
         end
     end
     return self._AIMemoryGroupCache[groupId]
+end
+
+---@return XTableBigWorldMapOverview[]
+function XBigWorldMapConfigModel:GetBigWorldMapOverviewConfigs()
+    return self._ConfigUtil:GetByTableKey(MapTableKey.BigWorldMapOverview)
+end
+
+---@return XTableBigWorldMapOverview
+function XBigWorldMapConfigModel:GetBigWorldMapOverviewConfigById(id)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(MapTableKey.BigWorldMapOverview, id, false)
+end
+
+function XBigWorldMapConfigModel:GetBigWorldMapOverviewNameById(id)
+    local config = self:GetBigWorldMapOverviewConfigById(id)
+
+    return config.Name
+end
+
+function XBigWorldMapConfigModel:GetBigWorldMapOverviewIconById(id)
+    local config = self:GetBigWorldMapOverviewConfigById(id)
+
+    return config.Icon
+end
+
+function XBigWorldMapConfigModel:GetBigWorldMapOverviewPosXById(id)
+    local config = self:GetBigWorldMapOverviewConfigById(id)
+
+    return config.PosX
+end
+
+function XBigWorldMapConfigModel:GetBigWorldMapOverviewPosYById(id)
+    local config = self:GetBigWorldMapOverviewConfigById(id)
+
+    return config.PosY
+end
+
+function XBigWorldMapConfigModel:GetBigWorldMapOverviewPrefabById(id)
+    local config = self:GetBigWorldMapOverviewConfigById(id)
+
+    return config.Prefab
+end
+
+function XBigWorldMapConfigModel:GetBigWorldMapOverviewBackgroundById(id)
+    local config = self:GetBigWorldMapOverviewConfigById(id)
+
+    return config.Background
 end
 
 return XBigWorldMapConfigModel

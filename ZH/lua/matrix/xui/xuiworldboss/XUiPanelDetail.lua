@@ -1,4 +1,4 @@
-local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XUiPanelDetail = XClass(nil, "XUiPanelDetail")
 local XUiGridBuff = require("XUi/XUiWorldBoss/XUiGridBuff")
 local CSTextManagerGetText = CS.XTextManager.GetText
@@ -119,7 +119,7 @@ function XUiPanelDetail:OnBtnBossClick()
         return
     end
     local data = {WorldBossTeamDatas = bossArea:GetCharacterDatas()}
-    XLuaUiManager.Open("UiBattleRoleRoom", bossArea:GetStageId(), data)
+    XMVCA.XFuben:OpenUiBattleRoleRoom(bossArea:GetStageId(), data)
 end
 
 function XUiPanelDetail:SetShow(IsShow)

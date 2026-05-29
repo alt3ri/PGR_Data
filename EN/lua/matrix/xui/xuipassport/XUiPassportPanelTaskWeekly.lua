@@ -1,13 +1,11 @@
-local XDynamicGridTask = require("XUi/XUiTask/XDynamicGridTask")
-local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
+local XDynamicGridTask = require("XUi/XUiTask/XDynamicGridTask")
+local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
 ---@field _Control XPassportControl
 ---@class XUiPassportPanelTaskWeekly:XUiNode
 local XUiPassportPanelTaskWeekly = XClass(XUiNode, "XUiPassportPanelTaskWeekly")
 
 --周任务
-function XUiPassportPanelTaskWeekly:Ctor(ui, rootUi)
-    self.RootUi = rootUi
-
+function XUiPassportPanelTaskWeekly:OnStart()
     XUiHelper.RegisterClickEvent(self, self.BtnTongBlack, self.OnBtnTongBlackClick)
 
     self.DynamicTable = XDynamicTableNormal.New(self.SViewTask.transform)
@@ -52,7 +50,7 @@ end
 function XUiPassportPanelTaskWeekly:OnDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         local data = self.Tasks[index]
-        grid.RootUi = self.RootUi
+        grid.RootUi = self.Parent
         grid:ResetData(data)
     end
 end

@@ -1,4 +1,4 @@
-local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 -- local XUiGridTRPGTestAction = require("XUi/XUiTRPG/XUiGridTRPGTestAction")
 local tonumber = tonumber
 local CSXTextManagerGetText = CS.XTextManager.GetText
@@ -136,7 +136,7 @@ end
 function XUiTRPGFightTips:OnClickBtnEnter()
     self:Close()
     local stageId = self.StageId
-    XLuaUiManager.Open("UiBattleRoleRoom", stageId)
+    XMVCA.XFuben:OpenUiBattleRoleRoom(stageId)
 end
 
 function XUiTRPGFightTips:OnClickBtnQuickFight()

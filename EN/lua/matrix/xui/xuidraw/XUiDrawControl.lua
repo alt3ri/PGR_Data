@@ -131,7 +131,16 @@ function XUiDrawControl:OnDraw(drawCount)
             XLog.Error("XUiDrawControl:OnDraw 获取不到卡池信息 GroupId:" .. self.GroupId)
             return
         end
-        local groupUseDrawId = drawGroupInfo.UseDrawId
+        local groupUseDrawId = (drawGroupInfo.UseDrawIdDict or {})[0] or 0
+        -- ExtraOption 时从 UseDrawIdDict 获取当前 option 的选中状态
+        local currentOptionKey = self.RootUi and self.RootUi.CurrentOptionKey or ""
+        if not string.IsNilOrEmpty(currentOptionKey) then
+            local _, groupSubtype = XDataCenter.DrawManager._ParseOptionKey(currentOptionKey)
+            if groupSubtype and groupSubtype > 0 then
+                local dict = drawGroupInfo.UseDrawIdDict or {}
+                groupUseDrawId = dict[groupSubtype] or 0
+            end
+        end
         local drawGroupRule = XDrawConfigs.GetDrawGroupRuleById(self.GroupId)
         local needItemCount = XDataCenter.DrawManager.GetDiscountDrawPrice(self.DrawInfo.GroupId, self.DrawInfo.UseItemCount, drawCount)
 
@@ -153,7 +162,17 @@ function XUiDrawControl:OnDraw(drawCount)
     end
     if XDataCenter.DrawManager:CheckIsNewDraw(self.GroupId) then
         local groupInfo = XDataCenter.DrawManager.GetDrawGroupInfoByGroupId(self.GroupId)
-        if groupInfo.SwitchDrawIdCount == 0 then
+        -- 判断当前 option 是否已选目标
+        local hasSelected = groupInfo.SwitchDrawIdCount > 0
+        local curOptionKey = self.RootUi and self.RootUi.CurrentOptionKey or ""
+        if not string.IsNilOrEmpty(curOptionKey) then
+            local _, subtype = XDataCenter.DrawManager._ParseOptionKey(curOptionKey)
+            if subtype and subtype > 0 then
+                local dict = groupInfo.UseDrawIdDict or {}
+                hasSelected = XTool.IsNumberValid(dict[subtype])
+            end
+        end
+        if not hasSelected then
             XUiManager.TipText("DrawNeedChooseCharTip")
             if self.RootUi and self.RootUi.OnBtnOptionDrawClick then
                 self.RootUi:OnBtnOptionDrawClick()

@@ -1,4 +1,5 @@
 local XUiSignCard = XClass(nil, "XUiSignCard")
+local XUiObtain = require("XUi/XUiObtain/XUiObtain")
 
 function XUiSignCard:Ctor(ui, rootUi)
     self.GameObject = ui.gameObject
@@ -14,11 +15,9 @@ function XUiSignCard:OnDestroy()
 end
 
 function XUiSignCard:OnHide()
-    XEventManager.RemoveEventListener(XEventId.EVENT_CARD_REFRESH_WELFARE_BTN, self.Refresh, self)
 end
 
 function XUiSignCard:OnShow()
-    XEventManager.AddEventListener(XEventId.EVENT_CARD_REFRESH_WELFARE_BTN, self.Refresh, self)
     if XOverseaManager.IsJPRegion() then
         if self.TxtCount1 then
             self.TxtCount1.text = CS.XTextManager.GetText("JPYKfirst")
@@ -59,6 +58,8 @@ function XUiSignCard:InitAddListen()
     self:RegisterClickEvent(self.BtnHelp, self.OnBtnHelpClick)
     self:RegisterClickEvent(self.BtnContinue, self.OnBtnContinueClick)
     self:RegisterClickEvent(self.BtnGet, self.OnBtnGetClick)
+    self:RegisterClickEvent(self.BtnRetroactive, self.OnBtnRetroactiveClick)
+    self:RegisterClickEvent(self.BtnHelpRetroactive, self.OnBtnHelpRetroactiveClick)
 end
 
 function XUiSignCard:OnBtnSkipClick()
@@ -87,6 +88,8 @@ function XUiSignCard:OnBtnGetClick()
         else
             XDataCenter.PurchaseManager.PurchaseGetDailyRewardRequest(data.Id, function(rewardItems)
                 self:RefreshGet()
+
+                XUiObtain.SetRewardsIsShowYKTag(rewardItems)
                 XUiManager.OpenUiObtain(rewardItems)
 
                 -- 设置月卡信息本地缓存
@@ -98,26 +101,35 @@ function XUiSignCard:OnBtnGetClick()
 end
 
 function XUiSignCard:Refresh(configId, isShow, isAuto)
+    self:RefreshButtons(configId, false)
     XDataCenter.PurchaseManager.YKInfoDataReq(function()
-        if not configId then
-            configId = self.ConfigId
-        end
-        self.ConfigId = configId
-
         self.PanelBuy.gameObject:SetActive(false)
         self.PanelGet.gameObject:SetActive(false)
 
-        self.Config = XSignInConfigs.GetSignCardConfig(configId)
-        local data = XDataCenter.PurchaseManager.GetYKInfoData()
-        local isBuy = data ~= nil and data.Id == self.Config.Param[2] and data.DailyRewardRemainDay > 0
-        if isBuy then
-            self:RefreshGet()
-            self:AutoGetReward(isAuto)
-        else
-            self:RefreshBuy()
-        end
+        self:RefreshButtons(configId, isAuto)
         XEventManager.DispatchEvent(XEventId.EVENT_SING_IN_OPEN_BTN, true)
     end)
+end
+
+function XUiSignCard:RefreshButtons(configId, isAuto)
+    if not configId then
+        configId = self.ConfigId
+    end
+    self.ConfigId = configId
+    self.Config = XSignInConfigs.GetSignCardConfig(configId)
+
+    local ykConfig = XPurchaseConfigs.GetPurchasePackageYKUiConfig(self.Config.Param[2])
+    self.TipText01.text = ykConfig.Tips[1]
+    self.TipText02.text = ykConfig.Tips[2]
+
+    local data = XDataCenter.PurchaseManager.GetYKInfoData()
+    local isBuy = data ~= nil and data.Id == self.Config.Param[2] and data.DailyRewardRemainDay > 0
+    if isBuy then
+        self:RefreshGet()
+        self:AutoGetReward(isAuto)
+    else
+        self:RefreshBuy()
+    end
 end
 
 function XUiSignCard:AutoGetReward(isAuto)
@@ -142,6 +154,8 @@ function XUiSignCard:GetDailyRewardRequest(id)
         if self.RootUi.RefreshWelfareCardRed then
             self.RootUi:RefreshWelfareCardRed()
         end
+
+        XUiObtain.SetRewardsIsShowYKTag(rewardItems)
         XUiManager.OpenUiObtain(rewardItems)
 
         -- 设置月卡信息本地缓存
@@ -154,6 +168,7 @@ function XUiSignCard:RefreshBuy()
     self.PanelBuy.gameObject:SetActive(true)
 end
 
+
 function XUiSignCard:RefreshGet()
     local data = XDataCenter.PurchaseManager.GetYKInfoData()
     if not data or data.Id ~= self.Config.Param[2] then
@@ -164,15 +179,125 @@ function XUiSignCard:RefreshGet()
     if remainDay < 0 then
         remainDay = 0
     end
+
     self.TxtLeftDay.text = remainDay
-    self.BtnContinue.gameObject:SetActive(data.DailyRewardRemainDay < self.Config.CanBuyDay)
+    self.BtnContinue.gameObject:SetActive(data.BuyLimitRemainDay <= self.Config.CanBuyDay)
+    self.TxtRetroactiveExpireTime.gameObject:SetActiveEx(false)
+
+    local cardsMissed = 0
+    local retroactiveItemId = data.DailyRewardSupplementGetConsumeItemId
+
+    if data.DailyRewardSupplementGetData then
+        cardsMissed = data.DailyRewardSupplementGetData.Count
+    end
+
     if data.IsDailyRewardGet then
-        self.BtnGet:SetButtonState(CS.UiButtonState.Disable)
+        -- 已领取
+        self.BtnGet.gameObject:SetActive(false)
+        self.BtnRetroactive.gameObject:SetActive(true)
+        self.TxtMissedCards.text = tostring(cardsMissed)
+        local itemManager = XDataCenter.ItemManager
+
+        local retroactiveItemCount =
+            itemManager.GetCount(retroactiveItemId)
+
+        local retroactiveItemIcon =
+            itemManager.GetItemIcon(retroactiveItemId)
+
+        if self.ImgRetroactiveItemIcon1 then
+            self.ImgRetroactiveItemIcon1:SetRawImage(retroactiveItemIcon)
+        end
+
+        if self.ImgRetroactiveItemIcon2 then
+            self.ImgRetroactiveItemIcon2:SetRawImage(retroactiveItemIcon)
+        end
+
+        if self.ImgRetroactiveItemIcon3 then
+            self.ImgRetroactiveItemIcon3:SetRawImage(retroactiveItemIcon)
+        end
+
+        local retroactiveChance =
+            tostring(retroactiveItemCount) .. "/" .. tostring(math.min(retroactiveItemCount, cardsMissed))
+
+        self.TxtRetroactiveChance1.text = retroactiveChance
+        self.TxtRetroactiveChance2.text = retroactiveChance
+        self.TxtRetroactiveChance3.text = retroactiveChance
+
+        if retroactiveItemCount > 0 then
+            if cardsMissed > 0 then
+                self.BtnRetroactive:SetButtonState(CS.UiButtonState.Normal)
+                self.BtnRetroactive:ShowReddot(true)
+            else
+                self.BtnRetroactive:SetButtonState(CS.UiButtonState.Disable)
+                self.BtnRetroactive:ShowReddot(false)
+            end
+
+            -- 每自然月一号05:00 AM过期
+            local hour5 = 5 * 60 * 60
+            local now = XTime.GetServerNowTimestamp()
+            local leftTime = XTime.GetCurrentMonthFirstDay() + hour5
+            if now >= leftTime then
+                leftTime = XTime.GetNextMonthFirstDay() + hour5
+            end
+            leftTime = leftTime - now
+
+            local deadlineStr = XUiHelper.GetTimeDesc(leftTime, 2)
+
+            self.TxtRetroactiveExpireTime.text = leftTime <= 0 and deadlineStr or CS.XTextManager.GetText("ItemDeadLine", deadlineStr)
+            self.TxtRetroactiveExpireTime.gameObject:SetActiveEx(true)
+        else
+            self.BtnRetroactive:ShowReddot(false)
+            self.TxtRetroactiveChance3.text = retroactiveChance
+            self.BtnRetroactive:SetButtonState(CS.UiButtonState.Disable)
+        end
     else
+        -- 未领取，需要领取
+        self.BtnGet.gameObject:SetActive(true)
+        self.BtnRetroactive.gameObject:SetActive(false)
         self.BtnGet:SetButtonState(CS.UiButtonState.Normal)
     end
 
     self.PanelGet.gameObject:SetActive(true)
 end
 
-return XUiSignCard
+function XUiSignCard:OnBtnRetroactiveClick()
+    local data = XDataCenter.PurchaseManager.GetYKInfoData()
+    if not data or data.Id ~= self.Config.Param[2] then
+        return
+    end
+
+    local cardsMissed = 0
+    if data.DailyRewardSupplementGetData then
+        cardsMissed = data.DailyRewardSupplementGetData.Count
+    end
+
+    if cardsMissed <= 0 then
+        XUiManager.TipText("PurchaseYKRetroactiveNotNeeded")
+        return
+    end
+
+    local itemCount = XDataCenter.ItemManager.GetCount(
+        data.DailyRewardSupplementGetConsumeItemId)
+
+    if itemCount > 0 then
+        XDataCenter.PurchaseManager.PurchaseSupplementGetDailyReward(
+            self.Config.Param[2],
+            function(rewardList)
+                self:RefreshGet()
+                XUiObtain.SetRewardsIsShowYKTag(rewardList)
+                XUiManager.OpenUiObtain(rewardList)
+            end)
+    else
+        XUiManager.TipText("PurchaseYKRetroactiveNeedMoreItems")
+    end
+end
+
+function XUiSignCard:OnBtnHelpRetroactiveClick()
+    XUiManager.UiFubenDialogTip(
+        CS.XTextManager.GetText("PurchaseYKRetroactiveHelpTitle"),
+        CS.XTextManager.GetText("PurchaseYKRetroactiveHelpContent"),
+        nil,
+        nil)
+end
+
+return XUiSignCard

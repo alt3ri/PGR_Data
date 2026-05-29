@@ -59,6 +59,8 @@ function XUiAccumulateDrawGrid:Refresh(reward, preReward, nextReward)
     local isNextAchieved = nextReward and nextReward:IsComplete() or false
     local progress = 0
 
+    self.CanvasGroup.alpha = 1
+
     if isEnd then
         self.ImgPointOff.gameObject:SetActiveEx(false)
         self.ImgPointOn.gameObject:SetActiveEx(false)

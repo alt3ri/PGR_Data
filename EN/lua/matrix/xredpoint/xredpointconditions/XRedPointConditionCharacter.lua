@@ -44,6 +44,10 @@ function XRedPointConditionCharacter.Check(characterId)
         return true
     end
 
+    if XMVCA.XLifeTree:IsRedCharacter(characterId) then
+        return true
+    end
+
     return false
 end
 

@@ -79,7 +79,12 @@ function XSwitchableSceneModel:GetSetting(sceneId)
 
     local datas = self._SettingCache[sceneId]
     if not datas then
-        datas = self._SaveUtil:GetData(string.format("SwitchableScene_Setting_%s", sceneId)) or { 0, 0, 0 }
+        datas = self._SaveUtil:GetData(string.format("SwitchableScene_Setting_%s", sceneId))
+        if datas then
+            datas = XTool.Clone(datas)
+        else
+            datas = { 0, 0, 0 }
+        end
         self._SettingCache[sceneId] = datas
     end
 

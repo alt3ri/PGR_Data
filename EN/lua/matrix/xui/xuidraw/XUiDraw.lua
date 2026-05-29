@@ -552,7 +552,7 @@ function XUiDraw:CheckAutoOpen()
     end
     
     local IsCanActivtyOpen = IsHaveActivty and XDataCenter.DrawManager.IsCanAutoOpenAimGroupSelect(activtyTime,self.GroupId)
-    if IsCanActivtyOpen or (groupInfo.MaxSwitchDrawIdCount > 0 and groupInfo.UseDrawId == 0) then
+    if IsCanActivtyOpen or (groupInfo.MaxSwitchDrawIdCount > 0 and ((groupInfo.UseDrawIdDict or {})[0] or 0) == 0) then
         self:OnBtnOptionalDrawClick()
     end
     self.FirstAutoOpen = false

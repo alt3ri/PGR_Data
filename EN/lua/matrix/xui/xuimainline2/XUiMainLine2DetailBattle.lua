@@ -97,7 +97,7 @@ function XUiMainLine2DetailBattle:OnBtnEnterClick()
         XMVCA.XFuben:EnterFightByStageId(stageId, team:GetId())
     else
         local proxy = require("XUi/XUiMainLine2/XUiMainLine2BattleRoleRoom")
-        XLuaUiManager.Open("UiBattleRoleRoom", stageId, team, proxy)
+        XMVCA.XFuben:OpenUiBattleRoleRoom(stageId, team, proxy)
     end
 end
 

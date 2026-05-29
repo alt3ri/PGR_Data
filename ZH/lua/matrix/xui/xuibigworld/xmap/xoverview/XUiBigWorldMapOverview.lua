@@ -92,8 +92,11 @@ function XUiBigWorldMapOverview:OnPanelAreaChangeTabClick(index)
         animationName = "Qiehuan05"
     end
 
+    local disablePanel = self._CurrentPanel
+
     nextPanel:SetParent(self.PanelNext)
     nextPanel:SetBackgroundParent(self.RImgBgCurrent)
+    nextPanel:ShowBackground(true)
     nextPanel:PlayEnableAnimation(self.PanelCurrent)
     self._CurrentPanel:SetBackgroundParent(self.RImgBgNext)
     self._CurrentPanel:PlayDisableAnimation(self.PanelMap, self.PanelMapBg)
@@ -101,7 +104,10 @@ function XUiBigWorldMapOverview:OnPanelAreaChangeTabClick(index)
     self:PlayAnimationWithMask(animationName, function()
         self:PlayAnimation("Loop")
     end, nil, CS.UnityEngine.Playables.DirectorWrapMode.None)
-    self:PlayAnimation("QiehuanBG")
+    self:PlayAnimation("QiehuanBG", function()
+        disablePanel:SetBackgroundParent(self.PanelMapBg)
+        disablePanel:ShowBackground(false)
+    end)
 
     self._CurrentPanel = nextPanel
     self._CurrentOverviewIndex = index

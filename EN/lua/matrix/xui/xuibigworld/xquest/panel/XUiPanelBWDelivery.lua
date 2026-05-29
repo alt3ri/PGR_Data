@@ -23,8 +23,28 @@ function XUiPanelBWDelivery:InitView()
 end
 
 function XUiPanelBWDelivery:Refresh(objectiveId, itemList)
-    self.TxtTitle.text = XMVCA.XBigWorldQuest:GetObjectiveDeliveryTitle(objectiveId)
-    self.TxtDesc.text = XMVCA.XBigWorldQuest:GetObjectiveDeliveryDesc(objectiveId)
+    local templete = XMVCA.XBigWorldQuest:GetQuestStepObjectiveTemplate(objectiveId)
+
+    local subTitle = templete.DeliverSubTitle
+    local itemTitle = templete.DeliverBehaviorDesc
+    local background = templete.DeliverBgPath
+    local btnText = templete.DeliverBtnText
+
+    self.TxtTitle.text = templete.DeliverTitle
+    self.TxtDesc.text = templete.DeliverDesc
+
+    if not string.IsNilOrEmpty(subTitle) then
+        self.TxtName.text = subTitle
+    end
+    if not string.IsNilOrEmpty(itemTitle) then
+        self.TxtItem.text = itemTitle
+    end
+    if not string.IsNilOrEmpty(background) then
+        self.ImgBg:SetImage(background)
+    end
+    if not string.IsNilOrEmpty(btnText) then
+        self.BtnRequire:SetNameByGroup(0, btnText)
+    end
     
     XTool.UpdateDynamicItem(self._GirdItems, self:SortDeliver(itemList), self.GridItem, XUiGridBWDelivery, self)
 end

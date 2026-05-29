@@ -8,9 +8,15 @@ function XUiTeamPrefabMain:OnAwake()
     self.CurDragCopyGo = nil
     ---@type XUiPanelCharacterCard[]
     self.CharacterCardList = {}
+    -- Tag 筛选状态
+    self.FilterTags = {}
+    self.IsFiltering = false
+    self.DisplayList = {}
+
     self:InitDyanamicTable()
     self:InitCharacterCard()
     self:InitButton()
+    self:InitTagDetailPool()
     XSaveTool.SaveData("HasNeverOpenTeamPrefabV4P0"..XPlayer.Id, 1)
 end
 
@@ -38,7 +44,7 @@ function XUiTeamPrefabMain:OnCharacterCardBeginDrag(index)
         return
     end
 
-    local curTeamPrefabEntity = XDataCenter.TeamManager.GetTeamPrefabDataByIndex(self.CurSelectIndex)
+    local curTeamPrefabEntity = self:GetCurTeamPrefabEntity()
     local charId = curTeamPrefabEntity:GetEntityIdByTeamPos(index)
     if not XTool.IsNumberValid(charId) then
         return
@@ -106,7 +112,7 @@ function XUiTeamPrefabMain:OnCharacterCardEndDrag(index)
 
     local hoverIndex = self:GetHoverCardIndex(screenPointV2)
     if hoverIndex and hoverIndex ~= index then
-        local curTeamPrefabEntity = XDataCenter.TeamManager.GetTeamPrefabDataByIndex(self.CurSelectIndex)
+        local curTeamPrefabEntity = self:GetCurTeamPrefabEntity()
         curTeamPrefabEntity:SwapPosData(index, hoverIndex)
         local targetCard = self.CharacterCardList[hoverIndex]
         targetCard.FxSelectFormation.gameObject:SetActiveEx(true)
@@ -159,6 +165,36 @@ function XUiTeamPrefabMain:InitButton()
     self.BtnLeaderSet.CallBack = function() self:OnBtnLeaderSetClick() end
     self.BtnAnimationSet.CallBack = function() self:OnBtnAnimationSetClick() end
     self.BtnSkipToTeamRecommendation.CallBack = function() self:OnBtnSkipToTeamRecommendationClick() end
+    self.BtnFilter.CallBack = function() self:OnBtnFilterClick() end
+    self.BtnTag.CallBack = function() self:OnBtnTagClick() end
+    self.BtnFilter2.CallBack = function() self:OnBtnFilterClick() end
+end
+
+function XUiTeamPrefabMain:InitTagDetailPool()
+    self.TagDetailPool = {}
+    for i = 1, 2 do
+        local go = XUiHelper.Instantiate(self.BtnTagDetail.gameObject)
+        go.transform:SetParent(self.BtnTagDetail.transform.parent, false)
+        go:SetActiveEx(false)
+
+        local uiObj = go:GetComponent("UiObject")
+        local item = {
+            Go = go,
+            NormalImgBgMode  = uiObj:GetObject("NormalImgBgMode"),
+            PressImgBgMode   = uiObj:GetObject("PressImgBgMode"),
+            NormalUiImgIcon  = uiObj:GetObject("NormalUiImgIcon"),
+            PressUiImgIcon   = uiObj:GetObject("PressUiImgIcon"),
+            BtnSelf          = uiObj:GetObject("BtnSelf"),
+        }
+
+        local btnSelf = item.BtnSelf:GetComponent("XUiButton")
+        btnSelf.CallBack = handler(self, self.OnBtnTagClick)
+
+        self.TagDetailPool[i] = item
+    end
+
+    -- 模板永久隐藏
+    self.BtnTagDetail.gameObject:SetActiveEx(false)
 end
 
 function XUiTeamPrefabMain:OnBtnAddClick()
@@ -177,15 +213,16 @@ function XUiTeamPrefabMain:OnBtnAddClick()
 end
 
 function XUiTeamPrefabMain:OnBtnDeleteClick()
-    local curNum = #self.DynamicTable.DataSource
-    if curNum <= 1 then
+    local totalCount = #XDataCenter.TeamManager.GetTeamPrefabList()
+    if totalCount <= 1 then
         XUiManager.TipText("TeamPrefabCannotDeleteLast")
         return
     end
 
-    local curTeamPrefabEntity = XDataCenter.TeamManager.GetTeamPrefabDataByIndex(self.CurSelectIndex)
-    local deleteXTeamId = XDataCenter.TeamManager.GetTeamPrefabDataByIndex(self.CurSelectIndex):GetId()
-    local targetShowIndex = self.CurSelectIndex == curNum and curNum - 1 or self.CurSelectIndex
+    local curTeamPrefabEntity = self:GetCurTeamPrefabEntity()
+    local deleteXTeamId = curTeamPrefabEntity:GetId()
+    local displayCount = #self.DisplayList
+    local targetShowIndex = self.CurSelectIndex >= displayCount and math.max(displayCount - 1, 1) or self.CurSelectIndex
     local title = CS.XTextManager.GetText("TipTitle")
     XLuaUiManager.Open("UiDialog", title, XUiHelper.GetText("TeamPrefabDeleteConfirm", curTeamPrefabEntity:GetName()), XUiManager.DialogType.Normal, nil, function()
         XDataCenter.TeamManager.TeamPrefabDelRequest(deleteXTeamId, function() 
@@ -213,7 +250,7 @@ function XUiTeamPrefabMain:OnBtnCoverClick()
         return
     end
     
-    local curTeamPrefabEntity = XDataCenter.TeamManager.GetTeamPrefabDataByIndex(self.CurSelectIndex)
+    local curTeamPrefabEntity = self:GetCurTeamPrefabEntity()
     XLuaUiManager.Open("UiTeamPrefabPopupCover", self.XRealTeam, curTeamPrefabEntity, function ()
         self:RefreshTeamPrefabListDynamicTable(self.CurSelectIndex)
         XUiManager.TipText("TeamPrefabCoverSuccess")
@@ -221,7 +258,7 @@ function XUiTeamPrefabMain:OnBtnCoverClick()
 end
 
 function XUiTeamPrefabMain:OnBtnUseClick()
-    local curTeamPrefabEntity = XDataCenter.TeamManager.GetTeamPrefabDataByIndex(self.CurSelectIndex)
+    local curTeamPrefabEntity = self:GetCurTeamPrefabEntity()
     if curTeamPrefabEntity:GetIsEmpty() then
         XUiManager.TipText("TeamPrefabNoMembers")
         return
@@ -331,24 +368,36 @@ function XUiTeamPrefabMain:OnBtnUseClick()
         end
     end
 
-    -- 武器黄标冲突检测
-    local function CheckYellowConflictAndConfirm()
-        local isYellowConflict = false
+    -- 武器共鸣与谐振冲突检测（②共鸣数量 ③谐振 ④共鸣技能绑定）
+    local function CheckResonanceAndOverrunConflictAndConfirm()
+        local isResonanceOrOverrunConflict = false
+        local conflictPosList = {}
         for pos, v in ipairs(self.CharacterCardList) do
-            if v:GetIsWeaponResonanceCountConflict() or v:GetIsWeaponOverrunConflict() then
-                isYellowConflict = true
-                break
+            if v:GetIsWeaponResonanceCountConflict() or v:GetIsWeaponOverrunConflict() or v:GetIsWeaponResonanceSkillNeedConfirm() then
+                isResonanceOrOverrunConflict = true
+                table.insert(conflictPosList, pos)
             end
         end
         
-        if isYellowConflict then
+        if isResonanceOrOverrunConflict then
             XLuaUiManager.Open("UiDialog", XUiHelper.GetText("TipTitle"),
             XUiHelper.GetText("TeamPrefabEquipConflictConfirm"),
             XUiManager.DialogType.Normal, nil, function ()
-                CheckEquipConflictAndConfirm()
+                if not XTool.IsTableEmpty(conflictPosList) then
+                    -- 点击确认，用实际装备数据覆盖预设中的共鸣与谐振数据
+                    for k, pos in ipairs(conflictPosList) do
+                        local charId = curTeamPrefabEntity:GetEntityIdByTeamPos(pos)
+                        local curCharUsingWeaponId = XMVCA.XEquip:GetCharacterWeaponId(charId)
+                        curTeamPrefabEntity:CopyRealWeaponData(curCharUsingWeaponId, pos, k < #conflictPosList, function()
+                            CheckEquipConflictAndConfirm()
+                        end)
+                    end
+                else
+                    CheckEquipConflictAndConfirm()
+                end
             end)
         else
-            -- 点击确认，再次检测武器的共鸣数量和谐振检测并覆盖
+            -- 无弹窗时，静默修复共鸣数量与谐振数据
             for pos, v in ipairs(self.CharacterCardList) do
                 local charId = curTeamPrefabEntity:GetEntityIdByTeamPos(pos)
                 if XTool.IsNumberValid(charId) then
@@ -377,11 +426,11 @@ function XUiTeamPrefabMain:OnBtnUseClick()
     end
     
     -- 继续原有的检测流程
-    CheckYellowConflictAndConfirm()
+    CheckResonanceAndOverrunConflictAndConfirm()
 end
 
 function XUiTeamPrefabMain:OnBtnNameClick()
-    local curTeamPrefabEntity = XDataCenter.TeamManager.GetTeamPrefabDataByIndex(self.CurSelectIndex)
+    local curTeamPrefabEntity = self:GetCurTeamPrefabEntity()
     XLuaUiManager.Open("UiTeamPrefabPopupRename", function (newName)
         curTeamPrefabEntity:UpdateTeamName(newName, function ()
             self:OnlyRefreshDynamicGridData()
@@ -396,7 +445,7 @@ function XUiTeamPrefabMain:OnBtnTopUpClick()
         return
     end
 
-    local teamId = XDataCenter.TeamManager.GetTeamPrefabDataByIndex(self.CurSelectIndex):GetId()
+    local teamId = self:GetCurTeamPrefabEntity():GetId()
     local targetShowIndex = self.CurSelectIndex - 1
     XDataCenter.TeamManager.TeamPrefabMoveForwardRequest(teamId, function ()
         self.CurSelectIndex = targetShowIndex
@@ -406,7 +455,7 @@ function XUiTeamPrefabMain:OnBtnTopUpClick()
 end
 
 function XUiTeamPrefabMain:OnBtnGeneralSkillSetClick()
-    local curTeamPrefabEntity = XDataCenter.TeamManager.GetTeamPrefabDataByIndex(self.CurSelectIndex)
+    local curTeamPrefabEntity = self:GetCurTeamPrefabEntity()
     local oldGeneralSkillId = curTeamPrefabEntity:GetCurGeneralSkill()
     if not XTool.IsNumberValid(oldGeneralSkillId) then
         XUiManager.TipText("TeamPrefabNoActivableEffect")
@@ -425,7 +474,7 @@ end
 
 function XUiTeamPrefabMain:OnBtnLeaderSetClick()
     local characterViewModelDic = {}
-    local curTeamPrefabEntity = XDataCenter.TeamManager.GetTeamPrefabDataByIndex(self.CurSelectIndex)
+    local curTeamPrefabEntity = self:GetCurTeamPrefabEntity()
     local entitys = curTeamPrefabEntity:GetEntityIds()
     for pos, entityId in ipairs(entitys) do
         if XTool.IsNumberValid(entityId) then
@@ -448,7 +497,7 @@ function XUiTeamPrefabMain:OnBtnLeaderSetClick()
 end
 
 function XUiTeamPrefabMain:OnBtnAnimationSetClick()
-    local curTeamPrefabEntity = XDataCenter.TeamManager.GetTeamPrefabDataByIndex(self.CurSelectIndex)
+    local curTeamPrefabEntity = self:GetCurTeamPrefabEntity()
     XLuaUiManager.OpenWithCloseCallback("UiPopupAnimationSet",function ()
         self:RefreshRightInfo()
     end, curTeamPrefabEntity)
@@ -457,6 +506,32 @@ end
 function XUiTeamPrefabMain:OnBtnSkipToTeamRecommendationClick()
     local skipId = 189068  -- 跳转到外链的队伍推荐，写死
     XFunctionManager.SkipInterface(skipId)
+end
+
+function XUiTeamPrefabMain:OnBtnTagClick()
+    local entity = self:GetCurTeamPrefabEntity()
+    if not entity then return end
+
+    XLuaUiManager.Open("UiTeamPrefabPopupTagSelector", "set", entity:GetTagsSet(), function(tagsSet, tagsArray)
+        entity:SyncTagsToServer(tagsArray, function()
+            self:RefreshPanelTag()
+            if self.IsFiltering then
+                self:RefreshFilteredList()
+            end
+        end)
+    end)
+end
+
+function XUiTeamPrefabMain:OnBtnFilterClick()
+    XLuaUiManager.Open("UiTeamPrefabPopupTagSelector", "filter", self.FilterTags, function(tagsSet)
+        self.FilterTags = tagsSet
+        local hasFilter = not XTool.IsTableEmpty(tagsSet)
+        self.IsFiltering = hasFilter
+
+        self:RefreshFilterState()
+        self.CurSelectIndex = 1
+        self:RefreshTeamPrefabListDynamicTable(1)
+    end)
 end
 
 ---@param xRealTeam XTeam
@@ -474,6 +549,7 @@ function XUiTeamPrefabMain:OnStart(xRealTeam, forceHideUseBtn, forceHideCoverBtn
 
     self.BtnUse.gameObject:SetActiveEx(not forceHideUseBtn)
     self.BtnCover.gameObject:SetActiveEx(not forceHideCoverBtn)
+    self.PanelTagEmpty.gameObject:SetActiveEx(false)
 end
 
 function XUiTeamPrefabMain:OnEnable()
@@ -481,9 +557,10 @@ function XUiTeamPrefabMain:OnEnable()
 end
 
 function XUiTeamPrefabMain:RefreshTeamPrefabListDynamicTable(index)
-    local teamPrefabDataList = XDataCenter.TeamManager.GetTeamPrefabList()
-    self.DynamicTable:SetDataSource(teamPrefabDataList)
+    self:RebuildDisplayList()
+    self.DynamicTable:SetDataSource(self.DisplayList)
     self.DynamicTable:ReloadDataSync(index)
+    self:RefreshFilterEmptyState()
 end
 
 function XUiTeamPrefabMain:OnlyRefreshDynamicGridData()
@@ -524,13 +601,20 @@ function XUiTeamPrefabMain:OnDynamicTableEvent(event, index, grid)
     end
 end
 
+--- 获取当前选中的预设实体（兼容筛选态）
+---@return XTeamPrefab
+function XUiTeamPrefabMain:GetCurTeamPrefabEntity()
+    return self.DisplayList and self.DisplayList[self.CurSelectIndex]
+end
+
 function XUiTeamPrefabMain:OnSelectCallBack()
     self:RefreshRightInfo()
+    self:RefreshPanelTag()
 end
 
 function XUiTeamPrefabMain:RefreshRightInfo()
     -- 角色卡片
-    local curTeamPrefabEntity = XDataCenter.TeamManager.GetTeamPrefabDataByIndex(self.CurSelectIndex)
+    local curTeamPrefabEntity = self:GetCurTeamPrefabEntity()
     if not curTeamPrefabEntity then return end
     
     local memberCount = #curTeamPrefabEntity.EntitiyIds
@@ -612,4 +696,113 @@ function XUiTeamPrefabMain:RefreshRightInfo()
 
     -- 上移按钮
     self.BtnTopUp:SetDisable(self.CurSelectIndex == 1)
-end
+    self.BtnAdd:SetNameByGroup(0, #(XDataCenter.TeamManager.GetTeamPrefabList()) .."/" .. CS.XGame.Config:GetInt("MaxTeamPrefab"))
+end
+
+function XUiTeamPrefabMain:RefreshPanelTag()
+    local entity = self:GetCurTeamPrefabEntity()
+    if not entity then return end
+
+    local tagsList = entity:GetTagsList()
+    local tagCount = #tagsList
+    local hasTags = tagCount > 0
+
+    self.BtnTag.gameObject:SetActiveEx(not hasTags)
+
+    for i = 1, 2 do
+        local item = self.TagDetailPool[i]
+        if i <= tagCount then
+            item.Go:SetActiveEx(true)
+            self:UpdateTagDetail(item, tagsList[i])
+        else
+            item.Go:SetActiveEx(false)
+        end
+    end
+end
+
+function XUiTeamPrefabMain:UpdateTagDetail(item, tagId)
+    local cfg = XTeamConfig.GetTeamPrefabTagCfgById(tagId)
+    if not cfg then return end
+
+    local isMode = (cfg.TagType == XEnumConst.TeamPrefab.TagTypeGameplay)
+
+    -- 玩法标签显示紫色底，属性标签隐藏紫色底
+    item.NormalImgBgMode.gameObject:SetActiveEx(isMode)
+    item.PressImgBgMode.gameObject:SetActiveEx(isMode)
+
+    -- 图标
+    if not string.IsNilOrEmpty(cfg.Icon) then
+        item.NormalUiImgIcon.gameObject:SetActiveEx(true)
+        item.PressUiImgIcon.gameObject:SetActiveEx(true)
+        item.NormalUiImgIcon:GetComponent("RawImage"):SetRawImage(cfg.Icon)
+        item.PressUiImgIcon:GetComponent("RawImage"):SetRawImage(cfg.Icon)
+    else
+        item.NormalUiImgIcon.gameObject:SetActiveEx(false)
+        item.PressUiImgIcon.gameObject:SetActiveEx(false)
+    end
+
+    -- 文本
+    local btn = item.Go:GetComponent("XUiButton")
+    btn:SetNameByGroup(0, cfg.Text)
+end
+
+--- 构建显示列表（全量或过滤）
+function XUiTeamPrefabMain:RebuildDisplayList()
+    local fullList = XDataCenter.TeamManager.GetTeamPrefabList()
+    if not self.IsFiltering or XTool.IsTableEmpty(self.FilterTags) then
+        self.DisplayList = fullList
+        return
+    end
+
+    self.DisplayList = {}
+    for _, xTeamPrefab in ipairs(fullList) do
+        if xTeamPrefab:MatchFilter(self.FilterTags) then
+            table.insert(self.DisplayList, xTeamPrefab)
+        end
+    end
+end
+
+--- 筛选后空态处理
+function XUiTeamPrefabMain:RefreshFilterEmptyState()
+    local isEmpty = self.IsFiltering and #self.DisplayList == 0
+    self.PanelTagEmpty.gameObject:SetActiveEx(isEmpty)
+    self.TeamPefabList.gameObject:SetActiveEx(not isEmpty)
+    self.PanelRight.gameObject:SetActiveEx(not isEmpty)
+end
+
+--- 刷新筛选态的 UI 状态（按钮显隐、BtnFilter 状态）
+function XUiTeamPrefabMain:RefreshFilterState()
+    self.BtnFilter:SetButtonState(self.IsFiltering and CS.UiButtonState.Select or CS.UiButtonState.Normal)
+    self.BtnAdd.gameObject:SetActiveEx(not self.IsFiltering)
+    self.BtnSkipToTeamRecommendation.gameObject:SetActiveEx(not self.IsFiltering)
+    self.BtnTopUp.gameObject:SetActiveEx(not self.IsFiltering)
+end
+
+--- 筛选态下标签变更后刷新列表，尝试保留当前选中实体
+function XUiTeamPrefabMain:RefreshFilteredList()
+    local curEntity = self:GetCurTeamPrefabEntity()
+
+    self:RebuildDisplayList()
+    self.DynamicTable:SetDataSource(self.DisplayList)
+
+    -- 尝试在新列表中找到原选中实体
+    local newIndex = 1
+    if curEntity then
+        for i, entity in ipairs(self.DisplayList) do
+            if entity:GetId() == curEntity:GetId() then
+                newIndex = i
+                break
+            end
+        end
+    end
+
+    if #self.DisplayList > 0 then
+        self.CurSelectIndex = newIndex
+        self.DynamicTable:ReloadDataSync(newIndex)
+    else
+        self.DynamicTable:ReloadDataSync()
+    end
+
+    self:RefreshFilterEmptyState()
+end
+

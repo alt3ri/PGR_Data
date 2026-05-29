@@ -15,7 +15,7 @@ local TablePath = {
     BigWorldTextDialog = "Client/BigWorld/Common/Text/BigWorldTextDialog.tab",
     BigWorldNarrativeText = "Client/BigWorld/Common/Text/BigWorldNarrativeText.tab",
     BigWorldItem = "Share/BigWorld/Common/Item/BigWorldItem.tab",
-    BigWorldRewardGoodDetails = "Client/BigWorld/Common/Reward/BigWorldRewardGoodDetails.tab",
+    BigWorldRewardGoodDetails = "Share/BigWorld/Common/Reward/BigWorldRewardGoodDetails.tab",
 }
 
 function XBigWorldServiceModel:OnInit()

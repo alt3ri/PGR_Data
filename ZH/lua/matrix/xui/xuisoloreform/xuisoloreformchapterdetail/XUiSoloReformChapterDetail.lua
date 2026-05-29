@@ -202,7 +202,7 @@ function XUiSoloReformChapterDetail:OnEnterBattle()
 
     local team = XMVCA.XSoloReform:GetTeam(self._ChapterId)
     local proxy = require("XUi/XUiSoloReform/XUiSoloReformRoleRoom/XUiSoloReformRoleRoomProxy")
-    XLuaUiManager.OpenWithCallback("UiBattleRoleRoom",function()
+    XMVCA.XFuben:OpenUiBattleRoleRoomWithCallback(function()
         self:AutoOpenTeachingMessage(self._ChapterId)
     end, self._CurStageId, team, proxy)
 end

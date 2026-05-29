@@ -54,6 +54,10 @@ function XUiDownloadPreview:InitView()
     self.DataList = dataList
     self.DynamicTable:SetDataSource(dataList)
     self.DynamicTable:ReloadDataSync()
+    local isShield = XMVCA.XBigWorldGamePlay:IsInGame() and XMVCA.XBigWorldFunction:GetShieldOfBackgroundDownload()
+    if isShield then
+        self.BtnDownloadB.gameObject:SetActiveEx(false)
+end
 end
 
 function XUiDownloadPreview:OnDynamicTableEvent(evt, index, grid)

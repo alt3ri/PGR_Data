@@ -64,8 +64,8 @@ XEscapeManagerCreator = function()
         --    return
         --end
         XEscapeManager.SetCurSelectChapterId(chapterId)
-        XLuaUiManager.Open("UiBattleRoleRoom"
-        , stageId
+        XMVCA.XFuben:OpenUiBattleRoleRoom(
+        stageId
         , XEscapeManager.GetTeam()
         , require("XUi/XUiEscape/BattleRoom/XUiEscapeBattleRoleRoom")
         )

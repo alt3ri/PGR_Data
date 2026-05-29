@@ -44,7 +44,7 @@ function XTheatre6HitDownController:OnLuaHitModify(missileUUID, launcherNpcUUID,
     local hasPopText = false
     --只在子弹的第一段判定中触发跳字
     if hitCount == 1 then
-        self._proxy:Theatre6PopDamage(launcherNpcUUID, targetNpcUUID, 1, 0)
+        self._proxy:Theatre6PopDamage(launcherNpcUUID, targetNpcUUID, 4, 0)
         hasPopText = true
     end
 
@@ -65,6 +65,11 @@ function XTheatre6HitDownController:OnLuaHitModify(missileUUID, launcherNpcUUID,
     eventArgs._missileHitCount = hitCount
     eventArgs._hasPopText = hasPopText
     self:DispatchLuaEvent(eventType, eventArgs)
+end
+
+function XTheatre6AffixControllerBase:OnLuaAffixHitDown(eventArgs)
+    --击倒表现
+    self._proxy:LaunchMissile(eventArgs._launcherUUID, eventArgs._targetUUID, 102500901, 102500902, 1)
 end
 
 return XTheatre6HitDownController

@@ -241,7 +241,7 @@ function XUiBigWorldDIY:OnBtnSaveClick()
     if self._IsFrist then
         self._Control:TryOpenPreviewSavePopup(function()
             self:_TryOpenPerspectiveUi(function()
-                self._Control:AskSaveAndFinishCallBack(function()
+                self._Control:SaveFashionInfo(function()
                     if not XMVCA.XBigWorldCommanderDIY:IsFromOpenGuide() then
                         XUiManager.TipMsg(XMVCA.XBigWorldService:GetText("DIYSaveSuccessTip"))
                     end

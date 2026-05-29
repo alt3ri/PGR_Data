@@ -148,6 +148,11 @@ function XBigWorldQuestAgency:InitEnum()
         CurProgress = 1,
         ProgressType = 1,
     }
+    
+    self.InviteQuestType = {
+        Normal = 1, --正常邀约任务
+        Single2Multi = 2,  --单邀约选项解锁多结局
+    }
 
     self._ReplaceHandler = function(key)
         local v = self.PatternKeyToValue[key]
@@ -239,6 +244,14 @@ function XBigWorldQuestAgency:ConditionCheckInviteResultFinish(template)
     end
     
     return sum >= count, template.Desc
+end
+
+function XBigWorldQuestAgency:CheckNormalQuestFinish(questId)
+    return self._Model:CheckNormalQuestFinish(questId)
+end
+
+function XBigWorldQuestAgency:CheckInviteQuestNotInProgress(questId)
+    return self._Model:CheckInviteQuestNotInProgress(questId)
 end
 
 function XBigWorldQuestAgency:CheckQuestFinish(questId)

@@ -3761,7 +3761,10 @@ XEnumConst = {
             [0] = "Stamina",
             [1] = "WrestlePoint",
             [2] = "OverClock",
-        }
+        },
+        TaskConditionType = {
+            Goods = 3, --所需材料
+        },
     },
     GameCollection = {
         GameType = {

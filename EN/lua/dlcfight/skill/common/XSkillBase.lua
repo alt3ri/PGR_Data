@@ -47,6 +47,7 @@ function XSkillBase:InitSkillTemplate()
     Template.ActionList3 = XTool.CsList2LuaTable(template.ActionList3);
     Template.CustomActionList = XTool.CsList2LuaTable(template.CustomActionList);
     Template.CustomParamList = XTool.CsList2LuaTable(template.CustomParamList);
+    Template.SearchConfigId = template.SearchConfigId
     self.Template = Template
     return self.Template
 end
@@ -302,6 +303,8 @@ end
 ---@desc 刷新索敌并对索敌目标(敌人)释放技能，若无索敌目标，则对Npc面前10米处释放
 function XSkillBase:CastActionBySearchEnemy(actionId, startTime, endTime)
     local LauncherId = self._uuid
+    local searchConfigId = self.Template.SearchConfigId
+    self._proxy:SwitchSearchMode(LauncherId, searchConfigId)
     local searchId = self._proxy:GetFirstSearchTarget(self._uuid, ENpcTargetType.Enemy)
     local curTarId = self._proxy:GetLockTarget(LauncherId)
 

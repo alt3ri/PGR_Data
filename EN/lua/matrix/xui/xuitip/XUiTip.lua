@@ -6,6 +6,14 @@ local XUiTip = XLuaUiManager.Register(XLuaUi, "UiTip")
 function XUiTip:OnAwake()
     self.StrTitle = nil
     self:InitAutoScript()
+    if self.TxtDescription then
+        self.TxtDescription.onLinkClick = function(arg)
+            local urlId = tonumber(string.match(arg, "urlId=(.+)"))
+            if urlId then
+                XFunctionManager.SkipInterface(urlId)
+            end
+        end
+    end
 end
 
 function XUiTip:OnStart(data, hideSkipBtn, rootUiName, lackNum, showNum, switchRainbowCard, title, isShowCount)
@@ -54,7 +62,9 @@ function XUiTip:OnDisable()
 end
 
 function XUiTip:OnDestroy()
-
+    if self.TxtDescription then
+        self.TxtDescription.onLinkClick = nil
+    end
 end
 
 function XUiTip:ShowCurrentRainbowCard()
@@ -121,14 +131,12 @@ function XUiTip:OnBtnBackClick()
 end
 
 function XUiTip:OnBtnGetClick()
-    XLuaUiManager.Open(
-            "UiSkip",
-            self.TemplateId,
-            function()
-                self:Close()
-            end,
-            self.HideSkipBtn
-    )
+    local isShieldBusiness = XMVCA.XBigWorldGamePlay:IsInGame() and XMVCA.XBigWorldFunction:GetShieldOfMainBusiness()
+    if not isShieldBusiness then
+        XLuaUiManager.Open("UiSkip", self.TemplateId, function()
+            self:Close()
+        end, self.HideSkipBtn)
+    end
 end
 
 function XUiTip:OnBtnOkClick()
@@ -214,8 +222,10 @@ function XUiTip:Refresh(data)
         tipNotShowCount = true
     end
     -- 获取途径按钮
+
     local skipIdParams = XGoodsCommonManager.GetGoodsSkipIdParams(self.TemplateId)
-    if skipIdParams and #skipIdParams > 0 then
+    local isShieldBusiness = XMVCA.XBigWorldGamePlay:IsInGame() and XMVCA.XBigWorldFunction:GetShieldOfMainBusiness()
+    if skipIdParams and #skipIdParams > 0 and not isShieldBusiness then
         self:SetUiActive(self.BtnGet, true)
     end
 
@@ -384,7 +394,8 @@ function XUiTip:SetTempData(data)
 
     -- 获取途径按钮
     local skipIdParams = data.TemplateId and XGoodsCommonManager.GetGoodsSkipIdParams(data.TemplateId)
-    if skipIdParams and #skipIdParams > 0 then
+    local isShieldBusiness = XMVCA.XBigWorldGamePlay:IsInGame() and XMVCA.XBigWorldFunction:GetShieldOfMainBusiness()
+    if skipIdParams and #skipIdParams > 0 and not isShieldBusiness then
         self.TemplateId = data.TemplateId
         self:SetUiActive(self.BtnGet, true)
     end

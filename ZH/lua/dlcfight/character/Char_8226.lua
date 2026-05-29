@@ -22,10 +22,11 @@ States.Wrestle.WrestleSkillIdRight = 8226012 -- 拼刀start动作 右 (fighter2
 -- States.Wrestle.WrestleSkillIdLeftCountinue = 1025006 -- 拼刀僵持动作 左 (fighter1 怪物不需要
 States.Wrestle.WrestleSkillIdRightCountinue = 8226013 -- 拼刀僵持动作 右 (fighter2
 -- States.Wrestle.PindaoStart2LCamera = 10250102 -- 拼刀start冲刺特写镜头动画buff 左(fighter1 怪物不需要
-States.Wrestle.PindaoStart2RCamera = 8225020 -- 拼刀start冲刺特写镜头动画buff 右(fighter2
+States.Wrestle.PindaoStart2RCamera = 8226015 -- 拼刀start冲刺特写镜头动画buff 右(fighter2
 States.Wrestle.SucceedActionId = 8226014 -- 拼刀成功动作
-States.Dodge.DodgeSkillId = 1025003  -- 超算受身动作
-States.Dodge.SucceedActionId = 1025004 --超算受身成功反击
+States.Wrestle.SecondWrestleReset = 8226019 -- 二次拼刀位置重置动作
+States.Dodge.DodgeSkillId = 8226015  -- 超算受身动作
+States.Dodge.SucceedActionId = 8226016 --超算受身成功反击
 -- States.Block.ActionId = 1025009 -- 格挡动作 (怪物不需要
 
 function XChar8226:_BaseInit()

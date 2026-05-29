@@ -11,7 +11,7 @@ function XLevelScript90009:Init() --初始化逻辑
 
     --XLog.Debug("开启挂起啊初始化逻辑")    
     self._proxy:RegisterEvent(EWorldEvent.NpcDie)                                       --事件注册：NPC死亡
-    --self._proxy:RegisterEvent(EWorldEvent.NpcAddBuff)                                   --事件注册：加buff   (eventArgs.NpcUUID,eventArgs.BuffTableId)
+    self._proxy:RegisterEvent(EWorldEvent.NpcAddBuff)                                   --事件注册：加buff   (eventArgs.NpcUUID,eventArgs.BuffTableId)
 
     self._localPlayerDeathTimes = 0                                                      -- 初始化本端玩家死亡次数
     self._spawnPoint = {}                                                               --获取点位序号，初始化中获取
@@ -26,7 +26,7 @@ function XLevelScript90009:Init() --初始化逻辑
     self._playerNpcList = {}                                                            --玩家列表
 
     --拿到玩家列表和关卡编辑器中的所有点位
-    self._playerNpcList = self._proxy:GetPlayerNpcList() --获取玩家列表
+
     for i = 1, 12 do
         self._spawnPoint[i] = self._proxy:GetSpot(i)    --获取关卡编辑器中配置好的点，1为BOSS出生点，2为场地中心，3~5是玩家出生点,67是左右触手，8~12是其余触手
     end
@@ -63,13 +63,6 @@ function XLevelScript90009:Init() --初始化逻辑
     self.playerDeadCountList = {}
     XLog.Debug("开启团队协作系统")
 
-    -----------------传送玩家位置--------------------------------------------------------------------------------------------
-    for i=1, 3 do
-        if self._proxy:CheckNpc(self._playerNpcList[i]) then
-            self._proxy:SetNpcPosition(self._playerNpcList[i], self._spawnPoint[i+2])                 --传送玩家1位置
-            self._proxy:SetNpcFaceToPosition(self._playerNpcList[i],self._spawnPoint[1])                  --设置看向BOSS的位置
-        end
-    end
     ------------初始化配置----------------------------------------------------------------------------------------
     --ID都是从DLC关卡编辑器里复制过来的，***不要轻易改动***
 
@@ -148,6 +141,7 @@ function XLevelScript90009:OnEnterPhase(phase)
     --进入一个关卡阶段时需要做的事情在这里实现（最好不要在这里跳转关卡阶段
     if phase == Phase.Show then                                                         --一开始默认在Start，所以只有Show阶段开始才会有Enter流程
         XLog.Debug("进入Show阶段")
+        self:SetObstacleListActive(false)
        --self._proxy:CastAction(self.monster_UUID,10086)                                --释放BOSS入场动画 
         
     elseif phase == Phase.Battle then
@@ -175,13 +169,22 @@ function XLevelScript90009:OnUpdatePhase(dt)
     --             self._proxy:ApplyMagic(self._playerNpcList[1],1000480)                             --给唯一的玩家上一个单人模式的复活buff
     --         end
     --    end
-        self:SetPhase(Phase.Show)  
-       
+        self._playerNpcList = self._proxy:GetPlayerNpcList() --获取玩家列表
+
+        -----------------传送玩家位置--------------------------------------------------------------------------------------------
+        for i=1, 3 do
+            if self._proxy:CheckNpc(self._playerNpcList[i]) then
+                self._proxy:SetNpcPosition(self._playerNpcList[i], self._spawnPoint[i+2])                 --传送玩家1位置
+                self._proxy:SetNpcFaceToPosition(self._playerNpcList[i],self._spawnPoint[1])                  --设置看向BOSS的位置
+                XLog.Debug("重置玩家位置")
+            end
+        end
+
+        self:SetPhase(Phase.Show)
     elseif self._currentPhase == Phase.Show then   
          --if not self._proxy:CheckNpcCurrentAction(self.monster_UUID,skillactionID) then                              --判断BOSS的开局表演是否已经结束
              self:SetPhase(Phase.Battle)                                                                             --跳转到战斗阶段
          --end
-
     elseif self._currentPhase == Phase.Battle then
         self:CheckLevelEnd()                                                        --检测关卡结束
         if self._isFinishFight then                                                 --是否已经完成战斗的判断
@@ -221,7 +224,22 @@ end
 ---@param eventType number
 ---@param eventArgs userdata
 function XLevelScript90009:HandleEvent(eventType, eventArgs) --事件响应逻辑
-  
+    if (eventType == EWorldEvent.NpcAddBuff) then
+        XLog.Debug("有BUFF被添加了, id="..eventArgs.BuffTableId)
+        if (eventArgs.BuffTableId ==80560012)  then
+            self:SetObstacleListActive(true)
+        elseif (eventArgs.BuffTableId ==80560013)  then
+            self:SetObstacleListActive(false)
+        elseif (eventArgs.BuffTableId ==80560028)  then
+            local npcUuidList = self._proxy:GetNpcList()
+            for xIndex = 1, #npcUuidList, 1 do
+                if self._proxy:CheckBuffByKind(npcUuidList[xIndex], 80560011) then
+                    self.monster_UUID = npcUuidList[xIndex]
+                    XLog.Warning("结算目标"..self.monster_UUID)
+                end
+            end
+        end
+    end
 end
 
 function XLevelScript90009:CheckAllPlayerDead() --检查是否所有玩家都死亡了
@@ -263,7 +281,6 @@ end
 
 function XLevelScript90009:LevelEnd(isPlayerWin)
     if not self._hasSettleLevel then
-        
         self._hasSettleLevel = true
         self.isLeveEnd = true
         self._proxy:FinishFight() --仅客户端完成战斗
@@ -273,6 +290,17 @@ end
 
 function XLevelScript90009:Terminate() --脚本结束逻辑（脚本被卸载、Npc死亡、关卡结束......）
 
+end
+
+function XLevelScript90009:SetObstacleListActive(value)
+    for i = 140, 147 do
+        self._proxy:SetObstacleActive(i, value)
+    end
+    if value then
+        XLog.Debug("开启障碍")
+    else
+        XLog.Debug("关闭障碍")
+    end
 end
 
 return XLevelScript90009

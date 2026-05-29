@@ -91,16 +91,18 @@ function XLifeTreeAgency:CheckPlayGuide()
         XLuaUiManager.Open("UiLifeTreeGuide", function()
             self:OnGuideEnd()
         end)
-    end, nil, true, false)
+    end, nil, true)
     return true
 end
 
 -- 引导结束
 function XLifeTreeAgency:OnGuideEnd()
-    local clientConfig = self._Model:GetLifeTreeClientConfigConfigById("GuideGuideId")
-    local guideId = tonumber(clientConfig.Values[1])
-    XDataCenter.GuideManager.PlayGuide(guideId)
-    XEventManager.DispatchEvent(XEventId.EVENT_LIFE_TREE_GUIDE_END)
+    self:RequestLifeTreeFinishProcess(XMVCA.XLifeTree.EnumConst.PROCESS_TYPE.GUIDE, nil, function()
+        local clientConfig = self._Model:GetLifeTreeClientConfigConfigById("GuideGuideId")
+        local guideId = tonumber(clientConfig.Values[1])
+        XDataCenter.GuideManager.PlayGuide(guideId)
+        XEventManager.DispatchEvent(XEventId.EVENT_LIFE_TREE_GUIDE_END)
+    end)
 end
 
 local OpenMainUi = function(constellationId)
@@ -124,13 +126,14 @@ function XLifeTreeAgency:ExOpenMainUi(constellationId)
 
     local isPlayPv = self._Model:IsFinishPv()
     if not isPlayPv then
+        self:RequestLifeTreeFinishProcess(XMVCA.XLifeTree.EnumConst.PROCESS_TYPE.PV)
         local clientConfig = self._Model:GetLifeTreeClientConfigConfigById("VideoIdPV")
         local videoId = clientConfig.Values[1]
         XLuaVideoManager.PlayUiVideo(videoId, function()
-            XLuaUiManager.Open("UiLifeTreeOpen", function()
+            --XLuaUiManager.Open("UiLifeTreeOpen", function()
                 OpenMainUi(constellationId)
-            end)
-        end, false, false)
+            --end)
+        end, false, true)
     else
         OpenMainUi(constellationId)
     end
@@ -318,7 +321,12 @@ end
 
 -- 功能是否开启
 function XLifeTreeAgency:IsOpen(isTips)
-    return false
+    -- 提审包屏蔽
+    if XUiManager.IsHideFunc then return false end
+    -- 玩法是否开启
+    local noTips = not isTips
+    local isOpen = XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.LifeTree, false, noTips)
+    return isOpen
 end
 
 -- 是否是生命树角色

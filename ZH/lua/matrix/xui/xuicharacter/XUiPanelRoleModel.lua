@@ -2889,9 +2889,10 @@ function XUiPanelRoleModel:LoadPartnerUiEffect(modelName, effectParentName, isBi
     local parentNamePrefix = CreateEffectParentName(effectParentName)
     local index = 1
 
-    if isUseModelParent then
+    if isUseModelParent or effectParentName == XPartnerConfigs.EffectParentName.ModelLoopEffect then
         parentNamePrefix = modelName .. parentNamePrefix
     end
+    
     for _, effectInfo in pairs(effectInfos) do
         ---@type UnityEngine.GameObject
         local effectParent = nil
@@ -2955,6 +2956,8 @@ function XUiPanelRoleModel:LoadPartnerUiEffect(modelName, effectParentName, isBi
             if isBindEffect then
                 self:BindEffect(effect)
             end
+
+            effect.gameObject:SetActiveEx(true)
     
             -- 使用动画事件控制的特效, 默认隐藏
             if effectParentName == XPartnerConfigs.EffectParentName.ControlByAnimationEvent then
@@ -2962,8 +2965,8 @@ function XUiPanelRoleModel:LoadPartnerUiEffect(modelName, effectParentName, isBi
                 self:SetEffectForAnimationEvent(effectInfo.Id, effectParentName, effectPath)
                 effect.gameObject:SetActiveEx(false)
                 -- 因为modelTransform表, 会根据所在ui设置不同的坐标等, 所以需要同步修正一下
-                effect.transform.localPosition = curModelInfo.Model.transform.localPosition
-                effect.transform.localEulerAngles = curModelInfo.Model.transform.localEulerAngles
+                effectNode.transform.localPosition = curModelInfo.Model.transform.localPosition
+                effectNode.transform.localEulerAngles = curModelInfo.Model.transform.localEulerAngles
             else
                 effectNode.gameObject:SetActiveEx(false)
                 effectNode.gameObject:SetActiveEx(true)
@@ -3064,6 +3067,43 @@ function XUiPanelRoleModel:RemoveRoleModelPool()
     -- 委托缓存池统一清理：业务回调 + Object.Destroy + 清空 _Pool
     self._CachePool:Clear()
     -- 兼容层引用 self.RoleModelPool 指向 _Pool 内部 table，Clear 是逐一 nil 而非替换 table，引用仍有效
+    self.CurRoleName = nil
+end
+
+--- 释放当前激活模型，使其回归缓存并触发通用淘汰检查
+--- 模型 GO 立即隐藏；是否立刻 Destroy 由缓存淘汰策略决定：
+---   普通策略：打上 HideTime 时间戳，超时后销毁，下次加载同角色可命中缓存
+---   低内存/无缓存策略：立刻触发 Destroy（activeKey=nil，所有条目均满足淘汰条件）
+--- 调用后面板处于"无激活模型"状态，与 RemoveRoleModelPool 的区别在于不强制清空全部缓存
+function XUiPanelRoleModel:ReleaseCurrentModel()
+    if not self.CurRoleName then return end
+
+    -- 1. 隐藏当前模型 GO 及其特效
+    local curEntry = self._CachePool:Get(self.CurRoleName)
+    if curEntry then
+        curEntry.Model.gameObject:SetActiveEx(false)
+        self:SetCurrentUiEffectActive(curEntry.UiEffect, false)
+    end
+
+    -- 2. 停止音效
+    self:StopAllAudio()
+
+    -- 3. 通知缓存池：无激活模型
+    --    内部执行：给旧条目打 HideTime、清空 ActiveKey、令牌递增、触发淘汰检查
+    --    activeKey=nil 时所有条目均满足淘汰条件，低内存/无缓存策略下立刻 Destroy
+    self._CachePool:BeginSwitch(nil)
+
+    -- 4. 同步处理副面板（如有）
+    if self.NewPanel and self.NewPanel.CurRoleName then
+        local newPanelEntry = self.NewPanel._CachePool:Get(self.NewPanel.CurRoleName)
+        if newPanelEntry then
+            newPanelEntry.Model.gameObject:SetActiveEx(false)
+        end
+        self.NewPanel._CachePool:BeginSwitch(nil)
+        self.NewPanel.CurRoleName = nil
+    end
+
+    -- 5. 清空面板激活状态
     self.CurRoleName = nil
 end
 

@@ -8,6 +8,7 @@ function XUiMovie2D:OnInitScene()
 end
 
 function XUiMovie2D:OnClickBtnReview()
+    if self:_TryConsumeHide() then return end
     if self:SelectPanelShowing() then
         return
     end

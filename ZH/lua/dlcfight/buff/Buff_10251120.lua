@@ -14,26 +14,31 @@ function XBuffScript10251120:ScriptInit(isGainControl) --初始化
     self._critController = self:GetNpc():GetCritController()
     self._HitFlyController = self:GetNpc():GetHitFlyController()
     --self._proxy:Theatre6ChangeStaminaValue(self._npcUUID, -30, 0)
+    self._stackCount = 1
+    self.ChanceCheck = 0
 end
 
 function XBuffScript10251120:OnLuaSkillStart(eventArgs)
     ------------执行------------
     if eventArgs._skillId ~= self._skillId then return end
     if eventArgs._launcherUUID ~= self._npcUUID then return end
-    --self.originAttrib1 = self._proxy:GetNpcGameplayAttribValue(self._uuid,ETheatre6AttribType.Stamina)
-    --self:LogError(".....抓到拼刀属性"..self.originAttrib1)
-        --self:LogError(".....抓到敌人"..self._enemyUUID)
     self._proxy:Theatre6ChangeStaminaValue(self._npcUUID, self.TLRecover, 0) --恢复10体力
-        --self:LogError(".....扣了敌人超算？"..self._enemyUUID)
-end
-
-function XBuffScript10251120:OnLuaSpecialHit(eventArgs)
-    ------------执行------------
-    if eventArgs._missileHitCount ~= 1 then return end
-    if eventArgs._skillId ~= self._skillId then return end
-    if eventArgs._launcherUUID ~= self._npcUUID then return end
+    --self:LogError(".....技能specialhit？")
     if self._proxy:CheckBuffByKind(self._npcUUID,self._stackbuff) then
         self._HitFlyController:AddSkillCount(self._stackCount)
+        --self:LogError("1120触发了击飞附魔")
+        self._proxy:ApplyMagic(self._npcUUID,self._npcUUID,1025194)
+        self.ChanceCheck = 1
+    end
+end
+
+function XBuffScript10251120:OnLuaSkillEnd(eventArgs)
+    ------------执行------------
+    if eventArgs._skillId ~= self._skillId then return end
+    if eventArgs._launcherUUID ~= self._npcUUID then return end
+    if self.ChanceCheck == 1 then
+        self._proxy:RemoveBuffByKindAndCount(self._npcUUID,1025194, 1)
+        self.ChanceCheck = 2
     end
 end
 

@@ -17,7 +17,12 @@ function XBigWorldUIAgency:OnInit()
 
     self._QueueHelper = require("XModule/XBigWorldUI/Base/XBigWorldQueueUiHelper").New()
     self._UiDestroyHandler = Handler(self, self.OnUiDestroy)
-    
+
+    -- 当前已打开的、继承自 XBigWorldUi 的面板缓存（uiName -> true）
+    -- 由 XBigWorldUi:OnAwakeUi/OnDestroyUi 通过 RecordOpenedBigWorldUi/RemoveOpenedBigWorldUi 维护
+    -- CloseAllBigWorldUi 遍历此集合关闭，避免遍历 C# UI 栈
+    self._OpenedBigWorldUiSet = {}
+
     self.UiThemeModule = {
         None = 0,
         Quest = 1,
@@ -65,8 +70,22 @@ function XBigWorldUIAgency:ClearBigWorldUI()
             goto continue
         end
         self:CloseImmediately(uiName)
-        
         ::continue::
+    end
+end
+
+--- 关闭所有"通过 Open 路径打开过、且继承自 XBigWorldUi"的面板
+--- 通过 _OpenedBigWorldUiSet 缓存查找，无需扫 C# UI 栈
+function XBigWorldUIAgency:CloseAllBigWorldUi()
+    local closeCount = 0
+    -- 复制一份 key 列表，避免边遍历边删（OnUiDestroy 会回写 _OpenedBigWorldUiSet）
+    local toClose = {}
+    for uiName in pairs(self._OpenedBigWorldUiSet) do
+        toClose[#toClose + 1] = uiName
+    end
+    for _, uiName in ipairs(toClose) do
+        self:CloseImmediately(uiName)
+        closeCount = closeCount + 1
     end
 end
 
@@ -126,6 +145,25 @@ function XBigWorldUIAgency:Open(uiName, ...)
         XLuaUiManager.Open(uiName, ...)
     end
     return true
+end
+
+--- 记录一个继承自 XBigWorldUi 的面板已打开（由 XBigWorldUi:OnAwakeUi 调用）
+--- CloseAllBigWorldUi 遍历此集合关闭，避免遍历 C# UI 栈
+---@param uiName string
+function XBigWorldUIAgency:RecordOpenedBigWorldUi(uiName)
+    if string.IsNilOrEmpty(uiName) then
+        return
+    end
+    self._OpenedBigWorldUiSet[uiName] = true
+end
+
+--- 移除一个已打开的 XBigWorldUi 面板记录（由 XBigWorldUi:OnDestroyUi 调用）
+---@param uiName string
+function XBigWorldUIAgency:RemoveOpenedBigWorldUi(uiName)
+    if string.IsNilOrEmpty(uiName) then
+        return
+    end
+    self._OpenedBigWorldUiSet[uiName] = nil
 end
 
 function XBigWorldUIAgency:OpenWithFightSequence(uiName, immidiateOpen, ...)
@@ -237,6 +275,21 @@ function XBigWorldUIAgency:Register(super, uiName)
         super = XBigWorldUi
     end
     return XLuaUiManager.Register(super, uiName)
+end
+
+--- 该 UI 是否继承自 XBigWorldUi
+--- 通过 XLuaUiManager 的 ClassType 反查 super 链；要求该 UI 已被 require 注册过
+---@param uiName string
+---@return boolean
+function XBigWorldUIAgency:IsBigWorldUi(uiName)
+    if string.IsNilOrEmpty(uiName) then
+        return false
+    end
+    local uiClass = XLuaUiManager.GetUiClass(uiName)
+    if not uiClass then
+        return false
+    end
+    return uiClass == XBigWorldUi or CheckClassSuper(uiClass, XBigWorldUi)
 end
 
 -- region UI效果

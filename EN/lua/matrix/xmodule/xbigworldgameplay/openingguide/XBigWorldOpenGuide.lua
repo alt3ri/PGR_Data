@@ -86,8 +86,6 @@ function XBigWorldOpenGuide:PreLaunch()
     end
     --初始化输入后系统
     XMVCA.XBigWorldGamePlay:GetCurrentAgency():InitInputMapStack()
-    --设置大世界状态
-    XMVCA.XBigWorldGamePlay:InitCurrentBigWorldType()
     self.IsPreLaunch = true
 end
 
@@ -96,8 +94,6 @@ function XBigWorldOpenGuide:PreExit()
         return
     end
     self:ClearAction()
-    --设置大世界状态
-    XMVCA.XBigWorldGamePlay:DeinitCurrentBigWorldType()
     self.IsPreLaunch = false
 end
 

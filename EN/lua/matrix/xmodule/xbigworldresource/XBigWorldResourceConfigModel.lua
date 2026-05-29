@@ -21,7 +21,15 @@ local DlcResourceTableKey = {
     BigWorldUiModelNodeControl = {
         DirPath = XConfigUtil.DirectoryType.Client,
         CacheType = XConfigUtil.CacheType.Normal,
-    }
+    },
+    BigWorldFashionSO = {
+        DirPath = XConfigUtil.DirectoryType.Client,
+        CacheType = XConfigUtil.CacheType.Normal,
+    },
+    BigWorldFashionSOGroup = {
+        DirPath = XConfigUtil.DirectoryType.Client,
+        CacheType = XConfigUtil.CacheType.Normal,
+    },
 }
 
 function XBigWorldResourceConfigModel:_InitTableKey()
@@ -91,6 +99,16 @@ end
 ---@return XTableBigWorldUiModelNodeControl
 function XBigWorldResourceConfigModel:GetDlcUiModelNodeControlConfigById(id)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcResourceTableKey.BigWorldUiModelNodeControl, id, false) or {}
+end
+
+---@return XTableBigWorldFashionSO
+function XBigWorldResourceConfigModel:GetBigWorldFashionSOConfigById(id)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcResourceTableKey.BigWorldFashionSO, id, true)
+end
+
+---@return XTableBigWorldFashionSOGroup
+function XBigWorldResourceConfigModel:GetBigWorldFashionSOGroupConfigById(id)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(DlcResourceTableKey.BigWorldFashionSOGroup, id, false) or {}
 end
 
 return XBigWorldResourceConfigModel

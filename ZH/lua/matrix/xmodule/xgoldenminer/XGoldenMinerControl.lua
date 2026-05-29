@@ -511,7 +511,10 @@ function XGoldenMinerControl:TryExitToCollection()
         return false
     end
 
-    XMVCA.XGameCollection:OnGameExitToCollection(gameType)
+    local dataDb = self:GetMainDb()
+    local clearData = dataDb and dataDb:GetCurClearData()
+    local score = clearData and clearData.TotalScore or (dataDb and dataDb:GetStageScores()) or 0
+    XMVCA.XGameCollection:OnGameExitToCollection(gameType, { Score = score })
     XMVCA.XGameCollection:BackToMainUiIfNeeded()
     return true
 end

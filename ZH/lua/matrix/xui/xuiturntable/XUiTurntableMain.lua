@@ -6,6 +6,7 @@ local XUiPanelTurntableRewardShow = require('XUi/XUiTurntable/XUiPanelTurntableR
 local Tweening = CS.DG.Tweening
 local Quaternion = CS.UnityEngine.Quaternion
 local TurntableAngleOffset = CS.XGame.ClientConfig:GetInt("TurntableAngleOffset")
+local SCROLL_TO_BOTTOM_PADDING = 30
 
 ---@class XUiTurntableMain : XLuaUi
 ---@field _Control XTurntableControl
@@ -70,7 +71,10 @@ function XUiTurntableMain:InitCompnent()
 
     self.BtnSkip:SetButtonState(CS.UiButtonState.Normal)
     self.PanelForbidClick.gameObject:SetActiveEx(false)
-    
+
+    self.PanelSettllement01.gameObject:SetActiveEx(false)
+    self.PanelSettllement02.gameObject:SetActiveEx(false)
+
     self.PanelRewardShow01 = XUiPanelTurntableRewardShow.New(self.PanelSettllement01, self)
     self.PanelRewardShow02 = XUiPanelTurntableRewardShow.New(self.PanelSettllement02, self)
 end
@@ -104,7 +108,7 @@ function XUiTurntableMain:InitProgress()
     self.TopRewardCtrl = XUiGridTurntableRewardTopShow.New(self.TopReward, self)
 
     self:UpdateProgressBar()
-    self:ScrollTo(idx, #rewards)
+    self:ScrollTo(idx)
 
     self._contentLastAnchoredPos = self.ScrollView.content.anchoredPosition
     self:UpdateProgressTopRewardShow()
@@ -137,9 +141,9 @@ function XUiTurntableMain:UpdateTurntableButton()
     self._CostItemId, self._OneCoseNum = self._Control:GetTurntableCost()
     local icon = XDataCenter.ItemManager.GetItemBigIcon(self._CostItemId)
     local itemCount = XDataCenter.ItemManager.GetCount(self._CostItemId)
-
+    
     self.BtnOne:SetNameByGroup(0, XUiHelper.GetText("TurntableRotateTimes", 1))
-    self.BtnOne:SetNameByGroup(1, itemCount >= self._OneCoseNum and string.format("×%s", self._OneCoseNum) or string.format("<color='#FF0F0F'>×%s</color>", self._OneCoseNum))
+    self.BtnOne:SetNameByGroup(1, itemCount >= self._OneCoseNum and XUiHelper.GetText("TurntableDrawTimes", self._OneCoseNum) or XUiHelper.GetText("TurntableDrawTimesWithNotEnough", self._OneCoseNum))
     self.BtnOne:SetRawImage(icon)
 
     local remain = self._Control:RemainingItemsCount()
@@ -148,7 +152,7 @@ function XUiTurntableMain:UpdateTurntableButton()
     self._MultiTimes = (remain >= drawNum or isOver) and drawNum or remain
     self._TenCostNum = self._MultiTimes * self._OneCoseNum
     self.BtnTen:SetNameByGroup(0, XUiHelper.GetText("TurntableRotateTimes", self._MultiTimes))
-    self.BtnTen:SetNameByGroup(1, itemCount >= self._TenCostNum and string.format("×%s", self._TenCostNum) or string.format("<color='#FF0F0F'>×%s</color>", self._TenCostNum))
+    self.BtnTen:SetNameByGroup(1, itemCount >= self._TenCostNum and XUiHelper.GetText("TurntableDrawTimes", self._TenCostNum) or XUiHelper.GetText("TurntableDrawTimesWithNotEnough", self._TenCostNum))
     self.BtnTen:SetRawImage(icon)
 end
 
@@ -399,10 +403,33 @@ function XUiTurntableMain:UpdateProgressTopRewardShow()
     end
 end
 
-function XUiTurntableMain:ScrollTo(idx, total)
-    local cellHeight = self.RewardRoot.sizeDelta.y
-    local scrollHeight = cellHeight * total - self.View.sizeDelta.y
-    self.ScrollView.verticalNormalizedPosition = math.min(1, idx * cellHeight / scrollHeight)
+function XUiTurntableMain:ScrollTo(idx)
+    local rewardCtrl = self._rewards and idx and idx > 0 and self._rewards[idx]
+    if not rewardCtrl then
+        self.ScrollView.verticalNormalizedPosition = 0
+        return
+    end
+
+    -- 强制刷新布局，否则 LayoutGroup 的 spacing/padding 还没计算，cell 位置不准
+    local content = self.ScrollView.content
+    CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(content)
+
+    local contentRect = content.rect
+    local scrollHeight = contentRect.height - self.ScrollView.viewport.rect.height
+    if scrollHeight <= 0 then
+        self.ScrollView.verticalNormalizedPosition = 0
+        return
+    end
+
+    -- 用第 idx 个格子的真实 RectTransform 位置计算
+    local cellRt = rewardCtrl.Transform
+    local cellLocalY = content:InverseTransformPoint(cellRt.position).y
+    -- cell 底边相对 content 底边的距离
+    local distance = cellLocalY + cellRt.rect.yMin - contentRect.yMin - SCROLL_TO_BOTTOM_PADDING
+
+    -- viewport 底边对齐 cell 底边时
+    local pos = distance / scrollHeight
+    self.ScrollView.verticalNormalizedPosition = pos < 0 and 0 or pos > 1 and 1 or pos
 end
 
 ---@return @是否继续执行显示逻辑
@@ -427,11 +454,14 @@ function XUiTurntableMain:OnBtnStartClick(isTen)
     local spendCount = isTen and self._TenCostNum or self._OneCoseNum
     if ownItemCount < spendCount then
         local itemName = XDataCenter.ItemManager.GetItemName(self._CostItemId)
-        XUiManager.TipError(XUiHelper.GetText("MoeWarDailyVoteItemNotEnoughTip", string.format("【%s】", itemName)))
+        XUiManager.TipError(XUiHelper.GetText("TurntableCountNoEnough", itemName))
         return
     end
 
     local count = isTen and self._MultiTimes or 1
+
+
+    XDataCenter.ItemManager.SetAutoGiftRewardShowLock(true)
     self._Control:RequestDrawReward(count, function(records)
         self:StartRotate(records)
     end)
@@ -658,8 +688,8 @@ end
 
 function XUiTurntableMain:OnBtnObtainClick()
     self._RewardShowing = false
-    self.PanelRewardShow01:Close()
-    self.PanelRewardShow02:Close()
+    self.PanelRewardShow01:CloseEx()
+    self.PanelRewardShow02:CloseEx()
     XDataCenter.KickOutManager.Unlock(XEnumConst.KICK_OUT.LOCK.TURNTABLE, true)
 end
 
@@ -741,4 +771,4 @@ function XUiTurntableMain:_PlaySpineObjAnimation(spineObject, fromAnim, toAnim)
     end
 end
 
-return XUiTurntableMain
+return XUiTurntableMain

@@ -1231,8 +1231,8 @@
     },
     {
         "Id": 107223,
-        "Names": "['FocusMinAngle', 'FocusMaxAngle', 'FocusMinDistance', 'FocusMaxDistance', 'FocusHeight']",
-        "Values": "[10.0, 12.0, 0.0, 16.0, -0.5]"
+        "Names": "['ActiveSphereFocus', 'SphereFocusRadius', 'SphereFocusInnerAngle', 'SphereFocusOuterAngle', 'SphereFocusPitchAngleMax', 'SphereFocusPitchAngleMin', 'SphereFocusCameraRotatePitchMax', 'SphereFocusCameraRotatePitchMin', 'SphereFocusCameraLerpTime', 'DefaultToFocusDuration', 'DefaultHeight', 'DefaultOffset', 'DefaultDistance']",
+        "Values": "[1.0, 2.0, 15.0, 25.0, 30.0, -30.0, 20.0, -20.0, 0.15, 0.3, 0.0, 0.0, 2.0]"
     },
     {
         "Id": 806316,
@@ -1473,5 +1473,30 @@
         "Id": 197250,
         "Names": "['FocusMinAngle', 'FocusMaxAngle', 'FocusMinDistance', 'FocusMaxDistance', 'MaxDistance']",
         "Values": "[5.0, 10.0, 0.0, 2.0, 3.0]"
+    },
+    {
+        "Id": 197295,
+        "Names": "['FocusMinAngle']",
+        "Values": "[25.0]"
+    },
+    {
+        "Id": 187238,
+        "Names": "['ActiveSphereFocus', 'SphereFocusRadius', 'SphereFocusInnerAngle', 'SphereFocusOuterAngle', 'SphereFocusPitchAngleMax', 'SphereFocusPitchAngleMin', 'SphereFocusCameraRotatePitchMax', 'SphereFocusCameraRotatePitchMin', 'SphereFocusCameraLerpTime']",
+        "Values": "[1.0, 2.0, 5.0, 10.0, 5.0, -15.0, 5.0, -15.0, 0.15]"
+    },
+    {
+        "Id": 187242,
+        "Names": "['ActiveSphereFocus', 'SphereFocusRadius', 'SphereFocusInnerAngle', 'SphereFocusOuterAngle', 'SphereFocusPitchAngleMax', 'SphereFocusPitchAngleMin', 'SphereFocusCameraRotatePitchMax', 'SphereFocusCameraRotatePitchMin', 'SphereFocusCameraLerpTime']",
+        "Values": "[1.0, 2.0, 0.0, 0.0, 5.0, -15.0, 5.0, -15.0, 0.15]"
+    },
+    {
+        "Id": 808833,
+        "Names": "['FocusMaxAngle']",
+        "Values": "[360.0]"
+    },
+    {
+        "Id": 187255,
+        "Names": "['DefaultToFocusDuration']",
+        "Values": "[0.0]"
     }
 ]

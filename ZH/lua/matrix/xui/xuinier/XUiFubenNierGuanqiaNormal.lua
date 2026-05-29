@@ -1,4 +1,4 @@
-local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XUiFubenNierGuanqiaNormal = XLuaUiManager.Register(XLuaUi, "UiFubenNierGuanqiaNormal")
 local XUiGridFubenNierPODSkill = require("XUi/XUiNieR/XUiGridFubenNierPODSkill")
 function XUiFubenNierGuanqiaNormal:OnAwake()
@@ -338,6 +338,6 @@ function XUiFubenNierGuanqiaNormal:OnBtnEnterClick()
         if self.SelectNieRPODSkillId ~= XDataCenter.NieRManager.GetNieRPODData():GetNieRPODSelectSkillId() then
             XDataCenter.NieRManager.NieRSelectSupportSkill(self.SelectNieRPODSkillId)
         end
-        XLuaUiManager.PopThenOpen("UiBattleRoleRoom", self.Stage.StageId) --, nil, self.RepeatStageId, self.ChapterId)
+        XMVCA.XFuben:PopThenOpenUiBattleRoleRoom(self.Stage.StageId) --, nil, self.RepeatStageId, self.ChapterId)
     end
 end

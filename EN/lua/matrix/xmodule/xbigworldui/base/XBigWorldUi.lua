@@ -18,6 +18,8 @@ function XBigWorldUi:OnAwakeUi()
         XMVCA.XBigWorldGamePlay:SetFightUiActive(false)
     end
 
+    XMVCA.XBigWorldUI:RecordOpenedBigWorldUi(self.Name)
+
     XLuaUi.OnAwakeUi(self)
 end
 
@@ -25,7 +27,7 @@ function XBigWorldUi:OnDestroyUi()
     if self._IsPauseFight then
         XMVCA.XBigWorldGamePlay:ResumeFight()
     end
-    
+
     if self._IsHideFightUi then
         XMVCA.XBigWorldGamePlay:SetFightUiActive(true)
     end
@@ -33,6 +35,8 @@ function XBigWorldUi:OnDestroyUi()
     -- 移除输入 销毁时再切换（不能再隐藏时切换，因为input section移除的时候要先处理再切换），打开新的会有覆盖
     -- 销毁的时候可以恢复设置，影响到移除input section的列表移除
     self:ChangeFightInput()
+
+    XMVCA.XBigWorldUI:RemoveOpenedBigWorldUi(self.Name)
 
     XLuaUi.OnDestroyUi(self)
 end

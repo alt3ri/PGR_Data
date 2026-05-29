@@ -1,4 +1,4 @@
-local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local BaseProxy = require("XUi/XUiExpedition/MainPage/DetailProxy/XUiExpeditionDetailProxy")
 local BuffIconScript = require("XUi/XUiExpedition/MainPage/StageDetail/XUiExpeditionStageBuffIcon")
 --普通战斗关卡详细代理
@@ -97,7 +97,7 @@ function XUiExpeditionBattleDetailProxy:OnClickBtnEnter()
         return
     end
     self:Hide()
-    XLuaUiManager.Open("UiBattleRoleRoom", self.Ui.EStage:GetStageId())
+    XMVCA.XFuben:OpenUiBattleRoleRoom(self.Ui.EStage:GetStageId())
 end
 --================
 --初始化增益图标面板

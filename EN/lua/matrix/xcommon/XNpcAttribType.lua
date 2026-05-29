@@ -160,6 +160,11 @@ XNpcAttribType = {
     CustomEnergyGroup8 = 157, --自定义能量组8
     CustomEnergyGroup9 = 158, --自定义能量组9
     CustomEnergyGroup10 = 159, --自定义能量组10
+    FireBoomDamageExtraP = 160, --爆燃伤害额外加成
+    FireBoomAntiDamageP = 161, --爆燃伤害额外加成
+    FireBoomWeaknessP = 162, --爆燃伤害额外加成
+    FireBoomAccumulatorP = 163, --爆燃伤害额外加成
+    FireBoomAntiAccumulatorP = 164,--爆燃积蓄槽效率抗性
     
-    End = 160, --结束标志
+    End = 165, --结束标志
 }

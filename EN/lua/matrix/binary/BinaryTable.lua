@@ -1,5 +1,6 @@
 local BinaryManager = CS.BinaryManager
 local HEAD_LEN = 4
+---@class BinaryTable
 local BinaryTable = {}
 local tableEmpty = {}
 
@@ -43,13 +44,13 @@ function BinaryTable.ReadAll(path, identifier)
 end
 
 --读取句柄
+---@return BinaryTable
 function BinaryTable.ReadHandle(path)
     local bt = BinaryTable.New(path)
 
     if not bt or not bt:IsTableExist() then
         return nil
     end
-
     return bt
 end
 
@@ -144,6 +145,7 @@ function BinaryTable:_InitMetaTable()
     end
 
     self.MetaTable = metaTable
+    XTableManager.RegisterFixedStructuralSize(self.FilePath, "m_metaTable", self.MetaTable, false)
 end
 
 function BinaryTable:Ctor(path)
@@ -168,7 +170,9 @@ function BinaryTable:InitBinary()
         return nil
     end
     self.Length = string.len(self.Bytes)
-
+    --初始化
+    XTableManager.OnLoadBinary(self.FilePath, self.Bytes)
+    XTableManager.RegisterFixedStructuralSize(self.FilePath, "m_tableName", self.FilePath, false)
     local result = self:Init()
     return result
 end
@@ -201,6 +205,7 @@ function BinaryTable:Init()
         local name = self.colNames[i]
         if self.primarykey == name then
             self.primarykeyType = self.colTypes[i]
+            break
         end
     end
 
@@ -209,6 +214,9 @@ function BinaryTable:Init()
     self.contentTrunkLen = reader:ReadInt()
     self.m_initialized = true
 
+    XTableManager.UpdateBinaryRows(self.FilePath, self.row)
+    XTableManager.RegisterFixedStructuralSize(self.FilePath, "m_properyNames", self.colNames, false)
+    XTableManager.RegisterFixedStructuralSize(self.FilePath, "m_properyTypeIndex", self.colTypes, false)
     if not self.contentTrunkLen then
         if XMain.IsDebug then
             XLog.Warning(string.format("BinaryTable:InitBinary,%s, 空表", self.FilePath))
@@ -330,6 +338,7 @@ function BinaryTable:ReadAllContent(identifier, isPair, skipCache)
 
             if not self.m_skipCache then
                 self.caches[keyValue] = temp
+                XTableManager.UpdateBinaryFields(self.FilePath, temp)
             end
         else
             local tail = self.m_rowIndexArray[i]
@@ -337,9 +346,10 @@ function BinaryTable:ReadAllContent(identifier, isPair, skipCache)
             reader:SetIndex(tail)
         end
     end
-
+    
     if not self.m_skipCache then
         self.cachesCount = self.row
+        XTableManager.UpdateVolatileStructuralSize(self.FilePath, "m_xTableDic", self.caches, true)
     end
     self:__CloseReader(reader)
     return tab
@@ -364,8 +374,9 @@ function BinaryTable:Get(key)
         self.caches[key] = t
         self.cachesCount = self.cachesCount + 1
         self.cachesRow[index] = true
+        XTableManager.UpdateVolatileStructuralSize(self.FilePath, "m_xTableDic", self.caches, true)
+        XTableManager.UpdateVolatileStructuralSize(self.FilePath, "m_cachesRow", self.cachesRow, true)
     end
-
     return t
 end
 
@@ -394,7 +405,7 @@ function BinaryTable:ReadIndexTrunk()
         local temp = reader:Read(self.primarykeyType) or 0
         self.primaryKeyList[temp] = i
     end
-
+    XTableManager.RegisterFixedStructuralSize(self.FilePath, "m_primarykeyDic", self.primaryKeyList, false)
     self:__CloseReader(reader)
     return true
 end
@@ -414,6 +425,8 @@ function BinaryTable:ReadRowIndexTrunk()
     for _ = 1, self.row do
         table.insert(self.m_rowIndexArray, reader:ReadInt() or 0)
     end
+    
+    XTableManager.RegisterFixedStructuralSize(self.FilePath, "m_rowIndexArray", self.m_rowIndexArray, true)
     self:__CloseReader(reader)
 end
 
@@ -438,7 +451,7 @@ function BinaryTable:ReadElement(key)
         --  XLog.Warning(string.format("%s,BinaryTable:ReadElement,查询失败，未找到条目 %s = %s", self.filePath, self.primarykey, value))
         return
     end
-
+    XTableManager.UpdateBinaryFields(self.FilePath, element)
     return element, index
 end
 
@@ -514,7 +527,7 @@ function BinaryTable:ReadPoolInfoTrunk()
         return
     end
 
-    local m_stringPoolSize = reader:ReadInt() or 0
+    local m_stringPoolSize = reader:ReadInt() or 0  -- 用于初始化字符串池大小保留
     local m_poolColumnLen = reader:ReadInt() or 0
     local m_poolOffsetTrunkLen = reader:ReadInt() or 0
     local m_poolInfoOffsetLen = poolHeadLength + HEAD_LEN
@@ -538,11 +551,14 @@ function BinaryTable:ReadPoolInfoTrunk()
         self:__CloseReader(reader)
         return
     end
-    self.m_poolOffsetInfoArray = {}
-    self:__ResetReader(reader, m_poolOffsetTrunkLen, m_poolColumnLen + m_poolInfoOffsetLen + position)
-    for _ = 1, m_stringPoolSize do
-        table.insert(self.m_poolOffsetInfoArray, reader:ReadInt() or 0)
-    end
+    self.m_poolColumnSizeStartPos = m_poolColumnLen + m_poolInfoOffsetLen + position
+
+    -- 偏移数组某些配置表比较大所以去掉了缓存，直接偏移读取
+    -- self.m_poolOffsetInfoArray = {}
+    -- self:__ResetReader(reader, m_poolOffsetTrunkLen, m_poolColumnLen + m_poolInfoOffsetLen + position)
+    -- for _ = 1, m_stringPoolSize do
+    --     table.insert(self.m_poolOffsetInfoArray, reader:ReadInt() or 0)
+    -- end
     self:__CloseReader(reader)
 end
 
@@ -562,24 +578,41 @@ end
 
 -- 通过字符串池获取字符串
 function BinaryTable:ReadPoolStringByIndex(index)
-    if not self.m_poolOffsetInfoArray or #self.m_poolOffsetInfoArray <= 0 then
-        XLog.Error(string.format("%s,BinaryTable:ReadPoolStringByIndex 读取行位置数据失败", self.FilePath))
-        return
-    end
+    -- if not self.m_poolOffsetInfoArray or #self.m_poolOffsetInfoArray <= 0 then
+    --     XLog.Error(string.format("%s,BinaryTable:ReadPoolStringByIndex 读取行位置数据失败", self.FilePath))
+    --     return
+    -- end
 
-    local luaIndex = index + 1
-    if luaIndex > #self.m_poolOffsetInfoArray then
-        XLog.Error(string.format("%s,BinaryTable:ReadPoolStringByIndex 超出总行数长度 : %s 查询长度 : %s", self.FilePath, #self.m_poolOffsetInfoArray, index))
-        return
-    end
+    -- local luaIndex = index + 1
+    -- if luaIndex > #self.m_poolOffsetInfoArray then
+    --     XLog.Error(string.format("%s,BinaryTable:ReadPoolStringByIndex 超出总行数长度 : %s 查询长度 : %s", self.FilePath, #self.m_poolOffsetInfoArray, index))
+    --     return
+    -- end
 
-    local poolContentStartPos = self:GetPoolContentTrunkStartPosition()
-    local startPos = index <= 0 and 0 or self.m_poolOffsetInfoArray[index]
-    local endPos = self.m_poolOffsetInfoArray[luaIndex]
+    -- 主线比较多配置表没清除，先不cache
+    -- if not self.stringCaches then
+    --     self.stringCaches = {}
+    -- end
+    local str-- = self.stringCaches[luaIndex]
+    -- if not str then
+        local realIndex = index - 1
+        local firstPos = self.m_poolColumnSizeStartPos + realIndex * HEAD_LEN
+        local reader = self:__GetReader(HEAD_LEN, firstPos)
+        local startPos = realIndex < 0 and 0 or reader:ReadIntFix()
 
-    local reader = self:__GetReader(endPos - startPos, poolContentStartPos + startPos)
-    local str = reader:ReadString()
-    self:__CloseReader(reader)
+        self:__ResetReader(reader, HEAD_LEN, firstPos + HEAD_LEN)
+        local endPos = reader:ReadIntFix()
+
+        -- local startPos = index <= 0 and 0 or self.m_poolOffsetInfoArray[index]
+        -- local endPos = self.m_poolOffsetInfoArray[luaIndex]
+
+        local poolContentStartPos = self:GetPoolContentTrunkStartPosition()
+        self:__ResetReader(reader, endPos - startPos, poolContentStartPos + startPos)
+        -- local reader = self:__GetReader(endPos - startPos, poolContentStartPos + startPos)
+        str = reader:ReadString()
+        self:__CloseReader(reader)
+    --     self.stringCaches[luaIndex] = str
+    -- end
     return str
 end
 
@@ -590,18 +623,25 @@ function BinaryTable:ReleaseCache()
     if self.cachesRow then
         self.cachesRow = {}
     end
+    if self.m_initialized then
+        XTableManager.ReleaseBinaryFields(self.FilePath)
+        XTableManager.UpdateVolatileStructuralSize(self.FilePath, "m_xTableDic", self.caches, true)
+    end
 end
 
 -- 释放所有
 function BinaryTable:ReleaseFull()
+    -- self.stringCaches = nil
+    self.m_columnMap = nil
     self:ReleaseCache()
     self.Bytes = nil
+    XTableManager.OnUnloadBinaryBytes(self.FilePath)
 end
 
 -- 关闭，好像没调用
 function BinaryTable:Close()
-    -- XLog.Error("BinaryTable:Close", self.FilePath)
-    -- self:ReleaseFull()
+    XLog.Error("BinaryTable:Close", self.FilePath)
+    self:ReleaseFull()
 end
 
 return BinaryTable

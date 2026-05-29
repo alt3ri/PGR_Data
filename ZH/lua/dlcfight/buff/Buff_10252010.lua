@@ -6,12 +6,25 @@ local XBuffScript10252010 = XDlcScriptManager.RegBuffScript(10252010, "XBuffScri
 
 function XBuffScript10252010:ScriptInit(isGainControl) --初始化
     self.TargetSkill = self._skillId
+    self.ChanceCheck = 0
+    self._stackCountBurn = 1
 end
 
 function XBuffScript10252010:OnLuaAffixHitFly(eventArgs )
     if eventArgs._launcherUUID ~= self._npcUUID then return end
-    self._level:RequestInsertSkill(self._uuid,self.TargetSkill)
-    --self:LogError("目标插入式技能1注册完成")
+    if self.ChanceCheck == 1 then
+        self._level:RequestInsertSkill(self._uuid,self.TargetSkill)
+        -- self:LogError("2010抓到了击飞效果"..eventArgs._skillId)
+        self.ChanceCheck = 0
+    end
+end
+
+function XBuffScript10252010:OnLuaSkillStart(eventArgs)
+    ------------执行------------
+    if eventArgs._launcherUUID ~= self._npcUUID then return end
+    self.ChanceCheck = 1
+    if eventArgs._skillId ~= self._skillId then return end
+    self:GetEnemyNpc():GetBurnController():CastStackBuff(self._stackCountBurn, self._enemyUUID)
 end
 
 return XBuffScript10252010

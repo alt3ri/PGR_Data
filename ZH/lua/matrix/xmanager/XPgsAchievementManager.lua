@@ -33,9 +33,42 @@ local PgsAchievementIdConfig = {
         [PgsAchievementEnum.RoleDevelopIII] = "CgkIwYODm5cQEAIQCg",
     },
     -- 后续其他服在此扩展
-    -- JP = {},
-    -- KR = {},
-    -- EN = {},
+    JP = {
+        [PgsAchievementEnum.MainLine1_12] = "CgkIqNHdntUREAIQAQ",
+        [PgsAchievementEnum.RoleDevelopI] = "CgkIqNHdntUREAIQCA",
+        [PgsAchievementEnum.ThreeMembersLv15] = "CgkIqNHdntUREAIQBA",
+        [PgsAchievementEnum.TrustLevel3] = "CgkIqNHdntUREAIQAg",
+        [PgsAchievementEnum.SixAwarenessLv20] = "CgkIqNHdntUREAIQBQ",
+        [PgsAchievementEnum.BossSingleWin20] = "CgkIqNHdntUREAIQBg",
+        [PgsAchievementEnum.SixStarWeapon] = "CgkIqNHdntUREAIQAw",
+        [PgsAchievementEnum.RoleDevelopII] = "CgkIqNHdntUREAIQCQ",
+        [PgsAchievementEnum.SkillUpgrade60] = "CgkIqNHdntUREAIQBw",
+        [PgsAchievementEnum.RoleDevelopIII] = "CgkIqNHdntUREAIQCg",
+    },
+    KR = {
+        [PgsAchievementEnum.MainLine1_12] = "CgkIpO-OmasdEAIQAQ",
+        [PgsAchievementEnum.RoleDevelopI] = "CgkIpO-OmasdEAIQCA",
+        [PgsAchievementEnum.ThreeMembersLv15] = "CgkIpO-OmasdEAIQBA",
+        [PgsAchievementEnum.TrustLevel3] = "CgkIpO-OmasdEAIQAg",
+        [PgsAchievementEnum.SixAwarenessLv20] = "CgkIpO-OmasdEAIQBQ",
+        [PgsAchievementEnum.BossSingleWin20] = "CgkIpO-OmasdEAIQBg",
+        [PgsAchievementEnum.SixStarWeapon] = "CgkIpO-OmasdEAIQAw",
+        [PgsAchievementEnum.RoleDevelopII] = "CgkIpO-OmasdEAIQCQ",
+        [PgsAchievementEnum.SkillUpgrade60] = "CgkIpO-OmasdEAIQBw",
+        [PgsAchievementEnum.RoleDevelopIII] = "CgkIpO-OmasdEAIQCg",
+    },
+    EN = {
+        [PgsAchievementEnum.MainLine1_12] = "CgkI-rnlstIBEAIQAQ",
+        [PgsAchievementEnum.RoleDevelopI] = "CgkI-rnlstIBEAIQCA",
+        [PgsAchievementEnum.ThreeMembersLv15] = "CgkI-rnlstIBEAIQBA",
+        [PgsAchievementEnum.TrustLevel3] = "CgkI-rnlstIBEAIQAg",
+        [PgsAchievementEnum.SixAwarenessLv20] = "CgkI-rnlstIBEAIQBQ",
+        [PgsAchievementEnum.BossSingleWin20] = "CgkI-rnlstIBEAIQBg",
+        [PgsAchievementEnum.SixStarWeapon] = "CgkI-rnlstIBEAIQAw",
+        [PgsAchievementEnum.RoleDevelopII] = "CgkI-rnlstIBEAIQCQ",
+        [PgsAchievementEnum.SkillUpgrade60] = "CgkI-rnlstIBEAIQBw",
+        [PgsAchievementEnum.RoleDevelopIII] = "CgkI-rnlstIBEAIQCg",
+    },
 }
 
 -------------------------------
@@ -90,12 +123,12 @@ end
 local function GetRegionKey()
     if XOverseaManager.IsTWRegion() then
         return "TW"
-    -- elseif XOverseaManager.IsJPRegion() then
-    --     return "JP"
-    -- elseif XOverseaManager.IsKRRegion() then
-    --     return "KR"
-    -- elseif XOverseaManager.IsENRegion() then
-    --     return "EN"
+    elseif XOverseaManager.IsJPRegion() then
+        return "JP"
+    elseif XOverseaManager.IsKRRegion() then
+        return "KR"
+    elseif XOverseaManager.IsENRegion() then
+        return "EN"
     end
     return nil
 end

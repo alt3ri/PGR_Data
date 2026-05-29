@@ -821,8 +821,8 @@
     },
     {
         "Id": 20003086.0,
-        "Key": "FubenBossSingleChallengePreBuffNotActive",
-        "Text": "20003086\u56da\u7b3c\u93d6\u6218\u70b9\u524d\u7f6ebuff\u672a\u6fc0\u6d3b"
+        "Key": "FubenBossSingleChallengeBuffIdNotExist",
+        "Text": "20003086\u56da\u7b3c\u93d6\u6218\u70b9\u5f53\u524dBuff\u7ec4\u4e0d\u5b58\u5728\u6b64Buff"
     },
     {
         "Id": 20003087.0,
@@ -1297,72 +1297,132 @@
     {
         "Id": 20004005.0,
         "Key": "TeamManagerCanNotFindThePrefabTeam",
-        "Text": "20004005\u627e\u4e0d\u5230\u8be5\u9884\u8bbe\u961f\u4f0d"
+        "Text": "\u627e\u4e0d\u5230\u8be5\u9884\u8bbe\u961f\u4f0d"
     },
     {
         "Id": 20004006.0,
-        "Key": "TeamManagerCharacterIsEmptyCanNotCarryPartner",
-        "Text": "20004006\u7ad9\u4f4d\u6ca1\u6709\u89d2\u8272\u4e0d\u80fd\u643a\u5e26\u8f85\u52a9\u673a"
+        "Key": "TeamManagerPosDataNotFound",
+        "Text": "\u6ca1\u6709\u89d2\u8272\u7ad9\u4f4d\u6570\u636e"
     },
     {
         "Id": 20004007.0,
-        "Key": "TeamManagerThisTeamPosIsNotExist",
-        "Text": "20004007\u7ad9\u4f4d\u4e0d\u5b58\u5728"
+        "Key": "TeamManagerCharacterIsEmptyCanNotCarryPartner",
+        "Text": "\u7ad9\u4f4d\u6ca1\u6709\u89d2\u8272\u4e0d\u80fd\u643a\u5e26\u8f85\u52a9\u673a"
     },
     {
         "Id": 20004008.0,
-        "Key": "TeamManagerPrefabPartnerSkillIsEmpty",
-        "Text": "20004006\u8f85\u52a9\u673a\u9884\u8bbe\u6280\u80fd\u4e0d\u80fd\u4e3a\u7a7a"
+        "Key": "TeamManagerThisTeamPosIsNotExist",
+        "Text": "\u7ad9\u4f4d\u4e0d\u5b58\u5728"
     },
     {
         "Id": 20004009.0,
-        "Key": "TeamManagerPrePartnerIsEmptyCanNotCarrySkill",
-        "Text": "20004008\u8f85\u52a9\u673a\u9884\u8bbe\u4e3a\u7a7a\u4e0d\u80fd\u8bbe\u7f6e\u6280\u80fd"
+        "Key": "TeamManagerPrefabTeamPartnerDataEmpty",
+        "Text": "\u9884\u8bbe\u7f16\u961f\u8f85\u52a9\u673a\u6570\u636e\u4e3a\u7a7a"
     },
     {
         "Id": 20004010.0,
-        "Key": "TeamManagerCharacterIsEmptyCanNotPutOnEquip",
-        "Text": "20004010\u7ad9\u4f4d\u6ca1\u6709\u89d2\u8272\u4e0d\u80fd\u7a7f\u6234\u88c5\u5907"
+        "Key": "TeamManagerPrefabPartnerSkillIsEmpty",
+        "Text": "\u8f85\u52a9\u673a\u9884\u8bbe\u6280\u80fd\u4e0d\u80fd\u4e3a\u7a7a"
     },
     {
         "Id": 20004011.0,
-        "Key": "TeamManagerPrefabTeamAlreadyOnTop",
-        "Text": "20004011\u8be5\u7f16\u961f\u5df2\u5728\u6700\u4e0a\u9762"
+        "Key": "TeamManagerPrePartnerIsEmptyCanNotCarrySkill",
+        "Text": "\u8f85\u52a9\u673a\u9884\u8bbe\u4e3a\u7a7a\u4e0d\u80fd\u8bbe\u7f6e\u6280\u80fd"
     },
     {
         "Id": 20004012.0,
-        "Key": "TeamManagerPrefabTeamEquipRepeat",
-        "Text": "20004012\u9884\u8bbe\u7f16\u961f\u5b58\u5728\u91cd\u590d\u7a7f\u7740\u88c5\u5907"
+        "Key": "TeamManagerCharacterIsEmptyCanNotPutOnEquip",
+        "Text": "\u7ad9\u4f4d\u6ca1\u6709\u89d2\u8272\u4e0d\u80fd\u7a7f\u6234\u88c5\u5907"
     },
     {
         "Id": 20004013.0,
-        "Key": "TeamManagerPrefabTeamResonanceRepeat",
-        "Text": "20004013\u9884\u8bbe\u7f16\u961f\u5b58\u5728\u91cd\u590d\u7a7f\u7740\u5171\u9e23"
+        "Key": "TeamManagerPrefabTeamAlreadyOnTop",
+        "Text": "\u8be5\u7f16\u961f\u5df2\u5728\u6700\u4e0a\u9762"
     },
     {
         "Id": 20004014.0,
-        "Key": "TeamManagerPrefabCharacterEquipEmpty",
-        "Text": "20004014\u7ad9\u4f4d\u89d2\u8272\u88c5\u5907\u6570\u636e\u4e3a\u7a7a"
+        "Key": "TeamManagerPrefabTeamEquipRepeat",
+        "Text": "\u9884\u8bbe\u7f16\u961f\u5b58\u5728\u91cd\u590d\u7a7f\u7740\u88c5\u5907"
     },
     {
         "Id": 20004015.0,
-        "Key": "TeamManagerPrefabTeamNameEmpty",
-        "Text": "20004015\u7f16\u961f\u540d\u4e0d\u80fd\u4e3a\u7a7a"
+        "Key": "TeamManagerPrefabTeamEquipDataEmpty",
+        "Text": "\u9884\u8bbe\u7f16\u961f\u88c5\u5907\u6570\u636e\u4e3a\u7a7a"
     },
     {
         "Id": 20004016.0,
-        "Key": "TeamManagerPrefabTeamPartnerRepeat",
-        "Text": "20004016\u9884\u8bbe\u7f16\u961f\u5b58\u5728\u91cd\u590d\u88c5\u5907\u8f85\u52a9\u673a\u5668"
+        "Key": "TeamManagerPrefabTeamResonanceRepeat",
+        "Text": "\u9884\u8bbe\u7f16\u961f\u5b58\u5728\u91cd\u590d\u7a7f\u7740\u5171\u9e23"
     },
     {
         "Id": 20004017.0,
-        "Key": "TeamManagerPrefabTeamSameCharacter",
-        "Text": "20004017\u9884\u8bbe\u7f16\u961f\u5b58\u5728\u91cd\u590d\u89d2\u8272"
+        "Key": "TeamManagerPrefabCharacterEquipEmpty",
+        "Text": "\u7ad9\u4f4d\u89d2\u8272\u88c5\u5907\u6570\u636e\u4e3a\u7a7a"
     },
     {
         "Id": 20004018.0,
+        "Key": "TeamManagerPrefabTeamNameEmpty",
+        "Text": "\u7f16\u961f\u540d\u4e0d\u80fd\u4e3a\u7a7a"
+    },
+    {
+        "Id": 20004019.0,
+        "Key": "TeamManagerPrefabTeamNameIllegal",
+        "Text": "\u7f16\u961f\u540d\u542b\u6709\u975e\u6cd5\u5b57\u7b26"
+    },
+    {
+        "Id": 20004020.0,
+        "Key": "TeamManagerPrefabTeamPartnerRepeat",
+        "Text": "\u9884\u8bbe\u7f16\u961f\u5b58\u5728\u91cd\u590d\u88c5\u5907\u8f85\u52a9\u673a\u5668"
+    },
+    {
+        "Id": 20004021.0,
+        "Key": "TeamManagerPrefabTeamSameCharacter",
+        "Text": "\u9884\u8bbe\u7f16\u961f\u5b58\u5728\u91cd\u590d\u89d2\u8272"
+    },
+    {
+        "Id": 20004022.0,
         "Key": "TeamManagerPrefabTeamEquipDataIsNull",
-        "Text": "20004018\u9884\u8bbe\u7f16\u961f\u88c5\u5907\u6570\u636e\u4e0d\u80fd\u8bbe\u7f6e\u4e3a\u7a7a"
+        "Text": "\u9884\u8bbe\u7f16\u961f\u88c5\u5907\u6570\u636e\u4e0d\u80fd\u8bbe\u7f6e\u4e3a\u7a7a"
+    },
+    {
+        "Id": 20004023.0,
+        "Key": "TeamManagerPrefabTagConfigNotFound",
+        "Text": "\u9884\u8bbe\u7f16\u961f\u6807\u7b7e\u4e0d\u5408\u6cd5"
+    },
+    {
+        "Id": 20004024.0,
+        "Key": "TeamManagerPrefabTagDataError",
+        "Text": "\u9884\u8bbe\u7f16\u961f\u6807\u7b7e\u8bbe\u7f6e\u53c2\u6570\u5f02\u5e38"
+    },
+    {
+        "Id": 20004025.0,
+        "Key": "TeamManagerPrefabTagRepeat",
+        "Text": "\u9884\u8bbe\u7f16\u961f\u8bbe\u7f6e\u4e86\u76f8\u540c\u6807\u7b7e"
+    },
+    {
+        "Id": 20004026.0,
+        "Key": "TeamManagerPrefabTagTypeError",
+        "Text": "\u9884\u8bbe\u7f16\u961f\u8bbe\u7f6e\u4e86\u591a\u4e2a\u540c\u7c7b\u578b\u6807\u7b7e"
+    },
+    {
+        "Id": 20004027.0,
+        "Key": "TeamManagerPrefabSkillCanNotSwitch",
+        "Text": "\u9884\u8bbe\u7f16\u961f\u65e0\u6cd5\u9009\u62e9\u51fa\u573a\u5f62\u6001"
+    },
+    {
+        "Id": 20004028.0,
+        "Key": "TeamManagerPrefabSkillSwitchError",
+        "Text": "\u9884\u8bbe\u7f16\u961f\u51fa\u573a\u5f62\u6001\u6280\u80fd\u4e0d\u5408\u6cd5"
+    },
+    {
+        "Id": 20004029.0,
+        "Key": "TeamManagerPrefabSkillSwitchParamError",
+        "Text": "\u9884\u8bbe\u7f16\u961f\u51fa\u573a\u5f62\u6001\u8bbe\u7f6e\u53c2\u6570\u5f02\u5e38"
+    },
+    {
+        "Id": 20004030.0,
+        "Key": "TeamManagerPrefabSkillSwitchInEmptyPos",
+        "Text": "\u7ad9\u4f4d\u6ca1\u6709\u89d2\u8272\u4e0d\u80fd\u8bbe\u7f6e\u6218\u6597\u5f62\u6001"
     },
     {
         "Id": 20007001.0,
@@ -4337,12 +4397,12 @@
     {
         "Id": 20034138.0,
         "Key": "ConditionManagerTheatre6StageCountNotEnough",
-        "Text": "20034138\u5b8c\u6210\u5173\u5361\u6b21\u6570\u4e0d\u8db3"
+        "Text": "\u901a\u8fc7\u5173\u5361\u6b21\u6570\u4e0d\u8db3"
     },
     {
         "Id": 20034139.0,
         "Key": "ConditionManagerTheatre6DiffCountNotEnough",
-        "Text": "20034139\u5b8c\u6210\u96be\u5ea6\u6b21\u6570\u4e0d\u8db3"
+        "Text": "\u901a\u8fc7\u96be\u5ea6\u6b21\u6570\u4e0d\u8db3"
     },
     {
         "Id": 20034140.0,
@@ -5532,22 +5592,22 @@
     {
         "Id": 20053040.0,
         "Key": "PurchaseNotSupportSupplementGet",
-        "Text": "20053040\u793c\u5305\u4e0d\u652f\u6301\u8865\u7b7e"
+        "Text": "\u65e0\u6cd5\u8fdb\u884c\u8865\u7b7e"
     },
     {
         "Id": 20053041.0,
         "Key": "PurchaseNotSupplementGetCount",
-        "Text": "20053041\u65e0\u9700\u8865\u7b7e\u9886\u53d6"
+        "Text": "\u65e0\u9700\u8865\u7b7e\u9886\u53d6"
     },
     {
         "Id": 20053042.0,
         "Key": "PurchaseBuyRemainDayLimit",
-        "Text": "20053042\u672a\u5230\u8d2d\u4e70\u65f6\u95f4"
+        "Text": "\u5f53\u524d\u65e0\u6cd5\u8d2d\u4e70"
     },
     {
         "Id": 20053043.0,
         "Key": "PurchaseNotSupportSupplementGetReward",
-        "Text": "20053043\u4e0d\u652f\u6301\u8865\u7b7e"
+        "Text": "\u65e0\u6cd5\u8fdb\u884c\u8865\u7b7e"
     },
     {
         "Id": 20053101.0,
@@ -27250,6 +27310,11 @@
         "Text": "20290019\u5927\u4e16\u754c\u73a9\u6cd5\u573a\u666f\u6a21\u5757\u627e\u4e0d\u5230"
     },
     {
+        "Id": 20290020.0,
+        "Key": "BigWorldCourseExploreNoAvailableReward",
+        "Text": "20290020\u5386\u7a0b\u63a2\u7d22\u65e0\u53ef\u9886\u53d6\u5956\u52b1"
+    },
+    {
         "Id": 20291001.0,
         "Key": "BigWorldModuleNotFind",
         "Text": "20291001\u5927\u4e16\u754c\u73a9\u6cd5\u6a21\u5757\u627e\u4e0d\u5230"
@@ -28392,457 +28457,512 @@
     {
         "Id": 20423001.0,
         "Key": "Theatre6NotOpen",
-        "Text": "20423001\u6d3b\u52a8\u672a\u5f00\u542f"
+        "Text": "\u6d3b\u52a8\u672a\u5f00\u542f"
     },
     {
         "Id": 20423002.0,
         "Key": "Theatre6CharacterIdError",
-        "Text": "20423002\u89d2\u8272Id\u9519\u8bef"
+        "Text": "\u89d2\u8272\u9519\u8bef"
     },
     {
         "Id": 20423003.0,
         "Key": "Theatre6FashionIdError",
-        "Text": "20423003\u6d82\u88c5Id\u9519\u8bef"
+        "Text": "\u6d82\u88c5\u9519\u8bef"
     },
     {
         "Id": 20423004.0,
         "Key": "Theatre6BuffIdError",
-        "Text": "20423004BuffId\u9519\u8bef"
+        "Text": "\u56de\u58f0\u6b8b\u54cd\u9519\u8bef"
     },
     {
         "Id": 20423005.0,
         "Key": "Theatre6BuffUnlockError",
-        "Text": "20423005Buff\u672a\u89e3\u9501"
+        "Text": "\u56de\u58f0\u6b8b\u54cd\u672a\u89e3\u9501"
     },
     {
         "Id": 20423006.0,
         "Key": "Theatre6DifficultyIdError",
-        "Text": "20423006\u96be\u5ea6Id\u9519\u8bef"
+        "Text": "\u96be\u5ea6\u9519\u8bef"
     },
     {
         "Id": 20423007.0,
         "Key": "Theatre6FloorCfgNotFoundError",
-        "Text": "20423007\u5c42\u914d\u7f6e\u4e0d\u5b58\u5728"
+        "Text": "\u8c03\u67e5\u5c42\u7ea7\u4e0d\u5b58\u5728"
     },
     {
         "Id": 20423008.0,
         "Key": "Theatre6RoomCfgNotFoundError",
-        "Text": "20423008\u623f\u95f4\u914d\u7f6e\u4e0d\u5b58\u5728"
+        "Text": "\u96fe\u9014\u9685\u95f4\u4e0d\u5b58\u5728"
     },
     {
         "Id": 20423009.0,
         "Key": "Theatre6RoomCfgParamError",
-        "Text": "20423009\u623f\u95f4\u914d\u7f6e\u53c2\u6570\u9519\u8bef"
+        "Text": "\u96fe\u9014\u9685\u95f4\u53c2\u6570\u9519\u8bef"
     },
     {
         "Id": 20423010.0,
         "Key": "Theatre6DifficultyGroupError",
-        "Text": "20423010\u96be\u5ea6\u7ec4\u9519\u8bef"
+        "Text": "\u96be\u5ea6\u7ec4\u9519\u8bef"
     },
     {
         "Id": 20423011.0,
         "Key": "Theatre6DifficultyUnlockError",
-        "Text": "20423011\u96be\u5ea6\u672a\u89e3\u9501"
+        "Text": "\u96be\u5ea6\u672a\u89e3\u9501"
     },
     {
         "Id": 20423012.0,
         "Key": "Theatre6StageIdNotFoundError",
-        "Text": "20423012\u5173\u5361Id\u9519\u8bef"
+        "Text": "\u5173\u5361\u9519\u8bef"
     },
     {
         "Id": 20423013.0,
         "Key": "Theatre6NoCurrentModeDbError",
-        "Text": "20423013\u5f53\u524d\u6a21\u5f0f\u6570\u636e\u4e0d\u5b58\u5728"
+        "Text": "\u5f53\u524d\u6a21\u5f0f\u6570\u636e\u4e0d\u5b58\u5728"
     },
     {
         "Id": 20423014.0,
         "Key": "Theatre6NoCurrentRoomDbError",
-        "Text": "20423014\u5f53\u524d\u623f\u95f4\u6570\u636e\u4e0d\u5b58\u5728"
+        "Text": "\u5f53\u524d\u96fe\u9014\u9685\u95f4\u6570\u636e\u4e0d\u5b58\u5728"
     },
     {
         "Id": 20423015.0,
         "Key": "Theatre6RoomTypeError",
-        "Text": "20423015\u5f53\u524d\u623f\u95f4\u7c7b\u578b\u9519\u8bef"
+        "Text": "\u5f53\u524d\u96fe\u9014\u9685\u95f4\u7c7b\u578b\u9519\u8bef"
     },
     {
         "Id": 20423016.0,
         "Key": "Theatre6TaskGroupNotFound",
-        "Text": "20423016\u4efb\u52a1\u7ec4\u4e0d\u5b58\u5728"
+        "Text": "\u4efb\u52a1\u7ec4\u4e0d\u5b58\u5728"
     },
     {
         "Id": 20423017.0,
         "Key": "Theatre6TaskRoomMaxRefreshCountError",
-        "Text": "20423017\u8d85\u51fa\u5237\u65b0\u6b21\u6570\u4e0a\u9650"
+        "Text": "\u8d85\u51fa\u5237\u65b0\u6b21\u6570\u4e0a\u9650"
     },
     {
         "Id": 20423018.0,
         "Key": "Theatre6GoldNotEnoughError",
-        "Text": "20423018\u91d1\u5e01\u4e0d\u8db3"
+        "Text": "\u53e4\u65e7\u91d1\u5e01\u4e0d\u8db3"
     },
     {
         "Id": 20423019.0,
         "Key": "Theatre6NoTaskToRandomError",
-        "Text": "20423019\u6ca1\u6709\u65b0\u7684\u4efb\u52a1\u53ef\u4ee5\u968f\u673a"
+        "Text": "\u6ca1\u6709\u65b0\u7684\u4efb\u52a1"
     },
     {
         "Id": 20423020.0,
         "Key": "Theatre6TaskIdError",
-        "Text": "20423020\u4efb\u52a1ID\u9519\u8bef"
+        "Text": "\u4efb\u52a1\u9519\u8bef"
     },
     {
         "Id": 20423021.0,
         "Key": "Theatre6NoFloorDataError",
-        "Text": "20423021\u6ca1\u6709\u5bf9\u5e94\u7684\u5c42\u6570\u636e\u9519\u8bef"
+        "Text": "\u6ca1\u6709\u8c03\u67e5\u5c42\u7ea7\u6570\u636e"
     },
     {
         "Id": 20423022.0,
         "Key": "Theatre6NoRoomDataError",
-        "Text": "20423022\u6ca1\u6709\u5bf9\u5e94\u7684\u623f\u95f4\u6570\u636e\u9519\u8bef"
+        "Text": "\u6ca1\u6709\u96fe\u9014\u9685\u95f4\u6570\u636e"
     },
     {
         "Id": 20423023.0,
         "Key": "Theatre6RoomIdxNotFoundError",
-        "Text": "20423023\u65e0\u6cd5\u627e\u5230\u5f53\u524d\u7684\u623f\u95f4\u7d22\u5f15"
+        "Text": "\u65e0\u6cd5\u627e\u5230\u5f53\u524d\u7684\u96fe\u9014\u9685\u95f4\u7d22\u5f15"
     },
     {
         "Id": 20423024.0,
         "Key": "Theatre6NoNextRoomError",
-        "Text": "20423024\u6ca1\u6709\u4e0b\u4e00\u4e2a\u623f\u95f4\u7684\u914d\u7f6e"
+        "Text": "\u7f3a\u5c11\u4e0b\u4e00\u4e2a\u96fe\u9014\u9685\u95f4\u7684\u914d\u7f6e"
     },
     {
         "Id": 20423025.0,
         "Key": "Theatre6ChooseTaskOutOfLimitError",
-        "Text": "20423025\u9009\u62e9\u7684\u4efb\u52a1\u6570\u91cf\u8d85\u8fc7\u4e0a\u9650"
+        "Text": "\u9009\u62e9\u7684\u4efb\u52a1\u6570\u91cf\u8d85\u8fc7\u4e0a\u9650"
     },
     {
         "Id": 20423026.0,
         "Key": "Theatre6ChoosePoolEmptyError",
-        "Text": "20423026\u4e8c\u62e9\u6c60\u4e3a\u7a7a"
+        "Text": "\u8ff7\u5c40\u6289\u62e9\u4e3a\u7a7a"
     },
     {
         "Id": 20423027.0,
         "Key": "Theatre6ChoosePoolIdNotFoundError",
-        "Text": "20423027\u4e8c\u62e9\u6c60\u4e8b\u4ef6\u4e0d\u5b58\u5728"
+        "Text": "\u8ff7\u5c40\u6289\u62e9\u6c60\u4e0d\u5b58\u5728"
     },
     {
         "Id": 20423028.0,
         "Key": "Theatre6ChooseIdNotFoundError",
-        "Text": "20423028\u4e8c\u62e9\u4e8b\u4ef6\u4e0d\u5b58\u5728"
+        "Text": "\u8ff7\u5c40\u6289\u62e9\u4e0d\u5b58\u5728"
     },
     {
         "Id": 20423029.0,
         "Key": "Theatre6ChoosePoolCfgError",
-        "Text": "20423029\u4e8c\u62e9\u6c60\u914d\u7f6e\u9519\u8bef"
+        "Text": "\u8ff7\u5c40\u6289\u62e9\u6c60\u914d\u7f6e\u9519\u8bef"
     },
     {
         "Id": 20423030.0,
         "Key": "Theatre6ChoosePoolChooseLineNotFoundError",
-        "Text": "20423030\u4e8c\u62e9\u6c60\u4e8b\u4ef6\u94fe\u4e0d\u5b58\u5728"
+        "Text": "\u8ff7\u5c40\u6289\u62e9\u6c60\u4e8b\u4ef6\u94fe\u4e0d\u5b58\u5728"
     },
     {
         "Id": 20423031.0,
         "Key": "Theatre6ChooseCfgError",
-        "Text": "20423031\u4e8c\u62e9\u4e8b\u4ef6\u914d\u7f6e\u9519\u8bef"
+        "Text": "\u8ff7\u5c40\u6289\u62e9\u9519\u8bef"
     },
     {
         "Id": 20423032.0,
         "Key": "Theatre6ChooseCfgRewardTypeError",
-        "Text": "20423032\u4e8c\u62e9\u4e8b\u4ef6\u5956\u52b1\u7c7b\u578b\u9519\u8bef"
+        "Text": "\u8ff7\u5c40\u6289\u62e9\u5956\u52b1\u7c7b\u578b\u9519\u8bef"
     },
     {
         "Id": 20423033.0,
         "Key": "Theatre6ChooseIndexNotFoundError",
-        "Text": "20423032\u4e8c\u62e9\u6c60\u4e2d\u4e0d\u5b58\u5728\u8be5\u4e8b\u4ef6"
+        "Text": "\u8ff7\u5c40\u6289\u62e9\u6c60\u4e2d\u4e0d\u5b58\u5728\u8be5\u8ff7\u5c40\u6289\u62e9"
     },
     {
         "Id": 20423034.0,
         "Key": "Theatre6ChooseRoomStatusError",
-        "Text": "20423033\u5f53\u524d\u7684\u623f\u95f4\u72b6\u6001\u9519\u8bef"
+        "Text": "\u5f53\u524d\u7684\u96fe\u9014\u9685\u95f4\u72b6\u6001\u9519\u8bef"
     },
     {
         "Id": 20423035.0,
         "Key": "Theatre6FightIdNotFoundError",
-        "Text": "20423034\u6218\u6597ID\u4e0d\u5b58\u5728"
+        "Text": "\u6218\u6597\u4e0d\u5b58\u5728"
     },
     {
         "Id": 20423036.0,
         "Key": "Theatre6MonsterCfgNotFoundError",
-        "Text": "20423035\u602a\u7269\u914d\u7f6e\u4e0d\u5b58\u5728"
+        "Text": "\u654c\u4eba\u914d\u7f6e\u4e0d\u5b58\u5728"
     },
     {
         "Id": 20423037.0,
         "Key": "Theatre6MonsterIdAlreadySetError",
-        "Text": "20423036\u5df2\u7ecf\u9009\u62e9\u4e86\u602a\u7269\u96be\u5ea6"
+        "Text": "\u5df2\u7ecf\u9009\u62e9\u4e86\u96be\u5ea6"
     },
     {
         "Id": 20423038.0,
         "Key": "Theatre6MonsterIdNotSetError",
-        "Text": "20423037\u8fd8\u6ca1\u9009\u62e9\u602a\u7269\u96be\u5ea6"
+        "Text": "\u672a\u9009\u62e9\u602a\u7269\u96be\u5ea6"
     },
     {
         "Id": 20423039.0,
         "Key": "Theatre6FightCfgParamError",
-        "Text": "20423038\u6218\u6597\u914d\u7f6e\u9519\u8bef"
+        "Text": "\u6218\u6597\u914d\u7f6e\u9519\u8bef"
     },
     {
         "Id": 20423040.0,
         "Key": "Theatre6MonsterIdError",
-        "Text": "20423039\u602a\u7269ID\u9519\u8bef"
+        "Text": "\u602a\u7269\u9519\u8bef"
     },
     {
         "Id": 20423041.0,
         "Key": "Theatre6ModeDataIsNull",
-        "Text": "20423040\u73a9\u6cd5\u6570\u636e\u4e0d\u5b58\u5728"
+        "Text": "\u6570\u636e\u4e0d\u5b58\u5728"
     },
     {
         "Id": 20423042.0,
         "Key": "Theatre6SanCfgError",
-        "Text": "20423041San\u503c\u914d\u7f6e\u4e0d\u5b58\u5728"
+        "Text": "\u7406\u667a\u914d\u7f6e\u4e0d\u5b58\u5728"
     },
     {
         "Id": 20423043.0,
         "Key": "Theatre6FileDataIsNull",
-        "Text": "20423042\u5b58\u6863\u6570\u636e\u4e0d\u5b58\u5728"
+        "Text": "\u5f52\u6863\u6570\u636e\u4e0d\u5b58\u5728"
     },
     {
         "Id": 20423044.0,
         "Key": "Theatre6SlotIdError",
-        "Text": "20423043\u5b58\u6863\u7f16\u53f7\u9519\u8bef"
+        "Text": "\u5f52\u6863\u7f16\u53f7\u9519\u8bef"
     },
     {
         "Id": 20423045.0,
         "Key": "Theatre6UnlockStoryIdError",
-        "Text": "20423045\u89e3\u9501\u56fe\u9274ID\u9519\u8bef"
+        "Text": "\u89e3\u9501\u56fe\u9274ID\u9519\u8bef"
     },
     {
         "Id": 20423046.0,
         "Key": "Theatre6FileDataNotFound",
-        "Text": "20423046\u627e\u4e0d\u5230\u5b58\u6863\u6587\u4ef6\u6570\u636e"
+        "Text": "\u627e\u4e0d\u5230\u5f52\u6863\u6587\u4ef6\u6570\u636e"
     },
     {
         "Id": 20423047.0,
         "Key": "Theatre6ChooseGroupNotFoundError",
-        "Text": "20423047\u4e8c\u62e9\u7ec4\u4e0d\u5b58\u5728"
+        "Text": "\u8ff7\u5883\u4e4b\u95f4\u4e0d\u5b58\u5728"
     },
     {
         "Id": 20423048.0,
         "Key": "Theatre6FightGroupNotFoundError",
-        "Text": "20423048\u6218\u6597\u7ec4\u4e0d\u5b58\u5728"
+        "Text": "\u68a6\u9b47\u4e4b\u95f4\u4e0d\u5b58\u5728"
     },
     {
         "Id": 20423049.0,
         "Key": "Theatre6TaskCfgNotFoundError",
-        "Text": "20423049\u6218\u6597\u7ec4\u4e0d\u5b58\u5728"
+        "Text": "\u4efb\u52a1\u4e0d\u5b58\u5728"
     },
     {
         "Id": 20423050.0,
         "Key": "Theatre6PlayModeNotUnlockedError",
-        "Text": "20423050\u5f53\u524d\u73a9\u6cd5\u672a\u89e3\u9501"
+        "Text": "\u5f53\u524d\u73a9\u6cd5\u672a\u89e3\u9501"
     },
     {
         "Id": 20423051.0,
         "Key": "Theatre6FightRewardTypeError",
-        "Text": "20423051\u6218\u6597\u5956\u52b1\u7c7b\u578b\u9519\u8bef"
+        "Text": "\u6218\u6597\u5956\u52b1\u7c7b\u578b\u9519\u8bef"
     },
     {
         "Id": 20423052.0,
         "Key": "Theatre6StoryModeAvgIdError",
-        "Text": "20423052\u5267\u60c5\u6a21\u5f0fAVGId\u9519\u8bef"
+        "Text": "\u5267\u60c5\u6a21\u5f0fAVGId\u9519\u8bef"
     },
     {
         "Id": 20423053.0,
         "Key": "Theatre6WorldIdError",
-        "Text": "20423053\u4e16\u754cID\u4e0d\u5b58\u5728"
+        "Text": "\u4e16\u754cID\u4e0d\u5b58\u5728"
     },
     {
         "Id": 20423054.0,
         "Key": "Theatre6SkillCfgNoFound",
-        "Text": "20423044\u6280\u80fd\u914d\u7f6e\u4e0d\u5b58\u5728"
+        "Text": "\u6280\u80fd\u914d\u7f6e\u4e0d\u5b58\u5728"
     },
     {
         "Id": 20423055.0,
         "Key": "Theatre6SkillPoolCfgNoFound",
-        "Text": "20423045\u6280\u80fd\u6c60\u914d\u7f6e\u4e0d\u5b58\u5728"
+        "Text": "\u6280\u80fd\u6c60\u914d\u7f6e\u4e0d\u5b58\u5728"
     },
     {
         "Id": 20423056.0,
         "Key": "Theatre6AttrPackCfgNoFound",
-        "Text": "20423046\u9057\u7269\u914d\u7f6e\u4e0d\u5b58\u5728"
+        "Text": "\u65e7\u7269\u914d\u7f6e\u4e0d\u5b58\u5728"
     },
     {
         "Id": 20423057.0,
         "Key": "Theatre6SkillTypeError",
-        "Text": "20423047\u6280\u80fd\u7c7b\u578b\u9519\u8bef"
+        "Text": "\u6280\u80fd\u7c7b\u578b\u9519\u8bef"
     },
     {
         "Id": 20423058.0,
         "Key": "Theatre6SkillAddError",
-        "Text": "20423048\u6280\u80fd\u6dfb\u52a0\u9519\u8bef"
+        "Text": "\u6280\u80fd\u6dfb\u52a0\u9519\u8bef"
     },
     {
         "Id": 20423059.0,
         "Key": "Theatre6ModeIdNotFound",
-        "Text": "20423049\u5f53\u524d\u6a21\u5f0fID\u9519\u8bef"
+        "Text": "\u5f53\u524d\u6a21\u5f0fID\u9519\u8bef"
     },
     {
         "Id": 20423060.0,
         "Key": "Theatre6RandomTotalWeightError",
-        "Text": "20423050\u968f\u673a\u603b\u6743\u91cd\u9519\u8bef"
+        "Text": "\u968f\u673a\u603b\u6743\u91cd\u9519\u8bef"
     },
     {
         "Id": 20423061.0,
         "Key": "Theatre6RandomError",
-        "Text": "20423051\u968f\u673a\u672a\u77e5\u9519\u8bef"
+        "Text": "\u968f\u673a\u672a\u77e5\u9519\u8bef"
     },
     {
         "Id": 20423062.0,
         "Key": "Theatre6AttrPackNotExist",
-        "Text": "20423052\u9057\u7269\u914d\u7f6e\u4e0d\u5b58\u5728"
+        "Text": "\u65e7\u7269\u914d\u7f6e\u4e0d\u5b58\u5728"
     },
     {
         "Id": 20423063.0,
         "Key": "Theatre6AttrPackCharacterNotMatch",
-        "Text": "20423053\u9057\u7269\u89d2\u8272\u4e0d\u5339\u914d"
+        "Text": "\u65e7\u7269\u89d2\u8272\u4e0d\u5339\u914d"
     },
     {
         "Id": 20423064.0,
         "Key": "Theatre6ModeError",
-        "Text": "20423054\u73a9\u6cd5\u6a21\u5f0f\u9519\u8bef"
+        "Text": "\u8ff7\u5c40\u7a81\u56f4\u9519\u8bef"
     },
     {
         "Id": 20423065.0,
         "Key": "Theatre6TalentLevelError",
-        "Text": "20423055\u5929\u8d4b\u7b49\u7ea7\u9519\u8bef"
+        "Text": "\u5168\u77e5\u89c6\u754c\u7b49\u7ea7\u9519\u8bef"
     },
     {
         "Id": 20423066.0,
         "Key": "Theatre6TalentCfgError",
-        "Text": "20423056\u5929\u8d4b\u914d\u7f6e\u9519\u8bef"
+        "Text": "\u5168\u77e5\u89c6\u754c\u914d\u7f6e\u9519\u8bef"
     },
     {
         "Id": 20423067.0,
         "Key": "Theatre6TalentCoinLimit",
-        "Text": "20423057\u5929\u8d4b\u5e01\u6570\u91cf\u4e0d\u8db3"
+        "Text": "\u660e\u5bdf\u5fc3\u8bc1\u6570\u91cf\u4e0d\u8db3"
     },
     {
         "Id": 20423068.0,
         "Key": "Theatre6NotPlayMode",
-        "Text": "20423058\u5f53\u524d\u6a21\u5f0f\u4e0d\u662f\u73a9\u6cd5\u6a21\u5f0f"
+        "Text": "\u5f53\u524d\u6a21\u5f0f\u4e0d\u662f\u8ff7\u5c40\u7a81\u56f4"
     },
     {
         "Id": 20423069.0,
         "Key": "Theatre6CurrentModeDbNotFound",
-        "Text": "20423059\u5f53\u524d\u6a21\u5f0f\u6570\u636e\u4e0d\u5b58\u5728"
+        "Text": "\u5f53\u524d\u6a21\u5f0f\u6570\u636e\u4e0d\u5b58\u5728"
     },
     {
         "Id": 20423070.0,
         "Key": "Theatre6SkillNotExist",
-        "Text": "20423060\u6280\u80fd\u6570\u636e\u4e0d\u5b58\u5728"
+        "Text": "\u6280\u80fd\u6570\u636e\u4e0d\u5b58\u5728"
     },
     {
         "Id": 20423071.0,
         "Key": "Theatre6MoveSkillError",
-        "Text": "20423061\u6280\u80fd\u79fb\u52a8\u9519\u8bef"
+        "Text": "\u6280\u80fd\u79fb\u52a8\u9519\u8bef"
     },
     {
         "Id": 20423072.0,
         "Key": "Theatre6SwapSkillError",
-        "Text": "20423062\u6280\u80fd\u4ea4\u6362\u9519\u8bef"
+        "Text": "\u6280\u80fd\u4ea4\u6362\u9519\u8bef"
     },
     {
         "Id": 20423073.0,
         "Key": "Theatre6NoinShopRoomError",
-        "Text": "20423063\u4e0d\u5728\u5546\u5e97\u623f\u95f4"
+        "Text": "\u4e0d\u5728\u60c5\u62a5\u4e4b\u95f4"
     },
     {
         "Id": 20423074.0,
         "Key": "Theatre6ShopFreshCountError",
-        "Text": "20423064\u5546\u5e97\u623f\u95f4\u5237\u65b0\u6b21\u6570\u9519\u8bef"
+        "Text": "\u60c5\u62a5\u4e4b\u95f4\u5237\u65b0\u6b21\u6570\u9519\u8bef"
     },
     {
         "Id": 20423075.0,
         "Key": "Theatre6GoldLimit",
-        "Text": "20423065\u91d1\u5e01\u9650\u5236"
+        "Text": "\u53e4\u65e7\u91d1\u5e01\u9650\u5236"
     },
     {
         "Id": 20423076.0,
         "Key": "Theatre6ShopGoodNoFund",
-        "Text": "20423066\u5546\u5e97\u4e0d\u5b58\u5728"
+        "Text": "\u60c5\u62a5\u4e4b\u95f4\u4e0d\u5b58\u5728"
     },
     {
         "Id": 20423077.0,
         "Key": "Theatre6ShopGoodLockError",
-        "Text": "20423067\u5546\u5e97\u5df2\u88ab\u9501\u5b9a"
+        "Text": "\u60c5\u62a5\u4e4b\u95f4\u5df2\u88ab\u9501\u5b9a"
     },
     {
         "Id": 20423078.0,
         "Key": "Theatre6ShopGoodTypeError",
-        "Text": "20423068\u5546\u5e97\u8d27\u7269\u7c7b\u578b\u9519\u8bef"
+        "Text": "\u60c5\u62a5\u4e4b\u95f4\u5546\u54c1\u7c7b\u578b\u9519\u8bef"
     },
     {
         "Id": 20423079.0,
         "Key": "Theatre6ShopGoodHasSell",
-        "Text": "20423069\u5546\u5e97\u8d27\u7269\u5df2\u51fa\u552e"
+        "Text": "\u60c5\u62a5\u4e4b\u95f4\u5546\u54c1\u5df2\u51fa\u552e"
     },
     {
         "Id": 20423080.0,
         "Key": "Theatre6ShopGoodSkillTemplateNotFound",
-        "Text": "20423070\u6280\u80fd\u914d\u7f6e\u4e0d\u5b58\u5728"
+        "Text": "\u6280\u80fd\u914d\u7f6e\u4e0d\u5b58\u5728"
     },
     {
         "Id": 20423081.0,
         "Key": "Theatre6NoSkillEmptyPos",
-        "Text": "20423071\u6ca1\u6709\u6280\u80fd\u7a7a\u4f4d\u7f6e"
+        "Text": "\u6ca1\u6709\u6280\u80fd\u7a7a\u4f4d\u7f6e"
     },
     {
         "Id": 20423082.0,
         "Key": "Theatre6ShopGoodAttrPackTemplateNotFound",
-        "Text": "20423072\u9057\u7269\u914d\u7f6e\u4e0d\u5b58\u5728"
+        "Text": "\u65e7\u7269\u914d\u7f6e\u4e0d\u5b58\u5728"
     },
     {
         "Id": 20423083.0,
         "Key": "Theatre6SkillSlotFull",
-        "Text": "20423073\u6280\u80fd\u69fd\u4f4d\u5df2\u6ee1"
+        "Text": "\u6280\u80fd\u69fd\u4f4d\u5df2\u6ee1"
     },
     {
         "Id": 20423084.0,
         "Key": "Theatre6SkillOverQueueEmpty",
-        "Text": "20423074\u6280\u80fd\u6ea2\u51fa\u961f\u5217\u4e3a\u7a7a"
+        "Text": "\u6280\u80fd\u6ea2\u51fa\u961f\u5217\u4e3a\u7a7a"
     },
     {
         "Id": 20423085.0,
         "Key": "Theatre6SkillOverQueueError",
-        "Text": "20423075\u6280\u80fd\u6ea2\u51fa\u53d6\u51fa\u6b21\u6570\u9519\u8bef"
+        "Text": "\u6280\u80fd\u6ea2\u51fa\u53d6\u51fa\u6b21\u6570\u9519\u8bef"
     },
     {
         "Id": 20423086.0,
         "Key": "Theatre6StoryLineNotUnlockError",
-        "Text": "20423076\u5f53\u524d\u6545\u4e8b\u7ebf\u672a\u89e3\u9501"
+        "Text": "\u5f53\u524d\u6545\u4e8b\u672a\u89e3\u9501"
     },
     {
         "Id": 20423087.0,
         "Key": "Theatre6StoryLineIdError",
-        "Text": "20423077\u6545\u4e8b\u7ebfID\u9519\u8bef"
+        "Text": "\u6545\u4e8b\u9519\u8bef"
     },
     {
         "Id": 20423088.0,
         "Key": "Theatre6StoryLineNotCompletedError",
-        "Text": "20423078\u5f53\u524d\u6545\u4e8b\u7ebf\u672a\u5b8c\u6210"
+        "Text": "\u5f53\u524d\u6545\u4e8b\u672a\u5b8c\u6210"
     },
     {
         "Id": 20423089.0,
         "Key": "Theatre6SkillMaxLevel",
-        "Text": "20423079\u6280\u80fd\u5df2\u8fbe\u5230\u6700\u5927\u7b49\u7ea7"
+        "Text": "\u6280\u80fd\u5df2\u8fbe\u5230\u6700\u5927\u7b49\u7ea7"
     },
     {
         "Id": 20423090.0,
         "Key": "Theatre6BuffLvUpLimit",
-        "Text": "20423080buff\u5347\u7ea7\u9650\u5236"
+        "Text": "\u56de\u58f0\u6b8b\u54cd\u5347\u7ea7\u9650\u5236"
     },
     {
         "Id": 20423091.0,
         "Key": "Theatre6SkillLvUpFailed",
-        "Text": "20423081\u6307\u5b9a\u6280\u80fd\u5347\u7ea7\u5931\u8d25"
+        "Text": "\u6307\u5b9a\u6280\u80fd\u5347\u7ea7\u5931\u8d25"
+    },
+    {
+        "Id": 20423092.0,
+        "Key": "Theatre6CharacterUnlockError",
+        "Text": "20423092\u89d2\u8272\u672a\u89e3\u9501"
+    },
+    {
+        "Id": 20423093.0,
+        "Key": "Theatre6StoryLineCompletedError",
+        "Text": "20423093\u5f53\u524d\u6545\u4e8b\u7ebf\u5df2\u7ecf\u5b8c\u6210"
+    },
+    {
+        "Id": 20423094.0,
+        "Key": "TableTypeInvalid",
+        "Text": "20423094\u5f53\u524d\u7c7b\u578b\u5df2\u5f03\u7528"
+    },
+    {
+        "Id": 20423095.0,
+        "Key": "TableTypeParamLenError",
+        "Text": "20423095\u5f53\u524d\u53c2\u6570\u4e2a\u6570\u9519\u8bef"
+    },
+    {
+        "Id": 20423096.0,
+        "Key": "TableTypeParamLenMultipleError",
+        "Text": "20423096\u5f53\u524d\u53c2\u6570\u4e2a\u6570\u500d\u6570\u9519\u8bef"
+    },
+    {
+        "Id": 20423097.0,
+        "Key": "TableTypeParamMinLenError",
+        "Text": "20423097\u5f53\u524d\u53c2\u6570\u6700\u5c11\u4e2a\u6570\u9519\u8bef"
+    },
+    {
+        "Id": 20423098.0,
+        "Key": "Theatre6AlreadySettleError",
+        "Text": "20423098\u5f53\u524d\u6a21\u5f0f\u5df2\u7ed3\u7b97"
+    },
+    {
+        "Id": 20424001.0,
+        "Key": "GameCollectionFunctionNotOpen",
+        "Text": "20424001\u6e38\u620f\u5408\u96c6\u6d3b\u52a8\u672a\u5f00\u542f"
+    },
+    {
+        "Id": 20424002.0,
+        "Key": "GameCollectionHasOtherGameInSuspend",
+        "Text": "20424002\u5b58\u5728\u5176\u4ed6\u6e38\u620f\u5728\u6682\u5b58\u72b6\u6001"
+    },
+    {
+        "Id": 20424003.0,
+        "Key": "GameCollectionNoSuchGameType",
+        "Text": "20424003\u6ca1\u6709\u8fd9\u4e2a\u6e38\u620f\u7c7b\u578b"
+    },
+    {
+        "Id": 20424004.0,
+        "Key": "GameCollectionEnterGameStageIdNotMatchConfig",
+        "Text": "20424004\u8fdb\u5165\u6e38\u620f\u7684\u5173\u5361Id\u4e0d\u5339\u914d\u914d\u7f6e\u8868"
     },
     {
         "Id": 25000001.0,
@@ -29598,6 +29718,11 @@
         "Id": 25100046.0,
         "Key": "DlcEnvironmentQuestConfigNotExist",
         "Text": "25100046\u627e\u4e0d\u5230\u5bf9\u5e94\u7684\u73af\u5883\u4efb\u52a1\u914d\u7f6e"
+    },
+    {
+        "Id": 25100047.0,
+        "Key": "DlcQuestStateIsNotReady",
+        "Text": "25100047\u4efb\u52a1\u72b6\u6001\u4e0d\u662fReady"
     },
     {
         "Id": 25200001.0,
@@ -30683,6 +30808,16 @@
         "Id": 25300092.0,
         "Key": "RelinkPlayerIsMatching",
         "Text": "\u5339\u914d\u4e2d\u65e0\u6cd5\u64cd\u4f5c"
+    },
+    {
+        "Id": 25300093.0,
+        "Key": "RelinkCharacterNpcAttribDataNotFound",
+        "Text": "25300093\u627e\u4e0d\u5230\u89d2\u8272\u8be5\u98ce\u683c\u5bf9\u5e94\u7684\u5c5e\u6027\u6570\u636e"
+    },
+    {
+        "Id": 25300094.0,
+        "Key": "RelinkFactorDescNotFound",
+        "Text": "25300094\u627e\u4e0d\u5230\u8be5\u8bcd\u6761\u7684\u8be6\u7ec6\u4fe1\u606f"
     },
     {
         "Id": 30002001.0,

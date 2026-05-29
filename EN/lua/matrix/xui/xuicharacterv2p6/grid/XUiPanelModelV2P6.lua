@@ -595,6 +595,14 @@ function XUiPanelModelV2P6:LoadQualityEffectIcon(transform, quality)
     end
 end
 
+-- 生命树特效互斥控制
+-- showIndex: 1=Tx1(主界面), 2=Tx2(其他子界面), 3=Tx3(大球)
+function XUiPanelModelV2P6:SetLifeTreeEffectIndex(showIndex)
+    self.FxUiShengmingshuTx1.gameObject:SetActiveEx(showIndex == 1)
+    self.FxUiShengmingshuTx2.gameObject:SetActiveEx(showIndex == 2)
+    self.FxUiShengmingshuTx3.gameObject:SetActiveEx(showIndex == 3)
+end
+
 function XUiPanelModelV2P6:OnDestroy()
     self:ResetBtnNodeData()
 end

@@ -387,6 +387,14 @@ function XBigWorldCourseControl:RequestBigWorldCourseExploreCntGetReward(version
 end
 
 function XBigWorldCourseControl:RequestBigWorldCourseCoreSet(versionId, elementIds)
+    if XTool.IsTableEmpty(elementIds) then
+        return
+    end
+
+    for _, elementId in pairs(elementIds) do
+        self._Model:AddElementBrowse(versionId, elementId)
+    end
+
     XNetwork.Call("BigWorldCourseCoreSetReadRequest", {
         VersionId = versionId,
         ElementIds = elementIds,
@@ -397,8 +405,21 @@ function XBigWorldCourseControl:RequestBigWorldCourseCoreSet(versionId, elementI
         end
 
         if not XTool.IsTableEmpty(res.SuccessIds) then
-            for _, elementId in pairs(res.SuccessIds) do
-                self._Model:AddElementBrowse(versionId, elementId)
+            if #res.SuccessIds ~= #elementIds then
+                local successMap = {}
+
+                for _, elementId in pairs(res.SuccessIds) do
+                    successMap[elementId] = true
+                end
+                for _, elementId in pairs(elementIds) do
+                    if not successMap[elementId] then
+                        self._Model:RemoveBrowseElement(versionId, elementId)
+                    end
+                end
+            end
+        else
+            for _, elementId in pairs(elementIds) do
+                self._Model:RemoveBrowseElement(versionId, elementId)
             end
         end
         XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_COURSE_RED_POINT_REFRESH)

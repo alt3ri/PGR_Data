@@ -1,30 +1,36 @@
 --- 肉鸽6单次战斗结算伤害数据格子
 ---@class XUiGridTheatre6RoundData : XUiNode
 ---@field _Control XTheatre6Control
+---@field Parent XUiPanelTheatre6RoundLeft
 local XUiGridTheatre6RoundData = XClass(XUiNode, "XUiGridTheatre6RoundData")
 local XUiGridTheatre6Skill = require("XUi/XUiTheatre6/Character/Grid/XUiGridTheatre6Skill")
-local XUiGridTheatre6Buff = require("XUi/XUiTheatre6/Character/Grid/XUiGridTheatre6Buff")
 
 function XUiGridTheatre6RoundData:OnStart()
     ---@type XUiGridTheatre6Skill
     self._GridSkill = XUiGridTheatre6Skill.New(self.UiTheatre6GridSkill, self)
-    ---@type XUiGridTheatre6Buff
-    self._GridBuff = XUiGridTheatre6Buff.New(self.UiTheatre6GridBuff, self)
     self._GridSkill:SetClickCb(handler(self, self.OpenSkillDetail))
-    self._GridBuff:SetCustomClickCb(handler(self, self.OpenBuffDetail))
+
+    self._GridFightBuff = {} --这里的buff是局内的buff，和局外的buff（运营效果）不一样
+    XUiHelper.InitUiClass(self._GridFightBuff, self.UiTheatre6GridBuff)
+    self._GridFightBuff.GridBuff:AddEventListener(handler(self, self.OnClickFightBuff))
 end
 
 function XUiGridTheatre6RoundData:Update(data)
     self._Data = data
     if data.IsBuff then
-        local buffId = self._Control:GetBuffIdByTag(data.SkillId)
+        local buildTagId = self._Control:GetTagToBuffConfig(data.SkillId).BuildTagId --虽然字段名是SkillId，但其实是Theatre6TagToBuff的Tag
+        if not buildTagId then
+            XLog.Error(string.format("肉鸽6战斗结算显示buff信息失败 BuildTagId为空：%s", data.SkillId))
+            return
+        end
+        local buildTagCfg = self._Control:GetBuildTagConfig(buildTagId)
         self._GridSkill:Close()
-        self._GridBuff:Open()
-        self._GridBuff:Update(buffId)
+        self._GridFightBuff.GameObject:SetActiveEx(true)
+        self._GridFightBuff.UiRImgIcon:SetRawImage(buildTagCfg.Icon)
     else
         self._GridSkill:Open()
         self._GridSkill:Update(data.SkillId)
-        self._GridBuff:Close()
+        self._GridFightBuff.GameObject:SetActiveEx(false)
     end
 
     if data.Times == 0 then
@@ -38,7 +44,7 @@ function XUiGridTheatre6RoundData:Update(data)
 end
 
 function XUiGridTheatre6RoundData:RefreshHpHurt(damage, times)
-    if times == 0 then
+    if times == 0 and not self._Data.IsBuff then
         self.TxtHpHurtNum.text = "---"
         self.ImgHpHurtBar.fillAmount = 0
     else
@@ -83,6 +89,11 @@ function XUiGridTheatre6RoundData:GetParentUi()
         parent = parent.Parent
     end
     return nil
+end
+
+function XUiGridTheatre6RoundData:OnClickFightBuff()
+    local buildTagId = self._Control:GetTagToBuffConfig(self._Data.SkillId).BuildTagId
+    self._Control:OpenTagTip({ buildTagId }, self.Parent.ListData)
 end
 
 return XUiGridTheatre6RoundData

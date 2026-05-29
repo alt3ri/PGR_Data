@@ -4,40 +4,40 @@
         "Name": "Bianca: Veritas",
         "SpinePath": "Assets/Product/Ui/Spine/UiSpine/UiMovieSpine/UiMovieLuxiya2S/UiMovieBiankaSkin/Bianka01/Bianka01.prefab",
         "RoleAnims": "['idle', 'lengxiao']",
-        "RoleAnims2": "['idle2zhayan', 'lengxiao2zhayan']",
+        "RoleAnims2": "{1: 'idle2zhayan', 2: 'lengxiao2zhayan'}",
         "KouIdleAnims": "['idle', 'lengxiao']",
         "KouTalkAnims": "['idlekou', 'lengxiaokou']",
-        "TransitionAnims": "['lengxiao-idle', 'idle-lengxiao']"
+        "TransitionAnims": "{1: 'lengxiao-idle', 2: 'idle-lengxiao'}"
     },
     {
         "RoleId": 1021002,
         "Name": "Lucia: Plume",
         "SpinePath": "Assets/Product/Ui/Spine/UiSpine/UiMovieSpine/UiMovieLuxiya2S/UiMovieBiankaSkin/Luxiya01/Luxiya01.prefab",
         "RoleAnims": "['idle', 'shengqi']",
-        "RoleAnims2": "['idle2zhayan', 'shengqi2zhayan']",
+        "RoleAnims2": "{1: 'idle2zhayan', 2: 'shengqi2zhayan'}",
         "KouIdleAnims": "['idle', 'shengqi']",
         "KouTalkAnims": "['idlekou', 'shengqikou']",
-        "TransitionAnims": "['idle-shengqi', 'shengqi-idle']"
+        "TransitionAnims": "{1: 'idle-shengqi', 2: 'shengqi-idle'}"
     },
     {
         "RoleId": 1021003,
         "Name": "Sister Bianca",
         "SpinePath": "Assets/Product/Ui/Spine/UiSpine/UiMovieSpine/UiMovieLuxiya2S/UiMovieBiankaSkin/Bianka02/Bianka02.prefab",
         "RoleAnims": "['idle', 'tongku']",
-        "RoleAnims2": "['idle2zhayan', 'tongku2zhayan']",
+        "RoleAnims2": "{1: 'idle2zhayan', 2: 'tongku2zhayan'}",
         "KouIdleAnims": "['idle', 'tongku']",
         "KouTalkAnims": "['idlekou', 'tongkukou']",
-        "TransitionAnims": "['idle-tongku', 'tongku-idle']"
+        "TransitionAnims": "{1: 'idle-tongku', 2: 'tongku-idle'}"
     },
     {
         "RoleId": 1021004,
         "Name": "Vesalius",
         "SpinePath": "Assets/Product/Ui/Spine/UiSpine/UiMovieSpine/UiMovieLuxiya2S/UiMovieBiankaSkin/Weisali01/Weisali01.prefab",
         "RoleAnims": "['idle', 'lengxiao']",
-        "RoleAnims2": "['idle2zhayan', 'lengxiao2zhayan']",
+        "RoleAnims2": "{1: 'idle2zhayan', 2: 'lengxiao2zhayan'}",
         "KouIdleAnims": "['idle', 'lengxiao']",
         "KouTalkAnims": "['idlekou', 'lengxiaokou']",
-        "TransitionAnims": "['idle-lengxiao', 'lengxiao-idle']"
+        "TransitionAnims": "{1: 'idle-lengxiao', 2: 'lengxiao-idle'}"
     },
     {
         "RoleId": 1021005,
@@ -114,27 +114,27 @@
         "Name": "Bianca: Stigmata Coating",
         "SpinePath": "Assets/Product/Ui/Spine/UiSpine/UiMovieSpine/UiMovieLuxiya2S/UiMovieBiankaSkin/Bianka03/Bianka03.prefab",
         "RoleAnims": "['idle', 'weixiao', 'sikao', 'renzhen', 'idlehua', 'zhandou', 'renzhenZD']",
-        "RoleAnims2": "['idle2zhayan', 'weixiao2zhayan', 'sikao2zhayan', 'renzhen2zhayan', 'idlehua2zhayan', 'zhandou2zhayan', 'renzhenZD2zhayan']",
+        "RoleAnims2": "{1: 'idle2zhayan', 2: 'weixiao2zhayan', 3: 'sikao2zhayan', 4: 'renzhen2zhayan', 5: 'idlehua2zhayan', 6: 'zhandou2zhayan', 7: 'renzhenZD2zhayan'}",
         "KouIdleAnims": "['idle', 'weixiao', 'sikao', 'renzhen', 'idlehua', 'zhandou', 'renzhenZD']",
         "KouTalkAnims": "['idlekou', 'weixiaokou', 'sikaokou', 'renzhenkou', 'idlehuakou', 'zhandoukou', 'renzhenZDkou']",
-        "TransitionAnims": "['idle_zhandou', 'zhandou_idle']"
+        "TransitionAnims": "{1: 'idle_zhandou', 2: 'zhandou_idle'}"
     },
     {
         "RoleId": 1021013,
         "Name": "Bianca: Stigmata Coating Damage",
         "SpinePath": "Assets/Product/Ui/Spine/UiSpine/UiMovieSpine/UiMovieLuxiya2S/UiMovieBiankaSkin/Bianka03/Bianka03ZS.prefab",
         "RoleAnims": "['idle', 'weixiao', 'sikao', 'renzhen', 'idlehua', 'zhandou', 'renzhenZD']",
-        "RoleAnims2": "['idle2zhayan', 'weixiao2zhayan', 'sikao2zhayan', 'renzhen2zhayan', 'idlehua2zhayan', 'zhandou2zhayan', 'renzhenZD2zhayan']",
+        "RoleAnims2": "{1: 'idle2zhayan', 2: 'weixiao2zhayan', 3: 'sikao2zhayan', 4: 'renzhen2zhayan', 5: 'idlehua2zhayan', 6: 'zhandou2zhayan', 7: 'renzhenZD2zhayan'}",
         "KouIdleAnims": "['idle', 'weixiao', 'sikao', 'renzhen', 'idlehua', 'zhandou', 'renzhenZD']",
         "KouTalkAnims": "['idlekou', 'weixiaokou', 'sikaokou', 'renzhenkou', 'idlehuakou', 'zhandoukou', 'renzhenZDkou']",
-        "TransitionAnims": "['idle_zhandou', 'zhandou_idle']"
+        "TransitionAnims": "{1: 'idle_zhandou', 2: 'zhandou_idle'}"
     },
     {
         "RoleId": 1021014,
         "Name": "Priestess",
         "SpinePath": "Assets/Product/Ui/Spine/2-11Spine/UimovieSpine/UimovieJisi/UimovieJisi.prefab",
         "RoleAnims": "['idle', 'chounan', 'jinge']",
-        "RoleAnims2": "['idlezhayan', 'chounanzhayan', 'jingezhayan']",
+        "RoleAnims2": "{1: 'idlezhayan', 2: 'chounanzhayan', 3: 'jingezhayan'}",
         "KouIdleAnims": "['idle', 'chounan', 'jinge']",
         "KouTalkAnims": "['idle', 'chounan', 'jinge']",
         "TransitionAnims": null
@@ -144,7 +144,7 @@
         "Name": "Lamia: Lost Lullaby Frame",
         "SpinePath": "Assets/Product/Ui/Spine/2-11Spine/UimovieSpine/Uimovielamiya/Uimovielamiya.prefab",
         "RoleAnims": "['idle', 'beishang', 'biyan']",
-        "RoleAnims2": "['idlezhayan', 'beishangzhayan', 'biyan']",
+        "RoleAnims2": "{1: 'idlezhayan', 2: 'beishangzhayan', 3: 'biyan'}",
         "KouIdleAnims": "['idle', 'beishang', 'biyan']",
         "KouTalkAnims": "['idle', 'beishang', 'biyan']",
         "TransitionAnims": null
@@ -154,7 +154,7 @@
         "Name": "Soldier",
         "SpinePath": "Assets/Product/Ui/Spine/2-11Spine/UimovieSpine/UimovieShibing/UimovieShibing.prefab",
         "RoleAnims": "['idle']",
-        "RoleAnims2": "['idlezhayan']",
+        "RoleAnims2": "{1: 'idlezhayan'}",
         "KouIdleAnims": "['idle']",
         "KouTalkAnims": "['idle']",
         "TransitionAnims": null
@@ -184,7 +184,7 @@
         "Name": "Young Lamia",
         "SpinePath": "Assets/Product/Ui/Spine/2-11Spine/UimovieSpine/UimovieLamiyahaiti/UimovieLamiyahaiti.prefab",
         "RoleAnims": "['idle', 'kongdong', 'haipa']",
-        "RoleAnims2": "['idlezhayan', 'kongdongzhayan', 'haipazhayan']",
+        "RoleAnims2": "{1: 'idlezhayan', 2: 'kongdongzhayan', 3: 'haipazhayan'}",
         "KouIdleAnims": "['idle', 'kongdong', 'haipa']",
         "KouTalkAnims": "['idle', 'kongdongzhayan', 'haipazhayan']",
         "TransitionAnims": null
@@ -194,7 +194,7 @@
         "Name": "Lamia Coating",
         "SpinePath": "Assets/Product/Ui/Spine/2-11Spine/UimovieSpine/UimovieLamiyaSkin/Putong/LamiyaSkinPutong.prefab",
         "RoleAnims": "['idle', 'gaoxing', 'renzhen', 'sikao', 'weixiao']",
-        "RoleAnims2": "['idlezhayan', 'gaoxingzhayan', 'renzhenzhayan', 'sikaozhayan', 'weixiaozhayan']",
+        "RoleAnims2": "{1: 'idlezhayan', 2: 'gaoxingzhayan', 3: 'renzhenzhayan', 4: 'sikaozhayan', 5: 'weixiaozhayan'}",
         "KouIdleAnims": "['idle', 'gaoxing', 'renzhen', 'sikao', 'weixiao']",
         "KouTalkAnims": "['idle', 'gaoxing', 'renzhen', 'sikao', 'weixiao']",
         "TransitionAnims": null
@@ -204,7 +204,7 @@
         "Name": "Lamia Coating Armed",
         "SpinePath": "Assets/Product/Ui/Spine/2-11Spine/UimovieSpine/UimovieLamiyaSkin/Wuqi/LamiyaSkinWuqi.prefab",
         "RoleAnims": "['idle', 'gaoxing', 'renzhen', 'sikao', 'weixiao']",
-        "RoleAnims2": "['idlezhayan', 'gaoxingzhayan', 'renzhenzhayan', 'sikaozhayan', 'weixiaozhayan']",
+        "RoleAnims2": "{1: 'idlezhayan', 2: 'gaoxingzhayan', 3: 'renzhenzhayan', 4: 'sikaozhayan', 5: 'weixiaozhayan'}",
         "KouIdleAnims": "['idle', 'gaoxing', 'renzhen', 'sikao', 'weixiao']",
         "KouTalkAnims": "['idle', 'gaoxing', 'renzhen', 'sikao', 'weixiao']",
         "TransitionAnims": null
@@ -214,7 +214,7 @@
         "Name": "Lamia Coating Battle-Damaged Weapon",
         "SpinePath": "Assets/Product/Ui/Spine/2-11Spine/UimovieSpine/UimovieLamiyaSkin/WuqiZhanSun/LamiyaSkinWuqiZhansun.prefab",
         "RoleAnims": "['idle', 'gaoxing', 'renzhen', 'sikao', 'weixiao']",
-        "RoleAnims2": "['idlezhayan', 'gaoxingzhayan', 'renzhenzhayan', 'sikaozhayan', 'weixiaozhayan']",
+        "RoleAnims2": "{1: 'idlezhayan', 2: 'gaoxingzhayan', 3: 'renzhenzhayan', 4: 'sikaozhayan', 5: 'weixiaozhayan'}",
         "KouIdleAnims": "['idle', 'gaoxing', 'renzhen', 'sikao', 'weixiao']",
         "KouTalkAnims": "['idle', 'gaoxing', 'renzhen', 'sikao', 'weixiao']",
         "TransitionAnims": null
@@ -224,7 +224,7 @@
         "Name": "Lamia Coating With Waist Support",
         "SpinePath": "Assets/Product/Ui/Spine/2-11Spine/UimovieSpine/UimovieLamiyaSkin/HuyaoZhanSun/LamiyaSkinHuyaoZhansun.prefab",
         "RoleAnims": "['idle', 'gaoxing', 'renzhen', 'sikao', 'weixiao']",
-        "RoleAnims2": "['idlezhayan', 'gaoxingzhayan', 'renzhenzhayan', 'sikaozhayan', 'weixiaozhayan']",
+        "RoleAnims2": "{1: 'idlezhayan', 2: 'gaoxingzhayan', 3: 'renzhenzhayan', 4: 'sikaozhayan', 5: 'weixiaozhayan'}",
         "KouIdleAnims": "['idle', 'gaoxing', 'renzhen', 'sikao', 'weixiao']",
         "KouTalkAnims": "['idle', 'gaoxing', 'renzhen', 'sikao', 'weixiao']",
         "TransitionAnims": null
@@ -234,7 +234,7 @@
         "Name": "Abbot",
         "SpinePath": "Assets/Product/Ui/Spine/2-15Spine/UiMovieSpine/Uimoviezhuchi/UimovieZhuchi.prefab",
         "RoleAnims": "['idle', 'yuzhongxinchang', 'biyan']",
-        "RoleAnims2": "['idlezhayan', 'yuzhongxinchangzhayan', 'biyan']",
+        "RoleAnims2": "{1: 'idlezhayan', 2: 'yuzhongxinchangzhayan', 3: 'biyan'}",
         "KouIdleAnims": "['idle', 'yuzhongxinchang', 'biyan']",
         "KouTalkAnims": "['idle', 'yuzhongxinchang', 'biyan']",
         "TransitionAnims": null
@@ -244,7 +244,7 @@
         "Name": "Gung-hoer",
         "SpinePath": "Assets/Product/Ui/Spine/2-15Spine/UiMovieSpine/UimovieHBxiaodi/UiMovieHBxiaodi.prefab",
         "RoleAnims": "['idle', 'tiaoxing', 'jinge']",
-        "RoleAnims2": "['idlezhayan', 'tiaoxingzhayan', 'jingezhayan']",
+        "RoleAnims2": "{1: 'idlezhayan', 2: 'tiaoxingzhayan', 3: 'jingezhayan'}",
         "KouIdleAnims": "['idle', 'tiaoxing', 'jinge']",
         "KouTalkAnims": "['idle', 'tiaoxing', 'jinge']",
         "TransitionAnims": null
@@ -274,7 +274,7 @@
         "Name": "Alpha Tsubaki",
         "SpinePath": "Assets/Product/Ui/Spine/2-15Spine/UiMovieSpine/UiMovieAlphaSkin01/UiMovieAlphaSkin01.prefab",
         "RoleAnims": "['idle', 'sikao', 'weixiao']",
-        "RoleAnims2": "['idlezhayan', 'sikaozhayan', 'weixiaozhayan']",
+        "RoleAnims2": "{1: 'idlezhayan', 2: 'sikaozhayan', 3: 'weixiaozhayan'}",
         "KouIdleAnims": "['idle', 'sikao', 'weixiao']",
         "KouTalkAnims": "['idle', 'sikao', 'weixiao']",
         "TransitionAnims": null
@@ -284,7 +284,7 @@
         "Name": "Alpha Tsubaki (Combat)",
         "SpinePath": "Assets/Product/Ui/Spine/2-15Spine/UiMovieSpine/UiMovieAlphaSkin02/UiMovieAlphaSkin02.prefab",
         "RoleAnims": "['idle', 'sikao', 'jingti']",
-        "RoleAnims2": "['idlezhayan', 'sikaozhayan', 'jingtizhayan']",
+        "RoleAnims2": "{1: 'idlezhayan', 2: 'sikaozhayan', 3: 'jingtizhayan'}",
         "KouIdleAnims": "['idle', 'sikao', 'jingti']",
         "KouTalkAnims": "['idle', 'sikao', 'jingti']",
         "TransitionAnims": null
@@ -304,7 +304,7 @@
         "Name": "\u03b1",
         "SpinePath": "Assets/Product/Ui/Spine/2-15Spine/UiMovieSpine/UiMovieAlpha01/UiMovieAlpha01.prefab",
         "RoleAnims": "['idle']",
-        "RoleAnims2": "['idlezhayan']",
+        "RoleAnims2": "{1: 'idlezhayan'}",
         "KouIdleAnims": "['idle']",
         "KouTalkAnims": "['idle']",
         "TransitionAnims": null
@@ -314,7 +314,7 @@
         "Name": "\u9732\u897f\u4e9a",
         "SpinePath": "Assets/Product/Ui/Spine/2-15Spine/UiMovieSpine/UiMovieLuxiya01/UiMovieLuxiya01.prefab",
         "RoleAnims": "['idle']",
-        "RoleAnims2": "['idlezhayan']",
+        "RoleAnims2": "{1: 'idlezhayan'}",
         "KouIdleAnims": "['idle']",
         "KouTalkAnims": "['idle']",
         "TransitionAnims": null
@@ -324,7 +324,7 @@
         "Name": "Lucia Losses",
         "SpinePath": "Assets/Product/Ui/Spine/2-15Spine/UiMovieSpine/UiMovieLuxiya01Zs/UiMovieLuxiya01Zs.prefab",
         "RoleAnims": "['idle']",
-        "RoleAnims2": "['idlezhayan']",
+        "RoleAnims2": "{1: 'idlezhayan'}",
         "KouIdleAnims": "['idle']",
         "KouTalkAnims": "['idle']",
         "TransitionAnims": null
@@ -334,7 +334,7 @@
         "Name": "Gangster Boss",
         "SpinePath": "Assets/Product/Ui/Spine/2-15Spine/UiMovieSpine/UiMovieHbBoss/UiMovieHbBoss.prefab",
         "RoleAnims": "['idle', 'xiao']",
-        "RoleAnims2": "['idlezhayan', 'xiaozhayan']",
+        "RoleAnims2": "{1: 'idlezhayan', 2: 'xiaozhayan'}",
         "KouIdleAnims": "['idle', 'xiao']",
         "KouTalkAnims": "['idle', 'xiao']",
         "TransitionAnims": null
@@ -344,7 +344,7 @@
         "Name": "Lucia Prestigious Accolade (Without Medal)",
         "SpinePath": "Assets/Product/Ui/Spine/2-15Spine/UiMovieSpine/UiMovieLuxiya02idle/UiMovieLuxiya02Idle2.prefab",
         "RoleAnims": "['idle', 'biyan', 'rhwx', 'kuxiao', 'chensi', 'chensiweixiao', 'weixiao', 'jingya', 'biyanweixiao']",
-        "RoleAnims2": "['idlezhayan', 'biyan', 'rhwxzhayan', 'kuxiaozhayan', 'chensizhayan', 'chensiweixiaozhayan', 'weixiaozhayan', 'jingyazhayan', 'biyanweixiao']",
+        "RoleAnims2": "{1: 'idlezhayan', 2: 'biyan', 3: 'rhwxzhayan', 4: 'kuxiaozhayan', 5: 'chensizhayan', 6: 'chensiweixiaozhayan', 7: 'weixiaozhayan', 8: 'jingyazhayan', 9: 'biyanweixiao'}",
         "KouIdleAnims": "['idle', 'biyan', 'rhwx', 'kuxiao', 'chensi', 'chensiweixiao', 'weixiao', 'jingya', 'biyanweixiao']",
         "KouTalkAnims": "['idle', 'biyan', 'rhwx', 'kuxiao', 'chensi', 'chensiweixiao', 'weixiao', 'jingya', 'biyanweixiao']",
         "TransitionAnims": null
@@ -354,7 +354,7 @@
         "Name": "Lucia Prestigious Accolade (With Medal)",
         "SpinePath": "Assets/Product/Ui/Spine/2-15Spine/UiMovieSpine/UiMovieLuxiya02idle/UiMovieLuxiya02Idle1.prefab",
         "RoleAnims": "['idle', 'biyan', 'rhwx', 'kuxiao', 'chensi', 'chensiweixiao', 'weixiao', 'jingya', 'biyanweixiao']",
-        "RoleAnims2": "['idlezhayan', 'biyan', 'rhwxzhayan', 'kuxiaozhayan', 'chensizhayan', 'chensiweixiaozhayan', 'weixiaozhayan', 'jingyazhayan', 'biyanweixiao']",
+        "RoleAnims2": "{1: 'idlezhayan', 2: 'biyan', 3: 'rhwxzhayan', 4: 'kuxiaozhayan', 5: 'chensizhayan', 6: 'chensiweixiaozhayan', 7: 'weixiaozhayan', 8: 'jingyazhayan', 9: 'biyanweixiao'}",
         "KouIdleAnims": "['idle', 'biyan', 'rhwx', 'kuxiao', 'chensi', 'chensiweixiao', 'weixiao', 'jingya', 'biyanweixiao']",
         "KouTalkAnims": "['idle', 'biyan', 'rhwx', 'kuxiao', 'chensi', 'chensiweixiao', 'weixiao', 'jingya', 'biyanweixiao']",
         "TransitionAnims": null
@@ -364,7 +364,7 @@
         "Name": "Olivia",
         "SpinePath": "Assets/Product/Ui/Spine/3-2Spine/UiMoveSpine/UiMoiveAoliweiyaV32/UiMoiveAoliweiyaV32.prefab",
         "RoleAnims": "['idle', 'shengqi', 'weixiao']",
-        "RoleAnims2": "['idlezhayan', 'shengqizhayan', 'weixiaozhayan']",
+        "RoleAnims2": "{1: 'idlezhayan', 2: 'shengqizhayan', 3: 'weixiaozhayan'}",
         "KouIdleAnims": "['idle', 'shengqi', 'weixiao']",
         "KouTalkAnims": "['idle', 'shengqizhayan', 'weixiaozhayan']",
         "TransitionAnims": null
@@ -374,7 +374,7 @@
         "Name": "Noble Woman",
         "SpinePath": "Assets/Product/Ui/Spine/3-2Spine/UiMoveSpine/UiMovieGuifurenV32/UiMovieGuifurenV32.prefab",
         "RoleAnims": "['idle']",
-        "RoleAnims2": "['idlezhayan']",
+        "RoleAnims2": "{1: 'idlezhayan'}",
         "KouIdleAnims": "['idle']",
         "KouTalkAnims": "['idle']",
         "TransitionAnims": null
@@ -384,7 +384,7 @@
         "Name": "Lucia Bride",
         "SpinePath": "Assets/Product/Ui/Spine/3-2Spine/UiMoveSpine/UiMoiveLuxiyaHJV32/UiMoiveLuxiyaHJV32.prefab",
         "RoleAnims": "['idle', 'biyanxiao', 'weixiao', 'chensi', 'zhoumei', 'jingya', 'fennu', 'biyan2']",
-        "RoleAnims2": "['idlezhayan', 'biyan', 'weixiaozhayan', 'chensizhayan', 'zhoumeizhayan', 'jingyazhanyan', 'fennuzhanyan', 'biyan2']",
+        "RoleAnims2": "{1: 'idlezhayan', 2: 'biyan', 3: 'weixiaozhayan', 4: 'chensizhayan', 5: 'zhoumeizhayan', 6: 'jingyazhanyan', 7: 'fennuzhanyan', 8: 'biyan2'}",
         "KouIdleAnims": "['idle', 'biyanxiao', 'weixiao', 'chensi', 'zhoumei', 'jingya', 'fennu', 'biyan2']",
         "KouTalkAnims": "['idle', 'biyan', 'weixiaozhayan', 'chensizhayan', 'zhoumeizhayan', 'jingyazhanyan', 'fennuzhanyan', 'biyan2']",
         "TransitionAnims": null
@@ -394,7 +394,7 @@
         "Name": "Little Luna",
         "SpinePath": "Assets/Product/Ui/Spine/3-2Spine/UiMoveSpine/UiMovieXiaolunaV32/UiMovieXiaolunaV32.prefab",
         "RoleAnims": "['idle']",
-        "RoleAnims2": "['idlezhayan']",
+        "RoleAnims2": "{1: 'idlezhayan'}",
         "KouIdleAnims": "['idle']",
         "KouTalkAnims": "['idle']",
         "TransitionAnims": null
@@ -404,7 +404,7 @@
         "Name": "Lil' Lucia",
         "SpinePath": "Assets/Product/Ui/Spine/3-2Spine/UiMoveSpine/UiMovieXiaoluxiyaV32/UiMovieXiaoluxiyaV32.prefab",
         "RoleAnims": "['idle']",
-        "RoleAnims2": "['idlezhayan']",
+        "RoleAnims2": "{1: 'idlezhayan'}",
         "KouIdleAnims": "['idle']",
         "KouTalkAnims": "['idle']",
         "TransitionAnims": null
@@ -434,7 +434,7 @@
         "Name": "Lucia: Pyroath",
         "SpinePath": "Assets/Product/Ui/Spine/3-2Spine/UiMoveSpine/UiMovieLuxiyaV32/UiMovieLuxiyaV32.prefab",
         "RoleAnims": "['idle']",
-        "RoleAnims2": "['idlezhayan']",
+        "RoleAnims2": "{1: 'idlezhayan'}",
         "KouIdleAnims": "['idle']",
         "KouTalkAnims": "['idle']",
         "TransitionAnims": null
@@ -454,7 +454,7 @@
         "Name": "Family Member",
         "SpinePath": "Assets/Product/Ui/Spine/3-2Spine/UiMoveSpine/UiMoiveHeibangXDV32/UiMoiveHeibangXDV32.prefab",
         "RoleAnims": "['idle']",
-        "RoleAnims2": "['idlezhayan']",
+        "RoleAnims2": "{1: 'idlezhayan'}",
         "KouIdleAnims": "['idle']",
         "KouTalkAnims": "['idle']",
         "TransitionAnims": null
@@ -464,7 +464,7 @@
         "Name": "Family Member (Facing Right)",
         "SpinePath": "Assets/Product/Ui/Spine/3-2Spine/UiMoveSpine/UiMoiveHeibangXDV32/UiMoiveHeibangXDV32B.prefab",
         "RoleAnims": "['idle']",
-        "RoleAnims2": "['idlezhayan']",
+        "RoleAnims2": "{1: 'idlezhayan'}",
         "KouIdleAnims": "['idle']",
         "KouTalkAnims": "['idle']",
         "TransitionAnims": null
@@ -484,7 +484,7 @@
         "Name": "Shrine Chief",
         "SpinePath": "Assets/Product/Ui/Spine/3-6Spine/UiMovie/UiMovieShensheSZV36/UiMovieShensheSZV36B.prefab",
         "RoleAnims": "['idle', 'buyue']",
-        "RoleAnims2": "['idlezhayan', 'buyuezhayan']",
+        "RoleAnims2": "{1: 'idlezhayan', 2: 'buyuezhayan'}",
         "KouIdleAnims": "['idle', 'buyue']",
         "KouTalkAnims": "['idle', 'buyue']",
         "TransitionAnims": null
@@ -494,7 +494,7 @@
         "Name": "Selena Wedding Dress",
         "SpinePath": "Assets/Product/Ui/Spine/3-6Spine/UiMovie/UiMovieSailinnaHSV36/UiMovieSailinnaHSV36.prefab",
         "RoleAnims": "['idle', 'biyan', 'buyue', 'chushen', 'equwei', 'gaoxing', 'haixiuweixiao', 'haixiu', 'hanxukaixin', 'nanguo', 'renzheng', 'weixiao', 'wumian']",
-        "RoleAnims2": "['idlezhayan', 'biyan', 'buyuezhayan', 'chushenzhayan', 'equweizhayan', 'gaoxingzhayan', 'haixiuweixiaozhayan', 'haixiuzhayan', 'hanxukaixin', 'nanguozhayan', 'renzhengzhayan', 'weixiaozhayan', 'wumian']",
+        "RoleAnims2": "{1: 'idlezhayan', 2: 'biyan', 3: 'buyuezhayan', 4: 'chushenzhayan', 5: 'equweizhayan', 6: 'gaoxingzhayan', 7: 'haixiuweixiaozhayan', 8: 'haixiuzhayan', 9: 'hanxukaixin', 10: 'nanguozhayan', 11: 'renzhengzhayan', 12: 'weixiaozhayan', 13: 'wumian'}",
         "KouIdleAnims": "['idle', 'biyan', 'buyue', 'chushen', 'equwei', 'gaoxing', 'haixiuweixiao', 'haixiu', 'hanxukaixin', 'nanguo', 'renzheng', 'weixiao', 'wumian']",
         "KouTalkAnims": "['idle', 'biyan', 'buyue', 'chushen', 'equwei', 'gaoxing', 'haixiuweixiao', 'haixiu', 'hanxukaixin', 'nanguo', 'renzheng', 'weixiao', 'wumian']",
         "TransitionAnims": null
@@ -504,7 +504,7 @@
         "Name": "White Fox",
         "SpinePath": "Assets/Product/Ui/Spine/3-6Spine/UiMovie/UiMovieBaihuV36/UiMovieBaihuV36.prefab",
         "RoleAnims": "['idle']",
-        "RoleAnims2": "['idlezhayan']",
+        "RoleAnims2": "{1: 'idlezhayan'}",
         "KouIdleAnims": "['idle']",
         "KouTalkAnims": "['idle']",
         "TransitionAnims": null
@@ -514,7 +514,7 @@
         "Name": "Black Fox",
         "SpinePath": "Assets/Product/Ui/Spine/3-6Spine/UiMovie/UiMovieHeihuV36/UiMovieHeihuV36.prefab",
         "RoleAnims": "['idle']",
-        "RoleAnims2": "['idlezhayan']",
+        "RoleAnims2": "{1: 'idlezhayan'}",
         "KouIdleAnims": "['idle']",
         "KouTalkAnims": "['idle']",
         "TransitionAnims": null
@@ -524,7 +524,7 @@
         "Name": "Shrine Maiden (Mask)",
         "SpinePath": "Assets/Product/Ui/Spine/3-6Spine/UiMovie/UiMovieWunvFz_V36/UiMovieWunvFz_V36.prefab",
         "RoleAnims": "['idle']",
-        "RoleAnims2": "['idlezhayan']",
+        "RoleAnims2": "{1: 'idlezhayan'}",
         "KouIdleAnims": "['idle']",
         "KouTalkAnims": "['idle']",
         "TransitionAnims": null
@@ -534,7 +534,7 @@
         "Name": "Shrine Maiden",
         "SpinePath": "Assets/Product/Ui/Spine/3-6Spine/UiMovie/UiMovieWunvFz_V36/UiMovieWunvFz2_V36.prefab",
         "RoleAnims": "['idle']",
-        "RoleAnims2": "['idlezhayan']",
+        "RoleAnims2": "{1: 'idlezhayan'}",
         "KouIdleAnims": "['idle']",
         "KouTalkAnims": "['idle']",
         "TransitionAnims": null
@@ -544,7 +544,7 @@
         "Name": "Shrine Maiden (Mask With Bells)",
         "SpinePath": "Assets/Product/Ui/Spine/3-6Spine/UiMovie/UiMovieWunvJd_V36/UiMovieWunvJd_V36.prefab",
         "RoleAnims": "['idle']",
-        "RoleAnims2": "['idlezhayan']",
+        "RoleAnims2": "{1: 'idlezhayan'}",
         "KouIdleAnims": "['idle']",
         "KouTalkAnims": "['idle']",
         "TransitionAnims": null
@@ -554,7 +554,7 @@
         "Name": "Shrine Maiden (Bells)",
         "SpinePath": "Assets/Product/Ui/Spine/3-6Spine/UiMovie/UiMovieWunvJd_V36/UiMovieWunvJd2_V36.prefab",
         "RoleAnims": "['idle']",
-        "RoleAnims2": "['idlezhayan']",
+        "RoleAnims2": "{1: 'idlezhayan'}",
         "KouIdleAnims": "['idle']",
         "KouTalkAnims": "['idle']",
         "TransitionAnims": null
@@ -564,7 +564,7 @@
         "Name": "Selena: Pianissimo",
         "SpinePath": "Assets/Product/Ui/Spine/3-6Spine/UiMovie/UiMovieSailinnaV36/UiMovieSailinnaV36.prefab",
         "RoleAnims": "['idle', 'haixiu', 'buyue', 'hanxukaixin', 'jingya', 'weixiao']",
-        "RoleAnims2": "['idlezhayan', 'haixiuzhayan', 'buyuezhayan', 'hanxukaixin', 'jingyazhayan', 'weixiaozhayan']",
+        "RoleAnims2": "{1: 'idlezhayan', 2: 'haixiuzhayan', 3: 'buyuezhayan', 4: 'hanxukaixin', 5: 'jingyazhayan', 6: 'weixiaozhayan'}",
         "KouIdleAnims": "['idle', 'haixiu', 'buyue', 'hanxukaixin', 'jingya', 'weixiao']",
         "KouTalkAnims": "['idle', 'haixiu', 'buyue', 'hanxukaixin', 'jingya', 'weixiao']",
         "TransitionAnims": null
@@ -574,7 +574,7 @@
         "Name": "Bianca: Crepuscule",
         "SpinePath": "Assets/Product/Ui/Spine/4_2Spine/V42UiMovie/V42UiMovie_C_BiAnKa/V42UiMovie_C_BiAnKa.prefab",
         "RoleAnims": "['idle', 'idle3', 'biyansikao', 'biyanxiao', 'fengnu', 'haixiu', 'jinya', 'nanguo', 'putongweixiao', 'zichao']",
-        "RoleAnims2": "['idlezhayan', 'idle3zhayan', 'biyansikao', 'biyanxiao', 'fengnuzhayan', 'haixiuzhanyan', 'jinyazhanyan', 'nanguozhanyan', 'putongweixiaozhanyan', 'zichaozhanyan']",
+        "RoleAnims2": "{1: 'idlezhayan', 2: 'idle3zhayan', 3: 'biyansikao', 4: 'biyanxiao', 5: 'fengnuzhayan', 6: 'haixiuzhanyan', 7: 'jinyazhanyan', 8: 'nanguozhanyan', 9: 'putongweixiaozhanyan', 10: 'zichaozhanyan'}",
         "KouIdleAnims": "['idle', 'idle3', 'biyansikao', 'biyanxiao', 'fengnu', 'haixiu', 'jinya', 'nanguo', 'putongweixiao', 'zichao']",
         "KouTalkAnims": "['idle', 'idle3', 'biyansikao', 'biyanxiao', 'fengnu', 'haixiu', 'jinya', 'nanguo', 'putongweixiao', 'zichao']",
         "TransitionAnims": null
@@ -584,7 +584,7 @@
         "Name": "Bianca: Opera",
         "SpinePath": "Assets/Product/Ui/Spine/4_2Spine/V42UiMovie/V42UiMovie_BiAnKaMY1/V42UiMovie_BiAnKaMY1.prefab",
         "RoleAnims": "['idle', 'idle3', 'biyansisuo', 'biyanxiao', 'moren', 'dajingya', 'haixiu', 'heihuaweixiao', 'shengqi', 'xiaojingya', 'zichao']",
-        "RoleAnims2": "['idlezhayan', 'idle3zhayan', 'biyansisuo', 'biyanxiao', 'morenzhayan', 'dajingyazhayan', 'haixiuzhayan', 'heihuaweixiaozhayan', 'shengqizhayan', 'xiaojingyazhayan', 'zichaozhayan']",
+        "RoleAnims2": "{1: 'idlezhayan', 2: 'idle3zhayan', 3: 'biyansisuo', 4: 'biyanxiao', 5: 'morenzhayan', 6: 'dajingyazhayan', 7: 'haixiuzhayan', 8: 'heihuaweixiaozhayan', 9: 'shengqizhayan', 10: 'xiaojingyazhayan', 11: 'zichaozhayan'}",
         "KouIdleAnims": "['idle', 'idle3', 'biyansisuo', 'biyanxiao', 'moren', 'dajingya', 'haixiu', 'heihuaweixiao', 'shengqi', 'xiaojingya', 'zichao']",
         "KouTalkAnims": "['idle', 'idle3', 'biyansisuo', 'biyanxiao', 'moren', 'dajingya', 'haixiu', 'heihuaweixiao', 'shengqi', 'xiaojingya', 'zichao']",
         "TransitionAnims": null
@@ -594,7 +594,7 @@
         "Name": "Bianca: Opera (Mask)",
         "SpinePath": "Assets/Product/Ui/Spine/4_2Spine/V42UiMovie/V42UiMovie_BiAnKaMY1/V42UiMovie_BiAnKaMY2.prefab",
         "RoleAnims": "['idle', 'idle3', 'biyansisuo', 'biyanxiao', 'moren', 'dajingya', 'haixiu', 'heihuaweixiao', 'shengqi', 'xiaojingya', 'zichao']",
-        "RoleAnims2": "['idlezhayan', 'idle3zhayan', 'biyansisuo', 'biyanxiao', 'morenzhayan', 'dajingyazhayan', 'haixiuzhayan', 'heihuaweixiaozhayan', 'shengqizhayan', 'xiaojingyazhayan', 'zichaozhayan']",
+        "RoleAnims2": "{1: 'idlezhayan', 2: 'idle3zhayan', 3: 'biyansisuo', 4: 'biyanxiao', 5: 'morenzhayan', 6: 'dajingyazhayan', 7: 'haixiuzhayan', 8: 'heihuaweixiaozhayan', 9: 'shengqizhayan', 10: 'xiaojingyazhayan', 11: 'zichaozhayan'}",
         "KouIdleAnims": "['idle', 'idle3', 'biyansisuo', 'biyanxiao', 'moren', 'dajingya', 'haixiu', 'heihuaweixiao', 'shengqi', 'xiaojingya', 'zichao']",
         "KouTalkAnims": "['idle', 'idle3', 'biyansisuo', 'biyanxiao', 'moren', 'dajingya', 'haixiu', 'heihuaweixiao', 'shengqi', 'xiaojingya', 'zichao']",
         "TransitionAnims": null
@@ -604,7 +604,7 @@
         "Name": "Elliann (Opera Singer)",
         "SpinePath": "Assets/Product/Ui/Spine/4_2Spine/V42UiMovie/V42UiMovie_GeJuYanYuan/V42UiMovie_GeJuYanYuan.prefab",
         "RoleAnims": "['idle', 'weixiao']",
-        "RoleAnims2": "['idlezhayan', 'weixiaozhayan']",
+        "RoleAnims2": "{1: 'idlezhayan', 2: 'weixiaozhayan'}",
         "KouIdleAnims": "['idle', 'weixiao']",
         "KouTalkAnims": "['idle', 'weixiao']",
         "TransitionAnims": null
@@ -614,7 +614,7 @@
         "Name": "Reporter",
         "SpinePath": "Assets/Product/Ui/Spine/4_2Spine/V42UiMovie/V42UiMovie_JiZhe/V42UiMovie_JiZhe.prefab",
         "RoleAnims": "['idle', 'idleyanjing', 'jingya', 'jingyayanjing', 'weixiao', 'weixiaoyanjing']",
-        "RoleAnims2": "['idlezhayan', 'idleyanjingzhayan', 'jingyazhayan', 'jingyayanjingzhayan', 'weixiaozhayan', 'weixiaoyanjingzhayan']",
+        "RoleAnims2": "{1: 'idlezhayan', 2: 'idleyanjingzhayan', 3: 'jingyazhayan', 4: 'jingyayanjingzhayan', 5: 'weixiaozhayan', 6: 'weixiaoyanjingzhayan'}",
         "KouIdleAnims": "['idle', 'idleyanjing', 'jingya', 'jingyayanjing', 'weixiao', 'weixiaoyanjing']",
         "KouTalkAnims": "['idle', 'idleyanjing', 'jingya', 'jingyayanjing', 'weixiao', 'weixiaoyanjing']",
         "TransitionAnims": null
@@ -624,9 +624,139 @@
         "Name": "Wilder (Playwright)",
         "SpinePath": "Assets/Product/Ui/Spine/4_2Spine/V42UiMovie/V42UiMovie_JuZuoJia/V42UiMovie_JuZuoJia.prefab",
         "RoleAnims": "['idle', 'jingya', 'weixiao']",
-        "RoleAnims2": "['idlezhayan', 'jingya', 'weixiao']",
+        "RoleAnims2": "{1: 'idlezhayan', 2: 'jingya', 3: 'weixiao'}",
         "KouIdleAnims": "['idle', 'jingya', 'weixiao']",
         "KouTalkAnims": "['idle', 'jingya', 'weixiao']",
+        "TransitionAnims": null
+    },
+    {
+        "RoleId": 1021064,
+        "Name": "\u4e3d\u8299\u5929\u9e45\u6e56",
+        "SpinePath": "Assets/Product/Ui/Spine/4_5_Spine/V45UiMovie_LifuQMSkin01/V45UiMovie_LifuQMSkin01.prefab",
+        "RoleAnims": "['idle', 'haixiu1', 'haixiu2', 'weixiao', 'nanguo', 'shengqi', 'jingya', 'sikao', 'biyansisuo', 'biyanxiao']",
+        "RoleAnims2": "{1: 'idlezhayan', 2: 'haixiu1zhayan', 3: 'haixiu2zhayan', 4: 'weixiaozhayan', 5: 'nanguozhayan', 6: 'shengqizhayan', 7: 'jingyazhayan', 8: 'sikaozhayan', 9: 'biyansisuo', 10: 'biyanxiao'}",
+        "KouIdleAnims": "['idle', 'haixiu1', 'haixiu2', 'weixiao', 'nanguo', 'shengqi', 'jingya', 'sikao', 'biyansisuo', 'biyanxiao']",
+        "KouTalkAnims": "['idle', 'haixiu1', 'haixiu2', 'weixiao', 'nanguo', 'shengqi', 'jingya', 'sikao', 'biyansisuo', 'biyanxiao']",
+        "TransitionAnims": null
+    },
+    {
+        "RoleId": 1021065,
+        "Name": "\u9ed1\u5929\u9e45",
+        "SpinePath": "Assets/Product/Ui/Spine/4_5_Spine/V45UiMovie_HeiTianE/V45UiMovie_HeiTianE.prefab",
+        "RoleAnims": "['idle']",
+        "RoleAnims2": null,
+        "KouIdleAnims": "['idle']",
+        "KouTalkAnims": "['idle']",
+        "TransitionAnims": null
+    },
+    {
+        "RoleId": 1021066,
+        "Name": "Othilde",
+        "SpinePath": "Assets/Product/Ui/Spine/4_5_Spine/V45UiMovie_AoDaiEr/V45UiMovie_AoDaiEr.prefab",
+        "RoleAnims": "['idle', 'nanguo', 'xiao']",
+        "RoleAnims2": "{1: 'idlezhayan', 2: 'nanguozhayan', 3: 'xiaozhayan'}",
+        "KouIdleAnims": "['idle', 'nanguo', 'xiao']",
+        "KouTalkAnims": "['idle', 'nanguo', 'xiao']",
+        "TransitionAnims": null
+    },
+    {
+        "RoleId": 1021067,
+        "Name": "\u767d\u5929\u9e45\u4ed9\u5b50",
+        "SpinePath": "Assets/Product/Ui/Spine/4_5_Spine/V45UiMovie_BaiTianE_1/V45UiMovie_BaiTianE_1.prefab",
+        "RoleAnims": "['idle']",
+        "RoleAnims2": null,
+        "KouIdleAnims": "['idle']",
+        "KouTalkAnims": "['idle']",
+        "TransitionAnims": null
+    },
+    {
+        "RoleId": 1021068,
+        "Name": "\u767d\u5929\u9e45\u4ed9\u5b50\uff08\u6c61\u67d3\u7248\uff09",
+        "SpinePath": "Assets/Product/Ui/Spine/4_5_Spine/V45UiMovie_BaiTianE_2/V45UiMovie_BaiTianE_2.prefab",
+        "RoleAnims": "['idle']",
+        "RoleAnims2": null,
+        "KouIdleAnims": "['idle']",
+        "KouTalkAnims": "['idle']",
+        "TransitionAnims": null
+    },
+    {
+        "RoleId": 1021069,
+        "Name": "Red Sorcerer",
+        "SpinePath": "Assets/Product/Ui/Spine/4_5_Spine/V45UiMovie_HongWu/V45UiMovie_HongWu.prefab",
+        "RoleAnims": "['idle']",
+        "RoleAnims2": null,
+        "KouIdleAnims": "['idle']",
+        "KouTalkAnims": "['idle']",
+        "TransitionAnims": null
+    },
+    {
+        "RoleId": 1021070,
+        "Name": "\u9e45\u6bdb\u626b\u5e1a",
+        "SpinePath": "Assets/Product/Ui/Spine/4_5_Spine/V45UiMovie_EMaoShaoBa/V45UiMovie_EMaoShaoBa.prefab",
+        "RoleAnims": "['idle', 'shengqi', 'gaoxing']",
+        "RoleAnims2": "{2: 'shengqi', 3: 'gaoxing'}",
+        "KouIdleAnims": "['idle', 'shengqi', 'gaoxing']",
+        "KouTalkAnims": "['idle', 'shengqi', 'gaoxing']",
+        "TransitionAnims": null
+    },
+    {
+        "RoleId": 1021071,
+        "Name": "Liv: Limpidity",
+        "SpinePath": "Assets/Product/Ui/Spine/4_5_Spine/V45UiMovie_LifuQM/V45UiMovie_LifuQm.prefab",
+        "RoleAnims": "['idle', 'haixiu1', 'haixiu2', 'putongweixiao', 'beishang', 'fennu', 'jingya', 'sikao', 'biyansisuo', 'biyanxiao']",
+        "RoleAnims2": "{1: 'idlezhayan', 2: 'haixiu1zhayan', 3: 'haixiu2zhayan', 4: 'putongweixiaozhayan', 5: 'beishangzhayan', 6: 'fennuzhayan', 7: 'jingyazhayan', 8: 'sikaozhayan', 9: 'biyansisuozhayan', 10: 'biyanxiao'}",
+        "KouIdleAnims": "['idle', 'haixiu1', 'haixiu2', 'putongweixiao', 'beishang', 'fennu', 'jingya', 'sikao', 'biyansisuo', 'biyanxiao']",
+        "KouTalkAnims": "['idle', 'haixiu1', 'haixiu2', 'putongweixiao', 'beishang', 'fennu', 'jingya', 'sikao', 'biyansisuo', 'biyanxiao']",
+        "TransitionAnims": null
+    },
+    {
+        "RoleId": 1021072,
+        "Name": "Hippocrates",
+        "SpinePath": "Assets/Product/Ui/Spine/4_5_Spine/V45UiMovie_XiBoKeLaDi/V45UiMovie_XiBoKeLaDi.prefab",
+        "RoleAnims": "['idle', 'weixiao', 'daxiao', 'beishang']",
+        "RoleAnims2": "{1: 'idlezhayan', 2: 'weixiaozhayan', 3: 'daxiaozhayan', 4: 'beishangzhayan'}",
+        "KouIdleAnims": "['idle', 'weixiao', 'daxiao', 'beishang']",
+        "KouTalkAnims": "['idle', 'weixiao', 'daxiao', 'beishang']",
+        "TransitionAnims": null
+    },
+    {
+        "RoleId": 1021073,
+        "Name": "Liv: Eclipse",
+        "SpinePath": "Assets/Product/Ui/Spine/4_5_Spine/V45UiMovie_LiFu_QS1/lV45UiMovie_LiFu_QS1.prefab",
+        "RoleAnims": "['idle', 'weixiao', 'yihuo']",
+        "RoleAnims2": "{1: 'idlezhayan', 2: 'weixiaozhayan', 3: 'yihuozhayan'}",
+        "KouIdleAnims": "['idle', 'weixiao', 'yihuo']",
+        "KouTalkAnims": "['idle', 'weixiao', 'yihuo']",
+        "TransitionAnims": null
+    },
+    {
+        "RoleId": 1021074,
+        "Name": "\u4e3d\u8299\u00b7\u8680\u6697\uff08\u538b\u9ed1\uff09",
+        "SpinePath": "Assets/Product/Ui/Spine/4_5_Spine/V45UiMovie_LiFu_QS2/lV45UiMovie_LiFu_QS2.prefab",
+        "RoleAnims": "['idle']",
+        "RoleAnims2": null,
+        "KouIdleAnims": "['idle']",
+        "KouTalkAnims": "['idle']",
+        "TransitionAnims": null
+    },
+    {
+        "RoleId": 1021075,
+        "Name": "\u4e3d\u8299\u00b7\u6781\u663c\uff08\u538b\u9ed1\uff09",
+        "SpinePath": "Assets/Product/Ui/Spine/4_5_Spine/V45UiMovie_LiFu_JZ2/V45UiMovie_LiFu_JZ2.prefab",
+        "RoleAnims": "['idle']",
+        "RoleAnims2": null,
+        "KouIdleAnims": "['idle']",
+        "KouTalkAnims": "['idle']",
+        "TransitionAnims": null
+    },
+    {
+        "RoleId": 1021076,
+        "Name": "Liv: Empyrea",
+        "SpinePath": "Assets/Product/Ui/Spine/4_5_Spine/V45UiMovie_LiFu_JZ1/V45UiMovie_LiFu_JZ1.prefab",
+        "RoleAnims": "['idle']",
+        "RoleAnims2": null,
+        "KouIdleAnims": "['idle']",
+        "KouTalkAnims": "['idle']",
         "TransitionAnims": null
     }
 ]

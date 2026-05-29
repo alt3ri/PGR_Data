@@ -1,27 +1,20 @@
----@class XFashionSuitControl : XControl
+---@class XFashionSuitControl: XControl
 ---@field private _Model XFashionSuitModel
 local XFashionSuitControl = XClass(XControl, "XFashionSuitControl")
-XFashionSuitControl.FashionSuitType = {
-    Lock = 1,
-    Unlock = 2,
-}
+XFashionSuitControl.FashionSuitType = { Lock = 1, Unlock = 2 }
 function XFashionSuitControl:OnInit()
-
 end
 
 function XFashionSuitControl:AddAgencyEvent()
-
 end
 
 function XFashionSuitControl:RemoveAgencyEvent()
-
 end
 
 function XFashionSuitControl:OnRelease()
-
 end
 
---region 配置
+-- region 配置
 
 ---@return string
 function XFashionSuitControl:GetClientConfig(key, index)
@@ -47,13 +40,13 @@ function XFashionSuitControl:GetFashionSuitById(id)
     return self._Model:GetFashionSuitById(id)
 end
 
---endregion
+-- endregion
 
 function XFashionSuitControl:IsSuitRewardGain(id)
     return self._Model:IsSuitRewardGain(id)
 end
 
----套装奖励是否可领取（收集齐全且未领取）
+--- 套装奖励是否可领取（收集齐全且未领取）
 function XFashionSuitControl:IsSuitRewardCanGain(suitId)
     local fashionIds = self:GetFashionSuitById(suitId).FashionIds
     return self:GetCollectCount(suitId) == #fashionIds and not self._Model:IsSuitRewardGain(suitId)
@@ -84,11 +77,11 @@ function XFashionSuitControl:IsFashionViewed(fashionId)
     return self._Model:IsFashionViewed(fashionId)
 end
 
----领取涂装套装奖励
+--- 领取涂装套装奖励
 function XFashionSuitControl:RequestGetSuitReward(suitId, cb)
     local req = {}
     req.SuitId = suitId
-    XNetwork.CallWithAutoHandleErrorCode("FashionGetSuitRewardRequest", req, function(res)
+    XNetwork.CallWithAutoHandleErrorCode("FashionGetSuitRewardRequest", req, function (res)
         self._Model:SetSuitRewardGain(suitId)
         XUiManager.OpenUiObtain(res.RewardGoodsList)
         if cb then
@@ -104,7 +97,7 @@ function XFashionSuitControl:GetFashionSuitConfigsSort()
     for _, cfg in pairs(cfgsDict) do
         table.insert(cfgs, cfg)
     end
-    --配置表排序 按照Sort降序 如果Sort相同则按照Id升序
+    -- 配置表排序 按照Sort降序 如果Sort相同则按照Id升序
     local function sortFunc(a, b)
         if a.Sort ~= b.Sort then
             return a.Sort > b.Sort
@@ -115,7 +108,7 @@ function XFashionSuitControl:GetFashionSuitConfigsSort()
     return cfgs
 end
 
---region 打脸弹窗相关
+-- region 打脸弹窗相关
 
 function XFashionSuitControl:GetShowFashionSuitNotice(noticeIds)
     local cfgs = {}
@@ -151,8 +144,10 @@ function XFashionSuitControl:GetNoticeFashionSuitIds()
         local beginTime, endTime = XFunctionManager.GetTimeByTimeId(cfg.TimeId)
         local now = XTime.GetServerNowTimestamp()
         if not saveData[cfg.Id] then
-            if cfg.TimeId == 0 or (now >= beginTime and now < endTime) then
-                table.insert(noticeSuitIds, cfg.Id)
+            if not self._Model:GetDataEx(cfg.Id) then
+                if cfg.TimeId == 0 or (now >= beginTime and now < endTime) then
+                    table.insert(noticeSuitIds, cfg.Id)
+                end
             end
         end
     end
@@ -160,9 +155,7 @@ function XFashionSuitControl:GetNoticeFashionSuitIds()
 end
 
 function XFashionSuitControl:MarkNoticeFashionSuitIdIsRead(noticeSuitId)
-    local saveData = self._Model:GetData()
-    saveData[noticeSuitId] = true
-    self._Model:SaveData( saveData)
+    self._Model:SaveDataEx(noticeSuitId, true)
 end
 
 function XFashionSuitControl:GetNoticeIdByFashionId(fashionId)
@@ -176,7 +169,7 @@ function XFashionSuitControl:GetNoticeIdByFashionId(fashionId)
     end
     return nil
 end
---endregion
+-- endregion
 
 function XFashionSuitControl:GetFashionSuitUiConfigById(id)
     return self._Model:GetFashionSuitUiConfigById(id)

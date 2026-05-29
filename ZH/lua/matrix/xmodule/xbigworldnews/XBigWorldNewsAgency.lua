@@ -64,14 +64,22 @@ function XBigWorldNewsAgency:CheckAutoPopup(targetNewsId)
     local popupIds = { targetNewsId }
 
     for _, newsId in pairs(newsIds) do
-        if self:CheckNewsPopup(newsId) then
+        if newsId ~= targetNewsId and self:CheckNewsPopup(newsId) then
             table.insert(popupIds, newsId)
         end
     end
 
     if not XTool.IsTableEmpty(popupIds) then
-        self:RequestMarkNewsPopped(popupIds)
-        self._Model:SetMultipleNewsPopup(popupIds)
+        if XTool.IsNumberValid(targetNewsId) and #popupIds == 1 then
+            if self:CheckNewsPopup(targetNewsId) then
+                self:RequestMarkNewsPopped(popupIds)
+                self._Model:SetMultipleNewsPopup(popupIds)
+            end
+        else
+            self:RequestMarkNewsPopped(popupIds)
+            self._Model:SetMultipleNewsPopup(popupIds)
+        end
+
         self:OpenNewsUi(popupIds[1])
         return true
     end
@@ -104,8 +112,14 @@ function XBigWorldNewsAgency:CheckNewsPopup(newsId)
     return true
 end
 
-function XBigWorldNewsAgency:TryOpenNewsUiAndMarkPopped(newsId)
-    self:CheckAutoPopup(newsId)
+function XBigWorldNewsAgency:TryOpenNewsUiAndMarkPopped(customParams)
+    -- customParams 是 CustomParams[4..] 的数组，遍历找到第一个有效的 newsId
+    for _, newsId in ipairs(customParams) do
+        if XTool.IsNumberValid(newsId) and self:CheckNewsInTime(newsId) then
+            self:CheckAutoPopup(newsId)
+            return
+        end
+    end
 end
 
 function XBigWorldNewsAgency:RequestMarkNewsPopped(newsIds, func)
@@ -262,13 +276,19 @@ end
 function XBigWorldNewsAgency:GetNewsShowTimeRewardTitle(id)
     local t = self._Model:GetNewsTemplate(id)
 
-    return t.ShowTimeRewardTitle or 0
+    return t.ShowTimeRewardTitle or ""
 end
 
 function XBigWorldNewsAgency:GetNewsShowTimeRewardContent(id)
     local t = self._Model:GetNewsTemplate(id)
 
-    return t.ShowTimeRewardContent or 0
+    return t.ShowTimeRewardContent or ""
+end
+
+function XBigWorldNewsAgency:GetNewsShowTimeRewardTip(id)
+    local t = self._Model:GetNewsTemplate(id)
+
+    return t.ShowTimeRewardTip or ""
 end
 
 function XBigWorldNewsAgency:GetNewsTagHideCondition(id)

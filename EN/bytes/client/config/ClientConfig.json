@@ -1895,6 +1895,11 @@
         "Value": "Assets/Product/Ui/ComponentPrefab/GridStage/GridWorldBossStageNewNor.prefab"
     },
     {
+        "Key": "GuideDragMoveSpeed",
+        "Type": "float",
+        "Value": "200"
+    },
+    {
         "Key": "GuideData",
         "Type": "string",
         "Value": "Assets/Product/Behavior/Guide/GuideData.bytes"
@@ -2777,7 +2782,7 @@
     {
         "Key": "PurchaseYKTotalCount",
         "Type": "int",
-        "Value": "2"
+        "Value": "6"
     },
     {
         "Key": "PurYKContinueBuyDays",
@@ -2878,6 +2883,11 @@
         "Key": "RegressionRequestUseInvitationCodeInternalTime",
         "Type": "int",
         "Value": "5"
+    },
+    {
+        "Key": "RegressionLittleYKPurchaseGiftId",
+        "Type": "int",
+        "Value": "10006"
     },
     {
         "Key": "RegressionTaskScheduleProgressAnimTime",
@@ -4660,6 +4670,31 @@
         "Value": "5"
     },
     {
+        "Key": "UiRoleCacheMaxTime",
+        "Type": "float",
+        "Value": "3"
+    },
+    {
+        "Key": "UiRoleCacheMaxCountLowMemory",
+        "Type": "int",
+        "Value": "0"
+    },
+    {
+        "Key": "UiRoleCacheMaxTimeLowMemory",
+        "Type": "float",
+        "Value": "0"
+    },
+    {
+        "Key": "UiRoleLowMemoryOnlyInSG",
+        "Type": "int",
+        "Value": "0"
+    },
+    {
+        "Key": "UiSceneLowMemoryOnlyInSG",
+        "Type": "int",
+        "Value": "0"
+    },
+    {
         "Key": "IsBtnSceneSettingShow",
         "Type": "int",
         "Value": "1"
@@ -5127,7 +5162,7 @@
     {
         "Key": "CharacterPowerIconEvolveVisible",
         "Type": "int",
-        "Value": "1"
+        "Value": "0"
     },
     {
         "Key": "CharacterPowerIconDetailVisible",
@@ -5363,5 +5398,10 @@
         "Key": "FashionDownloadPromptOwnCount",
         "Type": "int",
         "Value": "1"
+    },
+    {
+        "Key": "PurchaseYKPopupWhenRemainDays",
+        "Type": "int",
+        "Value": "3"
     }
 ]

@@ -136,6 +136,7 @@ function XUiGuideNew:OnStart(targetImg, isWeakGuide, guideDesc, icon, name, call
         self.PanelBubbleRoot2.gameObject:SetActiveEx(false)
         self.PanelBubble2 = XUiPanelGuideBubbleWithHead.New(self.PanelBubbleRoot2, self)
     end
+    self:StartCheckGuideMask()
 end
 
 function XUiGuideNew:OnDestroy()
@@ -150,6 +151,7 @@ function XUiGuideNew:OnDestroy()
     end
     
     self:SendCloseUiClick()
+    self:ClearGuideMask()
 end
 
 function XUiGuideNew:SendCloseUiClick()
@@ -226,6 +228,25 @@ function XUiGuideNew:OnBtnPanelMaskGuideClick()
     end
 
     CsXGameEventManager.Instance:Notify(CS.XEventId.EVENT_GUIDE_ANYCLICK)
+end
+
+function XUiGuideNew:ClearGuideMask()
+    if self._CheckMaskTimer then
+        XScheduleManager.UnSchedule(self._CheckMaskTimer)
+        self._CheckMaskTimer = nil
+    end
+
+    XDataCenter.GuideManager.TryHideGuideMask()
+end
+
+function XUiGuideNew:StartCheckGuideMask()
+    if not XDataCenter.GuideManager.IsShowGuideMask() then
+        return
+    end
+    self._CheckMaskTimer = XScheduleManager.ScheduleOnce(function() 
+        self._CheckMaskTimer = nil
+        self:ClearGuideMask()
+    end, XScheduleManager.SECOND)
 end
 
 --显示头像

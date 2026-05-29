@@ -179,6 +179,7 @@ local type = {
     CONDITION_REGRESSION3_SHOP = "XRedPointConditionRegression3Shop", --商店
     CONDITION_REGRESSION3_MAIN = "XRedPointConditionRegression3Main", --主界面
     CONDITION_REGRESSION3_SURVEY = "XRedPointConditionRegression3Survey", --问卷
+    CONDITION_REGRESSION3_GIFT_SHOP = "XRedPointConditionRegression3GiftShop", --礼品商店
     -- 公会相关红点
     CONDITION_GUILD_MEMBER = "XRedPointConditionGuildMember", --公会成员相关红点
     CONDITION_GUILD_INFO = "XRedPointConditionGuildInformation", --公会主界面信息红点

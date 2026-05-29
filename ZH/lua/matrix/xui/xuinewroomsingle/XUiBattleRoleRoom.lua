@@ -510,6 +510,28 @@ function XUiBattleRoleRoom:OnBtnShowInfoToggleClicked(val)
     self:RefreshRoleDetalInfo(val == 1)
 end
 
+--- 低内存设备专用：进入编队详情前释放指定角色位的模型
+--- 触发缓存淘汰策略，在低内存策略下会立刻执行 Destroy
+---@param index number 队伍位置索引
+function XUiBattleRoleRoom:__ReleaseRoleModelOnLowMemory(index)
+    -- 初始化模型缓存池（默认使用普通策略）
+    local isHarwareLowMemory = XHardwareManager.GetIsLowMemoryDevice()
+    local isInSkyGarden = CS.XBigWorldHelper.IsInsideSkyGarden()
+
+    -- 设备是低内存的情况下，处于空花环境，或者未约束仅空花环境，则启用
+    local isEnableLowMemoryMode = isHarwareLowMemory and (isInSkyGarden or not XTool.IsNumberValidEx(CS.XGame.ClientConfig:GetInt("UiRoleLowMemoryOnlyInSG")))
+    
+    if not isEnableLowMemoryMode then
+        return
+    end
+    
+    local panelRoleModel = self.UiPanelRoleModels[index]
+    
+    if panelRoleModel then
+        panelRoleModel:ReleaseCurrentModel()
+    end
+end
+
 function XUiBattleRoleRoom:OnBtnChar1Clicked()
     self:OnBtnCharacterClicked(1)
 end
@@ -643,6 +665,7 @@ function XUiBattleRoleRoom:OnBtnCharacterClicked(index)
 
     RunAsyn(function()
         local oldEntityId = self.Team:GetEntityIdByTeamPos(index)
+        self:__ReleaseRoleModelOnLowMemory(index)
         XLuaUiManager.Open("UiBattleRoomRoleDetail"
         , self.StageId
         , self.Team

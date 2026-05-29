@@ -20,12 +20,13 @@ function XBuff10251608:ScriptInit(isGainControl) --初始化
     else self.staminaPerCrit = 40
     end
     end
-    self._exDamageRate_Hp = 100
+    self._exDamageRate_Hp = 10000 --损血为100%时增伤为万分之10000
     --self:LogError(".....目标插入式技能12注册完成")
     self._critController = self:GetNpc():GetCritController()
+    self._hasChangedDamage = false
 end
 
-function XBuff10251608:OnLuaSkillStart(eventArgs)
+function XBuff10251608:OnLuaSkillEnd(eventArgs)
     self._hasChangedDamage = false
     if eventArgs._launcherUUID ~= self._npcUUID then return end
     if not self.trigger then
@@ -33,7 +34,7 @@ function XBuff10251608:OnLuaSkillStart(eventArgs)
         self.trigger = true
     end
     if eventArgs._skillId ~= self._skillId then return end
-    local stamina = self._proxy:GetNpcGameplayAttribValue(self._npcUUID, ETheatre6AttribType.Stamina)
+    local stamina = self._proxy:GetNpcGameplayAttribMaxValue(self._npcUUID, ETheatre6AttribType.Stamina)
     self.buffStacks = stamina // self.staminaPerCrit
     self._critController:AddSkillCount(self.buffStacks)
     --self:LogError(".....增加暴击层数"..self.buffStacks)
@@ -49,10 +50,9 @@ function XBuff10251608:ChangeDamageBeforeCalc(eventArgs)
     if eventArgs.Id ~= self._damageMagicId then return end
     if self._hasChangedDamage then return end
     local lostHp = self._proxy:GetNpcAttribMaxValue(self._npcUUID, ENpcAttrib.Life) - self._proxy:GetNpcAttribValue(self._npcUUID, ENpcAttrib.Life)
-    lostHp = lostHp * 100 // self._proxy:GetNpcAttribValue(self._npcUUID, ENpcAttrib.Life)
-    self._exDamageRate = self._exDamageRate_Hp * lostHp
+    self._exDamageRate = lostHp * self._exDamageRate_Hp // self._proxy:GetNpcAttribMaxValue(self._npcUUID, ENpcAttrib.Life)
     local FinalDMGRate = eventArgs.PhysicalPermyriad + self._exDamageRate
-    self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate, eventArgs.ElementPermyriad, eventArgs.HackDamage, eventArgs.HackPermyriad, eventArgs.isCrity)
+    self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate, eventArgs.ElementPermyriad, eventArgs.HackDamage, eventArgs.HackPermyriad, eventArgs.IsCrit)
     self._hasChangedDamage = true
     --self:LogError(".....增加伤害"..self._exDamageRate)
 end

@@ -3,6 +3,13 @@
 ---@field private _QueueHelper XBigWorldQueueUiHelper
 local XBigWorldUIAgency = XClass(XAgency, "XBigWorldUIAgency")
 
+local ExitIgnoreCloseUiName = {
+    ["UiDialogCanvasDialog"] = true,
+    ["UiDialog"] = true,
+    ["UiSuperWaterMarks"] = true,
+    ["UiWaterMask"] = true,
+}
+
 local XBigWorldUi = require("XModule/XBigWorldUI/Base/XBigWorldUi")
 
 function XBigWorldUIAgency:OnInit()
@@ -10,7 +17,12 @@ function XBigWorldUIAgency:OnInit()
 
     self._QueueHelper = require("XModule/XBigWorldUI/Base/XBigWorldQueueUiHelper").New()
     self._UiDestroyHandler = Handler(self, self.OnUiDestroy)
-    
+
+    -- 当前已打开的、继承自 XBigWorldUi 的面板缓存（uiName -> true）
+    -- 由 XBigWorldUi:OnAwakeUi/OnDestroyUi 通过 RecordOpenedBigWorldUi/RemoveOpenedBigWorldUi 维护
+    -- CloseAllBigWorldUi 遍历此集合关闭，避免遍历 C# UI 栈
+    self._OpenedBigWorldUiSet = {}
+
     self.UiThemeModule = {
         None = 0,
         Quest = 1,
@@ -35,6 +47,46 @@ function XBigWorldUIAgency:OnExitBigWorld()
         self._FightUiCb[key] = nil
     end
     CS.XGameEventManager.Instance:RemoveEvent(CS.XEventId.EVENT_UI_DESTROY, self._UiDestroyHandler)
+end
+
+function XBigWorldUIAgency:ClearBigWorldUI()
+    self:RunMain()
+    local index = 0
+    while true do
+        local uiName = CS.XUiManager.Instance:GetTopXUiName(index)
+        if string.IsNilOrEmpty(uiName) then
+            break
+        end
+        ---@type XUiData
+        local uiData = CS.XUiManager.Instance:FindUiData(uiName)
+        --子界面直接通过关掉父界面处理
+        if uiData and uiData.IsChildUi then
+            index = index + 1
+            goto continue
+        end
+        --这些界面不关闭 || 战斗界面不关闭，交由战斗管理
+        if ExitIgnoreCloseUiName[uiName] or XUiManager.IsFightUi(uiName) then
+            index = index + 1
+            goto continue
+        end
+        self:CloseImmediately(uiName)
+        ::continue::
+    end
+end
+
+--- 关闭所有"通过 Open 路径打开过、且继承自 XBigWorldUi"的面板
+--- 通过 _OpenedBigWorldUiSet 缓存查找，无需扫 C# UI 栈
+function XBigWorldUIAgency:CloseAllBigWorldUi()
+    local closeCount = 0
+    -- 复制一份 key 列表，避免边遍历边删（OnUiDestroy 会回写 _OpenedBigWorldUiSet）
+    local toClose = {}
+    for uiName in pairs(self._OpenedBigWorldUiSet) do
+        toClose[#toClose + 1] = uiName
+    end
+    for _, uiName in ipairs(toClose) do
+        self:CloseImmediately(uiName)
+        closeCount = closeCount + 1
+    end
 end
 
 function XBigWorldUIAgency:IsPauseFight(uiName)
@@ -95,6 +147,25 @@ function XBigWorldUIAgency:Open(uiName, ...)
     return true
 end
 
+--- 记录一个继承自 XBigWorldUi 的面板已打开（由 XBigWorldUi:OnAwakeUi 调用）
+--- CloseAllBigWorldUi 遍历此集合关闭，避免遍历 C# UI 栈
+---@param uiName string
+function XBigWorldUIAgency:RecordOpenedBigWorldUi(uiName)
+    if string.IsNilOrEmpty(uiName) then
+        return
+    end
+    self._OpenedBigWorldUiSet[uiName] = true
+end
+
+--- 移除一个已打开的 XBigWorldUi 面板记录（由 XBigWorldUi:OnDestroyUi 调用）
+---@param uiName string
+function XBigWorldUIAgency:RemoveOpenedBigWorldUi(uiName)
+    if string.IsNilOrEmpty(uiName) then
+        return
+    end
+    self._OpenedBigWorldUiSet[uiName] = nil
+end
+
 function XBigWorldUIAgency:OpenWithFightSequence(uiName, immidiateOpen, ...)
     if not self:CheckAllowOpenWithImpact(uiName) then
         return false
@@ -133,6 +204,16 @@ function XBigWorldUIAgency:CloseAllUpperUiWithCallback(uiName, cb)
     XLuaUiManager.CloseAllUpperUiWithCallback(uiName, cb)
 end
 
+--- 关闭目标 UI 上方所有层，可能带有刷新事件。
+--- 若目标UI不在栈中，则直接打开
+function XBigWorldUIAgency:PopToAndOpen(uiName, ...)
+    if XLuaUiManager.IsStackUiOpen(uiName) then
+        XLuaUiManager.CloseAllUpperUi(uiName)
+    else
+        self:Open(uiName, ...)
+    end
+end
+
 function XBigWorldUIAgency:Close(uiName, callback)
     if self:IsLockOperation() then
         return
@@ -142,6 +223,10 @@ function XBigWorldUIAgency:Close(uiName, callback)
     else
         XLuaUiManager.Close(uiName)
     end
+end
+
+function XBigWorldUIAgency:CloseImmediately(uiName)
+    CS.XUiManager.Instance:CloseImmediately(uiName)
 end
 
 function XBigWorldUIAgency:Remove(uiName)
@@ -190,6 +275,21 @@ function XBigWorldUIAgency:Register(super, uiName)
         super = XBigWorldUi
     end
     return XLuaUiManager.Register(super, uiName)
+end
+
+--- 该 UI 是否继承自 XBigWorldUi
+--- 通过 XLuaUiManager 的 ClassType 反查 super 链；要求该 UI 已被 require 注册过
+---@param uiName string
+---@return boolean
+function XBigWorldUIAgency:IsBigWorldUi(uiName)
+    if string.IsNilOrEmpty(uiName) then
+        return false
+    end
+    local uiClass = XLuaUiManager.GetUiClass(uiName)
+    if not uiClass then
+        return false
+    end
+    return uiClass == XBigWorldUi or CheckClassSuper(uiClass, XBigWorldUi)
 end
 
 -- region UI效果
@@ -317,12 +417,30 @@ function XBigWorldUIAgency:OpenBigWorldObtainWithCmd(data)
 end
 
 function XBigWorldUIAgency:OpenBigWorldRewardGoods(rewardData, title, closeCb)
+    if type(rewardData) == "number" then
+        local dataType = XMVCA.XBigWorldService.RewardDisplayDataType.Reward
+
+        if XMVCA.XBigWorldService:CheckSpecialReward(rewardData, dataType) then
+            self:OpenBigWorldObtainSpecial(rewardData, title, nil, nil, true)
+        elseif XMVCA.XBigWorldService:CheckExpensiveReward(rewardData, dataType) then
+            self:OpenBigWorldObtain(rewardData, title, nil, nil, true)
+        else
+            self:OpenBigWorldRewardSidebar(rewardData, closeCb, true)
+        end
+
+        return
+    end
+
     local expensiveRewards = {}
     local specialRewards = {}
+    local rewardGoodsType = XMVCA.XBigWorldService.RewardDisplayDataType.RewardGoods
+
     for _, reward in ipairs(rewardData) do
-        if XMVCA.XBigWorldService:CheckExpensiveReward(reward.TemplateId) then
+        if XMVCA.XBigWorldService:CheckExpensiveReward(reward.TemplateId) 
+            or XMVCA.XBigWorldService:CheckExpensiveReward(reward.Id, rewardGoodsType) then
             table.insert(expensiveRewards, reward)
-        elseif XMVCA.XBigWorldService:CheckSpecialReward(reward.TemplateId) then
+        elseif XMVCA.XBigWorldService:CheckSpecialReward(reward.TemplateId) 
+            or XMVCA.XBigWorldService:CheckSpecialReward(reward.Id, rewardGoodsType)then
             table.insert(specialRewards, reward)
         end
     end

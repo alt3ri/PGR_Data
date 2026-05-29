@@ -48,7 +48,17 @@ function XUiMainLine2GridEntrance:RegisterUiEvents()
     XUiHelper.RegisterClickEvent(self, self.BtnStage, self.OnBtnStageClick)
 end
 
+function XUiMainLine2GridEntrance:SetAreaClickInterceptor(interceptor)
+    self._AreaClickInterceptor = interceptor
+end
+
 function XUiMainLine2GridEntrance:OnBtnStageClick()
+    -- 分区拦截：非当前区域的关卡执行聚焦跳转而非打开详情
+    -- 无分区章节此字段为 nil，不影响原有逻辑
+    if self._AreaClickInterceptor and self._AreaClickInterceptor(self.StageIds[1]) then
+        return
+    end
+
     local isUnlock, tips = self:IsUnlock()
     if not isUnlock then
         XUiManager.TipMsg(tips)

@@ -161,7 +161,7 @@ function XGuideProxy:GetTopUiName(skipCheckUiNameDict)
             break
         end
         --战斗的UI不参与系统引导
-        if not (skipCheckUiNameDict[uiName] or XUiManager.IsFightUi(uiName)) then
+        if not (skipCheckUiNameDict[uiName] or (XUiManager.IsFightUi(uiName) and XFightUtil.IsFighting())) then
             break
         end
         uiName = CsXUiManager.Instance:GetTopXUiName(index)

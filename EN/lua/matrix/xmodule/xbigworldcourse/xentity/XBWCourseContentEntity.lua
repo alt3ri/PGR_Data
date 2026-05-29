@@ -190,6 +190,24 @@ function XBWCourseContentEntity:GetTaskRewardIconNoneColor()
     return ""
 end
 
+function XBWCourseContentEntity:GetTaskPercentageProgress()
+    local taskEntities = self:GetTaskEntitys()
+
+    if not XTool.IsTableEmpty(taskEntities) then
+        local finishCount = 0
+
+        for _, taskEntity in pairs(taskEntities) do
+            if taskEntity:IsAchieved() or taskEntity:IsFinish() then
+                finishCount = finishCount + 1
+            end
+        end
+
+        return (finishCount / #taskEntities) * 100
+    end
+
+    return 100
+end
+
 function XBWCourseContentEntity:GetBigWorldCourseContentBannerBg()
     if not self:IsNil() then
         return self._OwnControl:GetBigWorldCourseContentBannerBg(self:GetContentId())
@@ -199,7 +217,7 @@ function XBWCourseContentEntity:GetBigWorldCourseContentBannerBg()
 end
 
 function XBWCourseContentEntity:GetBigWorldCourseContentTip()
-    if not self:IsNil() then
+    if XTool.IsNumberValid(self:GetExploreRewardId()) then
         return self._OwnControl:GetBigWorldCourseContentTip(self:GetContentId())
     end
 
@@ -244,6 +262,14 @@ function XBWCourseContentEntity:GetExploreProgressText()
     end
 
     return ""
+end
+
+function XBWCourseContentEntity:GetExploreTitle()
+    if not self:IsNil() then
+        return self._Model:GetBigWorldCourseContentExploreTitleByContentId(self:GetContentId())
+    end
+
+    return 0
 end
 
 function XBWCourseContentEntity:GetExploreRewardId()

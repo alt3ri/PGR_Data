@@ -225,11 +225,11 @@ function XBigWorldCharacterAgency:GetUiModelId(characterId)
     return self:GetUiModelIdByFashionId(fashionId)
 end
 
-function XBigWorldCharacterAgency:GetUiModelIdByFashionId(fashionId, colorId)
+function XBigWorldCharacterAgency:GetUiModelIdByFashionId(fashionId, colorId, isRespectColor)
     local templete = self._Model:GetDlcFashionTemplate(fashionId)
     local modelId = templete.UiModelId
-    
-    if not XTool.IsNumberValid(colorId) then
+
+    if not XTool.IsNumberValid(colorId) and not isRespectColor then
         local characterId = self:GetCharacterIdByFashionId(fashionId)
 
         if XTool.IsNumberValid(characterId) and not self:IsCommandant(characterId) then
@@ -256,6 +256,7 @@ end
 
 function XBigWorldCharacterAgency:ExGetDlcModelIdByCharacterData(characterData)
     local fashionId = characterData.FashionId
+    local colorId = characterData.FashionColorId
 
     if fashionId <= 0 then --小于0时，战斗侧做了兼容
         --local characterId = characterData.Id
@@ -263,7 +264,9 @@ function XBigWorldCharacterAgency:ExGetDlcModelIdByCharacterData(characterData)
         return nil
     end
 
-    return XMVCA.XBigWorldCharacter:GetModelIdByFashionId(fashionId)
+    local uiModelId = XMVCA.XBigWorldCharacter:GetUiModelIdByFashionId(fashionId, colorId, true)
+
+    return XMVCA.XBigWorldResource:GetDlcModelId(uiModelId)
 end
 
 function XBigWorldCharacterAgency:GetAnimExpressionSOGroupId(fashionId)

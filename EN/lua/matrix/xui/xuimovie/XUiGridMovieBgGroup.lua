@@ -36,6 +36,8 @@ function XUiGridMovieBgGroup:OnStart(bgIndex)
         component.overrideSorting = canvas.overrideSorting
         component.sortingOrder  = canvas.sortingOrder
     end
+    -- 设置缩放
+    self.GameObject.transform.localScale = rImgBg.transform.localScale
 end
 
 function XUiGridMovieBgGroup:OnEnable()

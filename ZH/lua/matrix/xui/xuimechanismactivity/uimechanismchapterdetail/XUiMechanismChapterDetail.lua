@@ -1,4 +1,4 @@
-local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
+local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
 ---@class XUiMechanismChapterDetail
 ---@field _Control XMechanismActivityControl
 local XUiMechanismChapterDetail = XLuaUiManager.Register(XLuaUi, 'UiMechanismChapterDetail')
@@ -24,7 +24,7 @@ end
 
 
 function XUiMechanismChapterDetail:OnBtnEnerEvent()
-    XLuaUiManager.Open("UiBattleRoleRoom",self._StageId,self._Control:GetTeamDataByChapterId(self._ChapterId),require('XUi/XUiMechanismActivity/UiMechanismBattleRoleRoom/XUiMechanismBattleRoleRoom'))
+    XMVCA.XFuben:OpenUiBattleRoleRoom(self._StageId,self._Control:GetTeamDataByChapterId(self._ChapterId),require('XUi/XUiMechanismActivity/UiMechanismBattleRoleRoom/XUiMechanismBattleRoleRoom'))
 end
 
 --region 三星目标显示

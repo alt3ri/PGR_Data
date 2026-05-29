@@ -75,7 +75,13 @@ function XUiGridDlcRelinkSettlementCharacter:RefreshTag(tagIds)
             self.GridTabList[tagId] = grid
         end
         grid.gameObject:SetActiveEx(true)
-        grid:GetObject("TxtName").text = self._Control:GetMedalTagName(tagId)
+        local tagName = self._Control:GetMedalTagName(tagId)
+        grid:GetObject("BtnTag"):SetNameByGroup(0, tagName)
+        grid:GetObject("BtnTag"):AddEventListener(function()
+            if self.Parent and self.Parent.Parent and self.Parent.Parent.OnShowPanelDetail then
+                self.Parent.Parent:OnShowPanelDetail(grid.transform, tagId)
+            end
+        end)
     end
 
     local tagCount = XTool.GetTableCount(tagIds)

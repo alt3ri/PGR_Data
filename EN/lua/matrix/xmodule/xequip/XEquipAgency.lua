@@ -1510,6 +1510,10 @@ function XEquipAgency:GetResonancePreviewSkillInfoList(equipId, characterId, slo
     local equip = self._Model:GetEquip(equipId)
     local resonanceCfg = self._Model:GetConfigEquipResonance(equip.TemplateId)
 
+    if XTool.IsTableEmpty(resonanceCfg) then
+        return skillInfoList
+    end
+
     if characterId then
         if equip:IsWeapon() then
             local poolId = resonanceCfg.WeaponSkillPoolId[slot]

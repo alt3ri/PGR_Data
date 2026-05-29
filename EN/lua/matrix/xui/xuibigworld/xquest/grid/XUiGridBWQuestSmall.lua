@@ -46,7 +46,15 @@ function XUiGridBWQuestSmall:RefreshSkip(skipId)
     self._IsFinish = isFinish
 end
 
+function XUiGridBWQuestSmall:SetClickCallback(cb)
+    self._ClickCallback = cb
+end
+
 function XUiGridBWQuestSmall:OnClick()
+    if self._ClickCallback then
+        self._ClickCallback(self._QuestId or self._SkipId)
+        return
+    end
     if self._SkipId then
         self:SkipTo()
     elseif self._QuestId then

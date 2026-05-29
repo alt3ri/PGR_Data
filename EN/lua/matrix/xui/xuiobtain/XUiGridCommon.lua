@@ -21,6 +21,7 @@ function XUiGridCommon:Ctor(rootUi, ui)
     self.Transform = ui.transform
     self:InitAutoScript()
     self.TextCount = XUiHelper.TryGetComponent(self.Transform, "TextCount", nil)
+    self.RImgUp = XUiHelper.TryGetComponent(self.Transform, "RImgUp", "RawImage")
     self.ProxyClickFunc = nil
     self.CustomItemTipFunc = nil
     self._WeaopnFashionId = nil
@@ -81,8 +82,13 @@ function XUiGridCommon:AutoInitUi()
     -- 特殊标记
     self.PanelTag = XUiHelper.TryGetComponent(self.Transform, "PanelTag")
     self.PanelDrawTag = XUiHelper.TryGetComponent(self.Transform, "PanelDrawTag")
+    self.PanelYKTag = XUiHelper.TryGetComponent(self.Transform, "PanelYKTag")
     --赠品标记
     self.GiftTag = XUiHelper.TryGetComponent(self.Transform, "CoatingTips")
+    --套装标记
+    self.PanelSuit = XUiHelper.TryGetComponent(self.Transform, "PanelSuit")
+    --换色皮肤标记
+    self.ImgChangeColor = XUiHelper.TryGetComponent(self.Transform, "ImgChangeColor")
 end
 
 function XUiGridCommon:AutoAddListener()
@@ -191,7 +197,6 @@ function XUiGridCommon:OnBtnClickClick()
         else
             XLuaUiManager.Open("UiDlcHuntTip", self.Data and self.Data or self.TemplateId, self.HideSkipBtn, self.RootUi and self.RootUi.Name, self.LackNum)
         end
-        
     else
         if self.CustomItemTipFunc then
             self.CustomItemTipFunc(self.Data and self.Data or self.TemplateId, self.HideSkipBtn, self.RootUi and self.RootUi.Name, self.LackNum)
@@ -221,6 +226,7 @@ function XUiGridCommon:ResetUi()
     self:SetUiActive(self.ImgQuality, false)
     self:SetUiActive(self.PanelSite, false)
     self:SetUiActive(self.ImgUp, false)
+    self:SetUiActive(self.RImgUp, false)
     self:SetUiActive(self.ImgRail, false)
     self:SetUiActive(self.ImgReceived, false)
     self:SetUiActive(self.PanelReceive, false)
@@ -230,6 +236,7 @@ function XUiGridCommon:ResetUi()
     self:SetUiActive(self.TxtStock, false)
     self:SetUiActive(self.ImgNone, false)
     self:SetUiActive(self.ImgServerGiveMaxCount, false)
+    self:SetUiActive(self.PanelSuit, false)
 end
 
 -- data支持数据结构： XEquipData XItemData XCharacterData
@@ -424,7 +431,24 @@ function XUiGridCommon:Refresh(data, params, isBigIcon, hideSkipBtn, curCount)
             self.GiftTag.gameObject:SetActiveEx(false)
         end
     end
+
+    --DIY套装
+    if self.PanelSuit then
+        local isSuit = XMVCA.XBigWorldCommanderDIY:GetPartIsSuit(self.TemplateId)
+        self.PanelSuit.gameObject:SetActiveEx(isSuit)
+    end
     self:RefreshLabel()
+
+    --换色皮肤标记
+    if self.ImgChangeColor then
+        local isChangeColor = false
+        if self.GoodsShowParams.RewardType == XRewardManager.XRewardType.Fashion then
+            local fashionTemplate = XFashionConfigs.GetFashionTemplate(self.TemplateId)
+            isChangeColor = fashionTemplate ~= nil and not string.IsNilOrEmpty(fashionTemplate.FashionColorHex)
+        end
+        self.ImgChangeColor.gameObject:SetActiveEx(isChangeColor)
+    end
+
     --清除临时的同步数据
     self:ClearSynData()
 end
@@ -487,6 +511,12 @@ function XUiGridCommon:SetShowUp(isShow)
     end
 end
 
+function XUiGridCommon:SetShowRImgUp(isShow)
+    if self.RImgUp then
+        self:SetUiActive(self.RImgUp, isShow)
+    end
+end
+
 function XUiGridCommon:SetUpText(text)
     if self.UpText then
         self.UpText.text = text
@@ -502,6 +532,12 @@ end
 function XUiGridCommon:SetPanelTag(isTag)
     if self.PanelTag then
         self.PanelTag.gameObject:SetActiveEx(isTag)
+    end
+end
+
+function XUiGridCommon:SetPanelYKTag(hasYKTag)
+    if self.PanelYKTag then
+        self.PanelYKTag.gameObject:SetActiveEx(hasYKTag)
     end
 end
 

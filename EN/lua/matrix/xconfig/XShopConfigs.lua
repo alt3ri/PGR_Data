@@ -42,6 +42,7 @@ XShopConfigs.ShowType = {
     Normal = 0,     --通常
     Fashion = 1,    --时装
     GuildScene = 2, --公会场景
+    CommanderDIY = 3--指挥官DIY
 }
 
 XShopConfigs.BuyType = {

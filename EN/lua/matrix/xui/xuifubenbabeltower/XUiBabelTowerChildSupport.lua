@@ -175,7 +175,7 @@ function XUiBabelTowerChildSupport:OnBtnGoClick()
         self.GeneralSkill = inTeam:GetCurGeneralSkill()
         self:ReportTeamList()
     end)
-    XLuaUiManager.Open("UiBattleRoleRoom",
+    XMVCA.XFuben:OpenUiBattleRoleRoom(
             self.StageId,
             team,
             require("XUi/XUiFubenBabelTower/Room/XUiBabelTowerBattleRoleRoom")

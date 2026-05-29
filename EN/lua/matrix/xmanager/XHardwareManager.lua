@@ -2,6 +2,8 @@ XHardwareManager = XHardwareManager or {}
 
 local XQualityManager = CS.XQualityManager.Instance
 local IosHardwareTable = "Client/Hardware/IosHardware.tab";
+---@type XHardwareManager
+local CSXHardwareManager = CS.XHardwareManager
 
 local XRenderQuality = {
     Lowest = 0,
@@ -494,4 +496,16 @@ function XHardwareManager.CheckGpuAndroid(gpuName)
     XLog.Error("XHardwareManager.CheckGpuAndroid: Getting quality fail, unknow device, gpu name = \"" .. gpuName .. "\"." .. " cpuName=" .. cpuName)
 
     return XRenderQuality.Middle
+end
+
+function XHardwareManager.GetIsLowMemoryDevice()
+    return CSXHardwareManager.LowMemoryDevice
+end
+
+function XHardwareManager.GetDriveTotalSize()
+    return CS.XAppPlatBridge.GetTotalDiskSize()
+end
+
+function XHardwareManager.GetDriveTotalFreeSpace()
+    return CS.XAppPlatBridge.GetAvailableDiskSize()
 end

@@ -580,6 +580,15 @@ end
 function XDlcCSharpFuncs:GetNpcEquipUUID(npcUUID, equipType, equipIndex)
 end
 
+---@desc 切换装备挂点
+---@param npcUUID int 装备持有者实例ID
+---@param equipType int 装备类型
+---@param equipId int 装备配置ID
+---@param nodeName string 挂点名
+---@return void 
+function XDlcCSharpFuncs:SetNpcEquipNode(npcUUID, equipType, equipId, nodeName)
+end
+
 ---@desc 获取Npc阵营（返回值参考ENpcCamp
 ---@param npcId int
 ---@return int 
@@ -1676,6 +1685,13 @@ end
 function XDlcCSharpFuncs:GetSearchTargetPosition(searchTargetUID)
 end
 
+---@desc 切换当前单位的索敌权重模式
+---@param uuid int 当前单位的uuid
+---@param searchConfigId int 权重模式配置Id
+---@return void 
+function XDlcCSharpFuncs:SwitchSearchMode(uuid, searchConfigId)
+end
+
 ---@desc 获取当前锁定的目标（优先级 强制>硬锁>软锁）
 ---@return long 返回锁定目标的UID, int actorUUID:返回锁定目标所属的ActorUUID
 function XDlcCSharpFuncs:GetLockTarget()
@@ -2146,6 +2162,12 @@ end
 ---@param targetUUID int 目标NpcUUID
 ---@return void 
 function XDlcCSharpFuncs:SetCameraFocusTarget(sourceUUID, targetUUID)
+end
+
+---@desc 设置相机目标为当前Npc
+---@param sourceUUID int 当前NpcUUID
+---@return void 
+function XDlcCSharpFuncs:SetCameraCharacterTarget(sourceUUID)
 end
 
 ---@desc 获取当前世界ID
@@ -4522,6 +4544,11 @@ end
 ---@param npcUUID int npcUUID
 ---@return void 
 function XDlcCSharpFuncs:Theatre6PlaySanEffect(npcUUID)
+end
+
+---@desc 获取肉鸽6局内常量配置
+---@return XConfig 局内常量配置表
+function XDlcCSharpFuncs:Theatre6GetConfig()
 end
 
 return XDlcCSharpFuncs;

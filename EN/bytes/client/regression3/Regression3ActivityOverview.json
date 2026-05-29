@@ -21,7 +21,7 @@
         "Id": 3,
         "ActivityId": 1,
         "Name": "Tea Party",
-        "Priority": 3,
+        "Priority": 4,
         "ActivityType": 3,
         "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiRegression/PanelRegressionManual.prefab",
         "RedPointEvent": "CONDITION_REGRESSION3_PASSPORT"
@@ -30,7 +30,7 @@
         "Id": 4,
         "ActivityId": 1,
         "Name": "Return Mission",
-        "Priority": 4,
+        "Priority": 5,
         "ActivityType": 4,
         "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiRegression/PanelRegressionTask.prefab",
         "RedPointEvent": "CONDITION_REGRESSION3_TASK"
@@ -39,7 +39,7 @@
         "Id": 5,
         "ActivityId": 1,
         "Name": "Supply Exchange",
-        "Priority": 5,
+        "Priority": 6,
         "ActivityType": 5,
         "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiRegression/PanelRegressionShop.prefab",
         "RedPointEvent": "CONDITION_REGRESSION3_SHOP"
@@ -48,7 +48,7 @@
         "Id": 6,
         "ActivityId": 1,
         "Name": "Teatime News",
-        "Priority": 6,
+        "Priority": 7,
         "ActivityType": 6,
         "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiRegression/UiRegressionOldActivity.prefab",
         "RedPointEvent": "CONDITION_REGRESSION3_ACTIVITY"
@@ -57,9 +57,18 @@
         "Id": 7,
         "ActivityId": 1,
         "Name": "Return Survey",
-        "Priority": 7,
+        "Priority": 8,
         "ActivityType": 7,
         "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiRegression/PanelRegressionQuestionnaire.prefab",
         "RedPointEvent": "CONDITION_REGRESSION3_SURVEY"
+    },
+    {
+        "Id": 8,
+        "ActivityId": 1,
+        "Name": "Exclusive Pack",
+        "Priority": 3,
+        "ActivityType": 8,
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/UiRegression/PanelRegressionGiftShop.prefab",
+        "RedPointEvent": "CONDITION_REGRESSION3_GIFT_SHOP"
     }
 ]

@@ -98,7 +98,7 @@ function XDynamicGridTask:ResetData(data)
                 ui.transform:SetParent(self.GridCommon.transform.parent, false)
                 panel = XUiGridCommon.New(self.RootUi, ui)
             end
-            
+
             table.insert(self.RewardPanelList, panel)
         end
         panel:Refresh(reward)
@@ -109,8 +109,33 @@ function XDynamicGridTask:ResetData(data)
             end)
         end
     end
+    self._MainRewardCount = #rewards
 
     self:AprilFoolShowHandle()
+end
+
+function XDynamicGridTask:AppendExtraReward(exRewardId)
+    if not exRewardId then
+        return
+    end
+    local exRewards = XRewardManager.GetRewardList(exRewardId)
+    if not exRewards then
+        return
+    end
+    local offset = self._MainRewardCount or 0
+    for i = 1, #exRewards do
+        local panelIndex = offset + i
+        local panel = self.RewardPanelList[panelIndex]
+        local reward = exRewards[i]
+        if not panel then
+            local ui = CS.UnityEngine.Object.Instantiate(self.GridCommon)
+            ui.transform:SetParent(self.GridCommon.transform.parent, false)
+            panel = XUiGridCommon.New(self.RootUi, ui)
+            table.insert(self.RewardPanelList, panel)
+        end
+        panel:Refresh(reward)
+        panel:SetShowRImgUp(true)
+    end
 end
 
 function XDynamicGridTask:AprilFoolShowHandle()

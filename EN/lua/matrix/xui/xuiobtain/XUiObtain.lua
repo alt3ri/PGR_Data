@@ -136,6 +136,12 @@ function XUiObtain:Refresh(rewardGoodsList, horizontalNormalizedPosition)
         if self.CustomParams.IsShowRandomDrawPanelTag then
             grid:SetPanelDrawTag(true)
         end
+
+        if data.ExtraData then
+            if data.ExtraData.IsShowYKTag then
+                grid:SetPanelYKTag(true)
+            end
+        end
     end)
 
     if horizontalNormalizedPosition then
@@ -193,4 +199,16 @@ function XUiObtain:CheckOpenFashionTip()
     XLuaUiManager.Open("UiCommonPopupNewFashion", rewards)
 end
 
-return XUiObtain
+local RewardGoodsExtraDataMarkedAsShowYKTag = { IsShowYKTag = true }
+
+-- 标记奖励列表中的所有奖励属于月卡奖励
+-- 这是一个针对当前仅有IsShowYKTag一个字段时的优化实现，一旦ExtraData要添加其他字段就必须修改这个函数
+function XUiObtain.SetRewardsIsShowYKTag(rewardGoodsList)
+    if rewardGoodsList then
+        for _, v in pairs(rewardGoodsList) do
+            v.ExtraData = RewardGoodsExtraDataMarkedAsShowYKTag
+        end
+    end
+end
+
+return XUiObtain

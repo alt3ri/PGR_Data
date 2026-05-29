@@ -407,12 +407,17 @@ function XFunctionManager.SkipInterface(id, fromMsg, ...)
 
     end
 
+
     if XTool.IsNumberValid(list.ConditionId) then
         if not XConditionManager.CheckCondition(list.ConditionId, list) then
             return false
         end
     end
-
+    local isOpen = XFunctionManager.CheckInTimeByTimeId(list.TimeId,true)
+    if not isOpen then
+        XUiManager.TipText("ActivityBaseTaskSkipNotInDuring")
+        return
+    end
     -- 提审包屏蔽，跳转到主线页面
     if XUiManager.IsHideFunc and list.IsHideFunc then
         -- XLuaUiManager.Open("UiFuben", XDataCenter.FubenManager.StageType.Mainline, nil, 1)

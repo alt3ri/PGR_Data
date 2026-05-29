@@ -16,6 +16,7 @@ function XUiFangKuaiSettlement:TryExitToCollection(score)
     XMVCA.XGameCollection:OnGameExitToCollection(gameType, {
         Score = score,
         IsNewScoreRecord = settleData and settleData.IsNewScoreRecord or false,
+        IsSettled = true,
     })
     return true
 end

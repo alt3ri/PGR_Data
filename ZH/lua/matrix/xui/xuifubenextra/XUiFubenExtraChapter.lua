@@ -219,7 +219,7 @@ function XUiFubenExtraChapter:EnterFight(stage)
     if not XDataCenter.FubenManager.CheckPreFight(stage) then
         return
     end
-    XLuaUiManager.Open("UiBattleRoleRoom", stage.StageId)
+    XMVCA.XFuben:OpenUiBattleRoleRoom(stage.StageId)
 end
 
 -- 是否显示红点

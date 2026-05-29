@@ -40,6 +40,41 @@ XTool.GenTexture2DReleaseManually = function(width, height, textureFormat, mipCh
     return tex
 end
 
+-- region 下载器测试
+
+-- 下载器测试
+XTool.CreateDownloadManager = function()
+    if CS.XRemoteConfig.IsHaruDownloader then
+        local downloader = CS.XHaruDownloader.XDownloadManager()
+        downloader:Init()
+        return downloader
+    else
+        return CS.XMTDownloadCenter()
+    end
+end
+
+-- 下载器测试任务组
+XTool.CreateDownloadTaskGroup = function(groupId, skipClientCdns)
+    if CS.XRemoteConfig.IsHaruDownloader then
+        return CS.XHaruDownloader.XDownloadTaskGroup(groupId)
+    else
+        local taskGroup = CS.XMTDownloadTaskGroup(groupId)
+        taskGroup:SetClientCDNsSkip(skipClientCdns or false)
+        return taskGroup
+    end
+end
+
+-- 下载器测试状态
+XTool.GetDownloadStateEnum = function()
+    if CS.XRemoteConfig.IsHaruDownloader then
+        return CS.XHaruDownloader.XDownloadTaskGroupState
+    else
+        return CS.XMTDownloadTaskGroupState
+    end
+end
+
+-- endregion 下载器测试
+
 XTool.UObjIsNil = function(uobj)
     return uobj == nil or not uobj:Exist()
 end
@@ -322,6 +357,33 @@ XTool.CopyToClipboard = function(text)
         CS.XAppPlatBridge.CopyStringToClipboard(tostring(text))
     end
     XUiManager.TipText("Clipboard", XUiManager.UiTipType.Tip)
+end
+
+-- 求列表中最大项
+-- table<k, v> -> (k -> v -> number) -> (k, v)
+XTool.MaxBy = function(t, maxBy)
+    if XTool.IsTableEmpty(t) then
+        error("List is empty.")
+    end
+
+    local maxK, maxV, maxCalc = nil, nil, nil
+
+    for k, v in pairs(t) do
+        if not maxCalc then
+            maxK = k
+            maxV = v
+            maxCalc = maxBy(maxK, maxV)
+        else
+            local calc = maxBy(k, v)
+            if calc > maxCalc then
+                maxK = k
+                maxV = v
+                maxCalc = calc
+            end
+        end
+    end
+
+    return maxK, maxV
 end
 
 XTool.ToArray = function(t)
@@ -1295,6 +1357,38 @@ function XTool.UpdateDynamicItemLazy(gridArray, dataArray, uiObject, class, pare
         grid:Close()
     end
     lazyLoad()
+end
+
+-- 设置Grid数据
+-- 将会把第一个Grid也设置上数据
+function XTool.SetDataForGenericGrid(
+    gridArray,              -- 输出的Grid数组，用于存储Grid实例，传入的需要是一个空数组
+    dataArray,              -- 数据数组，里面每个元素都是Grid类的SetData的参数数组
+    firstGridGameObject,    -- 第一个Grid的GameObject，第一个数据将会使用该对象生成，后续的数据将使用Instantiate生成
+    gridContainerTransform, -- Grid容器节点，需要是一个Transform，所有的Grid都在这里生成
+    parentUi,               -- 父节点Lua对象，用于classOfGrid.New时传入
+    classOfGrid)            -- Grid类，需要包含SetData方法
+
+    for i, data in ipairs(dataArray) do
+        local grid = gridArray[i]
+
+        if not grid then
+            local go
+
+            if i == 1 then
+                go = firstGridGameObject
+            else
+                go = XUiHelper.Instantiate(
+                    firstGridGameObject,
+                    gridContainerTransform)
+            end
+
+            grid = classOfGrid.New(go, parentUi)
+            gridArray[i] = grid
+        end
+
+        grid:SetData(table.unpack(data))
+    end
 end
 
 function XTool.UpdateDynamicGridCommon(gridArray, dataArray, uiObject, parent, params)

@@ -9,7 +9,9 @@ local XUiFubenBossSingleDetailDifficultySelectCardV4P5 =
 function XUiFubenBossSingleDetailDifficultySelectCardV4P5:OnStart(
     stageInfo,
     bossConf,
-    onClickCallback)
+    onClickCallback,
+    playSmallAnimation,
+    playBigAnimation)
 
     self.TxtDifficulty.text = stageInfo.DifficultyDesc
     self.GameObject:GetComponent("XUiButton").CallBack = onClickCallback
@@ -66,6 +68,14 @@ function XUiFubenBossSingleDetailDifficultySelectCardV4P5:OnStart(
     -- 显示buffs
     if self.ContentGridBuffs then
         self:_RefreshBuffs(bossConf)
+    end
+
+    if playSmallAnimation then
+        self:PlayAnimation("Small")
+    end
+
+    if playBigAnimation then
+        self:PlayAnimation("Big")
     end
 end
 

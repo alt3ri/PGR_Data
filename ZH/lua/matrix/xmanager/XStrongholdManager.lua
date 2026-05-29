@@ -3438,11 +3438,12 @@ public class StrongholdAssistCharacterDetail
         local enterFight = function()
             local teamId = stageIndex
             local captainPos, firstFightPos = XStrongholdManager.GetTeamCaptinPosAndFirstPos(teamId, teamList)
-            local characterIds = XStrongholdManager.GetTeamShowCharacterIds(teamId, teamList)
+            local team = teamList and teamList[teamId] or GetTeam(teamId)
+            local characterIds, fashionIds = team:GetShowCharacterIdsWithFashion()
             local generalSkillId = XStrongholdManager.GetTeamGeneralSkill(teamId, teamList) or 0
             local enterCgIndex = XStrongholdManager.GetEnterCgIndex(teamId, teamList) or 0
             local settleCgIndex = XStrongholdManager.GetSettleCgIndex(teamId, teamList) or 0
-            XDataCenter.FubenManager.EnterStrongholdFight(stageId, characterIds, captainPos, firstFightPos, generalSkillId, enterCgIndex, settleCgIndex)
+            XDataCenter.FubenManager.EnterStrongholdFight(stageId, characterIds, captainPos, firstFightPos, generalSkillId, enterCgIndex, settleCgIndex, fashionIds)
         end
 
         if XStrongholdConfigs.IsChapterLastGroupId(groupId) then

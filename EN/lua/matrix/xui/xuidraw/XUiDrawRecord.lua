@@ -19,9 +19,10 @@ function XUiDrawRecord:OnAwake()
     self:InitDropdownItemColorConfig()
 end
 
-function XUiDrawRecord:OnStart(defaultDrawId, historyGroupInfos)
+function XUiDrawRecord:OnStart(defaultDrawId, historyGroupInfos, optionKey)
     self.SelectDrawGroupId = defaultDrawId
     self.HistoryGroupInfos = historyGroupInfos
+    self.DefaultOptionKey = optionKey or ""
     self.CurrentPage = 0
     self.PageMax = 0
     self:InitTypeText()
@@ -57,7 +58,7 @@ function XUiDrawRecord:InitDrawDropdown()
     self.DrdSort.template.gameObject:SetActiveEx(false)
     ---@type XLuaBehaviour
     self.DrdTemplateBehaviour = self.DrdSort.template.gameObject:AddComponent(typeof(CS.XLuaBehaviour))
-    
+
     -- 打开下拉框时，为了克隆，Unity会先激活Template，触发enable。之后再执行克隆并改名的操作。
     -- 而节点的数据同步在下一帧执行，因此需要隔一帧
     self.DrdTemplateBehaviour.LuaOnEnable = function()
@@ -66,41 +67,95 @@ function XUiDrawRecord:InitDrawDropdown()
             XScheduleManager.UnSchedule(self._DrdOpenTimeId)
             self._DrdOpenTimeId = nil
         end
-        
+
         self._DrdOpenTimeId = XScheduleManager.ScheduleNextFrame(handler(self, self.OnDrawListOpen))
     end
-    
+
+    -- 构建下拉数据列表：尝试展开 DisplayOption，对过期 group 兜底
+    local dropdownDataList = {}
+    for _, drawGroupInfo in ipairs(self.HistoryGroupInfos) do
+        local groupId = drawGroupInfo.DrawGroupId
+        local groupOptions = XDataCenter.DrawManager.GetDisplayOptionsForRecord(groupId)
+
+        -- 检查是否有有效的 DisplayOption（至少有一个 option 包含 DrawIdList）
+        local hasValidOptions = false
+        if groupOptions then
+            for _, opt in ipairs(groupOptions) do
+                if opt.DrawIdList and #opt.DrawIdList > 0 then
+                    hasValidOptions = true
+                    break
+                end
+            end
+        end
+
+        if hasValidOptions then
+            -- 展开所有 DisplayOption（含 ExtraOption）
+            for _, option in ipairs(groupOptions) do
+                if option.DrawIdList and #option.DrawIdList > 0 then
+                    table.insert(dropdownDataList, {
+                        DrawGroupId = option.GroupId,
+                        GroupSubType = option.GroupSubtype or 0,
+                        OptionKey = option.OptionKey or "",
+                        Name = option.Name,
+                        Priority = option.Priority or 0,
+                    })
+                end
+            end
+        else
+            -- Fallback：DrawInfo 未加载的过期 group，用配置表兜底
+            ---@type XTableDrawGroupRule
+            local cfg = XDrawConfigs.GetDrawGroupRuleById(groupId)
+            if cfg then
+                table.insert(dropdownDataList, {
+                    DrawGroupId = groupId,
+                    GroupSubType = 0,
+                    OptionKey = "",
+                    Name = cfg.TitleCN,
+                    Priority = drawGroupInfo.Priority or 0,
+                })
+            end
+        end
+    end
+
     -- 排序
-    table.sort(self.HistoryGroupInfos, function(a, b)
+    table.sort(dropdownDataList, function(a, b)
         if a.Priority ~= b.Priority then
             return a.Priority > b.Priority
         end
-        
         return a.DrawGroupId > b.DrawGroupId
     end)
-    
+
     self.Index2GroupIdMap = {}
     self.DrawGroupId2IndexMap = {}
 
     self.DrdSort:ClearOptions()
     self._DropItemImages = {}
-    
-    local CsDropdown = CS.UnityEngine.UI.Dropdown
-    local index = 1
-    for _, drawGroupInfo in ipairs(self.HistoryGroupInfos) do
-        ---@type XTableDrawGroupRule
-        local cfg = XDrawConfigs.GetDrawGroupRuleById(drawGroupInfo.DrawGroupId)
-        if cfg then
-            local op = CsDropdown.OptionData()
-            op.text = cfg.TitleCN
-            self.DrdSort.options:Add(op)
 
-            self.DrawGroupId2IndexMap[drawGroupInfo.DrawGroupId] = index
-            self.Index2GroupIdMap[index] = drawGroupInfo
-            index = index + 1
+    local CsDropdown = CS.UnityEngine.UI.Dropdown
+    local defaultIndex = 1
+    for index, data in ipairs(dropdownDataList) do
+        local op = CsDropdown.OptionData()
+        op.text = data.Name
+        self.DrdSort.options:Add(op)
+
+        self.Index2GroupIdMap[index] = data
+        -- 记录 GroupId 到 index 的映射（仅记录第一个匹配的）
+        if not self.DrawGroupId2IndexMap[data.DrawGroupId] then
+            self.DrawGroupId2IndexMap[data.DrawGroupId] = index
+        end
+
+        -- 匹配默认选中：优先 OptionKey，否则按 GroupId + GroupSubType=0
+        if not string.IsNilOrEmpty(self.DefaultOptionKey) then
+            if data.OptionKey == self.DefaultOptionKey then
+                defaultIndex = index
+            end
+        else
+            if data.DrawGroupId == self.SelectDrawGroupId and data.GroupSubType == 0 then
+                defaultIndex = index
+            end
         end
     end
-    self.DrdSort.value = self.DrawGroupId2IndexMap[self.SelectDrawGroupId] - 1
+    self.DrdSort.value = defaultIndex - 1
 
     self.DrdSort.onValueChanged:AddListener(function()
         self:OnDrawDropdownValueChaned(CSArrayIndexToLuaTableIndex(self.DrdSort.value))
@@ -328,10 +383,12 @@ end
 --region 事件回调
 function XUiDrawRecord:OnDrawDropdownValueChaned(index)
     self._Index = index
-    local newGroupId = self.Index2GroupIdMap[index] and self.Index2GroupIdMap[index].DrawGroupId or 0
+    local data = self.Index2GroupIdMap[index]
+    local newGroupId = data and data.DrawGroupId or 0
+    local groupSubType = data and data.GroupSubType or 0
 
     if XTool.IsNumberValid(newGroupId) then
-        XDataCenter.DrawManager.RequestDrawGroupGetHistory(newGroupId, function(res)
+        XDataCenter.DrawManager.RequestDrawGroupGetHistory(newGroupId, groupSubType, function(res)
             self.SelectDrawGroupId = newGroupId
             self.HistoryRewardList = res.HistoryRewardList
             self.HistoryRewardCount = XTool.GetTableCount(res.HistoryRewardList)

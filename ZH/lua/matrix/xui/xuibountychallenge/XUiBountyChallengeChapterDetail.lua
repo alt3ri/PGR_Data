@@ -119,16 +119,8 @@ function XUiBountyChallengeChapterDetail:Update()
     -- 任务
     if self.PanelTaskBg.gameObject.activeInHierarchy then
         XTool.UpdateDynamicItem(self._GridTasks, data.TaskList, self.GridTask, XUiBountyChallengeChapterDetailTask, self)
-    end
-    
-    -- 任务序列动画
-    if not self._HadPlayTaskUiAnim then
-        self._HadPlayTaskUiAnim = true
-        if not XTool.IsTableEmpty(self._GridTasks) then
-            for i, v in ipairs(self._GridTasks) do
-                v:PlayStartAnimation(i)
-            end
-        end
+
+        self:_PlayGridTaskEnableAnim()
     end
     
     self:UpdateButton()
@@ -174,6 +166,7 @@ end
 function XUiBountyChallengeChapterDetail:_OnClickTask()
     self.PanelTaskBg.gameObject:SetActiveEx(true)
     XTool.UpdateDynamicItem(self._GridTasks, self._Data.TaskList, self.GridTask, XUiBountyChallengeChapterDetailTask, self)
+    self:_PlayGridTaskEnableAnim()
 end
 
 function XUiBountyChallengeChapterDetail:_OnClickCloseTask()
@@ -198,6 +191,19 @@ function XUiBountyChallengeChapterDetail:UpdateDifficultyUI()
     self.PanelLianyu.gameObject:SetActiveEx(isLianyuDifficulty)
     self.BtnLianyu.gameObject:SetActiveEx(isLianyuDifficulty)
     self.BtnTongBlack.gameObject:SetActiveEx(not isLianyuDifficulty)
+end
+
+function XUiBountyChallengeChapterDetail:_PlayGridTaskEnableAnim()
+    -- 任务序列动画
+    if not self._HadPlayTaskUiAnim then
+        -- 当任务没有折叠到子面板时，开启，这样不会反复播放
+        -- self._HadPlayTaskUiAnim = true
+        if not XTool.IsTableEmpty(self._GridTasks) then
+            for i, v in ipairs(self._GridTasks) do
+                v:PlayStartAnimation(i)
+            end
+        end
+    end
 end
 
 return XUiBountyChallengeChapterDetail

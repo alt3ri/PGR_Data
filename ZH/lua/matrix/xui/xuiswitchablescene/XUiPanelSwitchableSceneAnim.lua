@@ -42,11 +42,36 @@ function XUiPanelSwitchableSceneAnim:SetDisableGyro(bo)
     end
 end
 
+---设置陀螺仪启用覆盖（nil=使用全局设置，true=强制开启，false=强制关闭）
+---缓存在 Panel 层，Play 时自动注入 proxy；proxy 已存在时立即生效
+---@param override boolean|nil
+function XUiPanelSwitchableSceneAnim:SetGyroEnabledOverride(override)
+    self._GyroEnabledOverride = override
+    local proxy = self._Player:GetProxy()
+    if proxy then
+        proxy:SetGyroEnabledOverride(override)
+    end
+end
+
 ---视频播放期间挂起场景交互
 function XUiPanelSwitchableSceneAnim:OnVideoStart()
     local proxy = self._Player:GetProxy()
     if proxy then
         proxy:SuspendForVideo()
+    end
+end
+
+---视频结束后恢复场景动画
+---@param sceneId number 场景ID（代理未初始化时用于创建）
+---@param sceneTran UnityEngine.Transform 场景Transform（代理未初始化时用于创建）
+function XUiPanelSwitchableSceneAnim:OnVideoEnd(sceneId, sceneTran)
+    local proxy = self._Player:GetProxy()
+    if proxy then
+        proxy:ResumeForVideoEnd()
+    else
+        if XTool.IsNumberValid(sceneId) and not XTool.UObjIsNil(sceneTran) then
+            self:Play(sceneId, sceneTran)
+        end
     end
 end
 
@@ -72,6 +97,11 @@ function XUiPanelSwitchableSceneAnim:Play(sceneId, sceneTran)
         local proxy = self._Player:GetProxy()
         if proxy and proxy.SetContinuePlay then
             proxy:SetContinuePlay(self._IsContinuePlay)
+        end
+
+        -- 注入陀螺仪覆盖设置
+        if proxy and self._GyroEnabledOverride ~= nil then
+            proxy:SetGyroEnabledOverride(self._GyroEnabledOverride)
         end
 
         -- 开始播放

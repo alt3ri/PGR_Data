@@ -45,6 +45,14 @@ function XFubenSimulationChallengeAgency:ExGetRunningTimeStr()
     return ""
 end
 
+function XFubenSimulationChallengeAgency:ExGetTimerShowStr()
+    
+end
+
+function XFubenSimulationChallengeAgency:ExGetTimerShowIcon()
+    
+end
+
 function XFubenSimulationChallengeAgency:RegisterChapterAgency()
     XMVCA.XFubenEx:RegisterChapterAgency(self)
 end

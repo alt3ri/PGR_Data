@@ -54,6 +54,31 @@ function XBigWorldMapControl:GetAllMapConfigs()
     return self._Model:GetBigWorldMapConfigs()
 end
 
+---@return table<number, XTableBigWorldMap[]>
+function XBigWorldMapControl:GetOverviewMapConfigs()
+    return self._Model:GetOverviewMapConfigs()
+end
+
+function XBigWorldMapControl:GetUnlockOverviewMapConfigs()
+    local overviewMapConfigs = self:GetOverviewMapConfigs()
+    local result = {}
+
+    if not XTool.IsTableEmpty(overviewMapConfigs) then
+        for overviewId, mapConfigList in pairs(overviewMapConfigs) do
+            for _, mapConfig in pairs(mapConfigList) do
+                local conditionId = mapConfig.ConditionId
+
+                if not XTool.IsNumberValid(conditionId) or XMVCA.XBigWorldService:CheckCondition(conditionId) then
+                    result[overviewId] = result[overviewId] or {}
+                    table.insert(result[overviewId], mapConfig)
+                end
+            end
+        end
+    end
+
+    return result
+end
+
 function XBigWorldMapControl:GetMapLinkLevelIdByLevelId(levelId)
     ---@type XBigWorldMapAgency
     local agency = self:GetAgency()
@@ -112,6 +137,20 @@ function XBigWorldMapControl:GetMapPosZByLevelId(levelId)
     local agency = self:GetAgency()
 
     return agency:GetMapPosZByLevelId(levelId)
+end
+
+function XBigWorldMapControl:GetMapAreaGroupTypeByLevelId(levelId)
+    ---@type XBigWorldMapAgency
+    local agency = self:GetAgency()
+
+    return agency:GetMapAreaGroupTypeByLevelId(levelId)
+end
+
+function XBigWorldMapControl:GetMapAreaGroupIcon(groupId)
+    ---@type XBigWorldMapAgency
+    local agency = self:GetAgency()
+
+    return agency:GetMapAreaGroupIcon(groupId)
 end
 
 function XBigWorldMapControl:GetMapPixelRatioByLevelId(levelId)
@@ -306,6 +345,27 @@ function XBigWorldMapControl:GetMapDefaultScale(levelId)
     return self._Model:GetBigWorldMapDefaultScaleByLevelId(levelId) or 0
 end
 
+function XBigWorldMapControl:GetMapTitleIds(levelId)
+    return self._Model:GetBigWorldMapTitleGroupTitleIdsByLevelId(levelId)
+end
+
+function XBigWorldMapControl:GetMapTitleInfos(levelId)
+    local result = {}
+    local showInfos = self._Model:GetMapSceneObjectShowInfos(levelId)
+
+    if not XTool.IsTableEmpty(showInfos) then
+        for _, showInfo in pairs(showInfos) do
+            local condition = showInfo.Info.ConditionId
+
+            if not XTool.IsNumberValid(condition) or XMVCA.XBigWorldService:CheckCondition(condition) then
+                table.insert(result, showInfo)
+            end
+        end
+    end
+
+    return result
+end
+
 function XBigWorldMapControl:GetTeleportLevelText(levelId)
     local levelName = self:GetLevelName(levelId)
 
@@ -334,14 +394,15 @@ function XBigWorldMapControl:GetQuickGoingPinData(targetPinData, isForce)
         local minDistance = math.maxinteger
         local targetPosition = targetPinData:GetAiMemoryWorldPosition()
         local pinDatas = self:GetMapPinDatasByLevelId(targetPinData.LevelId)
-        
+
         if not XTool.IsTableEmpty(pinDatas) then
             local currentLevel = XMVCA.XBigWorldGamePlay:GetCurrentLevelId()
             local sortDatas = {}
             for pinId, pinData in pairs(pinDatas) do
                 if pinData:IsTeleportInLevel() then
                     local position = pinData:GetAiMemoryWorldPosition()
-                    local distance = math.pow((position.x - targetPosition.x), 2) + math.pow((position.z - targetPosition.z), 2)
+                    local distance = math.pow((position.x - targetPosition.x), 2) +
+                    math.pow((position.z - targetPosition.z), 2)
                     local groupSortId = math.abs(pinData.MapAreaGroupId - targetPinData.MapAreaGroupId)
                     table.insert(sortDatas, {
                         PinData = pinData,
@@ -389,6 +450,34 @@ function XBigWorldMapControl:GetQuickGoingPinData(targetPinData, isForce)
     end
 
     return result
+end
+
+function XBigWorldMapControl:GetOverviewName(overviewId)
+    return self._Model:GetBigWorldMapOverviewNameById(overviewId)
+end
+
+function XBigWorldMapControl:GetOverviewIcon(overviewId)
+    return self._Model:GetBigWorldMapOverviewIconById(overviewId)
+end
+
+function XBigWorldMapControl:GetOverviewPrefab(overviewId)
+    return self._Model:GetBigWorldMapOverviewPrefabById(overviewId)
+end
+
+function XBigWorldMapControl:GetOverviewBackground(overviewId)
+    return self._Model:GetBigWorldMapOverviewBackgroundById(overviewId)
+end
+
+function XBigWorldMapControl:GetOverviewPosX(overviewId)
+    return self._Model:GetBigWorldMapOverviewPosXById(overviewId)
+end
+
+function XBigWorldMapControl:GetOverviewPosY(overviewId)
+    return self._Model:GetBigWorldMapOverviewPosYById(overviewId)
+end
+
+function XBigWorldMapControl:GetOverviewIdByLevelId(levelId)
+    return self._Model:GetBigWorldMapOverviewIdByLevelId(levelId)
 end
 
 function XBigWorldMapControl:GetMapScaleCache(defaultValue)
@@ -511,7 +600,11 @@ function XBigWorldMapControl:TrackPin(levelId, pinId)
     if pinData then
         if pinData:IsQuest() then
             if not self:CheckCurrentTrackPin(levelId, pinId) then
-                XMVCA.XBigWorldQuest:TrackQuest(pinData.QuestId)
+                if pinData:IsReadyQuest() then
+                    self:RequestTrackReadyQuest(levelId, pinId, true)
+                else
+                    XMVCA.XBigWorldQuest:TrackQuest(pinData.QuestId)
+                end
             end
         else
             if self:SendCheckEnableTrackCommand(levelId, pinId) then
@@ -529,8 +622,12 @@ function XBigWorldMapControl:CancelTrackPin(levelId, pinId)
     if pinData then
         if pinData:IsQuest() then
             if self:CheckCurrentTrackPin(levelId, pinId) then
-                XMVCA.XBigWorldQuest:UnTrackQuest(pinData.QuestId)
-                XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_DETAIL_CLOSE)
+                if pinData:IsReadyQuest() then
+                    self:RequestTrackReadyQuest(levelId, pinId, false)
+                else
+                    XMVCA.XBigWorldQuest:UnTrackQuest(pinData.QuestId)
+                    XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_DETAIL_CLOSE)
+                end
             end
         else
             self:RequestTrackMapPin(levelId, pinId, false)
@@ -617,6 +714,36 @@ function XBigWorldMapControl:RequestTrackMapPin(levelId, pinId, isTrack)
             XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_TRACK_CHANGE, true)
         else
             self:SendCancelTrackCommand(levelId, pinId)
+            XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_TRACK_CHANGE, false)
+        end
+    end)
+end
+
+function XBigWorldMapControl:RequestTrackReadyQuest(levelId, pinId, isTrack)
+    local questId = 0
+
+    if isTrack then
+        local pinData = self._Model:GetPinDataByLevelIdAndPinId(levelId, pinId)
+
+        if pinData and pinData:IsQuest() then
+            questId = pinData.QuestId
+        else
+            return
+        end
+    end
+
+    XNetwork.Call("BigWorldSetTrackReadyQuestIdRequest", {
+        QuestId = questId,
+    }, function(res)
+        if res.Code ~= XCode.Success then
+            XUiManager.TipCode(res.Code)
+            return
+        end
+        if XTool.IsNumberValid(pinId) and isTrack then
+            self._Model:TrackReadyQuestMapPin(questId, true)
+            XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_TRACK_CHANGE, true)
+        else
+            self._Model:CancelTrackReadyQuestMapPin(true)
             XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_TRACK_CHANGE, false)
         end
     end)

@@ -34,6 +34,7 @@ local XRewardType = {
     BWDIYPart = 30, --空花指挥官DIY部件
     Filter = 31,        -- 滤镜解锁
     Anim = 32,          -- 动作解锁
+    FashionColor = 34   -- 涂装颜色
 }
 
 --local HeadPortraitQuality = CS.XGame.Config:GetInt("HeadPortraitQuality")
@@ -75,6 +76,7 @@ local Arrange2RewardType = {
     [XArrangeConfigs.Types.BWDIYPart] = XRewardType.BWDIYPart,
     [XArrangeConfigs.Types.Anim] = XRewardType.Anim,
     [XArrangeConfigs.Types.Filter] = XRewardType.Filter,
+    [XArrangeConfigs.Types.FashionColor] = XRewardType.FashionColor
 }
 
 local CreateGoodsFunc = {
@@ -348,6 +350,13 @@ local CreateGoodsFunc = {
             Count = count and count or 1,
         }
     end,
+    [XRewardType.FashionColor] = function(templateId, count)
+        return {
+            RewardType = XRewardType.FashionColor,
+            TemplateId = templateId,
+            Count = count and count or 1
+        }
+    end
 }
 
 local CloneRewardGoods = function(rewardGoods)
@@ -784,7 +793,8 @@ local function MergeRewardGoodsList(rewardGoodsList)
 
     for _, goods in pairs(rewardGoodsList) do
         if goods.RewardType == XRewardType.Character or
-        goods.RewardType == XRewardType.Equip then
+        goods.RewardType == XRewardType.Equip or
+        goods.ExtraData then
             tableInsert(mergeList, goods)
         else
             local templateId = goods.TemplateId

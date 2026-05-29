@@ -68,8 +68,8 @@ end
 
 function XABattleNode:Trigger()
     XABattleNode.Super.Trigger(self, function()
-        XLuaUiManager.Open("UiBattleRoleRoom"
-            , self.TheatreStageConfig.StageId
+        XMVCA.XFuben:OpenUiBattleRoleRoom(
+            self.TheatreStageConfig.StageId
             , XDataCenter.BiancaTheatreManager.GetCurrentAdventureManager():GetSingleTeam()
             , require("XUi/XUiBiancaTheatre/XUiBiancaTheatreBattleRoleRoom"))
     end)

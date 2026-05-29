@@ -1,3 +1,5 @@
+local XUiGridBWFashionColor = require("XUi/XUiBigWorld/XFashion/Grid/XUiGridBWFashionColor")
+
 ---@class XUiBigWorldCoating : XLuaUi
 ---@field GameObject UnityEngine.GameObject
 ---@field Transform UnityEngine.Transform
@@ -8,6 +10,7 @@ local XUiBigWorldCoating = XMVCA.XBigWorldUI:Register(nil, "UiBigWorldCoating")
 
 local XUiModelDisplayController = require("XUi/XUiCommon/XUiModelDisplay/XUiModelDisplayController")
 local XUiPanelBWCoating = require("XUi/XUiBigWorld/XFashion/Panel/XUiPanelBWCoating")
+local XUiModelDisplayHelper = require("XUi/XUiCommon/XUiModelDisplay/XUiModelDisplayHelper")
 
 local TabType = {
     Character = 1,
@@ -63,6 +66,8 @@ function XUiBigWorldCoating:InitUi()
     self.BtnFashionUnLock.gameObject:SetActiveEx(false)
     self.PanelHeadLock.gameObject:SetActiveEx(false)
     self.PanelCharacterFilter.gameObject:SetActiveEx(false)
+    self.PanelColour.gameObject:SetActiveEx(false)
+    self.GridColour.gameObject:SetActiveEx(false)
     
     self._Drag = self.PanelDrag.gameObject:GetComponent(typeof(CS.XDrag))
 end
@@ -110,7 +115,7 @@ end
 function XUiBigWorldCoating:UpdateCharacterModel()
     self:PlayChangeEffect()
     local fashionId = self._FashionId
-    local uiModelId = XMVCA.XBigWorldCharacter:GetUiModelIdByFashionId(fashionId)
+    local uiModelId = XMVCA.XBigWorldCharacter:GetUiModelIdByFashionId(fashionId, self._FashionColorId)
     local helper = self._DisplayController:GetDisplayHelper()
     local modelInfo = helper.CreateBWCommonModelDisplayInfo(uiModelId, self.NearCamera, nil, 0)
 
@@ -129,16 +134,20 @@ function XUiBigWorldCoating:UpdateCharacterModel()
         self._Drag.Target = model.transform
     end
     self._DisplayController:DisableLookAtIK(uiModelId, 0)
+    XUiModelDisplayHelper.PlayExpression(self._DisplayController, uiModelId, fashionId, animaName)
     model.transform:Reset()
 end
+
 
 function XUiBigWorldCoating:UpdateFashionList()
     self._FashionList = XMVCA.XBigWorldCharacter:GetUnlockFashionList(self._CharacterId)
     self._FashionId = self._FashionList[1]
-    
+    self._FashionColorId = XMVCA.XBigWorldCharacter:GetFashionDefaultColor(self._CharacterId, self._FashionId)
+
     self._PanelFashion:RefreshView(self._CharacterId, self._FashionList, self._FashionId)
     --self._PanelWeapon:Close()
     self._PanelHead:Close()
+    self:UpdateFashionColor()
 end
 
 function XUiBigWorldCoating:UpdateWeaponList()
@@ -157,10 +166,13 @@ end
 function XUiBigWorldCoating:OnSelectItem(type, select)
     if type == TabType.Character then
         self._FashionId = select
+        self:UpdateFashionColor()
         self:UpdateCharacterModel()
     elseif type == TabType.Weapon then
+        self:UpdateFashionColorList()
     elseif type == TabType.Head then
         self._HeadInfo = select
+        self:UpdateFashionColorList()
     end
 
     self:UpdateFashionStatus()
@@ -173,11 +185,14 @@ function XUiBigWorldCoating:UpdateFashionStatus()
     local used = false
     if self._TabTypeIndex == TabType.Character then
         local template = XDataCenter.FashionManager.GetFashionTemplate(self._FashionId)
+        local fashionId = XMVCA.XBigWorldCharacter:GetFashionId(self._CharacterId)
+        local fashionColorId = XMVCA.XBigWorldCharacter:GetFashionDefaultColor(self._CharacterId, self._FashionId)
+
         str = template.Name
         intro = CsXTextManagerGetText("UiFashionIntroFashion")
         title = XGoodsCommonManager.GetGoodsDescription(self._FashionId)
         desc = XGoodsCommonManager.GetGoodsWorldDesc(self._FashionId)
-        used = self._FashionId == XMVCA.XBigWorldCharacter:GetFashionId(self._CharacterId)
+        used = self._FashionId == fashionId and self._FashionColorId == fashionColorId
     elseif self._TabTypeIndex == TabType.Weapon then
         
     elseif self._TabTypeIndex == TabType.Head then
@@ -201,6 +216,57 @@ function XUiBigWorldCoating:UpdateFashionStatus()
     self.TxtIntroDesc.text = desc
     self.BtnUse.gameObject:SetActiveEx(not used)
     self.BtnUsed.gameObject:SetActiveEx(used)
+end
+
+function XUiBigWorldCoating:UpdateFashionColor()
+    local colorList= XMVCA.XBigWorldCharacter:GetUnlockFashionColorList(self._FashionId, true)
+
+    self._FashionColorId = XMVCA.XBigWorldCharacter:GetFashionDefaultColor(self._CharacterId, self._FashionId)
+    self:UpdateFashionColorList(colorList)
+end
+
+function XUiBigWorldCoating:UpdateFashionColorList(colorList)
+    self._FashionColorList = colorList
+    self._FashionColorIndex = 1
+
+    if not XTool.IsTableEmpty(colorList) then
+        local index = 1
+
+        ---@type XUiGridBWFashionColor[]
+        self._ColorGridList = self._ColorGridList or {}
+        self.PanelColour.gameObject:SetActiveEx(true)
+        for _, colorId in pairs(colorList) do
+            local color = self._ColorGridList[index]
+
+
+            if not color then
+                local colorUi = XUiHelper.Instantiate(self.GridColour, self.ListColour)
+
+                color = XUiGridBWFashionColor.New(colorUi, self)
+                self._ColorGridList[index] = color
+            end
+
+            if colorId == self._FashionColorId then
+                self._FashionColorIndex = index
+            end
+
+            color:Open()
+            color:Refresh(self._FashionId, colorId, colorId == self._FashionColorId, index)
+            index = index + 1
+        end
+
+        for i = index, #self._ColorGridList do
+            self._ColorGridList[i]:Close()
+        end
+    else
+        if not XTool.IsTableEmpty(self._ColorGridList) then
+            for _, color in pairs(self._ColorGridList) do
+                color:Close()
+            end
+        end
+
+        self.PanelColour.gameObject:SetActiveEx(false)
+    end
 end
 
 function XUiBigWorldCoating:InitUiModel()
@@ -249,7 +315,7 @@ function XUiBigWorldCoating:OnBtnUseClick()
         self:OnSelectCharacter(charId)
     end
     if self._TabTypeIndex == TabType.Character then
-        XMVCA.XBigWorldCharacter:RequestSetFashion(charId, self._FashionId, cb)
+        XMVCA.XBigWorldCharacter:RequestSetFashion(charId, self._FashionId, self._FashionColorId, cb)
     elseif self._TabTypeIndex == TabType.Head then
         if self._HeadInfo then
             XMVCA.XBigWorldCharacter:RequestSetHeadInfo(charId, self._HeadInfo.HeadFashionId, self._HeadInfo.HeadFashionType, cb)
@@ -306,6 +372,21 @@ function XUiBigWorldCoating:OnSelectSingle(pos, characterId)
     self:UpdateFashionList()
     self:OnSelectCharacter(characterId)
     self:OnBtnCloseFilterClick()
+end
+
+function XUiBigWorldCoating:OnColorSelect(index, colorId)
+    if not XTool.IsTableEmpty(self._ColorGridList) and index ~= self._FashionColorIndex then
+        local color = self._ColorGridList[self._FashionColorIndex]
+
+        if color then
+            color:SetSelect(false) 
+        end
+
+        self._FashionColorIndex = index
+        self._FashionColorId = colorId
+        self:UpdateFashionStatus()
+        self:UpdateCharacterModel()
+    end
 end
 
 function XUiBigWorldCoating:OnSliderCharacterChanged()

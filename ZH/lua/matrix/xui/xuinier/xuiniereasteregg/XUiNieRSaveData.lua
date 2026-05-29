@@ -35,5 +35,5 @@ end
 
 function XUiNieRSaveData:OnBtnOkClick()
     local stageId = XDataCenter.NieRManager.GetCurNieREasterEggStageId()
-    XLuaUiManager.PopThenOpen("UiBattleRoleRoom", stageId) --, nil, nil, nil, true)
+    XMVCA.XFuben:PopThenOpenUiBattleRoleRoom(stageId) --, nil, nil, nil, true)
 end

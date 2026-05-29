@@ -1,27 +1,32 @@
 ---@class XUiGridDlcRelinkExchangeWheelEmoji : XUiNode
 ---@field private _Control XDlcRelinkControl
 ---@field Parent XUiDlcRelinkPopupExchangeWheel
----@field GoInput XGoInputHandler
+---@field Pointer XUguiPointerEventListener
 local XUiGridDlcRelinkExchangeWheelEmoji = XClass(XUiNode, "XUiGridDlcRelinkExchangeWheelEmoji")
 
 function XUiGridDlcRelinkExchangeWheelEmoji:OnStart()
     self.ImgBg.gameObject:SetActiveEx(false)
     self.ImgSelect.gameObject:SetActiveEx(false)
     self.PanelTag.gameObject:SetActiveEx(false)
-    --self.BtnEmoji:AddEventListener(handler(self, self.OnBtnEmojiClick))
+    if self.ImgOnDrag then
+        self.ImgOnDrag.gameObject:SetActiveEx(false)
+    end
     if self.BtnDelete then
         self.BtnDelete:AddEventListener(handler(self, self.OnBtnDeleteClick))
     end
 
     self.DefaultLayer = self.Canvas.sortingOrder
-    self.GoInput:AddPointerClickListener(function(eventData) self:OnPointerClick(eventData) end)
-    self.GoInput:AddBeginDragListener(function(eventData) self:OnBeginDrag(eventData) end)
-    self.GoInput:AddDragListener(function(eventData) self:OnDrag(eventData) end)
-    self.GoInput:AddEndDragListener(function(eventData) self:OnEndDrag(eventData) end)
+    self.Pointer.OnDown = function(eventData) self:OnPointerDown(eventData) end
+    self.Pointer.OnClick = function(eventData) self:OnPointerClick(eventData) end
+    self.Pointer.OnPress = function(pressTime) self:OnPress(pressTime) end
+    self.Pointer.OnUp = function(eventData) self:OnPointerUp(eventData) end
+    self.Pointer.OnExit = function(eventData) self:OnPointerExit(eventData) end
 
     self.IsDragClone = false  -- 是否是拖拽出来的克隆
     self.IsWheelSlot = false  -- 是否是表情轮盘的槽位
     self.WheelIndex = nil -- 表情轮盘的槽位索引
+
+    self.PressProgressTarget = self.ImgEmoji.transform -- 长按进度条的目标位置
 end
 
 function XUiGridDlcRelinkExchangeWheelEmoji:SetIsDragClone(isDragClone)
@@ -53,22 +58,25 @@ function XUiGridDlcRelinkExchangeWheelEmoji:GetEmojiId()
 end
 
 function XUiGridDlcRelinkExchangeWheelEmoji:Refresh(emojiId)
+    self.Parent:OnGridBeforeRefresh(self)
     self.EmojiId = emojiId
     if not XTool.IsNumberValid(emojiId) then
         self:HideAll()
         return
     end
 
-    local type = self._Control:GetTextEmojiType(emojiId)
-    self.PanelEmoji.gameObject:SetActiveEx(type == XEnumConst.DlcRelink.ChatType.Emoji)
-    self.PanelTalk.gameObject:SetActiveEx(type == XEnumConst.DlcRelink.ChatType.Text)
+    local emojiType = self._Control:GetTextEmojiType(emojiId)
+    self.PanelEmoji.gameObject:SetActiveEx(emojiType == XEnumConst.DlcRelink.ChatType.Emoji)
+    self.PanelTalk.gameObject:SetActiveEx(emojiType == XEnumConst.DlcRelink.ChatType.Text)
 
-    if type == XEnumConst.DlcRelink.ChatType.Emoji then
+    if emojiType == XEnumConst.DlcRelink.ChatType.Emoji then
         local icon = self._Control:GetTextEmojiIcon(emojiId)
         self.ImgEmoji:SetSprite(icon)
         self.TxtDescribe.text = self._Control:GetTextEmojiConnotationDesc(emojiId)
-    elseif type == XEnumConst.DlcRelink.ChatType.Text then
+        self.PressProgressTarget = self.ImgEmoji.transform
+    elseif emojiType == XEnumConst.DlcRelink.ChatType.Text then
         self.TxtTalk.text = self._Control:GetTextEmojiText(emojiId)
+        self.PressProgressTarget = self.TxtTalk.transform
     end
 end
 
@@ -78,6 +86,9 @@ function XUiGridDlcRelinkExchangeWheelEmoji:HideAll()
     self.PanelTalk.gameObject:SetActiveEx(false)
     self.ImgSelect.gameObject:SetActiveEx(false)
     self.PanelTag.gameObject:SetActiveEx(false)
+    if self.ImgOnDrag then
+        self.ImgOnDrag.gameObject:SetActiveEx(false)
+    end
 end
 
 -- 选择
@@ -91,7 +102,7 @@ function XUiGridDlcRelinkExchangeWheelEmoji:SetTag(isTag)
 end
 
 -- 点击
-function XUiGridDlcRelinkExchangeWheelEmoji:OnBtnEmojiClick()
+function XUiGridDlcRelinkExchangeWheelEmoji:OnPointerClick(eventData)
     if self.IsDragClone then
         return
     end
@@ -99,6 +110,13 @@ function XUiGridDlcRelinkExchangeWheelEmoji:OnBtnEmojiClick()
         self.Parent:OnClickWheelEmoji(self)
     else
         self.Parent:OnClickListEmoji(self)
+    end
+end
+
+-- 拖拽中显示
+function XUiGridDlcRelinkExchangeWheelEmoji:SetOnDrag(isOnDrag)
+    if self.ImgOnDrag then
+        self.ImgOnDrag.gameObject:SetActiveEx(isOnDrag)
     end
 end
 
@@ -110,32 +128,42 @@ function XUiGridDlcRelinkExchangeWheelEmoji:OnBtnDeleteClick()
     self.Parent:OnClickDeleteWheelEmoji(self)
 end
 
-function XUiGridDlcRelinkExchangeWheelEmoji:OnPointerClick(eventData)
+-- 手指按下
+function XUiGridDlcRelinkExchangeWheelEmoji:OnPointerDown(eventData)
     if self.IsDragClone then
         return
     end
-    self:OnBtnEmojiClick()
+    self.Parent:OnGridPointerDown(self)
 end
 
-function XUiGridDlcRelinkExchangeWheelEmoji:OnBeginDrag(eventData)
+-- 长按触发拖拽
+function XUiGridDlcRelinkExchangeWheelEmoji:OnPress(pressTime)
     if self.IsDragClone then
         return
     end
-    self.Parent:StartDrag(self)
+
+    local emojiId = self:GetEmojiId()
+    if not XTool.IsNumberValid(emojiId) then
+        return
+    end
+
+    self.Parent:OnGridPress(self)
 end
 
-function XUiGridDlcRelinkExchangeWheelEmoji:OnDrag(eventData)
+-- 手指抬起
+function XUiGridDlcRelinkExchangeWheelEmoji:OnPointerUp(eventData)
     if self.IsDragClone then
         return
     end
-    self.Parent:OnDragMove(eventData)
+    self.Parent:OnGridPointerUp(self)
 end
 
-function XUiGridDlcRelinkExchangeWheelEmoji:OnEndDrag(eventData)
+-- 移出Grid范围
+function XUiGridDlcRelinkExchangeWheelEmoji:OnPointerExit(eventData)
     if self.IsDragClone then
         return
     end
-    self.Parent:EndDrag(eventData)
+    self.Parent:OnGridPointerExit(self)
 end
 
 -- 设置 Canvas 覆盖排序

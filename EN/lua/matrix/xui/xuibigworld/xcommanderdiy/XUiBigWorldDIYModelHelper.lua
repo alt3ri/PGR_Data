@@ -38,6 +38,10 @@ function XUiBigWorldDIYModelHelper:LoadModel(gender, entitys)
         return
     end
 
+    self:RefreshModel(gender, entitys)
+end
+
+function XUiBigWorldDIYModelHelper:RefreshModel(gender, entitys)
     if not XTool.IsTableEmpty(entitys) then
         local fashionEntity = self:_ExtractingFashionEntity(entitys)
 
@@ -50,9 +54,6 @@ function XUiBigWorldDIYModelHelper:LoadModel(gender, entitys)
         if string.IsNilOrEmpty(modelId) then
             return
         end
-        
-        local partEntitys = self:_ExtractingPartEntitys(entitys)
-        
         self:_LoadMaterials(modelId, fashionEntity, gender)
         self:_LoadPartModels(modelId, entitys, gender, fashionEntity:GetTypeId())
         self:_BindModelDragTarget(gender)
@@ -423,6 +424,72 @@ function XUiBigWorldDIYModelHelper:_ExtractingPartEntitys(entitys)
     end
 
     return result
+end
+------------------ 不依赖 Enitiy ---------------------
+function XUiBigWorldDIYModelHelper:LoadFashionModel(partId, gender)
+    local resId = XMVCA.XBigWorldCommanderDIY:GetDlcPlayerFashionPartResIdById(partId, gender)
+    local fashionId = XMVCA.XBigWorldCommanderDIY:GetFashionIdByResId(resId)
+    local modelId = XMVCA.XBigWorldCharacter:GetUiModelIdByFashionId(fashionId)
+    local partTypeId = XMVCA.XBigWorldCommanderDIY:GetPartTypeId(partId)
+    if not self:IsModelExist(modelId) then
+        local parent = self:_ExtractingModelRoot(gender)
+        local helper = self._ModelContorller:GetDisplayHelper()
+        local modelInfo = helper.CreateBWCommonModelDisplayInfo(modelId, self._NearCamera, parent, partTypeId)
+        self._ModelContorller:AddModel(modelInfo)
+    end
+    self._CurrentModelId[gender] = modelId
+    return modelId
+end
+
+function XUiBigWorldDIYModelHelper:TryUnloadModel(gender)
+    self:UnloadModel(gender)
+end
+
+function XUiBigWorldDIYModelHelper:LoadMaterials(colorId, partId, gender)
+    if not XTool.IsNumberValid(colorId) then
+        return self
+    end
+    local modelId = self._CurrentModelId[gender]
+    local colorName = XMVCA.XBigWorldCommanderDIY:GetMaterialNameByColorId(colorId)
+    local partTypeId = XMVCA.XBigWorldCommanderDIY:GetPartTypeId(partId)
+    local partModelId
+    if partTypeId == XEnumConst.PlayerFashion.PartType.Fashion then
+        local resId = XMVCA.XBigWorldCommanderDIY:GetDlcPlayerFashionPartResIdById(partId, gender)
+        local fashionId = XMVCA.XBigWorldCommanderDIY:GetFashionIdByResId(resId)
+        partModelId = XMVCA.XBigWorldCharacter:GetUiModelIdByFashionId(fashionId)
+    else
+        partModelId = XMVCA.XBigWorldCommanderDIY:GetPartModelIdByPartId(partId, gender)
+    end
+    local _materials = XMVCA.XBigWorldResource:GetPartModelMaterials(partModelId, colorName)
+    local materials = XTool.CsList2LuaTable(_materials)
+    for _, material in pairs(materials) do
+        self._ModelContorller:SetModelComponentMaterials(modelId, partTypeId, material.PartNodeName,
+            material.MaterialPathList)
+    end
+    return self
+end
+
+function XUiBigWorldDIYModelHelper:BindModelDragTarget(gender)
+    self:_BindModelDragTarget(gender)
+end
+
+function XUiBigWorldDIYModelHelper:LoadPartModel(partId, gender, fashionTypeId)
+    local modelId = self._CurrentModelId[gender]
+    local resId = XMVCA.XBigWorldCommanderDIY:GetResIdByPartId(partId, gender)
+    local partTypeId = XMVCA.XBigWorldCommanderDIY:GetPartTypeId(partId)
+    local partModelId = XMVCA.XBigWorldCommanderDIY:GetPartModelIdByPartId(partId, gender)
+    if self:IsModelExist(modelId) and not self:IsPartModelExist(modelId, partTypeId) then
+        local parent = self:_ExtractingModelRoot(gender)
+        local modelUrl = XMVCA.XBigWorldResource:GetPartModelUrlByPartId(partModelId)
+        local modelBone = self._ModelContorller:GetModelObject(modelId, fashionTypeId)
+        local helper = self._ModelContorller:GetDisplayHelper()
+        local boneData = helper.CreateBoneData(modelBone)
+        local modelInfo = helper.CreateBWModelDisplayInfo(modelId, modelUrl, nil, self._NearCamera, parent, partTypeId)
+        modelInfo:InitComponentType(XEnumConst.UiModel.ComponentType.Materials)
+        modelInfo:AddModelData(boneData)
+        self._ModelContorller:AddModelComponent(modelInfo)
+    end
+    return self
 end
 
 return XUiBigWorldDIYModelHelper

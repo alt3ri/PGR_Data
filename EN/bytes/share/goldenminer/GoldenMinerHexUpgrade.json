@@ -5,7 +5,7 @@
         "UpgradeInit": null,
         "BuffList": "[802]",
         "Name": "Ore Vein Detector",
-        "Desc": "\u53ec\u5524\u63a2\u6d4b\u96f7\u8fbe\uff0c\u6bcf\u9694\u4e00\u6bb5\u65f6\u95f4\u53d1\u73b01\u4e2a\u9ad8\u4ef7\u503c\u7269\u54c1",
+        "Desc": "Summons a detection radar, discovering 1 high-value item every certain amount of time.",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconHex3V2P17.png"
     },
     {
@@ -14,7 +14,7 @@
         "UpgradeInit": null,
         "BuffList": "[702]",
         "Name": "Full Combo",
-        "Desc": "\u6210\u529f\u6293\u53d63\u6b21\u540e\u626b\u63cf\u6293\u53d61\u4e2a\u672a\u88ab\u7535\u78c1\u94fe\u63a5\u7684\u7269\u54c1\uff0c\u6293\u53d6\u7684\u7269\u54c1\u89c6\u4e3a\u76f8\u540c\u79cd\u7c7b",
+        "Desc": "After successfully grabbing 3 items, scan and grab 1 item not electromagnetically linked. All grabbed items count as the same type.",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconHex2.png"
     },
     {
@@ -23,7 +23,7 @@
         "UpgradeInit": null,
         "BuffList": "[701]",
         "Name": "Close Encounter",
-        "Desc": "\u53ec\u5524\u5b87\u5b99\u98de\u789f\u6293\u53d6\u8ddd\u79bb\u6700\u8fd1\u7684\u7269\u54c1\uff0c\u6293\u53d6\u7684\u7269\u54c1\u89c6\u4e3a\u76f8\u540c\u79cd\u7c7b",
+        "Desc": "Summons a UFO to grab the nearest item. All grabbed items count as the same type.",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconHex4.png"
     },
     {
@@ -31,8 +31,8 @@
         "HexId": 4,
         "UpgradeInit": null,
         "BuffList": "[803, 341]",
-        "Name": "\u8f85\u52a9\u6a21\u5f0f",
-        "Desc": "\u6293\u94a9\u73b0\u5728\u4f1a\u663e\u793a\u7784\u51c6\u7ebf\uff0c\u5e76\u53ef\u4ee5\u6293\u53d6\u6240\u6709\u7269\u54c1",
+        "Name": "Support Mode",
+        "Desc": "The hook now shows aiming line and grabs all items on its path.",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconBuff29.png"
     },
     {
@@ -41,7 +41,7 @@
         "UpgradeInit": "[161]",
         "BuffList": "[846]",
         "Name": "Non-oriented Chain - 1",
-        "Desc": "\u5173\u5361\u5185\u6240\u6709\u5f97\u5206\u63d0\u53478%",
+        "Desc": "All points gained in the stage increase by 8%.",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconBuff03.png"
     },
     {
@@ -68,7 +68,7 @@
         "UpgradeInit": null,
         "BuffList": "[806]",
         "Name": "Universal Converter",
-        "Desc": "\u6293\u53d6\u7684\u6240\u6709\u7269\u54c1\u5728\u540c\u7c7b\u70b9\u6570\u5956\u52b1\u4e2d\u90fd\u89c6\u4e3a\u76f8\u540c\u79cd\u7c7b",
+        "Desc": "All grabbed items count as the same type for same-type point rewards.",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconHex4V2P17.png"
     },
     {
@@ -77,7 +77,7 @@
         "UpgradeInit": "[191]",
         "BuffList": "[849]",
         "Name": "Speed Turbine - 1",
-        "Desc": "\u5f53\u524d\u5730\u56fe\u5185\uff0c\u6bcf\u6210\u529f\u6293\u53d6\u4e00\u6b21\u4e2d\u5e45\u63d0\u5347\u94a9\u722a\u901f\u5ea6\uff0c\u6700\u591a\u63d0\u9ad83\u6b21",
+        "Desc": "Moderately increases grapple speed for each successful grab within the current map, up to 3 times.",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconHex6V2P17.png"
     },
     {
@@ -104,7 +104,7 @@
         "UpgradeInit": "[211, 212]",
         "BuffList": "[820, 833, 861]",
         "Name": "Collab Grappling Hook",
-        "Desc": "\u62d3\u5c55\u4e3a3\u4e2a\u8054\u52a8\u6293\u94a9\uff0c\u53ef\u5206\u522b\u6293\u53d6\u7269\u54c1",
+        "Desc": "Expands into 3 collab grappling hooks, each grabbing items independently.",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconHex12.png"
     },
     {
@@ -130,7 +130,7 @@
         "HexId": 12,
         "UpgradeInit": "[221]",
         "BuffList": "[837, 838]",
-        "Name": "\u6293\u53d6\u901f\u5ea6\u63d0\u5347-1",
+        "Name": "Grappling Speed Up - 1",
         "Desc": "Grappling hook's speed slightly increases.",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconBuff30.png"
     },
@@ -185,7 +185,7 @@
         "UpgradeInit": "[261]",
         "BuffList": "[852]",
         "Name": "Let's Discuss the Price - 1",
-        "Desc": "\u83b7\u5f97\u8d44\u6e90\u70b9\u6570\u4f1a\u5728-6%~+12%\u4e4b\u95f4\u6ce2\u52a8",
+        "Desc": "Resource Points earned fluctuate between -6% and +12%",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconBuff06.png"
     },
     {
@@ -239,7 +239,7 @@
         "UpgradeInit": "[361, 362]",
         "BuffList": "[831]",
         "Name": "Electromagnetic Chain Module",
-        "Desc": "\u6bcf\u96947\u79d2\uff0c\u5c06\u6700\u4e0a\u65b9\u76841\u4e2a\u7269\u54c1\u548c\u6700\u4e0b\u65b9\u76842\u4e2a\u7269\u54c1\u94fe\u63a5\uff0c\u6293\u53d6\u4efb\u4e00\u5219\u53ef\u5168\u90e8\u6293\u53d6",
+        "Desc": "Links 1 item at the top with 2 items at the bottom every 7s. Grab any linked item to grab all of them.",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconHex11.png"
     },
     {
@@ -266,7 +266,7 @@
         "UpgradeInit": "[371, 372]",
         "BuffList": "[826, 828, 859]",
         "Name": "Net-Shooting Grappling Hook",
-        "Desc": "\u6293\u94a9\u53d8\u6210\u7f51\uff01\u9996\u6b21\u53d1\u5c04\u8fdb\u5165\u9884\u7784\u72b6\u6001\uff0c\u518d\u6b21\u53d1\u5c04\u5219\u5411\u533a\u57df\u6492\u7f51\uff0c\u6293\u53d6\u533a\u57df\u5185\u7684\u7269\u54c1",
+        "Desc": "The grapple becomes a net! Fire once to enter aiming mode, then fire again to deploy the net and grab all items in the area.",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconHex13.png"
     },
     {
@@ -293,7 +293,7 @@
         "UpgradeInit": "[381, 382]",
         "BuffList": "[832, 858, 860]",
         "Name": "Copycat Module",
-        "Desc": "\u6240\u6709\u7269\u54c1\u7684\u4ef7\u503c\u63d0\u534725%\uff1b\u6293\u53d6\u7279\u5b9a\u7269\u54c1\u540e\uff0c\u670960%\u7684\u6982\u7387\u5728\u7269\u54c1\u539f\u5730\u751f\u6210\u4e00\u4e2a\u590d\u5236\u54c1",
+        "Desc": "Increase all item values by 25%. Upon grabbing specific items, there's a 60% chance to create a duplicate where the original was grabbed.",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconHex14.png"
     },
     {
@@ -319,8 +319,8 @@
         "HexId": 29,
         "UpgradeInit": "[384]",
         "BuffList": "[301]",
-        "Name": "\u98de\u8239\u52a0\u901f-1",
-        "Desc": "\u98de\u8239\u7684\u79fb\u52a8\u901f\u5ea6\u5c0f\u5e45\u63d0\u5347",
+        "Name": "UFO Speed Up - 1",
+        "Desc": "UFO's movement speed slightly increases.",
         "Icon": "Assets/Product/Texture/Image/UiGoldenMiner/UiGoldenMinerIconBuff26.png"
     },
     {

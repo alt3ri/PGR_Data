@@ -129,7 +129,7 @@ function XUiLinkCraftActivityChapterDetail:CloseSkillRewardDetail()
 end 
 
 function XUiLinkCraftActivityChapterDetail:OnBtnEnterClickEvent()
-    XLuaUiManager.Open("UiBattleRoleRoom",self._StageId,self._Control:GetLocalTeam(),BattleRoleRoomProxy)
+    XMVCA.XFuben:OpenUiBattleRoleRoom(self._StageId,self._Control:GetLocalTeam(),BattleRoleRoomProxy)
     -- 需要缓存当前选择的关卡
     self._Control:SetSelectedStageId(self._Id)
 end

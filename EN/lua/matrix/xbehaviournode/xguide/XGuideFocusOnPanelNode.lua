@@ -22,7 +22,10 @@ function XGuideFocusOnPanelNode:InitNodeData()
     local fields = self.Node.Fields.Fields
     
     for _, v in pairs(fields) do
-        if v.FieldName == "EulerAngles" or v.FieldName == "SizeDelta" or v.FieldName == "Offset" then
+        if v.FieldName == "EulerAngles" 
+                or v.FieldName == "SizeDelta" 
+                or v.FieldName == "Offset" 
+                or v.FieldName == "BubblePosOffset" then
             self.Fields[v.FieldName] = v
         else
             self.Fields[v.FieldName] = v.Value
@@ -59,10 +62,17 @@ function XGuideFocusOnPanelNode:OnAwake()
     else
         self.Offset = CS.UnityEngine.Vector2(offset.X, offset.Y)
     end
+
+    self.FocusStyle = self.Fields["FocusStyle"]
+    self.BubbleIndex = self.Fields["BubbleIndex"]
+    self.BubbleTextId = self.Fields["BubbleTextId"]
+    self.BubblePosOffset = self.Fields["BubblePosOffset"]
+    self.ImgIconId = self.Fields["ImgIcon"]
 end
 
 function XGuideFocusOnPanelNode:OnEnter()
-    self.AgentProxy:FocusOn(self.UiName, self.Transform, self.EulerAngles, self.PassEvent, self.SizeDelta, self.Offset)
+    self.AgentProxy:FocusOn(self.UiName, self.Transform, self.EulerAngles, self.PassEvent, self.SizeDelta,
+            self.Offset, self.FocusStyle, self.BubbleIndex, self.BubbleTextId, self.BubblePosOffset, self.ImgIconId)
     self.AgentProxy:NodeBuryingPoint(self.Node.ID)
 end
 

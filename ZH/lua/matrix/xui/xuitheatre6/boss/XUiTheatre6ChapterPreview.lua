@@ -40,10 +40,8 @@ function XUiTheatre6ChapterPreview:OnEnable()
 end
 
 function XUiTheatre6ChapterPreview:OnBtnStartClick()
-    local control = self._Control
-    self:Close()
-    control:SetAnnoFinish()
-    control:MoveNext()
+    self._Control:SetAnnoFinish()
+    self._Control:MoveNext()
 end
 
 return XUiTheatre6ChapterPreview

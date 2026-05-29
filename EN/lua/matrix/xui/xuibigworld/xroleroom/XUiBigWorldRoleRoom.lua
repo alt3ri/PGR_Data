@@ -1,4 +1,5 @@
 local XUiButtonLongClick = require("XUi/XUiCommon/XUiButtonLongClick")
+local XUiModelDisplayHelper = require("XUi/XUiCommon/XUiModelDisplay/XUiModelDisplayHelper")
 ---@class XUiBigWorldRoleRoom : XLuaUi
 ---@field GameObject UnityEngine.GameObject
 ---@field Transform UnityEngine.Transform
@@ -23,6 +24,11 @@ local VirtualCamera = {
 function XUiBigWorldRoleRoom:OnAwake()
     self:InitUi()
     self:InitCb()
+    XEventManager.AddEventListener(
+        XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_COMMANDER_DIY_MODEL_UPDATE,
+        self.OnCommanderDiyModelUpdate,
+        self
+    )
 end
 
 function XUiBigWorldRoleRoom:OnStart(teamIndex, proxy)
@@ -33,6 +39,23 @@ end
 
 function XUiBigWorldRoleRoom:OnEnable()
     self:PlayEnableAnimation()
+    self:UpdateCommandant()
+    self:RefreshExpression()
+end
+
+function XUiBigWorldRoleRoom:RefreshExpression()
+    if not self._Proxy or not self._DisplayController then
+        return
+    end
+    for index = 1, MaxTeamPos do
+        local entityId = self._EntityIds[index]
+        if XTool.IsNumberValid(entityId) and not self._Proxy:IsCommandant(entityId) then
+            local modelId = self._Proxy:GetUiModelId(entityId)
+            local fashionId = self._Proxy:GetFashionId(entityId)
+            local animaName = self._Proxy:GetDefaultAnimName(entityId)
+            XUiModelDisplayHelper.PlayExpression(self._DisplayController, modelId, fashionId, animaName)
+        end
+    end
 end
 
 function XUiBigWorldRoleRoom:OnDisable()
@@ -46,7 +69,11 @@ function XUiBigWorldRoleRoom:OnDestroy()
     self._LongClick1:Destroy()
     self._LongClick2:Destroy()
     self._LongClick3:Destroy()
-
+    XEventManager.RemoveEventListener(
+        XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_COMMANDER_DIY_MODEL_UPDATE,
+        self.OnCommanderDiyModelUpdate,
+        self
+    )
 end
 
 function XUiBigWorldRoleRoom:InitUi()
@@ -198,6 +225,39 @@ function XUiBigWorldRoleRoom:HideModel(index)
     self._DisplayController:SetModelActive(modelId, false)
 end
 
+function XUiBigWorldRoleRoom:UpdateCommandant()
+    if self.isCommandantModelDirty ~= true then
+        return
+    end
+    if not self._Proxy or not self._DisplayController then
+        return
+    end
+    self.isCommandantModelDirty = false
+    for index = 1, MaxTeamPos do
+        local entityId = self._EntityIds[index]
+        if XTool.IsNumberValid(entityId) and self._Proxy:IsCommandant(entityId) then
+            self:ForceUpdateCommandant(index, entityId)
+            break
+        end
+    end
+end
+
+function XUiBigWorldRoleRoom:ForceUpdateCommandant(index, entityId)
+    local isValid = XTool.IsNumberValid(entityId)
+    if isValid == false then
+        return
+    end
+    local display = self._DisplayController
+    local modelId = self._Proxy:GetUiModelId(entityId)
+    if XTool.IsNumberValid(self.effectTimerId) then
+        XMVCA.XBigWorldUI:SetMaskActive(false)
+        XScheduleManager.UnSchedule(self.effectTimerId)
+        self.effectTimerId = 0
+    end
+    XMVCA.XBigWorldCommanderDIY:ForceUpdateCommandant(display, self._NearCamera, self._ParentList[index])
+    display:GetModelObject(modelId, XEnumConst.PlayerFashion.PartType.Fashion)
+end
+
 function XUiBigWorldRoleRoom:UpdateSingleModel(index, entityId)
     local isValid = XTool.IsNumberValid(entityId)
     self["ImgAdd" .. index].gameObject:SetActiveEx(not isValid)
@@ -231,6 +291,12 @@ function XUiBigWorldRoleRoom:UpdateSingleModel(index, entityId)
         end
         local animaName = self._Proxy:GetDefaultAnimName(entityId)
         display:PlayAnimation(modelId, animaName)
+        --非指挥官根据动作摆放表情
+        if self._Proxy:IsCommandant(entityId) then
+
+        else
+            XUiModelDisplayHelper.PlayExpression(display, modelId, fashionId, animaName)
+        end
     end
     if modelGo and isPlayEffect then
         --比较无语的解法
@@ -511,7 +577,8 @@ function XUiBigWorldRoleRoom:PlayChangeRoleEffect(index, isPlay, modelGo)
     if isPlay then
         effect.gameObject:SetActiveEx(false)
         XMVCA.XBigWorldUI:SetMaskActive(true)
-        XScheduleManager.ScheduleOnce(function()
+        self.effectTimerId = XScheduleManager.ScheduleOnce(function()
+            self.effectTimerId = 0
             XMVCA.XBigWorldUI:SetMaskActive(false)
             effect.gameObject:SetActiveEx(true)
             modelGo.transform:SetLocalPosition(0, 0, 0)
@@ -581,4 +648,8 @@ function XUiBigWorldRoleRoom:GetEntityIndex(entityId)
         end
     end
     return -1
+end
+
+function XUiBigWorldRoleRoom:OnCommanderDiyModelUpdate()
+    self.isCommandantModelDirty = true
 end

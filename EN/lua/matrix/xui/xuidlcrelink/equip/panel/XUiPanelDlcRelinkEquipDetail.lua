@@ -13,13 +13,22 @@ function XUiPanelDlcRelinkEquipDetail:OnStart(isNotSelf)
     self.GridAttributeGroup.gameObject:SetActiveEx(false)
     self.GridNone.gameObject:SetActiveEx(false)
     self.BtnLock:AddEventListener(handler(self, self.OnBtnLockClick))
+    if self.BtnDiscard then
+        self.BtnDiscard:AddEventListener(handler(self, self.OnBtnDiscardClick), true, true, 0.5)
+    end
 
     if self.BtnDescFold then
         self.BtnDescFold:AddEventListener(handler(self, self.OnBtnDescFold))
     end
 
-    if self.PanelDetail then
-        self.PanelDetail.gameObject:SetActiveEx(false)
+    if self.AttributeDetail then
+        self.AttributeDetail.gameObject:SetActiveEx(false)
+    end
+    if self.PanelBubbleDetail then
+        self.PanelBubbleDetail.gameObject:SetActiveEx(false)
+    end
+    if self.BtnDetailClose then
+        self.BtnDetailClose:AddEventListener(handler(self, self.OnBtnDetailCloseClick))
     end
 
     self.IsNotSelf = isNotSelf or false
@@ -50,6 +59,7 @@ function XUiPanelDlcRelinkEquipDetail:Refresh(equipUid)
     self.EquipUid = equipUid
     self:RefreshEquipInfo()
     self:RefreshIsLocked()
+    self:RefreshIsDiscard()
     self:RefreshEquipAttributes()
 end
 
@@ -93,6 +103,19 @@ function XUiPanelDlcRelinkEquipDetail:RefreshIsLocked()
     self.BtnLock.gameObject:SetActiveEx(true)
     local isLocked = self._Control:GetEquipIsLockedByEquipUid(self.EquipUid, self.IsNotSelf)
     self.BtnLock:SetButtonState(isLocked and CS.UiButtonState.Select or CS.UiButtonState.Normal)
+end
+
+function XUiPanelDlcRelinkEquipDetail:RefreshIsDiscard()
+    if not self.BtnDiscard then
+        return
+    end
+    if self.IsNotSelf or not XTool.IsNumberValid(self.EquipUid) then
+        self.BtnDiscard.gameObject:SetActiveEx(false)
+        return
+    end
+    self.BtnDiscard.gameObject:SetActiveEx(true)
+    local isDiscard = self._Control:GetEquipIsDiscardedByEquipUid(self.EquipUid, self.IsNotSelf)
+    self.BtnDiscard:SetButtonState(isDiscard and CS.UiButtonState.Select or CS.UiButtonState.Normal)
 end
 
 function XUiPanelDlcRelinkEquipDetail:RefreshEquipAttributes()
@@ -216,8 +239,7 @@ function XUiPanelDlcRelinkEquipDetail:EnsureMainAttrNode(isSkill)
     local field = isSkill and "MainSkillAttribute" or "MainAttribute"
     if not self[field] then
         local go = XUiHelper.Instantiate(self.GridAttribute, self.PanelGroup)
-        
-        local detailGo = self.PanelDetail and XUiHelper.Instantiate(self.PanelDetail, self.PanelGroup) or nil
+        local detailGo = self.AttributeDetail and XUiHelper.Instantiate(self.AttributeDetail, self.PanelGroup) or nil
         self[field] = XUiGridDlcRelinkEquipAttribute.New(go, self, detailGo)
     end
     local node = self[field]
@@ -253,7 +275,6 @@ function XUiPanelDlcRelinkEquipDetail:RefreshDeputyAttributes(index, attributes)
 
     grid:GetObject("GridAttribute1").gameObject:SetActiveEx(attrCount >= 1)
     local panelDetail1 = grid:GetObject("PanelDetail1", false)
-
     if panelDetail1 then
         panelDetail1.gameObject:SetActiveEx(attrCount >= 1)
     end
@@ -261,9 +282,7 @@ function XUiPanelDlcRelinkEquipDetail:RefreshDeputyAttributes(index, attributes)
     local hasSecond = attrCount >= 2
     grid:GetObject("Line").gameObject:SetActiveEx(hasSecond)
     grid:GetObject("GridAttribute2").gameObject:SetActiveEx(hasSecond)
-
     local panelDetail2 = grid:GetObject("PanelDetail2", false)
-
     if panelDetail2 then
         panelDetail2.gameObject:SetActiveEx(hasSecond)
     end
@@ -310,9 +329,20 @@ function XUiPanelDlcRelinkEquipDetail:RefreshBlessingTips()
             end
             self._PanelTipObj.TipsNotEffective.gameObject:SetActiveEx(not isOccupationTypeSame)
             self._PanelTipObj.TipsInBlessing.gameObject:SetActiveEx(isOccupationTypeSame)
+            self._PanelTipObj.BtnNoEffective:AddEventListener(function()
+                self:OnShowPanelDetail(self.PanelTips.transform, self._Control:GetClientConfig("EquipSlotNotEffectiveDesc"))
+            end)
             self.PanelTips.transform:SetAsLastSibling()
         end
     end
+end
+
+---@param attribute XDlcRelinkEquipAttribute
+function XUiPanelDlcRelinkEquipDetail:CheckEquipFactorIsUnlock(attribute)
+    if self.Parent.CheckEquipFactorIsUnlock then
+        return self.Parent:CheckEquipFactorIsUnlock(attribute)
+    end
+    return true, ""
 end
 
 -- 锁定/解锁装备
@@ -327,12 +357,50 @@ function XUiPanelDlcRelinkEquipDetail:OnBtnLockClick()
     local isLocked = self._Control:GetEquipIsLockedByEquipUid(self.EquipUid)
     local callback = function()
         self:RefreshIsLocked()
+        self:RefreshIsDiscard()
     end
 
     if isLocked then
         self._Control:RequestUnlockEquip(self.EquipUid, callback)
     else
-        self._Control:RequestLockEquip(self.EquipUid, callback)
+        local isDiscarded = self._Control:GetEquipIsDiscardedByEquipUid(self.EquipUid)
+        self._Control:RequestLockEquip(self.EquipUid, function()
+            callback()
+            -- 若之前弃置已选中，弹出提示
+            if isDiscarded then
+                self._Control:OpenCommonLeftTipDialog(self._Control:GetClientConfig("EquipCancelDiscardTips"))
+            end
+        end)
+    end
+end
+
+-- 弃置/取消弃置装备
+function XUiPanelDlcRelinkEquipDetail:OnBtnDiscardClick()
+    if self.IsNotSelf then
+        return
+    end
+    if not XTool.IsNumberValid(self.EquipUid) then
+        return
+    end
+
+    local isDiscard = self._Control:GetEquipIsDiscardedByEquipUid(self.EquipUid)
+    local callback = function()
+        self:RefreshIsDiscard()
+        self:RefreshIsLocked()
+    end
+
+    if isDiscard then
+        self._Control:RequestEquipDiscardSign(self.EquipUid, false, callback)
+    else
+        local isLocked = self._Control:GetEquipIsLockedByEquipUid(self.EquipUid)
+        self._Control:RequestEquipDiscardSign(self.EquipUid, true, function()
+            callback()
+            if isLocked then
+                self._Control:OpenCommonLeftTipDialog(self._Control:GetClientConfig("EquipUnlockAndDiscardTips"))
+            else
+                self._Control:OpenCommonLeftTipDialog(self._Control:GetClientConfig("EquipSetDiscardTips"))
+            end
+        end)
     end
 end
 
@@ -448,9 +516,26 @@ function XUiPanelDlcRelinkEquipDetail:OnBtnDescFold()
     -- 刷新词条详情显示情况
     self:RefreshEquipAttributes()
     self:RefreshFoldIcon()
-    
+
     self._Control:SetEquipAttrDescIsDetail(self._IsShowDetail)
 end
 
+-- 显示标签详情
+---@param targetTransform UnityEngine.RectTransform
+function XUiPanelDlcRelinkEquipDetail:OnShowPanelDetail(targetTransform, txtDesc)
+    self.TxtDesc.text = txtDesc
+    -- 计算目标格子左下角的世界坐标
+    local rect = targetTransform.rect
+    local tempVec3 = CS.UnityEngine.Vector3(rect.xMin, rect.yMin, 0)
+    local bottomLeftWorld = targetTransform:TransformPoint(tempVec3)
+    -- 将世界坐标转换为PanelBubbleDetail的局部坐标
+    local localPos = self.PanelBubbleDetail.transform:InverseTransformPoint(bottomLeftWorld)
+    self.TxtDesc.transform.parent.anchoredPosition = CS.UnityEngine.Vector2(localPos.x, localPos.y)
+    self.PanelBubbleDetail.gameObject:SetActiveEx(true)
+end
+
+function XUiPanelDlcRelinkEquipDetail:OnBtnDetailCloseClick()
+    self.PanelBubbleDetail.gameObject:SetActiveEx(false)
+end
 
 return XUiPanelDlcRelinkEquipDetail

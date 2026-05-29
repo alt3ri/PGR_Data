@@ -207,7 +207,7 @@ function XUiFubenRepeatchallenge:OnBtnEnterClick()
     local stageId = XDataCenter.FubenRepeatChallengeManager.GetStageId()
     local stageCfg = XDataCenter.FubenManager.GetStageCfg(stageId)
     if XDataCenter.FubenManager.CheckPreFight(stageCfg, self.ChallengeCount) then
-        XLuaUiManager.Open("UiBattleRoleRoom", stageId, nil, {
+        XMVCA.XFuben:OpenUiBattleRoleRoom(stageId, nil, {
             EnterFight = function(proxy, team, stageId, challengeCount, isAssist)
                 XDataCenter.FubenDailyManager.SetFubenDailyRecord(stageId)
                 proxy.Super.EnterFight(proxy, team, stageId, challengeCount, isAssist)

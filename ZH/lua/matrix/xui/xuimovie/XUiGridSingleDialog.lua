@@ -35,11 +35,21 @@ function XUiGridSingleDialog:Refresh(dialogContent, isCenter, color, duration, t
 
     if duration then
         typeWriter.Duration = duration ~= 0 and duration or stringUtf8Len(dialogContent) * XMovieConfigs.TYPE_WRITER_SPEED
-        typeWriter:Play()
+        self._PendingPlay = true
+    else
+        self._PendingPlay = false
     end
 
     if typeWriterCb then
         typeWriter.CompletedHandle = typeWriterCb
+    end
+end
+
+-- 由调用方在布局稳定后触发，避免 OnEnable 后下一帧的二次 ParseVerts/重排导致文本视觉跳变
+function XUiGridSingleDialog:PlayTypeWriter()
+    if self._PendingPlay then
+        self._PendingPlay = false
+        self.TypeWriter:Play()
     end
 end
 
@@ -51,6 +61,8 @@ function XUiGridSingleDialog:Reset()
     local typeWriter = self.TypeWriter
     typeWriter:Stop()
     typeWriter.CompletedHandle = nil
+
+    self._PendingPlay = false
 end
 
 function XUiGridSingleDialog:StopTypeWriter()

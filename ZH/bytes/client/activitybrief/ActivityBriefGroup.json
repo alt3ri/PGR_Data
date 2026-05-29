@@ -2300,8 +2300,8 @@
         "TagParam": null,
         "ActivityRewardIds": null,
         "RewardShowTimeIds": null,
-        "ConstShowRewardId": null,
-        "ConstShowRewardClaimCondition": null
+        "ConstShowRewardId": 7000235.0,
+        "ConstShowRewardClaimCondition": 866477.0
     },
     {
         "Id": 136,
@@ -2473,7 +2473,7 @@
         "BtnInitMethodName": null,
         "IsRemindWhenOpen": 1.0,
         "RemindPriority": 9.0,
-        "RedConditions": null,
+        "RedConditions": "['CONDITION_GAMECOLLECTION_CAN_REWARD_OR_BUY']",
         "RedParam": null,
         "TagCondition": null,
         "TagOffset": null,
@@ -2491,7 +2491,7 @@
         "BtnInitMethodName": null,
         "IsRemindWhenOpen": 1.0,
         "RemindPriority": 11.0,
-        "RedConditions": null,
+        "RedConditions": "['CONDITION_THEATRE6_MAIN']",
         "RedParam": null,
         "TagCondition": null,
         "TagOffset": null,

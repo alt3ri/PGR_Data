@@ -3,7 +3,6 @@
 local XUiLottoCommonDrawShow = XLuaUiManager.Register(XLuaUi, 'UiLottoCommonDrawShow')
 
 local MAX_DRAW_COUNT = 10
-local COMPlETE_CUE_ID = CS.XGame.ClientConfig:GetInt("DrawCompleteCueId")
 local DRAW_MUSIC_VOLUME_PERCENT = CS.XGame.ClientConfig:GetInt("DrawMusicVolumePercent")
 
 function XUiLottoCommonDrawShow:OnStart(drawInfo,rewardList,background)
@@ -46,9 +45,6 @@ function XUiLottoCommonDrawShow:InitSceneObject()
     ---@type XTimelineSlider
     self.TimelineSlider = root:FindTransform("Slider"):GetComponent(typeof(CS.XTimelineSlider))
     self.TimelineSlider.CompleteAction = function(slider)
-        if COMPlETE_CUE_ID and COMPlETE_CUE_ID ~= 0 then
-            XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, COMPlETE_CUE_ID)
-        end
         if not isComplete then
             isComplete = true
             if #self.RewardList > 1 then

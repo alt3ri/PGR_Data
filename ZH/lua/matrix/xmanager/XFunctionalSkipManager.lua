@@ -2376,16 +2376,11 @@ XFunctionalSkipManagerCreator = function()
     
     -- 进入空花
     function XFunctionalSkipManager.SkipToBigWorld(list)
-        local params = list.CustomParams
-        local worldId, levelId = 0, 0
-        local enterOperateType, enterOperateParam
-        if not XTool.IsTableEmpty(params) then
-            worldId = params[1]
-            levelId = params[2]
-            enterOperateType = params[3]
-            enterOperateParam = params[4]
+        if XTool.IsTableEmpty(list.CustomParams) then
+            XMVCA.XBigWorldGamePlay:EnterWorld()
+        else
+            XMVCA.XBigWorldGamePlay:EnterWorld(table.unpack(list.CustomParams))
         end
-        XMVCA.XBigWorldGamePlay:EnterWorld(worldId, levelId, enterOperateType, enterOperateParam)
     end
     
     -- 数织小游戏

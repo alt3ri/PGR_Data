@@ -24,6 +24,7 @@ function XMovieActionSpineActorShift:OnInit(actionData)
 end
 
 function XMovieActionSpineActorShift:OnRunning()
+    ---@type XUiGridMovieSpineActor
     local actor = self.UiRoot:GetSpineActor(self.ActorIndex)
     local startPos = actor:GetPos()
     local transPos = self.TargetPos - startPos

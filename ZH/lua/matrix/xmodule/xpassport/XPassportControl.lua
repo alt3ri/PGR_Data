@@ -78,25 +78,16 @@ function XPassportControl:GetPassportActivityTaskIdList()
         table.insert(result, id)
     end
 
-    local function showTask(id)
-        local data = XDataCenter.TaskManager.GetTaskDataById(id)
-        if not data then return false end
-        if not data.InitializedByServer then return false end
-
-        local state = data.State
-        local taskState = XDataCenter.TaskManager.TaskState
-        if state == taskState.InActive then return false end
-        if state == taskState.Standby then return false end
-        if state == taskState.Invalid then return false end
-        return true
+    if self._Model:IsActivateRegressionTask() then
+        for _, id in ipairs(self._Model:GetPassportRegressionTasks()) do
+            table.insert(result, id)
+        end
     end
 
-    for _, id in ipairs(self._Model:GetPassportRegressionTasks()) do
-        if showTask(id) then table.insert(result, id) end
-    end
-
-    for _, id in ipairs(self._Model:GetPassportNewbieTasks()) do
-        if showTask(id) then table.insert(result, id) end
+    if self._Model:IsActivateNewbieTask() then
+        for _, id in ipairs(self._Model:GetPassportNewbieTasks()) do
+            table.insert(result, id)
+        end
     end
 
     return result
@@ -508,7 +499,7 @@ function XPassportControl:OpenMainUi()
     if not self:CheckActivityIsOpen(true) then
         return
     end
-    XLuaUiManager.Open("UiPassport")
+    XLuaUiManager.Open("UiPassport", { WithStartEnableAnimation = true })
 end
 ---------------------活动入口 end-----------------------
 
@@ -643,6 +634,16 @@ function XPassportControl:GetPassportAchievedTaskIdList(taskType)
     end
     return achievedTaskIdList
 end
+
+-- 是否有任意页签存在已达成待领取的任务（与 FinishAllTaskRequest 的范围一致）
+function XPassportControl:HasAchievedPassportTask()
+    for _, taskType in pairs(XEnumConst.PASSPORT.TASK_TYPE) do
+        if not XTool.IsTableEmpty(self:GetPassportAchievedTaskIdList(taskType)) then
+            return true
+        end
+    end
+    return false
+end
 ---------------------任务 end--------------------
 
 ---------------------奖励 begin-----------------------
@@ -650,6 +651,25 @@ end
 function XPassportControl:ClearCookieAutoGetTaskRewardList()
     local key = self._Model:GetAutoGetTaskRewardListCookieKey()
     XSaveTool.RemoveData(key)
+end
+
+-- 是否有可领取的通行证奖励（未领取且满足等级条件）
+function XPassportControl:HasClaimablePassportReward()
+    local activityId = self:GetDefaultActivityId()
+    local levelIdList = self:GetPassportLevelIdListByRewardType(activityId, XEnumConst.PASSPORT.REWARD_TYPE.NORMAL)
+    local typeInfoIdList = self:GetPassportActivityIdToTypeInfoIdList()
+    for _, levelId in ipairs(levelIdList) do
+        local level = self:GetPassportLevel(levelId)
+        for _, typeInfoId in ipairs(typeInfoIdList) do
+            local passportRewardId = self:GetRewardIdByPassportIdAndLevel(typeInfoId, level)
+            if XTool.IsNumberValid(passportRewardId)
+                and not self:IsReceiveReward(typeInfoId, passportRewardId)
+                and self:IsCanReceiveReward(typeInfoId, passportRewardId) then
+                return true
+            end
+        end
+    end
+    return false
 end
 
 ---------------------奖励 end-----------------------

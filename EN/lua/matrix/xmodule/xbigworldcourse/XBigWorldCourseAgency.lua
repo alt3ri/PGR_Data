@@ -85,7 +85,21 @@ end
 
 function XBigWorldCourseAgency:CheckVersionAchieved(versionId)
     return self:CheckVersionTaskAchieved(versionId) or self:CheckVersionExploreAchieved(versionId) or
-               self:CheckVersionNewCore(versionId)
+               self:CheckVersionNewCore(versionId) or self:CheckVersionNew(versionId)
+end
+
+function XBigWorldCourseAgency:CheckVersionsAchievedWithoutVersion(withoutVersionId)
+    local versionDataMap = self._Model:GetVersionDataMap()
+
+    if not XTool.IsTableEmpty(versionDataMap) then
+        for versionId, _ in pairs(versionDataMap) do
+            if versionId ~= withoutVersionId and self:CheckVersionIdValid(versionId) and self:CheckVersionAchieved(versionId) then
+                return true
+            end
+        end
+    end
+
+    return false
 end
 
 function XBigWorldCourseAgency:CheckAllTaskAchieved()
@@ -341,6 +355,10 @@ function XBigWorldCourseAgency:CheckAllNewCore()
     end
 
     return false
+end
+
+function XBigWorldCourseAgency:CheckVersionNew(versionId)
+    return not self._Model:GetVersionRecord(versionId)
 end
 
 function XBigWorldCourseAgency:CheckVersionNewCore(versionId)

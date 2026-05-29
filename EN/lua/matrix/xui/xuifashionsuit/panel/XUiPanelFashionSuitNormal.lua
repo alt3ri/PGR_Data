@@ -7,6 +7,8 @@ function XUiPanelFashionSuitNormal:OnStart(suitId)
     ---@type XUiGridCommon[]
     self._RewardGrids = {}
     self._Dots = {}
+    ---@type XUiGridFashionSuitFashion
+    self._SingleFashionGrid = nil
     self._SelectIndex = 0
     self._OldSuit = false
     self:SetSuitId(suitId)
@@ -29,16 +31,22 @@ function XUiPanelFashionSuitNormal:SpecialSuitInit(suitId)
 end
 
 function XUiPanelFashionSuitNormal:OnEnable()
-    self:PlayAnimationWithMask("AnimEnable")
+    self:PlayAnimation("AnimEnable")
     self.GridFashion.gameObject:SetActiveEx(false)
+    self:ClearFashionGrids()
     if not self._OldSuit then
         --延迟显示动态表
         XScheduleManager.ScheduleOnce(function()
+            if XTool.UObjIsNil(self.GameObject) then return end
             self:ShowDynamicTable()
-        end, 2300)
+        end, 1800)
     else
         self:ShowDynamicTable()
     end
+end
+
+function XUiPanelFashionSuitNormal:OnDestroy()
+    self:ClearFashionGrids()
 end
 
 function XUiPanelFashionSuitNormal:SetSuitId(id)
@@ -67,8 +75,6 @@ function XUiPanelFashionSuitNormal:SetSuitId(id)
     if uiConfig.SuitBackground then
         self.RImgBg:SetRawImage(uiConfig.SuitBackground)
     end
-
-  
 end
 
 function XUiPanelFashionSuitNormal:ShowDynamicTable()
@@ -79,10 +85,10 @@ function XUiPanelFashionSuitNormal:ShowDynamicTable()
         self.PanelFashionListBig.gameObject:SetActiveEx(false)
         self.PanelDot.gameObject:SetActiveEx(false)
         ---@type XUiGridFashionSuitFashion
-        local fashionGrid = require("XUi/XUiFashionSuit/Grid/XUiGridFashionSuitFashion").New(self.GridFashion, self)
-        fashionGrid:Refresh(self._Id, self._FashionIds[1])
-        fashionGrid:UpdateSelect(true)
-        fashionGrid:AddClickEvt()
+        self._SingleFashionGrid = require("XUi/XUiFashionSuit/Grid/XUiGridFashionSuitFashion").New(self.GridFashion, self)
+        self._SingleFashionGrid:AddClickEvt()
+        self._SingleFashionGrid:Refresh(self._Id, self._FashionIds[1])
+        self._SingleFashionGrid:UpdateSelect(true)
     elseif count >= 2 then
         --self:SetAutoTweenToIndex()
         local list = count == 2 and self.PanelFashionListSmall or self.PanelFashionListBig
@@ -141,7 +147,6 @@ function XUiPanelFashionSuitNormal:UpdateView()
             grid.BtnRewardGain.gameObject:SetActiveEx(bo)
         end
     else
-
         self.Grid256New.gameObject:SetActiveEx(false)
         self.PanelReward.gameObject:SetActiveEx(false)
         self.PanelTips.gameObject:SetActiveEx(true)
@@ -184,6 +189,36 @@ function XUiPanelFashionSuitNormal:GainReward()
     self._Control:RequestGetSuitReward(self._Id, function()
         self:UpdateView()
     end)
+end
+
+function XUiPanelFashionSuitNormal:ClearFashionGrids()
+    if self._SingleFashionGrid then
+        self:RemoveChildNode(self._SingleFashionGrid)
+        self:ReleaseFashionGrid(self._SingleFashionGrid)
+        self._SingleFashionGrid = nil
+    end
+
+    if self.DynamicTable then
+        local grids = self.DynamicTable:GetGrids()
+        for _, grid in pairs(grids or {}) do
+            self:RemoveChildNode(grid)
+            self:ReleaseFashionGrid(grid)
+        end
+        self.DynamicTable:Clear()
+        self.DynamicTable = nil
+    end
+
+    self._Dots = {}
+end
+
+---@param grid XUiGridFashionSuitFashion
+function XUiPanelFashionSuitNormal:ReleaseFashionGrid(grid)
+    if not grid then
+        return
+    end
+
+    grid:OnDestroyUi()
+    grid:Release()
 end
 
 return XUiPanelFashionSuitNormal

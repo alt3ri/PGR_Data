@@ -23,7 +23,7 @@ function XBuffScript10252150:OnLuaAffixCritDamage(eventArgs)
     if eventArgs._launcherUUID ~= self._npcUUID then return end
     if self.SkillChanceCheck == 0 then
         self.Count = self.Count + 1
-        --self:LogError(".....抓到我方暴击，暴击方为"..self._npcUUID)
+        -- self:LogError(".....抓到我方暴击，暴击方为"..self._npcUUID)
         self.SkillChanceCheck = 1
         --我槽这通知居然是一段伤害通知一次，这么变态
         --加个检测限制下每次技能跟至多触发一次暴击通知

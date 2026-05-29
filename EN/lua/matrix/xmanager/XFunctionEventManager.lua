@@ -31,6 +31,7 @@ XFunctionEventManagerCreator = function()
             XEventManager.AddEventListener(XEventId.EVENT_REVIEW_ACTIVITY_HIT_FACE_END, XFunctionEventManager.OnReviewEnd)
             XEventManager.AddEventListener(XEventId.EVENT_WEB_RECHARGE_SUCCESS, XFunctionEventManager.OnWebPay)
             XEventManager.AddEventListener(XEventId.EVENT_WEB_RECHARGE_SUCCESS_END, XFunctionEventManager.OnWebPayEnd)
+            XEventManager.AddEventListener(XEventId.EVENT_LIFE_TREE_GUIDE_END, XFunctionEventManager.OnLifeTreeGuideEnd)
         end)
         DisableFunction = XFunctionEventManager.CheckFuncDisable()
     end
@@ -124,6 +125,8 @@ XFunctionEventManagerCreator = function()
         elseif XDataCenter.ItemManager.CheckAutoGiftRewardShow() then -- 自开型礼包弹窗
             FunctionState = FunctionEvenState.PLAYING    
         elseif InMainUi and XMVCA.XRadioSign:Popup() then    -- 空花1.5预热活动
+            FunctionState = FunctionEvenState.PLAYING
+        elseif InMainUi and XMVCA.XLifeTree:CheckPlayGuide() then -- 生命树图鉴引导
             FunctionState = FunctionEvenState.PLAYING
         end
 
@@ -223,6 +226,11 @@ XFunctionEventManagerCreator = function()
     function XFunctionEventManager.OnWebPayEnd()
         FunctionState = FunctionEvenState.IDLE
         XFunctionEventManager.OnFunctionEventValueChange()
+    end
+
+    -- 生命树图鉴引导结束
+    function XFunctionEventManager.OnLifeTreeGuideEnd()
+        FunctionState = FunctionEvenState.IDLE
     end
 
     function XFunctionEventManager.IsPlaying()

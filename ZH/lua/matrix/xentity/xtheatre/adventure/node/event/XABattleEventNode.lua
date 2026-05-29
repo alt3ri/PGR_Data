@@ -6,8 +6,8 @@ function XABattleEventNode:Ctor()
 end
 
 function XABattleEventNode:RequestTriggerNode(callback, optionIndex)
-    XLuaUiManager.Open("UiBattleRoleRoom"
-        , self.EventConfig.StageId
+    XMVCA.XFuben:OpenUiBattleRoleRoom(
+        self.EventConfig.StageId
         , XDataCenter.TheatreManager.GetCurrentAdventureManager():GetSingleTeam()
         , require("XUi/XUiTheatre/XUiTheatreBattleRoleRoom"))
 end

@@ -75,7 +75,7 @@ function XUiCharacterTowerPlotDetail:OnBtnEnterFightClick()
         return
     end
     self:Hide()
-    XLuaUiManager.Open("UiBattleRoleRoom", self.StageId)
+    XMVCA.XFuben:OpenUiBattleRoleRoom(self.StageId)
 end
 
 return XUiCharacterTowerPlotDetail

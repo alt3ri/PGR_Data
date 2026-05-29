@@ -1,6 +1,6 @@
-local XUiGridStageStar = require("XUi/XUiFubenMainLineDetail/XUiGridStageStar")
-local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
-local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local XUiGridStageStar = require("XUi/XUiFubenMainLineDetail/XUiGridStageStar")
+local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 
 local XUiMemorySaveDetail = XLuaUiManager.Register(XLuaUi, "UiMemorySaveDetail")
 
@@ -91,7 +91,7 @@ function XUiMemorySaveDetail:OnBtnEnterClick()
         return
     end
     self.RootUi:OnHideDetailCallBack()
-    XLuaUiManager.Open("UiBattleRoleRoom", self.Stage.StageId, nil, {
+    XMVCA.XFuben:OpenUiBattleRoleRoom(self.Stage.StageId, nil, {
         OnNotify = function(proxy, evt)
             if evt == XEventId.EVENT_ACTIVITY_ON_RESET then
                 XDataCenter.MemorySaveManager.OnActivityEnd()

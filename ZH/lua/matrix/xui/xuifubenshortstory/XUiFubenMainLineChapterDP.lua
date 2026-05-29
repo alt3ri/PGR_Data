@@ -188,7 +188,7 @@ function XUiFubenMainLineChapterDP:EnterFight(stage)
         team:UpdateEntityIds(XTool.Clone(stage.RobotId))
         proxy = require("XUi/XUiFubenShortStory/BattleRole/XUiShortStoryBattleRoleRoom")
     end
-    XLuaUiManager.Open("UiBattleRoleRoom", stage.StageId, team, proxy)
+    XMVCA.XFuben:OpenUiBattleRoleRoom(stage.StageId, team, proxy)
 end
 
 -- 是否显示红点

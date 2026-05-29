@@ -17,6 +17,11 @@ function XBigWorldServiceAgency:OnInit()
         Expensive = 1,
         Special = 2,
     }
+    self.RewardDisplayDataType = {
+        Template = 1,
+        RewardGoods = 2,
+        Reward = 3,
+    }
 
     self._RewardTypesWithoutCount = false
 end
@@ -82,14 +87,20 @@ function XBigWorldServiceAgency:GetDlcRewardGoodsTemplate(rewardSubId, noTip)
     return self._Model:GetDlcRewardGoodsTemplate(rewardSubId, noTip)
 end
 
-function XBigWorldServiceAgency:GetRewardGoodDetailsTemplate(rewardGoodsId, noTip)
-    return self._Model:GetRewardGoodDetailsTemplate(rewardGoodsId, noTip)
+function XBigWorldServiceAgency:GetRewardGoodDetailsTemplate(id, noTip)
+    return self._Model:GetRewardGoodDetailsTemplate(id, noTip)
 end
 
-function XBigWorldServiceAgency:GetRewardGoodsDisplayType(rewardGoodsId, noTip)
-    local template = self:GetRewardGoodDetailsTemplate(rewardGoodsId, noTip)
+function XBigWorldServiceAgency:GetRewardGoodsDisplayType(id, noTip)
+    local template = self:GetRewardGoodDetailsTemplate(id, noTip)
 
     return template and template.DisplayType or self.RewardDisplayType.Normal
+end
+
+function XBigWorldServiceAgency:GetRewardGoodsDisplayDataType(id, noTip)
+    local template = self:GetRewardGoodDetailsTemplate(id, noTip)
+
+    return template and template.DataType or self.RewardDisplayDataType.Template
 end
 
 function XBigWorldServiceAgency:GetDlcRewardTemplate(rewardId, noTip)
@@ -138,7 +149,7 @@ end
 
 function XBigWorldServiceAgency:GetNarrativeAlignment(id)
     local template = self._Model:GetNarrativeTextTemplate(id)
-    return CS.UnityEngine.TextAnchor.__CastFrom(template and tonumber(template.Alignment) or 0)
+    return CS.UnityEngine.TextAnchor.__CastFrom(template and template.Alignment or 0)
 end
 
 function XBigWorldServiceAgency:GetNarrativeContent(id)
@@ -400,6 +411,11 @@ function XBigWorldServiceAgency:GetTaskDataByTaskId(taskId)
     return XDataCenter.TaskManager.GetTaskDataById(taskId)
 end
 
+---@return XTaskData[]
+function XBigWorldServiceAgency:GetTimeLimitTaskListByGroupId(taskGroupId, isSort, isIgnoreTimeId, taskDatas)
+    return XDataCenter.TaskManager.GetTimeLimitTaskListByGroupId(taskGroupId, isSort, isIgnoreTimeId, taskDatas)
+end
+
 function XBigWorldServiceAgency:GetTaskStateByTaskId(taskId)
     local taskData = self:GetTaskDataByTaskId(taskId)
 
@@ -567,16 +583,30 @@ function XBigWorldServiceAgency:GetRewardDataList(reward, isSort)
     return {}
 end
 
-function XBigWorldServiceAgency:CheckExpensiveReward(rewardGoodsId)
-    local displayType = self:GetRewardGoodsDisplayType(rewardGoodsId, true)
+function XBigWorldServiceAgency:CheckExpensiveReward(id, dataType)
+    if not XTool.IsNumberValid(id) then
+        return false
+    end
 
-    return displayType == self.RewardDisplayType.Expensive
+    local displayType = self:GetRewardGoodsDisplayType(id, true)
+    local displayDataType = self:GetRewardGoodsDisplayDataType(id, true)
+    
+    dataType = dataType or self.RewardDisplayDataType.Template
+
+    return displayType == self.RewardDisplayType.Expensive and displayDataType == dataType
 end
 
-function XBigWorldServiceAgency:CheckSpecialReward(rewardGoodsId)
-    local displayType = self:GetRewardGoodsDisplayType(rewardGoodsId, true)
+function XBigWorldServiceAgency:CheckSpecialReward(id, dataType)
+    if not XTool.IsNumberValid(id) then
+        return false
+    end
 
-    return displayType == self.RewardDisplayType.Special
+    local displayType = self:GetRewardGoodsDisplayType(id, true)
+    local displayDataType = self:GetRewardGoodsDisplayDataType(id, true)
+
+    dataType = dataType or self.RewardDisplayDataType.Template
+
+    return displayType == self.RewardDisplayType.Special and displayDataType == dataType
 end
 
 function XBigWorldServiceAgency:CheckRewardTypeWithoutCount(rewardType)
@@ -680,6 +710,14 @@ end
 
 function XBigWorldServiceAgency:CheckInTimeByTimeId(timeId, defaultValue)
     return XFunctionManager.CheckInTimeByTimeId(timeId, defaultValue)
+end
+
+function XBigWorldServiceAgency:GetEndTimeByTimeId(timeId)
+    return XFunctionManager.GetEndTimeByTimeId(timeId)
+end
+
+function XBigWorldServiceAgency:GetStartTimeByTimeId(timeId)
+    return XFunctionManager.GetStartTimeByTimeId(timeId)
 end
 
 -- endregion

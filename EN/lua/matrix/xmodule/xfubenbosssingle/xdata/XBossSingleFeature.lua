@@ -1,12 +1,12 @@
 ---@class XBossSingleFeature
 local XBossSingleFeature = XClass(nil, "XBossSingleFeature")
 
-function XBossSingleFeature:Ctor(featureId, stageId, characterIds)
-    self:SetData(featureId, stageId, characterIds)
+function XBossSingleFeature:Ctor(featureId, stageId, characterIds, historyBuffGroup)
+    self:SetData(featureId, stageId, characterIds, historyBuffGroup)
 end
 
 ---@param config XTableBossSingleChallengeFeature
-function XBossSingleFeature:SetData(featureId, stageId, characterIds)
+function XBossSingleFeature:SetData(featureId, stageId, characterIds, historyBuffGroup)
     if featureId and stageId then
         local config = XMVCA.XFubenBossSingle:GetFeatureConfigById(featureId)
         local eventIds = config.FightEventIds
@@ -25,6 +25,7 @@ function XBossSingleFeature:SetData(featureId, stageId, characterIds)
         self._FightEventIds = {}
         self._CharacterList = characterIds or {}
         self._IsRecording = false
+        self._BuffGroup = historyBuffGroup
 
         if not XTool.IsTableEmpty(eventIds) then
             for _, eventId in pairs(eventIds) do
@@ -32,6 +33,10 @@ function XBossSingleFeature:SetData(featureId, stageId, characterIds)
             end
         end
     end
+end
+
+function XBossSingleFeature:GetHistoryBuffGroup()
+    return self._BuffGroup
 end
 
 function XBossSingleFeature:GetFeatureId()

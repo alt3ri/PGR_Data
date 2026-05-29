@@ -1,4 +1,5 @@
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+---@class XUiGridDrawShowModel
 local XUiGridDrawShowModel = XClass(nil, "XUiGridDrawShowModel")
 local XUiPanelRoleModel = require("XUi/XUiCharacter/XUiPanelRoleModel")
 local XUiModelUtility = require("XUi/XUiCharacter/XUiModelUtility")

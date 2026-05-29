@@ -12,12 +12,27 @@ end
 
 function XUiSceneTip:OnStart(sceneId,openType)
     self.SceneId = sceneId
-    self.OpenType=openType
+    self.OpenType = openType
     ---@type XUiPanelSwitchableSceneAnim
-    self.SwitchableScene = require("XUi/XUiSwitchableScene/Panel/XUiPanelSwitchableSceneAnim").New()
+    self.SwitchableScene = require("XUi/XUiSwitchableScene/XUiPanelSwitchableSceneAnim").New()
+
+    if self.PanelDropDown then
+        ---@type XScenePanelDropDown
+        self.PanelDropDownCtrl = require("XUi/XUiSceneSettingMain/Grid/XScenePanelDropDown").New(
+                self.PanelDropDown,
+                self,
+                handler(self, self.OnClickDropData),
+                handler(self, self.OnClickDropPower),
+                handler(self, self.OnClickDropGyro),
+                handler(self, self.OnClickDropEnvMusic))
+    end
+    
     local sceneTemplate = XDataCenter.PhotographManager.GetSceneTemplateById(self.SceneId)
     local scenePath, modelPath = XSceneModelConfigs.GetSceneAndModelPathById(sceneTemplate.SceneModelId)
-    self:LoadUiScene(scenePath, modelPath, function() self:SetBatteryUi() end, false)
+    self:LoadUiScene(scenePath, modelPath, function()
+        self:SetBatteryUi() 
+        self:RefreshEvnirmentSoundControl()
+    end, false)
     self:AutoSetUi()
 end
 
@@ -49,6 +64,38 @@ function XUiSceneTip:Refresh()
     self.TogPreview.isOn = false
     local isFirst = XDataCenter.PhotographManager.GetPreviewState() == XPhotographConfigs.BackGroundState.Full
     if self.BtnSwitch then self.BtnSwitch:RefreshSelect(isFirst) end
+    
+    self:RefreshDropDown()
+end
+
+function XUiSceneTip:RefreshDropDown()
+    if not self.PanelDropDown then
+        return
+    end
+
+    self.PanelDropDownCtrl:Refresh(self.SceneId)
+end
+
+function XUiSceneTip:RefreshEvnirmentSoundControl()
+    local isEnvMusic = XPhotographConfigs.GetBackgroundHasEnvMusicById(self.SceneId)
+    if self.PanelDropDownCtrl then
+        self.PanelDropDownCtrl:SetDropMusicShow(isEnvMusic)
+    end
+
+    if not isEnvMusic then
+        return
+    end
+
+    -- 使用抽象接口
+    local sceneSfxControl = self:GetSceneSFXControl()
+    if not sceneSfxControl then
+        return
+    end
+
+    -- 读取缓存静音状态（游戏逻辑：true=开？false=关？你原逻辑不变）
+    if self.PanelDropDownCtrl then
+        self.PanelDropDownCtrl:SetDropMusicState(not sceneSfxControl:GetCacheMuteState())
+    end
 end
 
 function XUiSceneTip:SetBatteryUi()
@@ -128,6 +175,22 @@ function XUiSceneTip:AutoSetUi()
     end
 end
 
+function XUiSceneTip:GetSceneSFXControl()
+    local root = self.UiSceneInfo and self.UiSceneInfo.Transform
+    if not root then return nil end
+
+    local groupAudio = root:Find("GroupAudio")
+    if XTool.UObjIsNil(groupAudio) then return nil end
+
+    local sceneSfx2D = groupAudio:Find("SceneSFX2D")
+    if XTool.UObjIsNil(sceneSfx2D) then return nil end
+
+    local ctrl = sceneSfx2D:GetComponent(typeof(CS.XSceneSFXControl))
+    if XTool.UObjIsNil(ctrl) then return nil end
+
+    return ctrl
+end
+
 function XUiSceneTip:AddClickListener()
     self:RegisterClickEvent(self.BtnBack, self.OnBtnBackClick)
     self:RegisterClickEvent(self.TogPreview, self.OnTogPreview)
@@ -173,4 +236,28 @@ function XUiSceneTip:PlayChangeModeAnim()
         self:PlayAnimationWithMask("DarkDisable", function ()
         end)
     end)
-end
+end
+
+function XUiSceneTip:OnClickDropData(index)
+    XMVCA.XSwitchableScene:SetSceneSetting(self.SceneId, index)
+    self:UpdateBatteryMode()
+end
+
+function XUiSceneTip:OnClickDropPower(index)
+    XMVCA.XSwitchableScene:SetSceneSetting(self.SceneId, index)
+    self:UpdateBatteryMode()
+end
+
+function XUiSceneTip:OnClickDropGyro(index)
+    XMVCA.XSwitchableScene:SetGyroSetting(self.SceneId, index)
+end
+
+function XUiSceneTip:OnClickDropEnvMusic()
+    local sceneSfxControl = self:GetSceneSFXControl()
+    if not sceneSfxControl then
+        return
+    end
+
+    local isOn =  self.PanelDropDownCtrl and self.PanelDropDownCtrl:GetDropMusicIsOn() or false
+    sceneSfxControl:SetMuteAndSave(not isOn)
+end

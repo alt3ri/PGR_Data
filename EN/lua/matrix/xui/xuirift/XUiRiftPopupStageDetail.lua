@@ -142,7 +142,7 @@ function XUiRiftPopupStageDetail:OnBtnBattleClick()
             if XTool.IsNumberValid(stageId) then
                 local teamData = self._Control:GetSingleTeamData(true)
                 self:Close()
-                XLuaUiManager.Open("UiBattleRoleRoom", stageId, teamData, require("XUi/XUiRift/Grid/XUiRiftBattleRoomProxy"))
+                XMVCA.XFuben:OpenUiBattleRoleRoom(stageId, teamData, require("XUi/XUiRift/Grid/XUiRiftBattleRoomProxy"))
             end
         end)
     else
@@ -151,7 +151,7 @@ function XUiRiftPopupStageDetail:OnBtnBattleClick()
             local stageId = self._Control:GetCurrSelectRiftStageGroup():GetAllEntityStages()[1]._StageId
             local teamData = self._Control:GetSingleTeamData()
             self:Close()
-            XLuaUiManager.Open("UiBattleRoleRoom", stageId, teamData, require("XUi/XUiRift/Grid/XUiRiftBattleRoomProxy"))
+            XMVCA.XFuben:OpenUiBattleRoleRoom(stageId, teamData, require("XUi/XUiRift/Grid/XUiRiftBattleRoomProxy"))
         end)
     end
 end

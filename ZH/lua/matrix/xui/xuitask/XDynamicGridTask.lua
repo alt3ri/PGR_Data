@@ -15,13 +15,13 @@ function XDynamicGridTask:Ctor(ui,rootUi,beforeFinishCheckEvent, clickFunc)
     self.ClickFunc = clickFunc  --重写点击道具方法
 end
 
-function XDynamicGridTask:PlayAnimation()
+function XDynamicGridTask:PlayAnimation(cb)
     if self.IsAnimation then
         return
     end
 
     self.IsAnimation = true
-    self.GridTaskTimeline:PlayTimelineAnimation()
+    self.GridTaskTimeline:PlayTimelineAnimation(cb)
 end
 
 function XDynamicGridTask:ResetData(data)

@@ -337,6 +337,11 @@ function XPBRGameAgency:ReddotIsStageNewUnlockById(stageId)
         return false
     end
     
+    -- 其次忽略已通关
+    if self:CheckPassedByStageId(stageId) then
+        return false
+    end
+    
     -- 接着查本地缓存
     return not self._Model:ReddotGetIsMarkStage(stageId)
 end

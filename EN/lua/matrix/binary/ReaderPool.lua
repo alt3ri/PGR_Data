@@ -1,9 +1,15 @@
 ReaderPool = ReaderPool or {}
 
-local Reader = require("Binary/Reader")
+local Reader
+if XMain.UseNativePtrReader then
+    Reader = require("Binary/PtrReader")
+else
+    Reader = require("Binary/Reader")
+end
 
 local pool = {}
 
+---@return Reader
 function ReaderPool.GetReader()
     if #pool <= 0 then
         return Reader.New()

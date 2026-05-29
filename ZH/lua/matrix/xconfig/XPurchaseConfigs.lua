@@ -43,6 +43,9 @@ XPurchaseConfigs.YKID = CS.XGame.Config:GetInt("YKPurchasePackageId")
 -- 小月卡Id
 XPurchaseConfigs.LittleYKID = CS.XGame.Config:GetInt("LittleYKPurchasePackageId")
 
+-- 英文服月卡C ID
+XPurchaseConfigs.EnYKCID = CS.XGame.Config:GetInt("YKPurchasePackageEnCID")
+
 XPurchaseConfigs.PurchaseDataConfig = {
     Pay = 1, --充值
     LB = 2, --礼包
@@ -215,7 +218,7 @@ function XPurchaseConfigs.IsYKID(id)
     if not XOverseaManager.IsENRegion() then
         return id == XPurchaseConfigs.YKID or id == XPurchaseConfigs.LittleYKID
     else
-        return id == 83028 or id == 90032 or id == XPurchaseConfigs.LittleYKID
+        return id == 83028 or id == XPurchaseConfigs.EnYKCID or id == XPurchaseConfigs.LittleYKID
     end
 end
 

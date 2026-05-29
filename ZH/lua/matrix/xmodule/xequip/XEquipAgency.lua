@@ -1517,10 +1517,12 @@ function XEquipAgency:GetResonancePreviewSkillInfoList(equipId, characterId, slo
     if characterId then
         if equip:IsWeapon() then
             local poolId = resonanceCfg.WeaponSkillPoolId[slot]
-            local skillIds = self._Model:GetWeaponSkillPoolSkillIds(poolId, characterId)
-            for _, skillId in ipairs(skillIds) do
-                local skillInfo = XSkillInfoObj.New(XEnumConst.EQUIP.RESONANCE_TYPE.WEAPON_SKILL, skillId)
-                table.insert(skillInfoList, skillInfo)
+            local skillIds = self._Model:GetWeaponSkillPoolSkillIds(poolId, characterId, true)
+            if skillIds then
+                for _, skillId in ipairs(skillIds) do
+                    local skillInfo = XSkillInfoObj.New(XEnumConst.EQUIP.RESONANCE_TYPE.WEAPON_SKILL, skillId)
+                    table.insert(skillInfoList, skillInfo)
+                end
             end
         else
             local skillPoolId = resonanceCfg.CharacterSkillPoolId[slot]

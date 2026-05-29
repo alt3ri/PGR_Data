@@ -96,6 +96,7 @@ end
 
 function XUiFubenBossSingleDetail:OnStart(bossId)
     local sectionInfo = self._Control:GetBossSectionInfoByBossId(bossId)
+    local sectionConf = self._Control:GetBossSectionConfigByBossId(bossId)
     local root = self.UiModelGo.transform
 
     self._BossSingleData = self._Control:GetBossSingleData()
@@ -104,7 +105,7 @@ function XUiFubenBossSingleDetail:OnStart(bossId)
     self._CurBossStageConfig = sectionInfo[self._Index]
     self.RoleModelPanelUi = XUiPanelRoleModel.New(root:FindTransform("PanelRoleModel"), self.Name, nil, true)
     self.PanelAutoFightUi = XUiFubenBossSingleDetailAutoFight.New(self.PanelAutoFight, self)
-    self.PanelTipUi = XUiFubenBossSingleDetailTip.New(self.PanelTip, self, self._CurBossStageConfig)
+    self.PanelTipUi = XUiFubenBossSingleDetailTip.New(self.PanelTip, self, sectionConf, self._CurBossStageConfig)
     if self.PanelReset then
         ---@type XUiFubenBossSingleDetailPanelReset
         self.PanelResetUi = XUiFubenBossSingleDetailPanelReset.New(self.PanelReset, self)
@@ -139,9 +140,9 @@ function XUiFubenBossSingleDetail:OnBtnStartClick()
         return
     end
 
-    self._Control:SetEnterBossInfo(self._BossId, self._CurBossStageConfig.DifficultyType)
+    self._Control:SetEnterBossInfo(self._BossId, self._CurBossStageConfig.DifficultyType, nil)
     self._Control:OnEnterNormalFight()
-    XLuaUiManager.Open("UiBattleRoleRoom", stageId, self._Control:GetTeamByBossId(self._BossId),
+    XMVCA.XFuben:OpenUiBattleRoleRoom(stageId, self._Control:GetTeamByBossId(self._BossId),
             require("XUi/XUiFubenBossSingle/XUiBossSingleBattleRoleRoom"))
 end
 

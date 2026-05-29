@@ -33,6 +33,14 @@ function XBWCommanderDIYColorEntity:GetPartId()
     end
 end
 
+function XBWCommanderDIYColorEntity:GetMaterialName()
+    if not self:IsNil() then
+        return self._Model:GetDlcPlayerFashionColorMaterialNameById(self:GetColorId())
+    end
+
+    return ""
+end
+
 function XBWCommanderDIYColorEntity:GetModelId()
     local partEntity = self:GetPartEntity()
 

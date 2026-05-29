@@ -1,4 +1,4 @@
-local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XUiEpicFashionGachaStageDetail = XLuaUiManager.Register(XLuaUi, "UiEpicFashionGachaStageDetail")
 
 function XUiEpicFashionGachaStageDetail:OnAwake()
@@ -66,7 +66,7 @@ function XUiEpicFashionGachaStageDetail:OnBtnEnterClick()
     local beginStoryId = XMVCA.XFuben:GetBeginStoryId(self.StageId)
     self:Close()
     if stageType == XDataCenter.FubenFestivalActivityManager.StageFuben then
-        XLuaUiManager.Open("UiBattleRoleRoom", self.StageId)
+        XMVCA.XFuben:OpenUiBattleRoleRoom(self.StageId)
     elseif stageType == XDataCenter.FubenFestivalActivityManager.StageStory then
         local stageInfo = XDataCenter.FubenManager.GetStageInfo(self.StageId)
         if not stageInfo then return end

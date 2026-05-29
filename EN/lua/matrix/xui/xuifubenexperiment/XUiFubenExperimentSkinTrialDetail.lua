@@ -86,12 +86,12 @@ end
 function XUiFubenExperimentSkinTrialDetail:OnBtnSingleEnterClick()
     if self.TrialLevelInfo.TimeId and self.TrialLevelInfo.TimeId ~= 0 then
         if XFunctionManager.CheckInTimeByTimeId(self.TrialLevelInfo.TimeId) then
-            XLuaUiManager.Open("UiBattleRoleRoom", self.TrialLevelInfo.SingStageId)
+            XMVCA.XFuben:OpenUiBattleRoleRoom(self.TrialLevelInfo.SingStageId)
         else
             XUiManager.TipText("ActivityBranchNotOpen")
         end
     else
-        XLuaUiManager.Open("UiBattleRoleRoom", self.TrialLevelInfo.SingStageId)
+        XMVCA.XFuben:OpenUiBattleRoleRoom(self.TrialLevelInfo.SingStageId)
     end
 end
 

@@ -515,6 +515,27 @@ PlayerCondition = {
     [10192] = function(condition)
         return XMVCA.XReCallActivity:CheckIsRegressionPlayer()
     end,
+
+    -- 主线性别是否符合
+    [10193] = function(condition)
+        local curGender = XPlayer.Gender
+        for _, gender in ipairs(condition.Params) do
+            if gender == curGender then
+                return true, condition.Desc
+            end
+        end
+        return false, condition.Desc
+    end,
+    -- 空花性别是否符合
+    [10194] = function(condition)
+        local curGender = XMVCA.XBigWorldCommanderDIY:GetCurrentGender()
+        for _, gender in ipairs(condition.Params) do
+            if gender == curGender then
+                return true, condition.Desc
+            end
+        end
+        return false, condition.Desc
+    end,
     
     [10200] = function(condition)
         -- 三头犬玩法关卡是否达到星级目标
@@ -768,6 +789,25 @@ PlayerCondition = {
             bo = value <= totalMoney
         end
         return bo, condition.Desc
+    end,
+    [21104] = function(condition)
+        -- 是否到了应该弹出月卡续购页面的日子
+        local popup = false
+
+        local purchaseYkPopupWhenRemainDays =
+            CS.XGame.ClientConfig:GetInt("PurchaseYKPopupWhenRemainDays")
+
+        local ykPurchaseInfo = XDataCenter.PurchaseManager.GetYKInfoData()
+
+        if ykPurchaseInfo then
+            if ykPurchaseInfo.DailyRewardRemainDay <= purchaseYkPopupWhenRemainDays
+                and ykPurchaseInfo.DailyRewardRemainDay > 0 then
+
+                popup = true
+            end
+        end
+
+        return popup, condition.Desc
     end,
     [22001] = function(condition)
         -- 红包活动ID下指定NPC累计获得的物品数量
@@ -2760,11 +2800,28 @@ PlayerCondition = {
     
     --endregion
     
+    --region 生命树图鉴
+    [20401] = function(condition)
+        local characterId = condition.Params[1]
+        local index = condition.Params[2]
+        local isUnlock = condition.Params[3] == 1
+        if XMVCA.XLifeTree:IsCharacterUnlocked(characterId, index) == isUnlock then
+            return true
+        else
+            return false, condition.Desc
+        end
+    end,
+    --endregion
+    
     --判断是否进入过DlcWorld
     [23101] = function(condition) 
         local worldId = condition.Params[1]
         local isEntry = condition.Params[2] == 1
         return XMVCA.XBigWorldGamePlay:CheckEntryWorld(worldId) == isEntry, condition.Desc
+    end,
+    --判断是否获得某个指挥官DIY部位
+    [23102] = function(condition)
+        return XMVCA.XBigWorldCommanderDIY:CheckPartUnlockCondition(condition)
     end,
     --region 累消商店
     --累计代币总数大于配置
@@ -2812,6 +2869,17 @@ PlayerCondition = {
     [23007] = function(condition)
         local isShow = condition.Params[1] == 1
         return XMVCA.XDlcRelink:IsShowNetworkSwitchTip(isShow), condition.Desc
+    end,
+    --endregion
+
+    --region 肉鸽6
+    [23201] = function(condition)
+        --通关活动x关卡y次
+        return XMVCA.XTheatre6:IsStagePassTimes(condition.Params[1], condition.Params[2]), condition.Desc
+    end,
+    [23202] = function(condition)
+        --通关活动x难度y次
+        return XMVCA.XTheatre6:IsDiffPassTimaes(condition.Params[1], condition.Params[2]), condition.Desc
     end,
     --endregion
 }

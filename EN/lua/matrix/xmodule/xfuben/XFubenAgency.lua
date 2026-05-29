@@ -1304,58 +1304,61 @@ function XFubenAgency:DoEnterRealFight(preFightData, fightData)
     XEventManager.DispatchEvent(XEventId.EVENT_ENTER_FIGHT)
 end
 
---异步进入战斗
+-- 异步进入战斗
 function XFubenAgency:EnterRealFight(preFightData, fightData, movieId, endCb)
     if self:CheckCustomUiConflict() then
         return
     end
+    -- 打开Loading图
+    self:CallOpenFightLoading(preFightData.StageId)
+    -- --等待0.5秒，第一时间先把load图加载进来，然后再加载战斗资源
+    XScheduleManager.ScheduleOnce(function()
+        local asynPlayMovie = movieId and asynTask(XDataCenter.MovieManager.PlayMovie) or nil
+        local asyncExitDlcFight = XMVCA.XBigWorldGamePlay:GetExitDlcFightAsyncFunc()
+        RunAsyn(function()
+            XEventManager.DispatchEvent(XEventId.EVENT_FIGHT_BEFORE_ENTER)
+            -- 先退出dlc战斗
+            if asyncExitDlcFight then
+                asyncExitDlcFight()
+            end
+            -- 战前剧情
+            local isSkipMovie = XDataCenter.MovieManager.IsSkipMovie()
+            if movieId and not isSkipMovie then
+                XEventManager.DispatchEvent(XEventId.EVENT_FIGHT_BEGIN_PLAYMOVIE)
 
-    local asynPlayMovie = movieId and asynTask(XDataCenter.MovieManager.PlayMovie) or nil
+                -- UI栈从战斗结束的逻辑还原，无需从剧情系统还原UI栈
+                CsXUiManager.Instance:SetRevertAllLock(true)
+                self:CallCloseFightLoading(preFightData.StageId)
+                asynPlayMovie(movieId)
+                self:CallOpenFightLoading(preFightData.StageId)
+                asynWaitSecond(0.5)
+                -- 剧情已经释放了UI栈，无需从战斗释放UI栈
+                CsXUiManager.Instance:SetReleaseAllLock(true)
+            end
 
-    RunAsyn(function()
-        XEventManager.DispatchEvent(XEventId.EVENT_FIGHT_BEFORE_ENTER)
-        --战前剧情
-        local isSkipMovie = XDataCenter.MovieManager.IsSkipMovie()
-        if movieId and not isSkipMovie then
-            XEventManager.DispatchEvent(XEventId.EVENT_FIGHT_BEGIN_PLAYMOVIE)
+            -- 剧情过程中强制下线
+            if not XLoginManager.IsLogin() then
+                self:CallCloseFightLoading(preFightData.StageId)
+                return
+            end
 
-            --UI栈从战斗结束的逻辑还原，无需从剧情系统还原UI栈
-            CsXUiManager.Instance:SetRevertAllLock(true)
+            if endCb then
+                endCb()
+            end
 
-            asynPlayMovie(movieId)
+            CsXBehaviorManager.Instance:Clear()
+            XTableManager.ReleaseAll()
+            CS.BinaryManager.ReleaseAllCache()
+            collectgarbage("collect")
 
-            --剧情已经释放了UI栈，无需从战斗释放UI栈
-            CsXUiManager.Instance:SetReleaseAllLock(true)
-        end
+            CsXUiManager.Instance:ReleaseAll(CsXUiType.Normal, CS.XUiSceneManager.Clear)
 
-        --剧情过程中强制下线
-        if not XLoginManager.IsLogin() then
-            return
-        end
+            CsXUiManager.Instance:SetRevertAndReleaseLock(false)
 
-        if endCb then
-            endCb()
-        end
-
-        --打开Loading图
-        self:CallOpenFightLoading(preFightData.StageId)
-
-        --等待0.5秒，第一时间先把load图加载进来，然后再加载战斗资源
-        asynWaitSecond(0.5)
-
-        CsXBehaviorManager.Instance:Clear()
-        XTableManager.ReleaseAll()
-        CS.BinaryManager.ReleaseAllCache()
-        collectgarbage("collect")
-
-        CsXUiManager.Instance:ReleaseAll(CsXUiType.Normal, CS.XUiSceneManager.Clear)
-
-        CsXUiManager.Instance:SetRevertAndReleaseLock(false)
-
-        --进入战斗
-        self:DoEnterRealFight(preFightData, fightData)
-    end)
-
+            -- 进入战斗
+            self:DoEnterRealFight(preFightData, fightData)
+        end)
+    end, 0.5 * XScheduleManager.SECOND)
 end
 
 --战斗结算统计
@@ -2337,10 +2340,36 @@ end
 -- 将旧战斗房间NewRoomSingle删除，全部改为BattleRoleRoom
 function XFubenAgency:OpenBattleRoom(stage, data)
     if self:CheckPreFight(stage) then
-        XLuaUiManager.Open("UiBattleRoleRoom", stage.StageId, data)
+        self:OpenUiBattleRoleRoom(stage.StageId, data)
         return true
     end
     return false
+end
+
+--- 打开战前编队房间（UiBattleRoleRoom）
+--- 所有打开 UiBattleRoleRoom 的入口都应通过本方法
+---@param stageId number 关卡 ID
+---@param team XTeam|nil 队伍数据，可为 nil（UI 内部会取默认队伍）
+---@param proxy any|nil XUiBattleRoleRoomDefaultProxy 或子类（可为 nil）
+function XFubenAgency:OpenUiBattleRoleRoom(stageId, team, proxy, ...)
+    XLuaUiManager.Open("UiBattleRoleRoom", stageId, team, proxy, ...)
+end
+
+--- 关闭当前 Normal UI 后再打开 UiBattleRoleRoom（无缝切换）
+---@param stageId number
+---@param team XTeam|nil
+---@param proxy any|nil
+function XFubenAgency:PopThenOpenUiBattleRoleRoom(stageId, team, proxy, ...)
+    XLuaUiManager.PopThenOpen("UiBattleRoleRoom", stageId, team, proxy, ...)
+end
+
+--- 打开 UiBattleRoleRoom 并在打开完成后执行回调
+---@param callback fun(ui:any):void
+---@param stageId number
+---@param team XTeam|nil
+---@param proxy any|nil
+function XFubenAgency:OpenUiBattleRoleRoomWithCallback(callback, stageId, team, proxy, ...)
+    XLuaUiManager.OpenWithCallback("UiBattleRoleRoom", callback, stageId, team, proxy, ...)
 end
 
 --- 作战准备，如果使用非常规NPC，则直接进入战斗，否则先进入编队
@@ -2358,7 +2387,7 @@ function XFubenAgency:DoBattlePrepare(stageId, ...)
         end
     end
 
-    XLuaUiManager.Open('UiBattleRoleRoom', stageId, ...)
+    self:OpenUiBattleRoleRoom(stageId, ...)
 end
 
 -- 萌战战斗
@@ -4057,99 +4086,39 @@ function XFubenAgency:Log()
     self._Model:PrintLog()
 end
 
--- 涂装分包：检查战斗角色涂装是否已下载，未下载则弹窗提示或静默换成默认涂装后继续
+-- 涂装分包：有未下载涂装时弹窗提示后继续
 function XFubenAgency:_CheckBattleFashionUndownloaded(preFightData, downloadedCb)
-    -- 分包未开启，跳过所有检查
-    if not XMVCA.XSubPackage:IsOpen() then
-        downloadedCb()
-        return
-    end
-
+    -- 复用 NoFashionResPositions 判断是否有未下载涂装
+    local positions = preFightData.NoFashionResPositions
     local hasUndownloaded = false
-    local useFashionInfos = {}  -- 仅玩家角色，需要换装
-    -- 检查玩家角色
-    local cardIds = preFightData.CardIds
-    if not XTool.IsTableEmpty(cardIds) then
-        for _, charId in ipairs(cardIds) do
-            if XTool.IsNumberValid(charId) then
-                local char = XMVCA.XCharacter:GetCharacter(charId)
-                if char then
-                    local fashionId = char.FashionId
-                    if fashionId and not XMVCA.XSubPackage:CheckFashionDownloaded(fashionId) then
-                        local charTemplate = XMVCA.XCharacter:GetCharacterTemplate(char.Id)
-                        if charTemplate then
-                            local defaultFashionId = charTemplate.DefaultNpcFashtionId
-                            if defaultFashionId and defaultFashionId ~= fashionId then
-                                hasUndownloaded = true
-                                table.insert(useFashionInfos, { defaultFashionId = defaultFashionId })
-                            end
-                        end
-                    end
-                end
-            end
-        end
-    end
-    -- 检查机器人（仅参与弹窗判断，不换装）
-    local robotIds = preFightData.RobotIds
-    if not XTool.IsTableEmpty(robotIds) then
-        for _, robotId in ipairs(robotIds) do
-            if XTool.IsNumberValid(robotId) then
-                local robotTemplate = XRobotManager.GetRobotTemplate(robotId)
-                if robotTemplate then
-                    local fashionId = robotTemplate.FashionId
-                    if not XTool.IsNumberValid(fashionId) then
-                        local characterId = XRobotManager.GetCharacterId(robotId)
-                        local charTemplate = XMVCA.XCharacter:GetCharacterTemplate(characterId)
-                        fashionId = charTemplate and charTemplate.DefaultNpcFashtionId
-                    end
-                    if fashionId and not XMVCA.XSubPackage:CheckFashionDownloaded(fashionId) then
-                        hasUndownloaded = true
-                        XLog.Warning("_CheckBattleFashionUndownloaded: 机器人涂装未下载, robotId:" .. tostring(robotId) .. ", fashionId:" .. tostring(fashionId))
-                    end
-                end
+    if positions then
+        for i = 1, 3 do
+            if positions[i] == 1 then
+                hasUndownloaded = true
+                break
             end
         end
     end
 
-    -- 无未下载涂装
     if not hasUndownloaded then
         downloadedCb()
         return
     end
 
-    -- 并行发送玩家角色换装请求，全部完成后回调
-    local function sendAllUseFashionAndContinue(finalCb)
-        if XTool.IsTableEmpty(useFashionInfos) then
-            finalCb()
-            return
-        end
-        local total = #useFashionInfos
-        local doneCount = 0
-        local function onOneDone()
-            doneCount = doneCount + 1
-            if doneCount >= total then
-                finalCb()
-            end
-        end
-        for _, info in ipairs(useFashionInfos) do
-            XDataCenter.FashionManager.UseFashion(info.defaultFashionId, onOneDone, onOneDone, true)
-        end
-    end
-
-    -- 已选"本次登录不再提示"，静默换装
+    -- 已选"本次登录不再提示"，直接继续
     if XMVCA.XSubPackage:IsBattleFashionTipDismissed() then
-        sendAllUseFashionAndContinue(downloadedCb)
+        downloadedCb()
         return
     end
 
-    -- 弹窗提示玩家涂装将变为默认
+    -- 弹窗提示玩家有涂装未下载
     XUiManager.DialogHintTip(
         CS.XTextManager.GetText("TipTitle"),
         CS.XTextManager.GetText("BattleFashionUndownloadedTip"),
         nil,
         nil,
         function()
-            sendAllUseFashionAndContinue(downloadedCb)
+            downloadedCb()
         end,
         {
             SetHintCb = function(isSelect)
@@ -4215,6 +4184,36 @@ function XFubenAgency:NetWorkPreFightRequest(request, ...)
 
     -- 主线时间轴记录最后挑战关卡
     XMVCA.XMainLine2:SetLastExhibitionChapterByStageId(originStageId)
+
+    -- 涂装分包：构建 NoFashionResPositions，标记需要回退显示默认皮肤的位置
+    if XMVCA.XSubPackage:IsOpen() then
+        local positions = {0, 0, 0}
+        local cardIds = request.PreFightData.CardIds
+        local robotIds = request.PreFightData.RobotIds
+        for i = 1, 3 do
+            local fashionId = nil
+            local charId = cardIds and cardIds[i]
+            if XTool.IsNumberValid(charId) then
+                local char = XMVCA.XCharacter:GetCharacter(charId)
+                if char and XTool.IsNumberValid(char.FashionId) then
+                    fashionId = char.FashionId
+                end
+            end
+            if not fashionId then
+                local robotId = robotIds and robotIds[i]
+                if XTool.IsNumberValid(robotId) then
+                    local robotTemplate = XRobotManager.GetRobotTemplate(robotId)
+                    if robotTemplate and XTool.IsNumberValid(robotTemplate.FashionId) then
+                        fashionId = robotTemplate.FashionId
+                    end
+                end
+            end
+            if fashionId and not XMVCA.XSubPackage:CheckFashionDownloaded(fashionId) then
+                positions[i] = 1
+            end
+        end
+        request.PreFightData.NoFashionResPositions = positions
+    end
 
     XMVCA.XSubPackage:CheckStageIdListResIdListDownloadComplete({ stageId }, function()
         self:_CheckBattleFashionUndownloaded(request.PreFightData, function()

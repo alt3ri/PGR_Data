@@ -200,8 +200,8 @@ end
  ---@desc 进入战备界面
 --===========================================================================
 function XPivotCombatStageItem:EnterBattleRoleRoom(regionId)
-    XLuaUiManager.Open("UiBattleRoleRoom"
-    , self.StageId
+    XMVCA.XFuben:OpenUiBattleRoleRoom(
+    self.StageId
     , XDataCenter.PivotCombatManager.GetTeam(regionId)
     , require("XUi/XUiPivotCombat/XUiProxy/XUiPivotCombatBattleRoleRoom")
     )

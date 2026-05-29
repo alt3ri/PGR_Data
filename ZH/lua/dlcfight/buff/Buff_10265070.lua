@@ -8,15 +8,21 @@ local XBuffScript10265070 = XDlcScriptManager.RegBuffScript(10265070, "XBuffScri
 function XBuffScript10265070:ScriptInit(isGainControl) --初始化
     self.TargetSkill = self._skillId
     --self:LogError(".....初始化完成")
-    self.BuffId = 10255071        --25%加伤buff
+    self.BuffId = 10255071 --25%加伤buff
     self._critController = self:GetNpc():GetCritController()
+    self.SkillCount = 0
 end
 
-function XBuffScript10265070:OnLuaSkillStart(eventArgs)
+function XBuffScript10265070:OnLuaSkillEnd(eventArgs)
     ------------执行------------
-    if eventArgs._skillId ~= self._skillId then return end
     if eventArgs._launcherUUID ~= self._npcUUID then return end
-    self._proxy:ApplyMagic(self._npcUUID, self._npcUUID, self.BuffId, 1)
+    if eventArgs._skillId ~= self._skillId and self.SkillCount == 0 then
+        self._proxy:ApplyMagic(self._npcUUID, self._npcUUID, self.BuffId, 1)
+        self.SkillCount = 1
+    elseif self.SkillCount == 1 then
+        self._proxy:RemoveBuffByKindAndCount(self._npcUUID, self.BuffId, 1)
+        self.SkillCount = 0
+    end
 end
 
 return XBuffScript10265070

@@ -11,18 +11,16 @@ local XUiBigWorldProcessCore = require("XUi/XUiBigWorld/XProcess/Core/XUiBigWorl
 ---@field PanelCore UnityEngine.RectTransform
 ---@field ImgTitle UnityEngine.UI.Image
 ---@field TxtTitle UnityEngine.UI.Text
+---@field TxtProgress UnityEngine.UI.Text
 ---@field BtnClose XUiComponent.XUiButton
 ---@field _Control XBigWorldCourseControl
 local XUiBigWorldProcess = XMVCA.XBigWorldUI:Register(nil, "UiBigWorldProcess")
 
 function XUiBigWorldProcess:OnAwake()
-    ---@type XBWCourseVersionEntity[]
-    self._VersionEntitys = self._Control:GetValidVersionEntitys()
-
     self._CurrentIndex = 0
-    self._CurrentVersion = self._Control:GetSelectVersion()
 
-    self._VersionValidCache = {}
+    ---@type XBWCourseVersionEntity
+    self._CurrentVersionEntity = false
 
     self._Timer = false
     self._SequentialId = 0
@@ -44,15 +42,17 @@ end
 function XUiBigWorldProcess:OnStart(id, contentId, versionId)
     self._SequentialId = id or 0
     self._TargetContentId = contentId or 0
-
-    if XTool.IsNumberValid(versionId) then
-        self._CurrentVersion = versionId
-    end
+    self._CurrentVersionEntity = self._Control:GetSelectVersionEntity(versionId)
 
     self:_InitUi()
 end
 
 function XUiBigWorldProcess:OnEnable()
+    if not self._CurrentVersionEntity then
+        self:Close()
+        return
+    end
+
     self:_RefreshTargetTab()
     self:_RefreshVersion()
     self:_RefreshRedPoint()
@@ -89,20 +89,7 @@ function XUiBigWorldProcess:OnTopTabGroupClick(index)
 end
 
 function XUiBigWorldProcess:OnBtnSwitchClick()
-    if self._CurrentVersion == XEnumConst.BWCourse.Version.One then
-        self._CurrentVersion = XEnumConst.BWCourse.Version.Two
-    else
-        self._CurrentVersion = XEnumConst.BWCourse.Version.One
-    end
-
-    local currentIndex = self._CurrentIndex
-
-    self._CurrentIndex = 0
-    self:_VersionChanged(currentIndex)
-    self:_RefreshTab(currentIndex)
-    self:_RefreshVersion()
-    self:_RefreshRedPoint()
-    self._Control:SetSelectVersion(self._CurrentVersion)
+    XMVCA.XBigWorldUI:Open("UiBigWorldProcessSwitch")
 end
 
 function XUiBigWorldProcess:OnBtnCloseClick()
@@ -133,10 +120,22 @@ function XUiBigWorldProcess:OnChangePage(contentId)
     end
 end
 
+---@param versionEntity XBWCourseVersionEntity
+function XUiBigWorldProcess:OnChangeVersion(versionEntity)
+    local currentIndex = self._CurrentIndex
+
+    self._CurrentIndex = 0
+    self._CurrentVersionEntity = versionEntity
+    self:_VersionChanged(currentIndex)
+    self:_RefreshTab(currentIndex)
+    self:_RefreshVersion()
+    self:_RefreshRedPoint()
+    self._Control:SetSelectVersion(self._CurrentVersionEntity:GetVersionId())
+end
+
 function XUiBigWorldProcess:_RegisterButtonClicks()
     -- 在此处注册按钮事件
     self.BtnSwitch:AddEventListener(handler(self, self.OnBtnSwitchClick))
-    self.BtnSwitchNext:AddEventListener(handler(self, self.OnBtnSwitchClick))
     self.BtnClose:AddEventListener(handler(self, self.OnBtnCloseClick))
 end
 
@@ -145,6 +144,8 @@ function XUiBigWorldProcess:_RegisterListeners()
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_COURSE_RED_POINT_REFRESH,
         self.OnRefreshRedPoint, self)
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_COURSE_CHANGE_PAGE, self.OnChangePage, self)
+    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_COURSE_CHANGE_VERSION, self.OnChangeVersion,
+        self)
     XEventManager.AddEventListener(XEventId.EVENT_FINISH_TASK, self.OnRefreshRedPoint, self)
 end
 
@@ -154,6 +155,8 @@ function XUiBigWorldProcess:_RemoveListeners()
         self.OnRefreshRedPoint, self)
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_COURSE_CHANGE_PAGE, self.OnChangePage,
         self)
+    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_COURSE_CHANGE_VERSION, self
+    .OnChangeVersion, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_FINISH_TASK, self.OnRefreshRedPoint, self)
 end
 
@@ -162,20 +165,10 @@ function XUiBigWorldProcess:_RegisterSchedules()
     self:_RemoveSchedules()
 
     self._Timer = XScheduleManager.ScheduleForever(function()
-        local versionEntitys = self._Control:GetValidVersionEntitys()
-        local currentCount = table.nums(versionEntitys)
-        local count = table.nums(self._VersionEntitys)
-
-        if currentCount == 0 or count == 0 then
+        if not self._CurrentVersionEntity or not self._CurrentVersionEntity:IsValid() then
             self:_RemoveSchedules()
+            XMVCA.XBigWorldUI:SafeClose("UiBigWorldProcessSwitch")
             self:Close()
-        elseif currentCount ~= count then
-            self._VersionEntitys = versionEntitys
-            self._CurrentIndex = 0
-            self._CurrentVersion = XEnumConst.BWCourse.Version.One
-            self:_RefreshTab()
-            self:_RefreshVersion()
-            self:_RefreshRedPoint()
         end
     end, XScheduleManager.SECOND)
 end
@@ -200,11 +193,11 @@ end
 function XUiBigWorldProcess:_RefreshTargetTab()
     if not XTool.IsNumberValid(self._TargetContentId) then
         local versionEntity = self:_GetCurrentVersion()
-        
+
         if versionEntity then
             local index = 1
             local contentEntitys = versionEntity:GetContentEntitys()
-            
+
             for i, contentEntity in pairs(contentEntitys) do
                 if contentEntity:GetContentId() == self._TargetContentId then
                     index = i
@@ -273,7 +266,7 @@ end
 
 ---@return XBWCourseVersionEntity
 function XUiBigWorldProcess:_GetCurrentVersion()
-    return self._VersionEntitys[self._CurrentVersion]
+    return self._CurrentVersionEntity
 end
 
 ---@param contentEntity XBWCourseContentEntity
@@ -325,27 +318,11 @@ end
 
 function XUiBigWorldProcess:_RefreshVersion()
     local version = self:_GetCurrentVersion()
-    local count = table.nums(self._VersionEntitys)
-    local otherVersion = self._VersionEntitys[XEnumConst.BWCourse.Version.Two]
-    local displayBtn = self.BtnSwitch
-    local versionId, versionName = XEnumConst.BWCourse.Version.One, ""
+
     if version then
-        versionId = version:GetVersionId()
-        versionName = version:GetName()
-    end
-    self.BtnSwitch.gameObject:SetActiveEx(count > 1 and versionId == XEnumConst.BWCourse.Version.One)
-    self.BtnSwitchNext.gameObject:SetActiveEx(count > 1 and versionId == XEnumConst.BWCourse.Version.Two)
-    self.TxtTitle.text = versionName
-
-    if self._CurrentVersion == XEnumConst.BWCourse.Version.Two then
-        otherVersion = self._VersionEntitys[XEnumConst.BWCourse.Version.One]
-        displayBtn = self.BtnSwitchNext
-    end
-
-    if otherVersion and not otherVersion:IsNil() then
-        displayBtn:ShowReddot(XMVCA.XBigWorldCourse:CheckVersionAchieved(otherVersion:GetVersionId()))
-    else
-        displayBtn:ShowReddot(false)
+        self.TxtTitle.text = version:GetName()
+        self.TxtProgress.text = version:GetProgressStr()
+        self.BtnSwitch:ShowReddot(XMVCA.XBigWorldCourse:CheckVersionsAchievedWithoutVersion(version:GetVersionId()))
     end
 end
 

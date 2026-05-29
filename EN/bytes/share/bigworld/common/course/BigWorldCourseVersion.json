@@ -1,16 +1,29 @@
 [
     {
         "VersionId": 1,
+        "Name": "Operation Guide",
+        "ContentIds": "[101, 102, 103]",
         "TimeId": 100,
         "ConditionId": null,
-        "Name": "Operation Guide",
-        "ContentIds": "[101, 102, 103]"
+        "Priority": 1,
+        "SwitchIcon": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldProcess/UiBigWorldProcessImg03.png"
     },
     {
         "VersionId": 2,
-        "TimeId": 44107,
-        "ConditionId": 50002051.0,
         "Name": "Operation Guide II",
-        "ContentIds": "[201, 202, 203]"
+        "ContentIds": "[201, 202, 203]",
+        "TimeId": 100,
+        "ConditionId": 50002051.0,
+        "Priority": 2,
+        "SwitchIcon": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldProcess/UiBigWorldProcessImg02.png"
+    },
+    {
+        "VersionId": 3,
+        "Name": "Operation Guide III",
+        "ContentIds": "[301, 302, 303]",
+        "TimeId": 100,
+        "ConditionId": 50003221.0,
+        "Priority": 3,
+        "SwitchIcon": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldProcess/UiBigWorldProcessImg02.png"
     }
 ]

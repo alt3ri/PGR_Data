@@ -1,7 +1,7 @@
-local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
-local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
-local XUiButtonLongClick = require("XUi/XUiCommon/XUiButtonLongClick")
-local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
+local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
+local XUiButtonLongClick = require("XUi/XUiCommon/XUiButtonLongClick")
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XUiPassportUpLevelGrid = require("XUi/XUiPassport/UpLevel/XUiPassportUpLevelGrid")
 
 ---@field _Control XPassportControl
@@ -157,6 +157,10 @@ function XUiPassportUpLevel:UpdateDynamicTable(levelIdList)
     table.sort(dataProvider, function(a, b)
         local colorA = XItemConfigs.GetQualityById(a.TemplateId)
         local colorB = XItemConfigs.GetQualityById(b.TemplateId)
+
+        if not colorA then return true end
+        if not colorB then return false end
+
         if colorA ~= colorB then
             return colorA > colorB
         end

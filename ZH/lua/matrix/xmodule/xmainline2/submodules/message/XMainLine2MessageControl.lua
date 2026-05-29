@@ -23,14 +23,15 @@ function XMainLine2MessageControl:OnInit()
         -- 交互内容实际各展示的类型
         MessageContentType = {
             Normal = 1, -- 普通文本显示
-            
+            ItemShow = 2, -- 显示道具
+            WithAudio = 3, -- 带音频
         },
         
         MessageState = {
             None = 0, -- 未点开过
             HadRead = 1, -- 浏览过，但还剩下内容
             AllRead = 2, -- 所有选项分支都浏览过
-        }
+        },
     }
     
     self.EventIds = {

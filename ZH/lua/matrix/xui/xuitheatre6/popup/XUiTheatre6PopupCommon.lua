@@ -36,6 +36,12 @@ function XUiTheatre6PopupCommon:OnStart(title, content, closeCb, sureCb, cancelC
     else
         self.TxtTips.gameObject:SetActiveEx(false)
     end
+
+    self.TxtName.transform.parent.gameObject:SetActiveEx(not string.IsNilOrEmpty(title))
+    if sureCb == nil and cancelCb == nil then
+        self.BtnSure.gameObject:SetActiveEx(false)
+        self.BtnCancel.gameObject:SetActiveEx(false)
+    end
 end
 
 function XUiTheatre6PopupCommon:OnBtnSureClickEvent()

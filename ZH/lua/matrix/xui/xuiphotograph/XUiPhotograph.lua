@@ -35,6 +35,8 @@ function XUiPhotograph:OnAwake()
 
     ---@type XUiPanelCharacterCG
     self.CG = require("XUi/XUiCharacterCG/XUiPanelCharacterCG").New(self.PanelVideo, self)
+    self.CG:SetDestroyOnStopWithoutLanguagePreparing(true)
+
     self.SDKPanel = XUiPhotographSDKPanel.New(self, self.PanelSDK)
     ---@type XUiPanelSwitchableSceneAnim
     self.SwitchableScene = require("XUi/XUiSwitchableScene/XUiPanelSwitchableSceneAnim").New()
@@ -55,6 +57,12 @@ function XUiPhotograph:OnAwake()
     if self.PanelLackResources then
         self._PanelLackRes = XUiPanelLackResources.New(self.PanelLackResources, self)
     end
+
+    self._CGFinishCallBack = function()
+        self.SwitchableScene:OnVideoEnd()
+    end
+
+    self.CG:AddVideoDestroyCallBack(self._CGFinishCallBack)
 end
 
 function XUiPhotograph:OnStart()
@@ -212,6 +220,7 @@ function XUiPhotograph:OnGetEvents()
         XEventId.EVENT_PHOTO_REPLAY_ANIMATION,
         CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYING,
         CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYEND,
+        CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_STOP_WITHOUT_LANGUAGEPREPARING,
     }
 end
 
@@ -226,6 +235,7 @@ function XUiPhotograph:OnNotify(evt, ...)
         self:PlayChangeActionEffect()
         self.PhotographPanel:RefreshBtnSynchronous()
         self.PhotographPanel:ClearActionCache()
+        self.PhotographPanel:RefreshFashionGridSelect()
     elseif evt == XEventId.EVENT_PHOTO_PLAY_ACTION then
         self:ForcePlay(...)
     elseif evt == XEventId.EVENT_PHOTO_PHOTOGRAPH then
@@ -239,10 +249,12 @@ function XUiPhotograph:OnNotify(evt, ...)
     elseif evt == XEventId.EVENT_PHOTO_REPLAY_ANIMATION then
         self:Replay()
     elseif evt == CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYING then
+        self.SwitchableScene:OnVideoStart()
+
         if not self.CG:IsLanguagePreparing() then
             self:OnCGPlay()
         end
-    elseif evt == CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYEND then
+    elseif evt == CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYEND or evt == CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_STOP_WITHOUT_LANGUAGEPREPARING then
         self:OnCGStop()
     end
 end
@@ -353,9 +365,7 @@ function XUiPhotograph:UpdateRoleModel(charId, fashionId, colorId)
     --self.CurFashionId = fashionId
     self.SelectFashionId = fashionId
     self.CG.LastPlayId = nil
-    if not XTool.IsNumberValid(colorId) then
-        colorId = 0
-    end
+
     XDataCenter.DisplayManager.UpdateRoleModel(self.RoleModel, charId, nil, fashionId, colorId)
     self.RoleAnimator = self.RoleModel:GetAnimator()
 

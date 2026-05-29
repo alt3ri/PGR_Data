@@ -9,6 +9,7 @@ local Type2ModulePath = {
     [XRegression3rdConfigs.ActivityType.Shop]       = "XUi/XUiRegression3rd/XUiPanel/XUiPanelRegressionShop",
     [XRegression3rdConfigs.ActivityType.Activity]   = "XUi/XUiRegression3rd/XUiPanel/XUiPanelRegressionActivity",
     [XRegression3rdConfigs.ActivityType.Questionnaire] = "XUi/XUiRegression3rd/XUiPanel/XUiPanelRegressionQuestionnaire",
+    [XRegression3rdConfigs.ActivityType.GiftShop]   = "XUi/XUiRegression3rd/XUiPanel/XUiPanelRegressionGiftShop"
 }
 
 local ScheduleMinute = XScheduleManager.SECOND * 60
@@ -23,7 +24,13 @@ function XUiRegressionActivity:OnAwake()
 end
 
 function XUiRegressionActivity:OnStart()
-    self.AssetPanel = XUiHelper.NewPanelActivityAssetSafe({ XRegression3rdConfigs.Regression3rdCoinId }, self.PanelSpecialTool, self)
+    self.AssetPanel = XUiHelper.NewPanelActivityAssetSafe(
+        {
+            XRegression3rdConfigs.Regression3rdCoinId,
+            XDataCenter.ItemManager.ItemId.HongKa
+        },
+        self.PanelSpecialTool,
+        self)
 
     self:InitView()
 end
@@ -77,7 +84,7 @@ function XUiRegressionActivity:InitTab()
         btn.gameObject:SetActiveEx(true)
         table.insert(self.TabBtn, btn)
         local realIndex = #self.TabBtn
-        
+
         if tabData.RedPointEvent then
             self["RedPoint"..realIndex] = self:AddRedPointEvent(btn, function(_, count) self:CheckRedPoint(realIndex, count) end, self, { tabData.RedPointEvent })
         end

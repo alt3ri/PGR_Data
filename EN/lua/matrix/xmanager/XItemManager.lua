@@ -341,6 +341,7 @@ XItemManagerCreator = function()
         XItemManager.InitAllItems()
 
         AutoGiftRewardQueue:Clear()
+        LockAutoGiftRewardShow = false
     end
 
     function XItemManager.InitAllItems()

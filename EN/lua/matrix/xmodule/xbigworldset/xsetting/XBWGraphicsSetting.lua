@@ -241,7 +241,32 @@ function XBWGraphicsSetting:RecordDataToDict()
             end
         end
     end
+    --主线高帧率（仅移动端，PC端为nil）
+    dict["IsMainLineHighFrameRate"] = XDataCenter.SetManager.IsMainLineHighFrameRateEnable()
+    --空花高帧率（仅移动端，PC端为nil）
+    dict["IsSGHighFrameRate"] = XDataCenter.SetManager.IsBigWorldHighFrameRateEnable()
+    dict["GraphicsDeviceName"] = CS.UnityEngine.SystemInfo.graphicsDeviceName
+    dict["DeviceModel"] = CS.UnityEngine.SystemInfo.deviceModel
+    
     return dict
+end
+
+--- @desc 当天首次进入空花时上报画质埋点
+function XBWGraphicsSetting:TryRecordDailyBigWorldSetting()
+    local key = "BigWorldSettingDailyRecord_" .. XPlayer.Id
+    if not XMVCA.XDailyReset:CheckDailyRedPoint(key) then
+        return
+    end
+    XMVCA.XDailyReset:SaveDailyRedPoint(key)
+
+    local dict = self:RecordDataToDict()
+    dict["IsDailyLoginRecord"] = true
+
+    if XMain.IsWindowsEditor then
+        CS.XRecord.RecordTest(dict, "1010001", "BigSystemSetting")
+    else
+        CS.XRecord.Record(dict, "1010001", "BigSystemSetting")
+    end
 end
 
 function XBWGraphicsSetting:IsChanged()

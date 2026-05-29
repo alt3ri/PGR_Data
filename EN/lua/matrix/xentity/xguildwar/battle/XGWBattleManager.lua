@@ -1030,7 +1030,7 @@ end
 --打开战斗房间UI(打开前会请求助战列表)
 function XGWBattleManager:OpenBattleRoomUi(stageId)
     XDataCenter.GuildWarManager.RequestAssistCharacterList(function()
-        XLuaUiManager.Open("UiBattleRoleRoom", stageId, self:GetTeam(), require("XUi/XUiGuildWar/XUiGuildWarBattleRoleRoom"))
+        XMVCA.XFuben:OpenUiBattleRoleRoom(stageId, self:GetTeam(), require("XUi/XUiGuildWar/XUiGuildWarBattleRoleRoom"))
     end)
 end
 

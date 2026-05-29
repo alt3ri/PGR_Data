@@ -62,8 +62,13 @@ function XUiPanelBWRoleInfo:RefreshView(teamId, entityId, pos)
     self.BtnJoin:ShowTag(XMVCA.XBigWorldCharacter:CheckCharacterTrial(entityId))
     self.BtnJoin.gameObject:SetActiveEx(not isInTeam)
     self.BtnQuit.gameObject:SetActiveEx(isInTeam and teamPos == pos)
-    self.BtnFashion.gameObject:SetActiveEx(not XMVCA.XBigWorldCharacter:IsCommandant(entityId))
     self.BtnExchange.gameObject:SetActiveEx(isInTeam and teamPos ~= pos)
+
+    if XMVCA.XBigWorldCharacter:IsCommandant(self._EntityId) then
+        self.BtnFashion:ShowReddot(XMVCA.XBigWorldCommanderDIY:CheckHasNew())
+    else
+        self.BtnFashion:ShowReddot(false)
+    end
 end
 
 function XUiPanelBWRoleInfo:OnBtnQuitClick()
@@ -89,9 +94,10 @@ end
 
 function XUiPanelBWRoleInfo:OnBtnFashionClick()
     if XMVCA.XBigWorldCharacter:IsCommandant(self._EntityId) then
-        return
+        XMVCA.XBigWorldCommanderDIY:OpenMainUi()
+    else
+        self._Control:OpenFashion(self._EntityId)
     end
-    self._Control:OpenFashion(self._EntityId)
 end
 
 function XUiPanelBWRoleInfo:OnBtnExchangeClick()

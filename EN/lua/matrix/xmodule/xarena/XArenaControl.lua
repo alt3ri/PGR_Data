@@ -923,9 +923,9 @@ function XArenaControl:OpenBattleRoleRoom(stageId, popThenOpen)
     }
     local proxy = XTool.CreateBattleRoomDetailProxy(proxyTable)
     if popThenOpen then
-        XLuaUiManager.PopThenOpen("UiBattleRoleRoom", stageId, team, proxy)
+        XMVCA.XFuben:PopThenOpenUiBattleRoleRoom(stageId, team, proxy)
     else
-        XLuaUiManager.Open("UiBattleRoleRoom", stageId, team, proxy)
+        XMVCA.XFuben:OpenUiBattleRoleRoom(stageId, team, proxy)
     end
 end
 

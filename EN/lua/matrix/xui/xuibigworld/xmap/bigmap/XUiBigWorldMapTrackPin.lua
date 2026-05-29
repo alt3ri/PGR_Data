@@ -52,7 +52,11 @@ function XUiBigWorldMapTrackPin:_RefreshPin(pinData)
     if pinData then
         local icon = self._Control:GetPinIconByStyleId(pinData.StyleId, pinData:IsActive())
 
-        self.ImgPin:SetSprite(icon)
+        if not string.IsNilOrEmpty(icon) then
+            self.ImgPin:SetSprite(icon)
+        else
+            XLog.Error("Pin Icon is INVALID! PinId = " .. tostring(pinData.PinId) .. ", LevelId = " .. tostring(pinData.LevelId) .. ", NpcPlaceId = " .. tostring(pinData.NpcPlaceId) .. ", SceneObjectId = " .. tostring(pinData.SceneObjectPlaceId))
+        end
     end
 end
 

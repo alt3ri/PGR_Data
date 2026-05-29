@@ -1,6 +1,6 @@
-local XUiGridStageStar = require("XUi/XUiFubenMainLineDetail/XUiGridStageStar")
-local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
-local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local XUiGridStageStar = require("XUi/XUiFubenMainLineDetail/XUiGridStageStar")
+local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XUiFubenChristmasStageDetail = XLuaUiManager.Register(XLuaUi, "UiFubenChristmasStageDetail")
 
 function XUiFubenChristmasStageDetail:OnAwake()
@@ -144,7 +144,7 @@ function XUiFubenChristmasStageDetail:OnBtnEnterClick()
         if self.RootUi then
             self.RootUi:ClearNodesSelect()
         end
-        XLuaUiManager.Open("UiBattleRoleRoom", self.FStage:GetStageId())
+        XMVCA.XFuben:OpenUiBattleRoleRoom(self.FStage:GetStageId())
         self.RootUi.BtnCloseDetail.gameObject:SetActiveEx(false)
         self.RootUi.PanelStageContentRaycast.raycastTarget = true
         self:Close()

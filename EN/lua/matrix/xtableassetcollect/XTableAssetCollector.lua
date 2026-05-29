@@ -11,6 +11,7 @@ local XTableAssetCollectConst = require("XTableAssetCollect/XTableAssetCollectCo
 
 local UiRegistry = require("UiRegistry")
 local UIBindControl = require("MVCA/UIBindControl")
+local XTabConfig = require("MVCA/XTabConfig")
 
 local IsEditorPlaying = false
 
@@ -164,14 +165,24 @@ end
 local RedirectXConfigUtil = function()
     XConfigUtil._originalInitConfig = XConfigUtil.InitConfig
     XConfigUtil._originalAddSingleConfig = XConfigUtil.AddSingleConfig
+    
+    XTabConfig._originalInitConfig = XTabConfig.InitConfigByArgs
+    XTabConfig._originalAddSingleConfig = XTabConfig.AddSingleConfig
+    
 
     XConfigUtil.InitConfig = InjectInitConfig
     XConfigUtil.AddSingleConfig = InjectAddSingleConfig
+
+    XTabConfig.InitConfigByArgs = InjectInitConfig
+    XTabConfig.AddSingleConfig = InjectAddSingleConfig
 end
 
 local RecoverXConfigUtil = function()
     XConfigUtil.InitConfig = XConfigUtil._originalInitConfig
     XConfigUtil.AddSingleConfig = XConfigUtil._originalAddSingleConfig
+
+    XTabConfig.InitConfigByArgs = XTabConfig._originalInitConfig
+    XTabConfig.AddSingleConfig = XTabConfig._originalAddSingleConfig
 end
 --endregion
 

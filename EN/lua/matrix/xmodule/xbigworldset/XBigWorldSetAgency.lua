@@ -11,8 +11,18 @@ function XBigWorldSetAgency:InitRpc()
 end
 
 function XBigWorldSetAgency:InitEvent()
-    --实现跨Agency事件注册
-    --self:AddAgencyEvent()
+    self:AddAgencyEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_AFTER_ENTER_GAME, self._OnAfterEnterGame, self)
+end
+
+function XBigWorldSetAgency:RemoveEvent()
+    self:RemoveAgencyEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_AFTER_ENTER_GAME, self._OnAfterEnterGame, self)
+end
+
+function XBigWorldSetAgency:_OnAfterEnterGame()
+    local setting = self._Model:GetSettingBySetType(XEnumConst.BWSetting.SetType.Graphics)
+    if setting then
+        setting:TryRecordDailyBigWorldSetting()
+    end
 end
 
 function XBigWorldSetAgency:GetDefaultSetTypes()

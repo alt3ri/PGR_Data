@@ -9,6 +9,8 @@ function XBuffScript10252030:ScriptInit(isGainControl) --初始化
     self._damageTimer = 0
     -- self._stackCountAtk = 20
     --self:LogError("....【插入式技能3】初始化完成")
+    self._stackCount = 1
+    self._HitFlyController = self:GetNpc():GetHitFlyController()
 end
 
 ---@param eventType number
@@ -18,7 +20,7 @@ function XBuffScript10252030:HandleEvent(eventType, eventArgs)
 end
 
 function XBuffScript10252030:InitEventCallBackRegister()
-    self._proxy:RegisterEvent(EWorldEvent.NpcDamage)            -- OnNpcDamageEvent
+    self._proxy:RegisterEvent(EWorldEvent.NpcDamage) -- OnNpcDamageEvent
 end
 
 function XBuffScript10252030:OnLuaSkillStart(eventArgs)
@@ -28,16 +30,15 @@ function XBuffScript10252030:OnLuaSkillStart(eventArgs)
     if eventArgs._skillId == self._skillId then
         self._HitFlyController:AddSkillCount(self._stackCount)
     end
-    if not self._proxy:CheckBuffByKind(targetNpc,BurnBuff) then return end
+    if not self._proxy:CheckBuffByKind(targetNpc, BurnBuff) then return end
     self._damageTimer = self._damageTimer + 1
     if self._damageTimer >= 3 then
-        self._level:RequestInsertSkill(self._npcUUID,self._skillId)
+        self._level:RequestInsertSkill(self._npcUUID, self._skillId)
         --self:LogError("....【插入式技能3】进入队列")
         self._damageTimer = 0
     end
 end
 
-    -- self._proxy:ApplyMagic(self._uuid, self._uuid, 1025904,1,0,self._stackCountAtk)
+-- self._proxy:ApplyMagic(self._uuid, self._uuid, 1025904,1,0,self._stackCountAtk)
 
 return XBuffScript10252030
-

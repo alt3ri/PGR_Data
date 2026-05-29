@@ -119,7 +119,9 @@ function XUiBigWorldPhotographControl:OnAnimSetClick(index)
     grid:ResetData(curCfg, self._AnimationIndex)
     if lastIndex ~= index then
         local lastGrid = self.DynamicTableAnimation:GetGridByIndex(lastIndex)
-        lastGrid:ResetData(self._CharacterConfigs[lastIndex], lastIndex)
+        if lastGrid then
+            lastGrid:ResetData(self._CharacterConfigs[lastIndex], lastIndex)
+        end
     end
     -- 触发效果
     XMVCA.XBigWorldAlbum:X3CPlayAnimation(curCfg.AnimationName)
@@ -138,7 +140,9 @@ function XUiBigWorldPhotographControl:OnFilterSetClick(index)
     grid:ResetData(curCfg, self._FilterIndex)
     if lastIndex ~= index then
         local lastGrid = self.DynamicTableFilter:GetGridByIndex(lastIndex)
-        lastGrid:ResetData(self._FilterConfigs[lastIndex], lastIndex)
+        if lastGrid then
+            lastGrid:ResetData(self._FilterConfigs[lastIndex], lastIndex)
+        end
     end
     -- 触发效果
     XMVCA.XBigWorldAlbum:X3CChangeFilter(curCfg.FilterId, curCfg.Id)

@@ -152,18 +152,19 @@ function XUiPanelTaskCanLiver:GetTasks()
     end
 
     local tasks = XDataCenter.TaskManager.GetCanLiverTaskList()
+    local weekTaskIndex = CS.XGame.ClientConfig:GetInt("DrawCanLiverWeekTaskGroupIdIndex")
+    self.CurrDrawCanLiverWeekTaskList = {}
+    self.CurrDrawCanLiverActivityTaskList = {}
     for index, groupId in ipairs(taskGroupIds) do
         if XTool.IsNumberValid(groupId) then
-            if CS.XGame.ClientConfig:GetInt("DrawCanLiverWeekTaskGroupIdIndex") == index then
-                local list = XDataCenter.TaskManager.GetTimeLimitTaskListByGroupId(groupId, false)
-                self.CurrDrawCanLiverWeekTaskList = self.CurrDrawCanLiverWeekTaskList or {}
-                for k, task in pairs(list) do
-                    self.CurrDrawCanLiverWeekTaskList[task.Id] = true
-                end
+            local list = XDataCenter.TaskManager.GetTimeLimitTaskListByGroupId(groupId, false)
+            local targetList = (index == weekTaskIndex) and self.CurrDrawCanLiverWeekTaskList or self.CurrDrawCanLiverActivityTaskList
+            for _, task in pairs(list) do
+                targetList[task.Id] = true
             end
         end
     end
-    
+
     -- 额外的任务显示：来自其他系统，因为UI整合而放到一起
     tasks = XMVCA.XReCallActivity:GetRegressionTaskDataList(tasks)
 
@@ -231,11 +232,13 @@ function XUiPanelTaskCanLiver:OnDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         local data = self.CanLiverTasks[index]
         grid.RootUi = self.Parent
+        grid:ResetData(data)
+
         local isSetUpdateWeeklyTime = self.CurrDrawCanLiverWeekTaskList and self.CurrDrawCanLiverWeekTaskList[data.Id]
         grid:SetIsUpdateWeeklyTime(isSetUpdateWeeklyTime)
+        local isActivityTag = self.CurrDrawCanLiverActivityTaskList and self.CurrDrawCanLiverActivityTaskList[data.Id]
+        grid:SetPanelTagActive(isActivityTag)
         grid:SetTxtTaskLimitVisible(XMVCA.XItemRestrict:IsItemReachMaxByIndex(XEnumConst.ItemRestrict.Type.DrawCanLiver, 1))
-        grid:ResetData(data)
-        
         self:ShowGridEx(grid, data)
     end
 end

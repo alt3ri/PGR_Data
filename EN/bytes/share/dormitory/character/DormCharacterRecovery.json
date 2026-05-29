@@ -5783,5 +5783,70 @@
         "AttrTotal": 10000.0,
         "AttrCondition": "{0: 6500, 1: 3500, 2: 0}",
         "Description": "When the Beauty and Comfort of the current Dormitory reach <color=#FF4E4EFF>6500</color> points and <color=#FF4E4EFF>3500</color> points respectively, Constructs will restore <color=#28CFFFFF>6</color> Stamina and <color=#28CFFFFF>5</color> Mood per hour."
+    },
+    {
+        "Id": 446,
+        "CharacterId": 1021007,
+        "VitalityRecoveryType": 1.0,
+        "VitalityRecovery": 100,
+        "MoodRecoveryType": 1.0,
+        "MoodRecovery": 100,
+        "Pre": 1,
+        "CompareType": 1,
+        "AttrTotal": null,
+        "AttrCondition": "{0: 0, 1: 0, 2: 0}",
+        "Description": "When the total value of the current Dormitory is under <color=#FF4E4EFF>1200</color> points, both Constructs' Stamina and Mood will decrease by <color=#28CFFFFF>1</color> point per hour."
+    },
+    {
+        "Id": 447,
+        "CharacterId": 1021007,
+        "VitalityRecoveryType": null,
+        "VitalityRecovery": 300,
+        "MoodRecoveryType": null,
+        "MoodRecovery": 50,
+        "Pre": 2,
+        "CompareType": 1,
+        "AttrTotal": 1200.0,
+        "AttrCondition": "{0: 0, 1: 0, 2: 0}",
+        "Description": "When the total value of the current Dormitory reaches <color=#FF4E4EFF>1200</color> points, Constructs will restore <color=#28CFFFFF>3</color> Stamina and <color=#28CFFFFF>0.5</color> Mood per hour."
+    },
+    {
+        "Id": 448,
+        "CharacterId": 1021007,
+        "VitalityRecoveryType": null,
+        "VitalityRecovery": 400,
+        "MoodRecoveryType": null,
+        "MoodRecovery": 100,
+        "Pre": 3,
+        "CompareType": 1,
+        "AttrTotal": 3500.0,
+        "AttrCondition": "{0: 0, 1: 0, 2: 0}",
+        "Description": "When the total value of the current Dormitory reaches <color=#FF4E4EFF>3500</color> points, Constructs will restore <color=#28CFFFFF>4</color> Stamina and <color=#28CFFFFF>1</color> Mood per hour."
+    },
+    {
+        "Id": 449,
+        "CharacterId": 1021007,
+        "VitalityRecoveryType": null,
+        "VitalityRecovery": 500,
+        "MoodRecoveryType": null,
+        "MoodRecovery": 200,
+        "Pre": 4,
+        "CompareType": 1,
+        "AttrTotal": 5500.0,
+        "AttrCondition": "{0: 0, 1: 2000, 2: 3500}",
+        "Description": "When the Utility and Comfort of the current Dormitory reach <color=#FF4E4EFF>3500</color> points and <color=#FF4E4EFF>2000</color> points respectively, Constructs will restore <color=#28CFFFFF>5</color> Stamina and <color=#28CFFFFF>2</color> Mood per hour."
+    },
+    {
+        "Id": 450,
+        "CharacterId": 1021007,
+        "VitalityRecoveryType": null,
+        "VitalityRecovery": 600,
+        "MoodRecoveryType": null,
+        "MoodRecovery": 500,
+        "Pre": 5,
+        "CompareType": 1,
+        "AttrTotal": 10000.0,
+        "AttrCondition": "{0: 0, 1: 3500, 2: 6500}",
+        "Description": "When the Utility and Comfort of the current Dormitory reach <color=#FF4E4EFF>6500</color> points and <color=#FF4E4EFF>3500</color> points respectively, Constructs will restore <color=#28CFFFFF>6</color> Stamina and <color=#28CFFFFF>5</color> Mood per hour."
     }
 ]

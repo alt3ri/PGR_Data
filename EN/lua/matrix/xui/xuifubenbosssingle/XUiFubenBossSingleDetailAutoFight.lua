@@ -40,11 +40,26 @@ function XUiFubenBossSingleDetailAutoFight:OnAutoFightSureClick()
 end
 
 function XUiFubenBossSingleDetailAutoFight:OnBtnAutoFightClick()
+
+    local function callAdditionalOp(self)
+        if self._BtnAutoFightAdditionalOperation then
+            self._BtnAutoFightAdditionalOperation()
+        end
+    end
+
+    if self._AutoFightPreCheck then
+        if not self._AutoFightPreCheck() then
+            callAdditionalOp(self)
+            return
+        end
+    end
+
     if not self._IsStaminaEnough then
         XUiManager.TipText("BossSingleAutoFightDesc7")
+        callAdditionalOp(self)
         return
     end
-    
+
     -- （兼容重置后的自动作战）把今天的三次首通次数消耗 ，再去重置骑士关，再去点自动挑战
     local stageId = self._StageId
     local hasStageRecord, stage = self._Control:HasStageRecord(stageId)
@@ -53,11 +68,14 @@ function XUiFubenBossSingleDetailAutoFight:OnBtnAutoFightClick()
         if score == 0 then
             self:OnAutoFightSureClick()
         end
+
+        callAdditionalOp(self)
         return
     end
 
     if not self._IsChallengeCountEnough then
         XUiManager.TipText("BossSingleAutoFightDesc8")
+        callAdditionalOp(self)
         return
     end
 
@@ -69,6 +87,8 @@ function XUiFubenBossSingleDetailAutoFight:OnBtnAutoFightClick()
 
     XUiManager.DialogTip(titletext, contentText, XUiManager.DialogType.Normal, nil,
         Handler(self, self.OnAutoFightSureClick))
+
+    callAdditionalOp(self)
 end
 
 function XUiFubenBossSingleDetailAutoFight:OnBtnCloseClick()
@@ -128,6 +148,14 @@ function XUiFubenBossSingleDetailAutoFight:Refresh(autoFightData, challengeCount
     end
 end
 
+function XUiFubenBossSingleDetailAutoFight:SetBtnAutoFightAdditionalOperation(op)
+    self._BtnAutoFightAdditionalOperation = op
+end
+
+function XUiFubenBossSingleDetailAutoFight:SetAutoFightPreCheck(check)
+    self._AutoFightPreCheck = check
+end
+
 --region 私有方法
 function XUiFubenBossSingleDetailAutoFight:_TipClose()
     self.Parent:RefreshToggleGroup()
@@ -139,7 +167,21 @@ function XUiFubenBossSingleDetailAutoFight:_RegisterButtonClicks()
     XUiHelper.RegisterClickEvent(self, self.BtnClose, self.OnBtnCloseClick, true)
     XUiHelper.RegisterClickEvent(self, self.BtnHelp, self.OnBtnHelpClick, true)
     XUiHelper.RegisterClickEvent(self, self.BtnTanchuangCloseBig, self.OnBtnCloseClick, true)
+
+    if self.BtnManuallyFight then
+        XUiHelper.RegisterClickEvent(
+            self,
+            self.BtnManuallyFight,
+            self.OnBtnManuallyFightClick,
+            true)
+    end
 end
+
+function XUiFubenBossSingleDetailAutoFight:OnBtnManuallyFightClick()
+    self:Close()
+    self.Parent:StartManuallyFight()
+end
+
 
 --endregion
 

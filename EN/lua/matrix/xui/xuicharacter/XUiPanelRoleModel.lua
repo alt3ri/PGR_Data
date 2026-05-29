@@ -31,7 +31,6 @@ useMultiModel)
     if clearUiChildren then -- 初始化时是否清空model挂点下所有物体
         XTool.DestroyChildren(ui.gameObject)
     end
-    self.RoleModelPool = {}
     self.NodeEffectMappingPrefabPool = {}
     self.HideWeapon = hideWeapon and true or false
     self.ShowShadow = showShadow
@@ -62,13 +61,61 @@ useMultiModel)
     end
     self.CurCharacterId = nil
 
-    -- 最大缓存模型数量
-    self.MaxCacheModelCount = XUiHelper.GetClientConfig("MainMaxCacheModelNumber", XUiHelper.ClientConfigType.Int)
+    -- 初始化模型缓存池（默认使用普通策略）
+    local isHarwareLowMemory = XHardwareManager.GetIsLowMemoryDevice()
+    local isInSkyGarden = CS.XBigWorldHelper.IsInsideSkyGarden()
     
+    -- 设备是低内存的情况下，处于空花环境，或者未约束仅空花环境，则启用
+    local isEnableLowMemoryMode = isHarwareLowMemory and (isInSkyGarden or not XTool.IsNumberValidEx(CS.XGame.ClientConfig:GetInt("UiRoleLowMemoryOnlyInSG")))
+    
+    
+    self:_InitCachePool(isEnableLowMemoryMode)
+
     self._AnimationEvent = nil
-    
+
     -- 融合动画播放计数，用于定时器区分是否动画变更
     self._AnimaCrossTimes = 0
+end
+
+--- 初始化缓存池，根据 isLowMemory 选择淘汰策略
+---@param isLowMemory boolean
+function XUiPanelRoleModel:_InitCachePool(isLowMemory)
+    local XModelCachePool    = require("XCommon/XModelCache/XModelCachePool")
+    local EvictionPolicy     = require("XCommon/XModelCache/XCacheEvictionPolicy")
+
+    local cacheTTL = isLowMemory and CS.XGame.ClientConfig:GetFloat("UiRoleCacheMaxTimeLowMemory") or CS.XGame.ClientConfig:GetFloat("UiRoleCacheMaxTime")
+    local cacheMaxCount = isLowMemory and CS.XGame.ClientConfig:GetInt("UiRoleCacheMaxCountLowMemory") or CS.XGame.ClientConfig:GetInt("MainMaxCacheModelNumber")
+    
+    local policy
+
+    -- 最大缓存数为0、缓存时长为0，都将在没有引用后立刻释放，此时使用无缓存策略
+    if not XTool.IsNumberValidEx(cacheTTL) or not XTool.IsNumberValidEx(cacheMaxCount) then
+        policy = EvictionPolicy.XLowMemoryEvictionPolicy.New()
+    else
+        policy = EvictionPolicy.XCompositeEvictionPolicy.New(cacheTTL, cacheMaxCount)
+    end
+    
+    self._CachePool = XModelCachePool.New(
+        policy,
+        function(key, entry) self:_OnCacheEntryDestroy(key, entry) end
+    )
+    -- 兼容层：保持 self.RoleModelPool[key] 的外部引用有效
+    -- 因 Lua table 是引用类型，_Pool 的增删会同步反映到此引用上
+    -- 注意：_CachePool:Clear() 内部不替换整个 table，只逐一置 nil，兼容层始终有效
+    self.RoleModelPool = self._CachePool._Pool
+end
+
+--- 运行时切换低内存模式（热切换策略，不影响已有缓存条目）
+--- 由外部调用方根据设备内存状态主动调用
+---@param isLowMemory boolean
+function XUiPanelRoleModel:SetLowMemoryMode(isLowMemory)
+    local EvictionPolicy = require("XCommon/XModelCache/XCacheEvictionPolicy")
+    if isLowMemory then
+        self._CachePool:SetPolicy(EvictionPolicy.XLowMemoryEvictionPolicy.New())
+    else
+        local maxCount = XUiHelper.GetClientConfig("MainMaxCacheModelNumber", XUiHelper.ClientConfigType.Int)
+        self._CachePool:SetPolicy(EvictionPolicy.XCompositeEvictionPolicy.New(5, maxCount))
+    end
 end
 
 --- 获取有效的涂装ID（分包检查）
@@ -181,7 +228,7 @@ needFightController)
                     IsReLoadController,
                     needFightController)
         end
-        
+
     end
     --特殊模型 && 单模型
     if isSpecialModel and not isMultiModel then
@@ -190,20 +237,18 @@ needFightController)
     local defaultAnimation = self.DefaultAnimation or XModelManager.GetUiDefaultAnimationPath(roleName)
     self.DefaultAnimation = nil
 
-    local modelPool = self.RoleModelPool
-    local curRoleName = self.CurRoleName
-    local curModelInfo = modelPool[curRoleName]
-    if curModelInfo then
-        if XTool.UObjIsNil(curModelInfo.Model) then
+    -- 隐藏当前激活模型的特效（BeginSwitch 内会打时间戳，此处只需处理特效）
+    local curEntry = self._CachePool:Get(self.CurRoleName)
+    if curEntry then
+        if XTool.UObjIsNil(curEntry.Model) then
             XLog.Error("[UpdateRoleModel] NullReferenceException: Object reference not set to an instance of an object")
-            modelPool[curRoleName] = nil
+            -- _CachePool:Get 内部已通过悬空检测清除该条目，此处直接返回
             return
         end
-        curModelInfo.Model.gameObject:SetActiveEx(false)
-        self:SetCurrentUiEffectActive(curModelInfo.UiEffect, false)
-        curModelInfo.time = XTime.GetServerNowTimestamp()
+        curEntry.Model.gameObject:SetActiveEx(false)
+        self:SetCurrentUiEffectActive(curEntry.UiEffect, false)
     end
-    if curRoleName ~= roleName then
+    if self.CurRoleName ~= roleName then
         self.CurRoleName = roleName
     end
 
@@ -227,58 +272,19 @@ needFightController)
     else
         self.LoadClip = self.InitLoadClip --复原成一开始传入的参数
     end
-    
-    local needRemove = nil
-    local nowTime = XTime.GetServerNowTimestamp()
-    local oldestKey
-    local oldestTime = nowTime
-    
-    for k, v in pairs(modelPool) do
-        --不等于当前要显示的模型且时间超出5秒的都要删掉
-        if k ~= roleName and v and v.time then
-            local diff = nowTime - v.time
-            if diff >= 5 then
-                if needRemove == nil then
-                    needRemove = {}
-                end
-                table.insert(needRemove, k)
-            elseif v.time <= oldestTime then
-                oldestTime = v.time
-                oldestKey = k
-            end
+
+    -- 触发淘汰策略，并取得异步令牌和是否需要串行等待
+    -- 低内存策略下 needWaitDestroy=true，须等下一帧 Unity 完成 Destroy 后再加载
+    local token, needWaitDestroy = self._CachePool:BeginSwitch(roleName)
+
+    -- 同步通知副面板切换（低内存下副模型也同步淘汰）
+    if self.NewPanel and isMultiModel then
+        local minorModelId = XModelManager.GetMinorModelId(roleName, targetUiName)
+        if minorModelId then
+            self.NewPanel._CachePool:BeginSwitch(minorModelId)
         end
     end
 
-    local modelCount = table.nums(modelPool)
-    local needRemoveCount = needRemove and #needRemove or 0
-    if modelCount - needRemoveCount >= self.MaxCacheModelCount and oldestKey then
-        if not needRemove then
-            needRemove = {}
-        end 
-        table.insert(needRemove, oldestKey)
-    end
-
-    --删除超时的模型
-    if needRemove then
-        for i = 1, #needRemove do
-            local tempRoleName = needRemove[i]
-            local modelInfo = modelPool[tempRoleName]
-            if modelInfo.Model and modelInfo.Model:Exist() then
-                CS.UnityEngine.Object.Destroy(modelInfo.Model.gameObject)
-            end
-            modelPool[tempRoleName] = nil
-            --如果是多重模型，删除时一并删除副模型
-            local isSpModel, isMulModel = XModelManager.CheckModelIsSpecial(tempRoleName, targetUiName)
-            if isSpModel and isMulModel and self.NewPanel then
-                local tempMinorModelId = XModelManager.GetMinorModelId(tempRoleName, targetUiName)
-                if tempMinorModelId then
-                    self.NewPanel.RoleModelPool[tempMinorModelId] = nil
-                end
-            end
-        end
-    end
-
-    local modelInfo = modelPool[roleName]
     local fashionCueId = self.FashionCueId
     local sfxCueId = self.SFXCueId
     local sfxCueIdCacheDic = self.SFXCueIdCacheDic
@@ -327,26 +333,69 @@ needFightController)
         end
     end
 
+    -- 检查缓存是否命中（BeginSwitch 之后再 Get，此时旧条目已完成淘汰）
+    local cachedEntry = self._CachePool:Get(roleName)
+
     if IsReLoadAnime then
-        self:LoadModelAndReLoadAnime(
-        modelInfo,
-        targetUiName,
-        roleName,
-        defaultAnimation,
-        --[[cb]]uiStandVoiceCb,
-        runtimeControllerName,
-        IsReLoadController
-        )
+        self:_DoLoadModel(cachedEntry, roleName, targetUiName, defaultAnimation,
+            uiStandVoiceCb, runtimeControllerName, IsReLoadController,
+            token, needWaitDestroy, true)
     else
-        self:LoadModelAndNotReLoadAnime(
-        modelInfo,
-        targetUiName,
-        roleName,
-        defaultAnimation,
-        --[[cb]]uiStandVoiceCb,
-        runtimeControllerName,
-        IsReLoadController
-        )
+        self:_DoLoadModel(cachedEntry, roleName, targetUiName, defaultAnimation,
+            uiStandVoiceCb, runtimeControllerName, IsReLoadController,
+            token, needWaitDestroy, false)
+    end
+end
+
+--- 统一的模型加载/复用入口
+--- 根据缓存命中与否、串行/并行模式三路分发
+---@param cachedEntry      table|nil   缓存命中时的 entry，nil 表示未命中
+---@param roleName         string
+---@param targetUiName     string|nil
+---@param defaultAnimation string|nil
+---@param cb               function
+---@param runtimeControllerName string|nil
+---@param IsReLoadController    boolean
+---@param token            number   BeginSwitch 返回的令牌
+---@param needWaitDestroy  boolean  低内存串行模式标志
+---@param isReLoadAnime    boolean
+function XUiPanelRoleModel:_DoLoadModel(cachedEntry, roleName, targetUiName, defaultAnimation,
+    cb, runtimeControllerName, IsReLoadController, token, needWaitDestroy, isReLoadAnime)
+
+    if cachedEntry then
+        -- ── 命中缓存：直接复用，无需异步加载 ──
+        if isReLoadAnime then
+            self:_LoadModelAndReLoadAnime(cachedEntry, targetUiName, roleName,
+                defaultAnimation, cb, runtimeControllerName, IsReLoadController)
+        else
+            self:_LoadModelAndNotReLoadAnime(cachedEntry, targetUiName, roleName,
+                defaultAnimation, cb, runtimeControllerName, IsReLoadController)
+        end
+        return
+    end
+
+    -- ── 未命中：需要异步加载 ──
+    local doLoad = function()
+        -- 串行模式等待后，须二次校验令牌（等待期间可能再次切换）
+        if token ~= self._CachePool._TokenCounter then
+            return
+        end
+        if isReLoadAnime then
+            self:_LoadModelAndReLoadAnime(nil, targetUiName, roleName,
+                defaultAnimation, cb, runtimeControllerName, IsReLoadController, token)
+        else
+            self:_LoadModelAndNotReLoadAnime(nil, targetUiName, roleName,
+                defaultAnimation, cb, runtimeControllerName, IsReLoadController, token)
+        end
+    end
+
+    if needWaitDestroy then
+        -- 低内存串行模式：等下一帧 Unity Destroy 完成后再发起加载
+        --XScheduleManager.ScheduleNextFrame(doLoad)
+        --todo 因为很多地方是同步逻辑，这里暂时先不隔帧加载
+        doLoad()
+    else
+        doLoad()
     end
 end
 
@@ -360,15 +409,17 @@ function XUiPanelRoleModel:StopAllAudio()
     end
 end
 
-function XUiPanelRoleModel:LoadModelAndNotReLoadAnime(
+function XUiPanelRoleModel:_LoadModelAndNotReLoadAnime(
 modelInfo,
 targetUiName,
 roleName,
 defaultAnimation,
 cb,
 runtimeControllerName,
-IsReLoadController) --更新加载同一个模型时不重新加载动画
+IsReLoadController,
+token) --更新加载同一个模型时不重新加载动画
     if modelInfo then
+        -- 命中缓存：直接激活
         modelInfo.Model.gameObject:SetActiveEx(true)
         if IsReLoadController then
             self:RoleModelLoaded(roleName, targetUiName, cb, runtimeControllerName)
@@ -376,15 +427,17 @@ IsReLoadController) --更新加载同一个模型时不重新加载动画
             self:RoleModelLoaded(roleName, targetUiName, cb)
         end
     else
+        -- 未命中：发起异步加载
         XModelManager.LoadRoleModel(
         self.CurRoleName,
         self.Transform,
         function(model)
-            local tmpModelInfo = {}
-            tmpModelInfo.Model = model
-            tmpModelInfo.RenderingProxy = CS.XNPCRendingUIProxy.GetNPCRendingUIProxy(model)
+            -- 写入缓存，令牌校验在 Put 内部完成；过期则 Put 自动销毁多余 GO 并返回 false
+            local payload = {}
+            payload.RenderingProxy = CS.XNPCRendingUIProxy.GetNPCRendingUIProxy(model)
+            local ok = self._CachePool:Put(roleName, model, token, payload)
+            if not ok then return end
 
-            self.RoleModelPool[roleName] = tmpModelInfo
             if self.LoadClip then
                 self:LoadAnimationClips(
                 model.gameObject,
@@ -397,30 +450,22 @@ IsReLoadController) --更新加载同一个模型时不重新加载动画
                 self:RoleModelLoaded(roleName, targetUiName, cb, runtimeControllerName)
             end
 
-            local isSpecialModel, isMultiModel = XModelManager.CheckModelIsSpecial(self.CurRoleName, targetUiName)
-            if self.NewPanel and isMultiModel then
-                local newModelName = XModelManager.GetMinorModelId(self.CurRoleName, targetUiName)
-                local info = self.NewPanel.RoleModelPool[newModelName]
-                if info then
-                    info.Model.transform:SetParent(model.transform, false)
-                    self:SetEffectLayerRecursively(info.Model.gameObject,model.gameObject.layer,CS.UnityEngine.LayerMask.NameToLayer(KeepGraphicLayer.Distortion))
-                    -- info.Model.gameObject:SetLayerRecursively(model.gameObject.layer,CS.UnityEngine.LayerMask.NameToLayer(KeepGraphicLayer.Distortion))
-
-                end
-            end
+            self:_AttachMinorModelIfNeeded(model, targetUiName)
         end)
     end
 end
 
-function XUiPanelRoleModel:LoadModelAndReLoadAnime(
+function XUiPanelRoleModel:_LoadModelAndReLoadAnime(
 modelInfo,
 targetUiName,
 roleName,
 defaultAnimation,
 cb,
 runtimeControllerName,
-IsReLoadController) --更新加载同一个模型时重新加载动画
+IsReLoadController,
+token) --更新加载同一个模型时重新加载动画
     if modelInfo then
+        -- 命中缓存：激活并重新加载动画片段
         modelInfo.Model.gameObject:SetActiveEx(true)
         self:LoadSingleAnimationClip(
         modelInfo.Model.gameObject,
@@ -430,14 +475,15 @@ IsReLoadController) --更新加载同一个模型时重新加载动画
         end
         )
     else
+        -- 未命中：发起异步加载
         XModelManager.LoadRoleModel(
         self.CurRoleName,
         self.Transform,
         function(model)
-            local tmpModelInfo = {}
-            tmpModelInfo.Model = model
-            tmpModelInfo.RenderingProxy = CS.XNPCRendingUIProxy.GetNPCRendingUIProxy(model)
-            self.RoleModelPool[roleName] = tmpModelInfo
+            local payload = {}
+            payload.RenderingProxy = CS.XNPCRendingUIProxy.GetNPCRendingUIProxy(model)
+            local ok = self._CachePool:Put(roleName, model, token, payload)
+            if not ok then return end
 
             self:LoadSingleAnimationClip(
             model.gameObject,
@@ -447,17 +493,28 @@ IsReLoadController) --更新加载同一个模型时重新加载动画
             end
             )
 
-            local isSpecialModel, isMultiModel = XModelManager.CheckModelIsSpecial(self.CurRoleName, targetUiName)
-            if self.NewPanel and isMultiModel then
-                local newModelName = XModelManager.GetMinorModelId(self.CurRoleName, targetUiName)
-                local info = self.NewPanel.RoleModelPool[newModelName]
-                if info then
-                    info.Model.transform:SetParent(model.transform, false)
-                    self:SetEffectLayerRecursively(info.Model.gameObject,model.gameObject.layer,CS.UnityEngine.LayerMask.NameToLayer(KeepGraphicLayer.Distortion))                    
-                    -- info.Model.gameObject:SetLayerRecursively(model.gameObject.layer,CS.UnityEngine.LayerMask.NameToLayer(KeepGraphicLayer.Distortion))
-                end
-            end
+            self:_AttachMinorModelIfNeeded(model, targetUiName)
         end)
+    end
+end
+
+--- 新加载的主模型就绪后，将已加载的副模型挂到主模型下（多重模型场景）
+---@param mainModel userdata  Unity Component
+---@param targetUiName string|nil
+function XUiPanelRoleModel:_AttachMinorModelIfNeeded(mainModel, targetUiName)
+    local isSpecialModel, isMultiModel = XModelManager.CheckModelIsSpecial(self.CurRoleName, targetUiName)
+    if not (self.NewPanel and isMultiModel) then
+        return
+    end
+    local newModelName = XModelManager.GetMinorModelId(self.CurRoleName, targetUiName)
+    local minorEntry = newModelName and self.NewPanel._CachePool:Get(newModelName)
+    if minorEntry then
+        minorEntry.Model.transform:SetParent(mainModel.transform, false)
+        self:SetEffectLayerRecursively(
+            minorEntry.Model.gameObject,
+            mainModel.gameObject.layer,
+            CS.UnityEngine.LayerMask.NameToLayer(KeepGraphicLayer.Distortion)
+        )
     end
 end
 
@@ -599,8 +656,7 @@ function XUiPanelRoleModel:RoleModelLoaded(name, uiName, cb, runtimeControllerNa
 
     if runtimeControllerName then
         local animator = model:GetComponent("Animator")
-        local runtimeController = CS.LoadHelper.LoadUiController(runtimeControllerName, self.RefName)
-        animator.runtimeAnimatorController = runtimeController
+        animator.runtimeAnimatorController = CS.LoadHelper.LoadUiController(runtimeControllerName, animator.gameObject)
     end
 
     if self.SetFocus then
@@ -732,6 +788,7 @@ function XUiPanelRoleModel:LoadResCharacterUiEffect(characterId, fashionId, weap
         return
     end
     local model = self.RoleModelPool[self.CurRoleName]
+    if not model then return end
     if not model.CharacterId then
         model.CharacterId = characterId
     end
@@ -784,6 +841,7 @@ end
 --==============================--
 function XUiPanelRoleModel:LoadCurrentCharacterDefaultUiEffect()
     local model = self.RoleModelPool[self.CurRoleName]
+    if not model then return end
     if model.NotUiStand1 or not model.UiDefaultId then
         return
     end
@@ -1024,6 +1082,8 @@ function XUiPanelRoleModel:GetUiEffectRoot(model, rootName, effectPath, effectTy
 end
 
 --动作播放完重新播放特效
+-- 角色动作播放完后重新激活特效，因角色是循环播放，特效每次都是重新播放（从0开始播）。
+-- 这会导致特效的播放时间和角色动作的播放时间不一致，角色比特效慢了大约一帧时间（范围是 0到一帧）
 function XUiPanelRoleModel:SetReActiveUiEffect(model)
     --local playRoleAnimation = model.Model.gameObject:GetComponent("XPlayRoleAnimation")
     if XTool.IsTableEmpty(model.UiEffect)
@@ -1105,7 +1165,8 @@ growUpLevel,
 hideEffect,
 isShowDefaultWeapon,
 isNotSelf,
-weaponId)
+weaponId,
+colorId)
     self.StandAnimaShowWeaponList = {}
     self.StandAnimaShowWeaponAnimatorList = {}
     
@@ -1119,10 +1180,10 @@ weaponId)
 
     local resourcesId
     if XTool.IsNumberValid(fashionId) then
-        -- 分包检查：若涂装未下载则使用默认涂装
+         -- 分包检查：若涂装未下载则使用默认涂装
         local validFashionId = self:_GetValidFashionId(fashionId, characterId)
-        resourcesId = XDataCenter.FashionManager.GetResourcesId(validFashionId)
         self.NowFashionId = validFashionId
+        resourcesId = XMVCA.XFashion:GetOwnFashionColorResourcesId(validFashionId, colorId)
     else
         resourcesId = XDataCenter.FashionManager.GetFashionResourceIdByCharId(characterId, isNotSelf)
         self.NowFashionId = XDataCenter.FashionManager.GetFashionIdByResId(resourcesId)
@@ -1319,7 +1380,7 @@ function XUiPanelRoleModel:LoadCharacterUiEffectOther(character, actionId, weapo
     local equipModelIdList = XMVCA.XEquip:GetWeaponEquipModelIdListByTemplateId(weapon.TemplateId, weaponFashionId)
     local id, rootName, effectPath = XCharacterUiEffectConfig.GetEffectInfo(character.Id, fashionId, actionId, equipModelIdList)
     local model = self.RoleModelPool[self.CurRoleName]
-
+    if not model then return end
     if not model.CharacterId then
         model.CharacterId = character.Id
     end
@@ -1353,10 +1414,10 @@ function XUiPanelRoleModel:UpdateRobotModel(robotId, characterId, weaponCb, fash
     local resourcesId
     local nowFashionId
     if fashionId then
-        -- 分包检查：若涂装未下载则使用默认涂装
+         -- 分包检查：若涂装未下载则使用默认涂装
         local validFashionId = self:_GetValidFashionId(fashionId, characterId)
-        resourcesId = XDataCenter.FashionManager.GetResourcesId(validFashionId)
         nowFashionId = validFashionId
+        resourcesId = XMVCA.XFashion:GetOwnFashionColorResourcesId(validFashionId)
     else
         resourcesId = XDataCenter.FashionManager.GetFashionResourceIdByCharId(characterId)
         nowFashionId = XDataCenter.FashionManager.GetFashionIdByResId(resourcesId)
@@ -1430,7 +1491,7 @@ function XUiPanelRoleModel:UpdateRobotModelWithWeapon(robotId, characterId, weap
     if not XTool.IsNumberValid(weaponFashionId) then
         weaponFashionId = XRobotManager.GetRobotWeaponFashionId(robotId)
     end
-
+    
     self:UpdateRobotModelPublicNew(weaponFashionId,characterId, weaponCb, fashionId, equipTemplateId, modelCb, needDisplayController, targetPanelRole, targetUiName)
 end
 
@@ -1485,14 +1546,14 @@ function XUiPanelRoleModel:UpdateCharacterResModel(resId, characterId, targetUiN
     end
 
     local modelName = XMVCA.XCharacter:GetCharResModel(validResId)
-
+    
     if modelName then
         self:SetCueIdByFashionId(fashionId)
         self:UpdateRoleModel(modelName, nil, targetUiName, function(model)
             if not self.HideWeapon then
                 self:UpdateCharacterWeaponModels(characterId, modelName, nil, nil, nil, weaponFashionId)
             end
-
+            
             self:UpdateCharacterLiberationLevelEffect(modelName, characterId, growUpLevel, fashionId)
 
             if cb then
@@ -1519,31 +1580,35 @@ showDefaultFx)
     end
     
     self:UpdateRoleModel(modelId, targetPanelRole, targetUiName, function(model)
-        if not self.HideWeapon then
+        if not self.HideWeapon and XTool.IsNumberValid(characterId) then
             self:UpdateCharacterWeaponModels(characterId, modelId)
         end
-        
-        self:UpdateCharacterLiberationLevelEffect(modelId, characterId, growUpLevel, nil, showDefaultFx)
+
+        if XTool.IsNumberValid(characterId) then
+            self:UpdateCharacterLiberationLevelEffect(modelId, characterId, growUpLevel, nil, showDefaultFx)
+        end
 
         if cb then
             cb(model)
         end
     end)
     
-    local defaultFashionId = XMVCA.XCharacter:GetCharacterTemplate(characterId).DefaultNpcFashtionId
-    local fashionId
-    if growUpLevel == 2 then --growUpLevel 2为第一套解放衣服 3，4为第二套解放衣服，解放的时装Id跟默认时装Id紧挨且按顺序+1
-        fashionId = defaultFashionId + 1
-    elseif growUpLevel >= 3 then
-        fashionId = defaultFashionId + 2
-    end
+    if XTool.IsNumberValid(characterId) then
+        local defaultFashionId = XMVCA.XCharacter:GetCharacterTemplate(characterId).DefaultNpcFashtionId
+        local fashionId
+        if growUpLevel == 2 then --growUpLevel 2为第一套解放衣服 3，4为第二套解放衣服，解放的时装Id跟默认时装Id紧挨且按顺序+1
+            fashionId = defaultFashionId + 1
+        elseif growUpLevel >= 3 then
+            fashionId = defaultFashionId + 2
+        end
 
-    local allFashionConfig = XFashionConfigs.GetFashionTemplates()
-    if not fashionId or not allFashionConfig[fashionId] then
-        fashionId = defaultFashionId
-    end
-    if fashionId then
-        self:LoadResCharacterUiEffect(characterId, fashionId)
+        local allFashionConfig = XFashionConfigs.GetFashionTemplates()
+        if not fashionId or not allFashionConfig[fashionId] then
+            fashionId = defaultFashionId
+        end
+        if fashionId then
+            self:LoadResCharacterUiEffect(characterId, fashionId)
+        end
     end
 end
 
@@ -2372,18 +2437,23 @@ local time
 ---@param oriAnima string
 ---=================================================
 function XUiPanelRoleModel:StopAnima(oriAnima, force)
-    if XTool.UObjIsNil(self.RoleModelPool[self.CurRoleName].Model) then
+    -- 低内存模式下模型可能已被淘汰销毁，entry 为 nil 时安全跳过
+    local curEntry = self._CachePool:Get(self.CurRoleName)
+    if not curEntry then
+        return
+    end
+    if XTool.UObjIsNil(curEntry.Model) then
         local topUiName = XLuaUiManager.GetTopUiName() or ""
         XLog.Error("模型丢失：" .. self.CurRoleName .. ",栈顶UI是：" .. topUiName)
+        return
     end
     ---@type UnityEngine.Animator
-    local animator = self.RoleModelPool[self.CurRoleName].Model:GetComponent("Animator")
+    local animator = curEntry.Model:GetComponent("Animator")
     local clips = animator:GetCurrentAnimatorClipInfo(0)
     local clip
     if clips and clips.Length > 0 then
         clip = clips[0].clip
     end
-
 
     -- 是否需要播放动作打断特效
     if self.PlayEffectFunc then
@@ -2393,11 +2463,10 @@ function XUiPanelRoleModel:StopAnima(oriAnima, force)
     if force and clip or oriAnima == nil or (clip and clip.name == oriAnima) then
         -- 停止UI特效
         self.CurrentAnimationName = nil
-        local model = self.RoleModelPool[self.CurRoleName]
         -- 立刻执行上一次动画的结束回调
         self:DoAnimaCrossFinishCallBack()
-        self:SetCurrentUiEffectActive(model.UiEffect, false)
-        self:SetCurrentUiEffectActive(model.UiEquipEffect, false)
+        self:SetCurrentUiEffectActive(curEntry.UiEffect, false)
+        self:SetCurrentUiEffectActive(curEntry.UiEquipEffect, false)
         animator:Play(clip.name, 0, 0.999)
     end
 
@@ -2466,10 +2535,9 @@ function XUiPanelRoleModel:HideRoleModel()
 end
 
 function XUiPanelRoleModel:SetModelZeroPos()
-    local model = self.RoleModelPool[self.CurRoleName].Model
-    if not model then return end
-    
-    model.transform.localPosition = CS.UnityEngine.Vector3.zero
+    local entry = self._CachePool:Get(self.CurRoleName)
+    if not entry then return end
+    entry.Model.transform.localPosition = CS.UnityEngine.Vector3.zero
 end
 
 --- 获取正在播放动画名
@@ -2671,8 +2739,7 @@ function XUiPanelRoleModel:SetCharacterModelNodeEffectMappingPrefab(config)
     
             local animator = effectGo:GetComponent(typeof(CS.UnityEngine.Animator))
             if animator and config.AnimController[i] then
-                local runtimeController = CS.LoadHelper.LoadUiController(config.AnimController[i], self.RefName)
-                animator.runtimeAnimatorController = runtimeController
+                animator.runtimeAnimatorController = CS.LoadHelper.LoadUiController(config.AnimController[i], animator.gameObject)
             end
         end
     end
@@ -2711,12 +2778,13 @@ function XUiPanelRoleModel:GetRenderingProxy()
         return nil
     end
 
-    local roleModel = self.RoleModelPool[self.CurRoleName]
-    if not roleModel then
+    local entry = self._CachePool:Get(self.CurRoleName)
+    if not entry then
         return nil
     end
 
-    return roleModel.RenderingProxy
+    -- RenderingProxy 存放在 entry.Payload（新结构）
+    return entry.Payload and entry.Payload.RenderingProxy
 end
 
 function XUiPanelRoleModel:BindEffectByModel(model)
@@ -2993,13 +3061,30 @@ function XUiPanelRoleModel:GetModelInfoByName(name)
 end
 
 function XUiPanelRoleModel:RemoveRoleModelPool()
-    local modelPool = self.RoleModelPool
-    for _, modelInfo in pairs(modelPool or {}) do
-        if modelInfo.Model and modelInfo.Model:Exist() then
-            CS.UnityEngine.Object.Destroy(modelInfo.Model.gameObject)
-        end
+    -- 委托缓存池统一清理：业务回调 + Object.Destroy + 清空 _Pool
+    self._CachePool:Clear()
+    -- 兼容层引用 self.RoleModelPool 指向 _Pool 内部 table，Clear 是逐一 nil 而非替换 table，引用仍有效
+    self.CurRoleName = nil
+end
+
+--- 缓存条目被淘汰/销毁前的业务清理回调（由 XModelCachePool._DestroyEntry 调用）
+--- 负责清理角色模型的所有附属资源：UI 特效、武器特效、解放特效等
+---@param key   string  模型 roleName
+---@param entry table   缓存条目
+function XUiPanelRoleModel:_OnCacheEntryDestroy(key, entry)
+    -- UiEffect / UiEquipEffect 存在 entry 本身（历史兼容，由业务代码直接写入 entry）
+    self:ClearUiEffectList(entry.UiEffect)
+    self:ClearUiEffectList(entry.UiEquipEffect)
+
+    -- LiberationFx 同上
+    if entry.LiberationFx and not XTool.UObjIsNil(entry.LiberationFx) then
+        XUiHelper.Destroy(entry.LiberationFx)
     end
-    self.RoleModelPool = {}
+
+    -- TempEffectGo（手环位置修正用的临时 GO）
+    if entry.TempEffectGo and not XTool.UObjIsNil(entry.TempEffectGo) then
+        XUiHelper.Destroy(entry.TempEffectGo)
+    end
 end
 
 function XUiPanelRoleModel:UpdateCuteModelWithoutUiEffect(robotId, isNotCuteUiEffect)
@@ -3108,9 +3193,8 @@ function XUiPanelRoleModel:GetCurRoleName()
 end
 
 function XUiPanelRoleModel:GetCurRoleModel()
-    if self.CurRoleName then
-        return self.RoleModelPool[self.CurRoleName].Model
-    end
+    local entry = self._CachePool:Get(self.CurRoleName)
+    return entry and entry.Model
 end
 
 ---@param dataModel XDlcHuntModel

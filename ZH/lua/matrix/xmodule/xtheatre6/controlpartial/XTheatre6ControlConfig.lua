@@ -28,7 +28,16 @@ end
 
 ---局外商店代币
 function XTheatre6Control:GetRewardShopCoin()
-    return self:GetIntClientConfigValue("ConsumeId")
+    local values = self._Model:GetClientConfigValues("ConsumeId")
+    if XTool.IsTableEmpty(values) then
+        return table.empty
+    end
+
+    local coinIds = {}
+    for _, v in ipairs(values) do
+        table.insert(coinIds, tonumber(v))
+    end
+    return coinIds
 end
 
 function XTheatre6Control:GetIntClientConfigValue(key, index)

@@ -1,7 +1,7 @@
-local XUiGridStageStar = require("XUi/XUiFubenMainLineDetail/XUiGridStageStar")
-local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
-local XUiStageFightControl = require("XUi/XUiCommon/XUiStageFightControl")
-local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local XUiGridStageStar = require("XUi/XUiFubenMainLineDetail/XUiGridStageStar")
+local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
+local XUiStageFightControl = require("XUi/XUiCommon/XUiStageFightControl")
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 -- v1.32 关卡介绍
 --====================================================================
 local XGridStageDesc  = XClass(nil, "XGridStageDesc")
@@ -154,7 +154,7 @@ function XUiFubenCoupleCombatDetail:OnBtnEnterClick()
 
         -- 如果有第五期，请务必转移到UiBattleRoleRoom
         -- proxy需要兼容
-        XLuaUiManager.Open("UiBattleRoleRoom", self.StageId)
+        XMVCA.XFuben:OpenUiBattleRoleRoom(self.StageId)
         self:Close()
     end
 end

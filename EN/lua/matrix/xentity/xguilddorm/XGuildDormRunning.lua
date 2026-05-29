@@ -12,6 +12,11 @@ function XGuildDormRunning:Ctor(gameObject)
     -- 注册luaBehaviour监听
     local behaviour = gameObject:AddComponent(typeof(CS.XLuaBehaviour))
     behaviour.LuaUpdate = function() self:Update() end
+    behaviour.LuaLateUpdate = function()
+        if self.UiGuildDormCommon then
+            self.UiGuildDormCommon:Update(Time.deltaTime)
+        end
+    end
     -- 当前房间
     self.CurrentRoom = nil
     self.UiGuildDormCommon = nil
@@ -88,9 +93,9 @@ function XGuildDormRunning:Update()
         end
         self.CurrentRoom:Update(Time.deltaTime)
     end
-    if self.UiGuildDormCommon then
-        self.UiGuildDormCommon:Update(Time.deltaTime)
-    end
+    --if self.UiGuildDormCommon then
+    --    self.UiGuildDormCommon:Update(Time.deltaTime)
+    --end
     -- 超过一定增加的内存，主动gc一次
     if Env.Memroy - self.InitMemroy >= self.GCCheckAddMemroy then
         XLog.Debug("========= gc", self.InitMemroy, Env.Memroy, self.GCCheckAddMemroy)

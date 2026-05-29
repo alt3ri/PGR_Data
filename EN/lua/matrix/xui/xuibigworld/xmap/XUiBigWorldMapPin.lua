@@ -6,11 +6,12 @@ local XUiBigWorldMapPinTag = require("XUi/XUiBigWorld/XMap/XUiBigWorldMapPinTag"
 ---@field TagNode UnityEngine.RectTransform
 ---@field UpUp UnityEngine.RectTransform
 ---@field UpDown UnityEngine.RectTransform
+---@field FloorOn UnityEngine.RectTransform
+---@field FloorOff UnityEngine.RectTransform
 ---@field BtnSelect XUiComponent.XUiButton
 ---@field CanvasGroup UnityEngine.CanvasGroup
 ---@field _Target UnityEngine.RectTransform
 ---@field Parent XUiBigWorldMap
----@field _Target UnityEngine.RectTransform
 local XUiBigWorldMapPin = XClass(XUiNode, "XUiBigWorldMapPin")
 
 function XUiBigWorldMapPin:OnStart(target, targetParent, isAssistedPosition)
@@ -34,6 +35,8 @@ function XUiBigWorldMapPin:OnStart(target, targetParent, isAssistedPosition)
     ---@type XBWMapInterfaceBase
     self._Interface = false
 
+    self._AreaGroupType = XMVCA.XBigWorldMap.AreaGroupType.Vertical
+
     self._TargetPrefab = target
     self._TargetPrefabParent = targetParent
     self:_RegisterButtonClick()
@@ -42,6 +45,10 @@ end
 
 function XUiBigWorldMapPin:OnBtnPinClick()
     if self._PinData and XTool.IsNumberValid(self._LevelId) then
+        if not self._PinData.IsInteract then
+            return
+        end
+
         local axisConversion = self._Interface:GetAxisConversion()
         local mousePosition = axisConversion:UIToScreenPosition2D(self.Transform)
         local pinDatas = self:_GetNearPinDatas(mousePosition)
@@ -85,6 +92,7 @@ end
 function XUiBigWorldMapPin:SetPinData(levelId, pinData)
     self._LevelId = levelId or 0
     self._PinData = pinData
+    self._AreaGroupType = XMVCA.XBigWorldMap:GetMapAreaGroupTypeByLevelId(levelId)
 end
 
 function XUiBigWorldMapPin:SetInterface(interface)
@@ -131,6 +139,10 @@ end
 
 ---@param pinData XBWMapPinData
 function XUiBigWorldMapPin:AnchorToAndSelectTag(pinData, isIgnoreTween)
+    if not pinData.IsInteract then
+        return
+    end
+
     self:AnchorTo(false, isIgnoreTween)
     self:SelectTag(pinData.PinId)
     self._Interface:OpenTagPinDetail(self, pinData.LevelId, pinData)
@@ -172,7 +184,12 @@ end
 function XUiBigWorldMapPin:RefreshStyle(pinData)
     local icon = XMVCA.XBigWorldMap:GetPinIconByStyleId(pinData.StyleId, pinData:IsActive())
 
-    self.BtnPin:SetSprite(icon)
+    if not string.IsNilOrEmpty(icon) then
+        self.BtnPin:SetSprite(icon)
+    else
+        XLog.Error("Pin Icon is INVALID! PinId = " .. tostring(pinData.PinId) .. ", LevelId = " .. tostring(pinData.LevelId) .. ", NpcPlaceId = " .. tostring(pinData.NpcPlaceId) .. ", SceneObjectId = " .. tostring(pinData.SceneObjectPlaceId))
+    end
+
     self:RefreshFloor(pinData, self._Interface:GetCurrentSelectFloorIndex())
     self.BtnPin:ShowTag(pinData:IsTracking())
 end
@@ -180,6 +197,7 @@ end
 ---@param pinData XBWMapPinData
 function XUiBigWorldMapPin:RefreshFloor(pinData, currentIndex)
     local groupId = pinData:GetAreaGroupId(self._IsAssistedPosition)
+    local isVertical = self._AreaGroupType == XMVCA.XBigWorldMap.AreaGroupType.Vertical
 
     --- 跨关卡追踪图钉特殊处理
     if pinData:IsVirtual() then
@@ -193,9 +211,16 @@ function XUiBigWorldMapPin:RefreshFloor(pinData, currentIndex)
     end
 
     local groupIndex = XMVCA.XBigWorldMap:GetFloorIndexByGroupId(groupId)
+    local isActive = pinData:IsActive()
 
-    self.UpUp.gameObject:SetActiveEx(groupIndex > currentIndex)
-    self.UpDown.gameObject:SetActiveEx(groupIndex < currentIndex)
+    self.UpUp.gameObject:SetActiveEx(groupIndex > currentIndex and isVertical)
+    self.UpDown.gameObject:SetActiveEx(groupIndex < currentIndex and isVertical)
+    if self.FloorOn then
+        self.FloorOn.gameObject:SetActiveEx(groupIndex ~= currentIndex and not isVertical and isActive)
+    end
+    if self.FloorOff then
+        self.FloorOff.gameObject:SetActiveEx(groupIndex ~= currentIndex and not isVertical and not isActive)
+    end
 end
 
 function XUiBigWorldMapPin:RefreshEmptyTag()

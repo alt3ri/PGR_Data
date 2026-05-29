@@ -246,7 +246,7 @@ function XUiBigWorldTaskMainInvitation:OnDynamicTableEvent(event, index, grid)
         else
             local centerIndex = self._Tab2SelectIndex[self._TabIndex]
             if centerIndex == index then
-                grid:PlayExpandAnim(true)
+                grid:PlayExpandAnim(false)
             else
                 grid:PlayCollapseAnim(false)
             end

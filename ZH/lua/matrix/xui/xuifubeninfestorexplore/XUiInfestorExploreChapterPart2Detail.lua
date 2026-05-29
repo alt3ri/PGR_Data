@@ -37,5 +37,5 @@ end
 
 function XUiInfestorExploreChapterPart2Detail:OnClickBtnEnter()
     local stageId = self.StageId
-    XLuaUiManager.Open("UiBattleRoleRoom", stageId)
+    XMVCA.XFuben:OpenUiBattleRoleRoom(stageId)
 end

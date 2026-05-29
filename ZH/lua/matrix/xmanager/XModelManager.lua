@@ -819,6 +819,9 @@ function XModelManager.LoadDisplayWeaponEffect(modelId, model, param, uiName)
             end, delay)
             XModelManager.AddEffectTimer(timer, uiName, filename, XEnumConst.ModelDisplayDelay.Weapon)
         else
+            -- 重新激活一下节点
+            effectRoot.gameObject:SetActiveEx(false)
+            effectRoot.gameObject:SetActiveEx(true)
             effectRoot:LoadPrefab(effectPath, false)
         end
 

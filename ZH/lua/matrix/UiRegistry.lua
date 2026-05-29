@@ -2469,9 +2469,10 @@ local UiRegistry = {
     UiBigWorldFashionPreview = "XUi/XUiBigWorld/XCommanderDIY/FashionPreview/XUiBigWorldFashionPreview",
     --endregion
     --region XGameCollection
-    UiGameCollectionRecord = "XUi/XUiGameCollection/XUiGameCollectionRecord",
     UiMiniGamesCollectionRewardShop = "XUi/XUiGameCollection/XUiMiniGamesCollectionRewardShop/XUiMiniGamesCollectionRewardShop",
     UiMiniGamesCollectionMain = "XUi/XUiGameCollection/XUiMiniGamesCollectionMain/XUiMiniGamesCollectionMain",
+    UiMiniGamesCollectionBreakTheRecord = "XUi/XUiGameCollection/XUiMiniGamesCollectionBreakTheRecord",
+    UiGoldenMinerGiveUp = "XUi/XUiGameCollection/XUiGoldenMinerGiveUp",
     --endregion
     UiMainLinePopupExplore = "XUi/XUiMainLine2/UiMainLinePopupExplore/XUiMainLinePopupExplore",
     UiMainLine41PopupSkyGardenDetail = "XUi/XUiMainLine2/UiMainLine41PopupSkyGardenDetail/XUiMainLine41PopupSkyGardenDetail",

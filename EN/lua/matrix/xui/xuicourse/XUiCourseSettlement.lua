@@ -170,7 +170,12 @@ function XUiCourseSettlement:SaveResult()
     end
 end
 
-function XUiCourseSettlement:RequestCourseSaveResult()
-    local chapterId = XCourseConfig.GetChapterIdByStageId(self.StageId)
-    XDataCenter.CourseManager.RequestCourseSaveResult(handler(self, self.Close), nil, chapterId)
+function XUiCourseSettlement:RequestCourseSaveResult()
+    local chapterId = XCourseConfig.GetChapterIdByStageId(self.StageId)
+    XDataCenter.CourseManager.RequestCourseSaveResult(handler(self, self.Close), nil, chapterId)
+end
+
+function XUiCourseSettlement:OnDestroy()
+    -- 与通用结算界面保持一致，通知主流程“结算已关闭”，以恢复空花回流逻辑
+    XEventManager.DispatchEvent(XEventId.EVENT_FIGHT_FINISH_SETTLE)
 end

@@ -4,6 +4,12 @@ local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 ---@field _Scene XUiPanelGachaLiv4P5Scene
 local XUiGachaLiv4P5Main = XLuaUiManager.Register(XLuaUi, "UiGachaLifu405Main")
 
+local QualityEnum = {
+    Purple = 4,
+    Yellow = 5,
+    Red = 6,
+}
+
 function XUiGachaLiv4P5Main:OnAwake()
     self._CanPlayEnableAnim = false -- 只有进入卡池时会检测播放1次
     self._IsGachaReturnMain = false -- 是否抽卡后返回卡池主界面
@@ -40,9 +46,6 @@ function XUiGachaLiv4P5Main:OnStart(gachaId, isPlayEnterAnim, isPlayStoryAnim)
         return
     end
     
-    ---@type XUiPanelGachaLiv4P5Volume
-    self._Volume = require("XUi/XUiGachaLiv4P5/Grid/XUiPanelGachaLiv4P5Volume").New(self.PanelVolume, self, self._GachaCfg)
-    self._Volume:HideAll()
     self._Scene = require("XUi/XUiGachaLiv4P5/Grid/XUiPanelGachaLiv4P5Scene").New(self.Transform, self)
     ---@type XUiPanelSwitchableSceneAnim
     self._SwitchableScene = require("XUi/XUiSwitchableScene/XUiPanelSwitchableSceneAnim").New()
@@ -81,25 +84,38 @@ function XUiGachaLiv4P5Main:OnStart(gachaId, isPlayEnterAnim, isPlayStoryAnim)
     self._SceneId = XGachaConfigs.GetClientConfigNumber('Liv4P5SceneId')
 
     if self.PanelVideo then
+        self.PanelVideo.gameObject:SetActiveEx(false)
         ---@type XUiPanelCharacterCG
         self._CG = require("XUi/XUiCharacterCG/XUiPanelCharacterCG").New(self.PanelVideo, self)
         
-        self._CG.VideoPlayer.DestroyOnStopWithoutLanguagePreparing = true
+        self._CG:SetDestroyOnStopWithoutLanguagePreparing(true)
 
         self._CGFinishCallBack = function()
-            self.SafeAreaContentPane.blocksRaycasts = true
+            if self.SafeAreaContentPane then
+                self.SafeAreaContentPane.blocksRaycasts = true
+            end
+            
             self._Volume:PlayEnd()
             self._Scene:SetXPostFaicalControllerActive(true)
-            self._SwitchableScene:Play(self._SceneId, self.UiSceneInfo.Transform)
+            self._SwitchableScene:OnVideoEnd(self._SceneId, self.UiSceneInfo and self.UiSceneInfo.Transform or nil)
         end
-        
+
         self._CG:AddVideoDestroyCallBack(self._CGFinishCallBack)
+
+        self._CG:Close()
     end
+
+    ---@type XUiPanelGachaLiv4P5Volume
+    self._Volume = require("XUi/XUiGachaLiv4P5/Grid/XUiPanelGachaLiv4P5Volume").New(self.PanelVolume, self, self._GachaCfg, self._CG)
+    self._Volume:HideAll()
 
     if self.PanelGyroTips then
         self.PanelGyroTipsCtrl = require("XUi/XUiGachaLiv4P5/Grid/XUiPanelGachaLiv4P5GyroTips").New(self.PanelGyroTips, self, self._GachaId, self._SceneId)
         self.PanelGyroTipsCtrl:Open()
     end
+
+    -- 卡池强制开启陀螺仪
+    self._SwitchableScene:SetGyroEnabledOverride(true)
 end
 
 function XUiGachaLiv4P5Main:OnEnable()
@@ -141,6 +157,11 @@ function XUiGachaLiv4P5Main:OnEnable()
 end
 
 function XUiGachaLiv4P5Main:OnDisable()
+    if XTool.IsNumberValidEx(self._SpineDelayShowTimeId) then
+        XScheduleManager.UnSchedule(self._SpineDelayShowTimeId)
+        self._SpineDelayShowTimeId = nil
+    end
+    
     -- 本地缓存skip按钮状态
     local isSelect = self.BtnSkip:GetToggleState()
     XSaveTool.SaveData(self._SkipBtnKey, isSelect)
@@ -148,6 +169,8 @@ function XUiGachaLiv4P5Main:OnDisable()
     -- 离开界面时关闭视线跟随
     self._Scene:SetXPostFaicalControllerActive(false)
     self._SwitchableScene:Stop()
+    
+    self._CG:Close()
 end
 
 function XUiGachaLiv4P5Main:OnDestroy()
@@ -168,6 +191,7 @@ function XUiGachaLiv4P5Main:OnGetEvents()
     return {
         CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYING,
         CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYEND,
+        CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_STOP_WITHOUT_LANGUAGEPREPARING,
     }
 end
 
@@ -192,7 +216,21 @@ function XUiGachaLiv4P5Main:OnNotify(evt, ...)
 
         if not self._CG:IsLanguagePreparing() then
             self._CG:OnCGPlay()
+            self._Volume:PlayStart()
         end
+    elseif evt == CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_STOP_WITHOUT_LANGUAGEPREPARING then
+        local argUguiVideo = arg[1]
+        local curUguiVideo = self._CG:GetVideoPlayer()
+        if not XTool.UObjIsNil(argUguiVideo) and not XTool.UObjIsNil(curUguiVideo) and curUguiVideo.gameObject ~= argUguiVideo.gameObject then
+            return
+        end
+
+        if self._AnimEnableLong then
+            self._AnimEnableLong.gameObject:SetActiveEx(false)
+        end
+        
+        self._CG:OnCGStop()
+        self:PlayAnimation("AnimEnableShort")
     end
 end
 
@@ -295,11 +333,25 @@ end
 
 function XUiGachaLiv4P5Main:PlayVideoEnableAnim(videoId)
     if self._CG then
+        self._CG:Open()
         self.SafeAreaContentPane.blocksRaycasts = false
         self._SwitchableScene:OnVideoStart()
-        self._Volume:PlayStart()
 
         self._CG:PlayCG(videoId)
+
+        -- 需要同时播放长动画以处理视频结束后的衔接
+        if not self._AnimEnableLong then
+            local trans = self:FindTransform("Animation/AnimEnableLong")
+
+            if trans then
+                self._AnimEnableLong = trans.gameObject:GetComponent(typeof(CS.UnityEngine.PlayableDirector))
+            end
+        end
+
+        if self._AnimEnableLong then
+            self._AnimEnableLong.gameObject:SetActiveEx(true)
+            self._AnimEnableLong:Play()
+        end
     end
 end
 
@@ -508,7 +560,8 @@ function XUiGachaLiv4P5Main:CheckIsCanGacha(gachaCount)
     -- 剩余抽卡次数检测
     if not self["IsCanGacha" .. gachaCount] then
         if gachaCount == 10 and not self.IsGachaTimesEnd then
-            XUiManager.TipText("GachaLiv4P5ItemNoEnough")
+            -- 版本开发后期策划加配置需同步本地化流程比较麻烦，这里先仍复用其他卡池的key
+            XUiManager.TipText("GachaBiankaItemNoEnough")
         end
         return
     end
@@ -607,7 +660,7 @@ function XUiGachaLiv4P5Main:DoGacha(gachaCount, isSkipToShow)
                 local isSkipToShow = isSkipToShow2 or isSkipToShow -- 闭包在其他函数调用的时候不能获取当前函数里的的upvalue isSkipToShow，所以要在其他地方调用时要额外再传一次isSkipToShow2
 
                 self:StopAnime()
-                XLuaUiManager.Open("UiGachaLiv4P5Show", self._GachaId, self.RewardList, nil, isSkipToShow and gachaCount > 1) -- 单抽不能跳过奖励展示
+                XLuaUiManager.Open("UiGachaLifu405Show", self._GachaId, self.RewardList, nil, isSkipToShow and gachaCount > 1) -- 单抽不能跳过奖励展示
                 self._TipCbTrigger = function()
                     local isOpenQuickWear = XTool.IsNumberValid(templateId) and not isConvertFrom
                     local isOpenUiObtain = isConvertFrom and rewardListCourseFromServer
@@ -621,13 +674,13 @@ function XUiGachaLiv4P5Main:DoGacha(gachaCount, isSkipToShow)
                         local asynOpen = asynTask(XLuaUiManager.Open)
                         RunAsyn(function()
                             if isOpenQuickWear then
-                                asynOpen("UiGachaLiv4P5QuickWear", templateId, self._GachaCfg.CourseRewardId, isConvertFrom, rewardName)
+                                asynOpen("UiGachaLifu405QuickWear", templateId, self._GachaCfg.CourseRewardId, isConvertFrom, rewardName)
                             end
                             if fashionItem then
-                                asynOpen("UiGachaLiv4P5Passport", fashionItem)
+                                asynOpen("UiGachaLifu405Passport", fashionItem)
                             end
                             if backgroundItem then
-                                asynOpen("UiGachaLiv4P5Passport", backgroundItem)
+                                asynOpen("UiGachaLifu405Passport", backgroundItem)
                             end
                             if isOpenUiObtain then
                                 asynOpen("UiObtain", rewardListCourseFromServer)
@@ -692,7 +745,7 @@ function XUiGachaLiv4P5Main:PlayGachaAnime(quality)
         return
     end
 
-    quality = quality or 4
+    quality = quality or QualityEnum.Purple
     local timeline = self._Scene:GetGachaAnime(quality)
     if timeline then
         timeline:PlayTimelineAnimation(function()
@@ -700,7 +753,33 @@ function XUiGachaLiv4P5Main:PlayGachaAnime(quality)
                 self._FinishCbTrigger()
                 self._FinishCbTrigger = nil
             end
+
+            if self.Spine then
+                self.Spine.gameObject:SetActiveEx(false)
+            end
+
+            if XTool.IsNumberValidEx(self._SpineDelayShowTimeId) then
+                XScheduleManager.UnSchedule(self._SpineDelayShowTimeId)
+                self._SpineDelayShowTimeId = nil
+            end
         end)
+
+        -- 仅红色抽出红色品质才播放额外的骨骼动画
+        if quality == QualityEnum.Red then
+            if self.Spine then
+                local time = math.floor(XScheduleManager.SECOND * XGachaConfigs.GetClientConfigNumber("Liv4P5DrawSpineShowDelayTime"))
+                self.Spine.gameObject:SetActiveEx(false)
+
+                if XTool.IsNumberValidEx(self._SpineDelayShowTimeId) then
+                    XScheduleManager.UnSchedule(self._SpineDelayShowTimeId)
+                end
+
+                self._SpineDelayShowTimeId = XScheduleManager.ScheduleOnce(function()
+                    self._SpineDelayShowTimeId = nil
+                    self.Spine.gameObject:SetActiveEx(true)
+                end, time)
+            end
+        end
     end
 
     self.GachaButtonsDisable:PlayTimelineAnimation(function()

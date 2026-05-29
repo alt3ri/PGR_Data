@@ -8,7 +8,6 @@ function XUiPanelTheatre6RewardRelic:OnStart()
     self._TagGrids = {}
     self._ClickTagCb = nil
     self.UiTxtDescEffect.requestImage = XMVCA.XTheatre6.RichTextImageCallBack
-    self.UiTxtDescAttribute.requestImage = XMVCA.XTheatre6.RichTextImageCallBack
     self.UiTxtDesc.requestImage = XMVCA.XTheatre6.RichTextImageCallBack
 end
 
@@ -33,22 +32,26 @@ function XUiPanelTheatre6RewardRelic:RefreshName()
 end
 
 function XUiPanelTheatre6RewardRelic:RefreshQuality()
-    local quality = self._Config.Quality or 1
-    local qualityIcon = self._Control:GetQualityIcon(quality)
-    if qualityIcon and self.ImgQuality then
-        self.ImgQuality:SetRawImage(qualityIcon)
+    if self.ImgQuality then
+        self.ImgQuality:SetRawImage(self._Control:GetRelicQualityIcon(self._Config.Quality))
     end
 end
 
 function XUiPanelTheatre6RewardRelic:RefreshDesc()
     -- 属性加成
     local attrConfigs, attrValues = self._Control:GetShowAttribute(self._Config.AttrTypes, self._Config.AttrNums)
-    local attrText = ""
-    for i, attrCfg in ipairs(attrConfigs) do
+    XUiHelper.RefreshCustomizedList(self.GridAttr.parent, self.GridAttr, #attrConfigs, function(i, go)
+        local uiObject = {}
+        XUiHelper.InitUiClass(uiObject, go)
+        local attrCfg = attrConfigs[i]
         local value = attrValues[i]
-        attrText = attrText .. string.format("%s +%s\n", attrCfg.Name, value)
-    end
-    self.UiTxtDescAttribute.text = attrText
+        uiObject.RImgIcon:SetRawImage(attrCfg.Icon)
+        if value >= 0 then
+            uiObject.UiTxtDescAttribute.text = string.format("%s + %s", attrCfg.Name, self._Control:FormatNumberWithUnit(value))
+        else
+            uiObject.UiTxtDescAttribute.text = string.format("%s %s", attrCfg.Name, self._Control:FormatNumberWithUnit(value))
+        end
+    end)
 
     -- 额外效果
     local effectText = ""
@@ -82,9 +85,9 @@ function XUiPanelTheatre6RewardRelic:RefreshTags()
         grid.ImgIcon:SetSprite(tag.Icon)
         grid.TxtName.text = tag.Name
 
-        grid:AddEventListener(function()
-            self._Control:OpenTagTip(self._Config.BuildTags, self.Transform, keyWordIds)
-        end)
+        --grid:AddEventListener(function()
+        --    self._Control:OpenTagTip(self._Config.BuildTags, self.Transform, keyWordIds)
+        --end)
     end)
 end
 

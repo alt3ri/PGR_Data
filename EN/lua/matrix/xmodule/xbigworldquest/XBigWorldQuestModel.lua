@@ -12,7 +12,7 @@ local CsQuestConfig = CS.StatusSyncFight.XQuestConfig
 
 local TableQuestKey = {
     DlcQuestItem = { CacheType = XConfigUtil.CacheType.Normal },
-    DlcQuestType = { 
+    DlcQuestType = {
         DirPath = XConfigUtil.DirectoryType.Client,
         CacheType = XConfigUtil.CacheType.Normal,
     },
@@ -35,7 +35,25 @@ local TableEnvironmentQuestKey = {
     DlcEnvironmentQuest = {
         CacheType = XConfigUtil.CacheType.Normal,
         ReadFunc = XConfigUtil.ReadType.IntAll,
-        DirPath = XConfigUtil.DirectoryType.Client 
+        DirPath = XConfigUtil.DirectoryType.Share
+    },
+    DlcEnvironmentQuestGroup = {
+        CacheType = XConfigUtil.CacheType.Normal,
+        ReadFunc = XConfigUtil.ReadType.Int,
+        DirPath = XConfigUtil.DirectoryType.Share
+    },
+    DlcEnvironmentQuestLevel = {
+        CacheType = XConfigUtil.CacheType.Normal,
+        ReadFunc = XConfigUtil.ReadType.IntAll,
+        DirPath = XConfigUtil.DirectoryType.Client,
+        Identifier = "LevelId"
+    },
+}
+
+local TableMainLineTipKey = {
+    MainLineTip = {
+        DirPath = XConfigUtil.DirectoryType.Client,
+        CacheType = XConfigUtil.CacheType.Normal,
     },
 }
 
@@ -49,25 +67,33 @@ local QuestViewShield = {
 local PopViewType = {
     --不开弹窗
     None = 0,
-    
-    --通用
-    Small = 1,
-    
-    --全屏通用
-    FullScreenNormal = 2,
-    
-    --全屏好感
-    FullScreenFavorable = 3,
-    
+
+    --伊甸任务
+    Drama = 1,
+
+    --引航任务
+    Pilotage = 2,
+
+    --心语任务
+    DramaHeart = 3,
+
     --邀约任务
     Invitation = 4,
+
+    --漫迹任务
+    Wander = 5,
+
+    --风闻任务
+    Small = 6,
 }
 
 local PopViewType2UiName = {
-    [PopViewType.Small] = "UiBigWorldTaskObtain",
-    [PopViewType.FullScreenNormal] = "UiBigWorldTaskObtainDrama",
-    [PopViewType.FullScreenFavorable] = "UiBigWorldTaskObtainDramaHeart",
-    [PopViewType.Invitation] = "UiBigWorldTaskObtainInvitation",
+    [PopViewType.Drama] = "UiBigWorldTaskObtainDrama",--伊甸任务
+    [PopViewType.Pilotage] = "UiBigWorldTaskObtainDramaPilotage",--引航任务
+    [PopViewType.DramaHeart] = "UiBigWorldTaskObtainDramaHeart",--心语任务
+    [PopViewType.Invitation] = "UiBigWorldTaskObtainInvitation",--邀约任务
+    [PopViewType.Wander] = "UiBigWorldTaskObtainDramaWander",--漫迹任务
+    [PopViewType.Small] = "UiBigWorldTaskObtain",--风闻任务
 }
 
 local QuestViewShieldTypeList = {
@@ -90,11 +116,22 @@ function XBigWorldQuestModel:OnInit()
     self._LastTrackQuestId = 0
     self._FinishInviteResultDict = {}
     self._ReceiveInviteReward = false
+    self._EnvironmentGroups = table.empty
+    self._EnvironmentIdGroups = table.empty
+    self._EnvironmentOnDuty = table.empty
+    self._EnvironmentPlaceIds = table.empty
+    self._OccupiedQuestDict = {}
     self._PopUiViewDataPool = {}
     self._PopUiViewDataQueue = {}
+
+    self._RecordEnvironmentalGroup = table.empty
+
+    self:LoadEnvironmentalGroupNews()
+
     self._ConfigUtil:InitConfigByTableKey("DlcWorld/QuestSystem", TableQuestKey)
     self._ConfigUtil:InitConfigByTableKey("DlcWorld/QuestSystem/InviteQuest", TableInviteQuestKey)
     self._ConfigUtil:InitConfigByTableKey("DlcWorld/QuestSystem/EnvironmentQuest", TableEnvironmentQuestKey)
+    self._ConfigUtil:InitConfigByTableKey("DlcWorld/QuestSystem/MainLineTip", TableMainLineTipKey)
 end
 
 function XBigWorldQuestModel:ClearPrivate()
@@ -107,9 +144,17 @@ function XBigWorldQuestModel:ResetAll()
     self._FinishInviteResultDict = false
     self._ReceiveInviteReward = false
     self._EnvironmentIds = 0
+    self._EnvironmentGroups = table.empty
+    self._EnvironmentIdGroups = table.empty
+    self._EnvironmentOnDuty = table.empty
+    self._EnvironmentPlaceIds = table.empty
     self._InviteQuestIds = 0
     self._PopUiViewDataPool = false
     self._PopUiViewDataQueue = false
+
+    self:SaveEnvironmentalGroupNews()
+
+    self._RecordEnvironmentalGroup = table.empty
 end
 
 function XBigWorldQuestModel:ClearTemplate()
@@ -122,11 +167,62 @@ function XBigWorldQuestModel:ResetData()
     self._QuestDataDict = false
 end
 
+function XBigWorldQuestModel:SaveEnvironmentalGroupNews()
+    if not XTool.IsTableEmpty(self._RecordEnvironmentalGroup) then
+        XSaveTool.SaveData(self:GetEnvironmentalGroupNewsKey(), self._RecordEnvironmentalGroup)
+    end
+end
+
+function XBigWorldQuestModel:LoadEnvironmentalGroupNews()
+    self._RecordEnvironmentalGroup = XSaveTool.GetData(self:GetEnvironmentalGroupNewsKey())
+end
+
+function XBigWorldQuestModel:GetEnvironmentalGroupNewsKey()
+    return "BW_ENV_QUEST_GROUP_NEWS_TAG_" .. tostring(XPlayer.Id)
+end
+
+function XBigWorldQuestModel:GetRecordEnvironmentalGroup(levelId)
+    if not XTool.IsTableEmpty(self._RecordEnvironmentalGroup) then
+        return self._RecordEnvironmentalGroup[levelId] or false
+    end
+
+    return false
+end
+
+function XBigWorldQuestModel:SetRecordEnvironmentalGroup(levelId)
+    if not self._RecordEnvironmentalGroup then
+        self._RecordEnvironmentalGroup = {}
+    end
+
+    self._RecordEnvironmentalGroup[levelId] = true
+end
+
+function XBigWorldQuestModel:SetQuestOccupied(questId, infos)
+    self._OccupiedQuestDict[questId] = infos
+end
+
+function XBigWorldQuestModel:IsQuestOccupied(questId)
+    return not XTool.IsTableEmpty(self._OccupiedQuestDict[questId])
+end
+
+function XBigWorldQuestModel:GetQuestOccupationInfos(questId)
+    return self._OccupiedQuestDict[questId]
+end
+
 --- 获取任务数据
----@param questId number 任务Id  
+---@param questId number 任务Id
 ---@return XBigWorldQuest
 --------------------------
+---@return XTableMainLineTip
+function XBigWorldQuestModel:GetMainLineTipTemplate(tipId)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableMainLineTipKey.MainLineTip, tipId)
+end
+
 function XBigWorldQuestModel:GetQuestData(questId)
+    if not questId or questId <= 0 then
+        XLog.Error("任务Id无效: " .. questId)
+        return
+    end
     if not self._QuestDataDict then
         self._QuestDataDict = {}
     end
@@ -178,17 +274,45 @@ function XBigWorldQuestModel:IsTrackQuest(questId)
     return self._CurrentTrackQuestId == questId
 end
 
+function XBigWorldQuestModel:CheckNormalQuestFinish(questId)
+    if not questId or questId <= 0 then
+        return false
+    end
+    return self:GetQuestCategory(questId) == XMVCA.XBigWorldQuest.QuestCategory.NormalQuest and self:CheckQuestFinish(questId)
+end
+
+function XBigWorldQuestModel:CheckInviteQuestNotInProgress(questId)
+    if not questId or questId <= 0 then
+        return false
+    end
+    if self:GetQuestCategory(questId) ~= XMVCA.XBigWorldQuest.QuestCategory.InviteQuest then
+        return false
+    end
+    return not self:GetQuestData(questId):IsInProgress()
+end
+
+function XBigWorldQuestModel:SafeCheckTrackQuest()
+    if self._CurrentTrackQuestId and self._CurrentTrackQuestId > 0 then
+        if self:CheckNormalQuestFinish(self._CurrentTrackQuestId) 
+                or self:CheckInviteQuestNotInProgress(self._CurrentTrackQuestId) then
+           self:SetTrackQuestIdLocal(0)
+        end
+    end
+end
+
 function XBigWorldQuestModel:TryRevertTrackQuest()
     if not self._IsRevert then
         return false
     end
     self._CurrentTrackQuestId = self._LastTrackQuestId
     self._LastTrackQuestId = 0
+    self:SafeCheckTrackQuest()
     self._IsRevert = false
     return true
 end
 
 function XBigWorldQuestModel:MarkRevertTrackQuest()
+    self:SafeCheckTrackQuest()
     self._IsRevert = true
     self._LastTrackQuestId = self._CurrentTrackQuestId
 end
@@ -337,8 +461,9 @@ end
 
 function XBigWorldQuestModel:GetQuestSystemUiStyleId(questId)
     local t = self:GetQuestTemplate(questId)
+    local questType = self:GetQuestTypeTemplate(t.Type)
 
-    return t and t.SystemUiStyleId or 0
+    return questType.PopTheme or 0
 end
 
 --- 获取任务步骤配置
@@ -428,9 +553,29 @@ function XBigWorldQuestModel:GetObjectiveDeliveryTitle(objectiveId)
     return template and template.DeliverTitle or ""
 end
 
+function XBigWorldQuestModel:GetObjectiveDeliverSubTitle(objectiveId)
+    local template = self:GetQuestStepObjectiveTemplate(objectiveId)
+    return template and template.DeliverSubTitle or ""
+end
+
 function XBigWorldQuestModel:GetObjectiveDeliveryDesc(objectiveId)
     local template = self:GetQuestStepObjectiveTemplate(objectiveId)
     return template and template.DeliverDesc or ""
+end
+
+function XBigWorldQuestModel:GetObjectiveDeliverBehaviorDesc(objectiveId)
+    local template = self:GetQuestStepObjectiveTemplate(objectiveId)
+    return template and template.DeliverBehaviorDesc or ""
+end
+
+function XBigWorldQuestModel:GetObjectiveDeliverBtnText(objectiveId)
+    local template = self:GetQuestStepObjectiveTemplate(objectiveId)
+    return template and template.DeliverBtnText or ""
+end
+
+function XBigWorldQuestModel:GetObjectiveDeliverBgPath(objectiveId)
+    local template = self:GetQuestStepObjectiveTemplate(objectiveId)
+    return template and template.DeliverBgPath or ""
 end
 
 function XBigWorldQuestModel:GetObjectiveItemsDeliverType(objectiveId)
@@ -476,7 +621,11 @@ end
 
 function XBigWorldQuestModel:GetGroupIcon(groupId)
     local template = self:GetGroupTemplate(groupId)
-    return template and template.Icon or ""
+    if template and template.Type then
+        local tempTemplate = self:GetQuestTypeTemplate(template.Type)
+        return tempTemplate and tempTemplate.BigIcon or ""
+    end
+    return ""
 end
 
 function XBigWorldQuestModel:GetGroupQuestIds(groupId)
@@ -602,7 +751,8 @@ function XBigWorldQuestModel:PopupTaskObtain(questId, isFinish)
     else
         isShield = self:CheckPopViewOpenWhenQuestReceive(questId)
     end
-    local popViewType = t and t.PopViewType or PopViewType.None
+    local questType = self:GetQuestTypeTemplate(t.Type)
+    local popViewType = questType.PopType or PopViewType.None
     if isShield or popViewType == PopViewType.None then
         return
     end
@@ -776,6 +926,11 @@ function XBigWorldQuestModel:GetInviteQuestPopTipText(id)
     return t and t.PopTipText
 end
 
+function XBigWorldQuestModel:GetInviteQuestType(id)
+    local t = self:GetInviteQuestTemplate(id)
+    return t and t.Type
+end
+
 ---@return XTableDlcInviteQuestResult
 function XBigWorldQuestModel:GetInviteQuestResultTemplate(id)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableInviteQuestKey.DlcInviteQuestResult, id)
@@ -863,7 +1018,7 @@ function XBigWorldQuestModel:IsUnderTakenInviteQuest()
         return false
     end
     for questId, quest in pairs(self._QuestDataDict) do
-        if quest:IsInProgress() 
+        if quest:IsInProgress()
                 and self:GetQuestCategory(questId) == XMVCA.XBigWorldQuest.QuestCategory.InviteQuest then
             return true
         end
@@ -901,6 +1056,63 @@ end
 
 --region 环境剧情
 
+function XBigWorldQuestModel:UpdateEnvironmentOnDuty(data)
+    if XTool.IsTableEmpty(self._EnvironmentPlaceIds) then
+        self:InitEnvironmentOnDutyPlaceIds()
+    end
+
+    self._EnvironmentOnDuty = {}
+    if data and data.ActivatedQuestGroupIds then
+        local templates = self._ConfigUtil:GetByTableKey(TableEnvironmentQuestKey.DlcEnvironmentQuest)
+        local groupLevelMap = {}
+
+        for levelId, groupId in pairs(data.ActivatedQuestGroupIds) do
+            self._EnvironmentOnDuty[levelId] = groupId
+            self._EnvironmentPlaceIds[levelId] = {}
+            groupLevelMap[groupId] = levelId
+        end
+        for id, template in pairs(templates) do
+            local levelId = groupLevelMap[template.GroupId]
+
+            if XTool.IsNumberValid(levelId) then
+                self._EnvironmentPlaceIds[levelId][template.PlaceId] = true
+            end
+        end
+    end
+end
+
+function XBigWorldQuestModel:InitEnvironmentOnDutyPlaceIds()
+    local templates = self._ConfigUtil:GetByTableKey(TableEnvironmentQuestKey.DlcEnvironmentQuest)
+
+    self._EnvironmentPlaceIds = {}
+    if not XTool.IsTableEmpty(templates) then
+        for _, template in pairs(templates) do
+            local isDefault = self:GetEnvironmentQuestGroupIsDefaultGroup(template.GroupId)
+
+            if isDefault then
+                local levelId = self:GetEnvironmentQuestGroupLevelId(template.GroupId)
+
+                if XTool.IsNumberValid(levelId) then
+                    self._EnvironmentPlaceIds[levelId] = self._EnvironmentPlaceIds[levelId] or {}
+                    self._EnvironmentPlaceIds[levelId][template.PlaceId] = true
+                end
+            end
+        end
+    end
+end
+
+function XBigWorldQuestModel:GetEnvironmentOnDuty(levelId)
+    return self._EnvironmentOnDuty[levelId] or 0
+end
+
+function XBigWorldQuestModel:GetEnvironmentOnDutyPlaceIds(levelId)
+    if XTool.IsTableEmpty(self._EnvironmentPlaceIds) then
+        self:InitEnvironmentOnDutyPlaceIds()
+    end
+
+    return self._EnvironmentPlaceIds[levelId]
+end
+
 ---@return XTableDlcEnvironmentQuest
 function XBigWorldQuestModel:GetEnvironmentQuestTemplate(id)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableEnvironmentQuestKey.DlcEnvironmentQuest, id)
@@ -921,6 +1133,27 @@ function XBigWorldQuestModel:GetEnvironmentIds()
     return ids
 end
 
+function XBigWorldQuestModel:GetEnvironmentIdsByGroup(groupId)
+    if XTool.IsTableEmpty(self._EnvironmentIdGroups) then
+        local templates = self._ConfigUtil:GetByTableKey(TableEnvironmentQuestKey.DlcEnvironmentQuest)
+
+        self._EnvironmentIdGroups = {}
+        if not XTool.IsTableEmpty(templates) then
+            for _, template in pairs(templates) do
+                local groupId = template.GroupId
+
+                if not self._EnvironmentIdGroups[groupId] then
+                    self._EnvironmentIdGroups[groupId] = {}
+                end
+
+                table.insert(self._EnvironmentIdGroups[groupId], template.Id)
+            end
+        end
+    end
+
+    return self._EnvironmentIdGroups[groupId]
+end
+
 function XBigWorldQuestModel:GetEnvironmentQuestName(id)
     local t = self:GetEnvironmentQuestTemplate(id)
     return t and t.Name or ""
@@ -936,6 +1169,11 @@ function XBigWorldQuestModel:GetEnvironmentQuestPriority(id)
     return t and t.Priority or 0
 end
 
+function XBigWorldQuestModel:GetEnvironmentQuestGroupId(id)
+    local t = self:GetEnvironmentQuestTemplate(id)
+    return t and t.GroupId or 0
+end
+
 function XBigWorldQuestModel:GetEnvironmentQuestObjectiveIds(id)
     local t = self:GetEnvironmentQuestTemplate(id)
     return t and t.ObjectiveIds
@@ -949,6 +1187,43 @@ end
 function XBigWorldQuestModel:GetEnvironmentQuestSkipId(id)
     local t = self:GetEnvironmentQuestTemplate(id)
     return t and t.SkipId or 0
+end
+
+---@return XTableDlcEnvironmentQuestGroup
+function XBigWorldQuestModel:GetEnvironmentQuestGroupTemplate(id)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableEnvironmentQuestKey.DlcEnvironmentQuestGroup, id)
+end
+
+function XBigWorldQuestModel:GetEnvironmentQuestGroupLevelId(id)
+    local config = self:GetEnvironmentQuestGroupTemplate(id)
+
+    return config.LevelId
+end
+
+function XBigWorldQuestModel:GetEnvironmentQuestGroupIsDefaultGroup(id)
+    local config = self:GetEnvironmentQuestGroupTemplate(id)
+
+    return config.IsDefaultGroup
+end
+
+---@return XTableDlcEnvironmentQuestLevel[]
+function XBigWorldQuestModel:GetEnvironmentQuestGroupLevelConfigs()
+    if XTool.IsTableEmpty(self._EnvironmentGroups) then
+        local configs = self._ConfigUtil:GetByTableKey(TableEnvironmentQuestKey.DlcEnvironmentQuestLevel)
+
+        self._EnvironmentGroups = {}
+        if not XTool.IsTableEmpty(configs) then
+            for _, config in pairs(configs) do
+                table.insert(self._EnvironmentGroups, config)
+            end
+
+            table.sort(self._EnvironmentGroups, function(a, b)
+                return a.Priority >= b.Priority
+            end)
+        end
+    end
+
+    return self._EnvironmentGroups
 end
 
 --endregion 环境剧情

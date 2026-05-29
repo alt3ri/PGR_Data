@@ -31,6 +31,8 @@ local RewardType = {
 -- region 生命周期
 
 function XUiAccumulateDrawGrid:OnStart()
+    self.CanvasGroup = self.CanvasGroup or XUiHelper.TryAddComponent(self.GameObject, typeof(CS.UnityEngine.CanvasGroup))
+
     ---@type XUiAccumulateDrawRewardGrid[]
     self._PanelRewardList = {
         [RewardType.Normal] = XUiAccumulateDrawRewardGrid.New(self.PanelBgNormal, self, self.Parent),
@@ -56,6 +58,8 @@ function XUiAccumulateDrawGrid:Refresh(reward, preReward, nextReward)
     local isAllFinish = self._Control:CheckAllFinish()
     local isNextAchieved = nextReward and nextReward:IsComplete() or false
     local progress = 0
+
+    self.CanvasGroup.alpha = 1
 
     if isEnd then
         self.ImgPointOff.gameObject:SetActiveEx(false)

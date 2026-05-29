@@ -77,7 +77,7 @@ end
 
 function XUiInfestorExploreFightResult:OnClickBtnReFight()
     self:Close()
-    XLuaUiManager.Open("UiBattleRoleRoom", self.StageId)
+    XMVCA.XFuben:OpenUiBattleRoleRoom(self.StageId)
 end
 
 function XUiInfestorExploreFightResult:OnClickBtnExitFight()

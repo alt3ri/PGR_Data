@@ -274,6 +274,9 @@ end
 ---是否开启陀螺仪交互
 ---@return boolean
 function XTimelineDirectionProxy:_IsGyroEnabled()
+    if self._GyroEnabledOverride ~= nil then
+        return self._GyroEnabledOverride
+    end
     return XMVCA.XSwitchableScene:GetGyroSetting(self._SceneId) == XEnumConst.SwitchableScene.Setting.Open
 end
 

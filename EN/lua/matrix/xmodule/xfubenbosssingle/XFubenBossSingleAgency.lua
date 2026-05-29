@@ -286,8 +286,23 @@ function XFubenBossSingleAgency:GetBossSingleChallengeFeatureGroupBuffGroupIdsBy
     return self._Model:GetBossSingleChallengeFeatureGroupBuffGroupIdsById(id)
 end
 
+---@deprecated
 function XFubenBossSingleAgency:GetBossSingleChallengeBuffGroupBuffById(id)
+    XLog.Error("XFubenBossSingleAgency:GetBossSingleChallengeBuffGroupBuffById is deprecated, use GetBossSingleChallengeBuffGroupConfigByBuffGroupId instead.")
     return self._Model:GetBossSingleChallengeBuffGroupBuffById(id)
+end
+
+function XFubenBossSingleAgency:TryGetBossSingleChallengeBuffGroupConfigByBuffGroupId(
+    buffGroupId)
+
+    local succ, r = self._Model:TryGetBossSingleChallengeBuffGroupConfigByBuffGroupId(buffGroupId)
+    return succ, r
+end
+
+function XFubenBossSingleAgency:GetBossSingleChallengeBuffGroupConfigByBuffGroupId(
+    buffGroupId)
+
+    return self._Model:GetBossSingleChallengeBuffGroupConfigByBuffGroupId(buffGroupId)
 end
 
 function XFubenBossSingleAgency:GetStageTotalScoreByStageId(stageId)
@@ -849,11 +864,15 @@ end
 function XFubenBossSingleAgency:PreFight(stage, teamId, isAssist, challengeCount, challengeId)
     -- v4.2 获取当前buff对应的选中可选词缀ID列表
     local selectedFeatureIds = {}
+    -- v4.5 可选词缀组
+    local buffGroup = nil
     if self._Model then
         local currentBuffFeatureId = self._Model:GetCurrentFeatureId()
         if currentBuffFeatureId and currentBuffFeatureId > 0 then
             selectedFeatureIds = self._Model:GetSelectedSelectableFeatureIds(currentBuffFeatureId) or {}
         end
+
+        buffGroup = self._Model:GetBossSingleChallengeBuffGroup()
     end
 
     local preFight = {
@@ -863,7 +882,9 @@ function XFubenBossSingleAgency:PreFight(stage, teamId, isAssist, challengeCount
         ChallengeCount = challengeCount or 1,
         BossSingleStageType = self._Model:GetFightStageType(),
         -- v4.2 新增可选词缀：传入选中的可选词缀ID列表
-        BossSingleChallengeBuffIds = selectedFeatureIds,
+        -- BossSingleChallengeBuffIds = selectedFeatureIds,
+        -- v4.5 可选词缀组
+        BossSingleChallengeBuffGroup = buffGroup
     }
 
     -- 如果有试玩角色，则不读取玩家队伍信息

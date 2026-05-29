@@ -76,7 +76,7 @@ end
 function XUiGridDlcRelinkMultiPlayerChar:RefreshState()
     local isInRoom = XMVCA.XDlcRoom:IsInRoom()
     local name = ""
-    local isSelf, isCharacterId, isSelfLeader, isLeader, isReady = false, false, false, false, false
+    local isSelf, isCharacterId, isSelfLeader, isLeader, isReady, isPreparing = false, false, false, false, false, false
     local isLock = self._Control:IsCurLevelLockCharacter()
 
     if isInRoom then
@@ -86,6 +86,7 @@ function XUiGridDlcRelinkMultiPlayerChar:RefreshState()
         isSelf = member and member:IsSelf()
         isLeader = member and member:IsLeader()
         isReady = member and member:IsReady()
+        isPreparing = member and member:IsPreparing()
         isCharacterId = member and member:GetCharacterId() > 0
         name = member and member:GetName() or ""
     else
@@ -106,6 +107,7 @@ function XUiGridDlcRelinkMultiPlayerChar:RefreshState()
     SetActive(self.ImgReadyOn, isInRoom and isReady)
     SetActive(self.ImgReadyOff, isInRoom and not isReady)
     SetActive(self.GridAdd, (isInRoom or isSelf) and not isCharacterId and not isLock)
+    SetActive(self.TxtWaiting, isInRoom and isPreparing)
 
     if isSelf and self._IsLeader == false and isLeader then
         self._Control:OpenCommonTipText('BecomeLeaderTips', 1)
@@ -164,6 +166,14 @@ function XUiGridDlcRelinkMultiPlayerChar:RefreshInfo()
     end
     SetActive(self.LvNormal, isEnough)
     SetActive(self.LvNotEnough, not isEnough)
+    -- 风格图标
+    local styleIcon = self._Control:GetCharacterStyleIcon(characterId, styleType)
+    self.RImgStyleNormal:SetRawImageEx(styleIcon)
+    self.RImgStylePress:SetRawImageEx(styleIcon)
+    self.RImgStyleDisable:SetRawImageEx(styleIcon)
+    -- 风格名称
+    local styleName = self._Control:GetCharacterStyleName(characterId, styleType)
+    self.BtnInfo:SetNameByGroup(2, styleName)
 end
 
 function XUiGridDlcRelinkMultiPlayerChar:RefreshChat(chatData, receiveTime)

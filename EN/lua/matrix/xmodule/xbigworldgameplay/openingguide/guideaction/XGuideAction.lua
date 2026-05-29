@@ -32,14 +32,14 @@ function XGuideAction:Finish()
     XNetwork.Call("BigWorldGuideOpenRequest", { GuideId = id }, function(res)
         if res.Code ~= XCode.Success then
             XUiManager.TipCode(res.Code)
-            XMVCA.XBigWorldGamePlay:EnterGameError()
+            XMVCA.XBigWorldGamePlay:DoEnterWorldFailure()
         else
             XMVCA.XBigWorldGamePlay:GetCurrentAgency():AddFinishGuideDict(id)
             self:OnFinish()
             openGuide:RunNext()
         end
     end, function()
-        XMVCA.XBigWorldGamePlay:EnterGameError()
+        XMVCA.XBigWorldGamePlay:DoEnterWorldFailure()
     end)
 end
 

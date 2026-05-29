@@ -100,6 +100,7 @@ local charsReg = "^%a+%d*$"
 function XArithmetic:Ctor(enableCache)
 	self.OperatorLevel = defaultOperatorLevel
 	self.OperatorPattern = defaultOperatorPattern
+	self.UnaryOperators = {}    -- 子类按需注册一元运算符：self.UnaryOperators["!"] = true
 	self.GetVariableDelegate = nil
 	self.StackContainer = Stack.New()
 	self.EnableCache = enableCache
@@ -147,8 +148,15 @@ function XArithmetic:GetValue(left, right, operator)
 	return 0
 end
 
+-- 一元运算符默认实现，子类按需覆写。仅在 self.UnaryOperators[operator] 为真时被调用
+function XArithmetic:GetUnaryValue(operand, operator)
+	XLog.Warning("XArithmetic:GetUnaryValue not implemented for operator: %s", tostring(operator))
+	return operand
+end
+
 function XArithmetic:GetResult(list)
 	local operatorLevel = self.OperatorLevel
+	local unaryOperators = self.UnaryOperators
 	self:ClearArray(self.StackContainer)
 	local stack = self.StackContainer
 	for i, current in ipairs(list) do
@@ -156,6 +164,9 @@ function XArithmetic:GetResult(list)
 			stack:push(tonumber(current))
 		elseif string.match(current, charsReg) then
 			stack:push(current)
+		elseif unaryOperators and unaryOperators[current] then
+			local operand = self:GetValueByText(stack:pop())
+			stack:push(self:GetUnaryValue(operand, current))
 		elseif operatorLevel[current] then
 			local right = self:GetValueByText(stack:pop())
 			local left = self:GetValueByText(stack:pop())
@@ -209,6 +220,9 @@ function XArithmetic:ConvertToRPN(source)
 					if #stack > 0 and stack:top() == "(" then
 						stack:pop()
 					end
+				elseif self.UnaryOperators[current] then
+					-- 一元运算符右结合：不弹同级别栈顶，直接入栈
+					stack:push(current)
 				elseif operatorLevel[current] <= operatorLevel[prev] then
 					while #stack > 0 do
 						local top = stack:pop()

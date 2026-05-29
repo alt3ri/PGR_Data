@@ -1,15 +1,17 @@
-local XUiDrawNew = XLuaUiManager.Register(XLuaUi,"UiDrawNew")
+---@class XUiDrawNew : XLuaUi
+local XUiDrawNew = XLuaUiManager.Register(XLuaUi, "UiDrawNew")
 local MAX_DRAW_COUNT = 10
 local COMPlETE_CUE_ID = CS.XGame.ClientConfig:GetInt("DrawCompleteCueId")
 local DRAW_MUSIC_VOLUME_PERCENT = CS.XGame.ClientConfig:GetInt("DrawMusicVolumePercent")
-function XUiDrawNew:OnStart(drawInfo,rewardList,background)
+function XUiDrawNew:OnStart(drawInfo, rewardList, background)
     self.DrawInfo = drawInfo
+    self.IsEnded = false
     self.RewardList = rewardList
     self.Background = background
     self:InitSceneObject()
     self:RegisterButton()
     self:RefreshItem()
-    self.OriginMusicVolume = XLuaAudioManager.GetAisacVolumeSecondByType(XLuaAudioManager.SoundType.Music)   
+    self.OriginMusicVolume = XLuaAudioManager.GetAisacVolumeSecondByType(XLuaAudioManager.SoundType.Music)
 end
 
 function XUiDrawNew:OnEnable()
@@ -22,11 +24,13 @@ end
 
 function XUiDrawNew:RegisterButton()
     self.BtnSkip.CallBack = function()
-        self.IsSkip = true
+        if self.IsEnded then
+            return
+        end
+        self.IsEnded = true
         XLuaUiManager.Remove("UiDrawNew")
         local state = #self.RewardList == 1 and 1 or 2 -- 单抽的时候点击跳转停留在展示界面
-        XLuaUiManager.Open("UiDrawShowNew", self.DrawInfo, self.RewardList, function()
-        end, state)
+        XLuaUiManager.Open("UiDrawShowNew", self.DrawInfo, self.RewardList, state)
     end
 end
 
@@ -72,49 +76,43 @@ function XUiDrawNew:InitSceneObject()
     for i = 1, MAX_DRAW_COUNT do
         local obj = self.UiModelGo.transform:FindTransform("item" .. i)
         if obj then
-            table.insert(self.ItemParent,obj)
+            table.insert(self.ItemParent, obj)
         end
     end
     self.JiGuangRoot = self.UiModelGo.transform:FindTransform("Jiguang")
 end
 
 function XUiDrawNew:OnDrawEnd()
-    if self.IsSkip then
+    if self.IsEnded then
         return
     end
+    self.IsEnded = true
     XLuaUiManager.Remove("UiDrawNew")
-    XLuaUiManager.Open("UiDrawShowNew",self.DrawInfo,self.RewardList,function()
-        XLuaUiManager.Open("UiDrawResult",self.DrawInfo,self.RewardList,function()
-
-        end,self.Background)
-    end,nil)
+    XLuaUiManager.Open("UiDrawShowNew", self.DrawInfo, self.RewardList)
 end
 
 function XUiDrawNew:RefreshItem()
     local maxQuality = -1
-    for i = 1,#self.RewardList do
+    for i = 1, #self.RewardList do
         local item = self.RewardList[i]
         ---@type UnityEngine.Transform
         local parent = self.ItemParent[i]
         local quality = self:GetQuality(i)
-        local effectPath = CS.XGame.ClientConfig:GetString("DrawRingQualityEffect"..quality)
+        local effectPath = CS.XGame.ClientConfig:GetString("DrawRingQualityEffect" .. quality)
         if maxQuality < quality then
             maxQuality = quality
         end
         parent:LoadPrefab(effectPath)
     end
     if maxQuality >= 0 and self.JiGuangRoot then
-        local effectPath = CS.XGame.ClientConfig:GetString("DrawQualityEffect"..maxQuality)
+        local effectPath = CS.XGame.ClientConfig:GetString("DrawQualityEffect" .. maxQuality)
         self.JiGuangRoot:LoadPrefab(effectPath)
     end
 end
 
 function XUiDrawNew:GetQuality(showIndex)
     local reward = self.RewardList[showIndex]
-    local id = reward.Id and reward.Id > 0 and reward.Id or reward.TemplateId
-    if reward.ConvertFrom > 0 then
-        id = reward.ConvertFrom
-    end
+    local id = XDataCenter.DrawManager.GetRewardGoodsId(reward)
     local quality
     local templateIdData = XGoodsCommonManager.GetGoodsShowParamsByTemplateId(id)
     local Type = XTypeManager.GetTypeById(id)
@@ -128,8 +126,8 @@ function XUiDrawNew:GetQuality(showIndex)
         quality = XTypeManager.GetQualityById(id)
     end
     local showTable = XDataCenter.DrawManager.GetDrawShow(Type)
-    
+
     return showTable.DrawEffectGroupId[quality]
 end
 
-return XUiDrawNew
+return XUiDrawNew

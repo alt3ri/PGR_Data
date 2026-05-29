@@ -116,6 +116,14 @@ function XBigWorldCourseModel:AddElementBrowse(versionId, elementId)
     end
 end
 
+function XBigWorldCourseModel:RemoveBrowseElement(versionId, elementId)
+    local versionData = self._VersionDataMap[versionId]
+
+    if versionData then
+        versionData.CoreData:RemoveBrowseElement(elementId)
+    end
+end
+
 ---@return table<number, XBWCourseVersionData>
 function XBigWorldCourseModel:GetVersionDataMap()
     return self._VersionDataMap

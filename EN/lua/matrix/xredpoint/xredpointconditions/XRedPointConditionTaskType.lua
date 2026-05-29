@@ -26,6 +26,7 @@ function XRedPointConditionTaskType.Check(taskTypeList)
 end
 
 function XRedPointConditionTaskType.CheckImpl(taskType)
+
     if taskType == XDataCenter.TaskManager.TaskType.Activity and (not XFunctionManager.JudgeOpen(XFunctionManager.FunctionName.TaskActivity)
         or XFunctionManager.CheckFunctionFitter(XFunctionManager.FunctionName.TaskActivity)) then
         return false
@@ -34,6 +35,20 @@ function XRedPointConditionTaskType.CheckImpl(taskType)
     if taskType == XDataCenter.TaskManager.TaskType.Daily and (not XFunctionManager.JudgeOpen(XFunctionManager.FunctionName.TaskDay)
         or XFunctionManager.CheckFunctionFitter(XFunctionManager.FunctionName.TaskDay)) then
         return false
+    end
+
+    -- 周任务活跃度红点
+    if taskType == XDataCenter.TaskManager.TaskType.Weekly then
+        local cur = XDataCenter.TaskManager.GetWeeklyTaskActiveness()
+        local act = XTaskConfig.GetWeeklyTwoActivenessTemplate().Activeness
+
+        for _, v in pairs(act) do
+            if cur > v then
+                if not XDataCenter.TaskManager.WeeklyActivenessProgressRewardGot(v) then
+                    return true
+                end
+            end
+        end
     end
 
     if taskType == XDataCenter.TaskManager.TaskType.Weekly and (not XFunctionManager.JudgeOpen(XFunctionManager.FunctionName.TaskWeekly)
@@ -62,6 +77,7 @@ function XRedPointConditionTaskType.CheckImpl(taskType)
         --        return true
         --    end
     end
+
 
     return XDataCenter.TaskManager.GetIsRewardForEx(taskType)
 end

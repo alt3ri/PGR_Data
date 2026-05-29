@@ -85,7 +85,10 @@ function XBigWorldOpenGuide:PreLaunch()
         return
     end
     --初始化输入后系统
-    XMVCA.XBigWorldGamePlay:GetCurrentAgency():InitInputMapStack()
+    local gameAgency = XMVCA.XBigWorldGamePlay:GetCurrentAgency()
+    if gameAgency then
+        gameAgency:InitInputMapStack()
+    end
     self.IsPreLaunch = true
 end
 

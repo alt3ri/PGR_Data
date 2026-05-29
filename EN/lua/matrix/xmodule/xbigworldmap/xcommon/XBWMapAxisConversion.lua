@@ -87,14 +87,15 @@ function XBWMapAxisConversion:FilterScreenPointNearPinDataList(targetPos, pinNod
         local distance = XMVCA.XBigWorldMap:GetNearDistance()
 
         for id, pinNode in pairs(pinNodeMap) do
-            local position = pinNode.Transform.position
             local screenPos = self:UIToScreenPosition2D(pinNode.Transform)
             local pinData = pinNode:GetPinData()
 
-            if self:CheckNearbyDistance(screenPos, targetPos, distance) and
-                not self:CheckUnimportantPin(pinData, groupId) then
-                if pinData then
-                    table.insert(result, pinData)
+            if pinData.IsInteract then
+                if self:CheckNearbyDistance(screenPos, targetPos, distance) and
+                    not self:CheckUnimportantPin(pinData, groupId) then
+                    if pinData then
+                        table.insert(result, pinData)
+                    end
                 end
             end
         end

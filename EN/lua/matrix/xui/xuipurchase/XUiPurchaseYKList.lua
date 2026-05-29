@@ -1,3 +1,4 @@
+local XUiPurchaseYKSwitcher = require("XUi/XUiPurchase/XUiPurchaseYKSwitcher")
 local XUiPurchaseYKListItem = XClass(nil, "XUiPurchaseYKListItem")
 
 function XUiPurchaseYKListItem:Ctor(ui, notEnoughCb)
@@ -66,10 +67,20 @@ function XUiPurchaseYKList:Ctor(ui, uiRoot, notEnoughCb)
     XUiHelper.InitUiClass(self, ui)
     self.NotEnoughCb = notEnoughCb
     self.PurchaseManager = XDataCenter.PurchaseManager
+    self.UiRoot = uiRoot
 end
 
 function XUiPurchaseYKList:OnRefresh(uiType)
     self:ShowPanel()
+
+    if not self.YKSwitcher then
+        self.YKSwitcher = XUiPurchaseYKSwitcher.New(
+            self.PanelPage,
+            self.UiRoot,
+            self.PanelYKItem,
+            self.PanelYKItemC)
+    end
+
     local datas = self.PurchaseManager.GetYKTabPurchasePackages()
     table.sort(datas, function(aData, bData)
         local aWeight = XPurchaseConfigs.GetPurchasePackageYKUiConfig(aData:GetId()).SortWeight
@@ -77,13 +88,34 @@ function XUiPurchaseYKList:OnRefresh(uiType)
         return aWeight > bWeight
     end)
     self.PurchaseManager.SetYKContinueBuy()
+
     -- 月卡列表
-    XUiHelper.RefreshCustomizedList(self.PanelContent, self.PanelYKItem, #datas, function(index, child)
-        local item = XUiPurchaseYKListItem.New(child, self.NotEnoughCb)
-        item:SetData(datas[index], function()
-            self:OnRefresh()
-        end)
-    end)
+    -- 注意：由于这里的UI是特殊布局，月卡的数量必须和占位符数量一致
+
+    local placeholders = { self.PanelYKItem, self.PanelYKItem2, self.PanelYKItem3 }
+
+    if self.IsEnableDoubleYK() then
+        self.YKSwitcher.GameObject:SetActive(true)
+        table.insert(placeholders, self.PanelYKItemC)
+    else
+        self.YKSwitcher.GameObject:SetActive(false)
+    end
+
+    if #datas ~= #placeholders then
+        XLog.Error("XUiPurchaseYKList:OnRefresh 占位卡片的数量和获得的数据数量对不上号！")
+    end
+
+    for i = 1, math.min(#datas, #placeholders) do
+        local item = XUiPurchaseYKListItem.New(placeholders[i], self.NotEnoughCb)
+        item:SetData(datas[i], handler(self, self.OnRefresh))
+    end
+
+    self.YKSwitcher:Select(false)
+end
+
+-- 是否启用双月卡判断条件
+function XUiPurchaseYKList.IsEnableDoubleYK()
+    return XOverseaManager.IsENRegion()
 end
 
 function XUiPurchaseYKList:ShowPanel()

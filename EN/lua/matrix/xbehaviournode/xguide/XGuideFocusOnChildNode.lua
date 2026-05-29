@@ -71,11 +71,12 @@ function XGuideFocusOnChildNode:OnAwake()
     self.BubbleIndex = self.Fields["BubbleIndex"]
     self.BubbleTextId = self.Fields["BubbleTextId"]
     self.BubblePosOffset = self.Fields["BubblePosOffset"]
+    self.ImgIconId = self.Fields["ImgIcon"]
 end
 
 function XGuideFocusOnChildNode:OnEnter()
     self.AgentProxy:FocusOnChild(self.UiName, self.Parent, self.Index, self.EulerAngles, self.PassEvent, 
-            self.SizeDelta, self.Offset, self.ChildName, self.FocusStyle, self.BubbleIndex, self.BubbleTextId, self.BubblePosOffset)
+            self.SizeDelta, self.Offset, self.ChildName, self.FocusStyle, self.BubbleIndex, self.BubbleTextId, self.BubblePosOffset, self.ImgIconId)
     self.AgentProxy:NodeBuryingPoint(self.Node.ID)
 end
 

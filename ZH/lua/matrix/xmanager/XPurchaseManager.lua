@@ -857,6 +857,9 @@ XPurchaseManagerCreator = function()
             LbExpireIds[id] = nil
             XPurchaseManager.SaveLBExpireIds(LbExpireIds)
         end
+        if XPurchaseConfigs.IsYKID(id) then
+            XPurchaseManager.SetYKLocalCache()
+        end
         if XPurchaseManager.CheckIsWeekCardInfoData(purchaseInfo) then
             XPurchaseManager.SetWeekCardData(purchaseInfo, false)
         end
@@ -911,6 +914,7 @@ XPurchaseManagerCreator = function()
         data.ExtraRewardGoods = purchaseInfo.ExtraRewardGoods
         data.ClientResetInfo = purchaseInfo.ClientResetInfo
         data.IsUseMail = purchaseInfo.IsUseMail or false
+        data.BuyLimitRemainDay = purchaseInfo.BuyLimitRemainDay
     end
 
     -- 领奖(月卡, 周卡)
@@ -1053,15 +1057,21 @@ XPurchaseManagerCreator = function()
 
         -- 处理月卡红点
         if info and info.DailyRewardInfoList and Next(info.DailyRewardInfoList) then
+            local needRefreshYK = false
             for _, v in pairs(info.DailyRewardInfoList) do
-                if v.Id == XPurchaseConfigs.PurChaseCardId then
-                    XDataCenter.PurchaseManager.YKInfoDataReq(function()
-                        XEventManager.DispatchEvent(XEventId.EVENT_CARD_REFRESH_WELFARE_BTN)
-
-                        -- 设置月卡信息本地缓存
-                        XDataCenter.PurchaseManager.SetYKLocalCache()
-                    end)
+                if v.Id == XPurchaseConfigs.PurChaseCardId
+                        or (XOverseaManager.IsENRegion() and v.Id == XPurchaseConfigs.EnYKCID) then
+                    needRefreshYK = true
+                    break
                 end
+            end
+            if needRefreshYK then
+                XDataCenter.PurchaseManager.YKInfoDataReq(function()
+                    XEventManager.DispatchEvent(XEventId.EVENT_CARD_REFRESH_WELFARE_BTN)
+
+                    -- 设置月卡信息本地缓存
+                    XDataCenter.PurchaseManager.SetYKLocalCache()
+                end)
             end
         end
 
@@ -1920,7 +1930,7 @@ XPurchaseManagerCreator = function()
     if XOverseaManager.IsENRegion() then
         -- EN有多个月卡
         PurchasePackageId2Class[83028] = require("XEntity/XPurchase/XYKPurchasePackage")
-        PurchasePackageId2Class[90032] = require("XEntity/XPurchase/XYKPurchasePackage")
+        PurchasePackageId2Class[XPurchaseConfigs.EnYKCID] = require("XEntity/XPurchase/XYKPurchasePackage")
     end
 
     function XPurchaseManager.CreatePurchasePackage(id, data)

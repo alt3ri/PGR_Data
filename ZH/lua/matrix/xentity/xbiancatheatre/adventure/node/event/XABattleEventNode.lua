@@ -11,8 +11,8 @@ function XABattleEventNode:InitWithServerData(data)
 end
 
 function XABattleEventNode:RequestTriggerNode(callback, optionIndex)
-    XLuaUiManager.Open("UiBattleRoleRoom"
-        , self:GetFightStageId()
+    XMVCA.XFuben:OpenUiBattleRoleRoom(
+        self:GetFightStageId()
         , XDataCenter.BiancaTheatreManager.GetCurrentAdventureManager():GetSingleTeam()
         , require("XUi/XUiBiancaTheatre/XUiBiancaTheatreBattleRoleRoom"))
 end

@@ -12,7 +12,7 @@ function XUiDlcRelinkPopupChooseAttribute:OnStart(param)
         XLog.Error("传参错误.")
         return
     end
-    
+
     ---@type XTableDlcRelinkFactorDesc[]
     local datas = {}
     for _, v in pairs(self._Control:GetFactorDescConfigs()) do
@@ -21,13 +21,19 @@ function XUiDlcRelinkPopupChooseAttribute:OnStart(param)
     table.sort(datas, function(a, b)
         return a.Order < b.Order
     end)
-    
+
     XUiHelper.RefreshCustomizedList(self.GridCharacteristic.parent, self.GridCharacteristic, #datas, function(i, go)
         local name = datas[i].Name
         local id = datas[i].Id
+        local characterIcon = datas[i].CharacterIcon
         local uiObject = {}
         XUiHelper.InitUiClass(uiObject, go)
         uiObject.GridCharacteristic:SetName(name)
+        local isShowIcon = not string.IsNilOrEmpty(characterIcon)
+        uiObject.GridCharacteristic:SetSpriteVisible(isShowIcon)
+        if isShowIcon then
+            uiObject.GridCharacteristic:SetSprite(characterIcon)
+        end
         uiObject.GridCharacteristic:AddEventListener(function()
             param.AttrId = id
             uiObject.GridCharacteristic:SetButtonState(XUiButtonState.Select)
@@ -36,4 +42,4 @@ function XUiDlcRelinkPopupChooseAttribute:OnStart(param)
     end)
 end
 
-return XUiDlcRelinkPopupChooseAttribute
+return XUiDlcRelinkPopupChooseAttribute

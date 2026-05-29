@@ -100,7 +100,8 @@ end
 
 function XUiCloudGamingPopupMain:OnClickBuy()
     XLuaUiManager.Open("UiPassport", {
-        OpenLastPassport = true
+        OpenLastPassport = true,
+        WithStartEnableAnimation = true
     })
 end
 

@@ -21,35 +21,34 @@ function XUiModelTheatre5PVPCharacter3D:UpdateRoleModelByHand(characterId, fashi
 
     self.UiPanelRoleModel:UpdateCharacterModel(characterId, nil, self.UiPanelRoleModel.RefName, nil, nil, fashionId, nil, nil, nil, true, weaponId)
     -- 加载animationController
-    local runtimeController = CS.LoadHelper.LoadUiController(runtimeControllerName, self.UiPanelRoleModel.RefName)
+    local animator = self.UiPanelRoleModel:GetAnimator()
+    if not animator then
+        return
+    end
 
+    local runtimeController = CS.LoadHelper.LoadUiController(runtimeControllerName, animator.gameObject)
     if runtimeController == nil or not runtimeController:Exist() then
         XLog.Error("XUiPanelDisplay RefreshSelf 错误: 展示角色的动画状态机加载失败: 状态机名称 " .. runtimeControllerName .. " Ui名称：" .. self.UiPanelRoleModel.RefName)
         return
     end
 
-    local animator = self.UiPanelRoleModel:GetAnimator()
-
-    if animator then
-        animator.runtimeAnimatorController = runtimeController
-        ---@type UnityEngine.GameObject
-        local loadAnimatioClip = animator.gameObject:GetComponent(typeof(CS.XLoadAnimationClip))
-
-        if loadAnimatioClip then
-            CS.UnityEngine.Component.Destroy(loadAnimatioClip)
-        end
-
-        -- 重新加载特效
-        local actionId = self.UiPanelRoleModel:GetPlayingStateName(0) -- 0:只展示身体
-
-        local weaponFashionId = weaponId
-        if XRobotManager.CheckIsRobotId(characterId) then
-            local robotId = characterId
-            characterId = XRobotManager.GetCharacterId(robotId)
-            weaponFashionId = XRobotManager.GetRobotWeaponFashionId(robotId)
-        end
-        self.UiPanelRoleModel:LoadCharacterUiEffect(characterId, actionId, nil, weaponFashionId, nil)
+    animator.runtimeAnimatorController = runtimeController
+    ---@type UnityEngine.GameObject
+    local loadAnimationClip = animator.gameObject:GetComponent(typeof(CS.XLoadAnimationClip))
+    if loadAnimationClip then
+        CS.UnityEngine.Component.Destroy(loadAnimationClip)
     end
+
+    -- 重新加载特效
+    local actionId = self.UiPanelRoleModel:GetPlayingStateName(0) -- 0:只展示身体
+
+    local weaponFashionId = weaponId
+    if XRobotManager.CheckIsRobotId(characterId) then
+        local robotId = characterId
+        characterId = XRobotManager.GetCharacterId(robotId)
+        weaponFashionId = XRobotManager.GetRobotWeaponFashionId(robotId)
+    end
+    self.UiPanelRoleModel:LoadCharacterUiEffect(characterId, actionId, nil, weaponFashionId, nil)
 end
 
 

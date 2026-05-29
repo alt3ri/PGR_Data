@@ -1,4 +1,4 @@
-local XUiPanelActivityAsset = require("XUi/XUiShop/XUiPanelActivityAsset")
+local XUiPanelActivityAsset = require("XUi/XUiShop/XUiPanelActivityAsset")
 local CSXTextManagerGetText = CS.XTextManager.GetText
 local XUiPanelRoleModel = require("XUi/XUiCharacter/XUiPanelRoleModel")
 
@@ -97,7 +97,7 @@ function XUiLivWarmRaceMain:OnBtnEnterFinalStageClick()
         return
     end
 
-    XLuaUiManager.Open("UiBattleRoleRoom", stageId)
+    XMVCA.XFuben:OpenUiBattleRoleRoom(stageId)
 end
 
 function XUiLivWarmRaceMain:OnBtnEnterStageClick(groupId)

@@ -645,22 +645,19 @@ function XUiBigWorldMap:_PlayAnimation()
 end
 
 function XUiBigWorldMap:_PlayAreaGroupAnimation()
-    if self._IsDetailShow then
-        return
-    end
-
     local areaGroupType = self._Control:GetMapAreaGroupTypeByLevelId(self._LevelId)
-
     if areaGroupType ~= XMVCA.XBigWorldMap.AreaGroupType.Vertical then
         local animation = self._GroupButtonAnimations[self._CurrentGroupIndex]
-
         if animation then
             self._CurrentPlayAreaAnimation = animation
-            animation:PlayTimelineAnimation(function(isFinish)
-                if isFinish then
-                    self._CurrentPlayAreaAnimation = false
-                end
-            end)
+            
+            if not self._IsDetailShow then
+                animation:PlayTimelineAnimation(function(isFinish)
+                    if isFinish then
+                        self._CurrentPlayAreaAnimation = false
+                    end
+                end)
+            end
         end
     end
 end

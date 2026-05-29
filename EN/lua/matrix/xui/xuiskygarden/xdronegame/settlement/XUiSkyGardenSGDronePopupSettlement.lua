@@ -29,7 +29,7 @@ function XUiSkyGardenSGDronePopupSettlement:OnStart(settleData)
     if self._IsWin then
         self._CheckpointUi:Open()
         self._FailureUi:Close()
-        self._CheckpointUi:Refresh(self._StageId, settleData.Score, settleData.TargetMap)
+        self._CheckpointUi:Refresh(self._StageId, settleData.Score, settleData.TargetMap, settleData.AchieveTargetMap)
     else
         self._CheckpointUi:Close()
         self._FailureUi:Open()
@@ -93,6 +93,8 @@ function XUiSkyGardenSGDronePopupSettlement:_ReleaseGame()
     if stageEntity then
         self._Control:TryRestoreStageUI(stageEntity)
     end
+
+    self._Control:OpenBlackMask()
 
     self:Close()
     CS.XBigWorldGame.XSkyGarden.XDroneGame.XSGDGInstance.ReleaseGame()

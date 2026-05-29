@@ -19,6 +19,10 @@ function XLineArithmetic3Agency:InitEvent()
     -- 实现跨Agency事件注册
 end
 
+function XLineArithmetic3Agency:ResetAll()
+    self._Requesting = false
+end
+
 ----------public start----------
 
 --- 是否正在请求中
@@ -40,6 +44,11 @@ function XLineArithmetic3Agency:RequestStart(stageId)
             XUiManager.TipCode(res.Code)
             return
         end
+    end, nil, function(exception)
+        self._Requesting = false
+
+        -- 因为重写了这个回调，所以这里要手动处理错误提示，与C#端逻辑一致
+        XUiManager.SystemDialogTip("", CS.XTextManager.GetRpcExceptionCodeText(exception.Code), XUiManager.DialogType.OnlySure)
     end)
 end
 
@@ -67,6 +76,11 @@ function XLineArithmetic3Agency:RequestOperation(stageId, round, star, callback)
         if callback then
             callback(res)
         end
+    end, nil, function(exception)
+        self._Requesting = false
+
+        -- 因为重写了这个回调，所以这里要手动处理错误提示，与C#端逻辑一致
+        XUiManager.SystemDialogTip("", CS.XTextManager.GetRpcExceptionCodeText(exception.Code), XUiManager.DialogType.OnlySure)
     end)
 end
 
@@ -114,6 +128,11 @@ function XLineArithmetic3Agency:RequestSettle(stageId, star, record, settleType)
         XLuaUiManager.SafeClose("UiLineArithmetic3PopupCommon")
         XLuaUiManager.SafeClose("UiPopupTeach")
         XLuaUiManager.Open("UiLineArithmetic3PopupSettlement")
+    end, nil, function(exception)
+        self._Requesting = false
+
+        -- 因为重写了这个回调，所以这里要手动处理错误提示，与C#端逻辑一致
+        XUiManager.SystemDialogTip("", CS.XTextManager.GetRpcExceptionCodeText(exception.Code), XUiManager.DialogType.OnlySure)
     end)
 end
 
@@ -130,6 +149,11 @@ function XLineArithmetic3Agency:RequestRestart(stageId)
             XUiManager.TipCode(res.Code)
             return
         end
+    end, nil, function(exception)
+        self._Requesting = false
+
+        -- 因为重写了这个回调，所以这里要手动处理错误提示，与C#端逻辑一致
+        XUiManager.SystemDialogTip("", CS.XTextManager.GetRpcExceptionCodeText(exception.Code), XUiManager.DialogType.OnlySure)
     end)
 end
 
@@ -153,6 +177,11 @@ function XLineArithmetic3Agency:RequestAbandon(stageId)
             return
         end
         XEventManager.DispatchEvent(XEventId.EVENT_LINE_ARITHMETIC_UPDATE_STAGE)
+    end, nil, function(exception)
+        self._Requesting = false
+
+        -- 因为重写了这个回调，所以这里要手动处理错误提示，与C#端逻辑一致
+        XUiManager.SystemDialogTip("", CS.XTextManager.GetRpcExceptionCodeText(exception.Code), XUiManager.DialogType.OnlySure)
     end)
 end
 

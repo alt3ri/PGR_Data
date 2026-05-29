@@ -42,9 +42,18 @@ function XUiBigWorldTaskPopupEndingDetail:InitView()
 
     self.BtnView.gameObject:SetActiveEx(self._IsPCMode)
     --策划需求：第一次弹窗时不也显示按钮，避免此时弹窗过多
-    self.BtnAgain.gameObject:SetActiveEx(not self._IsFromInvitation and not XMVCA.XBigWorldQuest:IsFirstFinishResult())
+    self.BtnAgain.gameObject:SetActiveEx(
+            not self._IsFromInvitation and 
+            not XMVCA.XBigWorldQuest:IsFirstFinishResult() and 
+            not self._Control:IsSingle2MultiInviteQuest(self._QuestId)
+    )
     
     self:RefreshTagNew(self._ShowTag)
+
+    if self.Panel then
+        local resultIds = self._Control:GetInviteQuestResultIds(self._QuestId)
+        self.Panel.gameObject:SetActiveEx(XTool.IsTableEmpty(resultIds) or #resultIds <= 1)
+    end
 end
 
 function XUiBigWorldTaskPopupEndingDetail:RefreshReward(rewardId)
@@ -75,12 +84,6 @@ function XUiBigWorldTaskPopupEndingDetail:OnBtnDownloadClick()
         return
     end
     local fileName = string.format("INVITE_%s%s", XTime.GetServerNowTimestamp(), XPlayer.Id)
-    --local fileNameWithExt = string.format("%s.png", fileName)
-    --local path = string.format("%s%s", CS.XTool.GetPhotoAlbumPath(), fileNameWithExt)
-    --if CS.System.IO.File.Exists(path) then
-    --    XUiManager.TipMsg(XMVCA.XBigWorldService:GetText("LocalTextureExist"))
-    --    return
-    --end
     XPermissionManager.GetCameraPermissionToCallback(function()
         if CS.XTool.SaveUnreadableTexture(fileName, texture, DESIGN_WIDTH, DESIGN_HEIGHT) then
             XUiManager.TipMsg(XMVCA.XBigWorldService:GetText("SG_SS_SaveSucess"))

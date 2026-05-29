@@ -2,14 +2,14 @@
     {
         "Id": 10,
         "RoomIds": "[1000, 1001, 1002, 1003]",
-        "StartBuffPoolIds": "[2000]",
+        "StartBuffPoolIds": "[2000, 4]",
         "AnnoId": 101,
         "StartAVG": 2.0
     },
     {
         "Id": 20,
         "RoomIds": "[1010, 1011, 1012, 1013]",
-        "StartBuffPoolIds": "[2000]",
+        "StartBuffPoolIds": "[2000, 4]",
         "AnnoId": 110,
         "StartAVG": 16.0
     },
@@ -23,14 +23,14 @@
     {
         "Id": 30,
         "RoomIds": "[1100, 1101, 1102, 1103]",
-        "StartBuffPoolIds": "[2000]",
+        "StartBuffPoolIds": "[2000, 4]",
         "AnnoId": 120,
         "StartAVG": 19.0
     },
     {
         "Id": 40,
         "RoomIds": "[1200, 1201, 1202, 1203]",
-        "StartBuffPoolIds": "[2000]",
+        "StartBuffPoolIds": "[2000, 4]",
         "AnnoId": 130,
         "StartAVG": null
     },
@@ -44,7 +44,7 @@
     {
         "Id": 50,
         "RoomIds": "[1300, 1301, 1302, 1303]",
-        "StartBuffPoolIds": "[2000]",
+        "StartBuffPoolIds": "[2000, 4]",
         "AnnoId": 140,
         "StartAVG": 23.0
     },
@@ -58,7 +58,7 @@
     {
         "Id": 60,
         "RoomIds": "[1400, 1401, 1402]",
-        "StartBuffPoolIds": "[2000]",
+        "StartBuffPoolIds": "[2000, 1]",
         "AnnoId": 150,
         "StartAVG": 4.0
     },
@@ -72,7 +72,7 @@
     {
         "Id": 70,
         "RoomIds": "[1500, 1501, 1502, 1503]",
-        "StartBuffPoolIds": "[2000]",
+        "StartBuffPoolIds": "[2000, 1]",
         "AnnoId": 160,
         "StartAVG": 7.0
     },
@@ -86,7 +86,7 @@
     {
         "Id": 80,
         "RoomIds": "[1600, 1601, 1602, 1603]",
-        "StartBuffPoolIds": "[2000]",
+        "StartBuffPoolIds": "[2000, 1]",
         "AnnoId": 170,
         "StartAVG": null
     },
@@ -100,7 +100,7 @@
     {
         "Id": 90,
         "RoomIds": "[1700, 1701, 1702]",
-        "StartBuffPoolIds": "[2000]",
+        "StartBuffPoolIds": "[2000, 1]",
         "AnnoId": 180,
         "StartAVG": 13.0
     },
@@ -129,13 +129,13 @@
         "Id": 1002,
         "RoomIds": "[120, 121, 122, 123, 124, 125]",
         "StartBuffPoolIds": null,
-        "AnnoId": 11,
+        "AnnoId": 12,
         "StartAVG": null
     },
     {
         "Id": 1010,
         "RoomIds": "[201, 202, 203, 204, 205, 206]",
-        "StartBuffPoolIds": "[3000, 2000]",
+        "StartBuffPoolIds": "[3000, 2000, 3500]",
         "AnnoId": 10,
         "StartAVG": null
     },
@@ -150,70 +150,49 @@
         "Id": 1012,
         "RoomIds": "[220, 221, 222, 223, 224, 225]",
         "StartBuffPoolIds": null,
-        "AnnoId": 11,
+        "AnnoId": 12,
         "StartAVG": null
     },
     {
         "Id": 1020,
-        "RoomIds": "[101, 102, 103, 104, 105, 106]",
-        "StartBuffPoolIds": null,
-        "AnnoId": 2,
+        "RoomIds": "[301, 302, 303, 304, 305, 306]",
+        "StartBuffPoolIds": "[3000, 2000, 3501]",
+        "AnnoId": 10,
         "StartAVG": null
     },
     {
         "Id": 1021,
-        "RoomIds": "[101, 102, 103, 104, 105, 106]",
-        "StartBuffPoolIds": null,
-        "AnnoId": 2,
+        "RoomIds": "[310, 311, 312, 313, 314, 315]",
+        "StartBuffPoolIds": "[3501]",
+        "AnnoId": 11,
         "StartAVG": null
     },
     {
         "Id": 1022,
-        "RoomIds": "[101, 102, 103, 104, 105, 106]",
-        "StartBuffPoolIds": null,
-        "AnnoId": 2,
+        "RoomIds": "[320, 321, 322, 323, 324, 325]",
+        "StartBuffPoolIds": "[3501]",
+        "AnnoId": 12,
         "StartAVG": null
     },
     {
         "Id": 1030,
-        "RoomIds": "[101, 102, 103, 104, 105, 106]",
-        "StartBuffPoolIds": null,
-        "AnnoId": 2,
+        "RoomIds": "[401, 402, 403, 404, 405, 406]",
+        "StartBuffPoolIds": "[3001, 2000, 3502]",
+        "AnnoId": 10,
         "StartAVG": null
     },
     {
         "Id": 1031,
-        "RoomIds": "[101, 102, 103, 104, 105, 106]",
-        "StartBuffPoolIds": null,
-        "AnnoId": 2,
+        "RoomIds": "[410, 411, 412, 413, 414, 415]",
+        "StartBuffPoolIds": "[3502]",
+        "AnnoId": 11,
         "StartAVG": null
     },
     {
         "Id": 1032,
-        "RoomIds": "[101, 102, 103, 104, 105, 106]",
-        "StartBuffPoolIds": null,
-        "AnnoId": 2,
-        "StartAVG": null
-    },
-    {
-        "Id": 1040,
-        "RoomIds": "[101, 102, 103, 104, 105, 106]",
-        "StartBuffPoolIds": null,
-        "AnnoId": 2,
-        "StartAVG": null
-    },
-    {
-        "Id": 1041,
-        "RoomIds": "[101, 102, 103, 104, 105, 106]",
-        "StartBuffPoolIds": null,
-        "AnnoId": 2,
-        "StartAVG": null
-    },
-    {
-        "Id": 1042,
-        "RoomIds": "[101, 102, 103, 104, 105, 106]",
-        "StartBuffPoolIds": null,
-        "AnnoId": 2,
+        "RoomIds": "[420, 421, 422, 423, 424, 425, 426, 427]",
+        "StartBuffPoolIds": "[3502]",
+        "AnnoId": 12,
         "StartAVG": null
     }
 ]

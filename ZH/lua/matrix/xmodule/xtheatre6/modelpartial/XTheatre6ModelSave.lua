@@ -65,14 +65,13 @@ end
 ---获取最后查看剧情时间
 ---@return number
 function XTheatre6Model:GetLastViewStoryTime()
-    return self._SaveUtil:GetDataByBlockKey(SAVE_KEY_PERSISTENT, string.format("Theatre6_LastViewStoryTime_%d", XPlayer.Id)) or 0
+    return self._SaveUtil:GetDataByBlockKey(SAVE_KEY_PERSISTENT, "Theatre6_LastViewStoryTime") or 0
 end
 
 ---保存最后查看剧情时间
 function XTheatre6Model:SaveLastViewStoryTime()
-    local key = string.format("Theatre6_LastViewStoryTime_%d", XPlayer.Id)
     local timestamp = XTime.GetServerNowTimestamp()
-    self._SaveUtil:SaveDataByBlockKey(SAVE_KEY_PERSISTENT, key, timestamp)
+    self._SaveUtil:SaveDataByBlockKey(SAVE_KEY_PERSISTENT, "Theatre6_LastViewStoryTime", timestamp)
 end
 
 function XTheatre6Model:GetStageViewStatusKey()
@@ -133,4 +132,20 @@ function XTheatre6Model:IsAnnoNeedOpen(floorIdx)
     return not self:GetStageViewStatus(ANNO, floorIdx)
 end
 
+function XTheatre6Model:SaveBuffChooseIndex(mode, characterId, index)
+    self._SaveUtil:SaveDataByBlockKey(SAVE_KEY_PERSISTENT, string.format("Theatre6BuffChoose_%s_%s", mode, characterId), index)
+end
+
+function XTheatre6Model:GetBuffChooseIndex(mode, characterId)
+    return self._SaveUtil:GetDataByBlockKey(SAVE_KEY_PERSISTENT, string.format("Theatre6BuffChoose_%s_%s", mode, characterId))
+end
+
+function XTheatre6Model:SaveDifficultyChooseIndex(characterId, index)
+    self._SaveUtil:SaveDataByBlockKey(SAVE_KEY_PERSISTENT, string.format("Theatre6DifficultyChoose_%s", characterId), index)
+end
+
+function XTheatre6Model:GetDifficultyChooseIndex(characterId)
+    return self._SaveUtil:GetDataByBlockKey(SAVE_KEY_PERSISTENT, string.format("Theatre6DifficultyChoose_%s", characterId))
+end
+
 return XTheatre6Model

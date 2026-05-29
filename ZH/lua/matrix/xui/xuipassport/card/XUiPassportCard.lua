@@ -30,13 +30,13 @@ end
 
 function XUiPassportCard:OnEnable()
     CS.XGraphicManager.UseUiLightDir = true
-    if self.UiPassport then self.UiPassport:OnShowCard() end
+    self.UiPassport:OnShowCard()
     self:RefreshAllPanels()
 end
 
 function XUiPassportCard:OnDisable()
     CS.XGraphicManager.UseUiLightDir = false
-    if self.UiPassport then self.UiPassport:OnHideCard() end
+    self.UiPassport:OnHideCard()
 end
 
 function XUiPassportCard:OnDestroy()
@@ -79,8 +79,25 @@ function XUiPassportCard:OnBtnOpenClick()
         local fashionId = self._Control:GetPassportBuyFashionShowFashionId(typeInfoId)
         if XTool.IsNumberValid(fashionId) then
             local fashionType = self._Control:GetPassportBuyFashionShowType(typeInfoId)
-            local buyData = self._Control:GetPassportFashionBuyData(typeInfoId)
-            XLuaUiManager.Open("UiPassportFashionDetail", fashionId, fashionType, buyData)
+            local buyData = self._Control:GetPassportFashionBuyData(
+                typeInfoId,
+                function()
+                    XLuaUiManager.CloseWithCallback(
+                        "UiPassportFashionDetail",
+                        function()
+                            XLuaUiManager.Open(
+                                "UiPassportCard",
+                                handler(self.UiPassport, self.UiPassport.Refresh),
+                                self.UiPassport)
+                        end)
+                end)
+
+            XLuaUiManager.PopThenOpen(
+                "UiPassportFashionDetail",
+                fashionId,
+                fashionType,
+                buyData)
+
             return
         end
     end

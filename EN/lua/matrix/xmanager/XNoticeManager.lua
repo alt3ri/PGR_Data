@@ -1848,7 +1848,7 @@ XNoticeManagerCreator = function()
             return CS.UnityEngine.Networking.DownloadHandlerTexture(true)
         end, NoticeRequestTimeOut, false)
 
-        CS.XTool.WaitCoroutine(request:SendWebRequest(), function()
+        CS.XTool.WaitCoroutine(request:SendWebRequest(true), function()
             if request.isNetworkError or request.isHttpError then
                 return
             end
@@ -2187,7 +2187,7 @@ XNoticeManagerCreator = function()
             return
         end
         local request = CS.XUriPrefixRequest.Get(url, nil, NoticeRequestTimeOut, false, true)
-        CS.XTool.WaitCoroutine(request:SendWebRequest(), function()
+        CS.XTool.WaitCoroutine(request:SendWebRequest(true), function()
             if not request then
                 if failCb then
                     failCb()

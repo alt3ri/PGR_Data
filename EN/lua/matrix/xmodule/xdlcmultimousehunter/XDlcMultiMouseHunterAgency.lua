@@ -178,6 +178,10 @@ end
 --- 选择讨论阵营投票
 ---@param camp number 阵营
 function XDlcMultiMouseHunterAgency:RequestPlayerDiscussionVote(camp, oncall)
+    if camp ~= self.DlcMultiplayerDiscussionCamp.Camp1 and camp ~= self.DlcMultiplayerDiscussionCamp.Camp2 then
+        XLog.CustomReport(ModuleId.XDlcMultiMouseHunter, "RequestPlayerDiscussionVote", camp)
+        return
+    end
     local request = {
         Camp = camp,
     }
@@ -198,6 +202,14 @@ end
 --- 请求获取讨论投票奖励
 ---@param callback function 请求成功回调
 function XDlcMultiMouseHunterAgency:RequestGetDiscussionVoteReward(callback)
+    if self._Model:GetDiscussion() ~= nil then
+        local discussion = self._Model:GetDiscussion()
+        local discussionStatus = discussion:IsSameDiscussion() and discussion:GetStatus() or nil
+        if discussionStatus ~= self.DlcMultiplayerDiscussionStatus.Show then
+            XLog.CustomReport(ModuleId.XDlcMultiMouseHunter, "RequestGetDiscussionVoteReward", "当前不在讨论展示阶段，无法领取奖励")
+            return
+        end
+    end
     XNetwork.Call(Protocols.DlcMultiplayerGetDiscussionVoteRewardRequest, nil, function(res)
         if res.Code ~= XCode.Success then
             XUiManager.TipCode(res.Code)

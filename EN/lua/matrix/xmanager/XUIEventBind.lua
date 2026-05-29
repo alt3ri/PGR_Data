@@ -22,7 +22,6 @@ function XUIEventBind.AddEventListener(eventId, func, obj)
     end
 
     ListenersMap[eventId] = listenerList
-    return { eventId, func, obj }
 end
 
 function XUIEventBind.RemoveEventListener(eventId, func, obj)

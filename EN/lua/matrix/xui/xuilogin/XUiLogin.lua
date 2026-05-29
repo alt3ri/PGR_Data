@@ -50,6 +50,8 @@ function XUiLogin:OnEnable()
     CS.XAudioManager.RemoveCDCueStopStampDic()
     CS.XAudioManager.ClearAisacCurValueDic()
     XLuaAudioManager.ResetSystemAudioVolume()
+    -- 清除 BGM 中转区恢复状态，防止跨会话残留
+    CS.XAudioManager.ClearBgmRestoreState()
 end
 
 function XUiLogin:CheckFool()
@@ -778,11 +780,11 @@ function XUiLogin:DoLogin()
         --打开水印窗口
         XLoginManager.CheckWaterMask()
 
-        XDataCenter.PurchaseManager.YKInfoDataReq(function()
+        -- XDataCenter.PurchaseManager.YKInfoDataReq(function()
             --CS.XPerfSightAgent.MarkLevelFin()
             --CS.XUwaGpmLuaAgent.EndScene()
             --CS.XUwaGpmLuaAgent.EndSceneLoad()
-            
+
             self.BlackMask.color = CS.UnityEngine.Color(0, 0, 0, 0)
             self.BlackMask.gameObject:SetActiveEx(true)
             self.BlackMask:DOFade(1.1, 0.3):OnComplete(function()
@@ -814,12 +816,13 @@ function XUiLogin:DoLogin()
                     end
                 end
             end)
+
             -- 设置月卡信息本地缓存
-            XDataCenter.PurchaseManager.SetYKLocalCache()
-            if XOverseaManager.IsOverSeaRegion() and not XOverseaManager.IsTWRegion() then
-                self:OnCheckBindTask() -- 检查绑定任务，可以触发完成任务
-            end
-        end)
+            -- XDataCenter.PurchaseManager.SetYKLocalCache()
+            -- if XOverseaManager.IsOverSeaRegion() and not XOverseaManager.IsTWRegion() then
+            --     self:OnCheckBindTask() -- 检查绑定任务，可以触发完成任务
+            -- end
+        -- end)
 
         XDataCenter.SetManager.SetOwnFontSizeByCache()
         runMainProfiler:Stop()

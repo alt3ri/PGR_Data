@@ -655,21 +655,7 @@ function XLineArithmetic3Control:RequestSettle()
 
     -- 伪造一次operation请求
     XMVCA.XLineArithmetic3:RequestOperation(self._StageId, 1, star, function()
-        -- 根据关卡星星条件计算 StarByte（与 XLineArithmetic2 一致：满足则 10^(i-1)）
-        local byteCode = 0
         local stageConfig = self._Model:GetStageConfig(self._StageId)
-        if stageConfig and stageConfig.StarCondition then
-            for i = 1, #stageConfig.StarCondition do
-                local conditionId = stageConfig.StarCondition[i]
-                if conditionId then
-                    local condition = XConditionManager.GetConditionTemplate(conditionId)
-                    if condition and self._Game:IsMatchCondition(condition) then
-                        byteCode = byteCode + (10 ^ (i - 1))
-                    end
-                end
-            end
-            byteCode = math.floor(byteCode)
-        end
 
         -- 已走过的路径转为 Record 格式（一笔连线游戏，仅一条路径，Round=1）
         local path = self._Game:GetTraveledPath()
@@ -703,7 +689,7 @@ function XLineArithmetic3Control:RequestSettle()
         end
         analytics.StarState = endCode
 
-        ---@class XLineArithmetic3SettleRecord 与 XLineArithmetic2 一致的 GridInfo 结构
+        ---@class XLineArithmetic3SettleRecord GridInfo 结构
         local record = {
             Record = {
                 {
@@ -712,7 +698,6 @@ function XLineArithmetic3Control:RequestSettle()
                     Score = 0,
                 },
             },
-            StarByte = byteCode,
             -- 以下为埋点相关字段
             -- 是否使用提示
             TipType = analytics.TipType or 0,

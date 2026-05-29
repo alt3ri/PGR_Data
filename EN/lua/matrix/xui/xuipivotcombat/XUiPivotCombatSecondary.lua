@@ -1,4 +1,4 @@
-local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
+local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
 --===========================================================================
  ---@desc 枢纽作战--次级作战界面
 --===========================================================================
@@ -121,7 +121,7 @@ function XUiPivotCombatSecondary:InitCB()
         self:OpenOneChildUi("UiPivotCombatEffectArea", self.Region)
     end
     self.BtnGuide.CallBack = function()
-        XLuaUiManager.Open("UiBattleRoleRoom", XPivotCombatConfigs.DynamicScoreTeachStageId)
+        XMVCA.XFuben:OpenUiBattleRoleRoom(XPivotCombatConfigs.DynamicScoreTeachStageId)
     end
     
     self:BindHelpBtn(self.BtnHelp, "PivotCombatSecondaryHelp")

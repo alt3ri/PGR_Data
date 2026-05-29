@@ -316,21 +316,15 @@ end
 function XUiLifeTreeMain:PlayStartAnimation()
     -- 场景动画
     self:StopSceneAnimation("AnimEnable02")
-    self:StopSceneAnimation("AnimLoop02")
-    self:StopSceneAnimation("AnimLoop01")
-    XLuaUiManager.SetMask(true)
-    self:PlaySceneAnimation("AnimEnable01", function()
-        XLuaUiManager.SetMask(false)
-        self:StopSceneAnimation("AnimEnable01")
-        self:PlaySceneAnimation("AnimLoop01")
-    end)
+    self:StopSceneAnimation("AnimEnable03")
+    self:PlaySceneAnimation("AnimEnable01")
 
     -- 摄像机动画
     self:PlayCameraAnimation("UiLifeTreeCamAnimEnable01")
 
     -- UI动画
     self:ShowUi(false)
-    self:PlayAnimation("Start", function()
+    self:PlayAnimationWithMask("Start", function()
         self:ShowUi(true)
     end)
 end
@@ -395,27 +389,22 @@ end
 -- 播放生命树动画
 function XUiLifeTreeMain:PlayLifeTreeAnimations()
     self:StopSceneAnimation("AnimEnable01")
-    self:StopSceneAnimation("AnimLoop01")
-    self:StopSceneAnimation("AnimLoop02")
+    self:StopSceneAnimation("AnimEnable02")
     
     XLuaUiManager.SetMask(true)
-    self:PlaySceneAnimation("AnimEnable02", function()
+    self:PlaySceneAnimation("AnimEnable03", function()
         XLuaUiManager.SetMask(false)
-        self:StopSceneAnimation("AnimEnable02")
-        self:PlaySceneAnimation("AnimLoop01")
-    end, true)
+    end)
 end
 
 -- 播放意识海动画
 function XUiLifeTreeMain:PlaySeaAnimations()
     self:StopSceneAnimation("AnimEnable01")
-    self:StopSceneAnimation("AnimLoop01")
+    self:StopSceneAnimation("AnimEnable03")
 
     XLuaUiManager.SetMask(true)
     self:PlaySceneAnimation("AnimEnable02", function()
         XLuaUiManager.SetMask(false)
-        self:StopSceneAnimation("AnimEnable02")
-        self:PlaySceneAnimation("AnimLoop02")
     end)
 end
 --endregion
@@ -470,8 +459,8 @@ end
 
 -- 设置摄像机的X轴和Y轴的值，并通过动画逐渐切换到目标值
 function XUiLifeTreeMain:SetCameraValueWithAnim(aimXValue, aimYValue)
-    local curXValue = self.CamNearMain:GetXValue()
-    local curYValue = self.CamNearMain:GetYValue()
+    local curXValue = self.CamFarMain:GetXValue()
+    local curYValue = self.CamFarMain:GetYValue()
     local startTime = CS.UnityEngine.Time.realtimeSinceStartup
     self:RemoveSetCameraValueTimer()
     self.IsPlayCameraAnim = true
@@ -543,6 +532,12 @@ function XUiLifeTreeMain:PlayCameraZoomInAnimation(cb)
     self.CamFarMain.gameObject:SetActiveEx(false)
     self.LastFarCameraPosition = self.UiFarCamera.transform.position
 
+    -- 隐藏摄像机
+    self.UiNearCamera.gameObject:SetActiveEx(false)
+
+    -- 界面压黑动画
+    self:PlayAnimation("DarkDisable")
+
     -- 镜头推进动画
     local targetPosition = self.ZoomInPoint.transform.position -- 镜头推进目标位置
     self:StopCameraZoomInAnimation()
@@ -559,6 +554,9 @@ end
 function XUiLifeTreeMain:PlayCameraResetAnimation(cb)
     if not self.IsCameraZoomIn then return end
 
+    -- 界面黑色消退动画
+    self:PlayAnimation("DarkEnable")
+
     -- 镜头推进动画
     self:StopCameraZoomInAnimation()
     self.UiFarCameraTweener = self.UiFarCamera.transform:DOMove(self.LastFarCameraPosition, CAMERA_ZOOM_IN_TIME)
@@ -569,6 +567,9 @@ function XUiLifeTreeMain:PlayCameraResetAnimation(cb)
         self:ShowUi(true)
         self:CheckUpdateUiPointPos()
         self.CamFarMain.gameObject:SetActiveEx(true)
+
+        -- 显示摄像机
+        self.UiNearCamera.gameObject:SetActiveEx(true)
         if cb then cb() end
     end)
 end

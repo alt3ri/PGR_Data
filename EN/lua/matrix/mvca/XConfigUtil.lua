@@ -21,6 +21,12 @@ XConfigUtil.DirectoryType = {
     Custom = 3, -- 路径有自定义的部分
 }
 
+XConfigUtil.TabScope = {
+    Control     = 1, --Control层
+    Agency      = 1 << 1, --Agency层
+    Temp        = 1 << 2, --临时读取
+}
+
 local IsWindowsEditor = XMain.IsWindowsEditor
 
 function XConfigUtil.GetReadHandler(readType)
@@ -212,6 +218,7 @@ function XConfigUtil:Get(path)
         local func = XConfigUtil.GetReadHandler(args[1])
         if func then
             local config = func(path, args[2], args[3])
+            XTableManager.SetModuleByCacheType(path, self._Id, args[4])
             if args[4] ~= XConfigUtil.CacheType.Temp then --临时的表格不缓存
                 self._Configs[path] = config or {} --避免空表反复加载解析二进制
             end

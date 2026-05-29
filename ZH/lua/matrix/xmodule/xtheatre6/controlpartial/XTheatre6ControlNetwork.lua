@@ -11,11 +11,12 @@ function XTheatre6Control:RequestPlayModeStartFight(characterId, fashionId, init
     req.DifficultyId = difficultyId
     XNetwork.CallWithAutoHandleErrorCode("Theatre6PlayModeStartFightRequest", req, function(res)
         self._Model:UpdatePlayModeStartFight(res)
-        self:InitClientStageStatus()
-        self:StartGame(XEnumConst.Theatre6.PlayMode.GamePlay, res.PlayModeDataDb.StageId, 1, 1)
-        if self._Model.BattleShop then
-            self._Model.BattleShop:NotifyTheatre6ActivityData(res.PlayModeDataDb and res.PlayModeDataDb.CurrentRoomDataDb or nil)
-        end
+        self:InitClientStageStatus()
+        self:StartGame(XEnumConst.Theatre6.PlayMode.GamePlay, res.PlayModeDataDb.StageId, 1, 1)
+        if self._Model.BattleShop then
+            self._Model.BattleShop:NotifyTheatre6ActivityData(res.PlayModeDataDb and res.PlayModeDataDb.CurrentRoomDataDb or nil,
+                XEnumConst.Theatre6.PlayMode.GamePlay)
+        end
         if cb then
             cb()
         end
@@ -26,12 +27,16 @@ end
 ---@param replayStageId number 复刷（故事线未完成,不需要上传此字段,服务器也自动忽略）
 function XTheatre6Control:RequestEnterStoryLine(storyLineId, replayStageId, cb)
     XNetwork.CallWithAutoHandleErrorCode("Theatre6EnterStoryLineRequest", { StoryLineId = storyLineId, ReplayStageId = replayStageId }, function(res)
-        self._Model:UpdateStoryLineStartFight(res)
-        self:InitClientStageStatus()
-        self:StartGame(XEnumConst.Theatre6.PlayMode.Story, res.StoryModeDataDb.StageId, 1, 1)
-        if cb then
-            cb()
-        end
+        self._Model:UpdateStoryLineStartFight(res)
+        self:InitClientStageStatus()
+        self:StartGame(XEnumConst.Theatre6.PlayMode.Story, res.StoryModeDataDb.StageId, 1, 1)
+        if self._Model.BattleShop then
+            self._Model.BattleShop:NotifyTheatre6ActivityData(res.StoryModeDataDb and res.StoryModeDataDb.CurrentRoomDataDb or nil,
+                XEnumConst.Theatre6.PlayMode.Story)
+        end
+        if cb then
+            cb()
+        end
     end)
 end
 
@@ -95,7 +100,18 @@ end
 
 ---二择事件选择奖励
 function XTheatre6Control:RequestChooseEvent(selectType, cb)
-    XNetwork.CallWithAutoHandleErrorCode("Theatre6ChooseEventRequest", { SelectType = selectType }, function(res)
+    --NotifyTheatre6SettleData协议会比Theatre6ChooseEventRequest的返回协议更快收到，这里需要拦截下
+    XMVCA.XTheatre6:SetSettlementLock(true)
+    XNetwork.Call("Theatre6ChooseEventRequest", { SelectType = selectType }, function(res)
+        if res.Code ~= XCode.Success then
+            XUiManager.TipCode(res.Code)
+            XMVCA.XTheatre6:SetSettlementLock(false)
+            if not XMVCA.XTheatre6:CheckOpenSettle() then
+                cb(false, false)
+            end
+            return
+        end
+        
         local historyStatus = self:GetCurRoomData().ChooseRoomStatus
         self._Model:UpdateChooseEvent(res.NextChooseId, res.StageTasks, res.LeftRewards, res.RightRewards)
         self._Model:UpdateChooseRoomStatus(res.NextRoomStatus)
@@ -108,14 +124,30 @@ function XTheatre6Control:RequestChooseEvent(selectType, cb)
                 break
             end
         end
+
+        local queue = {}
         --触发技能升级
-        if not XTool.IsTableEmpty(res.SkillUpBuffDatas) then
-            XMVCA.XTheatre6:ShowSkillUpEffect(res.SkillUpBuffDatas, function()
-                cb(isEnd, isFight)
-            end)
-            return
+        table.insert(queue, function(next)
+            XMVCA.XTheatre6:ShowSkillUpEffect(res.SkillUpBuffDatas, next)
+        end)
+        --显示San值buff弹窗
+        if not XTool.IsTableEmpty(res.SanBuffDatas) then
+            for _, buffData in ipairs(res.SanBuffDatas) do
+                if buffData.BuffId == self._Model:GetSanDeathBuffId() then
+                    table.insert(queue, function(next)
+                        XLuaUiManager.Open("UiTheatre6PopupGetBuff", { buffData }, true, next)
+                    end)
+                    break
+                end
+            end
         end
-        cb(isEnd, isFight)
+        --最后更新二择界面
+        XMVCA.XTheatre6:RunChain(queue, function()
+            XMVCA.XTheatre6:SetSettlementLock(false)
+            if not XMVCA.XTheatre6:CheckOpenSettle() then
+                cb(isEnd, isFight)
+            end
+        end)
     end)
 end
 

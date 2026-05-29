@@ -24,7 +24,7 @@ function XUiOneKeyCustomKeyItem:Refresh(data, cb, resetTextOnly, curInputMapId, 
         if isCustom or oneKeyIsCustom then
             self.BtnKeyItem.CallBack = function()
                 if keyCodeType == XSetConfigs.KeyCodeType.KeyMouseCustom and not CS.XUiPc.XUiPcManager.PCForceSetKeyCode then
-                    XLuaUiManager.Open("UiMouseButtonConfig")
+                    XLuaUiManager.Open("UiMouseButtonConfig", self)
                 elseif oneKeyIsCustom then
                     XUiManager.TipMsg(CS.XTextManager.GetText("PcKeyBoardButtonNoCusTip"))
                 else

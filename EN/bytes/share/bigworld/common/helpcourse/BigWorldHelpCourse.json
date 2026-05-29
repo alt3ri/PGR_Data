@@ -81,6 +81,24 @@
         "IsHide": null
     },
     {
+        "Id": 1003,
+        "GroupId": 2,
+        "Priority": 99,
+        "Name": "Invitation Mission",
+        "IsPause": null,
+        "IsForce": null,
+        "IsHide": null
+    },
+    {
+        "Id": 1004,
+        "GroupId": 2,
+        "Priority": 98,
+        "Name": "Commandant Outfits",
+        "IsPause": null,
+        "IsForce": null,
+        "IsHide": null
+    },
+    {
         "Id": 2010,
         "GroupId": 3,
         "Priority": 99,
@@ -117,19 +135,28 @@
         "IsHide": null
     },
     {
-        "Id": 1003,
-        "GroupId": 2,
-        "Priority": 99,
-        "Name": "Invitation Mission",
-        "IsPause": null,
-        "IsForce": null,
-        "IsHide": null
-    },
-    {
         "Id": 2014,
         "GroupId": 3,
         "Priority": 99,
         "Name": "Guided Cannon",
+        "IsPause": true,
+        "IsForce": true,
+        "IsHide": true
+    },
+    {
+        "Id": 3025,
+        "GroupId": 3,
+        "Priority": 99,
+        "Name": "Scan Vision",
+        "IsPause": true,
+        "IsForce": true,
+        "IsHide": true
+    },
+    {
+        "Id": 3020,
+        "GroupId": 3,
+        "Priority": 99,
+        "Name": "Battle Tutorial",
         "IsPause": true,
         "IsForce": true,
         "IsHide": true

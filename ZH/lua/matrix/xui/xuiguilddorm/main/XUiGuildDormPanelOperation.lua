@@ -132,11 +132,18 @@ function XUiGuildDormPanelOperation:SetPhotographModel(value)
     if not self.Role then
         return
     end
-    self.BtnInteract.gameObject:SetActiveEx(true)
+    -- 角色正在交互时，BtnInteract 的显示由交互流程（OnRoleBeginInteract/OnRoleStopInteract）控制，
+    -- 此处不可覆盖，否则会强行把交互中已隐藏的按钮再次打开
+    if self.Role:GetIsInteracting() then
+        return
+    end
+    -- 仅当当前处于"可交互"状态时才显示按钮，否则保持隐藏（与 OnInteractChanged 的判定保持一致）
+    local shouldShow = self.__LastInteractValue == true
     local currentInteractInfo = self.Role:GetCurrentInteractInfo()
     if currentInteractInfo == nil or (currentInteractInfo.ButtonType == XGuildDormConfig.FurnitureButtonType.Npc and self.IsPhotographModel) then
-        self.BtnInteract.gameObject:SetActiveEx(false)
+        shouldShow = false
     end
+    self.BtnInteract.gameObject:SetActiveEx(shouldShow)
 end
 
 function XUiGuildDormPanelOperation:OnStart()

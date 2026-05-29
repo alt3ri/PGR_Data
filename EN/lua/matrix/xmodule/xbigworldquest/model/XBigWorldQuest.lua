@@ -333,6 +333,10 @@ function XBigWorldQuest:IsReady()
     return self._State == QuestState.Ready
 end
 
+function XBigWorldQuest:IsInActive()
+    return self._State == QuestState.InActive
+end
+
 function XBigWorldQuest:IsShowInList()
     if XMVCA.XBigWorldQuest:IsInstQuest(self._QuestId) then
         return false

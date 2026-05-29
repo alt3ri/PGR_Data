@@ -8,26 +8,34 @@ function XUiDlcRelinkPopupSwitchCareer:OnAwake()
     self:RegisterUiEvents()
 end
 
-function XUiDlcRelinkPopupSwitchCareer:OnStart(characterId, styleType, callBack)
+function XUiDlcRelinkPopupSwitchCareer:OnStart(characterId, styleType, callBack, isNotSelf)
     self.CharacterId = characterId
     self.StyleType = styleType
     self.CallBack = callBack
+    self.IsNotSelf = isNotSelf
     self:InitDynamicTable()
 end
 
 function XUiDlcRelinkPopupSwitchCareer:OnEnable()
+    self.PanelTitle.gameObject:SetActiveEx(not self.IsNotSelf)
+    self.PanelTitleView.gameObject:SetActiveEx(self.IsNotSelf)
     self:SetupDynamicTable()
 end
 
 function XUiDlcRelinkPopupSwitchCareer:InitDynamicTable()
     local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
     self.DynamicTable = XDynamicTableNormal.New(self.PanelOccupationGroup)
-    self.DynamicTable:SetProxy(XUiGridDlcRelinkSwitchStyle, self)
+    self.DynamicTable:SetProxy(XUiGridDlcRelinkSwitchStyle, self, self.IsNotSelf)
     self.DynamicTable:SetDelegate(self)
 end
 
 function XUiDlcRelinkPopupSwitchCareer:SetupDynamicTable()
-    self.CharacterConfigs = self._Control:GetCharacterConfigs(self.CharacterId)
+    local configs = self._Control:GetCharacterConfigs(self.CharacterId)
+    if self.IsNotSelf then
+        self.CharacterConfigs = { configs[self.StyleType] }
+    else
+        self.CharacterConfigs = configs
+    end
     self.DynamicTable:SetDataSource(self.CharacterConfigs)
     self.DynamicTable:ReloadDataASync()
 end
@@ -35,7 +43,11 @@ end
 ---@param grid XUiGridDlcRelinkSwitchStyle
 function XUiDlcRelinkPopupSwitchCareer:OnDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
-        grid:Refresh(self.CharacterConfigs[index], index == self.StyleType)
+        if self.IsNotSelf then
+            grid:RefreshOther(self.CharacterId, self.StyleType)
+        else
+            grid:Refresh(self.CharacterConfigs[index], index == self.StyleType)
+        end
     end
 end
 

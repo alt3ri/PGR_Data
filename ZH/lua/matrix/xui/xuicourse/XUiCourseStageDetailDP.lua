@@ -1,4 +1,4 @@
-local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 -- ConditionShow
 -- ================================================================================
 local XUiGridConItem = XClass(nil, "XUiGridConItem")
@@ -83,7 +83,7 @@ end
 
 -- 进入战斗房间
 function XUiCourseStageDetailDP:OnBtnEnterClick()
-    XLuaUiManager.Open("UiBattleRoleRoom", self.StageId)
+    XMVCA.XFuben:OpenUiBattleRoleRoom(self.StageId)
 end
 
 -- 显示首通奖励

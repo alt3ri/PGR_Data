@@ -93,6 +93,20 @@ function XGuildWarMember:GetPartner()
     return XDataCenter.GuildWarManager.GetAssistantCharacterPartner(self.EntityId, self.PlayerId)
 end
 
+--获取战斗用 fashionId：支援角色取对方 FightNpcData，本机角色取本机穿戴
+function XGuildWarMember:GetFashionIdForFight()
+    if self:IsEmpty() then
+        return 0
+    end
+
+    if self:IsAssitant() then
+        return XDataCenter.GuildWarManager.GetAssistantCharacterFashion(self.EntityId, self.PlayerId) or 0
+    end
+
+    local character = XMVCA.XCharacter:GetCharacter(self.EntityId)
+    return (character and character.FashionId) or 0
+end
+
 --获得队长技能描述
 function XGuildWarMember:GetCaptainSkillDesc()
     if self:IsEmpty() then

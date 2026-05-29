@@ -667,6 +667,9 @@ function XUiGoldenMinerGameBattle:_OnExitStage()
     local SettleGame = function()
         self:UpdateSettlementInfo(true)
         self._Control:RequestGoldenMinerExitGame(self._CurStageId, function()
+            if self._Control:TryExitToCollection(true) then
+                return
+            end
             XLuaUiManager.PopThenOpen("UiGoldenMinerMain")
         end, self._SettlementInfo, self._Game:GetCurScore(), self._Game:GetGameData():GetAllScore())
     end
@@ -1074,6 +1077,11 @@ function XUiGoldenMinerGameBattle:_GameInit()
     data:SetCurCharacterId(self._Control:GetUseCharacterId())
     data:SetInitBuffIdList(self._Control:GetCurInitBuffIdList())
 
+    local safeAreaRect = XUiHelper.TryGetComponent(self.Ui.Transform, "SafeAreaContentPane", "RectTransform")
+    if safeAreaRect then
+        self._Control:SetRectSize(safeAreaRect.rect.size)
+    end
+
     ---@type XGoldenMinerGameInitObjDir
     local objDir = {}
     objDir.RectSize = self._Control:GetRectSize()
@@ -1281,8 +1289,12 @@ function XUiGoldenMinerGameBattle:UpdateSettlementInfo(isGiveUpTimeScore)
 end
 
 function XUiGoldenMinerGameBattle:CheckGameIsWin()
+
     local nextStageId = self._DataDb:GetCurStageId()
     if (not self._ReportInfo:IsWin() or not nextStageId) or (not self._IsFinishSuccess and self._CurStageIndex == 1) then
+        if self._Control:TryExitToCollection(true) then
+            return
+        end
         XLuaUiManager.PopThenOpen("UiGoldenMinerMain")
         return
     end
@@ -1778,4 +1790,4 @@ end
 function XUiGoldenMinerGameBattle:IsUseKeyboard()
     return XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.Pc
 end
---endregion
+--endregion

@@ -171,6 +171,7 @@ function XUiPhotographPortrait:OnGetEvents()
         XEventId.EVENT_PHOTO_REPLAY_ANIMATION,
         CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYING,
         CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYEND,
+        CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_STOP_WITHOUT_LANGUAGEPREPARING,
     }
 end
 
@@ -192,10 +193,12 @@ function XUiPhotographPortrait:OnNotify(evt, ...)
     elseif evt == XEventId.EVENT_PHOTO_REPLAY_ANIMATION then
         self:Replay()
     elseif evt == CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYING then
+        self.SwitchableScene:OnVideoStart()
+
         if not self.CG:IsLanguagePreparing() then
             self:OnCGPlay()
         end
-    elseif evt == CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYEND then
+    elseif evt == CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYEND or evt == CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_STOP_WITHOUT_LANGUAGEPREPARING then
         self:OnCGStop()
     end
 end
@@ -271,6 +274,7 @@ function XUiPhotographPortrait:InitCb()
     end
     if XOverseaManager.IsOverSeaRegion() then
         self.BtnPhotograph.gameObject:SetActiveEx(false) -- 海外隐藏拍照按钮
+        self.BtnPhotograph:SetButtonState(CS.UiButtonState.Disable)
         local raycastComponent = self.BtnPhotograph:GetComponent(typeof(CS.UnityEngine.UI.XEmpty4Raycast))
         raycastComponent.raycastTarget = false
     else
@@ -349,6 +353,13 @@ function XUiPhotographPortrait:InitUi()
     self._SceneChange = require("XUi/XUiPhotograph/XUiPanelPhotographSceneChange").New(self.PanelSceneChange, self)
     self._SceneChange:SetUpdateBatteryMode(handler(self, self.UpdateBatteryMode))
     self.FashionColorPanel = XUiPhotographFashionColor.New(self.PanelDot, self)
+
+
+    self._CGFinishCallBack = function()
+        self.SwitchableScene:OnVideoEnd()
+    end
+
+    self.CG:AddVideoDestroyCallBack(self._CGFinishCallBack)
 end
 
 --region   ------------------动态列表 start-------------------
@@ -578,7 +589,9 @@ function XUiPhotographPortrait:OnUiSceneLoaded()
     self.ChangeActionEffect = root:FindTransform("ChangeActionEffect")
     ---@type XUiPanelRoleModel
     self.RoleModel = XUiPanelRoleModel.New(self.UiModelParent, self.Name, true, false, false, true, nil, nil, true)
-    self:UpdateRoleModel(self.CharacterId, self.FashionId)
+    local fashionData = XDataCenter.FashionManager.GetOwnFashionDataById(self.FashionId)
+    local colorId = fashionData and fashionData.ColorId or nil
+    self:UpdateRoleModel(self.CharacterId, self.FashionId, colorId)
     
     self.CameraFar.gameObject:SetActiveEx(true)
     self.CameraNear.gameObject:SetActiveEx(true)
@@ -799,9 +812,6 @@ function XUiPhotographPortrait:UpdateRoleModel(charId, fashionId, colorId)
     self:ClearAnimationCache(charId)
     self.CharacterId = charId
     self.FashionId = fashionId
-    if not XTool.IsNumberValid(colorId) then
-        colorId = 0
-    end
     XDataCenter.DisplayManager.UpdateRoleModel(self.RoleModel, charId, nil, fashionId, colorId)
     self.RoleAnimator = self.RoleModel:GetAnimator()
     self.CG.LastPlayId = nil
@@ -857,12 +867,12 @@ function XUiPhotographPortrait:OnBtnSynchronousClick()
         fashion_id = self.FashionId,
         scene_id = XDataCenter.PhotographManager.GetCurSelectSceneId()
     })
-    XDataCenter.PhotographManager.ChangeDisplay(XDataCenter.PhotographManager.GetCurSelectSceneId(), 
+    XDataCenter.PhotographManager.ChangeDisplay(XDataCenter.PhotographManager.GetCurSelectSceneId(),
             self.CharacterId, self.FashionId, function ()
                 self.OldCharacterId = self.CharacterId
-                self:RefreshBtnSynchronous() 
+                self:RefreshBtnSynchronous()
                 XUiManager.TipPortraitText("PhotoModeChangeSuccess")
-    end)
+    end, self.FashionColorPanel:GetSelectColorId())
 end
 
 --返回
@@ -1022,7 +1032,11 @@ function XUiPhotographPortrait:SwitchCapturePanel(show)
     self.BtnHide.gameObject:SetActiveEx(not show)
     self:RefreshViewActive(not show)
     self.Btn.gameObject:SetActiveEx(not show)
-    self.BtnPhotograph.gameObject:SetActiveEx(not show)
+    if XOverseaManager.IsOverSeaRegion() then
+        self.BtnPhotograph.gameObject:SetActiveEx(false) -- 海外隐藏拍照按钮
+    else
+        self.BtnPhotograph.gameObject:SetActiveEx(not show)
+    end
 end
 
 function XUiPhotographPortrait:IsShowCapturePanel()
@@ -1050,7 +1064,10 @@ function XUiPhotographPortrait:CheckChanged()
         return true
     end
     local fashionId = XMVCA.XCharacter:GetShowFashionId(self.CharacterId)
-    return self.FashionId ~= fashionId
+    if self.FashionId ~= fashionId then
+        return true
+    end
+    return self.FashionColorPanel:ChangeFashionColor()
 end
 
 function XUiPhotographPortrait:InitProportionImage()
@@ -1241,11 +1258,13 @@ function XUiPhotographPortrait:OnFashionDownloadComplete()
     local fashionId = self.FashionId
     if XTool.IsNumberValid(fashionId)
        and XMVCA.XSubPackage:CheckFashionDownloaded(fashionId) then
-        self:UpdateRoleModel(self.CharacterId, fashionId)
+        local fashionData = XDataCenter.FashionManager.GetOwnFashionDataById(fashionId)
+        local colorId = fashionData and fashionData.ColorId or nil
+        self:UpdateRoleModel(self.CharacterId, fashionId, colorId)
         local fashionTemplate = XDataCenter.FashionManager.GetFashionTemplate(fashionId)
         XUiManager.PopupLeftTip(CS.XTextManager.GetText("DownloadFashionFinishedRefresh", fashionTemplate and fashionTemplate.Name or ""))
     end
     self:CheckAndUpdateLackResourcesPanel()
 end
 
---endregion
+--endregion

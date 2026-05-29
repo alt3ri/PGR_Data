@@ -1,6 +1,8 @@
 local XUiBigWorldMapPin = require("XUi/XUiBigWorld/XMap/XUiBigWorldMapPin")
 local XUiBigWorldMapAreaPin = require("XUi/XUiBigWorld/XMap/XUiBigWorldMapAreaPin")
 local XUiBigWorldMapSelect = require("XUi/XUiBigWorld/XMap/BigMap/XUiBigWorldMapSelect")
+local XUiBigWorldMapTab = require("XUi/XUiBigWorld/XMap/BigMap/XUiBigWorldMapTab")
+local XUiBigWorldMapTitle = require("XUi/XUiBigWorld/XMap/BigMap/XUiBigWorldMapTitle")
 local XUiBigWorldMapTrackPin = require("XUi/XUiBigWorld/XMap/BigMap/XUiBigWorldMapTrackPin")
 local XUiBigWorldMapTrackPlayer = require("XUi/XUiBigWorld/XMap/BigMap/XUiBigWorldMapTrackPlayer")
 local XBWMapAxisConversion = require("XModule/XBigWorldMap/XCommon/XBWMapAxisConversion")
@@ -42,6 +44,15 @@ local XBWBigMapInterface = require("XModule/XBigWorldMap/XInterface/XBWBigMapInt
 ---@field BtnCharacterPosition XUiComponent.XUiButtonEx
 ---@field PanelOverview UnityEngine.RectTransform
 ---@field BtnOverview XUiComponent.XUiButtonEx
+---@field PanelSubAreaTitle UnityEngine.RectTransform
+---@field MapAreaTitle UnityEngine.RectTransform
+---@field MapAreaTargetTitle UnityEngine.RectTransform
+---@field TxtMapAreaTitle UnityEngine.UI.Text
+---@field TxtMapAreaSubTitle UnityEngine.UI.Text
+---@field PanelCharacterPosition UnityEngine.RectTransform
+---@field BtnMapSet XUiComponent.XUiButtonEx
+---@field ListMapSet UnityEngine.RectTransform
+---@field MapAreaTitleTarget UnityEngine.RectTransform
 ---@field _Control XBigWorldMapControl
 local XUiBigWorldMap = XMVCA.XBigWorldUI:Register(nil, "UiBigWorldMap")
 
@@ -68,9 +79,13 @@ function XUiBigWorldMap:OnAwake()
     ---@type XBWMapAxisConversion
     self._AxisConversion = XBWMapAxisConversion.New(CS.XUiType.Normal)
 
+    ---@type XUiBigWorldMapTab[]
+    self._MapTabList = {}
+
     self._AreaGroupList = {}
     self._AreaGroupIds = {}
     self._GroupButtonList = {}
+    self._GroupButtonAnimations = {}
 
     self._ChangeTabList = {}
     self._ChangeIndexMap = {}
@@ -96,6 +111,15 @@ function XUiBigWorldMap:OnAwake()
     self._IsDetailShow = false
     self._IsIgnoreSlider = false
     self._IsOnlyOneFloor = false
+    self._IsOverviewShow = false
+
+    ---@type XUiBigWorldMapTitle[]
+    self._TitleList = {}
+    ---@type XUiBigWorldMapTitle[]
+    self._SubTitleList = {}
+    ---@type XUiBigWorldMapTitle[]
+    self._CurrentTitleList = {}
+    self._TitleTargetList = {}
 
     ---@type XUiBigWorldMapSelect
     self._SelectPanel = XUiBigWorldMapSelect.New(self.PanelPreSelect, self)
@@ -123,6 +147,14 @@ function XUiBigWorldMap:OnAwake()
     self._PinIdToTarget = {}
     self._IsShowCharactorPos = self._Control:GetShowCharactorPos()
 
+    self._IsSetShow = true
+
+    self._MapSetAnimation = false
+
+    self._WaitChangeMapIndex = false
+
+    self._CurrentPlayAreaAnimation = false
+
     self:_InitUi()
     self:_RegisterButtonClicks()
 end
@@ -138,7 +170,8 @@ function XUiBigWorldMap:OnStart(worldId, levelId, bindPinId, pinId, focusPos, sc
         self._IsShowCharactorPos = true
         self._Control:SetShowCharactorPos(self._IsShowCharactorPos)
     end
-    self.BtnCharacterPosition:SetButtonState(self._IsShowCharactorPos and CS.UiButtonState.Select or CS.UiButtonState.Normal)
+    self.BtnCharacterPosition:SetButtonState(self._IsShowCharactorPos and CS.UiButtonState.Select or
+        CS.UiButtonState.Normal)
 
     self._MaxScale = self._Control:GetMapMaxScaleByLevelId(levelId)
     self._MinScale = self._Control:GetMapMinScaleByLevelId(levelId)
@@ -147,20 +180,29 @@ function XUiBigWorldMap:OnStart(worldId, levelId, bindPinId, pinId, focusPos, sc
     self:_InitGesture()
     self:_InitCurrentNpcIcon()
     self:_InitAreaGroup()
+    self:_InitChangeList()
+    self:_InitTitle(levelId)
     self:_InitAreaList()
     self:_InitScale(scaleRatio)
-    self:_InitChangeList()
 
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_SWITCH, self.OnSwitchMap, self)
 end
 
 function XUiBigWorldMap:OnEnable()
-    self:PlayAnimation("Enable")
-    self:_RefreshMap()
-    self:_RefreshPin()
-    self:_RefreshPosition()
-    self:_RefreshTrackPin()
-    self:_RefreshPlayerTrack()
+    if self._WaitChangeMapIndex then
+        self.ListChangeTab:SelectIndex(self._WaitChangeMapIndex)
+        self._WaitChangeMapIndex = false
+    else
+        self:_RefreshMap()
+        self:_RefreshPin()
+        self:_RefreshPosition()
+        self:_RefreshPlayerTrack()
+        self:_RefreshTrackPin()
+    end
+
+    self:_PlayAnimation()
+    self:_PlayAreaGroupAnimation()
+    self:_RefreshCurrentAreaGroupTitles()
     self:_RegisterPCEvent()
     self:_RegisterSchedules()
     self:_RegisterListeners()
@@ -193,6 +235,7 @@ function XUiBigWorldMap:OnSliderValueChanged(value)
 
     self._IsIgnoreSlider = false
     self._Control:SetMapScaleCache(scale)
+    self:_RefreshTitle(scale)
 end
 
 function XUiBigWorldMap:OnGestureScaleValueChanged(value)
@@ -231,7 +274,7 @@ end
 
 function XUiBigWorldMap:OnBtnOverviewClick()
     self:_CloseSelectPanel()
-    XMVCA.XBigWorldUI:Open("UiBigWorldMapOverview", self._LevelId)
+    XMVCA.XBigWorldUI:Open("UiBigWorldMapOverview")
 end
 
 function XUiBigWorldMap:OnBtnCharacterPositionClick()
@@ -241,6 +284,22 @@ function XUiBigWorldMap:OnBtnCharacterPositionClick()
     self:_CloseSelectPanel()
 end
 
+function XUiBigWorldMap:OnBtnMapSetClick()
+    self._IsSetShow = not self._IsSetShow
+
+    if self._IsSetShow then
+        self.ListMapSet.gameObject:SetActiveEx(true)
+    else
+        if self._MapSetAnimation then
+            self._MapSetAnimation:PlayTimelineAnimation(function()
+                self.ListMapSet.gameObject:SetActiveEx(false)
+            end)
+        else
+            self.ListMapSet.gameObject:SetActiveEx(false)
+        end
+    end
+end
+
 function XUiBigWorldMap:OnAreaListClick(index)
     self:_CloseSelectPanel()
     if self._CurrentGroupIndex ~= index then
@@ -248,11 +307,13 @@ function XUiBigWorldMap:OnAreaListClick(index)
         self:_RefreshGroup(index)
         self:_RefreshPinFloor(index)
         self:_RefreshCurrentAreaGroupPins()
+        self:_RefreshCurrentAreaGroupTitles()
         if not self._IsAutoSelect then
             self:_RefreshPlayerPosition()
         end
         self._IsAutoSelect = false
     end
+    self:_PlayAreaGroupAnimation()
 end
 
 function XUiBigWorldMap:OnChangeTabClick(index)
@@ -359,7 +420,7 @@ function XUiBigWorldMap:OnSwitchMap(levelId)
     if not XTool.IsTableEmpty(self._ChangeIndexMap) then
         for index, changeLevelId in pairs(self._ChangeIndexMap) do
             if changeLevelId == levelId then
-                self.ListChangeTab:SelectIndex(index)
+                self._WaitChangeMapIndex = index
                 break
             end
         end
@@ -425,8 +486,7 @@ function XUiBigWorldMap:OpenPinSelectList(pinDatas, transform)
         self._SelectPanel:Open()
         self._SelectPanel:Refresh(self._LevelId, pinDatas, transform)
         self:_ActiveSlider(false)
-        self.ListChangeTab.gameObject:SetActiveEx(false)
-        self.BtnOverview.gameObject:SetActiveEx(false)
+        self:_SetRightPanelActive(false)
         self.BtnSelectClose.gameObject:SetActiveEx(true)
     end
 end
@@ -513,6 +573,7 @@ function XUiBigWorldMap:_RegisterButtonClicks()
     self:RegisterClickEvent(self.BtnSelectClose, self.OnBtnSelectCloseClick, true)
     self:RegisterClickEvent(self.BtnOverview, self.OnBtnOverviewClick, true)
     self:RegisterClickEvent(self.BtnCharacterPosition, self.OnBtnCharacterPositionClick, true)
+    self:RegisterClickEvent(self.BtnMapSet, self.OnBtnMapSetClick, true)
     self.Slider.onValueChanged:AddListener(Handler(self, self.OnSliderValueChanged))
 end
 
@@ -579,12 +640,37 @@ function XUiBigWorldMap:_UnregisterPCEvent()
     CS.XInputManager.UnregisterOnPress(CS.XInputManager.XOperationType.System, self._PcPressHandle)
 end
 
+function XUiBigWorldMap:_PlayAnimation()
+    self:PlayAnimation("Enable")
+end
+
+function XUiBigWorldMap:_PlayAreaGroupAnimation()
+    if self._IsDetailShow then
+        return
+    end
+
+    local areaGroupType = self._Control:GetMapAreaGroupTypeByLevelId(self._LevelId)
+
+    if areaGroupType ~= XMVCA.XBigWorldMap.AreaGroupType.Vertical then
+        local animation = self._GroupButtonAnimations[self._CurrentGroupIndex]
+
+        if animation then
+            self._CurrentPlayAreaAnimation = animation
+            animation:PlayTimelineAnimation(function(isFinish)
+                if isFinish then
+                    self._CurrentPlayAreaAnimation = false
+                end
+            end)
+        end
+    end
+end
+
 function XUiBigWorldMap:_RefreshPin()
     local pinDatas = self._Control:GetMapPinDatasByLevelId(self._LevelId, true)
     local index = 1
     local areaIndex = 1
 
-    self._hasAiMemory = false
+    self._HasAiMemory = false
     self._PinNodeMap = {}
     if not XTool.IsTableEmpty(pinDatas) then
         for _, pinData in pairs(pinDatas) do
@@ -593,8 +679,8 @@ function XUiBigWorldMap:_RefreshPin()
             if pinData:IsAiMemoryGroup() then
                 isDisplaying = self._IsShowCharactorPos and isDisplaying
 
-                if not self._hasAiMemory then
-                    self._hasAiMemory = self._LevelId == pinData.LevelId
+                if not self._HasAiMemory then
+                    self._HasAiMemory = self._LevelId == pinData.LevelId
                 end
             end
 
@@ -616,7 +702,8 @@ function XUiBigWorldMap:_RefreshPin()
         self._PinAreaList[i]:Close()
     end
     self.PanelPlayer.gameObject:SetActiveEx(self:_IsInLevelNotDep())
-    self.BtnCharacterPosition.gameObject:SetActive(self._hasAiMemory and not self._IsDetailShow)
+    self.BtnCharacterPosition.gameObject:SetActive(self._HasAiMemory)
+    self.PanelCharacterPosition.gameObject:SetActive(self._HasAiMemory and not self._IsDetailShow)
 end
 
 --- 刷新单个Pin节点
@@ -684,6 +771,16 @@ function XUiBigWorldMap:_RefreshCurrentAreaGroupPins()
 
                 self:_RefreshCurrentAreaGroupPinNode(pinNode, groupId, pinData)
             end
+        end
+    end
+end
+
+function XUiBigWorldMap:_RefreshCurrentAreaGroupTitles()
+    local groupId = self:GetCurrentSelectGroupId()
+
+    if XTool.IsNumberValid(groupId) then
+        for _, title in pairs(self._CurrentTitleList) do
+            title:ChangeActive(groupId, self.Gesture.Scale)
         end
     end
 end
@@ -806,12 +903,7 @@ function XUiBigWorldMap:_RefreshPlayerPosition()
     return true
 end
 
-
 function XUiBigWorldMap:_RefreshPosition()
-    -- if not self:_CheckCurrentLevel() then
-    --     local posX, posY, _ = self.RImgBase.transform:GetPosition()
-    --     self:AnchorToPosition(posX, posY, true, true)
-    -- end
     if not XTool.IsNumberValid(self._TargetPinId) then
         if self._FocusPosition then
             local posX, posY = self._AxisConversion:WorldToMapUIWorldPosition2D(self:GetMapObject(),
@@ -860,6 +952,18 @@ function XUiBigWorldMap:_RefreshGroup(index)
     self._Control:RefreshMapAreaGroup(self._AreaGroupList, index)
 end
 
+function XUiBigWorldMap:_RefreshTitle(scale, isIgnoreAnimation)
+    if not XTool.IsTableEmpty(self._CurrentTitleList) then
+        for _, title in pairs(self._CurrentTitleList) do
+            if isIgnoreAnimation then
+                title:SetShow(scale)
+            else
+                title:ChangeScale(scale)
+            end
+        end
+    end
+end
+
 ---@param pinData XBWMapPinData
 function XUiBigWorldMap:_RefreshSelectGroup(pinData)
     if pinData then
@@ -886,12 +990,13 @@ function XUiBigWorldMap:_RefreshDeatil(levelId, pinData)
     self:_RefreshPinRangeSelectable(false)
     self.Gesture.Padding.right = self._RightPadding + 200
     self:_ActiveSlider(false)
-    
+
     local pinNode = self._PinNodeMap[pinData.PinId]
     if pinNode then
         pinNode.Transform:SetAsLastSibling()
     end
-    self.BtnCharacterPosition.gameObject:SetActive(false)
+    self:_SetRightPanelActive(false)
+    self.AreaList.gameObject:SetActiveEx(false)
 end
 
 function XUiBigWorldMap:_RefreshPinRangeSelectable(isSelect)
@@ -923,8 +1028,7 @@ end
 function XUiBigWorldMap:_CloseSelectPanel(isIgnoreSlider)
     self._SelectPanel:Close()
     self.BtnSelectClose.gameObject:SetActiveEx(false)
-    self.ListChangeTab.gameObject:SetActiveEx(true)
-    self.BtnOverview.gameObject:SetActiveEx(true)
+    self:_SetRightPanelActive(true)
 
     if not isIgnoreSlider then
         self:_ActiveSlider(not self._IsDetailShow)
@@ -971,18 +1075,39 @@ function XUiBigWorldMap:_CloseDetail()
     self.BtnDetailClose.gameObject:SetActiveEx(false)
     self:_RefreshPinRangeSelectable(true)
     self.Gesture.Padding.right = self._RightPadding
-    self.BtnCharacterPosition.gameObject:SetActive(self._hasAiMemory and not self._IsDetailShow)
+    self:_SetRightPanelActive(true)
+    self.AreaList.gameObject:SetActiveEx(not self._IsOnlyOneFloor)
+
+    if self._CurrentPlayAreaAnimation then
+        self._CurrentPlayAreaAnimation:PlayTimelineAnimation(function(isFinish)
+            if isFinish then
+                self._CurrentPlayAreaAnimation = false
+            end
+        end)
+    end
 end
 
 function XUiBigWorldMap:_CloseOther()
-    --XMVCA.XBigWorldUI:SafeClose("UiBigWorldMenu")
-    --XMVCA.XBigWorldUI:SafeClose("UiBigWorldTaskMain")
-    --XMVCA.XBigWorldUI:SafeClose("UiBigWorldMessage")
-    --XMVCA.XBigWorldUI:SafeClose("UiBigWorldPopupMessage")
-    --XMVCA.XBigWorldUI:SafeClose("UiBigWorldPopupMessageSingle")
-    --XMVCA.XBigWorldUI:SafeClose("UiBigWorldProcess")
-
     XMVCA.XBigWorldUI:RunMain()
+end
+
+function XUiBigWorldMap:_SetRightPanelActive(isActive)
+    self.PanelOverview.gameObject:SetActiveEx(self._IsOverviewShow and isActive)
+    self.PanelCharacterPosition.gameObject:SetActiveEx(self._HasAiMemory and isActive and not self._IsDetailShow)
+
+    if isActive and self._IsOverviewShow then
+        self.PanelChange.gameObject:SetActiveEx(true)
+
+        for _, tab in pairs(self._MapTabList) do
+            tab:Open()
+        end
+    else
+        for _, tab in pairs(self._MapTabList) do
+            tab:Close()
+        end
+
+        self.PanelChange.gameObject:SetActiveEx(false)
+    end
 end
 
 function XUiBigWorldMap:_ActiveSlider(isActive)
@@ -1048,6 +1173,7 @@ function XUiBigWorldMap:_ChangeMap(levelId)
     self:_InitGesture(true)
     self:_InitCurrentNpcIcon()
     self:_InitAreaGroup()
+    self:_InitTitle(levelId)
     self:_InitAreaList()
     self:_InitScale(scaleRatio)
 
@@ -1060,8 +1186,10 @@ end
 
 function XUiBigWorldMap:_InitAreaList()
     local groupIds = self._Control:GetMapGroupIdsByLevelId(self._LevelId)
+    local areaGroupType = self._Control:GetMapAreaGroupTypeByLevelId(self._LevelId)
 
     self._AreaGroupIds = {}
+    self._GroupButtonAnimations = {}
     if not XTool.IsTableEmpty(groupIds) then
         local playerGroupId = 0
         local currentGroupId = 0
@@ -1071,17 +1199,16 @@ function XUiBigWorldMap:_InitAreaList()
         self._CurrentGroupIndex = 0
 
         if self:_CheckCurrentLevel() then
-            playerGroupId = self._Control:GetCurrentAreaGroupId()
-            currentGroupId = playerGroupId
-
-            if XTool.IsNumberValid(self._TargetPinId) then
-                currentGroupId = self._Control:GetPinGroupIdByLevelIdAndPinId(self._LevelId, self._TargetPinId)
-            elseif XTool.IsNumberValid(self._BindPinId) then
-                currentGroupId = self._Control:GetPinGroupIdByLevelIdAndPinId(self._LevelId, self._BindPinId)
-            end
             if XTool.IsNumberValid(self._BindPinId) then
                 playerGroupId = self._Control:GetPinGroupIdByLevelIdAndPinId(self._LevelId, self._BindPinId)
+            else
+                playerGroupId = self._Control:GetCurrentAreaGroupId()
             end
+        end
+        if XTool.IsNumberValid(self._TargetPinId) then
+            currentGroupId = self._Control:GetPinGroupIdByLevelIdAndPinId(self._LevelId, self._TargetPinId)
+        else
+            currentGroupId = playerGroupId
         end
 
         for index, groupId in pairs(groupIds) do
@@ -1093,9 +1220,24 @@ function XUiBigWorldMap:_InitAreaList()
                 self._GroupButtonList[index] = button
             end
 
+            self._GroupButtonAnimations[index] = button.transform:FindTransform("Enable")
             button.gameObject:SetActiveEx(true)
-            button:ShowTag(playerGroupId == groupId)
+            button:ShowTag(XTool.IsNumberValid(playerGroupId) and playerGroupId == groupId)
             button:SetNameByGroup(0, self._Control:GetMapAreaGroupNameByGroupId(groupId))
+
+            local componentGroup = button.gameObject:GetComponent(typeof(CS.XUiComponent.XUiComponentGroup))
+
+            if componentGroup then
+                componentGroup:SetImageWithGroup(0, self._Control:GetMapAreaGroupIcon(groupId))
+            end
+
+            if areaGroupType == XMVCA.XBigWorldMap.AreaGroupType.Vertical then
+                button:SetSpriteVisible(true)
+                button:ShowReddot(false)
+            else
+                button:SetSpriteVisible(false)
+                button:ShowReddot(true)
+            end
             self._AreaGroupIds[index] = groupId
             buttonList[index] = button
 
@@ -1214,16 +1356,25 @@ function XUiBigWorldMap:_InitCurrentNpcIcon()
 end
 
 function XUiBigWorldMap:_InitUi()
+    local animationNode = self.ListMapSet.transform:FindTransform("Animation")
+
     self.TrackPin.gameObject:SetActiveEx(true)
     self.PinNode.gameObject:SetActiveEx(false)
-    if self.PinArea then
-        self.PinArea.gameObject:SetActiveEx(false)
-    end
+    self.PinArea.gameObject:SetActiveEx(false)
     self.ImgArea.gameObject:SetActiveEx(false)
     self.BtnDetailClose.gameObject:SetActiveEx(false)
     self.BtnSelectClose.gameObject:SetActiveEx(false)
     self.PanelPointer.gameObject:SetActiveEx(false)
     self.BtnChangeTab.gameObject:SetActiveEx(false)
+    self.TxtMapAreaTitle.gameObject:SetActiveEx(false)
+    self.TxtMapAreaSubTitle.gameObject:SetActiveEx(false)
+    self.MapAreaTitleTarget.gameObject:SetActiveEx(false)
+    self.ListMapSet.gameObject:SetActiveEx(self._IsSetShow)
+    self.PanelSubAreaTitle.gameObject:SetActiveEx(false)
+
+    if animationNode then
+        self._MapSetAnimation = animationNode:FindTransform("Disable")
+    end
 end
 
 function XUiBigWorldMap:_InitGesture(isWithoutListener)
@@ -1249,70 +1400,166 @@ function XUiBigWorldMap:_InitScale(scaleRatio)
     scale = XMath.Clamp(scale, self._MinScale, self._MaxScale)
     self.Gesture.Scale = scale
     self.Slider:SetValueWithoutNotify((scale - self._MinScale) / (self._MaxScale - self._MinScale))
+    self:_RefreshTitle(scale, true)
+end
+
+function XUiBigWorldMap:_InitTitle(levelId)
+    local index = 1
+    local subIndex = 1
+    local totalIndex = 1
+    local titleInfos = self._Control:GetMapTitleInfos(levelId)
+
+    self._CurrentTitleList = {}
+    self.MapAreaTitle.gameObject:SetActiveEx(true)
+    if not XTool.IsTableEmpty(titleInfos) then
+        for _, titleInfo in pairs(titleInfos) do
+            local isSub = titleInfo.Info.ShowType == XMVCA.XBigWorldMap.SceneObjectShowType.SubTitle
+            local target = self._TitleTargetList[totalIndex]
+            ---@type XUiBigWorldMapTitle?
+            local title = nil
+
+            if not target then
+                target = XUiHelper.Instantiate(self.MapAreaTitleTarget, self.MapAreaTargetTitle)
+
+                self._TitleTargetList[totalIndex] = target
+            end
+            if isSub then
+                title = self._SubTitleList[subIndex]
+
+                if not title then
+                    local titleUi = XUiHelper.Instantiate(self.TxtMapAreaSubTitle, self.MapAreaTitle)
+
+                    title = XUiBigWorldMapTitle.New(titleUi, self)
+                    self._SubTitleList[subIndex] = title
+                end
+
+                self._CurrentTitleList[totalIndex] = title
+                subIndex = subIndex + 1
+            else
+                title = self._TitleList[index]
+
+                if not title then
+                    local titleUi = XUiHelper.Instantiate(self.TxtMapAreaTitle, self.MapAreaTitle)
+
+                    title = XUiBigWorldMapTitle.New(titleUi, self)
+                    self._TitleList[index] = title
+                end
+
+                self._CurrentTitleList[totalIndex] = title
+                index = index + 1
+            end
+
+            local axisConversion = self:GetAxisConversion()
+            local x, y = axisConversion:WorldToMapPosition2D(titleInfo.Position.x, titleInfo.Position.z)
+            local minScale = (self._MaxScale - self._MinScale) * titleInfo.Info.MinScale / 100 + self._MinScale
+            local maxScale = (self._MaxScale - self._MinScale) * titleInfo.Info.MaxScale / 100 + self._MinScale
+
+            target:SetAnchoredPosition(x, y)
+            title:Open()
+            title:SetTarget(target)
+            title:SetScaleRange(minScale, maxScale)
+            title:SetGroup(titleInfo.Info.GroupIdList)
+            title:Refresh(titleInfo.Info.Name)
+            totalIndex = totalIndex + 1
+        end
+    end
+
+    for i = totalIndex, table.nums(self._TitleTargetList) do
+        self._TitleTargetList[i].gameObject:SetActiveEx(false)
+    end
+    for i = index, table.nums(self._TitleList) do
+        self._TitleList[i]:Close()
+    end
+    for i = subIndex, table.nums(self._SubTitleList) do
+        self._SubTitleList[i]:Close()
+    end
 end
 
 function XUiBigWorldMap:_InitChangeList()
-    local mapConfigs = self._Control:GetAllMapConfigs()
-    local mapConfigList = {}
-    for levelId, mapConfig in pairs(mapConfigs) do
-        local conditionId = mapConfig.ConditionId
-        if conditionId == 0 or XMVCA.XBigWorldService:CheckCondition(conditionId) then
-            table.insert(mapConfigList, mapConfig)
-        end
-    end
-    table.sort(mapConfigList, function(a, b)
-        if a.SortIndex ~= b.SortIndex then
-            return a.SortIndex < b.SortIndex
-        end
-        return a.LevelId < b.LevelId
-    end)
-    local isShow = false
     local index = 1
+    local isShow = false
+    local overviewIndex = 1
+    local overviewMapConfigs = self._Control:GetUnlockOverviewMapConfigs()
 
     self._ChangeIndexMap = {}
-    if not XTool.IsTableEmpty(mapConfigList) then
-        isShow = table.nums(mapConfigList) > 1
+    if not XTool.IsTableEmpty(overviewMapConfigs) then
+        local totalConditionId = XMVCA.XBigWorldGamePlay:GetCurrentAgency():GetInt("BigWorldMapOverviewOpenCondition")
 
+        isShow = table.nums(overviewMapConfigs) >= 1
+
+        if totalConditionId ~= 0 and not XMVCA.XBigWorldService:CheckCondition(totalConditionId) then
+            isShow = false
+        end
+
+        self._IsOverviewShow = isShow
         if isShow then
             local buttons = {}
             local currentIndex = 1
 
-            for _, mapConfig in pairs(mapConfigList) do
-                local levelId = mapConfig.LevelId
-                local tab = self._ChangeTabList[index]
+            for overviewId, mapConfigList in pairs(overviewMapConfigs) do
+                local mapTab = self._MapTabList[overviewIndex]
 
-                if not tab then
-                    tab = XUiHelper.Instantiate(self.BtnChangeTab, self.ListChangeTab.transform)
+                if not mapTab then
+                    local tabUi = XUiHelper.Instantiate(self.PanelSubAreaTitle, self.ListChangeTab.transform)
 
-                    self._ChangeTabList[index] = tab
+                    mapTab = XUiBigWorldMapTab.New(tabUi, self)
+                    self._MapTabList[overviewIndex] = mapTab
                 end
 
-                self._ChangeIndexMap[index] = levelId
+                mapTab:Open()
+                mapTab:Refresh(overviewId)
+                overviewIndex = overviewIndex + 1
 
-                if levelId == self._LevelId then
-                    self._CurrentChangeIndex = index
-                    currentIndex = index
-                end
+                for _, mapConfig in pairs(mapConfigList) do
+                    self._ChangeIndexMap[index] = mapConfig.LevelId
 
-                index = index + 1
-                tab.gameObject:SetActiveEx(true)
-                tab:ShowTag(self:_GetCurrentLevelId() == levelId)
-                tab:SetNameByGroup(0, mapConfig.MapName)
-                local trackPinDataMap = XMVCA.XBigWorldMap:GetCurrentTrackPinsIncludeVirtual(levelId, {})
-                if not XTool.IsTableEmpty(trackPinDataMap) then
-                    for pinId, _ in pairs(trackPinDataMap) do
-                        local pinData = XMVCA.XBigWorldMap:GetPinDataByLevelIdAndPinId(levelId, pinId)
-                        if pinData and pinData.QuestObjectiveId > 0 then
-                            tab:ShowReddot(true)
-                            local img = tab.ReddotObj:GetComponent(typeof(CS.UnityEngine.UI.Image))
-                            if img then
-                                img:SetSprite(self._Control:GetPinActiveIconByStyleId(pinData.StyleId))
+                    local levelId = mapConfig.LevelId
+                    local tab = self._ChangeTabList[index]
+
+                    if not tab then
+                        tab = XUiHelper.Instantiate(self.BtnChangeTab, self.ListChangeTab.transform)
+
+                        self._ChangeTabList[index] = tab
+                    end
+
+                    self._ChangeIndexMap[index] = levelId
+
+                    if levelId == self._LevelId then
+                        self._CurrentChangeIndex = index
+                        currentIndex = index
+                    end
+
+                    index = index + 1
+                    tab.gameObject:SetActiveEx(true)
+                    tab:ShowTag(self:_GetCurrentLevelId() == levelId)
+                    tab:SetNameByGroup(0, mapConfig.MapName)
+
+                    local trackPinDataMap = XMVCA.XBigWorldMap:GetCurrentTrackPinsIncludeVirtual(levelId, {})
+                    local styleId = 0
+
+                    if not XTool.IsTableEmpty(trackPinDataMap) then
+                        for pinId, _ in pairs(trackPinDataMap) do
+                            local pinData = XMVCA.XBigWorldMap:GetPinDataByLevelIdAndPinId(levelId, pinId)
+
+                            if pinData and pinData.QuestObjectiveId > 0 then
+                                styleId = pinData.StyleId
+                                break
                             end
-                            break
                         end
                     end
+
+                    if XTool.IsNumberValid(styleId) then
+                        tab:SetSpriteVisible(true)
+                        tab:SetRawImageVisible(false)
+                        tab:SetSprite(self._Control:GetPinActiveIconByStyleId(styleId))
+                    else
+                        tab:SetSpriteVisible(false)
+                        tab:SetRawImageVisible(true)
+                        tab:SetRawImage(self._Control:GetOverviewIcon(overviewId))
+                    end
+
+                    table.insert(buttons, tab)
                 end
-                table.insert(buttons, tab)
             end
             self._ChangeTabCount = index - 1
             self.ListChangeTab:Init(buttons, Handler(self, self.OnChangeTabClick))
@@ -1322,11 +1569,10 @@ function XUiBigWorldMap:_InitChangeList()
     for i = index, #self._ChangeTabList do
         self._ChangeTabList[i].gameObject:SetActiveEx(false)
     end
-
-    local totalConditionId = XMVCA.XBigWorldGamePlay:GetCurrentAgency():GetInt("BigWorldMapOverviewOpenCondition")
-    if totalConditionId ~= 0 and not XMVCA.XBigWorldService:CheckCondition(totalConditionId) then
-        isShow = false
+    for i = overviewIndex, #self._MapTabList do
+        self._MapTabList[i]:Close()
     end
+
     self.PanelOverview.gameObject:SetActiveEx(isShow)
     self.PanelChange.gameObject:SetActiveEx(isShow)
 end

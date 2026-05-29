@@ -24,7 +24,7 @@ function XBuffScript10261100:OnLuaSkillStart(eventArgs)
     if eventArgs._skillId ~= self._skillId then return end
     if eventArgs._launcherUUID ~= self._npcUUID then return end
     -- 抓到体力属性
-    self.originAttrib1 = self._proxy:GetNpcGameplayAttribValue(self._uuid,ETheatre6AttribType.Stamina)
+    self.originAttrib1 = self._proxy:GetNpcGameplayAttribMaxValue(self._uuid,ETheatre6AttribType.Stamina)
     --如果体力属性要求达到了
     if self.originAttrib1 > self.TargetTL then
         self._proxy:Theatre6ChangeStaminaValue(self._npcUUID, -self.TLCost, 0)

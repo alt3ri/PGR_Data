@@ -42,7 +42,7 @@ function XUiBossInshotBossDetail:OnBtnTeachingClick()
     local activityId = self._Control:GetActivityId()
     local stageId = self._Control:GetActivityTeachStageId(activityId)
     local proxy = require("XUi/XUiBossInshot/XUiBossInshotBattleRoleRoom")
-    XLuaUiManager.Open("UiBattleRoleRoom", stageId, nil, proxy)
+    XMVCA.XFuben:OpenUiBattleRoleRoom(stageId, nil, proxy)
 end
 
 function XUiBossInshotBossDetail:OnBtnFightClick()
@@ -68,7 +68,7 @@ function XUiBossInshotBossDetail:EnterBattleRoleRoom()
     local stageId = self._Control:GetStageStageId(difficultyStageId)
     local team = self._Control:GetTeam()
     local proxy = require("XUi/XUiBossInshot/XUiBossInshotBattleRoleRoom")
-    XLuaUiManager.Open("UiBattleRoleRoom", stageId, team, proxy)
+    XMVCA.XFuben:OpenUiBattleRoleRoom(stageId, team, proxy)
 end
 
 function XUiBossInshotBossDetail:OnBtnDifficultyClick(index)
@@ -124,7 +124,7 @@ function XUiBossInshotBossDetail:OnBtnPracticeClick()
         XMVCA.XBossInshot:BossInshotSelectSkillRequest(skillCfg.PracticeStageId, skillCfg.FightEventId)
         local team = self._Control:GetTeam()
         local proxy = require("XUi/XUiBossInshot/XUiBossInshotBattleRoleRoom")
-        XLuaUiManager.Open("UiBattleRoleRoom", skillCfg.PracticeStageId, team, proxy)
+        XMVCA.XFuben:OpenUiBattleRoleRoom(skillCfg.PracticeStageId, team, proxy)
     end
 end
 

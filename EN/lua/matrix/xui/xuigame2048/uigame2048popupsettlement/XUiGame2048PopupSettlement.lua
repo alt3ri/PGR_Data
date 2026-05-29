@@ -161,9 +161,14 @@ end
 
 function XUiGame2048PopupSettlement:RefreshReward(res)
     -- 刷新奖励
+    local isFromCollection = XMVCA.XGameCollection:IsLaunchedFromCollection(XEnumConst.GameCollection.GameType.Game2048)
     local hasReward = not XTool.IsTableEmpty(res.RewardGoodsList)
     self.Grid256New.gameObject:SetActiveEx(false)
-    self.PanelRewardTitle.gameObject:SetActiveEx(hasReward)
+    if not isFromCollection then
+        self.PanelRewardTitle.gameObject:SetActiveEx(hasReward)
+    else
+        self.PanelRewardTitle.parent.gameObject:SetActiveEx(false)
+    end
     self.TxtNone.gameObject:SetActiveEx(not hasReward)
     
     if hasReward then

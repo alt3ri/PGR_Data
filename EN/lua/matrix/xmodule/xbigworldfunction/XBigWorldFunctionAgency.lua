@@ -26,6 +26,8 @@ function XBigWorldFunctionAgency:OnInit()
     
     self._OpenHint = {}
     self._FunctionState = FunctionState.None
+    self._BusyLockSeq = 0
+    self._BusyLockTokens = {}
     --除了通知给战斗其他地方禁止使用
     self._NotifyFightFunction = {
         FunctionId = 0
@@ -204,6 +206,9 @@ function XBigWorldFunctionAgency:OnFunctionEventChanged()
         --引导
         self:DoFunctionEventBusy()
         self:_Debug("执行引导[打脸]")
+    elseif self:TryOpenShopReward() then
+        --商店购买奖励（繁忙在 TryOpenShopReward 内加锁，便于回调带 token 解锁）
+        self:_Debug("弹出商店购买奖励")
     elseif self:IsShowHud() and XMVCA.XBigWorldMessage:TryOpenMessageTipUi() then
         --强制短信, 短信一定要比引导优先级低
         self:DoFunctionEventBusy()
@@ -351,8 +356,22 @@ function XBigWorldFunctionAgency:OpenFuncOpenHint()
     if XTool.IsTableEmpty(self._OpenHint) then
         return false
     end
-    XMVCA.XBigWorldUI:Open("UiHintFunctional", self._OpenHint)
     self._OpenHint = {}
+    XMVCA.XBigWorldUI:Open("UiHintFunctional", self._OpenHint)
+    return true
+end
+
+--- 尝试弹出商店购买奖励
+function XBigWorldFunctionAgency:TryOpenShopReward()
+    local goodList = XMVCA.XBigWorldCommanderDIY:GetDelayRewardGoodsList()
+    if XTool.IsTableEmpty(goodList) then
+        return false
+    end
+    local lockToken = self:DoFunctionEventBusy()
+    XMVCA.XBigWorldUI:OpenBigWorldObtain(goodList, nil, function()
+        XMVCA.XBigWorldCommanderDIY:FinishDelayRewardGoods()
+        self:OnFunctionEventCompleted(lockToken)
+    end, true, true)
     return true
 end
 
@@ -388,19 +407,36 @@ function XBigWorldFunctionAgency:DoWaitLoading()
     self:FreezeFunctionEvent()
 end
 
-function XBigWorldFunctionAgency:OnFunctionEventCompleted()
-    self:_Debug("移除繁忙状态")
-    if self:_ContainState(FunctionState.Busy) then
-        self:_RemoveState(FunctionState.Busy)
-        XDataCenter.GuideManager.SetDisableGuide(false)
+---@param lockToken number|nil 由 DoFunctionEventBusy 返回；nil 表示兼容旧逻辑（清空全部繁忙锁）
+function XBigWorldFunctionAgency:OnFunctionEventCompleted(lockToken)
+    self:_Debug("移除繁忙状态", lockToken)
+    if lockToken then
+        if self._BusyLockTokens[lockToken] then
+            self._BusyLockTokens[lockToken] = nil
+        end
+        if self:_IsBusyLockEmpty() and self:_ContainState(FunctionState.Busy) then
+            self:_RemoveState(FunctionState.Busy)
+            XDataCenter.GuideManager.SetDisableGuide(false)
+        end
+    else
+        self._BusyLockTokens = {}
+        if self:_ContainState(FunctionState.Busy) then
+            self:_RemoveState(FunctionState.Busy)
+            XDataCenter.GuideManager.SetDisableGuide(false)
+        end
     end
     self:OnFunctionEventChanged()
 end
 
+---@return number lockToken 解锁时传给 OnFunctionEventCompleted
 function XBigWorldFunctionAgency:DoFunctionEventBusy()
+    self._BusyLockSeq = self._BusyLockSeq + 1
+    local lockToken = self._BusyLockSeq
+    self._BusyLockTokens[lockToken] = true
     self:_AddState(FunctionState.Busy)
     XDataCenter.GuideManager.SetDisableGuide(true)
-    self:_Debug("设置繁忙状态")
+    self:_Debug("设置繁忙状态", lockToken)
+    return lockToken
 end
 
 --冻结状态
@@ -442,6 +478,10 @@ function XBigWorldFunctionAgency:_ContainState(state)
     return (self._FunctionState & state) ~= 0
 end
 
+function XBigWorldFunctionAgency:_IsBusyLockEmpty()
+    return next(self._BusyLockTokens) == nil
+end
+
 function XBigWorldFunctionAgency:AddEnterOperateHandler(enterOperateType, func, caller)
     local listenerList = self._EnterOperateHandler[enterOperateType]
     if not listenerList then
@@ -481,6 +521,14 @@ end
 
 function XBigWorldFunctionAgency:IsShowHud()
     return XMVCA.XBigWorldUI:IsShow(self._UiHud)
+end
+
+function XBigWorldFunctionAgency:GetShieldOfMainBusiness()
+    return self._Model:GetShieldOfMainBusiness()
+end
+
+function XBigWorldFunctionAgency:GetShieldOfBackgroundDownload()
+    return self._Model:GetShieldOfBackgroundDownload()
 end
 
 return XBigWorldFunctionAgency

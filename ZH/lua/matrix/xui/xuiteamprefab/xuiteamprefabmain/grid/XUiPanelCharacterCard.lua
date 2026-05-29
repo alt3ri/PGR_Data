@@ -159,6 +159,7 @@ function XUiPanelCharacterCard:Refresh(xTeamPrefab, pos)
     self.IsYellowConflict = false
     self.IsWeaponResonanceBindCharConflict = false
     self.IsWeaponResonanceBindSkillIdConflict = false
+    self.IsWeaponResonanceSkillNeedConfirm = false
     self.IsWeaponResonanceCountConflict = false
     self.IsWeaponOverrunConflict = false
     self.IsEquipAwarenessConflict = false
@@ -338,6 +339,11 @@ function XUiPanelCharacterCard:Refresh(xTeamPrefab, pos)
             for _, info in ipairs(previewList) do
                 validSkillIdSet[info.Id] = true
             end
+            -- 获取实穿武器各槽位的实际共鸣技能id（用于条件⑤排除判断）
+            local realWeaponResonanceSkillDic = {}
+            if isWeaponSameAsReal then
+                realWeaponResonanceSkillDic = XMVCA.XEquip:GetResonanceSkillDic(realWeaponId)
+            end
             for slot = 1, XEnumConst.EQUIP.WEAPON_RESONANCE_COUNT, 1 do
                 -- ① 绑定角色冲突（需预设武器与实穿一致）
                 local charId = xWeaponEquip:GetResonanceBindCharacterId(slot)
@@ -348,10 +354,15 @@ function XUiPanelCharacterCard:Refresh(xTeamPrefab, pos)
                 end
                 -- ④ 绑定技能冲突（需预设武器与实穿一致）
                 local prefabSkillId = resonanceDict and resonanceDict[slot]
-                local isCurSlotSkillIdConflict = isWeaponSameAsReal and XTool.IsNumberValid(prefabSkillId) and not validSkillIdSet[prefabSkillId]
+                local isCurSlotSkillIdConflict = isWeaponSameAsReal and XTool.IsNumberValid(prefabSkillId) and not validSkillIdSet[prefabSkillId] and XMVCA.XEquip:GetEquipStarByEquipId(usingWeaponId) >= XEnumConst.EQUIP.MAX_STAR_COUNT
                 if isCurSlotSkillIdConflict then
                     isWeaponResonanceBindSkillIdConflict = true
                     self.IsWeaponResonanceBindSkillIdConflict = true
+                    -- ⑤ 排除条件：预设技能 == 实穿武器同槽位的实际共鸣技能时，说明预设和实穿一致，覆盖无意义，不需要弹窗确认
+                    local realSlotSkillId = realWeaponResonanceSkillDic[slot]
+                    if not (XTool.IsNumberValid(realSlotSkillId) and prefabSkillId == realSlotSkillId) then
+                        self.IsWeaponResonanceSkillNeedConfirm = true
+                    end
                 end
                 self["BtnEquipResonance"..slot]:ShowReddot(isCurSlotCharIdConflict or isCurSlotSkillIdConflict)
             end
@@ -508,6 +519,10 @@ end
 
 function XUiPanelCharacterCard:GetIsWeaponResonanceBindSkillIdConflict()
     return self.IsWeaponResonanceBindSkillIdConflict
+end
+
+function XUiPanelCharacterCard:GetIsWeaponResonanceSkillNeedConfirm()
+    return self.IsWeaponResonanceSkillNeedConfirm
 end
 
 function XUiPanelCharacterCard:GetIsWeaponResonanceCountConflict()

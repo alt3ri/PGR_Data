@@ -21,19 +21,12 @@ function XUiSignCardPopup:OnStart()
             self.TxtCount.text = CS.XTextManager.GetText("JPYKfirst")
         end
     end
+
+    self:Refresh()
 end
 
 function XUiSignCardPopup:OnEnable()
     XEventManager.AddEventListener(XEventId.EVENT_CARD_REFRESH_WELFARE_BTN, self.Refresh, self)
-    XDataCenter.PurchaseManager.YKInfoDataReq(function()
-        local isBuy = XDataCenter.PurchaseManager.IsYkBuyed()
-        if isBuy then
-            self:RefreshGet()
-            self:AutoGetReward()
-        else
-            XLog.Error("未购买月卡")
-        end
-    end)
 end
 
 function XUiSignCardPopup:OnDisable()
@@ -41,14 +34,41 @@ function XUiSignCardPopup:OnDisable()
 end
 
 function XUiSignCardPopup:Refresh()
-    XDataCenter.PurchaseManager.YKInfoDataReq(function()
-        local isBuy = XDataCenter.PurchaseManager.IsYkBuyed()
-        if isBuy then
-            self:RefreshGet()
-        else
-            self:Close()
+    if self:RefreshButtonsAndBg(false) then
+        XDataCenter.PurchaseManager.YKInfoDataReq(function()
+            self:RefreshButtonsAndBg(true)
+        end)
+    end
+end
+
+function XUiSignCardPopup:RefreshButtonsAndBg(autoGetReward)
+    local isBuy = XDataCenter.PurchaseManager.IsYkBuyed()
+    if isBuy then
+        self:RefreshGet()
+        if autoGetReward then self:AutoGetReward() end
+    else
+        self:Close()
+        return false
+    end
+
+    local data = XDataCenter.PurchaseManager.GetYKInfoData()
+    if data then
+        if XOverseaManager.IsENRegion() then
+            self.IsCardC = data and data.Id == XPurchaseConfigs.EnYKCID
+            self.Bg.gameObject:SetActiveEx(not self.IsCardC)
+            self.BgC.gameObject:SetActiveEx(self.IsCardC)
+            self.ImgNormal.gameObject:SetActiveEx(not self.IsCardC)
+            self.ImgNormal2.gameObject:SetActiveEx(not self.IsCardC)
+            self.ImgNormalC.gameObject:SetActiveEx(self.IsCardC)
+            self.ImgNormalC2.gameObject:SetActiveEx(self.IsCardC)
         end
-    end)
+
+        local ykConfig = XPurchaseConfigs.GetPurchasePackageYKUiConfig(data.Id)
+        self.TipText01.text = ykConfig.Tips[1]
+        self.TipText02.text = ykConfig.Tips[2]
+    end
+
+    return true
 end
 
 function XUiSignCardPopup:RefreshInfo(data)
@@ -108,7 +128,13 @@ local ON_SIGNCARD_POPUP_INTERACTIVE_ARG_TARGET_TYPE_DEFAULT = "2"
 
 function XUiSignCardPopup:OnBtnContinueClick()
     self:Record(ON_SIGNCARD_POPUP_INTERACTIVE_ARG_TARGET_TYPE_CONTINUE)
-    XUiSignCard.OnBtnContinueClick(self)
+
+    XUiSignCard.GotoPurchaseUi(
+        self,
+        function()
+            self:Close()
+            XLuaUiManager.SafeClose("UiPurchase")
+        end)
 end
 
 function XUiSignCardPopup:OnBtnHelpRetroactiveClick()

@@ -117,4 +117,12 @@ end
 
 --endregion
 
+function XBigWorldResourceAgency:GetBigWorldAnimationExpressionSOIdList(groupId)
+    return self._Model:GetBigWorldFashionSOGroupConfigById(groupId).BigWorldAnimationExpressionSOIdList or {}
+end
+
+function XBigWorldResourceAgency:GetBigWorldAnimationExpressionSOById(expressionSOid)
+    return self._Model:GetBigWorldFashionSOConfigById(expressionSOid)
+end
+
 return XBigWorldResourceAgency

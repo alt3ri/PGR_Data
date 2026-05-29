@@ -85,6 +85,11 @@ function XTransfiniteRegion:GetScoreAndRewardArray()
     return scoreArray, rewardArray
 end
 
+function XTransfiniteRegion:GetSpecialScoreAndRewardArray()
+    local scoreArray, rewardArray = XTransfiniteConfigs.GetSpecialScoreArray(self:GetId())
+    return scoreArray, rewardArray
+end
+
 function XTransfiniteRegion:IsRewardReceived(index)
     return self._DictScoreRewardReceived[index] ~= nil
 end

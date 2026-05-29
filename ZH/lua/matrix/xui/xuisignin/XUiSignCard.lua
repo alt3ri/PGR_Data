@@ -63,8 +63,20 @@ function XUiSignCard:InitAddListen()
 end
 
 function XUiSignCard:OnBtnSkipClick()
+    self.GotoPurchaseUi(self, nil)
+end
+
+function XUiSignCard.GotoPurchaseUi(uiSignCard, onCloseUiPurchase)
     XDataCenter.AutoWindowManager.StopAutoWindow()
-    XLuaUiManager.Open("UiPurchase", XPurchaseConfigs.TabsConfig.YK, false)
+    XLuaUiManager.Open(
+        "UiPurchase",
+        XPurchaseConfigs.TabsConfig.YK,
+        false,
+        nil,
+        {
+            JumpToCardC = uiSignCard.IsCardC or false,
+            OnClose = onCloseUiPurchase
+        })
 end
 
 function XUiSignCard:OnBtnHelpClick()
@@ -72,8 +84,7 @@ function XUiSignCard:OnBtnHelpClick()
 end
 
 function XUiSignCard:OnBtnContinueClick()
-    XDataCenter.AutoWindowManager.StopAutoWindow()
-    XLuaUiManager.Open("UiPurchase", XPurchaseConfigs.TabsConfig.YK, false)
+    self.GotoPurchaseUi(self, nil)
 end
 
 function XUiSignCard:OnBtnGetClick()
@@ -101,26 +112,48 @@ function XUiSignCard:OnBtnGetClick()
 end
 
 function XUiSignCard:Refresh(configId, isShow, isAuto)
-    XDataCenter.PurchaseManager.YKInfoDataReq(function()
-        if not configId then
-            configId = self.ConfigId
-        end
-        self.ConfigId = configId
+    local signCardConf = XSignInConfigs.GetSignCardConfig(configId)
 
+    if XOverseaManager.IsENRegion() then
+        self.IsCardC = signCardConf.Param[2] == XPurchaseConfigs.EnYKCID
+        self.Bg.gameObject:SetActiveEx(not self.IsCardC)
+        self.BgC.gameObject:SetActiveEx(self.IsCardC)
+
+        self.ImgNormal.gameObject:SetActiveEx(not self.IsCardC)
+        self.ImgNormal2.gameObject:SetActiveEx(not self.IsCardC)
+        self.ImgNormalC.gameObject:SetActiveEx(self.IsCardC)
+        self.ImgNormalC2.gameObject:SetActiveEx(self.IsCardC)
+    end
+
+    local ykConfig = XPurchaseConfigs.GetPurchasePackageYKUiConfig(signCardConf.Param[2])
+    self.TipText01.text = ykConfig.Tips[1]
+    self.TipText02.text = ykConfig.Tips[2]
+
+    self:RefreshButtons(configId, false)
+    XDataCenter.PurchaseManager.YKInfoDataReq(function()
         self.PanelBuy.gameObject:SetActive(false)
         self.PanelGet.gameObject:SetActive(false)
 
-        self.Config = XSignInConfigs.GetSignCardConfig(configId)
-        local data = XDataCenter.PurchaseManager.GetYKInfoData()
-        local isBuy = data ~= nil and data.Id == self.Config.Param[2] and data.DailyRewardRemainDay > 0
-        if isBuy then
-            self:RefreshGet()
-            self:AutoGetReward(isAuto)
-        else
-            self:RefreshBuy()
-        end
+        self:RefreshButtons(configId, isAuto)
         XEventManager.DispatchEvent(XEventId.EVENT_SING_IN_OPEN_BTN, true)
     end)
+end
+
+function XUiSignCard:RefreshButtons(configId, isAuto)
+    if not configId then
+        configId = self.ConfigId
+    end
+    self.ConfigId = configId
+    self.Config = XSignInConfigs.GetSignCardConfig(configId)
+
+    local data = XDataCenter.PurchaseManager.GetYKInfoData()
+    local isBuy = data ~= nil and data.Id == self.Config.Param[2] and data.DailyRewardRemainDay > 0
+    if isBuy then
+        self:RefreshGet()
+        self:AutoGetReward(isAuto)
+    else
+        self:RefreshBuy()
+    end
 end
 
 function XUiSignCard:AutoGetReward(isAuto)
@@ -195,9 +228,17 @@ function XUiSignCard:RefreshGet()
         local retroactiveItemIcon =
             itemManager.GetItemIcon(retroactiveItemId)
 
-        self.ImgRetroactiveItemIcon1:SetRawImage(retroactiveItemIcon)
-        self.ImgRetroactiveItemIcon2:SetRawImage(retroactiveItemIcon)
-        self.ImgRetroactiveItemIcon3:SetRawImage(retroactiveItemIcon)
+        if self.ImgRetroactiveItemIcon1 then
+            self.ImgRetroactiveItemIcon1:SetRawImage(retroactiveItemIcon)
+        end
+
+        if self.ImgRetroactiveItemIcon2 then
+            self.ImgRetroactiveItemIcon2:SetRawImage(retroactiveItemIcon)
+        end
+
+        if self.ImgRetroactiveItemIcon3 then
+            self.ImgRetroactiveItemIcon3:SetRawImage(retroactiveItemIcon)
+        end
 
         local retroactiveChance =
             tostring(retroactiveItemCount) .. "/" .. tostring(math.min(retroactiveItemCount, cardsMissed))

@@ -21,6 +21,8 @@ function XUiLoginVideoV4P0:OnAwake()
 end
 
 function XUiLoginVideoV4P0:OnStart(forceId)
+    self.IsOpenFromLogin = not XTool.IsNumberValid(forceId)
+
     ---@type XTableLoginPromoFeature
     local targetGotoConfig
     -- 优先使用外部传入的指定Id
@@ -41,15 +43,13 @@ function XUiLoginVideoV4P0:OnStart(forceId)
 
     self:InitTimes()
 
-    XMVCA.XUiMain:SetUiLoginVideoV4P0OpenTriggerTrue()
+    if self.IsOpenFromLogin then
+        XMVCA.XUiMain:SetUiLoginVideoV4P0OpenTriggerTrue()
+    end
     XSaveTool.SaveData(targetGotoConfig.Id.."LoginPromoFeatureConfig"..XPlayer.Id, 1)
 end
 
 function XUiLoginVideoV4P0:InitTimes()
-    if XTool.IsNumberValid(self.ForceId) then
-        return
-    end
-
     local endTime = XFunctionManager.GetEndTimeByTimeId(self.LoginPromoFeatureConfig.ShowTimeId) or 0
     self.EndTime = endTime
     self:RefreshTitleByTimeId() -- 计时器启动比较慢 先提前刷新一次
@@ -68,8 +68,24 @@ function XUiLoginVideoV4P0:RefreshTitleByTimeId()
 end
 
 function XUiLoginVideoV4P0:OnBtnCloseClick()
+    if not self.IsOpenFromLogin then
+        self:Close()
+        return
+    end
+
     XLoginManager.SetFirstOpenMainUi(true)
     XLuaUiManager.RunMain()
+end
+
+function XUiLoginVideoV4P0:TryGoShownDrawMain()
+    if not XLuaUiManager.IsUiLoad("UiNewDrawMain") then
+        return false
+    end
+
+    self:CloseVideo()
+    self:Close()
+    
+    return true
 end
 
 function XUiLoginVideoV4P0:OnBtnGoClick()
@@ -86,16 +102,34 @@ function XUiLoginVideoV4P0:OnBtnGoClick()
         end
     end
 
+    if self:TryGoShownDrawMain() then
+        return true
+    end
+
+    self:CloseVideo()
     self:Close()
     XFunctionManager.SkipInterface(self.LoginPromoFeatureConfig.GotoSkipId)
 end
 
+function XUiLoginVideoV4P0:OnDisable()
+    self:CloseVideo()
+end
+
 function XUiLoginVideoV4P0:OnDestroy()
+    self:CloseVideo()
+end
+
+function XUiLoginVideoV4P0:CloseVideo()
     if self.TimerId then
         XScheduleManager.UnSchedule(self.TimerId)
+        self.TimerId = nil
     end
 
     if self.TimerId2 then
         XScheduleManager.UnSchedule(self.TimerId2)
+        self.TimerId2 = nil
     end
+
+    if not XTool.UObjIsNil(self.VideoPlayerUgui1) then self.VideoPlayerUgui1:Stop() end
+    if not XTool.UObjIsNil(self.VideoPlayerUgui2) then self.VideoPlayerUgui2:Stop() end
 end

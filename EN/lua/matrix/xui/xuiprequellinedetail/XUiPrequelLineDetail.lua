@@ -1,6 +1,6 @@
-local XUiGridStageStar = require("XUi/XUiFubenMainLineDetail/XUiGridStageStar")
-local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
-local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local XUiGridStageStar = require("XUi/XUiFubenMainLineDetail/XUiGridStageStar")
+local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XUiPrequelLineDetail = XLuaUiManager.Register(XLuaUi, "UiPrequelLineDetail")
 
 local PANELPREQUELDETAILEND = "PanelPrequelDetailEnd"
@@ -144,7 +144,7 @@ function XUiPrequelLineDetail:OnBtnEnterClick()
     end
 
     if XDataCenter.FubenManager.CheckPreFight(stageCfg) then
-        XLuaUiManager.Open("UiBattleRoleRoom", stageCfg.StageId)
+        XMVCA.XFuben:OpenUiBattleRoleRoom(stageCfg.StageId)
         self:OnPrequelDetailClose()
     end
 

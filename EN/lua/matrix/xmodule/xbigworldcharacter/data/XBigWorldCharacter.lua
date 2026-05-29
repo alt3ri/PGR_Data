@@ -6,6 +6,7 @@ function XBigWorldCharacter:Ctor(id)
     self._CharId = id
     self._HeadInfo = false
     self._FashionId = false
+    self._FashionColorId = false
 end
 
 function XBigWorldCharacter:SetFashionId(id)
@@ -14,6 +15,14 @@ end
 
 function XBigWorldCharacter:GetFashionId()
     return self._FashionId
+end
+
+function XBigWorldCharacter:SetFashionColorId(id)
+    self._FashionColorId = id or 0
+end
+
+function XBigWorldCharacter:GetFashionColorId()
+    return self._FashionColorId
 end
 
 function XBigWorldCharacter:SetHeadInfo(id, type)

@@ -32,12 +32,32 @@ function XBigWorldSkipFunctionAgency:GetSkipNameBySkipId(skipId)
     return self._Model:GetBigWorldSkipFunctionNameById(skipId)
 end
 
+function XBigWorldSkipFunctionAgency:GetSkipTimeIdBySkipId(skipId)
+    return self._Model:GetBigWorldSkipFunctionTimeIdById(skipId)
+end
+
 function XBigWorldSkipFunctionAgency:CheckUnlock(skipId)
     local conditionId = self._Model:GetBigWorldSkipFunctionConditionIdById(skipId)
     if not conditionId or conditionId <= 0 then
         return true
     end
+    --4.5版本 加了一个TimeId控制按钮显隐，按照道理来说应该是要拓展此接口，但是担心已实现功能并不需要这种逻辑。
+    --需求==>系统规则==>2.空花-DIY界面新增获取跳转支持==>第3点
+    --需求链接：https://kurogame.feishu.cn/wiki/O19GwwpgPirHo5kSlzSc4lvEnqe?sheet=3R4Vkh
+    --修改建议：如果需要修改的话，最好Unlock放在XBWSkipBase里，这样不会同一个判断多处实现
     return XMVCA.XBigWorldService:CheckCondition(conditionId)
+end
+
+function XBigWorldSkipFunctionAgency:IsAllowSkip(skipId,isNoTips)
+    if not XTool.IsNumberValid(skipId) then
+        return false
+    end
+    
+    local skip = self._Model:GetSkipBySkipId(skipId)
+    if skip then
+        return skip:IsAllowSkip(isNoTips)
+    end
+    return false
 end
 
 function XBigWorldSkipFunctionAgency:CheckFinish(skipId)
@@ -48,7 +68,7 @@ function XBigWorldSkipFunctionAgency:CheckFinish(skipId)
     return XMVCA.XBigWorldService:CheckCondition(conditionId)
 end
 
-function XBigWorldSkipFunctionAgency:SkipTo(skipId, ...)
+function XBigWorldSkipFunctionAgency:SkipTo(skipId, isNoTips, params)
     if not XTool.IsNumberValid(skipId) then
         return false
     end
@@ -56,7 +76,7 @@ function XBigWorldSkipFunctionAgency:SkipTo(skipId, ...)
     local skip = self._Model:GetSkipBySkipId(skipId)
 
     if skip then
-        return skip:SkipTo(...)
+        return skip:SkipTo(isNoTips, params)
     end
 
     return false

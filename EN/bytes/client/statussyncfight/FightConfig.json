@@ -175,26 +175,6 @@
         "Value": "#fffcfc"
     },
     {
-        "Key": "FakeSettleUi",
-        "Type": "string",
-        "Value": "Assets/Product/Ui/ComponentPrefab/UiDlcHunt/UiFightDlcHuntSettlement.prefab"
-    },
-    {
-        "Key": "FakeSettleUiBg",
-        "Type": "string",
-        "Value": "Assets/Product/Ui/ComponentPrefab/UiDlcHunt/UiFightDlcHuntSettlementBg.prefab"
-    },
-    {
-        "Key": "FakeSettleEffect",
-        "Type": "string",
-        "Value": "FxUiFightDlcHuntSettlementEffect"
-    },
-    {
-        "Key": "FakeSettleLevels",
-        "Type": "string",
-        "Value": "14"
-    },
-    {
         "Key": "NameScaleNormalDis",
         "Type": "float",
         "Value": "4"
@@ -315,6 +295,11 @@
         "Value": "2.25"
     },
     {
+        "Key": "ActorTipIconEffectPlayDistance",
+        "Type": "float",
+        "Value": "25"
+    },
+    {
         "Key": "NpcLookAtWeight",
         "Type": "float",
         "Value": "1"
@@ -388,6 +373,16 @@
         "Key": "BigWorldCommonPanelInteract",
         "Type": "string",
         "Value": "Assets/Product/Ui/ComponentPrefab/BigWorld/Common/UiCommon/UiBigWorldPanelInteract.prefab"
+    },
+    {
+        "Key": "InteractHintIconPrefab",
+        "Type": "string",
+        "Value": "Assets/Product/Ui/ComponentPrefab/BigWorld/Common/UiCommon/UiBigWorldPanelInteractHint.prefab"
+    },
+    {
+        "Key": "FollowObjectPanelInteract",
+        "Type": "string",
+        "Value": "Assets/Product/Ui/ComponentPrefab/BigWorld/Common/UiCommon/UiBigWorldPanelFollowObjectPanelInteract.prefab"
     },
     {
         "Key": "BigWorldSwitchWalkTipId",
@@ -477,7 +472,7 @@
     {
         "Key": "BigWorldDefaultDisableSystemFuncStr",
         "Type": "string",
-        "Value": "9"
+        "Value": "9|16"
     },
     {
         "Key": "MoveSyncRecordInterval",
@@ -508,6 +503,21 @@
         "Key": "ForceLockLoopEffect",
         "Type": "string",
         "Value": "FxSuodibiaojiRedLoop"
+    },
+    {
+        "Key": "SoftLockEffect",
+        "Type": "string",
+        "Value": "FxSuodibiaoji"
+    },
+    {
+        "Key": "HardLockEffect",
+        "Type": "string",
+        "Value": "FxSuodibiaojiRed"
+    },
+    {
+        "Key": "ForceLockEffect",
+        "Type": "string",
+        "Value": "FxSuodibiaojiRed"
     },
     {
         "Key": "LockInteractOptionId",
@@ -663,5 +673,65 @@
         "Key": "NpcCheckDynamicBoneOnWarpAngle",
         "Type": "float",
         "Value": "20"
+    },
+    {
+        "Key": "DlcMonsterHpInfoUiHeightOffset",
+        "Type": "float",
+        "Value": "100"
+    },
+    {
+        "Key": "DlcMonsterHpInfoUiMinScaleDist",
+        "Type": "float",
+        "Value": "5"
+    },
+    {
+        "Key": "DlcMonsterHpInfoUiMaxScaleDist",
+        "Type": "float",
+        "Value": "100"
+    },
+    {
+        "Key": "DlcMonsterHpInfoUiMinScale",
+        "Type": "float",
+        "Value": "0.1"
+    },
+    {
+        "Key": "DlcMonsterHpInfoUiShowTime",
+        "Type": "float",
+        "Value": "8"
+    },
+    {
+        "Key": "TetherEffect02",
+        "Type": "string",
+        "Value": "FxSkyGardenHandcuffs02"
+    },
+    {
+        "Key": "TetherEffect03",
+        "Type": "string",
+        "Value": "FxSkyGardenHandcuffs03"
+    },
+    {
+        "Key": "TetherEffect04",
+        "Type": "string",
+        "Value": "FxSkyGardenHandcuffs04"
+    },
+    {
+        "Key": "TetherHandcuffPrefab",
+        "Type": "string",
+        "Value": "Assets/Product/Role/DlcEquipPrefab/Com1Chiefm_handcuffMd01001.prefab"
+    },
+    {
+        "Key": "TetherHandcuffMaleUniformScale",
+        "Type": "float",
+        "Value": "1"
+    },
+    {
+        "Key": "TetherHandcuffFemaleUniformScale",
+        "Type": "float",
+        "Value": "0.8"
+    },
+    {
+        "Key": "QteMaxMashingClickVFXCountPerButton",
+        "Type": "int",
+        "Value": "1"
     }
 ]

@@ -12,7 +12,7 @@ end
 -- 获取当前购买次数
 function XYKPurchasePackage:GetCurrentBuyTime()
     local count = CS.XGame.ClientConfig:GetInt("PurchaseYKLimtCount") or 30
-    return math.ceil(self.Data.DailyRewardRemainDay / count)
+    return math.ceil(self.Data.BuyLimitRemainDay / count)
 end
 
 function XYKPurchasePackage:CheckCanBuy(count, disCountCouponIndex, notEnoughCb)
@@ -33,7 +33,7 @@ function XYKPurchasePackage:CheckCanBuy(count, disCountCouponIndex, notEnoughCb)
     end
     --v1.28 采购优化-月卡购买次数不足
     local count = CS.XGame.ClientConfig:GetInt("PurchaseYKLimtCount") or 30
-    if math.ceil(self.Data.DailyRewardRemainDay / count) == CS.XGame.ClientConfig:GetInt("PurchaseYKTotalCount") then
+    if math.ceil(self.Data.BuyLimitRemainDay / count) == CS.XGame.ClientConfig:GetInt("PurchaseYKTotalCount") then
         XUiManager.TipText("PurchaseYKIsOnBuyLimt")
         return 0
     end

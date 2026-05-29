@@ -8,15 +8,21 @@ local XBuffScript10263030 = XDlcScriptManager.RegBuffScript(10263030, "XBuffScri
 
 function XBuffScript10263030:ScriptInit(isGainControl) --初始化
     self.TargetSkill = self._skillId
-    self._damageMagicId = 10250016 --注册拼刀成功技3伤害id
+    self._damageMagicId = 1026701 --注册拼刀成功技3伤害id
     self._stackCountNormal = 1
     self._stackCountFirst = 3
     self.ChanceCheck = 0
     self.extraDamage = 10000
+    self._hasChangedDamage = true
     --self:LogError(".....初始化完成")
 end
 
-function XBuffScript10263030:OnLuaSkillEnd(eventArgs)
+function XBuffScript10263030:InitEventCallBackRegister()
+    --按需求解除注释进行注册
+    self._proxy:RegisterEventByTarget(EWorldEvent.NpcCalcDamageBefore, self._npcUUID)
+end
+
+function XBuffScript10263030:OnLuaSkillStart(eventArgs)
     if eventArgs._skillId ~= self._skillId then return end
     if eventArgs._launcherUUID ~= self._npcUUID then return end
     ------------执行------------

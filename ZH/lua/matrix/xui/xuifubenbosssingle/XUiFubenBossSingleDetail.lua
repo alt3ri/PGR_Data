@@ -142,7 +142,7 @@ function XUiFubenBossSingleDetail:OnBtnStartClick()
 
     self._Control:SetEnterBossInfo(self._BossId, self._CurBossStageConfig.DifficultyType, nil)
     self._Control:OnEnterNormalFight()
-    XLuaUiManager.Open("UiBattleRoleRoom", stageId, self._Control:GetTeamByBossId(self._BossId),
+    XMVCA.XFuben:OpenUiBattleRoleRoom(stageId, self._Control:GetTeamByBossId(self._BossId),
             require("XUi/XUiFubenBossSingle/XUiBossSingleBattleRoleRoom"))
 end
 

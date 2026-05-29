@@ -44,6 +44,14 @@ function XLuaUiManager.Register(super, uiName)
     return uiObject
 end
 
+--- 获取已注册的 UI 类（未注册返回 nil；不会触发 require）
+---@param uiName string
+---@return table|nil
+function XLuaUiManager.GetUiClass(uiName)
+    if not uiName then return nil end
+    return ClassType[uiName]
+end
+
 -- 创建一个LuaUI的实例
 -- @name LuaUI脚本名字
 -- @gameUI C#的GameUI

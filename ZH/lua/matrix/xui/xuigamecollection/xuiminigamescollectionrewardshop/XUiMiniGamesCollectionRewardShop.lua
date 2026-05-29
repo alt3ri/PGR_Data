@@ -28,10 +28,41 @@ end
 
 function XUiMiniGamesCollectionRewardShop:OnEnable()
     self:UpdateReddot()
+    self:StartActivityCheckTimer()
+end
+
+function XUiMiniGamesCollectionRewardShop:OnDisable()
+    self:StopActivityCheckTimer()
+end
+
+function XUiMiniGamesCollectionRewardShop:StartActivityCheckTimer()
+    self:StopActivityCheckTimer()
+    self._Timer = XScheduleManager.ScheduleForever(function()
+        self:CheckActivityEnd()
+    end, XScheduleManager.SECOND)
+end
+
+function XUiMiniGamesCollectionRewardShop:StopActivityCheckTimer()
+    if self._Timer then
+        XScheduleManager.UnSchedule(self._Timer)
+        self._Timer = nil
+    end
+end
+
+function XUiMiniGamesCollectionRewardShop:CheckActivityEnd()
+    if self:IsDestroy() then
+        return
+    end
+    if not self._Control:IsActivityEnd() then
+        return
+    end
+    self:StopActivityCheckTimer()
+    XMVCA.XFunction:ExitFunction(XFunctionManager.FunctionName.GameCollection)
+    XLuaUiManager.RunMain()
 end
 function XUiMiniGamesCollectionRewardShop:UpdateReddot()
     self.BtnTask:ShowReddot(XMVCA.XGameCollection:HasRewardCanGet())
-    self.BtnShop:ShowReddot(XMVCA.XGameCollection:HasGoodCanBuy() or XMVCA.XGameCollection:CheckActivityTips())
+    self.BtnShop:ShowReddot(XMVCA.XGameCollection:CheckActivityTips() and XMVCA.XGameCollection:HasGoodCanBuy())
 end
 
 function XUiMiniGamesCollectionRewardShop:OnBtnSetUpTypeClick(uiType)

@@ -144,16 +144,12 @@ function XUiDlcRelinkPopupSkillDetail:RefreshDesc()
     else
         desc = self._Control:GetSkillDescDesc(self.CurSecondSkillId)
     end
-    local entryNameList = self._Control:GetSkillDescEntryName(self.CurSecondSkillId)
-    if not XTool.IsTableEmpty(entryNameList) then
-        desc = XUiHelper.FormatText(desc, table.unpack(entryNameList))
-    end
 
     -- 设置链接点击回调
     self.TxtDesc.onLinkClick = function(arg)
         self:RefreshAffixList(arg)
     end
-    self.TxtDesc.text = XUiHelper.ConvertLineBreakSymbol(desc)
+    self.TxtDesc.text = desc
 end
 
 function XUiDlcRelinkPopupSkillDetail:RefreshVideo()

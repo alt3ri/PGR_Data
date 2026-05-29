@@ -69,6 +69,11 @@ function XUiMainLine2Chapter:OnStart(mainId, chapterId, stageId, isOpenStageDeta
 
     self:InitDifficultyUi()
     self:InitActivityTimer()
+
+    -- 检测打开生命树章节弹窗
+    XMVCA.XLifeTree:CheckOpenUiLifeTreeChapterUnlock(XEnumConst.MAINLINE2.EXHIBITION_FUBEN_TYPE.MAINLINE, self.MainId)
+    -- 检测打开卡牌解锁弹窗
+    XMVCA.XLifeTree:CheckOpenUiLifeTreeCardUnlock(XEnumConst.MAINLINE2.EXHIBITION_FUBEN_TYPE.MAINLINE, self.MainId)
 end
 
 function XUiMainLine2Chapter:OnEnable()
@@ -356,7 +361,7 @@ function XUiMainLine2Chapter:LoadChapterPrefab()
         local parentGo = self.ChapterLinkGos[self.CurChapterIndex]
         local prefab = parentGo:LoadPrefab(self.ChapterPrefabName)
         XUiHelper.SetCanvasesSortingOrder(prefab.transform)
-        local XUiMainLine2PanelEntranceList = require("XUi/XUiMainLine2/XUiMainLine2PanelEntranceList")
+        local XUiMainLine2PanelEntranceList = self._Control:GetChapterUiCls(self.CurChapterId)
         uiNode = XUiMainLine2PanelEntranceList.New(prefab, self, self.CurChapterId, self.MainId, self.SkipStageId, self.LastClickStageId, self.IsOpenStageDetail)
         self.UiNodeChapterDic[self.CurChapterIndex] = uiNode
 

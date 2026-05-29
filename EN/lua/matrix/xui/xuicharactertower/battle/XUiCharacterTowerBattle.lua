@@ -1,6 +1,6 @@
-local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
-local XUiGridCharacter = require("XUi/XUiCharacter/XUiGridCharacter")
-local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
+local XUiGridCharacter = require("XUi/XUiCharacter/XUiGridCharacter")
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XUiGridCharacterTowerBattleStage = require("XUi/XUiCharacterTower/Battle/XUiGridCharacterTowerBattleStage")
 ---@class XUiCharacterTowerBattle : XLuaUi
 local XUiCharacterTowerBattle = XLuaUiManager.Register(XLuaUi, "UiCharacterTowerBattle")
@@ -144,7 +144,7 @@ function XUiCharacterTowerBattle:EnterFight(stage)
     if not XDataCenter.FubenManager.CheckPreFight(stage) then
         return
     end
-    XLuaUiManager.Open("UiBattleRoleRoom", stage.StageId, nil, {
+    XMVCA.XFuben:OpenUiBattleRoleRoom(stage.StageId, nil, {
         GetRoleDetailProxy = function(proxy)
             return require("XUi/XUiCharacterTower/BattleRoleRoom/XUiCharacterTowerBattleRoomRoleDetail")
         end

@@ -51,12 +51,12 @@ function XDlcHelperAgency:GetDlcModelIdWithWorldType(worldType, characterData)
     end
 end
 
-function XDlcHelperAgency:GetDlcModelIdWithWorldTypeAndFashionId(worldType, fashionId)
+function XDlcHelperAgency:GetDlcModelIdWithWorldTypeAndFashionId(worldType, fashionId, colorId)
     local agency = self._DlcModelIdGetter[worldType]
 
     if agency then
         if agency.ExGetDlcModelIdByFashionId then
-            return agency:ExGetDlcModelIdByFashionId(fashionId)
+            return agency:ExGetDlcModelIdByFashionId(fashionId, colorId)
         else
             XLog.Error('Agency: '..tostring(agency:GetId())..' 未实现方法：ExGetDlcModelIdByFashionId')
         end

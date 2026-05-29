@@ -106,7 +106,7 @@ end
 
 --进入战斗编队界面
 function XUiCoursePrepare:OnBtnEnterClick()
-    XLuaUiManager.Open("UiBattleRoleRoom", self.StageId)
+    XMVCA.XFuben:OpenUiBattleRoleRoom(self.StageId)
 end
 
 --首通奖励界面

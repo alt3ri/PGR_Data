@@ -108,8 +108,8 @@ function XBigWorldQuestAgency:NotifyFightTrackQuest(questId, enable, onFightTrac
     if isInstQuest ~= isInstLevel then
         return
     end
-    local category = self:GetQuestCategory(questId)
-    if category == self.QuestCategory.NormalQuest and self:CheckQuestFinish(questId) then
+    
+    if self._Model:CheckNormalQuestFinish(questId) then
         return
     end
     local data = {

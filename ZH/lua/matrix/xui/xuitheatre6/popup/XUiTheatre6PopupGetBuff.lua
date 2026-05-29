@@ -8,16 +8,24 @@ function XUiTheatre6PopupGetBuff:OnAwake()
 end
 
 ---@param buffDatas XTheatre6BuffProtocol[]
-function XUiTheatre6PopupGetBuff:OnStart(buffDatas, isSanDeathBuff)
+function XUiTheatre6PopupGetBuff:OnStart(buffDatas, isSanDeathBuff, closeCb)
+    self._CloseCb = closeCb
     XUiHelper.RefreshCustomizedList(self.BuffDetail.parent, self.BuffDetail, #buffDatas, function(i, go)
         local buffData = buffDatas[i]
         ---@type XUiPanelTheatre6BuffDetail
         local buffDetail = require("XUi/XUiTheatre6/Character/Panel/XUiPanelTheatre6BuffDetail").New(go, self)
         local info = self._Control:GetActiveBuffInfo(buffData)
-        buffDetail:SetBuffInfo(info)
+        buffDetail:SetBuffInfo(info, buffData)
         buffDetail:IsBuffCanClick(true)
     end)
     self.PanelTitle.gameObject:SetActiveEx(not isSanDeathBuff)
+end
+
+function XUiTheatre6PopupGetBuff:Close()
+    self.Super.Close(self)
+    if self._CloseCb then
+        self._CloseCb()
+    end
 end
 
 return XUiTheatre6PopupGetBuff

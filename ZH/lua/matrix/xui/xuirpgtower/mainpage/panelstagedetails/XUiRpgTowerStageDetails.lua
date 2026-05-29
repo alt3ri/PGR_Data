@@ -1,4 +1,4 @@
-local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
+local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
 --兵法蓝图主界面：关卡详细面板
 local XUiRpgTowerStageDetails = XClass(nil, "XUiRpgTowerStageDetails")
 local XUiRpgTowerStageBuffPanel = require("XUi/XUiRpgTower/MainPage/PanelStageDetails/XUiRpgTowerStageBuffPanel")
@@ -56,7 +56,7 @@ function XUiRpgTowerStageDetails:OnClickBtnEnter()
                     return
                 end
                 self:HidePanel()
-                XLuaUiManager.Open("UiBattleRoleRoom",
+                XMVCA.XFuben:OpenUiBattleRoleRoom(
                     self.RootUi.RStage:GetStageId(),
                     self:GetBattleTeamData(),
                     require("XUi/XUiRpgTower/Battle/BattleRoom/XUiRpgTowerBattleRoom")
@@ -67,7 +67,7 @@ function XUiRpgTowerStageDetails:OnClickBtnEnter()
             return
         end
         self:HidePanel()
-        XLuaUiManager.Open("UiBattleRoleRoom",
+        XMVCA.XFuben:OpenUiBattleRoleRoom(
             self.RootUi.RStage:GetStageId(),
             self:GetBattleTeamData(),
             require("XUi/XUiRpgTower/Battle/BattleRoom/XUiRpgTowerBattleRoom")

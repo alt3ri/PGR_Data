@@ -1,9 +1,9 @@
-
+local XUiPanelBWNewsBase = require("XUi/XUiBigWorld/XNews/Panel/XUiPanelBWNewsBase")
 local XUiGridBWQuestSmall = require("XUi/XUiBigWorld/XQuest/Grid/XUiGridBWQuestSmall")
 
----@class XUiPanelBWNewsOverview : XUiNode
+---@class XUiPanelBWNewsOverview : XUiPanelBWNewsBase
 ---@field Parent XUiBigWorldPopupNews
-local XUiPanelBWNewsOverview = XClass(XUiNode, "XUiPanelBWNewsOverview")
+local XUiPanelBWNewsOverview = XClass(XUiPanelBWNewsBase, "XUiPanelBWNewsOverview")
 
 local XUiGridBWItem = require("XUi/XUiBigWorld/XCommon/Grid/XUiGridBWItem")
 
@@ -17,21 +17,15 @@ function XUiPanelBWNewsOverview:OnStart()
     }
     self.GridCommon.gameObject:SetActiveEx(false)
     self.GridTask.gameObject:SetActiveEx(false)
-    
+
     self._DynamicTable = XUiHelper.DynamicTableNormal(self, self.ListTask, XUiGridBWQuestSmall)
-    if self.BtnTeach then
-        self.BtnTeach:AddEventListener(handler(self.Parent, self.Parent.OnBtnTeachClick))
-    end
+
+    self:RegisterButtonClick()
 end
 
-function XUiPanelBWNewsOverview:Refresh(newsId)
-    self._NewsId = newsId
-    self:Open()
+function XUiPanelBWNewsOverview:RefreshContent(newsId)
     self.TxtTitle.text = XMVCA.XBigWorldNews:GetNewsTitle(newsId)
     self.RImgPoster:SetRawImage(XMVCA.XBigWorldNews:GetNewsBgPic(newsId))
-    self:RefreshReward(XMVCA.XBigWorldNews:GetNewsShowReward(newsId))
-    self:RefreshQuest(XMVCA.XBigWorldNews:GetNewsParams(newsId))
-    self.Parent:RefreshTeach(self.BtnTeach)
 end
 
 function XUiPanelBWNewsOverview:RefreshReward(rewardId)
@@ -45,14 +39,19 @@ function XUiPanelBWNewsOverview:RefreshReward(rewardId)
     XTool.UpdateDynamicItem(self._GridRewards, rewards, self.GridCommon, XUiGridBWItem, self)
 end
 
-function XUiPanelBWNewsOverview:RefreshQuest(questIds)
+function XUiPanelBWNewsOverview:RefreshParams(questIds)
     local isEmpty = XTool.IsTableEmpty(questIds)
+
     self.PanelTask.gameObject:SetActiveEx(not isEmpty)
+
     if isEmpty then
         return
     end
+
     self.TxtTaskTitle.text = XMVCA.XBigWorldNews:GetNewsContent(self._NewsId)
+
     questIds = self:SortQuestIds(questIds)
+
     self._DataList = questIds
     self._DynamicTable:SetDataSource(questIds)
     self._DynamicTable:ReloadDataSync()
@@ -89,7 +88,7 @@ function XUiPanelBWNewsOverview:SortQuestIds(questIds)
         end
         return a < b
     end)
-    
+
     return questIds
 end
 
@@ -106,5 +105,24 @@ function XUiPanelBWNewsOverview:SortIndexCache(questIds)
     end
 end
 
+function XUiPanelBWNewsOverview:IsFinish()
+    if not XTool.IsNumberValid(self._NewsId) then
+        return false
+    end
 
-return XUiPanelBWNewsOverview
+    local questIds = XMVCA.XBigWorldNews:GetNewsParams(self._NewsId)
+
+    if XTool.IsTableEmpty(questIds) then
+        return true
+    end
+
+    for _, questId in ipairs(questIds) do
+        if not XMVCA.XBigWorldQuest:CheckQuestFinish(questId) then
+            return false
+        end
+    end
+
+    return true
+end
+
+return XUiPanelBWNewsOverview

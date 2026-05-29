@@ -187,10 +187,10 @@ function XUiSucceedBossChapter:BtnTongBlackClick()
     local teamData = self._Control:GetTeam(self.ChapterId)
     if self.ChapterConfig.Type == XEnumConst.SucceedBoss.ChapterType.Optional then
         self._Control:RequestSucceedBossSelectMonster(self.CurMonsterId, self.CurSelectLevel, function()
-            XLuaUiManager.Open("UiBattleRoleRoom", self.CurStageId, teamData, XUiBattleRoleRoomSucceedBossProxy)
+            XMVCA.XFuben:OpenUiBattleRoleRoom(self.CurStageId, teamData, XUiBattleRoleRoomSucceedBossProxy)
         end)
     else
-        XLuaUiManager.Open("UiBattleRoleRoom", self.CurStageId, teamData, XUiBattleRoleRoomSucceedBossProxy)
+        XMVCA.XFuben:OpenUiBattleRoleRoom(self.CurStageId, teamData, XUiBattleRoleRoomSucceedBossProxy)
     end
 end
 

@@ -27,4 +27,8 @@ function XBWCourseCoreData:AddBrowseElement(elementId)
     self.BrowseElement[elementId] = true
 end
 
+function XBWCourseCoreData:RemoveBrowseElement(elementId)
+    self.BrowseElement[elementId] = nil
+end
+
 return XBWCourseCoreData

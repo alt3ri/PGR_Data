@@ -487,7 +487,7 @@ function XBountyChallengeControl:OpenRoom()
         local battleRoom = require("XUi/XUiBountyChallenge/XUiBountyChallengeBattleRoleRoom")
         local team = XDataCenter.TeamManager.GetXTeamByTypeId(XEnumConst.TeamTypeId.BountyChallenge)
         
-        XLuaUiManager.Open("UiBattleRoleRoom", stageId, team, battleRoom)
+        XMVCA.XFuben:OpenUiBattleRoleRoom(stageId, team, battleRoom)
     end)
 end
 

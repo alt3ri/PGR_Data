@@ -29,20 +29,36 @@ end
 
 function XNPC_AlphaChoice:Update(dt)
     self:InteractCheck()
-    self:CheckIsSlashAndSetInSlash()
+    if self._proxy:IsQuestObjectiveFinished(40400306) or self._proxy:IsQuestObjectiveFinished(40400206)then
+        self._proxy:SetObstacleGroupActive(3700001,true)
+    end
+
+    if  self._proxy:IsQuestObjectiveFinished(40400407) then
+        self._proxy:SetObstacleGroupActive(3700001,false)
+    end
 end
 
 function XNPC_AlphaChoice:HandleEvent(eventType, eventArgs)
-    if eventType == EWorldEvent.NpcInteractComplete then
-        if eventArgs.TargetPlaceId == self._placeId and eventArgs.OptionId == 1 then
-            self._proxy:SetNpcInteractOptionActive(self._placeId,2,true)
+    if eventType == EWorldEvent.NpcInteractComplete and eventArgs.TargetPlaceId == self._placeId then
+        if eventArgs.OptionId == 1 then
+            self._proxy:PlayDramaCaption("Caption201508",true)
+            self._proxy:AddTimerTask(8,function()  self._proxy:SetNpcInteractOptionActive(self._placeId,2,true) end )
         end
 
-        if eventArgs.TargetPlaceId == self._placeId and eventArgs.OptionId == 2  then
-            self._proxy:SetNpcInteractOptionActive(self._placeId,4,true)
+        if eventArgs.OptionId == 2 then
+            self._proxy:PlayDramaCaption("Caption201510",true)
+            self._proxy:AddTimerTask(10,function()  self._proxy:SetNpcInteractOptionActive(self._placeId,4,true) end )
         end
+
+
+        if eventArgs.OptionId == 4 then
+            self._proxy:PlayDramaCaption("Caption201513",true)
+            --------播放字幕Caption201513
+        end
+
     end
 end
+
 
 function XNPC_AlphaChoice:InteractCheck()
     if self._isShowOptionOne > 0 then
@@ -56,16 +72,5 @@ function XNPC_AlphaChoice:InteractCheck()
     end
 end
 
-function XNPC_AlphaChoice:CheckIsSlashAndSetInSlash()
-    if self._isSlash > 0 then
-        return
-    end
-    if self._proxy:IsQuestObjectiveFinished(40400305) then
-        self._isSlash = 1
-    end
-    if self._isSlash then
-        self._proxy:PlayNpcCustomPerformAnim(self._uuid, "Drama_Stand_01", 0, 0, false, {x=0, y=0,z=0}, false)
-    end
-end
 
 return XNPC_AlphaChoice

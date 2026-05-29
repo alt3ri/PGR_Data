@@ -60,7 +60,7 @@ function XGuildWarControl:CheckSamePosNodeHasFight(nodeId)
     end
 
     -- 判断是否有父节点，及父节点是否打过一次
-    if not isSelfFight then
+    if not isSelfFight and nodeEntity then
         local rootId = nodeEntity:GetRootId()
         
         if XTool.IsNumberValidEx(nodeEntity:GetRootId()) then
@@ -88,6 +88,27 @@ function XGuildWarControl:CheckSamePosNodeHasFight(nodeId)
     return isSelfFight
 end
 
+--- 判断节点是否是可挑战节点
+function XGuildWarControl:CheckNodeIsCanFight(nodeId)
+    ---@type XGWNode
+    local nodeEntity = XDataCenter.GuildWarManager.GetNode(nodeId)
+
+    if not nodeEntity then
+        return false
+    end
+
+    -- 废墟节点不可挑战
+    if nodeEntity:GetNodeType() == XGuildWarConfig.NodeType.NodeRelic then
+        return false
+    end
+
+    -- 已击破时不可挑战
+    if nodeEntity:GetIsDead() then
+        return false
+    end
+    
+    return true
+end
 --endregion <<<--------------------------
 
 --region ---------- 地图寻路 ---------->>>

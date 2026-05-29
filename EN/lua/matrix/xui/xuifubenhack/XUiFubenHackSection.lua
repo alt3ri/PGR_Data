@@ -1,6 +1,6 @@
-local XUiGridStageStar = require("XUi/XUiFubenMainLineDetail/XUiGridStageStar")
-local XUiPanelActivityAsset = require("XUi/XUiShop/XUiPanelActivityAsset")
-local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local XUiGridStageStar = require("XUi/XUiFubenMainLineDetail/XUiGridStageStar")
+local XUiPanelActivityAsset = require("XUi/XUiShop/XUiPanelActivityAsset")
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XUiFubenHackSection = XLuaUiManager.Register(XLuaUi, "UiFubenHackSection")
 local ViewType = {
     StageInfo = 1,
@@ -181,7 +181,7 @@ function XUiFubenHackSection:OnBtnEnterClick()
 
     if XDataCenter.FubenManager.CheckPreFight(stageCfg) then
         XEventManager.DispatchEvent(XEventId.EVENT_FUBEN_CLOSE_FUBENSTAGEDETAIL)
-        XLuaUiManager.Open("UiBattleRoleRoom", stageCfg.StageId)
+        XMVCA.XFuben:OpenUiBattleRoleRoom(stageCfg.StageId)
         self:Close()
     end
 end

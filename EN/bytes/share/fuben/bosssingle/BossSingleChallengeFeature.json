@@ -682,6 +682,28 @@
         "ScoreRate": null
     },
     {
+        "Id": 63,
+        "Name": "Frostbound Chasm IV",
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/BossSingleIconPowerbing.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "For each orb pinged, significantly increases Ice DMG taken by the Boss for 10s, stacking up to 3 times. Duration resets every time it is triggered.",
+        "FightEventIds": "[2300063]",
+        "ShowRecommendIds": null,
+        "Type": 1,
+        "ScoreRate": null
+    },
+    {
+        "Id": 64,
+        "Name": "Skyfire Cataclysm II",
+        "Icon": "Assets/Product/Texture/Image/IconAffix/AffixIconNewMod1013.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
+        "Desc": "Dealing Ignition DMG significantly increases Ignition DMG taken by the Boss for 10s, stacking up to 8 times. Duration resets every time the effect is triggered.",
+        "FightEventIds": "[2300064]",
+        "ShowRecommendIds": "[2]",
+        "Type": 1,
+        "ScoreRate": null
+    },
+    {
         "Id": 1001,
         "Name": "Web of Fate I",
         "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/UiBossSingleAffixIcon013.png",
@@ -820,6 +842,28 @@
         "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg01.png",
         "Desc": "Boss takes reduced DMG from all sources except Raydiance Effect.",
         "FightEventIds": "[2301013]",
+        "ShowRecommendIds": null,
+        "Type": 2,
+        "ScoreRate": 1550.0
+    },
+    {
+        "Id": 1014,
+        "Name": "Web of Fate II",
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/UiBossSingleAffixIcon013.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "Boss HP increases by 60%.",
+        "FightEventIds": "[2301014]",
+        "ShowRecommendIds": null,
+        "Type": 2,
+        "ScoreRate": 1250.0
+    },
+    {
+        "Id": 1015,
+        "Name": "Web of Fate III",
+        "Icon": "Assets/Product/Texture/Image/UiFubenBossSingle/UiBossSingleAffixIcon013.png",
+        "TriangleBg": "Assets/Product/Texture/Atlas/UiFubenBossSingle/IconBg02.png",
+        "Desc": "Boss HP increases by 70%.",
+        "FightEventIds": "[2301015]",
         "ShowRecommendIds": null,
         "Type": 2,
         "ScoreRate": 1550.0

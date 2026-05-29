@@ -18,13 +18,13 @@ local StateEnum = {
     ---生活区
     LifeArea = 2,
     ---纪念碑
-    Monument = 3,
-    ---纪念碑广场
-    MonumentSquare = 4,
+    MonumentSquare = 3,
+    ---墓碑
+    Tombstone = 6,
     ---教学楼
-    TeachingBuilding = 5,
+    TeachingBuilding = 4,
     ---无人机社团
-    DroneClub = 6,
+    DroneClub = 5,
     ---寻路过程
     FindPath = 7,
 }
@@ -36,13 +36,13 @@ local DataBoardKey = {
     ---生活区
     LifeArea = 2,
     ---纪念碑
-    Monument = 3,
-    ---纪念碑广场
-    MonumentSquare = 4,
+    MonumentSquare = 3,
+    ---墓碑
+    Tombstone = 6,
     ---教学楼
-    TeachingBuilding = 5,
+    TeachingBuilding = 4,
     ---无人机社团
-    DroneClub = 6,
+    DroneClub = 5,
     ---寻路过程
     FindPath = 7,
 }
@@ -58,9 +58,9 @@ local XChromeAuditoriumState = XClass(BaseState, "XChromeAuditoriumState")
 function XChromeAuditoriumState:InitStateConfig()
     self.StateConfig = {}
     self.StateConfig.StateEnum = StateEnum.Auditorium
-    self.StateConfig.StateAnim = "Drama_Stand_07"
+    self.StateConfig.StateAnim = "Drama_Stand_05"
     self.StateConfig.TriggerId = 1
-    self.StateConfig.ShowOptionId = 3
+    self.StateConfig.ShowOptionId = 1
     self.StateConfig.RegisterWorldEventList = {
         EWorldEvent.ActorTrigger,
         EWorldEvent.NpcInteractStart,
@@ -68,15 +68,15 @@ function XChromeAuditoriumState:InitStateConfig()
     }
     self.StateConfig.BubbleDict = {
         [EEcologyBubbleType.Around] = {
-            Name = "300606",
+            Name = "301501",
             TriggerDistance = 6,
-            TriggerCD = 2,
+            TriggerCD = 10,
             LoopTime = 3,
         },
         [EEcologyBubbleType.Near] = {
-            Name = "300602",
+            Name = "301502",
             TriggerDistance = 2.5,
-            TriggerCD = 2,
+            TriggerCD = 10,
             LoopTime = 3,
         }
     }
@@ -84,7 +84,10 @@ end
 
 function XChromeAuditoriumState:OnStateEnter(lastStateEnum)
     BaseState.OnStateEnter(self, lastStateEnum)
-    self.StateMachine:SetDataBoard(DataBoardKey.Auditorium, 0)
+    self.StateMachine:SetDataBoard(DataBoardKey.Auditorium, self._proxy:Random(1,3))
+    self.StateMachine:SetDataBoard(DataBoardKey.LifeArea, 0)
+    self.StateMachine:SetDataBoard(DataBoardKey.TeachingBuilding, 0)
+    self.StateMachine:SetDataBoard(DataBoardKey.Tombstone, 0)
 end
 --endregion
 
@@ -97,8 +100,8 @@ local XChromeLifeAreaState = XClass(BaseState, "XChromeLifeAreaState")
 ---@overload
 function XChromeLifeAreaState:InitStateConfig()
     self.StateConfig = {}
-    self.StateConfig.StateEnum = StateEnum.Monument
-    self.StateConfig.StateAnim = "Drama_Stand_06"
+    self.StateConfig.StateEnum = StateEnum.LifeArea
+    self.StateConfig.StateAnim = "Drama_Obverse"
     self.StateConfig.TriggerId = 1
     self.StateConfig.ShowOptionId = 2
     self.StateConfig.RegisterWorldEventList = {
@@ -108,15 +111,15 @@ function XChromeLifeAreaState:InitStateConfig()
     }
     self.StateConfig.BubbleDict = {
         [EEcologyBubbleType.Around] = {
-            Name = "300605",
+            Name = "301503",
             TriggerDistance = 6,
-            TriggerCD = 2,
+            TriggerCD = 10,
             LoopTime = 3,
         },
         [EEcologyBubbleType.Near] = {
-            Name = "300601",
+            Name = "301503",
             TriggerDistance = 2.5,
-            TriggerCD = 2,
+            TriggerCD = 10,
             LoopTime = 3,
         }
     }
@@ -124,52 +127,12 @@ end
 
 function XChromeLifeAreaState:OnStateEnter(lastStateEnum)
     BaseState.OnStateEnter(self, lastStateEnum)
-    self.StateMachine:SetDataBoard(DataBoardKey.Monument, 0)
+    self.StateMachine:SetDataBoard(DataBoardKey.LifeArea, 0)
 end
 --endregion
 
 
 --region 状态-库洛姆-纪念碑
----@class XChromeMonumentState: XEcologyConstructAIBaseState
-local XChromeMonumentState = XClass(BaseState, "XChromeMonumentState")
-
----数据配置
----@overload
-function XChromeMonumentState:InitStateConfig()
-    self.StateConfig = {}
-    self.StateConfig.StateEnum = StateEnum.Monument
-    self.StateConfig.StateAnim = "Drama_Stand_07"
-    self.StateConfig.TriggerId = 1
-    self.StateConfig.ShowOptionId = 4
-    self.StateConfig.RegisterWorldEventList = {
-        EWorldEvent.ActorTrigger,
-        EWorldEvent.NpcInteractStart,
-        EWorldEvent.NpcInteractComplete,
-    }
-    self.StateConfig.BubbleDict = {
-        [EEcologyBubbleType.Around] = {
-            Name = "300606",
-            TriggerDistance = 6,
-            TriggerCD = 2,
-            LoopTime = 3,
-        },
-        [EEcologyBubbleType.Near] = {
-            Name = "300602",
-            TriggerDistance = 2.5,
-            TriggerCD = 2,
-            LoopTime = 3,
-        }
-    }
-end
-
-function XChromeMonumentState:OnStateEnter(lastStateEnum)
-    BaseState.OnStateEnter(self, lastStateEnum)
-    self.StateMachine:SetDataBoard(DataBoardKey.Monument, 0)
-end
---endregion
-
-
---region 状态-库洛姆-纪念碑广场
 ---@class XChromeMonumentSquareState: XEcologyConstructAIBaseState
 local XChromeMonumentSquareState = XClass(BaseState, "XChromeMonumentSquareState")
 
@@ -178,7 +141,47 @@ local XChromeMonumentSquareState = XClass(BaseState, "XChromeMonumentSquareState
 function XChromeMonumentSquareState:InitStateConfig()
     self.StateConfig = {}
     self.StateConfig.StateEnum = StateEnum.MonumentSquare
-    self.StateConfig.StateAnim = "Drama_Stand_07"
+    self.StateConfig.StateAnim = "Drama_Salute"
+    self.StateConfig.TriggerId = 1
+    self.StateConfig.ShowOptionId = 3
+    self.StateConfig.RegisterWorldEventList = {
+        EWorldEvent.ActorTrigger,
+        EWorldEvent.NpcInteractStart,
+        EWorldEvent.NpcInteractComplete,
+    }
+    self.StateConfig.BubbleDict = {
+        [EEcologyBubbleType.Around] = {
+            Name = "301507",
+            TriggerDistance = 6,
+            TriggerCD = 10,
+            LoopTime = 3,
+        },
+        [EEcologyBubbleType.Near] = {
+            Name = "301508",
+            TriggerDistance = 2.5,
+            TriggerCD = 10,
+            LoopTime = 3,
+        }
+    }
+end
+
+function XChromeMonumentSquareState:OnStateEnter(lastStateEnum)
+    BaseState.OnStateEnter(self, lastStateEnum)
+    self.StateMachine:SetDataBoard(DataBoardKey.MonumentSquare, 0)
+end
+--endregion
+
+
+--region 状态-库洛姆-墓碑
+---@class XChrometombstoneState: XEcologyConstructAIBaseState
+local XChrometombstoneState = XClass(BaseState, "XChrometombstoneState")
+
+---数据配置
+---@overload
+function XChrometombstoneState:InitStateConfig()
+    self.StateConfig = {}
+    self.StateConfig.StateEnum = StateEnum.Tombstone
+    self.StateConfig.StateAnim = "Drama_Salute"
     self.StateConfig.TriggerId = 1
     self.StateConfig.ShowOptionId = 4
     self.StateConfig.RegisterWorldEventList = {
@@ -188,23 +191,28 @@ function XChromeMonumentSquareState:InitStateConfig()
     }
     self.StateConfig.BubbleDict = {
         [EEcologyBubbleType.Around] = {
-            Name = "300606",
+            Name = "301507",
             TriggerDistance = 6,
-            TriggerCD = 2,
+            TriggerCD = 10,
             LoopTime = 3,
         },
         [EEcologyBubbleType.Near] = {
-            Name = "300602",
+            Name = "301507",
             TriggerDistance = 2.5,
-            TriggerCD = 2,
+            TriggerCD = 10,
             LoopTime = 3,
         }
     }
 end
 
-function XChromeMonumentSquareState:OnStateEnter(lastStateEnum)
+function XChrometombstoneState:OnStateEnter(lastStateEnum)
     BaseState.OnStateEnter(self, lastStateEnum)
-    self.StateMachine:SetDataBoard(DataBoardKey.MonumentSquare, 0)
+    self.StateMachine:SetDataBoard(DataBoardKey.Tombstone, 0)
+end
+
+function XChrometombstoneState:UpdateOptionActive()
+    self._proxy:SetNpcInteractOneOptionActive(self._placeId, self.StateConfig.ShowOptionId)
+    self._proxy:SetNpcInteractOptionActive(self._placeId, self.StateConfig.ShowOptionId, false)
 end
 --endregion
 
@@ -218,9 +226,9 @@ local XChromeTeachingBuildingState = XClass(BaseState, "XChromeTeachingBuildingS
 function XChromeTeachingBuildingState:InitStateConfig()
     self.StateConfig = {}
     self.StateConfig.StateEnum = StateEnum.TeachingBuilding
-    self.StateConfig.StateAnim = "Drama_Stand_15"
+    self.StateConfig.StateAnim = "Drama_Operation"
     self.StateConfig.TriggerId = 1
-    self.StateConfig.ShowOptionId = 1
+    self.StateConfig.ShowOptionId = 4
     self.StateConfig.RegisterWorldEventList = {
         EWorldEvent.ActorTrigger,
         EWorldEvent.NpcInteractStart,
@@ -228,17 +236,25 @@ function XChromeTeachingBuildingState:InitStateConfig()
     }
     self.StateConfig.BubbleDict = {
         [EEcologyBubbleType.Around] = {
-            Name = "300604",
+            Name = "301505",
             TriggerDistance = 6,
-            TriggerCD = 2,
+            TriggerCD = 10,
             LoopTime = 3,
         },
+        [EEcologyBubbleType.Near] = {
+            Name = "301506",
+            TriggerDistance = 2.5,
+            TriggerCD = 10,
+            LoopTime = 3,
+        }
     }
 end
 
 function XChromeTeachingBuildingState:OnStateEnter(lastStateEnum)
     BaseState.OnStateEnter(self, lastStateEnum)
-    self.StateMachine:SetDataBoard(DataBoardKey.TeachingBuilding, 0)
+    self.StateMachine:SetDataBoard(DataBoardKey.TeachingBuilding, self._proxy:Random(1,2))
+    self.StateMachine:SetDataBoard(DataBoardKey.DroneClub, 0)
+    self.StateMachine:SetDataBoard(DataBoardKey.MonumentSquare, 0)
 end
 --endregion
 
@@ -252,9 +268,9 @@ local XChromeDroneClubState = XClass(BaseState, "XChromeDroneClubState")
 function XChromeDroneClubState:InitStateConfig()
     self.StateConfig = {}
     self.StateConfig.StateEnum = StateEnum.DroneClub
-    self.StateConfig.StateAnim = "Drama_Stand_07"
+    self.StateConfig.StateAnim = "Drama_Think"
     self.StateConfig.TriggerId = 1
-    self.StateConfig.ShowOptionId = 4
+    self.StateConfig.ShowOptionId = 5
     self.StateConfig.RegisterWorldEventList = {
         EWorldEvent.ActorTrigger,
         EWorldEvent.NpcInteractStart,
@@ -262,15 +278,15 @@ function XChromeDroneClubState:InitStateConfig()
     }
     self.StateConfig.BubbleDict = {
         [EEcologyBubbleType.Around] = {
-            Name = "300606",
+            Name = "301509",
             TriggerDistance = 6,
-            TriggerCD = 2,
+            TriggerCD = 10,
             LoopTime = 3,
         },
         [EEcologyBubbleType.Near] = {
-            Name = "300602",
+            Name = "301510",
             TriggerDistance = 2.5,
-            TriggerCD = 2,
+            TriggerCD = 10,
             LoopTime = 3,
         }
     }
@@ -293,7 +309,7 @@ function XChromeFindPathState:InitStateConfig()
     self.StateConfig = {}
     self.StateConfig.StateEnum = StateEnum.FindPath
     self.StateConfig.TriggerId = 1
-    self.StateConfig.ShowOptionId = 5
+    self.StateConfig.ShowOptionId = 6
     self.StateConfig.RegisterWorldEventList = {
         EWorldEvent.ActorTrigger,
         EWorldEvent.NpcInteractStart,
@@ -301,7 +317,7 @@ function XChromeFindPathState:InitStateConfig()
     }
 
     self.StateConfig.FindPathConfig = {}
-    self.StateConfig.FindPathConfig.MeetCommanderBubbleName = "300603"
+    self.StateConfig.FindPathConfig.MeetCommanderBubbleName = "301511"
 end
 --endregion
 
@@ -315,8 +331,8 @@ local XCharChromeEcology = XDlcScriptManager.RegCharScript(10611601, "XCharChrom
 function XCharChromeEcology:RegisterMachineState()
     self._stateMachine:AddState(StateEnum.Auditorium, XChromeAuditoriumState.New(self._proxy))
     self._stateMachine:AddState(StateEnum.LifeArea, XChromeLifeAreaState.New(self._proxy))
-    self._stateMachine:AddState(StateEnum.Monument, XChromeMonumentState.New(self._proxy))
-    self._stateMachine:AddState(StateEnum.MonumentSquare, XChromeMonumentState.New(self._proxy))
+    self._stateMachine:AddState(StateEnum.MonumentSquare, XChromeMonumentSquareState.New(self._proxy))
+    self._stateMachine:AddState(StateEnum.Tombstone, XChrometombstoneState.New(self._proxy))
     self._stateMachine:AddState(StateEnum.TeachingBuilding, XChromeTeachingBuildingState.New(self._proxy))
     self._stateMachine:AddState(StateEnum.DroneClub, XChromeDroneClubState.New(self._proxy))
     self._stateMachine:AddState(StateEnum.FindPath, XChromeFindPathState.New(self._proxy))
@@ -326,30 +342,44 @@ end
 function XCharChromeEcology:RegisterMachineStateTransition()
     -- 设置寻路状态枚举值
     self.FindPathStateEnum = StateEnum.FindPath
+    self.NextStateList = {
+        StateEnum.Auditorium, StateEnum.LifeArea, StateEnum.MonumentSquare, StateEnum.TeachingBuilding, StateEnum.DroneClub
+    }
     -- 其他状态到寻路状态
     self:RegisterInFindPathStateTransition(StateEnum.Auditorium, function()
-        return self._stateMachine:CheckDataBoard(DataBoardKey.Auditorium, 1) and StateEnum.DroneClub or StateEnum.TeachingBuilding
-    end, 5, 1)
+        if self._stateMachine:CheckDataBoard(DataBoardKey.Auditorium, 1) then 
+            return StateEnum.LifeArea
+        elseif self._stateMachine:CheckDataBoard(DataBoardKey.Auditorium, 2) then 
+            return StateEnum.Tombstone
+        elseif self._stateMachine:CheckDataBoard(DataBoardKey.Auditorium, 3) then 
+            return StateEnum.TeachingBuilding
+        end
+    end, 30, 1)
     self:RegisterInFindPathStateTransition(StateEnum.LifeArea, function()
-        return self._stateMachine:CheckDataBoard(DataBoardKey.LifeArea, 1) and StateEnum.Auditorium or StateEnum.Monument
-    end, 5, 1)
-    self:RegisterInFindPathStateTransition(StateEnum.Monument, function()
-        return self._stateMachine:CheckDataBoard(DataBoardKey.Monument, 1) and StateEnum.Auditorium or StateEnum.DroneClub
-    end, 5, 1)
+        return self._stateMachine:CheckDataBoard(DataBoardKey.LifeArea, 1) and StateEnum.MonumentSquare or StateEnum.MonumentSquare
+    end, 30, 1)
     self:RegisterInFindPathStateTransition(StateEnum.MonumentSquare, function()
-        return self._stateMachine:CheckDataBoard(DataBoardKey.MonumentSquare, 1) and StateEnum.Auditorium or StateEnum.DroneClub
-    end, 5, 1)
-    self:RegisterInFindPathStateTransition(StateEnum.TeachingBuilding, function()
-        return self._stateMachine:CheckDataBoard(DataBoardKey.TeachingBuilding, 1) and StateEnum.Auditorium or StateEnum.Monument
-    end, 5, 1)
+        return self._stateMachine:CheckDataBoard(DataBoardKey.MonumentSquare, 1) and StateEnum.Auditorium or StateEnum.Auditorium
+    end, 30, 1)
+    self:RegisterInFindPathStateTransition(StateEnum.Tombstone, function()
+        return self._stateMachine:CheckDataBoard(DataBoardKey.Tombstone, 1) and StateEnum.DroneClub or StateEnum.DroneClub
+    end, 30, 1)
     self:RegisterInFindPathStateTransition(StateEnum.DroneClub, function()
-        return self._stateMachine:CheckDataBoard(DataBoardKey.DroneClub, 1) and StateEnum.TeachingBuilding or StateEnum.Auditorium
-    end, 5, 1)
+        return self._stateMachine:CheckDataBoard(DataBoardKey.DroneClub, 1) and StateEnum.Auditorium or StateEnum.Auditorium
+    end, 30, 1)
+    self:RegisterInFindPathStateTransition(StateEnum.TeachingBuilding, function()
+        if self._stateMachine:CheckDataBoard(DataBoardKey.TeachingBuilding, 1) then 
+        return StateEnum.DroneClub
+    elseif self._stateMachine:CheckDataBoard(DataBoardKey.TeachingBuilding, 2) then 
+        return StateEnum.MonumentSquare
+        end
+    end, 30, 1)
     
     -- 寻路状态到其他状态
     self:RegisterOutFindPathStateTransition(StateEnum.TeachingBuilding)
     self:RegisterOutFindPathStateTransition(StateEnum.LifeArea)
-    self:RegisterOutFindPathStateTransition(StateEnum.Monument)
+    self:RegisterOutFindPathStateTransition(StateEnum.MonumentSquare)
+    self:RegisterOutFindPathStateTransition(StateEnum.Tombstone)    
     self:RegisterOutFindPathStateTransition(StateEnum.Auditorium)
     self:RegisterOutFindPathStateTransition(StateEnum.DroneClub)
 end

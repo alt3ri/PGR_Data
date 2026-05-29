@@ -223,15 +223,43 @@ end
 --- 封装的设置文本接口
 function XMovieActionFullScreenDialog:ShowOneContent(content)
     local grid = self:GetDialogGridFromPool()
-    grid:Refresh(content, self.IsCenter, self.Color, self.Duration, function()
-        self:OnTypeWriterComplete()
-    end)
-    grid.GameObject:SetActiveEx(true)
-    self.IsTyping = true
 
+    -- 在 grid 激活前先把 ImgNext 挂进来并隐藏
     local imgNext = self.UiRoot.ImgNext
     imgNext.transform:SetParent(grid.Transform, false)
     imgNext.gameObject:SetActiveEx(false)
+
+    -- 取/添 grid 上的 CanvasGroup，用于在文本 mesh 收敛前隐藏 grid，
+    -- 规避 XUiRichTextCustomRender 在 SetActive(true) 后的两阶段 ParseVerts 引起的视觉跳变。
+    -- 触发条件：仅当 TxtWords 上同时挂有 XUiRichTextCustomRender + TextContentSizeFitter 时才会出现。
+    -- 原因：set text → 第一次 ParseVerts 得到 preferredSize A → SizeFitter 改 sizeDelta →
+    -- OnRectTransformDimensionsChange → 第二次 ParseVerts 得到 preferredSize B；
+    -- CJK 字符在两次 vertParser 之间字符 X 坐标会变，于是出现"撑开+左移"的视觉跳变；
+    -- 纯英文/数字字符 advance 在两次 parse 间一致，所以观察不到。
+    local canvasGroup = XUiHelper.TryAddComponent(grid.GameObject, typeof(CS.UnityEngine.CanvasGroup))
+    canvasGroup.alpha = 0
+
+    grid.GameObject:SetActiveEx(true)
+
+    -- Refresh 仅写文本/设参数，不再立即启动打字机
+    grid:Refresh(content, self.IsCenter, self.Color, self.Duration, function()
+        self:OnTypeWriterComplete()
+    end)
+    self.IsTyping = true
+
+    CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(grid.Transform)
+
+    -- 固定延迟 100ms 让 OnEnable 引发的 Update / CheckNeedRebuild / needReshowIcons 全部消化完
+    XScheduleManager.ScheduleOnce(function()
+        if not (grid and grid.GameObject and grid.GameObject.activeInHierarchy) then
+            return
+        end
+        CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(grid.Transform)
+        if canvasGroup then
+            canvasGroup.alpha = 1
+        end
+        grid:PlayTypeWriter()
+    end, 100)
 
     local iconNext = self.UiRoot.IconNext
     local color = self.Color and self.Color or DefaultColor

@@ -6,6 +6,7 @@ function XDrawTabBtnEntity:Ctor(id)
     self.DrawGroupList = {}
 end
 
+---@return XTableDrawTabs
 function XDrawTabBtnEntity:GetCfg()
     return XDrawConfigs.GetDrawTabById(self.Id)
 end
@@ -54,6 +55,10 @@ function XDrawTabBtnEntity:GetConditions()
     return self:GetCfg().Condition
 end
 
+function XDrawTabBtnEntity:GetIsLifeTreePower()
+    return self:GetCfg().IsLifeTreePower == 1
+end
+
 function XDrawTabBtnEntity:JudgeCanOpen(IsShowHint)
     local IsOpen = true
     local desc = ""
@@ -78,6 +83,9 @@ end
 function XDrawTabBtnEntity:InsertDrawGroupList(data)
     self.DrawGroupList = self.DrawGroupList or {}
     table.insert(self.DrawGroupList, data)
+    table.sort(self.DrawGroupList, function(a, b)
+        return (a:GetOrder() or 0) > (b:GetOrder() or 0)
+    end)
 end
 
 function XDrawTabBtnEntity:DoSelect()
@@ -90,11 +98,10 @@ function XDrawTabBtnEntity:IsShowTag()
 
     if IsUnLock then
         for _, drawGroupInfo in pairs(self.DrawGroupList or {}) do
-            if drawGroupInfo:GetBannerBeginTime() > 0 then
-                if XDataCenter.DrawManager.IsShowNewTag(drawGroupInfo:GetBannerBeginTime(), drawGroupInfo:GetRuleType(), drawGroupInfo:GetId()) then
-                    IsShowNewTag = true
-                    break
-                end
+            -- 直接聚合子实体的 option 维度新标记状态
+            if drawGroupInfo:IsShowTag() then
+                IsShowNewTag = true
+                break
             end
         end
     end
@@ -122,4 +129,4 @@ function XDrawTabBtnEntity:IsShowFreeTip()
     return isShowFreeTip
 end
 
-return XDrawTabBtnEntity
+return XDrawTabBtnEntity

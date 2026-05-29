@@ -1,4 +1,4 @@
-local XDynamicTableIrregular = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableIrregular")
+local XDynamicTableIrregular = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableIrregular")
 --工会boss Boss关卡详细信息页面
 local XUiGuildBossLog = require("XUi/XUiGuildBoss/Component/XUiGuildBossLog")
 local XUiGuildBossRankPanel = require("XUi/XUiGuildBoss/Component/XUiGuildBossRankPanel")
@@ -122,7 +122,7 @@ function XUiGuildBossMainLevelInfo:OnBtnStartClick()
     end
 
     local continueCb = function ()
-        XLuaUiManager.Open("UiBattleRoleRoom", self.Data.StageId
+        XMVCA.XFuben:OpenUiBattleRoleRoom(self.Data.StageId
             , XDataCenter.GuildBossManager.GetXTeamByStageId(self.Data.StageId)
             , require("XUi/XUiGuildBoss/XUiGuildBossBattleRoleRoom"))
     end

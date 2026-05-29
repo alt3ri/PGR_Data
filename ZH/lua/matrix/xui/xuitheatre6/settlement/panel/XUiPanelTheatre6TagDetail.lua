@@ -3,7 +3,7 @@
 ---@field BtnClose XUiComponent.XUiButton
 ---@field GridTagDetail UiObject
 ---@field GridTagDetail.UiTxtName UnityEngine.UI.Text
----@field GridTagDetail.UiTxtDesc UnityEngine.UI.Text
+---@field GridTagDetail.UiTxtDesc XUiComponent.XUiRichTextCustomRender
 ---@field GridTagDetail.ImgIcon UnityEngine.UI.Image
 local XUiPanelTheatre6TagDetail = XLuaUiManager.Register(XUiNode, "XUiPanelTheatre6TagDetail")
 
@@ -15,6 +15,13 @@ function XUiPanelTheatre6TagDetail:InitComponents()
 end
 
 function XUiPanelTheatre6TagDetail:Refresh(buildTagIds, keyWordIds)
+    if buildTagIds == nil then
+        buildTagIds = {}
+     end
+     if keyWordIds == nil then
+        keyWordIds = {}
+     end
+
     local buildTagCfg = self._Control:GetShowBuildTagWithSort(buildTagIds)
     --先显示keyword
     local showKeyWordCfgs = {}
@@ -31,10 +38,12 @@ function XUiPanelTheatre6TagDetail:Refresh(buildTagIds, keyWordIds)
         function(index, go)
             local ui = {}
             XTool.InitUiObjectByUi(ui, go)
+            ui.UiTxtDesc.requestImage = XMVCA.XTheatre6.RichTextImageCallBack
+            local desc = nil
             if index <= #showKeyWordCfgs then
                 local cfg = showKeyWordCfgs[index]
                 ui.UiTxtName.text = cfg.Name
-                ui.UiTxtDesc.text = cfg.Des
+                desc = self._Control:ReplaceAttrPlaceholder(cfg.Des)
                 local isExistIcon = not string.IsNilOrEmpty(cfg.Icon)
                 ui.ImgIcon.gameObject:SetActiveEx(isExistIcon)
                 if isExistIcon then
@@ -43,8 +52,12 @@ function XUiPanelTheatre6TagDetail:Refresh(buildTagIds, keyWordIds)
             else
                 local config = buildTagCfg[index - #showKeyWordCfgs]
                 ui.UiTxtName.text = config.Name
-                ui.UiTxtDesc.text = config.Desc
+                desc = self._Control:ReplaceAttrPlaceholder(config.Desc)
                 ui.ImgIcon.gameObject:SetActiveEx(false)
+            end
+            if desc ~= nil then
+                desc = XUiHelper.ReplaceTextNewLine(desc)
+                ui.UiTxtDesc.text = desc
             end
             ui.GameObject:SetActiveEx(true)
         end)

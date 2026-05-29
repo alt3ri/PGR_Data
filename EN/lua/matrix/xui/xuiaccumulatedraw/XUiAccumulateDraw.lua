@@ -161,8 +161,10 @@ function XUiAccumulateDraw:OnRefreshSpecialReward()
 
     if grid then
         if grid.GameObject.transform.position.y > self.PanelBottom.transform.position.y then
+            grid.CanvasGroup.alpha = 1
             self:_CloseAllSpecialReward()
         else
+            grid.CanvasGroup.alpha = 0
             self:_OpenAllSpecialReward()
         end
     end

@@ -56,13 +56,16 @@ function XSkyGardenAgency:OnExit()
 end
 
 function XSkyGardenAgency:OnRegisterMVCA()
-    for _, moduleId in pairs(self._ModuleList) do
+    local newlyRegistered = {}
+    for _, moduleId in ipairs(self._ModuleList) do
         if not XMVCA:IsRegisterAgency(moduleId) then
             XMVCA:RegisterAgency(moduleId)
+            newlyRegistered[#newlyRegistered + 1] = moduleId
         end
     end
 
-    for _, moduleId in pairs(self._ModuleList) do
+    -- 只对本次新建的子 Agency 调用 InitDynamicRegister，避免对已注册 Agency 重复 hook RPC/Event
+    for _, moduleId in ipairs(newlyRegistered) do
         local agency = XMVCA:GetAgency(moduleId)
         if agency then
             agency:InitDynamicRegister()

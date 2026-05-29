@@ -1306,8 +1306,8 @@
     },
     {
         "Id": 104905,
-        "Names": "['MaxHeight']",
-        "Values": "[3.0]"
+        "Names": "['MaxHeight', 'FocusMaxAngle']",
+        "Values": "[3.0, 45.0]"
     },
     {
         "Id": 104906,
@@ -1351,18 +1351,18 @@
     },
     {
         "Id": 106801,
-        "Names": "['FocusMinAngle', 'RotationSpeed']",
-        "Values": "[60.0, 1.2999]"
+        "Names": "['FocusMinAngle', 'RotationSpeed', 'FocusMaxAngle']",
+        "Values": "[50.0, 1.1, 50.0]"
     },
     {
         "Id": 197220,
-        "Names": "['FocusMaxAngle', 'FocusMinAngle', 'MaxHeight', 'FocusHeight', 'FocusMinDistance', 'FocusMaxDistance']",
-        "Values": "[20.0, 5.0, 15.0, 7.0, 6.0, 10.0]"
+        "Names": "['FocusMaxAngle', 'FocusMinAngle', 'MaxHeight', 'FocusMinDistance', 'FocusMaxDistance', 'FocusHeight']",
+        "Values": "[20.0, 5.0, 15.0, 6.0, 10.0, 2.0]"
     },
     {
         "Id": 107280,
-        "Names": "['FocusMovementCoefficient', 'DollyInCoefficient', 'DollyOutCoefficient', 'RotationSpeed', 'FocusMaxAngle', 'FocusMinAngle']",
-        "Values": "[1.0, 1.0, 1.0, 6.0, 10.0, 5.0]"
+        "Names": "['FocusMovementCoefficient', 'DollyInCoefficient', 'DollyOutCoefficient', 'RotationSpeed', 'FocusMaxAngle', 'FocusHeight']",
+        "Values": "[9.0, 4.5, 7.5, 9.0, 3.0, 0.0]"
     },
     {
         "Id": 197228,
@@ -1373,5 +1373,15 @@
         "Id": 197229,
         "Names": "['FocusMaxAngle', 'FocusMinDistance', 'FocusMaxDistance', 'FocusHeight', 'FocusMinAngle']",
         "Values": "[25.0, 1.0, 30.0, 0.5, 5.0]"
+    },
+    {
+        "Id": 197258,
+        "Names": "['HeightDownCoefficient']",
+        "Values": "[6.0]"
+    },
+    {
+        "Id": 197263,
+        "Names": "['FocusMaxAngle']",
+        "Values": "[10.0]"
     }
 ]

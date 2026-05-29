@@ -19,16 +19,6 @@ EJumperLevelVarKey = {
 }
 
 --region 生态AI
----生态状态数据保存Key值
-EEcologySaveKey = {
-    ---当前状态枚举
-    CurStateEnum = 1,
-    ---寻路目标状态枚举
-    FindPathStartStateEnum = 2,
-    ---寻路目标路径点索引
-    FindPathCuePathIndex = 3,
-}
-
 ---生态AI气泡类型
 EEcologyBubbleType = {
     None = 0,

@@ -1,10 +1,11 @@
 ---@class XBWCommanderDIYWearData
 local XBWCommanderDIYWearData = XClass(nil, "XBWCommanderDIYWearData")
 
-function XBWCommanderDIYWearData:Ctor(typeId, partId, colorId)
-    self:SetTypeId(typeId)
-    self:SetPartId(partId)
-    self:SetColorId(colorId)
+function XBWCommanderDIYWearData:Ctor(typeId, partId, colorId, outfitType)
+    self._OutfitType = outfitType
+    self._TypeId = typeId
+    self._PartId = partId
+    self._ColorId = colorId
 end
 
 function XBWCommanderDIYWearData:IsEmpty()
@@ -63,7 +64,8 @@ function XBWCommanderDIYWearData:IsEqual(other)
         return false
     end
 
-    return self:GetTypeId() == other:GetTypeId() and self:GetPartId() == other:GetPartId() and self:GetColorId() == other:GetColorId()
+    return self:GetTypeId() == other:GetTypeId() and self:GetPartId() == other:GetPartId() and self:GetColorId() ==
+               other:GetColorId()
 end
 
 function XBWCommanderDIYWearData:SetTypeId(typeId)
@@ -76,8 +78,20 @@ function XBWCommanderDIYWearData:GetTypeId()
 end
 
 function XBWCommanderDIYWearData:SetPartId(partId)
-    self._PartId = partId or 0
+    if self._PartId == partId then
+        return self
+    end
+    if XTool.IsNumberValid(partId) then
+        self._PartId = partId
+    else
+        if self:IsRequired() then
+            self._PartId = XMVCA.XBigWorldCommanderDIY:GetTypeDefaultPartId(self:GetTypeId(), self:GetOutfitType())
+        else
+            self._PartId = 0
+        end
+    end
     self:ClearColor()
+    return self
 end
 
 function XBWCommanderDIYWearData:GetPartId()
@@ -86,7 +100,7 @@ function XBWCommanderDIYWearData:GetPartId()
             return self._PartId
         end
         if self:IsRequired() then
-            return XMVCA.XBigWorldCommanderDIY:GetTypeDefaultPartId(self:GetTypeId())
+            return XMVCA.XBigWorldCommanderDIY:GetTypeDefaultPartId(self:GetTypeId(), self:GetOutfitType())
         end
     end
 
@@ -94,21 +108,35 @@ function XBWCommanderDIYWearData:GetPartId()
 end
 
 function XBWCommanderDIYWearData:SetColorId(colorId)
-    self._ColorId = colorId or 0
+    if XMVCA.XBigWorldCommanderDIY:CheckCurrentAllowSelectColor(self:GetPartId()) then
+        self._ColorId = colorId
+    elseif colorId == 0 then
+        self._ColorId = 0
+    else
+        XLog.Error("XBWCommanderDIYWearData:SetColorId error: partId not allow select color")
+    end
+    return self
 end
 
 function XBWCommanderDIYWearData:GetColorId()
     if not self:IsEmpty() and self:IsWaeredPart() then
-        if XMVCA.XBigWorldCommanderDIY:CheckCurrentAllowSelectColor(self:GetPartId()) then
+        if XMVCA.XBigWorldCommanderDIY:CheckColorIsInColorGroup(self:GetPartId(), self._ColorId) then
             if XTool.IsNumberValid(self._ColorId) then
                 return self._ColorId
             end
         end
-
         return XMVCA.XBigWorldCommanderDIY:GetPartDefaultColorId(self:GetPartId())
     end
-
     return 0
+end
+
+function XBWCommanderDIYWearData:SetOutfitType(outfitType)
+    self._OutfitType = outfitType or XEnumConst.PlayerFashion.OutfitType.Normal
+    return self
+end
+
+function XBWCommanderDIYWearData:GetOutfitType()
+    return self._OutfitType
 end
 
 function XBWCommanderDIYWearData:GetColorIdByGender(gender)
@@ -175,7 +203,7 @@ end
 
 ---@return XBWCommanderDIYWearData
 function XBWCommanderDIYWearData:Clone()
-    return XBWCommanderDIYWearData.New(self:GetTypeId(), self:GetPartId(), self:GetColorId())
+    return XBWCommanderDIYWearData.New(self:GetTypeId(), self:GetPartId(), self:GetColorId(), self:GetOutfitType())
 end
 
 ---@param other XBWCommanderDIYWearData
@@ -185,6 +213,7 @@ function XBWCommanderDIYWearData:CopyFrom(other)
         self._TypeId = other._TypeId
         self._PartId = other._PartId
         self._ColorId = other._ColorId
+        self._OutfitType = other._OutfitType
     end
 end
 
@@ -192,13 +221,13 @@ function XBWCommanderDIYWearData:ToData(gender)
     if not XTool.IsNumberValid(gender) then
         return {
             PartId = self:GetPartId(),
-            ColourId = self:GetColorId(),
+            ColourId = self:GetColorId()
         }
     end
 
     return {
         PartId = self:GetPartId(),
-        ColourId = self:GetColorIdByGender(gender),
+        ColourId = self:GetColorIdByGender(gender)
     }
 end
 

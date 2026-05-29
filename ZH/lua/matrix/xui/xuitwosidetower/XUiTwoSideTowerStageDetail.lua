@@ -145,7 +145,7 @@ function XUiTwoSideTowerStageDetail:RefreshView()
 end
 
 function XUiTwoSideTowerStageDetail:OnEnterFight()
-    XLuaUiManager.Open("UiBattleRoleRoom", self.CurSelectStageId, self._Control:GetTeam(),
+    XMVCA.XFuben:OpenUiBattleRoleRoom(self.CurSelectStageId, self._Control:GetTeam(),
             require("XUi/XUiTwoSideTower/XUiTwoSideTowerBattleRoleRoom"))
 end
 

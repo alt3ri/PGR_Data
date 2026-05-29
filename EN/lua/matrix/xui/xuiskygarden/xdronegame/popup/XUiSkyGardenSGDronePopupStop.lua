@@ -62,6 +62,7 @@ function XUiSkyGardenSGDronePopupStop:OnBtnLeaveClick()
     local recordData = instance.Engine.RecordData
 
     self._Control:RecordStage(self._StageId, recordData, collectCount, settleType)
+    self._Control:OpenBlackMask()
 
     self:Close()
     

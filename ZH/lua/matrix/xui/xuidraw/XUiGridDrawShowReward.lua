@@ -311,6 +311,7 @@ end
 function XUiGridDrawShowModel:CreatePartnerModel(templateId)
     if not self.InitPartnerMode then
         self.InitPartnerMode = true
+        ---@type XUiPanelRoleModel
         self.PartnerModelPanel = XUiPanelRoleModel.New(self.GridModel, self.RootUi.Name, nil, true, nil, true)
     end
 
@@ -324,7 +325,7 @@ function XUiGridDrawShowModel:CreatePartnerModel(templateId)
             self:Load3dLineEffect(CModel, LineEffect3d)
         end, false, true)
         -- 出生特效
-        self.PartnerModelPanel:LoadPartnerUiEffect(modelConfig.CombatModel, XPartnerConfigs.EffectParentName.ModelOnEffect, true, true)
+        self.PartnerModelPanel:LoadPartnerUiEffect(modelConfig.CombatModel, XPartnerConfigs.EffectParentName.ModelOnEffect, true, true, true)
         -- 动画
         self.PartnerModelPanel:PlayAnima(modelConfig.CombatBornAnime, true)
     end)

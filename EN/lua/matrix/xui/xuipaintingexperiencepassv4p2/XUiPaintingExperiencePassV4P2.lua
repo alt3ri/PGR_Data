@@ -29,7 +29,12 @@ function XUiPaintingExperiencePassV4P2:OnStart(trialLevelId)
             end
         end
     end
-    self.BtnPurchase.gameObject:SetActiveEx(#self.SkipIds > 0)
+    local isShield = XMVCA.XBigWorldGamePlay:IsInGame() and XMVCA.XBigWorldFunction:GetShieldOfMainBusiness()
+    if isShield then
+        self.BtnPurchase.gameObject:SetActiveEx(false)
+    else
+        self.BtnPurchase.gameObject:SetActiveEx(#self.SkipIds > 0)
+    end
     self:UpdateFirstReward()
     self:UpdateDes()
 end
@@ -95,12 +100,12 @@ end
 function XUiPaintingExperiencePassV4P2:OnBtnSingleEnterClick()
     if self.TrialLevelInfo.TimeId and self.TrialLevelInfo.TimeId ~= 0 then
         if XFunctionManager.CheckInTimeByTimeId(self.TrialLevelInfo.TimeId) then
-            XLuaUiManager.Open("UiBattleRoleRoom", self.TrialLevelInfo.SingStageId)
+            XMVCA.XFuben:OpenUiBattleRoleRoom(self.TrialLevelInfo.SingStageId)
         else
             XUiManager.TipText("ActivityBranchNotOpen")
         end
     else
-        XLuaUiManager.Open("UiBattleRoleRoom", self.TrialLevelInfo.SingStageId)
+        XMVCA.XFuben:OpenUiBattleRoleRoom(self.TrialLevelInfo.SingStageId)
     end
 end
 

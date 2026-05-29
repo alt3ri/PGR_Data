@@ -56,6 +56,9 @@ function XUiPanelMain:OnEnable()
         self.UiPanelActivity:OnEnable()
     end
     XRedPointManager.Check(self.BtnShopRedPointId)
+    
+    -- 检测打开当期生命树章节弹窗
+    XMVCA.XLifeTree:CheckOpenUiLifeTreeChapterUnlockCurVersion()
 end
 
 function XUiPanelMain:OnDestroy()

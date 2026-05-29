@@ -12,8 +12,9 @@ local slotTypeInitOrder = {
     slotTypes.Special,
     slotTypes.Bag,
 }
-function XUiPanelTheatre6SkilBagDetail:OnStart()
+function XUiPanelTheatre6SkilBagDetail:OnStart(disableDrag)
     self:InitComponents()
+    self._DragDisabled = disableDrag or false
 end
 
 function XUiPanelTheatre6SkilBagDetail:OnEnable()
@@ -39,23 +40,23 @@ function XUiPanelTheatre6SkilBagDetail:OnGetLuaEvents()
         XEventId.EVENT_THEATRE6_BUY_GOOD,
         XEventId.EVENT_THEATRE6_SKILL_BUBBLE_CLOSE,
         XEventId.EVENT_THEATRE6_SHOP_REFRESH,
+        XEventId.EVENT_THEATRE6_TAG_HIGHLIGHT_SOURCE_CHANGE,
     }
 end
 
 function XUiPanelTheatre6SkilBagDetail:OnNotify(evt, ...)
-    if  evt == XEventId.EVENT_THEATRE6_BUY_GOOD or evt == XEventId.EVENT_THEATRE6_SHOP_REFRESH then
+    if evt == XEventId.EVENT_THEATRE6_BUY_GOOD or evt == XEventId.EVENT_THEATRE6_SHOP_REFRESH then
         self:Refresh()
-    end
-    if evt == XEventId.EVENT_THEATRE6_SKILL_BUBBLE_CLOSE then
+    elseif evt == XEventId.EVENT_THEATRE6_SKILL_BUBBLE_CLOSE then
         self:ClearCurrentSelect()
-    end
-    if evt == XEventId.EVENT_THEATRE6_UPDATE_SKILL then
+    elseif evt == XEventId.EVENT_THEATRE6_UPDATE_SKILL then
         local addedIdsBySlot, upgradeIds = ...
         self:Refresh()
         self:DispatchSkillEffects(addedIdsBySlot, upgradeIds)
+    elseif evt == XEventId.EVENT_THEATRE6_TAG_HIGHLIGHT_SOURCE_CHANGE then
+        self:RefreshAllTagHighLight()
     end
 end
-
 
 function XUiPanelTheatre6SkilBagDetail:ShowSkillBag()
     self.PanelUsing.gameObject:SetActiveEx(false)
@@ -125,10 +126,25 @@ end
 
 function XUiPanelTheatre6SkilBagDetail:DispatchSkillEffects(addedIdsBySlot, upgradeIds)
     if not addedIdsBySlot and not upgradeIds then return end
-    for _, slotType in ipairs({ slotTypes.Active, slotTypes.Insert, slotTypes.Special, slotTypes.Bag }) do
+    for _, slotType in ipairs(slotTypeInitOrder) do
         for _, grid in pairs(self.SkillGrids[slotType] or {}) do
-            if addedIdsBySlot then grid:TryShowTagEffect(addedIdsBySlot) end
+            if addedIdsBySlot then grid:TryTriggerTagEffect(addedIdsBySlot) end
             if upgradeIds then grid:TryShowUpgradeEffect(upgradeIds) end
+        end
+    end
+end
+
+---刷新技能背包详情中所有技能格子的 tag 高亮
+function XUiPanelTheatre6SkilBagDetail:RefreshAllTagHighLight()
+    if not self.SkillGrids then return end
+    for _, slotType in ipairs(slotTypeInitOrder) do
+        local grids = self.SkillGrids[slotType]
+        if grids then
+            for _, grid in pairs(grids) do
+                if grid then
+                    grid:RefreshTagHightLight()
+                end
+            end
         end
     end
 end
@@ -172,9 +188,18 @@ function XUiPanelTheatre6SkilBagDetail:SetCloseCb(closeCb)
 end
 
 function XUiPanelTheatre6SkilBagDetail:OnClickClose()
-    self:Close()
-    if self.CloseCb then
-        self.CloseCb()
+    if self:GetTimelineTransform("PanelSkillBagDisable") then
+        self:PlayAnimationWithMask("PanelSkillBagDisable",function()
+            self:Close()
+            if self.CloseCb then
+                self.CloseCb()
+            end
+        end)
+    else
+        self:Close()
+        if self.CloseCb then
+            self.CloseCb()
+        end
     end
 end
 
@@ -195,16 +220,57 @@ function XUiPanelTheatre6SkilBagDetail:InitGridDrag(grid)
     local endCb = function(id)
         self:OnEndDrag(grid, id)
     end
-    grid:SetDragCb(self.AllAreaGo, self.Transform, startCb, endCb)
+    local enterCb = function(id)
+        return self:IsAreaAcceptSkill(grid, id)
+    end
+    if not self._Control:IsCurModeSettle() and not self._DragDisabled then
+        grid:SetDragCb(self.AllAreaGo, self.Transform, startCb, endCb, enterCb)
+    else
+        grid:SetDragCb(function() end)
+    end
+end
+
+---判断目标区域是否能接受当前拖拽的技能（用于拖拽中切换 cloneUi 遮罩）
+function XUiPanelTheatre6SkilBagDetail:IsAreaAcceptSkill(grid, areaId)
+    local areaData = self.AllAreaData[areaId]
+    if not areaData then return true end
+    if areaData.externalCb then return true end
+    local skillId = grid:GetSkillId()
+    local srcSlotType = grid:GetGridData()
+    local canEquipType = self._Control:GetSkillInstallSlots(skillId)
+    local dstSlotType = areaData.slotType
+    if not (canEquipType and (table.contains(canEquipType, dstSlotType)
+            or dstSlotType == XEnumConst.Theatre6.SlotType.Bag)) then
+        return false
+    end
+    local dstGrid = self.SkillGrids[dstSlotType] and self.SkillGrids[dstSlotType][areaData.position]
+    local dstSkillId = dstGrid and dstGrid:GetSkillId()
+    if self:IsSwapBlocked(srcSlotType, dstSlotType, dstSkillId, skillId) then
+        return false
+    end
+    return true
+end
+
+---判断交换场景下,被挤走的目标技能能否装回源装备槽
+---仅当源是装备槽 + 目标位有不同技能 + 该技能不能安装回源装备槽时拦截
+function XUiPanelTheatre6SkilBagDetail:IsSwapBlocked(srcSlotType, dstSlotType, dstSkillId, srcSkillId)
+    if srcSlotType == XEnumConst.Theatre6.SlotType.Bag then return false end
+    if not XTool.IsNumberValid(dstSkillId) then return false end
+    if dstSkillId == srcSkillId then return false end
+    local installSlots = self._Control:GetSkillInstallSlots(dstSkillId)
+    return not (installSlots and table.contains(installSlots, srcSlotType))
 end
 
 function XUiPanelTheatre6SkilBagDetail:OnStartDrag(grid)
     local curSkillId = grid:GetSkillId()
+    local srcSlotType = grid:GetGridData()
     local canEquipType = self._Control:GetSkillInstallSlots(curSkillId)
     for slotType, grids in pairs(self.SkillGrids) do
         if table.contains(canEquipType, slotType) or slotType == XEnumConst.Theatre6.SlotType.Bag then
             for _, posGrid in pairs(grids) do
-                posGrid:SetHighlightEffect(true)
+                if not self:IsSwapBlocked(srcSlotType, slotType, posGrid:GetSkillId(), curSkillId) then
+                    posGrid:SetHighlightEffect(true, true, curSkillId)
+                end
             end
         end
     end
@@ -216,12 +282,14 @@ function XUiPanelTheatre6SkilBagDetail:OnStartDrag(grid)
 end
 
 function XUiPanelTheatre6SkilBagDetail:OnEndDrag(grid, targetAreaId)
+    if self._Control:IsCurModeSettle() then return end
     for _, areaData in ipairs(self.AllAreaData) do
         if areaData.dragStateCb then
             areaData.dragStateCb(false)
         end
     end
     local curSkillId = grid:GetSkillId()
+    local srcSlotType = grid:GetGridData()
     local canEquipType = self._Control:GetSkillInstallSlots(curSkillId)
     if XTool.IsNumberValid(targetAreaId) then
         local areaData = self.AllAreaData[targetAreaId]
@@ -229,10 +297,18 @@ function XUiPanelTheatre6SkilBagDetail:OnEndDrag(grid, targetAreaId)
             areaData.externalCb(grid:GetSkillId())
         elseif areaData ~= nil then
             if table.contains(canEquipType, areaData.slotType) or areaData.slotType == XEnumConst.Theatre6.SlotType.Bag then
-                XLuaUiManager.SetMask(true)
-                self._Control:SkillMoveOrSwapRequest(grid:GetSkillId(), areaData.slotType, areaData.position, function()
-                    XLuaUiManager.SetMask(false)
-                end)
+                local dstGrid = self.SkillGrids[areaData.slotType]
+                    and self.SkillGrids[areaData.slotType][areaData.position]
+                local dstSkillId = dstGrid and dstGrid:GetSkillId()
+                if not self:IsSwapBlocked(srcSlotType, areaData.slotType, dstSkillId, curSkillId) then
+                    self._Control:SkillMoveOrSwapRequest(grid:GetSkillId(), areaData.slotType, areaData.position,
+                        function()
+                        end)
+                else
+                    XUiManager.TipText("Theatre6SkillMoveError")
+                end
+            else
+                XUiManager.TipText("Theatre6SkillMoveError")
             end
         end
     end
@@ -262,13 +338,14 @@ end
 
 --选中逻辑
 function XUiPanelTheatre6SkilBagDetail:InitGridClick(uiGrid, slotType)
-    uiGrid:SetClickCb(function(skillId,slotType, pos)
-        self:ClickGrid(skillId,slotType, pos)
+    uiGrid:SetClickCb(function(skillId, slotType, pos)
+        self:ClickGrid(skillId, slotType, pos)
         if self._GridClickCb and self._GridClickCb[slotType] then
-            self._GridClickCb[slotType](skillId,slotType, pos,uiGrid:IsBaseSkill())
+            self._GridClickCb[slotType](skillId, slotType, pos, uiGrid:IsBaseSkill())
             return
         end
-        self._Control:OpenSkillTip(skillId, uiGrid.Transform, { SlotType = slotType, ReadOnly = false,IsBaseSkill = uiGrid:IsBaseSkill() }) --默认为点击打开详情
+        self._Control:OpenSkillTip(skillId, uiGrid.Transform,
+            { SlotType = slotType, ReadOnly = false, IsBaseSkill = uiGrid:IsBaseSkill() }) --默认为点击打开详情
     end)
 end
 
@@ -280,14 +357,14 @@ function XUiPanelTheatre6SkilBagDetail:ClearCurrentSelect()
 end
 
 --ui选中表现
-function XUiPanelTheatre6SkilBagDetail:ClickGrid(skillId,slotType, pos)
+function XUiPanelTheatre6SkilBagDetail:ClickGrid(skillId, slotType, pos, forceSelect)
     if not XTool.IsNumberValid(skillId) then
         return
     end
     if not self.SkillGrids[slotType][pos] then
         return
     end
-    if self.SkillGrids[slotType][pos]:IsDisable() then
+    if not forceSelect and self.SkillGrids[slotType][pos]:IsDisable() then
         return
     end
     self:ClearCurrentSelect()
@@ -307,12 +384,12 @@ function XUiPanelTheatre6SkilBagDetail:SetGridDisable(conditionFunc)
             local skillId = grids[index]:GetSkillId()
             local isBaseSkill = grids[index]:IsBaseSkill()
             if not XTool.IsNumberValid(skillId) or isBaseSkill == true then
-               grids[index]:SetDisable(true)
-               goto continue
+                grids[index]:SetDisable(true)
+                goto continue
             end
             grids[index]:SetDisable(conditionFunc(skillId))
-     
-        ::continue::
+
+            ::continue::
         end
     end
 end

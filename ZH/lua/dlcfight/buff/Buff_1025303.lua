@@ -1,37 +1,27 @@
-local Base = require("Buff/BuffBase/XBuffBase")
----@class XBuffScript1025303 : XBuffBase
-local XBuffScript1025303 = XDlcScriptManager.RegBuffScript(1025303, "XBuffScript1025303", Base)
+local XTheatre6BuffBase = require("Gameplay/Theatre6/XTheatre6BuffBase")
+---@class XBuffScript1025303 : XTheatre6BuffBase
+local XBuffScript1025303 = XDlcScriptManager.RegBuffScript(1025303, "XBuffScript1025303", XTheatre6BuffBase)
 
 
---效果说明：进入战斗时，自身每有1点【超算】属性或【拼刀】属性，【体力】属性提升1点。
+--效果说明：对手被【击飞】后，3秒内受到伤害提升15%。
 
 function XBuffScript1025303:Init()
     --初始化
-    Base.Init(self)
+    XTheatre6BuffBase.Init(self)
     ------------配置------------
     --self.magicId = 1015335
     --self.magicKind = 1015335
     --self.attrib = ENpcAttrib.HealAmpP
-    self.signalId = 1025101
-    ------------执行------------
-    self.originAttrib1 = self._proxy:GetNpcAttribValue(self._uuid,ETheatre6AttribType.Stamina)
-    self.originAttrib2 = self.originAttrib1*3
-    self._proxy:ApplyMagic(self._uuid, self._uuid, 1025904, self.originAttrib2)
 end
 
-function XBuffScript1025303:Update(dt)
-    --每帧执行
-    Base.Update(self, dt)
-    ------------执行------------
 
+function XBuffScript1025303:OnLuaAffixHitFly(eventArgs )
+    if eventArgs._launcherUUID ~= self._npcUUID then return end
+    self._proxy:ApplyMagic(self._enemyUUID, self._enemyUUID, 1025304, 1) --304的效果是3秒内受伤增加15%
+    -- self:LogError("303抓到了击飞效果"..self._npcUUID)
 end
 
-function XBuffScript1025303:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
-    if self._uuid == npcUUID and self.signalId == buffId then
-        self._proxy:ApplyMagic(self._uuid, self._uuid, 1025304, 1)
-    end
 
-end
 
 return XBuffScript1025303
 

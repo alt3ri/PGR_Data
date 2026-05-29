@@ -25,7 +25,7 @@ function XUiLifeTreeOpen:OnStart(cb)
     self.CloseCallback = cb
     self:Refresh()
     
-    XMVCA.XLifeTree:RequestLifeTreeFinishProcess(XMVCA.XLifeTree.EnumConst.PROCESS_TYPE.PV)
+    --XMVCA.XLifeTree:RequestLifeTreeFinishProcess(XMVCA.XLifeTree.EnumConst.PROCESS_TYPE.PV)
 end
 
 function XUiLifeTreeOpen:OnEnable()

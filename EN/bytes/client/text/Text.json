@@ -404,6 +404,10 @@
         "Text": "Reward Details"
     },
     {
+        "Key": "WeeklyActiveRewardTitle",
+        "Text": "Reward Details"
+    },
+    {
         "Key": "SettingCheckSave",
         "Text": "Save changes?"
     },
@@ -1152,6 +1156,10 @@
         "Text": "Progress {0}"
     },
     {
+        "Key": "BossSingleChallengeButtonScoreDisplay",
+        "Text": "{0}/<color=#525963>{1}</color>"
+    },
+    {
         "Key": "BossSingleNoNeedScore",
         "Text": "All obtained"
     },
@@ -1166,6 +1174,10 @@
     {
         "Key": "BossSingleMinuteHideBoss",
         "Text": "<color=#e53632>{0}m</color>"
+    },
+    {
+        "Key": "BossSingleTimeLimit",
+        "Text": "Clear Time Limit: {0} minute(s)"
     },
     {
         "Key": "BossSingleLevel",
@@ -3497,7 +3509,7 @@
     },
     {
         "Key": "PurchaseYKDes",
-        "Text": "[Monthly Pass A]\\n1. Purchase the Monthly Pass A to claim 100 Black Cards at 07:00 AM UTC every day for 30 days.\\n2. You may purchase up to 2 Monthly Pass A only. Cannot own Monthly Pass A & Monthly Pass C in a same period.\\n3. Once you have purchased a Monthly Pass A, you will receive 300 Black Cards immediately.\\n\\n[Monthly Pass C]\\n1. Purchase the Monthly Pass C to claim 90 Black Cards at 07:00 AM UTC every day for 30 days.\\n2. You may purchase up to 2 Monthly Pass C only. Cannot own Monthly Pass A and Monthly Pass C in a same period.\\n3. Once you have purchased a Monthly Pass C, you will receive 300 Black Cards immediately."
+        "Text": "\u6708\u5361\u8d2d\u4e70\u540e\uff0c\u6301\u7eed30\u65e5\uff0c\u6bcf\u65e55:00\uff0c\u53ef\u9886\u53d6100\u9ed1\u5361\u3002\\n\u6708\u5361\u6700\u591a\u8d2d\u4e706\u5f20\uff0c\u65f6\u95f4\u53e0\u52a0\uff0c\u6bcf\u5929\u53ea\u80fd\u9886\u53d6\u4e00\u6b21100\u9ed1\u5361\u5956\u52b1\u3002\\n\u8d2d\u4e70\u540e\u53ef\u7acb\u5373\u83b7\u53d6300\u9ed1\u5361\u3002"
     },
     {
         "Key": "SaveShowSetting",
@@ -17809,7 +17821,7 @@
     },
     {
         "Key": "BossSingleDetailAllScore",
-        "Text": "<color=#0E70BDFF>{0}</color>"
+        "Text": "{0}"
     },
     {
         "Key": "ActivityOpenMonthDayTime",
@@ -18402,6 +18414,42 @@
     {
         "Key": "BossInshotFightTips",
         "Text": "Incomplete tutorial stage. Go immediately?"
+    },
+    {
+        "Key": "BossInshotToastTowerUp",
+        "Text": "\u6210\u529f\u5347\u5c42"
+    },
+    {
+        "Key": "BossInshotToastTowerDown",
+        "Text": "\u964d\u5c42\u89e6\u53d1"
+    },
+    {
+        "Key": "BossInshotToastTowerClear",
+        "Text": "\u606d\u559c\u901a\u5173"
+    },
+    {
+        "Key": "BossInshotToastTowerDownProtected",
+        "Text": "\u964d\u5c42\u4fdd\u62a4\u89e6\u53d1"
+    },
+    {
+        "Key": "BossInshotToastTowerFloor",
+        "Text": "{0}F"
+    },
+    {
+        "Key": "BossInshotToastTowerDescUp",
+        "Text": "\u8bc4\u5206\u8fbe{0}\uff0c\u4e0a\u5347{1}\u5c42\u3002"
+    },
+    {
+        "Key": "BossInshotToastTowerDescDown",
+        "Text": "\u8bc4\u5206\u672a\u8fbe{0}\uff0c\u964d\u81f3{1}\u5c42\u3002"
+    },
+    {
+        "Key": "BossInshotToastTowerDescClear",
+        "Text": "\u53ef\u9009\u62e9\u5176\u4ed6Boss\u6311\u6218\uff0c\u83b7\u53d6\u66f4\u9ad8\u6392\u540d\u3002\\n\u5931\u8d25\u4e0d\u518d\u89e6\u53d1\u964d\u5c42\u3002"
+    },
+    {
+        "Key": "BossInshotToastTowerDescDownProtected",
+        "Text": "\u9996\u6b21\u672a\u8fbe{0}\uff0c\u4e0d\u964d\u5c42\u3002"
     },
     {
         "Key": "DlcRoomKickOutTip",
@@ -19029,7 +19077,7 @@
     },
     {
         "Key": "NonogramSettlementTitleAllFinish",
-        "Text": "You've explored all night explorations!"
+        "Text": "\u606d\u559c\u5b8c\u6210\u6240\u6709\u6697\u623f\u63a2\u7d22"
     },
     {
         "Key": "NonogramSettlementTitleExit",
@@ -23505,7 +23553,7 @@
     },
     {
         "Key": "PurchaseComboContent",
-        "Text": "1. Rules: A bundle contains multiple Supply Packs. Upon purchase, you will receive the contents of multiple Supply Packs at a discounted price.\\n2. Supply Packs purchased individually do not affect the bundle's pricing calculation.\\n3. After purchase, all Supply Packs contained in the bundle will be marked as sold out and cannot be purchased again."
+        "Text": "1. Rules: A bundle contains multiple Supply Packs. Upon purchase, you will receive the contents of multiple Supply Packs at the displayed price.\\n2. Supply Packs purchased individually do not affect the bundle's pricing calculation.\\n3. After purchase, all Supply Packs contained in the bundle will be marked as sold out and cannot be purchased again."
     },
     {
         "Key": "PurchaseFirstRechargeTipTitle",
@@ -23728,6 +23776,102 @@
         "Text": "Current: {0}"
     },
     {
+        "Key": "Theatre6StoryProgress",
+        "Text": "Progress: {0}/{1}"
+    },
+    {
+        "Key": "Theatre6StoryConsumeNoEnought",
+        "Text": "Insufficient Sealed Writs"
+    },
+    {
+        "Key": "Theatre6StoryConsumeTip",
+        "Text": "Obtainable from stages: {0}"
+    },
+    {
+        "Key": "Theatre6StoryPurchaseTip",
+        "Text": "Insufficient {0}. Obtain more from stages."
+    },
+    {
+        "Key": "Theatre6StoryGiveUp",
+        "Text": "Abandon the current progress?"
+    },
+    {
+        "Key": "Theatre6Save",
+        "Text": "Save"
+    },
+    {
+        "Key": "Theatre6SaveReplace",
+        "Text": "Compare & Replace"
+    },
+    {
+        "Key": "Theatre6AttrPackTypeName",
+        "Text": "Relics"
+    },
+    {
+        "Key": "Theatre6BuffEffectTimes",
+        "Text": "Active: {0}"
+    },
+    {
+        "Key": "Theatre6BuffRemainingTimes",
+        "Text": "Remaining: {0}"
+    },
+    {
+        "Key": "Theatre6TaskFinish",
+        "Text": "Completed"
+    },
+    {
+        "Key": "Theatre6StoryUnlock",
+        "Text": "Unlock {0}"
+    },
+    {
+        "Key": "Theatre6FreeRefresh",
+        "Text": "Free"
+    },
+    {
+        "Key": "Theatre6TaskGoldTip",
+        "Text": "Insufficient Ancient Coins"
+    },
+    {
+        "Key": "Theatre6TaskRefreshTip",
+        "Text": "Refresh limit reached"
+    },
+    {
+        "Key": "Theatre6TaskChooseCountTip",
+        "Text": "Please select {0} mission(s)"
+    },
+    {
+        "Key": "Theatre6TaskProgressFinish",
+        "Text": "Perfectly Done!"
+    },
+    {
+        "Key": "Theatre6TaskChooseLimit",
+        "Text": "Mission selection limit reached"
+    },
+    {
+        "Key": "Theatre6FightEquipSkillTip",
+        "Text": "Equippable skills available. Enter battle anyway?"
+    },
+    {
+        "Key": "Theatre6FightHighSkillTip",
+        "Text": "\u5b58\u5728\u66f4\u9ad8\u7b49\u7ea7\u7684\u6280\u80fd\uff0c\u662f\u5426\u76f4\u63a5\u8fdb\u5165\u6218\u6597"
+    },
+    {
+        "Key": "Theatre6TalentLvRichText",
+        "Text": "<size=28><b>Lv.</b></size>{0}"
+    },
+    {
+        "Key": "Theatre6TaskShopTimeLabel",
+        "Text": "Remaining time: {0}"
+    },
+    {
+        "Key": "Theatre6EntranceTimeLabel",
+        "Text": "Limited-Time Rewards expire in: {0}"
+    },
+    {
+        "Key": "Theatre6ChooseMaxTaskTip",
+        "Text": "Select 3 missions"
+    },
+    {
         "Key": "UsePackageOverMaxCount",
         "Text": "{0} usage limit reached"
     },
@@ -23800,6 +23944,14 @@
         "Text": "Failed to retrieve stage data"
     },
     {
+        "Key": "Theatre6GiveUpTitle",
+        "Text": "\u653e\u5f03\u5f52\u6863"
+    },
+    {
+        "Key": "Theatre6SaveGiveUpContent",
+        "Text": "\u662f\u5426\u653e\u5f03\u5f52\u6863"
+    },
+    {
         "Key": "DownloadAllCharacterFashion",
         "Text": "All Coatings for this member"
     },
@@ -23809,7 +23961,7 @@
     },
     {
         "Key": "FashionDownloadAllCharacterDesc",
-        "Text": "All undownloaded Coating resources for {0}"
+        "Text": "{0}\u6240\u6709\u672a\u4e0b\u8f7d\u7684\u6d82\u88c5\u8d44\u6e90"
     },
     {
         "Key": "FubenRepeatChallengeDoubleRewardTimes",
@@ -23820,12 +23972,68 @@
         "Text": "Download Started"
     },
     {
+        "Key": "BtnPvpTip",
+        "Text": "\u5728\u540e\u7eed\u7248\u672c\u5185\uff0c\u53ef\u4ee5\u4f7f\u7528\u89d2\u8272\u5f52\u6863\u4e0e\u5176\u4ed6\u73a9\u5bb6\u8fdb\u884c\u5bf9\u6218"
+    },
+    {
+        "Key": "BtnPvpTipTitle",
+        "Text": "Stay tuned"
+    },
+    {
+        "Key": "Theatre6Shop",
+        "Text": "Shop"
+    },
+    {
+        "Key": "Theatre6Task",
+        "Text": "Mission"
+    },
+    {
         "Key": "SelectFashionToUninstall",
         "Text": "Select the Coating resources to uninstall"
     },
     {
         "Key": "SelectFashionToDownload",
         "Text": "Select the Coating resources to download"
+    },
+    {
+        "Key": "Theatre6StoryGiveUpTitle",
+        "Text": "Abandon Progress"
+    },
+    {
+        "Key": "Theatre6ActiveSkill",
+        "Text": "Active Skill"
+    },
+    {
+        "Key": "Theatre6BattleSkill",
+        "Text": "Parry Skill"
+    },
+    {
+        "Key": "Theatre6CSSkill",
+        "Text": "Counter Skill"
+    },
+    {
+        "Key": "Theatre6InsertSkill",
+        "Text": "Trigger Skill"
+    },
+    {
+        "Key": "Theatre6DifficultyEasy",
+        "Text": "EASY"
+    },
+    {
+        "Key": "Theatre6DifficultyHard",
+        "Text": "HARD"
+    },
+    {
+        "Key": "Theatre6CoinNotEnough",
+        "Text": "Insufficient Ancient Coins. Cannot purchase."
+    },
+    {
+        "Key": "Theatre6SkillMax",
+        "Text": "Skill limit reached. Cannot purchase."
+    },
+    {
+        "Key": "Theatre6OverClockEfficiency",
+        "Text": "DMG Multiplier"
     },
     {
         "Key": "DownloadFashionFinished",
@@ -23842,6 +24050,46 @@
     {
         "Key": "UninstallFashionConfirm",
         "Text": "Uninstall the selected Coating resources?"
+    },
+    {
+        "Key": "Theatre6SkillCSMag",
+        "Text": "DMG Multiplier"
+    },
+    {
+        "Key": "PassportCloudGameDesc",
+        "Text": "Can be used for PGR Cloud Gaming (Must log into cloud gaming before the version ends to activate)"
+    },
+    {
+        "Key": "ChangeGetFashionGroup",
+        "Text": "Set Changed"
+    },
+    {
+        "Key": "ChangeNoGetFashionGroup",
+        "Text": "Complete Coating set not owned. Owned Coating equipped."
+    },
+    {
+        "Key": "Theatre6SanTitleNormal",
+        "Text": "Sanity Normal"
+    },
+    {
+        "Key": "Theatre6SanTitleDeath",
+        "Text": "Maddening Whispers"
+    },
+    {
+        "Key": "Theatre6SanTitleAbnormal",
+        "Text": "Sanity Abnormal"
+    },
+    {
+        "Key": "Theatre6SanTipDesc",
+        "Text": "Current Sanity status. Negative Reverbs will trigger when Sanity drops too low."
+    },
+    {
+        "Key": "Theatre6BattleShopName",
+        "Text": "Intel Space"
+    },
+    {
+        "Key": "Theatre6BattleShopTipExitConfirm",
+        "Text": "placeholder_\u8fd8\u6709\u53ef\u8d2d\u4e70\u5546\u54c1\u6216\u514d\u8d39\u5237\u65b0\u6b21\u6570\uff0c\u662f\u5426\u786e\u8ba4\u79bb\u5f00\u5546\u5e97\uff1f"
     },
     {
         "Key": "BattleFashionUndownloadedTipTitle",
@@ -23864,11 +24112,163 @@
         "Text": "Resource download in progress. Cancel download before proceeding."
     },
     {
+        "Key": "Theatre6PopupSkillLevelUpNotShow",
+        "Text": "\u65e0\u53ef\u5347\u7ea7\u6280\u80fd"
+    },
+    {
+        "Key": "Theatre6PopupSkillLevelUpCancel",
+        "Text": "\u786e\u5b9a\u8981\u653e\u5f03\u5347\u7ea7\u5417\uff1f"
+    },
+    {
+        "Key": "Theatre6SkillCoinNotEnough",
+        "Text": "Insufficient Ancient Coins"
+    },
+    {
+        "Key": "PurchaseYKRetroactiveNotNeeded",
+        "Text": "No make-up sign-in needed"
+    },
+    {
+        "Key": "PurchaseYKRetroactiveHelpTitle",
+        "Text": "Makeup Sign-in Details"
+    },
+    {
+        "Key": "PurchaseYKRetroactiveHelpContent",
+        "Text": "Spend a Makeup Sign-in Card to complete one missed monthly sign-in.\\nComplete Weekly Missions to obtain Makeup Sign-in Cards.\\nAt the month's end, available cards will be automatically consumed to fill any missing sign-ins.\\nUnused Makeup Sign-in Cards will expire when the month ends."
+    },
+    {
+        "Key": "PurchaseYKRetroactiveNeedMoreItems",
+        "Text": "Insufficient Makeup Sign-in Cards"
+    },
+    {
+        "Key": "PassportFashionBuyBtnText",
+        "Text": "Paid Intelligence"
+    },
+    {
         "Key": "FashionSuitProgressComplate",
         "Text": "Complete"
     },
     {
+        "Key": "PassportAutoWindowTitleOpen",
+        "Text": "Tactical Assessment Manual now available"
+    },
+    {
+        "Key": "PassportAutoWindowTitleSprint",
+        "Text": "Tactical Assessment Manual in full swing"
+    },
+    {
+        "Key": "PassportAutoWindowTitleNearEnd",
+        "Text": "Tactical Assessment Manual ending soon"
+    },
+    {
+        "Key": "PassportAutoWindowSubtitleOpen",
+        "Text": "Unlock intel to claim premium rewards"
+    },
+    {
+        "Key": "PassportAutoWindowSubtitleDoubleExp ",
+        "Text": "Limited-time double intel value"
+    },
+    {
+        "Key": "PassportObtain",
+        "Text": "This Pass period has <color=#57f0fb>4</color> rounds. Compensation rewards have been sent to you."
+    },
+    {
+        "Key": "ShopItemRoleTips",
+        "Text": "Current Level: {0}. Purchase {1} more to reach Level {2}"
+    },
+    {
+        "Key": "ExportPerformanceTipsDesc",
+        "Text": "Start auto-export?"
+    },
+    {
+        "Key": "ExportPerformanceCancelTipsDesc",
+        "Text": "Export in progress. Cancel?"
+    },
+    {
         "Key": "WaitingForDownloadFashionTip",
         "Text": "Pending other downloads. Press [Cancel Download] to stop."
+    },
+    {
+        "Key": "Theatre6SkillUpGrade",
+        "Text": "\u7b49\u7ea7\u63d0\u5347"
+    },
+    {
+        "Key": "Theatre6GetSkill",
+        "Text": "Skill Obtained"
+    },
+    {
+        "Key": "Theatre6GetAttrPack",
+        "Text": "Relics Obtained"
+    },
+    {
+        "Key": "FuBenBossSingleResetNotUsable",
+        "Text": "Cannot reset at the moment"
+    },
+    {
+        "Key": "SetTeamTag",
+        "Text": "Save changes?"
+    },
+    {
+        "Key": "FashionColorLock",
+        "Text": "\u5c1a\u672a\u83b7\u5f97\u5f53\u524d\u5f02\u8272\u6d82\u88c5"
+    },
+    {
+        "Key": "Theatre6SkillChangeError1",
+        "Text": "\u4f4e\u7b49\u7ea7\u6280\u80fd\u65e0\u6cd5\u66ff\u6362\u88c5\u5907\u4e2d\u7684\u9ad8\u7b49\u7ea7\u6280\u80fd"
+    },
+    {
+        "Key": "Theatre6SkillChangeError2",
+        "Text": "\u5df2\u88c5\u5907\u76f8\u540c\u6280\u80fd,\u65e0\u6cd5\u91cd\u590d\u88c5\u5907"
+    },
+    {
+        "Key": "Theatre6SkillSlotFull",
+        "Text": "\u88c5\u5907\u69fd\u5df2\u6ee1"
+    },
+    {
+        "Key": "Theatre6ShopStatus1",
+        "Text": "Current Refresh"
+    },
+    {
+        "Key": "Theatre6ShopStatus2",
+        "Text": "Free Refresh"
+    },
+    {
+        "Key": "Theatre6ShopStatus3",
+        "Text": "Refresh Limit"
+    },
+    {
+        "Key": "Theatre6SkillBagFull",
+        "Text": "\u5f53\u524d\u80cc\u5305\u5df2\u6ee1\uff0c%s \u5c06\u81ea\u52a8\u8f6c\u6362\u4e3a\u91d1\u5e01%s\uff0c\u786e\u5b9a\u8981\u7ee7\u7eed\u5417\uff1f"
+    },
+    {
+        "Key": "Theatre6SkillReplaceHigh",
+        "Text": "\u5df2\u66ff\u6362\u4e3a\u9ad8\u7ea7\u6280\u80fd"
+    },
+    {
+        "Key": "Theatre6SkillAutoToBag",
+        "Text": "\u65e0\u6cd5\u88c5\u5907\u4f4e\u7b49\u7ea7\u6280\u80fd\uff0c\u81ea\u52a8\u8fdb\u5165\u80cc\u5305"
+    },
+    {
+        "Key": "GameCollectionTips1",
+        "Text": "\u5f53\u524d\u5df2\u6709\u5176\u4ed6\u73a9\u6cd5\u8fdb\u884c\u4e2d\uff0c\u662f\u5426\u7ed3\u7b97\u540e\u5f00\u59cb\u65b0\u7684\u73a9\u6cd5\uff1f"
+    },
+    {
+        "Key": "GameCollectionTips2",
+        "Text": "\u662f\u5426\u653e\u5f03{0}\u8fdb\u5ea6\uff0c\u5e76\u7acb\u5373\u7ed3\u7b97"
+    },
+    {
+        "Key": "GameCollectionTitle1",
+        "Text": "Highest Resource Points"
+    },
+    {
+        "Key": "GameCollectionTitle2",
+        "Text": "Highest Score"
+    },
+    {
+        "Key": "GameCollectionBreakRecordTitle",
+        "Text": "\u606d\u559c\u4f60\u5728-{0}\u4e2d\u518d\u4e00\u6b21\u7a81\u7834\u81ea\u5df1"
+    },
+    {
+        "Key": "Theatre6SkillMoveError",
+        "Text": "\u6280\u80fd\u7c7b\u578b\u4e0d\u6b63\u786e\uff0c\u65e0\u6cd5\u4ea4\u6362"
     }
 ]

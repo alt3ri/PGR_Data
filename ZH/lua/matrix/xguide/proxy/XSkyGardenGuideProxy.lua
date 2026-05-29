@@ -45,6 +45,7 @@ function XSkyGardenGuideProxy:ExecuteGuide(template, isUiOpen)
     end
     local id = XMVCA.XBigWorldCommon:AddCommonSequentialJob()
     if id and id > 0 then
+        XDataCenter.GuideManager.TryShowGuideMask()
         XMVCA.XBigWorldCommon:AddSequentialJobBehavior(id, function()
             XDataCenter.GuideManager.ExecuteGuide(template)
         end)

@@ -133,8 +133,9 @@ function Reader:ReadString()
 end
 
 function Reader:ReadIntFix()
-    self.index = self.index + 4
-    local b1, b2, b3, b4 = string.byte(self.bytes, 1, 4)
+    local endPos = self.index + 4
+    local b1, b2, b3, b4 = string.byte(self.bytes, self.index, endPos)
+    self.index = endPos
     return b1 | b2 << 8 | b3 << 16 | b4 << 24
 end
 

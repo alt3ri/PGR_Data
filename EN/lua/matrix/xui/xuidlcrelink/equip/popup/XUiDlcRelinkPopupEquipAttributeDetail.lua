@@ -9,11 +9,11 @@ function XUiDlcRelinkPopupEquipAttributeDetail:OnAwake()
     self.GridAttribute.gameObject:SetActiveEx(false)
     self.GridSkillAttribute.gameObject:SetActiveEx(false)
     self.GridAttribute2.gameObject:SetActiveEx(false)
-    
+
     if self.GridSpecialAttribute then
         self.GridSpecialAttribute.gameObject:SetActiveEx(false)
     end
-    
+
     self:RegisterUiEvents()
 
     ---@type UiObject[]
@@ -23,16 +23,15 @@ function XUiDlcRelinkPopupEquipAttributeDetail:OnAwake()
     ---@type XUiGridDlcRelinkEquipAttribute[]
     self.Attribute2GridList = {}
     ---@type XUiGridDlcRelinkEquipAttribute[]
-    self.SpecialAttribute2GridList = {}end
+    self.SpecialAttribute2GridList = {}
+end
 
----@param equipUids table<number, number> 装备Uid列表 key: 装备栏位索引，value: 装备Uid
 ---@param characterId number 角色Id
-function XUiDlcRelinkPopupEquipAttributeDetail:OnStart(equipUids, characterId, isNotSelf)
-    self.EquipUids = equipUids
+---@param totalAttributes { FactorId: number, IsSkill:boolean, CurLevel:number }[] 属性列表
+function XUiDlcRelinkPopupEquipAttributeDetail:OnStart(characterId, totalAttributes, isNotSelf)
     self.CharacterId = characterId
+    self.TotalAttributes = totalAttributes or {}
     self.IsNotSelf = isNotSelf or false
-    ---@type { FactorId: number, IsSkill:boolean, CurLevel:number }[]
-    self.TotalAttributes = self._Control:GetEquipTotalAttributeList(equipUids, self.IsNotSelf)
 
     self.DefaultIndex = 1
     self.CurSelectIndex = 0
@@ -94,10 +93,10 @@ function XUiDlcRelinkPopupEquipAttributeDetail:OnPanelTabSelect(index)
     if self.PanelSpecialAttribute then
         self.PanelSpecialAttribute.gameObject:SetActiveEx(detailShowType == XEnumConst.DlcRelink.FactorDetailShowType.SpeicalSkill)
     end
-    
+
     -- 属性描述
     local desc = self._Control:GetFactorDescDesc(attribute.FactorId)
-    
+
     if detailShowType == XEnumConst.DlcRelink.FactorDetailShowType.Damage then
         self.TxtContent2.text = desc
         self:RefreshSkill()

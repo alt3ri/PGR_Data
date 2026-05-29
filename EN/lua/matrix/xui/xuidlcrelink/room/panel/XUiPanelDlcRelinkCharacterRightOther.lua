@@ -187,11 +187,10 @@ function XUiPanelDlcRelinkCharacterRightOther:RefreshInfo()
         self.RawImage:SetRawImage(occupationIcon)
     end
     self.Txt.text = self._Control:GetCharacterOccupationName(characterId, styleType)
-    -- 角色风格图标
+    -- 切换风格按钮
     local styleIcon = self._Control:GetCharacterStyleIcon(characterId, styleType)
-    if not string.IsNilOrEmpty(styleIcon) then
-        self.RImgOcc:SetRawImage(styleIcon)
-    end
+    self.BtnSwitch:SetRawImageEx(styleIcon)
+    self.BtnSwitch:ShowReddot(false)
 end
 
 function XUiPanelDlcRelinkCharacterRightOther:RefreshAttributes()
@@ -229,6 +228,7 @@ end
 function XUiPanelDlcRelinkCharacterRightOther:RegisterUiEvents()
     self.BtnMore:AddEventListener(handler(self, self.OnBtnMoreClick))
     self.BtnLv:AddEventListener(handler(self, self.OnBtnLvClick))
+    self.BtnSwitch:AddEventListener(handler(self, self.OnBtnSwitchClick))
 end
 
 function XUiPanelDlcRelinkCharacterRightOther:OnBtnMoreClick()
@@ -240,7 +240,17 @@ function XUiPanelDlcRelinkCharacterRightOther:OnBtnLvClick()
     if XTool.IsTableEmpty(equipUids) then
         return
     end
-    XLuaUiManager.Open("UiDlcRelinkPopupEquipAttributeDetail", equipUids, self.Member:GetCharacterId(), true)
+    local totalAttributes = self._Control:GetEquipTotalAttributeList(self.CharacterId, equipUids, true)
+    if XTool.IsTableEmpty(totalAttributes) then
+        return
+    end
+    XLuaUiManager.Open("UiDlcRelinkPopupEquipAttributeDetail", self.Member:GetCharacterId(), totalAttributes, true)
+end
+
+function XUiPanelDlcRelinkCharacterRightOther:OnBtnSwitchClick()
+    local characterId = self.Member:GetCharacterId()
+    local styleType = self.Member:GetStyleType()
+    XLuaUiManager.Open("UiDlcRelinkPopupSwitchCareer", characterId, styleType, nil, true)
 end
 
 return XUiPanelDlcRelinkCharacterRightOther

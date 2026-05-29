@@ -23,6 +23,7 @@ local stringFormat = string.format
 
 local DebugForceOpenSubpackage = false
 local IsDebugBuild = CS.XApplication.Debug
+local IsSkipGMTest = false
 local CsLog = CS.XLog
 
 --分包下载源
@@ -122,8 +123,8 @@ function XSubPackageAgency:CheckFashionDownloadPrompt()
     -- 2. 统计玩家拥有的涂装数量（仅计入 FashionDownloadConfig 中的涂装，剔除默认皮肤）
     local allConfigs = self._Model:GetAllFashionDownloadConfigs()
     local fashionCount = 0
-    for fashionId in pairs(allConfigs) do
-        if XDataCenter.FashionManager.CheckHasFashion(fashionId) then
+    for fashionId, config in pairs(allConfigs) do
+        if not config.NotShow and XDataCenter.FashionManager.CheckHasFashion(fashionId) then
             fashionCount = fashionCount + 1
         end
     end
@@ -243,7 +244,7 @@ function XSubPackageAgency:SyncSubpackageStates()
                 end
             end
             if not isActive then
-                item:InitState()
+                item:UpdateAggregateState()
             end
         end
     end
@@ -742,7 +743,7 @@ function XSubPackageAgency:PauseAll()
     end
     for _, subId in pairs(self._SubpackageWaitDnLdQueue or {}) do
         local item = self._Model:GetSubpackageItem(subId)
-        item:InitState()
+        item:UpdateAggregateState()
     end
     self._SubpackageWaitDnLdQueue = {}
 
@@ -816,7 +817,7 @@ function XSubPackageAgency:ProcessPrepare(subpackageId)
         table.remove(self._SubpackageWaitDnLdQueue, index)
     end
     local item = self._Model:GetSubpackageItem(subpackageId)
-    item:InitState()
+    item:UpdateAggregateState()
 
     XEventManager.DispatchEvent(XEventId.EVENT_SUBPACKAGE_PREPARE, subpackageId)
 end
@@ -1191,6 +1192,8 @@ function XSubPackageAgency:_UninstallResCore(resId, currentVersion)
 
     -- 4. 内存刷新
     self._Model:RemoveResCache(resId)
+
+    -- 通过 Sub 的 InitFileInfo 重建 Res 文件信息（会 lazy-create 新 XResource 并挂入 _ResItemDic）
     local affectedSubpackageIds = self._Model:GetSubpackageIdByResId(resId)
     if affectedSubpackageIds then
         for _, subId in ipairs(affectedSubpackageIds) do
@@ -1199,15 +1202,24 @@ function XSubPackageAgency:_UninstallResCore(resId, currentVersion)
                 for assetPath, info in pairs(indexInfo) do
                     subItem:InitFileInfo(assetPath, info, resId)
                 end
-                subItem:FileInitComplete()
             end
         end
     end
 
-    -- 补调新 XResource 的 FileInitComplete，确保状态正确初始化
+    -- 先完成 Res 初始化，确保 Res 状态就绪
     local newResItem = self._Model:GetResourceItem(resId)
     if newResItem then
         newResItem:FileInitComplete()
+    end
+
+    -- 再通知父 Sub 重新聚合（此时 Res 状态已正确）
+    if affectedSubpackageIds then
+        for _, subId in ipairs(affectedSubpackageIds) do
+            local subItem = self._Model:GetSubpackageItem(subId)
+            if subItem then
+                subItem:FileInitComplete()
+            end
+        end
     end
 end
 
@@ -1272,7 +1284,7 @@ end
 
 function XSubPackageAgency:InitDownloader()
     if not self._DownloadCenter then
-        self._DownloadCenter = CS.XMTDownloadCenter()
+        self._DownloadCenter = XTool.CreateDownloadManager()
         self._DownloadCenter:SetThreadNumber(self._ThreadCount)
         local groupIds = self._Model:GetGroupIdList()
         for _, groupId in ipairs(groupIds) do
@@ -2358,6 +2370,20 @@ function XSubPackageAgency:GetAllFashionDownloadConfigs()
     return self._Model:GetAllFashionDownloadConfigs()
 end
 
+--- 设置分包跳过热更自动补全标记
+---@param subId number
+---@param isSkip boolean
+function XSubPackageAgency:SetSubPackageSkipAutoComplete(subId, isSkip)
+    self._LaunchDlcManager.SetSubPackageSkipAutoComplete(subId, isSkip)
+end
+
+--- 检查分包是否跳过热更自动补全
+---@param subId number
+---@return boolean
+function XSubPackageAgency:IsSubPackageSkipAutoComplete(subId)
+    return self._LaunchDlcManager.IsSubPackageSkipAutoComplete(subId)
+end
+
 --- 检查指定resId是否在下载队列或正在下载中
 ---@param resId number
 ---@return boolean
@@ -2654,6 +2680,73 @@ function XSubPackageAgency:IsSubOrResDownloading(subpackageId)
         end
     end
     return false
+end
+
+function XSubPackageAgency:SkipGMTest()
+    if not IsDebugBuild or not IsSkipGMTest then
+        return
+    end
+    local AsyncFunc = function(func)
+        return coroutine.wrap(function(...)
+            local _, res = pcall(func, ...)
+            return res
+        end)()
+    end
+    local SkipUiName = {
+        ["UiCharacterSystemV2P6"] = true,
+        ["SkipToCharacterV2P6"] = true,
+        ["UiNewFuben"] = true,
+        ["UiWelfare"] = true,
+        ["UiBag"] = true,
+        ["UiPurchase"] = true,
+        ["UiTask"] = true,
+    }
+    AsyncFunc(function()
+        local templates = XFunctionConfig.GetAllSkipFunctionalTemplate()
+        for id, template in pairs(templates) do
+            if not IsSkipGMTest then
+                break
+            end
+            if template.Origin == XFunctionManager.SkipOrigin.Main
+                    or template.Origin == XFunctionManager.SkipOrigin.ActivityUrl
+                    or template.Origin == XFunctionManager.SkipOrigin.SonSystem
+                    or template.Origin == XFunctionManager.SkipOrigin.Section
+                    or template.Origin == XFunctionManager.SkipOrigin.Webpage
+            then
+                goto continue
+            end
+            if string.IsNilOrEmpty(template.UiName) or SkipUiName[template.UiName] then
+                goto continue
+            end
+            local result = XFunctionManager.SkipInterface(id)
+            if result == false then
+                goto continue
+            end
+            print("[SkipGMTest]跳转成功, Id = " .. id)
+            asynWaitSecond(1)
+            if XFightUtil.IsFighting() then
+                asynWaitSecond(9)
+            end
+            if template.Origin == XFunctionManager.SkipOrigin.Dormitory then
+                asynWaitSecond(4)
+            end
+            if XFightUtil.IsFighting() then
+                XFightUtil.ClearFight()
+            end
+            XLuaUiManager.RunMain()
+            asynWaitSecond(0.2)
+            ::continue::
+        end
+        XLog.Error("跳转测试结束！")
+    end)
+end
+
+function XSubPackageAgency:IsSkipGMTest()
+    return IsSkipGMTest
+end
+
+function XSubPackageAgency:ToggleSkipGMTest()
+    IsSkipGMTest = not IsSkipGMTest
 end
 
 return XSubPackageAgency

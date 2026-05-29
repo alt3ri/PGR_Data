@@ -1,5 +1,3 @@
-require("XBehavior/XLuaBehaviorManager")
-require("XBehavior/XLuaBehaviorAgent")
 ---@class XGuildDormCharAgent : XLuaBehaviorAgent
 local XGuildDormCharAgent = XLuaBehaviorManager.RegisterAgent(XLuaBehaviorAgent, "XGuildDormCharAgent")
 

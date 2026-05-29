@@ -27,12 +27,13 @@ function XUiMiniGamesCollectionMain:InitComponents()
     self.BtnStart:AddEventListener(function() self:OnBtnStartClick() end)
     self.BtnContinue:AddEventListener(function() self:OnBtnContinueClick() end)
     self._PanelAsset = XUiHelper.NewPanelActivityAssetSafe({ XDataCenter.ItemManager.ItemId.Coin }, self
-    .PanelSpecialTool, self)
+        .PanelSpecialTool, self)
 end
 
 function XUiMiniGamesCollectionMain:OnStart(...)
     self:Refresh()
     XMVCA.XFunction:EnterFunction(XFunctionManager.FunctionName.GameCollection)
+    XMVCA.XGameCollection:MarkFirstEnterMain()
 end
 
 function XUiMiniGamesCollectionMain:OnEnable()
@@ -42,7 +43,24 @@ function XUiMiniGamesCollectionMain:OnEnable()
     self:UpdateReddot()
     self._Timer = XScheduleManager.ScheduleForever(function()
         self:RefreshTime()
+        self:CheckActivityEnd()
     end, XScheduleManager.SECOND)
+    self._Control:TryOpenExitRecord()
+end
+
+function XUiMiniGamesCollectionMain:CheckActivityEnd()
+    if self:IsDestroy() then
+        return
+    end
+    if not self._Control:IsActivityEnd() then
+        return
+    end
+    if self._Timer then
+        XScheduleManager.UnSchedule(self._Timer)
+        self._Timer = nil
+    end
+    XMVCA.XFunction:ExitFunction(XFunctionManager.FunctionName.GameCollection)
+    XLuaUiManager.RunMain()
 end
 
 function XUiMiniGamesCollectionMain:OnDisable()
@@ -118,6 +136,11 @@ function XUiMiniGamesCollectionMain:RefreshMaxScore()
     end
 
     self.TxtFraction.text = tostring(self._Control:GetCollectionMaxScore(self._CurGameType))
+    local titleStr = XUiHelper.GetText("GameCollectionTitle1")
+    if self._CurGameType ~= XEnumConst.GameCollection.GameType.GoldenMiner then
+        titleStr = XUiHelper.GetText("GameCollectionTitle2")
+    end
+    self.TxtTitle.text = titleStr
 end
 
 function XUiMiniGamesCollectionMain:RefreshActionButtons()
@@ -135,7 +158,7 @@ function XUiMiniGamesCollectionMain:RefreshActionButtons()
 end
 
 function XUiMiniGamesCollectionMain:UpdateReddot()
-    self.BtnTask:ShowReddot(XMVCA.XGameCollection:HasRewardCanGet() or XMVCA.XGameCollection:HasGoodCanBuy() or XMVCA.XGameCollection:CheckActivityTips())
+    self.BtnTask:ShowReddot(XMVCA.XGameCollection:HasRewardCanGet() or (XMVCA.XGameCollection:CheckActivityTips() and XMVCA.XGameCollection:HasGoodCanBuy()))
 end
 
 function XUiMiniGamesCollectionMain:OnBtnTaskClick(eventData)
@@ -143,13 +166,15 @@ function XUiMiniGamesCollectionMain:OnBtnTaskClick(eventData)
 end
 
 function XUiMiniGamesCollectionMain:OnBtnGiveUpClick(eventData)
-    self._Control:GiveUpGame(self._CurGameType, function()
-        if self:IsDestroy() then
-            return
-        end
+    self._Control:OpenDialog(XUiHelper.GetText("TipTitle"), XUiHelper.GetText("GameCollectionTips2",self._CurGameCfg.Name), function()
+        self._Control:GiveUpGame(self._CurGameType, function()
+            if self:IsDestroy() then
+                return
+            end
 
-        self:RefreshActionButtons()
-        self:RefreshMaxScore()
+            self:RefreshActionButtons()
+            self:RefreshMaxScore()
+        end)
     end)
 end
 
@@ -164,9 +189,8 @@ function XUiMiniGamesCollectionMain:OnBtnStartClick(eventData)
         self._Control:RequestEnterGame(targetGameType)
         return
     end
-
-    XLuaUiManager.Open("UiDialog", XUiHelper.GetText("TipTitle"), "当前已有其他玩法进行中，是否结算后开始新的玩法？",
-        XUiManager.DialogType.Normal, nil, function()
+    self._Control:OpenDialog(XUiHelper.GetText("TipTitle"), XUiHelper.GetText("GameCollectionTips1"),
+        function()
             local latestCanGiveUpGameTypes = self._Control:GetOtherCanGiveUpGameTypes(targetGameType)
             if XTool.IsTableEmpty(latestCanGiveUpGameTypes) then
                 self._Control:RequestEnterGame(targetGameType)
@@ -177,7 +201,6 @@ function XUiMiniGamesCollectionMain:OnBtnStartClick(eventData)
                 if self:IsDestroy() then
                     return
                 end
-
                 self._Control:RequestEnterGame(targetGameType)
             end)
         end)
@@ -188,7 +211,7 @@ function XUiMiniGamesCollectionMain:OnBtnGamesClick(isNext)
         return
     end
     local count = #self._ActivityCfgs
-    local offset = isNext and 1 or -1
+    local offset = isNext and -1 or 1
     self._CurSelectIndex = (self._CurSelectIndex - 1 + offset) % count + 1
     self:SelectGame(self._ActivityCfgs[self._CurSelectIndex])
 end
@@ -206,4 +229,5 @@ function XUiMiniGamesCollectionMain:OnBtnBackClick()
     XMVCA.XFunction:ExitFunction(XFunctionManager.FunctionName.GameCollection)
     self:Close()
 end
+
 return XUiMiniGamesCollectionMain

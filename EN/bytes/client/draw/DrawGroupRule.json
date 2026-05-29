@@ -21,7 +21,10 @@
         "IsNotSelectDefault": null,
         "IsShowFilter": 1.0,
         "CharFilterElementList": "[1, 2, 3, 4, 5, 6]",
-        "DrawRules": "['<color=#ff5f2d>S-Rank Character</color>', 'Guaranteed <color=#ff5f2d>A-Rank</color> or above character in <color=#ff5f2d>10 pulls</color>']"
+        "DrawRules": "['<color=#ff5f2d>S-Rank Character</color>', 'Guaranteed <color=#ff5f2d>A-Rank</color> or above character in <color=#ff5f2d>10 pulls</color>']",
+        "IsCharacterImage": null,
+        "DrawName": null,
+        "DrawGroupName": null
     },
     {
         "Id": 2,
@@ -45,7 +48,10 @@
         "IsNotSelectDefault": null,
         "IsShowFilter": null,
         "CharFilterElementList": null,
-        "DrawRules": null
+        "DrawRules": null,
+        "IsCharacterImage": null,
+        "DrawName": null,
+        "DrawGroupName": null
     },
     {
         "Id": 4,
@@ -54,8 +60,8 @@
         "RareRank": null,
         "GroupBtnBg": null,
         "MainRules": "['Choose any set (80% chance to receive the chosen 6\u2605 Weapon when getting a 6\u2605 Weapon)', 'Guaranteed 5\u2605 or above Weapon for every 10 attempts.', 'Guaranteed 6\u2605 Weapon every 30 attempts']",
-        "BaseRuleTitles": "['Custom Set', 'Target Mode Rules']",
-        "BaseRules": "['Choose a Weapon Set for your research. The chosen set will get an increased chance to receive.', 'In Target Mode, the chance of chosen Weapon set will increase greatly.']",
+        "BaseRuleTitles": "['Custom Set', 'Target Mode Rules', 'Phylotree Nexus Weapon Acquisition Rules']",
+        "BaseRules": "['Choose a Weapon Set for your research. The chosen set will get an increased chance to receive.', 'In Target Mode, the chance of chosen Weapon set will increase greatly.', '\u9650\u5b9a\u6b66\u5668\u4ec5\u5728\u6e90\u6811\u8109\u7edc\u7814\u53d1\u5f00\u542f\u671f\u95f4\u5f00\u653e\u83b7\u53d6\uff0c\u6307\u6325\u5b98\u65e0\u6cd5\u4ece\u5176\u4ed6\u9014\u5f84\u83b7\u53d6\u76f8\u5173\u9650\u5b9a\u5185\u5bb9\u3002\u3010\u65e0\u5149\u66ae\u9014\u3011\u4ee5\u53ca\u3010\u7a7a\u5883\u60ac\u6d77\u7684\u6d9f\u6f2a\u3011\u5361\u6c60\u5c06\u89c6\u4e3a\u6e90\u6811\u8109\u7edc\u5361\u6c60\u3002']",
         "EventRuleTitles": null,
         "EventRules": null,
         "UpType": null,
@@ -69,7 +75,10 @@
         "IsNotSelectDefault": null,
         "IsShowFilter": 1.0,
         "CharFilterElementList": null,
-        "DrawRules": "['<color=#ff5f2d>6\u2605 Weapon</color>', 'Guaranteed <color=#ff5f2d>5\u2605</color> or above weapon in <color=#ff5f2d>10 pulls</color>']"
+        "DrawRules": "['<color=#ff5f2d>6\u2605 Weapon</color>', 'Guaranteed <color=#ff5f2d>5\u2605</color> or above weapon in <color=#ff5f2d>10 pulls</color>']",
+        "IsCharacterImage": null,
+        "DrawName": null,
+        "DrawGroupName": null
     },
     {
         "Id": 6,
@@ -93,7 +102,10 @@
         "IsNotSelectDefault": null,
         "IsShowFilter": null,
         "CharFilterElementList": null,
-        "DrawRules": null
+        "DrawRules": null,
+        "IsCharacterImage": null,
+        "DrawName": null,
+        "DrawGroupName": null
     },
     {
         "Id": 10,
@@ -117,17 +129,20 @@
         "IsNotSelectDefault": null,
         "IsShowFilter": null,
         "CharFilterElementList": null,
-        "DrawRules": null
+        "DrawRules": null,
+        "IsCharacterImage": null,
+        "DrawName": null,
+        "DrawGroupName": null
     },
     {
         "Id": 11,
-        "TitleCN": "Themed Construct",
+        "TitleCN": "Inverse Crown Event Construct",
         "TitleEN": "Standard Mode",
         "RareRank": 2.0,
         "GroupBtnBg": null,
         "MainRules": "['Guaranteed an A-Rank or above Omniframe every 10 attempts.', 'Guaranteed an S-Rank Omniframe every 60 attempts.']",
-        "BaseRuleTitles": "['Guaranteed A-Rank in 10 Attempts', 'Guaranteed S-Rank in 60 Attempts', 'Research Pool Inheritance Rules']",
-        "BaseRules": "['Guaranteed to receive an A-Rank or above Omniframe for every 10 research attempts.', 'Guaranteed to receive an S-Rank Omniframe for every 60 research attempts.', 'The guarantee is inherited between the same type of pools. For example, after an [Arrival Event Character Pool] has ended, its guarantee progress will be inherited by the next [Arrival Event Character Pool].']",
+        "BaseRuleTitles": "['Guaranteed A-Rank in 10 Attempts', 'Guaranteed S-Rank in 60 Attempts', 'Research Pool Inheritance Rules', 'Phylotree Nexus Research Pool Rules']",
+        "BaseRules": "['Guaranteed to receive an A-Rank or above Omniframe for every 10 research attempts.', 'Guaranteed to receive an S-Rank Omniframe for every 60 research attempts.', 'The guarantee is inherited between the same type of pools. For example, after an [Arrival Construct Pool] has ended, its guarantee progress will be inherited by the next [Arrival Construct Pool]. [Inverse Crown Event Construct Pool] is considered a Phylotree Nexus research pool and shares guarantee progress with both [Themed Construct Pool] and [Phylotree Nexus Rerun Pool].', 'Phylotree Nexus research is a limited pool. Commandants will not be able to obtain related limited content through other means. The [Inverse Crown Event Construct Pool] and [Phylotree Nexus Rerun Pool] are considered Phylotree Nexus research pools.']",
         "EventRuleTitles": "['Rate in S-Rank pool:']",
         "EventRules": "['When an S-Rank Omniframe is researched, there is a 100% chance to receive the rate-up Omniframe.']",
         "UpType": "Omniframe",
@@ -141,7 +156,10 @@
         "IsNotSelectDefault": null,
         "IsShowFilter": null,
         "CharFilterElementList": null,
-        "DrawRules": "['<color=#ff5f2d>S-Rank Character</color>', 'Guaranteed <color=#ff5f2d>A-Rank</color> or above character in <color=#ff5f2d>10 pulls</color>']"
+        "DrawRules": "['<color=#ff5f2d>S-Rank Character</color>', 'Guaranteed <color=#ff5f2d>A-Rank</color> or above character in <color=#ff5f2d>10 pulls</color>']",
+        "IsCharacterImage": null,
+        "DrawName": null,
+        "DrawGroupName": null
     },
     {
         "Id": 12,
@@ -165,7 +183,10 @@
         "IsNotSelectDefault": null,
         "IsShowFilter": null,
         "CharFilterElementList": null,
-        "DrawRules": "['<color=#ff5f2d>S-Rank Character</color>', 'Guaranteed <color=#ff5f2d>A-Rank</color> or above character in <color=#ff5f2d>10 pulls</color>']"
+        "DrawRules": "['<color=#ff5f2d>S-Rank Character</color>', 'Guaranteed <color=#ff5f2d>A-Rank</color> or above character in <color=#ff5f2d>10 pulls</color>']",
+        "IsCharacterImage": 1.0,
+        "DrawName": "Target Arrival",
+        "DrawGroupName": null
     },
     {
         "Id": 13,
@@ -189,7 +210,10 @@
         "IsNotSelectDefault": null,
         "IsShowFilter": null,
         "CharFilterElementList": null,
-        "DrawRules": "['<color=#ff5f2d>S-Rank Character</color>', 'Guaranteed <color=#ff5f2d>A-Rank</color> or above character in <color=#ff5f2d>10 pulls</color>']"
+        "DrawRules": "['<color=#ff5f2d>S-Rank Character</color>', 'Guaranteed <color=#ff5f2d>A-Rank</color> or above character in <color=#ff5f2d>10 pulls</color>']",
+        "IsCharacterImage": 1.0,
+        "DrawName": "Fate Arrival Target",
+        "DrawGroupName": null
     },
     {
         "Id": 14,
@@ -213,17 +237,20 @@
         "IsNotSelectDefault": null,
         "IsShowFilter": null,
         "CharFilterElementList": null,
-        "DrawRules": null
+        "DrawRules": null,
+        "IsCharacterImage": null,
+        "DrawName": null,
+        "DrawGroupName": null
     },
     {
         "Id": 15,
-        "TitleCN": "Fate Themed Construct",
+        "TitleCN": "Fate Inverse Crown Event Construct",
         "TitleEN": "Standard Mode",
         "RareRank": 2.0,
         "GroupBtnBg": null,
         "MainRules": "['1. Guaranteed an A-Rank or above Omniframe every 10 attempts.', '2. Guaranteed an S-Rank Omniframe every 80-100 attempts.', '3. The overall chance is the same as the Themed Construct Pool.', '4. The S-Rank base chance increased']",
-        "BaseRuleTitles": "['Floating Guarantee', 'Base Rate (Excluding the Guarantee)', 'Combined Chance (Including the Guarantee)', 'Research Pool Inheritance Rules']",
-        "BaseRules": "['A value will be generated randomly between 80 and 100. For example, if the value is 90, an S-Rank Omniframe is guaranteed within 90 research attempts. The random guarantee value will be generated again once an S-Rank Omniframe has arrived.', 'Base S-Rank Omniframe rate is 1.5%.', 'Overall S-Rank Omniframe chance is the same as other pools (1.9%).', 'The guarantee is inherited between the same type of pools. For example, after an [Arrival Event Character Pool] has ended, its guarantee progress will be inherited by the next [Arrival Event Character Pool].']",
+        "BaseRuleTitles": "['Floating Guarantee', 'Base Rate (Excluding the Guarantee)', 'Combined Chance (Including the Guarantee)', 'Research Pool Inheritance Rules', 'Phylotree Nexus Research Pool Rules']",
+        "BaseRules": "['A value will be generated randomly between 80 and 100. For example, if the value is 90, an S-Rank Omniframe is guaranteed within 90 research attempts. The random guarantee value will be generated again once an S-Rank Omniframe has arrived.', 'Base S-Rank Omniframe rate is 1.5%.', 'Overall S-Rank Omniframe chance is the same as other pools (1.9%).', 'The guarantee is inherited between the same type of pools. For example, after an [Arrival Event Character Pool] has ended, its guarantee progress will be inherited by the next [Arrival Event Character Pool].', 'Phylotree Nexus research is a limited pool. Commandants will not be able to obtain related limited content through other means. The [Fate Inverse Crown Event Construct Pool] and [Fate Phylotree Nexus Rerun Pool] are considered Phylotree Nexus research pools.']",
         "EventRuleTitles": "['Rate in S-Rank pool:']",
         "EventRules": "['When an S-Rank Omniframe is researched, there is a 100% chance to receive the rate-up Omniframe.']",
         "UpType": "Omniframe",
@@ -237,7 +264,10 @@
         "IsNotSelectDefault": null,
         "IsShowFilter": null,
         "CharFilterElementList": null,
-        "DrawRules": "['<color=#ff5f2d>S-Rank Character</color>', 'Guaranteed <color=#ff5f2d>A-Rank</color> or above character in <color=#ff5f2d>10 pulls</color>']"
+        "DrawRules": "['<color=#ff5f2d>S-Rank Character</color>', 'Guaranteed <color=#ff5f2d>A-Rank</color> or above character in <color=#ff5f2d>10 pulls</color>']",
+        "IsCharacterImage": null,
+        "DrawName": null,
+        "DrawGroupName": null
     },
     {
         "Id": 16,
@@ -261,7 +291,10 @@
         "IsNotSelectDefault": null,
         "IsShowFilter": 1.0,
         "CharFilterElementList": "[1, 2, 3, 4, 5, 6]",
-        "DrawRules": "['<color=#ff5f2d>S-Rank Character</color>', 'Guaranteed <color=#ff5f2d>S-Rank</color> Uniframe in <color=#ff5f2d>10 pulls</color>']"
+        "DrawRules": "['<color=#ff5f2d>S-Rank Character</color>', 'Guaranteed <color=#ff5f2d>S-Rank</color> Uniframe in <color=#ff5f2d>10 pulls</color>']",
+        "IsCharacterImage": null,
+        "DrawName": null,
+        "DrawGroupName": null
     },
     {
         "Id": 17,
@@ -285,7 +318,10 @@
         "IsNotSelectDefault": true,
         "IsShowFilter": null,
         "CharFilterElementList": null,
-        "DrawRules": null
+        "DrawRules": null,
+        "IsCharacterImage": null,
+        "DrawName": null,
+        "DrawGroupName": null
     },
     {
         "Id": 18,
@@ -309,7 +345,10 @@
         "IsNotSelectDefault": true,
         "IsShowFilter": null,
         "CharFilterElementList": null,
-        "DrawRules": null
+        "DrawRules": null,
+        "IsCharacterImage": null,
+        "DrawName": null,
+        "DrawGroupName": null
     },
     {
         "Id": 19,
@@ -333,7 +372,10 @@
         "IsNotSelectDefault": null,
         "IsShowFilter": null,
         "CharFilterElementList": null,
-        "DrawRules": null
+        "DrawRules": null,
+        "IsCharacterImage": null,
+        "DrawName": null,
+        "DrawGroupName": null
     },
     {
         "Id": 20,
@@ -357,7 +399,10 @@
         "IsNotSelectDefault": null,
         "IsShowFilter": null,
         "CharFilterElementList": null,
-        "DrawRules": null
+        "DrawRules": null,
+        "IsCharacterImage": null,
+        "DrawName": null,
+        "DrawGroupName": null
     },
     {
         "Id": 21,
@@ -381,7 +426,10 @@
         "IsNotSelectDefault": null,
         "IsShowFilter": 1.0,
         "CharFilterElementList": null,
-        "DrawRules": null
+        "DrawRules": null,
+        "IsCharacterImage": null,
+        "DrawName": null,
+        "DrawGroupName": null
     },
     {
         "Id": 22,
@@ -390,8 +438,8 @@
         "RareRank": null,
         "GroupBtnBg": null,
         "MainRules": "['Guaranteed A-Rank or above CUB every 10 attempts', 'Guaranteed S-Rank CUB every 20 attempts']",
-        "BaseRuleTitles": "['Custom Set', 'Target Mode Details', 'Research Pool Inheritance Rules']",
-        "BaseRules": "['Select 1 CUB to pull. Selected target gains increased chances.', 'Select a CUB in Target Mode for greatly increased chances.', 'In the CUB Target Pool, the guaranteed attempt of pulling A-Rank and S-Rank CUBs will not be affected when you change your targeted CUB, which means the guarantee progress is inherited.']",
+        "BaseRuleTitles": "['Custom Set', 'Target Mode Details', 'Research Pool Inheritance Rules', 'Phylotree Nexus CUB Acquisition Rules']",
+        "BaseRules": "['Select 1 CUB to pull. Selected target gains increased chances.', 'Select a CUB in Target Mode for greatly increased chances.', 'In the CUB Target Pool, the guaranteed attempt of pulling A-Rank and S-Rank CUBs will not be affected when you change your targeted CUB, which means the guarantee progress is inherited.', 'The limited CUB is only available during the Phylotree Nexus banner period. Commandants will not be able to obtain related limited content through other means. The [Allos] and [Levvi] banners will be considered Phylotree Nexus banners.']",
         "EventRuleTitles": "['Rate in S-Rank pool:']",
         "EventRules": null,
         "UpType": "Cub",
@@ -405,7 +453,10 @@
         "IsNotSelectDefault": null,
         "IsShowFilter": 1.0,
         "CharFilterElementList": null,
-        "DrawRules": "['<color=#ff5f2d>S-Rank CUB</color>', 'Guaranteed <color=#ff5f2d>A-Rank</color> or above CUB in <color=#ff5f2d>10 pulls</color>']"
+        "DrawRules": "['<color=#ff5f2d>S-Rank CUB</color>', 'Guaranteed <color=#ff5f2d>A-Rank</color> or above CUB in <color=#ff5f2d>10 pulls</color>']",
+        "IsCharacterImage": null,
+        "DrawName": null,
+        "DrawGroupName": null
     },
     {
         "Id": 23,
@@ -429,7 +480,10 @@
         "IsNotSelectDefault": true,
         "IsShowFilter": 1.0,
         "CharFilterElementList": "[1, 2, 3, 4, 5, 6]",
-        "DrawRules": null
+        "DrawRules": null,
+        "IsCharacterImage": null,
+        "DrawName": null,
+        "DrawGroupName": null
     },
     {
         "Id": 24,
@@ -453,7 +507,10 @@
         "IsNotSelectDefault": true,
         "IsShowFilter": 1.0,
         "CharFilterElementList": "[1, 2, 3, 4, 5, 6]",
-        "DrawRules": null
+        "DrawRules": null,
+        "IsCharacterImage": null,
+        "DrawName": null,
+        "DrawGroupName": null
     },
     {
         "Id": 25,
@@ -477,7 +534,10 @@
         "IsNotSelectDefault": null,
         "IsShowFilter": 1.0,
         "CharFilterElementList": "[1, 2, 3, 4, 5, 6]",
-        "DrawRules": null
+        "DrawRules": null,
+        "IsCharacterImage": null,
+        "DrawName": null,
+        "DrawGroupName": null
     },
     {
         "Id": 26,
@@ -501,7 +561,10 @@
         "IsNotSelectDefault": null,
         "IsShowFilter": 1.0,
         "CharFilterElementList": null,
-        "DrawRules": null
+        "DrawRules": null,
+        "IsCharacterImage": null,
+        "DrawName": null,
+        "DrawGroupName": null
     },
     {
         "Id": 27,
@@ -525,7 +588,10 @@
         "IsNotSelectDefault": true,
         "IsShowFilter": 1.0,
         "CharFilterElementList": "[1, 2, 3, 4, 5, 6]",
-        "DrawRules": null
+        "DrawRules": null,
+        "IsCharacterImage": null,
+        "DrawName": null,
+        "DrawGroupName": null
     },
     {
         "Id": 28,
@@ -549,7 +615,10 @@
         "IsNotSelectDefault": true,
         "IsShowFilter": 1.0,
         "CharFilterElementList": "[1, 2, 3, 4, 5, 6]",
-        "DrawRules": null
+        "DrawRules": null,
+        "IsCharacterImage": null,
+        "DrawName": null,
+        "DrawGroupName": null
     },
     {
         "Id": 29,
@@ -573,7 +642,10 @@
         "IsNotSelectDefault": null,
         "IsShowFilter": null,
         "CharFilterElementList": null,
-        "DrawRules": null
+        "DrawRules": null,
+        "IsCharacterImage": null,
+        "DrawName": null,
+        "DrawGroupName": null
     },
     {
         "Id": 30,
@@ -597,7 +669,10 @@
         "IsNotSelectDefault": null,
         "IsShowFilter": null,
         "CharFilterElementList": null,
-        "DrawRules": null
+        "DrawRules": null,
+        "IsCharacterImage": null,
+        "DrawName": null,
+        "DrawGroupName": null
     },
     {
         "Id": 31,
@@ -621,7 +696,10 @@
         "IsNotSelectDefault": null,
         "IsShowFilter": null,
         "CharFilterElementList": null,
-        "DrawRules": null
+        "DrawRules": null,
+        "IsCharacterImage": null,
+        "DrawName": null,
+        "DrawGroupName": null
     },
     {
         "Id": 32,
@@ -645,7 +723,10 @@
         "IsNotSelectDefault": null,
         "IsShowFilter": null,
         "CharFilterElementList": null,
-        "DrawRules": null
+        "DrawRules": null,
+        "IsCharacterImage": null,
+        "DrawName": null,
+        "DrawGroupName": null
     },
     {
         "Id": 33,
@@ -669,7 +750,10 @@
         "IsNotSelectDefault": null,
         "IsShowFilter": 1.0,
         "CharFilterElementList": null,
-        "DrawRules": null
+        "DrawRules": null,
+        "IsCharacterImage": null,
+        "DrawName": null,
+        "DrawGroupName": null
     },
     {
         "Id": 34,
@@ -693,7 +777,10 @@
         "IsNotSelectDefault": null,
         "IsShowFilter": 1.0,
         "CharFilterElementList": null,
-        "DrawRules": null
+        "DrawRules": null,
+        "IsCharacterImage": null,
+        "DrawName": null,
+        "DrawGroupName": null
     },
     {
         "Id": 35,
@@ -717,7 +804,10 @@
         "IsNotSelectDefault": null,
         "IsShowFilter": null,
         "CharFilterElementList": null,
-        "DrawRules": "['<color=#ff5f2d>S-Rank Character</color>', 'Guaranteed <color=#ff5f2d>A-Rank</color> or above character in <color=#ff5f2d>10 pulls</color>']"
+        "DrawRules": "['<color=#ff5f2d>S-Rank Character</color>', 'Guaranteed <color=#ff5f2d>A-Rank</color> or above character in <color=#ff5f2d>10 pulls</color>']",
+        "IsCharacterImage": null,
+        "DrawName": null,
+        "DrawGroupName": null
     },
     {
         "Id": 36,
@@ -741,6 +831,9 @@
         "IsNotSelectDefault": null,
         "IsShowFilter": null,
         "CharFilterElementList": null,
-        "DrawRules": "['<color=#ff5f2d>S-Rank Character</color>', 'Guaranteed <color=#ff5f2d>A-Rank</color> or above character in <color=#ff5f2d>10 pulls</color>']"
+        "DrawRules": "['<color=#ff5f2d>S-Rank Character</color>', 'Guaranteed <color=#ff5f2d>A-Rank</color> or above character in <color=#ff5f2d>10 pulls</color>']",
+        "IsCharacterImage": null,
+        "DrawName": null,
+        "DrawGroupName": null
     }
 ]

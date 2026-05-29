@@ -225,6 +225,8 @@ function XPassportModel:NotifyPassportData(data)
     self._LastTimeBaseInfo:UpdateData(data.LastTimeBaseInfo)
     self:UpdatePassportInfosDic(data.PassportInfos)
     self._IsGetSupplyReward = data.IsGetSupplyReward or false
+    self._IsActivateRegressionTask = data.IsActivateRegressionTask or false
+    self._IsActivateNewbieTask = data.IsActivateNewbieTask or false
     XEventManager.DispatchEvent(XEventId.EVENT_NOTIFY_PASSPORT_DATA)
 end
 
@@ -255,6 +257,14 @@ function XPassportModel:UpdatePassportInfosDic(passportInfos)
         end
         passportInfo:UpdateData(data)
     end
+end
+
+function XPassportModel:IsActivateRegressionTask()
+    return self._IsActivateRegressionTask
+end
+
+function XPassportModel:IsActivateNewbieTask()
+    return self._IsActivateNewbieTask
 end
 
 function XPassportModel:SetPassportReceiveReward(passportId, passportRewardId)

@@ -1,12 +1,12 @@
 local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
----@class XUiPanelFashionList
-local XUiPanelFashionList = XClass(nil, "XUiPanelFashionList")
-
-XUiPanelFashionList.GridType = {
-    FashionCharacter = 1,--成员涂装
-    FashionWeapon = 2,--武器涂装
-    HeadPortrait = 3,--头像
-}
+---@class XUiPanelFashionList
+local XUiPanelFashionList = XClass(nil, "XUiPanelFashionList")
+
+XUiPanelFashionList.GridType = {
+    FashionCharacter = 1,--成员涂装
+    FashionWeapon = 2,--武器涂装
+    HeadPortrait = 3,--头像
+}
 
 XUiPanelFashionList.ClassGrids = {
     [XUiPanelFashionList.GridType.FashionCharacter] = require("XUi/XUiFashion/XUiGridFashion"),
@@ -29,14 +29,21 @@ function XUiPanelFashionList:InitDynamicTable()
     self.DynamicTable:SetProxy(XUiPanelFashionList.ClassGrids[self.Type])
 end
 
-function XUiPanelFashionList:UpdateViewList(fashionList, defualtSelectId, characterId)
-    self.CharacterId = characterId
-    self.FashionList = fashionList
-    self.LastSelectId = defualtSelectId or self.LastSelectId
-    self.GridTouchCb(self.LastSelectId, self.LastSelectGrid)
-    self.DynamicTable:SetDataSource(fashionList)
-    self.DynamicTable:ReloadDataSync()
-end
+function XUiPanelFashionList:UpdateViewList(fashionList, defualtSelectId, characterId)
+    self.CharacterId = characterId
+    self.FashionList = fashionList or {}
+
+    local targetSelectId = defualtSelectId or self.LastSelectId
+    if not targetSelectId or not table.contains(self.FashionList, targetSelectId) then
+        targetSelectId = nil
+    end
+
+    self.LastSelectId = targetSelectId
+    self.LastSelectGrid = nil
+    self.GridTouchCb(targetSelectId, nil)
+    self.DynamicTable:SetDataSource(self.FashionList)
+    self.DynamicTable:ReloadDataSync()
+end
 
 function XUiPanelFashionList:OnDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_INIT then

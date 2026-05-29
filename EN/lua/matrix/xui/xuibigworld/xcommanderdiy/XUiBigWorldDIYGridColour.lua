@@ -70,6 +70,9 @@ function XUiBigWorldDIYGridColour:PlayEnableAnimation(index)
     end, 50 * index)
 end
 
+function XUiBigWorldDIYGridColour:GetEntity()
+    return self._Entity
+end
 -- region 按钮事件
 
 function XUiBigWorldDIYGridColour:OnBtnClickClick()

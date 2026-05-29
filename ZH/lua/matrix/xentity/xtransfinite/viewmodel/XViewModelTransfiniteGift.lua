@@ -1,5 +1,7 @@
 local RewardState = XTransfiniteConfigs.RewardState
 
+local CrossVersionEnabled = CS.XGame.ClientConfig:GetInt("CrossVersionEnable") == 1
+
 ---@class XViewModelTransfiniteGift
 local XViewModelTransfiniteGift = XClass(nil, "XViewModelTransfiniteGift")
 
@@ -111,8 +113,13 @@ function XViewModelTransfiniteGift:UpdateScore()
 end
 
 function XViewModelTransfiniteGift:GetScoreAndRewardArray(region)
-    local scoreArray, reward = region:GetScoreAndRewardArray()
-    return scoreArray, reward
+    if CrossVersionEnabled then
+        local timeId = XTransfiniteConfigs.GetSepcialTreatmentTimeId(region:GetId())
+        if timeId and XFunctionManager.CheckInTimeByTimeId(timeId) then
+            return region:GetSpecialScoreAndRewardArray()
+        end
+    end
+    return region:GetScoreAndRewardArray()
 end
 
 ---@param region XTransfiniteRegion
@@ -197,8 +204,13 @@ function XViewModelTransfiniteGift:GetChallengeDataList()
 end
 
 function XViewModelTransfiniteGift:GetChallengeTaskIdList(data)
-    local challengeTaskIdList = XTransfiniteConfigs.GetTaskTaskIds(data.ChallengeTaskGroupId)
-    return challengeTaskIdList
+    if CrossVersionEnabled then
+        local timeId = XTransfiniteConfigs.GetSpecialTaskTimeId(data.ChallengeTaskGroupId)
+        if timeId and XFunctionManager.CheckInTimeByTimeId(timeId) then
+            return XTransfiniteConfigs.GetSpecialTaskTaskIds(data.ChallengeTaskGroupId)
+        end
+    end
+    return XTransfiniteConfigs.GetTaskTaskIds(data.ChallengeTaskGroupId)
 end
 --endregion challenge
 

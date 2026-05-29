@@ -92,7 +92,7 @@ function XMovieActionFullScreenDialog:OnEnter()
     end
 
     local cvId = self.CvId
-    if cvId ~= 0 and not not self.IsPassedRunning then
+    if cvId ~= 0 and not self.IsPassedRunning then
         self:StopLastCv()
         PlayingCvInfo = XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.Voice, cvId)
     end

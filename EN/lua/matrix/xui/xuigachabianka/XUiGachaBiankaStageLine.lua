@@ -20,7 +20,9 @@ function XUiGachaBiankaStageLine:OnStart(gachaId)
     self._ChapterTemplate = XFestivalActivityConfig.GetFestivalById(self._ChapterId)
     self._Scene = require("XUi/XUiGachaBianka/Grid/XUiPanelGachaBiankaScene").New(self.Transform, self)
     ---@type XUiPanelSwitchableSceneAnim
-    self._SwitchableScene = require("XUi/XUiSwitchableScene/Panel/XUiPanelSwitchableSceneAnim").New()
+    self._SwitchableScene = require("XUi/XUiSwitchableScene/XUiPanelSwitchableSceneAnim").New()
+
+    self._SceneId = XGachaConfigs.GetClientConfigNumber('Bianka4P2SceneId')
 end
 
 function XUiGachaBiankaStageLine:OnEnable()
@@ -42,7 +44,7 @@ function XUiGachaBiankaStageLine:OnEnable()
 
     self._Scene:PlayEnterStageLine()
     self._Scene:PlayEnableStory()
-    self._SwitchableScene:AutoPlay(self.UiSceneInfo.Transform)
+    self._SwitchableScene:AutoPlay(self._SceneId, self.UiSceneInfo.Transform)
 end
 
 function XUiGachaBiankaStageLine:OnDisable()

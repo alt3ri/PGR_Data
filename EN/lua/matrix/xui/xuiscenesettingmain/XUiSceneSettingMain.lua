@@ -5,7 +5,6 @@ local BatteryComponent = CS.XUiBattery
 local DateStartTime = CS.XGame.ClientConfig:GetString("BackgroundChangeTimeStr")
 local DateEndTime = CS.XGame.ClientConfig:GetString("BackgroundChangeTimeEnd")
 local LowPowerValue = CS.XGame.ClientConfig:GetFloat("UiMainLowPowerValue")
-local Dropdown = CS.UnityEngine.UI.Dropdown
 
 function XUiSceneSettingMain:OnAwake()
     self.FirstLoad = true
@@ -24,7 +23,6 @@ end
 function XUiSceneSettingMain:InitButton()
     XUiHelper.RegisterClickEvent(self, self.BtnBack, self.Close)
     XUiHelper.RegisterClickEvent(self, self.ToggleRandomScene, self.OnToggleRandomSceneClick)
-    XUiHelper.RegisterClickEvent(self, self.DropEnvMusic, self.OnClickDropEnvMusic)
     self.ToggleRandomScene.gameObject:SetActiveEx(CS.XGame.ClientConfig:GetInt("SetToggleRandomSceneVisible") == 1)
 
     -- 打开助理面板
@@ -92,14 +90,18 @@ function XUiSceneSettingMain:InitButton()
     local XUiTextScrolling = require("XUi/XUiTaikoMaster/XUiTaikoMasterFlowText")
     self.NameTextScrolling = XUiTextScrolling.New(self.TxtName ,self.TxtNameMask)
     self.NameTextScrolling:Stop()
-
-    ---下拉列表
-    local op1 = XMVCA.XSwitchableScene:GetClientConfig("DropData")
-    local op2 = XMVCA.XSwitchableScene:GetClientConfig("DropPower")
-    local op4 = XMVCA.XSwitchableScene:GetClientConfig("DropGyro")
-    self:InitDrop(self.DropDate, op1, handler(self, self.OnClickDropData))
-    self:InitDrop(self.DropPower, op2, handler(self, self.OnClickDropPower))
-    self:InitDrop(self.DropGyro, op4, handler(self, self.OnClickDropGyro))
+    
+    if self.PanelDropDown then
+        self.PanelDropDown.gameObject:SetActiveEx(false)
+        ---@type XScenePanelDropDown
+        self.PanelDropDownCtrl = require("XUi/XUiSceneSettingMain/Grid/XScenePanelDropDown").New(
+                self.PanelDropDown, 
+                self, 
+                handler(self, self.OnClickDropData), 
+                handler(self, self.OnClickDropPower), 
+                handler(self, self.OnClickDropGyro),
+                handler(self, self.OnClickDropEnvMusic))
+    end
 end
 
 function XUiSceneSettingMain:CheckBtnScreenRedPoint(count)
@@ -116,6 +118,10 @@ function XUiSceneSettingMain:OnBtnAssistantClick()
     self:RefreshPanelAssistant()
     self.DynamicTableScene:SetActive(false)
     self.UiModelParent.gameObject:SetActiveEx(self.PanelAssistant.gameObject.activeSelf) --场景列表不显示助理
+
+    if self.PanelDropDownCtrl then
+        self.PanelDropDownCtrl:Close()
+    end
 end
 
 function XUiSceneSettingMain:OnBtnSceneClick()
@@ -129,6 +135,10 @@ function XUiSceneSettingMain:OnBtnSceneClick()
     self.DynamicTableAssistant:SetActive(false)
     self.ChiefAssistantGrid:Close()
     self.UiModelParent.gameObject:SetActiveEx(self.PanelAssistant.gameObject.activeSelf)
+
+    if self.PanelDropDownCtrl then
+        self.PanelDropDownCtrl:Open()
+    end
 end
 
 function XUiSceneSettingMain:OnBtnSetFavClick()
@@ -252,8 +262,8 @@ function XUiSceneSettingMain:OnClickDropEnvMusic()
         return
     end
 
-    local isMute = self.DropEnvMusic.isOn
-    sceneSfxControl:SetMuteAndSave(not isMute)
+    local isOn =  self.PanelDropDownCtrl and self.PanelDropDownCtrl:GetDropMusicIsOn() or false
+    sceneSfxControl:SetMuteAndSave(not isOn)
 end
 
 function XUiSceneSettingMain:InitDynamicTable()
@@ -458,6 +468,7 @@ function XUiSceneSettingMain:OnDynamicTableEventScene(event, index, grid)
         --根据索引获取指定的场景数据
         local sceneId = self.SceneIdList[index]
         --更新当前元素
+        grid:Open()
         grid:RefreshDisplay(sceneId)
 
         local isSelect = index == self.CurSelectedBackgroundIndex
@@ -474,6 +485,8 @@ function XUiSceneSettingMain:OnDynamicTableEventScene(event, index, grid)
             if self.LastScenePath == scenePath then return end -- 相同场景不切换
             self:LoadUiScene(scenePath, modelPath, function() self:OnUiSceneLoaded(self.FirstLoad, scenePath) end, false)
         end
+    elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_RECYCLE then
+        grid:Close()    
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_TOUCHED then
         local sceneId = self.SceneIdList[index]
         if self.CurSelectedBackgroundId == sceneId then
@@ -838,8 +851,7 @@ end
 
 function XUiSceneSettingMain:OnStart()
     ---@type XUiPanelSwitchableSceneAnim
-    self.SwitchableScene = require("XUi/XUiSwitchableScene/Panel/XUiPanelSwitchableSceneAnim").New()
-    self.TxtPcTip.text = XUiHelper.GetText("SwitchableScenePcTip")
+    self.SwitchableScene = require("XUi/XUiSwitchableScene/XUiPanelSwitchableSceneAnim").New()
     
     local curSceneId = XDataCenter.PhotographManager.GetCurSceneId()
     self.CurSelectedBackgroundId = curSceneId    
@@ -902,19 +914,6 @@ end
 
 --region 场景切换选项
 
----@param comp XUiComponent.XUiDropdown
----@param words string[]
-function XUiSceneSettingMain:InitDrop(comp, words, callBack)
-    comp:ClearOptions()
-    for _, word in ipairs(words) do
-        local op = Dropdown.OptionData()
-        op.text = word
-        comp.options:Add(op)
-    end
-    comp:RefreshShownValue()
-    comp.onValueChanged:AddListener(callBack)
-end
-
 function XUiSceneSettingMain:OnClickDropData(index)
     XMVCA.XSwitchableScene:SetSceneSetting(self.CurSelectedBackgroundId, index)
     if self:InitBatteryUi() then
@@ -934,22 +933,11 @@ function XUiSceneSettingMain:OnClickDropGyro(index)
 end
 
 function XUiSceneSettingMain:RefreshDropDown()
-    local type = XPhotographConfigs.GetBackgroundTypeById(self.CurSelectedBackgroundId)
-    local ops = XMVCA.XSwitchableScene:GetSetting(self.CurSelectedBackgroundId)
-    local mode = XDataCenter.UiPcManager.GetUiPcMode()
-
-    self.DropDate.gameObject:SetActiveEx(type == XPhotographConfigs.BackGroundType.Date)
-    self.DropPower.gameObject:SetActiveEx(type == XPhotographConfigs.BackGroundType.PowerSaved)
-    self.DropGyro.gameObject:SetActiveEx(type == XPhotographConfigs.BackGroundType.Gyro)
-    self.PanelPcTip.gameObject:SetActiveEx(type == XPhotographConfigs.BackGroundType.Gyro and mode == XDataCenter.UiPcManager.XUiPcMode.Pc)
-
-    if type == XPhotographConfigs.BackGroundType.Date then
-        self.DropDate.value = ops[1]
-    elseif type == XPhotographConfigs.BackGroundType.PowerSaved then
-        self.DropPower.value = ops[1]
-    elseif type == XPhotographConfigs.BackGroundType.Gyro then
-        self.DropGyro.value = ops[3]
+    if not self.PanelDropDown then
+        return
     end
+    
+    self.PanelDropDownCtrl:Refresh(self.CurSelectedBackgroundId)
 end
 
 function XUiSceneSettingMain:GetSceneSFXControl()
@@ -970,7 +958,9 @@ end
 
 function XUiSceneSettingMain:RefreshEvnirmentSoundControl()
     local isEnvMusic = XPhotographConfigs.GetBackgroundHasEnvMusicById(self.CurSelectedBackgroundId)
-    self.DropEnvMusic.gameObject:SetActiveEx(isEnvMusic)
+    if self.PanelDropDownCtrl then
+        self.PanelDropDownCtrl:SetDropMusicShow(isEnvMusic)
+    end
 
     if not isEnvMusic then
         return
@@ -983,7 +973,9 @@ function XUiSceneSettingMain:RefreshEvnirmentSoundControl()
     end
 
     -- 读取缓存静音状态（游戏逻辑：true=开？false=关？你原逻辑不变）
-    self.DropEnvMusic.isOn = not sceneSfxControl:GetCacheMuteState()
+    if self.PanelDropDownCtrl then
+        self.PanelDropDownCtrl:SetDropMusicState(not sceneSfxControl:GetCacheMuteState())
+    end
 end
 
 --endregion

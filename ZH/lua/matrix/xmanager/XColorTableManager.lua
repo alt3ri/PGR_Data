@@ -163,7 +163,7 @@ XColorTableManagerCreator = function()
             end
         end
 
-        XLuaUiManager.Open("UiBattleRoleRoom", fightStageId, team
+        XMVCA.XFuben:OpenUiBattleRoleRoom(fightStageId, team
             , require("XUi/XUiColorTable/Grid/XUiColorTableBattleRoomProxy"))
     end
 

@@ -121,6 +121,13 @@ function XUiFavorabilityNew:InitUiAfterAuto()
     self.FavorabilityMain:Close()
     ---@type XUiPanelCharacterCG
     self.FavorabilityCG = require("XUi/XUiCharacterCG/XUiPanelCharacterCG").New(self.PanelVideo, self)
+    self.FavorabilityCG:SetDestroyOnStopWithoutLanguagePreparing(true)
+
+    self._CGFinishCallBack = function()
+        self.SwitchableScene:OnVideoEnd()
+    end
+
+    self.FavorabilityCG:AddVideoDestroyCallBack(self._CGFinishCallBack)
 
     self.BtnMask.CallBack = function() self:OnBtnMaskClick() end
     self.BtnSwitch.CallBack = function() self:OnBtnSwitchClick() end
@@ -218,6 +225,7 @@ function XUiFavorabilityNew:OnGetEvents()
         CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYING,
         CS.XEventId.EVENT_VIDEO_ACTION_STOP,
         CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYEND,
+        CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_STOP_WITHOUT_LANGUAGEPREPARING
     }
 end
 --endregion
@@ -273,8 +281,9 @@ function XUiFavorabilityNew:OnNotify(evt, ...)
     elseif evt == XEventId.EVENT_FAVORABILITY_ON_GIFT_CHANGED then
         self.FavorabilityMain:UpdatePreviewExp(args)
     elseif evt == CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYING then
+        self.SwitchableScene:OnVideoStart()
         self.FavorabilityCG:OnCGPlay()
-    elseif evt == CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYEND then
+    elseif evt == CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYEND  or evt == CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_STOP_WITHOUT_LANGUAGEPREPARING then
         self.FavorabilityCG:OnCGStop()
     end
 end

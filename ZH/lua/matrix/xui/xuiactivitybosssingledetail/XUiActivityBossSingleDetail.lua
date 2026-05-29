@@ -1,5 +1,5 @@
-local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
-local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XUiActivityBossSingleDetail = XLuaUiManager.Register(XLuaUi, "UiActivityBossSingleDetail")
 
 function XUiActivityBossSingleDetail:OnAwake()
@@ -150,7 +150,7 @@ end
 
 function XUiActivityBossSingleDetail:OnBtnEnterClick()
     local stageId = XFubenActivityBossSingleConfigs.GetStageId(self.ChallengeId)
-    XLuaUiManager.Open("UiBattleRoleRoom", stageId)
+    XMVCA.XFuben:OpenUiBattleRoleRoom(stageId)
     self:Close()
 end
 

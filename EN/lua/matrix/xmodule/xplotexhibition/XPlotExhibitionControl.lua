@@ -651,6 +651,12 @@ function XPlotExhibitionControl:SkipToChapter(data)
         return
     end
 
+    --肉鸽6.0
+    if chapterType == XEnumConst.FuBen.ChapterType.Theatre6 then
+        XDataCenter.FunctionalSkipManager:SkipToTheatre6()
+        return
+    end
+
     --好感度剧情
     if chapterType == XEnumConst.FuBen.ChapterType.FavorabilityStory then
         XMVCA.XFavorability:OpenUiStory(data.CharacterId)

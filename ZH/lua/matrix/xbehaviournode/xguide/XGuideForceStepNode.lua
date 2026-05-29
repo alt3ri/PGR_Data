@@ -78,7 +78,7 @@ function GuideForceStepNode:OnEnter()
         local cb = function(ui)
             self.Agent:SetVarDicByKey("UiNewRoomSingle", ui)
         end
-        XLuaUiManager.OpenWithCallback("UiBattleRoleRoom", cb, stage.StageId)
+        XMVCA.XFuben:OpenUiBattleRoleRoomWithCallback(cb, stage.StageId)
 
     elseif type == GuideForceStepType.ClickEnterFight then
 

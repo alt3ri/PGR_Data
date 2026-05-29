@@ -102,6 +102,7 @@ XActivityBriefConfigs.ActivityGroupId = {
     Restaurant = 81, -- 春节餐厅(战双餐厅)
     YuanXiao2023 = 82, -- 特训关 2023元宵
     SpringFestival = 83, -- 节日剧情 春节
+    GameCollection = 84, --小游戏合集
 }
 --跳转id
 XActivityBriefConfigs.SkipId =
@@ -445,4 +446,9 @@ end
 function XActivityBriefConfigs.GetActivityBriefGroupTagParam(groupId)
     local config = XActivityBriefConfigs.GetActivityGroupConfig(groupId)
     return config and config.TagParam or ""
+end
+
+function XActivityBriefConfigs.GetActivityBriefGroupConstRewardClaimCondition(groupId)
+    local config = XActivityBriefConfigs.GetActivityGroupConfig(groupId)
+    return config and config.ConstShowRewardClaimCondition or 0
 end

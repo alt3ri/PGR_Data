@@ -1,6 +1,6 @@
----@class XUiGridStage
+---@class XUiGridStage: XUiNode
 ---@field ComDragonRage XUiGridComDragonRage @龙怒玩法关卡组件
-local XUiGridStage = XClass(nil, "XUiGridStage")
+local XUiGridStage = XClass(XUiNode, "XUiGridStage")
 local CSTextManagerGetText = CS.XTextManager.GetText
 
 local EditHideList = {
@@ -22,21 +22,15 @@ local PlayingHideList = {
 
 local BaseHitWaitTime = 1
 
-function XUiGridStage:Ctor(ui, base)
-    self.GameObject = ui.gameObject
-    self.Transform = ui.transform
-    self.Base = base
+function XUiGridStage:OnStart()
     self.Damage = 0
     self.IsSelect = false
     XTool.InitUiObject(self)
     self:SetButtonCallBack()
     self:DoSelect(false)
-    
-    self.ComDragonRage = require('XUi/XUiGuildWar/Map/XUiGridStageCom/XUiGridComDragonRage').New(self)
 
-    if not self.ImgStayBg then
-        self.ImgStayBg = self.Transform:Find('ImgStayBg')
-    end
+    self.ComDragonRage = require('XUi/XUiGuildWar/Map/XUiGridStageCom/XUiGridComDragonRage').New(self)
+    self.ComRoleStationed = require("XUi/XUiGuildWar/Map/XUiGridStageCom/XUiGridComRoleStationed").New(self.GameObject, self)
 end
 
 function XUiGridStage:SetButtonCallBack()
@@ -140,20 +134,16 @@ function XUiGridStage:UpdateGrid(nodeEntity, IsPathEdit, IsActionPlaying, isPath
     end
 end
 
+function XUiGridStage:RefreshStationedShow()
+    self.ComRoleStationed:RefreshStationedShow()
+end
+
 --- 龙怒系统存在隐藏节点（不显示但其他移动等逻辑依然有效）
 function XUiGridStage:SetNodeEntityOnly(nodeEntity)
     -- 存在偶现的表现层与数据层不一致导致的显示错误、进战斗失败
     -- 4.2：先让Ui节点解除对数据实体的引用
     self.StageNodeId = nodeEntity:GetId()
     self.StageNodeUid = nodeEntity:GetUID()
-end
-
-function XUiGridStage:RefreshStationedShow()
-    local isHasStationed =  XMVCA.XGuildWar.RoleStationAgency:CheckNodeIsAnyCharacterStationed(self.StageNodeId)
-
-    if self.ImgStayBg then
-        self.ImgStayBg.gameObject:SetActiveEx(isHasStationed)
-    end
 end
 
 --获取节点关卡索引名
@@ -174,7 +164,13 @@ end
 
 --获取是否计划路线中的节点
 function XUiGridStage:GetIsPlanNode()
-    return nodeEntity:GetIsPlanNode()
+    local nodeEntity = XDataCenter.GuildWarManager.GetNode(self.StageNodeId, true)
+
+    if nodeEntity then
+        return nodeEntity:GetIsPlanNode()
+    end
+    
+    return false
 end
 
 function XUiGridStage:SetDamage(damage)
@@ -233,7 +229,7 @@ function XUiGridStage:OnBtnStageClick(selectedNodeId, isAuto)
                 XUiManager.TipText("GuildWarBaseMarkHint")
                 return
             end
-            self.Base:AddPath(self.StageNodeId, self)
+            self.Parent:AddPath(self.StageNodeId, self)
         else
             XLuaUiManager.Open("UiGuildWarStageDetail", nodeEntity, false)
         end

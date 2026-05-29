@@ -1,4 +1,4 @@
-local XUiPanelActivityAsset = require("XUi/XUiShop/XUiPanelActivityAsset")
+local XUiPanelActivityAsset = require("XUi/XUiShop/XUiPanelActivityAsset")
 local Object
 
 local XUiTRPGTruthRoadStages = require("XUi/XUiTRPG/XUiTRPGTruthRoad/XUiTRPGTruthRoadStages")
@@ -61,7 +61,7 @@ end
 
 function XUiTRPGTruthRoadMain:OnBtnEnterFightClick()
     self:CloseEnterDialog()
-    XLuaUiManager.Open("UiBattleRoleRoom", self.DialogId)
+    XMVCA.XFuben:OpenUiBattleRoleRoom(self.DialogId)
 end
 
 function XUiTRPGTruthRoadMain:OnBtnMaskClick()

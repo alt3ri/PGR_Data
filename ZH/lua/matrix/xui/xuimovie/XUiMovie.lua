@@ -206,13 +206,13 @@ function XUiMovie:OnInitScene()
 end
 
 function XUiMovie:AddListener()
-    self:RegisterClickEvent(self.BtnSkip, self.OnClickBtnSkip)
+    self.BtnSkip.CallBack = function() self:OnClickBtnSkip() end
     self.BtnReview.CallBack = function() self:OnClickBtnReview() end
     self.BtnAuto.CallBack = function() self:OnClickBtnAuto() end
     self.BtnAutoing.CallBack = function() self:OnClickBtnAutoing() end
     self.BtnTurn.CallBack = function() self:OnClickBtnTurn() end
     self.BtnHide.CallBack = function() self:OnClickBtnHide() end
-    XUiHelper.RegisterClickEvent(self, self.BtnScreenSpeed, self.OnClickBtnScreenSpeed)
+    self.BtnScreenSpeed.CallBack = function() self:OnClickBtnScreenSpeed() end
     self.PanelMaskInputHandler:AddPointerClickListener(handler(self, self.OnClickBtnPause))
     self.PanelHideMaskInputHandler:AddPointerClickListener(handler(self, self.OnClickHideMask))
     self.TxtWords.onClick = function() self:OnBtnNextClick() end
@@ -220,10 +220,11 @@ function XUiMovie:AddListener()
     self.BtnNextInputHandler:AddPointerClickListener(function() self:OnBtnNextClick() end)
     self.BtnNextInputHandler:AddPressListener(function(pressTime) self:OnBtnNextPress(pressTime) end)
     self.BtnNextInputHandler:AddPointerUpListener(function() self:OnBtnNextPointerUp() end)
-    self:RegisterClickEvent(self.BtnBookmark, self.OnBtnBookmarkClick)
+    self.BtnBookmark.CallBack = function() self:OnBtnBookmarkClick() end
 end
 
 function XUiMovie:OnClickBtnSkip()
+    if self:_TryConsumeHide() then return end
     if self:SelectPanelShowing() then
         return
     end
@@ -246,6 +247,7 @@ function XUiMovie:OnClickBtnSkip()
 end
 
 function XUiMovie:OnClickBtnReview()
+    if self:_TryConsumeHide() then return end
     if self:SelectPanelShowing() then
         return
     end
@@ -254,16 +256,46 @@ function XUiMovie:OnClickBtnReview()
 end
 
 function XUiMovie:OnClickHideMask()
-    self.PanelHideMask.gameObject:SetActiveEx(false)
-    self.PanelDialogCanvasGroup.alpha = 1
-    self.TopBtnCanvasGroup.alpha = 1
+    self:ShowUi()
 end
 
 function XUiMovie:OnClickBtnHide()
-    self.PanelHideMask.gameObject:SetActiveEx(true)
-    self.PanelDialogCanvasGroup.alpha = 0
-    self.TopBtnCanvasGroup.alpha = 0
+    if self.IsHide then
+        self:ShowUi()
+    else
+        self:HideUi()
+    end
+end
+
+function XUiMovie:HideUi()
     self:ResetAutoPlay()
+    self.PanelHideMask.gameObject:SetActiveEx(true)
+    self.IsHidePanelDialog = self.PanelDialog.gameObject.activeSelf
+    if self.IsHidePanelDialog then
+        self.PanelDialog.gameObject:SetActiveEx(false)
+        self.PanelDialogRole.gameObject:SetActiveEx(false)
+    end
+    self.TopBtnCanvasGroup.alpha = 0
+    self.IsHide = true
+end
+
+function XUiMovie:ShowUi()
+    self.PanelHideMask.gameObject:SetActiveEx(false)
+    if self.IsHidePanelDialog then
+        self.PanelDialog.gameObject:SetActiveEx(true)
+        self.PanelDialogRole.gameObject:SetActiveEx(true)
+    end
+    self.TopBtnCanvasGroup.alpha = 1
+    self.IsHide = false
+end
+
+-- 隐藏态下消费一次点击：显示UI并返回true，非隐藏态返回false
+function XUiMovie:_TryConsumeHide()
+    if self.IsHide then
+        self:ShowUi()
+        return true
+    end
+    return false
 end
 
 function XUiMovie:OnClickBtnPause()
@@ -285,10 +317,12 @@ function XUiMovie:OnClickBtnPause()
 end
 
 function XUiMovie:OnClickBtnTurn()
+    if self:_TryConsumeHide() then return end
     XDataCenter.MovieManager.BackToLastAction()
 end
 
 function XUiMovie:OnClickBtnScreenSpeed()
+    if self:_TryConsumeHide() then return end
     local isShow = not self.IsShowSpeedList
     self:ShowSpeedList(isShow)
 end
@@ -556,6 +590,7 @@ end
 
 --============================================================== #region BtnAuto ==============================================================
 function XUiMovie:OnClickBtnAuto()
+    if self:_TryConsumeHide() then return end
     if self:SelectPanelShowing() or self:IsDestroy() or self.IsVideoPlaying then
         return
     end
@@ -589,6 +624,7 @@ function XUiMovie:OnClickBtnAuto()
 end
 
 function XUiMovie:OnClickBtnAutoing()
+    if self:_TryConsumeHide() then return end
     if self:SelectPanelShowing() or self.IsVideoPlaying then
         return
     end
@@ -756,6 +792,7 @@ end
 
 -- 点击BtnNext回调
 function XUiMovie:OnBtnNextClick()
+    if self:_TryConsumeHide() then return end
     -- 等待动画播放完成
     if self.IsVideoPlaying and self.WaitVideoFinish then
         return
@@ -799,6 +836,7 @@ end
 --region BtnBookmark
 -- 点击书签按钮
 function XUiMovie:OnBtnBookmarkClick()
+    if self:_TryConsumeHide() then return end
     if self.IsVideoPlaying then
         return
     end

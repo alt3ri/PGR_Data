@@ -53,7 +53,7 @@ function XUiBigWorldProcessSwitchGrid:_RefreshState()
         return
     end
 
-    local isComplete = self._VersionEntity:IsComplete()
+    local isComplete = self._VersionEntity:IsTaskComplete()
 
     self.BtnGo:SetNameByGroup(0, self._VersionEntity:GetName())
     self.BtnGo:SetNameByGroup(1, self._VersionEntity:GetProgressStr())

@@ -35,6 +35,10 @@ local XUiTheatre6PanelAsset = require("XUi/XUiTheatre6/Stage/Panel/XUiPanelTheat
 ---@field BtnHelp XUiComponent.XUiButton
 ---@field PanelStage UiObject
 
+local ItemType = {
+    Skill = 1,
+    AttrPack = 2,
+}
 local XUiTheatre6BattleShop = XLuaUiManager.Register(XLuaUi, "UiTheatre6BattleShop")
 
 
@@ -89,7 +93,46 @@ function XUiTheatre6BattleShop:OnStart(...)
     self:Refresh()
 end
 
+function XUiTheatre6BattleShop:OnEnable()
+    XEventManager.AddEventListener(XEventId.EVENT_THEATRE6_BUY_GOOD, self.OnGoodBought, self)
+    XEventManager.AddEventListener(XEventId.EVENT_THEATRE6_UPDATE_SKILL, self._RefreshTagHighlightSource, self)
+end
+
+function XUiTheatre6BattleShop:OnDisable()
+    XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE6_BUY_GOOD, self.OnGoodBought, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE6_UPDATE_SKILL, self._RefreshTagHighlightSource, self)
+end
+
+function XUiTheatre6BattleShop:OnDestroy()
+    self._Control:ClearTagHighlightSourceTagIds()
+end
+
+function XUiTheatre6BattleShop:OnGoodBought()
+    self:_RefreshTagHighlightSource()
+end
+
+---根据当前未售出的技能商品 + 遗物商品聚合 tag 高亮源
+---  技能商品贡献其 BuildTags 全部
+---  遗物商品贡献"装备 dominant tag ∩ 自身 BuildTags"
+function XUiTheatre6BattleShop:_RefreshTagHighlightSource()
+    local skillIds = {}
+    local relicIds = {}
+    for _, good in ipairs(self._Control:GetShopGoods() or {}) do
+        if not good.IsSell then
+            if good.Type == ItemType.Skill then
+                table.insert(skillIds, good.GoodId)
+            elseif good.Type == ItemType.AttrPack then
+                table.insert(relicIds, good.GoodId)
+            end
+        end
+    end
+    self._Control:SetTagHighlightSourceTagIds(
+        self._Control:CollectShopOrTaskHighlightSourceTags(skillIds, relicIds)
+    )
+end
+
 function XUiTheatre6BattleShop:Refresh()
+    self:_RefreshTagHighlightSource()
     local shopGoods = self._Control:GetShopGoods()
 
     self:RefreshCommodityList(shopGoods)
@@ -109,6 +152,9 @@ function XUiTheatre6BattleShop:RefreshCommodityList(goodDatas)
         end
         self._GridCommodityUiList[index]:Open()
         self._GridCommodityUiList[index]:Refresh(goodData)
+        if not self._GridCommodityUiList[index].IsLock then
+             self._GridCommodityUiList[index]:PlayAnimationWithMask("ListCommodityReShow")
+        end
     end
 end
 
@@ -124,6 +170,7 @@ end
 function XUiTheatre6BattleShop:OnRefreshGridClick()
     self._Control:ShopFreshRequest(function()
         self:Refresh()
+        XDataCenter.GuideManager.CheckGuideOpen()	-- 触发引导
     end)
 end
 
@@ -151,9 +198,7 @@ function XUiTheatre6BattleShop:OnConfirmGiveUp()
 end
 
 function XUiTheatre6BattleShop:ExitShop()
-    self._Control:LeaveShopRequest(function()
-        self:Close()
-    end)
+    self._Control:LeaveShopRequest() --下个界面会PopThenOpen
 end
 
 function XUiTheatre6BattleShop:HasCanBuyCommodity()

@@ -120,6 +120,9 @@ local dlcEventId = {
     -- 更新图钉样式
     EVENT_MAP_PIN_STYLE_UPDATE = NewId(),
 
+    -- 更新环境图钉显示
+    EVENT_MAP_PIN_AI_MEMORY_DISPLAY_CHANGE = NewId(),
+
     -- 图钉详情关闭
     EVENT_MAP_PIN_DETAIL_CLOSE = NewId(),
 

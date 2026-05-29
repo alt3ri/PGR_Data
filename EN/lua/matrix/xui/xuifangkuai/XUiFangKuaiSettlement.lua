@@ -2,6 +2,25 @@
 ---@field _Control XFangKuaiControl
 local XUiFangKuaiSettlement = XLuaUiManager.Register(XLuaUi, "UiFangKuaiSettlement")
 
+function XUiFangKuaiSettlement:TryExitToCollection(score)
+    if not XMVCA.XGameCollection or not XMVCA.XGameCollection.EnumConst then
+        return false
+    end
+
+    local gameType = XMVCA.XGameCollection.EnumConst.GameType.FangKong
+    if not XMVCA.XGameCollection:IsLaunchedFromCollection(gameType) then
+        return false
+    end
+
+    local settleData = XMVCA.XFangKuai:GetCurStageSettleData()
+    XMVCA.XGameCollection:OnGameExitToCollection(gameType, {
+        Score = score,
+        IsNewScoreRecord = settleData and settleData.IsNewScoreRecord or false,
+        IsSettled = true,
+    })
+    return true
+end
+
 function XUiFangKuaiSettlement:OnAwake()
     self:RegisterClickEvent(self.BtnClose, self.OnClickBack)
     self:RegisterClickEvent(self.BtnBack, self.OnClickBack)
@@ -57,10 +76,14 @@ function XUiFangKuaiSettlement:OnClickRePlay()
 end
 
 function XUiFangKuaiSettlement:OnClickBack()
+    local settleData = self._Control:GetCurStageSettleData()
+    local isBackToCollection = self:TryExitToCollection(settleData and settleData.Point)
     self._Control:ClearFightData(self._StageId)
     self:Close()
-    XLuaUiManager.Remove("UiFangKuaiChapterDetail")
+    if not isBackToCollection then
+        XLuaUiManager.Remove("UiFangKuaiChapterDetail")
+    end
     XLuaUiManager.Close("UiFangKuaiFight")
 end
 
-return XUiFangKuaiSettlement
+return XUiFangKuaiSettlement

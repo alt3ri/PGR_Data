@@ -50,6 +50,14 @@ function XFunctionAgency:GetEntryFunctionalLabel(functionId)
     return self._Model:GetEntryFunctionalLabel(functionId)
 end
 
+function XFunctionAgency:GetEntryFunctionalIcon(functionId)
+    return self._Model:GetEntryFunctionalIcon(functionId)
+end
+
+function XFunctionAgency:GetEntryFunctionalTaskId(functionId)
+    return self._Model:GetEntryFunctionalTaskId(functionId)
+end
+
 function XFunctionAgency:MarkEntryRedPoint(functionId)
     --不需要Mark
     if not self._Model:CheckEntryRedPoint(functionId) then

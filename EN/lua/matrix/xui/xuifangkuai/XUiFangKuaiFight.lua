@@ -18,6 +18,23 @@ local NoticeLine = {
     Second = 2,
 }
 
+function XUiFangKuaiFight:TryExitToCollection(score)
+    if not XMVCA.XGameCollection or not XMVCA.XGameCollection.EnumConst then
+        return false
+    end
+
+    local gameType = XMVCA.XGameCollection.EnumConst.GameType.FangKong
+    if not XMVCA.XGameCollection:IsLaunchedFromCollection(gameType) then
+        return false
+    end
+
+    XMVCA.XGameCollection:OnGameExitToCollection(gameType, {
+        Score = score,
+        IsSettled = false,
+    })
+    return true
+end
+
 function XUiFangKuaiFight:OnAwake()
     self._BlockMap = {}
     self._NoticeBlocks = {}
@@ -1220,8 +1237,10 @@ function XUiFangKuaiFight:OnClickExit()
     if self._IsForbidClick then
         return -- 避免正在拖动方块时点ESC关闭界面
     end
-    XLuaUiManager.Remove("UiFangKuaiChapterDetail")
     self._Control:RecordStage(XEnumConst.FangKuai.RecordUiType.Fight, XEnumConst.FangKuai.RecordButtonType.Leave, self._StageId)
+    if not self:TryExitToCollection() then
+        XLuaUiManager.Remove("UiFangKuaiChapterDetail")
+    end
     self:Close()
 end
 
@@ -1535,4 +1554,4 @@ end
 ---@field Root UnityEngine.RectTransform
 ---@field Effects UnityEngine.GameObject[]
 
-return XUiFangKuaiFight
+return XUiFangKuaiFight

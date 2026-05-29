@@ -143,7 +143,7 @@ function XUiBigWorldTaskMain:RefreshTaskContent(typeId, groupId, questId)
             local image = self._Control:GetQuestTypeBigIcon(typeId)
             local name = self._Control:GetQuestTypeName(typeId)
             self.ImgLogo:SetImage(image)
-            self.TxtNone.text = XMVCA.XBigWorldService:GetText("TemporarilyNone") .. name
+            self.TxtNone.text = XMVCA.XBigWorldService:GetText("TemporarilyNone", name)
         end
 
         self._PanelTaskContent:Close()

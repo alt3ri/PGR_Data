@@ -21,7 +21,15 @@ end
 
 function XGameCollectionAgency:NotifyGameCollectionData(data)
     self._Model:SetActivityId(data.GameCollectionData.ActivityId)
-    self._Model:UpdateGameData(data.GameCollectionData.GameData)
+    local newRecords = self._Model:UpdateGameData(data.GameCollectionData.GameData)
+    if XTool.IsTableEmpty(newRecords) then
+        return
+    end
+    for _, record in ipairs(newRecords) do
+        self._Model:SetPendingExitRecord(record)
+    end
+    -- Notify 到达,立刻处理(若有等待中的延时定时器,_PumpBreakRecord 内会取消)
+    self:_PumpBreakRecord(false)
 end
 
 function XGameCollectionAgency:IsLaunchedFromCollection(gameType)
@@ -29,7 +37,8 @@ function XGameCollectionAgency:IsLaunchedFromCollection(gameType)
         return true
     end
 
-    return self:GetLaunchContext().GameType == gameType
+    local launchContext = self:GetLaunchContext()
+    return launchContext and launchContext.GameType == gameType or false
 end
 
 function XGameCollectionAgency:OnGameExitToCollection(gameType, exitInfo)
@@ -37,49 +46,61 @@ function XGameCollectionAgency:OnGameExitToCollection(gameType, exitInfo)
         return false
     end
 
-    local function NormalizeExitInfo(exitInfo)
-        if type(exitInfo) == "number" then
-            return {
-                Score = exitInfo,
-            }
-        end
-
-        return exitInfo or {}
-    end
-    local gameCfg = self._Model:GetGameCollectionCfgById(gameType)
-    local record = self:_BuildExitRecord(gameType, gameCfg, NormalizeExitInfo(exitInfo))
-
     self._Model:SetSelectedGameType(gameType)
-    self._Model:SetPendingExitRecord(record)
     self:ClearLaunchContext()
 
     return true
 end
 
-function XGameCollectionAgency:_BuildExitRecord(gameType, gameCfg, exitInfo)
-    if XTool.IsTableEmpty(gameCfg) then
-        return nil
+-- 破纪录弹窗统一入口:在主界面已显示且当前没有破纪录弹窗时,从队列依次消费;否则只缓存
+-- onClose:全部破纪录弹窗依次关闭后才触发,确保"下一步"被弹窗拦住
+-- 携带 onClose 时会延时一小段等 Notify,避免 RPC 回调早于 Notify 到达时漏拦
+function XGameCollectionAgency:TryOpenBreakRecord(onClose)
+    if onClose then
+        self._PendingBreakRecordCb = onClose
+    end
+    self:_PumpBreakRecord(onClose ~= nil)
+end
+
+function XGameCollectionAgency:_PumpBreakRecord(allowDeferForLateNotify)
+    if self._BreakRecordPumpTimer then
+        XScheduleManager.UnSchedule(self._BreakRecordPumpTimer)
+        self._BreakRecordPumpTimer = nil
     end
 
-    if gameType == XEnumConst.GameCollection.GameType.Game2048 then
-        local snapshot = self._Model:GetGameSnapshot(gameType)
-        local enterMaxScore = snapshot and snapshot.EnterMaxScore or 0
-        local score = exitInfo.Score or 0
-        if score > enterMaxScore then
-            return {
-                GameName = gameCfg.Name,
-                NewScore = score,
-            }
+    if XLuaUiManager.IsUiShow("UiMiniGamesCollectionBreakTheRecord") then
+        -- 弹窗已显示,暂存的 onClose 会在弹窗链结束后触发
+        return
+    end
+
+    local function FlushPendingCb()
+        local cb = self._PendingBreakRecordCb
+        self._PendingBreakRecordCb = nil
+        if cb then cb() end
+    end
+
+    if not XLuaUiManager.IsUiShow("UiMiniGamesCollectionMain") then
+        FlushPendingCb()
+        return
+    end
+
+    local record = self._Model:PopPendingExitRecord()
+    if XTool.IsTableEmpty(record) then
+        if allowDeferForLateNotify and self._PendingBreakRecordCb then
+            -- 给 Notify 一小段时间到达,期间若 Notify 写入记录会再次触发并取消本定时器
+            self._BreakRecordPumpTimer = XScheduleManager.ScheduleOnce(function()
+                self._BreakRecordPumpTimer = nil
+                self:_PumpBreakRecord(false)
+            end, 200)
+            return
         end
-        return nil
+        FlushPendingCb()
+        return
     end
 
-    if gameType == XEnumConst.GameCollection.GameType.FangKong and exitInfo.IsNewScoreRecord then
-        return {
-            GameName = gameCfg.Name,
-            NewScore = exitInfo.Score or 0,
-        }
-    end
+    XLuaUiManager.Open("UiMiniGamesCollectionBreakTheRecord", record.GameName, record.NewScore, function()
+        self:_PumpBreakRecord(false)
+    end)
 end
 
 function XGameCollectionAgency:SetLaunchContext(gameType, stageId)
@@ -166,8 +187,27 @@ function XGameCollectionAgency:MarkRewardShopEntered()
     self._HasEnteredRewardShopThisLaunch = true
 end
 
+function XGameCollectionAgency:GetFirstEnterMainKey()
+    local activityId = self._Model:GetActivityId() or 0
+    return string.format("GameCollection_FirstEnterMain_%s_%s", tostring(activityId), tostring(XPlayer.Id))
+end
+
+function XGameCollectionAgency:HasFirstEnterMainBluePoint()
+    if not XTool.IsNumberValid(self._Model:GetActivityId()) then
+        return false
+    end
+    return not XSaveTool.GetData(self:GetFirstEnterMainKey())
+end
+
+function XGameCollectionAgency:MarkFirstEnterMain()
+    if not XTool.IsNumberValid(self._Model:GetActivityId()) then
+        return
+    end
+    XSaveTool.SaveData(self:GetFirstEnterMainKey(), true)
+end
+
 function XGameCollectionAgency:HasGoodCanBuy()
-    if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.ShopCommon, nil, false) then
+    if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.ShopCommon, nil, true) then
         return false
     end
     local config = self._Model:GetGameCollectionConfig("shopId")
@@ -207,5 +247,6 @@ function XGameCollectionAgency:HasGoodCanBuy()
 
     return false
 end
+
 
 return XGameCollectionAgency

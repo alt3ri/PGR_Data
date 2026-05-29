@@ -1,4 +1,4 @@
-local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XUiLifuActivitySingleDetail = XLuaUiManager.Register(XLuaUi,"UiLifuActivitySingleDetail")
 
 function XUiLifuActivitySingleDetail:OnStart(stageId, skipId)
@@ -61,7 +61,7 @@ function XUiLifuActivitySingleDetail:Refresh()
 end
 
 function XUiLifuActivitySingleDetail:OnClickBtnEnterFight()
-    XLuaUiManager.Open("UiBattleRoleRoom", self.StageId)
+    XMVCA.XFuben:OpenUiBattleRoleRoom(self.StageId)
 end
 
 function XUiLifuActivitySingleDetail:OnClickBtnSkipDraw()

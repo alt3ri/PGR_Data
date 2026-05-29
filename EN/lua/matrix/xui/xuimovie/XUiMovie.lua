@@ -2,12 +2,13 @@ local tableInsert = table.insert
 local XUiGridMovieActor = require("XUi/XUiMovie/XUiGridMovieActor")
 local XUiGridMovieSpineActor = require("XUi/XUiMovie/XUiGridMovieSpineActor")
 local XUiPanelMovie3D = require("XUi/XUiMovie/XUiPanelMovie3D")
+---@class XUiMovie
 ---@field UiPanelText XUiPanelText
 ---@field UiMovieBg XUiMovieBg
 ---@field _Control XMovieControl
 ---@field Actors XUiGridMovieActor[]
 ---@field SpineActors XUiGridMovieSpineActor[]
----@class XUiMovie
+---@field VideoPlayer XVideoPlayerUGUI
 local XUiMovie = XLuaUiManager.Register(XLuaUi, "UiMovie")
 
 local InsertDirection = {
@@ -31,6 +32,7 @@ function XUiMovie:OnAwake()
     self.UiMoviePanelActor.gameObject:SetActiveEx(false)
     self.BtnAutoing.gameObject:SetActiveEx(false)
     self.RImgBg1.gameObject:SetActiveEx(false)
+    self.VideoPlayer.gameObject:SetActiveEx(false)
     self.UiMovieBg = require("XUi/XUiMovie/XUiMovieBg").New(self)
     self:AddListener()
 end
@@ -253,13 +255,13 @@ end
 
 function XUiMovie:OnClickHideMask()
     self.PanelHideMask.gameObject:SetActiveEx(false)
-    self.PanelDialogCanvasGroup.alpha = 1
+    self.PanelDialog.gameObject:SetActiveEx(true)
     self.TopBtnCanvasGroup.alpha = 1
 end
 
 function XUiMovie:OnClickBtnHide()
     self.PanelHideMask.gameObject:SetActiveEx(true)
-    self.PanelDialogCanvasGroup.alpha = 0
+    self.PanelDialog.gameObject:SetActiveEx(false)
     self.TopBtnCanvasGroup.alpha = 0
     self:ResetAutoPlay()
 end
@@ -554,7 +556,7 @@ end
 
 --============================================================== #region BtnAuto ==============================================================
 function XUiMovie:OnClickBtnAuto()
-    if self:SelectPanelShowing() or self:IsDestroy() then
+    if self:SelectPanelShowing() or self:IsDestroy() or self.IsVideoPlaying then
         return
     end
     
@@ -587,7 +589,7 @@ function XUiMovie:OnClickBtnAuto()
 end
 
 function XUiMovie:OnClickBtnAutoing()
-    if self:SelectPanelShowing() then
+    if self:SelectPanelShowing() or self.IsVideoPlaying then
         return
     end
     
@@ -754,6 +756,11 @@ end
 
 -- 点击BtnNext回调
 function XUiMovie:OnBtnNextClick()
+    -- 等待动画播放完成
+    if self.IsVideoPlaying and self.WaitVideoFinish then
+        return
+    end
+    
     local INTERVAL = 0.3 -- 间隔时间
     local curTime = CS.UnityEngine.Time.time
     self.LastDoNextTime = self.LastDoNextTime or 0
@@ -792,6 +799,10 @@ end
 --region BtnBookmark
 -- 点击书签按钮
 function XUiMovie:OnBtnBookmarkClick()
+    if self.IsVideoPlaying then
+        return
+    end
+    
     -- 自动播放时，暂停自动播放
     if XDataCenter.MovieManager.GetIsAutoPlay() then
         local isMoviePause = XDataCenter.MovieManager.IsMoviePause()
@@ -884,5 +895,54 @@ function XUiMovie:RemoveShakeTimer()
     end
 end
 --end
+
+--region VideoPlay
+function XUiMovie:PlayVideo(videoId, waitVideoFinish)
+    self.IsVideoPlaying = true
+    self.WaitVideoFinish = waitVideoFinish
+    self.VideoPlayer.gameObject:SetActiveEx(true)
+    self.VideoPlayer:SetInfoByVideoId(videoId)
+    self.VideoPlayer.ActionEnded = function()
+        -- 延迟一帧，等视频的End逻辑跑完再执行回调
+        XScheduleManager.ScheduleOnce(function()
+            self:OnVideoEnd()
+        end, 0)
+    end
+    self.VideoPlayer:Play()
+    
+    -- 按钮禁用
+    if self.BtnAuto and self.BtnAuto.gameObject.activeSelf then
+        self.BtnAuto:SetDisable(true)
+    end
+    if self.BtnAutoing and self.BtnAutoing.gameObject.activeSelf then
+        self.BtnScreenSpeed.gameObject:SetActiveEx(false)
+    end
+    if self.BtnBookmark and self.BtnBookmark.gameObject.activeSelf then
+        self.BtnBookmark:SetDisable(true)
+    end
+end
+
+function XUiMovie:OnVideoEnd()
+    self.IsVideoPlaying = false
+    if self.VideoPlayer then
+        self.VideoPlayer.gameObject:SetActiveEx(false)
+    end
+
+    -- 按钮启用
+    if self.BtnAuto and self.BtnAuto.gameObject.activeSelf then
+        self.BtnAuto:SetDisable(false)
+    end
+    if self.BtnAutoing and self.BtnAutoing.gameObject.activeSelf then
+        self.BtnScreenSpeed.gameObject:SetActiveEx(true)
+    end
+    if self.BtnBookmark and self.BtnBookmark.gameObject.activeSelf then
+        self.BtnBookmark:SetDisable(false)
+    end
+
+    if self.WaitVideoFinish then
+        XEventManager.DispatchEvent(XEventId.EVENT_MOVIE_BREAK_BLOCK)
+    end
+end
+--endregion
 
 return XUiMovie

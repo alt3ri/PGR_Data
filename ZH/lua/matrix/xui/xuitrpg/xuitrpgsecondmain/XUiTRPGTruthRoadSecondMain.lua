@@ -88,7 +88,7 @@ end
 
 function XUiTRPGTruthRoadSecondMain:OnBtnEnterFightClick()
     self:CloseEnterDialog()
-    XLuaUiManager.Open("UiBattleRoleRoom", self.StageId)
+    XMVCA.XFuben:OpenUiBattleRoleRoom(self.StageId)
 end
 
 function XUiTRPGTruthRoadSecondMain:OnBtnMaskClick()

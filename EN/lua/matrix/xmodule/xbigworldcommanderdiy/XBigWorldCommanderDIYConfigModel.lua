@@ -6,6 +6,7 @@ local BigWorldDIYTableKey = {
         CacheType = XConfigUtil.CacheType.Normal,
     },
     BigWorldDIYColorGroup = {
+        CacheType = XConfigUtil.CacheType.Normal,
         Identifier = "GroupId",
     },
     BigWorldDIYPart = {
@@ -14,11 +15,18 @@ local BigWorldDIYTableKey = {
     BigWorldDIYPartGroup = {
         Identifier = "TypeId",
     },
+    BigWorldDIYOutfit = {
+        CacheType = XConfigUtil.CacheType.Normal,
+    },
     BigWorldDIYRes = {
         CacheType = XConfigUtil.CacheType.Normal,
     },
     BigWorldDIYType = {
         Identifier = "TypeId",
+        CacheType = XConfigUtil.CacheType.Normal,
+    },
+    BigWorldDIYPreview = {
+        DirPath = XConfigUtil.DirectoryType.Client,
         CacheType = XConfigUtil.CacheType.Normal,
     },
 }
@@ -139,6 +147,11 @@ function XBigWorldCommanderDIYConfigModel:GetDlcPlayerFashionPartIncompatibleTyp
     local config = self:GetDlcPlayerFashionPartConfigById(id)
 
     return config.IncompatibleType
+end
+
+function XBigWorldCommanderDIYConfigModel:GetDlcPlayerFashionPartIncompatiblePartsByTypeId(partId)
+    local config = self:GetDlcPlayerFashionPartConfigById(partId)
+    return config.IncompatiblePartIds
 end
 
 function XBigWorldCommanderDIYConfigModel:GetDlcPlayerFashionPartPartsById(id)
@@ -267,12 +280,6 @@ function XBigWorldCommanderDIYConfigModel:GetDlcPlayerFashionTypeIsSuitByTypeId(
     return config.IsSuit
 end
 
-function XBigWorldCommanderDIYConfigModel:GetDlcPlayerFashionTypeDefaultPartIdByTypeId(typeId)
-    local config = self:GetDlcPlayerFashionTypeConfigByTypeId(typeId)
-
-    return config.DefaultPartId
-end
-
 function XBigWorldCommanderDIYConfigModel:GetDlcPlayerFashionTypeDefaultAnimationParamByTypeId(typeId)
     local config = self:GetDlcPlayerFashionTypeConfigByTypeId(typeId)
 
@@ -283,6 +290,33 @@ function XBigWorldCommanderDIYConfigModel:GetDlcPlayerFashionTypeEntryAnimationN
     local config = self:GetDlcPlayerFashionTypeConfigByTypeId(typeId)
 
     return config.EntryAnimationName
+end
+
+function XBigWorldCommanderDIYConfigModel:GetDlcPlayerFashionOutfitConfigById(id)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(BigWorldDIYTableKey.BigWorldDIYOutfit, id, false)
+end
+
+function XBigWorldCommanderDIYConfigModel:GetOutfitDefaultPartConfigById(id)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(BigWorldDIYTableKey.BigWorldDIYOutfit, id, false).DefaultPartIds
+end
+
+function XBigWorldCommanderDIYConfigModel:GetPartItemIcon(id)
+    local config = self:GetDlcPlayerFashionPartConfigById(id)
+    return config.ItemIcon
+end
+
+function XBigWorldCommanderDIYConfigModel:GetPartGoodsIcon(id)
+    local config = self:GetDlcPlayerFashionPartConfigById(id)
+    return config.GoodsIcon
+end
+
+function XBigWorldCommanderDIYConfigModel:GetPartGoodsName(id)
+    local config = self:GetDlcPlayerFashionPartConfigById(id)
+    return config.GoodsName
+end
+
+function XBigWorldCommanderDIYConfigModel:GetDlcPlayerFashionPreviewConfigs(id)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(BigWorldDIYTableKey.BigWorldDIYPreview, id, false) or table.empty
 end
 
 return XBigWorldCommanderDIYConfigModel

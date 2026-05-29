@@ -63,7 +63,7 @@ function XEquipModel:DoAutoRotateWeapon(rootGo, model, center)
 
     local rotate = rootGo:GetComponent("XAutoRotation")
     if not rotate then
-        rootGo:AddComponent(typeof(CS.XAutoRotation))
+        rootGo.gameObject:AddComponent(typeof(CS.XAutoRotation))
         rotate = rootGo:GetComponent(typeof(CS.XAutoRotation))
     end
     if rotate then

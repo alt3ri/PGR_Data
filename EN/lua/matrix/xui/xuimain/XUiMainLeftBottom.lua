@@ -20,6 +20,7 @@ local RedPointConditionGroup = {
         XRedPointConditions.Types.CONDITION_PURCHASE_GET_RERARGE,
         XRedPointConditions.Types.CONDITION_PURCHASE_GET_CARD,
         XRedPointConditions.Types.CONDITION_PURCHASE_GET_WEEK_CARD,
+        XRedPointConditions.Types.CONDITION_PURCHASE_YK_RETROACTIVE,
         XRedPointConditions.Types.CONDITION_ACTIVITY_NEW_ACTIVITIES,
         XRedPointConditions.Types.CONDITION_ACTIVITY_SCLASS_GOT,
     },

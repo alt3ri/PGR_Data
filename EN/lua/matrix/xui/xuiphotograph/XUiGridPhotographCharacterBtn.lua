@@ -20,12 +20,19 @@ function XUiGridPhotographCharacterBtn:Refrash(data)
         self.TxtNameEn.text = data.EnName
     end
     self.TxtAIXin.text = data.TrustLv
+    local fashionId = XDataCenter.FashionManager.GetFashionIdByCharId(data.Id)
+    local template = XDataCenter.FashionManager.GetFashionTemplate(fashionId)
+
+    if self.ColorTag then
+        self.ColorTag.gameObject:SetActiveEx(template.FashionColorIds and #template.FashionColorIds > 0)
+    end
 end
 
 function XUiGridPhotographCharacterBtn:OnTouched(charId)
     self:SetSelect(true)
     local fashionId = XDataCenter.FashionManager.GetFashionIdByCharId(charId)
-    CsXGameEventManager.Instance:Notify(XEventId.EVENT_PHOTO_CHANGE_MODEL, charId, fashionId)
+    local colorId = XDataCenter.FashionManager.GetOwnFashionDataById(fashionId).ColorId
+    CsXGameEventManager.Instance:Notify(XEventId.EVENT_PHOTO_CHANGE_MODEL, charId, fashionId,colorId)
 end
 
 function XUiGridPhotographCharacterBtn:SetSelect(bool)

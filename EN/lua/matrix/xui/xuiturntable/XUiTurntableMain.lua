@@ -70,7 +70,10 @@ function XUiTurntableMain:InitCompnent()
 
     self.BtnSkip:SetButtonState(CS.UiButtonState.Normal)
     self.PanelForbidClick.gameObject:SetActiveEx(false)
-    
+
+    self.PanelSettllement01.gameObject:SetActiveEx(false)
+    self.PanelSettllement02.gameObject:SetActiveEx(false)
+
     self.PanelRewardShow01 = XUiPanelTurntableRewardShow.New(self.PanelSettllement01, self)
     self.PanelRewardShow02 = XUiPanelTurntableRewardShow.New(self.PanelSettllement02, self)
 end
@@ -432,6 +435,9 @@ function XUiTurntableMain:OnBtnStartClick(isTen)
     end
 
     local count = isTen and self._MultiTimes or 1
+
+
+    XDataCenter.ItemManager.SetAutoGiftRewardShowLock(true)
     self._Control:RequestDrawReward(count, function(records)
         self:StartRotate(records)
     end)
@@ -658,8 +664,8 @@ end
 
 function XUiTurntableMain:OnBtnObtainClick()
     self._RewardShowing = false
-    self.PanelRewardShow01:Close()
-    self.PanelRewardShow02:Close()
+    self.PanelRewardShow01:CloseEx()
+    self.PanelRewardShow02:CloseEx()
     XDataCenter.KickOutManager.Unlock(XEnumConst.KICK_OUT.LOCK.TURNTABLE, true)
 end
 

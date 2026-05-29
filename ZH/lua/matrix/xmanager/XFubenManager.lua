@@ -248,8 +248,8 @@ XFubenManagerCreator = function()
         return XMVCA.XFuben:EnterBfrtFight(stageId, team, captainPos, firstFightPos, generalSkillId, enterCgIndex, settleCgIndex)
     end
 
-    function XFubenManager.EnterStrongholdFight(stageId, characterIds, captainPos, firstFightPos, generalSkillId, enterCgIndex, settleCgIndex)
-        return XMVCA.XFuben:EnterStrongholdFight(stageId, characterIds, captainPos, firstFightPos, generalSkillId, enterCgIndex, settleCgIndex)
+    function XFubenManager.EnterStrongholdFight(stageId, characterIds, captainPos, firstFightPos, generalSkillId, enterCgIndex, settleCgIndex, fashionIds)
+        return XMVCA.XFuben:EnterStrongholdFight(stageId, characterIds, captainPos, firstFightPos, generalSkillId, enterCgIndex, settleCgIndex, fashionIds)
     end
 
     function XFubenManager.EnterRiftFight(xTeam, xStageGroup, index)

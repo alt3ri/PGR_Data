@@ -34,7 +34,7 @@ function XUiFashionStoryStageTrialDetail:OnBtnEnterClick()
 
     local isInTime = XMVCA.XFashionStory:IsTrialStageInTime(self.StageId)
     if isInTime then
-        XLuaUiManager.Open("UiBattleRoleRoom", self.StageId)
+        XMVCA.XFuben:OpenUiBattleRoleRoom(self.StageId)
     else
         XUiManager.TipText("FashionStoryTrialStageEnd")
     end

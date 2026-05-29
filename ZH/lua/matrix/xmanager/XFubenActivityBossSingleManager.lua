@@ -451,7 +451,7 @@ XFubenActivityBossSingleManagerCreator = function()
     function XFubenActivityBossSingleManager.JumpToRoleRoom(stageId)
         local team = XFubenActivityBossSingleManager.LoadTeamLocal()
         local robotIds = XFubenActivityBossSingleManager.GetCanUseRobotIds(nil, team:GetEntityIds())
-        XLuaUiManager.Open("UiBattleRoleRoom", stageId, team, {
+        XMVCA.XFuben:OpenUiBattleRoleRoom(stageId, team, {
             OnNotify = function(proxy, evt)
                 if evt == XEventId.EVENT_ACTIVITY_ON_RESET then
                     XDataCenter.FubenActivityBossSingleManager.OnActivityEnd()

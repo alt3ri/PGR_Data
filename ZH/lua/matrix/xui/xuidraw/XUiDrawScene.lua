@@ -111,7 +111,7 @@ function XUiDrawScene:LoadPartnerModel(templateId,cb)
             self:SetModelTransform(CModel)
         end, false, true)
         -- 出生特效
-        self.PanelRoleModel:LoadPartnerUiEffect(modelConfig.CombatModel, XPartnerConfigs.EffectParentName.ModelOnEffect, true, true)
+        self.PanelRoleModel:LoadPartnerUiEffect(modelConfig.CombatModel, XPartnerConfigs.EffectParentName.ModelOnEffect, true, true, true)
         -- 动画
         self.PanelRoleModel:PlayAnima(modelConfig.CombatBornAnime, true)
     end)

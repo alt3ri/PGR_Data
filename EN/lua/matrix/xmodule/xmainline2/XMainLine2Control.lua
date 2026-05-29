@@ -1,8 +1,22 @@
 ---@class XMainLine2Control : XControl
 ---@field _Model XMainLine2Model
 local XMainLine2Control = XClass(XControl, "XMainLine2Control")
+
+local ChapterIdEnum = {
+    Kamui4P5 = 1041,
+}
+
 function XMainLine2Control:OnInit()
     --初始化内部变量
+    ---@type XMainLine2MessageControl
+    self.MessageControl = self:AddSubControl(require("XModule/XMainLine2/SubModules/Message/XMainLine2MessageControl"))
+    ---@type XMainLine2UiStageAreaControl
+    self.UiStageAreaControl = self:AddSubControl(require("XModule/XMainLine2/SubModules/UiStageArea/XMainLine2UiStageAreaControl"))
+    
+    --- 内部事件
+    self.EventIds = {
+        FOCUS_STAGE_WITH_AREA_GROUP = 1, -- 在配置了区域的情况下，聚焦指定关卡
+    }
 end
 
 function XMainLine2Control:AddAgencyEvent()
@@ -168,7 +182,20 @@ end
 
 -- 获取关卡VideoId
 function XMainLine2Control:GetStageVideoId(stageId)
-    return self._Model:GetStageVideoId(stageId)
+    local videoIds = self._Model:GetStageVideoIds(stageId)
+    if #videoIds == 0 then return end
+
+    local conditions = self._Model:GetStageVideoConditions(stageId)
+    for i, videoId in ipairs(videoIds) do
+        local condition = conditions[i]
+        if condition and condition ~= 0 then
+            local isReach, desc = XConditionManager.CheckCondition(condition)
+            if isReach then
+                return videoId
+            end
+        end
+    end
+    return videoIds[1]
 end
 
 -- 获取关卡特殊序号
@@ -239,6 +266,10 @@ end
 -- 获取客户端配置表参数
 function XMainLine2Control:GetClientConfigParams(key, index)
     return self._Model:GetClientConfigParams(key, index)
+end
+
+function XMainLine2Control:GetClientConfigNumber(key, index)
+    return self._Model:GetClientConfigNumber(key, index)
 end
 
 --#endregion 配置表 -----------------------------------------------------------------------------------------------
@@ -466,5 +497,14 @@ function XMainLine2Control:SetPlayerGender(genderType)
     self._Model:SetPlayerGender(genderType)
 end
 --#endregion 指挥官 ----------------------------------------------------------------------------------------------
+
+--- 获取章节界面类的接口，主要是对通用派生做支持
+function XMainLine2Control:GetChapterUiCls(chapterId)
+    if chapterId == ChapterIdEnum.Kamui4P5 then
+        return require("XUi/XUiMainLine2/CustomUiChapter/XUiMainLine2PanelChapter4P5")
+    end
+    
+    return require("XUi/XUiMainLine2/XUiMainLine2PanelEntranceList")
+end
 
 return XMainLine2Control

@@ -53,7 +53,9 @@ function XLifeTreeControl:IsCharacterUnlockFinish(catalogId)
 end
 
 -- 获取角色的神卡状态
-function XLifeTreeControl:GetCharacterDivineState(catalogId)
+---@param catalogId number 卡牌catalogId
+---@param isNext boolean 是否是下一阶段状态
+function XLifeTreeControl:GetCharacterDivineState(catalogId, isNext)
     local catalogConfig = self._Model:GetLifeTreeCharacterCatalogConfigById(catalogId)
     if catalogConfig.CardType ~= XMVCA.XLifeTree.EnumConst.CARD_TYPE.DIVINE then
         XLog.Error(string.format("CatalogId = [%s] 非神卡，无法获得角色当前神卡类型!", catalogId))
@@ -66,8 +68,12 @@ function XLifeTreeControl:GetCharacterDivineState(catalogId)
         return
     end
 
-    -- 未解锁
     local unlockCount = self._Model:GetCharacterUnlockCountByCatalogId(catalogId)
+    if isNext then
+        unlockCount = unlockCount + 1
+    end
+
+    -- 未解锁
     if unlockCount == 0 then
         return XMVCA.XLifeTree.EnumConst.DIVINE_TYPE.UNLOCK
     end

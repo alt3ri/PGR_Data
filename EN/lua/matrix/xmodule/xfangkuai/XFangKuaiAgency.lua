@@ -71,6 +71,75 @@ function XFangKuaiAgency:GetActivityGameEndTime()
     return XFunctionManager.GetEndTimeByTimeId(timeId)
 end
 
+function XFangKuaiAgency:GetCurStageId(chapterId)
+    return self._Model:GetCurStageId(chapterId)
+end
+
+function XFangKuaiAgency:GetChapterIdByStage(stageId)
+    return self._Model:GetStageIdChapterId(stageId)
+end
+
+function XFangKuaiAgency:GetCurStageSettleData()
+    return self._Model.ActivityData and self._Model.ActivityData:GetSettleData()
+end
+
+function XFangKuaiAgency:GetMaxScore(stageId)
+    if not XTool.IsNumberValid(stageId) or not self._Model.ActivityData then
+        return 0
+    end
+
+    return self._Model.ActivityData:GetMaxScore(stageId) or 0
+end
+
+function XFangKuaiAgency:GetStageGroupTabIdx(stageGroupId)
+    return self._Model:GetStageGroupTabIdx(stageGroupId)
+end
+
+function XFangKuaiAgency:GetStageGroupByStage(stageId)
+    local stageGroups = self._Model:GetStageGroupConfigs()
+    for _, stageGroup in pairs(stageGroups) do
+        if stageGroup.SimpleStageId == stageId or stageGroup.DiffcultStageId == stageId then
+            return stageGroup
+        end
+    end
+end
+
+function XFangKuaiAgency:OpenStageFromCollection(stageId, enterCallback)
+    if not XTool.IsNumberValid(stageId) then
+        return
+    end
+
+    local stageGroup = self:GetStageGroupByStage(stageId)
+    if XTool.IsTableEmpty(stageGroup) then
+        return
+    end
+
+    local tabIndex = stageGroup.SimpleStageId == stageId and XEnumConst.FangKuai.SimpleTab or XEnumConst.FangKuai.DifficultTab
+    XLuaUiManager.Open("UiFangKuaiChapterDetail", stageGroup.Id, tabIndex,true,enterCallback)
+ 
+end
+
+function XFangKuaiAgency:GiveUpStageFromCollection(stageId, cb)
+    if not XTool.IsNumberValid(stageId) then
+        if cb then
+            cb()
+        end
+        return
+    end
+
+    XNetwork.CallWithAutoHandleErrorCode("FangKuaiStageSettleRequest", {
+        StageId = stageId,
+        SettleType = XEnumConst.FangKuai.Settle.GiveUp,
+    }, function(res)
+        self._Model.ActivityData:UpdateSettleData(res.SettleData, stageId)
+        local chapterId = self:GetChapterIdByStage(stageId)
+        self._Model.ActivityData:ClearStageData(chapterId)
+        if cb then
+            cb(res)
+        end
+    end)
+end
+
 function XFangKuaiAgency:IsCurStageId(stageId)
     return XLuaUiManager.IsUiShow("UiFangKuaiFight") and self._Model:GetCurStageIdGuide() == stageId
 end
@@ -209,4 +278,4 @@ end
 
 --endregion
 
-return XFangKuaiAgency
+return XFangKuaiAgency

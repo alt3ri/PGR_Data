@@ -62,6 +62,7 @@ XArrangeConfigs.Types = {
     BWDIYPart = 30, --空花指挥官DIY部件
     Filter = 31,        -- 滤镜解锁
     Anim = 32,          -- 动作解锁
+    FashionColor = 34   -- 涂装颜色
 }
 
 function XArrangeConfigs.GetType(id)

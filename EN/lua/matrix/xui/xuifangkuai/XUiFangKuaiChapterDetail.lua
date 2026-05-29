@@ -10,19 +10,21 @@ function XUiFangKuaiChapterDetail:OnAwake()
     self:BindHelpBtn(self.BtnHelp, self._Control:GetHelpId())
 end
 
-function XUiFangKuaiChapterDetail:OnStart(stageGroupId, tabIndex)
+function XUiFangKuaiChapterDetail:OnStart(stageGroupId, tabIndex, isGameCollection,enterCallback)
     self._StageGroup = self._Control:GetStageGroupConfig(stageGroupId)
     self._CurNpcId = self._Control:GetCurShowNpcId()
     self._SimpleColor = self._Control:GetClientConfig("SimpleStageScoreColor")
     self._DiffcultColor = self._Control:GetClientConfig("DiffcultStageScoreColor")
     self._IsSingleStage = not XTool.IsNumberValid(self._StageGroup.SimpleStageId) or not XTool.IsNumberValid(self._StageGroup.DiffcultStageId)
-    
+    self.IsGameCollection = isGameCollection
+    self:SetCollectionCallback(enterCallback)
     self:InitSceneRoot()
     self:InitCompnent()
     self:InitSelectNpc()
     self:UpdatePlayer()
     self:HideOrShowExchange(false)
-    self:OnSelectTab(XEnumConst.FangKuai.DifficultTab)
+    local selectTab = XTool.IsNumberValid(tabIndex) and tabIndex or self._Control:GetStageGroupTabIdx(stageGroupId)
+    self:OnSelectTab(selectTab)
     self._Control:SaveEnterStageGroupRecord(stageGroupId)
 
     self.EndTime = self._Control:GetActivityGameEndTime()
@@ -59,7 +61,11 @@ function XUiFangKuaiChapterDetail:InitSelectNpc()
     self._NpcList = self._Control:GetAllPlayerNpc()
     XUiHelper.RefreshCustomizedList(self.Content.transform, self.GridCharacterNew, #self._NpcList, function(index, grid)
         local npc = self._NpcList[index]
-        local favorabilityLv = self._Control:GetFavorLevelColor(npc.CharacterId, npc.FavorLv)
+         local favorabilityLv = "1"
+        if not  self.IsGameCollection then
+            favorabilityLv = self._Control:GetFavorLevelColor(npc.CharacterId, npc.FavorLv)
+        end
+        
         local isSelected = npc.Config.Id == self._CurNpcId
         local uiObject = {}
         XUiHelper.InitUiClass(uiObject, grid)
@@ -152,7 +158,7 @@ function XUiFangKuaiChapterDetail:HideOrShowExchange(isShow)
     self._UiCamNearMain.gameObject:SetActiveEx(not isShow)
     self._UiCamNearChange.gameObject:SetActiveEx(isShow)
     self._UiCamFarPanelExchange.gameObject:SetActiveEx(isShow)
-    self.BtnChange.gameObject:SetActiveEx(not isShow)
+    self.BtnChange.gameObject:SetActiveEx(not isShow and not self.IsGameCollection)
     if isShow then
         self.PanelScore.gameObject:SetActiveEx(false)
     elseif self._Control:IsStagePass(self._StageId) then
@@ -164,6 +170,9 @@ end
 function XUiFangKuaiChapterDetail:OnTabsClick(index)
     self._CurNpc = self._NpcList[index]
     self._CurNpcId = self._CurNpc.Config.Id
+    if  self.IsGameCollection then
+        self._CurNpcId = tonumber(XMVCA.XGameCollection:GetGameCollectionConfig('FangKuaiNpcId'))
+    end
     self:UpdatePlayer()
 
     local key = string.format("FangKuaiNpcId_%s_%s", XPlayer.Id, self._Control:GetActivityId())
@@ -178,14 +187,50 @@ function XUiFangKuaiChapterDetail:OnClickExchangeEmpty()
     self:HideOrShowExchange(false)
 end
 
-function XUiFangKuaiChapterDetail:OnClickTongBlack()
-    self._Control:FangKuaiStageStartRequest(self._StageId, function()
-        self:OpenFightPanel()
-    end)
+function XUiFangKuaiChapterDetail:SetCollectionCallback(enterCallback)
+    self._CollectionCallback = enterCallback
 end
 
-function XUiFangKuaiChapterDetail:OpenFightPanel()
-    self._Control:EnterGame(self._StageId, true)
+function XUiFangKuaiChapterDetail:OnClickTongBlack()
+    local collectionCb = self._CollectionCallback
+    local onEnterFight = function(isNewGame)
+        self:OpenFightPanel(isNewGame)
+        if collectionCb then
+            collectionCb(self._StageId)
+            XLuaUiManager.Remove("UiFangKuaiChapterDetail")
+        end
+    end
+
+    if collectionCb then
+        local chapterId = self._Control:GetChapterIdByStage(self._StageId)
+        local currentStageId = self._Control:GetCurStageId(chapterId)
+
+        if currentStageId == self._StageId then
+            onEnterFight(false)
+            return
+        end
+
+        local startTargetStage = function()
+            self._Control:FangKuaiStageStartRequest(self._StageId, function()
+                onEnterFight(true)
+            end)
+        end
+
+        if XTool.IsNumberValid(currentStageId) then
+            self._Control:FangKuaiStageSettleRequest(currentStageId, XEnumConst.FangKuai.Settle.GiveUp, startTargetStage)
+            return
+        end
+
+        startTargetStage()
+    else
+        self._Control:FangKuaiStageStartRequest(self._StageId, function()
+            self:OpenFightPanel(true)
+        end)
+    end
+end
+
+function XUiFangKuaiChapterDetail:OpenFightPanel(isNewGame)
+    self._Control:EnterGame(self._StageId, isNewGame)
 end
 
 function XUiFangKuaiChapterDetail:OnClickItem()
@@ -197,4 +242,4 @@ function XUiFangKuaiChapterDetail:GetStageId()
     return self._StageId
 end
 
-return XUiFangKuaiChapterDetail
+return XUiFangKuaiChapterDetail

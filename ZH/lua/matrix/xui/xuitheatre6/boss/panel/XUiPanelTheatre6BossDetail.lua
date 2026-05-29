@@ -25,6 +25,8 @@ function XUiPanelTheatre6BossDetail:SetData(roomId, fightId)
     local roomConfig = self._Control:GetStageRoomConfig(self._RoomId)
     local isBoss = roomConfig.Type == XEnumConst.Theatre6.RoomType.Boss
     self.UiPanelBoss.gameObject:SetActiveEx(isBoss)
+    self._PanelLeft:SetVisible(isBoss)
+    self._PanelRight:SetVisible(isBoss)
     self.UiPanelMinion.gameObject:SetActiveEx(not isBoss)
     self.BtnView.gameObject:SetActiveEx(not isBoss)
 

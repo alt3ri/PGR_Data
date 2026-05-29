@@ -2,5 +2,5 @@
 
 > Client region: Global</br>
 > Status: Release</br>
-> Resource Version: 4.3.0</br>
-> Document Version: 4.3.8</br>
+> Resource Version: 4.5.0</br>
+> Document Version: 4.5.0</br>

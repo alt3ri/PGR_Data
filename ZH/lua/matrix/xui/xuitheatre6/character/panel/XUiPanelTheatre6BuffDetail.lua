@@ -35,11 +35,15 @@ end
 
 ---设置Buff
 ---@param info XTheatre6BuffData
-function XUiPanelTheatre6BuffDetail:SetBuffInfo(info)
-    self._BuffData = self._Control:GetBuffDataByUid(info.Uid)
+function XUiPanelTheatre6BuffDetail:SetBuffInfo(info, buffData)
+    self._BuffData = buffData or self._Control:GetBuffDataByUid(info.Uid)
+    if not self._BuffData then
+        XLog.Error(string.format("Buff不存在 uid：%s", info.Uid))
+        return
+    end
     self._BuffId = self._BuffData.BuffId
     self._BuffConfig = self._Control:GetBuffConfig(self._BuffId)
-    self._Buff:UpdateByUid(info.Uid)
+    self._Buff:UpdateByUid(info.Uid, self._BuffData)
     self._IsUnlock = true
 
     self:ShowBaseInfo()
@@ -83,7 +87,7 @@ end
 ---@param info XTheatre6BuffData
 function XUiPanelTheatre6BuffDetail:ShowTimes(info)
     if self._BuffConfig.CanStack then
-        self:SetEffectTimes(info.StackCount) --只显示堆叠数量
+        self:SetStackCount(info.StackCount) --只显示堆叠数量
         return
     end
     if XTool.IsNumberValid(self._BuffConfig.IsCount) then
@@ -96,7 +100,7 @@ end
 
 ---是否显示选择按钮
 ---@param clickCb fun(buffId:number)
-function XUiPanelTheatre6BuffDetail:SetBtnUseVisible(isVisible, clickCb)
+function XUiPanelTheatre6BuffDetail:SetBtnUseVisible(clickCb)
     self._ClickCb = clickCb
     self._IsBtnUseVisible = true
     self:_UpdateSelectStatus()
@@ -106,6 +110,11 @@ end
 function XUiPanelTheatre6BuffDetail:SetCurChooseBuff(id)
     self._IsSelected = id == self._BuffId
     self:_UpdateSelectStatus()
+end
+
+function XUiPanelTheatre6BuffDetail:SetStackCount(count)
+    self.UiTxtAdd.gameObject:SetActiveEx(true)
+    self.UiTxtAdd.text = XUiHelper.GetText("Theatre6BuffStackCount", count)
 end
 
 ---设置buff生效次数

@@ -2,9 +2,11 @@ XTeamConfig = XTeamConfig or {}
 
 local TABLE_TEAMTYPE = "Share/Team/TeamType.tab"
 local TABLE_PATH = "Share/Team/Team.tab"
+local TABLE_TEAM_PREFAB_TAG = "Share/Team/TeamPrefabTag.tab"
 local TeamTypeCfg
 local TeamCfg
 local TeamTypeDic = {}
+local TeamPrefabTagCfg
 
 XTeamConfig.MEMBER_AMOUNT = 3
 
@@ -17,6 +19,8 @@ function XTeamConfig.Init()
     end
 
     XTeamConfig.ConstructTeamCfg()
+
+    TeamPrefabTagCfg = XTableManager.ReadByIntKey(TABLE_TEAM_PREFAB_TAG, XTable.XTableTeamPrefabTag, "Id")
 end
 
 
@@ -52,4 +56,14 @@ function XTeamConfig.GetTeamsByTypeId(typeId)
         return nil
     end
     return TeamTypeDic[typeId]
-end
+end
+
+--region TeamPrefabTag
+function XTeamConfig.GetTeamPrefabTagCfgById(id)
+    return TeamPrefabTagCfg and TeamPrefabTagCfg[id]
+end
+
+function XTeamConfig.GetAllTeamPrefabTagCfg()
+    return TeamPrefabTagCfg
+end
+--endregion

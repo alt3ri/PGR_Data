@@ -6,7 +6,15 @@ function XFashionColor:Ctor()
 end
 
 function XFashionColor:NotifyFashionColorData(data)
-    FashionColorDic = data.FashionColors or {}
+    FashionColorDic = FashionColorDic or {}
+    for id, colors in pairs(data.FashionColors) do
+        for index, color in ipairs(colors) do
+            FashionColorDic[id] = FashionColorDic[id] or {}
+            if color and not table.contains(FashionColorDic[id], color) then
+                table.insert(FashionColorDic[id], color)
+            end
+        end
+    end
 end
 
 function XFashionColor:GetFashionColorIds(fashionId)
@@ -20,6 +28,10 @@ function XFashionColor:IsFashionColorHas(fashionId, colorId)
         return false, nil
     end
     return true, colorId
+end
+
+function XFashionColor:ClearData()
+    FashionColorDic = nil
 end
 
 return XFashionColor

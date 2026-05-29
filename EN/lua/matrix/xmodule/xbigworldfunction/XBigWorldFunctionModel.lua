@@ -10,6 +10,9 @@ function XBigWorldFunctionModel:OnInit()
     self._ShieldControllerMap = {}
     
     self._CurrentShieldFunction = {}
+    --主线商业功能屏蔽
+    self._ShieldOfMainBusiness = true
+    self._ShieldOfBackgroundDownload = true
 end
 
 function XBigWorldFunctionModel:ClearPrivate()
@@ -96,5 +99,14 @@ end
 function XBigWorldFunctionModel:GetFunctionControllerGroup(functionType)
     return self._ShieldControllerMap[functionType]
 end
+
+function XBigWorldFunctionModel:GetShieldOfMainBusiness()
+    return self._ShieldOfMainBusiness
+end
+
+function XBigWorldFunctionModel:GetShieldOfBackgroundDownload()
+    return self._ShieldOfBackgroundDownload
+end
+
 
 return XBigWorldFunctionModel

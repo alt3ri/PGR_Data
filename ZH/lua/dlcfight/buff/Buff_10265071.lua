@@ -6,7 +6,7 @@ local XBuffScript10265071 = XDlcScriptManager.RegBuffScript(10265071, "XBuffScri
 
 function XBuffScript10265071:ScriptInit(isGainControl) --初始化
     self.TargetSkill = self._skillId
-    self.BuffId = 10265071        --25%加伤buff
+    self.BuffId = 10255071        --25%加伤buff
 end
 
 function XBuffScript10265071:OnLuaSkillEnd(eventArgs)

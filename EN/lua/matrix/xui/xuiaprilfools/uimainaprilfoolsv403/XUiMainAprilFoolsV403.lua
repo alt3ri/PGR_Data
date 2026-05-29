@@ -106,7 +106,7 @@ function XUiMainAprilFoolsV403:InitPanel()
     ---@type XUiMainBoardEffect
     self.MainBoardEffect = XUiMainBoardEffect.New(self)
     ---@type XUiPanelSwitchableSceneAnim
-    self.SwitchableScene = require("XUi/XUiSwitchableScene/Panel/XUiPanelSwitchableSceneAnim").New()
+    self.SwitchableScene = require("XUi/XUiSwitchableScene/XUiPanelSwitchableSceneAnim").New()
 end
 
 function XUiMainAprilFoolsV403:SetScreenAdaptorCache()

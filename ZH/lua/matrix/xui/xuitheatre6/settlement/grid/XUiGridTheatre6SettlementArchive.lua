@@ -21,7 +21,7 @@ function XUiGridTheatre6SettlementArchive:Update(data, index)
         if self.Parent._IsSelectableEmpty then
             self:UpdateSelectState()
         else
-            self.GridArchive:SetButtonState(XUiButtonState.Disable)
+            self:SetButtonState(XUiButtonState.Disable)
         end
         return
     end
@@ -33,10 +33,15 @@ end
 function XUiGridTheatre6SettlementArchive:UpdateSelectState()
     local isSelected = self.Data.slotIndex == self.Parent._SelectedSlotIndex
     if isSelected then
-        self.GridArchive:SetButtonState(XUiButtonState.Select)
+        self:SetButtonState(XUiButtonState.Select)
     else
-        self.GridArchive:SetButtonState(XUiButtonState.Normal)
+        self:SetButtonState(XUiButtonState.Normal)
     end
+end
+
+function XUiGridTheatre6SettlementArchive:SetButtonState(state)
+    self.GridArchive:SetButtonState(state)
+    self.GridArchive.TempState = state
 end
 
 ---刷新存档卡片内容

@@ -276,7 +276,7 @@ end
 function XUiFubenExploreDetail:OnBtnEnterFightClick()
     if XDataCenter.FubenManager.CheckPreFight(self.StageCfg) then
         self:OnBtnMaskClick()
-        XLuaUiManager.Open("UiBattleRoleRoom", self.StageCfg.StageId)
+        XMVCA.XFuben:OpenUiBattleRoleRoom(self.StageCfg.StageId)
     end
 end
 

@@ -1,4 +1,9 @@
 local XUiFashionColor = XClass(XUiNode, "XUiFashionColor")
+
+function XUiFashionColor:NormalizeSavedColorId(colorId)
+    return XTool.IsNumberValid(colorId) and colorId or 0
+end
+
 function XUiFashionColor:OnStart(...)
 
 end
@@ -8,8 +13,9 @@ function XUiFashionColor:Refresh(fashionId)
         self.CurFashionId = nil
         self.CurCharacterId = nil
         self.ColorId = nil
-        self.GameObject:SetActiveEx(false)
+        self.HasFashionColor = false
         self.TxtTipTitle.gameObject:SetActiveEx(false)
+        self:Close()
         return
     end
 
@@ -20,18 +26,21 @@ function XUiFashionColor:Refresh(fashionId)
     local template = XDataCenter.FashionManager.GetFashionTemplate(fashionId)
     self.CurFashionId = fashionId
     self.CurCharacterId = template.CharacterId
-    self:RefreshColorDot(template.FashionColorIds)
-    local fashionData = XDataCenter.FashionManager.GetOwnFashionDataById(fashionId)
-    local colorId = fashionData and fashionData.ColorId or nil
-    if fashionData and not XTool.IsNumberValid(colorId) then
-        colorId = 0
+    self.HasFashionColor = template.FashionColorIds and #template.FashionColorIds > 0
+
+    if self.HasFashionColor then
+        local fashionData = XDataCenter.FashionManager.GetOwnFashionDataById(fashionId)
+        self.ColorId = self:NormalizeSavedColorId(fashionData and fashionData.ColorId)
+    else
+        self.ColorId = nil
     end
-    self.ColorId = colorId
+
+    self:RefreshColorDot(template.FashionColorIds)
 end
 
 function XUiFashionColor:RefreshColorDot(colorIds)
     if not colorIds or #colorIds <= 0 then
-        self.GameObject:SetActiveEx(false)
+        self:Close()
 
         if self.TxtTipTitle then
             self.TxtTipTitle.gameObject:SetActiveEx(false)
@@ -39,7 +48,7 @@ function XUiFashionColor:RefreshColorDot(colorIds)
 
         return
     end
-    self.GameObject:SetActiveEx(true)
+    self:Open()
 
     if self.TxtTipTitle then
         self.TxtTipTitle.gameObject:SetActiveEx(true)
@@ -69,7 +78,15 @@ function XUiFashionColor:RefreshColorDot(colorIds)
         local colorId = tempColorIds[index]
         self:OnColorDotClick(colorId)
     end)
-    self.BtnGroup:SelectIndex(1)
+    local selectIndex = 1
+    local currentColorId = self:NormalizeSavedColorId(self.ColorId)
+    for index, colorId in ipairs(tempColorIds) do
+        if colorId == currentColorId then
+            selectIndex = index
+            break
+        end
+    end
+    self.BtnGroup:SelectIndex(selectIndex, false)
 end
 
 function XUiFashionColor:OnColorDotClick(colorId)
@@ -77,9 +94,6 @@ function XUiFashionColor:OnColorDotClick(colorId)
         return
     end
 
-    if colorId == 0 then
-        colorId = nil
-    end
     self:SetColorId(colorId)
     self.Parent:OnColorDotClick(colorId)
 
@@ -100,13 +114,13 @@ function XUiFashionColor:GetColorId()
 end
 
 function XUiFashionColor:IsUseNewColor()
-    if not XTool.IsNumberValid(self.CurFashionId) then
+    if not XTool.IsNumberValid(self.CurFashionId) or not self.HasFashionColor then
         return false
     end
 
-    local compareColorId = self.ColorId ~= nil and self.ColorId or 0
+    local compareColorId = self:NormalizeSavedColorId(self.ColorId)
     local fashionData = XDataCenter.FashionManager.GetOwnFashionDataById(self.CurFashionId)
-    local colorId = fashionData and fashionData.ColorId or nil
+    local colorId = self:NormalizeSavedColorId(fashionData and fashionData.ColorId)
     return compareColorId ~= colorId
 end
 

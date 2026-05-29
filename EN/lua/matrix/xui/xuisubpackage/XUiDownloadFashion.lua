@@ -169,6 +169,8 @@ function XUiDownloadFashion:OnBtnDownloadClick()
     self._DownloadMode = DownloadMode.Res
     self._DownloadSubId = nil
     self:SaveDownloadSession(DownloadMode.Res, 0, resIds)
+    -- 清除涂装分包(Sub=4000)的跳过热更自动补全标记
+    XMVCA.XSubPackage:SetSubPackageSkipAutoComplete(4000, false)
     -- 加入下载队列
     for _, resId in ipairs(resIds) do
         XMVCA.XSubPackage:AddResToDownload(resId)
@@ -279,6 +281,8 @@ function XUiDownloadFashion:OnBtnCancelDownloadClick()
     end
 
     -- 清除下载状态，回到选择模式
+    -- 对涂装分包(Sub=4000)打跳过热更自动补全标记
+    XMVCA.XSubPackage:SetSubPackageSkipAutoComplete(4000, true)
     self:ClearDownloadSession()
     self._IsDownloading = false
     self._IsPaused = false
@@ -320,6 +324,7 @@ function XUiDownloadFashion:RefreshView()
 
     self._DataList = self:GetFashionDownloadList()
     self.ListFashion:SetDataSource(self._DataList)
+    self.PanelNothing.gameObject:SetActiveEx(XTool.IsTableEmpty(self._DataList))
     self:RefreshListFashionDynamicTable(1)
     self:UpdateFilterBtnState()
     self:UpdateBottomBtnState()
@@ -334,6 +339,9 @@ function XUiDownloadFashion:GetFashionDownloadList()
         if type(k) ~= "number" then goto continue end
         local fashionId = config.FashionId
         local resId = config.ResId
+
+        -- NotShow=1 的涂装不在此界面展示
+        if config.NotShow then goto continue end
 
         if XDataCenter.FashionManager.IsFashionInTime(fashionId) then
             local isOwn = XDataCenter.FashionManager.CheckHasFashion(fashionId)

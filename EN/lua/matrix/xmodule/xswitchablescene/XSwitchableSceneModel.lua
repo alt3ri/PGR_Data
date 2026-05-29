@@ -4,6 +4,7 @@ local XSwitchableSceneModel = XClass(XModel, "XSwitchableSceneModel")
 local TableKey = {
     SwitchableSceneGyro = { CacheType = XConfigUtil.CacheType.Normal, DirPath = XConfigUtil.DirectoryType.Client, Identifier = "SceneId" },
     SwitchableSceneClientConfig = { CacheType = XConfigUtil.CacheType.Normal, DirPath = XConfigUtil.DirectoryType.Client, ReadFunc = XConfigUtil.ReadType.String },
+    SwitchableSceneSettings = {CacheType = XConfigUtil.CacheType.Normal, DirPath = XConfigUtil.DirectoryType.Client, ReadFunc = XConfigUtil.ReadType.Int},
 }
 
 function XSwitchableSceneModel:OnInit()
@@ -145,6 +146,11 @@ end
 ---@return XTableSwitchableSceneGyro
 function XSwitchableSceneModel:GetGyroById(id)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.SwitchableSceneGyro, id)
+end
+
+---@return XTableSwitchableSceneSettings
+function XSwitchableSceneModel:GetTableSwitchableSceneSettingsCfgById(id, notips)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.SwitchableSceneSettings, id, notips)
 end
 
 ----------config end----------

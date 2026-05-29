@@ -199,13 +199,13 @@ function XRelinkEventRecord:HandleEvent(eventType, eventArgs)
         self._data.OverDriveTimes = self._data.OverDriveTimes + 1
 
     elseif eventType == EWorldEvent.NpcCastActionAfter then
-        if  self._QteSkill[eventArgs.SkillId] then   -- 释放QTE
+        if  self._QteSkill[eventArgs.SkillActionId] then   -- 释放QTE
             if self._data.Qtes[eventArgs.LauncherId]  ~= nil then
                 self._data.Qtes[eventArgs.LauncherId] = self._data.Qtes[eventArgs.LauncherId] + 1
             end
         end
 
-        if  self._TeamWorkSkill[eventArgs.SkillId] then --极限技释放成功
+        if  self._TeamWorkSkill[eventArgs.SkillActionId] then --极限技释放成功
             if self._data.TeamWorkSkillTimes[eventArgs.LauncherId] ~= nil then
                 self._data.TeamWorkSkillTimes[eventArgs.LauncherId] = self._data.TeamWorkSkillTimes[eventArgs.LauncherId] + 1
             end

@@ -6,8 +6,10 @@ function XUiGridBWBranchResult:OnStart()
     self._GridCommon = require("XUi/XUiBigWorld/XCommon/Grid/XUiGridBWItem").New(self.UiBigWorldItemGrid, self)
     --self.BtnClick:AddEventListener(handler(self, self.OnBtnClick))
     self.BtnClick.gameObject:SetActiveEx(false)
-    self.Big = self.Transform:Find("Animation/Big")
-    self.Small = self.Transform:Find("Animation/Small")
+    self.Big = self.Big or self.Transform:Find("Animation/Big")
+    self.Small = self.Small or self.Transform:Find("Animation/Small")
+    self.BigHold = self.BigHold or self.Transform:Find("Animation/BigHold")
+    self.SmallHold = self.SmallHold or self.Transform:Find("Animation/SmallHold")
 end
 
 function XUiGridBWBranchResult:OnDisable()
@@ -74,18 +76,21 @@ function XUiGridBWBranchResult:PlayExpandAnim(isAnim)
     self:StopExpandTimer()
     if isAnim then
         self.ExpandTimer = XScheduleManager.ScheduleOnce(function()
-            self.Small:StopTimelineAnimation(true, true)
+            self.Small:StopTimelineAnimation(true, false)
             self:Expand(isAnim)
             self.Big:PlayTimelineAnimation()
             self.ExpandTimer = nil
         end, 1)
     else
-        self.ExpandTimer = XScheduleManager.ScheduleOnce(function()
-            self.Big:StopTimelineAnimation(true, true)
-            self.Small:StopTimelineAnimation(true, true)
-            self:Expand(isAnim)
-            self.ExpandTimer = nil
-        end, 1)
+        if self.SmallHold then
+            self.SmallHold:StopTimelineAnimation(true, false)
+        end
+        self.Big:StopTimelineAnimation(true, false)
+        self.Small:StopTimelineAnimation(true, false)
+        if self.BigHold then
+            self.BigHold:PlayTimelineAnimation()
+        end
+        self:Expand(isAnim)
     end
 end
 
@@ -94,19 +99,22 @@ function XUiGridBWBranchResult:PlayCollapseAnim(isAnim)
     self:StopCollapseTimer()
     if isAnim then
         self.CollapseTimer = XScheduleManager.ScheduleOnce(function()
-            self.Big:StopTimelineAnimation(true, true)
+            self.Big:StopTimelineAnimation(true, false)
             self.Small:PlayTimelineAnimation(function() 
                 self:Collapse(isAnim)
                 self.CollapseTimer = nil
             end)
         end, 1)
     else
-        self.CollapseTimer = XScheduleManager.ScheduleOnce(function()
-            self.Big:StopTimelineAnimation(true, true)
-            self.Small:StopTimelineAnimation(true, true)
-            self:Collapse(isAnim)
-            self.CollapseTimer = nil
-        end, 1)
+        if self.BigHold then
+            self.BigHold:StopTimelineAnimation(true, false)
+        end
+        self.Big:StopTimelineAnimation(true, false)
+        self.Small:StopTimelineAnimation(true, false)
+        if self.SmallHold then
+            self.SmallHold:PlayTimelineAnimation()
+        end
+        self:Collapse(isAnim)
     end
 end
 

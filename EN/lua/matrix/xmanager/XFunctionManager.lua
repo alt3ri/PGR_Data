@@ -280,6 +280,9 @@ XFunctionManager.FunctionName = {
     FashionSuit = 10496, --涂装套装
     AprilFoolsDayClearOut = 10499, -- 愚人节假界面小活动
     PBRGame = 10500, -- 战双兄弟
+    Theatre6 = 10501, -- 肉鸽6.0
+    LifeTree = 10502, -- 生命树图鉴
+    GameCollection = 10503, -- 小游戏合集
 }   
 
 XFunctionManager.FunctionType = {
@@ -404,12 +407,17 @@ function XFunctionManager.SkipInterface(id, fromMsg, ...)
 
     end
 
+
     if XTool.IsNumberValid(list.ConditionId) then
         if not XConditionManager.CheckCondition(list.ConditionId, list) then
             return false
         end
     end
-
+    local isOpen = XFunctionManager.CheckInTimeByTimeId(list.TimeId,true)
+    if not isOpen then
+        XUiManager.TipText("ActivityBaseTaskSkipNotInDuring")
+        return
+    end
     -- 提审包屏蔽，跳转到主线页面
     if XUiManager.IsHideFunc and list.IsHideFunc then
         -- XLuaUiManager.Open("UiFuben", XDataCenter.FubenManager.StageType.Mainline, nil, 1)

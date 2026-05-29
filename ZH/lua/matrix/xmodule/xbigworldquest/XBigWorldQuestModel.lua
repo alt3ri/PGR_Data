@@ -119,6 +119,7 @@ function XBigWorldQuestModel:OnInit()
     self._EnvironmentGroups = table.empty
     self._EnvironmentIdGroups = table.empty
     self._EnvironmentOnDuty = table.empty
+    self._EnvironmentPlaceIds = table.empty
     self._OccupiedQuestDict = {}
     self._PopUiViewDataPool = {}
     self._PopUiViewDataQueue = {}
@@ -146,6 +147,7 @@ function XBigWorldQuestModel:ResetAll()
     self._EnvironmentGroups = table.empty
     self._EnvironmentIdGroups = table.empty
     self._EnvironmentOnDuty = table.empty
+    self._EnvironmentPlaceIds = table.empty
     self._InviteQuestIds = 0
     self._PopUiViewDataPool = false
     self._PopUiViewDataQueue = false
@@ -749,9 +751,15 @@ function XBigWorldQuestModel:PopupTaskObtain(questId, isFinish)
     else
         isShield = self:CheckPopViewOpenWhenQuestReceive(questId)
     end
+
+    if isShield then
+        return
+    end
+
     local questType = self:GetQuestTypeTemplate(t.Type)
     local popViewType = questType.PopType or PopViewType.None
-    if isShield or popViewType == PopViewType.None then
+
+    if popViewType == PopViewType.None then
         return
     end
     local uiName = PopViewType2UiName[popViewType]
@@ -924,6 +932,11 @@ function XBigWorldQuestModel:GetInviteQuestPopTipText(id)
     return t and t.PopTipText
 end
 
+function XBigWorldQuestModel:GetInviteQuestType(id)
+    local t = self:GetInviteQuestTemplate(id)
+    return t and t.Type
+end
+
 ---@return XTableDlcInviteQuestResult
 function XBigWorldQuestModel:GetInviteQuestResultTemplate(id)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableInviteQuestKey.DlcInviteQuestResult, id)
@@ -1050,16 +1063,60 @@ end
 --region 环境剧情
 
 function XBigWorldQuestModel:UpdateEnvironmentOnDuty(data)
+    if XTool.IsTableEmpty(self._EnvironmentPlaceIds) then
+        self:InitEnvironmentOnDutyPlaceIds()
+    end
+
     self._EnvironmentOnDuty = {}
     if data and data.ActivatedQuestGroupIds then
+        local templates = self._ConfigUtil:GetByTableKey(TableEnvironmentQuestKey.DlcEnvironmentQuest)
+        local groupLevelMap = {}
+
         for levelId, groupId in pairs(data.ActivatedQuestGroupIds) do
             self._EnvironmentOnDuty[levelId] = groupId
+            self._EnvironmentPlaceIds[levelId] = {}
+            groupLevelMap[groupId] = levelId
+        end
+        for id, template in pairs(templates) do
+            local levelId = groupLevelMap[template.GroupId]
+
+            if XTool.IsNumberValid(levelId) then
+                self._EnvironmentPlaceIds[levelId][template.PlaceId] = true
+            end
+        end
+    end
+end
+
+function XBigWorldQuestModel:InitEnvironmentOnDutyPlaceIds()
+    local templates = self._ConfigUtil:GetByTableKey(TableEnvironmentQuestKey.DlcEnvironmentQuest)
+
+    self._EnvironmentPlaceIds = {}
+    if not XTool.IsTableEmpty(templates) then
+        for _, template in pairs(templates) do
+            local isDefault = self:GetEnvironmentQuestGroupIsDefaultGroup(template.GroupId)
+
+            if isDefault then
+                local levelId = self:GetEnvironmentQuestGroupLevelId(template.GroupId)
+
+                if XTool.IsNumberValid(levelId) then
+                    self._EnvironmentPlaceIds[levelId] = self._EnvironmentPlaceIds[levelId] or {}
+                    self._EnvironmentPlaceIds[levelId][template.PlaceId] = true
+                end
+            end
         end
     end
 end
 
 function XBigWorldQuestModel:GetEnvironmentOnDuty(levelId)
     return self._EnvironmentOnDuty[levelId] or 0
+end
+
+function XBigWorldQuestModel:GetEnvironmentOnDutyPlaceIds(levelId)
+    if XTool.IsTableEmpty(self._EnvironmentPlaceIds) then
+        self:InitEnvironmentOnDutyPlaceIds()
+    end
+
+    return self._EnvironmentPlaceIds[levelId]
 end
 
 ---@return XTableDlcEnvironmentQuest
@@ -1147,6 +1204,12 @@ function XBigWorldQuestModel:GetEnvironmentQuestGroupLevelId(id)
     local config = self:GetEnvironmentQuestGroupTemplate(id)
 
     return config.LevelId
+end
+
+function XBigWorldQuestModel:GetEnvironmentQuestGroupIsDefaultGroup(id)
+    local config = self:GetEnvironmentQuestGroupTemplate(id)
+
+    return config.IsDefaultGroup
 end
 
 ---@return XTableDlcEnvironmentQuestLevel[]

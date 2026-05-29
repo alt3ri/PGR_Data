@@ -3,7 +3,7 @@ local XUiDrawScene = XClass(nil,"XUiDrawScene")
 local XUiPanelRoleModel = require("XUi/XUiCharacter/XUiPanelRoleModel")
 local XUiModelUtility = require("XUi/XUiCharacter/XUiModelUtility")
 
----@param ui XUi
+---@param ui XUiNewDrawMain
 function XUiDrawScene:Ctor(ui)
     self.Ui = ui
 end
@@ -17,6 +17,7 @@ function XUiDrawScene:InitScene()
     self.PanelRoleModel = XUiPanelRoleModel.New(self.ModelRoot, self.Ui.Name, false, true, true, true, false)
 end
 
+---@param drawCfg XTableDrawScene
 function XUiDrawScene:RefreshScene(drawCfg, modelId)
     self.DrawCfg = drawCfg
     local beLoadModelId = modelId or drawCfg.ModelId 

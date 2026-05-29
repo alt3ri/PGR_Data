@@ -4,15 +4,25 @@
 local XUiBigWorldPopupAdvance = XMVCA.XBigWorldUI:Register(nil, "UiBigWorldPopupAdvance")
 
 local XUiGridBWQuestSmall = require("XUi/XUiBigWorld/XQuest/Grid/XUiGridBWQuestSmall")
+local DlcEventId = XMVCA.XBigWorldService.DlcEventId
 
 function XUiBigWorldPopupAdvance:OnAwake()
     self:InitUi()
     self:InitCb()
 end
 
-function XUiBigWorldPopupAdvance:OnStart(skipIds, customParamId)
-    self._SkipIds = self:SortSkipIds(skipIds)
-    self._CustomParamId = customParamId
+function XUiBigWorldPopupAdvance:OnStart(skipIds, customParamId, occupyQuestIds)
+    self._IsOccupyMode = not XTool.IsTableEmpty(occupyQuestIds)
+    if self._IsOccupyMode then
+        self._OccupyQuestIds = occupyQuestIds
+        self:SetText(self.TxtTitle, XMVCA.XBigWorldService:GetText("BigWorldPrecedenceTitle"))
+        self:SetText(self.TxtSubtitle, XMVCA.XBigWorldService:GetText("BigworldPrecedenceSubtitle"))
+        self:SetText(self.TxtDetail, XUiHelper.ReplaceTextNewLine(XMVCA.XBigWorldService:GetText("BigWorldPrecedenceDetail")))
+        self.PanelBtn.gameObject:SetActiveEx(false)
+    else
+        self._SkipIds = self:SortSkipIds(skipIds)
+        self._CustomParamId = customParamId
+    end
     self:SetupDynamicTable()
 end
 
@@ -27,29 +37,47 @@ function XUiBigWorldPopupAdvance:InitUi()
 end
 
 function XUiBigWorldPopupAdvance:InitCb()
-    self.BtnCancel:AddEventListener(handler(self, self.Close))
-    self.BtnTanchuangClose:AddEventListener(handler(self, self.Close))
+    self.BtnCancel:AddEventListener(handler(self, self.OnBtnCancelClick))
+    self.BtnTanchuangClose:AddEventListener(handler(self, self.OnBtnCancelClick))
     self.BtnYes:AddEventListener(handler(self, self.OnBtnYesClick))
 end
 
 function XUiBigWorldPopupAdvance:OnBtnYesClick()
     local paramId = self._CustomParamId
     XMVCA.XBigWorldGamePlay:GetCurrentAgency():RequestBigWorldMarkParam(paramId, false, function()
+        XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_ADVANCE_UPDATE, true)
         self:Close()
         XMVCA.XBigWorldUI:SafeClose("UiBigWorldProcess")
     end)
 end
 
+function XUiBigWorldPopupAdvance:OnBtnCancelClick()
+    XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_ADVANCE_UPDATE, false)
+    self:Close()
+end
+
 function XUiBigWorldPopupAdvance:SetupDynamicTable()
-    self._DynamicTable:SetDataSource(self._SkipIds)
+    local dataSource = self._IsOccupyMode and self._OccupyQuestIds or self._SkipIds
+    self._DynamicTable:SetDataSource(dataSource)
     self._DynamicTable:ReloadDataSync()
 end
 
 ---@param grid XUiGridBWQuestSmall
 function XUiBigWorldPopupAdvance:OnDynamicTableEvent(evt, index, grid)
     if evt == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
-        grid:RefreshSkip(self._SkipIds[index])
+        if self._IsOccupyMode then
+            grid:Update(self._OccupyQuestIds[index])
+            grid:SetClickCallback(handler(self, self.OnOccupyQuestClick))
+        else
+            grid:SetClickCallback(nil)
+            grid:RefreshSkip(self._SkipIds[index])
+        end
     end
+end
+
+function XUiBigWorldPopupAdvance:OnOccupyQuestClick(questId)
+    XMVCA.XBigWorldUI:PopToAndOpen("UiBigWorldTaskMain")
+    XEventManager.DispatchEvent(DlcEventId.EVENT_QUEST_REFRESH_MAIN_SELECT, questId)
 end
 
 function XUiBigWorldPopupAdvance:SetText(component, value)

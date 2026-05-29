@@ -116,7 +116,7 @@ function XUiFubenBossSingleTrialDetail:OnBtnStartClick()
     local stageId = self._CurBossStageConfig.StageId
     
     self._Control:OnEnterTrialFight()
-    XLuaUiManager.Open("UiBattleRoleRoom", stageId,
+    XMVCA.XFuben:OpenUiBattleRoleRoom(stageId,
         XDataCenter.TeamManager.GetXTeamByTypeId(CS.XGame.Config:GetInt("TypeIdBossSingle")))
 end
 

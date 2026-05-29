@@ -1,4 +1,4 @@
-local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XUiCerberusGameTips = XLuaUiManager.Register(XLuaUi, "UiCerberusGameTips")
 
 function XUiCerberusGameTips:OnAwake()
@@ -109,7 +109,7 @@ function XUiCerberusGameTips:OnBtnEnterClick()
     -- XMVCA.XCerberusGame:ReInitXTeam(self.BossIndex, self.StageId,
     -- canSeleRole, self.ChapterId, self.CurrDifficulty)
 
-    XLuaUiManager.PopThenOpen("UiBattleRoleRoom", self.StageId
+    XMVCA.XFuben:PopThenOpenUiBattleRoleRoom(self.StageId
             , xTeam
             , require("XUi/XUiCerberusGame/Proxy/XUiCerberusGameBattleRoomProxy"))
 end

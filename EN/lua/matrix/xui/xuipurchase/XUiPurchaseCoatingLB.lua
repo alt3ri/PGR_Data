@@ -1,4 +1,5 @@
 local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
+---@class XUiPurchaseCoatingLB
 local XUiPurchaseCoatingLB = XClass(nil, "XUiPurchaseCoatingLB")
 local Next = _G.next
 local CSXTextManagerGetText = CS.XTextManager.GetText
@@ -243,7 +244,7 @@ function XUiPurchaseCoatingLB:OpenUiView(data)
         if disCountValue ~= 1 then
             buyData.OriginCount = data.ConvertSwitch
         end
-        XMVCA.XShop:OpenFashionDetailUi(templateId, buyData, { isWeaponFashion = isWeaponFashion, updateCb = self.UpdateCb })
+        XMVCA.XShop:OpenFashionDetailUi(templateId, buyData, { isWeaponFashion = isWeaponFashion })
 	else
         XLuaUiManager.Open("UiPurchaseBuyTips", data, self.CheckBuyFun, self.UpdateCb, self.BeforeBuyReqFun, XPurchaseConfigs.GetLBUiTypesList())
 	end

@@ -39,7 +39,7 @@ function XUiPhotographPanel:Init()
     self.Btn.CallBack = function() self:OnBtnClick() end
     
     if XOverseaManager.IsOverSeaRegion() then
-        self.BtnPhotograph:SetButtonState(3) -- 海外隐藏拍照按钮
+        self.BtnPhotograph:SetButtonState(CS.UiButtonState.Disable) -- 海外隐藏拍照按钮
         local raycastComponent = self.BtnPhotograph:GetComponent(typeof(CS.UnityEngine.UI.XEmpty4Raycast))
         raycastComponent.raycastTarget = false
     else
@@ -315,12 +315,10 @@ function XUiPhotographPanel:OnDynamicTableActionEvent(event, index, grid)
         self:SetInfoTextName(self.ActionList[index].config.Name)
         self.ActionPanel:SetTxtTitle(self.ActionList[index].config.Name)
         grid:OnActionTouched(self.ActionList[index])
-        if XMVCA.XFavorability:CheckCGBoardAct(tryFashionId, self.ActionList[index].config.SignBoardActionId) then
-            if CS.UnityEngine.Application.platform == CS.UnityEngine.RuntimePlatform.Android then
-                self.RootUi.CG:PlayCG(1015301)
-            else
-                self.RootUi.CG:PlayCG(10153)
-            end
+        
+        local videoId = XMVCA.XFavorability:CheckCGBoardAct(self.ActionList[index].config.SignBoardActionId)
+        if XTool.IsNumberValidEx(videoId) then
+            self.RootUi.CG:PlayCG(videoId)
             self.RootUi:SetUiShotCamera()
         else
             self.RootUi:SetSceneShotCamera()
@@ -431,7 +429,7 @@ function XUiPhotographPanel:OnBtnSynchronousClick()
         self.RootUi.CurFashionId = self.RootUi.SelectFashionId
         self:RefreshBtnSynchronous()
         XUiManager.TipText("PhotoModeChangeSuccess")
-    end)
+    end,self.RootUi.FashionColorPanel:GetSelectColorId())
 end
 
 function XUiPhotographPanel:RefreshBtnSynchronous()

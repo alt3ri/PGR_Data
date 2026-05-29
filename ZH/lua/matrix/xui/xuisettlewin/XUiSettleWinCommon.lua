@@ -30,7 +30,7 @@ function XUiSettleWinCommon:OnAwake()
     self.ChildPanelData = nil
     self.BtnType2Func = {
         [XRoomSingleManager.BtnType.Again] = function()
-            XLuaUiManager.PopThenOpen("UiBattleRoleRoom", self.StageConfig.StageId, nil, nil, nil, true)
+            XMVCA.XFuben:PopThenOpenUiBattleRoleRoom(self.StageConfig.StageId, nil, nil, nil, true)
         end,
         [XRoomSingleManager.BtnType.Next] = function()
             if self.StageInfo == nil then return end
@@ -41,7 +41,7 @@ function XUiSettleWinCommon:OnAwake()
             self:Close()
             local nextStageConfig = self.FubenManager.GetStageCfg(self.StageInfo.NextStageId)
             if self.FubenManager.CheckPreFight(nextStageConfig) then
-                XLuaUiManager.Open("UiBattleRoleRoom", nextStageConfig.StageId)
+                XMVCA.XFuben:OpenUiBattleRoleRoom(nextStageConfig.StageId)
             end
         end,
         [XRoomSingleManager.BtnType.Main] = function()

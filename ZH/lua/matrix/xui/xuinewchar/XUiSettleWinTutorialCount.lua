@@ -467,7 +467,7 @@ function XUiSettleWinTutorialCount:SetBtnByType(btnType)
     if btnType == XRoomSingleManager.BtnType.SelectStage then
         self:OnBtnBackClick(false)
     elseif btnType == XRoomSingleManager.BtnType.Again then
-        XLuaUiManager.PopThenOpen("UiBattleRoleRoom", self.StageCfg.StageId, nil, nil, nil, true)
+        XMVCA.XFuben:PopThenOpenUiBattleRoleRoom(self.StageCfg.StageId, nil, nil, nil, true)
     elseif btnType == XRoomSingleManager.BtnType.Next then
         self:OnBtnEnterNextClick()
     elseif btnType == XRoomSingleManager.BtnType.Main then

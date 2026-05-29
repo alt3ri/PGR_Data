@@ -11,17 +11,17 @@ local TableKey = {
 function XGameCollectionModel:OnInit()
     self._ConfigUtil:InitConfigByTableKey("MiniActivity/GameCollection", TableKey)
 end
-
 function XGameCollectionModel:ClearPrivate()
-    self._PendingExitRecord = nil
+end
+function XGameCollectionModel:ClearData()
+    self._PendingExitRecords = nil
     self._SelectedGameType = nil
-    self._GameSnapshots = nil
 end
 
 function XGameCollectionModel:ResetAll()
     self._ActivityId = nil
     self._GameData = nil
-    self:ClearPrivate()
+    self:ClearData()
 end
 
 --region Config Accessors
@@ -49,13 +49,18 @@ function XGameCollectionModel:GetMaxScore(gameType)
 end
 
 function XGameCollectionModel:SetPendingExitRecord(record)
-    self._PendingExitRecord = record
+    if XTool.IsTableEmpty(record) then
+        return
+    end
+    self._PendingExitRecords = self._PendingExitRecords or {}
+    table.insert(self._PendingExitRecords, record)
 end
 
 function XGameCollectionModel:PopPendingExitRecord()
-    local record = self._PendingExitRecord
-    self._PendingExitRecord = nil
-    return record
+    if XTool.IsTableEmpty(self._PendingExitRecords) then
+        return nil
+    end
+    return table.remove(self._PendingExitRecords, 1)
 end
 
 function XGameCollectionModel:SetSelectedGameType(gameType)
@@ -64,32 +69,6 @@ end
 
 function XGameCollectionModel:GetSelectedGameType()
     return self._SelectedGameType or 0
-end
-
-function XGameCollectionModel:SetGameSnapshot(gameType, snapshot)
-    if not XTool.IsNumberValid(gameType) then
-        return
-    end
-
-    self._GameSnapshots = self._GameSnapshots or {}
-    self._GameSnapshots[gameType] = snapshot
-end
-
-function XGameCollectionModel:GetGameSnapshot(gameType)
-    return self._GameSnapshots and self._GameSnapshots[gameType]
-end
-
-function XGameCollectionModel:ClearGameSnapshot(gameType)
-    if XTool.IsTableEmpty(self._GameSnapshots) then
-        return
-    end
-
-    if XTool.IsNumberValid(gameType) then
-        self._GameSnapshots[gameType] = nil
-        return
-    end
-
-    self._GameSnapshots = nil
 end
 --endregion
 
@@ -112,11 +91,32 @@ function XGameCollectionModel:GetGameCollectionTaskCfgs()
     return self:GetGameCollectionActivityCfgById(self:GetActivityId()).TaskTimeLimitIds
 end
 
+-- 比较新旧 MaxScore，返回新破纪录列表;首次同步(_GameData 为 nil)不产记录,避免初始化误弹
 function XGameCollectionModel:UpdateGameData(gameData)
+    gameData = gameData or {}
+    local oldData = self._GameData
+    local newRecords = {}
+    if oldData then
+        for gameId, score in pairs(gameData) do
+            local oldScore = oldData[gameId]
+            local newMax = score and score.MaxScore or 0
+            local oldMax = oldScore and oldScore.MaxScore or 0
+            if oldScore and newMax > oldMax then
+                local cfg = self:GetGameCollectionCfgById(gameId)
+                if not XTool.IsTableEmpty(cfg) then
+                    table.insert(newRecords, {
+                        GameName = cfg.Name,
+                        NewScore = newMax,
+                    })
+                end
+            end
+        end
+    end
     self._GameData = self._GameData or {}
     for gameId, score in pairs(gameData) do
         self._GameData[gameId] = score
     end
+    return newRecords
 end
 
 return XGameCollectionModel

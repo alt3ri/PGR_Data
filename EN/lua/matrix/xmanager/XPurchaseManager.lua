@@ -10,6 +10,7 @@ XPurchaseManagerCreator = function()
         GetPurchaseListReq = "GetPurchaseListRequest", -- 采购列表请求
         PurchaseReq = "PurchaseRequest", -- 普通采购请求
         PurchaseComboReq = "PurchaseComboRequest", -- 捆绑包购买
+        PurchaseSupplementGetDailyRewardRequest = "PurchaseSupplementGetDailyRewardRequest" -- 补卡领取
     }
 
     local Next = _G.next
@@ -23,7 +24,7 @@ XPurchaseManagerCreator = function()
     local WeekCardData = {}
 
     local PurchaseSelectionData = nil -- 礼包自选数据，仅UI使用，不长期缓存
-    
+
     local PurchaseBuyCustomParams = {} -- 礼包购买传给服务端的自定义数据，因为不方便每个入口层层传参，所以统一在Manager内管理
 
     --不显示在研发按钮红点的UiType
@@ -1820,7 +1821,7 @@ XPurchaseManagerCreator = function()
             local data = XPurchaseManager.GetPurchasePackageById(boughtYKID)
             if data:GetCurrentBuyTime() > 0 then
                 local clientResetInfo = data:GetClientResetInfo()
-                if not (clientResetInfo and clientResetInfo.DayCount >= data:GetDailyRewardRemainDay()
+                if not (clientResetInfo and clientResetInfo.DayCount >= data:GetBuyLimitRemainDay()
                         and data:GetCurrentBuyTime() < data:GetBuyLimitTime()) then
                     XUiManager.TipText("PurchaseNotBuy")
                     return
@@ -1919,7 +1920,7 @@ XPurchaseManagerCreator = function()
     if XOverseaManager.IsENRegion() then
         -- EN有多个月卡
         PurchasePackageId2Class[83028] = require("XEntity/XPurchase/XYKPurchasePackage")
-        PurchasePackageId2Class[90032] = require("XEntity/XPurchase/XYKPurchasePackage")
+        PurchasePackageId2Class[XPurchaseConfigs.EnYKCID] = require("XEntity/XPurchase/XYKPurchasePackage")
     end
 
     function XPurchaseManager.CreatePurchasePackage(id, data)
@@ -2065,6 +2066,28 @@ XPurchaseManagerCreator = function()
                 PurchaseBuyCustomParams = {}
             end
         end
+    end
+
+    function XPurchaseManager.PurchaseSupplementGetDailyReward(id, cb)
+        XNetwork.Call(
+            PurchaseRequest.PurchaseSupplementGetDailyRewardRequest,
+            { Id = id },
+            function(res)
+                if res.Code ~= XCode.Success then
+                    XUiManager.TipCode(res.Code)
+                    return
+                end
+
+                XPurchaseManager.HandlePurchaseData(
+                    { [1] = res.PurchaseInfo.UiType },
+                    { [1] = res.PurchaseInfo })
+
+                XEventManager.DispatchEvent(XEventId.EVENT_CARD_REFRESH_WELFARE_BTN)
+
+                if cb then
+                    cb(res.RewardList)
+                end
+            end)
     end
 
     XPurchaseManager.Init()

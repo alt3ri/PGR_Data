@@ -93,7 +93,8 @@ function XPanelQualitySingleV2P6:OnEnable()
     -- single展示界面要关闭外部的动态列表特效球,打开专属的相机
     self.PanelModel:SetDynamicTableActive(false)
     self.PanelModel:SetQualitySingleRelated(true)
-    
+    self:RefreshLifeTreeEffectForBigBall(true)
+
     self:RefreshUiShow()
 end
 
@@ -123,6 +124,7 @@ function XPanelQualitySingleV2P6:OnBtnOverviewClick()
     local enbaleCb = function ()
         self.Parent.ParentUi:SetCamera(XEnumConst.CHARACTER.CameraV2P6.QualityOverview)
         self.PanelModel:SetQualitySingleRelated(false)
+        self:RefreshLifeTreeEffectForBigBall(false)
 
         -- 隐藏小物件
         self.PanelQualityEvoRelative.gameObject:SetActiveEx(false)
@@ -130,6 +132,7 @@ function XPanelQualitySingleV2P6:OnBtnOverviewClick()
     local closeCb = function ()
         self.Parent.ParentUi:SetCamera(XEnumConst.CHARACTER.CameraV2P6.QualitySingle)
         self.PanelModel:SetQualitySingleRelated(true)
+        self:RefreshLifeTreeEffectForBigBall(true)
 
         self.PanelQualityEvoRelative.gameObject:SetActiveEx(true)
     end
@@ -179,6 +182,7 @@ end
 
 function XPanelQualitySingleV2P6:OnDisable()
     self.PanelModel:SetQualitySingleRelated(false)
+    self:RefreshLifeTreeEffectForBigBall(false)
 end
 
 function XPanelQualitySingleV2P6:AddEventListener(itemId)
@@ -190,6 +194,22 @@ end
 
 function XPanelQualitySingleV2P6:RemoveEventListener()
     XDataCenter.ItemManager.RemoveCountUpdateListener(self.GridItemHaveCount)
+end
+
+function XPanelQualitySingleV2P6:RefreshLifeTreeEffectForBigBall(isBigBallShow)
+    local characterId = self.Parent.ParentUi.CurCharacter and self.Parent.ParentUi.CurCharacter.Id
+    if not characterId then
+        return
+    end
+    local powerConfig = XMVCA.XCharacter:GetCharacterPowerConfig(characterId)
+    if not powerConfig then
+        return
+    end
+    if isBigBallShow then
+        self.PanelModel:SetLifeTreeEffectIndex(3)
+    else
+        self.PanelModel:SetLifeTreeEffectIndex(2)
+    end
 end
 
 function XPanelQualitySingleV2P6:OnDestroy()

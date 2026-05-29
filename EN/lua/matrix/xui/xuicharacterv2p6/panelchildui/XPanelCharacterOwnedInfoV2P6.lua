@@ -29,6 +29,10 @@ function XPanelCharacterOwnedInfoV2P6:InitButton()
     self.BtnTree.CallBack = function ()
         self:OnBtnTreeClick()
     end
+    
+    self.BtnLifeTree.CallBack = function ()
+        self:OnBtnLifeTreeClick()
+    end
 
     self.XGoInputHandler:AddDragUpListener(function ()
         self:OnDragUp()
@@ -120,6 +124,7 @@ function XPanelCharacterOwnedInfoV2P6:RefreshUiShow()
     self.BtnTree.gameObject:SetActiveEx(powerConfig and isShowTreeControl)
     isShowTreeControl = XTool.IsNumberValid(CS.XGame.ClientConfig:GetInt("CharacterPowerIconEvolveVisible"))
     self.ImgTreeBg.gameObject:SetActiveEx(powerConfig and isShowTreeControl)
+    self:RefreshBtnLifeTree()
 
     -- 机体名
     local charConfig = XMVCA.XCharacter:GetCharacterTemplate(characterId)
@@ -289,6 +294,37 @@ function XPanelCharacterOwnedInfoV2P6:OnBtnTreeClick()
     local isBubbleTreeActive = self.BubbleTreeDetail.gameObject.activeSelf
     self.Parent.BtnClose.gameObject:SetActiveEx(not isBubbleTreeActive)
     self.BubbleTreeDetail.gameObject:SetActiveEx(not isBubbleTreeActive)
+end
+
+-- 刷新生命树按钮
+function XPanelCharacterOwnedInfoV2P6:RefreshBtnLifeTree()
+    -- 生命树图鉴未开启
+    local isOpen = XMVCA.XLifeTree:IsOpen()
+    if not isOpen then
+        self.BtnLifeTree.gameObject:SetActiveEx(false)
+        return
+    end
+    -- 非生命树角色
+    local isLifeTreeCharacter = XMVCA.XLifeTree:IsLifeTreeCharacter(self.CharacterId)
+    if not isLifeTreeCharacter then
+        self.BtnLifeTree.gameObject:SetActiveEx(false)
+        return
+    end
+    self.BtnLifeTree.gameObject:SetActiveEx(true)
+    
+    -- 蓝点
+    local isRed = XMVCA.XLifeTree:IsRedCharacter(self.CharacterId)
+    self.BtnLifeTree:ShowReddot(isRed)
+end
+
+function XPanelCharacterOwnedInfoV2P6:OnBtnLifeTreeClick()
+    -- 运营埋点
+    local dict = {}
+    dict["way"] = 2
+    dict["character_id"] = self.CharacterId
+    CS.XRecord.Record(dict, "1000041", "LifeTreeEnterWay")
+
+    XMVCA.XLifeTree:ExOpenMainUi()
 end
 
 function XPanelCharacterOwnedInfoV2P6:CloseTreeBubble()

@@ -667,7 +667,7 @@ function XUiGoldenMinerGameBattle:_OnExitStage()
     local SettleGame = function()
         self:UpdateSettlementInfo(true)
         self._Control:RequestGoldenMinerExitGame(self._CurStageId, function()
-            if self._Control:TryExitToCollection() then
+            if self._Control:TryExitToCollection(true) then
                 return
             end
             XLuaUiManager.PopThenOpen("UiGoldenMinerMain")
@@ -1292,7 +1292,7 @@ function XUiGoldenMinerGameBattle:CheckGameIsWin()
 
     local nextStageId = self._DataDb:GetCurStageId()
     if (not self._ReportInfo:IsWin() or not nextStageId) or (not self._IsFinishSuccess and self._CurStageIndex == 1) then
-        if self._Control:TryExitToCollection() then
+        if self._Control:TryExitToCollection(true) then
             return
         end
         XLuaUiManager.PopThenOpen("UiGoldenMinerMain")

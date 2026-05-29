@@ -170,8 +170,8 @@ function XUiPanelMainLineExhibition:Refresh()
     self:RefreshBgByPos()
     -- 更新跳转按钮
     self:RefreshBtnGoLastPassedChapter()
-    -- 刷新生命树跳转按钮状态
-    self:RefreshBtnLifeTreeState()
+    -- 刷新生命树跳转按钮
+    self:RefreshBtnLifeTree()
 end
 
 -- 事件触发定位
@@ -630,14 +630,12 @@ function XUiPanelMainLineExhibition:RefreshBtnLifeTree()
     local isOpen = XMVCA.XLifeTree:IsOpen()
     self.BtnLifeTree.gameObject:SetActiveEx(isOpen)
 
-    if isOpen then
-        local isRed = XMVCA.XLifeTree:IsRed()
-        self.BtnLifeTree:ShowReddot(isRed)
-    end
-end
+    if not isOpen then return end
 
--- 刷新生命树按钮状态
-function XUiPanelMainLineExhibition:RefreshBtnLifeTreeState()
+    -- 红点
+    local isRed = XMVCA.XLifeTree:IsRed()
+    self.BtnLifeTree:ShowReddot(isRed)
+
     -- 获取生命树按钮跳转的章节Id
     if not self.IsInitLifeTreeSkipData then
         self.IsInitLifeTreeSkipData = true

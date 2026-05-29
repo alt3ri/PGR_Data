@@ -1062,6 +1062,11 @@ function XFubenAgency:DoEnterFight(stage, teamId, isAssist, challengeCount, chal
     end
 
     preFight.StageId = stage.StageId
+    
+    if self:_IsBanGeneralSkill(stage.StageId) then
+        preFight.GeneralSkill = nil
+    end
+
     if not self:CallCustomFunc(stageType, ProcessFunc.CustomOnEnterFight, preFight, callback) then
         self:NetWorkPreFightRequest({ PreFightData = preFight }, function(res)
             if callback then
@@ -1555,6 +1560,10 @@ function XFubenAgency:ShowReward(winData)
 end
 
 function XFubenAgency:CheckHasFlopReward(winData, needMySelf)
+    if not winData or not winData.FlopRewardList then
+        return false
+    end
+    
     for _, v in pairs(winData.FlopRewardList) do
         if v.PlayerId ~= 0 then
             if not needMySelf or v.PlayerId == XPlayer.Id then
@@ -2340,10 +2349,36 @@ end
 -- 将旧战斗房间NewRoomSingle删除，全部改为BattleRoleRoom
 function XFubenAgency:OpenBattleRoom(stage, data)
     if self:CheckPreFight(stage) then
-        XLuaUiManager.Open("UiBattleRoleRoom", stage.StageId, data)
+        self:OpenUiBattleRoleRoom(stage.StageId, data)
         return true
     end
     return false
+end
+
+--- 打开战前编队房间（UiBattleRoleRoom）
+--- 所有打开 UiBattleRoleRoom 的入口都应通过本方法
+---@param stageId number 关卡 ID
+---@param team XTeam|nil 队伍数据，可为 nil（UI 内部会取默认队伍）
+---@param proxy any|nil XUiBattleRoleRoomDefaultProxy 或子类（可为 nil）
+function XFubenAgency:OpenUiBattleRoleRoom(stageId, team, proxy, ...)
+    XLuaUiManager.Open("UiBattleRoleRoom", stageId, team, proxy, ...)
+end
+
+--- 关闭当前 Normal UI 后再打开 UiBattleRoleRoom（无缝切换）
+---@param stageId number
+---@param team XTeam|nil
+---@param proxy any|nil
+function XFubenAgency:PopThenOpenUiBattleRoleRoom(stageId, team, proxy, ...)
+    XLuaUiManager.PopThenOpen("UiBattleRoleRoom", stageId, team, proxy, ...)
+end
+
+--- 打开 UiBattleRoleRoom 并在打开完成后执行回调
+---@param callback fun(ui:any):void
+---@param stageId number
+---@param team XTeam|nil
+---@param proxy any|nil
+function XFubenAgency:OpenUiBattleRoleRoomWithCallback(callback, stageId, team, proxy, ...)
+    XLuaUiManager.OpenWithCallback("UiBattleRoleRoom", callback, stageId, team, proxy, ...)
 end
 
 --- 作战准备，如果使用非常规NPC，则直接进入战斗，否则先进入编队
@@ -2361,7 +2396,7 @@ function XFubenAgency:DoBattlePrepare(stageId, ...)
         end
     end
 
-    XLuaUiManager.Open('UiBattleRoleRoom', stageId, ...)
+    self:OpenUiBattleRoleRoom(stageId, ...)
 end
 
 -- 萌战战斗
@@ -3680,7 +3715,7 @@ function XFubenAgency:CheckChallengeCanEnter(cb, challengeId)
 end
 
 -- 矿区战斗
-function XFubenAgency:EnterStrongholdFight(stageId, characterIds, captainPos, firstFightPos, generalSkillId, enterCgIndex, settleCgIndex)
+function XFubenAgency:EnterStrongholdFight(stageId, characterIds, captainPos, firstFightPos, generalSkillId, enterCgIndex, settleCgIndex, fashionIds)
     local stage = self:GetStageCfg(stageId)
     if not self:CheckPreFight(stage) then
         return
@@ -3694,6 +3729,21 @@ function XFubenAgency:EnterStrongholdFight(stageId, characterIds, captainPos, fi
     preFight.GeneralSkill = generalSkillId
     preFight.EnterCgIndex = enterCgIndex
     preFight.SettleCgIndex = settleCgIndex
+    -- 矿区 loading 会遮挡 UiCueMark，这里跳过通用涂装提示弹窗
+    preFight.SkipBattleFashionUndownloadedTip = true
+    -- 矿区涂装回退：通用判定看不到 support 玩家的 fashion，按 TeamMember 维度预先标 pos
+    -- own/robot 槽位与通用判定行为一致，仅 support 走 GetAssistantPlayerFashionId
+    if fashionIds and XMVCA.XSubPackage:IsOpen() then
+        local positions = {}
+        for i = 1, #fashionIds do
+            positions[i] = 0
+            local fashionId = fashionIds[i]
+            if XTool.IsNumberValid(fashionId) and not XMVCA.XSubPackage:CheckFashionDownloaded(fashionId) then
+                positions[i] = 1
+            end
+        end
+        preFight.NoFashionResPositions = positions
+    end
     local req = { PreFightData = preFight }
     self:NetWorkPreFightRequest(req, function(res)
         if res.Code ~= XCode.Success then
@@ -4079,6 +4129,11 @@ function XFubenAgency:_CheckBattleFashionUndownloaded(preFightData, downloadedCb
         return
     end
 
+    if preFightData.SkipBattleFashionUndownloadedTip then
+        downloadedCb()
+        return
+    end
+
     -- 已选"本次登录不再提示"，直接继续
     if XMVCA.XSubPackage:IsBattleFashionTipDismissed() then
         downloadedCb()
@@ -4160,7 +4215,8 @@ function XFubenAgency:NetWorkPreFightRequest(request, ...)
     XMVCA.XMainLine2:SetLastExhibitionChapterByStageId(originStageId)
 
     -- 涂装分包：构建 NoFashionResPositions，标记需要回退显示默认皮肤的位置
-    if XMVCA.XSubPackage:IsOpen() then
+    -- 业务方（如矿区）若已按真实 TeamMember 维度预填，则不覆盖
+    if XMVCA.XSubPackage:IsOpen() and not request.PreFightData.NoFashionResPositions then
         local positions = {0, 0, 0}
         local cardIds = request.PreFightData.CardIds
         local robotIds = request.PreFightData.RobotIds
@@ -4191,6 +4247,7 @@ function XFubenAgency:NetWorkPreFightRequest(request, ...)
 
     XMVCA.XSubPackage:CheckStageIdListResIdListDownloadComplete({ stageId }, function()
         self:_CheckBattleFashionUndownloaded(request.PreFightData, function()
+            request.PreFightData.SkipBattleFashionUndownloadedTip = nil
             XNetwork.Call("PreFightRequest", request, args and table.unpack(args))
         end)
     end)
@@ -4211,6 +4268,16 @@ function XFubenAgency:SetMouseVisible()
     CS.UnityEngine.Cursor.visible = true
 
     XDataCenter.InputManagerPc.SetCurInputMap(CS.XInputMapId.System)
+end
+
+function XFubenAgency:_IsBanGeneralSkill(stageId)
+    local stageCfg = self:GetStageCfg(stageId)
+
+    if not stageCfg then
+        return false
+    end
+    
+    return stageCfg.IsBanGeneralSkill
 end
 
 return XFubenAgency

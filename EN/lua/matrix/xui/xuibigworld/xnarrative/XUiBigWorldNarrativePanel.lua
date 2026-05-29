@@ -5,15 +5,17 @@ local XUiBigWorldNarrativePanel = XClass(XUiPanelBigWorldNarrative, "XUiBigWorld
 
 
 function XUiBigWorldNarrativePanel:Refresh(narrativeId)
-    self.TitleText.text = XMVCA.XBigWorldService:GetNarrativeTitle(narrativeId)
-    self.ContentText.text = XMVCA.XBigWorldService:GetNarrativeContent(narrativeId)
+    local title = XMVCA.XBigWorldService:GetNarrativeTitle(narrativeId)
+    local content = XMVCA.XBigWorldService:GetNarrativeContent(narrativeId)
+    self.TitleText.text = XUiHelper.ReplaceWithPlayerName(title, "【kuroname】")
+    self.ContentText.text = XUiHelper.ReplaceWithPlayerName(content, "【kuroname】")
     self.ContentText.alignment = XMVCA.XBigWorldService:GetNarrativeAlignment(narrativeId)
     local signature = XMVCA.XBigWorldService:GetNarrativeSignature(narrativeId)
     if string.IsNilOrEmpty(signature) then
         self.SignatureText.gameObject:SetActiveEx(false)
     else
         self.SignatureText.gameObject:SetActiveEx(true)
-        self.SignatureText.text = signature
+        self.SignatureText.text = XUiHelper.ReplaceWithPlayerName(signature, "【kuroname】")
     end
 
     local rawImage = XMVCA.XBigWorldService:GetNarrativeAssetUrl(narrativeId)

@@ -15,6 +15,7 @@ function XBigWorldCourseModel:OnInit()
     self._ObtainRewardHash = {}
 
     self._TaskRecordMap = false
+    self._VersionRecordMap = false
     self._CoreElementRecordMap = false
 
     ---@type table<number, XBWCourseVersionData>
@@ -29,6 +30,7 @@ function XBigWorldCourseModel:ClearPrivate()
     -- 这里执行内部数据清理
     -- XLog.Error("请对内部数据进行清理")
     self:__RecordTaskMap()
+    self:__RecordVersionMap()
     self:__RecordCoreElementMap()
 end
 
@@ -43,6 +45,7 @@ function XBigWorldCourseModel:ResetAll()
     self._ObtainRewardHash = {}
 
     self._TaskRecordMap = false
+    self._VersionRecordMap = false
     self._CoreElementRecordMap = false
     self._CurSelectVersion = false
 
@@ -127,22 +130,15 @@ function XBigWorldCourseModel:SetSelectVersion(version)
     if self._CurSelectVersion ~= version then
         self._SaveUtil:SaveData(self:__GetLocalSelectVersionKey(), version)
     end
+
     self._CurSelectVersion = version
 end
 
 function XBigWorldCourseModel:GetSelectVersion()
     if not self._CurSelectVersion then
-        local version = self._SaveUtil:GetData(self:__GetLocalSelectVersionKey())
-        if version and version > 0 then
-            local conditionId = self:GetBigWorldCourseVersionConditionIdByVersionId(version)
-            if conditionId and conditionId > 0 and not XMVCA.XBigWorldService:CheckCondition(conditionId) then
-                version = XEnumConst.BWCourse.Version.One
-            end
-        else
-            version = XEnumConst.BWCourse.Version.One
-        end
-        self._CurSelectVersion = version
+        self._CurSelectVersion = self._SaveUtil:GetData(self:__GetLocalSelectVersionKey())
     end
+
     return self._CurSelectVersion
 end
 
@@ -284,6 +280,18 @@ function XBigWorldCourseModel:SetCoreElementRecord(elementId)
     self:__InitCoreElementRecordMap()
 
     self._CoreElementRecordMap[elementId] = true
+end
+
+function XBigWorldCourseModel:GetVersionRecord(versionId)
+    self:__InitVersionRecordMap()
+
+    return self._VersionRecordMap[versionId] or false
+end
+
+function XBigWorldCourseModel:SetVersionRecord(versionId)
+    self:__InitVersionRecordMap()
+
+    self._VersionRecordMap[versionId] = true
 end
 
 function XBigWorldCourseModel:CheckTaskProgressRewardAcquired(versionId, progressId)
@@ -439,6 +447,36 @@ end
 
 function XBigWorldCourseModel:__GetCoreElementRecordKey()
     return string.format("BW_COURSE_CORE_ELEMENT_RECORD_%s", tostring(XPlayer.Id))
+end
+
+function XBigWorldCourseModel:__InitVersionRecordMap()
+    if not self._VersionRecordMap then
+        local recordData = XSaveTool.GetData(self.__GetVersionRecordKey())
+        local records = string.ToIntArray(recordData)
+
+        self._VersionRecordMap = {}
+        if not XTool.IsTableEmpty(records) then
+            for _, recordId in pairs(records) do
+                self._VersionRecordMap[recordId] = true
+            end
+        end
+    end
+end
+
+function XBigWorldCourseModel:__RecordVersionMap()
+    if self._VersionRecordMap and not XTool.IsTableEmpty(self._VersionRecordMap) then
+        local records = {}
+
+        for versionId, _ in pairs(self._VersionRecordMap) do
+            table.insert(records, versionId)
+        end
+
+        XSaveTool.SaveData(self.__GetVersionRecordKey(), table.concat(records, "|"))
+    end
+end
+
+function XBigWorldCourseModel:__GetVersionRecordKey()
+    return string.format("BW_COURSE_VERSION_RECORD_%s", tostring(XPlayer.Id))
 end
 
 return XBigWorldCourseModel

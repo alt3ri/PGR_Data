@@ -37,6 +37,12 @@ local DataBoardKey = {
     Podium = 4,
     ---寻路过程
     FindPath = 5,
+    ---教室里观察学生额外计数
+    InClass2= 6,
+    ---训练室额外计数
+    TrainingRoom2= 7,
+    ---对景额外计数
+    FacingView2 = 8,
 }
 --endregion
 
@@ -50,7 +56,7 @@ local XVanessaInClassState = XClass(BaseState, "XVanessaInClassState")
 function XVanessaInClassState:InitStateConfig()
     self.StateConfig = {}
     self.StateConfig.StateEnum = StateEnum.InClass
-    self.StateConfig.StateAnim = "Drama_Stand_15"
+    self.StateConfig.StateAnim = "Drama_Stand_09"
     self.StateConfig.TriggerId = 1
     self.StateConfig.ShowOptionId = 1
     self.StateConfig.RegisterWorldEventList = {
@@ -61,26 +67,33 @@ function XVanessaInClassState:InitStateConfig()
     }
     self.StateConfig.BubbleDict = {
         [EEcologyBubbleType.Around] = {
-            Name = "300604",
+            Name = "301703",
             TriggerDistance = 6,
             TriggerCD = 2,
             LoopTime = 3,
         },
+        [EEcologyBubbleType.Near] = {
+            Name = "301704",
+            TriggerDistance = 2.5,
+            TriggerCD = 2,
+            LoopTime = 4,
+        }
     }
 end
 
 function XVanessaInClassState:OnStateEnter(lastStateEnum)
     BaseState.OnStateEnter(self, lastStateEnum)
     self.StateMachine:SetDataBoard(DataBoardKey.InClass, 0)
+    self.StateMachine:SetDataBoard(DataBoardKey.InClass2, 1)
 end
 
 function XVanessaInClassState:HandleEvent(eventType, eventArgs)
     BaseState.HandleEvent(self, eventType, eventArgs)
-    if eventType == EWorldEvent.DramaFinish and eventArgs.DramaName == "TargetDrama" then
-        if not eventArgs.HistoryDecisionDict[clipId] then
+    if eventType == EWorldEvent.DramaFinish and eventArgs.DramaName == "Drama_3017_003" then
+        if not eventArgs.HistoryDecisionDict[13] then
             return
         end
-        if table.contains(eventArgs.HistoryDecisionDict[clipId], decisionId) then
+        if table.contains(eventArgs.HistoryDecisionDict[13], 2) then
             self.StateMachine:SetDataBoard(DataBoardKey.InClass, 1)
         end
     end
@@ -104,19 +117,14 @@ function XVanessaTrainingRoomState:InitStateConfig()
         EWorldEvent.ActorTrigger,
         EWorldEvent.NpcInteractStart,
         EWorldEvent.NpcInteractComplete,
+        EWorldEvent.DramaFinish,
     }
     self.StateConfig.BubbleDict = {
-        [EEcologyBubbleType.Around] = {
-            Name = "300605",
-            TriggerDistance = 6,
-            TriggerCD = 2,
-            LoopTime = 3,
-        },
         [EEcologyBubbleType.Near] = {
-            Name = "300601",
+            Name = "301702",
             TriggerDistance = 2.5,
             TriggerCD = 2,
-            LoopTime = 3,
+            LoopTime = 4,
         }
     }
 end
@@ -124,6 +132,19 @@ end
 function XVanessaTrainingRoomState:OnStateEnter(lastStateEnum)
     BaseState.OnStateEnter(self, lastStateEnum)
     self.StateMachine:SetDataBoard(DataBoardKey.TrainingRoom, 0)
+    self.StateMachine:SetDataBoard(DataBoardKey.TrainingRoom2, 1)
+end
+
+function XVanessaTrainingRoomState:HandleEvent(eventType, eventArgs)
+    BaseState.HandleEvent(self, eventType, eventArgs)
+    if eventType == EWorldEvent.DramaFinish and eventArgs.DramaName == "Drama_3017_002" then
+        if not eventArgs.HistoryDecisionDict[12] then
+            return
+        end
+        if table.contains(eventArgs.HistoryDecisionDict[12], 2) then
+            self.StateMachine:SetDataBoard(DataBoardKey.TrainingRoom, 1)
+        end
+    end
 end
 --endregion
 
@@ -146,17 +167,11 @@ function XVanessaFacingViewState:InitStateConfig()
         EWorldEvent.NpcInteractComplete,
     }
     self.StateConfig.BubbleDict = {
-        [EEcologyBubbleType.Around] = {
-            Name = "300606",
-            TriggerDistance = 6,
-            TriggerCD = 2,
-            LoopTime = 3,
-        },
         [EEcologyBubbleType.Near] = {
-            Name = "300602",
+            Name = "301706",
             TriggerDistance = 2.5,
             TriggerCD = 2,
-            LoopTime = 3,
+            LoopTime = 4,
         }
     }
 end
@@ -164,6 +179,7 @@ end
 function XVanessaFacingViewState:OnStateEnter(lastStateEnum)
     BaseState.OnStateEnter(self, lastStateEnum)
     self.StateMachine:SetDataBoard(DataBoardKey.FacingView, 0)
+    self.StateMachine:SetDataBoard(DataBoardKey.FacingView2, 1)
 end
 --endregion
 
@@ -177,7 +193,7 @@ local XVanessaPodiumState = XClass(BaseState, "XVanessaPodiumState")
 function XVanessaPodiumState:InitStateConfig()
     self.StateConfig = {}
     self.StateConfig.StateEnum = StateEnum.Podium
-    self.StateConfig.StateAnim = "Drama_Stand_07"
+    self.StateConfig.StateAnim = "Drama_PolishAppearance"
     self.StateConfig.TriggerId = 1
     self.StateConfig.ShowOptionId = 4
     self.StateConfig.RegisterWorldEventList = {
@@ -187,23 +203,31 @@ function XVanessaPodiumState:InitStateConfig()
     }
     self.StateConfig.BubbleDict = {
         [EEcologyBubbleType.Around] = {
-            Name = "300606",
-            TriggerDistance = 6,
-            TriggerCD = 2,
-            LoopTime = 3,
-        },
-        [EEcologyBubbleType.Near] = {
-            Name = "300602",
+            Name = "301705",
             TriggerDistance = 2.5,
             TriggerCD = 2,
-            LoopTime = 3,
+            LoopTime = 4,
         }
     }
 end
 
 function XVanessaPodiumState:OnStateEnter(lastStateEnum)
     BaseState.OnStateEnter(self, lastStateEnum)
-    self.StateMachine:SetDataBoard(DataBoardKey.Podium, 0)
+    self.StateMachine:SetDataBoard(DataBoardKey.Podium, self._proxy:Random(1,3))
+    self.StateMachine:SetDataBoard(DataBoardKey.InClass2, 0)
+    self.StateMachine:SetDataBoard(DataBoardKey.TrainingRoom2, 0)
+    self.StateMachine:SetDataBoard(DataBoardKey.FacingView2, 0)
+end
+
+function XVanessaPodiumState:HandleEvent(eventType, eventArgs)
+    BaseState.HandleEvent(self, eventType, eventArgs)
+    if eventType == EWorldEvent.NpcInteractComplete and eventArgs.TargetId == self._uuid then
+        if self.StateMachine:CheckDataBoard(DataBoardKey.InClass, 1) and self.StateMachine:CheckDataBoard(DataBoardKey.TrainingRoom, 1) then
+            self._proxy:PlayDrama("Drama_3017_006")
+        else 
+            self._proxy:PlayDrama("Drama_3017_004")
+        end
+    end
 end
 --endregion
 
@@ -226,7 +250,7 @@ function XVanessaFindPathState:InitStateConfig()
     }
 
     self.StateConfig.FindPathConfig = {}
-    self.StateConfig.FindPathConfig.MeetCommanderBubbleName = "300603"
+    self.StateConfig.FindPathConfig.MeetCommanderBubbleName = "301701"
 end
 --endregion
 
@@ -249,19 +273,52 @@ end
 function XCharVanessaEcology:RegisterMachineStateTransition()
     -- 设置寻路状态枚举值
     self.FindPathStateEnum = StateEnum.FindPath
+    self.NextStateList = {
+        StateEnum.InClass, StateEnum.TrainingRoom, StateEnum.FacingView, StateEnum.Podium
+    }
+    self.NextStateRotDict ={
+        [StateEnum.InClass] = {x=0, y=0, z=0},
+        [StateEnum.TrainingRoom] = {x=0, y=-154.182, z=0},
+        [StateEnum.FacingView] = {x=0, y=-138.08, z=0},
+        [StateEnum.Podium] = {x=0, y=55.144, z=0},
+    }
     -- 其他状态到寻路状态
     self:RegisterInFindPathStateTransition(StateEnum.InClass, function()
-        return self._stateMachine:CheckDataBoard(DataBoardKey.InClass, 1) and StateEnum.FacingView or StateEnum.TrainingRoom
-    end, 5, 1)
+        if self._stateMachine:CheckDataBoard(DataBoardKey.InClass2, 1) and 
+                self._stateMachine:CheckDataBoard(DataBoardKey.TrainingRoom2, 1) and
+                self._stateMachine:CheckDataBoard(DataBoardKey.FacingView2, 1) then
+            return StateEnum.Podium
+        else 
+            return StateEnum.TrainingRoom
+        end
+    end, 30, 1)
     self:RegisterInFindPathStateTransition(StateEnum.TrainingRoom, function()
-        return self._stateMachine:CheckDataBoard(DataBoardKey.TrainingRoom, 1) and StateEnum.FacingView or StateEnum.Podium
-    end, 5, 1)
+        if self._stateMachine:CheckDataBoard(DataBoardKey.InClass2, 1) and
+                self._stateMachine:CheckDataBoard(DataBoardKey.TrainingRoom2, 1) and
+                self._stateMachine:CheckDataBoard(DataBoardKey.FacingView2, 1) then
+            return StateEnum.Podium
+        else 
+            return StateEnum.FacingView
+        end
+    end , 30, 1)
     self:RegisterInFindPathStateTransition(StateEnum.Podium, function()
-        return self._stateMachine:CheckDataBoard(DataBoardKey.Podium, 1) and StateEnum.InClass or StateEnum.FacingView
-    end, 5, 1)
+        if self._stateMachine:CheckDataBoard(DataBoardKey.Podium, 1) then 
+            return StateEnum.InClass
+        elseif self._stateMachine:CheckDataBoard(DataBoardKey.Podium, 2) then 
+            return StateEnum.TrainingRoom
+        elseif self._stateMachine:CheckDataBoard(DataBoardKey.Podium, 3) then 
+            return StateEnum.FacingView
+        end
+    end, 30, 1)
     self:RegisterInFindPathStateTransition(StateEnum.FacingView, function()
-        return self._stateMachine:CheckDataBoard(DataBoardKey.FacingView, 1) and StateEnum.Podium or StateEnum.InClass
-    end, 5, 1)
+        if self._stateMachine:CheckDataBoard(DataBoardKey.InClass2, 1) and
+                self._stateMachine:CheckDataBoard(DataBoardKey.TrainingRoom2, 1) and
+                self._stateMachine:CheckDataBoard(DataBoardKey.FacingView2, 1) then
+            return StateEnum.Podium
+        else 
+            return StateEnum.InClass
+        end
+    end , 30, 1)
     
     -- 寻路状态到其他状态
     self:RegisterOutFindPathStateTransition(StateEnum.InClass)

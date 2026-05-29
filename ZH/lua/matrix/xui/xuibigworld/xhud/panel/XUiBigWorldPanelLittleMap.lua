@@ -56,9 +56,13 @@ function XUiBigWorldPanelLittleMap:OnStart()
     self:_InitTrack()
     self:_InitMap(XMVCA.XBigWorldGamePlay:GetCurrentLevelId())
     self:_RegisterButtonClicks()
+
+    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_FIGHT_LEVEL_BEGIN_UPDATE, self.OnLevelUpdate,
+        self)
 end
 
 function XUiBigWorldPanelLittleMap:OnEnable()
+    self._IsShow = true
     self:_RefreshContent()
     self:_RegisterListeners()
     self:_RegisterSchedules()
@@ -66,11 +70,14 @@ function XUiBigWorldPanelLittleMap:OnEnable()
 end
 
 function XUiBigWorldPanelLittleMap:OnDisable()
+    self._IsShow = false
     self:_RemoveListeners()
     self:_RemoveSchedules()
 end
 
 function XUiBigWorldPanelLittleMap:OnDestroy()
+    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_FIGHT_LEVEL_BEGIN_UPDATE, self.OnLevelUpdate,
+        self)
 end
 
 -- endregion
@@ -127,8 +134,10 @@ function XUiBigWorldPanelLittleMap:OnPinHide(levelId, pinId)
 end
 
 function XUiBigWorldPanelLittleMap:OnLevelUpdate(levelId)
-    self:_InitMap(levelId)
-    self:_RefreshContent()
+    if self._IsShow then
+        self:_InitMap(levelId)
+        self:_RefreshContent()
+    end
 end
 
 function XUiBigWorldPanelLittleMap:OnPlayerEnterArea(groupId, areaId)
@@ -196,11 +205,11 @@ function XUiBigWorldPanelLittleMap:_RegisterListeners()
         self.OnPinStateChange, self)
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_POSITION_UPDATE,
         self.OnPositionChange, self)
-    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_FIGHT_LEVEL_BEGIN_UPDATE, self.OnLevelUpdate,
-        self)
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_PLAYER_ENTER_AREA, self.OnPlayerEnterArea,
         self)
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_SET_MAP_PIN_SHOW_TYPE, self.OnPinStateChange,
+        self)
+    XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_AI_MEMORY_DISPLAY_CHANGE, self.OnPinStateChange,
         self)
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_LITTLE_MAP_PIN_HIDE, self.OnPinHide, self)
 end
@@ -220,11 +229,12 @@ function XUiBigWorldPanelLittleMap:_RemoveListeners()
         self.OnPinStateChange, self)
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_POSITION_UPDATE,
         self.OnPositionChange, self)
-    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_FIGHT_LEVEL_BEGIN_UPDATE,
-        self.OnLevelUpdate, self)
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_PLAYER_ENTER_AREA, self.OnPlayerEnterArea,
         self)
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_SET_MAP_PIN_SHOW_TYPE,
+        self.OnPinStateChange,
+        self)
+    XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_AI_MEMORY_DISPLAY_CHANGE,
         self.OnPinStateChange,
         self)
     XEventManager.RemoveEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_LITTLE_MAP_PIN_HIDE, self.OnPinHide, self)

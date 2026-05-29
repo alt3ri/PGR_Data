@@ -256,26 +256,26 @@ end
         local HasOverReleaseCoeAdd,OverReleaseCoeAdd = self:TryGetBBFloat(1052004) --获取黑板中的气势强化系数
         local HasOverReleaseCoe , OverReleaseCoe = self:TryGetBBFloat(1052003) -- 获取黑板中的气势系数
         if self._proxy:CheckBuffByKind(self._uuid,1052383) then  --气势强化与否
-            --XLog.Warning("强化修正前伤害倍率："..eventArgs.PhysicalPermyraid)
-            local FinalDMGRate = eventArgs.PhysicalPermyraid * (1 +(customPower-CurCustomPower1)* OverReleaseCoe *(1+OverReleaseCoeAdd))
+            --XLog.Warning("强化修正前伤害倍率："..eventArgs.PhysicalPermyriad)
+            local FinalDMGRate = eventArgs.PhysicalPermyriad * (1 +(customPower-CurCustomPower1)* OverReleaseCoe *(1+OverReleaseCoeAdd))
             --XLog.Warning("强化修正后伤害倍率："..FinalDMGRate)
-            self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate , eventArgs.ElementPermyraid, eventArgs.HackDamage, eventArgs.HackPermyraid, eventArgs.IsCrit)
+            self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate , eventArgs.ElementPermyriad, eventArgs.HackDamage, eventArgs.HackPermyriad, eventArgs.IsCrit)
 
         else
-            --XLog.Warning("修正前伤害倍率："..eventArgs.PhysicalPermyraid)
-            local FinalDMGRate = eventArgs.PhysicalPermyraid * (1 +(customPower-CurCustomPower1)* OverReleaseCoe)
+            --XLog.Warning("修正前伤害倍率："..eventArgs.PhysicalPermyriad)
+            local FinalDMGRate = eventArgs.PhysicalPermyriad * (1 +(customPower-CurCustomPower1)* OverReleaseCoe)
             --XLog.Warning("修正后伤害倍率："..FinalDMGRate)
-            self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate, eventArgs.ElementPermyraid, eventArgs.HackDamage, eventArgs.HackPermyraid, eventArgs.IsCrit)
+            self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate, eventArgs.ElementPermyriad, eventArgs.HackDamage, eventArgs.HackPermyriad, eventArgs.IsCrit)
         end
         self._proxy:SetBBInt(1, self._uuid, self._proxy:GetNpcAttribValue(self._uuid,ENpcAttrib.CustomEnergyGroup1)) -- 清除黑板中的峰值
     end
 ----剑解伤害修正
     if eventArgs.Id == 1052017 then
     local HasBladeReleaseCoe, BladeReleaseCoe = self:TryGetBBFloat(1052002)
-        --XLog.Warning("修正前伤害倍率：".. eventArgs.PhysicalPermyraid)
-        local FinalDMGRate =  eventArgs.PhysicalPermyraid * (1 + (100 * BladeReleaseCoe))
+        --XLog.Warning("修正前伤害倍率：".. eventArgs.PhysicalPermyriad)
+        local FinalDMGRate =  eventArgs.PhysicalPermyriad * (1 + (100 * BladeReleaseCoe))
         --XLog.Warning("修正后伤害倍率："..FinalDMGRate)
-        self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate, eventArgs.ElementPermyraid, eventArgs.HackDamage, eventArgs.HackPermyraid, eventArgs.IsCrit)
+        self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate, eventArgs.ElementPermyriad, eventArgs.HackDamage, eventArgs.HackPermyriad, eventArgs.IsCrit)
     end
 
 ----防御减伤相关逻辑处理

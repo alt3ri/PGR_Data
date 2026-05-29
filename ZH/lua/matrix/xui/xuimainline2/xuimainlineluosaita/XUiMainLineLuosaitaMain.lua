@@ -32,6 +32,9 @@ function XUiMainLineLuosaitaMain:OnStart()
     -- 打开最新的阶段
     local sectionId = self._Control:GetEnterSectionId()
     self:SwitchPanelSection(sectionId)
+
+    -- 检测打开当期生命树章节弹窗
+    XMVCA.XLifeTree:CheckOpenUiLifeTreeChapterUnlock(XEnumConst.MAINLINE2.EXHIBITION_FUBEN_TYPE.MAINLINE, self._MainId)
 end
 
 function XUiMainLineLuosaitaMain:OnEnable()

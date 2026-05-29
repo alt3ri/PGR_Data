@@ -33,12 +33,14 @@ function XGame2048Model:ClearPrivate()
 
 end
 
-function XGame2048Model:ResetAll()
-    --清空上一个号的活动数据
-    self._ActivityId = nil
-    self._StageInfos = nil
-    self._CurStageData = nil
-end
+function XGame2048Model:ResetAll()
+    --清空上一个号的活动数据
+    self._ActivityId = nil
+    self._StageInfos = nil
+    self._CurStageData = nil
+    self._ChapterId = nil
+    self._StageId = nil
+end
 
 
 --region -------------------- ActivityData -------------------->>
@@ -68,9 +70,25 @@ function XGame2048Model:GetStageInfoById(stageId)
     end
 end
 
-function XGame2048Model:GetCurStageData()
-    return self._CurStageData
-end
+function XGame2048Model:GetCurStageData()
+    return self._CurStageData
+end
+
+function XGame2048Model:SetCurStageId(stageId)
+    self._StageId = XTool.IsNumberValid(stageId) and stageId or 0
+end
+
+function XGame2048Model:GetCurStageId()
+    return self._StageId or 0
+end
+
+function XGame2048Model:SetCurChapterId(chapterId)
+    self._ChapterId = XTool.IsNumberValid(chapterId) and chapterId or 0
+end
+
+function XGame2048Model:GetCurChapterId()
+    return self._ChapterId or 0
+end
 
 function XGame2048Model:GetCurActivityCfg()
     local activityId = self:GetCurActivityId()
@@ -196,17 +214,41 @@ function XGame2048Model:GetClientConfig()
 end
 
 ---@return XTableGame2048ChapterShow
-function XGame2048Model:GetChapterShowCfgById(chapterId)
-    local cfgs = self._ConfigUtil:GetByTableKey(TablePrivate.Game2048ChapterShow)
-
-    if cfgs then
-        return cfgs[chapterId]
-    end
-end
-
-function XGame2048Model:GetClientConfigVector2(key)
-    local config = self:GetClientConfig()[key]
-    if config then
+function XGame2048Model:GetChapterShowCfgById(chapterId)
+    local cfgs = self._ConfigUtil:GetByTableKey(TablePrivate.Game2048ChapterShow)
+
+    if cfgs then
+        return cfgs[chapterId]
+    end
+end
+
+function XGame2048Model:GetChapterIdByStageId(stageId)
+    if not XTool.IsNumberValid(stageId) then
+        return 0
+    end
+
+    if self._StageIdToChapterIdMap == nil then
+        self._StageIdToChapterIdMap = {}
+        local chapterCfgs = self:GetGame2048ChapterCfgs()
+
+        if not XTool.IsTableEmpty(chapterCfgs) then
+            ---@param chapterCfg XTableGame2048Chapter
+            for _, chapterCfg in pairs(chapterCfgs) do
+                if not XTool.IsTableEmpty(chapterCfg.StageIds) then
+                    for _, id in pairs(chapterCfg.StageIds) do
+                        self._StageIdToChapterIdMap[id] = chapterCfg.Id
+                    end
+                end
+            end
+        end
+    end
+
+    return self._StageIdToChapterIdMap[stageId] or 0
+end
+
+function XGame2048Model:GetClientConfigVector2(key)
+    local config = self:GetClientConfig()[key]
+    if config then
         local _x = string.IsNumeric(config.Values[1]) and tonumber(config.Values[1]) or 0
         local _y = string.IsNumeric(config.Values[2]) and tonumber(config.Values[2]) or 0
 

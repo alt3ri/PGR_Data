@@ -84,9 +84,8 @@ function XUiPanelBossEnter:Refresh(isRefresh)
     ---@type XBossSingle
     local bossSingleData = self.Parent:GetBossSingleData()
     local levelType = bossSingleData:GetBossSingleLevelType()
-    local gradeType = self._Control:GetGradeTypeByLevelType(levelType)
     -- 仅终极区显示囚笼体验入口
-    local bossTrialEnable = gradeType == XEnumConst.BossSingle.LevelType.Extreme
+    local bossTrialEnable = self._Control:GetRankLevelConfigByType(levelType).IsBossGalleryEnabled
 
     if isRefresh then
         local allCount = self._Control:GetChallengeCount()

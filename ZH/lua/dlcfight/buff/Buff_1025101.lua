@@ -44,17 +44,17 @@ function XBuffScript1025101:InitEventCallBackRegister()
 end
 
 function XBuffScript1025101:AfterDamageCalc(eventArgs)
-    self:LogError(".....发一下点燃伤害")
+    -- self:LogError(".....发一下点燃伤害")
     if eventArgs.Launcher ~= self._npcUUID then return end
-    self:LogError(".....发两下点燃伤害")
+    -- self:LogError(".....发两下点燃伤害")
     if eventArgs.Id ~= self.dmgBuffId then return end
-    self:LogError(".....发三下点燃伤害")
+    -- self:LogError(".....发三下点燃伤害")
     self.originAttrib1 = self._proxy:GetBuffStacks( self._npcUUID,1025101)
     local extraDmg = self.originAttrib1 * 10
     self._proxy:SetAfterDamageMagicContext(eventArgs.ContextId, extraDmg, eventArgs.ElementDamage, eventArgs.FinalHackDamage)
     self._proxy:ApplyMagic(self._uuid, self._uuid, self.burningId, 1)
     --1025113造成伤害时，修改造成的伤害量
-    self:LogError(".....点燃伤害量修正值"..extraDmg)
+    -- self:LogError(".....点燃伤害量修正值"..extraDmg)
 end
 
 --function XBuffScript1025101:InitEventCallBackRegister()

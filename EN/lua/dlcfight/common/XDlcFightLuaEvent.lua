@@ -1,3 +1,4 @@
+---@enum EFightLuaEvent
 EFightLuaEvent = {
     --- 设置棋子AI是否启用 参数详看: XLuaEventArgsAutoChessSetAIEnable
     AutoChessSetAIEnable = 1000,
@@ -16,7 +17,27 @@ EFightLuaEvent = {
     --- Relink发起弹刀技能
     RelinkCastCounterSkill = 1007,
     --- Relink怪物释放强力技能
-    RelinkMonsterCastPowerfulSkill = 1008
+    RelinkMonsterCastPowerfulSkill = 1008,
+    --- 肉鸽6技能启动
+    Theatre6SkillStart = 1009,
+    --- 肉鸽6技能结束
+    Theatre6SkillEnd = 1010,
+    --- 肉鸽6更换出手权或出手方
+    Theatre6AttakerChange = 1011,
+    --- 肉鸽6触发暴击
+    Theatre6AffixCritDamage = 1012,
+    --- 肉鸽6触发击飞
+    Theatre6AffixHitFly = 1013,
+    --- 肉鸽6触发击倒
+    Theatre6AffixHitDown = 1014,
+    --- 肉鸽6触发特殊命中(即被标记activate的子弹命中)
+    Theatre6SpecialHit = 1015,
+    --- 肉鸽6触发格挡
+    Theatre6AffixBlock = 1016,
+    --- 肉鸽6触发破防
+    Theatre6AffixBlockBreak = 1017,
+    --- 肉鸽6触发怒火攻击
+    Theatre6AffixAngerDamage = 1018,
 }
 
 --region Define - GetEventArgs
@@ -111,10 +132,92 @@ function AutoChessTriggerItemSkillEventArgs:Clear()
     self.ItemSkillId = 0
 end
 
+---肉鸽6技能启动/结束事件参数表
+---@class Theatre6SkillEventArgs : LuaEventArgs
+local Theatre6SkillEventArgs = {
+    ---@private
+    __type = EFightLuaEvent.Theatre6SkillStart,
+    ---@private
+    __name = EventNamesById[EFightLuaEvent.Theatre6SkillStart],
+    _skillType = 0, ---@type ETheatre6SkillType [技能类型](lua://ETheatre6SkillType)
+    _skillId = 0, ---@type integer 技能Id
+    _launcherUUID = 0, ---@type integer 释放单位的UUID
+    _targetUUID = 0 ---@type integer 释放目标的UUID
+}
+function Theatre6SkillEventArgs:Clear()
+    self._skillType = 0
+    self._skillId = 0
+    self._launcherUUID = 0
+    self._targetUUID = 0
+end
+
+---肉鸽6出手方/出手权变更事件参数表
+---@class Theatre6AttackerChangeEventArgs : LuaEventArgs
+local Theatre6AttackerChangeEventArgs = {
+    ---@private
+    __type = EFightLuaEvent.Theatre6AttakerChange,
+    ---@private
+    __name = EventNamesById[EFightLuaEvent.Theatre6AttakerChange],
+    _newAttackerUUID = 0, ---@type integer 新出手方单位的UUID
+    _newDefenderUUID = 0, ---@type integer 新防守方单位的UUID
+    _isTemp = false ---@type bool _isTemp = true 时为出手方交换, _isTemp = false 时为出手权交换
+}
+function Theatre6AttackerChangeEventArgs:Clear()
+    self._newAttackerUUID = 0
+    self._newDefenderUUID = 0
+    self._isTemp = false
+end
+
+local emptyTable = {}
+
+---肉鸽6词条子弹命中参数表
+---@class Theatre6HitAffixArgs : LuaEventArgs
+local Theatre6HitAffixArgs = {
+    ---@private
+    __type = EFightLuaEvent.Theatre6AffixCritDamage,
+    ---@private
+    __name = EventNamesById[EFightLuaEvent.Theatre6AffixCritDamage],
+    -- _contextId = 0, ---@type integer
+    _missileUUID = 0, ---@type integer
+    _missileHitCount = 0, ---@type integer 这是该子弹的第几次命中
+    _launcherUUID = 0, ---@type integer 攻击发起者uuid
+    _targetUUID = 0, ---@type integer 攻击目标uuid
+    _isActivate = false, ---@type boolean 是否为触发hit
+    _hasPopText = false, ---@type boolean 是否触发跳字
+    _actionId = 0, ---@type integer 触发命中的动作id
+    _skillId = 0, ---@type integer 触发命中的技能id
+    _srcType = 0, ---@type ETheatre6AffixControllerHitTagSourceType 效果触发来源类型
+    _triggeredTags = emptyTable, ---@type table<EGameplayTag, boolean> 本次受击触发的全部效果列表
+}
+
+function Theatre6HitAffixArgs:Clear()
+    -- self._contextId = 0
+    self._missileUUID = 0
+    self._missileHitCount = 0
+    self._launcherUUID = 0
+    self._targetUUID = 0
+    self._isActivate = false
+    self._hasPopText = false
+    self._srcType = 0
+    self._actionId = 0
+    self._skillId = 0
+    self._triggeredTags = emptyTable
+end
+
 local EventArgsPrototypes = {
     [EFightLuaEvent.AutoChessTriggerItemSkill] = AutoChessTriggerItemSkillEventArgs,
+    [EFightLuaEvent.Theatre6SkillStart] = Theatre6SkillEventArgs,
+    [EFightLuaEvent.Theatre6SkillEnd] = Theatre6SkillEventArgs,
+    [EFightLuaEvent.Theatre6AttakerChange] = Theatre6AttackerChangeEventArgs,
+    [EFightLuaEvent.Theatre6AffixCritDamage] = Theatre6HitAffixArgs,
+    [EFightLuaEvent.Theatre6AffixHitFly] = Theatre6HitAffixArgs,
+    [EFightLuaEvent.Theatre6AffixHitDown] = Theatre6HitAffixArgs,
+    [EFightLuaEvent.Theatre6SpecialHit] = Theatre6HitAffixArgs,
+    [EFightLuaEvent.Theatre6AffixBlock] = Theatre6HitAffixArgs,
+    [EFightLuaEvent.Theatre6AffixBlockBreak] = Theatre6HitAffixArgs,
     --TODO：增加新的事件参数原型映射
 }
+
 
 --endregion 战斗Lua自定义事件定义
 
@@ -205,4 +308,4 @@ end
 --print("args.ItemSkillId", args.ItemSkillId)
 
 --XEventManager.ReleaseEvenArgs(args)
---XLog.Debug("lua事件对象池 再次回收后", XEventManager._pool)
+--XLog.Debug("lua事件对象池 再次回收后", XEventManager._pool)

@@ -98,6 +98,7 @@ function XUiBigWorldTip:SetTempGoodsInfo(data)
     end
     -- 描述
     if self.TxtDescription and data.Description then
+        self.TxtDescription.onLinkClick = Handler(self, self.OnTxtLinkClick)
         self.TxtDescription.text = data.Description
         self.TxtDescription.gameObject:SetActiveEx(true)
     end
@@ -274,4 +275,12 @@ end
 
 function XUiBigWorldTip:OnBtnBackClick()
     self:Close()
+end
+
+function XUiBigWorldTip:OnTxtLinkClick(skipId)
+    skipId = tonumber(skipId)
+
+    if XTool.IsNumberValid(skipId) then
+        XMVCA.XBigWorldSkipFunction:SkipTo(skipId)
+    end
 end

@@ -351,11 +351,8 @@ function XUiFashion:UpdateFashionData()
     else
         self.FashionList = XDataCenter.FashionManager.GetCurrentTimeFashionByCharId(self.CharacterId) or {}
         self.DisplayFashionList = {}
-        for _, fashionId in pairs(self.FashionList) do
-            local template = XDataCenter.FashionManager.GetFashionTemplate(fashionId)
-            if template.DefaultHide ~= true and template.DefaultHide ~= 1 then
+    for _, fashionId in pairs(self.FashionList) do
                 tableInsert(self.DisplayFashionList, fashionId)
-            end
         end
     end
 
@@ -729,6 +726,10 @@ function XUiFashion:UpdateFashionIntro(fashionId)
 
     self.TxtIntroDesc.gameObject:SetActiveEx(not string.IsNilOrEmpty(content))
     self.TxtIntroDesc.text = content
+
+    if self.PaneInfo then
+        self.PaneInfo.verticalNormalizedPosition = 1
+    end
 end
 
 function XUiFashion:UpdateWeaponModel()

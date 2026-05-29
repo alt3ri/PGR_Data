@@ -10,6 +10,8 @@ function XUiDlcRelinkSettlementNew:OnAwake()
     self.PanelTitle.gameObject:SetActiveEx(false)
     self.PanelCharacter.gameObject:SetActiveEx(false)
     self.PanelReward.gameObject:SetActiveEx(false)
+    self.PanelDetail.gameObject:SetActiveEx(false)
+    self.BtnClose:AddEventListener(handler(self, self.OnBtnDetailCloseClick))
 end
 
 ---@param settleData XDlcFightSettleData
@@ -131,6 +133,25 @@ function XUiDlcRelinkSettlementNew:GetPlayerNameById(playerId)
         end
     end
     return ""
+end
+
+-- 显示标签详情
+---@param targetTransform UnityEngine.RectTransform
+---@param tagId number
+function XUiDlcRelinkSettlementNew:OnShowPanelDetail(targetTransform, tagId)
+    self.TxtDesc.text = self._Control:GetMedalTagDesc(tagId)
+    -- 计算目标格子左下角的世界坐标
+    local rect = targetTransform.rect
+    local tempVec3 = CS.UnityEngine.Vector3(rect.xMin, rect.yMin, 0)
+    local bottomLeftWorld = targetTransform:TransformPoint(tempVec3)
+    -- 将世界坐标转换为PanelDetail的局部坐标
+    local localPos = self.PanelDetail.transform:InverseTransformPoint(bottomLeftWorld)
+    self.TxtDesc.transform.parent.anchoredPosition = CS.UnityEngine.Vector2(localPos.x, localPos.y)
+    self.PanelDetail.gameObject:SetActiveEx(true)
+end
+
+function XUiDlcRelinkSettlementNew:OnBtnDetailCloseClick()
+    self.PanelDetail.gameObject:SetActiveEx(false)
 end
 
 return XUiDlcRelinkSettlementNew

@@ -126,7 +126,7 @@ end
 function XBWCommanderDIYPartEntity:IsIncompatible()
     if not self:IsTemporary() then
         if not self:IsNil() then
-            return self._OwnControl:CheckIncompatibleType(self)
+            return self._OwnControl:CheckIncompatibleType(self) or self._OwnControl:CheckIncompatibleParts(self)
         end
     end
 
@@ -270,11 +270,16 @@ function XBWCommanderDIYPartEntity:GetUseMaterialConfigsByGender(gender)
 
     if modelId then
         local colorId = self:GetUseColorIdByGender(gender)
-        
+
         return self._OwnControl:GetMaterialConfigs(modelId, colorId)
     end
 
     return {}
+end
+
+function XBWCommanderDIYPartEntity:GetSkipFunctions()
+    local config = self._Model:GetDlcPlayerFashionPartConfigById(self:GetPartId())
+    return config.SkipID
 end
 
 function XBWCommanderDIYPartEntity:GetPriority()

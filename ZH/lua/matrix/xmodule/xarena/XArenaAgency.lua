@@ -34,6 +34,7 @@ end
 
 function XArenaAgency:ResetAll()
     self._FightSettleDataCache = nil
+    self._NoWinDataOnBehaviorDoExitFight = nil
 end
 
 -- region Notify
@@ -428,8 +429,14 @@ function XArenaAgency:_ShowReward(winData)
             end
         end
     end
-    
-    self._FightSettleDataCache = winData
+
+    if self._NoWinDataOnBehaviorDoExitFight then
+        self._NoWinDataOnBehaviorDoExitFight = nil
+        -- 说明战斗退出执行在结算请求回调完成前就执行了，此时需要手动打开结算界面
+        self:_OpenRewardUi(winData)
+    else
+        self._FightSettleDataCache = winData
+    end
 end
 
 function XArenaAgency:OnBehaviorDoExitFight(event, args)
@@ -450,6 +457,12 @@ function XArenaAgency:OnBehaviorDoExitFight(event, args)
 end
 
 function XArenaAgency:_OpenRewardUi(winData)
+    if not winData then
+        -- 没有结算数据，可能是结算失败，也可能是结算请求还没回调，不向下执行并记录
+        self._NoWinDataOnBehaviorDoExitFight = true
+        return
+    end
+    
     XMVCA.XFuben:SetMouseVisible()
 
     if XMVCA.XFuben:CheckHasFlopReward(winData) then

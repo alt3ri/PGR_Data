@@ -106,8 +106,9 @@ function XUiPanelCharacterCG:StopCG(isPerform, callBack)
     self:CloseClickMask()
 
     if isPerform then
-        self:PlayStopPerform(callBack)
-        return
+        if self:PlayStopPerform(callBack) then
+            return
+        end
     end
 
     if self:IsCGPlaying() then
@@ -121,10 +122,11 @@ function XUiPanelCharacterCG:StopCG(isPerform, callBack)
     end
 end
 
+---@return boolean 是否成功执行带过渡动画的关闭逻辑
 function XUiPanelCharacterCG:PlayStopPerform(callBack)
     if not self.Effect then
         XLog.Error("Effect节点不存在")
-        return
+        return false
     end
     if self:IsCGPlaying() then
         self.VideoPlayer:Pause()
@@ -147,6 +149,8 @@ function XUiPanelCharacterCG:PlayStopPerform(callBack)
             callBack()
         end
     end, 280)
+    
+    return true
 end
 
 function XUiPanelCharacterCG:IsCGShow()
@@ -210,20 +214,20 @@ function XUiPanelCharacterCG:ReplayCG()
     self._IsReplaying = true
     self:ShowCGMask()
     
-    local fun = function()
-        local status = self:GetStatus()
-        if status == CS.CriWare.CriMana.Player.Status.Stop then
-            self:OpenClickMask(1000) -- CG加载时屏蔽点击
-            self._IsReplaying = false
-        end
-    end
-    self.VideoPlayer.ActionStopped = function ()
-        fun()
-        self.VideoPlayer.ActionStopped = nil
-    end
+    self.VideoPlayer.ActionStopped = handler(self, self._OnActionStopped)
     
     self.VideoPlayer:RePlay()
     self._IsPlayPerform = true
+end
+
+function XUiPanelCharacterCG:_OnActionStopped()
+    local status = self:GetStatus()
+    if status == CS.CriWare.CriMana.Player.Status.Stop then
+        self:OpenClickMask(1000) -- CG加载时屏蔽点击
+        self._IsReplaying = false
+    end
+
+    self.VideoPlayer.ActionStopped = nil
 end
 
 function XUiPanelCharacterCG:RemoveEffectTimer()
@@ -292,6 +296,32 @@ end
 
 function XUiPanelCharacterCG:GetVideoPlayer()
     return self.VideoPlayer
+end
+
+function XUiPanelCharacterCG:SetSubtitlesEnable(enable)
+    if self.VideoPlayer and not XTool.UObjIsNil(self.VideoPlayer.SubtitlesText) then
+        self.VideoPlayer.SubtitlesText.gameObject:SetActiveEx(enable)
+    end
+end
+
+function XUiPanelCharacterCG:AddVideoDestroyCallBack(cb)
+    if self.VideoPlayer then
+        if self.VideoPlayer.ActionDestroyed then
+            self.VideoPlayer.ActionDestroyed = self.VideoPlayer.ActionDestroyed + cb
+        else
+            self.VideoPlayer.ActionDestroyed = cb
+        end
+    end
+end
+
+function XUiPanelCharacterCG:RemoveVideoDestroyCallBack(cb)
+    if self.VideoPlayer then
+        if self.VideoPlayer.ActionDestroyed then
+            self.VideoPlayer.ActionDestroyed = self.VideoPlayer.ActionDestroyed - cb
+        else
+            self.VideoPlayer.ActionDestroyed = cb
+        end
+    end
 end
 
 return XUiPanelCharacterCG

@@ -3949,7 +3949,7 @@
     },
     {
         "Key": "BossSingleAutoFightDesc",
-        "Text": "\u4f7f\u7528\u81ea\u52a8\u6218\u6597\u53ef\u8fd8\u539f\u6700\u9ad8\u7eaa\u5f55\u768480%\u3002\\n\u81ea\u52a8\u6218\u6597\u5c06\u4f1a\u6263\u9664\u8bb0\u5f55\u4e2d\u7f16\u961f\u6210\u5458\u8010\u529b\uff0c\u5e76\u6d88\u8017\u5f53\u65e5\u6b21\u6570\u3002\\n\u81ea\u52a8\u6218\u6597\u5237\u65b0\u5468\u671f\u5185\u53ef\u4f7f\u75283\u6b21\u3002"
+        "Text": "\u4f7f\u7528\u81ea\u52a8\u6218\u6597\u53ef\u8fd8\u539f\u6700\u9ad8\u7eaa\u5f55\u7684100%\u3002\\n\u81ea\u52a8\u6218\u6597\u5c06\u4f1a\u6263\u9664\u8bb0\u5f55\u4e2d\u7f16\u961f\u6210\u5458\u8010\u529b\uff0c\u5e76\u6d88\u8017\u5f53\u65e5\u6b21\u6570\u3002\\n\u81ea\u52a8\u6218\u6597\u5237\u65b0\u5468\u671f\u5185\u53ef\u4f7f\u75286\u6b21\u3002"
     },
     {
         "Key": "BossSingleAutoFightRateDesc",
@@ -5993,7 +5993,7 @@
     },
     {
         "Key": "ActivityBossSingleSchedule",
-        "Text": "{0}/<color=#00000><size=20>{1}</size></color>"
+        "Text": "{0}/<color=#00EEEE><size=28>{1}</size></color>"
     },
     {
         "Key": "GuildSettingLevelLessThanZero",
@@ -17176,6 +17176,10 @@
         "Text": "\u4ec5\u663e\u793a\u6700\u8fd1{0}\u6761\u8bb0\u5f55"
     },
     {
+        "Key": "TurntableCountNoEnough",
+        "Text": "\u3010{0}\u3011\u6570\u91cf\u4e0d\u8db3"
+    },
+    {
         "Key": "FashionStoryTrialPreStagePassTip",
         "Text": "\u901a\u8fc7{0}\u5173\u5361\u540e\u89e3\u9501"
     },
@@ -18416,6 +18420,42 @@
         "Text": "\u6559\u5b66\u5173\u5c1a\u672a\u5b8c\u6210\uff0c\u662f\u5426\u7acb\u5373\u524d\u5f80\uff1f"
     },
     {
+        "Key": "BossInshotToastTowerUp",
+        "Text": "\u6210\u529f\u5347\u5c42"
+    },
+    {
+        "Key": "BossInshotToastTowerDown",
+        "Text": "\u964d\u5c42\u89e6\u53d1"
+    },
+    {
+        "Key": "BossInshotToastTowerClear",
+        "Text": "\u606d\u559c\u901a\u5173"
+    },
+    {
+        "Key": "BossInshotToastTowerDownProtected",
+        "Text": "\u964d\u5c42\u4fdd\u62a4\u89e6\u53d1"
+    },
+    {
+        "Key": "BossInshotToastTowerFloor",
+        "Text": "{0}F"
+    },
+    {
+        "Key": "BossInshotToastTowerDescUp",
+        "Text": "\u8bc4\u5206\u8fbe{0}\uff0c\u4e0a\u5347{1}\u5c42\u3002"
+    },
+    {
+        "Key": "BossInshotToastTowerDescDown",
+        "Text": "\u8bc4\u5206\u672a\u8fbe{0}\uff0c\u964d\u81f3{1}\u5c42\u3002"
+    },
+    {
+        "Key": "BossInshotToastTowerDescClear",
+        "Text": "\u53ef\u9009\u62e9\u5176\u4ed6Boss\u6311\u6218\uff0c\u83b7\u53d6\u66f4\u9ad8\u6392\u540d\u3002\\n\u5931\u8d25\u4e0d\u518d\u89e6\u53d1\u964d\u5c42\u3002"
+    },
+    {
+        "Key": "BossInshotToastTowerDescDownProtected",
+        "Text": "\u9996\u6b21\u672a\u8fbe{0}\uff0c\u4e0d\u964d\u5c42\u3002"
+    },
+    {
         "Key": "DlcRoomKickOutTip",
         "Text": "\u662f\u5426\u5c06\u8be5\u73a9\u5bb6\u8e22\u51fa\u623f\u95f4\uff1f"
     },
@@ -18765,7 +18805,7 @@
     },
     {
         "Key": "MainLineChapterTimeLimitTag",
-        "Text": "\u9650\u65f6\u5f00\u653e"
+        "Text": "\u6700\u65b0\u5f00\u653e"
     },
     {
         "Key": "SetNumberEmptyTips",
@@ -19041,7 +19081,7 @@
     },
     {
         "Key": "NonogramSettlementTitleAllFinish",
-        "Text": "\u606d\u559c\u5b8c\u6210\u6240\u6709\u591c\u5e55\u63a2\u7d22"
+        "Text": "\u606d\u559c\u5b8c\u6210\u6240\u6709\u6697\u623f\u63a2\u7d22"
     },
     {
         "Key": "NonogramSettlementTitleExit",
@@ -20233,7 +20273,7 @@
     },
     {
         "Key": "PurchaseMonthPlusDesc",
-        "Text": "1\u3001\u89c4\u5219\u8bf4\u660e\uff1a\u8d2d\u4e70\u540e\u53ef\u7acb\u523b\u83b7\u5f971000\u6d3b\u52a8\u7814\u53d1\u5238\uff0c\u5e76\u83b7\u5f971\u4efd\u3010\u9ed1\u5361\u6708\u5361\u3011\uff08\u9ed1\u5361\u6708\u5361\u5171\u8ba1\u53ef\u5f973300\u9ed1\u5361\u5956\u52b1\uff09\u3002\\n2\u3001\u9ed1\u5361\u6708\u5361\u8bf4\u660e\uff1a\u83b7\u5f97\u540e\u7acb\u5373\u53d1\u653e300\u9ed1\u5361\uff0c\u4ece\u6fc0\u6d3b\u5f53\u65e5\u5f00\u59cb\u6bcf\u65e5\u767b\u5f55\u53ef\u9886\u53d6100\u9ed1\u5361\uff0c\u6301\u7eed30\u65e5\u3002\u6bcf\u65e55:00\u540e\u767b\u5f55\u53ef\u81ea\u52a8\u9886\u53d6\u5f53\u5929\u9ed1\u5361\u5956\u52b1\uff0c\u6216\u8fdb\u5165\u3010\u4e3b\u754c\u9762--\u6d3b\u52a8\u3011\u7cfb\u7edf\u5185\u627e\u5230\u3010\u6708\u5361\u3011\u7684\u9875\u7b7e\uff0c\u624b\u52a8\u9886\u53d6\u5956\u52b1\u3002\u6b64\u9875\u7b7e\u4e5f\u53ef\u67e5\u770b\u6307\u6325\u5b98\u5f53\u524d\u9ed1\u5361\u6708\u5361\u6743\u9650\u5269\u4f59\u5929\u6570\u3002\\n3\u3001\u9650\u8d2d\u8bf4\u660e\uff1a\u3010\u6708\u5361\u7814\u53d1\u52b5\u7ec4\u5408\u5305\u3011\u9650\u8d2d1\u6b21\uff0c\u4e0d\u53d7\u5f53\u524d\u3010\u9ed1\u5361\u6708\u5361\u3011\u8d2d\u4e70\u6570\u91cf\u9650\u5236\u7684\u5f71\u54cd\u3002\u4f8b\u5982\uff1a\u6307\u6325\u5b98\u5f53\u524d\u5df2\u6fc0\u6d3b2\u5f20\u6708\u5361\u8fbe\u5230\u4e0a\u9650\uff0c\u6b64\u65f6\u4ecd\u53ef\u8d2d\u4e70\u3010\u6708\u5361\u7814\u53d1\u52b5\u7ec4\u5408\u5305\u3011\uff0c\u8d2d\u4e70\u540e\u9ed1\u5361\u6708\u5361\u5269\u4f59\u5929\u6570\u76f8\u5e94\u589e\u52a0\u3002"
+        "Text": "1\u3001\u89c4\u5219\u8bf4\u660e\uff1a\u8d2d\u4e70\u540e\u53ef\u7acb\u523b\u83b7\u5f971000\u6d3b\u52a8\u7814\u53d1\u5238\uff0c\u5e76\u83b7\u5f971\u4efd\u3010\u9ed1\u5361\u6708\u5361\u3011\uff08\u9ed1\u5361\u6708\u5361\u5171\u8ba1\u53ef\u5f973300\u9ed1\u5361\u5956\u52b1\uff09\u3002\\n2\u3001\u9ed1\u5361\u6708\u5361\u8bf4\u660e\uff1a\u83b7\u5f97\u540e\u7acb\u5373\u53d1\u653e300\u9ed1\u5361\uff0c\u4ece\u6fc0\u6d3b\u5f53\u65e5\u5f00\u59cb\u6bcf\u65e5\u767b\u5f55\u53ef\u9886\u53d6100\u9ed1\u5361\uff0c\u6301\u7eed30\u65e5\u3002\u6bcf\u65e55:00\u540e\u767b\u5f55\u53ef\u81ea\u52a8\u9886\u53d6\u5f53\u5929\u9ed1\u5361\u5956\u52b1\uff0c\u6216\u8fdb\u5165\u3010\u4e3b\u754c\u9762--\u6d3b\u52a8\u3011\u7cfb\u7edf\u5185\u627e\u5230\u3010\u6708\u5361\u3011\u7684\u9875\u7b7e\uff0c\u624b\u52a8\u9886\u53d6\u5956\u52b1\u3002\u6b64\u9875\u7b7e\u4e5f\u53ef\u67e5\u770b\u6307\u6325\u5b98\u5f53\u524d\u9ed1\u5361\u6708\u5361\u6743\u9650\u5269\u4f59\u5929\u6570\u3002\\n3\u3001\u9650\u8d2d\u8bf4\u660e\uff1a\u3010\u6708\u5361\u7814\u53d1\u52b5\u7ec4\u5408\u5305\u3011\u9650\u8d2d1\u6b21\uff0c\u4e0d\u53d7\u5f53\u524d\u3010\u9ed1\u5361\u6708\u5361\u3011\u8d2d\u4e70\u6570\u91cf\u9650\u5236\u7684\u5f71\u54cd\u3002\u4f8b\u5982\uff1a\u6307\u6325\u5b98\u5f53\u524d\u5df2\u6fc0\u6d3b6\u5f20\u6708\u5361\u8fbe\u5230\u4e0a\u9650\uff0c\u6b64\u65f6\u4ecd\u53ef\u8d2d\u4e70\u3010\u6708\u5361\u7814\u53d1\u52b5\u7ec4\u5408\u5305\u3011\uff0c\u8d2d\u4e70\u540e\u9ed1\u5361\u6708\u5361\u5269\u4f59\u5929\u6570\u76f8\u5e94\u589e\u52a0\u3002"
     },
     {
         "Key": "PurchaseComboTitle",
@@ -20500,6 +20540,10 @@
         "Text": "\u5269\u4f59\uff1a{0}"
     },
     {
+        "Key": "Theatre6BuffStackCount",
+        "Text": "\u6570\u91cf\uff1a{0}"
+    },
+    {
         "Key": "Theatre6TaskFinish",
         "Text": "\u5df2\u5b8c\u6210"
     },
@@ -20537,7 +20581,7 @@
     },
     {
         "Key": "Theatre6FightHighSkillTip",
-        "Text": "\u5b58\u5728\u66f4\u9ad8\u7b49\u7ea7\u7684\u6280\u80fd\uff0c\u662f\u5426\u76f4\u63a5\u8fdb\u5165\u6218\u6597"
+        "Text": "\u5b58\u5728\u53ef\u66ff\u6362\u7684\u9ad8\u661f\u7ea7\u6280\u80fd\uff0c\u662f\u5426\u76f4\u63a5\u8fdb\u5165\u6218\u6597"
     },
     {
         "Key": "Theatre6TalentLvRichText",
@@ -20629,11 +20673,11 @@
     },
     {
         "Key": "Theatre6GiveUpTitle",
-        "Text": "placeholder_\u653e\u5f03\u5b58\u6863"
+        "Text": "\u653e\u5f03\u5f52\u6863"
     },
     {
         "Key": "Theatre6SaveGiveUpContent",
-        "Text": "placeholder_\u771f\u7684\u8981\u653e\u5f03\u5417"
+        "Text": "\u662f\u5426\u653e\u5f03\u5f52\u6863"
     },
     {
         "Key": "DownloadAllCharacterFashion",
@@ -20645,7 +20689,7 @@
     },
     {
         "Key": "FashionDownloadAllCharacterDesc",
-        "Text": "{0}\u6240\u6709\u672a\u4e0b\u8f7d\u7684\u6d82\u88c5\u8d44\u6e90"
+        "Text": "{0}\u6240\u6709\u6d82\u88c5\u8d44\u6e90"
     },
     {
         "Key": "FubenRepeatChallengeDoubleRewardTimes",
@@ -20657,7 +20701,7 @@
     },
     {
         "Key": "BtnPvpTip",
-        "Text": "\u5728\u540e\u7eed\u7248\u672c\u4e2d\uff0c\u53ef\u4ee5\u4f7f\u7528\u5b58\u6863\u4e0e\u5176\u4ed6\u73a9\u5bb6\u5bf9\u6218\\n\u6709\u4e30\u5bcc\u7684\u5956\u52b1"
+        "Text": "\u5728\u540e\u7eed\u7248\u672c\u5185\uff0c\u53ef\u4ee5\u4f7f\u7528\u89d2\u8272\u5f52\u6863\u4e0e\u5176\u4ed6\u73a9\u5bb6\u8fdb\u884c\u5bf9\u6218"
     },
     {
         "Key": "BtnPvpTipTitle",
@@ -20665,11 +20709,11 @@
     },
     {
         "Key": "Theatre6Shop",
-        "Text": "placeholder_\u5546 \u5e97"
+        "Text": "\u5546 \u5e97"
     },
     {
         "Key": "Theatre6Task",
-        "Text": "placeholder_\u4efb \u52a1"
+        "Text": "\u4efb \u52a1"
     },
     {
         "Key": "SelectFashionToUninstall",
@@ -20737,7 +20781,7 @@
     },
     {
         "Key": "Theatre6SkillCSMag",
-        "Text": "placeholder_\u8d85\u7b97\u79ef\u7d2f\u500d\u7387"
+        "Text": "\u4f24\u5bb3\u500d\u7387"
     },
     {
         "Key": "PassportCloudGameDesc",
@@ -20776,6 +20820,14 @@
         "Text": "placeholder_\u8fd8\u6709\u53ef\u8d2d\u4e70\u5546\u54c1\u6216\u514d\u8d39\u5237\u65b0\u6b21\u6570\uff0c\u662f\u5426\u786e\u8ba4\u79bb\u5f00\u5546\u5e97\uff1f"
     },
     {
+        "Key": "Theatre6TaskSelectState",
+        "Text": "\u5df2\u9009\u62e9"
+    },
+    {
+        "Key": "Theatre6TaskNormalState",
+        "Text": "\u9009\u62e9"
+    },
+    {
         "Key": "BattleFashionUndownloadedTipTitle",
         "Text": "\u63d0\u793a"
     },
@@ -20797,11 +20849,11 @@
     },
     {
         "Key": "Theatre6PopupSkillLevelUpNotShow",
-        "Text": "\u65e0\u53ef\u5347\u7ea7\u6280\u80fd"
+        "Text": "\u65e0\u53ef\u5347\u661f\u6280\u80fd"
     },
     {
         "Key": "Theatre6PopupSkillLevelUpCancel",
-        "Text": "\u786e\u5b9a\u8981\u653e\u5f03\u5347\u7ea7\u5417\uff1f"
+        "Text": "\u786e\u5b9a\u8981\u653e\u5f03\u5347\u661f\u5417\uff1f"
     },
     {
         "Key": "Theatre6SkillCoinNotEnough",
@@ -20825,7 +20877,7 @@
     },
     {
         "Key": "PassportFashionBuyBtnText",
-        "Text": "\u4ed8\u8d39\u60c5\u62a5\u83b7\u53d6"
+        "Text": "\u7edd\u5bc6\u60c5\u62a5\u83b7\u53d6"
     },
     {
         "Key": "FashionSuitProgressComplate",
@@ -20873,7 +20925,7 @@
     },
     {
         "Key": "Theatre6SkillUpGrade",
-        "Text": "\u7b49\u7ea7\u63d0\u5347"
+        "Text": "\u661f\u7ea7\u63d0\u5347"
     },
     {
         "Key": "Theatre6GetSkill",
@@ -20897,15 +20949,15 @@
     },
     {
         "Key": "Theatre6SkillChangeError1",
-        "Text": "\u4f4e\u7b49\u7ea7\u6280\u80fd\u65e0\u6cd5\u66ff\u6362\u88c5\u5907\u4e2d\u7684\u9ad8\u7b49\u7ea7\u6280\u80fd"
+        "Text": "\u5df2\u88c5\u5907\u66f4\u9ad8\u661f\u7ea7\u7684\u6280\u80fd"
     },
     {
         "Key": "Theatre6SkillChangeError2",
-        "Text": "\u5df2\u88c5\u5907\u76f8\u540c\u6280\u80fd,\u65e0\u6cd5\u91cd\u590d\u88c5\u5907"
+        "Text": "\u5df2\u88c5\u5907\u76f8\u540c\u6280\u80fd"
     },
     {
         "Key": "Theatre6SkillSlotFull",
-        "Text": "\u88c5\u5907\u69fd\u5df2\u6ee1"
+        "Text": "\u6682\u65e0\u53ef\u88c5\u5907\u69fd\u4f4d"
     },
     {
         "Key": "Theatre6ShopStatus1",
@@ -20918,5 +20970,81 @@
     {
         "Key": "Theatre6ShopStatus3",
         "Text": "\u5237\u65b0\u4e0a\u9650"
+    },
+    {
+        "Key": "Theatre6SkillBagFull",
+        "Text": "\u6682\u65e0\u4ed3\u5e93\u69fd\u4f4d"
+    },
+    {
+        "Key": "Theatre6SkillReplaceHigh",
+        "Text": "\u5df2\u66ff\u6362\u4e3a\u9ad8\u661f\u6280\u80fd"
+    },
+    {
+        "Key": "Theatre6SkillAutoToBag",
+        "Text": "\u65e0\u6cd5\u88c5\u5907\u4f4e\u661f\u7ea7\u6280\u80fd\uff0c\u81ea\u52a8\u8fdb\u5165\u6280\u80fd\u6863\u6848"
+    },
+    {
+        "Key": "GameCollectionTips1",
+        "Text": "\u5f53\u524d\u5df2\u6709\u5176\u4ed6\u73a9\u6cd5\u8fdb\u884c\u4e2d\uff0c\u662f\u5426\u7ed3\u7b97\u540e\u5f00\u59cb\u65b0\u7684\u73a9\u6cd5\uff1f"
+    },
+    {
+        "Key": "GameCollectionTips2",
+        "Text": "\u662f\u5426\u653e\u5f03{0}\u8fdb\u5ea6\uff0c\u5e76\u7acb\u5373\u7ed3\u7b97"
+    },
+    {
+        "Key": "GameCollectionTitle1",
+        "Text": "\u6700\u9ad8\u8d44\u6e90\u70b9"
+    },
+    {
+        "Key": "GameCollectionTitle2",
+        "Text": "\u6700\u9ad8\u5206\u6570"
+    },
+    {
+        "Key": "GameCollectionBreakRecordTitle",
+        "Text": "\u606d\u559c\u4f60\u5728-{0}\u4e2d\u518d\u4e00\u6b21\u7a81\u7834\u81ea\u5df1"
+    },
+    {
+        "Key": "Theatre6SkillMoveError",
+        "Text": "\u6280\u80fd\u7c7b\u578b\u4e0d\u6b63\u786e\uff0c\u65e0\u6cd5\u4ea4\u6362"
+    },
+    {
+        "Key": "Theatre6Lock",
+        "Text": "\u51bb\u7ed3"
+    },
+    {
+        "Key": "Theatre6UnLock",
+        "Text": "\u89e3\u51bb"
+    },
+    {
+        "Key": "Theatre6SkillBagOver",
+        "Text": "\u5f53\u524d\u6280\u80fd\u6863\u6848\u5df2\u6ee1\uff0c%s \u5c06\u8f6c\u6362\u4e3a\u91d1\u5e01%s\uff0c\u53ef\u70b9\u51fb\u5934\u50cf\u524d\u5f80\u6e05\u7406\u6280\u80fd\u6863\u6848\uff0c\u6216\u70b9\u51fb\u3010\u786e\u5b9a\u3011\u81ea\u52a8\u552e\u51fa"
+    },
+    {
+        "Key": "Theatre6PopupSkillLevelUpCountOut",
+        "Text": "\u5347\u7ea7\u6b21\u6570\u5df2\u7528\u5b8c"
+    },
+    {
+        "Key": "Theatre6BattleShopAllLocked",
+        "Text": "\u5546\u54c1\u5747\u51bb\u7ed3\uff0c\u65e0\u6cd5\u5237\u65b0"
+    },
+    {
+        "Key": "TurntableDrawTimes",
+        "Text": "x{0}"
+    },
+    {
+        "Key": "TurntableDrawTimesWithNotEnough",
+        "Text": "<color=#FF6161>x{0}</color>"
+    },
+    {
+        "Key": "PassportTaskWeeklyChallengePoints",
+        "Text": "\u672c\u8f6e\u6311\u6218\u70b9\u6570\uff1a{0}/{1}"
+    },
+    {
+        "Key": "PassportTaskWeeklyRemainTime",
+        "Text": "\u672c\u8f6e\u5269\u4f59\u65f6\u95f4\uff1a{0}"
+    },
+    {
+        "Key": "PassportTaskActivityProgress",
+        "Text": "\u624b\u518c\u4efb\u52a1\u5b8c\u6210\u8fdb\u5ea6\uff1a{0}/{1}"
     }
 ]

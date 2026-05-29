@@ -27,6 +27,7 @@ function XUiGridTheatre6SkillBag:OnStart()
     ---@type XUiGridTheatre6Skill
     self.UiSkillGrid = XUiGridTheatre6Skill.New(self.UiTheatre6GridSkill, self)
     self:SetHighlightEffect(false)
+    self.Highlight.gameObject:SetActiveEx(false)
 end
 
 function XUiGridTheatre6SkillBag:OnGetLuaEvents()
@@ -47,19 +48,21 @@ function XUiGridTheatre6SkillBag:OnNotify(evt, ...)
         if not slotType then
             return
         end
-        self:SetHighlightEffect(slotType == self._SlotType, true)
+        self:SetHighlightEffect(slotType == self._SlotType, true, skillId)
     end
     if evt == XEventId.EVENT_THEATRE6_SKILL_ON_DRAG_END then
         self:SetHighlightEffect(false)
     end
     if evt == XEventId.EVENT_THEATRE6_SKILL_BUBBLE_OPEN then
         local skillId = args[1]
-        local slotType = self._Control:GetEmptyPositionsByCfg(skillId)
-        if slotType == XEnumConst.Theatre6.SlotType.Bag then
-            return
-        end
-        if slotType == self._SlotType then
-            self:SetHighlightEffect(true)
+        local slotTypes = self._Control:GetSkillInstallSlots(skillId)
+        for i, slotType in ipairs(slotTypes) do
+            if slotType == XEnumConst.Theatre6.SlotType.Bag then
+                return
+            end
+            if slotType == self._SlotType then
+                self:SetHighlightEffect(true, false, skillId)
+            end
         end
     end
     if evt == XEventId.EVENT_THEATRE6_SKILL_BUBBLE_CLOSE then
@@ -106,6 +109,8 @@ function XUiGridTheatre6SkillBag:Refresh(pos, slotType, skillId, characterId, re
     if self.RImgBg then
         self.RImgBg:SetRawImage(self._Control:GetClientConfigValue(SkillTypeBgConfigName[self._SlotType]))
     end
+
+    self:RefreshTagHightLight()
 end
 
 function XUiGridTheatre6SkillBag:SetBaseSkill(characterId)
@@ -120,23 +125,25 @@ function XUiGridTheatre6SkillBag:SetBaseSkill(characterId)
     self._IsBaseSkill = true
 end
 
-function XUiGridTheatre6SkillBag:SetHighlightEffect(isShow, isDrag)
-    -- if self._SkillId then
-    --     return
-    -- end
-        
+function XUiGridTheatre6SkillBag:SetHighlightEffect(isShow, isDrag, sourceSkillId)
+    if not self.RawImgSelect then return end
+        self.RawImgSelect.gameObject:SetActiveEx(isShow)
+    if not SkillTypeHighlightConfig[self._SlotType] then return end
+    if not isShow then return end
 
-    if self.Highlight then
-        self.Highlight.gameObject:SetActiveEx(isShow)
-        if not SkillTypeHighlightConfig[self._SlotType] then
-            return
+    local imgType = self._Control.ImgHighlightKey 
+    local imgKey
+    if self._SlotType == XEnumConst.Theatre6.SlotType.Special and XTool.IsNumberValid(sourceSkillId) then
+        local skillCfg = self._Control:GetSkillCfgById(sourceSkillId)
+        if skillCfg and skillCfg.Type == XEnumConst.Theatre6.SkillType.Insert then
+            imgKey = SkillTypeHighlightConfig[XEnumConst.Theatre6.SlotType.Insert]
+        else
+            imgKey = SkillTypeHighlightConfig[XEnumConst.Theatre6.SlotType.Special]
         end
-        if isDrag and isShow then
-            self.Highlight:SetRawImage(self._Control:GetClientConfigValue(SkillTypeHighlightConfig[self._SlotType]))
-        elseif isShow then
-            self.Highlight:SetRawImage(self._Control:GetClientConfigValue(SkillTypeHighlightConfig[self._SlotType], 2))
-        end
+    else
+        imgKey = SkillTypeHighlightConfig[self._SlotType]
     end
+    self.RawImgSelect:SetRawImage(self._Control:GetClientConfigValue(imgKey, imgType))
 end
 
 function XUiGridTheatre6SkillBag:GetSkillId()
@@ -147,12 +154,12 @@ function XUiGridTheatre6SkillBag:GetGridData()
     return self._SlotType, self._Pos
 end
 
-function XUiGridTheatre6SkillBag:SetDragCb(area, cloneParent, startCb, endCb, enterCb, leaveCb)
+function XUiGridTheatre6SkillBag:SetDragCb(area, cloneParent, startCb, endCb, enterCb, leaveCb, scrollRect)
     if self._IsBaseSkill then
         self:ClearDrag()
         return
     end
-    self.UiSkillGrid:SetDragCb(area, cloneParent, startCb, endCb, enterCb, leaveCb)
+    self.UiSkillGrid:SetDragCb(area, cloneParent, startCb, endCb, enterCb, leaveCb, scrollRect)
 end
 
 function XUiGridTheatre6SkillBag:AddDragTargetArea(rectTransform, areaId)
@@ -186,7 +193,7 @@ function XUiGridTheatre6SkillBag:SetButtonSelect(value)
     if not XTool.IsNumberValid(self._SkillId) then
         return
     end
-    
+
     self.UiSkillGrid:ShowSelected(value)
 end
 
@@ -209,28 +216,32 @@ function XUiGridTheatre6SkillBag:CanUpgrade(value)
     self.UiSkillGrid:CanUpgrade(value)
 end
 
----@param addedIdsBySlot table<number, table<number, true>> 按槽位分组的本次新增技能 set
-function XUiGridTheatre6SkillBag:TryShowTagEffect(addedIdsBySlot)
-    if not addedIdsBySlot then return end
-    if not TagEffectSlotTypes[self._SlotType] then return end
+---基于 Control 的"高亮源 tag 集合"刷新本格 tag 高亮:
+---仅在商店/任务选择界面打开期间(源集合非 nil)才计算
+---高亮 = selfBuildTags ∩ ((sourceTagIds ∩ 装备 BuildTags 中装备出现次数最多者,平局按 Pirority) ∪ (sourceTagIds ∩ 装备 IsShowTags))
+---结算态(IsCurModeSettle)统一不高亮
+function XUiGridTheatre6SkillBag:RefreshTagHightLight()
+    -- SkillId 无效时 UiSkillGrid 已 Close 且 TagUis 未建立,无需(也不能)清理
     if not XTool.IsNumberValid(self._SkillId) then return end
-    local addedIds = addedIdsBySlot[self._SlotType]
-    if not addedIds or not next(addedIds) then return end
-    local selfCfg = self._Control:GetSkillCfgById(self._SkillId)
-    local selfTags = selfCfg and selfCfg.BuildTags
-    if not selfTags or #selfTags == 0 then return end
-    if addedIds[self._SkillId] then
-        self.UiSkillGrid:ShowTagEffect(selfTags)
+    if not TagEffectSlotTypes[self._SlotType] or self._Control:IsCurModeSettle() then
+        self.UiSkillGrid:ShowTagHightLight(nil)
         return
     end
-    for addedId in pairs(addedIds) do
-        local addedCfg = self._Control:GetSkillCfgById(addedId)
-        local addedTags = addedCfg and addedCfg.BuildTags
-        if addedTags and self:HasIntersect(selfTags, addedTags) then
-            self.UiSkillGrid:ShowTagEffect(addedTags)
-            return
-        end
+    local sourceTagIds = self._Control:GetTagHighlightSourceTagIds()
+    if not sourceTagIds then
+        self.UiSkillGrid:ShowTagHightLight(nil)
+        return
     end
+    local selfCfg = self._Control:GetSkillCfgById(self._SkillId)
+    local selfTags = selfCfg and selfCfg.BuildTags
+    if not selfTags or #selfTags == 0 then
+        self.UiSkillGrid:ShowTagHightLight(nil)
+        return
+    end
+    local highlightSourceTagIds = self._Control:GetEffectiveTagHighlightSourceTagIds(sourceTagIds)
+    self.UiSkillGrid:ShowTagHightLight(
+        self._Control:CalcSkillHighlightTagsBySource(selfCfg, highlightSourceTagIds)
+    )
 end
 
 ---@param upgradeIds table<number, true> 本次升级技能 set
@@ -243,13 +254,34 @@ function XUiGridTheatre6SkillBag:TryShowUpgradeEffect(upgradeIds)
     end
 end
 
-function XUiGridTheatre6SkillBag:HasIntersect(arr1, arr2)
-    for _, a in ipairs(arr1) do
-        for _, b in ipairs(arr2) do
-            if a == b then return true end
+---技能更新事件触发后调用:本格当前技能 BuildTag 与本次新增的(装备槽内)技能 BuildTags 有交集时,
+---播放该共享 tag 的 TriggerFx。即:谁与刚装备进来的技能共享 tag,谁就闪一下。
+---@param addedIdsBySlot table<number, table<number, true>> 按装备槽位分组的本次新增技能 set
+function XUiGridTheatre6SkillBag:TryTriggerTagEffect(addedIdsBySlot)
+    if not addedIdsBySlot then return end
+    if not TagEffectSlotTypes[self._SlotType] then return end
+    if not XTool.IsNumberValid(self._SkillId) then return end
+    local cfg = self._Control:GetSkillCfgById(self._SkillId)
+    local selfTags = cfg and cfg.BuildTags
+    if not selfTags or #selfTags == 0 then return end
+    local addedTagSet = {}
+    for _, set in pairs(addedIdsBySlot) do
+        for addedSkillId in pairs(set) do
+            local addedCfg = self._Control:GetSkillCfgById(addedSkillId)
+            if addedCfg and addedCfg.BuildTags then
+                for _, t in ipairs(addedCfg.BuildTags) do
+                    addedTagSet[t] = true
+                end
+            end
         end
     end
-    return false
+    if not next(addedTagSet) then return end
+    for _, selfTag in ipairs(selfTags) do
+        if addedTagSet[selfTag] then
+            self.UiSkillGrid:TriggerTagEffect({ selfTag })
+            return
+        end
+    end
 end
 
 function XUiGridTheatre6SkillBag:ClearNewFlag()

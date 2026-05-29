@@ -176,13 +176,15 @@ function XFubenBossSingleConfigModel:GetBossSingleChallengeBuffGroupConfigById(i
 end
 
 ---@return XTableBossSingleChallengeBuffGroup[]
-function XFubenBossSingleConfigModel:GetBossSingleChallengeBuffGroupConfigByBuffGroupId(
+function XFubenBossSingleConfigModel:TryGetBossSingleChallengeBuffGroupConfigByBuffGroupId(
     buffGroupId)
 
     local buffGroupIndex = self._ConfigUtil:GetCfgByTableKeyAndIdKey(
         BossSingleTableKey.BossSingleChallengeBuffGroupIndex,
         buffGroupId,
         true)
+
+    if not buffGroupIndex then return false, nil end
 
     local result = {}
 
@@ -195,8 +197,17 @@ function XFubenBossSingleConfigModel:GetBossSingleChallengeBuffGroupConfigByBuff
         result[i] = buffGroup
     end
 
-    return result
+    return true, result
 end
+
+function XFubenBossSingleConfigModel:GetBossSingleChallengeBuffGroupConfigByBuffGroupId(
+    buffGroupId)
+
+    local succ, r = self:TryGetBossSingleChallengeBuffGroupConfigByBuffGroupId(buffGroupId)
+    assert(succ)
+    return r
+end
+
 
 ---@return XTableBossSingleChallengeGrade[]
 function XFubenBossSingleConfigModel:GetBossSingleChallengeGradeConfigs()
