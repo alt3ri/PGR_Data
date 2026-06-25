@@ -61,6 +61,7 @@ local function ImportXCommonDir()
     require("XCommon/XGlobalVar")
     require("XCommon/XLog")
     require("XCommon/XLuaBehaviour")
+    require("XCommon/XLuaTime")
     require("XCommon/XLuaVector2")
     require("XCommon/XLuaVector3")
     require("XCommon/XMath")
@@ -68,9 +69,10 @@ local function ImportXCommonDir()
 
     -- Network按名字排序位置, 由于依赖Rpc，所以需要放在Rpc前面，否则会有依赖问题
     require("XCommon/XNpcAttribType")
-    require("XCommon/XObjectPool")
     require("XCommon/XPerformance")
+    require("XCommon/XStack")
     require("XCommon/XPool")
+    require("XCommon/XObjectPool")
     require("XCommon/XPrefs")
     require("XCommon/XQueue")
 
@@ -78,7 +80,6 @@ local function ImportXCommonDir()
     require("XCommon/XSaveTool")
     require("XCommon/XScheduleManager")
     require("XCommon/XSignBoardPlayer")
-    require("XCommon/XStack")
     require("XCommon/XString")
     require("XCommon/XTableExtension")
     -- XTable名字排序位置，只给配置引用，放到最前面
@@ -185,3 +186,4 @@ end
 
 XMain.Step9 = function()
 end
+

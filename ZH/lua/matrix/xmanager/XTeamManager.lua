@@ -433,11 +433,6 @@ XTeamManagerCreator = function()
             teamData[i] = 0
         end
 
-        local partnerData = {}
-        for i = 1, MaxPos do
-            partnerData[i] = {}
-        end
-
         local equipData = {}
         for i = 1, MaxPos do
             equipData[i] = {}
@@ -452,11 +447,9 @@ XTeamManagerCreator = function()
             FirstFightPos = 1,
             EnterCgIndex = 0,
             SettleCgIndex = 0,
-            PartnerData = partnerData,
             EquipData = equipData,
         }
         XMessagePack.MarkAsTable(request.TeamData)
-        XMessagePack.MarkAsTable(request.PartnerData)
         XMessagePack.MarkAsTable(request.EquipData)
 
         XNetwork.Call("TeamPrefabSetTeamRequest", {TeamPrefabData = request}, function(response)
@@ -497,11 +490,6 @@ XTeamManagerCreator = function()
     ---@param xTeamPrefab XTeamPrefab
     ---@param cb fun
     function XTeamManager.TeamPrefabSetTeamRequestV4P40(xTeamPrefab, cb)
-        local partnerData = {}
-        for i = 1, MaxPos do
-            partnerData[i] = {}
-        end
-
         local equipData = {}
         for i = 1, MaxPos do
             equipData[i] = {}
@@ -513,14 +501,12 @@ XTeamManagerCreator = function()
             TeamData = xTeamPrefab:GetEntityIds(), -- table<int>
             CaptainPos = xTeamPrefab:GetCaptainPos(),
             FirstFightPos = xTeamPrefab:GetFirstFightPos(),
-            PartnerData = partnerData, -- table<int, PartnerSkillData>
             EquipData = equipData,   -- table<int, TeamEquipData>
             SelectedGeneralSkill = xTeamPrefab:GetCurGeneralSkill(),
             EnterCgIndex = xTeamPrefab.EnterCgIndex,
             SettleCgIndex = xTeamPrefab.SettleCgIndex,
         }
         XMessagePack.MarkAsTable(request.TeamData)
-        XMessagePack.MarkAsTable(request.PartnerData)
         XMessagePack.MarkAsTable(request.EquipData)
 
         ----------------------------------------
@@ -529,26 +515,18 @@ XTeamManagerCreator = function()
         local partnerData = xTeamPrefab:GetPartnerData()
         if partnerData then
             for pos = 1, MaxPos, 1 do
-                local partnerId = partnerData:GetPartnerIdByPos(pos)
-                if XTool.IsNumberValid(partnerId) then
-                    request.PartnerData[pos] = 
-                    {
-                        PartnerId = partnerId,
-                        SkillData = partnerData:GetSkillDataByPos(pos)
-                    }
-                else
-                    local curPosEntityId = xTeamPrefab:GetEntityIdByTeamPos(pos)
-                    if XTool.IsNumberValid(curPosEntityId) then
-                        request.PartnerData[pos] = 
-                        {
-                            PartnerId = 0,
-                        }
+                local curPosEntityId = xTeamPrefab:GetEntityIdByTeamPos(pos)
+                if XTool.IsNumberValid(curPosEntityId) then
+                    request.PartnerData = request.PartnerData or {}
+                    request.PartnerData[pos] = partnerData:GetPartnerRequestDataByPos(pos)
+                    XMessagePack.MarkAsTable(request.PartnerData[pos])
+                    if request.PartnerData[pos].SkillData then
+                        XMessagePack.MarkAsTable(request.PartnerData[pos].SkillData)
                     end
                 end
-                XMessagePack.MarkAsTable(request.PartnerData[pos])
-                if request.PartnerData[pos].SkillData then
-                    XMessagePack.MarkAsTable(request.PartnerData[pos].SkillData)
-                end
+            end
+            if request.PartnerData then
+                XMessagePack.MarkAsTable(request.PartnerData)
             end
         end
 

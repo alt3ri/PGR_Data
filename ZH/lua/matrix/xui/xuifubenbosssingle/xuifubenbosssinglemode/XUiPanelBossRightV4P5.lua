@@ -111,7 +111,7 @@ function XUiPanelBossRightV4P5:_RefreshViewSelectState()
         end
     else
         self._BigBuffGrid.Transform:SetSiblingIndex(sel - 1)
-        self._BigBuffGrid:SetData(self.SelectedFeature, self.SelectedBuffGroup)
+        self._BigBuffGrid:SetData({ Feature = self.SelectedFeature, BuffGroup = self.SelectedBuffGroup })
         self._BigBuffGrid:Open()
 
         self.Parent:ChangeBuffGrid(sel)
@@ -150,7 +150,11 @@ function XUiPanelBossRightV4P5:RefreshWholeView()
     local params = {}
 
     for i = 1, featureCount do
-        params[i] = { challengeData:GetFeatureByIndex(i), featureGroupId, i }
+        params[i] = {
+            Feature = challengeData:GetFeatureByIndex(i),
+            GroupId = featureGroupId,
+            Index = i
+        }
     end
 
     XTool.SetDataForGenericGrid(

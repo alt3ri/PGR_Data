@@ -24,11 +24,12 @@ function XDynamicGridTask:PlayAnimation(cb)
     self.GridTaskTimeline:PlayTimelineAnimation(cb)
 end
 
-function XDynamicGridTask:ResetData(data)
+function XDynamicGridTask:ResetData(data, params)
     if not data then
         self.GameObject:SetActiveEx(false)
         return
     end
+
     self.GameObject:SetActiveEx(true)
     self.Data = data
 
@@ -79,6 +80,7 @@ function XDynamicGridTask:ResetData(data)
     self:UpdateProgress(self.Data)
     local rewards = XRewardManager.GetRewardList(config.RewardId)
     -- reset reward panel
+
     for i = 1, #self.RewardPanelList do
         self.RewardPanelList[i]:Refresh()
     end
@@ -86,6 +88,14 @@ function XDynamicGridTask:ResetData(data)
     if not rewards then
         return
     end
+
+    local gridNameplateScaleFactor = nil
+    if params then
+        if params.GridNameplateScaleFactor then
+            gridNameplateScaleFactor = params.GridNameplateScaleFactor
+        end
+    end
+
 
     for i = 1, #rewards do
         local panel = self.RewardPanelList[i]
@@ -101,6 +111,11 @@ function XDynamicGridTask:ResetData(data)
 
             table.insert(self.RewardPanelList, panel)
         end
+
+        if gridNameplateScaleFactor then
+            panel:SetNameplateScaleFactor(gridNameplateScaleFactor)
+        end
+
         panel:Refresh(reward)
 
         if self.ClickFunc then

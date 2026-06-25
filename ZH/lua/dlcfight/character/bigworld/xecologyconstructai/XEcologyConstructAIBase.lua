@@ -23,7 +23,6 @@ local XFindPath2EcologyStateTransition = require("Character/BigWorld/XEcologyCon
 ---@field _stateMachine XStateMachineController 状态机
 ---@field _proxy XDlcCSharpFuncs
 ---@field FindPathStateEnum number 寻路状态枚举
----@field NextStateList table 下一个状态列表
 local XEcologyConstructAIBase = XClass(Base, "XEcologyConstructAIBase")
 
 ---@param proxy XDlcCSharpFuncs
@@ -39,14 +38,6 @@ function XEcologyConstructAIBase:Update(dt)
     end
     if not self._isInit then
         self:TryInitAIEnterState()
-    end
-    if self._tempStateEnum then
-        self._proxy:SetNpcPosition(self._uuid, self._proxy:GetEcologyConstructStateInitPos(self._uuid, self._tempStateEnum), false)
-        if self.NextStateRotDict and self.NextStateRotDict[self._tempStateEnum] then
-            self._proxy:SetNpcRotation(self._uuid, self.NextStateRotDict[self._tempStateEnum])
-        end
-        self._stateMachine:SwitchState(self._tempStateEnum)
-        self._tempStateEnum = nil
     end
     self._stateMachine:Update(dt)
 end
@@ -114,9 +105,6 @@ function XEcologyConstructAIBase:CommonInit()
     for _, eventId in pairs(EEcologyEvent) do
         self._proxy:RegisterLuaEvent(eventId)
     end
-    if not self._isInit then
-        self:TryInitAIEnterState()
-    end
 end
 --endregion
 
@@ -146,16 +134,7 @@ function XEcologyConstructAIBase:TryInitAIEnterState()
     -- 默认存在状态, 在组件postInit周期已经默认初始状态为stateId = 1
     -- 因此直接读取即可
     local haveSave, curStateEnum = self._proxy:TryGetBBInt(XVarDomain.Npc, self._uuid, EEcologySaveKey.CurStateEnum)
-    if self.NextStateList then
-        local stateCount = #self.NextStateList
-        if haveSave then
-            local targetIndex = self._proxy:Random(1, stateCount)
-            curStateEnum = self.NextStateList[targetIndex]
-        else
-            curStateEnum = 1
-        end
-    end
-    self._tempStateEnum = curStateEnum
+    self._stateMachine:SwitchState(curStateEnum)
     self._isInit = true
 end
 

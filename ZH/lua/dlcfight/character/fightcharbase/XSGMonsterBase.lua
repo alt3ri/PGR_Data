@@ -3323,7 +3323,6 @@ function XSGMonsterBase:ForceSkillToNpc(skill, npc)
     if not skill or skill == 0 then
         XLog.Warning("ForceSkillToNpc的技能非法")
     end
-    self._proxy:NpcStopMove(self._uuid) --停止移动
     self._proxy:AbortAction(self._uuid, true)--打断Npc
     isSuccess = self._proxy:CastActionToTarget(self._uuid, skill, npc)--放技能
     self:HandleAfterCastSkill(skill, isSuccess,npc)--放完技能后处理CD

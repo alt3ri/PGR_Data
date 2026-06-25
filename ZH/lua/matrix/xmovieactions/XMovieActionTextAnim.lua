@@ -10,10 +10,12 @@ function XMovieActionTextAnim:OnInit(actionData)
     self.Pos = params[3] and XMVCA.XMovie:SplitParam(params[3], "|",true) or nil
     self.Rotation = params[4] and XMVCA.XMovie:ParamToNumber(params[4]) or nil
     self.Scale = params[5] and XMVCA.XMovie:ParamToNumber(params[5]) or nil
+    self.CurveType = XMVCA.XMovie:ParamToCurveType(params[6])
 end
 
 function XMovieActionTextAnim:OnRunning()
-    self.UiRoot:TextPlayAnim(self.TextId, self.Time, self.Pos, self.Rotation, self.Scale)
+    local ease = XMVCA.XMovie:GetDOTweenEase(self.CurveType)
+    self.UiRoot:TextPlayAnim(self.TextId, self.Time, self.Pos, self.Rotation, self.Scale, ease)
 end
 
 function XMovieActionTextAnim:IsPassedActionRun(index)

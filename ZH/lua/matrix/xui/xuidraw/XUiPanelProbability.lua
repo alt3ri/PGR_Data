@@ -1,86 +1,86 @@
----@class XUiPanelProbability
-local XUiPanelProbability = XClass(nil, "XUiPanelProbability")
-
-function XUiPanelProbability:Ctor(ui, parent)
-    self.GameObject = ui.gameObject
-    self.Transform = ui.transform
-    self:InitAutoScript()
-    self.Parent = parent
-end
-
----@param data XTableDrawProbShow
-function XUiPanelProbability:SetData(data, i)
-    if not data or self.Data == data then
-        return
-    end
-    self.Data = data
-    self:SetIsUp(data.IsUp[i])
-    self.TxtName.text = data.Name[i]
-    self.TxtType.text = data.Type[i]
-    if data.IsUp[i] then
-        self.TxtUpProb.text = data.ProbShow[i]
-    else
-        self.TxtNorProb.text = data.ProbShow[i]
-    end
-    self:SetActive(true)
-end
-
-function XUiPanelProbability:SetIsUp(bool)
-    self.TxtUp.gameObject:SetActive(bool)
-    self.TxtUpProb.gameObject:SetActive(bool)
-    self.TxtNorProb.gameObject:SetActive(not bool)
-end
-
-function XUiPanelProbability:SetActive(bool)
-    self.GameObject:SetActive(bool)
-end
-
--- auto
--- Automatic generation of code, forbid to edit
-function XUiPanelProbability:InitAutoScript()
-    self:AutoInitUi()
-    self.SpecialSoundMap = {}
-    self:AutoAddListener()
-end
-
-function XUiPanelProbability:AutoInitUi()
-    self.TxtType = self.Transform:Find("TxtType"):GetComponent("Text")
-    self.TxtName = self.Transform:Find("TxtName"):GetComponent("Text")
-    self.TxtUpProb = self.Transform:Find("TxtUpProb"):GetComponent("Text")
-    self.TxtNorProb = self.Transform:Find("TxtNorProb"):GetComponent("Text")
-    self.TxtUp = self.Transform:Find("TxtUp"):GetComponent("Text")
-end
-
-function XUiPanelProbability:GetAutoKey(uiNode, eventName)
-    if not uiNode then return end
-    return eventName .. uiNode:GetHashCode()
-end
-
-function XUiPanelProbability:RegisterListener(uiNode, eventName, func)
-    local key = self:GetAutoKey(uiNode, eventName)
-    if not key then return end
-    local listener = self.AutoCreateListeners[key]
-    if listener ~= nil then
-        uiNode[eventName]:RemoveListener(listener)
-    end
-
-    if func ~= nil then
-        if type(func) ~= "function" then
-            XLog.Error("XUiPanelProbability:RegisterListener函数错误, 参数func需要是function类型, func的类型是" .. type(func))
-        end
-
-        listener = function(...)
-            XLuaAudioManager.PlayBtnMusic(self.SpecialSoundMap[key], eventName)
-            func(self, ...)
-        end
-
-        uiNode[eventName]:AddListener(listener)
-        self.AutoCreateListeners[key] = listener
-    end
-end
-
-function XUiPanelProbability:AutoAddListener()
-    self.AutoCreateListeners = {}
-end
--- auto
+---@class XUiPanelProbability
+local XUiPanelProbability = XClass(nil, "XUiPanelProbability")
+
+function XUiPanelProbability:Ctor(ui, parent)
+    self.GameObject = ui.gameObject
+    self.Transform = ui.transform
+    self:InitAutoScript()
+    self.Parent = parent
+end
+
+---@param data XTableDrawProbShow
+function XUiPanelProbability:SetData(data, i)
+    if not data or self.Data == data then
+        return
+    end
+    self.Data = data
+    self:SetIsUp(data.IsUp[i])
+    self.TxtName.text = data.Name[i]
+    self.TxtType.text = data.Type[i]
+    if data.IsUp[i] then
+        self.TxtUpProb.text = data.ProbShow[i]
+    else
+        self.TxtNorProb.text = data.ProbShow[i]
+    end
+    self:SetActive(true)
+end
+
+function XUiPanelProbability:SetIsUp(bool)
+    self.TxtUp.gameObject:SetActive(bool)
+    self.TxtUpProb.gameObject:SetActive(bool)
+    self.TxtNorProb.gameObject:SetActive(not bool)
+end
+
+function XUiPanelProbability:SetActive(bool)
+    self.GameObject:SetActive(bool)
+end
+
+-- auto
+-- Automatic generation of code, forbid to edit
+function XUiPanelProbability:InitAutoScript()
+    self:AutoInitUi()
+    self.SpecialSoundMap = {}
+    self:AutoAddListener()
+end
+
+function XUiPanelProbability:AutoInitUi()
+    self.TxtType = self.Transform:Find("TxtType"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtName = self.Transform:Find("TxtName"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtUpProb = self.Transform:Find("TxtUpProb"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtNorProb = self.Transform:Find("TxtNorProb"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self.TxtUp = self.Transform:Find("TxtUp"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+end
+
+function XUiPanelProbability:GetAutoKey(uiNode, eventName)
+    if not uiNode then return end
+    return eventName .. uiNode:GetHashCode()
+end
+
+function XUiPanelProbability:RegisterListener(uiNode, eventName, func)
+    local key = self:GetAutoKey(uiNode, eventName)
+    if not key then return end
+    local listener = self.AutoCreateListeners[key]
+    if listener ~= nil then
+        uiNode[eventName]:RemoveListener(listener)
+    end
+
+    if func ~= nil then
+        if type(func) ~= "function" then
+            XLog.Error("XUiPanelProbability:RegisterListener函数错误, 参数func需要是function类型, func的类型是" .. type(func))
+        end
+
+        listener = function(...)
+            XLuaAudioManager.PlayBtnMusic(self.SpecialSoundMap[key], eventName)
+            func(self, ...)
+        end
+
+        uiNode[eventName]:AddListener(listener)
+        self.AutoCreateListeners[key] = listener
+    end
+end
+
+function XUiPanelProbability:AutoAddListener()
+    self.AutoCreateListeners = {}
+end
+-- auto
 return XUiPanelProbability

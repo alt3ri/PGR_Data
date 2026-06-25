@@ -34,6 +34,20 @@ local TableKey = {
 }
 local XStageInfo = require("XModule/XFuben/XStageInfo")
 
+-- 所有 GetStageInfo 返回的 info 对象共享同一个 metatable
+-- __index/__newindex 均只使用函数参数，不捕获外部变量，可安全共享
+local STAGE_INFO_META = {
+    __index = function(t, key)
+        ---@type XStageInfo
+        return t.StageInfo:GetValueByKey(key)
+    end,
+    __newindex = function(t, key, value)
+        ---@type XStageInfo
+        t.StageInfo[key] = value
+        XLog.Warning("[XFubenModel] 请不要再向StageInfo写入:", key)
+    end
+}
+
 ---@class XFubenModel : XModel
 local XFubenModel = XClass(XModel, "XFubenModel")
 function XFubenModel:OnInit()
@@ -210,13 +224,17 @@ function XFubenModel:SetPlayerStageData(key, value)
     self._PlayerStageData[key] = value
 end
 
+function XFubenModel:InitPlayerStageData(dataMap)
+    self._PlayerStageData = dataMap or {}
+end
+
 function XFubenModel:SetStagePassed(stageId)
     local stageData = self._PlayerStageData[stageId]
     if not stageData then
         stageData = { StageId = stageId, Passed = true }
         self._PlayerStageData[stageId] = stageData
     else
-        stageData.IsPass = true
+        stageData.Passed = true
     end
 end
 
@@ -381,19 +399,7 @@ function XFubenModel:GetStageInfo(stageId)
 
     local info = {}
     info.StageInfo = XStageInfo.New(stageId)
-    setmetatable(info, {
-        __index = function(table, key)
-            ---@type XStageInfo
-            local stageInfo = table.StageInfo
-            return stageInfo:GetValueByKey(key)
-        end,
-        __newindex = function(table, key, value)
-            ---@type XStageInfo
-            local stageInfo = table.StageInfo
-            stageInfo[key] = value
-            XLog.Warning("[XFubenModel] 请不要再向StageInfo写入:", key)
-        end
-    })
+    setmetatable(info, STAGE_INFO_META)
     self._StageInfo[stageId] = info
     return info
 end

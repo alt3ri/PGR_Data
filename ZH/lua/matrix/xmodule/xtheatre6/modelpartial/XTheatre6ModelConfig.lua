@@ -244,11 +244,24 @@ function XTheatre6Model:GetSanConfigBySanValue(sanGroupId, value)
     local sanIds = self:GetSanIdsByGroupId(sanGroupId)
     for _, sanId in ipairs(sanIds) do
         local config = self:GetSanConfig(sanId)
-        if config.MinSan <= value and config.MaxSan >= value then
+        local maxValue = self:AdjustSanConfigMaxValue(sanGroupId, config)
+        if config.MinSan <= value and maxValue >= value then
             return config
         end
     end
     return nil
+end
+
+---@param config XTableTheatre6StageSan
+function XTheatre6Model:AdjustSanConfigMaxValue(sanGroupId, config)
+    local modelData = self:GetCurPlayModeData()
+    if modelData then
+        local sanIds = self:GetSanIdsByGroupId(sanGroupId)
+        if config.Id == sanIds[#sanIds] then
+            return self:GetMaxSanValue() --通过属性提高了San最大值
+        end
+    end
+    return config.MaxSan
 end
 
 ---@return XTableTheatre6StageTask
@@ -296,8 +309,8 @@ function XTheatre6Model:GetSkillConfigs()
     return self._ConfigUtil:GetByTableKey(TableKey.Theatre6Skill)
 end
 ---@return XTableTheatre6Skill 获取技能配置
-function XTheatre6Model:GetSkillCfgById(skillId)
-    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.Theatre6Skill, skillId)
+function XTheatre6Model:GetSkillCfgById(skillId, noTips)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.Theatre6Skill, skillId, noTips)
 end
 
 ---@return XTableTheatre6Skill 获取技能配置
@@ -445,5 +458,14 @@ end
 function XTheatre6Model:GetConditionConfig(id)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.Theatre6Condition, id)
 end
+
+--region PVP
+
+---@return XTableTheatre6BuildTag[]
+function XTheatre6Model:GetBuildTagConfigs()
+    return self._ConfigUtil:GetByTableKey(TableKey.Theatre6BuildTag)
+end
+
+--endregion
 
 return XTheatre6Model

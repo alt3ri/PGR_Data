@@ -85,9 +85,6 @@ function XUiPanelFashionSuitNormal:SetSuitId(id)
         end
     end
 
-    if uiConfig.SuitBackground then
-        self.RImgBg:SetRawImage(uiConfig.SuitBackground)
-    end
 end
 
 function XUiPanelFashionSuitNormal:ShowDynamicRootGO()

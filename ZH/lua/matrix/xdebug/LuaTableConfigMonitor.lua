@@ -62,39 +62,44 @@ end
 
 ---@type HaruPerformance.Runtime.Agent.HaruPerformanceMonitor
 local CsHaruPerformanceMonitor = CS.HaruPerformance.Runtime.Agent.HaruPerformanceMonitor
+local CsBinaryConfigSourceLuaType = CsHaruPerformanceMonitor.BinaryConfigSourceLuaType
 
 function LuaTableConfigMonitor.ClearAll()
     Visited = {}
     Path2TabScope = {}
 end
 
-function LuaTableConfigMonitor.Init(tablePath, binary)
+function LuaTableConfigMonitor.OnOpenBinaryTable(tablePath)
+    CsHaruPerformanceMonitor.OnOpenBinaryTable(CsBinaryConfigSourceLuaType, tablePath)
+end
+
+function LuaTableConfigMonitor.OnCloseBinaryTable(tablePath)
+    CsHaruPerformanceMonitor.OnCloseBinaryTable(CsBinaryConfigSourceLuaType, tablePath)
+end
+
+function LuaTableConfigMonitor.OnLoadBinary(tablePath, binary)
     local binarySize = 0
     if binary then
         binarySize = GetTotalSize(binary)
     end
 
-    LuaTableConfigMonitor.InitWithSize(tablePath, binarySize)
+    LuaTableConfigMonitor.OnLoadBinaryWithSize(CsBinaryConfigSourceLuaType, tablePath, binarySize)
 end
 
-function LuaTableConfigMonitor.InitWithSize(tablePath, binarySize)
-    local info = Path2TabScope[tablePath]
-    local module, tabScope
-    if info then
-        module = info.ModuleId
-        tabScope = info.TabScope
+function LuaTableConfigMonitor.OnLoadBinaryWithSize(tablePath, binarySize)
+    if tablePath == "21622" then
+        local i = 1
     end
+    CsHaruPerformanceMonitor.OnLoadBinary(CsBinaryConfigSourceLuaType, tablePath, binarySize)
 
-    CsHaruPerformanceMonitor.OnLoadBinary(tablePath, binarySize)
-    CsHaruPerformanceMonitor.SetModule(tablePath, module, tabScope)
+    local info = Path2TabScope[tablePath]
+    if info then
+        CsHaruPerformanceMonitor.SetModule(CsBinaryConfigSourceLuaType, tablePath, info.ModuleId, info.TabScope)
+    end
 end
 
-function LuaTableConfigMonitor.Release(tablePath)
-    CsHaruPerformanceMonitor.OnUnloadBinary(tablePath)
-end
-
-function LuaTableConfigMonitor.ReleaseBytes(tablePath)
-    CsHaruPerformanceMonitor.OnUnloadBinaryBytes(tablePath)
+function LuaTableConfigMonitor.OnUnloadBinary(tablePath)
+    CsHaruPerformanceMonitor.OnUnloadBinary(CsBinaryConfigSourceLuaType, tablePath)
 end
 
 function LuaTableConfigMonitor.RegisterFixedStructuralSize(tablePath, structural, obj, isSelf)
@@ -103,7 +108,7 @@ function LuaTableConfigMonitor.RegisterFixedStructuralSize(tablePath, structural
     end
     local size = 0
     size = isSelf and GetSelfSize(obj) or GetTotalSize(obj)
-    CsHaruPerformanceMonitor.RegisterFixedStructuralSize(tablePath, structural, size)
+    CsHaruPerformanceMonitor.RegisterFixedStructuralSize(CsBinaryConfigSourceLuaType, tablePath, structural, size)
 end
 
 function LuaTableConfigMonitor.UpdateVolatileStructuralSize(tablePath, structural, obj, isSelf)
@@ -112,7 +117,7 @@ function LuaTableConfigMonitor.UpdateVolatileStructuralSize(tablePath, structura
     end
     local size = 0
     size = isSelf and GetSelfSize(obj) or GetTotalSize(obj)
-    CsHaruPerformanceMonitor.UpdateVolatileStructuralSize(tablePath, structural, size)
+    CsHaruPerformanceMonitor.UpdateVolatileStructuralSize(CsBinaryConfigSourceLuaType, tablePath, structural, size)
 end
 
 function LuaTableConfigMonitor.UpdateStringSize(tablePath, obj, isSelf)
@@ -121,11 +126,11 @@ function LuaTableConfigMonitor.UpdateStringSize(tablePath, obj, isSelf)
     end
     local size = 0
     size = isSelf and GetSelfSize(obj) or GetTotalSize(obj)
-    CsHaruPerformanceMonitor.UpdateStringSize(tablePath, size)
+    CsHaruPerformanceMonitor.UpdateStringSize(CsBinaryConfigSourceLuaType, tablePath, size)
 end
 
 function LuaTableConfigMonitor.UpdateBinaryRows(tablePath, row)
-    CsHaruPerformanceMonitor.UpdateBinaryRows(tablePath, row)
+    CsHaruPerformanceMonitor.UpdateBinaryRows(CsBinaryConfigSourceLuaType, tablePath, row)
 end
 
 function LuaTableConfigMonitor.UpdateBinaryFields(tablePath, obj)
@@ -134,11 +139,11 @@ function LuaTableConfigMonitor.UpdateBinaryFields(tablePath, obj)
     end
     local size = 0
     size = GetTotalSize(obj)
-    CsHaruPerformanceMonitor.UpdateBinaryFields(tablePath, size)
+    CsHaruPerformanceMonitor.UpdateBinaryFields(CsBinaryConfigSourceLuaType, tablePath, size)
 end
 
 function LuaTableConfigMonitor.ReleaseBinaryFields(tablePath)
-    CsHaruPerformanceMonitor.OnReleaseBinaryFields(tablePath)
+    CsHaruPerformanceMonitor.OnReleaseBinaryFields(CsBinaryConfigSourceLuaType, tablePath)
 end
 
 function LuaTableConfigMonitor.SetModuleByTabConfig(tablePath, module, tabScope)
@@ -153,7 +158,7 @@ function LuaTableConfigMonitor.SetModuleByTabConfig(tablePath, module, tabScope)
     end
     info.ModuleId = module
     info.TabScope = tabScopeStr
-    CsHaruPerformanceMonitor.SetModule(tablePath, info.ModuleId, info.TabScope)
+    CsHaruPerformanceMonitor.SetModule(CsBinaryConfigSourceLuaType, tablePath, info.ModuleId, info.TabScope)
 end
 
 function LuaTableConfigMonitor.SetModuleByCacheType(tablePath, module, cacheType)
@@ -168,7 +173,7 @@ function LuaTableConfigMonitor.SetModuleByCacheType(tablePath, module, cacheType
     end
     info.ModuleId = module
     info.TabScope = tabScopeStr
-    CsHaruPerformanceMonitor.SetModule(tablePath, info.ModuleId, info.TabScope)
+    CsHaruPerformanceMonitor.SetModule(CsBinaryConfigSourceLuaType, tablePath, info.ModuleId, info.TabScope)
 end
 
 return LuaTableConfigMonitor

@@ -1,8 +1,6 @@
 XTransfiniteConfigs = XTransfiniteConfigs or {}
 local XTransfiniteConfigs = XTransfiniteConfigs
 
-local CrossVersionEnabled = CS.XGame.ClientConfig:GetInt("CrossVersionEnable") == 1
-
 XTransfiniteConfigs.StageType = {
     Normal = 1, --普通关
     Reward = 2, --奖励关
@@ -492,27 +490,36 @@ end
 
 function XTransfiniteConfigs.GetScoreArray(regionId)
     local rewardGroupId = XTransfiniteConfigs.GetRegionScoreRewardGroupId(regionId)
-    local config = GetConfigScoreRewardGroup():GetConfig(rewardGroupId)
-    return config.Score, config.RewardId
+
+    for _, conf in pairs(GetConfigScoreRewardGroup():GetConfigs()) do
+        if conf.RegionId == regionId
+            and conf.ScoreRewardGroupId == rewardGroupId
+        then
+            return conf.Score, conf.RewardId
+        end
+    end
+
+    XLog.Error("[XTransfiniteConfigs.GetScoreArray] Score array not found: regionId = %d, rewardGroupId = %d", regionId, rewardGroupId)
 end
 
-function XTransfiniteConfigs.GetScoreReward(regionId, score)
-    local rewardGroupId = XTransfiniteConfigs.GetRegionScoreRewardGroupId(regionId)
-    local config = GetConfigScoreRewardGroup():GetConfig(rewardGroupId)
-    if not config then
-        return 0
-    end
-    local scoreArray = config.Score
-    local index = 1
-    for i = 1, #scoreArray do
-        if score < scoreArray[i] then
-            break
-        end
-        index = index + 1
-    end
-    local rewardIdArray = config.RewardId
-    return rewardIdArray[index] or 0
-end
+-- 未发现引用，该函数已废弃，2026/6/11 许兴逸
+-- function XTransfiniteConfigs.GetScoreReward(regionId, score)
+--     local rewardGroupId = XTransfiniteConfigs.GetRegionScoreRewardGroupId(regionId)
+--     local config = GetConfigScoreRewardGroup():GetConfig(rewardGroupId)
+--     if not config then
+--         return 0
+--     end
+--     local scoreArray = config.Score
+--     local index = 1
+--     for i = 1, #scoreArray do
+--         if score < scoreArray[i] then
+--             break
+--         end
+--         index = index + 1
+--     end
+--     local rewardIdArray = config.RewardId
+--     return rewardIdArray[index] or 0
+-- end
 
 --endregion
 
@@ -531,61 +538,4 @@ function XTransfiniteConfigs.GetAllStartStageProgress()
     return GetConfigStartStageProgress():GetConfigs()
 end
 
---endregion
-
---region SpecialTreatment 历战映射
-if CrossVersionEnabled then
-    --region SpecialTask
-    local _ConfigSpecialTask
-    local function GetSpecialConfigTask()
-        if not _ConfigSpecialTask then
-            _ConfigSpecialTask = XConfig.New("Share/Fuben/Transfinite/TransfiniteTaskGroupSpecialTreatment.tab", XTable.XTableTransfiniteTaskGroupSpecialTreatment, "Id")
-        end
-        return _ConfigSpecialTask
-    end
-
-    local function GetSpecialTask(id)
-        local config = GetSpecialConfigTask()
-        return config:TryGetConfig(id)
-    end
-
-    function XTransfiniteConfigs.GetSpecialTaskTimeId(id)
-        local config = GetSpecialTask(id)
-        return config and config.TimeId or nil
-    end
-
-    function XTransfiniteConfigs.GetSpecialTaskTaskIds(id)
-        local config = GetSpecialTask(id)
-        return config and config.TaskIds or nil
-    end
-    --endregion SpecialTask
-
-    --region SepcialTreatmentConfig
-    local _ConfigSepcialTreatment
-    local function GetConfigSepcialTreatment()
-        if not _ConfigSepcialTreatment then
-            _ConfigSepcialTreatment = XConfig.New("Share/Fuben/Transfinite/TransfiniteScoreRewardGroupSpecialTreatment.tab", XTable.XTableTransfiniteScoreRewardGroupSpecialTreatment, "Id")
-        end
-        return _ConfigSepcialTreatment
-    end
-
-    local function GetSepcialTreatment(id)
-        local config = GetConfigSepcialTreatment()
-        return config:TryGetConfig(id)
-    end
-
-    function XTransfiniteConfigs.GetSepcialTreatmentTimeId(id)
-        local config = GetSepcialTreatment(id)
-        return config and config.TimeId or nil
-    end
-
-    function XTransfiniteConfigs.GetSpecialScoreArray(regionId)
-        local config = GetSepcialTreatment(regionId)
-        if not config then
-            return nil, nil
-        end
-        return config.Score, config.RewardId
-    end
-    --endregion SepcialTreatmentConfig
-end
 --endregion

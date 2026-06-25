@@ -341,6 +341,7 @@ function XBigWorldQuestControl:RequestReceiveInviteReward(questId, func)
             return
         end
         self._Model:ReceiveInviteReward(questId, count)
+        XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_QUEST_RED_POINT_REFRESH)
         if func then
             func()
         end

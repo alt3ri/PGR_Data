@@ -142,9 +142,15 @@ function XUiGridTheatre6Skill:UpdateBossSkill(skillId)
     self:UpdateStarList(skillConfig.Level) -- 星数量
 end
 
--- 状态2：可升星
+---状态2：可升星
+---@param value boolean
 function XUiGridTheatre6Skill:CanUpgrade(value)
+    self._IsCanUpgrade = value
     self.ImgUpArrow.gameObject:SetActiveEx(value)
+end
+
+function XUiGridTheatre6Skill:IsCanUpgrade()
+    return self._IsCanUpgrade
 end
 
 function XUiGridTheatre6Skill:SetClickCb(cb)
@@ -277,7 +283,7 @@ function XUiGridTheatre6Skill:OnBtnGridSkillClick()
 
     -- 打开技能详情
     if self._SkillId then
-        self._Control:OpenSkillTip(self._SkillId, self.Transform)
+        self._Control:OpenSkillTip(self._SkillId, self.Transform, { IsCanUpgrade = self._IsCanUpgrade, ReadOnly = true })
     end
 end
 
@@ -430,7 +436,7 @@ function XUiGridTheatre6Skill:OnDestroy()
     self:ClearLevelUpHideTimer()
     self.GameObject:SetActiveEx(false)
     -- XUiHelper.Destroy(self.PreUpStarUi.gameObject)
-    
+
     self.PreUpStarUi = nil
 end
 

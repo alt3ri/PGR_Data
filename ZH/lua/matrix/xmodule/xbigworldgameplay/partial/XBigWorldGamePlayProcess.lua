@@ -83,9 +83,6 @@ function XBigWorldGamePlayAgency:OnModuleLoadComplete(response)
     -- 加载大世界引导数据，第一次进入DIY时还未进入战斗，所以提前加载
     self:_LoadGuide()
     XMVCA.XBigWorldService:InitQuestItemMap(self._EnterWorldResponseData.DlcQuestBag)
-
-    self._resCache = CS.XResourceManager.Load("Assets/Product/Ui/ComponentPrefab/BigWorld/Common/UiCommon/UiBigWorldPanelInteract.prefab")
-
     --初始化战斗
     CS.StatusSyncFight.XFight.Init()
     --触发当前大世界开场引导
@@ -106,9 +103,6 @@ function XBigWorldGamePlayAgency:ExitWorld()
         return
     end
     self:_DisposeX3C()
-
-    CS.XResourceManager.Unload(self._resCache)
-    self._resCache = nil
 
     XMVCA.XBigWorldUI:ClearBigWorldUI()
     --退出战斗

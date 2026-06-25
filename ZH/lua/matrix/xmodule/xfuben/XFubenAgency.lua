@@ -312,11 +312,7 @@ end
 --服务器下发的副本数据处理
 function XFubenAgency:InitFubenData(fubenData, fubenEventData)
     if fubenData then
-        if fubenData.StageData then
-            for key, value in pairs(fubenData.StageData) do
-                self._Model:SetPlayerStageData(key, value)
-            end
-        end
+        self._Model:InitPlayerStageData(fubenData.StageData)
 
         if fubenData.UnlockHideStages then
             for _, v in pairs(fubenData.UnlockHideStages) do
@@ -1062,7 +1058,7 @@ function XFubenAgency:DoEnterFight(stage, teamId, isAssist, challengeCount, chal
     end
 
     preFight.StageId = stage.StageId
-    
+
     if self:_IsBanGeneralSkill(stage.StageId) then
         preFight.GeneralSkill = nil
     end
@@ -1352,7 +1348,7 @@ function XFubenAgency:EnterRealFight(preFightData, fightData, movieId, endCb)
             end
 
             CsXBehaviorManager.Instance:Clear()
-            XTableManager.ReleaseAll()
+            XTableManager.ReleaseAllCache()
             CS.BinaryManager.ReleaseAllCache()
             collectgarbage("collect")
 

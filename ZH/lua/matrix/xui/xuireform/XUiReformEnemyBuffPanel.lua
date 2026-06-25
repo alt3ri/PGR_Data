@@ -167,7 +167,7 @@ function XUiReformEnemyBuffGrid:BtnHeadClicked()
         XUiManager.TipText("ArchiveMonsterLock")
         return
     end
-    XMVCA.XArchive:GetMonsterEvaluateFromSever(monsterEntity:GetNpcId(), function()
+    XMVCA.XArchive.MonsterArchiveAgency:GetMonsterEvaluateFromSever(monsterEntity:GetNpcId(), function()
         XLuaUiManager.Open("UiArchiveMonsterDetail", { monsterEntity }, 1, XEnumConst.Archive.MonsterDetailUiType.Show)
     end)
 end

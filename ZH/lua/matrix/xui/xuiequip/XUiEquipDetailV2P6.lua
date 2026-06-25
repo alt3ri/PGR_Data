@@ -1,5 +1,13 @@
 local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
+
+local XAutoRotationType = typeof(CS.XAutoRotation)
+local XDragAutoRotateType = typeof(CS.XDragAutoRotate)
+
+---@class XUiEquipDetailV2P6 : XLuaUi
+---@field _Control XEquipControl
+---@field EffectUiOverrunV4P6 UnityEngine.GameObject
 local XUiEquipDetailV2P6 = XLuaUiManager.Register(XLuaUi, "UiEquipDetailV2P6")
+
 function XUiEquipDetailV2P6:OnAwake()
     -- UI初始化
     self.PanelTab.gameObject:SetActiveEx(false)
@@ -11,6 +19,8 @@ function XUiEquipDetailV2P6:OnAwake()
     self.PanelWeaponPlane = sceneRoot:FindTransform("Plane")
     self.PanelWeaponPlane.gameObject:SetActiveEx(false)
     self.ImgEffectOverrun = root:FindTransform("ImgEffectOverrun")
+    self.EffectUiOverrunV4P6 = root:FindTransform("EffectUiOverrunV4P6")
+    self:InitVirtualCamera(root)
 
     self:SetButtonCallBack()
     self:InitPanelAsset()
@@ -45,6 +55,8 @@ end
 
 function XUiEquipDetailV2P6:OnDestroy()
     self.PanelWeaponPlane.gameObject:SetActiveEx(true)
+    self:ResetWeaponRotateState()
+    self.WeaponDragRotate = nil  -- DragRotate 绑在 PanelDrag 上，仅销毁时清
     self:ReleaseModel()
     self:ReleaseLihuiTimer()
 
@@ -81,11 +93,24 @@ end
 function XUiEquipDetailV2P6:OnBtnBackClick()
     if XLuaUiManager.IsUiShow("UiEquipResonanceSelectV2P6") then
         self.PanelTabGroup:SelectIndex(XEnumConst.EQUIP.UI_EQUIP_DETAIL_BTN_INDEX.RESONANCE)
-    elseif XLuaUiManager.IsUiShow("UiEquipResonanceAwakeV2P6") then
+        return
+    end 
+    if XLuaUiManager.IsUiShow("UiEquipResonanceAwakeV2P6") then
         self.PanelTabGroup:SelectIndex(XEnumConst.EQUIP.UI_EQUIP_DETAIL_BTN_INDEX.OVERCLOCKING)
-    else
-        self:Close()
+        return
     end
+
+    -- 超频界面，如果详情面板打开着，先关闭详情面板
+    if self.CurChildName == "UiEquipOverrunV4P6" then
+        ---@type XUiEquipOverrunV4P6
+        local child = self:FindChildUiObj("UiEquipOverrunV4P6")
+        if child and child:GetIsShowPanelDetail() then
+            child:ClosePanelDetail()
+            return
+        end
+    end
+    
+    self:Close()
 end
 
 -- 关闭界面且让上一个界面选中当前操作的装备
@@ -123,17 +148,38 @@ function XUiEquipDetailV2P6:OnBtnHelpClick()
 end
 
 function XUiEquipDetailV2P6:InitPanelAsset()
+    self.DefaultAssetItemIds = {
+        XDataCenter.ItemManager.ItemId.FreeGem,
+        XDataCenter.ItemManager.ItemId.ActionPoint,
+        XDataCenter.ItemManager.ItemId.Coin,
+    }
+    self.OverrunAssetItemIds = {
+        XDataCenter.ItemManager.ItemId.EquipOverrunCoin1,
+        XDataCenter.ItemManager.ItemId.EquipOverrunCoin2,
+    }
     self.AssetPanel = XUiPanelAsset.New(
         self,
         self.PanelAsset,
-        XDataCenter.ItemManager.ItemId.FreeGem,
-        XDataCenter.ItemManager.ItemId.ActionPoint,
-        XDataCenter.ItemManager.ItemId.Coin
+        table.unpack(self.DefaultAssetItemIds)
     )
+end
+
+-- 根据当前选中的页签刷新资源栏展示的物品
+function XUiEquipDetailV2P6:RefreshAssetPanelByTab(tabIndex)
+    if not self.AssetPanel then
+        return
+    end
+    if tabIndex == XEnumConst.EQUIP.UI_EQUIP_DETAIL_BTN_INDEX.OVERRUN then
+        self.AssetPanel:RefreshBindItem(table.unpack(self.OverrunAssetItemIds))
+    else
+        self.AssetPanel:RefreshBindItem(table.unpack(self.DefaultAssetItemIds))
+    end
 end
 
 -- 初始化武器模型/意识立绘
 function XUiEquipDetailV2P6:InitModel()
+    self:ResetWeaponRotateState()
+
     self.PanelWeapon.gameObject:SetActiveEx(false)
     self.FxUiLihuiChuxian01.gameObject:SetActiveEx(false)
     if self.IsWeapon then
@@ -148,7 +194,18 @@ function XUiEquipDetailV2P6:InitModel()
                 self.PanelWeapon,
                 modelConfig.TransformConfig,
                 modelTransformName,
-                nil,
+                function(model)
+                    self.WeaponModel = model
+                    if not XTool.UObjIsNil(model) then
+                        self.WeaponAutoRotate = model:GetComponent(XAutoRotationType)
+                        -- 记录初始位置和旋转，供 DoTweenRotateWeaponToOrigin 还原
+                        self.WeaponOriginPos = model.transform.localPosition
+                        self.WeaponOriginEuler = model.transform.localEulerAngles
+                    end
+                    if not self.WeaponDragRotate and not XTool.UObjIsNil(self.PanelDrag) then
+                        self.WeaponDragRotate = self.PanelDrag:GetComponent(XDragAutoRotateType)
+                    end
+                end,
                 {gameObject = self.GameObject, usage = XEnumConst.EQUIP.WEAPON_USAGE.SHOW, IsDragRotation = true, AntiClockwise = true},
                 self.PanelDrag
             )
@@ -196,6 +253,11 @@ function XUiEquipDetailV2P6:InitTabGroup()
     end)
 end
 
+-- 显示或隐藏页签
+function XUiEquipDetailV2P6:ShowPanelTabGroup(isShow)
+    self.PanelTabGroup.gameObject:SetActiveEx(isShow)
+end
+
 function XUiEquipDetailV2P6:OnClickTabCallBack(tabIndex)
     if tabIndex == XEnumConst.EQUIP.UI_EQUIP_DETAIL_BTN_INDEX.STRENGTHEN then
         if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.EquipStrengthen) then
@@ -232,10 +294,16 @@ function XUiEquipDetailV2P6:OnClickTabCallBack(tabIndex)
         end
         self:SaveEnterOverrunRedData()
         self:UpdateBtnOverrunRed()
-        self:OpenChildUiByName("UiEquipOverrunV2P6", self)
-    end
+
+        -- 打开超限界面
+        local characterId = XTool.IsNumberValidEx(self.CharacterId) and self.CharacterId or XMVCA.XEquip:GetWeaponOverrunCharacterId(self.TemplateId)
+        local overrunCfgIds = self._Control:GetWeaponOverrunCfgIds(self.TemplateId, characterId)
+        local childUiName = #overrunCfgIds > 1 and "UiEquipOverrunV4P6" or "UiEquipOverrunV2P6"
+        self:OpenChildUiByName(childUiName, self)
+    end
 
     self.TabIndex = tabIndex
+    self:RefreshAssetPanelByTab(tabIndex)
     if self.IsAwareness then
         self:UpdateAwarenessSwitchBtn()
     end
@@ -379,40 +447,15 @@ function XUiEquipDetailV2P6:UpdateBtnOverrunRed()
         return
     end
 
-    -- 未解锁，不显示蓝点
-    local isUnlock = XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.EquipOverrun)
-    if not isUnlock then
-        self.BtnOverrun:ShowReddot(false)
-        return
-    end
-
-    -- 解锁后，未点开过，显示蓝点
-    local saveKey = self:GetEnterOverrunSaveKey()
-    local isEnter = XSaveTool.GetData(saveKey) == true
-    if not isEnter then
-        self.BtnOverrun:ShowReddot(true)
-        return
-    end
-
-    -- 超限可绑定意识套装，但未绑定意识套装，显示蓝点
-    local equip = XMVCA.XEquip:GetEquip(self.EquipId)
-    if equip:IsShowOverrunRed() then 
-        self.BtnOverrun:ShowReddot(true)
-        return
-    end
-
-    self.BtnOverrun:ShowReddot(false)
-end
-
-function XUiEquipDetailV2P6:GetEnterOverrunSaveKey()
-    return "XUiEquipDetail:GetEnterOverrunSaveKey()  XPlayer.Id" .. tostring(XPlayer.Id) 
-end
+    local equip = XMVCA.XEquip:GetEquip(self.EquipId)
+    self.BtnOverrun:ShowReddot(equip:IsShowOverrunRed())
+end
 
 -- 保存进入过超限界面的红点数据
-function XUiEquipDetailV2P6:SaveEnterOverrunRedData()
-    local saveKey = self:GetEnterOverrunSaveKey()
-    XSaveTool.SaveData(saveKey, true)
-end
+function XUiEquipDetailV2P6:SaveEnterOverrunRedData()
+    local equip = XMVCA.XEquip:GetEquip(self.EquipId)
+    equip:SaveEnterOverrunRedData()
+end
 
 -- 刷新超限场景特效
 function XUiEquipDetailV2P6:UpdateOverrunSceneEffect()
@@ -452,6 +495,68 @@ function XUiEquipDetailV2P6:PlayOverrunLevelUpEffect()
     if sceneStartEffectPath then
         self.ImgEffectOverrun:LoadPrefab(sceneStartEffectPath)
     end
+end
+
+-- 杀掉武器旋转 DoTween，避免叠加和野回调
+function XUiEquipDetailV2P6:KillWeaponRotateTween()
+    if self.WeaponRotateTween then
+        self.WeaponRotateTween:Kill(false)
+        self.WeaponRotateTween = nil
+    end
+end
+
+-- 重置武器旋转相关状态（不含 DragRotate，DragRotate 绑在 PanelDrag 上）
+function XUiEquipDetailV2P6:ResetWeaponRotateState()
+    self:KillWeaponRotateTween()
+    self.WeaponModel = nil
+    self.WeaponAutoRotate = nil
+    self.WeaponOriginPos = nil
+    self.WeaponOriginEuler = nil
+end
+
+-- 禁用武器拖拽旋转 + 自动旋转
+function XUiEquipDetailV2P6:DisableWeaponRotate()
+    if self.WeaponDragRotate then
+        self.WeaponDragRotate.enabled = false
+    end
+    if self.WeaponAutoRotate then
+        self.WeaponAutoRotate.IsAutoRotation = false
+    end
+end
+
+-- 重新启用武器拖拽旋转 + 自动旋转
+function XUiEquipDetailV2P6:EnableWeaponRotate()
+    if self.WeaponDragRotate then
+        self.WeaponDragRotate.enabled = true
+    end
+    if self.WeaponAutoRotate then
+        self.WeaponAutoRotate.IsAutoRotation = true
+        self.WeaponAutoRotate.Inited = false
+    end
+end
+
+-- DoTween 把武器还原到加载时记录的初始位置和旋转
+-- @param duration    时长，秒；默认 0.5
+-- @param onComplete  完成回调（可选）
+function XUiEquipDetailV2P6:DoTweenRotateWeaponToOrigin(duration, onComplete)
+    if XTool.UObjIsNil(self.WeaponModel) or not self.WeaponOriginEuler then
+        return
+    end
+
+    self:DisableWeaponRotate()
+    self:KillWeaponRotateTween()
+
+    duration = duration or 0.5
+    local ease = CS.DG.Tweening.Ease.OutQuart
+    self.WeaponModel.transform:DOLocalMove(self.WeaponOriginPos, duration):SetEase(ease)
+    self.WeaponRotateTween = self.WeaponModel.transform:DOLocalRotate(self.WeaponOriginEuler, duration)
+        :SetEase(ease)
+        :OnComplete(function()
+            self.WeaponRotateTween = nil
+            if onComplete then
+                onComplete()
+            end
+        end)
 end
 
 --------------------#endregion 武器 --------------------
@@ -587,4 +692,54 @@ function XUiEquipDetailV2P6:CheckCanOverclocking(equipId)
 end
 --------------------#endregion 意识 --------------------
 
+--------------------#region 虚拟摄像机 --------------------
+function XUiEquipDetailV2P6:InitVirtualCamera(root)
+    -- VCDetail: 退出 UiEquipOverrunV4P6 时切换的虚拟相机，也是装备详情其他页签使用的虚拟相机
+    -- VCOverrun: UiEquipOverrunV4P6 使用的默认虚拟相机
+    -- VCOverrunLv1-7: 选中谐振等级 1-7 时显示的虚拟相机
+    self.VCDetail = root:FindTransform("VCDetail")
+    self.VCOverrun = root:FindTransform("VCOverrun")
+    self.VCOverrunLvList = {}
+    for i = 1, 7 do
+        self.VCOverrunLvList[i] = root:FindTransform("VCOverrunLv" .. i)
+    end
+end
+
+function XUiEquipDetailV2P6:SetVirtualCameraActive(virtualCamera, isActive)
+    if not XTool.UObjIsNil(virtualCamera) then
+        virtualCamera.gameObject:SetActiveEx(isActive)
+    end
+end
+
+function XUiEquipDetailV2P6:CloseAllVirtualCamera()
+    self:SetVirtualCameraActive(self.VCDetail, false)
+    self:SetVirtualCameraActive(self.VCOverrun, false)
+    for i = 1, 7 do
+        self:SetVirtualCameraActive(self.VCOverrunLvList[i], false)
+    end
+end
+
+-- 切换 UiEquipOverrunV4P6 内部相机；level 为空时使用超限页默认相机
+function XUiEquipDetailV2P6:SwitchVirtualCamera(level, overrunCfg)
+    self:CloseAllVirtualCamera()
+    self:SetVirtualCameraActive(self.VCOverrun, level == nil)
+    for i = 1, 7 do
+        self:SetVirtualCameraActive(self.VCOverrunLvList[i], i == level)
+    end
+    if level ~= nil and overrunCfg then
+        local vc = self.VCOverrunLvList[level]
+        if not XTool.UObjIsNil(vc) then
+            vc.localPosition    = CS.UnityEngine.Vector3(overrunCfg.SelectedCameraPosX, overrunCfg.SelectedCameraPosY, overrunCfg.SelectedCameraPosZ)
+            vc.localEulerAngles = CS.UnityEngine.Vector3(overrunCfg.SelectedCameraRotX,  overrunCfg.SelectedCameraRotY,  overrunCfg.SelectedCameraRotZ)
+        end
+    end
+end
+--------------------#endregion 虚拟摄像机 --------------------
+
+-- 退出 UiEquipOverrunV4P6 时切回装备详情其他页签使用的相机
+function XUiEquipDetailV2P6:SwitchOverrunExitVirtualCamera()
+    self:CloseAllVirtualCamera()
+    self:SetVirtualCameraActive(self.VCDetail, true)
+end
+
 return XUiEquipDetailV2P6

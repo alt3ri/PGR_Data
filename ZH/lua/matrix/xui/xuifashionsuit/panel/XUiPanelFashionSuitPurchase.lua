@@ -104,11 +104,23 @@ function XUiPanelFashionSuitPurchase:ShowPrice()
         --免费
         self._Parent:SetPriceFree()
     else
-        self._Parent:SetCurPrice(price)
+        -- 需要判断是否足够
+        local isEnough = self:_CheckBuyEnough(price)
+        
+        local priceStr = isEnough and tostring(price) or XUiHelper.GetText("PurchaseFashionSuitDetailCoinNotEnough", price)
+        
+        self._Parent:SetCurPrice(priceStr)
     end
     self._CurPrice = price
     self._Parent:SetConsumeIcon(true, self._ItemData.ConsumeId)
     self._Parent:SetOriginalPrice(originalPrice ~= nil, originalPrice)
+end
+
+---@return number, number 实际价格，原价, itemId
+function XUiPanelFashionSuitPurchase:GetPrice()
+    local price, originalPrice = XMVCA.XFashionSuit:GetRealPurchasePriceWithDiscount(self._ItemDataList)
+    
+    return price, originalPrice, self._ItemData.ConsumeId
 end
 
 function XUiPanelFashionSuitPurchase:CheckExpirationTime()
@@ -146,6 +158,20 @@ function XUiPanelFashionSuitPurchase:CheckRemovalTime()
     end
 end
 
+--- 判断当前是否足够资源购买，参数依赖外部传参
+function XUiPanelFashionSuitPurchase:_CheckBuyEnough(needCount)
+    local consumeId = self._ItemData.ConsumeId
+
+    if not XTool.IsNumberValidEx(needCount) or not XTool.IsNumberValidEx(consumeId) then
+        -- 参数不充分默认足够
+        return true
+    end
+
+    local haveCount = XDataCenter.ItemManager.GetCount(consumeId)
+
+    return haveCount >= needCount
+end
+
 --region 购买
 
 function XUiPanelFashionSuitPurchase:OnPurchaseBuy()
@@ -154,14 +180,12 @@ function XUiPanelFashionSuitPurchase:OnPurchaseBuy()
     end
     if XMVCA.XFashionSuit:CheckPurchaseGroupBuy(self._ItemDataList) then
         if self._Helper:IsEnableGroupSales() then
-            XMVCA.XFashionSuit:ShowGroupSalesPopup(self._Params, self._ItemData.ConsumeId, self._CurPrice, function()
-                local ids = {}
-                for _, itemData in pairs(self._ItemDataList) do
-                    table.insert(ids, itemData.Id)
-                end
-                XDataCenter.PurchaseManager.MultiPurchaseRequest(ids, XPurchaseConfigs.GetLBUiTypesList(), function(rewardList)
-                    self:OnPurchaseBuyViewRefresh(rewardList)
-                end)
+            local ids = {}
+            for _, itemData in pairs(self._ItemDataList) do
+                table.insert(ids, itemData.Id)
+            end
+            XDataCenter.PurchaseManager.MultiPurchaseRequest(ids, XPurchaseConfigs.GetLBUiTypesList(), function(rewardList)
+                self:OnPurchaseBuyViewRefresh(rewardList)
             end)
         else
             XDataCenter.PurchaseManager.PurchaseRequest(self._ItemData.Id, function(rewardList)
@@ -174,7 +198,7 @@ end
 function XUiPanelFashionSuitPurchase:OnPurchaseBuyViewRefresh(rewardList)
     self._Parent:UpdateView()
     self._Parent.Parent:ShowGift()
-    self._Parent.Parent:CallPurchaseCb(rewardList)
+    self._Parent.Parent.Parent:CallPurchaseCb(rewardList)
     XEventManager.DispatchEvent(XEventId.EVENT_FASHION_SUIT_PURCHASE_BUY, rewardList)
 end
 

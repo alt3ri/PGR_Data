@@ -375,7 +375,10 @@ function XUiFubenBossSingleDetailV4P5:StartManuallyFight()
         "UiBattleRoleRoom",
         stageId,
         self._Control:GetTeamByBossId(self._BossId),
-        require("XUi/XUiFubenBossSingle/XUiBossSingleBattleRoleRoom"))
+        require("XUi/XUiFubenBossSingle/XUiBossSingleBattleRoleRoom"),
+        nil,
+        nil,
+        { EnableTeamDifferentCheck = true })
 end
 
 function XUiFubenBossSingleDetailV4P5:GetBossSingleData()

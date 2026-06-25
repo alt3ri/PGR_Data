@@ -156,6 +156,7 @@ function XUiPanelTheatre6SkilBagDetail:CreateSkillGrid()
         [slotTypes.Special] = { self.UsingSkillUi.GridSkillUsing.transform.parent, self.UsingSkillUi.GridSkillUsing },
         [slotTypes.Bag] = { self.BagSkillUi.GridSkillBag.transform.parent, self.BagSkillUi.GridSkillBag },
     }
+    ---@type table<number,table<number,XUiGridTheatre6SkillBag>>
     self.SkillGrids = {
         [slotTypes.Active] = {},
         [slotTypes.Insert] = {},
@@ -337,6 +338,7 @@ end
 --endregion
 
 --选中逻辑
+---@param uiGrid XUiGridTheatre6SkillBag
 function XUiPanelTheatre6SkilBagDetail:InitGridClick(uiGrid, slotType)
     uiGrid:SetClickCb(function(skillId, slotType, pos)
         self:ClickGrid(skillId, slotType, pos)
@@ -344,8 +346,13 @@ function XUiPanelTheatre6SkilBagDetail:InitGridClick(uiGrid, slotType)
             self._GridClickCb[slotType](skillId, slotType, pos, uiGrid:IsBaseSkill())
             return
         end
-        self._Control:OpenSkillTip(skillId, uiGrid.Transform,
-            { SlotType = slotType, ReadOnly = false, IsBaseSkill = uiGrid:IsBaseSkill() }) --默认为点击打开详情
+        local params = {
+            SlotType = slotType,
+            ReadOnly = false,
+            IsBaseSkill = uiGrid:IsBaseSkill(),
+            IsCanUpgrade = uiGrid:IsCanUpgrade(),
+        }
+        self._Control:OpenSkillTip(skillId, uiGrid.Transform, params) --默认为点击打开详情
     end)
 end
 

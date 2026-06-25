@@ -29,7 +29,7 @@ function XUiGridTheatre6RoundData:Update(data)
         self._GridFightBuff.UiRImgIcon:SetRawImage(buildTagCfg.Icon)
     else
         self._GridSkill:Open()
-        self._GridSkill:Update(data.SkillId)
+        self._GridSkill:Update(data.SkillId, data.IsSkillReadOnly)
         self._GridFightBuff.GameObject:SetActiveEx(false)
     end
 

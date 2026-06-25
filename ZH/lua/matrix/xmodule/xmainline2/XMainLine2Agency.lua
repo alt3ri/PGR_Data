@@ -983,6 +983,11 @@ function XMainLine2Agency:GetConfigExhibitionModule(id)
     return self._Model:GetConfigExhibitionModule(id)
 end
 
+-- 获取按条件命中的 Bg/Spine 路径
+function XMainLine2Agency:GetExhibitionModuleConditionResult(moduleId)
+    return self._Model:GetExhibitionModuleConditionResult(moduleId)
+end
+
 -- 获取时间轴章节配置
 function XMainLine2Agency:GetConfigExhibitionChapter(id)
     return self._Model:GetConfigExhibitionChapter(id)

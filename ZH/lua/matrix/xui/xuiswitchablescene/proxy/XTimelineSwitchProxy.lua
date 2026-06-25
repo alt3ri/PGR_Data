@@ -114,12 +114,12 @@ function XTimelineSwitchProxy:_InitTimeline(sceneTran)
     -- 初始化陀螺仪动画
     local cwGo = animRoot:Find("AnimEnableGyro_CW")
     if not XTool.UObjIsNil(cwGo) then
-        self._AnimEnableGyroCW = cwGo:GetComponent("PlayableDirector")
+        self._AnimEnableGyroCW = cwGo:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
     end
 
     local ccwGo = animRoot:Find("AnimEnableGyro_CCW")
     if not XTool.UObjIsNil(ccwGo) then
-        self._AnimEnableGyroCCW = ccwGo:GetComponent("PlayableDirector")
+        self._AnimEnableGyroCCW = ccwGo:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
     end
 
     -- 初始化切换动画
@@ -133,7 +133,7 @@ function XTimelineSwitchProxy:_InitTimeline(sceneTran)
     -- 初始化长按动画
     local longGo = animRoot:Find("AnimEnableLong")
     if not XTool.UObjIsNil(longGo) then
-        self._AnimEnableLong = longGo:GetComponent("PlayableDirector")
+        self._AnimEnableLong = longGo:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
     end
 end
 

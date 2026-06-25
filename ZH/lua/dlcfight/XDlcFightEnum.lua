@@ -97,14 +97,15 @@ EWorldEvent = {
     NpcSkillActionKeyframeSendUIEvent = 3068, -- Npc帧事件类型发送UI事件
     NpcGuardianAngelConsume = 3069, -- Npc消耗复活甲
     NpcHurtProtector = 3070, -- Npc护盾消耗
-    NpcWaitRescue = 3071, -- Npc等待救援
-    OnNpcBeginRescue = 3072, -- Npc开始救援
-    OnNpcEndRescue = 3073, -- Npc结束救援
-    NpcInteractCountDownFinish = 3074, -- Npc交互倒计时结束
-    ActorTrigger = 4000, -- Actor触发器触发
+    NpcWaitRescue = 3071, -- Npc等待救援
+    OnNpcBeginRescue = 3072, -- Npc开始救援
+    OnNpcEndRescue = 3073, -- Npc结束救援
+    NpcInteractCountDownFinish = 3074, -- Npc交互倒计时结束
+    ActorTrigger = 4000, -- Actor触发器触发
     ActorInteractableDestroyed = 4001, -- 可交互的Actor被销毁
     SceneObjectMoveStop = 4002, -- 场景物件移动停止
     SceneObjectActionFinish = 4003, -- 场景物件动作执行结束
+    NavigationPointActorRefStateChanged = 4004, -- 移除 Actor 导航点引用
     DramaBegin = 5000, -- 剧情播放开始
     DramaFinish = 5001, -- 剧情播放结束
     DramaCaptionBegin = 5002, -- 简易台词播放开始
@@ -119,10 +120,15 @@ EWorldEvent = {
     MissileDead = 8001, -- 子弹死亡
     MissileCreate = 8002, -- 子弹创建
     OnMissileColliderNpc = 8003, -- Npc子弹命中
+    NpcEnterMissileTrigger = 8004, -- Npc进入子弹触发区
+    NpcExitMissileTrigger = 8005, -- Npc离开子弹触发区
+    MissileEnterMissileTrigger = 8006, -- 子弹进入子弹触发区
+    MissileExitMissileTrigger = 8007, -- 子弹离开子弹触发区
     ConditionCheckTrigger = 9000, -- 触发条件检查
     UiClose = 10000, -- Ui关闭
     NarrativeComplete = 10001, -- 叙事任务完成
     SendUIEvent = 10002, -- 发送UI事件
+    UIShakeGroupDoShake = 10003, -- UI震动组件整组震动
     TakePhotoComplete = 11000, -- 拍照
     ExitPhotograph = 11001, -- 拍照-退出
     PhotographFilterChanged = 11002, -- 拍照-滤镜切换
@@ -146,6 +152,7 @@ EWorldEvent = {
     Theatre6NpcEnergyChange = 13012, -- 肉鸽6能量值变化
     Theatre6WrestleRollDiceEnd = 13013, -- 肉鸽6拼点结束
     Theatre6DodgeRollDiceEnd = 13014, -- 肉鸽6超算拼点结束
+    Theatre6Environment = 13015, -- 肉鸽6环境触发
     QuestObjectiveComplete = 14000, -- 任务目标完成
     QuestObjectiveDeliverItemsSuccess = 14001, -- 任务道具交付成功
     QuestObjectiveKillEnemyGroupStart = 14002, -- 任务目标消灭敌人组开始
@@ -563,9 +570,9 @@ ENpcFlag = {
 ---@enum EInteractType
 EInteractType = {
     None = 0,
-    Instant = 1, -- 瞬时类
-    Continuous = 2, -- 持续类
-    Animated = 3, -- 动画驱动类
+    Instant = 1,
+    Continuous = 2,
+    Animated = 3,
 }
 ---@enum EInteractPhase
 EInteractPhase = {
@@ -855,7 +862,8 @@ EFightUiType = {
     RelinkTeammateInfo = 41, -- 队友行为信息
     RelinkMechanicInfo = 42, -- 机制进度
     RelinkMonsterHpInfo = 43, -- Relink小怪血条
-    UiFightTheatre6 = 44,
+    RelinkTrainingSet = 44, -- 木桩关设置界面
+    UiFightTheatre6 = 45,
 }
 ---@enum EGuideUiNodeType
 EGuideUiNodeType = {
@@ -912,7 +920,8 @@ ETheatre6AttribType = {
     WrestlePoint = 1, -- 拼刀点数
     OverClock = 2, -- 超算
     OverClockEfficiency = 3, -- 超算效率
-    Max = 4,
+    Flare = 4, -- 耀斑值
+    Max = 5,
 }
 ---@enum ETheatre6SkillType
 ETheatre6SkillType = {
@@ -923,8 +932,10 @@ ETheatre6SkillType = {
 }
 ---@enum ETheatre6DiceType
 ETheatre6DiceType = {
+    None = 0, -- 无操作
     Wrestle = 1, -- 拼刀
     Dodge = 2, -- 超算
+    All = 3, -- 全选
 }
 ---@enum EMissileCollideNpcResult
 EMissileCollideNpcResult = {

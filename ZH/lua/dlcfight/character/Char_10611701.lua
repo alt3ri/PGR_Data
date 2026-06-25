@@ -257,9 +257,6 @@ end
 function XCharNirvatiaEcology:RegisterMachineStateTransition()
     -- 设置寻路状态枚举值
     self.FindPathStateEnum = StateEnum.FindPath
-    self.NextStateList = {
-        StateEnum.DroneClub, StateEnum.TeachingBuilding, StateEnum.SecondFloor, StateEnum.InClass
-    }
     -- 其他状态到寻路状态
 
     -- 存储在无人机(DroneClub)处做的选项，判断在这里的去向：

@@ -3,7 +3,7 @@ local XTheatre6SkillBase = require("Gameplay/Theatre6/XTheatre6SkillBase")
 ---@class XBuffScript10252030 : XTheatre6SkillBase
 local XBuffScript10252030 = XDlcScriptManager.RegBuffScript(10252030, "XBuffScript10252030", XTheatre6SkillBase)
 
---效果说明：自身对处于【点燃】状态的对手使用3次技能时触发：造成击飞
+--效果说明：自身对处于【点燃】状态的对手使用3次主动技能时触发：造成击飞
 
 function XBuffScript10252030:ScriptInit(isGainControl) --初始化
     self._damageTimer = 0
@@ -31,6 +31,7 @@ function XBuffScript10252030:OnLuaSkillStart(eventArgs)
         self._HitFlyController:AddSkillCount(self._stackCount)
     end
     if not self._proxy:CheckBuffByKind(targetNpc, BurnBuff) then return end
+    if eventArgs._skillType ~= ETheatre6SkillType.Main then return end --4.6新增：检测是否为主动技能
     self._damageTimer = self._damageTimer + 1
     if self._damageTimer >= 3 then
         self._level:RequestInsertSkill(self._npcUUID, self._skillId)

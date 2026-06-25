@@ -372,6 +372,31 @@ function XMainLine2Model:GetChapterSpineProgressWans(chapterId)
     return config and config.SpineProgressWans or {}
 end
 
+function XMainLine2Model:GetChapterEnterSpineStageIndex(chapterId)
+    local config = self:GetConfigChapter(chapterId)
+    return config and config.EnterSpineStageIndex or {}
+end
+
+function XMainLine2Model:GetChapterEnterSpineName(chapterId)
+    local config = self:GetConfigChapter(chapterId)
+    return config and config.EnterSpineName or {}
+end
+
+function XMainLine2Model:GetChapterSwitchSpineStageIndex(chapterId)
+    local config = self:GetConfigChapter(chapterId)
+    return config and config.SwitchSpineStageIndex or {}
+end
+
+function XMainLine2Model:GetChapterSwitchAheadSpineName(chapterId)
+    local config = self:GetConfigChapter(chapterId)
+    return config and config.SwitchAheadSpineName or {}
+end
+
+function XMainLine2Model:GetChapterSwitchBackwardSpineName(chapterId)
+    local config = self:GetConfigChapter(chapterId)
+    return config and config.SwitchBackwardSpineName or {}
+end
+
 function XMainLine2Model:GetChapterLastStageId(chapterId)
     local stageGroupId = self:GetChapterStageGroupIds(chapterId)
     local lastGroupId = stageGroupId[#stageGroupId]
@@ -606,6 +631,22 @@ function XMainLine2Model:GetConfigExhibitionModule(id)
     end
 end
 
+-- 按 Condition 评估命中的 Bg/Spine 路径，后通过的覆盖前面
+function XMainLine2Model:GetExhibitionModuleConditionResult(moduleId)
+    local cfg = self:GetConfigExhibitionModule(moduleId)
+    if not cfg then return nil, nil end
+    local conditions = cfg.Condition
+    if not conditions or #conditions == 0 then return nil, nil end
+    local bgPath, spinePath
+    for i, condId in ipairs(conditions) do
+        if condId and condId ~= 0 and XConditionManager.CheckCondition(condId) then
+            bgPath = cfg.BgCondition and cfg.BgCondition[i]
+            spinePath = cfg.SpineCondition and cfg.SpineCondition[i]
+        end
+    end
+    return bgPath, spinePath
+end
+
 ---@return XTableMainLine2ExhibitionChapter|XTableMainLine2ExhibitionChapter[]
 function XMainLine2Model:GetConfigExhibitionChapter(id)
     local cfgs = self._ConfigUtil:GetByTableKey(TableKey.MainLine2ExhibitionChapter)
@@ -613,7 +654,11 @@ function XMainLine2Model:GetConfigExhibitionChapter(id)
         if cfgs[id] then
             return cfgs[id]
         else
-            XLog.Error("请检查配置表Share/Fuben/MainLine2/MainLine2ExhibitionChapter.tab，未配置行Id = " .. tostring(id))
+            XLog.Error(
+                "请策划老师检查以下配置表：",
+                string.format("(1)Share/Fuben/MainLine2/MainLine2ExhibitionChapter.tab，未配置行Id:[%s]", tostring(id)),
+                string.format("(2)Client/Fuben/MainLine2/MainLine2ExhibitionModule.tab，ChapterIds多配置了[%s]", tostring(id))
+            )
         end
     else
         return cfgs

@@ -5,9 +5,10 @@ local UpperLeft = CS.UnityEngine.TextAnchor.UpperLeft
 
 local XUiGridSingleDialog = XClass(nil, "XUiGridSingleDialog")
 
-function XUiGridSingleDialog:Ctor(ui)
+function XUiGridSingleDialog:Ctor(ui, uiRoot)
     self.GameObject = ui.gameObject
     self.Transform = ui.transform
+    self.UiRoot = uiRoot
     XTool.InitUiObject(self)
 end
 
@@ -31,6 +32,10 @@ function XUiGridSingleDialog:Refresh(dialogContent, isCenter, color, duration, t
 
     if color then
         txtWords.color = XUiHelper.Hexcolor2Color(color)
+    end
+
+    if self.UiRoot then
+        self.UiRoot:ApplyFullScreenChannelOffsetTo(txtWords)
     end
 
     if duration then

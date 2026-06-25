@@ -138,12 +138,6 @@ function loader.ReleaseFull(path)
     end
     v:ReleaseFull()
     AllTables[path] = nil
-    XTableManager.OnUnloadBinary(path)
-end
-
-
-function loader.ReadArray(path, xTable, identifier)
-    return nil
 end
 
 return loader;

@@ -68,6 +68,11 @@ end
 function XDlcCSharpFuncs:RemoveTimerTask(taskId)
 end
 
+---@desc 获取Npc的UUId
+---@return int 
+function XDlcCSharpFuncs:GetSelfNpcId()
+end
+
 ---@desc 获取NpcPlaceId, 不为零为LevelNpc
 ---@return int LevelNpc PlaceId
 function XDlcCSharpFuncs:GetNpcPlaceId()
@@ -1132,6 +1137,16 @@ end
 function XDlcCSharpFuncs:AddNpcAttribAdditive(uuid, attribType, value, percent)
 end
 
+---@desc Relink固定值治疗Npc
+---@param launcherNpcUUID int
+---@param targetNpcUUID int
+---@param value int
+---@param magicId int
+---@param skillActionId int
+---@return void 
+function XDlcCSharpFuncs:NpcCureRelinkByValue(launcherNpcUUID, targetNpcUUID, value, magicId, skillActionId)
+end
+
 ---@desc 检查Npc与位置的距离是否小于指定距离
 ---@param uuid int Npc的UUID
 ---@param position Vector3 指定位置
@@ -2045,6 +2060,13 @@ end
 ---@param missileUUID int
 ---@return bool , int actionId:
 function XDlcCSharpFuncs:GetMissileActionId(missileUUID)
+end
+
+---@desc 设置子弹位置
+---@param missileUUID int 子弹UUID
+---@param position Vector3 子弹位置
+---@return void 
+function XDlcCSharpFuncs:SetMissilePosition(missileUUID, position)
 end
 
 ---@desc 激活虚拟相机
@@ -3003,8 +3025,9 @@ end
 ---@param referencePos Vector3 默认值:default 相对位置（可选，默认为原点）
 ---@param referenceRot Vector3 默认值:default 相对旋转（可选，默认为原点）
 ---@param combineKey int 默认值:0 连贯播放组合ID（可选，默认为0）
+---@param playerTrialId int 默认值:0 玩家Npc试用Id，将替换剧情中的玩家Npc为指定试用Npc（可选，默认为0）
 ---@return void 
-function XDlcCSharpFuncs:PlayQuestDrama(questId, dramaName, referencePos, referenceRot, combineKey)
+function XDlcCSharpFuncs:PlayQuestDrama(questId, dramaName, referencePos, referenceRot, combineKey, playerTrialId)
 end
 
 ---@desc 直接播放剧情
@@ -3089,9 +3112,31 @@ end
 
 ---@desc 显示提示
 ---@param id int
+---@return void 
+function XDlcCSharpFuncs:ShowTip(id)
+end
+
+---@desc 显示提示
+---@param id int
 ---@param var int
 ---@return void 
 function XDlcCSharpFuncs:ShowTip(id, var)
+end
+
+---@desc 显示双提示
+---@param id int 弹窗ID
+---@param var int 倒计时
+---@param str string 文本
+---@return void 
+function XDlcCSharpFuncs:ShowTip(id, var, str)
+end
+
+---@desc 显示双提示
+---@param id int 弹窗ID
+---@param var int 倒计时
+---@param strInt int 文本ID
+---@return void 
+function XDlcCSharpFuncs:ShowTip(id, var, strInt)
 end
 
 ---@desc 关闭提示
@@ -3461,7 +3506,7 @@ end
 function XDlcCSharpFuncs:GetMoveNormalizedDist()
 end
 
----@desc 【仅限玩家npc调用】查询摇杆值
+---@desc 【仅限玩家npc调用】查询摇杆值 世界坐标水平向量
 ---@desc 接口使用示例：
 ---@desc local success, axis = self._proxy:TryGetQueryStickAxis()
 ---@return bool , Vector2 xyAxis:
@@ -3494,6 +3539,13 @@ end
 ---@desc 请提示程序补充注释
 ---@return Vector3 
 function XDlcCSharpFuncs:GetMoveInputOperation()
+end
+
+---@desc 【仅限玩家npc调用】查询摇杆值 2D轮盘向量
+---@desc 接口使用示例：
+---@desc local success, axis = self._proxy:TryGetQueryStickAxisWithoutCamera()
+---@return bool , Vector2 xyAxis:
+function XDlcCSharpFuncs:TryGetQueryStickAxisWithoutCamera()
 end
 
 ---@desc 修改团队分数
@@ -3759,12 +3811,6 @@ end
 ---@desc 打开【玩家自定义外观】的UI
 ---@return void 
 function XDlcCSharpFuncs:ShowPlayerDIYUI()
-end
-
----@desc 发送短信
----@param messageId int
----@return void 
-function XDlcCSharpFuncs:SendChatMessage(messageId)
 end
 
 ---@desc 显示大世界图文教学
@@ -4225,6 +4271,17 @@ end
 function XDlcCSharpFuncs:SetFightUiState(uiType, npcId, controlSource, uiState)
 end
 
+---@desc 按照UI抖动组Id进行UI抖动
+---@param targetControllerNpcUUID int 指定Npc的端进行抖动填0表示广播
+---@param uiShakeGroupId int UI抖动组ID
+---@param shakeTime float 抖动时间
+---@param shakeRangeX float X轴抖动幅度
+---@param shakeRangeY float Y轴抖动幅度
+---@param shakeGroupNpcUUID int 指定绑定NPC的组进行抖动
+---@return void 
+function XDlcCSharpFuncs:UIShakeGroupDoShake(targetControllerNpcUUID, uiShakeGroupId, shakeTime, shakeRangeX, shakeRangeY, shakeGroupNpcUUID)
+end
+
 ---@desc 在矩形区域内生成泊松盘采样点
 ---@param width float 区域宽度（X方向）
 ---@param height float 区域高度（Y方向）
@@ -4358,6 +4415,12 @@ end
 function XDlcCSharpFuncs:Theatre6GetDodgeDeriveSkill(npcUUID)
 end
 
+---@desc 肉鸽6获取角色插入技能
+---@param npcUUID int
+---@return int 
+function XDlcCSharpFuncs:Theatre6GetInsertDeriveSkill(npcUUID)
+end
+
 ---@desc 肉鸽6根据配置Id获取角色配置
 ---@param id int
 ---@return XTable.XTableTheatre6Character 
@@ -4384,6 +4447,35 @@ end
 ---@param time float
 ---@return void 
 function XDlcCSharpFuncs:Theatre6StartDodgeRollDice(launcherUUID, time)
+end
+
+---@desc 开启补偿
+---@param type int 补偿类型
+---@param OpenDiceSelf bool 开启个人
+---@param OpenDiceEnemy bool 开启敌人
+---@return void 
+function XDlcCSharpFuncs:Theatre6OpenDice(type, OpenDiceSelf, OpenDiceEnemy)
+end
+
+---@desc 开启个人补偿状态
+---@param type int 补偿类型
+---@param open bool
+---@return void 
+function XDlcCSharpFuncs:OpenTheatre6DiceSelf(type, open)
+end
+
+---@desc 开启敌人补偿状态
+---@param type int 补偿类型
+---@param open bool
+---@return void 
+function XDlcCSharpFuncs:OpenTheatre6DiceEnemy(type, open)
+end
+
+---@desc 设置补偿幅度
+---@param type int 补偿类型
+---@param diceDelta int 补偿幅度
+---@return void 
+function XDlcCSharpFuncs:SetTheatre6DiceDelta(type, diceDelta)
 end
 
 ---@desc 肉鸽6更新技能UI
@@ -4549,6 +4641,53 @@ end
 ---@desc 获取肉鸽6局内常量配置
 ---@return XConfig 局内常量配置表
 function XDlcCSharpFuncs:Theatre6GetConfig()
+end
+
+---@desc 获取肉鸽6当前对局
+---@return int 当前对句数
+function XDlcCSharpFuncs:Theatre6GetRound()
+end
+
+---@desc 肉鸽6 环境显示
+---@param uuID int 角色UUID
+---@param buffId int 环境BuffID
+---@return void 
+function XDlcCSharpFuncs:Theatre6EnvironmentShow(uuID, buffId)
+end
+
+---@desc 肉鸽6 PVP设置环境触发效果存值
+---@param uuID int
+---@param key int
+---@param value int
+---@return void 
+function XDlcCSharpFuncs:SetTheatre6BuffActionValue(uuID, key, value)
+end
+
+---@desc 肉鸽6 PVP获取环境触发效果存值
+---@param uuID int 角色UUID
+---@param key int Key
+---@return int 
+function XDlcCSharpFuncs:GetTheatre6BuffActionValue(uuID, key)
+end
+
+---@desc 肉鸽6 PVE战斗内数据存值
+---@param uuID int 角色UUID
+---@param key int
+---@param value int
+---@return void 
+function XDlcCSharpFuncs:SetTheatre6FightActionValue(uuID, key, value)
+end
+
+---@desc 获取SelfPlayer特殊奖励状态
+---@return bool 是否第三场特殊加场
+function XDlcCSharpFuncs:GetTheatre6SpWinState()
+end
+
+---@desc 获取肉鸽6胜负结果
+---@param uuid int 角色UUID
+---@param round int 第几局
+---@return bool 
+function XDlcCSharpFuncs:GetTheatre6WinResult(uuid, round)
 end
 
 return XDlcCSharpFuncs;

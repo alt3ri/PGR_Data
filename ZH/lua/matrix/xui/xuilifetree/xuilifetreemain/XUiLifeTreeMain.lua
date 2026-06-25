@@ -98,9 +98,9 @@ function XUiLifeTreeMain:InitScene()
     ---@type CS.Cinemachine.CinemachineFreeLook
     self.CamNearMain = cameraRoot:Find("UiNearRoot/CamNearMain"):GetComponent(typeof(CS.Cinemachine.CinemachineFreeLook))
     ---@type CS.UnityEngine.Camera
-    self.UiNearCamera = cameraRoot:Find("UiNearRoot/UiNearCamera"):GetComponent("Camera")
+    self.UiNearCamera = cameraRoot:Find("UiNearRoot/UiNearCamera"):GetComponent(typeof(CS.UnityEngine.Camera))
     ---@type CS.UnityEngine.Camera
-    self.UiFarCamera = cameraRoot:Find("UiFarRoot/UiFarCamera"):GetComponent("Camera")
+    self.UiFarCamera = cameraRoot:Find("UiFarRoot/UiFarCamera"):GetComponent(typeof(CS.UnityEngine.Camera))
     ---@type CS.UnityEngine.Transform
     self.LookAtPoint = cameraRoot:Find("LookAtPoint")
     ---@type CS.UnityEngine.Transform
@@ -227,6 +227,7 @@ function XUiLifeTreeMain:OnBtnPositioningLifeTreeClick()
     self.BtnPositioningLifeTree.gameObject:SetActiveEx(false)
     self:SetCameraValueWithAnim(0, CAMERA_Y_VALUE_LIFE_TREE)
     self:PlayLifeTreeAnimations()
+    self:PlayRegularCardsQiehuan()
 end
 
 function XUiLifeTreeMain:OnBtnPositioningSeaClick()
@@ -238,6 +239,15 @@ function XUiLifeTreeMain:OnBtnPositioningSeaClick()
     self.BtnPositioningSea.gameObject:SetActiveEx(false)
     self:SetCameraValueWithAnim(0, CAMERA_Y_VALUE_SEA)
     self:PlaySeaAnimations()
+    self:PlayRegularCardsQiehuan()
+end
+
+function XUiLifeTreeMain:PlayRegularCardsQiehuan()
+    for _, card in pairs(self.GridCards) do
+        if card.PlayQiehuanAnimation then
+            card:PlayQiehuanAnimation()
+        end
+    end
 end
 
 function XUiLifeTreeMain:RefreshBtnPositioningSea()

@@ -129,7 +129,7 @@ end
 
 function XUiPurchasePay:TwRegionPayCheck() 
 
-if XUserManager.UserType == XHeroSdkManager.UserType.Vistor then
+if XHeroSdkManager.IsGuestUserType(XUserManager.UserType) then
         if XSaveTool.GetData("AGE_OVER_20") == nil then
                 XLuaUiManager.Open("UiPurchaseTips", function()
                     XDataCenter.PayManager.Pay(self.BuyKey)

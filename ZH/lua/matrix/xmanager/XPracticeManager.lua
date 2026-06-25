@@ -265,7 +265,7 @@ XPracticeManagerCreator = function()
         local timeId = XPracticeConfigs.GetSimulateTrainMonsterTimeId(archiveId)
         local isInTime = XFunctionManager.CheckInTimeByTimeId(timeId, true)
         if (isInTime) and (groupId == 0 or XPracticeConfigs.GetSimulateTrainMonsterGroupId(archiveId) == groupId) then
-            if XMVCA.XArchive:GetMonsterUnlockMainById(archiveId) or XMVCA.XSimulateTrain:IsMonsterInActivity(archiveId) then
+            if XMVCA.XArchive.MonsterArchiveAgency:GetMonsterUnlockMainById(archiveId) or XMVCA.XSimulateTrain:IsMonsterInActivity(archiveId) then
                 return true
             end
         end
@@ -338,7 +338,7 @@ XPracticeManagerCreator = function()
 
         local timeId = XPracticeConfigs.GetSimulateTrainMonsterTimeId(archiveId)
         local isInTime = XFunctionManager.CheckInTimeByTimeId(timeId, true)
-        if isInTime and XMVCA.XArchive:GetMonsterUnlockMainById(archiveId) or XMVCA.XSimulateTrain:IsMonsterInActivity(archiveId) then
+        if isInTime and XMVCA.XArchive.MonsterArchiveAgency:GetMonsterUnlockMainById(archiveId) or XMVCA.XSimulateTrain:IsMonsterInActivity(archiveId) then
             return true
         end
         return false

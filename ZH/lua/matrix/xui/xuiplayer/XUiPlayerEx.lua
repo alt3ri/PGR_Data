@@ -59,7 +59,6 @@ end
 
 function XUiPlayerEx:OnEnable()
     self.BtnAchievement:ShowReddot(XDataCenter.MedalManager.CheckHaveNewMedal() or XDataCenter.AchievementManager.CheckHasReward())
-    self.BtnExhibition:ShowReddot(XDataCenter.ExhibitionManager.CheckNewCharacterReward())
     --IOS提审屏蔽涂装套装入口
     if XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.FashionSuit) and not XUiManager.IsHideFunc then
         self.BtnSkinSeries.gameObject:SetActiveEx(true)

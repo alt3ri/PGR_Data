@@ -2,7 +2,7 @@
 ---@field private _Control XSoloReformControl
 local XUiSoloReformMain = XLuaUiManager.Register(XLuaUi, 'UiSoloReformMain')
 local XUiSoloReformChapterItem = require("XUi/XUiSoloReform/XUiSoloReformMain/XUiSoloReformChapterItem")
-local XUiSoloReformChapterKillItem = require("XUi/XUiSoloReform/XUiSoloReformMain/XUiSoloReformChapterKillItem")
+-- local XUiSoloReformChapterKillItem = require("XUi/XUiSoloReform/XUiSoloReformMain/XUiSoloReformChapterKillItem")
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 
 function XUiSoloReformMain:OnAwake()
@@ -85,11 +85,11 @@ function XUiSoloReformMain:UpdateChapterList()
         local cell = self._ChapterCellList[i]
         if not cell then
             local go = self.PanelChapter.transform:GetChild(i - 1).gameObject
-            if i == 1 then
-                cell = XUiSoloReformChapterKillItem.New(go, self)
-            else
+            -- if i == 1 then
+            --     cell = XUiSoloReformChapterKillItem.New(go, self)
+            -- else
                 cell = XUiSoloReformChapterItem.New(go, self)
-            end
+            -- end
             self._ChapterCellList[i] = cell
         end
         if showChapterList[i] then
@@ -115,7 +115,7 @@ end
 
 function XUiSoloReformMain:RefreshTaskProcess()
    local completedCount, totalCount = self._Control:GetCompletedTaskCountAndTotal()
-   self.TxtTaskNum.text = string.format("<color=#6AC5FA>%d</color>/%d", completedCount, totalCount)
+   self.TxtTaskNum.text = string.format("<color=%s>%d</color>/%d", self._Control:GetColor(), completedCount, totalCount)
    local process = 0
    if totalCount > 0 then
         process = completedCount/totalCount

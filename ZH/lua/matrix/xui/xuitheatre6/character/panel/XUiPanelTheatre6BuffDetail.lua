@@ -125,8 +125,12 @@ end
 
 ---设置buff剩余生效次数
 function XUiPanelTheatre6BuffDetail:SetRemainingTimes(times)
+    local txt = self._Control:GetBuffRemainingTimesDesc(self._BuffConfig.DurationType)
+    if string.IsNilOrEmpty(txt) then
+        return
+    end
     self.UiTxtLeft.gameObject:SetActiveEx(true)
-    self.UiTxtLeft.text = XUiHelper.GetText("Theatre6BuffRemainingTimes", times)
+    self.UiTxtLeft.text = string.format(txt, times)
 end
 
 ---Buff图标是否允许点击

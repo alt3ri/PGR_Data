@@ -1,787 +1,787 @@
-local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
----@class XUiNewGridDrawBanner
-local XUiNewGridDrawBanner = XClass(XUiNode, "XUiNewGridDrawBanner")
-
-local SkipToDrawLogTabIndex = {
-    BaseRule = 1, -- 基础规则页
-    Preview = 2, -- 掉落详情页
-    EventRule = 4, -- 特定规则页
-}
-
-function XUiNewGridDrawBanner:Ctor(ui, parent, data)
-    self.GameObject = ui.gameObject
-    ---@type UnityEngine.RectTransform
-    self.Transform = ui.transform
-    self.Data = data
-    ---@type XUiNewDrawMain
-    self.Base = parent
-    self.OptionKey = (data.GetOptionKey and data:GetOptionKey()) or ""
-
-    self.BtnSkipList = {}
-
-    self:TryGetComponent()
-    self:SetButtonCallBack()
-    self:Refresh()
-    self:SetImage()
-    self:InitNewDrawComponent()
-    self:SetTextByResourceIds()
-end
-
-function XUiNewGridDrawBanner:Refresh()
-    self:SetUpBottomTimes()
-    self:SetUpRewardPreview()
-    self:SetBannerTime()
-    self:SetSwitchInfo()
-    self:SetNewHandTag()
-    self:SetTime()
-    self:SetCharacterBg()
-    self:SetDrawName()
-    self:SetDrawGroupName()
-end
-
-function XUiNewGridDrawBanner:TryGetComponent()
-    self.PanelTime = self.Transform:FindTransform("PanelTime")
-    self.PanelZs = self.Transform:FindTransformWithSplit("SafeAreaContentPane/PanelZs")
-    for i = 1, 13 do
-       local obj = self.Transform:FindTransform("TxtTime" .. i)
-        if obj then
-            self["TxtTime"..i] = obj:GetComponent("Text")
-        end
-    end
-    if self.BtnGo then
-        self.BtnGo = self.BtnGo.transform:GetComponent("XUiButton")
-    end
-    if self.MingyunSelectChoukacounts then
-        self.MingyunSelectChoukacounts = self.MingyunSelectChoukacounts.transform:GetComponent("Text")
-    end
-    if self.MingyunNomalChoukacounts then
-        self.MingyunNomalChoukacounts = self.MingyunNomalChoukacounts.transform:GetComponent("Text")
-    end
-    if self.PutongSelectChoukacounts then
-        self.PutongSelectChoukacounts = self.PutongSelectChoukacounts.transform:GetComponent("Text")
-    end
-    if self.PutongNormalChoukacounts then
-        self.PutongNormalChoukacounts = self.PutongNormalChoukacounts.transform:GetComponent("Text")
-    end
-    if self.PifuChoukaCounts then
-        self.PifuChoukaCounts = self.PifuChoukaCounts.transform:GetComponent("Text")
-    end
-    if self.TimeTxt then
-        self.TimeTxt = self.TimeTxt.transform:GetComponent("Text")
-    end
-    if self.TxtSwitch then
-        self.TxtSwitch = self.TxtSwitch.transform:GetComponent("Text")
-    end
-    local btnDrawRule = self.Transform:FindTransform("BtnDrawRule")
-    if btnDrawRule then
-        self.BtnDrawRule = btnDrawRule:GetComponent("XUiButton")
-        -- 迁移到XUiNewDrawMain里的BtnDrawRule上，旧的BtnDrawRule先隐藏
-        self.BtnDrawRule.gameObject:SetActiveEx(false)
-    end
-    local btnSkip = self.Transform:FindTransform("BtnSkip1")
-    if btnSkip then
-        ---@type XUiComponent.XUiButton
-        self.BtnSkip = btnSkip:GetComponent("XUiButton")
-    end
-    
-    local bg = self.Transform:FindTransform("Bg1")
-    if bg then
-        ---@type UnityEngine.UI.RawImage
-        self.RImgBg = bg:GetComponent("RawImage")
-    end
-    
-    local animationEnable = self.Transform:FindTransform("AnimEnable")
-    if animationEnable then
-        ---@type UnityEngine.Playables.PlayableDirector
-        self.AnimEnable = animationEnable:GetComponent("PlayableDirector")
-    end
-
-    local rImgRole = self.Transform:FindTransform("RImgRole")
-    if rImgRole then
-        ---@type UnityEngine.UI.RawImage
-        self.RImgRole = rImgRole:GetComponent("RawImage")
-    end
-
-    local rImgName = self.Transform:FindTransform("RImgName")
-    if rImgName then
-        ---@type UnityEngine.UI.RawImage
-        self.RImgName = rImgName:GetComponent("RawImage")
-    end
-
-    local txtRef = self.Transform:FindTransform("TxtRef")
-    if txtRef then
-        self.TxtRef = txtRef:GetComponent("Text")
-    end
-
-    local txtName = self.Transform:FindTransform("TxtName")
-    if txtName then
-        self.TxtName = txtName:GetComponent("Text")
-    end
-
-    local txtRoleType = self.Transform:FindTransform("TxtRoleType")
-    if txtRoleType then
-        self.TxtRoleType = txtRoleType:GetComponent("Text")
-    end
-
-    local imgTypeIcon = self.Transform:FindTransform("ImgTypeIcon")
-    if imgTypeIcon then
-        ---@type UnityEngine.UI.RawImage
-        self.ImgTypeIcon = imgTypeIcon:GetComponent("RawImage")
-    end
-
-    local txtRoleName = self.Transform:FindTransform("TxtRoleName")
-    if txtRoleName then
-        self.TxtRoleName = txtRoleName:GetComponent("Text")
-    end
-
-    local rImgRoleHead = self.Transform:FindTransform("RImgRoleHead")
-    if rImgRoleHead then
-        ---@type UnityEngine.UI.RawImage
-        self.RImgRoleHead = rImgRoleHead:GetComponent("RawImage")
-    end
-
-    local rImgCubHead = self.Transform:FindTransform("RImgCubHead")
-    if rImgCubHead then
-        ---@type UnityEngine.UI.RawImage
-        self.RImgCubHead = rImgCubHead:GetComponent("RawImage")
-    end
-
-    self.PanelInfo = self.Transform:FindTransform("PanleInfo")
-
-    local txtNumberType = self.Transform:FindTransform("TxtNumberType")
-    if txtNumberType then
-        self.TxtNumberType = txtNumberType:GetComponent("Text")
-    end
-
-    local txtTips = self.Transform:FindTransform("TetTips")
-    if txtTips then
-        self.TxtTips = txtTips:GetComponent("Text")
-    end
-
-    local txtDrawName = self.Transform:FindTransform("TxtDrawName")
-    if txtDrawName then
-        self.TxtDrawName = txtDrawName:GetComponent("Text")
-    end
-
-    local txtNameChouka = self.Transform:FindTransform("TxtNameChouka")
-    if txtNameChouka then
-        self.TxtNameChouka = txtNameChouka:GetComponent("Text")
-    end
-
-    local rImgCharacterBg = self.Transform:FindTransform("RImgCharacterBg")
-    if rImgCharacterBg then
-        self.RImgCharacterBg = rImgCharacterBg:GetComponent("RawImage")
-    end
-    if self.RImgCharacterBg then
-        self.RImgCharacterBgParent = self.Transform:FindTransform("RImgBg")
-    end
-
-    -- 校准活动
-    local targetBtnDetails = self.Transform:FindTransformWithSplit("SafeAreaContentPane/BtnDetails")
-    self.TargetBtnDetails = targetBtnDetails and targetBtnDetails:GetComponent("XUiButton") or false
-    if self.TargetBtnDetails then
-        self.IsMultipleUp = true
-        self.TargetPanelSwitchA = self.Transform:FindTransformWithSplit("SafeAreaContentPane/PanelSwitchA")
-        self.TargetPanelSwitchS = self.Transform:FindTransformWithSplit("SafeAreaContentPane/PanelSwitchS")
-    end
-    
-    -- 隐藏所有的跳转按钮
-    local index = 1
-    while true do
-        local btnSkip = self[string.format("BtnSkip%s", tostring(index))]
-        if not btnSkip then
-            break
-        end
-        btnSkip = btnSkip.transform:GetComponent("Button")
-        btnSkip.gameObject:SetActiveEx(false)
-        self.BtnSkipList[index] = btnSkip
-        index = index + 1
-    end
-end
-
-function XUiNewGridDrawBanner:SetButtonCallBack()
-    if self.BtnGo then
-        self.BtnGo.CallBack = function()
-            self:OnBtnGoClick()
-        end
-    end
-
-    -- 校准活动
-    if self.TargetBtnDetails then
-        self.TargetBtnDetails.CallBack = function()
-            self:OnClickBtnTargetRule()
-        end
-    end
-
-    -- 添加跳转逻辑并显示跳转按钮
-    if self.BtnSkip then
-        self.BtnSkip.CallBack = function()
-            local drawInfo = self:_GetDrawInfo()
-            local drawId = drawInfo.Id
-            local skipId = XDrawConfigs.GetDrawSkip(drawId)
-            XFunctionManager.SkipInterface(skipId)
-        end
-        local drawInfo = self:_GetDrawInfo()
-        local drawId = drawInfo.Id
-        local skipId = XDrawConfigs.GetDrawSkip(drawId)
-        self.BtnSkip.gameObject:SetActiveEx(XTool.IsNumberValid(skipId))
-    end
-
-    -- if skipId and next(skipId) then
-    --     for i = 2, #skipId do
-    --         if not self.BtnSkipList[i] then
-    --             XLog.Warning(string.format("XUiNewGridDrawBanner:TryGetComponent()函数警告，DrawGroupId:%s 预制界面的跳转按钮不足，第%s个跳转:%s 与后面配置的跳转无法生效",
-    --                     tostring(self.Data.Id), tostring(i), tostring(skipId[i])))
-    --             break
-    --         end
-    --         self.BtnSkipList[i].CallBack = function()
-    --             XFunctionManager.SkipInterface(skipId[i])
-    --         end
-    --         self.BtnSkipList[i].gameObject:SetActiveEx(true)
-    --     end
-    -- end
-    if self.BtnShow then
-        XUiHelper.RegisterClickEvent(self, self.BtnShow, self.OnClickWeaponShow)
-    end
-end
-
-function XUiNewGridDrawBanner:OnClickWeaponShow()
-    local bo = not self.BtnShow:GetToggleState()
-    if self.Base.BtnDrawRule then
-        self.Base.BtnDrawRule.gameObject:SetActiveEx(bo)
-    end
-    self.PanelNumber.gameObject:SetActiveEx(bo)
-    self.Base:HideOrShowOthers(bo)
-    self.PanelWeaponShow.gameObject:SetActiveEx(not bo)
-
-    local drawSceneCfg = XDrawConfigs.GetDrawSceneCfg(self.Base.DrawInfo.Id)
-    if bo then
-        self.Base.DrawScene:LoadWeaponModel(tonumber(drawSceneCfg.ModelId))
-        self.PanelDrag.gameObject:SetActiveEx(false)
-    else
-        self.Base.CurBanner:InitWeaponSwitchBtn()
-        self:UpdateWeaponSwitch(drawSceneCfg)
-        self.PanelDrag.gameObject:SetActiveEx(true)
-    end
-end
-
-function XUiNewGridDrawBanner:OnBtnGoClick()
-    self.Data:GoDraw(function ()
-            self.Base:MarkCurNewTag()
-    end)
-end
-
-function XUiNewGridDrawBanner:OnClickBtnTargetRule()
-    self.TargetBtnDetails.interactable = false
-    local drawInfo = self:_GetDrawInfo()
-    local data = XDataCenter.DrawManager.GetDrawGroupActivityTargetInfo(drawInfo.GroupId)
-    XLuaUiManager.Open("UiDrawLog",drawInfo,data and SkipToDrawLogTabIndex.EventRule or SkipToDrawLogTabIndex.BaseRule,function()
-        self.TargetBtnDetails.interactable = true
-    end, self.OptionKey)
-end
-
-function XUiNewGridDrawBanner:SetUpBottomTimes()
-    if self.MingyunSelectChoukacounts then
-        self.MingyunSelectChoukacounts.text = self:GetBottomText(XDrawConfigs.GroupType.Destiny)
-    end
-    
-    if self.MingyunNomalChoukacounts then
-        self.MingyunNomalChoukacounts.text = self:GetBottomText(XDrawConfigs.GroupType.Destiny)
-    end
-    
-    if self.PutongSelectChoukacounts then
-        self.PutongSelectChoukacounts.text = self:GetBottomText(XDrawConfigs.GroupType.Normal)
-    end
-    
-    if self.PutongNormalChoukacounts then
-        self.PutongNormalChoukacounts.text = self:GetBottomText(XDrawConfigs.GroupType.Normal)
-    end
-
-    if self.PifuChoukaCounts then
-        self.PifuChoukaCounts.text = self.Data:GetBottomText()
-    end
-
-    local drawRules = self.Data:GetDrawRules()
-    if not XTool.IsTableEmpty(drawRules) then
-        if self.TxtNumberType then
-            self.TxtNumberType.text = drawRules[1] or ""
-        end
-        if self.TxtTips then
-            self.TxtTips.text = drawRules[2] or ""
-        end
-    end
-end
-
-function XUiNewGridDrawBanner:GetBottomText(type)
-    local relationGroupData = self.Base:GetRelationGroupData(self.Data:GetId())
-    local bottomText = "———"
-    local count = 0
-    if relationGroupData and relationGroupData:GetGroupType() == type then
-        bottomText = relationGroupData:GetBottomText()
-        count = count + 1
-    end
-    if self.Data:GetGroupType() == type then
-        bottomText = self.Data:GetBottomText()
-        count = count + 1
-    end
-    if count == 2 then
-        XLog.Error("Client/Draw/DrawGroupRelation.tab's Data Is Error: NormalGroupId and DestinyGroupId Is Same Type")
-    end
-    return bottomText
-end
-
-function XUiNewGridDrawBanner:SetUpRewardPreview()
-    if self.Grid256 then
-        local grid = XUiGridCommon.New(self.Base, self.Grid256)
-        local rewardData = self.Data:GetTopRewardData()
-        grid:Refresh(rewardData:GetTemplateId())
-        if self.ImgGet then
-            self.ImgGet.gameObject:SetActiveEx(rewardData:GetIsGeted())
-        end
-    end
-end
-
-function XUiNewGridDrawBanner:SetBannerTime()
-    local beginTime = self.Data:GetBannerBeginTime() or 0
-    local endTime = self.Data:GetBannerEndTime() or 0
-    if self.TimeTxt then
-        self.TimeTxt.gameObject:SetActiveEx(beginTime ~= 0 and endTime ~= 0)
-        local beginTimeStr = XTime.TimestampToGameDateTimeString(beginTime, "MM/dd")
-        local endTimeStr = XTime.TimestampToGameDateTimeString(endTime, "MM/dd HH:mm")
-        self.TimeTxt.text = string.format("%s-%s", beginTimeStr, endTimeStr)
-    end
-    if self.TimeDetail then
-        self.TimeDetail.gameObject:SetActiveEx(beginTime ~= 0 and endTime ~= 0)
-    end
-end
-
-function XUiNewGridDrawBanner:SetNewHandTag()
-    if self.PanelNewHand then
-        self.PanelNewHand.gameObject:SetActiveEx(self.Data:GetMaxBottomTimes() == self.Data:GetNewHandBottomCount())
-    end
-    if self.PanelNewHandTop then
-        self.PanelNewHandTop.gameObject:SetActiveEx(self.Data:GetMaxBottomTimes() == self.Data:GetNewHandBottomCount())
-    end
-end
-
-function XUiNewGridDrawBanner:SetSwitchInfo()
-    if self.TxtSwitch then
-        self.TxtSwitch.text = self.Data:GetSwitchText()
-    end
-end
-
-function XUiNewGridDrawBanner:SetCharacterBg()
-    if not self.RImgCharacterBg then
-        return
-    end
-    local isShow = false
-    local drawGroupRule = XDrawConfigs.GetDrawGroupRuleById(self.Base.GroupId)
-    if drawGroupRule and XTool.IsNumberValid(drawGroupRule.IsCharacterImage) then
-        local drawSceneCfg = XDrawConfigs.GetDrawSceneCfg(self.Base.DrawInfo.Id)
-        local drawShowRImg = drawSceneCfg and XDrawConfigs.GetDrawShowImageCfgById(tonumber(drawSceneCfg.ModelId))
-        if not string.IsNilOrEmpty(drawShowRImg) then
-            isShow = true
-            self.RImgCharacterBg:SetRawImageEx(drawShowRImg)
-        end
-    end
-    if self.RImgCharacterBgParent then
-        self.RImgCharacterBgParent.gameObject:SetActiveEx(isShow)
-    end
-end
-
-function XUiNewGridDrawBanner:SetDrawName()
-    if not self.TxtDrawName then
-        return
-    end
-    local drawGroupRule = XDrawConfigs.GetDrawGroupRuleById(self.Base.GroupId)
-    local hasDrawName = drawGroupRule and not string.IsNilOrEmpty(drawGroupRule.DrawName)
-    self.TxtDrawName.gameObject:SetActiveEx(hasDrawName)
-    if hasDrawName then
-        self.TxtDrawName.text = drawGroupRule.DrawName
-    end
-end
-
-function XUiNewGridDrawBanner:SetDrawGroupName()
-    if not self.TxtNameChouka then
-        return
-    end
-    local drawGroupRule = XDrawConfigs.GetDrawGroupRuleById(self.Base.GroupId)
-    local hasDrawGroupName = drawGroupRule and not string.IsNilOrEmpty(drawGroupRule.DrawGroupName)
-    self.TxtNameChouka.gameObject:SetActiveEx(hasDrawGroupName)
-    if hasDrawGroupName then
-        self.TxtNameChouka.text = drawGroupRule.DrawGroupName
-    end
-end
-
-function XUiNewGridDrawBanner:SetImage(imageList)
-    if self.Base:CheckIsNewDraw() then
-        if self.RImgName then
-            self.RImgName.gameObject:SetActiveEx(false)
-        end
-        return
-    end
-
-    if self.TargetBtnDetails or XDataCenter.DrawManager:CheckIsDevilMayCryDrawId(self.Base.DrawInfo.Id) then
-        if self.RImgBg then self.RImgBg.gameObject:SetActiveEx(false) end
-        if self.RImgRole then self.RImgRole.gameObject:SetActiveEx(false) end
-        if self.RImgName then self.RImgName.gameObject:SetActiveEx(false) end
-        if self.BtnSkip then self.BtnSkip.gameObject:SetActiveEx(false) end
-        return
-    end
-    if not imageList then
-        return
-    end
-    if self.RImgBg then
-        if imageList[1] then
-            self.RImgBg.gameObject:SetActiveEx(true)
-            self.RImgBg:SetRawImage(imageList[1])
-        else
-            self.RImgBg.gameObject:SetActiveEx(false)
-        end
-    end
-    if self.RImgRole then
-        if imageList[2] then
-            self.RImgRole.gameObject:SetActiveEx(true)
-            self.RImgRole:SetRawImage(imageList[2])
-        else
-            self.RImgRole.gameObject:SetActiveEx(false)
-        end
-    end
-    if self.RImgName then
-        if imageList[3] then
-            self.RImgName.gameObject:SetActiveEx(true)
-            self.RImgName:SetRawImage(imageList[3])
-        else
-            self.RImgName.gameObject:SetActiveEx(false)
-        end
-    end
-    if self.BtnSkip then
-        if imageList[4] then
-            self.BtnSkip.gameObject:SetActiveEx(true)
-            self.BtnSkip:SetRawImage(imageList[4])
-        else
-            self.BtnSkip.gameObject:SetActiveEx(false)
-        end
-    end
-    if self.AnimEnable then
-        self.AnimEnable.gameObject:SetActiveEx(false)
-        self.AnimEnable.gameObject:SetActiveEx(true)
-        --self.AnimEnable:Play()
-    end
-end
-
---region 图片字优化
-
-function XUiNewGridDrawBanner:SetTextByResourceIds(resourceIds)
-    if self.Base:CheckIsNewDraw() then
-        self:SetTextActive(false)
-        return
-    end
-
-    if self.TargetBtnDetails or XDataCenter.DrawManager:CheckIsDevilMayCryDrawId(self.Base.DrawInfo.Id) then
-        self:SetTextActive(false)
-        return
-    end
-    if not resourceIds then
-        return
-    end
-
-    if XTool.IsNumberValid(resourceIds[1]) then
-        local resourceId = resourceIds[1]
-        local arrangeType = XArrangeConfigs.GetType(resourceId)
-        if arrangeType == XArrangeConfigs.Types.Character then
-            self:SetCharacterText(resourceId)
-        elseif arrangeType == XArrangeConfigs.Types.Weapon then
-            self:SetWeaponText(resourceId)
-        elseif arrangeType == XArrangeConfigs.Types.Partner then
-            self:SetPartnerText(resourceId)
-        else
-            self:SetTextActive(false)
-        end
-    else
-        self:SetTextActive(false)
-    end
-end
-
-function XUiNewGridDrawBanner:SetTextActive(isActive)
-    if self.TxtRef then
-        self.TxtRef.gameObject:SetActiveEx(isActive)
-    end
-    if self.TxtName then
-        self.TxtName.gameObject:SetActiveEx(isActive)
-    end
-    if self.TxtRoleType then
-        self.TxtRoleType.gameObject:SetActiveEx(isActive)
-    end
-    if self.ImgTypeIcon then
-        self.ImgTypeIcon.gameObject:SetActiveEx(isActive)
-    end
-    if self.TxtRoleName then
-        self.TxtRoleName.gameObject:SetActiveEx(isActive)
-    end
-    if self.RImgRoleHead then
-        self.RImgRoleHead.gameObject:SetActiveEx(isActive)
-    end
-    if self.RImgCubHead then
-        self.RImgCubHead.gameObject:SetActiveEx(isActive)
-    end
-    if self.PanelInfo then
-        self.PanelInfo.gameObject:SetActiveEx(isActive)
-    end
-end
-
-function XUiNewGridDrawBanner:SetCharacterText(resourceId)
-    local characterData = self:GetCharacterData(resourceId)
-    self:SetTextActive(characterData ~= nil)
-    if not characterData then
-        return
-    end
-    if self.TxtRef then
-        self.TxtRef.text = characterData.Code
-    end
-    if self.TxtName then
-        self.TxtName.text = characterData.LogName
-    end
-    if self.TxtRoleType then
-        self.TxtRoleType.text = XUiHelper.GetText("DrawBannerRoleTypeText", characterData.ElementName, characterData.CareerName)
-    end
-    if self.ImgTypeIcon then
-        self.ImgTypeIcon:SetRawImageEx(characterData.ElementIcon)
-    end
-end
-
----@return { LogName: string, ElementIcon: string, ElementName: string, CareerName string, Code: string}
-function XUiNewGridDrawBanner:GetCharacterData(characterId)
-    local config = XMVCA.XCharacter:GetCharacterTemplate(characterId)
-    if not config then
-        return nil
-    end
-
-    local elementConfig = XMVCA.XCharacter:GetCharElement(config.Element)
-    local careerConfig = XMVCA.XCharacter:GetNpcTypeTemplate(config.Career)
-    if not elementConfig or not careerConfig then
-        return nil
-    end
-
-    return {
-        LogName = config.LogName,
-        ElementIcon = elementConfig.Icon2,
-        ElementName = elementConfig.ElementName,
-        CareerName = careerConfig.Name,
-        Code = config.Code,
-    }
-end
-
-function XUiNewGridDrawBanner:SetWeaponText(resourceId)
-    local weaponData = self:GetWeaponData(resourceId)
-    self:SetTextActive(weaponData ~= nil)
-    if not weaponData then
-        return
-    end
-    if self.TxtName then
-        self.TxtName.text = weaponData.Name
-    end
-    if self.TxtRoleName then
-        self.TxtRoleName.text = weaponData.RoleName
-    end
-    if self.RImgRoleHead then
-        self.RImgRoleHead:SetRawImageEx(weaponData.RoleHead)
-    end
-end
-
----@return { Name: string, RoleName: string, RoleHead: string}
-function XUiNewGridDrawBanner:GetWeaponData(weaponId)
-    local characterId = XMVCA.XEquip:GetEquipRecommendCharacterId(weaponId)
-    if not XTool.IsNumberValid(characterId) then
-        return nil
-    end
-
-    return {
-        Name = XMVCA.XEquip:GetEquipName(weaponId),
-        RoleName = XMVCA.XCharacter:GetCharacterLogName(characterId),
-        RoleHead = XDataCenter.FashionManager.GetSmallHeadIconByCharacterId(characterId),
-    }
-end
-
-function XUiNewGridDrawBanner:SetPartnerText(resourceId)
-    local partnerData = self:GetPartnerData(resourceId)
-    self:SetTextActive(partnerData ~= nil)
-    if not partnerData then
-        return
-    end
-    if self.TxtName then
-        self.TxtName.text = partnerData.Name
-    end
-    if self.TxtRoleName then
-        self.TxtRoleName.text = partnerData.RoleName
-    end
-    if self.RImgRoleHead then
-        self.RImgRoleHead:SetRawImageEx(partnerData.RoleHead)
-    end
-    if self.RImgCubHead then
-        self.RImgCubHead:SetRawImageEx(partnerData.CubHead)
-    end
-end
-
----@return { Name: string, RoleName: string, RoleHead: string, CubHead: string}
-function XUiNewGridDrawBanner:GetPartnerData(partnerId)
-    local characterId = XPartnerConfigs.GetPartnerRecommendCharacterId(partnerId)
-    if not XTool.IsNumberValid(characterId) then
-        return nil
-    end
-
-    return {
-        Name = XPartnerConfigs.GetPartnerTemplateName(partnerId),
-        RoleName = XMVCA.XCharacter:GetCharacterLogName(characterId),
-        RoleHead = XDataCenter.FashionManager.GetSmallHeadIconByCharacterId(characterId),
-        CubHead = XPartnerConfigs.GetPartnerTemplateIcon(partnerId),
-    }
-end
-
---endregion
-
-function XUiNewGridDrawBanner:SetTime()
-
-    local drawInfo = self:_GetDrawInfo()
-
-    local beginTimeStr = drawInfo.StartTime
-    local endTimeStr = drawInfo.EndTime
-
-    if self.PanelZs then
-        self.PanelZs.gameObject:SetActiveEx (beginTimeStr == 0 or endTimeStr == 0)
-    end
-    if not self.PanelTime then
-        return
-    end
-    self.PanelTime.gameObject:SetActiveEx(beginTimeStr ~= 0 and endTimeStr ~= 0)
-    if beginTimeStr then
-        if self.TxtTime1 then self.TxtTime1.text = XTime.TimestampToGameDateTimeString(beginTimeStr, "MM") end
-        if self.TxtTime3 then self.TxtTime3.text = XTime.TimestampToGameDateTimeString(beginTimeStr, "dd") end
-        if self.TxtTime11 then self.TxtTime11.text = XTime.TimestampToGameDateTimeString(beginTimeStr, "HH") end
-        if self.TxtTime13 then self.TxtTime13.text = XTime.TimestampToGameDateTimeString(beginTimeStr, "mm") end
-    end
-    if endTimeStr then
-        if self.TxtTime5 then self.TxtTime5.text = XTime.TimestampToGameDateTimeString(endTimeStr, "MM") end
-        if self.TxtTime7 then self.TxtTime7.text = XTime.TimestampToGameDateTimeString(endTimeStr, "dd") end
-        if self.TxtTime8 then self.TxtTime8.text = XTime.TimestampToGameDateTimeString(endTimeStr, "HH") end
-        if self.TxtTime10 then self.TxtTime10.text = XTime.TimestampToGameDateTimeString(endTimeStr, "mm") end
-    end
-end
-
---region 武器阶段展示
-
-function XUiNewGridDrawBanner:InitWeaponSwitchBtn()
-    if not self.WeaponsSwitch then
-        return
-    end
-    if not self.BtnSwitchModelList then
-        self.BtnSwitchModelList = {
-            self.WeaponsSwitchItem1,
-            self.WeaponsSwitchItem2,
-            self.WeaponsSwitchItem3,
-            self.WeaponsSwitchItem4,
-        }
-        self.WeaponsSwitch:Init(self.BtnSwitchModelList, handler(self, self.OnTabBtnGroupClick))
-    end
-end
-
-function XUiNewGridDrawBanner:OnTabBtnGroupClick(index)
-    if self.SelectWeaponIndex == index or not self.ModelCfgList or #self.ModelCfgList <= 1 then
-        return
-    end
-    self.SelectWeaponIndex = index
-    self.Base.DrawScene:LoadWeaponModelBySwitch(self.ModelCfgList[index], self.PanelDrag)
-end
-
-function XUiNewGridDrawBanner:UpdateWeaponSwitch(drawCfg)
-    local templateId = tonumber(drawCfg.ModelId)
-    self.ModelCfgList = XMVCA.XEquip:GetWeaponModelCfgList(templateId, self.Base.Name, 0)
-    local modelCount = #self.ModelCfgList
-
-    local firstModelIndex = 1
-    if modelCount <= firstModelIndex then
-        self.PanelWeaponShow.gameObject:SetActiveEx(false)
-        if modelCount == firstModelIndex then
-            self.Base.DrawScene:LoadWeaponModelBySwitch(self.ModelCfgList[firstModelIndex], self.PanelDrag)
-        end
-    else
-        self.PanelWeaponShow.gameObject:SetActiveEx(true)
-        self.SelectWeaponIndex = nil
-        for i, btn in ipairs(self.BtnSwitchModelList) do
-            btn.gameObject:SetActiveEx(i <= modelCount)
-        end
-        if not self.SelectWeaponIndex and modelCount > 0 then
-            self.WeaponsSwitch:SelectIndex(1)
-        end
-    end
-end
-
---endregion
-
---region 新活动卡池
-
-function XUiNewGridDrawBanner:InitNewDrawComponent()
-    if self.DrawCollaborationNew then
-        self.NewDrawUiObject = {}
-        XUiHelper.InitUiClass(self.NewDrawUiObject, self.DrawCollaborationNew)
-        XUiHelper.RegisterClickEvent(self, self.NewDrawUiObject.BtnChoose, self.OnBtnChooseClick)
-        XUiHelper.RegisterClickEvent(self, self.NewDrawUiObject.BtnChooseEmpty, self.OnBtnChooseClick)
-        XUiHelper.RegisterClickEvent(self, self.NewDrawUiObject.BtnOptionalDraw, self.OnBtnChooseClick)
-    end
-end
-
-function XUiNewGridDrawBanner:UpdateNewDrawView(drawCfg, modelId)
-    if not self.NewDrawUiObject then
-        return
-    end
-    local groupInfo = XDataCenter.DrawManager.GetDrawGroupInfoByGroupId(self.Base.GroupId)
-    local hasChosen
-    if not string.IsNilOrEmpty(self.OptionKey) then
-        hasChosen = XTool.IsNumberValid(XDataCenter.DrawManager.GetRealUseDrawIdByOptionKey(self.OptionKey))
-    else
-        hasChosen = XTool.IsNumberValid((groupInfo.UseDrawIdDict or {})[0])
-    end
-    self.NewDrawUiObject.PanelChar.gameObject:SetActiveEx(hasChosen)
-    self.NewDrawUiObject.PanelRole.gameObject:SetActiveEx(hasChosen)
-    self.NewDrawUiObject.PanelEmpty.gameObject:SetActiveEx(not hasChosen)
-    self.NewDrawUiObject.BtnChoose.gameObject:SetActiveEx(hasChosen)
-    self.NewDrawUiObject.BtnChooseEmpty.gameObject:SetActiveEx(not hasChosen)
-    if hasChosen then
-        local targetId = tonumber(modelId or drawCfg.ModelId)
-        ---@type XTableCharacter
-        local config = XMVCA.XCharacter:GetCharacterTemplate(targetId)
-        local elementConfig = XMVCA.XCharacter:GetCharElement(config.Element)
-        self.NewDrawUiObject.TxtCareer.text = XMVCA.XCharacter:GetCareerName(config.Career)
-        self.NewDrawUiObject.TxtCharName.text = config.LogName
-        self.NewDrawUiObject.ImgElement:SetRawImage(elementConfig.Icon2)
-        self.NewDrawUiObject.TypeNum.text = XMVCA.XCharacter:GetCharacterCodeStr(targetId)
-    end
-end
-
-function XUiNewGridDrawBanner:UpdateNewDrawChar(roleUrl, isQualityShow, qualityIcon)
-    if not self.NewDrawUiObject then
-        return
-    end
-    self.NewDrawUiObject.RImgRoleNew:SetRawImage(roleUrl)
-    self.NewDrawUiObject.ImgQuality.gameObject:SetActiveEx(isQualityShow)
-    if isQualityShow then
-        self.Base:SetUiSprite(self.NewDrawUiObject.ImgQuality, qualityIcon)
-    end
-end
-
-function XUiNewGridDrawBanner:OnBtnChooseClick()
-    self.Base:OnBtnOptionDrawClick()
-end
-
---endregion
-
---- 获取当前 DrawInfo（优先使用 OptionKey 维度）
-function XUiNewGridDrawBanner:_GetDrawInfo()
-    if not string.IsNilOrEmpty(self.OptionKey) then
-        return XDataCenter.DrawManager.GetUseDrawInfoByOptionKey(self.OptionKey)
-    else
-        return XDataCenter.DrawManager.GetUseDrawInfoByGroupId(self.Data:GetId())
-    end
-end
-
-return XUiNewGridDrawBanner
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+---@class XUiNewGridDrawBanner
+local XUiNewGridDrawBanner = XClass(XUiNode, "XUiNewGridDrawBanner")
+
+local SkipToDrawLogTabIndex = {
+    BaseRule = 1, -- 基础规则页
+    Preview = 2, -- 掉落详情页
+    EventRule = 4, -- 特定规则页
+}
+
+function XUiNewGridDrawBanner:Ctor(ui, parent, data)
+    self.GameObject = ui.gameObject
+    ---@type UnityEngine.RectTransform
+    self.Transform = ui.transform
+    self.Data = data
+    ---@type XUiNewDrawMain
+    self.Base = parent
+    self.OptionKey = (data.GetOptionKey and data:GetOptionKey()) or ""
+
+    self.BtnSkipList = {}
+
+    self:TryGetComponent()
+    self:SetButtonCallBack()
+    self:Refresh()
+    self:SetImage()
+    self:InitNewDrawComponent()
+    self:SetTextByResourceIds()
+end
+
+function XUiNewGridDrawBanner:Refresh()
+    self:SetUpBottomTimes()
+    self:SetUpRewardPreview()
+    self:SetBannerTime()
+    self:SetSwitchInfo()
+    self:SetNewHandTag()
+    self:SetTime()
+    self:SetCharacterBg()
+    self:SetDrawName()
+    self:SetDrawGroupName()
+end
+
+function XUiNewGridDrawBanner:TryGetComponent()
+    self.PanelTime = self.Transform:FindTransform("PanelTime")
+    self.PanelZs = self.Transform:FindTransformWithSplit("SafeAreaContentPane/PanelZs")
+    for i = 1, 13 do
+       local obj = self.Transform:FindTransform("TxtTime" .. i)
+        if obj then
+            self["TxtTime"..i] = obj:GetComponent(typeof(CS.UnityEngine.UI.Text))
+        end
+    end
+    if self.BtnGo then
+        self.BtnGo = self.BtnGo.transform:GetComponent("XUiButton")
+    end
+    if self.MingyunSelectChoukacounts then
+        self.MingyunSelectChoukacounts = self.MingyunSelectChoukacounts.transform:GetComponent(typeof(CS.UnityEngine.UI.Text))
+    end
+    if self.MingyunNomalChoukacounts then
+        self.MingyunNomalChoukacounts = self.MingyunNomalChoukacounts.transform:GetComponent(typeof(CS.UnityEngine.UI.Text))
+    end
+    if self.PutongSelectChoukacounts then
+        self.PutongSelectChoukacounts = self.PutongSelectChoukacounts.transform:GetComponent(typeof(CS.UnityEngine.UI.Text))
+    end
+    if self.PutongNormalChoukacounts then
+        self.PutongNormalChoukacounts = self.PutongNormalChoukacounts.transform:GetComponent(typeof(CS.UnityEngine.UI.Text))
+    end
+    if self.PifuChoukaCounts then
+        self.PifuChoukaCounts = self.PifuChoukaCounts.transform:GetComponent(typeof(CS.UnityEngine.UI.Text))
+    end
+    if self.TimeTxt then
+        self.TimeTxt = self.TimeTxt.transform:GetComponent(typeof(CS.UnityEngine.UI.Text))
+    end
+    if self.TxtSwitch then
+        self.TxtSwitch = self.TxtSwitch.transform:GetComponent(typeof(CS.UnityEngine.UI.Text))
+    end
+    local btnDrawRule = self.Transform:FindTransform("BtnDrawRule")
+    if btnDrawRule then
+        self.BtnDrawRule = btnDrawRule:GetComponent("XUiButton")
+        -- 迁移到XUiNewDrawMain里的BtnDrawRule上，旧的BtnDrawRule先隐藏
+        self.BtnDrawRule.gameObject:SetActiveEx(false)
+    end
+    local btnSkip = self.Transform:FindTransform("BtnSkip1")
+    if btnSkip then
+        ---@type XUiComponent.XUiButton
+        self.BtnSkip = btnSkip:GetComponent("XUiButton")
+    end
+    
+    local bg = self.Transform:FindTransform("Bg1")
+    if bg then
+        ---@type UnityEngine.UI.RawImage
+        self.RImgBg = bg:GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    end
+    
+    local animationEnable = self.Transform:FindTransform("AnimEnable")
+    if animationEnable then
+        ---@type UnityEngine.Playables.PlayableDirector
+        self.AnimEnable = animationEnable:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
+    end
+
+    local rImgRole = self.Transform:FindTransform("RImgRole")
+    if rImgRole then
+        ---@type UnityEngine.UI.RawImage
+        self.RImgRole = rImgRole:GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    end
+
+    local rImgName = self.Transform:FindTransform("RImgName")
+    if rImgName then
+        ---@type UnityEngine.UI.RawImage
+        self.RImgName = rImgName:GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    end
+
+    local txtRef = self.Transform:FindTransform("TxtRef")
+    if txtRef then
+        self.TxtRef = txtRef:GetComponent(typeof(CS.UnityEngine.UI.Text))
+    end
+
+    local txtName = self.Transform:FindTransform("TxtName")
+    if txtName then
+        self.TxtName = txtName:GetComponent(typeof(CS.UnityEngine.UI.Text))
+    end
+
+    local txtRoleType = self.Transform:FindTransform("TxtRoleType")
+    if txtRoleType then
+        self.TxtRoleType = txtRoleType:GetComponent(typeof(CS.UnityEngine.UI.Text))
+    end
+
+    local imgTypeIcon = self.Transform:FindTransform("ImgTypeIcon")
+    if imgTypeIcon then
+        ---@type UnityEngine.UI.RawImage
+        self.ImgTypeIcon = imgTypeIcon:GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    end
+
+    local txtRoleName = self.Transform:FindTransform("TxtRoleName")
+    if txtRoleName then
+        self.TxtRoleName = txtRoleName:GetComponent(typeof(CS.UnityEngine.UI.Text))
+    end
+
+    local rImgRoleHead = self.Transform:FindTransform("RImgRoleHead")
+    if rImgRoleHead then
+        ---@type UnityEngine.UI.RawImage
+        self.RImgRoleHead = rImgRoleHead:GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    end
+
+    local rImgCubHead = self.Transform:FindTransform("RImgCubHead")
+    if rImgCubHead then
+        ---@type UnityEngine.UI.RawImage
+        self.RImgCubHead = rImgCubHead:GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    end
+
+    self.PanelInfo = self.Transform:FindTransform("PanleInfo")
+
+    local txtNumberType = self.Transform:FindTransform("TxtNumberType")
+    if txtNumberType then
+        self.TxtNumberType = txtNumberType:GetComponent(typeof(CS.UnityEngine.UI.Text))
+    end
+
+    local txtTips = self.Transform:FindTransform("TetTips")
+    if txtTips then
+        self.TxtTips = txtTips:GetComponent(typeof(CS.UnityEngine.UI.Text))
+    end
+
+    local txtDrawName = self.Transform:FindTransform("TxtDrawName")
+    if txtDrawName then
+        self.TxtDrawName = txtDrawName:GetComponent(typeof(CS.UnityEngine.UI.Text))
+    end
+
+    local txtNameChouka = self.Transform:FindTransform("TxtNameChouka")
+    if txtNameChouka then
+        self.TxtNameChouka = txtNameChouka:GetComponent(typeof(CS.UnityEngine.UI.Text))
+    end
+
+    local rImgCharacterBg = self.Transform:FindTransform("RImgCharacterBg")
+    if rImgCharacterBg then
+        self.RImgCharacterBg = rImgCharacterBg:GetComponent(typeof(CS.UnityEngine.UI.RawImage))
+    end
+    if self.RImgCharacterBg then
+        self.RImgCharacterBgParent = self.Transform:FindTransform("RImgBg")
+    end
+
+    -- 校准活动
+    local targetBtnDetails = self.Transform:FindTransformWithSplit("SafeAreaContentPane/BtnDetails")
+    self.TargetBtnDetails = targetBtnDetails and targetBtnDetails:GetComponent("XUiButton") or false
+    if self.TargetBtnDetails then
+        self.IsMultipleUp = true
+        self.TargetPanelSwitchA = self.Transform:FindTransformWithSplit("SafeAreaContentPane/PanelSwitchA")
+        self.TargetPanelSwitchS = self.Transform:FindTransformWithSplit("SafeAreaContentPane/PanelSwitchS")
+    end
+    
+    -- 隐藏所有的跳转按钮
+    local index = 1
+    while true do
+        local btnSkip = self[string.format("BtnSkip%s", tostring(index))]
+        if not btnSkip then
+            break
+        end
+        btnSkip = btnSkip.transform:GetComponent(typeof(CS.UnityEngine.UI.Button))
+        btnSkip.gameObject:SetActiveEx(false)
+        self.BtnSkipList[index] = btnSkip
+        index = index + 1
+    end
+end
+
+function XUiNewGridDrawBanner:SetButtonCallBack()
+    if self.BtnGo then
+        self.BtnGo.CallBack = function()
+            self:OnBtnGoClick()
+        end
+    end
+
+    -- 校准活动
+    if self.TargetBtnDetails then
+        self.TargetBtnDetails.CallBack = function()
+            self:OnClickBtnTargetRule()
+        end
+    end
+
+    -- 添加跳转逻辑并显示跳转按钮
+    if self.BtnSkip then
+        self.BtnSkip.CallBack = function()
+            local drawInfo = self:_GetDrawInfo()
+            local drawId = drawInfo.Id
+            local skipId = XDrawConfigs.GetDrawSkip(drawId)
+            XFunctionManager.SkipInterface(skipId)
+        end
+        local drawInfo = self:_GetDrawInfo()
+        local drawId = drawInfo.Id
+        local skipId = XDrawConfigs.GetDrawSkip(drawId)
+        self.BtnSkip.gameObject:SetActiveEx(XTool.IsNumberValid(skipId))
+    end
+
+    -- if skipId and next(skipId) then
+    --     for i = 2, #skipId do
+    --         if not self.BtnSkipList[i] then
+    --             XLog.Warning(string.format("XUiNewGridDrawBanner:TryGetComponent()函数警告，DrawGroupId:%s 预制界面的跳转按钮不足，第%s个跳转:%s 与后面配置的跳转无法生效",
+    --                     tostring(self.Data.Id), tostring(i), tostring(skipId[i])))
+    --             break
+    --         end
+    --         self.BtnSkipList[i].CallBack = function()
+    --             XFunctionManager.SkipInterface(skipId[i])
+    --         end
+    --         self.BtnSkipList[i].gameObject:SetActiveEx(true)
+    --     end
+    -- end
+    if self.BtnShow then
+        XUiHelper.RegisterClickEvent(self, self.BtnShow, self.OnClickWeaponShow)
+    end
+end
+
+function XUiNewGridDrawBanner:OnClickWeaponShow()
+    local bo = not self.BtnShow:GetToggleState()
+    if self.Base.BtnDrawRule then
+        self.Base.BtnDrawRule.gameObject:SetActiveEx(bo)
+    end
+    self.PanelNumber.gameObject:SetActiveEx(bo)
+    self.Base:HideOrShowOthers(bo)
+    self.PanelWeaponShow.gameObject:SetActiveEx(not bo)
+
+    local drawSceneCfg = XDrawConfigs.GetDrawSceneCfg(self.Base.DrawInfo.Id)
+    if bo then
+        self.Base.DrawScene:LoadWeaponModel(tonumber(drawSceneCfg.ModelId))
+        self.PanelDrag.gameObject:SetActiveEx(false)
+    else
+        self.Base.CurBanner:InitWeaponSwitchBtn()
+        self:UpdateWeaponSwitch(drawSceneCfg)
+        self.PanelDrag.gameObject:SetActiveEx(true)
+    end
+end
+
+function XUiNewGridDrawBanner:OnBtnGoClick()
+    self.Data:GoDraw(function ()
+            self.Base:MarkCurNewTag()
+    end)
+end
+
+function XUiNewGridDrawBanner:OnClickBtnTargetRule()
+    self.TargetBtnDetails.interactable = false
+    local drawInfo = self:_GetDrawInfo()
+    local data = XDataCenter.DrawManager.GetDrawGroupActivityTargetInfo(drawInfo.GroupId)
+    XLuaUiManager.Open("UiDrawLog",drawInfo,data and SkipToDrawLogTabIndex.EventRule or SkipToDrawLogTabIndex.BaseRule,function()
+        self.TargetBtnDetails.interactable = true
+    end, self.OptionKey)
+end
+
+function XUiNewGridDrawBanner:SetUpBottomTimes()
+    if self.MingyunSelectChoukacounts then
+        self.MingyunSelectChoukacounts.text = self:GetBottomText(XDrawConfigs.GroupType.Destiny)
+    end
+    
+    if self.MingyunNomalChoukacounts then
+        self.MingyunNomalChoukacounts.text = self:GetBottomText(XDrawConfigs.GroupType.Destiny)
+    end
+    
+    if self.PutongSelectChoukacounts then
+        self.PutongSelectChoukacounts.text = self:GetBottomText(XDrawConfigs.GroupType.Normal)
+    end
+    
+    if self.PutongNormalChoukacounts then
+        self.PutongNormalChoukacounts.text = self:GetBottomText(XDrawConfigs.GroupType.Normal)
+    end
+
+    if self.PifuChoukaCounts then
+        self.PifuChoukaCounts.text = self.Data:GetBottomText()
+    end
+
+    local drawRules = self.Data:GetDrawRules()
+    if not XTool.IsTableEmpty(drawRules) then
+        if self.TxtNumberType then
+            self.TxtNumberType.text = drawRules[1] or ""
+        end
+        if self.TxtTips then
+            self.TxtTips.text = drawRules[2] or ""
+        end
+    end
+end
+
+function XUiNewGridDrawBanner:GetBottomText(type)
+    local relationGroupData = self.Base:GetRelationGroupData(self.Data:GetId())
+    local bottomText = "———"
+    local count = 0
+    if relationGroupData and relationGroupData:GetGroupType() == type then
+        bottomText = relationGroupData:GetBottomText()
+        count = count + 1
+    end
+    if self.Data:GetGroupType() == type then
+        bottomText = self.Data:GetBottomText()
+        count = count + 1
+    end
+    if count == 2 then
+        XLog.Error("Client/Draw/DrawGroupRelation.tab's Data Is Error: NormalGroupId and DestinyGroupId Is Same Type")
+    end
+    return bottomText
+end
+
+function XUiNewGridDrawBanner:SetUpRewardPreview()
+    if self.Grid256 then
+        local grid = XUiGridCommon.New(self.Base, self.Grid256)
+        local rewardData = self.Data:GetTopRewardData()
+        grid:Refresh(rewardData:GetTemplateId())
+        if self.ImgGet then
+            self.ImgGet.gameObject:SetActiveEx(rewardData:GetIsGeted())
+        end
+    end
+end
+
+function XUiNewGridDrawBanner:SetBannerTime()
+    local beginTime = self.Data:GetBannerBeginTime() or 0
+    local endTime = self.Data:GetBannerEndTime() or 0
+    if self.TimeTxt then
+        self.TimeTxt.gameObject:SetActiveEx(beginTime ~= 0 and endTime ~= 0)
+        local beginTimeStr = XTime.TimestampToGameDateTimeString(beginTime, "MM/dd")
+        local endTimeStr = XTime.TimestampToGameDateTimeString(endTime, "MM/dd HH:mm")
+        self.TimeTxt.text = string.format("%s-%s", beginTimeStr, endTimeStr)
+    end
+    if self.TimeDetail then
+        self.TimeDetail.gameObject:SetActiveEx(beginTime ~= 0 and endTime ~= 0)
+    end
+end
+
+function XUiNewGridDrawBanner:SetNewHandTag()
+    if self.PanelNewHand then
+        self.PanelNewHand.gameObject:SetActiveEx(self.Data:GetMaxBottomTimes() == self.Data:GetNewHandBottomCount())
+    end
+    if self.PanelNewHandTop then
+        self.PanelNewHandTop.gameObject:SetActiveEx(self.Data:GetMaxBottomTimes() == self.Data:GetNewHandBottomCount())
+    end
+end
+
+function XUiNewGridDrawBanner:SetSwitchInfo()
+    if self.TxtSwitch then
+        self.TxtSwitch.text = self.Data:GetSwitchText()
+    end
+end
+
+function XUiNewGridDrawBanner:SetCharacterBg()
+    if not self.RImgCharacterBg then
+        return
+    end
+    local isShow = false
+    local drawGroupRule = XDrawConfigs.GetDrawGroupRuleById(self.Base.GroupId)
+    if drawGroupRule and XTool.IsNumberValid(drawGroupRule.IsCharacterImage) then
+        local drawSceneCfg = XDrawConfigs.GetDrawSceneCfg(self.Base.DrawInfo.Id)
+        local drawShowRImg = drawSceneCfg and XDrawConfigs.GetDrawShowImageCfgById(tonumber(drawSceneCfg.ModelId))
+        if not string.IsNilOrEmpty(drawShowRImg) then
+            isShow = true
+            self.RImgCharacterBg:SetRawImageEx(drawShowRImg)
+        end
+    end
+    if self.RImgCharacterBgParent then
+        self.RImgCharacterBgParent.gameObject:SetActiveEx(isShow)
+    end
+end
+
+function XUiNewGridDrawBanner:SetDrawName()
+    if not self.TxtDrawName then
+        return
+    end
+    local drawGroupRule = XDrawConfigs.GetDrawGroupRuleById(self.Base.GroupId)
+    local hasDrawName = drawGroupRule and not string.IsNilOrEmpty(drawGroupRule.DrawName)
+    self.TxtDrawName.gameObject:SetActiveEx(hasDrawName)
+    if hasDrawName then
+        self.TxtDrawName.text = drawGroupRule.DrawName
+    end
+end
+
+function XUiNewGridDrawBanner:SetDrawGroupName()
+    if not self.TxtNameChouka then
+        return
+    end
+    local drawGroupRule = XDrawConfigs.GetDrawGroupRuleById(self.Base.GroupId)
+    local hasDrawGroupName = drawGroupRule and not string.IsNilOrEmpty(drawGroupRule.DrawGroupName)
+    self.TxtNameChouka.gameObject:SetActiveEx(hasDrawGroupName)
+    if hasDrawGroupName then
+        self.TxtNameChouka.text = drawGroupRule.DrawGroupName
+    end
+end
+
+function XUiNewGridDrawBanner:SetImage(imageList)
+    if self.Base:CheckIsNewDraw() then
+        if self.RImgName then
+            self.RImgName.gameObject:SetActiveEx(false)
+        end
+        return
+    end
+
+    if self.TargetBtnDetails or XDataCenter.DrawManager:CheckIsDevilMayCryDrawId(self.Base.DrawInfo.Id) then
+        if self.RImgBg then self.RImgBg.gameObject:SetActiveEx(false) end
+        if self.RImgRole then self.RImgRole.gameObject:SetActiveEx(false) end
+        if self.RImgName then self.RImgName.gameObject:SetActiveEx(false) end
+        if self.BtnSkip then self.BtnSkip.gameObject:SetActiveEx(false) end
+        return
+    end
+    if not imageList then
+        return
+    end
+    if self.RImgBg then
+        if imageList[1] then
+            self.RImgBg.gameObject:SetActiveEx(true)
+            self.RImgBg:SetRawImage(imageList[1])
+        else
+            self.RImgBg.gameObject:SetActiveEx(false)
+        end
+    end
+    if self.RImgRole then
+        if imageList[2] then
+            self.RImgRole.gameObject:SetActiveEx(true)
+            self.RImgRole:SetRawImage(imageList[2])
+        else
+            self.RImgRole.gameObject:SetActiveEx(false)
+        end
+    end
+    if self.RImgName then
+        if imageList[3] then
+            self.RImgName.gameObject:SetActiveEx(true)
+            self.RImgName:SetRawImage(imageList[3])
+        else
+            self.RImgName.gameObject:SetActiveEx(false)
+        end
+    end
+    if self.BtnSkip then
+        if imageList[4] then
+            self.BtnSkip.gameObject:SetActiveEx(true)
+            self.BtnSkip:SetRawImage(imageList[4])
+        else
+            self.BtnSkip.gameObject:SetActiveEx(false)
+        end
+    end
+    if self.AnimEnable then
+        self.AnimEnable.gameObject:SetActiveEx(false)
+        self.AnimEnable.gameObject:SetActiveEx(true)
+        --self.AnimEnable:Play()
+    end
+end
+
+--region 图片字优化
+
+function XUiNewGridDrawBanner:SetTextByResourceIds(resourceIds)
+    if self.Base:CheckIsNewDraw() then
+        self:SetTextActive(false)
+        return
+    end
+
+    if self.TargetBtnDetails or XDataCenter.DrawManager:CheckIsDevilMayCryDrawId(self.Base.DrawInfo.Id) then
+        self:SetTextActive(false)
+        return
+    end
+    if not resourceIds then
+        return
+    end
+
+    if XTool.IsNumberValid(resourceIds[1]) then
+        local resourceId = resourceIds[1]
+        local arrangeType = XArrangeConfigs.GetType(resourceId)
+        if arrangeType == XArrangeConfigs.Types.Character then
+            self:SetCharacterText(resourceId)
+        elseif arrangeType == XArrangeConfigs.Types.Weapon then
+            self:SetWeaponText(resourceId)
+        elseif arrangeType == XArrangeConfigs.Types.Partner then
+            self:SetPartnerText(resourceId)
+        else
+            self:SetTextActive(false)
+        end
+    else
+        self:SetTextActive(false)
+    end
+end
+
+function XUiNewGridDrawBanner:SetTextActive(isActive)
+    if self.TxtRef then
+        self.TxtRef.gameObject:SetActiveEx(isActive)
+    end
+    if self.TxtName then
+        self.TxtName.gameObject:SetActiveEx(isActive)
+    end
+    if self.TxtRoleType then
+        self.TxtRoleType.gameObject:SetActiveEx(isActive)
+    end
+    if self.ImgTypeIcon then
+        self.ImgTypeIcon.gameObject:SetActiveEx(isActive)
+    end
+    if self.TxtRoleName then
+        self.TxtRoleName.gameObject:SetActiveEx(isActive)
+    end
+    if self.RImgRoleHead then
+        self.RImgRoleHead.gameObject:SetActiveEx(isActive)
+    end
+    if self.RImgCubHead then
+        self.RImgCubHead.gameObject:SetActiveEx(isActive)
+    end
+    if self.PanelInfo then
+        self.PanelInfo.gameObject:SetActiveEx(isActive)
+    end
+end
+
+function XUiNewGridDrawBanner:SetCharacterText(resourceId)
+    local characterData = self:GetCharacterData(resourceId)
+    self:SetTextActive(characterData ~= nil)
+    if not characterData then
+        return
+    end
+    if self.TxtRef then
+        self.TxtRef.text = characterData.Code
+    end
+    if self.TxtName then
+        self.TxtName.text = characterData.LogName
+    end
+    if self.TxtRoleType then
+        self.TxtRoleType.text = XUiHelper.GetText("DrawBannerRoleTypeText", characterData.ElementName, characterData.CareerName)
+    end
+    if self.ImgTypeIcon then
+        self.ImgTypeIcon:SetRawImageEx(characterData.ElementIcon)
+    end
+end
+
+---@return { LogName: string, ElementIcon: string, ElementName: string, CareerName string, Code: string}
+function XUiNewGridDrawBanner:GetCharacterData(characterId)
+    local config = XMVCA.XCharacter:GetCharacterTemplate(characterId)
+    if not config then
+        return nil
+    end
+
+    local elementConfig = XMVCA.XCharacter:GetCharElement(config.Element)
+    local careerConfig = XMVCA.XCharacter:GetNpcTypeTemplate(config.Career)
+    if not elementConfig or not careerConfig then
+        return nil
+    end
+
+    return {
+        LogName = config.LogName,
+        ElementIcon = elementConfig.Icon2,
+        ElementName = elementConfig.ElementName,
+        CareerName = careerConfig.Name,
+        Code = config.Code,
+    }
+end
+
+function XUiNewGridDrawBanner:SetWeaponText(resourceId)
+    local weaponData = self:GetWeaponData(resourceId)
+    self:SetTextActive(weaponData ~= nil)
+    if not weaponData then
+        return
+    end
+    if self.TxtName then
+        self.TxtName.text = weaponData.Name
+    end
+    if self.TxtRoleName then
+        self.TxtRoleName.text = weaponData.RoleName
+    end
+    if self.RImgRoleHead then
+        self.RImgRoleHead:SetRawImageEx(weaponData.RoleHead)
+    end
+end
+
+---@return { Name: string, RoleName: string, RoleHead: string}
+function XUiNewGridDrawBanner:GetWeaponData(weaponId)
+    local characterId = XMVCA.XEquip:GetEquipRecommendCharacterId(weaponId)
+    if not XTool.IsNumberValid(characterId) then
+        return nil
+    end
+
+    return {
+        Name = XMVCA.XEquip:GetEquipName(weaponId),
+        RoleName = XMVCA.XCharacter:GetCharacterLogName(characterId),
+        RoleHead = XDataCenter.FashionManager.GetSmallHeadIconByCharacterId(characterId),
+    }
+end
+
+function XUiNewGridDrawBanner:SetPartnerText(resourceId)
+    local partnerData = self:GetPartnerData(resourceId)
+    self:SetTextActive(partnerData ~= nil)
+    if not partnerData then
+        return
+    end
+    if self.TxtName then
+        self.TxtName.text = partnerData.Name
+    end
+    if self.TxtRoleName then
+        self.TxtRoleName.text = partnerData.RoleName
+    end
+    if self.RImgRoleHead then
+        self.RImgRoleHead:SetRawImageEx(partnerData.RoleHead)
+    end
+    if self.RImgCubHead then
+        self.RImgCubHead:SetRawImageEx(partnerData.CubHead)
+    end
+end
+
+---@return { Name: string, RoleName: string, RoleHead: string, CubHead: string}
+function XUiNewGridDrawBanner:GetPartnerData(partnerId)
+    local characterId = XPartnerConfigs.GetPartnerRecommendCharacterId(partnerId)
+    if not XTool.IsNumberValid(characterId) then
+        return nil
+    end
+
+    return {
+        Name = XPartnerConfigs.GetPartnerTemplateName(partnerId),
+        RoleName = XMVCA.XCharacter:GetCharacterLogName(characterId),
+        RoleHead = XDataCenter.FashionManager.GetSmallHeadIconByCharacterId(characterId),
+        CubHead = XPartnerConfigs.GetPartnerTemplateIcon(partnerId),
+    }
+end
+
+--endregion
+
+function XUiNewGridDrawBanner:SetTime()
+
+    local drawInfo = self:_GetDrawInfo()
+
+    local beginTimeStr = drawInfo.StartTime
+    local endTimeStr = drawInfo.EndTime
+
+    if self.PanelZs then
+        self.PanelZs.gameObject:SetActiveEx (beginTimeStr == 0 or endTimeStr == 0)
+    end
+    if not self.PanelTime then
+        return
+    end
+    self.PanelTime.gameObject:SetActiveEx(beginTimeStr ~= 0 and endTimeStr ~= 0)
+    if beginTimeStr then
+        if self.TxtTime1 then self.TxtTime1.text = XTime.TimestampToGameDateTimeString(beginTimeStr, "MM") end
+        if self.TxtTime3 then self.TxtTime3.text = XTime.TimestampToGameDateTimeString(beginTimeStr, "dd") end
+        if self.TxtTime11 then self.TxtTime11.text = XTime.TimestampToGameDateTimeString(beginTimeStr, "HH") end
+        if self.TxtTime13 then self.TxtTime13.text = XTime.TimestampToGameDateTimeString(beginTimeStr, "mm") end
+    end
+    if endTimeStr then
+        if self.TxtTime5 then self.TxtTime5.text = XTime.TimestampToGameDateTimeString(endTimeStr, "MM") end
+        if self.TxtTime7 then self.TxtTime7.text = XTime.TimestampToGameDateTimeString(endTimeStr, "dd") end
+        if self.TxtTime8 then self.TxtTime8.text = XTime.TimestampToGameDateTimeString(endTimeStr, "HH") end
+        if self.TxtTime10 then self.TxtTime10.text = XTime.TimestampToGameDateTimeString(endTimeStr, "mm") end
+    end
+end
+
+--region 武器阶段展示
+
+function XUiNewGridDrawBanner:InitWeaponSwitchBtn()
+    if not self.WeaponsSwitch then
+        return
+    end
+    if not self.BtnSwitchModelList then
+        self.BtnSwitchModelList = {
+            self.WeaponsSwitchItem1,
+            self.WeaponsSwitchItem2,
+            self.WeaponsSwitchItem3,
+            self.WeaponsSwitchItem4,
+        }
+        self.WeaponsSwitch:Init(self.BtnSwitchModelList, handler(self, self.OnTabBtnGroupClick))
+    end
+end
+
+function XUiNewGridDrawBanner:OnTabBtnGroupClick(index)
+    if self.SelectWeaponIndex == index or not self.ModelCfgList or #self.ModelCfgList <= 1 then
+        return
+    end
+    self.SelectWeaponIndex = index
+    self.Base.DrawScene:LoadWeaponModelBySwitch(self.ModelCfgList[index], self.PanelDrag)
+end
+
+function XUiNewGridDrawBanner:UpdateWeaponSwitch(drawCfg)
+    local templateId = tonumber(drawCfg.ModelId)
+    self.ModelCfgList = XMVCA.XEquip:GetWeaponModelCfgList(templateId, self.Base.Name, 0)
+    local modelCount = #self.ModelCfgList
+
+    local firstModelIndex = 1
+    if modelCount <= firstModelIndex then
+        self.PanelWeaponShow.gameObject:SetActiveEx(false)
+        if modelCount == firstModelIndex then
+            self.Base.DrawScene:LoadWeaponModelBySwitch(self.ModelCfgList[firstModelIndex], self.PanelDrag)
+        end
+    else
+        self.PanelWeaponShow.gameObject:SetActiveEx(true)
+        self.SelectWeaponIndex = nil
+        for i, btn in ipairs(self.BtnSwitchModelList) do
+            btn.gameObject:SetActiveEx(i <= modelCount)
+        end
+        if not self.SelectWeaponIndex and modelCount > 0 then
+            self.WeaponsSwitch:SelectIndex(1)
+        end
+    end
+end
+
+--endregion
+
+--region 新活动卡池
+
+function XUiNewGridDrawBanner:InitNewDrawComponent()
+    if self.DrawCollaborationNew then
+        self.NewDrawUiObject = {}
+        XUiHelper.InitUiClass(self.NewDrawUiObject, self.DrawCollaborationNew)
+        XUiHelper.RegisterClickEvent(self, self.NewDrawUiObject.BtnChoose, self.OnBtnChooseClick)
+        XUiHelper.RegisterClickEvent(self, self.NewDrawUiObject.BtnChooseEmpty, self.OnBtnChooseClick)
+        XUiHelper.RegisterClickEvent(self, self.NewDrawUiObject.BtnOptionalDraw, self.OnBtnChooseClick)
+    end
+end
+
+function XUiNewGridDrawBanner:UpdateNewDrawView(drawCfg, modelId)
+    if not self.NewDrawUiObject then
+        return
+    end
+    local groupInfo = XDataCenter.DrawManager.GetDrawGroupInfoByGroupId(self.Base.GroupId)
+    local hasChosen
+    if not string.IsNilOrEmpty(self.OptionKey) then
+        hasChosen = XTool.IsNumberValid(XDataCenter.DrawManager.GetRealUseDrawIdByOptionKey(self.OptionKey))
+    else
+        hasChosen = XTool.IsNumberValid((groupInfo.UseDrawIdDict or {})[0])
+    end
+    self.NewDrawUiObject.PanelChar.gameObject:SetActiveEx(hasChosen)
+    self.NewDrawUiObject.PanelRole.gameObject:SetActiveEx(hasChosen)
+    self.NewDrawUiObject.PanelEmpty.gameObject:SetActiveEx(not hasChosen)
+    self.NewDrawUiObject.BtnChoose.gameObject:SetActiveEx(hasChosen)
+    self.NewDrawUiObject.BtnChooseEmpty.gameObject:SetActiveEx(not hasChosen)
+    if hasChosen then
+        local targetId = tonumber(modelId or drawCfg.ModelId)
+        ---@type XTableCharacter
+        local config = XMVCA.XCharacter:GetCharacterTemplate(targetId)
+        local elementConfig = XMVCA.XCharacter:GetCharElement(config.Element)
+        self.NewDrawUiObject.TxtCareer.text = XMVCA.XCharacter:GetCareerName(config.Career)
+        self.NewDrawUiObject.TxtCharName.text = config.LogName
+        self.NewDrawUiObject.ImgElement:SetRawImage(elementConfig.Icon2)
+        self.NewDrawUiObject.TypeNum.text = XMVCA.XCharacter:GetCharacterCodeStr(targetId)
+    end
+end
+
+function XUiNewGridDrawBanner:UpdateNewDrawChar(roleUrl, isQualityShow, qualityIcon)
+    if not self.NewDrawUiObject then
+        return
+    end
+    self.NewDrawUiObject.RImgRoleNew:SetRawImage(roleUrl)
+    self.NewDrawUiObject.ImgQuality.gameObject:SetActiveEx(isQualityShow)
+    if isQualityShow then
+        self.Base:SetUiSprite(self.NewDrawUiObject.ImgQuality, qualityIcon)
+    end
+end
+
+function XUiNewGridDrawBanner:OnBtnChooseClick()
+    self.Base:OnBtnOptionDrawClick()
+end
+
+--endregion
+
+--- 获取当前 DrawInfo（优先使用 OptionKey 维度）
+function XUiNewGridDrawBanner:_GetDrawInfo()
+    if not string.IsNilOrEmpty(self.OptionKey) then
+        return XDataCenter.DrawManager.GetUseDrawInfoByOptionKey(self.OptionKey)
+    else
+        return XDataCenter.DrawManager.GetUseDrawInfoByGroupId(self.Data:GetId())
+    end
+end
+
+return XUiNewGridDrawBanner

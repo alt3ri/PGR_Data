@@ -34,6 +34,9 @@ local XUiLifeTreeCardGridRegularCard = require("XUi/XUiLifeTree/XUiLifeTreeCard/
 ---@field PanelCard UnityEngine.RectTransform
 ---@field BtnSwitch XUiComponent.XUiButton
 ---@field TxtTaskProgress UnityEngine.UI.Text
+---@field BtnConstellation XUiComponent.XUiButton
+---@field RawImageIconBg UnityEngine.UI.Image
+
 local XUiLifeTreeCard = XLuaUiManager.Register(XLuaUi, "UiLifeTreeCard")
 function XUiLifeTreeCard:OnAwake()
     self:InitComponents()
@@ -45,6 +48,10 @@ function XUiLifeTreeCard:InitComponents()
     self.BtnMainUi:AddEventListener(function() self:OnBtnMainUiClick() end)
     self.BtnTask:AddEventListener(function() self:OnBtnTaskClick() end)
     self.BtnSwitch:AddEventListener(function() self:OnBtnSwitchClick() end)
+    -- 4.6新增按钮，判空保护
+    if self.BtnConstellation then
+        self.BtnConstellation:AddEventListener(function() self:OnBtnConstellationClick() end)
+    end
 
     self._Grid256NewArray = {}
     if self.Grid256New then
@@ -56,10 +63,10 @@ function XUiLifeTreeCard:OnStart(constellationId)
     self.ConstellationId = constellationId
     self.DivineCharacterCatalogId = self._Control:GetConstellationDivineCharacterCatalogId(constellationId) -- 神卡CatalogId
     local unlockCount = self._Control:GetCharacterUnlockCountByCatalogId(self.DivineCharacterCatalogId)
-    self.ConstellationStateIndex = unlockCount >= 1 and unlockCount or 1 -- 星座状态下标
+    self.ConstellationStateIndex = unlockCount >= 1 and unlockCount or 1                                    -- 星座状态下标
     local config = self._Control:GetLifeTreeConstellationConfigById(self.ConstellationId)
-    self.ConstellationStateCount = #config.Names -- 星座状态数量
-    self:PlayEnableAnim() -- 播放Enable动画
+    self.ConstellationStateCount = #config.Names                                                            -- 星座状态数量
+    self:PlayEnableAnim()                                                                                   -- 播放Enable动画
     self:InitCards()
 end
 
@@ -100,6 +107,11 @@ function XUiLifeTreeCard:OnBtnSwitchClick()
     self:RefreshConstellation()
 end
 
+function XUiLifeTreeCard:OnBtnConstellationClick()
+    -- 打开星座详情弹窗
+    XLuaUiManager.Open("UiLifeTreeConstellationDetail", self.ConstellationId, self.ConstellationStateIndex)
+end
+
 -- 播放Enable动画
 function XUiLifeTreeCard:PlayEnableAnim()
     local stateType = self._Control:GetCharacterDivineState(self.DivineCharacterCatalogId)
@@ -113,7 +125,7 @@ function XUiLifeTreeCard:InitCards()
     self.GridDivineCard.gameObject:SetActiveEx(false)
     self.GridRegularCard.gameObject:SetActiveEx(false)
     self.GridBasicCard.gameObject:SetActiveEx(false)
-    
+
     -- 隐藏所有挂点
     local childCnt = self.CardLinks.childCount
     for i = 1, childCnt do
@@ -129,19 +141,19 @@ function XUiLifeTreeCard:InitCards()
         local catalogConfig = self._Control:GetLifeTreeCharacterCatalogConfigById(catalogId)
         local parent = self[catalogConfig.UiLifeTreeCardLink]
         parent.gameObject:SetActiveEx(true)
-        
+
         -- 设置位置
         if not string.IsNilOrEmpty(catalogConfig.LinkPos) then
             local posParams = string.Split(catalogConfig.LinkPos, "|")
-            parent.transform.localPosition = XLuaVector3.New(tonumber(posParams[1]), tonumber(posParams[2]), tonumber(posParams[3]))
+            parent.transform:SetLocalPosition(tonumber(posParams[1]), tonumber(posParams[2]), tonumber(posParams[3]))
         end
-        
+
         -- 设置缩放
         if XTool.IsNumberValidEx(catalogConfig.LinkScaleWan) then
             local scale = catalogConfig.LinkScaleWan / 10000
-            parent.transform.localScale = XLuaVector3.New(scale,scale,scale)
+            parent.transform:SetLocalScale(scale, scale, scale)
         end
-        
+
         if catalogConfig.CardType == XMVCA.XLifeTree.EnumConst.CARD_TYPE.DIVINE then
             local go = CSInstantiate(self.GridDivineCard, parent)
             self.GridCards[catalogId] = XUiLifeTreeCardGridDivineCard.New(go, self, catalogId)
@@ -150,11 +162,12 @@ function XUiLifeTreeCard:InitCards()
             self.GridCards[catalogId] = XUiLifeTreeCardGridRegularCard.New(go, self, catalogId)
         elseif catalogConfig.CardType == XMVCA.XLifeTree.EnumConst.CARD_TYPE.BASIC then
             local go = CSInstantiate(self.GridBasicCard, parent)
+            -- 逻辑不同，但未进行注释，需要注意是否为特殊处理
             self.GridCards[catalogId] = XUiLifeTreeCardGridRegularCard.New(go, self, catalogId)
         end
         self.GridCards[catalogId]:Open()
     end
-    
+
     -- 旁白
     local isShowTips = not string.IsNilOrEmpty(constellationConfig.AsideTips)
     self.PanelCardTips.gameObject:SetActiveEx(isShowTips)
@@ -185,26 +198,27 @@ function XUiLifeTreeCard:RefreshConstellation()
     self.RawImageIcon:SetRawImage(config.Icons[self.ConstellationStateIndex])
     self.TxtTitle.text = config.Names[self.ConstellationStateIndex]
     self.TxtDesc.text = config.Descs[self.ConstellationStateIndex]
+    self.RawImageIconBg.color = XUiHelper.Hexcolor2Color(self._Control:GetLifeTreeClientConfigConfigById("ConstellationStateColor").Values[self.ConstellationStateIndex] or "#FFFFFF")
 
     -- 切换按钮
-    local unlockCount = self._Control:GetCharacterUnlockCountByCatalogId(self.DivineCharacterCatalogId)
-    local isShowSwitch = #config.Names > 1 and unlockCount > 1 -- 有多个状态且神卡已解锁超过1个状态才显示切换按钮
-    self.BtnSwitch.gameObject:SetActiveEx(isShowSwitch)
+    -- local unlockCount = self._Control:GetCharacterUnlockCountByCatalogId(self.DivineCharacterCatalogId)
+    -- local isShowSwitch = #config.Names > 1 and unlockCount > 1 -- 有多个状态且神卡已解锁超过1个状态才显示切换按钮
+    -- self.BtnSwitch.gameObject:SetActiveEx(isShowSwitch)
 
-    -- 按钮状态
-    if isShowSwitch then
-        local isSelect = self.ConstellationStateIndex > 1 -- 第2个状态切换Select状态
-        local state = isSelect and XUiButtonState.Select or XUiButtonState.Normal
-        self.BtnSwitch:SetButtonState(state)
-        self.BtnSwitch.TempState = state
-    end
+    -- -- 按钮状态
+    -- if isShowSwitch then
+    --     local isSelect = self.ConstellationStateIndex > 1 -- 第2个状态切换Select状态
+    --     local state = isSelect and XUiButtonState.Select or XUiButtonState.Normal
+    --     self.BtnSwitch:SetButtonState(state)
+    --     self.BtnSwitch.TempState = state
+    -- end
 end
 
 function XUiLifeTreeCard:RefreshBtnTask()
     local config = self._Control:GetLifeTreeConstellationConfigById(self.ConstellationId)
     local rewardItems = XRewardManager.GetRewardList(config.PreviewRewardId)
     XTool.UpdateDynamicGridCommon(self._Grid256NewArray, rewardItems, self.Grid256New, self)
-    
+
     local finishCnt = 0
     local allCnt = #config.TaskIds
     for _, taskId in ipairs(config.TaskIds) do

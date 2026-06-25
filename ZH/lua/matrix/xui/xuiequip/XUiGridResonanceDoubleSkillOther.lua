@@ -33,11 +33,7 @@ function XUiGridResonanceDoubleSkillOther:RefreshBySite(equipData, characterId, 
 end
 
 function XUiGridResonanceDoubleSkillOther:RefreshResonanceSkill()
-    local resonanceSkillNum = 0
-    local resonanceInfo = self.EquipData.ResonanceInfo
-    if resonanceInfo then
-        resonanceSkillNum = XTool.GetTableCount(resonanceInfo)
-    end
+    local resonanceSkillNum = self.EquipData:GetResonanceCount()
     if resonanceSkillNum == 0 then
         --穿戴中的装备无共鸣技能
         self.PanelEmpty.gameObject:SetActiveEx(true)
@@ -49,7 +45,7 @@ function XUiGridResonanceDoubleSkillOther:RefreshResonanceSkill()
         --有共鸣技能时
         for skillIndex = 1, XEnumConst.EQUIP.AWARENESS_RESONANCE_COUNT do
             local go = self["GridResnanceSkill" .. skillIndex]
-            local haveResonance = resonanceInfo[skillIndex]
+            local haveResonance = self.EquipData:GetResonanceInfo(skillIndex)
             go.gameObject:SetActiveEx(haveResonance)
             self["PanelNoEquip0" .. skillIndex].gameObject:SetActiveEx(not haveResonance)
             if haveResonance then
@@ -64,7 +60,7 @@ function XUiGridResonanceDoubleSkillOther:RefreshResonanceSkill()
                 grid:SetEquipIdAndPos(self.EquipData, skillIndex)
                 grid:SetCharacterId(self.CharacterId)
                 local skillInfo = XMVCA.XEquip:GetResonanceSkillInfoByEquipData(self.EquipData, skillIndex)
-                grid:Refresh(skillInfo, self.EquipData.ResonanceInfo[skillIndex].CharacterId)
+                grid:Refresh(skillInfo, self.EquipData:GetResonanceBindCharacterId(skillIndex))
             end
         end
         self.PanelEmpty.gameObject:SetActiveEx(false)

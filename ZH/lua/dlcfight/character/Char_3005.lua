@@ -15,7 +15,6 @@ function XCharTest:CommonInit()
     self:InitHandleJumpTurnSpeedParams()
     -- 这其实是每个Npc都在调用Camera的全局开关, 行为树版本也一样，待v0.3或v0.4版本优化
     self._proxy:SetCameraIgnoreHeightLerpOnAir(false)
-    self._proxy:SetNpcMoveDirection(self._uuid,ENpcMoveDirection.Forward)--程序代码问题，这里初始化设置默认值解决一下4.5的问题
 end
 
 ---@param dt number @ delta time

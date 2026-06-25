@@ -62,6 +62,14 @@ function XBWCourseVersionEntity:IsTaskComplete()
     return true
 end
 
+function XBWCourseVersionEntity:IsReddot()
+    if not self:IsNil() then
+        return XMVCA.XBigWorldCourse:CheckVersionAchieved(self:GetVersionId())
+    end
+
+    return false
+end
+
 function XBWCourseVersionEntity:SetVersionId(versionId)
     self._VersionId = versionId or 0
     self:_InitContent()

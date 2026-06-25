@@ -47,23 +47,23 @@ function XChar8227:HandleEvent(eventType, eventArgs)
     XTheatre6CharBase.HandleEvent(self, eventType, eventArgs)
 end
 
-function XChar8227:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
-    XTheatre6CharBase.OnNpcAddBuffEvent(self, casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
-    --如果不是自身加buff返回
-    if npcUUID ~= self._uuid then
-        return
-    end
-    --动作属于BaseLayer
-    if buffId == 8227024 then
+-- function XChar8227:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
+--     XTheatre6CharBase.OnNpcAddBuffEvent(self, casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
+--     --如果不是自身加buff返回
+--     if npcUUID ~= self._uuid then
+--         return
+--     end
+--     --动作属于BaseLayer
+--     if buffId == 1025001 then
 --         XLog.Warning("切换状态机为0")
-        self._proxy:SetNpcAnimationLayer(self._uuid, 0)
-    end
-    --动作属于Layer1
-    if buffId == 8227023 then
+--         self._proxy:SetNpcAnimationLayer(self._uuid, 0)
+--     end
+--     --动作属于Layer1
+--     if buffId == 1025002 then
 --         XLog.Warning("切换状态机为1")
-        self._proxy:SetNpcAnimationLayer(self._uuid, 1)
-    end
-end
+--         self._proxy:SetNpcAnimationLayer(self._uuid, 1)
+--     end
+-- end
 
 function XChar8227:OnNpcSkillActionKeyframeSendEvent(launcher, eventName, skillActionId, keyFrameId, skillId)
     XTheatre6CharBase.OnNpcSkillActionKeyframeSendEvent(self, launcher, eventName, skillActionId, keyFrameId, skillId)

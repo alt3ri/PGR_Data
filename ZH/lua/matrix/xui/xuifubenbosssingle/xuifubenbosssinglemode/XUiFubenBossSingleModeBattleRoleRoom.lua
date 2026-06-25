@@ -95,13 +95,48 @@ function XUiFubenBossSingleModeBattleRoleRoom:EnterFight(team, stageId, challeng
     local content = XUiHelper.ReplaceUnicodeSpace(XUiHelper.GetText("BossSingleModeEnterFightTip", characterText,
         stageText))
 
-    if isClash then
-        XUiManager.DialogTip(XUiHelper.GetText("TipTitle"), content, XUiManager.DialogType.Normal, nil, function()
-            self.Super.EnterFight(self, team, stageId, challengeCount, isAssist)
-        end)
-    else
+    local function enterFight(cont)
         self.Super.EnterFight(self, team, stageId, challengeCount, isAssist)
+        cont()
     end
+
+    local function teamChangeCheck(cont)
+        local isChange = XMVCA.XFubenBossSingle:CheckTeamDifferentWithRecord(
+                stageId,
+                team)
+
+        if isChange then
+            XUiManager.DialogTip(
+                nil,
+                XUiHelper.GetText("BossSingleChangeMember"),
+                XUiManager.DialogType.Normal,
+                nil,
+                cont)
+        else
+            cont()
+        end
+    end
+
+    local function clashCheck(cont)
+        if isClash then
+            XUiManager.DialogTip(
+                XUiHelper.GetText("TipTitle"),
+                content,
+                XUiManager.DialogType.Normal,
+                nil,
+                cont)
+        else
+            cont()
+        end
+    end
+
+    local enterFightChain = XTool.ChainContinuations({
+        clashCheck,
+        teamChangeCheck,
+        enterFight
+    })
+
+    enterFightChain()
 end
 
 function XUiFubenBossSingleModeBattleRoleRoom:AOPOnRefreshRecommendGeneralSkillBefore(rootUi, skillUi)

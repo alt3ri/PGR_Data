@@ -401,11 +401,11 @@
     },
     {
         "Key": "DailyActiveRewardTitle",
-        "Text": "\u5956\u52b1\u8be6\u60c5"
+        "Text": "\u8be6\u60c5"
     },
     {
         "Key": "WeeklyActiveRewardTitle",
-        "Text": "\u5956\u52b1\u8be6\u60c5"
+        "Text": "\u8be6\u60c5"
     },
     {
         "Key": "SettingCheckSave",
@@ -3033,7 +3033,7 @@
     },
     {
         "Key": "ExploreRewardTitle",
-        "Text": "\u5956\u52b1\u8be6\u60c5"
+        "Text": "\u8be6\u60c5"
     },
     {
         "Key": "ExploreExplain",
@@ -5240,6 +5240,10 @@
         "Text": "\u8fb9\u754c\u9a7b\u5b88"
     },
     {
+        "Key": "CharacterSkillLevelDetailWeaponOverrun",
+        "Text": "\u6b66\u5668\u8d85\u9650"
+    },
+    {
         "Key": "CharacterSkillLevelDetail",
         "Text": "\uff08+{0}\uff09"
     },
@@ -5993,7 +5997,7 @@
     },
     {
         "Key": "ActivityBossSingleSchedule",
-        "Text": "{0}/<color=#00EEEE><size=28>{1}</size></color>"
+        "Text": "{0}/<color=#00000><size=20>{1}</size></color>"
     },
     {
         "Key": "GuildSettingLevelLessThanZero",
@@ -11290,6 +11294,26 @@
     {
         "Key": "FashionStoryProcess",
         "Text": "\u8fdb\u5ea6\uff1a{0}/{1}"
+    },
+    {
+        "Key": "FashionStoryRewardLock",
+        "Text": "{0}\u540e\u6d3b\u52a8\u9886\u53d6"
+    },
+    {
+        "Key": "FashionStoryRewardGo",
+        "Text": "\u524d\u5f80\u9886\u53d6"
+    },
+    {
+        "Key": "FashionStoryRewardReceived",
+        "Text": "\u5df2\u9886\u53d6"
+    },
+    {
+        "Key": "FashionStoryRewardActivityEnd",
+        "Text": "\u6d3b\u52a8\u7ed3\u675f"
+    },
+    {
+        "Key": "FashionStoryUnlockAfterTime",
+        "Text": "{0}\u540e\u5f00\u542f"
     },
     {
         "Key": "SocialBlackTipsDesc",
@@ -16736,6 +16760,38 @@
         "Text": "\u65e0\u610f\u8bc6\u5957\u88c5\u6548\u679c\u53ef\u989d\u5916\u6fc0\u6d3b\uff0c\u662f\u5426\u8981\u6fc0\u6d3b\u5e76\u7ed1\u5b9a<color=#0E70BD>\u3010{0}\u3011</color>?"
     },
     {
+        "Key": "EquipOverrunUnActive",
+        "Text": "\u672a\u6fc0\u6d3b"
+    },
+    {
+        "Key": "EquipOverrunUnBindSuit",
+        "Text": "<color=#6F6F6F>\u672a\u7ed1\u5b9a\u610f\u8bc6</color>"
+    },
+    {
+        "Key": "EquipOverrunSkillTitleUnlock",
+        "Text": "\u6280\u80fd\u5f3a\u5316"
+    },
+    {
+        "Key": "EquipOverrunSkillTitleStrength",
+        "Text": "\u6280\u80fd\u89e3\u9501"
+    },
+    {
+        "Key": "EquipOverrunUnlockBeforeSkillTips",
+        "Text": "%s"
+    },
+    {
+        "Key": "EquipOverrunCharacterSkillTagName",
+        "Text": "\u8c10\u632f\u6280\u80fd"
+    },
+    {
+        "Key": "EquipOverrunCharacterSkillTagIcon",
+        "Text": "Assets/Product/Texture/Image/IconSkill/lanse07.png"
+    },
+    {
+        "Key": "EquipOverrunCharacterWearTips",
+        "Text": "\u7a7f\u6234\u6b66\u5668-%s"
+    },
+    {
         "Key": "TransfiniteRewardReceive",
         "Text": "\u5df2\u9886\u53d6"
     },
@@ -18453,7 +18509,99 @@
     },
     {
         "Key": "BossInshotToastTowerDescDownProtected",
-        "Text": "\u9996\u6b21\u672a\u8fbe{0}\uff0c\u4e0d\u964d\u5c42\u3002"
+        "Text": "\u9996\u6b21\u672a\u8fbe{0}\u5206\uff0c\u4e0d\u964d\u5c42\u3002"
+    },
+    {
+        "Key": "BossInshotTowerFloor",
+        "Text": "{0}F"
+    },
+    {
+        "Key": "BossInshotTowerLevelSelectorBtnNoScore",
+        "Text": "--"
+    },
+    {
+        "Key": "BossInshotTowerLevelLockedBecauseNotInTime",
+        "Text": "\u5173\u5361\u672a\u5230\u89e3\u9501\u65f6\u95f4\u3002"
+    },
+    {
+        "Key": "BossInshotTowerLevelLockedBecauseUnknown",
+        "Text": "\u56e0\u672a\u77e5\u539f\u56e0\u5173\u5361\u6ca1\u6709\u89e3\u9501\u3002"
+    },
+    {
+        "Key": "BossInshotTowerLevelLockedBecauseNotReach",
+        "Text": "\u7b2c{0}\u5c42\u5206\u6570\u5230\u8fbe{1}\u540e\u89e3\u9501\u3002"
+    },
+    {
+        "Key": "BossInshotTowerScoreTipUnlockNext",
+        "Text": "{0}\u5206\u89e3\u9501\u4e0b\u4e00\u5c42"
+    },
+    {
+        "Key": "BossInshotTowerScoreTipUnlockNextFail2",
+        "Text": "{0}\u5206\u89e3\u9501\u4e0b\u4e00\u5c42\uff0c\u4e24\u6b21\u672a\u8fbe\u6210\u5c06\u964d\u81f3{1}F\u3002"
+    },
+    {
+        "Key": "BossInshotTowerScoreTipUnlockNextFail1",
+        "Text": "{0}\u5206\u89e3\u9501\u4e0b\u4e00\u5c42\uff0c\u672c\u6b21\u672a\u8fbe\u6210\u5c06\u964d\u81f3{1}F\u3002"
+    },
+    {
+        "Key": "BossInshotTowerScoreTipUnlockNextFailN",
+        "Text": "{0}\u5206\u89e3\u9501\u4e0b\u4e00\u5c42\uff0c{2}\u6b21\u672a\u8fbe\u6210\u5c06\u964d\u81f3{1}F\u3002"
+    },
+    {
+        "Key": "BossInshotTowerScoreTipFinalFail2",
+        "Text": "{0}\u5206\u901a\u5173\u672c\u5c42\uff0c\u4e24\u6b21\u672a\u8fbe\u6210\u5c06\u964d\u81f3{1}F\u3002"
+    },
+    {
+        "Key": "BossInshotTowerScoreTipFinalFail1",
+        "Text": "{0}\u5206\u901a\u5173\u672c\u5c42\uff0c\u672c\u6b21\u672a\u8fbe\u6210\u5c06\u964d\u81f3{1}F\u3002"
+    },
+    {
+        "Key": "BossInshotTowerScoreTipFinalFailN",
+        "Text": "{0}\u5206\u901a\u5173\u672c\u5c42\uff0c{2}\u6b21\u672a\u8fbe\u6210\u5c06\u964d\u81f3{1}F\u3002"
+    },
+    {
+        "Key": "BossInshotTowerScoreTipStageClear",
+        "Text": "\u6b64\u5c42\u5df2\u901a\u5173"
+    },
+    {
+        "Key": "BossInshotTowerScoreTipAllClear",
+        "Text": "\u5df2\u901a\u5173\uff0c\u4e0d\u518d\u89e6\u53d1\u964d\u5c42"
+    },
+    {
+        "Key": "BossInshotTowerChangeBossRanking",
+        "Text": "NO. {0}"
+    },
+    {
+        "Key": "BossInshotTowerChangeBossNoRanking",
+        "Text": "\u672a\u4e0a\u699c"
+    },
+    {
+        "Key": "BossInshotSettlementTowerTipRetryWin",
+        "Text": "\u6b64\u5c42\u5df2\u901a\u5173"
+    },
+    {
+        "Key": "BossInshotSettlementTowerTipNextLevelUnlocked",
+        "Text": "\u5df2\u89e3\u9501\u4e0b\u4e00\u5c42"
+    },
+    {
+        "Key": "BossInshotSettlementTowerTipNextLevelNotUnlocked",
+        "Text": "{0}\u5206\u89e3\u9501\u4e0b\u4e00\u5c42"
+    },
+    {
+        "Key": "BossInshotSettlementTowerTipFallProtected",
+        "Text": "\u9996\u6b21\u672a\u8fbe{0}\u5206\uff0c\u4e0d\u964d\u5c42"
+    },
+    {
+        "Key": "BossInshotSettlementTowerTipFall",
+        "Text": "\u672a\u8fbe{0}\u5206\uff0c\u89e6\u53d1\u964d\u5c42"
+    },
+    {
+        "Key": "BossInshotSettlementTowerTipAllCleared",
+        "Text": "\u5df2\u901a\u5173\u6240\u6709\u5c42"
+    },
+    {
+        "Key": "BossInshotSettlementTowerCheatCannotSaveReplay",
+        "Text": "\u4f5c\u5f0a\u4e0d\u8bb8\u4fdd\u5b58\u5f55\u50cf"
     },
     {
         "Key": "DlcRoomKickOutTip",
@@ -20533,7 +20681,7 @@
     },
     {
         "Key": "Theatre6BuffEffectTimes",
-        "Text": "\u751f\u6548\uff1a{0}"
+        "Text": "\u5df2\u751f\u6548\u6b21\u6570\uff1a{0}"
     },
     {
         "Key": "Theatre6BuffRemainingTimes",
@@ -20828,6 +20976,54 @@
         "Text": "\u9009\u62e9"
     },
     {
+        "Key": "Theatre6PvpEnvReplaceSuccess",
+        "Text": "\u9690\u533f\u6697\u969c\u66ff\u6362\u6210\u529f"
+    },
+    {
+        "Key": "Theatre6PvpEnvReplaceFail",
+        "Text": "\u5c1a\u672a\u89e3\u9501\u8be5\u9690\u533f\u6697\u969c"
+    },
+    {
+        "Key": "Theatre6PvpFightSuccsee",
+        "Text": "\u6311\u6218\u6210\u529f"
+    },
+    {
+        "Key": "Theatre6PvpFightFail",
+        "Text": "\u6311\u6218\u5931\u8d25"
+    },
+    {
+        "Key": "Theatre6PvpScoreDetailDesc1",
+        "Text": "\u6311\u6218\u6210\u529f +{0}"
+    },
+    {
+        "Key": "Theatre6PvpScoreDetailDesc2",
+        "Text": "\u4e09\u573a\u5168\u80dc + {0}"
+    },
+    {
+        "Key": "Theatre6PvpScoreDetailDesc3",
+        "Text": "<color=red>\u6311\u6218\u5931\u8d25 -{0}</color>"
+    },
+    {
+        "Key": "Theatre6PvpScoreDetailDesc4",
+        "Text": "\u6bb5\u4f4d\u5347\u9636\u6210\u529f"
+    },
+    {
+        "Key": "Theatre6PvpScoreDetailDesc5",
+        "Text": "\u5206\u6570\u5df2\u9501\u5b9a\uff0c\u5931\u8d25\u4e0d\u6263\u5206"
+    },
+    {
+        "Key": "Theatre6PvpScoreDetailDesc6",
+        "Text": "\u5206\u6570\u5df2\u9501\u5b9a\uff0c\u80dc\u5229\u4e0d\u52a0\u5206"
+    },
+    {
+        "Key": "Theatre6PvpRankTime",
+        "Text": "{0}-{1}"
+    },
+    {
+        "Key": "Theatre6PvpRoundName",
+        "Text": "\u7b2c{0}\u573a"
+    },
+    {
         "Key": "BattleFashionUndownloadedTipTitle",
         "Text": "\u63d0\u793a"
     },
@@ -20905,7 +21101,7 @@
     },
     {
         "Key": "PassportObtain",
-        "Text": "\u672c\u671f\u901a\u884c\u8bc1\u8f6e\u6b21\u4e3a <color=#57f0fb>4</color> \u8f6e\uff0c\u8d60\u9001\u60a8\u8865\u507f\u5956\u52b1"
+        "Text": "\u672c\u671f\u901a\u884c\u8bc1\u8f6e\u6b21\u4e3a <color=#0f70bc>6</color> \u8f6e\uff0c\u8d60\u9001\u60a8\u8865\u507f\u5956\u52b1"
     },
     {
         "Key": "ShopItemRoleTips",
@@ -21028,6 +21224,58 @@
         "Text": "\u5546\u54c1\u5747\u51bb\u7ed3\uff0c\u65e0\u6cd5\u5237\u65b0"
     },
     {
+        "Key": "Theatre6SaveCoverDefenseContent",
+        "Text": "\u8be5\u5f52\u6863\u6b63\u5728\u9632\u5b88\uff0c\u66ff\u6362\u540e\u65b0\u5f52\u6863\u5c06\u8fdb\u5165\u9632\u5b88\u961f\u4f0d\uff0c\u662f\u5426\u7ee7\u7eed"
+    },
+    {
+        "Key": "ConcertPreHeatingLiveNotOpen",
+        "Text": "\u76f4\u64ad\u5c06\u4e8e{0}\u5f00\u542f"
+    },
+    {
+        "Key": "ConcertPreHeatingReplayNotOpen",
+        "Text": "\u56de\u653e\u6682\u672a\u5f00\u653e"
+    },
+    {
+        "Key": "ConcertPreHeatingLiveUrlEmpty",
+        "Text": "\u76f4\u64ad\u94fe\u63a5\u5f85\u914d\u7f6e"
+    },
+    {
+        "Key": "ConcertPreHeatingStageLockTip",
+        "Text": "\u5173\u5361\u5c06\u5728{0}\u89e3\u9501"
+    },
+    {
+        "Key": "ConcertPreHeatingLiveDayText",
+        "Text": "\u8ddd\u97f3\u4e50\u4f1a\u8fd8\u6709{0}\u5929"
+    },
+    {
+        "Key": "ConcertPreHeatingFinalStageName",
+        "Text": "\u63ed\u5e55"
+    },
+    {
+        "Key": "ConcertPreHeatingTuneSignalFar",
+        "Text": "\u53c2\u6570\u504f\u79bb\u76ee\u6807\u6307\u6570"
+    },
+    {
+        "Key": "ConcertPreHeatingTuneSignalNear",
+        "Text": "\u521d\u6b65\u6821\u6b63\u6210\u529f\uff0c\u5df2\u63a5\u8fd1\u97f3\u5f8b\u6307\u6570\u8303\u56f4~"
+    },
+    {
+        "Key": "ConcertPreHeatingTuneSignalVeryNear",
+        "Text": "\u7cbe\u7ec6\u6821\u6b63\u6210\u529f\uff0c\u5373\u5c06\u62b5\u8fbe\u97f3\u5f8b\u6838\u5fc3~"
+    },
+    {
+        "Key": "ConcertPreHeatingTuneSignalSyncing",
+        "Text": "\u5df2\u62b5\u8fbe\u97f3\u5f8b\u6838\u5fc3\uff0c\u52a0\u8f7d\u5171\u9e23\u4e2d\u2026\u2026"
+    },
+    {
+        "Key": "ConcertPreHeatingChatBeforeLiveText",
+        "Text": "\u97f3\u4e50\u4f1a\u5373\u5c06\u5f00\u542f\uff0c\u5012\u8ba1\u65f6{0}"
+    },
+    {
+        "Key": "ConcertPreHeatingChatLiveText",
+        "Text": "\u97f3\u4e50\u4f1a\u76f4\u64ad\u8fdb\u884c\u4e2d\uff0c\u70b9\u51fb\u524d\u5f80"
+    },
+    {
         "Key": "TurntableDrawTimes",
         "Text": "x{0}"
     },
@@ -21046,5 +21294,13 @@
     {
         "Key": "PassportTaskActivityProgress",
         "Text": "\u624b\u518c\u4efb\u52a1\u5b8c\u6210\u8fdb\u5ea6\uff1a{0}/{1}"
+    },
+    {
+        "Key": "PurchaseFashionDetailCoinNotEnough",
+        "Text": "<color=#FF0000>{0}</color>"
+    },
+    {
+        "Key": "PurchaseFashionSuitDetailCoinNotEnough",
+        "Text": "<color=#FF0000>{0}</color>"
     }
 ]

@@ -13,12 +13,14 @@ function XMovieActionActorAlphaChange:OnInit(actionData)
     self.Duration = paramToNumber(params[5])
     self.AnchorType = string.IsNilOrEmpty(params[6]) and XMVCA.XMovie.EnumConst.ANCHOR_ALIGNMENT_TYPE.FULL or paramToNumber(params[6]) -- 对齐方式
     self.PositionParams = XMVCA.XMovie:SplitParam(params[7], "|", true)
+    self.CurveType = XMVCA.XMovie:ParamToCurveType(params[8])
 end
 
 function XMovieActionActorAlphaChange:OnRunning()
+    local ease = XMVCA.XMovie:GetDOTweenEase(self.CurveType)
     if self.Index < FRONT_BG_INDEX then
         local actor = self.UiRoot:GetActor(self.Index)
-        actor:PlayFadeAnimation(self.BeginAlpha, self.EndAlpha, self.Duration)
+        actor:PlayFadeAnimation(self.BeginAlpha, self.EndAlpha, self.Duration, ease)
     else
         local bgIndex = self.Index == FRONT_BG_INDEX and 3 or self.Index % 1000
         local rImgBg = self.UiRoot.UiMovieBg:GetBg(bgIndex)
@@ -31,7 +33,7 @@ function XMovieActionActorAlphaChange:OnRunning()
         local oldColor = rImgBg:GetColor()
         local newColor = CS.UnityEngine.Color(oldColor.r, oldColor.g, oldColor.b, self.BeginAlpha)
         rImgBg:SetColor(newColor)
-        rImgBg:SetAlpha(self.EndAlpha, self.Duration)
+        rImgBg:SetAlpha(self.EndAlpha, self.Duration, ease)
     end
 end
 

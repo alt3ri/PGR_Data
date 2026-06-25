@@ -410,15 +410,6 @@ end
 function XCharLifuEcology:RegisterMachineStateTransition()
     -- 设置寻路状态枚举值
     self.FindPathStateEnum = StateEnum.FindPath
-    self.NextStateList = {
-        StateEnum.TeachingBuilding, StateEnum.Bench, StateEnum.Auditorium, StateEnum.InClass
-    }
-    self.NextStateRotDict ={
-        [StateEnum.TeachingBuilding] = {x=0, y=-156.802, z=0},
-        [StateEnum.Bench] = {x=0, y=90, z=0},
-        [StateEnum.Auditorium] = {x=0, y=79.58, z=0},
-        [StateEnum.InClass] = {x=0, y=180, z=0},
-    }
     -- 其他状态到寻路状态
     self:RegisterInFindPathStateTransition(StateEnum.TeachingBuilding, function()
         return self._stateMachine:CheckDataBoard(DataBoardKey.TeachingBuilding, 1) and StateEnum.Auditorium or StateEnum.Bench

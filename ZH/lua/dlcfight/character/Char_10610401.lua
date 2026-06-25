@@ -273,15 +273,6 @@ end
 function XCharVanessaEcology:RegisterMachineStateTransition()
     -- 设置寻路状态枚举值
     self.FindPathStateEnum = StateEnum.FindPath
-    self.NextStateList = {
-        StateEnum.InClass, StateEnum.TrainingRoom, StateEnum.FacingView, StateEnum.Podium
-    }
-    self.NextStateRotDict ={
-        [StateEnum.InClass] = {x=0, y=0, z=0},
-        [StateEnum.TrainingRoom] = {x=0, y=-154.182, z=0},
-        [StateEnum.FacingView] = {x=0, y=-138.08, z=0},
-        [StateEnum.Podium] = {x=0, y=55.144, z=0},
-    }
     -- 其他状态到寻路状态
     self:RegisterInFindPathStateTransition(StateEnum.InClass, function()
         if self._stateMachine:CheckDataBoard(DataBoardKey.InClass2, 1) and 

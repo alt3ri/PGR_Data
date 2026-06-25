@@ -5,6 +5,17 @@ XFubenFestivalActivityManagerCreator = function()
     local XFubenFestivalActivityManager = XExFubenFestivalManager.New(XEnumConst.FuBen.ChapterType.Festival)
     ---@type XFestivalChapter[]
     local FestivalChapters = {}
+    local FestivalTemplateIds = {}
+    local _StagePassData = {}  -- stageId → {Passed, Count}，服务器通关数据唯一来源
+    local function GetChapterInfo(festivalId)
+        if not FestivalTemplateIds[festivalId] then return nil end
+        if not FestivalChapters[festivalId] then
+            local chapter = XFestivalChapter.New(festivalId)
+            FestivalChapters[festivalId] = chapter
+            chapter:RefreshChapterStageInfos()
+        end
+        return FestivalChapters[festivalId]
+    end
     XFubenFestivalActivityManager.StageFuben = 1    --战斗
     XFubenFestivalActivityManager.StageStory = 2    --剧情
     local StageId2ChapterIdDic = {}
@@ -29,16 +40,23 @@ XFubenFestivalActivityManagerCreator = function()
     function XFubenFestivalActivityManager.InitAllEntities()
         local festivalTemplates = XFestivalActivityConfig.GetFestivalsTemplates()
         for _, festivalTemplate in pairs(festivalTemplates or {}) do
-            if not FestivalChapters[festivalTemplate.Id] then
-                FestivalChapters[festivalTemplate.Id] = XFestivalChapter.New(festivalTemplate.Id)
-            else
-                FestivalChapters[festivalTemplate.Id]:RefreshStages()
+            FestivalTemplateIds[festivalTemplate.Id] = true
+            for _, stageId in ipairs(festivalTemplate.StageId or {}) do
+                StageId2ChapterIdDic[stageId] = festivalTemplate.Id
             end
+        end
+        -- 仅刷新已存在的章节，不触发懒加载
+        for _, chapter in pairs(FestivalChapters) do
+            chapter:RefreshStages()
         end
     end
 
     function XFubenFestivalActivityManager.AddStageId2ChapterId(stageId, chapterId)
         StageId2ChapterIdDic[stageId] = chapterId
+    end
+
+    function XFubenFestivalActivityManager.GetStagePassData(stageId)
+        return _StagePassData[stageId]
     end
 
     function XFubenFestivalActivityManager.GetChapterIdByStageId(stageId)
@@ -109,15 +127,17 @@ XFubenFestivalActivityManagerCreator = function()
     --====================
     function XFubenFestivalActivityManager.RefreshStagePassedBySettleDatas(settleData)
         if not settleData then return end
-        for _, chapter in pairs(FestivalChapters) do
-            local stage = chapter:GetStageByStageId(settleData.StageId)
-            if stage then
-                stage:SetIsPass(true)
-                stage:AddPassCount(1)
-                chapter:RefreshChapterStageInfos()
-                XEventManager.DispatchEvent(XEventId.EVENT_ON_FESTIVAL_CHANGED)
-                break
-            end
+        local stageId = settleData.StageId
+        local data = _StagePassData[stageId] or {}
+        data.Passed = true
+        data.Count = (data.Count or 0) + 1
+        _StagePassData[stageId] = data
+        local chapterId = StageId2ChapterIdDic[stageId]
+        if not chapterId then return end
+        local chapter = FestivalChapters[chapterId]
+        if chapter then
+            chapter:RefreshChapterStageInfos()
+            XEventManager.DispatchEvent(XEventId.EVENT_ON_FESTIVAL_CHANGED)
         end
     end
     --====================
@@ -136,15 +156,11 @@ XFubenFestivalActivityManagerCreator = function()
     --====================
     function XFubenFestivalActivityManager.RefreshStagePassed(response)
         for _, info in pairs(response.FestivalInfos or {}) do
+            for _, stageInfos in pairs(info.StageInfos or {}) do
+                _StagePassData[stageInfos.Id] = {Passed = true, Count = stageInfos.ChallengeCount}
+            end
             local chapter = FestivalChapters[info.Id]
             if chapter then
-                for _, stageInfos in pairs(info.StageInfos or {}) do
-                    local stage = chapter:GetStageByStageId(stageInfos.Id)
-                    if stage then
-                        stage:SetIsPass(true)
-                        stage:SetPassCount(stageInfos.ChallengeCount)
-                    end
-                end
                 chapter:RefreshChapterStageInfos()
             end
         end
@@ -155,7 +171,7 @@ XFubenFestivalActivityManagerCreator = function()
     --@return2  关卡总数
     --====================
     function XFubenFestivalActivityManager.GetFestivalProgress(festivalId)
-        local chapter = FestivalChapters[festivalId]
+        local chapter = GetChapterInfo(festivalId)
         if not chapter then return 0, 0 end
         return chapter:GetStagePassCount(), chapter:GetStageTotalCount()
     end
@@ -165,8 +181,9 @@ XFubenFestivalActivityManagerCreator = function()
     --====================
     function XFubenFestivalActivityManager.GetAvailableFestivals()
         local activityList = {}
-        for _, chapter in pairs(FestivalChapters) do
-            if chapter:GetIsOpen() then
+        for festivalId in pairs(FestivalTemplateIds) do
+            local chapter = GetChapterInfo(festivalId)
+            if chapter and chapter:GetIsOpen() then
                 table.insert(activityList, {
                         Id = chapter:GetChapterId(),
                         Type = chapter:GetChapterType(),
@@ -180,8 +197,9 @@ XFubenFestivalActivityManagerCreator = function()
 
     function XFubenFestivalActivityManager.GetFestivalsByUiType(uiType)
         local result = {}
-        for _, chapter in pairs(FestivalChapters) do
-            if chapter:GetUiType() == uiType then
+        for festivalId in pairs(FestivalTemplateIds) do
+            local chapter = GetChapterInfo(festivalId)
+            if chapter and chapter:GetUiType() == uiType then
                 table.insert(result, chapter)
             end
         end
@@ -193,11 +211,8 @@ XFubenFestivalActivityManagerCreator = function()
     --@param festivalId:节日配置Id
     --====================
     function XFubenFestivalActivityManager.IsFestivalInActivity(festivalId)
-        local chapter = FestivalChapters[festivalId]
-        if chapter then
-            return chapter:GetIsInTime()
-        end
-        return false
+        local chapter = GetChapterInfo(festivalId)
+        return chapter and chapter:GetIsInTime() or false
     end
     --====================
     --根据节日ID和关卡ID获取节日关卡对象
@@ -206,7 +221,7 @@ XFubenFestivalActivityManagerCreator = function()
     --====================
     ---@return XFestivalStage
     function XFubenFestivalActivityManager.GetFestivalStageByFestivalIdAndStageId(festivalId, stageId)
-        local chapter = FestivalChapters[festivalId]
+        local chapter = GetChapterInfo(festivalId)
         if not chapter then return end
         return chapter:GetStageByStageId(stageId)
     end
@@ -215,28 +230,24 @@ XFubenFestivalActivityManagerCreator = function()
     --@param festivalId:节日配置Id
     --====================
     function XFubenFestivalActivityManager.GetFestivalChapterById(festivalId)
-        return FestivalChapters[festivalId]
+        return GetChapterInfo(festivalId)
     end
     --====================
     --根据关卡ID获取关卡是否开放
     --@param stageId:关卡ID
     --====================   
     function XFubenFestivalActivityManager.CheckPassedByStageId(stageId)
-        for _, chapter in pairs(FestivalChapters) do
-            local stage = chapter:GetStageByStageId(stageId)
-            if stage then
-                return stage:GetIsPass()
-            end
-        end
-        return false
+        local data = _StagePassData[stageId]
+        return data and data.Passed or false
     end
     --====================
     --获取所有在开放时间内的节日活动Id
     --====================
     function XFubenFestivalActivityManager.GetAllAvailableFestivalsId()
         local activityList = {}
-        for _, chapter in pairs(FestivalChapters) do
-            if chapter:GetIsOpen() then
+        for festivalId in pairs(FestivalTemplateIds) do
+            local chapter = GetChapterInfo(festivalId)
+            if chapter and chapter:GetIsOpen() then
                 table.insert(activityList, chapter:GetChapterId())
             end
         end
@@ -254,17 +265,13 @@ XFubenFestivalActivityManagerCreator = function()
     end
     -- 判断是否是红点判断的节日
     function XFubenFestivalActivityManager.CheckFesticalAcitvityTimeIsOpen(sectionId)
-        if XTool.IsTableEmpty(FestivalChapters[sectionId]) then
-            return false
-        end
-        local timeId = FestivalChapters[sectionId]:GetActivityTimeId()
-        if not XTool.IsNumberValid(timeId) then
-            return false
-        else
-            local startTime, endTime = XFunctionManager.GetTimeByTimeId(timeId)
-            local nowTime = XTime.GetServerNowTimestamp()
-            return (nowTime >= startTime) and (nowTime < endTime)
-        end
+        local chapter = GetChapterInfo(sectionId)
+        if not chapter then return false end
+        local timeId = chapter:GetActivityTimeId()
+        if not XTool.IsNumberValid(timeId) then return false end
+        local startTime, endTime = XFunctionManager.GetTimeByTimeId(timeId)
+        local nowTime = XTime.GetServerNowTimestamp()
+        return (nowTime >= startTime) and (nowTime < endTime)
     end
     -- 本地保存key
     function XFubenFestivalActivityManager.GetFestivalActivityKey(sectionId)
@@ -307,37 +314,37 @@ XFubenFestivalActivityManagerCreator = function()
     end
     
     function XFubenFestivalActivityManager.CheckUnlockByStageId(stageId)
-        for _, chapter in pairs(FestivalChapters) do
-            local stage = chapter:GetStageByStageId(stageId)
-            if stage then
-                for _, prestageId in pairs(stage:GetPreStageId()) do
-                    if not chapter:GetChapterStageIsPass(prestageId) then
-                        return false
-                    end
-                end
+        local chapterId = StageId2ChapterIdDic[stageId]
+        if not chapterId then return true end
+        local chapter = GetChapterInfo(chapterId)
+        if not chapter then return true end
+        local stage = chapter:GetStageByStageId(stageId)
+        if not stage then return true end
+        for _, prestageId in pairs(stage:GetPreStageId()) do
+            if not chapter:GetChapterStageIsPass(prestageId) then
+                return false
             end
         end
         return true
     end
 
     function XFubenFestivalActivityManager.CheckStageIsPassById(stageId)
-        for _, chapter in pairs(FestivalChapters) do
-            local stage = chapter:GetStageByStageId(stageId)
-            if stage then
-                return chapter:GetChapterStageIsPass(stageId)
-            end
-        end
-        return true
+        local chapterId = StageId2ChapterIdDic[stageId]
+        if not chapterId then return true end
+        local chapter = GetChapterInfo(chapterId)
+        if not chapter then return true end
+        return chapter:GetChapterStageIsPass(stageId)
     end
-    
+
     function XFubenFestivalActivityManager.CheckIsOpen(stageId)
-        for _, chapter in pairs(FestivalChapters) do
-            local stage = chapter:GetStageByStageId(stageId)
-            if stage then
-                return stage:GetCanOpen()
-            end
-        end
-        return true
+        local chapterId = StageId2ChapterIdDic[stageId]
+        if not chapterId then return true end
+        local chapter = GetChapterInfo(chapterId)
+        if not chapter then return true end
+        local stage = chapter:GetStageByStageId(stageId)
+        if not stage then return true end
+        local canOpen = stage:GetCanOpen()
+        return canOpen
     end
 
     XFubenFestivalActivityManager.Init()

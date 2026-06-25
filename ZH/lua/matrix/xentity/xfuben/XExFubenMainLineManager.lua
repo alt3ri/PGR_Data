@@ -183,13 +183,22 @@ end
 
 -- 获取章节是否已解锁和锁定提示
 function XExFubenMainLineManager:ExGetChapterIsLockAndLockTip(chapterMainId, difficulty)
-    local chapterInfo = XDataCenter.FubenMainLineManager.GetChapterInfoByChapterMain(chapterMainId, difficulty)
-    -- 已解锁
-    if chapterInfo and chapterInfo.Unlock then return false end
-    -- 未解锁
-    -- 限时活动特殊处理
-    if chapterInfo.IsActivity then
-        local chapterId = XDataCenter.FubenMainLineManager.GetChapterIdByChapterMain(chapterMainId, difficulty)
+    if difficulty == XDataCenter.FubenManager.DifficultNightmare then
+        -- 噩梦走 BfrtManager，不涉及主线懒加载
+        local chapterInfo = XDataCenter.FubenMainLineManager.GetChapterInfoByChapterMain(chapterMainId, difficulty)
+        if chapterInfo and chapterInfo.Unlock then return false end
+        if chapterInfo and chapterInfo.IsActivity then
+            local chapterId = XDataCenter.FubenMainLineManager.GetChapterIdByChapterMain(chapterMainId, difficulty)
+            local _, desc = XDataCenter.FubenMainLineManager.CheckActivityCondition(chapterId)
+            return true, desc
+        end
+        return true, XUiHelper.GetText("CommonLockedTip")
+    end
+    -- 普通/隐藏难度：直接查缓存或计算首关 unlock，不触发 InitChapterInfo
+    local chapterId = XDataCenter.FubenMainLineManager.GetChapterIdByChapterMain(chapterMainId, difficulty)
+    local unlock, isActivity = XDataCenter.FubenMainLineManager.GetChapterIsUnlockAndActivity(chapterId)
+    if unlock then return false end
+    if isActivity then
         local _, desc = XDataCenter.FubenMainLineManager.CheckActivityCondition(chapterId)
         return true, desc
     end
@@ -232,13 +241,13 @@ function XExFubenMainLineManager:GetChapterViewModel(chapterMainId, difficulty, 
                 return XDataCenter.FubenMainLineManager.CheckChapterNew(proxy:GetId())
             end,
             CheckIsPassed = function(proxy)
-                local chapterInfo = XDataCenter.FubenMainLineManager.GetChapterInfo(proxy:GetId())
-                return chapterInfo.Unlock and chapterInfo.Passed
+                local unlock, passed = XDataCenter.FubenMainLineManager.GetChapterIsUnlockAndPassed(proxy:GetId())
+                return unlock and passed
             end,
             CheckHasTimeLimitTag = function(proxy)
-                local chapterInfo = XDataCenter.FubenMainLineManager.GetChapterInfoByChapterMain(proxy:GetExtralData().MainId
+                local chapterId = XDataCenter.FubenMainLineManager.GetChapterIdByChapterMain(proxy:GetExtralData().MainId
                     , proxy:GetExtralData().Difficulty)
-                return chapterInfo.IsActivity or false
+                return XDataCenter.FubenMainLineManager.GetChapterIsActivity(chapterId)
             end,
             GetWeeklyChallengeCount = function(proxy)
                 local chapterConfig = XDataCenter.FubenMainLineManager.GetChapterMainTemplate(proxy:GetExtralData().MainId)
@@ -286,7 +295,7 @@ function XExFubenMainLineManager:GetChapterViewModel(chapterMainId, difficulty, 
             end,
             GetCurrentAndMaxProgress = function(proxy)
                 -- return XDataCenter.FubenMainLineManager.GetCurrentAndMaxProgress(proxy:GetId())
-                local normalCurStars, normalTotalStars = XDataCenter.FubenMainLineManager.GetChapterStars(proxy:GetId())
+                local normalCurStars, normalTotalStars = XDataCenter.FubenMainLineManager.GetChapterStarsDirect(proxy:GetId())
                 -- 再加上剧情进度计算:1个剧情关算1颗星
                 local styPassCount, styTotal = XDataCenter.FubenManagerEx.GetStoryStagePassCount(XDataCenter.FubenMainLineManager.GetStageList(proxy:GetId()))
                 normalCurStars = normalCurStars + styPassCount
@@ -297,7 +306,7 @@ function XExFubenMainLineManager:GetChapterViewModel(chapterMainId, difficulty, 
                     local styPassCount2, styTotal2 = XDataCenter.FubenManagerEx.GetStoryStagePassCount(XDataCenter.FubenMainLineManager.GetStageList(hideId))
                     normalCurStars = normalCurStars + styPassCount2
                     normalTotalStars = normalTotalStars + styTotal2
-                    local hideCurStars, hideTotalStars = XDataCenter.FubenMainLineManager.GetChapterStars(hideId)
+                    local hideCurStars, hideTotalStars = XDataCenter.FubenMainLineManager.GetChapterStarsDirect(hideId)
                     normalCurStars = normalCurStars + hideCurStars
                     normalTotalStars = normalTotalStars + hideTotalStars
                 end
@@ -321,7 +330,7 @@ function XExFubenMainLineManager:GetChapterViewModel(chapterMainId, difficulty, 
                 OrderId = config.OrderId,
                 Index = index,
             },
-            FirstStage = XDataCenter.FubenMainLineManager.GetChapterInfoByChapterMain(chapterMainId, difficulty).FirstStage,
+            FirstStage = XDataCenter.FubenMainLineManager.GetFirstStageByChapterMain(chapterMainId, difficulty),
             ActivityCondition = XDataCenter.FubenMainLineManager.GetChapterCfg(subChapterId).ActivityCondition,
             ShowCondition = config.ShowCondition,
         })

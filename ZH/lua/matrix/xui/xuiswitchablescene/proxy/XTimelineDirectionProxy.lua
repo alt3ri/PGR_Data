@@ -81,7 +81,7 @@ function XTimelineDirectionProxy:_InitTimeline(sceneTran)
         return
     end
 
-    self._Playable = animGo:GetComponent("PlayableDirector")
+    self._Playable = animGo:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
 end
 
 ---创建陀螺仪控制器

@@ -12,7 +12,7 @@ function XArchiveMonsterEntity:Init()
     self.RealName = {}
     for _,npcid in pairs(self:GetNpcId() or {}) do
         self.Kill[npcid] = 0
-        self.RealName[npcid] = XMVCA.XArchive:GetMonsterRealName(npcid)
+        self.RealName[npcid] = XMVCA.XArchive.MonsterArchiveAgency:GetMonsterRealName(npcid)
     end
 end
 
@@ -27,7 +27,11 @@ function XArchiveMonsterEntity:UpdateData(playerData)
 end
 
 function XArchiveMonsterEntity:GetCfg()
-    return XMVCA.XArchive:GetArchiveMonsterConfigById(self.Id)
+    return XMVCA.XArchive.MonsterArchiveAgency:GetArchiveMonsterConfigById(self.Id)
+end
+
+function XArchiveMonsterEntity:GetInnerCfg()
+    return XMVCA.XArchive.MonsterArchiveAgency:GetArchiveMonsterInnerConfigById(self.Id)
 end
 
 function XArchiveMonsterEntity:GetId()
@@ -67,19 +71,19 @@ function XArchiveMonsterEntity:GetNpcId(index)
 end
 
 function XArchiveMonsterEntity:GetName()
-    return self:GetCfg().Name
+    return self:GetInnerCfg().Name
 end
 
 function XArchiveMonsterEntity:GetIcon()
-    return self:GetCfg().Icon
+    return self:GetInnerCfg().Icon
 end
 
 function XArchiveMonsterEntity:GetPic()
-    return self:GetCfg().Pic
+    return self:GetInnerCfg().Pic
 end
 
 function XArchiveMonsterEntity:GetLockPic()
-    return self:GetCfg().LockPic
+    return self:GetInnerCfg().LockPic
 end
 
 function XArchiveMonsterEntity:GetType()
@@ -87,11 +91,11 @@ function XArchiveMonsterEntity:GetType()
 end
 
 function XArchiveMonsterEntity:GetTagIds()
-    return self:GetCfg().TagIds
+    return self:GetInnerCfg().TagIds
 end
 
 function XArchiveMonsterEntity:GetTagGroupId()
-    return self:GetCfg().TagGroupId
+    return self:GetInnerCfg().TagGroupId
 end
 
 return XArchiveMonsterEntity

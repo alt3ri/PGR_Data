@@ -1,3 +1,4 @@
+--[[
 XBaseEquipConfigs =XBaseEquipConfigs or {}
 
 local TABLE_BASE_EQUIP_PATH = "Share/BaseEquip/BaseEquip.tab"
@@ -17,4 +18,5 @@ end
 
 function XBaseEquipConfigs.GetBaseEquipScoreTemplates()
     return BaseEquipScoreTemplates
-end
+end
+]]

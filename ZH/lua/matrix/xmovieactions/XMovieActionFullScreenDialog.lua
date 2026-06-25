@@ -171,7 +171,7 @@ function XMovieActionFullScreenDialog:GetDialogGridFromPool(isEmptyGrid)
     local grid = gridList[curIndex]
     if not grid then
         local obj = CS.UnityEngine.Object.Instantiate(self.UiRoot.GridSingleDialog, self.UiRoot.PanleContents)
-        grid = XUiGridSingleDialog.New(obj)
+        grid = XUiGridSingleDialog.New(obj, self.UiRoot)
         gridList[curIndex] = grid
     end
     grid.TypeWriter.gameObject:SetActiveEx(not isEmptyGrid)

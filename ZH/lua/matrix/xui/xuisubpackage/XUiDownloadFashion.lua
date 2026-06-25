@@ -81,8 +81,8 @@ function XUiDownloadFashion:InitButton()
     self.BtnFilterDownload:AddEventListener(handler(self, self.OnBtnFilterDownloadClick))
     self.BtnCancelDownload:AddEventListener(handler(self, self.OnBtnCancelDownloadClick))
     -- 缓存两个下载状态文本下的进度数字组件
-    self._TxtProgressDownloading = self.TxtDownloading.transform:Find("TxtTotalProgressNum"):GetComponent("Text")
-    self._TxtProgressWaiting = self.TxtWaiting.transform:Find("TxtTotalProgressNum"):GetComponent("Text")
+    self._TxtProgressDownloading = self.TxtDownloading.transform:Find("TxtTotalProgressNum"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+    self._TxtProgressWaiting = self.TxtWaiting.transform:Find("TxtTotalProgressNum"):GetComponent(typeof(CS.UnityEngine.UI.Text))
 end
 
 function XUiDownloadFashion:InitDynamicTable()

@@ -51,6 +51,15 @@ function XTheatre6BurnController:AfterDamageCalc(eventArgs)
     if eventArgs.Id ~= self._dmgMagicId then return end
     local attack = self._proxy:GetNpcAttribValue(self._enemyUUID, 1) --取玩家的攻击属性
     local extraDmg = self._buffCount * attack // 10
+    if self._proxy:GetBuffCountByKind(self._npcUUID,1025800) >= 1 then
+        local DmgReduce = 1
+        DmgReduce = DmgReduce * (1 + self._proxy:GetNpcAttribValue(self._npcUUID,ENpcAttrib.PhysicalAmpP) / 10000)
+        DmgReduce = DmgReduce * (1 - self._proxy:GetNpcAttribValue(self._npcUUID,ENpcAttrib.PhysicalReductionP) / 10000)
+        --self:LogError(".....打印下最终减伤"..DmgReduce)
+        extraDmg = extraDmg * DmgReduce -- 存在PVP全减伤50%的特殊处理，伤害减半
+        --self:LogError(".....触发减伤通知")
+    end
+    
     self._proxy:SetAfterDamageMagicContext(eventArgs.ContextId, extraDmg, eventArgs.ElementDamage,
         eventArgs.FinalHackDamage)
     --1025113造成伤害时，修改造成的伤害量

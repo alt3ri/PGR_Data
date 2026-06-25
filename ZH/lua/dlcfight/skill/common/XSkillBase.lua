@@ -9,7 +9,7 @@ local XSkillBase = XDlcScriptManager.RegSkillScript(1, "XSkillBase", Base)
 
 --region 脚本生命周期
 ---@desc 初始化所有成员参数和注册所有事件
-function XSkillBase:Init() --初始化
+function XSkillBase:_BaseInit() --初始化
     --NpcId
     self._uuid = self._proxy:GetSelfSkillNpcUUID()
     --技能Id

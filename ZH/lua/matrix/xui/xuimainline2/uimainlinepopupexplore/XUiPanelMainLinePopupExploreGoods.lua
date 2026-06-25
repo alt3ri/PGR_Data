@@ -7,7 +7,7 @@ local XUiPanelMainLinePopupExploreGoods = XClass(XUiNode, "XUiPanelMainLinePopup
 ---@param contentCfg XTableMainLine2MessageContents
 function XUiPanelMainLinePopupExploreGoods:Refresh(contentCfg)
     self.UiTxtItemName.text = contentCfg.Name or ''
-    self.UiTxtItemDesc.text = contentCfg.Desc or ''
+    self.UiTxtItemDesc.text = XUiHelper.ConvertLineBreakSymbol(contentCfg.Desc)
 
     if not string.IsNilOrEmpty(contentCfg.ShowIcon) then
         self.PanelItemIcon.gameObject:SetActiveEx(true)

@@ -1,5 +1,5 @@
 ---@class XUiPanelFashionSuitButtonGroup : XUiNode 套装涂装三级界面购买、跳转和穿戴按钮
----@field Parent XUiFashionSuitDetail
+---@field Parent XUiPanelFashionDetail
 ---@field _Control XFashionSuitControl
 local XUiPanelFashionSuitButtonGroup = XClass(XUiNode, "XUiPanelFashionSuitButtonGroup")
 
@@ -251,8 +251,31 @@ function XUiPanelFashionSuitButtonGroup:OnBuyBefore()
         end
     end
 
-    -- 未执行特殊逻辑，则直接执行回调
-    self:OnBuy()
+    -- 构建viewmodel
+    local realCost, originCost, itemId = self:_GetPrice()
+
+    -- 倒计时：复用按钮区已算的剩余时间，重建绝对结束时间戳（仅下架场景），传入二级弹窗显示倒计时
+    local endTime = nil
+    if self._UpdateTimerType == UpdateTimerTypeEnum.SettOff and self._RemainTime > 0 then
+        endTime = XTime.GetServerNowTimestamp() + self._RemainTime
+    end
+
+    ---@type CoatingBuyTipsViewModel
+    local viewModel = {
+        Title = self._Helper:GetName(),
+        SubTitle = "", --todo
+        DetailDesc = self._Helper:GetDesc(),
+        RewardDataList = self._Helper:GetRewards(),
+        RealCost = realCost,
+        OriginCost = originCost,
+        ItemId = itemId,
+        AssetsItemIds = { XDataCenter.ItemManager.ItemId.FreeGem, XDataCenter.ItemManager.ItemId.HongKa },
+        EndTime = endTime,
+        IsTimeLimit = XTool.IsNumberValid(endTime),
+    }
+
+    -- 打开详情界面
+    XLuaUiManager.Open("UiPurchaseBuyCoatingTips", viewModel, handler(self, self.OnBuy))
 end
 
 function XUiPanelFashionSuitButtonGroup:OnBuy()
@@ -346,6 +369,19 @@ end
 function XUiPanelFashionSuitButtonGroup:OnBtnBuySuitClick()
     self._IsGroupSalesEnable = self.BtnBuySuit.ButtonState == CS.UiButtonState.Select
     self.Parent:SetGroupSales(self._IsGroupSalesVisible, self._IsGroupSalesEnable)
+end
+
+--endregion
+
+--region 参数获取
+
+---@return number, number 实际价格，原价, itemId
+function XUiPanelFashionSuitButtonGroup:_GetPrice()
+    if self._GainType == GainType.Purchase then
+        return self._Purchase:GetPrice()
+    elseif self._GainType == GainType.Shop then
+        return self._Shop:GetPrice()
+    end
 end
 
 --endregion

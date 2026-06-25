@@ -26,6 +26,9 @@ local DefaultOfTypeNew = {
     [19] = tableEmpty,
     [20] = tableEmpty,
     [21] = tableEmpty,
+    --[22] int2 暂时还未支持
+    [23] = 0,
+    [24] = tableEmpty,
 }
 
 --读取全部
@@ -150,6 +153,7 @@ end
 
 function BinaryTable:Ctor(path)
     self.FilePath = path
+    XTableManager.OnOpenBinaryTable(path)
 end
 
 function BinaryTable:IsTableExist()
@@ -635,13 +639,9 @@ function BinaryTable:ReleaseFull()
     self.m_columnMap = nil
     self:ReleaseCache()
     self.Bytes = nil
-    XTableManager.OnUnloadBinaryBytes(self.FilePath)
-end
-
--- 关闭，好像没调用
-function BinaryTable:Close()
-    XLog.Error("BinaryTable:Close", self.FilePath)
-    self:ReleaseFull()
+    self.m_initialized = false
+    XTableManager.OnUnloadBinary(self.FilePath)
+    XTableManager.OnCloseBinaryTable(self.FilePath)
 end
 
 return BinaryTable

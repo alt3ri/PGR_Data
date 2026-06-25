@@ -1,4 +1,4 @@
-local XUiGridArchive = require("XUi/XUiArchive/XUiGridArchive")
+local XUiGridArchive = require("XUi/XUiArchive/XUiGridArchive")
 local XUiGridArchiveMonster = XClass(XUiNode, "XUiGridArchiveMonster")
 
 local LockNameText = CS.XTextManager.GetText("ArchiveLockNameText")
@@ -18,7 +18,7 @@ function XUiGridArchiveMonster:OnBtnSelect()
         XUiManager.TipText("ArchiveMonsterLock")
         return
     end
-    XMVCA.XArchive:GetMonsterEvaluateFromSever(self.Chapter:GetNpcId(), function()
+    XMVCA.XArchive.MonsterArchiveAgency:GetMonsterEvaluateFromSever(self.Chapter:GetNpcId(), function()
         XLuaUiManager.Open("UiArchiveMonsterDetail", self.ChapterList, self.CurIndex)
     end)
 end
@@ -60,7 +60,7 @@ function XUiGridArchiveMonster:SetMonsterData(chapter)
             self.MonsterImg:SetRawImage(chapter:GetLockPic())
         end
     else
-        self.MonsterName.text = self._Control:GetMonsterArchiveName(chapter)
+        self.MonsterName.text = self._Control.MonsterControl:GetMonsterArchiveName(chapter)
         if chapter:GetPic() and #chapter:GetPic() > 0 then
             self.MonsterImg:SetRawImage(chapter:GetPic())
         end
@@ -73,6 +73,6 @@ end
 
 function XUiGridArchiveMonster:OnCheckArchiveTag(count)
     self.TemplateBtn:ShowTag(count >= 0)
-end
-
+end
+
 return XUiGridArchiveMonster

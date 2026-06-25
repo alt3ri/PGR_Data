@@ -26,7 +26,9 @@ function XUiTheatre6GainTips:InitComponents()
 end
 
 function XUiTheatre6GainTips:OnStart(gridType, girdId, isUpGrade)
+    ---@type XUiGridTheatre6Skill
     self.GridSkillUi = XUiGridTheatre6Skill.New(self.GridSkill, self)
+    ---@type XUiGridTheatre6Relic
     self.GridRelicUi = XUiGridTheatre6Relic.New(self.GridRelic, self)
     self._GridType = gridType
     self._GridId = girdId

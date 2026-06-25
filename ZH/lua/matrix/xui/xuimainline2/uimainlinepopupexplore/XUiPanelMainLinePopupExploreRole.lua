@@ -7,7 +7,7 @@ local XUiPanelMainLinePopupExploreRole = XClass(XUiNode, "XUiPanelMainLinePopupE
 ---@param contentCfg XTableMainLine2MessageContents
 function XUiPanelMainLinePopupExploreRole:Refresh(contentCfg)
     self.UiTxtItemName.text = contentCfg.Name or ''
-    self.UiTxtItemDesc.text = contentCfg.Desc or ''
+    self.UiTxtItemDesc.text = XUiHelper.ConvertLineBreakSymbol(contentCfg.Desc)
 
     if not string.IsNilOrEmpty(contentCfg.RoleIcon) then
         self.PanelItemCharacter.gameObject:SetActiveEx(true)

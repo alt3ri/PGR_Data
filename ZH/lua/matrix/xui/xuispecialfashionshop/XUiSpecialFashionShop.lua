@@ -26,9 +26,10 @@ function XUiSpecialFashionShop:OnAwake()
     self:InitDynamicTable()
     self:InitTabList()
 
+    self._ShowAssetsItemIds = { XDataCenter.ItemManager.ItemId.FreeGem, XDataCenter.ItemManager.ItemId.HongKa }
     -- 货币
     self._PanelAsset = XUiHelper.NewPanelActivityAssetSafe(
-        { XDataCenter.ItemManager.ItemId.HongKa },
+        self._ShowAssetsItemIds,
         self.PanelSpecialTool, self)
     -- 定时器
     self:StartTimer()
@@ -39,6 +40,11 @@ end
 
 function XUiSpecialFashionShop:OnEnable()
     self:Refresh()
+
+    if self._NeedRefreshDynamicTable then
+        self._NeedRefreshDynamicTable = nil
+        self:RefreshDynamicTable()
+    end
 end
 
 function XUiSpecialFashionShop:OnDisable()
@@ -89,8 +95,8 @@ function XUiSpecialFashionShop:OnBuySuccessCb()
     if XTool.UObjIsNil(self.PanelFashionList) then
         return
     end
-    self:RefreshDynamicTable()
-
+    
+    self._NeedRefreshDynamicTable = true
 end
 
 ------------------------------------------------------- 监听函数start -------------------------------------------------------
@@ -250,6 +256,7 @@ function XUiSpecialFashionShop:OnSelectedTab(index)
     end
 
     self.CurTabIndex = index
+    self.ShowAssetsItemIds = XShopManager.GetShopShowIdList(self:GetCurShopId())
     self:InitDropDown()
     self:ResetFilter()
     self:RefreshDynamicTable()
@@ -277,6 +284,7 @@ function XUiSpecialFashionShop:OnDynamicTableEvent(event, index, grid)
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         local data = self.GoodList[index]
         grid:Refresh(data)
+        grid:SetCustomAssetsItemIdsForDetail(self.ShowAssetsItemIds)
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_RECYCLE then
         grid:OnRecycle()
     end

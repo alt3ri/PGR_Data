@@ -79,8 +79,9 @@ function XUiTheatre6ChooseCharacter:Init3DPanel()
     end
 end
 
-function XUiTheatre6ChooseCharacter:OnStart(playMode)
+function XUiTheatre6ChooseCharacter:OnStart(playMode, tagType)
     self._PlayMode = playMode
+    self._TagType = tagType
     self:ApplyStatus(FuncName.Init)
     self:InitCommon()
 end
@@ -136,6 +137,7 @@ function XUiTheatre6ChooseCharacter:InitCommon()
     end)
     
     local unlockIndexDict = {}
+    local showTagIds = self._Control:GetNewCharacterShowTagMap(self._TagType)
 
     ---@type XUiComponent.XUiButton[]
     self._RoleTabs = {}
@@ -154,6 +156,7 @@ function XUiTheatre6ChooseCharacter:InitCommon()
         grid.GridCharacter:SetRawImage(self:GetHeadIcon(fashionId))
         grid.Disable.gameObject:SetActiveEx(not isUnlock)
         grid.GridCharacter:SetDisable(not isUnlock, isUnlock)
+        grid.GridCharacter:ShowTag(isUnlock and showTagIds[config.Id])
         table.insert(self._RoleTabs, grid.GridCharacter)
         unlockIndexDict[i] = isUnlock
     end
@@ -165,6 +168,7 @@ function XUiTheatre6ChooseCharacter:InitCommon()
             return
         end
         self:UpdateRole(i)
+        self:UpdateNewTag(i)
         self:UpdateDetail()
     end)
     if isGamePlay then
@@ -183,6 +187,22 @@ function XUiTheatre6ChooseCharacter:UpdateRole(index)
     self:ApplyStatus(FuncName.UpdateBattle)
     self._Control:SetSelectRoleId(self._PlayMode, self._RoleId)
     self._Scene:SetChangeByRoleBtn(index)
+end
+
+function XUiTheatre6ChooseCharacter:UpdateNewTag(index)
+    if self._IsInited then
+        local tab = self._RoleTabs[index]
+        local config = self._RoleConfigs[index]
+
+        if tab then
+            tab:ShowTag(false)
+        end
+        if config then
+            self._Control:AddNewCharacterShowTag(config.Id, self._TagType)
+        end
+    end
+
+    self._IsInited = true
 end
 
 function XUiTheatre6ChooseCharacter:UpdateFashionId()

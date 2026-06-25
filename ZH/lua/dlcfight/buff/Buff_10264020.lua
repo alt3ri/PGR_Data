@@ -26,7 +26,7 @@ function XBuff10264020:OnLuaSkillEnd(eventArgs)
     local blockStacks = math.floor(self._proxy:GetNpcGameplayAttribValue(self._npcUUID, ETheatre6AttribType.OverClock) /
         self.overClock)
     blockStacks = math.min(blockStacks, self.maxBlockStacks)
-    self._blockController:CastStackBuff(blockStacks, self._npcUUID)
+    self._blockController:AddSkillCount(blockStacks)
     --消除体力
     self._proxy:Theatre6ChangeStaminaValue(eventArgs._targetUUID, -self.staminaDamage,0)
 end

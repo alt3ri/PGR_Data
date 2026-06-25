@@ -131,11 +131,6 @@ function loader.ReleaseIo()
     BinaryPack.ReleaseIo()
 end
 
-
-function loader.ReadArray(path, xTable, identifier)
-    return nil
-end
-
 function loader.TestCode()
     local str = "local tbl = {}\n"
     for _, pack in pairs(PackCache) do

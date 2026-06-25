@@ -69,6 +69,10 @@ function XUiPanelTheatre6SkillDetail:InitComponents()
         self.GridTagSc:AddEventListener(handler(self, self.OnBtnGridTagClick))
     end
 
+    if self.GridTagSc02 then
+        self.GridTagSc02:AddEventListener(handler(self, self.OnBtnGridTagClick))
+    end
+
     if self.BtnDescList then
         self.BtnDescList:AddEventListener(handler(self, self.OnBtnGridTagClick))
     end
@@ -76,8 +80,10 @@ end
 
 function XUiPanelTheatre6SkillDetail:Refresh(skillId, params)
     local readOnly = true
+    local isCanUpgrade = false
     if params then
         readOnly = params.ReadOnly ~= nil and params.ReadOnly or false
+        isCanUpgrade = params.IsCanUpgrade
         self.IsBaseSkill = params.IsBaseSkill ~= nil and params.IsBaseSkill or false
         self.IsLock = params.IsLock or false
         self.IsSell = params.IsSell or false
@@ -93,7 +99,7 @@ function XUiPanelTheatre6SkillDetail:Refresh(skillId, params)
     self.TxtSp.text = skillConfig.CostTL                                                  --SP消耗
     self.ImgIconSp:SetSprite(self._Control:GetClientConfigValue("IconSp"))                --SP图标
     self.TxtType.text = self._Control:GetClientConfigValue("SkillType", skillConfig.Type) --技能类型
-    self.TxtDesc.text = self._Control:GetSkillDesc(self._SkillId, false)
+    self.TxtDesc.text = self._Control:GetSkillDesc(self._SkillId, false, isCanUpgrade)
     if self.UiRImgIcon then
         self.UiRImgIcon:SetRawImage(skillConfig.Icon) --技能图标
     end
@@ -124,8 +130,7 @@ function XUiPanelTheatre6SkillDetail:Refresh(skillId, params)
         self.ImgQuality:SetRawImage(spriteName)
     end
 
-    self.GridTagSc:SetNameByGroup(0, XUiHelper.GetText("Theatre6OverClockEfficiency"))
-    self.GridTagSc:SetNameByGroup(1, string.format("%s%%", math.floor(skillConfig.CSMag / 100)))
+    self:UpdateCSMag(isCanUpgrade)
 
     self:UpdateStarGrid(skillConfig.Level) --星级
     self:UpdateSkillBuildTagsGrid(skillConfig.BuildTags, skillConfig.KeyWordIds)
@@ -135,6 +140,34 @@ function XUiPanelTheatre6SkillDetail:Refresh(skillId, params)
     if not effectiveReadOnly then
         self:RefreshBuyBtnStatus()
     end
+end
+
+function XUiPanelTheatre6SkillDetail:UpdateCSMag(isCanUpgrade)
+    local nextSkillLevelId = isCanUpgrade and self._Control:GetNextLevelSkillId(self._SkillId) or nil
+    local isShowTagScUp = self.GridTagSc02 and isCanUpgrade and XTool.IsNumberValid(nextSkillLevelId)
+    local skillConfig = self._Control:GetSkillCfgById(self._SkillId)
+    local curCSMag = math.floor(skillConfig.CSMag / 100)
+
+    self.GridTagSc.gameObject:SetActiveEx(false)
+    if self.GridTagSc02 then
+        self.GridTagSc02.gameObject:SetActiveEx(false)
+    end
+
+    if isShowTagScUp then
+        local nextSkillConfig = self._Control:GetSkillCfgById(nextSkillLevelId)
+        local nextCSMag = math.floor(nextSkillConfig.CSMag / 100)
+        if curCSMag ~= nextCSMag then
+            self.GridTagSc02.gameObject:SetActiveEx(true)
+            self.GridTagSc02:SetNameByGroup(0, XUiHelper.GetText("Theatre6OverClockEfficiency"))
+            self.GridTagSc02:SetNameByGroup(1, string.format("%s%%", curCSMag))
+            self.GridTagSc02:SetNameByGroup(2, string.format("%s%%", nextCSMag))
+        end
+        return
+    end
+
+    self.GridTagSc.gameObject:SetActiveEx(true)
+    self.GridTagSc:SetNameByGroup(0, XUiHelper.GetText("Theatre6OverClockEfficiency"))
+    self.GridTagSc:SetNameByGroup(1, string.format("%s%%", curCSMag))
 end
 
 function XUiPanelTheatre6SkillDetail:RefreshBuyBtnStatus()

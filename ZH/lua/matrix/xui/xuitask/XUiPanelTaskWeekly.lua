@@ -229,13 +229,13 @@ function XUiPanelTaskWeekly:RefreshWeeklyTaskRewardBar()
         local barX = self.ImgTasksFinishedProgress.rectTransform.anchoredPosition3D.x
 
         local gridArgs = XTool.MakeArray(activenessCount, function(i)
-            return { [1] = {
+            return {
                 PositionX = barX + barWidth / activenessCount * i,
                 Activeness = activeness,
                 TargetActiveness = self.WeeklyActiveness.Activeness[i],
                 RewardId = self.WeeklyActiveness.RewardId[i],
                 OnGetReward = onGetRewardHandler
-            } }
+            }
         end)
 
         XTool.SetDataForGenericGrid(

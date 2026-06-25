@@ -78,9 +78,9 @@ function XEntityControl:RemoveEntity(entity)
         if minUid == uid then --如果相等要重新找一个
             if hasOtherEntity then
                 local tempUid = -1
-                for uid, _ in pairs(typesDict) do
-                    if tempUid == -1 or uid < tempUid then
-                        tempUid = uid
+                for iterUid, _ in pairs(typesDict) do
+                    if tempUid == -1 or iterUid < tempUid then
+                        tempUid = iterUid
                     end
                 end
                 self._TypesMinUid[cls] = tempUid

@@ -15,6 +15,12 @@ local XUiBattleRoleRoomDefaultProxy = require("XUi/XUiNewRoomSingle/XUiBattleRol
 ---@class XUiBossSingleBattleRoleRoom:XUiBattleRoleRoomDefaultProxy
 local XUiBossSingleBattleRoleRoom = XClass(XUiBattleRoleRoomDefaultProxy, "XUiBossSingleBattleRoleRoom")
 
+function XUiBossSingleBattleRoleRoom:Ctor(_0, _1, args)
+    if args then
+        self._EnableTeamDifferentCheck = args.EnableTeamDifferentCheck
+    end
+end
+
 function XUiBossSingleBattleRoleRoom:OnNotify(event, stageType)
     if event == XEventId.EVENT_ACTIVITY_ON_RESET then
         if stageType == XEnumConst.FuBen.StageType.BossSingle then
@@ -51,7 +57,26 @@ function XUiBossSingleBattleRoleRoom:EnterFight(team, stageId, challengeCount, i
     if not self:CheckRoleStanmina(team, stageId) then
         return
     end
-    self.Super.EnterFight(self,team, stageId, challengeCount, isAssist)
+
+    local isChange = self._EnableTeamDifferentCheck
+        and XMVCA.XFubenBossSingle:CheckTeamDifferentWithRecord(
+            stageId,
+            team)
+
+    local function sureCallback()
+        self.Super.EnterFight(self,team, stageId, challengeCount, isAssist)
+    end
+
+    if isChange then
+        XUiManager.DialogTip(
+            nil,
+            XUiHelper.GetText("BossSingleChangeMember"),
+            XUiManager.DialogType.Normal,
+            nil,
+            sureCallback)
+    else
+        sureCallback()
+    end
 end
 
 function XUiBossSingleBattleRoleRoom:AOPRefreshRoleInfosAfter(rootUi)

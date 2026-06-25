@@ -99,6 +99,7 @@
 ---@field XRhythmGame XRhythmGameAgency
 ---@field XMusicGameActivity XMusicGameActivityAgency
 ---@field XArrangementGame XArrangementGameAgency
+---@field XConcertPreHeating XConcertPreHeatingAgency
 ---@field XLuckyTenant XLuckyTenantAgency
 ---@field XLuckyTenant2 XLuckyTenant2Agency
 ---@field XSkyGardenDorm XSkyGardenDormAgency
@@ -146,6 +147,7 @@
 ---@field XGameCollection XGameCollectionAgency
 ---@field XBigWorldMemory XBigWorldMemoryAgency
 ---@field XLowMemory XLowMemoryAgency
+---@field XDyeMergeGame XDyeMergeGameAgency
 local XMVCACls = require("MVCA/XMVCACls")
 
 ---常用的一些模块放在这里初始化
@@ -250,6 +252,7 @@ function XMVCACls:InitModule()
     self:RegisterAgency(ModuleId.XRhythmGame)
     self:RegisterAgency(ModuleId.XMusicGameActivity)
     self:RegisterAgency(ModuleId.XArrangementGame)
+    self:RegisterAgency(ModuleId.XConcertPreHeating)
     self:RegisterAgency(ModuleId.XLuckyTenant)
     self:RegisterAgency(ModuleId.XLuckyTenant2)
     self:RegisterAgency(ModuleId.XPcg)
@@ -286,6 +289,7 @@ function XMVCACls:InitModule()
     self:RegisterAgency(ModuleId.XTheatre6)
     self:RegisterAgency(ModuleId.XGameCollection)
     self:RegisterAgency(ModuleId.XFashion)
+    self:RegisterAgency(ModuleId.XDyeMergeGame)
 end
 
 ---@type XMVCACls

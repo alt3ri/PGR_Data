@@ -9,7 +9,6 @@ require("MVCA/XUidObject")
 require("MVCA/ModuleId")
 require("MVCA/XMVCAUtil")
 require("MVCA/XConfigUtil")
-require("MVCA/XMVCAEvent")
 require("MVCA/XEntity")
 require("MVCA/XModelBase")
 require("MVCA/XModel")
@@ -30,6 +29,7 @@ function XMVCACls:Ctor()
     self._ControlDict = {}
     self._ControlReleaseDict = {} --延迟释放的词典
     self._ModelDict = {}
+    self._DelayRemoveControlIds = {}
     self._TabConfigDict = {}
     self._OneKeyReLogin = false
     self._ReleaseTimer = false
@@ -194,18 +194,25 @@ function XMVCACls:ReleaseDelayControl()
 end
 
 function XMVCACls:_CheckReleaseControl()
-    local removeIds = {}
+    if not self._DelayRemoveControlIds then
+        self._DelayRemoveControlIds = {}
+    end
+    local removeIds = self._DelayRemoveControlIds
+    local count = 0
     local now = CS.UnityEngine.Time.realtimeSinceStartup
     for id, control in pairs(self._ControlReleaseDict) do
         if not control:HasViewRef() and now - control:_GetLastUseTime() >= control:_GetDelayReleaseTime() then --超出释放时间了
-            table.insert(removeIds, id)
+            count = count + 1
+            removeIds[count] = id
         end
     end
 
-    for _, id in ipairs(removeIds) do
+    for i = 1, count do
+        local id = removeIds[i]
         local control = self._ControlReleaseDict[id]
         control:Release()
         self._ControlReleaseDict[id] = nil
+        removeIds[i] = nil
     end
 
     if not next(self._ControlReleaseDict) then
@@ -488,16 +495,17 @@ end
 function XMVCACls:ProfilerLiveControl()
     if IsWindowsEditor then
         local Uid2NameMap = XLuaUiManager.GetUid2NameMap()
-        local log = ""
+        local parts = {}
         for moduleId, control in pairs(self._ControlDict) do
-            log = log .. moduleId .. " RefUi: "
+            parts[#parts + 1] = moduleId
+            parts[#parts + 1] = " RefUi: "
             local refViewUidList = control._RefUi
-            for _, uid in ipairs(refViewUidList) do
-                log = log .. (Uid2NameMap[uid] or "")
+            for uid, _ in pairs(refViewUidList) do
+                parts[#parts + 1] = (Uid2NameMap[uid] or "")
             end
-            log = log .. "\n"
+            parts[#parts + 1] = "\n"
         end
-        XLog.Debug(log)
+        XLog.Debug(table.concat(parts))
     end
 end
 

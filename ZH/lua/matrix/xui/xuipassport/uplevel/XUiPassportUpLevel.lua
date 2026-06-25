@@ -23,7 +23,8 @@ function XUiPassportUpLevel:OnAwake()
     self.IsShowGridEffect = false   --滑动列表中新出现的格子显示特效
 end
 
-function XUiPassportUpLevel:OnStart()
+function XUiPassportUpLevel:OnStart(buyCb)
+    self.BuyCallback = buyCb
     self.AssetPanel = XUiPanelAsset.New(self, self.PanelAsset, XDataCenter.ItemManager.ItemId.FreeGem)
     self:RegisterButtonEvent()
     self:SetSelectCount(1)
@@ -234,7 +235,10 @@ function XUiPassportUpLevel:OnBtnConfirmClick()
     local spendBuyCount = self:GetSpendBuyCount()
     local spendBuyExp = self:GetSpendBuyExp()
     local levelAfter = self:GetLevelAfter()
-    local buyCb = handler(self, self.Close)
+    local buyCb = function()
+        self:Close()
+        self.BuyCallback()
+    end
 
     XLuaUiManager.Open("UiPassportReward", levelAfter, spendBuyCount, spendBuyExp, buyCb, self.LevelIdList)
 end

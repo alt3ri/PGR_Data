@@ -91,7 +91,7 @@ function XUiGachaLiv4P5Show:InitUi()
     self.ResultUiCamera = self.UiModelGo.transform:Find("UiRoot/UiCamera11")
     self.ResultUiCamera.gameObject:SetActiveEx(false)
     ---@type UnityEngine.Camera
-    self.UiCamera = self.UiModelGo.transform:Find("UiRoot/Camera"):GetComponent("Camera")
+    self.UiCamera = self.UiModelGo.transform:Find("UiRoot/Camera"):GetComponent(typeof(CS.UnityEngine.Camera))
     ---@type UnityEngine.Transform
     self.PanelTenEnableAnim = self.UiModelGo.transform:Find("Animation/PanelTenEnable")
     ---@type UnityEngine.Transform

@@ -10,10 +10,12 @@ local UIBindControl = {
     UiCharacterDetail = ModuleId.XCharacter,
     UiEnhanceSkillActivation = ModuleId.XCharacter,
     UiCharacterQualitySystemV2P6 = ModuleId.XCharacter,
-    -- 装备
+
+    --region 装备
     UiEquipDetailChildV2P6 = ModuleId.XEquip,
     UiEquipDetailV2P6 = ModuleId.XEquip,
     UiEquipOverrunV2P6 = ModuleId.XEquip,
+    UiEquipOverrunV4P6 = ModuleId.XEquip,
     UiEquipOverrunSelect = ModuleId.XEquip,
     UiEquipOverrunLevel = ModuleId.XEquip,
     UiEquipStrengthenV2P6 = ModuleId.XEquip,
@@ -36,6 +38,7 @@ local UIBindControl = {
     UiEquipAwarenessV2P6 = ModuleId.XEquip,
     UiEquipResonanceSelectAfter = ModuleId.XEquip,
     UiEquipResonanceQuick = ModuleId.XEquip,
+    --endregion
 
     --region 肉鸽3.0
     UiTheatre3Main = ModuleId.XTheatre3,
@@ -836,6 +839,10 @@ local UIBindControl = {
     UiMusicGameActivityTask = ModuleId.XMusicGameActivity,
     UiMusicGameActivityPopupVolSet = ModuleId.XMusicGameActivity,
 
+    -- 音乐会预热
+    UiConcertPreHeatingMain = ModuleId.XConcertPreHeating,
+    UiConcertPreHeatingTuningStage = ModuleId.XConcertPreHeating,
+
     -- 节奏游戏
     UiRhythmGameTaikoPlay = ModuleId.XRhythmGame,
     UiRhythmGamePopupChoose = ModuleId.XRhythmGame,
@@ -1197,6 +1204,7 @@ local UIBindControl = {
     UiLifeTreeTask = ModuleId.XLifeTree,
     UiLifeTreeGuide = ModuleId.XLifeTree,
     UiLifeTreeUnlockType = ModuleId.XLifeTree,
+    UiLifeTreeConstellationDetail = ModuleId.XLifeTree,
     --endregion
 
     --region 肉鸽6
@@ -1235,6 +1243,18 @@ local UIBindControl = {
     UiTheatre6BubbleAttackDetail = ModuleId.XTheatre6,
     UiTheatre6BubbleAttributeDetail = ModuleId.XTheatre6,
     UiTheatre6GainTips = ModuleId.XTheatre6,
+    UiTheatre6PopupPVPFilterCharacter = ModuleId.XTheatre6,
+    UiTheatre6PopupChooseEnvironment = ModuleId.XTheatre6,
+    UiTheatre6PVPSettlement = ModuleId.XTheatre6,
+    UiTheatre6PVPMain = ModuleId.XTheatre6,
+    UiTheatre6PVPAttackDefend = ModuleId.XTheatre6,
+    UiTheatre6PopupPVPInfo = ModuleId.XTheatre6,
+    UiTheatre6PopupPVPCompare = ModuleId.XTheatre6,
+    UiTheatre6PVPLoading = ModuleId.XTheatre6,
+    UiTheatre6PopupNewContent = ModuleId.XTheatre6,
+    UiTheatre6PVPRank = ModuleId.XTheatre6,
+    UiTheatre6PVPRankDetail = ModuleId.XTheatre6,
+    UiTheatre6PopupPVPRecord = ModuleId.XTheatre6,
     --endregion
     --region XCommanderCollege
     UiBigWorldCollegeBanner = ModuleId.XCommanderCollege,
@@ -1256,6 +1276,15 @@ local UIBindControl = {
     UiGameCollectionRecord = ModuleId.XGameCollection,
     UiGoldenMinerGiveUp = ModuleId.XGameCollection,
     --endregion
+
+    --region 大染色玩法
+    
+    UiDyeMergeMain = ModuleId.XDyeMergeGame,
+    UiDyeMergeGame = ModuleId.XDyeMergeGame,
+    UiDyeMergePopupTips = ModuleId.XDyeMergeGame,
+    UiDyeMergeTask = ModuleId.XDyeMergeGame,
+    --endregion
+
 }
 
 return UIBindControl

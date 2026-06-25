@@ -16,7 +16,9 @@ function XUiPanelText:AppearText(layer, id, content, posX, posY, scale, rotation
         self.TextDic[id] = uiObj
     end
     uiObj.gameObject:SetActiveEx(true)
-    uiObj:GetObject("GridText").text = XUiHelper.ConvertLineBreakSymbol(content)
+    local gridText = uiObj:GetObject("GridText")
+    gridText.text = XUiHelper.ConvertLineBreakSymbol(content)
+    self:_ApplyChannelOffsetTo(gridText)
     
     -- 对齐方式
     local rect = uiObj:GetObject("GridTextRect")
@@ -59,7 +61,7 @@ function XUiPanelText:DisAppearAllText()
 end
 
 -- 文本播放动画
-function XUiPanelText:TextPlayAnim(id, time, pos, rotation, scale)
+function XUiPanelText:TextPlayAnim(id, time, pos, rotation, scale, ease)
     local uiObj = self.TextDic[id]
     if not uiObj then
         XLog.Error(string.format("暂无文本%s，播放动画失败!", id))
@@ -70,16 +72,25 @@ function XUiPanelText:TextPlayAnim(id, time, pos, rotation, scale)
     local rect = uiObj:GetObject("GridTextRect")
     if pos then
         local aimPos = XLuaVector3.New(pos[1], pos[2], pos[3] or 0)
-        rect:DOAnchorPos3D(aimPos, second)
+        local tween = rect:DOAnchorPos3D(aimPos, second)
+        if ease and tween then
+            tween:SetEase(ease)
+        end
     end
 
     if rotation then
         local addRotate = XLuaVector3.New(0, 0, rotation)
-        rect.transform:DORotate(addRotate, second, CS.DG.Tweening.RotateMode.LocalAxisAdd)
+        local tween = rect.transform:DORotate(addRotate, second, CS.DG.Tweening.RotateMode.LocalAxisAdd)
+        if ease and tween then
+            tween:SetEase(ease)
+        end
     end
 
     if scale then
-        rect.transform:DOScale(scale, second)
+        local tween = rect.transform:DOScale(scale, second)
+        if ease and tween then
+            tween:SetEase(ease)
+        end
     end
 end
 
@@ -91,6 +102,52 @@ function XUiPanelText:SetTextRootLocalPosition(id, pos)
     local uiObj = self.TextDic[id]
     local root = uiObj:GetObject("Root")
     root.localPosition = pos
+end
+
+-- 设置色相偏移:仅存状态,作用于此后 AppearText 新建/复用的文本,不追溯已显示文本
+function XUiPanelText:SetChannelOffset(expansionScale, offsetMultiplier, r, g, b)
+    self.ChannelOffsetState = {
+        ExpansionScale = expansionScale,
+        OffsetMultiplier = offsetMultiplier,
+        R = r,
+        G = g,
+        B = b,
+    }
+end
+
+function XUiPanelText:ClearChannelOffset()
+    self.ChannelOffsetState = nil
+end
+
+function XUiPanelText:_ApplyChannelOffsetTo(txt)
+    if XTool.UObjIsNil(txt) then
+        return
+    end
+    local addon = txt.gameObject:GetComponent("XChannelOffsetTextAddon")
+    if XTool.UObjIsNil(addon) then
+        return
+    end
+    local state = self.ChannelOffsetState
+    if not state then
+        addon:Revert()
+        return
+    end
+    if state.ExpansionScale ~= nil then
+        addon.ExpansionScale = state.ExpansionScale
+    end
+    if state.OffsetMultiplier ~= nil then
+        addon.ChannelOffsetMultiplier = state.OffsetMultiplier
+    end
+    if state.R ~= nil then
+        addon.ChannelOffsetR = state.R
+    end
+    if state.G ~= nil then
+        addon.ChannelOffsetG = state.G
+    end
+    if state.B ~= nil then
+        addon.ChannelOffsetB = state.B
+    end
+    addon:Apply()
 end
 
 return XUiPanelText

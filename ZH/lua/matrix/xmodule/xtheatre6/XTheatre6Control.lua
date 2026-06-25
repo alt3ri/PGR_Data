@@ -15,6 +15,8 @@ XClassPartialRequire("XModule/XTheatre6/ControlPartial/XTheatre6ControlNetwork",
 XClassPartialRequire("XModule/XTheatre6/ControlPartial/XTheatre6ControlCharacter", "XTheatre6Control")
 XClassPartialRequire("XModule/XTheatre6/ControlPartial/XTheatre6ControlStage", "XTheatre6Control")
 XClassPartialRequire("XModule/XTheatre6/ControlPartial/XTheatre6ControlBattleShop", "XTheatre6Control")
+XClassPartialRequire("XModule/XTheatre6/ControlPartial/XTheatre6ControlPvp", "XTheatre6Control")
+XClassPartialRequire("XModule/XTheatre6/ControlPartial/XTheatre6ControlPvpNetwork", "XTheatre6Control")
 --endregion
 
 function XTheatre6Control:OnInit()
@@ -68,6 +70,7 @@ function XTheatre6Control:OnInit()
     }
 
     self:OnInitCharacter()
+    self:OnInitPvp()
 end
 
 function XTheatre6Control:AddAgencyEvent()
@@ -79,6 +82,7 @@ function XTheatre6Control:RemoveAgencyEvent()
 end
 
 function XTheatre6Control:OnRelease()
+    self:OnReleasePvp()
     XMVCA.XTheatre6:StopAudio()
 end
 
@@ -175,11 +179,13 @@ function XTheatre6Control:GetShowBuildTagWithSort(buildTags)
     return tagConfigs
 end
 
----返回所有已装备技能(不区分槽位)BuildTag 的计数表
+---返回所有已装备技能(不区分槽位)BuildTag 中数量最多的 tagId,数量相同时取 Pirority 最大者,两者都并列时取更早出现的
+---更早顺序:槽位顺序 Active→Insert→Special;同槽位按 pos 升序;同技能按 BuildTags 配表顺序
 ---@param skillIdsBySlot table<number, table>|nil 可选,按槽位类型的已装备技能id表;不传则查询当前玩法数据
----@return table<number, number> tagId -> 出现的已装备技能数量
-function XTheatre6Control:GetEquippedBuildTagCounts(skillIdsBySlot)
+---@return number[]|{} 最优 tagIds,无任何已装备 BuildTag 时返回 {}
+function XTheatre6Control:GetTopEquippedBuildTagIds(skillIdsBySlot)
     local counts = {}
+    local orderedTagIds = {}
     local slotTypes = {
         XEnumConst.Theatre6.SlotType.Active,
         XEnumConst.Theatre6.SlotType.Insert,
@@ -189,11 +195,20 @@ function XTheatre6Control:GetEquippedBuildTagCounts(skillIdsBySlot)
         local ownedIds = (skillIdsBySlot and skillIdsBySlot[slotType])
             or self:GetCharacterDressSkillIds(slotType)
         if ownedIds then
-            for _, ownedSkillId in pairs(ownedIds) do
+            local positions = {}
+            for pos in pairs(ownedIds) do
+                table.insert(positions, pos)
+            end
+            table.sort(positions)
+            for _, pos in ipairs(positions) do
+                local ownedSkillId = ownedIds[pos]
                 if XTool.IsNumberValid(ownedSkillId) then
                     local cfg = self:GetSkillCfgById(ownedSkillId)
                     if cfg and cfg.BuildTags then
                         for _, tagId in ipairs(cfg.BuildTags) do
+                            if counts[tagId] == nil then
+                                table.insert(orderedTagIds, tagId)
+                            end
                             counts[tagId] = (counts[tagId] or 0) + 1
                         end
                     end
@@ -201,7 +216,26 @@ function XTheatre6Control:GetEquippedBuildTagCounts(skillIdsBySlot)
             end
         end
     end
-    return counts
+    local result = {}
+    local bestCount, bestPriority = -1, 999
+
+    for _, tagId in ipairs(orderedTagIds) do
+        local count = counts[tagId] or 0
+        local cfg = self:GetBuildTagConfig(tagId)
+        local priority = (cfg and cfg.Pirority) or 0
+
+        if count > bestCount or (count == bestCount and priority < bestPriority) then
+            -- 找到新的最优，清空旧结果
+            result = { tagId }
+            bestCount = count
+            bestPriority = priority
+
+        elseif count == bestCount and priority == bestPriority then
+            -- 和当前最优一样，收集起来
+            table.insert(result, tagId)
+        end
+    end
+    return result
 end
 
 ---返回所有已装备技能中 IsShowTags 为 true 的 BuildTag 集合
@@ -239,7 +273,7 @@ function XTheatre6Control:GetEquippedForceShowBuildTagSet(skillIdsBySlot)
 end
 
 ---商店/任务最终高亮源:
----A. 候选 = sourceTagIds ∩ 装备 BuildTags 出现集合,按出现次数降序/Pirority 降序/sourceTagIds 原顺序排序后取第一个
+---A. 候选 = 装备 BuildTags 中数量最多(并列时 Pirority 最大)的 tag,若该 tag 在 sourceTagIds 中则纳入
 ---B. 装备技能 IsShowTags=true 的 tag 与 sourceTagIds 取交集,无视 A 的 count/Pirority 规则直接保留
 ---最终 = A ∪ B
 ---@param sourceTagIds number[]|nil 商店/任务页收集到的可参照 tag 集合
@@ -247,43 +281,20 @@ end
 ---@return number[]|nil
 function XTheatre6Control:GetEffectiveTagHighlightSourceTagIds(sourceTagIds, skillIdsBySlot)
     if not sourceTagIds then return nil end
-    local equippedCounts = self:GetEquippedBuildTagCounts(skillIdsBySlot)
+    local topTagIds = self:GetTopEquippedBuildTagIds(skillIdsBySlot)
     local forceShowSet = self:GetEquippedForceShowBuildTagSet(skillIdsBySlot)
-    local candidates = {}
-    local sourceOrder = {}
-    local addedSet = {}
-    for i, tagId in ipairs(sourceTagIds) do
-        sourceOrder[tagId] = sourceOrder[tagId] or i
-        if not addedSet[tagId] and (equippedCounts[tagId] or 0) > 0 then
-            addedSet[tagId] = true
-            table.insert(candidates, tagId)
+    local result = {}
+    if #topTagIds >= 1 then
+        for _,topTagId in ipairs(topTagIds) do
+            if table.contains(sourceTagIds,topTagId) then
+                table.insert(result, topTagId)
+                break
+            end
         end
     end
-    local result = {}
-    local resultSet = {}
-    if #candidates > 0 then
-        table.sort(candidates, function(a, b)
-            local countA = equippedCounts[a] or 0
-            local countB = equippedCounts[b] or 0
-            if countA ~= countB then
-                return countA > countB
-            end
-            local cfgA = self:GetBuildTagConfig(a)
-            local cfgB = self:GetBuildTagConfig(b)
-            local priorityA = (cfgA and cfgA.Pirority) or 0
-            local priorityB = (cfgB and cfgB.Pirority) or 0
-            if priorityA ~= priorityB then
-                return priorityA > priorityB
-            end
-            return (sourceOrder[a] or 0) < (sourceOrder[b] or 0)
-        end)
-        local tagId = candidates[1]
-        resultSet[tagId] = true
-        table.insert(result, tagId)
-    end
+
     for _, tagId in ipairs(sourceTagIds) do
-        if forceShowSet[tagId] and not resultSet[tagId] then
-            resultSet[tagId] = true
+        if forceShowSet[tagId] and not result[tagId] then
             table.insert(result, tagId)
         end
     end
@@ -487,7 +498,7 @@ function XTheatre6Control:StartGame(modelId, stageId, floorIndex, roomIndex)
 end
 
 ---进入下一关
-function XTheatre6Control:MoveNext(isPopOpen)
+function XTheatre6Control:MoveNext()
     self._Model.StageChain:MoveNext()
 
     if XFightUtil.IsFighting() then
@@ -495,10 +506,7 @@ function XTheatre6Control:MoveNext(isPopOpen)
         return
     end
 
-    if isPopOpen == nil then
-        isPopOpen = true
-    end
-    self:OpenStageView(isPopOpen)
+    self:OpenStageView(true)
 end
 
 function XTheatre6Control:InitClientStageStatus()
@@ -509,6 +517,10 @@ end
 function XTheatre6Control:OpenStageView(isPopOpen)
     self._Model.StageChain.IsWaitOpenNext = false
 
+    if self:CheckEnterExFloorConfirm(isPopOpen) then
+        return
+    end
+    
     local node = self._Model.StageChain.Curr
     local openUiFunc = self._RoomUiFuncDict[node.RoomType]
 
@@ -521,6 +533,30 @@ function XTheatre6Control:OpenStageView(isPopOpen)
     self:TryOpenGetBuffPopup(node.RoomType)
     self:PlayAudio()
     XMVCA.XTheatre6:OpenSanDeathBuffPopup()
+end
+
+---有额外楼层可以进入，打开确认弹窗
+function XTheatre6Control:CheckEnterExFloorConfirm(isPopOpen)
+    local modelData = self:GetCurPlayModeData()
+    if not modelData.WaitingExFloorConfirm or not modelData.HasClearedBeforeExFloor then
+        return false
+    end
+
+    local stageConfig = self:GetStageConfig(modelData.StageId)
+    local floorConfig = self:GetStageFloorConfig(stageConfig.FloorIds[modelData.CurFloorIdx + 2]) --下一层 服务器索引从0开始
+    if not floorConfig or floorConfig.ExFloor ~= 1 then
+        return false
+    end
+
+    self:OpenUi("UiBiancaTheatreBlack", isPopOpen)
+    local content = self:GetClientConfigValue("EnterExFloorTitle")
+    XLuaUiManager.Open("UiTheatre6PopupCommon", "", content, nil, function()
+        self:RequestExFloorConfirm(true)
+    end, function()
+        self:RequestExFloorConfirm(false)
+    end, nil, true)
+
+    return true
 end
 
 function XTheatre6Control:PlayAudio()
@@ -756,18 +792,40 @@ end
 
 --region 主页
 
-function XTheatre6Control:CheckShowUpdatePopup()
-    local lastViewTime = self._Model:GetLastViewStoryTime()
+function XTheatre6Control:GetLatetStoryUpdateTime()
     local values = self._Model:GetClientConfigValues("StoryUpdateTime")
     local latestUpdateTime = 0
+
     if #values ~= 0 then
         latestUpdateTime = XTime.ParseToTimestamp(values[#values])
     end
+
+    return latestUpdateTime
+end
+
+function XTheatre6Control:CheckHasNewContent()
+    local lastViewTime = self._Model:GetLastViewStoryTime()
+    local latestUpdateTime = self:GetLatetStoryUpdateTime()
+
     return lastViewTime < latestUpdateTime
 end
 
+function XTheatre6Control:CheckShowUpdatePopup()
+    local lastViewTime = self._Model:GetLastViewStoryTime()
+    local latestUpdateTime = self:GetLatetStoryUpdateTime()
+    local localTime = self._Model:GetNewContentShowed()
+
+    return lastViewTime < latestUpdateTime and localTime ~= latestUpdateTime
+end
+
 function XTheatre6Control:ShowUpdatePopup()
-    -- TODO: 实现打开更新内容弹窗
+    local latestUpdateTime = self:GetLatetStoryUpdateTime()
+
+    if XTool.IsNumberValid(latestUpdateTime) then
+        self._Model:SetNewContentShowed(latestUpdateTime)
+    end
+
+    XLuaUiManager.Open("UiTheatre6PopupNewContent")
 end
 
 ---显示放弃进度确认弹窗
@@ -905,7 +963,7 @@ function XTheatre6Control:GetSettlementArchiveList(roleId)
         if fileData then
             archiveData.characterId = fileData.CharacterId
             archiveData.score = fileData.Score or 0
-            archiveData.tags = fileData.BuildTags or table.empty
+            archiveData.tags = self:GetSortFileDataBuildTags(fileData)
             local characterCfg = self:GetCharacterConfig(fileData.CharacterId)
             local defaultFashion = self:GetFashionConfig(characterCfg.FashionIds[1]).Portrait
             archiveData.roleIcon = defaultFashion or ""

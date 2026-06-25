@@ -60,7 +60,7 @@ require("XManager/XAssistManager") --XDataCenter
 require("XManager/XAutoFightManager") --XDataCenter
 require("XManager/XAutoWindowManager") --XDataCenter
 require("XManager/XBackManager") --XDataCenter
-require("XManager/XBaseEquipManager") --XDataCenter
+--require("XManager/XBaseEquipManager") --XDataCenter
 require("XManager/XBfrtManager") --XDataCenter
 require("XManager/XBiancaTheatreManager") --XDataCenter
 require("XManager/XBodyCombineGameManager") --XDataCenter
@@ -201,6 +201,7 @@ require("XManager/XVoteManager") --XDataCenter
 require("XManager/XWeaponFashionManager") --XDataCenter
 require("XManager/XWeekChallengeManager") --XDataCenter
 require("XManager/XWhiteValentineManager") --XDataCenter
+require("XManager/XSuperSmashBrosManager") --XDataCenter
 --endregion XDataCenter
 
 --region Local - 不需要初始就require
@@ -233,7 +234,7 @@ require("XManager/XWhiteValentineManager") --XDataCenter
 --require("XManager/XPlanetManager") --已经屏蔽
 --require("XManager/XReformActivityManager") --已经屏蔽
 --require("XManager/XStoryManager") --已经屏蔽
---require("XManager/XSuperSmashBrosManager") --已经屏蔽
+
 --require("XManager/XWorldBossManager") --已经屏蔽
 --require("XManager/XMoeWarManager") --XDataCenter --已经屏蔽
 --require("XManager/XFubenUnionKillRoomManager") --已经屏蔽

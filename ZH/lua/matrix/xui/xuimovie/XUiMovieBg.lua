@@ -14,6 +14,12 @@ function XUiMovieBg:OnAwake()
 end
 
 function XUiMovieBg:OnDestroy()
+    -- 必须遍历调用每个 grid bg:OnDestroy()，否则跳过剧情时 bg 上的模糊 timer 不会被 UnSchedule，会泄漏
+    if self.BgDic then
+        for _, bg in pairs(self.BgDic) do
+            bg:OnDestroy()
+        end
+    end
     self.BgDic = nil
 end
 

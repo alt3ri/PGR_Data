@@ -220,8 +220,8 @@ XFubenManagerCreator = function()
         return XMVCA.XFuben:DoEnterFight(stage, teamId, isAssist, challengeCount, challengeId, callback)
     end
 
-    function XFubenManager.EnterFight(stage, teamId, isAssist, challengeCount, challengeId, callback)
-        return XMVCA.XFuben:EnterFight(stage, teamId, isAssist, challengeCount, challengeId, callback)
+    function XFubenManager.EnterFight(stage, teamId, isAssist, challengeCount, challengeId, callback, bossInshotTowerLevelId)
+        return XMVCA.XFuben:EnterFight(stage, teamId, isAssist, challengeCount, challengeId, callback, nil, bossInshotTowerLevelId)
     end
 
     function XFubenManager.EnterChessPursuitFight(stage, preFight, callBack)

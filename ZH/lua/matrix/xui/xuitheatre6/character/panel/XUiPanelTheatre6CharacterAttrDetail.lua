@@ -475,11 +475,17 @@ function XUiPanelTheatre6CharacterAttrDetail:IsAreaAcceptSkill(grid, areaId)
     return true
 end
 
+---@param grid XUiGridTheatre6SkillBag
 function XUiPanelTheatre6CharacterAttrDetail:SetGridClick(grid, slotType)
     grid:SetClickCb(function(skillId)
         if XTool.IsNumberValid(skillId) then
-            self._Control:OpenSkillTip(skillId, grid.Transform,
-                { SlotType = slotType, ReadOnly = self._IsUseParamData, IsBaseSkill = grid:IsBaseSkill() })
+            local params = {
+                SlotType = slotType,
+                ReadOnly = self._IsUseParamData,
+                IsBaseSkill = grid:IsBaseSkill(),
+                IsCanUpgrade = grid:IsCanUpgrade(),
+            }
+            self._Control:OpenSkillTip(skillId, grid.Transform, params)
         end
     end)
 end

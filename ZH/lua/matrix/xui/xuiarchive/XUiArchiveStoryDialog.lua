@@ -23,8 +23,8 @@ function XUiArchiveStoryDialog:Init()
             title = string.format("%s%s",tmpText,self.Data:GetName())
         end
     end
-    self.TxtStoryDec.text = title
-    self.TxtStoryName.text = self.Data:GetDesc()
+    self.TxtStoryName.text = title
+    self.TxtStoryDec.text = self.Data:GetDesc()
     self.PlayType = #self.Data:GetStoryId()
     if self.PlayType == TwoStory then
         self.BtnEnterStoryBefore.gameObject:SetActiveEx(true)

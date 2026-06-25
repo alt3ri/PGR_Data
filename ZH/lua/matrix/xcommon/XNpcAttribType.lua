@@ -165,6 +165,16 @@ XNpcAttribType = {
     FireBoomWeaknessP = 162, --爆燃伤害额外加成
     FireBoomAccumulatorP = 163, --爆燃伤害额外加成
     FireBoomAntiAccumulatorP = 164,--爆燃积蓄槽效率抗性
+    DriveGauge = 165, --斗气值
+    DriveGaugeRegeneration = 166, --斗气值恢复速度(万分比/秒)
+    DriveBurnOutGauge = 167, --虚损值
+    DriveBORegeneration = 168, --虚损值恢复速度(万分比/秒)
+    DriveRushConsume = 169, --绿冲消耗
+    DriveImpactConsume = 170, --爆气消耗
+    DriveLockDuration = 171, --斗气锁时间(毫秒)
+    DriveShield = 172, --超算盾
+    DriveShieldRegeneration = 173, --超算盾恢复时间(毫秒)
+    DriveOverBurnTime = 174, --临时虚损时间(毫秒)
     
-    End = 165, --结束标志
+    End = 175, --结束标志
 }

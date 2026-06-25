@@ -17,7 +17,8 @@ function XUiPanelTheatre6SettlementSave:OnStart(mode)
 end
 
 function XUiPanelTheatre6SettlementSave:OnEnable()
-    self._PanelRoleDetail = require("XUi/XUiTheatre6/Character/Panel/XUiPanelTheatre6CharacterAttrDetail").New(self.UiTheatre6PanelRoleDetail, self, self.Parent.SettleData and self.Parent.SettleData.FileData, self._Mode)
+    self._PanelRoleDetail = require("XUi/XUiTheatre6/Character/Panel/XUiPanelTheatre6CharacterAttrDetail").New(
+        self.UiTheatre6PanelRoleDetail, self, self.Parent.SettleData and self.Parent.SettleData.FileData, self._Mode)
     self:Refresh()
 end
 
@@ -110,7 +111,7 @@ function XUiPanelTheatre6SettlementSave:OnBtnSaveClick()
     end
 
     if not selectedData then
-        XLuaUiManager.Open("UiTheatre6ToastCommon",CS.XTextManager.GetText("Theatre6SelectSlotFirst"))
+        XLuaUiManager.Open("UiTheatre6ToastCommon", CS.XTextManager.GetText("Theatre6SelectSlotFirst"))
         return
     end
 

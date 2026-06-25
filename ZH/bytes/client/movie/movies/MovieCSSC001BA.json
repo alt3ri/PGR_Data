@@ -36,7 +36,7 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: 'V4.3'}"
+        "Params": "{3: 'V4.5'}"
     },
     {
         "Id": 4,
@@ -49,7 +49,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: 'Assets/Product/Ui/Spine/4_3Spine/V43UiMovieCG_NietiyaBin/V43UiMovieCG_NietiyaBin.prefab'}"
+        "Params": "{1: 'Assets/Product/Ui/Spine/4_5_Spine/V45UiMovieCG_Lifu_Sjqqmzy/V45UiMovieCG_Lifu_Sjqqmzy.prefab'}"
     },
     {
         "Id": 5,
@@ -59,23 +59,23 @@
         "IsBlock": null,
         "IsEnd": null,
         "BeginAnim": "DialogEnable",
-        "EndAnim": null,
+        "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u6d85\u7f07\u5a05 \u75c5'}"
+        "Params": "{3: '\u4e3d\u8299\u5361\u6c60-\u6c34\u6676\u7403\u5947\u5999\u591c'}"
     },
     {
         "Id": 6,
         "ActionId": 6,
         "NextActionId": null,
         "Type": 105,
-        "IsBlock": null,
+        "IsBlock": 1.0,
         "IsEnd": null,
         "BeginAnim": null,
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": null
+        "Params": "{1: 'Assets/Product/Ui/Spine/4_5_Spine/V45UiMovieCG_Lifu_Xsgw/V45UiMovieCG_Lifu_Xsgw.prefab'}"
     },
     {
         "Id": 7,
@@ -84,11 +84,11 @@
         "Type": 301,
         "IsBlock": null,
         "IsEnd": null,
-        "BeginAnim": null,
+        "BeginAnim": "DialogEnable",
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: 'V4.2'}"
+        "Params": "{3: '\u4e3d\u8299\u5361\u6c60-\u643a\u624b\u5171\u821e'}"
     },
     {
         "Id": 8,
@@ -101,7 +101,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: 'Assets/Product/Ui/Spine/4_2Spine/UiMovieLuoSaiTaHuiShouV42/UiMovieLuoSaiTaHuiShouV42Normal.prefab'}"
+        "Params": "{1: 'Assets/Product/Ui/Spine/4_5_Spine/V45UiMovieCG_ShengHongQiuYing/V45UiMovieCG_ShengHongQiuYing.prefab'}"
     },
     {
         "Id": 9,
@@ -114,7 +114,7 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u7f57\u585e\u5854 \u56de\u9996\uff08\u6b63\u5e38\uff09'}"
+        "Params": "{3: '\u4e3b\u7ebf\u5267\u60c5\uff08\u4e54\u5b89\u7ebf\uff09-\u770b\u770b\u5730\u7403\uff08\u7741\u95ed\u773c\u5faa\u73af\uff09'}"
     },
     {
         "Id": 10,
@@ -127,7 +127,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: 'idle_closeeyes', 2: '1', 3: 'Root/Role', 4: '1'}"
+        "Params": "{1: 'idle_eyesOpen', 2: '1', 3: 'Root/Role', 4: '1'}"
     },
     {
         "Id": 11,
@@ -140,7 +140,7 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u7f57\u585e\u5854 \u56de\u9996\uff08\u95ed\u773c\uff09'}"
+        "Params": "{3: '\u4e3b\u7ebf\u5267\u60c5\uff08\u4e54\u5b89\u7ebf\uff09-\u770b\u770b\u5730\u7403\uff08\u7741\u773c\u5faa\u73af\uff09'}"
     },
     {
         "Id": 12,
@@ -153,7 +153,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: 'idle_smile', 2: '1', 3: 'Root/Role', 4: '1'}"
+        "Params": "{1: 'idle_eyesClosed', 2: '1', 3: 'Root/Role', 4: '1'}"
     },
     {
         "Id": 13,
@@ -166,20 +166,20 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u7f57\u585e\u5854 \u56de\u9996\uff08\u7b11\uff09'}"
+        "Params": "{3: '\u4e3b\u7ebf\u5267\u60c5\uff08\u4e54\u5b89\u7ebf\uff09-\u770b\u770b\u5730\u7403\uff08\u95ed\u773c\u5faa\u73af\uff09'}"
     },
     {
         "Id": 14,
         "ActionId": 14,
         "NextActionId": null,
-        "Type": 106,
-        "IsBlock": 1.0,
+        "Type": 105,
+        "IsBlock": null,
         "IsEnd": null,
         "BeginAnim": null,
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: 'idle_think', 2: '1', 3: 'Root/Role', 4: '1'}"
+        "Params": null
     },
     {
         "Id": 15,
@@ -192,7 +192,7 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u7f57\u585e\u5854 \u56de\u9996\uff08\u601d\u7d22\uff09'}"
+        "Params": "{3: 'V4.3'}"
     },
     {
         "Id": 16,
@@ -205,11 +205,167 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: 'Assets/Product/Ui/Spine/4_2Spine/V42UiMovieCG_BiAnKaJX/V42UiMovieCG_BiAnKaJX.prefab'}"
+        "Params": "{1: 'Assets/Product/Ui/Spine/4_3Spine/V43UiMovieCG_NietiyaBin/V43UiMovieCG_NietiyaBin.prefab'}"
     },
     {
         "Id": 17,
         "ActionId": 17,
+        "NextActionId": null,
+        "Type": 301,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": null,
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{3: '\u6d85\u7f07\u5a05 \u75c5'}"
+    },
+    {
+        "Id": 18,
+        "ActionId": 18,
+        "NextActionId": null,
+        "Type": 105,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": null,
+        "EndAnim": null,
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": null
+    },
+    {
+        "Id": 19,
+        "ActionId": 19,
+        "NextActionId": null,
+        "Type": 301,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": null,
+        "EndAnim": "DialogDisable",
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{3: 'V4.2'}"
+    },
+    {
+        "Id": 20,
+        "ActionId": 20,
+        "NextActionId": null,
+        "Type": 105,
+        "IsBlock": 1.0,
+        "IsEnd": null,
+        "BeginAnim": null,
+        "EndAnim": null,
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{1: 'Assets/Product/Ui/Spine/4_2Spine/UiMovieLuoSaiTaHuiShouV42/UiMovieLuoSaiTaHuiShouV42Normal.prefab'}"
+    },
+    {
+        "Id": 21,
+        "ActionId": 21,
+        "NextActionId": null,
+        "Type": 301,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{3: '\u7f57\u585e\u5854 \u56de\u9996\uff08\u6b63\u5e38\uff09'}"
+    },
+    {
+        "Id": 22,
+        "ActionId": 22,
+        "NextActionId": null,
+        "Type": 106,
+        "IsBlock": 1.0,
+        "IsEnd": null,
+        "BeginAnim": null,
+        "EndAnim": null,
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{1: 'idle_closeeyes', 2: '1', 3: 'Root/Role', 4: '1'}"
+    },
+    {
+        "Id": 23,
+        "ActionId": 23,
+        "NextActionId": null,
+        "Type": 301,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{3: '\u7f57\u585e\u5854 \u56de\u9996\uff08\u95ed\u773c\uff09'}"
+    },
+    {
+        "Id": 24,
+        "ActionId": 24,
+        "NextActionId": null,
+        "Type": 106,
+        "IsBlock": 1.0,
+        "IsEnd": null,
+        "BeginAnim": null,
+        "EndAnim": null,
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{1: 'idle_smile', 2: '1', 3: 'Root/Role', 4: '1'}"
+    },
+    {
+        "Id": 25,
+        "ActionId": 25,
+        "NextActionId": null,
+        "Type": 301,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{3: '\u7f57\u585e\u5854 \u56de\u9996\uff08\u7b11\uff09'}"
+    },
+    {
+        "Id": 26,
+        "ActionId": 26,
+        "NextActionId": null,
+        "Type": 106,
+        "IsBlock": 1.0,
+        "IsEnd": null,
+        "BeginAnim": null,
+        "EndAnim": null,
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{1: 'idle_think', 2: '1', 3: 'Root/Role', 4: '1'}"
+    },
+    {
+        "Id": 27,
+        "ActionId": 27,
+        "NextActionId": null,
+        "Type": 301,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": "DialogDisable",
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{3: '\u7f57\u585e\u5854 \u56de\u9996\uff08\u601d\u7d22\uff09'}"
+    },
+    {
+        "Id": 28,
+        "ActionId": 28,
+        "NextActionId": null,
+        "Type": 105,
+        "IsBlock": 1.0,
+        "IsEnd": null,
+        "BeginAnim": null,
+        "EndAnim": null,
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{1: 'Assets/Product/Ui/Spine/4_2Spine/V42UiMovieCG_BiAnKaJX/V42UiMovieCG_BiAnKaJX.prefab'}"
+    },
+    {
+        "Id": 29,
+        "ActionId": 29,
         "NextActionId": null,
         "Type": 301,
         "IsBlock": null,
@@ -221,8 +377,8 @@
         "Params": "{3: '\u6bd4\u5b89\u5361\u5361\u6c60 \u201c\u5149\u4e0e\u6697\u7684\u4ea4\u54cd\u201d'}"
     },
     {
-        "Id": 18,
-        "ActionId": 18,
+        "Id": 30,
+        "ActionId": 30,
         "NextActionId": null,
         "Type": 105,
         "IsBlock": 1.0,
@@ -234,8 +390,8 @@
         "Params": "{1: 'Assets/Product/Ui/Spine/4_2Spine/V42UiMovieCG_BiAnKaMeiYing/V42UiMovieCG_BiAnKaMeiYing.prefab'}"
     },
     {
-        "Id": 19,
-        "ActionId": 19,
+        "Id": 31,
+        "ActionId": 31,
         "NextActionId": null,
         "Type": 301,
         "IsBlock": null,
@@ -247,8 +403,8 @@
         "Params": "{3: '\u6bd4\u5b89\u5361\u5361\u6c60 \u201c\u821e\u53f0\u4e0a\u7684\u9b45\u5f71\u201d'}"
     },
     {
-        "Id": 20,
-        "ActionId": 20,
+        "Id": 32,
+        "ActionId": 32,
         "NextActionId": null,
         "Type": 105,
         "IsBlock": null,
@@ -260,8 +416,8 @@
         "Params": null
     },
     {
-        "Id": 21,
-        "ActionId": 21,
+        "Id": 33,
+        "ActionId": 33,
         "NextActionId": null,
         "Type": 301,
         "IsBlock": null,
@@ -273,8 +429,8 @@
         "Params": "{3: 'V4.1'}"
     },
     {
-        "Id": 22,
-        "ActionId": 22,
+        "Id": 34,
+        "ActionId": 34,
         "NextActionId": null,
         "Type": 105,
         "IsBlock": 1.0,
@@ -286,8 +442,8 @@
         "Params": "{1: 'Assets/Product/Ui/Spine/4_1Spine/UiMovie_S_BuouxiongHJTV41/UiMovie_S_BuouxiongHJTV41.prefab'}"
     },
     {
-        "Id": 23,
-        "ActionId": 23,
+        "Id": 35,
+        "ActionId": 35,
         "NextActionId": null,
         "Type": 301,
         "IsBlock": null,
@@ -299,8 +455,8 @@
         "Params": "{3: '\u5e03\u5076\u718a \u6362\u673a\u4f53'}"
     },
     {
-        "Id": 24,
-        "ActionId": 24,
+        "Id": 36,
+        "ActionId": 36,
         "NextActionId": null,
         "Type": 105,
         "IsBlock": null,
@@ -312,8 +468,8 @@
         "Params": null
     },
     {
-        "Id": 25,
-        "ActionId": 25,
+        "Id": 37,
+        "ActionId": 37,
         "NextActionId": null,
         "Type": 101,
         "IsBlock": null,
@@ -325,8 +481,8 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}"
     },
     {
-        "Id": 26,
-        "ActionId": 26,
+        "Id": 38,
+        "ActionId": 38,
         "NextActionId": null,
         "Type": 301,
         "IsBlock": null,
@@ -338,8 +494,8 @@
         "Params": "{3: 'V4.0'}"
     },
     {
-        "Id": 27,
-        "ActionId": 27,
+        "Id": 39,
+        "ActionId": 39,
         "NextActionId": null,
         "Type": 105,
         "IsBlock": 1.0,
@@ -351,8 +507,8 @@
         "Params": "{1: 'Assets/Product/Ui/Spine/4-0Spine/CiBeiZheYHPassportSkinV40/CiBeiZheYHPassportSkinV40.prefab'}"
     },
     {
-        "Id": 28,
-        "ActionId": 28,
+        "Id": 40,
+        "ActionId": 40,
         "NextActionId": null,
         "Type": 301,
         "IsBlock": null,
@@ -364,8 +520,8 @@
         "Params": "{3: '\u6148\u60b2\u8005 \u7fbd\u5316'}"
     },
     {
-        "Id": 29,
-        "ActionId": 29,
+        "Id": 41,
+        "ActionId": 41,
         "NextActionId": null,
         "Type": 105,
         "IsBlock": 1.0,
@@ -377,8 +533,8 @@
         "Params": "{1: 'Assets/Product/Ui/Spine/4-0Spine/UiMovieLiFuJRV40/UiMovieLiFuJRV40.prefab'}"
     },
     {
-        "Id": 30,
-        "ActionId": 30,
+        "Id": 42,
+        "ActionId": 42,
         "NextActionId": null,
         "Type": 301,
         "IsBlock": null,
@@ -390,8 +546,8 @@
         "Params": "{3: '\u4e3d\u8299 \u5bb6\u4eba'}"
     },
     {
-        "Id": 31,
-        "ActionId": 31,
+        "Id": 43,
+        "ActionId": 43,
         "NextActionId": null,
         "Type": 301,
         "IsBlock": null,

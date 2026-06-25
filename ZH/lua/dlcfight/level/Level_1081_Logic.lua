@@ -94,20 +94,33 @@ do
 
     function Settle:Start()
         local levelId = self._owner._levelId
-        self._proxy:Theatre6CountDownMessageTip(3) --倒计时3秒
-        XLog.Debug("成功开启倒计时")
+        if levelId == 1082 or levelId == 1083 or levelId == 1084 then
+            self._proxy:Theatre6CountDownMessageTip(3) --倒计时3秒
+        elseif levelId == 1085 or levelId == 1086 or levelId == 1087 then
+            if self._proxy:GetTheatre6SpWinState() then
+                self._proxy:ShowTip(108103,3,99960014)     --两连胜特殊Tips文本提示
+            else    --非连胜状态下，战斗三场显示的Tips
+                if self._proxy:Theatre6GetRound() == 1 then
+                    self._proxy:ShowTip(108103,3,99960011)
+                elseif self._proxy:Theatre6GetRound() == 2 then
+                    self._proxy:ShowTip(108103,3,99960012)
+                elseif self._proxy:Theatre6GetRound() == 3 then
+                    self._proxy:ShowTip(108103,3,99960013)
+                end
+            end
+        end
         self._proxy:Theatre6UIShowAnimation(true)  --开启角色战斗UI
         self._proxy:SetCameraOpEnable(false)       --禁止移动镜头
-        if levelId == 1082 then
+        if levelId == 1082 or levelId ==1085 then
             self._proxy:PlayMusicInOut(7170, -1, -1, -1, -1, 0, 0) --战斗BGM
-        elseif levelId == 1083 then
+        elseif levelId == 1083 or levelId == 1086 then
             self._proxy:PlayMusicInOut(7171, -1, -1, -1, -1, 0, 0) --战斗BGM
-        elseif levelId == 1084 then
+        elseif levelId == 1084 or levelId == 1087 then
             self._proxy:PlayMusicInOut(7172, -1, -1, -1, -1, 0, 0) --战斗BGM
         end
     end
 
-    Settle.EndTime = 4.75       --Settle阶段结束时间点
+    Settle.EndTime = 5       --Settle阶段结束时间点
     Settle._settleTime = 1   --倒计时阶段开始时间
     Settle._settleCamera = 1 --倒计时阶段镜头序号
     function Settle:Update(dt)
@@ -133,14 +146,15 @@ do
                 self._proxy:DeactivateVCam(playerUUID, "DlcAutoChess", false, 0) --取消玩家角色虚拟相机，自然过渡到自走棋观战相机
                 self._settleCamera = 0                                           --镜头计数归零
             end
-        elseif levelId == 1082 then
+        elseif levelId == 1082 or levelId ==1085 then
             if levelTime >= self._settleTime and self._settleCamera == 1 then
+                XLog.Debug("播放开场Timeline")
                 self._proxy:PlayCameraTimeline("Theatre6LevelStartCamera", NPC, 0.25, 0.25, 0)
                 self._settleCamera = 2
             elseif levelTime >= self._settleTime + 3 and self._settleCamera == 2 then
                 self._proxy:PlayCameraTimeline("Theatre6LevelStartCameraPre", NPC, 1.5, 0.75, 0)
                 self._settleCamera = 3
-            elseif levelTime >= self._settleTime + 3.75 and self._settleCamera == 3 then
+            elseif levelTime >= self._settleTime + 4 and self._settleCamera == 3 then
                 self._proxy:DeactivateVCam(playerUUID, "DlcAutoChess", false, 0)
                 self._settleCamera = 4
             end
@@ -165,14 +179,15 @@ do
             --    self._proxy:DeactivateVCam(playerUUID, "DlcAutoChess", false, 0) --取消玩家角色虚拟相机，自然过渡到自走棋观战相机
             --    self._settleCamera = 0                                           --镜头计数归零
             --end
-        elseif levelId == 1083 then
+        elseif levelId == 1083  or levelId == 1086 then
             if levelTime >= self._settleTime and self._settleCamera == 1 then
+                XLog.Debug("播放开场Timeline")
                 self._proxy:PlayCameraTimeline("Theatre6LevelStartCamera", NPC, 0.25, 0.25, 0)
                 self._settleCamera = 2
             elseif levelTime >= self._settleTime + 3 and self._settleCamera == 2 then
                 self._proxy:PlayCameraTimeline("Theatre6LevelStartCameraPre", NPC, 1.5, 0.75, 0)
                 self._settleCamera = 3
-            elseif levelTime >= self._settleTime + 3.75 and self._settleCamera == 3 then
+            elseif levelTime >= self._settleTime + 4 and self._settleCamera == 3 then
                 self._proxy:DeactivateVCam(playerUUID, "DlcAutoChess", false, 0)
                 self._settleCamera = 4
             end
@@ -192,14 +207,15 @@ do
             --    self._proxy:DeactivateVCam(playerUUID, "DlcAutoChess", false, 0) --取消玩家角色虚拟相机，自然过渡到自走棋观战相机
             --    self._settleCamera = 0                                           --镜头计数归零
             --end
-        elseif levelId == 1084 then
+        elseif levelId == 1084 or levelId == 1087 then
             if levelTime >= self._settleTime and self._settleCamera == 1 then
+                XLog.Debug("播放开场Timeline")
                 self._proxy:PlayCameraTimeline("Theatre6LevelStartCamera", NPC, 0.25, 0.25, 0)
                 self._settleCamera = 2
             elseif levelTime >= self._settleTime + 3 and self._settleCamera == 2 then
                 self._proxy:PlayCameraTimeline("Theatre6LevelStartCameraPre", NPC, 1.5, 0.75, 0)
                 self._settleCamera = 3
-            elseif levelTime >= self._settleTime + 3.75 and self._settleCamera == 3 then
+            elseif levelTime >= self._settleTime + 4 and self._settleCamera == 3 then
                 self._proxy:DeactivateVCam(playerUUID, "DlcAutoChess", false, 0)
                 self._settleCamera = 4
             end
@@ -287,14 +303,6 @@ do
 
         self._owner:SendWrestleStartEvent()
         self:RefreshForceContinueTime()
-        if self._owner._levelId == 1084 or self._owner._levelId == 1087 then
-            -- XLog.Debug("临时条件正确")
-            for i = 2, 9 do
-                self._proxy:SetObstacleActive(i, false) --关闭zone障碍
-            end
-            -- XLog.Debug("空气墙隐藏")
-        end
-        --进入拼刀时屏蔽空气墙，防止镜头碰撞，临时DEBUG办法
     end
 
     ---发送控制中心进入拼刀状态的通知
@@ -450,7 +458,6 @@ do
         self:SetTempActionNpc(winnerUUID)
         -- self._proxy:SetCameraFocusTarget(winnerUUID, self:GetTempDefender():GetUUID())
 
-
         return self:SendWrestleRollDiceEndEvent(winnerUUID, diff)
 
         -- local level = self._owner
@@ -479,13 +486,6 @@ do
 
     function Wrestle:End()
         self._proxy:Theatre6UIShowAnimation(true)
-        if self._owner._levelId == 1084 or self._owner._levelId == 1087 then
-            for i = 2, 9 do
-                self._proxy:SetObstacleActive(i, true) --关闭zone障碍
-            end
-            -- XLog.Debug("空气墙开启")
-        end
-        --拼刀结束重新加上空气墙，防止镜头碰撞，临时DEBUG办法
     end
 end
 
@@ -911,11 +911,9 @@ do
         self._owner:SendDieStartEvent(deadUuid, livingUuid)
     end
 
-    Die.EndState = States.End
-
     function Die:Update(dt)
         if self._owner._levelTime < self._endTime then return end
-        self.EndState:Prepare(self._livingNpc)
+        self._owner._states.End:Prepare(self._livingNpc)
         self._owner:SetState(StateEnum.End)
     end
 
@@ -1625,28 +1623,39 @@ function XLevelScript1081:Init()
 
     -----------------创建空NPC-------------------------------------------------------------------------------------------
     self._robotUUID = self._proxy:GenerateNpc(commonNpcId, commonNpcCamp, self._spawnPoint[1], commonNpcBornRota) --空NPCUUID赋值，生成机器人
+    XLog.Debug("创建了Timeline用的空NPC")
     -- XLog.Warning("生成了空NPC" .. self._robotUUID)
     -- self._proxy:SetNpcActive(self._robotUUID, false)                                           --设置隐藏空NPC
     -- self._proxy:ApplyMagic(self._robotUUID, self._robotUUID, 1010028, 1)                                 --关闭AI
 
-    ----------Level配置-------------------------------------------------------------------------------------------
+    ----------Level配置/PVP与PVE模式差异化处理-------------------------------------------------------------------------------------------
     self._proxy:SetLevelMemoryInt(4001, 1) --设置游戏开始的局
+    --不同模式下增加特判BUFF
+    if self._levelId == 1085 or self._levelId == 1086 or self._levelId == 1087 then
+        --PVP模式
+        self._proxy:ApplyMagic(self._fighter1UUID, self._fighter1UUID, 1025823, 1)
+        self._proxy:ApplyMagic(self._fighter2UUID, self._fighter2UUID, 1025823, 1)
+    elseif self._levelId == 1082 or self._levelId == 1083 or self._levelId == 1084 then
+        --PVE模式
+        self._proxy:ApplyMagic(self._fighter1UUID, self._fighter1UUID, 1025824, 1)
+        self._proxy:ApplyMagic(self._fighter2UUID, self._fighter2UUID, 1025824, 1)
+    end
 
     -----------------激活虚拟相机和BGM--------------------------------------------------------------------------------------------
     if self._levelId == 1081 then
         self._proxy:ActivateVCam(self._fighter1UUID, "DlcAutoChess", 0, 0.5, 0, 31.83, 0.829, 86.62, -5.43, 44.14, 0, 0,
             0,
             101, false) --1081关的镜头
-    elseif self._levelId == 1082 then
+    elseif self._levelId == 1082 or self._levelId == 1085 then
         self._proxy:ActivateVCam(self._fighter1UUID, "DlcAutoChess", 0, 5, 0, 100.038, 27.1, 100.066, -6, 0, 0, 0, 0,
             101, false) --1082关的镜头
         --self._proxy:PlayMusicInOut(7170, -1, -1, -1, -1, 0, 0) --战斗BGM
-    elseif self._levelId == 1083 then
+    elseif self._levelId == 1083 or self._levelId == 1086 then
         self._proxy:ActivateVCam(self._fighter1UUID, "DlcAutoChess", 0, 5, 0, 75, 8.35, 65, -6, 0, 0, 0,
             0,
             101, false) --1083关的镜头
         --self._proxy:PlayMusicInOut(7171, -1, -1, -1, -1, 0, 0) --战斗BGM
-    elseif self._levelId == 1084 then
+    elseif self._levelId == 1084 or self._levelId == 1087 then
         self._proxy:ActivateVCam(self._fighter1UUID, "DlcAutoChess", 0, 5, 0, 57, 18.9, 58.50978, -6, 0,
             0, 0, 0,
             101, false)                        --1084关的镜头

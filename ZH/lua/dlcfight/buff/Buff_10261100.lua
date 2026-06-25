@@ -3,12 +3,12 @@ local XTheatre6SkillBase = require("Gameplay/Theatre6/XTheatre6SkillBase")
 local XBuffScript10261100 = XDlcScriptManager.RegBuffScript(10261100, "XBuffScript10261100", XTheatre6SkillBase)
 
 --效果说明：
---自身的【体力】属性>150点时，额外消耗20点【体力值】，并获得2层<坚毅> 。
+--自身的【体力】属性>120点时，额外消耗20点【体力值】，并获得2层<坚毅> 。
 
 function XBuffScript10261100:ScriptInit(isGainControl) --初始化
     self.TargetSkill = self._skillId
     --目标体力值
-    self.TargetTL = 150
+    self.TargetTL = 120
     --坚毅层数
     self._stackCount = 2
     --额外扣除体力值

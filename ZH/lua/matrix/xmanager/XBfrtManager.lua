@@ -102,10 +102,12 @@ XBfrtManagerCreator = function()
     ---@type table<number, number> key = groupId, value = ChapterId
     local GroupIdToChapterIdDic = {}
     local TaskIdToOrderIdDic = {}
-    ---@type XBfrtCourseRewardChapter[]
-    local _CourseImpRewardChapterList = {}
-
-    local EchlonTeamPosDic = {} --缓存本地修改的队长位
+    ---@type XBfrtCourseRewardChapter[]
+    local _CourseImpRewardChapterList = {}
+    local _IsInitBfrtBaseInfo = false
+    local EnsureBfrtBaseInfo
+
+    local EchlonTeamPosDic = {} --缓存本地修改的队长位
     local EchlonServerTeamPosDic = {}   --缓存服务端下发的队长位
     local EchlonFirstFightDic = {}  --缓存本地修改的首发位
     local EchlonServerFirstFightDic = {}    --缓存服务端下发的首发位
@@ -119,8 +121,8 @@ XBfrtManagerCreator = function()
         [3] = 3,
     }
 
-    ---@type XBfrtData
-    local BfrtData = {}
+    ---@type XBfrtData
+    local BfrtData = {}
     local FightTeams = {}
     local LogisticsTeams = {}
 
@@ -147,10 +149,24 @@ XBfrtManagerCreator = function()
 
     --endregion
 
-    local _HandEnterFightChapterId = 0
-    local TeamDic = {}
-
-    local function IsGroupPassed(groupId)
+    local _HandEnterFightChapterId = 0
+    local TeamDic = {}
+
+    local function ResetBfrtBaseInfo()
+        BfrtFollowGroupDic = {}
+        ChapterInfos = {}
+        GroupInfos = {}
+        ChapterDic = {}
+        GroupIdToOrderIdDic = {}
+        StageDic = {}
+        GroupIdToChapterIdDic = {}
+        TaskIdToOrderIdDic = {}
+        _CourseImpRewardChapterList = {}
+        _IsInitBfrtBaseInfo = false
+        _IsInitStageInfo = false
+    end
+
+    local function IsGroupPassed(groupId)
         local records = BfrtData.BfrtGroupRecords
         if not records then
             return false
@@ -196,14 +212,16 @@ XBfrtManagerCreator = function()
         
         return fightList, logisticsList
     end
-
-    function XBfrtManager.GetChapterInfo(chapterId)
-        return ChapterInfos[chapterId]
-    end
-
-    local function GetGroupInfo(groupId)
-        return GroupInfos[groupId]
-    end
+
+    function XBfrtManager.GetChapterInfo(chapterId)
+        EnsureBfrtBaseInfo()
+        return ChapterInfos[chapterId]
+    end
+
+    local function GetGroupInfo(groupId)
+        EnsureBfrtBaseInfo()
+        return GroupInfos[groupId]
+    end
 
     local function GetGroupCfg(groupId)
         local groupCfg = BfrtGroupTemplates[groupId]
@@ -237,52 +255,53 @@ XBfrtManagerCreator = function()
         return false
     end
 
-    local function InitGroupInfo()
-        GroupInfos = {}
-        for groupId, groupCfg in pairs(BfrtGroupTemplates) do
-            ---@type XBfrtGroupInfo
+    local function InitGroupInfo()
+        GroupInfos = {}
+        GroupIdToOrderIdDic = {}
+        StageDic = {}
+        local records = BfrtData.BfrtGroupRecords or {}
+        for groupId, groupCfg in pairs(BfrtGroupTemplates) do
+            ---@type XBfrtGroupInfo
             local info = {}
             GroupInfos[groupId] = info
             GroupIdToOrderIdDic[groupId] = groupCfg.GroupOrderId
 
             info.Unlock = true
             local preGroupId = groupCfg.PreGroupId
-            if preGroupId and preGroupId > 0 then
-                info.Unlock = false
-                for _, record in pairs(BfrtData.BfrtGroupRecords) do
-                    if record.Id == preGroupId then
-                        info.Unlock = true
+            if preGroupId and preGroupId > 0 then
+                info.Unlock = false
+                for _, record in pairs(records) do
+                    if record.Id == preGroupId then
+                        info.Unlock = true
                         break
                     end
                 end
-            end
-
-            StageDic[groupCfg.BaseStage] = {
-                GroupId = groupId,
-                IsLastStage = false,
-            }
-
-            local count = #groupCfg.StageId
-            for k, v in pairs(groupCfg.StageId) do
-                local stageInfo = XDataCenter.FubenManager.GetStageInfo(v)
-                if stageInfo then
-                    --stageInfo.Unlock = info.Unlock
-
-                    StageDic[v] = {
-                        GroupId = groupId,
-                        IsLastStage = (k == count)
-                    }
-                else
-                    local tmpStr = "XBfrtManager.InitGroupInfo错误, 无法根据 Share/Fuben/Bfrt/BfrtGroup.tab 表里面的stageId"
-                    XLog.Error(tmpStr .. v .. " 找到Share/Fuben/Stage.tab 表中的表项")
-                end
-            end
-            info.Passed = IsGroupPassed(groupId)
-        end
-        for _, record in ipairs(BfrtData.BfrtGroupRecords) do
-            GroupInfos[record.Id].IsRecvReward = record.IsRecvReward
-        end
-    end
+            end
+
+            if XTool.IsNumberValid(groupCfg.BaseStage) then
+                StageDic[groupCfg.BaseStage] = {
+                    GroupId = groupId,
+                    IsLastStage = false,
+                }
+            end
+
+            local count = #groupCfg.StageId
+            for k, v in pairs(groupCfg.StageId) do
+                if XTool.IsNumberValid(v) then
+                    StageDic[v] = {
+                        GroupId = groupId,
+                        IsLastStage = (k == count)
+                    }
+                end
+            end
+            info.Passed = IsGroupPassed(groupId)
+        end
+        for _, record in ipairs(records) do
+            if GroupInfos[record.Id] then
+                GroupInfos[record.Id].IsRecvReward = record.IsRecvReward
+            end
+        end
+    end
     
     function XBfrtManager.GetChapterId(stageId)
         for chapterId, chapterCfg in pairs(BfrtChapterTemplates) do
@@ -297,9 +316,13 @@ XBfrtManagerCreator = function()
         end
     end
 
-    local function InitChapterInfo()
-        ChapterInfos = {}
-        for chapterId, chapterCfg in pairs(BfrtChapterTemplates) do
+    local function InitChapterInfo()
+        ChapterInfos = {}
+        ChapterDic = {}
+        GroupIdToChapterIdDic = {}
+        TaskIdToOrderIdDic = {}
+        _CourseImpRewardChapterList = {}
+        for chapterId, chapterCfg in pairs(BfrtChapterTemplates) do
             ChapterDic[chapterCfg.OrderId] = chapterId
             ---@type XBfrtChapterInfo
             local info = {}
@@ -353,8 +376,9 @@ XBfrtManagerCreator = function()
         end)
     end
 
-    local function RefreshChapterPassed()
-        for chapterId, chapterCfg in pairs(BfrtChapterTemplates) do
+    local function RefreshChapterPassed()
+        EnsureBfrtBaseInfo()
+        for chapterId, chapterCfg in pairs(BfrtChapterTemplates) do
             local info = ChapterInfos[chapterId]
             if info then
                 local allPassed = true
@@ -369,8 +393,9 @@ XBfrtManagerCreator = function()
         end
     end
 
-    local function InitFollowGroup()
-        for k, v in pairs(BfrtGroupTemplates) do
+    local function InitFollowGroup()
+        BfrtFollowGroupDic = {}
+        for k, v in pairs(BfrtGroupTemplates) do
             if v.PreGroupId > 0 then
                 local list = BfrtFollowGroupDic[v.PreGroupId]
                 if not list then
@@ -380,10 +405,20 @@ XBfrtManagerCreator = function()
                 tableInsert(list, k)
                 BfrtFollowGroupDic[v.PreGroupId] = list
             end
-        end
-    end
-
-    -- [替换] 初始化队伍记录 (增加视图同步)
+        end
+    end
+
+    EnsureBfrtBaseInfo = function()
+        if _IsInitBfrtBaseInfo then
+            return
+        end
+        InitGroupInfo()
+        InitChapterInfo()
+        InitFollowGroup()
+        _IsInitBfrtBaseInfo = true
+    end
+
+    -- [替换] 初始化队伍记录 (增加视图同步)
     local function InitTeamRecords()
         local teamInfos = BfrtData.BfrtTeamInfos
         if not teamInfos then return end
@@ -483,8 +518,9 @@ XBfrtManagerCreator = function()
         end
     end
 
-    local function UnlockFollowGroup(groupId)
-        local list = BfrtFollowGroupDic[groupId]
+    local function UnlockFollowGroup(groupId)
+        EnsureBfrtBaseInfo()
+        local list = BfrtFollowGroupDic[groupId]
         if not list then
             return
         end
@@ -507,14 +543,14 @@ XBfrtManagerCreator = function()
         end
     end
 
-    function XBfrtManager.Init()
-        _IsInitStageInfo = false
-        XBfrtManager._TeamData = nil
-        -- XBfrtManager._GirdEchelonIndexTempTeam = {}
-        BfrtChapterTemplates = XBfrtConfigs.GetBfrtChapterTemplates()
-        BfrtGroupTemplates = XBfrtConfigs.GetBfrtGroupTemplates()
-        EchelonInfoTemplates = XBfrtConfigs.GetEchelonInfoTemplates()
-    end
+    function XBfrtManager.Init()
+        XBfrtManager._TeamData = nil
+        -- XBfrtManager._GirdEchelonIndexTempTeam = {}
+        BfrtChapterTemplates = XBfrtConfigs.GetBfrtChapterTemplates()
+        BfrtGroupTemplates = XBfrtConfigs.GetBfrtGroupTemplates()
+        EchelonInfoTemplates = XBfrtConfigs.GetEchelonInfoTemplates()
+        ResetBfrtBaseInfo()
+    end
 
     function XBfrtManager.CheckStageTypeIsBfrt(stageId)
         local stageInfo = XDataCenter.FubenManager.GetStageInfo(stageId)
@@ -677,22 +713,24 @@ XBfrtManagerCreator = function()
     end
     --endregion
 
-    --region Chapter
-    function XBfrtManager.GetChapterList()
-        local list = {}
-
-        for _, chapterId in pairs(ChapterDic) do
+    --region Chapter
+    function XBfrtManager.GetChapterList()
+        EnsureBfrtBaseInfo()
+        local list = {}
+
+        for _, chapterId in pairs(ChapterDic) do
             if XBfrtManager.IsChapterInTime(chapterId) then
                 tableInsert(list, chapterId)
             end
         end
 
         return list
-    end
-
-    function XBfrtManager.GetChapterInfoForOrder(orderId)
-        local chapterId = ChapterDic[orderId]
-        return ChapterInfos[chapterId]
+    end
+
+    function XBfrtManager.GetChapterInfoForOrder(orderId)
+        EnsureBfrtBaseInfo()
+        local chapterId = ChapterDic[orderId]
+        return ChapterInfos[chapterId]
     end
 
     --获取Chapter中所有Group用于展示的BaseStage的List
@@ -744,9 +782,10 @@ XBfrtManagerCreator = function()
         return chapter and chapter.ChapterEn
     end
 
-    function XBfrtManager.GetChapterPassCount(chapterId)
-        local passCount = 0
-
+    function XBfrtManager.GetChapterPassCount(chapterId)
+        EnsureBfrtBaseInfo()
+        local passCount = 0
+
         local groupList = XBfrtManager.GetChapterGroupList(chapterId)
         for _, groupId in ipairs(groupList) do
             if GroupInfos[groupId].Passed then
@@ -765,11 +804,12 @@ XBfrtManagerCreator = function()
     function XBfrtManager.GetChapterCourseRewardId(chapterId)
         local chapterCfg = XBfrtManager.GetChapterCfg(chapterId)
         return chapterCfg and chapterCfg.BfrtRewardId
-    end
-
-    function XBfrtManager.GetChapterIdByGroupId(groupId)
-        return GroupIdToChapterIdDic[groupId]
-    end
+    end
+
+    function XBfrtManager.GetChapterIdByGroupId(groupId)
+        EnsureBfrtBaseInfo()
+        return GroupIdToChapterIdDic[groupId]
+    end
 
     function XBfrtManager.GetNextChapterIdById(targetChapterId)
         local isFind = false
@@ -855,16 +895,18 @@ XBfrtManagerCreator = function()
         return false
     end
 
-    function XBfrtManager.CheckIsBfrtStage(stageId)
-        return StageDic[stageId] ~= nil
-    end
+    function XBfrtManager.CheckIsBfrtStage(stageId)
+        EnsureBfrtBaseInfo()
+        return StageDic[stageId] ~= nil
+    end
     --endregion
 
     --region Group
-    ---@param data XBfrtGroupRecord
-    function XBfrtManager._UpdateGroupInfo(data)
-        local groupId = data.Id
-        GroupInfos[groupId].Passed = true
+    ---@param data XBfrtGroupRecord
+    function XBfrtManager._UpdateGroupInfo(data)
+        EnsureBfrtBaseInfo()
+        local groupId = data.Id
+        GroupInfos[groupId].Passed = true
         GroupInfos[groupId].IsRecvReward = data.IsRecvReward
 
         local findRecord = false
@@ -902,9 +944,10 @@ XBfrtManagerCreator = function()
         return XTool.IsNumberValid(groupCfg.ClearOpen)
     end
 
-    function XBfrtManager.GetGroupIdByStageId(stageId)
-        if not StageDic[stageId] then
-            XLog.Error("XBfrtManager GetGroupIdByStageId 无法从StageDic中找到groupId，检查 Share/Fuben/Bfrt/BfrtGroup.tab 表, stageId 是" .. stageId)
+    function XBfrtManager.GetGroupIdByStageId(stageId)
+        EnsureBfrtBaseInfo()
+        if not StageDic[stageId] then
+            XLog.Error("XBfrtManager GetGroupIdByStageId 无法从StageDic中找到groupId，检查 Share/Fuben/Bfrt/BfrtGroup.tab 表, stageId 是" .. stageId)
             return
         end
         return StageDic[stageId].GroupId
@@ -1009,9 +1052,10 @@ XBfrtManagerCreator = function()
         return groupInfo.OrderId
     end
 
-    function XBfrtManager.GetGroupChapterId(groupId)
-        local groupInfo = GroupInfos[groupId]
-        return groupInfo and groupInfo.ChapterId
+    function XBfrtManager.GetGroupChapterId(groupId)
+        EnsureBfrtBaseInfo()
+        local groupInfo = GroupInfos[groupId]
+        return groupInfo and groupInfo.ChapterId
     end
 
     function XBfrtManager.CheckIsGroupLastStage(stageId)
@@ -1032,35 +1076,33 @@ XBfrtManagerCreator = function()
         return groupInfo.Unlock
     end
 
-    function XBfrtManager.CheckGroupRewardRecv(groupId)
-        if XTool.IsTableEmpty(GroupInfos) then
-            return false
-        end
-        if not GroupInfos[groupId] then
-            return false
+    function XBfrtManager.CheckGroupRewardRecv(groupId)
+        EnsureBfrtBaseInfo()
+        if not GroupInfos[groupId] then
+            return false
         end
         return GroupInfos[groupId].IsRecvReward
     end
 
-    function XBfrtManager.CheckGroupIsPass(groupId)
-        if XTool.IsTableEmpty(GroupInfos) then
-            return false
-        end
-        if not GroupInfos[groupId] then
-            return false
+    function XBfrtManager.CheckGroupIsPass(groupId)
+        EnsureBfrtBaseInfo()
+        if not GroupInfos[groupId] then
+            return false
         end
         return GroupInfos[groupId].Passed
     end
 
-    function XBfrtManager._SetGroupRewardRecv(groupId)
-        if not GroupInfos[groupId] then
-            GroupInfos[groupId] = {}
+    function XBfrtManager._SetGroupRewardRecv(groupId)
+        EnsureBfrtBaseInfo()
+        if not GroupInfos[groupId] then
+            GroupInfos[groupId] = {}
         end
         GroupInfos[groupId].IsRecvReward = true
     end
 
-    function XBfrtManager.GetNextGroupIdByBaseStage(baseStageId)
-        local stageInfo = StageDic[baseStageId]
+    function XBfrtManager.GetNextGroupIdByBaseStage(baseStageId)
+        EnsureBfrtBaseInfo()
+        local stageInfo = StageDic[baseStageId]
         if stageInfo and BfrtFollowGroupDic[stageInfo.GroupId] then
             local nextGroupId = BfrtFollowGroupDic[stageInfo.GroupId][1]
             if nextGroupId and nextGroupId > 0 then
@@ -1071,9 +1113,10 @@ XBfrtManagerCreator = function()
         return 0
     end
 
-    function XBfrtManager.CheckCanQuicklyChallenge(baseStageId)
-        local nextGroupId = XDataCenter.BfrtManager.GetNextGroupIdByBaseStage(baseStageId)
-        if nextGroupId == 0 then
+    function XBfrtManager.CheckCanQuicklyChallenge(baseStageId)
+        EnsureBfrtBaseInfo()
+        local nextGroupId = XDataCenter.BfrtManager.GetNextGroupIdByBaseStage(baseStageId)
+        if nextGroupId == 0 then
             return false
         end
 
@@ -1182,9 +1225,10 @@ XBfrtManagerCreator = function()
         return taskIdList
     end
 
-    function XBfrtManager.GetTaskOrderId(taskId)
-        return TaskIdToOrderIdDic[taskId]
-    end
+    function XBfrtManager.GetTaskOrderId(taskId)
+        EnsureBfrtBaseInfo()
+        return TaskIdToOrderIdDic[taskId]
+    end
 
     function XBfrtManager.GetBfrtTaskId(chapterId)
         local taskIdList = GetChapterTaskIdList(chapterId)
@@ -1342,12 +1386,10 @@ XBfrtManagerCreator = function()
         return true
     end
 
-    function XBfrtManager.CheckAllChapterReward()
-        if not ChapterDic then
-            return false
-        end
-        for _, chapterId in pairs(ChapterDic) do
-            if XBfrtManager.CheckAnyTaskRewardCanGet(chapterId) then
+    function XBfrtManager.CheckAllChapterReward()
+        EnsureBfrtBaseInfo()
+        for _, chapterId in pairs(ChapterDic) do
+            if XBfrtManager.CheckAnyTaskRewardCanGet(chapterId) then
                 return true
             end
         end
@@ -1373,9 +1415,10 @@ XBfrtManagerCreator = function()
         BfrtData.CourseRewardStar = value
     end
 
-    function XBfrtManager.GetBfrtImportantRewardId(chapterId)
-        local result = false
-        for _, info in ipairs(_CourseImpRewardChapterList) do
+    function XBfrtManager.GetBfrtImportantRewardId(chapterId)
+        EnsureBfrtBaseInfo()
+        local result = false
+        for _, info in ipairs(_CourseImpRewardChapterList) do
             if info.ChapterId == chapterId then
                 return info.RewardId, info.ChapterId
             end
@@ -1506,8 +1549,9 @@ XBfrtManagerCreator = function()
         return true
     end
 
-    function XBfrtManager.CheckUnlockByStageId(stageIdToFind)
-        for groupId, groupCfg in pairs(BfrtGroupTemplates) do
+    function XBfrtManager.CheckUnlockByStageId(stageIdToFind)
+        EnsureBfrtBaseInfo()
+        for groupId, groupCfg in pairs(BfrtGroupTemplates) do
             local groupInfo = GroupInfos[groupId]
             if groupCfg.BaseStage == stageIdToFind then
                 return groupInfo and groupInfo.Unlock
@@ -1521,8 +1565,9 @@ XBfrtManagerCreator = function()
         XLog.Error("[XBfrtManager] 找不到对应的groupInfo", stageIdToFind)
     end
 
-    function XBfrtManager.GetChapterId(stageIdToFind)
-        for groupId, groupCfg in pairs(BfrtGroupTemplates) do
+    function XBfrtManager.GetChapterId(stageIdToFind)
+        EnsureBfrtBaseInfo()
+        for groupId, groupCfg in pairs(BfrtGroupTemplates) do
             local groupInfo = GroupInfos[groupId]
             if groupCfg.BaseStage == stageIdToFind then
                 return groupInfo.ChapterId
@@ -1641,8 +1686,9 @@ XBfrtManagerCreator = function()
         end
     end
 
-    function XBfrtManager.FinishStage(stageId)
-        local stage = StageDic[stageId]
+    function XBfrtManager.FinishStage(stageId)
+        EnsureBfrtBaseInfo()
+        local stage = StageDic[stageId]
         if not stage or not stage.IsLastStage then
             return
         end
@@ -2421,16 +2467,13 @@ XBfrtManagerCreator = function()
         end
     end
 
-    -- 目前只有登录和每日重置会主动推送
-    function XBfrtManager.NotifyBfrtData(data)
-        -- 在每次推送时都重新刷新一般关卡数据（解决断线重连重新推送关卡数据，bfrtManager _IsInitStageInfo 标志未改变导致关卡不开放问题）
-        _IsInitStageInfo = false
-        BfrtData = data.BfrtData
-        InitGroupInfo()
-        InitChapterInfo()
-        InitFollowGroup()
-        InitTeamRecords()
-    end
+    -- 目前只有登录和每日重置会主动推送
+    function XBfrtManager.NotifyBfrtData(data)
+        BfrtData = data and data.BfrtData or {}
+        BfrtData.BfrtGroupRecords = BfrtData.BfrtGroupRecords or {}
+        ResetBfrtBaseInfo()
+        InitTeamRecords()
+    end
 
     function XBfrtManager.NotifyBfrtProgressInfo(data)
         XBfrtManager._SetGroupStageRecord(data.BfrtProgressInfo)

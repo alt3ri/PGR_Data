@@ -15,6 +15,8 @@ local TableKey = {
     BossInshotSkill = {},
     BossInshotStage = {},
     BossInshotTalent = {},
+    BossInshotTower = { DirPath = XConfigUtil.DirectoryType.Share },
+    BossInshotTowerStage = { DirPath = XConfigUtil.DirectoryType.Share, Identifier = "StageId" }
 }
 ---@class XBossInshotModel : XModel
 local XBossInshotModel = XClass(XModel, "XBossInshotModel")
@@ -36,6 +38,10 @@ function XBossInshotModel:ResetAll()
     self.CharacterDataDic = nil
     self.Team = nil
     self.IsPlayback = false
+    self.ToastQueue = nil
+    self.BossTowerData = nil
+    self.BossTowerCurrentLevel = nil
+    self.BossTowerRank = nil
 end
 
 --- 获取活动是否开启
@@ -173,7 +179,7 @@ function XBossInshotModel:IsShowActivityRedPoint()
 end
 
 --- 生成最后战斗的录像数据
-function XBossInshotModel:GenLastPlaybackData(bossId, score, scoreLevelIcon, difficulty)
+function XBossInshotModel:GenLastPlaybackData(bossId, score, scoreLevelIcon, difficulty, towerLevelId)
     local characterId = self:GetTeamCharacterId()
     local time = math.floor(CS.XFight.Instance.NonPausedTime)
     local stageId = CS.XFight.Instance.FightData.StageId
@@ -186,6 +192,7 @@ function XBossInshotModel:GenLastPlaybackData(bossId, score, scoreLevelIcon, dif
         Score = score,
         ScoreLevelIcon = scoreLevelIcon,
         Difficulty = difficulty,
+        TowerLevelId = towerLevelId,
         FightDataPath = nil, -- 在点击 覆盖/保存 时才生成录像返回文件路径
     }
 end
@@ -340,6 +347,7 @@ function XBossInshotModel:GetUnlockTalentSaveKey()
 end
 
 ---------------------------------------- #region Rpc ----------------------------------------
+
 --- 通知跃升挑战数据
 function XBossInshotModel:NotifyBossInshotData(data)
     self.ActivityId = data.BossInshotData.ActivityId
@@ -354,16 +362,31 @@ function XBossInshotModel:NotifyBossInshotData(data)
     for _, unlockData in ipairs(data.BossInshotData.BossUnlockDatas) do
         self.BossUnlockDataDic[unlockData.BossId] = unlockData
     end
-    
+
     self.CharacterDataDic = {}
     for _, characterData in ipairs(data.BossInshotData.CharacterDatas) do
         self.CharacterDataDic[characterData.CharacterId] = characterData
     end
+
+    if self.BossTowerData then
+        self:_InsertToastToQueue({
+            PrevTowerData = self.BossTowerData[self.BossTowerCurrentLevel],
+            CurTowerData = data.BossInshotData.TowerDataDict[data.BossInshotData.CurrentTowerId]
+        })
+    end
+
+    self.BossTowerCurrentLevel = data.BossInshotData.CurrentTowerId
+    self.BossTowerData = data.BossInshotData.TowerDataDict
+    self.BossTowerRank = data.BossInshotData.TowerRankDataDict
+
+    XEventManager.DispatchEvent(XEventId.EVENT_BOSS_INSHOT_TOWER_DATA_NOTIFY)
 end
 
 --- 通知回放开关是否开启
 function XBossInshotModel:NotifyBossInshotPlayback(data)
     self.IsPlayback = data.IsPlayback
+
+    XEventManager.DispatchEvent(XEventId.EVENT_BOSS_INSHOT_TOWER_DATA_NOTIFY)
 end
 
 --- 战斗结束更新最高分数
@@ -391,6 +414,10 @@ end
 
 --- 获取通关关卡数据
 function XBossInshotModel:GetPassStageData(stageId)
+    if not self.PassStageDataDic then
+        return nil
+    end
+
     return self.PassStageDataDic[stageId]
 end
 
@@ -485,9 +512,10 @@ function XBossInshotModel:GetIsShowPlayback(stageId)
 end
 
 -- 保存排行榜数据
-function XBossInshotModel:SaveRankData(characterCfgId, bossId, isTotalRank, nowTime, res)
+function XBossInshotModel:SaveRankData(characterCfgId, bossId, isTotalRank, tower, nowTime, res)
     self.RankData = self.RankData or {}
-    local key = string.format("%s_%s_%s", characterCfgId, bossId, isTotalRank)
+    local towerKey = tower and "_tower" or "_non_tower"
+    local key = string.format("%s_%s_%s_%s", characterCfgId, bossId, isTotalRank, towerKey)
     self.RankData[key] = {
         Time = nowTime,
         Data = res
@@ -495,16 +523,282 @@ function XBossInshotModel:SaveRankData(characterCfgId, bossId, isTotalRank, nowT
 end
 
 -- 获取排行榜数据
-function XBossInshotModel:GetRankData(characterCfgId, bossId, isTotalRank)
+function XBossInshotModel:GetRankData(characterCfgId, bossId, isTotalRank, tower)
+    if tower then
+        tower = "_tower"
+    else
+        tower = "_non_tower"
+    end
+
     if self.RankData then
-        local key = string.format("%s_%s_%s", characterCfgId, bossId, isTotalRank)
+        local key = string.format("%s_%s_%s_%s", characterCfgId, bossId, isTotalRank, tower)
         return self.RankData[key]
     end
 end
 ---------------------------------------- #endregion Rpc ----------------------------------------
 
+---------------------------------------- #region 爬塔 ----------------------------------------
+
+XBossInshotModel.TowerLevelType = {
+    NormalLevel = 1,
+    ChallengeLevel = 2
+}
+
+-- Toast数据
+
+XBossInshotModel.ToastType = {
+    Up = 1,     -- 升层
+    Down = 2,   -- 降层
+    Clear = 3,  -- 通关
+    DownProtected = 4 -- 降层保护
+}
+
+
+-- 将Model中提取的ToastData转换为ToastUI参数
+function XBossInshotModel:_ConvertToastData(toastData)
+
+    local allLevelConf = self:GetConfigBossInshotTowerAllLevels()
+
+    -- 检测通关的情况
+    local prevLevelData = toastData.PrevTowerData
+    if not prevLevelData then return nil end
+
+    local prevLevel = toastData.PrevTowerData.TowerId
+    if prevLevel == 0 then return nil end
+
+    local curLevelData = toastData.CurTowerData
+    if not curLevelData then return nil end
+
+    local curLevel = toastData.CurTowerData.TowerId
+    local prevAllCleared = false
+
+    if prevLevelData
+        and prevLevelData.IsPass
+        and not allLevelConf[prevLevel + 1] then
+
+        prevAllCleared = true
+    end
+
+    if not prevAllCleared then
+        if curLevelData
+            and curLevelData.IsPass
+            and not allLevelConf[curLevel + 1] then
+
+            return {
+                ToastType = XBossInshotModel.ToastType.Clear,
+            }
+        end
+    end
+
+    -- 检测层数上升或下降的情况
+    if curLevel ~= prevLevel then
+        local toastType = XBossInshotModel.ToastType.Up
+
+        if curLevel < prevLevel then
+            toastType = XBossInshotModel.ToastType.Down
+        end
+
+        return {
+            ToastType = toastType,
+            PrevLevel = prevLevel,
+            PrevLevelType = allLevelConf[prevLevel].Type,
+            CurLevel = curLevel,
+            CurLevelType = allLevelConf[curLevel].Type,
+            TargetScore = allLevelConf[prevLevel].PassScore
+        }
+    end
+
+    -- 检测掉层保护的情况
+    if prevLevelData
+        and curLevelData
+        and curLevelData.TriggerProtectCount ~= prevLevelData.TriggerProtectCount then
+
+        return {
+            ToastType = XBossInshotModel.ToastType.DownProtected,
+            PrevLevel = prevLevel,
+            PrevLevelType = allLevelConf[prevLevel].Type,
+            CurLevel = curLevel,
+            CurLevelType = allLevelConf[curLevel].Type,
+            TargetScore = allLevelConf[curLevel].PassScore
+        }
+    end
+
+    return nil
+end
+
+-- 合并Toast数据
+function XBossInshotModel:_ReduceToastData(left, right)
+    if not right then return left end
+    if not left then return right end
+
+    -- Clear, *
+    -- *, Clear
+    if left.ToastType == XBossInshotModel.ToastType.Clear then
+        return left
+    end
+
+    if right.ToastType == XBossInshotModel.ToastType.Clear then
+        return right
+    end
+
+    -- DownProtected, *
+    -- *, DownProtected
+    if left.ToastType == XBossInshotModel.ToastType.DownProtected
+        and right.ToastType == XBossInshotModel.ToastType.DownProtected then
+        if left.CurLevel < right.CurLevel then
+            return left
+        else
+            return right
+        end
+    end
+
+    if left.ToastType == XBossInshotModel.ToastType.DownProtected then
+        return right
+    end
+
+    if right.ToastType == XBossInshotModel.ToastType.DownProtected then
+        return left
+    end
+
+    assert(left.ToastType == XBossInshotModel.ToastType.Up
+        or left.ToastType == XBossInshotModel.ToastType.Down)
+
+    assert(right.ToastType == XBossInshotModel.ToastType.Up
+        or right.ToastType == XBossInshotModel.ToastType.Down)
+
+    local prevLevel = left.PrevLevel
+    local curLevel = right.CurLevel
+    if prevLevel == curLevel then return nil end
+
+    local toastType = XBossInshotModel.ToastType.Up
+
+    if curLevel < prevLevel then
+        toastType = XBossInshotModel.ToastType.Down
+    end
+
+    local allLevelConf = self:GetConfigBossInshotTowerAllLevels()
+
+    return {
+        ToastType = toastType,
+        PrevLevel = prevLevel,
+        PrevLevelType = allLevelConf[prevLevel].Type,
+        CurLevel = curLevel,
+        CurLevelType = allLevelConf[curLevel].Type,
+        TargetScore = allLevelConf[prevLevel].PassScore
+    }
+end
+
+-- 获取指定楼层的爬塔数据
+function XBossInshotModel:GetBossTowerData(levelId)
+    return self.BossTowerData[levelId]
+end
+
+-- 获得当前所在楼层
+function XBossInshotModel:GetBossTowerCurrentLevel()
+    return self.BossTowerCurrentLevel
+end
+
+function XBossInshotModel:_InsertToastToQueue(toastRawData)
+    if not self.ToastCacheSize then
+        self.ToastCacheSize = CS.XGame.ClientConfig:GetInt(
+            "BossInshotTowerToastNotifyCacheSize")
+    end
+
+    if not self.ToastQueue then self.ToastQueue = {} end
+    table.insert(self.ToastQueue, toastRawData)
+
+    while #self.ToastQueue > self.ToastCacheSize do
+        table.remove(self.ToastQueue, 1)
+    end
+end
+
+-- 当进入下一层时
+-- nextTowerData的类型为C#中的XBossInshotTowerData
+function XBossInshotModel:OnEnterNextLevel(nextTowerData)
+    if self.BossTowerData then
+        self:_InsertToastToQueue({
+            PrevTowerData = self.BossTowerData[self.BossTowerCurrentLevel],
+            CurTowerData = nextTowerData
+        })
+    end
+
+    self.BossTowerCurrentLevel = nextTowerData.TowerId
+    self.BossTowerData[nextTowerData.TowerId] = nextTowerData
+
+    XEventManager.DispatchEvent(XEventId.EVENT_BOSS_INSHOT_TOWER_DATA_NOTIFY)
+end
+
+function XBossInshotModel:OnSelectLevel(levelId, stageId)
+    self.BossTowerData[levelId].SelectStageId = stageId
+end
+
+function XBossInshotModel:OnSelectLevelAfterAllClear(levelId, stageId)
+    self.BossTowerData[levelId].SelectStageIdAfterAllPass = stageId
+end
+
+-- 获取爬塔评分对应等级配置Id
+function XBossInshotModel:GetTowerScoreLevelId(level, score)
+    local cfgs = self:GetConfigBossInshotScoreLevel()
+    local maxCfg = nil
+    for _, config in pairs(cfgs) do
+        local minScore = config.TowerMinScore[level]
+        local maxScore = config.TowerMaxScore[level]
+
+        if not maxCfg or maxScore > maxCfg.TowerMaxScore[level] then
+            maxCfg = config
+        end
+
+        local isMinReach = minScore == 0 or score >= minScore
+        local isMaxReach = maxScore == 0 or score <= maxScore
+        if isMinReach and isMaxReach then
+            return config.Id
+        end
+    end
+
+    return maxCfg
+end
+
+-- 获取爬塔评分对应等级配置
+function XBossInshotModel:GetTowerScoreLevelConf(level, score)
+    local levelId = self:GetTowerScoreLevelId(level, score)
+    return self:GetConfigBossInshotScoreLevel(levelId)
+end
+
+-- 弹出Toast数据，以弹出各种上升下降弹窗，返回一个ToastData或nil
+function XBossInshotModel:GetAndClearToastData()
+    if not self.ToastQueue then return nil end
+    local toastData = nil
+
+    while self.ToastQueue[1] do
+        local converted = self:_ConvertToastData(self.ToastQueue[1])
+        table.remove(self.ToastQueue, 1)
+        toastData = self:_ReduceToastData(toastData, converted)
+    end
+
+    return toastData
+end
+
+
+---------------------------------------- #endregion 爬塔 ----------------------------------------
 
 ---------------------------------------- #region 配置表 ----------------------------------------
+
+-- 获得爬塔楼层表
+function XBossInshotModel:GetConfigBossInshotTowerAllLevels()
+    return self._ConfigUtil:GetByTableKey(TableKey.BossInshotTower)
+end
+
+-- 获得BossInshotTowerStage表数据
+function XBossInshotModel:GetConfigBossInshotTowerStage(towerStageId)
+    local all = self._ConfigUtil:GetByTableKey(TableKey.BossInshotTowerStage)
+    return all[towerStageId]
+end
+
+-- 根据爬塔关卡Id获得它的BossId
+function XBossInshotModel:GetTowerBossIdByStageId(towerStageId)
+    return self:GetConfigBossInshotTowerStage(towerStageId).BossId
+end
+
 --- 获取活动配置表
 function XBossInshotModel:GetConfigBossInshotActivity(id)
     local cfgs = self._ConfigUtil:GetByTableKey(TableKey.BossInshotActivity)
@@ -524,6 +818,18 @@ function XBossInshotModel:GetActivityBossIds(id)
     local config = self:GetConfigBossInshotActivity(id)
     return config.BossIds
 end
+
+function XBossInshotModel:GetTowerBossIds()
+    local all = self._ConfigUtil:GetByTableKey(TableKey.BossInshotTowerStage)
+    local bossIds = {}
+
+    for _, config in pairs(all) do
+        table.insert(bossIds, config.BossId)
+    end
+
+    return bossIds
+end
+
 
 --- 获取活动配置任务组列表
 function XBossInshotModel:GetActivityTaskGroupIds(id)
@@ -667,15 +973,25 @@ end
 --- 获取评分对应配置Id
 function XBossInshotModel:GetScoreLevelId(difficulty, score)
     local cfgs = self:GetConfigBossInshotScoreLevel()
+    local maxLevelConf = nil
     for _, config in pairs(cfgs) do
+        if not maxLevelConf then maxLevelConf = config end
+
         local minScore = config.MinScores[difficulty]
         local maxScore = config.MaxScores[difficulty]
+
+        if maxScore > maxLevelConf.MaxScores[difficulty] then
+            maxLevelConf = config
+        end
+
         local isMinReach = minScore == 0 or score >= minScore
         local isMaxReach = maxScore == 0 or score <= maxScore
         if isMinReach and isMaxReach then
             return config.Id
         end
     end
+
+    return maxLevelConf.Id
 end
 
 --- 获取评分对应等级图标
@@ -702,6 +1018,10 @@ end
 --- 获取达到下一评分等级提示
 function XBossInshotModel:GetNextScoreLevelTips(difficulty, score)
     local levelId = self:GetScoreLevelId(difficulty, score)
+    return self:GetNextScoreLevelTipsByLevelId(difficulty, levelId)
+end
+
+function XBossInshotModel:GetNextScoreLevelTipsByLevelId(difficulty, levelId)
     local cfg = self:GetConfigBossInshotScoreLevel(levelId + 1, true)
     if cfg then
         return XUiHelper.GetText("BossInshotNextScoreLevelTips", cfg.MinScores[difficulty], cfg.LevelName)

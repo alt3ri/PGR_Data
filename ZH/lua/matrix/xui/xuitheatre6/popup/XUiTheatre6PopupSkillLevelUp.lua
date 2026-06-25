@@ -167,6 +167,7 @@ end
 
 function XUiTheatre6PopupSkillLevelUp:InitComponents()
     self.BtnClose:AddEventListener(handler(self, self.ConditionExit))
+    ---@type XUiPanelTheatre6SkilBagDetail
     self.PanelUiSkill = XUiPanelTheatre6SkilBagDetail.New(self.PanelSkill, self, true)
 
     self.UiTheatre6GridSkill = XUiGridTheatre6Skill.New(self.UiTheatre6GridSkill, self)

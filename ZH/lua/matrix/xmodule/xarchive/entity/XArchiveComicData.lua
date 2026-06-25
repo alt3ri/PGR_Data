@@ -22,6 +22,12 @@ function XArchiveComicData:ResetData()
     self._UnlockComicChapterIdsFromServer = {}
 end
 
+--- 释放配置表数据引用（后续重新读配置表时重新触发遍历分组）
+function XArchiveComicData:ResetCfgs()
+    self._IsChapterCfgsGrouping = false
+    self._ChapterCfgsGroups = nil
+end
+
 function XArchiveComicData:UpdateUnlockComicChapter(unlockList)
     if XTool.IsTableEmpty(unlockList) then
         return

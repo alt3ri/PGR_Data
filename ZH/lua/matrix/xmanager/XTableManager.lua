@@ -75,17 +75,12 @@ function XTableManager.ReadByStringKey(path, xTable, identifier)
     end
 end
 
-function XTableManager.ReadArray(path, xTable, identifier)
-    XLog.Error("XTableManager.ReadArray接口已弃用找 梁骞")
-    return tabLoader.ReadArray(path, xTable, identifier)
-end
-
-function XTableManager.ReleaseAll()
+function XTableManager.ReleaseAllCache()
     bytesLoader.ReleaseCache()
     packLoader.ReleaseCache()
 end
 
---释放所有io
+-- 释放所有io
 function XTableManager.ReleaseIo()
     packLoader.ReleaseIo()
 end
@@ -94,9 +89,8 @@ function XTableManager.CheckTableExist(path)
     return CS.XTableManager.CheckTableExist(path)
 end
 
-
+-- 释放表格
 function XTableManager.ReleaseTable(path)
-    --TODO 增加表格释放接口
     local loadType = router.GetLoadType(path)
     if loadType == XTableManager.TableLoadType.Bytes then
         bytesLoader.ReleaseFull(path)
@@ -106,33 +100,39 @@ function XTableManager.ReleaseTable(path)
 end
 
 --region Table Monitor
+function XTableManager.OnOpenBinaryTable(tablePath)
+    if not BinaryConfigMonitorEnable then
+        return
+    end
+    LuaTableConfigMonitor.OnOpenBinaryTable(tablePath)
+end
+
+function XTableManager.OnCloseBinaryTable(tablePath)
+    if not BinaryConfigMonitorEnable then
+        return
+    end
+    LuaTableConfigMonitor.OnCloseBinaryTable(tablePath)
+end
 
 function XTableManager.OnLoadBinary(tablePath, binary)
     if not BinaryConfigMonitorEnable then
         return
     end
-    LuaTableConfigMonitor.Init(tablePath, binary)
+    LuaTableConfigMonitor.OnLoadBinary(tablePath, binary)
 end
 
 function XTableManager.OnLoadBinaryWithSize(tablePath, binarySize)
     if not BinaryConfigMonitorEnable then
         return
     end
-    LuaTableConfigMonitor.InitWithSize(tablePath, binarySize)
+    LuaTableConfigMonitor.OnLoadBinaryWithSize(tablePath, binarySize)
 end
 
 function XTableManager.OnUnloadBinary(tablePath)
     if not BinaryConfigMonitorEnable then
         return
     end
-    LuaTableConfigMonitor.Release(tablePath)
-end
-
-function XTableManager.OnUnloadBinaryBytes(tablePath)
-    if not BinaryConfigMonitorEnable then
-        return
-    end
-    LuaTableConfigMonitor.ReleaseBytes(tablePath)
+    LuaTableConfigMonitor.OnUnloadBinary(tablePath)
 end
 
 function XTableManager.RegisterFixedStructuralSize(tablePath, structural, obj, isSelf)

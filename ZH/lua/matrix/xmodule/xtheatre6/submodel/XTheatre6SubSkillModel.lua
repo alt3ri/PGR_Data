@@ -733,6 +733,7 @@ function XTheatre6SubSkillModel:GetSlotCapacity(slotType)
             [SlotType.Active] = self._MainModel:GetIntConfigValue("ActiveSkillSlotInitCount"),
             [SlotType.Insert] = self._MainModel:GetIntConfigValue("InsertSkillSlotInitCount"),
             [SlotType.Special] = 1,
+            [SlotType.Bag] = self._MainModel:GetIntConfigValue("SkillBagSlotInitCount"),
         }
     end
 
@@ -899,12 +900,18 @@ end
 
 ---获取下一级技能id
 function XTheatre6SubSkillModel:GetNextLevelSkillId(tagetskillId)
-    local targetSkillKey = self:GetSkillKey(tagetskillId)
-    local targetLevel = self:GetSkillLevel(tagetskillId) + 1
-    for skillId, skillCfg in pairs(self._MainModel:GetSkillConfigs()) do
-        if skillCfg.SkillKey == targetSkillKey and skillCfg.Level == targetLevel then
-            return skillId
+    --skillId = skillKey × 10 + level
+    local currentSkillConfig = self._MainModel:GetSkillCfgById(tagetskillId)
+    local allSkillConfigs = self._MainModel:GetSkillConfigs()
+    local nextSkillLevelId = nil
+    for id,skillConfig in pairs(allSkillConfigs) do
+        if skillConfig and skillConfig.SkillKey == currentSkillConfig.SkillKey and skillConfig.Level == currentSkillConfig.Level + 1 then
+            nextSkillLevelId = id
+            break
         end
+    end
+    if XTool.IsNumberValid(nextSkillLevelId) then
+        return nextSkillLevelId
     end
 
     return nil
@@ -1010,6 +1017,98 @@ function XTheatre6SubSkillModel:ClearBagNewSkillFlags()
     end
     self._NewSkillIdSet = {}
     return true
+end
+
+function XTheatre6SubSkillModel:GetAddSkillGainTipData(data)
+    if XTool.IsTableEmpty(data.SkillUpdates) then
+        return nil, false
+    end
+
+    local bestSkillId
+    local bestIsUpGrade = false
+    local currentSkills = self:GetCharacterSkills()
+
+    for _, skillUpdateData in ipairs(data.SkillUpdates) do
+        local addSkill = skillUpdateData.AddSkill
+        local addSkillId = addSkill and addSkill.SkillId or nil
+        if XTool.IsNumberValid(addSkillId) then
+            if self:IsBetterGainTipSkill(addSkillId, bestSkillId) then
+                bestSkillId = addSkillId
+                bestIsUpGrade = false
+            end
+        end
+
+        if not XTool.IsTableEmpty(skillUpdateData.ReplaceSkills) then
+            for _, skillData in pairs(skillUpdateData.ReplaceSkills) do
+                local skillId = skillData.SkillId
+                if self:IsBetterGainTipSkill(skillId, bestSkillId) then
+                    bestSkillId = skillId
+                    bestIsUpGrade = self:IsUpgradeSkillData(currentSkills, skillData)
+                end
+            end
+        end
+    end
+
+    return bestSkillId, bestIsUpGrade
+end
+
+function XTheatre6SubSkillModel:IsBetterGainTipSkill(skillId, oldSkillId)
+    if not XTool.IsNumberValid(skillId) then
+        return false
+    end
+    if not XTool.IsNumberValid(oldSkillId) then
+        return true
+    end
+
+    local skillCfg = self._MainModel:GetSkillCfgById(skillId)
+    local oldSkillCfg = self._MainModel:GetSkillCfgById(oldSkillId)
+
+    local skillLevel = skillCfg.Level
+    local oldSkillLevel = oldSkillCfg.Level
+    if skillLevel ~= oldSkillLevel then
+        return skillLevel > oldSkillLevel
+    end
+
+    local skillQuality = skillCfg.Quality
+    local oldSkillQuality = oldSkillCfg.Quality
+    if skillQuality ~= oldSkillQuality then
+        return skillQuality > oldSkillQuality
+    end
+
+    return skillCfg.Id > oldSkillCfg.Id
+end
+
+function XTheatre6SubSkillModel:IsUpgradeSkillData(currentSkills, skillData)
+    if not skillData or not XTool.IsNumberValid(skillData.SkillId) then
+        return false
+    end
+
+    local slotGroup = currentSkills and currentSkills[skillData.SlotType]
+    local oldSkillData = slotGroup and slotGroup[skillData.Position]
+    if not oldSkillData or not XTool.IsNumberValid(oldSkillData.SkillId) then
+        return false
+    end
+
+    local skillCfg = self._MainModel:GetSkillCfgById(skillData.SkillId)
+    local oldSkillCfg = self._MainModel:GetSkillCfgById(oldSkillData.SkillId)
+    return skillCfg.SkillKey == oldSkillCfg.SkillKey and skillCfg.Level > oldSkillCfg.Level
+end
+
+--endregion
+
+
+--region v4.6 pvp
+
+function XTheatre6SubSkillModel:GetSkillSlotSortConfigKeys(skillType)
+    if not self._SkillSlotSortConfigKeys then
+        self._SkillSlotSortConfigKeys = {
+            [SkillType.Active] = "ActiveSkillSlotSort",
+            [SkillType.Parry] = "ClashSkillSlotSort",
+            [SkillType.OverClock] = "UltraCalcSkillSlotSort",
+            [SkillType.Insert] = "InsertSkillSlotSort",
+        }
+    end
+    return self._SkillSlotSortConfigKeys[skillType]
 end
 
 --endregion

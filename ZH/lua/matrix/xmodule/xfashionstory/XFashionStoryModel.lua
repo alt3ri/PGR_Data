@@ -2,6 +2,7 @@ local TableKey = {
     FashionStory = { DirPath = XConfigUtil.DirectoryType.Share, CacheType = XConfigUtil.CacheType.Normal },
     FashionStoryStage = { DirPath = XConfigUtil.DirectoryType.Share, CacheType = XConfigUtil.CacheType.Normal, Identifier = "StageId", },
     FashionStorySingleLine = { DirPath = XConfigUtil.DirectoryType.Share, CacheType = XConfigUtil.CacheType.Normal },
+    FashionStoryTrialEntry = { DirPath = XConfigUtil.DirectoryType.Client, CacheType = XConfigUtil.CacheType.Normal, Identifier = "StageId", },
 }
 
 ---@class XFashionStoryModel : XModel
@@ -104,6 +105,21 @@ end
 function XFashionStoryModel:GetTaskLimitId(id)
     local cfg = self:GetFashionStoryCfg(id)
     return cfg and cfg.TaskLimitId
+end
+
+function XFashionStoryModel:GetRewardActivityTimeId(id)
+    local cfg = self:GetFashionStoryCfg(id)
+    return cfg and cfg.RewardActivityTimeId
+end
+
+function XFashionStoryModel:GetRewardId(id)
+    local cfg = self:GetFashionStoryCfg(id)
+    return cfg and cfg.RewardId
+end
+
+function XFashionStoryModel:GetRewardSkipId(id)
+    local cfg = self:GetFashionStoryCfg(id)
+    return cfg and cfg.RewardSkipId
 end
 
 function XFashionStoryModel:GetFashionStorySkipId(activityId, id)
@@ -231,6 +247,11 @@ function XFashionStoryModel:GetSingleLineAsGroupStoryIcon(id)
     return cfg and cfg.AsGroupStoryIcon
 end
 
+function XFashionStoryModel:GetStoryDecorateIcon(id)
+    local cfg = self:GetSingleLineCfg(id)
+    return cfg and cfg.StoryDecorateIcon
+end
+
 function XFashionStoryModel:GetSingleLineSummerFashionTitleImg(id)
     local cfg = self:GetSingleLineCfg(id)
     return cfg and cfg.SummerFashionTitleImg
@@ -310,6 +331,45 @@ end
 function XFashionStoryModel:GetTrialLockIcon(id)
     local cfg = self:GetFashionStoryStageCfg(id)
     return cfg and cfg.TrialLockIcon
+end
+
+function XFashionStoryModel:GetTrialImgName(id)
+    local cfg = self:GetFashionStoryStageCfg(id)
+    return cfg and cfg.TrialImgName
+end
+
+----------------------------------------------FashionStoryTrialEntry.tab(客户端入口表)----------------------------------------------------------
+
+function XFashionStoryModel:GetTrialEntryCfg(stageId)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.FashionStoryTrialEntry, stageId)
+end
+
+function XFashionStoryModel:GetAllTrialEntryStageIds()
+    local ids = {}
+    for id, _ in pairs(self._ConfigUtil:GetByTableKey(TableKey.FashionStoryTrialEntry)) do
+        table.insert(ids, id)
+    end
+    return ids
+end
+
+function XFashionStoryModel:GetEntryTrialFace(stageId)
+    local cfg = self:GetTrialEntryCfg(stageId)
+    return cfg and cfg.TrialFace
+end
+
+function XFashionStoryModel:GetEntryTrialFinishTag(stageId)
+    local cfg = self:GetTrialEntryCfg(stageId)
+    return cfg and cfg.FinishTag
+end
+
+function XFashionStoryModel:GetEntryTrialLockIcon(stageId)
+    local cfg = self:GetTrialEntryCfg(stageId)
+    return cfg and cfg.TrialLockIcon
+end
+
+function XFashionStoryModel:GetEntryTrialImgName(stageId)
+    local cfg = self:GetTrialEntryCfg(stageId)
+    return cfg and cfg.TrialImgName
 end
 
 return XFashionStoryModel

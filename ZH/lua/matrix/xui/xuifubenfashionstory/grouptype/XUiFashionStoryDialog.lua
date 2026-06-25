@@ -1,3 +1,4 @@
+-- 复用预制：Assets/Product/Ui/Prefab/UiArchiveStoryDialog.prefab（同时被 XUiArchiveStoryDialog 使用，改 prefab 需同步两边）
 local XUiFashionStoryDialog = XLuaUiManager.Register(XLuaUi, "UiFashionStoryDialog")
 
 local CSTextManagerGetText = CS.XTextManager.GetText
@@ -5,11 +6,10 @@ local CSTextManagerGetText = CS.XTextManager.GetText
 --region 生命周期
 function XUiFashionStoryDialog:OnAwake()
     self:Init()
-    self:InitCb()
 end
 
 function XUiFashionStoryDialog:OnStart(stageId)
-    self.StageId=stageId
+    self.StageId = stageId
     self:RefreshData()
 end
 --endregion
@@ -18,27 +18,27 @@ end
 function XUiFashionStoryDialog:Init()
     self.BtnEnterStoryBefore.gameObject:SetActiveEx(true)
     self.BtnEnterStoryAfter.gameObject:SetActiveEx(false)
-
     self.BtnEnterStoryBefore:SetName(CSTextManagerGetText("PlayStory"))
-end
 
-function XUiFashionStoryDialog:InitCb()
-    self.BtnMask.CallBack=function() self:Close() end
-
-    self.BtnEnterStoryBefore.CallBack=function() self:OnPlayClick() end
+    self.BtnMask:AddEventListener(Handler(self, self.OnBtnMaskClick))
+    self.BtnEnterStoryBefore:AddEventListener(Handler(self, self.OnPlayClick))
 end
 --endregion
 
 --region 数据更新
 function XUiFashionStoryDialog:RefreshData()
     local stageCfg = XDataCenter.FubenManager.GetStageCfg(self.StageId)
-    self.TxtStoryDec.text = stageCfg.Name
-    self.TxtStoryName.text=stageCfg.Description
+    self.TxtStoryName.text = stageCfg.Name
+    self.TxtStoryDec.text = stageCfg.Description
     self.RImgStory:SetRawImage(XMVCA.XFashionStory:GetStoryStageDetailIcon(self.StageId))
 end
---endgion
+--endregion
 
 --region 事件处理
+function XUiFashionStoryDialog:OnBtnMaskClick()
+    self:Close()
+end
+
 function XUiFashionStoryDialog:OnPlayClick()
     local stageCfg = XDataCenter.FubenManager.GetStageCfg(self.StageId)
     local stageInfo = XDataCenter.FubenManager.GetStageInfo(self.StageId)

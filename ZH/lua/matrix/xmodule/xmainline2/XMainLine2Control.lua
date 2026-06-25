@@ -2,8 +2,9 @@
 ---@field _Model XMainLine2Model
 local XMainLine2Control = XClass(XControl, "XMainLine2Control")
 
-local ChapterIdEnum = {
-    Kamui4P5 = 1041,
+local ChapterId2Cls = {
+    [1041] = "XUi/XUiMainLine2/CustomUiChapter/XUiMainLine2PanelChapter4P5",
+    [2016] = "XUi/XUiMainLine2/CustomUiChapter/XUiMainLine2PanelChapter4P6",
 }
 
 function XMainLine2Control:OnInit()
@@ -148,6 +149,31 @@ end
 -- 获取章节Spine进度
 function XMainLine2Control:GetChapterSpineProgressWans(chapterId)
     return self._Model:GetChapterSpineProgressWans(chapterId)
+end
+
+-- 获取章节入场Spine的关卡下标
+function XMainLine2Control:GetChapterEnterSpineStageIndex(chapterId)
+    return self._Model:GetChapterEnterSpineStageIndex(chapterId)
+end
+
+-- 获取章节入场Spine的动画名
+function XMainLine2Control:GetChapterEnterSpineName(chapterId)
+    return self._Model:GetChapterEnterSpineName(chapterId)
+end
+
+-- 获取章节切换Spine的关卡下标
+function XMainLine2Control:GetChapterSwitchSpineStageIndex(chapterId)
+    return self._Model:GetChapterSwitchSpineStageIndex(chapterId)
+end
+
+-- 获取章节向前切换Spine的动画名
+function XMainLine2Control:GetChapterSwitchAheadSpineName(chapterId)
+    return self._Model:GetChapterSwitchAheadSpineName(chapterId)
+end
+
+-- 获取章节向后切换Spine的动画名
+function XMainLine2Control:GetChapterSwitchBackwardSpineName(chapterId)
+    return self._Model:GetChapterSwitchBackwardSpineName(chapterId)
 end
 
 -- 获取主章节标题
@@ -500,8 +526,10 @@ end
 
 --- 获取章节界面类的接口，主要是对通用派生做支持
 function XMainLine2Control:GetChapterUiCls(chapterId)
-    if chapterId == ChapterIdEnum.Kamui4P5 then
-        return require("XUi/XUiMainLine2/CustomUiChapter/XUiMainLine2PanelChapter4P5")
+    local cls = ChapterId2Cls[chapterId]
+
+    if not string.IsNilOrEmpty(cls) then
+        return require(cls)
     end
     
     return require("XUi/XUiMainLine2/XUiMainLine2PanelEntranceList")

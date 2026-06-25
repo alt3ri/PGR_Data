@@ -26,6 +26,7 @@ function XBigWorldMessageAgency:InitRpc()
     -- 实现服务器事件注册
     -- XRpc.XXX
     self:AddRpc("NotifyBigWorldNotReadMessage", handler(self, self.OnNotifyBigWorldNotReadMessage))
+    self:AddRpc("NotifyBigWorldMessageRecordUpdate", handler(self, self.OnNotifyBigWorldMessageRecordUpdate))
 end
 
 function XBigWorldMessageAgency:InitEvent()
@@ -60,6 +61,10 @@ function XBigWorldMessageAgency:OnNotifyBigWorldNotReadMessage(data)
         self._Model:AddForceMessage(data)
         XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_CHECK_FUNCTION_POPUP)
     end
+end
+
+function XBigWorldMessageAgency:OnNotifyBigWorldMessageRecordUpdate(data)
+    self:UpdateAllMessageData(data.BigWorldMessageDict)
 end
 
 ---@param controlData XBWFunctionControlData

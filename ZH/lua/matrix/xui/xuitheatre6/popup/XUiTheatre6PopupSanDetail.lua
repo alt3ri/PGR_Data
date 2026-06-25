@@ -98,15 +98,16 @@ function XUiTheatre6PopupSanDetail:RefreshCardList()
             
             local isNormal = false
             local showSanValue = 0
+            local maxValue = self._Control:AdjustSanConfigMaxValue(sanConfig)
             if sanConfig.SanType == XEnumConst.Theatre6.SanType.Normal then
                 isNormal = true
                 showSanValue = 0
             elseif sanConfig.SanType == XEnumConst.Theatre6.SanType.Below then
-                showSanValue = sanConfig.MaxSan
+                showSanValue = maxValue
             elseif sanConfig.SanType == XEnumConst.Theatre6.SanType.Above then
                 showSanValue = sanConfig.MinSan
             elseif sanConfig.SanType == XEnumConst.Theatre6.SanType.Death then
-                showSanValue = sanConfig.MaxSan
+                showSanValue = maxValue
             end
             ui.TagBuffDescription:SetNameByGroup(0, string.format(self._Control:GetClientConfigValue("SanTypeDesc", sanConfig.SanType), showSanValue))               -- 理智值范围显示
            
@@ -170,18 +171,19 @@ function XUiTheatre6PopupSanDetail:IsCardReached(sanConfig)
     end
 
     local curSan = self._Control:GetSanCurValue()
+    local maxValue = self._Control:AdjustSanConfigMaxValue(curSan)
 
     if sanConfig.SanType == XEnumConst.Theatre6.SanType.Normal then
         return curConfig.SanType == XEnumConst.Theatre6.SanType.Normal
     elseif sanConfig.SanType == XEnumConst.Theatre6.SanType.Below then
-        return curSan <= sanConfig.MaxSan
+        return curSan <= maxValue
     elseif sanConfig.SanType == XEnumConst.Theatre6.SanType.Above then
         return curSan >= sanConfig.MinSan
     elseif sanConfig.SanType == XEnumConst.Theatre6.SanType.Death then
-        if sanConfig.MinSan == 0 and sanConfig.MaxSan == 0 then
+        if sanConfig.MinSan == 0 and maxValue == 0 then
             return curSan <= 0
         else
-            return curSan >= sanConfig.MaxSan
+            return curSan >= maxValue
         end
     end
 

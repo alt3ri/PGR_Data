@@ -837,10 +837,10 @@ function XCharR5Lucia2:ChangeDamageBeforeCalc(eventArgs)
             if self.JianqiDmgTbl[eventArgs.Id] then
                 ------XLog.Warning("剑气伤害加成-核心2-1")
                 self._proxy:ApplyMagic(self._uuid, self._uuid, 10511031, 1, eventArgs.ContextId, 1)
-                if not self._proxy:CheckNpcFullActionState(self._uuid, ENpcAction.Reboot,-1) then
-                    self._proxy:ApplyMagic(self._uuid, self._uuid, 10511032)
-                    self._proxy:ApplyMagic(self._uuid, self._uuid, 10511033) 
-                end
+                -- if not self._proxy:CheckNpcFullActionState(self._uuid, ENpcAction.Reboot,-1) then
+                --     self._proxy:ApplyMagic(self._uuid, self._uuid, 10511032)
+                --     self._proxy:ApplyMagic(self._uuid, self._uuid, 10511033) 
+                -- end
             end
             if self._proxy:CheckBuffByKind(eventArgs.Target, 1056020) then
                 if eventArgs.Id == 1056021 then
@@ -858,10 +858,10 @@ function XCharR5Lucia2:ChangeDamageBeforeCalc(eventArgs)
             if self.JianqiDmgTbl[eventArgs.Id] then
                 ------XLog.Warning("剑气伤害加成-核心2-2")
                 self._proxy:ApplyMagic(self._uuid, self._uuid, 10511041, 1, eventArgs.ContextId, 1)
-                if not self._proxy:CheckNpcFullActionState(self._uuid, ENpcAction.Reboot,-1) then
-                    self._proxy:ApplyMagic(self._uuid, self._uuid, 10511032)
-                    self._proxy:ApplyMagic(self._uuid, self._uuid, 10511033) 
-                end
+                -- if not self._proxy:CheckNpcFullActionState(self._uuid, ENpcAction.Reboot,-1) then
+                --     self._proxy:ApplyMagic(self._uuid, self._uuid, 10511032)
+                --     self._proxy:ApplyMagic(self._uuid, self._uuid, 10511033) 
+                -- end
             end
             if self._proxy:CheckBuffByKind(eventArgs.Target, 1056020) then
                 if eventArgs.Id == 1056021 then

@@ -16,9 +16,18 @@ function XDlcRelinkRoom:CloseFightUiLoading()
     XLuaUiManager.Close("UiDlcRelinkLoadingNew")
 end
 
+function XDlcRelinkRoom:OnEnterWorld()
+    XMVCA.XDlcRelink:InitWorld()
+end
+
+function XDlcRelinkRoom:OnFightExit()
+    XMVCA.XDlcRelink:DisposeWorld()
+end
+
 function XDlcRelinkRoom:OnDisconnect()
     -- 断线后，打开界面没有意义，所以覆盖父类方法
     --XMVCA.XDlcRelink:CommonRunRelinkRoomUiHandle()
+    XMVCA.XDlcRelink:DisposeWorld()
 end
 
 function XDlcRelinkRoom:OnRoomLeaderTimeOut()

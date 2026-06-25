@@ -34,4 +34,3 @@ function XBWSkipMapElseEnvironment:Skip()
 end
 
 return XBWSkipMapElseEnvironment
-

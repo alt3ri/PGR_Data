@@ -57,19 +57,11 @@ function XCGArchiveAgencyCom:AddNewCGRedPoint(idList)
     end
 
     local timestamp = XTime.GetServerNowTimestamp()
-    
-    for _,id in pairs(idList) do
-        ---@type XArchiveCGEntity
-        local cgDetailData = self._Model:GetArchiveCGDetailData()[id]
-        
-        if cgDetailData and cgDetailData:GetIsShowRedPoint() == 1 then
-            local isHide = false
 
-            if not string.IsNilOrEmpty(cgDetailData:GetShowTimeStr()) then
-                isHide = timestamp < XTime.ParseToTimestamp(cgDetailData:GetShowTimeStr())
-            end
-            
-            self._Model.ArchiveCGData:SetCGReddot(cgDetailData:GetGroupId(), cgDetailData.Id, isHide)
+    for _,id in pairs(idList) do
+        local shouldShow, isHide, groupId = self._Model:CheckCGShouldShowRedPoint(id, timestamp)
+        if shouldShow then
+            self._Model.ArchiveCGData:SetCGReddot(groupId, id, isHide)
         end
     end
 

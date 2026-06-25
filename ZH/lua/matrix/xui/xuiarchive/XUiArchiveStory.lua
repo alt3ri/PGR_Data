@@ -1,112 +1,112 @@
-local XUiGridArchive = require("XUi/XUiArchive/XUiGridArchive")
-local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
-local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
-local XUiGridArchiveStory = require("XUi/XUiArchive/XUiGridArchiveStory")
-local XUiArchiveStory = XLuaUiManager.Register(XLuaUi, "UiArchiveStory")
-local Object = CS.UnityEngine.Object
-local PageGridHeigh = 120
-
-function XUiArchiveStory:OnEnable()
-    self:DynamicTableDataSync()
-end
-
-function XUiArchiveStory:OnStart(selectPage)
-    self._Control:UpdateStoryData()
-    self:SetButtonCallBack()
-    self:InitDynamicTable()
-    self:InitTypeButton(selectPage)
-    self.AssetPanel = XUiPanelAsset.New(self, self.PanelAsset, XDataCenter.ItemManager.ItemId.FreeGem, XDataCenter.ItemManager.ItemId.ActionPoint, XDataCenter.ItemManager.ItemId.Coin)
-end
-
-function XUiArchiveStory:InitDynamicTable()
-    self.DynamicTable = XDynamicTableNormal.New(self.PanelDynamicTable)
-    self.DynamicTable:SetProxy(XUiGridArchiveStory,self)
-    self.DynamicTable:SetDelegate(self)
-    self.GridStoryItem.gameObject:SetActiveEx(false)
-end
-
-function XUiArchiveStory:SetupDynamicTable(type)
-    self.PageDatas = self._Control:GetArchiveStoryChapterList(type)
-    self.DynamicTable:SetDataSource(self.PageDatas)
-    self.DynamicTable:ReloadDataSync(1)
-end
-
-function XUiArchiveStory:DynamicTableDataSync()
-    self.DynamicTable:ReloadDataSync()
-end
-
-function XUiArchiveStory:OnDynamicTableEvent(event, index, grid)
-    if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
-        grid:UpdateGrid(self.PageDatas, self, index)
-    end    
-end
-
-function XUiArchiveStory:SetButtonCallBack()
-    self.BtnBack.CallBack = function()
-        self:OnBtnBackClick()
-    end
-    self.BtnMainUi.CallBack = function()
-        self:OnBtnMainUiClick()
-    end
-end
-
-function XUiArchiveStory:InitTypeButton(selectPage)
-    self.GroupList = self._Control:GetArchiveStoryGroupList()
-    self.CurType = selectPage and selectPage or 1
-    self.StoryGroupBtn = {}
-    for _, v in pairs(self.GroupList) do
-        local btn = Object.Instantiate(self.BtnTabShortNew)
-        btn.gameObject:SetActive(true)
-        btn.transform:SetParent(self.TabBtnContent.transform, false)
-        local btncs = btn:GetComponent("XUiButton")
-        local name = v.Name
-        btncs:SetName(name or "Null")
-
-        table.insert(self.StoryGroupBtn, btncs)
-    end
-    self.TabBtnContent:Init(self.StoryGroupBtn, function(index) self:SelectType(index) end)
-    self.BtnTabShortNew.gameObject:SetActiveEx(false)
-    self.TabBtnContent:SelectIndex(self.CurType)
-    if self.CurType > 1 then
-       local contentTrans = self.TabBtnContent:GetComponent("RectTransform")
-       local currentPos = contentTrans.anchoredPosition
-       currentPos.y = currentPos.y + PageGridHeigh * (self.CurType - 1)
-       contentTrans.anchoredPosition = currentPos
-    end    
-end
-
-function XUiArchiveStory:SelectType(index)
-    self.CurType = index
-    self:SetupDynamicTable(self.GroupList[index].Id)
-    self:PlayAnimation("QieHuan")
-    self:ShowStoryRateInfo(index)
-end
-
-function XUiArchiveStory:OnBtnBackClick()
-    self:Close()
-end
-
-function XUiArchiveStory:OnBtnMainUiClick()
-    XLuaUiManager.RunMain()
-end
-
-function XUiArchiveStory:ShowStoryRateInfo(index)
-    local count = 0
-    local maxCount = #self.PageDatas
-    for _,data in pairs(self.PageDatas) do
-        if not data:GetIsLock() then
-            count = count + 1
-        end
-    end
-    self.TxtHaveCollectNum.text = count
-    self.TxtMaxCollectNum.text = maxCount
-    self.TitleText.text = self.GroupList[index].Name
-end
-
-function XUiArchiveStory:OnCheckArchiveRedPoint()
-
-end
-
-function XUiArchiveStory:OnCheckArchiveTag()
-
+local XUiGridArchive = require("XUi/XUiArchive/XUiGridArchive")
+local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
+local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
+local XUiGridArchiveStory = require("XUi/XUiArchive/XUiGridArchiveStory")
+local XUiArchiveStory = XLuaUiManager.Register(XLuaUi, "UiArchiveStory")
+local Object = CS.UnityEngine.Object
+local PageGridHeigh = 120
+
+function XUiArchiveStory:OnEnable()
+    self:DynamicTableDataSync()
+end
+
+function XUiArchiveStory:OnStart(selectPage)
+    self._Control:UpdateStoryData()
+    self:SetButtonCallBack()
+    self:InitDynamicTable()
+    self:InitTypeButton(selectPage)
+    self.AssetPanel = XUiPanelAsset.New(self, self.PanelAsset, XDataCenter.ItemManager.ItemId.FreeGem, XDataCenter.ItemManager.ItemId.ActionPoint, XDataCenter.ItemManager.ItemId.Coin)
+end
+
+function XUiArchiveStory:InitDynamicTable()
+    self.DynamicTable = XDynamicTableNormal.New(self.PanelDynamicTable)
+    self.DynamicTable:SetProxy(XUiGridArchiveStory,self)
+    self.DynamicTable:SetDelegate(self)
+    self.GridStoryItem.gameObject:SetActiveEx(false)
+end
+
+function XUiArchiveStory:SetupDynamicTable(type)
+    self.PageDatas = self._Control:GetArchiveStoryChapterList(type)
+    self.DynamicTable:SetDataSource(self.PageDatas)
+    self.DynamicTable:ReloadDataSync(1)
+end
+
+function XUiArchiveStory:DynamicTableDataSync()
+    self.DynamicTable:ReloadDataSync()
+end
+
+function XUiArchiveStory:OnDynamicTableEvent(event, index, grid)
+    if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
+        grid:UpdateGrid(self.PageDatas, self, index)
+    end    
+end
+
+function XUiArchiveStory:SetButtonCallBack()
+    self.BtnBack.CallBack = function()
+        self:OnBtnBackClick()
+    end
+    self.BtnMainUi.CallBack = function()
+        self:OnBtnMainUiClick()
+    end
+end
+
+function XUiArchiveStory:InitTypeButton(selectPage)
+    self.GroupList = self._Control:GetArchiveStoryGroupList()
+    self.CurType = selectPage and selectPage or 1
+    self.StoryGroupBtn = {}
+    for _, v in pairs(self.GroupList) do
+        local btn = Object.Instantiate(self.BtnTabShortNew)
+        btn.gameObject:SetActive(true)
+        btn.transform:SetParent(self.TabBtnContent.transform, false)
+        local btncs = btn:GetComponent("XUiButton")
+        local name = v.Name
+        btncs:SetName(name or "Null")
+
+        table.insert(self.StoryGroupBtn, btncs)
+    end
+    self.TabBtnContent:Init(self.StoryGroupBtn, function(index) self:SelectType(index) end)
+    self.BtnTabShortNew.gameObject:SetActiveEx(false)
+    self.TabBtnContent:SelectIndex(self.CurType)
+    if self.CurType > 1 then
+       local contentTrans = self.TabBtnContent:GetComponent(typeof(CS.UnityEngine.RectTransform))
+       local currentPos = contentTrans.anchoredPosition
+       currentPos.y = currentPos.y + PageGridHeigh * (self.CurType - 1)
+       contentTrans.anchoredPosition = currentPos
+    end    
+end
+
+function XUiArchiveStory:SelectType(index)
+    self.CurType = index
+    self:SetupDynamicTable(self.GroupList[index].Id)
+    self:PlayAnimation("QieHuan")
+    self:ShowStoryRateInfo(index)
+end
+
+function XUiArchiveStory:OnBtnBackClick()
+    self:Close()
+end
+
+function XUiArchiveStory:OnBtnMainUiClick()
+    XLuaUiManager.RunMain()
+end
+
+function XUiArchiveStory:ShowStoryRateInfo(index)
+    local count = 0
+    local maxCount = #self.PageDatas
+    for _,data in pairs(self.PageDatas) do
+        if not data:GetIsLock() then
+            count = count + 1
+        end
+    end
+    self.TxtHaveCollectNum.text = count
+    self.TxtMaxCollectNum.text = maxCount
+    self.TitleText.text = self.GroupList[index].Name
+end
+
+function XUiArchiveStory:OnCheckArchiveRedPoint()
+
+end
+
+function XUiArchiveStory:OnCheckArchiveTag()
+
 end

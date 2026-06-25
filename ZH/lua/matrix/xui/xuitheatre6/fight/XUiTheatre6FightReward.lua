@@ -17,7 +17,7 @@ end
 function XUiTheatre6FightReward:OnStart(rewardGoodsList)
     self._RewardGoodsList = rewardGoodsList or {}
     self.RImgIcon:SetRawImage(self._Control:GetCoinIcon())
-    -- self:TryOpenSellSkillPanel()
+    XMVCA.XTheatre6:TryOpenAddSkillGainTips()
 end
 
 function XUiTheatre6FightReward:OnEnable()

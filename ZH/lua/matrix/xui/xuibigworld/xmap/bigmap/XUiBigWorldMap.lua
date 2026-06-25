@@ -1179,6 +1179,8 @@ function XUiBigWorldMap:_ChangeMap(levelId)
     self:_RefreshPosition()
     self:_RefreshPlayerTrack()
     self:_RefreshTrackPin()
+
+    self._CurrentPlayAreaAnimation = false
 end
 
 function XUiBigWorldMap:_InitAreaList()

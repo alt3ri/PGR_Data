@@ -126,6 +126,18 @@ function XFashionAgency:IsFashionColorHas(fashionId, colorId)
     return self._Model.ColorData:IsFashionColorHas(fashionId, colorId)
 end
 
+-- 用目标涂装Id匹配 FashionColor.TargetFashionId,命中则用该颜色Id判断是否已拥有
+function XFashionAgency:IsTargetFashionColorHas(targetFashionId)
+    local colorConfigs = self._Model:GetFashionColorConfigs()
+    for _, colorConfig in pairs(colorConfigs) do
+        if colorConfig.TargetFashionId == targetFashionId
+                and self:IsFashionColorHas(colorConfig.OriginalFashionId, colorConfig.Id) then
+            return true
+        end
+    end
+    return false
+end
+
 --endregion
 
 

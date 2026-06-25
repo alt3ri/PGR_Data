@@ -13,6 +13,7 @@ local TableKey =
     WeaponSkillPool = { CacheType = XConfigUtil.CacheType.Normal },
     EquipAwake = { CacheType = XConfigUtil.CacheType.Normal },
     WeaponOverrun = { CacheType = XConfigUtil.CacheType.Normal },
+    WeaponOverrunSkill = { DirPath = XConfigUtil.DirectoryType.Client, CacheType = XConfigUtil.CacheType.Normal },
     CharacterSuitPriority = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "CharacterId", CacheType = XConfigUtil.CacheType.Normal},
     EquipRes = { DirPath = XConfigUtil.DirectoryType.Client, CacheType = XConfigUtil.CacheType.Normal },
     EquipModel = { DirPath = XConfigUtil.DirectoryType.Client, CacheType = XConfigUtil.CacheType.Normal },
@@ -813,9 +814,10 @@ end
 function XEquipModel:GetResonanceSkillInfo(equipId, pos)
     local skillInfo = {}
     local equip = self:GetEquip(equipId)
-    if equip.ResonanceInfo and equip.ResonanceInfo[pos] then
+    local info = equip:GetResonanceInfo(pos)
+    if info then
         local XSkillInfoObj = require("XEntity/XEquip/XSkillInfoObj")
-        skillInfo = XSkillInfoObj.New(equip.ResonanceInfo[pos].Type, equip.ResonanceInfo[pos].TemplateId)
+        skillInfo = XSkillInfoObj.New(info.Type, info.TemplateId)
     end
 
     return skillInfo
@@ -828,9 +830,10 @@ end
 
 function XEquipModel:GetResonanceSkillInfoByEquipData(equip, pos)
     local skillInfo = {}
-    if equip.ResonanceInfo and equip.ResonanceInfo[pos] then
+    local info = equip:GetResonanceInfo(pos)
+    if info then
         local XSkillInfoObj = require("XEntity/XEquip/XSkillInfoObj")
-        skillInfo = XSkillInfoObj.New(equip.ResonanceInfo[pos].Type, equip.ResonanceInfo[pos].TemplateId)
+        skillInfo = XSkillInfoObj.New(info.Type, info.TemplateId)
     end
 
     return skillInfo
@@ -838,11 +841,11 @@ end
 
 function XEquipModel:GetResonanceBindCharacterId(equipId, pos)
     local equip = self:GetEquip(equipId)
-    return equip.ResonanceInfo and equip.ResonanceInfo[pos] and equip.ResonanceInfo[pos].CharacterId or 0
+    return equip:GetResonanceBindCharacterId(pos)
 end
 
 function XEquipModel:GetResonanceBindCharacterIdByEquipData(equip, pos)
-    return equip.ResonanceInfo and equip.ResonanceInfo[pos] and equip.ResonanceInfo[pos].CharacterId or 0
+    return equip:GetResonanceBindCharacterId(pos)
 end
 
 function XEquipModel:GetEquipAddExp(equipId, count)
@@ -899,8 +902,8 @@ function XEquipModel:IsEquipRecomendedToBeEat(strengthenEquipId, equipId, doNotL
             equip.Breakthrough == 0 and --不吃突破过的
             equip.Level == 1 and
             equip.Exp == 0 and --不吃强化过的
-            not equip.ResonanceInfo and
-            not equip.UnconfirmedResonanceInfo
+            not equip:IsResonance() and
+            not equip:IsUnconfirmedResonance()
      then --不吃共鸣过的
         return true
     end
@@ -927,14 +930,14 @@ end
 
 function XEquipModel:CheckEquipPosResonanced(equipId, pos)
     local equip = self:GetEquip(equipId)
-    return equip.ResonanceInfo and equip.ResonanceInfo[pos]
+    return equip:GetResonanceInfo(pos)
 end
 
 --装备是否共鸣过
 function XEquipModel:IsEquipResonanced(equipId)
     local equip = self:GetEquip(equipId)
-    return equip and not XTool.IsTableEmpty(equip.ResonanceInfo) or
-        not XTool.IsTableEmpty(equip.UnconfirmedResonanceInfo)
+    if not equip then return false end
+    return equip:IsResonance() or equip:IsUnconfirmedResonance()
 end
 
 function XEquipModel:CheckEquipStarCanAwake(equipId)
@@ -1177,8 +1180,8 @@ function XEquipModel:IsEquipCanRecycle(equipId)
         equip.Breakthrough == 0 and --无突破
         equip.Level == 1 and
         equip.Exp == 0 and --无强化
-        not equip.ResonanceInfo and
-        not equip.UnconfirmedResonanceInfo and --无共鸣
+        not equip:IsResonance() and
+        not equip:IsUnconfirmedResonance() and --无共鸣
         not self:IsEquipAwaken(equipId) and --无觉醒
         not self:IsWearing(equipId) and --未被穿戴
         not self:IsInSuitPrefab(equipId) and --未被预设在意识组合中
@@ -2840,52 +2843,126 @@ end
 
 
 ---------------------------------------- #region WeaponOverrun ----------------------------------------
+
+---@return XTableWeaponOverrun[]
+function XEquipModel:GetWeaponOverrunConfigs()
+    return self._ConfigUtil:GetByTableKey(TableKey.WeaponOverrun)
+end
+
+---@return XTableWeaponOverrun
+function XEquipModel:GetWeaponOverrunConfigById(id)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.WeaponOverrun, id, false)
+end
+
 -- 初始化武器超限表
 function XEquipModel:InitWeaponOverrunCfgs()
     self.WeaponOverrunDic = {}
-    local overrunTemplates = self._ConfigUtil:GetByTableKey(TableKey.WeaponOverrun)
+    local overrunTemplates = self:GetWeaponOverrunConfigs()
     for _, cfg in pairs(overrunTemplates) do
-        local weaponId = cfg.WeaponId
-        local cfgs = self.WeaponOverrunDic[weaponId]
-        if not cfgs then
-            cfgs = {}
-            self.WeaponOverrunDic[weaponId] = cfgs
+        local weaponData = self.WeaponOverrunDic[cfg.WeaponId]
+        if not weaponData then
+            weaponData = { Common = {}, Character = {} }
+            self.WeaponOverrunDic[cfg.WeaponId] = weaponData
         end
-        table.insert(cfgs, cfg)
+        if XTool.IsNumberValid(cfg.CharacterId) then
+            local characterData = weaponData.Character[cfg.CharacterId]
+            if not characterData then
+                characterData = {}
+                weaponData.Character[cfg.CharacterId] = characterData
+            end
+            characterData[cfg.Level] = cfg.Id
+        else
+            weaponData.Common[cfg.Level] = cfg.Id
+        end
     end
 end
 
 -- 获取武器对应所有超限配置
-function XEquipModel:GetWeaponOverrunCfgsByTemplateId(templateId)
+---@return table<number, number> 超限等级对应Id的字典
+function XEquipModel:GetWeaponOverrunCfgIds(weaponTemplateId, characterId)
     if not self.WeaponOverrunDic then
         self:InitWeaponOverrunCfgs()
     end
 
-    local cfgs = self.WeaponOverrunDic[templateId]
+    local weaponData = self.WeaponOverrunDic[weaponTemplateId]
+    if not weaponData then
+        return {}
+    end
+
+    -- 先填 Common，再用 Character 覆盖（Character 优先）
+    local result = {}
+    for level, cfgId in pairs(weaponData.Common) do
+        result[level] = cfgId
+    end
+    if characterId and weaponData.Character[characterId] then
+        for level, cfgId in pairs(weaponData.Character[characterId]) do
+            result[level] = cfgId
+        end
+    end
+    return result
+end
+
+---@return number|nil
+function XEquipModel:GetWeaponOverrunCharacterId(weaponTemplateId)
+    if not self.WeaponOverrunDic then
+        self:InitWeaponOverrunCfgs()
+    end
+
+    local weaponData = self.WeaponOverrunDic[weaponTemplateId]
+    if not weaponData then
+        return nil
+    end
+
+    for characterId in pairs(weaponData.Character) do
+        return characterId
+    end
+    return nil
+end
+
+---@return table<number, XTableWeaponOverrun> 超限等级对应配置的字典
+function XEquipModel:GetWeaponOverrunCfgsByTemplateId(weaponTemplateId, characterId)
+    local cfgIds = self:GetWeaponOverrunCfgIds(weaponTemplateId, characterId)
+    local cfgs = {}
+    for level, cfgId in pairs(cfgIds) do
+        cfgs[level] = self:GetWeaponOverrunConfigById(cfgId)
+    end
     return cfgs
 end
 
 -- 通过配置表Id判断能否超限
-function XEquipModel:CanOverrunByTemplateId(templateId)
-    local cfgs = self:GetWeaponOverrunCfgsByTemplateId(templateId)
-    local canDeregulate = cfgs and #cfgs > 0
+function XEquipModel:CanOverrunByTemplateId(weaponTemplateId)
+    local cfgIds = self:GetWeaponOverrunCfgIds(weaponTemplateId)
+    local canDeregulate = cfgIds and #cfgIds > 0
     return canDeregulate
 end
 
 -- 获取武器超限意识绑定的配置表
-function XEquipModel:GetWeaponOverrunSuitCfgByTemplateId(templateId)
-    local cfgs = self:GetWeaponOverrunCfgsByTemplateId(templateId)
-    if cfgs then
-        for _, cfg in ipairs(cfgs) do
-            if cfg.OverrunType == XEnumConst.EQUIP.WEAPON_OVERRUN_UNLOCK_TYPE.SUIT then
-                return cfg
-            end
+function XEquipModel:GetWeaponOverrunSuitCfgByTemplateId(weaponTemplateId)
+    local cfgIds = self:GetWeaponOverrunCfgIds(weaponTemplateId)
+    for _, cfgId in ipairs(cfgIds) do
+        local cfg = self:GetWeaponOverrunConfigById(cfgId)
+        if cfg and cfg.OverrunType == XEnumConst.EQUIP.WEAPON_OVERRUN_UNLOCK_TYPE.SUIT then
+            return cfg
         end
     end
-    return nil
-end
-
-function XEquipModel:GetConfigWeaponDeregulateUI(lv)
+    return nil
+end
+
+function XEquipModel:GetWeaponOverrunAttrCfgByTemplateId(weaponTemplateId, characterId)
+    local attrCfg
+    local cfgIds = self:GetWeaponOverrunCfgIds(weaponTemplateId, characterId)
+    for _, cfgId in pairs(cfgIds) do
+        local cfg = self:GetWeaponOverrunConfigById(cfgId)
+        if cfg and cfg.OverrunType == XEnumConst.EQUIP.WEAPON_OVERRUN_UNLOCK_TYPE.ATTR then
+            if not attrCfg or cfg.Level < attrCfg.Level then
+                attrCfg = cfg
+            end
+        end
+    end
+    return attrCfg
+end
+
+function XEquipModel:GetConfigWeaponDeregulateUI(lv)
     local cfgs = self._ConfigUtil:GetByTableKey(TableKey.WeaponDeregulateUI)
     if lv then
         if cfgs[lv] then
@@ -2898,6 +2975,21 @@ function XEquipModel:GetConfigWeaponDeregulateUI(lv)
     end
 end
 ---------------------------------------- #endregion WeaponOverrun ----------------------------------------
+
+
+---------------------------------------- #region WeaponOverrunSkill ----------------------------------------
+
+---@return XTableWeaponOverrunSkill[]
+function XEquipModel:GetWeaponOverrunSkillConfigs()
+    return self._ConfigUtil:GetByTableKey(TableKey.WeaponOverrunSkill)
+end
+
+---@return XTableWeaponOverrunSkill
+function XEquipModel:GetWeaponOverrunSkillConfigById(id)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.WeaponOverrunSkill, id, false)
+end
+
+---------------------------------------- #endregion WeaponOverrunSkill ----------------------------------------
 
 
 ---------------------------------------- #region LevelUpTemplate -----------------------------------------

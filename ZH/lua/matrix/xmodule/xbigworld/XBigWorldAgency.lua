@@ -96,7 +96,6 @@ function XBigWorldAgency:InitX3C()
     register(X3C_CMD.CMD_NOTIFY_QUEST_MISSED_OCCUPATION_INFO, XMVCA.XBigWorldQuest.OnQuestOccupied, XMVCA.XBigWorldQuest)
     register(X3C_CMD.CMD_QUEST_AUTO_GO_TARGET, XMVCA.XBigWorldQuest.OnAutoGoToQuestTarget, XMVCA.XBigWorldQuest)
     register(X3C_CMD.CMD_ECOLOGY_CONSTRUCT_LOAD_COMPLETE, XMVCA.XBigWorldQuest.OnEnvironmentGroupChangeComplete, XMVCA.XBigWorldQuest)
-
     register(X3C_CMD.CMD_OPEN_MAINLINE_SKIP_TIP, XMVCA.XBigWorldQuest.OnOpenMainlineSkipTip, XMVCA.XBigWorldQuest)
     
     -- 大世界角色

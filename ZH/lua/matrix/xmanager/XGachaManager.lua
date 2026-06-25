@@ -37,10 +37,19 @@ XGachaManagerCreator = function()
         end)
     end
     
+    -- 懒加载并返回 gachaId 的奖励 entry map
+    -- 所有读取入口都应通过本接口获取，避免遗漏懒加载守卫
+    local function GetGachaRewardMap(gachaId)
+        if not GachaRewardInfos[gachaId] then
+            XGachaManager.SetGachaRewardInfo(gachaId)
+        end
+        return GachaRewardInfos[gachaId]
+    end
+
     function XGachaManager.InitConfig()
+        -- 只初始化标量字段；entry map (GachaRewardInfos) 改为懒加载，详见 GetGachaRewardMap
         local gachaCfg = XGachaConfigs.GetGachas()
         for k, v in pairs(gachaCfg) do
-            XGachaManager.SetGachaRewardInfo(k)
             IsInfinite[k] = false
             CurCountOfAll[k] = 0
             MaxCountOfAll[k] = 0
@@ -160,7 +169,7 @@ XGachaManagerCreator = function()
         end
     
         local list = {}
-        local rewardMap = GachaRewardInfos[gaChaId] or {}
+        local rewardMap = GetGachaRewardMap(gaChaId) or {}
         for id, entry in pairs(rewardMap) do
             if entry and entry.Cfg then
                 for _, groupId in pairs(groupIdList) do
@@ -357,8 +366,8 @@ XGachaManagerCreator = function()
     end
 
     function XGachaManager.UpdateGachaRewardInfo(gridInfoList, gachaId)
+        local gachaMap = GetGachaRewardMap(gachaId)
         for _, v in pairs(gridInfoList or {}) do
-            local gachaMap = GachaRewardInfos[gachaId]
             if gachaMap and gachaMap[v.Id] then
                 local entry = gachaMap[v.Id]
                 local usable = (entry.Cfg and entry.Cfg.UsableTimes) or 0
@@ -376,24 +385,42 @@ XGachaManagerCreator = function()
     end
 
     --- 这个数据虽然初始化是静态读表 但是每次登录后会根据服务器下发的数据修改其封装的缓存内容（如剩余抽卡次数）
+    --- 仅缓存属于该卡池 GroupId 集合内的奖励，避免 49 个卡池各持一份全量 GachaReward 表造成的内存膨胀
     function XGachaManager.SetGachaRewardInfo(gachaId)
+        local gachaCfg = XGachaConfigs.GetGachas()
+        local cfg = gachaCfg and gachaCfg[gachaId]
+        if not cfg then
+            XLog.Error("SetGachaRewardInfo gachaId 配置不存在: " .. tostring(gachaId))
+            return
+        end
+
+        -- 构建该卡池的 GroupId 集合，O(1) 查询
+        local groupIdSet = {}
+        for _, groupId in pairs(cfg.GroupId or {}) do
+            groupIdSet[groupId] = true
+        end
+
         local gachaRewardCfg = XGachaConfigs.GetGachaReward()
         local tempGachaInfo = GachaRewardInfos[gachaId]
         if not tempGachaInfo then
             tempGachaInfo = {}
             GachaRewardInfos[gachaId] = tempGachaInfo
         end
-    
-        -- 更新或创建 entry（不逐字段拷贝，仅引用配置）
+
+        -- 仅写入属于本卡池 GroupId 的奖励；非命中行清掉，防止配置热更后残留
         for id, reward in pairs(gachaRewardCfg) do
-            local entry = tempGachaInfo[id]
-            if not entry then
-                entry = { Cfg = reward, CurCount = reward.UsableTimes or 0 }
-                tempGachaInfo[id] = entry
-            else
-                -- 就地更新引用与初始 CurCount（保留表，避免分配新表）
-                entry.Cfg = reward
-                entry.CurCount = reward.UsableTimes or 0
+            if groupIdSet[reward.GroupId] then
+                local entry = tempGachaInfo[id]
+                if not entry then
+                    entry = { Cfg = reward, CurCount = reward.UsableTimes or 0 }
+                    tempGachaInfo[id] = entry
+                else
+                    -- 就地更新引用与初始 CurCount（保留表，避免分配新表）
+                    entry.Cfg = reward
+                    entry.CurCount = reward.UsableTimes or 0
+                end
+            elseif tempGachaInfo[id] then
+                tempGachaInfo[id] = nil
             end
         end
     end
@@ -565,7 +592,7 @@ XGachaManagerCreator = function()
                 table.insert(groupIdList, groupId)
             end
 
-            for _, entry in pairs(GachaRewardInfos[DrawingGachaId] or {}) do
+            for _, entry in pairs(GetGachaRewardMap(DrawingGachaId) or {}) do
                 -- 是否属于DrawingGachaId的奖励组
                 for _, groupId in pairs(groupIdList) do
                     if entry.Cfg and entry.Cfg.GroupId == groupId and entry.CurCount ~= 0 then
@@ -659,8 +686,8 @@ XGachaManagerCreator = function()
         for _, groupId in pairs(gachaCfg[gachaId].GroupId) do
             table.insert(groupIdList, groupId)
         end
-    
-        local gachaRewardInfos = GachaRewardInfos[gachaId]
+
+        local gachaRewardInfos = GetGachaRewardMap(gachaId)
     
         if not XTool.IsTableEmpty(gachaRewardInfos) then
             for _, entry in pairs(gachaRewardInfos) do

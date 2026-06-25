@@ -1,79 +1,61 @@
+local XUiPanelBossInshotTowerRight = require(
+    "XUi/XUiBossInshot/XUiPanelBossInshotTowerRight")
+
+local XUiPanelBossInshotTowerLevelSelector = require(
+    "XUi/XUiBossInshot/XUiPanelBossInshotTowerLevelSelector")
+
+local XUiPanelBossInshotTowerChooseBossBeforeAllClear = require(
+    "XUi/XUiBossInshot/XUiPanelBossInshotTowerChooseBossBeforeAllClear")
+
 ---@class XUiBossInshotBossDetail:XLuaUi
 ---@field private _Control XBossInshotControl
 local XUiBossInshotBossDetail = XClass(XUiNode, "XUiBossInshotBossDetail")
 
-function XUiBossInshotBossDetail:OnStart()
-    self.VideoPlayerUgui.gameObject:SetActiveEx(false)
-    self.GridDots = { self.GridDot }
+function XUiBossInshotBossDetail:OnStart(switchBossModel, showBlackHole)
+    self._SwitchBossModel = switchBossModel
+    self._ShowBlackHole = showBlackHole
+
     self:RegisterUiEvents()
+    local towerPanelRightArgs = {
+        AnimationNode = self.Parent,
+        CacheDifficultyIndexAndSkillIndex = handler(
+            self.Parent,
+            self.Parent.CacheDifficultyIndexAndSkillIndex)
+    }
+
+    self._PanelTowerRightTowerHigh = XUiPanelBossInshotTowerRight.New(
+        self.PanelRightHigh,
+        self,
+        towerPanelRightArgs)
+
+    self._PanelTowerRightTowerLow = XUiPanelBossInshotTowerRight.New(
+        self.PanelRightLow,
+        self,
+        towerPanelRightArgs)
+
+    self._PanelTowerRightTowerHigh:Close()
+    self._PanelTowerRightTowerLow:Close()
 end
 
 function XUiBossInshotBossDetail:OnDisable()
-    self:StopSkillVideo()
-end
-
-function XUiBossInshotBossDetail:OnDestroy()
-    self:StopSkillVideo()
-    self.SkillIds = nil
-    self.StageIds = nil
-    self.GridDots = nil
+    if self._UiTowerLevelSelector then self._UiTowerLevelSelector:Close() end
+    if self._UiPanelChooseBoss then self._UiPanelChooseBoss:Close() end
+    if self._PanelTowerRightTowerHigh then self._PanelTowerRightTowerHigh:Close() end
+    if self._PanelTowerRightTowerLow then self._PanelTowerRightTowerLow:Close() end
 end
 
 function XUiBossInshotBossDetail:RegisterUiEvents()
-    XUiHelper.RegisterClickEvent(self, self.BtnPlayback, self.OnBtnPlaybackClick, nil, true)
-    XUiHelper.RegisterClickEvent(self, self.BtnTeaching, self.OnBtnTeachingClick, nil, true)
-    XUiHelper.RegisterClickEvent(self, self.BtnFightTeach, self.OnBtnTeachingClick, nil, true)
-    XUiHelper.RegisterClickEvent(self, self.BtnFight, self.OnBtnFightClick, nil, true)
-    XUiHelper.RegisterClickEvent(self, self.BtnLeft, self.OnBtnLeftClick, nil, true)
-    XUiHelper.RegisterClickEvent(self, self.BtnRight, self.OnBtnRightClick, nil, true)
-    XUiHelper.RegisterClickEvent(self, self.BtnPractice, self.OnBtnPracticeClick, nil, true)
+    XUiHelper.RegisterClickEvent(self, self.BtnChangeBoss, self.OnBtnChangeBossClick, nil, true)
+
     local btns = { self.BtnDifficulty1, self.BtnDifficulty2, self.BtnDifficulty3 }
     self.PanelDifficulty:Init(btns, function(index)
-        self:OnBtnDifficultyClick(index)
+        self:_OnBtnDifficultyClick(index)
     end)
 end
 
-function XUiBossInshotBossDetail:OnBtnPlaybackClick()
-    XLuaUiManager.Open("UiBossInshotPlayback", self.BossId)
-end
-
-
-function XUiBossInshotBossDetail:OnBtnTeachingClick()
-    local activityId = self._Control:GetActivityId()
-    local stageId = self._Control:GetActivityTeachStageId(activityId)
-    local proxy = require("XUi/XUiBossInshot/XUiBossInshotBattleRoleRoom")
-    XMVCA.XFuben:OpenUiBattleRoleRoom(stageId, nil, proxy)
-end
-
-function XUiBossInshotBossDetail:OnBtnFightClick()
-    -- 教学关未完成
-    local isTeachPass = self._Control:IsTeachStagePass()
-    if not isTeachPass then
-        -- 二次确认前往教学关
-        local txtTitle = XUiHelper.GetText("TipTitle")
-        local txtContent = XUiHelper.GetText("BossInshotFightTips")
-        XUiManager.DialogTip(txtTitle, txtContent, XUiManager.DialogType.Normal, nil, function()
-            self:OnBtnTeachingClick()
-        end)
-        return
-    end
-    self:EnterBattleRoleRoom()
-end
-
--- 进入战斗房间界面
-function XUiBossInshotBossDetail:EnterBattleRoleRoom()
-    self.Parent:CacheDifficultyIndexAndSkillIndex(self.DifficultyIndex, self.SkillIndex)
-
-    local difficultyStageId = self.StageIds[self.DifficultyIndex]
-    local stageId = self._Control:GetStageStageId(difficultyStageId)
-    local team = self._Control:GetTeam()
-    local proxy = require("XUi/XUiBossInshot/XUiBossInshotBattleRoleRoom")
-    XMVCA.XFuben:OpenUiBattleRoleRoom(stageId, team, proxy)
-end
-
-function XUiBossInshotBossDetail:OnBtnDifficultyClick(index)
+function XUiBossInshotBossDetail:_OnBtnDifficultyClick(index)
     -- 所选难度关卡未解锁
-    local stageId = self.StageIds[index]
+    local stageId = self._BossInfo.StageIds[index]
     local isUnlock, desc = self._Control:IsStageUnlock(stageId)
     if not isUnlock then
         XUiManager.TipError(desc)
@@ -84,89 +66,189 @@ function XUiBossInshotBossDetail:OnBtnDifficultyClick(index)
     local Select = CS.UiButtonState.Select
     local Normal = CS.UiButtonState.Normal
     local Disable = CS.UiButtonState.Disable
-    for i, sId in ipairs(self.StageIds) do
+    for i, sId in ipairs(self._BossInfo.StageIds) do
         local state = Disable
-        local isUnlock, desc = self._Control:IsStageUnlock(sId)
+        local isUnlock, _ = self._Control:IsStageUnlock(sId)
         if isUnlock then
             state = i == index and Select or Normal
         end
         self["BtnDifficulty" .. tostring(i)]:SetButtonState(state)
     end
-    self.DifficultyIndex = index
+    self._BossInfo.DifficultyIndex = index
 end
 
-function XUiBossInshotBossDetail:OnBtnLeftClick()
-    if self.SkillIndex > 1 then
-        self.SkillIndex = self.SkillIndex - 1
-    else
-        self.SkillIndex = #self.SkillIds
-    end
-    self:RefreshSkillInfo()
-    self.Parent:PlayAnimation("QieHuan")
+
+
+function XUiBossInshotBossDetail:OnBtnChangeBossClick()
+    if not self.TowerMode then return end
+
+    XLuaUiManager.Open(
+        "UiBossInshotPopupChangeBoss",
+        self._Control,
+        self._Control:GetBossTowerData(self.TowerLevelConfig.Id),
+        self.TowerLevelConfig.Stages,
+        function(selectedStageId)
+            self._Control:TowerSelectStageAfterAllClear(
+                self.TowerLevelConfig.Id,
+                selectedStageId,
+                function(resp)
+                    if resp.Code ~= XCode.Success then
+                        XUiManager.TipCode(resp.Code)
+                        return
+                    end
+
+                    self:OnTowerSelectLevel(
+                        self.TowerLevelConfig,
+                        self._Control:GetBossTowerData(self.TowerLevelConfig.Id))
+
+                    self._UiTowerLevelSelector:Refresh(true)
+                end)
+        end)
 end
 
-function XUiBossInshotBossDetail:OnBtnRightClick()
-    local skillCnt = #self.SkillIds
-    if self.SkillIndex < skillCnt then
-        self.SkillIndex = self.SkillIndex + 1
-    else
-        self.SkillIndex = 1
-    end
-    self:RefreshSkillInfo()
-    self.Parent:PlayAnimation("QieHuan")
-end
-
-function XUiBossInshotBossDetail:OnBtnPracticeClick()
-    local skillId = self.SkillIds[self.SkillIndex]
-    local skillCfg = self._Control:GetConfigBossInshotSkill(skillId)
-    if skillCfg.PracticeStageId ~= 0 then
-        self.Parent:CacheDifficultyIndexAndSkillIndex(self.DifficultyIndex, self.SkillIndex)
-        XMVCA.XBossInshot:BossInshotSelectSkillRequest(skillCfg.PracticeStageId, skillCfg.FightEventId)
-        local team = self._Control:GetTeam()
-        local proxy = require("XUi/XUiBossInshot/XUiBossInshotBattleRoleRoom")
-        XMVCA.XFuben:OpenUiBattleRoleRoom(skillCfg.PracticeStageId, team, proxy)
-    end
-end
-
-function XUiBossInshotBossDetail:Refresh(bossId, difficultyIndex, skillIndex)
-    self.BossId = bossId
-    self.StageIds = self._Control:GetBossStageIds(bossId)
-    self.DifficultyIndex = difficultyIndex or 1
-    self.SkillIds = self._Control:GetBossSkillIds(bossId)
-    self.SkillIndex = skillIndex or 1
+function XUiBossInshotBossDetail:RefreshAsTower()
+    self.TowerMode = true
+    self.PanelDifficulty.gameObject:SetActiveEx(false)
 
     -- 摄像机镜头
     self.Parent:SwitchCamera("UiModeCamFarDetail", "UiModeCamNearDetail")
-    
-    -- 回放按钮
-    local isShowPlayback = self._Control:GetIsShowPlayback()
-    self.BtnPlayback.gameObject:SetActiveEx(isShowPlayback)
-    
-    -- 挑战和教学按钮
-    local isTeachPass = self._Control:IsTeachStagePass()
-    self.BtnTeaching.gameObject:SetActiveEx(isTeachPass)
-    self.BtnFight.gameObject:SetActiveEx(isTeachPass)
-    self.BtnFightTeach.gameObject:SetActiveEx(not isTeachPass)
-    
-    -- Boss名称
-    self.TxtBossNameDetail.text = self._Control:GetBossName(bossId)
 
-    -- 技能
-    self:RefreshSkillInfo()
+    if not self._UiTowerLevelSelector then
+        -- 首次创建前需激活 GameObject，InitNode 中 activeSelf 为 true 时会自动调用 Open()
+        self.PanelTowerTab.gameObject:SetActiveEx(true)
+        self._UiTowerLevelSelector = XUiPanelBossInshotTowerLevelSelector.New(
+            self.PanelTowerTab,
+            self,
+            handler(self, self.OnTowerSelectLevel),
+            self._Control)
+    else
+        -- 已有实例时通过节点系统打开，保持 _IsNodeShow 状态正确
+        self._UiTowerLevelSelector:Open()
+    end
+
+    self._UiTowerLevelSelector:Refresh()
+end
+
+function XUiBossInshotBossDetail:OnTowerSelectLevel(levelConf, towerData)
+    assert(levelConf.Id == towerData.TowerId)
+
+    local allClear = self._Control:IsTowerAllClear()
+    local isChallengeTower = levelConf.Type == 2
+
+    if isChallengeTower then
+        self._PanelTowerRightTowerLow:Close()
+        self._PanelTowerRightTower = self._PanelTowerRightTowerHigh
+    else
+        self._PanelTowerRightTowerHigh:Close()
+        self._PanelTowerRightTower = self._PanelTowerRightTowerLow
+    end
+
+    if towerData.SelectStageId == 0 then    -- 尚未选择Boss，打开Boss选择界面
+        self._PanelTowerRightTower:Close()
+
+        self.BtnChangeBoss.gameObject:SetActiveEx(false)
+        if not self._UiPanelChooseBoss  then
+            self._UiPanelChooseBoss =
+                XUiPanelBossInshotTowerChooseBossBeforeAllClear.New(
+                    self.PanelChooseBoss,
+                    self,
+                    self._SwitchBossModel,
+                    self._ShowBlackHole)
+        end
+
+        self._UiPanelChooseBoss:Open()
+
+        self._UiPanelChooseBoss:SetData(
+            levelConf,
+            towerData,
+            function(selectedStageId)
+                self._Control:TowerSelectStage(
+                    levelConf.Id,
+                    selectedStageId,
+                    function(resp)
+                        if resp.Code ~= XCode.Success then
+                            XUiManager.TipCode(resp.Code)
+                            return
+                        end
+
+                        self:OnTowerSelectLevel(levelConf, towerData)
+                        self._UiTowerLevelSelector:Refresh()
+                end)
+            end)
+
+    else
+        if self._UiPanelChooseBoss then
+            self._UiPanelChooseBoss:Close()
+        else
+            self.PanelChooseBoss.gameObject:SetActiveEx(false)
+        end
+
+        self.BtnChangeBoss.gameObject:SetActiveEx(allClear and #levelConf.Stages > 1)
+        local selectStageId = towerData.SelectStageId
+
+        if allClear
+            and towerData.SelectStageIdAfterAllPass
+            and towerData.SelectStageIdAfterAllPass ~= 0 then
+
+            selectStageId = towerData.SelectStageIdAfterAllPass
+        end
+
+        self.TowerLevelConfig = levelConf
+        local bossId = self._Control:GetTowerBossIdByStageId(selectStageId)
+        if self._SwitchBossModel then self._SwitchBossModel(bossId) end
+
+        self._BossInfo = {
+            TowerMode = true,
+            TowerLevelConfig = levelConf,
+            TowerData = towerData,
+            AllClear = allClear,
+            BossId = bossId,
+            StageIds = self._Control:GetBossStageIds(bossId),
+            SelectedTowerStageId = selectStageId,
+            SkillIds = self._Control:GetBossSkillIds(bossId),
+            SkillIndex = 1
+        }
+
+        self._PanelTowerRightTower:Open()
+        self._PanelTowerRightTower:RefreshAsTower(self._BossInfo)
+    end
+end
+
+function XUiBossInshotBossDetail:RefreshAsNormal(bossId, difficultyIndex, skillIndex)
+    self.BtnChangeBoss.gameObject:SetActiveEx(false)
+
+    if self._UiTowerLevelSelector then
+        -- 通过节点系统关闭，保持 _IsNodeShow 状态正确，避免下次 Open() 时 EnableChildNodes 误触发
+        self._UiTowerLevelSelector:Close()
+    else
+        self.PanelTowerTab.gameObject:SetActiveEx(false)
+    end
+
+    self.PanelDifficulty.gameObject:SetActiveEx(true)
+
+    difficultyIndex = difficultyIndex or 1
+
+    self._BossInfo = {
+        BossId = bossId,
+        StageIds = self._Control:GetBossStageIds(bossId),
+        DifficultyIndex = difficultyIndex,
+        SkillIndex = skillIndex or 1,
+        SkillIds = self._Control:GetBossSkillIds(bossId)
+    }
 
     -- 难度列表
     local Select = CS.UiButtonState.Select
     local Normal = CS.UiButtonState.Normal
     local Disable = CS.UiButtonState.Disable
-    for i, inshotStageId in ipairs(self.StageIds) do
+    for i, inshotStageId in ipairs(self._BossInfo.StageIds) do
         local btn = self["BtnDifficulty".. i]
         local stageName = self._Control:GetStageName(inshotStageId)
         btn:SetNameByGroup(0, stageName)
 
         local state = Disable
-        local isUnlock, desc = self._Control:IsStageUnlock(inshotStageId)
+        local isUnlock, _ = self._Control:IsStageUnlock(inshotStageId)
         if isUnlock then
-            state = i == self.DifficultyIndex and Select or Normal
+            state = i == difficultyIndex and Select or Normal
         end
         btn:SetButtonState(state)
 
@@ -183,59 +265,15 @@ function XUiBossInshotBossDetail:Refresh(bossId, difficultyIndex, skillIndex)
             btn:SetNameByGroup(1, "")
         end
     end
+
+    -- 摄像机镜头
+    self.Parent:SwitchCamera("UiModeCamFarDetail", "UiModeCamNearDetail")
+
+    self._PanelTowerRightTowerHigh:Close()
+    self._PanelTowerRightTower = self._PanelTowerRightTowerLow
+    self._PanelTowerRightTower:Open()
+    self._PanelTowerRightTower:RefreshAsNormal(self._BossInfo)
 end
 
--- 刷新技能信息
-function XUiBossInshotBossDetail:RefreshSkillInfo()
-    -- 技能描述
-    local skillId = self.SkillIds[self.SkillIndex]
-    self.TxtSkillName.text = self._Control:GetSkillName(skillId)
-    self.TxtSkillTips.text = self._Control:GetSkillTips(skillId)
-    self.TxtSkillDetail.text = self._Control:GetSkillDesc(skillId)
 
-    -- 技能视频
-    self:StopSkillVideo()
-    local videoUrl = self._Control:GetSkillVideoUrl(skillId)
-    self.VideoComponent = XUiHelper.Instantiate(self.VideoPlayerUgui, self.VideoPlayerUgui.transform.parent)
-    self.VideoComponent.gameObject:SetActiveEx(true)
-    self.VideoComponent:SetVideoFromRelateUrl(videoUrl)
-    self.VideoComponent:Play()
-
-    -- 点列表
-    local isShowDot = #self.SkillIds > 1
-    self.PanelDot.gameObject:SetActiveEx(isShowDot)
-    if isShowDot then
-        for _, dot in ipairs(self.GridDots) do
-            dot.gameObject:SetActiveEx(false)
-        end
-        local CSInstantiate = CS.UnityEngine.Object.Instantiate
-        for i, _ in ipairs(self.SkillIds) do
-            local dot = self.GridDots[i]
-            if not dot then
-                local go = CSInstantiate(self.GridDot.gameObject, self.PanelDot.transform)
-                dot = go:GetComponent("UiObject")
-                self.GridDots[i] = dot
-            end
-            dot.gameObject:SetActiveEx(true)
-            local isSelect = i == self.SkillIndex
-            dot:GetObject("ImgOn").gameObject:SetActiveEx(isSelect)
-            dot:GetObject("ImgOff").gameObject:SetActiveEx(not isSelect)
-        end
-    end
-    
-    -- 练习关按钮
-    local practiceStageId = self._Control:GetSkillPracticeStageId(skillId)
-    local isShowPractice = practiceStageId ~= 0
-    self.BtnPractice.gameObject:SetActiveEx(isShowPractice)
-end
-
-function XUiBossInshotBossDetail:StopSkillVideo()
-    if self.VideoComponent then
-        self.VideoComponent:Stop()
-        self.VideoComponent.gameObject:SetActiveEx(false)
-        CS.UnityEngine.Object.Destroy(self.VideoComponent.gameObject)
-        self.VideoComponent = nil 
-    end
-end
-
-return XUiBossInshotBossDetail
+return XUiBossInshotBossDetail

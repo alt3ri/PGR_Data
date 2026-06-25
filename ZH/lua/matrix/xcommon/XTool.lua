@@ -1,4 +1,5 @@
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+
 local Json = require("XCommon/Json")
 local type = type
 local table = table
@@ -172,6 +173,19 @@ end
 
 XTool.Json2LuaTable = function(jsonStr)
     return Json.decode(jsonStr)
+end
+
+-- 判断表是否“浅”相等
+-- 判断表的大小是否一致，以及所有键值对是否一致
+-- 不会对表内的表进行递归判断，只判断表内的表是否引用一致
+XTool.TableShallowEquals = function(tableA, tableB)
+    if #tableA ~= #tableB then return false end
+
+    for k, v in pairs(tableA) do
+        if tableB[k] ~= v then return false end
+    end
+
+    return true
 end
 
 XTool.Clone = function(t)
@@ -357,6 +371,19 @@ XTool.CopyToClipboard = function(text)
         CS.XAppPlatBridge.CopyStringToClipboard(tostring(text))
     end
     XUiManager.TipText("Clipboard", XUiManager.UiTipType.Tip)
+end
+
+-- 将一组延续组合成一个函数
+-- (cont -> args -> result) array -> (args -> result)
+XTool.ChainContinuations = function(continuations)
+    local function chain(index)
+        return function(...)
+            local cont = continuations[index] or function() end
+            return cont(chain(index + 1), ...)
+        end
+    end
+
+    return chain(1)
 end
 
 -- 求列表中最大项
@@ -1379,7 +1406,12 @@ function XTool.SetDataForGenericGrid(
     firstGridGameObject,    -- 第一个Grid的GameObject，第一个数据将会使用该对象生成，后续的数据将使用Instantiate生成
     gridContainerTransform, -- Grid容器节点，需要是一个Transform，所有的Grid都在这里生成
     parentUi,               -- 父节点Lua对象，用于classOfGrid.New时传入
-    classOfGrid)            -- Grid类，需要包含SetData方法
+    classOfGrid,            -- Grid类，需要包含SetData方法
+    commonArg)              -- 通用参数，会被传入到SetData方法的第二个参数里，所有的Grid共用一个
+
+    if XTool.IsTableEmpty(gridArray) then
+        firstGridGameObject:SetActiveEx(not XTool.IsTableEmpty(dataArray))
+    end
 
     for i, data in ipairs(dataArray) do
         local grid = gridArray[i]
@@ -1399,8 +1431,12 @@ function XTool.SetDataForGenericGrid(
             gridArray[i] = grid
         end
 
-        grid:SetData(table.unpack(data))
         grid:Open()
+        grid:SetData(data, commonArg)
+    end
+
+    for i = #dataArray + 1, #gridArray do
+        gridArray[i]:Close()
     end
 end
 
@@ -1629,10 +1665,11 @@ function XTool.NoExitFightPreOpen3DUi()
         camera:LuaResetTrack()
     end
     
-    local effectRoot = rlManager.RLScene and rlManager.RLScene.EffectRoot
-    if effectRoot then
-        effectRoot.gameObject:SetActiveEx(false)
-    end
+    -- 过于粗暴屏蔽特效根节点，后面如有特效导致的问题再针对处理
+    --local effectRoot = rlManager.RLScene and rlManager.RLScene.EffectRoot
+    --if effectRoot then
+    --    effectRoot.gameObject:SetActiveEx(false)
+    --end
 end 
 
 --region transform设置相关

@@ -16,7 +16,7 @@ local RedPointConditionGroup = {
     --玩家信息
     RoleInfo = {
         XRedPointConditions.Types.CONDITION_PLAYER_ACHIEVE, XRedPointConditions.Types.CONDITION_PLAYER_SETNAME,
-        XRedPointConditions.Types.CONDITION_EXHIBITION_NEW, XRedPointConditions.Types.CONDITION_HEADPORTRAIT_RED,
+        XRedPointConditions.Types.CONDITION_HEADPORTRAIT_RED,
         XRedPointConditions.Types.CONDITION_MEDAL_RED, XRedPointConditions.Types.CONDITION_PLAYER_BIRTHDAY,
         XRedPointConditions.Types.CONDITION_FEEDBACK_RED, XRedPointConditions.Types.CONDITION_PLAYER_GENDERSET,
     },

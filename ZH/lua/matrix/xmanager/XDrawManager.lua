@@ -761,7 +761,7 @@ XDrawManagerCreator = function()
     end
 
     --- 构建 Group 的 DisplayOption 列表
-    function XDrawManager._BuildDisplayOptionsForGroup(groupId, extraEndTimeOffset)
+    function XDrawManager._BuildDisplayOptionsForGroup(groupId)
         local groupInfo = DrawGroupInfos[groupId]
         if not groupInfo then
             return {}
@@ -776,7 +776,7 @@ XDrawManagerCreator = function()
         end
 
         -- 2. 构建 ExtraOptions
-        local extraOptions = XDrawManager._BuildExtraOptions(groupId, groupInfo, extraEndTimeOffset)
+        local extraOptions = XDrawManager._BuildExtraOptions(groupId, groupInfo)
         for _, opt in ipairs(extraOptions) do
             tableInsert(options, opt)
         end
@@ -833,8 +833,7 @@ XDrawManagerCreator = function()
     end
 
     --- 构建 ExtraOption 列表（GroupSubtype>0）
-    --- extraEndTimeOffset: 可选，EndTime 过期宽限秒数（记录页使用）
-    function XDrawManager._BuildExtraOptions(groupId, groupInfo, extraEndTimeOffset)
+    function XDrawManager._BuildExtraOptions(groupId, groupInfo)
         local allDrawList = XDrawManager.GetDrawInfoListByGroupId(groupId)
         if not allDrawList or #allDrawList == 0 then
             return {}
@@ -851,7 +850,6 @@ XDrawManagerCreator = function()
         end
 
         local options = {}
-        local nowTime = XTime.GetServerNowTimestamp()
 
         for subtype, drawIdList in pairs(subtypeToDrawList) do
             local extraTagCfg = XDrawConfigs.GetDrawExtraTagGroupCfgById(subtype)
@@ -882,60 +880,47 @@ XDrawManagerCreator = function()
         return options
     end
 
-    local RECORD_EXTRA_END_TIME_OFFSET = 90 * 24 * 3600
-
-    --- 记录页专用：ExtraOption 从配置表构建，不依赖服务端 DrawInfo，过期后延长 90 天仍可见
-    function XDrawManager.GetDisplayOptionsForRecord(groupId)
+    --- 记录页专用：服务端 HistoryGroups 决定历史下拉入口，GroupSubTypes 只补子组选项展示信息
+    function XDrawManager.GetDisplayOptionsForRecord(historyGroupInfos)
         local options = {}
+        for _, historyGroupInfo in ipairs(historyGroupInfos) do
+            local groupId = historyGroupInfo.DrawGroupId
+            local groupRuleCfg = XDrawConfigs.GetDrawGroupRuleById(groupId)
+            local groupName = groupRuleCfg and groupRuleCfg.TitleCN or ""
+            local groupPriority = historyGroupInfo.Priority or 0
 
-        local groupInfo = DrawGroupInfos[groupId]
-        if groupInfo then
-            local originalOption = XDrawManager._BuildOriginalOption(groupId, groupInfo)
-            if originalOption then
-                tableInsert(options, originalOption)
-            end
-        end
+            -- 真 Option：服务端 HistoryGroups 下发的 DrawGroupId，对应 GroupSubType=0 的历史入口
+            tableInsert(options, {
+                DrawGroupId = groupId,
+                GroupSubType = 0,
+                OptionKey = XDrawManager._MakeOptionKey(groupId, 0),
+                Name = groupName,
+                Priority = groupPriority,
+                IsExtraOption = false,
+            })
 
-        local nowTime = XTime.GetServerNowTimestamp()
-        local allExtraCfgs = XDrawConfigs.GetDrawExtraTagGroupCfgs()
-        for _, cfg in pairs(allExtraCfgs) do
-            if cfg.GroupId == groupId then
-                local timeId = cfg.TimeId or 0
-                local startTime = 0
-                local endTime = 0
-                if XTool.IsNumberValid(timeId) then
-                    startTime = XFunctionManager.GetStartTimeByTimeId(timeId)
-                    endTime = XFunctionManager.GetEndTimeByTimeId(timeId)
-                end
-                local effectiveEndTime = (endTime > 0) and (endTime + RECORD_EXTRA_END_TIME_OFFSET) or 0
-
-                local isTimeValid = true
-                if startTime > 0 and nowTime < startTime then
-                    isTimeValid = false
-                end
-                if effectiveEndTime > 0 and nowTime >= effectiveEndTime then
-                    isTimeValid = false
-                end
-
-                if isTimeValid then
-                    tableInsert(options, {
-                        OptionKey = XDrawManager._MakeOptionKey(groupId, cfg.Id),
-                        GroupId = groupId,
-                        GroupSubtype = cfg.Id,
-                        Name = cfg.Name or "",
-                        Tag = cfg.Tag or 0,
-                        Priority = cfg.Priority or 0,
-                        DrawIdList = cfg.DrawId or {},
-                        BannerBeginTime = startTime,
-                        BannerEndTime = endTime,
-                        IsExtraOption = true,
-                    })
-                end
+            -- 假 Option：服务端 GroupSubTypes 下发子组类型，展示信息从 DrawExtraTagGroup 读取
+            for _, groupSubType in ipairs(historyGroupInfo.GroupSubTypes) do
+                local extraTagCfg = XDrawConfigs.GetDrawExtraTagGroupCfgById(groupSubType)
+                tableInsert(options, {
+                    DrawGroupId = groupId,
+                    GroupSubType = groupSubType,
+                    OptionKey = XDrawManager._MakeOptionKey(groupId, groupSubType),
+                    Name = extraTagCfg and extraTagCfg.Name or groupName,
+                    Priority = extraTagCfg and extraTagCfg.Priority or groupPriority,
+                    IsExtraOption = true,
+                })
             end
         end
 
         tableSort(options, function(a, b)
-            return a.Priority > b.Priority
+            if a.Priority ~= b.Priority then
+                return a.Priority > b.Priority
+            end
+            if a.DrawGroupId ~= b.DrawGroupId then
+                return a.DrawGroupId > b.DrawGroupId
+            end
+            return (a.GroupSubType or 0) < (b.GroupSubType or 0)
         end)
 
         return options

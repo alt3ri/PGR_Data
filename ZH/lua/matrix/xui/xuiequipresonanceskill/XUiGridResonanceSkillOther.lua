@@ -80,7 +80,7 @@ function XUiGridResonanceSkillOther:Refresh(skillInfo, bindCharacterId)
     if self.ForceShowBindCharacter then
         notBindResonance = false
     end
-    local isAwaken = self.EquipData.AwakeSlotListCheck and self.EquipData.AwakeSlotListCheck[pos]
+    local isAwaken = self.EquipData:IsEquipPosAwaken(pos)
     if self.PanelAwaken then
         self.PanelAwaken.gameObject:SetActiveEx(isAwaken)
     end

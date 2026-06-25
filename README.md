@@ -2,8 +2,8 @@
 
 Region: `CN`
 > Status: Release/Beta</br>
-> Resource Version: 4.5.0</br>
-> Document Version: 4.5.8</br>
+> Resource Version: 4.6.0</br>
+> Document Version: 4.6.3</br>
 
 Region: `EN/Global`
 > Status: Release</br>

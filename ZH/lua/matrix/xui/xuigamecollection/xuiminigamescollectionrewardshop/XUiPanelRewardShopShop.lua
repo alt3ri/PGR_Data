@@ -19,6 +19,7 @@ function XUiPanelRewardShopShop:OnStart(...)
 
 end
 
+
 function XUiPanelRewardShopShop:Refresh()
     self:RefreshGoodsList()
 end

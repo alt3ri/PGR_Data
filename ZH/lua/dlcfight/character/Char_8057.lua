@@ -21,8 +21,17 @@ function XChar8057:Init()
     self.PlayUUID =  self._proxy:GetPlayerNpcList()
     self.Target = nil
     self._proxy:SetNpcIgnoreObstacle(self._uuid, 13 , true)
-    self._proxy:LaunchMissile(self._uuid, self._uuid, 80530115, 80530511,1)
+    --[[self._proxy:LaunchMissile(self._uuid, self._uuid, 80530115, 80530511,1)]]
      -- self:ClassCheck()
+    self._proxy:AddTimerTask(3, function()--延迟5秒后，释放影牌技能
+        self._proxy:ApplyMagic(self._uuid, self._uuid, 8053025, 1)
+    end)
+    self.Npcuuid = self._proxy:GetNpcList()
+    for xIndex = 1, #self.Npcuuid, 1 do
+        if self._proxy:CheckBuffByKind(self.Npcuuid[xIndex], 8053056) then
+            self.BOSSuuid = self.Npcuuid[xIndex]
+        end
+    end
     self._NormalSkill1 = {
         [1] = 805402,
         [2] = 805412,
@@ -42,6 +51,7 @@ function XChar8057:InitEventCallBackRegister()
     self._proxy:RegisterEvent(EWorldEvent.NpcCastActionAfter) --注册技能释放后前事件
     self._proxy:RegisterEvent(EWorldEvent.NpcExitAction) -- 技能释放完成事件
     self._proxy:RegisterEventByTarget(EWorldEvent.NpcSkillActionKeyframeSendEvent, self._uuid) --注册技能事件
+    self._proxy:RegisterEvent(EWorldEvent.NpcGoingDie)
 
     -- 指定目标事件绑定
     self._proxy:RegisterEventByTarget(EWorldEvent.NpcCalcDamageBefore, self._uuid)
@@ -68,24 +78,26 @@ function XChar8057:Update(dt)
         self.Attack = false
         self._proxy:AbortAction(self._uuid, true)
         self._proxy:CastActionToTarget(self._uuid,805411,self.PlayUUID[1])
-        self._proxy:AddTimerTask(6, function()--延迟5秒后，释放影牌技能
+        self._proxy:AddTimerTask(5, function()--延迟5秒后，释放影牌技能
             self.Attack2 = true
         end)
     end
 
-    if self.YuJing == true and self.YuJingCiShu < 4 then
-        self.YuJing = false
-        self._proxy:AddTimerTask(1, function()--延迟1秒后
-            self._proxy:LaunchMissile(self._uuid, self._uuid, 80530115, 80530511,1)
-            self.YuJing = true
-            self.YuJingCiShu = self.YuJingCiShu + 1
-        end)
-    end
+ --[[   if self.YuJing == true and self.YuJingCiShu < 4 then
+        if not self._proxy:CheckBuffByKind(self._uuid, 8057002) then
+            self.YuJing = false
+            self._proxy:AddTimerTask(1, function()--延迟1秒后
+                self._proxy:LaunchMissile(self._uuid, self._uuid, 80530115, 80530511,1)
+                self.YuJing = true
+                self.YuJingCiShu = self.YuJingCiShu + 1
+            end)
+        end
+    end]]
 
 
     if self.Attack2 == true then
         self.Attack2 = false
-        self:NormalSkill1()
+        self:ClassCheck()
     end
 
 
@@ -150,7 +162,7 @@ function XChar8057:NormalSkill1() --常规技能组1
         end
     end
 
-    if self.Skill1index1 >= 4 then --序号大于4则返回0
+   --[[ if self.Skill1index1 >= 4 then --序号大于4则返回0
         if self.TanDaoCiShu < 1  then
             self._proxy:CastActionToTarget(self._uuid,805403,self.Target)
             self.TanDaoCiShu = 0
@@ -163,40 +175,55 @@ function XChar8057:NormalSkill1() --常规技能组1
             self.Skill1index1 = 0
             self.TanDaoCiShu = 0
         end
-    end
+    end]]
 end
 
-function XChar8057:ClassCheck() --按职业区分目标
-    XLog.Warning("开始职业检测")
-    self.Tuuid = nil
-    self.Cuuid = nil
-    self.Huuid = nil
-    if self._proxy:CheckBuffByKind(self.PlayUUID[1], 1000487) then -- 检查1号玩家是否为T
-        self.Tuuid = self.PlayUUID[1]
+function XChar8057:ClassCheck()
+    if #self.PlayUUID == 1 then
+        self._proxy:AbortAction(self._uuid, true)
+        self._proxy:CastActionToTarget(self._uuid,805401,self.PlayUUID[1])
+        self._proxy:AddTimerTask(6, function()--延迟5秒后，释放影牌技能
+            self.Attack2 = true
+        end)
     end
-    XLog.Warning("T职业为"..self.Tuuid)
-    if self._proxy:CheckBuffByKind(self.PlayUUID[2], 1000487) and self.Tuuid ~= self.PlayUUID[1] then -- 检查2号玩家是否为T
-        self.Tuuid = self.PlayUUID[2]
+    if #self.PlayUUID == 2 then
+        local Juli1 =self._proxy:GetNpcDistance(self.NPC,self.PlayUUID[1],false)
+        local Juli2 =self._proxy:GetNpcDistance(self.NPC,self.PlayUUID[2],false)
+        local Juliindex = {
+            {value = Juli1 , id = self.PlayUUID[1]},
+            {value = Juli2 , id = self.PlayUUID[2]},
+        }
+
+        table.sort(Juliindex,function(X,Y)
+            return X.value <  Y.value
+        end)
+
+        self._proxy:AbortAction(self._uuid, true)
+        self._proxy:CastActionToTarget(self._uuid,805401,Juliindex[1].id)
+        self._proxy:AddTimerTask(8, function()--延迟5秒后，释放影牌技能
+            self.Attack2 = true
+        end)
     end
 
-    if self._proxy:CheckBuffByKind(self.PlayUUID[3], 1000487) and self.Tuuid ~= self.PlayUUID[1] and self.Tuuid ~= self.PlayUUID[2]  then -- 检查3号玩家是否为T
-        self.Tuuid = self.PlayUUID[3]
-    end
+    if #self.PlayUUID == 3 then
+        local Juli1 =self._proxy:GetNpcDistance(self.NPC,self.PlayUUID[1],false)
+        local Juli2 =self._proxy:GetNpcDistance(self.NPC,self.PlayUUID[2],false)
+        local Juli3 =self._proxy:GetNpcDistance(self.NPC,self.PlayUUID[2],false)
+        local Juliindex = {
+            {value = Juli1 , id = self.PlayUUID[1]},
+            {value = Juli2 , id = self.PlayUUID[2]},
+            {value = Juli3 , id = self.PlayUUID[3]},
+        }
 
-    if self.Tuuid == nil then  -- 若T为空，则选择其他职业承担T的位置
-        if self._proxy:CheckBuffByKind(self.PlayUUID[1], 1000486) then -- 1号位为C时，优先承担T位
-            self.Tuuid = self.PlayUUID[1]
-        else
-            if self._proxy:CheckBuffByKind(self.PlayUUID[2], 1000486) then  -- 1号位不为C，2号位若为C则优先承担T位
-                self.Tuuid = self.PlayUUID[2]
-            else
-                if self._proxy:CheckBuffByKind(self.PlayUUID[3], 1000486) then -- 1和2都不为C，3号位若为C则承担T位
-                    self.Tuuid = self.PlayUUID[3]
-                else
-                    self.Tuuid = self.PlayUUID[1]   -- 全奶队伍，默认1号位承担T位
-                end
-            end
-        end
+        table.sort(Juliindex,function(X,Y)
+            return X.value <  Y.value
+        end)
+
+        self._proxy:AbortAction(self._uuid, true)
+        self._proxy:CastActionToTarget(self._uuid,805401,Juliindex[1].id)
+        self._proxy:AddTimerTask(8, function()--延迟5秒后，释放影牌技能
+            self.Attack2 = true
+        end)
     end
 
 end
@@ -205,6 +232,22 @@ end
 function XChar8057:OnNpcCastActionBeforeEvent(SkillId, LauncherId, TargetId, TargetSceneObjId, IsAbort)
 
 end
+
+function XChar8057:OnNpcGoingDieEvent(npcUUID, npcPlaceId, npcKind, isPlayer, killerUUID, magicId, deathType, deathId, rebootType, rebootId) -- NPC死亡前
+
+    if npcUUID ~= self._uuid then
+        return
+    end
+
+    if not self._proxy:CheckBuffByKind(self._uuid, 8054004) then
+        self._proxy:ApplyMagic(self._uuid,self.BOSSuuid, 8053064, 1)
+    end
+    
+end
+
+
+
+
 
 function XChar8057:OnNpcBeforeTriggerCounter(triggerNpcUUID, counterNpcUUID, triggerTag, counterTag, triggerMissileTemplateId, triggerMissileUUID, contextId)
     Base.OnNpcBeforeTriggerCounter(self, triggerNpcUUID, counterNpcUUID, triggerTag, counterTag, triggerMissileTemplateId, triggerMissileUUID, contextId)
@@ -231,14 +274,13 @@ end]]
 
 function XChar8057:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
 
-    if buffId == 8053033 then
-        self._proxy:NpcDie(self._uuid)
+    if not self._proxy:IsNpcDead(self._uuid)then
+        if buffId == 8053033 then
+            self._proxy:NpcDie(self._uuid)
+        end
     end
+
 end
-
-
-
-
 
 
 return XChar8057

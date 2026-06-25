@@ -216,6 +216,13 @@ function XUiGridTheatre6SkillBag:CanUpgrade(value)
     self.UiSkillGrid:CanUpgrade(value)
 end
 
+function XUiGridTheatre6SkillBag:IsCanUpgrade()
+    if not XTool.IsNumberValid(self._SkillId) then
+        return false
+    end
+    return self.UiSkillGrid:IsCanUpgrade()
+end
+
 ---基于 Control 的"高亮源 tag 集合"刷新本格 tag 高亮:
 ---仅在商店/任务选择界面打开期间(源集合非 nil)才计算
 ---高亮 = selfBuildTags ∩ ((sourceTagIds ∩ 装备 BuildTags 中装备出现次数最多者,平局按 Pirority) ∪ (sourceTagIds ∩ 装备 IsShowTags))

@@ -9,6 +9,7 @@ end
 
 function XUiTheatre6PopupCoverArchive:OnStart(selectSlot, fileData, mode)
     self._SelectSlot = selectSlot
+    self._FileData = fileData
     self._Mode = mode
     local XUiPanelCharacterAttrDetail = require("XUi/XUiTheatre6/Character/Panel/XUiPanelTheatre6CharacterAttrDetail")
 
@@ -33,6 +34,20 @@ function XUiTheatre6PopupCoverArchive:OnStart(selectSlot, fileData, mode)
 end
 
 function XUiTheatre6PopupCoverArchive:OnClickCover()
+    local oldFileData = self._Control:GetFileDataBySlot(self._FileData.CharacterId, self._SelectSlot)
+    local isDefense = oldFileData and self._Control:CheckArchiveInDefenseLineup(oldFileData.CharacterId, oldFileData.SlotId)
+
+    if isDefense then
+        self._Control:ShowPopup(XUiHelper.GetText("Theatre6SaveCoverDefenseContent"), function()
+            self:DoCover()
+        end)
+        return
+    end
+
+    self:DoCover()
+end
+
+function XUiTheatre6PopupCoverArchive:DoCover()
     self._Control:SaveSettlement(self._Mode, self._SelectSlot, function()
         XLuaUiManager.Close("UiTheatre6Settlement")
         self:Close()

@@ -4,6 +4,21 @@ XEnumConst = {
         XTeam = "XTeam",
         XLogin = "XLogin"
     },
+    ActivityToastHall = {
+        MoveType = {
+            Static = 1,
+            Slider = 2,
+        },
+    },
+    ConcertPreHeating = {
+        -- 客户端根据直播/回放时间配置归一化出的 UI 状态。
+        LiveState = {
+            None = 0, -- 无直播配置
+            BeforeLive = 1, -- 直播开始前
+            Live = 2, -- 直播中
+            Replay = 3, -- 直播已结束，录播链接是否可点看IsRecordOpen
+        },
+    },
     MAIL_STATUS = {
         STATUS_UNREAD = 0,
         STATUS_READ = 1 << 0,
@@ -125,7 +140,13 @@ XEnumConst = {
         -- 武器超限解锁类型
         WEAPON_OVERRUN_UNLOCK_TYPE = {
             SUIT = 1, -- 意识套装
-            ATTR_EFFECT = 2, -- 属性效果
+            ATTR = 2, -- 属性效果，通过配置Magic实现，UI表现为"技能解锁"
+            UP_SKILL = 3, -- 提升技能等级
+        },
+        -- 武器谐振等级
+        WEAPON_OVERRUN_LEVEL_TYPE = {
+            LEVEL1 = 1,
+            LEVEL2 = 2,
         },
         -- 要显示的属性排序
         ATTR_SORT_TYPE = {
@@ -284,6 +305,7 @@ XEnumConst = {
             BountyChallenge = 99, -- 悬赏挑战
             SoloReform = 100, -- mini改造
             PBRGame = 101, -- 战双兄弟
+            BossInshotTower = 102 -- 评分爬塔
         },
         ChapterType = {
             MainLine = 0,
@@ -486,6 +508,7 @@ XEnumConst = {
         SkillDetailsType = {
             Normal = 1,
             Enhance = 2,
+            WeaponOverrun = 3,
         },
         -- 信号球颜色
         CharacterLiberateBallColorType = {
@@ -2467,6 +2490,11 @@ XEnumConst = {
         EXHIBITION_SHOW_INIT_SCALE = 0.9,       -- 时间轴首次打开的初始大小
         EXHIBITION_SHOW_DETAIL_SCALE = 0.55,    -- 时间轴显示章节详情UI的Scale值
         EXHIBITION_SHOW_BRIEF_SCALE = 0.5,      -- 时间轴显示章节简略UI的Scale值
+        EXHIBITION_MODULE_TYPE = {
+            NORMAL = 1,             -- 普通模块，自由拖拽
+            ISOLATED_VIEW = 2,      -- 4.6新模块，视觉范围锁定在模块内（拖出回弹），屏蔽竖直拖动
+        },
+        EXHIBITION_CLAMP_DURATION = 0.3,    -- 时间轴回正缓动时长
     },
     BossSingle = {
         LevelType = {
@@ -2538,7 +2566,6 @@ XEnumConst = {
             Add = 1, -- 积分累加
             MULTIPLY = 2, -- 积分相乘
         },
-        WEAR_TALENT_MAX_CNT = 2, -- 穿戴天赋最大数量
         TALENT_TYPE = {
             DEFAULT_WEAR = 1, -- 默认穿戴
             HAND_WEAR = 2, -- 手动穿戴
@@ -3639,6 +3666,10 @@ XEnumConst = {
         }
     },
     Theatre6 = {
+        CharacterNewTagType = {
+            Game = 1,
+            Story = 2,
+        },
         PlayMode = {
             GamePlay = 1, --玩法模式
             Story = 2, --剧情模式
@@ -3765,6 +3796,30 @@ XEnumConst = {
         TaskConditionType = {
             Goods = 3, --所需材料
         },
+        Settlement = {
+            Normal = 1,
+            ChooseRoom = 2,
+            Pvp = 3,
+        },
+        Pvp = {
+            PlayerState = {
+                Init = 0, -- 正常状态
+                InAdvanceBattle = 1, -- 进阶战斗中
+            },
+            LineupMode = {
+                Attack = 1, --进攻
+                Defend = 2, --防守
+            },
+            BattlePhase = {
+                NormalBattle = 0, --一般战斗
+                AdvanceBattleUnlocked = 1, --进阶战斗已解锁
+                AdvanceBattleLocked = 2, --进阶战斗未解锁
+            },
+            BattleRecordStatus = {
+                Normal = 0, --正常
+                Abnormal = 1, --异常
+            },
+        },
     },
     GameCollection = {
         GameType = {
@@ -3772,5 +3827,22 @@ XEnumConst = {
             Game2048 = 2,
             FangKong = 3,
         },
+    },
+    CommonDrag = {
+        -- 触发模式
+        TriggerMode = {
+            Press = 1, -- 长按触发（先预热过滤误触，再进度阶段，进度满才拖）
+            Direct = 2, -- 按下拖动即触发（无长按、无进度条）
+        },
+        -- 落点检测模式
+        HitTest = {
+            Rect = 1, -- 指针位置每帧遍历已登记区域做命中
+            Enter = 2, -- 由外部 grid 的 PointerEnter/Exit 调 NotifyEnter/NotifyExit（区域重叠/遮挡场景）
+        },
+        -- 进度条相对目标格子的定位锚点
+        AnchorType = {
+            TopRight = 1, -- 右上角（默认）
+            TopLeft = 2, -- 左上角
+        }
     },
 }

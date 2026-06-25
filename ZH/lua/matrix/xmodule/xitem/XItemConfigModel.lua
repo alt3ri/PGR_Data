@@ -1,6 +1,7 @@
 local TableKey = {
     ItemUsePackage = { DirPath = XConfigUtil.DirectoryType.Client, CacheType = XConfigUtil.CacheType.Normal },
     ItemExchange = { DirPath = XConfigUtil.DirectoryType.Share, CacheType = XConfigUtil.CacheType.Normal },
+    ItemCombine = { DirPath = XConfigUtil.DirectoryType.Share, Identifier = "ItemId", CacheType = XConfigUtil.CacheType.Normal },
 
 }
 ---@class XItemConfigModel 纯配置模块
@@ -34,6 +35,22 @@ function XItemConfigModel:GetItemExchangeConfigsByItemId(itemId)
     local result = {}
     for _, config in ipairs(configs) do
         if config.ItemId == itemId then
+            table.insert(result, config)
+        end
+    end
+    return result
+end
+
+function XItemConfigModel:GetItemCombineById(id)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.ItemCombine, id,true)
+end
+
+---@return XTableItemCombine[]
+function XItemConfigModel:GetItemCombinesByGroupId(groupId)
+    local result = {}
+    local configs = self._ConfigUtil:GetByTableKey(TableKey.ItemCombine)
+    for _, config in pairs(configs) do
+        if config.GroupId == groupId then
             table.insert(result, config)
         end
     end

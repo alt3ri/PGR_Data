@@ -1,7 +1,6 @@
 ---@class XUiFashionSuitMain : XLuaUi 涂装套装二级界面
 ---@field _Control XFashionSuitControl
 local XUiFashionSuitMain = XLuaUiManager.Register(XLuaUi, "UiFashionSuitMain")
-
 local HelpDataKey = "FashionSuitMainHelp"
 
 function XUiFashionSuitMain:OnAwake()
@@ -17,7 +16,6 @@ end
 function XUiFashionSuitMain:OnStart(suitId)
     XUiHelper.NewPanelTopControl(self, self.TopControlWhite)
 
-    local config = self._Control:GetFashionSuitById(suitId)
     local uiConfig = self._Control:GetFashionSuitUiConfigById(suitId)
     local go = self.PanelSuit:LoadPrefab(uiConfig.PrefabPath)
    

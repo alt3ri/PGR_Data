@@ -58,7 +58,7 @@ end
 ---[镜头]AnimEnableLong和[场景]AnimEnableLong一起播放，场景[AnimEnableLong]播放完后播场景的[AnimEnableGyro]
 function XUiPanelGachaLiv4P5Scene:PlayEnableLong(camAnimCb, sceneAnimCb)
     local timeEnableLong = self.Parent.UiSceneInfo.Transform:Find("Animations/AnimEnableLong")
-    local animEnableLong = self.Panel3D.AnimEnableLong:GetComponent("PlayableDirector")
+    local animEnableLong = self.Panel3D.AnimEnableLong:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
     self.Panel3D.AnimStart1:StopTimelineAnimation()
     self:_PlayAnimNextFrame(function()
         self.Panel3D.AnimEnableLong.gameObject:SetActiveEx(true)
@@ -76,7 +76,7 @@ function XUiPanelGachaLiv4P5Scene:PlayEnableLong(camAnimCb, sceneAnimCb)
     if XTool.UObjIsNil(timeEnableLong) then
         sceneAnimCb()
     else
-        local pb = timeEnableLong:GetComponent("PlayableDirector")
+        local pb = timeEnableLong:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
         self._SceneLongAnimTimer = XScheduleManager.ScheduleOnce(function()
             timeEnableLong.gameObject:SetActiveEx(false)
             sceneAnimCb()
@@ -165,7 +165,7 @@ function XUiPanelGachaLiv4P5Scene:_PlayTimeLineAnim(tran, time, directorWrapMode
         return
     end
     ---@type UnityEngine.Playables.PlayableDirector
-    local anim = tran:GetComponent("PlayableDirector")
+    local anim = tran:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
     anim.initialTime = time or 0
     if directorWrapMode then
         anim.extrapolationMode = directorWrapMode

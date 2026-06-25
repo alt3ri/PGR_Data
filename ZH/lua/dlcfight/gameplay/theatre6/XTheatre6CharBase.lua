@@ -228,9 +228,11 @@ do
     ---@param Position2 Vector3 战斗发起方(Fighter2)的技能目标位置
     function XTheatre6CharBase:OnSecondWrestleReset(fighter1UUID, fighter2UUID, Position1, Position2)
         if self._uuid == fighter1UUID then
+            self:AddArmor()
             self._proxy:CastSkillActionToPositionNotCheck(self._uuid, self._states.Wrestle.SecondWrestleReset, Position1)
             self._isFighter1 = true
         elseif self._uuid == fighter2UUID then
+            self:AddArmor()
             self._proxy:CastSkillActionToPositionNotCheck(self._uuid, self._states.Wrestle.SecondWrestleReset, Position2)
         end
     end
@@ -246,6 +248,8 @@ do
         elseif self._uuid == fighter2UUID then
             self:CastAction(self._states.Wrestle.WrestleSkillIdRight);
         end
+        self._proxy:ApplyMagic(fighter1UUID,fighter1UUID,1027501) -- 拼刀时，给双方打个标记
+        self._proxy:ApplyMagic(fighter2UUID,fighter2UUID,1027501) -- 拼刀时，给双方打个标记
     end
 
     ---控制中心进行拼刀僵持状态
@@ -294,6 +298,7 @@ do
 
     --释放拼刀成功的终结动作
     function XTheatre6CharBase:CastWrestleEndSucced()
+        local SetCameraModify = 10250206
         local MonsterTag = 8025000
         self._proxy:AbortAction(self._uuid, true)
         if self._proxy:CheckBuffByKind(self._uuid, MonsterTag) then 
@@ -301,6 +306,7 @@ do
             return
         end
         self._proxy:SetCameraFocusTarget(self._uuid, self._enemyUUID)
+        self._proxy:ApplyMagic(self._uuid, self._uuid, SetCameraModify)
         self:CastAction(self._states.Wrestle.SucceedActionId);
     end
 
@@ -1394,6 +1400,16 @@ function XTheatre6CharBase:GetAngerController()
     return self:GetAffixControllerByName("Anger") --[[@as XTheatre6AngerController]]
 end
 
+---@return XTheatre6SunController
+function XTheatre6CharBase:GetSunController()
+    return self:GetAffixControllerByName("Sun") --[[@as XTheatre6SunController]]
+end
+
+---@return XTheatre6ProtectorController
+function XTheatre6CharBase:GetProtectorController()
+    return self:GetAffixControllerByName("Protector") --[[@as XTheatre6ProtectorController]]
+end
+
 ---@param tag EGameplayTag [受击效果tag, 只能为Missle.Theatre6.HitAffixType的子tag](https://kurogame.feishu.cn/wiki/UadMwIczpirAH9k22YPcOI7WnJc#share-Pyibd6tS5oSwOAxOLvMccKmmn2c)
 ---@return XTheatre6AffixControllerBase
 function XTheatre6CharBase:GetAffixControllerByHitTag(tag)
@@ -1497,7 +1513,7 @@ function XTheatre6CharBase:AfterDamageCalc(eventArgs)
     -- local value = 30
     -- local ratio = 1 - stamina * value / 10000
     local ratio = 1 - stamina * self.StaminaDmgReducRatio / 10000
-    if ratio < 0.7 then ratio = 0.7 end
+    if ratio < 0.6 then ratio = 0.6 end
     self._proxy:SetAfterDamageMagicContext(eventArgs.ContextId, eventArgs.PhysicalDamage * ratio, eventArgs
         .ElementDamage, eventArgs.FinalHackDamage)
 end

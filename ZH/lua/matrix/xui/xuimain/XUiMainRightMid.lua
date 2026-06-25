@@ -155,11 +155,14 @@ function XUiMainRightMid:OnEnable()
         -- 有功能开放标记时才显示免费标签
         if XFunctionManager.JudgeOpen(XFunctionManager.FunctionName.DrawCard) then
             XDataCenter.DrawManager.GetDrawGroupList(function()
+                if XTool.UObjIsNil(self.BtnReward) then
+                    return
+                end
                 self:CheckDrawDiscountTag()
                 self:AddRedPointEvent(self.BtnReward, self.OnCheckDrawFreeTicketTag, self, { XRedPointConditions.Types.CONDITION_DRAW_FREE_TAG })
-                self:AddRedPointEvent(self.BtnReward.ReddotObj, self.OnCheckARewardNews, self, { 
+                self:AddRedPointEvent(self.BtnReward.ReddotObj, self.OnCheckARewardNews, self, {
                     XRedPointConditions.Types.CONDITION_DEVILMAYCRY_CAN_RECEIVE_CHARACTER,
-                    XRedPointConditions.Types.CONDITION_DRAW_CAN_LIVER_JOURNEY_REWARD 
+                    XRedPointConditions.Types.CONDITION_DRAW_CAN_LIVER_JOURNEY_REWARD
                 })
             end)
         end
@@ -558,19 +561,32 @@ function XUiMainRightMid:UpdateBtnActivityCustomText()
         local managerName = config.ManagerName
         local btn = self[string.format("BtnActivityEntry%s", index)]
         local panelTime = self[string.format("PanelTime%s", index)]
-        if btn and panelTime then
+        if btn then
+            local cls
             local content
             if not string.IsNilOrEmpty(managerName) then
-                local cls = XDataCenter[managerName] or XMVCA[managerName]
+                cls = XDataCenter[managerName] or XMVCA[managerName]
+            end
+
+            -- PanelTimeX文本标签：按ExGetRightMidCustomText能力刷新。
+            if panelTime then
                 if cls and cls.ExGetRightMidCustomText then
                     content = cls:ExGetRightMidCustomText()
                 end
+
+                if string.IsNilOrEmpty(content) then
+                    panelTime.gameObject:SetActiveEx(false)
+                else
+                    panelTime.gameObject:SetActiveEx(true)
+                    btn:SetNameByGroup(0, content)
+                end
             end
-            if string.IsNilOrEmpty(content) then
-                panelTime.gameObject:SetActiveEx(false)
-            else
-                panelTime.gameObject:SetActiveEx(true)
-                btn:SetNameByGroup(0, content)
+
+            -- 音乐会预热入口：按CheckActivityEntryLive能力刷新专用直播节点。
+            local panelConcertPreHeatingLiving = btn.transform:FindTransform("PanelConcertPreHeatingLiving")
+            if panelConcertPreHeatingLiving then
+                local isActivityEntryLive = cls and cls.CheckActivityEntryLive and cls:CheckActivityEntryLive()
+                panelConcertPreHeatingLiving.gameObject:SetActiveEx(isActivityEntryLive == true)
             end
         end
     end

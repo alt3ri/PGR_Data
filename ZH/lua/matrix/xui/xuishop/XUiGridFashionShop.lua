@@ -31,16 +31,23 @@ function XUiGridFashionShop:SetButtonCallback()
     end
 end
 
+--- 设置参数缓存，传给详情页
+function XUiGridFashionShop:SetCustomAssetsItemIdsForDetail(customAssetsItemIds)
+    self._CustomAssetsItemIds = customAssetsItemIds
+end
+
 function XUiGridFashionShop:OnBtnBuyClick()
     if self.IsShopOnSaleLock then
         XUiManager.TipError(self.ShopOnSaleLockDecs)
         return
     end
+    ---@type XPurchaseBuyData
     local buyData = {}
     buyData.CurRewardGoods = self.Data.RewardGoods
     buyData.IsHave = false
     buyData.ItemIcon = self.ItemIcon
     buyData.ItemCount = self.NeedCount
+    buyData.ConsumeId = self.Data.ConsumeList[1].Id
     buyData.GiftRewardId = self.GiftRewardId
     if self.NeedCount ~= self.Data.ConsumeList[1].Count then
         buyData.OriginCount = self.Data.ConsumeList[1].Count
@@ -78,7 +85,8 @@ function XUiGridFashionShop:OnBtnBuyClick()
         end)
     end
     XMVCA.XShop:OpenFashionDetailUi(self.Id, buyData, {
-        isWeaponFashion = self.IsWeaponFashion
+        isWeaponFashion = self.IsWeaponFashion,
+        customAssetsItemIds = self._CustomAssetsItemIds
     })
 end
 
@@ -86,7 +94,10 @@ function XUiGridFashionShop:OnBuyShopSuccessCb(goodList, isShowBuyResult)
     local text = CS.XTextManager.GetText("BuySuccess")
     XUiManager.TipMsg(text, nil, function()
         if isShowBuyResult and not XTool.IsTableEmpty(goodList) then
-            XUiManager.OpenUiObtain(goodList)
+            XUiManager.OpenUiObtain(goodList, nil, nil, nil, nil,
+                    {
+                        IsIgnoreOpenFashionTipCheck = true
+                    })
             return
         end
     end)
@@ -98,7 +109,7 @@ function XUiGridFashionShop:OnBuyShopSuccessCb(goodList, isShowBuyResult)
     self:RefreshOnSales()
     self:RefreshPrice()
     self:RefreshBuyCount()
-    self.Parent:RefreshBuy()
+    --self.Parent:RefreshBuy()
 end
 
 function XUiGridFashionShop:UpdateData(data)

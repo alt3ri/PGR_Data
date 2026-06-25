@@ -2,7 +2,7 @@ local XTheatre6SkillBase = require("Gameplay/Theatre6/XTheatre6SkillBase")
 
 ---【超算】成功后触发：
 ---扣除对手20点【体力值】，自身每有20点【超算】属性，额外扣除对手1点【体力值】；
----使用【插入式技能】时，本场战斗中每造成过1次【击飞】，【攻击】属性提升10点。
+---使用【插入式技能】时，本场战斗中每造成过1次【击飞】，【攻击】属性提升15点。
 ---@class XBuffScript.10251611 : XTheatre6SkillBase
 local XBuff10251611 = XDlcScriptManager.RegBuffScript(10251611, "XBuffScript10251611", XTheatre6SkillBase)
 
@@ -31,7 +31,7 @@ function XBuff10251611:OnLuaSkillStart(eventArgs)
     end
     --如果是插入技能，则计算属性提升
     if eventArgs._skillType ~= ETheatre6SkillType.Insert then return end
-    self._stackCountAtk = self.hitFlyCount * 10
+    self._stackCountAtk = self.hitFlyCount * 15
     self._proxy:ApplyMagic(self._npcUUID, self._npcUUID, self.atkBuffId, 1, 0, self._stackCountAtk)
 end
 

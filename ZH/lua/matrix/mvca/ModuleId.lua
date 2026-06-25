@@ -145,4 +145,6 @@ ModuleId = {
   XGameCollection = "XGameCollection",
   XBigWorldMemory = "XBigWorldMemory",
   XLowMemory = "XLowMemory",
+  XDyeMergeGame = "XDyeMergeGame",
+  XConcertPreHeating = "XConcertPreHeating",
 }

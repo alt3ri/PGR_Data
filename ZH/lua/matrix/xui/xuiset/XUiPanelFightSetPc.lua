@@ -382,7 +382,7 @@ function XUiPanelFightSetPc:InitKeyboardPanel(resetTextOnly)
                 if not grid then
                     grid = XUiHelper.Instantiate(self.GridSliderPC, self.KeyboardSetContent)
                 end
-                local slider = XUiHelper.TryGetComponent(grid.transform, "SliderCameraMoveSensitivityPc", "Slider")
+                local slider = XUiHelper.TryGetComponent(grid.transform, "SliderCameraMoveSensitivityPc", typeof(CS.UnityEngine.UI.Slider))
                 if isNotClone then
                     XUiHelper.RegisterSliderChangeEvent(self, slider, function(_, value)
                         if value == self:GetCameraMoveSensitivity() then

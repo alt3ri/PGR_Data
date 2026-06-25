@@ -2,13 +2,13 @@ local XTheatre6SkillBase = require("Gameplay/Theatre6/XTheatre6SkillBase")
 ---@class XBuffScript10262070 : XTheatre6SkillBase
 local XBuffScript10262070 = XDlcScriptManager.RegBuffScript(10262070, "XBuffScript10262070", XTheatre6SkillBase)
 
---效果说明：本场战斗中首次累计获得12层<坚毅>后触发：
+--效果说明：本场战斗中首次累计获得8层<坚毅>后触发：
 --· 造成400%攻击伤害；
 --· 自身每次使用任意技能，均将使自身【攻击】属性提升15/20/25点。
 
 function XBuffScript10262070:ScriptInit(isGainControl) --初始化
     self.TargetSkill = self._skillId
-    self.targetCount = 12
+    self.targetCount = 8
     self._blockController = self:GetNpc():GetBlockController()
     self.ChanceCheck = 0
     self.dictAddAtk = {

@@ -232,14 +232,17 @@ function XUiPanelTaskCanLiver:OnDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         local data = self.CanLiverTasks[index]
         grid.RootUi = self.Parent
-        grid:ResetData(data)
 
         local isSetUpdateWeeklyTime = self.CurrDrawCanLiverWeekTaskList and self.CurrDrawCanLiverWeekTaskList[data.Id]
         grid:SetIsUpdateWeeklyTime(isSetUpdateWeeklyTime)
-        local isActivityTag = self.CurrDrawCanLiverActivityTaskList and self.CurrDrawCanLiverActivityTaskList[data.Id]
-        grid:SetPanelTagActive(isActivityTag)
         grid:SetTxtTaskLimitVisible(XMVCA.XItemRestrict:IsItemReachMaxByIndex(XEnumConst.ItemRestrict.Type.DrawCanLiver, 1))
+
+        grid:ResetData(data)
+
         self:ShowGridEx(grid, data)
+
+        local isActivityTag = self.CurrDrawCanLiverActivityTaskList and self.CurrDrawCanLiverActivityTaskList[data.Id] or false
+        grid:SetPanelTagActive(isActivityTag)
     end
 end
 

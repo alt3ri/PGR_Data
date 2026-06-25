@@ -1,33 +1,32 @@
-local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
 ---@class XUiBossInshotSettlement:XLuaUi
 ---@field private _Control XBossInshotControl
 local XUiBossInshotSettlement = XLuaUiManager.Register(XLuaUi, "UiBossInshotSettlement")
 
 function XUiBossInshotSettlement:OnAwake()
     self.GridScore.gameObject:SetActiveEx(false)
-    self.TxtScoreNum:TextToSprite("0")
+    self.TxtScoreNum.text = "0"
     self.BtnExit.gameObject:SetActiveEx(true)
     self.BtnAgain.gameObject:SetActiveEx(true)
     self:RegisterUiEvents()
-    self:InitDynamicTable()
 
     if CS.XRLManager.RLScene then
         CS.XRLManager.RLScene:SetUiEffectRootActive(false)
     end
     
-    self:CheckMaskActive()
+    -- self:CheckMaskActive()
 
-    local uiObj = self.UiSceneInfo.Transform:GetComponent("UiObject")
-    if not uiObj then
-        return
-    end
-    local screenShotEffect = uiObj:GetObject("CTVergil03pingfenwin")
-    if screenShotEffect then
-        screenShotEffect.gameObject:SetActiveEx(false)
-    end
+    -- local uiObj = self.UiSceneInfo.Transform:GetComponent("UiObject")
+    -- if not uiObj then
+    --     return
+    -- end
+    -- local screenShotEffect = uiObj:GetObject("CTVergil03pingfenwin")
+    -- if screenShotEffect then
+    --     screenShotEffect.gameObject:SetActiveEx(false)
+    -- end
 end
 
 function XUiBossInshotSettlement:OnStart(settleData, isCheckActivityEnd)
+    self.PanelPop.gameObject:SetActiveEx(true)
     self.StageId = settleData.StageId
     self.SettleData = settleData
     self.IsCheckActivityEnd = isCheckActivityEnd == true
@@ -44,39 +43,19 @@ end
 
 function XUiBossInshotSettlement:OnEnable()
     self:Refresh()
-    self:RemoveTimer()
-    self.Timer = XScheduleManager.ScheduleForever(function()
-        if self.TxtScoreNum.gameObject.activeSelf then
-            self:PlayScoreAnimation()
-            self:RemoveTimer()
-        end
-    end, 1000)
-end
-
-function XUiBossInshotSettlement:OnDisable()
-    self:RemoveTimer()
 end
 
 function XUiBossInshotSettlement:OnDestroy()
-    self:ClearDynamicTimer()
-    self:ClearGridsTimer()
     XMVCA:GetAgency(ModuleId.XBossInshot):ExitFight()
 end
 
 -- 检查黑边是否需要显示
-function XUiBossInshotSettlement:CheckMaskActive()
-    local currentWidth = CS.UnityEngine.Screen.width
-    local currentHeight = CS.UnityEngine.Screen.height
-    local scale = 1920 / 1010
-    self.Mask.gameObject:SetActiveEx(currentWidth / currentHeight > scale)
-end
-
-function XUiBossInshotSettlement:RemoveTimer()
-    if self.Timer then
-        XScheduleManager.UnSchedule(self.Timer)
-        self.Timer = nil
-    end
-end
+-- function XUiBossInshotSettlement:CheckMaskActive()
+--     local currentWidth = CS.UnityEngine.Screen.width
+--     local currentHeight = CS.UnityEngine.Screen.height
+--     local scale = 1920 / 1010
+--     self.Mask.gameObject:SetActiveEx(currentWidth / currentHeight > scale)
+-- end
 
 -- 刷新场景特效
 function XUiBossInshotSettlement:RefreshMarkEffectActive()
@@ -114,7 +93,10 @@ function XUiBossInshotSettlement:RefreshMarkEffectActive()
             timelineObj.gameObject:SetActiveEx(true)
         end
 
-        XScheduleManager.ScheduleOnce(function()
+        self.LevelEffectSchedule = XScheduleManager.ScheduleOnce(function()
+            XScheduleManager.UnSchedule(self.LevelEffectSchedule)
+            self.LevelEffectSchedule = nil
+
             if XTool.UObjIsNil(self.GameObject) then
                 return
             end
@@ -122,8 +104,10 @@ function XUiBossInshotSettlement:RefreshMarkEffectActive()
             local levelEffectName
             if self._Control:IsFestivalActivityStage(self.StageId) then
                 levelEffectName = "FxUiDMCPingfenS"
-            else
+            elseif self.Difficulty then
                 levelEffectName = self._Control:GetScoreLevelEffectName(self.Difficulty, self.Score)
+            else
+                levelEffectName = self.ScoreLevelConf.EffectName
             end
             
             local levelEffectObjet = uiObj:GetObject(levelEffectName)
@@ -139,11 +123,12 @@ function XUiBossInshotSettlement:RegisterUiEvents()
     self:RegisterClickEvent(self.BtnExit, self.OnBtnExitClick)
     self:RegisterClickEvent(self.BtnReplay, self.OnBtnReplayClick)
     self:RegisterClickEvent(self.BtnHelp, self.OnBtnHelpClick)
+    self:RegisterClickEvent(self.BtnPopBg, self.OnBtnPopBgClick)
 end
 
 function XUiBossInshotSettlement:OnBtnAgainClick()
     -- 玩法结束
-    local isOpen, tips = self._Control:IsActivityOpen()
+    local isOpen = self._Control:IsActivityOpen()
     if not isOpen then
         self._Control:HandleActivityEnd()
         return
@@ -164,7 +149,7 @@ end
 function XUiBossInshotSettlement:OnBtnExitClick()
     if self.IsCheckActivityEnd then
         -- 玩法结束
-        local isOpen, tips = self._Control:IsActivityOpen()
+        local isOpen = self._Control:IsActivityOpen()
         if not isOpen then
             self._Control:HandleActivityEnd()
             return
@@ -176,11 +161,39 @@ function XUiBossInshotSettlement:OnBtnExitClick()
 end
 
 function XUiBossInshotSettlement:OnBtnReplayClick()
+    if not CS.XFight.Instance then
+        XUiManager.TipText("BossInshotSettlementTowerCheatCannotSaveReplay")
+        return
+    end
+
     if not self.PlaybackData then
-        local scoreLevelIcon = self._Control:GetScoreLevelIcon(self.Difficulty, self.Score)
-        self.PlaybackData = self._Control:GenLastPlaybackData(self.BossId, self.Score, scoreLevelIcon, self.Difficulty)
+        local scoreLevelIcon
+
+        if self.Difficulty then
+            scoreLevelIcon = self._Control:GetScoreLevelIcon(self.Difficulty, self.Score)
+        else
+            scoreLevelIcon = self.ScoreLevelConf.LevelIcon
+        end
+
+        local towerId = nil
+
+        if self.TowerLevelConf then
+            towerId = self.TowerLevelConf.Id
+        end
+
+        self.PlaybackData = self._Control:GenLastPlaybackData(
+            self.BossId,
+            self.Score,
+            scoreLevelIcon,
+            self.Difficulty,
+            towerId)
     end
     XLuaUiManager.Open("UiBossInshotPlayback", self.BossId, self.PlaybackData)
+end
+
+function XUiBossInshotSettlement:OnBtnPopBgClick()
+    self:PlayScoreAnimation()
+    self:PlayAnimation("SecondScreenEnable")
 end
 
 function XUiBossInshotSettlement:OnBtnHelpClick()
@@ -195,19 +208,19 @@ function XUiBossInshotSettlement:RefreshByFestivalActivity()
     self.BtnAgain.gameObject:SetActiveEx(false)
     
     self.TxtNext.text = XUiHelper.GetText("MissionComplete")
-    self.TxtName.text = XMVCA.XFuben:GetStageName(self.StageId)
+    local stageName = XMVCA.XFuben:GetStageName(self.StageId)
+    self.TxtName.text = stageName
+    self.TxtName2.text = stageName
     self.BtnExit:SetName(XUiHelper.GetText("Continue"))
     self.TxtScore:SetSprite(CS.XGame.ClientConfig:GetString("UiBossInshotSettlementFestivalActivityTitle"))
 
     -- 得分列表固定显示文本内容
-    self:ClearDynamicTimer()
-    self:ClearGridsTimer()
     self.PanelPop.gameObject:SetActiveEx(true)
     self.ScoreInfos = {{Desc = XUiHelper.GetText("StageClear")}}
     self.DynamicTable:SetDataSource(self.ScoreInfos)
     self.DynamicTable:ReloadDataSync()
 
-    self:RefreshMarkEffectActive()
+    -- self:RefreshMarkEffectActive()
 end
 
 function XUiBossInshotSettlement:Refresh()
@@ -223,28 +236,80 @@ function XUiBossInshotSettlement:Refresh()
     -- 总分
     local isNewRecord = self.SettleData.BossInshotSettleResult.IsNewRecord
     local inshotStageId = self._Control:GetInshotStageIdByStageId(self.StageId)
-    self.BossId = self._Control:GetStageBossId(inshotStageId)
-    self.Difficulty = self._Control:GetStageDifficulty(inshotStageId)
     self.Score = self.SettleData.BossInshotSettleResult.Score
-    self.ScoreLevelIcon = self._Control:GetScoreLevelBigIcon(self.Difficulty, self.Score)
-    local nextLevelTips = self._Control:GetNextScoreLevelTips(self.Difficulty, self.Score)
+
+    if inshotStageId then   -- 如果是普通关卡
+        self.BossId = self._Control:GetStageBossId(inshotStageId)
+        self.Difficulty = self._Control:GetStageDifficulty(inshotStageId)
+        self.ScoreLevelIcon = self._Control:GetScoreLevelBigIcon(self.Difficulty, self.Score)
+
+        self.TxtNext.text = self._Control:GetNextScoreLevelTips(
+            self.Difficulty, self.Score)
+
+        self.RImgWin.gameObject:SetActiveEx(true)
+        self.RImgLose.gameObject:SetActiveEx(false)
+        self.BtnAgain.gameObject:SetActiveEx(true)
+    else                    -- 如果是爬塔关卡
+        self.BossId = self._Control:GetTowerBossIdByStageId(self.StageId)
+        local prevLevelId, prevUnlockedLevelId = XMVCA.XBossInshot:GetPrevTowerLevelIdAndPrevUnlockedLevel()
+        assert(prevLevelId and prevUnlockedLevelId)
+        self.TowerLevelConf = self._Control:GetConfigBossInshotTowerAllLevels()[prevLevelId]
+        assert(self.TowerLevelConf)
+        self.ScoreLevelConf = self._Control:GetTowerScoreLevelConf(self.TowerLevelConf.Id, self.Score)
+        self.ScoreLevelIcon = self.ScoreLevelConf.BalanceIcon
+
+        local towerLevelPass = self._Control:HasPassedTowerLevel(self.TowerLevelConf.Id)
+        if self.TowerLevelConf.PassScore and self.Score < self.TowerLevelConf.PassScore then
+            towerLevelPass = false
+        end
+
+        self.RImgWin.gameObject:SetActiveEx(towerLevelPass)
+        self.RImgLose.gameObject:SetActiveEx(not towerLevelPass)
+
+        local alreadyAllCleared = self._Control:IsTowerAllClear()
+        self.BtnAgain.gameObject:SetActiveEx(not towerLevelPass or alreadyAllCleared)
+
+        local nextLevelPass = self._Control:HasPassedTowerLevel(self.TowerLevelConf.Id + 1)
+
+        local tip
+        local getText = CS.XTextManager.GetText
+
+        self.BtnAgain.gameObject:SetActiveEx(false)
+
+        if alreadyAllCleared then
+            tip = getText("BossInshotSettlementTowerTipAllCleared")
+            self.BtnAgain.gameObject:SetActiveEx(true)
+        elseif towerLevelPass and nextLevelPass then
+            tip = getText("BossInshotSettlementTowerTipRetryWin")
+        elseif towerLevelPass then
+            tip = getText("BossInshotSettlementTowerTipNextLevelUnlocked")
+        elseif self.TowerLevelConf.FailReBackToId == -1 or self.TowerLevelConf.FailReBackToId == self.TowerLevelConf.Id then
+            tip = getText("BossInshotSettlementTowerTipNextLevelNotUnlocked", self.TowerLevelConf.PassScore)
+            self.BtnAgain.gameObject:SetActiveEx(true)
+        else
+            if self._Control:GetBossTowerCurrentLevel() < prevUnlockedLevelId then
+                tip = getText("BossInshotSettlementTowerTipFall", self.TowerLevelConf.PassScore)
+            else
+                tip = getText("BossInshotSettlementTowerTipFallProtected", self.TowerLevelConf.PassScore)
+            end
+        end
+
+        self.TxtNext.text = tip
+    end
+
     self.RImgScore:SetRawImage(self.ScoreLevelIcon)
     self.PanelNew.gameObject:SetActiveEx(isNewRecord)
-    self.TxtNext.text = nextLevelTips
     -- 关卡名
-    self.TxtName.text = XMVCA.XFuben:GetStageName(self.StageId)
+    local stageName = XMVCA.XFuben:GetStageName(self.StageId)
+    self.TxtName.text = stageName
+    self.TxtName2.text = stageName
 
     -- 得分列表
-    self:ClearDynamicTimer()
-    --self.DynamicTimer = XScheduleManager.ScheduleOnce(function()
-        self:ClearGridsTimer()
-        self.PanelPop.gameObject:SetActiveEx(true)
-        self.ScoreInfos = self:GetScoreInfos()
-        self.DynamicTable:SetDataSource(self.ScoreInfos)
-        self.DynamicTable:ReloadDataSync()
-    --end, 6800)
-    
-    self:RefreshMarkEffectActive()
+    self.PanelPop.gameObject:SetActiveEx(true)
+    self.ScoreInfos = self:GetScoreInfos()
+    self:RefreshScoreTipsList()
+
+    -- self:RefreshMarkEffectActive()
 end
 
 -- 获取得分列表
@@ -277,11 +342,92 @@ function XUiBossInshotSettlement:GetScoreInfos()
     return scoreInfos
 end
 
-function XUiBossInshotSettlement:InitDynamicTable()
+function XUiBossInshotSettlement:RefreshScoreTipsList()
     local XUiGridBossInshotScore = require("XUi/XUiBossInshot/XUiGridBossInshotScore")
-    self.DynamicTable = XDynamicTableNormal.New(self.ScoreList)
-    self.DynamicTable:SetProxy(XUiGridBossInshotScore, self)
-    self.DynamicTable:SetDelegate(self)
+
+    if not self.ScoreTipGridContainerGameObjects
+        or not self.ScoreTipGridContainerGameObjectsTemplate then
+
+        self.ScoreTipGridContainerGameObjects = {}
+
+        XTool.InitUiObjectByInstance(
+            self.ScoreList,
+            self.ScoreTipGridContainerGameObjects)
+
+        self.ScoreTipGridContainerGameObjectsTemplate =
+            self.ScoreTipGridContainerGameObjects.GridScorePanelTemplate
+
+        self.ScoreTipGridContainerGameObjects.GridScorePanelTemplate = nil
+    end
+
+    if not self.ScoreTipGridContainers then
+        self.ScoreTipGridContainers = {}
+    end
+
+    for _, c in pairs(self.ScoreTipGridContainers) do
+        c:Close()
+    end
+
+    for _, c in pairs(self.ScoreTipGridContainerGameObjects) do
+        c.gameObject:SetActiveEx(false)
+    end
+
+    XLuaUiManager.SetMask(true)
+
+    local interval = CS
+        .XGame
+        .ClientConfig
+        :GetInt("BossInshotSettlementScoreListItemShowInterval")
+
+    local delay = CS
+        .XGame
+        .ClientConfig
+        :GetInt("BossInshotSettlementScoreListItemShowDelay")
+
+    self.ScoreListShowIntervalCounter = 1
+
+    local function unschedule()
+        XScheduleManager.UnSchedule(self.ScoreListShowIntervalSchedule)
+        self.ScoreListShowIntervalCounter = nil
+        self.ScoreListShowIntervalSchedule = nil
+        XLuaUiManager.SetMask(false)
+    end
+
+    self.ScoreListShowIntervalSchedule = XScheduleManager.ScheduleForever(
+        function()
+            local i = self.ScoreListShowIntervalCounter
+            local scoreInfo = self.ScoreInfos[i]
+            local containerGameObject = self.ScoreTipGridContainerGameObjects["GridScore" .. i]
+
+            if not containerGameObject or not scoreInfo then
+                unschedule()
+                return
+            end
+
+            containerGameObject.gameObject:SetActiveEx(true)
+
+            local container = self.ScoreTipGridContainers[i]
+            if not container then
+                local panel = XUiHelper.Instantiate(
+                    self.ScoreTipGridContainerGameObjectsTemplate,
+                    containerGameObject)
+
+                container = XUiGridBossInshotScore.New(panel, self)
+            end
+
+            container:Open()
+            container:Refresh(scoreInfo)
+            self.ScoreListBoundSizeFitter:SetLayoutVertical()
+
+            XUiHelper.ScrollTo(
+                self.ScoreListScrollRect,
+                containerGameObject.transform)
+
+            self.ScoreListShowIntervalCounter = self.ScoreListShowIntervalCounter + 1
+            container:PlayAnimation("Enable")
+        end,
+        interval,
+        delay)
 end
 
 function XUiBossInshotSettlement:OnDynamicTableEvent(event, index, grid)
@@ -293,7 +439,6 @@ function XUiBossInshotSettlement:OnDynamicTableEvent(event, index, grid)
         for _, g in pairs(grids) do
             g.GameObject:SetActive(false)
         end
-        self:ClearGridsTimer()
         self.GridIndex = 1
         self.GridsTimer = XScheduleManager.Schedule(function()
             local item = grids[self.GridIndex]
@@ -305,46 +450,27 @@ function XUiBossInshotSettlement:OnDynamicTableEvent(event, index, grid)
     end
 end
 
-function XUiBossInshotSettlement:ClearDynamicTimer()
-    if self.DynamicTimer then
-        XScheduleManager.UnSchedule(self.DynamicTimer)
-        self.DynamicTimer = nil
-    end
-end
-
-function XUiBossInshotSettlement:ClearGridsTimer()
-    if self.GridsTimer then
-        XScheduleManager.UnSchedule(self.GridsTimer)
-        self.GridsTimer = nil
-    end
-end
-
 -- 播放滚动效果
 function XUiBossInshotSettlement:PlayScoreAnimation()
-    if self.IsPopClose then
-        return
-    end
-
-    self.IsPopClose = true
-    local time = 2
+    local time = CS.XGame.ClientConfig:GetInt("BossInshotSettlementScoreAnimationDuration") / 1000.0
     if self._Control:IsFestivalActivityStage(self.StageId) then
         -- 播放通关时间滚动效果
         local result = XMVCA.XFuben:GetCurFightResult()
         local costTime = math.abs(result.LeftTime)
         self:Tween(time, function(f)
-            self.TxtScoreNum:TextToSprite(XUiHelper.GetTime(costTime * f, XUiHelper.TimeFormatType.ESCAPE_REMAIN_TIME))
+            self.TxtScoreNum.text = XUiHelper.GetTime(costTime * f, XUiHelper.TimeFormatType.ESCAPE_REMAIN_TIME)
         end, function()
-            self.TxtScoreNum:TextToSprite(XUiHelper.GetTime(costTime, XUiHelper.TimeFormatType.ESCAPE_REMAIN_TIME))
+            self.TxtScoreNum.text = XUiHelper.GetTime(costTime, XUiHelper.TimeFormatType.ESCAPE_REMAIN_TIME)
         end)
         return
     end
     
     -- 播放分数滚动效果
     self:Tween(time, function(f)
-        self.TxtScoreNum:TextToSprite(tostring(XMath.ToMinInt(self.Score * f)))
+        self.TxtScoreNum.text = tostring(XMath.ToMinInt(self.Score * f))
     end, function()
-        self.TxtScoreNum:TextToSprite(tostring(self.Score))
+        self.TxtScoreNum.text = tostring(self.Score)
     end)
 end
 
-return XUiBossInshotSettlement
+return XUiBossInshotSettlement

@@ -29,7 +29,15 @@ function XFashionStoryAgency:OnInit()
 
     --跳转功能
     self.FashionStorySkip = {
-        SkipToStore = 1   --跳转到外部商店
+        SkipToStore = 1,   --跳转到外部商店
+    }
+
+    --奖励领取状态
+    self.RewardState = {
+        None       = 0, --无奖励配置(RewardId 为空或 0)
+        Locked     = 1, --奖励活动未到开启时间
+        CanReceive = 2, --可领取(已开启、未领取)
+        Received   = 3, --已领取
     }
 
     --关卡未解锁原因
@@ -400,6 +408,71 @@ function XFashionStoryAgency:GetPreSingleLineId(singleLineId)
     end
 end
 
+--获取奖励活动入口的解锁 timeId
+function XFashionStoryAgency:GetRewardActivityTimeId(activityId)
+    return self._Model:GetRewardActivityTimeId(activityId)
+end
+
+--判断奖励活动入口是否已解锁
+function XFashionStoryAgency:IsRewardActivityUnlock(activityId)
+    local timeId = self:GetRewardActivityTimeId(activityId)
+    return timeId > 0 and XFunctionManager.CheckInTimeByTimeId(timeId, false)
+end
+
+function XFashionStoryAgency:GetLockTextByTimeId(timeId, beforeStartTextKey, afterEndTextKey)
+    afterEndTextKey = afterEndTextKey or 'FashionStoryActivityEnd'
+    local now = XTime.GetServerNowTimestamp()
+    local startTime = XFunctionManager.GetStartTimeByTimeId(timeId)
+    if now < startTime then
+        local timeStr = XUiHelper.GetTime(startTime - now, XUiHelper.TimeFormatType.CHATEMOJITIMER)
+        return XUiHelper.GetText(beforeStartTextKey, timeStr)
+    end
+    return XUiHelper.GetText(afterEndTextKey)
+end
+
+function XFashionStoryAgency:GetTimeLockText(timeId)
+    return self:GetLockTextByTimeId(timeId, 'FashionStoryUnlockAfterTime')
+end
+
+function XFashionStoryAgency:GetRewardActivityLockText(timeId)
+    return self:GetLockTextByTimeId(timeId, 'FashionStoryRewardLock', 'FashionStoryRewardActivityEnd')
+end
+
+--获取奖励 RewardId(0 表示该条目未配置奖励)
+function XFashionStoryAgency:GetRewardId(activityId)
+    return self._Model:GetRewardId(activityId) or 0
+end
+
+--获取奖励活动跳转 SkipId
+function XFashionStoryAgency:GetRewardSkipId(activityId)
+    return self._Model:GetRewardSkipId(activityId)
+end
+
+--判断奖励是否已领取
+--TODO(@奖励活动接入后改成委托查询):
+--  return XMVCA.XSomeRewardActivity:IsRewardReceived(rewardId)
+--  其中 XSomeRewardActivity 为 RewardSkipId 跳转目标的活动 Manager
+function XFashionStoryAgency:IsRewardReceived(activityId)
+    local rewardId = self:GetRewardId(activityId)
+    if rewardId == 0 then return false end
+    return false
+end
+
+--获取奖励领取状态(供 UI 按钮、红点统一使用)
+function XFashionStoryAgency:GetRewardClaimState(activityId)
+    local rewardId = self:GetRewardId(activityId)
+    if not self:IsRewardActivityUnlock(activityId) then
+        return self.RewardState.Locked
+    end
+    if rewardId == 0 then
+        return self.RewardState.None
+    end
+    if self:IsRewardReceived(activityId) then
+        return self.RewardState.Received
+    end
+    return self.RewardState.CanReceive
+end
+
 function XFashionStoryAgency:EnterPaintingGroupPanel(singleLineId, isOpen, lockReason, callback)
     if singleLineId then
         if isOpen then
@@ -411,7 +484,8 @@ function XFashionStoryAgency:EnterPaintingGroupPanel(singleLineId, isOpen, lockR
             end
         else
             if lockReason == self.GroupUnOpenReason.OutOfTime then
-                XUiManager.TipText("FashionStoryGroupOutTime")
+                local timeId = self._Model:GetSingleLineTimeId(singleLineId)
+                XUiManager.TipMsg(self:GetTimeLockText(timeId))
             elseif lockReason == self.GroupUnOpenReason.PreGroupUnPass then
                 local preGroupId = XMVCA.XFashionStory:GetPreSingleLineId(singleLineId)
                 if preGroupId then
@@ -534,6 +608,10 @@ function XFashionStoryAgency:GetSingleLineAsGroupStoryIcon(id)
     return self._Model:GetSingleLineAsGroupStoryIcon(id)
 end
 
+function XFashionStoryAgency:GetStoryDecorateIcon(id)
+    return self._Model:GetStoryDecorateIcon(id)
+end
+
 function XFashionStoryAgency:GetSingleLineSummerFashionTitleImg(id)
     return self._Model:GetSingleLineSummerFashionTitleImg(id)
 end
@@ -597,6 +675,46 @@ end
 
 function XFashionStoryAgency:GetTrialLockIcon(id)
     return self._Model:GetTrialLockIcon(id)
+end
+
+function XFashionStoryAgency:GetTrialImgName(id)
+    return self._Model:GetTrialImgName(id)
+end
+
+----------------------------------------------FashionStoryTrialEntry.tab 入口表透传----------------------------------------------------------
+
+function XFashionStoryAgency:GetAllTrialEntryStageIds()
+    return self._Model:GetAllTrialEntryStageIds()
+end
+
+--判断试玩关是否解锁(基于 ExperimentLevel.tab 的 TimeId)
+function XFashionStoryAgency:CheckTrialStageIsOpenByTimeId(stageId)
+    local timeId = self:GetTrialStageTimeId(stageId)
+    if not timeId or timeId == 0 or XFunctionManager.CheckInTimeByTimeId(timeId, false) then
+        return true
+    end
+    return false, self.TrialStageUnOpenReason.OutOfTime
+end
+
+function XFashionStoryAgency:GetTrialStageTimeId(stageId)
+    local trialLevel = XDataCenter.FubenExperimentManager.GetTrialLevelByStageId(stageId)
+    return trialLevel and trialLevel.TimeId
+end
+
+function XFashionStoryAgency:GetEntryTrialFace(stageId)
+    return self._Model:GetEntryTrialFace(stageId)
+end
+
+function XFashionStoryAgency:GetEntryTrialFinishTag(stageId)
+    return self._Model:GetEntryTrialFinishTag(stageId)
+end
+
+function XFashionStoryAgency:GetEntryTrialLockIcon(stageId)
+    return self._Model:GetEntryTrialLockIcon(stageId)
+end
+
+function XFashionStoryAgency:GetEntryTrialImgName(stageId)
+    return self._Model:GetEntryTrialImgName(stageId)
 end
 
 return XFashionStoryAgency

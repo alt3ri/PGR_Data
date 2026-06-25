@@ -39,9 +39,19 @@ function XMovieActionActorAppear:OnEnter()
         IsHide = actor:IsHide()
     }
     local fixPos = self:GetFixPos()
+    -- 演员（重新）出现时把常规演员缩放重置为1：必须放在这里而不是 UpdateActor，
+    -- 因为同一角色再次出现时 UpdateActor 会因 actorId 相同早返回，重置不会执行。
+    -- 18号大头像缩放由 AvatarScale 专属管理（下方 UpdateActor 之后重设），这里不能碰。
+    if self.ActorIndex ~= XMVCA.XMovie.EnumConst.ACTOR_AVATAR_INDEX then
+        actor:SetImageScale(1)
+    end
     actor:UpdateActor(self.ActorId)
     actor:SetImagePos(fixPos)
     actor:SetFace(self.FaceId)
+    -- 18号头像专属：用真实 Scale 控制大小（须在 UpdateActor 之后，因换角色会重置 CustomScale）
+    if self.ActorIndex == XMVCA.XMovie.EnumConst.ACTOR_AVATAR_INDEX then
+        actor:SetImageScale(XMovieConfigs.GetActorAvatarScale(self.ActorId))
+    end
 end
 
 function XMovieActionActorAppear:OnRunning()

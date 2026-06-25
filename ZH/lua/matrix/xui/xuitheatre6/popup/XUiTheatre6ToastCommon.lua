@@ -47,9 +47,9 @@ function XUiTheatre6ToastCommon:InitAutoScript()
 end
 
 function XUiTheatre6ToastCommon:AutoInitUi()
-    self.BtnClose = self.Transform:Find("SafeAreaContentPane/BtnClose"):GetComponent("Button")
+    self.BtnClose = self.Transform:Find("SafeAreaContentPane/BtnClose"):GetComponent(typeof(CS.UnityEngine.UI.Button))
     self.PanelTip = self.Transform:Find("SafeAreaContentPane/PanelTip")
-    self.TxtInfo = self.Transform:Find("SafeAreaContentPane/PanelTip/TxtInfo"):GetComponent("Text")
+    self.TxtInfo = self.Transform:Find("SafeAreaContentPane/PanelTip/TxtInfo"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.PanelError = self.Transform:Find("SafeAreaContentPane/PanelError")
     self.PanelSuccess = self.Transform:Find("SafeAreaContentPane/PanelSuccess")
     self.PanelError.gameObject:SetActiveEx(false)

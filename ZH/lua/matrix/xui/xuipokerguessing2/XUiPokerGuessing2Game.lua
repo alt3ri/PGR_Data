@@ -145,7 +145,7 @@ function XUiPokerGuessing2Game:TimerQuick(callback, duration)
     local time = CS.UnityEngine.Time.time + duration
     local timer
     timer = XScheduleManager.ScheduleForever(function()
-        if CS.UnityEngine.Time.time >= time then
+        if XLuaTime.time >= time then
             XScheduleManager.UnSchedule(timer)
             self:_RemoveTimerIdAndDoCallback(timer)
             if callback then

@@ -62,6 +62,11 @@ function XUiBigWorldProcessSwitchGrid:_RefreshState()
     self.BtnGo:ShowReddot(self._VersionEntity:IsNew())
     self.BtnGo:SetDisable(not self._VersionEntity:IsValid())
     self.BtnGo:SetRawImage(self._VersionEntity:GetSwitchIcon())
+
+    if self.Red then
+        self.Red.gameObject:SetActiveEx(self._VersionEntity:IsReddot())
+    end
+
     self._VersionEntity:Record()
 end
 

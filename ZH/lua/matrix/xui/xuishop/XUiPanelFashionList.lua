@@ -49,9 +49,15 @@ function XUiPanelFashionList:ShowPanel(id)
     self:ShowGoods()
     self.DynamicTable:SetDataSource(self.GoodsList)
     self.DynamicTable:ReloadDataASync()
+    
+    self.ShopId = id
+    self.ShowAssetsItemIds = XShopManager.GetShopShowIdList(self.ShopId)
 end
 
 function XUiPanelFashionList:ShowScreenPanel(shopId, groupId, selectTag, isKeepOrder)
+    self.ShopId = shopId
+    self.ShowAssetsItemIds = XShopManager.GetShopShowIdList(self.ShopId)
+
     self.GameObject:SetActive(true)
     self.GoodsList = XShopManager.GetScreenGoodsListByTag(shopId, groupId, selectTag)
     if isKeepOrder then
@@ -71,6 +77,7 @@ function XUiPanelFashionList:OnDynamicTableEvent(event, index, grid)
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         local data = self.GoodsList[index]
         grid:UpdateData(data)
+        grid:SetCustomAssetsItemIdsForDetail(self.ShowAssetsItemIds)
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_RECYCLE then
         grid:OnRecycle()
     end

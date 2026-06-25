@@ -392,11 +392,11 @@ function XPlanetMainScene:InitTalentTeamObj()
                 self:ReleaseTalentTeamObj()
                 return
             end
-            self._Explore:Update(CS.UnityEngine.Time.deltaTime * 1)
+            self._Explore:Update(XLuaTime.deltaTime * 1)
             if self._PlanetCamera then
-                self:CameraUpdate(self._Explore, CS.UnityEngine.Time.deltaTime * 1)
+                self:CameraUpdate(self._Explore, XLuaTime.deltaTime * 1)
             end
-            self:MainRotate(CS.UnityEngine.Time.deltaTime)
+            self:MainRotate(XLuaTime.deltaTime)
         end, 0)
     end
     self:TalentTeamResume()

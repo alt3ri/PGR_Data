@@ -238,7 +238,7 @@ function XShopManager.GetShopShowIdList(shopId)
         return
     end
 
-    local list = {}
+    local list = table.empty
     if info.ShowIds and #info.ShowIds > 0 then
         list = info.ShowIds
     end
@@ -730,6 +730,8 @@ function XShopManager.BuyShop(shopId, goodsId, count, cb, err_cb, isActivityOpen
         end
         AddBuyTimes(shopId, goodsId, count)
         cb(res)
+        
+        XEventManager.DispatchEvent(XEventId.EVENT_SHOP_BUY_SUCCESS, res)
     end)
 end
 

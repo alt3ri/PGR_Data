@@ -7,8 +7,8 @@ local XUiPassportPanelGrid = require("XUi/XUiPassport/XUiPassportPanelGrid")
 local XUiPassportPanel = XClass(XUiNode, "XUiPassportPanel")
 
 --通行证面板
-function XUiPassportPanel:OnStart(onGridClick)
-    self.OnGridClick = onGridClick or function() end
+function XUiPassportPanel:OnStart(refreshOneKeyGetRewardsButton)
+    self.RefreshOneKeyGetRewardsButton = refreshOneKeyGetRewardsButton or function() end
     self.LevelIdList = false
     self:InitRightGrids()
     self:InitDynamicList()
@@ -41,7 +41,7 @@ function XUiPassportPanel:OnRightGridClick(i)
         end
     end
 
-    self.OnGridClick()
+    self.RefreshOneKeyGetRewardsButton()
 end
 
 function XUiPassportPanel:InitData()
@@ -55,8 +55,8 @@ function XUiPassportPanel:InitDynamicList()
     self.DynamicTable:SetDelegate(self)
     self.Grid01.gameObject:SetActiveEx(false)
 
-    local gridWidth = self.Grid01:GetComponent("RectTransform").rect.size.x
-    local panelWidth = self.PanelItemList:GetComponent("RectTransform").rect.size.x
+    local gridWidth = self.Grid01:GetComponent(typeof(CS.UnityEngine.RectTransform)).rect.size.x
+    local panelWidth = self.PanelItemList:GetComponent(typeof(CS.UnityEngine.RectTransform)).rect.size.x
     self.DynamicTableOffsetIndex = math.floor(panelWidth / gridWidth / 2)
 end
 
@@ -74,6 +74,7 @@ end
 function XUiPassportPanel:Refresh()
     self:UpdateDynamicTable()
     self:UpdateLeftGrid()
+    self.RefreshOneKeyGetRewardsButton()
 end
 
 --遍历DynamicTable的Grid，根据最大等级的LevelId刷新
@@ -189,7 +190,7 @@ end
 
 function XUiPassportPanel:OnDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_INIT then
-        grid:Init(self.Parent, self.OnGridClick)
+        grid:Init(self.Parent, self.RefreshOneKeyGetRewardsButton)
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         local levelId = self.LevelIdList[index]
         grid:Refresh(levelId)

@@ -1064,15 +1064,36 @@ local function AddAudioDebugFunction()
     )
 
     Panel:AddToggle(
-        "打印停止音频日志",
+        "打印Lua播放日志",
         function()
-            CS.XAudioManager.SetIsAudioStopLogInConsole()
+            XLuaAudioManager.IsLuaAudioPlayLogInConsole = not XLuaAudioManager.IsLuaAudioPlayLogInConsole
         end
     )
 
-    Panel:AddToggle(
-        "打印音频组件日志",
-        function()
+    Panel:AddToggle(
+        "打印停止音频日志",
+        function()
+            CS.XAudioManager.SetIsAudioStopLogInConsole()
+        end
+    )
+
+    Panel:AddToggle(
+        "打印Source销毁停止日志",
+        function()
+            CS.XAudioManager.SetIsAudioSourceDestroyLogInConsole()
+        end
+    )
+
+    Panel:AddToggle(
+        "打印CRI停止音频日志",
+        function()
+            CS.XAudioManager.SetIsCriProfilerStopLogInConsole()
+        end
+    )
+
+    Panel:AddToggle(
+        "打印音频组件日志",
+        function()
             CS.XAudioManager.SetIsComponentLogInConsole()
         end
     )
@@ -1088,6 +1109,13 @@ local function AddAudioDebugFunction()
         "打印Aisac日志",
         function()
             CS.XAudioManager.SetIsAisacLogInConsole()
+        end
+    )
+
+    Panel:AddToggle(
+        "打印DSP Bus日志",
+        function()
+            CS.XAudioManager.SetIsCriDspBusLogInConsole()
         end
     )
 
@@ -1109,6 +1137,13 @@ local function AddAudioDebugFunction()
         "打印音量信息",
         function()
             XLuaAudioManager.PrintVolumeInfo()
+        end
+    )
+
+    Panel:AddButton(
+        "打印DSP Bus信息",
+        function()
+            CS.XAudioManager.PrintCriDspBusInfo()
         end
     )
 
@@ -1153,6 +1188,71 @@ local function AddAudioDebugFunction()
             CS.XAudioManager.ChangeAllSourceAisacController(aisacControlName, aisacValue)
         end
     )
+
+    ---------全局Selector begin------------
+    local selectorName = nil
+    Panel:AddInput(
+        "SelectorName",
+        function(value)
+            selectorName = value
+        end
+    )
+
+    local labelName = nil
+    Panel:AddInput(
+        "LabelName",
+        function(value)
+            labelName = value
+        end
+    )
+
+    Panel:AddButton(
+        "设置全局Selector",
+        function()
+            if string.IsNilOrEmpty(selectorName) or string.IsNilOrEmpty(labelName) then
+                XUiManager.TipMsg("请填写SelectorName和LabelName")
+                return
+            end
+            CS.XAudioManager.SetAllSourceSelector(selectorName, labelName)
+            XUiManager.TipMsg("全局Selector已设置: " .. selectorName .. " = " .. labelName)
+        end
+    )
+    ---------全局Selector end------------
+
+    ---------Music EG Override begin------------
+    local egAttack = -1
+    Panel:AddInput(
+        "EG_Attack(0~1,-1恢复)",
+        function(value)
+            egAttack = tonumber(value) or -1
+        end
+    )
+
+    local egRelease = -1
+    Panel:AddInput(
+        "EG_Release(0~1,-1恢复)",
+        function(value)
+            egRelease = tonumber(value) or -1
+        end
+    )
+
+    Panel:AddButton(
+        "设置Music EG",
+        function()
+            CS.XAudioManager.SetGmMusicEGAttack(egAttack)
+            CS.XAudioManager.SetGmMusicEGRelease(egRelease)
+            local attackName = CS.XAudioManager.GetAudioClientConfig("EG_Attack")
+            local releaseName = CS.XAudioManager.GetAudioClientConfig("EG_Release")
+            if egAttack >= 0 then
+                CS.XAudioManager.ChangeMusicSourceAisac(attackName, egAttack)
+            end
+            if egRelease >= 0 then
+                CS.XAudioManager.ChangeMusicSourceAisac(releaseName, egRelease)
+            end
+            XUiManager.TipMsg(string.format("Music EG: Attack=%.2f, Release=%.2f", egAttack, egRelease))
+        end
+    )
+    ---------Music EG Override end------------
 end
 
 -- 视频调试

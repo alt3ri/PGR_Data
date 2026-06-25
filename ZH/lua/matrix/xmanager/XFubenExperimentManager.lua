@@ -100,16 +100,18 @@ XFubenExperimentManagerCreator = function()
 	end
 
 	function XFubenExperimentManager.GetTrialLevelByGroupID(groupID)
-		local levels =  TrialLevelDic[groupID] or {}
+		local levels = TrialLevelDic[groupID] or {}
 		local temps = {}
 		for _, v in ipairs(levels) do
-			if v.TimeId and v.TimeId ~= 0 then
-				if  XFunctionManager.CheckInTimeByTimeId(v.TimeId) then
-					tableInsert(temps,v)
-				end
-			else
-				tableInsert(temps,v)
-			end
+            if v.IsShow == 0 then goto CONTINUE end
+            if v.TimeId and v.TimeId ~= 0 then
+                if XFunctionManager.CheckInTimeByTimeId(v.TimeId) then
+                    tableInsert(temps, v)
+                end
+            else
+                tableInsert(temps, v)
+            end
+            ::CONTINUE::
 		end
 		return temps
 	end
@@ -486,7 +488,19 @@ XFubenExperimentManagerCreator = function()
                 end
             end
         end
-        
+
+    end
+
+    function XFubenExperimentManager.GetTrialLevelByStageId(stageId)
+        if not stageId or stageId == 0 then return nil end
+        for _, group in pairs(TrialLevelDic) do
+            for _, v in pairs(group) do
+                if v.SingStageId == stageId then
+                    return v
+                end
+            end
+        end
+        return nil
     end
     ------------------副本入口扩展 end-------------------------
 

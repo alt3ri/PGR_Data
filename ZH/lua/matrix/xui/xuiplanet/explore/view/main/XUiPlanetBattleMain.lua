@@ -96,8 +96,8 @@ function XUiPlanetBattleMain:OnStart()
             if not self.GameObject:Exist() then
                 return
             end
-            self._Explore:Update(CS.UnityEngine.Time.deltaTime)
-            self._Scene:CameraUpdate(self._Explore, CS.UnityEngine.Time.deltaTime * self._Explore:GetTimeScale())
+            self._Explore:Update(XLuaTime.deltaTime)
+            self._Scene:CameraUpdate(self._Explore, XLuaTime.deltaTime * self._Explore:GetTimeScale())
         end, 0)
     end
     self._Explore:OnStart()

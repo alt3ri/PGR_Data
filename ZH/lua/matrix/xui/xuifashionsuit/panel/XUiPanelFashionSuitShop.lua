@@ -103,7 +103,22 @@ function XUiPanelFashionSuitShop:ShowGoodsPrice()
     self._Parent:SetConsumeIcon(true, consumeId)
     self._Parent:SetOriginalPrice(self.Sales ~= 100, consumeCount)
     self._CurPrice = XMVCA.XFashionSuit:GetRealGoodsPriceWithDiscount(self._GoodsDataDict)
-    self._Parent:SetCurPrice(self._CurPrice)
+
+    -- 需要判断是否足够
+    local isEnough = self:_CheckBuyEnough(self._CurPrice, consumeId)
+
+    local priceStr = isEnough and tostring(self._CurPrice) or XUiHelper.GetText("PurchaseFashionSuitDetailCoinNotEnough", self._CurPrice)
+    
+    self._Parent:SetCurPrice(priceStr)
+end
+
+---@return number, number 实际价格，原价, itemId
+function XUiPanelFashionSuitShop:GetPrice()
+    local consumeId = self._GoodsData.ConsumeList[1].Id
+    local consumeCount = XMVCA.XFashionSuit:GoodsConsumeCount(self._GoodsDataDict)
+    local realPrice = XMVCA.XFashionSuit:GetRealGoodsPriceWithDiscount(self._GoodsDataDict)
+    
+    return realPrice, consumeCount, consumeId
 end
 
 function XUiPanelFashionSuitShop:CheckGoodsRemovalTime()
@@ -142,6 +157,19 @@ function XUiPanelFashionSuitShop:GoodsConditionIds()
     return conditionIds
 end
 
+--- 判断当前是否足够资源购买，参数依赖外部传参
+function XUiPanelFashionSuitShop:_CheckBuyEnough(needCount, consumeId)
+
+    if not XTool.IsNumberValidEx(needCount) or not XTool.IsNumberValidEx(consumeId) then
+        -- 参数不充分默认足够
+        return true
+    end
+
+    local haveCount = XDataCenter.ItemManager.GetCount(consumeId)
+
+    return haveCount >= needCount
+end
+
 --region V4.2商店打折
 
 function XUiPanelFashionSuitShop:GetDiscountActivityIsOpen(shopId, goodsData)
@@ -176,17 +204,14 @@ function XUiPanelFashionSuitShop:OnShopBuy()
     end
 
     if self._Helper:IsEnableGroupSales() then
-        local consumeId = self._GoodsData.ConsumeList[1].Id
-        XMVCA.XFashionSuit:ShowGroupSalesPopup(self._Params, consumeId, self._CurPrice, function()
-            local shopIds, goodsIds = {}, {}
-            for data, shopId in pairs(self._GoodsDataDict) do
-                table.insert(shopIds, shopId)
-                table.insert(goodsIds, data.Id)
-            end
-            XShopManager.MultiBuyShop(shopIds, goodsIds, function(goodList)
-                self:OnShopBuyViewRefresh(goodList)
-            end, nil, self.ActivityOpen)
-        end)
+        local shopIds, goodsIds = {}, {}
+        for data, shopId in pairs(self._GoodsDataDict) do
+            table.insert(shopIds, shopId)
+            table.insert(goodsIds, data.Id)
+        end
+        XShopManager.MultiBuyShop(shopIds, goodsIds, function(goodList)
+            self:OnShopBuyViewRefresh(goodList)
+        end, nil, self.ActivityOpen)
     else
         XShopManager.BuyShop(self._ShopId, self._GoodsData.Id, 1, function(res)
             self:OnShopBuyViewRefresh(res.GoodList)
@@ -197,10 +222,12 @@ end
 function XUiPanelFashionSuitShop:OnShopBuyViewRefresh(goodList)
     self._Parent:UpdateView()
     self._Parent.Parent:ShowGift()
-    self._Parent.Parent:CallPurchaseCb(goodList)
+    self._Parent.Parent.Parent:CallPurchaseCb(goodList)
     XUiManager.TipMsg(XUiHelper.GetText("BuySuccess"), nil, function()
         if not XTool.IsTableEmpty(goodList) then
-            XUiManager.OpenUiObtain(goodList)
+            XUiManager.OpenUiObtain(goodList, nil, nil, nil, nil, {
+                IsIgnoreOpenFashionTipCheck = true
+            })
         end
     end)
 end

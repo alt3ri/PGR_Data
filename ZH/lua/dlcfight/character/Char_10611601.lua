@@ -342,9 +342,7 @@ end
 function XCharChromeEcology:RegisterMachineStateTransition()
     -- 设置寻路状态枚举值
     self.FindPathStateEnum = StateEnum.FindPath
-    self.NextStateList = {
-        StateEnum.Auditorium, StateEnum.LifeArea, StateEnum.MonumentSquare, StateEnum.TeachingBuilding, StateEnum.DroneClub
-    }
+    
     -- 其他状态到寻路状态
     self:RegisterInFindPathStateTransition(StateEnum.Auditorium, function()
         if self._stateMachine:CheckDataBoard(DataBoardKey.Auditorium, 1) then 

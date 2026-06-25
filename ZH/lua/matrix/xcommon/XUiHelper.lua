@@ -329,7 +329,10 @@ function XUiHelper.ScrollTo(scrollRect, targetTransform, isTween, tweenTime, fin
     local offsetY = targetPosInContent.y - contentRect.yMin - viewportRect.height * 0.5
 
     local currentPos = scrollRect.normalizedPosition
-    local targetNormalizedPos = Vector2(currentPos.x, currentPos.y)
+    local targetNormalizedPos = {
+        x = currentPos.x, 
+        y = currentPos.y,
+    }
 
     if widthOffset > 0 then
         targetNormalizedPos.x = CS.UnityEngine.Mathf.Clamp(offsetX / widthOffset, 0, 1)
@@ -346,10 +349,10 @@ function XUiHelper.ScrollTo(scrollRect, targetTransform, isTween, tweenTime, fin
             local x = currentPos.x + time * (targetNormalizedPos.x - currentPos.x)
             local y = currentPos.y + time * (targetNormalizedPos.y - currentPos.y)
 
-            scrollRect.normalizedPosition = Vector2(x, y)
+            scrollRect:SetNormalizedPosition(x, y)
         end, finishCallback, easeMethod)
     else
-        scrollRect.normalizedPosition = targetNormalizedPos
+        scrollRect:SetNormalizedPosition(targetNormalizedPos.x, targetNormalizedPos.y)
     end
 end
 

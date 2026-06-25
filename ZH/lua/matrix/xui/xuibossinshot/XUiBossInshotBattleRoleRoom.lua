@@ -26,18 +26,19 @@ function XUiBossInshotBattleRoleRoom:AOPOnStartAfter(rootUi)
     rootUi.PanelSkill.gameObject:SetActiveEx(false)
 end
 
-function XUiBossInshotBattleRoleRoom:AOPOnCharacterClickBefore(rootUi, index)
-    local isStop = false
-    local maxCharCnt = XMVCA.XBossInshot:GetBattleTeamMaxCharCount() -- 最大上阵人数
-    local isCharCntLimit = self.Team:GetEntityCount() >= maxCharCnt -- 角色数量达到上限
-    local isSelectedChar = self.Team:GetEntityIdByTeamPos(index) ~= 0 -- 已选择角色
-    if isCharCntLimit and not isSelectedChar then
-        isStop = true
-        local tips = XUiHelper.GetText("BossInshotTeamCharLimitTips", maxCharCnt)
-        XUiManager.TipError(tips)
-    end
-    return isStop
-end
+-- 这个函数不知道为什么写了两次，先注释掉，遇到问题后可以参考
+-- function XUiBossInshotBattleRoleRoom:AOPOnCharacterClickBefore(rootUi, index)
+--     local isStop = false
+--     local maxCharCnt = XMVCA.XBossInshot:GetBattleTeamMaxCharCount() -- 最大上阵人数
+--     local isCharCntLimit = self.Team:GetEntityCount() >= maxCharCnt -- 角色数量达到上限
+--     local isSelectedChar = self.Team:GetEntityIdByTeamPos(index) ~= 0 -- 已选择角色
+--     if isCharCntLimit and not isSelectedChar then
+--         isStop = true
+--         local tips = XUiHelper.GetText("BossInshotTeamCharLimitTips", maxCharCnt)
+--         XUiManager.TipError(tips)
+--     end
+--     return isStop
+-- end
 
 function XUiBossInshotBattleRoleRoom:AOPOnClickFight()
     local canEnterFight, errorTip = self:GetIsCanEnterFight(self.Team, self.StageId)
@@ -49,6 +50,7 @@ function XUiBossInshotBattleRoleRoom:AOPOnClickFight()
     end
     
     local isAssist = CS.UnityEngine.PlayerPrefs.GetInt(XPrefs.AssistSwitch .. XPlayer.Id) == 1
+    XMVCA.XBossInshot:SetTowerLevelId(nil, nil)
     self:EnterFight(self.Team, self.StageId, nil, isAssist)
     return true
 end

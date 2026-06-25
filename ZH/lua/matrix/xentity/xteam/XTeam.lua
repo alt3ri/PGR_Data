@@ -491,6 +491,10 @@ function XTeam:CheckEntitiesValid(validEntities)
     local entityChanged, needChangeCaptainPos, newEntityIds = XDataCenter.TeamManager.GetValidEntitiesByLimitEntityIds(tempEntityIds, validEntities, self.CaptainPos)
     
     if entityChanged then
+        if XMain.IsDebug and not XTool.TableShallowEquals(newEntityIds, self.EntitiyIds) then
+            XLog.Warning("[XTeam:CheckEntitiesValid] 队伍角色有效性检查中修改了已有的队伍！")
+        end
+
         -- 使用新队伍
         self.EntitiyIds = newEntityIds
         -- 刷新效应技能选择

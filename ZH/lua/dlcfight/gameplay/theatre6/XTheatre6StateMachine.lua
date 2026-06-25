@@ -83,9 +83,9 @@ function XTheatre6StateMachine:SetStateById(newStateId)
 
     local oldState = self._curState
     if oldState == newState then return newState.ReEnter and newState:ReEnter() end
-
-    -- owner:LogError(".XTheatre6StateMachine.SetStateById is called. State changes from " ..
-    --     tostring(oldState and oldState.Name) .. " to " .. tostring(newState and newState.Name))
+     
+     --owner:LogError(".XTheatre6StateMachine.SetStateById is called. State changes from " ..
+     --    tostring(oldState and oldState.Name) .. " to " .. tostring(newState and newState.Name))
 
     if oldState and oldState.End then oldState:End(newState) end
     self._curState = newState

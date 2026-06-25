@@ -106,7 +106,7 @@ function XUiMiniGamesCollectionMain:GetDefaultSelectIndex(activityCfgs)
     local selectedGameType = self._Control:GetSelectedGameType()
     if XTool.IsNumberValid(selectedGameType) then
         for index, gameCfg in ipairs(activityCfgs) do
-            if (gameCfg.GameType or gameCfg.Id) == selectedGameType then
+            if gameCfg.GameType == selectedGameType then
                 return index
             end
         end
@@ -121,7 +121,7 @@ function XUiMiniGamesCollectionMain:SelectGame(gameCfg)
     end
 
     self._CurGameCfg = gameCfg
-    self._CurGameType = gameCfg.GameType or gameCfg.Id
+    self._CurGameType = gameCfg.GameType
     self._CurStageId = gameCfg.StageId
     self._Control:SetSelectedGameType(self._CurGameType)
     self.RImgGame:SetRawImage(gameCfg.Image)
@@ -178,7 +178,7 @@ function XUiMiniGamesCollectionMain:OnBtnGiveUpClick(eventData)
     end)
 end
 
-function XUiMiniGamesCollectionMain:OnBtnStartClick(eventData)
+function XUiMiniGamesCollectionMain:OnBtnStartClick()
     local targetGameType = self._CurGameType
     if not XTool.IsNumberValid(targetGameType) then
         return

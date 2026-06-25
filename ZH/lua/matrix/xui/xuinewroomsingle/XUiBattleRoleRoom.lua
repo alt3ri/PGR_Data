@@ -60,7 +60,14 @@ end
 
 -- team : XTeam, 不传的话默认使用主线队伍, 如果是旧系统改过来，可以参考下XTeamManager后面新加的接口去处理旧队伍数据
 -- challengeCount : number, 挑战次数
-function XUiBattleRoleRoom:OnStart(stageId, team, proxy, challengeCount, isReadArgsByCacheWithAgain)
+function XUiBattleRoleRoom:OnStart(
+    stageId,
+    team,
+    proxy,
+    challengeCount,
+    isReadArgsByCacheWithAgain,
+    proxyArg)
+
     self.StageId = stageId
     local stageConfig = self:GetStageCfg(stageId)
     
@@ -133,7 +140,7 @@ function XUiBattleRoleRoom:OnStart(stageId, team, proxy, challengeCount, isReadA
         proxyInstance = CreateAnonClassInstance(proxy, XUiBattleRoleRoomDefaultProxy, team, stageId)
     else
         -- 使用自定义类
-        proxyInstance = proxy.New(team, stageId)
+        proxyInstance = proxy.New(team, stageId, proxyArg)
     end
     self.Proxy = proxyInstance
     self.ChallengeCount = challengeCount

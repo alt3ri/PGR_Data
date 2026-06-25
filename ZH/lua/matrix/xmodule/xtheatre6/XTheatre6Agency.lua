@@ -48,17 +48,27 @@ function XTheatre6Agency:InitRpc()
     XRpc.NotifyTheatre6AttrChange = self:SafeHandler(self.NotifyTheatre6AttrChange)
     XRpc.NotifyTheatre6AttrPackChange = self:SafeHandler(self.NotifyTheatre6AttrPackChange)
     XRpc.NotifyTheatre6SkillUpEffect = self:SafeHandler(self.NotifyTheatre6SkillUpEffect)
-    XRpc.NotifyTheatre6ModeChange = handler(self,self.NotifyTheatre6ModeChange)
+    XRpc.NotifyTheatre6PvpGetActionPoint = handler(self, self.NotifyTheatre6PvpGetActionPoint)
+    XRpc.NotifyTheatre6PvpTinyBattleState = handler(self, self.NotifyTheatre6PvpTinyBattleState)
+    XRpc.NotifyTheatre6BattleRecordsUpdate = handler(self, self.NotifyTheatre6BattleRecordsUpdate)
+    XRpc.NotifyTheatre6DefenseUpdate = handler(self, self.NotifyTheatre6DefenseUpdate)
+    XRpc.NotifyTheatre6ModeChange = handler(self, self.NotifyTheatre6ModeChange)
+    XRpc.NotifyTheatre6PvpBattleStatsUpdate = handler(self, self.NotifyTheatre6PvpBattleStatsUpdate)
+    XRpc.NotifyMatchPlayersUpdate = handler(self, self.NotifyMatchPlayersUpdate)
+    XRpc.NotifyTheatre6PvpScoreUpdate = handler(self, self.NotifyTheatre6PvpScoreUpdate)
 end
 
 function XTheatre6Agency:InitEvent()
     XMVCA.XDlcHelper:AddDlcModelIdGetterWithWorldType(XEnumConst.DlcWorld.WorldType.Theatre6, self)
 end
 
+function XTheatre6Agency:RemoveEvent()
+    XMVCA.XDlcHelper:RemoveDlcModelIdGetterWithWorldType(XEnumConst.DlcWorld.WorldType.Theatre6, self)
+end
+
 function XTheatre6Agency:OnRelease()
     self:ClearPendingSettleData()
     self:ClearSkillUpEffectPopupQueue()
-    XMVCA.XDlcHelper:RemoveDlcModelIdGetterWithWorldType(XEnumConst.DlcWorld.WorldType.Theatre6, self)
 end
 
 --region overrride
@@ -217,6 +227,78 @@ function XTheatre6Agency:IsDiffPassTimaes(diffId, times)
     return self._Model:IsDiffPassTimaes(diffId, times)
 end
 
+--- 拥有x个存档
+---@param needCount number 需要的存档数量
+---@return boolean
+function XTheatre6Agency:CheckFileDataCount(needCount)
+    if needCount <= 0 then
+        return false
+    end
+    local fileDataList = self._Model:GetAllFileData()
+    return fileDataList and #fileDataList >= needCount or false
+end
+
+--- 检查PVP战斗次数是否满足条件
+---@param onlyWin boolean 是否仅统计胜利
+---@param includeAdvance boolean 是否包含进阶战斗
+---@param targetCount number 需要达到的次数
+---@param targetRankId number 限制段位（0=不限制段位）
+---@return boolean
+function XTheatre6Agency:CheckPvpBattleCount(onlyWin, includeAdvance, targetCount, targetRankId)
+    local battleStats = self._Model.Pvp:GetBattleStats()
+    if not battleStats then
+        return false
+    end
+
+    local count = 0
+    if onlyWin then
+        count = count + self:GetRankRecordCount(battleStats.NormalBattleWinCounts, targetRankId)
+        if includeAdvance then
+            count = count + self:GetRankRecordCount(battleStats.AdvanceBattleWinCounts, targetRankId)
+        end
+    else
+        count = count + self:GetRankRecordCount(battleStats.NormalBattleCounts, targetRankId)
+        if includeAdvance then
+            count = count + self:GetRankRecordCount(battleStats.AdvanceBattleCounts, targetRankId)
+        end
+    end
+
+    return count >= targetCount
+end
+
+--- 获取指定段位的战斗记录数量
+---@param record table<number, number> 战斗记录表，key为段位Id，value为对应段位的数量
+---@param rankId number 限制段位（0=不限制段位）
+---@return number
+function XTheatre6Agency:GetRankRecordCount(record, rankId)
+    if not record then
+        return 0
+    end
+    if rankId == 0 then
+        local total = 0
+        for _, count in pairs(record) do
+            total = total + count
+        end
+        return total
+    end
+    return record[rankId] or 0
+end
+
+--- PVP段位是否达到
+---@param targetRankId number 目标段位Id
+---@param activityId number 指定版本Id(0=当前期)
+---@return boolean
+function XTheatre6Agency:IsPvpRankReached(targetRankId, activityId)
+    if not XTool.IsNumberValid(activityId) or activityId == self._Model.Pvp:GetCurActivityId() then
+        return self._Model.Pvp:GetCurRankId() >= targetRankId
+    end
+    local rankRecord = self._Model.Pvp:GetPvpRankRecord(activityId)
+    if rankRecord and XTool.IsNumberValid(rankRecord.RankId) then
+        return rankRecord.RankId >= targetRankId
+    end
+    return false
+end
+
 function XTheatre6Agency:CheckOpenSettle()
     local data = self._PendingSettleData
     if not data then
@@ -257,7 +339,7 @@ function XTheatre6Agency:NotifyTheatre6ActivityData(data)
 end
 
 function XTheatre6Agency:NotifyTheatre6NewFloorData(data)
-    self._Model:NotifyTheatre6NewFloorData(data)
+    self._Model:UpdateNewFloorData(data.ModeDataDb)
     XEventManager.DispatchEvent(XEventId.EVENT_THEATRE6_ENTER_NEW_ROOM)
 end
 
@@ -291,8 +373,13 @@ function XTheatre6Agency:Theatre6TotalScoreNotify(data)
 end
 
 function XTheatre6Agency:NotifyTheatre6SettleData(data)
-    self._Model:UpdateSettleData(data)
-    self._PendingSettleData = data.SettleData
+    self:EnterSettleProcess(data.SettleData, data.StoryModeSaveDb)
+end
+
+---进入结算流程
+function XTheatre6Agency:EnterSettleProcess(settleData, storyModeSaveDb)
+    self._Model:UpdateSettleData(settleData, storyModeSaveDb)
+    self._PendingSettleData = settleData
     if XFightUtil.IsFighting() then
         return --处于战斗界面时延迟打开
     end
@@ -369,6 +456,27 @@ end
 
 function XTheatre6Agency:NotifyTheatre6AddSkill(data)
     self._Model:NotifyTheatre6AddSkill(data)
+
+    self._GainTipSkillId, self._IsUpGrade = self._Model.Skill:GetAddSkillGainTipData(data)
+    if not XFightUtil.IsFighting() then
+        self:TryOpenAddSkillGainTips()
+    end
+end
+
+function XTheatre6Agency:TryOpenAddSkillGainTips()
+    if not XTool.IsNumberValid(self._GainTipSkillId) then
+        return
+    end
+    if XLuaUiManager.IsUiShow("UiTheatre6GainTips") then
+        XLuaUiManager.Close("UiTheatre6GainTips")
+    end
+    XLuaUiManager.Open("UiTheatre6GainTips", 1, self._GainTipSkillId, self._IsUpGrade)
+    self:ClearGainTipsParams()
+end
+
+function XTheatre6Agency:ClearGainTipsParams()
+    self._GainTipSkillId = nil
+    self._IsUpGrade = nil
 end
 
 function XTheatre6Agency:NotifyTheatre6AttrChange(data)
@@ -388,7 +496,7 @@ function XTheatre6Agency:NotifyTheatre6SkillUpEffect(data)
 end
 
 function XTheatre6Agency:NotifyTheatre6ModeChange(data)
-     self._Model:NotifyTheatre6ModeChange(data)
+    self._Model:NotifyTheatre6ModeChange(data)
 end
 
 function XTheatre6Agency:ShowSkillUpEffect(buffDatas, finishCb)
@@ -398,7 +506,7 @@ function XTheatre6Agency:ShowSkillUpEffect(buffDatas, finishCb)
         end
         return
     end
-    
+
     local showUi = false
     for _, slotType in pairs(XEnumConst.Theatre6.SlotType) do
         local defaultSkill = self._Model.Skill:GetCharacterSkills(slotType)[1]
@@ -535,6 +643,47 @@ function XTheatre6Agency:RunChain(steps, finalCb)
         end
     end
     next()
+end
+
+function XTheatre6Agency:NotifyTheatre6PvpGetActionPoint(data)
+    self._Model.Pvp:UpdateActionPointInfo(data)
+end
+
+function XTheatre6Agency:NotifyTheatre6PvpTinyBattleState(data)
+    self._Model.Pvp:UpdateTinyBattleState(data)
+end
+
+function XTheatre6Agency:NotifyTheatre6BattleRecordsUpdate(data)
+    if not data then
+        return
+    end
+    self._Model.Pvp:AddBattleRecords(data.BattleRecords)
+    XEventManager.DispatchEvent(XEventId.EVENT_THEATRE6_PVP_RECORD_UPDATE)
+end
+
+function XTheatre6Agency:NotifyTheatre6DefenseUpdate(data)
+    if not data then
+        return
+    end
+    self._Model.Pvp:UpdateDefenseSlots(data.DefenseBuffId, data.Lineups)
+end
+
+function XTheatre6Agency:NotifyTheatre6PvpBattleStatsUpdate(data)
+    if not data then
+        return
+    end
+    self._Model.Pvp:UpdateBattleStats(data.BattleStats)
+end
+
+function XTheatre6Agency:NotifyMatchPlayersUpdate(data)
+    self._Model.Pvp:UpdateMatchResult(data)
+end
+
+function XTheatre6Agency:NotifyTheatre6PvpScoreUpdate(data)
+    if not data then
+        return
+    end
+    self._Model.Pvp:UpdateRank(data.RankId, data.Score)
 end
 
 ----------private end----------

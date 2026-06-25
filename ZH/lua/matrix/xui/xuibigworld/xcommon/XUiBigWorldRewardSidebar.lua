@@ -6,8 +6,6 @@ local XUiGridBWRewardBar = require("XUi/XUiBigWorld/XCommon/Grid/XUiGridBWReward
 local XUiBigWorldRewardSidebar = XMVCA.XBigWorldUI:Register(nil, "UiBigWorldRewardSidebar")
 
 function XUiBigWorldRewardSidebar:OnAwake()
-    self._IsMask = XMVCA.XBigWorldCommon:HasAnySequentialJob()
-
     self._RewardList = {}
     self._RewardData = {}
     self._CloseCallback = false
@@ -20,10 +18,6 @@ function XUiBigWorldRewardSidebar:OnAwake()
 
     XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_QUEST_OBJECTIVE_STATE_CHANGED,
         XMVCA.XBigWorldQuest.QuestOpType.PopupBegin)
-
-    if self._IsMask then
-        XMVCA.XBigWorldUI:SetMaskActive(true, self.Name)
-    end
 end
 
 function XUiBigWorldRewardSidebar:OnStart(rewardData, closeCallback)
@@ -50,10 +44,6 @@ function XUiBigWorldRewardSidebar:OnDestroy()
 
     XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_QUEST_OBJECTIVE_STATE_CHANGED,
         XMVCA.XBigWorldQuest.QuestOpType.PopupEnd)
-
-    if self._IsMask then
-        XMVCA.XBigWorldUI:SetMaskActive(false, self.Name)
-    end
 end
 
 function XUiBigWorldRewardSidebar:_InitUi()

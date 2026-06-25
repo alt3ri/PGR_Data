@@ -2437,7 +2437,16 @@ XFunctionalSkipManagerCreator = function()
     function XFunctionalSkipManager.SkipToMusicGameActivityMain(list)
         XMVCA.XMusicGameActivity:OpenUi()
     end
-    
+
+    function XFunctionalSkipManager.SkipToConcertPreHeatingMain()
+        if not XMVCA.XConcertPreHeating:IsActivityOpen() then
+            return false
+        end
+
+        XMVCA.XConcertPreHeating:OpenMainUi()
+        return true
+    end
+
     function XFunctionalSkipManager.SkipToVersionGiftMainUi(list)
         XMVCA.XVersionGift:OpenUiMain()
     end

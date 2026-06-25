@@ -262,13 +262,18 @@ end
 function XLifeTreeAgency:IsRedCharacter(characterId)
     -- 未播放生命树Pv
     if not self._Model:IsFinishPv() then return end
-    
+
     -- 非生命树角色
     local charConfigs = self._Model:GetLifeTreeCharacterConfigs()
     if not charConfigs[characterId] then
         return false
     end
-    
+
+    -- 玩家未拥有该角色
+    if not XMVCA.XCharacter:IsOwnCharacter(characterId) then
+        return false
+    end
+
     local unlockCount, state = XMVCA.XLifeTree:GetCharacterState(characterId) -- 解锁次数和状态
     if state == XMVCA.XLifeTree.EnumConst.CHARACTER_STATE.NEXT_UNLOCKABLE then
         return true
@@ -321,6 +326,8 @@ end
 
 -- 功能是否开启
 function XLifeTreeAgency:IsOpen(isTips)
+    --4.6_xf分支屏蔽
+    do return false end
     -- 提审包屏蔽
     if XUiManager.IsHideFunc then return false end
     -- 玩法是否开启

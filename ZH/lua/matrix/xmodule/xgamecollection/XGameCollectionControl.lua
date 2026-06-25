@@ -4,15 +4,6 @@ local XGameCollectionControl = XClass(XControl, "XGameCollectionControl")
 
 local UiNameGame2048 = "UiGame2048Game"
 
-local function GetGameType(gameCfg)
-    if XTool.IsTableEmpty(gameCfg) then
-        return 0
-    end
-
-    return gameCfg.GameType or gameCfg.Id or 0
-end
-
-
 function XGameCollectionControl:OnInit()
 
 end
@@ -61,7 +52,12 @@ function XGameCollectionControl:GetShowTaskDataList()
 end
 
 function XGameCollectionControl:GetActivityCfgs()
-    return self._Model:GetGameCollectionCfgs() or {}
+    local result = {}
+    local activityCfgs = self._Model:GetGameCollectionCfgs()
+    for k, v in pairs(activityCfgs) do
+        table.insert(result, v)
+    end
+    return result or {}
 end
 
 function XGameCollectionControl:GetSelectedGameType()
@@ -80,7 +76,7 @@ function XGameCollectionControl:GetGameCfg(gameType)
 
     local activityCfgs = self:GetActivityCfgs()
     for _, gameCfg in pairs(activityCfgs) do
-        if GetGameType(gameCfg) == gameType then
+        if (gameCfg and gameCfg.GameType or 0) == gameType then
             return gameCfg
         end
     end
@@ -114,7 +110,7 @@ function XGameCollectionControl:GetOtherCanGiveUpGameTypes(targetGameType)
     end
 
     for _, gameCfg in ipairs(activityCfgs) do
-        local gameType = GetGameType(gameCfg)
+        local gameType = gameCfg and gameCfg.GameType or 0
         if gameType ~= targetGameType and not existMap[gameType] and self:IsCanGiveUp(gameType) then
             table.insert(result, gameType)
             existMap[gameType] = true
@@ -301,7 +297,7 @@ function XGameCollectionControl:_ResolveGameType(gameType)
 
     local activityCfgs = self:GetActivityCfgs()
     if not XTool.IsTableEmpty(activityCfgs) then
-        return GetGameType(activityCfgs[1])
+        return activityCfgs[1] and activityCfgs[1].GameType or 0
     end
 end
 
@@ -337,7 +333,7 @@ function XGameCollectionControl:_GetFangKuaiPlayingStageId(gameCfg)
 end
 
 function XGameCollectionControl:_RequestEnterGoldenMiner(gameCfg)
-    local gameType = GetGameType(gameCfg)
+    local gameType = gameCfg and gameCfg.GameType or 0
     local useCharacterId = XMVCA.XGoldenMiner:GetUseCharacterId()
     XMVCA.XGoldenMiner:RequestGoldenMinerEnterGame(useCharacterId, function()
         self:_StartLaunchSession(gameType, gameCfg.StageId)
@@ -346,7 +342,7 @@ function XGameCollectionControl:_RequestEnterGoldenMiner(gameCfg)
 end
 
 function XGameCollectionControl:_ContinueGoldenMiner(gameCfg)
-    local gameType = GetGameType(gameCfg)
+    local gameType = gameCfg and gameCfg.GameType or 0
     self:_StartLaunchSession(gameType, gameCfg.StageId)
     XMVCA.XGoldenMiner:ContinueGame()
 end
@@ -359,7 +355,7 @@ function XGameCollectionControl:_GiveUpGoldenMiner(gameCfg, cb)
         return
     end
 
-    local gameType = GetGameType(gameCfg)
+    local gameType = gameCfg and gameCfg.GameType or 0
     local dataDb = XMVCA.XGoldenMiner:GetMainDb()
     local clearData = dataDb and dataDb:GetCurClearData()
     local stageScores = (clearData and clearData.TotalScore) or (dataDb and dataDb:GetStageScores()) or 0
@@ -370,7 +366,7 @@ function XGameCollectionControl:_GiveUpGoldenMiner(gameCfg, cb)
 end
 
 function XGameCollectionControl:_RequestEnterGame2048(gameCfg)
-    local gameType = GetGameType(gameCfg)
+    local gameType = gameCfg and gameCfg.GameType or 0
     local stageId = gameCfg.StageId
     if not XTool.IsNumberValid(stageId) then
         XMVCA.XGame2048:ExOpenMainUi()
@@ -410,7 +406,7 @@ function XGameCollectionControl:_ContinueGame2048(gameCfg)
     end
 
     XMVCA.XGame2048:SetCurStageId(stageData.StageId)
-    self:_StartLaunchSession(GetGameType(gameCfg), stageData.StageId)
+    self:_StartLaunchSession(gameCfg and gameCfg.GameType or 0, stageData.StageId)
     XLuaUiManager.Open(UiNameGame2048, stageData)
 end
 
@@ -423,7 +419,7 @@ function XGameCollectionControl:_GiveUpGame2048(gameCfg, cb)
         return
     end
 
-    local gameType = GetGameType(gameCfg)
+    local gameType = gameCfg and gameCfg.GameType or 0
     XMVCA.XGame2048:RequestGame2048Settle(XMVCA.XGame2048.EnumConst.SettleType.ByHand,function()
         self:_ClearLaunchSession(gameType)
         self:TryOpenExitRecord(cb)
@@ -431,7 +427,7 @@ function XGameCollectionControl:_GiveUpGame2048(gameCfg, cb)
 end
 
 function XGameCollectionControl:_RequestEnterFangKuai(gameCfg)
-    local gameType = GetGameType(gameCfg)
+    local gameType = gameCfg and gameCfg.GameType or 0
     local targetStageId = gameCfg.StageId
     if not XTool.IsNumberValid(targetStageId) then
         XMVCA.XFangKuai:ExOpenMainUi()
@@ -444,7 +440,7 @@ function XGameCollectionControl:_RequestEnterFangKuai(gameCfg)
 end
 
 function XGameCollectionControl:_ContinueFangKuai(gameCfg)
-    local gameType = GetGameType(gameCfg)
+    local gameType = gameCfg and gameCfg.GameType or 0
     local currentStageId = self:_GetFangKuaiPlayingStageId(gameCfg)
     if not XTool.IsNumberValid(currentStageId) then
         return
@@ -464,7 +460,7 @@ function XGameCollectionControl:_GiveUpFangKuai(gameCfg, cb)
         return
     end
 
-    local gameType = GetGameType(gameCfg)
+    local gameType = gameCfg and gameCfg.GameType or 0
     XMVCA.XFangKuai:GiveUpStageFromCollection(currentStageId, function()
         self:_ClearLaunchSession(gameType)
         self:TryOpenExitRecord(cb)

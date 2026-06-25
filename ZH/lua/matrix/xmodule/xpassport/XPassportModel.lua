@@ -377,14 +377,14 @@ function XPassportModel:GetLastTimeBaseInfo()
     return self._LastTimeBaseInfo
 end
 
-function XPassportModel:GetAutoGetTaskRewardListCookieKey()
-    local activityId = self:GetDefaultActivityId()
+function XPassportModel:GetAutoGetTaskRewardListCookieKey(activityId)
+    activityId = activityId or self:GetDefaultActivityId()
     return XPlayer.Id .. "_XPassport_AutoGetTaskRewardList" .. activityId
 end
 
-function XPassportModel:InsertCookieAutoGetTaskRewardList(rewardList)
-    local key = self:GetAutoGetTaskRewardListCookieKey()
-    local cookieRewardList = self:GetCookieAutoGetTaskRewardList()
+function XPassportModel:InsertCookieAutoGetTaskRewardList(rewardList, activityId)
+    local key = self:GetAutoGetTaskRewardListCookieKey(activityId)
+    local cookieRewardList = self:GetCookieAutoGetTaskRewardList(key)
     if cookieRewardList then
         for _, rewardData in ipairs(rewardList) do
             table.insert(cookieRewardList, rewardData)
@@ -393,14 +393,14 @@ function XPassportModel:InsertCookieAutoGetTaskRewardList(rewardList)
     XSaveTool.SaveData(key, cookieRewardList or rewardList)
 end
 
-function XPassportModel:GetCookieAutoGetTaskRewardList()
-    local key = self:GetAutoGetTaskRewardListCookieKey()
+function XPassportModel:GetCookieAutoGetTaskRewardList(key)
+    key = key or self:GetAutoGetTaskRewardListCookieKey()
     return XSaveTool.GetData(key)
 end
 
 --通知自动领取任务奖励列表
 function XPassportModel:NotifyPassportAutoGetTaskReward(data)
-    self:InsertCookieAutoGetTaskRewardList(data.RewardList or {})
+    self:InsertCookieAutoGetTaskRewardList(data.RewardList or {}, data.ActivityId)
     XEventManager.DispatchEvent(XEventId.EVENT_AUTO_GET_TASK_REWARD_LIST)
 end
 
@@ -425,6 +425,14 @@ function XPassportModel:GetPassportActivityTimeId()
     local activityId = self:GetDefaultActivityId()
     local config = self:GetPassportActivityConfig(activityId)
     return config.TimeId
+end
+
+function XPassportModel:GetPassportActivityHasSupplyReward()
+    local activityId = self:GetDefaultActivityId()
+    local conf = self:GetPassportActivityConfig(activityId)
+    local reward = conf.SupplyReward
+    if not reward then return false end
+    return reward ~= 0
 end
 
 function XPassportModel:GetPassportMaxLevel()

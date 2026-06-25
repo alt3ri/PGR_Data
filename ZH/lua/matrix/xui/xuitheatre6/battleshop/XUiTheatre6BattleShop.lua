@@ -34,19 +34,20 @@ local XUiTheatre6PanelAsset = require("XUi/XUiTheatre6/Stage/Panel/XUiPanelTheat
 ---@field BtnMainUi XUiComponent.XUiButton
 ---@field BtnHelp XUiComponent.XUiButton
 ---@field PanelStage UiObject
+local XUiTheatre6BattleShop = XLuaUiManager.Register(XLuaUi, "UiTheatre6BattleShop")
 
 local ItemType = {
     Skill = 1,
     AttrPack = 2,
 }
-local XUiTheatre6BattleShop = XLuaUiManager.Register(XLuaUi, "UiTheatre6BattleShop")
-
 
 function XUiTheatre6BattleShop:OnAwake()
     self:InitComponents()
 end
 
 function XUiTheatre6BattleShop:InitComponents()
+    self._CoinIcon = self._Control:GetCoinIcon()
+    self._SanIcon = self._Control:GetSanIcon()
     -- self:BindExitBtns()
     self.BtnExit:AddEventListener(handler(self, self.OnBtnExitClick))
     self.PanelRoleDetail = XUiTheatre6PanelRoleDetail.New(self.PanelRoleDetail, self, nil, nil, true)
@@ -70,6 +71,9 @@ function XUiTheatre6BattleShop:InitComponents()
     self._PanelBuff = require("XUi/XUiTheatre6/Stage/Panel/XUiPanelTheatre6BottomBuffList").New(self.ListBuff, self)
     self._PanelBuff:UpdateView()
     require("XUi/XUiTheatre6/Stage/Panel/XUiPanelTheatre6MessyCodeFx").New(self.MessyCodeFx, self)
+
+    self.BtnBuySan:AddEventListener(handler(self, self.OnBtnBuySanClick))
+    self:InitSanButton()
 end
 
 function XUiTheatre6BattleShop:SetupSellDragArea()
@@ -96,11 +100,13 @@ end
 function XUiTheatre6BattleShop:OnEnable()
     XEventManager.AddEventListener(XEventId.EVENT_THEATRE6_BUY_GOOD, self.OnGoodBought, self)
     XEventManager.AddEventListener(XEventId.EVENT_THEATRE6_UPDATE_SKILL, self._RefreshTagHighlightSource, self)
+    XEventManager.AddEventListener(XEventId.EVENT_THEATRE6_GOLD_CHANGE, self.UpdatePurchaseSanPrice, self)
 end
 
 function XUiTheatre6BattleShop:OnDisable()
     XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE6_BUY_GOOD, self.OnGoodBought, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE6_UPDATE_SKILL, self._RefreshTagHighlightSource, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE6_GOLD_CHANGE, self.UpdatePurchaseSanPrice, self)
 end
 
 function XUiTheatre6BattleShop:OnDestroy()
@@ -219,8 +225,59 @@ function XUiTheatre6BattleShop:OnDragSell(isDragging, skillId)
     if isDragging then
         local skillConfig = self._Control:GetSkillCfgById(skillId)
         self.TxtSellNum.text = skillConfig.SellPrice
-        self.RImgGold:SetRawImage(self._Control:GetCoinIcon())
+        self.RImgGold:SetRawImage(self._CoinIcon)
     end
 end
+
+--region 购买san值
+
+function XUiTheatre6BattleShop:InitSanButton()
+    if not self._Control:CanPurchaseSan() then
+        self.BtnBuySan.gameObject:SetActiveEx(false)
+        return
+    end
+    self._BuySanColor = self._Control:GetClientConfigValue("ShopRefreshColor", 3)
+    self.BtnBuySan.gameObject:SetActiveEx(true)
+    self.BtnBuySan:SetRawImage(self._CoinIcon)
+    self.BtnBuySan:SetNameByGroup(1, self._Control:GetShopSanNum())
+    self.RImgSan1:SetRawImage(self._SanIcon)
+    self.RImgSan2:SetRawImage(self._SanIcon)
+    self:UpdatePurchaseSanPrice()
+end
+
+function XUiTheatre6BattleShop:UpdatePurchaseSanPrice()
+    local price = self._Control:GetPurchaseSanPrice()
+    local leftTimes = self._Control:GetPurchaseSanLeftTimes()
+    if self._Control:IsPurchaseSanCoinNoEnough() then
+        self.BtnBuySan:SetNameByGroup(0, string.format("<color=#%s>%s</color>", self._BuySanColor, price))
+    else
+        self.BtnBuySan:SetNameByGroup(0, price)
+    end
+    self.BtnBuySan:SetNameByGroup(2, leftTimes)
+    self.BtnBuySan:SetButtonState(self._Control:IsPurchaseSanMaxTimes() and XUiButtonState.Disable or XUiButtonState.Normal)
+end
+
+function XUiTheatre6BattleShop:OnBtnBuySanClick()
+    if self._Control:IsPurchaseSanMaxTimes() then
+        self._Control:ShowTip(self._Control:GetClientConfigValue("PurchaseSanMaxTimes"))
+        return
+    end
+
+    if self._Control:IsPurchaseSanCoinNoEnough() then
+        self._Control:ShowTip(self._Control:GetClientConfigValue("PurchaseSanCoinNoEnough"))
+        return
+    end
+
+    if self._Control:IsSanMax() then
+        self._Control:ShowTip(self._Control:GetClientConfigValue("PurchaseSanMaxSan"))
+        return
+    end
+
+    self._Control:RequestShopBuySan(function()
+        self:UpdatePurchaseSanPrice()
+    end)
+end
+
+--endregion
 
 return XUiTheatre6BattleShop

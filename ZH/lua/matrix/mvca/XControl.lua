@@ -6,12 +6,16 @@ local IsWindowsEditor = XMain.IsWindowsEditor
 
 ---@class XControl
 ---@field protected _Model XModel
----@field protected _Event XMVCAEvent
+---@field protected _Event XEventDispatcher
 ---@field private _Agency XAgency
 ---@field private _Loader XLoaderUtil
 ---@field private _TabConfig XTabConfig
+---@field private _MainControl XControl
 XControl = XClass(nil, "XControl")
 local LockRefKey = "__LockRefKey__"
+
+local XEventDispatcher = require("XCommon/XEventDispatcher")
+
 function XControl:Ctor(id, mainControl)
     self._Id = id
     self._Model = XMVCA:_GetOrRegisterModel(self._Id)
@@ -24,7 +28,7 @@ function XControl:Ctor(id, mainControl)
     self._SubControls = {} --子control, 支持多个control
     self._DelayReleaseTime = 0 --延迟释放时间, 默认不延迟
     self._LastUseTime = 0 --最后使用时间
-    self._Event = XMVCAEvent.New()
+    self._Event = XEventDispatcher.New(nil)
     self._IsRelease = false
 end
 
@@ -148,43 +152,41 @@ end
 
 ---添加界面引用
 function XControl:AddViewRef(ui)
-    if not table.indexof(self._RefUi, ui) then
-        table.insert(self._RefUi, ui)
-    else
+    if self._RefUi[ui] then
         XLog.Error(string.format("绑定已存在的ui序号: control %s, UId: %s", self._Id, ui))
+        return
     end
+    self._RefUi[ui] = true
 end
 
 ---移除界面引用
 function XControl:SubViewRef(ui)
-    local index = table.indexof(self._RefUi, ui)
-    if index then
-        table.remove(self._RefUi, index)
-    else
+    if not self._RefUi[ui] then
         XLog.Error(string.format("解绑不存在的ui序号: control %s, UId: %s", self._Id, ui))
+        return
     end
+    self._RefUi[ui] = nil
 end
 
 function XControl:HasViewRef()
-    return self._RefUi and #self._RefUi > 0
+    return self._RefUi and next(self._RefUi) ~= nil
 end
 
 --region ui界面栈操作引用
 function XControl:AddUiStackOperationRef(uuid)
-     if not table.indexof(self._RefUiStackOperation, uuid) then
-        table.insert(self._RefUiStackOperation, uuid)
+    if not self._RefUiStackOperation[uuid] then
+        self._RefUiStackOperation[uuid] = true
     end
 end
 
 function XControl:SubUiStackOperationRef(uuid)
-    local index = table.indexof(self._RefUiStackOperation, uuid)
-    if index then
-        table.remove(self._RefUiStackOperation, index)
+    if self._RefUiStackOperation[uuid] then
+        self._RefUiStackOperation[uuid] = nil
     end
 end
 
 function XControl:HasStackOperationRef()
-    return self._RefUiStackOperation and #self._RefUiStackOperation > 0
+    return self._RefUiStackOperation and next(self._RefUiStackOperation) ~= nil
 end
 
 --endregion
@@ -334,56 +336,40 @@ end
 --region TabConfig
 --[[
 配置表使用规范
-0. 配置表需要先Init，不然后XTabConfig不会被创建出来
+0. 配置表需要先Init，不然XTabConfig不会被创建出来
 1. 初始化通过self:InitConfigByTabKey()或self:InitConfigByArgs()来初始化
 2. 因为涉及到表格作用域，通过self:GetAllConfig... 或 self:GetConfigBy... 来获取配置
 3. 调用配置模块的其他方法 self:GetConfigInst():xxxx()来执行
 ]]--
 
 function XControl:InitConfigByTabKey(parentPath, tabKey)
-    if not self._TabConfig then
-        self._TabConfig = XMVCA:_GetOrRegisterTabConfig(self._Id)
-    end
-    self._TabConfig:InitConfigByTabKey(parentPath, tabKey, XConfigUtil.TabScope.Control)
+    local tabConfig = self:GetConfigInst()
+    tabConfig:InitConfigByTabKey(parentPath, tabKey, XConfigUtil.TabScope.Control)
 end
 
 function XControl:InitConfigByArgs(args)
-    if not self._TabConfig then
-        self._TabConfig = XMVCA:_GetOrRegisterTabConfig(self._Id)
-    end
-    self._TabConfig:InitConfigByArgs(args)
+    local tabConfig = self:GetConfigInst()
+    tabConfig:InitConfigByArgs(args)
 end
 
 function XControl:GetAllConfigByTabKey(tabKey)
-    if not self._TabConfig then
-        XLog.Error(string.format("请先初始化配置: %s", self._Id))
-        return
-    end
-    return self._TabConfig:GetByTabKey(tabKey, XConfigUtil.TabScope.Control)
+    local tabConfig = self:GetConfigInst()
+    return tabConfig:GetByTabKey(tabKey, XConfigUtil.TabScope.Control)
 end
 
 function XControl:GetConfigByTabKeyAndIdKey(tabKey, idKey, noTips)
-    if not self._TabConfig then
-        XLog.Error(string.format("请先初始化配置: %s", self._Id))
-        return
-    end
-    return self._TabConfig:GetConfigByTabKeyAndId(tabKey, idKey, XConfigUtil.TabScope.Control, noTips)
+    local tabConfig = self:GetConfigInst()
+    return tabConfig:GetConfigByTabKeyAndId(tabKey, idKey, XConfigUtil.TabScope.Control, noTips)
 end
 
 function XControl:GetAllConfigByPath(path)
-    if not self._TabConfig then
-        XLog.Error(string.format("请先初始化配置: %s", self._Id))
-        return
-    end
-    return self._TabConfig:Get(path, XConfigUtil.TabScope.Control)
+    local tabConfig = self:GetConfigInst()
+    return tabConfig:Get(path, XConfigUtil.TabScope.Control)
 end
 
 function XControl:GetConfigByPathAndIdKey(tabKey, idKey, noTips)
-    if not self._TabConfig then
-        XLog.Error(string.format("请先初始化配置: %s", self._Id))
-        return
-    end
-    return self._TabConfig:GetConfigByPathAndId(tabKey, idKey, XConfigUtil.TabScope.Control, noTips)
+    local tabConfig = self:GetConfigInst()
+    return tabConfig:GetConfigByPathAndId(tabKey, idKey, XConfigUtil.TabScope.Control, noTips)
 end
 
 --- 获取配置实例
@@ -391,8 +377,11 @@ end
 --------------------------
 function XControl:GetConfigInst()
     if not self._TabConfig then
-        XLog.Error(string.format("请先初始化配置: %s", self._Id))
-        return
+        if self._MainControl then --子类直接引用父模块
+            self._TabConfig = self._MainControl:GetConfigInst()
+        else
+            self._TabConfig = XMVCA:_GetOrRegisterTabConfig(self._Id)
+        end
     end
     return self._TabConfig
 end

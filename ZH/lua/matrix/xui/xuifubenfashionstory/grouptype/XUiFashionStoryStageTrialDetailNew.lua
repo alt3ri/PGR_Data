@@ -1,3 +1,5 @@
+-- DEPRECATED: 旧版夏活试玩关详情 UI，现已统一接入 Experiment 试验关流程（UiPaintingExperiencePassV4P2）
+-- 当前已无活跃调用入口，保留代码与 prefab 仅作历史参考与未来可能的复用
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XUiFashionStoryStageTrialDetailNew = XLuaUiManager.Register(XLuaUi, "UiFashionStoryStageTrialDetailNew")
 
@@ -7,7 +9,7 @@ function XUiFashionStoryStageTrialDetailNew:OnAwake()
     self:AddListener()
 end
 
-function XUiFashionStoryStageTrialDetailNew:OnStart(trialStageId,closeParentCb,CloseTrialDetailCb)
+function XUiFashionStoryStageTrialDetailNew:OnStart(trialStageId, closeParentCb, CloseTrialDetailCb)
     self.StageId = trialStageId
     self.CloseParentCb = closeParentCb
     self.CloseTrialDetailCb = CloseTrialDetailCb
@@ -15,8 +17,7 @@ function XUiFashionStoryStageTrialDetailNew:OnStart(trialStageId,closeParentCb,C
     self:Refresh()
 end
 
-function XUiFashionStoryStageTrialDetailNew:OnEnable(trialStageId,closeParentCb,CloseTrialDetailCb)
-
+function XUiFashionStoryStageTrialDetailNew:OnEnable(trialStageId, closeParentCb, CloseTrialDetailCb)
     if trialStageId then self.StageId = trialStageId end
     if closeParentCb then self.CloseParentCb = closeParentCb end
     if CloseTrialDetailCb then self.CloseTrialDetailCb = CloseTrialDetailCb end
@@ -27,32 +28,34 @@ end
 
 --region 初始化
 function XUiFashionStoryStageTrialDetailNew:AddListener()
-    self.BtnBack.CallBack = function()
-        if self.CloseTrialDetailCb then
-            self.CloseTrialDetailCb()
-        end
-        -- 3.6需求, 因为此版本只有一关, 所以直接打开此关卡
-        --self:Close()
-        --self.ParentUi:PlayAnimation('AnimEnable')
-        -- 关闭也直接关闭两层
-        self.ParentUi:Close()
-    end
-    self.BtnMainUi.CallBack = function()
-        XLuaUiManager.RunMain()
-    end
-    self.BtnEnter.CallBack = function()
-        self:OnBtnEnterClick()
-    end
-    
+    self.BtnBack:AddEventListener(Handler(self, self.OnBtnBackClick))
+    self.BtnMainUi:AddEventListener(Handler(self, self.OnBtnMainUiClick))
+    self.BtnEnter:AddEventListener(Handler(self, self.OnBtnEnterClick))
+
     self.BtnSkip1 = self.BtnSkip1 or XUiHelper.TryGetComponent(self.Transform, "SafeAreaContentPane/PanelInformation/PanelSkip/BtnSkip1", "XUiButton")
-    self.BtnSkip1.CallBack = function()
-        -- 3.6需求, 跳转商店
-        XFunctionManager.SkipInterface(XMVCA.XFashionStory:GetFashionStorySkipId(XMVCA.XFashionStory:GetCurrentActivityId(),XMVCA.XFashionStory.FashionStorySkip.SkipToStore))
-    end
+    self.BtnSkip1:AddEventListener(Handler(self, self.OnBtnSkip1Click))
 end
 --endregion
 
 --region 事件处理
+function XUiFashionStoryStageTrialDetailNew:OnBtnBackClick()
+    if self.CloseTrialDetailCb then
+        self.CloseTrialDetailCb()
+    end
+
+    self:Close()
+    self.ParentUi:PlayAnimation("AnimEnable")
+end
+
+function XUiFashionStoryStageTrialDetailNew:OnBtnMainUiClick()
+    XLuaUiManager.RunMain()
+end
+
+function XUiFashionStoryStageTrialDetailNew:OnBtnSkip1Click()
+    -- 3.6需求, 跳转商店
+    XFunctionManager.SkipInterface(XMVCA.XFashionStory:GetFashionStorySkipId(XMVCA.XFashionStory:GetCurrentActivityId(), XMVCA.XFashionStory.FashionStorySkip.SkipToStore))
+end
+
 function XUiFashionStoryStageTrialDetailNew:OnBtnEnterClick()
     local leftTimeStamp = XMVCA.XFashionStory:GetLeftTimeStamp(XMVCA.XFashionStory:GetCurrentActivityId())
     if leftTimeStamp <= 0 then
@@ -89,12 +92,11 @@ function XUiFashionStoryStageTrialDetailNew:Refresh()
         self.PanelSpine.gameObject:SetActiveEx(true)
         self.PanelSpine.gameObject:LoadSpinePrefab(spine)
     else
-        self.ImgFullScreen.gameObject:SetActiveEx(true)
         self.ImgFullScreen:SetRawImage(XMVCA.XFashionStory:GetTrialDetailBg(self.StageId))
     end
 
     -- 描述
-    self.TxtDes.text = string.gsub(XMVCA.XFashionStory:GetTrialDetailDesc(self.StageId), "\\n", "\n")
+    self.TxtDes.text = XUiHelper.ConvertLineBreakSymbol(XMVCA.XFashionStory:GetTrialDetailDesc(self.StageId))
 
     -- 奖励
     local rewardId = XFubenConfigs.GetFirstRewardShow(self.StageId)
@@ -130,4 +132,4 @@ function XUiFashionStoryStageTrialDetailNew:Refresh()
 end
 --endregion
 
-return XUiFashionStoryStageTrialDetailNew
+return XUiFashionStoryStageTrialDetailNew

@@ -91,6 +91,9 @@ end
 --- 检查商店中是否有未售出的指定技能商品
 function XTheatre6Control:HasShopSkillGood(skillId)
     local shopGoods = self:GetShopGoods()
+    if not shopGoods then
+        return false
+    end
     for _, good in pairs(shopGoods) do
         if good.Type == 1 and not good.IsSell and good.GoodId == skillId then
             return true
@@ -156,7 +159,7 @@ function XTheatre6Control:BuySkillGood(skillId, pos, cb)
                         local replaceCfg = self:GetSkillCfgById(skillData.SkillId)
                         local buyCfg = self:GetSkillCfgById(skillId)
                         if replaceCfg and buyCfg
-                            and replaceCfg.SkillKey == buyCfg.SkillKey and replaceCfg.Level == buyCfg.Level + 1 then
+                            and replaceCfg.SkillKey == buyCfg.SkillKey and replaceCfg.Level > buyCfg.Level then
                             isUpGrade = true
                             skillId = skillData.SkillId
                             break
@@ -299,3 +302,70 @@ function XTheatre6Control:ClearDelayMask(maskKey)
         XLuaUiManager.SetMask(false, maskKey)
     end
 end
+
+--region 购买san值
+
+---当前商店能购买的San值数量
+function XTheatre6Control:GetShopSanNum()
+    local cfg = self:GetShopCfg()
+    return cfg and cfg.BuySanNum
+end
+
+---是否能购买San值
+function XTheatre6Control:CanPurchaseSan()
+    local num = self:GetShopSanNum()
+    return XTool.IsNumberValid(num)
+end
+
+---当前购买San值的次数
+function XTheatre6Control:GetPurchaseSanTimes()
+    local roomData = self:GetCurRoomData()
+    return roomData.BuySanTimes
+end
+
+---当前购买San值的剩余次数
+function XTheatre6Control:GetPurchaseSanLeftTimes()
+    local cfg = self:GetShopCfg()
+    if not cfg then
+        return 0
+    end
+    return cfg.BuySanMaxTimes - self:GetPurchaseSanTimes()
+end
+
+---当前购买San值的价格
+function XTheatre6Control:GetPurchaseSanPrice()
+    local cfg = self:GetShopCfg()
+    if not cfg then
+        return 0
+    end
+    local times = self:GetPurchaseSanTimes()
+    return cfg.BuySanBasePrice + times * cfg.BuySanAddPrice
+end
+
+---是否金币不足
+function XTheatre6Control:IsPurchaseSanCoinNoEnough()
+    local cfg = self:GetShopCfg()
+    if not cfg then
+        return true
+    end
+    return self:GetPurchaseSanPrice() > self:GetCurrentGold()
+end
+
+---是否已达购买San值的最大次数
+function XTheatre6Control:IsPurchaseSanMaxTimes()
+    local cfg = self:GetShopCfg()
+    if not cfg then
+        return true
+    end
+    return self:GetPurchaseSanTimes() >= cfg.BuySanMaxTimes
+end
+
+---是否已达San值上限
+function XTheatre6Control:IsSanMax()
+    local modelData = self:GetCurPlayModeData()
+    return modelData.San >= self:GetMaxSanValue()
+end
+
+--endregion
+
+return XTheatre6Control

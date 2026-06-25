@@ -3,7 +3,7 @@ local XBWSkipBase = require("XModule/XBigWorldSkipFunction/XSkip/XBase/XBWSkipBa
 local XBWSkipMainShop = XClass(XBWSkipBase, "XBWSkipMainShop")
 
 -- 重写Skip方法
-function XBWSkipMainShop:Skip(skipParams)
+function XBWSkipMainShop:Skip(skipParams)
     local params = self:GetParams()
     if not self:_CheckParamsValid() then
         return false
@@ -15,21 +15,21 @@ function XBWSkipMainShop:Skip(skipParams)
     --默认弹出
     self.isNoTips = params[3] == 1
     local data = XMVCA.XBigWorldCommon:GetPopupConfirmData()
-    local tip = skipParams.tipKey and XMVCA.XBigWorldService:GetText(skipParams.tipKey) or
-                    XMVCA.XBigWorldService:GetText("WordTipExit")
+    local tip = skipParams.tipKey and XMVCA.XBigWorldService:GetText(skipParams.tipKey) or
+                    XMVCA.XBigWorldService:GetText("WordTipExit")
     local exitCb = function()
-        if skipParams.sureCallback then
-            skipParams.sureCallback()
-        end
+        if skipParams.sureCallback then
+            skipParams.sureCallback()
+        end
         self:_DoExitAndSkip()
     end
     data:InitInfo(nil, tip):InitSureClick(nil, exitCb):InitToggleActive(false)
-    -- 配置表强制跳转时不弹出确认框 或 代码不传tipKey时也不弹出确认框
-    local needSkipPopup = self.isNoTips or string.IsNilOrEmpty(skipParams.tipKey)
-    if needSkipPopup then
-        XMVCA.XBigWorldUI:OpenConfirmPopup(data)
-    else
-        exitCb()
+    -- 配置表强制跳转时不弹出确认框 或 代码不传tipKey时也不弹出确认框
+    local needSkipPopup = self.isNoTips or string.IsNilOrEmpty(skipParams.tipKey)
+    if needSkipPopup then
+        XMVCA.XBigWorldUI:OpenConfirmPopup(data)
+    else
+        exitCb()
     end
     return true
 end
@@ -50,6 +50,12 @@ function XBWSkipMainShop:_CheckParamsValid()
 end
 
 function XBWSkipMainShop:_DoExitAndSkip()
+    -- 开场引导（首次进入空花的 OpenDIY 流程）期间，战斗框架还未把 UiFightDLC 推入 Normal 栈，
+    -- 此时调用 ExitWorld 会触发 CloseAllUpperUi("UiFightDLC") 的"栈内找不到"错误。
+    if XMVCA.XBigWorldCommanderDIY:IsFromOpenGuide() then
+        XMVCA.XBigWorldUI:TipMsg(XMVCA.XBigWorldService:GetText("DIYDoNotSupportSkipTips"))
+        return
+    end
     if XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.ShopCommon) then
         XMVCA.XBigWorldGamePlay:ExitWorld()
         XLuaUiManager.Open("UiShop", self._ShopType, nil, self._ShopId)

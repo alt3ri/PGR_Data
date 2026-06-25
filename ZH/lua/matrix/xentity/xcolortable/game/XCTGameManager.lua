@@ -377,7 +377,7 @@ function XCTGameManager:StartDramaIdleTimer()
             time = 0
             return
         end
-        time = time + CS.UnityEngine.Time.deltaTime
+        time = time + XLuaTime.deltaTime
         for _, type in pairs(idleTriggerTypeDic) do
             if self:IsTriggerIdleTimeDrama(type, time) then
                 return

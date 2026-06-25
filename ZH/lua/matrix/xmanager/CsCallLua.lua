@@ -196,14 +196,6 @@ function DlcFuben.GetColorNameByColorId(colorId)
     return nil
 end
 
-function DlcFuben.GetColorNameByColorId(colorId)
-    if XTool.IsNumberValid(colorId) then
-        return XMVCA.XBigWorldCommanderDIY:GetMaterialNameByColorId(colorId)
-    end
-
-    return nil
-end
-
 function DlcFuben.GetNpcPartModelDataByPartData(npcPartData)
     if not npcPartData or not npcPartData.PartList then
         return nil
@@ -678,6 +670,7 @@ function Theatre6.TestCalNpcAttribsAndBackXAutoChessData(xautoChessData)
     local autoChessData = {}
 
     autoChessData.CharacterId = xautoChessData.CharacterId
+    autoChessData.FashionId = xautoChessData.FashionId
     autoChessData.Attribs = {}
     autoChessData.Skills = {}
     autoChessData.Relics = {}

@@ -3,6 +3,7 @@
 local XUiInputSignalMediator = XClass(XUiNode, 'XUiInputSignalMediator')
 
 function XUiInputSignalMediator:OnStart(signalMap)
+    self._IntervalTime = 100 -- 默认100毫秒
     self.SignalTypeList = {}
     
     if not XTool.IsTableEmpty(signalMap) then
@@ -60,6 +61,13 @@ end
 
 --region 定时器更新
 
+---@param time @毫秒
+function XUiInputSignalMediator:SetUpdateIntervalTime(time)
+    if XTool.IsNumberValidEx(time) and time > 0 then
+        self._IntervalTime = time
+    end
+end
+
 --- 启用信号处理定时器，间隔0.1s更新即可
 function XUiInputSignalMediator:StartInputSignalUpdateTimer()
     self:StopInputSignalUpdateTimer()
@@ -68,7 +76,7 @@ function XUiInputSignalMediator:StartInputSignalUpdateTimer()
     
     self.SignalHandleTimer = XScheduleManager.ScheduleForever(function()
         self:Update()
-    end, 100)
+    end, self._IntervalTime)
 end
 
 function XUiInputSignalMediator:StopInputSignalUpdateTimer()

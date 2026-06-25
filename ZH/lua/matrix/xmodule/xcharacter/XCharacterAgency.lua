@@ -605,6 +605,7 @@ function XCharacterAgency:AddCharacter(charData)
     return character
 end
 
+--[[
 local function GetAttribGroupIdList(character)
     local npcTemplate = XMVCA.XCharacter:GetNpcTemplate(character.NpcId)
     if not npcTemplate then
@@ -613,6 +614,7 @@ local function GetAttribGroupIdList(character)
 
     return XDataCenter.BaseEquipManager.GetAttribGroupIdListByType(npcTemplate.Type)
 end
+]]
 
 function XCharacterAgency:GetSkillPlus(character)
     local list = XDataCenter.FubenAssignManager.GetSkillPlusIdList()
@@ -681,15 +683,17 @@ function XCharacterAgency:GetFightNpcData(characterId)
         return
     end
 
+    --[[
     local groupIdList = GetAttribGroupIdList(character)
     if not groupIdList then
         return
     end
+    ]]
 
     return {
         Character = character,
         Equips = equipDataList,
-        AttribGroupList = groupIdList, --基地装备用（已废弃）
+        AttribGroupList = {}, -- groupIdList, --基地装备用（已废弃）
         CharacterSkillPlus = self:GetSkillPlus(character)
     }
 end
@@ -700,15 +704,17 @@ function XCharacterAgency:GetFightNpcDataOther(character, equipList, assignChapt
         return
     end
 
+    --[[
     local groupIdList = GetAttribGroupIdList(character)
     if not groupIdList then
         return
     end
+    ]]
 
     return {
         Character = character,
         Equips = equipDataList,
-        AttribGroupList = groupIdList,
+        AttribGroupList = {}, -- groupIdList,
         CharacterSkillPlus = self:GetSkillPlusOther(character, assignChapterRecords)
     }
 end
@@ -1528,9 +1534,16 @@ function XCharacterAgency:GetAssignSkillLevel(characterId, skillId)
     return XDataCenter.FubenAssignManager.GetSkillLevel(characterId, skillId)
 end
 
+--获取武器超限提升的技能等级
+function XCharacterAgency:GetWeaponOverrunUpSkillLevel(characterId, skillId)
+    local skillGroupId = XMVCA.XCharacter:GetSkillGroupIdAndIndex(skillId)
+    local weapon = XMVCA.XEquip:GetCharacterWeapon(characterId)
+    return weapon:GetOverrunUpSkillLevel(skillGroupId)
+end
+
 --得到人物技能总加成等级
 function XCharacterAgency:GetSkillPlusLevel(characterId, skillId)
-    return self:GetResonanceSkillLevel(characterId, skillId) + self:GetAssignSkillLevel(characterId, skillId)
+    return self:GetResonanceSkillLevel(characterId, skillId) + self:GetAssignSkillLevel(characterId, skillId) + self:GetWeaponOverrunUpSkillLevel(characterId, skillId)
 end
 
 --==============================--

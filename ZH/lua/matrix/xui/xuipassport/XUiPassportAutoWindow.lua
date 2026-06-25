@@ -139,7 +139,10 @@ function XUiPassportAutoWindow:OnBtnBigSkinClick()
                 self._CloseSchedule = XScheduleManager.ScheduleOnce(function()
                     XScheduleManager.UnSchedule(self._CloseSchedule)
                     XLuaUiManager.SetMask(false)
-                    self:Close()
+
+                    if not self:IsDestroy() then
+                        self:Close()
+                    end
                 end, 500)
             end
         })

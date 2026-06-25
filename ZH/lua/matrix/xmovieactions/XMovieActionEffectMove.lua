@@ -7,6 +7,7 @@ function XMovieActionEffectMove:OnInit(actionData)
     self.Time = XMVCA.XMovie:ParamToNumber(params[2])
     self.PosParams = params[3] and XMVCA.XMovie:SplitParam(params[3], "|",true) or nil
     self.Rotation = params[4] and XMVCA.XMovie:ParamToNumber(params[4]) or nil
+    self.CurveType = XMVCA.XMovie:ParamToCurveType(params[6])
 end
 
 function XMovieActionEffectMove:OnEnter()
@@ -21,6 +22,7 @@ function XMovieActionEffectMove:OnRunning()
 
     -- 不能使用挂点移动，部分挂点的父节点Pivot非(0.5, 0.5)
     local effectGo = effectLink.transform:GetChild(0)
+    local ease = XMVCA.XMovie:GetDOTweenEase(self.CurveType)
 
     -- 移动
     if self.PosParams then
@@ -28,13 +30,19 @@ function XMovieActionEffectMove:OnRunning()
         if self.Time == 0 then
             effectGo.transform.localPosition = pos
         else
-            effectGo.transform:DOLocalMove(pos, self.Time)
+            local tween = effectGo.transform:DOLocalMove(pos, self.Time)
+            if ease and tween then
+                tween:SetEase(ease)
+            end
         end
     end
     -- 旋转
     if self.Rotation then
         local addRotate = XLuaVector3.New(0, 0, self.Rotation)
-        effectGo.transform:DORotate(addRotate, self.Time, CS.DG.Tweening.RotateMode.LocalAxisAdd)
+        local tween = effectGo.transform:DORotate(addRotate, self.Time, CS.DG.Tweening.RotateMode.LocalAxisAdd)
+        if ease and tween then
+            tween:SetEase(ease)
+        end
     end
 end
 

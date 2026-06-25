@@ -25,7 +25,7 @@ end
 
 ---@param config XTableControllerMap
 function XUiBWCursorSliderItem:InitUi(config)
-    self.Slider = XUiHelper.TryGetComponent(self.Transform, "CursorMoveSensitivity", "Slider")
+    self.Slider = XUiHelper.TryGetComponent(self.Transform, "CursorMoveSensitivity", typeof(CS.UnityEngine.UI.Slider))
     self.TxtTitle = XUiHelper.TryGetComponent(self.Transform, "TxtMusic", "Text")
     if self.Slider then
         XUiHelper.RegisterSliderChangeEvent(self, self.Slider, self.OnSliderValueChanged)

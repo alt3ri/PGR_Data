@@ -155,6 +155,10 @@ end
 
 --停止
 function XUiCharacterTowerPhotograph:OnStop(playingElement, force)
+    if self.RoleModel then
+        self.RoleModel:StopAllManagedAudio()
+    end
+
     if self.PlayingCv then
         self.PlayingCv:Stop()
         self.PlayingCv = nil

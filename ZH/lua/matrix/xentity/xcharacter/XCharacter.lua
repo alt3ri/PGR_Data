@@ -49,7 +49,7 @@ function XCharacter:Ctor(data, isOther)
     end
 
     --XEventManager.AddEventListener(XEventId.EVENT_LOGIN_DATA_LOAD_COMPLETE, self.RefreshAttribsByEvent, self)
-    XEventManager.AddEventListener(XEventId.EVENT_BASE_EQUIP_DATA_CHANGE_NOTIFY, self.RefreshAttribsByEvent, self)
+    --XEventManager.AddEventListener(XEventId.EVENT_BASE_EQUIP_DATA_CHANGE_NOTIFY, self.RefreshAttribsByEvent, self)
     XEventManager.AddEventListener(XEventId.EVENT_REFRESH_CHRACTER_ABLIITY, self.RefreshAbility, self)
     XEventManager.AddEventListener(XEventId.EVENT_PARTNER_ABLITYCHANGE, self.RefreshAbility, self)
 
@@ -58,7 +58,7 @@ end
 
 function XCharacter:RemoveEventListeners()
     --XEventManager.RemoveEventListener(XEventId.EVENT_LOGIN_DATA_LOAD_COMPLETE, self.RefreshAttribsByEvent, self)
-    XEventManager.RemoveEventListener(XEventId.EVENT_BASE_EQUIP_DATA_CHANGE_NOTIFY, self.RefreshAttribsByEvent, self)
+    --XEventManager.RemoveEventListener(XEventId.EVENT_BASE_EQUIP_DATA_CHANGE_NOTIFY, self.RefreshAttribsByEvent, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_REFRESH_CHRACTER_ABLIITY, self.RefreshAbility, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_PARTNER_ABLITYCHANGE, self.RefreshAbility, self)
 end

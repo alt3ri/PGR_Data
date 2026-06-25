@@ -1,5 +1,5 @@
-local XUiPlayerInfoClothGrid = require("XUi/XUiPlayerInfo/XUiPlayerInfoClothGrid")
-local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
+local XUiPlayerInfoClothGrid = require("XUi/XUiPlayerInfo/XUiPlayerInfoClothGrid")
+local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
 local XUiPanelFashionPlayerInfo = XClass(nil, "XUiPanelFashionPlayerInfo")
 
 local FASHION_QUALITY_LIMIT = 2
@@ -168,7 +168,13 @@ function XUiPanelFashionPlayerInfo:HandleData(allFashion, ownFashion, fashionTyp
         local isWeaponFashion = fashionType ~= XPlayerInfoConfigs.FashionType.Character
         if isWeaponFashion or v.Quality > FASHION_QUALITY_LIMIT then
             local temData = { Data = v, IsLocked = true }
-            if fashionListById[k] then
+            if not isWeaponFashion and v.DefaultHide then
+                -- 成员涂装中 DefaultHide 的颜色涂装:用涂装Id匹配 FashionColor.TargetFashionId,判断是否已拥有该颜色
+                if XMVCA.XFashion:IsTargetFashionColorHas(v.Id) then
+                    temData.IsLocked = false
+                    ownCount = ownCount + 1
+                end
+            elseif fashionListById[k] then
                 temData.IsLocked = false
                 ownCount = ownCount + 1
             end
@@ -205,6 +211,6 @@ function XUiPanelFashionPlayerInfo:Close()
     self.GameObject:SetActiveEx(false)
 end
 
-
-
+
+
 return XUiPanelFashionPlayerInfo

@@ -8,18 +8,12 @@ local XUiSGGridItem = require("XUi/XUiBigWorld/XCommon/Grid/XUiGridBWItem")
 local OpType = XMVCA.XBigWorldQuest.QuestOpType
 
 function XUiBigWorldObtain:OnAwake()
-    self._IsMask = XMVCA.XBigWorldCommon:HasAnySequentialJob()
-
     self._AutoCloseTimer = nil
 
     self:InitUi()
     self:InitCb()
 
     XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_QUEST_OBJECTIVE_STATE_CHANGED, OpType.PopupBegin)
-
-    if self._IsMask then
-        XMVCA.XBigWorldUI:SetMaskActive(true, self.Name)
-    end
 end
 
 function XUiBigWorldObtain:OnStart(rewardData, title, closeCb, disableAutoClose)
@@ -48,10 +42,6 @@ function XUiBigWorldObtain:OnDestroy()
     end
     XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_QUEST_OBJECTIVE_STATE_CHANGED, OpType.PopupEnd)
     self:RemoveCb()
-
-    if self._IsMask then
-        XMVCA.XBigWorldUI:SetMaskActive(false, self.Name)
-    end
 end
 
 function XUiBigWorldObtain:InitUi()

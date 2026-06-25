@@ -11,12 +11,12 @@ function XTheatre6Control:RequestPlayModeStartFight(characterId, fashionId, init
     req.DifficultyId = difficultyId
     XNetwork.CallWithAutoHandleErrorCode("Theatre6PlayModeStartFightRequest", req, function(res)
         self._Model:UpdatePlayModeStartFight(res)
-        self:InitClientStageStatus()
-        self:StartGame(XEnumConst.Theatre6.PlayMode.GamePlay, res.PlayModeDataDb.StageId, 1, 1)
-        if self._Model.BattleShop then
-            self._Model.BattleShop:NotifyTheatre6ActivityData(res.PlayModeDataDb and res.PlayModeDataDb.CurrentRoomDataDb or nil,
-                XEnumConst.Theatre6.PlayMode.GamePlay)
-        end
+        self:InitClientStageStatus()
+        self:StartGame(XEnumConst.Theatre6.PlayMode.GamePlay, res.PlayModeDataDb.StageId, 1, 1)
+        if self._Model.BattleShop then
+            self._Model.BattleShop:NotifyTheatre6ActivityData(res.PlayModeDataDb and res.PlayModeDataDb.CurrentRoomDataDb or nil,
+                XEnumConst.Theatre6.PlayMode.GamePlay)
+        end
         if cb then
             cb()
         end
@@ -27,16 +27,16 @@ end
 ---@param replayStageId number 复刷（故事线未完成,不需要上传此字段,服务器也自动忽略）
 function XTheatre6Control:RequestEnterStoryLine(storyLineId, replayStageId, cb)
     XNetwork.CallWithAutoHandleErrorCode("Theatre6EnterStoryLineRequest", { StoryLineId = storyLineId, ReplayStageId = replayStageId }, function(res)
-        self._Model:UpdateStoryLineStartFight(res)
-        self:InitClientStageStatus()
-        self:StartGame(XEnumConst.Theatre6.PlayMode.Story, res.StoryModeDataDb.StageId, 1, 1)
-        if self._Model.BattleShop then
-            self._Model.BattleShop:NotifyTheatre6ActivityData(res.StoryModeDataDb and res.StoryModeDataDb.CurrentRoomDataDb or nil,
-                XEnumConst.Theatre6.PlayMode.Story)
-        end
-        if cb then
-            cb()
-        end
+        self._Model:UpdateStoryLineStartFight(res)
+        self:InitClientStageStatus()
+        self:StartGame(XEnumConst.Theatre6.PlayMode.Story, res.StoryModeDataDb.StageId, 1, 1)
+        if self._Model.BattleShop then
+            self._Model.BattleShop:NotifyTheatre6ActivityData(res.StoryModeDataDb and res.StoryModeDataDb.CurrentRoomDataDb or nil,
+                XEnumConst.Theatre6.PlayMode.Story)
+        end
+        if cb then
+            cb()
+        end
     end)
 end
 
@@ -208,4 +208,32 @@ function XTheatre6Control:RequestStoryModeGuideFinished(storyId, cb)
     end)
 end
 
-return XTheatre6Control
+---购买San值
+function XTheatre6Control:RequestShopBuySan(cb)
+    local req = {}
+    req.BuySanTimes = self:GetPurchaseSanTimes()
+    XNetwork.CallWithAutoHandleErrorCode("Theatre6ShopBuySanRequest", req, function(res)
+        self._Model:UpdateShopBuySan(res)
+        if cb then
+            cb()
+        end
+    end)
+end
+
+---是否进入额外楼层
+function XTheatre6Control:RequestExFloorConfirm(isEnter, cb)
+    local req = {}
+    req.IsEnter = isEnter
+    XNetwork.CallWithAutoHandleErrorCode("Theatre6ExFloorConfirmRequest", req, function(res)
+        if isEnter then
+            self._Model:UpdateNewFloorData(res.ModeDataDb) --后续还会收到NotifyTheatre6NewFloorData
+        else
+            XMVCA.XTheatre6:EnterSettleProcess(res.SettleData, res.StoryModeSaveDb)
+        end
+        if cb then
+            cb()
+        end
+    end)
+end
+
+return XTheatre6Control

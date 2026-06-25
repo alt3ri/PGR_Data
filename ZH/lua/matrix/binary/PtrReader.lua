@@ -81,6 +81,12 @@ function PtrReader:ReadBool()
     return value == 1 and true or nil
 end
 
+function PtrReader:ReadByte()
+    local value = UnityNativeHelper.read_byte(UnityNativeHelper.offset(self.bytesPtr, self.index))
+    self.index = self.index + 1
+    return value
+end
+
 --读取string
 function PtrReader:ReadString()
     if self.m_isUsingStringPool then
@@ -204,6 +210,18 @@ function PtrReader:ReadListBool()
         table.insert(list, self:ReadBool())
     end
 
+    return list
+end
+
+function PtrReader:ReadListByte()
+    local len = self:ReadInt()
+    if not len or len <= 0 then
+        return nil
+    end
+    local list = {}
+    for i = 1, len do
+        table.insert(list, self:ReadByte())
+    end
     return list
 end
 
@@ -336,6 +354,8 @@ function PtrReader:ReadFix()
         if negative == 1 then
             value = -value
         end
+    else
+        return FixExZero
     end
     --local str = self:ReadString()
     --if not str then
@@ -362,7 +382,7 @@ end
 
 --读取Fix2
 function PtrReader:ReadFix2()
-    fix2 = CS.Mathematics.fix2()
+    local fix2 = CS.Mathematics.fix2()
     fix2.x = self:ReadFix()
     fix2.y = self:ReadFix()
     return fix2
@@ -385,7 +405,7 @@ end
 
 --读取Fix3
 function PtrReader:ReadFix3()
-    fix3 = CS.Mathematics.fix3()
+    local fix3 = CS.Mathematics.fix3()
     fix3.x = self:ReadFix()
     fix3.y = self:ReadFix()
     fix3.z = self:ReadFix()
@@ -409,7 +429,7 @@ end
 
 --读取FixQuaternion
 function PtrReader:ReadFixQuaternion()
-    fixquaternion = CS.Mathematics.fixquaternion()
+    local fix4 = CS.Mathematics.fixquaternion()
     fix4.value.x = self:ReadFix() or 0
     fix4.value.y = self:ReadFix() or 0
     fix4.value.z = self:ReadFix() or 0
@@ -458,6 +478,9 @@ ReadByType = {
     [19] = PtrReader.ReadListFix2,
     [20] = PtrReader.ReadListFix3,
     [21] = PtrReader.ReadListFixQuaternion,
+    --[22] int2 暂时还未支持
+    [23] = PtrReader.ReadByte,
+    [24] = PtrReader.ReadListByte,
 }
 
 

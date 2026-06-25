@@ -265,11 +265,13 @@ function XPurchasePackage:CheckIsSingleScene()
 end
 
 function XPurchasePackage:GetUiFashionDetailBuyData(buyFinishedFunc, notEnoughCb)
-    local disCountValue = XDataCenter.PurchaseManager.GetLBDiscountValue(self.Data)    
+    local disCountValue = XDataCenter.PurchaseManager.GetLBDiscountValue(self.Data)
+    ---@type XPurchaseBuyData
     local buyData = {}
     -- 任意拥有就算购买过该礼包
     buyData.IsHave = XRewardManager.CheckRewardGoodsListIsOwnForPackage(self.Data.RewardGoodsList)
     buyData.ItemIcon = XDataCenter.ItemManager.GetItemIcon(self.Data.ConsumeId)
+    buyData.ConsumeId = self.Data.ConsumeId
     buyData.ItemCount = math.modf(self.Data.ConvertSwitch * disCountValue)
     if disCountValue ~= 1 then
         buyData.OriginCount = self.Data.ConvertSwitch
@@ -304,6 +306,7 @@ function XPurchasePackage:GetUiFashionDetailBuyData(buyFinishedFunc, notEnoughCb
         end
     end
     buyData.GiftRewardId = #graftRewartdIds > 0 and graftRewartdIds or nil
+    buyData.EndTime = XDataCenter.PurchaseManager.GetPurchaseBuyDataEndTime(self.Data)
     return buyData
 end
 

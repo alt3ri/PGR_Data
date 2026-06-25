@@ -2,8 +2,8 @@ local XTheatre6SkillBase = require("Gameplay/Theatre6/XTheatre6SkillBase")
 ---@class XBuffScript10262100 : XTheatre6SkillBase
 local XBuffScript10262100 = XDlcScriptManager.RegBuffScript(10262100, "XBuffScript10262100", XTheatre6SkillBase)
 
---效果说明：每消耗200体力后触发：
---自身处于【狂暴】时，额外清空双方的<心眼>、<坚毅>层数，每清空一层，伤害额外提高20/40/60%攻击。
+--效果说明：每消耗100体力后触发：
+--自身处于【狂暴】时，额外清空双方的<心眼>、<坚毅>层数，每清空一层，伤害额外提高10/20/30%攻击。
 
 function XBuffScript10262100:ScriptInit(isGainControl) --初始化
     --注册技能伤害id
@@ -11,12 +11,12 @@ function XBuffScript10262100:ScriptInit(isGainControl) --初始化
     -- 当前消耗的体力
     self._costTL = 0
     -- 目标体力消耗
-    self._targetTL = 200
+    self._targetTL = 100
     -- 额外伤害，万分比
     self._extraDamage = {
-        [1] = 2000,
-        [2] = 4000,
-        [3] = 6000
+        [1] = 1000,
+        [2] = 2000,
+        [3] = 3000
     }
     -- 伤害段数
     self._damageTimes = 14

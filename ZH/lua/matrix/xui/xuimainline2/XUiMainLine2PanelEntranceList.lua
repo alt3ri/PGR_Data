@@ -575,17 +575,21 @@ function XUiMainLine2PanelEntranceList:InitSpine()
     for i = 1, #spineComponents do
         local skeleton = spineComponents[i]
         -- 两者都有 AnimationState 属性，可以统一调用
-        local trackEntry = skeleton.AnimationState:GetCurrent(0) -- StartingAnimation设置默认播放动画
-        trackEntry.TrackTime = 0 -- 设置为第0秒的状态
-        trackEntry.TimeScale = 0 -- 暂停播放
+        local animationState = skeleton.AnimationState
+        local trackEntry = animationState and animationState:GetTrack(0) -- StartingAnimation设置默认播放动画
+        -- 没有默认动画的 Spine 不参与进度驱动
+        if trackEntry then
+            trackEntry.TrackTime = 0 -- 设置为第0秒的状态
+            trackEntry.TimeScale = 0 -- 暂停播放
 
-        local goName = skeleton.gameObject.name
-        if stringSub(goName, 1, dragKeyLength) == dragKey then
-            tableInsert(self.SpineTrackEntryDrags, trackEntry)
-        elseif stringSub(goName, 1, bgKeyLength) == bgKey then
-            tableInsert(self.SpineTrackEntryBgs, trackEntry)
-        else
-            tableInsert(self.SpineTrackEntries, trackEntry)
+            local goName = skeleton.gameObject.name
+            if stringSub(goName, 1, dragKeyLength) == dragKey then
+                tableInsert(self.SpineTrackEntryDrags, trackEntry)
+            elseif stringSub(goName, 1, bgKeyLength) == bgKey then
+                tableInsert(self.SpineTrackEntryBgs, trackEntry)
+            else
+                tableInsert(self.SpineTrackEntries, trackEntry)
+            end
         end
     end
 end
@@ -711,8 +715,10 @@ end
 function XUiMainLine2PanelEntranceList:RefreshSpineProgress(trackEntries, progress)
     if trackEntries and #trackEntries > 0 then
         for _, trackEntry in pairs(trackEntries) do
-            local trackTime = trackEntry.Animation.Duration * progress
-            trackEntry.TrackTime = trackTime
+            local animation = trackEntry and trackEntry.Animation
+            if animation then
+                trackEntry.TrackTime = animation.Duration * progress
+            end
         end
     end
 end

@@ -361,6 +361,7 @@ function XPassportControl:GetPassportFashionBuyData(typeInfoId, buyCallBack)
             { XGoodsCommonManager.GetGoodsShowParamsByTemplateId(fashionId) }
         )
     end
+    ---@type XPurchaseBuyData
     local buyData = {}
     buyData.IsHave = isHave
     buyData.ItemCount = CS.XTextManager.GetText("PassportFashionBuyBtnText")
@@ -849,13 +850,13 @@ function XPassportControl:CheckStopToBuyBeforeTheEnd()
     return true
 end
 
+function XPassportControl:GetPassportActivityHasSupplyReward()
+    return self._Model:GetPassportActivityHasSupplyReward()
+end
+
 --领取补给奖励请求
 function XPassportControl:RequestPassportGetSupplyReward(cb)
     XNetwork.Call("PassportGetSupplyRewardRequest", {}, function(res)
-        if res.Code == XCode.PassportSupplyRewardNotExist then    -- 预期内
-            return
-        end
-
         if res.Code ~= XCode.Success then
             XUiManager.TipCode(res.Code)
             return

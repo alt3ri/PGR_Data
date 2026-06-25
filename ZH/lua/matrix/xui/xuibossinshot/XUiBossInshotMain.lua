@@ -1,21 +1,27 @@
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local XUiBossInshotBossDetail = require("XUi/XUiBossInshot/XUiBossInshotBossDetail")
+local XBossInshotModel = require("XModule/XBossInshot/XBossInshotModel")
+
 ---@class XUiBossInshotMain:XLuaUi
 ---@field private _Control XBossInshotControl
 local XUiBossInshotMain = XLuaUiManager.Register(XLuaUi, "UiBossInshotMain")
 
+local SPECIAL_BOSS_INDEX_TOWER = -1
+
 function XUiBossInshotMain:OnAwake()
     self.Grid256New.gameObject:SetActiveEx(false)
     self.PanelBossDetail.gameObject:SetActiveEx(false)
-    
+
     self.ActivityId = self._Control:GetActivityId()
     if self.ActivityId == 0 then return end
 
     self.BossIds = self._Control:GetActivityBossIds(self.ActivityId)
     self.BossIndex = 1 -- 选中Boss下标
-    self.PANEL_STATE_TYPE = { MAIN = 1, DETAIL = 2 }
+    self.PANEL_STATE_TYPE = { MAIN = 1, DETAIL = 2, TOWER = 3 }
     self.EFFECT_NAME = {
         EFFECT_SWITCH = "EffectSwitch",
         EFFECT_Appear = "EffectAppear",
+        EFFECT_BLACK_HOLE = "EffectTowerBossPlaceholder"
     }
     self.PanelState = self.PANEL_STATE_TYPE.MAIN
 
@@ -28,13 +34,16 @@ end
 
 function XUiBossInshotMain:OnStart()
     self.IsPlayStartAnim = true
+
+    -- 加载boss模型
+    self:LoadBossModel()
 end
 
 function XUiBossInshotMain:OnEnable()
     self:RefreshSceneSetting()
     if self.ActivityId == 0 then
         self:Close()
-        return 
+        return
     end
 
     if self.PanelState == self.PANEL_STATE_TYPE.MAIN then
@@ -46,14 +55,12 @@ function XUiBossInshotMain:OnEnable()
             local sceneAnim = self.UiModelGo.transform:Find("Animation/Enable")
             sceneAnim:PlayTimelineAnimation()
         end
-    elseif self.PanelState == self.PANEL_STATE_TYPE.DETAIL then
+    elseif self.PanelState == self.PANEL_STATE_TYPE.DETAIL
+        or self.PanelState == self.PANEL_STATE_TYPE.TOWER then
         self:PlayAnimation("PanelBossDetailEnable")
     end
     
     self:Refresh()
-    
-    -- 加载boss模型
-    self:LoadBossModel()
 
     -- 加载特效
     self:HideAllBossEffect()
@@ -76,7 +83,13 @@ function XUiBossInshotMain:OnRelease()
 end
 
 function XUiBossInshotMain:OnReleaseInst()
-    return {self.PanelState, self.BossIndex, self.DifficultyIndex, self.SkillIndex}
+    return {
+        self.PanelState,
+        self.BossIndex,
+        self.DifficultyIndex,
+        self.SkillIndex,
+        self.CurrentBossModel
+    }
 end
 
 function XUiBossInshotMain:OnResume(value)
@@ -84,11 +97,22 @@ function XUiBossInshotMain:OnResume(value)
     self.BossIndex = value[2]
     self.DifficultyIndex = value[3]
     self.SkillIndex = value[4]
+    self.CurrentBossModel = value[5]
 end
 
 function XUiBossInshotMain:CacheDifficultyIndexAndSkillIndex(difficultyIndex, skillIndex)
     self.DifficultyIndex = difficultyIndex
     self.SkillIndex = skillIndex
+end
+
+local function CheckBtnTowerRedPoint(activityId)
+    local key = "XUiBossInshotMain.BtnTowerRedPointKey_" .. XPlayer.Id
+    return XSaveTool.GetData(key) ~= tostring(activityId)
+end
+
+local function CancelBtnTowerRedPoint(activityId)
+    local key = "XUiBossInshotMain.BtnTowerRedPointKey_" .. XPlayer.Id
+    XSaveTool.SaveData(key, tostring(activityId))
 end
 
 function XUiBossInshotMain:RegisterUiEvents()
@@ -102,11 +126,28 @@ function XUiBossInshotMain:RegisterUiEvents()
     local btns = { self.BtnBoss1, self.BtnBoss2, self.BtnBoss3 }
     self.PanelBoss:Init(btns, function(index)
         self:OnBtnBossClick(index)
+        self:SwitchPanel(self.PANEL_STATE_TYPE.DETAIL)
     end)
+
+
+    local btnTowerCb = handler(self, self._OnBtnTowerClicked)
+    self.BtnTower.CallBack = btnTowerCb
+    self.BtnTowerRed.CallBack = btnTowerCb
 end
 
+function XUiBossInshotMain:_OnBtnTowerClicked()
+    local locked, lockedCond = self._Control:IsTowerUnlocked()
+    if locked then
+        self:SwitchPanel(self.PANEL_STATE_TYPE.TOWER)
+        CancelBtnTowerRedPoint(self._Control:GetActivityId())
+    else
+        XUiManager.TipMsg(XConditionManager.GetConditionDescById(lockedCond))
+    end
+end
+
+
 function XUiBossInshotMain:OnBtnBackClick()
-    if self.PanelState == self.PANEL_STATE_TYPE.DETAIL then
+    if self.PanelState ~= self.PANEL_STATE_TYPE.MAIN then
         self:SwitchPanel(self.PANEL_STATE_TYPE.MAIN)
         return
     end
@@ -132,7 +173,11 @@ function XUiBossInshotMain:OnBtnSelectClick()
     
     local isInTime = XFunctionManager.CheckInTimeByTimeId(self.BossOpenTimeId, true)
     if isInTime then
-        self:SwitchPanel(self.PANEL_STATE_TYPE.DETAIL)
+        if self.BossIndex == SPECIAL_BOSS_INDEX_TOWER then
+            self:SwitchPanel(self.PANEL_STATE_TYPE.TOWER)
+        else
+            self:SwitchPanel(self.PANEL_STATE_TYPE.DETAIL)
+        end
     end
 end
 
@@ -141,37 +186,29 @@ function XUiBossInshotMain:OnBtnBossClick(index)
         self:RefreshBtnSelectState()
         return
     end
-    
+
     self.BossIndex = index
     self:RefreshBtnSelectState()
-    self:RefreshBossInfo()
-    self:ShowBossEffect(self.EFFECT_NAME.EFFECT_SWITCH, true)
-    self:ClearBossEffectTimer()
-    self.BossEffectTimer = XScheduleManager.ScheduleOnce(function()
-        self.BossEffectTimer = nil
-        self:LoadBossModel()
-        self:ShowBossEffect(self.EFFECT_NAME.EFFECT_Appear, true)
 
-        self.RoleModel.GameObject:SetActiveEx(false)
-        XScheduleManager.ScheduleOnce(function()
-            self.RoleModel.GameObject:SetActiveEx(true)
-            local effectGo = self.EffectDic[self.EFFECT_NAME.EFFECT_Appear]
-            effectGo.gameObject:SetActive(false)
-            effectGo.gameObject:SetActive(true)
-        end, 10)
-    end, 350)
-    
-    XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, XLuaAudioManager.UiBasicsMusic.BossInshotSwitchBoss)
+    XLuaAudioManager.PlayAudioByType(
+        XLuaAudioManager.SoundType.SFX,
+        XLuaAudioManager.UiBasicsMusic.BossInshotSwitchBoss)
+
+    if index ~= SPECIAL_BOSS_INDEX_TOWER then
+        self:RefreshBossInfo()
+        self:SwitchBossModel(self.BossIds[index])
+    end
 end
 
 -- 刷新按钮选中状态
 function XUiBossInshotMain:RefreshBtnSelectState()
+    -- 从选项式改成按钮式
     local CSNormal = CS.UiButtonState.Normal
-    local CSSelect = CS.UiButtonState.Select
+    -- local CSSelect = CS.UiButtonState.Select
     for i, _ in ipairs(self.BossIds) do
-        local state = i == self.BossIndex and CSSelect or CSNormal
+        -- local state = i == self.BossIndex and CSSelect or CSNormal
         local btn = self["BtnBoss" .. i]
-        btn:SetButtonState(state)
+        btn:SetButtonState(CSNormal)
     end
 end
 
@@ -238,9 +275,14 @@ function XUiBossInshotMain:ClearActivityTimer()
     end
 end
 
+function XUiBossInshotMain:ShowBlackHole(show)
+    self:ShowBossEffect(self.EFFECT_NAME.EFFECT_BLACK_HOLE, show)
+    self.CurrentBossModel = nil
+end
+
 function XUiBossInshotMain:Refresh()
     self:RefreshBtnSelectState()
-    
+
     -- 主界面
     self.PanelMain.gameObject:SetActiveEx(self.PanelState == self.PANEL_STATE_TYPE.MAIN)
     if self.PanelState == self.PANEL_STATE_TYPE.MAIN then
@@ -250,14 +292,28 @@ function XUiBossInshotMain:Refresh()
     -- Boss详情
     if self.PanelState == self.PANEL_STATE_TYPE.DETAIL then
         if not self.UiBossDetail then
-            local XUiBossInshotBossDetail = require("XUi/XUiBossInshot/XUiBossInshotBossDetail")
-            self.UiBossDetail = XUiBossInshotBossDetail.New(self.PanelBossDetail, self)
+            self.UiBossDetail = XUiBossInshotBossDetail.New(
+                self.PanelBossDetail,
+                self,
+                handler(self, self.SwitchBossModel),
+                handler(self, self.ShowBlackHole))
         end
         self.UiBossDetail:Open()
         local bossId = self.BossIds[self.BossIndex]
-        self.UiBossDetail:Refresh(bossId, self.DifficultyIndex, self.SkillIndex)
+        self.UiBossDetail:RefreshAsNormal(bossId, self.DifficultyIndex, self.SkillIndex)
         self.DifficultyIndex = nil
         self.SkillIndex = nil
+    elseif self.PanelState == self.PANEL_STATE_TYPE.TOWER then
+        if not self.UiBossDetail then
+            self.UiBossDetail = XUiBossInshotBossDetail.New(
+                self.PanelBossDetail,
+                self,
+                handler(self, self.SwitchBossModel),
+                handler(self, self.ShowBlackHole))
+        end
+
+        self.UiBossDetail:Open()
+        self.UiBossDetail:RefreshAsTower()
     else
         if self.UiBossDetail then
             self.UiBossDetail:Close()
@@ -270,6 +326,32 @@ function XUiBossInshotMain:RefreshPanelMain()
     self:RefreshTime()
     self:RefreshBossInfo()
     self:RefreshBtnTask()
+
+    local btnTowerUnlocked = self._Control:IsTowerUnlocked()
+
+    if btnTowerUnlocked then
+        local currentIsChallenge = false
+        local curLevel = self._Control:GetBossTowerCurrentLevel()
+        local curLevelConf = self._Control:GetConfigBossInshotTowerAllLevels()[curLevel]
+
+        if curLevel ~= 0 and curLevelConf.Type == XBossInshotModel.TowerLevelType.ChallengeLevel then
+            currentIsChallenge = true
+        end
+
+        self.BtnTower.gameObject:SetActiveEx(not currentIsChallenge)
+        self.BtnTowerRed.gameObject:SetActiveEx(currentIsChallenge)
+        self.BtnTower:SetButtonState(CS.UiButtonState.Normal)
+        self.BtnTowerRed:SetButtonState(CS.UiButtonState.Normal)
+
+        local showRed = CheckBtnTowerRedPoint(self._Control:GetActivityId())
+        self.BtnTower:ShowReddot(showRed)
+        self.BtnTowerRed:ShowReddot(showRed)
+    else
+        self.BtnTower.gameObject:SetActiveEx(true)
+        self.BtnTowerRed.gameObject:SetActiveEx(false)
+        self.BtnTower:SetButtonState(CS.UiButtonState.Disable)
+        self.BtnTower:ShowReddot(false)
+    end
 end
 
 function XUiBossInshotMain:RefreshTime()
@@ -278,35 +360,62 @@ function XUiBossInshotMain:RefreshTime()
 end
 
 function XUiBossInshotMain:RefreshBossInfo()
-    local bossId = self.BossIds[self.BossIndex]
-    self.StageIds = self._Control:GetBossStageIds(bossId)
-    local btn = self["BtnBoss" .. tostring(self.BossIndex)]
-
     -- 摄像机镜头
     self:SwitchCamera("UiModeCamFarMain", "UiModeCamNearMain")
 
-    -- 进度
-    local isClear = true
-    local passCnt = 0
-    local allCnt = #self.StageIds
-    for i, inshotStageId in ipairs(self.StageIds) do
-        local stageId = self._Control:GetStageStageId(inshotStageId)
-        local stageData = self._Control:GetPassStageData(stageId)
-        if stageData then
-            passCnt = passCnt + 1
-        else
-            isClear = false
+    if self.BossIndex ~= SPECIAL_BOSS_INDEX_TOWER then
+        local bossId = self.BossIds[self.BossIndex]
+        self.StageIds = self._Control:GetBossStageIds(bossId)
+        local btn = self["BtnBoss" .. tostring(self.BossIndex)]
+
+        -- 进度
+        local isClear = true
+        local passCnt = 0
+        local allCnt = #self.StageIds
+        for i, inshotStageId in ipairs(self.StageIds) do
+            local stageId = self._Control:GetStageStageId(inshotStageId)
+            local stageData = self._Control:GetPassStageData(stageId)
+            if stageData then
+                passCnt = passCnt + 1
+            else
+                isClear = false
+            end
+        end
+        local bossName = self._Control:GetBossName(bossId)
+        local progress = XUiHelper.GetText("BossInshotBossProgress", passCnt, allCnt)
+        btn:SetNameByGroup(0, bossName)
+        btn:SetNameByGroup(2, progress)
+        btn:ShowTag(isClear)
+
+        -- 开放时间
+        self.BossOpenTimeId = self._Control:GetBossOpenTimeId(bossId)
+        self:RefreshBossOpenTime()
+    end
+
+    -- 设置塔进度
+    local maxTowerLevel = 0
+    for _, levelConf in pairs(self._Control:GetConfigBossInshotTowerAllLevels()) do
+        if levelConf.Id > maxTowerLevel then
+            maxTowerLevel = levelConf.Id
         end
     end
-    local bossName = self._Control:GetBossName(bossId)
-    local progress = XUiHelper.GetText("BossInshotBossProgress", passCnt, allCnt)
-    btn:SetNameByGroup(0, bossName)
-    btn:SetNameByGroup(2, progress)
-    btn:ShowTag(isClear)
 
-    -- 开放时间
-    self.BossOpenTimeId = self._Control:GetBossOpenTimeId(bossId)
-    self:RefreshBossOpenTime()
+    local currentLevel = self._Control:GetBossTowerCurrentLevel()
+
+    if currentLevel > 0 then
+        local currentLevelData = self._Control:GetBossTowerData(currentLevel)
+        if not currentLevelData or not currentLevelData.IsPass then
+            currentLevel = currentLevel - 1
+        end
+    end
+
+    local progressText = XUiHelper.GetText(
+        "BossInshotBossProgress",
+        currentLevel,
+        maxTowerLevel)
+
+    self.BtnTower:SetNameByGroup(1, progressText)
+    self.BtnTowerRed:SetNameByGroup(1, progressText)
 end
 
 function XUiBossInshotMain:RefreshBossOpenTime()
@@ -316,33 +425,40 @@ function XUiBossInshotMain:RefreshBossOpenTime()
         local gameTime = XFunctionManager.GetStartTimeByTimeId(self.BossOpenTimeId) - XTime.GetServerNowTimestamp()
         timeTips = XUiHelper.GetText("BossInshotBossUnlockTips", XUiHelper.GetTime(gameTime, XUiHelper.TimeFormatType.ACTIVITY))
     end
-    local btn = self["BtnBoss" .. tostring(self.BossIndex)]
-    btn:SetNameByGroup(1, timeTips)
-    self.BtnSelect:SetDisable(not isInTime)
+
+    if self.BossIndex ~= SPECIAL_BOSS_INDEX_TOWER then
+        local btn = self["BtnBoss" .. tostring(self.BossIndex)]
+        btn:SetNameByGroup(1, timeTips)
+        self.BtnSelect:SetDisable(not isInTime)
+    end
 end
 
 -- 切换界面
 function XUiBossInshotMain:SwitchPanel(state)
     if state == self.PANEL_STATE_TYPE.MAIN then
         self:PlayAnimation("PanelMainEnable")
-    elseif state == self.PANEL_STATE_TYPE.DETAIL then
+        self:SwitchBossModel(self.BossIds[self.BossIndex])
+        self:RefreshBossInfo()
+    elseif state == self.PANEL_STATE_TYPE.DETAIL or state == self.PANEL_STATE_TYPE.TOWER then
         self:PlayAnimation("PanelBossDetailEnable")
     end
-    
+
     self.PanelState = state
     self:Refresh()
 end
 
 -- 切换摄像机
 function XUiBossInshotMain:SwitchCamera(farName, nearName)
-    farName = string.format(farName .. "%02d", self.BossIndex)
-    nearName = string.format(nearName .. "%02d", self.BossIndex)
+    if self.BossIndex ~= SPECIAL_BOSS_INDEX_TOWER then
+        farName = string.format(farName .. "%02d", self.BossIndex)
+        nearName = string.format(nearName .. "%02d", self.BossIndex)
 
-    for _, camera in pairs(self.CameraDic) do
-        camera.gameObject:SetActiveEx(false)
+        for _, camera in pairs(self.CameraDic) do
+            camera.gameObject:SetActiveEx(false)
+        end
+        self.CameraDic[farName].gameObject:SetActiveEx(true)
+        self.CameraDic[nearName].gameObject:SetActiveEx(true)
     end
-    self.CameraDic[farName].gameObject:SetActiveEx(true)
-    self.CameraDic[nearName].gameObject:SetActiveEx(true)
 end
 
 -- 刷新任务按钮
@@ -365,7 +481,7 @@ function XUiBossInshotMain:CheckNewTalentUnlock()
         self._Control:SetAgainFight(false)
         return
     end
-    
+
     local result = self._Control:GetNewUnlockTalentIds()
     for characterId, newTalentIds in pairs(result) do
         XLuaUiManager.Open("UiBossInshotUnlockTalent", characterId, newTalentIds)
@@ -373,19 +489,42 @@ function XUiBossInshotMain:CheckNewTalentUnlock()
 end
 
 -- 加载当前Boss模型
-function XUiBossInshotMain:LoadBossModel()
+function XUiBossInshotMain:LoadBossModel(bossId)
     if not self.RoleModel then
         local XUiPanelRoleModel = require("XUi/XUiCharacter/XUiPanelRoleModel")
         local linkGo = self.UiModelGo.transform:FindTransform("ModelPos")
         ---@type XUiPanelRoleModel
         self.RoleModel = XUiPanelRoleModel.New(linkGo, XModelManager.MODEL_UINAME.UiBossInshot, nil, true)
     end
-    
-    local bossId = self.BossIds[self.BossIndex]
+
+    bossId = bossId or self.CurrentBossModel or self.BossIds[self.BossIndex]
+    self.CurrentBossModel = bossId
     local modelId = self._Control:GetBossModelId(bossId)
     local XUiModelUtility = require("XUi/XUiCharacter/XUiModelUtility")
     XUiModelUtility.UpdateMonsterBossModel(self.RoleModel, modelId, XModelManager.MODEL_UINAME.UiBossInshot)
     self.RoleModel:SetRoleTransform(XModelManager.MODEL_UINAME.UiBossInshot)
+end
+
+-- 切换Boss模型并播放切换特效
+function XUiBossInshotMain:SwitchBossModel(bossId)
+    if self.CurrentBossModel == bossId then return end
+    self.CurrentBossModel = bossId
+    if self.RoleModel then
+        self:ShowBossEffect(self.EFFECT_NAME.EFFECT_SWITCH, true)
+    end
+    self:ClearBossEffectTimer()
+    self.BossEffectTimer = XScheduleManager.ScheduleOnce(function()
+        self.BossEffectTimer = nil
+        self:LoadBossModel(bossId)
+        self:ShowBossEffect(self.EFFECT_NAME.EFFECT_Appear, true)
+        -- self.RoleModel.GameObject:SetActiveEx(false)
+        -- XScheduleManager.ScheduleOnce(function()
+        --     self.RoleModel.GameObject:SetActiveEx(true)
+        --     local effectGo = self.EffectDic[self.EFFECT_NAME.EFFECT_Appear]
+        --     effectGo.gameObject:SetActive(false)
+        --     effectGo.gameObject:SetActive(true)
+        -- end, 10)
+    end, 350)
 end
 
 -- 显示Boss特效
@@ -428,18 +567,18 @@ function XUiBossInshotMain:RefreshSceneSetting()
     local customLightmap = sceneGo:GetComponent("XCustomLightmap")
     if sceneSetting then
         sceneSetting.enabled = false
-        customLightmap.enabled = false
+        if customLightmap then customLightmap.enabled = false end
         self:ClearSceneSettingTimer()
         self.SceneSettingTimer = XScheduleManager.ScheduleOnce(function()
             self.SceneSettingTimer = nil
             sceneSetting.enabled = true
-            customLightmap.enabled = true
+            if customLightmap then customLightmap.enabled = true end
         end, 50)
     end
 end
 
 function XUiBossInshotMain:ClearSceneSettingTimer()
-    if self.SceneSettingTimer then 
+    if self.SceneSettingTimer then
         XScheduleManager.UnSchedule(self.SceneSettingTimer)
         self.SceneSettingTimer = nil
     end

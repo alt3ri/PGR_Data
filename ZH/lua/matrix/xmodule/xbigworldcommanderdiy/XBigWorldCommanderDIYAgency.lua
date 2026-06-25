@@ -455,7 +455,7 @@ function XBigWorldCommanderDIYAgency:CheckTemplateIsSuit(templateId)
         return false
     end
     return self:GetPartIsSuit(templateId)
-end
+end 
 
 function XBigWorldCommanderDIYAgency:GetPartIsSuit(partId)
     return self._Model:GetDlcPlayerFashionPartTypeIdById(partId) == XEnumConst.PlayerFashion.PartType.Suit

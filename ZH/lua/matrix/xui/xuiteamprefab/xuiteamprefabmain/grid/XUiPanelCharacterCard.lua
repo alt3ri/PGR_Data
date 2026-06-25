@@ -291,7 +291,11 @@ function XUiPanelCharacterCard:Refresh(xTeamPrefab, pos)
         end
         -- 预设武器与实穿武器是否一致，①②③④冲突检测的前置条件
         local isWeaponSameAsReal = (usingWeaponId == realWeaponId)
-        local xWeaponEquip = XMVCA.XEquip:GetEquip(usingWeaponId)
+        -- 预设武器被删除时，自动修复回包前先避免GetEquip打印不存在装备错误
+        local xWeaponEquip = nil
+        if XTool.IsNumberValid(usingWeaponId) and XMVCA.XEquip:IsEquipExit(usingWeaponId) then
+            xWeaponEquip = XMVCA.XEquip:GetEquip(usingWeaponId)
+        end
         if xWeaponEquip then
             self.WeaponGrid:Refresh(usingWeaponId)
             -- 武器共鸣
@@ -327,6 +331,13 @@ function XUiPanelCharacterCard:Refresh(xTeamPrefab, pos)
                 local icon = XMVCA.XEquip:GetEquipSuitIconPath(weaponData.WeaponOverrunSuitId)
                 self.BtnOverrunBlind:SetRawImage(icon)
                 self.BtnOverrunBlind:SetButtonState(CS.UiButtonState.Normal)
+            end
+            local overrunLevel = xWeaponEquip:GetOverrunLevel()
+            local isShowPanelLevel = overrunLevel > 0
+            self.PanelLevelIcon.gameObject:SetActiveEx(isShowPanelLevel)
+            if isShowPanelLevel then
+                self.UiTxtLevelImg1.gameObject:SetActiveEx(overrunLevel == XEnumConst.EQUIP.WEAPON_OVERRUN_LEVEL_TYPE.LEVEL1)
+                self.UiTxtLevelImg2.gameObject:SetActiveEx(overrunLevel >= XEnumConst.EQUIP.WEAPON_OVERRUN_LEVEL_TYPE.LEVEL2)
             end
             -- 武器共鸣黄标:
             -- 1.共鸣绑定角色冲突：equip实际共鸣绑定的角色与当前预设里的角色不一致则显示
@@ -474,10 +485,11 @@ function XUiPanelCharacterCard:Refresh(xTeamPrefab, pos)
         local isFirst = xTeamPrefab:GetFirstFightPos() == pos
         self.BtnFirst:SetButtonState(isFirst and CS.UiButtonState.Disable or CS.UiButtonState.Normal)
 
-        -- 形态切换按钮（仅支持 CharacterSkillExchangeDes 配置的角色，如比安卡）
+        -- 战前切换按钮（对齐战斗房间 PanelChangeMode，仅显示 Skill 类型）
         local switchSkillId, skillExchangeConfig = XMVCA.XCharacter:GetSkillExchangeDesSkillIdAndConfigByCharacterId(characterId)
-        self.BtnMode.gameObject:SetActiveEx(switchSkillId ~= nil)
-        if switchSkillId then
+        local isShowSwitchSkill = switchSkillId ~= nil and skillExchangeConfig ~= nil and skillExchangeConfig.UiType ~= XEnumConst.CHARACTER.SKILL_EXCHANGE_UI_TYPE.FORM
+        self.BtnMode.gameObject:SetActiveEx(isShowSwitchSkill)
+        if isShowSwitchSkill then
             -- 确定当前选中的变体：读预设存储，nil 时 fallback 到 group 第一个（不读全局态，保持数据独立）
             local currentSkillId = xTeamPrefab:GetSwitchSkillByPos(pos)
             local groupSkillIds = XMVCA.XCharacter:GetGroupSkillIds(switchSkillId)

@@ -184,6 +184,58 @@ function XTheatre6Control:FilterFileSaveBuffs(buffDatas)
     return buffs
 end
 
+---获取存档标签（遗物+技能），不使用服务器数据
+---@param fileData Theatre6FileData|Theatre6FileDataProtocol
+---@return XTableTheatre6BuildTag[]
+function XTheatre6Control:GetSortFileDataBuildTags(fileData)
+    --组内使用权重排序（从大到小）
+    local buildTagDict = {}
+    local groupDict = {}
+    for _, attrPack in ipairs(fileData.AttrPacks) do
+        local cfg = self:GetAttrPackCfgById(attrPack.PackId)
+        self:_SortMergaBuildTag(buildTagDict, groupDict, cfg.BuildTags)
+    end
+    for _, skill in ipairs(fileData.Skills) do
+        local cfg = self:GetSkillCfgById(skill.SkillId)
+        self:_SortMergaBuildTag(buildTagDict, groupDict, cfg.BuildTags)
+    end
+    local sortBuildTagIds = {}
+    for _, id in pairs(groupDict) do
+        table.insert(sortBuildTagIds, id)
+    end
+    --组外使用组Id排序（从小到大）
+    table.sort(sortBuildTagIds, function(a, b)
+        return self:GetBuildTagConfig(a).GroupId < self:GetBuildTagConfig(b).GroupId
+    end)
+    return sortBuildTagIds
+end
+
+function XTheatre6Control:_SortMergaBuildTag(buildTagDict, groupDict, buildTags)
+    for _, curId in ipairs(buildTags) do
+        local curCfg = self:GetBuildTagConfig(curId)
+        if not curCfg.IsHide and XTool.IsNumberValid(curCfg.GroupId) then
+            local curWeight = buildTagDict[curId] or 0
+            curWeight = curWeight + curCfg.SaveWeight
+            buildTagDict[curId] = curWeight
+            
+            local groupId = curCfg.GroupId
+            local oldId = groupDict[groupId]
+            if oldId and oldId ~= curId then
+                local oldWeight = buildTagDict[oldId]
+                local oldCfg = self:GetBuildTagConfig(oldId)
+                local isHightWeight = curWeight > oldWeight
+                local isHightPirority = curWeight == oldWeight and curCfg.Pirority > oldCfg.Pirority
+                local isLowId = curWeight == oldWeight and curCfg.Pirority == oldCfg.Pirority and curCfg.Id < oldCfg.Id
+                if isHightWeight or isHightPirority or isLowId then
+                    groupDict[groupId] = curId
+                end
+            elseif not oldId then
+                groupDict[groupId] = curId
+            end
+        end
+    end
+end
+
 ---获取任务免费刷新次数
 function XTheatre6Control:GetTaskFreeRefreshTimes(taskGroupId)
     return self._Model:GetTaskFreeRefreshTimes(taskGroupId)
@@ -307,9 +359,13 @@ function XTheatre6Control:SkillMoveOrSwapRequest(skillId, dstSlotType, dstPositi
         if response.Code ~= XCode.Success then
             XUiManager.TipCode(response.Code)
         end
-        self._Model.Skill:UpdateSkills(response.SkillUpdate, true)
-        if cb then
-            cb()
+        if response.SkillUpdates then
+            for index, SkillUpdate in pairs(response.SkillUpdates) do
+                self._Model.Skill:UpdateSkills(SkillUpdate, true)
+            end
+        end
+            if cb then
+                cb()
         end
     end)
     XScheduleManager.ScheduleOnce(function()
@@ -344,10 +400,25 @@ function XTheatre6Control:BuffLevelUpSkillRequest(buffId,skillId, cb)
             return
         end
         if XTool.IsNumberValid(skillId) and skillId ~= 0 then
-            local nextSkillId = self:GetNextLevelSkillId(skillId)
-            if XTool.IsNumberValid(nextSkillId) then
-                XLuaUiManager.Open("UiTheatre6GainTips", 1, nextSkillId, true)
+            for i,skillUpdateData in ipairs(response.SkillUpdates) do
+            local targetSkillId = nil
+                
+            if skillUpdateData and skillUpdateData.ReplaceSkills then 
+                for index, skillData in pairs(skillUpdateData.ReplaceSkills) do
+                    local replaceCfg = self:GetSkillCfgById(skillData.SkillId)
+                    local skillCfg = self:GetSkillCfgById(skillId)
+                    if replaceCfg and skillCfg
+                        and replaceCfg.SkillKey == skillCfg.SkillKey and replaceCfg.Level > skillCfg.Level then
+                        targetSkillId = skillData.SkillId
+                        break
+                    end
+                end
             end
+            if targetSkillId then
+                XLuaUiManager.Open("UiTheatre6GainTips", 1, targetSkillId, true)
+            end
+        end 
+        
         end
         if response.SkillUpdates then
             self._Model.Skill:UpdateSkillListWithOverQueue(response.SkillUpdates)
@@ -547,9 +618,48 @@ function XTheatre6Control:GetModeSelectRoleIndex(mode, roleConfigs)
     return 1
 end
 
-function XTheatre6Control:SaveBuffChooseIndex(mode, characterId, index)
-    self._Model:SaveBuffChooseIndex(mode, characterId, index)
-end
+function XTheatre6Control:GetNewCharacterShowTimeId()
+    local values = self._Model:GetClientConfigValues("NewCharacterTagShowTime")
+    local timeId = 0
+
+    if #values ~= 0 then
+        timeId = tonumber(values[#values])
+    end
+
+    return timeId
+end
+
+function XTheatre6Control:GetNewCharacterShowTagMap(tagType)
+    local result = {}
+    local timeId = self:GetNewCharacterShowTimeId()
+    local tags = self._Model:GetNewCharacterShowTags(tagType)
+
+    if XFunctionManager.CheckInTimeByTimeId(timeId, false) then
+        local values = self._Model:GetClientConfigValues("NewCharacterTagShowId")
+
+        for _, value in pairs(values) do
+            local showId = tonumber(value)
+
+            if XTool.IsNumberValid(showId) and (not tags or not tags[showId]) then
+                result[showId] = true
+            end
+        end
+    end
+
+    return result
+end
+
+function XTheatre6Control:CheckHasNewCharacter(tagType)
+    return not XTool.IsTableEmpty(self:GetNewCharacterShowTagMap(tagType))
+end
+
+function XTheatre6Control:AddNewCharacterShowTag(id, tagType)
+    self._Model:AddNewCharacterShowTag(id, tagType)
+end
+
+function XTheatre6Control:SaveBuffChooseIndex(mode, characterId, index)
+    self._Model:SaveBuffChooseIndex(mode, characterId, index)
+end
 
 function XTheatre6Control:GetBuffChooseIndex(mode, characterId)
     return self._Model:GetBuffChooseIndex(mode, characterId)
@@ -559,12 +669,12 @@ function XTheatre6Control:SaveDifficultyChooseIndex(characterId, index)
     self._Model:SaveDifficultyChooseIndex(characterId, index)
 end
 
-function XTheatre6Control:GetDifficultyChooseIndex(characterId)
-    return self._Model:GetDifficultyChooseIndex(characterId)
-end
-
---#endregion
-return XTheatre6Control
+function XTheatre6Control:GetDifficultyChooseIndex(characterId)
+    return self._Model:GetDifficultyChooseIndex(characterId)
+end
+
+--#endregion
+return XTheatre6Control
 
 ---@class XTheatre6BuffData
 ---@field Uid number 唯一Id

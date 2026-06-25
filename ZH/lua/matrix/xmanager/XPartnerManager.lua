@@ -896,25 +896,33 @@ XPartnerManagerCreator = function()
      ---@cb 回调 
     --==============================
     function XPartnerManager.TeamPreSetPartnerRequest(teamId, pos, partnerId, skillData, cb)
-        if not XTool.IsNumberValid(teamId)
-                or not XTool.IsNumberValid(pos)
-                or not skillData then
+        if not XTool.IsNumberValid(teamId) or not XTool.IsNumberValid(pos) then
             return
         end
-        local data
+
+        local xTeamPrefab = XDataCenter.TeamManager.GetTeamPrefabDataByTeamId(teamId)
+        local characterId = xTeamPrefab and xTeamPrefab:GetEntityIdByTeamPos(pos)
+        if not XTool.IsNumberValid(characterId) then
+            return
+        end
+
+        local partnerData
         if XTool.IsNumberValid(partnerId) then
-            data = {
+            if not skillData then
+                return
+            end
+            partnerData = {
                 PartnerId = partnerId,
                 SkillData = skillData
             }
-        else
-            data = {}
+            XMessagePack.MarkAsTable(partnerData)
+            XMessagePack.MarkAsTable(partnerData.SkillData)
         end
         
         local request = {
             TeamId = teamId,
             TeamPos = pos,
-            TeamPrefabPartnerData = data
+            TeamPrefabPartnerData = partnerData
         }
         
         XNetwork.Call(METHOD_NAME.TeamPreSetPartnerRequest, request, function(res)
@@ -927,8 +935,6 @@ XPartnerManagerCreator = function()
 
             if cb then cb() end
         end)
-        
-        
     end
 
     function XPartnerManager.PartnerBreakAwayRequest(partnerId, errorCb)--伙伴脱离请求
@@ -1278,6 +1284,35 @@ XPartnerManagerCreator = function()
     ---@return XPartnerModelConfig 辅助机配置
     function XPartnerManager.GetPartnerModelConfigById(templateId)
         return XPartnerConfigs.GetPartnerModelById(templateId)
+    end
+
+    ---加载辅助机待机模型，并播放待机转战斗展示的音效、特效和动画。
+    ---@param templateId number 辅助机Id
+    ---@param panelRoleModelUi XUiPanelRoleModel 加载模型界面
+    ---@param uiName string 需要加载模型的Ui名(XModelManager.MODEL_UINAME的枚举)
+    ---@param loadCallback function 加载待机模型后的回调
+    ---@param sToCAnimaFinishCallback function 播放完SToC动画后的回调
+    function XPartnerManager.LoadPartnerStandbyModelWithSToCShow(templateId, panelRoleModelUi, uiName, loadCallback,
+        sToCAnimaFinishCallback)
+        local modelConfig = XPartnerManager.GetPartnerModelConfigById(templateId)
+
+        if not modelConfig then
+            XLog.Error("获取辅助机模型配置失败！PartnerId: " .. tostring(templateId))
+            return
+        end
+
+        if not panelRoleModelUi then
+            XLog.Error("XUiPanelRoleModel为空！")
+            return
+        end
+
+        if XTool.IsNumberValid(modelConfig.SToCVoice) then
+            panelRoleModelUi:SetPartnerSToCVoiceCueId(modelConfig.SToCVoice)
+        end
+
+        panelRoleModelUi:UpdatePartnerModel(modelConfig.StandbyModel, uiName, nil, loadCallback, false, true)
+        panelRoleModelUi:LoadPartnerUiEffect(modelConfig.StandbyModel, XPartnerConfigs.EffectParentName.ModelOffEffect, true, true)
+        panelRoleModelUi:PlayAnima(modelConfig.SToCAnime, true, sToCAnimaFinishCallback)
     end
 
     ---获取辅助机PartnerUiEffect数据

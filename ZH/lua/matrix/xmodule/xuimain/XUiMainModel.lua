@@ -2,10 +2,13 @@
 local XUiMainModel = XClass(XModel, "XUiMainModel")
 
 -- tableKey{ tableName = {ReadFunc , DirPath, Identifier, TableDefindName, CacheType} }
-local TableKey = {
-    UiPanelTip = { DirPath = XConfigUtil.DirectoryType.Client, CacheType = XConfigUtil.CacheType.Normal },
-    ActivityBtn = { DirPath = XConfigUtil.DirectoryType.Client, CacheType = XConfigUtil.CacheType.Normal },
-}
+local TableKey = {
+    UiPanelTip = { DirPath = XConfigUtil.DirectoryType.Client, CacheType = XConfigUtil.CacheType.Normal },
+    ActivityBtn = { DirPath = XConfigUtil.DirectoryType.Client, CacheType = XConfigUtil.CacheType.Normal },
+    ActivityToastHall = { DirPath = XConfigUtil.DirectoryType.Client, CacheType = XConfigUtil.CacheType.Normal },
+    ActivityToastHallSkin = { DirPath = XConfigUtil.DirectoryType.Client, CacheType = XConfigUtil.CacheType.Normal },
+    ActivityToastHallSceneRule = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "SceneKey", ReadFunc = XConfigUtil.ReadType.String, CacheType = XConfigUtil.CacheType.Normal },
+}
 
 local BoardTableKey = {
     BoardEffectActivity = { CacheType = XConfigUtil.CacheType.Normal },
@@ -24,10 +27,8 @@ function XUiMainModel:OnInit()
     self:_InitNewPlayerTaskCollection()
 end
 
-function XUiMainModel:ClearPrivate()
-    --这里执行内部数据清理
-    XLog.Error("请对内部数据进行清理")
-end
+function XUiMainModel:ClearPrivate()
+end
 
 function XUiMainModel:ResetAll()
     --这里执行重登数据清理
@@ -45,17 +46,79 @@ function XUiMainModel:GetActivityBtn()
     return self._ConfigUtil:GetByTableKey(TableKey.ActivityBtn)
 end
 
-function XUiMainModel:GetActivityBtnConfigById(id)
-    if not XTool.IsNumberValid(id) then
-        return
-    end
-
-    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.ActivityBtn, id)
-end
-
-function XUiMainModel:GetNewPlayerTaskCollection()
-    return self._NewPlayerTaskCollection
-end
+function XUiMainModel:GetActivityBtnConfigById(id)
+    if not XTool.IsNumberValid(id) then
+        return
+    end
+
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.ActivityBtn, id)
+end
+
+---@return table<number, XTableActivityToastHall>
+function XUiMainModel:GetActivityToastHallCfgs()
+    return self._ConfigUtil:GetByTableKey(TableKey.ActivityToastHall) or {}
+end
+
+---@return XTableActivityToastHall
+function XUiMainModel:GetActivityToastHallCfgById(id)
+    if not XTool.IsNumberValid(id) then
+        return
+    end
+
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.ActivityToastHall, id, true)
+end
+
+---@return XTableActivityToastHallSkin
+function XUiMainModel:GetActivityToastHallSkinCfgById(id)
+    if not XTool.IsNumberValid(id) then
+        return
+    end
+
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.ActivityToastHallSkin, id, true)
+end
+
+---@return XTableActivityToastHallSceneRule
+function XUiMainModel:GetActivityToastHallSceneRuleCfg(sceneKey)
+    if string.IsNilOrEmpty(sceneKey) then
+        return
+    end
+
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.ActivityToastHallSceneRule, sceneKey, true)
+end
+
+---@return table<string, XTableActivityToastHallSceneRule>
+function XUiMainModel:GetActivityToastHallSceneRuleCfgs()
+    return self._ConfigUtil:GetByTableKey(TableKey.ActivityToastHallSceneRule) or {}
+end
+
+function XUiMainModel:GetActivityToastHallDefaultSceneKey()
+    local cfgs = self:GetActivityToastHallSceneRuleCfgs()
+    if XTool.IsTableEmpty(cfgs) then
+        return
+    end
+
+    local defaultSceneKey
+    for _, cfg in pairs(cfgs) do
+        local sceneKey = cfg.SceneKey
+        if not string.IsNilOrEmpty(sceneKey) and (not defaultSceneKey or sceneKey < defaultSceneKey) then
+            defaultSceneKey = sceneKey
+        end
+    end
+
+    return defaultSceneKey
+end
+
+function XUiMainModel:SetActivityToastHallLastShowTime(id, time)
+    self._SaveUtil:SaveData("ActivityToastHallLastShowTime_" .. tostring(id), time)
+end
+
+function XUiMainModel:GetActivityToastHallLastShowTime(id)
+    return self._SaveUtil:GetData("ActivityToastHallLastShowTime_" .. tostring(id)) or 0
+end
+
+function XUiMainModel:GetNewPlayerTaskCollection()
+    return self._NewPlayerTaskCollection
+end
 
 --region BoardEffect
 

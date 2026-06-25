@@ -7,7 +7,6 @@
 ---@field TagLock   UnityEngine.RectTransform
 ---@field BtnGrid   XUiComponent.XUiButton
 ---@field SellOut   UnityEngine.RectTransform
-
 local XUiTheatre6BattleShopGridCommodity = XClass(XUiNode, "XUiTheatre6BattleShopGridCommodity")
 local XUiGridTheatre6Skill = require("XUi/XUiTheatre6/Character/Grid/XUiGridTheatre6Skill")
 local XUiGridTheatre6Relic = require("XUi/XUiTheatre6/Character/Grid/XUiGridTheatre6Relic")
@@ -18,7 +17,9 @@ function XUiTheatre6BattleShopGridCommodity:OnStart()
 end
 
 function XUiTheatre6BattleShopGridCommodity:InitComponents()
+    ---@type XUiGridTheatre6Skill
     self.GridSkillUi = XUiGridTheatre6Skill.New(self.GridSkill, self)
+    ---@type XUiGridTheatre6Relic
     self.GridRelicUi = XUiGridTheatre6Relic.New(self.GridRelic, self)
 
     self.BtnGrid:AddEventListener(handler(self, self.OnBtnGridClick))
@@ -150,7 +151,8 @@ function XUiTheatre6BattleShopGridCommodity:OnBtnGridClick()
         IsSell = self:IsSellOut(),
         IsLock = self.IsLock,
         IsInShop = true,
-        Pos = self.GridData.Position
+        Pos = self.GridData.Position,
+        IsCanUpgrade = self.GridSkillUi:IsCanUpgrade(),
     }
     if self.GridData.Type == ItemType.Skill then
         self._Control:OpenSkillTip(self.GridData.GoodId, self.Transform, gridStatus, self._AvoidTransforms)

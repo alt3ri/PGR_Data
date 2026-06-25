@@ -57,27 +57,31 @@ function XUiPassport:OnStart(params)
         end
 
         if params.OpenPassportCard then
-            XLuaUiManager.Open("UiPassportCard", handler(self, self.Refresh), self)
+            self:OnBtnBuyPassportClick()
         end
     end
 
-    self:CheckAndGetSupplyReward()
     self:RefreshCoating()
 
     XLuaUiManager.SetMask(true)
 
     self.AnimationSchedule = XScheduleManager.ScheduleNextFrame(function()
+        local function afterAnimation()
+            self:CheckOpenAutoGetTaskRewardListView(
+                handler(self, self.CheckAndGetSupplyReward))
+        end
+
         XScheduleManager.UnSchedule(self.AnimationSchedule)
         self.AnimationSchedule = nil
 
         XLuaUiManager.SetMask(false)
 
         if not params or not params.WithStartEnableAnimation then
-            self:PlayAnimationWithMask("NoAnimationEnable")
+            self:PlayAnimationWithMask("NoAnimationEnable", afterAnimation)
         elseif isFirstOpenInThisActivity then
-            self:PlayAnimationWithMask("Start")
+            self:PlayAnimationWithMask("Start", afterAnimation)
         else
-            self:PlayAnimationWithMask("Enable")
+            self:PlayAnimationWithMask("Enable", afterAnimation)
         end
     end)
 end
@@ -110,15 +114,13 @@ function XUiPassport:RefreshCoating()
 end
 
 function XUiPassport:CheckAndGetSupplyReward()
-    if not self._Control:GetIsGetSupplyReward() then
-        self._Control:RequestPassportGetSupplyReward()
+    if not self._Control:GetIsGetSupplyReward() and self._Control:GetPassportActivityHasSupplyReward() then
+        self._Control:RequestPassportGetSupplyReward(handler(self, self.Refresh))
     end
 end
 
 function XUiPassport:OnEnable()
     CS.XGraphicManager.UseUiLightDir = true
-
-    self:CheckOpenAutoGetTaskRewardListView()
 
     if not self._Control:CheckActivityIsOpen() then
         self:StartTimer()
@@ -154,14 +156,16 @@ function XUiPassport:OnDisable()
 end
 
 --未按时领取的任务奖励，等打开该界面再弹出提示
-function XUiPassport:CheckOpenAutoGetTaskRewardListView()
+function XUiPassport:CheckOpenAutoGetTaskRewardListView(cb)
     local rewardList = self._Control:GetCookieAutoGetTaskRewardList()
     if not XTool.IsTableEmpty(rewardList) then
         local title = CS.XTextManager.GetText("PassportAutoGetTipsTitle")
         local desc = CS.XTextManager.GetText("PassportAutoGetTipsDesc")
-        XLuaUiManager.Open("UiPassportTips", rewardList, title, desc)
+        XLuaUiManager.Open("UiPassportTips", rewardList, title, desc, cb)
 
         self._Control:ClearCookieAutoGetTaskRewardList()
+    else
+        if cb then cb() end
     end
 end
 
@@ -353,7 +357,7 @@ function XUiPassport:OnBtnBuyLevelClick()
         XUiManager.TipText("PassportBuyLevelMaxDesc")
         return
     end
-    XLuaUiManager.Open("UiPassportUpLevel")
+    XLuaUiManager.Open("UiPassportUpLevel", handler(self, self.UpdateBtnTongBlack))
 end
 
 --一键领取/完成，根据当前页签切换行为
@@ -367,7 +371,10 @@ end
 
 --购买通行证（统一入口）
 function XUiPassport:OnBtnBuyPassportClick()
-    XLuaUiManager.Open("UiPassportCard", handler(self, self.Refresh), self)
+    XLuaUiManager.Open(
+        "UiPassportCard",
+        handler(self, self.Refresh),
+        self)
 end
 
 --打开兑换商店

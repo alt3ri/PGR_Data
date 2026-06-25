@@ -24,6 +24,18 @@ local Pairs = function(arr)
     return pairs(arr)
 end
 
+local MakeClickable
+if XMain.IsWindowsEditor then
+    MakeClickable = function(tb)
+        return (tb:gsub("(\n%s+)([%w_/%-%.]+):(%d+):", function(prefix, chunk, line)
+            if chunk:sub(1, 1) == "[" then return nil end
+            return string.format('%s<a href="%s.lua" line="%s" lua="1">%s:%s</a>:', prefix, chunk, line, chunk, line)
+        end))
+    end
+else
+    MakeClickable = function(tb) return tb end
+end
+
 
 local indentCache = { "" }
 local function GetIndent(depth)
@@ -157,9 +169,9 @@ XLog.Debug = function(...)
     end
     local content = Print(...)
     if content then
-        XLogDebug(content .. "\n" .. DebugTraceback())
+        XLogDebug(MakeClickable(content) .. "\n" .. MakeClickable(DebugTraceback()))
     else
-        XLogDebug("nil\n" .. DebugTraceback())
+        XLogDebug("nil\n" .. MakeClickable(DebugTraceback()))
     end
 end
 
@@ -169,18 +181,18 @@ XLog.Warning = function(...)
     end
     local content = Print(...)
     if content then
-        XLogWarning(content .. "\n" .. DebugTraceback())
+        XLogWarning(MakeClickable(content) .. "\n" .. MakeClickable(DebugTraceback()))
     else
-        XLogWarning("nil\n" .. DebugTraceback())
+        XLogWarning("nil\n" .. MakeClickable(DebugTraceback()))
     end
 end
 
 XLog.Error = function(...)
     local content = Print(...)
     if content then
-        XLogError(content .. "\n" .. DebugTraceback())
+        XLogError(MakeClickable(content) .. "\n" .. MakeClickable(DebugTraceback()))
     else
-        XLogError("nil\n" .. DebugTraceback())
+        XLogError("nil\n" .. MakeClickable(DebugTraceback()))
     end
 end
 

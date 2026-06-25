@@ -107,7 +107,7 @@ function XUiPBRCommonItemDetailGrid:ShowStartByLevel(level, orbColor)
     local colorStr = colorTextList[orbColor + 1] or ''
     
     XUiHelper.RefreshCustomizedList(self.PanelStar, self.ImgStar, level, function(index, go)
-        local img = go:GetComponent("Image")
+        local img = go:GetComponent(typeof(CS.UnityEngine.UI.Image))
 
         if img and not string.IsNilOrEmpty(colorStr) then
             img.color = XUiHelper.Hexcolor2Color(string.gsub(colorStr, "#", ""))
