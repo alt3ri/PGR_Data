@@ -15,7 +15,7 @@ local TableKey = {
     BossInshotSkill = {},
     BossInshotStage = {},
     BossInshotTalent = {},
-    BossInshotTower = { DirPath = XConfigUtil.DirectoryType.Share },
+    BossInshotTower = { DirPath = XConfigUtil.DirectoryType.Share, CacheType = XConfigUtil.CacheType.Normal },
     BossInshotTowerStage = { DirPath = XConfigUtil.DirectoryType.Share, Identifier = "StageId" }
 }
 ---@class XBossInshotModel : XModel

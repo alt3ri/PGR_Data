@@ -9,7 +9,6 @@ require("MVCA/XUidObject")
 require("MVCA/ModuleId")
 require("MVCA/XMVCAUtil")
 require("MVCA/XConfigUtil")
-require("MVCA/XMVCAEvent")
 require("MVCA/XEntity")
 require("MVCA/XModelBase")
 require("MVCA/XModel")
@@ -30,6 +29,7 @@ function XMVCACls:Ctor()
     self._ControlDict = {}
     self._ControlReleaseDict = {} --延迟释放的词典
     self._ModelDict = {}
+    self._DelayRemoveControlIds = {}
     self._TabConfigDict = {}
     self._OneKeyReLogin = false
     self._ReleaseTimer = false
@@ -194,18 +194,25 @@ function XMVCACls:ReleaseDelayControl()
 end
 
 function XMVCACls:_CheckReleaseControl()
-    local removeIds = {}
+    if not self._DelayRemoveControlIds then
+        self._DelayRemoveControlIds = {}
+    end
+    local removeIds = self._DelayRemoveControlIds
+    local count = 0
     local now = CS.UnityEngine.Time.realtimeSinceStartup
     for id, control in pairs(self._ControlReleaseDict) do
         if not control:HasViewRef() and now - control:_GetLastUseTime() >= control:_GetDelayReleaseTime() then --超出释放时间了
-            table.insert(removeIds, id)
+            count = count + 1
+            removeIds[count] = id
         end
     end
 
-    for _, id in ipairs(removeIds) do
+    for i = 1, count do
+        local id = removeIds[i]
         local control = self._ControlReleaseDict[id]
         control:Release()
         self._ControlReleaseDict[id] = nil
+        removeIds[i] = nil
     end
 
     if not next(self._ControlReleaseDict) then
@@ -348,9 +355,14 @@ end
 --一键重登全部干掉
 function XMVCACls:_HotReloadAll()
     if self._OneKeyReLogin then
+        -- agency 实例会被 _ReleaseAll 销毁、InitModule 重建，InitAllAgencyRpc 再次走 Agency:InitRpc
+        -- 这些 InitRpc 多用裸 XRpc.X = handler（绕过 AddRpc），__newindex 会判定为重复并拒绝注册
+        -- 这里在窗口期内关闭重复检测，让新实例的 handler 顺利覆盖旧实例的；XManager 静态注册不参与该窗口
+        XRpc.SetSuppressDuplicateCheck(true)
         self:_ReleaseAll()
         self:InitModule()
         self:InitAllAgencyRpc()
+        XRpc.SetSuppressDuplicateCheck(false)
         self._OneKeyReLogin = false
     end
 end
@@ -483,16 +495,17 @@ end
 function XMVCACls:ProfilerLiveControl()
     if IsWindowsEditor then
         local Uid2NameMap = XLuaUiManager.GetUid2NameMap()
-        local log = ""
+        local parts = {}
         for moduleId, control in pairs(self._ControlDict) do
-            log = log .. moduleId .. " RefUi: "
+            parts[#parts + 1] = moduleId
+            parts[#parts + 1] = " RefUi: "
             local refViewUidList = control._RefUi
-            for _, uid in ipairs(refViewUidList) do
-                log = log .. (Uid2NameMap[uid] or "")
+            for uid, _ in pairs(refViewUidList) do
+                parts[#parts + 1] = (Uid2NameMap[uid] or "")
             end
-            log = log .. "\n"
+            parts[#parts + 1] = "\n"
         end
-        XLog.Debug(log)
+        XLog.Debug(table.concat(parts))
     end
 end
 

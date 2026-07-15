@@ -1,4 +1,5 @@
-local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local XLuaUiSettle = require("XUi/XUiBase/XLuaUiSettle")
 -- ConditionShow
 -- ================================================================================
 local XUiGridTargetItem = XClass(nil, "XUiGridTargetItem")
@@ -25,7 +26,9 @@ end
 
 -- 课程关卡结算界面
 -- ================================================================================
-local XUiCourseSettlement = XLuaUiManager.Register(XLuaUi,"UiCourseSettlement")
+--- 必须继承 XLuaUiSettle，基类会在 OnDestroyUi 时自动 Dispatch EVENT_FIGHT_FINISH_SETTLE
+--- 用于通知空花等模块"结算已关闭，可以恢复回流"，请勿改为 XLuaUi
+local XUiCourseSettlement = XLuaUiManager.Register(XLuaUiSettle,"UiCourseSettlement")
 local CourseSettleLevelSImgPath = CS.XGame.ClientConfig:GetString("CourseSettleLevelSImgPath")
 local CourseSettleLevelAImgPath = CS.XGame.ClientConfig:GetString("CourseSettleLevelAImgPath")
 local CourseSettleLevelBImgPath = CS.XGame.ClientConfig:GetString("CourseSettleLevelBImgPath")
@@ -170,12 +173,9 @@ function XUiCourseSettlement:SaveResult()
     end
 end
 
-function XUiCourseSettlement:RequestCourseSaveResult()
-    local chapterId = XCourseConfig.GetChapterIdByStageId(self.StageId)
-    XDataCenter.CourseManager.RequestCourseSaveResult(handler(self, self.Close), nil, chapterId)
-end
-
-function XUiCourseSettlement:OnDestroy()
-    -- 与通用结算界面保持一致，通知主流程“结算已关闭”，以恢复空花回流逻辑
-    XEventManager.DispatchEvent(XEventId.EVENT_FIGHT_FINISH_SETTLE)
-end
+function XUiCourseSettlement:RequestCourseSaveResult()
+    local chapterId = XCourseConfig.GetChapterIdByStageId(self.StageId)
+    XDataCenter.CourseManager.RequestCourseSaveResult(handler(self, self.Close), nil, chapterId)
+end
+
+-- OnDestroy 由基类 XLuaUiSettle 统一处理 EVENT_FIGHT_FINISH_SETTLE

@@ -45,7 +45,6 @@ function XUiFashionDetail:OnAwake()
     self.BtnLensIn.gameObject:SetActiveEx(false)
     self.SliderCharacterHight.gameObject:SetActiveEx(false)
     self.PanelBtnSwich.gameObject:SetActiveEx(false)
-    self.AssetPanel = XUiPanelAsset.New(self, self.PanelAsset, XDataCenter.ItemManager.ItemId.FreeGem, XDataCenter.ItemManager.ItemId.ActionPoint, XDataCenter.ItemManager.ItemId.Coin)
     self.FashionColorPanel = XUiFashionColor.New(self.PanelDot, self)
     self.OnUiSceneLoadedCB = function() self:OnUiSceneLoaded() end
     self.OnDragModel = handler(self, self.DragModel)
@@ -57,7 +56,24 @@ function XUiFashionDetail:OnAwake()
     end
 end
 
-function XUiFashionDetail:OnStart(fashionId, fashionType, buyData, isShowFashionIconWithoutGift, isNeedCD, customWeaponFashionId, customDesc)
+---@param buyData XPurchaseBuyData 礼包购买数据契约，定义见 XPurchaseConfigs
+function XUiFashionDetail:OnStart(
+    fashionId,
+    fashionType,
+    buyData,
+    isShowFashionIconWithoutGift,
+    isNeedCD,
+    customWeaponFashionId,
+    customDesc,
+    customAssetItemIds)
+
+    -- 初始化资源栏
+    self._ShowAssetsItemIds = customAssetItemIds or { XDataCenter.ItemManager.ItemId.FreeGem, XDataCenter.ItemManager.ItemId.ActionPoint, XDataCenter.ItemManager.ItemId.Coin }
+    self._HideGroupSales = XMVCA.XFashionSuit:ConsumeFromSelfChoicePack() --来自自选礼包则隐藏成套购买开关
+
+    self.AssetPanel = XUiPanelAsset.New(self, self.PanelAsset, table.unpack(self._ShowAssetsItemIds))
+
+
     self:InitSceneRoot() --设置摄像机
     self.FashionId = fashionId
     -- fashionType 兼容旧的 bool 传参（isWeaponFashion=true 视为 Weapon）
@@ -71,13 +87,15 @@ function XUiFashionDetail:OnStart(fashionId, fashionType, buyData, isShowFashion
     self.IsWeaponFashion = self.FashionType == FashionType.Weapon
     self.BuyData = buyData
     self.IsShowFashionIconWithoutGift = isShowFashionIconWithoutGift
+    
     self.CustomDesc = customDesc
     self.CustomWeaponFashionId = customWeaponFashionId
     if self.IsWeaponFashion then
         local characterIds = XMVCA.XCharacter:GetCharacterIdsByWeaponFashion(fashionId)
         self.CharacterId = characterIds and characterIds[1] --注意：可能存在一个武器涂装对应多个角色的问题，这里取优先级最高的
     elseif self.FashionType == FashionType.Color then
-        -- FashionColor 无对应角色概念，CharacterId 保持 nil
+        local fashionId = XMVCA.XFashion:GetFashionColorOriginalFashionId(self.FashionId)
+        self.CharacterId = XDataCenter.FashionManager.GetCharacterId(fashionId)
     else
         self.CharacterId = XDataCenter.FashionManager.GetCharacterId(fashionId)
     end
@@ -106,7 +124,7 @@ function XUiFashionDetail:OnStart(fashionId, fashionType, buyData, isShowFashion
     self.BtnPlay.gameObject:SetActiveEx(isOpen and self.TrialLevelInfo ~=nil)
     self._StartRun = true
     if self.IsWeaponFashion or self.FashionType == FashionType.Color then
-        self.FashionColorPanel.GameObject:SetActiveEx(false)
+        self.FashionColorPanel:Close()
     else
         self.FashionColorPanel:Refresh(fashionId)
     end
@@ -136,23 +154,7 @@ function XUiFashionDetail:OnEnable()
         self._StartRun = false
     else
         -- 二次显示需要重新刷新已拥有状态
-        if XWeaponFashionConfigs.IsWeaponFashion(self.FashionId) then
-            --武器时装
-            local newIsHaveFashion = XDataCenter.WeaponFashionManager.CheckHasFashion(self.FashionId) and
-                    not XDataCenter.WeaponFashionManager.IsFashionTimeLimit(self.FashionId)
-            self.IsHaveFashionStateChanged = newIsHaveFashion ~= self.IsHaveFashion
-            self.IsHaveFashion = newIsHaveFashion
-        elseif self.FashionType == FashionType.Color then
-            local originalFashionId = XMVCA.XFashion:GetFashionColorOriginalFashionId(self.FashionId)
-            local newIsHaveFashion = XTool.IsNumberValid(originalFashionId) and XMVCA.XFashion:IsFashionColorHas(originalFashionId, self.FashionId)
-            self.IsHaveFashionStateChanged = newIsHaveFashion ~= self.IsHaveFashion
-            self.IsHaveFashion = newIsHaveFashion
-        else
-            --记录是否当前皮肤是否已拥有
-            local newIsHaveFashion = XRewardManager.CheckRewardGoodsListIsOwnWithAll({XGoodsCommonManager.GetGoodsShowParamsByTemplateId(self.FashionId)})
-            self.IsHaveFashionStateChanged = newIsHaveFashion ~= self.IsHaveFashion
-            self.IsHaveFashion = newIsHaveFashion
-        end
+        self:RefreshFashionHaveState()
     end
     
     XEventManager.AddEventListener(XEventId.EVENT_PURCHASE_QUICK_BUY_SKIP, self.Close, self)
@@ -187,6 +189,20 @@ function XUiFashionDetail:OnDisable()
     XEventManager.RemoveEventListener(XEventId.EVENT_RES_COMPLETE, self.OnFashionDownloadComplete, self)
     CS.XGraphicManager.UseUiLightDir = false
 end
+
+function XUiFashionDetail:OnGetLuaEvents()
+    return {
+        XEventId.EVENT_LB_UPDATE,
+        XEventId.EVENT_SHOP_BUY_SUCCESS,
+    }
+end
+
+function XUiFashionDetail:OnNotify(evt)
+    if evt == XEventId.EVENT_LB_UPDATE or evt == XEventId.EVENT_SHOP_BUY_SUCCESS then
+        self:RefreshFashionHaveState()
+        self:ShowBuyButton()
+    end
+end 
 
 function XUiFashionDetail:OnReleaseInst()
     return self.IsEnableGroupSales
@@ -267,6 +283,8 @@ function XUiFashionDetail:InitPriceHandler()
 end
 
 function XUiFashionDetail:ShowBuyPrice()
+    local isMoneyEnough = self:_CheckBuyEnough()
+    
     if self.IsEnableGroupSales then
         local dataDict = {}
         local gainType = self.FashionGroup.GainType
@@ -280,18 +298,44 @@ function XUiFashionDetail:ShowBuyPrice()
         local datas = dataDict[gainType]
         local totalPrice = self._PriceHandlers.TotalPrice[gainType](datas)
         local realPrice = self._PriceHandlers.RealPrice[gainType](datas)
-        self.BtnBuy:SetNameByGroup(0, realPrice)
+
+        local readCountStr = isMoneyEnough and tostring(realPrice) or XUiHelper.GetText("PurchaseFashionDetailCoinNotEnough", realPrice)
+
+        self.BtnBuy:SetNameByGroup(0, readCountStr)
         self.BtnBuy:SetNameByGroup(1, totalPrice)
         self.BtnBuy:ActiveTextByGroup(1, XTool.IsNumberValid(totalPrice))
     else
-        self.BtnBuy:SetNameByGroup(0, self.BuyData.ItemCount)
+        local readCountStr = isMoneyEnough and tostring(self.BuyData.ItemCount) or XUiHelper.GetText("PurchaseFashionDetailCoinNotEnough", self.BuyData.ItemCount)
+        
+        self.BtnBuy:SetNameByGroup(0, readCountStr)
         self.BtnBuy:SetNameByGroup(1, self.BuyData.OriginCount or "")
         self.BtnBuy:ActiveTextByGroup(1, self.BuyData.OriginCount)
     end
 end
 
+function XUiFashionDetail:RefreshFashionHaveState()
+    if XWeaponFashionConfigs.IsWeaponFashion(self.FashionId) then
+        --武器时装
+        local newIsHaveFashion = XDataCenter.WeaponFashionManager.CheckHasFashion(self.FashionId) and
+                not XDataCenter.WeaponFashionManager.IsFashionTimeLimit(self.FashionId)
+        self.IsHaveFashionStateChanged = newIsHaveFashion ~= self.IsHaveFashion
+        self.IsHaveFashion = newIsHaveFashion
+    elseif self.FashionType == FashionType.Color then
+        local originalFashionId = XMVCA.XFashion:GetFashionColorOriginalFashionId(self.FashionId)
+        local newIsHaveFashion = XTool.IsNumberValid(originalFashionId) and XMVCA.XFashion:IsFashionColorHas(originalFashionId, self.FashionId)
+        self.IsHaveFashionStateChanged = newIsHaveFashion ~= self.IsHaveFashion
+        self.IsHaveFashion = newIsHaveFashion
+    else
+        --记录是否当前皮肤是否已拥有
+        local newIsHaveFashion = XRewardManager.CheckRewardGoodsListIsOwnWithAll({XGoodsCommonManager.GetGoodsShowParamsByTemplateId(self.FashionId)})
+        self.IsHaveFashionStateChanged = newIsHaveFashion ~= self.IsHaveFashion
+        self.IsHaveFashion = newIsHaveFashion
+    end
+end
+
 function XUiFashionDetail:ShowBuyButton()
     local isHave = false
+    
     if self.IsEnableGroupSales then
         --套装组合是否已经购买
         local hasFashion, hasWeaponFashion = self:IsHaveGroupFashion()
@@ -303,7 +347,7 @@ function XUiFashionDetail:ShowBuyButton()
     end
     
     if isHave then
-        local isWear, isMulti
+        local isWear
         if self.IsEnableGroupSales then
             local fashionId, weaponFashionId = self:GetGroupFashionId()
             isWear = XMVCA.XFashionSuit:IsDressed(fashionId, weaponFashionId, self.CharacterId)
@@ -311,8 +355,11 @@ function XUiFashionDetail:ShowBuyButton()
             if self.IsWeaponFashion then
                 isWear = XMVCA.XFashionSuit:IsDressed(nil, self.FashionId, self.CharacterId)
             elseif self.FashionType == FashionType.Color then
-                -- FashionColor 无穿戴概念，隐藏穿戴按钮直接显示购买
-                self.BtnBuy.gameObject:SetActiveEx(true)
+                local hasThisFashionColor = XMVCA.XFashion:IsFashionColorHas(
+                    XMVCA.XFashion:GetFashionColorOriginalFashionId(self.FashionId),
+                    self.FashionId)
+
+                self.BtnBuy.gameObject:SetActiveEx(not hasThisFashionColor)
                 return
             else
                 isWear = XMVCA.XFashionSuit:IsDressed(self.FashionId, nil, self.CharacterId)
@@ -339,6 +386,8 @@ function XUiFashionDetail:ShowBuyButton()
             self.BtnWear.gameObject:SetActiveEx(true)
             self.BtnWear:SetDisable(isWear, not isWear)
         end
+
+        self.BtnBuy.gameObject:SetActiveEx(false)
     else
         self.BtnBuy.gameObject:SetActiveEx(true)
     end
@@ -405,49 +454,10 @@ function XUiFashionDetail:AutoAddListener()
 end
 
 function XUiFashionDetail:SetDetailData()
-    self.GoodIdList = {}
-    -- v1.28-采购优化-赠品队列展示
-    -- 传入Data为单一rewardId的情况
-    local giftRewardId = self.BuyData and self.BuyData.GiftRewardId
-    if type(giftRewardId) == "number" then
-        if giftRewardId ~= 0 then
-            local datas = XRewardManager.GetRewardList(giftRewardId)
-            if datas then
-                self.GoodIdList = datas
-            end
-        end
-    elseif self.BuyData and self.BuyData.GiftRewardId then
-        self.GoodIdList = self.BuyData.GiftRewardId
-    end
+    local goodIdList = self:_GetRewardDataList()
 
     local id = self.FashionId
-    local fashionId = self.IsEnableGroupSales and self.FashionGroup.FashionId or (self.IsWeaponFashion and 0 or (self.FashionType == FashionType.Color and 0 or id))
-    local weaponFashionId = self.IsEnableGroupSales and self.FashionGroup.WeaponFashionId or (self.IsWeaponFashion and id or 0)
-
-    if XTool.IsNumberValid(fashionId) then
-        -- v1.31-采购优化-涂装增加CG展示道具
-        local subItems = XDataCenter.FashionManager.GetFashionSubItems(fashionId)
-        if subItems then
-            for _, itemTemplateId in ipairs(subItems) do
-                table.insert(self.GoodIdList, { TemplateId = itemTemplateId, Count = 1, IsSubItem = true })
-            end
-        end
-
-        local giftId = XFashionConfigs.GetFashionTemplate(fashionId).GiftId
-        if XTool.IsNumberValid(giftId) then
-            local giftGoodShowData = XGoodsCommonManager.GetGoodsShowParamsByTemplateId(giftId)
-            giftGoodShowData.IsGift = true
-            giftGoodShowData.Count = 1
-            table.insert(self.GoodIdList, giftGoodShowData)
-        end
-    end
-
-    --若开启套装购买，则显示全部（角色+武器）
-    if self.IsEnableGroupSales then
-        table.insert(self.GoodIdList, 1, { TemplateId = weaponFashionId, Count = 1, Disable = true })
-        table.insert(self.GoodIdList, 1, { TemplateId = fashionId, Count = 1, Disable = true })
-    end
-
+    
     -- giftRewardId=额外礼物，在商店皮肤界面，没有额外礼物，就显示时装物品
     if self.FashionType == FashionType.Color then
         -- FashionColor：用 FashionColor.tab 的 FashionIcon 字段显示图标
@@ -462,18 +472,14 @@ function XUiFashionDetail:SetDetailData()
         self.GridItemObj:ResetUi()
         self.GridItemObj:ShowIcon(icon)
         self.GridItemObj:SetUiActive(self.GridItemObj.TxtHave, isHave)
-    elseif self.GoodIdList and #self.GoodIdList > 0 and not self.IsShowFashionIconWithoutGift then
-        --显示商品本身
-        if not self.IsEnableGroupSales then
-            table.insert(self.GoodIdList, 1, { TemplateId = id, Count = 1, Disable = true })
-        end
+    elseif not XTool.IsTableEmpty(goodIdList) and not self.IsShowFashionIconWithoutGift then
         self.GridItem.gameObject:SetActiveEx(false)
         self.RewordGoodList.gameObject:SetActiveEx(true)
         self.GridGoodItem.gameObject:SetActiveEx(false)
         self.DynamicTable = XDynamicTableNormal.New(self.RewordGoodList)
         self.DynamicTable:SetProxy(XUiGridCommon)
         self.DynamicTable:SetDelegate(self)
-        self.DynamicTable:SetDataSource(self.GoodIdList)
+        self.DynamicTable:SetDataSource(goodIdList)
         self.DynamicTable:ReloadDataASync(1)
         self.Title.text = CS.XTextManager.GetText("SpecialFashionShopGiftTitle")
         self.BtnClick.gameObject:SetActiveEx(true)
@@ -484,7 +490,7 @@ function XUiFashionDetail:SetDetailData()
             ---@type XUiGridCommon
             self.GridItemObj = XUiGridCommon.New(self, self.GridItem)
         end
-        self.GridItemObj:Refresh({ TemplateId = id, Count = 1 }, { Disable = true })
+        self.GridItemObj:Refresh(goodIdList, { Disable = true })
         self.GridItemObj:SetUiActive(self.GridItemObj.ImgIsHave, self.GridItemObj.TxtHave.gameObject.activeSelf)
     end
 
@@ -492,14 +498,8 @@ function XUiFashionDetail:SetDetailData()
         self.Desc.text = self.FashionGroup.Name
         self.WorldDesc.text = XUiHelper.GetText("FashionGroupSalesDesc")
     elseif self.FashionType == FashionType.Color then
-        local originalFashionId = XMVCA.XFashion:GetFashionColorOriginalFashionId(id)
-        if XTool.IsNumberValid(originalFashionId) then
-            local fashionTemplate = XFashionConfigs.GetFashionTemplate(originalFashionId)
-            if fashionTemplate then
-                self.WorldDesc.text = fashionTemplate.WorldDescription or ""
-                self.Desc.text = fashionTemplate.Description or ""
-            end
-        end
+        self.WorldDesc.text = XUiHelper.ConvertLineBreakSymbol(XMVCA.XFashion:GetFashionColorWorldDescription(id))
+        self.Desc.text = XUiHelper.ConvertLineBreakSymbol(XMVCA.XFashion:GetFashionColorDescription(id))
     else
         local worldDesc = XGoodsCommonManager.GetGoodsWorldDesc(id)
         if worldDesc and #worldDesc then
@@ -517,7 +517,7 @@ end
 ---@param grid XUiGridCommon
 function XUiFashionDetail:OnDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
-        local gridData = self.GoodIdList[index]
+        local gridData = self.RewardDataList[index]
         if gridData.Disable then
             local params = { Disable = true } --屏蔽点击
             grid:Refresh(gridData, params)
@@ -608,9 +608,8 @@ function XUiFashionDetail:UpdateWeaponModel()
 end
 
 function XUiFashionDetail:UpdateFashionColorModel()
-    local colorName = XMVCA.XFashion:GetFashionColorName(self.FashionId)
+    local colorName = XUiHelper.ConvertLineBreakSymbol(XMVCA.XFashion:GetFashionColorNameVertical(self.FashionId))
     local resId = XMVCA.XFashion:GetFashionColorResourcesId(self.FashionId)
-    local modelId = XMVCA.XCharacter:GetCharResModel(resId)
 
     self.TxtTitle.text = TitleName.Title[ViewType.Character]
     self.TxtTipTitle.text = TitleName.TipTitle[ViewType.Character]
@@ -618,7 +617,14 @@ function XUiFashionDetail:UpdateFashionColorModel()
     self.PanelWeapon.gameObject:SetActiveEx(false)
     self.RoleModelPanel.GameObject:SetActiveEx(true)
     self.PanelBtnLens.gameObject:SetActiveEx(true)
-    self.RoleModelPanel:UpdateCharacterModelByModelId(modelId, nil, nil, XModelManager.MODEL_UINAME.XUiFashionDetail, self.OnDragModel)
+
+    self.RoleModelPanel:UpdateCharacterResModel(
+        resId,
+        self.CharacterId,
+        XModelManager.MODEL_UINAME.XUiFashionDetail,
+        self.OnDragModel,
+        nil,
+        nil)
 end
 
 function XUiFashionDetail:OnBtnBackClick()
@@ -646,10 +652,24 @@ function XUiFashionDetail:OnBeforeBtnBuyClick(cb)
         end
     end
     
-    -- 未执行特殊逻辑，则直接执行回调
-    if cb then
-        cb()
-    end
+    -- 构建viewmodel
+
+    ---@type CoatingBuyTipsViewModel
+    local viewModel = {
+        Title = self.TxtFashionName.text, -- 和UI文本一致即可
+        SubTitle = self.Desc.text, -- 和UI文本一致即可
+        DetailDesc = self.WorldDesc.text, -- 和UI文本一致即可
+        RewardDataList = self.RewardDataList,
+        RealCost = self.BuyData.ItemCount,
+        OriginCost = self.BuyData.OriginCount,
+        ItemId = self.BuyData.ConsumeId,
+        AssetsItemIds = self._ShowAssetsItemIds,
+        EndTime = self.BuyData.EndTime,
+        IsTimeLimit = XTool.IsNumberValid(self.BuyData.EndTime),
+    }
+
+    -- 打开详情界面
+    XLuaUiManager.Open("UiPurchaseBuyCoatingTips", viewModel, cb, handler(self, self.Close))
 end
 
 function XUiFashionDetail:ShowBuyPopup()
@@ -667,7 +687,7 @@ function XUiFashionDetail:ShowBuyPopup()
         end
 
         if not self.BuyData.CloseByBuyCallBack then
-            self:OnBtnBackClick()
+            -- self:OnBtnBackClick()
         end
     end
     -- 已有涂装则二次确认，V1.31折价礼包不弹二次确认提示
@@ -695,6 +715,21 @@ function XUiFashionDetail:GetSceneUrl(isDefault)
     else
         return self:GetDefaultSceneUrl()
     end
+end
+
+--- 判断当前是否足够资源购买，参数依赖外部传参
+function XUiFashionDetail:_CheckBuyEnough()
+    local consumeId = self.BuyData.ConsumeId
+    local consumeNeedCount = self.BuyData.ItemCount
+
+    if not XTool.IsNumberValidEx(consumeNeedCount) or not XTool.IsNumberValidEx(consumeId) then
+        -- 参数不充分默认足够
+        return true
+    end
+    
+    local haveCount = XDataCenter.ItemManager.GetCount(consumeId)
+    
+    return haveCount >= consumeNeedCount
 end
 
 --region 显示武器时装
@@ -740,7 +775,7 @@ end
 --region 成套购买（武器涂装+角色涂装）
 
 function XUiFashionDetail:InitGroupSales()
-    local isVisible = XMVCA.XFashionSuit:IsAllowGroupSales(self.FashionId)
+    local isVisible = XMVCA.XFashionSuit:IsAllowGroupSales(self.FashionId) and not self._HideGroupSales
     if isVisible then
         self.FashionGroup = XMVCA.XFashionSuit:GetFashionGroupByFashionId(self.FashionId)
         if not self.FashionGroup then
@@ -819,7 +854,7 @@ end
 function XUiFashionDetail:BuyFashionGroup()
     if self.BuyData.PurchaseLBUpdateCb then
         XMVCA.XFashionSuit:PurchaseBuyFashionGroup(self.FashionGroup.Id, self.BuyData.PurchaseLBUpdateCb)
-        self:OnBtnBackClick()
+        -- self:OnBtnBackClick()
         return
     end
     if not self.BuyData.GroupBuyCallBack then
@@ -827,7 +862,7 @@ function XUiFashionDetail:BuyFashionGroup()
         return
     end
     self.BuyData.GroupBuyCallBack(self.FashionGroup.Id)
-    self:OnBtnBackClick()
+    -- self:OnBtnBackClick()
 end
 
 --endregion
@@ -877,5 +912,62 @@ function XUiFashionDetail:OnFashionDownloadComplete()
 end
 
 --endregion
+
+--- 封装获取标准奖励格式的对象列表
+function XUiFashionDetail:_GetRewardDataList()
+    if self.RewardDataList == nil then
+        self.RewardDataList = {}
+
+        -- v1.28-采购优化-赠品队列展示
+        -- 传入Data为单一rewardId的情况
+        local giftRewardId = self.BuyData and self.BuyData.GiftRewardId
+        
+        if type(giftRewardId) == "number" then
+            if giftRewardId ~= 0 then
+                local datas = XRewardManager.GetRewardList(giftRewardId)
+                if datas then
+                    self.RewardDataList = datas
+                end
+            end
+        elseif self.BuyData and self.BuyData.GiftRewardId then
+            self.RewardDataList = self.BuyData.GiftRewardId
+        end
+
+        local id = self.FashionId
+        local fashionId = self.IsEnableGroupSales and self.FashionGroup.FashionId or (self.IsWeaponFashion and 0 or (self.FashionType == FashionType.Color and 0 or id))
+        local weaponFashionId = self.IsEnableGroupSales and self.FashionGroup.WeaponFashionId or (self.IsWeaponFashion and id or 0)
+
+        if XTool.IsNumberValid(fashionId) then
+            -- v1.31-采购优化-涂装增加CG展示道具
+            local subItems = XDataCenter.FashionManager.GetFashionSubItems(fashionId)
+            if subItems then
+                for _, itemTemplateId in ipairs(subItems) do
+                    table.insert(self.RewardDataList, { TemplateId = itemTemplateId, Count = 1, IsSubItem = true })
+                end
+            end
+
+            local giftId = XFashionConfigs.GetFashionTemplate(fashionId).GiftId
+            if XTool.IsNumberValid(giftId) then
+                local giftGoodShowData = XGoodsCommonManager.GetGoodsShowParamsByTemplateId(giftId)
+                giftGoodShowData.IsGift = true
+                giftGoodShowData.Count = 1
+                table.insert(self.RewardDataList, giftGoodShowData)
+            end
+        end
+
+        --若开启套装购买，则显示全部（角色+武器）
+        if self.IsEnableGroupSales then
+            table.insert(self.RewardDataList, 1, { TemplateId = weaponFashionId, Count = 1, Disable = true })
+            table.insert(self.RewardDataList, 1, { TemplateId = fashionId, Count = 1, Disable = true })
+        elseif not XTool.IsTableEmpty(self.RewardDataList) and not self.IsShowFashionIconWithoutGift then
+            --显示商品本身
+            table.insert(self.RewardDataList, 1, { TemplateId = id, Count = 1, Disable = true })
+        else
+            self.RewardDataList = { { TemplateId = id, Count = 1, Disable = true } }
+        end
+    end
+    
+    return self.RewardDataList
+end
 
 return XUiFashionDetail

@@ -65,7 +65,7 @@ function XTheatre6BlockController:CheckCanTriggerByHit(missileUUID, launcherNpcU
     if srcType & EHitTagSourceType.DynamicDef == 0 then return false end
 
     --如果前置状态是受击状态, 则不尝试触发
-    if not self._npc:IsFreeToAct() then return false end
+    if not self._npc:CanBlock() then return false end
 
     --如果是技能的第一段攻击, 则尝试触发
     if self._isFirstHit then return true end
@@ -138,7 +138,8 @@ function XTheatre6BlockController:Block(missileUUID, launcherNpcUUID, targetNpcU
     npc:OnBlock()
 
     -- Todo: 飘字 + 伤害修正 + 超算获取率修正
-    self._proxy:Theatre6PopDamage(launcherNpcUUID, targetNpcUUID, 6, 0)
+    --local hasPopText = isActivate and hitCount == 1
+    if hitCount == 1 then self._proxy:Theatre6PopDamage(launcherNpcUUID, targetNpcUUID, 6, 0) end
 
     --准备在接下来的伤害事件中执行伤害修正
     self._needDmgFix = true
@@ -157,7 +158,7 @@ function XTheatre6BlockController:Block(missileUUID, launcherNpcUUID, targetNpcU
     eventArgs._actionId = actionId
     eventArgs._skillId = skillId
     eventArgs._missileHitCount = hitCount
-    eventArgs._hasPopText = true
+    --eventArgs._hasPopText = hasPopText and true or false -- 现在没有这个判断了，这个eventArg也可以一并删了。
     self:DispatchLuaEvent(eventType, eventArgs)
 end
 
@@ -183,4 +184,4 @@ function XTheatre6BlockController:RemoveArmor()
     self._proxy:RemoveBuff(self._uuid, self.SuperArmor)
 end
 
-return XTheatre6BlockController
+return XTheatre6BlockController

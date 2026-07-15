@@ -34,7 +34,7 @@ function XUiPanelSkillLevelDetail:Refresh(characterId, skillId)
 
     local grid2 = detailGrids.AssignLevel
     local assignLevel = XDataCenter.FubenAssignManager.GetSkillLevel(characterId, skillId)
-    if resonanceLevel and assignLevel > 0 then
+    if assignLevel and assignLevel > 0 then
         if not grid2 then
             grid2 = self:NewGrid()
             detailGrids.AssignLevel = grid2
@@ -45,6 +45,21 @@ function XUiPanelSkillLevelDetail:Refresh(characterId, skillId)
         grid2.GameObject:SetActiveEx(true)
     elseif grid2 then
         grid2.GameObject:SetActiveEx(false)
+    end
+
+    -- 新增：武器超限来源
+    local grid3 = detailGrids.WeaponOverrunLevel
+    local weaponLevel = XMVCA.XCharacter:GetWeaponOverrunUpSkillLevel(characterId, skillId)
+    if weaponLevel and weaponLevel > 0 then
+        if not grid3 then
+            grid3 = self:NewGrid()
+            detailGrids.WeaponOverrunLevel = grid3
+        end
+        grid3.TxtName.text = CSXTextManagerGetText("CharacterSkillLevelDetailWeaponOverrun")
+        grid3.TxtLv.text = stringFormat(LEVEL_PREFIX_FORMAT, weaponLevel)
+        grid3.GameObject:SetActiveEx(true)
+    elseif grid3 then
+        grid3.GameObject:SetActiveEx(false)
     end
 end
 

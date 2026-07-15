@@ -129,8 +129,8 @@ function XSaveUtil:SaveDataByBlockKey(blockKey, key, value)
     if dataBlock then
         local dataKey = self:_GetFullBlockKey(blockKey)
         local oldValue = dataBlock[key]
-
-        if oldValue ~= value then
+        --todo 临时开放table写入，这样不需要全量检查业务层做适配
+        if oldValue ~= value or type(value) == "table" then
             -- 只有数值发生变化，才写入
             dataBlock[key] = value
 

@@ -139,7 +139,7 @@ local CreateGoodsFunc = {
     [XRewardType.Equip] = function(templateId, count, args)
         local len = args and #args or 0
         local level, breakthrough
-        local maxBreakthrough, maxLevel = XMVCA:GetAgency(ModuleId.XEquip):GetEquipMaxBreakthrough(templateId)
+        local maxBreakthrough, maxLevel = XMVCA.XEquip:GetEquipMaxBreakthrough(templateId)
         local minLevel = XEnumConst.EQUIP.MIN_LEVEL
         local minBreakthrough = XEnumConst.EQUIP.MIN_BREAKTHROUGH
 
@@ -473,6 +473,7 @@ end
 --==============================--
 --desc: 通用基地装备奖励排序
 --==============================--
+--[[
 local SortBaseEquips = function(a, b)
     -- 等级 > 品质
     local tmpId1 = a.TemplateId
@@ -495,6 +496,7 @@ local SortBaseEquips = function(a, b)
 
     return tmpId1 > tmpId2
 end
+]]
 
 --==============================--
 --desc: 通用家具奖励排序
@@ -666,6 +668,7 @@ local SortRewardTypePrioriy = {
     [XRewardType.Character] = 4,
     [XRewardType.Equip] = 2,
     [XRewardType.Fashion] = 3,
+    [XRewardType.FashionColor] = 3,
     [XRewardType.BaseEquip] = 5,
     [XRewardType.Medal] = 7,
     [XRewardType.Furniture] = 9,
@@ -694,7 +697,7 @@ local SortFunc = {
     [XRewardType.Character] = SortCharacters,
     [XRewardType.Equip] = SortEquips,
     [XRewardType.Fashion] = SortFashions,
-    [XRewardType.BaseEquip] = SortBaseEquips,
+    --[XRewardType.BaseEquip] = SortBaseEquips,
     [XRewardType.Furniture] = SortFurnitures,
     [XRewardType.HeadPortrait] = SortHeadPortraits,
     [XRewardType.DormCharacter] = SortDormCharacter,

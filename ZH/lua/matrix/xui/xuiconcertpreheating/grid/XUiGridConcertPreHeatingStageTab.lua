@@ -6,6 +6,7 @@ local XUiGridConcertPreHeatingStageTab = XClass(XUiNode, "XUiGridConcertPreHeati
 function XUiGridConcertPreHeatingStageTab:OnStart()
     self._NormalUi = XTool.InitUiObjectByUi({}, self.Normal)
     self._SelectUi = XTool.InitUiObjectByUi({}, self.Select)
+    self._DisabledUi = XTool.InitUiObjectByUi({}, self.Disabled)
 
     XUiHelper.RegisterClickEvent(self, self.BtnSelf, self.OnBtnSelfClick)
 end
@@ -25,8 +26,10 @@ function XUiGridConcertPreHeatingStageTab:Refresh(index, stageId)
 
     self._NormalUi.TxtStageName.gameObject:SetActiveEx(true)
     self._SelectUi.TxtStageName.gameObject:SetActiveEx(true)
+    self._DisabledUi.TxtStageName.gameObject:SetActiveEx(true)
     self._NormalUi.TxtStageName.text = stageName
     self._SelectUi.TxtStageName.text = stageName
+    self._DisabledUi.TxtStageName.text = stageName
     self:RefreshRedPoint()
 end
 

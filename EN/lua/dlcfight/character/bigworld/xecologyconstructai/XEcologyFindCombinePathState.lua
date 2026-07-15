@@ -26,6 +26,8 @@ local XLevelNpcState = require("Common/StateMachine/State/XLevelNpcState")
 ---@field StartPos Vector3 启始点
 ---@field TargetPos Vector3 目标点
 ---@field Path Vector3[] 寻路路径
+---@field ReturnPathTargetPos Vector3 原路返回目标点
+---@field InReturnPath boolean 是否原路返回
 ---@field _curPathPointIndex number 当前所处路径点索引
 ---@field _curTargetPathPoint Vector3 当前目标路径点
 ---@field _pathPointCount number 路径点数量
@@ -51,10 +53,6 @@ function XEcologyFindCombinePathState:InitPath(enterState, targetState, checkDis
     
     self._proxy:SetBBInt(XVarDomain.Npc, self._uuid, EEcologySaveKey.FindPathStartStateEnum, self.EnterState)
     self._proxy:SetBBInt(XVarDomain.Npc, self._uuid, EEcologySaveKey.FindPathTargetStateEnum, self.TargetState)
-    --local haveSavePathIndex, findPathTargetIndex = self._proxy:TryGetBBInt(XVarDomain.Npc, self._uuid, EEcologySaveKey.FindPathCuePathIndex)
-    --if haveSavePathIndex then
-    --    self._curPathPointIndex = findPathTargetIndex
-    --end
 end
 
 --region 基础生命周期
@@ -65,6 +63,7 @@ function XEcologyFindCombinePathState:OnStateEnter(lastStateEnum)
         return
     end
     self._proxy:OnEcologyConstructCmpChangeState(self._placeId, self.StateConfig.StateEnum)
+    self:InitReturnPath()
     
     self:UpdateOptionActive()
     self:RegisterWorldEvent()
@@ -75,6 +74,7 @@ function XEcologyFindCombinePathState:OnStateLeave(nextStateEnum)
     if self.StateConfig == nil then
         return
     end
+    self:InitReturnPath()
     
     self:UnRegisterWorldEvent()
     self:ChangeFindPathState(EFindPathState.None)
@@ -120,6 +120,10 @@ function XEcologyFindCombinePathState:HandleEvent(eventType, eventArgs)
 end
 
 function XEcologyFindCombinePathState:OnActorTrigger(eventArgs)
+    if self:IsNeedReturnPath(eventArgs) then
+        self:ReturnPath()
+    end
+    
     -- 不是定义触发的TriggerId不执行逻辑
     if eventArgs.TriggerId ~= self.StateConfig.TriggerId or self._uuid ~= eventArgs.TriggerHolderUUID then
         return
@@ -149,6 +153,76 @@ function XEcologyFindCombinePathState:OnLogPath()
     XScriptTool.EcologyError(self, "当前路径为第"..self._curCombineIndex.."条路径, 本次寻路所有路径:", self._combinePathList)
     XScriptTool.EcologyError(self, "当前路径为:", self.Path)
     XScriptTool.EcologyError(self, "当前为第"..self._curPathPointIndex.."个路径点", self._curTargetPathPoint)
+end
+--endregion
+
+--region 特殊逻辑 - 收到阻碍原路返回
+function XEcologyFindCombinePathState:InitReturnPath()
+    self.InReturnPath = false
+end
+
+function XEcologyFindCombinePathState:IsNeedReturnPath(eventArgs)
+    if self.InReturnPath then
+        return
+    end
+    if eventArgs.TriggerState ~= ETriggerState.Enter then
+        return
+    end
+    if eventArgs.EnteredActorUUID ~= self._uuid then
+        return
+    end
+    if eventArgs.HostSceneObjectPlaceId ~= 3100014 and eventArgs.HostSceneObjectPlaceId ~= 3100015 then
+        return
+    end
+    self:ReturnPath()
+end
+
+function XEcologyFindCombinePathState:ReturnPath()
+    if not self._combinePathList or #self._combinePathList == 0 then
+        return
+    end
+    
+    local totalCombines = #self._combinePathList
+    -- 逆转前先记录当前路径长度和路点索引，用于映射新索引
+    local curPathLen = #self._combinePathList[self._curCombineIndex]
+    local oldPathPointIndex = self._curPathPointIndex
+
+    -- 逆转每条路线内的路点顺序
+    for i = 1, totalCombines do
+        local path = self._combinePathList[i]
+        local len = #path
+        for j = 1, math.floor(len / 2) do
+            path[j], path[len - j + 1] = path[len - j + 1], path[j]
+        end
+    end
+
+    -- 逆转路线列表顺序
+    for i = 1, math.floor(totalCombines / 2) do
+        self._combinePathList[i], self._combinePathList[totalCombines - i + 1] =
+            self._combinePathList[totalCombines - i + 1], self._combinePathList[i]
+    end
+
+    -- 同步 _curCombineIndex 到逆转后列表的对应位置
+    self._curCombineIndex = totalCombines - self._curCombineIndex + 1
+
+    -- 同步 Path 及相关字段
+    self.Path = self._combinePathList[self._curCombineIndex]
+    self._pathPointCount = #self.Path
+    self.StartPos = self.Path[1]
+    self.TargetPos = self.Path[self._pathPointCount]
+
+    -- 同步 _curPathPointIndex 到逆转后路点的对应位置
+    self._curPathPointIndex = math.max(1, curPathLen - oldPathPointIndex + 1 + 1)
+
+    -- 同步 _curTargetPathPoint
+    self._curTargetPathPoint = self.Path[self._curPathPointIndex]
+
+    self.TargetState = self.EnterState
+
+    -- 重启移动朝新目标点出发
+    self:StopMove()
+    self:StartMove()
+    self.InReturnPath = true
 end
 --endregion
 
@@ -216,6 +290,7 @@ end
 
 function XEcologyFindCombinePathState:StopMove()
     self._isMove = false
+    self._recheckFindPathTime = self.RecheckFindPathTime
     self._proxy:NpcStopMove(self._uuid)
 end
 
@@ -358,7 +433,8 @@ function XEcologyFindCombinePathState:OnUpdateInPath(dt)
         return
     end
 
-    if self._isMove then
+    -- 移动过程中被交互暂停此时需要
+    if self._isMove or (not self._isMove and not self._proxy:HasRunningDrama()) then
         self._recheckFindPathTime = self._recheckFindPathTime - dt
         if self._recheckFindPathTime <= 0 then
             self:StartMove()

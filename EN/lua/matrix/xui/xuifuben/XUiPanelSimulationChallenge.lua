@@ -73,6 +73,15 @@ function XUiPanelSimulationChallenge:OnEnable()
     self:PlayGridEnableAnime()
 end
 
+function XUiPanelSimulationChallenge:OnDisable()
+    -- 退出时要强设一遍展开样式，防止快速切换底部标签再切回来导致open动画播放错误
+    if self._CurDynamicStyle == DynamicStyle.Branch
+            and self.BranchStyleDynamicTable
+            and self.BranchStyleDynamicTable.ChapterDynamicTable then
+        self.BranchStyleDynamicTable.ChapterDynamicTable:SetCurrGridOpen()
+    end
+end
+
 function XUiPanelSimulationChallenge:InitData()
     XDataCenter.FubenManager.EnterChallenge()
 
@@ -249,6 +258,10 @@ end
 function XUiPanelSimulationChallenge:OnDestroy()
     if self.BtnTabGroupDyn and self.BtnTabGroupDyn.OnDestroy then
         self.BtnTabGroupDyn:OnDestroy()
+    end
+
+    if self.BranchStyleDynamicTable and self.BranchStyleDynamicTable.OnDestroy then
+        self.BranchStyleDynamicTable:OnDestroy()
     end
 
     XEventManager.RemoveEventListener(XEventId.EVENT_FUBEN_DAILY_REFRESH, self.SetupDynamicTable, self)

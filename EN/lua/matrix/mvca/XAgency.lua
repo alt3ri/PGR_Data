@@ -5,9 +5,12 @@
 local IsWindowsEditor = XMain.IsWindowsEditor
 
 ---@class XAgency
----@field private _Event XMVCAEvent
+---@field private _Event XEventDispatcher
 ---@field _TabConfig XTabConfig
+---@field _MainAgency XAgency
 XAgency = XClass(nil, "XAgency")
+
+local XEventDispatcher = require("XCommon/XEventDispatcher")
 
 function XAgency:Ctor(id, mainAgency)
     self._Id = id
@@ -16,7 +19,7 @@ function XAgency:Ctor(id, mainAgency)
     self._MainAgency = mainAgency
     self._Model = XMVCA:_GetOrRegisterModel(self._Id)
     self._RpcNameDict = {}
-    self._Event = XMVCAEvent.New()
+    self._Event = XEventDispatcher.New(nil)
     --Agency分两步，注册跟初始化，该标记用于保证子Agency正常生命周期
     self._IsInit = nil
 end
@@ -216,56 +219,40 @@ end
 --region TabConfig
 --[[
 配置表使用规范
-0. 配置表需要先Init，不然后XTabConfig不会被创建出来
+0. 配置表需要先Init，不然XTabConfig不会被创建出来
 1. 初始化通过self:InitConfigByTabKey()或self:InitConfigByArgs()来初始化
 2. 因为涉及到表格作用域，通过self:GetAllConfig... 或 self:GetConfigBy... 来获取配置
 3. 调用配置模块的其他方法 self:GetConfigInst():xxxx()来执行
 ]]--
 
 function XAgency:InitConfigByTabKey(parentPath, tabKey)
-    if not self._TabConfig then
-        self._TabConfig = XMVCA:_GetOrRegisterTabConfig(self._Id)
-    end
-    self._TabConfig:InitConfigByTabKey(parentPath, tabKey, XConfigUtil.TabScope.Agency)
+    local tabConfig = self:GetConfigInst()
+    tabConfig:InitConfigByTabKey(parentPath, tabKey, XConfigUtil.TabScope.Agency)
 end
 
 function XAgency:InitConfigByArgs(args)
-    if not self._TabConfig then
-        self._TabConfig = XMVCA:_GetOrRegisterTabConfig(self._Id)
-    end
-    self._TabConfig:InitConfigByArgs(args)
+    local tabConfig = self:GetConfigInst()
+    tabConfig:InitConfigByArgs(args)
 end
 
 function XAgency:GetAllConfigByTabKey(tabKey)
-    if not self._TabConfig then
-        XLog.Error(string.format("请先初始化配置: %s", self._Id))
-        return
-    end
-    return self._TabConfig:GetByTabKey(tabKey, XConfigUtil.TabScope.Agency)
+    local tabConfig = self:GetConfigInst()
+    return tabConfig:GetByTabKey(tabKey, XConfigUtil.TabScope.Agency)
 end
 
 function XAgency:GetConfigByTabKeyAndIdKey(tabKey, idKey, noTips)
-    if not self._TabConfig then
-        XLog.Error(string.format("请先初始化配置: %s", self._Id))
-        return
-    end
-    return self._TabConfig:GetConfigByTabKeyAndId(tabKey, idKey, XConfigUtil.TabScope.Agency, noTips)
+    local tabConfig = self:GetConfigInst()
+    return tabConfig:GetConfigByTabKeyAndId(tabKey, idKey, XConfigUtil.TabScope.Agency, noTips)
 end
 
 function XAgency:GetAllConfigByPath(path)
-    if not self._TabConfig then
-        XLog.Error(string.format("请先初始化配置: %s", self._Id))
-        return
-    end
-    return self._TabConfig:Get(path, XConfigUtil.TabScope.Agency)
+    local tabConfig = self:GetConfigInst()
+    return tabConfig:Get(path, XConfigUtil.TabScope.Agency)
 end
 
 function XAgency:GetConfigByPathAndIdKey(tabKey, idKey, noTips)
-    if not self._TabConfig then
-        XLog.Error(string.format("请先初始化配置: %s", self._Id))
-        return
-    end
-    return self._TabConfig:GetConfigByPathAndId(tabKey, idKey, XConfigUtil.TabScope.Agency, noTips)
+    local tabConfig = self:GetConfigInst()
+    return tabConfig:GetConfigByPathAndId(tabKey, idKey, XConfigUtil.TabScope.Agency, noTips)
 end
 
 --- 获取配置实例
@@ -273,8 +260,11 @@ end
 --------------------------
 function XAgency:GetConfigInst()
     if not self._TabConfig then
-        XLog.Error(string.format("请先初始化配置: %s", self._Id))
-        return
+        if self._MainAgency then --子类直接引用父模块
+            self._TabConfig = self._MainAgency:GetConfigInst()
+        else
+            self._TabConfig = XMVCA:_GetOrRegisterTabConfig(self._Id)
+        end
     end
     return self._TabConfig
 end

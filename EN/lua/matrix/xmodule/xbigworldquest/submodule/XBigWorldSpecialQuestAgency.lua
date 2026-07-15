@@ -173,8 +173,18 @@ function XBigWorldQuestAgency:CheckEnvironmentFinish(id)
         return true
     end
     for _, objectiveId in ipairs(objectiveIds) do
-        local questId = XMVCA.XBigWorldQuest:GetQuestIdByObjectiveId(objectiveId)
-        if not self:CheckObjectiveFinish(questId, objectiveId) then
+        local isFinish = false
+        local ids = string.ToIntArray(objectiveId)
+
+        for _, targetId in pairs(ids) do
+            local questId = XMVCA.XBigWorldQuest:GetQuestIdByObjectiveId(targetId)
+            if self:CheckObjectiveFinish(questId, targetId) then
+                isFinish = true
+                break
+            end
+        end
+
+        if not isFinish then
             return false
         end
     end
@@ -220,10 +230,21 @@ function XBigWorldQuestAgency:GetEnvironmentProgress(id)
     local objectiveIds = self._Model:GetEnvironmentQuestObjectiveIds(id)
     if not XTool.IsTableEmpty(objectiveIds) then
         for _, objectiveId in ipairs(objectiveIds) do
-            local questId = XMVCA.XBigWorldQuest:GetQuestIdByObjectiveId(objectiveId)
-            if self:CheckObjectiveFinish(questId, objectiveId) then
+            local ids = string.ToIntArray(objectiveId)
+            local isFinish = false
+
+            for _, targetId in pairs(ids) do
+                local questId = XMVCA.XBigWorldQuest:GetQuestIdByObjectiveId(targetId)
+                if self:CheckObjectiveFinish(questId, targetId) then
+                    isFinish = true
+                    break
+                end
+            end
+
+            if isFinish then
                 finish = finish + 1
             end
+
             sum = sum + 1
         end
     end

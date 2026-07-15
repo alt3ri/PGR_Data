@@ -3,7 +3,6 @@ local XUiGridMovieSpineActor = XClass(nil, "XUiGridMovieSpineActor")
 local DEFAULT_KOU_SPEED = 1
 local ANIM_TIME = 4
 local ANIM_TIME2 = 1
-local DEFAULT_GRAY_SCALE = 0 -- 默认灰度值
 
 function XUiGridMovieSpineActor:Ctor(uiRoot, obj, actorIndex)
     self.UiRoot = uiRoot
@@ -15,7 +14,7 @@ function XUiGridMovieSpineActor:Ctor(uiRoot, obj, actorIndex)
     self.TransIndex = 0 -- 转换动画的下标
     self.TalkSpeed = 1 -- 讲话的速度
     self.IsTalking = false -- 是否在讲话状态
-    self.GrayValue = 0 -- 灰度值
+    self.GrayValue = nil -- 灰度值
     XTool.InitUiObject(self)
 
     self.GameObject.gameObject:SetActiveEx(false)
@@ -31,7 +30,9 @@ function XUiGridMovieSpineActor:UpdateSpineActor(actorId, animIndex)
         self:PlayAnim(animIndex)
 
         -- 更新灰度值
-        self:UpdateGrayScale(true)
+        if self.GrayValue ~= nil then
+            self:UpdateGrayScale()
+        end
     else
         self.ActorId = actorId
         self.AnimIndex = animIndex
@@ -56,7 +57,9 @@ function XUiGridMovieSpineActor:LoadSpine()
         self:PlayAnim(self.AnimIndex)
 
         -- 更新灰度值
-        self:UpdateGrayScale(true)
+        if self.GrayValue ~= nil then
+            self:UpdateGrayScale()
+        end
     end
 end
 
@@ -82,6 +85,9 @@ end
 
 function XUiGridMovieSpineActor:SetShow(isShow)
     self.GameObject.gameObject:SetActiveEx(isShow)
+    if isShow and self.GrayValue ~= nil then
+        self:UpdateGrayScale()
+    end
 end
 
 function XUiGridMovieSpineActor:IsShow()
@@ -364,7 +370,7 @@ end
 --#region 灰度相关
 -- 设置灰度值
 function XUiGridMovieSpineActor:SetGrayScale(value, time)
-    if self.GrayValue == value then return end
+    if self.GrayValue == value and self.GrayTime == time then return end
     self.GrayValue = value
     self.GrayTime = time
 
@@ -372,11 +378,8 @@ function XUiGridMovieSpineActor:SetGrayScale(value, time)
 end
 
 -- 更新灰度值
--- ignoreDefault忽略默认灰度值
-function XUiGridMovieSpineActor:UpdateGrayScale(ignoreDefault)
-    if not self:IsShow() then return end
+function XUiGridMovieSpineActor:UpdateGrayScale()
     if not self.SpineUiObject then return end
-    if ignoreDefault and self.GrayValue == DEFAULT_GRAY_SCALE then return end
 
     for _, partName in pairs(XMVCA.XMovie.EnumConst.SPINE_PART_NAME) do
         local part = self.SpineUiObject:GetObject(partName, false)

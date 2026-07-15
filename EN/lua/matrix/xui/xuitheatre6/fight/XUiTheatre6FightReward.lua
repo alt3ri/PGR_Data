@@ -17,21 +17,16 @@ end
 function XUiTheatre6FightReward:OnStart(rewardGoodsList)
     self._RewardGoodsList = rewardGoodsList or {}
     self.RImgIcon:SetRawImage(self._Control:GetCoinIcon())
+    XMVCA.XTheatre6:TryOpenAddSkillGainTips()
 end
 
 function XUiTheatre6FightReward:OnEnable()
     self:Refresh()
+    XLuaUiManager.SafeClose("UiTheatre6RoomBoss")
 end
 
 function XUiTheatre6FightReward:OnDestroy()
-    if XLuaUiManager.IsUiShow("UiTheatre6BubbleTagDetail") then
-        XLuaUiManager.Close("UiTheatre6BubbleTagDetail")
-    end
-    CS.StatusSyncFight.XFightClient.RequestExitFight()
-    --如果对局已经全部结束，显示结算界面
-    if not XMVCA.XTheatre6:OpenSettle() then
-        self._Control:TryOpenStageViewAfterFight()
-    end
+    XLuaUiManager.SafeClose("UiTheatre6BubbleTagDetail")
 end
 
 function XUiTheatre6FightReward:InitButtonEvents()
@@ -132,6 +127,15 @@ function XUiTheatre6FightReward:OnBtnExitClick()
     if self:TryOpenSellSkillPanel() then
         return
     end
+    
+    CS.StatusSyncFight.XFightClient.RequestExitFight()
+
+    --如果对局已经全部结束，显示结算界面
+    if not XMVCA.XTheatre6:CheckOpenSettle() then
+        self._Control:TryOpenStageViewAfterFight()
+        XMVCA.XTheatre6:PlayAudio()
+    end
+    
     self:Close()
 end
 

@@ -110,4 +110,7 @@ function XUiPanelBWNewsBase:IsShowReddot()
     return XMVCA.XBigWorldNews:CheckNewsRedPoint(self._NewsId)
 end
 
+function XUiPanelBWNewsBase:SecondUpdate()
+end
+
 return XUiPanelBWNewsBase

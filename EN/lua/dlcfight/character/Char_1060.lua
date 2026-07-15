@@ -141,12 +141,29 @@ end
 
 function XCharR6LuciaSG:OnNpcCastActionAfterEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
     Base.OnNpcCastActionAfterEvent(self,skillId, launcherId, targetId, targetSceneObjId, isAbort)
-end
 
-function XCharR6LuciaSG:OnNpcExitActionEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
     if launcherId ~= self._uuid then
         return
     end
+
+    if skillId == 106030  then
+        --XLog.Warning("裁切关闭")
+        self._proxy:SetNpcDither(self._uuid,false)
+    end
+    
+end
+
+function XCharR6LuciaSG:OnNpcExitActionEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
+
+    if launcherId ~= self._uuid then
+        return
+    end
+
+    if skillId == 106030  then
+        --XLog.Warning("裁切还原")
+        self._proxy:SetNpcDither(self._uuid,true)
+    end
+    
 end
 
 --region 特殊保底用

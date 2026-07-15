@@ -3,6 +3,7 @@
 local XUiFashionSuitDetail = XLuaUiManager.Register(XLuaUi, "UiFashionSuitDetail")
 
 local XUiPanelLackResources = require("XUi/XUiSubPackage/XUiPanel/XUiPanelLackResources")
+local XUiPanelFashionDetail = require("XUi/XUiFashionSuit/Panel/XUiPanelFashionDetail")
 local SkipType = XEnumConst.FashionSuit.SkipType
 local CameraIndex = {
     Normal = 1,
@@ -16,7 +17,6 @@ local CameraIndex = {
 }
 
 function XUiFashionSuitDetail:OnAwake()
-    self._ItemPools = {}
     self.BtnPic.CallBack = handler(self, self.OnBtnPicClick)
     self.BtnHideUi.CallBack = handler(self, self.OnBtnHideUiClick)
     self.BtnShowUi.CallBack = handler(self, self.OnBtnShowUiClick)
@@ -34,6 +34,16 @@ function XUiFashionSuitDetail:OnAwake()
     end
 end
 
+function XUiFashionSuitDetail:GetContextUi()
+    return self._Context
+end
+
+---@return XUiHelperFashionSuit
+function XUiFashionSuitDetail:GetHelper()
+    return self._Helper
+end
+
+
 ---@param id number 角色涂装Id、武器涂装Id（WeaponFashion表里的Id，非itemId）
 ---@param updateCb fun(rewardList:table) 采购界面更新回调
 function XUiFashionSuitDetail:OnStart(fashionSuitId, id, skipType, updateCb)
@@ -50,16 +60,20 @@ function XUiFashionSuitDetail:OnStart(fashionSuitId, id, skipType, updateCb)
     self._Helper = require("XUi/XUiFashionSuit/Helper/XUiHelperFashionSuit").New()
     self._Helper:InitData(self._Context)
     ---@type XUiPanelFashionSuitButtonGroup
-    self._ButtonGroup = require("XUi/XUiFashionSuit/Panel/XUiPanelFashionSuitButtonGroup").New(self.PanelBtnGroup, self)
-    self._ButtonGroup:InitContext(self._Context, self._Helper)
 
+    local uiConfig = self._Control:GetFashionSuitUiConfigById(self._SuitId)
+    self._PanelDetailPrefabPath = uiConfig.PanelFashionDetailPrefabPath
+    local panelDetailRes = self._Control:GetLoader():Load(self._PanelDetailPrefabPath)
+    local panelDetailGo = XUiHelper.Instantiate(panelDetailRes, self.PanelFashionDetailRoot)
+    self._SuitDetail = XUiPanelFashionDetail.New(panelDetailGo,self,self._SuitId)
+    self._SuitDetail:Open()
     self:InitModelHandler()
     self:InitSceneRoot(id)
     self:InitView()
     self:StartTimer()
 
     XUiHelper.NewPanelTopControl(self, self.TopControlWhite)
-    XUiHelper.NewPanelActivityAssetSafe({ XDataCenter.ItemManager.ItemId.HongKa, XDataCenter.ItemManager.ItemId.PaintingDesign }, self.PanelSpecialTool, self)
+    XUiHelper.NewPanelActivityAssetSafe({ XDataCenter.ItemManager.ItemId.FreeGem, XDataCenter.ItemManager.ItemId.HongKa }, self.PanelSpecialTool, self)
     XEventManager.AddEventListener(XEventId.EVENT_PURCHASE_CLEAR_DATA, self.SignGetShopInfo, self)
     XEventManager.AddEventListener(XEventId.EVENT_PURCHASE_QUICK_BUY_SKIP, self.Close, self)
 end
@@ -75,14 +89,10 @@ function XUiFashionSuitDetail:OnEnable()
     end
     self._ReqShopInfo = false
 
-    XEventManager.AddEventListener(XEventId.EVENT_WEAPOM_SYM, self.UpdateBuyBtn, self)
-    XEventManager.AddEventListener(XEventId.EVENT_CHARACTER_SYN, self.UpdateBuyBtn, self)
     XEventManager.AddEventListener(XEventId.EVENT_RES_COMPLETE, self.OnFashionDownloadComplete, self)
 end
 
 function XUiFashionSuitDetail:OnDisable()
-    XEventManager.RemoveEventListener(XEventId.EVENT_WEAPOM_SYM, self.UpdateBuyBtn, self)
-    XEventManager.RemoveEventListener(XEventId.EVENT_CHARACTER_SYN, self.UpdateBuyBtn, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_RES_COMPLETE, self.OnFashionDownloadComplete, self)
 end
 
@@ -97,29 +107,26 @@ function XUiFashionSuitDetail:OnResume(reqShopInfo)
 end
 
 function XUiFashionSuitDetail:OnDestroy()
+    if self._PanelDetailPrefabPath then
+        self._Control:GetLoader():Unload(self._PanelDetailPrefabPath)
+        self._PanelDetailPrefabPath = nil
+    end
     XEventManager.RemoveEventListener(XEventId.EVENT_PURCHASE_CLEAR_DATA, self.SignGetShopInfo, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_PURCHASE_QUICK_BUY_SKIP, self.Close, self)
 end
 
 function XUiFashionSuitDetail:InitView()
     local uiConfig = self._Control:GetFashionSuitUiConfigById(self._SuitId)
-    local color = XUiHelper.Hexcolor2Color(uiConfig.LineColor)
-    self.Grid256New.gameObject:SetActiveEx(false)
-    self.RImgDetailBg:SetRawImage(uiConfig.DetailBg[1])
-    self.RImgDetailBg1:SetRawImage(uiConfig.DetailBg[2])
-    self.RImgDetailBg2:SetRawImage(uiConfig.DetailBg[3])
-    self.RImgLogoBg:SetRawImage(uiConfig.LogoBg)
-    self.ImgLine1.color = color
-    self.ImgLine2.color = color
-    self.ImgWord1.color = color
-    self.ImgWord2.color = color
-    self._ButtonGroup:SetButtonBg(uiConfig.BtnBuyBg, uiConfig.BtnGetBg, uiConfig.BtnWearBg)
+ 
     if uiConfig.SliderMax and uiConfig.SliderMax > 0 then
         self.SliderCharacterHight.maxValue = uiConfig.SliderMax
     end
+    self.SliderCharacterHight.value = uiConfig.SliderMax
 
     self:OnBtnShowUiClick()
     self:OnBtnTipsCloseClick()
+
+
 end
 
 function XUiFashionSuitDetail:SignGetShopInfo()
@@ -135,60 +142,26 @@ end
 function XUiFashionSuitDetail:UpdateView()
     self:UpdateFashionDetail()
     self:UpdatePlayBtn()
-    self:ShowGift()
+    self._SuitDetail:ShowGift()
     self:UpdateModel()
     self:UpdateSwitchBtn()
-    self:UpdateBuyBtn()
+    self._SuitDetail:UpdateBuyBtn()
     self:CheckAndUpdateLackResourcesPanel()
 end
 
-function XUiFashionSuitDetail:UpdateBuyBtn()
-    self._ButtonGroup:UpdateBuyBtn()
-end
 
-function XUiFashionSuitDetail:UpdateGroupSales(id)
-    
-    local isVisible = XMVCA.XFashionSuit:IsAllowGroupSales(id)
-    local skipUpdateView = true
-    if self._RecordId then
-        skipUpdateView = self._RecordId == id
-    end
-    self._RecordId = id
-    self._ButtonGroup:SetBtnBuySuitVisible(isVisible, skipUpdateView)
-
-end
 
 function XUiFashionSuitDetail:UpdateFashionDetail()
+    self._SuitDetail:UpdateFashionDetail()
     local fashionId = self._Context.FashionId
-    self.TxtFashionName.text = self._Helper:GetName()
-    self.TxtCharacterName.text = self._Helper:GetCharacterName()
-    self.ImgTagNew.gameObject:SetActiveEx(self._Helper:IsTagNewVisible())
     local uiConfig = self._Control:GetFashionSuitUiConfigById(self._SuitId)
-    local color = XUiHelper.Hexcolor2Color(uiConfig.LineColor)
-    self.TxtSuitName.color = color
-    self.TxtSuitName.text = self._SuitConfig.Name
-    local uiConfig = self._Control:GetFashionSuitUiConfigById(self._SuitId)
-    self.RImgSuitIcon:SetRawImage(uiConfig.SuitBanner)
-    self.TxtStoryTips.text = self._Helper:GetDesc()
+
     self.PanelLeftBtnGroup.gameObject:SetActiveEx(not self._Helper:IsWeapon())
     self.BtnPic.gameObject:SetActiveEx(self._Helper:IsBtnPicVisible())
     --self.RImgLogoBg.gameObject:SetActiveEx(not self._Helper:IsWeapon())
     self._Control:SetFashionViewed(fashionId)
 end
 
-function XUiFashionSuitDetail:ShowGift()
-    local goodIdList = self._Helper:GetRewards()
-    if XTool.IsTableEmpty(goodIdList) then
-        self.PanelGift.gameObject:SetActiveEx(false)
-    else
-        self.PanelGift.gameObject:SetActiveEx(true)
-        local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
-        XUiHelper.CreateTemplates(self, self._ItemPools, goodIdList, XUiGridCommon.New, self.Grid256New, self.Grid256New.parent, function(grid, data)
-            local params = { ShowReceived = data.ShowReceived, Disable = data.Disable }
-            grid:Refresh(data, params)
-        end)
-    end
-end
 
 function XUiFashionSuitDetail:OnBtnPicClick()
     XLuaUiManager.Open("UiFashionSuitPopupPic", self._Context.FashionId)
@@ -302,15 +275,17 @@ function XUiFashionSuitDetail:InitSceneRoot(id)
         self.OriginalCameraPosition[CameraIndex.HideNear] = self.ModelCamera[CameraIndex.HideNear].transform.localPosition
         self.OriginalCameraPosition[CameraIndex.FarHideNear] = self.ModelCamera[CameraIndex.FarHideNear].transform.localPosition
         -- self:InitCameraTransform()
-        self:UpdateGroupSales(id)
+        self.OriginalCameraAngles = {}
+        self.OriginalCameraAngles[CameraIndex.Normal] = self.ModelCamera[CameraIndex.Normal].transform.localEulerAngles
+        self._SuitDetail:UpdateGroupSales(id)
     end)
 end
 
 function XUiFashionSuitDetail:InitModelHandler()
     local uiConfig = self._Control:GetFashionSuitUiConfigById(self._SuitId)
-    self._FashionModelPos = Vector3(uiConfig.RolePosX, uiConfig.RolePosY, uiConfig.RolePosZ)
+    -- self._FashionModelPos = Vector3(uiConfig.RolePosX, uiConfig.RolePosY, uiConfig.RolePosZ)
     self._WeaponModelPos = Vector3(uiConfig.WeaponPosX, uiConfig.WeaponPosY, uiConfig.WeaponPosZ)
-    self._FashionModleRotation = Vector3(uiConfig.RoleRotationX, uiConfig.RoleRotationY, uiConfig.RoleRotationZ)
+    -- self._FashionModleRotation = Vector3(uiConfig.RoleRotationX, uiConfig.RoleRotationY, uiConfig.RoleRotationZ)
     self._UiFashionNearCamAngle = Vector3(2.25, 0, 0)
 
     self._ModelHander = {}
@@ -325,10 +300,9 @@ end
 
 function XUiFashionSuitDetail:UpdateFashionModel()
     local fashionConfig = XFashionConfigs.GetFashionTemplate(self._Context.FashionId)
-    local uiConfig = self._Control:GetFashionSuitUiConfigById(self._SuitId)
-    local angles = Vector3(uiConfig.RoleRotationX, uiConfig.RoleRotationY, uiConfig.RoleRotationZ)
-    local virtualNearCameraTran = self.ModelCamera[CameraIndex.Normal].transform
-    virtualNearCameraTran.localEulerAngles = angles --使用策划配置的相机旋转角度
+    if self._VirtualNearCameraTran then
+        self._VirtualNearCameraTran.localEulerAngles = self.OriginalCameraAngles[CameraIndex.Normal] --使用UiFashionDetail界面的相机旋转角度
+    end
     self.PanelWeapon.gameObject:SetActiveEx(false)
     self.UiModelParent.gameObject:SetActiveEx(true)
     self.RoleModelPanel:UpdateCharacterResModel(fashionConfig.ResourcesId, fashionConfig.CharacterId, XModelManager.MODEL_UINAME.XUiFashionSuitDetail, function(model)
@@ -445,7 +419,7 @@ end
 function XUiFashionSuitDetail:SwitchFashionId(index)
     local id = self._SuitConfig.FashionIds[index]
     self._Context:InitData(id)
-    self:UpdateGroupSales(id)
+    self._SuitDetail:UpdateGroupSales(id)
 end
 
 function XUiFashionSuitDetail:UpdateSwitchBtn()
@@ -524,21 +498,6 @@ function XUiFashionSuitDetail:RegisterTimerFun(id, fun)
 end
 
 --endregion
-
-function XUiFashionSuitDetail:ApplyGroupSalesState(isVisible, isEnable)
-    local isOpen = isVisible and isEnable
-    if isOpen then
-        self._Context:SwitchToGroup()
-    else
-        self._Context:SwitchToSingle()
-    end
-    self._Helper:SetGroupSales(isOpen)
-end
-
-function XUiFashionSuitDetail:SetGroupSales(isVisible, isEnable)
-    self:ApplyGroupSalesState(isVisible, isEnable)
-    self:UpdateView()
-end
 
 --region 资源缺失面板
 

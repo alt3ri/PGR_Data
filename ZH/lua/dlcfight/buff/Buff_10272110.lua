@@ -33,20 +33,23 @@ function XBuffScript10272110:OnEnterLevel(levelId)
 end
 
 ---处理超算成功事件
-function XBuffScript10272110:HandleEvent(eventType, eventArgs)
-    XTheatre6SkillBase.HandleEvent(self, eventType, eventArgs)
+--function XBuffScript10272110:HandleEvent(eventType, eventArgs)
+    --XTheatre6SkillBase.HandleEvent(self, eventType, eventArgs)
 
-    if eventType ~= EWorldEvent.Theatre6DodgeRollDiceEnd then return end
-    if eventArgs.WinnerUUID ~= self._npcUUID then return end
-    if not self._level then return end
+    --if eventType ~= EWorldEvent.Theatre6DodgeRollDiceEnd then return end
+    --if eventArgs.WinnerUUID ~= self._npcUUID then return end
+    --if not self._level then return end
 
-    self._level:RequestInsertSkill(self._npcUUID, self._skillId)
-end
+    --self._level:RequestInsertSkill(self._npcUUID, self._skillId)
+--end
 
 ---技能开始时执行当前绑定插入技效果
 ---@param eventArgs table 技能事件参数
 function XBuffScript10272110:OnLuaSkillStart(eventArgs)
     if eventArgs._launcherUUID ~= self._npcUUID then return end
+    if eventArgs._skillType == ETheatre6SkillType.Dodge then
+        self._level:RequestInsertSkill(self._npcUUID, self._skillId)
+    end
     if eventArgs._skillId ~= self._skillId then return end
 
     self:TriggerEffect()

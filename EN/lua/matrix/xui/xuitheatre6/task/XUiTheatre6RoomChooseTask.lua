@@ -25,7 +25,37 @@ function XUiTheatre6RoomChooseTask:OnStart()
             self._ChooseTaskIndexDict[i] = true
         end
     end
+    self:_RefreshTagHighlightSource()
     self:TryOpenSellSkillPanel()
+end
+
+function XUiTheatre6RoomChooseTask:OnDestroy()
+    self._Control:ClearTagHighlightSourceTagIds()
+end
+
+---根据当前所有任务奖励聚合 tag 高亮源
+---  奖励技能贡献其 BuildTags 全部
+---  奖励遗物贡献"装备 dominant tag ∩ 自身 BuildTags"
+function XUiTheatre6RoomChooseTask:_RefreshTagHighlightSource()
+    local skillIds = {}
+    local attrPackIds = {}
+    if self._ModelData and self._ModelData.TaskSlotData then
+        for _, slotData in ipairs(self._ModelData.TaskSlotData) do
+            local taskData = self._ModelData.StageTasks[slotData.TaskId]
+            if taskData and taskData.RewardGoods then
+                for _, rewardGood in ipairs(taskData.RewardGoods) do
+                    if XTool.IsNumberValid(rewardGood.SkillId) then
+                        table.insert(skillIds, rewardGood.SkillId)
+                    elseif XTool.IsNumberValid(rewardGood.AttrPack) then
+                        table.insert(attrPackIds, rewardGood.AttrPack)
+                    end
+                end
+            end
+        end
+    end
+    self._Control:SetTagHighlightSourceTagIds(
+        self._Control:CollectShopOrTaskHighlightSourceTags(skillIds, attrPackIds)
+    )
 end
 
 function XUiTheatre6RoomChooseTask:OnEnable()
@@ -35,11 +65,21 @@ function XUiTheatre6RoomChooseTask:OnEnable()
     self._PanelBuff:UpdateView()
     XEventManager.AddEventListener(XEventId.EVENT_THEATRE6_SCORE_CHANGE, self.ShowRoleInfo, self)
     XEventManager.AddEventListener(XEventId.EVENT_THEATRE6_GOLD_CHANGE, self.UpdateTaskRefreshCost, self)
+    XEventManager.AddEventListener(
+        XEventId.EVENT_THEATRE6_UPDATE_SKILL,
+        self._RefreshTagHighlightSource,
+        self
+    )
 end
 
 function XUiTheatre6RoomChooseTask:OnDisable()
     XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE6_SCORE_CHANGE, self.ShowRoleInfo, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE6_GOLD_CHANGE, self.UpdateTaskRefreshCost, self)
+    XEventManager.RemoveEventListener(
+        XEventId.EVENT_THEATRE6_UPDATE_SKILL,
+        self._RefreshTagHighlightSource,
+        self
+    )
 end
 
 function XUiTheatre6RoomChooseTask:InitComponent()
@@ -98,6 +138,7 @@ function XUiTheatre6RoomChooseTask:UpdateTaskRefresh(i)
     local data = self._ModelData.TaskSlotData[i]
     grid:SetSlotData(data, self._ModelData.TaskGroupId)
     grid:UpdateChoose(self._ChooseTaskIndexDict[i])
+    self:_RefreshTagHighlightSource()
 end
 
 ---更新任务刷新费用
@@ -113,6 +154,7 @@ end
 function XUiTheatre6RoomChooseTask:ChooseTask(index)
     if self._ChooseNum >= 3 then
         self._Control:ShowTipWithKey("Theatre6ChooseMaxTaskTip")
+        self:UpdateTaskChoose()
         return
     end
     if self._ChooseTaskIndexDict[index] then
@@ -163,10 +205,9 @@ function XUiTheatre6RoomChooseTask:OnBtnYesClick()
         table.insert(taskIds, self._ModelData.TaskSlotData[index].TaskId)
     end
 
+    local control = self._Control
     self._Control:RequestConfirmTask(taskIds, function()
-        local control = self._Control
-        self:Close()
-        control:OpenChooseRoom()
+        control:OpenChooseRoom(true)
     end)
 end
 
@@ -174,4 +215,4 @@ function XUiTheatre6RoomChooseTask:TryOpenSellSkillPanel()
     return self._Control:CheckForceSellSkillBlock()
 end
 
-return XUiTheatre6RoomChooseTask
+return XUiTheatre6RoomChooseTask

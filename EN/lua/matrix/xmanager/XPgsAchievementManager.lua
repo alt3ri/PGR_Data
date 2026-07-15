@@ -226,7 +226,7 @@ local function CheckSixAwarenessLv20(equipId)
     if reported[equipId] then
         return
     end
-    local equipAgency = XMVCA:GetAgency(ModuleId.XEquip)
+    local equipAgency = XMVCA.XEquip
     local equipDic = equipAgency:GetEquipDic()
     local equip = equipDic[equipId]
     if equip and equip:IsAwareness() and equip.Level >= 20 then

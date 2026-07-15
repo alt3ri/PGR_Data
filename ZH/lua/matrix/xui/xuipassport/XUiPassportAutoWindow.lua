@@ -12,6 +12,7 @@ local BPPhase = {
 
 function XUiPassportAutoWindow:OnAwake()
     self:RegisterButtonEvent()
+    self.IsSkip = false
 end
 
 function XUiPassportAutoWindow:OnStart(skipId)
@@ -28,6 +29,9 @@ function XUiPassportAutoWindow:OnDisable()
 end
 
 function XUiPassportAutoWindow:OnDestroy()
+    if self.IsSkip then
+        return
+    end
     XDataCenter.AutoWindowManager.NextAutoWindow()
 end
 
@@ -130,20 +134,8 @@ function XUiPassportAutoWindow:OnBtnBigSkinClick()
         self.SafeAreaContentPane.gameObject:SetActiveEx(false)
     end
 
-    XLuaUiManager.Open(
-        "UiPassport",
-        {
-            OpenPassportCard = true,
-            OnClose = function()
-                XLuaUiManager.SetMask(true)
-                self._CloseSchedule = XScheduleManager.ScheduleOnce(function()
-                    XScheduleManager.UnSchedule(self._CloseSchedule)
-                    XLuaUiManager.SetMask(false)
-
-                    if not self:IsDestroy() then
-                        self:Close()
-                    end
-                end, 500)
-            end
-        })
+    XLuaUiManager.Open("UiPassport", { OpenPassportCard = true })
+    self.IsSkip = true
+    XDataCenter.AutoWindowManager.StopAutoWindow()
+    self:Close()
 end

@@ -5,6 +5,10 @@ local ProcessFunc = XEnumConst.FuBen.ProcessFunc
 ---@class XStageInfo
 local XStageInfo = XClass(nil, "XStageInfo")
 
+-- 所有实例共享同一张映射表，避免每次 New 重建
+-- 注意：此表在文件末尾所有方法挂载完成后才赋值
+local KEY2FUNCTION
+
 function XStageInfo:Ctor(stageId)
     self._StageId = stageId
     self._StarMaps = {}
@@ -17,20 +21,7 @@ function XStageInfo:Ctor(stageId)
     self.BountyId = nil
     self.mode = nil
 
-    -- 以下这一批内容, 是已经处理过的, 已经被换成函数
-    self._Key2Function = {
-        Unlock = self.IsUnlock,
-        HaveAssist = self.IsHaveAssist,
-        Passed = self.IsPassed,
-        Type = self.GetType,
-        Stars = self.GetStars,
-        StarsMap = self.GetStarMap,
-        NextStageId = self.GetNextStageId,
-        IsOpen = self.GetIsOpen,
-        Difficult = self.GetDifficult,
-        ChapterId = self.GetChapterId,
-        OrderId = self.GetOrderId,
-    }
+    self._Key2Function = KEY2FUNCTION
 
     self._CheckDeathLoop = nil
 end
@@ -215,5 +206,20 @@ function XStageInfo:GetOrderId()
     local ok, result = XMVCA.XFuben:CallCustomFunc(type, ProcessFunc.GetOrderId, self._StageId)
     return result
 end
+
+-- 所有方法挂载完成后才能引用，避免前向引用为 nil
+KEY2FUNCTION = {
+    Unlock = XStageInfo.IsUnlock,
+    HaveAssist = XStageInfo.IsHaveAssist,
+    Passed = XStageInfo.IsPassed,
+    Type = XStageInfo.GetType,
+    Stars = XStageInfo.GetStars,
+    StarsMap = XStageInfo.GetStarMap,
+    NextStageId = XStageInfo.GetNextStageId,
+    IsOpen = XStageInfo.GetIsOpen,
+    Difficult = XStageInfo.GetDifficult,
+    ChapterId = XStageInfo.GetChapterId,
+    OrderId = XStageInfo.GetOrderId,
+}
 
 return XStageInfo

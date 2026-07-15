@@ -128,13 +128,24 @@ function XUiPanelBossStage:_RefreshPanelMode()
 
         if isOpen then
             local isFirst = bossSingle:GetIsFirstUnlockChallenge()
+
             if isFirst then
                 self.BtnModeV4P5:SetButtonState(CS.UiButtonState.Disable)
                 self.BtnModeV4P5Effect.gameObject:SetActiveEx(false)
                 self:_ShowChallengeUnlockPanel(function()
-                    self.BtnModeV4P5Effect.gameObject:SetActiveEx(true)
-                    self.BtnModeV4P5:SetButtonState(CS.UiButtonState.Normal)
-                    bossSingle:UnlockChallenge()
+                    self._FirstOpenAnimationDelay = XScheduleManager.ScheduleOnce(function()
+                        XLuaUiManager.SetMask(true)
+                        self.BtnModeV4P5Effect.gameObject:SetActiveEx(true)
+                        self.BtnModeV4P5:SetButtonState(CS.UiButtonState.Normal)
+                        bossSingle:UnlockChallenge()
+                        self.Qiehuan:PlayTimelineAnimation(
+                            function() XLuaUiManager.SetMask(false) end,
+                            nil,
+                            CS.UnityEngine.Playables.DirectorWrapMode.Hold)
+
+                        XScheduleManager.UnSchedule(self._FirstOpenAnimationDelay)
+                        self._FirstOpenAnimationDelay = nil
+                    end, CS.XGame.ClientConfig:GetInt("BossSingleChallengeFirstOpenUnlockAnimationDelay"))
                 end)
             else
                 self.BtnModeV4P5:SetButtonState(CS.UiButtonState.Normal)

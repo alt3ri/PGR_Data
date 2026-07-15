@@ -71,59 +71,7 @@ function XUiDrawRecord:InitDrawDropdown()
         self._DrdOpenTimeId = XScheduleManager.ScheduleNextFrame(handler(self, self.OnDrawListOpen))
     end
 
-    -- 构建下拉数据列表：尝试展开 DisplayOption，对过期 group 兜底
-    local dropdownDataList = {}
-    for _, drawGroupInfo in ipairs(self.HistoryGroupInfos) do
-        local groupId = drawGroupInfo.DrawGroupId
-        local groupOptions = XDataCenter.DrawManager.GetDisplayOptionsForRecord(groupId)
-
-        -- 检查是否有有效的 DisplayOption（至少有一个 option 包含 DrawIdList）
-        local hasValidOptions = false
-        if groupOptions then
-            for _, opt in ipairs(groupOptions) do
-                if opt.DrawIdList and #opt.DrawIdList > 0 then
-                    hasValidOptions = true
-                    break
-                end
-            end
-        end
-
-        if hasValidOptions then
-            -- 展开所有 DisplayOption（含 ExtraOption）
-            for _, option in ipairs(groupOptions) do
-                if option.DrawIdList and #option.DrawIdList > 0 then
-                    table.insert(dropdownDataList, {
-                        DrawGroupId = option.GroupId,
-                        GroupSubType = option.GroupSubtype or 0,
-                        OptionKey = option.OptionKey or "",
-                        Name = option.Name,
-                        Priority = option.Priority or 0,
-                    })
-                end
-            end
-        else
-            -- Fallback：DrawInfo 未加载的过期 group，用配置表兜底
-            ---@type XTableDrawGroupRule
-            local cfg = XDrawConfigs.GetDrawGroupRuleById(groupId)
-            if cfg then
-                table.insert(dropdownDataList, {
-                    DrawGroupId = groupId,
-                    GroupSubType = 0,
-                    OptionKey = "",
-                    Name = cfg.TitleCN,
-                    Priority = drawGroupInfo.Priority or 0,
-                })
-            end
-        end
-    end
-
-    -- 排序
-    table.sort(dropdownDataList, function(a, b)
-        if a.Priority ~= b.Priority then
-            return a.Priority > b.Priority
-        end
-        return a.DrawGroupId > b.DrawGroupId
-    end)
+    local dropdownDataList = XDataCenter.DrawManager.GetDisplayOptionsForRecord(self.HistoryGroupInfos)
 
     self.Index2GroupIdMap = {}
     self.DrawGroupId2IndexMap = {}
@@ -456,4 +404,4 @@ end
 
 --endregion
 
-return XUiDrawRecord
+return XUiDrawRecord

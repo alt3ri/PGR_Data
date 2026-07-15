@@ -2,7 +2,7 @@ local XTheatre6BuffBase = require("Gameplay/Theatre6/XTheatre6BuffBase")
 ---@class XBuffScript1025409 : XTheatre6BuffBase
 local XBuffScript1025409 = XDlcScriptManager.RegBuffScript(1025409, "XBuffScript1025409", XTheatre6BuffBase)
 
---效果说明：每次使用【插入式技能】时，获得20点【怒火】
+--效果说明：每次使用【插入式技能】时，获得10点【怒火】
 
 function XBuffScript1025409:Init()
     --初始化
@@ -13,12 +13,13 @@ function XBuffScript1025409:Init()
     --self.attrib = ENpcAttrib.HealAmpP
     --公用的击倒id
     self._AngerController = self:GetNpc():GetAngerController()
-    self._angerRecover = 20
+    self._angerRecover = 10
     ------------执行------------
 end
 
 function XBuffScript1025409:OnLuaSkillEnd(eventArgs)
     ------------执行------------
+    if eventArgs._launcherUUID ~= self._npcUUID then return end
     if eventArgs._skillType ~= ETheatre6SkillType.Insert then return end
     self._AngerController:CastStackBuff(self._angerRecover, self._npcUUID)
 end

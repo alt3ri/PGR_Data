@@ -33,7 +33,7 @@ function XBuffScript1025313:OnNpcDamageEvent(launcherId, targetId, magicId, kind
     if self.originAttrib1 <= self.originAttrib2 then
         if self.ChanceCheck == 0 then
             self.originAttrib4 = self.originAttrib4 + self.originAttrib3 * self.StaminaPerHitFly
-            self._proxy:ApplyMagic(self._npcUUID, self._npcUUID, 1025910,1,0, self.originAttrib4)
+            self._proxy:Theatre6ChangeStaminaValue(self._npcUUID, self.originAttrib4, 0) --根据基础属性和击飞次数恢复体力
             self.ChanceCheck = 1
         end
     end

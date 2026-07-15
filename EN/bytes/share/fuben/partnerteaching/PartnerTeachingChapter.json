@@ -602,7 +602,7 @@
     {
         "Id": 31,
         "Name": "Adaptation Fitting: Buzzling",
-        "ActivityTimeId": 44702.0,
+        "ActivityTimeId": null,
         "ActivityCondition": "[8006]",
         "StagePrefix": "BL-",
         "OpenCondition": "[1002145]",
@@ -622,7 +622,7 @@
     {
         "Id": 32,
         "Name": "Adaptation Fitting: Morigan",
-        "ActivityTimeId": 45802.0,
+        "ActivityTimeId": null,
         "ActivityCondition": "[8006]",
         "StagePrefix": "MLG-",
         "OpenCondition": "[1002146]",
@@ -661,7 +661,7 @@
     },
     {
         "Id": 34,
-        "Name": "\u9002\u914d\u62df\u5408\u00b7\u5f02\u8eab",
+        "Name": "Adaptation Fitting: Allos",
         "ActivityTimeId": 47408.0,
         "ActivityCondition": "[8006]",
         "StagePrefix": "YS-",
@@ -678,5 +678,25 @@
         "Order": 34,
         "NewTag": "New CUB",
         "PartnerId": 16390000
+    },
+    {
+        "Id": 35,
+        "Name": "Adaptation Fitting: Grand Duke",
+        "ActivityTimeId": 48704.0,
+        "ActivityCondition": "[8006]",
+        "StagePrefix": "DG-",
+        "OpenCondition": "[1002149]",
+        "BannerIcon": "Assets/Product/Texture/Image/UiPartnerTeaching/Banner/UiPartnerTeachingBannerChapter35.png",
+        "Background": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterBg35.png",
+        "ChapterIcon": "Assets/Product/Texture/Image/UiPartnerTeaching/Banner/UiPartnerTeachingBigBanner29.png",
+        "FubenPrefab": "Assets/Product/Ui/ComponentPrefab/PartnerTeaching/TuTeachingChapter.prefab",
+        "FightStagePrefab": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagePartnerTeachingFight.prefab",
+        "StoryStagePrefab": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagePartnerTeachingStory.prefab",
+        "StoryStageDetailBg": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterDaGongStage01.png",
+        "StoryStageDetailIcon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingImgBgMa02.png",
+        "StageIds": "[30101131]",
+        "Order": 35,
+        "NewTag": "New CUB",
+        "PartnerId": 16400000
     }
 ]

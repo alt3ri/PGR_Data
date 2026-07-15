@@ -8,7 +8,7 @@ local XBuffScript10261080 = XDlcScriptManager.RegBuffScript(10261080, "XBuffScri
 function XBuffScript10261080:ScriptInit(isGainControl) --初始化
     self.burstBuffId = 1025108                         --狂暴buffId
     self.angerBuffId = 1025107                         --怒火buffId
-    self.dmgMagicId = 1026394                          --#TODO 错误的伤害magicid，需要修改为实际伤害的MagicId
+    self.dmgMagicId = 1026509                          --#TODO 错误的伤害magicid，需要修改为实际伤害的MagicId，5.10已还
     self.angerCostStack = 1                            --每消耗x层怒火，提升伤害
     self.hasChangedDamage = false                      --是否已经改变过伤害，防止多次触发
     self.dictExtraPermyriad = {

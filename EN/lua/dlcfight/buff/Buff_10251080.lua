@@ -9,6 +9,7 @@ function XBuffScript10251080:ScriptInit(isGainControl) --初始化
     self.TargetSkill = self._skillId
     self.ChanceCheck = 0
     self._HitFlyController = self:GetNpc():GetHitFlyController()
+    self._stackCount = 1    --击飞层数
     --self:LogError(".....初始化完成")
 end
 

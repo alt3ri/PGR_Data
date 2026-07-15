@@ -41,7 +41,8 @@ function XUiBossInshotRank:InitTabButtons()
     local CSInstantiate = CS.UnityEngine.Object.Instantiate
     local activityId = self._Control:GetActivityId()
     local charIds = self._Control:GetActivityCharacterIds(activityId)
-    local bossIds = self._Control:GetActivityBossIds(activityId)
+    -- local bossIds = self._Control:GetActivityBossIds(activityId)
+    local bossIds = self._Control:GetTowerBossIds()
     
     for i, charId in ipairs(charIds) do
         local charGo = CSInstantiate(self.BtnFirst, self.BtnFirst.transform.parent)
@@ -52,19 +53,19 @@ function XUiBossInshotRank:InitTabButtons()
         local subGroupIndex = #self.TabButtons
         
         -- 二级页签 总榜
-        local bossGo = CSInstantiate(self.BtnSecond, self.BtnFirst.transform.parent)
-        local bossBtn = bossGo:GetComponent("XUiButton")
-        local bossName = XUiHelper.GetText("SCRankTotalName")
-        bossBtn:SetNameByGroup(0, bossName)
-        bossBtn.SubGroupIndex = subGroupIndex
-        table.insert(self.TabButtons, bossBtn)
-        self.TabDatas[#self.TabButtons] = { CharId = charId }
+        -- local bossGo = CSInstantiate(self.BtnSecond, self.BtnFirst.transform.parent)
+        -- local bossBtn = bossGo:GetComponent("XUiButton")
+        -- local bossName = XUiHelper.GetText("SCRankTotalName")
+        -- bossBtn:SetNameByGroup(0, bossName)
+        -- bossBtn.SubGroupIndex = subGroupIndex
+        -- table.insert(self.TabButtons, bossBtn)
+        -- self.TabDatas[#self.TabButtons] = { CharId = charId }
         
         -- 二级页签 Boss
         for _, bossId in ipairs(bossIds) do
-            bossGo = CSInstantiate(self.BtnSecond, self.BtnFirst.transform.parent)
-            bossBtn = bossGo:GetComponent("XUiButton")
-            bossName = self._Control:GetBossName(bossId)
+            local bossGo = CSInstantiate(self.BtnSecond, self.BtnFirst.transform.parent)
+            local bossBtn = bossGo:GetComponent("XUiButton")
+            local bossName = self._Control:GetBossName(bossId)
             bossBtn:SetNameByGroup(0, bossName)
             bossBtn.SubGroupIndex = subGroupIndex
             table.insert(self.TabButtons, bossBtn)
@@ -86,8 +87,16 @@ end
 
 function XUiBossInshotRank:Refresh()
     local tabData = self.TabDatas[self.SelectIndex]
-    local isTotalRank = not XTool.IsNumberValid(tabData.BossId)
-    XMVCA.XBossInshot:BossInshotQueryRankRequest(tabData.CharId, tabData.BossId, isTotalRank, function(rankData)
+
+    self._PlayingFlyInAnimation = true
+
+    -- local isTotalRank = not XTool.IsNumberValid(tabData.BossId)
+    XMVCA.XBossInshot:BossInshotQueryTowerRankRequest(tabData.CharId, tabData.BossId, function(rankData)
+        if rankData.Code ~= XCode.Success then
+            XUiManager.TipCode(rankData.Code)
+            return
+        end
+
         self:RefreshDynamicTable(rankData)
         self:RefreshMyRank(rankData)
     end)
@@ -114,7 +123,8 @@ function XUiBossInshotRank:RefreshMyRank(rankData)
     rankInfo["HeadPortraitId"] = XPlayer.CurrHeadPortraitId
     rankInfo["HeadFrameId"] = XPlayer.CurrHeadFrameId
     rankInfo["Score"] = rankData.Score
-    rankInfo["CharacterIds"] = rankData.CharacterIds
+    rankInfo["CharacterIds"] = rankData.CharacterIds or { rankData.CharacterId }
+    rankInfo["TowerId"] = rankData.TowerId
     self.MyRank:Refresh(rankInfo)
 end
 
@@ -126,12 +136,17 @@ function XUiBossInshotRank:InitDynamicTable()
     self.DynamicTable = XDynamicTableNormal.New(self.PlayerRankList)
     self.DynamicTable:SetProxy(XUiGridBossInshotRank, self)
     self.DynamicTable:SetDelegate(self)
+    self.DynamicTable:GetImpl().GridLoadInteral = CS
+        .XGame
+        .ClientConfig
+        :GetInt("BossInshotRankingGridShowInterval") / 1000.0
 end
 
 function XUiBossInshotRank:RefreshDynamicTable(rankData)
-    self.DataList = rankData.RankPlayerInfos
+    self.DataList = rankData.RankPlayerInfos or {}
     self.DynamicTable:SetDataSource(self.DataList)
-    self.DynamicTable:ReloadDataASync(1)
+    self._PlayFlyInAnimation = true
+    self.DynamicTable:ReloadDataASync()
     self.PanelNoRank.gameObject:SetActiveEx((not next(self.DataList)))
 end
 
@@ -140,31 +155,11 @@ function XUiBossInshotRank:OnDynamicTableEvent(event, index, grid)
         local rankInfo = self.DataList[index]
         rankInfo.Rank = index
         grid:Refresh(rankInfo)
-
-    elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_RELOAD_COMPLETED then
-        -- 动画完成前禁用拖拽
-        local scrollRect = self.PlayerRankList:GetComponent("ScrollRect")
-        scrollRect.vertical = false
-        
-        local grids = self.DynamicTable:GetGrids()
-        local gridCnt = #grids
-        for _, g in pairs(grids) do
-            g.GameObject:SetActive(false)
+        if self._PlayFlyInAnimation then
+            grid:PlayFlyInAnimation()
         end
-        self:ClearGridsTimer()
-        self.GridIndex = 1
-        self.GridsTimer = XScheduleManager.Schedule(function()
-            local item = grids[self.GridIndex]
-            if item then
-                item.GameObject:SetActive(true)
-            end
-            self.GridIndex = self.GridIndex + 1
-
-            -- 恢复拖拽
-            if self.GridIndex == gridCnt then
-                scrollRect.vertical = true
-            end
-        end, 100, gridCnt)
+    elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_RELOAD_COMPLETED then
+        self._PlayFlyInAnimation = false
     end
 end
 

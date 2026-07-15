@@ -1,3 +1,4 @@
+--[[
 local XUiBaseEquip = XLuaUiManager.Register(XLuaUi, "UiBaseEquip")
 
 local XUiGridBaseEquip = require("XUi/XUiBaseEquip/XUiGridBaseEquip")
@@ -151,3 +152,4 @@ function XUiBaseEquip:UpdateBaseEquip(part, baseEquip)
 
     self:CreateBaseEquipGrid(part, baseEquip)
 end
+]]

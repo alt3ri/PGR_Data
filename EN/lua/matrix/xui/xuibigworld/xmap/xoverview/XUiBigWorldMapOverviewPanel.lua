@@ -17,7 +17,6 @@ end
 
 function XUiBigWorldMapOverviewPanel:PlayEnableAnimation(parent)
     self:Open()
-    self:ShowBackground(true)
     self._CurrentEnableCount = 0
 
     if not XTool.IsTableEmpty(self._EnableAnimations) then
@@ -37,7 +36,7 @@ function XUiBigWorldMapOverviewPanel:PlayEnableAnimation(parent)
     end
 end
 
-function XUiBigWorldMapOverviewPanel:PlayDisableAnimation(parent, backgroundParent)
+function XUiBigWorldMapOverviewPanel:PlayDisableAnimation(parent)
     self._CurrentDisableCount = 0
 
     if not XTool.IsTableEmpty(self._DisableAnimations) then
@@ -49,16 +48,12 @@ function XUiBigWorldMapOverviewPanel:PlayDisableAnimation(parent, backgroundPare
                 if self._CurrentDisableCount >= table.nums(self._DisableAnimations) then
                     XMVCA.XBigWorldUI:SetMaskActive(false, "XUiBigWorldMapOverviewPanel")
                     self:SetParent(parent)
-                    self:SetBackgroundParent(backgroundParent)
-                    self:ShowBackground(false)
                     self:Close()
                 end
             end, nil, CS.UnityEngine.Playables.DirectorWrapMode.None)
         end
     else
         self:SetParent(parent)
-        self:SetBackgroundParent(backgroundParent)
-        self:ShowBackground(false)
         self:Close()
     end
 end

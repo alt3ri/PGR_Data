@@ -9,7 +9,6 @@ local tostring = tostring
 local math = math
 local mathFloor = math.floor
 local string = string
-local stringFind = string.find
 local stringSub = string.sub
 local stringGmatch = string.gmatch
 local stringSplit = string.Split
@@ -28,8 +27,6 @@ local ReadOnlyTable = {
         XLog.Error("attempt to update a readonly table")
     end
 }
-
-local AllTables = {}
 
 --默认类型
 local DefaultOfType = {
@@ -89,6 +86,10 @@ local ToFix = function(value)
     return FixParse(value)
 end
 
+local ToByte = function(value)
+    return mathFloor(value)
+end
+
 local LIST_FLAG = 1
 local DICTIONARY_FLAG = 2
 
@@ -97,7 +98,8 @@ local ValueFunc = {
     ["float"] = ToFloat,
     ["string"] = ToString,
     ["bool"] = ToBool,
-    ["fix"] = ToFix
+    ["fix"] = ToFix,
+    ["byte"] = ToByte
 }
 
 local KeyFunc = {
@@ -517,6 +519,10 @@ local function ReadByIntKeyFromTab(path, xtable, identifier)
         return
     end
 
+    if not xtable[identifier] or not xtable[identifier].PrimaryKey then
+        XLog.Error("XTableManager ReadByIntKey 主键设置异常，二进制读取会有问题, path: " .. path)
+    end
+
     if string.EndsWith(path, ".tab") then
         local t = ReadTabFile(path, xtable, READ_KEY_TYPE.INT, identifier)
         return t
@@ -561,10 +567,6 @@ end
 
 function loader.ReadByStringKey(path, xTable, identifier)
     return ReadByStringKeyFromTab(path, xTable, identifier)
-end
-
-function loader.ReadArray(path, xTable, identifier)
-    return ReadByIntKeyFromTab(path, xTable, identifier)
 end
 
 function loader.ReleaseAll(unload)

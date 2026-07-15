@@ -69,6 +69,11 @@ XHeroSdkManager.UserType = {
     Naver = 17,
 }
 
+function XHeroSdkManager.IsGuestUserType(userType)
+    return userType == XHeroSdkManager.UserType.Vistor
+            or userType == "Guest"
+end
+
 function XHeroSdkManager.UpdateCallbackUrl()
     LoadPayCallback()
 end

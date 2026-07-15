@@ -24,14 +24,6 @@ function XUiPassportPanelTask:OnStart(model3d)
     self:InitRedPoint()
 end
 
-function XUiPassportPanelTask:OnEnable()
-    self.Model3D:ShowTaskCamera(true)
-end
-
-function XUiPassportPanelTask:OnDisable()
-    self.Model3D:ShowTaskCamera(false)
-end
-
 function XUiPassportPanelTask:InitTab()
     local btnGroup = {}
     for i = 1, #TaskTabConfig do
@@ -86,8 +78,114 @@ function XUiPassportPanelTask:Refresh()
         taskData.ExRewardId = self._Control:GetPassportTaskExRewardId(taskData.Id)
     end
     self.DynamicTable:SetDataSource(self.Tasks)
-    self.DynamicTable:ReloadDataASync()
+    self.DynamicTable:ReloadDataSync()
     self:UpdateTabExRewardMark()
+
+    self.TxtDaily.gameObject:SetActiveEx(false)
+    self.TxtTurnChallenge.gameObject:SetActiveEx(false)
+    self.TxtTurnRemainTime.gameObject:SetActiveEx(false)
+
+    if taskType == XEnumConst.PASSPORT.TASK_TYPE.DAILY then
+        self.TxtDaily.gameObject:SetActiveEx(true)
+    elseif taskType == XEnumConst.PASSPORT.TASK_TYPE.WEEKLY then    -- 轮次任务
+        self.TxtTurnChallenge.gameObject:SetActiveEx(true)
+
+        local curPoints, allPoints = self:CalcTaskPoints(self.Tasks)
+
+        self.TxtTurnChallenge.text = CS.XTextManager.GetText(
+            "PassportTaskWeeklyChallengePoints",
+            curPoints,
+            allPoints)
+
+        local remainTime = self:GetWeeklyTaskRemainTime()
+        if remainTime then
+            self.TxtTurnRemainTime.gameObject:SetActiveEx(true)
+            self.TxtTurnRemainTime.text = CS.XTextManager.GetText(
+                "PassportTaskWeeklyRemainTime",
+                remainTime)
+        end
+    elseif taskType == XEnumConst.PASSPORT.TASK_TYPE.ACTIVITY then  -- 手册任务
+        self.TxtTurnChallenge.gameObject:SetActiveEx(true)
+        local curTasks, allTasks = self:CalcTaskProgress(self.Tasks)
+        self.TxtTurnChallenge.text = CS.XTextManager.GetText(
+            "PassportTaskActivityProgress",
+            curTasks,
+            allTasks)
+
+    else
+        XLog.Error("XUiPassportPanelTask:Refresh, unknown task type: " .. taskType)
+    end
+end
+
+-- 计算手册任务完成进度
+function XUiPassportPanelTask:CalcTaskProgress(tasks)
+    local allTasks = 0
+    local finishTasks = 0
+
+    for _, taskData in pairs(tasks) do
+        allTasks = allTasks + 1
+        if taskData.State == XDataCenter.TaskManager.TaskState.Finish then
+            finishTasks = finishTasks + 1
+        end
+    end
+
+    return finishTasks, allTasks
+end
+
+-- 计算挑战点数
+function XUiPassportPanelTask:CalcTaskPoints(tasks)
+    local allPoints = 0
+    local gotPoints = 0
+    local pointItemId = CS.XGame.ClientConfig:GetInt("PassportPointItemId")
+
+    for _, taskData in pairs(tasks) do
+        local taskConf = XDataCenter.TaskManager.GetTaskTemplate(taskData.Id)
+        local rewardConf = XRewardManager.GetRewardList(taskConf.RewardId)
+
+        local points = 0
+        for _, reward in pairs(rewardConf) do
+            if reward.TemplateId == pointItemId then
+                points = points + reward.Count
+            end
+        end
+
+        local exRewardId = self._Control:GetPassportTaskExRewardId(taskData.Id)
+        local exRewardConf = nil
+
+        if exRewardId then
+            exRewardConf = XRewardManager.GetRewardList(exRewardId)
+        end
+
+        if exRewardConf then
+            for _, exReward in pairs(exRewardConf) do
+                if exReward.TemplateId == pointItemId then
+                    points = points + exReward.Count
+                end
+            end
+        end
+
+        allPoints = allPoints + points
+
+        if taskData.State == XDataCenter.TaskManager.TaskState.Finish then
+            gotPoints = gotPoints + points
+        end
+    end
+
+    return gotPoints, allPoints
+end
+
+function XUiPassportPanelTask:GetWeeklyTaskRemainTime()
+    local passportTaskGroupId = self._Control:GetPassportTaskGroupIdByType(
+        XEnumConst.PASSPORT.TASK_TYPE.WEEKLY)
+
+    if not XTool.IsNumberValid(passportTaskGroupId) then
+        return
+    end
+
+    local timeId = self._Control:GetPassportTaskGroupTimeId(passportTaskGroupId)
+    local endTime = XFunctionManager.GetEndTimeByTimeId(timeId)
+    local nowServerTime = XTime.GetServerNowTimestamp()
+    return XUiHelper.GetTime(endTime - nowServerTime, XUiHelper.TimeFormatType.PASSPORT)
 end
 
 function XUiPassportPanelTask:UpdateTabExRewardMark()

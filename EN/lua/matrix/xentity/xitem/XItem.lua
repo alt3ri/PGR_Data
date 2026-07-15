@@ -24,7 +24,7 @@ function XItem:Ctor(itemData, template)
     self:RefreshItem(itemData)
 end
 
-function XItem:RefreshItem(itemData)
+function XItem:RefreshItem(itemData, skipEvent)
     if not itemData then
         return
     end
@@ -32,13 +32,13 @@ function XItem:RefreshItem(itemData)
     if itemData.RefreshTime then
         self.RefreshTime = itemData.RefreshTime
     end
-    
+
     if itemData.Count then
-        self:SetCount(itemData.Count)
+        self:SetCount(itemData.Count, skipEvent)
     end
 
     if itemData.BuyTimes then
-        self:SetBuyTimes(itemData.BuyTimes)
+        self:SetBuyTimes(itemData.BuyTimes, skipEvent)
     end
 
     if itemData.CreateTime then
@@ -54,25 +54,30 @@ function XItem:RefreshItem(itemData)
     end
 end
 
-function XItem:SetCount(count)
+function XItem:SetCount(count, skipEvent)
     if self.Count == count then
         return
     end
 
     self.Count = count
 
-    CsXGameEventManager.Instance:Notify(XEventId.EVENT_ITEM_COUNT_UPDATE_PREFIX .. self.Id, self.Id, self.Count)
-    XEventManager.DispatchEvent(XEventId.EVENT_ITEM_COUNT_UPDATE_PREFIX .. self.Id, self.Id, self.Count)
+    if not skipEvent then
+        local eventId = XEventId.EVENT_ITEM_COUNT_UPDATE_PREFIX .. self.Id
+        CsXGameEventManager.Instance:Notify(eventId, self.Id, self.Count)
+        XEventManager.DispatchEvent(eventId, self.Id, self.Count)
+    end
 end
 
-function XItem:SetBuyTimes(buyTimes)
+function XItem:SetBuyTimes(buyTimes, skipEvent)
     if buyTimes == self.BuyTimes then
         return
     end
 
     self.BuyTimes = buyTimes
 
-    XEventManager.DispatchEvent(XEventId.EVENT_ITEM_BUYTIEMS_UPDATE_PREFIX .. self.Id, self.Id, self.BuyTimes)
+    if not skipEvent then
+        XEventManager.DispatchEvent(XEventId.EVENT_ITEM_BUYTIEMS_UPDATE_PREFIX .. self.Id, self.Id, self.BuyTimes)
+    end
 end
 
 function XItem:GetCount()

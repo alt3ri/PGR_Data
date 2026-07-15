@@ -83,10 +83,6 @@ function XUiPanelBossInshotCharacterDetail:OnBtnUnEquipClick()
     end)
 end
 
-function XUiPanelBossInshotCharacterDetail:OnBtnBackClick()
-    self:SwitchPanel(self.PANEL_TYPE.MAIN)
-end
-
 function XUiPanelBossInshotCharacterDetail:Refresh(currentEntityId)
     self.CurrentEntityId = currentEntityId
     self.CharacterId = XEntityHelper.GetCharacterIdByEntityId(currentEntityId)
@@ -140,7 +136,7 @@ function XUiPanelBossInshotCharacterDetail:RefreshPanelMain()
 
     -- 手动穿戴的天赋    
     local selTalentIds = XMVCA.XBossInshot:GetCharacterSelectTalentIds(self.CharacterId)
-    for i = 1, XEnumConst.BOSSINSHOT.WEAR_TALENT_MAX_CNT do
+    for i = 1, XMVCA.XBossInshot:GetTalentSlotMax() do
         local talentId = selTalentIds[i]
         local uiObj = self["GridTalent"..(i+1)]
         local isEquipTalent = talentId ~= nil and talentId ~= 0

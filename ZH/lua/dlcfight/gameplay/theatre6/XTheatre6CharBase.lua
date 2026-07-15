@@ -1507,15 +1507,24 @@ function XTheatre6CharBase:AfterDamageCalc(eventArgs)
     if eventArgs.SkillActionId == 0 then return end
     if eventArgs.Target ~= self._uuid then return end
 
-    local stamina = self._proxy:GetNpcGameplayAttribValue(self._uuid, ETheatre6AttribType.Stamina)
-    if stamina < 0 then return end
+    if self._proxy:GetBuffCountByKind(self._uuid,1025800) >= 1 then
+        local stamina = self._proxy:GetNpcGameplayAttribValue(self._uuid, ETheatre6AttribType.Stamina) - 50
+        if stamina < 0 then return end
+        local ratio = 1 - stamina * self.StaminaDmgReducRatio / 10000
+        if ratio < 0.6 then ratio = 0.6 end
+        self._proxy:SetAfterDamageMagicContext(eventArgs.ContextId, eventArgs.PhysicalDamage * ratio, eventArgs
+                .ElementDamage, eventArgs.FinalHackDamage)
+    else
+        local stamina = self._proxy:GetNpcGameplayAttribValue(self._uuid, ETheatre6AttribType.Stamina)
+        if stamina < 0 then return end
+        local ratio = 1 - stamina * self.StaminaDmgReducRatio / 10000
+        if ratio < 0.6 then ratio = 0.6 end
+        self._proxy:SetAfterDamageMagicContext(eventArgs.ContextId, eventArgs.PhysicalDamage * ratio, eventArgs
+                .ElementDamage, eventArgs.FinalHackDamage)
+    end
 
     -- local value = 30
     -- local ratio = 1 - stamina * value / 10000
-    local ratio = 1 - stamina * self.StaminaDmgReducRatio / 10000
-    if ratio < 0.6 then ratio = 0.6 end
-    self._proxy:SetAfterDamageMagicContext(eventArgs.ContextId, eventArgs.PhysicalDamage * ratio, eventArgs
-        .ElementDamage, eventArgs.FinalHackDamage)
 end
 
 ---受到伤害时 增加实时超算值

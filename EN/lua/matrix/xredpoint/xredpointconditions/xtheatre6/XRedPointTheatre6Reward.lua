@@ -4,6 +4,7 @@ local Events = nil
 
 function XRedPointTheatre6Reward.GetSubEvents()
     Events = Events or {
+        XRedPointEventElement.New(XEventId.EVENT_TASK_SYNC),
         XRedPointEventElement.New(XEventId.EVENT_FINISH_TASK),
         XRedPointEventElement.New(XEventId.EVENT_FINISH_MULTI),
     }

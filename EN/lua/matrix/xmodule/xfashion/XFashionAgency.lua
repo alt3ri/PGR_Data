@@ -74,6 +74,11 @@ function XFashionAgency:GetFashionColorName(colorId)
     return colorConfig.FashionName or ""
 end
 
+function XFashionAgency:GetFashionColorNameVertical(colorId)
+    local colorConfig = self._Model:GetFashionColorById(colorId)
+    return colorConfig.FashionNameVertical or ""
+end
+
 function XFashionAgency:GetFashionColorIcon(colorId)
     local colorConfig = self._Model:GetFashionColorById(colorId)
     return colorConfig.FashionIcon or ""
@@ -84,11 +89,53 @@ function XFashionAgency:GetFashionColorOriginalFashionId(colorId)
     return colorConfig.OriginalFashionId
 end
 
+function XFashionAgency:GetFashionColorQuality(colorId)
+    local colorConf = self._Model:GetFashionColorById(colorId)
+    return colorConf.Quality
+end
+
+function XFashionAgency:GetFashionColorDescription(colorId)
+    local colorConf = self._Model:GetFashionColorById(colorId)
+    local desc = colorConf.Description
+    if not desc or desc == "" then
+        desc = XDataCenter.FashionManager.GetFashionDesc(
+            colorConf.OriginalFashionId)
+    end
+    return desc
+end
+
+function XFashionAgency:GetFashionColorWorldDescription(colorId)
+    local colorConf = self._Model:GetFashionColorById(colorId)
+    local desc = colorConf.WorldDescription
+    if not desc or desc == "" then
+        desc = XDataCenter.FashionManager.GetFashionWorldDescription(
+            colorConf.OriginalFashionId)
+    end
+    return desc
+end
+
+function XFashionAgency:GetFashionColorSkipIdParams(colorId)
+    local colorConf = self._Model:GetFashionColorById(colorId)
+    return colorConf.SkipIdParams
+end
+
 function XFashionAgency:IsFashionColorHas(fashionId, colorId)
     if not self._Model.ColorData then
         return false, nil
     end
     return self._Model.ColorData:IsFashionColorHas(fashionId, colorId)
+end
+
+-- 用目标涂装Id匹配 FashionColor.TargetFashionId,命中则用该颜色Id判断是否已拥有
+function XFashionAgency:IsTargetFashionColorHas(targetFashionId)
+    local colorConfigs = self._Model:GetFashionColorConfigs()
+    for _, colorConfig in pairs(colorConfigs) do
+        if colorConfig.TargetFashionId == targetFashionId
+                and self:IsFashionColorHas(colorConfig.OriginalFashionId, colorConfig.Id) then
+            return true
+        end
+    end
+    return false
 end
 
 --endregion

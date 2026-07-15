@@ -9,7 +9,13 @@
 ---@field Pos4 @右下节点
 local XUiGridDyeMerge = XClass(XUiNode, "XUiGridDyeMerge")
 
+local XUiDyeMergeMainSpine = require("XUi/XUiDyeMergeGame/UiDyeMergeGame/Com/XUiDyeMergeMainSpine")
+
 local SORTING_OFFSET = 5
+
+function XUiGridDyeMerge:OnStart()
+    self.RImgObjectSpine = XUiDyeMergeMainSpine.New(self.GameObject)
+end
 
 --- 设置样式名称。同一种格子类型可能有不同的UI样式，归类到不同的对象池管理
 function XUiGridDyeMerge:SetPrefabStyleName(styleName)
@@ -58,13 +64,72 @@ end
 
 --- 子类重写
 function XUiGridDyeMerge:RefreshOnStagePass(uid)
-    
+
+end
+
+--- 播放方块骨骼动画：初始化阶段直接 Loop，运行时先 Enable 再 Loop
+function XUiGridDyeMerge:_PlayObjectSpine(iconTop)
+    if not self.RImgObjectSpine or not iconTop then return end
+    if self._Control.GamingControl:IsInitPhase() then
+        self.RImgObjectSpine:PlaySpineAnimation(iconTop .. "Loop")
+    else
+        self.RImgObjectSpine:PlaySpineAnimation(iconTop .. "Enable", iconTop .. "Loop")
+    end
+end
+
+--- 清空骨骼动画状态（切换到 Empty），用于节点隐藏或回收时避免残留画面
+function XUiGridDyeMerge:_ClearObjectSpine()
+    if self.RImgObjectSpine then
+        self.RImgObjectSpine:PlaySpineAnimation("Empty")
+    end
+end
+
+--- 设置正常态花节点的可见性与图标
+---@param visible boolean
+---@param icon string|nil
+function XUiGridDyeMerge:SetFlowerVisible(visible, icon)
+    if not self.RImgObject then return end
+    self.RImgObject.gameObject:SetActiveEx(visible)
+    if visible and icon then
+        self.RImgObject:SetRawImage(icon)
+    end
+end
+
+--- 设置合成完成标记的可见性与图标（基类空实现，Target 重写）
+---@param visible boolean
+---@param icon string|nil
+function XUiGridDyeMerge:SetCompletionBadgeVisible(visible, icon)
+end
+
+--- 切换到正常展示态：清骨骼（Empty 隐藏花动画） + 显示静态图标 + 隐藏完成标记
+---@param flowerIcon string|nil
+function XUiGridDyeMerge:EnterNormalDisplay(flowerIcon)
+    self:_ClearObjectSpine()
+    self:SetFlowerVisible(true, flowerIcon)
+    self:SetCompletionBadgeVisible(false)
+end
+
+--- 切换到通关态：播放骨骼动画 + 隐藏花
+---@param colorCfg table
+function XUiGridDyeMerge:EnterPassDisplay(colorCfg)
+    self:_ClearObjectSpine()
+    if colorCfg and colorCfg.IconTop then
+        self:_PlayObjectSpine(colorCfg.IconTop)
+    end
+    self:SetFlowerVisible(false)
+end
+
+--- 切换到无花态：清骨骼 + 隐藏花
+function XUiGridDyeMerge:EnterEmptyDisplay()
+    self:_ClearObjectSpine()
+    self:SetFlowerVisible(false)
 end
 
 --- 回收到对象池前调用，重置与逻辑层直接相关的数据
 --- 子类按需重写，须调用父类实现
 function XUiGridDyeMerge:OnRecycle()
     self:_RestoreSorting()
+    self:_ClearObjectSpine()
     self.Uid = nil
     self._SendGridClickSignal = nil
 end

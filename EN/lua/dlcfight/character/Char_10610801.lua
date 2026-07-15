@@ -13,44 +13,28 @@ local FindPathState = require("Character/BigWorld/XEcologyConstructAI/XEcologyFi
 ---生态状态枚举
 local StateEnum = {
     None = 0,
-    ---教学楼入口处等待指挥官
-    TeachingBuilding = 1,
-    ---长椅等待指挥官坐下
-    Bench = 2,
-    ---参观礼堂
-    Auditorium = 3,
-    ---教室内：趴桌上
-    InClass = 4,
-    ---寻路过程
-    FindPath = 5,
+    ---全息状态
+    Holographic= 1,
 }
 ---数据黑板key值
 local DataBoardKey = {
     None = 0,
-    ---教学楼入口处等待指挥官
-    TeachingBuilding = 1,
-    ---长椅等待指挥官坐下
-    Bench = 2,
-    ---参观礼堂
-    Auditorium = 3,
-    ---教室内：趴桌上
-    InClass = 4,
-    ---寻路过程
-    FindPath = 5,
+    ---全息状态
+    Holographic= 1,
 }
 --endregion
 
 
---region 状态-阿尔法-教学楼
----@class XAlphaTeachingBuildingState: XEcologyConstructAIBaseState
-local XAlphaTeachingBuildingState = XClass(BaseState, "XAlphaTeachingBuildingState")
+--region 状态-阿尔法-全息
+---@class XAlphaHolographicState: XEcologyConstructAIBaseState
+local XAlphaHolographicState = XClass(BaseState, "XAlphaHolographicState")
 
 ---数据配置
 ---@overload
-function XAlphaTeachingBuildingState:InitStateConfig()
+function XAlphaHolographicState:InitStateConfig()
     self.StateConfig = {}
-    self.StateConfig.StateEnum = StateEnum.TeachingBuilding
-    self.StateConfig.StateAnim = "Drama_Stand_15"
+    self.StateConfig.StateEnum = StateEnum.Holographic
+    self.StateConfig.StateLoopAnim = "Drama_Stand_01"
     self.StateConfig.TriggerId = 1
     self.StateConfig.ShowOptionId = 1
     self.StateConfig.RegisterWorldEventList = {
@@ -61,172 +45,38 @@ function XAlphaTeachingBuildingState:InitStateConfig()
     }
     self.StateConfig.BubbleDict = {
         [EEcologyBubbleType.Around] = {
-            Name = "300604",
+            Name = "301901",
             TriggerDistance = 6,
             TriggerCD = 2,
-            LoopTime = 3,
+            LoopTime = 6,
         },
     }
 end
-
-function XAlphaTeachingBuildingState:OnStateEnter(lastStateEnum)
+---@overload
+---状态进入时
+---@param lastStateEnum number 上个状态
+function XAlphaHolographicState:OnStateEnter(lastStateEnum)
+    self.InteractTriggerCount = 1
     BaseState.OnStateEnter(self, lastStateEnum)
-    self.StateMachine:SetDataBoard(DataBoardKey.TeachingBuilding, 0)
 end
-
-function XAlphaTeachingBuildingState:HandleEvent(eventType, eventArgs)
-    BaseState.HandleEvent(self, eventType, eventArgs)
-    if eventType == EWorldEvent.DramaFinish and eventArgs.DramaName == "TargetDrama" then
-        if not eventArgs.HistoryDecisionDict[clipId] then
-            return
-        end
-        if table.contains(eventArgs.HistoryDecisionDict[clipId], decisionId) then
-            self.StateMachine:SetDataBoard(DataBoardKey.TeachingBuilding, 1)
-        end
+function XAlphaHolographicState:UpdateOptionActive()
+    local optionId = self.StateConfig.ShowOptionId
+    if self.InteractTriggerCount == 2 then
+        optionId = 2
     end
+    if self.InteractTriggerCount >= 3 then
+        optionId = 1
+    end
+    self._proxy:SetNpcInteractOneOptionActive(self._placeId, optionId)
 end
---endregion
-
-
---region 状态-阿尔法-长椅
----@class XAlphaBenchState: XEcologyConstructAIBaseState
-local XAlphaBenchState = XClass(BaseState, "XAlphaBenchState")
-
----数据配置
----@overload
-function XAlphaBenchState:InitStateConfig()
-    self.StateConfig = {}
-    self.StateConfig.StateEnum = StateEnum.Bench
-    self.StateConfig.StateAnim = "Drama_Stand_06"
-    self.StateConfig.TriggerId = 1
-    self.StateConfig.ShowOptionId = 2
-    self.StateConfig.RegisterWorldEventList = {
-        EWorldEvent.ActorTrigger,
-        EWorldEvent.NpcInteractStart,
-        EWorldEvent.NpcInteractComplete,
-    }
-    self.StateConfig.BubbleDict = {
-        [EEcologyBubbleType.Around] = {
-            Name = "300605",
-            TriggerDistance = 6,
-            TriggerCD = 2,
-            LoopTime = 3,
-        },
-        [EEcologyBubbleType.Near] = {
-            Name = "300601",
-            TriggerDistance = 2.5,
-            TriggerCD = 2,
-            LoopTime = 3,
-        }
-    }
-end
-
-function XAlphaBenchState:OnStateEnter(lastStateEnum)
-    BaseState.OnStateEnter(self, lastStateEnum)
-    self.StateMachine:SetDataBoard(DataBoardKey.Bench, 0)
-end
---endregion
-
-
---region 状态-阿尔法-礼堂
----@class XAlphaAuditoriumState: XEcologyConstructAIBaseState
-local XAlphaAuditoriumState = XClass(BaseState, "XAlphaAuditoriumState")
-
----数据配置
----@overload
-function XAlphaAuditoriumState:InitStateConfig()
-    self.StateConfig = {}
-    self.StateConfig.StateEnum = StateEnum.Auditorium
-    self.StateConfig.StateAnim = "Drama_Stand_07"
-    self.StateConfig.TriggerId = 1
-    self.StateConfig.ShowOptionId = 3
-    self.StateConfig.RegisterWorldEventList = {
-        EWorldEvent.ActorTrigger,
-        EWorldEvent.NpcInteractStart,
-        EWorldEvent.NpcInteractComplete,
-    }
-    self.StateConfig.BubbleDict = {
-        [EEcologyBubbleType.Around] = {
-            Name = "300606",
-            TriggerDistance = 6,
-            TriggerCD = 2,
-            LoopTime = 3,
-        },
-        [EEcologyBubbleType.Near] = {
-            Name = "300602",
-            TriggerDistance = 2.5,
-            TriggerCD = 2,
-            LoopTime = 3,
-        }
-    }
-end
-
-function XAlphaAuditoriumState:OnStateEnter(lastStateEnum)
-    BaseState.OnStateEnter(self, lastStateEnum)
-    self.StateMachine:SetDataBoard(DataBoardKey.Auditorium, 0)
-end
---endregion
-
-
---region 状态-阿尔法-教室
----@class XAlphaInClassState: XEcologyConstructAIBaseState
-local XAlphaInClassState = XClass(BaseState, "XAlphaInClassState")
-
----数据配置
----@overload
-function XAlphaInClassState:InitStateConfig()
-    self.StateConfig = {}
-    self.StateConfig.StateEnum = StateEnum.InClass
-    self.StateConfig.StateAnim = "Drama_Stand_07"
-    self.StateConfig.TriggerId = 1
-    self.StateConfig.ShowOptionId = 4
-    self.StateConfig.RegisterWorldEventList = {
-        EWorldEvent.ActorTrigger,
-        EWorldEvent.NpcInteractStart,
-        EWorldEvent.NpcInteractComplete,
-    }
-    self.StateConfig.BubbleDict = {
-        [EEcologyBubbleType.Around] = {
-            Name = "300606",
-            TriggerDistance = 6,
-            TriggerCD = 2,
-            LoopTime = 3,
-        },
-        [EEcologyBubbleType.Near] = {
-            Name = "300602",
-            TriggerDistance = 2.5,
-            TriggerCD = 2,
-            LoopTime = 3,
-        }
-    }
-end
-
-function XAlphaInClassState:OnStateEnter(lastStateEnum)
-    BaseState.OnStateEnter(self, lastStateEnum)
-    self.StateMachine:SetDataBoard(DataBoardKey.InClass, 0)
-end
---endregion
-
-
---region 状态-阿尔法-寻路
----@class XAlphaFindPathState: XEcologyFindCombinePathState
-local XAlphaFindPathState = XClass(FindPathState, "XAlphaFindPathState")
-
----数据配置
----@overload
-function XAlphaFindPathState:InitStateConfig()
-    self.StateConfig = {}
-    self.StateConfig.StateEnum = StateEnum.FindPath
-    self.StateConfig.TriggerId = 1
-    self.StateConfig.ShowOptionId = 5
-    self.StateConfig.RegisterWorldEventList = {
-        EWorldEvent.ActorTrigger,
-        EWorldEvent.NpcInteractStart,
-        EWorldEvent.NpcInteractComplete,
-    }
-
-    self.StateConfig.FindPathConfig = {}
-    self.StateConfig.FindPathConfig.MeetCommanderBubbleName = "300603"
+function XAlphaHolographicState:OnNpcInteractStart(eventArgs)
+    -- 被交互的不是自己不走逻辑
+    if eventArgs.TargetId ~= self._uuid then
+        return
+    end
+    self.InteractTriggerCount = self.InteractTriggerCount + 1
+    self:UpdateOptionActive()
+    self:PlayPerformLoopAnim()
 end
 --endregion
 
@@ -238,36 +88,7 @@ local XCharAlphaEcology = XDlcScriptManager.RegCharScript(10610801, "XCharAlphaE
 
 --- 注册状态机状态
 function XCharAlphaEcology:RegisterMachineState()
-    self._stateMachine:AddState(StateEnum.TeachingBuilding, XAlphaTeachingBuildingState.New(self._proxy))
-    self._stateMachine:AddState(StateEnum.Bench, XAlphaBenchState.New(self._proxy))
-    self._stateMachine:AddState(StateEnum.Auditorium, XAlphaAuditoriumState.New(self._proxy))
-    self._stateMachine:AddState(StateEnum.InClass, XAlphaInClassState.New(self._proxy))
-    self._stateMachine:AddState(StateEnum.FindPath, XAlphaFindPathState.New(self._proxy))
-end
-
---- 注册状态转移方程
-function XCharAlphaEcology:RegisterMachineStateTransition()
-    -- 设置寻路状态枚举值
-    self.FindPathStateEnum = StateEnum.FindPath
-    -- 其他状态到寻路状态
-    self:RegisterInFindPathStateTransition(StateEnum.TeachingBuilding, function()
-        return self._stateMachine:CheckDataBoard(DataBoardKey.TeachingBuilding, 1) and StateEnum.Auditorium or StateEnum.Bench
-    end, 5, 1)
-    self:RegisterInFindPathStateTransition(StateEnum.Bench, function()
-        return self._stateMachine:CheckDataBoard(DataBoardKey.Bench, 1) and StateEnum.Auditorium or StateEnum.InClass
-    end, 5, 1)
-    self:RegisterInFindPathStateTransition(StateEnum.InClass, function()
-        return self._stateMachine:CheckDataBoard(DataBoardKey.InClass, 1) and StateEnum.TeachingBuilding or StateEnum.Auditorium
-    end, 5, 1)
-    self:RegisterInFindPathStateTransition(StateEnum.Auditorium, function()
-        return self._stateMachine:CheckDataBoard(DataBoardKey.Auditorium, 1) and StateEnum.InClass or StateEnum.TeachingBuilding
-    end, 5, 1)
-    
-    -- 寻路状态到其他状态
-    self:RegisterOutFindPathStateTransition(StateEnum.TeachingBuilding)
-    self:RegisterOutFindPathStateTransition(StateEnum.Bench)
-    self:RegisterOutFindPathStateTransition(StateEnum.Auditorium)
-    self:RegisterOutFindPathStateTransition(StateEnum.InClass)
+    self._stateMachine:AddState(StateEnum.Holographic, XAlphaHolographicState.New(self._proxy))
 end
 
 return XCharAlphaEcology

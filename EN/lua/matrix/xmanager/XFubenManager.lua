@@ -220,8 +220,8 @@ XFubenManagerCreator = function()
         return XMVCA.XFuben:DoEnterFight(stage, teamId, isAssist, challengeCount, challengeId, callback)
     end
 
-    function XFubenManager.EnterFight(stage, teamId, isAssist, challengeCount, challengeId, callback)
-        return XMVCA.XFuben:EnterFight(stage, teamId, isAssist, challengeCount, challengeId, callback)
+    function XFubenManager.EnterFight(stage, teamId, isAssist, challengeCount, challengeId, callback, bossInshotTowerLevelId)
+        return XMVCA.XFuben:EnterFight(stage, teamId, isAssist, challengeCount, challengeId, callback, nil, bossInshotTowerLevelId)
     end
 
     function XFubenManager.EnterChessPursuitFight(stage, preFight, callBack)
@@ -248,8 +248,8 @@ XFubenManagerCreator = function()
         return XMVCA.XFuben:EnterBfrtFight(stageId, team, captainPos, firstFightPos, generalSkillId, enterCgIndex, settleCgIndex)
     end
 
-    function XFubenManager.EnterStrongholdFight(stageId, characterIds, captainPos, firstFightPos, generalSkillId, enterCgIndex, settleCgIndex)
-        return XMVCA.XFuben:EnterStrongholdFight(stageId, characterIds, captainPos, firstFightPos, generalSkillId, enterCgIndex, settleCgIndex)
+    function XFubenManager.EnterStrongholdFight(stageId, characterIds, captainPos, firstFightPos, generalSkillId, enterCgIndex, settleCgIndex, fashionIds)
+        return XMVCA.XFuben:EnterStrongholdFight(stageId, characterIds, captainPos, firstFightPos, generalSkillId, enterCgIndex, settleCgIndex, fashionIds)
     end
 
     function XFubenManager.EnterRiftFight(xTeam, xStageGroup, index)

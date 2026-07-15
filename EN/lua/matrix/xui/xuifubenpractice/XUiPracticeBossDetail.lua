@@ -102,7 +102,7 @@ function XUiPracticeBossDetail:OpenRefresh(stageId, selectTag)
     end
 
     -- 解锁图鉴
-    XMVCA.XArchive:UnlockArchiveMonster(self.ArchiveId)
+    XMVCA.XArchive.MonsterArchiveAgency:DoUnlockArchiveMonsterRequest(self.ArchiveId)
 end
 
 function XUiPracticeBossDetail:AddBtnsListeners()

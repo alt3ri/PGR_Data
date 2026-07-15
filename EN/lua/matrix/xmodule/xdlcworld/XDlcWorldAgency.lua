@@ -347,7 +347,7 @@ end
 
 function XDlcWorldAgency:_PreEnterFight()
     CsXBehaviorManager.Instance:Clear()
-    XTableManager.ReleaseAll(true)
+    XTableManager.ReleaseAllCache()
     CS.BinaryManager.ReleaseAllCache()
     ---垃圾收集
     collectgarbage("collect")

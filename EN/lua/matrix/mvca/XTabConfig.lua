@@ -78,6 +78,8 @@ end
 function XTabConfig:InitConfigByArgs(args)
     if not self._Args then
         self._Args = args
+        --只用于Editor环境收集模块配置表
+        XEventManager.DispatchEvent(XEventId.EVENT_INIT_CONFIG_BY_ARGS, args)
     else
         for path, arg in pairs(args) do
             if not self._Args[path] then
@@ -88,6 +90,9 @@ function XTabConfig:InitConfigByArgs(args)
 end
 
 function XTabConfig:AddSingleConfig(path, arg)
+    --只用于Editor环境收集模块配置表
+    XEventManager.DispatchEvent(XEventId.EVENT_ADD_SIGLE_CONFIG, path)
+
     if self._Args[path] then
         XLog.Error("请勿重复注册配置表: " .. path)
         return

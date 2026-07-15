@@ -297,16 +297,16 @@ function XBigWorldMapConfigModel:GetBigWorldMapQuestPinSecondStyleIdByQuestType(
     return config.SecondStyleId
 end
 
-function XBigWorldMapConfigModel:GetBigWorldMapQuestPinReadyStyleIdByQuestType(questType)
+function XBigWorldMapConfigModel:GetBigWorldMapQuestPinReadyStyleIdByQuestType(questType, isNotTip)
     local config = self:GetBigWorldMapQuestPinConfigByQuestType(questType)
 
-    if not config then
+    if not config and not isNotTip then
         XLog.Error("XBigWorldMapConfigModel:GetBigWorldMapQuestPinSecondStyleIdByQuestType questType = " ..
         questType .. " not found!")
         return 0
     end
 
-    if config.ReadyStyleId == 0 then
+    if config.ReadyStyleId == 0 and not isNotTip then
         XLog.Error("XBigWorldMapConfigModel:GetBigWorldMapQuestPinSecondStyleIdByQuestType questType = " ..
         questType .. ", ReadyStyleId = 0 !")
     end

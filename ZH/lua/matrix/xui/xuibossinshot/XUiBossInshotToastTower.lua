@@ -49,6 +49,8 @@ function XUiBossInshotToastTower:_SetToastType(
             self.PanelFloorUp,
             self.PanelFloorDown,
             self.ImgTitleArrowUp,
+            self.TxtTitle,
+            self.TxtDesc,
 
             Title = "BossInshotToastTowerUp",
             SetLeftNumbers = true,
@@ -66,6 +68,8 @@ function XUiBossInshotToastTower:_SetToastType(
             self.PanelFloorUp,
             self.PanelFloorDown,
             self.ImgTitleArrowDown,
+            self.TxtTitle,
+            self.TxtDesc,
 
             Title = "BossInshotToastTowerDown",
             SetLeftNumbers = true,
@@ -78,18 +82,14 @@ function XUiBossInshotToastTower:_SetToastType(
         },
 
         [XBossInshotModel.ToastType.Clear] = {
-            self.RImgBgUp,
-            self.ImgFinish,
-
-            Title = "BossInshotToastTowerClear",
-            DescFunc = function()
-                return text("BossInshotToastTowerDescClear")
-            end
+            self.PanelTongguan,
         },
 
         [XBossInshotModel.ToastType.DownProtected] = {
             self.RImgBgDown,
             self.ImgProtect,
+            self.TxtTitle,
+            self.TxtDesc,
 
             Title = "BossInshotToastTowerDownProtected",
             DescFunc = function()
@@ -106,7 +106,8 @@ function XUiBossInshotToastTower:_SetToastType(
         [self.ImgUpBgGrey] = true,
         [self.ImgDownBgLow] = true,
         [self.ImgDownBgHigh] = true,
-        [self.ImgDownBgGrey] = true
+        [self.ImgDownBgGrey] = true,
+        [self.ImgFinish] = true,
     }
 
     for _, goSet in pairs(toastProfiles) do
@@ -125,8 +126,10 @@ function XUiBossInshotToastTower:_SetToastType(
         go.gameObject:SetActiveEx(true)
     end
 
-    self.TxtTitle.text = text(toastProfile.Title)
-    self.TxtDesc.text = toastProfile.DescFunc()
+    if not string.IsNilOrEmpty(toastProfile.Title) then
+        self.TxtTitle.text = text(toastProfile.Title)
+        self.TxtDesc.text = toastProfile.DescFunc()
+    end
 
     if toastProfile.SetLeftNumbers then
         local up

@@ -1918,8 +1918,20 @@ XGuildWarManagerCreator = function()
         local xTeam = XDataCenter.TeamManager.GetXTeam(teamId)
         local cardIds = { 0, 0, 0 }
         local robotIds = { 0, 0, 0 }
+        local noFashionResPositions
         for pos, entityId in ipairs(xTeam:GetEntityIds()) do
             cardIds[pos] = entityId
+        end
+        -- 公会战支援角色的涂装来自其他玩家数据，通用分包判定拿不到，这里按队员维度预先标记回退位置
+        if XMVCA.XSubPackage:IsOpen() and xTeam.GetMember then
+            noFashionResPositions = { 0, 0, 0 }
+            for pos = 1, 3 do
+                local member = xTeam:GetMember(pos)
+                local fashionId = member and member.GetFashionIdForFight and member:GetFashionIdForFight()
+                if XTool.IsNumberValid(fashionId) and not XMVCA.XSubPackage:CheckFashionDownloaded(fashionId) then
+                    noFashionResPositions[pos] = 1
+                end
+            end
         end
         local result = {
             StageId = stage.StageId,
@@ -1929,6 +1941,7 @@ XGuildWarManagerCreator = function()
             FirstFightPos = xTeam:GetFirstFightPos(),
             CardIds = cardIds,
             RobotIds = robotIds,
+            NoFashionResPositions = noFashionResPositions,
         }
         result.GuildWarUid = XGuildWarManager.GetBattleManager():GetCurrentClientBattleUID()
         return result

@@ -34,7 +34,7 @@ function XBuff10251608:OnLuaSkillEnd(eventArgs)
         self.trigger = true
     end
     if eventArgs._skillId ~= self._skillId then return end
-    local stamina = self._proxy:GetNpcGameplayAttribValue(self._npcUUID, ETheatre6AttribType.Stamina)
+    local stamina = self._proxy:GetNpcGameplayAttribMaxValue(self._npcUUID, ETheatre6AttribType.Stamina)
     self.buffStacks = stamina // self.staminaPerCrit
     self._critController:AddSkillCount(self.buffStacks)
     --self:LogError(".....增加暴击层数"..self.buffStacks)
@@ -52,7 +52,7 @@ function XBuff10251608:ChangeDamageBeforeCalc(eventArgs)
     local lostHp = self._proxy:GetNpcAttribMaxValue(self._npcUUID, ENpcAttrib.Life) - self._proxy:GetNpcAttribValue(self._npcUUID, ENpcAttrib.Life)
     self._exDamageRate = lostHp * self._exDamageRate_Hp // self._proxy:GetNpcAttribMaxValue(self._npcUUID, ENpcAttrib.Life)
     local FinalDMGRate = eventArgs.PhysicalPermyriad + self._exDamageRate
-    self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate, eventArgs.ElementPermyriad, eventArgs.HackDamage, eventArgs.HackPermyriad, eventArgs.isCrity)
+    self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate, eventArgs.ElementPermyriad, eventArgs.HackDamage, eventArgs.HackPermyriad, eventArgs.IsCrit)
     self._hasChangedDamage = true
     --self:LogError(".....增加伤害"..self._exDamageRate)
 end

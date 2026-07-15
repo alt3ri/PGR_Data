@@ -1,3 +1,6 @@
+---@type XLazy
+local XLazy = require("XCommon/XLazy")
+
 ---@class XTaskData
 ---@field Id number taskId
 ---@field Schedule table<number, table>
@@ -329,143 +332,447 @@ XTaskManagerCreator = function()
             _IsInit = true
         end
         
-        local taskdata = data.Tasks
-        FinishedTasks = {}
-        for _, v in pairs(data.FinishedTasks or {}) do
-            FinishedTasks[v] = true
-        end
+        -- local taskdata = data.Tasks
 
-        if data.TaskLimitIdActiveInfos then
-            for _, v in pairs(data.TaskLimitIdActiveInfos) do
-                LinkTaskTimeDict[v.TaskLimitId] = v.ActiveTime
-                XEventManager.DispatchEvent(XEventId.EVENT_ACTIVITY_INFO_UPDATE)
-            end
-        end
+        FinishedTasks = XLazy.ToMap(data.FinishedTasks)
+        -- FinishedTasks = {}
+        -- for _, v in pairs(data.FinishedTasks or {}) do
+        --     FinishedTasks[v] = true
+        -- end
+
+        LinkTaskTimeDict = XLazy.ToMapWithCustomPairs(data.TaskLimitIdActiveInfos, function(value)
+            return value.TaskLimitId, value.ActiveTime
+        end)
+        XEventManager.DispatchEvent(XEventId.EVENT_ACTIVITY_INFO_UPDATE)
+        -- if data.TaskLimitIdActiveInfos then
+        --     for _, v in pairs(data.TaskLimitIdActiveInfos) do
+        --         LinkTaskTimeDict[v.TaskLimitId] = v.ActiveTime
+        --         XEventManager.DispatchEvent(XEventId.EVENT_ACTIVITY_INFO_UPDATE)
+        --     end
+        -- end
+        -- NewbieActivenessRecord = XLazy.ToAccessor(data, "NewPlayerRewardRecord", NewbieActivenessRecord)
         NewbieActivenessRecord = data.NewPlayerRewardRecord
         XTaskManager.InitCourseData(data.Course)
 
-        for _, value in pairs(taskdata) do
+        TotalTaskData = XLazy.ToLazyer(data.Tasks, function(key, value)
             value.InitializedByServer = true
-            TotalTaskData[value.Id] = value
-        end
+
+            return value.Id, value
+        end)
+        -- for _, value in pairs(taskdata) do
+        --     value.InitializedByServer = true
+        --     TotalTaskData[value.Id] = value
+        -- end
 
         -- 注意，这里的周活跃度对应的是5号Type，即WeeklyTwo，而非之前的Weekly
-        XTaskManager.SetWeeklyTaskActivenessProgress(
-            data.WeeklyTaskActivenessProgress)
+        -- XTaskManager.SetWeeklyTaskActivenessProgress(
+        --     data.WeeklyTaskActivenessProgress)
+        WeeklyTaskActivenessProgress = XLazy.ToMap(data.WeeklyTaskActivenessProgress)
 
-        XTaskManager.InitTaskSchedule(XTaskConfig.GetTaskTemplate())
+        local tasksAccessor = XLazy.AccessorReadOnly(function()
+            return XTaskConfig.GetTaskTemplate()
+        end)
+
+        XLazy.ApplyLazyerPostprocessor(TotalTaskData, function(target)
+            for key, value in pairs(tasksAccessor) do
+                if not target[key] and value.Type ~= XTaskManager.TaskType.Daily 
+                    and value.Type ~= XTaskManager.TaskType.Weekly 
+                    and value.Type ~= XTaskManager.TaskType.InfestorWeekly then
+                    local conditions = value.Condition
+                    local schedule = {}
+                    local state = XTaskManager.TaskState.Finish
+
+                    for _, condition in ipairs(conditions) do
+                        if FinishedTasks and FinishedTasks[key] then
+                            tableInsert(schedule, { Id = condition, Value = value.Result })
+                            state = XTaskManager.TaskState.Finish
+                        else
+                            tableInsert(schedule, { Id = condition, Value = 0 })
+                            state = XTaskManager.TaskState.Active
+                        end
+                    end
+
+                    target[key] = {
+                        Id = key,
+                        Schedule = schedule,
+                        State = state,
+                    }
+                end
+            end
+        end)
+
         if XMVCA.XBigWorldGamePlay:IsBigWorldOpen() then
-            XTaskManager.InitTaskSchedule(XMVCA.XBigWorldService:GetBigWorldTaskTemplates())
+            local bigWorldTasksAccessor = XLazy.AccessorReadOnly(function()
+                return XMVCA.XBigWorldService:GetBigWorldTaskTemplates()
+            end)
+
+            XLazy.ApplyLazyerPostprocessor(TotalTaskData, function(target)
+                for key, value in pairs(bigWorldTasksAccessor) do
+                    if not target[key] and value.Type ~= XTaskManager.TaskType.Daily 
+                        and value.Type ~= XTaskManager.TaskType.Weekly 
+                        and value.Type ~= XTaskManager.TaskType.InfestorWeekly then
+                        local conditions = value.Condition
+                        local schedule = {}
+                        local state = XTaskManager.TaskState.Finish
+
+                        for _, condition in ipairs(conditions) do
+                            if FinishedTasks and FinishedTasks[key] then
+                                tableInsert(schedule, { Id = condition, Value = value.Result })
+                                state = XTaskManager.TaskState.Finish
+                            else
+                                tableInsert(schedule, { Id = condition, Value = 0 })
+                                state = XTaskManager.TaskState.Active
+                            end
+                        end
+
+                        target[key] = {
+                            Id = key,
+                            Schedule = schedule,
+                            State = state,
+                        }
+                    end
+                end
+            end)
         end
 
-        local regressionTaskType
-        for k, v in pairs(TotalTaskData) do
-            local taskType = XTaskConfig.GetTaskType(k)
-            if (taskType == nil) then
-                XLog.Warning("服务端数据异常 不存在任务配置id：", k)
--- 创建新系统或者优化原有系统时请使用新的通用任务接口
--------------------------------------------------------
-            elseif taskType == XTaskManager.TaskType.Story then
-                StoryTaskData[k] = v
-            elseif taskType == XTaskManager.TaskType.Daily then
-                DailyTaskData[k] = v
-            elseif taskType == XTaskManager.TaskType.Weekly then
-                WeeklyTaskData[k] = v
-            elseif taskType == XTaskManager.TaskType.Activity then
-                ActivityTaskData[k] = v
-            elseif taskType == XTaskManager.TaskType.NewPlayer then
-                NewPlayerTaskData[k] = v
-            elseif taskType == XTaskManager.TaskType.Achievement then
-                AchvTaskData[k] = v
-            elseif taskType == XTaskManager.TaskType.ArenaChallenge then
-                ArenaTaskData[k] = v
-            elseif taskType == XTaskManager.TaskType.TimeLimit then
-                TimeLimitTaskData[k] = v
-            elseif taskType == XTaskManager.TaskType.DormNormal then
-                DormNormalTaskData[k] = v
-            elseif taskType == XTaskManager.TaskType.DormDaily then
-                DormDailyTaskData[k] = v
-            elseif taskType == XTaskManager.TaskType.BabelTower then
-                BabelTowerTaskData[k] = v
-            elseif taskType == XTaskManager.TaskType.RogueLike then
-                RogueLikeTaskData[k] = v
-            elseif taskType == XTaskManager.TaskType.WorldBoss then
-                WorldBossTaskData[k] = v
-            elseif taskType == XTaskManager.TaskType.RpgTower then
-                RpgTowerTaskData[k] = v
-            elseif taskType == XTaskManager.TaskType.WhiteValentine then
-                WhiteValentineTaskData[k] = v
-            elseif taskType == XTaskManager.TaskType.FingerGuessing then
-                FingerGuessingTaskData[k] = v
-            elseif taskType == XTaskManager.TaskType.ZhouMu then
-                ZhouMuTaskData[k] = v
-            elseif taskType == XTaskManager.TaskType.GuildDaily then
-                GuildDailyTaskData[k] = v
-            elseif taskType == XTaskManager.TaskType.GuildMainly then
-                GuildMainlyTaskData[k] = v
-            elseif taskType == XTaskManager.TaskType.GuildWeekly then
-                GuildWeeklyTaskData[k] = v
-            elseif taskType == XTaskManager.TaskType.MentorShipGrow then
-                MentorGrowTaskData[k] = v
-            elseif taskType == XTaskManager.TaskType.MentorShipGraduate then
-                MentorGraduateTaskData[k] = v
-            elseif taskType == XTaskManager.TaskType.MentorShipWeekly then
-                MentorWeeklyTaskData[k] = v
-            elseif taskType == XTaskManager.TaskType.Regression then
-                regressionTaskType = XRegressionConfigs.GetTaskTypeById(k)
-                RegressionTaskData[k] = v
-                if RegressionTaskCanGetDic[k] then
-                    if v.State ~= XDataCenter.TaskManager.TaskState.Achieved then
-                        RegressionTaskTypeToRedPointCountDic[regressionTaskType] = RegressionTaskTypeToRedPointCountDic[regressionTaskType] - 1
+        -- XTaskManager.InitTaskSchedule(XTaskConfig.GetTaskTemplate())
+        -- if XMVCA.XBigWorldGamePlay:IsBigWorldOpen() then
+        --     XTaskManager.InitTaskSchedule(XMVCA.XBigWorldService:GetBigWorldTaskTemplates())
+        -- end
+
+        StoryTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.Story, key, value
+        end)
+        DailyTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.Daily, key, value
+        end)
+        WeeklyTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.Weekly, key, value
+        end)
+        ActivityTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.Activity, key, value
+        end)
+        NewPlayerTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.NewPlayer, key, value
+        end)
+        AchvTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.Achievement, key, value
+        end)
+        ArenaTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.ArenaChallenge, key, value
+        end)
+        TimeLimitTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.TimeLimit, key, value
+        end)
+        DormNormalTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.DormNormal, key, value
+        end)
+        DormDailyTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.DormDaily, key, value
+        end)
+        BabelTowerTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.BabelTower, key, value
+        end)
+        RogueLikeTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.RogueLike, key, value
+        end)
+        WorldBossTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.WorldBoss, key, value
+        end)
+        RpgTowerTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.RpgTower, key, value
+        end)
+        WhiteValentineTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.WhiteValentine, key, value
+        end)
+        FingerGuessingTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.FingerGuessing, key, value
+        end)
+        ZhouMuTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.ZhouMu, key, value
+        end)
+        GuildDailyTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.GuildDaily, key, value
+        end)
+        GuildMainlyTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.GuildMainly, key, value
+        end)
+        GuildWeeklyTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.GuildWeekly, key, value
+        end)
+        MentorGrowTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.MentorShipGrow, key, value
+        end)
+        MentorGraduateTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.MentorShipGraduate, key, value
+        end)
+        MentorWeeklyTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.MentorShipWeekly, key, value
+        end)
+        RegressionTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local id = key
+            local taskType = XTaskConfig.GetTaskType(id)
+
+            if taskType == XTaskManager.TaskType.Regression then
+                if RegressionTaskCanGetDic[id] then
+                    if value.State ~= XDataCenter.TaskManager.TaskState.Achieved then
+                        RegressionTaskTypeToRedPointCountDic[taskType] = RegressionTaskTypeToRedPointCountDic[taskType] - 1
                         RegressionTaskRedPointCount = RegressionTaskRedPointCount - 1
-                        RegressionTaskCanGetDic[k] = nil
+                        RegressionTaskCanGetDic[id] = nil
                     end
                 else
-                    if v.State == XDataCenter.TaskManager.TaskState.Achieved then
-                        RegressionTaskCanGetDic[k] = true
-                        RegressionTaskTypeToRedPointCountDic[regressionTaskType] = RegressionTaskTypeToRedPointCountDic[regressionTaskType] or 0
-                        RegressionTaskTypeToRedPointCountDic[regressionTaskType] = RegressionTaskTypeToRedPointCountDic[regressionTaskType] + 1
+                    if value.State == XDataCenter.TaskManager.TaskState.Achieved then
+                        RegressionTaskCanGetDic[id] = true
+                        RegressionTaskTypeToRedPointCountDic[taskType] = RegressionTaskTypeToRedPointCountDic[taskType] or 0
+                        RegressionTaskTypeToRedPointCountDic[taskType] = RegressionTaskTypeToRedPointCountDic[taskType] + 1
                         RegressionTaskRedPointCount = RegressionTaskRedPointCount + 1
                     end
                 end
-            elseif taskType == XTaskManager.TaskType.ArenaOnlineWeekly then
-                ArenaOnlineWeeklyTaskData[k] = v
-            elseif taskType == XTaskManager.TaskType.InfestorWeekly then
-                InfestorWeeklyTaskData[k] = v
-            elseif taskType == XTaskManager.TaskType.NieR then
-                NieRTaskData[k] = v
-            elseif taskType == XTaskManager.TaskType.Pokemon then
-                PokemonTaskData[k] = v
-            elseif taskType == XTaskManager.TaskType.Couplet then
-                CoupletTaskData[k] = v
-            elseif taskType == XTaskManager.TaskType.SimulatedCombat then
-                SimulatedCombatTaskData[k] = v
-            elseif taskType == XTaskManager.TaskType.MoeWarDaily then
-                MoeWarDailyTaskData[k] = v
-            elseif taskType == XTaskManager.TaskType.MoeWarNormal then
-                MoeWarNormalTaskData[k] = v
-            elseif taskType == XTaskManager.TaskType.PokerGuessing or taskType == XTaskManager.TaskType.PokerGuessingCollection then
-                PokerGuessingTaskData[k] = v
-            elseif taskType == XTaskManager.TaskType.Passport then
-                PassportTaskData[k] = v
-            elseif taskType == XTaskManager.TaskType.LivWarmSoundsActivity then
-                LivWarmSoundsActivityTaskData[k] = v
-            elseif taskType == XTaskManager.TaskType.Rift then
-                RiftTaskData[k] = v
-            elseif taskType == XTaskManager.TaskType.DevilMayCryDraw then
-                DevilMayCryDrawTaskList[k] = v
-            elseif taskType == XTaskManager.TaskType.DlcMouseHunter then
-                DlcMouseHunterTaskData[k] = v
-                -------------------------------------------------------
-            elseif taskType and taskType ~= XTaskManager.TaskType.OffLine then
-                -- XLog.Warning(taskType, k, v, "TaskDataGroup",TaskDataGroup)
-                if not TaskDataGroup[taskType] then 
-                    TaskDataGroup[taskType] = {} 
-                end
-                TaskDataGroup[taskType][k] = v
 
+                return true, id, value
             end
-        end
+
+            return false, id, value
+        end)
+        ArenaOnlineWeeklyTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.ArenaOnlineWeekly, key, value
+        end)
+        InfestorWeeklyTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.InfestorWeekly, key, value
+        end)
+        NieRTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.NieR, key, value
+        end)
+        PokemonTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.Pokemon, key, value
+        end)
+        CoupletTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.Couplet, key, value
+        end)
+        SimulatedCombatTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.SimulatedCombat, key, value
+        end)
+        MoeWarDailyTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.MoeWarDaily, key, value
+        end)
+        MoeWarNormalTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.MoeWarNormal, key, value
+        end)
+        MentorWeeklyTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.MentorShipWeekly, key, value
+        end)
+        PokerGuessingTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.PokerGuessing or taskType == XTaskManager.TaskType.PokerGuessingCollection, key, value
+        end)
+        PassportTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.Passport, key, value
+        end)
+        LivWarmSoundsActivityTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.LivWarmSoundsActivity, key, value
+        end)
+        RiftTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.Rift, key, value
+        end)
+        DevilMayCryDrawTaskList = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.DevilMayCryDraw, key, value
+        end)
+        DlcMouseHunterTaskData = XLazy.ApplyLazyerSelector(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            return taskType == XTaskManager.TaskType.DlcMouseHunter, key, value
+        end)
+        TaskDataGroup = XLazy.ApplyLazyerClassifier(TotalTaskData, function(key, value)
+            local taskType = XTaskConfig.GetTaskType(key)
+
+            if taskType ~= XTaskManager.TaskType.OffLine then
+                return taskType, key, value
+            end
+
+            return nil
+        end)
+
+--         local regressionTaskType
+--         for k, v in pairs(TotalTaskData) do
+--             local taskType = XTaskConfig.GetTaskType(k)
+--             if (taskType == nil) then
+--                 XLog.Warning("服务端数据异常 不存在任务配置id：", k)
+-- -- 创建新系统或者优化原有系统时请使用新的通用任务接口
+-- -------------------------------------------------------
+--             elseif taskType == XTaskManager.TaskType.Story then
+--                 StoryTaskData[k] = v
+--             elseif taskType == XTaskManager.TaskType.Daily then
+--                 DailyTaskData[k] = v
+--             elseif taskType == XTaskManager.TaskType.Weekly then
+--                 WeeklyTaskData[k] = v
+--             elseif taskType == XTaskManager.TaskType.Activity then
+--                 ActivityTaskData[k] = v
+--             elseif taskType == XTaskManager.TaskType.NewPlayer then
+--                 NewPlayerTaskData[k] = v
+--             elseif taskType == XTaskManager.TaskType.Achievement then
+--                 AchvTaskData[k] = v
+--             elseif taskType == XTaskManager.TaskType.ArenaChallenge then
+--                 ArenaTaskData[k] = v
+--             elseif taskType == XTaskManager.TaskType.TimeLimit then
+--                 TimeLimitTaskData[k] = v
+--             elseif taskType == XTaskManager.TaskType.DormNormal then
+--                 DormNormalTaskData[k] = v
+--             elseif taskType == XTaskManager.TaskType.DormDaily then
+--                 DormDailyTaskData[k] = v
+--             elseif taskType == XTaskManager.TaskType.BabelTower then
+--                 BabelTowerTaskData[k] = v
+--             elseif taskType == XTaskManager.TaskType.RogueLike then
+--                 RogueLikeTaskData[k] = v
+--             elseif taskType == XTaskManager.TaskType.WorldBoss then
+--                 WorldBossTaskData[k] = v
+--             elseif taskType == XTaskManager.TaskType.RpgTower then
+--                 RpgTowerTaskData[k] = v
+--             elseif taskType == XTaskManager.TaskType.WhiteValentine then
+--                 WhiteValentineTaskData[k] = v
+--             elseif taskType == XTaskManager.TaskType.FingerGuessing then
+--                 FingerGuessingTaskData[k] = v
+--             elseif taskType == XTaskManager.TaskType.ZhouMu then
+--                 ZhouMuTaskData[k] = v
+--             elseif taskType == XTaskManager.TaskType.GuildDaily then
+--                 GuildDailyTaskData[k] = v
+--             elseif taskType == XTaskManager.TaskType.GuildMainly then
+--                 GuildMainlyTaskData[k] = v
+--             elseif taskType == XTaskManager.TaskType.GuildWeekly then
+--                 GuildWeeklyTaskData[k] = v
+--             elseif taskType == XTaskManager.TaskType.MentorShipGrow then
+--                 MentorGrowTaskData[k] = v
+--             elseif taskType == XTaskManager.TaskType.MentorShipGraduate then
+--                 MentorGraduateTaskData[k] = v
+--             elseif taskType == XTaskManager.TaskType.MentorShipWeekly then
+--                 MentorWeeklyTaskData[k] = v
+--             elseif taskType == XTaskManager.TaskType.Regression then
+--                 regressionTaskType = XRegressionConfigs.GetTaskTypeById(k)
+--                 RegressionTaskData[k] = v
+--                 if RegressionTaskCanGetDic[k] then
+--                     if v.State ~= XDataCenter.TaskManager.TaskState.Achieved then
+--                         RegressionTaskTypeToRedPointCountDic[regressionTaskType] = RegressionTaskTypeToRedPointCountDic[regressionTaskType] - 1
+--                         RegressionTaskRedPointCount = RegressionTaskRedPointCount - 1
+--                         RegressionTaskCanGetDic[k] = nil
+--                     end
+--                 else
+--                     if v.State == XDataCenter.TaskManager.TaskState.Achieved then
+--                         RegressionTaskCanGetDic[k] = true
+--                         RegressionTaskTypeToRedPointCountDic[regressionTaskType] = RegressionTaskTypeToRedPointCountDic[regressionTaskType] or 0
+--                         RegressionTaskTypeToRedPointCountDic[regressionTaskType] = RegressionTaskTypeToRedPointCountDic[regressionTaskType] + 1
+--                         RegressionTaskRedPointCount = RegressionTaskRedPointCount + 1
+--                     end
+--                 end
+--             elseif taskType == XTaskManager.TaskType.ArenaOnlineWeekly then
+--                 ArenaOnlineWeeklyTaskData[k] = v
+--             elseif taskType == XTaskManager.TaskType.InfestorWeekly then
+--                 InfestorWeeklyTaskData[k] = v
+--             elseif taskType == XTaskManager.TaskType.NieR then
+--                 NieRTaskData[k] = v
+--             elseif taskType == XTaskManager.TaskType.Pokemon then
+--                 PokemonTaskData[k] = v
+--             elseif taskType == XTaskManager.TaskType.Couplet then
+--                 CoupletTaskData[k] = v
+--             elseif taskType == XTaskManager.TaskType.SimulatedCombat then
+--                 SimulatedCombatTaskData[k] = v
+--             elseif taskType == XTaskManager.TaskType.MoeWarDaily then
+--                 MoeWarDailyTaskData[k] = v
+--             elseif taskType == XTaskManager.TaskType.MoeWarNormal then
+--                 MoeWarNormalTaskData[k] = v
+--             elseif taskType == XTaskManager.TaskType.PokerGuessing or taskType == XTaskManager.TaskType.PokerGuessingCollection then
+--                 PokerGuessingTaskData[k] = v
+--             elseif taskType == XTaskManager.TaskType.Passport then
+--                 PassportTaskData[k] = v
+--             elseif taskType == XTaskManager.TaskType.LivWarmSoundsActivity then
+--                 LivWarmSoundsActivityTaskData[k] = v
+--             elseif taskType == XTaskManager.TaskType.Rift then
+--                 RiftTaskData[k] = v
+--             elseif taskType == XTaskManager.TaskType.DevilMayCryDraw then
+--                 DevilMayCryDrawTaskList[k] = v
+--             elseif taskType == XTaskManager.TaskType.DlcMouseHunter then
+--                 DlcMouseHunterTaskData[k] = v
+--                 -------------------------------------------------------
+--             elseif taskType and taskType ~= XTaskManager.TaskType.OffLine then
+--                 -- XLog.Warning(taskType, k, v, "TaskDataGroup",TaskDataGroup)
+--                 if not TaskDataGroup[taskType] then 
+--                     TaskDataGroup[taskType] = {} 
+--                 end
+--                 TaskDataGroup[taskType][k] = v
+
+--             end
+--         end
 
         XEventManager.DispatchEvent(XEventId.EVENT_TASK_SYNC)
         XEventManager.DispatchEvent(XEventId.EVENT_NOTICE_TASKINITFINISHED)--上面那个事件触发太频繁，这里只需要监听初始完成
@@ -503,128 +810,273 @@ XTaskManagerCreator = function()
     end
 
     function XTaskManager.InitCourseInfos()
-        local courseChapterRewardTemp = {}
-        local courseTemplate = XTaskConfig.GetCourseTemplate()
-        for k, v in pairs(courseTemplate) do
-            local stageInfo = XDataCenter.FubenManager.GetStageInfo(v.StageId)
-            local stageCfg = XDataCenter.FubenManager.GetStageCfg(v.StageId)
-            if not stageInfo or not stageCfg then
+        -- local courseChapterRewardTemp = {}
+        -- local courseTemplate = XTaskConfig.GetCourseTemplate()
+
+        local GetType = function(config)
+            if config.RewardId and config.RewardId > 0 then
+                return XTaskManager.CourseType.Reward
+            elseif config.Tip and config.Tip ~= "" then
+                return XTaskManager.CourseType.Function
+            else
+                return XTaskManager.CourseType.Normal
+            end
+        end
+
+        local CreateCourse = function(value, source, stageInfo, stageConfig)
+            local type = GetType(value)
+            local nextType = XTaskManager.CourseType.None
+
+            if stageInfo.NextStageId and source[stageInfo.NextStageId] then
+                local nextConfig = source[stageInfo.NextStageId]
+
+                nextType = GetType(nextConfig)
+            end
+
+            local chapter = XDataCenter.FubenMainLineManager.GetChapterCfg(stageInfo.ChapterId)
+            local name = chapter.OrderId .. "-" .. stageConfig.OrderId
+
+            return {
+                CouresType = type,
+                NextCouresType = nextType,
+                StageId = value.StageId,
+                Tip = value.Tip,
+                TipEn = value.TipEn,
+                RewardId = value.RewardId,
+                ShowId = value.ShowId,
+                OrderId = stageConfig.OrderId,
+                Name = name,
+                PreStageId = stageConfig.PreStageId
+            }
+        end
+
+        local courseAccessor = XLazy.AccessorReadOnly(function()
+            return XTaskConfig.GetCourseTemplate()
+        end)
+        local constructor = XLazy.ToConstructor(courseAccessor)
+
+        CourseInfos = XLazy.ApplyConstructorOutput(constructor, function(key, value, builder, source)
+            local stageInfo = XDataCenter.FubenManager.GetStageInfo(value.StageId)
+            local stageConfig = XDataCenter.FubenManager.GetStageCfg(value.StageId)
+
+            if not stageInfo or not stageConfig then
                 local path = XTaskConfig.GetTaskCoursePath()
-                XLog.ErrorTableDataNotFound("XTaskManager.InitCourseInfos", "StageId", path, "CourseId", tostring(k))
+
+                XLog.ErrorTableDataNotFound("XTaskManager.InitCourseInfos", "StageId", path, "CourseId", tostring(key))
                 return
             end
 
-            local SetType = function(cfg)
-                if cfg.RewardId and cfg.RewardId > 0 then
-                    return XTaskManager.CourseType.Reward
-                elseif cfg.Tip and cfg.Tip ~= "" then
-                    return XTaskManager.CourseType.Function
-                else
-                    return XTaskManager.CourseType.Normal
-                end
-            end
-
-            local SetCourse = function(lastStageId)
-                local type = SetType(v)
-
-                local nextType = XTaskManager.CourseType.None
-                if stageInfo.NextStageId and courseTemplate[stageInfo.NextStageId] then
-                    local nextCfg = courseTemplate[stageInfo.NextStageId]
-                    nextType = SetType(nextCfg)
-                end
-
-                local chapter = XDataCenter.FubenMainLineManager.GetChapterCfg(stageInfo.ChapterId)
-                local name = chapter.OrderId .. "-" .. stageCfg.OrderId
-
-                -- 寻找还没有领奖励的关卡
-                if type == XTaskManager.CourseType.Reward or lastStageId == v.StageId then
-                    if XTaskManager.CheckCourseCanGet(v.StageId) then
-                        if courseChapterRewardTemp[stageInfo.ChapterId] then
-                            if type == XTaskManager.CourseType.Reward then
-                                tableInsert(courseChapterRewardTemp[stageInfo.ChapterId].stageIds, v.StageId)
-                            end
-
-                            local stageInfo1 = XDataCenter.FubenManager.GetStageInfo(lastStageId)
-                            if lastStageId == v.StageId and not stageInfo1.Passed then
-                                courseChapterRewardTemp[stageInfo1.ChapterId].LastStageId = v.StageId
-                            end
-                        else
-                            if type == XTaskManager.CourseType.Reward then
-                                courseChapterRewardTemp[stageInfo.ChapterId] = {}
-                                courseChapterRewardTemp[stageInfo.ChapterId].ChapterId = stageInfo.ChapterId
-                                courseChapterRewardTemp[stageInfo.ChapterId].OrderId = chapter.OrderId
-                                courseChapterRewardTemp[stageInfo.ChapterId].stageIds = {}
-                                tableInsert(courseChapterRewardTemp[stageInfo.ChapterId].stageIds, v.StageId)
-                            end
-
-                            local stageInfo2 = XDataCenter.FubenManager.GetStageInfo(lastStageId)
-                            if lastStageId == v.StageId and not stageInfo2.Passed then
-                                if courseChapterRewardTemp[stageInfo2.ChapterId] then
-                                    courseChapterRewardTemp[stageInfo2.ChapterId].LastStageId = v.StageId
-                                else
-                                    courseChapterRewardTemp[stageInfo2.ChapterId] = {}
-                                    courseChapterRewardTemp[stageInfo2.ChapterId].ChapterId = stageInfo2.ChapterId
-                                    courseChapterRewardTemp[stageInfo2.ChapterId].OrderId = chapter.OrderId
-                                    courseChapterRewardTemp[stageInfo2.ChapterId].stageIds = {}
-                                    courseChapterRewardTemp[stageInfo2.ChapterId].LastStageId = v.StageId
-                                end
-                            end
-                        end
-                    end
-                end
-                -- 寻找还没有领奖励的关卡
-                return {
-                    CouresType = type,
-                    NextCouresType = nextType,
-                    StageId = v.StageId,
-                    Tip = v.Tip,
-                    TipEn = v.TipEn,
-                    RewardId = v.RewardId,
-                    ShowId = v.ShowId,
-                    OrderId = stageCfg.OrderId,
-                    Name = name,
-                    PreStageId = stageCfg.PreStageId
-                }
-            end
-
-            if CourseInfos[stageInfo.ChapterId] then
-                local course = SetCourse(CourseInfos[stageInfo.ChapterId].LastStageId)
-                tableInsert(CourseInfos[stageInfo.ChapterId].Courses, course)
+            if builder[stageInfo.ChapterId] then
+                tableInsert(builder[stageInfo.ChapterId].Courses, CreateCourse(value, source, stageInfo, stageConfig))
             else
                 local nextChapterId = XDataCenter.FubenMainLineManager.GetNextChapterId(stageInfo.ChapterId)
                 local lastStageId = XDataCenter.FubenMainLineManager.GetLastStageId(stageInfo.ChapterId)
                 local isStageIdTableEmpty = XDataCenter.FubenMainLineManager.IsStageIdTableEmpty(stageInfo.ChapterId)
+
                 if not isStageIdTableEmpty then
-                    CourseInfos[stageInfo.ChapterId] = {}
-                    CourseInfos[stageInfo.ChapterId].Courses = {}
-                    CourseInfos[stageInfo.ChapterId].NextChapterId = nextChapterId
-                    CourseInfos[stageInfo.ChapterId].LastStageId = lastStageId
-                    local course = SetCourse(lastStageId)
-                    tableInsert(CourseInfos[stageInfo.ChapterId].Courses, course)
+                    builder[stageInfo.ChapterId] = {}
+                    builder[stageInfo.ChapterId].Courses = {
+                        CreateCourse(value, source, stageInfo, stageConfig)
+                    }
+                    builder[stageInfo.ChapterId].NextChapterId = nextChapterId
+                    builder[stageInfo.ChapterId].LastStageId = lastStageId
                 end
             end
-        end
-        
-        local needk
-        for k, v in pairs(CourseInfos) do
-            if not needk or needk < k then
-                needk = k
-            end
-            tableSort(v.Courses, function(a, b)
-                return a.OrderId < b.OrderId
-            end)
-        end
-        
-        for _, v in pairs(courseChapterRewardTemp) do
-            tableSort(v.stageIds, function(a, b)
-                return a < b
-            end)
-            tableInsert(CourseChapterRewards, v)
-        end
+        end, "CourseInfos", 2)
 
-        tableSort(CourseChapterRewards, function(a, b)
-            return a.OrderId < b.OrderId
+        XLazy.ApplyConstructorPostprocessor(constructor, function(builder, id)
+            if id == "CourseInfos" then
+                for _, value in pairs(builder) do
+                    tableSort(value.Courses, function(a, b)
+                        return a.OrderId < b.OrderId
+                    end)
+                end
+            elseif id == "CourseChapterRewards" then
+                for _, value in pairs(builder) do
+                    tableSort(value.stageIds, function(a, b)
+                            return a < b
+                    end)
+                end
+
+                tableSort(builder, function(a, b)
+                    return a.OrderId < b.OrderId
+                end)
+            end
         end)
+
+        CourseChapterRewards = XLazy.ApplyConstructorOutput(constructor, function(key, value, builder, source, id, constructor)
+            local stageInfo = XDataCenter.FubenManager.GetStageInfo(value.StageId)
+            local stageConfig = XDataCenter.FubenManager.GetStageCfg(value.StageId)
+            local chapter = XDataCenter.FubenMainLineManager.GetChapterCfg(stageInfo.ChapterId)
+
+            if not stageInfo or not stageConfig then
+                local path = XTaskConfig.GetTaskCoursePath()
+
+                XLog.ErrorTableDataNotFound("XTaskManager.InitCourseInfos", "StageId", path, "CourseId", tostring(key))
+                return
+            end
+
+            local courseInfos = constructor["CourseInfos"]
+            local type = GetType(value)
+            local lastStageId = courseInfos[stageInfo.ChapterId].LastStageId
+
+            if type == XTaskManager.CourseType.Reward or lastStageId == value.StageId then
+                if XTaskManager.CheckCourseCanGet(value.StageId) then
+                    if builder[stageInfo.ChapterId] then
+                        if type == XTaskManager.CourseType.Reward then
+                            tableInsert(builder[stageInfo.ChapterId].stageIds, value.StageId)
+                        end
+
+                        local lastStageInfo = XDataCenter.FubenManager.GetStageInfo(lastStageId)
+                        if lastStageId == value.StageId and not lastStageInfo.Passed then
+                            builder[lastStageInfo.ChapterId].LastStageId = value.StageId
+                        end
+                    else
+                        if type == XTaskManager.CourseType.Reward then
+                            builder[stageInfo.ChapterId] = {}
+                            builder[stageInfo.ChapterId].ChapterId = stageInfo.ChapterId
+                            builder[stageInfo.ChapterId].OrderId = chapter.OrderId
+                            builder[stageInfo.ChapterId].stageIds = {}
+                            tableInsert(builder[stageInfo.ChapterId].stageIds, value.StageId)
+                        end
+
+                        local lastStageInfo = XDataCenter.FubenManager.GetStageInfo(lastStageId)
+                        if lastStageId == value.StageId and not lastStageInfo.Passed then
+                            if builder[lastStageInfo.ChapterId] then
+                                builder[lastStageInfo.ChapterId].LastStageId = value.StageId
+                            else
+                                builder[lastStageInfo.ChapterId] = {}
+                                builder[lastStageInfo.ChapterId].ChapterId = lastStageInfo.ChapterId
+                                builder[lastStageInfo.ChapterId].OrderId = chapter.OrderId
+                                builder[lastStageInfo.ChapterId].stageIds = {}
+                                builder[lastStageInfo.ChapterId].LastStageId = value.StageId
+                            end
+                        end
+                    end
+                end
+            end
+        end, "CourseChapterRewards", 1)
+
+        -- for k, v in pairs(courseTemplate) do
+        --     local stageInfo = XDataCenter.FubenManager.GetStageInfo(v.StageId)
+        --     local stageCfg = XDataCenter.FubenManager.GetStageCfg(v.StageId)
+        --     if not stageInfo or not stageCfg then
+        --         local path = XTaskConfig.GetTaskCoursePath()
+        --         XLog.ErrorTableDataNotFound("XTaskManager.InitCourseInfos", "StageId", path, "CourseId", tostring(k))
+        --         return
+        --     end
+
+        --     local SetType = function(cfg)
+        --         if cfg.RewardId and cfg.RewardId > 0 then
+        --             return XTaskManager.CourseType.Reward
+        --         elseif cfg.Tip and cfg.Tip ~= "" then
+        --             return XTaskManager.CourseType.Function
+        --         else
+        --             return XTaskManager.CourseType.Normal
+        --         end
+        --     end
+
+        --     local SetCourse = function(lastStageId)
+        --         local type = SetType(v)
+
+        --         local nextType = XTaskManager.CourseType.None
+        --         if stageInfo.NextStageId and courseTemplate[stageInfo.NextStageId] then
+        --             local nextCfg = courseTemplate[stageInfo.NextStageId]
+        --             nextType = SetType(nextCfg)
+        --         end
+
+        --         local chapter = XDataCenter.FubenMainLineManager.GetChapterCfg(stageInfo.ChapterId)
+        --         local name = chapter.OrderId .. "-" .. stageCfg.OrderId
+
+        --         -- 寻找还没有领奖励的关卡
+        --         if type == XTaskManager.CourseType.Reward or lastStageId == v.StageId then
+        --             if XTaskManager.CheckCourseCanGet(v.StageId) then
+        --                 if courseChapterRewardTemp[stageInfo.ChapterId] then
+        --                     if type == XTaskManager.CourseType.Reward then
+        --                         tableInsert(courseChapterRewardTemp[stageInfo.ChapterId].stageIds, v.StageId)
+        --                     end
+
+        --                     local stageInfo1 = XDataCenter.FubenManager.GetStageInfo(lastStageId)
+        --                     if lastStageId == v.StageId and not stageInfo1.Passed then
+        --                         courseChapterRewardTemp[stageInfo1.ChapterId].LastStageId = v.StageId
+        --                     end
+        --                 else
+        --                     if type == XTaskManager.CourseType.Reward then
+        --                         courseChapterRewardTemp[stageInfo.ChapterId] = {}
+        --                         courseChapterRewardTemp[stageInfo.ChapterId].ChapterId = stageInfo.ChapterId
+        --                         courseChapterRewardTemp[stageInfo.ChapterId].OrderId = chapter.OrderId
+        --                         courseChapterRewardTemp[stageInfo.ChapterId].stageIds = {}
+        --                         tableInsert(courseChapterRewardTemp[stageInfo.ChapterId].stageIds, v.StageId)
+        --                     end
+
+        --                     local stageInfo2 = XDataCenter.FubenManager.GetStageInfo(lastStageId)
+        --                     if lastStageId == v.StageId and not stageInfo2.Passed then
+        --                         if courseChapterRewardTemp[stageInfo2.ChapterId] then
+        --                             courseChapterRewardTemp[stageInfo2.ChapterId].LastStageId = v.StageId
+        --                         else
+        --                             courseChapterRewardTemp[stageInfo2.ChapterId] = {}
+        --                             courseChapterRewardTemp[stageInfo2.ChapterId].ChapterId = stageInfo2.ChapterId
+        --                             courseChapterRewardTemp[stageInfo2.ChapterId].OrderId = chapter.OrderId
+        --                             courseChapterRewardTemp[stageInfo2.ChapterId].stageIds = {}
+        --                             courseChapterRewardTemp[stageInfo2.ChapterId].LastStageId = v.StageId
+        --                         end
+        --                     end
+        --                 end
+        --             end
+        --         end
+        --         -- 寻找还没有领奖励的关卡
+        --         return {
+        --             CouresType = type,
+        --             NextCouresType = nextType,
+        --             StageId = v.StageId,
+        --             Tip = v.Tip,
+        --             TipEn = v.TipEn,
+        --             RewardId = v.RewardId,
+        --             ShowId = v.ShowId,
+        --             OrderId = stageCfg.OrderId,
+        --             Name = name,
+        --             PreStageId = stageCfg.PreStageId
+        --         }
+        --     end
+
+        --     if CourseInfos[stageInfo.ChapterId] then
+        --         local course = SetCourse(CourseInfos[stageInfo.ChapterId].LastStageId)
+        --         tableInsert(CourseInfos[stageInfo.ChapterId].Courses, course)
+        --     else
+        --         local nextChapterId = XDataCenter.FubenMainLineManager.GetNextChapterId(stageInfo.ChapterId)
+        --         local lastStageId = XDataCenter.FubenMainLineManager.GetLastStageId(stageInfo.ChapterId)
+        --         local isStageIdTableEmpty = XDataCenter.FubenMainLineManager.IsStageIdTableEmpty(stageInfo.ChapterId)
+        --         if not isStageIdTableEmpty then
+        --             CourseInfos[stageInfo.ChapterId] = {}
+        --             CourseInfos[stageInfo.ChapterId].Courses = {}
+        --             CourseInfos[stageInfo.ChapterId].NextChapterId = nextChapterId
+        --             CourseInfos[stageInfo.ChapterId].LastStageId = lastStageId
+        --             local course = SetCourse(lastStageId)
+        --             tableInsert(CourseInfos[stageInfo.ChapterId].Courses, course)
+        --         end
+        --     end
+        -- end
+        
+        -- local needk
+        -- for k, v in pairs(CourseInfos) do
+        --     if not needk or needk < k then
+        --         needk = k
+        --     end
+        --     tableSort(v.Courses, function(a, b)
+        --         return a.OrderId < b.OrderId
+        --     end)
+        -- end
+        
+        -- for _, v in pairs(courseChapterRewardTemp) do
+        --     tableSort(v.stageIds, function(a, b)
+        --         return a < b
+        --     end)
+        --     tableInsert(CourseChapterRewards, v)
+        -- end
+
+        -- tableSort(CourseChapterRewards, function(a, b)
+        --     return a.OrderId < b.OrderId
+        -- end)
     end
 
     function XTaskManager.InitCourseData(coursedata)
@@ -633,9 +1085,12 @@ XTaskManagerCreator = function()
         CourseChapterRewards = {}
 
         if coursedata then
-            XTool.LoopCollection(coursedata, function(key)
-                CourseData[key] = key
+            CourseData = XLazy.ToMapWithCustomPairs(coursedata, function(value)
+                return value, value
             end)
+            -- XTool.LoopCollection(coursedata, function(key)
+            --     CourseData[key] = key
+            -- end)
         end
         XTaskManager.InitCourseInfos()
     end

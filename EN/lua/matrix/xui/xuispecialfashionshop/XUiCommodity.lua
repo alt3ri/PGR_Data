@@ -19,6 +19,12 @@ function XUiCommodity:Init(parent)
     }, handler(self, self.RefreshPrice), self)
 end
 
+--- 设置参数缓存，传给详情页
+function XUiCommodity:SetCustomAssetsItemIdsForDetail(customAssetsItemIds)
+    self._CustomAssetsItemIds = customAssetsItemIds
+end
+
+
 function XUiCommodity:Refresh(data)
     if not data then
         self.GameObject:SetActiveEx(false)
@@ -330,10 +336,12 @@ function XUiCommodity:OnBtnBuyClick()
         XUiManager.TipError(self.ShopOnSaleLockDecs)
         return
     end
+    ---@type XPurchaseBuyData
     local buyData = {}
     buyData.IsHave = false
     buyData.ItemIcon = self.ItemIcon
     buyData.ItemCount = self.NeedCount
+    buyData.ConsumeId = self.Data.ConsumeList[1].Id
     if self.NeedCount ~= self.Data.ConsumeList[1].Count then
         buyData.OriginCount = self.Data.ConsumeList[1].Count
     end
@@ -366,9 +374,13 @@ function XUiCommodity:OnBtnBuyClick()
             XUiManager.TipMsg(text, nil, function()
                 if buyData.GiftRewardId and buyData.GiftRewardId ~= 0 then
                     local rewardGoodList = XRewardManager.GetRewardList(buyData.GiftRewardId)
-                    XUiManager.OpenUiObtain(rewardGoodList)
+                    XUiManager.OpenUiObtain(rewardGoodList, nil, nil, nil, nil, {
+                        IsIgnoreOpenFashionTipCheck = true
+                    })
                 elseif  res.IsShowBuyResult and not XTool.IsTableEmpty(res.GoodList) then
-                    XUiManager.OpenUiObtain(res.GoodList)
+                    XUiManager.OpenUiObtain(res.GoodList, nil, nil, nil, nil, {
+                        IsIgnoreOpenFashionTipCheck = true
+                    })
                 end
             end)
 
@@ -379,13 +391,19 @@ function XUiCommodity:OnBtnBuyClick()
         XMVCA.XFashionSuit:ShopBuyFashionGroup(fashionGroupId, function(goodList)
             local text = CS.XTextManager.GetText("BuySuccess")
             XUiManager.TipMsg(text, nil, function()
-                XUiManager.OpenUiObtain(goodList)
+                XUiManager.OpenUiObtain(goodList, nil, nil, nil, nil, {
+                    IsIgnoreOpenFashionTipCheck = true
+                })
             end)
 
             self:OnBuySuccessCb()
         end)
     end
-    XMVCA.XShop:OpenFashionDetailUi(self.Id, buyData, { isWeaponFashion = self.IsWeaponFashion, updateCb = handler(self, self.OnBuySuccessCb) })
+    XMVCA.XShop:OpenFashionDetailUi(self.Id, buyData, { 
+        isWeaponFashion = self.IsWeaponFashion, 
+        updateCb = handler(self, self.OnBuySuccessCb),
+        customAssetsItemIds = self._CustomAssetsItemIds
+    })
 end
 
 function XUiCommodity:OnBuySuccessCb()

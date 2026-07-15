@@ -18,6 +18,39 @@ function XUiPanelFullScreenDialogNew:OnStart()
     
     self.ShowDialogUiObjs = {} -- 当前显示的
     self.RecycleDialogUiObjs = {} -- 回收的
+    self.ChannelOffsetState = nil -- 当前色相偏移快照,作用于此后新建/复用的对白行
+end
+
+-- 设置色相偏移状态,仅作用于后续 ShowDialog 创建/复用的行,不追溯影响已显示行
+function XUiPanelFullScreenDialogNew:SetChannelOffset(expansionScale, offsetMultiplier, r, g, b)
+    self.ChannelOffsetState = {
+        ExpansionScale = expansionScale,
+        OffsetMultiplier = offsetMultiplier,
+        R = r,
+        G = g,
+        B = b,
+    }
+end
+
+function XUiPanelFullScreenDialogNew:ClearChannelOffset()
+    self.ChannelOffsetState = nil
+end
+
+function XUiPanelFullScreenDialogNew:_ApplyChannelOffsetTo(txtWords)
+    if XTool.UObjIsNil(txtWords) then return end
+    local addon = txtWords.gameObject:GetComponent("XChannelOffsetTextAddon")
+    if XTool.UObjIsNil(addon) then return end
+    local state = self.ChannelOffsetState
+    if not state then
+        addon:Revert()
+        return
+    end
+    if state.ExpansionScale ~= nil then addon.ExpansionScale = state.ExpansionScale end
+    if state.OffsetMultiplier ~= nil then addon.ChannelOffsetMultiplier = state.OffsetMultiplier end
+    if state.R ~= nil then addon.ChannelOffsetR = state.R end
+    if state.G ~= nil then addon.ChannelOffsetG = state.G end
+    if state.B ~= nil then addon.ChannelOffsetB = state.B end
+    addon:Apply()
 end
 
 function XUiPanelFullScreenDialogNew:OnEnable()
@@ -67,6 +100,7 @@ function XUiPanelFullScreenDialogNew:ShowDialog(content, isIgnoreTypeWrite, type
     local typeWriter = uiObj:GetObject("TypeWriter")
     txtWords.text = content
     txtWords.color = self.TextColor
+    self:_ApplyChannelOffsetTo(txtWords)
     if not isIgnoreTypeWrite then
         typeWriter.CompletedHandle = typeWriterCb
         typeWriter.Duration = typeWriteTime ~= 0 and typeWriteTime or stringUtf8Len(content) * XMovieConfigs.TYPE_WRITER_SPEED
@@ -102,6 +136,7 @@ function XUiPanelFullScreenDialogNew:RecycleAllDialog()
     self.ShowDialogUiObjs = {}
 
     self:ShowImgNext(false)
+    self.ChannelOffsetState = nil -- Panel 关闭即清状态,下次打开干净
 end
 
 -- 显示翻页图标

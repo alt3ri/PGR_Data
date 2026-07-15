@@ -55,11 +55,13 @@ function XLevel4001Present:Init() --初始化逻辑
     self._proxy:RegisterEvent(EWorldEvent.NpcInteractStart)
     self._proxy:RegisterEvent(EWorldEvent.ActorTrigger)
     self._proxy:RegisterEvent(EWorldEvent.DramaFinish)
+    self:InitDeathZoneParams()
 end
 
 ---@param dt number @ delta time
 function XLevel4001Present:Update(dt) --每帧更新逻辑
     self:UpdateSpaceAudio(dt)
+    self:UpdateDeathZoneCheck(dt)
 end
 
 ---@param eventType number
@@ -317,6 +319,24 @@ function XLevel4001Present:TriggerSpaceAudio(spaceAudioInfo, isEnter)
     -- 重置时长
     spaceAudioInfo.CurPlayTime = 0
     spaceAudioInfo.IsTrigger = isTrigger
+end
+--endregion
+
+--region 究极死区保底
+function XLevel4001Present:InitDeathZoneParams()
+    self._deathZoneCheckTime = 5
+end
+
+function XLevel4001Present:UpdateDeathZoneCheck(dt)
+    if self._deathZoneCheckTime <= 0 then
+        local playerId = self._proxy:GetLocalPlayerNpcId()
+        local npcPosition = self._proxy:GetNpcPosition(playerId)
+        if npcPosition.y <= 90 then
+            self._proxy:SetNpcPosAndRot(self._proxy:GetLocalPlayerNpcId(), self._revivePoint, self._reviveRotation, true)
+        end
+        self._deathZoneCheckTime = 5
+    end
+    self._deathZoneCheckTime = self._deathZoneCheckTime - dt
 end
 --endregion
 

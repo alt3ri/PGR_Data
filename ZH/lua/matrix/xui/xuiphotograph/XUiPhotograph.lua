@@ -334,7 +334,7 @@ function XUiPhotograph:OnUiSceneLoaded()
     self:PlayAnimation("Loading2")
     --self:SetGameObject()
     self:InitSceneRoot()
-    local colorId = XDataCenter.FashionManager.GetOwnFashionDataById(self.SelectFashionId).ColorId
+    local colorId =self.FashionColorPanel:GetSelectColorId() or XDataCenter.FashionManager.GetOwnFashionDataById(self.SelectFashionId).ColorId
     self:UpdateRoleModel(self.SelectCharacterId, self.SelectFashionId, colorId)
     self:UpdatePartner(self.PartnerTemplateId)
     self:UpdateCamera()

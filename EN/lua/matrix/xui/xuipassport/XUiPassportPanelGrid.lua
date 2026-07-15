@@ -4,7 +4,8 @@ local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XUiPassportPanelGrid = XClass(XUiNode, "XUiPassportPanelGrid")
 
 --通行证面板中间一列的格子
-function XUiPassportPanelGrid:Init(rootUi)
+function XUiPassportPanelGrid:Init(rootUi, onClick)
+    self.OnClick = onClick
     self.RootUi = rootUi
     self.GridObjs = {}
     self.PermitSlotData = {}
@@ -114,6 +115,7 @@ function XUiPassportPanelGrid:OnPermitSlotClick(i)
         local grid = self.GridObjs[i]
         if grid then
             grid:OnBtnClickClick()
+            self.OnClick()
         end
     end
 end
@@ -128,7 +130,10 @@ end
 function XUiPassportPanelGrid:GridOnClick(passportRewardId)
     self._Control:RequestPassportRecvReward(
         passportRewardId,
-        handler(self, self.UpdatePermitPanel),
+        function()
+            self:UpdatePermitPanel()
+            self.OnClick()
+        end,
         self.RootUi)
 end
 

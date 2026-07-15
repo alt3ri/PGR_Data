@@ -22,7 +22,11 @@ function XGuideAction:Finish()
     end
     local openGuide = self._OpenGuide
     local id = self._Template.Id
-    if XMVCA.XBigWorldGamePlay:GetCurrentAgency():CheckOpenGuideFinish(id) then
+    local gameAgency = XMVCA.XBigWorldGamePlay:GetCurrentAgency()
+    if not gameAgency then
+        return
+    end
+    if gameAgency:CheckOpenGuideFinish(id) then
         if XMVCA.XBigWorldGamePlay:IsInGame() and XLoginManager.IsLogin() then
             self:OnFinish()
             openGuide:RunNext()
@@ -34,7 +38,10 @@ function XGuideAction:Finish()
             XUiManager.TipCode(res.Code)
             XMVCA.XBigWorldGamePlay:DoEnterWorldFailure()
         else
-            XMVCA.XBigWorldGamePlay:GetCurrentAgency():AddFinishGuideDict(id)
+            local agency = XMVCA.XBigWorldGamePlay:GetCurrentAgency()
+            if agency then
+                agency:AddFinishGuideDict(id)
+            end
             self:OnFinish()
             openGuide:RunNext()
         end

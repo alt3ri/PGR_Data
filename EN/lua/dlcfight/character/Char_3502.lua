@@ -28,30 +28,31 @@ function XChar3502:SkillCastConfig()
         near = { --近距离攻击或游荡
             attack = 50,
             front = 0,
-            back = 0,
-            left = 0,
-            right = 0,
-            daze = 50,
+            back = 50,
+            left = 50,
+            right = 50,
+            daze = 20,
         },
         mid = {--中距离后退或左右游荡
             attack = 50,
             front = 0,
             back = 0,
-            left = 0,
-            right = 0,
-            daze = 50,
+            left = 60,
+            right = 60,
+            daze = 0,
         },
         far = {--远距离攻击或向前游荡
             attack = 50,
             front = 0,
             back = 0,
-            left = 0,
-            right = 0,
-            daze = 50,
+            left = 80,
+            right = 80,
+            daze = 0,
         }
     }
+    self.dazeTimes = {1.5,2}
+    self.wanderTimes = {1.6,2}
 
-    self:SetSelfAiDelayOpen(4)
 
     self.castGroup= {
         --距离参考{
@@ -65,6 +66,7 @@ function XChar3502:SkillCastConfig()
         }
     }
     self.isOpenChase = true
+    self:SetSelfAiDelayOpen(0.3)
 end
 
 --

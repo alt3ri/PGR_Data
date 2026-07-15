@@ -356,6 +356,11 @@ function XPlotExhibitionAgency:GetProgressByStoryConfig(storyConfig)
         return 0, 0
     end
 
+    --肉鸽6.0（不参与计算，返回0）
+    if chapterType == XEnumConst.FuBen.ChapterType.Theatre6 then
+        return 0, 0
+    end
+
     XLog.Error("[XPlotExhibitionControl] 未实现的剧情进度:" .. chapterType)
     return 0, 0
 end

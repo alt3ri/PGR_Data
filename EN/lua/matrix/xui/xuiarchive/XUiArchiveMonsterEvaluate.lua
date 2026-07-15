@@ -102,7 +102,7 @@ function XUiArchiveMonsterEvaluate:OnBtnSubmitClick()
     end
 
     if IsScoreChange or IsDifficultyChange or IsTagChange then
-        self._Control:MonsterGiveEvaluate(self.Base.Data:GetNpcId(self.Base.CurType), self.MyScore, self.MyDifficulty, self.MyTagIds, function()
+        self._Control.MonsterControl:MonsterGiveEvaluate(self.Base.Data:GetNpcId(self.Base.CurType), self.MyScore, self.MyDifficulty, self.MyTagIds, function()
             self:Close()
         end, self.CallBack)
     else

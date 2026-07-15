@@ -6,7 +6,7 @@ local FirstTagId = 4
 local SecondTagId = 1
 
 function XUiBigWorldCollegeBanner:OnAwake()
-
+    XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_SET_UI_HUD_ACTIVE, false)
 end
 
 function XUiBigWorldCollegeBanner:OnEnable()
@@ -26,6 +26,7 @@ function XUiBigWorldCollegeBanner:OnDisable()
 end
 
 function XUiBigWorldCollegeBanner:OnDestroy()
+    XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_SET_UI_HUD_ACTIVE, true)
 end
 
 function XUiBigWorldCollegeBanner:_InitUi()

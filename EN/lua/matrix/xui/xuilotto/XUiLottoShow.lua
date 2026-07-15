@@ -3,7 +3,6 @@ local XUiLottoShow = XLuaUiManager.Register(XLuaUi, "UiLottoShow")
 local drawShowEffect = require("XUi/XUiDraw/XUiDrawTools/XUiDrawShowEffect")
 local drawScene = require("XUi/XUiDraw/XUiDrawTools/XUiDrawScene")
 local XUiPanelRoleModel = require("XUi/XUiCharacter/XUiPanelRoleModel")
-local XUiModelUtility = require("XUi/XUiCharacter/XUiModelUtility")
 
 function XUiLottoShow:OnAwake()
     self:InitAutoScript()
@@ -546,7 +545,7 @@ function XUiLottoShow:ShowPartnerModel(templateId)
 
     local partnerCurShowNum = self.PartnerIndex
 
-    self.CvInfo = XUiModelUtility.LoadPartnerModelSToC(templateId, self.PartnerModelPanel, XModelManager.MODEL_UINAME.XUiDrawShow, function(SModel)
+    XDataCenter.PartnerManager.LoadPartnerStandbyModelWithSToCShow(templateId, self.PartnerModelPanel, XModelManager.MODEL_UINAME.XUiDrawShow, function(SModel)
         SModel.gameObject:SetActiveEx(true)
         self.LastPartnerModel = SModel
         self.BtnClick.gameObject:SetActiveEx(true)

@@ -1,4 +1,5 @@
-local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
+--[[
+local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
 local XUiGridBaseEquip = require("XUi/XUiBaseEquip/XUiGridBaseEquip")
 local XUiPanelPutOnShowTip = require("XUi/XUiBaseEquip/XUiPanelPutOnShowTip")
 local XUiBaseEquipInfo = require("XUi/XUiBaseEquip/XUiPanelBaseEquipInfo")
@@ -377,4 +378,5 @@ function XUiPanelBaseEquipPutOn:RefreshAfterRecycle()
     self:HideRecyclePanel()
 end
 
-return XUiPanelBaseEquipPutOn
+return XUiPanelBaseEquipPutOn
+]]

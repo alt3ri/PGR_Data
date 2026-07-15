@@ -125,6 +125,7 @@ function XUiTip:AutoAddListener()
     self:RegisterClickEvent(self.BtnTcanchaungBlack, self.OnBtnTcanchaungBlackClick)
     self:RegisterClickEvent(self.BtnAction, self.OnBtnActionClick)
 end
+
 -- auto
 function XUiTip:OnBtnBackClick()
     self:Close()
@@ -194,7 +195,7 @@ function XUiTip:Refresh(data)
     self:ResetUi()
     --UI数据
     local tipNotShowCount = false --不显示道具数量
-    local tipShowBlackBg = false --显示黑色背景(针对纯白色道具Icon)
+    local tipShowBlackBg = false  --显示黑色背景(针对纯白色道具Icon)
     if type(data) == "number" then
         self.TemplateId = data
     else
@@ -208,8 +209,8 @@ function XUiTip:Refresh(data)
     end
 
     if
-    self.TemplateId == XDataCenter.ItemManager.ItemId.AndroidHongKa or
-            self.TemplateId == XDataCenter.ItemManager.ItemId.IosHongKa
+        self.TemplateId == XDataCenter.ItemManager.ItemId.AndroidHongKa or
+        self.TemplateId == XDataCenter.ItemManager.ItemId.IosHongKa
     then
         self.TemplateId = XDataCenter.ItemManager.ItemId.HongKa
     end
@@ -217,7 +218,7 @@ function XUiTip:Refresh(data)
     local goodsShowParams = XGoodsCommonManager.GetGoodsShowParamsByTemplateId(self.TemplateId)
 
     --- 表情包和聊天框不显示数量
-    if goodsShowParams.RewardType == XRewardManager.XRewardType.ChatEmoji 
+    if goodsShowParams.RewardType == XRewardManager.XRewardType.ChatEmoji
         or goodsShowParams.RewardType == XRewardManager.XRewardType.ChatBoard then
         tipNotShowCount = true
     end
@@ -231,7 +232,7 @@ function XUiTip:Refresh(data)
 
     -- 快捷兑换按钮
     if XDataCenter.ItemManager.IsFastTrading(self.TemplateId) and
-            XDataCenter.ItemManager.JudjeCanFastTrading(self.RootUiName)
+        XDataCenter.ItemManager.JudjeCanFastTrading(self.RootUiName)
     then
         self:SetUiActive(self.BtnTcanchaungBlack, true)
     end
@@ -319,7 +320,7 @@ function XUiTip:Refresh(data)
         end
 
         if worldDesc and #worldDesc then
-            self.TxtWorldDesc.text = XUiHelper.ReplaceTextNewLine(worldDesc) 
+            self.TxtWorldDesc.text = XUiHelper.ReplaceTextNewLine(worldDesc)
             self:SetUiActive(self.TxtWorldDesc, true)
         end
     end
@@ -339,6 +340,12 @@ function XUiTip:Refresh(data)
         self:SetUiActive(self.BtnAction, XTool.IsNumberValid(signBoardActionId))
     end
 
+    --DIY套装
+    if self.PanelSuit then
+        local isSuit = XMVCA.XBigWorldCommanderDIY:CheckTemplateIsSuit(self.TemplateId)
+        self.PanelSuit.gameObject:SetActiveEx(isSuit)
+    end
+
     self:RefreshLabel(self.TemplateId)
 
     if XTool.DebugIsShowItemIdOnUi() then
@@ -351,10 +358,28 @@ function XUiTip:Refresh(data)
         else
             id = self.Data.TemplateId or self.Data.Id or "??"
         end
-        self.TxtTitle.text = self.StrTitle .. string.format("(Id:%s)", id)
+        local extra = ""
+        local combineCfg = XMVCA.XItem:GetItemCombineById(self.TemplateId)
+        if combineCfg then
+            local groupCfgs = XMVCA.XItem:GetItemCombinesByGroupId(combineCfg.GroupId)
+            local parts = {}
+            for _, cfg in ipairs(groupCfgs) do
+                local cnt = XGoodsCommonManager.GetGoodsCurrentCount(cfg.ItemId) or 0
+                table.insert(parts, string.format("%s*%s", cfg.ItemId, cnt))
+            end
+            if #parts > 0 then
+                extra = string.format("(GroupId:%s %s)", combineCfg.GroupId, table.concat(parts, "  "))
+            end
+            self.TxtTitle.text = self.StrTitle .. extra
+        else
+            self.TxtTitle.text = self.StrTitle .. string.format("(Id:%s)", id)
+        end
+
+
         self.TxtTitle.transform:SetSizeWithCurrentAnchors(CS.UnityEngine.RectTransform.Axis.Horizontal, 800)
     end
 end
+
 --===============
 --显示临时道具(非背包道具或者需要改数据的道具)
 --===============
@@ -443,4 +468,4 @@ function XUiTip:RefreshLabel(templateId)
     self.Txtcall.gameObject:SetActiveEx(true)
 end
 
-return XUiTip
+return XUiTip

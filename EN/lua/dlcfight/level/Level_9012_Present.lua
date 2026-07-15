@@ -44,11 +44,11 @@ function XLevelScript9012:Update(dt)
     self._levelTime = self._levelTime + dt
     if self._proxy:CheckLevelMemoryInt(40001) then 
         self.haruCore = self._proxy:GetLevelMemoryInt(40001)
-        if self.haruCore == 1 then 
-            self.damage = self._proxy:GetLevelMemoryInt(40002)
-            self.resetDamageTime = self._proxy:GetLevelMemoryInt(40003)
-            self._proxy:ShowStageInfo(9012001,90005200,1,false,{self.damage},{})
-            self._proxy:ShowStageInfo(9012002,90005200,2,false,{self.resetDamageTime},{}) 
+        if self.haruCore == 1 then  --伤害显示UI
+            -- self.damage = self._proxy:GetLevelMemoryInt(40002)
+            -- self.resetDamageTime = self._proxy:GetLevelMemoryInt(40003)
+            --self._proxy:ShowStageInfo(9012001,90005200,1,false,{self.damage},{})
+            --self._proxy:ShowStageInfo(9012002,90005200,2,false,{self.resetDamageTime},{}) 
         elseif self.haruCore == 200 and self._limitTimeToEnd == false then 
             self._limitTimeToEnd = true
         end

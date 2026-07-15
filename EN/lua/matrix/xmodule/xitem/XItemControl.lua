@@ -46,5 +46,4 @@ end
 function XItemControl:GetItemExchangeConfigsByItemId(itemId)
     return self._Model:GetItemExchangeConfigsByItemId(itemId)
 end
-
 return XItemControl

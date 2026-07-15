@@ -1,4 +1,9 @@
-local XUiSettleLose = XLuaUiManager.Register(XLuaUi, "UiSettleLose")
+local XLuaUiSettle = require("XUi/XUiBase/XLuaUiSettle")
+
+--- 通用失败结算界面
+--- 必须继承 XLuaUiSettle，基类会在 OnDestroyUi 时自动 Dispatch EVENT_FIGHT_FINISH_SETTLE
+--- 用于通知空花等模块"结算已关闭，可以恢复回流"，请勿改为 XLuaUi
+local XUiSettleLose = XLuaUiManager.Register(XLuaUiSettle, "UiSettleLose")
 
 local GridLoseTip = require("XUi/XUiSettleLose/XUiGridLoseTip")
 
@@ -77,7 +82,6 @@ function XUiSettleLose:OnDestroy()
         self.UiStageSettleSound:StopSettleSound()
         self.UiStageSettleSound = nil
     end
-    XEventManager.DispatchEvent(XEventId.EVENT_FIGHT_FINISH_SETTLE)
 end
 
 ---

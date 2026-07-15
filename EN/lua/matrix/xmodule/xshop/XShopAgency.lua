@@ -72,6 +72,7 @@ end
 ---@param params.isWeaponFashion boolean 是否是武器涂装，默认false
 ---@param params.updateCb function 更新回调，默认nil
 ---@param params.skipType number 跳过类型，默认nil
+---@param params.customAssetsItemIds number[] 自定义资源栏显示道具
 function XShopAgency:OpenFashionDetailUi(fashionid, buyData, params)
     local isShowFashionIconWithoutGift, isNeedCD, customWeaponFashionId, customDesc, suitId, isWeaponFashion, updateCb, skipType
     if params then
@@ -118,7 +119,7 @@ function XShopAgency:OpenFashionDetailUi(fashionid, buyData, params)
         end)
         --开始执行
         self:RunChain(reqQueue, function()
-            XLuaUiManager.Open("UiFashionDetail", fashionid, isWeaponFashion, buyData, isShowFashionIconWithoutGift, isNeedCD, customWeaponFashionId, customDesc)
+            XLuaUiManager.Open("UiFashionDetail", fashionid, isWeaponFashion, buyData, isShowFashionIconWithoutGift, isNeedCD, customWeaponFashionId, customDesc, params.customAssetsItemIds)
         end)
     end
 end

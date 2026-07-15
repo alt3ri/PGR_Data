@@ -99,6 +99,18 @@ function XFightBase:HandleEvent(eventType, eventArgs)
     if eventType == EWorldEvent.OnMissileColliderNpc then
         self:OnMissileColliderNpc(eventArgs.ContextId, eventArgs.MissileUUID, eventArgs.LauncherNpcUUID, eventArgs.TargetNpcUUID, eventArgs.Result, eventArgs.Type)
     end
+    if eventType == EWorldEvent.NpcEnterMissileTrigger then
+        self:OnNpcEnterMissile(eventArgs.TriggerMissileUUID, eventArgs.TargetNpcUUID, eventArgs.LauncherUUID)
+    end
+    if eventType == EWorldEvent.NpcExitMissileTrigger then
+        self:OnNpcExitMissile(eventArgs.TriggerMissileUUID, eventArgs.TargetNpcUUID, eventArgs.LauncherUUID)
+    end
+    if eventType == EWorldEvent.MissileEnterMissileTrigger then
+        self:OnMissileEnterMissile(eventArgs.TriggerMissileUUID, eventArgs.TriggerLauncherUUID, eventArgs.TargetMissileUUID, eventArgs.TargetLauncherUUID)
+    end
+    if eventType == EWorldEvent.MissileExitMissileTrigger then
+        self:OnMissileExitMissile(eventArgs.TriggerMissileUUID, eventArgs.TriggerLauncherUUID, eventArgs.TargetMissileUUID, eventArgs.TargetLauncherUUID)
+    end
     if eventType == EWorldEvent.NpcCalcDamageBefore then
         self:BeforeDamageCalc(eventArgs)
     end
@@ -445,6 +457,36 @@ end
 ---@param result EMissileCollideNpcResult 命中结果
 ---@param type number 命中类型
 function XFightBase:OnMissileColliderNpc(contextId, missileUUID, launcherNpcUUID, targetNpcUUID, result, type)
+end
+
+---Npc进入子弹触发区
+---@param triggerMissileUUID number 触发器子弹UUID
+---@param targetNpcUUID number 目标NpcUUID
+---@param launcherUUID number 触发器子弹Launcher UUID
+function XFightBase:OnNpcEnterMissile(triggerMissileUUID, targetNpcUUID, launcherUUID)
+end
+
+---Npc离开子弹触发区
+---@param triggerMissileUUID number 触发器子弹UUID
+---@param targetNpcUUID number 目标NpcUUID
+---@param launcherUUID number 触发器子弹Launcher UUID
+function XFightBase:OnNpcExitMissile(triggerMissileUUID, targetNpcUUID, launcherUUID)
+end
+
+---子弹进入子弹触发区
+---@param triggerMissileUUID number 触发器子弹UUID
+---@param triggerLauncherUUID number 触发器子弹Launcher UUID
+---@param targetMissileUUID number 目标子弹UUID
+---@param targetLauncherUUID number 目标子弹Launcher UUID
+function XFightBase:OnMissileEnterMissile(triggerMissileUUID, triggerLauncherUUID, targetMissileUUID, targetLauncherUUID)
+end
+
+---子弹离开子弹触发区
+---@param triggerMissileUUID number 触发器子弹UUID
+---@param triggerLauncherUUID number 触发器子弹Launcher UUID
+---@param targetMissileUUID number 目标子弹UUID
+---@param targetLauncherUUID number 目标子弹Launcher UUID
+function XFightBase:OnMissileExitMissile(triggerMissileUUID, triggerLauncherUUID, targetMissileUUID, targetLauncherUUID)
 end
     
 ---计算伤害前

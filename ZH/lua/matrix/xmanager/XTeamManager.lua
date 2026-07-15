@@ -517,11 +517,14 @@ XTeamManagerCreator = function()
             for pos = 1, MaxPos, 1 do
                 local curPosEntityId = xTeamPrefab:GetEntityIdByTeamPos(pos)
                 if XTool.IsNumberValid(curPosEntityId) then
-                    request.PartnerData = request.PartnerData or {}
-                    request.PartnerData[pos] = partnerData:GetPartnerRequestDataByPos(pos)
-                    XMessagePack.MarkAsTable(request.PartnerData[pos])
-                    if request.PartnerData[pos].SkillData then
-                        XMessagePack.MarkAsTable(request.PartnerData[pos].SkillData)
+                    local requestPartnerData = partnerData:GetPartnerRequestDataByPos(pos)
+                    if requestPartnerData then
+                        request.PartnerData = request.PartnerData or {}
+                        request.PartnerData[pos] = requestPartnerData
+                        XMessagePack.MarkAsTable(requestPartnerData)
+                        if requestPartnerData.SkillData then
+                            XMessagePack.MarkAsTable(requestPartnerData.SkillData)
+                        end
                     end
                 end
             end

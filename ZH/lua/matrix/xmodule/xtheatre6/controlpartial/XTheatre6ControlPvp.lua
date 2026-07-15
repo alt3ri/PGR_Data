@@ -21,16 +21,6 @@ function XTheatre6Control:IsPvpInActivityTime()
     return XFunctionManager.CheckInTimeByTimeId(timeId)
 end
 
-function XTheatre6Control:HandlePvpActivityEnd()
-    local uiName = "UiTheatre6Main"
-    if XLuaUiManager.IsStackUiOpen(uiName) then
-        XLuaUiManager.CloseAllUpperUi(uiName)
-    else
-        XLuaUiManager.RunMain(true)
-    end
-    XUiManager.TipText("CommonActivityEnd")
-end
-
 ---@return Theatre6FileData[]
 function XTheatre6Control:GetAllFileData()
     return self._Model:GetAllFileData()
@@ -876,7 +866,7 @@ end
 
 ---防守阵容的环境设置按钮是否显示红点
 function XTheatre6Control:IsChooseEnvRedPoint()
-    return self._Model:IsChooseEnvRedPoint()
+    return self:IsPvpBuffGroupIdValid() and self._Model:IsChooseEnvRedPoint()
 end
 
 ---关闭防守阵容的环境设置按钮红点

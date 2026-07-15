@@ -116,6 +116,13 @@ function XTheatre6Control:GetCurSanConfig()
     return self._Model:GetCurSanConfig()
 end
 
+---属性能提高San的最大值
+---@param config XTableTheatre6StageSan
+function XTheatre6Control:AdjustSanConfigMaxValue(config)
+    local sanGroupId = self._Model:GetSanGroupId()
+    return self._Model:AdjustSanConfigMaxValue(sanGroupId, config)
+end
+
 ---获取当前San分组下所有San配置（已按展示顺序排序）
 ---@return XTableTheatre6StageSan[]
 function XTheatre6Control:GetAllSanConfigs()
@@ -196,4 +203,8 @@ function XTheatre6Control:IsStagePass(storyLineId, stageIndex)
     return self._Model:IsStagePass(storyLineId, stageIndex)
 end
 
-return XTheatre6Control
+function XTheatre6Control:GetWorldId()
+    return self._Model:GetWorldId()
+end
+
+return XTheatre6Control

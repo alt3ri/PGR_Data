@@ -16,7 +16,7 @@ end
 
 function XBuffScript1025213:OnLuaSkillEnd(eventArgs) --这里逻辑有点问题，实际逻辑是触发拼刀/超算技能时给加伤
     ------------执行------------
-    if eventArgs._skillType == Wrestle or eventArgs._skillType == Dodge then
+    if eventArgs._skillType == ETheatre6SkillType.Wrestle or eventArgs._skillType == ETheatre6SkillType.Dodge then
         if eventArgs._launcherUUID ~= self._npcUUID then return end
         self._proxy:ApplyMagic(self._npcUUID, self._npcUUID, self.BuffId, 1)
     end

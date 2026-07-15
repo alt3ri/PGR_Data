@@ -64,6 +64,13 @@ function XUiPurchase:OnEnable()
 end
 
 function XUiPurchase:OnStart(tab, isClearData, childTabIndex, customParams)
+
+    self.UiPanel[PanelNameConfig.PanelYk] = XUiPurchaseYKList.New(
+        self.PanelYk,
+        self,
+        self.PurchaseLBCb,
+        customParams)
+
     self.IsClearData = isClearData
     if isClearData == nil then
         self.IsClearData = true
@@ -264,10 +271,11 @@ function XUiPurchase:InitUi()
         end
     end
 
+    self.PurchaseLBCb = purchaseLBCb
+
     self.UiPanel = {}
     self.UiPanel[PanelNameConfig.PanelRecharge] = XUiPurchasePay.New(self.PanelRecharge, self, XPurchaseConfigs.TabExConfig.Sample)
     self.UiPanel[PanelNameConfig.PanelLb] = XUiPurchaseLB.New(self.PanelLb, self, purchaseLBCb)
-    self.UiPanel[PanelNameConfig.PanelYk] = XUiPurchaseYKList.New(self.PanelYk, self, purchaseLBCb)
     self.UiPanel[PanelNameConfig.PanelDh] = XUiPurchaseHKExchangeTop.New(self.PanelDh, self, purchaseLBCb)
     self.UiPanel[PanelNameConfig.PanelHksd] = XUiPurchaseHKShop.New(self.PanelHksd, self)
     self.UiPanel[PanelNameConfig.PanelTj] = XUiPurchaseRecommend.New(self.PanelTj, self, purchaseLBCb)
@@ -287,7 +295,7 @@ function XUiPurchase:InitUi()
     end
 
      self.BtnPCSwich.gameObject:SetActiveEx(false)
-    self:AddListener()
+     self:AddListener()
 end
 
 function XUiPurchase:SetData()
@@ -702,9 +710,14 @@ function XUiPurchase:OnDestroy()
             panel.BuyUiTips:OnDestroy()
         end
     end
-    
+
     -- 清除所有临时的自定义参数
     XDataCenter.PurchaseManager.ClearPurchaseBuyCustomParam()
+
+    if self.CustomParams.OnClose then
+        self.CustomParams.OnClose()
+    end
+
 end
 
 function XUiPurchase:IsLBUiType(cfg)

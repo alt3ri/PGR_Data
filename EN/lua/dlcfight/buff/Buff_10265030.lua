@@ -9,7 +9,7 @@ function XBuffScript10265030:ScriptInit(isGainControl) --初始化
     self.TargetSkill = self._skillId
     self.TargetTL = 120
     --self:LogError(".....初始化完成")
-    self._damageMagicId = 10250048 --注册伤害id
+    self._damageMagicId = 1026805 --注册伤害id
     --self._proxy:Theatre6ChangeStaminaValue(self._npcUUID, -30, 0)
     if self._skillId == 10265031 then self._exDamageRate = 2000
     else if self._skillId == 10265032 then self._exDamageRate = 2500
@@ -24,7 +24,7 @@ function XBuffScript10265030:OnLuaSkillStart(eventArgs)
     if eventArgs._skillId ~= self._skillId then return end
     if eventArgs._launcherUUID ~= self._npcUUID then return end
     self._hasChangedDamage = true
-    self.originAttrib1 = self._proxy:GetNpcGameplayAttribValue(self._npcUUID,ETheatre6AttribType.Stamina)
+    self.originAttrib1 = self._proxy:GetNpcGameplayAttribMaxValue(self._npcUUID,ETheatre6AttribType.Stamina)
     --self:LogError(".....抓到拼刀属性"..self.originAttrib1)
     if self.originAttrib1 > self.TargetTL then
         self._hasChangedDamage = false
@@ -42,7 +42,7 @@ function XBuffScript10265030:ChangeDamageBeforeCalc(eventArgs)
     if eventArgs.Id ~= self._damageMagicId then return end
     if self._hasChangedDamage then return end
     local FinalDMGRate = eventArgs.PhysicalPermyriad + self._exDamageRate
-    self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate, eventArgs.ElementPermyriad, eventArgs.HackDamage, eventArgs.HackPermyriad, eventArgs.isCrit)
+    self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate, eventArgs.ElementPermyriad, eventArgs.HackDamage, eventArgs.HackPermyriad, eventArgs.IsCrit)
     self._hasChangedDamage = true
 end
 

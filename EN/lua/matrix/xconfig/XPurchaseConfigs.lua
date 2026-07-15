@@ -472,4 +472,38 @@ end
 function XPurchaseConfigs.GetPayNormalAndSelectIcon(payKey)
     local config = XPurchaseConfigs.GetPurchasePayUiConfig(payKey)
     return config.NormalIcon, config.SelectIcon
-end
+end
+
+--######################## 类型声明（仅注解，不影响逻辑） ########################
+-- 礼包购买数据契约：由各采购/商店/通行证入口构造，传入 UiFashionDetail 等购买界面。
+-- 这是一张「可选字段并集」的鸭子类型——不同入口按需设置其中一部分字段，消费方按 nil 兜底。
+-- 字段命名以消费方 XUiFashionDetail 实际读取的为准。
+---@class XPurchaseBuyData
+--- ===== 通用字段（多数入口都会设置）=====
+---@field IsHave boolean 是否已拥有（任意奖励已拥有即算）
+---@field ItemIcon string 消耗货币图标路径
+---@field ItemCount number 实际价格（折后）。注：通行证入口会复用为按钮文本(string)
+---@field ConsumeId number 消耗货币ID
+---@field BuyCallBack fun() 单件购买回调
+---@field OriginCount number|nil 原价（仅有折扣时设置）
+---@field GiftRewardId table|nil 赠品列表（RewardGoodsList 中除第一项外的物品）
+---@field GroupBuyCallBack fun(fashionGroupId:number)|nil 套装组购买回调
+---@field QuickBuyCallBack fun()|nil 台服快捷购买回调
+---@field PurchaseLBUpdateCb fun(rewardList?:table)|nil 购买完成/返回时刷新外部列表
+---@field CloseByBuyCallBack boolean|nil 是否由 BuyCallBack 控制关闭界面
+--- ===== 采购礼包入口专属（CoatingLB / OpenPurchaseBuyUiByPurchasePackage）=====
+---@field PurchasePackageId number|nil 礼包ID
+---@field InitItemCount number|nil 初始价格（折前）
+---@field IsConvert boolean|nil 是否折价礼包（影响已拥有二次确认弹窗）
+---@field FashionLabel string|nil 皮肤礼包自定义提示文本
+---@field EndTime number|nil 礼包失效/下架的绝对服务器时间戳（TimeToInvalid 优先，否则 TimeToUnShelve；无时间限制为 nil）。仅采购礼包入口设置
+--- ===== 时装商店入口专属（GridFashionShop / GridCommanderDIYShop）=====
+---@field CurRewardGoods table|nil 当前奖励商品数据
+--- ===== 可肝（卡池）商店入口专属 =====
+--- 经 XUiGridGachaCanLiverShop -> XUiGridCommon:SetBuyDataCustomParams 注入合并进 buyData
+---@field FromGachaShop boolean|nil 是否来自卡池商店（true 时跳过莉莉丝特殊涂装跳转判断）
+---@field HideBuyBtn boolean|nil 是否隐藏购买按钮（卡池商店物品锁定时为 true）
+--- ===== 保留字段（消费方有读取，但当前全工程无写入点，恒为 nil）=====
+---@field LimitText string|nil 限购/限时提示文本
+--- 说明：XUiGridCommon 入口支持经 SetBuyDataCustomParams 注入任意附加字段，
+--- 故该入口下 buyData 的字段集是「开放」的；当前已知注入项仅 FromGachaShop / HideBuyBtn。

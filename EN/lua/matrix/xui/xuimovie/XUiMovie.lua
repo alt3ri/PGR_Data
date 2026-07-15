@@ -133,6 +133,10 @@ function XUiMovie:OnDestroy()
     end
     self.TimelineDic = {}
 
+    if self.PanelItem and self.PanelItem.OnDestroy then
+        self.PanelItem:OnDestroy()
+    end
+
     self:RemoveBtnNextCallback()
     XEventManager.DispatchEvent(XEventId.EVENT_MOVIE_UI_DESTROY)
     XEventManager.DispatchEvent(XEventId.EVENT_MOVIE_UI_CLOSED)
@@ -177,6 +181,10 @@ function XUiMovie:InitView()
     self.PanelCenterTip.gameObject:SetActiveEx(false)
     self.Panel3D = XUiPanelMovie3D.New(self.Panel3d, self)
     self.PanelText.gameObject:SetActiveEx(false)
+    if self.PanelItem then
+        local XUiMovieItemPanel = require("XUi/XUiMovie/XUiMovieItemPanel")
+        self.PanelItem = XUiMovieItemPanel.New(self.PanelItem, self)
+    end
     self:InitSpeedGroup()
 end
 
@@ -206,13 +214,13 @@ function XUiMovie:OnInitScene()
 end
 
 function XUiMovie:AddListener()
-    self:RegisterClickEvent(self.BtnSkip, self.OnClickBtnSkip)
+    self.BtnSkip.CallBack = function() self:OnClickBtnSkip() end
     self.BtnReview.CallBack = function() self:OnClickBtnReview() end
     self.BtnAuto.CallBack = function() self:OnClickBtnAuto() end
     self.BtnAutoing.CallBack = function() self:OnClickBtnAutoing() end
     self.BtnTurn.CallBack = function() self:OnClickBtnTurn() end
     self.BtnHide.CallBack = function() self:OnClickBtnHide() end
-    XUiHelper.RegisterClickEvent(self, self.BtnScreenSpeed, self.OnClickBtnScreenSpeed)
+    self.BtnScreenSpeed.CallBack = function() self:OnClickBtnScreenSpeed() end
     self.PanelMaskInputHandler:AddPointerClickListener(handler(self, self.OnClickBtnPause))
     self.PanelHideMaskInputHandler:AddPointerClickListener(handler(self, self.OnClickHideMask))
     self.TxtWords.onClick = function() self:OnBtnNextClick() end
@@ -220,10 +228,11 @@ function XUiMovie:AddListener()
     self.BtnNextInputHandler:AddPointerClickListener(function() self:OnBtnNextClick() end)
     self.BtnNextInputHandler:AddPressListener(function(pressTime) self:OnBtnNextPress(pressTime) end)
     self.BtnNextInputHandler:AddPointerUpListener(function() self:OnBtnNextPointerUp() end)
-    self:RegisterClickEvent(self.BtnBookmark, self.OnBtnBookmarkClick)
+    self.BtnBookmark.CallBack = function() self:OnBtnBookmarkClick() end
 end
 
 function XUiMovie:OnClickBtnSkip()
+    if self:_TryConsumeHide() then return end
     if self:SelectPanelShowing() then
         return
     end
@@ -246,6 +255,7 @@ function XUiMovie:OnClickBtnSkip()
 end
 
 function XUiMovie:OnClickBtnReview()
+    if self:_TryConsumeHide() then return end
     if self:SelectPanelShowing() then
         return
     end
@@ -254,16 +264,46 @@ function XUiMovie:OnClickBtnReview()
 end
 
 function XUiMovie:OnClickHideMask()
-    self.PanelHideMask.gameObject:SetActiveEx(false)
-    self.PanelDialog.gameObject:SetActiveEx(true)
-    self.TopBtnCanvasGroup.alpha = 1
+    self:ShowUi()
 end
 
 function XUiMovie:OnClickBtnHide()
-    self.PanelHideMask.gameObject:SetActiveEx(true)
-    self.PanelDialog.gameObject:SetActiveEx(false)
-    self.TopBtnCanvasGroup.alpha = 0
+    if self.IsHide then
+        self:ShowUi()
+    else
+        self:HideUi()
+    end
+end
+
+function XUiMovie:HideUi()
     self:ResetAutoPlay()
+    self.PanelHideMask.gameObject:SetActiveEx(true)
+    self.IsHidePanelDialog = self.PanelDialog.gameObject.activeSelf
+    if self.IsHidePanelDialog then
+        self.PanelDialog.gameObject:SetActiveEx(false)
+        self.PanelDialogRole.gameObject:SetActiveEx(false)
+    end
+    self.TopBtnCanvasGroup.alpha = 0
+    self.IsHide = true
+end
+
+function XUiMovie:ShowUi()
+    self.PanelHideMask.gameObject:SetActiveEx(false)
+    if self.IsHidePanelDialog then
+        self.PanelDialog.gameObject:SetActiveEx(true)
+        self.PanelDialogRole.gameObject:SetActiveEx(true)
+    end
+    self.TopBtnCanvasGroup.alpha = 1
+    self.IsHide = false
+end
+
+-- 隐藏态下消费一次点击：显示UI并返回true，非隐藏态返回false
+function XUiMovie:_TryConsumeHide()
+    if self.IsHide then
+        self:ShowUi()
+        return true
+    end
+    return false
 end
 
 function XUiMovie:OnClickBtnPause()
@@ -285,10 +325,12 @@ function XUiMovie:OnClickBtnPause()
 end
 
 function XUiMovie:OnClickBtnTurn()
+    if self:_TryConsumeHide() then return end
     XDataCenter.MovieManager.BackToLastAction()
 end
 
 function XUiMovie:OnClickBtnScreenSpeed()
+    if self:_TryConsumeHide() then return end
     local isShow = not self.IsShowSpeedList
     self:ShowSpeedList(isShow)
 end
@@ -556,6 +598,7 @@ end
 
 --============================================================== #region BtnAuto ==============================================================
 function XUiMovie:OnClickBtnAuto()
+    if self:_TryConsumeHide() then return end
     if self:SelectPanelShowing() or self:IsDestroy() or self.IsVideoPlaying then
         return
     end
@@ -589,6 +632,7 @@ function XUiMovie:OnClickBtnAuto()
 end
 
 function XUiMovie:OnClickBtnAutoing()
+    if self:_TryConsumeHide() then return end
     if self:SelectPanelShowing() or self.IsVideoPlaying then
         return
     end
@@ -726,9 +770,9 @@ function XUiMovie:DisAppearAllText()
 end
 
 -- 播放文本动画
-function XUiMovie:TextPlayAnim(id, time, pos, rotation, scale)
+function XUiMovie:TextPlayAnim(id, time, pos, rotation, scale, ease)
     self:InitUiPanelText()
-    return self.UiPanelText:TextPlayAnim(id, time, pos, rotation, scale)
+    return self.UiPanelText:TextPlayAnim(id, time, pos, rotation, scale, ease)
 end
 
 ---@return XUiPanelText
@@ -756,6 +800,7 @@ end
 
 -- 点击BtnNext回调
 function XUiMovie:OnBtnNextClick()
+    if self:_TryConsumeHide() then return end
     -- 等待动画播放完成
     if self.IsVideoPlaying and self.WaitVideoFinish then
         return
@@ -799,6 +844,7 @@ end
 --region BtnBookmark
 -- 点击书签按钮
 function XUiMovie:OnBtnBookmarkClick()
+    if self:_TryConsumeHide() then return end
     if self.IsVideoPlaying then
         return
     end
@@ -848,6 +894,69 @@ function XUiMovie:GetPanelFullScreenDialogNew()
         self.UiPanelFullScreenDialogNew = XUiPanelFullScreenDialogNew.New(self.PanelFullScreenDialogNew, self)
     end
     return self.UiPanelFullScreenDialogNew
+end
+
+--endregion
+
+--region FullScreenDialog ChannelOffset
+-- 老全屏对话(XMovieActionFullScreenDialog / XUiGridSingleDialog)的字幕色相偏移状态。
+--
+-- 为什么放在 XUiMovie 而不是某个 panel 类:
+--   1. 老全屏对话没有独立的 panel 类——XUiGridSingleDialog 只是"一行",
+--      真正的行池 FullScreenDialogGrids / FullScreenDialogUsingIndex 本来就挂在 UiRoot 上。
+--   2. 偏移状态要跨 action 存活:311(ChannelOffsetEnable)在一个 action 里启用,
+--      对白却由另一个 action(FullScreenDialog)显示;action 是临时对象存不住状态。
+--   3. 能同时被"对白行"和"各 action"够到的共享对象只有 UiRoot,所以状态顺着行池一起存这。
+-- 其余 Target(居中提示/PanelText/3D)都不碰 XUiMovie:居中提示/3D 直接取 addon,
+-- PanelText 的状态自包含在 XUiPanelText 里。仅全屏因缺 panel 类才落到这。
+-- 注:剧情 2.0 会重写全屏对话,届时这段应随之收敛进新的 panel 抽象。
+
+-- 设置偏移:仅存状态,作用于此后新建/复用的对白行,不追溯已显示行
+function XUiMovie:SetFullScreenChannelOffset(expansionScale, offsetMultiplier, r, g, b)
+    self.FullScreenChannelOffsetState = {
+        ExpansionScale = expansionScale,
+        OffsetMultiplier = offsetMultiplier,
+        R = r,
+        G = g,
+        B = b,
+    }
+end
+
+-- 关闭偏移:仅清状态,作用于此后新建/复用的对白行,不追溯已显示行
+function XUiMovie:ClearFullScreenChannelOffset()
+    self.FullScreenChannelOffsetState = nil
+end
+
+-- 把当前偏移状态应用到某行的 TxtWords(state 为 nil 时 Revert);XUiGridSingleDialog:Refresh 也会调
+function XUiMovie:ApplyFullScreenChannelOffsetTo(txtWords)
+    if XTool.UObjIsNil(txtWords) then
+        return
+    end
+    local addon = txtWords.gameObject:GetComponent("XChannelOffsetTextAddon")
+    if XTool.UObjIsNil(addon) then
+        return
+    end
+    local state = self.FullScreenChannelOffsetState
+    if not state then
+        addon:Revert()
+        return
+    end
+    if state.ExpansionScale ~= nil then
+        addon.ExpansionScale = state.ExpansionScale
+    end
+    if state.OffsetMultiplier ~= nil then
+        addon.ChannelOffsetMultiplier = state.OffsetMultiplier
+    end
+    if state.R ~= nil then
+        addon.ChannelOffsetR = state.R
+    end
+    if state.G ~= nil then
+        addon.ChannelOffsetG = state.G
+    end
+    if state.B ~= nil then
+        addon.ChannelOffsetB = state.B
+    end
+    addon:Apply()
 end
 
 --endregion

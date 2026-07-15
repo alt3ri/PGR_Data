@@ -14,6 +14,7 @@ end
 
 function XUiTheatre6BubbleTagDetail:OnStart(buildTagIds, target, keyWordIds)
     self._TagDetail:Refresh(buildTagIds, keyWordIds)
+    CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self._TagDetail.PanelTagDetail.transform)
     XUiHelper.ShowBubbleToTarget(self._TagDetail.PanelTagDetail.transform, target, self.Transform)
 end
 

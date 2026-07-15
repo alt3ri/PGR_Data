@@ -128,17 +128,18 @@ function XUiSceneSettingMain:OnBtnSceneClick()
     if self.PanelScene.gameObject.activeSelf then
         return
     end
-
+    
     self:PlayAnimation("DarkDisable")
     self.BtnGroup:DoSelectIndex(1)
-    self:RefreshPanelScene()
-    self.DynamicTableAssistant:SetActive(false)
-    self.ChiefAssistantGrid:Close()
-    self.UiModelParent.gameObject:SetActiveEx(self.PanelAssistant.gameObject.activeSelf)
 
     if self.PanelDropDownCtrl then
         self.PanelDropDownCtrl:Open()
     end
+    
+    self:RefreshPanelScene()
+    self.DynamicTableAssistant:SetActive(false)
+    self.ChiefAssistantGrid:Close()
+    self.UiModelParent.gameObject:SetActiveEx(self.PanelAssistant.gameObject.activeSelf)
 end
 
 function XUiSceneSettingMain:OnBtnSetFavClick()

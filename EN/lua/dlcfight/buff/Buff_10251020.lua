@@ -22,7 +22,18 @@ function XBuffScript10251020:OnLuaSkillStart(eventArgs)
         --self._level:RequestInsertSkill(self._npcUUID,self.TargetSkill)
         self._HitFlyController:AddSkillCount(self._stackCount)
         self._proxy:ApplyMagic(self._npcUUID,self._npcUUID,1025194)
+        self.ChanceCheck = 1
         --self:LogError("我真的击飞了吗")
+    end
+end
+
+function XBuffScript10251020:OnLuaSkillEnd(eventArgs)
+    ------------执行------------
+    if eventArgs._skillId ~= self._skillId then return end
+    if eventArgs._launcherUUID ~= self._npcUUID then return end
+    if self.ChanceCheck == 1 then
+        self._proxy:RemoveBuffByKindAndCount(self._npcUUID,1025194, 1)
+        self.ChanceCheck = 2
     end
 end
 

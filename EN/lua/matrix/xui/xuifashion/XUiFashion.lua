@@ -726,6 +726,10 @@ function XUiFashion:UpdateFashionIntro(fashionId)
 
     self.TxtIntroDesc.gameObject:SetActiveEx(not string.IsNilOrEmpty(content))
     self.TxtIntroDesc.text = content
+
+    if self.PaneInfo then
+        self.PaneInfo.verticalNormalizedPosition = 1
+    end
 end
 
 function XUiFashion:UpdateWeaponModel()

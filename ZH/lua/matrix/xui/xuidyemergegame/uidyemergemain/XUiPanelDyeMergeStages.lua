@@ -10,7 +10,7 @@ function XUiPanelDyeMergeStages:OnStart()
     self.GridStage.gameObject:SetActiveEx(false)
     ---@type XPool
     self._GridStagePool = XPool.New(handler(self, self._GetNewGridStage), handler(self, self._RecycleGridStage), false)
-    
+
     ---@type XUiInputSignalMediator
     self._InputMeditor = require("XUi/XUiCommon/XUiInputSignalMediator").New(self.GameObject, self, self._Control.EnumConst.UIInputTypes)
 
@@ -19,23 +19,33 @@ function XUiPanelDyeMergeStages:OnStart()
     self._StageGridClickHandler = function(stageId)
         self._InputMeditor:ReceiveInputSignal(self._Control.EnumConst.UIInputTypes.SelectStage, stageId)
     end
+
+    self._StaggerAnimTimerId = nil
+    self._StaggerAnimIndex = 0
+    self._IsFirstPlay = true
 end
 
 function XUiPanelDyeMergeStages:OnEnable()
     self._InputMeditor:StartInputSignalUpdateTimer()
+
+    if not self._IsFirstPlay then
+        self:_PlayStaggeredEnterAnim()
+    end
     
     self:RefreshStagesOnly()
 end
 
 function XUiPanelDyeMergeStages:OnDisable()
     self._InputMeditor:StopInputSignalUpdateTimer()
+    self:_StopStaggeredAnim()
 end
 
 --- 刷新当前关卡的状态，不改变数据从属
 function XUiPanelDyeMergeStages:RefreshStagesOnly()
     if not XTool.IsTableEmpty(self._StageGridList) then
+        local progressStageId = XMVCA.XDyeMergeGame:GetLatestProgressStageId()
         for i, v in pairs(self._StageGridList) do
-            v:RefreshOwnState()
+            v:RefreshOwnState(progressStageId)
         end
     end
 end
@@ -52,22 +62,23 @@ function XUiPanelDyeMergeStages:RefreshStagesByChapterId(chapterId)
             self._GridStagePool:ReturnItemToPool(grid)
         end
     end
-    
+
     local chapterCfg = XMVCA.XDyeMergeGame:GetTableDyeMergeChapterById(chapterId)
 
     if chapterCfg and not XTool.IsTableEmpty(chapterCfg.StageIds) then
         local stageIndex = 1
-        
+        local progressStageId = XMVCA.XDyeMergeGame:GetLatestProgressStageId()
+
         for _, stageId in pairs(chapterCfg.StageIds) do
             local rootUi = self["Stage" .. tostring(stageIndex)]
 
             if rootUi then
                 ---@type XUiGridDyeMergeStage
                 local grid = self._GridStagePool:GetItemFromPool()
-                
+
                 grid:SetTransformParent(rootUi)
                 grid:Open()
-                grid:Refresh(stageId, chapterId)
+                grid:Refresh(stageId, chapterId, progressStageId)
 
                 table.insert(self._StageGridList, grid)
                 self._StageId2GridDict[stageId] = grid
@@ -76,6 +87,8 @@ function XUiPanelDyeMergeStages:RefreshStagesByChapterId(chapterId)
             end
         end
     end
+
+    self:_PlayStaggeredEnterAnim()
 end
 
 function XUiPanelDyeMergeStages:_GetNewGridStage()
@@ -90,6 +103,67 @@ end
 function XUiPanelDyeMergeStages:_RecycleGridStage(grid)
     grid:Close()
 end
+
+--region 插帧动画
+
+function XUiPanelDyeMergeStages:_StopStaggeredAnim()
+    if self._StaggerAnimTimerId then
+        XScheduleManager.UnSchedule(self._StaggerAnimTimerId)
+        self._StaggerAnimTimerId = nil
+    end
+    if not XTool.IsTableEmpty(self._StageGridList) then
+        for i = 1, #self._StageGridList do
+            local grid = self._StageGridList[i]
+            if not grid.GameObject.activeSelf then
+                grid:Open()
+            end
+        end
+    end
+    self._StaggerAnimIndex = 0
+end
+
+function XUiPanelDyeMergeStages:_PlayStaggeredEnterAnim()
+    self:_StopStaggeredAnim()
+
+    local gridList = self._StageGridList
+    if XTool.IsTableEmpty(gridList) then
+        return
+    end
+
+    local count = #gridList
+
+    for i = 1, count do
+        gridList[i]:Close()
+    end
+
+    self._StaggerAnimIndex = 1
+
+    local interval = XMVCA.XDyeMergeGame:GetClientDyeMergeNumberByKey("UIMainStageEnterAnimInterval")
+    if not interval or interval <= 0 then
+        interval = 80
+    end
+
+    local delay = 0
+    if self._IsFirstPlay then
+        self._IsFirstPlay = false
+        delay = XMVCA.XDyeMergeGame:GetClientDyeMergeNumberByKey("UIMainStageFirstEnterDelay") or 0
+        if delay < 0 then
+            delay = 0
+        end
+    end
+
+    self._StaggerAnimTimerId = XScheduleManager.Schedule(function()
+        local index = self._StaggerAnimIndex
+        local grid = gridList[index]
+        if grid then
+            grid:Open()
+            grid:PlayAnimation("Enable")
+        end
+        self._StaggerAnimIndex = index + 1
+    end, interval, count, delay)
+end
+
+--endregion
 
 --region 信号输入处理
 

@@ -14,6 +14,13 @@ function XUiPanelBossInshotTeam:SetData(team, stageId, rootUi)
     self.StageId = stageId
     self.RootUi = rootUi
     self:Refresh()
+
+    local talentSlotGOs = { self.GridTalent1, self.GridTalent2 }
+    local maxSlots = XMVCA.XBossInshot:GetTalentSlotMax()
+
+    for i, slot in ipairs(talentSlotGOs) do
+        slot.gameObject:SetActiveEx(i <= maxSlots)
+    end
 end
 
 function XUiPanelBossInshotTeam:RegisterUiEvents()
@@ -48,7 +55,7 @@ function XUiPanelBossInshotTeam:Refresh()
     end
     
     -- 手动穿戴的天赋    
-    for i = 1, XEnumConst.BOSSINSHOT.WEAR_TALENT_MAX_CNT do
+    for i = 1, XMVCA.XBossInshot:GetTalentSlotMax() do
         local talentId = selTalentIds[i]
         local uiObj = self["GridTalent"..i]
         local isEquipTalent = talentId ~= nil and talentId ~= 0

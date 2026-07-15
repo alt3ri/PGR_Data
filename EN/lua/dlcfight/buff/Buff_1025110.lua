@@ -16,9 +16,9 @@ function XBuffScript1025110:Init()
     self.originAttrib1 = self._proxy:GetNpcGameplayAttribValue(self._uuid,ETheatre6AttribType.Stamina)
     self.originAttrib2 = self._proxy:GetNpcGameplayAttribValue(self._uuid,ETheatre6AttribType.WrestlePoint)
     self.originAttrib3 = self._proxy:GetNpcGameplayAttribValue(self._uuid,ETheatre6AttribType.OverClock)
-    XLog.Error(".....当前【体力】属性"..self.originAttrib1)
-    XLog.Error(".....当前【拼刀】属性"..self.originAttrib2)
-    XLog.Error(".....当前【超算】属性"..self.originAttrib3)
+    -- XLog.Error(".....当前【体力】属性"..self.originAttrib1)
+    -- XLog.Error(".....当前【拼刀】属性"..self.originAttrib2)
+    -- XLog.Error(".....当前【超算】属性"..self.originAttrib3)
 end
 
 return XBuffScript1025110

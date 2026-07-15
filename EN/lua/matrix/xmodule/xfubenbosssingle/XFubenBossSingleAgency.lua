@@ -66,6 +66,7 @@ end
 
 function XFubenBossSingleAgency:ResetAll()
     self._FightSettleDataCache = nil
+    self._NoWinDataOnBehaviorDoExitFight = nil
 end
 
 -- region Getter/Setter
@@ -834,8 +835,15 @@ function XFubenBossSingleAgency:GetBossSectionId(stageId)
     end
 end
 
+function XFubenBossSingleAgency:GetFightStageType()
+    return self._Model:GetFightStageType()
+end
+
 function XFubenBossSingleAgency:CheckPreFight(stage)
-    if self._Model:GetFightStageType() == XEnumConst.BossSingle.StageType.Challenge then
+    local stageType = self:GetFightStageType()
+    if stageType == XEnumConst.BossSingle.StageType.Challenge
+        or stageType == XEnumConst.BossSingle.StageType.Bestiary
+        or stageType == XEnumConst.BossSingle.StageType.Trial then
         return true
     end
 
@@ -899,8 +907,8 @@ function XFubenBossSingleAgency:PreFight(stage, teamId, isAssist, challengeCount
         -- 如果是普通区，保存编队到服务端
         local bossSingleStageType = self._Model:GetFightStageType()
         if bossSingleStageType == XEnumConst.BossSingle.StageType.Normal then
-            local bossId = self:GetBossSectionId(stage.StageId)
-            if bossId then
+            local sectionId = self:GetBossSectionId(stage.StageId)
+            if sectionId then
                 -- 提取角色ID列表（排除0和机器人）
                 local characterIds = {}
                 for _, entityId in ipairs(teamData) do
@@ -910,7 +918,7 @@ function XFubenBossSingleAgency:PreFight(stage, teamId, isAssist, challengeCount
                 end
                 
                 if #characterIds > 0 then
-                    self:SaveNormalStageTeamInfo(bossId, characterIds)
+                    self:SaveNormalStageTeamInfo(sectionId, characterIds)
                 end
             end
         end
@@ -974,7 +982,13 @@ function XFubenBossSingleAgency:_ShowReward(winData)
         self._DebugWinData = winData
     end
 
-    self._FightSettleDataCache = winData
+    if self._NoWinDataOnBehaviorDoExitFight then
+        self._NoWinDataOnBehaviorDoExitFight = nil
+        -- 说明战斗退出执行在结算请求回调完成前就执行了，此时需要手动打开结算界面
+        self:_OpenRewardUi(winData)
+    else
+        self._FightSettleDataCache = winData
+    end
 end
 
 function XFubenBossSingleAgency:OnBehaviorDoExitFight(event, args)
@@ -996,6 +1010,12 @@ function XFubenBossSingleAgency:OnBehaviorDoExitFight(event, args)
 end
 
 function XFubenBossSingleAgency:_OpenRewardUi(winData)
+    if not winData then
+        -- 没有结算数据，可能是结算失败，也可能是结算请求还没回调，不向下执行并记录
+        self._NoWinDataOnBehaviorDoExitFight = true
+        return
+    end
+    
     XMVCA.XFuben:SetMouseVisible()
     
     if XMVCA.XFuben:CheckHasFlopReward(winData) then

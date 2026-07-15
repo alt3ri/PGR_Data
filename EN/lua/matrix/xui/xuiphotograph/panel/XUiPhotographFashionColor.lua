@@ -31,16 +31,26 @@ function XUiPhotographFashionColor:RefreshColorDot(colorIds)
         self.TxtTipTitle.gameObject:SetActiveEx(false)
         return
     end
+
+    local ownedColorIds = {}
+    for _, colorId in ipairs(colorIds) do
+        if XMVCA.XFashion:IsFashionColorHas(self.CurFashionId, colorId) then
+            table.insert(ownedColorIds, colorId)
+        end
+    end
+
+    if #ownedColorIds <= 0 then
+        self:Close()
+        self.TxtTipTitle.gameObject:SetActiveEx(false)
+        return
+    end
+
     self.TxtTipTitle.gameObject:SetActiveEx(true)
     self:Open()
 
     local tempColorIds = { 0 }
-    for index, colorId in ipairs(colorIds) do
-          if not XMVCA.XFashion:IsFashionColorHas(self.CurFashionId, colorId) then
-                goto continue
-            end
-            table.insert(tempColorIds, colorId)
-            ::continue::
+    for _, colorId in ipairs(ownedColorIds) do
+        table.insert(tempColorIds, colorId)
     end
     local btnGroup = {}
     XUiHelper.RefreshCustomizedList(self.Transform, self.BtnDotNormal, #tempColorIds, function(index, go)

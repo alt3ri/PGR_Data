@@ -15,8 +15,14 @@ function XUiPassportTips:OnStart(rewardGoodsList, title, desc, closeCb, sureCb)
         self.TxtDesc.text = desc
     end
     self.OkCallback = sureCb
-    self.CancelCallback = closeCb
+    self.CloseCb = closeCb
     self:Refresh(rewardGoodsList)
+end
+
+function XUiPassportTips:OnDestroy()
+    if self.CloseCb then
+        self.CloseCb()
+    end
 end
 
 function XUiPassportTips:OnEnable()

@@ -10,7 +10,7 @@ function XRedPointConditionArchiveMonsterTag.GetSubEvents()
 end
 
 function XRedPointConditionArchiveMonsterTag.Check(monsterId)
-    return XMVCA.XArchive:IsMonsterHaveNewTagById(monsterId)
+    return XMVCA.XArchive.MonsterArchiveAgency:IsMonsterHaveNewTagById(monsterId)
 end
 
 return XRedPointConditionArchiveMonsterTag

@@ -81,6 +81,7 @@ end
 
 function XUiPanelTheatre6SettlementDetail:OnBtnNextClick()
     self.Parent:ShowPanelSave()
+    self.Parent:PlayAnimationWithMask("PanelSaveTab")
 end
 
 return XUiPanelTheatre6SettlementDetail

@@ -12,11 +12,16 @@ function XBuffScript10265070:ScriptInit(isGainControl) --初始化
     self._critController = self:GetNpc():GetCritController()
 end
 
-function XBuffScript10265070:OnLuaSkillStart(eventArgs)
+function XBuffScript10265070:OnLuaSkillEnd(eventArgs)
     ------------执行------------
-    if eventArgs._skillId ~= self._skillId then return end
     if eventArgs._launcherUUID ~= self._npcUUID then return end
+    if self.SkillCount == 1 then
+        self.SkillCount = 0
+        self._proxy:RemoveBuffByKindAndCount(self._npcUUID, self.BuffId, 1)
+    end
+    if eventArgs._skillId ~= self._skillId then return end
     self._proxy:ApplyMagic(self._npcUUID, self._npcUUID, self.BuffId, 1)
+    self.SkillCount = 1
 end
 
 return XBuffScript10265070

@@ -54,19 +54,48 @@ function XUiPanelTheatre6BossAttrDetail:ShowAttribute()
 end
 
 function XUiPanelTheatre6BossAttrDetail:ShowSkill()
-    local skillCount = self._Control:GetSlotCapacity(XEnumConst.Theatre6.SkillType.Active)
-    XUiHelper.RefreshCustomizedList(self.GridSkill.parent, self.GridSkill, skillCount, function(i, go)
-        local skillId = self._MonsterConfig.SkillIds[i]
+    -- local skillCount = self._Control:GetSlotCapacity(XEnumConst.Theatre6.SkillType.Active)
+    -- XLog.Error(self._MonsterConfig.SkillIds, "技能列表")
+    local sortedSkillIds = self:SortBossSkillBySlotType()
+    self.GridSkillUis = {}
+    XUiHelper.RefreshCustomizedList(self.GridSkill.parent, self.GridSkill, #sortedSkillIds, function(i, go)
+        local skillId = sortedSkillIds[i]
         local isExistSkill = skillId ~= nil
         local uiObject = {}
         XUiHelper.InitUiClass(uiObject, go)
         uiObject.UiTheatre6GridSkill.gameObject:SetActiveEx(isExistSkill)
+        local isLast = i == #sortedSkillIds
+        local isActiveSkillLast = self._Control:GetSlotMaxLimit(XEnumConst.Theatre6.SlotType.Active) == i
+        uiObject.ImgIconArrow.gameObject:SetActiveEx(not isLast and not isActiveSkillLast)
         if isExistSkill then
-            ---@type XUiGridTheatre6Skill
-            local gridSkill = require("XUi/XUiTheatre6/Character/Grid/XUiGridTheatre6Skill").New(uiObject.UiTheatre6GridSkill, self)
-            gridSkill:UpdateBossSkill(skillId)
+            if not self.GridSkillUis[i] then
+                ---@type XUiGridTheatre6Skill
+                self.GridSkillUis[i] = require("XUi/XUiTheatre6/Character/Grid/XUiGridTheatre6Skill").New(uiObject.UiTheatre6GridSkill, self)
+            end
+            self.GridSkillUis[i]:Update(skillId,true)
         end
     end)
+end
+
+function XUiPanelTheatre6BossAttrDetail:SortBossSkillBySlotType()
+    local skillIds = {}
+    for _, skillId in ipairs(self._MonsterConfig.SkillIds) do
+        local slotType = self._Control:GetSkillInstallSlots(skillId)[1]
+        skillIds[slotType] = skillIds[slotType] or {}
+        table.insert(skillIds[slotType], skillId)
+    end
+
+    local sortedSkillIds = {}
+    local sortGroup = {XEnumConst.Theatre6.SlotType.Active, XEnumConst.Theatre6.SlotType.Insert, XEnumConst.Theatre6.SlotType.Special}
+    for _, slotType in ipairs(sortGroup) do
+        local ids = skillIds[slotType]
+        if ids then
+            for _, id in ipairs(ids) do
+                table.insert(sortedSkillIds, id)
+            end
+        end
+    end
+    return sortedSkillIds
 end
 
 function XUiPanelTheatre6BossAttrDetail:ShowRelic()
@@ -97,15 +126,18 @@ function XUiPanelTheatre6BossAttrDetail:ShowRelic()
     local totalCount = #attrPacks
     local showCount = math.min(self._MaxRelicCount, totalCount)
     local extraCount = totalCount - self._MaxRelicCount
+    self.GridRelicUis = {}
     XUiHelper.RefreshCustomizedList(self.GridRelic.parent, self.GridRelic, showCount, function(i, go)
-        ---@type XUiGridTheatre6Relic
-        local grid = require("XUi/XUiTheatre6/Character/Grid/XUiGridTheatre6Relic").New(go, self)
-        local relicId = attrPacks[i].Id
-        grid:SetRelic(relicId, attrPackNums[relicId])
-        if i == showCount and extraCount > 0 then
-            grid:ShowMore(extraCount)
+        if not self.GridRelicUis[i] then
+             ---@type XUiGridTheatre6Relic
+            self.GridRelicUis[i] = require("XUi/XUiTheatre6/Character/Grid/XUiGridTheatre6Relic").New(go, self)
         end
-        grid:SetClickCb(function()
+        local relicId = attrPacks[i].Id
+        self.GridRelicUis[i]:SetRelic(relicId, attrPackNums[relicId])
+        if i == showCount and extraCount > 0 then
+            self.GridRelicUis[i]:ShowMore(extraCount)
+        end
+        self.GridRelicUis[i]:SetClickCb(function()
             local ids, counts = {}, {}
             for k, v in ipairs(attrPacks) do
                 table.insert(ids, v.Id)

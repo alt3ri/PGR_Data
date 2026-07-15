@@ -50,15 +50,14 @@ local XLifuTeachingBuildingState = XClass(BaseState, "XLifuTeachingBuildingState
 function XLifuTeachingBuildingState:InitStateConfig()
     self.StateConfig = {}
     self.StateConfig.StateEnum = StateEnum.TeachingBuilding
-    self.StateConfig.StateAnim = "Drama_Stand_15"
+    self.StateConfig.StateAnim = "Drama_Stand_08"
     self.StateConfig.TriggerId = 1
-    self.StateConfig.ShowOptionId = 1
+    self.StateConfig.ShowOptionId = 6
     self.StateConfig.RegisterWorldEventList = {
         EWorldEvent.ActorTrigger,
         EWorldEvent.NpcInteractStart,
         EWorldEvent.NpcInteractComplete,
     }
-
 end
 
 function XLifuTeachingBuildingState:OnStateEnter(lastStateEnum)
@@ -66,16 +65,14 @@ function XLifuTeachingBuildingState:OnStateEnter(lastStateEnum)
     self.StateMachine:SetDataBoard(DataBoardKey.TeachingBuilding, 0)
 end
 
+
+
 function XLifuTeachingBuildingState:OnActorTrigger(eventArgs)
     BaseState.OnActorTrigger(self, eventArgs)
-    if eventArgs.TriggerState == ETriggerState.Enter and eventArgs.TriggerHolderUUID == self._uuid  then
-        self.StateMachine:SetDataBoard(DataBoardKey.Bench, 1)
-        self._proxy:NpcNavigateTo(self._uuid, self._proxy:GetNpcPosition(self._proxy:GetLocalPlayerNpcId()),2)
-
-        if self._proxy:CheckNpcDistance(self._uuid,self._proxy:GetLocalPlayerNpcId(),0.5) then
-            self._proxy:PlayDrama("Drama_3014_001")
-            self._proxy:NpcStopMove(self._uuid)
-        end
+    if eventArgs.TriggerState == ETriggerState.Enter 
+            and eventArgs.TriggerHolderUUID == self._uuid
+    then
+        self.StateMachine:SetDataBoard(DataBoardKey.TeachingBuilding, 1)
     end
 end
 --endregion
@@ -84,31 +81,135 @@ end
 --region 状态-丽芙-长椅
 ---@class XLifuBenchState: XEcologyConstructAIBaseState
 local XLifuBenchState = XClass(BaseState, "XLifuBenchState")
-
+---子状态枚举
+local BenchSubStateEnum = {
+    None = 0,
+    WalkToSeat = 1,
+    Sitting = 2,
+    Interacting = 3,
+}
 ---数据配置
 ---@overload
 function XLifuBenchState:InitStateConfig()
     self.StateConfig = {}
     self.StateConfig.StateEnum = StateEnum.Bench
-    self.StateConfig.StateAnim = "Drama_Stand_06"
+    self.StateConfig.StateAnim = "Drama_Snuggle2_Loop"
     self.StateConfig.TriggerId = 1
     self.StateConfig.ShowOptionId = 2
     self.StateConfig.RegisterWorldEventList = {
         EWorldEvent.ActorTrigger,
         EWorldEvent.NpcInteractStart,
         EWorldEvent.NpcInteractComplete,
+
+    }
+    self.CurrentSubState = BenchSubStateEnum.None
+    self.IsPlayerInteracted = false
+    self.SubStateDelayAnimTimerId = nil
+    self.SunStateDelayAnimCommandList = {}
+    self.StateConfig.BubbleDict = {
+        [EEcologyBubbleType.Around] = {
+            Name = "301401",
+            TriggerDistance = 2.5,
+            TriggerCD = 10,
+            LoopTime = 5,
+        },
     }
 end
 
 function XLifuBenchState:OnStateEnter(lastStateEnum)
     BaseState.OnStateEnter(self, lastStateEnum)
     self.StateMachine:SetDataBoard(DataBoardKey.Bench, 0)
+    self._proxy:SetNpcRotation(self._uuid, {x=0, y=90, z=0})
+    self:SwitchSubState(BenchSubStateEnum.WalkToSeat)
 end
 
 function XLifuBenchState:OnActorTrigger(eventArgs)
-    BaseState.OnActorTrigger(self, eventArgs)
     if eventArgs.TriggerState == ETriggerState.Enter and eventArgs.TriggerHolderUUID == self._uuid  then
         self.StateMachine:SetDataBoard(DataBoardKey.Bench, 1)
+    end
+end
+
+function XLifuBenchState:OnStateLeave(nextStateEnum)
+    BaseState.OnStateLeave(self, nextStateEnum)
+    self:SwitchSubState(BenchSubStateEnum.None)
+end
+
+function XLifuBenchState:SwitchSubState(subState)
+    if self.CurrentSubState == subState then
+        return
+    end
+    -- 切换子状态前根据当前状态执行逻辑
+    if self.CurrentSubState == BenchSubStateEnum.WalkToSeat then
+        -- 退出WalkToSeat要看下一个进入，如果是None状态，要播放退出动画，其他的不做处理
+        if subState == BenchSubStateEnum.None then
+            self:AddDelayAnimCommand("Drama_Snuggle2_End", 0)
+        end
+    elseif self.CurrentSubState == BenchSubStateEnum.Sitting then
+        self:AddDelayAnimCommand("Drama_Snuggle3", 0)
+        if subState == BenchSubStateEnum.None then
+            self:AddDelayAnimCommand("Drama_Snuggle2_End", 0)
+        end
+    elseif self.CurrentSubState == BenchSubStateEnum.Interacting then
+        if subState == BenchSubStateEnum.None then
+            self:AddDelayAnimCommand("Drama_Snuggle3", 0)
+        elseif subState == BenchSubStateEnum.Sitting then
+                self:AddDelayAnimCommand("Drama_Snuggle_End", 0)
+        end
+    end
+    self.CurrentSubState = subState
+
+    -- 切换子状态后根据切换的状态执行逻辑
+    if subState == BenchSubStateEnum.WalkToSeat then
+        -- 进入走到座位状态时，播放连贯动作，然后转入Sit状态
+        self:AddDelayAnimCommand("Drama_Snuggle2_Start", 0)
+        self.SubStateDelayAnimTimerId = self._proxy:AddTimerTask(2.7, function()
+            self.SubStateDelayAnimTimerId = nil
+            self:SwitchSubState(BenchSubStateEnum.Sitting)
+        end)
+    elseif subState == BenchSubStateEnum.Sitting then
+        self:AddDelayAnimCommand("Drama_Snuggle2_Loop", 0)
+    elseif subState == BenchSubStateEnum.Interacting then
+        self:AddDelayAnimCommand("Drama_Snuggle_Loop", 3.833)
+    elseif subState == BenchSubStateEnum.None then
+        self.IsPlayerInteracted = false
+        self.SubStateDelayAnimTimerId = nil
+        self.SunStateDelayAnimCommandList = {}
+    end
+end
+
+---播放延迟动画指令，用AddTimer做动画衔接
+function XLifuBenchState:AddDelayAnimCommand(animName, delayTimeSeconds)
+    if delayTimeSeconds and delayTimeSeconds > 0 then
+        -- 不论什么动画，都进行延迟表现的动画timer结束
+        if self.SubStateDelayAnimTimerId then
+            self._proxy:RemoveTimerTask(self.SubStateDelayAnimTimerId)
+            self.SubStateDelayAnimTimerId = nil
+        end
+        self.SubStateDelayAnimTimerId = self._proxy:AddTimerTask(delayTimeSeconds, function()
+            self.SubStateDelayAnimTimerId = nil
+            self._proxy:PlayNpcCustomPerformAnim(self._uuid, animName, 0, 0, false, {x=0,y=0,z=0}, true)
+        end)
+    else
+        self._proxy:PlayNpcCustomPerformAnim(self._uuid, animName, 0, 0, false, {x=0,y=0,z=0}, true)
+    end
+end
+
+
+function XLifuBenchState:OnNpcInteractStart(eventArgs)
+    if eventArgs.TargetId ~= self._uuid then
+        return
+    end
+    if self.CurrentSubState == BenchSubStateEnum.Sitting then
+        self:SwitchSubState(BenchSubStateEnum.Interacting)
+    end
+end
+
+function XLifuBenchState:OnNpcInteractComplete(eventArgs)
+    if eventArgs.TargetId ~= self._uuid then
+        return
+    end
+    if self.CurrentSubState == BenchSubStateEnum.Interacting then
+        self:SwitchSubState(BenchSubStateEnum.Sitting)
     end
 end
 
@@ -152,12 +253,20 @@ end
 ---@class XLifuInClassState: XEcologyConstructAIBaseState
 local XLifuInClassState = XClass(BaseState, "XLifuInClassState")
 
+---子状态枚举
+local SubStateEnum = {
+    None = 0,
+    WalkToSeat = 1,
+    Sleeping = 2,
+    Interacting = 3,
+}
+
 ---数据配置
 ---@overload
 function XLifuInClassState:InitStateConfig()
     self.StateConfig = {}
     self.StateConfig.StateEnum = StateEnum.InClass
-    self.StateConfig.StateAnim = "Drama_Stand_07"
+    self.StateConfig.StateLoopAnim = "Drama_Sleep_01_Loop"
     self.StateConfig.TriggerId = 1
     self.StateConfig.ShowOptionId = 4
     self.StateConfig.RegisterWorldEventList = {
@@ -165,11 +274,97 @@ function XLifuInClassState:InitStateConfig()
         EWorldEvent.NpcInteractStart,
         EWorldEvent.NpcInteractComplete,
     }
+    self.CurrentSubState = SubStateEnum.None
+    self.IsPlayerInteracted = false
+    self.SubStateDelayAnimTimerId = nil
+    self.SunStateDelayAnimCommandList = {}
 end
 
 function XLifuInClassState:OnStateEnter(lastStateEnum)
     BaseState.OnStateEnter(self, lastStateEnum)
     self.StateMachine:SetDataBoard(DataBoardKey.InClass, 0)
+    self._proxy:SetNpcRotation(self._uuid, {x=0, y=180, z=0})
+    self:SwitchSubState(SubStateEnum.WalkToSeat)
+end
+
+function XLifuInClassState:OnStateLeave(nextStateEnum)
+    BaseState.OnStateLeave(self, nextStateEnum)
+    self:SwitchSubState(SubStateEnum.None)
+end
+
+function XLifuInClassState:SwitchSubState(subState)
+    if self.CurrentSubState == subState then
+        return
+    end 
+    -- 切换子状态前根据当前状态执行逻辑
+    if self.CurrentSubState == SubStateEnum.WalkToSeat then
+        -- 退出WalkToSeat要看下一个进入，如果是None状态，要播放退出动画，其他的不做处理
+        if subState == SubStateEnum.None then
+            self:AddDelayAnimCommand("Drama_ClassroomSit_End", 0)
+        end
+    elseif self.CurrentSubState == SubStateEnum.Sleeping then
+        self:AddDelayAnimCommand("Drama_Sleep_01_End", 0)
+    elseif self.CurrentSubState == SubStateEnum.Interacting then
+        if subState == SubStateEnum.None then
+            self:AddDelayAnimCommand("Drama_ClassroomSit_End", 0)
+        end
+    end
+
+    self.CurrentSubState = subState
+    
+    -- 切换子状态后根据切换的状态执行逻辑
+    if subState == SubStateEnum.WalkToSeat then
+        -- 进入走到座位状态时，播放连贯动作，然后转入Sit状态
+        self:AddDelayAnimCommand("Drama_ClassroomSit_Start", 0)
+        self.SubStateDelayAnimTimerId = self._proxy:AddTimerTask(2.1, function()
+            self.SubStateDelayAnimTimerId = nil
+            self:SwitchSubState(SubStateEnum.Sleeping)
+        end)
+    elseif subState == SubStateEnum.Sleeping then
+        self:AddDelayAnimCommand("Drama_Sleep_01_Start", 0)
+        self:AddDelayAnimCommand("Drama_Sleep_01_Loop", 2.667)
+    elseif subState == SubStateEnum.Interacting then
+        self:AddDelayAnimCommand("Drama_ClassroomSit_Loop", 6.5)
+    elseif subState == SubStateEnum.None then
+        self.IsPlayerInteracted = false
+        self.SubStateDelayAnimTimerId = nil
+        self.SunStateDelayAnimCommandList = {}
+    end
+end
+
+---播放延迟动画指令，用AddTimer做动画衔接
+function XLifuInClassState:AddDelayAnimCommand(animName, delayTimeSeconds)
+    if delayTimeSeconds and delayTimeSeconds > 0 then
+        -- 不论什么动画，都进行延迟表现的动画timer结束
+        if self.SubStateDelayAnimTimerId then
+            self._proxy:RemoveTimerTask(self.SubStateDelayAnimTimerId)
+            self.SubStateDelayAnimTimerId = nil
+        end
+        self.SubStateDelayAnimTimerId = self._proxy:AddTimerTask(delayTimeSeconds, function()
+            self.SubStateDelayAnimTimerId = nil
+            self._proxy:PlayNpcCustomPerformAnim(self._uuid, animName, 0, 0, false, {x=0,y=0,z=0}, true)
+        end)
+    else
+        self._proxy:PlayNpcCustomPerformAnim(self._uuid, animName, 0, 0, false, {x=0,y=0,z=0}, true)
+    end
+end
+
+function XLifuInClassState:OnNpcInteractComplete(eventArgs)
+    -- 被交互的不是自己不走逻辑
+    if eventArgs.TargetId ~= self._uuid then
+        return
+    end
+    if self.CurrentSubState == SubStateEnum.Sleeping then
+        self:SwitchSubState(SubStateEnum.Interacting)
+        self._proxy:SetNpcInteractOptionActive(self._placeId, self.StateConfig.ShowOptionId, false)
+    end
+end
+
+function XLifuInClassState:OnActorTrigger(eventArgs)
+    BaseState.OnActorTrigger(self, eventArgs)
+    if eventArgs.TriggerState == ETriggerState.Enter and eventArgs.TriggerHolderUUID == self._uuid  then
+        self.StateMachine:SetDataBoard(DataBoardKey.InClass, 1)
+    end
 end
 --endregion
 
@@ -218,16 +413,16 @@ function XCharLifuEcology:RegisterMachineStateTransition()
     -- 其他状态到寻路状态
     self:RegisterInFindPathStateTransition(StateEnum.TeachingBuilding, function()
         return self._stateMachine:CheckDataBoard(DataBoardKey.TeachingBuilding, 1) and StateEnum.Auditorium or StateEnum.Bench
-    end, 5, 1)
+    end, 30, 1)
     self:RegisterInFindPathStateTransition(StateEnum.Bench, function()
         return self._stateMachine:CheckDataBoard(DataBoardKey.Bench, 1) and StateEnum.Auditorium or StateEnum.InClass
-    end, 5, 1)
+    end, 30, 1)
     self:RegisterInFindPathStateTransition(StateEnum.InClass, function()
-        return self._stateMachine:CheckDataBoard(DataBoardKey.InClass, 1) and StateEnum.Auditorium or StateEnum.TeachingBuilding
-    end, 5, 1)
+        return self._stateMachine:CheckDataBoard(DataBoardKey.InClass, 1) and StateEnum.TeachingBuilding or StateEnum.Auditorium
+    end, 30, 1)
     self:RegisterInFindPathStateTransition(StateEnum.Auditorium, function()
-        return self._stateMachine:CheckDataBoard(DataBoardKey.Auditorium, 1) and StateEnum.TeachingBuilding or StateEnum.InClass
-    end, 5, 1)
+        return self._stateMachine:CheckDataBoard(DataBoardKey.Auditorium, 1) and StateEnum.InClass or StateEnum.TeachingBuilding
+    end, 30, 1)
     
     -- 寻路状态到其他状态
     self:RegisterOutFindPathStateTransition(StateEnum.TeachingBuilding)

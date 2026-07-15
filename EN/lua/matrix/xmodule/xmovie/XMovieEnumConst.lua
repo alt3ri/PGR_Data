@@ -43,12 +43,14 @@ local XMovieEnumConst = {
         LEFT_TITLE_DISAPPEAR = 108,     -- 左边标题消失
         TEXT_APPEAR = 109,              -- 文本出现
         TEXT_DISAPPEAR = 110,           -- 文本消失
+        BG_SCALE_ANIM = 116,            -- 背景缩放动画（绕中心点 + DoTween）
 
         ACTOR_APPEAR = 201,             -- 演员出现
         ACTOR_DISAPPEAR = 202,          -- 演员消失
         ACTOR_SHIFT = 203,              -- 演员位移
         ACTOR_CHANGE_FACE = 204,        -- 演员切换表情
         ACTOR_CHANGE_ALPHA = 205,       -- 演员切换背景
+        ACTOR_SCALE = 206,              -- 演员立绘缩放
         SPINE_APPEAR = 211,             -- Spine出现
         SPINE_DISAPPEAR = 212,          -- Spine消失
         SPINE_SHIFT = 213,              -- Spine位移
@@ -56,14 +58,20 @@ local XMovieEnumConst = {
         SPINE_ANIMATION_PLAY = 215,     -- Spine动画播放
         SPINE_CHANGE_BODY_ANIM = 216,   -- Spine切换Body动画
         SPINE_CHANGE_ROLE_ANIM = 217,   -- Spine切换Role动画
-        
+        ITEM_ICON_SET = 218,            -- 物品Icon设置
+        ITEM_ICON_MOVE = 219,           -- 物品Icon位移
+        ITEM_ICON_REMOVE = 220,         -- 物品Icon销毁
+
         DIALOG = 301,                   -- 对话
         SELECTION = 302,                -- 选择分支对话
         SELECTION_DELAY_SKIP = 303,     -- 选择分支延迟跳转
         AUTO_SKIP = 308,                -- 自动跳转节点
+        CHANNEL_OFFSET_ENABLE = 311,    -- 字幕色相偏移启用
+        CHANNEL_OFFSET_DISABLE = 312,   -- 字幕色相偏移停用
 
         AUDIO_PLAY = 401,               -- 音频播放
         AUDIO_INTERRUPT = 402,          -- 音频中断
+        AUTO_CV_PLAY = 403,             -- 配音播放（按玩家配音语种自动切换）
         
         EFFECT_PLAY = 501,              -- 特效播放
         EFFECT_UNLOAD = 505,            -- 特效卸载
@@ -72,6 +80,7 @@ local XMovieEnumConst = {
         INSERT_PANEL_SHOW = 509,        -- 插入分屏显示
         INSERT_PANEL_HIDE = 510,        -- 插入分屏隐藏
         ANIMATION_PLAY = 502,           -- 动画播放
+        SET_BLUR = 513,                 -- 模糊设置（立绘/背景）
     },
     -- 特效类型
     EFFECT_TYPE = {
@@ -136,12 +145,14 @@ function XMovieEnumConst:GetActionClass(actionType)
         [113] = require("XMovieActions/XMovieActionBgRotate"), --背景旋转
         [114] = require("XMovieActions/XMovieActionBgGroup"), --背景组
         [115] = require("XMovieActions/XMovieActionBgShake"), --抖动
+        [116] = require("XMovieActions/XMovieActionBgScaleAnim"), --背景缩放动画（绕中心点 + DoTween）
 
         [201] = require("XMovieActions/XMovieActionActorAppear"), --演员出现
         [202] = require("XMovieActions/XMovieActionActorDisappear"), --演员消失
         [203] = require("XMovieActions/XMovieActionActorShift"), --演员位移
         [204] = require("XMovieActions/XMovieActionActorChangeFace"), --演员表情
         [205] = require("XMovieActions/XMovieActionActorAlphaChange"), --演员透明度变化
+        [206] = require("XMovieActions/XMovieActionActorScale"), --演员立绘缩放
         [211] = require("XMovieActions/XMovieActionSpineActorAppear"), --spine演员出现
         [212] = require("XMovieActions/XMovieActionSpineActorDisappear"), --spine演员消失
         [213] = require("XMovieActions/XMovieActionSpineActorShift"), --spine演员位移
@@ -149,6 +160,9 @@ function XMovieEnumConst:GetActionClass(actionType)
         [215] = require("XMovieActions/XMovieActionSpineActorAnimationPlay"), --spine演员预置的UI动画播放
         [216] = require("XMovieActions/XMovieActionSpineActorChangeBodyAnim"), --spine演员切换Body动画
         [217] = require("XMovieActions/XMovieActionSpineActorChangeRoleAnim"), --spine演员切换Role动画
+        [218] = require("XMovieActions/XMovieActionItemIconSet"), --物品Icon设置
+        [219] = require("XMovieActions/XMovieActionItemIconMove"), --物品Icon位移
+        [220] = require("XMovieActions/XMovieActionItemIconRemove"), --物品Icon销毁
 
         [301] = require("XMovieActions/XMovieActionDialog"), --普通对话
         [302] = require("XMovieActions/XMovieActionSelection"), --选择分支对话
@@ -160,9 +174,12 @@ function XMovieEnumConst:GetActionClass(actionType)
         [308] = require("XMovieActions/XMovieActionAutoSkip"), --自动跳转节点
         [309] = require("XMovieActions/XMovieActionAddReview"), --增加回顾记录
         [310] = require("XMovieActions/XMovieActionFullScreenDialogNew"), -- 新全屏字幕
+        [311] = require("XMovieActions/XMovieActionChannelOffsetEnable"), --字幕色相偏移启用
+        [312] = require("XMovieActions/XMovieActionChannelOffsetDisable"), --字幕色相偏移停用
 
         [401] = require("XMovieActions/XMovieActionSoundPlay"), --BGM/CV/音效 播放
         [402] = require("XMovieActions/XMovieActionAudioInterrupt"), --BGM/CV/音效 打断
+        [403] = require("XMovieActions/XMovieActionAutoCvPlay"), --配音播放（按玩家配音语种自动切换）
 
         [501] = require("XMovieActions/XMovieActionEffectPlay"), --特效播放
         [502] = require("XMovieActions/XMovieActionAnimationPlay"), --UI动画播放
@@ -176,6 +193,7 @@ function XMovieEnumConst:GetActionClass(actionType)
         [510] = require("XMovieActions/XMovieActionHideInsertPanel"), --隐藏插入分屏
         [511] = require("XMovieActions/XMovieActionEffectMove"), --特效位移
         [512] = require("XMovieActions/XMovieActionVideoPlayNew"), --视频播放(UiMovie内置视频播放，可叠加UiMovie的其他UI表现)
+        [513] = require("XMovieActions/XMovieActionSetBlur"), --模糊设置（立绘/背景）
 
         [601] = require("XMovieActions/XMovieActionStaff"), --staff职员表
 

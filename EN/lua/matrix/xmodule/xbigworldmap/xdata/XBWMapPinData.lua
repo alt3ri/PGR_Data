@@ -46,7 +46,7 @@ function XBWMapPinData:UpdateData(worldId, levelId, config, textConfig)
     self.ConditionId = config.ConditionId or 0
     self.AiMemoryGroupId = config.AiMemoryGroupId or 0
     self.ControlledByMapSwitch = config.ControlledByMapSwitch or 0
-    self.IsInteract = config.CanInteract or 0
+    self.IsInteract = config.CanInteract or false
 
     self:UpdateOther()
 end

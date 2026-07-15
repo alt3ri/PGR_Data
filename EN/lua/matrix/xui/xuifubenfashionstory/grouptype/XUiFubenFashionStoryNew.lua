@@ -1,6 +1,7 @@
 local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
-local XUiFubenFashionStoryNew=XLuaUiManager.Register(XLuaUi,"UiFubenFashionStoryNew")
-local XUiGridFashionStoryGroup=require('XUi/XUiFubenFashionStory/GroupType/XUiGridFashionStoryGroup')
+local XUiGridFashionStoryGroup = require("XUi/XUiFubenFashionStory/GroupType/XUiGridFashionStoryGroup")
+local XUiFubenFashionStoryNew = XLuaUiManager.Register(XLuaUi, "UiFubenFashionStoryNew")
+
 --region 生命周期
 function XUiFubenFashionStoryNew:OnAwake()
     self:Init()
@@ -15,52 +16,86 @@ end
 
 function XUiFubenFashionStoryNew:OnEnable()
     self:UpdateGroupGridUi()
-    self:UpdateLeftTime(XMVCA.XFashionStory:GetLeftTimeStamp(XMVCA.XFashionStory:GetCurrentActivityId())<=0)
+    self:UpdateLeftTime(XMVCA.XFashionStory:GetLeftTimeStamp(XMVCA.XFashionStory:GetCurrentActivityId()) <= 0)
     XRedPointManager.Check(self.TaskRedPointId)
+    XRedPointManager.Check(self.RewardRedPointId)
+    self:RefreshRewardState()
 end
 
 function XUiFubenFashionStoryNew:OnDestroy()
     XRedPointManager.RemoveRedPointEvent(self.TaskRedPointId)
+    XRedPointManager.RemoveRedPointEvent(self.RewardRedPointId)
 end
 --endregion
 
 --region 初始化
 function XUiFubenFashionStoryNew:Init()
-    self.BtnBack.CallBack=function() self:Close() end
-    self.BtnMainUi.CallBack=function() XLuaUiManager.RunMain() end
+    self.BtnBack:AddEventListener(Handler(self, self.OnBtnBackClick))
+    self.BtnMainUi:AddEventListener(Handler(self, self.OnBtnMainUiClick))
     --试衣间
-    self.BtnSkip1.CallBack=function() XLuaUiManager.Open("UiFubenFashionFittingNew") end
+    self.BtnSkipFitting:AddEventListener(Handler(self, self.OnBtnSkipFittingClick))
     --任务
-    self.BtnSkip2.CallBack=function() XLuaUiManager.Open("UiFingerFashionTask") end
-    
-    self.TaskRedPointId=XRedPointManager.AddRedPointEvent(self.BtnSkip2,self.TaskBtnReddot,self,{XRedPointConditions.Types.CONDITION_FASHION_STORY_TASK},nil,false)
+    self.BtnSkipTask:AddEventListener(Handler(self, self.OnBtnSkipTaskClick))
+    --前往v4.7土豆兄弟活动界面
+    self.BtnSkinGo:AddEventListener(Handler(self, self.OnBtnSkinGoClick))
+
+    self.TaskRedPointId = XRedPointManager.AddRedPointEvent(self.BtnSkipTask, self.TaskBtnReddot, self, { XRedPointConditions.Types.CONDITION_FASHION_STORY_TASK }, nil, false)
+    self.RewardRedPointId = XRedPointManager.AddRedPointEvent(self.BtnSkinGo, self.RewardBtnReddot, self, { XRedPointConditions.Types.CONDITION_FASHION_STORY_REWARD }, nil, false)
 end
 
 function XUiFubenFashionStoryNew:InitChapterGroup()
-    local rectTrans=self.PanelSummer.gameObject:GetComponent("RectTransform")
-    rectTrans.anchorMax=CS.UnityEngine.Vector2(0.5,0.5)
-    rectTrans.anchorMin=CS.UnityEngine.Vector2(0.5,0.5)
-    rectTrans.anchoredPosition=CS.UnityEngine.Vector2(0,0)
-    self.PanelSummer.gameObject.transform.localScale=CS.UnityEngine.Vector3(1,1,1)
-
-    self.PanelSummerGroup={}
-    self.GroupCtrl={}
-    for i=1,4,1 do
-        local key='GridSummer0'..tostring(i)
-        if self[key] then
-            self.PanelSummerGroup[i]=CS.UnityEngine.GameObject.Instantiate(self.PanelSummer,self[key])
-            self.GroupCtrl[i]=XUiGridFashionStoryGroup.New(self,self.PanelSummerGroup[i])
+    self.GroupCtrl = {}
+    for i = 1, 5 do
+        local panel = self["PanelSummer" .. string.format("%02d", i)]
+        if panel then
+            self.GroupCtrl[i] = XUiGridFashionStoryGroup.New(self, panel)
         end
     end
-    
-    self.PanelSummer.gameObject:SetActiveEx(false)
+end
+--endregion
+
+--region 事件处理
+function XUiFubenFashionStoryNew:OnBtnBackClick()
+    self:Close()
+end
+
+function XUiFubenFashionStoryNew:OnBtnMainUiClick()
+    XLuaUiManager.RunMain()
+end
+
+function XUiFubenFashionStoryNew:OnBtnSkipFittingClick()
+    XLuaUiManager.Open("UiFubenFashionFittingNew")
+end
+
+function XUiFubenFashionStoryNew:OnBtnSkipTaskClick()
+    XLuaUiManager.Open("UiFingerFashionTask")
+end
+
+function XUiFubenFashionStoryNew:OnBtnSkinGoClick()
+    local activityId = self.ActivityId
+    local state = self.RewardState
+    local RewardState = XMVCA.XFashionStory.RewardState
+
+    if state == RewardState.Locked then
+        local timeId = XMVCA.XFashionStory:GetRewardActivityTimeId(activityId)
+        local tipText = XMVCA.XFashionStory:GetRewardActivityLockText(timeId)
+        XUiManager.TipMsg(tipText)
+        return
+    end
+    if state == RewardState.None then
+        XLog.Error(string.format("[XUiFubenFashionStoryNew] RewardId 未配置, activityId=%s", tostring(activityId)))
+        return
+    end
+
+    local skipId = XMVCA.XFashionStory:GetRewardSkipId(activityId)
+    XFunctionManager.SkipInterface(skipId)
 end
 --endregion
 
 --region 数据更新
 function XUiFubenFashionStoryNew:UpdateGroupGridUi()
     --读取组id
-    local groupIds=XMVCA.XFashionStory:GetSingleLines(XMVCA.XFashionStory:GetCurrentActivityId())
+    local groupIds = XMVCA.XFashionStory:GetSingleLines(XMVCA.XFashionStory:GetCurrentActivityId())
     for i, groupId in ipairs(groupIds) do
         if self.GroupCtrl[i] then
             self.GroupCtrl[i]:Refresh(groupId)
@@ -74,13 +109,55 @@ function XUiFubenFashionStoryNew:UpdateLeftTime(isClose)
         XLuaUiManager.RunMain()
     else
         --UI更新
-        local leftTimeStamp=XMVCA.XFashionStory:GetLeftTimeStamp(XMVCA.XFashionStory:GetCurrentActivityId())
-        local leftTime=XUiHelper.GetTime(leftTimeStamp,XUiHelper.TimeFormatType.ACTIVITY)
-        self.TxtChapterLeftTime.text=leftTime
+        local leftTimeStamp = XMVCA.XFashionStory:GetLeftTimeStamp(XMVCA.XFashionStory:GetCurrentActivityId())
+        local leftTime = XUiHelper.GetTime(leftTimeStamp, XUiHelper.TimeFormatType.ACTIVITY)
+        self.TxtChapterLeftTime.text = leftTime
     end
+end
+
+function XUiFubenFashionStoryNew:RefreshRewardState()
+    local activityId = XMVCA.XFashionStory:GetCurrentActivityId()
+    local state = XMVCA.XFashionStory:GetRewardClaimState(activityId)
+    local RewardState = XMVCA.XFashionStory.RewardState
+
+    self.ActivityId = activityId
+    self.RewardState = state
+
+    if state == RewardState.Locked then
+        self.BtnSkinGo:SetDisable(true)
+    else
+        self.BtnSkinGo:SetDisable(false)
+        if state == RewardState.Received then
+            self.BtnSkinGo:SetButtonState(CS.UiButtonState.Select)
+        else
+            self.BtnSkinGo:SetButtonState(CS.UiButtonState.Normal)
+        end
+    end
+
+    local text
+    if state == RewardState.Locked then
+        local timeId = XMVCA.XFashionStory:GetRewardActivityTimeId(activityId)
+        text = XMVCA.XFashionStory:GetRewardActivityLockText(timeId)
+    elseif state == RewardState.CanReceive then
+        text = XUiHelper.GetText("FashionStoryRewardGo")
+    elseif state == RewardState.Received then
+        text = XUiHelper.GetText("FashionStoryRewardReceived")
+    else
+        text = ""
+        XLog.Error(string.format("[XUiFubenFashionStoryNew] RefreshRewardState 未知 RewardState=%s, activityId=%s", tostring(state), tostring(activityId)))
+    end
+    self.BtnSkinGo:SetNameByGroup(0, text)
 end
 --endregion
 
+--region 红点
 function XUiFubenFashionStoryNew:TaskBtnReddot(count)
-    self.BtnSkip2:ShowReddot(count>=0)
-end 
+    self.BtnSkipTask:ShowReddot(count >= 0)
+end
+
+function XUiFubenFashionStoryNew:RewardBtnReddot(count)
+    self.BtnSkinGo:ShowReddot(count >= 0)
+end
+--endregion
+
+return XUiFubenFashionStoryNew

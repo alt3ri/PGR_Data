@@ -217,7 +217,8 @@ function XAudioAgency:ChangeUiMainAlbumId(albumId)
 end
 
 function XAudioAgency:GetUiMainNeedPlayedAlbumId()
-    if not XMVCA.XSubPackage:CheckNecessaryComplete() then
+    -- 与 ChangeUiMainAlbumId 的写入校验口径保持一致：只校验 CD 机功能对应的分包，
+    if not XMVCA.XSubPackage:CheckSubpackageDownloadByFunctionType(XFunctionManager.FunctionName.UiMainMusicAlbum) then
         return self._Model.DefaultAlbumId
     end
     return self._Model.UiMainNeedPlayedAlbumId

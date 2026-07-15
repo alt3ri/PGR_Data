@@ -2025,7 +2025,7 @@ XFunctionalSkipManagerCreator = function()
         if skipData.ParamId then
             local IsOpen,LockReason=XMVCA.XFashionStory:CheckGroupIsCanOpen(skipData.ParamId)
             XMVCA.XFashionStory:EnterPaintingGroupPanel(skipData.ParamId,IsOpen,LockReason,function()
-                XLuaUiManager.PopThenOpen("UiFubenFashionPaintingNew",skipData.ParamId)
+                XLuaUiManager.Open("UiFubenFashionPaintingNew",skipData.ParamId)
                 XMVCA.XFashionStory:MarkGroupAsHadAccess(skipData.ParamId)
             end)
         end

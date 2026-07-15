@@ -36,9 +36,11 @@ local GoodsName = {
         return XDataCenter.FashionManager.GetFashionName(templateId)
     end,
 
+    --[[
     [XArrangeConfigs.Types.BaseEquip] = function(templateId)
         return XDataCenter.BaseEquipManager.GetBaseEquipName(templateId)
     end,
+    ]]
 
     [XArrangeConfigs.Types.Furniture] = function(templateId)
         return XFurnitureConfigs.GetFurnitureNameById(templateId)
@@ -131,9 +133,11 @@ local GoodsQuality = {
         return XDataCenter.FashionManager.GetFashionQuality(templateId)
     end,
 
+    --[[
     [XArrangeConfigs.Types.BaseEquip] = function(templateId)
         return XDataCenter.BaseEquipManager.GetBaseEquipQuality(templateId)
     end,
+    ]]
 
     [XArrangeConfigs.Types.DormCharacter] = function(templateId)
         return XDormConfig.GetDormCharacterRewardQualityById(templateId)
@@ -180,8 +184,7 @@ local GoodsQuality = {
     end,
 
     [XArrangeConfigs.Types.FashionColor] = function(templateId)
-        local fashionId = XMVCA.XFashion:GetFashionColorOriginalFashionId(templateId)
-        return XDataCenter.FashionManager.GetFashionQuality(fashionId)
+        return XMVCA.XFashion:GetFashionColorQuality(templateId)
     end
 }
 
@@ -210,9 +213,11 @@ local GoodsIcon = {
         return XDataCenter.FashionManager.GetFashionIcon(templateId)
     end,
 
+    --[[
     [XArrangeConfigs.Types.BaseEquip] = function(templateId)
         return XDataCenter.BaseEquipManager.GetBaseEquipIcon(templateId)
     end,
+    ]]
 
     [XArrangeConfigs.Types.Furniture] = function(templateId)
         return XFurnitureConfigs.GetFurnitureIconById(templateId)
@@ -304,9 +309,11 @@ local GoodsDescription = {
         return XMVCA.XEquip:GetEquipDescription(templateId)
     end,
 
+    --[[
     [XArrangeConfigs.Types.BaseEquip] = function(templateId)
         return XDataCenter.BaseEquipManager.GetBaseEquipDesc(templateId)
     end,
+    ]]
 
     [XArrangeConfigs.Types.Furniture] = function(templateId)
         return XFurnitureConfigs.GetFurnitureDescriptionById(templateId)
@@ -388,8 +395,7 @@ local GoodsDescription = {
         return template.Desc
     end,
     [XArrangeConfigs.Types.FashionColor] = function(templateId)
-        local f = XMVCA.XFashion:GetFashionColorOriginalFashionId(templateId)
-        return XDataCenter.FashionManager.GetFashionDesc(f)
+        return XMVCA.XFashion:GetFashionColorDescription(templateId)
     end
 }
 
@@ -477,8 +483,7 @@ local GoodsWorldDesc = {
         return template.WorldDesc
     end,
     [XArrangeConfigs.Types.FashionColor] = function(templateId)
-        local fashion = XMVCA.XFashion:GetFashionColorOriginalFashionId(templateId)
-        return XDataCenter.FashionManager.GetFashionWorldDescription(fashion)
+        return XMVCA.XFashion:GetFashionColorWorldDescription(templateId)
     end
 }
 
@@ -498,6 +503,10 @@ local GoodsSkipIdParams = {
     [XArrangeConfigs.Types.WeaponFashion] = function(templateId)
         return XWeaponFashionConfigs.GetFashionSkipIdParams(templateId)
     end,
+
+    [XArrangeConfigs.Types.FashionColor] = function(templateId)
+        return XMVCA.XFashion:GetFashionColorSkipIdParams(templateId)
+    end
 }
 
 local GoodsCurrentCount = {
@@ -525,9 +534,11 @@ local GoodsCurrentCount = {
         return XDataCenter.FashionManager.CheckHasFashion(templateId) and 1 or 0
     end,
 
+    --[[
     [XArrangeConfigs.Types.BaseEquip] = function(templateId)
         return XDataCenter.BaseEquipManager.GetBaseEquipCount(templateId)
     end,
+    ]]
 
     [XArrangeConfigs.Types.Furniture] = function(templateId)
         return XDataCenter.FurnitureManager.GetTemplateCount(templateId)
@@ -603,6 +614,13 @@ local GoodsCurrentCount = {
     [XArrangeConfigs.Types.Filter] = function(templateId)
         return XMVCA.XBigWorldAlbum:IsUnlockFilterId(templateId) and 1 or 0
     end,
+    [XArrangeConfigs.Types.FashionColor] = function(templateId)
+        if XMVCA.XFashion:IsFashionColorHas(templateId) then
+            return 1
+        else
+            return 0
+        end
+    end
 }
 
 --==============================--
@@ -797,6 +815,7 @@ GoodsShowParams[XArrangeConfigs.Types.Fashion] = function(templateId)
     }
 end
 
+--[[
 GoodsShowParams[XArrangeConfigs.Types.BaseEquip] = function(templateId)
     return {
         RewardType = XRewardManager.XRewardType.BaseEquip,
@@ -807,6 +826,7 @@ GoodsShowParams[XArrangeConfigs.Types.BaseEquip] = function(templateId)
         BigIcon = XDataCenter.BaseEquipManager.GetBaseEquipBigIcon(templateId)
     }
 end
+]]
 
 GoodsShowParams[XArrangeConfigs.Types.Furniture] = function(templateId)
     local cfg = XFurnitureConfigs.GetFurnitureReward(templateId)
@@ -1024,14 +1044,13 @@ end
 
 GoodsShowParams[XArrangeConfigs.Types.FashionColor] = function(templateId)
     local fashionColorConf = XMVCA.XFashion:GetFashionColorById(templateId)
-    local fashionId = fashionColorConf.OriginalFashionId
 
     return {
         RewardType = XRewardManager.XRewardType.FashionColor,
         TemplateId = templateId,
         Name = fashionColorConf.FashionName,
         Icon = fashionColorConf.FashionIcon,
-        Quality = XDataCenter.FashionManager.GetFashionQuality(fashionId)
+        Quality = fashionColorConf.Quality
     }
 
 end

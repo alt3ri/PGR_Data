@@ -14,6 +14,8 @@ function XUiPanelAsset:OnStart(...)
     self.ItemIds = {...}
     self._BindNodes = {}
     self:InitAssert()
+
+    XEventManager.AddEventListener(XEventId.EVENT_BIG_WORLD_GAME_PLAY_CHANGED, self.UpdateButtonStateOnShield, self)
 end
 
 function XUiPanelAsset:RefreshBindItem(...)
@@ -194,7 +196,7 @@ function XUiPanelAsset:InitAssert()
     if self.PanelTool3 then
         panels[3] = self.PanelTool3
     end
-    self:HideAllPanel()
+    self:AllPanelEnable(false)
 
     local itemIds = self.ItemIds
 
@@ -245,6 +247,7 @@ end
 
 function XUiPanelAsset:OnDestroy()
     self:RemoveCountUpdateListener()
+    XEventManager.RemoveEventListener(XEventId.EVENT_BIG_WORLD_GAME_PLAY_CHANGED, self.UpdateButtonStateOnShield, self)
 end
 
 function XUiPanelAsset:HideBtnBuy()
@@ -253,23 +256,34 @@ function XUiPanelAsset:HideBtnBuy()
     self.BtnBuyJump3.gameObject:SetActiveEx(false)
 end
 
-function XUiPanelAsset:HideAllPanel()
-    --本来是应该用for ipairs ，但是为了和原来代码等效 所以用pairs
-    for k, panel in pairs(self.Panels) do
-        if panel then
-            panel.gameObject:SetActive(false)
+function XUiPanelAsset:AllPanelEnable(enable)
+    if not self.Panels then
+        return
+    end
+    if enable then
+        -- 只激活与 ItemIds 对应的面板，避免显示未绑定 item 的多余面板
+        local panelCount = min(#self.ItemIds, #self.Panels)
+        for i = 1, panelCount do
+            local panel = self.Panels[i]
+            if panel then
+                panel.gameObject:SetActive(true)
+            end
+        end
+    else
+        --本来是应该用for ipairs ，但是为了和原来代码等效 所以用pairs
+        for k, panel in pairs(self.Panels) do
+            if panel then
+                panel.gameObject:SetActive(false)
+            end
         end
     end
 end
 
 function XUiPanelAsset:UpdateButtonStateOnShield()
-    if not XMVCA.XBigWorldGamePlay:IsInGame() then
-        return
-    end
-    if not XMVCA.XBigWorldFunction:GetShieldOfMainBusiness() then
-        return
-    end
-    self:HideAllPanel()
+    local shield = XMVCA.XBigWorldGamePlay:IsInGame()
+        and (XMVCA:IsRegisterAgency(ModuleId.XBigWorldFunction)
+            and XMVCA.XBigWorldFunction:GetShieldOfMainBusiness())
+    self:AllPanelEnable(not shield)
 end
 
 function XUiPanelAsset:SetCountTxtColor(color)

@@ -8,6 +8,8 @@ function XUiBountyChallengeChapterDetailTask:OnStart()
     
     self.BtnReceive:AddEventListener(handler(self, self.OnClick))
     self.BtnTaskHelp:AddEventListener(handler(self, self.OnBtnTaskHelpClick))
+    
+    self.CanvasGroup = self.Transform:GetComponentInChildren(typeof(CS.UnityEngine.CanvasGroup), false)
 end
 
 ---@param data XUiBountyChallengeChapterDetailTaskData
@@ -134,10 +136,14 @@ function XUiBountyChallengeChapterDetailTask:PlayStartAnimation(index)
     local interval = self._Control:GetConfigNum('UiTaskAnimIntervalTime', 1)
     
     local fixDelayTime = math.floor((delayTime + index * interval) * XScheduleManager.SECOND)
+
+    if self.CanvasGroup then
+        self.CanvasGroup.alpha = 0
+    end
     
-    self:StopAnimation('Enable')
+    self:StopAnimation('TaskEnable')
     local animTimeId = XScheduleManager.ScheduleOnce(function()
-        self:PlayAnimation('Enable')
+        self:PlayAnimation('TaskEnable')
     end, fixDelayTime)
     
     self._TweenAnimationAgency:_AddTimerId(animTimeId)

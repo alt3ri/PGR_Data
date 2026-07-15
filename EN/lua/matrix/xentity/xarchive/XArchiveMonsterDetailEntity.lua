@@ -30,12 +30,21 @@ end
 
 function XArchiveMonsterDetailEntity:GetCfg()
     if self.Type == EntityType.Info then
-        return XMVCA.XArchive:GetArchiveMonsterInfoConfigById(self.Id)
+        return XMVCA.XArchive.MonsterArchiveAgency:GetArchiveMonsterInfoConfigById(self.Id)
     elseif self.Type == EntityType.Setting then
-        return XMVCA.XArchive:GetArchiveMonsterSettingConfigById(self.Id)
+        return XMVCA.XArchive.MonsterArchiveAgency:GetArchiveMonsterSettingConfigById(self.Id)
     elseif self.Type == EntityType.Skill then
-        return XMVCA.XArchive:GetArchiveMonsterSkillConfigById(self.Id)
+        return XMVCA.XArchive.MonsterArchiveAgency:GetArchiveMonsterSkillConfigById(self.Id)
     end
+end
+
+function XArchiveMonsterDetailEntity:GetInnerCfg()
+    if self.Type == EntityType.Info then
+        return XMVCA.XArchive.MonsterArchiveAgency:GetArchiveMonsterInfoInnerConfigById(self.Id)
+    elseif self.Type == EntityType.Setting then
+        return XMVCA.XArchive.MonsterArchiveAgency:GetArchiveMonsterSettingInnerConfigById(self.Id)
+    end
+    return self:GetCfg()
 end
 
 function XArchiveMonsterDetailEntity:GetId()
@@ -59,11 +68,11 @@ function XArchiveMonsterDetailEntity:GetOrder()
 end
 
 function XArchiveMonsterDetailEntity:GetTitle()
-    return self:GetCfg().Title
+    return self:GetInnerCfg().Title
 end
 
 function XArchiveMonsterDetailEntity:GetText()
-    return self:GetCfg().Text
+    return self:GetInnerCfg().Text
 end
 
 function XArchiveMonsterDetailEntity:GetType()

@@ -121,7 +121,7 @@ XGame.Start6 = function()
     serverProfiler:Stop()
     XGame.Profiler:Stop()
 
-    XTableManager.ReleaseAll(true)
+    XTableManager.ReleaseAllCache()
     CS.BinaryManager.ReleaseAllCache()
     collectgarbage("collect")
     --打点

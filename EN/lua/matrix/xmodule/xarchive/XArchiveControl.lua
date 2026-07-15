@@ -10,6 +10,8 @@ function XArchiveControl:OnInit()
     self.CGControl = self:AddSubControl(require('XModule/XArchive/SubModule/CGArchive/XCGArchiveControl'))
     ---@type XAwarenessArchiveControl
     self.AwarenessControl = self:AddSubControl(require('XModule/XArchive/SubModule/AwarenessArchive/XAwarenessArchiveControl'))
+    ---@type XMonsterArchiveControl
+    self.MonsterControl = self:AddSubControl(require('XModule/XArchive/SubModule/MonsterArchive/XMonsterArchiveControl'))
 end
 
 function XArchiveControl:AddAgencyEvent()
@@ -40,23 +42,7 @@ function XArchiveControl:GetCountUnitChange(count)
     return b >= 0.05 and string.format("%.1fk", newCount) or string.format("%dk", a)
 end
 
---region --------------------------------怪物图鉴，数据获取相关------------------------------------------>>>
-function XArchiveControl:GetArchiveMonsterEvaluate(npcId)
-    return self._Model:GetArchiveMonsterEvaluate(npcId)
-end
-
-function XArchiveControl:GetArchiveMonsterMySelfEvaluate(npcId)
-    return self._Model:GetArchiveMonsterMySelfEvaluate(npcId)
-end
-
-function XArchiveControl:GetArchiveMonsterEvaluateList()
-    return self._Model:GetArchiveMonsterEvaluateList()
-end
-
-function XArchiveControl:GetArchiveMonsterMySelfEvaluateList()
-    return self._Model:GetArchiveMonsterMySelfEvaluateList()
-end
-
+--region -------------------武器、意识部分------------------->>>
 function XArchiveControl:GetArchives()------------------------------------修改技能设定等的条件判定
     local list = {}
     for _, v in pairs(self._Model:GetArchive()) do
@@ -68,326 +54,10 @@ function XArchiveControl:GetArchives()------------------------------------修改
     return list
 end
 
-function XArchiveControl:GetMonsterArchiveName(monster)
-    if monster:GetName() then
-        return monster:GetName()
-    end
-    if monster:GetNpcId(1) then
-        return XMVCA.XArchive:GetMonsterRealName(monster:GetNpcId(1))
-    end
-    return "NULL"
-end
-
 function XArchiveControl:GetArchiveTagList(group)
     return self._Model:GetArchiveTagAllList()[group]
 end
 
-function XArchiveControl:GetArchiveMonsterList(type)--type为空时不作为判断条件，获取相应类型的图鉴怪物列表
-    if type then
-        return self._Model:GetArchiveMonsterList()[type] or {}
-    end
-    local list = {}
-    for _,tmpType in pairs(self._Model:GetArchiveMonsterList()) do
-        for _,monster in pairs(tmpType) do
-            tableInsert(list,monster)
-        end
-    end
-    return self._Model:SortByOrder(list)
-end
-
-function XArchiveControl:GetArchiveMonsterInfoList(groupId,type)--type为空时不作为判断条件，获取相应类型的图鉴怪物信息列表
-    local monsterInfoGroup = self._Model:GetArchiveMonsterInfoList()[groupId]
-    if type then
-        return monsterInfoGroup and monsterInfoGroup[type] or {}
-    end
-    local list = {}
-    for _,tmpType in pairs(monsterInfoGroup) do
-        for _,monster in pairs(tmpType) do
-            tableInsert(list,monster)
-        end
-    end
-    return self._Model:SortByOrder(list)
-end
-
-function XArchiveControl:GetArchiveMonsterSkillList(groupId)--groupId为空时不作为判断条件，获取相应类型的图鉴怪物技能列表
-    if groupId then
-        return self._Model:GetArchiveMonsterSkillList()[groupId] or {}
-    end
-    local list = {}
-    for _,group in pairs(self._Model:GetArchiveMonsterSkillList()) do
-        for _,monster in pairs(group) do
-            tableInsert(list,monster)
-        end
-    end
-    return self._Model:SortByOrder(list)
-end
-
-function XArchiveControl:GetArchiveMonsterSettingList(groupId,type)--type为空时不作为判断条件，获取相应类型的图鉴怪物设定列表
-    local monsterSettingGroup = self._Model:GetArchiveMonsterSettingList()[groupId]
-    if type then
-        return monsterSettingGroup and monsterSettingGroup[type] or {}
-    end
-    local list = {}
-    for _,tmpType in pairs(monsterSettingGroup) do
-        for _,monster in pairs(tmpType) do
-            tableInsert(list,monster)
-        end
-    end
-    return self._Model:SortByOrder(list)
-end
-
-function XArchiveControl:GetMonsterCompletionRate(type)
-    local monsterList = self:GetArchiveMonsterList(type)
-    if #monsterList < 1 then
-        return 0
-    end
-    local unlockCount = 0
-    if not XTool.IsTableEmpty(monsterList) then
-        for _,v in pairs(monsterList) do
-            if not v.IsLockMain then
-                unlockCount = unlockCount + 1
-            end
-        end
-    end
-    return self:GetPercent((unlockCount / #monsterList) * 100)
-end
-
-function XArchiveControl:MonsterGiveEvaluate(npcId ,score ,difficulty ,tags ,cbBeFore ,cbAfter)
-    local type = XEnumConst.Archive.SubSystemType.Monster
-    local tb = {Id = npcId ,Type = type ,Score = score ,Difficulty = difficulty ,Tags = tags}
-    local modelRefTmp = self._Model
-    XNetwork.Call(XEnumConst.Archive.METHOD_NAME.ArchiveEvaluateRequest, tb, function(res)
-        if cbBeFore then cbBeFore() end
-        if res.Code ~= XCode.Success then
-            XUiManager.TipCode(res.Code)
-            return
-        end
-        modelRefTmp:SetArchiveMonsterMySelfEvaluateDifficulty(npcId,score,difficulty,tags)
-        if cbAfter then cbAfter() end
-    end)
-end
-
-function XArchiveControl:MonsterGiveLike(likeList ,cb)
-    local type = XEnumConst.Archive.SubSystemType.Monster
-    
-    local modelRefTmp = self._Model
-    XNetwork.Call(XEnumConst.Archive.METHOD_NAME.ArchiveGiveLikeRequest, {LikeList = likeList ,Type = type}, function(res)
-        if cb then cb() end
-        if res.Code ~= XCode.Success then
-            XUiManager.TipCode(res.Code)
-            return
-        end
-        
-        if XTool.IsTableEmpty(res.SuccessIds) or XTool.IsTableEmpty(likeList) then return end
-        
-        for _,id in pairs(res.SuccessIds) do
-            for _,like in pairs(likeList) do
-                if id == like.Id then
-                    modelRefTmp:SetArchiveMonsterMySelfEvaluateLikeStatus(id,like.LikeStatus)
-                end
-            end
-        end
-    end)
-end
-
-function XArchiveControl:UnlockArchiveMonster(ids,cb)
-    local list = self._Model:GetLockMonsterIdsFromIdList(ids)
-    if #list == 0 then
-        return
-    end
-    XNetwork.Call(XEnumConst.Archive.METHOD_NAME.UnlockArchiveMonsterRequest, {Ids = list}, function(res)
-        if res.Code ~= XCode.Success then
-            XUiManager.TipCode(res.Code)
-            return
-        end
-        if cb then cb() end
-    end)
-end
-
-function XArchiveControl:UnlockMonsterInfo(ids,cb)
-    local list =self._Model:GetLockMonsterInfoIdsFromIdList(ids)
-    if #list == 0 then
-        return
-    end
-    XNetwork.Call(XEnumConst.Archive.METHOD_NAME.UnlockMonsterInfoRequest, {Ids = ids}, function(res)
-        if res.Code ~= XCode.Success then
-            XUiManager.TipCode(res.Code)
-            return
-        end
-        if cb then cb() end
-    end)
-end
-
-function XArchiveControl:UnlockMonsterSkill(ids,cb)
-    local list = self._Model:GetLockMonsterSkillIdsFromIdList(ids)
-    if #list == 0 then
-        return
-    end
-    XNetwork.Call(XEnumConst.Archive.METHOD_NAME.UnlockMonsterSkillRequest, {Ids = ids}, function(res)
-        if res.Code ~= XCode.Success then
-            XUiManager.TipCode(res.Code)
-            return
-        end
-        if cb then cb() end
-    end)
-end
-
-function XArchiveControl:UnlockMonsterSetting(ids,cb)
-    local list = self._Model:GetLockMonsterSettingIdsFromIdList(ids)
-    if #list == 0 then
-        return
-    end
-    XNetwork.Call(XEnumConst.Archive.METHOD_NAME.UnlockMonsterSettingRequest, {Ids = ids}, function(res)
-        if res.Code ~= XCode.Success then
-            XUiManager.TipCode(res.Code)
-            return
-        end
-        if cb then cb() end
-    end)
-end
-
-
-
-function XArchiveControl:ClearMonsterNewTag(datas)
-    local idList = {}
-
-    if not datas then
-        return
-    end
-
-    local IsHasNew = false
-    for _,data in pairs(datas) do
-        if XMVCA.XArchive:IsMonsterHaveNewTagById(data.Id) then
-            IsHasNew = true
-            break
-        end
-    end
-    if not IsHasNew then return end
-
-    for _,data in pairs(datas) do
-        if not data.IsLockMain then
-            tableInsert(idList,data.Id)
-        end
-    end
-
-    if #idList < 1 then
-        return
-    end
-    
-    -- 回调执行可能发生在Control销毁之后，使用局部变量引用Model
-    local modelRef = self._Model
-    self:UnlockArchiveMonster(idList,function ()
-        for _,id in pairs(idList) do
-            XMVCA.XArchive:ClearMonsterRedPointDic(id,XEnumConst.Archive.MonsterRedPointType.Monster)
-        end
-        modelRef:SetArchiveMonsterUnlockIdsList(idList)
-        XEventManager.DispatchEvent(XEventId.EVNET_ARCHIVE_MONSTER_UNLOCKMONSTER)
-    end)
-end
-
-function XArchiveControl:ClearDetailRedPoint(type,datas)
-    local idList = {}
-    if not datas then
-        return
-    end
-    --------------------检测各类型是否有新增记录------------------
-    if type == XEnumConst.Archive.MonsterDetailType.Info then
-        local IsHasNew = false
-        for _,data in pairs(datas) do
-            if XMVCA.XArchive:IsHaveNewMonsterInfoByNpcId(data:GetId()) then
-                IsHasNew = true
-                break
-            end
-        end
-        if not IsHasNew then return end
-    elseif type == XEnumConst.Archive.MonsterDetailType.Setting then
-        local IsHasNew = false
-        for _,data in pairs(datas) do
-            if XMVCA.XArchive:IsHaveNewMonsterSettingByNpcId(data:GetId()) then
-                IsHasNew = true
-                break
-            end
-        end
-        if not IsHasNew then return end
-    elseif type == XEnumConst.Archive.MonsterDetailType.Skill then
-        local IsHasNew = false
-        for _,data in pairs(datas) do
-            if XMVCA.XArchive:IsHaveNewMonsterSkillByNpcId(data:GetId()) then
-                IsHasNew = true
-                break
-            end
-        end
-        if not IsHasNew then return end
-    end
-    --------------------将各类型新增记录的ID放入一个List------------------
-    for _,data in pairs(datas) do
-        local npcIds = data:GetNpcId()
-        if XTool.IsTableEmpty(npcIds) then
-            goto continue
-        end
-        
-        for _,npcId in pairs(npcIds) do
-            if type == XEnumConst.Archive.MonsterDetailType.Info then
-                local list = self:GetArchiveMonsterInfoList(npcId,nil)
-                for _,info in pairs(list) do
-                    if not info:GetIsLock() then
-                        tableInsert(idList,info:GetId())
-                    end
-                end
-            elseif type == XEnumConst.Archive.MonsterDetailType.Setting then
-                local list = self:GetArchiveMonsterSettingList(npcId,nil)
-                for _,setting in pairs(list) do
-                    if not setting:GetIsLock() then
-                        tableInsert(idList,setting:GetId())
-                    end
-                end
-            elseif type == XEnumConst.Archive.MonsterDetailType.Skill then
-                local list = self:GetArchiveMonsterSkillList(npcId)
-                for _,skill in pairs(list) do
-                    if not skill:GetIsLock() then
-                        tableInsert(idList,skill:GetId())
-                    end
-                end
-            end
-        end
-        :: continue ::
-    end
-
-    if #idList < 1 then
-        return
-    end
-    --------------------将各类型新增记录的红点取消通知服务器-----------------
-    local modelRefTmp = self._Model
-
-    if type == XEnumConst.Archive.MonsterDetailType.Info then
-        self:UnlockMonsterInfo(idList,function ()
-            for _,data in pairs(datas) do
-                XMVCA.XArchive:ClearMonsterRedPointDic(data:GetId(),XEnumConst.Archive.MonsterRedPointType.MonsterInfo)
-            end
-            modelRefTmp:SetArchiveMonsterInfoUnlockIdsList(idList)
-            XEventManager.DispatchEvent(XEventId.EVNET_ARCHIVE_MONSTER_UNLOCKMONSTERINFO)
-        end)
-    elseif type == XEnumConst.Archive.MonsterDetailType.Setting then
-        self:UnlockMonsterSetting(idList,function ()
-            for _,data in pairs(datas) do
-                XMVCA.XArchive:ClearMonsterRedPointDic(data:GetId(),XEnumConst.Archive.MonsterRedPointType.MonsterSetting)
-            end
-            modelRefTmp:SetArchiveMonsterSettingUnlockIdsList(idList)
-            XEventManager.DispatchEvent(XEventId.EVNET_ARCHIVE_MONSTER_UNLOCKMONSTERSETTING)
-        end)
-    elseif type == XEnumConst.Archive.MonsterDetailType.Skill then
-        self:UnlockMonsterSkill(idList,function ()
-            for _,data in pairs(datas) do
-                XMVCA.XArchive:ClearMonsterRedPointDic(data:GetId(),XEnumConst.Archive.MonsterRedPointType.MonsterSkill)
-            end
-            modelRefTmp:SetArchiveMonsterSkillUnlockIdsList(idList)
-            XEventManager.DispatchEvent(XEventId.EVNET_ARCHIVE_MONSTER_UNLOCKMONSTERSKILL)
-        end)
-    end
-end
---endregion
-
---region -------------------武器、意识部分------------------->>>
 function XArchiveControl:GetWeaponCollectRate()
     local sumNum = self._Model:GetWeaponSumCollectNum()
     if sumNum == 0 then
@@ -712,18 +382,10 @@ end
 
 --region -------------CG相关------------->>>
 
-function XArchiveControl:GetCGCompletionRate(type)
-    local CGList = self:GetGCDetailShowList(type)
-    if #CGList < 1 then
-        return 0
-    end
-    local unlockCount = 0
-    for _,v in pairs(CGList) do
-        if self:GetCGUnLock(v:GetId()) then
-            unlockCount = unlockCount + 1
-        end
-    end
-    return self:GetPercent((unlockCount/#CGList)*100)
+function XArchiveControl:GetCGCompletionRate()
+    local unlocked, total = self._Model:GetCGCompletionCount()
+    if total < 1 then return 0 end
+    return self:GetPercent((unlocked / total) * 100)
 end
 
 function XArchiveControl:GetCGUnLock(CGId)
@@ -945,19 +607,9 @@ function XArchiveControl:GetArchivePartnerList(group)
 end
 
 function XArchiveControl:GetPartnerCompletionRate(type)
-    local partnerList = self:GetArchivePartnerList(type)
-    if #partnerList < 1 then
-        return 0
-    end
-    local unlockCount = 0
-    if not XTool.IsTableEmpty(partnerList) then
-        for _,v in pairs(partnerList) do
-            if not v:GetIsArchiveLock() then
-                unlockCount = unlockCount + 1
-            end
-        end
-    end
-    return self:GetPercent((unlockCount/#partnerList)*100)
+    local unlocked, total = self._Model:GetPartnerCompletionCount(type)
+    if total < 1 then return 0 end
+    return self:GetPercent((unlocked / total) * 100)
 end
 --endregion
 

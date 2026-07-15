@@ -109,7 +109,11 @@ function XUiEquipOverrunV4P6PanelDetail:OnOverrunLevelUpSuccess()
     self.Parent.ParentUi:PlayOverrunLevelUpEffect()
     self.Parent.ParentUi:UpdateBtnOverrunRed()
     -- 整体刷新（含详情面板、谐振格、进度）
-    self.Parent:Refresh()
+    if self:CanAutoSwitchNextAfterLevelUp() then
+        self:OnBtnRightClick()
+    else
+        self.Parent:Refresh()
+    end
 
     -- 延迟刷新场景特效 + 升级弹窗
     local level = self.Equip:GetOverrunLevel()
@@ -125,6 +129,18 @@ function XUiEquipOverrunV4P6PanelDetail:OnOverrunLevelUpSuccess()
         -- 弹窗
         XLuaUiManager.Open("UiEquipOverrunLevel", equipId, level, self.Parent.ParentUi.CharacterId)
     end , waitTime)
+end
+
+function XUiEquipOverrunV4P6PanelDetail:CanAutoSwitchNextAfterLevelUp()
+    local selectIndex = self.Parent:GetSelectIndex()
+    local gridOverrunCount = self.Parent:GetGridOverrunCount()
+    if not selectIndex or selectIndex >= gridOverrunCount then
+        return false
+    end
+
+    local selectOverrunCfgId = self.Parent:GetSelectOverrunCfgId()
+    local overrunConfig = self._Control:GetWeaponOverrunConfigById(selectOverrunCfgId)
+    return overrunConfig.OverrunType == XEnumConst.EQUIP.WEAPON_OVERRUN_UNLOCK_TYPE.ATTR or overrunConfig.OverrunType == XEnumConst.EQUIP.WEAPON_OVERRUN_UNLOCK_TYPE.UP_SKILL
 end
 
 function XUiEquipOverrunV4P6PanelDetail:ReleaseTimer()

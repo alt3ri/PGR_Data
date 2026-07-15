@@ -1,4 +1,5 @@
 local XUiFubenBossSingleSettlementGridSelectableFeature = require("XUi/XUiFubenBossSingle/XUiFubenBossSingleSettlementGridSelectableFeature")
+local XLuaUiSettle = require("XUi/XUiBase/XLuaUiSettle")
 
 -- BossSingle阶段状态枚举
 local XBossSingleStageStatus = {
@@ -12,7 +13,7 @@ local XBossSingleStageStatus = {
     NonFirstChallengeNonResetDifferentCharacters = 3
 }
 
----@class XUiFubenBossSingleSettlement : XLuaUi
+---@class XUiFubenBossSingleSettlement : XLuaUiSettle
 ---@field TxtTotalScoreRate UnityEngine.UI.Text  -- v4.2 新增：总讨伐值倍率显示
 ---@field PanelSelectableFeatures UnityEngine.RectTransform  -- v4.2 新增：可选词缀面板
 ---@field ListSelectableFeatures UnityEngine.RectTransform  -- v4.2 新增：可选词缀列表
@@ -21,7 +22,10 @@ local XBossSingleStageStatus = {
 ---@field _AnimationDelayTimerId number|nil 动画延迟定时器ID
 ---@field _AnimationPlayTimerId number|nil 动画播放延迟定时器ID
 ---@field _IsInAnimationDelay boolean 是否在动画延迟期间（配合Unity动画演出）
-local XUiFubenBossSingleSettlement = XLuaUiManager.Register(XLuaUi, "UiFubenBossSingleSettlement")
+--- 囚笼 Boss 结算界面
+--- 必须继承 XLuaUiSettle，基类会在 OnDestroyUi 时自动 Dispatch EVENT_FIGHT_FINISH_SETTLE
+--- 用于通知空花等模块"结算已关闭，可以恢复回流"，请勿改为 XLuaUi
+local XUiFubenBossSingleSettlement = XLuaUiManager.Register(XLuaUiSettle, "UiFubenBossSingleSettlement")
 
 function XUiFubenBossSingleSettlement:OnAwake()
     self:AutoAddListener()

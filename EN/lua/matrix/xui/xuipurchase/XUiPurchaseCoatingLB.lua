@@ -220,11 +220,13 @@ function XUiPurchaseCoatingLB:OpenUiView(data)
     local templateId, isWeaponFashion = self:CheckSingleFashion(data)
 	if templateId then
 	    local disCountValue = XDataCenter.PurchaseManager.GetLBDiscountValue(data)
-            
+
+	    ---@type XPurchaseBuyData
 	    local buyData = {}
         buyData.PurchasePackageId = data.Id
         buyData.IsHave = XDataCenter.PurchaseManager.IsLBHave(data)
 	    buyData.ItemIcon = XDataCenter.ItemManager.GetItemIcon(data.ConsumeId)
+	    buyData.ConsumeId = data.ConsumeId
 	    buyData.ItemCount = math.modf(data.ConvertSwitch * disCountValue) --折扣价格
         buyData.InitItemCount = data.ConvertSwitch --初始价格
 	    buyData.BuyCallBack = function() self:FashionDetailBuyCB() end
@@ -244,7 +246,11 @@ function XUiPurchaseCoatingLB:OpenUiView(data)
         if disCountValue ~= 1 then
             buyData.OriginCount = data.ConvertSwitch
         end
-        XMVCA.XShop:OpenFashionDetailUi(templateId, buyData, { isWeaponFashion = isWeaponFashion })
+        buyData.EndTime = XDataCenter.PurchaseManager.GetPurchaseBuyDataEndTime(data)
+        XMVCA.XShop:OpenFashionDetailUi(templateId, buyData, {
+            isWeaponFashion = isWeaponFashion,
+            customAssetsItemIds = { XDataCenter.ItemManager.ItemId.PaidGem, XDataCenter.ItemManager.ItemId.HongKa } -- 自定义显示黑卡和虹卡
+        })
 	else
         XLuaUiManager.Open("UiPurchaseBuyTips", data, self.CheckBuyFun, self.UpdateCb, self.BeforeBuyReqFun, XPurchaseConfigs.GetLBUiTypesList())
 	end

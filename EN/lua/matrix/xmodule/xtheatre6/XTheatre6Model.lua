@@ -2,6 +2,7 @@
 ---@field Skill XTheatre6SubSkillModel
 ---@field StageChain XTheatre6SubStageChain
 ---@field BattleShop XTheatre6SubBattleShopModel
+---@field Pvp XTheatre6SubPvpModel
 local XTheatre6Model = XClass(XModel, "XTheatre6Model", true)
 
 local StageStatus = XEnumConst.Theatre6.StageStatus
@@ -9,11 +10,13 @@ local PlayMode = XEnumConst.Theatre6.PlayMode
 
 --region 部分类初始化
 XClassPartialRequire("XModule/XTheatre6/ModelPartial/XTheatre6ModelConfig", "XTheatre6Model")
+XClassPartialRequire("XModule/XTheatre6/ModelPartial/XTheatre6ModelPvpConfig", "XTheatre6Model")
 XClassPartialRequire("XModule/XTheatre6/ModelPartial/XTheatre6ModelSave", "XTheatre6Model")
 --endregion
 
 function XTheatre6Model:OnInit()
     self:OnInitConfig()
+    self:OnInitPvpConfig()
     self:OnInitSave()
 
     self._ActivityId = nil --当前活动ID
@@ -29,16 +32,19 @@ function XTheatre6Model:OnInit()
     self.Skill = self:AddSubModel(require("XModule/XTheatre6/SubModel/XTheatre6SubSkillModel"))
     self.StageChain = self:AddSubModel(require("XModule/XTheatre6/SubModel/XTheatre6SubStageChain"))
     self.BattleShop = self:AddSubModel(require("XModule/XTheatre6/SubModel/XTheatre6SubBattleShopModel"))
+    self.Pvp = self:AddSubModel(require("XModule/XTheatre6/SubModel/XTheatre6SubPvpModel"))
 end
 
 function XTheatre6Model:ClearPrivate()
     self:ConfigClearPrivate()
+    self:PvpConfigClearPrivate()
     self._ConsumeId = nil
     self._SanDeathBuffDict = nil
 end
 
 function XTheatre6Model:ResetAll()
     self:ConfigResetAll()
+    self:PvpConfigResetAll()
 end
 
 ----------public start----------
@@ -215,7 +221,7 @@ function XTheatre6Model:UpdateFileDataToSlot(fileData)
         self._FileDatas = {}
     end
     for i, data in ipairs(self._FileDatas) do
-        if data.SlotId == fileData.SlotId then
+        if data.SlotId == fileData.SlotId and data.CharacterId == fileData.CharacterId then
             self._FileDatas[i] = fileData
             return
         end
@@ -257,11 +263,17 @@ function XTheatre6Model:GetMessyCodes()
 end
 
 function XTheatre6Model:SetCurSanCueId(id)
-    self._CurSanCueId = id
+    if not self._CurSanCueDict then
+        self._CurSanCueDict = {}
+    end
+    self._CurSanCueDict[self._CurrentMode] = id
 end
 
 function XTheatre6Model:GetCurSanCueId()
-    return self._CurSanCueId
+    if self._CurSanCueDict then
+        return self._CurSanCueDict[self._CurrentMode]
+    end
+    return nil
 end
 
 ---条件：通关活动x关卡y次
@@ -385,8 +397,10 @@ function XTheatre6Model:NotifyTheatre6ActivityData(data)
         self.Skill:OnNotifySkillData(data.PlayModeDataDb or nil)
     end
     if self.BattleShop then
-        self.BattleShop:NotifyTheatre6ActivityData(data.StoryModeDataDb and data.StoryModeDataDb.CurrentRoomDataDb or nil)
-        self.BattleShop:NotifyTheatre6ActivityData(data.PlayModeDataDb and data.PlayModeDataDb.CurrentRoomDataDb or nil)
+        self.BattleShop:NotifyTheatre6ActivityData(
+            data.StoryModeDataDb and data.StoryModeDataDb.CurrentRoomDataDb or nil, PlayMode.Story)
+        self.BattleShop:NotifyTheatre6ActivityData(
+            data.PlayModeDataDb and data.PlayModeDataDb.CurrentRoomDataDb or nil, PlayMode.GamePlay)
     end
     self._PassStageRecords = data.PassStageRecords
     self._PassDiffRecords = data.PassDiffRecords
@@ -394,9 +408,9 @@ function XTheatre6Model:NotifyTheatre6ActivityData(data)
 end
 
 ---下发下一层的数据
-function XTheatre6Model:NotifyTheatre6NewFloorData(data)
-    self._ModeDataDict[self._CurrentMode] = data.ModeDataDb
-    self._CurRoomData = data.ModeDataDb.CurrentRoomDataDb
+function XTheatre6Model:UpdateNewFloorData(modeDataDb)
+    self._ModeDataDict[self._CurrentMode] = modeDataDb
+    self._CurRoomData = modeDataDb.CurrentRoomDataDb
 end
 
 ---下发新的房间数据
@@ -409,7 +423,7 @@ function XTheatre6Model:NotifyTheatre6NewRoomData(data)
     self._CurRoomData = data.RoomDataDb
 
   
-    self.BattleShop:NotifyTheatre6NewRoomData(data.RoomDataDb)
+    self.BattleShop:NotifyTheatre6NewRoomData(data.RoomDataDb, self._CurrentMode)
     self:UpdateTaskGroupId(data.TaskGroupId)
 end
 
@@ -417,6 +431,7 @@ end
 function XTheatre6Model:NotifyTheatre6SanChange(data)
     local modelData = self:GetCurPlayModeData()
     modelData.San = data.San
+    modelData.MaxSan = data.MaxSan
     XEventManager.DispatchEvent(XEventId.EVENT_THEATRE6_SAN_CHANGE, data.SanChange)
 end
 
@@ -448,7 +463,7 @@ function XTheatre6Model:Theatre6TotalScoreNotify(data)
     local modelData = self:GetCurPlayModeData()
     if modelData then
         modelData.ScoreTotal = data.TotalScoreNew
-        XEventManager.DispatchEvent(XEventId.EVENT_THEATRE6_SCORE_CHANGE)
+        XEventManager.DispatchEvent(XEventId.EVENT_THEATRE6_SCORE_CHANGE, data.TotalScoreOld, data.TotalScoreNew)
     end
     --data.TotalScoreOld
     --data.TotalScoreNew
@@ -521,6 +536,7 @@ end
 function XTheatre6Model:NotifyTheatre6TalentLevel(data)
     local saveData = self:GetPlayModeSaveData() or {}
     saveData.TalentLevel = data.Level
+    saveData.TalentExp = data.Exp
     XEventManager.DispatchEvent(XEventId.EVENT_THEATRE6_TALENT_LEVEL_CHANGE)
 end
 
@@ -528,20 +544,20 @@ end
 function XTheatre6Model:NotifyTheatre6AddSkill(data)
     local skillUpdates = data and data.SkillUpdates
     local hasUpgradeReplace = false
-    local hasLowLevelToBag = false
+    -- local hasLowLevelToBag = false
     local playModeId = self:GetCurPlayMode()
     for _, skillUpdateData in ipairs(skillUpdates or {}) do
         local upgrade, toBag = self.Skill:CollectAddSkillToastFlags(skillUpdateData)
         hasUpgradeReplace = hasUpgradeReplace or upgrade
-        hasLowLevelToBag = hasLowLevelToBag or toBag
+        -- hasLowLevelToBag = hasLowLevelToBag or toBag
         self.Skill:UpdateSkillsWithOverQueue(skillUpdateData, playModeId)
     end
     if hasUpgradeReplace then
         XUiManager.TipMsg(XUiHelper.GetText("Theatre6SkillReplaceHigh"))
     end
-    if hasLowLevelToBag then
-        XUiManager.TipMsg(XUiHelper.GetText("Theatre6SkillAutoToBag"))
-    end
+    -- if hasLowLevelToBag then
+    --     XUiManager.TipMsg(XUiHelper.GetText("Theatre6SkillAutoToBag"))
+    -- end
     if self.Skill:IsForceSellSkillBlock() then
         self.Skill:OpenSellSkillPanel(self.Skill:GetForceSellSkillOverQueue())
     end
@@ -568,6 +584,10 @@ end
 function XTheatre6Model:NotifyTheatre6AttrPackChange(data)
     local modelData = self:GetCurPlayModeData()
     modelData.AttrPacks[data.AttrPack.PackId] = data.AttrPack
+end
+
+function XTheatre6Model:NotifyTheatre6ModeChange(data)
+    self._CurrentMode = data.ModeId
 end
 
 function XTheatre6Model:UpdatePlayModeStartFight(data)
@@ -630,6 +650,7 @@ function XTheatre6Model:ContinueGame(modeId)
     self._CurrentMode = modeId
     local modelData = self:GetCurPlayModeData()
     self._CurRoomData = modelData.CurrentRoomDataDb
+    self.BattleShop:NotifyTheatre6NewRoomData(self._CurRoomData, modeId)
 end
 
 function XTheatre6Model:UpdateChooseRoomStatus(nextRoomStatus)
@@ -643,11 +664,14 @@ function XTheatre6Model:UpdateTaskRoomReward(taskSlotData, newStageTasks)
     modelData.TaskSlotData = taskSlotData
 end
 
-function XTheatre6Model:UpdateSettleData(data)
-    self._PassStageRecords = data.SettleData.PassStageRecords
-    self._PassDiffRecords = data.SettleData.PassDiffRecords
-    self._ModeSaveDict[PlayMode.Story] = data.StoryModeSaveDb
-    self._StoryLineDatas = data.StoryModeSaveDb.StoryLineDatas
+function XTheatre6Model:UpdateSettleData(settleData, storyModeSaveDb)
+    self._PassStageRecords = settleData.PassStageRecords
+    self._PassDiffRecords = settleData.PassDiffRecords
+    self._ModeSaveDict[PlayMode.Story] = storyModeSaveDb
+    self._StoryLineDatas = storyModeSaveDb.StoryLineDatas
+    local modelData = self:GetCurPlayModeData()
+    modelData.SettleData = settleData
+    modelData.IsSettle = true
 end
 
 function XTheatre6Model:UpdateEndGame(mode, storyModeSaveDb, settleData)
@@ -669,7 +693,17 @@ function XTheatre6Model:UpdateTaskGroupId(id)
     modelData.TaskGroupId = id
 end
 
+function XTheatre6Model:UpdateShopBuySan(data)
+    local roomData = self:GetCurRoomData()
+    roomData.BuySanTimes = data.BuySanTimes
+end
 
+--region Pvp
 
+function XTheatre6Model:GetAllFileData()
+    return self._FileDatas
+end
+
+--endregion
 
 return XTheatre6Model

@@ -4,7 +4,8 @@ local XUiPanelRoleModel = require("XUi/XUiCharacter/XUiPanelRoleModel")
 ---@field _Control XPassportControl
 local XUiPassport3D = XClass(XUiNode, "XUiPassport3D")
 
-function XUiPassport3D:OnStart(uiModel)
+function XUiPassport3D:OnStart(uiModel, isFirstOpenInThisActivity)
+    local aspectRatioId = self:AdaptScreenAspectRatio()
     local farRoot = self.Transform:FindTransform("UiFarRoot")
     local nearRoot = self.Transform:FindTransform("UiNearRoot")
     self.CamFar = farRoot:FindTransform("UiFarCamera")
@@ -23,22 +24,34 @@ function XUiPassport3D:OnStart(uiModel)
         nil,
         true)
 
-    local activityId = tostring(self._Control:GetDefaultActivityId())
-    local saveKey = "XUiPassport3D.OnStart.saveKey"
-    local prevActivityId = XSaveTool.GetData(saveKey)
-    if prevActivityId ~= activityId then
-        XSaveTool.SaveData(saveKey, activityId)
-        self.FashionCamNearMain.gameObject:SetActiveEx(false)
-        self.FashionCamNew.gameObject:SetActiveEx(true)
-        self._NewBPCharacterAnimationSchedule1 =
-            XScheduleManager.ScheduleNextFrame(function()
-                self.FashionCamNearMain.gameObject:SetActiveEx(true)
-                self._NewBPCharacterAnimationSchedule2 =
-                    XScheduleManager.ScheduleNextFrame(function()
-                        self.FashionCamNew.gameObject:SetActiveEx(false)
-                    end)
-            end)
+    if isFirstOpenInThisActivity then
+        self:PlayAnimation("Start" .. aspectRatioId)
     end
+end
+
+-- 简易适配分辨率
+function XUiPassport3D:AdaptScreenAspectRatio()
+    self.FashionCamNearMain.gameObject:SetActiveEx(false)
+
+    local currentCameraId = 1
+    local ratios = string.Split(
+        CS.XGame.ClientConfig:GetString("PassportModelAdapt"))
+
+    local width  = CS.XUiManager.RealScreenWidth
+    local height = CS.XUiManager.RealScreenHeight
+    local realRatio = math.max(width, height) / math.min(width, height)
+
+    for _, targetRatio in pairs(ratios) do
+        if realRatio > tonumber(targetRatio) then
+            currentCameraId = currentCameraId + 1
+        else
+            break
+        end
+    end
+
+    self.FashionCamNearMain = self["FashionCamNearMain" .. currentCameraId]
+    self.FashionCamNearMain.gameObject:SetActiveEx(true)
+    return currentCameraId
 end
 
 function XUiPassport3D:OnDestroy()

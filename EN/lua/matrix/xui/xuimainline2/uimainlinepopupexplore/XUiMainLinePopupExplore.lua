@@ -30,6 +30,19 @@ function XUiMainLinePopupExplore:OnStart(messagePosId)
     self.MessagePosId = messagePosId
     self.CurContentId = 0
     self.NextContentId = self._Control.MessageControl:GetCfgMessageBeginContentIdById(self.MessagePosId)
+
+    --- 初始化三个子面板
+
+    self.PanelGoods.gameObject:SetActiveEx(false)
+    self.PanelCharacter.gameObject:SetActiveEx(false)
+    self.PanelSoundWave.gameObject:SetActiveEx(false)
+
+    ---@type XUiPanelMainLinePopupExploreGoods
+    self.ItemPanel = require("XUi/XUiMainLine2/UiMainLinePopupExplore/XUiPanelMainLinePopupExploreGoods").New(self.PanelGoods, self)
+    ---@type XUiPanelMainLinePopupExploreRole
+    self.RolePanel = require("XUi/XUiMainLine2/UiMainLinePopupExplore/XUiPanelMainLinePopupExploreRole").New(self.PanelCharacter, self)
+    ---@type XUiPanelMainLinePopupExploreSound
+    self.SoundPanel = require("XUi/XUiMainLine2/UiMainLinePopupExplore/XUiPanelMainLinePopupExploreSound").New(self.PanelSoundWave, self)
     
     self:ShowNextContent()
 end
@@ -46,7 +59,7 @@ function XUiMainLinePopupExplore:OnDisable()
 end
 
 function XUiMainLinePopupExplore:OnDestroy()
-    self:StopAudioPlay()
+
 end
 
 --endregion
@@ -63,41 +76,25 @@ end
 
 ---@param contentCfg XTableMainLine2MessageContents
 function XUiMainLinePopupExplore:_UpdateContentShow(contentCfg)
-    -- 人物头像
-    if not string.IsNilOrEmpty(contentCfg.RoleIcon) then
-        self.RImgItemNpc.gameObject:SetActiveEx(true)
-        self.RImgItemNpc:SetRawImage(contentCfg.RoleIcon)
-    else
-        self.RImgItemNpc.gameObject:SetActiveEx(false)
-    end
-    
-    -- 其他物品
-    if not string.IsNilOrEmpty(contentCfg.ShowIcon) then
-        self.ImgItemBg.gameObject:SelectChoice(true)
-        self.RImgItemIcon.gameObject:SetActiveEx(true)
-        self.RImgItemIcon:SetRawImage(contentCfg.ShowIcon)
-    else
-        self.RImgItemIcon.gameObject:SetActiveEx(false)
-        self.ImgItemBg.gameObject:SetActiveEx(false)
-    end
-    
-    -- 音频播放
-    if XTool.IsNumberValidEx(contentCfg.CueId) then
-        self.UiTxtItemConnecting.gameObject:SetActiveEx(true)
-        self.ImgSoundWave.gameObject:SetActiveEx(true)
-        self.TxtTime.gameObject:SetActiveEx(true)
+    if contentCfg.Type == self._Control.MessageControl.EnumConst.MessageContentType.Normal then
+        self.ItemPanel:Close()
+        self.SoundPanel:Close()
+        self.RolePanel:Open()
         
-        self:StartAudioPlay(contentCfg.CueId)
-    else
-        self.UiTxtItemConnecting.gameObject:SetActiveEx(false)
-        self.ImgSoundWave.gameObject:SetActiveEx(false)
-        self.TxtTime.gameObject:SetActiveEx(false)
-        
-        self:StopAudioPlay()
+        self.RolePanel:Refresh(contentCfg)
+    elseif contentCfg.Type == self._Control.MessageControl.EnumConst.MessageContentType.ItemShow then
+        self.SoundPanel:Close()
+        self.RolePanel:Close()
+        self.ItemPanel:Open()
+
+        self.ItemPanel:Refresh(contentCfg)
+    elseif contentCfg.Type == self._Control.MessageControl.EnumConst.MessageContentType.WithAudio then
+        self.ItemPanel:Close()
+        self.RolePanel:Close()
+        self.SoundPanel:Open()
+
+        self.SoundPanel:Refresh(contentCfg)
     end
-    
-    self.UiTxtItemName.text = contentCfg.Name or ''
-    self.UiTxtItemDesc.text = contentCfg.Desc or ''
 
     if not XTool.IsTableEmpty(self._ChoiceGridList) then
         for i, v in pairs(self._ChoiceGridList) do
@@ -157,44 +154,6 @@ end
 
 --endregion
 
---region 音频播放相关
 
-function XUiMainLinePopupExplore:StopAudioPlay()
-    if self._AudioProgressTimeId then
-        XScheduleManager.UnSchedule(self._AudioProgressTimeId)
-        self._AudioProgressTimeId = nil
-    end
-    
-    if self._AudioInfo then
-        self._AudioInfo:Stop()
-        self._AudioInfo = nil
-    end
-end
-
-function XUiMainLinePopupExplore:StartAudioPlay(cueId)
-    self:StopAudioPlay()
-    self._AudioInfo = XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, cueId)
-    
-    self:_UpdateAudioProgressShow()
-    self._AudioProgressTimeId = XScheduleManager.ScheduleForever(handler(self, self._UpdateAudioProgressShow), XScheduleManager.SECOND)
-end
-
-function XUiMainLinePopupExplore:_UpdateAudioProgressShow()
-    if not self._AudioInfo then
-        self:StopAudioPlay()
-        return
-    end
-    
-    local curTime = self._AudioInfo.Playing and math.max(0, self._AudioInfo.Time) or self._AudioInfo.Duration
-    local leftTime = math.max(0, (self._AudioInfo.Duration - curTime) / XScheduleManager.SECOND)
-    
-    self.TxtTime.text = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.HOUR_MINUTE_SECOND)
-
-    if not self._AudioInfo.Playing then
-        self:StopAudioPlay()
-    end
-end
-
---endregion
 
 return XUiMainLinePopupExplore

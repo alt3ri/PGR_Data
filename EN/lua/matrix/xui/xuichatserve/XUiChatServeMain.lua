@@ -22,6 +22,7 @@ local DefaultType = ChatChannelType.World
 local ChannelRefreshTime = CS.XGame.ClientConfig:GetInt("ChannelInfoRefreshMin")
 local FadeTime = CS.XGame.ClientConfig:GetInt("ChannelChangeFadeTime")
 local XUiGridChatChannelItem = require("XUi/XUiChatServe/Item/XUiGridChatChannelItem")
+local MathLerp = CS.UnityEngine.Mathf.Lerp
 
 local ChatRoomChannelNotOpen = CS.XTextManager.GetText("ChatRoomChannelNotOpen")
 local IsMessageTipShow = false
@@ -54,6 +55,8 @@ function XUiChatServeMain:OnAwake()
         self.PanelCopyRoot.gameObject:SetActiveEx(false)
         self.BubbleCopy = require('XUi/XUiChatServe/XUiPanelChatCopyBubble').New(self.PanelCopyRoot, self)
     end
+
+    self:InitConcertPreHeatingToast()
 end
 
 function XUiChatServeMain:OnDynamicTableEvent(event, index, grid)
@@ -117,7 +120,9 @@ end
 function XUiChatServeMain:OnDisable()
     self:StopChannelTimer()
     self:StopMsgTipsTimer()
-    self:RemoveTimer()
+    self:StopInputCoolDownTimer()
+    self:StopConcertPreHeatingToastStateTimers()
+    self:StopConcertPreHeatingToastScroll()
     self.UiPanelEmoji:OnDisable()
     self.UiPanelEmojiSetting:OnDisable()
     XEventManager.DispatchEvent(XEventId.EVENT_SCENE_UICHAT_DISABLE)
@@ -126,7 +131,9 @@ end
 function XUiChatServeMain:OnDestroy()
     self:StopChannelTimer()
     self:StopMsgTipsTimer()
-    self:RemoveTimer()
+    self:StopInputCoolDownTimer()
+    self:StopConcertPreHeatingToastStateTimers()
+    self:StopConcertPreHeatingToastScroll()
     self.UiPanelEmoji:OnDestroy()
     self.UiPanelEmojiSetting:OnDestroy()
     -- 重置特效冷却时间
@@ -190,7 +197,8 @@ function XUiChatServeMain:OnGetEvents()
     return { XEventId.EVENT_CHAT_RECEIVE_WORLD_MSG, XEventId.EVENT_CHAT_RECEIVE_ROOM_MSG,
              XEventId.EVENT_PULL_SCROLLVIEW_END, XEventId.EVENT_CHAT_CHANNEL_CHANGED,
              XEventId.EVENT_CHAT_SERVER_CHANNEL_CHANGED, XEventId.EVENT_GUILD_RECEIVE_CHAT,
-             XEventId.EVENT_CHAT_RECEIVE_MENTOR_MSG, XEventId.EVENT_CHAT_MATCH_EFFECT, XEventId.EVENT_CHAT_EMOJI_REFRESH_RED, XEventId.EVENT_CHAT_BOARD_REFRESH_RED, }
+             XEventId.EVENT_CHAT_RECEIVE_MENTOR_MSG, XEventId.EVENT_CHAT_MATCH_EFFECT, XEventId.EVENT_CHAT_EMOJI_REFRESH_RED, XEventId.EVENT_CHAT_BOARD_REFRESH_RED,
+             XEventId.EVENT_CONCERT_PRE_HEATING_UPDATE, }
 end
 
 function XUiChatServeMain:OnNotify(evt, ...)
@@ -227,6 +235,8 @@ function XUiChatServeMain:OnNotify(evt, ...)
             self.BubbleCopy:Open()
             self.BubbleCopy:ShowCopyByCopyContent(...)
         end
+    elseif evt == XEventId.EVENT_CONCERT_PRE_HEATING_UPDATE then
+        self:RefreshConcertPreHeatingToast(true)
     end
 end
 -------------------------------Event end-------------------------------
@@ -336,6 +346,7 @@ function XUiChatServeMain:Refresh()
     self:RefreshMsgPanel()
     self:UpdateCurrentChannel()
     self:RefreshRedPoint()
+    self:RefreshConcertPreHeatingToast(true)
 end
 
 function XUiChatServeMain:RefreshRedPoint()
@@ -428,11 +439,12 @@ function XUiChatServeMain:OnClickTabCallBack(tabIndex)
     self.SelType = type
     self.UiPanelChatContent:RefreshChatList(type)
     self.PanelChannelLabel.gameObject:SetActiveEx(self.SelType == ChatChannelType.World)
+    self:RefreshConcertPreHeatingToast(true)
     -- 部队频道清除cd
     if self.SelType == ChatChannelType.Room then
         self:SetInputFieldText()
         self:SetInputInteractable(true)
-        self:RemoveTimer()
+        self:StopInputCoolDownTimer()
     end
 end
 
@@ -451,7 +463,7 @@ function XUiChatServeMain:RefreshCoolTime(refreshCoolingTime)
     self:SetInputInteractable(false)
     self:SetInputFieldText(CS.XTextManager.GetText("CountDownTips", refreshCoolingTime))
 
-    self:RemoveTimer()
+    self:StopInputCoolDownTimer()
 
     local refresh = function()
         refreshCoolingTime = refreshCoolingTime - 1
@@ -459,7 +471,7 @@ function XUiChatServeMain:RefreshCoolTime(refreshCoolingTime)
         if stop then
             self:SetInputFieldText()
             self:SetInputInteractable(true)
-            self:RemoveTimer()
+            self:StopInputCoolDownTimer()
         else
             self:SetInputFieldText(CS.XTextManager.GetText("CountDownTips", refreshCoolingTime))
         end
@@ -479,7 +491,7 @@ function XUiChatServeMain:SetInputFieldText(text)
     end
 end
 
-function XUiChatServeMain:RemoveTimer()
+function XUiChatServeMain:StopInputCoolDownTimer()
     if self.timerId ~= -1 then
         XScheduleManager.UnSchedule(self.timerId)
         self.timerId = -1
@@ -695,6 +707,183 @@ function XUiChatServeMain:UpdateChannelTotalCount()
     self.TextTotalCount.text = #XDataCenter.ChatManager.GetAllChannelInfos()
 end
 
+-------------------音乐会预热聊天提示 begin---------------
+-- PanelConcertPreHeating使用：初始化节点和点击入口
+function XUiChatServeMain:InitConcertPreHeatingToast()
+    self._PanelConcertPreHeating = {}
+    XTool.InitUiObjectByUi(self._PanelConcertPreHeating, self.PanelConcertPreHeating)
+    self.PanelConcertPreHeating.gameObject:SetActiveEx(false)
+    self._PanelConcertPreHeating.BtnRaceToast.CallBack = handler(self, self.OnBtnConcertPreHeatingToastClick)
+end
+
+-- PanelConcertPreHeating使用：进入界面、切频道或数据变化时重判显隐
+function XUiChatServeMain:RefreshConcertPreHeatingToast(restartScroll)
+    if XTool.UObjIsNil(self.PanelConcertPreHeating) then
+        return
+    end
+
+    local isShow = false
+    local liveState
+    if self.SelType == ChatChannelType.World then
+        isShow, liveState = XMVCA.XConcertPreHeating:GetChatToastLiveState()
+    end
+
+    self:ApplyConcertPreHeatingToastState(isShow, liveState, restartScroll)
+end
+
+-- PanelConcertPreHeating使用：应用显隐结果并维护对应计时器
+function XUiChatServeMain:ApplyConcertPreHeatingToastState(isShow, liveState, restartScroll)
+    if not isShow then
+        if self.PanelConcertPreHeating.gameObject.activeSelf then
+            self.PanelConcertPreHeating.gameObject:SetActiveEx(false)
+        end
+        self:StopConcertPreHeatingToastStateTimers()
+        self:StopConcertPreHeatingToastScroll()
+        self:TryStartConcertPreHeatingToastShowTimer(liveState)
+        return
+    end
+
+    if not self.PanelConcertPreHeating.gameObject.activeSelf then
+        self.PanelConcertPreHeating.gameObject:SetActiveEx(true)
+    end
+    self:RefreshConcertPreHeatingToastText(liveState)
+    self:StartConcertPreHeatingToastCountdownTimer()
+
+    if restartScroll or (not self._ConcertPreHeatingScrollTimer and not self._ConcertPreHeatingScrollLoopTimer) then
+        self:StartConcertPreHeatingToastScroll()
+    end
+end
+
+-- PanelConcertPreHeating使用：直播前显示倒计时，直播中显示跳转文案
+function XUiChatServeMain:RefreshConcertPreHeatingToastText(liveState)
+    local ui = self._PanelConcertPreHeating
+    local text
+    if XMVCA.XConcertPreHeating:IsBeforeLive(liveState) then
+        local countDownText = XMVCA.XConcertPreHeating:GetLiveCountDownText(liveState)
+        text = XUiHelper.GetText("ConcertPreHeatingChatBeforeLiveText", countDownText)
+    elseif XMVCA.XConcertPreHeating:IsLive(liveState) then
+        text = XUiHelper.GetText("ConcertPreHeatingChatLiveText")
+    end
+
+    if string.IsNilOrEmpty(text) or text == self._ConcertPreHeatingToastText then
+        return
+    end
+
+    self._ConcertPreHeatingToastText = text
+    ui.BtnRaceToast:SetNameByGroup(0, text)
+
+    CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(ui.Content1)
+    CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(ui.Content2)
+end
+
+-- PanelConcertPreHeating使用：显示期间开启倒计时刷新
+function XUiChatServeMain:StartConcertPreHeatingToastCountdownTimer()
+    if self._ConcertPreHeatingCountdownTimer then
+        return
+    end
+
+    self._ConcertPreHeatingCountdownTimer = XScheduleManager.ScheduleForever(function()
+        self:RefreshConcertPreHeatingToastCountdown()
+    end, XScheduleManager.SECOND)
+end
+
+-- PanelConcertPreHeating使用：已显示时每秒刷新倒计时，窗口结束则隐藏
+function XUiChatServeMain:RefreshConcertPreHeatingToastCountdown()
+    if XTool.UObjIsNil(self.PanelConcertPreHeating) then
+        return
+    end
+
+    local isShow = false
+    local liveState
+    if self.SelType == ChatChannelType.World then
+        isShow, liveState = XMVCA.XConcertPreHeating:GetChatToastLiveState()
+    end
+
+    if not isShow then
+        self:ApplyConcertPreHeatingToastState(false, liveState, false)
+        return
+    end
+
+    self:RefreshConcertPreHeatingToastText(liveState)
+end
+
+-- PanelConcertPreHeating使用：停止显隐状态刷新定时器
+function XUiChatServeMain:StopConcertPreHeatingToastStateTimers()
+    if self._ConcertPreHeatingCountdownTimer then
+        XScheduleManager.UnSchedule(self._ConcertPreHeatingCountdownTimer)
+        self._ConcertPreHeatingCountdownTimer = nil
+    end
+
+    if self._ConcertPreHeatingShowTimer then
+        XScheduleManager.UnSchedule(self._ConcertPreHeatingShowTimer)
+        self._ConcertPreHeatingShowTimer = nil
+    end
+end
+
+-- PanelConcertPreHeating使用：等待进入开播前24小时显示窗口
+function XUiChatServeMain:TryStartConcertPreHeatingToastShowTimer(liveState)
+    local waitTime = XMVCA.XConcertPreHeating:GetChatToastShowWaitSeconds(liveState)
+    if waitTime <= 0 then
+        return
+    end
+
+    self._ConcertPreHeatingShowTimer = XScheduleManager.ScheduleOnce(function()
+        self._ConcertPreHeatingShowTimer = nil
+        self:RefreshConcertPreHeatingToast(true)
+    end, waitTime * 1000)
+end
+
+-- PanelConcertPreHeating使用：启动提示横向滚动
+function XUiChatServeMain:StartConcertPreHeatingToastScroll()
+    local scrollSeconds = 10 -- 单轮滚动耗时，单位秒
+    local scrollLoopInterval = 2000 -- 单轮滚动结束后的停顿间隔，单位毫秒
+    local ui = self._PanelConcertPreHeating
+    if XTool.UObjIsNil(self.PanelConcertPreHeating) or not self.PanelConcertPreHeating.gameObject.activeSelf then
+        return
+    end
+
+    self:StopConcertPreHeatingToastScroll()
+    CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(ui.Content1)
+    CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(ui.Content2)
+
+    local startPosX = ui.Viewport1.rect.width
+    local endPosX = -ui.Content1.rect.width
+    ui.Content1.anchoredPosition = Vector2(startPosX, 0)
+    ui.Content2.anchoredPosition = Vector2(startPosX, 0)
+
+    self._ConcertPreHeatingScrollTimer = XUiHelper.Tween(scrollSeconds, function(t)
+        if not ui.Content1:Exist() or not ui.Content2:Exist() then
+            return true
+        end
+
+        ui.Content1.anchoredPosition = Vector2(MathLerp(startPosX, endPosX, t), 0)
+        ui.Content2.anchoredPosition = Vector2(MathLerp(startPosX, endPosX, t), 0)
+    end, function()
+        self._ConcertPreHeatingScrollTimer = nil
+        if self.PanelConcertPreHeating.gameObject.activeSelf then
+            -- 滚动结束后间隔一段时间再循环播放
+            self._ConcertPreHeatingScrollLoopTimer = XScheduleManager.ScheduleOnce(function()
+                self._ConcertPreHeatingScrollLoopTimer = nil
+                self:StartConcertPreHeatingToastScroll()
+            end, scrollLoopInterval)
+        end
+    end)
+end
+
+-- PanelConcertPreHeating使用：停止提示横向滚动和循环等待
+function XUiChatServeMain:StopConcertPreHeatingToastScroll()
+    if self._ConcertPreHeatingScrollTimer then
+        self:StopTweener(self._ConcertPreHeatingScrollTimer)
+        self._ConcertPreHeatingScrollTimer = nil
+    end
+
+    if self._ConcertPreHeatingScrollLoopTimer then
+        XScheduleManager.UnSchedule(self._ConcertPreHeatingScrollLoopTimer)
+        self._ConcertPreHeatingScrollLoopTimer = nil
+    end
+end
+-------------------音乐会预热聊天提示 end---------------
+
 -------------------举报聊天的按钮相关 begin---------------
 function XUiChatServeMain:OnBtnReportClick()
     self:SetBtnReportActive(false)
@@ -753,4 +942,11 @@ function XUiChatServeMain:OpenPanelEmoji()
 end
 -------------------举报聊天的按钮相关 end---------------
 
+-- PanelConcertPreHeating点击：打开直播链接
+function XUiChatServeMain:OnBtnConcertPreHeatingToastClick()
+    if XMVCA.XConcertPreHeating:OpenLiveUrlWithTips(nil, false) then
+        XMVCA.XConcertPreHeating:BuryingChatLiveJump()
+    end
+end
+
 return XUiChatServeMain

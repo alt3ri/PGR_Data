@@ -2,6 +2,15 @@
 ---@field Parent XUiGachaLiv4P5StageLine
 local XUiGridGachaLiv4P5StageItem = XClass(XUiNode, "XUiGridGachaLiv4P5StageItem")
 
+function XUiGridGachaLiv4P5StageItem:OnStart()
+    self._PlayEnableAnimHandler = function()
+        if self._LoadedGo then
+            -- 动画挂载在预制下，并伴随显示自动激活
+            self._LoadedGo.gameObject:SetActiveEx(true)
+        end
+    end
+end
+
 function XUiGridGachaLiv4P5StageItem:SetNormalStage()
     self.PanelStageNormal.gameObject:SetActiveEx(not self._IsLock)
     if self.RImgStory then
@@ -37,7 +46,13 @@ function XUiGridGachaLiv4P5StageItem:UpdateNode(index, festivalId, stageId)
     self._StageIndex = fStage:GetOrderIndex()
     local stagePrefabName = fStage:GetStagePrefab()
     local isOpen, description = self._FStage:GetCanOpen()
-    self.GameObject:SetActiveEx(isOpen)
+
+    if isOpen then
+        self:Open()
+    else
+        self:Close()    
+    end
+    
     local gridGameObject = self.Transform:LoadPrefab(stagePrefabName)
     local uiObj = gridGameObject.transform:GetComponent("UiObject")
     for i = 0, uiObj.NameList.Count - 1 do
@@ -60,6 +75,8 @@ function XUiGridGachaLiv4P5StageItem:UpdateNode(index, festivalId, stageId)
     if self.ImgHideLine then
         self.ImgHideLine.gameObject:SetActiveEx(isEgg)
     end
+    
+    self._LoadedGo = gridGameObject
 end
 
 function XUiGridGachaLiv4P5StageItem:OnBtnStageClick()
@@ -86,5 +103,20 @@ function XUiGridGachaLiv4P5StageItem:ResetItemPosition(pos)
         self.Transform.localPosition = CS.UnityEngine.Vector3(pos.x, pos.y - rect.height, pos.z)
     end
 end
+
+
+--region 入场间隔动画相关
+
+function XUiGridGachaLiv4P5StageItem:PreEnableAnim()
+    if self._LoadedGo then
+        self._LoadedGo.gameObject:SetActiveEx(false)
+    end
+end
+
+function XUiGridGachaLiv4P5StageItem:PlayEnableAnim(interval)
+    self:DelayCall(self._PlayEnableAnimHandler, interval)
+end
+
+--endregion
 
 return XUiGridGachaLiv4P5StageItem

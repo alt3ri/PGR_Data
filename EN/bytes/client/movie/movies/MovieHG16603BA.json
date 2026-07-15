@@ -1531,7 +1531,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: 'Hiro', 3: \"Some people say Shadow's looking for a way to leave this place...\", 4: '1', 18: '100017106'}"
+        "Params": "{2: 'Hiro', 3: 'Some people say Shadow has been looking for a way to leave this place...', 4: '1', 18: '100017106'}"
     },
     {
         "Id": 119,
@@ -2974,7 +2974,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 3: \"The mechanical spider\u2014or rather, Xun's head\u2014shakes its head violently. Its mouth stretches into an exaggerated grin. The voice is shrill and manic.\"}"
+        "Params": "{1: '1', 3: \"The mechanical spider shakes its head\u2014or rather, Xun's head\u2014violently. Its mouth stretches into an exaggerated grin. The voice is shrill and manic.\"}"
     },
     {
         "Id": 230,
@@ -4118,7 +4118,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '(Fire)'}"
+        "Params": "{2: '(Open fire)'}"
     },
     {
         "Id": 318,
@@ -4508,7 +4508,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 3: \"Alpha gets it. She jumps up and chains several fast slashes. Her blade scrapes across Xun's armor, and sparks fly.\"}"
+        "Params": "{1: '1', 3: \"Alpha gets it. She jumps up and chains several fast slashes. Her blade scrapes across Xun's armor, and sparks fly. \"}"
     },
     {
         "Id": 348,
@@ -5883,7 +5883,7 @@
         "IsBlock": null,
         "IsEnd": null,
         "BeginAnim": null,
-        "EndAnim": null,
+        "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
         "Params": "{2: 'Xun', 3: 'Heh... I... have to s#&rvive!', 4: '1', 18: '100017162'}"
@@ -5898,7 +5898,7 @@
         "BeginAnim": null,
         "EndAnim": null,
         "BeginDelay": null,
-        "EndDelay": null,
+        "EndDelay": 500.0,
         "Params": "{1: '1'}"
     },
     {
@@ -5916,19 +5916,45 @@
     },
     {
         "Id": 456,
-        "ActionId": 456,
+        "ActionId": 2001,
         "NextActionId": null,
-        "Type": 301,
+        "Type": 501,
         "IsBlock": null,
         "IsEnd": null,
         "BeginAnim": null,
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: 'Ahead in the forest, a thin crack opens in the air. From a distance, you can see only darkness inside it.'}"
+        "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiChuanSongMengOpen.prefab', 2: '1', 5: '1'}"
     },
     {
         "Id": 457,
+        "ActionId": 2002,
+        "NextActionId": null,
+        "Type": 511,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": null,
+        "EndAnim": null,
+        "BeginDelay": null,
+        "EndDelay": 500.0,
+        "Params": "{1: '1', 2: '0', 3: '0|0|1500'}"
+    },
+    {
+        "Id": 458,
+        "ActionId": 456,
+        "NextActionId": null,
+        "Type": 301,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": "DialogEnable",
+        "EndAnim": null,
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{3: 'Ahead in the forest, a thin crack opens in the air. From a distance, you can see only darkness inside it.'}"
+    },
+    {
+        "Id": 459,
         "ActionId": 457,
         "NextActionId": null,
         "Type": 201,
@@ -5941,7 +5967,7 @@
         "Params": "{1: '1', 2: '501608'}"
     },
     {
-        "Id": 458,
+        "Id": 460,
         "ActionId": 458,
         "NextActionId": null,
         "Type": 401,
@@ -5954,7 +5980,7 @@
         "Params": "{1: '2', 2: '9351043'}"
     },
     {
-        "Id": 459,
+        "Id": 461,
         "ActionId": 459,
         "NextActionId": null,
         "Type": 301,
@@ -5967,7 +5993,7 @@
         "Params": "{1: '1', 3: \"Seeing the rift, the armor plates on Xun's abdomen slide open again, revealing the cannon. He doesn't aim at you or Alpha. He aims at the ground.\"}"
     },
     {
-        "Id": 460,
+        "Id": 462,
         "ActionId": 460,
         "NextActionId": null,
         "Type": 401,
@@ -5980,7 +6006,7 @@
         "Params": "{1: '2', 2: '9342051'}"
     },
     {
-        "Id": 461,
+        "Id": 463,
         "ActionId": 461,
         "NextActionId": null,
         "Type": 301,
@@ -5993,7 +6019,7 @@
         "Params": "{3: 'BANG\u2014'}"
     },
     {
-        "Id": 462,
+        "Id": 464,
         "ActionId": 462,
         "NextActionId": null,
         "Type": 306,
@@ -6006,7 +6032,7 @@
         "Params": null
     },
     {
-        "Id": 463,
+        "Id": 465,
         "ActionId": 463,
         "NextActionId": null,
         "Type": 301,
@@ -6019,7 +6045,7 @@
         "Params": "{2: 'Xun', 3: 'Heh... haha... boost!', 4: '1', 18: '100017163'}"
     },
     {
-        "Id": 464,
+        "Id": 466,
         "ActionId": 464,
         "NextActionId": null,
         "Type": 401,
@@ -6032,7 +6058,7 @@
         "Params": "{1: '2', 2: '6310'}"
     },
     {
-        "Id": 465,
+        "Id": 467,
         "ActionId": 465,
         "NextActionId": null,
         "Type": 203,
@@ -6045,7 +6071,7 @@
         "Params": "{1: '1', 2: '0.12', 4: '-50', 5: '100'}"
     },
     {
-        "Id": 466,
+        "Id": 468,
         "ActionId": 466,
         "NextActionId": null,
         "Type": 202,
@@ -6058,7 +6084,7 @@
         "Params": "{1: '1'}"
     },
     {
-        "Id": 467,
+        "Id": 469,
         "ActionId": 467,
         "NextActionId": null,
         "Type": 301,
@@ -6071,7 +6097,7 @@
         "Params": "{3: 'Using the recoil like a thruster, Xun accelerates and shoots straight into the rift.'}"
     },
     {
-        "Id": 468,
+        "Id": 470,
         "ActionId": 468,
         "NextActionId": null,
         "Type": 201,
@@ -6084,7 +6110,7 @@
         "Params": "{1: '18', 2: '501635'}"
     },
     {
-        "Id": 469,
+        "Id": 471,
         "ActionId": 469,
         "NextActionId": null,
         "Type": 301,
@@ -6097,7 +6123,7 @@
         "Params": "{1: '1', 2: 'Alpha', 3: 'After him.', 4: '18', 18: '100017164'}"
     },
     {
-        "Id": 470,
+        "Id": 472,
         "ActionId": 470,
         "NextActionId": null,
         "Type": 202,
@@ -6110,7 +6136,7 @@
         "Params": "{1: '18', 6: '1'}"
     },
     {
-        "Id": 471,
+        "Id": 473,
         "ActionId": 471,
         "NextActionId": null,
         "Type": 301,
@@ -6123,7 +6149,7 @@
         "Params": "{3: 'Without hesitation, you and Alpha dive into the rift after him.'}"
     },
     {
-        "Id": 472,
+        "Id": 474,
         "ActionId": 472,
         "NextActionId": null,
         "Type": 104,
@@ -6136,7 +6162,20 @@
         "Params": "{1: '0|0|-500', 2: '0.3'}"
     },
     {
-        "Id": 473,
+        "Id": 475,
+        "ActionId": 2003,
+        "NextActionId": null,
+        "Type": 511,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": null,
+        "EndAnim": null,
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{1: '1', 2: '0.3', 3: '0|0|-1000'}"
+    },
+    {
+        "Id": 476,
         "ActionId": 473,
         "NextActionId": null,
         "Type": 205,
@@ -6149,7 +6188,7 @@
         "Params": "{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '0.5'}"
     },
     {
-        "Id": 474,
+        "Id": 477,
         "ActionId": 474,
         "NextActionId": null,
         "Type": 401,
@@ -6162,7 +6201,20 @@
         "Params": "{1: '2', 2: '4387'}"
     },
     {
-        "Id": 475,
+        "Id": 478,
+        "ActionId": 2004,
+        "NextActionId": null,
+        "Type": 505,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": null,
+        "EndAnim": null,
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiChuanSongMengOpen.prefab', 5: '1'}"
+    },
+    {
+        "Id": 479,
         "ActionId": 475,
         "NextActionId": null,
         "Type": 501,
@@ -6175,7 +6227,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab', 2: '2'}"
     },
     {
-        "Id": 476,
+        "Id": 480,
         "ActionId": 476,
         "NextActionId": null,
         "Type": 205,
@@ -6188,7 +6240,7 @@
         "Params": "{1: '999'}"
     },
     {
-        "Id": 477,
+        "Id": 481,
         "ActionId": 477,
         "NextActionId": null,
         "Type": 101,
@@ -6201,7 +6253,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}"
     },
     {
-        "Id": 478,
+        "Id": 482,
         "ActionId": 478,
         "NextActionId": null,
         "Type": 301,

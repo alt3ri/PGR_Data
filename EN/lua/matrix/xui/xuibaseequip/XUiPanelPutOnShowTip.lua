@@ -1,3 +1,4 @@
+--[[
 local pairs = pairs
 
 local XUiPanelPutOnShowTip = XClass(nil, "XUiPanelPutOnShowTip")
@@ -98,4 +99,5 @@ function XUiPanelPutOnShowTip:HidePanel()
     self.GameObject:SetActive(false)
 end
 
-return XUiPanelPutOnShowTip
+return XUiPanelPutOnShowTip
+]]

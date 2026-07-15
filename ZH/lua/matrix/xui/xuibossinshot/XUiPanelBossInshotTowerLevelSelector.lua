@@ -19,6 +19,12 @@ function XUiPanelBossInshotTowerLevelSelector:OnStart(
     self._Ctrl = control
 end
 
+-- 已读记录的存档Key
+function XUiPanelBossInshotTowerLevelSelector:_GetRedPointKey()
+    local activityId = self._Control:GetActivityId()
+    return LevelRedPointKey .. activityId .. "_" .. XPlayer.Id
+end
+
 function XUiPanelBossInshotTowerLevelSelector:_PopToast()
     local toastData = self._Control:GetAndClearToastData()
 
@@ -66,6 +72,18 @@ function XUiPanelBossInshotTowerLevelSelector:OnDisable()
         XEventId.EVENT_BOSS_INSHOT_TOWER_DATA_NOTIFY,
         self._PopToast,
         self)
+    self:_ClearNewLevelRedPoint()
+end
+
+-- 清除新关卡蓝点
+function XUiPanelBossInshotTowerLevelSelector:_ClearNewLevelRedPoint()
+    local redPointKey = self:_GetRedPointKey()
+    local redPointCancelledLevel = tonumber(XSaveTool.GetData(redPointKey)) or 0
+    local currentLevel = self._Control:GetBossTowerCurrentLevel()
+
+    if currentLevel > redPointCancelledLevel then
+        XSaveTool.SaveData(redPointKey, currentLevel)
+    end
 end
 
 function XUiPanelBossInshotTowerLevelSelector:Refresh(keepLevelSelect)
@@ -73,10 +91,7 @@ function XUiPanelBossInshotTowerLevelSelector:Refresh(keepLevelSelect)
         self._LevelGridBtns = {}
     end
 
-    local activityId = self._Ctrl:GetActivityId()
-
-    local redPointCancelledLevel =
-        tonumber(XSaveTool.GetData(LevelRedPointKey .. activityId .. "_"  .. XPlayer.Id))
+    local redPointCancelledLevel = tonumber(XSaveTool.GetData(self:_GetRedPointKey()))
 
     XTool.SetDataForGenericGrid(
         self._LevelGridBtns,
@@ -154,11 +169,11 @@ function XUiPanelBossInshotTowerLevelSelector:OnButtonClicked(btn)
     local lockReason = btn:GetLockReason()
     local levelConf = btn:GetLevelConf()
 
-    local activityId = self._Control:GetActivityId()
-    local redPointKey = LevelRedPointKey .. activityId .. "_"  .. XPlayer.Id
+    local redPointKey = self:_GetRedPointKey()
     local redPointCancelledLevel = tonumber(XSaveTool.GetData(redPointKey)) or 0
+    local currentLevel = self._Control:GetBossTowerCurrentLevel()
 
-    if levelConf.Id > redPointCancelledLevel then
+    if currentLevel >= levelConf.Id and levelConf.Id > redPointCancelledLevel then
         redPointCancelledLevel = levelConf.Id
         XSaveTool.SaveData(redPointKey, redPointCancelledLevel)
 

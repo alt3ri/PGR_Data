@@ -821,8 +821,8 @@
     },
     {
         "Id": 20003086.0,
-        "Key": "FubenBossSingleChallengePreBuffNotActive",
-        "Text": "20003086\u56da\u7b3c\u93d6\u6218\u70b9\u524d\u7f6ebuff\u672a\u6fc0\u6d3b"
+        "Key": "FubenBossSingleChallengeBuffIdNotExist",
+        "Text": "20003086 This buff does not exist in the current Phantom Pain Cage: Intensive Battle Buff Group"
     },
     {
         "Id": 20003087.0,
@@ -1297,72 +1297,132 @@
     {
         "Id": 20004005.0,
         "Key": "TeamManagerCanNotFindThePrefabTeam",
-        "Text": "20004005 Preset team not found"
+        "Text": "Preset team not found"
     },
     {
         "Id": 20004006.0,
-        "Key": "TeamManagerCharacterIsEmptyCanNotCarryPartner",
-        "Text": "20004006\u7ad9\u4f4d\u6ca1\u6709\u89d2\u8272\u4e0d\u80fd\u643a\u5e26\u8f85\u52a9\u673a"
+        "Key": "TeamManagerPosDataNotFound",
+        "Text": "No character position data"
     },
     {
         "Id": 20004007.0,
-        "Key": "TeamManagerThisTeamPosIsNotExist",
-        "Text": "20004006 Cannot equip CUB without character in position"
+        "Key": "TeamManagerCharacterIsEmptyCanNotCarryPartner",
+        "Text": "No character in position. Cannot carry CUB"
     },
     {
         "Id": 20004008.0,
-        "Key": "TeamManagerPrefabPartnerSkillIsEmpty",
-        "Text": "20004007 Position does not exist"
+        "Key": "TeamManagerThisTeamPosIsNotExist",
+        "Text": "Position does not exist"
     },
     {
         "Id": 20004009.0,
-        "Key": "TeamManagerPrePartnerIsEmptyCanNotCarrySkill",
-        "Text": "20004008\u8f85\u52a9\u673a\u9884\u8bbe\u4e3a\u7a7a\u4e0d\u80fd\u8bbe\u7f6e\u6280\u80fd"
+        "Key": "TeamManagerPrefabTeamPartnerDataEmpty",
+        "Text": "CUB preset skill cannot be empty"
     },
     {
         "Id": 20004010.0,
-        "Key": "TeamManagerCharacterIsEmptyCanNotPutOnEquip",
-        "Text": "20004006 CUB preset skills cannot be empty"
+        "Key": "TeamManagerPrefabPartnerSkillIsEmpty",
+        "Text": "CUB preset is empty. Cannot set skill"
     },
     {
         "Id": 20004011.0,
-        "Key": "TeamManagerPrefabTeamAlreadyOnTop",
-        "Text": "\"20004008 CUB preset empty, cannot set skills\""
+        "Key": "TeamManagerPrePartnerIsEmptyCanNotCarrySkill",
+        "Text": "No character in position. Cannot equip equipment"
     },
     {
         "Id": 20004012.0,
-        "Key": "TeamManagerPrefabTeamEquipRepeat",
-        "Text": "20004010 No character in position. Cannot equip equipment"
+        "Key": "TeamManagerCharacterIsEmptyCanNotPutOnEquip",
+        "Text": "Formation is already at the top"
     },
     {
         "Id": 20004013.0,
-        "Key": "TeamManagerPrefabTeamResonanceRepeat",
-        "Text": "20004011 Formation is already at the top"
+        "Key": "TeamManagerPrefabTeamAlreadyOnTop",
+        "Text": "Preset formation contains duplicate equipment"
     },
     {
         "Id": 20004014.0,
-        "Key": "TeamManagerPrefabCharacterEquipEmpty",
-        "Text": "20004012 Preset formation contains duplicate equipped equipment"
+        "Key": "TeamManagerPrefabTeamEquipRepeat",
+        "Text": "Preset team gear data is empty"
     },
     {
         "Id": 20004015.0,
-        "Key": "TeamManagerPrefabTeamNameEmpty",
-        "Text": "20004015\u7f16\u961f\u540d\u4e0d\u80fd\u4e3a\u7a7a"
+        "Key": "TeamManagerPrefabTeamEquipDataEmpty",
+        "Text": "Preset formation contains duplicate equipped resonance"
     },
     {
         "Id": 20004016.0,
-        "Key": "TeamManagerPrefabTeamPartnerRepeat",
-        "Text": "20004013 Preset formation contains duplicate equipped resonance"
+        "Key": "TeamManagerPrefabTeamResonanceRepeat",
+        "Text": "Position character equipment data is empty"
     },
     {
         "Id": 20004017.0,
-        "Key": "TeamManagerPrefabTeamSameCharacter",
-        "Text": "20004014 Position character equipment data is empty"
+        "Key": "TeamManagerPrefabCharacterEquipEmpty",
+        "Text": "Team name cannot be empty"
     },
     {
         "Id": 20004018.0,
+        "Key": "TeamManagerPrefabTeamNameEmpty",
+        "Text": "Team name contains illegal characters"
+    },
+    {
+        "Id": 20004019.0,
+        "Key": "TeamManagerPrefabTeamNameIllegal",
+        "Text": "Preset formation contains duplicate equipped CUBs"
+    },
+    {
+        "Id": 20004020.0,
+        "Key": "TeamManagerPrefabTeamPartnerRepeat",
+        "Text": "Preset formation contains duplicate characters"
+    },
+    {
+        "Id": 20004021.0,
+        "Key": "TeamManagerPrefabTeamSameCharacter",
+        "Text": "Preset team gear data cannot be empty"
+    },
+    {
+        "Id": 20004022.0,
         "Key": "TeamManagerPrefabTeamEquipDataIsNull",
-        "Text": "20004015 Team name cannot be empty"
+        "Text": "Preset team tag is illegal"
+    },
+    {
+        "Id": 20004023.0,
+        "Key": "TeamManagerPrefabTagConfigNotFound",
+        "Text": "Preset team tag parameter error"
+    },
+    {
+        "Id": 20004024.0,
+        "Key": "TeamManagerPrefabTagDataError",
+        "Text": "Preset teams have the same tag"
+    },
+    {
+        "Id": 20004025.0,
+        "Key": "TeamManagerPrefabTagRepeat",
+        "Text": "Preset team has multiple tags of the same type"
+    },
+    {
+        "Id": 20004026.0,
+        "Key": "TeamManagerPrefabTagTypeError",
+        "Text": "Preset teams cannot select deployment form"
+    },
+    {
+        "Id": 20004027.0,
+        "Key": "TeamManagerPrefabSkillCanNotSwitch",
+        "Text": "Preset team deployment form skill is illegal"
+    },
+    {
+        "Id": 20004028.0,
+        "Key": "TeamManagerPrefabSkillSwitchError",
+        "Text": "Preset team deployment form parameter error"
+    },
+    {
+        "Id": 20004029.0,
+        "Key": "TeamManagerPrefabSkillSwitchParamError",
+        "Text": "No character in position. Cannot set battle form"
+    },
+    {
+        "Id": 20004030.0,
+        "Key": "TeamManagerPrefabSkillSwitchInEmptyPos",
+        "Text": "No character in position. Cannot set battle form"
     },
     {
         "Id": 20007001.0,
@@ -2347,7 +2407,7 @@
     {
         "Id": 20021004.0,
         "Key": "EquipManagerGetEquipNotFound",
-        "Text": "Add the cost first"
+        "Text": "Equipment does not exist"
     },
     {
         "Id": 20021005.0,
@@ -4337,15 +4397,30 @@
     {
         "Id": 20034138.0,
         "Key": "ConditionManagerTheatre6StageCountNotEnough",
-        "Text": "\u901a\u8fc7\u5173\u5361\u6b21\u6570\u4e0d\u8db3"
+        "Text": "Insufficient stage completions"
     },
     {
         "Id": 20034139.0,
         "Key": "ConditionManagerTheatre6DiffCountNotEnough",
-        "Text": "\u901a\u8fc7\u96be\u5ea6\u6b21\u6570\u4e0d\u8db3"
+        "Text": "Insufficient difficulty completions"
     },
     {
         "Id": 20034140.0,
+        "Key": "ConditionManagerTheatre6FileCountNotEnough",
+        "Text": "20034140\u5b58\u6863\u6570\u91cf\u4e0d\u8db3"
+    },
+    {
+        "Id": 20034141.0,
+        "Key": "ConditionManagerTheatre6PvpBattleCountNotEnough",
+        "Text": "20034141PVP\u6218\u6597\u6b21\u6570\u4e0d\u8db3"
+    },
+    {
+        "Id": 20034142.0,
+        "Key": "ConditionManagerTheatre6PvpRankNotReached",
+        "Text": "20034142PVP\u6bb5\u4f4d\u672a\u8fbe\u5230"
+    },
+    {
+        "Id": 20034143.0,
         "Key": "ConditionManagerPlayerGenderConditionNotFinish",
         "Text": "20034140 Gender configuration requirements not met"
     },
@@ -5245,6 +5320,36 @@
         "Text": "20049012 Illegal story ID"
     },
     {
+        "Id": 20049013.0,
+        "Key": "BossActivityDifficultyScoreError",
+        "Text": "20049013\u5f53\u524d\u96be\u5ea6\u8bc4\u5206\u5f02\u5e38"
+    },
+    {
+        "Id": 20049014.0,
+        "Key": "BossActivityDifficultyScoreOutOfRange",
+        "Text": "20049014\u5f53\u524d\u8bc4\u5206\u627e\u4e0d\u5230\u6240\u5c5e\u96be\u5ea6"
+    },
+    {
+        "Id": 20049015.0,
+        "Key": "BossActivityDifficultyCfgEmpty",
+        "Text": "20049015\u5f53\u524d\u96be\u5ea6\u8bc4\u5206\u914d\u7f6e\u6570\u636e\u4e3a\u7a7a"
+    },
+    {
+        "Id": 20049016.0,
+        "Key": "BossActivityTimeCostError",
+        "Text": "20049016\u901a\u5173\u65f6\u95f4\u5f02\u5e38"
+    },
+    {
+        "Id": 20049017.0,
+        "Key": "BossActivityTimeCostRatioCfgEmpty",
+        "Text": "20049017\u901a\u5173\u65f6\u95f4\u914d\u7f6e\u6570\u636e\u4e3a\u7a7a"
+    },
+    {
+        "Id": 20049018.0,
+        "Key": "BossActivityTimeCostRatioError",
+        "Text": "20049018\u901a\u5173\u65f6\u95f4\u500d\u7387\u5f02\u5e38"
+    },
+    {
         "Id": 20050001.0,
         "Key": "SignIdIsNotExist",
         "Text": "Sign-in ID does not exist"
@@ -5532,22 +5637,22 @@
     {
         "Id": 20053040.0,
         "Key": "PurchaseNotSupportSupplementGet",
-        "Text": "\u65e0\u6cd5\u8fdb\u884c\u8865\u7b7e"
+        "Text": "Missed sign-ins cannot be made up"
     },
     {
         "Id": 20053041.0,
         "Key": "PurchaseNotSupplementGetCount",
-        "Text": "\u65e0\u9700\u8865\u7b7e\u9886\u53d6"
+        "Text": "No makeup sign-in needed to claim"
     },
     {
         "Id": 20053042.0,
         "Key": "PurchaseBuyRemainDayLimit",
-        "Text": "\u5f53\u524d\u65e0\u6cd5\u8d2d\u4e70"
+        "Text": "Currently unavailable for purchase"
     },
     {
         "Id": 20053043.0,
         "Key": "PurchaseNotSupportSupplementGetReward",
-        "Text": "\u65e0\u6cd5\u8fdb\u884c\u8865\u7b7e"
+        "Text": "Missed sign-ins cannot be made up"
     },
     {
         "Id": 20053101.0,
@@ -14555,6 +14660,11 @@
         "Text": "20135006 Coating event has not started"
     },
     {
+        "Id": 20135007.0,
+        "Key": "FashionStoryChapterIsNotCfg",
+        "Text": "20135007 Selected Coating Event trial chapter not configured"
+    },
+    {
         "Id": 20136001.0,
         "Key": "CoupleCombatNotOpen",
         "Text": "Event is not available"
@@ -23181,8 +23291,93 @@
     },
     {
         "Id": 20215018.0,
-        "Key": "BossInshoRankInvalidRankId",
+        "Key": "BossInshotRankInvalidRankId",
         "Text": "20215018 Ranking identifier error"
+    },
+    {
+        "Id": 20215019.0,
+        "Key": "BossInshotTowerConditionNotMet",
+        "Text": "20215019 Conditions not met"
+    },
+    {
+        "Id": 20215020.0,
+        "Key": "BossInshotTowerIdError",
+        "Text": "20215020 Stage does not exist"
+    },
+    {
+        "Id": 20215021.0,
+        "Key": "BossInshotStageTypeError",
+        "Text": "20215021 Stage type error"
+    },
+    {
+        "Id": 20215022.0,
+        "Key": "BossInshotTowerFightDataError",
+        "Text": "20215022 Battle data abnormal"
+    },
+    {
+        "Id": 20215023.0,
+        "Key": "BossInshotTowerPreFightDataError",
+        "Text": "20215023 Pre-battle data abnormal"
+    },
+    {
+        "Id": 20215024.0,
+        "Key": "BossInshotTowerCfgError",
+        "Text": "20215024 Stage configuration does not exist"
+    },
+    {
+        "Id": 20215025.0,
+        "Key": "BossInshotPlayerTowerDataError",
+        "Text": "20215025 Stage data abnormal"
+    },
+    {
+        "Id": 20215026.0,
+        "Key": "BossInshotTowerNotMatchStage",
+        "Text": "20215026 Stage configuration mismatch"
+    },
+    {
+        "Id": 20215027.0,
+        "Key": "BossInshotTowerNotSupportSelectBoss",
+        "Text": "20215027 Boss Selection Not Supported"
+    },
+    {
+        "Id": 20215028.0,
+        "Key": "BossInshotTowerPassSelectBossError",
+        "Text": "20215028 Stage Already Cleared, Selection Not Supported"
+    },
+    {
+        "Id": 20215029.0,
+        "Key": "BossInshotTowerRepeatSelectBossError",
+        "Text": "20215029 Duplicate Selection Not Supported"
+    },
+    {
+        "Id": 20215030.0,
+        "Key": "BossInshotTowerSelectBossNotExistError",
+        "Text": "20215030 Selected Boss Does Not Exist"
+    },
+    {
+        "Id": 20215031.0,
+        "Key": "BossInshotTowerPreStageNotPass",
+        "Text": "20215031 Prerequisite Stage Not Cleared"
+    },
+    {
+        "Id": 20215032.0,
+        "Key": "BossInshotTowerLock",
+        "Text": "20215032 Stage Not Unlocked"
+    },
+    {
+        "Id": 20215033.0,
+        "Key": "BossInshotTowerNotAllPassSelectBossError",
+        "Text": "20215033 Not all stages have been cleared; selection is not available"
+    },
+    {
+        "Id": 20215034.0,
+        "Key": "BossInshotTowerInitError",
+        "Text": "20215034 Stage initialization error"
+    },
+    {
+        "Id": 20215035.0,
+        "Key": "BossInshotFightNotCharacter",
+        "Text": "20215035\u672a\u4e0a\u9635\u89d2\u8272"
     },
     {
         "Id": 20216001.0,
@@ -27250,6 +27445,11 @@
         "Text": "20290019 World Mode scene module not found"
     },
     {
+        "Id": 20290020.0,
+        "Key": "BigWorldCourseExploreNoAvailableReward",
+        "Text": "20290020 No claimable rewards in Journey exploration"
+    },
+    {
         "Id": 20291001.0,
         "Key": "BigWorldModuleNotFind",
         "Text": "20291001 World Mode module not found"
@@ -27431,8 +27631,8 @@
     },
     {
         "Id": 20311010.0,
-        "Key": "SoloReformCharacterChooseError",
-        "Text": "20311010 Character selection quantity error"
+        "Key": "SoloReformCharacterCountExceeded",
+        "Text": "20311010\u4e0a\u9635\u89d2\u8272\u9009\u53d6\u6570\u91cf\u8fc7\u591a"
     },
     {
         "Id": 20311011.0,
@@ -27448,6 +27648,26 @@
         "Id": 20311013.0,
         "Key": "SoloReformStageStarNumError",
         "Text": "20311013 Stage objective quantity error"
+    },
+    {
+        "Id": 20311014.0,
+        "Key": "SoloReformCharacterChooseEmpty",
+        "Text": "20311014\u4e0a\u9635\u89d2\u8272\u9009\u53d6\u4e3a\u7a7a"
+    },
+    {
+        "Id": 20311015.0,
+        "Key": "SoloReformPosCharacterIllegal",
+        "Text": "20311015\u4f4d\u7f6e\u4e0a\u9635\u89d2\u8272\u6570\u636e\u5f02\u5e38"
+    },
+    {
+        "Id": 20311016.0,
+        "Key": "SoloReformDuplicateCharacter",
+        "Text": "20311016\u89d2\u8272\u91cd\u590d\u4e0a\u9635"
+    },
+    {
+        "Id": 20311017.0,
+        "Key": "SoloReformDuplicateRobot",
+        "Text": "20311017\u8bd5\u7528\u89d2\u8272\u91cd\u590d\u4e0a\u9635"
     },
     {
         "Id": 20312001.0,
@@ -28397,52 +28617,52 @@
     {
         "Id": 20423002.0,
         "Key": "Theatre6CharacterIdError",
-        "Text": "\u89d2\u8272\u9519\u8bef"
+        "Text": "Character error"
     },
     {
         "Id": 20423003.0,
         "Key": "Theatre6FashionIdError",
-        "Text": "\u6d82\u88c5\u9519\u8bef"
+        "Text": "Coating error"
     },
     {
         "Id": 20423004.0,
         "Key": "Theatre6BuffIdError",
-        "Text": "\u56de\u58f0\u6b8b\u54cd\u9519\u8bef"
+        "Text": "Echo Resonance error"
     },
     {
         "Id": 20423005.0,
         "Key": "Theatre6BuffUnlockError",
-        "Text": "\u56de\u58f0\u6b8b\u54cd\u672a\u89e3\u9501"
+        "Text": "Echo Resonance locked"
     },
     {
         "Id": 20423006.0,
         "Key": "Theatre6DifficultyIdError",
-        "Text": "\u96be\u5ea6\u9519\u8bef"
+        "Text": "Difficulty error"
     },
     {
         "Id": 20423007.0,
         "Key": "Theatre6FloorCfgNotFoundError",
-        "Text": "\u8c03\u67e5\u5c42\u7ea7\u4e0d\u5b58\u5728"
+        "Text": "Investigation tier not found"
     },
     {
         "Id": 20423008.0,
         "Key": "Theatre6RoomCfgNotFoundError",
-        "Text": "\u96fe\u9014\u9685\u95f4\u4e0d\u5b58\u5728"
+        "Text": "Fogbound Nook does not exist"
     },
     {
         "Id": 20423009.0,
         "Key": "Theatre6RoomCfgParamError",
-        "Text": "\u96fe\u9014\u9685\u95f4\u53c2\u6570\u9519\u8bef"
+        "Text": "Fogbound Nook parameter error"
     },
     {
         "Id": 20423010.0,
         "Key": "Theatre6DifficultyGroupError",
-        "Text": "\u96be\u5ea6\u7ec4\u9519\u8bef"
+        "Text": "Difficulty group error"
     },
     {
         "Id": 20423011.0,
         "Key": "Theatre6DifficultyUnlockError",
-        "Text": "\u96be\u5ea6\u672a\u89e3\u9501"
+        "Text": "Difficulty locked"
     },
     {
         "Id": 20423012.0,
@@ -28452,17 +28672,17 @@
     {
         "Id": 20423013.0,
         "Key": "Theatre6NoCurrentModeDbError",
-        "Text": "\u5f53\u524d\u6a21\u5f0f\u6570\u636e\u4e0d\u5b58\u5728"
+        "Text": "Current mode data not found"
     },
     {
         "Id": 20423014.0,
         "Key": "Theatre6NoCurrentRoomDbError",
-        "Text": "\u5f53\u524d\u96fe\u9014\u9685\u95f4\u6570\u636e\u4e0d\u5b58\u5728"
+        "Text": "Current Fogbound Nook data not found"
     },
     {
         "Id": 20423015.0,
         "Key": "Theatre6RoomTypeError",
-        "Text": "\u5f53\u524d\u96fe\u9014\u9685\u95f4\u7c7b\u578b\u9519\u8bef"
+        "Text": "Current Fogbound Nook type error"
     },
     {
         "Id": 20423016.0,
@@ -28472,7 +28692,7 @@
     {
         "Id": 20423017.0,
         "Key": "Theatre6TaskRoomMaxRefreshCountError",
-        "Text": "\u8d85\u51fa\u5237\u65b0\u6b21\u6570\u4e0a\u9650"
+        "Text": "Refresh limit exceeded"
     },
     {
         "Id": 20423018.0,
@@ -28482,87 +28702,87 @@
     {
         "Id": 20423019.0,
         "Key": "Theatre6NoTaskToRandomError",
-        "Text": "\u6ca1\u6709\u65b0\u7684\u4efb\u52a1"
+        "Text": "No new missions"
     },
     {
         "Id": 20423020.0,
         "Key": "Theatre6TaskIdError",
-        "Text": "\u4efb\u52a1\u9519\u8bef"
+        "Text": "Mission error"
     },
     {
         "Id": 20423021.0,
         "Key": "Theatre6NoFloorDataError",
-        "Text": "\u6ca1\u6709\u8c03\u67e5\u5c42\u7ea7\u6570\u636e"
+        "Text": "No investigation tier data"
     },
     {
         "Id": 20423022.0,
         "Key": "Theatre6NoRoomDataError",
-        "Text": "\u6ca1\u6709\u96fe\u9014\u9685\u95f4\u6570\u636e"
+        "Text": "No Fogbound Nook data"
     },
     {
         "Id": 20423023.0,
         "Key": "Theatre6RoomIdxNotFoundError",
-        "Text": "\u65e0\u6cd5\u627e\u5230\u5f53\u524d\u7684\u96fe\u9014\u9685\u95f4\u7d22\u5f15"
+        "Text": "Current Fogbound Nook index not found"
     },
     {
         "Id": 20423024.0,
         "Key": "Theatre6NoNextRoomError",
-        "Text": "\u7f3a\u5c11\u4e0b\u4e00\u4e2a\u96fe\u9014\u9685\u95f4\u7684\u914d\u7f6e"
+        "Text": "Next Fogbound Nook configuration not found"
     },
     {
         "Id": 20423025.0,
         "Key": "Theatre6ChooseTaskOutOfLimitError",
-        "Text": "\u9009\u62e9\u7684\u4efb\u52a1\u6570\u91cf\u8d85\u8fc7\u4e0a\u9650"
+        "Text": "Mission selection limit exceeded"
     },
     {
         "Id": 20423026.0,
         "Key": "Theatre6ChoosePoolEmptyError",
-        "Text": "\u8ff7\u5c40\u6289\u62e9\u4e3a\u7a7a"
+        "Text": "Enigma Choice is empty"
     },
     {
         "Id": 20423027.0,
         "Key": "Theatre6ChoosePoolIdNotFoundError",
-        "Text": "\u8ff7\u5c40\u6289\u62e9\u6c60\u4e0d\u5b58\u5728"
+        "Text": "Enigma Choice Pool does not exist"
     },
     {
         "Id": 20423028.0,
         "Key": "Theatre6ChooseIdNotFoundError",
-        "Text": "\u8ff7\u5c40\u6289\u62e9\u4e0d\u5b58\u5728"
+        "Text": "Enigma Choice not found"
     },
     {
         "Id": 20423029.0,
         "Key": "Theatre6ChoosePoolCfgError",
-        "Text": "\u8ff7\u5c40\u6289\u62e9\u6c60\u914d\u7f6e\u9519\u8bef"
+        "Text": "Enigma Choice Pool configuration error"
     },
     {
         "Id": 20423030.0,
         "Key": "Theatre6ChoosePoolChooseLineNotFoundError",
-        "Text": "\u8ff7\u5c40\u6289\u62e9\u6c60\u4e8b\u4ef6\u94fe\u4e0d\u5b58\u5728"
+        "Text": "Enigma Choice Pool event chain not found"
     },
     {
         "Id": 20423031.0,
         "Key": "Theatre6ChooseCfgError",
-        "Text": "\u8ff7\u5c40\u6289\u62e9\u9519\u8bef"
+        "Text": "Enigma Choice error"
     },
     {
         "Id": 20423032.0,
         "Key": "Theatre6ChooseCfgRewardTypeError",
-        "Text": "\u8ff7\u5c40\u6289\u62e9\u5956\u52b1\u7c7b\u578b\u9519\u8bef"
+        "Text": "Enigma Choice reward type error"
     },
     {
         "Id": 20423033.0,
         "Key": "Theatre6ChooseIndexNotFoundError",
-        "Text": "\u8ff7\u5c40\u6289\u62e9\u6c60\u4e2d\u4e0d\u5b58\u5728\u8be5\u8ff7\u5c40\u6289\u62e9"
+        "Text": "Enigma Choice not found in Enigma Choice Pool"
     },
     {
         "Id": 20423034.0,
         "Key": "Theatre6ChooseRoomStatusError",
-        "Text": "\u5f53\u524d\u7684\u96fe\u9014\u9685\u95f4\u72b6\u6001\u9519\u8bef"
+        "Text": "Current Fogbound Nook status error"
     },
     {
         "Id": 20423035.0,
         "Key": "Theatre6FightIdNotFoundError",
-        "Text": "\u6218\u6597\u4e0d\u5b58\u5728"
+        "Text": "Battle not found"
     },
     {
         "Id": 20423036.0,
@@ -28572,62 +28792,62 @@
     {
         "Id": 20423037.0,
         "Key": "Theatre6MonsterIdAlreadySetError",
-        "Text": "\u5df2\u7ecf\u9009\u62e9\u4e86\u96be\u5ea6"
+        "Text": "Difficulty already selected"
     },
     {
         "Id": 20423038.0,
         "Key": "Theatre6MonsterIdNotSetError",
-        "Text": "\u672a\u9009\u62e9\u602a\u7269\u96be\u5ea6"
+        "Text": "Enemy difficulty not selected"
     },
     {
         "Id": 20423039.0,
         "Key": "Theatre6FightCfgParamError",
-        "Text": "\u6218\u6597\u914d\u7f6e\u9519\u8bef"
+        "Text": "Battle configuration error"
     },
     {
         "Id": 20423040.0,
         "Key": "Theatre6MonsterIdError",
-        "Text": "\u602a\u7269\u9519\u8bef"
+        "Text": "Enemy error"
     },
     {
         "Id": 20423041.0,
         "Key": "Theatre6ModeDataIsNull",
-        "Text": "\u6570\u636e\u4e0d\u5b58\u5728"
+        "Text": "Data not found"
     },
     {
         "Id": 20423042.0,
         "Key": "Theatre6SanCfgError",
-        "Text": "\u7406\u667a\u914d\u7f6e\u4e0d\u5b58\u5728"
+        "Text": "Sanity settings not found"
     },
     {
         "Id": 20423043.0,
         "Key": "Theatre6FileDataIsNull",
-        "Text": "\u5f52\u6863\u6570\u636e\u4e0d\u5b58\u5728"
+        "Text": "Archive data not found"
     },
     {
         "Id": 20423044.0,
         "Key": "Theatre6SlotIdError",
-        "Text": "\u5f52\u6863\u7f16\u53f7\u9519\u8bef"
+        "Text": "Archive ID error"
     },
     {
         "Id": 20423045.0,
         "Key": "Theatre6UnlockStoryIdError",
-        "Text": "\u89e3\u9501\u56fe\u9274ID\u9519\u8bef"
+        "Text": "Unlock Codex ID error"
     },
     {
         "Id": 20423046.0,
         "Key": "Theatre6FileDataNotFound",
-        "Text": "\u627e\u4e0d\u5230\u5f52\u6863\u6587\u4ef6\u6570\u636e"
+        "Text": "Archive file data not found"
     },
     {
         "Id": 20423047.0,
         "Key": "Theatre6ChooseGroupNotFoundError",
-        "Text": "\u8ff7\u5883\u4e4b\u95f4\u4e0d\u5b58\u5728"
+        "Text": "Lost Space does not exist"
     },
     {
         "Id": 20423048.0,
         "Key": "Theatre6FightGroupNotFoundError",
-        "Text": "\u68a6\u9b47\u4e4b\u95f4\u4e0d\u5b58\u5728"
+        "Text": "Nightmare Space does not exist"
     },
     {
         "Id": 20423049.0,
@@ -28637,212 +28857,522 @@
     {
         "Id": 20423050.0,
         "Key": "Theatre6PlayModeNotUnlockedError",
-        "Text": "\u5f53\u524d\u73a9\u6cd5\u672a\u89e3\u9501"
+        "Text": "Gameplay mode locked"
     },
     {
         "Id": 20423051.0,
         "Key": "Theatre6FightRewardTypeError",
-        "Text": "\u6218\u6597\u5956\u52b1\u7c7b\u578b\u9519\u8bef"
+        "Text": "Battle reward type error"
     },
     {
         "Id": 20423052.0,
         "Key": "Theatre6StoryModeAvgIdError",
-        "Text": "\u5267\u60c5\u6a21\u5f0fAVGId\u9519\u8bef"
+        "Text": "Story mode AVGId error"
     },
     {
         "Id": 20423053.0,
         "Key": "Theatre6WorldIdError",
-        "Text": "\u4e16\u754cID\u4e0d\u5b58\u5728"
+        "Text": "World ID not found"
     },
     {
         "Id": 20423054.0,
         "Key": "Theatre6SkillCfgNoFound",
-        "Text": "\u6280\u80fd\u914d\u7f6e\u4e0d\u5b58\u5728"
+        "Text": "Skill configuration not found"
     },
     {
         "Id": 20423055.0,
         "Key": "Theatre6SkillPoolCfgNoFound",
-        "Text": "\u6280\u80fd\u6c60\u914d\u7f6e\u4e0d\u5b58\u5728"
+        "Text": "Skill pool configuration not found"
     },
     {
         "Id": 20423056.0,
         "Key": "Theatre6AttrPackCfgNoFound",
-        "Text": "\u65e7\u7269\u914d\u7f6e\u4e0d\u5b58\u5728"
+        "Text": "Relic configuration not found"
     },
     {
         "Id": 20423057.0,
         "Key": "Theatre6SkillTypeError",
-        "Text": "\u6280\u80fd\u7c7b\u578b\u9519\u8bef"
+        "Text": "Skill type error"
     },
     {
         "Id": 20423058.0,
         "Key": "Theatre6SkillAddError",
-        "Text": "\u6280\u80fd\u6dfb\u52a0\u9519\u8bef"
+        "Text": "Skill addition error"
     },
     {
         "Id": 20423059.0,
         "Key": "Theatre6ModeIdNotFound",
-        "Text": "\u5f53\u524d\u6a21\u5f0fID\u9519\u8bef"
+        "Text": "Current mode ID error"
     },
     {
         "Id": 20423060.0,
         "Key": "Theatre6RandomTotalWeightError",
-        "Text": "\u968f\u673a\u603b\u6743\u91cd\u9519\u8bef"
+        "Text": "Random total weight error"
     },
     {
         "Id": 20423061.0,
         "Key": "Theatre6RandomError",
-        "Text": "\u968f\u673a\u672a\u77e5\u9519\u8bef"
+        "Text": "Random unknown error"
     },
     {
         "Id": 20423062.0,
         "Key": "Theatre6AttrPackNotExist",
-        "Text": "\u65e7\u7269\u914d\u7f6e\u4e0d\u5b58\u5728"
+        "Text": "Relic configuration not found"
     },
     {
         "Id": 20423063.0,
         "Key": "Theatre6AttrPackCharacterNotMatch",
-        "Text": "\u65e7\u7269\u89d2\u8272\u4e0d\u5339\u914d"
+        "Text": "Relic character mismatched"
     },
     {
         "Id": 20423064.0,
         "Key": "Theatre6ModeError",
-        "Text": "\u8ff7\u5c40\u7a81\u56f4\u9519\u8bef"
+        "Text": "Labyrinth Breakout error"
     },
     {
         "Id": 20423065.0,
         "Key": "Theatre6TalentLevelError",
-        "Text": "\u5168\u77e5\u89c6\u754c\u7b49\u7ea7\u9519\u8bef"
+        "Text": "Omniscient Vision level error"
     },
     {
         "Id": 20423066.0,
         "Key": "Theatre6TalentCfgError",
-        "Text": "\u5168\u77e5\u89c6\u754c\u914d\u7f6e\u9519\u8bef"
+        "Text": "Omniscient Vision configuration error"
     },
     {
         "Id": 20423067.0,
         "Key": "Theatre6TalentCoinLimit",
-        "Text": "\u660e\u5bdf\u5fc3\u8bc1\u6570\u91cf\u4e0d\u8db3"
+        "Text": "Insufficient Discernment"
     },
     {
         "Id": 20423068.0,
         "Key": "Theatre6NotPlayMode",
-        "Text": "\u5f53\u524d\u6a21\u5f0f\u4e0d\u662f\u8ff7\u5c40\u7a81\u56f4"
+        "Text": "Current mode is not Labyrinth Breakout"
     },
     {
         "Id": 20423069.0,
         "Key": "Theatre6CurrentModeDbNotFound",
-        "Text": "\u5f53\u524d\u6a21\u5f0f\u6570\u636e\u4e0d\u5b58\u5728"
+        "Text": "Current mode data not found"
     },
     {
         "Id": 20423070.0,
         "Key": "Theatre6SkillNotExist",
-        "Text": "\u6280\u80fd\u6570\u636e\u4e0d\u5b58\u5728"
+        "Text": "Skill data not found"
     },
     {
         "Id": 20423071.0,
         "Key": "Theatre6MoveSkillError",
-        "Text": "\u6280\u80fd\u79fb\u52a8\u9519\u8bef"
+        "Text": "Skill move error"
     },
     {
         "Id": 20423072.0,
         "Key": "Theatre6SwapSkillError",
-        "Text": "\u6280\u80fd\u4ea4\u6362\u9519\u8bef"
+        "Text": "Skill swap error"
     },
     {
         "Id": 20423073.0,
         "Key": "Theatre6NoinShopRoomError",
-        "Text": "\u4e0d\u5728\u60c5\u62a5\u4e4b\u95f4"
+        "Text": "Not in Intel Space"
     },
     {
         "Id": 20423074.0,
         "Key": "Theatre6ShopFreshCountError",
-        "Text": "\u60c5\u62a5\u4e4b\u95f4\u5237\u65b0\u6b21\u6570\u9519\u8bef"
+        "Text": "Intel Space refresh count error"
     },
     {
         "Id": 20423075.0,
         "Key": "Theatre6GoldLimit",
-        "Text": "\u53e4\u65e7\u91d1\u5e01\u9650\u5236"
+        "Text": "Ancient Coin limit"
     },
     {
         "Id": 20423076.0,
         "Key": "Theatre6ShopGoodNoFund",
-        "Text": "\u60c5\u62a5\u4e4b\u95f4\u4e0d\u5b58\u5728"
+        "Text": "Intel Space does not exist"
     },
     {
         "Id": 20423077.0,
         "Key": "Theatre6ShopGoodLockError",
-        "Text": "\u60c5\u62a5\u4e4b\u95f4\u5df2\u88ab\u9501\u5b9a"
+        "Text": "Intel Space locked"
     },
     {
         "Id": 20423078.0,
         "Key": "Theatre6ShopGoodTypeError",
-        "Text": "\u60c5\u62a5\u4e4b\u95f4\u5546\u54c1\u7c7b\u578b\u9519\u8bef"
+        "Text": "Intel Space item type error"
     },
     {
         "Id": 20423079.0,
         "Key": "Theatre6ShopGoodHasSell",
-        "Text": "\u60c5\u62a5\u4e4b\u95f4\u5546\u54c1\u5df2\u51fa\u552e"
+        "Text": "Intel Space item already sold"
     },
     {
         "Id": 20423080.0,
         "Key": "Theatre6ShopGoodSkillTemplateNotFound",
-        "Text": "\u6280\u80fd\u914d\u7f6e\u4e0d\u5b58\u5728"
+        "Text": "Skill configuration not found"
     },
     {
         "Id": 20423081.0,
         "Key": "Theatre6NoSkillEmptyPos",
-        "Text": "\u6ca1\u6709\u6280\u80fd\u7a7a\u4f4d\u7f6e"
+        "Text": "No available skill slots"
     },
     {
         "Id": 20423082.0,
         "Key": "Theatre6ShopGoodAttrPackTemplateNotFound",
-        "Text": "\u65e7\u7269\u914d\u7f6e\u4e0d\u5b58\u5728"
+        "Text": "Relic configuration not found"
     },
     {
         "Id": 20423083.0,
         "Key": "Theatre6SkillSlotFull",
-        "Text": "\u6280\u80fd\u69fd\u4f4d\u5df2\u6ee1"
+        "Text": "Skill slots are full"
     },
     {
         "Id": 20423084.0,
         "Key": "Theatre6SkillOverQueueEmpty",
-        "Text": "\u6280\u80fd\u6ea2\u51fa\u961f\u5217\u4e3a\u7a7a"
+        "Text": "Skill overflow queue is empty"
     },
     {
         "Id": 20423085.0,
         "Key": "Theatre6SkillOverQueueError",
-        "Text": "\u6280\u80fd\u6ea2\u51fa\u53d6\u51fa\u6b21\u6570\u9519\u8bef"
+        "Text": "Skill overflow retrieval count error"
     },
     {
         "Id": 20423086.0,
         "Key": "Theatre6StoryLineNotUnlockError",
-        "Text": "\u5f53\u524d\u6545\u4e8b\u672a\u89e3\u9501"
+        "Text": "Current story locked"
     },
     {
         "Id": 20423087.0,
         "Key": "Theatre6StoryLineIdError",
-        "Text": "\u6545\u4e8b\u9519\u8bef"
+        "Text": "Story error"
     },
     {
         "Id": 20423088.0,
         "Key": "Theatre6StoryLineNotCompletedError",
-        "Text": "\u5f53\u524d\u6545\u4e8b\u672a\u5b8c\u6210"
+        "Text": "Current story not completed"
     },
     {
         "Id": 20423089.0,
         "Key": "Theatre6SkillMaxLevel",
-        "Text": "\u6280\u80fd\u5df2\u8fbe\u5230\u6700\u5927\u7b49\u7ea7"
+        "Text": "Skill already at max level"
     },
     {
         "Id": 20423090.0,
         "Key": "Theatre6BuffLvUpLimit",
-        "Text": "\u56de\u58f0\u6b8b\u54cd\u5347\u7ea7\u9650\u5236"
+        "Text": "Echo Resonance upgrade limit"
     },
     {
         "Id": 20423091.0,
         "Key": "Theatre6SkillLvUpFailed",
-        "Text": "\u6307\u5b9a\u6280\u80fd\u5347\u7ea7\u5931\u8d25"
+        "Text": "Designated skill upgrade failed"
+    },
+    {
+        "Id": 20423092.0,
+        "Key": "Theatre6CharacterUnlockError",
+        "Text": "20423092\u89d2\u8272\u672a\u89e3\u9501"
+    },
+    {
+        "Id": 20423093.0,
+        "Key": "Theatre6StoryLineCompletedError",
+        "Text": "20423093\u5f53\u524d\u6545\u4e8b\u7ebf\u5df2\u7ecf\u5b8c\u6210"
+    },
+    {
+        "Id": 20423094.0,
+        "Key": "TableTypeInvalid",
+        "Text": "20423094 Current type has been deprecated"
+    },
+    {
+        "Id": 20423095.0,
+        "Key": "TableTypeParamLenError",
+        "Text": "20423095 Invalid number of parameters"
+    },
+    {
+        "Id": 20423096.0,
+        "Key": "TableTypeParamLenMultipleError",
+        "Text": "20423096 Parameter count must be a multiple of the required value"
+    },
+    {
+        "Id": 20423097.0,
+        "Key": "TableTypeParamMinLenError",
+        "Text": "20423097 Parameter count is below the minimum requirement"
+    },
+    {
+        "Id": 20423098.0,
+        "Key": "Theatre6AlreadySettleError",
+        "Text": "20423098 Current mode has already been settled"
+    },
+    {
+        "Id": 20423099.0,
+        "Key": "Theatre6BuffCfgNoFound",
+        "Text": "20423099Buff\u914d\u7f6e\u9519\u8bef"
+    },
+    {
+        "Id": 20423100.0,
+        "Key": "Theatre6ShopAllGoodHasLock",
+        "Text": "20423100\u5168\u90e8\u5546\u54c1\u88ab\u51bb\u7ed3"
+    },
+    {
+        "Id": 20423101.0,
+        "Key": "Theatre6ShopBuySanTimesError",
+        "Text": "20423101\u5546\u5e97\u8d2d\u4e70San\u6b21\u6570\u4e0d\u4e00\u81f4"
+    },
+    {
+        "Id": 20423102.0,
+        "Key": "Theatre6ShopBuySanTimesLimit",
+        "Text": "20423102\u5546\u5e97\u8d2d\u4e70San\u6b21\u6570\u8fbe\u5230\u4e0a\u9650"
+    },
+    {
+        "Id": 20423103.0,
+        "Key": "Theatre6ShopBuySanFull",
+        "Text": "20423103San\u503c\u5df2\u6ee1"
+    },
+    {
+        "Id": 20423104.0,
+        "Key": "Theatre6ShopBuySanCfgError",
+        "Text": "20423104\u5546\u5e97\u8d2d\u4e70San\u914d\u7f6e\u9519\u8bef"
+    },
+    {
+        "Id": 20423105.0,
+        "Key": "Theatre6ExFloorConfirmStateError",
+        "Text": "20423105ExFloor\u786e\u8ba4\u72b6\u6001\u9519\u8bef"
+    },
+    {
+        "Id": 20423106.0,
+        "Key": "Theatre6ExFloorWaitingConfirmError",
+        "Text": "20423106\u6b63\u5728\u7b49\u5f85ExFloor\u786e\u8ba4"
+    },
+    {
+        "Id": 20424001.0,
+        "Key": "GameCollectionFunctionNotOpen",
+        "Text": "20424001 Game Collection event has not started yet"
+    },
+    {
+        "Id": 20424002.0,
+        "Key": "GameCollectionHasOtherGameInSuspend",
+        "Text": "20424002 Another game is currently in a suspended state"
+    },
+    {
+        "Id": 20424003.0,
+        "Key": "GameCollectionNoSuchGameType",
+        "Text": "20424003 Game type does not exist"
+    },
+    {
+        "Id": 20424004.0,
+        "Key": "GameCollectionEnterGameStageIdNotMatchConfig",
+        "Text": "20424004 Game entry Stage ID does not match configuration"
+    },
+    {
+        "Id": 20425001.0,
+        "Key": "DyeMergeFunctionNotOpen",
+        "Text": "Event is not available"
+    },
+    {
+        "Id": 20425002.0,
+        "Key": "DyeMergeChapterNotOpen",
+        "Text": "Chapter still locked"
+    },
+    {
+        "Id": 20425003.0,
+        "Key": "DyeMergeChapterCfgNotFound",
+        "Text": "\u7ae0\u8282\u72b6\u6001\u5f02\u5e38"
+    },
+    {
+        "Id": 20425004.0,
+        "Key": "DyeMergeStageCfgNotFound",
+        "Text": "\u5173\u5361\u72b6\u6001\u5f02\u5e38"
+    },
+    {
+        "Id": 20425005.0,
+        "Key": "DyeMergeStageNotInActivity",
+        "Text": "\u5173\u5361\u72b6\u6001\u5f02\u5e38"
+    },
+    {
+        "Id": 20425006.0,
+        "Key": "DyeMergeStagePreStageNotComplete",
+        "Text": "Previous stage not completed"
+    },
+    {
+        "Id": 20426001.0,
+        "Key": "ConcertPreHeatingFunctionNotOpen",
+        "Text": "20426001 Concert preview event is not active"
+    },
+    {
+        "Id": 20426002.0,
+        "Key": "ConcertPreHeatingStageCfgNotExist",
+        "Text": "20426002 Concert preview stage configuration does not exist"
+    },
+    {
+        "Id": 20426003.0,
+        "Key": "ConcertPreHeatingStageNotInActivity",
+        "Text": "20426003 Concert preview stage does not belong to the current event"
+    },
+    {
+        "Id": 20426004.0,
+        "Key": "ConcertPreHeatingStageNotOpen",
+        "Text": "20426004 Concert preview stage not yet available"
+    },
+    {
+        "Id": 20426005.0,
+        "Key": "ConcertPreHeatingActivityCfgNotExist",
+        "Text": "20426005 Concert preview event configuration does not exist"
+    },
+    {
+        "Id": 20427001.0,
+        "Key": "Theatre6PvpNotOpen",
+        "Text": "20427001\u8089\u9e3d6PVP\u672a\u5f00\u542f"
+    },
+    {
+        "Id": 20427002.0,
+        "Key": "Theatre6PvpNotInActivity",
+        "Text": "20427002 Event not available"
+    },
+    {
+        "Id": 20427003.0,
+        "Key": "Theatre6PvpAlreadyInBattle",
+        "Text": "20427003 Already in a battle"
+    },
+    {
+        "Id": 20427004.0,
+        "Key": "Theatre6PvpDataError",
+        "Text": "20427004 Data error"
+    },
+    {
+        "Id": 20427005.0,
+        "Key": "Theatre6PvpRankNotFound",
+        "Text": "20427005 Grade data not found"
+    },
+    {
+        "Id": 20427006.0,
+        "Key": "Theatre6PvpScoreError",
+        "Text": "20427006 Grade Points Error"
+    },
+    {
+        "Id": 20427007.0,
+        "Key": "Theatre6PvpRefreshCd",
+        "Text": "20427007 Refreshing Matchmaking CD"
+    },
+    {
+        "Id": 20427008.0,
+        "Key": "Theatre6PvpRefreshCountLimit",
+        "Text": "20427008\u5237\u65b0\u6b21\u6570\u8fc7\u591a"
+    },
+    {
+        "Id": 20427009.0,
+        "Key": "Theatre6PvpInAdvanceBattle",
+        "Text": "20427008 In Advanced Battle"
+    },
+    {
+        "Id": 20427010.0,
+        "Key": "Theatre6PvpActionPointNotEnough",
+        "Text": "20427009 Insufficient Stamina"
+    },
+    {
+        "Id": 20427011.0,
+        "Key": "Theatre6PvpDefenseSlotCountError",
+        "Text": "20427010\u9632\u5b88\u9635\u5bb9\u69fd\u4f4d\u6570\u91cf\u9519\u8bef"
+    },
+    {
+        "Id": 20427012.0,
+        "Key": "Theatre6PvpLineupSlotRepeatLimit",
+        "Text": "20427011\u9635\u5bb9\u540c\u4e00\u5b58\u6863\u8d85\u51fa\u4f7f\u7528\u6b21\u6570"
+    },
+    {
+        "Id": 20427013.0,
+        "Key": "Theatre6PvpDefenseFileNotFound",
+        "Text": "20427012\u9632\u5b88\u9635\u5bb9\u5b58\u6863\u6570\u636e\u4e0d\u5b58\u5728"
+    },
+    {
+        "Id": 20427014.0,
+        "Key": "Theatre6PvpNotInBattle",
+        "Text": "20427013\u4e0d\u5728\u5bf9\u6218\u4e2d"
+    },
+    {
+        "Id": 20427015.0,
+        "Key": "Theatre6PvpFightRoundError",
+        "Text": "20427014\u5bf9\u6218\u5c40\u6570\u9519\u8bef"
+    },
+    {
+        "Id": 20427016.0,
+        "Key": "Theatre6PvpEnemyNotFound",
+        "Text": "20427015\u5339\u914d\u5bf9\u624b\u672a\u627e\u5230"
+    },
+    {
+        "Id": 20427017.0,
+        "Key": "Theatre6PvpFileSlotInvalid",
+        "Text": "20427016\u4e0a\u9635\u5b58\u6863\u53c2\u6570\u975e\u6cd5"
+    },
+    {
+        "Id": 20427018.0,
+        "Key": "Theatre6PvpBattleAlreadyFinished",
+        "Text": "20427017\u5bf9\u6218\u5df2\u7ed3\u675f"
+    },
+    {
+        "Id": 20427019.0,
+        "Key": "Theatre6PvpEnemyIdInvalid",
+        "Text": "20427018\u5339\u914d\u5bf9\u624b\u53c2\u6570\u5f02\u5e38"
+    },
+    {
+        "Id": 20427020.0,
+        "Key": "Theatre6PvpRankConfigNotFound",
+        "Text": "20427019\u6bb5\u4f4d\u914d\u7f6e\u672a\u627e\u5230"
+    },
+    {
+        "Id": 20427021.0,
+        "Key": "Theatre6PvpAttackLineupCountUnexpected",
+        "Text": "20427020\u8fdb\u653b\u5b58\u6863\u4e0a\u9635\u6570\u91cf\u4e0d\u7b26\u5408\u9884\u671f"
+    },
+    {
+        "Id": 20427022.0,
+        "Key": "Theatre6PvpDefenseLineupCountOverMax",
+        "Text": "20427021\u8d85\u51fa\u9632\u5b88\u5b58\u6863\u6700\u5927\u4e0a\u9635\u6570\u91cf"
+    },
+    {
+        "Id": 20427023.0,
+        "Key": "Theatre6PvpModeNotUnlocked",
+        "Text": "20427022PVP\u6a21\u5f0f\u672a\u89e3\u9501"
+    },
+    {
+        "Id": 20427024.0,
+        "Key": "Theatre6PvpRankRewardRepeat",
+        "Text": "20427023\u91cd\u590d\u53d1\u9001\u6bb5\u4f4d\u5956\u52b1"
+    },
+    {
+        "Id": 20427025.0,
+        "Key": "Theatre6PvpRankRewardInvalid",
+        "Text": "20427024\u6bb5\u4f4d\u5956\u52b1\u914d\u7f6e\u9519\u8bef"
+    },
+    {
+        "Id": 20427026.0,
+        "Key": "Theatre6PvpBuffGroupNotOpen",
+        "Text": "20427025\u5f53\u524d\u6bb5\u4f4d\u65e0\u73af\u5883\u6548\u679c\u529f\u80fd"
+    },
+    {
+        "Id": 20427027.0,
+        "Key": "Theatre6PvpBuffMustSelect",
+        "Text": "20427026\u5f53\u524d\u6bb5\u4f4d\u73af\u5883\u6548\u679c\u4e0d\u80fd\u9009\u62e9\u4e3a\u7a7a"
+    },
+    {
+        "Id": 20427028.0,
+        "Key": "Theatre6PvpBuffNotInGroup",
+        "Text": "20427027\u73af\u5883\u6548\u679c\u4e0d\u5728\u5f53\u524d\u6bb5\u4f4d\u53ef\u9009\u7ec4\u4e2d"
+    },
+    {
+        "Id": 20427029.0,
+        "Key": "Theatre6PvpBuffInvalid",
+        "Text": "20427028\u73af\u5883\u6548\u679c\u4e0d\u5408\u6cd5"
+    },
+    {
+        "Id": 20427030.0,
+        "Key": "Theatre6PvpBuffNotUnlocked",
+        "Text": "20427029\u73af\u5883\u6548\u679c\u672a\u89e3\u9501"
+    },
+    {
+        "Id": 20427031.0,
+        "Key": "Theatre6PvpBuffCfgNotFound",
+        "Text": "20427030\u73af\u5883\u6548\u679c\u914d\u7f6e\u4e0d\u5b58\u5728"
+    },
+    {
+        "Id": 20427032.0,
+        "Key": "Theatre6PvpBuffGroupCfgNotFound",
+        "Text": "20427031\u73af\u5883\u6548\u679c\u7ec4\u914d\u7f6e\u4e0d\u5b58\u5728"
     },
     {
         "Id": 25000001.0,
@@ -29600,6 +30130,11 @@
         "Text": "25100046 Corresponding environment mission configuration not found"
     },
     {
+        "Id": 25100047.0,
+        "Key": "DlcQuestStateIsNotReady",
+        "Text": "25100047 Mission status is not Ready"
+    },
+    {
         "Id": 25200001.0,
         "Key": "DlcFashionTypeNotFound",
         "Text": "25200001 Outfit part does not exist"
@@ -30101,8 +30636,8 @@
     },
     {
         "Id": 25200101.0,
-        "Key": "DlcFashionSuitCheckError",
-        "Text": "25200088 Configuration contains parts that do not meet outfit set requirements"
+        "Key": "DlcFashionFashionListParamError",
+        "Text": "25200101\u63d0\u4ea4\u7684\u65f6\u88c5\u53c2\u6570\u5f02\u5e38"
     },
     {
         "Id": 25200102.0,
@@ -30197,17 +30732,17 @@
     {
         "Id": 25201001.0,
         "Key": "BigWorldDIYOutfitTypeNotFound",
-        "Text": "25201001 Outfit preset ID not found"
+        "Text": "25201001 Costume preset ID not found"
     },
     {
         "Id": 25201002.0,
         "Key": "BigWorldDIYOutfitCannotEquip",
-        "Text": "25201002 Found outfits that cannot be equipped in this preset"
+        "Text": "25201002 Found costumes that cannot be equipped in this preset"
     },
     {
         "Id": 25201003.0,
         "Key": "BigWorldDIYFashionPartIdIncompatible",
-        "Text": "25201003 Incompatible outfit detected"
+        "Text": "25201003 Incompatible costume detected"
     },
     {
         "Id": 25202001.0,
@@ -30683,6 +31218,16 @@
         "Id": 25300092.0,
         "Key": "RelinkPlayerIsMatching",
         "Text": "Cannot do this while matchmaking"
+    },
+    {
+        "Id": 25300093.0,
+        "Key": "RelinkCharacterNpcAttribDataNotFound",
+        "Text": "25300093 Attribute data for this character style not found"
+    },
+    {
+        "Id": 25300094.0,
+        "Key": "RelinkFactorDescNotFound",
+        "Text": "25300094 Detailed information for this entry not found"
     },
     {
         "Id": 30002001.0,

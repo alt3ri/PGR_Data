@@ -42,6 +42,10 @@ function XUiPassportGetReward:RefreshObtainedRewards()
     )
 end
 
+function XUiPassportGetReward:OnDestroy()
+    self.UiPassport:Refresh()
+end
+
 function XUiPassportGetReward:RefreshBuyPanel()
     local typeInfoIdList = self._Control:GetPassportActivityIdToTypeInfoIdList()
     local currentLevel = self._Control:GetPassportBaseInfo():GetLevel()

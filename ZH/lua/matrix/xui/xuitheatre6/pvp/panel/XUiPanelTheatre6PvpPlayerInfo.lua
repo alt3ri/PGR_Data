@@ -19,6 +19,10 @@ function XUiPanelTheatre6PvpPlayerInfo:OnStart()
     self._RankGrid = nil
 end
 
+function XUiPanelTheatre6PvpPlayerInfo:OnEnable()
+    self.BtnDefend:ShowReddot(self._Control:IsChooseEnvRedPoint())
+end
+
 function XUiPanelTheatre6PvpPlayerInfo:Refresh()
     self:RefreshMember()
     self:RefreshRank()

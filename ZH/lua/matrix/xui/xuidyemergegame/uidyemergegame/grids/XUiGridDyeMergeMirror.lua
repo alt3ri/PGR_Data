@@ -14,6 +14,7 @@ local XUiGridDyeMerge = require("XUi/XUiDyeMergeGame/UiDyeMergeGame/Grids/XUiGri
 local XUiGridDyeMergeMirror = XClass(XUiGridDyeMerge, "XUiGridDyeMergeMirror")
 
 function XUiGridDyeMergeMirror:OnStart()
+    XUiGridDyeMerge.OnStart(self)
     if self.BtnMove then
         self.BtnMove:AddEventListener(handler(self, self._OnBtnMoveClick))
     end

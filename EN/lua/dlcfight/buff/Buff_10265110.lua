@@ -15,7 +15,7 @@ function XBuffScript10265110:OnLuaSkillStart(eventArgs)
     ------------执行------------
     if eventArgs._skillId ~= self._skillId then return end
     if eventArgs._launcherUUID ~= self._npcUUID then return end
-    self._proxy:Theatre6CastNpcRuntimeOverClock(self._npcUUID,self.CSRecover)
+    self._proxy:Theatre6AddNpcRuntimeOverClock(self._npcUUID,self.CSRecover)
 end
 
 

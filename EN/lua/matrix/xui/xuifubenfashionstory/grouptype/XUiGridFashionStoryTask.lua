@@ -1,24 +1,24 @@
-local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
-local XUiGridFashionStoryTask=XClass(nil,"XUiGridFashionStoryTask")
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local XUiGridFashionStoryTask = XClass(nil, "XUiGridFashionStoryTask")
 
-local ButtonState={
-    Normal=CS.UiButtonState.Normal,
-    Disable=CS.UiButtonState.Disable
+local ButtonState = {
+    Normal = CS.UiButtonState.Normal,
+    Disable = CS.UiButtonState.Disable
 }
 
 --region 初始化
-function XUiGridFashionStoryTask:Ctor(ui,rootUi,beforeFinishCheckEvent, clickFunc)
-    XTool.InitUiObjectByUi(self,ui)
+function XUiGridFashionStoryTask:Ctor(ui, rootUi, beforeFinishCheckEvent, clickFunc)
+    XTool.InitUiObjectByUi(self, ui)
     self.RootUi = rootUi
     self.RewardPanelList = {}
-    self.GridCommon.gameObject:SetActive(false)
-    self.ImgComplete.gameObject:SetActive(false)
-    self.PanelAnimation.gameObject:SetActive(true)
+    self.GridCommon.gameObject:SetActiveEx(false)
+    self.ImgComplete.gameObject:SetActiveEx(false)
+    self.PanelAnimation.gameObject:SetActiveEx(true)
     self.BeforeFinishCheckEvent = beforeFinishCheckEvent
     self.ClickFunc = clickFunc  --重写点击道具方法
     self.SpecialSoundMap = {}
-    self.BtnFinish.CallBack = function() self:OnBtnFinishClick() end
-    self.BtnSkip.CallBack = function() self:OnBtnSkipClick() end
+    self.BtnFinish:AddEventListener(Handler(self, self.OnBtnFinishClick))
+    self.BtnSkip:AddEventListener(Handler(self, self.OnBtnSkipClick))
     self.BtnSkip:SetButtonState(ButtonState.Disable)
 end
 
@@ -36,14 +36,10 @@ function XUiGridFashionStoryTask:ResetData(data)
     if self.PanelAnimationGroup then    -- 先显示
         self.PanelAnimationGroup.alpha = 1
     end
-    
+
     --未完成时是否支持跳转
     local skipId = XDataCenter.TaskManager.GetTaskTemplate(self.Data.Id).SkipId
-    if skipId then
-        self.BtnSkip:SetButtonState(ButtonState.Normal)
-    else
-        self.BtnSkip:SetButtonState(ButtonState.Disable)
-    end
+    self.BtnSkip:SetButtonState(skipId and ButtonState.Normal or ButtonState.Disable)
 
     local config = XDataCenter.TaskManager.GetTaskTemplate(self.Data.Id)
     self.tableData = config
@@ -94,9 +90,9 @@ function XUiGridFashionStoryTask:UpdateProgress(data)
     self.Data = data
     local config = XDataCenter.TaskManager.GetTaskTemplate(data.Id)
     if #config.Condition < 2 then--显示进度
-        self.ImgProgress.transform.parent.gameObject:SetActive(true)
+        self.ImgProgress.transform.parent.gameObject:SetActiveEx(true)
         if self.TxtTaskNumQian then
-            self.TxtTaskNumQian.gameObject:SetActive(true)
+            self.TxtTaskNumQian.gameObject:SetActiveEx(true)
         end
         local result = config.Result > 0 and config.Result or 1
         XTool.LoopMap(self.Data.Schedule, function(_, pair)
@@ -107,24 +103,24 @@ function XUiGridFashionStoryTask:UpdateProgress(data)
             end
         end)
     else
-        self.ImgProgress.transform.parent.gameObject:SetActive(false)
+        self.ImgProgress.transform.parent.gameObject:SetActiveEx(false)
         if self.TxtTaskNumQian then
-            self.TxtTaskNumQian.gameObject:SetActive(false)
+            self.TxtTaskNumQian.gameObject:SetActiveEx(false)
         end
     end
-    
-    self.BtnFinish.gameObject:SetActive(false)
-    self.BtnSkip.gameObject:SetActive(false)
-    self.ImgComplete.gameObject:SetActive(false)
+
+    self.BtnFinish.gameObject:SetActiveEx(false)
+    self.BtnSkip.gameObject:SetActiveEx(false)
+    self.ImgComplete.gameObject:SetActiveEx(false)
     if self.BtnReceiveHave then
-        self.BtnReceiveHave.gameObject:SetActive(false)
+        self.BtnReceiveHave.gameObject:SetActiveEx(false)
     end
     if self.Data.State == XDataCenter.TaskManager.TaskState.Achieved then
-        self.BtnFinish.gameObject:SetActive(true)
-    elseif self.Data.State ~= XDataCenter.TaskManager.TaskState.Achieved and self.Data.State ~= XDataCenter.TaskManager.TaskState.Finish then
-        self.BtnSkip.gameObject:SetActive(true)
-    elseif self.Data.State == XDataCenter.TaskManager.TaskState.Finish then
-        self.ImgComplete.gameObject:SetActive(true)
+        self.BtnFinish.gameObject:SetActiveEx(true)
+    elseif self.Data.State ~= XDataCenter.TaskManager.TaskState.Finish then
+        self.BtnSkip.gameObject:SetActiveEx(true)
+    else
+        self.ImgComplete.gameObject:SetActiveEx(true)
     end
 end
 --endregion
@@ -157,7 +153,7 @@ function XUiGridFashionStoryTask:OnBtnFinishClick()
                 return
             end
         end
-        self:OpenUiObtain(rewardGoodsList,nil,function() self.RootUi:RefreshTasks() end)
+        self:OpenUiObtain(rewardGoodsList, nil, function() self.RootUi:RefreshTasks() end)
     end)
 end
 
@@ -191,4 +187,4 @@ end
 
 --endregion
 
-return XUiGridFashionStoryTask
+return XUiGridFashionStoryTask

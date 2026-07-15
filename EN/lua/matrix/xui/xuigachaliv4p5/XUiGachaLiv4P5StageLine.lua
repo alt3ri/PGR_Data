@@ -23,6 +23,9 @@ function XUiGachaLiv4P5StageLine:OnStart(gachaId)
     self._SwitchableScene = require("XUi/XUiSwitchableScene/XUiPanelSwitchableSceneAnim").New()
 
     self._SceneId = XGachaConfigs.GetClientConfigNumber('Liv4P5SceneId')
+
+    -- 卡池剧情强制开启陀螺仪
+    self._SwitchableScene:SetGyroEnabledOverride(true)
 end
 
 function XUiGachaLiv4P5StageLine:OnEnable()
@@ -117,6 +120,20 @@ function XUiGachaLiv4P5StageLine:HandleStages()
         extraStage.gameObject:SetActiveEx(false)
         indexStage = indexStage + 1
         extraStage = self.PanelStageContent:Find(string.format("Stage%d", indexStage))
+    end
+    
+    -- 启动动画播放
+    if not XTool.IsTableEmpty(self._Stages) then
+        local delay = XGachaConfigs.GetClientConfigNumber("Liv4P5StoryGridEnableAnimDelay", 1)
+        local interval = XGachaConfigs.GetClientConfigNumber("Liv4P5StoryGridEnableAnimInterval", 1)
+        local realDelay = delay
+        
+        for i, v in ipairs(self._Stages) do
+            v:PreEnableAnim()
+            v:PlayEnableAnim(realDelay)
+            
+            realDelay = realDelay + interval
+        end
     end
 end
 

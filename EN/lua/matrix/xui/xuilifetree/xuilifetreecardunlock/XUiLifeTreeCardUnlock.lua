@@ -28,6 +28,7 @@ function XUiLifeTreeCardUnlock:OnStart(catalogId, unlockIndex, exhibitionChapter
     self.UnlockIndex = unlockIndex
     self.ExhibitionChapterId = exhibitionChapterId
 
+    self:PlayEnableAnim() -- 播放Enable动画
     self:Refresh()
 end
 
@@ -38,6 +39,18 @@ function XUiLifeTreeCardUnlock:OnDisable()
 end
 
 function XUiLifeTreeCardUnlock:OnDestroy()
+end
+
+-- 播放Enable动画
+function XUiLifeTreeCardUnlock:PlayEnableAnim()
+    local bgAnimName = "AnimEnableBlue" -- 默认蓝色
+    -- 神卡获取下一解锁等级颜色
+    local catalogConfig = self._Control:GetLifeTreeCharacterCatalogConfigById(self.CharacterCatalogId)
+    if catalogConfig.CardType == XMVCA.XLifeTree.EnumConst.CARD_TYPE.DIVINE then
+        local stateType = self._Control:GetCharacterDivineState(self.CharacterCatalogId, true)
+        bgAnimName = XMVCA.XLifeTree.EnumConst.DIVINE_TYPE_TO_UI_CARD_BG_ANIM[stateType]
+    end
+    self:PlayAnimationWithMask(bgAnimName)
 end
 
 function XUiLifeTreeCardUnlock:Refresh()

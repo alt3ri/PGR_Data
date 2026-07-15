@@ -312,11 +312,7 @@ end
 --服务器下发的副本数据处理
 function XFubenAgency:InitFubenData(fubenData, fubenEventData)
     if fubenData then
-        if fubenData.StageData then
-            for key, value in pairs(fubenData.StageData) do
-                self._Model:SetPlayerStageData(key, value)
-            end
-        end
+        self._Model:InitPlayerStageData(fubenData.StageData)
 
         if fubenData.UnlockHideStages then
             for _, v in pairs(fubenData.UnlockHideStages) do
@@ -1062,6 +1058,11 @@ function XFubenAgency:DoEnterFight(stage, teamId, isAssist, challengeCount, chal
     end
 
     preFight.StageId = stage.StageId
+
+    if self:_IsBanGeneralSkill(stage.StageId) then
+        preFight.GeneralSkill = nil
+    end
+
     if not self:CallCustomFunc(stageType, ProcessFunc.CustomOnEnterFight, preFight, callback) then
         self:NetWorkPreFightRequest({ PreFightData = preFight }, function(res)
             if callback then
@@ -1347,7 +1348,7 @@ function XFubenAgency:EnterRealFight(preFightData, fightData, movieId, endCb)
             end
 
             CsXBehaviorManager.Instance:Clear()
-            XTableManager.ReleaseAll()
+            XTableManager.ReleaseAllCache()
             CS.BinaryManager.ReleaseAllCache()
             collectgarbage("collect")
 
@@ -1555,6 +1556,10 @@ function XFubenAgency:ShowReward(winData)
 end
 
 function XFubenAgency:CheckHasFlopReward(winData, needMySelf)
+    if not winData or not winData.FlopRewardList then
+        return false
+    end
+    
     for _, v in pairs(winData.FlopRewardList) do
         if v.PlayerId ~= 0 then
             if not needMySelf or v.PlayerId == XPlayer.Id then
@@ -3706,7 +3711,7 @@ function XFubenAgency:CheckChallengeCanEnter(cb, challengeId)
 end
 
 -- 矿区战斗
-function XFubenAgency:EnterStrongholdFight(stageId, characterIds, captainPos, firstFightPos, generalSkillId, enterCgIndex, settleCgIndex)
+function XFubenAgency:EnterStrongholdFight(stageId, characterIds, captainPos, firstFightPos, generalSkillId, enterCgIndex, settleCgIndex, fashionIds)
     local stage = self:GetStageCfg(stageId)
     if not self:CheckPreFight(stage) then
         return
@@ -3720,6 +3725,21 @@ function XFubenAgency:EnterStrongholdFight(stageId, characterIds, captainPos, fi
     preFight.GeneralSkill = generalSkillId
     preFight.EnterCgIndex = enterCgIndex
     preFight.SettleCgIndex = settleCgIndex
+    -- 矿区 loading 会遮挡 UiCueMark，这里跳过通用涂装提示弹窗
+    preFight.SkipBattleFashionUndownloadedTip = true
+    -- 矿区涂装回退：通用判定看不到 support 玩家的 fashion，按 TeamMember 维度预先标 pos
+    -- own/robot 槽位与通用判定行为一致，仅 support 走 GetAssistantPlayerFashionId
+    if fashionIds and XMVCA.XSubPackage:IsOpen() then
+        local positions = {}
+        for i = 1, #fashionIds do
+            positions[i] = 0
+            local fashionId = fashionIds[i]
+            if XTool.IsNumberValid(fashionId) and not XMVCA.XSubPackage:CheckFashionDownloaded(fashionId) then
+                positions[i] = 1
+            end
+        end
+        preFight.NoFashionResPositions = positions
+    end
     local req = { PreFightData = preFight }
     self:NetWorkPreFightRequest(req, function(res)
         if res.Code ~= XCode.Success then
@@ -4105,6 +4125,11 @@ function XFubenAgency:_CheckBattleFashionUndownloaded(preFightData, downloadedCb
         return
     end
 
+    if preFightData.SkipBattleFashionUndownloadedTip then
+        downloadedCb()
+        return
+    end
+
     -- 已选"本次登录不再提示"，直接继续
     if XMVCA.XSubPackage:IsBattleFashionTipDismissed() then
         downloadedCb()
@@ -4186,7 +4211,8 @@ function XFubenAgency:NetWorkPreFightRequest(request, ...)
     XMVCA.XMainLine2:SetLastExhibitionChapterByStageId(originStageId)
 
     -- 涂装分包：构建 NoFashionResPositions，标记需要回退显示默认皮肤的位置
-    if XMVCA.XSubPackage:IsOpen() then
+    -- 业务方（如矿区）若已按真实 TeamMember 维度预填，则不覆盖
+    if XMVCA.XSubPackage:IsOpen() and not request.PreFightData.NoFashionResPositions then
         local positions = {0, 0, 0}
         local cardIds = request.PreFightData.CardIds
         local robotIds = request.PreFightData.RobotIds
@@ -4217,6 +4243,7 @@ function XFubenAgency:NetWorkPreFightRequest(request, ...)
 
     XMVCA.XSubPackage:CheckStageIdListResIdListDownloadComplete({ stageId }, function()
         self:_CheckBattleFashionUndownloaded(request.PreFightData, function()
+            request.PreFightData.SkipBattleFashionUndownloadedTip = nil
             XNetwork.Call("PreFightRequest", request, args and table.unpack(args))
         end)
     end)
@@ -4237,6 +4264,16 @@ function XFubenAgency:SetMouseVisible()
     CS.UnityEngine.Cursor.visible = true
 
     XDataCenter.InputManagerPc.SetCurInputMap(CS.XInputMapId.System)
+end
+
+function XFubenAgency:_IsBanGeneralSkill(stageId)
+    local stageCfg = self:GetStageCfg(stageId)
+
+    if not stageCfg then
+        return false
+    end
+    
+    return stageCfg.IsBanGeneralSkill
 end
 
 return XFubenAgency

@@ -27,6 +27,7 @@ function XUiPanelTheatre6CharacterAttrDetail:OnStart(data, mode, isInShop, taskU
 
     self:SetData(data)
     self:UpdateReddot()
+    self:AddEvent()
 end
 
 ---切换数据并刷新视图，可在面板创建后多次调用
@@ -57,6 +58,7 @@ function XUiPanelTheatre6CharacterAttrDetail:OnEnable()
     self:CacheBuffData()
     if self._IsDirty then
         self._IsDirty = false
+        self:UpdateView()
     end
     self:UpdateReddot()
 end
@@ -109,61 +111,61 @@ function XUiPanelTheatre6CharacterAttrDetail:CacheBuffData()
     end
 end
 
-function XUiPanelTheatre6CharacterAttrDetail:OnGetLuaEvents()
-    return {
-        XEventId.EVENT_THEATRE6_UPDATE_SKILL,
-        XEventId.EVENT_THEATRE6_BUY_GOOD,
-        XEventId.EVENT_THEATRE6_SKILL_NOT_NEW,
-        XEventId.EVENT_THEATRE6_SHOP_REFRESH,
-        XEventId.EVENT_THEATRE6_SCORE_CHANGE,
-        XEventId.EVENT_THEATRE6_TAG_HIGHLIGHT_SOURCE_CHANGE,
-    }
+function XUiPanelTheatre6CharacterAttrDetail:AddEvent()
+    XEventManager.AddEventListener(XEventId.EVENT_THEATRE6_UPDATE_SKILL, self.OnSkillUpdate, self)
+    XEventManager.AddEventListener(XEventId.EVENT_THEATRE6_SHOP_REFRESH, self.OnShopRefresh, self)
+    XEventManager.AddEventListener(XEventId.EVENT_THEATRE6_BUY_GOOD, self.OnBuyGoods, self)
+    XEventManager.AddEventListener(XEventId.EVENT_THEATRE6_SKILL_NOT_NEW, self.UpdateReddot, self)
+    XEventManager.AddEventListener(XEventId.EVENT_THEATRE6_SCORE_CHANGE, self.OnScoreChange, self)
+    XEventManager.AddEventListener(XEventId.EVENT_THEATRE6_TAG_HIGHLIGHT_SOURCE_CHANGE, self.RefreshAllTagHighLight, self)
 end
 
-function XUiPanelTheatre6CharacterAttrDetail:OnNotify(evt, ...)
-    if evt == XEventId.EVENT_THEATRE6_UPDATE_SKILL then
-        local addedIdsBySlot, upgradeIds = ...
-        self:CacheSkillData()
-        if not self.ListRoleDetail.gameObject.activeInHierarchy then
-            self._IsDirty = true
-            return
-        end
-        self:ShowSkill()
-        self:DispatchSkillEffects(addedIdsBySlot, upgradeIds)
-        self:UpdateReddot()
-    elseif evt == XEventId.EVENT_THEATRE6_SHOP_REFRESH then
-        self:CacheSkillData()
-        if not self.ListRoleDetail.gameObject.activeInHierarchy then
-            self._IsDirty = true
-            return
-        end
-        self:ShowSkill()
-        self:UpdateReddot()
-    elseif evt == XEventId.EVENT_THEATRE6_BUY_GOOD then
-        self:CacheSkillData()
-        self:CacheBuffData()
-        self:UpdateView()
-        self:UpdateReddot()
-    elseif evt == XEventId.EVENT_THEATRE6_SKILL_NOT_NEW then
-        self:UpdateReddot()
-    elseif evt == XEventId.EVENT_THEATRE6_SCORE_CHANGE then
-        local oldScore, newScore = ...
-        self.IsUp = newScore > oldScore
-        if not self.RollingNumber then
-            self.RollingNumber = XUiCommonRollingNumber.New(
-                handler(self, self.RollingStart),
-                handler(self, self.RollingRefresh),
-                handler(self, self.RollingEnd)
-            )
-        end
-        if self.ImgBgScoreTop.gameObject.activeInHierarchy then
-            self.RollingNumber:Play(oldScore, newScore, 1)
-        else
-            self:RefreshRoleDetail()
-        end
+function XUiPanelTheatre6CharacterAttrDetail:RemoveEvent()
+    XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE6_UPDATE_SKILL, self.OnSkillUpdate, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE6_SHOP_REFRESH, self.OnShopRefresh, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE6_BUY_GOOD, self.OnBuyGoods, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE6_SKILL_NOT_NEW, self.UpdateReddot, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE6_SCORE_CHANGE, self.OnScoreChange, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE6_TAG_HIGHLIGHT_SOURCE_CHANGE, self.RefreshAllTagHighLight, self)
+end
 
-    elseif evt == XEventId.EVENT_THEATRE6_TAG_HIGHLIGHT_SOURCE_CHANGE then
-        self:RefreshAllTagHighLight()
+function XUiPanelTheatre6CharacterAttrDetail:OnSkillUpdate(addedIdsBySlot, upgradeIds)
+    self:CacheSkillData()
+    if not self.ListRoleDetail.gameObject.activeInHierarchy then
+        self._IsDirty = true
+        return
+    end
+    self:ShowSkill()
+    self:DispatchSkillEffects(addedIdsBySlot, upgradeIds)
+    self:UpdateReddot()
+end
+
+function XUiPanelTheatre6CharacterAttrDetail:OnShopRefresh()
+    self:CacheSkillData()
+    if not self.ListRoleDetail.gameObject.activeInHierarchy then
+        self._IsDirty = true
+        return
+    end
+    self:ShowSkill()
+    self:UpdateReddot()
+end
+
+function XUiPanelTheatre6CharacterAttrDetail:OnBuyGoods()
+    self:CacheSkillData()
+    self:CacheBuffData()
+    self:UpdateView()
+    self:UpdateReddot()
+end
+
+function XUiPanelTheatre6CharacterAttrDetail:OnScoreChange(oldScore, newScore)
+    self.IsUp = newScore > oldScore
+    if not self.RollingNumber then
+        self.RollingNumber = XUiCommonRollingNumber.New(handler(self, self.RollingStart), handler(self, self.RollingRefresh), handler(self, self.RollingEnd))
+    end
+    if self.ImgBgScoreTop.gameObject.activeInHierarchy then
+        self.RollingNumber:Play(oldScore, newScore, 1)
+    else
+        self:RefreshRoleDetail()
     end
 end
 
@@ -761,6 +763,7 @@ function XUiPanelTheatre6CharacterAttrDetail:OnDestroy()
     self.AreaGo = nil
     self.AreaData = nil
     self.RelicGrids = nil
+    self:RemoveEvent()
 end
 
 function XUiPanelTheatre6CharacterAttrDetail:ClearSkillNewFlag()

@@ -540,7 +540,10 @@ XPurchaseManagerCreator = function()
                                 XDataCenter.KickOutManager.Unlock(XEnumConst.KICK_OUT.LOCK.RECHARGE, true)
                                 XPurchaseManager.OnBuyPurchasePackageCheckSkip(id)
                                 DoPopQueue()
-                            end, nil, nil, { IsShowGridCommonPanelTag = XPurchaseManager.CheckIsWeekCardInfoData(res.PurchaseInfo) })
+                            end, nil, nil, { 
+                                IsShowGridCommonPanelTag = XPurchaseManager.CheckIsWeekCardInfoData(res.PurchaseInfo),
+                                IsIgnoreOpenFashionTipCheck = true,
+                            })
                         end)
                     end
 
@@ -553,7 +556,10 @@ XPurchaseManagerCreator = function()
                             XDataCenter.KickOutManager.Unlock(XEnumConst.KICK_OUT.LOCK.RECHARGE, true)
                             XPurchaseManager.OnBuyPurchasePackageCheckSkip(id)
                             DoPopQueue()
-                        end, nil, nil, { IsShowGridCommonPanelTag = XPurchaseManager.CheckIsWeekCardInfoData(res.PurchaseInfo) })
+                        end, nil, nil, { 
+                            IsShowGridCommonPanelTag = XPurchaseManager.CheckIsWeekCardInfoData(res.PurchaseInfo),
+                            IsIgnoreOpenFashionTipCheck = true,
+                        })
                     end)
                 end
             else
@@ -695,7 +701,9 @@ XPurchaseManagerCreator = function()
                         XUiManager.OpenUiObtain(commonList, nil, function()
                             XDataCenter.KickOutManager.Unlock(XEnumConst.KICK_OUT.LOCK.RECHARGE, true)
                             DoPopQueue()
-                        end)
+                        end, nil, nil, {
+                            IsIgnoreOpenFashionTipCheck = true
+                        })
                     end)
                 end
 
@@ -707,7 +715,9 @@ XPurchaseManagerCreator = function()
                     XUiManager.OpenUiObtain(rewardList, nil, function()
                         XDataCenter.KickOutManager.Unlock(XEnumConst.KICK_OUT.LOCK.RECHARGE, true)
                         DoPopQueue()
-                    end)
+                    end, nil, nil, {
+                        IsIgnoreOpenFashionTipCheck = true
+                    })
                 end)
             end
         else
@@ -805,7 +815,10 @@ XPurchaseManagerCreator = function()
                                 if not XTool.IsTableEmpty(popQueue) then
                                     popQueue[1]()
                                 end
-                            end, nil, nil, { IsShowGridCommonPanelTag = XPurchaseManager.CheckIsWeekCardInfoData(res.PurchaseInfo) })
+                            end, nil, nil, { 
+                                IsShowGridCommonPanelTag = XPurchaseManager.CheckIsWeekCardInfoData(res.PurchaseInfo),
+                                IsIgnoreOpenFashionTipCheck = true,
+                            })
                         end)
                     end
 
@@ -818,7 +831,10 @@ XPurchaseManagerCreator = function()
                     XUiManager.OpenUiObtain(res.RewardList, nil, function()
                         XDataCenter.KickOutManager.Unlock(XEnumConst.KICK_OUT.LOCK.RECHARGE, true)
                         XPurchaseManager.OnBuyPurchasePackageCheckSkip(comboId)
-                    end, nil, nil, { IsShowGridCommonPanelTag = XPurchaseManager.CheckIsWeekCardInfoData(res.PurchaseInfo) })
+                    end, nil, nil, { 
+                        IsShowGridCommonPanelTag = XPurchaseManager.CheckIsWeekCardInfoData(res.PurchaseInfo),
+                        IsIgnoreOpenFashionTipCheck = true,
+                    })
                 end
             else
                 XUiManager.TipText("PurchaseLBBuySuccessTips")
@@ -856,6 +872,9 @@ XPurchaseManagerCreator = function()
         if XPurchaseManager.HaveNewPlayerHint(id) then
             LbExpireIds[id] = nil
             XPurchaseManager.SaveLBExpireIds(LbExpireIds)
+        end
+        if XPurchaseConfigs.IsYKID(id) then
+            XPurchaseManager.SetYKLocalCache()
         end
         if XPurchaseManager.CheckIsWeekCardInfoData(purchaseInfo) then
             XPurchaseManager.SetWeekCardData(purchaseInfo, false)
@@ -911,6 +930,7 @@ XPurchaseManagerCreator = function()
         data.ExtraRewardGoods = purchaseInfo.ExtraRewardGoods
         data.ClientResetInfo = purchaseInfo.ClientResetInfo
         data.IsUseMail = purchaseInfo.IsUseMail or false
+        data.BuyLimitRemainDay = purchaseInfo.BuyLimitRemainDay
     end
 
     -- 领奖(月卡, 周卡)
@@ -1053,15 +1073,21 @@ XPurchaseManagerCreator = function()
 
         -- 处理月卡红点
         if info and info.DailyRewardInfoList and Next(info.DailyRewardInfoList) then
+            local needRefreshYK = false
             for _, v in pairs(info.DailyRewardInfoList) do
-                if v.Id == XPurchaseConfigs.PurChaseCardId then
-                    XDataCenter.PurchaseManager.YKInfoDataReq(function()
-                        XEventManager.DispatchEvent(XEventId.EVENT_CARD_REFRESH_WELFARE_BTN)
-
-                        -- 设置月卡信息本地缓存
-                        XDataCenter.PurchaseManager.SetYKLocalCache()
-                    end)
+                if v.Id == XPurchaseConfigs.PurChaseCardId
+                        or (XOverseaManager.IsENRegion() and v.Id == XPurchaseConfigs.EnYKCID) then
+                    needRefreshYK = true
+                    break
                 end
+            end
+            if needRefreshYK then
+                XDataCenter.PurchaseManager.YKInfoDataReq(function()
+                    XEventManager.DispatchEvent(XEventId.EVENT_CARD_REFRESH_WELFARE_BTN)
+
+                    -- 设置月卡信息本地缓存
+                    XDataCenter.PurchaseManager.SetYKLocalCache()
+                end)
             end
         end
 
@@ -1688,6 +1714,19 @@ XPurchaseManagerCreator = function()
         return disCountValue
     end
 
+    -- 从礼包原始 data 计算 buyData.EndTime：失效优先于下架；无时间限制返回 nil
+    ---@return number|nil 绝对服务器时间戳
+    function XPurchaseManager.GetPurchaseBuyDataEndTime(data)
+        if not data then return nil end
+        if XTool.IsNumberValid(data.TimeToInvalid) then
+            return data.TimeToInvalid
+        end
+        if XTool.IsNumberValid(data.TimeToUnShelve) then
+            return data.TimeToUnShelve
+        end
+        return nil
+    end
+
     function XPurchaseManager.GetLBCouponDiscountValue(lbData, index)
         if not lbData.DiscountCouponInfos then
             return nil
@@ -1844,7 +1883,11 @@ XPurchaseManagerCreator = function()
             -- v3.1兼容跳转其他界面完成购买后，返回此界面时的刷新
             buyData.PurchaseLBUpdateCb = buyFinishedCb
             -- 从推荐页跳转需要购买冷却
-            XMVCA.XShop:OpenFashionDetailUi(templateId,buyData,{isWeaponFashion = isWeaponFashion,isNeedCD = true})
+            XMVCA.XShop:OpenFashionDetailUi(templateId,buyData,{
+                isWeaponFashion = isWeaponFashion,
+                isNeedCD = true,
+                customAssetsItemIds = { XDataCenter.ItemManager.ItemId.PaidGem, XDataCenter.ItemManager.ItemId.HongKa } -- 自定义显示黑卡和虹卡
+            })
         else
             local mergeBeforeBuyCb = function(successCb)
                 data:HandleBeforeBuy(successCb)

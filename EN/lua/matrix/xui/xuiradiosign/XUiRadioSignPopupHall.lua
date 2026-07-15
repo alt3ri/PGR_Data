@@ -9,7 +9,10 @@ end
 function XUiRadioSignPopupHall:OnStart(content)
     self.TxtInfo.text = content.Text
     XUiHelper.RegisterClickEvent(self, self.BtnGo, function()
-        XLuaUiManager.Open("UiRadioSignMain", content)
+        self._IsOpenMain = true
+        XLuaUiManager.OpenWithCallback("UiRadioSignMain", function()
+            XDataCenter.FunctionEventManager.OnFunctionEventCompleted()
+        end, content)
         XLuaUiManager.SafeClose(self.Name)
     end)
 
@@ -18,7 +21,9 @@ function XUiRadioSignPopupHall:OnStart(content)
 end
 
 function XUiRadioSignPopupHall:OnDisable()
-    XDataCenter.FunctionEventManager.OnFunctionEventCompleted()
+    if not self._IsOpenMain then
+        XDataCenter.FunctionEventManager.OnFunctionEventCompleted()
+    end
 end
 
 return XUiRadioSignPopupHall

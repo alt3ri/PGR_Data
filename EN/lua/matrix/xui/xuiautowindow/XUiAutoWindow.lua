@@ -33,7 +33,7 @@ function XUiAutoWindow:OnBtnSkipClick()
 
     if self.Config.SkipURL and self.Config.SkipURL ~= nil then
         CS.UnityEngine.Application.OpenURL(self.Config.SkipURL)
-    elseif self.Config.SkipId and self.Config.SkipId ~= nil then
+    elseif XTool.IsNumberValidEx(self.Config.SkipId) then
         XFunctionManager.SkipInterface(self.Config.SkipId)
         self.IsSkip = true
     end

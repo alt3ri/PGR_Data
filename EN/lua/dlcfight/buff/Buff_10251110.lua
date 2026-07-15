@@ -20,7 +20,7 @@ function XBuffScript10251110:OnLuaSkillEnd(eventArgs)
     ------------执行------------
     if eventArgs._skillId ~= self._skillId then return end
     if eventArgs._launcherUUID ~= self._npcUUID then return end
-    self.originAttrib1 = self._proxy:GetNpcGameplayAttribValue(self._uuid,ETheatre6AttribType.Stamina)
+    self.originAttrib1 = self._proxy:GetNpcGameplayAttribMaxValue(self._uuid,ETheatre6AttribType.Stamina)
     --self:LogError(".....抓到拼刀属性"..self.originAttrib1)
     if self.originAttrib1 > self.TargetTL then
         self._blockController:AddSkillCount(self._stackCount)

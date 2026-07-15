@@ -25,12 +25,10 @@ function XUiGridPopupExploreChoice:Refresh(index, contentId, content)
 end
 
 function XUiGridPopupExploreChoice:_RefreshHistoryShow()
-    if self.PanelHistorySelected then
-        local isAllRead = XTool.IsNumberValidEx(self.OwnMessageId) and self._Control.MessageControl:GetMessageStateById(self.OwnMessageId) == self._Control.MessageControl.EnumConst.MessageState.AllRead
-        local isChoiceSelected = isAllRead or self._Control.MessageControl:CheckContentChoiceHasSelected(self.ContentId, self.Index)
-        
-        self.PanelHistorySelected.gameObject:SetActiveEx(isChoiceSelected)
-    end
+    local isAllRead = XTool.IsNumberValidEx(self.OwnMessageId) and self._Control.MessageControl:GetMessageStateById(self.OwnMessageId) == self._Control.MessageControl.EnumConst.MessageState.AllRead
+    local isChoiceSelected = isAllRead or self._Control.MessageControl:CheckContentChoiceHasSelected(self.ContentId, self.Index)
+    
+    self.GridBtn:SetButtonState(isChoiceSelected and CS.UiButtonState.Disable or CS.UiButtonState.Normal)
 end
 
 function XUiGridPopupExploreChoice:OnBtnClickEvent()

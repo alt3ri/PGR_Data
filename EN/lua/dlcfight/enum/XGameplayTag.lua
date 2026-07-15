@@ -67,5 +67,13 @@ local EGameplayTag = {
     Missile_Theatre6_HitAffixType_Block = 61,
     Missile_Theatre6_HitAffixType_Crit = 62,
     Missile_Theatre6_HitAffixType_Kill = 63,
+    Missile_Trigger_Npc_Enter = 64,
+    Missile_Trigger_Npc_Exit = 65,
+    Missile_Trigger_Missile_Enter = 66,
+    Missile_Trigger_Missile_Exit = 67,
+    Custom = 68,
+    Custom_Char = 69,
+    Custom_LevelPlay = 70,
+    Custom_Quest = 71,
 }
 return EGameplayTag

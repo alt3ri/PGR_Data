@@ -10,14 +10,13 @@ function XBuff10251606:ScriptInit(isGainControl) --初始化
     self.targetCount = 4
     self._stackCount = 1
     ---添加拼刀属性
-    if self._skillId == 10252111 then self.buffStacks = 30
-    else if self._skillId == 10252112 then self.buffStacks = 40
-    else self.buffStacks = 50
-        --self:LogError(".....初始化完成")
-    end
-        self._HitFlyController = self:GetNpc():GetHitFlyController()
-        self._critController = self:GetNpc():GetCritController()
-    end
+    self.dictBuffStacks = {
+        [1] = 30,
+        [2] = 40,
+        [3] = 50
+    }
+    self._HitFlyController = self:GetNpc():GetHitFlyController()
+    self._critController = self:GetNpc():GetCritController()
 end
 
 function XBuff10251606:OnLuaAffixHitFly(eventArgs)
@@ -33,13 +32,13 @@ function XBuff10251606:OnLuaSkillEnd(eventArgs)
     ------------执行------------
     if eventArgs._skillId ~= self._skillId then return end
     if eventArgs._launcherUUID ~= self._npcUUID then return end
-    self:AddTheatre6Attrib(ETheatre6AttribType.WrestlePoint, self.buffStacks, self._npcUUID, self._npcUUID)
+    self:AddTheatre6Attrib(ETheatre6AttribType.WrestlePoint, self.dictBuffStacks[self._lv], self._npcUUID, self._npcUUID)
     self._critController:AddSkillCount(self._stackCount)
 end
 
 --function XBuff10251606:OnLuaAttackerChange(eventArgs)
-    ---出手权交换时重置计数
-    --self.attackCount = 0
+---出手权交换时重置计数
+--self.attackCount = 0
 --end
 
 return XBuff10251606

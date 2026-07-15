@@ -27,6 +27,9 @@ local DefaultOfTypeNew = {
     [19] = tableEmpty,
     [20] = tableEmpty,
     [21] = tableEmpty,
+    --[22] int2 暂时还未支持
+    [23] = 0,
+    [24] = tableEmpty,
 }
 
 --读取全部
@@ -151,6 +154,7 @@ end
 
 function PtrBinaryTable:Ctor(path)
     self.FilePath = path
+    XTableManager.OnOpenBinaryTable(path)
 end
 
 function PtrBinaryTable:IsTableExist()
@@ -644,14 +648,9 @@ function PtrBinaryTable:ReleaseFull()
         self.Bytes:Release()
     end
     self.Bytes = nil
-
-    XTableManager.OnUnloadBinaryBytes(self.FilePath)
-end
-
--- 关闭，好像没调用
-function PtrBinaryTable:Close()
-    XLog.Error("PtrBinaryTable:Close", self.FilePath)
-    self:ReleaseFull()
+    self.m_initialized = false
+    XTableManager.OnUnloadBinary(self.FilePath)
+    XTableManager.OnCloseBinaryTable(self.FilePath)
 end
 
 return PtrBinaryTable

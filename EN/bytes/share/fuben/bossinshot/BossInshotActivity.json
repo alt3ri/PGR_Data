@@ -9,7 +9,11 @@
         "TaskGroupIds": "[335, 336, 337]",
         "PreviewTaskRewardId": 64124,
         "PositionNum": 1,
-        "IsRank": null
+        "IsRank": null,
+        "IsTowerRank": null,
+        "TowerMaxScoreLimit": null,
+        "TowerBossIds": null,
+        "TowerConditions": null
     },
     {
         "Id": 2,
@@ -21,7 +25,11 @@
         "TaskGroupIds": "[438, 439, 440]",
         "PreviewTaskRewardId": 64124,
         "PositionNum": 1,
-        "IsRank": true
+        "IsRank": true,
+        "IsTowerRank": null,
+        "TowerMaxScoreLimit": null,
+        "TowerBossIds": null,
+        "TowerConditions": null
     },
     {
         "Id": 3,
@@ -33,7 +41,11 @@
         "TaskGroupIds": "[438, 439, 440]",
         "PreviewTaskRewardId": 64124,
         "PositionNum": 1,
-        "IsRank": true
+        "IsRank": true,
+        "IsTowerRank": null,
+        "TowerMaxScoreLimit": null,
+        "TowerBossIds": null,
+        "TowerConditions": null
     },
     {
         "Id": 4,
@@ -45,6 +57,26 @@
         "TaskGroupIds": "[482, 478, 483]",
         "PreviewTaskRewardId": 66392,
         "PositionNum": 1,
-        "IsRank": true
+        "IsRank": true,
+        "IsTowerRank": null,
+        "TowerMaxScoreLimit": null,
+        "TowerBossIds": null,
+        "TowerConditions": null
+    },
+    {
+        "Id": 5,
+        "TimeId": 48501.0,
+        "Name": "Trial of Simulacrums",
+        "BossIds": "[7]",
+        "CharacterIds": "[1, 11, 12]",
+        "TeachStageId": 30163088,
+        "TaskGroupIds": "[719, 720, 718]",
+        "PreviewTaskRewardId": 69185,
+        "PositionNum": 1,
+        "IsRank": true,
+        "IsTowerRank": true,
+        "TowerMaxScoreLimit": 999999.0,
+        "TowerBossIds": "[1, 2, 4, 6, 7]",
+        "TowerConditions": "[862893]"
     }
 ]

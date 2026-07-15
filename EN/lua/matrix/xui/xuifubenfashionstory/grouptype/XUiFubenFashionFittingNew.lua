@@ -1,6 +1,7 @@
 local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
-local XUiFubenFashionFittingNew=XLuaUiManager.Register(XLuaUi,"UiFubenFashionFittingNew")
-local XUiGridFashionStoryTrialStage=require('XUi/XUiFubenFashionStory/GroupType/XUiGridFashionStoryTrialStage')
+local XUiGridFashionStoryTrialStage = require("XUi/XUiFubenFashionStory/GroupType/XUiGridFashionStoryTrialStage")
+local XUiFubenFashionFittingNew = XLuaUiManager.Register(XLuaUi, "UiFubenFashionFittingNew")
+
 --region 生命周期
 function XUiFubenFashionFittingNew:OnAwake()
     self:Init()
@@ -8,52 +9,62 @@ function XUiFubenFashionFittingNew:OnAwake()
 end
 
 function XUiFubenFashionFittingNew:OnStart()
-    self:RefreshStageList()
     self.AssetPanel = XUiPanelAsset.New(self, self.PanelAsset, XDataCenter.ItemManager.ItemId.FreeGem, XDataCenter.ItemManager.ItemId.ActionPoint, XDataCenter.ItemManager.ItemId.Coin)
     local _, endTime = XMVCA.XFashionStory:GetActivityTime(XMVCA.XFashionStory:GetCurrentActivityId())
     self:SetAutoCloseInfo(endTime, function(isClose) self:UpdateLeftTime(isClose) end)
 end
 
 function XUiFubenFashionFittingNew:OnEnable()
-    self:UpdateLeftTime(XMVCA.XFashionStory:GetLeftTimeStamp(XMVCA.XFashionStory:GetCurrentActivityId())<=0)
-
-    -- 3.6需求, 因为此版本只有一关, 所以直接打开此关卡
-    local stageIds=XMVCA.XFashionStory:GetFashionStoryTrialStages(XMVCA.XFashionStory:GetCurrentActivityId())
-    local idOnlyOne = stageIds[1]
-    self:OpenOneChildUi('UiFashionStoryStageTrialDetailNew', idOnlyOne,handler(self, self.Close))
+    self:RefreshStageList()
+    self:UpdateLeftTime(XMVCA.XFashionStory:GetLeftTimeStamp(XMVCA.XFashionStory:GetCurrentActivityId()) <= 0)
 end
 --endregion
 
 --region 初始化
 function XUiFubenFashionFittingNew:Init()
-    self.BtnBack.CallBack=function() self:Close() end
-    self.BtnMainUi.CallBack=function() XLuaUiManager.RunMain() end
-    self.BtnSkip1.CallBack=function() 
-        --前往商店界面
-        XFunctionManager.SkipInterface(XMVCA.XFashionStory:GetFashionStorySkipId(XMVCA.XFashionStory:GetCurrentActivityId(),XMVCA.XFashionStory.FashionStorySkip.SkipToStore))
-    end
-    
-    self.GridFitting.gameObject:SetActiveEx(false)
+    self.BtnBack:AddEventListener(Handler(self, self.OnBtnBackClick))
+    self.BtnMainUi:AddEventListener(Handler(self, self.OnBtnMainUiClick))
+    self.BtnSkipShop:AddEventListener(Handler(self, self.OnBtnSkipShopClick))
 end
 
-function XUiFubenFashionFittingNew:InitStagesList() 
-    local count=XMVCA.XFashionStory:GetFashionStoryTrialStageCount(XMVCA.XFashionStory:GetCurrentActivityId())
-    self.UiStagesList={}
-    self.StagesList={}
-    for i=1,count do
-        self.UiStagesList[i]=CS.UnityEngine.GameObject.Instantiate(self.GridFitting,self.GridFitting.transform.parent)
-        self.StagesList[i]=XUiGridFashionStoryTrialStage.New(self,self.UiStagesList[i])
-        self.UiStagesList[i].gameObject:SetActiveEx(true)
+function XUiFubenFashionFittingNew:InitStagesList()
+    self.StagesList = {}
+    for i = 1, 4 do
+        local panel = self["GridFitting" .. tostring(i)]
+        if panel then
+            self.StagesList[i] = XUiGridFashionStoryTrialStage.New(self, panel)
+        end
     end
 end
---endgion
+--endregion
+
+--region 事件处理
+function XUiFubenFashionFittingNew:OnBtnBackClick()
+    self:Close()
+end
+
+function XUiFubenFashionFittingNew:OnBtnMainUiClick()
+    XLuaUiManager.RunMain()
+end
+
+-- 前往商店界面
+function XUiFubenFashionFittingNew:OnBtnSkipShopClick()
+    XFunctionManager.SkipInterface(XMVCA.XFashionStory:GetFashionStorySkipId(XMVCA.XFashionStory:GetCurrentActivityId(), XMVCA.XFashionStory.FashionStorySkip.SkipToStore))
+end
+--endregion
 
 --region 数据更新
-
 function XUiFubenFashionFittingNew:RefreshStageList()
-    local stageIds=XMVCA.XFashionStory:GetFashionStoryTrialStages(XMVCA.XFashionStory:GetCurrentActivityId())
+    local activityId = XMVCA.XFashionStory:GetCurrentActivityId()
+    local stageIds = XMVCA.XFashionStory:GetFashionStoryTrialStages(activityId) or {}
+
     for i, stageCtrl in ipairs(self.StagesList) do
-        stageCtrl:RefreshData(stageIds[i])
+        local stageId = stageIds[i]
+        if stageId then
+            stageCtrl:RefreshData(stageId)
+        else
+            XLog.Error(string.format("[XUiFubenFashionFittingNew] 第 %d 个试玩关槽位未配置 StageId，activityId=%s", i, tostring(activityId)))
+        end
     end
 end
 
@@ -65,4 +76,4 @@ function XUiFubenFashionFittingNew:UpdateLeftTime(isClose)
 end
 --endregion
 
-return XUiFubenFashionFittingNew
+return XUiFubenFashionFittingNew

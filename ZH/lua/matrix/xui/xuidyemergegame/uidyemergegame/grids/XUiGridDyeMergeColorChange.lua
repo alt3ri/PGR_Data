@@ -12,6 +12,7 @@ local XUiGridDyeMerge = require("XUi/XUiDyeMergeGame/UiDyeMergeGame/Grids/XUiGri
 local XUiGridDyeMergeColorChange = XClass(XUiGridDyeMerge, "XUiGridDyeMergeColorChange")
 
 function XUiGridDyeMergeColorChange:OnStart()
+    XUiGridDyeMerge.OnStart(self)
     if self.BtnChange then
         self.BtnChange:AddEventListener(handler(self, self._OnBtnChangeClick))
     end
@@ -20,6 +21,8 @@ end
 ---@overload
 function XUiGridDyeMergeColorChange:Refresh(uid)
     self.Uid = uid
+    self:EnterNormalDisplay()
+
     local block = self._Control.GamingControl.BlocksControl:GetBlockByUid(uid)
     if not block then return end
     local blockCfg = self._Control.GamingControl:GetTableDyeMergeBlockById(block:GetId())
@@ -34,14 +37,7 @@ function XUiGridDyeMergeColorChange:Refresh(uid)
         self.RImgDiban:SetRawImage(colorCfg.IconNormalBig)
     end
 
-    if self.RImgObject then
-        self.RImgObject.gameObject:SetActiveEx(true)
-        self.RImgObject:SetRawImage(colorCfg.IconSupprtTop)
-    end
-
-    if self.RImgObjectEnd then
-        self.RImgObjectEnd.gameObject:SetActiveEx(false)
-    end
+    self:SetFlowerVisible(true, colorCfg.IconSupprtTop)
 
     self:_RefreshColorOptions(blockCfg.Params, curColorId)
 end
@@ -80,7 +76,7 @@ function XUiGridDyeMergeColorChange:_OnBtnChangeClick()
     end
 end
 
---- 通关后将供色图标切换回 IconTop
+--- 通关后播放供色骨骼动画
 function XUiGridDyeMergeColorChange:RefreshOnStagePass(uid)
     local block = self._Control.GamingControl.BlocksControl:GetBlockByUid(uid)
     if not block then return end
@@ -89,14 +85,7 @@ function XUiGridDyeMergeColorChange:RefreshOnStagePass(uid)
     local colorCfg = self._Control.GamingControl:GetTableDyeMergeBlocksConfig(curColorId)
     if not colorCfg then return end
 
-    if self.RImgObjectEnd and colorCfg.IconTop then
-        self.RImgObjectEnd.gameObject:SetActiveEx(true)
-        self.RImgObjectEnd:SetRawImage(colorCfg.IconTop)
-    end
-
-    if self.RImgObject then
-        self.RImgObject.gameObject:SetActiveEx(false)
-    end
+    self:EnterPassDisplay(colorCfg)
 end
 
 return XUiGridDyeMergeColorChange

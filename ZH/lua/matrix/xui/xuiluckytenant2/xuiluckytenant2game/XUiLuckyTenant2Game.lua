@@ -1366,8 +1366,8 @@ function XUiLuckyTenant2Game:PlayAnimationDeletePiece(pieceUid, x, y, fromPieceU
         or ((x and y) and (tostring(x) .. "," .. tostring(y)) or nil)
     if grid and not self:_WasGridEffectPlayedInGroup(GridEffectType.Delete, gridKey) then
         self:_MarkGridEffectPlayedInGroup(GridEffectType.Delete, gridKey)
-        if pieceId and self._Control and self._Control._Model then
-            local pieceType = self._Control._Model:GetLuckyTenant2ChessTypeById(pieceId)
+        if pieceId and self._Control then
+            local pieceType = self._Control:GetLuckyTenant2ChessTypeById(pieceId)
             local XLuckyTenant2Enum = require("XModule/XLuckyTenant2/Game/XLuckyTenant2Enum")
             if pieceType == XLuckyTenant2Enum.PieceType.Box then
                 grid:PlayEffectEliminatedBox(skillId)

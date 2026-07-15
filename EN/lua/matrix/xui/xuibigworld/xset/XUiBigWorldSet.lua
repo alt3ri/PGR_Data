@@ -13,6 +13,8 @@ function XUiBigWorldSet:OnAwake()
     ---@type XBWSetTypeData[]
     self._TypeDatas = false
 
+    self._CustomConfig = nil
+
     self._TabList = {}
 
     self._SelectTypeIndex = 0
@@ -23,9 +25,10 @@ function XUiBigWorldSet:OnAwake()
     self:_RegisterButtonClicks()
 end
 
-function XUiBigWorldSet:OnStart(setTypes)
+function XUiBigWorldSet:OnStart(setTypes, customConfig)
     setTypes = setTypes or self._Control:GetDefaultSetTypes()
     self._TypeDatas = self._Control:GetSetTypeDatas(setTypes)
+    self._CustomConfig = customConfig
 
     self:_InitTabGroup()
 end
@@ -156,7 +159,7 @@ function XUiBigWorldSet:_RefreshSubPage(index)
         self.BtnSave.gameObject:SetActive(true)
         self.BtnDefault.gameObject:SetActive(true)
         local uiName = typeData:GetUiName()
-        self:OpenOneChildUi(uiName, self)
+        self:OpenOneChildUi(uiName, self, self._CustomConfig)
     end
 end
 

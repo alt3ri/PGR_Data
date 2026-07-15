@@ -108,7 +108,7 @@ function XUiPassport:RefreshCoating()
         return
     end
 
-    local fashionShowConfig = self._Control._Model:GetPassportBuyFashionShowConfig(maxTypeInfoId)
+    local fashionShowConfig = self._Control:GetPassportBuyFashionShowConfig(maxTypeInfoId)
     local fashionType = fashionShowConfig.FashionType  -- 0=普通时装, 1=武器投影, 2=FashionColor
     self.Model3D:SetModel(fashionId, fashionType)
 end

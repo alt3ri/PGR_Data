@@ -18,6 +18,7 @@ end
 function XUiPurchaseBuyCoatingTips:OnStart(viewModel, buyCb, closeDetailCb)
     self._BuyCb = buyCb
     self._CloseDetailCb = closeDetailCb
+    self._ViewModel = viewModel
 
     self.TxtName.text = viewModel.Title or ''
     self.Desc.text = viewModel.SubTitle or ''
@@ -53,15 +54,19 @@ function XUiPurchaseBuyCoatingTips:OnStart(viewModel, buyCb, closeDetailCb)
     
     -- 资源栏
     if not XTool.IsTableEmpty(viewModel.AssetsItemIds) then
-        self.PanelAssetPay.gameObject:SetActiveEx(true)
-        self.AssetPanel = XUiPanelAsset.New(self, self.PanelAssetPay, table.unpack(viewModel.AssetsItemIds))
+        self.PanelAsset.gameObject:SetActiveEx(true)
+        self.AssetPanel = XUiPanelAsset.New(self, self.PanelAsset, table.unpack(viewModel.AssetsItemIds))
     else
-        self.PanelAssetPay.gameObject:SetActiveEx(false)
+        self.PanelAsset.gameObject:SetActiveEx(false)
     end
 end
 
 function XUiPurchaseBuyCoatingTips:OnEnable()
+    self:RefreshTime()
     self:StartTimer()
+    if self._ViewModel then
+        self:RefreshPriceShow(self._ViewModel)
+    end
 end
 
 function XUiPurchaseBuyCoatingTips:OnDisable()
@@ -72,6 +77,7 @@ function XUiPurchaseBuyCoatingTips:OnDestroy()
     self:DestroyTimer()
     self._BuyCb = nil
     self._CloseDetailCb = nil
+    self._ViewModel = nil
 end
 
 --endregion

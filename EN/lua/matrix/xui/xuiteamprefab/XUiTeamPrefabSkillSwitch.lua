@@ -1,58 +1,10 @@
--- ============================================================
--- Grid（内联，仅供本文件使用）
--- ============================================================
-local DescribeType = { Title = 1, Specific = 2 }
+local XUiGridBattleRoomSkillBase = require("XUi/XUiCharacterV2P6/Grid/XUiGridBattleRoomSkillBase")
 
----@class XUiGridTeamPrefabSwitchSkill : XUiNode
-local XUiGridTeamPrefabSwitchSkill = XClass(XUiNode, "XUiGridTeamPrefabSwitchSkill")
+---@class XUiGridTeamPrefabSwitchSkill : XUiGridBattleRoomSkillBase
+local XUiGridTeamPrefabSwitchSkill = XClass(XUiGridBattleRoomSkillBase, "XUiGridTeamPrefabSwitchSkill")
 
-function XUiGridTeamPrefabSwitchSkill:Ctor(ui, parent, onSelectCb)
-    self.OnSelectCb = onSelectCb
-    self.BtnSelect.CallBack = function() self:OnBtnSelectClick() end
-    self.TxtSkillTitleGo = {}
-    self.TxtSkillSpecificGo = {}
-    self.TxtSkillName.gameObject:SetActiveEx(false)
-    self.TxtSkillbrief.gameObject:SetActiveEx(false)
-end
-
-function XUiGridTeamPrefabSwitchSkill:Refresh(skillId, skillLevel, isCurrent)
-    self.SkillId = skillId
-    self.SelectIcon.gameObject:SetActiveEx(isCurrent)
-    self.BtnSelect.gameObject:SetActiveEx(not isCurrent)
-
-    local gradeConfig = XMVCA.XCharacter:GetSkillGradeDesWithDetailConfig(skillId, skillLevel)
-    self.TxtSkillBT.text = gradeConfig.Name
-
-    for _, go in pairs(self.TxtSkillTitleGo) do go:SetActiveEx(false) end
-    for _, go in pairs(self.TxtSkillSpecificGo) do go:SetActiveEx(false) end
-    for index, message in pairs(gradeConfig.SpecificDes or {}) do
-        local title = gradeConfig.Title and gradeConfig.Title[index]
-        if title then self:SetTextInfo(DescribeType.Title, index, title) end
-        self:SetTextInfo(DescribeType.Specific, index, message)
-    end
-end
-
-function XUiGridTeamPrefabSwitchSkill:SetTextInfo(txtType, index, info)
-    local txtSkillGo, target
-    if txtType == DescribeType.Title then
-        txtSkillGo = self.TxtSkillTitleGo
-        target = self.TxtSkillName.gameObject
-    else
-        txtSkillGo = self.TxtSkillSpecificGo
-        target = self.TxtSkillbrief.gameObject
-    end
-    local txtGo = txtSkillGo[index]
-    if not txtGo then
-        txtGo = XUiHelper.Instantiate(target, self.PanelReward)
-        txtSkillGo[index] = txtGo
-    end
-    txtGo:SetActiveEx(true)
-    txtGo:GetComponent("Text").text = XUiHelper.ConvertLineBreakSymbol(info)
-    txtGo.transform:SetAsLastSibling()
-end
-
-function XUiGridTeamPrefabSwitchSkill:OnBtnSelectClick()
-    if self.OnSelectCb then self.OnSelectCb(self.SkillId) end
+function XUiGridTeamPrefabSwitchSkill:OnClickBtnSelect()
+    self.Parent:OnSkillSelected(self.SkillId)
 end
 
 -- ============================================================
@@ -81,10 +33,13 @@ end
 
 function XUiTeamPrefabSkillSwitch:Refresh()
     local characterId = self.TeamPrefab:GetEntityIdByTeamPos(self.Pos)
-    local groupSkillId = XMVCA.XCharacter:GetSkillExchangeDesSkillIdAndConfigByCharacterId(characterId)
+    local groupSkillId, skillExchangeConfig = XMVCA.XCharacter:GetSkillExchangeDesSkillIdAndConfigByCharacterId(characterId)
     if not groupSkillId then return end
 
-    -- 优先读预设存储的选择，未设置时 fallback 角色全局激活态
+    self.TxtTitle.text = XUiHelper.GetText("UiCharacterSkillSwitchTitle")
+    self.SkillExchangeDesConfig = skillExchangeConfig
+
+    -- 优先读预设存储的选择，未设置时使用配置命中的默认切换技能
     local currentSkillId = self.TeamPrefab:GetSwitchSkillByPos(self.Pos)
     if not currentSkillId then
         currentSkillId = groupSkillId
@@ -98,12 +53,10 @@ function XUiTeamPrefabSkillSwitch:Refresh()
         local grid = self.Grids[index]
         if not grid then
             local go = CS.UnityEngine.Object.Instantiate(self.SkillItem, self.Content)
-            grid = XUiGridTeamPrefabSwitchSkill.New(go, self, function(selectedSkillId)
-                self:OnSkillSelected(selectedSkillId)
-            end)
+            grid = XUiGridTeamPrefabSwitchSkill.New(go, self)
             self.Grids[index] = grid
         end
-        grid:Refresh(skillId, skillLevel, currentSkillId == skillId)
+        grid:Refresh(skillId, skillLevel, currentSkillId == skillId, index)
         grid.GameObject:SetActiveEx(true)
     end
 

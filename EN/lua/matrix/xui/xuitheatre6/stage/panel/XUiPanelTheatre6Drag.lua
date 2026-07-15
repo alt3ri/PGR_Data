@@ -142,8 +142,11 @@ function XUiPanelTheatre6Drag:OnLongClickBlock()
 
     if XTool.IsTableEmpty(self._PanelAreas) then
         if math.abs(curPos.x - self._InitDragPosX) >= self._ConfirmDistance then
-            self._CurDirection = curPos.x < self._InitDragPosX and Direction.Left or Direction.Right
-            self:ApplyAction(DragAction.EnterTargetArea, self._CurDirection)
+            local dir = curPos.x < self._InitDragPosX and Direction.Left or Direction.Right
+            if self._CurDirection ~= dir then
+                self._CurDirection = dir
+                self:ApplyAction(DragAction.EnterTargetArea, self._CurDirection)
+            end
             return
         end
     else

@@ -279,6 +279,9 @@ function XUiPanelFashionSuitButtonGroup:OnBuyBefore()
 end
 
 function XUiPanelFashionSuitButtonGroup:OnBuy()
+    if not self.Parent then
+        return
+    end
     if self._GainType == GainType.Purchase then
         self._Purchase:OnPurchaseBuy()
     elseif self._GainType == GainType.Shop then

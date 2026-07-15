@@ -261,7 +261,13 @@ function XUiFubenBossSingleModeDetail:_RefreshRankReward()
         self._RankRewardUi:Close()
         return
     end
+
     local levelType = self._Control:GetBossSingleData():GetBossSingleChallengeLevelType()
+
+    if levelType == 0 then
+        self:OnActivityEnd()
+        return
+    end
 
     self._RankRewardUi:Close()
     XMVCA.XFubenBossSingle:RequestChallengeRankData(function(rankData)

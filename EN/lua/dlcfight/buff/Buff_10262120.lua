@@ -18,7 +18,7 @@ end
 
 function XBuff10262120:OnEnterLevel(levelId)
     XTheatre6SkillBase.OnEnterLevel(self, levelId)
-    self._blockController = self:GetNpc():GetBlockController()()
+    self._blockController = self:GetNpc():GetBlockController()
 end
 
 function XBuff10262120:OnLuaSkillEnd(eventArgs)
@@ -32,7 +32,7 @@ function XBuff10262120:OnLuaSkillStart(eventArgs)
     --获得坚毅
     if eventArgs._skillId ~= self._skillId then return end
     if eventArgs._launcherUUID ~= self._npcUUID then return end
-    self._blockController:CastStackBuff(self.dictBlockStacks[self._lv], self._npcUUID)
+    self._blockController:AddSkillCount(self.dictBlockStacks[self._lv])
 end
 
 return XBuff10262120

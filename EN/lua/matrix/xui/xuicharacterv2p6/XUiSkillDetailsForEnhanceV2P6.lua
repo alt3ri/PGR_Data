@@ -167,14 +167,14 @@ function XUiSkillDetailsForEnhanceV2P6:RefreshSkillDataByFastBuy()
 end
 
 -- 下一个
-function XUiSkillDetailsForEnhanceV2P6:OnBtnNext()
-    self.ParentUi:SetSkillPos(1)
-end
-
--- 上一个
-function XUiSkillDetailsForEnhanceV2P6:OnBtnLast()
-    self.ParentUi:SetSkillPos(XEnumConst.CHARACTER.MAX_SHOW_SKILL_POS)
-end
+function XUiSkillDetailsForEnhanceV2P6:OnBtnNext()
+    self.ParentUi:SwitchToNextSkillDetails()
+end
+
+-- 上一个
+function XUiSkillDetailsForEnhanceV2P6:OnBtnLast()
+    self.ParentUi:SwitchToLastSkillDetails()
+end
 
 function XUiSkillDetailsForEnhanceV2P6:OnDisable()
     XEventManager.RemoveEventListener(XEventId.EVENT_ITEM_FAST_TRADING, self.RefreshSkillDataByFastBuy, self)

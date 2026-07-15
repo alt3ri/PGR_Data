@@ -713,6 +713,10 @@ function XLineArithmetic3Game:_AddPathStraightLine(last, pos)
         end
         self._Path[#self._Path + 1] = { x = cur.x, y = cur.y }
         added = true
+        -- 遇到终点格，停止延伸（不允许路径穿越终点）
+        if self:GetGrid(cur) and self:GetGrid(cur).Type == XLineArithmetic3Enum.GridType.End then
+            break
+        end
         if cur.x == pos.x and cur.y == pos.y then
             break
         end

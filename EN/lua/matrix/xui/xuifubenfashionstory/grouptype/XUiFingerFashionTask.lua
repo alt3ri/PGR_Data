@@ -1,7 +1,8 @@
 local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
 local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
-local XUiFingerFashionTask=XLuaUiManager.Register(XLuaUi,"UiFingerFashionTask")
-local XUiGridFashionStoryTask=require('XUi/XUiFubenFashionStory/GroupType/XUiGridFashionStoryTask')
+local XUiGridFashionStoryTask = require("XUi/XUiFubenFashionStory/GroupType/XUiGridFashionStoryTask")
+local XUiFingerFashionTask = XLuaUiManager.Register(XLuaUi, "UiFingerFashionTask")
+
 --region 生命周期
 function XUiFingerFashionTask:OnAwake()
     self:Init()
@@ -15,30 +16,27 @@ function XUiFingerFashionTask:OnStart()
 end
 
 function XUiFingerFashionTask:OnEnable()
-    self:UpdateLeftTime(XMVCA.XFashionStory:GetLeftTimeStamp(XMVCA.XFashionStory:GetCurrentActivityId())<=0)
+    self:UpdateLeftTime(XMVCA.XFashionStory:GetLeftTimeStamp(XMVCA.XFashionStory:GetCurrentActivityId()) <= 0)
 end
 --endregion
 
 --region 初始化
-
 function XUiFingerFashionTask:Init()
-    self.BtnBack.CallBack=function() self:Close()  end
-    self.BtnMainUi.CallBack=function() XLuaUiManager.RunMain() end
+    self.BtnBack:AddEventListener(Handler(self, self.OnBtnBackClick))
+    self.BtnMainUi:AddEventListener(Handler(self, self.OnBtnMainUiClick))
 
-    self.DynamicTable=XDynamicTableNormal.New(self.SViewTask)
+    self.DynamicTable = XDynamicTableNormal.New(self.SViewTask)
     self.DynamicTable:SetProxy(XUiGridFashionStoryTask)
     self.DynamicTable:SetDelegate(self)
-    
+
     self.GridTask.gameObject:SetActiveEx(false)
 end
-
 --endregion
 
 --region 数据更新
 function XUiFingerFashionTask:RefreshTasks()
     --获取剧情关的任务列表
-    local tasks= XMVCA.XFashionStory:GetCurrentAllTask(XMVCA.XFashionStory:GetCurrentActivityId())
-    self.Tasks=tasks
+    self.Tasks = XMVCA.XFashionStory:GetCurrentAllTask(XMVCA.XFashionStory:GetCurrentActivityId())
     self.DynamicTable:SetDataSource(self.Tasks)
     self.DynamicTable:ReloadDataASync()
 end
@@ -52,6 +50,13 @@ end
 --endregion
 
 --region 事件处理
+function XUiFingerFashionTask:OnBtnBackClick()
+    self:Close()
+end
+
+function XUiFingerFashionTask:OnBtnMainUiClick()
+    XLuaUiManager.RunMain()
+end
 
 function XUiFingerFashionTask:OnDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
@@ -62,4 +67,4 @@ function XUiFingerFashionTask:OnDynamicTableEvent(event, index, grid)
 end
 --endregion
 
-return XUiFingerFashionTask
+return XUiFingerFashionTask

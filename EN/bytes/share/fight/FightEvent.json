@@ -37,7 +37,7 @@
         "BornMagic": "[199974]",
         "EnemyBornMagic": null,
         "PartnerBornMagic": null,
-        "Description": "Extra DMG Bonus of the team increases over time after 1 minute into battle."
+        "Description": "1 minute into combat, the team's Extra DMG Bonus begins to scale up."
     },
     {
         "Id": 102,
@@ -45,7 +45,7 @@
         "BornMagic": "[199974]",
         "EnemyBornMagic": null,
         "PartnerBornMagic": null,
-        "Description": "After the battle has started for 40s, the team's Extra DMG Bonus increases over time."
+        "Description": "40s into combat, the team's Extra DMG Bonus begins to scale up."
     },
     {
         "Id": 103,
@@ -1872,6 +1872,62 @@
         "Description": "War Zone Alpha"
     },
     {
+        "Id": 4193,
+        "ConditionId": null,
+        "BornMagic": "[784476]",
+        "EnemyBornMagic": null,
+        "PartnerBornMagic": null,
+        "Description": "\u6218\u533a\u65b0\u711a\u70e7"
+    },
+    {
+        "Id": 4194,
+        "ConditionId": null,
+        "BornMagic": "[764325, 756345]",
+        "EnemyBornMagic": "[764367]",
+        "PartnerBornMagic": null,
+        "Description": "1"
+    },
+    {
+        "Id": 4195,
+        "ConditionId": null,
+        "BornMagic": "[764325, 756348]",
+        "EnemyBornMagic": "[764367]",
+        "PartnerBornMagic": null,
+        "Description": "11"
+    },
+    {
+        "Id": 4196,
+        "ConditionId": null,
+        "BornMagic": "[764325, 756352]",
+        "EnemyBornMagic": "[764367]",
+        "PartnerBornMagic": null,
+        "Description": "14"
+    },
+    {
+        "Id": 4197,
+        "ConditionId": null,
+        "BornMagic": "[764325]",
+        "EnemyBornMagic": "[764367, 756354]",
+        "PartnerBornMagic": null,
+        "Description": "Boss Customization"
+    },
+    {
+        "Id": 4198,
+        "ConditionId": null,
+        "BornMagic": "[764325, 199974, 756341]",
+        "EnemyBornMagic": "[764367]",
+        "PartnerBornMagic": null,
+        "Description": "\u65b0\u73af\u58834.6"
+    },
+    {
+        "Id": 4199,
+        "ConditionId": null,
+        "BornMagic": "[784489]",
+        "EnemyBornMagic": null,
+        "PartnerBornMagic": null,
+        "Description": "War Zone Alpha"
+    },
+    {
         "Id": 4201,
         "ConditionId": null,
         "BornMagic": "[764151, 764018, 764136]",
@@ -2294,6 +2350,38 @@
         "EnemyBornMagic": null,
         "PartnerBornMagic": null,
         "Description": "Rating Vera Basic Attack"
+    },
+    {
+        "Id": 4544,
+        "ConditionId": null,
+        "BornMagic": "[782666]",
+        "EnemyBornMagic": null,
+        "PartnerBornMagic": null,
+        "Description": "Rating Crimson Abyss Talent 1"
+    },
+    {
+        "Id": 4545,
+        "ConditionId": null,
+        "BornMagic": "[809550]",
+        "EnemyBornMagic": null,
+        "PartnerBornMagic": null,
+        "Description": "Rating Crimson Abyss Talent 2"
+    },
+    {
+        "Id": 4546,
+        "ConditionId": null,
+        "BornMagic": "[782667]",
+        "EnemyBornMagic": null,
+        "PartnerBornMagic": null,
+        "Description": "Rating Inverse Crown Talent 1"
+    },
+    {
+        "Id": 4547,
+        "ConditionId": null,
+        "BornMagic": "[782668]",
+        "EnemyBornMagic": null,
+        "PartnerBornMagic": null,
+        "Description": "Rating Inverse Crown Talent 2"
     },
     {
         "Id": 4601,
@@ -2774,6 +2862,78 @@
         "EnemyBornMagic": null,
         "PartnerBornMagic": null,
         "Description": "Guitar Skill Tutorial Stage"
+    },
+    {
+        "Id": 4670,
+        "ConditionId": null,
+        "BornMagic": "[764137, 782646]",
+        "EnemyBornMagic": "[764152]",
+        "PartnerBornMagic": null,
+        "Description": "\u6218\u6597\u8bc4\u5206\u73a9\u6cd54.4BOSS"
+    },
+    {
+        "Id": 4671,
+        "ConditionId": null,
+        "BornMagic": "[782661, 764151, 764136]",
+        "EnemyBornMagic": null,
+        "PartnerBornMagic": null,
+        "Description": "Score - Physical Alpha Injection"
+    },
+    {
+        "Id": 4672,
+        "ConditionId": null,
+        "BornMagic": "[782663, 764151, 764136]",
+        "EnemyBornMagic": null,
+        "PartnerBornMagic": null,
+        "Description": "Score - Ice Alpha Injection"
+    },
+    {
+        "Id": 4673,
+        "ConditionId": null,
+        "BornMagic": "[737024]",
+        "EnemyBornMagic": null,
+        "PartnerBornMagic": null,
+        "Description": "\u8bc4\u52064.4BOSS\u6559\u5b66\u5173"
+    },
+    {
+        "Id": 4674,
+        "ConditionId": null,
+        "BornMagic": "[737025]",
+        "EnemyBornMagic": null,
+        "PartnerBornMagic": null,
+        "Description": "\u8bc4\u52064.4BOSS\u6559\u5b66\u5173"
+    },
+    {
+        "Id": 4675,
+        "ConditionId": null,
+        "BornMagic": "[737026]",
+        "EnemyBornMagic": null,
+        "PartnerBornMagic": null,
+        "Description": "\u8bc4\u52064.4BOSS\u6559\u5b66\u5173"
+    },
+    {
+        "Id": 4676,
+        "ConditionId": null,
+        "BornMagic": "[737027]",
+        "EnemyBornMagic": null,
+        "PartnerBornMagic": null,
+        "Description": "\u8bc4\u52064.4BOSS\u6559\u5b66\u5173"
+    },
+    {
+        "Id": 4677,
+        "ConditionId": null,
+        "BornMagic": "[737028]",
+        "EnemyBornMagic": null,
+        "PartnerBornMagic": null,
+        "Description": "\u8bc4\u52064.4BOSS\u6559\u5b66\u5173"
+    },
+    {
+        "Id": 4678,
+        "ConditionId": null,
+        "BornMagic": "[737029]",
+        "EnemyBornMagic": null,
+        "PartnerBornMagic": null,
+        "Description": "\u8bc4\u52064.4BOSS\u6559\u5b66\u5173"
     },
     {
         "Id": 5001,
@@ -51240,6 +51400,22 @@
         "Description": "Every time Ignition DMG (DMG Type is Ignition) is dealt, Boss takes significantly more Ignition DMG (Ignition Weakness). Initial: 17%. Then, 9% per stack, up to 8 stacks, max 80%. Lasts 10s. Duration resets every time it is triggered."
     },
     {
+        "Id": 2300065,
+        "ConditionId": null,
+        "BornMagic": null,
+        "EnemyBornMagic": "[785352]",
+        "PartnerBornMagic": null,
+        "Description": "When dealing Lightning DMG, gain a 2,000-point Lightning Shield for 5s, stacking up to 10,000. Upon reaching the stack limit, the shield automatically detonates, applying a 20% Lightning Weakness to nearby units (field-wide range, enemies) for 10s. The weakness stacks up to 4 times. Each subsequent stack increases the Boss's Lightning Weakness by an additional 10%. Re-applying this effect refreshes its duration. All stacks are cleared when the duration expires."
+    },
+    {
+        "Id": 2300066,
+        "ConditionId": null,
+        "BornMagic": null,
+        "EnemyBornMagic": "[785370]",
+        "PartnerBornMagic": null,
+        "Description": "Dealing Glaciation DMG makes the enemy take significantly more Glaciation DMG. Initial: 3%, then 1.5% per stack, up to 5 stacks (Glaciation Weakness). Lasts 10s. Duration resets every time the effect is triggered."
+    },
+    {
         "Id": 2301001,
         "ConditionId": null,
         "BornMagic": null,
@@ -51758,6 +51934,14 @@
         "EnemyBornMagic": null,
         "PartnerBornMagic": null,
         "Description": "Bounty Challenge: Boosted Signal Orb Recovery via Basic Attacks"
+    },
+    {
+        "Id": 2330008,
+        "ConditionId": null,
+        "BornMagic": "[785096]",
+        "EnemyBornMagic": null,
+        "PartnerBornMagic": null,
+        "Description": "\u60ac\u8d4f\u6311\u62184.5\u65b0\u589e-\u5173\u5361\u65f6\u95f41min30s\u540e\uff0c\u73a9\u5bb6\u83b7\u5f97\u6bcf\u79d21.3%\u7684\u5168\u4f24\u5bb3\u52a0\u6210"
     },
     {
         "Id": 2251500,
@@ -52962,66 +53146,130 @@
     {
         "Id": 2340113,
         "ConditionId": null,
-        "BornMagic": null,
+        "BornMagic": "[784722, 784732, 784733]",
         "EnemyBornMagic": null,
         "PartnerBornMagic": null,
-        "Description": "miniRPG-\u5360\u5751"
+        "Description": "miniRPG-\u4e3d\u8299buff1"
     },
     {
         "Id": 2340114,
         "ConditionId": null,
-        "BornMagic": null,
+        "BornMagic": "[784724]",
         "EnemyBornMagic": null,
         "PartnerBornMagic": null,
-        "Description": "miniRPG-\u5360\u5751"
+        "Description": "miniRPG-\u4e3d\u8299buff2"
     },
     {
         "Id": 2340115,
         "ConditionId": null,
-        "BornMagic": null,
+        "BornMagic": "[784729]",
         "EnemyBornMagic": null,
         "PartnerBornMagic": null,
-        "Description": "miniRPG-\u5360\u5751"
+        "Description": "miniRPG-\u4e3d\u8299buff3"
     },
     {
         "Id": 2340116,
         "ConditionId": null,
-        "BornMagic": null,
+        "BornMagic": "[784742, 784750, 784757, 784759, 784478, 784733]",
         "EnemyBornMagic": null,
         "PartnerBornMagic": null,
-        "Description": "miniRPG-\u5360\u5751"
+        "Description": "miniRPG-\u4e09\u5c0f\u53eabuff1"
     },
     {
         "Id": 2340117,
         "ConditionId": null,
-        "BornMagic": null,
+        "BornMagic": "[784740, 784749, 784756, 784732]",
         "EnemyBornMagic": null,
         "PartnerBornMagic": null,
-        "Description": "miniRPG-\u5360\u5751"
+        "Description": "miniRPG-\u4e09\u5c0f\u53eabuff2"
     },
     {
         "Id": 2340118,
         "ConditionId": null,
-        "BornMagic": null,
+        "BornMagic": "[784738, 784744, 784752]",
         "EnemyBornMagic": null,
         "PartnerBornMagic": null,
-        "Description": "miniRPG-\u5360\u5751"
+        "Description": "miniRPG-\u4e09\u5c0f\u53eabuff3"
     },
     {
         "Id": 2340119,
         "ConditionId": null,
-        "BornMagic": null,
+        "BornMagic": "[784767, 784732, 784733]",
         "EnemyBornMagic": null,
         "PartnerBornMagic": null,
-        "Description": "miniRPG-\u5360\u5751"
+        "Description": "miniRPG-\u4e03\u5b9ebuff1"
     },
     {
         "Id": 2340120,
         "ConditionId": null,
-        "BornMagic": null,
+        "BornMagic": "[784775]",
         "EnemyBornMagic": null,
         "PartnerBornMagic": null,
-        "Description": "miniRPG-\u5360\u5751"
+        "Description": "miniRPG-\u4e03\u5b9ebuff2"
+    },
+    {
+        "Id": 2340121,
+        "ConditionId": null,
+        "BornMagic": "[784784]",
+        "EnemyBornMagic": null,
+        "PartnerBornMagic": null,
+        "Description": "miniRPG-\u4e03\u5b9ebuff3"
+    },
+    {
+        "Id": 2340122,
+        "ConditionId": null,
+        "BornMagic": "[784794]",
+        "EnemyBornMagic": null,
+        "PartnerBornMagic": null,
+        "Description": "miniRPG-\u6d77\u4f26\u6c40buff1"
+    },
+    {
+        "Id": 2340123,
+        "ConditionId": null,
+        "BornMagic": "[785751]",
+        "EnemyBornMagic": null,
+        "PartnerBornMagic": null,
+        "Description": "miniRPG-\u6d77\u4f26\u6c40buff2"
+    },
+    {
+        "Id": 2340124,
+        "ConditionId": null,
+        "BornMagic": "[785756]",
+        "EnemyBornMagic": null,
+        "PartnerBornMagic": null,
+        "Description": "miniRPG-\u6d77\u4f26\u6c40buff3"
+    },
+    {
+        "Id": 2340125,
+        "ConditionId": null,
+        "BornMagic": "[784474]",
+        "EnemyBornMagic": null,
+        "PartnerBornMagic": null,
+        "Description": "miniRPG-\u6d77\u4f26\u6c40\u4efb\u52a1\u8ba1\u6570"
+    },
+    {
+        "Id": 2340126,
+        "ConditionId": null,
+        "BornMagic": "[784475]",
+        "EnemyBornMagic": null,
+        "PartnerBornMagic": null,
+        "Description": "miniRPG-\u4e03\u5b9e\u4efb\u52a1\u8ba1\u6570"
+    },
+    {
+        "Id": 2340127,
+        "ConditionId": null,
+        "BornMagic": "[784476]",
+        "EnemyBornMagic": null,
+        "PartnerBornMagic": null,
+        "Description": "miniRPG-\u4e3d\u8299\u4efb\u52a1\u8ba1\u6570"
+    },
+    {
+        "Id": 2340128,
+        "ConditionId": null,
+        "BornMagic": "[784477]",
+        "EnemyBornMagic": null,
+        "PartnerBornMagic": null,
+        "Description": "miniRPG-\u7070\u9e26\u5c0f\u961f\u4efb\u52a1\u8ba1\u6570"
     },
     {
         "Id": 2410001,

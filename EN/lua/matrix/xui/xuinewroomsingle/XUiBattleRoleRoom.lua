@@ -60,7 +60,14 @@ end
 
 -- team : XTeam, 不传的话默认使用主线队伍, 如果是旧系统改过来，可以参考下XTeamManager后面新加的接口去处理旧队伍数据
 -- challengeCount : number, 挑战次数
-function XUiBattleRoleRoom:OnStart(stageId, team, proxy, challengeCount, isReadArgsByCacheWithAgain)
+function XUiBattleRoleRoom:OnStart(
+    stageId,
+    team,
+    proxy,
+    challengeCount,
+    isReadArgsByCacheWithAgain,
+    proxyArg)
+
     self.StageId = stageId
     local stageConfig = self:GetStageCfg(stageId)
     
@@ -133,7 +140,7 @@ function XUiBattleRoleRoom:OnStart(stageId, team, proxy, challengeCount, isReadA
         proxyInstance = CreateAnonClassInstance(proxy, XUiBattleRoleRoomDefaultProxy, team, stageId)
     else
         -- 使用自定义类
-        proxyInstance = proxy.New(team, stageId)
+        proxyInstance = proxy.New(team, stageId, proxyArg)
     end
     self.Proxy = proxyInstance
     self.ChallengeCount = challengeCount
@@ -510,6 +517,28 @@ function XUiBattleRoleRoom:OnBtnShowInfoToggleClicked(val)
     self:RefreshRoleDetalInfo(val == 1)
 end
 
+--- 低内存设备专用：进入编队详情前释放指定角色位的模型
+--- 触发缓存淘汰策略，在低内存策略下会立刻执行 Destroy
+---@param index number 队伍位置索引
+function XUiBattleRoleRoom:__ReleaseRoleModelOnLowMemory(index)
+    -- 初始化模型缓存池（默认使用普通策略）
+    local isHarwareLowMemory = XHardwareManager.GetIsLowMemoryDevice()
+    local isInSkyGarden = CS.XBigWorldHelper.IsInsideSkyGarden()
+
+    -- 设备是低内存的情况下，处于空花环境，或者未约束仅空花环境，则启用
+    local isEnableLowMemoryMode = isHarwareLowMemory and (isInSkyGarden or not XTool.IsNumberValidEx(CS.XGame.ClientConfig:GetInt("UiRoleLowMemoryOnlyInSG")))
+    
+    if not isEnableLowMemoryMode then
+        return
+    end
+    
+    local panelRoleModel = self.UiPanelRoleModels[index]
+    
+    if panelRoleModel then
+        panelRoleModel:ReleaseCurrentModel()
+    end
+end
+
 function XUiBattleRoleRoom:OnBtnChar1Clicked()
     self:OnBtnCharacterClicked(1)
 end
@@ -643,6 +672,7 @@ function XUiBattleRoleRoom:OnBtnCharacterClicked(index)
 
     RunAsyn(function()
         local oldEntityId = self.Team:GetEntityIdByTeamPos(index)
+        self:__ReleaseRoleModelOnLowMemory(index)
         XLuaUiManager.Open("UiBattleRoomRoleDetail"
         , self.StageId
         , self.Team

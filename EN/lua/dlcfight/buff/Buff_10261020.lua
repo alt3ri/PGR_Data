@@ -9,7 +9,7 @@ function XBuffScript10261020:ScriptInit(isGainControl) --初始化
     self._exBurnStacks = 0
     self.StackBuffAnger = 1025107                      --怒火buffId
     self.StackBuffBurst = 1025108                      --狂暴buffId
-    self.dmgMagicId = 1026394                          --#TODO 需要修改为实际伤害的MagicId
+    self.dmgMagicId = 1026394                          --#TODO 需要修改为实际伤害的MagicId，5.10已确认
     self._angerCost = 30
     self._angerRecover = 10
     self.dictExtraPermyriad = {
@@ -30,15 +30,15 @@ function XBuffScript10261020:OnLuaSkillStart(eventArgs)
     ------------执行------------
     if eventArgs._skillId ~= self._skillId then return end
     if eventArgs._launcherUUID ~= self._npcUUID then return end
-    --获得怒火
-    self._AngerController:CastStackBuff(self._angerRecover, self._npcUUID)
     --非狂暴状态，直接结束
     local isBurst = self._proxy:GetBuffStacks(self._npcUUID, self.StackBuffBurst) >= 1
-    if not isBurst then return end
     --狂暴状态下消耗怒火，增加伤害
-    if self.dmgTrigger then return end
-    self._proxy:RemoveBuffByKindAndCount(self._npcUUID, self.StackBuffAnger, self._angerCost)
-    self.dmgTrigger = true
+    if (not self.dmgTrigger) and isBurst then
+        self._proxy:RemoveBuffByKindAndCount(self._npcUUID, self.StackBuffAnger, self._angerCost)
+        self.dmgTrigger = true
+    end
+    --获得怒火(先扣除再获得，让利给玩家)
+    self:GetNpc():GetAngerController():CastStackBuff(self._angerRecover, self._npcUUID)
 end
 
 function XBuffScript10261020:InitEventCallBackRegister()

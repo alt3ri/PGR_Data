@@ -58,6 +58,12 @@ end
 function XSceneAnimProxyBase:ResumeForVideoEnd()
 end
 
+---设置陀螺仪启用覆盖（nil=使用全局设置，true=强制开启，false=强制关闭）
+---@param override boolean|nil
+function XSceneAnimProxyBase:SetGyroEnabledOverride(override)
+    self._GyroEnabledOverride = override
+end
+
 --endregion
 
 --region 更新（子类实现）

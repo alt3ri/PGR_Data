@@ -2,9 +2,17 @@
 ---@class XUiMainAgency : XAgency
 ---@field private _Model XUiMainModel
 local XUiMainAgency = XClass(XAgency, "XUiMainAgency")
+
+local ActivityToastHallCheckIntervalSecond = 30
+
 function XUiMainAgency:OnInit()
     --初始化一些变量
     self._UiLoginVideoV4P0OpenTrigger = false
+    -- 活动跑马灯：记录当前场景、待播队列和轮询计时器
+    self._ActivityToastHallSceneKey = nil
+    self._ActivityToastHallQueue = nil
+    self._ActivityToastHallPendingIdMap = nil
+    self._ActivityToastHallTimer = nil
     self:CheckClearAllPanelTipClicked()
 end
 
@@ -17,6 +25,26 @@ end
 function XUiMainAgency:InitEvent()
     --实现跨Agency事件注册
     self:AddAgencyEvent(XEventId.EVENT_SIGN_IN_FIVE_OCLOCK_REFRESH, self.ClearAllPanelTipClicked, self) -- 每天五点 恢复蓝点检测
+    self:AddAgencyEvent(
+        XEventId.EVENT_LOGIN_DATA_LOAD_COMPLETE,
+        self.OnLoginDataLoadCompleteStartActivityToastHall,
+        self
+    )
+    self:AddAgencyEvent(XEventId.EVENT_USER_LOGOUT, self.OnUserLogoutStopActivityToastHall, self)
+end
+
+function XUiMainAgency:RemoveEvent()
+    self:RemoveAgencyEvent(XEventId.EVENT_SIGN_IN_FIVE_OCLOCK_REFRESH, self.ClearAllPanelTipClicked, self)
+    self:RemoveAgencyEvent(
+        XEventId.EVENT_LOGIN_DATA_LOAD_COMPLETE,
+        self.OnLoginDataLoadCompleteStartActivityToastHall,
+        self
+    )
+    self:RemoveAgencyEvent(XEventId.EVENT_USER_LOGOUT, self.OnUserLogoutStopActivityToastHall, self)
+end
+
+function XUiMainAgency:ResetAll()
+    self:StopActivityToastHallTimer()
 end
 
 function XUiMainAgency:NotifyBoardEffectData(data)
@@ -341,6 +369,232 @@ end
 function XUiMainAgency:GetActivityBtnConfigById(id)
     return self._Model:GetActivityBtnConfigById(id)
 end
+
+function XUiMainAgency:GetActivityToastHallCfgs()
+    return self._Model:GetActivityToastHallCfgs()
+end
+
+function XUiMainAgency:GetActivityToastHallCfgById(id)
+    return self._Model:GetActivityToastHallCfgById(id)
+end
+
+function XUiMainAgency:GetActivityToastHallSkinCfgById(id)
+    return self._Model:GetActivityToastHallSkinCfgById(id)
+end
+
+function XUiMainAgency:GetActivityToastHallSceneRuleCfg(sceneKey)
+    return self._Model:GetActivityToastHallSceneRuleCfg(sceneKey)
+end
+
+function XUiMainAgency:ResolveActivityToastHallSceneKey(sceneKey)
+    if string.IsNilOrEmpty(sceneKey) then
+        return self._Model:GetActivityToastHallDefaultSceneKey()
+    end
+
+    return sceneKey
+end
+
+--endregion
+
+--region 活动跑马灯
+
+-- 自动调度：同一轮满足条件的多条配置按优先级串播
+function XUiMainAgency:StartActivityToastHallTimer(sceneKey)
+    self:StopActivityToastHallTimer()
+
+    if not CS.XGame.ClientConfig:GetBool("ActivityToastHallAutoCheckEnable") then
+        XLuaUiManager.Remove("UiMainActivityToastHall")
+        return
+    end
+
+    self._ActivityToastHallSceneKey = self:ResolveActivityToastHallSceneKey(sceneKey)
+    self._ActivityToastHallQueue = XQueue.New()
+    self._ActivityToastHallPendingIdMap = {}
+
+    self:UpdateActivityToastHallQueue()
+    self:TryPopActivityToastHall()
+
+    self._ActivityToastHallTimer = XScheduleManager.ScheduleForever(function()
+        self:UpdateActivityToastHallQueue()
+        self:TryPopActivityToastHall()
+    end, ActivityToastHallCheckIntervalSecond * XScheduleManager.SECOND)
+end
+
+function XUiMainAgency:StopActivityToastHallTimer()
+    if self._ActivityToastHallTimer then
+        XScheduleManager.UnSchedule(self._ActivityToastHallTimer)
+        self._ActivityToastHallTimer = nil
+    end
+
+    if self._ActivityToastHallQueue then
+        self._ActivityToastHallQueue:Clear()
+    end
+
+    self._ActivityToastHallPendingIdMap = nil
+end
+
+function XUiMainAgency:OnLoginDataLoadCompleteStartActivityToastHall()
+    self:StartActivityToastHallTimer()
+end
+
+function XUiMainAgency:OnUserLogoutStopActivityToastHall()
+    self:StopActivityToastHallTimer()
+    XLuaUiManager.Remove("UiMainActivityToastHall")
+end
+
+function XUiMainAgency:UpdateActivityToastHallQueue(sceneKey)
+    sceneKey = self:ResolveActivityToastHallSceneKey(sceneKey or self._ActivityToastHallSceneKey)
+
+    if not self._ActivityToastHallQueue then
+        self._ActivityToastHallQueue = XQueue.New()
+    end
+
+    if not self._ActivityToastHallPendingIdMap then
+        self._ActivityToastHallPendingIdMap = {}
+    end
+
+    local cfgs = self:GetActivityToastHallCfgs()
+    if XTool.IsTableEmpty(cfgs) then
+        return
+    end
+
+    local list = {}
+    for _, cfg in pairs(cfgs) do
+        if self:CheckActivityToastHallCanEnqueue(cfg, sceneKey) then
+            table.insert(list, cfg)
+        end
+    end
+
+    if XTool.IsTableEmpty(list) then
+        return
+    end
+
+    table.sort(list, function(a, b)
+        if a.Priority ~= b.Priority then
+            return (a.Priority or 0) < (b.Priority or 0)
+        end
+        return (a.Id or 0) < (b.Id or 0)
+    end)
+
+    for _, cfg in ipairs(list) do
+        self._ActivityToastHallQueue:Enqueue(cfg.Id)
+        self._ActivityToastHallPendingIdMap[cfg.Id] = true
+    end
+end
+
+---@param cfg XTableActivityToastHall
+function XUiMainAgency:CheckActivityToastHallCanEnqueue(cfg, sceneKey)
+    if not cfg or self._ActivityToastHallPendingIdMap and self._ActivityToastHallPendingIdMap[cfg.Id] then
+        return false
+    end
+
+    local cfgSceneKey = string.IsNilOrEmpty(cfg.SceneKey) and sceneKey or cfg.SceneKey
+    if cfgSceneKey ~= sceneKey then
+        return false
+    end
+
+    if XTool.IsNumberValidEx(cfg.TimeId) and not XFunctionManager.CheckInTimeByTimeId(cfg.TimeId, false) then
+        return false
+    end
+
+    if XTool.IsNumberValidEx(cfg.ConditionId) and not XConditionManager.CheckCondition(cfg.ConditionId) then
+        return false
+    end
+
+    local now = XTime.GetServerNowTimestamp()
+    local lastShowTime = self._Model:GetActivityToastHallLastShowTime(cfg.Id)
+    if XTool.IsNumberValidEx(cfg.IntervalTime) then
+        if XTool.IsNumberValidEx(lastShowTime) and now - lastShowTime < cfg.IntervalTime then
+            return false
+        end
+    elseif XTool.IsNumberValidEx(lastShowTime) then
+        return false
+    end
+
+    return true
+end
+
+function XUiMainAgency:CanPopActivityToastHall(sceneKey)
+    sceneKey = self:ResolveActivityToastHallSceneKey(sceneKey or self._ActivityToastHallSceneKey)
+    if XLuaUiManager.IsUiShow("UiMainActivityToastHall") or XLuaUiManager.IsUiPushing("UiMainActivityToastHall") then
+        return false
+    end
+
+    local rule = self:GetActivityToastHallSceneRuleCfg(sceneKey)
+    if not rule then
+        return true
+    end
+
+    if self:CheckActivityToastHallHasBlockUi(rule.BlockUiNames) then
+        return false
+    end
+
+    return self:CheckActivityToastHallTopUiValid(rule.AllowTopUiNames)
+end
+
+function XUiMainAgency:TryPopActivityToastHall(sceneKey)
+    sceneKey = self:ResolveActivityToastHallSceneKey(sceneKey or self._ActivityToastHallSceneKey)
+    if not self:CanPopActivityToastHall(sceneKey) then
+        return false
+    end
+
+    if not self._ActivityToastHallQueue or self._ActivityToastHallQueue:Count() <= 0 then
+        return false
+    end
+
+    local id = self._ActivityToastHallQueue:Dequeue()
+    if self._ActivityToastHallPendingIdMap then
+        self._ActivityToastHallPendingIdMap[id] = nil
+    end
+
+    if not XTool.IsNumberValidEx(id) then
+        return false
+    end
+
+    if XLuaUiManager.IsUiLoad("UiMainActivityToastHall") then
+        XLuaUiManager.Remove("UiMainActivityToastHall")
+    end
+
+    XLuaUiManager.OpenWithCallback("UiMainActivityToastHall", function()
+        self._Model:SetActivityToastHallLastShowTime(id, XTime.GetServerNowTimestamp())
+    end, id)
+    return true
+end
+
+function XUiMainAgency:CheckActivityToastHallHasBlockUi(blockUiNames)
+    if XTool.IsTableEmpty(blockUiNames) then
+        return false
+    end
+
+    for _, uiName in ipairs(blockUiNames) do
+        if not string.IsNilOrEmpty(uiName) then
+            if XLuaUiManager.IsUiLoad(uiName) or XLuaUiManager.IsUiShow(uiName) then
+                return true
+            end
+        end
+    end
+
+    return false
+end
+
+function XUiMainAgency:CheckActivityToastHallTopUiValid(allowTopUiNames)
+    if XTool.IsTableEmpty(allowTopUiNames) then
+        return true
+    end
+
+    local topUiName = XLuaUiManager.GetTopUiName()
+    for _, uiName in ipairs(allowTopUiNames) do
+        if not string.IsNilOrEmpty(uiName) and topUiName == uiName then
+            return true
+        end
+    end
+
+    return false
+end
+
+--endregion
+
+--region 活动按钮数据
 
 --ios审核模式特殊屏蔽的id
 local HideFuncBtnIds = {

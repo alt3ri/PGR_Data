@@ -16,6 +16,7 @@ function XBuffScript1025217:Init()
     self.originAttrib2 = self._proxy:GetNpcGameplayAttribValue(self._npcUUID,ETheatre6AttribType.OverClock)
     self.originAttrib3 = (self.originAttrib1 + self.originAttrib2) // 30
     self._proxy:ApplyMagic(self._npcUUID, self._npcUUID, 1025903,1,0, self.originAttrib3)
+    self._proxy:Theatre6ChangeStaminaValue(self._npcUUID,self.originAttrib3,1)
 end
 
 return XBuffScript1025217

@@ -45,9 +45,9 @@ end
 
 ---@param action XMovieActionBase
 function XMovieActionAutoCvPlay:IsPassedActionCovered(action)
-    -- 同 CueId 的音频中断会覆盖本节点
+    -- 配音以 CvId 标识，对应音频中断节点的参数2(CvId)，同 id 时会覆盖本节点
     if action:GetType() == XMVCA.XMovie.EnumConst.ACTION_TYPE.AUDIO_INTERRUPT then
-        return self:GetCueId() == action:GetCueId()
+        return self:GetCueId() == action:GetCvId()
     end
     return false
 end

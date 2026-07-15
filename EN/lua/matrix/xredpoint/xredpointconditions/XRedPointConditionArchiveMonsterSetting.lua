@@ -10,7 +10,7 @@ function XRedPointConditionArchiveMonsterSetting.GetSubEvents()
 end
 
 function XRedPointConditionArchiveMonsterSetting.Check(monsterId)
-    return XMVCA.XArchive:IsHaveNewMonsterSettingByNpcId(monsterId)
+    return XMVCA.XArchive.MonsterArchiveAgency:IsHaveNewMonsterSettingByNpcId(monsterId)
 end
 
 return XRedPointConditionArchiveMonsterSetting

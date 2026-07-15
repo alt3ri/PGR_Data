@@ -47,7 +47,7 @@ end
 
 function XUiSoloReformPopupRewardItem:OnBtnSkip()
     local config = XDataCenter.TaskManager.GetTaskTemplate(self._TaskData.Id)
-
+    self.Parent:ChildInvokeClose()
     XFunctionManager.SkipInterface(config.SkipId)
 end
 

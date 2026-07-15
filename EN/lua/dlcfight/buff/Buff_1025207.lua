@@ -2,7 +2,7 @@ local XTheatre6BuffBase = require("Gameplay/Theatre6/XTheatre6BuffBase")
 ---@class XBuffScript1025207 : XTheatre6BuffBase
 local XBuffScript1025207 = XDlcScriptManager.RegBuffScript(1025207, "XBuffScript1025207", XTheatre6BuffBase)
 
---效果说明：自身首次出手前，受到的攻击伤害降低20%，自身首次获得出手权期间，造成的攻击伤害提升20%。
+--效果说明：自身首次出手前，受到的攻击伤害降低10%，自身首次获得出手权期间，造成的攻击伤害提升10%。
 
 function XBuffScript1025207:Init()
     --初始化
@@ -13,8 +13,8 @@ function XBuffScript1025207:Init()
     self.originAttrib1 = 0
     self.originAttrib2 = 0
     self.Count = 0
-    self.AddDamage = 20
-    self.SubtractDamage = 20
+    self.AddDamage = 10
+    self.SubtractDamage = 10
     self.Chance = 0
     self.AddDamageBuffId = 1025906
     self.SubtractDamageBuffId = 1025909

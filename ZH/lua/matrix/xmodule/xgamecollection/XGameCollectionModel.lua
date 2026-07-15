@@ -2,7 +2,7 @@
 local XGameCollectionModel = XClass(XModel, "XGameCollectionModel")
 
 local TableKey = {
-    GameCollection = { DirPath = XConfigUtil.DirectoryType.Share, CacheType = XConfigUtil.CacheType.Normal },
+    GameCollection = { DirPath = XConfigUtil.DirectoryType.Share, CacheType = XConfigUtil.CacheType.Normal ,Identifier = "GameType",ReadFunc = XConfigUtil.ReadType.String},
     GameCollectionConfig = { DirPath = XConfigUtil.DirectoryType.Client ,CacheType = XConfigUtil.CacheType.Normal,Identifier = "Key",ReadFunc = XConfigUtil.ReadType.String},
     GameCollectionActivity = { DirPath = XConfigUtil.DirectoryType.Share, CacheType = XConfigUtil.CacheType.Normal},
 

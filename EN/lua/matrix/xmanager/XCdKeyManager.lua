@@ -17,7 +17,7 @@ XCdKeyManagerCreator = function()
                 return
             end
 
-            XUiManager.OpenUiObtain(res.RewardGoods)
+            XUiManager.OpenUiObtainWithDIYCheck(res.RewardGoods)
         end)
     end
 

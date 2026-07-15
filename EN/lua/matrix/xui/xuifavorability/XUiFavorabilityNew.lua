@@ -121,7 +121,7 @@ function XUiFavorabilityNew:InitUiAfterAuto()
     self.FavorabilityMain:Close()
     ---@type XUiPanelCharacterCG
     self.FavorabilityCG = require("XUi/XUiCharacterCG/XUiPanelCharacterCG").New(self.PanelVideo, self)
-    self.FavorabilityCG.VideoPlayer.DestroyOnStopWithoutLanguagePreparing = true
+    self.FavorabilityCG:SetDestroyOnStopWithoutLanguagePreparing(true)
 
     self._CGFinishCallBack = function()
         self.SwitchableScene:OnVideoEnd()
@@ -225,6 +225,7 @@ function XUiFavorabilityNew:OnGetEvents()
         CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYING,
         CS.XEventId.EVENT_VIDEO_ACTION_STOP,
         CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYEND,
+        CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_STOP_WITHOUT_LANGUAGEPREPARING
     }
 end
 --endregion
@@ -282,7 +283,7 @@ function XUiFavorabilityNew:OnNotify(evt, ...)
     elseif evt == CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYING then
         self.SwitchableScene:OnVideoStart()
         self.FavorabilityCG:OnCGPlay()
-    elseif evt == CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYEND then
+    elseif evt == CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYEND  or evt == CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_STOP_WITHOUT_LANGUAGEPREPARING then
         self.FavorabilityCG:OnCGStop()
     end
 end

@@ -172,6 +172,9 @@ function XUiNewGridDrawBanner:TryGetComponent()
     if rImgCharacterBg then
         self.RImgCharacterBg = rImgCharacterBg:GetComponent("RawImage")
     end
+    if self.RImgCharacterBg then
+        self.RImgCharacterBgParent = self.Transform:FindTransform("RImgBg")
+    end
 
     -- 校准活动
     local targetBtnDetails = self.Transform:FindTransformWithSplit("SafeAreaContentPane/BtnDetails")
@@ -381,7 +384,9 @@ function XUiNewGridDrawBanner:SetCharacterBg()
             self.RImgCharacterBg:SetRawImageEx(drawShowRImg)
         end
     end
-    self.RImgCharacterBg.transform.parent.gameObject:SetActiveEx(isShow)
+    if self.RImgCharacterBgParent then
+        self.RImgCharacterBgParent.gameObject:SetActiveEx(isShow)
+    end
 end
 
 function XUiNewGridDrawBanner:SetDrawName()

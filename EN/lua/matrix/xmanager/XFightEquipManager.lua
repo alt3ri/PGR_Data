@@ -88,8 +88,8 @@ local function GetSuitCharacterType(suitId)
     return suitCharType
 end
 
-local function GetOverrunCfgs(templateId)
-    local cfgs = XMVCA:GetAgency(ModuleId.XEquip):GetWeaponOverrunCfgsByTemplateId(templateId)
+local function GetOverrunCfgs(templateId, characterId)
+    local cfgs = XMVCA.XEquip:GetWeaponOverrunCfgsByTemplateId(templateId, characterId)
     if cfgs then 
         return XCode.Success, cfgs
     else
@@ -658,7 +658,7 @@ local function DoGetOverrunBornMagicLevel(equipData, levelMap)
         return XCode.Success
     end
 
-    local code, overrunCfgs = GetOverrunCfgs(equipData.TemplateId)
+    local code, overrunCfgs = GetOverrunCfgs(equipData.TemplateId, equipData.CharacterId)
     if code ~= XCode.Success then
         return code
     end

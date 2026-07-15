@@ -136,6 +136,20 @@ function XStrongholdTeam:GetShowCharacterIds()
     return characterIds
 end
 
+--与 GetShowCharacterIds 同步遍历，并行返回每个槽位的战斗用 fashionId
+function XStrongholdTeam:GetShowCharacterIdsWithFashion()
+    local characterIds = {}
+    local fashionIds = {}
+    for pos, member in pairs(self._TeamMemberDic) do
+        local showCharacterId = member:GetShowCharacterId()
+        if IsNumberValid(showCharacterId) then
+            tableInsert(characterIds, showCharacterId)
+            tableInsert(fashionIds, member:GetFashionIdForFight())
+        end
+    end
+    return characterIds, fashionIds
+end
+
 --是否已上阵相同型号角色
 function XStrongholdTeam:GetSameCharacterPos(characterId)
     if not IsNumberValid(characterId) then return false end

@@ -1,3 +1,4 @@
+--[[
 local pairs = pairs
 
 local XUiGridBaseEquip = XClass(nil, "XUiGridBaseEquip")
@@ -215,4 +216,5 @@ function XUiGridBaseEquip:SetPutOn(isPutOn)
     self:SetUiActive(self.ImgPutOn, isPutOn)
 end
 
-return XUiGridBaseEquip
+return XUiGridBaseEquip
+]]

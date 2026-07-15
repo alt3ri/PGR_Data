@@ -62,7 +62,7 @@ function XCoolTime:GetNewsRewardTimeStr(second)
         return string.format("%d%s", min, STR_MINUTES)
     end
 
-    return string.format("%s1%s", LESS_THAN, STR_SECOND)
+    return string.format("%s1%s", LESS_THAN, STR_MINUTES)
 end
 
 function XCoolTime:GetPlayTimeStr(second)

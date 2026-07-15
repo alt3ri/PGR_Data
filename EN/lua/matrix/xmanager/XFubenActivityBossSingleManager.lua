@@ -1,4 +1,4 @@
-local XActivityBrieIsOpen = require("XUi/XUiActivityBrief/XActivityBrieIsOpen")
+ local XActivityBrieIsOpen = require("XUi/XUiActivityBrief/XActivityBrieIsOpen")
 local XExFubenActivityManager = require("XEntity/XFuben/XExFubenActivityManager")
 local XTeam = require("XEntity/XTeam/XTeam")
 
@@ -17,7 +17,10 @@ XFubenActivityBossSingleManagerCreator = function()
     local FirstPlay = "FIRST_PLAY"
     ---已经播放过的剧情的Id列表
     local PassStoryIds={}
-    
+
+    local difficultScoreRecord = {}    --当前活动难度分数记录
+    local lastScoreRecord = {}    --当前活动难度分数记录
+
     ---@class XFubenActivityBossSingleManager
     local XFubenActivityBossSingleManager = XExFubenActivityManager.New(XEnumConst.FuBen.ChapterType.ActivityBossSingle, "FubenActivityBossSingleManager")
 
@@ -46,6 +49,8 @@ XFubenActivityBossSingleManagerCreator = function()
         return sections
     end
     
+
+
     function XFubenActivityBossSingleManager.PreFight(stage, teamId, isAssist, challengeCount, challengeId)
         local preFight = {}
         preFight.CardIds = {0, 0, 0}
@@ -67,6 +72,77 @@ XFubenActivityBossSingleManagerCreator = function()
         preFight.FirstFightPos = team:GetFirstFightPos()
         preFight.GeneralSkill = team:GetCurGeneralSkill()
         return preFight
+    end
+
+    function XFubenActivityBossSingleManager.CheckAutoExitFight(stageId)
+        return false
+    end
+
+    function XFubenActivityBossSingleManager.OnFightSettle(settleData, res)
+        local stageType = XMVCA.XFuben:GetStageType(settleData.StageId)
+        if stageType ~= XEnumConst.FuBen.StageType.ActivityBossSingle then
+            return
+        end
+
+        if not XFubenActivityBossSingleManager.IsHardBossLevel(settleData.StageId)   then
+            CS.XFight.ExitForClient(true)
+            return 
+        end
+
+        if not res or not settleData then
+            CS.XFight.ExitForClient(true)
+            return
+        end
+        
+        -- if res.Code ~= XCode.Success then
+        --     XLog.Error("[XFubenActivityBossSingleManager] 结算失败 code=", res.Code)
+        --     CS.XFight.ExitForClient(true)
+        --     return
+        -- end
+
+
+
+        local beginData = XMVCA.XFuben:GetFightBeginData()
+        local winData = XMVCA.XFuben:GetChallengeWinData(beginData, settleData)
+        XLuaUiManager.Open("UiActivityBossSingleSettlement", winData)
+    end
+
+    XEventManager.AddEventListener(XEventId.EVENT_FUBEN_SETTLE_REWARD, XFubenActivityBossSingleManager.OnFightSettle)
+    
+
+    function XFubenActivityBossSingleManager.GetCurDifficultScoreRecord(stage)
+        return difficultScoreRecord[stage] 
+    end 
+
+    function XFubenActivityBossSingleManager.SetCurDifficultScoreRecord(stage,score)
+        difficultScoreRecord[stage] = score
+    end 
+
+    function XFubenActivityBossSingleManager.GetLastDifficultScoreRecord(stage)
+        return lastScoreRecord[stage] 
+    end 
+    
+    function XFubenActivityBossSingleManager.GetLastDifficultScoreRecord(stage,score)
+        lastScoreRecord[stage] = score
+    end 
+
+
+    function XFubenActivityBossSingleManager.ShowReward(data)
+        if  XFubenActivityBossSingleManager.IsHardBossLevel(data.SettleData.StageId) then
+            return
+        end
+
+        XLuaUiManager.Open("UiSettleWin", data)
+    end
+
+    function XFubenActivityBossSingleManager.IsHardBossLevel(stageId)
+        local activityId = XDataCenter.FubenActivityBossSingleManager.GetCurActivityId()
+        if  not  XTool.IsNumberValid(activityId) then
+            return false
+        end
+        local activityCfg = XFubenActivityBossSingleConfigs.GetActivityConfig(activityId)
+        local confgStageID = activityCfg.DifficultyScaleStages[1]
+        return confgStageID == stageId
     end
 
     function XFubenActivityBossSingleManager.GetSectionStageIdList(sectionId)
@@ -307,6 +383,10 @@ XFubenActivityBossSingleManagerCreator = function()
     end
 
     function XFubenActivityBossSingleManager.NotifyBossActivityData(data)
+        for k, v in pairs(data.DifficultyScoreRecord) do
+            difficultScoreRecord[k] = v
+        end
+        
         CurActivityId = data.ActivityId
         SectionId = data.SectionId
         PassStoryIds=data.PassStoryIds
@@ -402,7 +482,7 @@ XFubenActivityBossSingleManagerCreator = function()
         local sectionCfg = XFubenActivityBossSingleConfigs.GetSectionCfg(SectionId)
         local finishCount = XDataCenter.FubenActivityBossSingleManager.GetFinishCount()
         local totalCount = #sectionCfg.ChallengeId
-        return XUiHelper.GetText("ActivityBossSingleProcess", finishCount, totalCount)
+        return XUiHelper.GetText("ActivityBossSingleProcess", math.min(finishCount, totalCount), totalCount)
     end
 
     function XFubenActivityBossSingleManager.ExOpenMainUi(manager, sectionId)

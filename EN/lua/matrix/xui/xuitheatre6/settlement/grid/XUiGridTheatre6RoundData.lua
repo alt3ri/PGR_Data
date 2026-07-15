@@ -20,7 +20,7 @@ function XUiGridTheatre6RoundData:Update(data)
     if data.IsBuff then
         local buildTagId = self._Control:GetTagToBuffConfig(data.SkillId).BuildTagId --虽然字段名是SkillId，但其实是Theatre6TagToBuff的Tag
         if not buildTagId then
-            XLog.Error(string.format("肉鸽6战斗结算显示buff信息失败 BuildTagId为空：%s", data))
+            XLog.Error(string.format("肉鸽6战斗结算显示buff信息失败 BuildTagId为空：%s", data.SkillId))
             return
         end
         local buildTagCfg = self._Control:GetBuildTagConfig(buildTagId)
@@ -29,7 +29,7 @@ function XUiGridTheatre6RoundData:Update(data)
         self._GridFightBuff.UiRImgIcon:SetRawImage(buildTagCfg.Icon)
     else
         self._GridSkill:Open()
-        self._GridSkill:Update(data.SkillId)
+        self._GridSkill:Update(data.SkillId, data.IsSkillReadOnly)
         self._GridFightBuff.GameObject:SetActiveEx(false)
     end
 

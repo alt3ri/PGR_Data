@@ -25,13 +25,13 @@ States.Wrestle.SucceedActionId = 1025002 -- 拼刀成功动作
 States.Wrestle.SecondWrestleReset = 1025010 -- 二次拼刀位置重置动作
 States.Dodge.DodgeSkillId = 1025003  -- 超算受身动作
 States.Dodge.SucceedActionId = 1025004 --超算受身成功反击
-States.Block.ActionId = 1025009 -- 格挡动作
+States.Block.Actions = {1025009} -- 格挡动作
 
 function XChar1025:_BaseInit()
     XTheatre6CharBase._BaseInit(self)
     -- self._proxy:ApplyMagic(self._uuid, self._uuid, 1025003)
     -- self._proxy:ApplyMagic(self._uuid, self._uuid, 1025004)
-    XLog.Warning("维罗妮卡初始化完成")
+    -- XLog.Warning("维罗妮卡初始化完成")
 end
 
 function XChar1025:InitEventCallBackRegister()
@@ -54,7 +54,7 @@ function XChar1025:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, 
     end
     --动作属于BaseLayer
     if buffId == 1025001 then
-        XLog.Warning("切换状态机为0")
+        -- XLog.Warning("切换状态机为0")
         self._proxy:SetNpcAnimationLayer(self._uuid, 0)
         self._proxy:AddTimerTask(0.5, function()
             self._proxy:ApplyMagic(self._uuid, self._uuid, 1025003)
@@ -63,20 +63,23 @@ function XChar1025:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, 
     end
     --动作属于Layer1
     if buffId == 1025002 then
-        XLog.Warning("切换状态机为1")
+        -- XLog.Warning("切换状态机为1")
         self._proxy:SetNpcAnimationLayer(self._uuid, 1)
         self._proxy:ApplyMagic(self._uuid, self._uuid, 1025007)
         self._proxy:ApplyMagic(self._uuid, self._uuid, 1025008)
     end
 end
 
--- function XChar1025:OnNpcSkillActionKeyframeSendEvent(launcher, eventName, skillActionId, keyFrameId, skillId)
---     XTheatre6CharBase.OnNpcSkillActionKeyframeSendEvent(self, launcher, eventName, skillActionId, keyFrameId, skillId)
---     if eventName == "Wrestle" then
---         self._proxy:ApplyMagic(self._uuid, self._uuid, 1025003)--添加去时缓buff
---         self._proxy:AbortAction(self._uuid, true)
---         self._proxy:CastActionToTarget(self._uuid, 1025002, self._enemyUUID)
---     end
--- end
+function XChar1025:OnNpcSkillActionKeyframeSendEvent(launcher, eventName, skillActionId, keyFrameId, skillId)
+    XTheatre6CharBase.OnNpcSkillActionKeyframeSendEvent(self, launcher, eventName, skillActionId, keyFrameId, skillId)
+    
+    if eventName == "ChangeAirStyle" then
+        self._proxy:SetNpcGravity(self._uuid, 0, 0)
+    end
+
+    if eventName == "EndAirStyle" then
+        self._proxy:SetNpcGravity(self._uuid, -50, -15)
+    end
+end
 
 return XChar1025

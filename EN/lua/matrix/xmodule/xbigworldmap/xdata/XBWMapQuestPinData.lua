@@ -47,7 +47,8 @@ function XBWMapQuestPinData:UpdateOther()
     local questType = XMVCA.XBigWorldQuest:GetQuestTypeByQuestId(self.QuestId)
 
     if self.QuestState == XMVCA.XBigWorldQuest.QuestState.Ready then
-        self.StyleId = XMVCA.XBigWorldMap:GetReadyQuestPinStyleIdByQuestType(questType)
+        --- 因战斗任务初始化时间差问题，屏蔽该报错
+        self.StyleId = XMVCA.XBigWorldMap:GetReadyQuestPinStyleIdByQuestType(questType, true)
     elseif self.IsOptionalQuestObjective then
         self.StyleId = XMVCA.XBigWorldMap:GetOptionalQuestPinStyleIdByQuestType(questType)
     else

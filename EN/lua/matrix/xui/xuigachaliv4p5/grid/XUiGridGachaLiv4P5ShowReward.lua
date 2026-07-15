@@ -288,7 +288,7 @@ function XUiGridGachaLiv4P5ShowReward:CreatePartnerModel(templateId)
         self.PartnerModelPanel = XUiPanelRoleModel.New(self.GridModel, self.Parent.Name, nil, true, nil, true)
     end
 
-    self._CvInfo = XUiModelUtility.LoadPartnerModelSToC(templateId, self.PartnerModelPanel, self.Parent.Name, function(SModel)
+    XDataCenter.PartnerManager.LoadPartnerStandbyModelWithSToCShow(templateId, self.PartnerModelPanel, self.Parent.Name, function(SModel)
         SModel.gameObject:SetActiveEx(true)
     end, function()
         local modelConfig = XDataCenter.PartnerManager.GetPartnerModelConfigById(templateId)

@@ -129,6 +129,7 @@ function XUiFashionSuitLobbyGridTab:SetSelect(isSelect)
         return
     end
     self.BtnTab:SetButtonState(isSelect and CS.UiButtonState.Select or CS.UiButtonState.Normal)
+    self.BtnTab.enabled = isSelect
 end
 
 function XUiFashionSuitLobbyGridTab:OnBtnTabClick()

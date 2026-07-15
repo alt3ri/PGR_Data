@@ -6,7 +6,7 @@ local XAudioManager = CS.XAudioManager
 local Key = "GachaLiv4P5VolumeInit"
 
 ---@param gachaCfg XTableGacha
-function XUiPanelGachaLiv4P5Volume:OnStart(gachaCfg)
+function XUiPanelGachaLiv4P5Volume:OnStart(gachaCfg, cgPlayer)
     self._YellowValue = tonumber(XGachaConfigs.GetClientConfig("BiankaVolumeValue"))
     self._InitWaitTime = tonumber(XGachaConfigs.GetClientConfig("BiankaVolumeInitWaitTime"))
     self._ClickWaitTime = tonumber(XGachaConfigs.GetClientConfig("BiankaVolumeClickWaitTime"))
@@ -24,6 +24,9 @@ function XUiPanelGachaLiv4P5Volume:OnStart(gachaCfg)
             self.BtnSkip.gameObject:SetActiveEx(false)
         end
     end
+    
+    ---@type XUiPanelCharacterCG
+    self._CGPlayer = cgPlayer
 end
 
 function XUiPanelGachaLiv4P5Volume:OnDestroy()
@@ -32,16 +35,17 @@ end
 
 function XUiPanelGachaLiv4P5Volume:OnSlideValueChanged()
     XAudioManager.Mute(false)
-    XAudioManager.ChangeMusicVolume(self.Slider.value)
-    XAudioManager.ChangeSFXVolume(self.Slider.value)
-    XAudioManager.ChangeVoiceVolume(self.Slider.value)
+
+    if self._CGPlayer then
+        self._CGPlayer:SetVolume(self.Slider.value)
+    end
 
     self:ChangeTipColorImg()
     self:TweenClick()
 end
 
 function XUiPanelGachaLiv4P5Volume:ChangeTipColorImg()
-    if not CS.XAudioManager.CheckAudioCanPlayLevel() then
+    if self.Slider.value <= 0 then
         self.ImgRed.gameObject:SetActiveEx(true)
         self.ImgYellow.gameObject:SetActiveEx(false)
         self.ImgGreen.gameObject:SetActiveEx(false)
@@ -59,10 +63,9 @@ end
 function XUiPanelGachaLiv4P5Volume:PlayStart()
     self:Open()
 
-    local musicVolume = XLuaAudioManager.GetCategoriesVolumeByType(XLuaAudioManager.SoundType.Music)
-    local sfxVolume = XLuaAudioManager.GetCategoriesVolumeByType(XLuaAudioManager.SoundType.SFX)
-    local voiceVolume = XLuaAudioManager.GetCategoriesVolumeByType(XLuaAudioManager.SoundType.Voice)
-    self.Slider.value = math.min(musicVolume, sfxVolume, voiceVolume)
+    local videoVolume = self._CGPlayer and self._CGPlayer:GetVolume() or 0
+    
+    self.Slider.value = videoVolume
     self:ChangeTipColorImg()
 
     local isInit = not XSaveTool.GetData(Key)

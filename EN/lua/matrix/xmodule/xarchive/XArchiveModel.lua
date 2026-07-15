@@ -1,36 +1,29 @@
 ---@class XArchiveModel : XModel
 local XArchiveModel = XClass(XModel, "XArchiveModel")
 
-local ArchiveClientTableKey={
-    MonsterNpcData={DirPath=XConfigUtil.DirectoryType.Client},
-    MonsterEffect={DirPath=XConfigUtil.DirectoryType.Client},
-    ArchiveWeaponGroup={DirPath=XConfigUtil.DirectoryType.Client},
-    ArchiveAwarenessGroup={DirPath=XConfigUtil.DirectoryType.Client},
-    ArchiveAwarenessGroupType={DirPath=XConfigUtil.DirectoryType.Client,Identifier='GroupId'},
-    ArchivePartner={DirPath=XConfigUtil.DirectoryType.Client},
-    ArchivePartnerGroup={DirPath=XConfigUtil.DirectoryType.Client},
+local ArchiveClientTableKey = {
+    ArchiveWeaponGroup = { DirPath = XConfigUtil.DirectoryType.Client },
+    ArchiveAwarenessGroup = { DirPath = XConfigUtil.DirectoryType.Client },
+    ArchiveAwarenessGroupType = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = 'GroupId', CacheType = XConfigUtil.CacheType.Private },
+    ArchivePartner = { DirPath = XConfigUtil.DirectoryType.Client },
+    ArchivePartnerGroup = { DirPath = XConfigUtil.DirectoryType.Client, CacheType = XConfigUtil.CacheType.Private },
 
-    ArchiveComicDetail = { DirPath = XConfigUtil.DirectoryType.Client, ReadFunc = XConfigUtil.ReadType.Int, Identifier='Id' },
+    ArchiveComicDetail = { DirPath = XConfigUtil.DirectoryType.Client, ReadFunc = XConfigUtil.ReadType.Int, Identifier = 'Id', CacheType = XConfigUtil.CacheType.Private },
 }
 
-local ArchiveShareTableKey={
-    Archive={DirPath=XConfigUtil.DirectoryType.Share},
-    MonsterSetting={DirPath=XConfigUtil.DirectoryType.Share},
-    SameNpcGroup={DirPath=XConfigUtil.DirectoryType.Share},
-    AwarenessSetting={DirPath=XConfigUtil.DirectoryType.Share},
-    WeaponSetting={DirPath=XConfigUtil.DirectoryType.Share},
-    ArchiveMail={DirPath=XConfigUtil.DirectoryType.Share},
-    PartnerSetting={DirPath=XConfigUtil.DirectoryType.Share},
-    
-    ArchiveComicGroup = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier='Id' },
-    ArchiveComicChapter = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier='Id' },
+local ArchiveShareTableKey = {
+    Archive = { DirPath = XConfigUtil.DirectoryType.Share, CacheType = XConfigUtil.CacheType.Private },
+    AwarenessSetting = { DirPath = XConfigUtil.DirectoryType.Share },
+    WeaponSetting = { DirPath = XConfigUtil.DirectoryType.Share },
+    ArchiveMail = { DirPath = XConfigUtil.DirectoryType.Share },
+    PartnerSetting = { DirPath = XConfigUtil.DirectoryType.Share }, -- 冷路径，但被XUiFashion等外部系统引用，暂不改Private
+
+    ArchiveComicGroup = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier = 'Id', CacheType = XConfigUtil.CacheType.Private },
+    ArchiveComicChapter = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.Int, Identifier = 'Id' },
 }
 
-local TablePathTable={
+local TablePathTable = {
     TABLE_TAG = "Share/Archive/Tag.tab",
-    TABLE_MONSTER = "Share/Archive/Monster.tab",
-    TABLE_MONSTERINFO = "Share/Archive/MonsterInfo.tab",
-    TABLE_MONSTERSKILL = "Share/Archive/MonsterSkill.tab",
     TABLE_CGDETAIL = "Share/Archive/CGDetail.tab",
     TABLE_STORYCHAPTER = "Share/Archive/StoryChapter.tab",
     TABLE_STORYNPC = "Share/Archive/StoryNpc.tab",
@@ -44,32 +37,29 @@ local TablePathTable={
     TABLE_STORYGROUP = "Share/Archive/StoryGroup.tab",
 }
 
-local PrivateFuncMap={}
+local PrivateFuncMap = {}
 local tableSort = table.sort
-local tableInsert=table.insert
+local tableInsert = table.insert
 
 function XArchiveModel:OnInit()
     --初始化内部变量
     --这里只定义一些基础数据, 请不要一股脑把所有表格在这里进行解析
     --配置表定义
-    self._ConfigUtil:InitConfigByTableKey('Archive',ArchiveClientTableKey,XConfigUtil.CacheType.Normal)
-    self._ConfigUtil:InitConfigByTableKey('Archive',ArchiveShareTableKey,XConfigUtil.CacheType.Normal)
+    self._ConfigUtil:InitConfigByTableKey('Archive', ArchiveClientTableKey, XConfigUtil.CacheType.Normal)
+    self._ConfigUtil:InitConfigByTableKey('Archive', ArchiveShareTableKey, XConfigUtil.CacheType.Normal)
     self._ConfigUtil:InitConfig({
-        [TablePathTable.TABLE_TAG]={XConfigUtil.ReadType.Int,XTable.XTableArchiveTag,"Id",XConfigUtil.CacheType.Normal},
-        [TablePathTable.TABLE_MONSTER]={XConfigUtil.ReadType.Int,XTable.XTableArchiveMonster,"Id",XConfigUtil.CacheType.Normal},
-        [TablePathTable.TABLE_MONSTERINFO]={XConfigUtil.ReadType.Int,XTable.XTableArchiveMonsterInfo,"Id",XConfigUtil.CacheType.Normal},
-        [TablePathTable.TABLE_MONSTERSKILL]={XConfigUtil.ReadType.Int,XTable.XTableArchiveMonsterSkill,"Id",XConfigUtil.CacheType.Normal},
-        [TablePathTable.TABLE_CGDETAIL]={XConfigUtil.ReadType.Int,XTable.XTableArchiveCGDetail,"Id",XConfigUtil.CacheType.Normal},
-        [TablePathTable.TABLE_STORYCHAPTER]={XConfigUtil.ReadType.Int,XTable.XTableArchiveStoryChapter,"Id",XConfigUtil.CacheType.Normal},
-        [TablePathTable.TABLE_STORYNPC]={XConfigUtil.ReadType.Int,XTable.XTableArchiveStoryNpc,"Id",XConfigUtil.CacheType.Normal},
-        [TablePathTable.TABLE_STORYNPCSETTING]={XConfigUtil.ReadType.Int,XTable.XTableArchiveStoryNpcSetting,"Id",XConfigUtil.CacheType.Normal},
-        [TablePathTable.TABLE_CGGROUP]={XConfigUtil.ReadType.Int,XTable.XTableArchiveCGGroup,"Id",XConfigUtil.CacheType.Normal},
-        [TablePathTable.TABLE_COMMUNICATION]={XConfigUtil.ReadType.Int,XTable.XTableArchiveCommunication,"Id",XConfigUtil.CacheType.Normal},
-        [TablePathTable.TABLE_EVENTDATEGROUP]={XConfigUtil.ReadType.Int,XTable.XTableArchiveEventDateGroup,"Id",XConfigUtil.CacheType.Normal},
-        [TablePathTable.TABLE_PVGROUP]={XConfigUtil.ReadType.Int,XTable.XTableArchivePVGroup,"Id",XConfigUtil.CacheType.Normal},
-        [TablePathTable.TABLE_PVDETAIL]={XConfigUtil.ReadType.Int,XTable.XTableArchivePVDetail,"Id",XConfigUtil.CacheType.Normal},
-        [TablePathTable.TABLE_STORYDETAIL]={XConfigUtil.ReadType.Int,XTable.XTableArchiveStoryDetail,"Id",XConfigUtil.CacheType.Normal},
-        [TablePathTable.TABLE_STORYGROUP]={XConfigUtil.ReadType.Int,XTable.XTableArchiveStoryGroup,"Id",XConfigUtil.CacheType.Private},
+        [TablePathTable.TABLE_TAG] = { XConfigUtil.ReadType.Int, XTable.XTableArchiveTag, "Id", XConfigUtil.CacheType.Normal },
+        [TablePathTable.TABLE_CGDETAIL] = { XConfigUtil.ReadType.Int, XTable.XTableArchiveCGDetail, "Id", XConfigUtil.CacheType.Normal }, -- 冷路径，但被XUiPhotograph等外部系统引用，暂不改Private
+        [TablePathTable.TABLE_STORYCHAPTER] = { XConfigUtil.ReadType.Int, XTable.XTableArchiveStoryChapter, "Id", XConfigUtil.CacheType.Normal },
+        [TablePathTable.TABLE_STORYNPC] = { XConfigUtil.ReadType.Int, XTable.XTableArchiveStoryNpc, "Id", XConfigUtil.CacheType.Normal },
+        [TablePathTable.TABLE_STORYNPCSETTING] = { XConfigUtil.ReadType.Int, XTable.XTableArchiveStoryNpcSetting, "Id", XConfigUtil.CacheType.Normal },
+        [TablePathTable.TABLE_CGGROUP] = { XConfigUtil.ReadType.Int, XTable.XTableArchiveCGGroup, "Id", XConfigUtil.CacheType.Normal }, -- 冷路径，但被XUiPhotograph等外部系统引用，暂不改Private
+        [TablePathTable.TABLE_COMMUNICATION] = { XConfigUtil.ReadType.Int, XTable.XTableArchiveCommunication, "Id", XConfigUtil.CacheType.Normal },
+        [TablePathTable.TABLE_EVENTDATEGROUP] = { XConfigUtil.ReadType.Int, XTable.XTableArchiveEventDateGroup, "Id", XConfigUtil.CacheType.Private },
+        [TablePathTable.TABLE_PVGROUP] = { XConfigUtil.ReadType.Int, XTable.XTableArchivePVGroup, "Id", XConfigUtil.CacheType.Private },
+        [TablePathTable.TABLE_PVDETAIL] = { XConfigUtil.ReadType.Int, XTable.XTableArchivePVDetail, "Id", XConfigUtil.CacheType.Private },
+        [TablePathTable.TABLE_STORYDETAIL] = { XConfigUtil.ReadType.Int, XTable.XTableArchiveStoryDetail, "Id", XConfigUtil.CacheType.Normal }, -- 冷路径，但被XUiPhotograph等外部系统引用，暂不改Private
+        [TablePathTable.TABLE_STORYGROUP] = { XConfigUtil.ReadType.Int, XTable.XTableArchiveStoryGroup, "Id", XConfigUtil.CacheType.Private },
 
     })
     PrivateFuncMap.InitOtherConfig(self)
@@ -77,7 +67,7 @@ function XArchiveModel:OnInit()
     PrivateFuncMap.InitSecondaryConfigs(self)
     --
     PrivateFuncMap.InitData(self)
-    
+
     self:InitSubModuleData()
 end
 
@@ -90,7 +80,6 @@ function XArchiveModel:ResetAll()
     --这里执行重登数据清理
     PrivateFuncMap.InitSecondaryConfigs(self)
     PrivateFuncMap.InitData(self)
-    self:ResetMonsterData()
     self:ResetSubModuleData()
 end
 
@@ -102,6 +91,9 @@ function XArchiveModel:InitSubModuleData()
     self.ArchiveCGData = require('XModule/XArchive/Entity/XArchiveCGData').New(self)
     ---@type XArchiveAwarenessData
     self.ArchiveAwarenessData = require('XModule/XArchive/Entity/XArchiveAwarenessData').New(self)
+
+    ---@type XMonsterArchiveModel
+    self.MonsterArchiveModel = self:AddSubModel(require("XModule/XArchive/SubModule/MonsterArchive/XMonsterArchiveModel"))
 end
 
 function XArchiveModel:ResetSubModuleData()
@@ -130,10 +122,10 @@ function XArchiveModel:SortByOrder(list)
     return list
 end
 
-function XArchiveModel:GetArchivePartnerSetting(partnerTemplateId,type)
+function XArchiveModel:GetArchivePartnerSetting(partnerTemplateId, type)
     local settingList = self:GetArchivePartnerSettingList()[partnerTemplateId]
     if not settingList then
-        XLog.Error("Id is not exist in Share/Archive/PartnerSetting.tab".." id = " .. partnerTemplateId)
+        XLog.Error("Id is not exist in Share/Archive/PartnerSetting.tab" .. " id = " .. partnerTemplateId)
         return
     end
     local setting = settingList[type]
@@ -143,252 +135,9 @@ function XArchiveModel:GetArchivePartnerSetting(partnerTemplateId,type)
     return self:SortByOrder(setting)
 end
 
-function XArchiveModel:ClearMonsterRedPointDic(monsterType,monsterId,type)
-    if not self._MonsterRedPointDic[monsterType] then return end
-    if not self._MonsterRedPointDic[monsterType][monsterId] then return end
-    if type == XEnumConst.Archive.MonsterRedPointType.Monster then
-        self._MonsterRedPointDic[monsterType][monsterId].IsNewMonster = false
-    elseif type == XEnumConst.Archive.MonsterRedPointType.MonsterInfo then
-        self._MonsterRedPointDic[monsterType][monsterId].IsNewInfo = false
-    elseif type == XEnumConst.Archive.MonsterRedPointType.MonsterSkill then
-        self._MonsterRedPointDic[monsterType][monsterId].IsNewSkill = false
-    elseif type == XEnumConst.Archive.MonsterRedPointType.MonsterSetting then
-        self._MonsterRedPointDic[monsterType][monsterId].IsNewSetting = false
-    end
-    if not self._MonsterRedPointDic[monsterType][monsterId].IsNewMonster and
-            not self._MonsterRedPointDic[monsterType][monsterId].IsNewInfo and
-            not self._MonsterRedPointDic[monsterType][monsterId].IsNewSkill and
-            not self._MonsterRedPointDic[monsterType][monsterId].IsNewSetting then
-
-        self._MonsterRedPointDic[monsterType][monsterId] = nil
-    end
-end
-
 function XArchiveModel:GetWeaponsCollectionSaveKey(type)
-    return string.format("%d%s%d", XPlayer.Id, "ArchiveWeaponsCollection",type)
+    return string.format("%d%s%d", XPlayer.Id, "ArchiveWeaponsCollection", type)
 end
-
---------------------怪物图鉴-------------------->>>
---region getter
-function XArchiveModel:GetArchiveMonsterEvaluate(npcId)
-    return self._ArchiveMonsterEvaluateList[npcId]
-end
-
-function XArchiveModel:GetArchiveMonsterMySelfEvaluate(npcId)
-    return self._ArchiveMonsterMySelfEvaluateList[npcId]
-end
-
-function XArchiveModel:GetArchiveMonsterEvaluateList()
-    return self._ArchiveMonsterEvaluateList
-end
-
-function XArchiveModel:GetArchiveMonsterMySelfEvaluateList()
-    return self._ArchiveMonsterMySelfEvaluateList
-end
-
---批量未解锁怪物id数据获取整体逻辑在Model，减少方法调用次数
-function XArchiveModel:GetLockMonsterIdsFromIdList(ids)
-    local list={}
-    if not XTool.IsTableEmpty(ids) then
-        for _,id in pairs(ids) do
-            if not self._ArchiveMonsterUnlockIdsList[id] then
-                tableInsert(list,id)
-            end
-        end
-    end
-    return list
-end
-
---批量未解锁怪物信息id数据获取整体逻辑在Model，减少方法调用次数
-function XArchiveModel:GetLockMonsterInfoIdsFromIdList(ids)
-    local list={}
-    if not XTool.IsTableEmpty(ids) then
-        for _,id in pairs(ids) do
-            if not self._ArchiveMonsterInfoUnlockIdsList[id] then
-                tableInsert(list,id)
-            end
-        end
-    end
-    return list
-end
-
-function XArchiveModel:GetLockMonsterSkillIdsFromIdList(ids)
-    local list = {}
-    if not XTool.IsTableEmpty(ids) then
-        for _,id in pairs(ids) do
-            if not self._ArchiveMonsterSkillUnlockIdsList[id] then
-                tableInsert(list,id)
-            end
-        end
-    end
-    return list
-end
-
-function XArchiveModel:GetLockMonsterSettingIdsFromIdList(ids)
-    local list = {}
-    if not XTool.IsTableEmpty(ids) then
-        for _,id in pairs(ids) do
-            if not self._ArchiveMonsterSettingUnlockIdsList[id] then
-                tableInsert(list,id)
-            end
-        end
-    end
-    return list
-end
-
-function XArchiveModel:GetShowedMonsterList()
-    return self._ArchiveShowedMonsterList
-end
-
-function XArchiveModel:GetMonsterRedPointDic()
-    return self._MonsterRedPointDic
-end
-
-function XArchiveModel:GetMonsterRedPointDicByType(type)
-    if self._MonsterRedPointDic[type] then
-        return self._MonsterRedPointDic[type]
-    end
-end
-
-function XArchiveModel:GetMonsterUnlockById(id)
-    return self._ArchiveMonsterUnlockIdsList[id]
-end
-
---- 怪物在图鉴主界面是否解锁
-function XArchiveModel:GetMonsterUnlockMainById(id)
-    local typeToMonsters = self:GetArchiveMonsterList()
-    if not XTool.IsTableEmpty(typeToMonsters) then
-        for _, monsters in pairs(typeToMonsters) do
-            for _, v in pairs(monsters) do
-                if v.Id == id and not v.IsLockMain then
-                    return true
-                end
-            end
-        end
-    end
-    return false
-end
-
-function XArchiveModel:GetLastSyncMonsterEvaluateTimeById(monsterId)
-    return self._LastSyncMonsterEvaluateTimes[monsterId]
-end
---endregion
-
---region setter
-function XArchiveModel:ResetMonsterData()
-    local monsterData = self:GetArchiveMonsterData()
-    if not XTool.IsTableEmpty(monsterData) then
-        for i, v in pairs(monsterData) do
-            v:Reset()
-        end
-    end
-end
-
-function XArchiveModel:SetArchiveMonsterMySelfEvaluateLikeStatus(npcId,likeState)
-    if not self._ArchiveMonsterMySelfEvaluateList[npcId] then
-        self._ArchiveMonsterMySelfEvaluateList[npcId] ={}
-    end
-    self._ArchiveMonsterMySelfEvaluateList[npcId].LikeStatus = likeState
-end
-
-function XArchiveModel:SetArchiveMonsterMySelfEvaluateDifficulty(npcId,score,difficulty,tags)
-    if not self._ArchiveMonsterMySelfEvaluateList[npcId] then
-        self._ArchiveMonsterMySelfEvaluateList[npcId] ={}
-    end
-    self._ArchiveMonsterMySelfEvaluateList[npcId].Score = score
-    self._ArchiveMonsterMySelfEvaluateList[npcId].Difficulty = difficulty
-    self._ArchiveMonsterMySelfEvaluateList[npcId].Tags = tags
-end
-
-function XArchiveModel:SetMonsterRedPointDic(monsterId,type,id)
-    local monsterType = self:GetArchiveMonsterData()[monsterId] and self:GetArchiveMonsterData()[monsterId]:GetType() or nil
-    if not monsterType then return end
-    if not self._MonsterRedPointDic[monsterType] then
-        self._MonsterRedPointDic[monsterType] = {}
-    end
-    if not self._MonsterRedPointDic[monsterType][monsterId] then
-        self._MonsterRedPointDic[monsterType][monsterId] = {}
-    end
-    if type == XEnumConst.Archive.MonsterRedPointType.Monster then
-        if not self._ArchiveMonsterUnlockIdsList[monsterId] then
-            self._MonsterRedPointDic[monsterType][monsterId].IsNewMonster = true
-        end
-    elseif type == XEnumConst.Archive.MonsterRedPointType.MonsterInfo then
-        if not self._ArchiveMonsterInfoUnlockIdsList[id] then
-            self._MonsterRedPointDic[monsterType][monsterId].IsNewInfo = true
-        end
-    elseif type == XEnumConst.Archive.MonsterRedPointType.MonsterSkill then
-        if not self._ArchiveMonsterSkillUnlockIdsList[id] then
-            self._MonsterRedPointDic[monsterType][monsterId].IsNewSkill = true
-        end
-    elseif type == XEnumConst.Archive.MonsterRedPointType.MonsterSetting then
-        if not self._ArchiveMonsterSettingUnlockIdsList[id] then
-            self._MonsterRedPointDic[monsterType][monsterId].IsNewSetting = true
-        end
-    end
-
-end
-
-function XArchiveModel:SetArchiveShowedMonsterList(list)
-    if not XTool.IsTableEmpty(list) then
-        for _,monster in pairs(list) do
-            self._ArchiveShowedMonsterList[monster.Id] = monster
-        end
-    end
-end
-
-function XArchiveModel:AddArchiveShowedMonsterList(list)
-    if not XTool.IsTableEmpty(list) then
-        for _,monster in pairs(list) do
-            if not self._ArchiveShowedMonsterList[monster] then
-                self._ArchiveShowedMonsterList[monster.Id] = monster
-            else
-                self._ArchiveShowedMonsterList[monster.Id].Killed = monster.Killed
-            end
-        end
-    end
-end
-
-function XArchiveModel:SetArchiveMonsterUnlockIdsList(list)
-    for _,id in pairs(list) do
-        self._ArchiveMonsterUnlockIdsList[id] = true
-    end
-end
-
-function XArchiveModel:SetArchiveMonsterInfoUnlockIdsList(list)
-    for _,id in pairs(list) do
-        self._ArchiveMonsterInfoUnlockIdsList[id] = true
-    end
-end
-
-function XArchiveModel:SetArchiveMonsterSkillUnlockIdsList(list)
-    for _,id in pairs(list) do
-        self._ArchiveMonsterSkillUnlockIdsList[id] = true
-    end
-end
-
-function XArchiveModel:SetArchiveMonsterSettingUnlockIdsList(list)
-    for _,id in pairs(list) do
-        self._ArchiveMonsterSettingUnlockIdsList[id] = true
-    end
-end
-
-function XArchiveModel:SetMonsterEvaluateInListById(id,entity)
-    self._ArchiveMonsterEvaluateList[id] = entity
-end
-
-function XArchiveModel:SetMonsterMySelfEvaluateInListById(id,entity)
-    self._ArchiveMonsterMySelfEvaluateList[id] = entity
-end
-
-function XArchiveModel:SetLastSyncMonsterEvaluateTimeById(monsterId,timestamp)
-    self._LastSyncMonsterEvaluateTimes[monsterId] = timestamp
-end
-
-function XArchiveModel:ResetMonsterRedPointDic()
-    self._MonsterRedPointDic = {}
-end
---endregion
 
 ---------------------武器、意识------------------>>>
 --region getter
@@ -449,21 +198,21 @@ function XArchiveModel:SetWeaponTotalRedPointCount(count)
 end
 
 function XArchiveModel:AddWeaponTotalRedPointCount(adds)
-    self._ArchiveWeaponTotalRedPointCount = self._ArchiveWeaponTotalRedPointCount+adds
+    self._ArchiveWeaponTotalRedPointCount = self._ArchiveWeaponTotalRedPointCount + adds
 end
 
-function XArchiveModel:SetWeaponRedPointCountByType(weaponType,count)
+function XArchiveModel:SetWeaponRedPointCountByType(weaponType, count)
     self._ArchiveWeaponRedPointCountDic[weaponType] = count
 end
 
-function XArchiveModel:AddWeaponRedPointCountByType(weaponType,adds)
-    if type(self._ArchiveWeaponRedPointCountDic[weaponType])~='number' then
-        self._ArchiveWeaponRedPointCountDic[weaponType]=0
+function XArchiveModel:AddWeaponRedPointCountByType(weaponType, adds)
+    if type(self._ArchiveWeaponRedPointCountDic[weaponType]) ~= 'number' then
+        self._ArchiveWeaponRedPointCountDic[weaponType] = 0
     end
-    self._ArchiveWeaponRedPointCountDic[weaponType] = self._ArchiveWeaponRedPointCountDic[weaponType]+adds
+    self._ArchiveWeaponRedPointCountDic[weaponType] = self._ArchiveWeaponRedPointCountDic[weaponType] + adds
 end
 
-function XArchiveModel:SetWeaponUnlockServerDataById(id,data)
+function XArchiveModel:SetWeaponUnlockServerDataById(id, data)
     self._ArchiveWeaponUnlockServerData[id] = data
 end
 
@@ -472,40 +221,40 @@ function XArchiveModel:SetWeaponSettingTotalRedPointCount(count)
 end
 
 function XArchiveModel:AddWeaponSettingTotalRedPointCount(adds)
-    self._ArchiveWeaponSettingTotalRedPointCount = self._ArchiveWeaponSettingTotalRedPointCount+adds
+    self._ArchiveWeaponSettingTotalRedPointCount = self._ArchiveWeaponSettingTotalRedPointCount + adds
 end
 
-function XArchiveModel:SetNewWeaponSettingIdsDicById(templateId,data)
+function XArchiveModel:SetNewWeaponSettingIdsDicById(templateId, data)
     self._ArchiveNewWeaponSettingIdsDic[templateId] = data
 end
 
-function XArchiveModel:InsertNewWeaponSettingIdsDicById(templateId,data)
+function XArchiveModel:InsertNewWeaponSettingIdsDicById(templateId, data)
     if not self._ArchiveNewWeaponSettingIdsDic[templateId] then
-        self._ArchiveNewWeaponSettingIdsDic[templateId]={}
+        self._ArchiveNewWeaponSettingIdsDic[templateId] = {}
     end
-    table.insert(self._ArchiveNewWeaponSettingIdsDic[templateId],data)
+    table.insert(self._ArchiveNewWeaponSettingIdsDic[templateId], data)
 end
 
-function XArchiveModel:SetWeaponSettingRedPointCountByType(weaponType,count)
+function XArchiveModel:SetWeaponSettingRedPointCountByType(weaponType, count)
     self._ArchiveWeaponSettingRedPointCountDic[weaponType] = count
 end
 
-function XArchiveModel:AddWeaponSettingRedPointCountByType(weaponType,adds)
-    if type(self._ArchiveWeaponSettingRedPointCountDic[weaponType])~='number' then
-        self._ArchiveWeaponSettingRedPointCountDic[weaponType]=0
+function XArchiveModel:AddWeaponSettingRedPointCountByType(weaponType, adds)
+    if type(self._ArchiveWeaponSettingRedPointCountDic[weaponType]) ~= 'number' then
+        self._ArchiveWeaponSettingRedPointCountDic[weaponType] = 0
     end
-    self._ArchiveWeaponSettingRedPointCountDic[weaponType] = self._ArchiveWeaponSettingRedPointCountDic[weaponType]+adds
+    self._ArchiveWeaponSettingRedPointCountDic[weaponType] = self._ArchiveWeaponSettingRedPointCountDic[weaponType] + adds
 end
 
-function XArchiveModel:SetWeaponSettingCanUnlockById(id,canUnLock)
+function XArchiveModel:SetWeaponSettingCanUnlockById(id, canUnLock)
     self._ArchiveWeaponSettingCanUnlockDic[id] = canUnLock
 end
 
-function XArchiveModel:SetWeaponSettingUnlockServerDataById(id,unLock)
+function XArchiveModel:SetWeaponSettingUnlockServerDataById(id, unLock)
     self._ArchiveWeaponSettingUnlockServerData[id] = unLock
 end
 
-function XArchiveModel:SetWeaponServerDataById(templateId,data)
+function XArchiveModel:SetWeaponServerDataById(templateId, data)
     self._ArchiveWeaponServerData[templateId] = data
 end
 
@@ -524,10 +273,10 @@ end
 ---------------------伙伴图鉴------------------>>>
 --region getter
 function XArchiveModel:GetPartnerListByGroup(group)
-    if self._ArchivePartnerList[group] then
-        return self._ArchivePartnerList[group]
+    if XTool.IsTableEmpty(self._ArchivePartnerList) then
+        PrivateFuncMap.InitArchivePartnerList(self)
     end
-    return {}
+    return self._ArchivePartnerList[group] or {}
 end
 
 function XArchiveModel:GetPartnerUnLockById(id)
@@ -537,11 +286,41 @@ end
 function XArchiveModel:GetPartnerUnLockSettingDic()
     return self._PartnerUnLockSettingDic
 end
+
+--- 热路径写入 Partner 锁定缓存；若 Entity 已创建则同步写入
+function XArchiveModel:SetPartnerLockState(templateId, isLock)
+    self._PartnerLockState[templateId] = isLock
+    local entity = self._ArchivePartnerData[templateId]
+    if entity then
+        entity:SetIsLock(isLock)
+    end
+end
+
+--- 不触发懒加载，返回原始 Entity 字典（供热路径判断 Entity 是否已创建）
+function XArchiveModel:GetRawArchivePartnerData()
+    return self._ArchivePartnerData
+end
+
+--- 热路径：不触发 Entity 懒加载，直接用配置表 + 热数据统计 Partner 完成度
+--- @param groupId number|nil  nil = 所有分组
+--- @return number unlockCount, number totalCount
+function XArchiveModel:GetPartnerCompletionCount(groupId)
+    local total, unlocked = 0, 0
+    for _, cfg in pairs(self:GetArchivePartner()) do
+        if not groupId or cfg.GroupId == groupId then
+            total = total + 1
+            if self._PartnerUnLockDic[cfg.Id] then
+                unlocked = unlocked + 1
+            end
+        end
+    end
+    return unlocked, total
+end
 --endregion
 
 --region setter
 function XArchiveModel:UpdateUnLockPartnerDic(dataList)
-    for _,data in pairs(dataList) do
+    for _, data in pairs(dataList) do
         if not self._PartnerUnLockDic[data] then
             self._PartnerUnLockDic[data] = data
         end
@@ -549,7 +328,7 @@ function XArchiveModel:UpdateUnLockPartnerDic(dataList)
 end
 
 function XArchiveModel:UpdateUnLockPartnerSettingDic(dataList)
-    for _,data in pairs(dataList) do
+    for _, data in pairs(dataList) do
         if not self._PartnerUnLockSettingDic[data] then
             self._PartnerUnLockSettingDic[data] = data
         end
@@ -568,7 +347,7 @@ end
 --region setter
 function XArchiveModel:SetArchiveShowedStoryList(idList)
     if not XTool.IsTableEmpty(idList) then
-        for _,id in pairs(idList) do
+        for _, id in pairs(idList) do
             self._ArchiveShowedStoryList[id] = id
         end
     end
@@ -603,7 +382,7 @@ end
 --region setter
 function XArchiveModel:SetArchiveShowedCGList(idList)
     if not XTool.IsTableEmpty(idList) then
-        for _,id in pairs(idList) do
+        for _, id in pairs(idList) do
             self._ArchiveShowedCGList[id] = id
         end
     end
@@ -631,23 +410,14 @@ end
 --region ----------private start----------
 
 ---初始化二次处理的配置数据
-PrivateFuncMap.InitSecondaryConfigs=function(model)
-    model._ArchiveTagAllList={}
-    model._ArchiveSameNpc={}
-    model._ArchiveMonsterTransDic={}
-    model._ArchiveMonsterEffectDatasDic={}
-    model._ShowedWeaponTypeList={}
-    model._WeaponTemplateIdToSettingListDic={}
-    model._WeaponSumCollectNum=0
-    model._WeaponTypeToIdsDic={}
-    model._ArchiveStoryGroupAllList={}
+PrivateFuncMap.InitSecondaryConfigs = function(model)
+    model._ArchiveTagAllList = {}
+    model._ShowedWeaponTypeList = {}
+    model._WeaponTemplateIdToSettingListDic = {}
+    model._WeaponSumCollectNum = 0
+    model._WeaponTypeToIdsDic = {}
+    model._ArchiveStoryGroupAllList = {}
 
-    model._ArchiveMonsterList = {}
-    model._ArchiveMonsterInfoList = {}
-    model._ArchiveMonsterSkillList = {}
-    model._ArchiveMonsterSettingList = {}
-    model._ArchiveNpcToMonster = {}
-    model._ArchiveMonsterData = {}
     model._ArchiveStoryChapterList = {}
     model._ArchiveStoryDetailList = {}
     model._ArchiveStoryNpcList = {}
@@ -658,34 +428,27 @@ PrivateFuncMap.InitSecondaryConfigs=function(model)
     model._ArchiveCommunicationList = {}
     model._ArchivePartnerList = {}
     model._ArchivePartnerSettingList = {}
+    -- 热路径：Partner 锁定状态缓存，templateId → isLock（bool）
+    model._PartnerLockState = {}
+    -- 冷路径：templateId → PartnerEntity（供热路径更新时同步 Entity）
+    model._ArchivePartnerData = {}
     model._ArchiveStoryChapterDic = {}
-    
+
     model._IsInitPVDetail = false
     model._PVGroupIdToDetailIdList = {}
     model._PVDetailIdList = {}
 end
 
-PrivateFuncMap.InitData=function(model)
-    model._ArchiveShowedMonsterList={}
-    model._MonsterRedPointDic = {}
-
+PrivateFuncMap.InitData = function(model)
     model._ArchiveShowedCGList = {}
     model._ArchiveShowedStoryList = {}--只保存通关的活动关卡ID，到了解禁事件后会被清除
-    
+
     model._PartnerUnLockDic = {}
     model._PartnerUnLockSettingDic = {}
 
-    model._ArchiveMonsterUnlockIdsList = {}
-    model._ArchiveMonsterInfoUnlockIdsList = {}
-    model._ArchiveMonsterSkillUnlockIdsList = {}
-    model._ArchiveMonsterSettingUnlockIdsList = {}
-
-    model._ArchiveMonsterEvaluateList = {}
-    model._ArchiveMonsterMySelfEvaluateList = {}
     model._ArchiveStoryEvaluateList = {}
     model._ArchiveStoryMySelfEvaluateList = {}
 
-    model._LastSyncMonsterEvaluateTimes = {}
     model._LastSyncStoryEvaluateTimes = {}
     -- 记录服务端武器数据，以TemplateId为键
     model._ArchiveWeaponServerData = {}
@@ -709,7 +472,7 @@ PrivateFuncMap.InitData=function(model)
     --<<<红点相关
 end
 
-PrivateFuncMap.InitOtherConfig=function(model)
+PrivateFuncMap.InitOtherConfig = function(model)
     model.SiteToBgPath = {
         [XEnumConst.EQUIP.EQUIP_SITE.AWARENESS.ONE] = CS.XGame.ClientConfig:GetString("ArchiveAwarenessSiteBgPath1"),
         [XEnumConst.EQUIP.EQUIP_SITE.AWARENESS.TWO] = CS.XGame.ClientConfig:GetString("ArchiveAwarenessSiteBgPath2"),
@@ -718,7 +481,7 @@ PrivateFuncMap.InitOtherConfig=function(model)
         [XEnumConst.EQUIP.EQUIP_SITE.AWARENESS.FIVE] = CS.XGame.ClientConfig:GetString("ArchiveAwarenessSiteBgPath5"),
         [XEnumConst.EQUIP.EQUIP_SITE.AWARENESS.SIX] = CS.XGame.ClientConfig:GetString("ArchiveAwarenessSiteBgPath6"),
     }
-    
+
     model.StarToQualityName = {
         [XEnumConst.Archive.EquipStarType.All] = CS.XTextManager.GetText("ArchiveAwarenessFliterAll"),
         [XEnumConst.Archive.EquipStarType.Two] = CS.XTextManager.GetText("ArchiveAwarenessFliterTwoStar"),
@@ -729,72 +492,9 @@ PrivateFuncMap.InitOtherConfig=function(model)
     }
 
     model.EvaluateOnForAll = CS.XGame.ClientConfig:GetInt("ArchiveEvaluateOnForAll")
-end 
-
-
-PrivateFuncMap.InitArchiveMonsterList=function(model)
-    local XArchiveMonsterEntity = require("XEntity/XArchive/XArchiveMonsterEntity")
-    local monsterList=model:GetMonster()
-
-    if not XTool.IsTableEmpty(monsterList) then
-        for _, monster in pairs(monsterList) do
-            if not model._ArchiveMonsterList[monster.Type] then
-                model._ArchiveMonsterList[monster.Type] = {}
-            end
-            local tmp = XArchiveMonsterEntity.New(monster.Id)
-
-            if not XTool.IsTableEmpty(monster.NpcId) then
-                for _,id in pairs(monster.NpcId)do
-                    model._ArchiveNpcToMonster[id] = monster.Id
-                end
-            end
-            tableInsert(model._ArchiveMonsterList[monster.Type], tmp)
-        end
-    end
-    for _,list in pairs(model._ArchiveMonsterList)do
-        model:SortByOrder(list)
-        for _,monster in pairs(list) do
-            model._ArchiveMonsterData[monster:GetId()] = monster
-        end
-    end
 end
 
-PrivateFuncMap.InitArchiveMonsterDetail=function(model,entityType,detailCfg,allList,IsHavetype)
-    local XArchiveMonsterDetailEntity = require("XEntity/XArchive/XArchiveMonsterDetailEntity")
-
-    if not XTool.IsTableEmpty(detailCfg) then
-        for _, detail in pairs(detailCfg) do
-
-            if not allList[detail.GroupId] then
-                allList[detail.GroupId] = {}
-            end
-
-            if IsHavetype and not allList[detail.GroupId][detail.Type] then
-                allList[detail.GroupId][detail.Type] = {}
-            end
-
-            local tmp = XArchiveMonsterDetailEntity.New(entityType,detail.Id)
-
-            if IsHavetype then
-                table.insert(allList[detail.GroupId][detail.Type], tmp)
-            else
-                table.insert(allList[detail.GroupId], tmp)
-            end
-        end
-    end
-    
-    for _,group in pairs(allList) do
-        if IsHavetype then
-            for _,type in pairs(group) do
-                model:SortByOrder(type)
-            end
-        else
-            model:SortByOrder(group)
-        end
-    end
-end
-
-PrivateFuncMap.InitArchiveStoryChapterList=function(model)
+PrivateFuncMap.InitArchiveStoryChapterList = function(model)
     local XArchiveStoryChapterEntity = require("XEntity/XArchive/XArchiveStoryChapterEntity")
     local storyChapters = model:GetStoryChapter()
     if not XTool.IsTableEmpty(storyChapters) then
@@ -810,12 +510,12 @@ PrivateFuncMap.InitArchiveStoryChapterList=function(model)
             model._ArchiveStoryChapterDic[chapter.Id] = tmp
         end
     end
-    for _,group in pairs(model._ArchiveStoryChapterList) do
+    for _, group in pairs(model._ArchiveStoryChapterList) do
         model:SortByOrder(group)
     end
 end
 
-PrivateFuncMap.InitArchiveStoryDetailAllList=function(model)
+PrivateFuncMap.InitArchiveStoryDetailAllList = function(model)
     local XArchiveStoryDetailEntity = require("XEntity/XArchive/XArchiveStoryDetailEntity")
     local storyDetails = model:GetStoryDetail()
     if not XTool.IsTableEmpty(storyDetails) then
@@ -829,13 +529,13 @@ PrivateFuncMap.InitArchiveStoryDetailAllList=function(model)
             table.insert(model._ArchiveStoryDetailList[detail.ChapterId], tmp)
         end
     end
-    for _,group in pairs(model._ArchiveStoryDetailList) do
+    for _, group in pairs(model._ArchiveStoryDetailList) do
         model:SortByOrder(group)
     end
 end
 
 --创建图鉴Npc数据
-PrivateFuncMap.InitArchiveStoryNpcAllList=function(model)
+PrivateFuncMap.InitArchiveStoryNpcAllList = function(model)
     local XArchiveNpcEntity = require("XEntity/XArchive/XArchiveNpcEntity")
     local storyNpcs = model:GetStoryNpc()
     if not XTool.IsTableEmpty(storyNpcs) then
@@ -849,7 +549,7 @@ PrivateFuncMap.InitArchiveStoryNpcAllList=function(model)
 end
 
 --创建图鉴NpcSetting数据
-PrivateFuncMap.InitArchiveStoryNpcSettingAllList=function(model)
+PrivateFuncMap.InitArchiveStoryNpcSettingAllList = function(model)
     local XArchiveNpcDetailEntity = require("XEntity/XArchive/XArchiveNpcDetailEntity")
     local storyNpcSettings = model:GetStoryNpcSetting()
     if not XTool.IsTableEmpty(storyNpcSettings) then
@@ -867,15 +567,15 @@ PrivateFuncMap.InitArchiveStoryNpcSettingAllList=function(model)
             table.insert(model._ArchiveStoryNpcSettingList[settingCfg.GroupId][settingCfg.Type], tmp)
         end
     end
-    for _,group in pairs(model._ArchiveStoryNpcSettingList) do
-        for _,type in pairs(group) do
+    for _, group in pairs(model._ArchiveStoryNpcSettingList) do
+        for _, type in pairs(group) do
             model:SortByOrder(type)
         end
     end
 end
 
 --创建图鉴NpcSetting数据
-PrivateFuncMap.InitArchiveCGAllList=function(model)
+PrivateFuncMap.InitArchiveCGAllList = function(model)
     local XArchiveCGEntity = require("XEntity/XArchive/XArchiveCGEntity")
     local cgDetails = model:GetCGDetail()
     if not XTool.IsTableEmpty(cgDetails) then
@@ -886,17 +586,24 @@ PrivateFuncMap.InitArchiveCGAllList=function(model)
             end
 
             local tmp = XArchiveCGEntity.New(CGDetailCfg.Id)
+            if model._ArchiveShowedCGList[CGDetailCfg.Id] then
+                tmp.IsLock = false
+            else
+                if CGDetailCfg.Condition ~= 0 then
+                    _, tmp.LockDesc = XConditionManager.CheckCondition(CGDetailCfg.Condition)
+                end
+            end
             table.insert(model._ArchiveCGDetailList[CGDetailCfg.GroupId], tmp)
             model._ArchiveCGDetailData[CGDetailCfg.Id] = tmp
         end
     end
-    for _,group in pairs(model._ArchiveCGDetailList) do
+    for _, group in pairs(model._ArchiveCGDetailList) do
         model:SortByOrder(group)
     end
 end
 
 --创建图鉴邮件数据
-PrivateFuncMap.InitArchiveMailList=function(model)
+PrivateFuncMap.InitArchiveMailList = function(model)
     local XArchiveMailEntity = require("XEntity/XArchive/XArchiveMailEntity")
     local archiveMails = model:GetArchiveMail()
     if not XTool.IsTableEmpty(archiveMails) then
@@ -908,13 +615,13 @@ PrivateFuncMap.InitArchiveMailList=function(model)
             table.insert(model._ArchiveMailList[mailCfg.GroupId], tmp)
         end
     end
-    for _,group in pairs(model._ArchiveMailList) do
+    for _, group in pairs(model._ArchiveMailList) do
         model:SortByOrder(group)
     end
 end
 
 --创建图鉴通讯数据
-PrivateFuncMap.InitArchiveCommunicationList=function(model)
+PrivateFuncMap.InitArchiveCommunicationList = function(model)
     local XArchiveCommunicationEntity = require("XEntity/XArchive/XArchiveCommunicationEntity")
     local communications = model:GetCommunication()
     if not XTool.IsTableEmpty(communications) then
@@ -928,12 +635,12 @@ PrivateFuncMap.InitArchiveCommunicationList=function(model)
             table.insert(model._ArchiveCommunicationList[communicationCfg.GroupId], tmp)
         end
     end
-    for _,group in pairs(model._ArchiveCommunicationList) do
+    for _, group in pairs(model._ArchiveCommunicationList) do
         model:SortByOrder(group)
     end
 end
 
-PrivateFuncMap.InitArchivePartnerSetting=function(model)
+PrivateFuncMap.InitArchivePartnerSetting = function(model)
     local XArchivePartnerSettingEntity = require("XEntity/XArchive/XArchivePartnerSettingEntity")
     local detailCfg = model:GetPartnerSetting()
     if not XTool.IsTableEmpty(detailCfg) then
@@ -951,29 +658,37 @@ PrivateFuncMap.InitArchivePartnerSetting=function(model)
             table.insert(model._ArchivePartnerSettingList[detail.GroupId][detail.Type], tmp)
         end
     end
-    for _,group in pairs(model._ArchivePartnerSettingList) do
-        for _,type in pairs(group) do
+    for _, group in pairs(model._ArchivePartnerSettingList) do
+        for _, type in pairs(group) do
             model:SortByOrder(type)
         end
     end
 end
 
 --生成图鉴伙伴数据
-PrivateFuncMap.InitArchivePartnerList=function(model)
+PrivateFuncMap.InitArchivePartnerList = function(model)
     local XArchivePartnerEntity = require("XEntity/XArchive/XArchivePartnerEntity")
     local templateList = model:GetArchivePartner()
     if not XTool.IsTableEmpty(templateList) then
-        for _,template in pairs(templateList) do
+        for _, template in pairs(templateList) do
             if not model._ArchivePartnerList[template.GroupId] then
                 model._ArchivePartnerList[template.GroupId] = {}
             end
             local entity = XArchivePartnerEntity.New(template.Id,
-                    model:GetArchivePartnerSetting(template.Id,XEnumConst.Archive.PartnerSettingType.Story),
-                    model:GetArchivePartnerSetting(template.Id,XEnumConst.Archive.PartnerSettingType.Setting))
-            table.insert(model._ArchivePartnerList[template.GroupId],entity)
+                    model:GetArchivePartnerSetting(template.Id, XEnumConst.Archive.PartnerSettingType.Story),
+                    model:GetArchivePartnerSetting(template.Id, XEnumConst.Archive.PartnerSettingType.Setting))
+            -- 同步热路径已计算的 Partner 锁定状态
+            local isLock = model._PartnerLockState[template.Id]
+            if isLock ~= nil then
+                entity:SetIsLock(isLock)
+            end
+            -- 同步热路径已有的 Setting 解锁状态
+            entity:UpdateStoryAndSettingEntity(model._PartnerUnLockSettingDic)
+            table.insert(model._ArchivePartnerList[template.GroupId], entity)
+            model._ArchivePartnerData[template.Id] = entity
         end
     end
-    for _,group in pairs(model._ArchivePartnerList) do
+    for _, group in pairs(model._ArchivePartnerList) do
         model:SortByOrder(group)
     end
 end
@@ -1002,14 +717,6 @@ end
 
 --region ----------config start----------
 --region 基础读表
-function XArchiveModel:GetMonsterNpcData()
-    return self._ConfigUtil:GetByTableKey(ArchiveClientTableKey.MonsterNpcData)
-end
-
-function XArchiveModel:GetMonsterEffect()
-    return self._ConfigUtil:GetByTableKey(ArchiveClientTableKey.MonsterEffect)
-end
-
 function XArchiveModel:GetArchiveWeaponGroup()
     return self._ConfigUtil:GetByTableKey(ArchiveClientTableKey.ArchiveWeaponGroup)
 end
@@ -1021,7 +728,6 @@ end
 function XArchiveModel:GetArchiveAwarenessGroupCfgById(suitId)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(ArchiveClientTableKey.ArchiveAwarenessGroup, suitId)
 end
-
 
 function XArchiveModel:GetArchiveAwarenessGroupType()
     return self._ConfigUtil:GetByTableKey(ArchiveClientTableKey.ArchiveAwarenessGroupType)
@@ -1047,24 +753,8 @@ function XArchiveModel:GetArchive()
     return self._ConfigUtil:GetByTableKey(ArchiveShareTableKey.Archive)
 end
 
-function XArchiveModel:GetMonster()
-    return self._ConfigUtil:Get(TablePathTable.TABLE_MONSTER)
-end
-
-function XArchiveModel:GetMonsterInfo()
-    return self._ConfigUtil:Get(TablePathTable.TABLE_MONSTERINFO)
-end
-
-function XArchiveModel:GetMonsterSkill()
-    return self._ConfigUtil:Get(TablePathTable.TABLE_MONSTERSKILL)
-end
-
-function XArchiveModel:GetMonsterSetting()
-    return self._ConfigUtil:GetByTableKey(ArchiveShareTableKey.MonsterSetting)
-end
-
-function XArchiveModel:GetSameNpcGroup()
-    return self._ConfigUtil:GetByTableKey(ArchiveShareTableKey.SameNpcGroup)
+function XArchiveModel:GetArchiveMail()
+    return self._ConfigUtil:GetByTableKey(ArchiveShareTableKey.ArchiveMail)
 end
 
 function XArchiveModel:GetAwarenessSetting()
@@ -1101,10 +791,6 @@ end
 
 function XArchiveModel:GetCGGroup()
     return self._ConfigUtil:Get(TablePathTable.TABLE_CGGROUP)
-end
-
-function XArchiveModel:GetArchiveMail()
-    return self._ConfigUtil:GetByTableKey(ArchiveShareTableKey.ArchiveMail)
 end
 
 function XArchiveModel:GetCommunication()
@@ -1182,51 +868,13 @@ function XArchiveModel:GetArchiveTagAllList()
             self:SortByOrder(v)
         end
     end
-    
+
     return self._ArchiveTagAllList
-end
-
-function XArchiveModel:GetSameNpc()
-    if XTool.IsTableEmpty(self._ArchiveSameNpc) then
-        local sameNpcGroup = self:GetSameNpcGroup()
-        if not XTool.IsTableEmpty(sameNpcGroup) then
-            for _, group in pairs(sameNpcGroup) do
-                for _, npcId in pairs(group.NpcId) do
-                    self._ArchiveSameNpc[npcId] = group.Id
-                end
-            end
-        end
-    end
-    return self._ArchiveSameNpc
-end
-
-function XArchiveModel:GetArchiveMonsterEffectDatasDic()
-    if XTool.IsTableEmpty(self._ArchiveMonsterEffectDatasDic) then
-        local monsterEffects = self:GetMonsterEffect()
-        if not XTool.IsTableEmpty(monsterEffects) then
-            for _, transData in pairs(monsterEffects) do
-                local archiveMonsterEffectData = self._ArchiveMonsterEffectDatasDic[transData.NpcId]
-                if not archiveMonsterEffectData then
-                    archiveMonsterEffectData = {}
-                    self._ArchiveMonsterEffectDatasDic[transData.NpcId] = archiveMonsterEffectData
-                end
-
-                local archiveMonsterEffect = archiveMonsterEffectData[transData.NpcState]
-                if not archiveMonsterEffect then
-                    archiveMonsterEffect = {}
-                    archiveMonsterEffectData[transData.NpcState] = archiveMonsterEffect
-                end
-                archiveMonsterEffect[transData.EffectNodeName] = transData.EffectPath
-            end
-        end
-    end
-    
-    return self._ArchiveMonsterEffectDatasDic
 end
 
 function XArchiveModel:GetShowedWeaponTypeList()
     if XTool.IsTableEmpty(self._ShowedWeaponTypeList) then
-        local weaponGroupData=self:GetArchiveWeaponGroup()
+        local weaponGroupData = self:GetArchiveWeaponGroup()
         for _, group in pairs(weaponGroupData) do
             table.insert(self._ShowedWeaponTypeList, group.Id)
         end
@@ -1237,7 +885,7 @@ function XArchiveModel:GetShowedWeaponTypeList()
             return aData.Order < bData.Order
         end)
     end
-    
+
     return self._ShowedWeaponTypeList
 end
 
@@ -1250,18 +898,18 @@ function XArchiveModel:GetWeaponTemplateIdToSettingListDic()
             table.insert(self._WeaponTemplateIdToSettingListDic[equipId], settingData)
         end
     end
-    
+
     return self._WeaponTemplateIdToSettingListDic
 end
 
 function XArchiveModel:GetWeaponSumCollectNum()
     if not XTool.IsNumberValid(self._WeaponSumCollectNum) then
-        self._WeaponSumCollectNum=0
+        self._WeaponSumCollectNum = 0
         for _, _ in pairs(self:GetWeaponTemplateIdToSettingListDic()) do
             self._WeaponSumCollectNum = self._WeaponSumCollectNum + 1
         end
     end
-    
+
     return self._WeaponSumCollectNum
 end
 
@@ -1273,7 +921,7 @@ function XArchiveModel:GetWeaponTypeToIdsDic()
 
         local templateData
         local equipType
-        for templateId, _ in pairs(self:GetWeaponTemplateIdToSettingListDic()) do 
+        for templateId, _ in pairs(self:GetWeaponTemplateIdToSettingListDic()) do
             templateData = XMVCA.XEquip:GetConfigEquip(templateId)
             equipType = templateData.Type
             if self._WeaponTypeToIdsDic[equipType] then
@@ -1281,7 +929,7 @@ function XArchiveModel:GetWeaponTypeToIdsDic()
             end
         end
     end
-    
+
     return self._WeaponTypeToIdsDic
 end
 
@@ -1295,51 +943,8 @@ function XArchiveModel:GetArchiveStoryGroupAllList()
         end
         self:SortByOrder(self._ArchiveStoryGroupAllList)
     end
-    
+
     return self._ArchiveStoryGroupAllList
-end
-
-
-function XArchiveModel:GetArchiveMonsterList()
-    if XTool.IsTableEmpty(self._ArchiveMonsterList) then
-        PrivateFuncMap.InitArchiveMonsterList(self)
-    end
-    return self._ArchiveMonsterList
-end
-
-function XArchiveModel:GetArchiveMonsterInfoList()
-    if XTool.IsTableEmpty(self._ArchiveMonsterInfoList) then
-        PrivateFuncMap.InitArchiveMonsterDetail(self,XEnumConst.Archive.EntityType.Info,self:GetMonsterInfo(),self._ArchiveMonsterInfoList,true)
-    end
-    return self._ArchiveMonsterInfoList
-end
-
-function XArchiveModel:GetArchiveMonsterSkillList()
-    if XTool.IsTableEmpty(self._ArchiveMonsterSkillList) then
-        PrivateFuncMap.InitArchiveMonsterDetail(self,XEnumConst.Archive.EntityType.Skill,self:GetMonsterSkill(),self._ArchiveMonsterSkillList,false)
-    end
-    return self._ArchiveMonsterSkillList
-end
-
-function XArchiveModel:GetArchiveMonsterSettingList()
-    if XTool.IsTableEmpty(self._ArchiveMonsterSettingList) then
-        PrivateFuncMap.InitArchiveMonsterDetail(self,XEnumConst.Archive.EntityType.Setting,self:GetMonsterSetting(),self._ArchiveMonsterSettingList,true)
-    end
-    return self._ArchiveMonsterSettingList
-end
-
-function XArchiveModel:GetArchiveNpcToMonster()
-    if XTool.IsTableEmpty(self._ArchiveNpcToMonster) then
-        PrivateFuncMap.InitArchiveMonsterList(self)
-    end
-    return self._ArchiveNpcToMonster
-end
-
-function XArchiveModel:GetArchiveMonsterData()
-    if XTool.IsTableEmpty(self._ArchiveMonsterData) then
-        PrivateFuncMap.InitArchiveMonsterList(self)
-    end
-    return self._ArchiveMonsterData
 end
 
 function XArchiveModel:GetArchiveStoryChapterList()
@@ -1389,6 +994,57 @@ function XArchiveModel:GetArchiveCGDetailData()
         PrivateFuncMap.InitArchiveCGAllList(self)
     end
     return self._ArchiveCGDetailData
+end
+
+--- 判断指定CG是否应产生红点，以及是否需要暂存（未到显示时间）
+--- 不触发 Entity 懒加载，直接读配置表
+--- @return boolean shouldShow, boolean isHide, number groupId
+function XArchiveModel:CheckCGShouldShowRedPoint(cgId, nowTimestamp)
+    local cfg = self:GetCGDetail()[cgId]
+    if not cfg or cfg.IsShowRedPoint ~= 1 then
+        return false, false, 0
+    end
+    local isHide = false
+    if not string.IsNilOrEmpty(cfg.ShowTimeStr) then
+        isHide = nowTimestamp < XTime.ParseToTimestamp(cfg.ShowTimeStr)
+    end
+    return true, isHide, cfg.GroupId
+end
+
+--- 热路径：不触发 Entity 懒加载，直接用配置表 + 热数据统计 CG 完成度
+--- @return number unlockCount, number totalCount
+function XArchiveModel:GetCGCompletionCount()
+    local nowTime = XTime.GetServerNowTimestamp()
+    local total, unlocked = 0, 0
+    for id, cfg in pairs(self:GetCGDetail()) do
+        if not string.IsNilOrEmpty(cfg.ShowTimeStr) then
+            if nowTime < XTime.ParseToTimestamp(cfg.ShowTimeStr) then
+                goto continue
+            end
+        end
+        total = total + 1
+        if self._ArchiveShowedCGList[id] then
+            unlocked = unlocked + 1
+        else
+            local isUnlock = false
+            local unLockTime = cfg.UnLockTime and XTime.ParseToTimestamp(cfg.UnLockTime) or 0
+            local conditionId = cfg.Condition
+            if not XTool.IsNumberValid(unLockTime) and not XTool.IsNumberValid(conditionId) then
+                isUnlock = true
+            else
+                if XTool.IsNumberValid(unLockTime) and nowTime >= unLockTime then
+                    isUnlock = true
+                elseif XTool.IsNumberValid(conditionId) then
+                    isUnlock = XConditionManager.CheckCondition(conditionId)
+                end
+            end
+            if isUnlock then
+                unlocked = unlocked + 1
+            end
+        end
+        :: continue ::
+    end
+    return unlocked, total
 end
 
 function XArchiveModel:GetArchiveMailList()

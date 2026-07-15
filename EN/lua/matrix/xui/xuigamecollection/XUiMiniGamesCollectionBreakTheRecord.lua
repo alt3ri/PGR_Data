@@ -3,13 +3,18 @@
 local XUiMiniGamesCollectionBreakTheRecord = XLuaUiManager.Register(XLuaUi, 'UiMiniGamesCollectionBreakTheRecord')
 
 function XUiMiniGamesCollectionBreakTheRecord:OnAwake()
-    self.BtnTanchuangClose:AddEventListener(handler(self,self.Close))
-    self.BtnTanchuangCloseBig:AddEventListener(handler(self,self.Close))
+    local function onClose()
+        self:Close()
+        if self.CloseCb then self.CloseCb() end
+    end
+    self.BtnTanchuangClose:AddEventListener(onClose)
+    self.BtnTanchuangCloseBig:AddEventListener(onClose)
 end
 
-function XUiMiniGamesCollectionBreakTheRecord:OnStart(gameName, newScore)
+function XUiMiniGamesCollectionBreakTheRecord:OnStart(gameName, newScore, closeCb)
     self._GameName = gameName or ''
     self._NewScore = newScore or 0
+    self.CloseCb = closeCb
     self:RefreshDisplay()
 end
 
@@ -25,6 +30,7 @@ end
 
 function XUiMiniGamesCollectionBreakTheRecord:OnBtnConfirmClick()
     self:Close()
+    if self.CloseCb then self.CloseCb() end
 end
 
 return XUiMiniGamesCollectionBreakTheRecord

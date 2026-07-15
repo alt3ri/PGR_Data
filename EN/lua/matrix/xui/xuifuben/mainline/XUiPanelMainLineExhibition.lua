@@ -82,6 +82,7 @@ end
 function XUiPanelMainLineExhibition:OnDestroy()
     XEventManager.RemoveEventListener(XEventId.EVENT_MAINLINE_EXHIBITION_LOCATE, self.OnEventLocate, self)
     self:StopLocateTimer()
+    self:KillClampTween()
 end
 
 function XUiPanelMainLineExhibition:RegisterUiEvents()
@@ -132,8 +133,11 @@ function XUiPanelMainLineExhibition:OnBtnGoLastPassedChapter()
     end
 end
 
--- 位置发生变化
+-- 拖拽位置变化回调：同步滚动条进度，刷新展示，处理白名单模块的竖直锁定与松手回正
 function XUiPanelMainLineExhibition:OnTranslateValueChanged(pos)
+    -- 锁定白名单模块的竖直拖动
+    self:LockVerticalIfNeeded()
+
     local posX = self.PanelModule.anchoredPosition.x
     local pivotX = self.PanelModule.pivot.x
     local allWidth = self:GetAllDragAreaWidth()
@@ -150,6 +154,29 @@ function XUiPanelMainLineExhibition:OnTranslateValueChanged(pos)
     self.IsUpdateScrollBarProgress = false
 
     self:Refresh()
+
+    -- 检测拖拽边沿，松手瞬间触发回正缓动
+    local isDragging = self:IsDragOperation()
+    if self._WasDragging and not isDragging then
+        self:TryClampToModuleRange()
+    end
+    self._WasDragging = isDragging
+end
+
+-- 锁定白名单模块的竖直方向位移：将 anchoredPosition.y 强制归零
+function XUiPanelMainLineExhibition:LockVerticalIfNeeded()
+    local hitIndex = self:GetCenterHitModuleIndex()
+    if not hitIndex then
+        return
+    end
+    local moduleId = self.ModuleList[hitIndex]:GetModuleId()
+    local moduleCfg = XMVCA.XMainLine2:GetConfigExhibitionModule(moduleId)
+    if not moduleCfg or moduleCfg.Type ~= XEnumConst.MAINLINE2.EXHIBITION_MODULE_TYPE.ISOLATED_VIEW then
+        return
+    end
+    if self.PanelModule.anchoredPosition.y ~= 0 then
+        self.PanelModule:SetAnchoredPosition(self.PanelModule.anchoredPosition.x, 0)
+    end
 end
 
 function XUiPanelMainLineExhibition:IsDragOperation()
@@ -244,8 +271,8 @@ function XUiPanelMainLineExhibition:InitDragArea()
     self.PanelAreaScaleDrag.MaxScale = XEnumConst.MAINLINE2.EXHIBITION_MAX_SCALE
     self.PanelAreaScaleDrag.MinScale = XEnumConst.MAINLINE2.EXHIBITION_MIN_SCALE
     local scale = XEnumConst.MAINLINE2.EXHIBITION_SHOW_INIT_SCALE
-    self.PanelModule.localScale = XLuaVector3.New(scale, scale, scale)
-    self.PanelModule.pivot = XLuaVector2.New(0, 0.5)
+    self.PanelModule:SetLocalScale(scale, scale, scale)
+    self.PanelModule:SetPivot(0, 0.5)
     self.IsShowDetailUi = false
 
     -- 拖拽和缩放区域
@@ -322,7 +349,7 @@ function XUiPanelMainLineExhibition:LocateByIndex(moduleIndex, chapterIndex, fin
     end
 
     -- 定位
-    self.PanelModule.anchoredPosition = XLuaVector2.New(-moveWidth, 0)
+    self.PanelModule:SetAnchoredPosition(-moveWidth, 0)
 
     -- 更新背景
     self:RefreshBgAndBgm(moduleId)
@@ -385,8 +412,9 @@ function XUiPanelMainLineExhibition:RefreshBgAndBgm(moduleId)
     end
 end
 
--- 刷新背景图
-function XUiPanelMainLineExhibition:RefreshBgByPos()
+-- 屏幕中心当前命中的模块下标（与背景图切换同一阈值）
+-- 获取屏幕中心当前命中的模块下标
+function XUiPanelMainLineExhibition:GetCenterHitModuleIndex()
     local scale = self:GetCurrentScale()
     local moveWidth = math.abs(self.PanelModule.anchoredPosition.x)
     local halfShowAreaWidth = self:GetHalfShowAreaWidth()
@@ -394,14 +422,85 @@ function XUiPanelMainLineExhibition:RefreshBgByPos()
     local spacing = self.PanelModuleLayoutGroup.spacing * scale
     moveWidth = moveWidth + halfShowAreaWidth - paddingLeft -- 屏幕中心点位置
 
-    for _, module in ipairs(self.ModuleList) do
+    for i, module in ipairs(self.ModuleList) do
         local moduleWidth = module:GetWidth() * scale
         if moveWidth >= 0 and moveWidth - moduleWidth <= 0 then
-            local moduleId = module:GetModuleId()
-            self:RefreshBgAndBgm(moduleId)
-            return
+            return i
         end
         moveWidth = moveWidth - moduleWidth - spacing
+    end
+end
+
+-- 刷新背景图
+function XUiPanelMainLineExhibition:RefreshBgByPos()
+    local hitIndex = self:GetCenterHitModuleIndex()
+    if hitIndex then
+        self:RefreshBgAndBgm(self.ModuleList[hitIndex]:GetModuleId())
+    end
+end
+
+-- 将白名单模块的可视区缓动回弹至模块范围内
+function XUiPanelMainLineExhibition:TryClampToModuleRange()
+    local hitModuleIndex = self:GetCenterHitModuleIndex()
+    if not hitModuleIndex then
+        return
+    end
+
+    local moduleId = self.ModuleList[hitModuleIndex]:GetModuleId()
+    local moduleCfg = XMVCA.XMainLine2:GetConfigExhibitionModule(moduleId)
+    if not moduleCfg or moduleCfg.Type ~= XEnumConst.MAINLINE2.EXHIBITION_MODULE_TYPE.ISOLATED_VIEW then
+        return
+    end
+
+    -- 计算可视区在 panel 上的合法 X 区间 [moduleStart, moduleEnd - showAreaWidth]
+    local scale = self:GetCurrentScale()
+    local moduleStart = self:GetMoveToModuleStartWidth(hitModuleIndex) * scale
+    local moduleWidth = self.ModuleList[hitModuleIndex]:GetWidth() * scale
+    local moduleEnd = moduleStart + moduleWidth
+    local showAreaWidth = self:GetShowAreaWidth()
+
+    local pos = -self.PanelModule.anchoredPosition.x
+    local posY = self.PanelModule.anchoredPosition.y
+    local minPos = moduleStart
+    local maxPos = moduleEnd - showAreaWidth
+
+    local clamped = pos
+    if clamped < minPos then
+        clamped = minPos
+    elseif clamped > maxPos then
+        clamped = maxPos
+    end
+
+    -- Y 方向无自由空间，统一回正到 0
+    local clampedY = 0
+
+    if clamped == pos and clampedY == posY then
+        return
+    end
+
+    -- 缓动期间禁用拖拽组件以杀掉惯性，SetMask 屏蔽手指输入
+    self:KillClampTween()
+    XLuaUiManager.SetMask(true)
+    self:SetAreaScaleDragEnable(false)
+
+    local targetPos = CS.UnityEngine.Vector2(-clamped, clampedY)
+    self.ClampTween = self.PanelModule:DOAnchorPos(targetPos, XEnumConst.MAINLINE2.EXHIBITION_CLAMP_DURATION)
+        :SetEase(CS.DG.Tweening.Ease.OutQuad)
+        :OnComplete(function()
+            self.ClampTween = nil
+            XLuaUiManager.SetMask(false)
+            -- 清掉拖拽组件累积的惯性，避免恢复启用后继续推位置
+            self.PanelAreaScaleDrag.DragTranslate:ClearMomentum()
+            self:SetAreaScaleDragEnable(true)
+            self:Refresh()
+        end)
+end
+
+-- 终止正在进行的回正缓动
+function XUiPanelMainLineExhibition:KillClampTween()
+    if self.ClampTween then
+        self.ClampTween:Kill()
+        self.ClampTween = nil
     end
 end
 
@@ -581,7 +680,7 @@ function XUiPanelMainLineExhibition:OnScrollBarValueChanged(v)
 
     local allWidth = self:GetAllDragAreaWidth()
     local curPosX = allWidth * v
-    self.PanelModule.anchoredPosition = XLuaVector2.New(-curPosX, 0)
+    self.PanelModule:SetAnchoredPosition(-curPosX, 0)
 end
 
 -- 显示滑动条

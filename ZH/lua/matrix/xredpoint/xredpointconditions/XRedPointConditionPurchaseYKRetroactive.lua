@@ -14,6 +14,7 @@ end
 function XRedPointConditionPurchaseYKRetroactive.Check()
     local data = XDataCenter.PurchaseManager.GetYKInfoData()
     if not data then return false end
+    if data.DailyRewardRemainDay <= 0 then return false end
     if not data.DailyRewardSupplementGetData then return false end
 
     local cardsMissed = data.DailyRewardSupplementGetData.Count

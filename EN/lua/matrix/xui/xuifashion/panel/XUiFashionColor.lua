@@ -14,8 +14,8 @@ function XUiFashionColor:Refresh(fashionId)
         self.CurCharacterId = nil
         self.ColorId = nil
         self.HasFashionColor = false
-        self.GameObject:SetActiveEx(false)
         self.TxtTipTitle.gameObject:SetActiveEx(false)
+        self:Close()
         return
     end
 
@@ -40,7 +40,7 @@ end
 
 function XUiFashionColor:RefreshColorDot(colorIds)
     if not colorIds or #colorIds <= 0 then
-        self.GameObject:SetActiveEx(false)
+        self:Close()
 
         if self.TxtTipTitle then
             self.TxtTipTitle.gameObject:SetActiveEx(false)
@@ -48,7 +48,7 @@ function XUiFashionColor:RefreshColorDot(colorIds)
 
         return
     end
-    self.GameObject:SetActiveEx(true)
+    self:Open()
 
     if self.TxtTipTitle then
         self.TxtTipTitle.gameObject:SetActiveEx(true)

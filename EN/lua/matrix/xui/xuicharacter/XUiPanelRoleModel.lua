@@ -46,9 +46,12 @@ useMultiModel)
     self.IsStandAnimaShowWeapon = false
     self.StandAnimaShowWeaponList = {}
     self.StandAnimaShowWeaponAnimatorList = {}
-    self.FashionCueId = nil
-    self.SFXCueId = nil
-    self.SFXCueIdCacheDic = {}
+    -- 模型音频状态：只记录RoleModel通过Lua主动托管的声音，不记录Animator事件声音
+    self._FashionUiStandConfigCueId = nil -- 配置给涂装UiStand展示音的cueId，来自FashionVoice.tab
+    self._PartnerSToCVoiceConfigCueId = nil -- 配置给辅助机待机转战斗音效的cueId，来自PartnerModel.SToCVoice
+    self._PartnerSToCVoicePlayedCueIdSet = {} -- 辅助机SToCVoice播放记录，避免同一面板重复播放同一个cueId
+    self._PartnerSToCVoiceActiveCueId = nil -- 当前PartnerSToCVoice链路的停止目标cueId
+    self._PartnerSToCVoiceFallbackAudioInfo = nil -- 辅助机缺少XAnimationSound时，SToCVoice的历史兼容播放句柄
     self.UiStandCallBack = {}
     self.NowFashionId = nil
     self.PlayUiStandCallBackList = {}
@@ -285,67 +288,31 @@ needFightController)
         end
     end
 
-    local fashionCueId = self.FashionCueId
-    local sfxCueId = self.SFXCueId
-    local sfxCueIdCacheDic = self.SFXCueIdCacheDic
-    --UiStand播放背景音乐
-    local uiStandVoiceCb = function(model)
-        if fashionCueId then
-            if CS.XAudioManager.IsOpenFashionVoice == 1 then
-                self:SetUiStandAnimaFinishCallback(model, function()
-                    XLuaAudioManager.StopAudioByCueId(fashionCueId)
-                    local xAnimationSound = self:GetXAnimationSound()
-                    if xAnimationSound then
-                        xAnimationSound:PlaySoundByCueId(fashionCueId)
-                    else
-                        -- 兼容播放，如果是角色模型还跑到这要查问题了
-                        XLog.Warning("PlayFashionCue xAnimationSound is nil, use default playAudio ", fashionCueId)
-                        XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, fashionCueId)
-                    end
-                end, function()
-                    XLuaAudioManager.StopAudioByCueId(fashionCueId)
-                end,false, true)
-            end
-        end
-
-        if sfxCueId and not sfxCueIdCacheDic[sfxCueId] then
-            sfxCueIdCacheDic[sfxCueId] = true
-            XLuaAudioManager.StopAudioByCueId(sfxCueId)
-            local xAnimationSound = self:GetXAnimationSound()
-            if xAnimationSound then
-                xAnimationSound:PlaySoundByCueId(sfxCueId)
-            else
-                -- 兼容播放，如果是角色模型还跑到这要查问题了
-                -- 目前辅助机还是只能走这，因为策划没给辅助机模型配XAnimationSound，只能兼容播放
-                local cueInfo = XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, sfxCueId)
-                cueInfo.UpdateCb = function()
-                    local curModel = self:GetCurRoleModel()
-                    if XTool.UObjIsNil(curModel) or not curModel.activeSelf then
-                        XLuaAudioManager.StopAudioByCueId(sfxCueId)
-                        cueInfo.UpdateCb = nil
-                    end
-                end
-            end
-        end
-        
-        if cb then
-            cb(model)
-        end
-    end
+    local fashionUiStandConfigCueId = self._FashionUiStandConfigCueId
+    local partnerSToCVoiceConfigCueId = self._PartnerSToCVoiceConfigCueId
+    local partnerSToCVoicePlayedCueIdSet = self._PartnerSToCVoicePlayedCueIdSet
+    local onRoleModelLoaded = function(roleModel)
+        self:_TryPlayFashionUiStandAudio(roleModel, fashionUiStandConfigCueId)
+        self:_TryPlayPartnerSToCVoice(partnerSToCVoiceConfigCueId, partnerSToCVoicePlayedCueIdSet)
+
+        if cb then
+            cb(roleModel)
+        end
+    end
 
     -- 检查缓存是否命中（BeginSwitch 之后再 Get，此时旧条目已完成淘汰）
     local cachedEntry = self._CachePool:Get(roleName)
 
-    if IsReLoadAnime then
-        self:_DoLoadModel(cachedEntry, roleName, targetUiName, defaultAnimation,
-            uiStandVoiceCb, runtimeControllerName, IsReLoadController,
-            token, needWaitDestroy, true)
-    else
-        self:_DoLoadModel(cachedEntry, roleName, targetUiName, defaultAnimation,
-            uiStandVoiceCb, runtimeControllerName, IsReLoadController,
-            token, needWaitDestroy, false)
-    end
-end
+    if IsReLoadAnime then
+        self:_DoLoadModel(cachedEntry, roleName, targetUiName, defaultAnimation,
+            onRoleModelLoaded, runtimeControllerName, IsReLoadController,
+            token, needWaitDestroy, true)
+    else
+        self:_DoLoadModel(cachedEntry, roleName, targetUiName, defaultAnimation,
+            onRoleModelLoaded, runtimeControllerName, IsReLoadController,
+            token, needWaitDestroy, false)
+    end
+end
 
 --- 统一的模型加载/复用入口
 --- 根据缓存命中与否、串行/并行模式三路分发
@@ -399,19 +366,168 @@ function XUiPanelRoleModel:_DoLoadModel(cachedEntry, roleName, targetUiName, def
     end
 end
 
-function XUiPanelRoleModel:StopAllAudio()
-    if self.FashionCueId then
-        XLuaAudioManager.StopAudioByCueId(self.FashionCueId)
-    end
-
-    if self.SFXCueId then
-        XLuaAudioManager.StopAudioByCueId(self.SFXCueId)
-    end
-end
-
-function XUiPanelRoleModel:_LoadModelAndNotReLoadAnime(
-modelInfo,
-targetUiName,
+--region 模型音频
+
+--region Set
+
+---设置涂装UiStand展示音。音频来自Client/Fashion/FashionVoice.tab。
+function XUiPanelRoleModel:SetFashionUiStandCueIdByFashionId(fashionId)
+    if not fashionId then
+        return
+    end
+    self.UiStandCallBack = {}
+    self._FashionUiStandConfigCueId = XDataCenter.FashionManager.GetCueIdByFashionId(fashionId)
+end
+
+---设置辅助机待机转战斗音效。音频来自Client/Partner/PartnerModel.tab的SToCVoice。
+function XUiPanelRoleModel:SetPartnerSToCVoiceCueId(cueId)
+    if not XTool.IsNumberValid(cueId) then
+        return
+    end
+    self.UiStandCallBack = {}
+    self._PartnerSToCVoiceConfigCueId = cueId
+end
+
+--endregion
+
+--region Play
+
+---注册并尝试播放涂装UiStand展示音。SetUiStandAnimaFinishCallback会立即执行一次播放回调，后续动画结束时也会回调。
+function XUiPanelRoleModel:_TryPlayFashionUiStandAudio(model, cueId)
+    if not cueId then
+        return
+    end
+
+    if CS.XAudioManager.IsOpenFashionVoice ~= 1 then
+        return
+    end
+
+    self:SetUiStandAnimaFinishCallback(model, function()
+        self:StopFashionUiStandAudio()
+        if not self:_TryPlaySfxWithXAnimationSound(cueId) then
+            XLog.Warning("PlayFashionCue xAnimationSound is nil, skip audio ", cueId)
+        end
+    end, function()
+        self:StopFashionUiStandAudio()
+    end, false, true)
+end
+
+---尝试播放辅助机SToCVoice。同一cueId在同一面板内只播放一次；缺少XAnimationSound时走局部历史兼容。
+function XUiPanelRoleModel:_TryPlayPartnerSToCVoice(cueId, playedCueIdSet)
+    if not cueId or playedCueIdSet[cueId] then
+        return
+    end
+
+    playedCueIdSet[cueId] = true
+    self:StopPartnerSToCVoice()
+    self._PartnerSToCVoiceActiveCueId = cueId
+
+    if not self:_TryPlaySfxWithXAnimationSound(cueId) then
+        self._PartnerSToCVoiceFallbackAudioInfo = self:_PlayPartnerSToCVoiceFallback(cueId)
+    end
+end
+
+---辅助机模型暂未配置XAnimationSound时，保留SToCVoice的历史兼容播放。
+function XUiPanelRoleModel:_PlayPartnerSToCVoiceFallback(cueId)
+    local audioInfo = XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, cueId)
+    if audioInfo then
+        audioInfo.UpdateCb = function()
+            local curModel = self:GetCurRoleModel()
+            if XTool.UObjIsNil(curModel) or not curModel.activeSelf then
+                self:StopPartnerSToCVoice()
+            end
+        end
+    end
+    return audioInfo
+end
+
+---内部尝试通过XAnimationSound播放SFX，只表达正常主链路。
+function XUiPanelRoleModel:_TryPlaySfxWithXAnimationSound(cueId)
+    if not cueId then
+        return false
+    end
+
+    local xAnimationSound = self:GetXAnimationSound()
+    if not xAnimationSound then
+        return false
+    end
+
+    xAnimationSound:PlaySoundByCueId(cueId)
+    return true
+end
+
+--endregion
+
+--region Stop
+
+---停止涂装UiStand展示音。保留为独立public语义入口，供消费侧按需单独停止。
+function XUiPanelRoleModel:StopFashionUiStandAudio()
+    if self._FashionUiStandConfigCueId then
+        XLuaAudioManager.StopAudioByCueId(self._FashionUiStandConfigCueId)
+    end
+end
+
+---停止辅助机SToCVoice。保留为独立public语义入口，供消费侧按需单独停止。
+function XUiPanelRoleModel:StopPartnerSToCVoice()
+    local cueId = self._PartnerSToCVoiceActiveCueId or self._PartnerSToCVoiceConfigCueId
+    if cueId then
+        XLuaAudioManager.StopAudioByCueId(cueId)
+    end
+
+    if self._PartnerSToCVoiceFallbackAudioInfo then
+        self._PartnerSToCVoiceFallbackAudioInfo.UpdateCb = nil
+    end
+    self._PartnerSToCVoiceActiveCueId = nil
+    self._PartnerSToCVoiceFallbackAudioInfo = nil
+end
+
+---内部停止RoleModel当前托管的Lua主动播放音频；不包含动画事件SFX。
+function XUiPanelRoleModel:_StopRoleModelManagedAudio()
+    self:StopFashionUiStandAudio()
+    self:StopPartnerSToCVoice()
+end
+
+---停止当前模型动画事件触发的SFX。播放侧由Animator事件/XAnimationSound触发，不在Lua显式成对调用。
+function XUiPanelRoleModel:StopCurrentAnimationSfx()
+    local xAnimationSound = self:GetXAnimationSound()
+    if xAnimationSound then
+        xAnimationSound:StopSFXByAudioInfoUIdSet()
+    end
+end
+
+---停止当前RoleModel托管的全部展示音频。供看板/拍照等消费侧在展示动作结束时调用。
+function XUiPanelRoleModel:StopAllManagedAudio()
+    self:StopFashionUiStandAudio()
+    self:StopPartnerSToCVoice()
+    self:StopCurrentAnimationSfx()
+end
+
+--endregion
+
+---获取当前模型上的XAnimationSound组件。
+function XUiPanelRoleModel:GetXAnimationSound()
+    -- 如果已经获取过组件，直接返回缓存的结果
+    if not XTool.UObjIsNil(self._MyXAnimationSound) then
+        return self._MyXAnimationSound
+    end
+
+    -- 获取所有子物体中的XAnimationSound组件
+    local transform = self:GetTransform()
+    if not transform then
+        return
+    end
+    local animationSound = transform:GetComponent(typeof(CS.XAnimationSound))
+
+    -- 缓存结果并返回
+    self._MyXAnimationSound = animationSound
+    return animationSound
+end
+
+--endregion
+
+function XUiPanelRoleModel:_LoadModelAndNotReLoadAnime(
+modelInfo,
+targetUiName,
 roleName,
 defaultAnimation,
 cb,
@@ -1206,7 +1322,7 @@ colorId)
     end
     
     self.IsStandAnimaShowWeapon = XMVCA.XEquip:CheckHasLoadEquipBySignboard(characterId, self.NowFashionId)
-    self:SetCueIdByFashionId(self.NowFashionId)
+    self:SetFashionUiStandCueIdByFashionId(self.NowFashionId)
     -- 设置当前加载的角色Id（设置相机参数时使用）
     self.CurCharacterId = characterId
     
@@ -1289,26 +1405,10 @@ function XUiPanelRoleModel:SetUiStandAnimaFinishCallback(model, callback, disabl
     end
 end
 
-function XUiPanelRoleModel:SetCueIdByFashionId(fashionId)
-    if not fashionId then
-        return
-    end
-    self.UiStandCallBack = {}    
-    self.FashionCueId = XDataCenter.FashionManager.GetCueIdByFashionId(fashionId)
-end
-
-function XUiPanelRoleModel:SetSFXCueIdByCueId(cueId)
-    if not XTool.IsNumberValid(cueId) then
-        return
-    end
-    self.UiStandCallBack = {}    
-    self.SFXCueId = cueId
-end
-
--- 设置当前角色Id（设置相机参数时使用）
-function XUiPanelRoleModel:SetCurCharacterId(id)
-    self.CurCharacterId = id
-end
+-- 设置当前角色Id（设置相机参数时使用）
+function XUiPanelRoleModel:SetCurCharacterId(id)
+    self.CurCharacterId = id
+end
 
 --==============================--
 --desc: 在查看其他玩家信息时，更新角色模型
@@ -1435,7 +1535,7 @@ function XUiPanelRoleModel:UpdateRobotModel(robotId, characterId, weaponCb, fash
     targetUiName = targetUiName or self.RefName
     local weaponFashionId = XRobotManager.GetRobotWeaponFashionId(robotId)
     
-    self:SetCueIdByFashionId(nowFashionId)
+    self:SetFashionUiStandCueIdByFashionId(nowFashionId)
     self:UpdateRoleModel(modelName, targetPanelRole, targetUiName, function(model)
         if not self.HideWeapon then
             self:UpdateCharacterWeaponModels(characterId, modelName, weaponCb, true, equipTemplateId, weaponFashionId)
@@ -1548,7 +1648,7 @@ function XUiPanelRoleModel:UpdateCharacterResModel(resId, characterId, targetUiN
     local modelName = XMVCA.XCharacter:GetCharResModel(validResId)
     
     if modelName then
-        self:SetCueIdByFashionId(fashionId)
+        self:SetFashionUiStandCueIdByFashionId(fashionId)
         self:UpdateRoleModel(modelName, nil, targetUiName, function(model)
             if not self.HideWeapon then
                 self:UpdateCharacterWeaponModels(characterId, modelName, nil, nil, nil, weaponFashionId)
@@ -1744,7 +1844,7 @@ function XUiPanelRoleModel:UpdateCharacterModelByFightNpcData(fightNpcData, cb, 
         end
 
         if modelName then
-            self:SetCueIdByFashionId(fashionId)
+            self:SetFashionUiStandCueIdByFashionId(fashionId)
             self:UpdateRoleModel(modelName, nil, nil, function(model)
                 self:UpdateEquipsModelsByFightNpcData(model, fightNpcData, modelName)
                 self:UpdateCharacterLiberationLevelEffect(modelName, char.Id, char.LiberateLv, fashionId)
@@ -2889,9 +2989,10 @@ function XUiPanelRoleModel:LoadPartnerUiEffect(modelName, effectParentName, isBi
     local parentNamePrefix = CreateEffectParentName(effectParentName)
     local index = 1
 
-    if isUseModelParent then
+    if isUseModelParent or effectParentName == XPartnerConfigs.EffectParentName.ModelLoopEffect then
         parentNamePrefix = modelName .. parentNamePrefix
     end
+    
     for _, effectInfo in pairs(effectInfos) do
         ---@type UnityEngine.GameObject
         local effectParent = nil
@@ -2955,6 +3056,8 @@ function XUiPanelRoleModel:LoadPartnerUiEffect(modelName, effectParentName, isBi
             if isBindEffect then
                 self:BindEffect(effect)
             end
+
+            effect.gameObject:SetActiveEx(true)
     
             -- 使用动画事件控制的特效, 默认隐藏
             if effectParentName == XPartnerConfigs.EffectParentName.ControlByAnimationEvent then
@@ -2962,8 +3065,8 @@ function XUiPanelRoleModel:LoadPartnerUiEffect(modelName, effectParentName, isBi
                 self:SetEffectForAnimationEvent(effectInfo.Id, effectParentName, effectPath)
                 effect.gameObject:SetActiveEx(false)
                 -- 因为modelTransform表, 会根据所在ui设置不同的坐标等, 所以需要同步修正一下
-                effect.transform.localPosition = curModelInfo.Model.transform.localPosition
-                effect.transform.localEulerAngles = curModelInfo.Model.transform.localEulerAngles
+                effectNode.transform.localPosition = curModelInfo.Model.transform.localPosition
+                effectNode.transform.localEulerAngles = curModelInfo.Model.transform.localEulerAngles
             else
                 effectNode.gameObject:SetActiveEx(false)
                 effectNode.gameObject:SetActiveEx(true)
@@ -3064,6 +3167,43 @@ function XUiPanelRoleModel:RemoveRoleModelPool()
     -- 委托缓存池统一清理：业务回调 + Object.Destroy + 清空 _Pool
     self._CachePool:Clear()
     -- 兼容层引用 self.RoleModelPool 指向 _Pool 内部 table，Clear 是逐一 nil 而非替换 table，引用仍有效
+    self.CurRoleName = nil
+end
+
+--- 释放当前激活模型，使其回归缓存并触发通用淘汰检查
+--- 模型 GO 立即隐藏；是否立刻 Destroy 由缓存淘汰策略决定：
+---   普通策略：打上 HideTime 时间戳，超时后销毁，下次加载同角色可命中缓存
+---   低内存/无缓存策略：立刻触发 Destroy（activeKey=nil，所有条目均满足淘汰条件）
+--- 调用后面板处于"无激活模型"状态，与 RemoveRoleModelPool 的区别在于不强制清空全部缓存
+function XUiPanelRoleModel:ReleaseCurrentModel()
+    if not self.CurRoleName then return end
+
+    -- 1. 隐藏当前模型 GO 及其特效
+    local curEntry = self._CachePool:Get(self.CurRoleName)
+    if curEntry then
+        curEntry.Model.gameObject:SetActiveEx(false)
+        self:SetCurrentUiEffectActive(curEntry.UiEffect, false)
+    end
+
+    -- 2. 停止音效
+    self:_StopRoleModelManagedAudio()
+
+    -- 3. 通知缓存池：无激活模型
+    --    内部执行：给旧条目打 HideTime、清空 ActiveKey、令牌递增、触发淘汰检查
+    --    activeKey=nil 时所有条目均满足淘汰条件，低内存/无缓存策略下立刻 Destroy
+    self._CachePool:BeginSwitch(nil)
+
+    -- 4. 同步处理副面板（如有）
+    if self.NewPanel and self.NewPanel.CurRoleName then
+        local newPanelEntry = self.NewPanel._CachePool:Get(self.NewPanel.CurRoleName)
+        if newPanelEntry then
+            newPanelEntry.Model.gameObject:SetActiveEx(false)
+        end
+        self.NewPanel._CachePool:BeginSwitch(nil)
+        self.NewPanel.CurRoleName = nil
+    end
+
+    -- 5. 清空面板激活状态
     self.CurRoleName = nil
 end
 
@@ -3443,26 +3583,8 @@ function XUiPanelRoleModel:GetSkinMeshFace()
     return targetSkinMeshFace
 end
 
-function XUiPanelRoleModel:GetXAnimationSound()
-    -- 如果已经获取过组件，直接返回缓存的结果
-    if not XTool.UObjIsNil(self._MyXAnimationSound) then
-        return self._MyXAnimationSound
-    end
-    
-    -- 获取所有子物体中的XAnimationSound组件
-    local transform = self:GetTransform()
-    if not transform then
-        return
-    end
-    local animationSound = transform:GetComponent(typeof(CS.XAnimationSound))
-    
-    -- 缓存结果并返回
-    self._MyXAnimationSound = animationSound
-    return animationSound
-end
-
--- 手动重置特效，修复播放其他动作后，loop特效周期与特效不一致的问题
-function XUiPanelRoleModel:ReplayUiLoopEffect()
+-- 手动重置特效，修复播放其他动作后，loop特效周期与特效不一致的问题
+function XUiPanelRoleModel:ReplayUiLoopEffect()
     if self.RoleModelPool then
         local model = self.RoleModelPool[self.CurRoleName]
         if model then

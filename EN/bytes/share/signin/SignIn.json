@@ -2377,7 +2377,7 @@
     },
     {
         "Id": 111,
-        "TimeId": 47110.0,
+        "TimeId": null,
         "Name": "Homecoming Voyage - Sign-in",
         "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/SignBgV405.png",
         "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignMainV405.prefab",
@@ -2395,7 +2395,7 @@
     },
     {
         "Id": 112,
-        "TimeId": 47111.0,
+        "TimeId": null,
         "Name": "Mugwort's Blessing - Sign-in",
         "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/SignBgDragonBoatFestivalV405.png",
         "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignMainDragonBoatFestivalV405.prefab",
@@ -2427,6 +2427,24 @@
         "CreateTimeId": null,
         "IsShowWhenDayOver": null,
         "IsShowWhenSignOver": true,
+        "ReissueRewardMailId": null
+    },
+    {
+        "Id": 114,
+        "TimeId": 48110.0,
+        "Name": "Of Solitude and Stillness - Sign-in",
+        "FullScreenBg": "Assets/Product/Texture/Image/UiActivityBase/SignBgV406.png",
+        "PrefabPath": "Assets/Product/Ui/ComponentPrefab/Sign/SignMainV406.prefab",
+        "BtnBg": "Assets/Product/Texture/Image/UiActivityBase/SignLabelV406.png",
+        "Type": 2,
+        "RoundDays": "[7]",
+        "SubRoundId": "[1109]",
+        "OpenLevel": 20.0,
+        "OpenStage": null,
+        "PreSignId": null,
+        "CreateTimeId": null,
+        "IsShowWhenDayOver": null,
+        "IsShowWhenSignOver": null,
         "ReissueRewardMailId": null
     }
 ]

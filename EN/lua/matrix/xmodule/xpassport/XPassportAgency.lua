@@ -50,7 +50,8 @@ function XPassportAgency:OpenMainUi()
     if not self._Model:CheckActivityIsOpen(true) then
         return
     end
-    XLuaUiManager.Open("UiPassport")
+
+    XLuaUiManager.Open("UiPassport", { WithStartEnableAnimation = true })
 end
 
 function XPassportAgency:GetPassportActivityTimeId()

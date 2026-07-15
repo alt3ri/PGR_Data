@@ -3,9 +3,14 @@ local XUiGridWinRole = require("XUi/XUiSettleWin/XUiGridWinRole")
 local XUiPanelExpBar = require("XUi/XUiSettleWinMainLine/XUiPanelExpBar")
 local XUiGridRewardLine = require("XUi/XUiFubenRepeatchallenge/XUiGridRewardLine")
 
+local XLuaUiSettle = require("XUi/XUiBase/XLuaUiSettle")
+
 local CsXTextManagerGetText = CS.XTextManager.GetText
 
-local XUiRepeatChallengeSettleWin = XLuaUiManager.Register(XLuaUi, "UiRepeatChallengeSettleWin")
+--- 多重挑战胜利结算界面
+--- 必须继承 XLuaUiSettle，基类会在 OnDestroyUi 时自动 Dispatch EVENT_FIGHT_FINISH_SETTLE
+--- 用于通知空花等模块"结算已关闭，可以恢复回流"，请勿改为 XLuaUi
+local XUiRepeatChallengeSettleWin = XLuaUiManager.Register(XLuaUiSettle, "UiRepeatChallengeSettleWin")
 
 function XUiRepeatChallengeSettleWin:OnAwake()
     self:InitAutoScript()

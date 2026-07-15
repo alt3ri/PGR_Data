@@ -20,7 +20,29 @@ function XUiPassport:OnAwake()
 end
 
 function XUiPassport:OnStart(params)
-    self.Model3D = XUiPassport3D.New(self.UiModelGo.transform, self, self.UiModel)
+    local isFirstOpenInThisActivity = false
+    local activityId = tostring(self._Control:GetDefaultActivityId())
+
+    if params and params.OpenPassportCard and params.WithStartEnableAnimation then
+        params.WithStartEnableAnimation = false
+    end
+
+    if params and params.WithStartEnableAnimation then
+        local saveKey = "XUiPassport.OnStart.saveKey_" .. XPlayer.Id
+        local prevActivityId = XSaveTool.GetData(saveKey)
+
+        if prevActivityId ~= activityId then
+            XSaveTool.SaveData(saveKey, activityId)
+            isFirstOpenInThisActivity = true
+        end
+    end
+
+    self.Model3D = XUiPassport3D.New(
+        self.UiModelGo.transform,
+        self,
+        self.UiModel,
+        isFirstOpenInThisActivity and params and params.WithStartEnableAnimation)
+
     self:InitData()
     self:InitPanel()
     self:RegisterButtonEvent()
@@ -29,17 +51,46 @@ function XUiPassport:OnStart(params)
     self:InitRedPoint()
 
     if params then
+        self.Params = params
         if params.OpenLastPassport then
             self.PassportPanel:OpenLastPassport()
         end
 
         if params.OpenPassportCard then
-            XLuaUiManager.Open("UiPassportCard", handler(self, self.Refresh), self)
+            self:OnBtnBuyPassportClick()
         end
     end
 
-    self:CheckAndGetSupplyReward()
     self:RefreshCoating()
+
+    XLuaUiManager.SetMask(true)
+
+    self.AnimationSchedule = XScheduleManager.ScheduleNextFrame(function()
+        local function afterAnimation()
+            self:CheckOpenAutoGetTaskRewardListView(
+                handler(self, self.CheckAndGetSupplyReward))
+        end
+
+        XScheduleManager.UnSchedule(self.AnimationSchedule)
+        self.AnimationSchedule = nil
+
+        XLuaUiManager.SetMask(false)
+
+        if not params or not params.WithStartEnableAnimation then
+            self:PlayAnimationWithMask("NoAnimationEnable", afterAnimation)
+        elseif isFirstOpenInThisActivity then
+            self:PlayAnimationWithMask("Start", afterAnimation)
+        else
+            self:PlayAnimationWithMask("Enable", afterAnimation)
+        end
+    end)
+end
+
+
+function XUiPassport:OnDestroy()
+    if self.Params and self.Params.OnClose then
+        self.Params.OnClose()
+    end
 end
 
 function XUiPassport:RefreshCoating()
@@ -63,15 +114,13 @@ function XUiPassport:RefreshCoating()
 end
 
 function XUiPassport:CheckAndGetSupplyReward()
-    if not self._Control:GetIsGetSupplyReward() then
-        self._Control:RequestPassportGetSupplyReward()
+    if not self._Control:GetIsGetSupplyReward() and self._Control:GetPassportActivityHasSupplyReward() then
+        self._Control:RequestPassportGetSupplyReward(handler(self, self.Refresh))
     end
 end
 
 function XUiPassport:OnEnable()
     CS.XGraphicManager.UseUiLightDir = true
-
-    self:CheckOpenAutoGetTaskRewardListView()
 
     if not self._Control:CheckActivityIsOpen() then
         self:StartTimer()
@@ -107,14 +156,16 @@ function XUiPassport:OnDisable()
 end
 
 --未按时领取的任务奖励，等打开该界面再弹出提示
-function XUiPassport:CheckOpenAutoGetTaskRewardListView()
+function XUiPassport:CheckOpenAutoGetTaskRewardListView(cb)
     local rewardList = self._Control:GetCookieAutoGetTaskRewardList()
     if not XTool.IsTableEmpty(rewardList) then
         local title = CS.XTextManager.GetText("PassportAutoGetTipsTitle")
         local desc = CS.XTextManager.GetText("PassportAutoGetTipsDesc")
-        XLuaUiManager.Open("UiPassportTips", rewardList, title, desc)
+        XLuaUiManager.Open("UiPassportTips", rewardList, title, desc, cb)
 
         self._Control:ClearCookieAutoGetTaskRewardList()
+    else
+        if cb then cb() end
     end
 end
 
@@ -139,7 +190,11 @@ end
 
 function XUiPassport:InitPanel()
     ---@type XUiPassportPanel
-    self.PassportPanel = XUiPassportPanel.New(self.PanelPassport, self)
+    self.PassportPanel = XUiPassportPanel.New(
+        self.PanelPassport,
+        self,
+        handler(self, self.UpdateBtnTongBlack))
+
     ---@type XUiPassportPanelTask
     self.TaskPanel = XUiPassportPanelTask.New(self.PanelTaskMain, self, self.Model3D)
 
@@ -152,18 +207,20 @@ end
 function XUiPassport:InitTab()
     self.CurrMainTabIndex = 0
 
+    self.InitTabInProgress = true
     self.PanelTopTab:Init({ self.BtnPassport, self.BtnTask }, function(index)
-        self:OnSelectedMainTab(index)
+        self:OnSelectedMainTab(index, self.InitTabInProgress)
     end)
-    self.PanelTopTab:SelectIndex(MainTabIndex.Passport)
+    self.PanelTopTab:SelectIndex(MainTabIndex.Passport, true)
+    self.InitTabInProgress = nil
 end
 
-function XUiPassport:OnSelectedMainTab(index)
+function XUiPassport:OnSelectedMainTab(index, noAnimation)
     if self.CurrMainTabIndex == index then
         return
     end
     self.CurrMainTabIndex = index
-    self:UpdateMainPanel()
+    self:UpdateMainPanel(not noAnimation)
 end
 
 function XUiPassport:InitUi()
@@ -200,8 +257,18 @@ function XUiPassport:UpdateCoatingName()
     self.TxtCoatingName.text = ""
 end
 
-function XUiPassport:UpdateMainPanel()
+function XUiPassport:UpdateMainPanel(withAnimation)
     local isPassport = self.CurrMainTabIndex == MainTabIndex.Passport
+    self.Model3D:ShowTaskCamera(not isPassport)
+
+    if withAnimation then
+        if isPassport then
+            self:PlayAnimation("QieHuanLtoR")
+        else
+            self:PlayAnimation("QieHuanRtoL")
+        end
+    end
+
     -- PanelPassportMain 是 PanelPassport 的父节点，需要单独控制显隐
     self.PanelPassportMain.gameObject:SetActiveEx(isPassport)
 
@@ -209,13 +276,30 @@ function XUiPassport:UpdateMainPanel()
         if i == self.CurrMainTabIndex then
             panel:Show()
         elseif not XTool.IsTableEmpty(panel) then
-            panel:Hide()
+            if not withAnimation then
+                panel:Hide()
+            end
         end
     end
+
+    self:UpdateBtnTongBlack()
+end
+
+function XUiPassport:UpdateBtnTongBlack()
+    local hasReward
+    if self.CurrMainTabIndex == MainTabIndex.Passport then
+        hasReward = self._Control:HasClaimablePassportReward()
+    elseif self.CurrMainTabIndex == MainTabIndex.Task then
+        hasReward = self._Control:HasAchievedPassportTask()
+    else
+        hasReward = false
+    end
+    self.BtnTongBlack.gameObject:SetActiveEx(hasReward)
 end
 
 function XUiPassport:UpdateTaskPanel()
     self.TaskPanel:Refresh()
+    self:UpdateBtnTongBlack()
 end
 
 function XUiPassport:UpdateLevel(isPlayEffect)
@@ -273,7 +357,7 @@ function XUiPassport:OnBtnBuyLevelClick()
         XUiManager.TipText("PassportBuyLevelMaxDesc")
         return
     end
-    XLuaUiManager.Open("UiPassportUpLevel")
+    XLuaUiManager.Open("UiPassportUpLevel", handler(self, self.UpdateBtnTongBlack))
 end
 
 --一键领取/完成，根据当前页签切换行为
@@ -287,13 +371,16 @@ end
 
 --购买通行证（统一入口）
 function XUiPassport:OnBtnBuyPassportClick()
-    XLuaUiManager.Open("UiPassportCard", handler(self, self.Refresh), self)
+    XLuaUiManager.Open(
+        "UiPassportCard",
+        handler(self, self.Refresh),
+        self)
 end
 
 --打开兑换商店
 function XUiPassport:OnBtnExchangeClick()
     CS.XRecord.Record("20027", "OnEnterShopFromBP")
-    XLuaUiManager.Open("UiShop", XShopManager.ShopType.Points)
+    XFunctionManager.SkipInterface(10039)
 end
 
 function XUiPassport:OnBtnOpenClick()

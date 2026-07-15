@@ -1,7 +1,12 @@
 local XUiGridCond = require("XUi/XUiSettleWinMainLine/XUiGridCond")
 local XUiGridWinRole = require("XUi/XUiSettleWin/XUiGridWinRole")
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
-local XUiSettleWinTutorialCount=XLuaUiManager.Register(XLuaUi,'UiSettleWinTutorialCount')
+local XLuaUiSettle = require("XUi/XUiBase/XLuaUiSettle")
+
+--- 新手教程结算界面
+--- 必须继承 XLuaUiSettle，基类会在 OnDestroyUi 时自动 Dispatch EVENT_FIGHT_FINISH_SETTLE
+--- 用于通知空花等模块"结算已关闭，可以恢复回流"，请勿改为 XLuaUi
+local XUiSettleWinTutorialCount=XLuaUiManager.Register(XLuaUiSettle,'UiSettleWinTutorialCount')
 local XUiPanelExpBar = require("XUi/XUiSettleWinMainLine/XUiPanelExpBar")
 local XUiStageSettleSound = require("XUi/XUiSettleWin/XUiStageSettleSound")
 
@@ -60,7 +65,6 @@ end
 function XUiSettleWinTutorialCount:OnDestroy()
     XDataCenter.AntiAddictionManager.EndFightAction()
     self.UiStageSettleSound:StopSettleSound()
-    XEventManager.DispatchEvent(XEventId.EVENT_FIGHT_FINISH_SETTLE)
 end
 
 --endregion

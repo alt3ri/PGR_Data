@@ -104,6 +104,16 @@ end
 
 function XTheatre6BattleAgency:_GetXFightClientArgs(isPvp)
     local args = CS.StatusSyncFight.XFightClientArgs()
+
+    local function CheckPvpActivityTime()
+        if not isPvp or self._MainAgency:IsPvpInActivityTime() then
+            return true
+        end
+
+        self._MainAgency:HandlePvpActivityEnd()
+        return false
+    end
+
     --加载进度回调
     args.LoadProgressCb = function(process)
         XEventManager.DispatchEvent(XEventId.EVENT_DLC_SELF_RECONNECT_LOADING_PROCESS, XPlayer.Id, process)
@@ -116,10 +126,18 @@ function XTheatre6BattleAgency:_GetXFightClientArgs(isPvp)
     end
     --结算
     args.SettleCb = function(result, summary)
+        if not CheckPvpActivityTime() then
+            return
+        end
+
         self:RequestNormalSettle(result, summary)
     end
     --客户端本地中断游戏
     args.InterruptFightCb = function(result, summary)
+        if not CheckPvpActivityTime() then
+            return
+        end
+
         if isPvp then
             self:RequestPvpGiveUpFight(summary)
         else

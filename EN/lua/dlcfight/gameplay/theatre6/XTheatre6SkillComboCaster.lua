@@ -28,6 +28,9 @@ local SkillGetterByType = {
     [ETheatre6SkillType.Dodge] = function(proxy, npcUUID)
         return proxy:Theatre6GetDodgeDeriveSkill(npcUUID)
     end,
+    [ETheatre6SkillType.Insert] = function(proxy, npcUUID)
+        return proxy:Theatre6GetInsertDeriveSkill(npcUUID)
+    end,
 }
 
 local DebugSkillTypeName = {

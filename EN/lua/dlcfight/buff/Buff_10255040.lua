@@ -17,10 +17,23 @@ function XBuffScript10255040:OnLuaSkillStart(eventArgs)
     ------------执行------------
     if eventArgs._skillId ~= self._skillId then return end
     if eventArgs._launcherUUID ~= self._npcUUID then return end
-    if self.ChanceCheck == 0 then
-        self._hitFlyController:AddSkillCount(self._stackCount)
-        self.ChanceCheck = 1
-        self._proxy:ApplyMagic(self._npcUUID,self._npcUUID,1025194)
+    if self._stackCount == 1 then
+        if self.ChanceCheck == 0 then
+            self._hitFlyController:AddSkillCount(self._stackCount)
+            self.ChanceCheck = 1
+            self._proxy:ApplyMagic(self._npcUUID,self._npcUUID,1025194)
+            self._stackCount = 0
+        end
+    end
+end
+
+function XBuffScript10255040:OnLuaSkillEnd(eventArgs)
+    ------------执行------------
+    if eventArgs._skillId ~= self._skillId then return end
+    if eventArgs._launcherUUID ~= self._npcUUID then return end
+    if self.ChanceCheck == 1 then
+    self._proxy:RemoveBuffByKindAndCount(self._npcUUID,1025194, 1)
+        self.ChanceCheck = 2
     end
 end
 

@@ -1,5 +1,5 @@
----@class XUiPanelFashionSuitNormal : XUiNode
----@field Parent XUiFashionSuitMain
+---@class XUiPanelFashionSuitNormal: XUiNode
+---@field Parent   XUiFashionSuitMain
 ---@field _Control XFashionSuitControl
 local XUiPanelFashionSuitNormal = XClass(XUiNode, "XUiPanelFashionSuitNormal")
 
@@ -12,6 +12,17 @@ function XUiPanelFashionSuitNormal:OnStart(suitId)
     self._SelectIndex = 0
     self._OldSuit = false
     self:SetSuitId(suitId)
+
+    self:ClearFashionGrids()
+    if not self._OldSuit then
+        -- 延迟显示动态表
+        XScheduleManager.ScheduleOnce(function ()
+            if XTool.UObjIsNil(self.GameObject) then return end
+            self:ShowDynamicTable()
+        end, 1800)
+    else
+        self:ShowDynamicTable()
+    end
 end
 
 function XUiPanelFashionSuitNormal:SpecialSuitInit(suitId)
@@ -33,15 +44,17 @@ end
 function XUiPanelFashionSuitNormal:OnEnable()
     self:PlayAnimation("AnimEnable")
     self.GridFashion.gameObject:SetActiveEx(false)
-    self:ClearFashionGrids()
-    if not self._OldSuit then
-        --延迟显示动态表
-        XScheduleManager.ScheduleOnce(function()
-            if XTool.UObjIsNil(self.GameObject) then return end
-            self:ShowDynamicTable()
-        end, 1800)
-    else
-        self:ShowDynamicTable()
+    if self.InitDynamic then
+        self:HideDynamicRootGO()
+        if not self._OldSuit then
+            -- 延迟显示动态表
+            XScheduleManager.ScheduleOnce(function ()
+                if XTool.UObjIsNil(self.GameObject) then return end
+                self:ShowDynamicRootGO()
+            end, 1800)
+        else
+            self:ShowDynamicRootGO()
+        end
     end
 end
 
@@ -72,28 +85,39 @@ function XUiPanelFashionSuitNormal:SetSuitId(id)
         end
     end
 
-    if uiConfig.SuitBackground then
-        self.RImgBg:SetRawImage(uiConfig.SuitBackground)
+end
+
+function XUiPanelFashionSuitNormal:ShowDynamicRootGO()
+    local count = #self._FashionIds
+    if count == 1 then
+        self:HideDynamicRootGO()
+    else
+        self.PanelFashionListSmall.gameObject:SetActiveEx(count == 2)
+        self.PanelFashionListBig.gameObject:SetActiveEx(count > 2)
     end
+end
+
+function XUiPanelFashionSuitNormal:HideDynamicRootGO()
+    self.PanelFashionListSmall.gameObject:SetActiveEx(false)
+    self.PanelFashionListBig.gameObject:SetActiveEx(false)
 end
 
 function XUiPanelFashionSuitNormal:ShowDynamicTable()
     local count = #self._FashionIds
     if count == 1 then
         self.GridFashion.gameObject:SetActiveEx(true)
-        self.PanelFashionListSmall.gameObject:SetActiveEx(false)
-        self.PanelFashionListBig.gameObject:SetActiveEx(false)
         self.PanelDot.gameObject:SetActiveEx(false)
         ---@type XUiGridFashionSuitFashion
-        self._SingleFashionGrid = require("XUi/XUiFashionSuit/Grid/XUiGridFashionSuitFashion").New(self.GridFashion, self)
+        self._SingleFashionGrid = require
+            ("XUi/XUiFashionSuit/Grid/XUiGridFashionSuitFashion")
+            .New(self.GridFashion, self)
         self._SingleFashionGrid:AddClickEvt()
         self._SingleFashionGrid:Refresh(self._Id, self._FashionIds[1])
         self._SingleFashionGrid:UpdateSelect(true)
     elseif count >= 2 then
-        --self:SetAutoTweenToIndex()
+        -- self:SetAutoTweenToIndex()
         local list = count == 2 and self.PanelFashionListSmall or self.PanelFashionListBig
-        self.PanelFashionListSmall.gameObject:SetActiveEx(count == 2)
-        self.PanelFashionListBig.gameObject:SetActiveEx(count > 2)
+
         ---@type XDynamicTableCurve
         self.DynamicTable = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableCurve").New(list)
         self.DynamicTable:SetProxy(require("XUi/XUiFashionSuit/Grid/XUiGridFashionSuitFashion"), self)
@@ -102,19 +126,19 @@ function XUiPanelFashionSuitNormal:ShowDynamicTable()
         self.DynamicTable:ReloadData(self._SelectIndex)
         self.GridFashion.gameObject:SetActiveEx(false)
         self.PanelDot.gameObject:SetActiveEx(true)
-        XUiHelper.RefreshCustomizedList(self.PanelDot, self.Dot, count, function(index, go)
+        XUiHelper.RefreshCustomizedList(self.PanelDot, self.Dot, count, function (index, go)
             local uiObj = {}
             XUiHelper.InitUiClass(uiObj, go)
             self._Dots[index] = uiObj
-        end, false)
+        end, false
+        )
 
         self:UpdateFashionSelect(1)
     else
         self.GridFashion.gameObject:SetActiveEx(false)
-        self.PanelFashionListSmall.gameObject:SetActiveEx(false)
-        self.PanelFashionListBig.gameObject:SetActiveEx(false)
         self.PanelDot.gameObject:SetActiveEx(false)
     end
+    self.InitDynamic = true
 end
 
 function XUiPanelFashionSuitNormal:SetAutoTweenToIndex()
@@ -162,7 +186,7 @@ function XUiPanelFashionSuitNormal:OnDynamicTableEvent(event, index, grid)
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_TWEEN_OVER then
         local startIndex = self.DynamicTable.Imp.StartIndex
         local selectIndex = startIndex % self.DynamicTable.Imp.TotalCount + 1
-        self._SelectIndex = selectIndex
+        self._SelectIndex = selectIndex - 1
         self:UpdateFashionSelect(selectIndex)
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_TOUCHED then
         self.DynamicTable.Imp:TweenToIndex(index)
@@ -186,7 +210,7 @@ function XUiPanelFashionSuitNormal:UpdateFashionSelect(startIndex)
 end
 
 function XUiPanelFashionSuitNormal:GainReward()
-    self._Control:RequestGetSuitReward(self._Id, function()
+    self._Control:RequestGetSuitReward(self._Id, function ()
         self:UpdateView()
     end)
 end
@@ -209,6 +233,7 @@ function XUiPanelFashionSuitNormal:ClearFashionGrids()
     end
 
     self._Dots = {}
+    self.InitDynamic = false
 end
 
 ---@param grid XUiGridFashionSuitFashion

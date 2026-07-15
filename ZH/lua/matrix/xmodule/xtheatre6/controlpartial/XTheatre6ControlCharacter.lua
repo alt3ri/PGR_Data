@@ -360,12 +360,10 @@ function XTheatre6Control:SkillMoveOrSwapRequest(skillId, dstSlotType, dstPositi
             XUiManager.TipCode(response.Code)
         end
         if response.SkillUpdates then
-            for index, SkillUpdate in pairs(response.SkillUpdates) do
-                self._Model.Skill:UpdateSkills(SkillUpdate, true)
-            end
+            self._Model.Skill:UpdateSkillListWithOverQueue(response.SkillUpdates, nil, true)
         end
-            if cb then
-                cb()
+        if cb then
+            cb()
         end
     end)
     XScheduleManager.ScheduleOnce(function()

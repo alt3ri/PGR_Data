@@ -65,7 +65,7 @@ function XUiLogin:CheckFool()
         -- 显示特效
         if self.AprilFoolsRoot then
             self.AprilFoolsRoot.gameObject:SetActiveEx(true)
-            
+
             local effectPrefabUrl = CS.XGame.ClientConfig:GetString('AprilFoolsDayLoginPicPath2026')
 
             if not string.IsNilOrEmpty(effectPrefabUrl) then
@@ -74,7 +74,7 @@ function XUiLogin:CheckFool()
                 effectGo.transform:SetLocalPosition(0, 0, 0)
                 -- 设置层级
                 XUiHelper.SetCanvasesSortingOrder(effectGo.transform)
-                
+
                 local xOffset = CS.XGame.ClientConfig:GetFloat('AprilFoolsDaycoordinateX2026')
                 local yOffset = CS.XGame.ClientConfig:GetFloat('AprilFoolsDaycoordinateY2026')
 
@@ -86,7 +86,7 @@ function XUiLogin:CheckFool()
 
         if self.EffectBgAprilFoolsV403 then
             self.EffectBgAprilFoolsV403.gameObject:SetActiveEx(true)
-            
+
             -- 全屏特效
             local fullScreenEffectPrefabUrl = CS.XGame.ClientConfig:GetString('AprilFoolsDayLoginFullPicPath2026')
 
@@ -106,8 +106,8 @@ function XUiLogin:CheckFool()
             self.EffectBgAprilFoolsV403.gameObject:SetActiveEx(false)
         end
     end
-    
-    
+
+
 end
 
 function XUiLogin:OnStart()
@@ -177,9 +177,9 @@ function XUiLogin:PrintJoystickDeviceNames()
 end
 
 function XUiLogin:KeyboardWatching()
-    XScheduleManager.ScheduleForever(function() 
-        if (Input.GetKey(KeyCode.LeftControl) or Input.GetKey(KeyCode.RightControl)) and 
-            (Input.GetKey(KeyCode.LeftAlt) or Input.GetKey(KeyCode.RightAlt)) and 
+    XScheduleManager.ScheduleForever(function()
+        if (Input.GetKey(KeyCode.LeftControl) or Input.GetKey(KeyCode.RightControl)) and
+            (Input.GetKey(KeyCode.LeftAlt) or Input.GetKey(KeyCode.RightAlt)) and
             Input.GetKeyDown(KeyCode.B) then
             self:CloseJoystickEnable()
         end
@@ -282,10 +282,10 @@ end
 function XUiLogin:GetProtocolContent()
     local protocolData = nil
     -- 云游戏不需要协议
-    if XDataCenter.UiPcManager.IsCloudGame() then 
+    if XDataCenter.UiPcManager.IsCloudGame() then
         return nil
     end
-    if XUserManager.IsKuroSdk() then 
+    if XUserManager.IsKuroSdk() then
         -- KuroSDK 接口不一样
         if CS.XHeroSdkAgent.GetKuroProtocolData then
             protocolData = CS.XHeroSdkAgent.GetKuroProtocolData()
@@ -299,7 +299,7 @@ function XUiLogin:GetProtocolContent()
     if protocolData then
         content = CsXTextManagerGetText("LoginUserAgreeToggleSdk")
         local contentAnd = CsXTextManagerGetText("LoginUserAgreeItemAnd")
-        if XUserManager.IsKuroSdk() then 
+        if XUserManager.IsKuroSdk() then
             -- KuroSDK 结构不一样
             local dataList = protocolData.gameInit
             if protocolData.data then
@@ -308,34 +308,34 @@ function XUiLogin:GetProtocolContent()
 
             for i = 0, dataList.Count - 1, 1 do
                 local urlItemStr = CsXTextManagerGetText("LoginUserAgreeItem", dataList[i].link, dataList[i].title, dataList[i].title)
-                if i == 0 then 
+                if i == 0 then
                     content = content .. urlItemStr
-                else 
+                else
                     content = content .. contentAnd .. urlItemStr
                 end
             end
-        else 
+        else
             if protocolData.priAgrName then
                 local urlItemStr = CsXTextManagerGetText("LoginUserAgreeItem", protocolData.priAgrUrl, protocolData.priAgrName, protocolData.priAgrName)
                 content = content .. urlItemStr
             end
-    
+
             if protocolData.userAgrName then
                 local urlItemStr = CsXTextManagerGetText("LoginUserAgreeItem", protocolData.userAgrUrl, protocolData.userAgrName, protocolData.userAgrName)
                 content = content .. contentAnd .. urlItemStr
             end
-    
+
             if protocolData.childAgrName then
                 local urlItemStr = CsXTextManagerGetText("LoginUserAgreeItem", protocolData.childAgrUrl, protocolData.childAgrName, protocolData.childAgrName)
                 content = content .. contentAnd .. urlItemStr
             end
-    
+
             if protocolData.sdkAgrName then
                 local urlItemStr = CsXTextManagerGetText("LoginUserAgreeItem", protocolData.sdkAgrUrl, protocolData.sdkAgrName, protocolData.sdkAgrName)
                 content = content .. contentAnd .. urlItemStr
             end
         end
-        
+
     else
         content = CsXTextManagerGetText("LoginUserAgreeToggle", CS.XGame.ClientConfig:GetString("UserAgreementUrl"), CS.XGame.ClientConfig:GetString("ChildArgUrl"), CS.XGame.ClientConfig:GetString("PrivacyPolicyUrl"))
     end
@@ -400,18 +400,18 @@ function XUiLogin:OnUidChanged(userId)
 end
 
 function XUiLogin:OnSDKLoginSuccess()
-    if XDataCenter.UiPcManager.IsCloudGame() then 
+    if XDataCenter.UiPcManager.IsCloudGame() then
         -- 云游戏SDK登录成功后直接登录游戏，不需要那些乱七八糟的拦截
         self:DoLogin()
     end
-    
+
     if XOverseaManager.IsENRegion() then
         self:OnENLoginSuccess()
     end
 end
 
 function XUiLogin:CloudGameAutoLogin()
-    if XDataCenter.UiPcManager.IsCloudGame() then 
+    if XDataCenter.UiPcManager.IsCloudGame() then
         -- 云游戏触发自动登录，防止一直起奇怪怪的逻辑导致拦截
         XUserManager.ShowLogin()
     end
@@ -645,7 +645,7 @@ function XUiLogin:OnBtnUserClick()
 end
 
 function XUiLogin:OnBtnStartClick()
-    
+
     if self.HasNoticeOpen then
         XLog.CustomReport(XEnumConst.CustomReportModuleId.XLogin, string.format("Intercepted by announcement: NoticeOpenIndex = %s", NoticeOpenIndex))
         CS.XLog.Debug("============== Login was stopped on step one ==============")
@@ -689,7 +689,7 @@ function XUiLogin:OnToggleAgree(value)
     self.IsUserAgree = value
     if value then
         CS.UnityEngine.PlayerPrefs.SetInt(KEY_USER_AGREE, 1)
-    else 
+    else
         CS.UnityEngine.PlayerPrefs.SetInt(KEY_USER_AGREE, 0)
     end
     self:TryShowUserAgreeTips()
@@ -788,8 +788,7 @@ function XUiLogin:DoLogin()
             self.BlackMask.color = CS.UnityEngine.Color(0, 0, 0, 0)
             self.BlackMask.gameObject:SetActiveEx(true)
             self.BlackMask:DOFade(1.1, 0.3):OnComplete(function()
-                -- 黑幕转动画完成的时候通知云游戏可以转画面了
-                XDataCenter.CloudGameManager.HotPatchEnterGame()
+
                 local guideFight = XDataCenter.GuideManager.GetNextGuideFight()
                 if guideFight then
                     self:Close()
@@ -815,13 +814,19 @@ function XUiLogin:DoLogin()
                         end
                     end
                 end
+                if XDataCenter.UiPcManager.IsCloudGame() then
+                    XScheduleManager.ScheduleOnce(function ()
+                        -- 黑幕转动画完成的时候通知云游戏可以转画面了
+                        XDataCenter.CloudGameManager.HotPatchEnterGame()
+                    end, 2000)
+                end
             end)
 
             -- 设置月卡信息本地缓存
             -- XDataCenter.PurchaseManager.SetYKLocalCache()
-            -- if XOverseaManager.IsOverSeaRegion() and not XOverseaManager.IsTWRegion() then
-            --     self:OnCheckBindTask() -- 检查绑定任务，可以触发完成任务
-            -- end
+            if XOverseaManager.IsOverSeaRegion() and not XOverseaManager.IsTWRegion() then
+                 self:OnCheckBindTask() -- 检查绑定任务，可以触发完成任务
+            end
         -- end)
 
         XDataCenter.SetManager.SetOwnFontSizeByCache()
@@ -880,7 +885,7 @@ function XUiLogin:OnNoticeResponse()
                 return
             end
         end
-        
+
         self.HasNoticeOpen = false
         self:OnAutoLogin()
     end
@@ -896,7 +901,7 @@ function XUiLogin:OnUiDestroy(uiData)
         -- 不处理，其他窗口关闭的情况
         return
     end
-    
+
     local NoticeUiCount = #NoticeOpenFuncList
     NoticeOpenIndex = NoticeOpenIndex + 1
     for i = NoticeOpenIndex, NoticeUiCount do
@@ -909,7 +914,7 @@ function XUiLogin:OnUiDestroy(uiData)
             return
         end
     end
-   
+
     self.HasNoticeOpen = false
     -- 登录
     self:OnAutoLogin()
@@ -997,7 +1002,7 @@ function XUiLogin:OnBtnLoginNoticeClickPC()
 end
 
 function XUiLogin:OnCheckBindTask()
-    if XUserManager.UserType ~= XHeroSdkManager.UserType.Vistor then
+    if not XHeroSdkManager.IsGuestUserType(XUserManager.UserType) then
         XHeroSdkManager.OnBindTaskFinished()
     elseif XDataCenter.UiPcManager.IsPc() then
         XHeroSdkManager.OnBindTaskFinished()
@@ -1006,15 +1011,15 @@ end
 -- 3.1登录优化 自动登录接口，用SDK的情况下才执行
 function XUiLogin:OnAutoLogin()
     -- 自动登录在整个生命周期只给他触发一次
-    if XDataCenter.UiPcManager.IsCloudGame() then 
+    if XDataCenter.UiPcManager.IsCloudGame() then
         -- 云游戏有自己的自动登录
         return
     end
 
-    if HasAutoLogin then 
-        return 
+    if HasAutoLogin then
+        return
     end
-    if XUserManager.IsUseSdk() then 
+    if XUserManager.IsUseSdk() then
         self:OnBtnStartClick()
         HasAutoLogin = true
     end
@@ -1025,7 +1030,7 @@ function XUiLogin:OnBtnLoginUploadClick()
 end
 
 function XUiLogin:OnAwakeOversea()
-  
+
     if XOverseaManager.IsTWRegion() then
         self.NeedAutoLoginByAF = CS.XRemoteConfig.AFDeepLinkEnabled and not string.IsNilOrEmpty(XHeroSdkManager.GetDeepLinkValue())
     end
@@ -1039,7 +1044,7 @@ function XUiLogin:OnAwakeOversea()
 end
 
 function XUiLogin:AutoAddListenerOversea()
-    
+
     self:RegisterClickEvent(self.BtnMenu, self.OnBtnMenuClick)
 end
 

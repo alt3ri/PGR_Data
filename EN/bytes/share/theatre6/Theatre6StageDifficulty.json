@@ -1,66 +1,137 @@
 [
     {
         "Id": 1,
-        "StageId": 100,
+        "StageId": 100.0,
+        "NewStageIds": null,
         "Name": "Difficulty 1",
-        "Des": "placeholder_\u521d\u59cb5\u70b9\u751f\u673a",
+        "Des": "- Starts with 5 <Icon=IconHp|30|30|0.5/>Vitality.",
         "ConditionId": null,
         "HardNum": 1
     },
     {
         "Id": 2,
-        "StageId": 101,
+        "StageId": 101.0,
+        "NewStageIds": null,
         "Name": "Difficulty 2",
-        "Des": "placeholder_\u521d\u59cb3\u70b9\u751f\u673a\uff1b\\n\u6750\u6599\u83b7\u53d6\u91cf\u63d0\u534720%\\n\u8ff7\u5883\u4e4b\u95f4\u4e2d\u6bcf\u6b21\u5de6\u6ed1<Icon=IconSan|45|45|0.5/>\u7406\u667a-5",
-        "ConditionId": null,
+        "Des": "- Starts with 4 <Icon=IconHp|30|30|0.5/>Vitality.\\n- Loses an additional 2 <Icon=IconSan|30|30|0.5/>Sanity whenever Sanity decreases.\\n- Increases material gained.",
+        "ConditionId": 1021014.0,
         "HardNum": 2
     },
     {
         "Id": 3,
-        "StageId": 102,
+        "StageId": 102.0,
+        "NewStageIds": null,
         "Name": "Difficulty 3",
-        "Des": "placeholder_\u8fd9\u91cc\u662f\u96be\u5ea63",
-        "ConditionId": null,
+        "Des": "- Starts with 3 <Icon=IconHp|30|30|0.5/>Vitality.\\n- Loses an additional 2 <Icon=IconSan|30|30|0.5/>Sanity whenever Sanity decreases.\\n- Enhances <Icon=IconDeSan|30|30|0.5/>Negative Reverbs effects.\\n- Randomly drops Material Growth Echo Resonance I on each floor.",
+        "ConditionId": 1021015.0,
         "HardNum": 3
     },
     {
         "Id": 4,
-        "StageId": 103,
+        "StageId": 103.0,
+        "NewStageIds": "[1030]",
         "Name": "Difficulty 4",
-        "Des": "placeholder_\u8fd9\u91cc\u662f\u96be\u5ea64",
-        "ConditionId": null,
+        "Des": "- Starts with 3 <Icon=IconHp|30|30|0.5/>Vitality\\n- Loses an additional 4 <Icon=IconSan|30|30|0.5/>Sanity whenever Sanity decreases.\\n- Enhances <Icon=IconDeSan|30|30|0.5/>Negative Reverbs effects.\\n- Randomly drops Material Growth Echo Resonance II on each floor.\\n- Increases number of Abyssal Spaces on the last floor.",
+        "ConditionId": 1021016.0,
         "HardNum": 4
     },
     {
+        "Id": 5,
+        "StageId": null,
+        "NewStageIds": "[104]",
+        "Name": "Difficulty 5",
+        "Des": "- Starts with 3 <Icon=IconHp|30|30|0.5/>Vitality\\n- Loses an additional 4 <Icon=IconSan|30|30|0.5/>Sanity whenever Sanity decreases.\\n- Enhances negative <Icon=IconDeSan|30|30|0.5/>Sanity Resonance effects.\\n- Randomly drops Material Growth Echo Resonance II on each floor.\\n- Increases number of Abyssal Spaces on the last floor.",
+        "ConditionId": 1021101.0,
+        "HardNum": 5
+    },
+    {
         "Id": 6,
-        "StageId": 105,
+        "StageId": 105.0,
+        "NewStageIds": null,
         "Name": "Difficulty 1",
-        "Des": "placeholder_\u521d\u59cb5\u70b9\u751f\u673a",
+        "Des": "- Starts with 5 <Icon=IconHp|30|30|0.5/>Vitality.",
         "ConditionId": null,
         "HardNum": 1
     },
     {
         "Id": 7,
-        "StageId": 106,
+        "StageId": 106.0,
+        "NewStageIds": null,
         "Name": "Difficulty 2",
-        "Des": "placeholder_\u521d\u59cb3\u70b9\u751f\u673a\uff1b\\n\u6750\u6599\u83b7\u53d6\u91cf\u63d0\u534720%\\n\u8ff7\u5883\u4e4b\u95f4\u4e2d\u6bcf\u6b21\u5de6\u6ed1<Icon=IconSan|45|45|0.5/>\u7406\u667a-5",
-        "ConditionId": null,
+        "Des": "- Starts with 4 <Icon=IconHp|30|30|0.5/>Vitality.\\n- Loses an additional 2 <Icon=IconSan|30|30|0.5/>Sanity whenever Sanity decreases.\\n- Increases material gained.",
+        "ConditionId": 1021014.0,
         "HardNum": 2
     },
     {
         "Id": 8,
-        "StageId": 107,
+        "StageId": 107.0,
+        "NewStageIds": null,
         "Name": "Difficulty 3",
-        "Des": "placeholder_\u8fd9\u91cc\u662f\u96be\u5ea63",
-        "ConditionId": null,
+        "Des": "- Starts with 3 <Icon=IconHp|30|30|0.5/>Vitality.\\n- Loses an additional 2 <Icon=IconSan|30|30|0.5/>Sanity whenever Sanity decreases.\\n- Enhances <Icon=IconDeSan|30|30|0.5/>Negative Reverbs effects.\\n- Randomly drops Material Growth Echo Resonance I on each floor.",
+        "ConditionId": 1021015.0,
         "HardNum": 3
     },
     {
         "Id": 9,
-        "StageId": 108,
+        "StageId": 108.0,
+        "NewStageIds": "[1080]",
         "Name": "Difficulty 4",
-        "Des": "placeholder_\u8fd9\u91cc\u662f\u96be\u5ea64",
-        "ConditionId": null,
+        "Des": "- Starts with 3 <Icon=IconHp|30|30|0.5/>Vitality\\n- Loses an additional 4 <Icon=IconSan|30|30|0.5/>Sanity whenever Sanity decreases.\\n- Enhances <Icon=IconDeSan|30|30|0.5/>Negative Reverbs effects.\\n- Randomly drops Material Growth Echo Resonance II on each floor.\\n- Increases number of Abyssal Spaces on the last floor.",
+        "ConditionId": 1021016.0,
         "HardNum": 4
+    },
+    {
+        "Id": 10,
+        "StageId": null,
+        "NewStageIds": "[109]",
+        "Name": "Difficulty 5",
+        "Des": "- Starts with 3 <Icon=IconHp|30|30|0.5/>Vitality\\n- Loses an additional 4 <Icon=IconSan|30|30|0.5/>Sanity whenever Sanity decreases.\\n- Enhances negative <Icon=IconDeSan|30|30|0.5/>Sanity Resonance effects.\\n- Randomly drops Material Growth Echo Resonance II on each floor.\\n- Increases number of Abyssal Spaces on the last floor.",
+        "ConditionId": 1021101.0,
+        "HardNum": 5
+    },
+    {
+        "Id": 11,
+        "StageId": null,
+        "NewStageIds": "[110]",
+        "Name": "Difficulty 1",
+        "Des": "- Starts with 5 <Icon=IconHp|30|30|0.5/>Vitality.",
+        "ConditionId": null,
+        "HardNum": 1
+    },
+    {
+        "Id": 12,
+        "StageId": null,
+        "NewStageIds": "[111]",
+        "Name": "Difficulty 2",
+        "Des": "- Starts with 4 <Icon=IconHp|30|30|0.5/>Vitality.\\n- Loses an additional 2 <Icon=IconSan|30|30|0.5/>Sanity whenever Sanity decreases.\\n- Increases material gained.",
+        "ConditionId": 1021014.0,
+        "HardNum": 2
+    },
+    {
+        "Id": 13,
+        "StageId": null,
+        "NewStageIds": "[112]",
+        "Name": "Difficulty 3",
+        "Des": "- Starts with 3 <Icon=IconHp|30|30|0.5/>Vitality.\\n- Loses an additional 2 <Icon=IconSan|30|30|0.5/>Sanity whenever Sanity decreases.\\n- Enhances negative <Icon=IconDeSan|30|30|0.5/>Sanity Resonance effects.\\n- Randomly drops Material Growth Echo Resonance I on each floor",
+        "ConditionId": 1021015.0,
+        "HardNum": 3
+    },
+    {
+        "Id": 14,
+        "StageId": null,
+        "NewStageIds": "[113]",
+        "Name": "Difficulty 4",
+        "Des": "- Starts with 3 <Icon=IconHp|30|30|0.5/>Vitality\\n- Loses an additional 4 <Icon=IconSan|30|30|0.5/>Sanity whenever Sanity decreases.\\n- Enhances negative <Icon=IconDeSan|30|30|0.5/>Sanity Resonance effects.\\n- Randomly drops Material Growth Echo Resonance II on each floor.\\n- Increases number of Abyssal Spaces on the last floor.",
+        "ConditionId": 1021016.0,
+        "HardNum": 4
+    },
+    {
+        "Id": 15,
+        "StageId": null,
+        "NewStageIds": "[114]",
+        "Name": "Difficulty 5",
+        "Des": "- Starts with 3 <Icon=IconHp|30|30|0.5/>Vitality\\n- Loses an additional 4 <Icon=IconSan|30|30|0.5/>Sanity whenever Sanity decreases.\\n- Enhances negative <Icon=IconDeSan|30|30|0.5/>Sanity Resonance effects.\\n- Randomly drops Material Growth Echo Resonance II on each floor.\\n- Increases number of Abyssal Spaces on the last floor.",
+        "ConditionId": 1021101.0,
+        "HardNum": 5
     }
 ]

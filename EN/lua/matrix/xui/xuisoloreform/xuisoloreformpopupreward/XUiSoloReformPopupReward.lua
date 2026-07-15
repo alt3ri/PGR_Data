@@ -82,6 +82,10 @@ function XUiSoloReformPopupReward:OnDynamicTableEvent(event, index, grid)
     end
 end
 
+function XUiSoloReformPopupReward:ChildInvokeClose()
+    self:Close()
+end
+
 function XUiSoloReformPopupReward:OnDestroy()
     self._TaskDatas = nil
     self._TaskReddotId1 = nil

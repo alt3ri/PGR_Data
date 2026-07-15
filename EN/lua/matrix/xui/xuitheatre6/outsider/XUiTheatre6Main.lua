@@ -1,43 +1,70 @@
 local SceneIds = require("XModule/XScene/XScene/XLuaSceneDefine").SceneIds
+local XUiPanelTheatre6PvpEnergy = require("XUi/XUiTheatre6/PVP/Panel/XUiPanelTheatre6PvpEnergy")
 
 --- 肉鸽6玩法主界面
 ---@class XUiTheatre6Main : XLuaUi
 ---@field _Control XTheatre6Control
 local XUiTheatre6Main = XLuaUiManager.Register(XLuaUi, "UiTheatre6Main")
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local MaskKey = "UiTheatre6MainMask"
 
 --region 生命周期
 function XUiTheatre6Main:OnAwake()
     self:InitButtonEvents()
     self:Init3DPanel()
+
+    if self:IsPvpOpen() then
+        self._PvpEnergy = XUiPanelTheatre6PvpEnergy.New(self.PanelPVPEnergy, self)
+        self._Control:RequestPvpGetActionPoint()
+    else
+        self.PanelPVPEnergy.gameObject:SetActiveEx(false)
+    end
+
     self._RewardDuration = self._Control:GetIntClientConfigValue("RewardDuration")
+    self._FirstEnterGuideId = self._Control:GetIntClientConfigValue("FirstEnterGuideId")
 end
 
 function XUiTheatre6Main:OnStart()
     self.RewardRedPoint = self:AddRedPointEvent(self.BtnStory, self.NewStoryRedPoint, self, { XRedPointConditions.Types.CONDITION_THEATRE6_NEW_STORY }, nil, true)
     self.TaskRewardRedPoint = self:AddRedPointEvent(self.BtnReward, self.OnTaskRewardRedPoint, self, { XRedPointConditions.Types.CONDITION_THEATRE6_REWARD }, nil, true)
-    self:TryPlayPv(function()
-        self:Refresh()
-        self:TryShowUpdatePopup()
-    end)
+    self:CheckTaskLimitTimeEnd()
 end
 
 function XUiTheatre6Main:OnEnable()
+    CS.XInputManager.SetCurInputMap(CS.XInputMapId.System)
+    self:CheckSceneEnable()
     self:Refresh()
     self:RefreshCommon()
     self:RefreshShowItems()
-    XMVCA.XTheatre6:StopSanAudio()
     XEventManager.AddEventListener(XEventId.EVENT_THEATRE6_MODE_END, self.Refresh, self)
     XMVCA.XFunction:EnterFunction(XFunctionManager.FunctionName.Theatre6)
     self._Scene:UpdateRogueModel(true)
+    -- 放到 OnEnable 末尾,让 InputMap 切换链条按 System -> Video -> System 顺序串起来,
+    -- 避免 OnStart 阶段 Video 比 OnEnable 的 SetCurInputMap(System) 更晚,导致 BeforeInputMapID 被污染
+    if not self._PvTried then
+        self._PvTried = true
+        self:TryPlayPv(function()
+            self:PlayAnimation("AnimStart1", function()
+                self:TryShowUpdatePopup()
+            end, nil, nil, true)
+            self:Refresh()
+            self:CheckPlayGuide()
+        end)
+    else
+        self:TryShowUpdatePopup()
+    end
 end
 
 function XUiTheatre6Main:OnDisable()
-    self._Scene:StopCommonCamAnim()
+    if XLuaUiManager.IsMaskShow(MaskKey) then
+        XLuaUiManager.SetMask(false, MaskKey)
+    end
+    self:CheckSceneDisable()
     XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE6_MODE_END, self.Refresh, self)
 end
 
 function XUiTheatre6Main:OnDestroy()
+    self:StopTaskLimitTimer()
     XMVCA.XScene:ExitScene(SceneIds.XTheatre6Scene)
 end
 
@@ -55,10 +82,27 @@ end
 --endregion
 
 function XUiTheatre6Main:Init3DPanel()
-    XMVCA.XScene:LoadScene(SceneIds.XTheatre6Scene, false, function()
-        ---@type XTheatre6Scene
-        self._Scene = XMVCA.XScene:GetScene(SceneIds.XTheatre6Scene)
-    end)
+    self._Scene = XMVCA.XScene:GetScene(SceneIds.XTheatre6Scene)
+    if not self._Scene then
+        XMVCA.XScene:LoadScene(SceneIds.XTheatre6Scene, false, function()
+            ---@type XTheatre6Scene
+            self._Scene = XMVCA.XScene:GetScene(SceneIds.XTheatre6Scene)
+        end)
+    end
+    local timerId = self._Scene:PlayEnterCamAnim()
+    self:_AddTimerId(timerId)
+end
+
+function XUiTheatre6Main:CheckSceneEnable()
+    self._Scene:ShowScene()
+    self._IsEnterChooseCharacter = false
+end
+
+function XUiTheatre6Main:CheckSceneDisable()
+    self._Scene:StopCommonCamAnim()
+    if not self._IsEnterChooseCharacter then
+        self._Scene:HideScene()
+    end
 end
 
 --region 刷新
@@ -67,6 +111,7 @@ function XUiTheatre6Main:Refresh()
     self:RefreshBtnStory()
     self:RefreshBtnPlay()
     self:RefreshBtnPvp()
+    self:RefreshPvpEnergy()
 end
 
 function XUiTheatre6Main:RefreshShowItems()
@@ -95,9 +140,42 @@ end
 
 ---首轮共通线关卡完成前隐藏玩法模式和PVP按钮
 function XUiTheatre6Main:RefreshFirstPlayState()
-    local isVisible = self._Control:CheckOpenGamePlayModeCond()
-    self.BtnPlay.gameObject:SetActiveEx(isVisible)
-    self.BtnPvp.gameObject:SetActiveEx(isVisible)
+    local isOpen = self._Control:CheckOpenGamePlayModeCond()
+    self.BtnPlay.gameObject:SetActiveEx(isOpen)
+    self.BtnPvp.gameObject:SetActiveEx(isOpen)
+    self.BtnNew.gameObject:SetActiveEx(isOpen and self._Control:CheckHasNewContent())
+    --动效（只在从局内直接回到玩法主界面时播放）
+    if self._IsPlayModeOpen == false and isOpen then
+        local anim = self.BtnPlay.transform:FindTransform("UnLockEnable")
+        if not XTool.UObjIsNil(anim) then
+            self.BtnPlay:SetButtonState(XUiButtonState.Disable)
+            anim:PlayTimelineAnimation(function()
+                self.BtnPlay:SetButtonState(XUiButtonState.Normal)
+            end)
+        end
+    end
+    self._IsPlayModeOpen = isOpen
+end
+
+function XUiTheatre6Main:RefreshPvpEnergy()
+    if not self._PvpEnergy then
+        --- 要请求下模块开启 服务端才会推体力数据
+        if self:IsPvpOpen() then
+            self._PvpEnergy = XUiPanelTheatre6PvpEnergy.New(self.PanelPVPEnergy, self)
+        else
+            return
+        end
+    end
+
+    local isOpen = self._Control:CheckOpenGamePlayModeCond()
+    local isLocked = self._Control:CheckPvpModeUnlock()
+
+    if isOpen and isLocked then
+        self._PvpEnergy:Open()
+        self._PvpEnergy:Refresh()
+    else
+        self._PvpEnergy:Close()
+    end
 end
 
 function XUiTheatre6Main:RefreshBtnStory()
@@ -108,12 +186,12 @@ end
 function XUiTheatre6Main:RefreshBtnPlay()
     local hasPlayProgress = self._Control:CheckHasPlayProgress()
     self.BtnPlayAbandon.gameObject:SetActiveEx(hasPlayProgress)
+    self.BtnPlay:ShowReddot(self._Control:CheckHasNewCharacter())
 end
 
 function XUiTheatre6Main:RefreshBtnPvp()
-    local isLocked = false
-    local state = isLocked and XUiButtonState.Disable or XUiButtonState.Normal
-    self.BtnPvp:SetButtonState(state)
+    local isLocked = self._Control:CheckPvpModeUnlock()
+    self.BtnPvp:SetDisable(not isLocked)
 end
 
 function XUiTheatre6Main:NewStoryRedPoint(result)
@@ -136,6 +214,7 @@ function XUiTheatre6Main:InitButtonEvents()
     self.BtnPvp:AddEventListener(handler(self, self.OnBtnPvpClick))
     self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
     self.BtnMainUi:AddEventListener(handler(self, self.OnBtnMainClick))
+    self.BtnNew:AddEventListener(handler(self, self.OnBtnNewClick))
     self:BindHelpBtn(self.BtnHelp, "Theatre6MainHelp")
 end
 
@@ -149,9 +228,13 @@ function XUiTheatre6Main:OnBtnMainClick()
     XLuaUiManager.RunMain()
 end
 
+function XUiTheatre6Main:OnBtnNewClick()
+    self._Control:ShowUpdatePopup()
+end
+
 function XUiTheatre6Main:OnBtnReplayClick()
     local videoId = self._Control:GetPvVideoId()
-    XLuaVideoManager.PlayUiVideo(videoId,nil,true,true)
+    XLuaVideoManager.PlayUiVideo(videoId, nil, true, true)
 end
 
 function XUiTheatre6Main:OnBtnRewardClick()
@@ -162,12 +245,19 @@ function XUiTheatre6Main:OnBtnStoryClick()
     self._CurGuideId = nil
     self._CurCommonGuideId = nil
 
+    self._Control:SaveLastViewStoryTime()
+    self.BtnStory:ShowReddot(false)
+
     if self:CheckReEnterSettlement(XEnumConst.Theatre6.PlayMode.Story) then
         return
     end
 
     if self._Control:CheckHasStoryProgress() then
         self:ContinueStoryGame()
+        return
+    end
+
+    if not self:CheckStoryClickCond() then
         return
     end
 
@@ -195,13 +285,27 @@ function XUiTheatre6Main:OnBtnStoryClick()
         return
     end
 
-    self._Control:SaveLastViewStoryTime()
-    self.BtnStory:ShowReddot(false)
     self:EnterStoryMode()
+end
+
+function XUiTheatre6Main:CheckStoryClickCond()
+    if not self._CurStoryLine then
+        return true --全部通关
+    end
+    local conditionId = self._CurStoryLine.ConditionId
+    if XTool.IsNumberValid(conditionId) then
+        local isUnlock, desc = XConditionManager.CheckCondition(conditionId)
+        if not isUnlock then
+            self._Control:ShowTip(desc)
+            return false
+        end
+    end
+    return true
 end
 
 function XUiTheatre6Main:RefreshCommon()
     self._CommonIdx = nil
+    self._CurStoryLine = nil
     local storyLineIds = self._Control:GetCommonStoryLineIds()
     for _, storyLineId in ipairs(storyLineIds) do
         local storyLineConfig = self._Control:GetStoryLineConfig(storyLineId)
@@ -211,7 +315,7 @@ function XUiTheatre6Main:RefreshCommon()
         for i = 1, #storyLineConfig.StageIds do
             if not self._Control:IsStagePass(storyLineId, i) then
                 isPass = false
-                if not self._CommonIdx and isUnlock then
+                if not self._CommonIdx then
                     self._CommonIdx = i
                     self._CurStoryLine = storyLineConfig
                 end
@@ -282,10 +386,10 @@ function XUiTheatre6Main:OnBtnStoryAbandonClick()
 end
 
 function XUiTheatre6Main:AbandonStoryProgress()
-     self._Control:RequestEndGame(XEnumConst.Theatre6.PlayMode.Story, function(res)
-         self:Refresh()
-         XLuaUiManager.Open("UiTheatre6Settlement", res.SettleData, XEnumConst.Theatre6.PlayMode.Story)
-     end)
+    self._Control:RequestEndGame(XEnumConst.Theatre6.PlayMode.Story, function(res)
+        self:Refresh()
+        XLuaUiManager.Open("UiTheatre6Settlement", res.SettleData, XEnumConst.Theatre6.PlayMode.Story)
+    end)
 end
 
 function XUiTheatre6Main:OnBtnPlayClick()
@@ -310,9 +414,12 @@ end
 function XUiTheatre6Main:EnterChooseCharacter(mode)
     local index = self._Control:GetModeSelectRoleIndex(mode)
     self._Scene:SetModelSelect(index)
-    
+
+    XLuaUiManager.SetMask(true, MaskKey)
     local duration = self._Control:GetIntClientConfigValue("UiCameraDuration", index)
     local timerId = XScheduleManager.ScheduleOnce(function()
+        self._IsEnterChooseCharacter = true
+        XLuaUiManager.SetMask(false, MaskKey)
         XLuaUiManager.Open("UiTheatre6ChooseCharacter", mode)
     end, duration)
     self:_AddTimerId(timerId)
@@ -334,10 +441,51 @@ function XUiTheatre6Main:AbandonPlayProgress()
     end)
 end
 
+function XUiTheatre6Main:IsPvpOpen(isShowTip)
+    if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.Theatre6Pvp, true, not isShowTip) then
+        return false
+    end
+
+    local isUnlock, desc = self._Control:CheckPvpModeUnlock()
+
+    if not isUnlock then
+        if isShowTip then
+            self._Control:ShowTip(desc)
+        end
+
+        return false
+    end
+
+    return true
+end
+
 function XUiTheatre6Main:OnBtnPvpClick()
-    local title = XUiHelper.GetText("BtnPvpTipTitle")
-    local content = XUiHelper.ReplaceTextNewLine(XUiHelper.GetText("BtnPvpTip"))
-    self._Control:OpenPopupCommonWithoutButton(title, content)
+    if not self:IsPvpOpen(true) then
+        return
+    end
+
+    self._Control:RequestPvpStart(function()
+        if self._Control:IsPvpInTinyBattle() then
+            self._Control:RequestPvpRestartFight(function(fightResult)
+                if fightResult then
+                    XMVCA.XTheatre6.Battle:OpenPvpSettlement(fightResult)
+                else
+                    XLuaUiManager.Open("UiTheatre6PVPLoading", XEnumConst.Theatre6.Pvp.LineupMode.Attack, true)
+                end
+            end)
+        else
+            local remainCd = self._Control:GetPvpRefreshMatchRemainCd()
+            if remainCd < 0 then
+                self._Control:RequestPvpRefreshMatch(handler(self, self.OpenPvpMain))
+            else
+                self:OpenPvpMain()
+            end
+        end
+    end)
+end
+
+function XUiTheatre6Main:OpenPvpMain()
+    XLuaUiManager.Open("UiTheatre6PVPMain")
 end
 --endregion
 
@@ -382,7 +530,10 @@ function XUiTheatre6Main:OnStoryGuideEnd()
     local storyId = self._Control:GetStoryDetailConfig(avgId).StoryId
 
     self._Control:RequestStoryModeGuideFinished(avgId, function()
-        XDataCenter.MovieManager.PlayMovie(storyId)
+        self._Scene:HideScene()
+        XDataCenter.MovieManager.PlayMovie(storyId, function()
+            self._Scene:ShowScene()
+        end, nil, nil, false)
     end)
 end
 
@@ -391,17 +542,78 @@ function XUiTheatre6Main:OnCommonGuidePlayEnd()
     local timerId = self._Scene:PlayCommonCamAnim(self._CommonIdx, function()
         self:ReqEnterCommon()
     end)
-    
+
     if timerId then
         self:_AddTimerId(timerId)
     end
-    
+
     self._CurCommonGuideId = nil
     self._CommonIdx = nil
 end
 
 function XUiTheatre6Main:ReqEnterCommon()
     self._Control:RequestEnterStoryLine(self._CurStoryLine.Id)
+end
+
+function XUiTheatre6Main:CheckPlayGuide()
+    if not XTool.IsNumberValid(self._FirstEnterGuideId) then
+        return
+    end
+    if XDataCenter.GuideManager.CheckIsGuide(self._FirstEnterGuideId) then
+        return
+    end
+    XDataCenter.GuideManager.PlayGuide(self._FirstEnterGuideId)
+end
+
+function XUiTheatre6Main:CheckTaskLimitTimeEnd()
+    if not self.TaskRewardRedPoint then
+        return
+    end
+
+    local configs = XMVCA.XTheatre6:GetValidShopOrTaskList(XEnumConst.Theatre6.TaskShopType.Task)
+    if XTool.IsTableEmpty(configs) then
+        return
+    end
+
+    if not self._TaskLimitEndTimes then
+        self._TaskLimitEndTimes = {}
+        for _, config in ipairs(configs) do
+            if not XTool.IsNumberValid(config.TaskTimeLimitId) then
+                goto continue
+            end
+            local taskTimeLimitCfg = XTaskConfig.GetTimeLimitTaskCfg(config.TaskTimeLimitId)
+            local timeId = taskTimeLimitCfg.TimeId
+            if not XTool.IsNumberValid(timeId) or not XFunctionManager.CheckInTimeByTimeId(timeId) then
+                goto continue
+            end
+            local endTime = XFunctionManager.GetEndTimeByTimeId(timeId)
+            if not table.contains(self._TaskLimitEndTimes, endTime) then
+                table.insert(self._TaskLimitEndTimes, endTime)
+            end
+            :: continue ::
+        end
+        table.sort(self._TaskLimitEndTimes)
+    end
+
+    self:StopTaskLimitTimer()
+
+    if XTool.IsTableEmpty(self._TaskLimitEndTimes) then
+        return
+    end
+
+    local endTime = table.remove(self._TaskLimitEndTimes, 1)
+    local leftTime = math.max(0, endTime - XTime.GetServerNowTimestamp()) * 1000
+    self._TaskLimitTimerId = XScheduleManager.ScheduleOnce(function()
+        XRedPointManager.Check(self.TaskRewardRedPoint)
+        self:CheckTaskLimitTimeEnd()
+    end, leftTime)
+end
+
+function XUiTheatre6Main:StopTaskLimitTimer()
+    if self._TaskLimitTimerId then
+        XScheduleManager.UnSchedule(self._TaskLimitTimerId)
+        self._TaskLimitTimerId = nil
+    end
 end
 
 return XUiTheatre6Main

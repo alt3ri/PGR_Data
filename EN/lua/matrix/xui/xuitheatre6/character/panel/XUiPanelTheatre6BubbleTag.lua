@@ -53,6 +53,7 @@ function XUiPanelTheatre6BubbleTag:ShowGrid(grid, config)
     local isExistIcon = not string.IsNilOrEmpty(config.Icon)
     grid.ImgIcon.gameObject:SetActiveEx(isExistIcon)
     grid.UiTxtName.text = config.Name
+    grid.UiTxtDesc.requestImage = XMVCA.XTheatre6.RichTextImageCallBack
     grid.UiTxtDesc.text = config.Desc
     if isExistIcon then
         grid.ImgIcon:SetSprite(config.Icon)
@@ -63,6 +64,7 @@ end
 function XUiPanelTheatre6BubbleTag:ShowKeyWordGrid(grid, kwCfg)
     grid.ImgIcon.gameObject:SetActiveEx(false)
     grid.UiTxtName.text = kwCfg.Name
+    grid.UiTxtDesc.requestImage = XMVCA.XTheatre6.RichTextImageCallBack
     grid.UiTxtDesc.text = kwCfg.Des
 end
 

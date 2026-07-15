@@ -61,8 +61,8 @@ end
 
 pcall(function()
     ---@class LuaProfiler
-    ---@field BeginSampleCustom fun(name:string):void
-    ---@field EndSampleCustom fun():void
+    ---@field BeginSampleCSharp fun(name:string):void
+    ---@field EndSampleCSharp fun():void
     LuaProfiler = CS.MikuLuaProfiler.LuaProfiler
 end)
 

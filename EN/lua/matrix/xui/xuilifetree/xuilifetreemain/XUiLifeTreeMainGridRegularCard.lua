@@ -36,8 +36,12 @@ function XUiLifeTreeMainGridRegularCard:Refresh()
     local isOffline = state == XMVCA.XLifeTree.EnumConst.CHARACTER_STATE.OFFLINE
     self.ImgOffline.gameObject:SetActiveEx(isOffline)
     self.ImgRegular.gameObject:SetActiveEx(not isOffline)
-    
+
     self:UpdatePosition()
+end
+
+function XUiLifeTreeMainGridRegularCard:PlayQiehuanAnimation()
+    self:PlayAnimation("Qiehuan")
 end
 
 return XUiLifeTreeMainGridRegularCard

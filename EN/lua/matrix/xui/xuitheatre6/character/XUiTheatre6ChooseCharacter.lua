@@ -63,7 +63,7 @@ end
 function XUiTheatre6ChooseCharacter:InitComponents()
     self:BindHelpBtn(self.BtnHelp, "UiTheatre6ChooseCharacterHelpKey")
     XUiHelper.NewPanelTopControl(self, self.TopControlWhite)
-    XUiHelper.NewPanelActivityAssetSafe({ self._ConsumeId }, self.PanelSpecialTool, self, nil, function(_, _)
+    self._Asset = XUiHelper.NewPanelActivityAssetSafe({ self._ConsumeId }, self.PanelSpecialTool, self, nil, function(_, _)
         XLuaUiManager.Open("UiTheatre6PopupRewardDetail", self._ConsumeId)
     end)
 end
@@ -71,6 +71,12 @@ end
 function XUiTheatre6ChooseCharacter:Init3DPanel()
     ---@type XTheatre6Scene
     self._Scene = XMVCA.XScene:GetScene(SceneIds.XTheatre6Scene)
+    if not self._Scene then
+        XMVCA.XScene:LoadScene(SceneIds.XTheatre6Scene, false, function()
+            ---@type XTheatre6Scene
+            self._Scene = XMVCA.XScene:GetScene(SceneIds.XTheatre6Scene)
+        end)
+    end
 end
 
 function XUiTheatre6ChooseCharacter:OnStart(playMode)
@@ -80,12 +86,16 @@ function XUiTheatre6ChooseCharacter:OnStart(playMode)
 end
 
 function XUiTheatre6ChooseCharacter:OnEnable()
+    self._JumpToArchiveStory = false
+    self._Scene:ShowScene()
+    self.CharacterGroup:SelectIndex(self._Control:GetModeSelectRoleIndex(self._PlayMode, self._RoleConfigs))
     self:UpdateBuyFashion()
     XDataCenter.ItemManager.AddCountUpdateListener({ self._ConsumeId, self._TalentCoinId }, handler(self, self.OnItemCountUpdate), self.Transform)
     XEventManager.AddEventListener(XEventId.EVENT_THEATRE6_TALENT_LEVEL_CHANGE, self.UpdateTalent, self)
 end
 
 function XUiTheatre6ChooseCharacter:OnDisable()
+    self._Scene:ClearSelectIndex()
     XDataCenter.ItemManager.RemoveCountUpdateListener(self.Transform)
     XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE6_TALENT_LEVEL_CHANGE, self.UpdateTalent, self)
 end
@@ -93,6 +103,12 @@ end
 function XUiTheatre6ChooseCharacter:OnDestroy()
     self._Scene:DestroyHuanRenFx()
     self._Scene:BackToMain()
+    self._Scene.CurSelectIndex = self._CurRoleIndex --为了回到主界面时NoChoose动画
+    --从剧情回顾出去看pv再回来 这时UiTheatre6Main已经没了 再次从剧情回顾出去看pv时 就没法通过 UiTheatre6Main的OnDestroy来销毁场景了
+    --PS：另一个方法是XLuaScene里不要引用Control，在Control的OnRelease里自动销毁XLuaScene
+    if self._JumpToArchiveStory then
+        XMVCA.XScene:ExitScene(SceneIds.XTheatre6Scene)
+    end
 end
 
 function XUiTheatre6ChooseCharacter:InitCommon()
@@ -120,6 +136,7 @@ function XUiTheatre6ChooseCharacter:InitCommon()
     end)
     
     local unlockIndexDict = {}
+    local showTagIds = self._Control:GetNewCharacterShowTagMap()
 
     ---@type XUiComponent.XUiButton[]
     self._RoleTabs = {}
@@ -138,6 +155,7 @@ function XUiTheatre6ChooseCharacter:InitCommon()
         grid.GridCharacter:SetRawImage(self:GetHeadIcon(fashionId))
         grid.Disable.gameObject:SetActiveEx(not isUnlock)
         grid.GridCharacter:SetDisable(not isUnlock, isUnlock)
+        grid.GridCharacter:ShowTag(isUnlock and showTagIds[config.Id])
         table.insert(self._RoleTabs, grid.GridCharacter)
         unlockIndexDict[i] = isUnlock
     end
@@ -149,9 +167,9 @@ function XUiTheatre6ChooseCharacter:InitCommon()
             return
         end
         self:UpdateRole(i)
+        self:UpdateNewTag(i)
         self:UpdateDetail()
     end)
-    self.CharacterGroup:SelectIndex(self._Control:GetModeSelectRoleIndex(self._PlayMode, self._RoleConfigs))
     if isGamePlay then
         self._Scene:UpdateCustomRogueModel()
     else
@@ -170,8 +188,25 @@ function XUiTheatre6ChooseCharacter:UpdateRole(index)
     self._Scene:SetChangeByRoleBtn(index)
 end
 
+function XUiTheatre6ChooseCharacter:UpdateNewTag(index)
+    if self._IsInited then
+        local tab = self._RoleTabs[index]
+        local config = self._RoleConfigs[index]
+
+        if tab then
+            tab:ShowTag(false)
+        end
+        if config then
+            self._Control:AddNewCharacterShowTag(config.Id)
+        end
+    end
+
+    self._IsInited = true
+end
+
 function XUiTheatre6ChooseCharacter:UpdateFashionId()
     self._CurFashionId = self:ApplyStatus(FuncName.GetFashionId, self._CurRole)
+    self:UpdateBuyFashion()
 end
 
 function XUiTheatre6ChooseCharacter:UpdateBuyFashion()
@@ -201,6 +236,7 @@ function XUiTheatre6ChooseCharacter:InitStory()
 end
 
 function XUiTheatre6ChooseCharacter:InitGamePlay()
+    self._Asset:Close()
     self:UpdateTalent()
 end
 
@@ -210,6 +246,7 @@ function XUiTheatre6ChooseCharacter:UpdateTalent()
     local cur, total = self._Control:GetTalentProgress()
     self.BtnTalent:SetNameByGroup(0, XUiHelper.GetText("Theatre6TalentLvRichText", level))
     self.BtnTalent:SetNameByGroup(1, level >= maxLevel and "MAX" or string.format("%s/%s", cur, total))
+    self.UiImgBar.fillAmount = level >= maxLevel and 1 or cur / total
 end
 
 ---@param config XTableTheatre6Character
@@ -235,7 +272,10 @@ end
 function XUiTheatre6ChooseCharacter:UpdateDetailOnPlayMode()
     local tagBuffIds = self._CurRole.TagBuffIds
     local useBuffId = self._TagBuffUseDict[self._RoleId]
-    local selectIndex = self._TagBuffChooseDict[self._RoleId]
+    local selectIndex = self._TagBuffChooseDict[self._RoleId] or self._Control:GetBuffChooseIndex(self._PlayMode, self._RoleId)
+    if selectIndex and not useBuffId then
+        useBuffId = tagBuffIds[selectIndex]
+    end
 
     self._TagBuffGrids = {}
     XUiHelper.RefreshCustomizedList(self.GridBuff.transform.parent, self.GridBuff.transform, #tagBuffIds, function(i, go)
@@ -283,10 +323,9 @@ function XUiTheatre6ChooseCharacter:UpdateBattleOnStory()
     self._CurStoryStageIndex = self._Control:GetPlayStoryStageIndex(self._RoleId)
 
     self.BtnCost.gameObject:SetActiveEx(false)
-    self.BtnStartStory.gameObject:SetActiveEx(false)
     self.TxtCharacterLockBg.gameObject:SetActiveEx(false)
 
-    self.BtnStartStory.gameObject:SetActiveEx(true)
+    self.BtnStartStory.gameObject:SetActiveEx(not self._Control:IsAllStoryPass(self._RoleId))
     self.BtnStartStory:SetButtonState(XUiButtonState.Normal)
 
     local status = self._Control:GetStoryLineStatus(self._RoleId, self._CurStoryStageIndex)
@@ -335,7 +374,10 @@ function XUiTheatre6ChooseCharacter:OnBtnStoryReviewClick()
     if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.Archive) then
         return
     end
-    XLuaUiManager.Open("UiArchiveStory", self._JumpGroupId)
+    self._Scene:HideScene()
+    XLuaUiManager.OpenWithCallback("UiArchiveStory", function()
+        self._JumpToArchiveStory = true
+    end, self._JumpGroupId)
 end
 
 ---存档
@@ -345,8 +387,14 @@ end
 
 ---涂装购买
 function XUiTheatre6ChooseCharacter:OnBtnBuyClick()
+    local dict = {}
+    dict.role_id = self._RoleId
+    dict.fashion_id = self._CurFashionId
+    CS.XRecord.Record(dict, "1000043", "Theatre6FashionSkip")
+
     local skipId = self._Control:GetFashionConfig(self._CurFashionId).SkipId
     XFunctionManager.SkipInterface(skipId, "UiTheatre6ChooseCharacter")
+    self._Scene:HideScene()
 end
 
 ---切换涂装（仅针对当前选中的角色）
@@ -381,6 +429,7 @@ function XUiTheatre6ChooseCharacter:OnBtnStartStoryClick()
     end
     local replayStageId = self._Control:IsAllStoryPass(self._RoleId) and self._StoryLineStageId or nil
     self._Control:RequestEnterStoryLine(self._StoryLineId, replayStageId, function()
+        self._Scene:HideScene()
         self:Close()
     end)
 end
@@ -393,11 +442,13 @@ function XUiTheatre6ChooseCharacter:OnBtnFightClick()
     params.FashionId = self._CurFashionId
     params.InitBuffId = self._TagBuffUseDict[self._RoleId]
     XLuaUiManager.Open("UiTheatre6ChooseDifficulty", params)
+    self._Scene:HideScene()
 end
 
 ---玩法模式选择初始Buff
 function XUiTheatre6ChooseCharacter:OnBuffDetailClick(buffId)
     self._TagBuffUseDict[self._RoleId] = buffId
+    self._Control:SaveBuffChooseIndex(self._PlayMode, self._RoleId, table.indexof(self._CurRole.TagBuffIds, buffId))
     self:ApplyStatus(FuncName.UpdateDetail)
 end
 

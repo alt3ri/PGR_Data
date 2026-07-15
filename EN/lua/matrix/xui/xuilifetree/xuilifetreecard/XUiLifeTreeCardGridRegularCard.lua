@@ -56,7 +56,7 @@ function XUiLifeTreeCardGridRegularCard:Refresh()
     elseif isUnlocked then
         self.ImgUnlocked.gameObject:SetActiveEx(true)
         local catalogConfig = self._Control:GetLifeTreeCharacterCatalogConfigById(self.CatalogId)
-        local icon = XMVCA.XCharacter:GetCharSmallHeadIcon(catalogConfig.CharacterId)
+        local icon = XMVCA.XCharacter:GetCharRoundnessHeadIcon(catalogConfig.CharacterId)
         self.RawImgCard:SetRawImage(icon)
         self.TxtName.text = catalogConfig.Name
         self.TxtDesc.text = catalogConfig.Descs[1]
@@ -87,8 +87,9 @@ end
 
 -- 解锁成功回调
 function XUiLifeTreeCardGridRegularCard:OnCharacterUnlock(unlockIndex)
-    self:PlayAnimation("AnimUnlock")
+    self:PlayAnimationWithMask("AnimUnlock")
     self:Refresh()
+    self.Parent:RefreshBtnTask()
 end
 
 return XUiLifeTreeCardGridRegularCard

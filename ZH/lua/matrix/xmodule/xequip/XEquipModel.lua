@@ -3198,12 +3198,16 @@ end
 
 
 ---------------------------------------- #region EquipAnimReset -----------------------------------------
--- 缓存装备动画是否重置
+-- 缓存装备动画是否重置/是否立刻过渡
 function XEquipModel:InitEquipAnimResetConfig()
     self.EquipAnimResetDic = {}
+    self.EquipAnimImmediateTransition = {}
     local animResetCfgs = self:GetConfigEquipAnimReset()
     for _, v in pairs(animResetCfgs) do
         self.EquipAnimResetDic[v.CharacterModel] = true
+        if XTool.IsNumberValid(v.IsImmediateTransition) then
+            self.EquipAnimImmediateTransition[v.CharacterModel] = v.IsImmediateTransition == 1
+        end
     end
 end
 
@@ -3222,6 +3226,14 @@ end
 
 function XEquipModel:GetEquipAnimIsReset(modelId)
     return self.EquipAnimResetDic[modelId] or false
+end
+
+-- 因角色和特效的Animation的时间不同步，在XPlayRoleAnimation里进行了补帧处理。
+-- 武器动画在SetBool("UiActionBegin", true)后，会在下一帧才开始播放。
+-- 本来下一帧播放是正确了，但是角色进行了补帧，导致了武器动画和角色动画不同步。
+-- 这里通过配置表来控制是否立刻过渡。来解决武器动画和角色动画不同步的问题。
+function XEquipModel:GetEquipAnimIsImmediateTransition(modelId)
+    return self.EquipAnimImmediateTransition[modelId] or false
 end
 ---------------------------------------- #endregion EquipAnimReset ----------------------------------------
 

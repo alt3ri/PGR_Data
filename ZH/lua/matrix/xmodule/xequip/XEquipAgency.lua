@@ -2521,6 +2521,10 @@ end
 function XEquipAgency:GetEquipAnimIsReset(modelId)
     return self._Model:GetEquipAnimIsReset(modelId)
 end
+
+function XEquipAgency:GetEquipAnimIsImmediateTransition(modelId)
+    return self._Model:GetEquipAnimIsImmediateTransition(modelId)
+end
 ---------------------------------------- #endregion EquipAnimReset ----------------------------------------
 
 

@@ -6,6 +6,7 @@ local XDlcRelinkWorldFight = require("XModule/XDlcRelink/XEntity/XDlcRelinkWorld
 local XDlcRelinkAgency = XClass(XDlcActivityAgency, "XDlcRelinkAgency")
 function XDlcRelinkAgency:OnInit()
     --初始化一些变量
+    self._IsWorldLaunched = false
     self:DlcRegisterActivity()
 end
 
@@ -540,6 +541,26 @@ function XDlcRelinkAgency:IsShowNetworkSwitchTip(isShow)
     local isWifi = CS.XNetworkReachability.IsViaLocalArea()
     local needPopTip = not isWifi and self._Model:CheckNeedPopWifiTips()
     return isShow == needPopTip
+end
+
+--endregion
+
+--region 其他
+
+function XDlcRelinkAgency:InitWorld()
+    if self._IsWorldLaunched then
+        return
+    end
+    self._IsWorldLaunched = true
+    CS.XWorldEngine.Launch()
+end
+
+function XDlcRelinkAgency:DisposeWorld()
+    if not self._IsWorldLaunched then
+        return
+    end
+    self._IsWorldLaunched = false
+    CS.XWorldEngine.Exit()
 end
 
 --endregion

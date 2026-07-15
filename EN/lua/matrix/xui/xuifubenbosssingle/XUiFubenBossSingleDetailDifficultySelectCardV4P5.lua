@@ -9,7 +9,9 @@ local XUiFubenBossSingleDetailDifficultySelectCardV4P5 =
 function XUiFubenBossSingleDetailDifficultySelectCardV4P5:OnStart(
     stageInfo,
     bossConf,
-    onClickCallback)
+    onClickCallback,
+    playSmallAnimation,
+    playBigAnimation)
 
     self.TxtDifficulty.text = stageInfo.DifficultyDesc
     self.GameObject:GetComponent("XUiButton").CallBack = onClickCallback
@@ -67,6 +69,14 @@ function XUiFubenBossSingleDetailDifficultySelectCardV4P5:OnStart(
     if self.ContentGridBuffs then
         self:_RefreshBuffs(bossConf)
     end
+
+    if playSmallAnimation then
+        self:PlayAnimation("Small")
+    end
+
+    if playBigAnimation then
+        self:PlayAnimation("Big")
+    end
 end
 
 function XUiFubenBossSingleDetailDifficultySelectCardV4P5:_RefreshBuffs(bossConf)
@@ -77,10 +87,10 @@ function XUiFubenBossSingleDetailDifficultySelectCardV4P5:_RefreshBuffs(bossConf
             local feature = XMVCA.XFuben:GetFeaturesById(featureId)
 
             table.insert(gridBuffsArgs, {
-                feature.Name,
-                feature.Icon,
-                feature.Desc,
-                feature.TriangleBg
+                BuffName = feature.Name,
+                Icon = feature.Icon,
+                Desc = feature.Desc,
+                TriangleBg = feature.TriangleBg
             })
         end
     end
@@ -90,10 +100,10 @@ function XUiFubenBossSingleDetailDifficultySelectCardV4P5:_RefreshBuffs(bossConf
             local buff = XFubenBabelTowerConfigs.GetBabelBuffConfigs(buffId)
 
             table.insert(gridBuffsArgs, {
-                buff.Name,
-                buff.BuffBg,
-                buff.Desc,
-                buff.BuffTriangleBg
+                BuffName = buff.Name,
+                Icon = buff.BuffBg,
+                Desc = buff.Desc,
+                TriangleBg = buff.BuffTriangleBg
             })
         end
     end

@@ -17,7 +17,8 @@ function XUiPanelTheatre6SettlementSave:OnStart(mode)
 end
 
 function XUiPanelTheatre6SettlementSave:OnEnable()
-    self._PanelRoleDetail = require("XUi/XUiTheatre6/Character/Panel/XUiPanelTheatre6CharacterAttrDetail").New(self.UiTheatre6PanelRoleDetail, self, self.Parent.SettleData and self.Parent.SettleData.FileData, self._Mode)
+    self._PanelRoleDetail = require("XUi/XUiTheatre6/Character/Panel/XUiPanelTheatre6CharacterAttrDetail").New(
+        self.UiTheatre6PanelRoleDetail, self, self.Parent.SettleData and self.Parent.SettleData.FileData, self._Mode)
     self:Refresh()
 end
 
@@ -67,7 +68,7 @@ function XUiPanelTheatre6SettlementSave:RefreshBtnSave()
     local isDisable = not selectedData
     local isReplace = selectedData and not selectedData.isEmpty
     self.BtnSave:SetDisable(isDisable, not isDisable)
-    self.UiTxtSave.text = XUiHelper.GetText(isReplace and "Theatre6SaveReplace" or "Theatre6Save")
+    self.BtnSave:SetName(XUiHelper.GetText(isReplace and "Theatre6SaveReplace" or "Theatre6Save"))
 end
 
 function XUiPanelTheatre6SettlementSave:SelectDefaultEmptySlot()
@@ -95,7 +96,7 @@ function XUiPanelTheatre6SettlementSave:OnBtnGiveUpClick()
 end
 
 function XUiPanelTheatre6SettlementSave:OnConfirmGiveUp()
-    self._Control:GiveUpSettlement(function()
+    self._Control:GiveUpSettlement(self._Mode, function()
         XLuaUiManager.Close("UiTheatre6Settlement")
     end)
 end
@@ -110,33 +111,23 @@ function XUiPanelTheatre6SettlementSave:OnBtnSaveClick()
     end
 
     if not selectedData then
-        XLuaUiManager.Open("UiTheatre6ToastCommon",CS.XTextManager.GetText("Theatre6SelectSlotFirst"))
+        XLuaUiManager.Open("UiTheatre6ToastCommon", CS.XTextManager.GetText("Theatre6SelectSlotFirst"))
         return
     end
 
     if selectedData.isEmpty == true then
         self:SaveToSlot(self._SelectedSlotIndex)
     else
-        XLuaUiManager.Open("UiTheatre6PopupCoverArchive", self._SelectedSlotIndex, self.Parent.SettleData.FileData)
+        XLuaUiManager.Open("UiTheatre6PopupCoverArchive", self._SelectedSlotIndex, self.Parent.SettleData.FileData, self._Mode)
     end
 end
 
 function XUiPanelTheatre6SettlementSave:SaveToSlot(slotIndex)
-    self._Control:SaveSettlement(slotIndex, function()
-        -- 保存成功，播放动效后回到主界面
-        
-        self:PlaySaveEffect(function()
-            self:Close()
-            self.Parent:Close()
-        end)
+    self._Control:SaveSettlement(self._Mode, slotIndex, function()
+        -- 保存成功
+        self:Close()
+        self.Parent:Close()
     end)
-end
-
-function XUiPanelTheatre6SettlementSave:PlaySaveEffect(finishCb)
-    -- TODO: 播放存档保存动效
-    if finishCb then
-        finishCb()
-    end
 end
 
 return XUiPanelTheatre6SettlementSave

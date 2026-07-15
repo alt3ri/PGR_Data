@@ -29,6 +29,17 @@ function XUiPanelBossRightV4P5:OnStart()
     self.BtnStart.CallBack = handler(self, self._OnBtnSelectModuleClick)
 
     self:RefreshWholeView()
+
+    for _, grid in pairs(self._SmallBuffGrids) do
+        grid:PlayExtendAnimation()
+    end
+
+    XLuaUiManager.SetMask(true)
+    self._OpenAnimationMaskOffSchedule = XScheduleManager.ScheduleOnce(function()
+        XLuaUiManager.SetMask(false)
+        XScheduleManager.UnSchedule(self._OpenAnimationMaskOffSchedule)
+        self._OpenAnimationMaskOffSchedule = nil
+    end, 2000)
 end
 
 function XUiPanelBossRightV4P5:OnEnable()
@@ -55,10 +66,14 @@ function XUiPanelBossRightV4P5:OnDisable()
         self)
 end
 
+function XUiPanelBossRightV4P5:OnDestroy()
+    self:_StopRecordTimer()
+end
+
 function XUiPanelBossRightV4P5:Select(i)
     self._SelectedFeatureIndex = i
 
-    if i == 0 then
+    if not i or i == 0 then
         self.SelectedFeature = nil
         self.SelectedBuffGroup = nil
         self.SelectedBuffGroupId = nil
@@ -75,18 +90,20 @@ function XUiPanelBossRightV4P5:Select(i)
     end
 
     self:_RefreshViewSelectState()
+
+    self._BigBuffGrid:PlayExtendAnimation()
 end
 
 function XUiPanelBossRightV4P5:_RefreshViewSelectState()
     local sel = self._SelectedFeatureIndex
     local challengeData = self.Parent._ChallengeData
 
-    if sel == 0 then
+    if not sel or sel == 0 then
         self._BigBuffGrid:Close()
         self.PanelSmallTitle.gameObject:SetActiveEx(true)
         self.PanelBigUi.gameObject:SetActiveEx(false)
 
-        self.Parent:ChangeCamera(false)
+        self.Parent:ChangeCamera(false, nil, true)
         self.Parent._IsSelecting = false
 
         for _, grid in pairs(self._SmallBuffGrids) do
@@ -94,7 +111,7 @@ function XUiPanelBossRightV4P5:_RefreshViewSelectState()
         end
     else
         self._BigBuffGrid.Transform:SetSiblingIndex(sel - 1)
-        self._BigBuffGrid:SetData(self.SelectedFeature, self.SelectedBuffGroup)
+        self._BigBuffGrid:SetData({ Feature = self.SelectedFeature, BuffGroup = self.SelectedBuffGroup })
         self._BigBuffGrid:Open()
 
         self.Parent:ChangeBuffGrid(sel)
@@ -133,7 +150,11 @@ function XUiPanelBossRightV4P5:RefreshWholeView()
     local params = {}
 
     for i = 1, featureCount do
-        params[i] = { challengeData:GetFeatureByIndex(i), featureGroupId, i }
+        params[i] = {
+            Feature = challengeData:GetFeatureByIndex(i),
+            GroupId = featureGroupId,
+            Index = i
+        }
     end
 
     XTool.SetDataForGenericGrid(
@@ -220,10 +241,19 @@ end
 function XUiPanelBossRightV4P5:StartGame(bossSingleChallengeBuffGroup)
     local stageId = self.SelectedFeature:GetStageId()
 
+    local featureId = self.SelectedFeature:GetFeatureId()
+    local features = {}
+
+    for buff, featureIndex in pairs(bossSingleChallengeBuffGroup.BuffChoices) do
+        table.insert(features, self.SelectedBuffGroup[buff].Buff[featureIndex])
+    end
+
+    self._Control:SetSelectedSelectableFeatureIds({ [featureId] = features })
+
     self._Control:SetEnterBossInfo(
         self.Parent:GetBossId(),
         XEnumConst.BossSingle.LevelType.Challenge,
-        self.SelectedFeature:GetFeatureId(),
+        featureId,
         bossSingleChallengeBuffGroup)
 
     self._Control:OnEnterChallengeFight()

@@ -84,7 +84,7 @@ function XUiTheatre6PopupSanDetail:RefreshCardList()
         function(i, go)
             local ui = XTool.InitUiObjectByUi({}, go)
             local sanConfig = sortedCards[i]
-            local buffId = sanConfig.BuffIds[1] --todo 默认第一个
+            local buffId = sanConfig.BuffIds[1]
             if XTool.IsNumberValid(buffId) then
                 ui.UiTheatre6BubbleBuffDetail.gameObject:SetActiveEx(true)
                 ---@type XUiPanelTheatre6BuffDetail
@@ -98,51 +98,64 @@ function XUiTheatre6PopupSanDetail:RefreshCardList()
             
             local isNormal = false
             local showSanValue = 0
+            local maxValue = self._Control:AdjustSanConfigMaxValue(sanConfig)
             if sanConfig.SanType == XEnumConst.Theatre6.SanType.Normal then
                 isNormal = true
                 showSanValue = 0
             elseif sanConfig.SanType == XEnumConst.Theatre6.SanType.Below then
-                showSanValue = sanConfig.MaxSan
+                showSanValue = maxValue
             elseif sanConfig.SanType == XEnumConst.Theatre6.SanType.Above then
                 showSanValue = sanConfig.MinSan
             elseif sanConfig.SanType == XEnumConst.Theatre6.SanType.Death then
-                showSanValue = sanConfig.MaxSan
+                showSanValue = maxValue
             end
             ui.TagBuffDescription:SetNameByGroup(0, string.format(self._Control:GetClientConfigValue("SanTypeDesc", sanConfig.SanType), showSanValue))               -- 理智值范围显示
            
-            local showLeftArrowOn = false
-            local showLeftArrowOff = false
-            local showRightArrowOn = false
-            local showRightArrowOff = false
+            --local showLeftArrowOn = false
+            --local showLeftArrowOff = false
+            --local showRightArrowOn = false
+            --local showRightArrowOff = false
 
             local buttonStatus = XUiButtonState.Normal
             if curConfig.Id == sanConfig.Id then
-                buttonStatus = isNormal and XUiButtonState.Select or XUiButtonState.Disable
+                if isNormal then
+                    buttonStatus = XUiButtonState.Select
+                    local fxUiGreen = ui.UiTheatre6BubbleBuffDetail.transform:FindTransform("FxUiGreen")
+                    if not XTool.UObjIsNil(fxUiGreen) then
+                        fxUiGreen.gameObject:SetActiveEx(true)
+                    end
+                else
+                    buttonStatus = XUiButtonState.Disable
+                    local fxUiRed = ui.UiTheatre6BubbleBuffDetail.transform:FindTransform("FxUiRed")
+                    if not XTool.UObjIsNil(fxUiRed) then
+                        fxUiRed.gameObject:SetActiveEx(true)
+                    end
+                end
             end
             ui.TagBuffDescription:SetButtonState(buttonStatus)
 
-            if i <= normalIndex and i > 1 then
-                local prevConfig = sortedCards[i - 1]
-                if prevConfig.Id == curConfig.Id then
-                    showLeftArrowOn = true
-                else
-                    showLeftArrowOff = true
-                end
-            end
+            --if i <= normalIndex and i > 1 then
+            --    local prevConfig = sortedCards[i - 1]
+            --    if prevConfig.Id == curConfig.Id then
+            --        showLeftArrowOn = true
+            --    else
+            --        showLeftArrowOff = true
+            --    end
+            --end
+            --
+            --if i >= normalIndex and i < cardCount then
+            --    local nextConfig = sortedCards[i + 1]
+            --    if nextConfig.Id == curConfig.Id then
+            --        showRightArrowOn = true
+            --    else
+            --        showRightArrowOff = true
+            --    end
+            --end
 
-            if i >= normalIndex and i < cardCount then
-                local nextConfig = sortedCards[i + 1]
-                if nextConfig.Id == curConfig.Id then
-                    showRightArrowOn = true
-                else
-                    showRightArrowOff = true
-                end
-            end
-
-            ui.JiantouLeftOn.gameObject:SetActiveEx(showLeftArrowOn)
-            ui.JiantouLeftOff.gameObject:SetActiveEx(showLeftArrowOff)
-            ui.JiantouRightOn.gameObject:SetActiveEx(showRightArrowOn)
-            ui.JiantouRightOff.gameObject:SetActiveEx(showRightArrowOff)
+            ui.JiantouLeftOn.gameObject:SetActiveEx(false)
+            ui.JiantouLeftOff.gameObject:SetActiveEx(i > 1)
+            ui.JiantouRightOn.gameObject:SetActiveEx(false)
+            ui.JiantouRightOff.gameObject:SetActiveEx(false)
         end)
 
     self:ScrollToAnchor(anchorIndex, latestActiveDebuffIndex, cardCount)
@@ -158,18 +171,19 @@ function XUiTheatre6PopupSanDetail:IsCardReached(sanConfig)
     end
 
     local curSan = self._Control:GetSanCurValue()
+    local maxValue = self._Control:AdjustSanConfigMaxValue(curSan)
 
     if sanConfig.SanType == XEnumConst.Theatre6.SanType.Normal then
         return curConfig.SanType == XEnumConst.Theatre6.SanType.Normal
     elseif sanConfig.SanType == XEnumConst.Theatre6.SanType.Below then
-        return curSan <= sanConfig.MaxSan
+        return curSan <= maxValue
     elseif sanConfig.SanType == XEnumConst.Theatre6.SanType.Above then
         return curSan >= sanConfig.MinSan
     elseif sanConfig.SanType == XEnumConst.Theatre6.SanType.Death then
-        if sanConfig.MinSan == 0 and sanConfig.MaxSan == 0 then
+        if sanConfig.MinSan == 0 and maxValue == 0 then
             return curSan <= 0
         else
-            return curSan >= sanConfig.MaxSan
+            return curSan >= maxValue
         end
     end
 

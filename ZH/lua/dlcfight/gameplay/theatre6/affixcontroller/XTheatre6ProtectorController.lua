@@ -20,6 +20,7 @@ function XTheatre6ProtectorController:Ctor(proxy, npc)
     --self._time = 0
     self.ProtectorDmgAdd = 0
     self._dmgAddValue = 0 --存在标记时增伤0%
+    self.ChanceCheck = 0
     --self:LogError(".....护盾控制器注册")
 end
 
@@ -41,7 +42,7 @@ function XTheatre6ProtectorController:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, 
     if self.originAttrib1 <= 0 and self.originAttrib2 <= 0 then
         self._proxy:RemoveBuff(self._npcUUID, 111)
         --self._proxy:RemoveProtector()
-        self:LogError(".....清除全部护盾")
+        --self:LogError(".....清除全部护盾")
     end
 end
 
@@ -54,10 +55,15 @@ end
 
 function XTheatre6ProtectorController:XNpcAddProtectorArgs(launcherId, targetId, value, totalValue, magicId)
     if targetId ~= self._npcUUID then return end
-    self._proxy:Theatre6PopDamage(self._npcUUID, self._npcUUID, 22, 0)
+    if self.ChanceCheck == 0 then
+        self._proxy:Theatre6PopDamage(self._npcUUID, self._npcUUID, 22, 0)
+        self.ChanceCheck = 1
+    end
     --self:LogError(".....加盾通知")
 end
 
-
+function XTheatre6ProtectorController:OnLuaSkillStart(eventArgs)
+    self.ChanceCheck = 0
+end
 
 return XTheatre6ProtectorController

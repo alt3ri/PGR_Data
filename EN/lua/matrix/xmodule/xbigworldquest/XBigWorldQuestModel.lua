@@ -751,9 +751,15 @@ function XBigWorldQuestModel:PopupTaskObtain(questId, isFinish)
     else
         isShield = self:CheckPopViewOpenWhenQuestReceive(questId)
     end
+
+    if isShield then
+        return
+    end
+
     local questType = self:GetQuestTypeTemplate(t.Type)
     local popViewType = questType.PopType or PopViewType.None
-    if isShield or popViewType == PopViewType.None then
+
+    if popViewType == PopViewType.None then
         return
     end
     local uiName = PopViewType2UiName[popViewType]

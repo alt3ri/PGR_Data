@@ -146,6 +146,11 @@ end
 
 --region 按钮交互
 function XUiBigWorldHud:OnBtnQuitClick()
+    --- 剧情时能触发按钮点击事件，CanvasGroup设置不可操作后还是可以复现，在这里在拦截下
+    if not self._Active then
+        return
+    end
+
     local EExplorationAbilityType = XMVCA.XBigWorldInstance.EExplorationAbilityType
     local isEExplorationAbilityEnable = XMVCA.X3CProxy:Send(CS.X3CCommand.CMD_CHECK_EXPLORATION_ABILITY_ENABLE, {
         ExplorationAbilityEnum = EExplorationAbilityType.ScanPlus
@@ -182,6 +187,11 @@ end
 
     
 function XUiBigWorldHud:OnBtnTaskClick()
+    --- 剧情时能触发按钮点击事件，CanvasGroup设置不可操作后还是可以复现，在这里在拦截下
+    if not self._Active then
+        return
+    end
+
     if XMVCA.XBigWorldGamePlay:IsInstLevel() then
         return
     end
@@ -190,46 +200,91 @@ function XUiBigWorldHud:OnBtnTaskClick()
 end
 
 function XUiBigWorldHud:OnBtnMessageClick()
+    --- 剧情时能触发按钮点击事件，CanvasGroup设置不可操作后还是可以复现，在这里在拦截下
+    if not self._Active then
+        return
+    end
+
     self:RecordHudClick(BtnIndex.BtnMessageNew)
     XMVCA.XBigWorldMessage:OpenUnReadMessageUi()
 end
 
 function XUiBigWorldHud:OnBtnMessageListClick()
+    --- 剧情时能触发按钮点击事件，CanvasGroup设置不可操作后还是可以复现，在这里在拦截下
+    if not self._Active then
+        return
+    end
+
     self:RecordHudClick(BtnIndex.BtnMessage)
     XMVCA.XBigWorldGamePlay:GetCurrentAgency():OpenMessage()
 end
 
 function XUiBigWorldHud:OnBtnTeamClick()
+    --- 剧情时能触发按钮点击事件，CanvasGroup设置不可操作后还是可以复现，在这里在拦截下
+    if not self._Active then
+        return
+    end
+
     self:RecordHudClick(BtnIndex.BtnTeam)
     XMVCA.XBigWorldGamePlay:GetCurrentAgency():OpenTeam()
 end
 
 function XUiBigWorldHud:OnBtnBagClick()
+    --- 剧情时能触发按钮点击事件，CanvasGroup设置不可操作后还是可以复现，在这里在拦截下
+    if not self._Active then
+        return
+    end
+
     self:RecordHudClick(BtnIndex.BtnBag)
     XMVCA.XBigWorldGamePlay:GetCurrentAgency():OpenBackpack()
 end
 
 function XUiBigWorldHud:OnBtnHandBookClick()
+    --- 剧情时能触发按钮点击事件，CanvasGroup设置不可操作后还是可以复现，在这里在拦截下
+    if not self._Active then
+        return
+    end
+
     self:RecordHudClick(BtnIndex.BtnExplore)
     XMVCA.XBigWorldGamePlay:GetCurrentAgency():OpenExplore()
 end
 
 function XUiBigWorldHud:OnBtnPhotoClick()
+    --- 剧情时能触发按钮点击事件，CanvasGroup设置不可操作后还是可以复现，在这里在拦截下
+    if not self._Active then
+        return
+    end
+
     self:RecordHudClick(BtnIndex.BtnPhoto)
     XMVCA.XBigWorldGamePlay:GetCurrentAgency():OpenPhoto(false)
 end
 
 function XUiBigWorldHud:OnBtnSetClick()
+    --- 剧情时能触发按钮点击事件，CanvasGroup设置不可操作后还是可以复现，在这里在拦截下
+    if not self._Active then
+        return
+    end
+
     self:RecordHudClick(BtnIndex.BtnSetting)
     XMVCA.XBigWorldGamePlay:GetCurrentAgency():OpenSetting()
 end
 
 function XUiBigWorldHud:OnBtnTeachClick()
+    --- 剧情时能触发按钮点击事件，CanvasGroup设置不可操作后还是可以复现，在这里在拦截下
+    if not self._Active then
+        return
+    end
+
     self:RecordHudClick(BtnIndex.BtnTeach)
     XMVCA.XBigWorldGamePlay:GetCurrentAgency():OpenTeaching()
 end
 
 function XUiBigWorldHud:OnBtnMenuClick()
+    --- 剧情时能触发按钮点击事件，CanvasGroup设置不可操作后还是可以复现，在这里在拦截下
+    if not self._Active then
+        return
+    end
+
     self._IsShowMenu = not self._IsShowMenu
     local cueKey = self._IsShowMenu and "Visibility" or "Collapsed"
     self.BtnMenuPlayer:PlayByKeyName(cueKey)
@@ -238,16 +293,31 @@ function XUiBigWorldHud:OnBtnMenuClick()
 end
 
 function XUiBigWorldHud:OnBtnFirstClick()
+    --- 剧情时能触发按钮点击事件，CanvasGroup设置不可操作后还是可以复现，在这里在拦截下
+    if not self._Active then
+        return
+    end
+
     XMVCA.XBigWorldGamePlay:SetFightPerspective(XMVCA.XBigWorldGamePlay.PerspectiveType.FirstPerson, true)
     self:RefreshPerspective()
 end
 
 function XUiBigWorldHud:OnBtnThirdClick()
+    --- 剧情时能触发按钮点击事件，CanvasGroup设置不可操作后还是可以复现，在这里在拦截下
+    if not self._Active then
+        return
+    end
+
     XMVCA.XBigWorldGamePlay:SetFightPerspective(XMVCA.XBigWorldGamePlay.PerspectiveType.ThirdPerson, true)
     self:RefreshPerspective()
 end
 
 function XUiBigWorldHud:OnBtnNewsClick()
+    --- 剧情时能触发按钮点击事件，CanvasGroup设置不可操作后还是可以复现，在这里在拦截下
+    if not self._Active then
+        return
+    end
+
     XMVCA.XBigWorldNews:OpenNewsUi()
 end
 
@@ -493,16 +563,24 @@ function XUiBigWorldHud:OnSetActive(value)
     end
     self._Active = value
     
+    if self.CanvasGroup then
+        self.CanvasGroup.blocksRaycasts = self._Active
+    end
+
     --当前帧
     local frameCount = CS.UnityEngine.Time.frameCount
     --同一帧内，设置多次，直接取最新结果，不再播放动画
     if frameCount == self._SetFrameCount then
         if self._PlayingAnima then
-            self:StopAnimation(self._PlayingAnima, true, true)
+            self:StopAnimation(self._PlayingAnima, false, true)
         end
-        self._PlayingAnima = false
-        self:SetActive(value)
-        self.CanvasGroup.alpha = value and 1 or 0
+        if value then
+            self:SetActive(value)
+            self:FinishAnimation("Enable")
+        else
+            self:FinishAnimation("Disable")
+            self:SetActive(value)
+        end
         return
     end
     self._SetFrameCount = frameCount

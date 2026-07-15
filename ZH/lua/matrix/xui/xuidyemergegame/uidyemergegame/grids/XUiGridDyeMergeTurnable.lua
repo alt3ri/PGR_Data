@@ -39,7 +39,7 @@ local OppositeDir = { [1] = 3, [2] = 4, [3] = 1, [4] = 2 }
 --- 单色时用到的UI，需要注意判空
 ---@field RImgYuan
 ---@field RImgObject @单色供色图标（IconSupprtTop）
----@field RImgObjectEnd @单色通关图标（IconTop）
+---@field SpineFlower @单色骨骼动画节点（通过 RImgObjectSpine 控制，无需直接引用）
 --- 多色时用到的UI，需要注意判空
 ---@field RImgYuan1 @对应未旋转时的左上
 ---@field RImgYuan2 @对应未旋转时的右上
@@ -54,6 +54,7 @@ local OppositeDir = { [1] = 3, [2] = 4, [3] = 1, [4] = 2 }
 local XUiGridDyeMergeTurnable = XClass(XUiGridDyeMerge, "XUiGridDyeMergeTurnable")
 
 function XUiGridDyeMergeTurnable:OnStart()
+    XUiGridDyeMerge.OnStart(self)
     if self.BtnRotate then
         self.BtnRotate:AddEventListener(handler(self, self._OnBtnRotateClick))
     end
@@ -69,11 +70,14 @@ function XUiGridDyeMergeTurnable:OnStart()
     }
     -- 线条节点管理（通过 GridPools 获取/回收）
     self._LineNodes = {}
+    self._IsLineAnimating = false
 end
 
 ---@overload
 function XUiGridDyeMergeTurnable:Refresh(uid, skipLinesRefresh)
     self.Uid = uid
+    self:EnterEmptyDisplay()
+
     local blocksControl = self._Control.GamingControl.BlocksControl
     local block = blocksControl:GetBlockByUid(uid)
     if not block then return end
@@ -84,10 +88,8 @@ function XUiGridDyeMergeTurnable:Refresh(uid, skipLinesRefresh)
     if not colorDir or next(colorDir) == nil then return end
 
     if blocksControl:IsMultiColorBlock(uid) then
-        -- 隐藏单色节点
-        if self.RImgYuan   then self.RImgYuan.gameObject:SetActiveEx(false) end
-        if self.RImgObject then self.RImgObject.gameObject:SetActiveEx(false) end
-        if self.RImgObjectEnd then self.RImgObjectEnd.gameObject:SetActiveEx(false) end
+        -- 隐藏单色节点（花/通关花已由 EnterEmptyDisplay 处理）
+        if self.RImgYuan then self.RImgYuan.gameObject:SetActiveEx(false) end
         -- 按方向刷新四组多色节点
         for i = 1, 4 do
             local nodes = self._ColorNodes[i]
@@ -150,13 +152,7 @@ function XUiGridDyeMergeTurnable:Refresh(uid, skipLinesRefresh)
             self.RImgYuan.gameObject:SetActiveEx(hasColor)
             if hasColor then self.RImgYuan:SetRawImage(colorCfg.IconCircle) end
         end
-        if self.RImgObject then
-            self.RImgObject.gameObject:SetActiveEx(hasColor)
-            if hasColor then self.RImgObject:SetRawImage(colorCfg.IconSupprtTop) end
-        end
-        if self.RImgObjectEnd then
-            self.RImgObjectEnd.gameObject:SetActiveEx(false)
-        end
+        self:SetFlowerVisible(hasColor, hasColor and colorCfg.IconSupprtTop or nil)
     end
 
     if not skipLinesRefresh then
@@ -174,6 +170,8 @@ function XUiGridDyeMergeTurnable:_GetFirstValidColorByColorDict(colorDict)
 end
 
 function XUiGridDyeMergeTurnable:_RefreshLinesShow()
+    if self._IsLineAnimating then return end
+
     local gc = self._Control.GamingControl
     local blocksControl = gc.BlocksControl
     local mapControl = gc.MapControl
@@ -187,12 +185,30 @@ function XUiGridDyeMergeTurnable:_RefreshLinesShow()
     local halfW = board._HalfW
     local halfH = board._HalfH
     local lineIndex = 0
+    local dirRanges = self._LineDirRanges or {}
+    self._LineDirRanges = dirRanges
+    local rangeCount = 0
 
     for dirIndex = 1, 4 do
         local colorId = colorDir[dirIndex]
         if colorId and colorId ~= 0 then
+            local startIdx = lineIndex + 1
             lineIndex = self:_TraceAndShowLines(block, dirIndex, colorId, lineIndex, gc, mapControl, halfW, halfH)
+            if lineIndex >= startIdx then
+                rangeCount = rangeCount + 1
+                local r = dirRanges[rangeCount]
+                if not r then
+                    r = {}
+                    dirRanges[rangeCount] = r
+                end
+                r.start = startIdx
+                r.finish = lineIndex
+            end
         end
+    end
+
+    for i = rangeCount + 1, #dirRanges do
+        dirRanges[i] = nil
     end
 
     self:_ReturnLinesFrom(lineIndex + 1)
@@ -407,8 +423,52 @@ end
 
 --- 方块被回收到池时归还所有线条
 function XUiGridDyeMergeTurnable:OnDisable()
+    XUiGridDyeMerge.OnDisable(self)
+    if self._IsLineAnimating then
+        self._IsLineAnimating = false
+        if self._LineAnimParams then
+            self._Control.GamingControl.AnimationControl:OnEndAnimation(self._LineAnimParams)
+            self._LineAnimParams = nil
+        end
+    end
     self:_ReturnLinesFrom(1)
 end
+
+--region 线条动画公开接口
+
+function XUiGridDyeMergeTurnable:BeginLineAnimation(params)
+    self._IsLineAnimating = true
+    self._LineAnimParams = params
+end
+
+function XUiGridDyeMergeTurnable:EndLineAnimation()
+    self._IsLineAnimating = false
+    self._LineAnimParams = nil
+end
+
+function XUiGridDyeMergeTurnable:IsLineAnimating()
+    return self._IsLineAnimating
+end
+
+function XUiGridDyeMergeTurnable:GetLineNodes()
+    return self._LineNodes
+end
+
+function XUiGridDyeMergeTurnable:GetLineDirRanges()
+    return self._LineDirRanges
+end
+
+function XUiGridDyeMergeTurnable:ReturnAllLines()
+    self:_ReturnLinesFrom(1)
+end
+
+function XUiGridDyeMergeTurnable:RefreshLinesForAnimation()
+    self._IsLineAnimating = false
+    self:_RefreshLinesShow()
+    self._IsLineAnimating = true
+end
+
+--endregion
 
 function XUiGridDyeMergeTurnable:_OnBtnRotateClick()
     if self._SendGridClickSignal then
@@ -416,7 +476,7 @@ function XUiGridDyeMergeTurnable:_OnBtnRotateClick()
     end
 end
 
---- 通关后将供色图标切换回 IconTop
+--- 通关后播放供色骨骼动画（单色用 spine，多色保持静态图标）
 function XUiGridDyeMergeTurnable:RefreshOnStagePass(uid)
     local blocksControl = self._Control.GamingControl.BlocksControl
     local block = blocksControl:GetBlockByUid(uid)
@@ -425,6 +485,7 @@ function XUiGridDyeMergeTurnable:RefreshOnStagePass(uid)
     local colorDir = blocksControl:GetRotatedColorDir(uid)
     if not colorDir or next(colorDir) == nil then return end
 
+    self:_ClearObjectSpine()
     if blocksControl:IsMultiColorBlock(uid) then
         for i = 1, 4 do
             local nodes = self._ColorNodes[i]
@@ -439,13 +500,7 @@ function XUiGridDyeMergeTurnable:RefreshOnStagePass(uid)
         end
     else
         local colorCfg = self._Control.GamingControl:GetTableDyeMergeBlocksConfig(self:_GetFirstValidColorByColorDict(colorDir), true)
-        if colorCfg and self.RImgObjectEnd then
-            self.RImgObjectEnd.gameObject:SetActiveEx(true)
-            self.RImgObjectEnd:SetRawImage(colorCfg.IconTop)
-        end
-        if self.RImgObject then
-            self.RImgObject.gameObject:SetActiveEx(false)
-        end
+        self:EnterPassDisplay(colorCfg)
     end
 end
 

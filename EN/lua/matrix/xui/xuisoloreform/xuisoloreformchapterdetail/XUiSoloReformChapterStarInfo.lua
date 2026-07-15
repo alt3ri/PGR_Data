@@ -5,7 +5,6 @@ local XUiSoloReformChapterStarInfo = XClass(XUiNode, 'XUiSoloReformChapterStarIn
 
 function XUiSoloReformChapterStarInfo:OnStart()
     self._StrengthCellList = {}
-    self._StarAnimTimerId = nil
     self._IsInit = true
 end
 
@@ -42,39 +41,24 @@ end
 function XUiSoloReformChapterStarInfo:RefreshStarDesc(stageId)
     local stageCfg = self._Control:GetSoloReformStageCfg(stageId)
     local starStates = self._Control:GetStageStarStateByStageId(stageId)
-    local showGrids = {}
+
     self._StarDescCellList = XUiHelper.RefreshUiObjectList(self._StarDescCellList, self.GridTarget.parent, self.GridTarget, #starStates, function(index, grid)
-        table.insert(showGrids, grid.GameObject)    
+     
         local state = starStates[index]
         grid.PanelOn.gameObject:SetActiveEx(state)
         grid.PanelOff.gameObject:SetActiveEx(not state)
         grid.TxtTargetOn.text = stageCfg.StarTalks[index]
         grid.TxtTargetOff.text = stageCfg.StarTalks[index]
         grid.GameObject:SetActiveEx(false)
+        XScheduleManager.ScheduleNextFrame(function() --等待一帧，触发动画
+            if XTool.UObjIsNil(grid.GameObject) then return end
+            grid.GameObject:SetActiveEx(true)
+        end)
     end)
-    self:StopStarAnimTimer()
-    local delay = self._IsInit and 1000 or 100
-    local interval = 100
-    local times = 0
-    self._StarAnimTimerId = XScheduleManager.Schedule(function()
-        times = times + 1
-        if times > #showGrids then
-            self:StopStarAnimTimer()
-            return
-        end
-        showGrids[times]:SetActiveEx(true)    
-     end, interval, #showGrids, delay)
-end
 
-function XUiSoloReformChapterStarInfo:StopStarAnimTimer()
-    if self._StarAnimTimerId then
-        XScheduleManager.UnSchedule(self._StarAnimTimerId)
-        self._StarAnimTimerId = nil
-    end    
 end
 
 function XUiSoloReformChapterStarInfo:OnDestroy()
-    self:StopStarAnimTimer()
     self._StrengthCellList = nil
     self._IsInit = nil
 end

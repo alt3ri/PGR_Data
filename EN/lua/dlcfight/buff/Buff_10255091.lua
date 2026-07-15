@@ -17,8 +17,8 @@ function XBuffScript10255091:OnLuaSkillEnd(eventArgs)
     local tlCost = cfg.CostTL
     self.TLRecover = tlCost // 5 --体力恢复=体力消耗的1/5
     --self:LogError("体力恢复"..self.TLRecover)
-    self._proxy:Theatre6ChangeStaminaValue(self._npcUUID, self.TLRecover, 0) --恢复5体力
-    self._proxy:RemoveBuffByKindAndCount(self._npcUUID, self.BuffId, 1)
+    self._proxy:Theatre6ChangeStaminaValue(self._npcUUID, self.TLRecover, 0) --恢复体力
+    --self._proxy:RemoveBuffByKindAndCount(self._npcUUID, self.BuffId, 1)
 end
 
 return XBuffScript10255091

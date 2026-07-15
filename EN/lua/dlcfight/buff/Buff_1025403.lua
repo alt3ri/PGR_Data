@@ -9,26 +9,34 @@ function XBuffScript1025403:Init()
     --初始化
     ------------配置------------
     XTheatre6BuffBase.Init(self)
-    --self.magicId = 1015335
-    --self.magicKind = 1015335
-    --self.attrib = ENpcAttrib.HealAmpP
-    --公用的击倒id
-    self.originAttrib1 = 0
+    self.staminaCost = 1   --体力值扣减
+    self.overClockCost = 1 --超算值扣减
+    self.hitDownCnt = 0    --击飞次数
+    self.cntCheck = 0      --重复触发开关，每个技能仅能触发1次
     ------------执行------------
 end
 
-
 function XBuffScript1025403:OnLuaAffixHitDown(eventArgs)
     --self:LogError("SkillEnd")
-    if eventArgs._launcherUUID == self._npcUUID then return end
-    self.originAttrib1 = self.originAttrib1 + 1
-    self.TargetCS = self._proxy:Theatre6GetNpcRuntimeOverClock(self._enemyUUID)
-    if self.TargetCS <= self.CSCost then self._proxy:Theatre6CastNpcRuntimeOverClock(self._enemyUUID,self.TargetCS) --扣除对手超算值
-    else self._proxy:Theatre6CastNpcRuntimeOverClock(self._enemyUUID,self.originAttrib1)
+    if eventArgs._launcherUUID ~= self._npcUUID then return end
+    if self.cntCheck == 0 then
+        self.hitDownCnt = self.hitDownCnt + 1
+        --扣除对手超算值
+        local curEnemyOverClock = self._proxy:Theatre6GetNpcRuntimeOverClock(self._enemyUUID)
+        local calOverClockCost = math.min(curEnemyOverClock, self.overClockCost * self.hitDownCnt)
+        self._proxy:Theatre6CastNpcRuntimeOverClock(self._enemyUUID, calOverClockCost)
+        --扣除对手体力
+        local curEnemyStamina = self._proxy:GetNpcGameplayAttribValue(self._enemyUUID, ETheatre6AttribType.Stamina)
+        local calStaminaCost = math.min(curEnemyStamina, self.staminaCost * self.hitDownCnt)
+        self._proxy:Theatre6ChangeStaminaValue(self._enemyUUID, -calStaminaCost, 0)
+        --防重复检测
+        self.cntCheck = 1
     end
-    self._proxy:Theatre6ChangeStaminaValue(self._enemyUUID, -self.originAttrib1, 0) --扣除对手体力
-    --触发击飞时，计数器+1
-    --return self._critController:AddSkillCount(self._stackCount)
+end
+
+function XBuffScript1025403:OnLuaSkillStart(eventArgs)
+    ------------执行------------
+    self.cntCheck = 0
 end
 
 return XBuffScript1025403

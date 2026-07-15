@@ -172,6 +172,7 @@ function XUiPanelTheatre6PvpRightBase:_OnInnerDrop(fromIndex, toIndex)
         -- 拖到下阵区域：移除源槽位，并选中该空出的槽位
         self._Control:RemovePvpCurrentLineupInfo(lineupMode, fromIndex)
         self:_ReselectSlot(fromIndex)
+        self.Parent:RefreshArchiveTips()
     elseif XTool.IsNumberValid(toIndex) and toIndex ~= fromIndex then
         -- 拖到有效且不同的槽位：交换两槽位（目标为空即为移动，非空则互换），并选中新槽位
         self._Control:SwapPvpCurrentLineupSlots(lineupMode, fromIndex, toIndex)
@@ -221,7 +222,6 @@ end
 
 --region 跨面板拖拽
 -- 计算存档 fileData 拖到 toIndex 槽位时需替换的槽位
--- 进攻：替换目标存档整组（份数受上阵上限约束）；防守：只换命中单槽
 ---@param fileData Theatre6FileData 拖入的存档
 ---@param toIndex number 命中的槽位索引
 ---@return boolean isDisabled 是否禁止放入（显示禁用图标）
@@ -232,46 +232,44 @@ function XUiPanelTheatre6PvpRightBase:_CalcReplaceSlotIndexes(fileData, toIndex)
     end
     local lineupMode = self:GetLineupMode()
     local targetData = self._MyFileDataList[toIndex]
-    -- 目标空槽：直接放入
-    if not targetData then
-        return false, { toIndex }
-    end
     -- 拖回同一存档：空操作
-    if targetData.CharacterId == fileData.CharacterId and targetData.SlotId == fileData.SlotId then
+    if targetData and targetData.CharacterId == fileData.CharacterId and targetData.SlotId == fileData.SlotId then
         return false, {}
     end
 
-    -- 拖入存档剩余可上阵份数，<=0 则禁止放入
-    local repeatLimit = self._Control:GetPvpLineupSlotRepeatLimit()
-    local curCount = self._Control:GetPvpCurrentLineupInfoCount(lineupMode, fileData.CharacterId, fileData.SlotId)
-    local remain = repeatLimit - curCount
-    if remain <= 0 then
+    -- 进攻且命中已占用槽：替换目标存档整组，份数不超过 remain
+    if targetData and lineupMode == XEnumConst.Theatre6.Pvp.LineupMode.Attack then
+        local repeatLimit = self._Control:GetPvpLineupSlotRepeatLimit()
+        local curCount = self._Control:GetPvpCurrentLineupInfoCount(lineupMode, fileData.CharacterId, fileData.SlotId)
+        local remain = repeatLimit - curCount
+        if remain <= 0 then
+            return true, {}
+        end
+        local targetSlots = self._Control:GetPvpCurrentLineupInfoIndexes(lineupMode, targetData.CharacterId, targetData.SlotId)
+        local replaceCount = math.min(#targetSlots, remain)
+        if replaceCount >= #targetSlots then
+            return false, targetSlots
+        end
+        -- 份数受限：取部分槽位，确保含命中槽
+        local result = { toIndex }
+        for _, slotIndex in ipairs(targetSlots) do
+            if #result >= replaceCount then
+                break
+            end
+            if slotIndex ~= toIndex then
+                table.insert(result, slotIndex)
+            end
+        end
+        table.sort(result)
+        return false, result
+    end
+
+    -- 其余情况（空槽 / 防守占用槽）均为把 fileData 放入单个 toIndex 槽位
+    local isValid = self._Control:CheckPvpArchiveBeforeLineup(lineupMode, fileData.CharacterId, fileData.SlotId, toIndex)
+    if not isValid then
         return true, {}
     end
-
-    -- 防守：只换命中单槽
-    if lineupMode == XEnumConst.Theatre6.Pvp.LineupMode.Defend then
-        return false, { toIndex }
-    end
-
-    -- 进攻：替换目标整组，份数不超过 remain
-    local targetSlots = self._Control:GetPvpCurrentLineupInfoIndexes(lineupMode, targetData.CharacterId, targetData.SlotId)
-    local replaceCount = math.min(#targetSlots, remain)
-    if replaceCount >= #targetSlots then
-        return false, targetSlots
-    end
-    -- 份数受限：取部分槽位，确保含命中槽
-    local result = { toIndex }
-    for _, slotIndex in ipairs(targetSlots) do
-        if #result >= replaceCount then
-            break
-        end
-        if slotIndex ~= toIndex then
-            table.insert(result, slotIndex)
-        end
-    end
-    table.sort(result)
-    return false, result
+    return false, { toIndex }
 end
 
 -- 跨面板拖拽悬停：点亮待替换槽位，或在目标槽位显示禁用图标

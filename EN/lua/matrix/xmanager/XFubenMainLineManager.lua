@@ -22,6 +22,7 @@ XFubenMainLineManagerCreator = function()
     local ExploreGroupInfos = nil
     local ExploreItemInfos = {}
     local ChapterInfos = {} -- info {FirstStage, ActiveStage, Stars, Unlock, Passed}
+    local ChapterIdToMainMap = {} -- chapterId → chapterMain 反向映射，供懒加载使用
     local CurDifficult
     local LastFightStage = {}
     local ActivityChapters = {} --活动抢先体验ChapterId列表
@@ -62,6 +63,14 @@ XFubenMainLineManagerCreator = function()
         XFubenMainLineManager.MainLine3DId = CS.XGame.ClientConfig:GetInt("MainLine3DId")
 
         CurDifficult = XFubenMainLineManager.DifficultNormal
+
+        for _, chapterMain in pairs(ChapterMainTemplates) do
+            for _, chapterId in pairs(chapterMain.ChapterId) do
+                if chapterId > 0 then
+                    ChapterIdToMainMap[chapterId] = chapterMain
+                end
+            end
+        end
     end
 
     function XFubenMainLineManager.InitStageInfoEx()
@@ -156,6 +165,24 @@ XFubenMainLineManagerCreator = function()
         return info
     end
 
+    local function ComputeChapterUnlock(chapter)
+        local firstStageId = chapter.StageId[1]
+        local firstStageInfo = XDataCenter.FubenManager.GetStageInfo(firstStageId)
+        local unlock = firstStageInfo.Unlock
+        local firstPassed = firstStageInfo.Passed
+        if not firstPassed and unlock and XFubenMainLineManager.CheckDiffHasAcitivity(chapter) then
+            if not XFubenMainLineManager.CheckActivityCondition(chapter.ChapterId) then
+                unlock = false
+            end
+        elseif (not XFubenMainLineManager.IsMainLineActivityOpen() and XFubenMainLineManager.CheckDiffHasAcitivity(chapter))
+                or not XFubenMainLineManager.CheckDiffHasAcitivity(chapter) then
+            if not XFubenMainLineManager.CheckOpenCondition(chapter.ChapterId) then
+                unlock = false
+            end
+        end
+        return unlock
+    end
+
     function XFubenMainLineManager.GetDifficult(stageId)
         local orderId, chapterId, difficult = XFubenMainLineManager.GetInfo(stageId)
         return difficult
@@ -192,32 +219,26 @@ XFubenMainLineManagerCreator = function()
     end
 
     function XFubenMainLineManager.InitChapterData(checkNewUnlock)
-        local oldChapterInfos = ChapterInfos
-        ChapterInfos = {}
-        for _, chapterMain in pairs(ChapterMainTemplates) do
-            for difficult, chapterId in pairs(chapterMain.ChapterId) do
-                if chapterId > 0 then
-                    local chapter = ChapterCfg[chapterId]
-                    ChapterInfos[chapterId] = InitChapterInfo(chapterMain, chapter)
-                    --    for k, v in ipairs(chapter.StageId) do
-                    --        local stageInfo = XDataCenter.FubenManager.GetStageInfo(v)
-                    --        stageInfo.Type = XDataCenter.FubenManager.StageType.Mainline
-                    --        stageInfo.OrderId = k
-                    --        stageInfo.ChapterId = chapter.ChapterId
-                    --        stageInfo.Difficult = difficult
-                    --    end
+        if checkNewUnlock then
+            local oldChapterInfos = ChapterInfos
+            ChapterInfos = {}
+            for _, chapterMain in pairs(ChapterMainTemplates) do
+                for difficult, chapterId in pairs(chapterMain.ChapterId) do
+                    if chapterId > 0 then
+                        local chapter = ChapterCfg[chapterId]
+                        ChapterInfos[chapterId] = InitChapterInfo(chapterMain, chapter)
+                    end
                 end
             end
-        end
-
-        NewChaperId = -1
-        if checkNewUnlock then
+            NewChaperId = -1
             for k, v in pairs(ChapterInfos) do
-                if v.Unlock and not oldChapterInfos[k].Unlock then
+                if v.Unlock and not (oldChapterInfos[k] and oldChapterInfos[k].Unlock) then
                     NewChaperId = k
                     XEventManager.DispatchEvent(XEventId.EVENT_FUBEN_NEW_MAIN_LINE_CHAPTER, k)
                 end
             end
+        else
+            ChapterInfos = {}
         end
     end
 
@@ -333,6 +354,12 @@ XFubenMainLineManagerCreator = function()
 
     -- 获取篇章进度、上次所选篇章
     function XFubenMainLineManager.GetChapterInfo(chapterId)
+        if not ChapterInfos[chapterId] then
+            local chapterMain = ChapterIdToMainMap[chapterId]
+            if chapterMain then
+                ChapterInfos[chapterId] = InitChapterInfo(chapterMain, ChapterCfg[chapterId])
+            end
+        end
         return ChapterInfos[chapterId]
     end
 
@@ -351,8 +378,97 @@ XFubenMainLineManagerCreator = function()
 
     -- 获取篇章星数
     function XFubenMainLineManager.GetChapterStars(chapterId)
-        local info = ChapterInfos[chapterId]
+        local info = XFubenMainLineManager.GetChapterInfo(chapterId)
         return info and info.Stars or 0, info and info.TotalStars or 0
+    end
+
+    -- 轻量版：直接从 ChapterCfg + 服务器 StageData 计算章节星数，不触发 InitChapterInfo / Stage.tab 加载
+    function XFubenMainLineManager.GetChapterStarsDirect(chapterId)
+        local chapter = ChapterCfg[chapterId]
+        if not chapter or #chapter.StageId == 0 then
+            return 0, 0
+        end
+        local stars = 0
+        local ignoreList = XFubenMainLineConfigs.GetMainlineIgnoreStageListByOrder()
+        for _, stageId in ipairs(chapter.StageId) do
+            if not table.contains(ignoreList, stageId) then
+                local stageData = XDataCenter.FubenManager.GetStageData(stageId)
+                if stageData and stageData.Passed then
+                    local starsMark = stageData.StarsMark or 0
+                    for i = 1, 3 do
+                        if starsMark & (1 << (i - 1)) > 0 then
+                            stars = stars + 1
+                        end
+                    end
+                end
+            end
+        end
+        local totalStars = 0
+        if not XTool.IsTableEmpty(chapter.TreasureId) then
+            local treasureCfg = XFubenMainLineManager.GetTreasureCfg(chapter.TreasureId[#chapter.TreasureId])
+            totalStars = treasureCfg.RequireStar
+            stars = stars > totalStars and totalStars or stars
+        end
+        return stars, totalStars
+    end
+
+    -- 轻量检查章节解锁状态（不触发 InitChapterInfo）：
+    -- 1. ChapterInfos 已缓存时直接读缓存（含 IsActivity）
+    -- 2. 未缓存时仅从首关 + 条件判断 Unlock；IsActivity 此时必然为 false
+    --    （UnlockChapterViaActivity 写入 IsActivity 前会先调用 GetChapterInfo，ChapterInfos 已缓存）
+    function XFubenMainLineManager.GetChapterIsUnlockAndActivity(chapterId)
+        local cached = ChapterInfos[chapterId]
+        if cached then
+            return cached.Unlock, cached.IsActivity
+        end
+        local chapter = ChapterCfg[chapterId]
+        if not chapter or #chapter.StageId == 0 then
+            -- TRPG 特殊处理
+            local chapterMain = ChapterIdToMainMap[chapterId]
+            if chapterMain and chapterMain.Id == XFubenMainLineManager.TRPGChapterId then
+                return XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.MainLineTRPG), false
+            end
+            return false, false
+        end
+        return ComputeChapterUnlock(chapter), false
+    end
+
+    -- 轻量获取章节 Unlock + Passed（不触发 InitChapterInfo）
+    -- Passed 从 StageData 直接读取（无需 Stage.tab），Unlock 仅取首关状态
+    function XFubenMainLineManager.GetChapterIsUnlockAndPassed(chapterId)
+        local cached = ChapterInfos[chapterId]
+        if cached then
+            return cached.Unlock, cached.Passed
+        end
+        local chapter = ChapterCfg[chapterId]
+        if not chapter or #chapter.StageId == 0 then
+            local chapterMain = ChapterIdToMainMap[chapterId]
+            if chapterMain and chapterMain.Id == XFubenMainLineManager.TRPGChapterId then
+                local isOpen = XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.MainLineTRPG)
+                return isOpen, true  -- TRPG Passed 固定为 true
+            end
+            return false, false
+        end
+        local unlock = ComputeChapterUnlock(chapter)
+        local ignoreList = XFubenMainLineConfigs.GetMainlineIgnoreStageListByOrder()
+        local allPassed = true
+        for _, stageId in ipairs(chapter.StageId) do
+            if not table.contains(ignoreList, stageId) then
+                local stageData = XDataCenter.FubenManager.GetStageData(stageId)
+                if not stageData or not stageData.Passed then
+                    allPassed = false
+                    break
+                end
+            end
+        end
+        return unlock, allPassed
+    end
+
+    -- IsActivity 只由 UnlockChapterViaActivity 写入（写前必先调用 GetChapterInfo 缓存）
+    -- 未缓存时必然为 false，直接查缓存即可
+    function XFubenMainLineManager.GetChapterIsActivity(chapterId)
+        local cached = ChapterInfos[chapterId]
+        return cached and cached.IsActivity or false
     end
 
     function XFubenMainLineManager.GetChapterList(difficult)
@@ -377,21 +493,21 @@ XFubenMainLineManagerCreator = function()
 
         for _, v in pairs(ChapterMainTemplates) do
             local chapterId
-            local chapterInfo
+            local chapterData
 
             if difficult == XDataCenter.FubenManager.DifficultNightmare then
                 chapterId = v.BfrtId
                 if chapterId and chapterId > 0 then
-                    chapterInfo = XDataCenter.BfrtManager.GetChapterInfo(chapterId)
+                    chapterData = XDataCenter.BfrtManager.GetChapterInfo(chapterId)
                 end
             else
                 chapterId = v.ChapterId[difficult]
                 if chapterId and chapterId > 0 then
-                    chapterInfo = XFubenMainLineManager.GetChapterInfo(chapterId)
+                    chapterData = ChapterCfg[chapterId]
                 end
             end
 
-            if chapterInfo then
+            if chapterData then
                 tableInsert(list, v)
             end
         end
@@ -428,11 +544,17 @@ XFubenMainLineManagerCreator = function()
         end
     end
 
+    function XFubenMainLineManager.GetFirstStageByChapterMain(chapterMainId, difficult)
+        local chapterId = ChapterMainTemplates[chapterMainId].ChapterId[difficult]
+        local chapter = ChapterCfg[chapterId]
+        return chapter and chapter.StageId[1]
+    end
+
     function XFubenMainLineManager.GetChapterInfoByChapterMain(chapterMainId, difficult)
         if difficult == XFubenMainLineManager.DifficultNightmare then
             return XDataCenter.BfrtManager.GetChapterInfo(ChapterMainTemplates[chapterMainId].BfrtId)
         else
-            return ChapterInfos[ChapterMainTemplates[chapterMainId].ChapterId[difficult]]
+            return XFubenMainLineManager.GetChapterInfo(ChapterMainTemplates[chapterMainId].ChapterId[difficult])
         end
     end
 

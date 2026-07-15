@@ -25,10 +25,13 @@ function XUiPassportCardGrid:Refresh(passportBuyRewardShowId)
 
     local rewardData = self._Control:GetPassportBuyRewardShowRewardData(passportBuyRewardShowId, true)
     self.GridCommon:Refresh(rewardData)
-    
+
     local showCount = self._Control:GetPassportBuyRewardShowCount(passportBuyRewardShowId)
     self.TxtCount.text = CSXTextManagerGetText("ShopGridCommonCount", showCount)
-    self.TxtCount.gameObject:SetActiveEx(XTool.IsNumberValid(showCount) and true or false)
+
+    local enableCountDisplay = XTool.IsNumberValid(showCount)
+    self.TxtCount.gameObject:SetActiveEx(enableCountDisplay)
+    self.PanelTxt.gameObject:SetActiveEx(enableCountDisplay)
 end
 
 return XUiPassportCardGrid

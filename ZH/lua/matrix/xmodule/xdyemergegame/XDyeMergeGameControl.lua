@@ -135,6 +135,11 @@ function XDyeMergeGameControl:TryDoTimeTickOut()
     if self._TimeTickOutCallBack then
         self._TimeTickOutCallBack()
     else
+        -- 检查有没有引导
+        if XDataCenter.GuideManager.CheckIsInGuide() then
+            -- 结束引导
+            XDataCenter.GuideManager.ResetGuide()
+        end
         XLuaUiManager.RunMain()
 
         XUiManager.TipText('ActivityMainLineEnd')

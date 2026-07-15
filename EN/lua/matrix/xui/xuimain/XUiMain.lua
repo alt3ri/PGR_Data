@@ -70,6 +70,7 @@ function XUiMain:InitPanel()
     end
 
     self.CG:AddVideoDestroyCallBack(self._CGFinishCallBack)
+    self.CG:SetDestroyOnStopWithoutLanguagePreparing(true)
 
 
     -- self.AreanOnline = XUiPanelArenaOnline.New(self, self.PanelArenaOnline)  --屏蔽合众战局
@@ -265,11 +266,12 @@ function XUiMain:OnNotify(evt, ...)
             return
         end
 
+        self.SwitchableScene:OnVideoStart()
+
         if not self.CG:IsLanguagePreparing() then
-            self.SwitchableScene:OnVideoStart()
             self.CG:OnCGPlay()
         end
-    elseif evt == CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYEND then
+    elseif evt == CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYEND or evt == CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_STOP_WITHOUT_LANGUAGEPREPARING then
         local argUguiVideo = arg[1]
         local curUguiVideo = self.CG:GetVideoPlayer()
         if not XTool.UObjIsNil(argUguiVideo) and not XTool.UObjIsNil(curUguiVideo) and curUguiVideo.gameObject ~= argUguiVideo.gameObject then
@@ -302,6 +304,7 @@ function XUiMain:OnGetEvents()
         CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYING,
         CS.XEventId.EVENT_VIDEO_ACTION_STOP,
         CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYEND,
+        CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_STOP_WITHOUT_LANGUAGEPREPARING,
     }
 end
 

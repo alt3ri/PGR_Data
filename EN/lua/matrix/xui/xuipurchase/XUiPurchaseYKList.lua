@@ -63,11 +63,12 @@ end
 --######################## XUiPurchaseYKList ########################
 local XUiPurchaseYKList = XClass(nil, "XUiPurchaseYKList")
 
-function XUiPurchaseYKList:Ctor(ui, uiRoot, notEnoughCb)
+function XUiPurchaseYKList:Ctor(ui, uiRoot, notEnoughCb, customParam)
     XUiHelper.InitUiClass(self, ui)
     self.NotEnoughCb = notEnoughCb
     self.PurchaseManager = XDataCenter.PurchaseManager
     self.UiRoot = uiRoot
+    self.CustomParam = customParam
 end
 
 function XUiPurchaseYKList:OnRefresh(uiType)
@@ -95,10 +96,10 @@ function XUiPurchaseYKList:OnRefresh(uiType)
     local placeholders = { self.PanelYKItem, self.PanelYKItem2, self.PanelYKItem3 }
 
     if self.IsEnableDoubleYK() then
-        self.YKSwitcher.GameObject:SetActive(true)
+        self.YKSwitcher:Open()
         table.insert(placeholders, self.PanelYKItemC)
     else
-        self.YKSwitcher.GameObject:SetActive(false)
+        self.YKSwitcher:Close()
     end
 
     if #datas ~= #placeholders then
@@ -110,7 +111,16 @@ function XUiPurchaseYKList:OnRefresh(uiType)
         item:SetData(datas[i], handler(self, self.OnRefresh))
     end
 
-    self.YKSwitcher:Select(false)
+    if self.IsEnableDoubleYK() then
+        if self.CustomParam == nil then
+            local ykData = self.PurchaseManager.GetYKInfoData()
+            self.YKSwitcher:Select(ykData and ykData.Id == XPurchaseConfigs.EnYKCID)
+        else
+            self.YKSwitcher:Select(self.CustomParam.JumpToCardC)
+        end
+    else
+        self.PanelYKItemC.gameObject:SetActiveEx(false)
+    end
 end
 
 -- 是否启用双月卡判断条件
@@ -123,6 +133,9 @@ function XUiPurchaseYKList:ShowPanel()
 end
 
 function XUiPurchaseYKList:HidePanel()
+    if self.YKSwitcher then
+        self.YKSwitcher:Close()
+    end
     self.GameObject:SetActiveEx(false)
 end
 

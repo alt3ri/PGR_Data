@@ -6,6 +6,9 @@ local TABLE_BOSS_STARREWARD_PATH = "Share/Fuben/BossActivity/BossStarReward.tab"
 local TABLE_BOSS_GROUP_ROBOT_PATH = "Share/Fuben/BossActivity/BossRobotGroup.tab"
 local TABLE_BOSS_ACTIVITY_STORY_PATH="Share/Fuben/BossActivity/BossActivityStory.tab"
 
+local TABLE_BOSS_ACTIVITY_LEVESCORE_PATH="Share/Fuben/BossActivity/BossScoreLevel.tab"
+local TABLE_BOSS_ACTIVITY_TIMESCORE_PATH="Share/Fuben/BossActivity/BossScoreTime.tab"
+
 local pairs = pairs
 local tableInsert = table.insert
 
@@ -17,6 +20,8 @@ local BossStarRewardTemplates = {}
 local BossRobotGroupTemplates = {}
 local BossActivityStoryTemplates={}
 
+local BossLevelScore = {}
+local BossTimeScore = {}
 local DefaultActivityId = 0
 local ChallengeIdToOrderIdDic = {}
 local StageIdToChallengeIdDic = {}
@@ -31,6 +36,9 @@ function XFubenActivityBossSingleConfigs.Init()
     BossStarRewardTemplates = XTableManager.ReadByIntKey(TABLE_BOSS_STARREWARD_PATH, XTable.XTableBossStarReward, "Id")
     BossRobotGroupTemplates = XTableManager.ReadByIntKey(TABLE_BOSS_GROUP_ROBOT_PATH, XTable.XTableBossRobotGroup, "Id")
     BossActivityStoryTemplates=XTableManager.ReadByIntKey(TABLE_BOSS_ACTIVITY_STORY_PATH,XTable.XTableBossActivityStory,'Id')
+    BossLevelScore  = XTableManager.ReadByIntKey(TABLE_BOSS_ACTIVITY_LEVESCORE_PATH,XTable.XTableBossScoreLevel,'Id')
+    BossTimeScore   = XTableManager.ReadByIntKey(TABLE_BOSS_ACTIVITY_TIMESCORE_PATH,XTable.XTableBossScoreTime,'Id')
+   
     for activityId, config in pairs(BossActivityTemplates) do
         if XTool.IsNumberValid(config.ActivityTimeId) then
             DefaultActivityId = activityId
@@ -286,5 +294,35 @@ function XFubenActivityBossSingleConfigs.GetPreStoryId(sectionId,storyId)
     end
     
     return nil
-    
 end
+
+function XFubenActivityBossSingleConfigs.GetBossLevelScoreCO(level)
+    return BossLevelScore[level]
+end
+
+function XFubenActivityBossSingleConfigs.GetBossLevelScoreCOByScore(score)
+    if score == nil or score <= 0 then return BossLevelScore[1] end
+    local  lastCO = nil
+    for index, co in pairs(BossLevelScore) do
+        if score >= co.MinScore and  score < co.MaxScore then
+            return co
+        end
+        lastCO = co
+    end
+    return lastCO
+end
+
+function XFubenActivityBossSingleConfigs.GetBossTimeScoreCOByTime(useTime)
+    if useTime == nil or useTime<=0  then return BossTimeScore[1] end
+
+    local  lastCO = nil
+    for i = 1, #BossTimeScore do
+        if useTime >= BossTimeScore[i].MinTimeCost and useTime < BossTimeScore[i].MaxTimeCost then
+            return BossTimeScore[i]
+        end
+        lastCO  = BossTimeScore[i]
+    end
+    return lastCO
+end
+
+

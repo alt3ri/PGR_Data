@@ -66,4 +66,9 @@ function XTheatre6HitFlyController:OnLuaHitModify(missileUUID, launcherNpcUUID, 
     self:DispatchLuaEvent(eventType, eventArgs)
 end
 
+function XTheatre6AffixControllerBase:OnLuaAffixHitFly(eventArgs)
+    --击飞表现
+    self._proxy:LaunchMissile(eventArgs._launcherUUID, eventArgs._targetUUID, 102500901, 102500901, 1)
+end
+
 return XTheatre6HitFlyController

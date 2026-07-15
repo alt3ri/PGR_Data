@@ -372,6 +372,31 @@ function XMainLine2Model:GetChapterSpineProgressWans(chapterId)
     return config and config.SpineProgressWans or {}
 end
 
+function XMainLine2Model:GetChapterEnterSpineStageIndex(chapterId)
+    local config = self:GetConfigChapter(chapterId)
+    return config and config.EnterSpineStageIndex or {}
+end
+
+function XMainLine2Model:GetChapterEnterSpineName(chapterId)
+    local config = self:GetConfigChapter(chapterId)
+    return config and config.EnterSpineName or {}
+end
+
+function XMainLine2Model:GetChapterSwitchSpineStageIndex(chapterId)
+    local config = self:GetConfigChapter(chapterId)
+    return config and config.SwitchSpineStageIndex or {}
+end
+
+function XMainLine2Model:GetChapterSwitchAheadSpineName(chapterId)
+    local config = self:GetConfigChapter(chapterId)
+    return config and config.SwitchAheadSpineName or {}
+end
+
+function XMainLine2Model:GetChapterSwitchBackwardSpineName(chapterId)
+    local config = self:GetConfigChapter(chapterId)
+    return config and config.SwitchBackwardSpineName or {}
+end
+
 function XMainLine2Model:GetChapterLastStageId(chapterId)
     local stageGroupId = self:GetChapterStageGroupIds(chapterId)
     local lastGroupId = stageGroupId[#stageGroupId]
@@ -613,7 +638,11 @@ function XMainLine2Model:GetConfigExhibitionChapter(id)
         if cfgs[id] then
             return cfgs[id]
         else
-            XLog.Error("请检查配置表Share/Fuben/MainLine2/MainLine2ExhibitionChapter.tab，未配置行Id = " .. tostring(id))
+            XLog.Error(
+                "请策划老师检查以下配置表：",
+                string.format("(1)Share/Fuben/MainLine2/MainLine2ExhibitionChapter.tab，未配置行Id:[%s]", tostring(id)),
+                string.format("(2)Client/Fuben/MainLine2/MainLine2ExhibitionModule.tab，ChapterIds多配置了[%s]", tostring(id))
+            )
         end
     else
         return cfgs

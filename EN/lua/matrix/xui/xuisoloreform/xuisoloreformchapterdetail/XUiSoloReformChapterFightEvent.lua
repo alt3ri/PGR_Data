@@ -1,8 +1,10 @@
----强化显示
+--- 强化显示
 ---@class XUiSoloReformChapterFightEvent: XUiNode
 ---@field protected _Control XSoloReformControl
 local XUiSoloReformChapterFightEvent = XClass(XUiNode, 'XUiSoloReformChapterFightEvent')
-local XUiSoloReformChapterStrengthItem = require("XUi/XUiSoloReform/XUiSoloReformChapterDetail/XUiSoloReformChapterStrengthItem")
+local XUiSoloReformChapterStrengthItem = require(
+    "XUi/XUiSoloReform/XUiSoloReformChapterDetail/XUiSoloReformChapterStrengthItem"
+)
 
 function XUiSoloReformChapterFightEvent:OnStart()
     self._StrengthCellList = {}
@@ -20,7 +22,7 @@ function XUiSoloReformChapterFightEvent:OnDisable()
 end
 
 function XUiSoloReformChapterFightEvent:Update(stageId)
-    self._StageId  = stageId
+    self._StageId = stageId
 end
 
 function XUiSoloReformChapterFightEvent:InitStrengthList()
@@ -29,7 +31,7 @@ function XUiSoloReformChapterFightEvent:InitStrengthList()
         return
     end
     local fightEventIds = {}
-    for _,cfg in ipairs(fightEventCfgs) do
+    for _, cfg in ipairs(fightEventCfgs) do
         table.insert(fightEventIds, cfg.FightEventId)
     end
 
@@ -38,8 +40,23 @@ function XUiSoloReformChapterFightEvent:InitStrengthList()
     --     return
     -- end
     if self.GridReform then
-        XTool.UpdateDynamicItem(self._StrengthCellList, fightEventIds, self.GridReform, XUiSoloReformChapterStrengthItem, self)
-        self:OnClickStrength(fightEventIds[1]) --默认选第一个
+        self._StrengthCellList = {}
+        local buttons = {}
+        XUiHelper.RefreshCustomizedList(self.GridReform.parent, self.GridReform, #fightEventIds, function (index, grid)
+            local cell = self._StrengthCellList[index]
+            if not cell then
+                cell = XUiSoloReformChapterStrengthItem.New(grid, self)
+                self._StrengthCellList[index] = cell
+            end
+            cell:Open()
+            cell:Update(fightEventIds[index], self:GetCurFightEventId() == fightEventIds[index])
+            table.insert(buttons, cell.BtnGridReform)
+        end)
+        self.BtnGroup:Init(buttons, function (index)
+            self._StrengthCellList[index]:OnClickStrength()
+            self:RefreshFightEventInfo(fightEventIds[index])
+        end)
+        self.BtnGroup:SelectIndex(1)
     end
 end
 
@@ -62,9 +79,7 @@ function XUiSoloReformChapterFightEvent:OnClickStrength(fightEventId)
         return
     end
     self._FightEventId = fightEventId
-    for _, cell in pairs(self._StrengthCellList) do
-        cell:SetSelect(fightEventId)
-    end
+
     self:RefreshFightEventInfo(fightEventId)
 end
 
@@ -89,8 +104,8 @@ function XUiSoloReformChapterFightEvent:RefreshFightEventInfo(fightEventId)
         end
     end
 
-    self.TxtDetail.text = fightEventCfg.Desc
-    
+    self.TxtDetail.text = XUiHelper.ReplaceTextNewLine(fightEventCfg.Desc)
+
     local videoPlayer = self.VideoPlayer
     if XTool.IsNumberValid(fightEventCfg.VideoId) and not XTool.UObjIsNil(videoPlayer) then
         local videoPlayerInst = videoPlayer.VideoPlayerInst
@@ -107,4 +122,4 @@ function XUiSoloReformChapterFightEvent:OnDestroy()
     self._StageId = nil
 end
 
-return XUiSoloReformChapterFightEvent
+return XUiSoloReformChapterFightEvent

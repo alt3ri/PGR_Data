@@ -316,7 +316,7 @@ function XGoldenMinerControl:RequestGoldenMinerSaveStage(curPlayStageId)
     local dataDb = self._Model:GetMineDb()
     dataDb:ResetCurClearData()
     dataDb:UpdateCurrentPlayStage(curPlayStageId)
-    if self:TryExitToCollection() then
+    if self:TryExitToCollection(false) then
         return
     end
     XLuaUiManager.PopThenOpen("UiGoldenMinerMain")
@@ -483,7 +483,7 @@ end
 
 function XGoldenMinerControl:_GiveUpGame()
     self:RequestGoldenMinerExitGame(0, function()
-        if self:TryExitToCollection() then
+        if self:TryExitToCollection(true) then
             if XLuaUiManager.IsUiLoad("UiGoldenMinerHexSelect") then
                 XLuaUiManager.Remove("UiGoldenMinerHexSelect")
             end
@@ -505,7 +505,7 @@ function XGoldenMinerControl:ContinueGame()
     self:OpenGameUi()
 end
 
-function XGoldenMinerControl:TryExitToCollection()
+function XGoldenMinerControl:TryExitToCollection(isSettled)
     local gameType = XEnumConst.GameCollection.GameType.GoldenMiner
     if not XMVCA.XGameCollection:IsLaunchedFromCollection(gameType) then
         return false
@@ -514,7 +514,10 @@ function XGoldenMinerControl:TryExitToCollection()
     local dataDb = self:GetMainDb()
     local clearData = dataDb and dataDb:GetCurClearData()
     local score = clearData and clearData.TotalScore or (dataDb and dataDb:GetStageScores()) or 0
-    XMVCA.XGameCollection:OnGameExitToCollection(gameType, { Score = score })
+    XMVCA.XGameCollection:OnGameExitToCollection(gameType, {
+        Score = score,
+        IsSettled = isSettled and true or false,
+    })
     XMVCA.XGameCollection:BackToMainUiIfNeeded()
     return true
 end

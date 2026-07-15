@@ -150,7 +150,7 @@ end
 
 function XUiBigWorldSetPanelFightPC:OnTogEnableKeyboardClick(value)
     if value ~= nil then
-        self:SetEnableInputKeyboard(value)
+        self:SetEnableInputKeyboard(value == 1)
     else
         self:SetEnableInputKeyboard(self.TogEnableKeyboard:GetToggleState())
     end

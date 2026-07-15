@@ -209,7 +209,7 @@ function XBigWorldMapAgency:OnPlayerExitArea(data)
 end
 
 function XBigWorldMapAgency:OnAssistedTrackMapPin(data)
-    self._Model:UpdateAssistedTrack(data.MapPinLevelId, data.MapPinId, data.Position, data.MapAreaGroupId)
+    self._Model:UpdateAssistedTrack(data.MapPinLevelId, data.MapPinId, data.Position, data.PlayerGroupId)
     XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MAP_PIN_ASSISTED_TRACK_UPDATE)
 end
 
@@ -429,8 +429,8 @@ function XBigWorldMapAgency:GetOptionalQuestPinStyleIdByQuestType(questId)
     return self._Model:GetBigWorldMapQuestPinSecondStyleIdByQuestType(questId)
 end
 
-function XBigWorldMapAgency:GetReadyQuestPinStyleIdByQuestType(questId)
-    return self._Model:GetBigWorldMapQuestPinReadyStyleIdByQuestType(questId)
+function XBigWorldMapAgency:GetReadyQuestPinStyleIdByQuestType(questId, isNotTip)
+    return self._Model:GetBigWorldMapQuestPinReadyStyleIdByQuestType(questId, isNotTip)
 end
 
 ---@param questId number
@@ -515,6 +515,16 @@ function XBigWorldMapAgency:CheckHasPin(levelId, pinId)
     local pinData = self._Model:GetPinDataByLevelIdAndPinId(levelId, pinId, true)
 
     return pinData ~= nil
+end
+
+function XBigWorldMapAgency:CheckPinDisplay(levelId, pinId)
+    local pinData = self._Model:GetPinDataByLevelIdAndPinId(levelId, pinId, true)
+
+    if pinData then
+        return pinData:IsDisplaying()
+    end
+
+    return false
 end
 
 function XBigWorldMapAgency:CheckCurrentSameAreaGroup(targetAreaGroupId)

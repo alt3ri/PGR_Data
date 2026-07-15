@@ -14,7 +14,7 @@ function XBuffScript10252010:OnLuaAffixHitFly(eventArgs )
     if eventArgs._launcherUUID ~= self._npcUUID then return end
     if self.ChanceCheck == 1 then
         self._level:RequestInsertSkill(self._uuid,self.TargetSkill)
-        self:LogError("2010抓到了击飞效果"..eventArgs._skillId)
+        -- self:LogError("2010抓到了击飞效果"..eventArgs._skillId)
         self.ChanceCheck = 0
     end
 end

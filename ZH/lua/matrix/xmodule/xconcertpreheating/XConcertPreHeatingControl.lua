@@ -294,4 +294,9 @@ function XConcertPreHeatingControl.IsTuneComplete(tuneProgress)
     return (tuneProgress or 0) >= TUNE_PROGRESS_MAX
 end
 
+function XConcertPreHeatingControl:OnRelease()
+    self._TuningStageControlParamCfgs = nil
+    self._TuningStageBaseMatchProgress = nil
+end
+
 return XConcertPreHeatingControl

@@ -6,7 +6,6 @@ local XTheatre6SubSkillModel = XClass(XModel, "XTheatre6SubSkillModel")
 
 local SkillType = XEnumConst.Theatre6.SkillType
 local SlotType = XEnumConst.Theatre6.SlotType
-local NewSkillSaveKey = "XTheatre6SubSkillModelBag_%s"
 local SyncSlotTypes = {
     SlotType.Active,
     SlotType.Insert,
@@ -33,6 +32,7 @@ function XTheatre6SubSkillModel:OnInit()
         [SlotType.Special] = {},
         [SlotType.Bag] = {},
     }
+    self._NewSkillIdSet = {}
 end
 
 function XTheatre6SubSkillModel:ClearPrivate()
@@ -46,6 +46,7 @@ function XTheatre6SubSkillModel:ClearPrivate()
     self._BaseSkillCache = nil
     self._BaseSkillCharacterId = nil
     self._ForceSellSkillFlagByMode = {}
+    self._NewSkillIdSet = {}
 end
 
 function XTheatre6SubSkillModel:ResetAll()
@@ -168,21 +169,35 @@ function XTheatre6SubSkillModel:CollectAddSkillToastFlags(skillUpdateData)
     local addSkillKey = self:GetSkillKey(addSkill.SkillId)
     local addSkillLevel = self:GetSkillLevel(addSkill.SkillId)
 
-    local hasUpgradeReplace = false
-    if addSkill.SlotType ~= SlotType.Bag and skillUpdateData.ReplaceSkills then
+    --本次 ReplaceSkills 在装备槽上的覆盖表,代表"更新后"的装备视图,供两个 flag 共用
+    local replaceLookup
+    if skillUpdateData.ReplaceSkills then
+        replaceLookup = {}
         for _, skillData in pairs(skillUpdateData.ReplaceSkills) do
-            if skillData and XTool.IsNumberValid(skillData.SkillId)
-                and skillData.SlotType == addSkill.SlotType
-                and skillData.Position == addSkill.Position
-                and self:GetSkillKey(skillData.SkillId) == addSkillKey then
-                local slotGroup = currentSkills[skillData.SlotType]
-                local oldData = slotGroup and slotGroup[skillData.Position]
-                if oldData and XTool.IsNumberValid(oldData.SkillId)
-                    and self:GetSkillKey(oldData.SkillId) == addSkillKey
-                    and addSkillLevel > self:GetSkillLevel(oldData.SkillId) then
-                    hasUpgradeReplace = true
-                    break
+            if skillData and XTool.IsNumberValid(skillData.SkillId) and skillData.SlotType ~= SlotType.Bag then
+                replaceLookup[skillData.SlotType] = replaceLookup[skillData.SlotType] or {}
+                replaceLookup[skillData.SlotType][skillData.Position] = skillData
+            end
+        end
+    end
+
+    local hasUpgradeReplace = false
+    if replaceLookup then
+        for slotType, slotReplace in pairs(replaceLookup) do
+            local slotGroup = currentSkills[slotType]
+            for pos, skillData in pairs(slotReplace) do
+                if self:GetSkillKey(skillData.SkillId) == addSkillKey then
+                    local oldData = slotGroup and slotGroup[pos]
+                    if oldData and XTool.IsNumberValid(oldData.SkillId)
+                        and self:GetSkillKey(oldData.SkillId) == addSkillKey
+                        and self:GetSkillLevel(skillData.SkillId) > self:GetSkillLevel(oldData.SkillId) then
+                        hasUpgradeReplace = true
+                        break
+                    end
                 end
+            end
+            if hasUpgradeReplace then
+                break
             end
         end
     end
@@ -191,7 +206,18 @@ function XTheatre6SubSkillModel:CollectAddSkillToastFlags(skillUpdateData)
     if addSkill.SlotType == SlotType.Bag then
         for slotType, slotGroup in pairs(currentSkills) do
             if slotType ~= SlotType.Bag then
-                for _, equipData in pairs(slotGroup) do
+                local replaceSlot = replaceLookup and replaceLookup[slotType]
+                local positions = {}
+                for pos in pairs(slotGroup) do
+                    positions[pos] = true
+                end
+                if replaceSlot then
+                    for pos in pairs(replaceSlot) do
+                        positions[pos] = true
+                    end
+                end
+                for pos in pairs(positions) do
+                    local equipData = (replaceSlot and replaceSlot[pos]) or slotGroup[pos]
                     if equipData and XTool.IsNumberValid(equipData.SkillId)
                         and self:GetSkillKey(equipData.SkillId) == addSkillKey
                         and self:GetSkillLevel(equipData.SkillId) > addSkillLevel then
@@ -209,7 +235,7 @@ function XTheatre6SubSkillModel:CollectAddSkillToastFlags(skillUpdateData)
     return hasUpgradeReplace, hasLowLevelToBag
 end
 
-function XTheatre6SubSkillModel:UpdateSkills(skillUpdateData)
+function XTheatre6SubSkillModel:UpdateSkills(skillUpdateData, ignoreNewSkill)
     if not skillUpdateData then
         XLog.Error("后端同步技能移动或交换时，返回数据中缺少技能更新数据")
         return
@@ -245,6 +271,9 @@ function XTheatre6SubSkillModel:UpdateSkills(skillUpdateData)
         if bucket then
             bucket[skillUpdateData.AddSkill.SkillId] = true
         end
+        if not ignoreNewSkill and skillUpdateData.AddSkill.SlotType == SlotType.Bag then
+            self:MarkSkillAsNew(skillUpdateData.AddSkill.SkillId)
+        end
     end
 
     local isUpdated = false
@@ -266,8 +295,8 @@ function XTheatre6SubSkillModel:UpdateSkills(skillUpdateData)
     XEventManager.DispatchEvent(XEventId.EVENT_THEATRE6_UPDATE_SKILL, addSkillIdSetBySlot, upgradeSkillIdSet)
 end
 
-function XTheatre6SubSkillModel:UpdateSkillsWithOverQueue(skillUpdateData, playModeId)
-    self:UpdateSkills(skillUpdateData)
+function XTheatre6SubSkillModel:UpdateSkillsWithOverQueue(skillUpdateData, playModeId, ignoreNewSkill)
+    self:UpdateSkills(skillUpdateData, ignoreNewSkill)
     if not skillUpdateData then
         return
     end
@@ -275,22 +304,16 @@ function XTheatre6SubSkillModel:UpdateSkillsWithOverQueue(skillUpdateData, playM
     if XTool.IsNumberValid(skillUpdateData.FullEnQueueSkill) then
         self:AddSkillOverQueue(skillUpdateData.FullEnQueueSkill, playModeId)
     end
-    if XTool.IsTableEmpty(skillUpdateData.RemovesSkills) then
-        return
-    end
 
-    for _ in pairs(skillUpdateData.RemovesSkills) do
-        if XTool.IsTableEmpty(self:GetForceSellSkillOverQueue(playModeId)) then
-            return
-        end
-        self:PopSkillOverQueue(playModeId)
+    if not XTool.IsTableEmpty(skillUpdateData.DequeueSkills) then
+        self:RemoveSkillOverQueueBySkillIds(skillUpdateData.DequeueSkills, playModeId)
     end
 end
 
-function XTheatre6SubSkillModel:UpdateSkillListWithOverQueue(skillUpdates, playModeId)
+function XTheatre6SubSkillModel:UpdateSkillListWithOverQueue(skillUpdates, playModeId, ignoreNewSkill)
     playModeId = playModeId or self._MainModel:GetCurPlayMode()
     for _, skillUpdateData in ipairs(skillUpdates or {}) do
-        self:UpdateSkillsWithOverQueue(skillUpdateData, playModeId)
+        self:UpdateSkillsWithOverQueue(skillUpdateData, playModeId, ignoreNewSkill)
     end
 end
 
@@ -457,6 +480,29 @@ function XTheatre6SubSkillModel:PopSkillOverQueue(playModeId)
     return skillId
 end
 
+function XTheatre6SubSkillModel:RemoveSkillOverQueueBySkillIds(skillIds, playModeId)
+    local overQueue = self:GetForceSellSkillOverQueue(playModeId)
+    if XTool.IsTableEmpty(overQueue) then
+        self:ClearSkillOverQueue(playModeId)
+        return
+    end
+
+    for _, skillId in ipairs(skillIds or {}) do
+        for index = #overQueue, 1, -1 do
+            if overQueue[index] == skillId then
+                table.remove(overQueue, index)
+                break
+            end
+        end
+    end
+
+    if XTool.IsTableEmpty(overQueue) then
+        self:ClearSkillOverQueue(playModeId)
+    else
+        self:SetForceSellSkillFlag(overQueue, playModeId)
+    end
+end
+
 function XTheatre6SubSkillModel:IsForceSellSkillBlock(playModeId)
     playModeId = playModeId or self._MainModel:GetCurPlayMode()
     local overQueue = self:GetForceSellSkillOverQueue(playModeId)
@@ -494,10 +540,24 @@ function XTheatre6SubSkillModel:OpenSellSkillPanel(overQueue)
         return
     end
     self:SetForceSellSkillFlag(overQueue)
-    if XLuaUiManager.IsUiShow("UiTheatre6PopupSellSkill") then
+    if XLuaUiManager.IsUiShow("UiFightDLC") or XLuaUiManager.IsUiShow("UiTheatre6RoundSettlement") then
         return
     end
-    XLuaUiManager.Open("UiTheatre6PopupSellSkill", overQueue)
+    local curOverQueue = self:GetForceSellSkillOverQueue(self._MainModel:GetCurPlayMode())
+    if self.PopupSellSkillTimer then
+        XScheduleManager.UnSchedule(self.PopupSellSkillTimer)
+        self.PopupSellSkillTimer = nil
+    end
+    self.PopupSellSkillTimer = XScheduleManager.ScheduleNextFrame(function()
+        if XLuaUiManager.IsUiLoad("UiTheatre6PopupSellSkill") or XLuaUiManager.IsUiPushing("UiTheatre6PopupSellSkill") then
+            XEventManager.DispatchEvent(XEventId.EVENT_THEATRE6_OVER_SKILL_REFRESH, curOverQueue)
+            self.PopupSellSkillTimer = nil
+            return
+        end
+   
+        XLuaUiManager.Open("UiTheatre6PopupSellSkill", curOverQueue)
+    end)
+ 
 end
 
 ---清理后端推送的溢出队列缓存（售卖完成后调用）
@@ -673,6 +733,7 @@ function XTheatre6SubSkillModel:GetSlotCapacity(slotType)
             [SlotType.Active] = self._MainModel:GetIntConfigValue("ActiveSkillSlotInitCount"),
             [SlotType.Insert] = self._MainModel:GetIntConfigValue("InsertSkillSlotInitCount"),
             [SlotType.Special] = 1,
+            [SlotType.Bag] = self._MainModel:GetIntConfigValue("SkillBagSlotInitCount"),
         }
     end
 
@@ -700,6 +761,25 @@ end
 function XTheatre6SubSkillModel:GetSkillInstallSlots(skillId)
     local skillType = self:GetSkillType(skillId)
     return self._SkillSlotDict[skillType]
+end
+
+---查找技能当前装备的槽位位置;不在装备槽(在背包或不存在)时返回 nil
+---@param skillId number 技能ID
+---@return number|nil slotType 槽位类型
+---@return number|nil position 槽位位置
+function XTheatre6SubSkillModel:GetSkillEquippedPosition(skillId)
+    if not XTool.IsNumberValid(skillId) then return nil end
+    for _, slotType in ipairs({ SlotType.Active, SlotType.Insert, SlotType.Special }) do
+        local group = self:GetCharacterSkills(slotType)
+        if group then
+            for pos, data in pairs(group) do
+                if data and data.SkillId == skillId then
+                    return slotType, pos
+                end
+            end
+        end
+    end
+    return nil
 end
 
 ---技能等级
@@ -820,12 +900,18 @@ end
 
 ---获取下一级技能id
 function XTheatre6SubSkillModel:GetNextLevelSkillId(tagetskillId)
-    local targetSkillKey = self:GetSkillKey(tagetskillId)
-    local targetLevel = self:GetSkillLevel(tagetskillId) + 1
-    for skillId, skillCfg in pairs(self._MainModel:GetSkillConfigs()) do
-        if skillCfg.SkillKey == targetSkillKey and skillCfg.Level == targetLevel then
-            return skillId
+    --skillId = skillKey × 10 + level
+    local currentSkillConfig = self._MainModel:GetSkillCfgById(tagetskillId)
+    local allSkillConfigs = self._MainModel:GetSkillConfigs()
+    local nextSkillLevelId = nil
+    for id,skillConfig in pairs(allSkillConfigs) do
+        if skillConfig and skillConfig.SkillKey == currentSkillConfig.SkillKey and skillConfig.Level == currentSkillConfig.Level + 1 then
+            nextSkillLevelId = id
+            break
         end
+    end
+    if XTool.IsNumberValid(nextSkillLevelId) then
+        return nextSkillLevelId
     end
 
     return nil
@@ -910,12 +996,119 @@ function XTheatre6SubSkillModel:CalcEquippedSkillScore()
     return score
 end
 
+function XTheatre6SubSkillModel:MarkSkillAsNew(skillId)
+    if not XTool.IsNumberValid(skillId) then
+        return
+    end
+    self._NewSkillIdSet[skillId] = true
+end
+
 function XTheatre6SubSkillModel:SetNewSkillViewed(skillId)
-    self._SaveUtil:SaveData(string.format(NewSkillSaveKey, skillId), 1)
+    self._NewSkillIdSet[skillId] = nil
 end
 
 function XTheatre6SubSkillModel:HasNewSkill(skillId)
-    return self._SaveUtil:GetData(string.format(NewSkillSaveKey, skillId)) ~= 1
+    return self._NewSkillIdSet[skillId] == true
+end
+
+function XTheatre6SubSkillModel:ClearBagNewSkillFlags()
+    if not next(self._NewSkillIdSet) then
+        return false
+    end
+    self._NewSkillIdSet = {}
+    return true
+end
+
+function XTheatre6SubSkillModel:GetAddSkillGainTipData(data)
+    if XTool.IsTableEmpty(data.SkillUpdates) then
+        return nil, false
+    end
+
+    local bestSkillId
+    local bestIsUpGrade = false
+    local currentSkills = self:GetCharacterSkills()
+
+    for _, skillUpdateData in ipairs(data.SkillUpdates) do
+        local addSkill = skillUpdateData.AddSkill
+        local addSkillId = addSkill and addSkill.SkillId or nil
+        if XTool.IsNumberValid(addSkillId) then
+            if self:IsBetterGainTipSkill(addSkillId, bestSkillId) then
+                bestSkillId = addSkillId
+                bestIsUpGrade = false
+            end
+        end
+
+        if not XTool.IsTableEmpty(skillUpdateData.ReplaceSkills) then
+            for _, skillData in pairs(skillUpdateData.ReplaceSkills) do
+                local skillId = skillData.SkillId
+                if self:IsBetterGainTipSkill(skillId, bestSkillId) then
+                    bestSkillId = skillId
+                    bestIsUpGrade = self:IsUpgradeSkillData(currentSkills, skillData)
+                end
+            end
+        end
+    end
+
+    return bestSkillId, bestIsUpGrade
+end
+
+function XTheatre6SubSkillModel:IsBetterGainTipSkill(skillId, oldSkillId)
+    if not XTool.IsNumberValid(skillId) then
+        return false
+    end
+    if not XTool.IsNumberValid(oldSkillId) then
+        return true
+    end
+
+    local skillCfg = self._MainModel:GetSkillCfgById(skillId)
+    local oldSkillCfg = self._MainModel:GetSkillCfgById(oldSkillId)
+
+    local skillLevel = skillCfg.Level
+    local oldSkillLevel = oldSkillCfg.Level
+    if skillLevel ~= oldSkillLevel then
+        return skillLevel > oldSkillLevel
+    end
+
+    local skillQuality = skillCfg.Quality
+    local oldSkillQuality = oldSkillCfg.Quality
+    if skillQuality ~= oldSkillQuality then
+        return skillQuality > oldSkillQuality
+    end
+
+    return skillCfg.Id > oldSkillCfg.Id
+end
+
+function XTheatre6SubSkillModel:IsUpgradeSkillData(currentSkills, skillData)
+    if not skillData or not XTool.IsNumberValid(skillData.SkillId) then
+        return false
+    end
+
+    local slotGroup = currentSkills and currentSkills[skillData.SlotType]
+    local oldSkillData = slotGroup and slotGroup[skillData.Position]
+    if not oldSkillData or not XTool.IsNumberValid(oldSkillData.SkillId) then
+        return false
+    end
+
+    local skillCfg = self._MainModel:GetSkillCfgById(skillData.SkillId)
+    local oldSkillCfg = self._MainModel:GetSkillCfgById(oldSkillData.SkillId)
+    return skillCfg.SkillKey == oldSkillCfg.SkillKey and skillCfg.Level > oldSkillCfg.Level
+end
+
+--endregion
+
+
+--region v4.6 pvp
+
+function XTheatre6SubSkillModel:GetSkillSlotSortConfigKeys(skillType)
+    if not self._SkillSlotSortConfigKeys then
+        self._SkillSlotSortConfigKeys = {
+            [SkillType.Active] = "ActiveSkillSlotSort",
+            [SkillType.Parry] = "ClashSkillSlotSort",
+            [SkillType.OverClock] = "UltraCalcSkillSlotSort",
+            [SkillType.Insert] = "InsertSkillSlotSort",
+        }
+    end
+    return self._SkillSlotSortConfigKeys[skillType]
 end
 
 --endregion

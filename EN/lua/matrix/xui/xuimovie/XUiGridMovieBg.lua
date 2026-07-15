@@ -1,5 +1,6 @@
 local DEFAULT_PIVOT = XLuaVector2.New(0.5, 0.5)
 local DEFAULT_SCALE = XLuaVector3.New(1, 1, 1)
+local DEFAULT_BG_INDEX = 1 -- 最底层背景
 local Quaternion = CS.UnityEngine.Quaternion
 local tableInsert = table.insert
 
@@ -26,7 +27,7 @@ function XUiGridMovieBg:Ctor(uiMovie, link, bgIndex)
 end
 
 function XUiGridMovieBg:OnDestroy()
-    
+    self:RemoveBlurTimer()
 end
 
 -- 设置GameObject显示
@@ -73,6 +74,10 @@ end
 
 function XUiGridMovieBg:SetPivot(pivot)
     self.RImgBg.transform.pivot = pivot
+end
+
+function XUiGridMovieBg:SetPivotWithoutGC(x, y)
+	self.RImgBgRect:SetPivot(x, y)
 end
 
 function XUiGridMovieBg:SetNativeSize()
@@ -137,13 +142,15 @@ function XUiGridMovieBg:SetAnchorType(anchorType, positionParams)
     end
 end
 
-function XUiGridMovieBg:DOAnchorPos3D(pos, duration)
+function XUiGridMovieBg:DOAnchorPos3D(pos, duration, ease)
     -- 正在加载图片，需要等图片加载完成，设置完对齐和位置之后才开始移动
     if self.IsLoadingRawImage then
         self._CacheMovePosList = self._CacheMovePosList or {}
         self._CacheMoveDurationList = self._CacheMoveDurationList or {}
+        self._CacheMoveEaseList = self._CacheMoveEaseList or {}
         tableInsert(self._CacheMovePosList, pos)
         tableInsert(self._CacheMoveDurationList, duration)
+        self._CacheMoveEaseList[#self._CacheMovePosList] = ease
         return
     end
 
@@ -152,10 +159,14 @@ function XUiGridMovieBg:DOAnchorPos3D(pos, duration)
         self.DOAnchorPos3DTween:Complete()
         self.DOAnchorPos3DTween = nil
     end
-    
+
     -- 0秒也要跑Tween动画
     -- 原因：旧剧情是先配0秒动画设置位置，再配101切换背景图(会重置位置)，而动画最少跑一帧，最终以动画的位置显示
     self.DOAnchorPos3DTween = self.RImgBg.transform:DOAnchorPos3D(pos, duration)
+    if ease and self.DOAnchorPos3DTween then
+        self.DOAnchorPos3DTween:SetEase(ease)
+    end
+    return self.DOAnchorPos3DTween
 end
 
 -- 检测是否有动画未播放
@@ -163,27 +174,55 @@ function XUiGridMovieBg:_CheckPlayMoveAnimation()
     if self._CacheMovePosList and #self._CacheMovePosList > 0 then
         for i, pos in ipairs(self._CacheMovePosList) do
             local duration = self._CacheMoveDurationList[i]
-            self:DOAnchorPos3D(pos, duration)
+            local ease = self._CacheMoveEaseList and self._CacheMoveEaseList[i] or nil
+            self:DOAnchorPos3D(pos, duration, ease)
         end
         self._CacheMovePosList = {}
         self._CacheMoveDurationList = {}
+        self._CacheMoveEaseList = {}
     end
 end
 
 -- 播放旋转动画
-function XUiGridMovieBg:DoRotate(eulerAngles, duration)
+function XUiGridMovieBg:DoRotate(eulerAngles, duration, ease)
     -- 完成上一个旋转动画
     if self.DORotateTween then
         self.DORotateTween:Complete()
         self.DORotateTween = nil
     end
-    
+
     local transform = self.RImgBg.transform
     if not duration or duration == 0 then
         transform.eulerAngles = eulerAngles
     else
-        self.DORotateTween = transform:DORotate(eulerAngles, duration):OnComplete(function()
+        local tween = transform:DORotate(eulerAngles, duration)
+        if ease then
+            tween:SetEase(ease)
+        end
+        self.DORotateTween = tween:OnComplete(function()
             transform.eulerAngles = eulerAngles
+        end)
+    end
+end
+
+-- 播放缩放动画（绕当前 pivot 缩放）
+function XUiGridMovieBg:DoScale(scale, duration, ease)
+    -- 完成上一个缩放动画
+    if self.DOScaleTween then
+        self.DOScaleTween:Complete()
+        self.DOScaleTween = nil
+    end
+
+    local transform = self.RImgBg.transform
+    if not duration or duration == 0 then
+        transform.localScale = scale
+    else
+        local tween = transform:DOScale(scale, duration)
+        if ease then
+            tween:SetEase(ease)
+        end
+        self.DOScaleTween = tween:OnComplete(function()
+            transform.localScale = scale
         end)
     end
 end
@@ -221,6 +260,14 @@ function XUiGridMovieBg:SetBgPath(bgPath, anchorType, positionParams)
     end
     
     self.BgPath = bgPath
+    -- 背景1（最底层）更换图片资产时重置缩放，避免上一张图的 Scale 残留到新图
+    if self.BgIndex == DEFAULT_BG_INDEX then
+        if self.DOScaleTween then
+            self.DOScaleTween:Kill()
+            self.DOScaleTween = nil
+        end
+        self.RImgBg.transform.localScale = DEFAULT_SCALE
+    end
     self.IsLoadingRawImage = true -- 是否正在加载图片
     self.RImgBg:SetRawImage(bgPath, function()
         self.IsLoadingRawImage = false
@@ -247,7 +294,7 @@ function XUiGridMovieBg:ResetBgRootAlpha()
     self.BgRoot:GetComponent("CanvasGroup").alpha = 1
 end
 
-function XUiGridMovieBg:SetAlpha(alpha, duration)
+function XUiGridMovieBg:SetAlpha(alpha, duration, ease)
     -- 完成上一个透明度变化动画
     if self.DOFadeTween then
         self.DOFadeTween:Complete()
@@ -256,6 +303,9 @@ function XUiGridMovieBg:SetAlpha(alpha, duration)
 
     if XTool.IsNumberValidEx(duration) then
         self.DOFadeTween = self.RImgBg:DOFade(alpha, duration)
+        if ease then
+            self.DOFadeTween:SetEase(ease)
+        end
     else
         local color = self.RImgBg.color
         color.a = alpha
@@ -270,6 +320,94 @@ function XUiGridMovieBg:SetGrayScale(value, time)
         component = self.RImgBg.gameObject:AddComponent(typeof(CS.XUiMaterialController))
     end
     component:SetGrayScale(value, time)
+end
+
+-- 按 blurType 应用模糊配置（不含关闭分支，供逐帧插值调用；setter 内部会 SetGraphicDirty）
+local function _ApplyBlurSettings(controller, blurType, strength, extra)
+    if blurType == 1 then
+        controller:SetDirectionalBlur(strength, extra and extra.angle or 0)
+    elseif blurType == 2 then
+        local fx = (extra and extra.focusX) or 0.5
+        local fy = (extra and extra.focusY) or 0.5
+        controller:SetRadialBlur(
+            strength,
+            CS.UnityEngine.Vector2(fx, fy),
+            (extra and extra.radius) or 0.2,
+            (extra and extra.gradient) or 0.5,
+            (extra and extra.noiseScale) or 0.7
+        )
+    elseif blurType == 3 then
+        controller:SetGaussianBlur(strength)
+    end
+end
+
+function XUiGridMovieBg:RemoveBlurTimer()
+    if self.BlurTimer then
+        XScheduleManager.UnSchedule(self.BlurTimer)
+        self.BlurTimer = nil
+    end
+end
+
+-- 设置模糊
+-- blurType: 0=关闭, 1=Directional, 2=Radial, 3=Gaussian
+-- strength: 0~1
+-- duration: 秒，>0 时对 strength 做插值（开启渐入/关闭渐出），<=0 为瞬时
+-- extra: 类型相关参数表（angle / focusX/focusY / radius / gradient / noiseScale）
+function XUiGridMovieBg:SetBlur(blurType, strength, duration, extra)
+    local image = self.RImgBg
+    if XTool.UObjIsNil(image) then return end
+
+    local controller = image.gameObject:GetComponent(typeof(CS.XUiBlurController))
+    if not controller then
+        controller = image.gameObject:AddComponent(typeof(CS.XUiBlurController))
+    end
+
+    self:RemoveBlurTimer()
+
+    local BlurTypeNone = CS.XUiBlurController.BlurType.None
+    local isClose = blurType == 0 or strength <= 0
+
+    -- 瞬时
+    if not duration or duration <= 0 then
+        if isClose then
+            controller.activeBlur = BlurTypeNone
+            controller.enabled = false
+        else
+            controller.enabled = true
+            _ApplyBlurSettings(controller, blurType, strength, extra)
+        end
+        return
+    end
+
+    -- 渐变
+    if isClose then
+        -- 当前没有模糊则无需渐出
+        if controller.activeBlur == BlurTypeNone or controller.strength <= 0 then
+            controller.activeBlur = BlurTypeNone
+            controller.enabled = false
+            return
+        end
+        controller.enabled = true
+        local startStrength = controller.strength
+        self.BlurTimer = XUiHelper.Tween(duration, function(t)
+            controller.strength = startStrength * (1 - t)
+            image:SetMaterialDirty()
+        end, function()
+            controller.activeBlur = BlurTypeNone
+            controller.enabled = false
+            self.BlurTimer = nil
+        end)
+    else
+        controller.enabled = true
+        -- 之前是关闭状态则从 0 渐入，否则从当前强度过渡
+        local startStrength = controller.activeBlur == BlurTypeNone and 0 or controller.strength
+        self.BlurTimer = XUiHelper.Tween(duration, function(t)
+            local cur = startStrength + (strength - startStrength) * t
+            _ApplyBlurSettings(controller, blurType, cur, extra)
+        end, function()
+            self.BlurTimer = nil
+        end)
+    end
 end
 
 function XUiGridMovieBg:GetXAspectRatioFitter()

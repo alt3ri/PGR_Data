@@ -1,4 +1,4 @@
----@class XUiGirdBigWorldEnvironmentalStory : XUiNode
+---@class XUiGirdBigWorldEnvironmentalStory: XUiNode
 local XUiGirdBigWorldEnvironmentalStory = XClass(XUiNode, "XUiGirdBigWorldEnvironmentalStory")
 
 function XUiGirdBigWorldEnvironmentalStory:OnStart()
@@ -24,12 +24,12 @@ function XUiGirdBigWorldEnvironmentalStory:RefreshReward(rewardId)
     local rewardList
     if rewardId and rewardId > 0 then
         rewardList = XMVCA.XBigWorldGamePlay:GetBigWorldGoodsByGroupId(rewardId)
-        --local reward = rewardList[1]
-        --if reward then
-        --local id = reward.TemplateId or reward.Id
-        --self._GoodsParams = XMVCA.XBigWorldService:GetGoodsShowParamsByTemplateId(id)
-        --self.BtnReward:SetRawImage(self._GoodsParams.Icon)
-        --end
+        -- local reward = rewardList[1]
+        -- if reward then
+        -- local id = reward.TemplateId or reward.Id
+        -- self._GoodsParams = XMVCA.XBigWorldService:GetGoodsShowParamsByTemplateId(id)
+        -- self.BtnReward:SetRawImage(self._GoodsParams.Icon)
+        -- end
     end
     self._RewardList = rewardList
     self.BtnReward.gameObject:SetActiveEx(rewardList ~= nil)
@@ -53,7 +53,7 @@ function XUiGirdBigWorldEnvironmentalStory:OnBtnGoClick()
     end
 end
 
----@class XUiGirdBigWorldEnvironmentalGroup : XUiNode
+---@class XUiGirdBigWorldEnvironmentalGroup: XUiNode
 local XUiGirdBigWorldEnvironmentalGroup = XClass(XUiNode, "XUiGirdBigWorldEnvironmentalGroup")
 
 function XUiGirdBigWorldEnvironmentalGroup:OnStart()
@@ -78,7 +78,7 @@ function XUiGirdBigWorldEnvironmentalGroup:OnDestroy()
 end
 
 ---@param config XTableDlcEnvironmentQuestLevel
-function XUiGirdBigWorldEnvironmentalGroup:Refresh(config)
+function XUiGirdBigWorldEnvironmentalGroup:Refresh(config, isRealSelect, selectTarget)
     local name = config.Name
 
     if string.IsNilOrEmpty(name) then
@@ -88,11 +88,11 @@ function XUiGirdBigWorldEnvironmentalGroup:Refresh(config)
     self._LevelId = config.LevelId
     self.TexTital.text = name
     self.GroupRed.gameObject:SetActiveEx(not XMVCA.XBigWorldQuest:GetRecordEnvironmentalGroup(config.LevelId))
-    self:RefreshTabs(config)
+    self:RefreshTabs(config, isRealSelect, selectTarget)
 end
 
 ---@param config XTableDlcEnvironmentQuestLevel
-function XUiGirdBigWorldEnvironmentalGroup:RefreshTabs(config)
+function XUiGirdBigWorldEnvironmentalGroup:RefreshTabs(config, isRealSelect, selectTarget)
     local groupIds = config.GroupIds
 
     self._Configs = {}
@@ -105,6 +105,7 @@ function XUiGirdBigWorldEnvironmentalGroup:RefreshTabs(config)
         self.TabGroup.gameObject:SetActiveEx(true)
         for _, groupId in pairs(groupIds) do
             local groupConfig = XMVCA.XBigWorldQuest:GetEnvironmentQuestGroupTemplate(groupId)
+            local isOnDuty = false
 
             if groupConfig then
                 local tab = self._Tabs[index]
@@ -116,21 +117,19 @@ function XUiGirdBigWorldEnvironmentalGroup:RefreshTabs(config)
                 end
 
                 if XTool.IsNumberValid(defaultOnDuty) then
-                    if defaultOnDuty == groupConfig.Id then
-                        tab:ShowTag(true)
-                        seleceIndex = index
-                    else
-                        tab:ShowTag(false)
-                    end
+                    isOnDuty = defaultOnDuty == groupConfig.Id
                 else
-                    if groupConfig.IsDefaultGroup then
-                        tab:ShowTag(true)
-                        seleceIndex = index
-                    else
-                        tab:ShowTag(false)
-                    end
+                    isOnDuty = groupConfig.IsDefaultGroup
                 end
-
+                if XTool.IsNumberValid(selectTarget) then
+                    if selectTarget == groupConfig.Id then
+                        seleceIndex = index
+                    end
+                elseif isOnDuty then
+                    seleceIndex = index
+                end
+                
+                tab:ShowTag(isOnDuty)
                 tab:ShowReddot(XMVCA.XBigWorldQuest:CheckEnvironmentGroupFinish(groupId))
                 self._Configs[index] = groupConfig
                 tabs[index] = tab
@@ -144,7 +143,7 @@ function XUiGirdBigWorldEnvironmentalGroup:RefreshTabs(config)
         end
 
         self.TabGroup:Init(tabs, Handler(self, self.OnTabClick))
-        self.TabGroup:SelectIndex(seleceIndex)
+        self.TabGroup:SelectIndex(seleceIndex, isRealSelect)
     else
         self.TabGroup.gameObject:SetActiveEx(false)
 
@@ -154,26 +153,24 @@ function XUiGirdBigWorldEnvironmentalGroup:RefreshTabs(config)
     end
 end
 
----@class XUiBigWorldPopupEnvironmentalStory : XBigWorldUi
+---@class XUiBigWorldPopupEnvironmentalStory: XBigWorldUi
 local XUiBigWorldPopupEnvironmentalStory = XMVCA.XBigWorldUI:Register(nil, "UiBigWorldPopupEnvironmentalStory")
 
 function XUiBigWorldPopupEnvironmentalStory:OnAwake()
     ---@type XUiGirdBigWorldEnvironmentalGroup[]
     self._Groups = {}
     self._GroupLevelConfigs = XMVCA.XBigWorldQuest:GetEnvironmentQuestGroupLevelConfigs()
-    self._GroupIndexs = table.empty
     self._IsOnDuty = false
 
     self:InitUi()
     self:InitCb()
-    self:InitGroups()
 
     XEventManager.AddEventListener(XMVCA.XBigWorldService.DlcEventId.EVENT_BIG_WORLD_ECOLOGY_LOAD_COMPLETE,
         self.OnEnvironmentGroupChangeComplete, self)
 end
 
 function XUiBigWorldPopupEnvironmentalStory:OnStart(id)
-    self:InitPage(id)
+    self:InitGroups(id)
 end
 
 function XUiBigWorldPopupEnvironmentalStory:OnDestroy()
@@ -196,11 +193,19 @@ function XUiBigWorldPopupEnvironmentalStory:InitCb()
     self.BtnTimeDetail:AddEventListener(handler(self, self.OnBtnTimeDetailClick))
 end
 
-function XUiBigWorldPopupEnvironmentalStory:InitGroups()
-    self._GroupIndexs = {}
+function XUiBigWorldPopupEnvironmentalStory:InitGroups(id)
     if not XTool.IsTableEmpty(self._GroupLevelConfigs) then
+        local levelId = self._GroupLevelConfigs[1].LevelId
+
+        if XTool.IsNumberValid(id) then
+            local groupId = XMVCA.XBigWorldQuest:GetEnvironmentQuestGroupId(id)
+
+            levelId = XMVCA.XBigWorldQuest:GetEnvironmentQuestGroupLevelId(groupId)
+        end
+
         for index, config in pairs(self._GroupLevelConfigs) do
             local group = self._Groups[index]
+            local groupId = nil
 
             if not group then
                 local groupUi = XUiHelper.Instantiate(self.GridGroup, self.GroupContent)
@@ -210,9 +215,18 @@ function XUiBigWorldPopupEnvironmentalStory:InitGroups()
                 self._Groups[index] = group
             end
 
-            self._GroupIndexs[config.LevelId] = index
+            if XTool.IsNumberValid(id) then
+                groupId = XMVCA.XBigWorldQuest:GetEnvironmentQuestGroupId(id)
+            end
+
             group:Open()
-            group:Refresh(config)
+            group:Refresh(config, levelId == config.LevelId, groupId)
+
+            if XTool.IsNumberValid(id) and levelId == config.LevelId then
+                XScheduleManager.ScheduleNextFrame(function()
+                    XUiHelper.ScrollTo(self.ListGroup, group.Transform)
+                end)
+            end
         end
         for i = #self._GroupLevelConfigs + 1, #self._Groups do
             self._Groups[i]:Close()
@@ -220,47 +234,6 @@ function XUiBigWorldPopupEnvironmentalStory:InitGroups()
     else
         for i = 1, #self._Groups do
             self._Groups[i]:Close()
-        end
-    end
-end
-
-function XUiBigWorldPopupEnvironmentalStory:InitPage(id)
-    if not XTool.IsTableEmpty(self._GroupLevelConfigs) then
-        if XTool.IsNumberValid(id) then
-            local groupId = XMVCA.XBigWorldQuest:GetEnvironmentQuestGroupId(id)
-
-            if XTool.IsNumberValid(groupId) then
-                local levelId = XMVCA.XBigWorldQuest:GetEnvironmentQuestGroupLevelId(groupId) or 0
-                local defaultIndex = self._GroupIndexs[levelId] or 0
-                local target = self._Groups[defaultIndex] or 0
-                local groupConfig = XMVCA.XBigWorldQuest:GetEnvironmentQuestGroupTemplate(groupId)
-
-                self:Refresh(groupConfig, id)
-
-                if XTool.IsNumberValid(defaultIndex) and target then
-                    XUiHelper.ScrollTo(self.ListGroup, target.Transform)
-                end
-
-                return
-            end
-        else
-            local config = self._GroupLevelConfigs[1]
-            local groupId = XMVCA.XBigWorldQuest:GetEnvironmentQuestGroupOnDuty(config.LevelId)
-            local groupConfig = false
-
-            if XTool.IsNumberValid(groupId) then
-                groupConfig = XMVCA.XBigWorldQuest:GetEnvironmentQuestGroupTemplate(groupId)
-            else
-                for _, id in pairs(config.GroupIds) do
-                    groupConfig = XMVCA.XBigWorldQuest:GetEnvironmentQuestGroupTemplate(id)
-
-                    if groupConfig.IsDefaultGroup then
-                        break
-                    end
-                end
-            end
-
-            self:Refresh(groupConfig)
         end
     end
 end
@@ -378,13 +351,13 @@ function XUiBigWorldPopupEnvironmentalStory:Refresh(groupConfig, targetId)
         return
     end
 
-    local index = XTool.IsNumberValid(targetId) and self:CalIndexByEnvironmentId(targetId) or 1
-    local defaultOnDuty = XMVCA.XBigWorldQuest:GetEnvironmentQuestGroupOnDuty(groupConfig.LevelId)
-
     self._IsOnDuty = false
     self._LevelId = groupConfig.LevelId
     self._GroupId = groupConfig.Id
     self._DataList = self:SortEnvironmentIds(XMVCA.XBigWorldQuest:GetEnvironmentIdsByGroup(self._GroupId))
+
+    local index = XTool.IsNumberValid(targetId) and self:CalIndexByEnvironmentId(targetId) or 1
+    local defaultOnDuty = XMVCA.XBigWorldQuest:GetEnvironmentQuestGroupOnDuty(groupConfig.LevelId)
 
     if XTool.IsNumberValid(defaultOnDuty) then
         self._IsOnDuty = defaultOnDuty == groupConfig.Id

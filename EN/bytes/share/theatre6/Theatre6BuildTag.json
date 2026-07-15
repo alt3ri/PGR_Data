@@ -1,155 +1,222 @@
 [
     {
-        "Id": 1,
-        "Name": "placeholder_\u6807\u7b7e1",
-        "Pirority": 1,
-        "IsHide": null,
-        "Desc": "placeholder_\u8fd9\u662f\u6807\u7b7e1",
-        "SaveWeight": 10.0,
-        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueGymCabinet001Sp.png"
-    },
-    {
-        "Id": 2,
-        "Name": "placeholder_\u6807\u7b7e2",
-        "Pirority": 2,
-        "IsHide": null,
-        "Desc": null,
-        "SaveWeight": null,
-        "Icon": "Assets/Product/Texture/Image/IconToolsSp/IconBlueBazhisushe001Sp.png"
-    },
-    {
         "Id": 11,
-        "Name": "\u6655\u7729",
+        "Name": "Stun",
         "Pirority": 11,
         "IsHide": null,
-        "Desc": "\u6655\u7729\u671f\u95f4\uff0c\u65e0\u6cd5\u83b7\u53d6<color=#516797><Icon=IconOverClock|45|45|0.5/>\u8d85\u5e8f\u503c</color>",
+        "Desc": "Cannot gain <Icon=IconOverClock|30|30|0.5/><color=#516797>Hypersequence</color> while being inflicted by Stun.",
         "SaveWeight": 10.0,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon36.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon36.png",
+        "FilterSort": 1.0,
+        "GroupId": 2.0
     },
     {
         "Id": 12,
         "Name": "Ignite",
         "Pirority": 2,
         "IsHide": null,
-        "Desc": "\u6bcf\u6709\u4e00\u5c42\uff0c\u5bf9\u624b\u6280\u80fd\u547d\u4e2d\u65f6\u989d\u5916\u9644\u52a010%\u653b\u51fb\u7684\u4f24\u5bb3\uff0c\u6301\u7eed\u65f6\u95f4\u65e0\u9650\uff0c\u53ef\u65e0\u9650\u53e0\u52a0\u3002",
+        "Desc": "When hit by enemy Skills, deals DMG equal to 10% Attack for every stack. Lasts indefinitely. Stacks infinitely.",
         "SaveWeight": 10.0,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon38.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon38.png",
+        "FilterSort": 2.0,
+        "GroupId": 2.0
     },
     {
         "Id": 13,
-        "Name": "\u51fb\u98de",
+        "Name": "Knockback",
         "Pirority": 2,
         "IsHide": null,
-        "Desc": "\u654c\u4eba\u88ab<color=#487F3B><Icon=IconHitFlyBlack|45|45|0.5/>\u51fb\u98de</color>\u671f\u95f4\uff0c\u65e0\u6cd5\u89e6\u53d1<color=#516797><Icon=IconBlock|45|45|0.5/>\u683c\u6321</color>\u3002",
+        "Desc": "Enemies cannot trigger <Icon=IconBlock|30|30|0.5/><color=#516797>Block</color> while being inflicted with <Icon=IconHitFlyBlack|30|30|0.5/><color=#487F3B>Knockback</color>.",
         "SaveWeight": 10.0,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon39.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon39.png",
+        "FilterSort": 3.0,
+        "GroupId": 2.0
     },
     {
         "Id": 14,
-        "Name": "\u51fb\u5012",
+        "Name": "Knockdown",
         "Pirority": 2,
         "IsHide": null,
-        "Desc": "\u654c\u4eba\u88ab<color=#487F3B><Icon=IconHitDown|45|45|0.5/>\u51fb\u5012</color>\u671f\u95f4\uff0c\u65e0\u6cd5\u89e6\u53d1<color=#516797><Icon=IconBlock|45|45|0.5/>\u683c\u6321</color>\u3002",
+        "Desc": "Enemies cannot trigger <Icon=IconBlock|30|30|0.5/><color=#516797>Block</color> while being inflicted with <Icon=IconHitDown|30|30|0.5/><color=#487F3B>Knockdown</color>.",
         "SaveWeight": 10.0,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon41.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon41.png",
+        "FilterSort": 4.0,
+        "GroupId": 2.0
     },
     {
         "Id": 15,
-        "Name": "<\u66b4\u51fb>",
+        "Name": "<CRIT>",
         "Pirority": 1,
         "IsHide": null,
-        "Desc": "\u4e0b\u6b21\u4f7f\u7528\u6280\u80fd\u65f6\uff0c\u6d88\u80171\u5c42<color=#B96716><<Icon=IconCritBlack|45|45|0.5/>\u66b4\u51fb></color>\uff0c\u4f7f\u8be5\u6b21\u6280\u80fd\u9020\u6210\u7684\u4f24\u5bb3\u63d0\u534750%\u3002\u6301\u7eed\u65f6\u95f4\u65e0\u9650\uff0c\u53ef\u65e0\u9650\u53e0\u52a0\u3002",
+        "Desc": "Consumes 1 stack of <color=#B96716><</color><Icon=IconCritBlack|30|30|0.5/><color=#B96716>CRIT></color> when using the next skill, and DMG dealt by that skill increases by 50%. Lasts indefinitely. Stacks infinitely.",
         "SaveWeight": 10.0,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon37.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon37.png",
+        "FilterSort": null,
+        "GroupId": 2.0
     },
     {
         "Id": 16,
         "Name": "CRIT",
         "Pirority": 2,
         "IsHide": null,
-        "Desc": "\u6b64\u6b21\u6280\u80fd\u9020\u6210\u7684\u4f24\u5bb3\u63d0\u534750%\u3002",
+        "Desc": "DMG dealt by this Skill increases by 50%.",
         "SaveWeight": 10.0,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon37.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon37.png",
+        "FilterSort": 6.0,
+        "GroupId": 2.0
     },
     {
         "Id": 17,
-        "Name": "<\u683c\u6321>",
+        "Name": "<Block>",
         "Pirority": 1,
         "IsHide": null,
-        "Desc": "\u4e0b\u6b21\u5bf9\u624b\u6280\u80fd\u547d\u4e2d\u65f6\uff0c\u6d88\u80171\u5c42<color=#516797><<Icon=IconBlock|45|45|0.5/>\u683c\u6321></color>\uff0c\u4f7f\u81ea\u8eab\u53d7\u5230\u8be5\u6b21\u6280\u80fd\u7684\u4f24\u5bb3\u964d\u4f4e50%\u3002\u6301\u7eed\u65f6\u95f4\u65e0\u9650\uff0c\u53ef\u65e0\u9650\u53e0\u52a0\u3002",
+        "Desc": "Consumes 1 stack of <color=#516797><</color><Icon=IconBlock|30|30|0.5/><color=#516797>Block></color> when hit by the next enemy skill, and DMG taken from that skill is reduced by 50%. Lasts indefinitely. Stacks infinitely. Cannot Block while inflicted with Knockback or Knockdown.",
         "SaveWeight": 10.0,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon40.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon40.png",
+        "FilterSort": null,
+        "GroupId": 2.0
     },
     {
         "Id": 18,
         "Name": "Block",
         "Pirority": 2,
         "IsHide": null,
-        "Desc": "\u53d7\u5230\u6b64\u6b21\u6280\u80fd\u7684\u4f24\u5bb3\u964d\u4f4e50%\u3002",
+        "Desc": "DMG taken from this skill is reduced by 50%. Cannot Block while inflicted with Knockback or Knockdown.",
         "SaveWeight": 10.0,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon40.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon40.png",
+        "FilterSort": 8.0,
+        "GroupId": 2.0
     },
     {
         "Id": 19,
         "Name": "Rage",
         "Pirority": 1,
         "IsHide": null,
-        "Desc": "\u901a\u8fc7\u4f7f\u7528\u6280\u80fd\uff0c\u53ef\u4ee5\u83b7\u5f97\u4e00\u5b9a\u70b9\u6570\u7684<color=#9F3232><Icon=IconAnger|45|45|0.5/>\u6012\u706b</color>\uff0c\u6301\u7eed\u65f6\u95f4\u65e0\u9650\u3002\\n<color=#9F3232><Icon=IconAnger|45|45|0.5/>\u6012\u706b</color>\u4e0a\u9650\u4e3a100\u70b9\uff0c\u8fbe\u5230\u4e0a\u9650\u65f6\uff0c\u8fdb\u5165<color=#9F3232><Icon=IconAngry|45|45|0.5/>\u72c2\u66b4</color>\u3002",
+        "Desc": "Using skills grants <color=#9F3232><Icon=IconAnger|30|30|0.5/>Rage</color>. Lasts indefinitely.\\nMax <color=#9F3232><Icon=IconAnger|30|30|0.5/>Rage</color>: 100. Triggers <color=#9F3232><Icon=IconAngry|30|30|0.5/>Berserk</color> at max Rage.",
         "SaveWeight": 10.0,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon43.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon43.png",
+        "FilterSort": 9.0,
+        "GroupId": 2.0
     },
     {
         "Id": 20,
         "Name": "Berserk",
         "Pirority": 2,
         "IsHide": null,
-        "Desc": "<color=#9F3232><Icon=IconAngry|45|45|0.5/>\u72c2\u66b4</color>\u72b6\u6001\u4e0b\uff0c\u9020\u6210\u4f24\u5bb3\u63d0\u9ad810%\uff0c\u4f7f\u7528\u4efb\u610f\u6280\u80fd\u5747\u5c06\u6d88\u801710\u70b9<color=#9F3232><Icon=IconAnger|45|45|0.5/>\u6012\u706b</color>\uff0c\u90e8\u5206\u6280\u80fd\u5c06\u89e6\u53d1\u989d\u5916\u6548\u679c\u3002\\n\u5728<color=#9F3232><Icon=IconAnger|45|45|0.5/>\u6012\u706b</color>\u6d88\u8017\u81f30\u65f6\uff0c<color=#9F3232><Icon=IconAngry|45|45|0.5/>\u72c2\u66b4</color>\u72b6\u6001\u7ed3\u675f\u3002<color=#9F3232><Icon=IconAngry|45|45|0.5/>\u72c2\u66b4</color>\u65e0\u6cd5\u53e0\u52a0\u3002",
+        "Desc": "<Icon=IconAngry|30|30|0.5/><color=#9F3232>\u72c2\u66b4</color>\u72b6\u6001\u4e0b\uff0c\u9020\u6210\u4f24\u5bb3\u63d0\u9ad820%\uff0c\u4f7f\u7528\u4efb\u610f\u6280\u80fd\u5747\u5c06\u6d88\u801710\u70b9<Icon=IconAnger|30|30|0.5/><color=#9F3232>\u6012\u706b</color>\uff0c\u90e8\u5206\u6280\u80fd\u5c06\u89e6\u53d1\u989d\u5916\u6548\u679c\u3002\\n\u5728<Icon=IconAnger|30|30|0.5/><color=#9F3232>\u6012\u706b</color>\u6d88\u8017\u81f30\u65f6\uff0c<Icon=IconAngry|30|30|0.5/><color=#9F3232>\u72c2\u66b4</color>\u72b6\u6001\u7ed3\u675f\u3002<Icon=IconAngry|30|30|0.5/><color=#9F3232>\u72c2\u66b4</color>\u65e0\u6cd5\u53e0\u52a0\u3002",
         "SaveWeight": 10.0,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon42.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon42.png",
+        "FilterSort": 10.0,
+        "GroupId": 2.0
     },
     {
         "Id": 21,
         "Name": "Parry",
         "Pirority": 1,
         "IsHide": null,
-        "Desc": "\u6218\u6597\u5f00\u59cb\u65f6\u4ee5\u53ca\u53cc\u65b9<color=#6F4877><Icon=IconStamina|45|45|0.5/>\u6218\u610f\u503c</color>\u5747\u8017\u5c3d\u65f6\uff0c\u5c06\u89e6\u53d1\u4e00\u6b21<color=#B96716><Icon=IconWrestle|45|45|0.5/>\u62fc\u5200</color>\u3002\u5728<color=#B96716><Icon=IconWrestle|45|45|0.5/>\u62fc\u5200</color>\u4e2d\u83b7\u80dc\u7684\u4e00\u65b9\uff0c\u5c06\u83b7\u5f97\u51fa\u624b\u6743\u3002",
+        "Desc": "Triggers a <Icon=IconWrestle|30|30|0.5/><color=#B96716>Parry</color> at the start of battle and when both sides' <Icon=IconStamina|30|30|0.5/><color=#6F4877>Fighting Will</color> is depleted. The winner of the <Icon=IconWrestle|30|30|0.5/><color=#B96716>Parry</color> gains First Strike.",
         "SaveWeight": 10.0,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon05.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon05.png",
+        "FilterSort": null,
+        "GroupId": 2.0
     },
     {
         "Id": 22,
         "Name": "Counter",
         "Pirority": 1,
         "IsHide": null,
-        "Desc": "\u6218\u6597\u4e2d\u4e00\u65b9<color=#516797><Icon=IconOverClock|45|45|0.5/>\u8d85\u5e8f\u503c</color>\u8fbe\u5230100\u70b9\u65f6\uff0c\u5c06\u89e6\u53d1\u4e00\u6b21<color=#516797><Icon=IconOverClock|45|45|0.5/>\u53cd\u5236</color>\u3002\u5728<color=#516797><Icon=IconOverClock|45|45|0.5/>\u53cd\u5236</color>\u4e2d\u83b7\u80dc\u7684\u4e00\u65b9\uff0c\u5c06\u83b7\u5f97\u51fa\u624b\u6743",
+        "Desc": "Triggers a <Icon=IconOverClock|30|30|0.5/><color=#516797>Counter</color> when either side's <Icon=IconOverClock|30|30|0.5/><color=#516797>Hypersequence</color> reaches 100 during a battle. The winner of the <Icon=IconOverClock|30|30|0.5/><color=#516797>Counter</color> gains First Strike.",
         "SaveWeight": 10.0,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon04.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon04.png",
+        "FilterSort": null,
+        "GroupId": 2.0
     },
     {
         "Id": 23,
         "Name": "Initiative",
         "Pirority": 3,
         "IsHide": null,
-        "Desc": "\u90e8\u5206\u6280\u80fd\u5728<color=#B96716><Icon=IconWrestle|45|45|0.5/>\u5148\u673a</color>\u5c5e\u6027\u9ad8\u65f6\u53ef\u4ee5\u9020\u6210\u989d\u5916\u6548\u679c\u3002",
+        "Desc": "Certain skills can trigger additional effects when <Icon=IconWrestle|30|30|0.5/><color=#B96716>Initiative</color> is high.",
         "SaveWeight": 10.0,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon05.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon05.png",
+        "FilterSort": 13.0,
+        "GroupId": 1.0
     },
     {
         "Id": 24,
         "Name": "Hypersequence",
         "Pirority": 3,
         "IsHide": null,
-        "Desc": "\u90e8\u5206\u6280\u80fd\u5728<color=#516797><Icon=IconOverClock|45|45|0.5/>\u8d85\u5e8f</color>\u5c5e\u6027\u9ad8\u65f6\u53ef\u4ee5\u9020\u6210\u989d\u5916\u6548\u679c\u3002",
+        "Desc": "Certain skills can trigger additional effects when <Icon=IconOverClock|30|30|0.5/><color=#516797>Hypersequence</color> is high.",
         "SaveWeight": 10.0,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon04.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon04.png",
+        "FilterSort": 14.0,
+        "GroupId": 1.0
     },
     {
         "Id": 25,
         "Name": "Fighting Will",
         "Pirority": 3,
         "IsHide": null,
-        "Desc": "\u90e8\u5206\u6280\u80fd\u5728<color=#6F4877><Icon=IconStamina|45|45|0.5/>\u6218\u610f</color>\u5c5e\u6027\u9ad8\u65f6\u53ef\u4ee5\u9020\u6210\u989d\u5916\u6548\u679c\u3002",
+        "Desc": "Certain skills can trigger additional effects when <Icon=IconStamina|30|30|0.5/><color=#6F4877>Fighting Will</color> is high.",
         "SaveWeight": 10.0,
-        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon03.png"
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon03.png",
+        "FilterSort": 15.0,
+        "GroupId": 1.0
+    },
+    {
+        "Id": 26,
+        "Name": "Unique",
+        "Pirority": 11,
+        "IsHide": null,
+        "Desc": "Identical effects only apply once and cannot stack.",
+        "SaveWeight": null,
+        "Icon": null,
+        "FilterSort": null,
+        "GroupId": null
+    },
+    {
+        "Id": 27,
+        "Name": "Shield",
+        "Pirority": 2,
+        "IsHide": null,
+        "Desc": "\u53d7\u5230\u4f24\u5bb3\u65f6\uff0c\u6d88\u8017<color=#516797><Icon=IconProtector|30|30|0.5/>\u62a4\u76fe</color>\u4ee5\u62b5\u6d88\u7b49\u91cf\u4f24\u5bb3\u3002\\n\u5728\u53cc\u65b9<Icon=IconStamina|30|30|0.5/><color=#6F4877>\u6218\u610f\u503c</color>\u5747\u8017\u5c3d\u65f6\uff0c\u6e05\u7a7a\u53cc\u65b9\u7684<color=#516797><Icon=IconProtector|30|30|0.5/>\u62a4\u76fe</color>\u3002\\n\u9020\u6210<Icon=IconHitFlyBlack|30|30|0.5/><color=#487F3B>\u51fb\u98de</color>\u6216<Icon=IconHitDown|30|30|0.5/><color=#487F3B>\u51fb\u5012</color>\u7684\u6280\u80fd\u5bf9\u62a4\u76fe\u9020\u6210\u7684\u4f24\u5bb3\u63d0\u534750%\u3002",
+        "SaveWeight": 10.0,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon43.png",
+        "FilterSort": 9.0,
+        "GroupId": 2.0
+    },
+    {
+        "Id": 28,
+        "Name": "The Light of Dawn",
+        "Pirority": 2,
+        "IsHide": null,
+        "Desc": "\u643a\u5e26\u4efb\u610f<color=#9B8015><Icon=IconSun|30|30|0.5/>\u66e6\u5149</color>\u6548\u679c\u7684\u6280\u80fd\u65f6\uff0c\u5c06\u6fc0\u6d3b\u7279\u6b8a\u6548\u679c\uff1a\u6bcf\u6b21\u4f7f\u7528\u4e3b\u52a8/\u89e6\u53d1/\u62fc\u5200/\u53cd\u5236\u6280\u80fd\u65f6\uff0c\u5c06\u5206\u522b\u79ef\u7d2f10/15/20/20\u70b9<color=#9B8015><Icon=IconSun|30|30|0.5/>\u66e6\u5149\u503c</color>\u3002",
+        "SaveWeight": 10.0,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon42.png",
+        "FilterSort": 10.0,
+        "GroupId": 2.0
+    },
+    {
+        "Id": 29,
+        "Name": "Dawnlight",
+        "Pirority": 2,
+        "IsHide": null,
+        "Desc": "<color=#9B8015><Icon=IconSun|30|30|0.5/>Dawnlight</color> caps at 120. Each time <color=#9B8015><Icon=IconSun|30|30|0.5/>Dawnlight</color> is full, depletes all <color=#9B8015><Icon=IconSun|30|30|0.5/>Dawnlight</color> and unleashes <color=#9B8015><Icon=IconSun|30|30|0.5/>Dawnbreak Radiance</color>: forcibly triggers the Trigger Skill in slot 1, ignoring its original activation conditions.",
+        "SaveWeight": 10.0,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon42.png",
+        "FilterSort": 10.0,
+        "GroupId": 2.0
+    },
+    {
+        "Id": 99,
+        "Name": "Ignite",
+        "Pirority": 11,
+        "IsHide": null,
+        "Desc": "When hit by enemy Skills, deal DMG equal to 10% Attack for every stack. Lasts indefinitely. Stacks infinitely.",
+        "SaveWeight": 10.0,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6IconSkill38.png",
+        "FilterSort": null,
+        "GroupId": null
     }
 ]

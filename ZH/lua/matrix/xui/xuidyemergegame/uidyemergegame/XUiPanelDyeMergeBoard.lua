@@ -31,6 +31,7 @@ function XUiPanelDyeMergeBoard:OnStart()
 
     self:_InitGridClickSenders()
     self:InitFloorMap()
+    self._IsExternalEntry = true
     self:InitGridsInMap()
     
     self._DefaultPosX, self._DefaultPosY, self._DefaultPosZ = self.Transform:GetLocalPosition()
@@ -45,10 +46,12 @@ end
 function XUiPanelDyeMergeBoard:OnDisable()
     self._Control.GamingControl:RemoveEventListener(XMVCA.XDyeMergeGame.EventIds.EVENT_DYEMERGE_INNER_BLOCK_DEPTH_DIRTY, self._OnBlockDepthDirty, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_DYEMERGE_GAME_CLICK_POS, self._OnEventClickPos, self)
+
+    self:StopCircleDelayTimer()
 end
 
 function XUiPanelDyeMergeBoard:OnDestroy()
-
+    
 end
 
 function XUiPanelDyeMergeBoard:_InitGridClickSenders()
@@ -133,6 +136,7 @@ function XUiPanelDyeMergeBoard:InitGridsInMap()
 
     if XTool.IsTableEmpty(blocks) then
         XLog.Error("关卡不存在有效的方块，stageId: " .. tostring(self._Control.GamingControl:GetCurStageId()))
+        self._Control.GamingControl:SetInitPhaseState(false)
         return
     end
 
@@ -197,8 +201,13 @@ function XUiPanelDyeMergeBoard:InitGridsInMap()
         end
     end
 
+    self._Control.GamingControl:SetInitPhaseState(false)
+
     -- 地板与方块全部注册完毕，统一执行首次深度排序
     self._DepthSorter:Sort()
+
+    -- 关卡开始聚焦圈
+    self:_ShowStartFocusCircles()
 end
 
 function XUiPanelDyeMergeBoard:_RecycleGridsInMap()
@@ -209,6 +218,76 @@ function XUiPanelDyeMergeBoard:_RecycleGridsInMap()
             self.GridPools:ReturnGridByName(v:GetStyleName(), v)
         end
     end
+end
+
+--- 根据关卡配置 StartFocusPosIndexs 显示聚焦圈动画
+function XUiPanelDyeMergeBoard:_ShowStartFocusCircles()
+    self:_RecycleStartFocusCircles()
+
+    local stageId = self._Control.GamingControl:GetCurStageId()
+    local stageCfg = XMVCA.XDyeMergeGame:GetTableDyeMergeStageById(stageId)
+    if not stageCfg then return end
+
+    local posIndexs = stageCfg.StartFocusPosIndexs
+    if XTool.IsTableEmpty(posIndexs) then return end
+
+    local isExternal = self._IsExternalEntry
+    self._IsExternalEntry = nil
+
+    if isExternal then
+        local delay = XMVCA.XDyeMergeGame:GetClientDyeMergeNumberByKey("GameTipsStartFocusCircleDelay") or 0
+        if delay > 0 then
+            self._CircleDelayTimer = XScheduleManager.ScheduleOnce(function()
+                self._CircleDelayTimer = nil
+                self:_SpawnCircles(posIndexs)
+            end, math.floor(delay * XScheduleManager.SECOND))
+            return
+        end
+    end
+
+    self:_SpawnCircles(posIndexs)
+end
+
+--- 实际生成聚焦圈并播放动画
+function XUiPanelDyeMergeBoard:_SpawnCircles(posIndexs)
+    local gc = self._Control.GamingControl
+    self._ActiveCircles = {}
+    for _, posIndex in ipairs(posIndexs) do
+        local raw = posIndex % 10000
+        local x, y = gc:IndexToVec2(raw)
+        local posX, posY = gc:Vec2ToIsoPos(x, y, self._HalfW, self._HalfH)
+        local circle = self.GridPools:GetCircle()
+        if circle then
+            circle.Transform:SetLocalPosition(posX, posY, 0)
+            circle:PlayAndRecycle()
+            self._ActiveCircles[circle] = true
+        end
+    end
+end
+
+--- 聚焦圈动画播完后的回调入口（由 GridCircle 调用）
+function XUiPanelDyeMergeBoard:OnCircleRecycled(circle)
+    if self._ActiveCircles then
+        self._ActiveCircles[circle] = nil
+    end
+end
+
+function XUiPanelDyeMergeBoard:StopCircleDelayTimer()
+    if self._CircleDelayTimer then
+        XScheduleManager.UnSchedule(self._CircleDelayTimer)
+        self._CircleDelayTimer = nil
+    end
+end
+
+--- 强制回收所有飞行中的聚焦圈（切关卡/退出时调用）
+function XUiPanelDyeMergeBoard:_RecycleStartFocusCircles()
+    self:StopCircleDelayTimer()
+    if XTool.IsTableEmpty(self._ActiveCircles) then return end
+    for circle in pairs(self._ActiveCircles) do
+        circle:Close()
+        self.GridPools:ReturnCircle(circle)
+    end
+    self._ActiveCircles = nil
 end
 
 --- 方块 GO 被创建并放入棋盘时调用（动态新增路径）
@@ -255,8 +334,10 @@ function XUiPanelDyeMergeBoard:_OnBlockDepthDirty(uid)
     local key = self:_CalcDepthKey(uid)
     self._DepthSorter:SetKey(grid.Transform, key)
 
-    -- 刷新方块表现（延伸块需要更新切片数量、位置和深度注册）
-    grid:Refresh(uid)
+    -- 收回场景跳过 Refresh：保留旧切片供 Disable 动画播放，由 UpdateAllState 统一清理
+    if not self._Control.GamingControl:HasPendingShrinkAnim(uid) then
+        grid:Refresh(uid)
+    end
 
     self._DepthSorter:Sort()
 end

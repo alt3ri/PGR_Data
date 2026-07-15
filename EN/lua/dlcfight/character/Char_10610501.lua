@@ -54,7 +54,7 @@ local XKamuiTeachingBuildingState = XClass(BaseState, "XKamuiTeachingBuildingSta
 function XKamuiTeachingBuildingState:InitStateConfig()
     self.StateConfig = {}
     self.StateConfig.StateEnum = StateEnum.TeachingBuilding
-    self.StateConfig.StateAnim = "Drama_Stand_15"
+    self.StateConfig.StateAnim = "Drama_Stand_05"
     self.StateConfig.TriggerId = 1
     self.StateConfig.ShowOptionId = 1
     self.StateConfig.RegisterWorldEventList = {
@@ -96,13 +96,21 @@ local XKamuiTrainingRoomState = XClass(BaseState, "XKamuiTrainingRoomState")
 function XKamuiTrainingRoomState:InitStateConfig()
     self.StateConfig = {}
     self.StateConfig.StateEnum = StateEnum.TrainingRoom
-    self.StateConfig.StateAnim = "Drama_Stand_06"
+    self.StateConfig.StateAnim = "Drama_FightPlay"
     self.StateConfig.TriggerId = 1
     self.StateConfig.ShowOptionId = 2
     self.StateConfig.RegisterWorldEventList = {
         EWorldEvent.ActorTrigger,
         EWorldEvent.NpcInteractStart,
         EWorldEvent.NpcInteractComplete,
+    }
+    self.StateConfig.BubbleDict = {
+        [EEcologyBubbleType.Near] = {
+            Name = "301604",
+            TriggerDistance = 6,
+            TriggerCD = 30,
+            LoopTime = 3,
+        }
     }
 end
 
@@ -122,13 +130,21 @@ local XKamuiTombstoneState = XClass(BaseState, "XKamuiTombstoneState")
 function XKamuiTombstoneState:InitStateConfig()
     self.StateConfig = {}
     self.StateConfig.StateEnum = StateEnum.Tombstone
-    self.StateConfig.StateAnim = "Drama_Stand_07"
+    self.StateConfig.StateAnim = "Drama_KnightKneel"
     self.StateConfig.TriggerId = 1
     self.StateConfig.ShowOptionId = 3
     self.StateConfig.RegisterWorldEventList = {
         EWorldEvent.ActorTrigger,
         EWorldEvent.NpcInteractStart,
         EWorldEvent.NpcInteractComplete,
+    }
+    self.StateConfig.BubbleDict = {
+        [EEcologyBubbleType.Near] = {
+            Name = "301603",
+            TriggerDistance = 6,
+            TriggerCD = 30,
+            LoopTime = 3,
+        }
     }
 end
 
@@ -140,7 +156,6 @@ end
 function XKamuiTombstoneState:OnActorTrigger(eventArgs)
     BaseState.OnActorTrigger(self, eventArgs)
     if eventArgs.TriggerState == ETriggerState.Enter and eventArgs.TriggerHolderUUID == self._uuid then
-        self._proxy:PlayNpcCustomPerformAnim(self._uuid, "Drama_Stand_01", 0.5, 0.5, false)
         self._proxy:PlayDramaBubble(ETargetActorType.Npc, self._uuid, "301603")
         self.StateMachine:SetDataBoard(DataBoardKey.Tombstone, 1)
     end
@@ -158,21 +173,13 @@ local XKamuiInClassState = XClass(BaseState, "XKamuiInClassState")
 function XKamuiInClassState:InitStateConfig()
     self.StateConfig = {}
     self.StateConfig.StateEnum = StateEnum.InClass
-    self.StateConfig.StateAnim = "Drama_Stand_07"
+    self.StateConfig.StateAnim = "Drama_Stand_01"
     self.StateConfig.TriggerId = 1
-    self.StateConfig.ShowOptionId = 4
+    self.StateConfig.ShowOptionId = 7
     self.StateConfig.RegisterWorldEventList = {
         EWorldEvent.ActorTrigger,
         EWorldEvent.NpcInteractStart,
         EWorldEvent.NpcInteractComplete,
-    }
-    self.StateConfig.BubbleDict = {
-        [EEcologyBubbleType.Near] = {
-            Name = "301601",
-            TriggerDistance = 6,
-            TriggerCD = 5,
-            LoopTime = 3,
-        }
     }
 end
 
@@ -185,9 +192,16 @@ end
 function XKamuiInClassState:OnActorTrigger(eventArgs)
     BaseState.OnActorTrigger(self, eventArgs)
     if eventArgs.TriggerState == ETriggerState.Enter and eventArgs.TriggerHolderUUID == self._uuid then
-        self._proxy:PlayNpcCustomPerformAnim(self._uuid, "Drama_Stand_01", 0.5, 0.5, false)
         self.StateMachine:SetDataBoard(DataBoardKey.InClass, 1)
     end
+end
+
+function XKamuiInClassState:UpdateOptionActive()
+    local optionId = self.StateConfig.ShowOptionId
+    if self._proxy:IsQuestObjectiveFinished(20160102) then
+        optionId = 4
+    end
+    self._proxy:SetNpcInteractOneOptionActive(self._placeId, optionId)
 end
 
 
@@ -200,13 +214,21 @@ local XKamuiStallState = XClass(BaseState, "XKamuiStallState")
 function XKamuiStallState:InitStateConfig()
     self.StateConfig = {}
     self.StateConfig.StateEnum = StateEnum.Stall
-    self.StateConfig.StateAnim = "Drama_Stand_07"
+    self.StateConfig.StateAnim = "Drama_LookAround"
     self.StateConfig.TriggerId = 1
     self.StateConfig.ShowOptionId = 5
     self.StateConfig.RegisterWorldEventList = {
         EWorldEvent.ActorTrigger,
         EWorldEvent.NpcInteractStart,
         EWorldEvent.NpcInteractComplete,
+    }
+    self.StateConfig.BubbleDict = {
+        [EEcologyBubbleType.Near] = {
+            Name = "301605",
+            TriggerDistance = 6,
+            TriggerCD = 30,
+            LoopTime = 3,
+        }
     }
 end
 
@@ -269,18 +291,18 @@ function XCharKamuiEcology:RegisterMachineStateTransition()
     -- 其他状态到寻路状态
     self:RegisterInFindPathStateTransition(StateEnum.TeachingBuilding, function()
         if self._stateMachine:CheckDataBoard(DataBoardKey.TeachingBuilding, 1) then
-            return StateEnum.TrainingRoom
-        elseif self._stateMachine:CheckDataBoard(DataBoardKey.TeachingBuilding, 2) then
             return StateEnum.InClass
+        elseif self._stateMachine:CheckDataBoard(DataBoardKey.TeachingBuilding, 2) then
+            return StateEnum.TrainingRoom
         else
             return StateEnum.Tombstone
         end
     end, 30, 1)
     self:RegisterInFindPathStateTransition(StateEnum.TrainingRoom, function()
-        return self._stateMachine:CheckDataBoard(DataBoardKey.TrainingRoom, 1) and StateEnum. Stall or StateEnum.Stall
+        return self._stateMachine:CheckDataBoard(DataBoardKey.TrainingRoom, 1) and StateEnum.Stall or StateEnum.Stall
     end, 30, 1)
     self:RegisterInFindPathStateTransition(StateEnum.Tombstone, function()
-        return self._stateMachine:CheckDataBoard(DataBoardKey.Tombstone, 1) and StateEnum. Stall or StateEnum.Stall
+        return self._stateMachine:CheckDataBoard(DataBoardKey.Tombstone, 1) and StateEnum.Stall or StateEnum.Stall
     end, 20, 1)
     self:RegisterInFindPathStateTransition(StateEnum.Stall, function()
         return self._stateMachine:CheckDataBoard(DataBoardKey.Stall, 1) and StateEnum.TeachingBuilding or StateEnum.Tombstone

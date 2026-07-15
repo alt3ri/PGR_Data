@@ -636,12 +636,13 @@ function XBigWorldCommanderDIYControl:GetNpcPartData()
 end
 
 function XBigWorldCommanderDIYControl:CheckNeedSyncInfo()
+    -- 性别变更需要保存（即使没有穿戴数据，也要把切性别同步给服务端）
+    if self._Gender ~= self:GetCurrentGender() then
+        return true
+    end
     -- 如果没有数据就认为还没开始修改，直接返回不需要保存
     if XTool.IsTableEmpty(self._WearDataMap) then
         return false
-    end
-    if self._Gender ~= self:GetCurrentGender() then
-        return true
     end
     local currentOutfitType = self._Model:GetCurrentOutfitType()
     if currentOutfitType ~= self._CurrentModifiedIndex then

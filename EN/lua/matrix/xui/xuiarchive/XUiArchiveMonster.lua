@@ -1,7 +1,7 @@
-local XUiGridArchiveMonster = require("XUi/XUiArchive/XUiGridArchiveMonster")
-local XUiGridArchive = require("XUi/XUiArchive/XUiGridArchive")
-local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
-local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
+local XUiGridArchiveMonster = require("XUi/XUiArchive/XUiGridArchiveMonster")
+local XUiGridArchive = require("XUi/XUiArchive/XUiGridArchive")
+local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
+local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
 local XUiArchiveMonster = XLuaUiManager.Register(XLuaUi, "UiArchiveMonster")
 
 function XUiArchiveMonster:OnEnable()
@@ -19,11 +19,11 @@ function XUiArchiveMonster:OnStart()
 end
 
 function XUiArchiveMonster:OnDestroy()
-    local datas = self._Control:GetArchiveMonsterList()
-    self._Control:ClearMonsterNewTag(datas)
-    self._Control:ClearDetailRedPoint(XEnumConst.Archive.MonsterDetailType.Info, datas)
-    self._Control:ClearDetailRedPoint(XEnumConst.Archive.MonsterDetailType.Setting, datas)
-    self._Control:ClearDetailRedPoint(XEnumConst.Archive.MonsterDetailType.Skill, datas)
+    local datas = self._Control.MonsterControl:GetArchiveMonsterList()
+    self._Control.MonsterControl:ClearMonsterNewTag(datas)
+    self._Control.MonsterControl:ClearDetailRedPoint(XEnumConst.Archive.MonsterDetailType.Info, datas)
+    self._Control.MonsterControl:ClearDetailRedPoint(XEnumConst.Archive.MonsterDetailType.Setting, datas)
+    self._Control.MonsterControl:ClearDetailRedPoint(XEnumConst.Archive.MonsterDetailType.Skill, datas)
 end
 
 function XUiArchiveMonster:InitDynamicTable()
@@ -34,7 +34,7 @@ function XUiArchiveMonster:InitDynamicTable()
 end
 
 function XUiArchiveMonster:SetupDynamicTable(type)
-    self.PageDatas = self._Control:GetArchiveMonsterList(type)
+    self.PageDatas = self._Control.MonsterControl:GetArchiveMonsterList(type)
     self.DynamicTable:SetDataSource(self.PageDatas)
     self.DynamicTable:ReloadDataSync()
 end
@@ -111,15 +111,15 @@ function XUiArchiveMonster:SelectType(index)
     self.CurType = index
 
     self:SetupDynamicTable(self.TypeList[index])
-    self.RateNum.text = string.format("%d%s", self._Control:GetMonsterCompletionRate(self.TypeList[index]), "%")
+    self.RateNum.text = string.format("%d%s", self._Control.MonsterControl:GetMonsterCompletionRate(self.TypeList[index]), "%")
     self:PlayAnimation("QieHuan")
 
     if self.OldType then
-        local datas = self._Control:GetArchiveMonsterList(self.TypeList[self.OldType])
-        self._Control:ClearMonsterNewTag(datas)
-        self._Control:ClearDetailRedPoint(XEnumConst.Archive.MonsterDetailType.Info, datas)
-        self._Control:ClearDetailRedPoint(XEnumConst.Archive.MonsterDetailType.Setting, datas)
-        self._Control:ClearDetailRedPoint(XEnumConst.Archive.MonsterDetailType.Skill, datas)
+        local datas = self._Control.MonsterControl:GetArchiveMonsterList(self.TypeList[self.OldType])
+        self._Control.MonsterControl:ClearMonsterNewTag(datas)
+        self._Control.MonsterControl:ClearDetailRedPoint(XEnumConst.Archive.MonsterDetailType.Info, datas)
+        self._Control.MonsterControl:ClearDetailRedPoint(XEnumConst.Archive.MonsterDetailType.Setting, datas)
+        self._Control.MonsterControl:ClearDetailRedPoint(XEnumConst.Archive.MonsterDetailType.Skill, datas)
     end
 
     self.OldType = index

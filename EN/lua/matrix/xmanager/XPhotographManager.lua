@@ -42,6 +42,7 @@ XPhotographManagerCreator = function()
         "UiGachaLuciaMain",
         "UiGachaSelenaMain",
         "UiGachaBianka402Main",
+        "UiGachaLifu405Main",
     }
 
     -- 背景场景预览状态

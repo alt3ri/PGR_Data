@@ -1,5 +1,6 @@
-local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
-local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+--[[
+local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XUiPanelBaseEquipRecycle = XClass(nil, "XUiPanelBaseEquipRecycle")
 
 function XUiPanelBaseEquipRecycle:Ctor(ui, parent, uiRoot)
@@ -127,4 +128,5 @@ function XUiPanelBaseEquipRecycle:OnBtnResetClick()
     self.Parent:HideRecyclePanel()
 end
 
-return XUiPanelBaseEquipRecycle
+return XUiPanelBaseEquipRecycle
+]]

@@ -82,10 +82,12 @@ function XUiMainLine2PanelMessageCom:_SetMessageGridWithId(id, transformRoot)
     
     -- 检查是否解锁
     if self._Control.MessageControl:CheckMessageCanShowById(id) then
+        transformRoot.gameObject:SetActiveEx(true)
         grid:Open()
         grid:Refresh()
     else
         grid:Close()
+        transformRoot.gameObject:SetActiveEx(false)
     end
     
     self._MessageGridDict[id] = grid

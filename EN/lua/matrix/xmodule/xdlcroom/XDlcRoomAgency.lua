@@ -1720,6 +1720,7 @@ function XDlcRoomAgency:RequestDlcSingleEnterFight(worldId, levelId, successCb, 
         XLuaUiManager.Remove("UiDialog")
         XLuaUiManager.Open("UiDlcRelinkLoadingNew")
 
+        XMVCA.XDlcRelink:InitWorld()
         CS.StatusSyncFight.XFightClient.RequestExitFight()
         CS.StatusSyncFight.XFightClient.EnterFight(csWorldData, XPlayer.Id, args)
 
@@ -1742,10 +1743,12 @@ function XDlcRoomAgency:_GetXFightClientArgs()
     end
     --结算
     args.SettleCb = function(result, summary)
+        XMVCA.XDlcRelink:DisposeWorld()
         self:RequestNormalSettle(result, summary)
     end
     --客户端本地中断游戏
     args.InterruptFightCb = function(result, summary)
+        XMVCA.XDlcRelink:DisposeWorld()
         self:RequestNormalSettle(result, summary)
     end
     return args

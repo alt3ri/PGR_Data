@@ -37,7 +37,7 @@ local type = {
     CONDITION_MAIN_NEWBIE_TASK = "XRedPointConditionMainNewbieTask", --新手任务二期
     CONDITION_MAIN_TASK = "XRedPointConditionMainTask", --任务
     CONDITION_MAIN_CHAPTER = "XRedPointConditionMainChapter", --主线副本
-    CONDITION_BASEEQUIP = "XRedPointConditionBaseEquip", --基地装备
+    --CONDITION_BASEEQUIP = "XRedPointConditionBaseEquip", --基地装备
     CONDITION_MAIN_DISPATCH = "XRedPointConditionMainDispatch", --派遣
     CONDITION_MAIN_SPECIAL_SHOP = "XRedPointConditionMainSpecialShop", -- 特殊商店
     CONDITION_MAIN_TERMINAL = "XRedPointConditionMainTerminal", --终端
@@ -332,6 +332,7 @@ local type = {
     CONDITION_FASHION_STORY_HAVE_STAGE = "XRedPointConditionFashionStoryHaveStage", -- 有关卡尚未通关
     CONDITION_FASHION_STORY_TASK = "XRedPointConditionFashionStoryTask", --有任务待领取
     CONDITION_FASHION_STORY_NEWCHAPTER_UNLOCK = "XRedPointConditionFashionStoryNewChapterUnLock", --有待查看的新解锁章节
+    CONDITION_FASHION_STORY_REWARD = "XRedPointConditionFashionStoryReward", --奖励活动可领取
     --杀戮空间
     --XRedPointConditionKillZoneActivity = "XRedPointConditionKillZoneActivity", --入口红点
     --XRedPointConditionKillZoneNewChapter = "XRedPointConditionKillZoneNewChapter", --有新章节可挑战
@@ -634,6 +635,12 @@ local type = {
     CONDITION_MUSICGAME_ENTRANCE_RHYTHMGAME = "XRedPointConditionMusicGameEntranceRhythmGame", -- 节奏游戏入口
     CONDITION_MUSICGAME_ENTRANCE_ARRANGEMENT = "XRedPointConditionMusicGameEntranceArrangement", -- 编曲玩法入口
     CONDITION_MUSICGAME_TASK = "XRedPointConditionMusicGameTask", -- 活动任务
+
+    -- 音乐会预热
+    CONDITION_CONCERT_PRE_HEATING_MAIN = "XConcertPreHeating/XRedPointConcertPreHeatingMain", -- 活动入口总蓝点
+    CONDITION_CONCERT_PRE_HEATING_NEW_STAGE = "XConcertPreHeating/XRedPointConcertPreHeatingNewStage", -- 新开放关卡蓝点
+    CONDITION_CONCERT_PRE_HEATING_TASK = "XConcertPreHeating/XRedPointConcertPreHeatingTask", -- 任务奖励蓝点
+    CONDITION_CONCERT_PRE_HEATING_LIVE = "XConcertPreHeating/XRedPointConcertPreHeatingLive", -- 直播中入口提示
     
     --region 大世界&箱庭玩法
     CONDITION_BIG_WORLD_SKY_GARDEN_ENTRANCE = "XBigWorld/XRedPointSkyGardenEntrance", --空花入口红点
@@ -706,6 +713,11 @@ local type = {
     CONDITION_THEATRE6_NEW_STORY = "XTheatre6/XRedPointTheatre6NewStory",
     CONDITION_THEATRE6_REWARD = "XTheatre6/XRedPointTheatre6Reward", -- 任务奖励可领取
     CONDITION_THEATRE6_MAIN = "XTheatre6/XRedPointTheatre6Main", -- 外部入口总蓝点
+    
+    -- 大染色玩法
+    CONDITION_DYEMERGE_MAIN = "XDyeMergeGame/XRedPointDyeMergeMain",
+    CONDITION_DYEMERGE_NEW_CHAPTER = "XDyeMergeGame/XRedPointDyeMergeNewChapter",
+    CONDITION_DYEMERGE_TASK = "XDyeMergeGame/XRedPointDyeMergeTask",
 }
 XRedPointConditions.Conditions = type
 

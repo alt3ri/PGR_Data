@@ -7,6 +7,7 @@ function XBossInshotAgency:OnInit()
     -- 初始化一些变量
     self:RegisterActivityAgency()
     self:RegisterFuben(XEnumConst.FuBen.StageType.BossInshot)
+    self:RegisterFuben(XEnumConst.FuBen.StageType.BossInshotTower)
 end
 
 function XBossInshotAgency:InitRpc()
@@ -81,6 +82,11 @@ function XBossInshotAgency:GetStageMaxScore(stageId)
     return self._Model:GetStageMaxScore(stageId)
 end
 
+--- 获得最大可装配天赋数量
+function XBossInshotAgency:GetTalentSlotMax()
+    return CS.XGame.Config:GetInt("BosssInshotTalentSlotMax")
+end
+
 ---------------------------------------- #region Rpc ----------------------------------------
 --- 通知跃升挑战数据
 function XBossInshotAgency:NotifyBossInshotData(data)
@@ -104,7 +110,7 @@ end
 function XBossInshotAgency:BossInshotSelectTalentRequest(characterId, pos, talentId, cb)
     local req = { CharacterId = characterId, SelectTalentIds = {} }
     local selectTalentIds = self:GetCharacterSelectTalentIds(characterId)
-    for i = 1, XEnumConst.BOSSINSHOT.WEAR_TALENT_MAX_CNT do
+    for i = 1, self:GetTalentSlotMax() do
         req.SelectTalentIds[i] = selectTalentIds[i] or 0
     end
     req.SelectTalentIds[pos] = talentId
@@ -121,7 +127,7 @@ function XBossInshotAgency:BossInshotQueryRankRequest(characterCfgId, bossId, is
     -- 优先从缓存数据取
     local INTERVAL_TIME = 30 -- 间隔时间
     local nowTime = XTime.GetServerNowTimestamp()
-    local rankData = self._Model:GetRankData(characterCfgId, bossId, isTotalRank)
+    local rankData = self._Model:GetRankData(characterCfgId, bossId, isTotalRank, false)
     if rankData and (nowTime - rankData.Time) < INTERVAL_TIME then
         if cb then cb(rankData.Data) end
         return
@@ -133,6 +139,27 @@ function XBossInshotAgency:BossInshotQueryRankRequest(characterCfgId, bossId, is
         if cb then cb(res) end
     end)
 end
+
+-- 爬塔排行榜请求
+function XBossInshotAgency:BossInshotQueryTowerRankRequest(characterCfgId, bossId, cb)
+    bossId = bossId or 0
+
+    -- 优先从缓存数据取
+    local INTERVAL_TIME = 30 -- 间隔时间
+    local nowTime = XTime.GetServerNowTimestamp()
+    local rankData = self._Model:GetRankData(characterCfgId, bossId, false, true)
+    if rankData and (nowTime - rankData.Time) < INTERVAL_TIME then
+        if cb then cb(rankData.Data) end
+        return
+    end
+
+    local req = { CharacterCfgId = characterCfgId, BossId = bossId }
+    XNetwork.Call("BossInshotTowerQueryRankRequest", req, function(res)
+        self._Model:SaveRankData(characterCfgId, bossId, false, nowTime, res)
+        if cb then cb(res) end
+    end)
+end
+
 ---------------------------------------- #endregion Rpc ----------------------------------------
 
 ---------------------------------------- #region 副本入口扩展 ----------------------------------------
@@ -160,6 +187,7 @@ function XBossInshotAgency:ExOpenMainUi()
     self._Model:RemoveFirstEnterRed()
     return true
 end
+
 ---------------------------------------- #endregion 副本入口扩展 ----------------------------------------
 
 ---------------------------------------- #region 战斗 ----------------------------------------
@@ -173,6 +201,7 @@ function XBossInshotAgency:PreFight(stage, teamId, isAssist, challengeCount)
     preFight.StageId = stage.StageId
     preFight.IsHasAssist = isAssist and true or false
     preFight.ChallengeCount = challengeCount or 1
+    preFight.BossInshotTowerId = self._TowerLevelId
 
     if stage.RobotId and #stage.RobotId > 0 then
         for i, v in pairs(stage.RobotId) do
@@ -195,6 +224,19 @@ function XBossInshotAgency:PreFight(stage, teamId, isAssist, challengeCount)
         preFight.FirstFightPos = team:GetFirstFightPos()
     end
     return preFight
+end
+
+-- 设置爬塔模式关卡ID
+function XBossInshotAgency:SetTowerLevelId(
+    levelIdOrNil,
+    currentUnlockedLevel)
+
+    self._TowerLevelId = levelIdOrNil
+    self._TowerCurrentUnlockedLevel = currentUnlockedLevel
+end
+
+function XBossInshotAgency:GetPrevTowerLevelIdAndPrevUnlockedLevel()
+    return self._TowerLevelId, self._TowerCurrentUnlockedLevel
 end
 
 -- 是否自动退出战斗

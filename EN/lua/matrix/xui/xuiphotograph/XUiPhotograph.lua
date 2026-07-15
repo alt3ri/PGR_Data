@@ -35,6 +35,8 @@ function XUiPhotograph:OnAwake()
 
     ---@type XUiPanelCharacterCG
     self.CG = require("XUi/XUiCharacterCG/XUiPanelCharacterCG").New(self.PanelVideo, self)
+    self.CG:SetDestroyOnStopWithoutLanguagePreparing(true)
+
     self.SDKPanel = XUiPhotographSDKPanel.New(self, self.PanelSDK)
     ---@type XUiPanelSwitchableSceneAnim
     self.SwitchableScene = require("XUi/XUiSwitchableScene/XUiPanelSwitchableSceneAnim").New()
@@ -218,6 +220,7 @@ function XUiPhotograph:OnGetEvents()
         XEventId.EVENT_PHOTO_REPLAY_ANIMATION,
         CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYING,
         CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYEND,
+        CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_STOP_WITHOUT_LANGUAGEPREPARING,
     }
 end
 
@@ -232,6 +235,7 @@ function XUiPhotograph:OnNotify(evt, ...)
         self:PlayChangeActionEffect()
         self.PhotographPanel:RefreshBtnSynchronous()
         self.PhotographPanel:ClearActionCache()
+        self.PhotographPanel:RefreshFashionGridSelect()
     elseif evt == XEventId.EVENT_PHOTO_PLAY_ACTION then
         self:ForcePlay(...)
     elseif evt == XEventId.EVENT_PHOTO_PHOTOGRAPH then
@@ -245,11 +249,12 @@ function XUiPhotograph:OnNotify(evt, ...)
     elseif evt == XEventId.EVENT_PHOTO_REPLAY_ANIMATION then
         self:Replay()
     elseif evt == CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYING then
+        self.SwitchableScene:OnVideoStart()
+
         if not self.CG:IsLanguagePreparing() then
-            self.SwitchableScene:OnVideoStart()
             self:OnCGPlay()
         end
-    elseif evt == CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYEND then
+    elseif evt == CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_PLAYEND or evt == CS.XEventId.EVENT_VIDEO_PLAYER_STATUS_STOP_WITHOUT_LANGUAGEPREPARING then
         self:OnCGStop()
     end
 end
@@ -531,6 +536,10 @@ end
 
 --停止
 function XUiPhotograph:OnStop(playingElement, force)
+    if self.RoleModel then
+        self.RoleModel:StopAllManagedAudio()
+    end
+
     if self.PlayingCv then
         self.PlayingCv:Stop()
         self.PlayingCv = nil

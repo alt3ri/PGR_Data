@@ -1,10 +1,8 @@
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XDrawPerformanceBinder = require("XUi/XUiDraw/XDrawPerformanceBinder")
 
--- 进入表演的临时延迟（毫秒），后续替换为进入表演动画后可移除
-local ENTER_PERFORMANCE_DELAY = 2000
-
 ---@class XUiNewDrawMainV4P5Performance : XLuaUi
+---@field VideoPlayer XVideoPlayerUGUI
 local XUiNewDrawMainV4P5Performance = XLuaUiManager.Register(XLuaUi, "UiNewDrawMainV4P5Performance")
 
 function XUiNewDrawMainV4P5Performance:OnAwake()
@@ -25,6 +23,7 @@ function XUiNewDrawMainV4P5Performance:OnStart(rewardInfo, closeCb)
     self.PanelPerformance.gameObject:SetActiveEx(false)
     self.RImgIcon.gameObject:SetActiveEx(false)
     self.GridGeneralSkills = {}
+    self.EnterPerformanceVideoId = tonumber(XDrawConfigs.GetDrawClientConfig("EnterPerformanceVideoId"))
     self:Refresh(rewardInfo)
 end
 
@@ -40,10 +39,21 @@ function XUiNewDrawMainV4P5Performance:InitScene()
     self.CameraRoot = self.PerformanceRoot:Find("CameraRoot")
     self.EffectRoot = self.PerformanceRoot:Find("EffectRoot")
     self.PerformancePlayable = self.PerformanceRoot:Find("PerformancePlayable")
+    self.AnimEventSender = self.PerformancePlayable:GetComponent(typeof(CS.XTimeLine.XTimeLineAnimEventSender))
+    self.PerformanceEventReceiver = self.PerformancePlayable:GetComponent(typeof(CS.XUiPerformanceEventReceiver))
     self.Loader = self.PerformanceRoot:GetLoader()
 
     self.UiModel.UiFarCamera.gameObject:SetActiveEx(false)
     self.UiModel.UiNearCamera.gameObject:SetActiveEx(false)
+
+    -- XRLTerrainRendering 由 C# 构建，Lua 只传 UiSceneInfo.Transform
+    if self.UiSceneInfo and self.UiSceneInfo.Transform then
+        self.PerformanceEventReceiver:InitScene(self.UiSceneInfo.Transform)
+    end
+    -- 通用帧事件钩子
+    --self.PerformanceEventReceiver:RegisterCustomCallback(function(param)
+    --    self:OnPerformanceCustomEvent(param)
+    --end)
 end
 
 function XUiNewDrawMainV4P5Performance:Refresh(rewardInfo)
@@ -62,8 +72,9 @@ function XUiNewDrawMainV4P5Performance:Refresh(rewardInfo)
         return
     end
     self:RefreshInfo()
+    self:LoadAsset()
     self:PlayEnterPerformance(function()
-        self:LoadAsset()
+        self.PanelPerformance.gameObject:SetActiveEx(false)
         self:PlayCharacterPerformance()
     end)
 end
@@ -119,7 +130,6 @@ function XUiNewDrawMainV4P5Performance:RefreshInfo()
 end
 
 function XUiNewDrawMainV4P5Performance:LoadAsset()
-    self:CleanupPerformance()
     ---@type XDrawPerformanceBinder
     self.Binder = XDrawPerformanceBinder.New(self)
     self.Binder:Bind()
@@ -130,14 +140,16 @@ function XUiNewDrawMainV4P5Performance:PlayEnterPerformance(callback)
     self.PanelInfo.gameObject:SetActiveEx(false)
     self.PanelPerformance.gameObject:SetActiveEx(true)
     self.BtnSkip.gameObject:SetActiveEx(true)
-    -- 临时延后，后续替换为进入表演动画
-    self.EnterTimerId = XScheduleManager.ScheduleOnce(function()
-        self.EnterTimerId = nil
-        self.PanelPerformance.gameObject:SetActiveEx(false)
+    if XTool.IsNumberValid(self.EnterPerformanceVideoId) then
+        self.VideoPlayer.ActionEnded = callback
+        self.VideoPlayer.ActionError = callback
+        self.VideoPlayer:SetInfoByVideoId(self.EnterPerformanceVideoId)
+        self.VideoPlayer:Prepare()
+    else
         if callback then
             callback()
         end
-    end, ENTER_PERFORMANCE_DELAY)
+    end
 end
 
 function XUiNewDrawMainV4P5Performance:PlayCharacterPerformance()
@@ -146,21 +158,24 @@ function XUiNewDrawMainV4P5Performance:PlayCharacterPerformance()
         return
     end
     -- 播放表演
-    self.PlayTimerId = self.Binder:Play(function()
-        self.PlayTimerId = nil
-        -- Timeline 结束后兜底显示角色信息（防止 UIShowTime > Timeline 时长导致空白等待）
-        self:ShowCharacterInfo()
-    end)
+    self.Binder:Play()
     -- 播放音频
     local voiceId = self.RolePerformanceConfig.VoiceId or 0
     if voiceId > 0 then
         self.VoiceInfo = XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.Voice, voiceId)
     end
-    -- 根据 UiShowTime 延迟显示角色信息
+    -- 根据 UiShowTime 延迟显示角色信息；与 Timeline 时长取最小值，避免 UiShowTime > Timeline 时长导致空白等待
     local showTime = self.RolePerformanceConfig.UiShowTime or 0
+    local duration = self.Binder:GetDuration()
+    if duration > 0 and showTime > duration then
+        showTime = duration
+    end
     if showTime > 0 then
-        local delay = math.ceil(showTime * XScheduleManager.SECOND)
+        local delay = math.floor(showTime * XScheduleManager.SECOND)
         self.ShowInfoTimerId = XScheduleManager.ScheduleOnce(function()
+            if XTool.UObjIsNil(self.GameObject) then
+                return
+            end
             self.ShowInfoTimerId = nil
             self:ShowCharacterInfo()
         end, delay)
@@ -179,45 +194,38 @@ function XUiNewDrawMainV4P5Performance:ShowCharacterInfo()
     self.PanelInfo.gameObject:SetActiveEx(true)
 end
 
---- 取消所有进行中的定时器
-function XUiNewDrawMainV4P5Performance:CancelTimers()
-    if self.EnterTimerId then
-        XScheduleManager.UnSchedule(self.EnterTimerId)
-        self.EnterTimerId = nil
-    end
-    if self.PlayTimerId then
-        XScheduleManager.UnSchedule(self.PlayTimerId)
-        self.PlayTimerId = nil
-    end
+-- 通用帧事件回调占位（由 PerformanceEvent 轨道的 CustomEvent 帧事件触发）
+--function XUiNewDrawMainV4P5Performance:OnPerformanceCustomEvent(param)
+--end
+
+function XUiNewDrawMainV4P5Performance:CleanupPerformance()
     if self.ShowInfoTimerId then
         XScheduleManager.UnSchedule(self.ShowInfoTimerId)
         self.ShowInfoTimerId = nil
     end
-end
-
-function XUiNewDrawMainV4P5Performance:CleanupPerformance()
-    self:CancelTimers()
+    -- 还原被隐藏的 UI 场景渲染
+    if not XTool.UObjIsNil(self.PerformanceEventReceiver) then
+        self.PerformanceEventReceiver:RestoreScene()
+    end
     if self.Binder then
         self.Binder:Stop()
         self.Binder = nil
+    end
+    if not XTool.UObjIsNil(self.AnimEventSender) then
+        self.AnimEventSender:StopAllFramePlayedAudio()
     end
     if self.VoiceInfo then
         self.VoiceInfo:Stop()
         self.VoiceInfo = nil
     end
+    if self.VideoPlayer then
+        self.VideoPlayer:Stop()
+    end
 end
 
 function XUiNewDrawMainV4P5Performance:RegisterUiEvents()
-    self.BtnClose:AddEventListener(handler(self, self.OnBtnBackClick))
-    self.BtnSkip:AddEventListener(handler(self, self.OnBtnSkipClick))
-end
-
-function XUiNewDrawMainV4P5Performance:OnBtnBackClick()
-    self:DoClose()
-end
-
-function XUiNewDrawMainV4P5Performance:OnBtnSkipClick()
-    self:DoClose()
+    self.BtnClose:AddEventListener(handler(self, self.DoClose))
+    self.BtnSkip:AddEventListener(handler(self, self.DoClose))
 end
 
 function XUiNewDrawMainV4P5Performance:DoClose()
@@ -225,7 +233,6 @@ function XUiNewDrawMainV4P5Performance:DoClose()
         return
     end
     self.IsClosed = true
-    self:CleanupPerformance()
     self:Close()
     if self.CloseCb then
         self.CloseCb()

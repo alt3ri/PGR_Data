@@ -313,4 +313,29 @@ function XBossInshotAgency:IsShowActivityRedPoint()
 end
 ---------------------------------------- #endregion 跳转和红点 ----------------------------------------
 
+--- 是否已全部通关
+function XBossInshotAgency:IsTowerAllClear()
+    local isOpen = self._Model:IsActivityOpen()
+    if not isOpen then
+        return false
+    end
+
+    local curLevel = self._Model:GetBossTowerCurrentLevel()
+    if not XTool.IsNumberValid(curLevel) then
+        return false
+    end
+
+    local curLevelData = self._Model:GetBossTowerData(curLevel)
+    if not curLevelData or not curLevelData.IsPass then
+        return false
+    end
+
+    local allLevelConfigs = self._Model:GetConfigBossInshotTowerAllLevels()
+    if XTool.IsTableEmpty(allLevelConfigs) then
+        return false
+    end
+
+    return not allLevelConfigs[curLevel + 1]
+end
+
 return XBossInshotAgency

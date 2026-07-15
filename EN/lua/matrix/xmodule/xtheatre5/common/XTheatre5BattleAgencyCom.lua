@@ -460,7 +460,7 @@ function XTheatre5BattleAgencyCom:RequestDlcSingleEnterFight(levelId, enterCb, s
 
                 local enterFunc = function()
                     CsXBehaviorManager.Instance:Clear()
-                    XTableManager.ReleaseAll(true)
+                    XTableManager.ReleaseAllCache()
                     CS.BinaryManager.ReleaseAllCache()
                     collectgarbage("collect")
 

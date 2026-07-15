@@ -12,9 +12,11 @@ end
 
 function XUiTheatre6RoomBoss:OnStart()
     self._ModelData = self._Control:GetCurPlayModeData()
+    self._IdleTime = self._Control:GetIntClientConfigValue("IdleWaitingTime")
     self:InitData()
     self:ShowRoleInfo()
     self:InitDrag()
+    self:CheckRestartFight()
 end
 
 function XUiTheatre6RoomBoss:OnEnable()
@@ -25,10 +27,12 @@ function XUiTheatre6RoomBoss:OnEnable()
     self._SelectMonsterIds[Direction.Left] = self._Control:GetBossIdByRoom(self._FightId, false)
     self._SelectMonsterIds[Direction.Right] = self._Control:GetBossIdByRoom(self._FightId, self._IsBoss)
 
+    self:WaitForPlayDragGuideAnim()
     XEventManager.AddEventListener(XEventId.EVENT_THEATRE6_SCORE_CHANGE, self.ShowRoleInfo, self)
 end
 
 function XUiTheatre6RoomBoss:OnDisable()
+    self:StopDragGuideAnim()
     XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE6_SCORE_CHANGE, self.ShowRoleInfo, self)
 end
 
@@ -39,6 +43,11 @@ function XUiTheatre6RoomBoss:InitData()
     self._RoomId = floorConfig.RoomIds[roomData.RoomIdx + 1]
     self._IsBoss = roomData.RoomType == XEnumConst.Theatre6.RoomType.Boss --boss or 小怪
     self._FightId = roomData.FightId
+    if self._IsBoss then
+        self:PlayAnimationWithMask("BossEnable")
+    else
+        self:PlayAnimationWithMask("LittleMonsterEnable")
+    end
 end
 
 function XUiTheatre6RoomBoss:ShowRoleInfo()
@@ -70,6 +79,7 @@ function XUiTheatre6RoomBoss:InitDrag()
     
     ---@type XUiPanelTheatre6Drag
     self._Drag = require("XUi/XUiTheatre6/Stage/Panel/XUiPanelTheatre6Drag").New(self.UiPanelCard, self)
+    self._Drag:RegistActionHandler(DragAction.Dragging, handler(self, self.OnDragging))
     self._Drag:RegistActionHandler(DragAction.EnterTargetArea, handler(self, self.OnEnterChooseArea))
     self._Drag:RegistActionHandler(DragAction.LeaveTargetArea, handler(self, self.OnLeaveChooseArea))
     self._Drag:RegistActionHandler(DragAction.End, handler(self, self.OnEndChoose))
@@ -80,6 +90,10 @@ end
 
 function XUiTheatre6RoomBoss:OnBtnCharacterClick()
     XLuaUiManager.Open("UiTheatre6PopupRoleDetail", self.BtnCharacter.transform)
+end
+
+function XUiTheatre6RoomBoss:OnDragging()
+    self:StopDragGuideAnim()
 end
 
 function XUiTheatre6RoomBoss:OnEnterChooseArea(direction)
@@ -94,6 +108,7 @@ end
 
 function XUiTheatre6RoomBoss:OnEndChoose(direction)
     self:OnLeaveChooseArea()
+    self:WaitForPlayDragGuideAnim()
     if not direction then
         return
     end
@@ -121,6 +136,47 @@ function XUiTheatre6RoomBoss:EnterFight(direction)
     self._Control:RequestFightRoomSlide(direction, self._SelectMonsterIds[direction], function()
         XLuaUiManager.Open("UiTheatre6Loading")
     end)
+end
+
+function XUiTheatre6RoomBoss:CheckRestartFight()
+    local roomData = self._Control:GetCurRoomData()
+    if not XTool.IsNumberValid(roomData.FightId) or not XTool.IsNumberValid(roomData.SelectedMonsterId) then
+        return
+    end
+    XLuaUiManager.Open("UiTheatre6Loading")
+end
+
+---玩家一段时间没操作时播放拖动引导动画
+function XUiTheatre6RoomBoss:WaitForPlayDragGuideAnim()
+    if not self.PanelTipsAnim then
+        return
+    end
+    self:StopDragGuideAnim()
+    self._DragGuideTimerId = XScheduleManager.ScheduleOnce(function()
+        self.PanelTipsAnim.gameObject:SetActiveEx(true)
+        self.PanelTipsAnim.time = 0
+        self.PanelTipsAnim:Play()
+        self.PanelTipsAnim:Evaluate()
+        self._TipsAnimPlaying = true
+    end, self._IdleTime)
+end
+
+---停止播放拖动引导动画
+function XUiTheatre6RoomBoss:StopDragGuideAnim()
+    if self._DragGuideTimerId then
+        XScheduleManager.UnSchedule(self._DragGuideTimerId)
+        self._DragGuideTimerId = nil
+    end
+    if not self.PanelTipsAnim then
+        return
+    end
+    if self._TipsAnimPlaying then
+        self.PanelTipsAnim:Stop()
+        self.PanelTipsAnim.time = self.PanelTipsAnim.duration
+        self.PanelTipsAnim:Evaluate()
+        self.PanelTipsAnim.gameObject:SetActiveEx(false)
+        self._TipsAnimPlaying = false
+    end
 end
 
 return XUiTheatre6RoomBoss

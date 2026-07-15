@@ -9,7 +9,7 @@
     },
     {
         "Id": "StoryUpdateTime",
-        "Values": "['2026/1/1']"
+        "Values": "['2099/1/1']"
     },
     {
         "Id": "IconLife",
@@ -37,7 +37,7 @@
     },
     {
         "Id": "MaxBuffCount",
-        "Values": "['6']"
+        "Values": "['5']"
     },
     {
         "Id": "TaskShopTagName",
@@ -49,7 +49,7 @@
     },
     {
         "Id": "EventBackgroup",
-        "Values": "['Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror01.png', 'Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror01.png', 'Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror01.png', 'Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror01.png', 'Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror11.png', 'Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror01.png']"
+        "Values": "['Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror04.png', 'Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror04.png', 'Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror04.png', 'Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror04.png', 'Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror05.png', 'Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoomEitheror04.png']"
     },
     {
         "Id": "IconCoin",
@@ -69,7 +69,7 @@
     },
     {
         "Id": "DescGold",
-        "Values": "['\u6e38\u79bb\u4e8e\u6e05\u9192\u548c\u75af\u72c2\u7684\u8fb9\u754c\uff0c\u5374\u59cb\u7ec8\u4ee5\u7406\u667a\u5bf9\u6297\u7740\u6df1\u6e0a\u3002']"
+        "Values": "['A hefty sum of Coins, earned through courage and wisdom.']"
     },
     {
         "Id": "DescHealth",
@@ -77,7 +77,7 @@
     },
     {
         "Id": "PvId",
-        "Values": "['20004']"
+        "Values": "['20011']"
     },
     {
         "Id": "Quality1",
@@ -129,15 +129,15 @@
     },
     {
         "Id": "StoryFirstGuideId",
-        "Values": "['64703']"
+        "Values": "['64701']"
     },
     {
         "Id": "StoryRepeatGuideId",
-        "Values": "['64704']"
+        "Values": "['64791']"
     },
     {
         "Id": "SanTypeDesc",
-        "Values": "['Sanity Normal', 'Sanity below %s', 'Sanity above %s', 'Sanity reaches %s']"
+        "Values": "['Sanity Normal', 'Sanity \u2264 %s', 'Sanity \u2265 %s', 'Sanity = %s']"
     },
     {
         "Id": "SanTypeName",
@@ -197,7 +197,7 @@
     },
     {
         "Id": "ShopRefreshColor",
-        "Values": "['56A788', 'DD9E55', '952535']"
+        "Values": "['56A788', 'ccc6bd', '952535']"
     },
     {
         "Id": "SceneRoleNodeCount",
@@ -209,7 +209,7 @@
     },
     {
         "Id": "RewardDuration",
-        "Values": "['3000']"
+        "Values": "['6000']"
     },
     {
         "Id": "DifficultyLevelBg",
@@ -265,7 +265,7 @@
     },
     {
         "Id": "IconCrit",
-        "Values": "['Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon36.png']"
+        "Values": "['Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon37.png']"
     },
     {
         "Id": "IconBlock",
@@ -312,6 +312,18 @@
         "Values": "['Assets/Product/Texture/Image/IconTools/UiTheatre6Icon06.png']"
     },
     {
+        "Id": "IconGood03",
+        "Values": "['Assets/Product/Texture/Image/IconTools/UiTheatre6Icon08.png']"
+    },
+    {
+        "Id": "IconGood04",
+        "Values": "['Assets/Product/Texture/Image/IconTools/UiTheatre6Icon04.png']"
+    },
+    {
+        "Id": "IconDeSan",
+        "Values": "['Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon26.png']"
+    },
+    {
         "Id": "IconAttr01",
         "Values": "['Assets/Product/Texture/Image/UiTheatre6/UiTheatre6RoundSettlementRoleIcon02.png']"
     },
@@ -329,7 +341,7 @@
     },
     {
         "Id": "IconCritBlack",
-        "Values": "['Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon36Black.png']"
+        "Values": "['Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon37Black.png']"
     },
     {
         "Id": "IconWrestleBlack",
@@ -378,5 +390,77 @@
     {
         "Id": "IconAngry",
         "Values": "['Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon42.png']"
+    },
+    {
+        "Id": "EitherorGuideId",
+        "Values": "['64755']"
+    },
+    {
+        "Id": "MainUiEnterCamAnimTime",
+        "Values": "['2330']"
+    },
+    {
+        "Id": "DefenseArchiveIcon",
+        "Values": "['Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon42.png']"
+    },
+    {
+        "Id": "NewCharacterTagShowId",
+        "Values": "['4']"
+    },
+    {
+        "Id": "NewCharacterTagShowTime",
+        "Values": "['48601']"
+    },
+    {
+        "Id": "EitherorGuide2",
+        "Values": "['2', '5', '64765']"
+    },
+    {
+        "Id": "EitherorGuide3",
+        "Values": "['863157', '64769', '2', '64770', '3']"
+    },
+    {
+        "Id": "FirstEnterGuideId",
+        "Values": "['64751']"
+    },
+    {
+        "Id": "IconProtector",
+        "Values": "['Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon42.png']"
+    },
+    {
+        "Id": "IconProtectorBlack",
+        "Values": "['Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon42Black.png']"
+    },
+    {
+        "Id": "IconSun",
+        "Values": "['Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon43.png']"
+    },
+    {
+        "Id": "IconSunBlack",
+        "Values": "['Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon43Black.png']"
+    },
+    {
+        "Id": "BuffRemainingTimesDesc",
+        "Values": "['2', '\u5269\u4f59%s\u573a\u6218\u6597', '3', '\u5269\u4f59%s\u6b21\u6289\u62e9', '4', '\u5269\u4f59%s\u6b21', '6', '\u5269\u4f59%s\u5c42', '7', '\u5269\u4f59%s\u6b21']"
+    },
+    {
+        "Id": "SkillLevelUpSymbol",
+        "Values": "['<color=#63CCA1> >></color>']"
+    },
+    {
+        "Id": "PurchaseSanCoinNoEnough",
+        "Values": "['Insufficient Ancient Coins']"
+    },
+    {
+        "Id": "PurchaseSanMaxTimes",
+        "Values": "['Purchase limit reached.']"
+    },
+    {
+        "Id": "PurchaseSanMaxSan",
+        "Values": "['Sanity has reached the maximum limit.']"
+    },
+    {
+        "Id": "EnterExFloorTitle",
+        "Values": "['\u5173\u5361\u5df2\u901a\u5173\uff0c\u53ef\u9009\u8fdb\u5165\u8fde\u7eed\u6311\u6218\u73af\u8282\uff0c\u83b7\u5f97\u66f4\u9ad8\u6536\u76ca']"
     }
 ]

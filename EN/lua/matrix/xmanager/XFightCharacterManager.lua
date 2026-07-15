@@ -148,6 +148,42 @@ local function GetResonanceSkillLevelMap(npcData)
     return levelMap
 end
 
+local function GetWeaponOverrunLevelMap(npcData)
+    local levelMap = {}
+    local equips = npcData.Equips
+    if not equips then
+        return levelMap
+    end
+
+    XTool.LoopCollection(equips, function(equipData)
+        if equipData.WeaponOverrunData and equipData.WeaponOverrunData.Level > 0 then
+            local overrunLevel = equipData.WeaponOverrunData.Level
+            local weaponTemplateId = equipData.TemplateId
+            local characterId = equipData.CharacterId
+            local overrunCfgIds = XMVCA.XEquip:GetWeaponOverrunCfgIds(weaponTemplateId, characterId)
+            for level, overrunCfgId in pairs(overrunCfgIds) do
+                if level <= overrunLevel then
+                    local overrunCfg = XMVCA.XEquip:GetWeaponOverrunConfigById(overrunCfgId)
+                    local upSkillGroupId = overrunCfg.UpSkillGroupId
+                    local upSkillGroupLevel = overrunCfg.UpSkillGroupLevel
+                    if XTool.IsNumberValid(upSkillGroupId) and upSkillGroupLevel > 0 then
+                        local groupSkillIds = XMVCA.XCharacter:GetGroupSkillIdsByGroupId(upSkillGroupId)
+                        for _, skillId in pairs(groupSkillIds) do
+                            if levelMap[skillId] then
+                                levelMap[skillId] = levelMap[skillId] + upSkillGroupLevel
+                            else
+                                levelMap[skillId] = upSkillGroupLevel
+                            end
+                        end
+                    end
+                end
+            end
+        end
+    end)
+
+    return levelMap
+end
+
 ---获取角色技能等级集合
 ---@param npcData userdata npc数据
 ---@return table 技能等级集合
@@ -161,6 +197,13 @@ local function GetCharSkillLevelMap(npcData)
 
     local resLevelMap = GetResonanceSkillLevelMap(npcData)
     for skillId, level in pairs(resLevelMap) do
+        if levelMap[skillId] then
+            levelMap[skillId] = levelMap[skillId] + level
+        end
+    end
+
+    local weaponOverrunLevelMap = GetWeaponOverrunLevelMap(npcData)
+    for skillId, level in pairs(weaponOverrunLevelMap) do
         if levelMap[skillId] then
             levelMap[skillId] = levelMap[skillId] + level
         end

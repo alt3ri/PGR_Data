@@ -16,11 +16,12 @@ function XUiPanelFashionDetail:OnStart(fashionSuitId)
 end
 
 function XUiPanelFashionDetail:OnGetLuaEvents()
-    return { XEventId.EVENT_WEAPOM_SYM, XEventId.EVENT_CHARACTER_SYN }
+    return { XEventId.EVENT_WEAPOM_SYM, XEventId.EVENT_CHARACTER_SYN, XEventId.EVENT_LB_UPDATE, XEventId.EVENT_SHOP_BUY_SUCCESS }
 end
 
 function XUiPanelFashionDetail:OnNotify(evt, ...)
-    if evt == XEventId.EVENT_WEAPOM_SYM or evt == XEventId.EVENT_CHARACTER_SYN then
+    if evt == XEventId.EVENT_WEAPOM_SYM or evt == XEventId.EVENT_CHARACTER_SYN
+        or evt == XEventId.EVENT_LB_UPDATE or evt == XEventId.EVENT_SHOP_BUY_SUCCESS then
         self:UpdateBuyBtn()
     end
 end

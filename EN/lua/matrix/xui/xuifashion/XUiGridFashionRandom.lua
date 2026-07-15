@@ -47,16 +47,15 @@ function XUiGridFashionRandom:NormalClick()
 end
 
 function XUiGridFashionRandom:RefreshDot()
-
-    local template = XDataCenter.FashionManager.GetFashionTemplate(self.FashionId)
-    self.ColorTag.gameObject:SetActiveEx(template.FashionColorIds and #template.FashionColorIds > 0)
-
     local colorId = XDataCenter.FashionManager.GetOwnFashionDataById(self.FashionId).ColorId
-    self.ImgColour.transform.parent.gameObject:SetActiveEx(colorId ~= 0)
-    if colorId ~= 0 then
-        local colorHex = XMVCA.XFashion:GetFashionColorHex(colorId)
-        self.ImgColour.color = XUiHelper.Hexcolor2Color(string.sub(colorHex, 2, #colorHex))     --去#号
-    end
+    local hasSelectedColor = colorId ~= 0
+    self.ColorTag.gameObject:SetActiveEx(hasSelectedColor)
+
+    self.ImgColour.transform.parent.gameObject:SetActiveEx(false)
+    -- if hasSelectedColor then
+    --     local colorHex = XMVCA.XFashion:GetFashionColorHex(colorId)
+    --     self.ImgColour.color = XUiHelper.Hexcolor2Color(string.sub(colorHex, 2, #colorHex))     --去#号
+    -- end
 end
 
 return XUiGridFashionRandom

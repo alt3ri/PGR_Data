@@ -51,6 +51,7 @@ XItemManagerCreator = function()
         FurnitureCoin = 31,
         PaintingDesign = 32, --涂装设计图
         DormEnterIcon = 36,
+        EquipPaintingDesign = 45, -- 武器涂装设计图
         BaseEquipCoin = 300,
         InfestorActionPoint = 50,
         InfestorMoney = 51,
@@ -110,6 +111,8 @@ XItemManagerCreator = function()
         MuralShareCoin = 63601, -- 壁画分享活动货币
         EquipAwakeCoin1 = 70001, -- 意识超频代币1
         EquipAwakeCoin2 = 70002, -- 意识超频代币2
+        EquipOverrunCoin1 = 34000, -- 谐振加速器
+        EquipOverrunCoin2 = 34001, -- 谐振增幅器
         Theatre4TechTreeCoin = 96200, -- 肉鸽4外循环货币
         Theatre4BpExperience = 96201, -- 肉鸽4Bp经验
         Temple2 = 97034, -- 庙会2代币
@@ -395,7 +398,7 @@ XItemManagerCreator = function()
                 XMVCA.XBigWorldService:OnInitItemData(itemData)
             else
                 if Items[itemData.Id] then
-                    Items[itemData.Id]:RefreshItem(itemData)
+                    Items[itemData.Id]:RefreshItem(itemData, true)
                     ItemFirstGetCheckTable[itemData.Id] = true
                 else
                     XLog.ErrorTableDataNotFound("XItemManager.InitItemData", "Item", " Share/Item/Item.tab", "Id", tostring(itemData.Id))

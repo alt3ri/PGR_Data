@@ -9,10 +9,6 @@ local Quaternion = CS.UnityEngine.Quaternion
 function XUiPanelTheatre6TopSan:OnStart(isShowLineNum)
     self.BtnPointer:AddEventListener(handler(self, self.OnBtnPointerClick))
 
-    self._Min = self._Control:GetMinSanValue()
-    self._Max = self._Control:GetMaxSanValue()
-    self._CenterSan = (self._Max - self._Min) / 2
-
     self._AngleL = self._Control:GetIntClientConfigValue("SanCircleAngle", 1)
     self._AngleR = self._Control:GetIntClientConfigValue("SanCircleAngle", 2)
     self._SanTweenDuration = self._Control:GetIntClientConfigValue("TopSanTweenTime")
@@ -28,14 +24,6 @@ function XUiPanelTheatre6TopSan:OnStart(isShowLineNum)
     if self.UiTxtNum then
         self.UiTxtNum.gameObject:SetActiveEx(false)
     end
-    
-    if self.UiTxtNumMin then
-        self.UiTxtNumMin.text = self._Min
-    end
-    
-    if self.UiTxtNumMax then
-        self.UiTxtNumMax.text = self._Max
-    end
 end
 
 function XUiPanelTheatre6TopSan:OnEnable()
@@ -50,6 +38,10 @@ function XUiPanelTheatre6TopSan:OnDisable()
 end
 
 function XUiPanelTheatre6TopSan:UpdateView()
+    self._Min = self._Control:GetMinSanValue()
+    self._Max = self._Control:GetMaxSanValue()
+    self._CenterSan = (self._Max - self._Min) / 2
+    
     local san = self._Control:GetSanValue()
     self.TxtCurSanL.text = san
     self.TxtCurSanR.text = san
@@ -114,6 +106,14 @@ function XUiPanelTheatre6TopSan:UpdateView()
 
     --UI动画（缓动）
     self:PlaySanTween(san)
+
+    if self.UiTxtNumMin then
+        self.UiTxtNumMin.text = self._Min
+    end
+
+    if self.UiTxtNumMax then
+        self.UiTxtNumMax.text = self._Max
+    end
 end
 
 ---缓动箭头角度和进度条fillAmount到当前San值对应位置

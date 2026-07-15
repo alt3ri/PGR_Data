@@ -1,35 +1,35 @@
-local BurnBuff = require("Gameplay/Theatre6/AffixController/XTheatre6BurnController").StackBuff
 local XTheatre6SkillBase = require("Gameplay/Theatre6/XTheatre6SkillBase")
 ---@class XBuffScript10262100 : XTheatre6SkillBase
 local XBuffScript10262100 = XDlcScriptManager.RegBuffScript(10262100, "XBuffScript10262100", XTheatre6SkillBase)
 
---效果说明：累计消耗150体力后触发：
---自身处于【狂暴】时，额外清空双方的<心眼>、<坚毅>层数，每清空一层，伤害额外提高50%攻击。
+--效果说明：每消耗100体力后触发：
+--自身处于【狂暴】时，额外清空双方的<心眼>、<坚毅>层数，每清空一层，伤害额外提高10/20/30%攻击。
 
 function XBuffScript10262100:ScriptInit(isGainControl) --初始化
-    self.TargetSkill = self._skillId
-    --Todo,替换正式的伤害magic，注册技能伤害id
-    self._damageMagicId = 10250011
+    --注册技能伤害id
+    self._damageMagicId = 1026210
     -- 当前消耗的体力
     self._costTL = 0
     -- 目标体力消耗
-    self._targetTL = 150
-    -- 额外伤害
-    self._extraDamage = 5000
-    -- 自身
-    self._player = self._npcUUID
+    self._targetTL = 100
+    -- 额外伤害，万分比
+    self._extraDamage = {
+        [1] = 1000,
+        [2] = 2000,
+        [3] = 3000
+    }
+    -- 伤害段数
+    self._damageTimes = 14
     -- 当前体力消耗
     self._nowCostTL = 0
-    -- 坚毅控制器
-    self._blockController = self:GetNpc():GetBlockController()
-    -- 心眼控制器
-    self._critController = self:GetNpc():GetCritController()
-    -- 敌人坚毅控制器
-    self._enemyBlockController = null
-    -- 敌人心眼控制器
-    self._enemyCritController = null
+    --坚毅buffId
+    self._blockBuffId = self:GetNpc():GetBlockController().StackBuff
+    --心眼buffId
+    self._critBuffId = self:GetNpc():GetCritController().StackBuff
 
-    XLog.Warning("初始化完成")
+    --最终改伤万分比
+    --self._exDamageRate = 0
+    
 end
 
 ---@param eventType number
@@ -44,6 +44,7 @@ function XBuffScript10262100:InitEventCallBackRegister()
 end
 
 function XBuffScript10262100:Update(dt)
+    --确保玩家能被赋值
     if not self._player then
         self._player = self._npcUUID
     end
@@ -61,12 +62,10 @@ function XBuffScript10262100:Update(dt)
     end
     if _nowTL2 < self._nowTL then
         self._nowCostTL = self._nowCostTL + self._nowTL - _nowTL2
-        XLog.Warning("当前消耗："..self._nowCostTL)
         self._nowTL = _nowTL2
         --如果超过目标，就插入技能
         if self._nowCostTL >= self._targetTL then
-            XLog.Warning("开始插入"..self._nowCostTL)
-            self._level:RequestInsertSkill(self._npcUUID,self.TargetSkill)
+            self._level:RequestInsertSkill(self._npcUUID,self._skillId)
             self._nowCostTL = 0
             return
         end
@@ -80,41 +79,44 @@ function XBuffScript10262100:OnLuaSkillStart(eventArgs)
     if eventArgs._launcherUUID ~= self._npcUUID then return end
 
     --记录我方层数
-    local _myBlock = self._blockController:GetSkillCount()
-    local _myCrit = self._critController:GetSkillCount()
-    --敌人赋值
-    if self._enemyBlockController == null then
-        local _enemy = self._enemyUUID:GetNpc()
-        if _enemy == null then return end
-        self._enemyBlockController = _enemy:GetBlockController()
-        self._enemyCritController = _enemy:GetCritController()
-    end
-    local _enemyBlock = self._enemyBlockController:GetSkillCount()
-    local _enemyCrit = self._enemyCritController:GetSkillCount()
+    local _myBlock = self._proxy:GetBuffStacks(self._npcUUID,self._blockBuffId)
+    local _myCrit = self._proxy:GetBuffStacks(self._npcUUID,self._critBuffId)
+    local _enemyBlock = self._proxy:GetBuffStacks(self._enemyUUID,self._blockBuffId)
+    local _enemyCrit = self._proxy:GetBuffStacks(self._enemyUUID,self._critBuffId)
     
     --清除我方和对方的层数
-    self._blockController:ClearStackBuff()
-    self._critController:ClearStackBuff()
-    self._enemyBlockController:ClearStackBuff()
-    self._enemyCritController:ClearStackBuff()
+    self._proxy:RemoveBuffByKindAndCount(self._npcUUID,self._blockBuffId,_myBlock)
+    self._proxy:RemoveBuffByKindAndCount(self._npcUUID,self._critBuffId,_myCrit)
+    self._proxy:RemoveBuffByKindAndCount(self._enemyUUID,self._blockBuffId,_enemyBlock)
+    self._proxy:RemoveBuffByKindAndCount(self._enemyUUID,self._critBuffId,_enemyCrit)
     
     --总层数记录
     local _totalCount = _myBlock+_myCrit+_enemyBlock+_enemyCrit
-    if _totalCount <= 0 then return end
-    XLog.Warning("总层数：".._totalCount)
-    self._hasChangedDamage = false
+    if _totalCount <= 0 then 
+        self._hasChangedDamage = false
+        return
+    end
+    
     --判断要改多少伤害
-    self._exDamageRate = _totalCount * self._extraDamage
+    self._exDamageRate = _totalCount * self._extraDamage[self._lv] / self._damageTimes
 end
 
 --实际调整伤害
 function XBuffScript10262100:ChangeDamageBeforeCalc(eventArgs)
     if eventArgs.Launcher ~= self._npcUUID then return end
-    --if eventArgs.Id ~= self._damageMagicId then return end
-    if self._hasChangedDamage then return end
+    if eventArgs.Id ~= self._damageMagicId then return end
+    
+    if self._hasChangedDamage == false then return end
     local FinalDMGRate = eventArgs.PhysicalPermyriad + self._exDamageRate
-    self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate, eventArgs.ElementPermyriad, eventArgs.HackDamage, eventArgs.HackPermyriad, eventArgs.isCrity)
-    self._hasChangedDamage = true
+    self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate, eventArgs.ElementPermyriad, eventArgs.HackDamage, eventArgs.HackPermyriad, eventArgs.IsCrit)
+end
+
+function XBuffScript10262100:OnLuaSkillEnd(eventArgs)
+    ------------执行------------
+    if eventArgs._skillId ~= self._skillId then return end
+    if eventArgs._launcherUUID ~= self._npcUUID then return end
+    --本技能放完后，取消加伤
+    if self._hasChangedDamage == true then self._hasChangedDamage = false end
 end
 
 return XBuffScript10262100

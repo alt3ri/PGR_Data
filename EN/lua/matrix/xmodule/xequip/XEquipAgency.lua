@@ -60,17 +60,15 @@ function XEquipAgency:NotifyEquipDataTestList(data)
 
     -- 将本地 XEquip 规范化为“服务端同形结构”的表，便于对比
     local function NormalizeLocalEquip(localEquip)
-        -- 本地字段命名 -> 服务端命名
-        -- OverrunData             -> WeaponOverrunData
-        -- AwakeSlotListCheck仅是派生，用AwakeSlotList和服务端比
-        -- 其余字段名一致：Id/TemplateId/CharacterId/Level/Exp/Breakthrough/IsLock/CreateTime/IsRecycle/ResonanceInfo/UnconfirmedResonanceInfo
+        -- 本地字段命名与服务端完全一致
+        -- 字段名一致：Id/TemplateId/CharacterId/Level/Exp/Breakthrough/IsLock/CreateTime/IsRecycle/ResonanceInfo/UnconfirmedResonanceInfo/WeaponOverrunData/AwakeSlotList
         return {
             UnconfirmedResonanceInfo = localEquip.UnconfirmedResonanceInfo,
             Breakthrough = localEquip.Breakthrough,
             CharacterId = localEquip.CharacterId,
             Id = localEquip.Id,
-            WeaponOverrunData = localEquip.OverrunData, -- ★ 关键映射
-            AwakeSlotList = localEquip.AwakeSlotList,   -- 用AwakeSlotList对比，忽略AwakeSlotListCheck
+            WeaponOverrunData = localEquip.WeaponOverrunData,
+            AwakeSlotList = localEquip.AwakeSlotList,
             ResonanceInfo = localEquip.ResonanceInfo,
             IsLock = localEquip.IsLock,
             CreateTime = localEquip.CreateTime,
@@ -1517,10 +1515,12 @@ function XEquipAgency:GetResonancePreviewSkillInfoList(equipId, characterId, slo
     if characterId then
         if equip:IsWeapon() then
             local poolId = resonanceCfg.WeaponSkillPoolId[slot]
-            local skillIds = self._Model:GetWeaponSkillPoolSkillIds(poolId, characterId)
-            for _, skillId in ipairs(skillIds) do
-                local skillInfo = XSkillInfoObj.New(XEnumConst.EQUIP.RESONANCE_TYPE.WEAPON_SKILL, skillId)
-                table.insert(skillInfoList, skillInfo)
+            local skillIds = self._Model:GetWeaponSkillPoolSkillIds(poolId, characterId, true)
+            if skillIds then
+                for _, skillId in ipairs(skillIds) do
+                    local skillInfo = XSkillInfoObj.New(XEnumConst.EQUIP.RESONANCE_TYPE.WEAPON_SKILL, skillId)
+                    table.insert(skillInfoList, skillInfo)
+                end
             end
         else
             local skillPoolId = resonanceCfg.CharacterSkillPoolId[slot]
@@ -2449,23 +2449,52 @@ end
 
 ---------------------------------------- #region WeaponOverrun ----------------------------------------
 -- 获取武器对应所有超限配置
-function XEquipAgency:GetWeaponOverrunCfgsByTemplateId(templateId)
-    return self._Model:GetWeaponOverrunCfgsByTemplateId(templateId)
+function XEquipAgency:GetWeaponOverrunCfgsByTemplateId(weaponTemplateId, characterId)
+    return self._Model:GetWeaponOverrunCfgsByTemplateId(weaponTemplateId, characterId)
 end
 
--- 通过配置表Id判断能否超限
-function XEquipAgency:CanOverrunByTemplateId(templateId)
-    return self._Model:CanOverrunByTemplateId(templateId)
+---@return XTableWeaponOverrun
+function XEquipAgency:GetWeaponOverrunConfigById(id)
+    return self._Model:GetWeaponOverrunConfigById(id)
+end
+
+-- 获取武器对应所有超限配置Id列表
+function XEquipAgency:GetWeaponOverrunCfgIds(weaponTemplateId, characterId)
+    return self._Model:GetWeaponOverrunCfgIds(weaponTemplateId, characterId)
+end
+
+-- 获取武器对应首个角色专属超限角色Id
+function XEquipAgency:GetWeaponOverrunCharacterId(weaponTemplateId)
+    return self._Model:GetWeaponOverrunCharacterId(weaponTemplateId)
+end
+
+-- 通过配置表Id判断能否超限
+function XEquipAgency:CanOverrunByTemplateId(weaponTemplateId)
+    return self._Model:CanOverrunByTemplateId(weaponTemplateId)
 end
 
 -- 获取武器超限意识绑定的配置表
-function XEquipAgency:GetWeaponOverrunSuitCfgByTemplateId(templateId)
-    return self._Model:GetWeaponOverrunSuitCfgByTemplateId(templateId)
-end
+function XEquipAgency:GetWeaponOverrunSuitCfgByTemplateId(weaponTemplateId)
+    return self._Model:GetWeaponOverrunSuitCfgByTemplateId(weaponTemplateId)
+end
+
+function XEquipAgency:GetWeaponOverrunAttrCfgByTemplateId(weaponTemplateId, characterId)
+    return self._Model:GetWeaponOverrunAttrCfgByTemplateId(weaponTemplateId, characterId)
+end
 
 --- 获取武器等级对应的UI显示
 function XEquipAgency:GetConfigWeaponDeregulateUI(lv)
     return self._Model:GetConfigWeaponDeregulateUI(lv)
+end
+
+---@return XTableWeaponOverrunSkill[]
+function XEquipAgency:GetWeaponOverrunSkillConfigs()
+    return self._Model:GetWeaponOverrunSkillConfigs()
+end
+
+---@return XTableWeaponOverrunSkill
+function XEquipAgency:GetWeaponOverrunSkillConfigById(id)
+    return self._Model:GetWeaponOverrunSkillConfigById(id)
 end
 ---------------------------------------- #endregion WeaponOverrun ----------------------------------------
 

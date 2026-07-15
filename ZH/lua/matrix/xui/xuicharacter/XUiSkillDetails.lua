@@ -209,7 +209,7 @@ function XUiSkillDetails:SetBtnInfo(btn, subSkillInfo)
     if isShowTreeIcon then
         local powerConfig = XMVCA.XCharacter:GetCharacterPowerConfig(self.CharacterId)
         if powerConfig and btn.TagObj then
-            btn.TagObj:GetComponent("Image"):SetSprite(powerConfig.IconSkill)
+            btn.TagObj:GetComponent(typeof(CS.UnityEngine.UI.Image)):SetSprite(powerConfig.IconSkill)
         end
     end
 end
@@ -260,31 +260,29 @@ function XUiSkillDetails:OnBtnMainUiClick()
     XLuaUiManager.RunMain()
 end
 -- 下一个
-function XUiSkillDetails:OnBtnNext()
-    if self.Pos then
-        local nextPos = self.Pos + 1
-        if nextPos > XEnumConst.CHARACTER.MAX_SHOW_SKILL_POS then
-            self.ParentUi:SwitchToNextSkillDetails()
-            return
-        else
-            self.ParentUi:SetSkillPos(nextPos)
-        end
-        self:GotoSkill(nextPos)
-    end
-end
+function XUiSkillDetails:OnBtnNext()
+    if self.Pos then
+        local nextPos = self.Pos + 1
+        if nextPos > XEnumConst.CHARACTER.MAX_SHOW_SKILL_POS then
+            self.ParentUi:SwitchToNextSkillDetails()
+        else
+            self.ParentUi:SetSkillPos(nextPos)
+            self:GotoSkill(nextPos)
+        end
+    end
+end
 -- 上一个
-function XUiSkillDetails:OnBtnLast()
-    if self.Pos then
-        local lastPos = self.Pos - 1
-        if lastPos < 1 then
-            self.ParentUi:SwitchToLastSkillDetails()
-            return
-        else
-            self.ParentUi:SetSkillPos(lastPos)
-        end
-        self:GotoSkill(lastPos)
-    end
-end
+function XUiSkillDetails:OnBtnLast()
+    if self.Pos then
+        local lastPos = self.Pos - 1
+        if lastPos < 1 then
+            self.ParentUi:SwitchToLastSkillDetails()
+        else
+            self.ParentUi:SetSkillPos(lastPos)
+            self:GotoSkill(lastPos)
+        end
+    end
+end
 
 function XUiSkillDetails:OnToggle()
     self.IsDetails = self.Toggle.isOn

@@ -670,6 +670,14 @@ end
 function XLuaUi:FindPlayable(animName)
     return self.Ui:FindPlayable(animName)
 end
+
+function XLuaUi:FinishAnimation(animName)
+    local playable = self:FindPlayable(animName)
+
+    if playable then
+        playable.gameObject:FinishTimelineAnimation()
+    end
+end
 --endregion
 
 --region Tween

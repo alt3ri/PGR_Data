@@ -401,11 +401,11 @@
     },
     {
         "Key": "DailyActiveRewardTitle",
-        "Text": "Reward Details"
+        "Text": "Details"
     },
     {
         "Key": "WeeklyActiveRewardTitle",
-        "Text": "Reward Details"
+        "Text": "Details"
     },
     {
         "Key": "SettingCheckSave",
@@ -1245,7 +1245,7 @@
     },
     {
         "Key": "BossSingleLeftTimeIcon",
-        "Text": "Time until reset: {0}"
+        "Text": "Resets in: {0}"
     },
     {
         "Key": "BossSingleChooseLevelTypeEmpty",
@@ -3033,7 +3033,7 @@
     },
     {
         "Key": "ExploreRewardTitle",
-        "Text": "Reward Details"
+        "Text": "Details"
     },
     {
         "Key": "ExploreExplain",
@@ -3509,7 +3509,7 @@
     },
     {
         "Key": "PurchaseYKDes",
-        "Text": "\u6708\u5361\u8d2d\u4e70\u540e\uff0c\u6301\u7eed30\u65e5\uff0c\u6bcf\u65e55:00\uff0c\u53ef\u9886\u53d6100\u9ed1\u5361\u3002\\n\u6708\u5361\u6700\u591a\u8d2d\u4e706\u5f20\uff0c\u65f6\u95f4\u53e0\u52a0\uff0c\u6bcf\u5929\u53ea\u80fd\u9886\u53d6\u4e00\u6b21100\u9ed1\u5361\u5956\u52b1\u3002\\n\u8d2d\u4e70\u540e\u53ef\u7acb\u5373\u83b7\u53d6300\u9ed1\u5361\u3002"
+        "Text": "1. Purchase [Black Card Monthly Pass A] to claim 100 Black Cards daily at 05:00 UTC for 30 days.\\n2. Each purchase extends the duration by 30 days, up to a maximum of 180 days. [Black Card Monthly Pass A] and [Black Card Monthly Pass C] cannot be active at the same time.\\n3. Upon purchase, you will receive 300 Black Cards immediately."
     },
     {
         "Key": "SaveShowSetting",
@@ -3949,7 +3949,7 @@
     },
     {
         "Key": "BossSingleAutoFightDesc",
-        "Text": "Auto Clear will only give you 80% of your highest previous record.\\nAuto Clear will still reduce Construct Stamina and exhaust attempts.\\nAuto Clear can be used 3 times in total until the next reset."
+        "Text": "Auto Clear will only give you 100% of your highest previous record.\\nAuto Clear will still reduce Construct Stamina and exhaust attempts.\\nAuto Clear can be used 6 times in total until the next reset."
     },
     {
         "Key": "BossSingleAutoFightRateDesc",
@@ -5101,7 +5101,7 @@
     },
     {
         "Key": "AssignSkillPlus",
-        "Text": "All {0} members' {1} level +{2}"
+        "Text": "All {0}members' {1} level +{2}"
     },
     {
         "Key": "AssignDeployTipTitle",
@@ -5238,6 +5238,10 @@
     {
         "Key": "CharacterSkillLevelDetailAssign",
         "Text": "Border Stationing"
+    },
+    {
+        "Key": "CharacterSkillLevelDetailWeaponOverrun",
+        "Text": "Weapon Overload"
     },
     {
         "Key": "CharacterSkillLevelDetail",
@@ -10981,7 +10985,7 @@
     },
     {
         "Key": "InvertCardGameCurInvertConutText",
-        "Text": "\u5f53\u524d\u7ffb\u724c\uff1a<color=#744EF1>{0}/{1}</color>"
+        "Text": "Cards flipped: <color=#744EF1>{0}/{1}</color>"
     },
     {
         "Key": "InvertCardGameConstomCountBlue",
@@ -11290,6 +11294,26 @@
     {
         "Key": "FashionStoryProcess",
         "Text": "Progress: {0}/{1}"
+    },
+    {
+        "Key": "FashionStoryRewardLock",
+        "Text": "Available in {0}"
+    },
+    {
+        "Key": "FashionStoryRewardGo",
+        "Text": "Claim Reward"
+    },
+    {
+        "Key": "FashionStoryRewardReceived",
+        "Text": "Claimed"
+    },
+    {
+        "Key": "FashionStoryRewardActivityEnd",
+        "Text": "Event has ended"
+    },
+    {
+        "Key": "FashionStoryUnlockAfterTime",
+        "Text": "Available in {0}"
     },
     {
         "Key": "SocialBlackTipsDesc",
@@ -15073,7 +15097,7 @@
     },
     {
         "Key": "DrawFreeTicketCoolDown",
-        "Text": "{0} R&D Ticket(s) expire(s) in {1}"
+        "Text": "{0} R&D ticket(s) expiring in {1}"
     },
     {
         "Key": "SummerSignInDefault",
@@ -15277,15 +15301,15 @@
     },
     {
         "Key": "RiftPluginAttrReset",
-        "Text": "\u9ed1\u91d1\u7968\u52b5\u4e0d\u8db3\uff0c\u65e0\u6cd5\u91cd\u7f6e"
+        "Text": "Insufficient Premium Vouchers. Cannot reset."
     },
     {
         "Key": "RiftPluginAttrUnlock",
-        "Text": "\u9ed1\u91d1\u7968\u52b5\u4e0d\u8db3\uff0c\u65e0\u6cd5\u89e3\u9501"
+        "Text": "Insufficient Premium Vouchers. Cannot unlock."
     },
     {
         "Key": "RiftPluginCannotBuy",
-        "Text": "\u9ed1\u91d1\u7968\u52b5\u4e0d\u8db3\uff0c\u65e0\u6cd5\u89e3\u9501"
+        "Text": "Insufficient Premium Vouchers. Cannot unlock."
     },
     {
         "Key": "RiftLuckyTip1",
@@ -16721,7 +16745,7 @@
     },
     {
         "Key": "EquipOverrunActive",
-        "Text": "Harmony Activation"
+        "Text": "Harmony Activated"
     },
     {
         "Key": "EquipOverrunLevelUpTips",
@@ -16729,11 +16753,43 @@
     },
     {
         "Key": "EquipOverrunActiveEffectTips1",
-        "Text": "The {0}-piece Memory Set effects can also be activated. Activate and bind <color=#0E70BD>[{1}]</color>?"
+        "Text": "Bind [{1}] to activate the {0}-piece Memory set bonus?"
     },
     {
         "Key": "EquipOverrunActiveEffectTips2",
         "Text": "No extra Memory Set effects can be activated. Activate and bind <color=#0E70BD>[{0}]</color>?"
+    },
+    {
+        "Key": "EquipOverrunUnActive",
+        "Text": "Not Activated"
+    },
+    {
+        "Key": "EquipOverrunUnBindSuit",
+        "Text": "<color=#6F6F6F>No Memory Bound</color>"
+    },
+    {
+        "Key": "EquipOverrunSkillTitleUnlock",
+        "Text": "Skill Boost"
+    },
+    {
+        "Key": "EquipOverrunSkillTitleStrength",
+        "Text": "Unlock Skill"
+    },
+    {
+        "Key": "EquipOverrunUnlockBeforeSkillTips",
+        "Text": "%s"
+    },
+    {
+        "Key": "EquipOverrunCharacterSkillTagName",
+        "Text": "\u8c10\u632f\u6280\u80fd"
+    },
+    {
+        "Key": "EquipOverrunCharacterSkillTagIcon",
+        "Text": "Assets/Product/Texture/Image/IconSkill/lanse07.png"
+    },
+    {
+        "Key": "EquipOverrunCharacterWearTips",
+        "Text": "\u7a7f\u6234\u6b66\u5668-%s"
     },
     {
         "Key": "TransfiniteRewardReceive",
@@ -16853,7 +16909,7 @@
     },
     {
         "Key": "ItemOwn",
-        "Text": "Own"
+        "Text": "Owned"
     },
     {
         "Key": "ItemCost",
@@ -17157,11 +17213,11 @@
     },
     {
         "Key": "TurntableTime",
-        "Text": "Remaining Time: {0}"
+        "Text": "Ends in: {0}"
     },
     {
         "Key": "TurntableTimes",
-        "Text": "Spun: {0} time(s)"
+        "Text": "Total Spins: {0}"
     },
     {
         "Key": "TurntableNoItemTip",
@@ -17174,6 +17230,10 @@
     {
         "Key": "TurntableRecordNum",
         "Text": "Display last {0} records only"
+    },
+    {
+        "Key": "TurntableCountNoEnough",
+        "Text": "Insufficient [{0}]"
     },
     {
         "Key": "FashionStoryTrialPreStagePassTip",
@@ -18101,7 +18161,7 @@
     },
     {
         "Key": "GachaLamiyaFashionDesc",
-        "Text": "* <color=#0E70BD>Weapon Coatings</color> can be obtained from [Milestone Rewards]."
+        "Text": "* <color=#0E70BD>Weapon Coating</color> can be obtained from [Milestone Rewards]."
     },
     {
         "Key": "GachaLamiyaItemNoEnough",
@@ -18161,7 +18221,7 @@
     },
     {
         "Key": "GachaAlphaFashionDesc",
-        "Text": "* <color=#0E70BD>Weapon Coatings</color> can be obtained from [Milestone Rewards]."
+        "Text": "* <color=#0E70BD>Weapon Coating</color> can be obtained from [Milestone Rewards]."
     },
     {
         "Key": "GachaAlphaItemNoEnough",
@@ -18193,7 +18253,7 @@
     },
     {
         "Key": "GachaLuciaFashionDesc",
-        "Text": "* <color=#0E70BD>Weapon Coatings</color> can be obtained from [Milestone Rewards]."
+        "Text": "* <color=#0E70BD>Weapon Coating</color> can be obtained from [Milestone Rewards]."
     },
     {
         "Key": "GachaLuciaItemNoEnough",
@@ -18225,7 +18285,7 @@
     },
     {
         "Key": "GachaSelenaFashionDesc",
-        "Text": "* <color=#0E70BD>Weapon Coatings</color> can be obtained from [Milestone Rewards]."
+        "Text": "* <color=#0E70BD>Weapon Coating</color> can be obtained from [Milestone Rewards]."
     },
     {
         "Key": "GachaSelenaItemNoEnough",
@@ -18417,7 +18477,7 @@
     },
     {
         "Key": "BossInshotToastTowerUp",
-        "Text": "\u6210\u529f\u5347\u5c42"
+        "Text": "Floor Cleared!"
     },
     {
         "Key": "BossInshotToastTowerDown",
@@ -18425,7 +18485,7 @@
     },
     {
         "Key": "BossInshotToastTowerClear",
-        "Text": "\u606d\u559c\u901a\u5173"
+        "Text": "Stage Cleared!"
     },
     {
         "Key": "BossInshotToastTowerDownProtected",
@@ -18449,7 +18509,99 @@
     },
     {
         "Key": "BossInshotToastTowerDescDownProtected",
-        "Text": "\u9996\u6b21\u672a\u8fbe{0}\uff0c\u4e0d\u964d\u5c42\u3002"
+        "Text": "No Floor Drop on your first failure to reach {0} pts."
+    },
+    {
+        "Key": "BossInshotTowerFloor",
+        "Text": "{0}F"
+    },
+    {
+        "Key": "BossInshotTowerLevelSelectorBtnNoScore",
+        "Text": "--"
+    },
+    {
+        "Key": "BossInshotTowerLevelLockedBecauseNotInTime",
+        "Text": "Stage is not yet available."
+    },
+    {
+        "Key": "BossInshotTowerLevelLockedBecauseUnknown",
+        "Text": "This stage is locked due to an unknown reason."
+    },
+    {
+        "Key": "BossInshotTowerLevelLockedBecauseNotReach",
+        "Text": "Unlocks once Floor {0} score reaches {1}."
+    },
+    {
+        "Key": "BossInshotTowerScoreTipUnlockNext",
+        "Text": "Reach {0} pts to unlock the next floor."
+    },
+    {
+        "Key": "BossInshotTowerScoreTipUnlockNextFail2",
+        "Text": "Reach {0} pts to unlock the next floor. Fail twice and you will drop to Floor {1}."
+    },
+    {
+        "Key": "BossInshotTowerScoreTipUnlockNextFail1",
+        "Text": "Reach {0} pts to unlock the next floor. Fail this attempt and you will drop to Floor {1}."
+    },
+    {
+        "Key": "BossInshotTowerScoreTipUnlockNextFailN",
+        "Text": "Reach {0} pts to unlock the next floor. Fail {2} time(s) and you will drop to Floor {1}."
+    },
+    {
+        "Key": "BossInshotTowerScoreTipFinalFail2",
+        "Text": "{0}\u5206\u901a\u5173\u672c\u5c42\uff0c\u4e24\u6b21\u672a\u8fbe\u6210\u5c06\u964d\u81f3{1}F\u3002"
+    },
+    {
+        "Key": "BossInshotTowerScoreTipFinalFail1",
+        "Text": "{0}\u5206\u901a\u5173\u672c\u5c42\uff0c\u672c\u6b21\u672a\u8fbe\u6210\u5c06\u964d\u81f3{1}F\u3002"
+    },
+    {
+        "Key": "BossInshotTowerScoreTipFinalFailN",
+        "Text": "{0}\u5206\u901a\u5173\u672c\u5c42\uff0c{2}\u6b21\u672a\u8fbe\u6210\u5c06\u964d\u81f3{1}F\u3002"
+    },
+    {
+        "Key": "BossInshotTowerScoreTipStageClear",
+        "Text": "Floor already cleared"
+    },
+    {
+        "Key": "BossInshotTowerScoreTipAllClear",
+        "Text": "Cleared. Demotion will no longer trigger."
+    },
+    {
+        "Key": "BossInshotTowerChangeBossRanking",
+        "Text": "No. {0}"
+    },
+    {
+        "Key": "BossInshotTowerChangeBossNoRanking",
+        "Text": "Out of the ranking"
+    },
+    {
+        "Key": "BossInshotSettlementTowerTipRetryWin",
+        "Text": "Floor already cleared"
+    },
+    {
+        "Key": "BossInshotSettlementTowerTipNextLevelUnlocked",
+        "Text": "Next Floor Unlocked"
+    },
+    {
+        "Key": "BossInshotSettlementTowerTipNextLevelNotUnlocked",
+        "Text": "Reach {0} pts to unlock the next floor."
+    },
+    {
+        "Key": "BossInshotSettlementTowerTipFallProtected",
+        "Text": "No Floor Drop on your first failure to reach {0} pts."
+    },
+    {
+        "Key": "BossInshotSettlementTowerTipFall",
+        "Text": "Score below {0}. Floor dropped."
+    },
+    {
+        "Key": "BossInshotSettlementTowerTipAllCleared",
+        "Text": "All Floors Cleared"
+    },
+    {
+        "Key": "BossInshotSettlementTowerCheatCannotSaveReplay",
+        "Text": "\u4f5c\u5f0a\u4e0d\u8bb8\u4fdd\u5b58\u5f55\u50cf"
     },
     {
         "Key": "DlcRoomKickOutTip",
@@ -18477,19 +18629,19 @@
     },
     {
         "Key": "LottoKareninaFashionDesc",
-        "Text": "* <color=#0E70BD>Weapon Coatings</color> can be obtained from [Neon Dynamite] Event."
+        "Text": "* <color=#0E70BD>Weapon Coating</color> can be obtained from [Neon Dynamite] Event."
     },
     {
         "Key": "LottoLunaFashionDesc",
-        "Text": "* <color=#0E70BD>Weapon Coatings</color> can be obtained from [Tainted Moonrise] Event."
+        "Text": "* <color=#0E70BD>Weapon Coating</color> can be obtained from [Tainted Moonrise] Event."
     },
     {
         "Key": "LottoVeraFashionDesc",
-        "Text": "* <color=#0E70BD>Weapon Coatings</color> can be obtained from [Grandiose Glamor] Event."
+        "Text": "* <color=#0E70BD>Weapon Coating</color> can be obtained from [Grandiose Glamor] Event."
     },
     {
         "Key": "LottoLifuFashionDesc",
-        "Text": "* <color=#0E70BD>Weapon Coatings</color> can be obtained from [Dreamcatcher] Event."
+        "Text": "* <color=#0E70BD>Weapon Coating</color> can be obtained from [Dreamcatcher] Event."
     },
     {
         "Key": "LottoCibeizheFashionDesc",
@@ -18577,7 +18729,7 @@
     },
     {
         "Key": "DrawFreeTimeFormat",
-        "Text": "<size=24>({0}times)</size>\\nfor free"
+        "Text": "Free x{0}"
     },
     {
         "Key": "EquipNoEquip",
@@ -18801,7 +18953,7 @@
     },
     {
         "Key": "MainLineChapterTimeLimitTag",
-        "Text": "Limited Access"
+        "Text": "NEW"
     },
     {
         "Key": "SetNumberEmptyTips",
@@ -19077,7 +19229,7 @@
     },
     {
         "Key": "NonogramSettlementTitleAllFinish",
-        "Text": "\u606d\u559c\u5b8c\u6210\u6240\u6709\u6697\u623f\u63a2\u7d22"
+        "Text": "You've explored all Dark Rooms!"
     },
     {
         "Key": "NonogramSettlementTitleExit",
@@ -19145,7 +19297,7 @@
     },
     {
         "Key": "HoldRegressionInviteCodetip",
-        "Text": "Returning Commandant can enter the invite code"
+        "Text": "For returning Commandants only"
     },
     {
         "Key": "PurchaseSelfChoiceTitle",
@@ -22809,7 +22961,7 @@
     },
     {
         "Key": "JPNoticeTypeTitle3",
-        "Text": "External Site"
+        "Text": "Community"
     },
     {
         "Key": "SceneTranslationJP",
@@ -23545,7 +23697,7 @@
     },
     {
         "Key": "PurchaseMonthPlusDesc",
-        "Text": "1. Rules: Upon purchase, you will immediately receive 1000 Event R&D Tickets and 1 [Black Card Monthly Pass] (Black Card Monthly Pass provides a total of 3300 Black Cards).\\n2. Black Card Monthly Pass: Immediately grants 300 Black Cards when obtained. Starting from the activation date, you can log in daily to claim 100 Black Cards for 30 consecutive days. Daily rewards will be automatically claimed when you log in after 05:00 UTC every day, or you can manually claim the rewards in the [Monthly Pass] tab at [Main Interface - Event]. This tab also displays your remaining days of the Black Card Monthly Pass.\\n3. Purchase Limit: [Monthly Pass R&D Ticket Bundle] can only be purchased once and is not affected by the purchase limit of the current [Black Card Monthly Pass]. For example, if you currently have 2 active monthly passes (the maximum), you can still purchase the [Monthly Pass R&D Ticket Bundle]. After purchase, the remaining days of the Black Card Monthly Pass will be extended accordingly.\\nSpecial Note: You are unable to purchase [Monthly Pass R&D Ticket Bundle] if you have already purchased [Monthly Pass C]."
+        "Text": "1. Rules: Upon purchase, you will immediately receive 1000 Event R&D Tickets and 1 [Black Card Monthly Pass] (Black Card Monthly Pass provides a total of 3300 Black Cards).\\n2. Black Card Monthly Pass: Immediately grants 300 Black Cards when obtained. Starting from the day of purchase, you can log in daily to claim 100 Black Cards for 30 consecutive days. Daily rewards will be automatically claimed when you log in after 05:00 UTC every day, or you can manually claim the rewards in the [Monthly Pass] tab at [Main Interface - Event]. This tab also displays your remaining days of the Black Card Monthly Pass.\\n3. Purchase Limit: [Beginner Monthly Pass Combo Supply] can only be purchased once and is not affected by the purchase limit of the current [Black Card Monthly Pass]. For example, if you currently have 6 active monthly passes (maximum 6), you can still purchase the [Beginner Monthly Pass Combo Supply]. After purchase, the remaining days of the Black Card Monthly Pass will be extended accordingly.\\nSpecial Note: You are unable to purchase [Beginner Monthly Pass Combo Supply] if you have already purchased [Monthly Pass C]."
     },
     {
         "Key": "PurchaseComboTitle",
@@ -23809,11 +23961,15 @@
     },
     {
         "Key": "Theatre6BuffEffectTimes",
-        "Text": "Active: {0}"
+        "Text": "Activations: {0}"
     },
     {
         "Key": "Theatre6BuffRemainingTimes",
         "Text": "Remaining: {0}"
+    },
+    {
+        "Key": "Theatre6BuffStackCount",
+        "Text": "Amount: {0}"
     },
     {
         "Key": "Theatre6TaskFinish",
@@ -23837,7 +23993,7 @@
     },
     {
         "Key": "Theatre6TaskChooseCountTip",
-        "Text": "Please select {0} mission(s)"
+        "Text": "Please select {0} missions"
     },
     {
         "Key": "Theatre6TaskProgressFinish",
@@ -23853,7 +24009,7 @@
     },
     {
         "Key": "Theatre6FightHighSkillTip",
-        "Text": "\u5b58\u5728\u66f4\u9ad8\u7b49\u7ea7\u7684\u6280\u80fd\uff0c\u662f\u5426\u76f4\u63a5\u8fdb\u5165\u6218\u6597"
+        "Text": "A higher-star skill is available for replacement. Enter battle anyway?"
     },
     {
         "Key": "Theatre6TalentLvRichText",
@@ -23945,11 +24101,11 @@
     },
     {
         "Key": "Theatre6GiveUpTitle",
-        "Text": "\u653e\u5f03\u5f52\u6863"
+        "Text": "Discard"
     },
     {
         "Key": "Theatre6SaveGiveUpContent",
-        "Text": "\u662f\u5426\u653e\u5f03\u5f52\u6863"
+        "Text": "Abandon the archive?"
     },
     {
         "Key": "DownloadAllCharacterFashion",
@@ -23961,7 +24117,7 @@
     },
     {
         "Key": "FashionDownloadAllCharacterDesc",
-        "Text": "{0}\u6240\u6709\u672a\u4e0b\u8f7d\u7684\u6d82\u88c5\u8d44\u6e90"
+        "Text": "All Coating resources for {0}."
     },
     {
         "Key": "FubenRepeatChallengeDoubleRewardTimes",
@@ -23973,7 +24129,7 @@
     },
     {
         "Key": "BtnPvpTip",
-        "Text": "\u5728\u540e\u7eed\u7248\u672c\u5185\uff0c\u53ef\u4ee5\u4f7f\u7528\u89d2\u8272\u5f52\u6863\u4e0e\u5176\u4ed6\u73a9\u5bb6\u8fdb\u884c\u5bf9\u6218"
+        "Text": "In a future update, Character Archives can be used to battle other players."
     },
     {
         "Key": "BtnPvpTipTitle",
@@ -24092,6 +24248,62 @@
         "Text": "placeholder_\u8fd8\u6709\u53ef\u8d2d\u4e70\u5546\u54c1\u6216\u514d\u8d39\u5237\u65b0\u6b21\u6570\uff0c\u662f\u5426\u786e\u8ba4\u79bb\u5f00\u5546\u5e97\uff1f"
     },
     {
+        "Key": "Theatre6TaskSelectState",
+        "Text": "Selected"
+    },
+    {
+        "Key": "Theatre6TaskNormalState",
+        "Text": "Select"
+    },
+    {
+        "Key": "Theatre6PvpEnvReplaceSuccess",
+        "Text": "\u9690\u533f\u6697\u969c\u66ff\u6362\u6210\u529f"
+    },
+    {
+        "Key": "Theatre6PvpEnvReplaceFail",
+        "Text": "\u5c1a\u672a\u89e3\u9501\u8be5\u9690\u533f\u6697\u969c"
+    },
+    {
+        "Key": "Theatre6PvpFightSuccsee",
+        "Text": "Challenge complete"
+    },
+    {
+        "Key": "Theatre6PvpFightFail",
+        "Text": "Challenge failed"
+    },
+    {
+        "Key": "Theatre6PvpScoreDetailDesc1",
+        "Text": "Challenge Successful +{0}"
+    },
+    {
+        "Key": "Theatre6PvpScoreDetailDesc2",
+        "Text": "Clean Sweep +{0}"
+    },
+    {
+        "Key": "Theatre6PvpScoreDetailDesc3",
+        "Text": "<color=red>Challenge Failed -{0}</color>"
+    },
+    {
+        "Key": "Theatre6PvpScoreDetailDesc4",
+        "Text": "Grade Up Successful"
+    },
+    {
+        "Key": "Theatre6PvpScoreDetailDesc5",
+        "Text": "Score locked. No penalty for defeat."
+    },
+    {
+        "Key": "Theatre6PvpScoreDetailDesc6",
+        "Text": "Score is locked. No points awarded for victory."
+    },
+    {
+        "Key": "Theatre6PvpRankTime",
+        "Text": "{0}-{1}"
+    },
+    {
+        "Key": "Theatre6PvpRoundName",
+        "Text": "Round {0}"
+    },
+    {
         "Key": "BattleFashionUndownloadedTipTitle",
         "Text": "Tips"
     },
@@ -24113,11 +24325,11 @@
     },
     {
         "Key": "Theatre6PopupSkillLevelUpNotShow",
-        "Text": "\u65e0\u53ef\u5347\u7ea7\u6280\u80fd"
+        "Text": "No skills available to star up"
     },
     {
         "Key": "Theatre6PopupSkillLevelUpCancel",
-        "Text": "\u786e\u5b9a\u8981\u653e\u5f03\u5347\u7ea7\u5417\uff1f"
+        "Text": "Are you sure you want to abandon the Star-Up?"
     },
     {
         "Key": "Theatre6SkillCoinNotEnough",
@@ -24133,7 +24345,7 @@
     },
     {
         "Key": "PurchaseYKRetroactiveHelpContent",
-        "Text": "Spend a Makeup Sign-in Card to complete one missed monthly sign-in.\\nComplete Weekly Missions to obtain Makeup Sign-in Cards.\\nAt the month's end, available cards will be automatically consumed to fill any missing sign-ins.\\nUnused Makeup Sign-in Cards will expire when the month ends."
+        "Text": "Spend a Makeup Sign-in Card to complete one missed Monthly Pass sign-in.\\nComplete Weekly Missions to obtain Makeup Sign-in Cards.\\nAt the month's end, available cards will be automatically used to make up missed sign-ins.\\nUnused Makeup Sign-in Cards will expire when the month ends.\\nMissed sign-ins for Monthly Pass A will be prioritized."
     },
     {
         "Key": "PurchaseYKRetroactiveNeedMoreItems",
@@ -24141,7 +24353,7 @@
     },
     {
         "Key": "PassportFashionBuyBtnText",
-        "Text": "Paid Intelligence"
+        "Text": "Top-Secret Intel Reward"
     },
     {
         "Key": "FashionSuitProgressComplate",
@@ -24164,12 +24376,12 @@
         "Text": "Unlock intel to claim premium rewards"
     },
     {
-        "Key": "PassportAutoWindowSubtitleDoubleExp ",
+        "Key": "PassportAutoWindowSubtitleDoubleExp",
         "Text": "Limited-time double intel value"
     },
     {
         "Key": "PassportObtain",
-        "Text": "This Pass period has <color=#57f0fb>4</color> rounds. Compensation rewards have been sent to you."
+        "Text": "This Pass period has <color=#0f70bc>6</color> rounds. Compensation rewards have been sent to you."
     },
     {
         "Key": "ShopItemRoleTips",
@@ -24189,7 +24401,7 @@
     },
     {
         "Key": "Theatre6SkillUpGrade",
-        "Text": "\u7b49\u7ea7\u63d0\u5347"
+        "Text": "Star Up"
     },
     {
         "Key": "Theatre6GetSkill",
@@ -24209,23 +24421,23 @@
     },
     {
         "Key": "FashionColorLock",
-        "Text": "\u5c1a\u672a\u83b7\u5f97\u5f53\u524d\u5f02\u8272\u6d82\u88c5"
+        "Text": "You do not own this Alternate Coating"
     },
     {
         "Key": "Theatre6SkillChangeError1",
-        "Text": "\u4f4e\u7b49\u7ea7\u6280\u80fd\u65e0\u6cd5\u66ff\u6362\u88c5\u5907\u4e2d\u7684\u9ad8\u7b49\u7ea7\u6280\u80fd"
+        "Text": "Higher-star skill already equipped"
     },
     {
         "Key": "Theatre6SkillChangeError2",
-        "Text": "\u5df2\u88c5\u5907\u76f8\u540c\u6280\u80fd,\u65e0\u6cd5\u91cd\u590d\u88c5\u5907"
+        "Text": "Same skill already equipped"
     },
     {
         "Key": "Theatre6SkillSlotFull",
-        "Text": "\u88c5\u5907\u69fd\u5df2\u6ee1"
+        "Text": "No equipment slots available"
     },
     {
         "Key": "Theatre6ShopStatus1",
-        "Text": "Current Refresh"
+        "Text": "Refresh"
     },
     {
         "Key": "Theatre6ShopStatus2",
@@ -24237,23 +24449,23 @@
     },
     {
         "Key": "Theatre6SkillBagFull",
-        "Text": "\u5f53\u524d\u80cc\u5305\u5df2\u6ee1\uff0c%s \u5c06\u81ea\u52a8\u8f6c\u6362\u4e3a\u91d1\u5e01%s\uff0c\u786e\u5b9a\u8981\u7ee7\u7eed\u5417\uff1f"
+        "Text": "No slots available"
     },
     {
         "Key": "Theatre6SkillReplaceHigh",
-        "Text": "\u5df2\u66ff\u6362\u4e3a\u9ad8\u7ea7\u6280\u80fd"
+        "Text": "Replaced with higher-star skill"
     },
     {
         "Key": "Theatre6SkillAutoToBag",
-        "Text": "\u65e0\u6cd5\u88c5\u5907\u4f4e\u7b49\u7ea7\u6280\u80fd\uff0c\u81ea\u52a8\u8fdb\u5165\u80cc\u5305"
+        "Text": "Cannot equip lower-star skill. Automatically sent to Skill Dossier"
     },
     {
         "Key": "GameCollectionTips1",
-        "Text": "\u5f53\u524d\u5df2\u6709\u5176\u4ed6\u73a9\u6cd5\u8fdb\u884c\u4e2d\uff0c\u662f\u5426\u7ed3\u7b97\u540e\u5f00\u59cb\u65b0\u7684\u73a9\u6cd5\uff1f"
+        "Text": "Another game mode is in progress. End it and start a new one?"
     },
     {
         "Key": "GameCollectionTips2",
-        "Text": "\u662f\u5426\u653e\u5f03{0}\u8fdb\u5ea6\uff0c\u5e76\u7acb\u5373\u7ed3\u7b97"
+        "Text": "Abandon {0} progress and end immediately?"
     },
     {
         "Key": "GameCollectionTitle1",
@@ -24261,14 +24473,114 @@
     },
     {
         "Key": "GameCollectionTitle2",
-        "Text": "Highest Score"
+        "Text": "High Score"
     },
     {
         "Key": "GameCollectionBreakRecordTitle",
-        "Text": "\u606d\u559c\u4f60\u5728-{0}\u4e2d\u518d\u4e00\u6b21\u7a81\u7834\u81ea\u5df1"
+        "Text": "Congratulations! You've outdone yourself once again in -{0}."
     },
     {
         "Key": "Theatre6SkillMoveError",
-        "Text": "\u6280\u80fd\u7c7b\u578b\u4e0d\u6b63\u786e\uff0c\u65e0\u6cd5\u4ea4\u6362"
+        "Text": "Skill type mismatch. Cannot swap."
+    },
+    {
+        "Key": "Theatre6Lock",
+        "Text": "Freeze"
+    },
+    {
+        "Key": "Theatre6UnLock",
+        "Text": "Unfreeze"
+    },
+    {
+        "Key": "Theatre6SkillBagOver",
+        "Text": "Skill Dossier is full. %s will be converted into %s Coins. Tap the portrait to clear space in your Skill Dossier, or tap [Confirm] to auto-sell."
+    },
+    {
+        "Key": "Theatre6PopupSkillLevelUpCountOut",
+        "Text": "Upgrade attempts used up"
+    },
+    {
+        "Key": "Theatre6BattleShopAllLocked",
+        "Text": "All items are frozen. Unable to refresh."
+    },
+    {
+        "Key": "Theatre6SaveCoverDefenseContent",
+        "Text": "\u8be5\u5f52\u6863\u6b63\u5728\u9632\u5b88\uff0c\u66ff\u6362\u540e\u65b0\u5f52\u6863\u5c06\u8fdb\u5165\u9632\u5b88\u961f\u4f0d\uff0c\u662f\u5426\u7ee7\u7eed"
+    },
+    {
+        "Key": "ConcertPreHeatingLiveNotOpen",
+        "Text": "Live stream starts at {0}"
+    },
+    {
+        "Key": "ConcertPreHeatingReplayNotOpen",
+        "Text": "Replay not yet available"
+    },
+    {
+        "Key": "ConcertPreHeatingLiveUrlEmpty",
+        "Text": "Livestream link pending configuration"
+    },
+    {
+        "Key": "ConcertPreHeatingStageLockTip",
+        "Text": "Stage unlocks at {0}"
+    },
+    {
+        "Key": "ConcertPreHeatingLiveDayText",
+        "Text": "Concert begins in {0} day(s)"
+    },
+    {
+        "Key": "ConcertPreHeatingFinalStageName",
+        "Text": "Awakening"
+    },
+    {
+        "Key": "ConcertPreHeatingTuneSignalFar",
+        "Text": "Parameters deviating from target index"
+    },
+    {
+        "Key": "ConcertPreHeatingTuneSignalNear",
+        "Text": "Initial calibration complete. Closing in on the target harmonic range!"
+    },
+    {
+        "Key": "ConcertPreHeatingTuneSignalVeryNear",
+        "Text": "Fine-tuning complete. Approaching the Harmonic Core!"
+    },
+    {
+        "Key": "ConcertPreHeatingTuneSignalSyncing",
+        "Text": "Harmonic Core reached. Loading resonance..."
+    },
+    {
+        "Key": "ConcertPreHeatingChatBeforeLiveText",
+        "Text": "Concert starts in {0}"
+    },
+    {
+        "Key": "ConcertPreHeatingChatLiveText",
+        "Text": "Concert Livestream is live! Tap to watch."
+    },
+    {
+        "Key": "TurntableDrawTimes",
+        "Text": "x{0}"
+    },
+    {
+        "Key": "TurntableDrawTimesWithNotEnough",
+        "Text": "<color=#FF6161>x{0}</color>"
+    },
+    {
+        "Key": "PassportTaskWeeklyChallengePoints",
+        "Text": "Challenge Points this round: {0}/{1}"
+    },
+    {
+        "Key": "PassportTaskWeeklyRemainTime",
+        "Text": "Round Remaining Time: {0}"
+    },
+    {
+        "Key": "PassportTaskActivityProgress",
+        "Text": "Manual Mission progress: {0}/{1}"
+    },
+    {
+        "Key": "PurchaseFashionDetailCoinNotEnough",
+        "Text": "<color=#FF0000>{0}</color>"
+    },
+    {
+        "Key": "PurchaseFashionSuitDetailCoinNotEnough",
+        "Text": "<color=#FF0000>{0}</color>"
     }
 ]

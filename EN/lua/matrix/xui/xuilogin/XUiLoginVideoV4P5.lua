@@ -16,6 +16,8 @@ function XUiLoginVideoV4P5:OnAwake()
 end
 
 function XUiLoginVideoV4P5:OnStart(forceId)
+    self.IsOpenFromLogin = not XTool.IsNumberValid(forceId)
+
     ---@type XTableLoginPromoFeature
     local targetGotoConfig
     -- 优先使用外部传入的指定Id
@@ -29,17 +31,14 @@ function XUiLoginVideoV4P5:OnStart(forceId)
     end
     self.LoginPromoFeatureConfig = targetGotoConfig
 
-    self.VideoPlayerUgui1.ActionDestroyed = function() print("hyx 1结束" ,self.VideoPlayTime) end
     self.VideoPlayerUgui1.ActionPrepared = function()
         local vlength1 = self.VideoPlayerUgui1:GetCurMovieLength()
         self.Video2StartTime = vlength1 + self.Video2StartOffset
         self.FadeStartTime = vlength1 + self.FadeStartOffset
         self.Video1HideTime = vlength1 + self.Video1HideOffset
-        print("hyx vlength1", vlength1)
     end
     self.VideoPlayerUgui2.ActionPrepared = function()
         self.Video2Length = self.VideoPlayerUgui2:GetCurMovieLength()
-        print("hyx vlength2", self.Video2Length)
     end
 
     self.VideoPlayerUgui1:SetInfoByVideoId(targetGotoConfig.VideoConfigId[1])
@@ -52,15 +51,17 @@ function XUiLoginVideoV4P5:OnStart(forceId)
 
     self:InitTimes()
 
-    XMVCA.XUiMain:SetUiLoginVideoV4P0OpenTriggerTrue()
+    if self.IsOpenFromLogin then
+        XMVCA.XUiMain:SetUiLoginVideoV4P0OpenTriggerTrue()
+    end
     XSaveTool.SaveData(targetGotoConfig.Id.."LoginPromoFeatureConfig"..XPlayer.Id, 1)
 
     -- 可调时间参数（初始值，ActionPrepared回调后由实际视频长度覆盖）
-    self.Video1HideOffset = 0.5                 -- 视频1隐藏：vlength1 + offset
-    self.Video2StartOffset = -1.1               -- 视频2开始播放：vlength1 + offset
-    self.FadeStartOffset = -0.5                 -- 视频1淡出/视频2淡入：vlength1 + offset
-    self.Video2TriggerVideo3Time = 2.0          -- 视频2播放到多少秒时触发视频3
-    self.AlphaFadeDuration = 0.1                -- alpha渐变持续时间
+    self.Video1HideOffset = 0                -- 视频1隐藏：vlength1 + offset
+    self.Video2StartOffset = -0.8             -- 视频2开始播放：vlength1 + offset
+    self.FadeStartOffset = -1                 -- 视频1淡出/视频2淡入：vlength1 + offset
+    self.Video2TriggerVideo3Time = 2          -- 视频2播放到多少秒时触发视频3
+    self.AlphaFadeDuration = 0                -- alpha渐变持续时间
 
     self.CurrentVideoIndex = 1
     self.VideoPlayTime = 0          -- 全局计时（程序累加）
@@ -93,7 +94,6 @@ function XUiLoginVideoV4P5:Update()
         -- 视频2: 0→1
         if not XTool.UObjIsNil(self.VideoImg2) then
             local color2 = self.VideoImg2.color
-            print("hyx prg", progress)
             color2.a = progress
             self.VideoImg2.color = color2
         end
@@ -135,7 +135,6 @@ function XUiLoginVideoV4P5:Update()
         self.Video2Triggered = true
         self.CurrentVideoIndex = 2
         if not XTool.UObjIsNil(self.VideoPlayerUgui2) then
-            print("hyx  2开始  ", video1Time)
             self.VideoPlayerUgui2:Play()
             self:PlayAnimation("BtnEnable")
         end
@@ -158,7 +157,6 @@ function XUiLoginVideoV4P5:Update()
     -- BtnGo已点击 且 视频2播放到 Video2TriggerVideo3Time 秒时触发视频3
     if self.Video2Triggered and not self.Video3Triggered and self.BtnGoClicked and self.Video2Length then
         local video2Time = self.VideoPlayerUgui2:GetCurrentTime() % self.Video2Length
-        print("hyx  2播放时间  ", video2Time)
         local prevVideo2Time = self.PrevVideo2Time or 0
         self.PrevVideo2Time = video2Time
         local crossed = prevVideo2Time < self.Video2TriggerVideo3Time and video2Time >= self.Video2TriggerVideo3Time
@@ -168,7 +166,6 @@ function XUiLoginVideoV4P5:Update()
             self.VideoPlayerUgui3:Play()
             self.VideoFade3Timer = 0
             self.IsFading3 = true
-            print("hyx  3开始  ", video2Time)
             self.VideoPlayerUgui3.ActionEnded = function()
                 XScheduleManager.ScheduleOnce(function() self:DoGo() end, 0)
             end
@@ -177,10 +174,6 @@ function XUiLoginVideoV4P5:Update()
 end
 
 function XUiLoginVideoV4P5:InitTimes()
-    if XTool.IsNumberValid(self.ForceId) then
-        return
-    end
-    
     local endTime = XFunctionManager.GetEndTimeByTimeId(self.LoginPromoFeatureConfig.ShowTimeId) or 0
     self.EndTime = endTime
     self:RefreshTitleByTimeId() -- 计时器启动比较慢 先提前刷新一次
@@ -199,13 +192,29 @@ function XUiLoginVideoV4P5:RefreshTitleByTimeId()
 end
 
 function XUiLoginVideoV4P5:OnBtnCloseClick()
+    if not self.IsOpenFromLogin then
+        self:Close()
+        return
+    end
+
     XLoginManager.SetFirstOpenMainUi(true)
     XLuaUiManager.RunMain()
 end
 
 function XUiLoginVideoV4P5:OnBtnGoClick()
-    print("hyx  点击")
     self.BtnGoClicked = true
+    self:PlayAnimation("BtnDisable")
+end
+
+function XUiLoginVideoV4P5:TryGoShownDrawMain()
+    if not XLuaUiManager.IsUiLoad("UiNewDrawMain") then
+        return false
+    end
+
+    self:CloseVideo()
+    self:Close()
+
+    return true
 end
 
 function XUiLoginVideoV4P5:DoGo()
@@ -220,6 +229,10 @@ function XUiLoginVideoV4P5:DoGo()
         if not XFunctionManager.DetectionFunction(list.FunctionalId) then
             return false
         end
+    end
+
+    if self:TryGoShownDrawMain() then
+        return true
     end
 
     self:CloseVideo()

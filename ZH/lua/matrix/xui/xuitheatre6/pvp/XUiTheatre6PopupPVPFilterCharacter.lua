@@ -16,8 +16,8 @@ function XUiTheatre6PopupPVPFilterCharacter:OnStart(filterData, filterSetting)
 
     if filterSetting then
         self._FilterSetting = filterSetting
-        self._SelectedCharacterIds = filterSetting.CharacterId or {}
-        self._SelectedBuildTagIds = filterSetting.BuildTag or {}
+        self._SelectedCharacterIds = filterSetting.CharacterId and XTool.Clone(filterSetting.CharacterId) or {}
+        self._SelectedBuildTagIds = filterSetting.BuildTag and XTool.Clone(filterSetting.BuildTag) or {}
     else
         self._SelectedCharacterIds = {}
         self._SelectedBuildTagIds = {}
@@ -25,6 +25,7 @@ function XUiTheatre6PopupPVPFilterCharacter:OnStart(filterData, filterSetting)
     
     self._CharacterGrids = {}
     self._TagGrids = {}
+    self._HistoryFilterData = self:FilterFileDatas()
 
     self:RefreshCharacterGrids()
     self:RefreshTagGrids()
@@ -166,7 +167,7 @@ function XUiTheatre6PopupPVPFilterCharacter:OnBtnYesClick()
 end
 
 function XUiTheatre6PopupPVPFilterCharacter:OnBtnCloseClick()
-    self._FilterData.result = self._Control:GetAllFileData()
+    self._FilterData.result = self._HistoryFilterData
     self:Close()
 end
 

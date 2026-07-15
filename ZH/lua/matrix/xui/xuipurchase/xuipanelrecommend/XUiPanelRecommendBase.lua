@@ -151,18 +151,18 @@ function XUiPanelRecommendBase:ShowBuyBtnSoldOutOrOwned(btn, isSoldOut)
     if txtSoldOut then
         txtSoldOut.gameObject:SetActiveEx(isSoldOut)
     end
-    local rImgSoldOut = uiObject:GetObject("RImgSoldOut", false)
-    if rImgSoldOut then
-        rImgSoldOut.gameObject:SetActiveEx(isSoldOut)
-    end
+    -- local rImgSoldOut = uiObject:GetObject("RImgSoldOut", false)
+    -- if rImgSoldOut then
+    --     rImgSoldOut.gameObject:SetActiveEx(isSoldOut)
+    -- end
     local txtOwned = uiObject:GetObject("TxtOwned", false)
     if txtOwned then
         txtOwned.gameObject:SetActiveEx(not isSoldOut)
     end
-    local rImgOwned = uiObject:GetObject("RImgOwned", false)
-    if rImgOwned then
-        rImgOwned.gameObject:SetActiveEx(not isSoldOut)
-    end
+    -- local rImgOwned = uiObject:GetObject("RImgOwned", false)
+    -- if rImgOwned then
+    --     rImgOwned.gameObject:SetActiveEx(not isSoldOut)
+    -- end
 end
 
 return XUiPanelRecommendBase

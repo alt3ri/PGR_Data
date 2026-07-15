@@ -182,6 +182,19 @@ function XStrongholdTeamMember:GetAbility()
     return math.ceil(ability)
 end
 
+--获取战斗用 fashionId：support 取支援玩家的 fashion；own/robot 与通用判定保持一致（按 ShowCharacterId 查本玩家拥有的角色）
+function XStrongholdTeamMember:GetFashionIdForFight()
+    if self:IsEmpty() then
+        return 0
+    end
+    if self:IsAssitant() then
+        return XDataCenter.StrongholdManager.GetAssistantPlayerFashionId(self._PlayerId) or 0
+    end
+    local showCharacterId = self:GetShowCharacterId()
+    local char = XMVCA.XCharacter:GetCharacter(showCharacterId)
+    return (char and char.FashionId) or 0
+end
+
 --是否为援助角色
 function XStrongholdTeamMember:IsAssitant()
     if self:IsEmpty() then

@@ -1,14 +1,13 @@
 local XUiGridFubenBossSingleDetailDifficultySelectCardV4P5Buff =
     XClass(XUiNode, "XUiGridFubenBossSingleDetailDifficultySelectCardV4P5Buff")
 
-function XUiGridFubenBossSingleDetailDifficultySelectCardV4P5Buff:SetData(
-    buffName, icon, desc, triangleBg)
-    self.TxtName.text = buffName
-    self.RImgIcon:SetRawImage(icon)
-    self.TxtDesc.text = desc
+function XUiGridFubenBossSingleDetailDifficultySelectCardV4P5Buff:SetData(args)
+    self.TxtName.text = args.BuffName
+    self.RImgIcon:SetRawImage(args.Icon)
+    self.TxtDesc.text = args.Desc
 
-    if triangleBg and self.ImgfTriangleBg then
-        self.ImgfTriangleBg:SetImage(triangleBg)
+    if args.TriangleBg and self.ImgfTriangleBg then
+        self.ImgfTriangleBg:SetImage(args.TriangleBg)
     end
 end
 

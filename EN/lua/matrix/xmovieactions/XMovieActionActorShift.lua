@@ -1,6 +1,5 @@
 local mathMax = math.max
 local vector = CS.UnityEngine.Vector3
-local LineAnimCurve = CS.UnityEngine.AnimationCurve.Linear(0, 0, 1, 1)
 
 ---@class XMovieActionActorShift
 ---@field UiRoot XUiMovie
@@ -23,6 +22,8 @@ function XMovieActionActorShift:OnInit(actionData)
     local posY = paramToNumber(params[4])
     local posZ = paramToNumber(params[5])
     self.TargetPos = vector(XDataCenter.MovieManager.Fit(posX), posY, posZ)
+
+    self.CurveType = XMVCA.XMovie:ParamToCurveType(params[6])
 end
 
 function XMovieActionActorShift:OnRunning()
@@ -35,11 +36,12 @@ function XMovieActionActorShift:OnRunning()
     local targetPos = self.TargetPos
     local transPos = targetPos - startPos
     local duration = mathMax(0, self.Duration)
-    
+    local easeFn = XMVCA.XMovie:GetCurveEvaluator(self.CurveType)
+
     self:RemoveTimer()
     self.Timer = XUiHelper.Tween(duration, function(t)
-        actor:SetImagePos(startPos + transPos * LineAnimCurve:Evaluate(t))
-    end)
+        actor:SetImagePos(startPos + transPos * t)
+    end, nil, easeFn)
 end
 
 function XMovieActionActorShift:OnUiRootDestroy()

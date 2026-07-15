@@ -1,3 +1,4 @@
+--[[
 local XUiPanelBaseEquipInfo = XClass(nil, "XUiPanelBaseEquipInfo")
 
 function XUiPanelBaseEquipInfo:Ctor(ui, rootUI)
@@ -121,4 +122,5 @@ function XUiPanelBaseEquipInfo:OnBtnGetClick()
     XLuaUiManager.Open("UiSkip", self.CurEquip.TemplateId)
 end
 
-return XUiPanelBaseEquipInfo
+return XUiPanelBaseEquipInfo
+]]

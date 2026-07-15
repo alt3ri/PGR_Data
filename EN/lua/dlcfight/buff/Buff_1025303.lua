@@ -18,7 +18,7 @@ end
 function XBuffScript1025303:OnLuaAffixHitFly(eventArgs )
     if eventArgs._launcherUUID ~= self._npcUUID then return end
     self._proxy:ApplyMagic(self._enemyUUID, self._enemyUUID, 1025304, 1) --304的效果是3秒内受伤增加15%
-    self:LogError("303抓到了击飞效果"..self._npcUUID)
+    -- self:LogError("303抓到了击飞效果"..self._npcUUID)
 end
 
 

@@ -50,7 +50,7 @@ function XBuffScript10251060:OnLuaSkillEnd(eventArgs)
     if eventArgs._launcherUUID ~= self._npcUUID then return end
     if self.ChanceCheck <= 1 then
         self._critController:AddSkillCount(self._stackCount)
-        self.ChanceCheck = 1
+        self.ChanceCheck = self.ChanceCheck + 1
     end
 end
 

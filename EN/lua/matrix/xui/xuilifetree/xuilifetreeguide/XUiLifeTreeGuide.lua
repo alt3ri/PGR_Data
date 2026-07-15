@@ -21,8 +21,6 @@ end
 function XUiLifeTreeGuide:OnStart(closeCb)
     self.CloseCb = closeCb
     self:Refresh()
-
-    XMVCA.XLifeTree:RequestLifeTreeFinishProcess(XMVCA.XLifeTree.EnumConst.PROCESS_TYPE.GUIDE)
 end
 
 function XUiLifeTreeGuide:OnEnable()

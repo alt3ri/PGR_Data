@@ -9,6 +9,7 @@ function XMovieActionBgRotate:OnInit(actionData)
     self.AnimTime = XMVCA.XMovie:ParamToNumber(actionData.Params[2])
     self.RotationParams = XMVCA.XMovie:SplitParam(actionData.Params[3], "|", true)
     self.BgIndex = XMVCA.XMovie:ParamToNumber(actionData.Params[4])
+    self.CurveType = XMVCA.XMovie:ParamToCurveType(actionData.Params[5])
 end
 
 function XMovieActionBgRotate:OnRunning()
@@ -17,7 +18,7 @@ function XMovieActionBgRotate:OnRunning()
     end
 
     local bg = self.UiRoot.UiMovieBg:GetBg(self.BgIndex)
-    
+
     -- 设置锚点
     if #self.PivotParams > 0 then
         local pivot = XLuaVector2.New(self.PivotParams[1], self.PivotParams[2])
@@ -26,7 +27,8 @@ function XMovieActionBgRotate:OnRunning()
 
     local targetRotation = XLuaVector3.New(self.RotationParams[1], self.RotationParams[2], self.RotationParams[3])
     local time = self.IsPassedRunning and 0 or self.AnimTime
-    bg:DoRotate(targetRotation, time)
+    local ease = XMVCA.XMovie:GetDOTweenEase(self.CurveType)
+    bg:DoRotate(targetRotation, time, ease)
 end
 
 function XMovieActionBgRotate:IsPassedActionRun(index)

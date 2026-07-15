@@ -55,8 +55,9 @@ function XPanelCharacterSkillV2P6:UpdateSkill()
             if not grid then
                 grid = XUiGridSkillItemV2P6.New(self["GridSkillItem" .. i], self, self.Parent)
                 grid:Open()
+                local skillGridIndex = i
                 grid:SetClickCb(function ()
-                    self:OnGotoEnhanceSkillDetail()
+                    self:OnGotoEnhanceSkillDetail(skillGridIndex)
                 end)
                 self.SkillGrids[i] = grid
             end
@@ -86,8 +87,9 @@ function XPanelCharacterSkillV2P6:UpdateSkill()
         if not grid then
             grid = XUiGridSkillItemV2P6.New(self.GridSkillItem6, self, self.Parent)
             grid:Open()
+            local skillGridIndex = XEnumConst.CHARACTER.MAX_SHOW_SKILL_POS + 2
             grid:SetClickCb(function ()
-                self:OnGotoEnhanceSkillDetail()
+                self:OnGotoEnhanceSkillDetail(skillGridIndex)
             end)
             self.SkillGrids[6] = grid
         end
@@ -147,8 +149,17 @@ function XPanelCharacterSkillV2P6:OnGotoSkillDetail(i)
     end
 end
 
-function XPanelCharacterSkillV2P6:OnGotoEnhanceSkillDetail()
-    if not self.IsEnableGridSkillItem6 then
+---@param skillGridIndex number
+function XPanelCharacterSkillV2P6:OnGotoEnhanceSkillDetail(skillGridIndex)
+    local isShowEnhanceSkill = self.CharacterAgency:CheckIsShowEnhanceSkill(self.CharacterId)
+    if not isShowEnhanceSkill then
+        return
+    end
+
+    -- 此处 +2 对应技能面板的 GridSkillItem6（普通构造体跃升技能）
+    local normalEnhanceSkillGridIndex = XEnumConst.CHARACTER.MAX_SHOW_SKILL_POS + 2
+    local isNormalEnhanceSkillGrid = skillGridIndex == normalEnhanceSkillGridIndex
+    if isNormalEnhanceSkillGrid and not self.IsEnableGridSkillItem6 then
         return
     end
 
@@ -156,6 +167,7 @@ function XPanelCharacterSkillV2P6:OnGotoEnhanceSkillDetail()
     XLuaUiManager.Open("UiSkillDetailsParentV2P6", self.CharacterId, XEnumConst.CHARACTER.SkillDetailsType.Enhance)
 end
 
+-- 谐振Ⅱ使用 GridSkillItem7
 function XPanelCharacterSkillV2P6:OnGotoWeaponOverrunSkillDetail()
     if not self.IsEnableGridSkillItem7 then
         return

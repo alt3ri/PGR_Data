@@ -159,10 +159,11 @@ function XTimelineSwitchProxy:_CreateGyroController()
 
     -- 设置方向变化回调
     self._GyroController:SetOnDirectionChanged(function(direction)
-        self._SwitchDirection = direction
+        -- 丽芙场景需要整体反向
+        self._SwitchDirection = self:GetInverseDirection(direction)
 
         -- 执行手动切换
-        self:_OnManualSwitch(direction)
+        self:_OnManualSwitch(self._SwitchDirection)
     end)
 
     -- 设置输入结束回调（玩家停止操作陀螺仪）
@@ -178,8 +179,8 @@ function XTimelineSwitchProxy:_CreateGyroController()
                 self._AltActive = true
                 self._StartMouseX = Input.mousePosition.x
             end
-            -- 丽芙这个场景需要调整反向
-            return true, self._StartMouseX - Input.mousePosition.x
+
+            return true, Input.mousePosition.x - self._StartMouseX
         else
             if self._AltActive then
                 self._AltActive = false
@@ -195,6 +196,9 @@ end
 --region 播放控制
 
 function XTimelineSwitchProxy:OnPlay()
+    -- 安全打断残留的过渡动画状态
+    self:_AbortPendingTransition()
+
     self._IsPlaying = true
 
     -- 启用陀螺仪
@@ -229,9 +233,16 @@ function XTimelineSwitchProxy:OnStop()
 end
 
 ---内部停止
+--- 风险点（P6-2）：如果在 SuspendForVideo 之后、ResumeForVideoEnd 之前走到此处（如视频播放器异常未触发回调），
+--- _ForceDisableGyro 会残留为 true。当前未在此处重置，因为正常流程中 OnDisable 会触发 CG:Close() 保证回调执行。
+--- 若后续出现视频回调不可靠的场景，需在此处增加 self._ForceDisableGyro = false 兜底。
 function XTimelineSwitchProxy:_StopInternal()
     self._IsPlaying = false
     XMVCA.XSwitchableScene:SetPlayProgress(self._CurTime)
+
+    -- 安全打断正在进行的过渡动画
+    self:_AbortPendingTransition()
+
     if self._GyroController then
         self._GyroController:Disable()
     end
@@ -303,6 +314,9 @@ end
 ---是否开启陀螺仪交互
 ---@return boolean
 function XTimelineSwitchProxy:_IsGyroEnabled()
+    if self._GyroEnabledOverride ~= nil then
+        return self._GyroEnabledOverride
+    end
     return XMVCA.XSwitchableScene:GetGyroSetting(self._SceneId) == XEnumConst.SwitchableScene.Setting.Open
 end
 
@@ -886,12 +900,47 @@ function XTimelineSwitchProxy:_OnAutoSwitch()
     end)
 end
 
----视频播放期间挂起场景交互：切换到春状态、停止并重置定时器、禁用陀螺仪
+---中止正在进行的过渡动画，恢复到可操作的干净状态
+---幂等：无过渡动画进行时直接返回
+function XTimelineSwitchProxy:_AbortPendingTransition()
+    if not self._IsTransitionPlaying then
+        return
+    end
+
+    self._IsTransitionPlaying = false
+
+    -- 停止切换相关动画（switchAnim + gyroAnim 进度）
+    self:_StopTransitionAnimations()
+
+    -- 清理陀螺仪动画悬挂回调
+    self._IsGyroAnimPlaying = false
+    self._GyroAnimCallback = nil
+
+    -- 对称恢复：过渡入口 SetForceDisable(true)，此处还原
+    -- 注意：此处硬编码 false 仅适用于当前场景（过渡动画只操作内层锁，外层 _ForceDisableGyro 始终为 false）
+    -- 如果后续出现"外层 _ForceDisableGyro=true 的同时触发 _AbortPendingTransition"的场景
+    -- （例如视频播放期间切换场景导致 proxy 复用），需改为 SetForceDisable(self._ForceDisableGyro)
+    if self._GyroController then
+        self._GyroController:SetForceDisable(false)
+    end
+end
+
+---视频播放期间挂起场景交互：打断过渡动画、切换到春状态、停止并重置定时器、禁用陀螺仪
 function XTimelineSwitchProxy:SuspendForVideo()
+    -- 安全打断正在进行的过渡动画
+    self:_AbortPendingTransition()
+
+    -- 重置到春状态
     if not self._SceneIsSpring then
         self._SceneIsSpring = true
         self:_PlayIdleAnimation()
     end
+
+    -- 同步陀螺仪动画进度，并强制刷新动画节点到春状态视觉（progress 0）
+    self._GyroAnimProgress = 0
+    self._GyroAnimTargetProgress = 0
+    self:_InitGyroAnimation()
+
     self:StopSwitchTimer()
     self:ResetSwitchTick()
     self:SetForceDisableGyro(true)
@@ -913,6 +962,16 @@ end
 ---@return number
 function XTimelineSwitchProxy:GetSwitchDirection()
     return self._SwitchDirection
+end
+
+---获取指定方向的反向
+---@return number
+function XTimelineSwitchProxy:GetInverseDirection(direction)
+    if direction == XGyroController.Direction.Sequential then
+        return XGyroController.Direction.Reverse
+    else
+        return XGyroController.Direction.Sequential
+    end
 end
 
 --endregion

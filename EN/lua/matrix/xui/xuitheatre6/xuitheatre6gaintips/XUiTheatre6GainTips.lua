@@ -26,7 +26,9 @@ function XUiTheatre6GainTips:InitComponents()
 end
 
 function XUiTheatre6GainTips:OnStart(gridType, girdId, isUpGrade)
+    ---@type XUiGridTheatre6Skill
     self.GridSkillUi = XUiGridTheatre6Skill.New(self.GridSkill, self)
+    ---@type XUiGridTheatre6Relic
     self.GridRelicUi = XUiGridTheatre6Relic.New(self.GridRelic, self)
     self._GridType = gridType
     self._GridId = girdId
@@ -86,10 +88,9 @@ function XUiTheatre6GainTips:SkillUpGrade()
     end
     local skillConfig = self._Control:GetSkillCfgById(self._GridId)
     local curlevel = skillConfig.Level
-    local lastLevel = curlevel - 1
     self.TxtTitle.text = skillConfig.Name
     self.TxtMedalName.text = XUiHelper.GetText("Theatre6SkillUpGrade")
-    --todo 动效显示升级前后属性差异
+    self.GridSkillUi:ShowUpgradeEffect(true)
 end
 
 return XUiTheatre6GainTips

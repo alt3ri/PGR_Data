@@ -47,13 +47,15 @@ function XUiBigWorldSetPanelVoice:OnAwake()
     self:_InitUi()
 end
 
-function XUiBigWorldSetPanelVoice:OnStart()
+function XUiBigWorldSetPanelVoice:OnStart(parent, customConfig)
+    self._CustomConfig = customConfig
     self._Setting = self._Control:GetSettingBySetType(XEnumConst.BWSetting.SetType.Voice)
 end
 
 function XUiBigWorldSetPanelVoice:OnEnable()
     self._Control:RefreshSpecialScreenOff(self.SafeAreaContentPanel)
     self:_Refresh()
+    self:_RefreshCv()
     self:_RegisterListeners()
     self:_RegisterSchedules()
     self:_RegisterRedPointEvents()
@@ -210,6 +212,14 @@ function XUiBigWorldSetPanelVoice:_Refresh()
     self.SliderMusic.value = self._Setting:GetMusicVolumeValue()
     self.SliderSound.value = self._Setting:GetSoundVolumeValue()
     self.SliderVoice.value = self._Setting:GetVoiceVolumeValue()
+end
+
+function XUiBigWorldSetPanelVoice:_RefreshCv()
+    if self._CustomConfig and self._CustomConfig.IsShowVoiceSetting ~= nil then
+        self.TLanguageGroup.transform.parent.parent.parent.gameObject:SetActiveEx(self._CustomConfig.IsShowVoiceSetting)
+    else
+        self.TLanguageGroup.transform.parent.parent.parent.gameObject:SetActiveEx(true)
+    end
 end
 
 function XUiBigWorldSetPanelVoice:_RefreshVolumeControl(isOn)

@@ -3876,7 +3876,7 @@
     {
         "Id": 61211,
         "Priority": 61211,
-        "Ignore": 1.0,
+        "Ignore": null,
         "Desc": "Lv80 \u5f15\u5bfc\u6b66\u5668\u8d85\u96502",
         "GuideType": 1,
         "ConditionId": "[860722, 863161, 863165]",
@@ -3889,7 +3889,7 @@
     {
         "Id": 61212,
         "Priority": 61212,
-        "Ignore": 1.0,
+        "Ignore": null,
         "Desc": "Lv80 \u65b0\u73a9\u5bb6\u5f15\u5bfc\u6b66\u5668\u8d85\u96501",
         "GuideType": 1,
         "ConditionId": "[860722, 863039, 863166, 863167]",
@@ -3902,7 +3902,7 @@
     {
         "Id": 61213,
         "Priority": 61213,
-        "Ignore": 1.0,
+        "Ignore": null,
         "Desc": "Lv80 \u65b0\u73a9\u5bb6\u5f15\u5bfc\u6b66\u5668\u8d85\u96501+2",
         "GuideType": 1,
         "ConditionId": "[860722, 863164, 863162, 863165]",
@@ -9583,7 +9583,7 @@
     {
         "Id": 64511,
         "Priority": 64511,
-        "Ignore": null,
+        "Ignore": 1.0,
         "Desc": "v4.3 minirpg2.0\u4e3b\u754c\u9762",
         "GuideType": 1,
         "ConditionId": "[862112, 774800]",
@@ -9596,7 +9596,7 @@
     {
         "Id": 64512,
         "Priority": 64512,
-        "Ignore": null,
+        "Ignore": 1.0,
         "Desc": "v4.3 minirpg2.0\u88c1\u65ad\u6a21\u5f0f",
         "GuideType": 1,
         "ConditionId": "[862112, 774800, 863143]",
@@ -9609,7 +9609,7 @@
     {
         "Id": 64513,
         "Priority": 64513,
-        "Ignore": null,
+        "Ignore": 1.0,
         "Desc": "v4.3 minirpg2.0\u8986\u5199\u6a21\u5f0f",
         "GuideType": 1,
         "ConditionId": "[862112, 774800]",
@@ -9622,7 +9622,7 @@
     {
         "Id": 64514,
         "Priority": 64514,
-        "Ignore": null,
+        "Ignore": 1.0,
         "Desc": "v4.3 minirpg2.0\u5956\u52b1\u4ecb\u7ecd",
         "GuideType": 1,
         "ConditionId": "[862112, 774800]",
@@ -10395,7 +10395,7 @@
         "ConditionId": "[862112, 774800, 1021100]",
         "CompleteId": 64773,
         "ActiveUi": "UiTheatre6Main",
-        "CheckNodeActive": null,
+        "CheckNodeActive": "UiTheatre6PanelPVPEnergy",
         "RewardId": null,
         "GroupId": 64773
     },
@@ -10504,6 +10504,19 @@
         "GroupId": 64781
     },
     {
+        "Id": 64782,
+        "Priority": 64782,
+        "Ignore": null,
+        "Desc": "v4.6 \u8089\u9e3d6PVP\u8ff7\u96fe\u8bb2\u89e3",
+        "GuideType": 1,
+        "ConditionId": "[862112, 774800, 863177]",
+        "CompleteId": 64782,
+        "ActiveUi": "UiTheatre6PVPMain",
+        "CheckNodeActive": null,
+        "RewardId": null,
+        "GroupId": 64782
+    },
+    {
         "Id": 64811,
         "Priority": 64811,
         "Ignore": null,
@@ -10535,7 +10548,7 @@
         "Ignore": null,
         "Desc": "v4.6 \u8bc4\u52063.0\u722c\u5854",
         "GuideType": 1,
-        "ConditionId": "[862112, 774800, 862893]",
+        "ConditionId": "[862112, 774800, 862893, 863175]",
         "CompleteId": 64813,
         "ActiveUi": "UiBossInshotMain",
         "CheckNodeActive": null,
@@ -10548,7 +10561,7 @@
         "Ignore": null,
         "Desc": "v4.6 \u8bc4\u52063.0\u722c\u5854\u8fdb\u9636",
         "GuideType": 1,
-        "ConditionId": "[862112, 774800, 862893]",
+        "ConditionId": "[862112, 774800, 862893, 863175]",
         "CompleteId": 64814,
         "ActiveUi": "UiBossInshotMain",
         "CheckNodeActive": "PanelChooseBoss",
@@ -10645,5 +10658,44 @@
         "CheckNodeActive": null,
         "RewardId": null,
         "GroupId": 64827
+    },
+    {
+        "Id": 64831,
+        "Priority": 64831,
+        "Ignore": null,
+        "Desc": "v4.6 \u5f15\u5bfc\u73a9\u5bb6\u597d\u611f\u5267\u60c5\u9886\u89d2\u8272\uff08\u6d77\u4f26\u6c40\uff09",
+        "GuideType": 1,
+        "ConditionId": "[862112, 863261]",
+        "CompleteId": 64831,
+        "ActiveUi": "UiMain",
+        "CheckNodeActive": null,
+        "RewardId": null,
+        "GroupId": 64831
+    },
+    {
+        "Id": 64841,
+        "Priority": 64841,
+        "Ignore": null,
+        "Desc": "v4.6 \u5f15\u5bfcmini\u6539\u9020-\u9996\u6b21\u8fdb\u5165",
+        "GuideType": 1,
+        "ConditionId": "[862112, 774800]",
+        "CompleteId": 64841,
+        "ActiveUi": "UiSoloReformMain",
+        "CheckNodeActive": null,
+        "RewardId": null,
+        "GroupId": 64841
+    },
+    {
+        "Id": 64842,
+        "Priority": 64842,
+        "Ignore": null,
+        "Desc": "v4.6 \u5f15\u5bfc\u8d85\u96be\u5173\u7b2c\u4e94\u5173",
+        "GuideType": 1,
+        "ConditionId": "[862112, 774800]",
+        "CompleteId": 64842,
+        "ActiveUi": "UiActivityBossSingleRoot",
+        "CheckNodeActive": "goHardRoot",
+        "RewardId": null,
+        "GroupId": 64842
     }
 ]

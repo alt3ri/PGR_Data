@@ -900,12 +900,16 @@ function XModelManager.PlayWeaponShowing(target, modelId, uiName, go, param)
                 end
             end
             if hasUiParam then
+                local isImmediateTransition = XMVCA.XEquip:GetEquipAnimIsImmediateTransition(roleModelId)
                 local animDelay = XMVCA.XEquip:GetEquipUiAnimDelay(modelId, usage)
                 if animDelay and animDelay > 0 then
                     playSound = false
                     XScheduleManager.ScheduleOnce(function()
                         if not XTool.UObjIsNil(animator) then
                             animator:SetBool("UiActionBegin", true)
+                            if isImmediateTransition then
+                                animator:Update(0)
+                            end
                             if not noSound then
                                 XModelManager.PlayWeaponSound(modelId, go, usage)
                             end
@@ -913,6 +917,9 @@ function XModelManager.PlayWeaponShowing(target, modelId, uiName, go, param)
                     end, animDelay)
                 else
                     animator:SetBool("UiActionBegin", true)
+                    if isImmediateTransition then
+                        animator:Update(0)
+                    end
                 end
             end
         else

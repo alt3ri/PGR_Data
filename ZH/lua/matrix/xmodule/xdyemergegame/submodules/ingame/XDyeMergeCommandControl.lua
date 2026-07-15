@@ -114,10 +114,10 @@ end
 
 --- 驱动命令队列开始执行，全部完成后启动动画列表播放
 function XDyeMergeCommandControl:Execute()
-    XLog.Debug("[DyeMerge][CommandControl] 命令队列开始执行")
+    -- XLog.Debug("[DyeMerge][CommandControl] 命令队列开始执行")
     self._MainControl.AnimationControl:ResetData()
     self.CommandSystem:TryDoNextCommand(function()
-        XLog.Debug("[DyeMerge][CommandControl] 命令队列全部完成，启动动画列表")
+        -- XLog.Debug("[DyeMerge][CommandControl] 命令队列全部完成，启动动画列表")
         self._MainControl.AnimationControl:StartAnimations(function()
             self._MainControl:CheckAndTryPassStage()
         end)
@@ -183,6 +183,22 @@ function XDyeMergeCommandControl:_UpdateBlocksState(params, finishCb)
     self._MainControl.BlocksControl:RefreshTurnableRayInfluences(mapList)
     self._MainControl.BlocksControl:UpdateTargetReceivedColors(mapList)
 
+    local lineAnimUid = self._MainControl:ConsumePendingLineAnimUid()
+    if lineAnimUid then
+        self._MainControl.AnimationControl:EnqueueRetractLinesAnimation(lineAnimUid)
+        self._MainControl.AnimationControl:EnqueueExtendLinesAnimation(lineAnimUid)
+    end
+
+    local extendData = self._MainControl:ConsumePendingExtendAnim()
+    if extendData then
+        if extendData.NewLen < extendData.OldLen then
+            self._MainControl.AnimationControl:EnqueueExtendBlockDisableAnimation(extendData.Uid, extendData.OldLen)
+        else
+            self._MainControl.AnimationControl:EnqueueExtendBlockEnableAnimation(extendData.Uid, extendData.OldLen)
+            self._MainControl:SetExtendEnablePendingUid(extendData.Uid)
+        end
+    end
+
     self._MainControl.AnimationControl:EnqueueUpdateAllStateAnimation()
 
     if finishCb then
@@ -226,7 +242,7 @@ function XDyeMergeCommandControl:_ChangeBlockLength(params, finishCb)
     local block = self._MainControl.BlocksControl:GetBlockByUid(params.BlockUid)
     local cfg = self._MainControl:GetTableDyeMergeBlockById(params.BlockId)
 
-    XLog.Debug("[DyeMerge][ChangeBlockLength] uid=" .. tostring(params.BlockUid) .. " blockId=" .. tostring(params.BlockId) .. " hasBlock=" .. tostring(block ~= nil) .. " hasCfg=" .. tostring(cfg ~= nil))
+    -- XLog.Debug("[DyeMerge][ChangeBlockLength] uid=" .. tostring(params.BlockUid) .. " blockId=" .. tostring(params.BlockId) .. " hasBlock=" .. tostring(block ~= nil) .. " hasCfg=" .. tostring(cfg ~= nil))
 
     if block and cfg then
         local oldLen = block:GetVariableLength()
@@ -237,7 +253,7 @@ function XDyeMergeCommandControl:_ChangeBlockLength(params, finishCb)
         local minLen = cfg.Params[XMVCA.XDyeMergeGame.EnumConst.BlockCfgParams.VariableLength.MinLen]
         local maxLen = cfg.Params[XMVCA.XDyeMergeGame.EnumConst.BlockCfgParams.VariableLength.MaxLen]
 
-        XLog.Debug("[DyeMerge][ChangeBlockLength] oldLen=" .. tostring(oldLen) .. " expand=" .. tostring(expand) .. " newLen(raw)=" .. tostring(newLen) .. " minLen=" .. tostring(minLen) .. " maxLen=" .. tostring(maxLen))
+        -- XLog.Debug("[DyeMerge][ChangeBlockLength] oldLen=" .. tostring(oldLen) .. " expand=" .. tostring(expand) .. " newLen(raw)=" .. tostring(newLen) .. " minLen=" .. tostring(minLen) .. " maxLen=" .. tostring(maxLen))
 
         -- 越界修正
         newLen = XMath.Clamp(newLen, minLen, maxLen)
@@ -247,7 +263,11 @@ function XDyeMergeCommandControl:_ChangeBlockLength(params, finishCb)
         elseif newLen == minLen then
             expand = true
         end
-        
+
+        if newLen ~= oldLen then
+            self._MainControl:SetPendingExtendAnim(params.BlockUid, oldLen, newLen)
+        end
+
         block:SetVariableLength(newLen, expand)
         self._MainControl:DispatchEvent(XMVCA.XDyeMergeGame.EventIds.EVENT_DYEMERGE_INNER_BLOCK_DEPTH_DIRTY, params.BlockUid)
     end

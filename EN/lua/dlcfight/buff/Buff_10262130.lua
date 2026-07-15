@@ -19,26 +19,27 @@ end
 
 function XBuff10262130:OnLuaSkillEnd(eventArgs)
     if eventArgs._launcherUUID ~= self._npcUUID then return end
-    --如果是【拼刀成功技】，则触发本技能
-    self._level:RequestInsertSkill(self._npcUUID, self._skillId)
-    self.trigger = false
+    if self.trigger then
+        self._level:RequestInsertSkill(self._npcUUID, self._skillId)
+    end
 end
 
 function XBuff10262130:OnLuaSkillStart(eventArgs)
     if eventArgs._skillId ~= self._skillId then return end
     if eventArgs._launcherUUID ~= self._npcUUID then return end
-    if self.trigger == false then return end
+    if not self.trigger then return end
     --增加属性值
-    local stamina = self._proxy:GetNpcGameplayAttribValue(self._npcUUID,ETheatre6AttribType.Stamina)
-    local addAttrValue = math.floor(stamina / self.dictStaminaTarget[self._level]) * self.addAttr
-     --增加哪一个属性
-    local overClock = self._proxy:GetNpcGameplayAttribValue(self._npcUUID,ETheatre6AttribType.OverClock)
-    local wrestlePoint = self._proxy:GetNpcGameplayAttribValue(self._npcUUID,ETheatre6AttribType.WrestlePoint)
+    local stamina = self._proxy:GetNpcGameplayAttribMaxValue(self._npcUUID, ETheatre6AttribType.Stamina)
+    local addAttrValue = math.floor(stamina / self.dictStaminaTarget[self._lv]) * self.addAttr
+    --增加哪一个属性
+    local overClock = self._proxy:GetNpcGameplayAttribValue(self._npcUUID, ETheatre6AttribType.OverClock)
+    local wrestlePoint = self._proxy:GetNpcGameplayAttribValue(self._npcUUID, ETheatre6AttribType.WrestlePoint)
     if overClock >= wrestlePoint then
         self:AddTheatre6Attrib(ETheatre6AttribType.OverClock, addAttrValue, self._npcUUID, self._npcUUID)
     else
         self:AddTheatre6Attrib(ETheatre6AttribType.WrestlePoint, addAttrValue, self._npcUUID, self._npcUUID)
     end
+    self.trigger = false
 end
 
 return XBuff10262130

@@ -7,6 +7,10 @@ function XSoloReformControl:OnInit()
     self._ActivityTimeId = nil
 end
 
+function XSoloReformControl:GetColor()
+    return XUiHelper.GetClientConfig("SoloReformColor",XUiHelper.ClientConfigType.String)--每一期的颜色都不一样，后续如果有需要可以改成配置化
+end
+
 function XSoloReformControl:AddAgencyEvent()
     
 end
@@ -253,6 +257,14 @@ function XSoloReformControl:GetChapterByStageId(stageId)
         end 
     end
     return nil
+end
+
+function XSoloReformControl:GetLastSoloReformChapter()
+    local chapters = self._Model:GetAllSoloReformChapterCfgs()
+    if #chapters == 0 then
+        return nil
+    end
+    return chapters[#chapters]
 end
 
 function XSoloReformControl:GetChapterPassStageId(chapterId)

@@ -136,6 +136,22 @@ end
 
 ----------public start----------
 
+function XTheatre6Agency:IsPvpInActivityTime()
+    local config = self._Model.Pvp:GetActivityConfig()
+    local timeId = config and config.TimeId or 0
+    return XFunctionManager.CheckInTimeByTimeId(timeId)
+end
+
+function XTheatre6Agency:HandlePvpActivityEnd()
+    local uiName = "UiTheatre6Main"
+    if XLuaUiManager.IsStackUiOpen(uiName) then
+        XLuaUiManager.CloseAllUpperUi(uiName)
+    else
+        XLuaUiManager.RunMain(true)
+    end
+    XUiManager.TipText("CommonActivityEnd")
+end
+
 ---获取最新剧情更新时间
 ---@return number
 function XTheatre6Agency:GetLatestStoryUpdateTime()

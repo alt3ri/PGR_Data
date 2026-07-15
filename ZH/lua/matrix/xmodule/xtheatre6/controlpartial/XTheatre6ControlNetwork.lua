@@ -145,6 +145,9 @@ function XTheatre6Control:RequestChooseEvent(selectType, cb)
         XMVCA.XTheatre6:RunChain(queue, function()
             XMVCA.XTheatre6:SetSettlementLock(false)
             if not XMVCA.XTheatre6:CheckOpenSettle() then
+                if isEnd and isFight then
+                    self._Model.StageChain.IsWaitOpenNext = true
+                end
                 cb(isEnd, isFight)
             end
         end)

@@ -610,6 +610,10 @@ end
 
 --停止
 function XUiPanelSignBoard:OnStop(playingElement, force)
+    if self.RoleModel then
+        self.RoleModel:StopAllManagedAudio()
+    end
+
     if self.OpenType == XUiPanelSignBoard.SignBoardOpenType.MAIN then
         if not self.Parent.GameObject.activeSelf then
             return

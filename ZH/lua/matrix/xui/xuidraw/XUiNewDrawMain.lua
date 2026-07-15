@@ -92,7 +92,7 @@ end
 
 function XUiNewDrawMain:Refresh()
     if XTool.IsNumberValid(self.DefaultDrawId) then
-        self:RefreshDefaultDrawId()
+        self:RefreshDefaultDraw()
     else
         self:OnSelectUp(self.DrawInfo.Id)
         self:RefreshScene()
@@ -224,35 +224,34 @@ function XUiNewDrawMain:_PreloadAllGroupDrawInfos(cb)
     end
 end
 
-function XUiNewDrawMain:RefreshDefaultDrawId()
+function XUiNewDrawMain:RefreshDefaultDraw()
     if not XTool.IsNumberValid(self.DefaultDrawId) then
         return
     end
 
     local drawId = self.DefaultDrawId
     self.DefaultDrawId = nil
-    local groupSubtype = 0
+
+    local infoList
     if not string.IsNilOrEmpty(self.CurrentOptionKey) then
-        local _, subtype = XDataCenter.DrawManager._ParseOptionKey(self.CurrentOptionKey)
-        groupSubtype = subtype or 0
+        infoList = XDataCenter.DrawManager.GetDrawInfoListByOptionKey(self.CurrentOptionKey)
     end
-    local infoList = XDataCenter.DrawManager.GetDrawInfoListByGroupId(self.GroupId)
+    if XTool.IsTableEmpty(infoList) then
+        infoList = XDataCenter.DrawManager.GetDrawInfoListByGroupId(self.GroupId)
+    end
+
     local exist = false
     for _, info in pairs(infoList) do
         if info.Id == drawId then
             exist = true
-            if not XTool.IsNumberValid(groupSubtype) then
-                groupSubtype = info.GroupSubType or 0
-            end
             break
         end
     end
-    -- 不存在研发
+
+    -- 跳转携带的 DrawId 只负责定位并刷新默认展示，不在这里保存狙击目标
     if exist then
-        XDataCenter.DrawManager.SaveDrawAimId(drawId, self.GroupId, function()
-            self:OnSelectUp(drawId)
-            self:RefreshScene()
-        end, groupSubtype)
+        self:OnSelectUp(drawId)
+        self:RefreshScene()
     else
         XUiManager.TipText("EquipGuideDrawNoWeaponTip")
         self:OnSelectUp(self.DrawInfo.Id)
@@ -529,79 +528,6 @@ function XUiNewDrawMain:GetFirstOpenSubBtnIndexByTag(tag)
             return index
         end
     end
-end
-
---- 页签选择完成后的回调入口
-function XUiNewDrawMain:SelectAfterCallback()
-    if self.SkipToNewDrawMainFinishCb then
-        local finishCb = self.SkipToNewDrawMainFinishCb
-        self.SkipToNewDrawMainFinishCb = nil
-        finishCb()
-    end
-end
-
---- 根据跳转配置获取目标页签索引
-function XUiNewDrawMain:GetSkipToNewDrawMainSelectIndex(skipId)
-    local skipCfg = XFunctionConfig.GetSkipFuncCfg(skipId)
-    if not skipCfg then
-        return nil
-    end
-
-    local customParams = skipCfg.CustomParams or {}
-    local function getParam(index)
-        local value = customParams[index]
-        if value == 0 then
-            return nil
-        end
-        return value
-    end
-
-    local ruleType = getParam(1) or self.RuleType
-    local groupId = getParam(2)
-    local defaultDrawId = getParam(3)
-    local optionKey = ""
-    local drawInfo = XTool.IsNumberValid(defaultDrawId) and XDataCenter.DrawManager.GetDrawInfo(defaultDrawId) or nil
-
-    if drawInfo and XTool.IsNumberValid(drawInfo.GroupSubType) then
-        local targetGroupId = groupId
-        if not XTool.IsNumberValid(targetGroupId) then
-            targetGroupId = drawInfo.GroupId
-        elseif XTool.IsNumberValid(drawInfo.GroupId) and drawInfo.GroupId ~= targetGroupId then
-            return nil, defaultDrawId
-        end
-
-        if XTool.IsNumberValid(targetGroupId) then
-            groupId = targetGroupId
-            optionKey = XDataCenter.DrawManager._MakeOptionKey(targetGroupId, drawInfo.GroupSubType)
-        end
-    end
-
-    local selectIndex
-    if not string.IsNilOrEmpty(optionKey) then
-        selectIndex = self:GetBtnIndexByOptionKey(ruleType, optionKey)
-    end
-    if (not selectIndex or selectIndex == 0) and XTool.IsNumberValid(groupId) then
-        selectIndex = self:GetBtnIndexByGroupId(ruleType, groupId)
-    end
-
-    local entity = selectIndex and self.AllTabEntityList[selectIndex]
-    if not entity then
-        return nil, defaultDrawId
-    end
-
-    if entity:IsMainButton() then
-        selectIndex = self:GetFirstOpenSubBtnIndexByTag(entity:GetId())
-        entity = selectIndex and self.AllTabEntityList[selectIndex]
-    end
-
-    if not entity or not entity:JudgeCanOpen(false) then
-        if entity then
-            entity:JudgeCanOpen(true)
-        end
-        return nil, defaultDrawId
-    end
-
-    return selectIndex, defaultDrawId
 end
 --endregion
 
@@ -1136,7 +1062,6 @@ end
 function XUiNewDrawMain:OnSelectedTog(index)
     local entity = self.AllTabEntityList[index]
     if not entity then
-        self:SelectAfterCallback()
         return
     end
 
@@ -1144,13 +1069,11 @@ function XUiNewDrawMain:OnSelectedTog(index)
     local ruleType = not IsTypeTab and entity:GetRuleType() or self.RuleType
     if entity:IsMainButton() then
         if not entity:JudgeCanOpen(true) then
-            self:SelectAfterCallback()
             return
         end
         local subBtnIndex = self:GetFirstOpenSubBtnIndexByTag(entity:GetId())
         local subEntity = subBtnIndex and self.AllTabEntityList[subBtnIndex]
         if not subEntity then
-            self:SelectAfterCallback()
             return
         end
         index = subBtnIndex
@@ -1160,7 +1083,6 @@ function XUiNewDrawMain:OnSelectedTog(index)
     elseif not entity:JudgeCanOpen(false) then
         if self.CurSelectId and self.AllTabEntityList[self.CurSelectId] and self.AllTabEntityList[self.CurSelectId]:JudgeCanOpen(false) then
             entity:JudgeCanOpen(true)
-            self:SelectAfterCallback()
             return
         end
         local redirectIndex = self:GetFirstOpenBtnIndex()
@@ -1170,7 +1092,6 @@ function XUiNewDrawMain:OnSelectedTog(index)
             self._ForceSelectIndex = nil
         else
             entity:JudgeCanOpen(true)
-            self:SelectAfterCallback()
         end
         return
     end
@@ -1220,7 +1141,6 @@ function XUiNewDrawMain:OnSelectedTog(index)
             self:Refresh()
             self:CheckAutoOpen()
             self:RefreshAssetPanel(index)
-            self:SelectAfterCallback()
         end)
 end
 
@@ -1355,6 +1275,9 @@ function XUiNewDrawMain:CheckAutoOpen()
     end
     if not drawInfoList or #drawInfoList == 0 then
         drawInfoList = XDataCenter.DrawManager.GetDrawInfoListByGroupId(self.GroupId)
+    end
+    if not drawInfoList or #drawInfoList <= 1 then
+        return
     end
     for _, drawInfo in pairs(drawInfoList) do
         if drawInfo.StartTime > 0 then
@@ -1675,39 +1598,12 @@ function XUiNewDrawMain:AddEventListener()
     XEventManager.AddEventListener(XEventId.EVENT_DRAW_FREE_TICKET_UPDATE, self.UpdateDrawControl, self)
     XEventManager.AddEventListener(XEventId.EVENT_DRAW_TARGET_ACTIVITY_CHANGE, self.WhenDrawActivityStatusUpdate, self)
     XEventManager.AddEventListener(XEventId.EVENT_DRAW_CAN_LIVER_UPDATE, self.RefreshTabRedDot, self)
-    XEventManager.AddEventListener(XEventId.EVENT_DRAW_SKIP_TO_NEW_DRAW_MAIN, self.OnSkipToNewDrawMain, self)
 end
 
 function XUiNewDrawMain:RemoveEventListener()
     XEventManager.RemoveEventListener(XEventId.EVENT_DRAW_FREE_TICKET_UPDATE, self.UpdateDrawControl, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_DRAW_TARGET_ACTIVITY_CHANGE, self.WhenDrawActivityStatusUpdate, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_DRAW_CAN_LIVER_UPDATE, self.RefreshTabRedDot, self)
-    XEventManager.RemoveEventListener(XEventId.EVENT_DRAW_SKIP_TO_NEW_DRAW_MAIN, self.OnSkipToNewDrawMain, self)
-end
-
-function XUiNewDrawMain:OnSkipToNewDrawMain(skipId, finishCb)
-    local selectIndex, defaultDrawId = self:GetSkipToNewDrawMainSelectIndex(skipId)
-
-    if not selectIndex then
-        if finishCb then
-            finishCb()
-        end
-        return
-    end
-
-    self.SkipToNewDrawMainFinishCb = finishCb
-    self.DefaultDrawId = defaultDrawId
-    if self.CurSelectId == selectIndex then
-        -- 同页签不触发选择流程，直接结束视频层
-        self.SkipToNewDrawMainFinishCb = nil
-        if finishCb then
-            finishCb()
-        end
-    else
-        self._ForceSelectIndex = selectIndex
-        self.PanelNoticeTitleBtnGroup:SelectIndex(selectIndex)
-        self._ForceSelectIndex = nil
-    end
 end
 --endregion
 

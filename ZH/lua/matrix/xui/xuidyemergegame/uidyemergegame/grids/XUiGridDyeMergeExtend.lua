@@ -12,6 +12,7 @@ local XUiGridDyeMerge = require("XUi/XUiDyeMergeGame/UiDyeMergeGame/Grids/XUiGri
 local XUiGridDyeMergeExtend = XClass(XUiGridDyeMerge, "XUiGridDyeMergeExtend")
 
 function XUiGridDyeMergeExtend:OnStart()
+    XUiGridDyeMerge.OnStart(self)
     if self.BtnExtend then
         self.BtnExtend:AddEventListener(handler(self, self._OnBtnExtendClick))
     end
@@ -21,6 +22,8 @@ end
 ---@overload
 function XUiGridDyeMergeExtend:Refresh(uid)
     self.Uid = uid
+    self:EnterNormalDisplay()
+
     local gc = self._Control.GamingControl
     local block = gc.BlocksControl:GetBlockByUid(uid)
     if not block then return end
@@ -46,13 +49,8 @@ function XUiGridDyeMergeExtend:Refresh(uid)
         self.RImgBg1.transform:SetLocalScale(dirScaleX, scaleY, scaleZ)
     end
 
-    if self.RImgObject and colorCfg.IconSupprtTop then
-        self.RImgObject.gameObject:SetActiveEx(true)
-        self.RImgObject:SetRawImage(colorCfg.IconSupprtTop)
-    end
-
-    if self.RImgObjectEnd then
-        self.RImgObjectEnd.gameObject:SetActiveEx(false)
+    if colorCfg.IconSupprtTop then
+        self:SetFlowerVisible(true, colorCfg.IconSupprtTop)
     end
 
     -- 延伸切片：按 extendCount 管理
@@ -69,6 +67,10 @@ function XUiGridDyeMergeExtend:_RefreshSlices(uid, block, extendCount, extendIco
     local halfW = board._HalfW
     local halfH = board._HalfH
     local depthSorter = board._DepthSorter
+
+    local oldSliceCount = #self._SliceNodes
+    local hideNew = self._HideNewSlices
+    self._HideNewSlices = nil
 
     local sliceIdx = 0
     for i = 1, extendCount do
@@ -90,7 +92,11 @@ function XUiGridDyeMergeExtend:_RefreshSlices(uid, block, extendCount, extendIco
             sliceIdx = sliceIdx + 1
             local slice = self:_GetOrCreateSlice(sliceIdx)
             if slice then
-                slice:Open()
+                if hideNew and sliceIdx > oldSliceCount then
+                    slice:Close()
+                else
+                    slice:Open()
+                end
                 slice.GameObject.name = "GridExtendPart(" .. tostring(py) .. ', ' .. tostring(px) .. ')'
                 -- 定位到对应格子的等距坐标（表现层允许越界）
                 local sx, sy = gc:Vec2ToIsoPos(px, py, halfW, halfH)
@@ -155,10 +161,82 @@ end
 
 --- 方块被回收到池时归还所有切片
 function XUiGridDyeMergeExtend:OnDisable()
+    XUiGridDyeMerge.OnDisable(self)
     self:_ReturnSlicesFrom(1)
 end
 
---- 通关后将供色图标切换回 IconTop
+--- 获取当前切片节点列表（供动画系统读取）
+function XUiGridDyeMergeExtend:GetSliceNodes()
+    return self._SliceNodes
+end
+
+--- 获取当前切片数量
+function XUiGridDyeMergeExtend:GetSliceCount()
+    return #self._SliceNodes
+end
+
+--- 设置下次 Refresh 时新增切片是否隐藏（供 Enable 动画使用）
+function XUiGridDyeMergeExtend:SetHideNewSlices(hide)
+    self._HideNewSlices = hide
+end
+
+--- 对即将消失的切片播放 Disable 动画
+---@param newSliceCount number 缩短后的目标切片数
+---@param onAllDone function 全部完成后的回调
+function XUiGridDyeMergeExtend:PlaySliceDisableAnim(newSliceCount, onAllDone)
+    local oldSliceCount = #self._SliceNodes
+    if newSliceCount >= oldSliceCount then
+        if onAllDone then onAllDone() end
+        return
+    end
+
+    local pendingCount = oldSliceCount - newSliceCount
+    local function onOneDone()
+        pendingCount = pendingCount - 1
+        if pendingCount <= 0 and onAllDone then
+            onAllDone()
+        end
+    end
+
+    for i = newSliceCount + 1, oldSliceCount do
+        local slice = self._SliceNodes[i]
+        if slice then
+            slice:PlayDisableAnim(onOneDone)
+        else
+            onOneDone()
+        end
+    end
+end
+
+--- 对新增但隐藏的切片播放 Enable 动画
+---@param oldSliceCount number 变化前的切片数
+---@param onAllDone function 全部完成后的回调
+function XUiGridDyeMergeExtend:PlaySliceEnableAnim(oldSliceCount, onAllDone)
+    local totalSliceCount = #self._SliceNodes
+    if oldSliceCount >= totalSliceCount then
+        if onAllDone then onAllDone() end
+        return
+    end
+
+    local pendingCount = totalSliceCount - oldSliceCount
+    local function onOneDone()
+        pendingCount = pendingCount - 1
+        if pendingCount <= 0 and onAllDone then
+            onAllDone()
+        end
+    end
+
+    for i = oldSliceCount + 1, totalSliceCount do
+        local slice = self._SliceNodes[i]
+        if slice then
+            slice:PlayEnableAnim(onOneDone)
+        else
+            onOneDone()
+        end
+    end
+end
+
+--- 通关后播放供色骨骼动画
 function XUiGridDyeMergeExtend:RefreshOnStagePass(uid)
     local gc = self._Control.GamingControl
     local block = gc.BlocksControl:GetBlockByUid(uid)
@@ -168,14 +246,7 @@ function XUiGridDyeMergeExtend:RefreshOnStagePass(uid)
     local colorCfg = gc:GetTableDyeMergeBlocksConfig(blockCfg.Color)
     if not colorCfg then return end
 
-    if self.RImgObjectEnd and colorCfg.IconTop then
-        self.RImgObjectEnd.gameObject:SetActiveEx(true)
-        self.RImgObjectEnd:SetRawImage(colorCfg.IconTop)
-    end
-
-    if self.RImgObject then
-        self.RImgObject.gameObject:SetActiveEx(false)
-    end
+    self:EnterPassDisplay(colorCfg)
 end
 
 function XUiGridDyeMergeExtend:_OnBtnExtendClick()

@@ -403,6 +403,10 @@ function XFubenBossSingleControl:GetChallengeNeedScore()
     return self._Model:GetBossSingleChallengeGradeNeedScoreByLevelType(challengeLevelType)
 end
 
+function XFubenBossSingleControl:GetBossSingleChallengeGradeNeedScoreByLevelType(levelId)
+    return self._Model:GetBossSingleChallengeGradeNeedScoreByLevelType(levelId)
+end
+
 --- 检查是否需要播放终极区解锁动画
 ---@return boolean 是否需要播放动画
 function XFubenBossSingleControl:CheckNeedPlayExtremeUnlockAnimation()

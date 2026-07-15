@@ -10,7 +10,8 @@ function XDyeMergeGameModel:ClearPrivate()
 end
 
 function XDyeMergeGameModel:ResetAll()
-
+    self._ActivityId = nil
+    self._StageRecord = nil
 end
 
 function XDyeMergeGameModel:UpdateFUllActivityData(data)

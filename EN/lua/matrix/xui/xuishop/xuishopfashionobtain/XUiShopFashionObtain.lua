@@ -18,7 +18,10 @@ function XUiShopFashionObtain:InitComponents()
     self.GridFashion = XUiGridCommon.New(self, self.GridCommon)
 end
 
-function XUiShopFashionObtain:OnStart(rewardGoodsList)
+-- 回调映射：closeCallback → BtnClose（关闭）；sureCallback → BtnGo（前往DIY界面）
+function XUiShopFashionObtain:OnStart(rewardGoodsList, closeCallback, sureCallback)
+    self.CloseCallback = closeCallback
+    self.SureCallback = sureCallback
     self.goodsInfo = rewardGoodsList and rewardGoodsList[1]
     if self.goodsInfo then
         self:Update()
@@ -45,11 +48,17 @@ end
 
 function XUiShopFashionObtain:OnBtnCloseClick(eventData)
     self:Close()
+    if self.CloseCallback then
+        self.CloseCallback()
+    end
 end
 
 function XUiShopFashionObtain:OnBtnGoClick(eventData)
     self:Close()
     XFunctionManager.SkipInterface(SkipId)
+    if self.SureCallback then
+        self.SureCallback()
+    end
 end
 
 return XUiShopFashionObtain

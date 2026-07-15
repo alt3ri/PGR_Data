@@ -345,11 +345,11 @@ function XFashionSuitAgency:OnMoneyNotEnough(skipIndex, leftTabIndex, payCount)
         if payCount then
             XLuaUiManager.Open("UiPurchaseQuickBuy", payCount, function(index)
                 XLuaUiManager.SafeClose("UiPurchaseQuickBuy")
+                -- 把UiPurchase从UiFashionSuitDetail底下 移动到它上面 避免被挡住
                 if XLuaUiManager.IsUiLoad("UiPurchase") then
-                    XEventManager.DispatchEvent(XEventId.EVENT_PURCHASE_QUICK_BUY_SKIP, index)
-                else
-                    XLuaUiManager.Open("UiPurchase", XPurchaseConfigs.TabsConfig.Pay, false, index)
+                    XLuaUiManager.Remove("UiPurchase")
                 end
+                XLuaUiManager.Open("UiPurchase", XPurchaseConfigs.TabsConfig.Pay, false, index)
             end)
         end
     else

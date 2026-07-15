@@ -155,9 +155,9 @@
         "Id": 100401,
         "HelpCourseId": 1004,
         "Index": 1,
-        "Name": "Commandant Outfits",
+        "Name": "Commandant Costumes",
         "Image": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldTeachPicture/UiBigWorldTeachDIY01.png",
-        "Desc": "Commandant Outfits have different categories:\\n- Special environments require specific outfit types for access.\\n- Tap the list on the left to switch your current outfit."
+        "Desc": "Commandant Costumes have different categories:\\n- Special environments require specific costume types for access.\\n- Tap the list on the left to switch your current costume."
     },
     {
         "Id": 201001,
@@ -364,7 +364,7 @@
         "HelpCourseId": 3025,
         "Index": 1,
         "Name": "Scan Vision",
-        "Image": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldTeachPicture/UiBigWorldFightScanPlusAbility01.png",
+        "Image": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldTeachPicture/UiBigWorldFightScanPlusAbility03.png",
         "Desc": "Tap the [Scan Vision] button to activate the system. Tap again to exit it."
     },
     {
@@ -372,15 +372,15 @@
         "HelpCourseId": 3025,
         "Index": 2,
         "Name": "Scan Vision",
-        "Image": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldTeachPicture/UiBigWorldFightScanPlusAbility02.png",
-        "Desc": "After activating [Scan Vision], move the camera to focus on highlighted characters or objects. This will scan and retrieve information about the target."
+        "Image": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldTeachPicture/UiBigWorldFightScanPlusAbility01.png",
+        "Desc": "After activating [Scan Vision], move the camera to focus on highlighted characters or objects. This will scan and acquire information about the target."
     },
     {
         "Id": 302503,
         "HelpCourseId": 3025,
         "Index": 3,
         "Name": "Scan Vision",
-        "Image": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldTeachPicture/UiBigWorldFightScanPlusAbility03.png",
+        "Image": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldTeachPicture/UiBigWorldFightScanPlusAbility02.png",
         "Desc": "[Scan Vision] can be used to operate certain facilities, enabling functions such as opening, closing, or accessing surveillance footage."
     },
     {
@@ -388,7 +388,7 @@
         "HelpCourseId": 3020,
         "Index": 1,
         "Name": "Battle Tutorial - Basics",
-        "Image": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldTeachPicture/UiBigWorldTeachJumpPlayer01.png",
+        "Image": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldTeachPicture/UiBigWorldTeachCombat01.png",
         "Desc": "In this training setup, the Pyroath frame has some limits. Tap Basic Attack to perform up to 5 consecutive attacks. Dodge right before an attack lands to trigger a Perfect Dodge."
     },
     {
@@ -396,7 +396,7 @@
         "HelpCourseId": 3020,
         "Index": 2,
         "Name": "Battle Tutorial - Basics",
-        "Image": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldTeachPicture/UiBigWorldTeachJumpPlayer08.png",
+        "Image": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldTeachPicture/UiBigWorldTeachCombat02.png",
         "Desc": "Tap Jump to leap briefly into the air. Attacking while airborne grants additional effects. After using the skill \"Swirling Edge,\" tap Basic Attack to trigger an enhanced basic attack."
     },
     {
@@ -404,7 +404,7 @@
         "HelpCourseId": 3020,
         "Index": 3,
         "Name": "Battle Tutorial - Airborne State",
-        "Image": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldTeachPicture/UiBigWorldTeachJumpPlayer01.png",
+        "Image": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldTeachPicture/UiBigWorldTeachCombat03.png",
         "Desc": "When airborne, tap the Basic Attack button to directly trigger the 3rd hit of the basic attack and launch enemies. Cast the skill \"Swirling Edge\" to swing the sword diagonally forward and release a swordwave. Press and hold the Basic Attack button to directly perform the 5th hit of the basic attack. Press and hold the Dodge button to pull in nearby enemies."
     },
     {
@@ -412,7 +412,7 @@
         "HelpCourseId": 3020,
         "Index": 4,
         "Name": "Battle Tutorial - Enhanced Skills",
-        "Image": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldTeachPicture/UiBigWorldTeachJumpPlayer08.png",
+        "Image": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldTeachPicture/UiBigWorldTeachCombat04.png",
         "Desc": "Cast basic attacks or skills to accumulate Quench Value. When Quench Value is full, press and hold the Basic Attack button to cast the skill \"Aura Blast\""
     },
     {
@@ -420,7 +420,15 @@
         "HelpCourseId": 3020,
         "Index": 5,
         "Name": "Battle Tutorial - Signature Move",
-        "Image": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldTeachPicture/UiBigWorldTeachJumpPlayer08.png",
+        "Image": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldTeachPicture/UiBigWorldTeachCombat05.png",
         "Desc": "Deal DMG to enemies to accumulate Energy. When Energy is full, cast the Signature Move \"Eclipse Daybreak\""
+    },
+    {
+        "Id": 200501,
+        "HelpCourseId": 2005,
+        "Index": 1,
+        "Name": "Supply Search",
+        "Image": "Assets/Product/Texture/Image/BigWorld/Common/UiBigWorldTeachPicture/UiBigWorldTeachReward02.png",
+        "Desc": "Terminal beacons have been upgraded. They can now detect supply crates in the current area and automatically mark them on the map. Interact with a nearby beacon to start scanning."
     }
 ]

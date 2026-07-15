@@ -801,8 +801,10 @@ function XUiLogin:DoLogin()
                 else
                     local targetGotoConfig = XLoginManager.GetCurrentLoginPromoFeature()
                     local isOnceOpened = targetGotoConfig and (XSaveTool.GetData(targetGotoConfig.Id.."LoginPromoFeatureConfig"..XPlayer.Id) == 1)
+                    -- 提审包不触发登录推广视频，避免 SkipInterface 的提审兜底打开其它界面
+                    local isCanOpenLoginPromoFeature = targetGotoConfig and not XUiManager.IsHideFunc and not isOnceOpened and (not XLuaVideoManager.GetIsSkipAllCG())
 
-                    if targetGotoConfig and not isOnceOpened and (not XLuaVideoManager.GetIsSkipAllCG()) then
+                    if isCanOpenLoginPromoFeature then
                         XFunctionManager.SkipInterface(targetGotoConfig.EnterSkipId)
                     else
                         XLoginManager.SetFirstOpenMainUi(true)

@@ -575,7 +575,7 @@ function XUiMainLine2PanelEntranceList:InitSpine()
     for i = 1, #spineComponents do
         local skeleton = spineComponents[i]
         -- 两者都有 AnimationState 属性，可以统一调用
-        local trackEntry = skeleton.AnimationState:GetCurrent(0) -- StartingAnimation设置默认播放动画
+        local trackEntry = skeleton.AnimationState:GetTrack(0) -- StartingAnimation设置默认播放动画
         trackEntry.TrackTime = 0 -- 设置为第0秒的状态
         trackEntry.TimeScale = 0 -- 暂停播放
 

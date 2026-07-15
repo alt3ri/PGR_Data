@@ -8,12 +8,12 @@ local XBigWorldGamePlayAgency = XClassPartial("XBigWorldGamePlayAgency")
 
 
 --- 进入世界
----@param worldId number 世界id
----@param levelId number 关卡id
----@param enterOp number 进入操作
----@param enterParam number 进入操作的参数
+---@param worldId number 世界id（CustomParams[1]）
+---@param levelId number 关卡id（CustomParams[2]）
+---@param enterOp number 进入操作类型（CustomParams[3]）
+---@vararg number 自定义参数（CustomParams[4..]），可选，参数来自配置表数据
 --------------------------
-function XBigWorldGamePlayAgency:EnterWorld(worldId, levelId, enterOp, enterParam)
+function XBigWorldGamePlayAgency:EnterWorld(worldId, levelId, enterOp, ...)
     worldId = worldId or 0
     levelId = levelId or 0
     if self:IsInGame() then
@@ -23,7 +23,7 @@ function XBigWorldGamePlayAgency:EnterWorld(worldId, levelId, enterOp, enterPara
         end
     end
     self._EnterOperate = enterOp
-    self._EnterOpParam = enterParam
+    self._EnterOpParam = { ... }
     XNetwork.Call("BigWorldEnterWorldRequest", {
         WorldId = worldId,
         LevelId = levelId,
@@ -86,7 +86,10 @@ function XBigWorldGamePlayAgency:OnModuleLoadComplete(response)
     --初始化战斗
     CS.StatusSyncFight.XFight.Init()
     --触发当前大世界开场引导
-    self:GetCurrentAgency():BeginOpenGuide()
+    local gameAgency = self:GetCurrentAgency()
+    if gameAgency then
+        gameAgency:BeginOpenGuide()
+    end
     --添加进入操作
     XMVCA.XBigWorldFunction:AddEnterOperate(self._EnterOperate, self._EnterOpParam)
     self._EnterOperate = nil
@@ -105,7 +108,10 @@ function XBigWorldGamePlayAgency:ExitWorld()
     --退出战斗
     CS.StatusSyncFight.XFightClient.RequestExitFight()
     --退出当前大世界
-    self:GetCurrentAgency():Exit()
+    local gameAgency = self:GetCurrentAgency()
+    if gameAgency then
+        gameAgency:Exit()
+    end
     CS.XProfilingLuaUtils.PerfSightRegionExit()
 end
 
@@ -157,8 +163,11 @@ function XBigWorldGamePlayAgency:EnterFight()
     CS.XProfilingLuaUtils.PerfSightRegionEnter("SkyGardenProcess")
     
     local worldData, fightData, levelData = enterResultData.WorldData, enterResultData.FightData, enterResultData.LevelData
+    local gameAgency = self:GetCurrentAgency()
     -- 对应大世界执行进入战斗前逻辑
-    self:GetCurrentAgency():BeforeEnterGame()
+    if gameAgency then
+        gameAgency:BeforeEnterGame()
+    end
     -- 通知进入战斗前
     XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_BEFORE_ENTER_GAME)
     -- 实际进入战斗
@@ -169,7 +178,9 @@ function XBigWorldGamePlayAgency:EnterFight()
     --首次进入战斗会有黑幕进行开场引导，这里尝试关闭
     XMVCA.XBigWorldUI:SafeClose("UiBigWorldBlackMaskNormal")
     -- 对应大世界执行进入战斗后逻辑
-    self:GetCurrentAgency():AfterEnterGame()
+    if gameAgency then
+        gameAgency:AfterEnterGame()
+    end
     --置空数据
     self._EnterWorldResponseData = nil
 end
@@ -180,7 +191,10 @@ function XBigWorldGamePlayAgency:ExitFight()
     if not self:IsInGame() then
         return
     end
-    self:GetCurrentAgency():ExitFight()
+    local gameAgency = self:GetCurrentAgency()
+    if gameAgency then
+        gameAgency:ExitFight()
+    end
     --退出前请求红点
     self:RequestRefreshBigWorldMainRedPoint()
     self:_DisposeBigWorldType()
@@ -211,7 +225,10 @@ function XBigWorldGamePlayAgency:ClearGame()
 end
 
 function XBigWorldGamePlayAgency:ExitDlcFightAndEnterFubenFight()
-    self:GetCurrentAgency():ExitFight()
+    local gameAgency = self:GetCurrentAgency()
+    if gameAgency then
+        gameAgency:ExitFight()
+    end
     --退出前请求红点
     self:RequestRefreshBigWorldMainRedPoint()
     self:_DisposeBigWorldType()
@@ -235,7 +252,10 @@ function XBigWorldGamePlayAgency:OnEventEnterFight()
     if not self:IsInGame() then
         return
     end
-    self:GetCurrentAgency():EnterFight()
+    local gameAgency = self:GetCurrentAgency()
+    if gameAgency then
+        gameAgency:EnterFight()
+    end
     -- 通知进入大世界
     XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_AFTER_ENTER_GAME)
     --开启流式纹理
@@ -402,7 +422,10 @@ function XBigWorldGamePlayAgency:_InitX3C()
     end
 
     self:_DisposeX3C()
-    self:GetCurrentAgency():InitX3C()
+    local gameAgency = self:GetCurrentAgency()
+    if gameAgency then
+        gameAgency:InitX3C()
+    end
 end
 
 function XBigWorldGamePlayAgency:_DisposeX3C()
@@ -434,7 +457,24 @@ function XBigWorldGamePlayAgency:_DisposeConfig()
 end
 
 function XBigWorldGamePlayAgency:_InitMVCA()
-    local gameAgency = self:GetCurrentAgency()
+    local moduleId
+    if self:IsInGame() then
+        moduleId = self._CurrentModuleId
+    else
+        XLog.Error("_InitMVCA 调用时未设置 _CurrentModuleId")
+        return
+    end
+
+    -- 懒注册职责集中在这里：注册 + InitDynamicRegister 由本入口负责，GetCurrentAgency 不再有副作用
+    if not XMVCA:IsRegisterAgency(moduleId) then
+        XMVCA:RegisterAgency(moduleId)
+        local agency = XMVCA:GetAgency(moduleId)
+        if agency then
+            agency:InitDynamicRegister()
+        end
+    end
+
+    local gameAgency = XMVCA:GetAgency(moduleId)
     if not gameAgency then
         return
     end
@@ -542,6 +582,7 @@ function XBigWorldGamePlayAgency:_DisposeTempVar()
     end
     self._Camera = false
     self._CurrentModuleId = false
+    XEventManager.DispatchEvent(XEventId.EVENT_BIG_WORLD_GAME_PLAY_CHANGED, false)
     self._Model:Clear()
     self:ClearDebugState()
 

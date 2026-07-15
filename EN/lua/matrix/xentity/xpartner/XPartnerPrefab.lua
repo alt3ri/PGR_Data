@@ -177,8 +177,7 @@ function XPartnerPrefab:Unload(pos, isKeepCache)
     end
     
     self.TeamPartnerData[pos] = {
-        PartnerId = 0,
-        SkillData = {}
+        PartnerId = 0
     }
 end
 
@@ -306,6 +305,55 @@ function XPartnerPrefab:GetPartnerData()
         end
     end
     return partnerData
+end
+
+function XPartnerPrefab:GetPartnerRequestDataByPos(pos)
+    local partnerId = self:GetPartnerIdByPos(pos)
+    if XTool.IsNumberValid(partnerId) then
+        return {
+            PartnerId = partnerId,
+            SkillData = self:GetSkillDataByPos(pos)
+        }
+    end
+
+    return { PartnerId = 0 }
+end
+
+local function ClonePartnerSlotData(slotData)
+    local newSlotData = {}
+    for pos, data in pairs(slotData or {}) do
+        local partnerId = data and data.PartnerId or 0
+        if XTool.IsNumberValid(partnerId) then
+            newSlotData[pos] = XTool.Clone(data)
+        else
+            newSlotData[pos] = {
+                PartnerId = 0
+            }
+        end
+    end
+    return newSlotData
+end
+
+function XPartnerPrefab:GetPartnerSlotSnapshot()
+    return ClonePartnerSlotData(self.TeamPartnerData)
+end
+
+function XPartnerPrefab:RestorePartnerSlotSnapshot(snapshot)
+    for _, data in pairs(self.TeamPartnerData or {}) do
+        local partnerId = data and data.PartnerId
+        if XTool.IsNumberValid(partnerId) then
+            XDataCenter.PartnerManager.ClearPresetSkillCache(partnerId)
+        end
+    end
+
+    self.TeamPartnerData = ClonePartnerSlotData(snapshot)
+
+    for _, data in pairs(self.TeamPartnerData or {}) do
+        local partnerId = data and data.PartnerId
+        if XTool.IsNumberValid(partnerId) then
+            self:__RefreshSkillData(data)
+        end
+    end
 end
 
 --==============================

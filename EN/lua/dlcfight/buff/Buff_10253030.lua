@@ -17,6 +17,11 @@ function XBuffScript10253030:ScriptInit(isGainControl) --初始化
     self._hasChangedDamage = true
 end
 
+function XBuffScript10253030:InitEventCallBackRegister()
+    --按需求解除注释进行注册
+    self._proxy:RegisterEventByTarget(EWorldEvent.NpcCalcDamageBefore, self._npcUUID)
+end
+
 function XBuffScript10253030:OnLuaSkillStart(eventArgs)
     if eventArgs._skillId ~= self._skillId then return end
     if eventArgs._launcherUUID ~= self._npcUUID then return end

@@ -39,7 +39,7 @@ function XUiArchiveMonsterInfo:SetMonsterBaseInfoData(npcId)
 end
 
 function XUiArchiveMonsterInfo:SetMonsterShortInfoData(npcId)
-    local infoList = self._Control:GetArchiveMonsterInfoList(npcId, XEnumConst.Archive.MonsterInfoType.Short)
+    local infoList = self._Control.MonsterControl:GetArchiveMonsterInfoList(npcId, XEnumConst.Archive.MonsterInfoType.Short)
 
     for index = 1, InfoShortMax do
         if infoList[index] then
@@ -62,7 +62,7 @@ function XUiArchiveMonsterInfo:SetMonsterShortInfoData(npcId)
 end
 
 function XUiArchiveMonsterInfo:SetMonsterLongInfoData(npcId)
-    local infoList = self._Control:GetArchiveMonsterInfoList(npcId, XEnumConst.Archive.MonsterInfoType.Long)
+    local infoList = self._Control.MonsterControl:GetArchiveMonsterInfoList(npcId, XEnumConst.Archive.MonsterInfoType.Long)
 
     for index = 1, InfoLongMax do
         if infoList[index] then
@@ -83,6 +83,6 @@ function XUiArchiveMonsterInfo:SetMonsterLongInfoData(npcId)
         self.DetailContent[index].gameObject:SetActiveEx(infoList[index] and true or false)
     end
 end
-
-
+
+
 return XUiArchiveMonsterInfo

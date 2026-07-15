@@ -47,6 +47,10 @@ XSGMonsterBase.ActionType = {--待机、追逐移动、攻击、游荡、巡逻�
     ---连招
     Combo = 5,
 }
+XSGMonsterBase.ActionTypeNameList = {}
+for name,val in pairs(XSGMonsterBase.ActionType) do
+    XSGMonsterBase.ActionTypeNameList[val] = name
+end
 ---切换阶段条件
 XSGMonsterBase.SwitchPhaseType = { --不切阶段、Hp、时间轴
     ---没有切换阶段
@@ -779,7 +783,8 @@ function XSGMonsterBase:FightModeAwake()
         }
     }
     self.dazeTimes ={1,2} --发呆时间区间，最小最大的秒
-    self.wanderTimer = 0 --游荡相关计时器
+    self.wanderTimes ={1,2} --游荡时间区间，最小最大的秒
+    self.wanderTimer = 0--游荡相关计时器
     self.skillInfoConfigList = {}
     self.selectSkillType = XSGMonsterBase.SelectSkillType.None --默认不放技能
     self.skillLayer = XSGMonsterBase.SkillLayer.Normal --普通层技能释放
@@ -877,6 +882,7 @@ function XSGMonsterBase:FollowComponentAwake()
     self.followTargetMaxDis = 3
     self.followTargetHeartBeat = 1
     self._followController = XNpcFollowController.New(self._proxy, self._uuid) --New跟随组件
+    self.followRotaSpeed = 50 --跟随时的转向速度
 end
 
 --endregion
@@ -1389,7 +1395,17 @@ function XSGMonsterBase:SetTarget(npc)
         local followTargetMinDis = self.followTargetMinDis
         local followTargetMMaxDis = self.followTargetMaxDis
         local followTargetHeartBeat = self.followTargetHeartBeat
-        self._followController:SetFollowTargetNpcNoNavMesh(self.target, followTargetMinDis, followTargetMMaxDis, followTargetHeartBeat)  --跟随目标设置成当前目标
+        self._proxy:SetNpcDirectlyFollow(
+                self._uuid,
+                followTargetMinDis,
+                followTargetMMaxDis,
+                false,
+                false,
+                false,
+                0,
+                true,
+                self:GetTarget(),
+                self.followRotaSpeed)
     end
     
    
@@ -1404,7 +1420,8 @@ function XSGMonsterBase:RemoveMonsterTarget()
     self.target = nil
     self._proxy:RemoveMonsterTarget(self._uuid)
     --取消移动组件
-    self._followController:CancelFollow() --清空移动组件
+    --self._followController:CancelFollow() --清空移动组件
+    self._proxy:SetNpcStopFollow(self._uuid) --取消跟随
 end
 --检查退出战斗
 function XSGMonsterBase:OutCombatCheck()
@@ -1511,6 +1528,7 @@ end
 --执行行为
 function XSGMonsterBase:DoAction(dt)
     local actionType = self.SelectActionInfo.CurActionType
+    --local typeName = self.ActionTypeNameList[actionType]
     if actionType == XSGMonsterBase.ActionType.Chase then
         --追逐
         self:Chasing(dt)
@@ -1530,23 +1548,56 @@ function XSGMonsterBase:IsTargetInMyAngle(angle)
     return self._proxy:CheckNpcInAngle(self._uuid, self.target, angle)
 end
 --游荡
-function XSGMonsterBase:Wander()
+function XSGMonsterBase:Wander() --目前没有向前
     local wander = self.SelectActionInfo.Wander
-    if self.SelectActionInfo.Wander == "daze" then --如果是发呆
-        if self.wanderTimer == 0 then
-            local minTime =  self.dazeTimes[1]
-            local maxTime =  self.dazeTimes[2]
-            local cdTime = self._proxy:Random(minTime*100,maxTime*100)/100
-            self.wanderTimer = self.fightTime + cdTime
-        else
-            if self.fightTime > self.wanderTimer then
-                self:OnActionDone(XSGMonsterBase.ActionType.Wander)
-            end
-        end 
+    local wanderDirectionDic = { --游荡方向枚举的字典
+        left = ENpcMoveDirection.Left,
+        right = ENpcMoveDirection.Right,
+        back = ENpcMoveDirection.Backward,
+    }
+    local wanderDirection = wanderDirectionDic[self.SelectActionInfo.Wander] --查询方向类型
+    if self.wanderTimer ~= 0 then --有游荡计时器表示在游荡，检查游荡是否结束
+        if self.fightTime > self.wanderTimer then
+            self:OnActionDone(XSGMonsterBase.ActionType.Wander)
+            return
+        end
+        if wanderDirection then --如果有游荡方向就持续游荡
+            self._proxy:SetNpcMoveType(self._uuid,ENpcMoveType.Walk)
+            self._proxy:SetNpcMoveDirection(self._uuid,wanderDirection)
+            self._proxy:NpcDirectionMoveByNpc(self._uuid,self:GetTarget())
+        end
+        return
     end
-    --if self:ForceSkillToTarget(self.wanderSkills[wander]) then
-    --    self:OnActionDone(XSGMonsterBase.ActionType.Wander)
-    --end
+    
+    ---------------------------游荡首次开始，需要设置计时器---------------------------
+    local isHaveWander = self.SelectActionInfo.Wander == "left"
+            or self.SelectActionInfo.Wander == "right" 
+            or self.SelectActionInfo.Wander == "back"
+            or self.SelectActionInfo.Wander == "daze"
+
+    if not isHaveWander then --筛选的游荡信息不合法时直接返回
+        return
+    end
+    
+    self._proxy:SetNpcStopFollow(self._uuid) --取消跟随Npc
+    self._proxy:NpcStopMove(self._uuid) --停止移动
+    local minTime = 0
+    local maxTime = 0
+    local cdTime = 0
+    if wanderDirection then --Timer计时器根据是否游荡来决定用哪个来记时
+        minTime = self.wanderTimes[1]
+        maxTime =  self.wanderTimes[2]
+        self._proxy:SetNpcMoveType(self._uuid,ENpcMoveType.Walk)
+        self._proxy:SetNpcMoveDirection(self._uuid,wanderDirection)
+        self._proxy:NpcDirectionMoveByNpc(self._uuid,self:GetTarget())
+    else
+        minTime = self.dazeTimes[1]
+        maxTime = self.dazeTimes[2]
+    end
+    minTime = minTime * 100
+    maxTime = maxTime * 100
+    cdTime = self._proxy:Random(minTime,maxTime)/100
+    self.wanderTimer = self.fightTime + cdTime
 end
 --技能释放过程中的转身调整
 function XSGMonsterBase:TurnAround()
@@ -1569,17 +1620,35 @@ function XSGMonsterBase:OnActionDone(action)
     self.wanderTimer = 0
     self.SelectActionInfo.CurActionType = nil
     self.SelectActionInfo.LastActionType = action
-
+    if action == XSGMonsterBase.ActionType.Wander then --游荡重置
+        self._proxy:SetNpcMoveType(self._uuid,ENpcMoveType.Run)
+        self._proxy:SetNpcMoveDirection(self._uuid,ENpcMoveDirection.Forward)
+        self._proxy:NpcStopMove(self._uuid)
+    end
 end
 --endregion
 
 --region 行为：追逐
 --追逐目标
 function XSGMonsterBase:Chasing(dt)
+    --XLog.Warning("Chasing行为")
     --XLog.Warning("向Npc移动")
     --调用跟随组件，需要补充其他追逐逻辑，比如是否优先使用追逐技能。
-    self._followController:SetFollowTargetNpcNoNavMesh(self.target, self.followTargetMinDis, self.followTargetMaxDis, self.followTargetHeartBeat)
-    self._followController:Update(dt)  --调用跟随组件走向目标
+    self._proxy:SetNpcDirectlyFollow(
+            self._uuid,
+            self.followTargetMinDis,
+            self.followTargetMaxDis,
+            false,
+            false,
+            false,
+            0,
+            false,
+            self:GetTarget(),
+            self.followRotaSpeed)
+    self._proxy:SetNpcMoveType(self._uuid,ENpcMoveType.Run)
+    self._proxy:SetNpcMoveDirection(self._uuid,ENpcMoveDirection.Forward)
+    --self._followController:SetFollowTargetNpcNoNavMesh(self.target, self.followTargetMinDis, self.followTargetMaxDis, self.followTargetHeartBeat)
+    --self._followController:Update(dt)  --调用跟随组件走向目标
 end
 
 --追逐测试

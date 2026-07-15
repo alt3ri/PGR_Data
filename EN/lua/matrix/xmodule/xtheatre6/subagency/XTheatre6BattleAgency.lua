@@ -3,34 +3,7 @@
 ---@field _MainAgency XTheatre6Agency
 local XTheatre6BattleAgency = XClass(XAgency, "XTheatre6BattleAgency")
 
----需要乘基数的属性枚举
-local EnlargedAttribs = {
-    [XDlcNpcAttribType.Speed] = true,
-    [XDlcNpcAttribType.JumpSpeed] = true,
-    [XDlcNpcAttribType.RunSpeed] = true,
-    [XDlcNpcAttribType.RunSpeedCOE] = true,
-    [XDlcNpcAttribType.JumpSpeedCOE] = true,
-    [XDlcNpcAttribType.IdleJumpSpeedCOE] = true,
-    [XDlcNpcAttribType.WalkJumpSpeedCOE] = true,
-    [XDlcNpcAttribType.SprintJumpSpeedCOE] = true,
-    [XDlcNpcAttribType.RunStartJumpSpeedCOE] = true,
-    [XDlcNpcAttribType.SprintStartJumpSpeedCOE] = true,
-    [XDlcNpcAttribType.RotationSpeed] = true,
-    [XDlcNpcAttribType.WalkSpeed] = true,
-    [XDlcNpcAttribType.WalkSpeedCOE] = true,
-    [XDlcNpcAttribType.SprintSpeed] = true,
-    [XDlcNpcAttribType.SprintSpeedCOE] = true,
-}
-
----活动特殊属性
-local ActivitySpecialAttribs = {
-    Stamina = 0, --体力
-    WrestlePoint = 1, --拼刀点数
-    OverClock = 2, --超算
-    OverClockEfficiency = 3, --超算效率
-}
-
-local AttrType = XEnumConst.Theatre6.AttrType
+local SettlementStatus = XEnumConst.Theatre6.Settlement
 
 function XTheatre6BattleAgency:OnInit()
     self._DlcWorldAttribMultyBase = 1000 --基础属性配置值乘法基数
@@ -53,67 +26,17 @@ end
 ---用于控制台测试
 ---@param autoChessData XTheatre6NpcData
 function XTheatre6BattleAgency:TestCalNpcAttribsAndBackXAutoChessData(autoChessData)
-    self:_CalNpcAttribsAfterEnterFightRequest(autoChessData)
-    return self:_GetXAutoChessData(autoChessData, true)
-end
-
----@param autoChessData XTheatre6NpcData
-function XTheatre6BattleAgency:_CalNpcAttribsAfterEnterFightRequest(autoChessData, isSelfData)
-    if XTool.IsTableEmpty(autoChessData) then
-        return
-    end
-    self:_AddCharacterBaseAttr(autoChessData)
-end
-
----@param autoChessData XTheatre6NpcData
-function XTheatre6BattleAgency:_AddFightAttribute(characterId, autoChessData, attrId, attrValue)
-    local characterCfg = self._Model:GetCharacterConfig(characterId)
-    local dlcAttrGroupCfg = XMVCA.XDlcWorld:GetAttributeConfigById(characterCfg.DlcAttrGroup)
-    local attrCfg = self._Model:GetAttrConfig(attrId)
-    local attrKey = attrCfg.AttrKey
-
-    if attrCfg.AttrType == AttrType.Dlc then
-        local dlcAttrValue = dlcAttrGroupCfg[attrKey]
-        local attrId = XDlcNpcAttribType[attrKey]
-        local initValue = autoChessData.Attribs[attrId] or 0
-        if EnlargedAttribs[attrKey] then
-            autoChessData.Attribs[attrId] = initValue + attrValue + XMath.ToMinInt(dlcAttrValue * self._DlcWorldAttribMultyBase)
-        else
-            autoChessData.Attribs[attrId] = initValue + attrValue + dlcAttrValue
-        end
-    elseif attrCfg.AttrType == AttrType.Activity then
-        local activityAttrId = ActivitySpecialAttribs[attrKey]
-        if not activityAttrId then
-            XLog.Error(string.format("Gameplay属性未定义：%s", attrKey))
-        else
-            local initValue = autoChessData.GameplayAttribs[activityAttrId] or 0
-            autoChessData.GameplayAttribs[activityAttrId] = initValue + attrValue
-        end
-    end
-end
-
----角色基础属性
----@param autoChessData XTheatre6NpcData
-function XTheatre6BattleAgency:_AddCharacterBaseAttr(autoChessData)
-    if not XTool.IsNumberValid(autoChessData.CharacterId) then
-        return
-    end
-
-    local characterCfg = self._Model:GetCharacterConfig(autoChessData.CharacterId)
-    if not characterCfg then
-        return
-    end
-
-    for attrId, attrValue in ipairs(characterCfg.AttrValue) do
-        self:_AddFightAttribute(autoChessData.CharacterId, autoChessData, attrId, attrValue)
-    end
+    return self:_GetXAutoChessData(autoChessData)
 end
 
 ---@param autoChessDataServer XTheatre6NpcData
-function XTheatre6BattleAgency:_GetXAutoChessData(autoChessDataServer, isDebug)
+function XTheatre6BattleAgency:_GetXAutoChessData(autoChessDataServer)
     local autoChessData = CS.XTheatre6NpcData()
     autoChessData.CharacterId = autoChessDataServer.CharacterId
     autoChessData.FashionId = autoChessDataServer.FashionId
+    if XTool.IsNumberValid(autoChessDataServer.FashionId) then
+        autoChessData.WeaponIds = self._Model:GetFashionConfig(autoChessDataServer.FashionId).DlcWeaponIds
+    end
 
     for i, v in ipairs(autoChessDataServer.Skills) do
         autoChessData.Skills:Add(v)
@@ -122,10 +45,6 @@ function XTheatre6BattleAgency:_GetXAutoChessData(autoChessDataServer, isDebug)
     if autoChessDataServer.Relics then
         for i, v in ipairs(autoChessDataServer.Relics) do
             autoChessData.Relics:Add(v)
-        end
-
-        if isDebug then
-            self:_DebugAddRelicsEffect(autoChessDataServer, autoChessData)
         end
     end
 
@@ -146,28 +65,11 @@ function XTheatre6BattleAgency:_GetXAutoChessData(autoChessDataServer, isDebug)
     return autoChessData
 end
 
----正常流程下，Relic（饰品/遗物）的magicId,是服务端下发的,但是在测试流程下，需要客户端自己来
----@param autoChessDataServer XTheatre6NpcData
-function XTheatre6BattleAgency:_DebugAddRelicsEffect(autoChessDataServer, autoChessData)
-    for i, id in ipairs(autoChessDataServer.Relics) do
-        local cfg = self._Model:GetAttrPackConfig(id)
-        for _, buffId in ipairs(cfg.BuffIds) do
-            autoChessData.MagicIds:Add(buffId)
-        end
-
-        for i, attrId in ipairs(cfg.AttrTypes) do
-            local attrNum = cfg.AttrNums[i]
-            self:_AddFightAttribute(autoChessDataServer.CharacterId, autoChessDataServer, attrId, attrNum)
-        end
-    end
-end
-
 --endregion
 
 --region 正式战斗
 
-function XTheatre6BattleAgency:RequestDlcSingleEnterFight(levelId, successCb, errorCb)
-    local worldId = self._Model:GetWorldId()
+function XTheatre6BattleAgency:RequestDlcSingleEnterFight(worldId, levelId, isPvp, isContinue, errorCb)
     XNetwork.Call("DlcSingleEnterFightRequest", { WorldId = worldId, LevelId = levelId }, function(res)
         if res.Code ~= XCode.Success then
             XUiManager.TipCode(res.Code)
@@ -182,24 +84,25 @@ function XTheatre6BattleAgency:RequestDlcSingleEnterFight(levelId, successCb, er
             return
         end
 
+        if not isPvp or not isContinue then
+            self._Model.Pvp:InitBattleResults()
+        end
+
         local worldData = res.WorldData
-        local args = self:_GetXFightClientArgs()
-        local csWorldData = self:_GetXWorldData(worldData)
+        local args = self:_GetXFightClientArgs(isPvp)
+        local csWorldData = self:_GetXWorldData(worldData, isPvp)
 
         XLuaUiManager.Remove("UiDialog")
         self._MainAgency:ClearPendingSettleData()
+        self._Model.Pvp:InitSummaryData()
 
         CS.StatusSyncFight.XFightClient.RequestExitFight()
         CS.StatusSyncFight.XFight.Init()
         CS.StatusSyncFight.XFightClient.EnterFight(csWorldData, XPlayer.Id, args)
-
-        if successCb then
-            successCb(worldData)
-        end
     end)
 end
 
-function XTheatre6BattleAgency:_GetXFightClientArgs()
+function XTheatre6BattleAgency:_GetXFightClientArgs(isPvp)
     local args = CS.StatusSyncFight.XFightClientArgs()
     --加载进度回调
     args.LoadProgressCb = function(process)
@@ -208,6 +111,8 @@ function XTheatre6BattleAgency:_GetXFightClientArgs()
     --关闭 loading ui
     args.CloseLoadingUiCb = function()
         XLuaUiManager.SafeClose("UiTheatre6Loading")
+        XLuaUiManager.SafeClose("UiTheatre6PVPLoading")
+        XLuaUiManager.SafeClose("UiBlackScreen")
     end
     --结算
     args.SettleCb = function(result, summary)
@@ -215,12 +120,16 @@ function XTheatre6BattleAgency:_GetXFightClientArgs()
     end
     --客户端本地中断游戏
     args.InterruptFightCb = function(result, summary)
-        self:RequestNormalSettle(result, summary)
+        if isPvp then
+            self:RequestPvpGiveUpFight(summary)
+        else
+            self:RequestNormalSettle(result, summary)
+        end
     end
     return args
 end
 
-function XTheatre6BattleAgency:_GetXWorldData(worldData)
+function XTheatre6BattleAgency:_GetXWorldData(worldData, isPvp)
     local csWorldData = CS.XWorldData()
     csWorldData.WorldId = worldData.WorldId
     csWorldData.LevelId = worldData.LevelId
@@ -229,6 +138,11 @@ function XTheatre6BattleAgency:_GetXWorldData(worldData)
     csWorldData.Theatre6GameplayData = CS.XTheatre6GameplayData()
     csWorldData.Theatre6GameplayData.SelfData = self:_GetXWorldGameplayData(worldData.Theatre6GameplayData.SelfData)
     csWorldData.Theatre6GameplayData.EnemyData = self:_GetXWorldGameplayData(worldData.Theatre6GameplayData.EnemyData)
+
+    if isPvp then
+        csWorldData.Theatre6GameplayData.RoundNum = worldData.Theatre6GameplayData.RoundNum
+        csWorldData.Theatre6GameplayData.RoundResults = self._Model.Pvp:GetBattleResults() or table.empty
+    end
 
     if not XTool.IsTableEmpty(worldData.PlayerSeeds) then
         for k, v in pairs(worldData.PlayerSeeds) do
@@ -253,6 +167,7 @@ function XTheatre6BattleAgency:_GetXWorldGameplayData(npcDataServer)
     npcData.CharacterId = npcDataServer.CharacterId
     npcData.CharacterLevel = npcDataServer.CharacterLevel
     npcData.FashionId = npcDataServer.FashionId
+    npcData.PvpEnvMagicId = npcDataServer.PvpEnvMagicId
 
     if not XTool.IsTableEmpty(npcDataServer.Attribs) then
         for k, v in pairs(npcDataServer.Attribs) do
@@ -279,9 +194,7 @@ function XTheatre6BattleAgency:_GetXWorldGameplayData(npcDataServer)
     end
 
     if not XTool.IsTableEmpty(npcDataServer.WeaponIds) then
-        for i, v in ipairs(npcDataServer.WeaponIds) do
-            npcData.WeaponIds[i] = v
-        end
+        npcData.WeaponIds = npcDataServer.WeaponIds
     end
 
     if not XTool.IsTableEmpty(npcDataServer.Relics) then
@@ -293,6 +206,12 @@ function XTheatre6BattleAgency:_GetXWorldGameplayData(npcDataServer)
     if not XTool.IsTableEmpty(npcDataServer.MagicIdsWithoutLevel) then
         for _, v in ipairs(npcDataServer.MagicIdsWithoutLevel) do
             npcData.MagicIdsWithoutLevel:Add(v)
+        end
+    end
+
+    if not XTool.IsTableEmpty(npcDataServer.PvpBuffActionRecord) then
+        for k, v in pairs(npcDataServer.PvpBuffActionRecord) do
+            npcData.PvpBuffActionRecord:Add(k, v)
         end
     end
 
@@ -312,15 +231,102 @@ function XTheatre6BattleAgency:RequestNormalSettle(result, summaryData)
     local roomData = self._Model:GetCurRoomData()
     local modelData = self._Model:GetCurPlayModeData()
 
-    local totalScore = modelData.ScoreTotal
-    local monsterId = roomData.SelectedMonsterId --战斗房间后是新楼层，PlayModeData和RoomData变成了下一层的数据
-    local isChooseRoom = roomData.RoomType == XEnumConst.Theatre6.RoomType.ChooseOption
-    
+    local totalScore = modelData and modelData.ScoreTotal
+    local monsterId = roomData and roomData.SelectedMonsterId --战斗房间后是新楼层，PlayModeData和RoomData变成了下一层的数据
+    local status = (roomData and roomData.RoomType == XEnumConst.Theatre6.RoomType.ChooseOption) and SettlementStatus.ChooseRoom or SettlementStatus.Normal
+
     self._Model:ClearRoomFightInfo()
+    self._MainAgency:ClearGainTipsParams()
 
     XNetwork.CallWithAutoHandleErrorCode("DlcSingleFightSettleRequest", contentBytes, function(res)
-        XLuaUiManager.Open("UiTheatre6RoundSettlement", res.DlcFightSettleData, monsterId, totalScore, isChooseRoom)
+        local settleData = res.DlcFightSettleData
+        local pvpFightResult = settleData and settleData.Theatre6PvpFightResult
+        local curPvpRound = pvpFightResult and #pvpFightResult.RoundResults or 0
+        if pvpFightResult then
+            status = SettlementStatus.Pvp
+            self._Model.Pvp:UpdateBattleResultData(curPvpRound, pvpFightResult, summaryData)
+        end
+        if self:_IsPvpUnfinished(settleData) then
+            -- 等待播放完胜利/失败动效后才发起下一场战斗
+            local delayTime = self._Model:GetIntPvpClientConfigValue("NextPvpFightDelayTime")
+            XScheduleManager.ScheduleOnce(function()
+                if not XFightUtil.IsFighting() then
+                    return
+                end
+                self:_SoftReenterPvpFight(settleData)
+            end, delayTime)
+            return
+        end
+        if status == SettlementStatus.Pvp then
+            if not self._Model.Pvp:IsSummaryDataComplete(curPvpRound) then
+                --战斗记录不完整（中途断线），直接进入段位结算界面
+                XLuaUiManager.Open("UiTheatre6PVPSettlement", pvpFightResult)
+                return
+            end
+        end
+        XLuaUiManager.Open("UiTheatre6RoundSettlement", settleData, monsterId, totalScore, status)
     end, true)
+end
+
+---PVP是否未完成（3局2胜制）
+---@return boolean
+function XTheatre6BattleAgency:_IsPvpUnfinished(settleData)
+    if not settleData or not settleData.Theatre6PvpFightResult then
+        return false
+    end
+
+    -- List<bool> RoundResults; 3 局结果（按局序，true=胜）
+    local roundResults = settleData.Theatre6PvpFightResult.RoundResults
+    local roundCount = roundResults and #roundResults or 0
+    local loseCount = 0
+    for i = 1, roundCount do
+        if not roundResults[i] then
+            loseCount = loseCount + 1
+        end
+    end
+    -- 3局2胜，如果前两场都失败了，就不需要进行第三场了，否则需要完成三场
+    local isPvpFinished = (roundCount == 2 and loseCount == 2) or roundCount >= 3
+    return not isPvpFinished
+end
+
+---进入下一局PVP战斗
+function XTheatre6BattleAgency:_SoftReenterPvpFight(settleData)
+    if not settleData or not settleData.ResultData or not settleData.ResultData.WorldData then
+        return
+    end
+    XLuaUiManager.Open("UiBlackScreen", nil, nil, nil, nil, 1)
+    local worldId = settleData.ResultData.WorldData.WorldId
+    local levelId = settleData.ResultData.WorldData.LevelId
+    XNetwork.Call("DlcSingleEnterFightRequest", { WorldId = worldId, LevelId = levelId }, function(res)
+        if res.Code ~= XCode.Success then
+            XUiManager.TipCode(res.Code)
+            return
+        end
+
+        local worldData = res.WorldData
+        local csWorldData = self:_GetXWorldData(worldData, true)
+        CS.StatusSyncFight.XFightClient.SoftReenterFight(csWorldData)
+    end)
+end
+
+---玩家主动放弃Pvp战斗
+function XTheatre6BattleAgency:RequestPvpGiveUpFight(summaryData)
+    XNetwork.CallWithAutoHandleErrorCode("Theatre6PvpGiveUpFightRequest", nil, function(res)
+        local pvpFightResult = res.FightResult
+        local curPvpRound = #pvpFightResult.RoundResults
+        self._Model.Pvp:UpdateBattleResultData(curPvpRound, pvpFightResult, summaryData)
+        self:OpenPvpSettlement(pvpFightResult)
+    end)
+end
+
+---打开Pvp结算界面。如果战斗记录不完整（中途断线），直接进入段位结算界面
+function XTheatre6BattleAgency:OpenPvpSettlement(pvpFightResult)
+    local totalPvpRound = #pvpFightResult.RoundResults
+    if self._Model.Pvp:IsSummaryDataComplete(totalPvpRound) then
+        XLuaUiManager.Open("UiTheatre6RoundSettlement", { Theatre6PvpFightResult = pvpFightResult }, nil, nil, SettlementStatus.Pvp)
+    else
+        XLuaUiManager.Open("UiTheatre6PVPSettlement", pvpFightResult)
+    end
 end
 
 --endregion
@@ -339,4 +345,6 @@ return XTheatre6BattleAgency
 ---@field MagicIds table<number,number>
 ---@field FashionId number
 ---@field WeaponIds number[]
----@field Relics number[]
+---@field Relics number[]
+---@field PvpEnvMagicId number
+---@field PvpBuffActionRecord table<number,number>

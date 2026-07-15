@@ -65,13 +65,21 @@ local EnumConst = {
         PlacedGird = 2, -- 放置某个方块
         UpdateAllState = 3, -- 更新所有方块的状态
         StagePassed = 4, -- 通关后统一刷新表现
+        TurnableRetractLines = 5, -- 旋转方块线条缩回
+        TurnableExtendLines = 6, -- 旋转方块线条延伸
+        ExtendBlockDisable = 7, -- 延伸块切片缩回前 Disable
+        ExtendBlockEnable = 8, -- 延伸块切片延伸后 Enable
     },
 
     --- 局内动画优先级
     AnimationPriority = {
         SelectGrid = 10,
+        TurnableRetractLines = 15,
         PlacedGird = 20,
+        ExtendBlockDisable = 28,
+        ExtendBlockEnable = 29,
         UpdateAllState = 30,
+        TurnableExtendLines = 35,
         StagePassed = 40,
     },
     
@@ -90,6 +98,11 @@ local EnumConst = {
     VariableLengthBlockExpandType = {
         Horizontal = 1,
         Vertical = 2,
+    },
+    
+    ChapterLockType = {
+        TimeLimit = 1, -- 显式时间约束
+        Condition = 2, -- 自定义条件约束
     }
 }
 

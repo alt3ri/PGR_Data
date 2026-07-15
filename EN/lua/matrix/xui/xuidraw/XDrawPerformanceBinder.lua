@@ -2,8 +2,9 @@
 local XDrawPerformanceBinder = XClass(nil, "XDrawPerformanceBinder")
 
 local TRACK_CHARACTER_ANIM = "CharacterAnim"
-local TRACK_WEAPON_ANIM = "WeaponAnim"
+local TRACK_WEAPON_ANIM_PREFIX = "WeaponAnim"
 local TRACK_CAMERA_CONTROL = "CameraControl"
+local TRACK_PERFORMANCE_EVENT = "PerformanceEvent"
 local TRACK_NPC_MATERIAL_PREFIX = "UiNpcMaterial"
 
 local EFFECT_ROOT_SENTINEL = "EffectRoot"
@@ -170,35 +171,45 @@ function XDrawPerformanceBinder:_BindCharacter(config, npcRoot)
     return charGo
 end
 
--- 绑定武器 → 骨骼挂载 + WeaponAnim AnimationTrack
+-- 绑定武器列表 → 各骨骼挂载 + 各 WeaponAnim_{i} AnimationTrack（i 从 1 起）
 function XDrawPerformanceBinder:_BindWeapon(config, charGo, npcRoot)
-    if config.HasWeapon ~= 1 or string.IsNilOrEmpty(config.WeaponPrefabPath) or XTool.UObjIsNil(charGo) then
+    if XTool.UObjIsNil(charGo) then
         return
     end
-    local mountBone = npcRoot
-    if not string.IsNilOrEmpty(config.WeaponMountBoneName) then
-        local bone = charGo.transform:FindTransformEx(config.WeaponMountBoneName)
-        if bone then
-            mountBone = bone
-        else
-            XLog.Error(self._logPrefix .. "武器挂点骨骼 " .. config.WeaponMountBoneName .. " 在角色模型中找不到，fallback 到 NpcRoot")
-        end
-    end
-    local weaponGo = mountBone:LoadPrefabEx(config.WeaponPrefabPath)
-    if XTool.UObjIsNil(weaponGo) then
+    local prefabPaths = config.WeaponPrefabPaths
+    if not prefabPaths then
         return
     end
-    weaponGo.transform.localScale = Vector3.one
-    local sync = weaponGo:GetComponent(BoneTransformSyncType)
-    if sync then
-        sync:SetTarget(charGo.transform)
-    end
-    if self._trackMap[TRACK_WEAPON_ANIM] then
-        local animator = weaponGo:GetComponent(AnimatorType)
-        if XTool.UObjIsNil(animator) then
-            animator = weaponGo:AddComponent(AnimatorType)
+    local boneNames = config.WeaponMountBoneNames
+    for index, prefabPath in pairs(prefabPaths) do
+        if not string.IsNilOrEmpty(prefabPath) then
+            local boneName = boneNames and boneNames[index] or nil
+            local mountBone = npcRoot
+            if not string.IsNilOrEmpty(boneName) then
+                local bone = charGo.transform:FindTransformEx(boneName)
+                if bone then
+                    mountBone = bone
+                else
+                    XLog.Error(self._logPrefix .. "武器[" .. index .. "]挂点骨骼 " .. boneName .. " 在角色模型中找不到，fallback 到 NpcRoot")
+                end
+            end
+            local weaponGo = mountBone:LoadPrefabEx(prefabPath)
+            if not XTool.UObjIsNil(weaponGo) then
+                weaponGo.transform.localScale = Vector3.one
+                local sync = weaponGo:GetComponent(BoneTransformSyncType)
+                if sync then
+                    sync:SetTarget(charGo.transform)
+                end
+                local trackName = TRACK_WEAPON_ANIM_PREFIX .. "_" .. index
+                if self._trackMap[trackName] then
+                    local animator = weaponGo:GetComponent(AnimatorType)
+                    if XTool.UObjIsNil(animator) then
+                        animator = weaponGo:AddComponent(AnimatorType)
+                    end
+                    self:_BindAnimation(trackName, animator)
+                end
+            end
         end
-        self:_BindAnimation(TRACK_WEAPON_ANIM, animator)
     end
 end
 
@@ -256,6 +267,8 @@ function XDrawPerformanceBinder:_BindEffects(effectInfos, charGo, mainCamGo, eff
                 if not XTool.UObjIsNil(effectScaler) then
                     effectScaler.CameraSearchRule = CS.XEffectScaler.XCameraSearchRule.CustomCamera
                     effectScaler.CustomCamera = mainCamera
+                    -- 因为直接拿的战斗的特效使用，需要关闭这个选项才能在UI场景里正确缩放
+                    effectScaler.IsFightSceneEffect = false
                 end
             end
             -- 特效初始不可见，由 XUiEffectTrack 在 Timeline 播放时控制激活
@@ -263,6 +276,22 @@ function XDrawPerformanceBinder:_BindEffects(effectInfos, charGo, mainCamGo, eff
             self:_BindEffect(info.trackName, fxGo, renderingProxy)
         end
     end
+end
+
+-- 绑定演出事件轨道（AnimationTrack 派发 AnimationEvent → 音频/隐藏/定格/通用 帧事件）
+function XDrawPerformanceBinder:_BindPerformanceEventTrack(knownTracks)
+    local track = self._trackMap[TRACK_PERFORMANCE_EVENT]
+    if not track then
+        return
+    end
+    knownTracks[TRACK_PERFORMANCE_EVENT] = true
+    local timelineGo = self._director.gameObject
+    -- AnimationTrack 必须绑定 Animator 才会派发其 AnimationClip 上的 AnimationEvent
+    local animator = timelineGo:GetComponent(AnimatorType)
+    if XTool.UObjIsNil(animator) then
+        animator = timelineGo:AddComponent(AnimatorType)
+    end
+    self._director:SetGenericBinding(track, animator)
 end
 
 -- 绑定材质替换轨道（UiNpcMaterial_{MatId}）→ GenericBinding 绑定 renderingProxy
@@ -327,8 +356,13 @@ function XDrawPerformanceBinder:Bind()
 
     local effectInfos, knownTracks = self:_BuildEffectBindInfos(config)
     knownTracks[TRACK_CHARACTER_ANIM] = true
-    knownTracks[TRACK_WEAPON_ANIM] = true
     knownTracks[TRACK_CAMERA_CONTROL] = true
+    -- 武器动画轨道按 WeaponAnim_{i} 命名（i 从 1 起）
+    for trackName, _ in pairs(self._trackMap) do
+        if string.StartsWith(trackName, TRACK_WEAPON_ANIM_PREFIX) then
+            knownTracks[trackName] = true
+        end
+    end
 
     -- 1. 绑定角色和武器
     local characterGo = self:_BindCharacter(config, rootUi.NpcRoot)
@@ -348,43 +382,37 @@ function XDrawPerformanceBinder:Bind()
     -- 3. 绑定特效（ExposedReference + GenericBinding renderingProxy）
     self:_BindEffects(effectInfos, characterGo, mainCameraGo, rootUi.EffectRoot, renderingProxy)
 
-    -- 4. 绑定材质替换轨道（GenericBinding renderingProxy）
+    -- 4. 绑定演出事件轨道（音频/隐藏/定格/通用帧事件）
+    self:_BindPerformanceEventTrack(knownTracks)
+
+    -- 5. 绑定材质替换轨道（GenericBinding renderingProxy）
     self:_BindMaterialTracks(knownTracks, renderingProxy)
 
-    -- 5. 绑定节点组和延迟事件（ActivationTrack → 角色骨骼）
+    -- 6. 绑定节点组和延迟事件（ActivationTrack → 角色骨骼）
     self:_BindNodeGroups(knownTracks, characterGo)
-
-    self._director.time = 0
-    self._director:Evaluate()
 
     self._trackMap = nil
 end
 
--- 播放 Timeline，并在播放结束后调用回调
----@param callback function|nil
----@return number|nil scheduleId
-function XDrawPerformanceBinder:Play(callback)
+-- 播放 Timeline
+function XDrawPerformanceBinder:Play()
     if XTool.UObjIsNil(self._director) then
-        XLog.Error(self._logPrefix .. "Play 被调用但 Director 不可用，可能是 Bind 失败，跳过演出直接回调")
-        if callback then
-            callback()
-        end
-        return nil
+        XLog.Error(self._logPrefix .. "Play 被调用但 Director 不可用，可能是 Bind 失败")
+        return
     end
     self._director.time = 0
     self._director:Stop()
     self._director:Evaluate()
     self._director:Play()
-    if not callback then
-        return nil
+end
+
+-- 获取 Timeline 时长（秒）
+---@return number
+function XDrawPerformanceBinder:GetDuration()
+    if XTool.UObjIsNil(self._director) then
+        return 0
     end
-    local duration = self._director.duration
-    if duration and duration > 0 then
-        local delay = math.ceil(duration * XScheduleManager.SECOND)
-        return XScheduleManager.ScheduleOnce(callback, delay)
-    end
-    callback()
-    return nil
+    return self._director.duration or 0
 end
 
 -- 停止播放

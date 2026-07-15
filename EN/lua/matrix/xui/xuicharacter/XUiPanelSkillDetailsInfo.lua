@@ -139,22 +139,9 @@ function XUiPanelSkillDetailsInfo:RefreshSkillLevel(subSkill)
     self.SubSkillId  = subSkill.SubSkillId
     local levelStr = subSkill.Level
     
-    local addLevel = 0
-    local addLevelStr = ""
-    local resonanceLevel = self.CharacterAgency:GetResonanceSkillLevel(self.CharacterId, self.SubSkillId)
-    local assignLevel = XDataCenter.FubenAssignManager.GetSkillLevel(self.CharacterId, self.SubSkillId)
-
-    if (resonanceLevel and resonanceLevel > 0) then
-        addLevel = addLevel + resonanceLevel
-    end
-
-    if (assignLevel and assignLevel > 0) then
-        addLevel = addLevel + assignLevel
-    end
-
+    local addLevel = XMVCA.XCharacter:GetSkillPlusLevel(self.CharacterId, self.SubSkillId)
     if addLevel ~= 0 then
-        addLevelStr = addLevelStr .. CS.XTextManager.GetText("CharacterSkillLevelDetail", addLevel)
-        levelStr = levelStr .. addLevelStr
+        levelStr = levelStr .. CS.XTextManager.GetText("CharacterSkillLevelDetail", addLevel)
         self.BtnDetails.gameObject:SetActiveEx(true)
     else
         self.BtnDetails.gameObject:SetActiveEx(false)

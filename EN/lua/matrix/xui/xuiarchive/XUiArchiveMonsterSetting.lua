@@ -30,7 +30,7 @@ function XUiArchiveMonsterSetting:SelectType(npcId)
 end
 
 function XUiArchiveMonsterSetting:SetMonsterSettingData(npcId)
-    local settingList = self._Control:GetArchiveMonsterSettingList(npcId, XEnumConst.Archive.MonsterSettingType.Setting)
+    local settingList = self._Control.MonsterControl:GetArchiveMonsterSettingList(npcId, XEnumConst.Archive.MonsterSettingType.Setting)
 
     for index = 1, SettingMax do
         if settingList[index] then
@@ -53,7 +53,7 @@ function XUiArchiveMonsterSetting:SetMonsterSettingData(npcId)
 end
 
 function XUiArchiveMonsterSetting:SetMonsterStoryData(npcId)
-    local settingList = self._Control:GetArchiveMonsterSettingList(npcId, XEnumConst.Archive.MonsterSettingType.Story)
+    local settingList = self._Control.MonsterControl:GetArchiveMonsterSettingList(npcId, XEnumConst.Archive.MonsterSettingType.Story)
 
     for index = 1, StoryMax do
         if settingList[index] then
@@ -75,6 +75,6 @@ function XUiArchiveMonsterSetting:SetMonsterStoryData(npcId)
     end
 end
 
-
-
+
+
 return XUiArchiveMonsterSetting

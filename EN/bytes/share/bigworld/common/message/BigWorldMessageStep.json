@@ -217,7 +217,7 @@
         "VideoId": null,
         "PhotoRefId": null,
         "Image": null,
-        "Text": "['\uff01']",
+        "Text": "['!']",
         "NextStep": "[34]"
     },
     {
@@ -4705,7 +4705,7 @@
         "VideoId": null,
         "PhotoRefId": null,
         "Image": null,
-        "Text": "['\uff1f']",
+        "Text": "['?']",
         "NextStep": "[20130203]"
     },
     {
@@ -4722,7 +4722,7 @@
         "VideoId": null,
         "PhotoRefId": null,
         "Image": null,
-        "Text": "['\uff1f']",
+        "Text": "['?']",
         "NextStep": "[20130204]"
     },
     {
@@ -5742,7 +5742,7 @@
         "VideoId": null,
         "PhotoRefId": null,
         "Image": null,
-        "Text": "['Already?', 'Award ceremony?']",
+        "Text": "['Oh, is it today?', 'Award ceremony?']",
         "NextStep": "[70030103, 70030104]"
     },
     {
@@ -5759,7 +5759,7 @@
         "VideoId": null,
         "PhotoRefId": null,
         "Image": null,
-        "Text": "['Already?']",
+        "Text": "['Oh, is it today?']",
         "NextStep": "[70030105]"
     },
     {
@@ -5895,7 +5895,7 @@
         "VideoId": null,
         "PhotoRefId": null,
         "Image": null,
-        "Text": "[\"When you're ready, please head to the Military Security Area.We're to meet Vanessa there first; she'll be escorting us to the venue.\"]",
+        "Text": "[\"When you're ready, please head to the Military Security  Area. We're to meet Vanessa there first; she'll be escorting us to the venue.\"]",
         "NextStep": "[70030112]"
     },
     {
@@ -5912,7 +5912,7 @@
         "VideoId": null,
         "PhotoRefId": null,
         "Image": null,
-        "Text": "['I understand.']",
+        "Text": "['I see.']",
         "NextStep": "[70030113]"
     },
     {
@@ -5929,7 +5929,7 @@
         "VideoId": null,
         "PhotoRefId": null,
         "Image": null,
-        "Text": "['I understand.']",
+        "Text": "['I see.']",
         "NextStep": null
     },
     {
@@ -5946,14 +5946,14 @@
         "VideoId": null,
         "PhotoRefId": null,
         "Image": null,
-        "Text": "['\uff01\uff01\uff01']",
+        "Text": "['!!!']",
         "NextStep": "[20160102]"
     },
     {
         "Id": 20160102,
         "MessageId": null,
         "StepId": null,
-        "Duration": 3.0,
+        "Duration": 2.0,
         "IsCanSkip": true,
         "IsEndStep": null,
         "Type": 1,
@@ -5970,7 +5970,7 @@
         "Id": 20160103,
         "MessageId": null,
         "StepId": null,
-        "Duration": 5.0,
+        "Duration": 3.0,
         "IsCanSkip": true,
         "IsEndStep": null,
         "Type": 1,
@@ -6269,7 +6269,7 @@
         "VideoId": null,
         "PhotoRefId": null,
         "Image": null,
-        "Text": "['Oh, n-no! Code red! Something terrible has happened!']",
+        "Text": "['Oh, n-no! Code red! This is bad, this is really bad!']",
         "NextStep": "[20150102]"
     },
     {
@@ -6524,7 +6524,7 @@
         "VideoId": null,
         "PhotoRefId": null,
         "Image": null,
-        "Text": "['Thank you. I had a feeling you might make it.']",
+        "Text": "['Thank you. I had a feeling you might show up.']",
         "NextStep": "[70030203]"
     },
     {
@@ -6541,7 +6541,7 @@
         "VideoId": null,
         "PhotoRefId": null,
         "Image": null,
-        "Text": "['Thank you. I had a feeling you might make it.']",
+        "Text": "['Thank you. I had a feeling you might show up.']",
         "NextStep": "[70030205]"
     },
     {
@@ -6626,7 +6626,7 @@
         "VideoId": null,
         "PhotoRefId": null,
         "Image": null,
-        "Text": "[\"Yeah, Strike Hawk's still got a lot going on the surface. I only managed to get away because Kamui and the others offered to cover my shift.\"]",
+        "Text": "[\"I did. Strike Hawk's still has a lot of work on the surface. I only managed to come because Kamui and the others offered to cover my duty.\"]",
         "NextStep": "[70030210]"
     },
     {
@@ -6643,7 +6643,7 @@
         "VideoId": null,
         "PhotoRefId": null,
         "Image": null,
-        "Text": "[\"To be honest... there are a few things only I can handle right now. I'm about to head back out. Just caught a second before launch to radio in and say congrats.\"]",
+        "Text": "['The truth is... there are a few missions only I can handle, so I need to head back now. I can only take a moment here to congratulate you over comms before launch.']",
         "NextStep": "[70030211]"
     },
     {
@@ -6660,28 +6660,11 @@
         "VideoId": null,
         "PhotoRefId": null,
         "Image": null,
-        "Text": "['Just seeing you is more than enough for me.', 'Good luck with the mission, Chrome.']",
-        "NextStep": "[70030212, 70030213]"
+        "Text": "['Good luck with the mission, Chrome.']",
+        "NextStep": "[70030212]"
     },
     {
         "Id": 70030212,
-        "MessageId": null,
-        "StepId": null,
-        "Duration": 0.5,
-        "IsCanSkip": true,
-        "IsEndStep": null,
-        "Type": 2,
-        "SpeakerId": null,
-        "Emoji": null,
-        "VideoImage": null,
-        "VideoId": null,
-        "PhotoRefId": null,
-        "Image": null,
-        "Text": "['Just seeing you is more than enough for me.']",
-        "NextStep": "[70030214]"
-    },
-    {
-        "Id": 70030213,
         "MessageId": null,
         "StepId": null,
         "Duration": 0.5,

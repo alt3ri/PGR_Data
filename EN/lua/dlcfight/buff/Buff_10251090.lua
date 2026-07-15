@@ -29,7 +29,7 @@ function XBuffScript10251090:OnLuaSkillStart(eventArgs)
     if eventArgs._launcherUUID ~= self._npcUUID then return end
     self.originAttrib1 = self._proxy:GetNpcGameplayAttribValue(self._uuid,ETheatre6AttribType.Stamina)
     --self:LogError(".....抓到拼刀属性"..self.originAttrib1)
-    if self.originAttrib1 > self.TLCost then
+    if self.originAttrib1 > 0 then
         --self:LogError(".....抓到敌人"..self._enemyUUID)
         self._proxy:Theatre6ChangeStaminaValue(self._npcUUID, -self.TLCost, 0) --扣除10体力
         self.check = 1
@@ -47,7 +47,6 @@ function XBuffScript10251090:OnLuaSkillEnd(eventArgs)
     if eventArgs._launcherUUID ~= self._npcUUID then return end
     if self.check == 1 then
         self._critController:AddSkillCount(self._stackCount)
-        --self:LogError(".....扣了敌人超算？"..self._enemyUUID)
         self.check = 0
     end
 end

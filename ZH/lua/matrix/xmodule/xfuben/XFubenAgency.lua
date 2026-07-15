@@ -2319,6 +2319,8 @@ function XFubenAgency:EnterBfrtFight(stageId, team, captainPos, firstFightPos, g
     preFight.GeneralSkill = generalSkillId
     preFight.EnterCgIndex = enterCgIndex
     preFight.SettleCgIndex = settleCgIndex
+    -- Bfrt loading 会遮挡 UiCueMark，这里跳过通用涂装提示弹窗
+    preFight.SkipBattleFashionUndownloadedTip = true
 
     for _, v in pairs(team) do
         table.insert(preFight.CardIds, v)

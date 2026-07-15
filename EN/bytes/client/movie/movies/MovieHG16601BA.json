@@ -413,7 +413,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: \"It's a human figure she doesn't recognize, yet somehow knows all too well\u2014you.\"}"
+        "Params": "{3: \"It's a human figure she doesn't recognize, yet somehow knows all too well.\"}"
     },
     {
         "Id": 33,
@@ -1219,7 +1219,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '(Fire)', 3: '95', 8: '2'}"
+        "Params": "{2: '(Open fire)', 3: '95', 8: '2'}"
     },
     {
         "Id": 95,
@@ -2038,7 +2038,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": 200.0,
-        "Params": "{2: 'Ground level, Former F.O.S. Military Command College, Prism Square.'}"
+        "Params": "{2: 'Surface, Former F.O.S. Military Command College, Prism Square.'}"
     },
     {
         "Id": 158,
@@ -2077,7 +2077,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: 'The Fog incident is over. The F.O.S. starship has returned to Babylonia.'}"
+        "Params": "{3: 'The Mist incident is over. The F.O.S. starship has returned to Babylonia.'}"
     },
     {
         "Id": 161,
@@ -2272,7 +2272,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '(Fire)', 3: '176'}"
+        "Params": "{2: '(Open fire)', 3: '176'}"
     },
     {
         "Id": 176,
@@ -3169,7 +3169,7 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: 'Alpha', 3: 'Why are you here? Did you see that vision too?', 4: '1', 18: '100016999'}"
+        "Params": "{2: 'Alpha', 3: 'Why are you here? Did you see that illusion too?', 4: '1', 18: '100016999'}"
     },
     {
         "Id": 245,
@@ -3195,7 +3195,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: 'What vision are you talking about?', 3: '247'}"
+        "Params": "{2: 'What illusion are you talking about?', 3: '247'}"
     },
     {
         "Id": 247,
@@ -3221,7 +3221,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: 'Alpha', 3: \"Something... I don't know what. But it was calling me here.\", 4: '1', 18: '100017000'}"
+        "Params": "{2: 'Alpha', 3: \"Something... I'm not certain of, is calling for me from here.\", 4: '1', 18: '100017000'}"
     },
     {
         "Id": 249,
@@ -3260,7 +3260,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: 'Alpha studies you, remembering your modified appearance from that vision. She shakes her head.'}"
+        "Params": "{3: 'Alpha studies you, remembering your modified appearance from that illusion. She shakes her head.'}"
     },
     {
         "Id": 252,
@@ -3286,7 +3286,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: 'Alpha', 3: 'Probably just a hallucination. Nothing more.', 4: '1', 18: '100017001'}"
+        "Params": "{2: 'Alpha', 3: 'Probably just an illusion.', 4: '1', 18: '100017001'}"
     },
     {
         "Id": 254,
@@ -3325,7 +3325,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '???', 3: 'That wasn\\'t \"just\" a hallucination.', 18: '100017002'}"
+        "Params": "{2: '???', 3: 'That wasn\\'t \"just\" an illusion.', 18: '100017002'}"
     },
     {
         "Id": 257,
@@ -3511,19 +3511,6 @@
     },
     {
         "Id": 271,
-        "ActionId": 271,
-        "NextActionId": null,
-        "Type": 205,
-        "IsBlock": null,
-        "IsEnd": null,
-        "BeginAnim": null,
-        "EndAnim": null,
-        "BeginDelay": null,
-        "EndDelay": null,
-        "Params": "{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront18.png', 3: '0', 4: '1', 5: '0.3'}"
-    },
-    {
-        "Id": 272,
         "ActionId": 272,
         "NextActionId": null,
         "Type": 401,
@@ -3536,7 +3523,33 @@
         "Params": "{1: '2', 2: '4825'}"
     },
     {
+        "Id": 272,
+        "ActionId": 2000,
+        "NextActionId": null,
+        "Type": 501,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": null,
+        "EndAnim": null,
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiChuanSongMengOpen.prefab', 2: '1', 5: '10'}"
+    },
+    {
         "Id": 273,
+        "ActionId": 2001,
+        "NextActionId": null,
+        "Type": 511,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": null,
+        "EndAnim": null,
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{1: '10', 2: '0', 3: '0|0|3000'}"
+    },
+    {
+        "Id": 274,
         "ActionId": 273,
         "NextActionId": null,
         "Type": 301,
@@ -3549,7 +3562,7 @@
         "Params": "{3: 'Crack\u2014crack-crack-crack\u2014'}"
     },
     {
-        "Id": 274,
+        "Id": 275,
         "ActionId": 274,
         "NextActionId": null,
         "Type": 401,
@@ -3562,7 +3575,20 @@
         "Params": "{1: '2', 2: '6731'}"
     },
     {
-        "Id": 275,
+        "Id": 276,
+        "ActionId": 2003,
+        "NextActionId": null,
+        "Type": 511,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": null,
+        "EndAnim": null,
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{1: '10', 2: '1', 3: '0|0|2000'}"
+    },
+    {
+        "Id": 277,
         "ActionId": 275,
         "NextActionId": null,
         "Type": 301,
@@ -3575,7 +3601,7 @@
         "Params": "{3: 'Then it splinters fast, spiderwebbing outward. The sound goes from a low rumble to a sharp, brittle crack.'}"
     },
     {
-        "Id": 276,
+        "Id": 278,
         "ActionId": 276,
         "NextActionId": null,
         "Type": 301,
@@ -3588,7 +3614,7 @@
         "Params": "{3: 'Space itself is breaking. A black rift opens out of nowhere.'}"
     },
     {
-        "Id": 277,
+        "Id": 279,
         "ActionId": 277,
         "NextActionId": null,
         "Type": 501,
@@ -3601,7 +3627,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab', 2: '2'}"
     },
     {
-        "Id": 278,
+        "Id": 280,
         "ActionId": 278,
         "NextActionId": null,
         "Type": 301,
@@ -3614,7 +3640,20 @@
         "Params": "{3: 'White mist pours out, rolling over rubble, flooding the ground, rising past your ankles.'}"
     },
     {
-        "Id": 279,
+        "Id": 281,
+        "ActionId": 2004,
+        "NextActionId": null,
+        "Type": 511,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": null,
+        "EndAnim": null,
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{1: '10', 2: '1', 3: '0|0|1500'}"
+    },
+    {
+        "Id": 282,
         "ActionId": 279,
         "NextActionId": null,
         "Type": 301,
@@ -3627,7 +3666,7 @@
         "Params": "{3: 'A blood-red left hand reaches out from inside and clamps onto the edge.'}"
     },
     {
-        "Id": 280,
+        "Id": 283,
         "ActionId": 280,
         "NextActionId": null,
         "Type": 306,
@@ -3640,7 +3679,7 @@
         "Params": null
     },
     {
-        "Id": 281,
+        "Id": 284,
         "ActionId": 281,
         "NextActionId": null,
         "Type": 302,
@@ -3650,10 +3689,10 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '...That hand?', 3: '282', 4: '...The Fog?', 5: '282'}"
+        "Params": "{2: '...That hand?', 3: '282', 4: '...The Mist?', 5: '282'}"
     },
     {
-        "Id": 282,
+        "Id": 285,
         "ActionId": 282,
         "NextActionId": null,
         "Type": 401,
@@ -3666,7 +3705,7 @@
         "Params": "{1: '2', 2: '10022001'}"
     },
     {
-        "Id": 283,
+        "Id": 286,
         "ActionId": 283,
         "NextActionId": null,
         "Type": 201,
@@ -3679,7 +3718,7 @@
         "Params": "{1: '1', 2: '501611', 3: '5', 7: '1'}"
     },
     {
-        "Id": 284,
+        "Id": 287,
         "ActionId": 284,
         "NextActionId": null,
         "Type": 301,
@@ -3692,7 +3731,7 @@
         "Params": "{1: '1', 3: 'Alpha draws her dagger, steps forward, and shields you.'}"
     },
     {
-        "Id": 285,
+        "Id": 288,
         "ActionId": 285,
         "NextActionId": null,
         "Type": 301,
@@ -3705,7 +3744,7 @@
         "Params": "{2: 'Alpha', 3: \"Watch out, it's coming!\", 4: '1', 18: '100017004'}"
     },
     {
-        "Id": 286,
+        "Id": 289,
         "ActionId": 286,
         "NextActionId": null,
         "Type": 202,
@@ -3718,7 +3757,20 @@
         "Params": "{1: '1', 6: '1'}"
     },
     {
-        "Id": 287,
+        "Id": 290,
+        "ActionId": 2005,
+        "NextActionId": null,
+        "Type": 511,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": null,
+        "EndAnim": null,
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{1: '10', 2: '0.5', 3: '0|0|0'}"
+    },
+    {
+        "Id": 291,
         "ActionId": 287,
         "NextActionId": null,
         "Type": 401,
@@ -3731,20 +3783,7 @@
         "Params": "{1: '2', 2: '4825'}"
     },
     {
-        "Id": 288,
-        "ActionId": 288,
-        "NextActionId": null,
-        "Type": 501,
-        "IsBlock": null,
-        "IsEnd": null,
-        "BeginAnim": null,
-        "EndAnim": null,
-        "BeginDelay": null,
-        "EndDelay": null,
-        "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefGlassBroken.prefab', 2: '3'}"
-    },
-    {
-        "Id": 289,
+        "Id": 292,
         "ActionId": 289,
         "NextActionId": null,
         "Type": 301,
@@ -3757,7 +3796,7 @@
         "Params": "{3: 'SLASH\u2014!'}"
     },
     {
-        "Id": 290,
+        "Id": 293,
         "ActionId": 290,
         "NextActionId": null,
         "Type": 301,
@@ -3770,33 +3809,7 @@
         "Params": "{3: 'Another hand tears through. Both arms wrench the rift wider.'}"
     },
     {
-        "Id": 291,
-        "ActionId": 291,
-        "NextActionId": null,
-        "Type": 505,
-        "IsBlock": null,
-        "IsEnd": null,
-        "BeginAnim": null,
-        "EndAnim": null,
-        "BeginDelay": null,
-        "EndDelay": null,
-        "Params": "{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiActivityBriefBase/FxUiActivityBriefGlassBroken.prefab'}"
-    },
-    {
-        "Id": 292,
-        "ActionId": 292,
-        "NextActionId": null,
-        "Type": 205,
-        "IsBlock": null,
-        "IsEnd": null,
-        "BeginAnim": null,
-        "EndAnim": null,
-        "BeginDelay": null,
-        "EndDelay": null,
-        "Params": "{1: '1004', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront18.png', 3: '1', 4: '0', 5: '0.3'}"
-    },
-    {
-        "Id": 293,
+        "Id": 294,
         "ActionId": 293,
         "NextActionId": null,
         "Type": 201,
@@ -3809,7 +3822,7 @@
         "Params": "{1: '1', 2: '500620'}"
     },
     {
-        "Id": 294,
+        "Id": 295,
         "ActionId": 294,
         "NextActionId": null,
         "Type": 301,
@@ -3820,19 +3833,6 @@
         "BeginDelay": null,
         "EndDelay": null,
         "Params": "{1: '1', 3: 'A figure steps through the mist and warped light, entering this world.'}"
-    },
-    {
-        "Id": 295,
-        "ActionId": 295,
-        "NextActionId": null,
-        "Type": 205,
-        "IsBlock": null,
-        "IsEnd": null,
-        "BeginAnim": null,
-        "EndAnim": null,
-        "BeginDelay": null,
-        "EndDelay": null,
-        "Params": "{1: '1004', 3: '1', 4: '1', 5: '0'}"
     },
     {
         "Id": 296,
@@ -3871,7 +3871,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '???', 3: 'Finally... there you are.', 4: '1', 18: '100017006'}"
+        "Params": "{2: '???', 3: 'Finally found you...', 4: '1', 18: '100017006'}"
     },
     {
         "Id": 299,
@@ -3988,7 +3988,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '???', 3: 'Switched frames, did you? Good. That makes this easier.', 4: '2', 18: '100017008'}"
+        "Params": "{2: '???', 3: \"Switched to a new frame, I see? It's better this way.\", 4: '2', 18: '100017008'}"
     },
     {
         "Id": 308,
@@ -4005,6 +4005,19 @@
     },
     {
         "Id": 309,
+        "ActionId": 2006,
+        "NextActionId": null,
+        "Type": 505,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": null,
+        "EndAnim": null,
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiChuanSongMengOpen.prefab', 5: '10'}"
+    },
+    {
+        "Id": 310,
         "ActionId": 309,
         "NextActionId": null,
         "Type": 505,
@@ -4017,7 +4030,7 @@
         "Params": "{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiDuihualiziLoopWhite.prefab'}"
     },
     {
-        "Id": 310,
+        "Id": 311,
         "ActionId": 310,
         "NextActionId": null,
         "Type": 501,
@@ -4030,7 +4043,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}"
     },
     {
-        "Id": 311,
+        "Id": 312,
         "ActionId": 311,
         "NextActionId": null,
         "Type": 201,
@@ -4043,7 +4056,7 @@
         "Params": "{1: '2', 2: '501611', 3: '5', 7: '1'}"
     },
     {
-        "Id": 312,
+        "Id": 313,
         "ActionId": 312,
         "NextActionId": null,
         "Type": 301,
@@ -4056,7 +4069,7 @@
         "Params": "{1: '1', 2: 'Alpha', 3: 'Who are you?!', 4: '2', 18: '100017010'}"
     },
     {
-        "Id": 313,
+        "Id": 314,
         "ActionId": 313,
         "NextActionId": null,
         "Type": 202,
@@ -4069,7 +4082,7 @@
         "Params": "{1: '2', 6: '1'}"
     },
     {
-        "Id": 314,
+        "Id": 315,
         "ActionId": 314,
         "NextActionId": null,
         "Type": 201,
@@ -4082,7 +4095,7 @@
         "Params": "{1: '1', 2: '500612'}"
     },
     {
-        "Id": 315,
+        "Id": 316,
         "ActionId": 315,
         "NextActionId": null,
         "Type": 401,
@@ -4095,7 +4108,7 @@
         "Params": "{1: '2', 2: '5849'}"
     },
     {
-        "Id": 316,
+        "Id": 317,
         "ActionId": 316,
         "NextActionId": null,
         "Type": 301,
@@ -4108,7 +4121,7 @@
         "Params": "{1: '1', 3: 'Dark crimson lightning sparks in her hand, laced with the Punishing Virus.'}"
     },
     {
-        "Id": 317,
+        "Id": 318,
         "ActionId": 317,
         "NextActionId": null,
         "Type": 301,
@@ -4118,10 +4131,10 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '???', 3: 'I am the path you never chose, the possibility you abandoned. I am...', 4: '1', 18: '100017011'}"
+        "Params": "{2: '???', 3: 'I am the path you never took, the probability you forsook. I am...', 4: '1', 18: '100017011'}"
     },
     {
-        "Id": 318,
+        "Id": 319,
         "ActionId": 318,
         "NextActionId": null,
         "Type": 202,
@@ -4134,7 +4147,7 @@
         "Params": "{1: '1', 6: '1'}"
     },
     {
-        "Id": 319,
+        "Id": 320,
         "ActionId": 319,
         "NextActionId": null,
         "Type": 401,
@@ -4147,7 +4160,7 @@
         "Params": "{1: '2', 2: '10042004'}"
     },
     {
-        "Id": 320,
+        "Id": 321,
         "ActionId": 320,
         "NextActionId": null,
         "Type": 501,
@@ -4160,7 +4173,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '3'}"
     },
     {
-        "Id": 321,
+        "Id": 322,
         "ActionId": 321,
         "NextActionId": null,
         "Type": 301,
@@ -4173,7 +4186,7 @@
         "Params": "{3: \"Before she can finish, she swings. It's too fast to track. A curved wave of red lightning slices through the air.\"}"
     },
     {
-        "Id": 322,
+        "Id": 323,
         "ActionId": 322,
         "NextActionId": null,
         "Type": 201,
@@ -4186,7 +4199,7 @@
         "Params": "{1: '1', 2: '500612', 7: '1'}"
     },
     {
-        "Id": 323,
+        "Id": 324,
         "ActionId": 323,
         "NextActionId": null,
         "Type": 301,
@@ -4199,7 +4212,7 @@
         "Params": "{1: '1', 2: 'Shadow', 3: '...Your Shadow!', 4: '1', 18: '100017012'}"
     },
     {
-        "Id": 324,
+        "Id": 325,
         "ActionId": 324,
         "NextActionId": null,
         "Type": 202,
@@ -4212,7 +4225,7 @@
         "Params": "{1: '1'}"
     },
     {
-        "Id": 325,
+        "Id": 326,
         "ActionId": 325,
         "NextActionId": null,
         "Type": 301,
@@ -4225,7 +4238,7 @@
         "Params": "{3: \"It's like a command. Behind her, the rift spills open and a flood of monsters pours out, rushing straight at you and Alpha.\"}"
     },
     {
-        "Id": 326,
+        "Id": 327,
         "ActionId": 326,
         "NextActionId": null,
         "Type": 201,
@@ -4238,7 +4251,7 @@
         "Params": "{1: '1', 2: '501611', 3: '5'}"
     },
     {
-        "Id": 327,
+        "Id": 328,
         "ActionId": 327,
         "NextActionId": null,
         "Type": 301,
@@ -4251,7 +4264,7 @@
         "Params": "{1: '1', 2: 'Alpha', 3: 'Tsk.', 4: '1', 18: '100017013'}"
     },
     {
-        "Id": 328,
+        "Id": 329,
         "ActionId": 328,
         "NextActionId": null,
         "Type": 202,
@@ -4264,7 +4277,7 @@
         "Params": "{1: '1', 6: '1'}"
     },
     {
-        "Id": 329,
+        "Id": 330,
         "ActionId": 329,
         "NextActionId": null,
         "Type": 401,
@@ -4277,7 +4290,7 @@
         "Params": "{1: '2', 2: '10042004'}"
     },
     {
-        "Id": 330,
+        "Id": 331,
         "ActionId": 330,
         "NextActionId": null,
         "Type": 501,
@@ -4290,7 +4303,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '3'}"
     },
     {
-        "Id": 331,
+        "Id": 332,
         "ActionId": 331,
         "NextActionId": null,
         "Type": 301,
@@ -4303,7 +4316,7 @@
         "Params": "{3: 'Alpha tightens her grip on the dagger. Crimson virus energy flares around her hand. She slashes once, sending her own blade wave forward.'}"
     },
     {
-        "Id": 332,
+        "Id": 333,
         "ActionId": 332,
         "NextActionId": null,
         "Type": 501,
@@ -4316,7 +4329,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '3'}"
     },
     {
-        "Id": 333,
+        "Id": 334,
         "ActionId": 333,
         "NextActionId": null,
         "Type": 401,
@@ -4329,7 +4342,7 @@
         "Params": "{1: '2', 2: '844007'}"
     },
     {
-        "Id": 334,
+        "Id": 335,
         "ActionId": 334,
         "NextActionId": null,
         "Type": 301,
@@ -4342,7 +4355,7 @@
         "Params": "{3: 'The two arcs collide midair and explode. Shockwaves and debris spray across the square.'}"
     },
     {
-        "Id": 335,
+        "Id": 336,
         "ActionId": 335,
         "NextActionId": null,
         "Type": 201,
@@ -4355,7 +4368,7 @@
         "Params": "{1: '1', 2: '500902', 7: '1'}"
     },
     {
-        "Id": 336,
+        "Id": 337,
         "ActionId": 336,
         "NextActionId": null,
         "Type": 401,
@@ -4368,7 +4381,7 @@
         "Params": "{1: '2', 2: '844090'}"
     },
     {
-        "Id": 337,
+        "Id": 338,
         "ActionId": 337,
         "NextActionId": null,
         "Type": 302,
@@ -4381,7 +4394,7 @@
         "Params": "{2: '(Draw gun and fire)', 3: '338'}"
     },
     {
-        "Id": 338,
+        "Id": 339,
         "ActionId": 338,
         "NextActionId": null,
         "Type": 401,
@@ -4394,7 +4407,7 @@
         "Params": "{1: '2', 2: '1510'}"
     },
     {
-        "Id": 339,
+        "Id": 340,
         "ActionId": 339,
         "NextActionId": null,
         "Type": 401,
@@ -4407,7 +4420,7 @@
         "Params": "{1: '2', 2: '1510'}"
     },
     {
-        "Id": 340,
+        "Id": 341,
         "ActionId": 340,
         "NextActionId": null,
         "Type": 401,
@@ -4420,7 +4433,7 @@
         "Params": "{1: '2', 2: '1510'}"
     },
     {
-        "Id": 341,
+        "Id": 342,
         "ActionId": 341,
         "NextActionId": null,
         "Type": 301,
@@ -4433,7 +4446,7 @@
         "Params": "{3: 'Bang! Bang! Bang!'}"
     },
     {
-        "Id": 342,
+        "Id": 343,
         "ActionId": 342,
         "NextActionId": null,
         "Type": 301,
@@ -4446,7 +4459,7 @@
         "Params": "{3: 'A barrage of bullets rains forth, precisely striking the approaching Hetero-Creatures.'}"
     },
     {
-        "Id": 343,
+        "Id": 344,
         "ActionId": 343,
         "NextActionId": null,
         "Type": 501,
@@ -4459,7 +4472,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: '3'}"
     },
     {
-        "Id": 344,
+        "Id": 345,
         "ActionId": 344,
         "NextActionId": null,
         "Type": 401,
@@ -4472,7 +4485,7 @@
         "Params": "{1: '2', 2: '5152'}"
     },
     {
-        "Id": 345,
+        "Id": 346,
         "ActionId": 345,
         "NextActionId": null,
         "Type": 203,
@@ -4485,7 +4498,7 @@
         "Params": "{1: '1', 2: '0', 3: '-30'}"
     },
     {
-        "Id": 346,
+        "Id": 347,
         "ActionId": 346,
         "NextActionId": null,
         "Type": 501,
@@ -4498,7 +4511,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: '3'}"
     },
     {
-        "Id": 347,
+        "Id": 348,
         "ActionId": 347,
         "NextActionId": null,
         "Type": 401,
@@ -4511,7 +4524,7 @@
         "Params": "{1: '2', 2: '5152'}"
     },
     {
-        "Id": 348,
+        "Id": 349,
         "ActionId": 348,
         "NextActionId": null,
         "Type": 201,
@@ -4524,7 +4537,7 @@
         "Params": "{1: '1', 2: '501404'}"
     },
     {
-        "Id": 349,
+        "Id": 350,
         "ActionId": 349,
         "NextActionId": null,
         "Type": 501,
@@ -4537,7 +4550,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHitQiangHuo.prefab', 2: '3'}"
     },
     {
-        "Id": 350,
+        "Id": 351,
         "ActionId": 350,
         "NextActionId": null,
         "Type": 401,
@@ -4550,7 +4563,7 @@
         "Params": "{1: '2', 2: '5152'}"
     },
     {
-        "Id": 351,
+        "Id": 352,
         "ActionId": 351,
         "NextActionId": null,
         "Type": 301,
@@ -4563,7 +4576,7 @@
         "Params": "{1: '1', 3: 'The first shot pierces its left eye. The second tears its open throat. The third punches up from the jaw and blows away half its head.'}"
     },
     {
-        "Id": 352,
+        "Id": 353,
         "ActionId": 352,
         "NextActionId": null,
         "Type": 401,
@@ -4576,7 +4589,7 @@
         "Params": "{1: '2', 2: '4006'}"
     },
     {
-        "Id": 353,
+        "Id": 354,
         "ActionId": 353,
         "NextActionId": null,
         "Type": 203,
@@ -4589,7 +4602,7 @@
         "Params": "{1: '1', 2: '0.2', 4: '-100'}"
     },
     {
-        "Id": 354,
+        "Id": 355,
         "ActionId": 354,
         "NextActionId": null,
         "Type": 202,
@@ -4602,7 +4615,7 @@
         "Params": "{1: '1'}"
     },
     {
-        "Id": 355,
+        "Id": 356,
         "ActionId": 355,
         "NextActionId": null,
         "Type": 301,
@@ -4615,7 +4628,7 @@
         "Params": "{3: 'It collapses. The Hetero-Creatures behind it stampede over the body and grind it into scraps.'}"
     },
     {
-        "Id": 356,
+        "Id": 357,
         "ActionId": 356,
         "NextActionId": null,
         "Type": 201,
@@ -4628,7 +4641,7 @@
         "Params": "{1: '1', 2: '501611', 5: '-50'}"
     },
     {
-        "Id": 357,
+        "Id": 358,
         "ActionId": 357,
         "NextActionId": null,
         "Type": 401,
@@ -4641,7 +4654,7 @@
         "Params": "{1: '2', 2: '2796'}"
     },
     {
-        "Id": 358,
+        "Id": 359,
         "ActionId": 358,
         "NextActionId": null,
         "Type": 301,
@@ -4651,10 +4664,10 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 3: \"Alpha's right hand finds the hilt at her waist. She lowers her stance. The ground cracks under her feet.\"}"
+        "Params": "{1: '1', 3: \"Alpha's right hand finds the hilt at her waist. She lowers her stance. The ground cracks under her feet. \"}"
     },
     {
-        "Id": 359,
+        "Id": 360,
         "ActionId": 359,
         "NextActionId": null,
         "Type": 203,
@@ -4667,7 +4680,7 @@
         "Params": "{1: '1', 2: '0.15', 5: '-100'}"
     },
     {
-        "Id": 360,
+        "Id": 361,
         "ActionId": 360,
         "NextActionId": null,
         "Type": 202,
@@ -4680,7 +4693,7 @@
         "Params": "{1: '1'}"
     },
     {
-        "Id": 361,
+        "Id": 362,
         "ActionId": 361,
         "NextActionId": null,
         "Type": 401,
@@ -4693,7 +4706,7 @@
         "Params": "{1: '2', 2: '10042001'}"
     },
     {
-        "Id": 362,
+        "Id": 363,
         "ActionId": 362,
         "NextActionId": null,
         "Type": 502,
@@ -4706,7 +4719,7 @@
         "Params": "{1: 'RImgBg1Shake'}"
     },
     {
-        "Id": 363,
+        "Id": 364,
         "ActionId": 363,
         "NextActionId": null,
         "Type": 301,
@@ -4719,7 +4732,7 @@
         "Params": "{1: '1', 3: 'In the next instant, she becomes a red blur and drives straight into the monster tide.', 22: '1'}"
     },
     {
-        "Id": 364,
+        "Id": 365,
         "ActionId": 364,
         "NextActionId": null,
         "Type": 505,
@@ -4732,7 +4745,7 @@
         "Params": "{1: 'RImgBg1Shake'}"
     },
     {
-        "Id": 365,
+        "Id": 366,
         "ActionId": 365,
         "NextActionId": null,
         "Type": 501,
@@ -4745,7 +4758,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '3', 5: '6'}"
     },
     {
-        "Id": 366,
+        "Id": 367,
         "ActionId": 366,
         "NextActionId": null,
         "Type": 511,
@@ -4758,7 +4771,7 @@
         "Params": "{1: '6', 2: '0', 4: '-30'}"
     },
     {
-        "Id": 367,
+        "Id": 368,
         "ActionId": 367,
         "NextActionId": null,
         "Type": 201,
@@ -4771,7 +4784,7 @@
         "Params": "{1: '1', 2: '500902', 4: '-400', 7: '1'}"
     },
     {
-        "Id": 368,
+        "Id": 369,
         "ActionId": 368,
         "NextActionId": null,
         "Type": 201,
@@ -4784,7 +4797,7 @@
         "Params": "{1: '2', 2: '500902', 7: '1'}"
     },
     {
-        "Id": 369,
+        "Id": 370,
         "ActionId": 369,
         "NextActionId": null,
         "Type": 201,
@@ -4797,7 +4810,7 @@
         "Params": "{1: '3', 2: '500902', 4: '400', 7: '1'}"
     },
     {
-        "Id": 370,
+        "Id": 371,
         "ActionId": 370,
         "NextActionId": null,
         "Type": 401,
@@ -4810,7 +4823,7 @@
         "Params": "{1: '2', 2: '10042001'}"
     },
     {
-        "Id": 371,
+        "Id": 372,
         "ActionId": 371,
         "NextActionId": null,
         "Type": 203,
@@ -4823,7 +4836,7 @@
         "Params": "{1: '1', 2: '0.15', 3: '-400', 4: '-100'}"
     },
     {
-        "Id": 372,
+        "Id": 373,
         "ActionId": 372,
         "NextActionId": null,
         "Type": 203,
@@ -4836,7 +4849,7 @@
         "Params": "{1: '2', 2: '0.15', 4: '-100'}"
     },
     {
-        "Id": 373,
+        "Id": 374,
         "ActionId": 373,
         "NextActionId": null,
         "Type": 401,
@@ -4849,7 +4862,7 @@
         "Params": "{1: '2', 2: '4006'}"
     },
     {
-        "Id": 374,
+        "Id": 375,
         "ActionId": 374,
         "NextActionId": null,
         "Type": 203,
@@ -4862,7 +4875,7 @@
         "Params": "{1: '3', 2: '0.15', 3: '400', 4: '-100'}"
     },
     {
-        "Id": 375,
+        "Id": 376,
         "ActionId": 375,
         "NextActionId": null,
         "Type": 202,
@@ -4875,7 +4888,7 @@
         "Params": "{1: '1', 2: '2', 3: '3'}"
     },
     {
-        "Id": 376,
+        "Id": 377,
         "ActionId": 376,
         "NextActionId": null,
         "Type": 401,
@@ -4888,7 +4901,7 @@
         "Params": "{1: '2', 2: '2921'}"
     },
     {
-        "Id": 377,
+        "Id": 378,
         "ActionId": 377,
         "NextActionId": null,
         "Type": 301,
@@ -4901,7 +4914,7 @@
         "Params": "{1: '1', 3: 'A half-moon sweep of deep crimson flashes out. The Corrupted and Hetero-Creatures in front split in two before they can even scream.'}"
     },
     {
-        "Id": 378,
+        "Id": 379,
         "ActionId": 378,
         "NextActionId": null,
         "Type": 201,
@@ -4914,7 +4927,7 @@
         "Params": "{1: '1', 2: '501611'}"
     },
     {
-        "Id": 379,
+        "Id": 380,
         "ActionId": 379,
         "NextActionId": null,
         "Type": 301,
@@ -4927,7 +4940,7 @@
         "Params": "{1: '1', 3: 'Alpha holds the line like a boulder in a flood, stopping the monsters by sheer force.'}"
     },
     {
-        "Id": 380,
+        "Id": 381,
         "ActionId": 380,
         "NextActionId": null,
         "Type": 301,
@@ -4940,7 +4953,7 @@
         "Params": "{3: 'She looks past the chaos, straight at Shadow in the back.'}"
     },
     {
-        "Id": 381,
+        "Id": 382,
         "ActionId": 381,
         "NextActionId": null,
         "Type": 301,
@@ -4953,7 +4966,7 @@
         "Params": "{2: 'Alpha', 3: \"Is that all you've got?\", 4: '1', 18: '100017014'}"
     },
     {
-        "Id": 382,
+        "Id": 383,
         "ActionId": 382,
         "NextActionId": null,
         "Type": 201,
@@ -4966,7 +4979,7 @@
         "Params": "{1: '1', 2: '500612'}"
     },
     {
-        "Id": 383,
+        "Id": 384,
         "ActionId": 383,
         "NextActionId": null,
         "Type": 301,
@@ -4979,7 +4992,7 @@
         "Params": "{1: '1', 2: 'Shadow', 3: 'Heh.', 4: '1', 18: '100017015'}"
     },
     {
-        "Id": 384,
+        "Id": 385,
         "ActionId": 384,
         "NextActionId": null,
         "Type": 301,
@@ -4992,7 +5005,7 @@
         "Params": "{3: 'Shadow ignores the provocation. Her arms crossed, she is relaxed like this is entertainment.'}"
     },
     {
-        "Id": 385,
+        "Id": 386,
         "ActionId": 385,
         "NextActionId": null,
         "Type": 202,
@@ -5005,7 +5018,7 @@
         "Params": "{1: '1'}"
     },
     {
-        "Id": 386,
+        "Id": 387,
         "ActionId": 386,
         "NextActionId": null,
         "Type": 306,
@@ -5018,7 +5031,7 @@
         "Params": "{1: '1'}"
     },
     {
-        "Id": 387,
+        "Id": 388,
         "ActionId": 387,
         "NextActionId": null,
         "Type": 301,
@@ -5031,7 +5044,7 @@
         "Params": "{3: 'But her eyes never leave Alpha. She studies her every swing, every step, every movement.'}"
     },
     {
-        "Id": 388,
+        "Id": 389,
         "ActionId": 388,
         "NextActionId": null,
         "Type": 301,
@@ -5044,7 +5057,7 @@
         "Params": "{3: \"Alpha's new frame clearly surprises Shadow. That's why she doesn't join the fight herself. Not yet.\"}"
     },
     {
-        "Id": 389,
+        "Id": 390,
         "ActionId": 389,
         "NextActionId": null,
         "Type": 306,
@@ -5057,7 +5070,7 @@
         "Params": null
     },
     {
-        "Id": 390,
+        "Id": 391,
         "ActionId": 390,
         "NextActionId": null,
         "Type": 201,
@@ -5070,7 +5083,7 @@
         "Params": "{1: '1', 2: '500612'}"
     },
     {
-        "Id": 391,
+        "Id": 392,
         "ActionId": 391,
         "NextActionId": null,
         "Type": 301,
@@ -5080,10 +5093,10 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: 'Shadow', 3: \"Interesting. You're stronger than I expected.\", 4: '1', 18: '100017016'}"
+        "Params": "{1: '1', 2: 'Shadow', 3: \"Fascinating... You're stronger than I imagined.\", 4: '1', 18: '100017016'}"
     },
     {
-        "Id": 392,
+        "Id": 393,
         "ActionId": 392,
         "NextActionId": null,
         "Type": 301,
@@ -5096,7 +5109,7 @@
         "Params": "{3: 'Her left hand rests lightly on the hilt behind her waist.'}"
     },
     {
-        "Id": 393,
+        "Id": 394,
         "ActionId": 393,
         "NextActionId": null,
         "Type": 301,
@@ -5106,10 +5119,10 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: 'Shadow', 3: \"I've seen enough. Now I'll test you myself.\", 4: '1', 18: '100017017'}"
+        "Params": "{2: 'Shadow', 3: 'Enough observation. Time to test you myself.', 4: '1', 18: '100017017'}"
     },
     {
-        "Id": 394,
+        "Id": 395,
         "ActionId": 394,
         "NextActionId": null,
         "Type": 203,
@@ -5122,7 +5135,7 @@
         "Params": "{1: '1', 2: '0.2', 4: '-100', 5: '-100'}"
     },
     {
-        "Id": 395,
+        "Id": 396,
         "ActionId": 395,
         "NextActionId": null,
         "Type": 202,
@@ -5135,7 +5148,7 @@
         "Params": "{1: '1', 6: '1'}"
     },
     {
-        "Id": 396,
+        "Id": 397,
         "ActionId": 396,
         "NextActionId": null,
         "Type": 401,
@@ -5148,7 +5161,7 @@
         "Params": "{1: '2', 2: '9342045'}"
     },
     {
-        "Id": 397,
+        "Id": 398,
         "ActionId": 397,
         "NextActionId": null,
         "Type": 301,
@@ -5161,7 +5174,7 @@
         "Params": "{3: \"In a blink, she's gone from where she stood.\"}"
     },
     {
-        "Id": 398,
+        "Id": 399,
         "ActionId": 398,
         "NextActionId": null,
         "Type": 301,
@@ -5174,7 +5187,7 @@
         "Params": "{3: 'A streak, barely visible, tears through the air and cuts straight toward Alpha.'}"
     },
     {
-        "Id": 399,
+        "Id": 400,
         "ActionId": 399,
         "NextActionId": null,
         "Type": 501,
@@ -5187,7 +5200,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}"
     },
     {
-        "Id": 400,
+        "Id": 401,
         "ActionId": 400,
         "NextActionId": null,
         "Type": 501,
@@ -5200,7 +5213,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}"
     },
     {
-        "Id": 401,
+        "Id": 402,
         "ActionId": 401,
         "NextActionId": null,
         "Type": 201,
@@ -5213,7 +5226,7 @@
         "Params": "{1: '1', 2: '500612', 7: '1'}"
     },
     {
-        "Id": 402,
+        "Id": 403,
         "ActionId": 402,
         "NextActionId": null,
         "Type": 301,
@@ -5226,7 +5239,7 @@
         "Params": "{1: '1', 2: 'Shadow', 3: 'Haargh!', 4: '1', 18: '100017018'}"
     },
     {
-        "Id": 403,
+        "Id": 404,
         "ActionId": 403,
         "NextActionId": null,
         "Type": 401,
@@ -5239,7 +5252,7 @@
         "Params": "{1: '2', 2: '10042005'}"
     },
     {
-        "Id": 404,
+        "Id": 405,
         "ActionId": 404,
         "NextActionId": null,
         "Type": 301,
@@ -5252,7 +5265,7 @@
         "Params": "{3: 'Anything in her path gets sliced in half, Corrupted or Hetero-Creature alike.'}"
     },
     {
-        "Id": 405,
+        "Id": 406,
         "ActionId": 405,
         "NextActionId": null,
         "Type": 501,
@@ -5265,7 +5278,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}"
     },
     {
-        "Id": 406,
+        "Id": 407,
         "ActionId": 406,
         "NextActionId": null,
         "Type": 505,
@@ -5278,7 +5291,7 @@
         "Params": "{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}"
     },
     {
-        "Id": 407,
+        "Id": 408,
         "ActionId": 407,
         "NextActionId": null,
         "Type": 501,
@@ -5291,7 +5304,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '3'}"
     },
     {
-        "Id": 408,
+        "Id": 409,
         "ActionId": 408,
         "NextActionId": null,
         "Type": 201,
@@ -5304,7 +5317,7 @@
         "Params": "{1: '1', 2: '500612', 4: '-300', 7: '1'}"
     },
     {
-        "Id": 409,
+        "Id": 410,
         "ActionId": 409,
         "NextActionId": null,
         "Type": 201,
@@ -5317,7 +5330,7 @@
         "Params": "{1: '2', 2: '501611', 3: '5', 4: '300', 7: '1'}"
     },
     {
-        "Id": 410,
+        "Id": 411,
         "ActionId": 410,
         "NextActionId": null,
         "Type": 401,
@@ -5330,7 +5343,7 @@
         "Params": "{1: '2', 2: '844007'}"
     },
     {
-        "Id": 411,
+        "Id": 412,
         "ActionId": 411,
         "NextActionId": null,
         "Type": 301,
@@ -5343,7 +5356,7 @@
         "Params": "{1: '1', 3: 'Clang!'}"
     },
     {
-        "Id": 412,
+        "Id": 413,
         "ActionId": 412,
         "NextActionId": null,
         "Type": 401,
@@ -5356,7 +5369,7 @@
         "Params": "{1: '2', 2: '4535'}"
     },
     {
-        "Id": 413,
+        "Id": 414,
         "ActionId": 413,
         "NextActionId": null,
         "Type": 301,
@@ -5369,7 +5382,7 @@
         "Params": "{3: 'Their blades collide with a thunderous crash, sending shockwaves outward and cracking the stone tiles underfoot.'}"
     },
     {
-        "Id": 414,
+        "Id": 415,
         "ActionId": 414,
         "NextActionId": null,
         "Type": 301,
@@ -5382,7 +5395,7 @@
         "Params": "{2: 'Alpha', 3: 'What... are you?', 4: '2', 18: '100017019'}"
     },
     {
-        "Id": 415,
+        "Id": 416,
         "ActionId": 415,
         "NextActionId": null,
         "Type": 301,
@@ -5392,10 +5405,10 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: \"Alpha holds her crimson blade in a reverse grip. Shadow's dagger locks against it, grinding hard. Sparks burst where the edges meet.\"}"
+        "Params": "{3: 'Alpha holds her crimson blade in a reverse grip. \"Shadow\\'s\" dagger locks against it, grinding hard. Sparks burst where the edges meet.'}"
     },
     {
-        "Id": 416,
+        "Id": 417,
         "ActionId": 416,
         "NextActionId": null,
         "Type": 301,
@@ -5408,7 +5421,7 @@
         "Params": "{2: 'Shadow', 3: 'Curious?', 4: '1', 18: '100017020'}"
     },
     {
-        "Id": 417,
+        "Id": 418,
         "ActionId": 417,
         "NextActionId": null,
         "Type": 301,
@@ -5418,10 +5431,10 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: 'Shadow', 3: \"I told you. I'm your shadow.\", 4: '1', 18: '100017021'}"
+        "Params": "{2: 'Shadow', 3: \"I already told you. I'm your shadow.\", 4: '1', 18: '100017021'}"
     },
     {
-        "Id": 418,
+        "Id": 419,
         "ActionId": 418,
         "NextActionId": null,
         "Type": 401,
@@ -5434,7 +5447,7 @@
         "Params": "{1: '2', 2: '6310'}"
     },
     {
-        "Id": 419,
+        "Id": 420,
         "ActionId": 419,
         "NextActionId": null,
         "Type": 203,
@@ -5447,7 +5460,7 @@
         "Params": "{1: '1', 2: '0.15', 3: '-600'}"
     },
     {
-        "Id": 420,
+        "Id": 421,
         "ActionId": 420,
         "NextActionId": null,
         "Type": 203,
@@ -5460,7 +5473,7 @@
         "Params": "{1: '2', 2: '0.15', 3: '600'}"
     },
     {
-        "Id": 421,
+        "Id": 422,
         "ActionId": 421,
         "NextActionId": null,
         "Type": 202,
@@ -5473,7 +5486,7 @@
         "Params": "{1: '1', 2: '2'}"
     },
     {
-        "Id": 422,
+        "Id": 423,
         "ActionId": 422,
         "NextActionId": null,
         "Type": 301,
@@ -5486,7 +5499,7 @@
         "Params": "{3: 'Before the words even leave her lips, both fighters vanish from where they stood.'}"
     },
     {
-        "Id": 423,
+        "Id": 424,
         "ActionId": 423,
         "NextActionId": null,
         "Type": 306,
@@ -5499,7 +5512,7 @@
         "Params": "{1: '1'}"
     },
     {
-        "Id": 424,
+        "Id": 425,
         "ActionId": 424,
         "NextActionId": null,
         "Type": 501,
@@ -5512,7 +5525,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}"
     },
     {
-        "Id": 425,
+        "Id": 426,
         "ActionId": 425,
         "NextActionId": null,
         "Type": 401,
@@ -5525,7 +5538,7 @@
         "Params": "{1: '2', 2: '844006'}"
     },
     {
-        "Id": 426,
+        "Id": 427,
         "ActionId": 426,
         "NextActionId": null,
         "Type": 501,
@@ -5538,7 +5551,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}"
     },
     {
-        "Id": 427,
+        "Id": 428,
         "ActionId": 427,
         "NextActionId": null,
         "Type": 401,
@@ -5551,7 +5564,7 @@
         "Params": "{1: '2', 2: '844006'}"
     },
     {
-        "Id": 428,
+        "Id": 429,
         "ActionId": 428,
         "NextActionId": null,
         "Type": 502,
@@ -5564,7 +5577,7 @@
         "Params": "{1: 'DialogEnable'}"
     },
     {
-        "Id": 429,
+        "Id": 430,
         "ActionId": 429,
         "NextActionId": null,
         "Type": 301,
@@ -5577,7 +5590,7 @@
         "Params": "{3: 'Clang! Clang!'}"
     },
     {
-        "Id": 430,
+        "Id": 431,
         "ActionId": 430,
         "NextActionId": null,
         "Type": 301,
@@ -5590,7 +5603,7 @@
         "Params": "{3: \"A rapid burst of blade clashes erupts, so fast they're almost impossible to tell apart.\"}"
     },
     {
-        "Id": 431,
+        "Id": 432,
         "ActionId": 431,
         "NextActionId": null,
         "Type": 501,
@@ -5603,7 +5616,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}"
     },
     {
-        "Id": 432,
+        "Id": 433,
         "ActionId": 432,
         "NextActionId": null,
         "Type": 201,
@@ -5616,7 +5629,7 @@
         "Params": "{1: '1', 2: '500612', 4: '-800', 7: '1'}"
     },
     {
-        "Id": 433,
+        "Id": 434,
         "ActionId": 433,
         "NextActionId": null,
         "Type": 201,
@@ -5629,7 +5642,7 @@
         "Params": "{1: '2', 2: '501611', 4: '800', 7: '1'}"
     },
     {
-        "Id": 434,
+        "Id": 435,
         "ActionId": 434,
         "NextActionId": null,
         "Type": 203,
@@ -5642,7 +5655,7 @@
         "Params": "{1: '1', 2: '0.15', 3: '-300'}"
     },
     {
-        "Id": 435,
+        "Id": 436,
         "ActionId": 435,
         "NextActionId": null,
         "Type": 203,
@@ -5655,7 +5668,7 @@
         "Params": "{1: '2', 2: '0.15', 3: '300'}"
     },
     {
-        "Id": 436,
+        "Id": 437,
         "ActionId": 436,
         "NextActionId": null,
         "Type": 401,
@@ -5668,7 +5681,7 @@
         "Params": "{1: '2', 2: '11106007'}"
     },
     {
-        "Id": 437,
+        "Id": 438,
         "ActionId": 437,
         "NextActionId": null,
         "Type": 203,
@@ -5681,7 +5694,7 @@
         "Params": "{1: '1', 2: '0.15', 3: '-800'}"
     },
     {
-        "Id": 438,
+        "Id": 439,
         "ActionId": 438,
         "NextActionId": null,
         "Type": 203,
@@ -5694,7 +5707,7 @@
         "Params": "{1: '2', 2: '0.15', 3: '800'}"
     },
     {
-        "Id": 439,
+        "Id": 440,
         "ActionId": 439,
         "NextActionId": null,
         "Type": 202,
@@ -5707,7 +5720,7 @@
         "Params": "{1: '1', 2: '2', 6: '1'}"
     },
     {
-        "Id": 440,
+        "Id": 441,
         "ActionId": 440,
         "NextActionId": null,
         "Type": 201,
@@ -5720,7 +5733,7 @@
         "Params": "{1: '1', 2: '500612', 4: '-800', 7: '1'}"
     },
     {
-        "Id": 441,
+        "Id": 442,
         "ActionId": 441,
         "NextActionId": null,
         "Type": 201,
@@ -5733,7 +5746,7 @@
         "Params": "{1: '2', 2: '501611', 4: '800', 7: '1'}"
     },
     {
-        "Id": 442,
+        "Id": 443,
         "ActionId": 442,
         "NextActionId": null,
         "Type": 203,
@@ -5746,7 +5759,7 @@
         "Params": "{1: '1', 2: '0.15', 3: '-300'}"
     },
     {
-        "Id": 443,
+        "Id": 444,
         "ActionId": 443,
         "NextActionId": null,
         "Type": 203,
@@ -5759,7 +5772,7 @@
         "Params": "{1: '2', 2: '0.15', 3: '300'}"
     },
     {
-        "Id": 444,
+        "Id": 445,
         "ActionId": 444,
         "NextActionId": null,
         "Type": 502,
@@ -5772,7 +5785,7 @@
         "Params": "{1: 'RImgBg1Shake'}"
     },
     {
-        "Id": 445,
+        "Id": 446,
         "ActionId": 445,
         "NextActionId": null,
         "Type": 401,
@@ -5785,7 +5798,7 @@
         "Params": "{1: '2', 2: '11106008'}"
     },
     {
-        "Id": 446,
+        "Id": 447,
         "ActionId": 446,
         "NextActionId": null,
         "Type": 501,
@@ -5798,7 +5811,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}"
     },
     {
-        "Id": 447,
+        "Id": 448,
         "ActionId": 447,
         "NextActionId": null,
         "Type": 202,
@@ -5811,7 +5824,7 @@
         "Params": "{1: '1', 2: '2', 6: '1'}"
     },
     {
-        "Id": 448,
+        "Id": 449,
         "ActionId": 448,
         "NextActionId": null,
         "Type": 301,
@@ -5824,7 +5837,7 @@
         "Params": "{3: 'Two figures weave and split across the square, colliding again and again. Every clash throws out a visible ring of shockwaves.'}"
     },
     {
-        "Id": 449,
+        "Id": 450,
         "ActionId": 449,
         "NextActionId": null,
         "Type": 301,
@@ -5837,7 +5850,7 @@
         "Params": "{3: \"The Corrupted and Hetero-Creatures pull back at Shadow's command. The slow ones get caught in the crossfire and shredded.\"}"
     },
     {
-        "Id": 450,
+        "Id": 451,
         "ActionId": 450,
         "NextActionId": null,
         "Type": 111,
@@ -5850,7 +5863,7 @@
         "Params": "{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu01.prefab'}"
     },
     {
-        "Id": 451,
+        "Id": 452,
         "ActionId": 451,
         "NextActionId": null,
         "Type": 111,
@@ -5863,7 +5876,7 @@
         "Params": "{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu02.prefab'}"
     },
     {
-        "Id": 452,
+        "Id": 453,
         "ActionId": 452,
         "NextActionId": null,
         "Type": 401,
@@ -5876,7 +5889,7 @@
         "Params": "{1: '2', 2: '6310'}"
     },
     {
-        "Id": 453,
+        "Id": 454,
         "ActionId": 453,
         "NextActionId": null,
         "Type": 201,
@@ -5889,7 +5902,7 @@
         "Params": "{1: '2', 2: '501611', 3: '5', 4: '800', 5: '-50', 6: '-150', 7: '1'}"
     },
     {
-        "Id": 454,
+        "Id": 455,
         "ActionId": 454,
         "NextActionId": null,
         "Type": 203,
@@ -5902,7 +5915,7 @@
         "Params": "{1: '2', 2: '0.15', 4: '-50', 5: '-150'}"
     },
     {
-        "Id": 455,
+        "Id": 456,
         "ActionId": 455,
         "NextActionId": null,
         "Type": 301,
@@ -5915,7 +5928,7 @@
         "Params": "{1: '1', 3: \"Alpha's strikes are ruthless and precise. Every cut goes for the kill.\"}"
     },
     {
-        "Id": 456,
+        "Id": 457,
         "ActionId": 456,
         "NextActionId": null,
         "Type": 301,
@@ -5928,7 +5941,7 @@
         "Params": "{3: 'No wasted motion. No wasted strength. Each swing feels like a death sentence.'}"
     },
     {
-        "Id": 457,
+        "Id": 458,
         "ActionId": 457,
         "NextActionId": null,
         "Type": 203,
@@ -5941,7 +5954,7 @@
         "Params": "{1: '2', 2: '0.15', 3: '-800'}"
     },
     {
-        "Id": 458,
+        "Id": 459,
         "ActionId": 458,
         "NextActionId": null,
         "Type": 202,
@@ -5954,7 +5967,7 @@
         "Params": "{1: '2'}"
     },
     {
-        "Id": 459,
+        "Id": 460,
         "ActionId": 459,
         "NextActionId": null,
         "Type": 401,
@@ -5967,7 +5980,7 @@
         "Params": "{1: '2', 2: '6310'}"
     },
     {
-        "Id": 460,
+        "Id": 461,
         "ActionId": 460,
         "NextActionId": null,
         "Type": 201,
@@ -5980,7 +5993,7 @@
         "Params": "{1: '1', 2: '500612', 4: '-800', 5: '-50', 6: '-150', 7: '1'}"
     },
     {
-        "Id": 461,
+        "Id": 462,
         "ActionId": 461,
         "NextActionId": null,
         "Type": 203,
@@ -5993,7 +6006,7 @@
         "Params": "{1: '1', 2: '0.15', 4: '-50', 5: '-150'}"
     },
     {
-        "Id": 462,
+        "Id": 463,
         "ActionId": 462,
         "NextActionId": null,
         "Type": 301,
@@ -6006,7 +6019,7 @@
         "Params": "{1: '1', 3: \"Shadow is just as lethal, but there's something unhinged in her rhythm.\"}"
     },
     {
-        "Id": 463,
+        "Id": 464,
         "ActionId": 463,
         "NextActionId": null,
         "Type": 301,
@@ -6019,7 +6032,7 @@
         "Params": "{3: \"She fights like she doesn't care about getting hurt. She trades damage for damage, forcing Alpha to adjust on the fly.\"}"
     },
     {
-        "Id": 464,
+        "Id": 465,
         "ActionId": 464,
         "NextActionId": null,
         "Type": 203,
@@ -6032,7 +6045,7 @@
         "Params": "{1: '1', 2: '0.15', 3: '800'}"
     },
     {
-        "Id": 465,
+        "Id": 466,
         "ActionId": 465,
         "NextActionId": null,
         "Type": 202,
@@ -6045,7 +6058,7 @@
         "Params": "{1: '1', 6: '1'}"
     },
     {
-        "Id": 466,
+        "Id": 467,
         "ActionId": 466,
         "NextActionId": null,
         "Type": 111,
@@ -6058,7 +6071,7 @@
         "Params": "{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieMohu02.prefab'}"
     },
     {
-        "Id": 467,
+        "Id": 468,
         "ActionId": 467,
         "NextActionId": null,
         "Type": 401,
@@ -6071,7 +6084,7 @@
         "Params": "{1: '2', 2: '11106007'}"
     },
     {
-        "Id": 468,
+        "Id": 469,
         "ActionId": 468,
         "NextActionId": null,
         "Type": 501,
@@ -6084,7 +6097,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '3'}"
     },
     {
-        "Id": 469,
+        "Id": 470,
         "ActionId": 469,
         "NextActionId": null,
         "Type": 201,
@@ -6097,7 +6110,7 @@
         "Params": "{1: '1', 2: '500612', 4: '-600', 7: '1'}"
     },
     {
-        "Id": 470,
+        "Id": 471,
         "ActionId": 470,
         "NextActionId": null,
         "Type": 201,
@@ -6110,7 +6123,7 @@
         "Params": "{1: '2', 2: '501611', 4: '600', 7: '1'}"
     },
     {
-        "Id": 471,
+        "Id": 472,
         "ActionId": 471,
         "NextActionId": null,
         "Type": 203,
@@ -6123,7 +6136,7 @@
         "Params": "{1: '1', 2: '0.15', 3: '-300'}"
     },
     {
-        "Id": 472,
+        "Id": 473,
         "ActionId": 472,
         "NextActionId": null,
         "Type": 203,
@@ -6136,7 +6149,7 @@
         "Params": "{1: '2', 2: '0.15', 3: '300'}"
     },
     {
-        "Id": 473,
+        "Id": 474,
         "ActionId": 473,
         "NextActionId": null,
         "Type": 301,
@@ -6149,7 +6162,7 @@
         "Params": "{1: '1', 3: \"They're evenly matched.\"}"
     },
     {
-        "Id": 474,
+        "Id": 475,
         "ActionId": 474,
         "NextActionId": null,
         "Type": 501,
@@ -6162,7 +6175,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieDao01.prefab', 2: '3'}"
     },
     {
-        "Id": 475,
+        "Id": 476,
         "ActionId": 475,
         "NextActionId": null,
         "Type": 401,
@@ -6175,7 +6188,7 @@
         "Params": "{1: '2', 2: '10042001'}"
     },
     {
-        "Id": 476,
+        "Id": 477,
         "ActionId": 476,
         "NextActionId": null,
         "Type": 203,
@@ -6188,7 +6201,7 @@
         "Params": "{1: '1', 2: '0.15', 3: '-450'}"
     },
     {
-        "Id": 477,
+        "Id": 478,
         "ActionId": 477,
         "NextActionId": null,
         "Type": 301,
@@ -6201,7 +6214,7 @@
         "Params": "{3: \"Alpha sweeps backhand and knocks Shadow's blade aside, then dashes forward. Her next slash shoots upward toward Shadow's neck.\"}"
     },
     {
-        "Id": 478,
+        "Id": 479,
         "ActionId": 478,
         "NextActionId": null,
         "Type": 306,
@@ -6214,7 +6227,7 @@
         "Params": null
     },
     {
-        "Id": 479,
+        "Id": 480,
         "ActionId": 479,
         "NextActionId": null,
         "Type": 204,
@@ -6227,7 +6240,7 @@
         "Params": "{1: '2', 2: '6'}"
     },
     {
-        "Id": 480,
+        "Id": 481,
         "ActionId": 480,
         "NextActionId": null,
         "Type": 301,
@@ -6237,10 +6250,10 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: 'Alpha', 3: 'For a shadow, you copy well.', 4: '2', 18: '100017022'}"
+        "Params": "{2: 'Alpha', 3: 'For a shadow, you imitate well.', 4: '2', 18: '100017022'}"
     },
     {
-        "Id": 481,
+        "Id": 482,
         "ActionId": 481,
         "NextActionId": null,
         "Type": 204,
@@ -6253,7 +6266,7 @@
         "Params": "{1: '2', 2: '5'}"
     },
     {
-        "Id": 482,
+        "Id": 483,
         "ActionId": 482,
         "NextActionId": null,
         "Type": 301,
@@ -6263,10 +6276,10 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: 'Alpha', 3: \"But you're still just a shadow.\", 4: '2', 18: '100017023'}"
+        "Params": "{2: 'Alpha', 3: \"But you're only a shadow at best.\", 4: '2', 18: '100017023'}"
     },
     {
-        "Id": 483,
+        "Id": 484,
         "ActionId": 483,
         "NextActionId": null,
         "Type": 501,
@@ -6279,7 +6292,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}"
     },
     {
-        "Id": 484,
+        "Id": 485,
         "ActionId": 484,
         "NextActionId": null,
         "Type": 401,
@@ -6292,7 +6305,7 @@
         "Params": "{1: '2', 2: '819016'}"
     },
     {
-        "Id": 485,
+        "Id": 486,
         "ActionId": 485,
         "NextActionId": null,
         "Type": 203,
@@ -6305,7 +6318,7 @@
         "Params": "{1: '1', 2: '0.15', 3: '-500', 7: '1'}"
     },
     {
-        "Id": 486,
+        "Id": 487,
         "ActionId": 486,
         "NextActionId": null,
         "Type": 203,
@@ -6318,7 +6331,7 @@
         "Params": "{1: '2', 2: '0.15', 3: '500', 7: '1'}"
     },
     {
-        "Id": 487,
+        "Id": 488,
         "ActionId": 487,
         "NextActionId": null,
         "Type": 502,
@@ -6331,7 +6344,7 @@
         "Params": "{1: 'DialogEnable'}"
     },
     {
-        "Id": 488,
+        "Id": 489,
         "ActionId": 488,
         "NextActionId": null,
         "Type": 301,
@@ -6344,7 +6357,7 @@
         "Params": "{3: 'Shadow leans back. The blade nearly grazes her nose. She twists with the motion and drives a kick into Alpha.'}"
     },
     {
-        "Id": 489,
+        "Id": 490,
         "ActionId": 489,
         "NextActionId": null,
         "Type": 301,
@@ -6354,10 +6367,10 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: 'Shadow', 3: \"That's my chosen vessel! Now show me what else you can do.\", 4: '1', 18: '100017024'}"
+        "Params": "{2: 'Shadow', 3: 'As expected of my chosen vessel! I wonder what other surprises you have to show for.', 4: '1', 18: '100017024'}"
     },
     {
-        "Id": 490,
+        "Id": 491,
         "ActionId": 490,
         "NextActionId": null,
         "Type": 204,
@@ -6370,7 +6383,7 @@
         "Params": "{1: '2', 2: '5'}"
     },
     {
-        "Id": 491,
+        "Id": 492,
         "ActionId": 491,
         "NextActionId": null,
         "Type": 301,
@@ -6380,10 +6393,10 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: 'Alpha', 3: 'Arrogant.', 4: '2', 18: '100017025'}"
+        "Params": "{2: 'Alpha', 3: 'Such arrogance.', 4: '2', 18: '100017025'}"
     },
     {
-        "Id": 492,
+        "Id": 493,
         "ActionId": 492,
         "NextActionId": null,
         "Type": 203,
@@ -6396,7 +6409,7 @@
         "Params": "{1: '1', 2: '0.15', 3: '-200'}"
     },
     {
-        "Id": 493,
+        "Id": 494,
         "ActionId": 493,
         "NextActionId": null,
         "Type": 203,
@@ -6409,7 +6422,7 @@
         "Params": "{1: '2', 2: '0.15', 3: '200'}"
     },
     {
-        "Id": 494,
+        "Id": 495,
         "ActionId": 494,
         "NextActionId": null,
         "Type": 401,
@@ -6422,7 +6435,7 @@
         "Params": "{1: '2', 2: '9342051'}"
     },
     {
-        "Id": 495,
+        "Id": 496,
         "ActionId": 495,
         "NextActionId": null,
         "Type": 301,
@@ -6435,7 +6448,7 @@
         "Params": "{3: 'Alpha blocks with her knee. The impact hits like a heavy drumbeat.'}"
     },
     {
-        "Id": 496,
+        "Id": 497,
         "ActionId": 496,
         "NextActionId": null,
         "Type": 401,
@@ -6448,7 +6461,7 @@
         "Params": "{1: '2', 2: '4339'}"
     },
     {
-        "Id": 497,
+        "Id": 498,
         "ActionId": 497,
         "NextActionId": null,
         "Type": 203,
@@ -6461,7 +6474,7 @@
         "Params": "{1: '1', 2: '0.15', 3: '-600'}"
     },
     {
-        "Id": 498,
+        "Id": 499,
         "ActionId": 498,
         "NextActionId": null,
         "Type": 203,
@@ -6474,7 +6487,7 @@
         "Params": "{1: '2', 2: '0.15', 3: '600'}"
     },
     {
-        "Id": 499,
+        "Id": 500,
         "ActionId": 499,
         "NextActionId": null,
         "Type": 202,
@@ -6487,7 +6500,7 @@
         "Params": "{1: '1', 2: '2'}"
     },
     {
-        "Id": 500,
+        "Id": 501,
         "ActionId": 500,
         "NextActionId": null,
         "Type": 301,
@@ -6500,7 +6513,7 @@
         "Params": "{3: 'The recoil throws them apart. Both slide back.'}"
     },
     {
-        "Id": 501,
+        "Id": 502,
         "ActionId": 501,
         "NextActionId": null,
         "Type": 201,
@@ -6513,7 +6526,7 @@
         "Params": "{1: '1', 2: '500612', 7: '1'}"
     },
     {
-        "Id": 502,
+        "Id": 503,
         "ActionId": 502,
         "NextActionId": null,
         "Type": 301,
@@ -6526,7 +6539,7 @@
         "Params": "{1: '1', 3: \"Shadow's mouth curls into a near-manic smile.\"}"
     },
     {
-        "Id": 503,
+        "Id": 504,
         "ActionId": 503,
         "NextActionId": null,
         "Type": 301,
@@ -6539,7 +6552,7 @@
         "Params": "{2: 'Shadow', 3: 'You\u2014', 4: '1', 18: '100017026'}"
     },
     {
-        "Id": 504,
+        "Id": 505,
         "ActionId": 504,
         "NextActionId": null,
         "Type": 502,
@@ -6552,7 +6565,7 @@
         "Params": "{1: 'PanelActor1Shake'}"
     },
     {
-        "Id": 505,
+        "Id": 506,
         "ActionId": 505,
         "NextActionId": null,
         "Type": 301,
@@ -6565,7 +6578,7 @@
         "Params": "{3: 'Then her body jerks, her face contorting in agony.'}"
     },
     {
-        "Id": 506,
+        "Id": 507,
         "ActionId": 506,
         "NextActionId": null,
         "Type": 301,
@@ -6578,7 +6591,7 @@
         "Params": "{2: 'Shadow', 3: 'Um...', 4: '1', 18: '100017027'}"
     },
     {
-        "Id": 507,
+        "Id": 508,
         "ActionId": 507,
         "NextActionId": null,
         "Type": 501,
@@ -6591,7 +6604,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiPerishXS03New.prefab', 2: '3', 4: '1', 5: '3'}"
     },
     {
-        "Id": 508,
+        "Id": 509,
         "ActionId": 508,
         "NextActionId": null,
         "Type": 301,
@@ -6604,7 +6617,7 @@
         "Params": "{3: 'Her abdomen turns faint and translucent. The edges of her body start dissolving into mist.'}"
     },
     {
-        "Id": 509,
+        "Id": 510,
         "ActionId": 509,
         "NextActionId": null,
         "Type": 301,
@@ -6614,10 +6627,36 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: 'Shadow', 3: 'Is this my limit...', 4: '1', 18: '100017028'}"
+        "Params": "{2: 'Shadow', 3: 'So this is the limit...', 4: '1', 18: '100017028'}"
     },
     {
-        "Id": 510,
+        "Id": 511,
+        "ActionId": 2007,
+        "NextActionId": null,
+        "Type": 501,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": null,
+        "EndAnim": null,
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiChuanSongMengOpen.prefab', 2: '1', 5: '11'}"
+    },
+    {
+        "Id": 512,
+        "ActionId": 2008,
+        "NextActionId": null,
+        "Type": 401,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": null,
+        "EndAnim": null,
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{1: '2', 2: '4828'}"
+    },
+    {
+        "Id": 513,
         "ActionId": 510,
         "NextActionId": null,
         "Type": 301,
@@ -6630,7 +6669,20 @@
         "Params": "{3: 'With a wave of her hand, the few remaining Corrupted and Hetero-Creatures vanish into the rift behind her.'}"
     },
     {
-        "Id": 511,
+        "Id": 514,
+        "ActionId": 2009,
+        "NextActionId": null,
+        "Type": 402,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": null,
+        "EndAnim": null,
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{1: '4828'}"
+    },
+    {
+        "Id": 515,
         "ActionId": 511,
         "NextActionId": null,
         "Type": 301,
@@ -6643,7 +6695,7 @@
         "Params": "{2: 'Shadow', 3: \"I think I'm done playing with you for now.\", 4: '1', 18: '100017029'}"
     },
     {
-        "Id": 512,
+        "Id": 516,
         "ActionId": 512,
         "NextActionId": null,
         "Type": 505,
@@ -6656,7 +6708,7 @@
         "Params": "{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiPerishXS03New.prefab', 4: '1', 5: '3'}"
     },
     {
-        "Id": 513,
+        "Id": 517,
         "ActionId": 513,
         "NextActionId": null,
         "Type": 202,
@@ -6666,10 +6718,23 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1'}"
+        "Params": "{1: '1', 6: '1'}"
     },
     {
-        "Id": 514,
+        "Id": 518,
+        "ActionId": 2010,
+        "NextActionId": null,
+        "Type": 511,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": null,
+        "EndAnim": null,
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{1: '11', 2: '2', 3: '0|0|1500'}"
+    },
+    {
+        "Id": 519,
         "ActionId": 514,
         "NextActionId": null,
         "Type": 301,
@@ -6682,7 +6747,7 @@
         "Params": "{3: 'Behind her, the rift begins to shrink.'}"
     },
     {
-        "Id": 515,
+        "Id": 520,
         "ActionId": 515,
         "NextActionId": null,
         "Type": 201,
@@ -6695,7 +6760,7 @@
         "Params": "{1: '1', 2: '501611', 7: '1'}"
     },
     {
-        "Id": 516,
+        "Id": 521,
         "ActionId": 516,
         "NextActionId": null,
         "Type": 301,
@@ -6705,10 +6770,10 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: 'Alpha', 3: 'Running?', 4: '1', 18: '100017030'}"
+        "Params": "{1: '1', 2: 'Alpha', 3: 'Trying to run?', 4: '1', 18: '100017030'}"
     },
     {
-        "Id": 517,
+        "Id": 522,
         "ActionId": 517,
         "NextActionId": null,
         "Type": 401,
@@ -6721,7 +6786,7 @@
         "Params": "{1: '2', 2: '6310'}"
     },
     {
-        "Id": 518,
+        "Id": 523,
         "ActionId": 518,
         "NextActionId": null,
         "Type": 203,
@@ -6734,7 +6799,7 @@
         "Params": "{1: '1', 2: '0.15', 5: '-100'}"
     },
     {
-        "Id": 519,
+        "Id": 524,
         "ActionId": 519,
         "NextActionId": null,
         "Type": 202,
@@ -6747,7 +6812,7 @@
         "Params": "{1: '1'}"
     },
     {
-        "Id": 520,
+        "Id": 525,
         "ActionId": 520,
         "NextActionId": null,
         "Type": 301,
@@ -6760,7 +6825,7 @@
         "Params": "{3: 'Alpha kicks off the ground and shoots forward like an arrow. Her blade swings up from below.'}"
     },
     {
-        "Id": 521,
+        "Id": 526,
         "ActionId": 521,
         "NextActionId": null,
         "Type": 401,
@@ -6773,7 +6838,7 @@
         "Params": "{1: '2', 2: '819016'}"
     },
     {
-        "Id": 522,
+        "Id": 527,
         "ActionId": 522,
         "NextActionId": null,
         "Type": 301,
@@ -6786,7 +6851,7 @@
         "Params": "{3: 'Shadow backsteps to dodge, feints to force Alpha back, then turns and sprints for the rift.'}"
     },
     {
-        "Id": 523,
+        "Id": 528,
         "ActionId": 523,
         "NextActionId": null,
         "Type": 201,
@@ -6799,7 +6864,7 @@
         "Params": "{1: '1', 2: '501611', 3: '5', 7: '1'}"
     },
     {
-        "Id": 524,
+        "Id": 529,
         "ActionId": 524,
         "NextActionId": null,
         "Type": 301,
@@ -6812,7 +6877,7 @@
         "Params": "{1: '1', 2: 'Alpha', 3: 'Not happening!', 4: '1', 18: '100017031'}"
     },
     {
-        "Id": 525,
+        "Id": 530,
         "ActionId": 525,
         "NextActionId": null,
         "Type": 401,
@@ -6825,7 +6890,7 @@
         "Params": "{1: '2', 2: '4339'}"
     },
     {
-        "Id": 526,
+        "Id": 531,
         "ActionId": 526,
         "NextActionId": null,
         "Type": 203,
@@ -6838,7 +6903,7 @@
         "Params": "{1: '1', 2: '0.15', 3: '-600'}"
     },
     {
-        "Id": 527,
+        "Id": 532,
         "ActionId": 527,
         "NextActionId": null,
         "Type": 202,
@@ -6851,7 +6916,7 @@
         "Params": "{1: '1'}"
     },
     {
-        "Id": 528,
+        "Id": 533,
         "ActionId": 528,
         "NextActionId": null,
         "Type": 401,
@@ -6864,7 +6929,7 @@
         "Params": "{1: '2', 2: '819016'}"
     },
     {
-        "Id": 529,
+        "Id": 534,
         "ActionId": 529,
         "NextActionId": null,
         "Type": 501,
@@ -6877,7 +6942,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiHitNew.prefab', 2: '3'}"
     },
     {
-        "Id": 530,
+        "Id": 535,
         "ActionId": 530,
         "NextActionId": null,
         "Type": 301,
@@ -6890,7 +6955,7 @@
         "Params": "{3: \"Alpha's blade follows close, thrusting straight for Shadow's back.\"}"
     },
     {
-        "Id": 531,
+        "Id": 536,
         "ActionId": 531,
         "NextActionId": null,
         "Type": 401,
@@ -6903,7 +6968,7 @@
         "Params": "{1: '2', 2: '1510'}"
     },
     {
-        "Id": 532,
+        "Id": 537,
         "ActionId": 532,
         "NextActionId": null,
         "Type": 401,
@@ -6916,7 +6981,7 @@
         "Params": "{1: '2', 2: '1510'}"
     },
     {
-        "Id": 533,
+        "Id": 538,
         "ActionId": 533,
         "NextActionId": null,
         "Type": 401,
@@ -6929,7 +6994,7 @@
         "Params": "{1: '2', 2: '1510'}"
     },
     {
-        "Id": 534,
+        "Id": 539,
         "ActionId": 534,
         "NextActionId": null,
         "Type": 301,
@@ -6942,7 +7007,7 @@
         "Params": "{3: 'You flank from the side and fire in rapid bursts, trying to cut off her escape.'}"
     },
     {
-        "Id": 535,
+        "Id": 540,
         "ActionId": 535,
         "NextActionId": null,
         "Type": 301,
@@ -6955,7 +7020,7 @@
         "Params": "{3: \"All three reach the rift's edge at nearly the same time.\"}"
     },
     {
-        "Id": 536,
+        "Id": 541,
         "ActionId": 536,
         "NextActionId": null,
         "Type": 201,
@@ -6968,7 +7033,7 @@
         "Params": "{1: '1', 2: '500612'}"
     },
     {
-        "Id": 537,
+        "Id": 542,
         "ActionId": 537,
         "NextActionId": null,
         "Type": 301,
@@ -6981,7 +7046,7 @@
         "Params": "{1: '1', 2: 'Shadow', 3: 'Hah!', 4: '1', 18: '100017032'}"
     },
     {
-        "Id": 538,
+        "Id": 543,
         "ActionId": 538,
         "NextActionId": null,
         "Type": 501,
@@ -6994,7 +7059,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryRedSmokeNew.prefab', 2: '2', 4: '1', 5: '4'}"
     },
     {
-        "Id": 539,
+        "Id": 544,
         "ActionId": 539,
         "NextActionId": null,
         "Type": 301,
@@ -7007,7 +7072,7 @@
         "Params": "{3: \"Shadow's aura erupts. She spins around and blocks both Alpha's slash and your shots.\"}"
     },
     {
-        "Id": 540,
+        "Id": 545,
         "ActionId": 540,
         "NextActionId": null,
         "Type": 401,
@@ -7020,7 +7085,7 @@
         "Params": "{1: '2', 2: '844006'}"
     },
     {
-        "Id": 541,
+        "Id": 546,
         "ActionId": 541,
         "NextActionId": null,
         "Type": 501,
@@ -7033,7 +7098,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}"
     },
     {
-        "Id": 542,
+        "Id": 547,
         "ActionId": 542,
         "NextActionId": null,
         "Type": 301,
@@ -7046,7 +7111,7 @@
         "Params": "{3: 'Clang!'}"
     },
     {
-        "Id": 543,
+        "Id": 548,
         "ActionId": 543,
         "NextActionId": null,
         "Type": 301,
@@ -7059,7 +7124,7 @@
         "Params": "{3: \"Alpha's strike gets knocked aside with a sharp ring. Shadow rolls her blade through the motion. Your bullets skim the spine with a metallic ping.\"}"
     },
     {
-        "Id": 544,
+        "Id": 549,
         "ActionId": 544,
         "NextActionId": null,
         "Type": 301,
@@ -7072,7 +7137,7 @@
         "Params": "{2: 'Shadow', 3: \"Keep that body safe for me. I'll come back for it.\", 4: '1', 18: '100017033'}"
     },
     {
-        "Id": 545,
+        "Id": 550,
         "ActionId": 545,
         "NextActionId": null,
         "Type": 202,
@@ -7085,7 +7150,7 @@
         "Params": "{1: '1'}"
     },
     {
-        "Id": 546,
+        "Id": 551,
         "ActionId": 546,
         "NextActionId": null,
         "Type": 505,
@@ -7098,7 +7163,7 @@
         "Params": "{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryRedSmokeNew.prefab', 4: '1', 5: '4'}"
     },
     {
-        "Id": 547,
+        "Id": 552,
         "ActionId": 547,
         "NextActionId": null,
         "Type": 306,
@@ -7111,7 +7176,7 @@
         "Params": "{1: '1'}"
     },
     {
-        "Id": 548,
+        "Id": 553,
         "ActionId": 548,
         "NextActionId": null,
         "Type": 301,
@@ -7124,7 +7189,7 @@
         "Params": "{3: 'Shadow steps back and grips the long sword at her waist. Crimson electricity coils around her as the blade slides free.'}"
     },
     {
-        "Id": 549,
+        "Id": 554,
         "ActionId": 549,
         "NextActionId": null,
         "Type": 301,
@@ -7137,7 +7202,7 @@
         "Params": "{3: 'Alpha withdraws her dagger. Its mechanical components shift, and the short blade transforms into a long one.'}"
     },
     {
-        "Id": 550,
+        "Id": 555,
         "ActionId": 550,
         "NextActionId": null,
         "Type": 205,
@@ -7150,7 +7215,7 @@
         "Params": "{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront54.png', 3: '0', 4: '0.8', 5: '0.5'}"
     },
     {
-        "Id": 551,
+        "Id": 556,
         "ActionId": 551,
         "NextActionId": null,
         "Type": 401,
@@ -7163,7 +7228,7 @@
         "Params": "{1: '2', 2: '4817'}"
     },
     {
-        "Id": 552,
+        "Id": 557,
         "ActionId": 552,
         "NextActionId": null,
         "Type": 301,
@@ -7176,7 +7241,7 @@
         "Params": "{3: 'The Punishing Virus gathers around Alpha. Her blade flares bright red. Then she swings, hard and clean.'}"
     },
     {
-        "Id": 553,
+        "Id": 558,
         "ActionId": 553,
         "NextActionId": null,
         "Type": 401,
@@ -7189,7 +7254,7 @@
         "Params": "{1: '2', 2: '10022001'}"
     },
     {
-        "Id": 554,
+        "Id": 559,
         "ActionId": 554,
         "NextActionId": null,
         "Type": 402,
@@ -7202,7 +7267,7 @@
         "Params": "{1: '4817'}"
     },
     {
-        "Id": 555,
+        "Id": 560,
         "ActionId": 555,
         "NextActionId": null,
         "Type": 505,
@@ -7215,7 +7280,7 @@
         "Params": "{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab', 4: '2'}"
     },
     {
-        "Id": 556,
+        "Id": 561,
         "ActionId": 556,
         "NextActionId": null,
         "Type": 306,
@@ -7228,7 +7293,7 @@
         "Params": null
     },
     {
-        "Id": 557,
+        "Id": 562,
         "ActionId": 557,
         "NextActionId": null,
         "Type": 201,
@@ -7241,7 +7306,7 @@
         "Params": "{1: '2', 2: '501611', 3: '5', 7: '1'}"
     },
     {
-        "Id": 558,
+        "Id": 563,
         "ActionId": 558,
         "NextActionId": null,
         "Type": 501,
@@ -7254,7 +7319,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab', 2: '2', 4: '2', 5: '5'}"
     },
     {
-        "Id": 559,
+        "Id": 564,
         "ActionId": 559,
         "NextActionId": null,
         "Type": 301,
@@ -7267,7 +7332,7 @@
         "Params": "{1: '1', 2: 'Alpha', 3: 'Argh!', 4: '2', 18: '100017034'}"
     },
     {
-        "Id": 560,
+        "Id": 565,
         "ActionId": 560,
         "NextActionId": null,
         "Type": 501,
@@ -7280,7 +7345,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}"
     },
     {
-        "Id": 561,
+        "Id": 566,
         "ActionId": 561,
         "NextActionId": null,
         "Type": 505,
@@ -7293,7 +7358,7 @@
         "Params": "{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryGanRanNew.prefab', 4: '2', 5: '5'}"
     },
     {
-        "Id": 562,
+        "Id": 567,
         "ActionId": 562,
         "NextActionId": null,
         "Type": 202,
@@ -7306,7 +7371,7 @@
         "Params": "{1: '2', 6: '1'}"
     },
     {
-        "Id": 563,
+        "Id": 568,
         "ActionId": 563,
         "NextActionId": null,
         "Type": 201,
@@ -7319,7 +7384,7 @@
         "Params": "{1: '2', 2: '501611', 4: '600', 7: '1'}"
     },
     {
-        "Id": 564,
+        "Id": 569,
         "ActionId": 564,
         "NextActionId": null,
         "Type": 401,
@@ -7332,7 +7397,7 @@
         "Params": "{1: '2', 2: '844006'}"
     },
     {
-        "Id": 565,
+        "Id": 570,
         "ActionId": 565,
         "NextActionId": null,
         "Type": 203,
@@ -7345,7 +7410,7 @@
         "Params": "{1: '2', 2: '0.2', 3: '300'}"
     },
     {
-        "Id": 566,
+        "Id": 571,
         "ActionId": 566,
         "NextActionId": null,
         "Type": 201,
@@ -7358,7 +7423,7 @@
         "Params": "{1: '1', 2: '500612', 4: '-600', 7: '1'}"
     },
     {
-        "Id": 567,
+        "Id": 572,
         "ActionId": 567,
         "NextActionId": null,
         "Type": 203,
@@ -7371,7 +7436,7 @@
         "Params": "{1: '1', 2: '0.2', 3: '-300'}"
     },
     {
-        "Id": 568,
+        "Id": 573,
         "ActionId": 568,
         "NextActionId": null,
         "Type": 501,
@@ -7384,7 +7449,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '3'}"
     },
     {
-        "Id": 569,
+        "Id": 574,
         "ActionId": 569,
         "NextActionId": null,
         "Type": 401,
@@ -7397,7 +7462,7 @@
         "Params": "{1: '2', 2: '4362'}"
     },
     {
-        "Id": 570,
+        "Id": 575,
         "ActionId": 570,
         "NextActionId": null,
         "Type": 301,
@@ -7410,7 +7475,7 @@
         "Params": "{1: '1', 3: 'The two forces collide head-on. A shockwave detonates from the impact point. The air screams as it tears.'}"
     },
     {
-        "Id": 571,
+        "Id": 576,
         "ActionId": 571,
         "NextActionId": null,
         "Type": 202,
@@ -7423,7 +7488,7 @@
         "Params": "{1: '1', 2: '2', 6: '1'}"
     },
     {
-        "Id": 572,
+        "Id": 577,
         "ActionId": 572,
         "NextActionId": null,
         "Type": 401,
@@ -7436,7 +7501,7 @@
         "Params": "{1: '2', 2: '4810'}"
     },
     {
-        "Id": 573,
+        "Id": 578,
         "ActionId": 573,
         "NextActionId": null,
         "Type": 502,
@@ -7449,7 +7514,7 @@
         "Params": "{1: 'RImgBg1Shake'}"
     },
     {
-        "Id": 574,
+        "Id": 579,
         "ActionId": 574,
         "NextActionId": null,
         "Type": 111,
@@ -7462,7 +7527,7 @@
         "Params": "{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab'}"
     },
     {
-        "Id": 575,
+        "Id": 580,
         "ActionId": 575,
         "NextActionId": null,
         "Type": 301,
@@ -7475,7 +7540,7 @@
         "Params": "{3: \"The powerful attacks collide without canceling out. The energy twists into a violent torrent and smashes into the rift's edge.\"}"
     },
     {
-        "Id": 576,
+        "Id": 581,
         "ActionId": 576,
         "NextActionId": null,
         "Type": 401,
@@ -7488,7 +7553,20 @@
         "Params": "{1: '2', 2: '4514'}"
     },
     {
-        "Id": 577,
+        "Id": 582,
+        "ActionId": 2011,
+        "NextActionId": null,
+        "Type": 511,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": null,
+        "EndAnim": null,
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{1: '11', 2: '0.15', 3: '0|0|0'}"
+    },
+    {
+        "Id": 583,
         "ActionId": 577,
         "NextActionId": null,
         "Type": 104,
@@ -7501,7 +7579,7 @@
         "Params": "{1: '0|0|-500', 2: '0.15'}"
     },
     {
-        "Id": 578,
+        "Id": 584,
         "ActionId": 578,
         "NextActionId": null,
         "Type": 401,
@@ -7514,7 +7592,7 @@
         "Params": "{1: '2', 2: '14014615'}"
     },
     {
-        "Id": 579,
+        "Id": 585,
         "ActionId": 579,
         "NextActionId": null,
         "Type": 104,
@@ -7527,7 +7605,33 @@
         "Params": "{1: '0|0|0', 2: '1'}"
     },
     {
-        "Id": 580,
+        "Id": 586,
+        "ActionId": 2012,
+        "NextActionId": null,
+        "Type": 505,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": null,
+        "EndAnim": null,
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiChuanSongMengOpen.prefab', 5: '11'}"
+    },
+    {
+        "Id": 587,
+        "ActionId": 2013,
+        "NextActionId": null,
+        "Type": 501,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": null,
+        "EndAnim": null,
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiChuanSongMengClose.prefab', 2: '1'}"
+    },
+    {
+        "Id": 588,
         "ActionId": 580,
         "NextActionId": null,
         "Type": 301,
@@ -7540,7 +7644,7 @@
         "Params": "{3: 'The rift swells suddenly, then collapses inward.'}"
     },
     {
-        "Id": 581,
+        "Id": 589,
         "ActionId": 581,
         "NextActionId": null,
         "Type": 401,
@@ -7553,7 +7657,7 @@
         "Params": "{1: '2', 2: '5790'}"
     },
     {
-        "Id": 582,
+        "Id": 590,
         "ActionId": 582,
         "NextActionId": null,
         "Type": 205,
@@ -7566,7 +7670,7 @@
         "Params": "{1: '1004', 2: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 3: '0', 4: '0.3', 5: '3'}"
     },
     {
-        "Id": 583,
+        "Id": 591,
         "ActionId": 583,
         "NextActionId": null,
         "Type": 205,
@@ -7579,7 +7683,7 @@
         "Params": "{1: '999', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront54.png', 3: '0.8', 4: '0', 5: '0.3'}"
     },
     {
-        "Id": 584,
+        "Id": 592,
         "ActionId": 584,
         "NextActionId": null,
         "Type": 301,
@@ -7592,7 +7696,20 @@
         "Params": "{3: 'Vrrm\u2014Vrrm\u2014'}"
     },
     {
-        "Id": 585,
+        "Id": 593,
+        "ActionId": 2014,
+        "NextActionId": null,
+        "Type": 505,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": null,
+        "EndAnim": null,
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiChuanSongMengClose.prefab'}"
+    },
+    {
+        "Id": 594,
         "ActionId": 585,
         "NextActionId": null,
         "Type": 301,
@@ -7605,7 +7722,7 @@
         "Params": "{3: 'Sound and sight peel away. Everything turns pure white.'}"
     },
     {
-        "Id": 586,
+        "Id": 595,
         "ActionId": 586,
         "NextActionId": null,
         "Type": 201,
@@ -7618,7 +7735,7 @@
         "Params": "{1: '1', 2: '501611', 3: '5', 5: '-50', 6: '50', 7: '1'}"
     },
     {
-        "Id": 587,
+        "Id": 596,
         "ActionId": 587,
         "NextActionId": null,
         "Type": 203,
@@ -7631,7 +7748,7 @@
         "Params": "{1: '1', 2: '0.2'}"
     },
     {
-        "Id": 588,
+        "Id": 597,
         "ActionId": 588,
         "NextActionId": null,
         "Type": 401,
@@ -7644,7 +7761,7 @@
         "Params": "{1: '2', 2: '10042416'}"
     },
     {
-        "Id": 589,
+        "Id": 598,
         "ActionId": 589,
         "NextActionId": null,
         "Type": 301,
@@ -7657,7 +7774,7 @@
         "Params": "{1: '1', 3: 'The instant it expands, Alpha spins and throws herself in front of you.'}"
     },
     {
-        "Id": 590,
+        "Id": 599,
         "ActionId": 590,
         "NextActionId": null,
         "Type": 301,
@@ -7670,7 +7787,7 @@
         "Params": "{2: 'Alpha', 3: '\u3010kuroname\u3011!', 4: '1', 18: '100017035'}"
     },
     {
-        "Id": 591,
+        "Id": 600,
         "ActionId": 591,
         "NextActionId": null,
         "Type": 302,
@@ -7683,7 +7800,7 @@
         "Params": "{2: '\u2014Alpha!', 3: '592'}"
     },
     {
-        "Id": 592,
+        "Id": 601,
         "ActionId": 592,
         "NextActionId": null,
         "Type": 205,
@@ -7696,7 +7813,7 @@
         "Params": "{1: '1005', 2: 'Assets/Product/Texture/Image/BgStory/BgStory00.png', 3: '0', 4: '1', 5: '2'}"
     },
     {
-        "Id": 593,
+        "Id": 602,
         "ActionId": 593,
         "NextActionId": null,
         "Type": 402,
@@ -7709,7 +7826,7 @@
         "Params": "{1: '4810'}"
     },
     {
-        "Id": 594,
+        "Id": 603,
         "ActionId": 594,
         "NextActionId": null,
         "Type": 401,
@@ -7722,7 +7839,7 @@
         "Params": "{1: '1', 2: '36'}"
     },
     {
-        "Id": 595,
+        "Id": 604,
         "ActionId": 595,
         "NextActionId": null,
         "Type": 401,
@@ -7735,7 +7852,7 @@
         "Params": "{1: '2', 2: '4280'}"
     },
     {
-        "Id": 596,
+        "Id": 605,
         "ActionId": 596,
         "NextActionId": null,
         "Type": 301,
@@ -7748,7 +7865,7 @@
         "Params": "{3: \"Her voice gets swallowed by the roar. Her hands miss you. She can't grab you in time.\"}"
     },
     {
-        "Id": 597,
+        "Id": 606,
         "ActionId": 597,
         "NextActionId": null,
         "Type": 301,

@@ -490,27 +490,36 @@ end
 
 function XTransfiniteConfigs.GetScoreArray(regionId)
     local rewardGroupId = XTransfiniteConfigs.GetRegionScoreRewardGroupId(regionId)
-    local config = GetConfigScoreRewardGroup():GetConfig(rewardGroupId)
-    return config.Score, config.RewardId
+
+    for _, conf in pairs(GetConfigScoreRewardGroup():GetConfigs()) do
+        if conf.RegionId == regionId
+            and conf.ScoreRewardGroupId == rewardGroupId
+        then
+            return conf.Score, conf.RewardId
+        end
+    end
+
+    XLog.Error("[XTransfiniteConfigs.GetScoreArray] Score array not found: regionId = %d, rewardGroupId = %d", regionId, rewardGroupId)
 end
 
-function XTransfiniteConfigs.GetScoreReward(regionId, score)
-    local rewardGroupId = XTransfiniteConfigs.GetRegionScoreRewardGroupId(regionId)
-    local config = GetConfigScoreRewardGroup():GetConfig(rewardGroupId)
-    if not config then
-        return 0
-    end
-    local scoreArray = config.Score
-    local index = 1
-    for i = 1, #scoreArray do
-        if score < scoreArray[i] then
-            break
-        end
-        index = index + 1
-    end
-    local rewardIdArray = config.RewardId
-    return rewardIdArray[index] or 0
-end
+-- 未发现引用，该函数已废弃，2026/6/11 许兴逸
+-- function XTransfiniteConfigs.GetScoreReward(regionId, score)
+--     local rewardGroupId = XTransfiniteConfigs.GetRegionScoreRewardGroupId(regionId)
+--     local config = GetConfigScoreRewardGroup():GetConfig(rewardGroupId)
+--     if not config then
+--         return 0
+--     end
+--     local scoreArray = config.Score
+--     local index = 1
+--     for i = 1, #scoreArray do
+--         if score < scoreArray[i] then
+--             break
+--         end
+--         index = index + 1
+--     end
+--     local rewardIdArray = config.RewardId
+--     return rewardIdArray[index] or 0
+-- end
 
 --endregion
 

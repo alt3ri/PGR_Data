@@ -146,8 +146,8 @@ function XUiArchiveMonsterSynopsis:SetButtonCallBack()
 end
 
 function XUiArchiveMonsterSynopsis:InitEvaluate()
-    self.EvaluateList = self._Control:GetArchiveMonsterEvaluateList()
-    self.MySelfEvaluateList = self._Control:GetArchiveMonsterMySelfEvaluateList()
+    self.EvaluateList = self._Control.MonsterControl:GetArchiveMonsterEvaluateList()
+    self.MySelfEvaluateList = self._Control.MonsterControl:GetArchiveMonsterMySelfEvaluateList()
 
     for _, npcId in pairs(self.Data:GetNpcId()) do
         self.IsLikeInit[npcId] = false
@@ -242,7 +242,7 @@ function XUiArchiveMonsterSynopsis:SelectType(index)
 end
 
 function XUiArchiveMonsterSynopsis:SetMonsterInfoData(npcId)
-    local infoList = self._Control:GetArchiveMonsterInfoList(npcId, XEnumConst.Archive.MonsterInfoType.Short)
+    local infoList = self._Control.MonsterControl:GetArchiveMonsterInfoList(npcId, XEnumConst.Archive.MonsterInfoType.Short)
 
     self.MonsterInfo.LockedGroup.gameObject:SetActiveEx(self.Data:GetIsLockMain())
     self.MonsterInfo.UnLock.gameObject:SetActiveEx(not self.Data:GetIsLockMain())
@@ -279,7 +279,7 @@ function XUiArchiveMonsterSynopsis:SetMonsterInfoData(npcId)
 end
 
 function XUiArchiveMonsterSynopsis:SetMonsterSettingData(npcId)
-    local skillList = self._Control:GetArchiveMonsterSkillList(npcId)
+    local skillList = self._Control.MonsterControl:GetArchiveMonsterSkillList(npcId)
     self.MonsterSetting.UnLock.gameObject:SetActiveEx(not self.Data:GetIsLockMain())
     self.MonsterSetting.BtnSkill.gameObject:SetActiveEx(#skillList > 0)
 end
@@ -395,7 +395,7 @@ function XUiArchiveMonsterSynopsis:GiveLikeStatus()
         end
     end
     if #changedLikeList > 0 then
-        self._Control:MonsterGiveLike(changedLikeList)
+        self._Control.MonsterControl:MonsterGiveLike(changedLikeList)
     end
 end
 
@@ -412,17 +412,17 @@ end
 
 function XUiArchiveMonsterSynopsis:OnMonsterInfoBtnClick()
     self.Base:SelectDetailState(XEnumConst.Archive.MonsterDetailType.Info)
-    self._Control:ClearDetailRedPoint(XEnumConst.Archive.MonsterDetailType.Info, { self.Data })
+    self._Control.MonsterControl:ClearDetailRedPoint(XEnumConst.Archive.MonsterDetailType.Info, { self.Data })
 end
 
 function XUiArchiveMonsterSynopsis:OnMonsterSetBtnClick()
     self.Base:SelectDetailState(XEnumConst.Archive.MonsterDetailType.Setting)
-    self._Control:ClearDetailRedPoint(XEnumConst.Archive.MonsterDetailType.Setting, { self.Data })
+    self._Control.MonsterControl:ClearDetailRedPoint(XEnumConst.Archive.MonsterDetailType.Setting, { self.Data })
 end
 
 function XUiArchiveMonsterSynopsis:OnMonsterSkillStateBtnClick()
     self.Base:SelectDetailState(XEnumConst.Archive.MonsterDetailType.Skill)
-    self._Control:ClearDetailRedPoint(XEnumConst.Archive.MonsterDetailType.Skill, { self.Data })
+    self._Control.MonsterControl:ClearDetailRedPoint(XEnumConst.Archive.MonsterDetailType.Skill, { self.Data })
 end
 
 function XUiArchiveMonsterSynopsis:OnCheckInfoRedDot(count)
@@ -435,6 +435,6 @@ end
 
 function XUiArchiveMonsterSynopsis:OnCheckSettingRedDot(count)
     self.MonsterSetting.BtnSet:ShowReddot(count >= 0)
-end
-
+end
+
 return XUiArchiveMonsterSynopsis

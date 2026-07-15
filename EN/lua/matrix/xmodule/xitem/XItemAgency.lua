@@ -77,4 +77,15 @@ function XItemAgency:CheckItemHasConfig(id)
     return false
 end
 
+--region 获取配置
+
+function XItemAgency:GetItemCombineById(id)
+    return self._Model:GetItemCombineById(id)
+end
+
+function XItemAgency:GetItemCombinesByGroupId(groupId)
+    return self._Model:GetItemCombinesByGroupId(groupId)
+end
+--endregion
+
 return XItemAgency

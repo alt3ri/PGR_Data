@@ -29,8 +29,7 @@ function XBuffScript10262030:OnLuaSkillStart(eventArgs)
     if eventArgs._launcherUUID ~= self._npcUUID then return end
     self.isAdded = false
     --如果是自己释放的技能，进行怒火恢复逻辑
-    self.ChanceCheck = 0
-    if eventArgs._skillId ~= self._skillId then return end
+    if eventArgs._skillId ~= self._skillId then self.ChanceCheck = 0 return end
     local calAngerRecover = math.max(0, self.angerRecover - self.dictAngerRecoverReduce[self._lv] * self.count)
     self.angerController:CastStackBuff(calAngerRecover, self._npcUUID)
     self.count = self.count + 1
@@ -62,7 +61,7 @@ function XBuffScript10262030:OnNpcRemoveBuffEvent(casterNpcUUID, npcUUID, buffId
     local angerStacks = self._proxy:GetBuffStacks(self._npcUUID, self.angerController.StackBuffAnger)
     --当触发开关打开，且当前值小于检查值时，进行一次触发
     local isAngry = self._proxy:GetBuffStacks(self._npcUUID, self.angerController.StackBuffAngry) >= 1
-    local isRequest = (angerStacks < self.angerCheck) and self.checkTrigger and isAngry and not self.isAdded
+    local isRequest = (angerStacks <= self.angerCheck) and self.checkTrigger and isAngry and not self.isAdded
     if isRequest then
         if self.ChanceCheck == 0 then
             self._level:RequestInsertSkill(self._npcUUID, self._skillId)

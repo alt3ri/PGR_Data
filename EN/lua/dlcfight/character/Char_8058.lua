@@ -20,10 +20,13 @@ function XChar8058:Init() --初始化
     self._proxy:LaunchMissileFromPosToPos(self._uuid,82100704,80580109,self.targetPos,self.targetPos,1)--闪光特效
     local Luojian1 , var2 =self._proxy:LaunchMissileFromPosToPos(self._uuid,82100704,80580107,self.targetPos,self.targetPos,1)--落剑出场特效
     self.Luojian1 = var2
-    self._proxy:AddTimerTask(0.4, function()--延迟5秒后，释放影牌技能
+    self._proxy:AddTimerTask(1.9, function()--延迟5秒后，释放影牌技能
         self._proxy:LaunchMissileFromPosToPos(self._uuid,82100704,80580108,self.targetPos,self.targetPos,1)--从目标位置向目标位置发特效
+        self._proxy:ApplyMagic(self._uuid, self._uuid, 8053012, 1)
         local FenTan1 , FenTan2 =  self._proxy:LaunchMissileFromPosToPos(self._uuid,82100704,80580110,self.targetPos,self.targetPos,1)--从目标位置向目标位置发特效
         self.Fentan = FenTan2
+        self._proxy:ApplyMagic(self._uuid, self._uuid, 8072006, 1)
+        --[[self._proxy:ApplyMagic(self._uuid, self._uuid, 8058002, 1)]]
     end)
     self.PlayUUID =  self._proxy:GetPlayerNpcList()
 
@@ -32,7 +35,7 @@ function XChar8058:Init() --初始化
     self.YuJing1 = true
     self.YuJing2 = true
     self.JuLiJianCe = true
-
+    self.KaiGuan = true
     self.juli1 = false
     self.juli2 = false
     self.juli3 = false
@@ -55,6 +58,11 @@ end
 function XChar8058:Update(dt)
     Base.Update(self, dt)
     self.PlayUUID =  self._proxy:GetPlayerNpcList()
+
+    if self.JuLiJianCe ~= true then
+        return
+    end
+
     if #self.PlayUUID == 1 then
         self.juli1 = self._proxy:CheckNpcDistance(self._uuid, self.PlayUUID[1],5)
     end
@@ -71,22 +79,35 @@ function XChar8058:Update(dt)
     end
 
     if self.juli1 == true or self.juli2 == true or self.juli3 ==true then
-        if self.JuLiJianCe == true then
+        if self.KaiGuan == true then
+            self.KaiGuan = false
             self._proxy:ApplyMagic(self._uuid, self._uuid, 8053010, 1)
             self.zidan2 = true
-        else
+            self._proxy:ApplyMagic(self._uuid, self._uuid, 8072007, 1)
+            --[[ self._proxy:ApplyMagic(self._uuid, self._uuid, 8058001, 1)]]
+            self._proxy:DestroyMissileByUUID(self.Fentan)
+            local FenTan , FenTan3 =  self._proxy:LaunchMissileFromPosToPos(self._uuid,82100704,80580122,self.targetPos,self.targetPos,1)--从目标位置向目标位置发特效
+            self.Fentanliang = FenTan3
+        end
+    else
+        if self.KaiGuan == false then
+            self.KaiGuan = true
             self._proxy:ApplyMagic(self._uuid, self._uuid, 8053011, 1)
+            self._proxy:ApplyMagic(self._uuid, self._uuid, 8072006, 1)
+            --[[self._proxy:ApplyMagic(self._uuid, self._uuid, 8058002, 1)]]
+            self._proxy:DestroyMissileByUUID(self.Fentanliang)
+            local FenTan1 , FenTan2 =  self._proxy:LaunchMissileFromPosToPos(self._uuid,82100704,80580110,self.targetPos,self.targetPos,1)--从目标位置向目标位置发特效
+            self.Fentan = FenTan2
         end
     end
 
-
-    if self.YuJing1 == true and  self.YuJing2 == true and not self._proxy:CheckBuffByKind(self._uuid, 8053010) then
+  --[[  if self.YuJing1 == true and  self.YuJing2 == true and not self._proxy:CheckBuffByKind(self._uuid, 8053010) then
         self.YuJing1 = false
         self._proxy:AddTimerTask(1.5, function()--延迟5秒后，释放影牌技能
             self._proxy:LaunchMissile(self._uuid, self._uuid, 80530115, 80530511,1)
             self.YuJing1 = true
         end)
-    end
+    end]]
 end
 
 function XChar8058:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
@@ -118,13 +139,13 @@ function XChar8058:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, 
     end
 
     if buffId == 8053020  then
-        XLog.Warning("销毁分摊")
-        XLog.Warning(self.Fentan)
         self._proxy:DestroyMissileByUUID(self.Fentan)
+        self._proxy:DestroyMissileByUUID(self.Fentanliang)
         self.YuJing2 = false
         self.JuLiJianCe = false
         self._proxy:RemoveLink(self._uuid,self.LianXian)
         self._proxy:ApplyMagic(self._uuid, self._uuid, 8053011, 1)
+        self._proxy:ApplyMagic(self._uuid, self._uuid, 8072008, 1)
     end
 
 end

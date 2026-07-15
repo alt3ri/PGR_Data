@@ -8,6 +8,8 @@ local ATTR_COLOR = {
     BELOW = XUiHelper.Hexcolor2Color("d11e38"), -- 属性低于当前装备
 }
 
+local BUTTON_STATE_LIST = { "Normal", "Press" }
+
 function XUiTeamPrefabWeapon:OnAwake()
     self.IsAscendOrder = false --初始降序
     self.PriorSortType = XEnumConst.EQUIP.PRIOR_SORT_TYPE.STAR
@@ -17,13 +19,10 @@ function XUiTeamPrefabWeapon:OnAwake()
     self.ImgAscend.gameObject:SetActiveEx(self.IsAscendOrder)
     self.ImgDescend.gameObject:SetActiveEx(not self.IsAscendOrder)
     self.GridEquip.gameObject:SetActiveEx(false)
-    self.PanelExtend.gameObject:SetActiveEx(false)
     self.AssetPanel = XUiPanelAsset.New(self, self.PanelAsset, XDataCenter.ItemManager.ItemId.FreeGem, XDataCenter.ItemManager.ItemId.ActionPoint, XDataCenter.ItemManager.ItemId.Coin)
     self:SetButtonCallBack()
     self:InitDynamicTable()
 
-    self.PanelAddEffect = self.PanelAdd.transform:Find("Effect")
-    self.PanelAdd2Effect = self.PanelAdd2.transform:Find("Effect")
     self.GridEquipResonanceEffect1 = self.GridEquipResonance1.transform:Find("Effect")
     self.GridEquipResonanceEffect2 = self.GridEquipResonance2.transform:Find("Effect")
     self.GridEquipResonanceEffect3 = self.GridEquipResonance3.transform:Find("Effect")
@@ -132,15 +131,6 @@ function XUiTeamPrefabWeapon:OnStart(teamPrefab, defaultPos, closecallback, notS
 end
 
 function XUiTeamPrefabWeapon:OnEnable()
-    -- 播放扩展面板动画，动画切到最后一帧
-    local anim = self.IsShowExtend and self.AnimFold or self.AnimUnFold
-    anim:Play()
-    anim.time = anim.duration
-    anim:Evaluate()
-    anim:Stop()
-    
-    self.PanelAddEffect.gameObject:SetActiveEx(false)
-    self.PanelAdd2Effect.gameObject:SetActiveEx(false)
     self:UpdateView()
 end
 
@@ -161,9 +151,6 @@ function XUiTeamPrefabWeapon:SetButtonCallBack()
         self.PriorSortType = self.DrdSort.value
         self:OnSortTypeChange()
     end)
-
-    self:RegisterClickEvent(self.PanelAdd, self.ShowPanelSkill)
-    self:RegisterClickEvent(self.PanelAdd2, self.ShowPanelExtend)
 
     -- 武器共鸣
     self:RegisterClickEvent(self.GridEquipResonance1, function() self:OnBtnResonanceSkill(1) end)
@@ -407,16 +394,6 @@ function XUiTeamPrefabWeapon:UpdateEquipDetail()
     self:UpdateEquipResonance()
     self:UpdateOverrun()
     self:UpdateBtnState()
-
-    -- 刷新技能和能力扩展栏状态
-    local isShow = self.PaneEquipResonance.gameObject.activeSelf or self.PaneOverrun.gameObject.activeSelf
-    self.PanelExtendTitle.gameObject:SetActiveEx(isShow)
-    if isShow then
-        self:UpdateExtendName()
-    end
-    if not isShow and self.IsShowExtend then
-        self:ShowPanelSkill()
-    end
 end
 
 -- 刷新装备属性
@@ -461,8 +438,6 @@ function XUiTeamPrefabWeapon:UpdateEquipSkillDesc()
     self.TxtSkillDes.text = weaponSkillInfo.Description
 
     local noWeaponSkill = not weaponSkillInfo.Name and not weaponSkillInfo.Description
-    self.PanelAwarenessSkillDes.gameObject:SetActiveEx(false)
-    self.PanelNoAwarenessSkill.gameObject:SetActiveEx(false)
     self.PanelWeaponSkillDes.gameObject:SetActiveEx(not noWeaponSkill)
     self.PanelNoWeaponSkill.gameObject:SetActiveEx(noWeaponSkill)
 end
@@ -486,7 +461,6 @@ function XUiTeamPrefabWeapon:UpdateEquipResonance()
             isResonanceConflict = true
         end
     end
-    self.PanelAdd2:ShowReddot(isResonanceConflict)
 end
 
 -- 刷新单个装备共鸣（预设优先；非本位武器回退仓库）
@@ -573,64 +547,130 @@ function XUiTeamPrefabWeapon:RefreshResonanceUI(uiObj, pos, skillInfo, entityId,
     end
 end
 
--- 刷新武器超限状态（基于预设ID和实际武器数据）
-function XUiTeamPrefabWeapon:UpdateOverrun()
-    self.OverrunIconTips = nil
-    local templateId = XMVCA.XEquip:GetEquipTemplateId(self.SelectEquipId)
-    self.CanOverrun = XMVCA.XEquip:CanOverrunByTemplateId(templateId)
+-- 刷新武器超限状态
+function XUiTeamPrefabWeapon:UpdateOverrun()
+    self.OverrunIconTips = nil
+    local equip = XMVCA.XEquip:GetEquip(self.SelectEquipId)
+    self.CanOverrun = equip:CanOverrun()
     self.PaneOverrun.gameObject:SetActiveEx(self.CanOverrun)
-    if not self.CanOverrun then 
+    if not self.CanOverrun then
         return
     end
 
-    -- 从预设获取武器ID和超频套装ID
-    local presetOverrunSuitId = self.TeamPrefab:GetWeaponOverrunSuitId(self.CurrentPos)
-    
-    -- 从实际玩家武器获取超频等级和状态
-    local realWeapon = XMVCA.XEquip:GetEquip(self.SelectEquipId)
-    local realOverrunSuitId = realWeapon and realWeapon:GetOverrunChoseSuit() or 0
-    
-    -- 合并预设与实际数据（套装以预设为主，等级以实际为主）
-    local displayOverrunSuitId = presetOverrunSuitId ~= 0 and presetOverrunSuitId or realOverrunSuitId
+    self:_RefreshOverrunLevelBtn(equip)
+    self:_RefreshOverrunSuitBtn(equip)
+    self:_RefreshOverrunSkillBtn(equip)
+end
 
-    -- 隐藏所有超频按钮状态
-    self.BtnOverrunBlind.gameObject:SetActiveEx(false)
-    self.BtnOverrunEmpty.gameObject:SetActiveEx(false)
+---@param equip XEquip
+function XUiTeamPrefabWeapon:_RefreshOverrunLevelBtn(equip)
+    local lv = equip:GetOverrunLevel()
+    local isLevel = lv > 0
+
+    self.BtnOverrunNoLevel.gameObject:SetActiveEx(not isLevel)
+    self.BtnOverrunLevel.gameObject:SetActiveEx(isLevel)
+    if not isLevel then
+        return
+    end
 
-    -- 未绑定超频套装
-    local canBind = realWeapon and realWeapon:IsOverrunCanBlindSuit()
-    if not canBind then
+    local characterId = self.TeamPrefab:GetEntityIdByTeamPos(self.CurrentPos)
+    local _, showDot, reachedDot, totalDot = equip:GetOverrunLevelInfo(characterId)
+    local isLv1 = lv == XEnumConst.EQUIP.WEAPON_OVERRUN_LEVEL_TYPE.LEVEL1
+    local isLvGe2 = lv >= XEnumConst.EQUIP.WEAPON_OVERRUN_LEVEL_TYPE.LEVEL2
+    local uiObj = self.BtnOverrunLevel:GetComponent("UiObject")
+
+    for _, stateName in ipairs(BUTTON_STATE_LIST) do
+        local stateObj = uiObj:GetObject(stateName)
+        stateObj:GetObject("UiTxtLevelImg1").gameObject:SetActiveEx(isLv1)
+        stateObj:GetObject("UiTxtLevelImg2").gameObject:SetActiveEx(isLvGe2)
+        stateObj:GetObject("PanelDotGroup").gameObject:SetActiveEx(showDot)
+        if showDot then
+            for i = 1, totalDot - 1 do
+                local dotGo = stateObj:GetObject("PanelDot" .. i)
+                local isOn = reachedDot - 1 >= i
+                dotGo.transform:Find("ImgBgLevelOn").gameObject:SetActiveEx(isOn)
+                dotGo.transform:Find("ImgBgLevelOff").gameObject:SetActiveEx(not isOn)
+            end
+        end
+    end
+end
+
+---@param equip XEquip
+function XUiTeamPrefabWeapon:_RefreshOverrunSuitBtn(equip)
+    self.BtnOverrunBlind.gameObject:SetActiveEx(false)
+    self.BtnOverrunEmpty.gameObject:SetActiveEx(false)
+    self.OverrunBlindEffect.gameObject:SetActiveEx(false)
+
+    local progress = equip:GetOverrunLevel() > 0 and "1/1" or "0/1"
+    if not equip:IsOverrunCanBlindSuit() then
         self.BtnOverrunBlind.gameObject:SetActiveEx(true)
         self.BtnOverrunBlind:SetDisable(true)
-        return 
-    end
-
-    -- 已绑定超频套装
-    if displayOverrunSuitId ~= 0 then
-        self.BtnOverrunBlind.gameObject:SetActiveEx(true)
-        self.BtnOverrunBlind:SetDisable(false)
-        
-        -- 设置套装图标（所有状态）
-        local stateList = { "Normal", "Press" }
-        local iconPath = XMVCA.XEquip:GetEquipSuitIconPath(displayOverrunSuitId)
-        local uiObj = self.BtnOverrunBlind:GetComponent("UiObject")
-        
-        for _, stateName in ipairs(stateList) do
-            local stateObj = uiObj:GetObject(stateName)
-            stateObj:GetObject("RImgSuit"):SetRawImage(iconPath)
-            
-            -- 检查套装与角色是否匹配（从预设获取当前位置角色ID）
-            local characterId = self.TeamPrefab:GetEntityIdByTeamPos(self.CurrentPos)
-            local isMatch = realWeapon and realWeapon:IsOverrunBlindMatch(characterId)
-            stateObj:GetObject("ImgNotMatching").gameObject:SetActiveEx(not isMatch)
-        end
-        
-        self.OverrunBlindEffect.gameObject:SetActiveEx(false)
+        self.BtnOverrunBlind:SetName(progress)
+        self.OverrunIconTips = XUiHelper.GetText("EquipOverrunClickTips")
         return
     end
 
-    -- 可绑定但未绑定状态
-    self.BtnOverrunEmpty.gameObject:SetActiveEx(true)
+    local choseSuitId = self:GetDisplayOverrunSuitId(equip)
+    if not XTool.IsNumberValid(choseSuitId) then
+        self.BtnOverrunEmpty.gameObject:SetActiveEx(true)
+        self.BtnOverrunEmpty:SetName(progress)
+        return
+    end
+
+    self.BtnOverrunBlind.gameObject:SetActiveEx(true)
+    self.BtnOverrunBlind:SetDisable(false)
+    self.BtnOverrunBlind:SetName(progress)
+    local iconPath = XMVCA.XEquip:GetEquipSuitIconPath(choseSuitId)
+    local characterId = self.TeamPrefab:GetEntityIdByTeamPos(self.CurrentPos)
+    local isMatch = self:IsOverrunSuitMatch(choseSuitId, characterId)
+    local uiObj = self.BtnOverrunBlind:GetComponent("UiObject")
+    for _, stateName in ipairs(BUTTON_STATE_LIST) do
+        local stateObj = uiObj:GetObject(stateName)
+        stateObj:GetObject("RImgSuit"):SetRawImage(iconPath)
+        stateObj:GetObject("ImgNotMatching").gameObject:SetActiveEx(not isMatch)
+    end
+end
+
+---@param equip XEquip
+function XUiTeamPrefabWeapon:_RefreshOverrunSkillBtn(equip)
+    local characterId = self.TeamPrefab:GetEntityIdByTeamPos(self.CurrentPos)
+    local showSkillId = equip:GetOverrunShowSkillId(characterId)
+    self.BtnOverrunSkill.gameObject:SetActiveEx(showSkillId ~= nil)
+    if not showSkillId then
+        return
+    end
+
+    local skillCfg = XMVCA.XEquip:GetWeaponOverrunSkillConfigById(showSkillId)
+
+    local _, _, reachedDot, totalDot = equip:GetOverrunLevelInfo(characterId)
+    local isFull = reachedDot >= totalDot
+    self.BtnOverrunSkill:SetDisable(reachedDot == 0)
+    local uiObj = self.BtnOverrunSkill:GetComponent("UiObject")
+
+    for _, stateName in ipairs(BUTTON_STATE_LIST) do
+        local stateObj = uiObj:GetObject(stateName)
+        stateObj:GetObject("RImgSuit"):SetRawImage(skillCfg.Icon)
+        stateObj:GetObject("PanelFull").gameObject:SetActiveEx(isFull)
+        stateObj:GetObject("PanelNotFull").gameObject:SetActiveEx(not isFull)
+    end
+
+    self.BtnOverrunSkill:SetName(reachedDot .. "/" .. totalDot)
+end
+
+function XUiTeamPrefabWeapon:GetDisplayOverrunSuitId(equip)
+    local weaponData = self.TeamPrefab:GetWeaponData(self.CurrentPos)
+    local isCurSelectEquipInCurrentPos = weaponData and self.SelectEquipId == weaponData.EquipId
+    if isCurSelectEquipInCurrentPos and XTool.IsNumberValid(weaponData.WeaponOverrunSuitId) then
+        return weaponData.WeaponOverrunSuitId
+    end
+
+    return equip:GetOverrunChoseSuit()
+end
+
+function XUiTeamPrefabWeapon:IsOverrunSuitMatch(suitId, characterId)
+    local charType = XMVCA.XCharacter:GetCharacterType(characterId)
+    local suitCharType = XMVCA.XEquip:GetSuitCharacterType(suitId)
+    return suitCharType == XEnumConst.EQUIP.USER_TYPE.ALL or suitCharType == charType
 end
 
 -- 刷新按钮状态
@@ -645,32 +685,4 @@ function XUiTeamPrefabWeapon:UpdateBtnState()
     self.ImgEquipOn.gameObject:SetActiveEx(isEquip)
 end
 
--- 刷新扩展按钮名称
-function XUiTeamPrefabWeapon:UpdateExtendName()
-    local nameKey = self.CanOverrun and "EquipWeaponBtnName" or "EquipResonanceName"
-    local btnName = XUiHelper.GetText(nameKey)
-    self.PanelAdd2:SetName(btnName)
-    self.TxtExtendTitleNormal.text = btnName
-end
-
--- 显示技能面板
-function XUiTeamPrefabWeapon:ShowPanelSkill()
-    self.IsShowExtend = false
-    self:PlayAnimation("AnimUnFold")
-    self.PanelAddEffect.gameObject:SetActiveEx(false)
-    self.PanelAdd2Effect.gameObject:SetActiveEx(true)
-    self.GridEquipResonanceEffect1.gameObject:SetActiveEx(false)
-    self.GridEquipResonanceEffect2.gameObject:SetActiveEx(false)
-    self.GridEquipResonanceEffect3.gameObject:SetActiveEx(false)
-    self.OverrunBlindEffect.gameObject:SetActiveEx(false)
-end
-
--- 显示扩展面板
-function XUiTeamPrefabWeapon:ShowPanelExtend()
-    self.IsShowExtend = true
-    self:PlayAnimation("AnimFold")
-    self.PanelAddEffect.gameObject:SetActiveEx(true)
-    self.PanelAdd2Effect.gameObject:SetActiveEx(false)
-end
-
-return XUiTeamPrefabWeapon
+return XUiTeamPrefabWeapon

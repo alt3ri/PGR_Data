@@ -2,8 +2,8 @@ local XTheatre6BuffBase = require("Gameplay/Theatre6/XTheatre6BuffBase")
 ---@class XBuffScript1025312 : XTheatre6BuffBase
 local XBuffScript1025312 = XDlcScriptManager.RegBuffScript(1025312, "XBuffScript1025312", XTheatre6BuffBase)
 
---效果说明：处于【点燃】状态的对手，每有1层【点燃】则造成的伤害降低2%。
---自身每有1层点燃造成伤害降低2%的效果
+--效果说明：处于【点燃】状态的对手，每有1层【点燃】则造成的伤害降低1%。
+--自身每有1层点燃造成伤害降低1%的效果
 
 function XBuffScript1025312:Init()
     --初始化
@@ -20,21 +20,21 @@ function XBuffScript1025312:Init()
     self.originAttrib3 = 0
 end
 
+function XBuffScript1025312:InitEventCallBackRegister()
+    self._proxy:RegisterEvent(EWorldEvent.NpcAddBuff)           -- OnNpcAddBuffEvent
+end
 
 function XBuffScript1025312:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
     if self._npcUUID == npcUUID and self.signalId == buffId then --吃到点燃就触发
-        self.originAttrib2 = self._proxy:GetBuffStacks( self._npcUUID,1025101)
+        self.originAttrib2 = self._proxy:GetBuffStacks(self._npcUUID, 1025101)
         self.originAttrib3 = self.originAttrib2 - self.originAttrib1
-        self._proxy:ApplyMagic(self._npcUUID, self._npcUUID, 1025907,2,0,self.originAttrib3)
+        self._proxy:ApplyMagic(self._npcUUID, self._npcUUID, 1025907, 1, 0, self.originAttrib3)
         --检测到点燃时刷新一次层数，计算和上次触发时的点燃层数差值，附加减伤
         self.originAttrib1 = self.originAttrib2
         --刷新层数计数
     end
-
 end
-
-
 
 return XBuffScript1025312
 
---这个没看懂
+--这个没看懂

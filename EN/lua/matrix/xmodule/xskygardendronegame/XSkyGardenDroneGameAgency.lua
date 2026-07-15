@@ -8,19 +8,21 @@ function XSkyGardenDroneGameAgency:OnInit()
     --初始化一些变量
     self.ChapterType = {
         Normal = 1, -- 普通
-        Hard = 2, -- 困难
+        Hard = 2,   -- 困难
     }
     self.StageType = {
-        Normal = 1, -- 普通
-        Special = 2, -- 特殊
-        MainLine = 3, -- 主线
+        Normal = 1,     -- 普通
+        Special = 2,    -- 特殊
+        MainLine = 3,   -- 主线
         BranchLine = 4, -- 支线
     }
     self.DialogueType = {
         Trigger = 1, -- 触发
-        Timer = 2, -- 定时
-        Random = 3, -- 随机
+        Timer = 2,   -- 定时
+        Random = 3,  -- 随机
     }
+
+    XMVCA.XBigWorldService:RegisterConditionFunc(10204001, Handler(self, self.OnCheckStageTargetAchieved))
 end
 
 function XSkyGardenDroneGameAgency:InitRpc()
@@ -34,6 +36,10 @@ function XSkyGardenDroneGameAgency:InitEvent()
     --self:AddAgencyEvent()
 end
 
+function XSkyGardenDroneGameAgency:OnRelease()
+    XMVCA.XBigWorldService:UnRegisterConditionFunc(10204001)
+end
+
 function XSkyGardenDroneGameAgency:OnNotifyDroneGameData(data)
     if data and data.GameData then
         self._Model:UpdateStageData(data.GameData.StageInfo)
@@ -43,8 +49,26 @@ end
 
 function XSkyGardenDroneGameAgency:OnChapterSelectViewSwitchCompleteCmd(data)
     if data and data.ChapterId then
-        XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_SKY_GARDEN_DRONE_CHAPTER_SELECT_VIEW_SWITCH_COMPLETE, data.ChapterId)
+        XEventManager.DispatchEvent(
+            XMVCA.XBigWorldService.DlcEventId.EVENT_SKY_GARDEN_DRONE_CHAPTER_SELECT_VIEW_SWITCH_COMPLETE, data.ChapterId)
     end
+end
+
+function XSkyGardenDroneGameAgency:OnCheckStageTargetAchieved(template)
+    if template then
+        local stageId = template.Params[1]
+        local targetId = template.Params[2]
+
+        if XTool.IsNumberValid(stageId) and XTool.IsNumberValid(targetId) then
+            local stageData = self._Model:GetStageData(stageId)
+
+            if stageData then
+                return stageData:IsTargetFinish(targetId)
+            end
+        end
+    end
+
+    return false
 end
 
 function XSkyGardenDroneGameAgency:CheckInTime()
@@ -105,4 +129,4 @@ function XSkyGardenDroneGameAgency:OpenMainUi()
     XMVCA.XBigWorldUI:Open("UiSkyGardenSGDroneMain")
 end
 
-return XSkyGardenDroneGameAgency
+return XSkyGardenDroneGameAgency

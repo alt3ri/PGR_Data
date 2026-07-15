@@ -78,49 +78,56 @@ XFubenExtraChapterCreator = function()
         if #chapter.StageId > 0 then
             info.ChapterMainId = chapterMain.Id
             info.FirstStage = chapter.StageId[1]
-            local firstStageInfo = XDataCenter.FubenManager.GetStageInfo(info.FirstStage)
-
-            -- 如果章节处于活动时间内，根据时间判断是否可以解锁
-            local firstUnlock = firstStageInfo.Unlock
-            local firstPassed = firstStageInfo.Passed
-            info.Unlock = firstUnlock
-            info.IsOpen = firstStageInfo.IsOpen
-            if not firstPassed and firstUnlock and ExtraChapterManager.CheckDiffHasAcitivity(chapter) then
-                if not ExtraChapterManager.CheckActivityCondition(chapter.ChapterId) then
-                    info.Unlock = false
-                    info.IsOpen = false
-                end
-            elseif (not ExtraChapterManager.IsExtraActivityOpen() and ExtraChapterManager.CheckDiffHasAcitivity(chapter)) or not ExtraChapterManager.CheckDiffHasAcitivity(chapter) then
-                local isOpen, desc = ExtraChapterManager.CheckOpenCondition(chapter.ChapterId)
-                if not isOpen then
-                    info.Unlock = false
-                    info.IsOpen = false
-                end
-            end
-            local passStageNum = 0
-            local stars = 0
-            local allPassed = true
-            for _, v in ipairs(chapter.StageId) do
-                local stageInfo = XDataCenter.FubenManager.GetStageInfo(v)
-                if stageInfo.Unlock then
-                    info.ActiveStage = v
-                    info.LastStageOrder = XDataCenter.FubenManager.GetStageOrderId(v)
-                end
-                if not stageInfo.Passed then
-                    allPassed = false
-                else
-                    passStageNum = passStageNum + 1
-                end
-                stars = stars + stageInfo.Stars
-            end
-
             local treasureCfg = XDataCenter.ExtraChapterManager.GetTreasureCfg(chapter.TreasureId[#chapter.TreasureId])
-            info.TotalStars = treasureCfg.RequireStar
-            info.Stars = stars > info.TotalStars and info.TotalStars or stars
-            info.Passed = allPassed
-            info.PassStageNum = passStageNum
+            info.TotalStars = treasureCfg and treasureCfg.RequireStar or 0
+            -- Unlock/IsOpen/Stars/Passed 等字段在 GetChapterInfo 首次访问时按需计算
         end
         return info
+    end
+
+    -- 按需计算章节完整信息（Unlock/IsOpen/Stars/Passed 等），由 GetChapterInfo 懒调用
+    local function RefreshChapterInfo(info, chapterMain, chapter)
+        if not chapter or #chapter.StageId == 0 then
+            info.Unlock = false  -- 清除 nil 哨兵，防止重入
+            return
+        end
+        local firstStageInfo = XDataCenter.FubenManager.GetStageInfo(info.FirstStage)
+        -- 如果章节处于活动时间内，根据时间判断是否可以解锁
+        local firstUnlock = firstStageInfo.Unlock
+        local firstPassed = firstStageInfo.Passed
+        info.Unlock = firstUnlock
+        info.IsOpen = firstStageInfo.IsOpen
+        if not firstPassed and firstUnlock and ExtraChapterManager.CheckDiffHasAcitivity(chapter) then
+            if not ExtraChapterManager.CheckActivityCondition(chapter.ChapterId) then
+                info.Unlock = false
+                info.IsOpen = false
+            end
+        elseif not (ExtraChapterManager.IsExtraActivityOpen() and ExtraChapterManager.CheckDiffHasAcitivity(chapter)) then
+            local isOpen, desc = ExtraChapterManager.CheckOpenCondition(chapter.ChapterId)
+            if not isOpen then
+                info.Unlock = false
+                info.IsOpen = false
+            end
+        end
+        local passStageNum = 0
+        local stars = 0
+        local allPassed = true
+        for _, v in ipairs(chapter.StageId) do
+            local stageInfo = XDataCenter.FubenManager.GetStageInfo(v)
+            if stageInfo.Unlock then
+                info.ActiveStage = v
+                info.LastStageOrder = XDataCenter.FubenManager.GetStageOrderId(v)
+            end
+            if not stageInfo.Passed then
+                allPassed = false
+            else
+                passStageNum = passStageNum + 1
+            end
+            stars = stars + stageInfo.Stars
+        end
+        info.Stars = stars > info.TotalStars and info.TotalStars or stars
+        info.Passed = allPassed
+        info.PassStageNum = passStageNum
     end
     
     function ExtraChapterManager.GetChapterUnlock(chapterId)
@@ -171,42 +178,22 @@ XFubenExtraChapterCreator = function()
     function ExtraChapterManager.InitChapterData(checkNewUnlock)
         local oldChapterInfos = ChapterInfos
         ChapterInfos = {}
+        CurrentClearData = {}  -- 重置，下次调用 GetChapterClearData 时按需重建
         local SortChapterExtraCfgs = {}
         for _, chapterMain in pairs(ChapterExtraCfgs) do
             table.insert(SortChapterExtraCfgs, chapterMain)
         end
         table.sort(SortChapterExtraCfgs, SortById)
-        CurrentClearData.ChapterTotalNum = 0
-        CurrentClearData.AllChapterClear = true
         for _, chapterMain in pairs(SortChapterExtraCfgs) do
             for difficult, chapterId in pairs(chapterMain.ChapterId) do
                 local chapter = ChapterExtraDetailsCfgs[chapterId]
                 ChapterInfos[chapterId] = InitChapterInfo(chapterMain, chapter)
-                --for k, v in ipairs(chapter.StageId) do
-                --    local stageInfo = XDataCenter.FubenManager.GetStageInfo(v)
-                --    stageInfo.Type = XDataCenter.FubenManager.StageType.ExtraChapter
-                --    stageInfo.OrderId = k
-                --    stageInfo.ChapterId = chapter.ChapterId
-                --    stageInfo.Difficult = difficult
-                --end
-                local info = ChapterInfos[chapterId]
-                if difficult == DifficultType.Normal then
-                    CurrentClearData.ChapterTotalNum = CurrentClearData.ChapterTotalNum + 1
-                    if CurrentClearData.AllChapterClear and info.Unlock then
-                        CurrentClearData.ChapterId = info.ChapterMainId
-                        CurrentClearData.StageTitle = chapter.StageTitle
-                        CurrentClearData.StageId = info.ActiveStage
-                        CurrentClearData.LastStageOrder = info.LastStageOrder
-                        CurrentClearData.IsClear = info.Passed
-                        CurrentClearData.PassStageNum = info.PassStageNum
-                    end
-                    if not info.Passed then CurrentClearData.AllChapterClear = false end
-                end
             end
         end
         if checkNewUnlock then
             for k, v in pairs(ChapterInfos) do
-                if v.Unlock and not oldChapterInfos[k].Unlock then
+                local info = ExtraChapterManager.GetChapterInfo(k)
+                if info and info.Unlock and oldChapterInfos[k] and oldChapterInfos[k].Unlock == false then
                     XEventManager.DispatchEvent(XEventId.EVENT_FUBEN_NEW_EXTRA_CHAPTER, k)
                 end
             end
@@ -250,7 +237,7 @@ XFubenExtraChapterCreator = function()
     end
     -- 获取篇章星数
     function ExtraChapterManager.GetChapterStars(chapterId)
-        local info = ChapterInfos[chapterId]
+        local info = ExtraChapterManager.GetChapterInfo(chapterId)
         return info and info.Stars or 0, info and info.TotalStars or 0
     end
 
@@ -267,16 +254,22 @@ XFubenExtraChapterCreator = function()
     end
 
     function ExtraChapterManager.GetChapterInfo(chapterId)
-        return ChapterInfos[chapterId]
+        local info = ChapterInfos[chapterId]
+        if info and info.Unlock == nil then
+            local chapter = ChapterExtraDetailsCfgs[chapterId]
+            local chapterMainCfg = ChapterExtraCfgs[info.ChapterMainId]
+            RefreshChapterInfo(info, chapterMainCfg, chapter)
+        end
+        return info
     end
     
     function ExtraChapterManager.GetChapterInfoPassed(chapterId)
-        local chapterInfo = ChapterInfos[chapterId]
+        local chapterInfo = ExtraChapterManager.GetChapterInfo(chapterId)
 
         if chapterInfo then
             return chapterInfo.Passed
         end
-        
+
         return true
     end
 
@@ -487,6 +480,57 @@ XFubenExtraChapterCreator = function()
     end
     --获取通关进度
     function ExtraChapterManager.GetChapterClearData()
+        if not CurrentClearData.ChapterTotalNum then
+            local SortChapterExtraCfgs = {}
+            for _, chapterMain in pairs(ChapterExtraCfgs) do
+                table.insert(SortChapterExtraCfgs, chapterMain)
+            end
+            table.sort(SortChapterExtraCfgs, SortById)
+            CurrentClearData.ChapterTotalNum = 0
+            CurrentClearData.AllChapterClear = true
+            for _, chapterMain in pairs(SortChapterExtraCfgs) do
+                for difficult, chapterId in pairs(chapterMain.ChapterId) do
+                    local chapter = ChapterExtraDetailsCfgs[chapterId]
+                    -- 直接查服务器阶段数据，避免触发 GetChapterInfo 懒加载
+                    if chapter and #chapter.StageId > 0 and difficult == DifficultType.Normal then
+                        CurrentClearData.ChapterTotalNum = CurrentClearData.ChapterTotalNum + 1
+                        -- 第一关有服务器数据即视为章节已解锁
+                        local unlock = XMVCA.XFuben:GetStageData(chapter.StageId[1]) ~= nil
+                        if CurrentClearData.AllChapterClear and unlock then
+                            local allPassed = true
+                            local activeStage = nil
+                            local lastStageOrder = nil
+                            local passStageNum = 0
+                            for _, stageId in ipairs(chapter.StageId) do
+                                local stageData = XMVCA.XFuben:GetStageData(stageId)
+                                if stageData then
+                                    -- 有服务器数据视为已解锁，取最后一个已解锁关卡
+                                    activeStage = stageId
+                                    lastStageOrder = XDataCenter.FubenManager.GetStageOrderId(stageId)
+                                    if stageData.Passed then
+                                        passStageNum = passStageNum + 1
+                                    else
+                                        allPassed = false
+                                    end
+                                else
+                                    allPassed = false
+                                end
+                            end
+                            CurrentClearData.ChapterId = chapterMain.Id
+                            CurrentClearData.StageTitle = chapter.StageTitle
+                            CurrentClearData.StageId = activeStage
+                            CurrentClearData.LastStageOrder = lastStageOrder
+                            CurrentClearData.IsClear = allPassed
+                            CurrentClearData.PassStageNum = passStageNum
+                            if not allPassed then CurrentClearData.AllChapterClear = false end
+                        elseif not unlock then
+                            -- 未解锁章节视为未通关
+                            CurrentClearData.AllChapterClear = false
+                        end
+                    end
+                end
+            end
+        end
         return CurrentClearData
     end
     --跳转到外章Banner页面

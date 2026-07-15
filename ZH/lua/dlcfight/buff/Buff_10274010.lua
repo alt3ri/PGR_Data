@@ -4,7 +4,7 @@ local XTheatre6SkillBase = require("Gameplay/Theatre6/XTheatre6SkillBase")
 local XBuffScript10274010 = XDlcScriptManager.RegBuffScript(10274010, "XBuffScript10274010", XTheatre6SkillBase)
 
 -- 效果说明：
--- · 每有20点【超算】属性，获得【当前生命值】1%的【护盾】；
+-- · 每有100点【超算】属性，获得【当前生命值】1%的【护盾】；
 -- · {被动}进入战斗时，触发一次上述效果；
 -- · 扣除对手20点【体力值】，自身每有45点【护盾】，额外扣除对手1点【体力值】。
 
@@ -12,7 +12,7 @@ function XBuffScript10274010:ScriptInit(isGainControl)
     XTheatre6SkillBase.ScriptInit(self, isGainControl)
     self.Protector = self:GetNpc():GetProtectorController()
     self.ShieldBuffId = 1027401         -- 正式buffid
-    self.OverClockPerShieldPercent = 30 -- 每30点超算属性触发一次护盾比例
+    self.OverClockPerShieldPercent = 100-- 每100点超算属性触发一次护盾比例
     --self.ShieldPercentPerStep = 0.01  -- 每次触发获得当前生命值1%的护盾
 end
 

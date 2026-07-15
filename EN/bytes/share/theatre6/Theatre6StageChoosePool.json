@@ -205,8 +205,8 @@
         "QualityWeights": null,
         "NeedRewards": null,
         "RewardWeights": null,
-        "AppointChooses": "[1004, 1005, 1006, 1007, 1008, 1009]",
-        "ChooseWeights": "[10, 10, 10, 10, 10, 10]",
+        "AppointChooses": "[1005, 1006, 1007, 1009]",
+        "ChooseWeights": "[10, 10, 10, 10]",
         "NeedRewardWeight": null
     },
     {
@@ -215,8 +215,8 @@
         "QualityWeights": null,
         "NeedRewards": null,
         "RewardWeights": null,
-        "AppointChooses": "[1010, 1011, 1012, 1013, 1014, 1015]",
-        "ChooseWeights": "[10, 10, 10, 10, 10, 10]",
+        "AppointChooses": "[1012, 1015]",
+        "ChooseWeights": "[10, 10]",
         "NeedRewardWeight": null
     },
     {
@@ -225,18 +225,8 @@
         "QualityWeights": null,
         "NeedRewards": null,
         "RewardWeights": null,
-        "AppointChooses": "[1016, 1017, 1018]",
-        "ChooseWeights": "[10, 10, 10]",
-        "NeedRewardWeight": null
-    },
-    {
-        "Id": 1005,
-        "NeedQualitys": null,
-        "QualityWeights": null,
-        "NeedRewards": null,
-        "RewardWeights": null,
-        "AppointChooses": "[1020, 1021, 1022]",
-        "ChooseWeights": "[10, 10, 10]",
+        "AppointChooses": "[1016, 1018]",
+        "ChooseWeights": "[10, 10]",
         "NeedRewardWeight": null
     },
     {
@@ -247,7 +237,17 @@
         "RewardWeights": null,
         "AppointChooses": null,
         "ChooseWeights": null,
-        "NeedRewardWeight": 79.0
+        "NeedRewardWeight": null
+    },
+    {
+        "Id": 1011,
+        "NeedQualitys": "[1]",
+        "QualityWeights": "[1]",
+        "NeedRewards": "[1]",
+        "RewardWeights": "[1]",
+        "AppointChooses": null,
+        "ChooseWeights": null,
+        "NeedRewardWeight": 44.0
     },
     {
         "Id": 1100,
@@ -791,82 +791,352 @@
     },
     {
         "Id": 1810,
-        "NeedQualitys": "[2, 1]",
-        "QualityWeights": "[20, 1]",
-        "NeedRewards": "[1, 7]",
-        "RewardWeights": "[1, 4]",
+        "NeedQualitys": "[1]",
+        "QualityWeights": "[1]",
+        "NeedRewards": "[1]",
+        "RewardWeights": "[1]",
         "AppointChooses": null,
         "ChooseWeights": null,
         "NeedRewardWeight": 49.0
     },
     {
         "Id": 1811,
-        "NeedQualitys": "[2, 1]",
-        "QualityWeights": "[20, 1]",
-        "NeedRewards": "[1, 7]",
-        "RewardWeights": "[1, 4]",
+        "NeedQualitys": "[1]",
+        "QualityWeights": "[1]",
+        "NeedRewards": "[1]",
+        "RewardWeights": "[1]",
+        "AppointChooses": null,
+        "ChooseWeights": null,
+        "NeedRewardWeight": 49.0
+    },
+    {
+        "Id": 19000,
+        "NeedQualitys": null,
+        "QualityWeights": null,
+        "NeedRewards": null,
+        "RewardWeights": null,
+        "AppointChooses": "[1900, 1901]",
+        "ChooseWeights": "[1, 1]",
+        "NeedRewardWeight": null
+    },
+    {
+        "Id": 19010,
+        "NeedQualitys": null,
+        "QualityWeights": null,
+        "NeedRewards": null,
+        "RewardWeights": null,
+        "AppointChooses": "[1902, 1903]",
+        "ChooseWeights": "[1, 1]",
+        "NeedRewardWeight": null
+    },
+    {
+        "Id": 19020,
+        "NeedQualitys": null,
+        "QualityWeights": null,
+        "NeedRewards": null,
+        "RewardWeights": null,
+        "AppointChooses": "[1904, 1905]",
+        "ChooseWeights": "[1, 1]",
+        "NeedRewardWeight": null
+    },
+    {
+        "Id": 19030,
+        "NeedQualitys": null,
+        "QualityWeights": null,
+        "NeedRewards": null,
+        "RewardWeights": null,
+        "AppointChooses": "[1910, 1911, 1912]",
+        "ChooseWeights": "[1, 1, 1]",
+        "NeedRewardWeight": null
+    },
+    {
+        "Id": 19040,
+        "NeedQualitys": null,
+        "QualityWeights": null,
+        "NeedRewards": null,
+        "RewardWeights": null,
+        "AppointChooses": "[1913, 1914, 1915, 1916]",
+        "ChooseWeights": "[1, 1, 1, 1]",
+        "NeedRewardWeight": null
+    },
+    {
+        "Id": 19050,
+        "NeedQualitys": null,
+        "QualityWeights": null,
+        "NeedRewards": null,
+        "RewardWeights": null,
+        "AppointChooses": "[1917, 1918]",
+        "ChooseWeights": "[1, 1]",
+        "NeedRewardWeight": null
+    },
+    {
+        "Id": 19100,
+        "NeedQualitys": "[1]",
+        "QualityWeights": "[1]",
+        "NeedRewards": "[1]",
+        "RewardWeights": "[1]",
+        "AppointChooses": null,
+        "ChooseWeights": null,
+        "NeedRewardWeight": 49.0
+    },
+    {
+        "Id": 20000,
+        "NeedQualitys": null,
+        "QualityWeights": null,
+        "NeedRewards": null,
+        "RewardWeights": null,
+        "AppointChooses": "[2000, 2001]",
+        "ChooseWeights": "[1, 1]",
+        "NeedRewardWeight": null
+    },
+    {
+        "Id": 20010,
+        "NeedQualitys": null,
+        "QualityWeights": null,
+        "NeedRewards": null,
+        "RewardWeights": null,
+        "AppointChooses": "[2002, 2003, 2004, 2005]",
+        "ChooseWeights": "[1, 1, 1, 1]",
+        "NeedRewardWeight": null
+    },
+    {
+        "Id": 20020,
+        "NeedQualitys": null,
+        "QualityWeights": null,
+        "NeedRewards": null,
+        "RewardWeights": null,
+        "AppointChooses": "[2006, 2007, 2008]",
+        "ChooseWeights": "[1, 1, 1]",
+        "NeedRewardWeight": null
+    },
+    {
+        "Id": 20030,
+        "NeedQualitys": null,
+        "QualityWeights": null,
+        "NeedRewards": null,
+        "RewardWeights": null,
+        "AppointChooses": "[2010, 2011, 2012, 2013, 2014, 2015]",
+        "ChooseWeights": "[1, 1, 1, 1, 1, 1]",
+        "NeedRewardWeight": null
+    },
+    {
+        "Id": 20040,
+        "NeedQualitys": null,
+        "QualityWeights": null,
+        "NeedRewards": null,
+        "RewardWeights": null,
+        "AppointChooses": "[2020, 2021, 2022, 2023, 2024, 2025]",
+        "ChooseWeights": "[1, 1, 1, 1, 1, 1]",
+        "NeedRewardWeight": null
+    },
+    {
+        "Id": 20100,
+        "NeedQualitys": "[1]",
+        "QualityWeights": "[1]",
+        "NeedRewards": "[1]",
+        "RewardWeights": "[1]",
+        "AppointChooses": null,
+        "ChooseWeights": null,
+        "NeedRewardWeight": 49.0
+    },
+    {
+        "Id": 21000,
+        "NeedQualitys": null,
+        "QualityWeights": null,
+        "NeedRewards": null,
+        "RewardWeights": null,
+        "AppointChooses": "[2100, 2101, 2102]",
+        "ChooseWeights": "[1, 1, 1]",
+        "NeedRewardWeight": null
+    },
+    {
+        "Id": 21010,
+        "NeedQualitys": null,
+        "QualityWeights": null,
+        "NeedRewards": null,
+        "RewardWeights": null,
+        "AppointChooses": "[2103, 2104, 2105, 2110]",
+        "ChooseWeights": "[1, 1, 1, 1]",
+        "NeedRewardWeight": null
+    },
+    {
+        "Id": 21020,
+        "NeedQualitys": null,
+        "QualityWeights": null,
+        "NeedRewards": null,
+        "RewardWeights": null,
+        "AppointChooses": "[2111, 2112]",
+        "ChooseWeights": "[1, 1]",
+        "NeedRewardWeight": null
+    },
+    {
+        "Id": 21030,
+        "NeedQualitys": null,
+        "QualityWeights": null,
+        "NeedRewards": null,
+        "RewardWeights": null,
+        "AppointChooses": "[2120, 2121, 2115, 2116, 2117, 2118]",
+        "ChooseWeights": "[1, 1, 1, 1, 1, 1]",
+        "NeedRewardWeight": null
+    },
+    {
+        "Id": 21100,
+        "NeedQualitys": "[1]",
+        "QualityWeights": "[1]",
+        "NeedRewards": "[1]",
+        "RewardWeights": "[1]",
+        "AppointChooses": null,
+        "ChooseWeights": null,
+        "NeedRewardWeight": 49.0
+    },
+    {
+        "Id": 22000,
+        "NeedQualitys": null,
+        "QualityWeights": null,
+        "NeedRewards": null,
+        "RewardWeights": null,
+        "AppointChooses": "[2200, 2201, 2202, 2203, 2204]",
+        "ChooseWeights": "[1, 1, 1, 1, 1]",
+        "NeedRewardWeight": null
+    },
+    {
+        "Id": 22010,
+        "NeedQualitys": null,
+        "QualityWeights": null,
+        "NeedRewards": null,
+        "RewardWeights": null,
+        "AppointChooses": "[2205, 2206, 2207, 2208]",
+        "ChooseWeights": "[1, 1, 1, 1]",
+        "NeedRewardWeight": null
+    },
+    {
+        "Id": 22020,
+        "NeedQualitys": null,
+        "QualityWeights": null,
+        "NeedRewards": null,
+        "RewardWeights": null,
+        "AppointChooses": "[2209, 2210, 2211, 2212, 2213]",
+        "ChooseWeights": "[1, 1, 1, 1, 1]",
+        "NeedRewardWeight": null
+    },
+    {
+        "Id": 22030,
+        "NeedQualitys": null,
+        "QualityWeights": null,
+        "NeedRewards": null,
+        "RewardWeights": null,
+        "AppointChooses": "[2220, 2221, 2222, 2223, 2224, 2225]",
+        "ChooseWeights": "[1, 1, 1, 1, 1, 1]",
+        "NeedRewardWeight": null
+    },
+    {
+        "Id": 22100,
+        "NeedQualitys": "[1]",
+        "QualityWeights": "[1]",
+        "NeedRewards": "[1]",
+        "RewardWeights": "[1]",
         "AppointChooses": null,
         "ChooseWeights": null,
         "NeedRewardWeight": 49.0
     },
     {
         "Id": 2001,
-        "NeedQualitys": "[2, 1, 6]",
-        "QualityWeights": "[20, 1, 1]",
-        "NeedRewards": "[1, 7]",
-        "RewardWeights": "[1, 4]",
+        "NeedQualitys": "[1]",
+        "QualityWeights": "[1]",
+        "NeedRewards": "[1]",
+        "RewardWeights": "[1]",
         "AppointChooses": null,
         "ChooseWeights": null,
-        "NeedRewardWeight": 49.0
+        "NeedRewardWeight": 44.0
     },
     {
         "Id": 2002,
-        "NeedQualitys": "[3, 1, 6]",
-        "QualityWeights": "[20, 1, 1]",
-        "NeedRewards": "[1, 7]",
-        "RewardWeights": "[1, 4]",
+        "NeedQualitys": "[1]",
+        "QualityWeights": "[1]",
+        "NeedRewards": "[1]",
+        "RewardWeights": "[1]",
         "AppointChooses": null,
         "ChooseWeights": null,
-        "NeedRewardWeight": 49.0
+        "NeedRewardWeight": 44.0
     },
     {
         "Id": 2003,
-        "NeedQualitys": "[4, 1, 6]",
-        "QualityWeights": "[20, 1, 1]",
-        "NeedRewards": "[1, 7]",
-        "RewardWeights": "[1, 4]",
+        "NeedQualitys": "[1]",
+        "QualityWeights": "[1]",
+        "NeedRewards": "[1]",
+        "RewardWeights": "[1]",
         "AppointChooses": null,
         "ChooseWeights": null,
-        "NeedRewardWeight": 49.0
+        "NeedRewardWeight": 44.0
     },
     {
         "Id": 2004,
-        "NeedQualitys": "[2, 1, 6]",
-        "QualityWeights": "[20, 1, 1]",
-        "NeedRewards": "[1, 7]",
-        "RewardWeights": "[1, 4]",
+        "NeedQualitys": "[1]",
+        "QualityWeights": "[1]",
+        "NeedRewards": "[1]",
+        "RewardWeights": "[1]",
         "AppointChooses": null,
         "ChooseWeights": null,
-        "NeedRewardWeight": 49.0
+        "NeedRewardWeight": 44.0
     },
     {
         "Id": 2005,
-        "NeedQualitys": "[3, 1, 6]",
-        "QualityWeights": "[20, 1, 1]",
-        "NeedRewards": "[1, 7]",
-        "RewardWeights": "[1, 4]",
+        "NeedQualitys": "[1]",
+        "QualityWeights": "[1]",
+        "NeedRewards": "[1]",
+        "RewardWeights": "[1]",
         "AppointChooses": null,
         "ChooseWeights": null,
-        "NeedRewardWeight": 49.0
+        "NeedRewardWeight": 44.0
     },
     {
         "Id": 2006,
-        "NeedQualitys": "[4, 1, 6]",
-        "QualityWeights": "[20, 1, 1]",
-        "NeedRewards": "[1, 7]",
-        "RewardWeights": "[1, 4]",
+        "NeedQualitys": "[1]",
+        "QualityWeights": "[1]",
+        "NeedRewards": "[1]",
+        "RewardWeights": "[1]",
         "AppointChooses": null,
         "ChooseWeights": null,
-        "NeedRewardWeight": 49.0
+        "NeedRewardWeight": 44.0
+    },
+    {
+        "Id": 3001,
+        "NeedQualitys": "[1, 2]",
+        "QualityWeights": "[1, 100]",
+        "NeedRewards": "[1]",
+        "RewardWeights": "[1]",
+        "AppointChooses": null,
+        "ChooseWeights": null,
+        "NeedRewardWeight": 7.0
+    },
+    {
+        "Id": 3002,
+        "NeedQualitys": "[1, 3]",
+        "QualityWeights": "[1, 100]",
+        "NeedRewards": "[1]",
+        "RewardWeights": "[1]",
+        "AppointChooses": null,
+        "ChooseWeights": null,
+        "NeedRewardWeight": 7.0
+    },
+    {
+        "Id": 3003,
+        "NeedQualitys": "[1, 4]",
+        "QualityWeights": "[1, 100]",
+        "NeedRewards": "[1]",
+        "RewardWeights": "[1]",
+        "AppointChooses": null,
+        "ChooseWeights": null,
+        "NeedRewardWeight": 7.0
+    },
+    {
+        "Id": 4001,
+        "NeedQualitys": "[1]",
+        "QualityWeights": "[1]",
+        "NeedRewards": "[7, 1]",
+        "RewardWeights": "[200, 1]",
+        "AppointChooses": null,
+        "ChooseWeights": null,
+        "NeedRewardWeight": 1.0
     }
 ]

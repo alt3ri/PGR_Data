@@ -9,6 +9,7 @@ local XUiGridTheatre6SettlementArchive = require("XUi/XUiTheatre6/Settlement/Gri
 
 function XUiTheatre6Archive:OnAwake()
     self:RegisterClickEvent(self.BtnBack, self.Close)
+    ---@type XUiGridTheatre6SettlementArchive[]
     self._ArchiveGrids = {}
     self._SelectedSlotIndex = nil
     self.GridArchive.gameObject:SetActiveEx(false)
@@ -75,7 +76,30 @@ function XUiTheatre6Archive:RefreshArchiveList()
     end
     table.sort(self._ArchiveDataList, function(a, b) return a.slotIndex < b.slotIndex end)
 
-    XTool.UpdateDynamicItem(self._ArchiveGrids, self._ArchiveDataList, self.GridArchive, XUiGridTheatre6SettlementArchive, self)
+    local defendSlotIndex = {}
+    local myFileDataList = self._Control:GetPvpCurrentLineupFileDataList(XEnumConst.Theatre6.Pvp.LineupMode.Defend)
+    for _, fileData in pairs(myFileDataList) do
+        if fileData.CharacterId == self._RoleId then
+            defendSlotIndex[fileData.SlotId] = true
+        end
+    end
+
+    for i = 1, #self._ArchiveDataList do
+        local data = self._ArchiveDataList[i]
+        local grid = self._ArchiveGrids[i]
+        if not grid then
+            local ui = XUiHelper.Instantiate(self.GridArchive, self.GridArchive.transform.parent)
+            grid = XUiGridTheatre6SettlementArchive.New(ui, self)
+            self._ArchiveGrids[i] = grid
+        end
+        grid:Open()
+        grid:Update(data, i)
+        grid:ShowTagDefend(defendSlotIndex[data.slotIndex])
+    end
+
+    for i = #self._ArchiveDataList + 1, #self._ArchiveGrids do
+        self._ArchiveGrids[i]:Close()
+    end
 end
 
 function XUiTheatre6Archive:RefreshTips()

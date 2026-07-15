@@ -659,8 +659,10 @@ function XFubenBossSingleControl:GetBossCurSettleScore(settleStageId, settleScor
         return score
     end
 
+    local stageType = self:GetFightStageType()
+
     -- 如果是鏖战点（挑战模式），只计算讨伐值最高的前2个关卡
-    if self:IsBossSingleChallenge() then
+    if stageType == XEnumConst.BossSingle.StageType.Challenge then
         local challengeData = self:GetBossSingleChallengeData()
         if challengeData and not challengeData:GetIsEmpty() then
             -- 按照 __InitFeatureRecordTag 的逻辑：收集所有有记录的关卡，排序后取前2个
@@ -718,7 +720,34 @@ function XFubenBossSingleControl:GetBossCurSettleScore(settleStageId, settleScor
             -- 如果没有挑战数据，使用当前结算分数
             score = settleScore
         end
-    else
+    elseif stageType == XEnumConst.BossSingle.StageType.Bestiary then
+        local totalScore = settleScore
+        local sectionConf = self:GetBossSectionConfigByBossId(bossId)
+        local data = self:GetBossSingleData()
+
+        for _, stageId in pairs(sectionConf.StageId) do
+            if stageId ~= settleStageId then
+                local stageData = data:GetBossSingleBestiraryStageInfoByStageId(stageId)
+                totalScore = totalScore + (stageData and stageData:GetScore() or 0)
+            end
+        end
+
+        score = totalScore
+    elseif stageType == XEnumConst.BossSingle.StageType.Trial then
+        local sectionId = self._Model:GetBossSectionConfigIdBySectionId(bossId)
+        local sectionConfig = self._Model:GetBossSingleSectionConfigById(sectionId)
+        local totalScore = settleScore
+        local bossSingleData = self._Model:GetBossSingleData()
+
+        for _, stageId in pairs(sectionConfig.StageId) do
+            if stageId ~= settleStageId then
+                local info = bossSingleData:GetBossSingleTrialStageInfoByStageId(stageId)
+                if info then totalScore = totalScore + info:GetScore() end
+            end
+        end
+
+        score = totalScore
+    elseif stageType == XEnumConst.BossSingle.StageType.Normal then
         -- 普通模式：累加所有关卡的讨伐值
         local stageList = self:GetBossStageList(bossId)
 
@@ -729,6 +758,9 @@ function XFubenBossSingleControl:GetBossCurSettleScore(settleStageId, settleScor
                 score = score + self:GetBossStageScore(stageId)
             end
         end
+    else
+        score = 0
+        XLog.Error("Unknown stage type: " .. stageType)
     end
 
     return score
@@ -913,16 +945,18 @@ function XFubenBossSingleControl:GetTeamByBossId(bossId)
                 ---@type XTeam
                 local serverTeam = XDataCenter.TeamManager.GetXTeamByTypeId(CS.XGame.Config:GetInt("TypeIdBossSingle"))
                 local baseTeamData = serverTeam:SwithToOldTeamData()
-                
+                -- 优先使用 per-boss 本地缓存，避免三个 boss 共用 serverTeam 导致 FirstFightPos 互相污染
+                local localTeam = XSaveTool.GetData(teamId .. XPlayer.Id)
+
                 -- 构造编队数据
                 teamData = {
-                    FirstFightPos = baseTeamData.FirstFightPos or 0,
-                    CaptainPos = baseTeamData.CaptainPos or 0,
+                    FirstFightPos = (localTeam and localTeam.FirstFightPos) or baseTeamData.FirstFightPos or 0,
+                    CaptainPos = (localTeam and localTeam.CaptainPos) or baseTeamData.CaptainPos or 0,
                     TeamData = {},
                     TeamName = "",
-                    SelectedGeneralSkill = baseTeamData.SelectedGeneralSkill,
-                    EnterCgIndex = baseTeamData.EnterCgIndex,
-                    SettleCgIndex = baseTeamData.SettleCgIndex,
+                    SelectedGeneralSkill = (localTeam and localTeam.SelectedGeneralSkill) or baseTeamData.SelectedGeneralSkill,
+                    EnterCgIndex = (localTeam and localTeam.EnterCgIndex) or baseTeamData.EnterCgIndex,
+                    SettleCgIndex = (localTeam and localTeam.SettleCgIndex) or baseTeamData.SettleCgIndex,
                 }
                 
                 -- 填充角色ID列表
@@ -953,7 +987,7 @@ function XFubenBossSingleControl:GetTeamByBossId(bossId)
                     TeamName = "",
                     SelectedGeneralSkill = localTeam.SelectedGeneralSkill,
                     EnterCgIndex = localTeam.EnterCgIndex,
-                    SettleCgIndex = localTeam.EnterCgIndex,
+                    SettleCgIndex = localTeam.SettleCgIndex,
                 }
 
                 resultTeam:UpdateFromTeamData(teamData)

@@ -26,6 +26,7 @@ function XBuffScript1025196:Update(dt)
     if self.isDone then return end
     local timeTrigger = self._proxy:GetNpcTime(self._npcUUID) >= self.timer
     if timeTrigger then
+        self._proxy:ShowTip(108102)
         self._proxy:Theatre6PlaySanEffect(self._npcUUID)
         self._proxy:ApplyMagic(self._npcUUID, self._npcUUID, self.magicId, 1, 0, 1)
         self.isDone = true

@@ -64,7 +64,6 @@ function XChar3504:SkillCastConfig()
         [350410] = { 5,0 }, --A05-扫尾后跳【通用】
     }
 
-    self:SetSelfAiDelayOpen(5.2)
 
     self.castGroup= {
         --距离参考{
@@ -97,6 +96,7 @@ function XChar3504:SkillCastConfig()
         },
     }
     self.isOpenChase = false
+    self:SetSelfAiDelayOpen(0.3)
 end
 
 -----技能测试配置

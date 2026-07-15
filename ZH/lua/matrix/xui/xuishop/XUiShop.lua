@@ -105,8 +105,8 @@ function XUiShop:OnStart(typeId, cb, configShopId, screenId)
     self.CallSerber = false
     self.BtnGoList = {}
     self.ShopTables = {}
-    self.tagCount = 1
-    self.shopGroup = {}
+    -- 按钮对象池: BtnPool[shopType][index] = uiButton, 跨类型切换时复用, 避免 Instantiate 堆积
+    self.BtnPool = {}
 
     self.BtnFirst.gameObject:SetActiveEx(false)
     self.BtnSecond.gameObject:SetActiveEx(false)
@@ -330,130 +330,129 @@ function XUiShop:OnSelectedShopBtn(index)
 end
 
 function XUiShop:UpdateTog()
-    self.ShopIndex2IdDic = self.ShopIndex2IdDic or {}
     local shopId = self.ConfigShopId
     self.ConfigShopId = nil
     local infoList = self:GetShopBaseInfoByTypeAndTag(self.Type)
     local selectIndex = self.TabBtnGroupSelectIndex and self.TabBtnGroupSelectIndex[self.Type]
-    local SubGroupIndexMemo = 0
+    local subGroupIndexMemo = 0
+
     if #infoList == 0 then
         self.Type = XShopManager.ShopType.Common
         infoList = self:GetShopBaseInfoByTypeAndTag(self.Type)
+        selectIndex = self.TabBtnGroupSelectIndex and self.TabBtnGroupSelectIndex[self.Type]
     end
 
-    for i = 1, #self.BtnGoList do
-        self.BtnGoList[i].gameObject:SetActiveEx(false)
+    -- 隐藏所有已创建页签(含其他类型), 当前类型在下方按需显示
+    for _, pool in pairs(self.BtnPool) do
+        for _, uiButton in pairs(pool) do
+            uiButton.gameObject:SetActiveEx(false)
+        end
     end
 
-    for index, info in pairs(infoList) do
-        local btn = self.BtnGoList[self.tagCount]
-        if self.shopGroup[info.Type] then
-            if self.shopGroup[info.Type][index] then
-                btn = self.BtnGoList[self.shopGroup[info.Type][index]]
-            end
+    -- 重建当前类型页签列表: 只含当前类型按钮, 交给 TabBtnGroup 管理
+    -- index 全程使用"当前 infoList 的局部索引", 与 OnSelectedTog 收到的 index 一致
+    self.BtnGoList = {}
+    self.ShopTables = {}
+    self.ShopIndex2IdDic = {}
+    self.BtnPool[self.Type] = self.BtnPool[self.Type] or {}
+
+    for index, info in ipairs(infoList) do
+        local uiButton = self.BtnPool[self.Type][index]
+
+        -- 一级页签: 记录其局部 index, 作为后续二级页签的 SubGroupIndex(新建/复用均需更新, 否则复用一级后新建的二级会取到错误分组)
+        if info.SecondType == 0 then
+            subGroupIndexMemo = index
         end
 
-        if not btn then
-            local name
-            local SubGroupIndex
-
+        -- 首次访问该页签时实例化, 之后从池中复用
+        if not uiButton then
+            local btn
+            local subGroupIndex
             if info.SecondType == 0 then
                 if info.IsHasSnd then
                     btn = CS.UnityEngine.Object.Instantiate(self.BtnFirstHasSnd)
                 else
                     btn = CS.UnityEngine.Object.Instantiate(self.BtnFirst)
                 end
-                SubGroupIndexMemo = self.tagCount
-                SubGroupIndex = 0
+                subGroupIndex = 0
             else
+                local prefab = self.BtnSecondAll
                 if info.SecondTagType == XShopManager.SecondTagType.Top then
-                    btn = CS.UnityEngine.Object.Instantiate(self.BtnSecondTop)
+                    prefab = self.BtnSecondTop
                 elseif info.SecondTagType == XShopManager.SecondTagType.Mid then
-                    btn = CS.UnityEngine.Object.Instantiate(self.BtnSecond)
+                    prefab = self.BtnSecond
                 elseif info.SecondTagType == XShopManager.SecondTagType.Btm then
-                    btn = CS.UnityEngine.Object.Instantiate(self.BtnSecondBottom)
-                else
-                    btn = CS.UnityEngine.Object.Instantiate(self.BtnSecondAll)
+                    prefab = self.BtnSecondBottom
                 end
-
-                SubGroupIndex = SubGroupIndexMemo
+                btn = CS.UnityEngine.Object.Instantiate(prefab)
+                subGroupIndex = subGroupIndexMemo
             end
 
-            name = info.Name
+            btn.transform:SetParent(self.TabBtnContent, false)
+            uiButton = btn:GetComponent("XUiButton")
+            uiButton.SubGroupIndex = subGroupIndex
+            uiButton:SetName(info.Name)
+            btn.gameObject.name = info.Id
 
-            if btn then
-                if not self.shopGroup[info.Type] then
-                    self.shopGroup[info.Type] = {}
-                end
-                table.insert(self.shopGroup[info.Type], self.tagCount)
-                self.tagCount = self.tagCount + 1
-
-                table.insert(self.ShopTables, info)
-
-                btn.transform:SetParent(self.TabBtnContent, false)
-                local uiButton = btn:GetComponent("XUiButton")
-                uiButton.SubGroupIndex = SubGroupIndex
-                uiButton:SetName(name)
-                table.insert(self.BtnGoList, uiButton)
-                -- key 与当前 info.Id 绑定
-                self.ShopIndex2IdDic[#self.BtnGoList] = info.Id
-                local shopDetail = XShopConfigs.GetShopDetailById(info.Id)
-                if shopDetail and not XTool.IsTableEmpty(shopDetail.ShopBtnRedPointConditions) then
-                    local redPointArgs = { Id = info.Id, IsNeedFirstBluePoint = shopDetail.IsNeedFirstBluePoint }
-                    self:AddRedPointEvent(uiButton, function(_, count) uiButton:ShowReddot(count >= 0) end, self,
-                        shopDetail.ShopBtnRedPointConditions, redPointArgs)
-                end
-                self.TagBtnShopGroup[uiButton] = info
-                btn.gameObject.name = info.Id
-
-                local isShowTag = XShopManager.CheckShopActivityPeriod(info.Id)
-                uiButton:ShowTag(isShowTag)
-                local tagObj = uiButton.TagObj
-                if not XTool.UObjIsNil(tagObj) then
-                    local txObjg = tagObj:FindTransform("TxtTag")
-                    txObjg:GetComponent(typeof(CS.UnityEngine.UI.Text)).text = XUiHelper.GetText("UiShopBtnActivityTagName")
-                end
+            local shopDetail = XShopConfigs.GetShopDetailById(info.Id)
+            if shopDetail and not XTool.IsTableEmpty(shopDetail.ShopBtnRedPointConditions) then
+                local redPointArgs = { Id = info.Id, IsNeedFirstBluePoint = shopDetail.IsNeedFirstBluePoint }
+                self:AddRedPointEvent(uiButton, function(_, count) uiButton:ShowReddot(count >= 0) end, self,
+                    shopDetail.ShopBtnRedPointConditions, redPointArgs)
             end
+
+            local isShowTag = XShopManager.CheckShopActivityPeriod(info.Id)
+            uiButton:ShowTag(isShowTag)
+            local tagObj = uiButton.TagObj
+            if not XTool.UObjIsNil(tagObj) then
+                local txObjg = tagObj:FindTransform("TxtTag")
+                txObjg:GetComponent(typeof(CS.UnityEngine.UI.Text)).text = XUiHelper.GetText("UiShopBtnActivityTagName")
+            end
+
+            self.BtnPool[self.Type][index] = uiButton
         end
 
-        btn.gameObject:SetActiveEx(true)
+        uiButton.gameObject:SetActiveEx(true)
+        table.insert(self.BtnGoList, uiButton)
+        self.ShopTables[index] = info
+        self.ShopIndex2IdDic[index] = info.Id
+        self.TagBtnShopGroup[uiButton] = info
 
         if shopId and info.Id == shopId then
-            selectIndex = self.shopGroup[info.Type][index]
+            selectIndex = index
         end
-
-        -- if not shopId then
-        --     selectIndex = self.shopGroup[info.Type][1]
-        -- end
     end
 
     if #infoList <= 0 then
         return
     end
-    if self.Type == XShopManager.ShopType.Recharge then
-        if XDataCenter.ItemManager.CheckItemCountById(XDataCenter.ItemManager.ItemId.OptionalEquipCoin, 1) then
-            local index = self:GetRechargeTagIndex(infoList, XShopManager.RechargeShopType.EquipShop)
 
-            selectIndex = selectIndex or self.shopGroup[self.Type][index]
-        elseif XDataCenter.ItemManager.CheckItemCountById(XDataCenter.ItemManager.ItemId.OptionalPartnerCoin, 1) then
-            local index = self:GetRechargeTagIndex(infoList, XShopManager.RechargeShopType.PartnerShop)
-
-            selectIndex = selectIndex or self.shopGroup[self.Type][index]
-        elseif XDataCenter.ItemManager.CheckItemCountById(XDataCenter.ItemManager.ItemId.OptionalCharacterCoin, 1) then
-            local index = self:GetRechargeTagIndex(infoList, XShopManager.RechargeShopType.CharacterShop)
-
-            selectIndex = selectIndex or self.shopGroup[self.Type][index]
-        else
-            selectIndex = selectIndex or self.shopGroup[self.Type][2]
-        end
-    else
-        selectIndex = selectIndex or self.shopGroup[self.Type][1]
-    end
+    selectIndex = selectIndex or self:GetDefaultSelectIndex(infoList)
     self.TabBtnGroup:Init(self.BtnGoList, function(index)
         self:OnSelectedTog(index)
     end)
     self.TabBtnGroup:SelectIndex(selectIndex)
     self.UiShopFashionDiscountActivity:ResetDiscountActivityTag()
+end
+
+-- 默认选中页签(返回当前 infoList 的局部索引): Recharge 类型按持有代币优先定位, 其余类型取首个
+function XUiShop:GetDefaultSelectIndex(infoList)
+    if self.Type ~= XShopManager.ShopType.Recharge then
+        return 1
+    end
+
+    -- 优先级: 装备 > 共鸣 > 角色
+    local optionalCoinList = {
+        { itemId = XDataCenter.ItemManager.ItemId.OptionalEquipCoin,     rechargeType = XShopManager.RechargeShopType.EquipShop },
+        { itemId = XDataCenter.ItemManager.ItemId.OptionalPartnerCoin,   rechargeType = XShopManager.RechargeShopType.PartnerShop },
+        { itemId = XDataCenter.ItemManager.ItemId.OptionalCharacterCoin, rechargeType = XShopManager.RechargeShopType.CharacterShop },
+    }
+    for _, data in ipairs(optionalCoinList) do
+        if XDataCenter.ItemManager.CheckItemCountById(data.itemId, 1) then
+            return self:GetRechargeTagIndex(infoList, data.rechargeType)
+        end
+    end
+    return 2
 end
 
 function XUiShop:GetRechargeTagIndex(infoList, rechargeType)
@@ -848,10 +847,8 @@ function XUiShop:OnBtnFilterClick()
     if not XTool.IsTableEmpty(goodsList) then
         for i, goods in pairs(goodsList) do
             local characterId = XDataCenter.FashionManager.GetCharacterId(goods.RewardGoods.TemplateId)
-            local charId = XDataCenter.FashionManager.GetCharacterId(goods.RewardGoods.TemplateId)
             dataProvider[#dataProvider + 1] = {
-                characterId = characterId,
-                characterId = charId
+                characterId = characterId
             }
         end
     end

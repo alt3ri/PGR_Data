@@ -12,8 +12,22 @@
 ---@field BtnClose XUiComponent.XUiButton
 ---@field PanelAsset UnityEngine.RectTransform
 local XUiTheatre6PopupSellSkill = XLuaUiManager.Register(XLuaUi, "UiTheatre6PopupSellSkill")
+local XUiTheatre6PanelAsset = require("XUi/XUiTheatre6/Stage/Panel/XUiPanelTheatre6Asset")
 function XUiTheatre6PopupSellSkill:OnAwake()
     self:InitComponents()
+end
+
+function XUiTheatre6PopupSellSkill:OnGetLuaEvents()
+    return {
+        XEventId.EVENT_THEATRE6_OVER_SKILL_REFRESH,
+    }
+end
+
+function XUiTheatre6PopupSellSkill:OnNotify(evt, ...)
+    if evt == XEventId.EVENT_THEATRE6_OVER_SKILL_REFRESH then
+        self.OverQueue = ...
+        self:Refresh()
+    end
 end
 
 function XUiTheatre6PopupSellSkill:InitComponents()
@@ -23,25 +37,22 @@ function XUiTheatre6PopupSellSkill:InitComponents()
     self.BtnClose:AddEventListener(function() self:OnBtnCloseClick() end)
 
     -- PanelAsset
-    self.PanelAsset = XUiHelper.XUiPanelAsset(self, self.PanelAsset, XDataCenter.ItemManager.ItemId.FreeGem)
 
+    self._PanelAsset = XUiTheatre6PanelAsset.New(self.PanelAsset, self)
+    self._PanelAsset:Refresh()
 end
 
 function XUiTheatre6PopupSellSkill:OnStart(overQueue)
+    if self._Control:IsCurModeSettle() then
+        self:Close()
+        return
+    end
     if XTool.IsTableEmpty(overQueue) then
         self:Close()
         return
     end
 
-    local skillNames = ""
-    local goldAmount = 0
-    for key, skillId in ipairs(overQueue) do
-        local skillCfg = self._Control:GetSkillCfgById(skillId)
-        skillNames = skillNames..skillCfg.Name.. "、"
-        goldAmount = goldAmount + skillCfg.SellPrice
-    end
-    skillNames = skillNames:sub(1, -4) -- 去掉最后一个顿号
-    self.UiTxtDesc.text = string.format(XUiHelper.GetText("Theatre6SkillBagFull"), skillNames, goldAmount)
+    self.OverQueue = overQueue
     self:Refresh()
 end
 
@@ -55,7 +66,14 @@ function XUiTheatre6PopupSellSkill:OnDestroy()
 end
 
 function XUiTheatre6PopupSellSkill:Refresh()
-
+    local skillNames = {}
+    local goldAmount = 0
+    for _, skillId in ipairs(self.OverQueue) do
+        local skillCfg = self._Control:GetSkillCfgById(skillId)
+        table.insert(skillNames, skillCfg.Name)
+        goldAmount = goldAmount + skillCfg.SellPrice
+    end
+    self.UiTxtDesc.text = string.format(XUiHelper.GetText("Theatre6SkillBagOver"), table.concat(skillNames, "、"), goldAmount)
 end
 
 function XUiTheatre6PopupSellSkill:OnBtnCanelClick(eventData)

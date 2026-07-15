@@ -22,6 +22,7 @@ local Movie = {}
 local Function = {}
 local Theatre6 = {}
 local Time = {}
+local FashionManager = {}
 
 local TrueString = "True"
 local FalseString = "False"
@@ -143,14 +144,14 @@ function DlcFuben.GetModelIdByWorldNpcData(worldType, npcData)
     return modelId
 end
 
-function DlcFuben.GetModelIdByFashionId(worldType, fashionId)
+function DlcFuben.GetModelIdByFashionId(worldType, fashionId, colorId)
     if not XTool.IsNumberValid(fashionId) then
         XLog.Error("CsCallLua.DlcFuben.GetModelIdByFashionId 参数错误: fashionId is invalid")
 
         return nil
     end
     
-    local modelId = XMVCA.XDlcHelper:GetDlcModelIdWithWorldTypeAndFashionId(worldType, fashionId)
+    local modelId = XMVCA.XDlcHelper:GetDlcModelIdWithWorldTypeAndFashionId(worldType, fashionId, colorId)
 
     if string.IsNilOrEmpty(modelId) then
         return nil
@@ -185,14 +186,6 @@ function DlcFuben.CheckLevelPlayCleared(worldType, levelPlayId)
     end
 
     return XMVCA.XDlcHelper:CheckLevelPlayCleared(worldType, levelPlayId)
-end
-
-function DlcFuben.GetColorNameByColorId(colorId)
-    if XTool.IsNumberValid(colorId) then
-        return XMVCA.XBigWorldCommanderDIY:GetMaterialNameByColorId(colorId)
-    end
-
-    return nil
 end
 
 function DlcFuben.GetColorNameByColorId(colorId)
@@ -677,6 +670,7 @@ function Theatre6.TestCalNpcAttribsAndBackXAutoChessData(xautoChessData)
     local autoChessData = {}
 
     autoChessData.CharacterId = xautoChessData.CharacterId
+    autoChessData.FashionId = xautoChessData.FashionId
     autoChessData.Attribs = {}
     autoChessData.Skills = {}
     autoChessData.Relics = {}
@@ -706,6 +700,12 @@ function Time.GetServerNowTimestamp()
     return XTime.GetServerNowTimestamp()
 end
 
+function FashionManager.GetRoleDefaultNpcResModelId(characterId)
+    local fashionId = XMVCA.XCharacter:GetCharacterTemplate(characterId).DefaultNpcFashtionId
+    local resId = XMVCA.XFashion:GetOwnFashionColorResourcesId(fashionId)
+    return XMVCA.XCharacter:GetCharResModel(resId)
+end
+
 CsCallLua = {}
 CsCallLua.Fuben = Fuben
 CsCallLua.Character = Character
@@ -730,4 +730,5 @@ CsCallLua.CommonGuide = CommonGuide
 CsCallLua.Movie = Movie
 CsCallLua.Function = Function
 CsCallLua.Theatre6 = Theatre6
-CsCallLua.Time = Time
+CsCallLua.Time = Time
+CsCallLua.FashionManager = FashionManager

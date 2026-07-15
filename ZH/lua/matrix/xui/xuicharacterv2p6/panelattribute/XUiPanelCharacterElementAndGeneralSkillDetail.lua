@@ -296,7 +296,7 @@ function XUiPanelCharacterElementAndGeneralSkillDetail:ShowSkillDetail(skillId)
     if generalSkillConfig then
         self.TxtContent.text = generalSkillConfig.Desc
     end
-    self.BtnTeach.gameObject:SetActiveEx(true)
+    self.BtnTeach.gameObject:SetActiveEx(not XUiManager.IsHideFunc)
 end
 
 function XUiPanelCharacterElementAndGeneralSkillDetail:OnBtnTeachClick()

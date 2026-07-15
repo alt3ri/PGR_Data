@@ -31,7 +31,7 @@ function XUiArchiveMonsterSkill:SelectType(npcId)
 end
 
 function XUiArchiveMonsterSkill:SetMonsterSkillData(npcId)
-    local skillList = self._Control:GetArchiveMonsterSkillList(npcId)
+    local skillList = self._Control.MonsterControl:GetArchiveMonsterSkillList(npcId)
 
     for index = 1, SkillMax do
         if skillList[index] then
@@ -53,6 +53,6 @@ function XUiArchiveMonsterSkill:SetMonsterSkillData(npcId)
     end
 end
 
-
-
+
+
 return XUiArchiveMonsterSkill

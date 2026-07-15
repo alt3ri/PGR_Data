@@ -87,7 +87,7 @@ end
 ---@param info XTheatre6BuffData
 function XUiPanelTheatre6BuffDetail:ShowTimes(info)
     if self._BuffConfig.CanStack then
-        self:SetEffectTimes(info.StackCount) --只显示堆叠数量
+        self:SetStackCount(info.StackCount) --只显示堆叠数量
         return
     end
     if XTool.IsNumberValid(self._BuffConfig.IsCount) then
@@ -112,6 +112,11 @@ function XUiPanelTheatre6BuffDetail:SetCurChooseBuff(id)
     self:_UpdateSelectStatus()
 end
 
+function XUiPanelTheatre6BuffDetail:SetStackCount(count)
+    self.UiTxtAdd.gameObject:SetActiveEx(true)
+    self.UiTxtAdd.text = XUiHelper.GetText("Theatre6BuffStackCount", count)
+end
+
 ---设置buff生效次数
 function XUiPanelTheatre6BuffDetail:SetEffectTimes(times)
     self.UiTxtAdd.gameObject:SetActiveEx(true)
@@ -120,8 +125,12 @@ end
 
 ---设置buff剩余生效次数
 function XUiPanelTheatre6BuffDetail:SetRemainingTimes(times)
+    local txt = self._Control:GetBuffRemainingTimesDesc(self._BuffConfig.DurationType)
+    if string.IsNilOrEmpty(txt) then
+        return
+    end
     self.UiTxtLeft.gameObject:SetActiveEx(true)
-    self.UiTxtLeft.text = XUiHelper.GetText("Theatre6BuffRemainingTimes", times)
+    self.UiTxtLeft.text = string.format(txt, times)
 end
 
 ---Buff图标是否允许点击

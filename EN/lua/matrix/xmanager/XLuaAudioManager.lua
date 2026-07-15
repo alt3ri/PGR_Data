@@ -1,5 +1,4 @@
 local XAudioManager = CS.XAudioManager
-local CSCriAtom = CS.CriAtom
 
 XLuaAudioManager = XLuaAudioManager or {}
 
@@ -296,6 +295,10 @@ function XLuaAudioManager.PlayAudioByType(soundType, cueId, ...)
     if not func then
         XLog.Error("XLuaAudioManager.PlayAudioByType 函数错误, 不存在此声音类型, 类型是：" .. soundType .. "cueId是：", cueId)
         return
+    end
+
+    if XLuaAudioManager.IsLuaAudioPlayLogInConsole then
+        XLog.Debug(string.format("[AIFLua播放]：cueId=%s, soundType=%s\n%s", tostring(cueId), tostring(soundType), debug.traceback()))
     end
 
     return func(cueId, ...)

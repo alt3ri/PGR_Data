@@ -20,6 +20,8 @@ XFubenActivityBossSingleManagerCreator = function()
 
     local difficultScoreRecord = {}    --当前活动难度分数记录
     local lastScoreRecord = {}    --当前活动难度分数记录
+    local FightSettleDataCache = nil   --缓存结算数据，等待C#战斗退出后再打开UI
+    local NoWinDataOnBehaviorDoExitFight = false  --标记退出行为先于结算回调到达
 
     ---@class XFubenActivityBossSingleManager
     local XFubenActivityBossSingleManager = XExFubenActivityManager.New(XEnumConst.FuBen.ChapterType.ActivityBossSingle, "FubenActivityBossSingleManager")
@@ -100,14 +102,45 @@ XFubenActivityBossSingleManagerCreator = function()
         --     return
         -- end
 
-
-
         local beginData = XMVCA.XFuben:GetFightBeginData()
         local winData = XMVCA.XFuben:GetChallengeWinData(beginData, settleData)
+        -- 缓存结算数据，等待C#战斗退出行为完成后才打开UI（参考囚笼 XFubenBossSingleAgency）
+        if NoWinDataOnBehaviorDoExitFight then
+            NoWinDataOnBehaviorDoExitFight = false
+            XFubenActivityBossSingleManager._OpenRewardUi(winData)
+        else
+            FightSettleDataCache = winData
+        end
+    end
+
+    --- C#战斗退出行为回调，此时战斗动画已播完，打开结算UI
+    function XFubenActivityBossSingleManager.OnBehaviorDoExitFight(event, args)
+        if not args or args.Length <= 0 then
+            return
+        end
+        local stageId = args[0]
+        local stageType = XMVCA.XFuben:GetStageType(stageId)
+        if stageType ~= XEnumConst.FuBen.StageType.ActivityBossSingle then
+            return
+        end
+        if not XFubenActivityBossSingleManager.IsHardBossLevel(stageId) then
+            return
+        end
+        XFubenActivityBossSingleManager._OpenRewardUi(FightSettleDataCache)
+        FightSettleDataCache = nil
+    end
+
+    function XFubenActivityBossSingleManager._OpenRewardUi(winData)
+        if not winData then
+            NoWinDataOnBehaviorDoExitFight = true
+            return
+        end
+        XMVCA.XFuben:SetMouseVisible()
         XLuaUiManager.Open("UiActivityBossSingleSettlement", winData)
     end
 
     XEventManager.AddEventListener(XEventId.EVENT_FUBEN_SETTLE_REWARD, XFubenActivityBossSingleManager.OnFightSettle)
+    CsXGameEventManager.Instance:RegisterEvent(CS.XEventId.EVENT_BEHAVIOR_DO_EXIT_FIGHT, XFubenActivityBossSingleManager.OnBehaviorDoExitFight)
     
 
     function XFubenActivityBossSingleManager.GetCurDifficultScoreRecord(stage)
@@ -456,13 +489,28 @@ XFubenActivityBossSingleManagerCreator = function()
     end
 
     -- 读取本地编队信息
-    function XFubenActivityBossSingleManager.LoadTeamLocal()
+    function XFubenActivityBossSingleManager.LoadTeamLocal(stageId)
         local teamId = GetCookieKeyTeam()
         local currentTeam = XFubenActivityBossSingleManager.GetCurrentTeam(teamId)
         local ids = currentTeam:GetEntityIds()
         local tmpIds = XTool.Clone(ids)
+
+        -- 统计缓存中实际上阵的角色数量
+        local teamCount = 0
+        for _, id in ipairs(ids) do
+            if XTool.IsNumberValid(id) then
+                teamCount = teamCount + 1
+            end
+        end
+
+        local clearAll = false
+        if XTool.IsNumberValid(stageId) then
+            local needCount = XFubenActivityBossSingleConfigs.GetNeedCharacterCount(stageId)
+            clearAll = teamCount ~= needCount
+        end
+
         for pos, id in ipairs(ids) do
-            if not XMVCA.XCharacter:IsOwnCharacter(id)
+            if  clearAll or not XMVCA.XCharacter:IsOwnCharacter(id)
                     and not XRobotManager.CheckIsRobotId(id) then
                 tmpIds[pos] = 0
             end
@@ -529,34 +577,14 @@ XFubenActivityBossSingleManagerCreator = function()
     end
     
     function XFubenActivityBossSingleManager.JumpToRoleRoom(stageId)
-        local team = XFubenActivityBossSingleManager.LoadTeamLocal()
+        local team = XFubenActivityBossSingleManager.LoadTeamLocal(stageId)
         local robotIds = XFubenActivityBossSingleManager.GetCanUseRobotIds(nil, team:GetEntityIds())
-        XMVCA.XFuben:OpenUiBattleRoleRoom(stageId, team, {
-            OnNotify = function(proxy, evt)
-                if evt == XEventId.EVENT_ACTIVITY_ON_RESET then
-                    XDataCenter.FubenActivityBossSingleManager.OnActivityEnd()
-                end
-            end,
-            GetRoleDetailProxy = function(proxy)
-                return {
-                    GetEntities = function()
-                        local entities = {}
-                        local ids = XMVCA.XCharacter:GetRobotAndCharacterIdList(robotIds)
-                        for i, id in ipairs(ids or {}) do
-                            if XRobotManager.CheckIsRobotId(id) then
-                                entities[i] = XRobotManager.GetRobotById(id)
-                            else
-                                entities[i] = XMVCA.XCharacter:GetCharacter(id)
-                            end
+        local needCharacterCount = XFubenActivityBossSingleConfigs.GetNeedCharacterCount(stageId)
 
-                        end
-                        return entities
-                    end
-                }
-            end,
-            CheckShowAnimationSet = function(proxy) 
-                return false
-            end
+        local XUiActivityBossSingleRoomProxy = require("XUi/XUiActivityBossSingle/XUiActivityBossSingleRoomProxy")
+        XMVCA.XFuben:OpenUiBattleRoleRoom(stageId, team, XUiActivityBossSingleRoomProxy, nil, nil, {
+            NeedCharacterCount = needCharacterCount,
+            RobotIds = robotIds,
         })
     end
     

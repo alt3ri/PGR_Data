@@ -131,20 +131,14 @@ end
 -- team : XTeam
 -- stageId : number
 function XUiBattleRoleRoomDefaultProxy:EnterFight(team, stageId, challengeCount, isAssist)
-    local sureCallback = function()
-        local stageConfig = XDataCenter.FubenManager.GetStageCfg(stageId)
-        local teamId = team:GetId()
-        local isAssist = isAssist
-        local challengeCount = challengeCount
-        XDataCenter.FubenManager.EnterFight(stageConfig, teamId, isAssist, challengeCount)
-    end
-    
-    local isChange = XMVCA.XFubenBossSingle:CheckTeamDifferentWithRecord(stageId, team)
-    if isChange then
-        XUiManager.DialogTip(nil, XUiHelper.GetText("BossSingleChangeMember"), XUiManager.DialogType.Normal, nil, sureCallback)
-        return
-    end
-    sureCallback()
+    local stageConfig = XDataCenter.FubenManager.GetStageCfg(stageId)
+    local teamId = team:GetId()
+
+    XDataCenter.FubenManager.EnterFight(
+        stageConfig,
+        teamId,
+        isAssist,
+        challengeCount)
 end
 
 -- 检查是否能够编辑队伍，关卡若是配置了固定机器人为不可编辑
@@ -207,7 +201,7 @@ function XUiBattleRoleRoomDefaultProxy:GetValidEntityIdList(stageId, team)
         end
         return characterIds
     end
-    
+
     return nil
 end
 

@@ -40,6 +40,7 @@ function XUiPassportCard:OnDisable()
 end
 
 function XUiPassportCard:OnDestroy()
+    self.UiPassport:Refresh()
     if self.CloseCb then
         self.CloseCb()
     end

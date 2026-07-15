@@ -7,7 +7,7 @@ local XBuffScript10254020 = XDlcScriptManager.RegBuffScript(10254020, "XBuffScri
 function XBuffScript10254020:ScriptInit(isGainControl) --初始化
     self._skillCount = 1
     self._critController = self:GetNpc():GetCritController()
-    self:LogError("....【超算成功追加技能2】初始化完成")
+    -- self:LogError("....【超算成功追加技能2】初始化完成")
 end
 
 

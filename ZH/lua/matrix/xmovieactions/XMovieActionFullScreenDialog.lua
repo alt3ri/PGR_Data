@@ -109,6 +109,7 @@ function XMovieActionFullScreenDialog:OnDestroy()
     end
 
     if self.IsClose then
+        self:StopLastCv()
         self:ClearAllDialogGrids()
         self.UiRoot.PanelFullScreenDialog.gameObject:SetActiveEx(false)
     end
@@ -266,7 +267,7 @@ function XMovieActionFullScreenDialog:ShowOneContent(content)
     iconNext.color = XUiHelper.Hexcolor2Color(color)
 
     local dialogName = ""
-    XDataCenter.MovieManager.PushInReviewDialogList(dialogName, content)
+    XDataCenter.MovieManager.PushInReviewDialogList(dialogName, content, self.CvId)
     
     return grid
 end

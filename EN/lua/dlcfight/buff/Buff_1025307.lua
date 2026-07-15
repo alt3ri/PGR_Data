@@ -1,6 +1,6 @@
 local XTheatre6BuffBase = require("Gameplay/Theatre6/XTheatre6BuffBase")
 ---@class XBuffScript1025307 : XTheatre6BuffBase
-local XBuffScript1025307 = XDlcScriptManager.RegBuffScript(1025207, "XBuffScript1025307", XTheatre6BuffBase)
+local XBuffScript1025307 = XDlcScriptManager.RegBuffScript(1025307, "XBuffScript1025307", XTheatre6BuffBase)
 
 --效果说明：技能触发【暴击】时，造成的攻击伤害提升20%，且额外恢复自身5点【超算值】。
 

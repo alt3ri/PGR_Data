@@ -29,7 +29,7 @@ function XUiGridTheatre6Upgrade:Update(talentCfg, curLv, curExp)
     local lv = talentCfg.Level
     if curLv >= lv then
         self._Status = Full
-    elseif curLv + 1 == lv then
+    elseif curLv + 1 == lv and curExp > 0 then
         self._Status = Current
     else
         self._Status = Lock

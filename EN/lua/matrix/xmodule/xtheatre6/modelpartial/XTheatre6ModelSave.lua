@@ -4,6 +4,7 @@ local XTheatre6Model = XClassPartial('XTheatre6Model')
 
 local SAVE_KEY_PERSISTENT = "SAVE_KEY_PERSISTENT" --持久化
 local SAVE_KEY_ACTIVITY = "SAVE_KEY_ACTIVITY" --跟随活动期数变化
+local SAVE_KEY_ACTIVITY_PVP = "SAVE_KEY_ACTIVITY_PVP" --跟随活动期数变化，且只在PVP模式使用
 
 local GET_BUFF = 1
 local AVG = 2
@@ -12,6 +13,7 @@ local ANNO = 3
 function XTheatre6Model:OnInitSave()
     self._SaveUtil:SetCustomVersionGetFunc(handler(self, self.GetPersistentVersion), SAVE_KEY_PERSISTENT)
     self._SaveUtil:SetCustomVersionGetFunc(handler(self, self.GetActivityVersion), SAVE_KEY_ACTIVITY)
+    self._SaveUtil:SetCustomVersionGetFunc(handler(self, self.GetPvpActivityVersion), SAVE_KEY_ACTIVITY_PVP)
 end
 
 function XTheatre6Model:GetPersistentVersion()
@@ -20,6 +22,10 @@ end
 
 function XTheatre6Model:GetActivityVersion()
     return self._ActivityId
+end
+
+function XTheatre6Model:GetPvpActivityVersion()
+    return self.Pvp:GetCurActivityId()
 end
 
 ---是否使用肉鸽涂装
@@ -65,14 +71,13 @@ end
 ---获取最后查看剧情时间
 ---@return number
 function XTheatre6Model:GetLastViewStoryTime()
-    return self._SaveUtil:GetDataByBlockKey(SAVE_KEY_PERSISTENT, string.format("Theatre6_LastViewStoryTime_%d", XPlayer.Id)) or 0
+    return self._SaveUtil:GetDataByBlockKey(SAVE_KEY_PERSISTENT, "Theatre6_LastViewStoryTime") or 0
 end
 
 ---保存最后查看剧情时间
 function XTheatre6Model:SaveLastViewStoryTime()
-    local key = string.format("Theatre6_LastViewStoryTime_%d", XPlayer.Id)
     local timestamp = XTime.GetServerNowTimestamp()
-    self._SaveUtil:SaveDataByBlockKey(SAVE_KEY_PERSISTENT, key, timestamp)
+    self._SaveUtil:SaveDataByBlockKey(SAVE_KEY_PERSISTENT, "Theatre6_LastViewStoryTime", timestamp)
 end
 
 function XTheatre6Model:GetStageViewStatusKey()
@@ -133,4 +138,60 @@ function XTheatre6Model:IsAnnoNeedOpen(floorIdx)
     return not self:GetStageViewStatus(ANNO, floorIdx)
 end
 
-return XTheatre6Model
+function XTheatre6Model:GetNewContentShowedKey()
+    return string.format("Theatre6NewContentShowed_%d", XPlayer.Id)
+end
+
+function XTheatre6Model:SetNewContentShowed(time)
+    self._SaveUtil:SaveDataByBlockKey(SAVE_KEY_PERSISTENT, self:GetNewContentShowedKey(), time)
+end
+
+function XTheatre6Model:GetNewContentShowed()
+    return self._SaveUtil:GetDataByBlockKey(SAVE_KEY_PERSISTENT, self:GetNewContentShowedKey())
+end
+
+function XTheatre6Model:GetNewCharacterShowTagsKey()
+    return string.format("Theatre6NewCharacterShowTags_%d", XPlayer.Id)
+end
+
+function XTheatre6Model:AddNewCharacterShowTag(id)
+    local tags = self:GetNewCharacterShowTags()
+
+    if not tags then
+        tags = {}
+    end
+
+    tags[id] = true
+
+    self._SaveUtil:SaveDataByBlockKey(SAVE_KEY_PERSISTENT, self:GetNewCharacterShowTagsKey(), tags)
+end
+
+function XTheatre6Model:GetNewCharacterShowTags()
+    return self._SaveUtil:GetDataByBlockKey(SAVE_KEY_PERSISTENT, self:GetNewCharacterShowTagsKey())
+end
+
+function XTheatre6Model:GetPvpLocalRecordData(key)
+    return self._SaveUtil:GetDataByBlockKey(SAVE_KEY_ACTIVITY_PVP, key)
+end
+
+function XTheatre6Model:SavePvpLocalRecordData(key, data)
+    self._SaveUtil:SaveDataByBlockKey(SAVE_KEY_ACTIVITY_PVP, key, data)
+end
+
+function XTheatre6Model:SaveBuffChooseIndex(mode, characterId, index)
+    self._SaveUtil:SaveDataByBlockKey(SAVE_KEY_PERSISTENT, string.format("Theatre6BuffChoose_%s_%s", mode, characterId), index)
+end
+
+function XTheatre6Model:GetBuffChooseIndex(mode, characterId)
+    return self._SaveUtil:GetDataByBlockKey(SAVE_KEY_PERSISTENT, string.format("Theatre6BuffChoose_%s_%s", mode, characterId))
+end
+
+function XTheatre6Model:SaveDifficultyChooseIndex(characterId, index)
+    self._SaveUtil:SaveDataByBlockKey(SAVE_KEY_PERSISTENT, string.format("Theatre6DifficultyChoose_%s", characterId), index)
+end
+
+function XTheatre6Model:GetDifficultyChooseIndex(characterId)
+    return self._SaveUtil:GetDataByBlockKey(SAVE_KEY_PERSISTENT, string.format("Theatre6DifficultyChoose_%s", characterId))
+end
+
+return XTheatre6Model

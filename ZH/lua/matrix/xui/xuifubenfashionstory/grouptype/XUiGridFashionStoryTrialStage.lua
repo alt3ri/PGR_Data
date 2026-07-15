@@ -13,6 +13,7 @@ end
 
 function XUiGridFashionStoryTrialStage:RefreshData(id)
     self.Id = id
+    self._LastLockText = nil
     --设置基本信息
     self.GridFitting:SetNameByGroup(0, XDataCenter.FubenManager.GetStageName(self.Id))
     self.GridFitting:SetRawImage(XMVCA.XFashionStory:GetEntryTrialFace(self.Id))
@@ -24,17 +25,37 @@ function XUiGridFashionStoryTrialStage:RefreshData(id)
     --判断是否解锁
     local isOpen, unOpenReason = XMVCA.XFashionStory:CheckTrialStageIsOpenByTimeId(self.Id)
     self.IsOpen = isOpen
+    self.UnOpenReason = unOpenReason
     if self.IsOpen then
         self.GridFitting:SetButtonState(XUiButtonState.Normal)
     else
         self.GridFitting:SetButtonState(XUiButtonState.Disable)
         if unOpenReason == XMVCA.XFashionStory.TrialStageUnOpenReason.OutOfTime then
             local timeId = XMVCA.XFashionStory:GetTrialStageTimeId(self.Id)
-            self.TxtLock.text = XMVCA.XFashionStory:GetTimeLockText(timeId)
+            self:_SetLockText(XMVCA.XFashionStory:GetTimeLockText(timeId))
         end
-        -- 刷新布局，避免锁定提示文本被锁定图标遮挡
-        CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.TxtLock.transform.parent)
     end
+end
+
+-- 父界面倒计时 tick 时调用：状态翻转走完整 RefreshData，未翻转只刷锁定倒计时文本
+function XUiGridFashionStoryTrialStage:RefreshLockCountDown()
+    if not self.TxtLock or self.IsOpen then return end
+    if self.UnOpenReason ~= XMVCA.XFashionStory.TrialStageUnOpenReason.OutOfTime then return end
+    local isOpen = XMVCA.XFashionStory:CheckTrialStageIsOpenByTimeId(self.Id)
+    if isOpen then
+        self:RefreshData(self.Id)
+        return
+    end
+    local timeId = XMVCA.XFashionStory:GetTrialStageTimeId(self.Id)
+    self:_SetLockText(XMVCA.XFashionStory:GetTimeLockText(timeId))
+end
+
+function XUiGridFashionStoryTrialStage:_SetLockText(text)
+    if self._LastLockText == text then return end
+    self._LastLockText = text
+    self.TxtLock.text = text
+    -- 刷新布局，避免锁定提示文本被锁定图标遮挡
+    CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.TxtLock.transform.parent)
 end
 
 function XUiGridFashionStoryTrialStage:OnClickEvent()

@@ -218,21 +218,26 @@ XRpgTowerManagerCreator = function()
     --================
     local StageInit = false
     function XRpgTowerManager.InitStageInfo()
-        --if StageInit then return end
+        if StageInit then return end
         local stageList = RpgTowerConfig.GetRStageList()
-        if StageInit then
-        else
-            RStageList = {}
-            ChapterNOrderId2RStageDic = {}
-            for rStageId, rStageCfg in pairs(stageList) do
-                RStageList[rStageId] = RpgTowerStage.New(rStageId)
-                if not ChapterNOrderId2RStageDic[rStageCfg.ActivityId] then
-                    ChapterNOrderId2RStageDic[rStageCfg.ActivityId] = {}
-                end
-                ChapterNOrderId2RStageDic[rStageCfg.ActivityId][rStageCfg.OrderId] = RStageList[rStageId]
+        RStageList = {}
+        ChapterNOrderId2RStageDic = {}
+        for rStageId, rStageCfg in pairs(stageList) do
+            -- 只建 ID 映射，不创建 Stage 对象
+            if not ChapterNOrderId2RStageDic[rStageCfg.ActivityId] then
+                ChapterNOrderId2RStageDic[rStageCfg.ActivityId] = {}
             end
-            StageInit = true
+            ChapterNOrderId2RStageDic[rStageCfg.ActivityId][rStageCfg.OrderId] = rStageId
         end
+        StageInit = true
+    end
+
+    local function GetRStage(rStageId)
+        if not rStageId then return nil end
+        if not RStageList[rStageId] then
+            RStageList[rStageId] = RpgTowerStage.New(rStageId)
+        end
+        return RStageList[rStageId]
     end
 
     function XRpgTowerManager.CheckUnlockByStageId(stageId)
@@ -368,7 +373,7 @@ XRpgTowerManagerCreator = function()
     ]]
     function XRpgTowerManager.GetRStageByStageId(stageId)
         local rStageId = RpgTowerConfig.GetRStageIdByStageId(stageId)
-        return RStageList[rStageId]
+        return GetRStage(rStageId)
     end
     --================
     --使用章节ID和章节关卡序号获取玩法关卡对象
@@ -376,7 +381,8 @@ XRpgTowerManagerCreator = function()
     --@param orderId:章节关卡序号
     --================
     function XRpgTowerManager.GetRStageByChapterNOrderId(chapterId, orderId)
-        return ChapterNOrderId2RStageDic[chapterId] and ChapterNOrderId2RStageDic[chapterId][orderId - 1]
+        local rStageId = ChapterNOrderId2RStageDic[chapterId] and ChapterNOrderId2RStageDic[chapterId][orderId - 1]
+        return GetRStage(rStageId)
     end
     --[[    ================
     获取所有队员信息

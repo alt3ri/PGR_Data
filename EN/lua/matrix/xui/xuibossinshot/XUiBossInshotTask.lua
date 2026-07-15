@@ -29,8 +29,9 @@ function XUiBossInshotTask:OnDisable()
     self.Super.OnDisable(self)
 end
 
-function XDynamicGridTask:OnDestroy()
+function XUiBossInshotTask:OnDestroy()
     self:ClearGridsTimer()
+    XEventManager.RemoveEventListener(XEventId.EVENT_FINISH_MULTI, self.OnTaskFinishMulti, self)
 end
 
 function XUiBossInshotTask:SetAutoCloseTimer()
@@ -51,7 +52,26 @@ end
 
 function XUiBossInshotTask:UpdateDynamicTable()
     local taskGroupId = self.TaskGroupIds[self.TabIndex]
-    self.TaskDataList = XDataCenter.TaskManager.GetTimeLimitTaskListByGroupId(taskGroupId, nil, true)
+    local rawList = XDataCenter.TaskManager.GetTimeLimitTaskListByGroupId(taskGroupId, nil, true)
+
+    local achievedIds = {}
+    for _, task in ipairs(rawList) do
+        if task.State == XDataCenter.TaskManager.TaskState.Achieved then
+            table.insert(achievedIds, task.Id)
+        end
+    end
+
+    if not XTool.IsTableEmpty(achievedIds) then
+        self.TaskDataList = {}
+        for _, task in ipairs(rawList) do
+            local cloned = XTool.Clone(task)
+            cloned.AllAchieveTaskDatas = achievedIds
+            table.insert(self.TaskDataList, cloned)
+        end
+    else
+        self.TaskDataList = rawList
+    end
+
     self.DynamicTable:SetDataSource(self.TaskDataList)
     self.DynamicTable:ReloadDataASync(1)
     self.ImgEmpty.gameObject:SetActiveEx(XTool.IsTableEmpty(self.TaskDataList))
@@ -62,6 +82,7 @@ function XUiBossInshotTask:OnDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         local taskData = self.TaskDataList[index]
         grid:ResetData(taskData)
+        grid:SetReceiveAll()
         if self.IsPlayDynamicAnim then
             grid.PanelAnimation.gameObject:SetActive(false)
         else
@@ -72,7 +93,7 @@ function XUiBossInshotTask:OnDynamicTableEvent(event, index, grid)
             anim:Evaluate()
             anim:Stop()
         end
-        
+
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_RELOAD_COMPLETED then
         if self.IsPlayDynamicAnim then
             -- 动画完成前禁用拖拽
@@ -107,19 +128,26 @@ function XUiBossInshotTask:OnDynamicTableEvent(event, index, grid)
 end
 
 function XUiBossInshotTask:OnNotify(evt, ...)
-    if evt == XEventId.EVENT_FINISH_TASK then
+    if evt == XEventId.EVENT_FINISH_TASK or evt == XEventId.EVENT_TASK_SYNC then
         self:UpdateDynamicTable()
         self:RefreshTabRedPoint()
     end
 end
 
 function XUiBossInshotTask:OnGetEvents()
-    return { XEventId.EVENT_FINISH_TASK }
+    return { XEventId.EVENT_FINISH_TASK, XEventId.EVENT_TASK_SYNC }
+end
+
+-- EVENT_FINISH_MULTI 是纯 Lua 侧事件，需用 XEventManager 手动监听
+function XUiBossInshotTask:OnTaskFinishMulti()
+    self:UpdateDynamicTable()
+    self:RefreshTabRedPoint()
 end
 
 function XUiBossInshotTask:RegisterEvent()
     self:RegisterClickEvent(self.BtnBack, self.Close)
     self:RegisterClickEvent(self.BtnMainUi, function() XLuaUiManager.RunMain() end)
+    XEventManager.AddEventListener(XEventId.EVENT_FINISH_MULTI, self.OnTaskFinishMulti, self)
 end
 
 function XUiBossInshotTask:InitTabGroup()

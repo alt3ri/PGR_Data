@@ -166,11 +166,12 @@ function XDyeMergeGameAgency:GetIsChapterUnlock(chapterId)
             desc = self:GetClientDyeMergeTextByKey("ChapterOutOfDateTips")
         end
         
-        return false, desc
+        return false, desc, XMVCA.XDyeMergeGame.EnumConst.ChapterLockType.TimeLimit
     end
 
     if XTool.IsNumberValidEx(chapterCfg.Condition) then
-        return XConditionManager.CheckCondition(chapterCfg.Condition)
+        local result, lockTips = XConditionManager.CheckCondition(chapterCfg.Condition)
+        return result, lockTips, XMVCA.XDyeMergeGame.EnumConst.ChapterLockType.Condition
     end
     
     return true

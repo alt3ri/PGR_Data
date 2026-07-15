@@ -19,7 +19,6 @@ end
 function XFestivalStage:InitStage()
     self.FestivalStageCfg = XFestivalActivityConfig.GetFestivalStageCfgByStageId(self.StageId)
     self.StageCfg = XDataCenter.FubenManager.GetStageCfg(self.StageId)
-    self.PassCount = 0
 end
 
 function XFestivalStage:RefreshStage()
@@ -53,7 +52,7 @@ end
 --获取关卡名称
 --====================
 function XFestivalStage:GetName()
-    return (self.FestivalStageCfg and self.FestivalStageCfg.StageName) or self.StageCfg.Name
+    return (self.FestivalStageCfg and self.FestivalStageCfg.StageName) or self:GetStageCfg().Name
 end
 --====================
 --获取关卡序号
@@ -85,8 +84,8 @@ end
 function XFestivalStage:GetCanOpen()
     local stageInfo = self:_GetStageInfo()
     if not stageInfo.Unlock then return false, CS.XTextManager.GetText("FubenNotUnlock") end
-    if self.StageCfg.RequireLevel > 0 and XPlayer.Level < self.StageCfg.RequireLevel then
-        return false, CS.XTextManager.GetText("TeamLevelToOpen", self.StageCfg.RequireLevel)
+    if self:GetStageCfg().RequireLevel > 0 and XPlayer.Level < self:GetStageCfg().RequireLevel then
+        return false, CS.XTextManager.GetText("TeamLevelToOpen", self:GetStageCfg().RequireLevel)
     end
     for _, conditionId in pairs(self:GetOpenConditionId()) do
         local ret, desc = XConditionManager.CheckCondition(conditionId)
@@ -110,7 +109,8 @@ end
 --获取关卡类型
 --====================
 function XFestivalStage:GetStageType()
-    return self.StageCfg and self.StageCfg.StageType
+    local cfg = self:GetStageCfg()
+    return cfg and cfg.StageType
 end
 --====================
 --获取是否彩蛋关
@@ -125,9 +125,11 @@ end
 function XFestivalStage:GetStagePrefab()
     if self.FestivalStageCfg and self.FestivalStageCfg.StageStyle then
         return self.FestivalStageCfg.StageStyle
-    elseif self.StageCfg.StageType == XFubenConfigs.STAGETYPE_FIGHT then
+    end
+    local stageCfg = self:GetStageCfg()
+    if stageCfg.StageType == XFubenConfigs.STAGETYPE_FIGHT then
         return self.Chapter and self.Chapter:GetGridFubenPrefab()
-    elseif self.StageCfg.StageType == XFubenConfigs.STAGETYPE_STORY then
+    elseif stageCfg.StageType == XFubenConfigs.STAGETYPE_STORY then
         return self.Chapter and self.Chapter:GetGridStoryPrefab()
     else
         return self.Chapter and self.Chapter:GetGridFubenPrefab()
@@ -151,14 +153,14 @@ end
 --设置关卡通过状态
 --@param isPass:要设置的关卡通过状态
 --====================
-function XFestivalStage:SetIsPass(isPass)
-    self.Passed = isPass
-end
+--function XFestivalStage:SetIsPass(isPass)
+--end
 --====================
 --获取关卡是否通过
 --====================
 function XFestivalStage:GetIsPass()
-    return self.Passed or false
+    local data = XDataCenter.FubenFestivalActivityManager.GetStagePassData(self.StageId)
+    return data and data.Passed or false
 end
 --====================
 --获取关卡是否开放
@@ -184,33 +186,34 @@ end
 --设置关卡通关次数
 --@param count:设置的次数
 --====================
-function XFestivalStage:SetPassCount(count)
-    self.PassCount = count
-end
+--function XFestivalStage:SetPassCount(count)
+--end
 --====================
 --增加关卡通关次数
 --@param addCount:增加的次数
 --====================
-function XFestivalStage:AddPassCount(addCount)
-    self.PassCount = self.PassCount + addCount
-end
+--function XFestivalStage:AddPassCount(addCount)
+--end
 --====================
 --获取关卡通关次数
 --====================
 function XFestivalStage:GetPassCount()
-    return self.PassCount
+    local data = XDataCenter.FubenFestivalActivityManager.GetStagePassData(self.StageId)
+    return data and data.Count or 0
 end
 --====================
 --获取前置关卡ID组
 --====================
 function XFestivalStage:GetPreStageId()
-    return self.StageCfg and self.StageCfg.PreStageId or {}
+    local cfg = self:GetStageCfg()
+    return cfg and cfg.PreStageId or {}
 end
 --====================
 --获取关卡通关三星描述
 --====================
 function XFestivalStage:GetStarDesc()
-    return self.StageCfg and self.StageCfg.StarDesc
+    local cfg = self:GetStageCfg()
+    return cfg and cfg.StarDesc
 end
 --====================
 --根据序号获取关卡通关星数条件描述
@@ -252,25 +255,29 @@ end
 --获取关卡图标
 --====================
 function XFestivalStage:GetIcon()
-    return self.StageCfg and self.StageCfg.Icon
+    local cfg = self:GetStageCfg()
+    return cfg and cfg.Icon
 end
 --====================
 --获取剧情关卡图标
 --====================
 function XFestivalStage:GetStoryIcon()
-    return self.StageCfg and self.StageCfg.StoryIcon
+    local cfg = self:GetStageCfg()
+    return cfg and cfg.StoryIcon
 end
 --====================
 --获取关卡首通奖励
 --====================
 function XFestivalStage:GetFirstRewardShow()
-    return self.StageCfg and self.StageCfg.FirstRewardShow
+    local cfg = self:GetStageCfg()
+    return cfg and cfg.FirstRewardShow
 end
 --====================
 --获取关卡非首通通关奖励
 --====================
 function XFestivalStage:GetFinishRewardShow()
-    return self.StageCfg and self.StageCfg.FinishRewardShow
+    local cfg = self:GetStageCfg()
+    return cfg and cfg.FinishRewardShow
 end
 --====================
 --刷新关卡信息

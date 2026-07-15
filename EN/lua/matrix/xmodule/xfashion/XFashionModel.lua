@@ -10,14 +10,20 @@ function XFashionModel:OnInit()
 end
 
 function XFashionModel:ClearPrivate()
+
 end
 
 function XFashionModel:ResetAll()
-
+    self:ClearColorData()
 end
 
 ----------public start----------
 
+function XFashionModel:ClearColorData()
+    if self.ColorData then
+        self.ColorData:ClearData()
+    end
+end
 
 ----------public end----------
 

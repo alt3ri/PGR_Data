@@ -114,7 +114,7 @@ function XUiPanelBossStage:_RefreshPanelMode()
     local score = bossSingle:GetBossSingleTotalScore()
 
     -- 由于未解锁状态下无法从服务器直接获得当前鏖战点的进度，这里直接读取表中唯一的9号挑战即鏖战点的需求分数
-    local scoreNeed = self._Control._Model:GetBossSingleChallengeGradeNeedScoreByLevelType(9)
+    local scoreNeed = self._Control:GetBossSingleChallengeGradeNeedScoreByLevelType(9)
 
     if bossSingle:IsNewVersion() and self._Control:IsInLevelTypeExtreme() then
         self.PanelModeV4P5.gameObject:SetActiveEx(true)

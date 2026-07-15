@@ -2881,6 +2881,36 @@ PlayerCondition = {
         --通关活动x难度y次
         return XMVCA.XTheatre6:IsDiffPassTimaes(condition.Params[1], condition.Params[2]), condition.Desc
     end,
+    [23203] = function(condition)
+        --拥有x个存档
+        return XMVCA.XTheatre6:CheckFileDataCount(condition.Params[1]), condition.Desc
+    end,
+    [23211] = function(condition)
+        --PVP-进行x次pvp战斗
+        local onlyWin = condition.Params[1] == 1
+        local isIncludeAdvance = condition.Params[2] == 1
+        local targetRankId = condition.Params[3]
+        local targetCount = condition.Params[4]
+        return XMVCA.XTheatre6:CheckPvpBattleCount(onlyWin, isIncludeAdvance, targetCount, targetRankId), condition.Desc
+    end,
+    [23212] = function(condition)
+        --PVP-指定版本达到X段位
+        return XMVCA.XTheatre6:IsPvpRankReached(condition.Params[2], condition.Params[1]), condition.Desc
+    end,
+    --endregion
+    
+    --region 大染色玩法
+    
+    [23220] = function(condition)
+        local stageId = condition.Params[1]
+
+        if not XMVCA.XDyeMergeGame:GetIsActivityOpen(false) then
+            return false, condition.Desc
+        end
+        
+        return XMVCA.XDyeMergeGame:CheckPassedByStageId(stageId), condition.Desc
+    end,
+    
     --endregion
 }
 
@@ -3259,9 +3289,28 @@ local CharacterCondition = {
             res1 = carrer1 and XMVCA.XCharacter:GetCharacterCareer(charId) == carrer1
             res2 = carrer2 and XMVCA.XCharacter:GetCharacterCareer(charId) == carrer2
         end
-        return res1 or res2, condition.Desc
-    end,
-}
+        return res1 or res2, condition.Desc
+    end,
+    -- 当前选中成员已装备的武器是否存在二阶谐振配置
+    [13124] = function(condition)
+        local characterId = XMVCA.XCharacter:GetCurSelectCharacterId()
+        if not XTool.IsNumberValid(characterId) then
+            return false, condition.Desc
+        end
+
+        local weaponId = XMVCA.XEquip:GetCharacterWeaponId(characterId)
+        if not XTool.IsNumberValid(weaponId) then
+            return false, condition.Desc
+        end
+
+        local weapon = XMVCA.XEquip:GetEquip(weaponId)
+        if not weapon then
+            return false, condition.Desc
+        end
+
+        return weapon:IsHasOverrunLevel2(), condition.Desc
+    end,
+}
 
 local TeamCondition = {
     [18101] = function(condition, characterIds)
@@ -3817,7 +3866,7 @@ local MixedTeamCondition = {
 local KillCondition = {
     [30101] = function(condition, npcId)
         -- 查询怪物击杀数是否达到
-        return XMVCA.XArchive:GetMonsterKillCount(npcId) >= condition.Params[1], condition.Desc
+        return XMVCA.XArchive.MonsterArchiveAgency:GetMonsterKillCount(npcId) >= condition.Params[1], condition.Desc
     end
 }
 
@@ -3862,9 +3911,26 @@ local EquipCondition = {
     end,
     [31106] = function(condition, suitId)
         -- 套装中不同的意识的数量达到目标数量
-        return XMVCA.XArchive.AwarenessArchiveCom:GetAwarenessCountBySuitId(suitId) >= condition.Params[1], condition.Desc
-    end,
-
+        return XMVCA.XArchive.AwarenessArchiveCom:GetAwarenessCountBySuitId(suitId) >= condition.Params[1], condition.Desc
+    end,
+    -- 指定TemplateId武器的谐振等级是否达到目标等级
+    [31107] = function(condition)
+        local templateId = condition.Params[1]
+        local targetLevel = condition.Params[2]
+        if not XTool.IsNumberValid(templateId) or not XTool.IsNumberValid(targetLevel) then
+            return false, condition.Desc
+        end
+
+        local equips = XMVCA.XEquip:GetEquipsByTemplateId(templateId)
+        for _, equip in pairs(equips) do
+            if equip:GetOverrunLevel() >= targetLevel then
+                return true, condition.Desc
+            end
+        end
+
+        return false, condition.Desc
+    end,
+
     -- 以下为海外svn分支新增
     -- en版本[10501]
 }

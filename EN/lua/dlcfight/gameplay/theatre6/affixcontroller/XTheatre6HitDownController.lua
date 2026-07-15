@@ -67,4 +67,9 @@ function XTheatre6HitDownController:OnLuaHitModify(missileUUID, launcherNpcUUID,
     self:DispatchLuaEvent(eventType, eventArgs)
 end
 
+function XTheatre6AffixControllerBase:OnLuaAffixHitDown(eventArgs)
+    --击倒表现
+    self._proxy:LaunchMissile(eventArgs._launcherUUID, eventArgs._targetUUID, 102500901, 102500902, 1)
+end
+
 return XTheatre6HitDownController

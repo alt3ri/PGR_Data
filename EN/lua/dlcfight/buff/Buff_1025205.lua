@@ -12,14 +12,19 @@ function XBuffScript1025205:Init()
     ------------执行------------
     self.originAttrib1 = 0
     self.originAttrib2 = 0
+    self.Count = 0
 end
 
 function XBuffScript1025205:OnLuaSkillEnd(eventArgs)
     ------------执行------------
-    if eventArgs._launcherUUID ~= self._npcUUID then return end
-    self.originAttrib1 = self._proxy:GetNpcGameplayAttribValue(self._npcUUID,ETheatre6AttribType.Stamina)
-    self.originAttrib2 = self.originAttrib1 // 40
-    self._proxy:Theatre6ChangeStaminaValue(self._npcUUID, self.originAttrib2, 0) --恢复X点体力
+    if self.Count < 8 then
+        if eventArgs._launcherUUID ~= self._npcUUID then return end
+        self.originAttrib1 = self._proxy:GetNpcGameplayAttribMaxValue(self._npcUUID,ETheatre6AttribType.Stamina)
+        self.originAttrib2 = self.originAttrib1 // 40
+        if self.originAttrib2 > 5 then self.originAttrib2 = 5 end
+        self._proxy:Theatre6ChangeStaminaValue(self._npcUUID, self.originAttrib2, 0) --恢复X点体力
+        self.Count = self.Count + 1
+    end
 end
 
 return XBuffScript1025205

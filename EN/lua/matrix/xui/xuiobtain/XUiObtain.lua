@@ -75,6 +75,7 @@ end
 
 -- customParams = { IsShowGridCommonPanelTag:显示特殊页签 }
 --horizontalNormalizedPosition：水平滚动位置，以 0 到 1 之间的值表示，0 表示位于左侧
+---@param customParams XUiObtainCustomParams
 function XUiObtain:OnStart(rewardGoodsList, title, closeCb, sureCb, horizontalNormalizedPosition, customParams)
     self.CustomParams = customParams or {}
     self.Items = {}
@@ -164,7 +165,9 @@ function XUiObtain:CheckIsTimelimitGood(rewardGoodsList)
 end
 
 function XUiObtain:Close()
-    self:CheckOpenFashionTip()
+    if not self.CustomParams.IsIgnoreOpenFashionTipCheck then
+        self:CheckOpenFashionTip()
+    end
     self:EmitSignal("Close")
     XUiObtain.Super.Close(self)
 end
@@ -212,3 +215,8 @@ function XUiObtain.SetRewardsIsShowYKTag(rewardGoodsList)
 end
 
 return XUiObtain
+
+---@class XUiObtainCustomParams
+---@field IsShowGridCommonPanelTag boolean 显示特殊标签
+---@field IsShowRandomDrawPanelTag boolean 显示随机抽取的标签
+---@field IsIgnoreOpenFashionTipCheck boolean 是否检查并弹出穿戴涂装弹窗

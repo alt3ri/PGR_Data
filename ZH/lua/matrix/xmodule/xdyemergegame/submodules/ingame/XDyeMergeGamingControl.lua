@@ -129,8 +129,11 @@ function XDyeMergeGamingControl:OnStagePassed()
 end
 
 function XDyeMergeGamingControl:InitGame(stageId)
+    self._IsInitPhase = true
     self:_ResetRecordData(stageId)
     self._IsStagePassed = false
+    self._PendingExtendAnim = nil
+    self._ExtendEnablePendingUid = nil
     self.AnimationControl:ResetData()
     self.BlocksControl:ResetData()
     self.MapControl:ResetData()
@@ -196,6 +199,14 @@ function XDyeMergeGamingControl:InitGame(stageId)
     
     -- 提示窗小窗模式
     self._IsTipsSmallWindowOpen = nil
+end
+
+function XDyeMergeGamingControl:IsInitPhase()
+    return self._IsInitPhase == true
+end
+
+function XDyeMergeGamingControl:SetInitPhaseState(isInit)
+    self._IsInitPhase = isInit
 end
 
 function XDyeMergeGamingControl:SetCurrentState(isSelect)
@@ -274,6 +285,7 @@ function XDyeMergeGamingControl:_ExecuteToggleBlockState(uid, blockType)
     self.CommandControl:EnqueueRemoveBlockInfluence(uid)
 
     if blockType == BT.TurnableMultyColor then
+        self._PendingLineAnimUid = uid
         self.CommandControl:EnqueueRotateBlock(uid)
     elseif blockType == BT.VariableLength then
         self.CommandControl:EnqueueChangeBlockLength(uid, block:GetId())
@@ -304,13 +316,44 @@ function XDyeMergeGamingControl:_ExecuteToggleBlockState(uid, blockType)
     self._IsDirty = true
 end
 
+function XDyeMergeGamingControl:ConsumePendingLineAnimUid()
+    local uid = self._PendingLineAnimUid
+    self._PendingLineAnimUid = nil
+    return uid
+end
+
+function XDyeMergeGamingControl:SetPendingExtendAnim(uid, oldLen, newLen)
+    self._PendingExtendAnim = { Uid = uid, OldLen = oldLen, NewLen = newLen }
+end
+
+function XDyeMergeGamingControl:ConsumePendingExtendAnim()
+    local data = self._PendingExtendAnim
+    self._PendingExtendAnim = nil
+    return data
+end
+
+function XDyeMergeGamingControl:HasPendingShrinkAnim(uid)
+    local d = self._PendingExtendAnim
+    return d ~= nil and d.Uid == uid and d.NewLen < d.OldLen
+end
+
+function XDyeMergeGamingControl:SetExtendEnablePendingUid(uid)
+    self._ExtendEnablePendingUid = uid
+end
+
+function XDyeMergeGamingControl:ConsumeExtendEnablePendingUid()
+    local uid = self._ExtendEnablePendingUid
+    self._ExtendEnablePendingUid = nil
+    return uid
+end
+
 --- 根据外部的交互沟通逻辑层
 function XDyeMergeGamingControl:OnUiGridClick(uid)
     if self:CheckIsInteractionLocked() then return end
     local block = self.BlocksControl:GetBlockByUid(uid)
     local blockType = block:GetType()
 
-    XLog.Debug("[DyeMerge][OnUiGridClick] uid=" .. tostring(uid) .. " blockType=" .. tostring(blockType) .. " canMove=" .. tostring(block:GetCanMove()) .. " isSelect=" .. tostring(self._IsSelect))
+    -- XLog.Debug("[DyeMerge][OnUiGridClick] uid=" .. tostring(uid) .. " blockType=" .. tostring(blockType) .. " canMove=" .. tostring(block:GetCanMove()) .. " isSelect=" .. tostring(self._IsSelect))
 
     if self._IsSelect then
         if uid == self._SelectUid then

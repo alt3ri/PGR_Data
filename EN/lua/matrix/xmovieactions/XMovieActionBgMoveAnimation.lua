@@ -16,6 +16,8 @@ function XMovieActionBgMoveAnimation:OnInit(actionData)
 
     local bgIndex = params[4]
     self.BgIndex = bgIndex and tonumber(bgIndex) or DefaultBgIndex
+
+    self.CurveType = XMVCA.XMovie:ParamToCurveType(params[5])
 end
 
 function XMovieActionBgMoveAnimation:OnUiRootInit()
@@ -24,17 +26,21 @@ function XMovieActionBgMoveAnimation:OnUiRootInit()
 end
 
 function XMovieActionBgMoveAnimation:OnRunning()
+    local ease = XMVCA.XMovie:GetDOTweenEase(self.CurveType)
     if self.IsPanelSpine then
         self.UiRoot.PanelSpine.transform:DOComplete()
-        self.UiRoot.PanelSpine.transform:DOLocalMove(self.Pos, self.Duration)
+        local tween = self.UiRoot.PanelSpine.transform:DOLocalMove(self.Pos, self.Duration)
+        if ease and tween then
+            tween:SetEase(ease)
+        end
         return
     end
 
     if self.RImgBg then
-        self.RImgBg:DOAnchorPos3D(self.Pos, self.Duration)
+        self.RImgBg:DOAnchorPos3D(self.Pos, self.Duration, ease)
     end
     if self.RImgAnimBg then
-        self.RImgAnimBg:DOAnchorPos3D(self.Pos, self.Duration)
+        self.RImgAnimBg:DOAnchorPos3D(self.Pos, self.Duration, ease)
     end
 end
 

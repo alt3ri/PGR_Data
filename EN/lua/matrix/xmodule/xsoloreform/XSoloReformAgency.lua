@@ -31,6 +31,9 @@ end
 function XSoloReformAgency:ExOnSkip(skipDatas)
     if XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.SoloReform, true)
         and self:InActivityTime() then
+        if XLuaUiManager.IsUiShow("UiSoloReformMain") then
+            return true
+        end
         XLuaUiManager.Open('UiSoloReformMain')
         return true
     else
@@ -125,10 +128,11 @@ function XSoloReformAgency:PreFight(stage, teamId, isAssist, challengeCount)
     preFight.CardIds = { 0, 0, 0 }
     preFight.RobotIds = { 0, 0, 0 }
 
-    --强制机器人
+    --强制机器人,按章节CharacterCount限制上阵人数,号位顺序取前N个
     if not XTool.IsTableEmpty(stage.RobotId) then
-        for index, id in pairs(stage.RobotId) do
-            preFight.RobotIds[index] = id
+        local maxCount = self:GetChapterCharacterCount(self._CurEnterChapterId)
+        for index = 1, maxCount do
+            preFight.RobotIds[index] = stage.RobotId[index] or 0
         end
         preFight.CaptainPos = 1
         preFight.FirstFightPos = 1
@@ -140,8 +144,15 @@ function XSoloReformAgency:PreFight(stage, teamId, isAssist, challengeCount)
     preFight.CaptainPos = team:GetCaptainPos()
     preFight.FirstFightPos = team:GetFirstFightPos()
 
-    for i, sourceId in pairs(team:GetEntityIds()) do
+    -- 按章节CharacterCount限制上阵人数,号位顺序取前N个,防止旧存档/配表变更超员带入战斗
+    local maxCount = self:GetChapterCharacterCount(self._CurEnterChapterId)
+    local count = 0
+    for i, sourceId in ipairs(team:GetEntityIds()) do
         if sourceId > 0 then
+            count = count + 1
+            if count > maxCount then
+                break
+            end
             if XRobotManager.CheckIsRobotId(sourceId) then
                 preFight.RobotIds[i] = sourceId
             else
@@ -196,6 +207,18 @@ end
 
 function XSoloReformAgency:GetSoloReformChapterCfg(chapterId, notips)
     return self._Model:GetSoloReformChapterCfg(chapterId, notips)
+end
+
+--章节上阵人数上限,读配表CharacterCount,默认1并钳制到队伍上限3
+function XSoloReformAgency:GetChapterCharacterCount(chapterId)
+    local count = 1
+    if XTool.IsNumberValid(chapterId) then
+        local chapterCfg = self._Model:GetSoloReformChapterCfg(chapterId)
+        if chapterCfg and XTool.IsNumberValid(chapterCfg.CharacterCount) then
+            count = chapterCfg.CharacterCount
+        end
+    end
+    return math.min(math.max(count, 1), 3)
 end
 
 function XSoloReformAgency:ExGetProgressTip()

@@ -33,9 +33,11 @@ end
 ---初始化设置
 ---@param targetTransform UnityEngine.Transform 被克隆的目标Transform
 ---@param cloneParent UnityEngine.Transform 克隆体的父节点（通常是Canvas层）
-function XUiSimpleDrag:Setup(targetTransform, cloneParent)
+---@param scrollRect UnityEngine.UI.ScrollRect|nil 外部传入的需在按下时禁用的滚动组件，未传入则不处理滚动
+function XUiSimpleDrag:Setup(targetTransform, cloneParent, scrollRect)
     self._TargetTransform = targetTransform
     self._CloneParent = cloneParent
+    self._ScrollRect = scrollRect
     self:_InitLongClick()
 end
 
@@ -56,15 +58,12 @@ function XUiSimpleDrag:_InitLongClick()
     self._LongClick:AddFocusExitListener(handler(self, self._OnFocusExit))
 end
 
---- 父级存在 ScrollRect 时，按下即禁用滚动，避免抢占长按/拖拽
+--- 外部传入 ScrollRect 时,按下即禁用滚动,避免抢占长按/拖拽
 function XUiSimpleDrag:_InitScrollRectHandler()
-    local go = self._Transform.gameObject
-    local scrollRect = go:GetComponentInParent(typeof(CS.UnityEngine.UI.ScrollRect))
-    if not scrollRect or XTool.UObjIsNil(scrollRect) then
+    if not self._ScrollRect or XTool.UObjIsNil(self._ScrollRect) then
         return
     end
-    self._ScrollRect = scrollRect
-    local pointer = go:GetComponent("XUiPointer")
+    local pointer = self._Transform.gameObject:GetComponent("XUiPointer")
     if not pointer then
         return
     end
@@ -119,6 +118,9 @@ end
 ---短按点击回调
 function XUiSimpleDrag:_OnClick()
     self:_RestoreScrollRect()
+    if self._Status == Status.Dragging then
+        return
+    end
     self:_ApplyAction(XEnumConst.Theatre6.DragAction.Click)
 end
 

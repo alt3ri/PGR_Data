@@ -112,6 +112,13 @@ function XUiFubenFashionStoryNew:UpdateLeftTime(isClose)
         local leftTimeStamp = XMVCA.XFashionStory:GetLeftTimeStamp(XMVCA.XFashionStory:GetCurrentActivityId())
         local leftTime = XUiHelper.GetTime(leftTimeStamp, XUiHelper.TimeFormatType.ACTIVITY)
         self.TxtChapterLeftTime.text = leftTime
+        for _, ctrl in ipairs(self.GroupCtrl) do
+            ctrl:RefreshLockCountDown()
+        end
+        -- 奖励入口锁定时显示倒计时，需要每秒刷一次以驱动文本和解锁翻转
+        if self.RewardState == XMVCA.XFashionStory.RewardState.Locked then
+            self:RefreshRewardState()
+        end
     end
 end
 

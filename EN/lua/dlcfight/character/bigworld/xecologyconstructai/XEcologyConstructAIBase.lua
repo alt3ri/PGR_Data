@@ -135,6 +135,7 @@ function XEcologyConstructAIBase:TryInitAIEnterState()
     -- 因此直接读取即可
     local haveSave, curStateEnum = self._proxy:TryGetBBInt(XVarDomain.Npc, self._uuid, EEcologySaveKey.CurStateEnum)
     self._stateMachine:SwitchState(curStateEnum)
+    self._isInit = true
 end
 
 ---@private

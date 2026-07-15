@@ -10,6 +10,7 @@ XGuideManagerCreator = function()
     local IsGuiding = false             --引导运行中   
     local IsOpenControl = false         -- 引导是否可以接受按键隐射，默认关闭
     local DisableFunctionFlag = 0      --功能屏蔽标记（调试模式时使用）
+    local GuideMaskName = "GuideMask"
     --引导代理类型
     XGuideManager.ProxyType = {
         --基础内容
@@ -567,6 +568,26 @@ XGuideManagerCreator = function()
             return XGuideConfig.GetGuideTextTemplate(textId)
         end
         return CurrentProxy:GetGuideTextTemplate(textId)
+    end
+    
+    function XGuideManager.TryShowGuideMask()
+        if XLuaUiManager.IsMaskShow(GuideMaskName) then
+            return false
+        end
+        XLuaUiManager.SetMask(true, GuideMaskName)
+        return true
+    end
+    
+    function XGuideManager.TryHideGuideMask()
+        if not XLuaUiManager.IsMaskShow(GuideMaskName) then
+            return false
+        end
+        XLuaUiManager.SetMask(false, GuideMaskName)
+        return true
+    end
+    
+    function XGuideManager.IsShowGuideMask()
+        return XLuaUiManager.IsMaskShow(GuideMaskName)
     end
     
     --endregion

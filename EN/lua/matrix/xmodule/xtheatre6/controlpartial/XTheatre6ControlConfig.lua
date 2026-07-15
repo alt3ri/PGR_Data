@@ -28,7 +28,16 @@ end
 
 ---局外商店代币
 function XTheatre6Control:GetRewardShopCoin()
-    return self:GetIntClientConfigValue("ConsumeId")
+    local values = self._Model:GetClientConfigValues("ConsumeId")
+    if XTool.IsTableEmpty(values) then
+        return table.empty
+    end
+
+    local coinIds = {}
+    for _, v in ipairs(values) do
+        table.insert(coinIds, tonumber(v))
+    end
+    return coinIds
 end
 
 function XTheatre6Control:GetIntClientConfigValue(key, index)
@@ -109,8 +118,21 @@ function XTheatre6Control:GetAttrConfig(id)
 end
 
 ---@return XTableTheatre6Attr[]
-function XTheatre6Control:GetAttrConfigs()
-    return self._Model:GetAttrConfigs()
+function XTheatre6Control:GetShowAttrConfigs()
+    ---@type XTableTheatre6Attr[]
+    local cfgs = {}
+    for _, cfg in pairs(self._Model:GetAttrConfigs()) do
+        if XTool.IsNumberValid(cfg.Priority) then
+            table.insert(cfgs, cfg)
+        end
+    end
+    table.sort(cfgs, function(a, b)
+        if a.Priority ~= b.Priority then
+            return a.Priority < b.Priority
+        end
+        return a.Id < b.Id
+    end)
+    return cfgs
 end
 
 ---获取按等级排序的等级配置列表
@@ -251,7 +273,7 @@ end
 ---获取技能描述
 ---@param skillId number 技能Id
 ---@param isShort boolean 是否获取短描述
-function XTheatre6Control:GetSkillDesc(skillId, isShort)
+function XTheatre6Control:GetSkillDesc(skillId, isShort, isShowLevelUp)
     local config = self:GetSkillCfgById(skillId)
     local desc = isShort and config.ShortDesc or config.Desc
     if not desc then
@@ -259,7 +281,26 @@ function XTheatre6Control:GetSkillDesc(skillId, isShort)
     end
     desc = self:ReplaceAttrPlaceholder(desc)
     desc = XUiHelper.ReplaceTextNewLine(desc)
-    return CS.XTextManager.FormatString(desc, table.unpack(config.DescParams))
+
+    local descParams = config.DescParams
+    if isShowLevelUp then
+        local nextSkillId = self:GetNextLevelSkillId(skillId)
+        if XTool.IsNumberValid(nextSkillId) then
+            descParams = {}
+            local symbol = self:GetClientConfigValue("SkillLevelUpSymbol") -- →
+            local nextConfig = self:GetSkillCfgById(nextSkillId)
+            for i, param in ipairs(config.DescParams) do
+                local nextParam = nextConfig.DescParams[i]
+                if nextParam and param ~= nextParam then
+                    descParams[i] = string.format("%s%s%s", param, symbol, nextParam)
+                else
+                    descParams[i] = param
+                end
+            end
+        end
+    end
+
+    return CS.XTextManager.FormatString(desc, table.unpack(descParams))
 end
 
 ---获取遗物描述
@@ -297,4 +338,78 @@ function XTheatre6Control:GetRoomIcon(roomType)
     return nil
 end
 
-return XTheatre6Control
+function XTheatre6Control:GetBuffRemainingTimesDesc(durationType)
+    local values = self._Model:GetClientConfigValues("BuffRemainingTimesDesc")
+    for i = 1, #values, 2 do
+        if tonumber(values[i]) == durationType then
+            return values[i + 1]
+        end
+    end
+    return nil
+end
+
+--region PVP
+
+---@return XTableTheatre6BuildTag[]
+function XTheatre6Control:GetBuildTagConfigs()
+    return self._Model:GetBuildTagConfigs()
+end
+
+---@return XTableTheatre6PvpActivity
+function XTheatre6Control:GetPvpActivityConfig(id)
+    return self._Model:GetPvpActivityConfig(id)
+end
+
+function XTheatre6Control:GetPvpActivityTimeId()
+    local config = self._Model.Pvp:GetActivityConfig()
+
+    if config then
+        return config.TimeId
+    end
+
+    return 0
+end
+
+---@return XTableTheatre6PvpBuff
+function XTheatre6Control:GetPvpBuffConfig(id)
+    return self._Model:GetPvpBuffConfig(id)
+end
+
+---@return XTableTheatre6PvpBuffGroup
+function XTheatre6Control:GetPvpBuffGroupConfig(id)
+    return self._Model:GetPvpBuffGroupConfig(id)
+end
+
+---@return XTableTheatre6PvpRank
+function XTheatre6Control:GetPvpRankConfig(id, noTips)
+    return self._Model:GetPvpRankConfig(id, noTips)
+end
+
+---@return string
+function XTheatre6Control:GetPvpConfigValue(key, index)
+    return self._Model:GetPvpConfigValue(key, index)
+end
+
+---@return number
+function XTheatre6Control:GetIntPvpConfigValue(key, index)
+    return self._Model:GetIntPvpConfigValue(key, index)
+end
+
+---@return string
+function XTheatre6Control:GetPvpClientConfigValue(key, index)
+    return self._Model:GetPvpClientConfigValue(key, index)
+end
+
+---@return number
+function XTheatre6Control:GetIntPvpClientConfigValue(key, index)
+    return self._Model:GetIntPvpClientConfigValue(key, index)
+end
+
+---@return XTableTheatre6PvpRobot
+function XTheatre6Control:GetRobotConfig(id)
+    return self._Model:GetRobotConfig(id)
+end
+
+--endregion
+
+return XTheatre6Control

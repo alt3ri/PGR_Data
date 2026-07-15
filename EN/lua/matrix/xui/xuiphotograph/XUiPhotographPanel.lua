@@ -473,8 +473,26 @@ function XUiPhotographPanel:RefreshActionPanel(isPlaying, cacheAnim)
 end
 
 function XUiPhotographPanel:ClearActionCache()
+    if self.CurActionGrid ~= nil then
+        self.CurActionGrid:SetSelect(false)
+    end
     self.CurActionIndex = nil
     self.CurActionGrid = nil
+end
+
+function XUiPhotographPanel:RefreshFashionGridSelect()
+    if self.CurMenuType ~= MenuBtnType.Fashion then
+        return
+    end
+    local curIndex = self.CurFashionIndex
+    self.CurFashionGrid = nil
+    for index, grid in pairs(self.DynamicTableOther:GetGrids()) do
+        local isSelect = curIndex and curIndex == index
+        grid:SetSelect(isSelect)
+        if isSelect then
+            self.CurFashionGrid = grid
+        end
+    end
 end
 
 function XUiPhotographPanel:SetInfoTextName(textName)

@@ -804,18 +804,18 @@ function XTheatre6Control:GetLatetStoryUpdateTime()
 end
 
 function XTheatre6Control:CheckHasNewContent()
-    local lastViewTime = self._Model:GetLastViewStoryTime()
+    local currentTime = XTime.GetServerNowTimestamp()
     local latestUpdateTime = self:GetLatetStoryUpdateTime()
 
-    return lastViewTime < latestUpdateTime
+    return currentTime >= latestUpdateTime
 end
 
 function XTheatre6Control:CheckShowUpdatePopup()
-    local lastViewTime = self._Model:GetLastViewStoryTime()
+    local currentTime = XTime.GetServerNowTimestamp()
     local latestUpdateTime = self:GetLatetStoryUpdateTime()
     local localTime = self._Model:GetNewContentShowed()
 
-    return lastViewTime < latestUpdateTime and localTime ~= latestUpdateTime
+    return currentTime >= latestUpdateTime and localTime ~= latestUpdateTime
 end
 
 function XTheatre6Control:ShowUpdatePopup()

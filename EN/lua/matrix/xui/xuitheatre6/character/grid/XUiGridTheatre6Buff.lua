@@ -30,6 +30,9 @@ function XUiGridTheatre6Buff:UpdateByChoose(buffId, characterId, index)
     self._BuffId = buffId
     self._IsUnlock = ret
     self.UiRImgIcon:SetRawImage(buffConfig.Icon)
+    if self.Lock then
+        self.Lock.gameObject:SetActiveEx(not self._IsUnlock)
+    end
 end
 
 ---显示Buff详细信息
@@ -49,18 +52,20 @@ end
 function XUiGridTheatre6Buff:UpdateByInfo(info)
     self:UpdateByUid(info.Uid)
 
+    local showCount = 0
     local buffConfig = self._Control:GetBuffConfig(self._BuffId)
     if buffConfig.CanStack then
         --右下角：堆叠数量（需要数量>1）
         if info.StackCount > 1 then
-            self:ShowStackCount(info.StackCount)
+            showCount = info.StackCount
         end
-    else
+    elseif buffConfig.IsCount == 1 then
         --右下角：触发次数（需要次数>=1）
         if info.TriggerCount >= 1 then
-            self:ShowStackCount(info.TriggerCount)
+            showCount = info.TriggerCount
         end
     end
+    self:ShowStackCount(showCount)
     --左上角：剩余次数
     self.UiTxtTimes.text = info.RemainCount
 end

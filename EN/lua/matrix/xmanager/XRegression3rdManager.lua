@@ -248,9 +248,19 @@ XRegression3rdManagerCreator = function()
         if not activeSurveyData then
             return
         end
+        
+        local activeSurveyList = activeSurveyData.ActiveSurveyList
+
+        if not activeSurveyList then
+            return
+        end
+        
         ---@type XRegression3rdSurvey
         local viewModel = XRegressionViewModel:GetProperty("_SurveyViewModel")
-        viewModel:AddSurveyData(activeSurveyData)
+
+        for i, v in pairs(activeSurveyList) do
+            viewModel:AddSurveyData(v)
+        end
     end
 
     --- 通知通行证自动领取任务奖励列表

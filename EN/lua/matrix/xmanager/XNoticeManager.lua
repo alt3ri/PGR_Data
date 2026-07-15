@@ -331,6 +331,9 @@ XNoticeManagerCreator = function()
     ---@param modifyTime number 修改时间
     ---@param endTime number 结束时间
     local function AddToSyncQueue(serverKey, noticeId, modifyTime, endTime)
+        if not XLoginManager.IsLogin() then
+            return
+        end
         -- 如果已经在队列中，不需要重复添加
         if _SyncQueue[serverKey] then
             return
@@ -443,6 +446,9 @@ XNoticeManagerCreator = function()
     ---首次同步本地已读公告到服务端
     ---触发条件：版本更新后首次打开公告界面时
     function XNoticeManager.TryFirstSyncGameNoticeRead()
+        if not XLoginManager.IsLogin() then
+            return
+        end
         if _HasSyncedGameNoticeToServer then
             return
         end

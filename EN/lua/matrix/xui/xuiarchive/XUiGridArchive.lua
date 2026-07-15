@@ -98,7 +98,7 @@ end
 function XUiGridArchive:SetCompletionRate(type)
     local rate = 0
     if type == XEnumConst.Archive.SubSystemType.Monster then
-        rate = self._Control:GetMonsterCompletionRate()
+        rate = self._Control.MonsterControl:GetMonsterCompletionRate()
     elseif type == XEnumConst.Archive.SubSystemType.Weapon then
         rate = self._Control:GetWeaponCollectRate()
     elseif type == XEnumConst.Archive.SubSystemType.Awareness then

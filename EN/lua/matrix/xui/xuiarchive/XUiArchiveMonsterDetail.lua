@@ -54,7 +54,7 @@ function XUiArchiveMonsterDetail:OnStart(dataList, index, operationType)
     self.MonsterIndex = index
     self.AssetPanel = XUiPanelAsset.New(self, self.PanelAsset, XDataCenter.ItemManager.ItemId.FreeGem, XDataCenter.ItemManager.ItemId.ActionPoint, XDataCenter.ItemManager.ItemId.Coin)
     self:Init()
-    self._Control:ClearMonsterNewTag({ self.Data })
+    self._Control.MonsterControl:ClearMonsterNewTag({ self.Data })
     -- if self.OperationType == XEnumConst.Archive.MonsterDetailUiType.Default then
     --     XDataCenter.ArchiveManager.ClearMonsterNewTag({ self.Data })
     -- end
@@ -145,7 +145,7 @@ function XUiArchiveMonsterDetail:InitTypeGroup()
     if not XTool.IsTableEmpty(npcIds) then
         local index = 1
         for _, npcId in pairs(npcIds) do
-            local modelIds = XMVCA.XArchive:GetMonsterModelIds(npcId)
+            local modelIds = XMVCA.XArchive.MonsterArchiveAgency:GetMonsterModelIds(npcId)
 
             if not XTool.IsTableEmpty(modelIds) then
                 for i, modelId in pairs(modelIds) do
@@ -347,7 +347,7 @@ function XUiArchiveMonsterDetail:OnBtnNextClick()
     if self.NextIndex == 0 then
         return
     end
-    XMVCA.XArchive:GetMonsterEvaluateFromSever(self.DataList[self.NextIndex]:GetNpcId(), function()
+    XMVCA.XArchive.MonsterArchiveAgency:GetMonsterEvaluateFromSever(self.DataList[self.NextIndex]:GetNpcId(), function()
         XLuaUiManager.PopThenOpen("UiArchiveMonsterDetail", self.DataList, self.NextIndex, self.OperationType)
     end)
 end
@@ -356,7 +356,7 @@ function XUiArchiveMonsterDetail:OnBtnLastClick()
     if self.PreviousIndex == 0 then
         return
     end
-    XMVCA.XArchive:GetMonsterEvaluateFromSever(self.DataList[self.PreviousIndex]:GetNpcId(), function()
+    XMVCA.XArchive.MonsterArchiveAgency:GetMonsterEvaluateFromSever(self.DataList[self.PreviousIndex]:GetNpcId(), function()
         XLuaUiManager.PopThenOpen("UiArchiveMonsterDetail", self.DataList, self.PreviousIndex, self.OperationType)
     end)
 end

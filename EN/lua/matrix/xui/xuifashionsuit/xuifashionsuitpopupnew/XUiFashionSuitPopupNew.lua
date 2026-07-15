@@ -71,9 +71,12 @@ function XUiFashionSuitPopupNew:Refresh(lastIndex)
 
     local suitId = XMVCA.XFashionSuit:GetFashionSuitId(self._ShowFashionId)
     local tex = self._Control:GetClientConfig("LockSuitImageBorder"..suitId, cfg.FashionSuitRare)
-    self.BtnPicUi.Kuang1:SetRawImage(tex)
-    self.BtnPicUi.Kuang2:SetRawImage(tex)
-    
+    self.BtnPicUi.Kuang1:SetRawImage(tex,function()
+        self.BtnPicUi.Kuang1:SetNativeSize()
+    end)
+    self.BtnPicUi.Kuang2:SetRawImage(tex,function()
+        self.BtnPicUi.Kuang2:SetNativeSize()
+    end)
 
     self._BtnDots[self._CurIndex]:SetButtonState(CS.UiButtonState.Select)
     if XTool.IsNumberValid(lastIndex) and lastIndex > -1 then

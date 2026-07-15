@@ -31,6 +31,9 @@ XMovieConfigs.PLAYER_NAME_REPLACEMENT = "【kuroname】"
 XMovieConfigs.TYPE_WRITER_SPEED = CS.XGame.ClientConfig:GetFloat("MovieWriterSpeed") or 0.04
 XMovieConfigs.AutoPlayDelay = CS.XGame.ClientConfig:GetInt("AutoPlayDelay")  --自动播放对话默认停留时间
 XMovieConfigs.PerWordDelay = CS.XGame.ClientConfig:GetInt("MoviePerWordDelay") --每个字的延迟时间
+XMovieConfigs.ITEM_APPEAR_DURATION = CS.XGame.ClientConfig:GetFloat("ItemAppearDuration") --物品Icon淡入时长(秒)
+XMovieConfigs.ITEM_DISAPPEAR_DURATION = CS.XGame.ClientConfig:GetFloat("ItemDisappearDuration") --物品Icon淡出时长(秒)
+XMovieConfigs.ITEM_MOVIE_DURATION = CS.XGame.ClientConfig:GetFloat("ItemMovieDuration") --物品Icon位移默认时长(秒)
 --为方便后续扩展 和策划约定 
 --1-5为默认原有actor，层级在特效层之下
 --6-10为中间插入横幅actor
@@ -42,6 +45,15 @@ XMovieConfigs.PerWordDelay = CS.XGame.ClientConfig:GetInt("MoviePerWordDelay") -
 XMovieConfigs.MAX_ACTOR_NUM = 21
 
 XMovieConfigs.MAX_SPINE_ACTOR_NUM = 18
+
+-- 运动曲线类型，演出用预制曲线编号（策划填 1..4，留空 = 线性）
+XMovieConfigs.MOVIE_CURVE_TYPE = {
+    NONE      = 0,
+    OUT_QUAD  = 1, -- 先快后慢（缓）
+    IN_QUAD   = 2, -- 先慢后快（缓）
+    OUT_CUBIC = 3, -- 先快后慢（急）
+    IN_CUBIC  = 4, -- 先慢后快（急）
+}
 
 -- 通用的spine动画
 XMovieConfigs.SpineActorAnim =
@@ -136,6 +148,20 @@ function XMovieConfigs.GetActorAvatarPosVector3(actorId)
         return
     end
     return XLuaVector3.New(config.AvatarPosX, config.AvatarPosY, config.AvatarPosZ)
+end
+
+-- 18号头像专属缩放：配置未填(0/nil)时默认 1
+function XMovieConfigs.GetActorAvatarScale(actorId)
+    local config = MovieActorTemplates[actorId]
+    if not config then
+        XLog.ErrorTableDataNotFound("XMovieConfigs.GetActorAvatarScale", "MovieActor", TABLE_MOVIE_ACTOR_PATH, "actorId", tostring(actorId))
+        return 1
+    end
+    local scale = config.AvatarScale
+    if not scale or scale == 0 then
+        return 1
+    end
+    return scale
 end
 
 function XMovieConfigs.GetActorFaceImgPath(actorId, faceId)

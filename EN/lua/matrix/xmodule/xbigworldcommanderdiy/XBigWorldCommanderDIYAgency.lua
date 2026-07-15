@@ -443,6 +443,20 @@ function XBigWorldCommanderDIYAgency:CheckPartSuit(partId)
     return self._Model:GetDlcPlayerFashionPartIsSuitPartById(partId)
 end
 
+--- 安全接口：通过物品 TemplateId 判断该物品是否为 DIY 套装部件
+--- 适用场景：XUiTip / XUiGridCommon 等通用 UI 收到的 TemplateId 来源任意（可能是普通道具、意识、奖励等），
+--- 不能直接走 GetPartIsSuit（那个接口默认入参就是 DIY 部件 partId）；
+--- 本接口先用物品系统 XArrangeConfigs 判断 TemplateId 是否属于 BWDIYPart 类型，
+--- 不属于则直接返回 false，属于才委托给内部 GetPartIsSuit 做套装类型判断
+---@param templateId number 物品 TemplateId（任意来源）
+---@return boolean
+function XBigWorldCommanderDIYAgency:CheckTemplateIsSuit(templateId)
+    if XArrangeConfigs.GetType(templateId) ~= XArrangeConfigs.Types.BWDIYPart then
+        return false
+    end
+    return self:GetPartIsSuit(templateId)
+end 
+
 function XBigWorldCommanderDIYAgency:GetPartIsSuit(partId)
     return self._Model:GetDlcPlayerFashionPartTypeIdById(partId) == XEnumConst.PlayerFashion.PartType.Suit
 end
@@ -558,7 +572,7 @@ function XBigWorldCommanderDIYAgency:GetPartItemParams(templateId)
         TemplateId = templateId,
         Name = self:GetPartItemName(templateId),
         Icon = self:GetPartItemIcon(templateId),
-        BigIcon = self:GetPartItemBigIcon(templateId),
+        BigIcon = self:GetPartItemIcon(templateId),
         Quality = self:GetPartItemQuality(templateId),
         Priority = self:GetPartPriority(templateId),
         WorldDesc = self:GetPartItemWorldDescription(templateId),

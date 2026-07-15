@@ -124,7 +124,10 @@ function XUiLifeTreeTask:OnDynamicTableEvent(event, index, grid)
 
         -- 第一次打开界面时需要播放enable动画，后续刷新不需要
         if not self.IsInitComplete then
-            grid:PlayAnimation()
+            XLuaUiManager.SetMask(true)
+            grid:PlayAnimation(function()
+                XLuaUiManager.SetMask(false)
+            end)
         end
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_RELOAD_COMPLETED then
         if not self.IsInitComplete then

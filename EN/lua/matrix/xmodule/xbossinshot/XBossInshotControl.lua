@@ -90,8 +90,8 @@ function XBossInshotControl:GetIsShowPlayback(stageId)
 end
 
 --- 生成最后战斗的录像数据
-function XBossInshotControl:GenLastPlaybackData(bossId, score, scoreLevelIcon, difficulty)
-    return self._Model:GenLastPlaybackData(bossId, score, scoreLevelIcon, difficulty)
+function XBossInshotControl:GenLastPlaybackData(bossId, score, scoreLevelIcon, difficulty, towerLevelId)
+    return self._Model:GenLastPlaybackData(bossId, score, scoreLevelIcon, difficulty, towerLevelId)
 end
 
 --- 获取回放数据
@@ -128,6 +128,10 @@ end
 --- 获取活动配置bossId列表
 function XBossInshotControl:GetActivityBossIds(id)
     return self._Model:GetActivityBossIds(id)
+end
+
+function XBossInshotControl:GetTowerBossIds()
+    return self._Model:GetTowerBossIds()
 end
 
 --- 获取活动配置任务组列表
@@ -280,6 +284,11 @@ function XBossInshotControl:GetConfigBossInshotTalent(id)
     return self._Model:GetConfigBossInshotTalent(id)
 end
 
+-- 获得爬塔楼层表
+function XBossInshotControl:GetConfigBossInshotTowerAllLevels()
+    return self._Model:GetConfigBossInshotTowerAllLevels()
+end
+
 --- 获取角色默认穿戴天赋配置表
 function XBossInshotControl:GetCharacterDefaultWearTalentCfg(characterId)
     return self._Model:GetCharacterDefaultWearTalentCfg(characterId)
@@ -304,4 +313,154 @@ function XBossInshotControl:GetMarkEffectName(id)
 end
 ---------------------------------------- #endregion 配置表 ----------------------------------------
 
+
+---------------------------------------- #region 爬塔 ----------------------------------------
+
+-- 塔是否解锁
+function XBossInshotControl:IsTowerUnlocked()
+    local activityId = self._Model:GetActivityId()
+    local activityConf = self._Model:GetConfigBossInshotActivity(activityId)
+    for _, condition in pairs(activityConf.TowerConditions) do
+        if not XConditionManager.CheckCondition(condition) then
+            return false, condition
+        end
+    end
+
+    return true
+end
+
+-- 获取爬塔评分对应等级配置
+function XBossInshotControl:GetTowerScoreLevelConf(level, score)
+    return self._Model:GetTowerScoreLevelConf(level, score)
+end
+
+-- 获取爬塔数据
+function XBossInshotControl:GetBossTowerData(levelId)
+    return self._Model:GetBossTowerData(levelId)
+end
+
+-- 获得当前所在楼层
+function XBossInshotControl:GetBossTowerCurrentLevel()
+    return self._Model:GetBossTowerCurrentLevel()
+end
+
+-- 获得当前已通关的最高楼层
+function XBossInshotControl:GetBossTowerPassedHighestLevel()
+    local passedLevel = self._Model:GetBossTowerCurrentLevel()
+
+    while passedLevel > 0 do
+        if self:HasPassedTowerLevel(passedLevel) then
+            return passedLevel
+        end
+
+        passedLevel = passedLevel - 1
+    end
+
+    return passedLevel
+end
+
+-- 是否已全部通关
+function XBossInshotControl:IsTowerAllClear()
+    local allLevelConf = self:GetConfigBossInshotTowerAllLevels()
+    local curLevel = self:GetBossTowerCurrentLevel()
+    local curLevelData = self:GetBossTowerData(curLevel)
+    local nextLevelConf = allLevelConf[curLevel + 1]
+    if not nextLevelConf and curLevelData.IsPass then return true end
+    return false
+end
+
+-- 是否为塔的最终关卡
+function XBossInshotControl:IsTowerFinalLevel(levelId)
+    local allLevelConf = self:GetConfigBossInshotTowerAllLevels()
+    return not allLevelConf[levelId + 1]
+end
+
+-- 是否已经通关指定楼层
+function XBossInshotControl:HasPassedTowerLevel(levelId)
+    local data = self:GetBossTowerData(levelId)
+    if not data then return false end
+    return data.IsPass or false
+end
+
+-- 是否有需要进入下一楼层
+function XBossInshotControl:HasNeedTryEnterNextLevel()
+    -- 当前在0层则需要
+    local currentLevel = self:GetBossTowerCurrentLevel()
+    if currentLevel == 0 then return true end
+
+    -- 到达最高层则不需要
+    local nextLevelConf = self:GetConfigBossInshotTowerAllLevels()[currentLevel + 1]
+    if not nextLevelConf then return false end
+
+    -- 此层通关且下一层在时间范围内则需要
+    local currentLevelData = self:GetBossTowerData(currentLevel)
+    if currentLevelData.IsPass and XFunctionManager.CheckInTimeByTimeId(nextLevelConf.TimeId) then
+        return true
+    end
+
+    -- 其他情况下不需要
+    return false
+end
+
+-- 根据爬塔关卡Id获得它的BossId
+function XBossInshotControl:GetTowerBossIdByStageId(towerStageId)
+    return self._Model:GetTowerBossIdByStageId(towerStageId)
+end
+
+-- 弹出Toast数据，以弹出各种上升下降弹窗，如果队列为空则返回nil
+function XBossInshotControl:GetAndClearToastData()
+    return self._Model:GetAndClearToastData()
+end
+
+-- 是否具有Toast数据
+function XBossInshotControl:HasToastData()
+    return self._Model:HasToastData()
+end
+
+-- 尝试进入下一层
+function XBossInshotControl:TryEnterNextLevel(cbWithResult)
+    XNetwork.Call("BossInshotEnterNextTowerRequest", {}, function(resp)
+        if resp.Code == XCode.Success then
+            self._Model:OnEnterNextLevel(resp.NextTowerData)
+        end
+
+        cbWithResult(resp)
+    end)
+end
+
+-- 在未通关的时候，为具有多个Boss的关卡选择一关
+function XBossInshotControl:TowerSelectStage(levelId, stageId, cb)
+    XNetwork.Call(
+        "BossInshotTowerSelectBossRequest",
+        {
+            TowerId = levelId,
+            StageId = stageId
+        },
+        function(resp)
+            if resp.Code == XCode.Success then
+                self._Model:OnSelectLevel(levelId, stageId)
+            end
+
+            cb(resp)
+        end)
+end
+
+-- 在通关后，为具有多个Boss的关卡选择一关
+function XBossInshotControl:TowerSelectStageAfterAllClear(levelId, stageId, cb)
+    XNetwork.Call(
+        "BossInshotTowerSelectBossAfterAllPassRequest",
+        {
+            TowerId = levelId,
+            StageId = stageId
+        },
+        function(resp)
+            if resp.Code == XCode.Success then
+                self._Model:OnSelectLevelAfterAllClear(levelId, stageId)
+            end
+
+            cb(resp)
+        end)
+end
+
+---------------------------------------- #endregion 爬塔 ----------------------------------------
 return XBossInshotControl

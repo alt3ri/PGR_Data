@@ -20,7 +20,7 @@ function XUiTheatre6PVPAttackDefend:OnStart(mode, enemyData)
     -- 设置自动关闭
     self:SetAutoCloseInfo(self._Control:GetPvpActivityEndTime(), function(isClose)
         if isClose then
-            self._Control:HandlePvpActivityEnd()
+            XMVCA.XTheatre6:HandlePvpActivityEnd()
         end
     end)
 
@@ -106,6 +106,12 @@ end
 function XUiTheatre6PVPAttackDefend:RefreshArchiveOther()
     if self._PanelArchive then
         self._PanelArchive:RefreshBtn()
+    end
+end
+
+function XUiTheatre6PVPAttackDefend:RefreshArchiveTips()
+    if self._PanelArchive then
+        self._PanelArchive:RefreshTips()
     end
 end
 
@@ -275,7 +281,6 @@ function XUiTheatre6PVPAttackDefend:OnBtnFightClick()
     end
     self._Control:RequestPvpStartFight(self._EnemyData.Uid, lineupInfoList, buffId, function()
         XLuaUiManager.Open("UiTheatre6PVPLoading", self:GetLineupMode()) --UiTheatre6PVPLoading是TopMask类型，不能PopThenOpen
-        self:Close()
     end)
 end
 

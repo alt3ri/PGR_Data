@@ -15,11 +15,15 @@ function XUiGridDyeMergeLine:OnStart()
         self._OriginalWidth = 1
     end
 
+    self._WidthAnimScheduleId = nil
+    self._WidthAnimHandler = handler(self, self._OnWidthAnimFrame)
+
     UV_SCROLL_SPEED = XMVCA.XDyeMergeGame:GetClientDyeMergeNumberByKey("GridLineScrollSpeed")
 end
 
 function XUiGridDyeMergeLine:OnDisable()
     self:_StopUVScroll()
+    self:_StopWidthAnimation()
 end
 
 --- 刷新线条显示
@@ -75,5 +79,71 @@ function XUiGridDyeMergeLine:_StopUVScroll()
         self.RImgLine.uvRect = CS.UnityEngine.Rect(0, 0, 1, 1)
     end
 end
+
+--region 宽度动画
+--- 线条的视觉长度由 RectTransform.sizeDelta.x 控制（pivot在起点，x轴朝终点方向旋转）。
+--- 宽度动画通过逐帧线性插值 sizeDelta.x 实现射线"伸出/缩回"的视觉效果。
+--- 同时需要同步更新 _TileX（UV 横向平铺次数 = 当前宽度 / 预制原始宽度），
+--- 否则纹理会在动画过程中拉伸变形。
+
+function XUiGridDyeMergeLine:GetCurrentWidth()
+    local w = self.Transform:GetUISizeDelta()
+    return w
+end
+
+--- 直接设置线条宽度（跳过动画），同步更新 UV 平铺
+--- _TileX = width / _OriginalWidth 保证每 _OriginalWidth 像素重复一次纹理
+function XUiGridDyeMergeLine:SetCurrentWidth(width)
+    local _, h = self.Transform:GetUISizeDelta()
+    self.Transform:SetUISizeDelta(width, h)
+    self._TileX = width / self._OriginalWidth
+    if self.RImgLine then
+        self.RImgLine.uvRect = CS.UnityEngine.Rect(self._UVOffset or 0, 0, self._TileX, 1)
+    end
+end
+
+--- 启动从当前宽度到 targetWidth 的线性插值动画
+--- 使用 ScheduleForever(handler, 0, 0) 实现逐帧驱动（间隔0 = 每帧回调）
+--- handler 在 OnStart 中预创建，避免每次动画产生新闭包的 GC 开销
+function XUiGridDyeMergeLine:AnimateWidth(targetWidth, duration, onComplete)
+    self:_StopWidthAnimation()
+    local startWidth = self:GetCurrentWidth()
+    if math.abs(startWidth - targetWidth) < 0.1 then
+        if onComplete then onComplete() end
+        return
+    end
+    self._WidthAnimElapsed = 0
+    self._WidthAnimDuration = duration
+    self._WidthAnimStartWidth = startWidth
+    self._WidthAnimTargetWidth = targetWidth
+    self._WidthAnimOnComplete = onComplete
+    self._WidthAnimScheduleId = XScheduleManager.ScheduleForever(self._WidthAnimHandler, 0, 0)
+end
+
+--- 逐帧回调：线性插值 t = elapsed / duration，width = lerp(start, target, t)
+function XUiGridDyeMergeLine:_OnWidthAnimFrame()
+    self._WidthAnimElapsed = self._WidthAnimElapsed + CS.UnityEngine.Time.deltaTime
+    local t = self._WidthAnimElapsed / self._WidthAnimDuration
+    if t >= 1 then
+        self:SetCurrentWidth(self._WidthAnimTargetWidth)
+        -- 先取回调引用再停止动画，避免 _StopWidthAnimation 清空后丢失回调
+        local cb = self._WidthAnimOnComplete
+        self:_StopWidthAnimation()
+        if cb then cb() end
+        return
+    end
+    local width = self._WidthAnimStartWidth + (self._WidthAnimTargetWidth - self._WidthAnimStartWidth) * t
+    self:SetCurrentWidth(width)
+end
+
+function XUiGridDyeMergeLine:_StopWidthAnimation()
+    if self._WidthAnimScheduleId then
+        XScheduleManager.UnSchedule(self._WidthAnimScheduleId)
+        self._WidthAnimScheduleId = nil
+    end
+    self._WidthAnimOnComplete = nil
+end
+
+--endregion
 
 return XUiGridDyeMergeLine

@@ -79,7 +79,7 @@ end
 
 function XUiPanelTheatre6RoundLeft:RefreshAttribute()
     local attribValues = {}
-    local attrConfigs = self._Control:GetAttrConfigs()
+    local attrConfigs = self._Control:GetShowAttrConfigs()
 
     for id, value in pairs(self._RoleData.Attribs) do
         local key = XEnumConst.Theatre6.NpcAttrib[id]

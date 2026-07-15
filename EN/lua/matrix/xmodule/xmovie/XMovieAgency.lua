@@ -140,7 +140,7 @@ function XMovieAgency:SplitParam(param, splitStr, isNumber)
     if not param or param == "" then
         return {}
     end
-    
+
     local result = string.Split(param, splitStr)
     if isNumber then
         local cnt = #result
@@ -149,6 +149,51 @@ function XMovieAgency:SplitParam(param, splitStr, isNumber)
         end
     end
     return result
+end
+
+-- 解析运动曲线参数：空 → nil；1..4 → 对应类型号；非法值报错并返回 nil
+function XMovieAgency:ParamToCurveType(param)
+    if string.IsNilOrEmpty(param) then
+        return nil
+    end
+    local n = tonumber(param)
+    local T = XMovieConfigs.MOVIE_CURVE_TYPE
+    if n == T.OUT_QUAD or n == T.IN_QUAD or n == T.OUT_CUBIC or n == T.IN_CUBIC then
+        return n
+    end
+    XLog.Error("XMovieAgency:ParamToCurveType invalid value: " .. tostring(param))
+    return nil
+end
+
+-- Lua 自定义 Tween 用：返回 t -> easedT 的函数（nil 表示线性）
+function XMovieAgency:GetCurveEvaluator(curveType)
+    local T = XMovieConfigs.MOVIE_CURVE_TYPE
+    if curveType == T.OUT_QUAD then
+        return function(t) return 1 - (1 - t) * (1 - t) end
+    elseif curveType == T.IN_QUAD then
+        return function(t) return t * t end
+    elseif curveType == T.OUT_CUBIC then
+        return function(t) local k = 1 - t; return 1 - k * k * k end
+    elseif curveType == T.IN_CUBIC then
+        return function(t) return t * t * t end
+    end
+    return nil
+end
+
+-- DOTween 用：返回 CS.DG.Tweening.Ease 枚举（nil 表示不设置 ease，保持线性）
+function XMovieAgency:GetDOTweenEase(curveType)
+    local T = XMovieConfigs.MOVIE_CURVE_TYPE
+    local Ease = CS.DG.Tweening.Ease
+    if curveType == T.OUT_QUAD then
+        return Ease.OutQuad
+    elseif curveType == T.IN_QUAD then
+        return Ease.InQuad
+    elseif curveType == T.OUT_CUBIC then
+        return Ease.OutCubic
+    elseif curveType == T.IN_CUBIC then
+        return Ease.InCubic
+    end
+    return nil
 end
 
 -- 格式化剧情文本

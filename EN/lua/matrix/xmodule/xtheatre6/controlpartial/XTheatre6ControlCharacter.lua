@@ -7,9 +7,22 @@ local ReqMethodName = {
     BuffLevelUpSkill = "Theatre6BuffLevelUpSkillRequest"
 }
 local MoveSkillMaskKey = "XTheatre6Control:SkillMoveOrSwapRequest"
+XTheatre6Control.ImgHighlightKey = 2
+
+local SkillTypeBgConfigName = {
+    [XEnumConst.Theatre6.SlotType.Special] = "SkillType4Bg",
+    [XEnumConst.Theatre6.SlotType.Insert] = "SkillType2a3Bg",
+    [XEnumConst.Theatre6.SlotType.Active] = "SkillType1Bg"
+}
 
 function XTheatre6Control:OnInitCharacter()
 
+end
+
+---当前模式是否已收到后端结算下发(只读态)
+function XTheatre6Control:IsCurModeSettle()
+    local modelData = self._Model:GetCurPlayModeData()
+    return modelData ~= nil and modelData.IsSettle == true
 end
 
 ---是否使用肉鸽涂装
@@ -171,6 +184,58 @@ function XTheatre6Control:FilterFileSaveBuffs(buffDatas)
     return buffs
 end
 
+---获取存档标签（遗物+技能），不使用服务器数据
+---@param fileData Theatre6FileData|Theatre6FileDataProtocol
+---@return XTableTheatre6BuildTag[]
+function XTheatre6Control:GetSortFileDataBuildTags(fileData)
+    --组内使用权重排序（从大到小）
+    local buildTagDict = {}
+    local groupDict = {}
+    for _, attrPack in ipairs(fileData.AttrPacks) do
+        local cfg = self:GetAttrPackCfgById(attrPack.PackId)
+        self:_SortMergaBuildTag(buildTagDict, groupDict, cfg.BuildTags)
+    end
+    for _, skill in ipairs(fileData.Skills) do
+        local cfg = self:GetSkillCfgById(skill.SkillId)
+        self:_SortMergaBuildTag(buildTagDict, groupDict, cfg.BuildTags)
+    end
+    local sortBuildTagIds = {}
+    for _, id in pairs(groupDict) do
+        table.insert(sortBuildTagIds, id)
+    end
+    --组外使用组Id排序（从小到大）
+    table.sort(sortBuildTagIds, function(a, b)
+        return self:GetBuildTagConfig(a).GroupId < self:GetBuildTagConfig(b).GroupId
+    end)
+    return sortBuildTagIds
+end
+
+function XTheatre6Control:_SortMergaBuildTag(buildTagDict, groupDict, buildTags)
+    for _, curId in ipairs(buildTags) do
+        local curCfg = self:GetBuildTagConfig(curId)
+        if not curCfg.IsHide and XTool.IsNumberValid(curCfg.GroupId) then
+            local curWeight = buildTagDict[curId] or 0
+            curWeight = curWeight + curCfg.SaveWeight
+            buildTagDict[curId] = curWeight
+            
+            local groupId = curCfg.GroupId
+            local oldId = groupDict[groupId]
+            if oldId and oldId ~= curId then
+                local oldWeight = buildTagDict[oldId]
+                local oldCfg = self:GetBuildTagConfig(oldId)
+                local isHightWeight = curWeight > oldWeight
+                local isHightPirority = curWeight == oldWeight and curCfg.Pirority > oldCfg.Pirority
+                local isLowId = curWeight == oldWeight and curCfg.Pirority == oldCfg.Pirority and curCfg.Id < oldCfg.Id
+                if isHightWeight or isHightPirority or isLowId then
+                    groupDict[groupId] = curId
+                end
+            elseif not oldId then
+                groupDict[groupId] = curId
+            end
+        end
+    end
+end
+
 ---获取任务免费刷新次数
 function XTheatre6Control:GetTaskFreeRefreshTimes(taskGroupId)
     return self._Model:GetTaskFreeRefreshTimes(taskGroupId)
@@ -229,6 +294,26 @@ function XTheatre6Control:SkillMoveOrSwapRequest(skillId, dstSlotType, dstPositi
         end
         return
     end
+    --槽位类型校验:1.拖入技能能否装到目标槽 2.替换时被挤走的技能能否装回源装备槽
+    if dstSlotType ~= SlotType.Bag then
+        local srcSlots = self:GetSkillInstallSlots(skillId)
+        if not srcSlots or not table.contains(srcSlots, dstSlotType) then
+            XUiManager.TipText("Theatre6SkillMoveError")
+            if cb then cb() end
+            return
+        end
+    end
+    if dstSkillData and XTool.IsNumberValid(dstSkillData.SkillId) and dstSkillData.SkillId ~= skillId then
+        local srcSlotType = skillModel:GetSkillEquippedPosition(skillId)
+        if srcSlotType and srcSlotType ~= SlotType.Bag then
+            local dstSlots = self:GetSkillInstallSlots(dstSkillData.SkillId)
+            if not dstSlots or not table.contains(dstSlots, srcSlotType) then
+                XUiManager.TipText("Theatre6SkillMoveError")
+                if cb then cb() end
+                return
+            end
+        end
+    end
     --装入装备槽时校验:1.目标位置低不能换高;2.其他装备位不允许出现同名技能
     if dstSlotType ~= SlotType.Bag then
         local skillKey = skillModel:GetSkillKey(skillId)
@@ -274,16 +359,20 @@ function XTheatre6Control:SkillMoveOrSwapRequest(skillId, dstSlotType, dstPositi
         if response.Code ~= XCode.Success then
             XUiManager.TipCode(response.Code)
         end
-        self._Model.Skill:UpdateSkills(response.SkillUpdate)
-        if cb then
-            cb()
+        if response.SkillUpdates then
+            for index, SkillUpdate in pairs(response.SkillUpdates) do
+                self._Model.Skill:UpdateSkills(SkillUpdate, true)
+            end
+        end
+            if cb then
+                cb()
         end
     end)
     XScheduleManager.ScheduleOnce(function()
         if XLuaUiManager.IsMaskShow(MoveSkillMaskKey) then
             XLuaUiManager.SetMask(false, MoveSkillMaskKey)
         end
-    end, 500)
+    end, 200)
 end
 
 ---溢出技能出售请求
@@ -300,8 +389,9 @@ function XTheatre6Control:OverQueueSellRequest(cb)
     end)
 end
 
-function XTheatre6Control:BuffLevelUpSkillRequest(skillId, cb)
+function XTheatre6Control:BuffLevelUpSkillRequest(buffId,skillId, cb)
     local req = {
+        BuffId = buffId,
         SkillId = skillId
     }
     XNetwork.Call(ReqMethodName.BuffLevelUpSkill, req, function(response)
@@ -309,13 +399,34 @@ function XTheatre6Control:BuffLevelUpSkillRequest(skillId, cb)
             XUiManager.TipCode(response.Code)
             return
         end
+        if XTool.IsNumberValid(skillId) and skillId ~= 0 then
+            for i,skillUpdateData in ipairs(response.SkillUpdates) do
+            local targetSkillId = nil
+                
+            if skillUpdateData and skillUpdateData.ReplaceSkills then 
+                for index, skillData in pairs(skillUpdateData.ReplaceSkills) do
+                    local replaceCfg = self:GetSkillCfgById(skillData.SkillId)
+                    local skillCfg = self:GetSkillCfgById(skillId)
+                    if replaceCfg and skillCfg
+                        and replaceCfg.SkillKey == skillCfg.SkillKey and replaceCfg.Level > skillCfg.Level then
+                        targetSkillId = skillData.SkillId
+                        break
+                    end
+                end
+            end
+            if targetSkillId then
+                XLuaUiManager.Open("UiTheatre6GainTips", 1, targetSkillId, true)
+            end
+        end 
+        
+        end
         if response.SkillUpdates then
             self._Model.Skill:UpdateSkillListWithOverQueue(response.SkillUpdates)
         end
         if cb then
             cb()
         end
-        XLuaUiManager.Open("UiTheatre6GainTips", 1, skillId, true)
+ 
     end)
 end
 
@@ -333,7 +444,9 @@ function XTheatre6Control:CheckForceSellSkillBlock()
     if not self._Model.Skill:IsForceSellSkillBlock() then
         return false
     end
-
+    if self:IsCurModeSettle() then
+        return false
+    end
     self._Model.Skill:OpenSellSkillPanel(self._Model.Skill:GetForceSellSkillOverQueue())
     return true
 end
@@ -445,9 +558,25 @@ function XTheatre6Control:BagHasNewSkill()
     return false
 end
 
+function XTheatre6Control:GetSkillTypeBgConfigName(skillId)
+    local slotTypes = self:GetSkillInstallSlots(skillId)
+    local skillConfig = self:GetSkillCfgById(skillId)
+    if not slotTypes or #slotTypes < 1 then
+        return self:GetQualityIcon(skillConfig.Quality)
+    end
+    return self:GetClientConfigValue(SkillTypeBgConfigName[slotTypes[1]], skillConfig.Quality)
+end
+
 function XTheatre6Control:SetNewSkillViewed(skillId)
     self._Model.Skill:SetNewSkillViewed(skillId)
     XEventManager.DispatchEvent(XEventId.EVENT_THEATRE6_SKILL_NOT_NEW)
+end
+
+---清空当前背包的新技能标记并刷新红点
+function XTheatre6Control:ClearBagNewSkillViewed()
+    if self._Model.Skill:ClearBagNewSkillFlags() then
+        XEventManager.DispatchEvent(XEventId.EVENT_THEATRE6_SKILL_NOT_NEW)
+    end
 end
 
 --region 遗物
@@ -487,6 +616,61 @@ function XTheatre6Control:GetModeSelectRoleIndex(mode, roleConfigs)
         end
     end
     return 1
+end
+
+function XTheatre6Control:GetNewCharacterShowTimeId()
+    local values = self._Model:GetClientConfigValues("NewCharacterTagShowTime")
+    local timeId = 0
+
+    if #values ~= 0 then
+        timeId = tonumber(values[#values])
+    end
+
+    return timeId
+end
+
+function XTheatre6Control:GetNewCharacterShowTagMap()
+    local result = {}
+    local timeId = self:GetNewCharacterShowTimeId()
+    local tags = self._Model:GetNewCharacterShowTags()
+
+    if XFunctionManager.CheckInTimeByTimeId(timeId, false) then
+        local values = self._Model:GetClientConfigValues("NewCharacterTagShowId")
+
+        for _, value in pairs(values) do
+            local showId = tonumber(value)
+
+            if XTool.IsNumberValid(showId) and (not tags or not tags[showId]) then
+                result[showId] = true
+            end
+        end
+    end
+
+    return result
+end
+
+function XTheatre6Control:CheckHasNewCharacter()
+    return not XTool.IsTableEmpty(self:GetNewCharacterShowTagMap())
+end
+
+function XTheatre6Control:AddNewCharacterShowTag(id)
+    self._Model:AddNewCharacterShowTag(id)
+end
+
+function XTheatre6Control:SaveBuffChooseIndex(mode, characterId, index)
+    self._Model:SaveBuffChooseIndex(mode, characterId, index)
+end
+
+function XTheatre6Control:GetBuffChooseIndex(mode, characterId)
+    return self._Model:GetBuffChooseIndex(mode, characterId)
+end
+
+function XTheatre6Control:SaveDifficultyChooseIndex(characterId, index)
+    self._Model:SaveDifficultyChooseIndex(characterId, index)
+end
+
+function XTheatre6Control:GetDifficultyChooseIndex(characterId)
+    return self._Model:GetDifficultyChooseIndex(characterId)
 end
 
 --#endregion

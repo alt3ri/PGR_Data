@@ -14,7 +14,7 @@ function XBuffScript1025301:Init()
     --self.signalId = 1025101
     ------------执行------------
     self.Check = 0
-    self:LogError("301注册")
+    --self:LogError("301注册")
 end
 
 
@@ -22,7 +22,7 @@ function XBuffScript1025301:OnLuaAffixHitFly(eventArgs )
     if eventArgs._launcherUUID ~= self._npcUUID then return end
     if self.Check == 1 then return end
     self._proxy:ApplyMagic(self._npcUUID, self._npcUUID, 1025904,1,0, 3)
-    self:LogError("301抓到了击飞效果"..self._npcUUID)
+    --self:LogError("301抓到了击飞效果"..self._npcUUID)
     self.Check = 1 --一个技能只检测一次
 end
 

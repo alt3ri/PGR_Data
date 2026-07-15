@@ -45,7 +45,7 @@ function XUiFashionDetail:OnAwake()
     self.BtnLensIn.gameObject:SetActiveEx(false)
     self.SliderCharacterHight.gameObject:SetActiveEx(false)
     self.PanelBtnSwich.gameObject:SetActiveEx(false)
-    self.FashionColorPanel = XUiFashionColor.New(self.PanelDot, self)
+    --self.FashionColorPanel = XUiFashionColor.New(self.PanelDot, self)
     self.OnUiSceneLoadedCB = function() self:OnUiSceneLoaded() end
     self.OnDragModel = handler(self, self.DragModel)
     self:InitPriceHandler()
@@ -123,27 +123,27 @@ function XUiFashionDetail:OnStart(
     local isOpen = XFunctionManager.JudgeCanOpen(functionId)
     self.BtnPlay.gameObject:SetActiveEx(isOpen and self.TrialLevelInfo ~=nil)
     self._StartRun = true
-    if self.IsWeaponFashion or self.FashionType == FashionType.Color then
-        self.FashionColorPanel:Close()
-    else
-        self.FashionColorPanel:Refresh(fashionId)
-    end
+    --if self.IsWeaponFashion or self.FashionType == FashionType.Color then
+    --    self.FashionColorPanel:Close()
+    --else
+    --    self.FashionColorPanel:Refresh(fashionId)
+    --end
     self:RefreshFashionDot(fashionId)
 end
 
 function XUiFashionDetail:RefreshFashionDot(fashionId)
-    if self.IsWeaponFashion or self.FashionType == FashionType.Color then
+    --if self.IsWeaponFashion or self.FashionType == FashionType.Color then
         self.FashionDot.gameObject:SetActiveEx(false)
-        return
-    end
-    local fashionTemplate = XFashionConfigs.GetFashionTemplate(fashionId)
-    local colorHex = fashionTemplate and fashionTemplate.FashionColorHex
-    if string.IsNilOrEmpty(colorHex) then
-        self.FashionDot.gameObject:SetActiveEx(false)
-        return
-    end
-    self.FashionDot.gameObject:SetActiveEx(true)
-    self.ImgColour.color = XUiHelper.Hexcolor2Color(string.sub(colorHex, 2, #colorHex))
+    --    return
+    --end
+    --local fashionTemplate = XFashionConfigs.GetFashionTemplate(fashionId)
+    --local colorHex = fashionTemplate and fashionTemplate.FashionColorHex
+    --if string.IsNilOrEmpty(colorHex) then
+    --    self.FashionDot.gameObject:SetActiveEx(false)
+    --    return
+    --end
+    --self.FashionDot.gameObject:SetActiveEx(true)
+    --self.ImgColour.color = XUiHelper.Hexcolor2Color(string.sub(colorHex, 2, #colorHex))
 end
 
 function XUiFashionDetail:OnEnable()
@@ -172,6 +172,7 @@ function XUiFashionDetail:OnEnable()
     end
     self:InitBuyData()
 
+    self:_AddConsumeCountListener()
     self:CheckAndUpdateLackResourcesPanel()
 end
 
@@ -187,6 +188,7 @@ end
 function XUiFashionDetail:OnDisable()
     XEventManager.RemoveEventListener(XEventId.EVENT_PURCHASE_QUICK_BUY_SKIP, self.Close, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_RES_COMPLETE, self.OnFashionDownloadComplete, self)
+    self:_RemoveConsumeCountListener()
     CS.XGraphicManager.UseUiLightDir = false
 end
 
@@ -200,9 +202,15 @@ end
 function XUiFashionDetail:OnNotify(evt)
     if evt == XEventId.EVENT_LB_UPDATE or evt == XEventId.EVENT_SHOP_BUY_SUCCESS then
         self:RefreshFashionHaveState()
+        self:SetDetailData()
+        -- HideBuyBtn为外界自定义追加字段，与 InitBuyData 口径一致：隐藏购买按钮的入口下不刷新购买按钮
+        if not self.BuyData or self.BuyData.HideBuyBtn then
+            return
+        end
         self:ShowBuyButton()
+        self:ShowBuyPrice()
     end
-end 
+end
 
 function XUiFashionDetail:OnReleaseInst()
     return self.IsEnableGroupSales
@@ -310,6 +318,30 @@ function XUiFashionDetail:ShowBuyPrice()
         self.BtnBuy:SetNameByGroup(0, readCountStr)
         self.BtnBuy:SetNameByGroup(1, self.BuyData.OriginCount or "")
         self.BtnBuy:ActiveTextByGroup(1, self.BuyData.OriginCount)
+    end
+end
+
+--- 购买货币数量变化时，仅刷新购买价格的充足性显示（轻量，不重载模型/不重建界面）
+function XUiFashionDetail:_OnConsumeCountChanged()
+    if XTool.UObjIsNil(self.GameObject) then return end
+    -- 与 InitBuyData/OnNotify 守卫口径一致
+    if not self.BuyData or self.BuyData.HideBuyBtn then return end
+    -- 已拥有/穿戴态下购买按钮已隐藏，无需刷新
+    if XTool.UObjIsNil(self.BtnBuy) or not self.BtnBuy.gameObject.activeSelf then return end
+    self:ShowBuyPrice()
+end
+
+--- 注册购买货币数量变化监听（node 用 BtnBuy）
+function XUiFashionDetail:_AddConsumeCountListener()
+    self:_RemoveConsumeCountListener()   -- 先移除防重复叠加
+    local consumeId = self.BuyData and self.BuyData.ConsumeId
+    if not XTool.IsNumberValidEx(consumeId) then return end
+    XDataCenter.ItemManager.AddCountUpdateListener(consumeId, handler(self, self._OnConsumeCountChanged), self.BtnBuy)
+end
+
+function XUiFashionDetail:_RemoveConsumeCountListener()
+    if not XTool.UObjIsNil(self.BtnBuy) then
+        XDataCenter.ItemManager.RemoveCountUpdateListener(self.BtnBuy)
     end
 end
 
@@ -457,7 +489,7 @@ function XUiFashionDetail:SetDetailData()
     local goodIdList = self:_GetRewardDataList()
 
     local id = self.FashionId
-    
+
     -- giftRewardId=额外礼物，在商店皮肤界面，没有额外礼物，就显示时装物品
     if self.FashionType == FashionType.Color then
         -- FashionColor：用 FashionColor.tab 的 FashionIcon 字段显示图标
@@ -804,6 +836,9 @@ end
 function XUiFashionDetail:OnBtnBuySuitClick()
     self.IsEnableGroupSales = self.BtnBuySuit.ButtonState == CS.UiButtonState.Select
     self:InitBuyData()
+    -- 注意：货币监听在 OnEnable 时按当时的 BuyData.ConsumeId 注册，此处切换成套/单件后未重注册。
+    -- 若成套购买与单件购买使用不同 ConsumeId，切换后停留期间该币种变动不会实时刷新购买按钮
+    -- （切换瞬间 InitBuyData→ShowBuyPrice 仍会刷一次，仅"停留期实时"有盲区）。当前两者货币一致，暂不处理。
     self:SetDetailData()
     if self.IsWeaponFashion then
         self:UpdateWeaponModel()
@@ -966,7 +1001,7 @@ function XUiFashionDetail:_GetRewardDataList()
             self.RewardDataList = { { TemplateId = id, Count = 1, Disable = true } }
         end
     end
-    
+
     return self.RewardDataList
 end
 

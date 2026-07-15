@@ -106,7 +106,8 @@ XFubenShortStoryChapterManagerCreator = function()
         local chapter = _ShortStoryChapterDic[chapterId]
         if not chapter then
             chapter = XShortStoryChapter.New(chapterId)
-            _ShortStoryChapterDic[chapterId] = chapter
+            _ShortStoryChapterDic[chapterId] = chapter  -- 先注册，防止 UpdateChapterUnlockAndIsOpen 内递归
+            XFubenShortStoryChapterManager.UpdateChapterUnlockAndIsOpen(chapterId)
         end
         return chapter
     end
@@ -135,15 +136,16 @@ XFubenShortStoryChapterManagerCreator = function()
         local hasActivity = XFubenShortStoryChapterManager.CheckDiffHasActivity(chapterId)
         local isOpen = firstStageInfo.IsOpen
 
-        GetShortStoryChapter(chapterId):Change(firstUnlock, isOpen)
+        local chapter = GetShortStoryChapter(chapterId)
+        chapter:Change(firstUnlock, isOpen)
 
         if not firstPassed and firstUnlock and hasActivity then
             if not XFubenShortStoryChapterManager.CheckActivityCondition(chapterId) then
-                GetShortStoryChapter(chapterId):Change(false, false)
+                chapter:Change(false, false)
             end
         elseif (not XFubenShortStoryChapterManager.IsShortStoryActivityOpen() and hasActivity) or not hasActivity then
             if not XFubenShortStoryChapterManager.CheckOpenCondition(chapterId) then
-                GetShortStoryChapter(chapterId):Change(false, false)
+                chapter:Change(false, false)
             end
         end
     end
@@ -154,8 +156,8 @@ XFubenShortStoryChapterManagerCreator = function()
     end
 
     function XFubenShortStoryChapterManager.RefreshChapterData()
-        local allChapterIds = XFubenShortStoryChapterConfigs.GetChapterIdsByChapterDetails()
-        for _, chapterId in ipairs(allChapterIds) do
+        -- 只刷新已存在的章节，不触发懒加载
+        for chapterId in pairs(_ShortStoryChapterDic) do
             XFubenShortStoryChapterManager.UpdateChapterUnlockAndIsOpen(chapterId)
         end
     end

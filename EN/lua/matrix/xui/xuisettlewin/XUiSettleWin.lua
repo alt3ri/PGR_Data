@@ -2,8 +2,12 @@ local XUiGridWinRole = require("XUi/XUiSettleWin/XUiGridWinRole")
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XUiPanelExpBar = require("XUi/XUiSettleWinMainLine/XUiPanelExpBar")
 local XUiStageSettleSound = require("XUi/XUiSettleWin/XUiStageSettleSound")
+local XLuaUiSettle = require("XUi/XUiBase/XLuaUiSettle")
 
-local XUiSettleWin = XLuaUiManager.Register(XLuaUi, "UiSettleWin")
+--- 通用胜利结算界面
+--- 必须继承 XLuaUiSettle，基类会在 OnDestroyUi 时自动 Dispatch EVENT_FIGHT_FINISH_SETTLE
+--- 用于通知空花等模块"结算已关闭，可以恢复回流"，请勿改为 XLuaUi
+local XUiSettleWin = XLuaUiManager.Register(XLuaUiSettle, "UiSettleWin")
 local CSTextManagerGetText = CS.XTextManager.GetText
 
 function XUiSettleWin:OnAwake()
@@ -49,7 +53,6 @@ end
 function XUiSettleWin:OnDestroy()
     XDataCenter.AntiAddictionManager.EndFightAction()
     self.UiStageSettleSound:StopSettleSound()
-    XEventManager.DispatchEvent(XEventId.EVENT_FIGHT_FINISH_SETTLE)
 end
 
 -- 奖励动画
@@ -241,7 +244,7 @@ function XUiSettleWin:SetStageInfo(data)
         local npcIdList = XPracticeConfigs.GetSimulateTrainNpcIdIdByStageId(stageId)
         local npcId = npcIdList[difficulty]
         if XTool.IsNumberValid(npcId) then
-            local bossData = XMVCA.XArchive:GetArchiveMonsterEntityByNpcId(npcId)
+            local bossData = XMVCA.XArchive.MonsterArchiveAgency:GetArchiveMonsterEntityByNpcId(npcId)
             local name = bossData and bossData:GetName() or ""
             self.TxtBossInfo.text = CSTextManagerGetText("PracticeBossSettle", XPracticeConfigs.GetSimulateTrainMonsterStageNameByStageId(stageId, difficulty), name)
         else

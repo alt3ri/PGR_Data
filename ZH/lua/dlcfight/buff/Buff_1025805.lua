@@ -9,7 +9,7 @@ function XBuffScript1025805:Init()
     ------------配置------------
     XTheatre6BuffBase.Init(self)
     ------------执行------------
-    self._proxy:AddNpcAttribAdditive(self._npcUUID,ENpcAttrib.PhysicalReductionP,500)
+    --self._proxy:AddNpcAttribAdditive(self._npcUUID,ENpcAttrib.PhysicalReductionP,500)
 
 end
 

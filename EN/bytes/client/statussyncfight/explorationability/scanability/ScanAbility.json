@@ -7,7 +7,9 @@
         "KeepTime": 10.0,
         "CDTime": 5.0,
         "ScanEffectName": "FxHawkEyeSceneScanning01",
-        "ScanCueId": 5600063
+        "ScanCueId": 5600063,
+        "ScanExitCueId": null,
+        "ScanCustomCueId": null
     },
     {
         "Id": 2,
@@ -17,7 +19,9 @@
         "KeepTime": 3.0,
         "CDTime": 1.0,
         "ScanEffectName": "FxHawkEyeSceneScanning01",
-        "ScanCueId": 5600063
+        "ScanCueId": 5600063,
+        "ScanExitCueId": null,
+        "ScanCustomCueId": null
     },
     {
         "Id": 3,
@@ -27,6 +31,20 @@
         "KeepTime": -1.0,
         "CDTime": 1.0,
         "ScanEffectName": "FxHawkEyeSceneScanning01",
-        "ScanCueId": 5600063
+        "ScanCueId": 5600083,
+        "ScanExitCueId": 5600082.0,
+        "ScanCustomCueId": 5600081.0
+    },
+    {
+        "Id": 4,
+        "Shape": 1,
+        "Range": 1000.0,
+        "DiffusionTime": 3.0,
+        "KeepTime": 3.0,
+        "CDTime": 10.0,
+        "ScanEffectName": "FxHawkEyeSceneScanning01",
+        "ScanCueId": 5600063,
+        "ScanExitCueId": null,
+        "ScanCustomCueId": null
     }
 ]
