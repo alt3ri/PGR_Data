@@ -346,6 +346,10 @@ function XPassportControl:GetPassportBuyFashionShowType(id)
     return config.FashionType or 0
 end
 
+function XPassportControl:GetPassportBuyFashionShowConfig(typeInfoId)
+    return self._Model:GetPassportBuyFashionShowConfig(typeInfoId)
+end
+
 function XPassportControl:GetPassportFashionBuyData(typeInfoId, buyCallBack)
     local fashionId = self:GetPassportBuyFashionShowFashionId(typeInfoId)
     local fashionType = self:GetPassportBuyFashionShowType(typeInfoId)

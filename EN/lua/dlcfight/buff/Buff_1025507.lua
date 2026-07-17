@@ -11,6 +11,7 @@ function XBuffScript1025507:Init()
     self.Count = 10
     self.DmgBuff = 1025906
     self.IfProtector = 0
+    self:LogError("......初始化")
     ------------执行------------
 end
 
@@ -21,31 +22,35 @@ function XBuffScript1025507:InitEventCallBackRegister()
 end
 
 function XBuffScript1025507:AfterDamageCalc(eventArgs) -- 受到或造成伤害时刷新增伤
-    if self._proxy:GetNpcProtector(self._npcUUID) >= 0 then
+    if self._proxy:GetNpcProtector(self._npcUUID) > 0 then
         if self.IfProtector == 0 then
             self._proxy:ApplyMagic(self._npcUUID, self._npcUUID, self.DmgBuff, 1, 0, self.Count)
+            --self:LogError("......触发伤害，触发护盾加伤")
             self.IfProtector = 1
         end
     else
         if self.IfProtector == 1 then
             self._proxy:RemoveBuffByKindAndCount(self._npcUUID,self.DmgBuff,self.Count)
+            --self:LogError("......触发伤害，删除护盾加伤")
             self.IfProtector = 0
         end
     end
 end
 
-function XBuffScript1025507:OnNpcAddBuffEvent(eventArgs) -- 获得buff时刷新增伤
-    if self._proxy:GetNpcProtector(self._npcUUID) >= 0 then
-        if self.IfProtector == 0 then
-            self._proxy:ApplyMagic(self._npcUUID, self._npcUUID, self.DmgBuff, 1, 0, self.Count)
-            self.IfProtector = 1
-        end
-    else
-        if self.IfProtector == 1 then
-            self._proxy:RemoveBuffByKindAndCount(self._npcUUID,self.DmgBuff,self.Count)
-            self.IfProtector = 0
-        end
-    end
-end
+--function XBuffScript1025507:OnNpcAddBuffEvent(eventArgs) -- 获得buff时刷新增伤
+    --if self._proxy:GetNpcProtector(self._npcUUID) > 0 then
+        --if self.IfProtector == 0 then
+            --self._proxy:ApplyMagic(self._npcUUID, self._npcUUID, self.DmgBuff, 1, 0, self.Count)
+            --self:LogError("......触发buff，触发护盾加伤")
+            --self.IfProtector = 1
+        --end
+    --else
+        --if self.IfProtector == 1 then
+            --self._proxy:RemoveBuffByKindAndCount(self._npcUUID,self.DmgBuff,self.Count)
+            --self:LogError("......触发buff，删除护盾加伤")
+            --self.IfProtector = 0
+        --end
+    --end
+--end
 
 return XBuffScript1025507

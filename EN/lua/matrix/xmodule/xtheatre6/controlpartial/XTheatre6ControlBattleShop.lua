@@ -194,6 +194,11 @@ function XTheatre6Control:BuyRelicGood(relicId, pos, cb)
         return
     end
 
+    if self:CheckBuyLvUpRelicButMaxLv(relicId) then
+        XLuaUiManager.Open("UiTheatre6PopupCommon", "", XUiHelper.GetText("Theatre6BattleShopBuyLvUpRelicTip"))
+        return
+    end
+
     -- if not self._Model.Skill:CheckSkillHad(skillId) and self._Model.Skill:IsSkillBagFull() then
     -- XUiManager.TipText("Theatre6SkillBagFull")
     -- return
@@ -367,5 +372,21 @@ function XTheatre6Control:IsSanMax()
 end
 
 --endregion
+
+---商店购买技能升级遗物时，是否有可升级的技能
+function XTheatre6Control:CheckBuyLvUpRelicButMaxLv(relicId)
+    local skillUpAttrPackIds = self._Model:GetConfigValues("SkillUpAttrPackId")
+    if table.contains(skillUpAttrPackIds, tostring(relicId)) then
+        local cfg = self:GetAttrPackCfgById(relicId)
+        local buffCfg = self:GetBuffConfig(cfg.BuffIds[1])
+        local levelUpCount = buffCfg.BuffEffectParams[1]
+        local levelUpLimit = buffCfg.BuffEffectParams[3]
+        local levelUpQuality = buffCfg.BuffEffectParams[4]
+        if not XMVCA.XTheatre6:HasAnyBuffUpgradableSkill(levelUpCount, levelUpLimit, levelUpQuality) then
+            return true
+        end
+    end
+    return false
+end
 
 return XTheatre6Control

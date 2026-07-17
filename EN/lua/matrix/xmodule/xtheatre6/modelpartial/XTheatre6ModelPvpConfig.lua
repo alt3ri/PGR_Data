@@ -24,6 +24,11 @@ function XTheatre6Model:PvpConfigResetAll()
 
 end
 
+---@return XTableTheatre6PvpActivity[]
+function XTheatre6Model:GetPvpActivityConfigs()
+    return self._ConfigUtil:GetByTableKey(PvpTableKey.Theatre6PvpActivity)
+end
+
 ---@return XTableTheatre6PvpActivity
 function XTheatre6Model:GetPvpActivityConfig(id)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(PvpTableKey.Theatre6PvpActivity, id)

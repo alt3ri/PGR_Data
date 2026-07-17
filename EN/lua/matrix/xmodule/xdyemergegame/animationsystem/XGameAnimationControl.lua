@@ -174,7 +174,7 @@ function XGameAnimationControl:StartAnimationList(cb)
             animationGroup:SetStart(self._CurTime)
 
             local runningList = animationGroup:GetRunningActionList()
-            XLog.Debug("[DyeMerge][AnimationSystem] 动画组启动 groupIndex=" .. tostring(i) .. " priority=" .. tostring(animationGroup:GetPriority()) .. " 动画数=" .. tostring(#runningList))
+            -- XLog.Debug("[DyeMerge][AnimationSystem] 动画组启动 groupIndex=" .. tostring(i) .. " priority=" .. tostring(animationGroup:GetPriority()) .. " 动画数=" .. tostring(#runningList))
 
             self._CurRunningAnimationIndex = i
 
@@ -191,7 +191,7 @@ function XGameAnimationControl:StartAnimationList(cb)
     end
 
     if not anyAnimationGroupStart then
-        XLog.Debug("[DyeMerge][AnimationSystem] 无待播放动画组，动画列表全部完成")
+        -- XLog.Debug("[DyeMerge][AnimationSystem] 无待播放动画组，动画列表全部完成")
         -- 当没有可以执行的行为时执行回调
         if self._AnimationCallBack then
             cb = self._AnimationCallBack

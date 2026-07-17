@@ -9,6 +9,10 @@ local XUiDyeMergeGamePrefabs = require("XUi/XUiDyeMergeGame/UiDyeMergeGame/Tools
 local LINE_POOL_NAME = "GridLine"
 local LINE_CLS_PATH  = "XUi/XUiDyeMergeGame/UiDyeMergeGame/Grids/Part/XUiGridDyeMergeLine"
 
+-- GridCircle 对象池常量
+local CIRCLE_POOL_NAME = "GridCircle"
+local CIRCLE_CLS_PATH  = "XUi/XUiDyeMergeGame/UiDyeMergeGame/Grids/Part/XUiGridDyeMergeCircle"
+
 -- 射线入射方向 → 目标方块 pos 节点索引（对侧边缘）
 local DirToEntryPosIndex = { [1] = 2, [2] = 3, [3] = 4, [4] = 1 }
 
@@ -18,7 +22,10 @@ function XUiDyeMergeGameGridPools:OnStart()
     
     -- 定义所有方块的对象池
     self._GridRecycleHandler = function(grid)
-        grid.Transform:SetParent(self.CacheRoot.transform)
+        if grid.Transform.parent.gameObject.activeInHierarchy then
+            grid.Transform:SetParent(self.CacheRoot.transform)
+        end
+        
         grid:Close()
     end
     
@@ -183,6 +190,47 @@ function XUiDyeMergeGameGridPools:_InitExtendSlicePool(prefab)
     end, self._GridRecycleHandler, false)
 
     self._Name2Pools[EXTEND_SLICE_POOL_NAME] = pool
+end
+
+--endregion
+
+--region GridCircle 对象池
+
+---@return XUiGridDyeMergeCircle
+function XUiDyeMergeGameGridPools:GetCircle()
+    local pool = self._Name2Pools[CIRCLE_POOL_NAME]
+    if not pool then
+        local prefab = self.PrefabsGetter:GetPrefabByName(CIRCLE_POOL_NAME)
+        if not prefab then return end
+        self:_InitCirclePool(prefab)
+        pool = self._Name2Pools[CIRCLE_POOL_NAME]
+    end
+
+    local circle = pool:GetItemFromPool()
+    circle.Transform:SetParent(self.PanelBoard.transform)
+    return circle
+end
+
+---@param circle XUiGridDyeMergeCircle
+function XUiDyeMergeGameGridPools:ReturnCircle(circle)
+    local pool = self._Name2Pools[CIRCLE_POOL_NAME]
+    if not pool then
+        self:RemoveChildNode(circle)
+        XUiHelper.Destroy(circle.GameObject)
+        return
+    end
+    pool:ReturnItemToPool(circle)
+end
+
+function XUiDyeMergeGameGridPools:_InitCirclePool(prefab)
+    local cls = require(CIRCLE_CLS_PATH)
+    local pool = XPool.New(function()
+        local go = XUiHelper.Instantiate(prefab, prefab.transform.parent)
+        local circle = cls.New(go, self)
+        return circle
+    end, self._GridRecycleHandler, false)
+
+    self._Name2Pools[CIRCLE_POOL_NAME] = pool
 end
 
 --endregion

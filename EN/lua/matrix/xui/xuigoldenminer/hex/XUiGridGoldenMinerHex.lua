@@ -11,12 +11,8 @@ local StateEnum = {
 }
 
 function XUiGridGoldenMinerHex:OnStart()
-    -- 额外的点击事件用于处理XUiButton禁用后的弹窗提示
-    self.Parent:RegisterClickEvent(self.GridBtn, function()
-        if self.IsHave then
-            XUiManager.TipMsg(self._Control:GetClientHexSelectAgainTips(self.ItemType))
-        end
-    end)
+
+
 end
 
 function XUiGridGoldenMinerHex:GetButton()

@@ -14,12 +14,12 @@ function XUiPanelFashionSuitNormal:OnStart(suitId)
     self:SetSuitId(suitId)
 
     self:ClearFashionGrids()
-    if not self._OldSuit then
+    if not self._OldSuit and self._UiConfig then
         -- 延迟显示动态表
         XScheduleManager.ScheduleOnce(function ()
             if XTool.UObjIsNil(self.GameObject) then return end
             self:ShowDynamicTable()
-        end, 1800)
+        end, self._UiConfig.EnableAnimDelay)
     else
         self:ShowDynamicTable()
     end
@@ -46,12 +46,12 @@ function XUiPanelFashionSuitNormal:OnEnable()
     self.GridFashion.gameObject:SetActiveEx(false)
     if self.InitDynamic then
         self:HideDynamicRootGO()
-        if not self._OldSuit then
+        if not self._OldSuit and self._UiConfig then
             -- 延迟显示动态表
             XScheduleManager.ScheduleOnce(function ()
                 if XTool.UObjIsNil(self.GameObject) then return end
                 self:ShowDynamicRootGO()
-            end, 1800)
+            end, self._UiConfig.EnableAnimDelay)
         else
             self:ShowDynamicRootGO()
         end
@@ -67,9 +67,9 @@ function XUiPanelFashionSuitNormal:SetSuitId(id)
 
     self._Id = id
     self._Config = self._Control:GetFashionSuitById(id)
-    local uiConfig = self._Control:GetFashionSuitUiConfigById(id)
+    self._UiConfig = self._Control:GetFashionSuitUiConfigById(id)
     self._FashionIds = self._Config.FashionIds
-    self.RImgIcon:SetRawImage(uiConfig.SuitBanner)
+    self.RImgIcon:SetRawImage(self._UiConfig.SuitBanner)
     self.TxtSeriesName.text = self._Config.Name
     self.TxtSeriesDetail.text = XUiHelper.ReplaceTextNewLine(self._Config.SuitDescription)
 

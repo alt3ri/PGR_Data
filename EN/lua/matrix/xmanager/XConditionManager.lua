@@ -2901,6 +2901,7 @@ PlayerCondition = {
     
     --region 大染色玩法
     
+    -- 判断指定关卡是否通关
     [23220] = function(condition)
         local stageId = condition.Params[1]
 
@@ -2909,6 +2910,22 @@ PlayerCondition = {
         end
         
         return XMVCA.XDyeMergeGame:CheckPassedByStageId(stageId), condition.Desc
+    end,
+    
+    -- 判断当前是否处于指定关卡
+    [23221] = function(condition)
+        -- 先看活动，再看界面，最后才拿缓存
+        if not XMVCA.XDyeMergeGame:GetIsActivityOpen(false) then
+            return false, condition.Desc
+        end
+
+        if not XLuaUiManager.IsUiLoad("UiDyeMergeGame") then
+            return false, condition.Desc
+        end
+        
+        local stageId = condition.Params[1]
+        
+        return stageId == XMVCA.XDyeMergeGame:GetCurGamingStageId(), condition.Desc
     end,
     
     --endregion

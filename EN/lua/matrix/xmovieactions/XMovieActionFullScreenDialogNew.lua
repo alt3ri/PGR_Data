@@ -52,7 +52,7 @@ function XMovieActionFullScreenDialogNew:OnEnter()
     self.DialogIndex = self.Panel:ShowDialog(self.Content, self.IsPassedRunning, self.TypeWriteTime, function() 
         self:OnTypeWriterComplete()
     end)
-    XDataCenter.MovieManager.PushInReviewDialogList("", self.Content)
+    XDataCenter.MovieManager.PushInReviewDialogList("", self.Content, self.CvId)
 
     -- 跳过的节点不播Cv
     if self.CvId ~= 0 and not self.IsPassedRunning then
@@ -94,6 +94,7 @@ function XMovieActionFullScreenDialogNew:OnDestroy()
     end
 
     if self.IsClose then
+        self:StopLastCv()
         self.Panel:CloseWithAnimation()
     end
     self.Panel = nil

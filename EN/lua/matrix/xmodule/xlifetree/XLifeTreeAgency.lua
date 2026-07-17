@@ -176,6 +176,11 @@ function XLifeTreeAgency:CheckOpenUiLifeTreeChapterUnlockCurVersion()
         return
     end
 
+    -- 当前处于引导中
+    if XDataCenter.GuideManager.CheckIsInGuide() then
+        return
+    end
+
     -- 玩法未开启
     if not self:IsOpen() then return end
     
@@ -200,6 +205,11 @@ end
 function XLifeTreeAgency:CheckOpenUiLifeTreeCardUnlock(exhibitionFubenType, exhibitionFubenConfigId)
     -- 屏蔽打脸功能
     if XDataCenter.FunctionEventManager.CheckFuncDisable() then
+        return
+    end
+
+    -- 当前处于引导中
+    if XDataCenter.GuideManager.CheckIsInGuide() then
         return
     end
 
@@ -260,6 +270,9 @@ end
 ---@param characterId number
 ---@return boolean 是否显示蓝点
 function XLifeTreeAgency:IsRedCharacter(characterId)
+    -- 生命树系统未开放
+    if not self:IsOpen() then return false end
+
     -- 未播放生命树Pv
     if not self._Model:IsFinishPv() then return end
 
@@ -313,6 +326,9 @@ end
 
 -- 活动是否显示蓝点
 function XLifeTreeAgency:IsRed()
+    -- 生命树系统未开放
+    if not self:IsOpen() then return false end
+
     local constellationConfigs = self._Model:GetLifeTreeConstellationConfigs()
     for _, constellationConfig in pairs(constellationConfigs) do
         if self:IsRedConstellation(constellationConfig.Id) then

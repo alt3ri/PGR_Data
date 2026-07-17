@@ -73,7 +73,11 @@ function XBuffScript10272030:AfterDamageCalc(eventArgs)
     if eventArgs.Launcher ~= self._npcUUID then return end
     if eventArgs.Id ~= self._damageMagicId then return end
     if self._proxy:GetBuffCountByKind(self._npcUUID,1025800) >= 1 then
-        self._pendingExtraDamage = self._pendingExtraDamage // 2 -- 存在PVP全减伤50%的特殊处理，伤害减半
+        local DmgReduce = 1
+        DmgReduce = DmgReduce * (1 + self._proxy:GetNpcAttribValue(self._npcUUID,ENpcAttrib.PhysicalAmpP) / 10000)
+        DmgReduce = DmgReduce * (1 - self._proxy:GetNpcAttribValue(self._npcUUID,ENpcAttrib.PhysicalReductionP) / 10000)
+        --self:LogError(".....打印下最终减伤"..DmgReduce)
+        self._pendingExtraDamage = self._pendingExtraDamage * DmgReduce -- 存在PVP全减伤50%的特殊处理，伤害减半
         --self:LogError(".....触发减伤通知")
     end
     self._proxy:SetAfterDamageMagicContext(eventArgs.ContextId, self._pendingExtraDamage, eventArgs.ElementDamage,

@@ -340,6 +340,7 @@ function XFashionStoryAgency:GetCurrentAllTask(activityId)
         end
     end
 
+    XDataCenter.TaskManager.CommonTaskDataSort(taskList)
     return taskList
 end
 

@@ -15,6 +15,7 @@ end
 
 function XUiGridFashionStoryGroup:Refresh(groupId)
     self.GroupId = groupId
+    self._LastLockText = nil
     --读取配置表显示信息
     self.PanelSummer:SetNameByGroup(0, XMVCA.XFashionStory:GetSingleLineName(self.GroupId))
     self.PanelSummer:SetRawImage(XMVCA.XFashionStory:GetSingleLineAsGroupStoryIcon(self.GroupId))
@@ -48,11 +49,30 @@ function XUiGridFashionStoryGroup:RefreshLockTip()
     if not self.TxtLock then return end
     if self.LockReason == XMVCA.XFashionStory.GroupUnOpenReason.OutOfTime then
         local timeId = XMVCA.XFashionStory:GetSingleLineTimeId(self.GroupId)
-        self.TxtLock.text = XMVCA.XFashionStory:GetTimeLockText(timeId)
+        self:_SetLockText(XMVCA.XFashionStory:GetTimeLockText(timeId))
     elseif self.LockReason == XMVCA.XFashionStory.GroupUnOpenReason.PreGroupUnPass then
         local preGroupId = XMVCA.XFashionStory:GetPreSingleLineId(self.GroupId)
-        self.TxtLock.text = XUiHelper.GetText("FashionStoryGroupPassTip", XMVCA.XFashionStory:GetSingleLineName(preGroupId))
+        self:_SetLockText(XUiHelper.GetText("FashionStoryGroupPassTip", XMVCA.XFashionStory:GetSingleLineName(preGroupId)))
     end
+end
+
+-- 父界面 tick 时调用：锁定原因从 OutOfTime 翻到 PreGroupUnPass 也要走完整 Refresh
+function XUiGridFashionStoryGroup:RefreshLockCountDown()
+    if not self.TxtLock or self.IsOpen then return end
+    if self.LockReason ~= XMVCA.XFashionStory.GroupUnOpenReason.OutOfTime then return end
+    local isOpen, lockReason = XMVCA.XFashionStory:CheckGroupIsCanOpen(self.GroupId)
+    if isOpen or lockReason ~= self.LockReason then
+        self:Refresh(self.GroupId)
+        return
+    end
+    local timeId = XMVCA.XFashionStory:GetSingleLineTimeId(self.GroupId)
+    self:_SetLockText(XMVCA.XFashionStory:GetTimeLockText(timeId))
+end
+
+function XUiGridFashionStoryGroup:_SetLockText(text)
+    if self._LastLockText == text then return end
+    self._LastLockText = text
+    self.TxtLock.text = text
     -- 刷新布局，避免锁定提示文本被锁定图标遮挡
     CS.UnityEngine.UI.LayoutRebuilder.ForceRebuildLayoutImmediate(self.TxtLock.transform.parent)
 end

@@ -363,6 +363,10 @@ function XUiPanelSidePopUp:RefreshSellPreView(selectItemId, count, selectGrid)
         end
         self.SingleItemGrid:Refresh(reward)
         self.SingleItemGrid.GameObject:SetActiveEx(true)
+
+        CsXUiHelper.RegisterClickEvent(self.SingleItemGrid.RImgIcon, function()
+            XLuaUiManager.Open("UiTip", reward)
+        end, true)
     end
     self.PanelDynamicTablePopUp.gameObject:SetActiveEx(false)
 end

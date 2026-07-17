@@ -631,6 +631,22 @@ function XMainLine2Model:GetConfigExhibitionModule(id)
     end
 end
 
+-- 按 Condition 评估命中的 Bg/Spine 路径，后通过的覆盖前面
+function XMainLine2Model:GetExhibitionModuleConditionResult(moduleId)
+    local cfg = self:GetConfigExhibitionModule(moduleId)
+    if not cfg then return nil, nil end
+    local conditions = cfg.Condition
+    if not conditions or #conditions == 0 then return nil, nil end
+    local bgPath, spinePath
+    for i, condId in ipairs(conditions) do
+        if condId and condId ~= 0 and XConditionManager.CheckCondition(condId) then
+            bgPath = cfg.BgCondition and cfg.BgCondition[i]
+            spinePath = cfg.SpineCondition and cfg.SpineCondition[i]
+        end
+    end
+    return bgPath, spinePath
+end
+
 ---@return XTableMainLine2ExhibitionChapter|XTableMainLine2ExhibitionChapter[]
 function XMainLine2Model:GetConfigExhibitionChapter(id)
     local cfgs = self._ConfigUtil:GetByTableKey(TableKey.MainLine2ExhibitionChapter)

@@ -5,7 +5,7 @@ local XBuffScript10273010 = XDlcScriptManager.RegBuffScript(10273010, "XBuffScri
 
 -- 效果说明：
 -- 【拼刀】成功后，消耗自身10%【生命值】，并转化为双倍【护盾】；
--- 持有【护盾】时，自身每有40点【拼刀】属性，吸取对手10点【攻击】属性；
+-- 持有【护盾】时，自身每有80点【拼刀】属性，吸取对手10点【攻击】属性；
 -- 【拼刀】成功后，造成5秒【眩晕】。
 -- 详细说明被动逻辑：玩家持有任意一个护盾类的效果（暂时判定为只有护盾总值大于0），吸取攻击力的效果就生效，护盾碎了吸攻击效果同时消失；同一时间，吸攻击效果只生效一次，不叠加
 
@@ -16,7 +16,7 @@ function XBuffScript10273010:ScriptInit(isGainControl)
     self.Protector = self:GetNpc():GetProtectorController()
     self.ShieldBuffId = 1027301         -- 护盾Buff/MagicId
     self.StunDuration = 5               -- 眩晕持续时间
-    self.WrestlePerDrain = 40           -- 每次吸取需要40点拼刀
+    self.WrestlePerDrain = 80           -- 每次吸取需要80点拼刀
     self.AttackPerDrain = 10            -- 每次吸取10点攻击
     self._selfDamageMagicId = 10278002  -- 扣除生命值的伤害Magic
     self._selfDamageRatio = 0.1         -- 扣除最大生命值的10%
@@ -44,8 +44,8 @@ end
 function XBuffScript10273010:OnLuaSkillStart(eventArgs)
     if eventArgs._launcherUUID ~= self._npcUUID then return end
     if eventArgs._skillId == self._skillId then
-        self._proxy:ApplyMagic(self._npcUUID, self._npcUUID, self._selfDamageMagicId, 1, 0, 1)
         self._proxy:ApplyMagic(self._npcUUID, self._npcUUID, self.ShieldBuffId, 1, 0, 1)
+        self._proxy:ApplyMagic(self._npcUUID, self._npcUUID, self._selfDamageMagicId, 1, 0, 1)
         --local life = self._proxy:GetNpcAttribValue(self._npcUUID, ENpcAttrib.Life)
         --local ChangedLife = life * 0.9
         --self._proxy:SetNpcGameplayEnergy(self._npcUUID, ENpcAttrib.Life, ChangedLife)
@@ -64,7 +64,7 @@ function XBuffScript10273010:AfterDamageCalc(eventArgs)
 
     local maxLife = self._proxy:GetNpcAttribValue(self._npcUUID, ENpcAttrib.Life)
     local damage = maxLife * self._selfDamageRatio
-    self._proxy:SetAfterDamageMagicContext(eventArgs.ContextId, damage, eventArgs.ElementDamage,
+    self._proxy:SetAfterDamageMagicContext(eventArgs.ContextId, 0, damage,
             eventArgs.FinalHackDamage)
     --self:LogError(".....伤害计算通知")
 end

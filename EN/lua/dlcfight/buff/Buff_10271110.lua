@@ -9,7 +9,7 @@ function XBuffScript10271110:ScriptInit(isGainControl) --初始化
     self.TargetSkill = self._skillId
     self._stackCount = 2
     self._blockController = self:GetNpc():GetBlockController()
-    --self.BlockCostStamina = 30
+    self.BlockCostStamina = 30
     --self.BlockPerStamina = 50
     self.HitFlyCount = 1
 end

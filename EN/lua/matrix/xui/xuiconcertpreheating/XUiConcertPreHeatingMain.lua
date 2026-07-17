@@ -8,7 +8,7 @@ local XUiConcertPreHeatingMain = XLuaUiManager.Register(XLuaUi, "UiConcertPreHea
 function XUiConcertPreHeatingMain:OnAwake()
     -- 页签状态
     self._StageIds = {}
-    self._SelectIndex = 0
+    self._SelectStageId = 0
 
     self:InitDynamicTable()
     self:InitRewardBubble()
@@ -62,7 +62,7 @@ function XUiConcertPreHeatingMain:InitButton()
     XUiHelper.RegisterClickEvent(self, self.BtnReplayCG, self.OnBtnReplayCGClick)
     XUiHelper.RegisterClickEvent(self, self.BtnFM, self.OnBtnFMClick)
     XUiHelper.RegisterClickEvent(self, self.BtnFMAgain, self.OnBtnFMAgainClick)
-    self:BindHelpBtn(self.BtnHelp, "ConcertPreHeating")
+    self:BindHelpBtn(self.BtnHelp, "ConcertPreHeatingHelp")
 end
 
 function XUiConcertPreHeatingMain:InitPanelSpine()
@@ -94,11 +94,6 @@ end
 
 function XUiConcertPreHeatingMain:InitMiddleCd()
     local middleCdUi = XTool.InitUiObjectByUi({}, self.PanelMiddleCd)
-    self._MiddleStartTimeText = XUiHelper.TryGetComponent(
-        self.PanelMiddleCd.transform,
-        "PanelTimeCd/TxtMiddleStartTime",
-        "Text"
-    )
     self._MiddleCdTextUi = {
         TxtHour = middleCdUi.TxtHour,
         TxtMin = middleCdUi.TxtMin,
@@ -153,26 +148,18 @@ end
 -- 刷新整体界面
 function XUiConcertPreHeatingMain:Refresh(selectStageId)
     self._StageIds = XMVCA.XConcertPreHeating:GetStageIds()
-    self:UpdateSelectIndex(selectStageId)
-    self:RefreshDynamicTable(self._SelectIndex)
+    local selectIndex = self:GetStageIndex(selectStageId)
+    if not XTool.IsNumberValid(selectIndex) then
+        selectIndex = self:GetStageIndex(self._SelectStageId)
+    end
+    if not XTool.IsNumberValid(selectIndex) then
+        selectIndex = self:GetDefaultSelectStageIndex()
+    end
+
+    self._SelectStageId = self._StageIds[selectIndex] or 0
+    self:RefreshDynamicTable(selectIndex)
     self:RefreshReward()
     self:RefreshCountdown()
-end
-
--- 更新当前选中的页签序号
-function XUiConcertPreHeatingMain:UpdateSelectIndex(selectStageId)
-    -- 外部指定关卡优先
-    if not XTool.IsTableEmpty(self._StageIds) and XTool.IsNumberValid(selectStageId) then
-        local index = self:GetStageIndex(selectStageId)
-        if XTool.IsNumberValid(index) then
-            self._SelectIndex = index
-        end
-    end
-
-    -- 无有效选择时回到默认关卡
-    if not XTool.IsNumberValid(self._SelectIndex) or not self._StageIds[self._SelectIndex] then
-        self._SelectIndex = self:GetDefaultSelectStageIndex()
-    end
 end
 
 function XUiConcertPreHeatingMain:GetStageIndex(stageId)
@@ -241,10 +228,11 @@ end
 function XUiConcertPreHeatingMain:OnDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         local stageId = self.DynamicTable.DataSource[index]
+        local isSelect = stageId == self._SelectStageId
         grid:Refresh(index, stageId)
-        grid:RefreshButtonState(index == self._SelectIndex)
+        grid:RefreshButtonState(isSelect)
 
-        if index == self._SelectIndex then
+        if isSelect then
             self:RefreshCurrentStageInfo()
         end
     end
@@ -252,7 +240,7 @@ end
 
 -- 刷新活动时间和当前页签对应的操作按钮/角色展示
 function XUiConcertPreHeatingMain:RefreshCurrentStageInfo()
-    local stageId = self:GetSelectedStageId()
+    local stageId = self._SelectStageId
     if not XTool.IsNumberValid(stageId) then
         self.BtnFM.gameObject:SetActiveEx(false)
         self.BtnFMAgain.gameObject:SetActiveEx(false)
@@ -277,10 +265,10 @@ function XUiConcertPreHeatingMain:RefreshCurrentStageInfo()
 
     -- 角色展示
     local roleImg = self._Control:GetStageMainUiImg(stageId)
-    self.RImgRole.gameObject:SetActiveEx(not string.IsNilOrEmpty(roleImg))
     self.RImgRoleCG.gameObject:SetActiveEx(false)
     if not string.IsNilOrEmpty(roleImg) then
         self.RImgRole:SetRawImage(roleImg)
+        self.RImgRole.gameObject:SetActiveEx(true)
     end
 end
 
@@ -404,20 +392,17 @@ function XUiConcertPreHeatingMain:OnGridClickStageTab(index)
         return
     end
 
-    local oldIndex = self._SelectIndex
-    self._SelectIndex = index
+    local oldIndex = self:GetStageIndex(self._SelectStageId)
+    self._SelectStageId = stageId
     XMVCA.XConcertPreHeating:SaveSelectStageId(stageId)
     XMVCA.XConcertPreHeating:MarkStageNewRead(stageId)
     if oldIndex ~= index then
         self:RefreshStageTabButtonState(oldIndex, false)
+        self:PlayAnimation("RoleEnable")
     end
 
     self:RefreshStageTabButtonState(index, true)
     self:RefreshCurrentStageInfo()
-end
-
-function XUiConcertPreHeatingMain:GetSelectedStageId()
-    return self._StageIds[self._SelectIndex] or 0
 end
 
 function XUiConcertPreHeatingMain:PlayMainPerformance()
@@ -426,9 +411,6 @@ function XUiConcertPreHeatingMain:PlayMainPerformance()
     self.PanelFinalSpine.gameObject:SetActiveEx(true)
     local liveState = XMVCA.XConcertPreHeating:GetLiveState()
     self:SetCdText(self._MiddleCdTextUi, liveState and liveState.LeftTime or 0)
-    if self._MiddleStartTimeText then
-        self._MiddleStartTimeText.text = ""
-    end
 
     local finalSpineRole = self.PanelFinalSpine.transform:Find("Root/Role")
     local finalSpineSkeletonAnimation = finalSpineRole:GetComponent(typeof(CS.Spine.Unity.SkeletonAnimation))
@@ -440,7 +422,7 @@ function XUiConcertPreHeatingMain:PlayMainPerformance()
 end
 
 function XUiConcertPreHeatingMain:OpenSelectedStage()
-    local tuningStageId = self:GetSelectedStageId()
+    local tuningStageId = self._SelectStageId
     if not XTool.IsNumberValid(tuningStageId) then
         return
     end
@@ -476,7 +458,7 @@ function XUiConcertPreHeatingMain:OnBtnSoundSetClick()
 end
 
 function XUiConcertPreHeatingMain:OnBtnReplayCGClick()
-    local stageId = self:GetSelectedStageId()
+    local stageId = self._SelectStageId
     if not self._Control:IsStageFinished(stageId) then
         return
     end

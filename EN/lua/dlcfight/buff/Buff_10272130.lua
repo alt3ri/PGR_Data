@@ -74,7 +74,7 @@ function XBuffScript10272130:BeforeDamageCalc(eventArgs)
     if not self._shouldModifyDamage then return end
     if not self._damageMagicIds[eventArgs.Id] then return end
     if self.ChanceCheck == 0 then
-        local finalPermyriad = eventArgs.PhysicalPermyriad + self._damageBonusPermyriad * self._proxy:GetNpcGameplayMaxAttribValue(self._npcUUID,ETheatre6AttribType.Stamina)
+        local finalPermyriad = eventArgs.PhysicalPermyriad + self._damageBonusPermyriad * self._proxy:GetNpcGameplayAttribMaxValue(self._npcUUID,ETheatre6AttribType.Stamina)
         self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, finalPermyriad, eventArgs.ElementPermyriad, eventArgs.HackDamage, eventArgs.HackPermyriad, eventArgs.IsCrit)
         self.ChanceCheck = 1
     end

@@ -320,13 +320,19 @@ end
 function XBossInshotControl:IsTowerUnlocked()
     local activityId = self._Model:GetActivityId()
     local activityConf = self._Model:GetConfigBossInshotActivity(activityId)
+
+    local firstLevelConf = self:GetConfigBossInshotTowerAllLevels()[1]
+    if not XFunctionManager.CheckInTimeByTimeId(firstLevelConf.TimeId) then
+        return false, nil, firstLevelConf.TimeId
+    end
+
     for _, condition in pairs(activityConf.TowerConditions) do
         if not XConditionManager.CheckCondition(condition) then
-            return false, condition
+            return false, condition, nil
         end
     end
 
-    return true
+    return true, nil, nil
 end
 
 -- 获取爬塔评分对应等级配置

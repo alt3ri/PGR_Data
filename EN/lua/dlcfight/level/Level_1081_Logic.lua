@@ -109,6 +109,7 @@ do
                 end
             end
         end
+        XLog.Debug("成功开启倒计时")
         self._proxy:Theatre6UIShowAnimation(true)  --开启角色战斗UI
         self._proxy:SetCameraOpEnable(false)       --禁止移动镜头
         if levelId == 1082 or levelId ==1085 then
@@ -120,7 +121,7 @@ do
         end
     end
 
-    Settle.EndTime = 5       --Settle阶段结束时间点
+    Settle.EndTime = 4.75       --Settle阶段结束时间点
     Settle._settleTime = 1   --倒计时阶段开始时间
     Settle._settleCamera = 1 --倒计时阶段镜头序号
     function Settle:Update(dt)
@@ -154,7 +155,7 @@ do
             elseif levelTime >= self._settleTime + 3 and self._settleCamera == 2 then
                 self._proxy:PlayCameraTimeline("Theatre6LevelStartCameraPre", NPC, 1.5, 0.75, 0)
                 self._settleCamera = 3
-            elseif levelTime >= self._settleTime + 4 and self._settleCamera == 3 then
+            elseif levelTime >= self._settleTime + 3.75 and self._settleCamera == 3 then
                 self._proxy:DeactivateVCam(playerUUID, "DlcAutoChess", false, 0)
                 self._settleCamera = 4
             end
@@ -187,7 +188,7 @@ do
             elseif levelTime >= self._settleTime + 3 and self._settleCamera == 2 then
                 self._proxy:PlayCameraTimeline("Theatre6LevelStartCameraPre", NPC, 1.5, 0.75, 0)
                 self._settleCamera = 3
-            elseif levelTime >= self._settleTime + 4 and self._settleCamera == 3 then
+            elseif levelTime >= self._settleTime + 3.75 and self._settleCamera == 3 then
                 self._proxy:DeactivateVCam(playerUUID, "DlcAutoChess", false, 0)
                 self._settleCamera = 4
             end
@@ -215,7 +216,7 @@ do
             elseif levelTime >= self._settleTime + 3 and self._settleCamera == 2 then
                 self._proxy:PlayCameraTimeline("Theatre6LevelStartCameraPre", NPC, 1.5, 0.75, 0)
                 self._settleCamera = 3
-            elseif levelTime >= self._settleTime + 4 and self._settleCamera == 3 then
+            elseif levelTime >= self._settleTime + 3.75 and self._settleCamera == 3 then
                 self._proxy:DeactivateVCam(playerUUID, "DlcAutoChess", false, 0)
                 self._settleCamera = 4
             end
@@ -303,6 +304,14 @@ do
 
         self._owner:SendWrestleStartEvent()
         self:RefreshForceContinueTime()
+        if self._owner._levelId == 1084 or self._owner._levelId == 1087 then
+            -- XLog.Debug("临时条件正确")
+            for i = 2, 9 do
+                self._proxy:SetObstacleActive(i, false) --关闭zone障碍
+            end
+            -- XLog.Debug("空气墙隐藏")
+        end
+        --进入拼刀时屏蔽空气墙，防止镜头碰撞，临时DEBUG办法
     end
 
     ---发送控制中心进入拼刀状态的通知
@@ -458,6 +467,7 @@ do
         self:SetTempActionNpc(winnerUUID)
         -- self._proxy:SetCameraFocusTarget(winnerUUID, self:GetTempDefender():GetUUID())
 
+
         return self:SendWrestleRollDiceEndEvent(winnerUUID, diff)
 
         -- local level = self._owner
@@ -486,6 +496,13 @@ do
 
     function Wrestle:End()
         self._proxy:Theatre6UIShowAnimation(true)
+        if self._owner._levelId == 1084 or self._owner._levelId == 1087 then
+            for i = 2, 9 do
+                self._proxy:SetObstacleActive(i, true) --关闭zone障碍
+            end
+            -- XLog.Debug("空气墙开启")
+        end
+        --拼刀结束重新加上空气墙，防止镜头碰撞，临时DEBUG办法
     end
 end
 
@@ -948,6 +965,11 @@ end
 
 --- 中控行为 全局出手权判断
 function XLevelScript1081:OnControlCenter()
+    if self._isDestroyed then
+        XLog.Error("Illegal Call after levelScript is Destroyed")
+        return
+    end
+
     --如果已经处于死亡之后的流程，直接返回
     if self._stateMachine:CheckStateById(StateEnum.End) or self._stateMachine:CheckStateById(StateEnum.Die) then return end
 
@@ -1320,6 +1342,10 @@ end
 
 ---状态超时后的兜底推进接口
 function XLevelScript1081:ForceContinue()
+    if self._isDestroyed then
+        XLog.Error("Illegal Call after levelScript is Destroyed")
+        return
+    end
     --跑到这里说明某个状态维持不变的时长超出预期, 必定是产生了什么问题
     local state = self._stateMachine._curState
     local info = ""
@@ -1414,6 +1440,11 @@ end
 
 --- 角色向关卡申请释放插入式技能
 function XLevelScript1081:RequestInsertSkill(npcUUID, skillId)
+    if self._isDestroyed then
+        XLog.Error("Illegal Call after levelScript is Destroyed")
+        return
+    end
+
     if not skillId or skillId == 0 then
         return false
     end
@@ -1429,6 +1460,11 @@ end
 
 --- 设置出手方npc
 function XLevelScript1081:SetTempActionNpc(npcUUID)
+    if self._isDestroyed then
+        XLog.Error("Illegal Call after levelScript is Destroyed")
+        return
+    end
+
     if npcUUID == self._tempActionNpcUUID then return end
     self._tempActionNpcUUID = npcUUID
 
@@ -1443,6 +1479,11 @@ end
 
 --- 设置出手权npc
 function XLevelScript1081:SetActionNpc(npcUUID)
+    if self._isDestroyed then
+        XLog.Error("Illegal Call after levelScript is Destroyed")
+        return
+    end
+    
     if npcUUID == self._currentActionNpcUUID then return end
     self._currentActionNpcUUID = npcUUID
     local npc = self:GetNpcByUUID(npcUUID)
@@ -1634,11 +1675,11 @@ function XLevelScript1081:Init()
     if self._levelId == 1085 or self._levelId == 1086 or self._levelId == 1087 then
         --PVP模式
         self._proxy:ApplyMagic(self._fighter1UUID, self._fighter1UUID, 1025823, 1)
-        self._proxy:ApplyMagic(self._fighter2UUID, self._fighter2UUID, 1025823, 1)
+        self._proxy:ApplyMagic(self._fighter2UUID, self._fighter2UUID, 1025800, 1)
     elseif self._levelId == 1082 or self._levelId == 1083 or self._levelId == 1084 then
         --PVE模式
         self._proxy:ApplyMagic(self._fighter1UUID, self._fighter1UUID, 1025824, 1)
-        self._proxy:ApplyMagic(self._fighter2UUID, self._fighter2UUID, 1025824, 1)
+        --self._proxy:ApplyMagic(self._fighter2UUID, self._fighter2UUID, 1025824, 1)
     end
 
     -----------------激活虚拟相机和BGM--------------------------------------------------------------------------------------------
@@ -1732,6 +1773,10 @@ function XLevelScript1081:LogError(logStr)
         return XLog.Error("XLevelScript1081:LogError Error: Illegal Log Format")
     end
     return XLog.Error(self._name .. ": " .. logStr)
+end
+
+function XLevelScript1081:Terminate()
+    self._isDestroyed = true
 end
 
 return XLevelScript1081

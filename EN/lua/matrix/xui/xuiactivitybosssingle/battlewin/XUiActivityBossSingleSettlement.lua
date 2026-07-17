@@ -26,6 +26,7 @@
 ---@field txtDifficultyRate UnityEngine.UI.Text
 ---@field txtPassTime UnityEngine.UI.Text
 ---@field txtPassTimeRate UnityEngine.UI.Text
+---@field BtnData XUiComponent.XUiButton
 local XUiActivityBossSingleSettlement = XLuaUiManager.Register(XLuaUi, "UiActivityBossSingleSettlement")
 function XUiActivityBossSingleSettlement:OnAwake()
     self:InitComponents()
@@ -35,6 +36,7 @@ function XUiActivityBossSingleSettlement:InitComponents()
     -- Button
     self.BtnReFight:AddEventListener(function() self:OnBtnReFightClick() end)
     self.BtnExitFight:AddEventListener(function() self:OnBtnExitFightClick() end)
+    self.BtnData:AddEventListener(function() self:OnBtnDataClick() end)
 
     -- XUiNode
     -- ---@type XUiFubenBossSingleSettlementGridCharacter
@@ -66,7 +68,7 @@ function XUiActivityBossSingleSettlement:Refresh(windata)
     local activityId = XDataCenter.FubenActivityBossSingleManager.GetCurActivityId() 
     local bossActivityCfg = XFubenActivityBossSingleConfigs.GetActivityConfig(activityId)
     local bossActivityName = bossActivityCfg.Name
-    self.txtStageName.text =  detailTitle .. bossActivityName 
+    self.txtStageName.text =  bossActivityName  .. "·" ..  detailTitle
 
     if result == nil then
         local fallBackStr = "--"
@@ -103,14 +105,14 @@ function XUiActivityBossSingleSettlement:Refresh(windata)
     self.txtUseTime.text = XUiHelper.GetTime(useTime)
 
     local timeScaleCO =  XFubenActivityBossSingleConfigs.GetBossTimeScoreCOByTime(useTime)
-    local timeRate = timeScaleCO.ScoreRatio/1000
-    self.txtPassTimeRate.text = "X" .. timeRate 
-    self.txtPassTime.text = math.ceil( (timeRate-1) * (rawTotleScore))
+    local timeRatio = timeScaleCO.ScoreRatio
+    self.txtPassTimeRate.text = "X" .. (timeRatio / 1000)
+    self.txtPassTime.text = math.ceil((timeRatio - 1000) * rawTotleScore / 1000)
 
     local levelCO = XFubenActivityBossSingleConfigs.GetBossLevelScoreCOByScore(lastDifficultScoreRecord)
-    local levelRate = levelCO.ScoreRatio/1000
-    self.txtDifficultyRate.text = "X" .. levelRate
-    self.txtDifficultyScore.text = math.ceil( (levelRate -1)* (rawTotleScore))
+    local levelRatio = levelCO.ScoreRatio
+    self.txtDifficultyRate.text = "X" .. (levelRatio / 1000)
+    self.txtDifficultyScore.text = math.ceil((levelRatio - 1000) * rawTotleScore / 1000)
 
     self.BtnReFight:SetButtonState(CS.UiButtonState.Normal)
     self.BtnExitFight:SetButtonState(CS.UiButtonState.Normal)
@@ -135,6 +137,13 @@ end
 function XUiActivityBossSingleSettlement:OnBtnExitFightClick()
     CS.XFight.ExitForClient(false)
     self:Close()
+end
+
+function XUiActivityBossSingleSettlement:OnBtnDataClick()
+    if self.ListInfo then
+        local isActive = self.ListInfo.gameObject.activeSelf
+        self.ListInfo.gameObject:SetActiveEx(not isActive)
+    end
 end
 
 --- 刷新角色列表显示
@@ -164,7 +173,7 @@ function XUiActivityBossSingleSettlement:_RefreshCharacterList()
             local gridObj = XUiHelper.Instantiate(self.GridCharacter1, self.ListCharacter)
             local imgHead = gridObj.transform:Find("RImgHead")
             if imgHead then
-                local rawImage = imgHead:GetComponent("RawImage")
+                local rawImage = imgHead:GetComponent(typeof(CS.UnityEngine.UI.RawImage))
                 if rawImage then
                     rawImage:SetRawImage(XMVCA.XCharacter:GetCharBigHeadIcon(characterId))
                 end

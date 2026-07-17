@@ -283,14 +283,49 @@
         "Role": "R3HelentineMd010031",
         "Layer": null,
         "State": null,
-        "Target": "AttackQte",
-        "TransitionDuration": null
+        "Target": "Caught",
+        "TransitionDuration": 0.1
     },
     {
         "Role": "R3HelentineMd010031",
         "Layer": null,
         "State": null,
-        "Target": "Caught",
+        "Target": "Squatdown",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": null,
+        "State": null,
+        "Target": "Squatup",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": null,
+        "State": null,
+        "Target": "Squat",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": null,
+        "State": null,
+        "Target": "Squatrun",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": null,
+        "State": null,
+        "Target": "Squatrunstart",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": null,
+        "State": null,
+        "Target": "Squatrunstop",
         "TransitionDuration": 0.1
     },
     {
@@ -305,6 +340,111 @@
         "Layer": null,
         "State": null,
         "Target": "StopR",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": null,
+        "State": null,
+        "Target": "WalkStart",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": null,
+        "State": null,
+        "Target": "WalkStop",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": null,
+        "State": null,
+        "Target": "WalkStartEnd",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": null,
+        "State": null,
+        "Target": "LTurn90",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": null,
+        "State": null,
+        "Target": "LTurn180",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": null,
+        "State": null,
+        "Target": "RTurn90",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": null,
+        "State": null,
+        "Target": "RTurn180",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": null,
+        "State": null,
+        "Target": "Sprint",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": null,
+        "State": null,
+        "Target": "SprintStop",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": null,
+        "State": null,
+        "Target": "SprintStart",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": null,
+        "State": null,
+        "Target": "SprintStartEnd",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": null,
+        "State": null,
+        "Target": "HitLB",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": null,
+        "State": null,
+        "Target": "HitHL",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": null,
+        "State": null,
+        "Target": "HitHR",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": null,
+        "State": null,
+        "Target": "HitHF",
         "TransitionDuration": 0.1
     },
     {
@@ -410,20 +550,6 @@
         "Layer": null,
         "State": null,
         "Target": "Attack44",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "R3HelentineMd010031",
-        "Layer": null,
-        "State": null,
-        "Target": "Attack98",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "R3HelentineMd010031",
-        "Layer": null,
-        "State": null,
-        "Target": "Attack99",
         "TransitionDuration": 0.1
     },
     {
@@ -744,6 +870,13 @@
     {
         "Role": "R3HelentineMd010031",
         "Layer": null,
+        "State": "RunStartEnd01",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": null,
         "State": "Hit1",
         "Target": "Stand2",
         "TransitionDuration": null
@@ -843,6 +976,132 @@
         "Role": "R3HelentineMd010031",
         "Layer": null,
         "State": "Caught",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": null,
+        "State": "WalkStart",
+        "Target": "Walk",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": null,
+        "State": "WalkStart",
+        "Target": "WalkStartEnd",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": null,
+        "State": "WalkStart",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": null,
+        "State": "WalkStop",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": null,
+        "State": "WalkStartEnd",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": null,
+        "State": "LTurn90",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": null,
+        "State": "LTurn180",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": null,
+        "State": "RTurn90",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": null,
+        "State": "RTurn180",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": null,
+        "State": "Sprint",
+        "Target": "SprintStop",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": null,
+        "State": "SprintStop",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": null,
+        "State": "SprintStart",
+        "Target": "Sprint",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": null,
+        "State": "SprintStart",
+        "Target": "SprintStartEnd",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": null,
+        "State": "SprintStartEnd",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": null,
+        "State": "HitLB",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": null,
+        "State": "HitHL",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": null,
+        "State": "HitHR",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": null,
+        "State": "HitHF",
         "Target": "Stand2",
         "TransitionDuration": 0.1
     },
@@ -1130,14 +1389,49 @@
         "Role": "R3HelentineMd010031",
         "Layer": 1.0,
         "State": null,
-        "Target": "AttackQte",
-        "TransitionDuration": null
+        "Target": "Caught",
+        "TransitionDuration": 0.1
     },
     {
         "Role": "R3HelentineMd010031",
         "Layer": 1.0,
         "State": null,
-        "Target": "Caught",
+        "Target": "Squatdown",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Squatup",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Squat",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Squatrun",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Squatrunstart",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Squatrunstop",
         "TransitionDuration": 0.1
     },
     {
@@ -1152,6 +1446,111 @@
         "Layer": 1.0,
         "State": null,
         "Target": "StopR",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "WalkStart",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "WalkStop",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "WalkStartEnd",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "LTurn90",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "LTurn180",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "RTurn90",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "RTurn180",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Sprint",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "SprintStop",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "SprintStart",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "SprintStartEnd",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "HitLB",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "HitHL",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "HitHR",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "HitHF",
         "TransitionDuration": 0.1
     },
     {
@@ -1549,6 +1948,13 @@
     {
         "Role": "R3HelentineMd010031",
         "Layer": 1.0,
+        "State": "RunStartEnd01",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": 1.0,
         "State": "Hit1",
         "Target": "Stand2",
         "TransitionDuration": null
@@ -1648,6 +2054,132 @@
         "Role": "R3HelentineMd010031",
         "Layer": 1.0,
         "State": "Caught",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": 1.0,
+        "State": "WalkStart",
+        "Target": "Walk",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": 1.0,
+        "State": "WalkStart",
+        "Target": "WalkStartEnd",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": 1.0,
+        "State": "WalkStart",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": 1.0,
+        "State": "WalkStop",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": 1.0,
+        "State": "WalkStartEnd",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": 1.0,
+        "State": "LTurn90",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": 1.0,
+        "State": "LTurn180",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": 1.0,
+        "State": "RTurn90",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": 1.0,
+        "State": "RTurn180",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": 1.0,
+        "State": "Sprint",
+        "Target": "SprintStop",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": 1.0,
+        "State": "SprintStop",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": 1.0,
+        "State": "SprintStart",
+        "Target": "Sprint",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": 1.0,
+        "State": "SprintStart",
+        "Target": "SprintStartEnd",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": 1.0,
+        "State": "SprintStartEnd",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": 1.0,
+        "State": "HitLB",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": 1.0,
+        "State": "HitHL",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": 1.0,
+        "State": "HitHR",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3HelentineMd010031",
+        "Layer": 1.0,
+        "State": "HitHF",
         "Target": "Stand2",
         "TransitionDuration": 0.1
     }

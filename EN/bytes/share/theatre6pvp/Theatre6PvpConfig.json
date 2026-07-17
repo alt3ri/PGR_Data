@@ -7,12 +7,12 @@
     {
         "Key": "ActionPointMaxLimit",
         "Desc": "Stamina Limit",
-        "Values": "['10']"
+        "Values": "['15']"
     },
     {
         "Key": "ActionPointRecoverInterval",
         "Desc": "Stamina Recovery Interval",
-        "Values": "['14400']"
+        "Values": "['28800']"
     },
     {
         "Key": "LineupSlotRepeatLimit",
@@ -62,7 +62,7 @@
     {
         "Key": "ActionPointInit",
         "Desc": "\u4f53\u529b\u521d\u59cb\u503c",
-        "Values": "['5']"
+        "Values": "['6']"
     },
     {
         "Key": "ActionPointPerCost",
@@ -71,12 +71,12 @@
     },
     {
         "Key": "RefreshMatchPeriodSeconds",
-        "Desc": "\u5237\u65b0\u65f6\u95f4\u533a\u95f4\u957f\u5ea6",
+        "Desc": "Refresh Time Interval Duration",
         "Values": "['60']"
     },
     {
         "Key": "RefreshMatchMaxCountPerPeriod",
-        "Desc": "\u533a\u95f4\u5185\u5237\u65b0\u6b21\u6570",
+        "Desc": "Refresh Count Within Interval",
         "Values": "['5']"
     }
 ]

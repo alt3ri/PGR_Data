@@ -4,6 +4,8 @@
 ---@field PanelChapterTab XUiButtonGroup
 local XUiDyeMergeMain = XLuaUiManager.Register(XLuaUi, "UiDyeMergeMain")
 
+local XUiDyeMergeTimelineProgress = require("XUi/XUiDyeMergeGame/UiDyeMergeMain/XUiDyeMergeTimelineProgress")
+
 --region Ui生命周期
 
 function XUiDyeMergeMain:OnAwake()
@@ -14,6 +16,10 @@ function XUiDyeMergeMain:OnAwake()
 end
 
 function XUiDyeMergeMain:OnStart()
+    if self.BGswitch then
+        ---@type XUiDyeMergeTimelineProgress
+        self.BgSwitchTimeLimeCtrl = XUiDyeMergeTimelineProgress.New(self.BGswitch, self)
+    end
     self:InitStages()
     self:InitRewardPreviewShow()
     self:InitChapterTabs()
@@ -21,7 +27,8 @@ function XUiDyeMergeMain:OnStart()
 end
 
 function XUiDyeMergeMain:OnEnable()
-    self:RefreshChapterBgShow()
+    self:RefreshChapterBgShow(true)
+    
     self:RefreshTaskProgressShow()
     self:RefreshReddots()
     -- 刷新和显示章节解锁状态
@@ -30,8 +37,7 @@ function XUiDyeMergeMain:OnEnable()
     
     self._Control:AddEventListener(XMVCA.XDyeMergeGame.EventIds.EVENT_DYEMERGE_INNER_ACTIVITY_TIMER_UPDATE, self._OnActivityTimeTickEvent, self)
     self._Control:UpdateActivityTimer()
-    
-    self:_RefreshMascot()
+
     self:_RefreshChapterDetailShow()
 end
 
@@ -65,12 +71,25 @@ function XUiDyeMergeMain:InitRewardPreviewShow()
     end)
 end
 
-function XUiDyeMergeMain:RefreshChapterBgShow()
-    local chapterId = XMVCA.XDyeMergeGame:GetLatestPassedChapterId()
-    if not chapterId then return end
+function XUiDyeMergeMain:RefreshChapterBgShow(isInit)
+    local chapterId = self.ChapterIds[self._CurChapterIndex]
+    
+    if not chapterId then
+        return 
+    end
+    
     local chapterCfg = XMVCA.XDyeMergeGame:GetTableDyeMergeChapterById(chapterId)
-    if chapterCfg and not string.IsNilOrEmpty(chapterCfg.PassedBg) then
-        self.RawImageBg:SetRawImage(chapterCfg.PassedBg)
+    
+    if chapterCfg then
+        if self.BgSwitchTimeLimeCtrl then
+            if isInit then
+                self.BgSwitchTimeLimeCtrl:SetProgress(chapterCfg.PassedBg or 0)
+            else
+                local speed = XMVCA.XDyeMergeGame:GetClientDyeMergeNumberByKey("UIMainBgTimelineSwitchSpeed")
+                
+                self.BgSwitchTimeLimeCtrl:SmoothMoveTo(chapterCfg.PassedBg, speed, nil, nil)    
+            end
+        end
     end
 end
 
@@ -132,7 +151,7 @@ function XUiDyeMergeMain:RefreshChapterUnlockShows()
         end
 
         for i, v in ipairs(self._ChapterIds) do
-            local isUnlock, lockTips = XMVCA.XDyeMergeGame:GetIsChapterUnlock(v)
+            local isUnlock, lockTips, lockType = XMVCA.XDyeMergeGame:GetIsChapterUnlock(v)
             
             local btn = self._ChapterBtnList[i]
 
@@ -149,8 +168,17 @@ function XUiDyeMergeMain:RefreshChapterUnlockShows()
 
             if not isUnlock then
                 self._ChapterLockDescList[i] = lockTips
+
+                if lockType == XMVCA.XDyeMergeGame.EnumConst.ChapterLockType.TimeLimit then
+                    -- 需要显示时间
+                    btn:SetNameByGroup(0, lockTips)
+                else
+                    btn:SetNameByGroup(0, XMVCA.XDyeMergeGame:GetCfgDyeMergeChapterNameById(v))
+                end
             else
                 self._ChapterLockDescList[i] = nil
+
+                btn:SetNameByGroup(0, XMVCA.XDyeMergeGame:GetCfgDyeMergeChapterNameById(v))
             end
         end
     end
@@ -221,11 +249,12 @@ function XUiDyeMergeMain:_OnChapterTabGroupSelect(index)
     
     self:_RefreshChapterDetailShow(chapterId)
 
-    self:_RefreshMascot()
-    
     -- 记录点击
     self._Control:MarkNewChapter(chapterId)
     self:_RefreshChapterBtnByIndex(index)
+    
+    -- 刷新背景
+    self:RefreshChapterBgShow(false)
 end
 
 function XUiDyeMergeMain:_RefreshChapterDetailShow(chapterId)
@@ -252,42 +281,29 @@ function XUiDyeMergeMain:_RefreshChapterDetailShow(chapterId)
 end
 
 --- 返回进度章节在 chapterIds 中的下标（1-based）
---- 规则：进度关卡所在章节；找不到或全通时返回最后一章
+--- 规则：进度关卡所在章节；若该章节未解锁（如刚通关上一章、下一章尚未开放），
+--- 回退到最后一个已解锁章节；找不到进度关卡时同样返回最后一个已解锁章节
 function XUiDyeMergeMain:_GetDefaultChapterIndex(chapterIds)
     local progressStageId = XMVCA.XDyeMergeGame:GetLatestProgressStageId()
-    if progressStageId then
-        for i, chapterId in ipairs(chapterIds) do
+    local lastUnlockIndex = 1
+    for i, chapterId in ipairs(chapterIds) do
+        local isUnlock = XMVCA.XDyeMergeGame:GetIsChapterUnlock(chapterId)
+        if isUnlock then
+            lastUnlockIndex = i
+        end
+        if progressStageId then
             local chapterCfg = XMVCA.XDyeMergeGame:GetTableDyeMergeChapterById(chapterId)
             if chapterCfg and not XTool.IsTableEmpty(chapterCfg.StageIds) then
                 for _, stageId in ipairs(chapterCfg.StageIds) do
                     if stageId == progressStageId then
-                        return i
+                        -- 进度关卡所在章节已解锁则选中，否则回退到最后一个已解锁章节
+                        return isUnlock and i or lastUnlockIndex
                     end
                 end
             end
         end
     end
-    return #chapterIds
-end
-
---- 刷新吉祥物到进度关卡格位置（若当前章节无进度关卡则隐藏）
-function XUiDyeMergeMain:_RefreshMascot()
-    local progressStageId = XMVCA.XDyeMergeGame:GetLatestProgressStageId()
-
-    if not progressStageId or XMVCA.XDyeMergeGame:CheckPassedByStageId(progressStageId) then
-        self.RImgMascot.gameObject:SetActiveEx(false)
-        return
-    end
-
-    local grid = self.PanelStage:GetStageGridByStageId(progressStageId)
-    if grid then
-        local worldPos = grid.Transform.position
-        local localPos = self.RImgMascot.transform.parent:InverseTransformPoint(worldPos)
-        self.RImgMascot.transform:SetLocalPosition(localPos.x, localPos.y, 0)
-        self.RImgMascot.gameObject:SetActiveEx(true)
-    else
-        self.RImgMascot.gameObject:SetActiveEx(false)
-    end
+    return lastUnlockIndex
 end
 
 function XUiDyeMergeMain:_OnBtnTaskClickEvent()

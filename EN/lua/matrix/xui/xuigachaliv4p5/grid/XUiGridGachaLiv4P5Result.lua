@@ -11,7 +11,7 @@ function XUiGridGachaLiv4P5Result:InitUiObject()
     ---@type UnityEngine.RectTransform
     self.PanelChip = self.Transform:FindTransform("PanelChip")
     ---@type UnityEngine.UI.RawImage
-    self.RImgChip = self.Transform:FindTransform("ImgChip"):GetComponent("RawImage")
+    self.RImgChip = self.Transform:FindTransform("ImgChip"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     local gridChip = self.Transform:FindTransform("GridChip")
     gridChip.gameObject:SetActiveEx(false)
     self.GridChipObj = gridChip
@@ -23,21 +23,21 @@ function XUiGridGachaLiv4P5Result:InitUiObject()
     ---@type UnityEngine.RectTransform
     self.PanelItem = self.Transform:FindTransform("PanelItem")
     ---@type UnityEngine.UI.RawImage
-    self.RImgItem = self.Transform:FindTransform("ImgItem"):GetComponent("RawImage")
+    self.RImgItem = self.Transform:FindTransform("ImgItem"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     ---@type UnityEngine.RectTransform
     self.PanelArms = self.Transform:FindTransform("PanelArms")
     ---@type UnityEngine.UI.RawImage
-    self.RImgArms = self.Transform:FindTransform("ImgArms"):GetComponent("RawImage")
+    self.RImgArms = self.Transform:FindTransform("ImgArms"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     ---@type UnityEngine.RectTransform
     self.PanelPets = self.Transform:FindTransform("PanelPets")
     ---@type UnityEngine.UI.RawImage
-    self.RImgPets = self.Transform:FindTransform("ImgPets"):GetComponent("RawImage")
+    self.RImgPets = self.Transform:FindTransform("ImgPets"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     ---@type UnityEngine.RectTransform
     self.PanelRole = self.Transform:FindTransform("PanelRole")
     ---@type UnityEngine.UI.RawImage
-    self.RImgRole = self.Transform:FindTransform("ImgRole"):GetComponent("RawImage")
+    self.RImgRole = self.Transform:FindTransform("ImgRole"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
     ---@type UnityEngine.UI.Text
-    self.TxtCount = self.Transform:FindTransform("TxtCount"):GetComponent("Text")
+    self.TxtCount = self.Transform:FindTransform("TxtCount"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     ---@type UnityEngine.RectTransform
     self.PanelTrans = self.Transform:FindTransform("PanelTrans")
     self.PanelTrans.gameObject:SetActiveEx(false)

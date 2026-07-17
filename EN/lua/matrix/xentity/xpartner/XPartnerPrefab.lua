@@ -316,7 +316,7 @@ function XPartnerPrefab:GetPartnerRequestDataByPos(pos)
         }
     end
 
-    return { PartnerId = 0 }
+    return nil
 end
 
 local function ClonePartnerSlotData(slotData)

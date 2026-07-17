@@ -18,8 +18,12 @@ function XBuffScript1025819:Init()
     
     self._nowTime = 0            --当前次数
     self._canUse = 1             --是否可用
+    self._history = 0            --历史的次数
     
     self._mineId = 7             --配置表的ID
+
+    self._timer = 1             --延迟播放UI时间
+    self._isShow = false            --是否要播UI
 end
 
 --回调方法注册
@@ -32,28 +36,39 @@ end
 function XBuffScript1025819:OnEnterLevel(levelId)
     XTheatre6BuffBase.OnEnterLevel(self, levelId)
     --取历史的次数
-    local _history = self._proxy:GetTheatre6BuffActionValue(self._uuid,self._angerKey)
-    if _history >= self._time then
+    self._history = self._proxy:GetTheatre6BuffActionValue(self._uuid,self._angerKey)
+    
+    if self._history >= self._time then
         self._proxy:ApplyMagic(self._uuid,self._uuid,self._attkBuff,self._buffLevel)
         self._proxy:ApplyMagic(self._uuid,self._uuid,self._defBuff,self._buffLevel)
-        self._proxy:Theatre6EnvironmentShow(self._uuid, self._mineId)
         self._canUse = 0
+        --延迟展示
+        self._isShow = true
+    end
+end
+
+--环境效果触发显示
+function XBuffScript1025819:Update(dt)
+    ------------执行------------
+    if not self._isShow then return end
+    local _nowTime = self._proxy:GetFightTime()
+    if _nowTime >= self._timer then
+        self._proxy:Theatre6EnvironmentShow(self._uuid, self._mineId)
+        self._isShow = false
     end
 end
 
 --添加buff时判断
 function XBuffScript1025819:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
     --狂暴时触发技能
-    if buffId ~= self.angryBuffId then return end
+    if buffId ~= self._angryBuffId then return end
     if self._canUse == 0 then return end
-
-    --取历史的次数
-    local _history = self._proxy:GetTheatre6BuffActionValue(self._uuid,self._angerKey)
 
     --本局次数+1
     self._nowTime = self._nowTime + 1
+    
     --把总次数上传一下
-    local _times = self._nowTime + _history
+    local _times = self._nowTime + self._history
     self._proxy:SetTheatre6BuffActionValue(self._uuid,self._angerKey,_times)
     
     if _times >= self._time then

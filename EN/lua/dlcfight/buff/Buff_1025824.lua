@@ -18,13 +18,10 @@ function XBuffScript1025824:OnEnterLevel(levelId)
     XTheatre6BuffBase.OnEnterLevel(self, levelId)
     --如果不是玩家，跳过
     if not self._proxy:IsPlayerNpc(self._npcUUID) then return end
-    
-    self._proxy:SetTheatre6DiceDelta(ETheatre6DiceType.Dodge,self._upDice)
-    self._proxy:SetTheatre6DiceDelta(ETheatre6DiceType.Wrestle,self._upDice)
-    
+
     --开启补偿
-    self._proxy:Theatre6OpenDice(ETheatre6DiceType.Wrestle,true,false)
-    self._proxy:Theatre6OpenDice(ETheatre6DiceType.Dodge,true,false)
+    self._proxy:SetTheatre6DiceDelta(ETheatre6DiceType.All,self._upDice)
+    self._proxy:Theatre6OpenDice(ETheatre6DiceType.All,true,false)
 end
 
 return XBuffScript1025824

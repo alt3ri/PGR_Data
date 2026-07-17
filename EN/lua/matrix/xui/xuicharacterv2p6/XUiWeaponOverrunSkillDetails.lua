@@ -45,7 +45,7 @@ function XUiWeaponOverrunSkillDetails:InitPanel()
     self.PanelSkillInfoUiObject:GetObject("BtnDetails").gameObject:SetActiveEx(false)
     self.PanelSkillInfoUiObject:GetObject("BtnUpgrade").gameObject:SetActiveEx(false)
     self.PanelSkillInfoUiObject:GetObject("TxtSkillTitle").gameObject:SetActiveEx(false)
-    self.PanelSkillInfoUiObject:GetObject("ImgSkillPointIcon").gameObject:SetActiveEx(false)
+    self.PanelSkillInfoUiObject:GetObject("ImgBlueBall").gameObject:SetActiveEx(false)
 end
 
 function XUiWeaponOverrunSkillDetails:OnBtnBackClick()
@@ -138,8 +138,8 @@ function XUiWeaponOverrunSkillDetails:RefreshSkillInfo(skillCfg, level, isUnlock
     self.TxtName.text = typeDes
     self.SkillIcon:SetRawImage(skillIcon)
 
-    panelSkillInfoUiObject:GetObject("ImgBlueBall").gameObject:SetActiveEx(true)
-    panelSkillInfoUiObject:GetObject("ImgBlueBall"):SetRawImage(skillCfg.Icon)
+    panelSkillInfoUiObject:GetObject("ImgSkillPointIcon").gameObject:SetActiveEx(true)
+    panelSkillInfoUiObject:GetObject("ImgSkillPointIcon"):SetRawImage(skillCfg.Icon)
     panelSkillInfoUiObject:GetObject("TxtSkillName").text = skillCfg.Name or ""
     panelSkillInfoUiObject:GetObject("TxtSkillSpecific").text = XUiHelper.ReplaceTextNewLine(skillCfg.Desc or "")
 end

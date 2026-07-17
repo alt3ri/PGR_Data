@@ -20132,6 +20132,20 @@
         "Desc": "Coating owned"
     },
     {
+        "Id": 6004806,
+        "Type": 11105.0,
+        "Params": "[6004806]",
+        "Formula": null,
+        "Desc": "Unlocks from owning \"Shimmering Tide\""
+    },
+    {
+        "Id": 6006204,
+        "Type": 11105.0,
+        "Params": "[6006204]",
+        "Formula": null,
+        "Desc": "Unlocks from owning Azure Embrace"
+    },
+    {
         "Id": 7005804,
         "Type": null,
         "Params": null,
@@ -20164,6 +20178,20 @@
         "Type": null,
         "Params": null,
         "Formula": "770400&6004506",
+        "Desc": "You do not own this Coating and have cleared 1-12."
+    },
+    {
+        "Id": 7004507,
+        "Type": null,
+        "Params": null,
+        "Formula": "770400&6004806",
+        "Desc": "You do not own this Coating and have cleared 1-12."
+    },
+    {
+        "Id": 7004508,
+        "Type": null,
+        "Params": null,
+        "Formula": "770400&6006204",
         "Desc": "You do not own this Coating and have cleared 1-12."
     },
     {
@@ -35424,7 +35452,7 @@
         "Type": 10105.0,
         "Params": "[30130486]",
         "Formula": null,
-        "Desc": "Clear\u3010Behind the Curtain-Moonlight Sonata\u3011to unlock"
+        "Desc": "Clear [Behind the Curtain - Moonlight Sonata] to unlock"
     },
     {
         "Id": 84330015,
@@ -35550,7 +35578,7 @@
         "Type": 11104.0,
         "Params": "[6006204]",
         "Formula": null,
-        "Desc": "\u62e5\u6709\u6d82\u88c5\u201c\u7f31\u7efb\u6674\u7a7a\u201d\u540e\u89e3\u9501"
+        "Desc": "Unlocks from owning \"Azure Embrace\""
     },
     {
         "Id": 84400101,
@@ -43663,49 +43691,49 @@
         "Type": 10105.0,
         "Params": "[30130488]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u3010\u6c50\u6d77\u5bc4\u613f-\u7eef\u6d77\u5c7f\u68a6\u3011\u540e\u89e3\u9501"
+        "Desc": "Unlocks after clearing [Tidal Wishes - Coral Dreams]"
     },
     {
         "Id": 84602894,
         "Type": 10105.0,
         "Params": "[30130489]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u3010\u6c50\u6d77\u5bc4\u613f-\u6d77\u9685\u5f26\u58f0\u3011\u540e\u89e3\u9501"
+        "Desc": "Unlocks after clearing [Tidal Wishes - Strings at the Shore]"
     },
     {
         "Id": 84602895,
         "Type": 10105.0,
         "Params": "[30130490]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u3010\u6c50\u6d77\u5bc4\u613f-\u6708\u4e0b\u9cb8\u8c23\u3011\u540e\u89e3\u9501"
+        "Desc": "Unlocks after clearing [Tidal Wishes - Moonlit Whale Ballad]"
     },
     {
         "Id": 84602896,
         "Type": 10105.0,
         "Params": "[30130491]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u3010\u6c50\u6d77\u5bc4\u613f-\u6d77\u5e8f\u521d\u9022\u3011\u540e\u89e3\u9501"
+        "Desc": "Unlocks after clearing [Tidal Wishes - Seaside Encounter]"
     },
     {
         "Id": 84602897,
         "Type": 10105.0,
         "Params": "[30130492]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u3010\u6c50\u6d77\u5bc4\u613f-\u65f6\u5f71\u5bfb\u8e2a\u3011\u540e\u89e3\u9501"
+        "Desc": "Unlocks after clearing [Tidal Wishes - Shadow Trace]"
     },
     {
         "Id": 84602898,
         "Type": 10105.0,
         "Params": "[13021305]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u3010\u901a\u6653\u8005\u96be\u660e-\u591c\u666f\u3011\u540e\u89e3\u9501"
+        "Desc": "Unlocks after clearing [The Knower's Dilemma - Night]"
     },
     {
         "Id": 84602899,
         "Type": 10105.0,
         "Params": "[13021306]",
         "Formula": null,
-        "Desc": "\u901a\u5173\u3010\u901a\u6653\u8005\u96be\u660e-\u6de1\u51fa\u3011\u540e\u89e3\u9501"
+        "Desc": "Unlocks after clearing [The Knower's Dilemma - Fade Out]"
     },
     {
         "Id": 84700101,
@@ -44719,6 +44747,13 @@
         "Id": 12650001,
         "Type": 11113.0,
         "Params": "[12650001]",
+        "Formula": null,
+        "Desc": "Coating owned"
+    },
+    {
+        "Id": 12660001,
+        "Type": 11113.0,
+        "Params": "[12660001]",
         "Formula": null,
         "Desc": "Coating owned"
     },
@@ -48101,7 +48136,7 @@
         "Type": 10142.0,
         "Params": "[16400000]",
         "Formula": null,
-        "Desc": "\u89e3\u9501\u5927\u516c"
+        "Desc": "Unlock Grand Duke"
     },
     {
         "Id": 1002001,
@@ -48381,7 +48416,7 @@
         "Type": 10142.0,
         "Params": "[16400000]",
         "Formula": null,
-        "Desc": "\u5408\u6210\u8f85\u52a9\u673a\u201c\u5927\u516c\u201d\u89e3\u9501"
+        "Desc": "Combine CUB \"Grand Duke\" to unlock"
     },
     {
         "Id": 94031,
@@ -55261,6 +55296,13 @@
         "Id": 1008158,
         "Type": 20114.0,
         "Params": "[1058]",
+        "Formula": null,
+        "Desc": "Download story video resources pack"
+    },
+    {
+        "Id": 1008159,
+        "Type": 20114.0,
+        "Params": "[1059]",
         "Formula": null,
         "Desc": "Download story video resources pack"
     },
@@ -64172,28 +64214,28 @@
         "Id": 1021002,
         "Type": null,
         "Params": null,
-        "Formula": "1021017|1021018|1021019|1021020",
+        "Formula": "1021017|1021018|1021019|1021020|1021025|1021027",
         "Desc": "[Unlocks after clearing Difficulty 1 with Veronica]"
     },
     {
         "Id": 1021003,
         "Type": null,
         "Params": null,
-        "Formula": "1021019|1021020",
+        "Formula": "1021019|1021020|1021025|1021027",
         "Desc": "[Unlocks after clearing Difficulty 3 with Veronica]"
     },
     {
         "Id": 1021004,
         "Type": null,
         "Params": null,
-        "Formula": "1021021|1021022|1021023|1021024",
+        "Formula": "1021021|1021022|1021023|1021024|1021026|1021028",
         "Desc": "[Unlocks after clearing Difficulty 1 with Alpha]"
     },
     {
         "Id": 1021005,
         "Type": null,
         "Params": null,
-        "Formula": "1021023|1021024",
+        "Formula": "1021023|1021024|1021026|1021028",
         "Desc": "[Unlocks after clearing Difficulty 3 with Alpha]"
     },
     {
@@ -64443,9 +64485,9 @@
     },
     {
         "Id": 1021100,
-        "Type": 23203.0,
-        "Params": "[2]",
-        "Formula": null,
+        "Type": null,
+        "Params": null,
+        "Formula": "1021001&1021104",
         "Desc": "[Unlocked after owning at least 2 archives]"
     },
     {
@@ -64453,7 +64495,7 @@
         "Type": null,
         "Params": null,
         "Formula": "1021102&1021103",
-        "Desc": "\u3010\u4f7f\u7528\u4efb\u610f\u89d2\u8272\u901a\u8fc7\u96be\u5ea64\u4e14\u8be1\u57ce\u4ea4\u950b\u8fbe\u5230\u3010\u8ff7\u96fe\u884c\u8005\u3011\u540e\u89e3\u9501\u3011"
+        "Desc": "[Unlocks after clearing Difficulty 4 with any character and reaching [Mist Walker] in Phantom Clash]"
     },
     {
         "Id": 1021102,
@@ -64468,6 +64510,13 @@
         "Params": "[1, 3]",
         "Formula": null,
         "Desc": null
+    },
+    {
+        "Id": 1021104,
+        "Type": 23203.0,
+        "Params": "[2]",
+        "Formula": null,
+        "Desc": "[Unlocked after owning at least 2 archives]"
     },
     {
         "Id": 1030001,
@@ -67587,30 +67636,51 @@
     {
         "Id": 1060038,
         "Type": 10341.0,
-        "Params": "[5, 2, 1]",
+        "Params": "[1, 2, 1]",
         "Formula": null,
         "Desc": "4.6\u53ef\u809d\u5361\u6c60\u4efb\u52a1\u4ee3\u5e01\u4e0a\u9650\u5224\u65ad"
+    },
+    {
+        "Id": 1060039,
+        "Type": 31107.0,
+        "Params": "[2526001, 2]",
+        "Formula": null,
+        "Desc": "4.6\u8c10\u632f\u6253\u8138\u56fe\u5224\u65ad1\u8c10\u632f\u7b49\u7ea7"
+    },
+    {
+        "Id": 1060040,
+        "Type": 11101.0,
+        "Params": "[34001, 50]",
+        "Formula": null,
+        "Desc": "\u68c0\u67e5\u9053\u5177\u6301\u6709\u6570\u91cf"
+    },
+    {
+        "Id": 1060041,
+        "Type": null,
+        "Params": null,
+        "Formula": "!(1060039|1060040)&850301",
+        "Desc": "\u8c10\u632f2\u6700\u7ec8\u914d\u7f6eID"
     },
     {
         "Id": 1018101,
         "Type": 23220.0,
         "Params": "[1018]",
         "Formula": null,
-        "Desc": "\u5b8c\u6210\u524d\u7f6e\u7ae0\u8282\u540e\u89e3\u9501"
+        "Desc": "Unlock after completing the previous chapter"
     },
     {
         "Id": 1018102,
         "Type": 23220.0,
         "Params": "[1028]",
         "Formula": null,
-        "Desc": "\u5b8c\u6210\u524d\u7f6e\u7ae0\u8282\u540e\u89e3\u9501"
+        "Desc": "Unlock after completing the previous chapter"
     },
     {
         "Id": 1018103,
         "Type": 23220.0,
         "Params": "[1038]",
         "Formula": null,
-        "Desc": "\u5b8c\u6210\u524d\u7f6e\u7ae0\u8282\u540e\u89e3\u9501"
+        "Desc": "Unlock after completing the previous chapter"
     },
     {
         "Id": 900000001,
@@ -68479,6 +68549,76 @@
         "Params": null,
         "Formula": "863163&863164",
         "Desc": "\u5f15\u5bfc-\u8c10\u632f2-\u672a\u89e6\u53d1\u5f15\u5bfc61210\uff08\u65b0\u73a9\u5bb6\uff09\u4e14\u672a\u89e6\u53d1\u5f15\u5bfc61213"
+    },
+    {
+        "Id": 863168,
+        "Type": 23221.0,
+        "Params": "[1012]",
+        "Formula": null,
+        "Desc": "\u5f15\u5bfc-\u5927\u67d3\u8272\u5f53\u524d\u5173\u53611-2"
+    },
+    {
+        "Id": 863169,
+        "Type": 23221.0,
+        "Params": "[1013]",
+        "Formula": null,
+        "Desc": "\u5f15\u5bfc-\u5927\u67d3\u8272\u5f53\u524d\u5173\u53611-3"
+    },
+    {
+        "Id": 863170,
+        "Type": 23221.0,
+        "Params": "[1021]",
+        "Formula": null,
+        "Desc": "\u5f15\u5bfc-\u5927\u67d3\u8272\u5f53\u524d\u5173\u53612-1"
+    },
+    {
+        "Id": 863171,
+        "Type": 23221.0,
+        "Params": "[1031]",
+        "Formula": null,
+        "Desc": "\u5f15\u5bfc-\u5927\u67d3\u8272\u5f53\u524d\u5173\u53613-1"
+    },
+    {
+        "Id": 863172,
+        "Type": 23221.0,
+        "Params": "[1041]",
+        "Formula": null,
+        "Desc": "\u5f15\u5bfc-\u5927\u67d3\u8272\u5f53\u524d\u5173\u53614-1"
+    },
+    {
+        "Id": 863173,
+        "Type": 23221.0,
+        "Params": "[1045]",
+        "Formula": null,
+        "Desc": "\u5f15\u5bfc-\u5927\u67d3\u8272\u5f53\u524d\u5173\u53614-5"
+    },
+    {
+        "Id": 863174,
+        "Type": 10187.0,
+        "Params": "[1, 64774]",
+        "Formula": null,
+        "Desc": "\u5f15\u5bfc-\u8089\u9e3d6-\u5df2\u5b8c\u6210\u5f15\u5bfc"
+    },
+    {
+        "Id": 863175,
+        "Type": 23001.0,
+        "Params": "[48502]",
+        "Formula": null,
+        "Desc": "\u5f15\u5bfc-\u722c\u5854\u5165\u53e3\u65f6\u95f4"
+    },
+    {
+        "Id": 863176,
+        "Type": 10105.0,
+        "Params": "[30006891]",
+        "Formula": null,
+        "Desc": "\u5f15\u5bfc-4.6\u8d85\u96be\u51734\u901a\u5173"
+    },
+    {
+        "Id": 863177,
+        "Type": 23212.0,
+        "Params": "[1, 2]",
+        "Formula": null,
+        "Desc": "\u5f15\u5bfc-\u8089\u9e3d6PVP\u6bb5\u4f4d\u8fbe\u52302\u6bb5"
     },
     {
         "Id": 863200,

@@ -52,9 +52,9 @@ function XBuffScript10271020:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, b
     end
 
     self._totalFlareGained = self._totalFlareGained + addedFlare
-    self:LogError("[Buff_10271020] 耀斑变化 当前:" .. currentFlareStacks
-            .. " 新增:" .. addedFlare
-            .. " 总获取:" .. self._totalFlareGained)
+    --self:LogError("[Buff_10271020] 耀斑变化 当前:" .. currentFlareStacks
+            --.. " 新增:" .. addedFlare
+            --.. " 总获取:" .. self._totalFlareGained)
 
     self._lastFlareStacks = currentFlareStacks
 end

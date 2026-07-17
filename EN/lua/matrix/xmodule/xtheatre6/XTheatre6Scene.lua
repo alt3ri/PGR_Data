@@ -397,7 +397,7 @@ function XTheatre6Scene:_ApplyAnimatorAndIdle(model, fashionConfig)
     end
 
     ---@type UnityEngine.Animator
-    local animator = model:GetComponent("Animator")
+    local animator = model:GetComponent(typeof(CS.UnityEngine.Animator))
     if XTool.UObjIsNil(animator) then
         return
     end

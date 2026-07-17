@@ -15,7 +15,7 @@ local TableKey = {
     BossInshotSkill = {},
     BossInshotStage = {},
     BossInshotTalent = {},
-    BossInshotTower = { DirPath = XConfigUtil.DirectoryType.Share },
+    BossInshotTower = { DirPath = XConfigUtil.DirectoryType.Share, CacheType = XConfigUtil.CacheType.Normal },
     BossInshotTowerStage = { DirPath = XConfigUtil.DirectoryType.Share, Identifier = "StageId" }
 }
 ---@class XBossInshotModel : XModel
@@ -512,9 +512,10 @@ function XBossInshotModel:GetIsShowPlayback(stageId)
 end
 
 -- 保存排行榜数据
-function XBossInshotModel:SaveRankData(characterCfgId, bossId, isTotalRank, nowTime, res)
+function XBossInshotModel:SaveRankData(characterCfgId, bossId, isTotalRank, tower, nowTime, res)
     self.RankData = self.RankData or {}
-    local key = string.format("%s_%s_%s", characterCfgId, bossId, isTotalRank)
+    local towerKey = tower and "_tower" or "_non_tower"
+    local key = string.format("%s_%s_%s_%s", characterCfgId, bossId, isTotalRank, towerKey)
     self.RankData[key] = {
         Time = nowTime,
         Data = res

@@ -14,6 +14,9 @@ function XBuffScript1025820:Init()
     self._buffLevel = 8             --使用的等级
     
     self._buffKey = 820     --跨局传值Key
+
+    self._timer = 1             --延迟播放UI时间
+    self._isShow = false            --是否要播UI
 end
 
 ---进入关卡时初始化控制器
@@ -23,7 +26,6 @@ function XBuffScript1025820:OnEnterLevel(levelId)
 
     --敌我ID对比
     local _myId = self._npcId
-    XLog.Warning("敌方:"..self._enemyUUID)
     local _enemyId = self._proxy:GetNpcTemplate(self._enemyUUID).Id
     if not _enemyId then 
         XLog.Warning("1025820找不到敌人")
@@ -37,11 +39,23 @@ function XBuffScript1025820:OnEnterLevel(levelId)
         _count = _count + 1
         self._proxy:ApplyMagic(self._uuid,self._uuid,self._attkBuff,self._buffLevel,0,_count)
         self._proxy:ApplyMagic(self._uuid,self._uuid,self._defBuff,self._buffLevel,0,_count)
-        self._proxy:Theatre6EnvironmentShow(self._uuid, self._mineId)
+        
+        self._isShow = true
 
         --跨局传值
         self._proxy:SetTheatre6BuffActionValue(self._uuid, self._buffKey, _count)
         end
+end
+
+--环境效果触发显示
+function XBuffScript1025820:Update(dt)
+    ------------执行------------
+    if not self._isShow then return end
+    local _nowTime = self._proxy:GetFightTime()
+    if _nowTime >= self._timer then
+        self._proxy:Theatre6EnvironmentShow(self._uuid, self._mineId)
+        self._isShow = false
+    end
 end
 
 return XBuffScript1025820

@@ -15,7 +15,7 @@ function XUiConcertPreHeatingTuningStage:OnAwake()
 end
 
 function XUiConcertPreHeatingTuningStage:InitButton()
-    self:BindHelpBtn(self.BtnHelp, "ConcertPreHeating")
+    self:BindHelpBtn(self.BtnHelp, "ConcertPreHeatingHelp")
     self.BtnBack.CallBack = function() self:Close() end
     self.BtnMainUi.CallBack = function() XLuaUiManager.RunMain() end
     self.BtnSoundSet.CallBack = function() XLuaUiManager.Open("UiSet") end

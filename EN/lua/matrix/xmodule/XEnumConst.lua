@@ -505,11 +505,11 @@ XEnumConst = {
             Enhance = 1,
             Sp = 2,
         },
-        SkillDetailsType = {
-            Normal = 1,
-            Enhance = 2,
-            WeaponOverrun = 3,
-        },
+        SkillDetailsType = {
+            Normal = 1,
+            Enhance = 2,
+            WeaponOverrun = 3,
+        },
         -- 信号球颜色
         CharacterLiberateBallColorType = {
             Red = 1,
@@ -3666,6 +3666,10 @@ XEnumConst = {
         }
     },
     Theatre6 = {
+        CharacterNewTagType = {
+            Game = 1,
+            Story = 2,
+        },
         PlayMode = {
             GamePlay = 1, --玩法模式
             Story = 2, --剧情模式

@@ -1316,111 +1316,106 @@
     },
     {
         "Id": 20004009.0,
-        "Key": "TeamManagerPrefabTeamPartnerDataEmpty",
+        "Key": "TeamManagerPrefabPartnerSkillIsEmpty",
         "Text": "CUB preset skill cannot be empty"
     },
     {
         "Id": 20004010.0,
-        "Key": "TeamManagerPrefabPartnerSkillIsEmpty",
+        "Key": "TeamManagerPrePartnerIsEmptyCanNotCarrySkill",
         "Text": "CUB preset is empty. Cannot set skill"
     },
     {
         "Id": 20004011.0,
-        "Key": "TeamManagerPrePartnerIsEmptyCanNotCarrySkill",
+        "Key": "TeamManagerCharacterIsEmptyCanNotPutOnEquip",
         "Text": "No character in position. Cannot equip equipment"
     },
     {
         "Id": 20004012.0,
-        "Key": "TeamManagerCharacterIsEmptyCanNotPutOnEquip",
+        "Key": "TeamManagerPrefabTeamAlreadyOnTop",
         "Text": "Formation is already at the top"
     },
     {
         "Id": 20004013.0,
-        "Key": "TeamManagerPrefabTeamAlreadyOnTop",
+        "Key": "TeamManagerPrefabTeamEquipRepeat",
         "Text": "Preset formation contains duplicate equipment"
     },
     {
         "Id": 20004014.0,
-        "Key": "TeamManagerPrefabTeamEquipRepeat",
+        "Key": "TeamManagerPrefabTeamEquipDataEmpty",
         "Text": "Preset team gear data is empty"
     },
     {
         "Id": 20004015.0,
-        "Key": "TeamManagerPrefabTeamEquipDataEmpty",
+        "Key": "TeamManagerPrefabTeamResonanceRepeat",
         "Text": "Preset formation contains duplicate equipped resonance"
     },
     {
         "Id": 20004016.0,
-        "Key": "TeamManagerPrefabTeamResonanceRepeat",
+        "Key": "TeamManagerPrefabCharacterEquipEmpty",
         "Text": "Position character equipment data is empty"
     },
     {
         "Id": 20004017.0,
-        "Key": "TeamManagerPrefabCharacterEquipEmpty",
+        "Key": "TeamManagerPrefabTeamNameEmpty",
         "Text": "Team name cannot be empty"
     },
     {
         "Id": 20004018.0,
-        "Key": "TeamManagerPrefabTeamNameEmpty",
+        "Key": "TeamManagerPrefabTeamNameIllegal",
         "Text": "Team name contains illegal characters"
     },
     {
         "Id": 20004019.0,
-        "Key": "TeamManagerPrefabTeamNameIllegal",
+        "Key": "TeamManagerPrefabTeamPartnerRepeat",
         "Text": "Preset formation contains duplicate equipped CUBs"
     },
     {
         "Id": 20004020.0,
-        "Key": "TeamManagerPrefabTeamPartnerRepeat",
+        "Key": "TeamManagerPrefabTeamSameCharacter",
         "Text": "Preset formation contains duplicate characters"
     },
     {
         "Id": 20004021.0,
-        "Key": "TeamManagerPrefabTeamSameCharacter",
+        "Key": "TeamManagerPrefabTeamEquipDataIsNull",
         "Text": "Preset team gear data cannot be empty"
     },
     {
         "Id": 20004022.0,
-        "Key": "TeamManagerPrefabTeamEquipDataIsNull",
+        "Key": "TeamManagerPrefabTagConfigNotFound",
         "Text": "Preset team tag is illegal"
     },
     {
         "Id": 20004023.0,
-        "Key": "TeamManagerPrefabTagConfigNotFound",
+        "Key": "TeamManagerPrefabTagDataError",
         "Text": "Preset team tag parameter error"
     },
     {
         "Id": 20004024.0,
-        "Key": "TeamManagerPrefabTagDataError",
+        "Key": "TeamManagerPrefabTagRepeat",
         "Text": "Preset teams have the same tag"
     },
     {
         "Id": 20004025.0,
-        "Key": "TeamManagerPrefabTagRepeat",
+        "Key": "TeamManagerPrefabTagTypeError",
         "Text": "Preset team has multiple tags of the same type"
     },
     {
         "Id": 20004026.0,
-        "Key": "TeamManagerPrefabTagTypeError",
+        "Key": "TeamManagerPrefabSkillCanNotSwitch",
         "Text": "Preset teams cannot select deployment form"
     },
     {
         "Id": 20004027.0,
-        "Key": "TeamManagerPrefabSkillCanNotSwitch",
+        "Key": "TeamManagerPrefabSkillSwitchError",
         "Text": "Preset team deployment form skill is illegal"
     },
     {
         "Id": 20004028.0,
-        "Key": "TeamManagerPrefabSkillSwitchError",
+        "Key": "TeamManagerPrefabSkillSwitchParamError",
         "Text": "Preset team deployment form parameter error"
     },
     {
         "Id": 20004029.0,
-        "Key": "TeamManagerPrefabSkillSwitchParamError",
-        "Text": "No character in position. Cannot set battle form"
-    },
-    {
-        "Id": 20004030.0,
         "Key": "TeamManagerPrefabSkillSwitchInEmptyPos",
         "Text": "No character in position. Cannot set battle form"
     },
@@ -29140,6 +29135,11 @@
         "Text": "20423106\u6b63\u5728\u7b49\u5f85ExFloor\u786e\u8ba4"
     },
     {
+        "Id": 20423107.0,
+        "Key": "Theatre6SpecialAttrPackSkillFullLimit",
+        "Text": "Skill at max level"
+    },
+    {
         "Id": 20424001.0,
         "Key": "GameCollectionFunctionNotOpen",
         "Text": "20424001 Game Collection event has not started yet"
@@ -29172,17 +29172,17 @@
     {
         "Id": 20425003.0,
         "Key": "DyeMergeChapterCfgNotFound",
-        "Text": "\u7ae0\u8282\u72b6\u6001\u5f02\u5e38"
+        "Text": "Chapter Status Error"
     },
     {
         "Id": 20425004.0,
         "Key": "DyeMergeStageCfgNotFound",
-        "Text": "\u5173\u5361\u72b6\u6001\u5f02\u5e38"
+        "Text": "Stage Status Error"
     },
     {
         "Id": 20425005.0,
         "Key": "DyeMergeStageNotInActivity",
-        "Text": "\u5173\u5361\u72b6\u6001\u5f02\u5e38"
+        "Text": "Stage Status Error"
     },
     {
         "Id": 20425006.0,
@@ -29217,162 +29217,162 @@
     {
         "Id": 20427001.0,
         "Key": "Theatre6PvpNotOpen",
-        "Text": "20427001\u8089\u9e3d6PVP\u672a\u5f00\u542f"
+        "Text": "Roguelike 6 PVP not yet available"
     },
     {
         "Id": 20427002.0,
         "Key": "Theatre6PvpNotInActivity",
-        "Text": "20427002 Event not available"
+        "Text": "Event not available"
     },
     {
         "Id": 20427003.0,
         "Key": "Theatre6PvpAlreadyInBattle",
-        "Text": "20427003 Already in a battle"
+        "Text": "Already in a battle"
     },
     {
         "Id": 20427004.0,
         "Key": "Theatre6PvpDataError",
-        "Text": "20427004 Data error"
+        "Text": "Data error"
     },
     {
         "Id": 20427005.0,
         "Key": "Theatre6PvpRankNotFound",
-        "Text": "20427005 Grade data not found"
+        "Text": "Rank data not found"
     },
     {
         "Id": 20427006.0,
         "Key": "Theatre6PvpScoreError",
-        "Text": "20427006 Grade Points Error"
+        "Text": "Rank score error"
     },
     {
         "Id": 20427007.0,
         "Key": "Theatre6PvpRefreshCd",
-        "Text": "20427007 Refreshing Matchmaking CD"
+        "Text": "Match refresh on cooldown"
     },
     {
         "Id": 20427008.0,
         "Key": "Theatre6PvpRefreshCountLimit",
-        "Text": "20427008\u5237\u65b0\u6b21\u6570\u8fc7\u591a"
+        "Text": "Refreshed too many times"
     },
     {
         "Id": 20427009.0,
         "Key": "Theatre6PvpInAdvanceBattle",
-        "Text": "20427008 In Advanced Battle"
+        "Text": "Promotion battle in progress"
     },
     {
         "Id": 20427010.0,
         "Key": "Theatre6PvpActionPointNotEnough",
-        "Text": "20427009 Insufficient Stamina"
+        "Text": "Insufficient Stamina"
     },
     {
         "Id": 20427011.0,
         "Key": "Theatre6PvpDefenseSlotCountError",
-        "Text": "20427010\u9632\u5b88\u9635\u5bb9\u69fd\u4f4d\u6570\u91cf\u9519\u8bef"
+        "Text": "Incorrect number of defense lineup slots"
     },
     {
         "Id": 20427012.0,
         "Key": "Theatre6PvpLineupSlotRepeatLimit",
-        "Text": "20427011\u9635\u5bb9\u540c\u4e00\u5b58\u6863\u8d85\u51fa\u4f7f\u7528\u6b21\u6570"
+        "Text": "Lineup exceeded usage limit for the same archive"
     },
     {
         "Id": 20427013.0,
         "Key": "Theatre6PvpDefenseFileNotFound",
-        "Text": "20427012\u9632\u5b88\u9635\u5bb9\u5b58\u6863\u6570\u636e\u4e0d\u5b58\u5728"
+        "Text": "Defense lineup archive data does not exist"
     },
     {
         "Id": 20427014.0,
         "Key": "Theatre6PvpNotInBattle",
-        "Text": "20427013\u4e0d\u5728\u5bf9\u6218\u4e2d"
+        "Text": "Not in a battle"
     },
     {
         "Id": 20427015.0,
         "Key": "Theatre6PvpFightRoundError",
-        "Text": "20427014\u5bf9\u6218\u5c40\u6570\u9519\u8bef"
+        "Text": "Invalid number of battle rounds"
     },
     {
         "Id": 20427016.0,
         "Key": "Theatre6PvpEnemyNotFound",
-        "Text": "20427015\u5339\u914d\u5bf9\u624b\u672a\u627e\u5230"
+        "Text": "No matching opponent found"
     },
     {
         "Id": 20427017.0,
         "Key": "Theatre6PvpFileSlotInvalid",
-        "Text": "20427016\u4e0a\u9635\u5b58\u6863\u53c2\u6570\u975e\u6cd5"
+        "Text": "Invalid deployment archive data parameters"
     },
     {
         "Id": 20427018.0,
         "Key": "Theatre6PvpBattleAlreadyFinished",
-        "Text": "20427017\u5bf9\u6218\u5df2\u7ed3\u675f"
+        "Text": "Battle has ended"
     },
     {
         "Id": 20427019.0,
         "Key": "Theatre6PvpEnemyIdInvalid",
-        "Text": "20427018\u5339\u914d\u5bf9\u624b\u53c2\u6570\u5f02\u5e38"
+        "Text": "Abnormal matched opponent parameters"
     },
     {
         "Id": 20427020.0,
         "Key": "Theatre6PvpRankConfigNotFound",
-        "Text": "20427019\u6bb5\u4f4d\u914d\u7f6e\u672a\u627e\u5230"
+        "Text": "Rank configuration not found"
     },
     {
         "Id": 20427021.0,
         "Key": "Theatre6PvpAttackLineupCountUnexpected",
-        "Text": "20427020\u8fdb\u653b\u5b58\u6863\u4e0a\u9635\u6570\u91cf\u4e0d\u7b26\u5408\u9884\u671f"
+        "Text": "The number of units deployed in the attack archive does not match expectations"
     },
     {
         "Id": 20427022.0,
         "Key": "Theatre6PvpDefenseLineupCountOverMax",
-        "Text": "20427021\u8d85\u51fa\u9632\u5b88\u5b58\u6863\u6700\u5927\u4e0a\u9635\u6570\u91cf"
+        "Text": "Exceeds the maximum number of units for the defense archive"
     },
     {
         "Id": 20427023.0,
         "Key": "Theatre6PvpModeNotUnlocked",
-        "Text": "20427022PVP\u6a21\u5f0f\u672a\u89e3\u9501"
+        "Text": "PVP mode not unlocked"
     },
     {
         "Id": 20427024.0,
         "Key": "Theatre6PvpRankRewardRepeat",
-        "Text": "20427023\u91cd\u590d\u53d1\u9001\u6bb5\u4f4d\u5956\u52b1"
+        "Text": "Duplicate rank reward sent"
     },
     {
         "Id": 20427025.0,
         "Key": "Theatre6PvpRankRewardInvalid",
-        "Text": "20427024\u6bb5\u4f4d\u5956\u52b1\u914d\u7f6e\u9519\u8bef"
+        "Text": "Rank reward configuration error"
     },
     {
         "Id": 20427026.0,
         "Key": "Theatre6PvpBuffGroupNotOpen",
-        "Text": "20427025\u5f53\u524d\u6bb5\u4f4d\u65e0\u73af\u5883\u6548\u679c\u529f\u80fd"
+        "Text": "The current rank has no environmental effect function"
     },
     {
         "Id": 20427027.0,
         "Key": "Theatre6PvpBuffMustSelect",
-        "Text": "20427026\u5f53\u524d\u6bb5\u4f4d\u73af\u5883\u6548\u679c\u4e0d\u80fd\u9009\u62e9\u4e3a\u7a7a"
+        "Text": "The environmental effect for the current rank cannot be left empty"
     },
     {
         "Id": 20427028.0,
         "Key": "Theatre6PvpBuffNotInGroup",
-        "Text": "20427027\u73af\u5883\u6548\u679c\u4e0d\u5728\u5f53\u524d\u6bb5\u4f4d\u53ef\u9009\u7ec4\u4e2d"
+        "Text": "The environmental effect is not in the selectable group for the current rank"
     },
     {
         "Id": 20427029.0,
         "Key": "Theatre6PvpBuffInvalid",
-        "Text": "20427028\u73af\u5883\u6548\u679c\u4e0d\u5408\u6cd5"
+        "Text": "Invalid environmental effect"
     },
     {
         "Id": 20427030.0,
         "Key": "Theatre6PvpBuffNotUnlocked",
-        "Text": "20427029\u73af\u5883\u6548\u679c\u672a\u89e3\u9501"
+        "Text": "Environmental effect not unlocked"
     },
     {
         "Id": 20427031.0,
         "Key": "Theatre6PvpBuffCfgNotFound",
-        "Text": "20427030\u73af\u5883\u6548\u679c\u914d\u7f6e\u4e0d\u5b58\u5728"
+        "Text": "Environment effect configuration does not exist"
     },
     {
         "Id": 20427032.0,
         "Key": "Theatre6PvpBuffGroupCfgNotFound",
-        "Text": "20427031\u73af\u5883\u6548\u679c\u7ec4\u914d\u7f6e\u4e0d\u5b58\u5728"
+        "Text": "Environment effect group configuration does not exist"
     },
     {
         "Id": 25000001.0,

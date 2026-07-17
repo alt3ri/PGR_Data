@@ -105,6 +105,10 @@ function XUiGoldenMinerHexSelect:SelectHex(index)
     if self._SelectHex == self._HexList[index] then
         return
     end
+    if self:CheckGridIsHaveByIndex(index) then
+            XUiManager.TipMsg(self._Control:GetClientHexSelectAgainTips(self._HexList[index].Type))
+        return
+    end
     self._SelectHex = self._HexList[index]
     self._SelectIndex = index
 end

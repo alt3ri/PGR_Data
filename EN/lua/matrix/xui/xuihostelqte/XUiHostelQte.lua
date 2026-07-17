@@ -18,7 +18,7 @@ function XUiHostelQte:AutoInitUi()
     self.ImgLine = self.Transform:Find("FullScreenBackground/ImgLine"):GetComponent("Image")
     self.BtnOk = self.Transform:Find("FullScreenBackground/BtnOk"):GetComponent("Button")
     self.TxtRemainTime = self.Transform:Find("SafeAreaContentPane/TxtRemainTime"):GetComponent("Text")
-    self.SliTime = self.Transform:Find("SafeAreaContentPane/SliTime"):GetComponent("Slider")
+    self.SliTime = self.Transform:Find("SafeAreaContentPane/SliTime"):GetComponent(typeof(CS.UnityEngine.UI.Slider))
 end
 
 function XUiHostelQte:GetAutoKey(uiNode,eventName)

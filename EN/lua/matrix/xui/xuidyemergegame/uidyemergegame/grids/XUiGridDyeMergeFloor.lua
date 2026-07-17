@@ -6,6 +6,7 @@ local XUiGridDyeMerge = require("XUi/XUiDyeMergeGame/UiDyeMergeGame/Grids/XUiGri
 local XUiGridDyeMergeFloor = XClass(XUiGridDyeMerge, "XUiGridDyeMergeFloor")
 
 function XUiGridDyeMergeFloor:OnStart()
+    XUiGridDyeMerge.OnStart(self)
     if self.BtnMove then
         self.BtnMove:AddEventListener(handler(self, self._OnBtnMoveClick))
     end

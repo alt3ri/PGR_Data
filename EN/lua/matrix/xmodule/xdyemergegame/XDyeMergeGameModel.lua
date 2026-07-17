@@ -6,11 +6,12 @@ function XDyeMergeGameModel:OnInit()
 end
 
 function XDyeMergeGameModel:ClearPrivate()
-
+    self:CacheCurGamingStageId(nil)
 end
 
 function XDyeMergeGameModel:ResetAll()
-
+    self._ActivityId = nil
+    self._StageRecord = nil
 end
 
 function XDyeMergeGameModel:UpdateFUllActivityData(data)
@@ -38,6 +39,14 @@ function XDyeMergeGameModel:UpdateStageRecord(stageId)
     if not table.contains(self._StageRecord, stageId) then
         table.insert(self._StageRecord, stageId)
     end
+end
+
+function XDyeMergeGameModel:CacheCurGamingStageId(stageId)
+    self._CurGamingStageId = stageId
+end
+
+function XDyeMergeGameModel:GetCurGamingStageId()
+    return self._CurGamingStageId
 end
 
 --region 本地缓存

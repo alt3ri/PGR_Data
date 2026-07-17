@@ -105,4 +105,15 @@ function XTheatre6Control:RequestPvpGetBattleRecords(cb)
     end)
 end
 
+--- 在肉鸽6界面提前获取pvp相关数据用作显示（当前包含体力 + 段位记录）
+function XTheatre6Control:RequestGetPvpPreviewInfo(cb)
+    XNetwork.CallWithAutoHandleErrorCode("Theatre6GetPvpPreviewInfoRequest", nil, function(res)
+        self._Model.Pvp:UpdateActionPointInfo(res)
+        self._Model.Pvp:UpdatePvpRankRecords(res.PvpRankRecords)
+        if cb then
+            cb()
+        end
+    end)
+end
+
 return XTheatre6Control

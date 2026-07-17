@@ -324,7 +324,7 @@ function XUiPanelGame:AutoInitUi()
     self.PanelLayout = self.Transform:Find("PanelAnswer/PanelLayout")
     self.PanelAnsPool = self.Transform:Find("PanelAnswer/PanelAnsPool")
     self.PanelTime = self.Transform:Find("PanelTime")
-    self.SliderTime = self.Transform:Find("PanelTime/SliderTime"):GetComponent("Slider")
+    self.SliderTime = self.Transform:Find("PanelTime/SliderTime"):GetComponent(typeof(CS.UnityEngine.UI.Slider))
     self.PanelReady = self.Transform:Find("PanelReady")
     self.TxtCountDown = self.Transform:Find("PanelReady/TxtCountDown"):GetComponent("Text")
 end

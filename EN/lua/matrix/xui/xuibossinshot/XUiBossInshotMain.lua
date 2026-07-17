@@ -4,6 +4,7 @@ local XBossInshotModel = require("XModule/XBossInshot/XBossInshotModel")
 
 ---@class XUiBossInshotMain:XLuaUi
 ---@field private _Control XBossInshotControl
+---@field BtnTower XUiComponent.XUiButton
 local XUiBossInshotMain = XLuaUiManager.Register(XLuaUi, "UiBossInshotMain")
 
 local SPECIAL_BOSS_INDEX_TOWER = -1
@@ -136,15 +137,19 @@ function XUiBossInshotMain:RegisterUiEvents()
 end
 
 function XUiBossInshotMain:_OnBtnTowerClicked()
-    local locked, lockedCond = self._Control:IsTowerUnlocked()
+    local locked, lockedCond, unlockTime = self._Control:IsTowerUnlocked()
     if locked then
         self:SwitchPanel(self.PANEL_STATE_TYPE.TOWER)
         CancelBtnTowerRedPoint(self._Control:GetActivityId())
-    else
+    elseif lockedCond then
         XUiManager.TipMsg(XConditionManager.GetConditionDescById(lockedCond))
+    else
+        XUiManager.TipText(
+            "BossInshotTowerLevelLockedBecauseNotInTime",
+            XUiManager.UiTipType.Tip,
+            false)
     end
 end
-
 
 function XUiBossInshotMain:OnBtnBackClick()
     if self.PanelState ~= self.PANEL_STATE_TYPE.MAIN then
@@ -264,6 +269,7 @@ function XUiBossInshotMain:InitActivityTimer()
         else
             self:RefreshTime()
             self:RefreshBossOpenTime()
+            self:RefreshTowerUnlockTime()
         end
     end, 1000)
 end
@@ -327,7 +333,7 @@ function XUiBossInshotMain:RefreshPanelMain()
     self:RefreshBossInfo()
     self:RefreshBtnTask()
 
-    local btnTowerUnlocked = self._Control:IsTowerUnlocked()
+    local btnTowerUnlocked, _, unlockTime = self._Control:IsTowerUnlocked()
 
     if btnTowerUnlocked then
         local currentIsChallenge = false
@@ -351,6 +357,31 @@ function XUiBossInshotMain:RefreshPanelMain()
         self.BtnTowerRed.gameObject:SetActiveEx(false)
         self.BtnTower:SetButtonState(CS.UiButtonState.Disable)
         self.BtnTower:ShowReddot(false)
+
+        self:RefreshTowerUnlockTime(unlockTime)
+    end
+end
+
+-- 刷新爬塔按钮解锁倒计时
+function XUiBossInshotMain:RefreshTowerUnlockTime(unlockTime)
+    -- 未传入解锁时间时实时获取
+    if unlockTime == nil then
+        local btnTowerUnlocked, _, curUnlockTime = self._Control:IsTowerUnlocked()
+        if btnTowerUnlocked then
+            return
+        end
+        unlockTime = curUnlockTime
+    end
+
+    self.BtnTower:ActiveTextByGroup(2, XTool.IsNumberValid(unlockTime))
+    if XTool.IsNumberValid(unlockTime) then
+        local startTime = XFunctionManager.GetStartTimeByTimeId(unlockTime)
+        local leftTime = startTime - XTime.GetServerNowTimestamp()
+        if leftTime < 0 then
+            leftTime = 0
+        end
+        local desc = XUiHelper.GetText("BossInshotTowerLockedNotInTime", XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.DAY_HOUR_MINUTE))
+        self.BtnTower:SetNameByGroup(2, desc)
     end
 end
 

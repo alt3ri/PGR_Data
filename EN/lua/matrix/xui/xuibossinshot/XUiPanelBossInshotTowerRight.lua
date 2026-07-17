@@ -190,9 +190,10 @@ function XUiPanelBossInshotTowerRight:_RefreshSkillInfo()
     end
 
     -- 练习关按钮
+    local isTeachPass = self._Control:IsTeachStagePass()
     local practiceStageId = self._Control:GetSkillPracticeStageId(skillId)
     local isShowPractice = practiceStageId ~= 0
-    self.BtnPractice.gameObject:SetActiveEx(isShowPractice)
+    self.BtnPractice.gameObject:SetActiveEx(isShowPractice and isTeachPass)
 end
 
 function XUiPanelBossInshotTowerRight:RefreshTowerBossSkill(stageId)

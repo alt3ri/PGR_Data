@@ -19,7 +19,7 @@ function XBuffScript10271090:OnLuaSkillStart(eventArgs)
     if eventArgs._launcherUUID ~= self._npcUUID then return end
     self._proxy:Theatre6ChangeStaminaValue(self._enemyUUID, self.staminaChange, 0)
     self._proxy:Theatre6ChangeStaminaValue(self._npcUUID, self.staminaChange, 0)
-    local originAttrib1 = ( self._proxy:GetNpcGameplayAttribValue(self._npcUUID,ETheatre6AttribType.WrestlePoint) + self._proxy:GetNpcGameplayAttribValue(self._npcUUID,ETheatre6AttribType.OverClock) ) / self.BuffPerAttrib--取一下玩家的拼刀和超算属性
+    local originAttrib1 = ( self._proxy:GetNpcGameplayAttribValue(self._npcUUID,ETheatre6AttribType.WrestlePoint) + self._proxy:GetNpcGameplayAttribValue(self._npcUUID,ETheatre6AttribType.OverClock) ) // self.BuffPerAttrib--取一下玩家的拼刀和超算属性
     --self:LogError(".....播报下属性"..originAttrib1)
     self._proxy:ApplyMagic(self._npcUUID,self._npcUUID,self.StackBuff,0,0,originAttrib1) --发对应层数的护盾buff
 end

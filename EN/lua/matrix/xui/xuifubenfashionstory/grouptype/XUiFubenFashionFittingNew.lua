@@ -72,6 +72,10 @@ function XUiFubenFashionFittingNew:UpdateLeftTime(isClose)
     if isClose then
         XUiManager.TipText("FashionStoryActivityEnd")
         XLuaUiManager.RunMain()
+    else
+        for _, ctrl in ipairs(self.StagesList) do
+            ctrl:RefreshLockCountDown()
+        end
     end
 end
 --endregion

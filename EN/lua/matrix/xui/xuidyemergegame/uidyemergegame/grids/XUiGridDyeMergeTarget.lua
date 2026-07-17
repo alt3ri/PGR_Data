@@ -8,11 +8,11 @@ local XUiGridDyeMerge = require("XUi/XUiDyeMergeGame/UiDyeMergeGame/Grids/XUiGri
 ---@field RImgFinish @混色成功时显示，需显示目标颜色
 ---@field RImgDye @用来表示混合颜色的结果，包括冲突的情况，需要根据相邻颜色读表设置
 ---@field ImgSelect|nil @选中时显示
----@field RImgObject @图标，关联颜色，需要注意未合成目标颜色时有单独的配置设置
 ---@field BtnMove|nil @点击按钮, 可移动的预制存在该引用，表示可点击选择并移动位置
 local XUiGridDyeMergeTarget = XClass(XUiGridDyeMerge, "XUiGridDyeMergeTarget")
 
 function XUiGridDyeMergeTarget:OnStart()
+    XUiGridDyeMerge.OnStart(self)
     if self.BtnMove then
         self.BtnMove:AddEventListener(handler(self, self._OnBtnMoveClick))
     end
@@ -31,6 +31,7 @@ end
 ---@overload
 function XUiGridDyeMergeTarget:Refresh(uid)
     self.Uid = uid
+
     local gc = self._Control.GamingControl
     local block = gc.BlocksControl:GetBlockByUid(uid)
     if not block then return end
@@ -67,42 +68,42 @@ function XUiGridDyeMergeTarget:Refresh(uid)
         -- 满足目标：显示通关态
         local successCfg = isAnyColorTarget and gc:GetTableDyeMergeBlocksConfig(receivedColor) or targetColorCfg
         self:_ShowSuccessState(successCfg)
-    elseif count == 0 then
-        -- 无相邻颜色
-        self:_SetAllHidden()
-    elseif count == 1 then
-        -- 仅 1 色且未满足目标
-        self:_SetFinishVisible(false)
-        self:_SetObjectVisible(false)
-        self:_ShowSingleColorDye(sorted[1], gc)
     else
-        -- 2+ 色且未满足目标：先按 colorId 去重（sorted 已升序，相同颜色必相邻）
-        local uniqueCount = 1
-        for i = 2, count do
-            if sorted[i].colorId ~= sorted[i - 1].colorId then
-                uniqueCount = uniqueCount + 1
-            end
-        end
-
-        self:_SetFinishVisible(false)
-        if uniqueCount == 1 then
-            -- 多方向同色，视为单色显示
-            self:_SetObjectVisible(false)
+        self._IsSpineActive = false
+        self:_ClearObjectSpine()
+        if count == 0 then
+            -- 无相邻颜色
+            self:_SetAllHidden()
+        elseif count == 1 then
+            -- 仅 1 色且未满足目标
+            self:SetCompletionBadgeVisible(false)
             self:_ShowSingleColorDye(sorted[1], gc)
-        elseif uniqueCount == 2 then
-            local mergeColor = self:_TryPairMerge(sorted, gc)
-            if mergeColor then
-                -- 恰好 2 色种且能合成：显示合成色的 IconMix 图片
-                self:_ShowSingleDyeImage(gc:GetTableDyeMergeColorMix(mergeColor), false)
+        else
+            -- 2+ 色且未满足目标：先按 colorId 去重（sorted 已升序，相同颜色必相邻）
+            local uniqueCount = 1
+            for i = 2, count do
+                if sorted[i].colorId ~= sorted[i - 1].colorId then
+                    uniqueCount = uniqueCount + 1
+                end
+            end
+
+            self:SetCompletionBadgeVisible(false)
+            if uniqueCount == 1 then
+                -- 多方向同色，视为单色显示
+                self:_ShowSingleColorDye(sorted[1], gc)
+            elseif uniqueCount == 2 then
+                local mergeColor = self:_TryPairMerge(sorted, gc)
+                if mergeColor then
+                    -- 恰好 2 色种且能合成：显示合成色的 IconMix 图片
+                    self:_ShowSingleDyeImage(gc:GetTableDyeMergeColorMix(mergeColor), false)
+                else
+                    -- 恰好 2 色种但不能合成：显示 mix 失败
+                    self:_ShowSingleDyeImage(gc:GetTableDyeMergeColorMix(sorted[1].colorId), true)
+                end
             else
-                -- 恰好 2 色种但不能合成：显示 mix 失败
+                -- 色种 >2：显示 mix 失败
                 self:_ShowSingleDyeImage(gc:GetTableDyeMergeColorMix(sorted[1].colorId), true)
             end
-            self:_SetObjectVisible(false)
-        else
-            -- 色种 >2：显示 mix 失败
-            self:_ShowSingleDyeImage(gc:GetTableDyeMergeColorMix(sorted[1].colorId), true)
-            self:_SetObjectVisible(false)
         end
     end
 
@@ -150,11 +151,15 @@ end
 
 --region 显示状态
 
---- 通关态：显示 RImgFinish + RImgObject，隐藏 RImgDye
+--- 通关态：显示 RImgFinish + 骨骼动画，隐藏 RImgDye
 function XUiGridDyeMergeTarget:_ShowSuccessState(colorCfg)
     self:_HideAllDyeImages()
-    self:_SetFinishVisible(true, colorCfg and colorCfg.IconActive)
-    self:_SetObjectVisible(true, colorCfg and colorCfg.IconTop)
+    self:SetCompletionBadgeVisible(true, colorCfg and colorCfg.IconActive)
+    if self._IsSpineActive then return end
+    self._IsSpineActive = true
+    if colorCfg and colorCfg.IconTop then
+        self:_PlayObjectSpine(colorCfg.IconTop)
+    end
 end
 
 --- 单色：显示 IconMix（不控制方向）
@@ -197,29 +202,23 @@ end
 
 function XUiGridDyeMergeTarget:_SetAllHidden()
     self:_HideAllDyeImages()
-    self:_SetFinishVisible(false)
-    self:_SetObjectVisible(false)
+    self:SetCompletionBadgeVisible(false)
 end
 
-function XUiGridDyeMergeTarget:_SetFinishVisible(visible, icon)
-    if self.RImgFinish then
-        self.RImgFinish.gameObject:SetActiveEx(visible)
-        if visible and icon then
-            self.RImgFinish:SetRawImage(icon)
-        end
-    end
-end
-
-function XUiGridDyeMergeTarget:_SetObjectVisible(visible, icon)
-    if self.RImgObject then
-        self.RImgObject.gameObject:SetActiveEx(visible)
-        if visible and icon then
-            self.RImgObject:SetRawImage(icon)
-        end
+function XUiGridDyeMergeTarget:SetCompletionBadgeVisible(visible, icon)
+    if not self.RImgFinish then return end
+    self.RImgFinish.gameObject:SetActiveEx(visible)
+    if visible and icon then
+        self.RImgFinish:SetRawImage(icon)
     end
 end
 
 --endregion
+
+function XUiGridDyeMergeTarget:OnRecycle()
+    XUiGridDyeMerge.OnRecycle(self)
+    self._IsSpineActive = false
+end
 
 function XUiGridDyeMergeTarget:_OnBtnMoveClick()
     if self._SendGridClickSignal then

@@ -9,6 +9,8 @@ local NetworkLockFlagEnum = {
     DyeMergeTryCompleteStageRequest = 2,
 }
 
+local LockMaxTime = 15 * 60 -- 请求锁最多锁15分钟，超时后放开
+
 function XDyeMergeNetworkAgency:OnInit()
     self._NetworkRequestLock = nil
 end
@@ -18,7 +20,11 @@ function XDyeMergeNetworkAgency:InitRpc()
 end
 
 function XDyeMergeNetworkAgency:InitEvent()
+    XEventManager.AddEventListener(XEventId.EVENT_NETWORK_DISCONNECT, self.ClearNetLocks, self)
+end
 
+function XDyeMergeNetworkAgency:RemoveEvent()
+    XEventManager.RemoveEventListener(XEventId.EVENT_NETWORK_DISCONNECT, self.ClearNetLocks, self)
 end
 
 function XDyeMergeNetworkAgency:ResetAll()
@@ -32,7 +38,23 @@ end
 --region Lock - 简单的逻辑锁，主要是控制协议请求频率
 
 function XDyeMergeNetworkAgency:CheckFlagIsLock(flag)
-    return self._NetworkRequestLock and self._NetworkRequestLock[flag] or false
+    if not self._NetworkRequestLock or not self._NetworkRequestLock[flag] then
+        return false
+    end
+
+    local data = self._NetworkRequestLock[flag]
+    
+    if XTool.IsNumberValidEx(data) then
+        -- 如果是数值，需要计算cd
+        local passTime = XTime.GetServerNowTimestamp() - data
+
+        if passTime > LockMaxTime then
+            self:UnlockWithFlag(flag)
+            return false
+        end
+    end
+    
+    return true
 end
 
 function XDyeMergeNetworkAgency:LockWithFlag(flag)
@@ -40,7 +62,7 @@ function XDyeMergeNetworkAgency:LockWithFlag(flag)
         self._NetworkRequestLock = {}
     end
     
-    self._NetworkRequestLock[flag] = true
+    self._NetworkRequestLock[flag] = XTime.GetServerNowTimestamp()
 end
 
 function XDyeMergeNetworkAgency:UnlockWithFlag(flag)
@@ -51,6 +73,9 @@ function XDyeMergeNetworkAgency:UnlockWithFlag(flag)
     self._NetworkRequestLock[flag] = false
 end
 
+function XDyeMergeNetworkAgency:ClearNetLocks()
+    self._NetworkRequestLock = nil
+end
 --endregion
 
 --region Network Request

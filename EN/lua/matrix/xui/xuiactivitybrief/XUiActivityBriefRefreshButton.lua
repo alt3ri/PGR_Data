@@ -191,18 +191,20 @@ end
 --region 解锁动画相关
 
 ---检查是否有动画要解锁
-function XUiActivityBriefRefreshButton:CheckBtnUnlockAnim()
+-- finishCb：所有按钮解锁动画播放完成后回调（无解锁动画时也会立即回调）
+function XUiActivityBriefRefreshButton:CheckBtnUnlockAnim(finishCb)
     self.UnlockAcitvityList = XDataCenter.ActivityBriefManager.GetNeedUnlockAnimGroupIdList(self.PanelType)
     if XTool.IsTableEmpty(self.UnlockAcitvityList) then
+        if finishCb then finishCb() end
         return
     end
     -- 播放列表索引
     self.UnLockAnimPlayIndex = 1
-    self:PlayBtnUnlockAnim()
+    self:PlayBtnUnlockAnim(finishCb)
 end
 
 ---动画递归回调方法
-function XUiActivityBriefRefreshButton:PlayBtnUnlockAnim()
+function XUiActivityBriefRefreshButton:PlayBtnUnlockAnim(finishCb)
     local activityGroupId = self.UnlockAcitvityList[self.UnLockAnimPlayIndex]
     local btn = self.TlActivityBrieButton[activityGroupId]
     if self.UnLockAnimPlayIndex == 1 then
@@ -216,11 +218,12 @@ function XUiActivityBriefRefreshButton:PlayBtnUnlockAnim()
             if XTool.IsNumberValid(btn._RedPointEventId) then
                 XRedPointManager.Check(btn._RedPointEventId)
             end
-            self:PlayBtnUnlockAnim()
+            self:PlayBtnUnlockAnim(finishCb)
         end)
     else
         self.UnLockAnimPlayIndex = 1
         XLuaUiManager.SetMask(false)
+        if finishCb then finishCb() end
     end
 end
 
@@ -1205,13 +1208,17 @@ function XUiActivityBriefRefreshButton:RefreshReward(activityGroupId, reOpen)
     -- 活动面板奖励显示优化——客户端
     local btn = self.TlActivityBrieButton[activityGroupId]
     XTool.InitUiObject(btn)
-    if btn:IsLock() then
-        local panelReward = btn.PanelReward
+
+    local panelReward = btn.PanelReward
+    -- 无论按钮锁定还是开放,都先默认隐藏,避免预制体自带的PanelReward节点在"开放且无奖励配置"时残留显示
+    if panelReward then
         panelReward.gameObject:SetActiveEx(false)
+    end
+
+    if btn:IsLock() then
         return
     end
-    
-    local panelReward = btn.PanelReward
+
     local config = XActivityBriefConfigs.GetActivityGroupConfig(activityGroupId)
     local activityRewardIds = config.ActivityRewardIds
     if activityRewardIds and #activityRewardIds > 0 then

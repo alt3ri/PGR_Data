@@ -234,10 +234,26 @@ end
 
 function XTheatre6SubPvpModel:GetActivityConfig()
     local activityId = self:GetCurActivityId()
-    if not XTool.IsNumberValid(activityId) then
+    if XTool.IsNumberValid(activityId) then
+        return self._MainModel:GetPvpActivityConfig(activityId)
+    end
+
+    -- activityId 为0时，读取全表内容，取Id最大的配置
+    local configs = self._MainModel:GetPvpActivityConfigs()
+    if XTool.IsTableEmpty(configs) then
         return nil
     end
-    return self._MainModel:GetPvpActivityConfig(activityId)
+
+    local maxConfig
+    local maxId = 0
+    for _, config in pairs(configs) do
+        local configId = config and config.Id or 0
+        if XTool.IsNumberValid(configId) and configId > maxId then
+            maxId = configId
+            maxConfig = config
+        end
+    end
+    return maxConfig
 end
 
 ---整体获取对战记录
@@ -311,6 +327,13 @@ end
 ---@return XTheatre6PvpRankInfo|nil
 function XTheatre6SubPvpModel:GetRankInfo()
     return self._RankInfo
+end
+
+function XTheatre6SubPvpModel:UpdatePvpRankRecords(rankRecords)
+    if not self._ActivityData then
+        self._ActivityData = {}
+    end
+    self._ActivityData.PvpRankRecords = rankRecords or {}
 end
 
 ---怪物 SkillIds 转为存档技能数据，对齐服务端 Theatre6Skill.AddSkillSlot 的槽位优先级

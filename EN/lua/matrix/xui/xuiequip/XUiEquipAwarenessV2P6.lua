@@ -23,13 +23,13 @@ function XUiEquipAwarenessV2P6:OnStart(characterId)
     self.CharacterId = characterId
 
     -- 由动画展开意识面板
-    local anim = self.PanelEquip.PanelEquipEnable:GetComponent("PlayableDirector")
+    local anim = self.PanelEquip.PanelEquipEnable:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
     anim.time = anim.duration
     anim:Play()
     self.PanelEquip.PanelAwareness.gameObject:SetActiveEx(true)
 
     -- 切换按钮不显示，不可点击
-    local canvasGroup = self.PanelEquip.BtnFold:GetComponent("CanvasGroup")
+    local canvasGroup = self.PanelEquip.BtnFold:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
     canvasGroup.alpha = 0
     canvasGroup.blocksRaycasts = false
 

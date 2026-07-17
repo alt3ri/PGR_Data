@@ -42,8 +42,6 @@ function XBuffScript1025815:HandleEvent(eventType, eventArgs)
     if eventArgs.UUID == self._uuid then return end
     if self._canUse == 2 then return end
     
-    XLog.Warning("敌方npc3："..self._enemyUUID)
-    
     --获取下对方身上buff的等级，自身添加同等级的1.5倍效果buff
     if self._proxy:CheckBuffByKind(self._enemyUUID, self._enemyAttkBuff) then
         if self._canUse == 2 then return end

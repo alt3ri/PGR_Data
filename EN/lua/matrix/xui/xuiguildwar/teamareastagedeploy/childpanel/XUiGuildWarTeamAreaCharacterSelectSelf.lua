@@ -225,7 +225,7 @@ function XUiGuildWarTeamAreaCharacterSelectSelf:UpdateCharacterData()
     XUiHelper.RefreshCustomizedList(self.BtnElementDetail.transform, self.RImgCharElement1, count, function(index, grid)
         local elementConfig = XMVCA.XCharacter:GetCharElement(elementList[index])
         local icon = elementConfig.Icon
-        grid:GetComponent("RawImage"):SetRawImage(icon)
+        grid:GetComponent(typeof(CS.UnityEngine.UI.RawImage)):SetRawImage(icon)
     end)
 end
 

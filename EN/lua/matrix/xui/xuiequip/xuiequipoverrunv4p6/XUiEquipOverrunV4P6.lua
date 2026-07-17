@@ -31,6 +31,8 @@ local OVERRUN_GRID_CLASS = {
 ---@field UiPanelDetail XUiEquipOverrunV4P6PanelDetail
 ---@field UiTxtProgress UnityEngine.UI.Text
 ---@field TagBgMax UnityEngine.GameObject
+---@field BgTranslateRight UnityEngine.Transform
+---@field BgTranslateLeft UnityEngine.Transform
 ---@field BtnNum1 CS.XUiButton  -- 谐振等级1 切换按钮
 ---@field BtnNum2 CS.XUiButton  -- 谐振等级2 切换按钮
 ---@field BtnNum3 CS.XUiButton  -- 谐振等级3 切换按钮
@@ -48,6 +50,9 @@ function XUiEquipOverrunV4P6:OnStart()
     self.EquipId = self.ParentUi.EquipId
     self.TemplateId = self.ParentUi.TemplateId
     self.Equip = self._Control:GetEquip(self.EquipId)
+    local root = self.ParentUi.UiModelGo.transform
+    self.BgTranslateRight = root:FindTransform("BgTranslateRight")
+    self.BgTranslateLeft = root:FindTransform("BgTranslateLeft")
     local characterId = XTool.IsNumberValidEx(self.ParentUi.CharacterId) and self.ParentUi.CharacterId or XMVCA.XEquip:GetWeaponOverrunCharacterId(self.TemplateId)
     self.OverrunCfgIds = self._Control:GetWeaponOverrunCfgIds(self.TemplateId, characterId)
     self:InitGridOverruns()
@@ -59,6 +64,7 @@ function XUiEquipOverrunV4P6:OnEnable()
     self.ParentUi:DisableWeaponRotate()
     self.ParentUi:DoTweenRotateWeaponToOrigin()
     self:RefreshVirtualCamera()
+    self.ParentUi:UpdateOverrunSceneEffect()
     self:Refresh()
 end
 
@@ -73,6 +79,7 @@ function XUiEquipOverrunV4P6:Refresh()
         self.UiPanelDetail:Refresh()
     end
     self:RefreshGridOverruns()
+    self:RefreshGridOverrunVisible()
     self:RefreshProgress()
 end
 
@@ -105,20 +112,33 @@ function XUiEquipOverrunV4P6:RefreshGridOverruns()
     end
 end
 
+function XUiEquipOverrunV4P6:GetUiLayoutKey()
+    return self.SelectIndex or 0
+end
+
+function XUiEquipOverrunV4P6:GetOverrunUiNodePos(overrunCfg)
+    local layoutKey = self:GetUiLayoutKey()
+    local x = overrunCfg.UiNodePosX and overrunCfg.UiNodePosX[layoutKey]
+    local y = overrunCfg.UiNodePosY and overrunCfg.UiNodePosY[layoutKey]
+    return x, y
+end
+
 function XUiEquipOverrunV4P6:RefreshGridOverrunPositions(isImmediate)
-    local isShowDetail = self:GetIsShowPanelDetail()
-    for level, overrunCfgId in pairs(self.OverrunCfgIds) do
-        local overrunCfg = self._Control:GetWeaponOverrunConfigById(overrunCfgId)
-        local go = self["PanelLevel" .. level]
-        local rectTransform = go:GetComponent("RectTransform")
-        local x = isShowDetail and overrunCfg.PanelPosXDetail or overrunCfg.PanelPosX
-        local y = isShowDetail and overrunCfg.PanelPosYDetail or overrunCfg.PanelPosY
-        local targetPos = CS.UnityEngine.Vector2(x, y)
-        if isImmediate then
-            rectTransform.anchoredPosition = targetPos
-        else
-            rectTransform:DOKill()
-            rectTransform:DOAnchorPos(targetPos, PANEL_LEVEL_MOVE_DURATION)
+    for _, gridOverrun in pairs(self.GridOverrunDic) do
+        local overrunCfg = gridOverrun:GetOverrunConfig()
+        local x, y = self:GetOverrunUiNodePos(overrunCfg)
+        if x ~= nil and y ~= nil then
+            local rectTransform = gridOverrun.Transform:GetComponent(typeof(CS.UnityEngine.RectTransform))
+            local targetPos = CS.UnityEngine.Vector2(x, y)
+            if isImmediate then
+                rectTransform.anchoredPosition = targetPos
+            else
+                rectTransform:DOKill()
+                gridOverrun:SetLineVisible(false)
+                rectTransform:DOAnchorPos(targetPos, PANEL_LEVEL_MOVE_DURATION):OnComplete(function()
+                    gridOverrun:SetLineVisible(true)
+                end)
+            end
         end
     end
 end
@@ -133,17 +153,9 @@ function XUiEquipOverrunV4P6:RefreshVirtualCamera()
 end
 
 function XUiEquipOverrunV4P6:RefreshGridOverrunVisible()
-    local selectIndex = self.SelectIndex
-    if selectIndex then
-        local selectedCfg = self._Control:GetWeaponOverrunConfigById(self.OverrunCfgIds[selectIndex])
-        for level, gridOverrun in pairs(self.GridOverrunDic) do
-            local isVisible = selectIndex == level or table.contains(selectedCfg.ShowOtherLevels, level)
-            gridOverrun:SetVisible(isVisible)
-        end
-    else
-        for _, gridOverrun in pairs(self.GridOverrunDic) do
-            gridOverrun:Open()
-        end
+    for _, gridOverrun in pairs(self.GridOverrunDic) do
+        local x, y = self:GetOverrunUiNodePos(gridOverrun:GetOverrunConfig())
+        gridOverrun:SetVisible(x ~= nil and y ~= nil)
     end
 end
 
@@ -153,6 +165,10 @@ end
 
 function XUiEquipOverrunV4P6:SetSelectIndex(index)
     local prev = self.SelectIndex
+    if prev == index then
+        return
+    end
+
     self.SelectIndex = index
 
     -- 切换GridOverrun选中状态
@@ -161,6 +177,7 @@ function XUiEquipOverrunV4P6:SetSelectIndex(index)
     end
 
     self:RefreshVirtualCamera()
+    self.ParentUi:UpdateOverrunSceneEffect()
     self:RefreshGridOverrunVisible()
     self:RefreshBtnNums()
 
@@ -170,8 +187,8 @@ function XUiEquipOverrunV4P6:SetSelectIndex(index)
     elseif prev == nil then
         self:ShowPanelDetail()
     elseif prev ~= index then
-        -- TODO 播放切换动画
         self.UiPanelDetail:Refresh()
+        self:RefreshGridOverrunPositions(false)
     end
 end
 
@@ -236,11 +253,12 @@ end
 
 function XUiEquipOverrunV4P6:ShowPanelDetail()
     self:PlayAnimation("BgTranslateLeft")
+    self.BgTranslateLeft:PlayTimelineAnimation()
     self.ParentUi:ShowPanelTabGroup(false)
     self.PanelActivated.gameObject:SetActiveEx(false)
 
-    self:RefreshGridOverrunPositions(false)
     self:RefreshGridOverruns()
+    self:RefreshGridOverrunPositions(false)
 
     if not self.UiPanelDetail then
         self.UiPanelDetail = XUiEquipOverrunV4P6PanelDetail.New(self.PanelDetail, self)
@@ -250,11 +268,12 @@ end
 
 function XUiEquipOverrunV4P6:HidePanelDetail()
     self:PlayAnimation("BgTranslateRight")
+    self.BgTranslateRight:PlayTimelineAnimation()
     self.ParentUi:ShowPanelTabGroup(true)
     self.PanelActivated.gameObject:SetActiveEx(true)
 
-    self:RefreshGridOverrunPositions(false)
     self:RefreshGridOverruns()
+    self:RefreshGridOverrunPositions(false)
 
     if self.UiPanelDetail then
         self.UiPanelDetail:Close()

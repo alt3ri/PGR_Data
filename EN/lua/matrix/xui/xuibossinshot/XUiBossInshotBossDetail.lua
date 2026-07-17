@@ -42,6 +42,7 @@ function XUiBossInshotBossDetail:OnDisable()
     if self._UiPanelChooseBoss then self._UiPanelChooseBoss:Close() end
     if self._PanelTowerRightTowerHigh then self._PanelTowerRightTowerHigh:Close() end
     if self._PanelTowerRightTowerLow then self._PanelTowerRightTowerLow:Close() end
+    self._TowerRightSide = nil
 end
 
 function XUiBossInshotBossDetail:RegisterUiEvents()
@@ -211,6 +212,13 @@ function XUiBossInshotBossDetail:OnTowerSelectLevel(levelConf, towerData)
 
         self._PanelTowerRightTower:Open()
         self._PanelTowerRightTower:RefreshAsTower(self._BossInfo)
+
+        -- 在 low<->high 之间切换时播放切换动画
+        local newTowerRightSide = isChallengeTower and "PanelBgLowToHight" or "PanelBgHightToLow"
+        if not self._TowerRightSide or self._TowerRightSide ~= newTowerRightSide then
+            self.Parent:PlayAnimation(newTowerRightSide)
+        end
+        self._TowerRightSide = newTowerRightSide
     end
 end
 
@@ -273,6 +281,8 @@ function XUiBossInshotBossDetail:RefreshAsNormal(bossId, difficultyIndex, skillI
     self._PanelTowerRightTower = self._PanelTowerRightTowerLow
     self._PanelTowerRightTower:Open()
     self._PanelTowerRightTower:RefreshAsNormal(self._BossInfo)
+    self.Parent:PlayAnimation("PanelBgHightToLow")
+    self._TowerRightSide = nil
 end
 
 

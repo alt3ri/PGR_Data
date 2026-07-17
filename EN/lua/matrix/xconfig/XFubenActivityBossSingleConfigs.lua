@@ -312,6 +312,18 @@ function XFubenActivityBossSingleConfigs.GetBossLevelScoreCOByScore(score)
     return lastCO
 end
 
+function XFubenActivityBossSingleConfigs.GetNeedCharacterCount(stageId)
+    if BossChallengeTemplates == nil then
+        return 3
+    end
+    local challengeId = XFubenActivityBossSingleConfigs.GetChanllengeIdByStageId(stageId)
+    local cfg = BossChallengeTemplates[challengeId]
+    if not cfg or not XTool.IsNumberValid(cfg.CharacterCount) then
+        return 3
+    end
+    return cfg.CharacterCount
+end
+
 function XFubenActivityBossSingleConfigs.GetBossTimeScoreCOByTime(useTime)
     if useTime == nil or useTime<=0  then return BossTimeScore[1] end
 

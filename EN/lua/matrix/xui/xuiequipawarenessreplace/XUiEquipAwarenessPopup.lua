@@ -37,7 +37,7 @@ function XUiEquipAwarenessPopup:OnStart(rootUi, HideStrengthenBtn, equipId, char
     self.InitCharacterId = charaterId
     self.HideStrengthenBtn = HideStrengthenBtn
     self.HideAllBtns = hideAllBtns
-    self.PanelSelectRectTransform = self.PanelSelect:GetComponent("RectTransform")
+    self.PanelSelectRectTransform = self.PanelSelect:GetComponent(typeof(CS.UnityEngine.RectTransform))
 end
 
 function XUiEquipAwarenessPopup:OnEnable()

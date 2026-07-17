@@ -150,12 +150,12 @@ function XTheatre6Model:GetNewContentShowed()
     return self._SaveUtil:GetDataByBlockKey(SAVE_KEY_PERSISTENT, self:GetNewContentShowedKey())
 end
 
-function XTheatre6Model:GetNewCharacterShowTagsKey()
-    return string.format("Theatre6NewCharacterShowTags_%d", XPlayer.Id)
+function XTheatre6Model:GetNewCharacterShowTagsKey(tagType)
+    return string.format("Theatre6NewCharacterShowTags_%d_%d", XPlayer.Id, tagType or XEnumConst.Theatre6.CharacterNewTagType.Game)
 end
 
-function XTheatre6Model:AddNewCharacterShowTag(id)
-    local tags = self:GetNewCharacterShowTags()
+function XTheatre6Model:AddNewCharacterShowTag(id, tagType)
+    local tags = self:GetNewCharacterShowTags(tagType)
 
     if not tags then
         tags = {}
@@ -163,11 +163,11 @@ function XTheatre6Model:AddNewCharacterShowTag(id)
 
     tags[id] = true
 
-    self._SaveUtil:SaveDataByBlockKey(SAVE_KEY_PERSISTENT, self:GetNewCharacterShowTagsKey(), tags)
+    self._SaveUtil:SaveDataByBlockKey(SAVE_KEY_PERSISTENT, self:GetNewCharacterShowTagsKey(tagType), tags)
 end
 
-function XTheatre6Model:GetNewCharacterShowTags()
-    return self._SaveUtil:GetDataByBlockKey(SAVE_KEY_PERSISTENT, self:GetNewCharacterShowTagsKey())
+function XTheatre6Model:GetNewCharacterShowTags(tagType)
+    return self._SaveUtil:GetDataByBlockKey(SAVE_KEY_PERSISTENT, self:GetNewCharacterShowTagsKey(tagType))
 end
 
 function XTheatre6Model:GetPvpLocalRecordData(key)
@@ -192,6 +192,14 @@ end
 
 function XTheatre6Model:GetDifficultyChooseIndex(characterId)
     return self._SaveUtil:GetDataByBlockKey(SAVE_KEY_PERSISTENT, string.format("Theatre6DifficultyChoose_%s", characterId))
+end
+
+function XTheatre6Model:IsChooseEnvRedPoint()
+    return not self._SaveUtil:GetDataByBlockKey(SAVE_KEY_PERSISTENT, "DefendChooseEnv")
+end
+
+function XTheatre6Model:CloseChooseEnvRedPoint()
+    self._SaveUtil:SaveDataByBlockKey(SAVE_KEY_PERSISTENT, "DefendChooseEnv", true)
 end
 
 return XTheatre6Model

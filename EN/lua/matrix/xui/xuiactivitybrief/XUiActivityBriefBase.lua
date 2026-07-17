@@ -36,25 +36,28 @@ function XUiActivityBriefBase:OnStart(type)
         if firstOpen then
             if OpMovieId ~= 0 then
                 self:PlayMovie(function()
-                    self:PlaySpecialEnterAnim()
-                    self.UiActivityBriefRefreshButton:RefreshButtonsWithRewardAnimation()
-                    -- 检测打开当期生命树章节弹窗
-                    XMVCA.XLifeTree:CheckOpenUiLifeTreeChapterUnlockCurVersion()
+                    self:PlaySpecialEnterAnim(function()
+                        self.UiActivityBriefRefreshButton:RefreshButtonsWithRewardAnimation()
+                        -- 检测打开当期生命树章节弹窗（等入场动画播完再弹，避免打断入场动画）
+                        XMVCA.XLifeTree:CheckOpenUiLifeTreeChapterUnlockCurVersion()
+                    end)
                 end)
             else
-                self:PlaySpecialEnterAnim(function() 
-                    self.UiActivityBriefRefreshButton:CheckBtnUnlockAnim()
+                self:PlaySpecialEnterAnim(function()
                     self.UiActivityBriefRefreshButton:RefreshButtonsWithRewardAnimation()
-                    -- 检测打开当期生命树章节弹窗
-                    XMVCA.XLifeTree:CheckOpenUiLifeTreeChapterUnlockCurVersion()
+                    -- 检测打开当期生命树章节弹窗（等按钮解锁动画播完再弹，避免打断入场动画）
+                    self.UiActivityBriefRefreshButton:CheckBtnUnlockAnim(function()
+                        XMVCA.XLifeTree:CheckOpenUiLifeTreeChapterUnlockCurVersion()
+                    end)
                 end)
             end
         else
-            self:PlayEnterAnim(function() 
-                self.UiActivityBriefRefreshButton:CheckBtnUnlockAnim()
+            self:PlayEnterAnim(function()
                 self.UiActivityBriefRefreshButton:RefreshButtonsWithRewardAnimation()
-                -- 检测打开当期生命树章节弹窗
-                XMVCA.XLifeTree:CheckOpenUiLifeTreeChapterUnlockCurVersion()
+                -- 检测打开当期生命树章节弹窗（等按钮解锁动画播完再弹，避免打断入场动画）
+                self.UiActivityBriefRefreshButton:CheckBtnUnlockAnim(function()
+                    XMVCA.XLifeTree:CheckOpenUiLifeTreeChapterUnlockCurVersion()
+                end)
             end)
         end
     end
@@ -205,6 +208,9 @@ function XUiActivityBriefBase:PlayEnterAnim(cb)
             self:PlayAnimationWithMask("AnimEnable2", cb)
             self:PlaySceneEnterAnim()
         elseif self.BgType == XActivityBriefConfigs.BgType.Video then
+            -- 注意：此分支未透传 cb，入场动画播完不会触发 cb（含按钮解锁动画、生命树弹窗检测）。
+            -- 属历史遗留，Video 类型主面板上次使用为 2022-10~11，此后一直是 Spine，故暂不修复。
+            -- 若未来主面板重新配成 Video(BgType=3)，需给 PlayVideoEnterAnim 补 cb 透传。
             self:PlayVideoEnterAnim()
         end
     else

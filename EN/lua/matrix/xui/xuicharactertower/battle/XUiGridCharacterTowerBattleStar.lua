@@ -22,10 +22,10 @@ function XUiGridCharacterTowerBattleStar:InitAutoScript()
 end
 
 function XUiGridCharacterTowerBattleStar:AutoInitUi()
-    self.BtnActive = self.Transform:Find("BtnActive"):GetComponent("Button")
-    self.TxtValue = self.Transform:Find("TxtValue"):GetComponent("Text")
+    self.BtnActive = self.Transform:Find("BtnActive"):GetComponent(typeof(CS.UnityEngine.UI.Button))
+    self.TxtValue = self.Transform:Find("TxtValue"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.PanelEffect = self.Transform:Find("PanelEffect")
-    self.ImgRe = self.Transform:Find("ImgRe"):GetComponent("Image")
+    self.ImgRe = self.Transform:Find("ImgRe"):GetComponent(typeof(CS.UnityEngine.UI.Image))
     self.GridCommon = self.Transform:Find("Grid128")
 end
 

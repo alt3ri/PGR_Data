@@ -193,7 +193,7 @@ end
 
 function XUiBossInshotSettlement:OnBtnPopBgClick()
     self:PlayScoreAnimation()
-    self:PlayAnimation("SecondScreenEnable")
+    self:PlayAnimationWithMask("SecondScreenEnable")
 end
 
 function XUiBossInshotSettlement:OnBtnHelpClick()

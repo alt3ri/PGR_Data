@@ -59,6 +59,7 @@ function XChar1027:InitEventCallBackRegister()
     --神威独特注册脚本
     XTheatre6CharBase.InitEventCallBackRegister(self)
     self._proxy:RegisterEvent(EWorldEvent.NpcCastActionAfter)
+    self._proxy:RegisterEvent(EWorldEvent.NpcExitAction)
     self._proxy:RegisterEventByTarget(EWorldEvent.NpcSkillActionEnd, self._uuid)
     self._proxy:RegisterEvent(EWorldEvent.MissileCreate)
     self._proxy:RegisterEvent(EWorldEvent.MissileDead)
@@ -70,49 +71,49 @@ function XChar1027:HandleEvent(eventType, eventArgs)
     XTheatre6CharBase.HandleEvent(self, eventType, eventArgs)
 end
 
-function XChar1027:IsSelfSkill1027301(skillId, uuid)
-    return uuid == self._uuid and skillId == 1027301
+function XChar1027:IsSelfSkill1027301(skillActionId, uuid)
+    return uuid == self._uuid and skillActionId == 1027301
 end
 
--- 技能1027301结束时，移除无敌类Buff 10275124。
-function XChar1027:RemoveEndBuff(skillId, uuid)
-    if not self:IsSelfSkill1027301(skillId, uuid) then
+-- 动作1027301结束时，移除无敌类Buff 10275124。
+function XChar1027:RemoveEndBuff(skillActionId, uuid)
+    if not self:IsSelfSkill1027301(skillActionId, uuid) then
         return
     end
 
     self._proxy:RemoveBuff(self._uuid, 10275124)
 end
 
--- 技能1027301开始后，记录子弹模板102710505生成的实例UUID。
+-- 动作1027301开始后，记录子弹模板102710505生成的实例UUID。
 -- 子弹配置ID不是实例UUID，清理时优先使用MissileCreate记录到的UUID。
-function XChar1027:StartMissileTrack(skillId, uuid)
-    if not self:IsSelfSkill1027301(skillId, uuid) then
+function XChar1027:StartMissileTrack(skillActionId, uuid)
+    if not self:IsSelfSkill1027301(skillActionId, uuid) then
         return
     end
 
     self._skill1027301MissileUUIDs = {}
     self._isTrackingSkill1027301Missile = true
     self._needRemoveSkill1027301Missile = false
-    XLog.Warning("神威 技能1027301开始，记录子弹模板102710505实例")
+    XLog.Warning("神威 动作1027301开始，记录子弹模板102710505实例")
 end
 
--- 技能1027301结束后标记清理；真正删除等动作完成。
-function XChar1027:EndMissileTrack(skillId, uuid)
-    if not self:IsSelfSkill1027301(skillId, uuid) then
+-- 动作1027301结束后标记清理；真正删除等动作完成。
+function XChar1027:EndMissileTrack(skillActionId, uuid, forceClear)
+    if not self:IsSelfSkill1027301(skillActionId, uuid) then
         return
     end
 
     self._isTrackingSkill1027301Missile = false
     self._needRemoveSkill1027301Missile = true
-    self:TryClearMissile()
+    self:TryClearMissile(forceClear)
 end
 
 -- 等CheckNpcCurActionIsDone确认动作真正结束后，再清理102710505子弹。
-function XChar1027:TryClearMissile()
+function XChar1027:TryClearMissile(forceClear)
     if not self._needRemoveSkill1027301Missile then
         return
     end
-    if not self._proxy:CheckNpcCurActionIsDone(self._uuid) then
+    if not forceClear and not self._proxy:CheckNpcCurActionIsDone(self._uuid) then
         return
     end
 
@@ -122,17 +123,17 @@ function XChar1027:TryClearMissile()
     self._skill1027301MissileUUIDs = {}
     self._needRemoveSkill1027301Missile = false
     self._proxy:RemoveCurrentNpcMissileByTemplateId(102710505)
-    XLog.Warning("神威 技能1027301动作完成，清理子弹模板102710505")
+    XLog.Warning("神威 动作1027301完成，清理子弹模板102710505")
 end
 
--- 技能1027301释放时，先移除二阶段常驻特效10277108，避免表现残留。
-function XChar1027:RemovePhase2FxOnCast(skillId, uuid)
-    if not self:IsSelfSkill1027301(skillId, uuid) then
+-- 动作1027301释放时，先移除二阶段常驻特效10277108，避免表现残留。
+function XChar1027:RemovePhase2FxOnCast(skillActionId, uuid)
+    if not self:IsSelfSkill1027301(skillActionId, uuid) then
         return false
     end
 
     self._proxy:RemoveBuff(self._uuid, 10277108)
-    XLog.Warning("神威 释放技能1027301，移除二阶段常驻特效Buff 10277108")
+    XLog.Warning("神威 释放动作1027301，移除二阶段常驻特效Buff 10277108")
     return true
 end
 
@@ -184,15 +185,15 @@ function XChar1027:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, 
     end
 end
 
-function XChar1027:OnNpcCastActionAfterEvent(skillId, launcherId, targetId, targetSceneObjId, isAbort)
-    XTheatre6CharBase.OnNpcCastActionAfterEvent(self, skillId, launcherId, targetId, targetSceneObjId, isAbort)
+function XChar1027:OnNpcCastActionAfterEvent(skillActionId, launcherId, targetId, targetSceneObjId, isAbort)
+    XTheatre6CharBase.OnNpcCastActionAfterEvent(self, skillActionId, launcherId, targetId, targetSceneObjId, isAbort)
     if launcherId ~= self._uuid then
         return
     end
 
-    XLog.Warning("神威 技能释放检测: skillId=" .. tostring(skillId))
-    self:StartMissileTrack(skillId, launcherId)
-    if self:RemovePhase2FxOnCast(skillId, launcherId) then
+    XLog.Warning("神威 动作释放检测: skillActionId=" .. tostring(skillActionId))
+    self:StartMissileTrack(skillActionId, launcherId)
+    if self:RemovePhase2FxOnCast(skillActionId, launcherId) then
         return
     end
     self:RefreshPhaseFx("SkillStart")
@@ -200,7 +201,6 @@ end
 
 function XChar1027:OnLuaSkillStart(eventArgs)
     XTheatre6CharBase.OnLuaSkillStart(self, eventArgs)
-    self:RemovePhase2FxOnCast(eventArgs._skillId, eventArgs._launcherUUID)
 end
 
 function XChar1027:OnMissileCreateEvent(missileUUID)
@@ -218,7 +218,7 @@ function XChar1027:OnMissileCreateEvent(missileUUID)
     end
 
     self._skill1027301MissileUUIDs[missileUUID] = true
-    XLog.Warning("神威 技能1027301记录子弹实例: " .. tostring(missileUUID))
+    XLog.Warning("神威 动作1027301记录子弹实例: " .. tostring(missileUUID))
 end
 
 function XChar1027:OnMissileDeadEvent(missileUUID)
@@ -230,14 +230,23 @@ end
 
 function XChar1027:OnLuaSkillEnd(eventArgs)
     XTheatre6CharBase.OnLuaSkillEnd(self, eventArgs)
-    self:RemoveEndBuff(eventArgs._skillId, eventArgs._launcherUUID)
-    self:EndMissileTrack(eventArgs._skillId, eventArgs._launcherUUID)
+end
+
+function XChar1027:OnNpcExitActionEvent(skillActionId, launcherId, targetId, targetSceneObjId, isAbort)
+    XTheatre6CharBase.OnNpcExitActionEvent(self, skillActionId, launcherId, targetId, targetSceneObjId, isAbort)
+    if not self:IsSelfSkill1027301(skillActionId, launcherId) then
+        return
+    end
+
+    self:RemoveEndBuff(skillActionId, launcherId)
+    self:EndMissileTrack(skillActionId, launcherId, true)
+    self:RefreshPhaseFx("SkillEnd")
 end
 
 function XChar1027:OnNpcSkillActionEnd(sourceUUID, skillId, skillActionId, isAbort)
     XTheatre6CharBase.OnNpcSkillActionEnd(self, sourceUUID, skillId, skillActionId, isAbort)
-    self:RemoveEndBuff(skillId, sourceUUID)
-    self:EndMissileTrack(skillId, sourceUUID)
+    self:RemoveEndBuff(skillActionId, sourceUUID)
+    self:EndMissileTrack(skillActionId, sourceUUID, true)
     if sourceUUID ~= self._uuid then
         return
     end
@@ -251,6 +260,7 @@ function XChar1027:Update(dt)
 end
 
 function XChar1027:Terminate()
+    self._proxy:UnregisterEvent(EWorldEvent.NpcExitAction)
     self._proxy:UnregisterEventByTarget(EWorldEvent.NpcSkillActionEnd, self._uuid)
     self._proxy:UnregisterEvent(EWorldEvent.MissileCreate)
     self._proxy:UnregisterEvent(EWorldEvent.MissileDead)

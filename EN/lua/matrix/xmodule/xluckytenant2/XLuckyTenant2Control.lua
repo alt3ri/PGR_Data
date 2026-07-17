@@ -2809,4 +2809,8 @@ function XLuckyTenant2Control:IsFirstTimeEntering(stageId)
     return not self._Model:IsStagePassed(stageId)
 end
 
+function XLuckyTenant2Control:GetLuckyTenant2ChessTypeById(pieceId)
+    return self._Model:GetLuckyTenant2ChessTypeById(pieceId)
+end
+
 return XLuckyTenant2Control

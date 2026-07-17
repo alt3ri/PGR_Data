@@ -12,6 +12,9 @@ function XBuffScript1025813:Init()
     self._defBuff = 1025917
     self._buffLevel = 1             --使用的等级
     self._mineId = 1            --配置表的ID
+    
+    self._timer = 1             --延迟播放UI时间
+    self._isShow = false            --是否要播UI
 end
 
 ---进入关卡时初始化控制器
@@ -27,9 +30,21 @@ function XBuffScript1025813:OnEnterLevel(levelId)
         if not self._proxy:GetTheatre6WinResult(self._uuid, checkRound) then
             self._proxy:ApplyMagic(self._uuid,self._uuid,self._attkBuff,self._buffLevel)
             self._proxy:ApplyMagic(self._uuid,self._uuid,self._defBuff,self._buffLevel)
-            self._proxy:Theatre6EnvironmentShow(self._uuid, self._mineId)
+            
+            self._isShow = true
             return
         end
+    end
+end
+
+--环境效果触发显示
+function XBuffScript1025813:Update(dt)
+    ------------执行------------
+    if not self._isShow then return end
+    local _nowTime = self._proxy:GetFightTime()
+    if _nowTime >= self._timer then
+        self._proxy:Theatre6EnvironmentShow(self._uuid, self._mineId)
+        self._isShow = false
     end
 end
 

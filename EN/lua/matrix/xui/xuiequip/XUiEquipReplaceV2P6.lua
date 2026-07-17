@@ -446,6 +446,8 @@ function XUiEquipReplaceV2P6:_RefreshOverrunLevelBtn(equip)
     end
 
     local levelName, showDot, reachedDot, totalDot = equip:GetOverrunLevelInfo(self.CharacterId)
+    local overrunSuitReachedDot = equip:GetOverrunLevel() > 0 and 1 or 0
+    self.BtnOverrunLevel:SetName((reachedDot + overrunSuitReachedDot) .. "/" .. (totalDot + 1))
     local isLv1 = lv == XEnumConst.EQUIP.WEAPON_OVERRUN_LEVEL_TYPE.LEVEL1
     local isLvGe2 = lv >= XEnumConst.EQUIP.WEAPON_OVERRUN_LEVEL_TYPE.LEVEL2
     for _, stateName in ipairs(BUTTON_STATE_LIST) do
@@ -469,13 +471,10 @@ function XUiEquipReplaceV2P6:_RefreshOverrunSuitBtn(equip)
     self.BtnOverrunBlind.gameObject:SetActiveEx(false)
     self.BtnOverrunEmpty.gameObject:SetActiveEx(false)
 
-    local progress = equip:GetOverrunLevel() > 0 and "1/1" or "0/1"
-
     -- 未解锁
     if not equip:IsOverrunCanBlindSuit() then
         self.BtnOverrunBlind.gameObject:SetActiveEx(true)
         self.BtnOverrunBlind:SetDisable(true)
-        self.BtnOverrunBlind:SetName(progress)
         self.OverrunIconTips = XUiHelper.GetText("EquipOverrunClickTips")
         return
     end
@@ -484,14 +483,12 @@ function XUiEquipReplaceV2P6:_RefreshOverrunSuitBtn(equip)
     local choseSuitId = equip:GetOverrunChoseSuit()
     if choseSuitId == 0 then
         self.BtnOverrunEmpty.gameObject:SetActiveEx(true)
-        self.BtnOverrunEmpty:SetName(progress)
         return
     end
 
     -- 解锁并且有绑定
     self.BtnOverrunBlind.gameObject:SetActiveEx(true)
     self.BtnOverrunBlind:SetDisable(false)
-    self.BtnOverrunBlind:SetName(progress)
     local iconPath = XMVCA.XEquip:GetEquipSuitIconPath(choseSuitId)
     local isMatch = equip:IsOverrunBlindMatch(self.CharacterId)
     local uiObj = self.BtnOverrunBlind:GetComponent("UiObject")
@@ -529,9 +526,6 @@ function XUiEquipReplaceV2P6:_RefreshOverrunSkillBtn(equip)
         stateObj:GetObject("PanelFull").gameObject:SetActiveEx(isFull)
         stateObj:GetObject("PanelNotFull").gameObject:SetActiveEx(not isFull)
     end
-
-    -- 5. 进度文本
-    self.BtnOverrunSkill:SetName(reachedDot .. "/" .. totalDot)
 end
 
 -- 刷新按钮状态

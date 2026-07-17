@@ -4165,7 +4165,7 @@
     },
     {
         "Key": "ToOtherThing",
-        "Text": "(Converted into {0})"
+        "Text": " (Converted into {0})"
     },
     {
         "Key": "DrawLogCpunt",
@@ -5241,7 +5241,7 @@
     },
     {
         "Key": "CharacterSkillLevelDetailWeaponOverrun",
-        "Text": "Weapon Overload"
+        "Text": "Weapon Harmony"
     },
     {
         "Key": "CharacterSkillLevelDetail",
@@ -9653,7 +9653,7 @@
     },
     {
         "Key": "PartnerBackItem",
-        "Text": "Return material"
+        "Text": "Materials Returned"
     },
     {
         "Key": "PartnerSkillLevelCN",
@@ -16701,7 +16701,7 @@
     },
     {
         "Key": "TransfiniteSave2",
-        "Text": "You have <color=#0E70BD>dead</color> character(s) on team. Saving the result will make you <color=#0E70BD>not able to</color> use the character(s) in the subsequent battles."
+        "Text": "Some characters in your team have been <color=#0E70BD>defeated</color>. If you save your progress, they will be <color=#0E70BD>unavailable</color> in subsequent battles."
     },
     {
         "Key": "TransfiniteStageNotStartAnchorTips",
@@ -16781,7 +16781,7 @@
     },
     {
         "Key": "EquipOverrunCharacterSkillTagName",
-        "Text": "\u8c10\u632f\u6280\u80fd"
+        "Text": "Harmony Skill"
     },
     {
         "Key": "EquipOverrunCharacterSkillTagIcon",
@@ -16789,7 +16789,7 @@
     },
     {
         "Key": "EquipOverrunCharacterWearTips",
-        "Text": "\u7a7f\u6234\u6b66\u5668-%s"
+        "Text": "Equip Weapon: %s"
     },
     {
         "Key": "TransfiniteRewardReceive",
@@ -18445,7 +18445,7 @@
     },
     {
         "Key": "BossInshotNextScoreLevelTips",
-        "Text": "Earn {0} points to reach Lv.{1}."
+        "Text": "Earn {0} points to reach Rank {1}."
     },
     {
         "Key": "BossInshotFightTime",
@@ -18461,7 +18461,7 @@
     },
     {
         "Key": "BossInshotTalentUnlock",
-        "Text": "Unlocks with {0} Talent"
+        "Text": "{0} Talent Unlocked"
     },
     {
         "Key": "BossInshotDeletePlaybackConfirm",
@@ -18481,7 +18481,7 @@
     },
     {
         "Key": "BossInshotToastTowerDown",
-        "Text": "\u964d\u5c42\u89e6\u53d1"
+        "Text": "Floor Drop Triggered"
     },
     {
         "Key": "BossInshotToastTowerClear",
@@ -18489,7 +18489,7 @@
     },
     {
         "Key": "BossInshotToastTowerDownProtected",
-        "Text": "\u964d\u5c42\u4fdd\u62a4\u89e6\u53d1"
+        "Text": "Floor Drop Protection Triggered"
     },
     {
         "Key": "BossInshotToastTowerFloor",
@@ -18497,15 +18497,15 @@
     },
     {
         "Key": "BossInshotToastTowerDescUp",
-        "Text": "\u8bc4\u5206\u8fbe{0}\uff0c\u4e0a\u5347{1}\u5c42\u3002"
+        "Text": "Score reached {0}. Up {1} floor(s)."
     },
     {
         "Key": "BossInshotToastTowerDescDown",
-        "Text": "\u8bc4\u5206\u672a\u8fbe{0}\uff0c\u964d\u81f3{1}\u5c42\u3002"
+        "Text": "Score below {0}. You've dropped to {1}F."
     },
     {
         "Key": "BossInshotToastTowerDescClear",
-        "Text": "\u53ef\u9009\u62e9\u5176\u4ed6Boss\u6311\u6218\uff0c\u83b7\u53d6\u66f4\u9ad8\u6392\u540d\u3002\\n\u5931\u8d25\u4e0d\u518d\u89e6\u53d1\u964d\u5c42\u3002"
+        "Text": "You can challenge other Bosses to get a higher rank.\\nFailure will no longer trigger a floor drop."
     },
     {
         "Key": "BossInshotToastTowerDescDownProtected",
@@ -18549,15 +18549,15 @@
     },
     {
         "Key": "BossInshotTowerScoreTipFinalFail2",
-        "Text": "{0}\u5206\u901a\u5173\u672c\u5c42\uff0c\u4e24\u6b21\u672a\u8fbe\u6210\u5c06\u964d\u81f3{1}F\u3002"
+        "Text": "Reach {0} pts to clear this floor. Fail twice and you will drop to Floor {1}."
     },
     {
         "Key": "BossInshotTowerScoreTipFinalFail1",
-        "Text": "{0}\u5206\u901a\u5173\u672c\u5c42\uff0c\u672c\u6b21\u672a\u8fbe\u6210\u5c06\u964d\u81f3{1}F\u3002"
+        "Text": "Reach {0} pts to clear this floor. Fail this attempt and you will drop to Floor {1}."
     },
     {
         "Key": "BossInshotTowerScoreTipFinalFailN",
-        "Text": "{0}\u5206\u901a\u5173\u672c\u5c42\uff0c{2}\u6b21\u672a\u8fbe\u6210\u5c06\u964d\u81f3{1}F\u3002"
+        "Text": "Reach {0} pts to clear this floor. Fail {2} time(s) and you will drop to Floor {1}."
     },
     {
         "Key": "BossInshotTowerScoreTipStageClear",
@@ -18565,7 +18565,7 @@
     },
     {
         "Key": "BossInshotTowerScoreTipAllClear",
-        "Text": "Cleared. Demotion will no longer trigger."
+        "Text": "Cleared. Floor Drop will no longer trigger."
     },
     {
         "Key": "BossInshotTowerChangeBossRanking",
@@ -18601,7 +18601,11 @@
     },
     {
         "Key": "BossInshotSettlementTowerCheatCannotSaveReplay",
-        "Text": "\u4f5c\u5f0a\u4e0d\u8bb8\u4fdd\u5b58\u5f55\u50cf"
+        "Text": "Replays cannot be saved while cheats are enabled."
+    },
+    {
+        "Key": "BossInshotTowerLockedNotInTime",
+        "Text": "Unlocks in <color=#e8deff>{0}</color>"
     },
     {
         "Key": "DlcRoomKickOutTip",
@@ -19229,7 +19233,7 @@
     },
     {
         "Key": "NonogramSettlementTitleAllFinish",
-        "Text": "You've explored all Dark Rooms!"
+        "Text": "You've explored all DarkRooms!"
     },
     {
         "Key": "NonogramSettlementTitleExit",
@@ -23505,7 +23509,7 @@
     },
     {
         "Key": "RaceGuessPropertyTimes",
-        "Text": "{0} time(s)"
+        "Text": " {0}   time(s)"
     },
     {
         "Key": "RacePropertyName1",
@@ -24028,6 +24032,10 @@
         "Text": "Select 3 missions"
     },
     {
+        "Key": "Theatre6BattleShopBuyLvUpRelicTip",
+        "Text": "No skills available to upgrade"
+    },
+    {
         "Key": "UsePackageOverMaxCount",
         "Text": "{0} usage limit reached"
     },
@@ -24057,7 +24065,7 @@
     },
     {
         "Key": "FashionSuitProgress3",
-        "Text": "This Coating series is still being updated. Complete Collection Rewards will unlock after full update."
+        "Text": "This Coating series is still being updated. Complete Collection Rewards will be revealed after full update."
     },
     {
         "Key": "TeamPrefabCannotCoverEmptyTeam",
@@ -24257,11 +24265,11 @@
     },
     {
         "Key": "Theatre6PvpEnvReplaceSuccess",
-        "Text": "\u9690\u533f\u6697\u969c\u66ff\u6362\u6210\u529f"
+        "Text": "Stealth Barrier replaced successfully."
     },
     {
         "Key": "Theatre6PvpEnvReplaceFail",
-        "Text": "\u5c1a\u672a\u89e3\u9501\u8be5\u9690\u533f\u6697\u969c"
+        "Text": "This Stealth Barrier has not been unlocked yet."
     },
     {
         "Key": "Theatre6PvpFightSuccsee",
@@ -24281,7 +24289,7 @@
     },
     {
         "Key": "Theatre6PvpScoreDetailDesc3",
-        "Text": "<color=red>Challenge Failed -{0}</color>"
+        "Text": "<color=red>Challenge Failed {0}</color>"
     },
     {
         "Key": "Theatre6PvpScoreDetailDesc4",
@@ -24505,7 +24513,7 @@
     },
     {
         "Key": "Theatre6SaveCoverDefenseContent",
-        "Text": "\u8be5\u5f52\u6863\u6b63\u5728\u9632\u5b88\uff0c\u66ff\u6362\u540e\u65b0\u5f52\u6863\u5c06\u8fdb\u5165\u9632\u5b88\u961f\u4f0d\uff0c\u662f\u5426\u7ee7\u7eed"
+        "Text": "This archive is currently set to defense. Replacing it will deploy the new save to the defense team. Proceed?"
     },
     {
         "Key": "ConcertPreHeatingLiveNotOpen",

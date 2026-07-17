@@ -46,6 +46,7 @@ function XTheatre6SunController:OnLuaSkillEnd(eventArgs)
         --self._proxy:ApplyMagic(self._npcUUID, self._npcUUID, self.StackBuffAngry,1,0,1)
         --self:LogError(".....耀斑爆发")
         if self.SkillId ~= 0 then
+            self._proxy:Theatre6PopDamage(self._npcUUID, self._npcUUID, 21, 0)
             self._level:RequestInsertSkill(self._npcUUID,self.SkillId)
         end
         --self:LogError("打印一下角色技能list"..self.SkillId)

@@ -98,9 +98,9 @@ function XUiLifeTreeMain:InitScene()
     ---@type CS.Cinemachine.CinemachineFreeLook
     self.CamNearMain = cameraRoot:Find("UiNearRoot/CamNearMain"):GetComponent(typeof(CS.Cinemachine.CinemachineFreeLook))
     ---@type CS.UnityEngine.Camera
-    self.UiNearCamera = cameraRoot:Find("UiNearRoot/UiNearCamera"):GetComponent("Camera")
+    self.UiNearCamera = cameraRoot:Find("UiNearRoot/UiNearCamera"):GetComponent(typeof(CS.UnityEngine.Camera))
     ---@type CS.UnityEngine.Camera
-    self.UiFarCamera = cameraRoot:Find("UiFarRoot/UiFarCamera"):GetComponent("Camera")
+    self.UiFarCamera = cameraRoot:Find("UiFarRoot/UiFarCamera"):GetComponent(typeof(CS.UnityEngine.Camera))
     ---@type CS.UnityEngine.Transform
     self.LookAtPoint = cameraRoot:Find("LookAtPoint")
     ---@type CS.UnityEngine.Transform

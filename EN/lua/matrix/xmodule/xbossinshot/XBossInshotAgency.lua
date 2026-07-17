@@ -135,7 +135,7 @@ function XBossInshotAgency:BossInshotQueryRankRequest(characterCfgId, bossId, is
     
     local req = { CharacterCfgId = characterCfgId, BossId = bossId, IsTotalRank = isTotalRank }
     XNetwork.Call("BossInshotQueryRankRequest", req, function(res)
-        self._Model:SaveRankData(characterCfgId, bossId, isTotalRank, nowTime, res)
+        self._Model:SaveRankData(characterCfgId, bossId, isTotalRank, false, nowTime, res)
         if cb then cb(res) end
     end)
 end
@@ -155,7 +155,7 @@ function XBossInshotAgency:BossInshotQueryTowerRankRequest(characterCfgId, bossI
 
     local req = { CharacterCfgId = characterCfgId, BossId = bossId }
     XNetwork.Call("BossInshotTowerQueryRankRequest", req, function(res)
-        self._Model:SaveRankData(characterCfgId, bossId, false, nowTime, res)
+        self._Model:SaveRankData(characterCfgId, bossId, false, true, nowTime, res)
         if cb then cb(res) end
     end)
 end
@@ -312,5 +312,30 @@ function XBossInshotAgency:IsShowActivityRedPoint()
     return self._Model:IsShowActivityRedPoint()
 end
 ---------------------------------------- #endregion 跳转和红点 ----------------------------------------
+
+--- 是否已全部通关
+function XBossInshotAgency:IsTowerAllClear()
+    local isOpen = self._Model:IsActivityOpen()
+    if not isOpen then
+        return false
+    end
+
+    local curLevel = self._Model:GetBossTowerCurrentLevel()
+    if not XTool.IsNumberValid(curLevel) then
+        return false
+    end
+
+    local curLevelData = self._Model:GetBossTowerData(curLevel)
+    if not curLevelData or not curLevelData.IsPass then
+        return false
+    end
+
+    local allLevelConfigs = self._Model:GetConfigBossInshotTowerAllLevels()
+    if XTool.IsTableEmpty(allLevelConfigs) then
+        return false
+    end
+
+    return not allLevelConfigs[curLevel + 1]
+end
 
 return XBossInshotAgency

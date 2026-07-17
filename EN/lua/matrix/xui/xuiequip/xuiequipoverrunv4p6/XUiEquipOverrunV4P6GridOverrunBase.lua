@@ -46,43 +46,62 @@ function XUiEquipOverrunV4P6GridOverrunBase:RefreshActiveBg(overrunCfg)
     self.ImgBgLevelOff.gameObject:SetActiveEx(not isActive)
 end
 
--- ImgDian uses the configured node-space point. MASK/XUiLine01 uses line-local points.
+-- ImgDian 使用配置的节点空间点位；MASK/XUiLine01 使用连线局部点位
 function XUiEquipOverrunV4P6GridOverrunBase:RefreshLine(overrunCfg)
-    local isDetail = self.Parent:GetIsShowPanelDetail()
-    local xList = isDetail and overrunCfg.LinePosXDetailList or overrunCfg.LinePosXList
-    local yList = isDetail and overrunCfg.LinePosYDetailList or overrunCfg.LinePosYList
-
-    local positions = {}
-    if xList and yList then
-        for i = 1, #xList do
-            positions[i] = Vector2(xList[i], yList[i])
-        end
-    end
+    local positions = self:GetLinePositions(overrunCfg)
+    local lastPosition = positions[#positions]
 
     local stateNodes = { self.Normal, self.Press, self.Disable }
     for _, node in ipairs(stateNodes) do
         local imgDian = node:GetObject("ImgDian")
-        if imgDian and positions[1] then
-            imgDian.transform.anchoredPosition = positions[1]
+        if imgDian and lastPosition then
+            imgDian.transform.anchoredPosition = lastPosition
         end
 
         self:_RefreshLineRenderer(node, positions)
     end
 end
 
+function XUiEquipOverrunV4P6GridOverrunBase:GetLinePositions(overrunCfg)
+    local layoutKey = self.Parent:GetUiLayoutKey()
+    local linePointStr = overrunCfg.UiLinePointList and overrunCfg.UiLinePointList[layoutKey]
+    local positions = {}
+
+    if not linePointStr or linePointStr == "" then
+        return positions
+    end
+
+    linePointStr = string.gsub(linePointStr, "\"", "")
+    for pointStr in string.gmatch(linePointStr, "[^|]+") do
+        local x, y = string.match(pointStr, "^%s*([^,]+)%s*,%s*([^,]+)%s*$")
+        x = tonumber(x)
+        y = tonumber(y)
+        if x and y then
+            positions[#positions + 1] = Vector2(x, y)
+        end
+    end
+
+    return positions
+end
+
+function XUiEquipOverrunV4P6GridOverrunBase:SetLineVisible(isVisible)
+    if isVisible then
+        self:RefreshLine(self:GetOverrunConfig())
+        return
+    end
+
+    local stateNodes = { self.Normal, self.Press, self.Disable }
+    for _, node in ipairs(stateNodes) do
+        local maskTrans = node and node.transform:Find("MASK")
+        if not XTool.UObjIsNil(maskTrans) then
+            maskTrans.gameObject:SetActiveEx(false)
+        end
+    end
+end
+
 function XUiEquipOverrunV4P6GridOverrunBase:_RefreshLineRenderer(node, positions)
-    local line1Trans = node.transform:Find("ImgLine1")
-    if line1Trans then
-        line1Trans.gameObject:SetActiveEx(false)
-    end
-
-    local line2Trans = node.transform:Find("ImgLine2")
-    if line2Trans then
-        line2Trans.gameObject:SetActiveEx(false)
-    end
-
     local maskTrans = node.transform:Find("MASK")
-    local needDrawLine = #positions > 2
+    local needDrawLine = #positions >= 2
     maskTrans.gameObject:SetActiveEx(needDrawLine)
     if not needDrawLine then
         return

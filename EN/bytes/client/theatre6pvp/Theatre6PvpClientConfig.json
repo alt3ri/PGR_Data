@@ -17,11 +17,11 @@
     },
     {
         "Id": "ActionPointContent",
-        "Values": "['%s/%s', '<color=#C4AA53>%s</color>/%s']"
+        "Values": "['%s/%s', '<color=#FF0000>%s</color>/%s']"
     },
     {
         "Id": "ActionPointDetailContent",
-        "Values": "['Stamina Maxed', 'Next recovery in: %s', '\u6b63\u5728\u6062\u590d\u4f53\u529b']"
+        "Values": "['Stamina Maxed', 'Next recovery in: %s', 'Recovering Stamina...']"
     },
     {
         "Id": "ArchiveTips",
@@ -33,19 +33,19 @@
     },
     {
         "Id": "EnemyEnvironmentTip",
-        "Values": "['\u65e0\u6cd5\u67e5\u770b\u654c\u65b9\u9690\u533f\u6697\u969c']"
+        "Values": "[\"Cannot view the enemy's Stealth Barrier.\"]"
     },
     {
         "Id": "DefendMistTips",
-        "Values": "['%s\u53f7\u4f4d\u5904\u4e8e\u96fe\u9690\u4e4b\u5730\u4e4b\u4e2d\uff0c\u654c\u65b9\u65e0\u6cd5\u67e5\u770b']"
+        "Values": "['Slot %s is within the Mist Hideout and cannot be viewed by the enemy.']"
     },
     {
         "Id": "ArchiveLineupLimitTips",
-        "Values": "['\u6700\u591a\u4e0a\u9635%s\u4e2a\u5f52\u6863']"
+        "Values": "['Up to %s archives can be deployed']"
     },
     {
         "Id": "ArchiveReachLineupLimitTips",
-        "Values": "['\u6bcf\u4e2a\u5f52\u6863\u6700\u591a\u4e0a\u9635%s\u6b21']"
+        "Values": "['Each archive can be deployed up to %s time(s)']"
     },
     {
         "Id": "ArchiveUpLineupSuccessTips",
@@ -89,7 +89,7 @@
     },
     {
         "Id": "OneClickRemoveSuccessTip",
-        "Values": "['\u4e00\u952e\u4e0b\u9635\u6210\u529f']"
+        "Values": "['Successfully removed all deployed units.']"
     },
     {
         "Id": "NextPvpFightDelayTime",
@@ -97,31 +97,31 @@
     },
     {
         "Id": "BattleRecordAtkSuc",
-        "Values": "['Attack Victory +%s']"
+        "Values": "['Attack Victory %s']"
     },
     {
         "Id": "BattleRecordTotalAtkSuc",
-        "Values": "['Flawless Victory +%s']"
+        "Values": "['Flawless Victory %s']"
     },
     {
         "Id": "BattleRecordDefSuc",
-        "Values": "['\u9632\u5b88\u6210\u529f +%s']"
+        "Values": "['Defense Successful %s']"
     },
     {
         "Id": "BattleRecordAtkFail",
-        "Values": "['Attack Failed -%s']"
+        "Values": "['Attack Failed %s']"
     },
     {
         "Id": "BattleRecordDefFailLoseScore",
-        "Values": "['Defense Failed -%s']"
+        "Values": "['Defense Failed %s']"
     },
     {
         "Id": "BattleRecordAbnormal",
-        "Values": "['\u5bf9\u5c40\u5f02\u5e38\uff0c\u5206\u6570\u5df2\u8fd4\u8fd8']"
+        "Values": "['Match error. Scores have been refunded.']"
     },
     {
         "Id": "BuffNotSelectedTipConfirm",
-        "Values": "['\u6682\u672a\u643a\u5e26\u9690\u533f\u6697\u969c\uff0c\u70b9\u51fb\u786e\u8ba4\u524d\u5f80\u88c5\u5907']"
+        "Values": "['No Stealth Barrier equipped. Tap Confirm to equip one.']"
     },
     {
         "Id": "PvpTitleChallenge",
@@ -141,6 +141,10 @@
     },
     {
         "Id": "ArchiveReplaceConfirm",
-        "Values": "['\u6240\u9009\u5f52\u6863\u5df2\u4e0a\u9635\u4e24\u6b21\uff0c\u662f\u5426\u5168\u90e8\u66ff\u6362']"
+        "Values": "['The selected archive has been deployed twice. Replace all?']"
+    },
+    {
+        "Id": "NotInActivityTime",
+        "Values": "['Outside the event period']"
     }
 ]

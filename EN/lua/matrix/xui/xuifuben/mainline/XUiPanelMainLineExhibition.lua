@@ -69,6 +69,8 @@ end
 function XUiPanelMainLineExhibition:OnDisable()
     self.IsEnable = false
 
+    self:_StopDragReleasePoll()
+
     -- 子界面OnDisable
     for _, module in pairs(self.ModuleList) do
         module:OnDisable()
@@ -83,6 +85,8 @@ function XUiPanelMainLineExhibition:OnDestroy()
     XEventManager.RemoveEventListener(XEventId.EVENT_MAINLINE_EXHIBITION_LOCATE, self.OnEventLocate, self)
     self:StopLocateTimer()
     self:KillClampTween()
+    self:KillLockYTween()
+    self:_StopDragReleasePoll()
 end
 
 function XUiPanelMainLineExhibition:RegisterUiEvents()
@@ -155,32 +159,72 @@ function XUiPanelMainLineExhibition:OnTranslateValueChanged(pos)
 
     self:Refresh()
 
-    -- 检测拖拽边沿，松手瞬间触发回正缓动
+    self:_CheckDragRelease()
+    -- 按住不动直接释放时无位移回调，需要轮询补一刀
+    if self._WasDragging and not self._DragReleasePollTimer then
+        self:_StartDragReleasePoll()
+    end
+end
+
+-- 拖拽边沿检测：true→false 触发回正缓动
+function XUiPanelMainLineExhibition:_CheckDragRelease()
     local isDragging = self:IsDragOperation()
     if self._WasDragging and not isDragging then
         self:TryClampToModuleRange()
+        self:_StopDragReleasePoll()
     end
     self._WasDragging = isDragging
 end
 
--- 锁定白名单模块的竖直方向位移：将 anchoredPosition.y 强制归零
+-- 白名单模块的 Y 锁定：首次进入由 TryClampToModuleRange 同步缓动 X+Y，之后每帧硬归零
 function XUiPanelMainLineExhibition:LockVerticalIfNeeded()
     local hitIndex = self:GetCenterHitModuleIndex()
     if not hitIndex then
+        self._WasInLockedModule = false
         return
     end
     local moduleId = self.ModuleList[hitIndex]:GetModuleId()
     local moduleCfg = XMVCA.XMainLine2:GetConfigExhibitionModule(moduleId)
-    if not moduleCfg or moduleCfg.Type ~= XEnumConst.MAINLINE2.EXHIBITION_MODULE_TYPE.ISOLATED_VIEW then
+    local isLocked = moduleCfg and moduleCfg.Type == XEnumConst.MAINLINE2.EXHIBITION_MODULE_TYPE.ISOLATED_VIEW
+    if not isLocked then
+        self._WasInLockedModule = false
         return
     end
-    if self.PanelModule.anchoredPosition.y ~= 0 then
-        self.PanelModule:SetAnchoredPosition(self.PanelModule.anchoredPosition.x, 0)
+
+    if self._WasInLockedModule then
+        local pos = self.PanelModule.anchoredPosition
+        if pos.y ~= 0 then
+            self.PanelModule:SetAnchoredPosition(pos.x, 0)
+        end
+    end
+end
+
+function XUiPanelMainLineExhibition:KillLockYTween()
+    if self._LockYTween then
+        self._LockYTween:Kill()
+        self._LockYTween = nil
     end
 end
 
 function XUiPanelMainLineExhibition:IsDragOperation()
     return self.PanelAreaScaleDrag.DragTranslate.IsFingerDrag
+end
+
+-- 拖拽期间每帧轮询：补救按住不动直接释放无位移回调的情况
+function XUiPanelMainLineExhibition:_StartDragReleasePoll()
+    if self._DragReleasePollTimer then
+        return
+    end
+    self._DragReleasePollTimer = XScheduleManager.ScheduleForever(function()
+        self:_CheckDragRelease()
+    end, 0)
+end
+
+function XUiPanelMainLineExhibition:_StopDragReleasePoll()
+    if self._DragReleasePollTimer then
+        XScheduleManager.UnSchedule(self._DragReleasePollTimer)
+        self._DragReleasePollTimer = nil
+    end
 end
 
 -- 缩放发生变化
@@ -349,6 +393,7 @@ function XUiPanelMainLineExhibition:LocateByIndex(moduleIndex, chapterIndex, fin
     end
 
     -- 定位
+    self:KillLockYTween()
     self.PanelModule:SetAnchoredPosition(-moveWidth, 0)
 
     -- 更新背景
@@ -401,7 +446,10 @@ function XUiPanelMainLineExhibition:RefreshBgAndBgm(moduleId)
     end
     self._OldModuleId = moduleId
     local moduleConfig = XMVCA.XMainLine2:GetConfigExhibitionModule(moduleId)
-    self.BgImage:SetRawImage(moduleConfig.BgImage)
+    local condBgPath, condSpinePath = XMVCA.XMainLine2:GetExhibitionModuleConditionResult(moduleId)
+    local bgPath = (condBgPath and condBgPath ~= "") and condBgPath or moduleConfig.BgImage
+    self.BgImage:SetRawImage(bgPath)
+    self:RefreshBgSpine(condSpinePath)
     self:SetDropdownModuleId(moduleId)
 
     local bgmCueId = moduleConfig.BgmCueId
@@ -409,6 +457,33 @@ function XUiPanelMainLineExhibition:RefreshBgAndBgm(moduleId)
         self.RootUi.BgmMusicPlayer:SetTempMusic(bgmCueId)
     else
         self.RootUi.BgmMusicPlayer:ClearTempMusic()
+    end
+end
+
+-- 按条件加载/隐藏背景 Spine
+function XUiPanelMainLineExhibition:RefreshBgSpine(spinePath)
+    local hasSpine = spinePath and spinePath ~= ""
+    if not hasSpine then
+        if self.BgSpineLink then
+            self.BgSpineLink.gameObject:SetActiveEx(false)
+        end
+        self._LastBgSpinePath = nil
+        return
+    end
+    if not self.BgSpineLink then
+        local linkGo = CS.UnityEngine.GameObject("BgSpineLink")
+        linkGo.transform:SetParent(self.BgImage.transform, false)
+        linkGo:AddComponent(typeof(CS.UnityEngine.RectTransform))
+        linkGo.transform:SetLocalPosition(0, 0, 0)
+        linkGo.transform:SetLocalScale(1, 1, 1)
+        XUiHelper.SetCanvasesSortingOrder(linkGo.transform)
+        self.BgSpineLink = linkGo
+    end
+    self.BgSpineLink.gameObject:SetActiveEx(true)
+    -- 同路径不重复加载
+    if self._LastBgSpinePath ~= spinePath then
+        self.BgSpineLink:LoadPrefab(spinePath)
+        self._LastBgSpinePath = spinePath
     end
 end
 
@@ -475,11 +550,13 @@ function XUiPanelMainLineExhibition:TryClampToModuleRange()
     local clampedY = 0
 
     if clamped == pos and clampedY == posY then
+        self._WasInLockedModule = true
         return
     end
 
     -- 缓动期间禁用拖拽组件以杀掉惯性，SetMask 屏蔽手指输入
     self:KillClampTween()
+    self:KillLockYTween()
     XLuaUiManager.SetMask(true)
     self:SetAreaScaleDragEnable(false)
 
@@ -492,6 +569,7 @@ function XUiPanelMainLineExhibition:TryClampToModuleRange()
             -- 清掉拖拽组件累积的惯性，避免恢复启用后继续推位置
             self.PanelAreaScaleDrag.DragTranslate:ClearMomentum()
             self:SetAreaScaleDragEnable(true)
+            self._WasInLockedModule = true
             self:Refresh()
         end)
 end

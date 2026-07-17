@@ -138,6 +138,15 @@ function XFashionAgency:IsTargetFashionColorHas(targetFashionId)
     return false
 end
 
+function XFashionAgency:IsColorContains(fashionColors,targetFashionId)
+    local colorConfigs = self._Model:GetFashionColorConfigs()
+    for _, colorConfig in pairs(colorConfigs) do
+        if colorConfig.TargetFashionId == targetFashionId and fashionColors[colorConfig.OriginalFashionId] ~= nil and table.contains(fashionColors[colorConfig.OriginalFashionId],colorConfig.Id) then
+            return true
+        end
+    end
+    return false
+end
 --endregion
 
 

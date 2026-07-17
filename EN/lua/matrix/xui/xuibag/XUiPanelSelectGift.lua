@@ -11,7 +11,7 @@ function XUiPanelSelectGift:Ctor(rootUi, ui)
     XTool.InitUiObject(self)
     self:AutoAddListener()
     self.GameObject:SetActiveEx(false)
-    self.CanvasGroup = self.Transform:GetComponent("CanvasGroup")
+    self.CanvasGroup = self.Transform:GetComponent(typeof(CS.UnityEngine.CanvasGroup))
 end
 
 function XUiPanelSelectGift:OnEnable()

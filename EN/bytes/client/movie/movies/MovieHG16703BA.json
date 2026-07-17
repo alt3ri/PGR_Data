@@ -36,7 +36,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '\u6d77\u4f26\u6c40\u623f\u95f4', 2: '\u65e9\u4e0a8:15', 4: '\u65af\u8d1d\u5c14\u7a46\u5bb6\u65cf\u5e84\u56ed'}"
+        "Params": "{1: \"Helentine's Room\", 2: '8:15 AM', 4: 'The Spelmin Manor'}"
     },
     {
         "Id": 4,
@@ -49,7 +49,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u65e9\u4e0a8:15\uff0c\u65af\u8d1d\u5c14\u7a46\u5bb6\u65cf\u5e84\u56ed\uff0c\u6d77\u4f26\u6c40\u623f\u95f4\u3002'}"
+        "Params": "{2: \"8:15 AM. Helentine's Room, The Spelmin Manor.\"}"
     },
     {
         "Id": 5,
@@ -101,7 +101,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 3: '\u773c\u524d\uff0c\u6d77\u4f26\u6c40\u8eba\u5728\u8c03\u7406\u4ed3\u4e2d\uff0c\u660f\u7761\u4e0d\u9192\u3002'}"
+        "Params": "{1: '1', 3: 'Helentine lies in the modulation pod before you, unconscious and unresponsive.'}"
     },
     {
         "Id": 9,
@@ -114,7 +114,7 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u6c14\u606f\u5e73\u9759\uff0c\u6ca1\u6709\u751f\u547d\u5371\u9669\uff0c\u4f46\u65e0\u8bba\u5982\u4f55\u90fd\u65e0\u6cd5\u5524\u9192\u3002'}"
+        "Params": "{3: 'Her breathing is calm, and she is in no immediate danger, but she cannot be awakened by any means.'}"
     },
     {
         "Id": 10,
@@ -153,7 +153,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u770b\u6765\u53ea\u80fd\u8fdb\u884c\u610f\u8bc6\u94fe\u63a5\u4e86\u3002', 3: '13'}"
+        "Params": "{2: 'Looks like establishing a M.I.N.D. connection is the only option.', 3: '13'}"
     },
     {
         "Id": 13,
@@ -218,7 +218,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u4eca\u5929\u65e9\u4e0a\u672c\u8be5\u548c\u6628\u5929\u4e00\u6837\u2014\u2014\u76f4\u5230\u603b\u7ba1\u6572\u5f00\u4e86\u95e8\u3002'}"
+        "Params": "{3: 'This morning should have been like any other... until the head butler knocked on your door.'}"
     },
     {
         "Id": 18,
@@ -244,7 +244,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: '\u603b\u7ba1', 3: '\u6839\u636e\u8c03\u7406\u4ed3\u7684\u6cbb\u7597\u65b9\u6848\uff0c\u5c0f\u59d0\u5e94\u8be5\u5728\u65e9\u4e0a7:00\u51c6\u65f6\u9192\u6765\u3002', 4: '1', 18: '100018798'}"
+        "Params": "{1: '1', 2: 'Head Butler', 3: \"Our lady should have woken at exactly 7:00 AM, according to the modulation pod's treatment protocol.\", 4: '1', 18: '100018798'}"
     },
     {
         "Id": 20,
@@ -257,7 +257,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u603b\u7ba1', 3: '\u6ca1\u6709\u81ea\u7136\u9192\u540e\uff0c\u6211\u4eec\u5c1d\u8bd5\u4e86\u4e00\u4e9b\u9884\u6848\uff0c\u90fd\u65e0\u6cd5\u5524\u9192\u5c0f\u59d0\uff0c\u4e13\u5bb6\u8bf4\u95ee\u9898\u53ef\u80fd\u51fa\u73b0\u5728\u610f\u8bc6\u6d77\u5c42\u9762\u3002', 4: '1', 18: '100018799'}"
+        "Params": "{2: 'Head Butler', 3: 'We attempted several procedures after she failed to wake on her own, but nothing worked. An expert believes the issue lies within her M.I.N.D.', 4: '1', 18: '100018799'}"
     },
     {
         "Id": 21,
@@ -348,7 +348,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: '\u603b\u7ba1', 3: '\u7070\u9e26\u6307\u6325\u5b98\u5728\u610f\u8bc6\u6d77\u65b9\u9762\u7ecf\u9a8c\u4e30\u5bcc\uff0c\u5c0f\u59d0\uff0c\u5c31\u9760\u4f60\u4e86\u3002', 4: '2', 18: '100018800'}"
+        "Params": "{1: '1', 2: 'Head Butler', 3: \"Gray Raven Commandant, you have extensive experience with matters related to the M.I.N.D. We're counting on you.\", 4: '2', 18: '100018800'}"
     },
     {
         "Id": 28,
@@ -361,7 +361,7 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u603b\u7ba1', 3: '\u6211\u4f1a\u5728\u4e8c\u4f4d\u8eab\u65c1\u5b88\u5019\uff0c\u6709\u4efb\u4f55\u9700\u8981\u968f\u65f6\u547c\u5524\u6211\u3002', 4: '2', 18: '100018801'}"
+        "Params": "{2: 'Head Butler', 3: \"I'll be right by your side. Call for me if you need anything.\", 4: '2', 18: '100018801'}"
     },
     {
         "Id": 29,
@@ -387,7 +387,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\uff08\u8fdb\u884c\u610f\u8bc6\u94fe\u63a5\uff09', 3: '31'}"
+        "Params": "{2: '(Establish M.I.N.D. connection)', 3: '31'}"
     },
     {
         "Id": 31,
@@ -543,7 +543,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u7741\u5f00\u773c\u540e\uff0c\u4eba\u7c7b\u53d1\u73b0\u81ea\u5df1\u5750\u5728\u4e00\u8f86\u8c6a\u534e\u7684\u52a0\u957f\u8f66\u4e2d\uff0c\u5f00\u8f66\u7684\u662f\u4e00\u4e2a\u4eba\u5f62\u673a\u68b0\u4f53\u3002'}"
+        "Params": "{3: 'Opening your eyes, you find yourself seated in a luxurious limousine driven by a humanoid mechanoid.'}"
     },
     {
         "Id": 43,
@@ -569,7 +569,7 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u6d77\u4f26\u6c40\u7684\u610f\u8bc6\u6d77\u51fa\u4e4e\u610f\u6599\u5730\u5e73\u9759\u7a33\u5b9a\u2014\u2014\u6ca1\u6709\u4efb\u4f55\u504f\u79fb\u8ff9\u8c61\uff0c\u53cd\u800c\u50cf\u662f\u4e00\u4e2a\u88ab\u7cbe\u5fc3\u7ef4\u62a4\u8fc7\u7684\u5b89\u5168\u7a7a\u95f4\u3002'}"
+        "Params": "{3: \"Helentine's M.I.N.D. is unexpectedly calm and stable, resembling a carefully maintained safe space instead of a deviating mindscape.\"}"
     },
     {
         "Id": 45,
@@ -595,7 +595,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\uff08\u610f\u8bc6\u6d77\u73af\u5883\u65e0\u5f02\u5e38\uff0c\u660f\u8ff7\u539f\u56e0\u662f\u4ec0\u4e48\u5462?\uff09', 3: '47'}"
+        "Params": "{2: \"(The M.I.N.D. shows no abnormalities... so what's causing her coma?)\", 3: '47'}"
     },
     {
         "Id": 47,
@@ -608,7 +608,7 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u9a7e\u9a76\u673a\u68b0\u4f53', 3: '\u8fd9\u4f4d\u5ba2\u4eba\uff0c\u6211\u4eec\u5f88\u5feb\u5c31\u5230\u76ee\u7684\u5730\u4e86\u3002', 18: '100018802'}"
+        "Params": "{2: 'Driver Mechanoid', 3: \"We'll be arriving at our destination shortly, dear guest.\", 18: '100018802'}"
     },
     {
         "Id": 48,
@@ -634,7 +634,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u4ece\u5929\u7a97\u63a2\u51fa\u5934\u5f80\u5916\u770b\u53bb\uff0c\u8fdc\u5904\u7684\u5c71\u4e0a\u5199\u7740\u201c\u6d77\u83b1\u575e\u201d\u51e0\u4e2a\u5927\u5b57\uff0c\u5c71\u811a\u4e0b\u5219\u662f\u5404\u79cd\u6587\u5316\u7684\u8857\u666f\u4e0e\u5f71\u68da\u3002'}"
+        "Params": "{3: 'Leaning out through the sunroof, you spot a massive \"HELEYWOOD\" spelled out on a distant mountain, with studio lots and streets of diverse cultures sprawling at its base.'}"
     },
     {
         "Id": 50,
@@ -647,7 +647,7 @@
         "EndAnim": "AniZhuanchangBegin",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u9053\u8def\u4e24\u4fa7\u5750\u843d\u7740\u7cbe\u81f4\u7684\u5c0f\u6d0b\u623f\uff0c\u5e7f\u544a\u724c\u4e0a\u6709\u5404\u79cd\u9ec4\u91d1\u65f6\u4ee3\u7535\u5f71\u7684\u6d77\u62a5\u3002'}"
+        "Params": "{3: 'Elegant villas line both sides of the road, while billboards showcase posters of Golden Age films.'}"
     },
     {
         "Id": 51,
@@ -738,7 +738,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u52a0\u957f\u8f66\u5728\u5de8\u5927\u7684\u5f71\u89c6\u68da\u524d\u505c\u4e0b\uff0c\u4eba\u7c7b\u4e0b\u8f66\u540e\uff0c\u4e00\u4e2a\u7a7f\u7740\u5bfc\u6f14\u9a6c\u7532\u3001\u624b\u91cc\u62ff\u7740\u5bf9\u8bb2\u673a\u7684\u8eab\u5f71\u8fce\u9762\u8d70\u6765\u2014\u2014\u90a3\u5f20\u8138\uff0c\u548c\u6d77\u4f26\u6c40\u4e00\u6a21\u4e00\u6837\u3002'}"
+        "Params": "{3: 'The limousine pulls to a stop in front of a massive soundstage. As you step out, a figure wearing a director vest and holding a walkie-talkie approaches you... and she looks just like Helentine.'}"
     },
     {
         "Id": 58,
@@ -764,7 +764,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: 'Helentine?', 3: '\u5ba2\u4eba\uff0c\u6b22\u8fce\u6765\u5230\u6d77\u83b1\u575e!', 4: '1', 18: '100018803'}"
+        "Params": "{1: '1', 2: 'Helentine?', 3: 'Welcome to Heleywood, my dear guest!', 4: '1', 18: '100018803'}"
     },
     {
         "Id": 60,
@@ -790,7 +790,7 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u5373\u4f7f\u5bf9\u65b9\u70ed\u60c5\u6d0b\u6ea2\uff0c\u4eba\u7c7b\u6307\u6325\u5b98\u4f9d\u7136\u4fdd\u6301\u7740\u8b66\u89c9\uff0c\u5373\u4f7f\u81ea\u5df1\u80fd\u611f\u89c9\u5230\u5bf9\u65b9\u5e76\u4e0d\u5371\u9669\u2014\u2014\u81f3\u5c11\u6709\u4e00\u70b9\u662f\u786e\u5b9a\u7684\uff0c\u5979\u548c\u6628\u5929\u81ea\u5df1\u89c1\u5230\u7684\u6d77\u4f26\u6c40\u4e0d\u662f\u4e00\u4e2a\u4eba\u3002'}"
+        "Params": "{3: \"You remain vigilant despite her effusive welcome. Even though there's no sense of danger, you are certain that this is not the same Helentine from yesterday.\"}"
     },
     {
         "Id": 62,
@@ -816,7 +816,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u4f60\u4e0d\u662f\u6d77\u4f26\u6c40\uff0c\u4f60\u662f\u8c01\u3002', 3: '64'}"
+        "Params": "{2: \"You're not Helentine. Who are you?\", 3: '64'}"
     },
     {
         "Id": 64,
@@ -842,7 +842,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6e38\u84dd', 3: '\u6211\u53eb\u6e38\u84dd\uff0c\u662f\u8fd9\u5ea7\u6d77\u83b1\u575e\u7684\u9996\u5e2d\u5bfc\u6f14\u517c\u5236\u7247\u4eba\u517c\u706f\u5149\u5e08\u517c\u8c03\u5ea6\u517c\u7f16\u5267\u517c\u5206\u955c\u5e08\u2026\u2026', 4: '1', 18: '100018804'}"
+        "Params": "{2: 'Ellen', 3: \"My name's Ellen. I'm Heleywood's lead director, producer, lighting technician, PA, screenwriter, storyboard artist...\", 4: '1', 18: '100018804'}"
     },
     {
         "Id": 66,
@@ -868,7 +868,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6e38\u84dd', 3: '\u540c\u65f6\u4e5f\u662f\u6d77\u6d77\u7684\u8f85\u52a9\u6cbb\u7597\u5e08\u517c\u60c5\u611f\u95ee\u9898\u9996\u5e2d\u53c2\u8c0b\u3002', 4: '1', 18: '100018805'}"
+        "Params": "{2: 'Ellen', 3: \"And I'm also Nelly's therapist and chief emotional counselor.\", 4: '1', 18: '100018805'}"
     },
     {
         "Id": 68,
@@ -881,7 +881,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6d77\u2026\u2026\u6d77\u6d77?', 3: '69'}"
+        "Params": "{2: '...Nelly?', 3: '69'}"
     },
     {
         "Id": 69,
@@ -907,7 +907,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6e38\u84dd', 3: '\u628a\u6211\u5f53\u6d77\u6d77\u7684\u7b2c\u4e8c\u4eba\u683c\u5c31\u597d\u5566\u3002\u957f\u5f97\u4e00\u6837\uff0c\u7406\u6240\u5f53\u7136\u3002', 4: '1', 18: '100018806'}"
+        "Params": "{2: 'Ellen', 3: \"Just think of me as Nelly's alternate personality. We look the same, obviously.\", 4: '1', 18: '100018806'}"
     },
     {
         "Id": 71,
@@ -920,7 +920,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u90a3\u4e48\uff0c\u6d77\u4f26\u6c40\u6700\u8fd1\u7684\u5f02\u6837\uff0c\u662f\u4f60\u5bfc\u81f4\u7684?', 3: '72'}"
+        "Params": "{2: \"So you're the reason Helentine's been acting strange lately?\", 3: '72'}"
     },
     {
         "Id": 72,
@@ -946,7 +946,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6e38\u84dd', 3: '\u4e3a\u4e86\u4fdd\u8bc1\u6cbb\u7597\u8fdb\u7a0b\uff0c \u6211\u4e5f\u5076\u5c14\u4f1a\u9876\u4e00\u4e0b\u53f7\u561b\u3002', 4: '1', 18: '100018807'}"
+        "Params": "{2: 'Ellen', 3: 'Well... I occasionally step in for her to keep the healing process on track.', 4: '1', 18: '100018807'}"
     },
     {
         "Id": 74,
@@ -972,7 +972,7 @@
         "EndAnim": "AniZhuanchangBegin",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6e38\u84dd', 3: '\u8d70\uff0c\u6211\u5148\u5e26\u4f60\u8fdb\u68da\uff0c\u6211\u4eec\u8fb9\u8d70\u8fb9\u804a\u3002', 4: '1', 18: '100018808'}"
+        "Params": "{2: 'Ellen', 3: \"Come on, let's walk and talk. I'll show you the studio.\", 4: '1', 18: '100018808'}"
     },
     {
         "Id": 76,
@@ -1037,7 +1037,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u8d70\u8fdb\u5f71\u89c6\u68da\u7684\u4e00\u77ac\u95f4\uff0c\u5c31\u50cf\u6362\u4e86\u4e2a\u5929\u7a7a\u76d2\u4e00\u6837\u2014\u2014\u5916\u9762\u8fd8\u662f\u5927\u767d\u5929\uff0c\u68da\u91cc\u5374\u662f\u4e00\u7247\u6674\u6717\u7684\u591c\u7a7a\u3002'}"
+        "Params": "{3: \"While the sun is still bright outside, you find a starlit night sky above you the moment you step into the soundstage. It's like a skybox being switched.\"}"
     },
     {
         "Id": 81,
@@ -1063,7 +1063,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: '\u6e38\u84dd', 3: '\u4e3a\u4e86\u8fd9\u6b21\u62cd\u6444\uff0c\u8fd9\u6574\u4e2a\u5c0f\u578b\u57ce\u5e02\u53ef\u662f\u6211\u4e00\u624b\u642d\u5efa\u7684\u3002', 4: '1', 18: '100018809'}"
+        "Params": "{1: '1', 2: 'Ellen', 3: 'I built this entire miniature city from scratch for the shoot, you know.', 4: '1', 18: '100018809'}"
     },
     {
         "Id": 83,
@@ -1076,7 +1076,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u62cd\u6444?', 3: '84'}"
+        "Params": "{2: 'The shoot?', 3: '84'}"
     },
     {
         "Id": 84,
@@ -1102,7 +1102,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6e38\u84dd', 3: '\u4f60\u4e5f\u5e94\u8be5\u4ece\u6d77\u6d77\u90a3\u91cc\u5f97\u77e5\u4e86\u90a3\u51e0\u76d8\u80f6\u5377\u7684\u4e8b\u60c5\u3002', 4: '1', 18: '100018810'}"
+        "Params": "{2: 'Ellen', 3: 'You should already know about those film reels from Nelly.', 4: '1', 18: '100018810'}"
     },
     {
         "Id": 86,
@@ -1128,7 +1128,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6e38\u84dd', 3: '\u5176\u5b9e\u5462\uff0c\u4e4b\u6240\u4ee5\u6d77\u6d77\u4f1a\u660f\u8ff7\uff0c\u4e5f\u4e0d\u662f\u6211\u505a\u7684\u3002\u662f\u6d77\u6d77\u81ea\u5df1\u4e0d\u613f\u610f\u9192\u6765\uff0c\u56e0\u4e3a\u5979\u5bf9\u90a3\u90e8\u672a\u5b8c\u7ed3\u7684\u7535\u5f71\u6267\u5ff5\u592a\u6df1\u4e86\u3002', 4: '1', 18: '100018811'}"
+        "Params": "{2: 'Ellen', 3: \"Here's the thing: I'm not the one keeping Nelly in a coma. She's the one who doesn't want to wake up, because she's too obsessed with that unfinished film.\", 4: '1', 18: '100018811'}"
     },
     {
         "Id": 88,
@@ -1154,7 +1154,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6e38\u84dd', 3: '\u6240\u4ee5\u5462\uff0c\u6211\u548c\u4f60\u7684\u76ee\u7684\u662f\u4e00\u6837\u7684\uff0c\u90fd\u662f\u60f3\u5e2e\u52a9\u6d77\u6d77\u561b\u3002', 4: '1', 18: '100018812'}"
+        "Params": "{2: 'Ellen', 3: \"So we're after the same thing here, you see. We both want to help Nelly.\", 4: '1', 18: '100018812'}"
     },
     {
         "Id": 90,
@@ -1167,7 +1167,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6e38\u84dd', 3: '\u6d77\u6d77\u5fc3\u91cc\u6709\u4e00\u4e2a\u6ca1\u89e3\u5f00\u7684\u7ed3\u3002\u8fd9\u90e8\u7535\u5f71\u5c31\u662f\u90a3\u4e2a\u7ed3\u3002\u62cd\u5b8c\u5b83\uff0c\u8ba9\u6d77\u6d77\u4e0d\u7559\u9057\u61be\uff0c\u4e00\u5207\u95ee\u9898\u5c31\u80fd\u88ab\u89e3\u51b3\u3002', 4: '1', 18: '100018813'}"
+        "Params": "{2: 'Ellen', 3: 'She has always had something weighing on her heart, and this film is that thing. If we finish it, she can move on without regrets, and everything will be resolved.', 4: '1', 18: '100018813'}"
     },
     {
         "Id": 91,
@@ -1193,7 +1193,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6e38\u84dd', 3: '\u6211\u662f\u5bfc\u6f14\uff0c\u6d77\u6d77\u662f\u81ea\u5df1\u7684\u4e3b\u6f14\uff0c\u800c\u73b0\u5728\u8fd8\u5dee\u53e6\u4e00\u4e2a\u4e3b\u6f14\u6765\u548c\u6d77\u6d77\u642d\u620f\uff0c\u4e5f\u5c31\u662f\u4f60!', 4: '1', 18: '100018814'}"
+        "Params": "{2: 'Ellen', 3: \"I'm the director, Nelly's playing the lead, and now we just need a co-star. That's where you come in!\", 4: '1', 18: '100018814'}"
     },
     {
         "Id": 93,
@@ -1206,7 +1206,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u542c\u8d77\u6765\u5f88\u5947\u602a\u554a\uff0c\u4f60\u600e\u4e48\u80af\u5b9a\u6211\u4f1a\u6765?', 3: '94'}"
+        "Params": "{2: \"That sounds kinda odd. How were you so sure I'd show up?\", 3: '94'}"
     },
     {
         "Id": 94,
@@ -1232,7 +1232,7 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6e38\u84dd', 3: '\u8fd9\u4e9b\u4e0d\u91cd\u8981!\u91cd\u8981\u7684\u662f\u6f14\u5458\u5df2\u5c31\u4f4d\uff0c\u4e07\u4e8b\u5177\u5907\u3002', 4: '1', 18: '100018815'}"
+        "Params": "{2: 'Ellen', 3: \"That doesn't matter! What matters is that the cast has been assembled, and everything's ready to go.\", 4: '1', 18: '100018815'}"
     },
     {
         "Id": 96,
@@ -1245,7 +1245,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6211\u5fc5\u987b\u5411\u6d77\u4f26\u6c40\u786e\u8ba4\u8fd9\u4ef6\u4e8b\uff0c\u5e26\u6211\u53bb\u89c1\u5979\u3002', 3: '97'}"
+        "Params": "{2: 'I need to confirm this with Helentine first. Take me to her.', 3: '97'}"
     },
     {
         "Id": 97,
@@ -1310,7 +1310,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: 'Helentine', 3: '\u6211\u4eec\u4e24\u4e2a\u505a\u4e3b\u6f14\u542c\u5bfc\u6f14\u7684\uff0c\u53ea\u8981\u6211\u4eec\u53ef\u4ee5\u628a\u8fd9\u90e8\u7535\u5f71\u62cd\u5b8c\u5c31\u80fd\u51fa\u53bb\u3002', 4: '2', 18: '100018816'}"
+        "Params": "{1: '1', 2: 'Helentine', 3: \"We're playing the leads, so we should listen to the director. We can leave as soon as we're done filming.\", 4: '2', 18: '100018816'}"
     },
     {
         "Id": 102,
@@ -1323,7 +1323,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6211\u662f\u4e0d\u662f\u5f97\u53eb\u5979\u201c\u84dd\u5bfc\u201d\u3002', 3: '103'}"
+        "Params": "{2: 'Should I call her \"Director Ellen\" then?', 3: '103'}"
     },
     {
         "Id": 103,
@@ -1362,7 +1362,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: '\u6e38\u84dd', 3: '\u633a\u4e0a\u9053\u561b\u3002', 4: '1', 18: '100018817'}"
+        "Params": "{1: '1', 2: 'Ellen', 3: 'Look at you, catching on quick.', 4: '1', 18: '100018817'}"
     },
     {
         "Id": 106,
@@ -1375,7 +1375,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: 'Helentine', 3: '\u8fd9\u662f\u5c0f\u6e38\u5bfc\u6f14\u8ddf\u6211\u8bf4\u7684\uff0c\u5979\u8fd8\u8bf4\u5514\u2014\u2014', 4: '2', 18: '100018818'}"
+        "Params": "{2: 'Helentine', 3: 'That was what Director Ellen told me. She also said\u2014mmph!', 4: '2', 18: '100018818'}"
     },
     {
         "Id": 107,
@@ -1453,7 +1453,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u6e38\u84dd\u8fde\u5fd9\u7528\u624b\u6342\u4f4f\u4e86\u6d77\u4f26\u6c40\u7684\u5634\u3002'}"
+        "Params": "{3: \"Ellen quickly covers Helentine's mouth with her hand.\"}"
     },
     {
         "Id": 113,
@@ -1479,7 +1479,7 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6e38\u84dd', 3: '\u4f60\u770b\uff0c\u6d77\u6d77\u90fd\u8fd9\u4e48\u8bf4\u4e86!\u53ef\u4ee5\u76f8\u4fe1\u6211\u4e86\u5427\u3002', 4: '1', 18: '100018819'}"
+        "Params": "{2: 'Ellen', 3: 'See? Even Nelly says so! You can trust me now, right?', 4: '1', 18: '100018819'}"
     },
     {
         "Id": 115,
@@ -1531,7 +1531,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u66f4\u53ef\u7591\u4e86\u3002', 3: '119', 4: '\u6682\u4e14\u76f8\u4fe1\u4f60\u3002', 5: '121'}"
+        "Params": "{2: 'That just makes it more suspicious.', 3: '119', 4: \"I'll trust you for now.\", 5: '121'}"
     },
     {
         "Id": 119,
@@ -1544,7 +1544,7 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: 'Helentine', 3: '\u6307\u6325\u5b98\uff0c\u6211\u7684\u76f4\u89c9\u544a\u8bc9\u6211\u53ef\u4ee5\u76f8\u4fe1\u5c0f\u6e38\u3002', 4: '2', 18: '100018820'}"
+        "Params": "{2: 'Helentine', 3: 'Commandant, my gut tells me we can trust Ellen.', 4: '2', 18: '100018820'}"
     },
     {
         "Id": 120,
@@ -1557,7 +1557,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: 'I trust you.', 3: '121'}"
+        "Params": "{2: \"I'll trust you.\", 3: '121'}"
     },
     {
         "Id": 121,
@@ -1570,7 +1570,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\uff08\u65e2\u7136\u662f\u7b2c\u4e8c\u4eba\u683c\uff0c\u4e5f\u53ef\u4ee5\u8bf4\u662f\u5979\u7684\u4e00\u90e8\u5206\u5427\u3002\uff09', 3: '122'}"
+        "Params": "{2: \"(If she's an alternate personality, she's still a part of Helentine.)\", 3: '122'}"
     },
     {
         "Id": 122,
@@ -1596,7 +1596,7 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u770b\u5728\u6d77\u4f26\u6c40\u7684\u610f\u8bc6\u6d77\u5185\u786e\u5b9e\u611f\u77e5\u4e0d\u5230\u4efb\u4f55\u95ee\u9898\uff0c\u52a0\u4e0a\u5bf9\u6d77\u4f26\u6c40\u76f4\u89c9\u7684\u4fe1\u4efb\uff0c\u4eba\u7c7b\u6307\u6325\u5b98\u6682\u4e14\u653e\u4e0b\u4e86\u4e00\u4e9b\u7591\u5fc3\u3002'}"
+        "Params": "{3: \"Having found no anomalies within Helentine's M.I.N.D., you decide to set aside your suspicions for now, trusting her intuition.\"}"
     },
     {
         "Id": 124,
@@ -1661,7 +1661,7 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u5728\u7b49\u5f85\u6e38\u84dd\u62ff\u5267\u672c\u7684\u65f6\u95f4\u91cc\uff0c\u4eba\u7c7b\u6307\u6325\u5b98\u548c\u6d77\u4f26\u6c40\u7b80\u5355\u53c2\u89c2\u4e86\u4e00\u4e0b\u5f71\u68da\u3002'}"
+        "Params": "{3: 'While Ellen fetches the script, Helentine and you take a quick tour around the studio.'}"
     },
     {
         "Id": 129,
@@ -1726,7 +1726,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: 'Helentine', 3: '\u8fd9\u5ea7\u57ce\u5e02\u4ee5\u65af\u65fa\u5bfc\u6f14\u7684\u5bb6\u4e61\u4e3a\u539f\u578b\u3002', 4: '1', 18: '100018821'}"
+        "Params": "{1: '1', 2: 'Helentine', 3: \"This city is modeled after Director Swan's hometown.\", 4: '1', 18: '100018821'}"
     },
     {
         "Id": 134,
@@ -1752,7 +1752,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u6d77\u4f26\u6c40\u8d70\u5728\u524d\u9762\uff0c\u8fb9\u8d70\u8fb9\u7528\u624b\u6307\u5411\u8fdc\u5904\u7684\u5efa\u7b51\u7269\u3002'}"
+        "Params": "{3: 'Helentine walks ahead, gesturing toward the buildings in the distance.'}"
     },
     {
         "Id": 136,
@@ -1778,7 +1778,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: 'Helentine', 3: '\u90a3\u91cc\u662f\u7b2c\u4e09\u516c\u7acb\u533b\u9662\uff0c\u8fd9\u91cc\u662f\u4e03\u53f7\u8857\u5730\u94c1\u7ad9\uff0c\u8fdc\u5904\u90a3\u4e2a\u5927\u5efa\u6784\u662f\u706b\u8f66\u7ad9\u3002\u548c\u6211\u5bb6\u65cf\u7684\u5f71\u68da\u4e00\u6bd4\u4e00\u8fd8\u539f\u3002', 4: '1', 18: '100018822'}"
+        "Params": "{1: '1', 2: 'Helentine', 3: \"That's the Third Public Hospital over there. This one is the Seventh Street Station. And that massive structure in the distance is the Grand Metro Terminal. My family's studio has recreated everything down to the last detail.\", 4: '1', 18: '100018822'}"
     },
     {
         "Id": 138,
@@ -1791,7 +1791,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: 'Helentine', 3: '\u5f71\u68da\u5916\u7684\u57ce\u5e02\u548c\u65af\u65fa\u5bfc\u6f14\u7684\u5bb6\u4e61\u4e5f\u4e00\u6a21\u4e00\u6837\uff0c\u8bb8\u591a\u5916\u666f\u53d6\u666f\u5730\u90fd\u662f\u76f4\u63a5\u5728\u57ce\u5e02\u4e2d\u627e\u7684\u3002', 4: '1', 18: '100018823'}"
+        "Params": "{2: 'Helentine', 3: \"The city outside matches Director Swan's hometown as well. A lot of the location shoots are done there.\", 4: '1', 18: '100018823'}"
     },
     {
         "Id": 139,
@@ -1830,7 +1830,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u6b63\u5f53\u4eba\u7c7b\u4e3a\u8fd9\u4e2a\u5f71\u89c6\u57fa\u5730\u7684\u5e9e\u5927\u8d5e\u53f9\u4e0d\u5df2\u65f6\uff0c\u6e38\u84dd\u4ece\u540e\u9762\u8ffd\u4e0a\u53c2\u89c2\u4e2d\u7684\u4e24\u4eba\uff0c\u624b\u4e0a\u6325\u821e\u7740\u51e0\u5f20\u7eb8\uff0c\u5206\u6210\u4e24\u4efd\u9012\u7ed9<M>\u4ed6</M><W>\u5979</W>\u4eec\u3002'}"
+        "Params": "{3: 'The sheer scale of the film complex leaves you in awe. Ellen catches up from behind, waving several sheets of paper before dividing them into two sets and handing them to Helentine and you.'}"
     },
     {
         "Id": 142,
@@ -1856,7 +1856,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: '\u6e38\u84dd', 3: '\u4e8c\u4f4d!\u6765\u8bfb\u5267\u672c\u3002', 4: '1', 18: '100018824'}"
+        "Params": "{1: '1', 2: 'Ellen', 3: 'You two! Time to go over the script.', 4: '1', 18: '100018824'}"
     },
     {
         "Id": 144,
@@ -1869,7 +1869,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u5267\u672c\u53ea\u6709\u8fd9\u4e48\u70b9?', 3: '145'}"
+        "Params": "{2: 'This is all there is?', 3: '145'}"
     },
     {
         "Id": 145,
@@ -1895,7 +1895,7 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6e38\u84dd', 3: '\u5148\u4e00\u5e55\u4e00\u5e55\u6765\u561b~\u5927\u7eb2\u5728\u6700\u524d\u9762\uff0c\u4f60\u4eec\u5148\u901a\u8bfb\u3002', 4: '1', 18: '100018825'}"
+        "Params": "{2: 'Ellen', 3: \"We'll tackle it scene by scene! The outline's right up front. Just give it a read-through first.\", 4: '1', 18: '100018825'}"
     },
     {
         "Id": 147,
@@ -1973,7 +1973,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u7535\u5f71\u540d\u5b57\u662f\u300a\u504f\u5dee\u7231\u60c5\u300b\uff0c\u636e\u8bf4\u548c\u6d77\u4f26\u6c40\u8bb0\u5fc6\u4e2d\u7684\u4e00\u81f4\u3002'}"
+        "Params": "{3: 'The film is titled Deviant Love, which you are told matches what Helentine remembers.'}"
     },
     {
         "Id": 153,
@@ -1986,7 +1986,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u8fd9\u4e2a\u6545\u4e8b\u8bb2\u8ff0\u4e86\u4e24\u4f4d\u4e3b\u89d2\u5728\u4e92\u76f8\u559c\u6b22\u7684\u524d\u63d0\u4e0b\uff0c\u867d\u7136\u56e0\u4e3a\u5404\u79cd\u9634\u5dee\u9633\u9519\u9519\u8fc7\u5f7c\u6b64\uff0c\u6700\u7ec8\u6709\u60c5\u4eba\u7ec8\u6210\u7737\u5c5e\u7684\u6545\u4e8b\u3002'}"
+        "Params": "{3: 'The story follows two protagonists who, despite their mutual affection, keep missing each other through a series of mishaps before finally finding their way together.'}"
     },
     {
         "Id": 154,
@@ -1999,7 +1999,7 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u6545\u4e8b\u7684\u4e24\u540d\u4e3b\u89d2\u5206\u522b\u53eb\u6d77\u4f26\u5a1c\u548c\u745e\u6587\uff0c\u5206\u522b\u662f\u4e00\u540d\u5c0f\u8bf4\u5bb6\u548c\u4e00\u540d\u5fc3\u7406\u533b\u751f\u3002'}"
+        "Params": "{3: 'The two protagonists are named Helena and Raven, who are a novelist and a psychologist, respectively.'}"
     },
     {
         "Id": 155,
@@ -2064,7 +2064,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u8fd9\u4e24\u4e2a\u540d\u5b57\u2026\u2026', 3: '160'}"
+        "Params": "{2: 'The names...', 3: '160'}"
     },
     {
         "Id": 160,
@@ -2090,7 +2090,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: '\u6e38\u84dd', 3: '\u8fd9\u91cc\u6211\u53ef\u662f\u975e\u5e38\u5fe0\u4e8e\u539f\u8457\u7684\uff0c\u4e0d\u9a97\u4f60\uff0c\u7535\u5f71\u91cc\u7684\u4e24\u4e2a\u4eba\u540d\u5b57\u5c31\u662f\u8fd9\u4e2a\u3002', 4: '1', 18: '100018826'}"
+        "Params": "{1: '1', 2: 'Ellen', 3: \"Hey, I'm just being faithful to the source material here. I'm not making this up! Those are the actual names from the film.\", 4: '1', 18: '100018826'}"
     },
     {
         "Id": 162,
@@ -2129,7 +2129,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u7ffb\u5b8c\u8584\u8584\u7684\u5267\u672c\uff0c\u4e3b\u9898\u5927\u610f\u662f\u4e00\u540d\u60a3\u6709\u8ff0\u60c5\u969c\u788d\u7684\u5c0f\u8bf4\u5bb6\uff0c\u5728\u5fc3\u7406\u533b\u751f\u7684\u5e2e\u52a9\u4e0b\u9010\u6e10\u627e\u56de\u4e86\u60c5\u611f\u3002'}"
+        "Params": "{3: 'You flip through the thin script, and it outlines the story of a novelist with alexithymia who gradually recovers her emotional capacity with the help of a psychologist.'}"
     },
     {
         "Id": 165,
@@ -2142,7 +2142,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u81f3\u4e8e\u4e3a\u4ec0\u4e48\u5fc3\u7406\u533b\u751f\u53ef\u4ee5\u548c\u75c5\u60a3\u604b\u7231\uff0c\u6e38\u84dd\u7684\u8bf4\u6cd5\u662f\uff1a\u201c\u7535\u5f71\u561b\u2026\u2026\u73af\u5927\u897f\u6d0b\u6709\u4e00\u4e9b\u89c2\u4f17\u5c31\u597d\u8fd9\u53e3\uff0c\u5927\u6982\u662f\u5236\u7247\u65b9\u8981\u6c42\u7684\u201d\u3002'}"
+        "Params": "{3: 'As for why a therapist can date a patient, Ellen\\'s answer was, \"It\\'s a movie... Some Transatlantic audiences are into that sort of thing. Probably a producer request.\"'}"
     },
     {
         "Id": 166,
@@ -2155,7 +2155,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u800c\u4e14\u89d2\u8272\u7684\u539f\u578b\uff0c\u6b63\u597d\u662f\u5e2e\u52a9\u65af\u65fa\u8d70\u51fa\u5fc3\u7406\u9634\u5f71\u7684\u670b\u53cb\uff0c\u5979\u4e2a\u4eba\u8ba4\u4e3a\u8fd9\u4e2a\u8eab\u4efd\u5f88\u9002\u5408<M>\u4ed6</M><W>\u5979</W>\u3002'}"
+        "Params": "{3: 'Besides, the character was based on a friend who helped Swan through her trauma. Ellen thought the role suited that friend perfectly.'}"
     },
     {
         "Id": 167,
@@ -2168,7 +2168,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u542c\u8d77\u6765\u662f\u4e2a\u597d\u7ed3\u5c40\uff0c\u4e3a\u4ec0\u4e48\u65af\u65fa\u4f1a\u60b2\u4f24\u8fc7\u5ea6?', 3: '168'}"
+        "Params": "{2: 'That sounds like a happy ending, so why was Swan overwhelmed by grief?', 3: '168'}"
     },
     {
         "Id": 168,
@@ -2194,7 +2194,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 3: '\u6d77\u4f26\u6c40\u5728\u4e00\u65c1\u6447\u4e86\u6447\u5934\uff0c\u53c8\u70b9\u4e86\u70b9\u5934\u3002\u6447\u5934\u8868\u5426\u5b9a\u6e38\u84dd\u7684\u8bdd\uff0c\u70b9\u5934\u8868\u80af\u5b9a\u4eba\u7c7b\u6307\u6325\u5b98\u7684\u8bdd\u3002'}"
+        "Params": "{1: '1', 3: \"Helentine shakes her head at Ellen's words, then nods in agreement with your question.\"}"
     },
     {
         "Id": 170,
@@ -2220,7 +2220,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: 'Helentine', 3: '\u5267\u672c\uff0c\u4e0d\u5e94\u8be5\u662f\u8fd9\u6837\u3002\u4f46\u6211\u60f3\u4e0d\u8d77\u6765\u539f\u6765\u7684\u7ed3\u5c40\uff0c\u4e3a\u4ec0\u4e48?', 4: '1', 18: '100018827'}"
+        "Params": "{2: 'Helentine', 3: \"The story... shouldn't go like this, but I can't remember the original ending... Why can't I remember?\", 4: '1', 18: '100018827'}"
     },
     {
         "Id": 172,
@@ -2246,7 +2246,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u89c1\u6b64\uff0c\u6e38\u84dd\u8fde\u5fd9\u6253\u7740\u5706\u573a\u3002'}"
+        "Params": "{3: 'Seeing this, Ellen quickly tries to smooth things over.'}"
     },
     {
         "Id": 174,
@@ -2272,7 +2272,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: '\u6e38\u84dd', 3: '\u8fd9\u90e8\u7535\u5f71\u672c\u6765\u5c31\u6ca1\u6709\u7ed3\u5c40\uff0c\u6211\u561b\uff0c\u53ea\u662f\u7ed9\u4e86\u5b83\u4e00\u4e2a\u7f8e\u597d\u7684\u8865\u5168\u3002', 4: '1', 18: '100018828'}"
+        "Params": "{1: '1', 2: 'Ellen', 3: 'The film never had an ending to begin with. I just gave it a happy one.', 4: '1', 18: '100018828'}"
     },
     {
         "Id": 176,
@@ -2298,7 +2298,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6e38\u84dd', 3: '\u6ca1\u9519\uff0c\u91cd\u8981\u7684\u662f\u5b8c\u6210\u8fd9\u90e8\u7535\u5f71\u8fd9\u4ef6\u4e8b\u672c\u8eab\u3002', 4: '1', 18: '100018829'}"
+        "Params": "{2: 'Ellen', 3: 'What matters is finishing the film itself.', 4: '1', 18: '100018829'}"
     },
     {
         "Id": 178,
@@ -2324,7 +2324,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6e38\u84dd', 3: '\u8fd9\u4e2a\u7ed9\u4f60\u4eec\uff0c\u5728\u8bd5\u620f\u8fc7\u7a0b\u4e2d\u6211\u4f1a\u901a\u8fc7\u8fd9\u4e2a\u5fae\u578b\u8033\u673a\u7ed9\u4f60\u4eec\u4e00\u4e9b\u63d0\u793a\u3002', 4: '1', 18: '100018830'}"
+        "Params": "{2: 'Ellen', 3: \"Here, take these. I'll feed you cues through these earpieces during the screen test.\", 4: '1', 18: '100018830'}"
     },
     {
         "Id": 180,
@@ -2363,7 +2363,7 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u6e38\u84dd\u4e00\u8fb9\u9012\u7ed9\u4e8c\u4eba\u4e24\u5bf9\u5fae\u578b\u5165\u8033\u5f0f\u8033\u673a\uff0c\u4e00\u8fb9\u5c06<M>\u4ed6\u4eec</M><W>\u5979\u4eec</W>\u9886\u5230\u7b2c\u4e00\u5e55\u7684\u573a\u5730\u3002'}"
+        "Params": "{3: 'Ellen hands each of you a pair of earpieces and leads you to the set for the first scene.'}"
     },
     {
         "Id": 183,
@@ -2441,7 +2441,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u4e00\u4e2a\u5496\u5561\u9986\uff0c'}"
+        "Params": "{3: 'A cafe'}"
     },
     {
         "Id": 189,
@@ -2506,7 +2506,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u4ee5\u53ca\u4e00\u4e2a\u5730\u94c1\u53e3\u3002', 22: '1'}"
+        "Params": "{3: ' and a subway entrance', 22: '1'}"
     },
     {
         "Id": 194,
@@ -2545,7 +2545,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: '\u6e38\u84dd', 3: '\u4e8b\u4e0d\u5b9c\u8fdf\uff0c\u6211\u4eec\u5f00\u59cb\u62cd\u7b2c\u4e00\u5e55\u5427\uff0c\u662f\u4e24\u540d\u4e3b\u89d2\u521d\u751f\u60c5\u612b\u7684\u96e8\u591c\u3002', 4: '1', 18: '100018831'}"
+        "Params": "{1: '1', 2: 'Ellen', 3: \"Let's stop wasting time and start shooting our first scene. It takes place on a rainy night where our two leads first feel a spark between them.\", 4: '1', 18: '100018831'}"
     },
     {
         "Id": 197,
@@ -2584,7 +2584,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 3: '\u786e\u8ba4\u6f14\u5458\u5c31\u4f4d\u540e\uff0c\u6e38\u84dd\u634f\u7740\u5bf9\u8bb2\u673a\uff0c\u671d\u68da\u91cc\u558a\u4e86\u4e00\u58f0\u3002\u673a\u68b0\u4f53\u573a\u8bb0\u7acb\u523b\u62b1\u7740\u573a\u8bb0\u677f\u5c0f\u8dd1\u8fc7\u6765\uff0c\u5728\u4e24\u4e2a\u4eba\u9762\u524d\u6253\u4e86\u4e00\u677f\u3002'}"
+        "Params": "{1: '1', 3: 'Once her actors are in position, Ellen grabs her walkie-talkie and calls into the studio. A mechanoid production assistant immediately rushes over with the slate and snaps it in front of you.'}"
     },
     {
         "Id": 200,
@@ -2623,7 +2623,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: '\u6e38\u84dd', 3: '\u7b2c\u4e00\u5e55\u7b2c\u4e00\u573a\uff0c\u4e00\u955c\uff0c\u5f00\u59cb\u3002', 4: '18', 18: '100018833'}"
+        "Params": "{1: '1', 2: 'Ellen', 3: 'Scene One, Take One. Action!', 4: '18', 18: '100018833'}"
     },
     {
         "Id": 203,
@@ -2818,7 +2818,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u5916\u666f\u8f6c\u5185\u666f\u7684\u77ac\u95f4\uff0c\u4eba\u9020\u96e8\u7684\u58f0\u97f3\u4ece\u56db\u9762\u516b\u65b9\u6f2b\u4e0a\uff0c\u6f6e\u6e7f\u7684\u6c14\u606f\u6251\u9762\u800c\u81f3\u3002'}"
+        "Params": "{3: 'The moment the scene shifts from exterior to interior, the sound of artificial rain floods in from all sides, and a humid atmosphere washes over everything.'}"
     },
     {
         "Id": 218,
@@ -2844,7 +2844,7 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u660f\u9ec4\u7684\u5496\u5561\u9986\u706f\u5149\u4eae\u8d77\u3002'}"
+        "Params": "{3: 'Warm, amber lights flicker on in the cafe.'}"
     },
     {
         "Id": 220,
@@ -2948,7 +2948,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 3: '\u6d51\u8eab\u6dcb\u6e7f\u7684<phonetic=\u6d77\u4f26\u6c40>\u201c\u6d77\u4f26\u5a1c\u201d</phonetic>\u63a8\u95e8\u800c\u5165\u3002\u5979\u5e73\u9759\u5730\u7ad9\u5728\u95e8\u53e3\uff0c\u50cf\u662f\u8d70\u8fdb\u6765\u8fd9\u4ef6\u4e8b\u548c\u5916\u9762\u7684\u66b4\u96e8\u6ca1\u6709\u4efb\u4f55\u5173\u7cfb\uff0c\u7136\u540e\u81ea\u7136\u800c\u7136\u5730\u5728\u4e00\u4e2a\u4eba\u8eab\u65c1\u5750\u4e86\u4e0b\u6765\u3002'}"
+        "Params": "{1: '1', 3: 'Drenched from head to toe, <phonetic=Helentine>\"Helena\"</phonetic> pushes through the door. As though the downpour outside does not concern her, she stands at the entrance with an air of calm before taking a seat beside a person nonchalantly.'}"
     },
     {
         "Id": 228,
@@ -2961,7 +2961,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u90a3\u662f\u5979\u5728\u5496\u5561\u9986\u4e2d\u9047\u89c1\u7684\u719f\u4eba\uff0c\u662f\u81ea\u5df1\u7684\u7f16\u8f91\u63a8\u8350\u7684\u3001\u4e0e\u5979\u6765\u5f80\u591a\u6b21\u7684\u5fc3\u7406\u533b\u751f\u2014\u2014<phonetic=\u3010kuroname\u3011>\u745e\u6587</phonetic>\u3002'}"
+        "Params": "{3: \"It is an acquaintance she's run into at this cafe before: <phonetic=\u3010kuroname\u3011>Raven</phonetic>, the psychologist her editor recommended, and someone she's visited on multiple occasions.\"}"
     },
     {
         "Id": 229,
@@ -2974,7 +2974,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6d77\u4f26\u5a1c\uff0c\u597d\u5de7\u3002', 3: '230'}"
+        "Params": "{2: 'Helena. What a coincidence.', 3: '230'}"
     },
     {
         "Id": 230,
@@ -2987,7 +2987,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u201c\u6d77\u4f26\u5a1c\u201d', 3: '\u56e0\u4e3a\u5916\u9762\u5f88\u51b7\u3002', 4: '1', 18: '100018832'}"
+        "Params": "{2: '\"Helena\"', 3: \"Because it's cold outside.\", 4: '1', 18: '100018832'}"
     },
     {
         "Id": 231,
@@ -3013,7 +3013,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u7531\u4e8e\u8863\u670d\u5168\u6e7f\uff0c<phonetic=\u6d77\u4f26\u6c40>\u201c\u6d77\u4f26\u5a1c\u201d</phonetic>\u770b\u8d77\u6765\u6709\u70b9\u54c6\u54c6\u55e6\u55e6\u3002'}"
+        "Params": "{3: '<phonetic=Helentine>\"Helena\"</phonetic> shivers slightly, her clothes completely soaked through.'}"
     },
     {
         "Id": 233,
@@ -3026,7 +3026,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6211\u60f3\uff0c\u4f60\u9700\u8981\u6709\u70b9\u70ed\u996e\u3002', 3: '234'}"
+        "Params": "{2: 'I think you could use a hot drink.', 3: '234'}"
     },
     {
         "Id": 234,
@@ -3052,7 +3052,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u684c\u65c1\u7684<M>\u4ed6</M><W>\u5979</W>\u5c06\u4e00\u676f\u70ed\u5496\u5561\u63a8\u8fc7\u6765\u3002'}"
+        "Params": "{3: 'You slide a cup of hot coffee across the table.'}"
     },
     {
         "Id": 236,
@@ -3065,7 +3065,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u5148\u6696\u6696\u8eab\u5b50\uff0c\u4f60\u6dcb\u96e8\u4e86\u3002', 3: '237'}"
+        "Params": "{2: \"Warm yourself up. You're drenched.\", 3: '237'}"
     },
     {
         "Id": 237,
@@ -3091,7 +3091,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '<phonetic=\u6d77\u4f26\u6c40>\u201c\u6d77\u4f26\u5a1c\u201d</phonetic>\u63a5\u8fc7\u5496\u5561\uff0c\u7136\u540e\u628a\u676f\u5b50\u91cc\u6eda\u70eb\u7684\u6db2\u4f53\u4e00\u996e\u800c\u5c3d\u3002'}"
+        "Params": "{3: '<phonetic=Helentine>\"Helena\"</phonetic> takes the coffee and downs the scalding liquid in one go.'}"
     },
     {
         "Id": 239,
@@ -3117,7 +3117,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 3: '\u5979\u6367\u7740\u676f\u5b50\uff0c\u671b\u5411<phonetic=\u3010kuroname\u3011>\u745e\u6587</phonetic>\uff0c\u5728\u5ea7\u4f4d\u4e0a\u9759\u9ed8\u4e86\u8bb8\u4e45\u3002'}"
+        "Params": "{1: '1', 3: 'She cradles the cup in her hands, her gaze fixed on you, and remains silent for a long while.'}"
     },
     {
         "Id": 241,
@@ -3130,7 +3130,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6162\u6162\u8bf4\uff0c\u6211\u53ef\u4ee5\u7b49\u4f60\u3002', 3: '242'}"
+        "Params": "{2: 'Take your time. I can wait.', 3: '242'}"
     },
     {
         "Id": 242,
@@ -3169,7 +3169,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u5916\u9762\u7684\u96e8\u6572\u6253\u7740\u7a97\u6237\uff0c<phonetic=\u6d77\u4f26\u6c40>\u201c\u6d77\u4f26\u5a1c\u201d</phonetic>\u7528\u624b\u6307\u6025\u4fc3\u5730\u6572\u51fb\u7740\u676f\u5b50\u3002'}"
+        "Params": "{3: 'Rain hammers against the window outside while <phonetic=Helentine>\"Helena\"</phonetic> drums her fingers rapidly against the cup.'}"
     },
     {
         "Id": 245,
@@ -3195,7 +3195,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u7d27\u63a5\u7740\u662f\u4e00\u58f0\u95f7\u96f7\uff0c<phonetic=\u6d77\u4f26\u6c40>\u201c\u6d77\u4f26\u5a1c\u201d</phonetic>\u770b\u8d77\u6765\u4f9d\u65e7\u5e73\u9759\u3002'}"
+        "Params": "{3: 'A low rumble of thunder follows, yet <phonetic=Helentine>she</phonetic> still appears unfazed.'}"
     },
     {
         "Id": 247,
@@ -3234,7 +3234,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: '\u201c\u6d77\u4f26\u5a1c\u201d', 3: '\u5496\u5561\u5f88\u6696\u548c\uff0c\u53ef\u4ee5\u7ee7\u7eed\u56de\u5bb6\u4e86\u3002', 4: '1', 18: '100018834'}"
+        "Params": "{1: '1', 2: '\"Helena\"', 3: \"The coffee's warmed me up. I can head home now.\", 4: '1', 18: '100018834'}"
     },
     {
         "Id": 250,
@@ -3247,7 +3247,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u4f60\u60f3\u73b0\u5728\u53bb\u5730\u94c1\u7ad9\u5417?\u4f60\u6d51\u8eab\u90fd\u6e7f\u900f\u4e86\u3002', 3: '251'}"
+        "Params": "{2: \"Going to the subway station now? You're soaked through.\", 3: '251'}"
     },
     {
         "Id": 251,
@@ -3260,7 +3260,7 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u201c\u6d77\u4f26\u5a1c\u201d', 3: '\u65e2\u7136\u5df2\u7ecf\u88ab\u6dcb\u6e7f\u4e86\uff0c\u8d8a\u65e9\u56de\u5bb6\u6d17\u6fa1\u624d\u8d8a\u597d\u5427\u3002', 4: '1', 18: '100018835'}"
+        "Params": "{2: '\"Helena\"', 3: \"I'm already soaked anyway. Better to get home as quickly as possible and take a hot shower.\", 4: '1', 18: '100018835'}"
     },
     {
         "Id": 252,
@@ -3338,7 +3338,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '<phonetic=\u6d77\u4f26\u6c40>\u201c\u6d77\u4f26\u5a1c\u201d</phonetic>\u7a0d\u5fae\u62e7\u5e72\u4e86\u5934\u53d1\u4e0a\u7684\u6c34\uff0c\u8d77\u8eab\u5411<phonetic=\u3010kuroname\u3011>\u745e\u6587</phonetic>\u8868\u8fbe\u8c22\u610f\u540e\uff0c\u6025\u4fc3\u5730\u5411\u5496\u5561\u9986\u95e8\u53e3\u8d70\u53bb\u3002'}"
+        "Params": "{3: '<phonetic=Helentine>\"Helena\"</phonetic> wrings some water from her hair, then stands and thanks you before hurrying toward the cafe exit.'}"
     },
     {
         "Id": 258,
@@ -3351,7 +3351,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u5916\u9762\u96e8\u592a\u5927\uff0c\u8ba9\u6211\u9001\u4f60\u4e00\u7a0b\uff0c\u6211\u7684\u5916\u5957\u8fd8\u7b97\u9632\u6c34\u3002', 3: '259'}"
+        "Params": "{2: \"At least let me walk you to the station. My coat's pretty waterproof.\", 3: '259'}"
     },
     {
         "Id": 259,
@@ -3364,7 +3364,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '<phonetic=\u6d77\u4f26\u6c40>\u201c\u6d77\u4f26\u5a1c\u201d</phonetic>\u6253\u91cf\u7740<phonetic=\u3010kuroname\u3011>\u745e\u6587</phonetic>\uff0c<M>\u4ed6</M><W>\u5979</W>\u7684\u88e4\u5b50\u867d\u7136\u6709\u4e9b\u6e7f\u4e86\uff0c\u4e0a\u534a\u8eab\u9664\u4e86\u5916\u5957\u90fd\u8fd8\u5e72\u71e5\u3002'}"
+        "Params": "{3: '<phonetic=Helentine>\"Helena\"</phonetic> looks you over. Your pants are a bit wet, but your upper body is pretty dry, thanks to the coat.'}"
     },
     {
         "Id": 260,
@@ -3377,7 +3377,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u8ba9\u81ea\u5df1\u7684\u75c5\u4eba\u51bb\u611f\u5192\uff0c\u6709\u6096\u804c\u4e1a\u9053\u5fb7\u3002', 3: '261'}"
+        "Params": "{2: \"Letting my patient catch a cold wouldn't be very professional of me.\", 3: '261'}"
     },
     {
         "Id": 261,
@@ -3390,7 +3390,7 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u4e8c\u4eba\u76f8\u987e\u65e0\u8a00\uff0c\u4e00\u8d77\u79bb\u5f00\u4e86\u6e29\u6696\u7684\u5496\u5561\u9986\u3002'}"
+        "Params": "{3: 'You two share a silent glance before leaving the warmth of the cafe together.'}"
     },
     {
         "Id": 262,
@@ -3559,7 +3559,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: '\u6e38\u84dd', 3: '\u5494\u3002\u6574\u4f53\u6548\u679c\uff0c\u9a6c\u9a6c\u864e\u864e\u5427\u3002\u6d77\u6d77\u5168\u7a0b\u867d\u7136\u9762\u65e0\u8868\u60c5\uff0c\u4f46\u672c\u6765\u8fd9\u65f6\u5019\u6d77\u4f26\u5a1c\u8fd8\u6709\u8ff0\u60c5\u969c\u788d\uff0c\u6240\u4ee5\u4e0d\u7b97\u95ee\u9898\u3002', 4: '1', 18: '100018836'}"
+        "Params": "{1: '1', 2: 'Ellen', 3: \"And... cut. This is pretty underwhelming overall. Nelly was expressionless the whole time, but it's alright, given that Helena still has alexithymia at this point.\", 4: '1', 18: '100018836'}"
     },
     {
         "Id": 275,
@@ -3585,7 +3585,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u6bd4\u8d77\u8ff0\u60c5\u969c\u788d\uff0c\u6d77\u4f26\u6c40\u770b\u8d77\u6765\u66f4\u591a\u7684\u662f\u6beb\u65e0\u53cd\u5e94\u3002'}"
+        "Params": "{3: 'Helentine looked more unresponsive than alexithymic.'}"
     },
     {
         "Id": 277,
@@ -3598,7 +3598,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6211\u89c9\u5f97\u6548\u679c\u8fd8\u4e0d\u9519\u3002', 3: '278', 4: '\u786e\u5b9e\u6709\u5f85\u63d0\u5347\u3002', 5: '278'}"
+        "Params": "{2: 'I think it turned out pretty well.', 3: '278', 4: 'It could definitely use some improvement.', 5: '278'}"
     },
     {
         "Id": 278,
@@ -3624,7 +3624,7 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: 'Helentine', 3: '\u8fd9\u573a\u620f\uff0c\u672c\u6765\u5c31\u5f88\u5e73\u6ed1\uff0c\u5f88\u77ed\u3002', 4: '1', 18: '100018837'}"
+        "Params": "{1: '1', 2: 'Helentine', 3: 'This scene was meant to be simple and short anyway.', 4: '1', 18: '100018837'}"
     },
     {
         "Id": 280,
@@ -3637,7 +3637,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u4e0d\u8fc7\u6211\u60f3\u5411\u84dd\u5bfc\u4e86\u89e3\u4e00\u4e9b\u89d2\u8272\u5851\u9020\u7ec6\u8282\u3002', 3: '281'}"
+        "Params": "{2: \"I'd like to know more about the characters, though, Director Ellen.\", 3: '281'}"
     },
     {
         "Id": 281,
@@ -3650,7 +3650,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6bd4\u5982\uff0c\u4e3a\u4f55\u6d77\u4f26\u5a1c\u660e\u77e5\u5916\u9762\u6709\u96e8\uff0c\u4e5f\u60f3\u56de\u53bb\u3002', 3: '282'}"
+        "Params": "{2: \"Like, why does Helena want to leave even though it's raining outside?\", 3: '282'}"
     },
     {
         "Id": 282,
@@ -3663,7 +3663,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: 'Helentine', 3: '\u5982\u679c\u662f\u6211\uff0c\u88ab\u96e8\u6dcb\u6e7f\u7684\u8bdd\uff0c\u53ea\u8981\u8eab\u4f53\u6696\u548c\u4e86\uff0c\u611f\u89c9\u5c31\u80fd\u7ee7\u7eed\u8d70\u3002', 4: '1', 18: '100018838'}"
+        "Params": "{2: 'Helentine', 3: \"If it were me, I'd feel fine to keep going once I warmed up, even if I got soaked.\", 4: '1', 18: '100018838'}"
     },
     {
         "Id": 283,
@@ -3702,7 +3702,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: '\u6e38\u84dd', 3: '\u8fd9\u5176\u5b9e\u4e5f\u662f\u8ff0\u60c5\u969c\u788d\u7684\u4e00\u79cd\u8868\u73b0\uff0c\u6d77\u4f26\u5a1c\u662f\u60f3\u548c\u745e\u6587\u4e00\u8d77\u56de\u53bb\u7684\uff0c\u4f46\u5979\u8bf4\u4e0d\u51fa\u53e3\uff0c\u53ea\u80fd\u7528\u8fd9\u79cd\u529e\u6cd5\u9003\u907f\u76f4\u63a5\u8868\u8fbe\u3002', 4: '2', 18: '100018839'}"
+        "Params": "{1: '1', 2: 'Ellen', 3: \"It's actually another manifestation of her alexithymia. Helena wants to go with Raven, but she can't bring herself to say it, so she uses this excuse to avoid expressing it directly.\", 4: '2', 18: '100018839'}"
     },
     {
         "Id": 286,
@@ -3741,7 +3741,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: 'Helentine', 3: '\u6d77\u4f26\u5a1c\uff0c\u539f\u6765\u662f\u8fd9\u4e48\u60f3\u7684\u5417\u2026\u2026', 4: '1', 18: '100018840'}"
+        "Params": "{1: '1', 2: 'Helentine', 3: \"So that's what Helena was really thinking...\", 4: '1', 18: '100018840'}"
     },
     {
         "Id": 289,
@@ -3780,7 +3780,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: '\u6e38\u84dd', 3: '\u561b\uff0c\u9274\u4e8e\u4e8c\u4f4d\u4e5f\u4e0d\u662f\u4e13\u4e1a\u6f14\u5458\uff0c\u6211\u4e5f\u5c31\u4e0d\u82db\u6c42\u5566\uff0c\u8fd9\u6bb5\u53ea\u662f\u7ed9\u4e8c\u4f4d\u505a\u4e2a\u8bd5\u620f\u3002\u63a5\u4e0b\u6765\u7684\u773c\u795e\u620f\u624d\u662f\u91cd\u5934\u3002', 4: '2', 18: '100018841'}"
+        "Params": "{1: '1', 2: 'Ellen', 3: \"Well, considering you two aren't professional actors, I won't be too hard on you. That was just a screen test anyway. The dramatic gaze in the next scene is the real deal.\", 4: '2', 18: '100018841'}"
     },
     {
         "Id": 292,
@@ -3819,7 +3819,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u6e38\u84dd\u5f00\u59cb\u6307\u6325\u673a\u68b0\u4f53\u4eec\u51c6\u5907\u4e0b\u4e00\u573a\u7684\u5e03\u666f\uff0c\u63a5\u7740\u628a\u4e0b\u4e00\u573a\u7684\u5267\u672c\u4e22\u4e86\u8fc7\u6765\u3002'}"
+        "Params": "{3: 'Ellen starts directing the mechanoids to set up for the next scene, then tosses the script over.'}"
     },
     {
         "Id": 295,
@@ -3845,7 +3845,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u6d77\u4f26\u6c40\u5728\u7a7a\u4e2d\u6210\u529f\u63a5\u4f4f\uff0c\u6253\u5f00\u540e\u548c\u4eba\u7c7b\u4e00\u8d77\u9605\u8bfb\u8fd9\u573a\u620f\u7684\u6ce8\u610f\u4e8b\u9879\u3002'}"
+        "Params": "{3: 'Helentine catches it mid-air, opens it, and reads through the scene notes together with you.'}"
     },
     {
         "Id": 297,
@@ -3871,7 +3871,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: '\u6e38\u84dd', 3: '\u8fd9\u6bb5\u620f\u5c31\u662f\u5e2e\u4f60\u4eec\u627e\u611f\u89c9\u7684\uff0c\u54fc\u54fc\uff0c\u6bd5\u7adf\u662f\u8981\u62cd\u7231\u60c5\u7247\u561b\u3002', 4: '1', 18: '100018842'}"
+        "Params": "{1: '1', 2: 'Ellen', 3: 'This scene is all about helping you two get into character. Heh heh, we are filming a romance movie, after all.', 4: '1', 18: '100018842'}"
     },
     {
         "Id": 299,
@@ -3897,7 +3897,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6e38\u84dd', 3: '\u6d77\u6d77\u5728\u62cd\u6444\u8fc7\u7a0b\u4e2d\u4e00\u5b9a\u8981\u591a\u627e\u627e\u201c\u5bf9\u65b9\u662f\u6211\u559c\u6b22\u7684\u4eba\u201d\u7684\u611f\u89c9\u3002', 4: '1', 18: '100018843'}"
+        "Params": "{2: 'Ellen', 3: 'Nelly, you really need to channel that feeling of \"being in love with the person in front of you\" during the shoot.', 4: '1', 18: '100018843'}"
     },
     {
         "Id": 301,
@@ -3936,7 +3936,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: 'Helentine', 3: 'Like...', 4: '2', 18: '100018844'}"
+        "Params": "{1: '1', 2: 'Helentine', 3: '\"Being in love\"...', 4: '2', 18: '100018844'}"
     },
     {
         "Id": 304,
@@ -3975,7 +3975,7 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: '\u6e38\u84dd', 3: '\u4e8b\u4e0d\u5b9c\u8fdf\uff0c\u6211\u4eec\u5f00\u59cb\u4e0b\u4e00\u5e55\u620f\u7684\u62cd\u6444\u5427\u3002', 4: '1', 18: '100018845'}"
+        "Params": "{1: '1', 2: 'Ellen', 3: \"Alright, let's shoot our next scene!\", 4: '1', 18: '100018845'}"
     },
     {
         "Id": 307,
@@ -4209,7 +4209,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u5916\u666f \u00b7 \u8857\u9053 \u00b7 \u591c \u00b7 \u96e8'}"
+        "Params": "{3: 'EXT. RAINY STREET\u2014NIGHT'}"
     },
     {
         "Id": 325,
@@ -4222,7 +4222,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u5927\u9897\u7684\u96e8\u6ef4\u7838\u5728\u9e45\u5375\u77f3\u8def\u9762\u4e0a\uff0c\u6e85\u8d77\u7ec6\u5bc6\u7684\u6c34\u96fe\u3002\u8def\u706f\u5728\u96e8\u5e55\u4e2d\u6655\u5f00\u6696\u5149\u3002'}"
+        "Params": "{3: 'Heavy raindrops pound against the cobblestone pavement, kicking up a fine mist. Streetlights cast a warm glow through the curtain of rain.'}"
     },
     {
         "Id": 326,
@@ -4235,7 +4235,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u7ec8\u4e8e\u5feb\u5230\u4e86\uff0c\u8fd8\u597d\u5730\u94c1\u7ad9\u53e3\u6ca1\u88ab\u6df9\u3002', 3: '327'}"
+        "Params": "{2: \"Almost there. At least the station entrance isn't flooded.\", 3: '327'}"
     },
     {
         "Id": 327,
@@ -4248,7 +4248,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u5730\u94c1\u7ad9\u5165\u53e3\u7684\u706f\u724c\u5728\u96e8\u96fe\u91cc\u9690\u7ea6\u4eae\u7740\uff0c\u8ddd\u79bb\u5df2\u7ecf\u5f88\u8fd1\u4e86\u3002'}"
+        "Params": "{3: 'The station entrance sign glows faintly through the rain and mist. You are close now.'}"
     },
     {
         "Id": 328,
@@ -4300,7 +4300,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 3: '\u4e8c\u4eba\u7684\u8ddd\u79bb\u4e5f\u53d8\u5f97\u5f88\u8fd1\u3002'}"
+        "Params": "{1: '1', 3: 'The two of you draw closer together.'}"
     },
     {
         "Id": 332,
@@ -4313,7 +4313,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u600e\u4e48\u6837\uff0c\u8eab\u4e0a\u6dcb\u6e7f\u7684\u5e94\u8be5\u4e0d\u591a\u5427\u3002', 3: '333'}"
+        "Params": "{2: \"How are you holding up? You didn't get too wet, did you?\", 3: '333'}"
     },
     {
         "Id": 333,
@@ -4326,7 +4326,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u201c\u6d77\u4f26\u5a1c\u201d', 3: '\u55ef\uff0c\u745e\u6587\u533b\u751f\u7684\u5927\u8863\u5f88\u539a\uff0c\u5934\u53d1\u6ca1\u6709\u518d\u88ab\u6253\u6e7f\u3002', 4: '1', 18: '100018846'}"
+        "Params": "{2: '\"Helena\"', 3: \"I'm okay. My hair's still dry, thanks to your coat, Dr. Raven.\", 4: '1', 18: '100018846'}"
     },
     {
         "Id": 334,
@@ -4339,7 +4339,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u8fd9\u662f\u4e00\u4e2a\u5f88\u5c0f\u7684\u7a7a\u95f4\uff0c\u5c0f\u5230<M>\u4ed6</M><W>\u5979</W>\u7684\u547c\u5438\u58f0\u90fd\u53d8\u5f97\u5982\u6b64\u6e05\u6670\u3002'}"
+        "Params": "{3: 'The space between you feels impossibly small, so small that every breath becomes unmistakably clear.'}"
     },
     {
         "Id": 335,
@@ -4352,7 +4352,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u90a3\u4e48\uff0c\u662f\u65f6\u5019\u6682\u65f6\u5206\u522b\u4e86\u3002', 3: '336'}"
+        "Params": "{2: 'Well then... I suppose this is where we part ways for now.', 3: '336'}"
     },
     {
         "Id": 336,
@@ -4391,7 +4391,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: '\u6e38\u84dd', 3: '\u5f88\u597d\uff0c\u706f\u5149\u5c31\u4f4d\uff0c\u63a5\u4e0b\u6765\u6d77\u4f26\u5a1c\u4f1a\u542b\u60c5\u8109\u8109\u5730\u770b\u7740\u745e\u6587\u3002', 4: '18', 18: '100018847'}"
+        "Params": "{1: '1', 2: 'Ellen', 3: \"Good, lights are set. Now, Helena, you're going to look at Raven with affection in your eyes.\", 4: '18', 18: '100018847'}"
     },
     {
         "Id": 339,
@@ -4430,7 +4430,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: 'Helentine', 3: '\u201c\u542b\u60c5\u8109\u8109\u201d?', 4: '1', 18: '100018848'}"
+        "Params": "{2: 'Helentine', 3: 'With affection?', 4: '1', 18: '100018848'}"
     },
     {
         "Id": 342,
@@ -4456,7 +4456,7 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: 'Helentine', 3: 'Is that so?', 4: '1', 18: '100018849'}"
+        "Params": "{2: 'Helentine', 3: 'Like this?', 4: '1', 18: '100018849'}"
     },
     {
         "Id": 344,
@@ -4547,7 +4547,7 @@
         "EndAnim": "AniZhuanchangBegin",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: '\u6e38\u84dd', 3: '\u5361!', 4: '18', 18: '100018850'}"
+        "Params": "{1: '1', 2: 'Ellen', 3: 'Cut!', 4: '18', 18: '100018850'}"
     },
     {
         "Id": 351,
@@ -4651,7 +4651,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u573a\u666f\u4e2d\u7684\u4eba\u9020\u96e8\u968f\u4e4b\u505c\u6b62\uff0c\u5750\u5728\u4e00\u65c1\u7684\u6e38\u84dd\u5411\u4e8c\u4eba\u8d76\u6765\uff0c\u51c6\u5907\u4eb2\u81ea\u4e0b\u573a\u6307\u5bfc\u3002'}"
+        "Params": "{3: 'The artificial rain sputters to a halt. Ellen rises from her seat and rushes over to you, ready to step in and direct you two personally.'}"
     },
     {
         "Id": 359,
@@ -4677,7 +4677,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: '\u6e38\u84dd', 3: '\u8fd9\u4e00\u6bb5\u6548\u679c\u4e0d\u592a\u884c\uff0c\u6d77\u6d77\uff0c\u6211\u4eec\u4e00\u8d77\u6765\u627e\u627e\u611f\u89c9\u3002', 4: '1', 18: '100018851'}"
+        "Params": "{1: '1', 2: 'Ellen', 3: \"That take didn't quite work, Nelly. Let's explore and find the right feeling together.\", 4: '1', 18: '100018851'}"
     },
     {
         "Id": 361,
@@ -4690,7 +4690,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u5148\u7ed9\u6d77\u4f26\u6c40\u6362\u4ef6\u8863\u670d\u5427\uff0c\u5df2\u7ecf\u6e7f\u900f\u4e86\u3002', 3: '362'}"
+        "Params": "{2: \"Let's get Helentine into some dry clothes first. She's soaked through.\", 3: '362'}"
     },
     {
         "Id": 362,
@@ -4729,7 +4729,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: 'Helentine', 3: '\u610f\u8bc6\u6d77\u91cc\uff0c\u4e0d\u4f1a\u611f\u5192\uff0c\u4e0d\u7528\u9ebb\u70e6\u6307\u6325\u5b98\u3002', 4: '2', 18: '100018852'}"
+        "Params": "{1: '1', 2: 'Helentine', 3: \"We're in my M.I.N.D., so we won't actually catch a cold. Don't worry, Commandant.\", 4: '2', 18: '100018852'}"
     },
     {
         "Id": 365,
@@ -4768,7 +4768,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u5373\u4f7f\u8fd9\u4e48\u8bf4\u4e86\uff0c\u5f53\u4eba\u7c7b\u6307\u6325\u5b98\u62ff\u6765\u5e72\u71e5\u5927\u8863\u65f6\uff0c\u6d77\u4f26\u6c40\u4f9d\u7136\u4e56\u4e56\u7ad9\u5728\u539f\u5730\uff0c\u5c55\u5f00\u53cc\u81c2\u914d\u5408\u4eba\u7c7b\u7684\u52a8\u4f5c\u628a\u8863\u670d\u7a7f\u4e0a\u4e86\u3002'}"
+        "Params": "{3: 'Despite her words, she remains still when you bring over a dry coat, cooperating obediently to put the coat on.'}"
     },
     {
         "Id": 368,
@@ -4781,7 +4781,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u62cd\u5b8c\u8fd9\u6bb5\uff0c\u6211\u4eec\u53bb\u5916\u9762\u6652\u6652\u592a\u9633\u3002', 3: '369'}"
+        "Params": "{2: \"Once we wrap this scene, let's head outside and enjoy some sun.\", 3: '369'}"
     },
     {
         "Id": 369,
@@ -4820,7 +4820,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u4e09\u4eba\u7ad9\u5728\u573a\u666f\u91cc\u8ba8\u8bba\u6f14\u51fa\u7ec6\u8282\u3002'}"
+        "Params": "{3: 'The three of you stand in the set, discussing the finer points of the performance.'}"
     },
     {
         "Id": 372,
@@ -4859,7 +4859,7 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: '\u6e38\u84dd', 3: '\u4f60\u7684\u7709\u6bdb\u8fd9\u91cc\u53ef\u4ee5\u518d\u8212\u5c55\u4e00\u70b9\u3002', 4: '1', 18: '100018854'}"
+        "Params": "{1: '1', 2: 'Ellen', 3: 'Your brow could be a little more relaxed here.', 4: '1', 18: '100018854'}"
     },
     {
         "Id": 375,
@@ -4898,7 +4898,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u6e38\u84dd\u7ede\u5c3d\u8111\u6c41\u7684\u6307\u5bfc\u5e76\u6ca1\u6709\u89c1\u6548\u3002'}"
+        "Params": "{3: \"Despite Ellen's best efforts at coaching Helentine, nothing seems to be working.\"}"
     },
     {
         "Id": 378,
@@ -4937,7 +4937,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6e38\u84dd', 3: '\u8fd9\u6837\uff0c\u6211\u4eec\u505a\u4e00\u4e2a\u7b80\u5355\u7684\u5185\u5fc3\u60c5\u666f\u5efa\u6784\u3002', 4: '1', 18: '100018855'}"
+        "Params": "{2: 'Ellen', 3: 'How about we try a simple visualization exercise?', 4: '1', 18: '100018855'}"
     },
     {
         "Id": 381,
@@ -4963,7 +4963,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6e38\u84dd', 3: '\u6d77\u6d77\uff0c\u4f60\u60f3\u8c61\u4e00\u4e0b\uff0c\u5bf9\u9762\u7684\u4eba\u8981\u79bb\u5f00\u4e86\uff0c\u706b\u8f66\u8fdb\u7ad9\u4e86\uff0c\u4f60\u77e5\u9053\u9001\u8d70<M>\u4ed6</M><W>\u5979</W>\u4e4b\u540e\uff0c\u4e0d\u77e5\u9053\u4ec0\u4e48\u65f6\u5019\u80fd\u518d\u89c1\uff0c\u4f60\u518d\u770b<M>\u4ed6</M><W>\u5979</W>\u2014\u2014', 4: '1', 18: '100018856'}"
+        "Params": "{2: 'Ellen', 3: \"Picture this, Nelly. The person in front of you is about to leave. The train's pulling in. Once the train is gone, you won't know when you'll meet this person again. Now\u2014\", 4: '1', 18: '100018856'}"
     },
     {
         "Id": 383,
@@ -4989,7 +4989,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6e38\u84dd', 3: '\u6d77\u6d77\uff0c\u4f60\u5c31\u5f53\u9762\u524d\u90a3\u4e2a\u4eba\uff0c\u5c31\u662f\u4f60\u7684\u3010kuroname\u3011\u3002', 4: '1', 18: '100018857'}"
+        "Params": "{2: 'Ellen', 3: 'Nelly, just imagine the person standing there is your \u3010kuroname\u3011.', 4: '1', 18: '100018857'}"
     },
     {
         "Id": 385,
@@ -5015,7 +5015,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: 'Helentine', 3: '\u548c\u5e73\u65f6\u597d\u50cf\u6ca1\u4ec0\u4e48\u533a\u522b\u3002', 4: '2', 18: '100018858'}"
+        "Params": "{2: 'Helentine', 3: \"That's no different from usual, though.\", 4: '2', 18: '100018858'}"
     },
     {
         "Id": 387,
@@ -5041,7 +5041,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6e38\u84dd', 3: '\u6f14\u6280\u6307\u5bfc\u679c\u7136\u6ca1\u90a3\u4e48\u7b80\u5355\u5417\u2026\u2026', 4: '1', 18: '100018859'}"
+        "Params": "{2: 'Ellen', 3: \"Directing really isn't as simple as I thought...\", 4: '1', 18: '100018859'}"
     },
     {
         "Id": 389,
@@ -5054,7 +5054,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6e38\u84dd', 3: '\u2026\u2026\u963f\u59e8\u4f60\u5f53\u5e74\u662f\u600e\u4e48\u505a\u7684?', 4: '1', 18: '100018860'}"
+        "Params": "{2: 'Ellen', 3: '...Auntie Swan, how did you do it back then?', 4: '1', 18: '100018860'}"
     },
     {
         "Id": 390,
@@ -5067,7 +5067,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u8ba9\u6211\u6765\u8bd5\u8bd5\u5427\u3002', 3: '391'}"
+        "Params": "{2: 'Let me give it a try.', 3: '391'}"
     },
     {
         "Id": 391,
@@ -5132,7 +5132,7 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 3: '\u4eba\u7c7b\u4e3e\u8d77\u5927\u8863\uff0c\u4e3a\u81ea\u5df1\u548c\u6d77\u4f26\u6c40\u906e\u4f4f\u5934\u9876\u3002'}"
+        "Params": "{1: '1', 3: \"You lift your coat, holding it over both your head and Helentine's.\"}"
     },
     {
         "Id": 396,
@@ -5158,7 +5158,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u4e0d\u7528\u523b\u610f\u53bb\u60f3\u6d6a\u6f2b\u573a\u666f\uff0c\u800c\u662f\u4ece\u73b0\u6709\u7684\u573a\u666f\u51fa\u53d1\u3002', 3: '398'}"
+        "Params": "{2: \"Don't try to force the romance. Work with what's in front of you.\", 3: '398'}"
     },
     {
         "Id": 398,
@@ -5171,7 +5171,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u53bb\u611f\u53d7\u88ab\u5927\u8863\u906e\u4f4f\u5927\u96e8\u65f6\uff0c\u5185\u5fc3\u90a3\u79cd\u5b89\u5b9a\u611f\u3002', 3: '399'}"
+        "Params": "{2: 'Feel the sense of comfort when the coat shields you from the rain.', 3: '399'}"
     },
     {
         "Id": 399,
@@ -5197,7 +5197,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: 'Helentine', 3: '\u5b89\u5fc3\u611f\u2026\u2026\u4ec0\u4e48\u80fd\u7ed9\u6211\u5e26\u6765\u5b89\u5fc3\u611f\u5462\u3002', 4: '2', 18: '100018861'}"
+        "Params": "{2: 'Helentine', 3: 'The sense of security... What makes me feel secure?', 4: '2', 18: '100018861'}"
     },
     {
         "Id": 401,
@@ -5301,7 +5301,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 3: '\u6d77\u4f26\u6c40\u6123\u4e86\u6123\uff0c\u5185\u5fc3\u56de\u54cd\u8d77\u4e86\u8bb8\u591a\u4ee4\u4eba\u5b89\u5fc3\u7684\u8bb0\u5fc6\u2014\u2014\u5728\u65af\u65fa\u963f\u59e8\u6000\u91cc\u5750\u7740\u7684\uff0c\u5973\u4ec6\u5728\u5e8a\u8fb9\u8bb2\u6545\u4e8b\u65f6\u7684\u3001\u548c\u59b9\u59b9\u4e00\u8d77\u7a9d\u5728\u6c99\u53d1\u4e0a\u73a9\u6e38\u620f\u7684\u2026\u2026'}"
+        "Params": "{1: '1', 3: \"Helentine pauses, memories echoing through her mind: sitting on Auntie Swan's lap, listening to her maid's bedtime stories, curling up on the couch with her sister to play games...\"}"
     },
     {
         "Id": 409,
@@ -5327,7 +5327,7 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u8fd9\u4e9b\u65e0\u7591\u90fd\u662f\u80fd\u8ba9\u201c\u6d77\u4f26\u6c40\u201d\u5b89\u5fc3\u7684\u753b\u9762\uff0c\u53ea\u9700\u8981\u5145\u5206\u4f53\u9a8c\u8fd9\u79cd\u611f\u53d7\uff0c\u5e76\u7528\u773c\u775b\u8868\u8fbe\u51fa\u6765\u5c31\u597d\u4e86\u3002'}"
+        "Params": "{3: 'These are all scenes that should bring her comfort. All she needs to do is immerse herself in that feeling and let it show in her eyes.'}"
     },
     {
         "Id": 411,
@@ -5483,7 +5483,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u4f46\u8fd9\u6761\u60c5\u7eea\u201c\u8bc6\u522b-\u547d\u540d-\u8868\u8fbe\u201d\u7684\u8f68\u9053\u4e2d\u95f4\u7a81\u7136\u51fa\u73b0\u4e86\u65ad\u5d16\u3002'}"
+        "Params": "{3: 'But a chasm opens up somewhere along the path from identifying to describing to expressing that emotion.'}"
     },
     {
         "Id": 423,
@@ -5496,7 +5496,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u5f53\u5979\u610f\u8bc6\u5230\u8fd9\u5c42\u65ad\u5d16\u65f6\uff0c\u8fde\u547c\u5438\u90fd\u53d8\u5f97\u5403\u529b\uff0c\u5c31\u50cf\u5fd8\u8bb0\u4e86\u8fd9\u4e00\u672c\u80fd\u3002'}"
+        "Params": "{3: \"The moment she realizes this gap exists, she even has trouble breathing, as if she's forgotten how.\"}"
     },
     {
         "Id": 424,
@@ -5509,7 +5509,7 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u5979\u65e0\u6cd5\u5c06\u5c5e\u4e8e\u201c\u6d77\u4f26\u6c40\u201d\u7684\u5b89\u5fc3\u611f\u590d\u73b0\uff0c\u8eab\u4f53\u65e0\u6cd5\u4e3a\u81ea\u5df1\u505a\u51fa\u9009\u62e9\u3002'}"
+        "Params": "{3: 'She can\\'t recreate the sense of comfort \"Helentine\" is supposed to feel. Her body refuses to respond.'}"
     },
     {
         "Id": 425,
@@ -5743,7 +5743,7 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u4eba\u9020\u96e8\u4e2d\u7684\u90a3\u58f0\u95f7\u96f7\u5728\u5fc3\u4e2d\u518d\u6b21\u7838\u54cd\uff0c\u6d77\u4f26\u6c40\u611f\u5230\u6c14\u95f7\u3002'}"
+        "Params": "{3: \"The muffled thunder from the artificial rain crashes through her heart again. Helentine feels like she's suffocating.\"}"
     },
     {
         "Id": 443,
@@ -5873,7 +5873,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u5fc3\u614c\u3001\u5589\u71e5\u3001\u53cd\u80c3\u3001\u7ede\u75db\uff0c\u53d1\u51b7\u3001\u53d1\u70ed\u3001\u53d1\u6c57\u3001\u53d1\u6296\u3002'}"
+        "Params": "{3: 'Panic. Dry mouth. Nausea. Chest pain. Chills. Fever. Sweat. Shivers.'}"
     },
     {
         "Id": 453,
@@ -5912,7 +5912,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u5979\u4f3c\u4e4e\u542c\u89c1\u6e38\u84dd\u5728\u8eaf\u4f53\u4e4b\u5916\u62c5\u5fe7\u5730\u547c\u5524\u81ea\u5df1\u7684\u540d\u5b57\uff0c\u4f46\u8eab\u4f53\u5df2\u65e0\u529b\u505a\u51fa\u56de\u5e94\u3002'}"
+        "Params": "{3: \"She thinks she can hear Ellen calling her name from somewhere outside her body, but she can't muster the strength to respond.\"}"
     },
     {
         "Id": 456,
@@ -5925,7 +5925,7 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u6709\u4e1c\u897f\u5728\u9a71\u52a8\u5979\u56de\u907f\u60c5\u7eea\u7684\u91ca\u51fa\uff0c\u5c5e\u4e8e\u8bed\u8a00\u548c\u9762\u90e8\u7684\u8d23\u4efb\u88ab\u8f6c\u4ea4\u81f3\u8eaf\u4f53\uff0c\u5979\u611f\u89c9\u5f02\u5e38\u70e6\u8e81\u3002'}"
+        "Params": "{3: 'Something compels her to suppress any emotional release. The duty of words and expressions has fallen to her body instead, leaving her unbearably agitated.'}"
     },
     {
         "Id": 457,
@@ -5938,7 +5938,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6d77\u4f26\u6c40!', 3: '458'}"
+        "Params": "{2: 'Helentine!', 3: '458'}"
     },
     {
         "Id": 458,
@@ -5990,7 +5990,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 3: '\u76f4\u5230<M>\u4ed6</M><W>\u5979</W>\u7684\u58f0\u97f3\u629a\u5e73\u8e81\u52a8\u3002'}"
+        "Params": "{1: '1', 3: 'Until your voice soothes the chaos inside her.'}"
     },
     {
         "Id": 462,
@@ -6016,7 +6016,7 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u4e8e\u662f\u95ed\u4e0a\u773c\u775b\uff0c\u601d\u8003\u5f53\u4e0b\u3002'}"
+        "Params": "{3: 'She closes her eyes and focuses on the present.'}"
     },
     {
         "Id": 464,
@@ -6094,7 +6094,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": 200.0,
-        "Params": "{1: '\u95ed\u4e0a\u773c\u775b\u540e\uff0c\u662f<M>\u4ed6</M><W>\u5979</W>\u3002', 3: '55', 4: 'ffffffff'}"
+        "Params": "{1: 'There is only ever one person when she closes her eyes.', 3: '55', 4: 'ffffffff'}"
     },
     {
         "Id": 470,
@@ -6107,7 +6107,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u95ed\u4e0a\u773c\u775b\u540e\uff0c\u662f<M>\u4ed6</M><W>\u5979</W>\u3002'}"
+        "Params": "{2: 'There is only ever one person when she closes her eyes.'}"
     },
     {
         "Id": 471,
@@ -6224,7 +6224,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": 200.0,
-        "Params": "{1: '\u7741\u5f00\u773c\u775b\u540e\uff0c\u8fd8\u662f\u90a3\u4e2a<M>\u4ed6</M><W>\u5979</W>\u3002', 3: '55', 4: 'ffffffff'}"
+        "Params": "{1: 'And that person is still there when she opens her eyes.', 3: '55', 4: 'ffffffff'}"
     },
     {
         "Id": 480,
@@ -6237,7 +6237,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u7741\u5f00\u773c\u775b\u540e\uff0c\u8fd8\u662f\u90a3\u4e2a<M>\u4ed6</M><W>\u5979</W>\u3002'}"
+        "Params": "{2: 'And that person is still there when she opens her eyes.'}"
     },
     {
         "Id": 481,
@@ -6289,7 +6289,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: 'Helentine', 3: '\u597d\u50cf\u6709\u7b54\u6848\u4e86\u3002', 4: '2', 18: '100018862'}"
+        "Params": "{1: '1', 2: 'Helentine', 3: 'I think I got it.', 4: '2', 18: '100018862'}"
     },
     {
         "Id": 485,
@@ -6302,7 +6302,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u4f60\u2026\u2026\u8fd8\u597d\u5417?\u521a\u624d\u770b\u8d77\u6765\u5f88\u4e0d\u8212\u670d\u3002', 3: '486'}"
+        "Params": "{2: 'Are you... alright? You looked really unwell just now.', 3: '486'}"
     },
     {
         "Id": 486,
@@ -6328,7 +6328,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: 'Helentine', 3: '\u5df2\u7ecf\u6ca1\u6709\u95ee\u9898\u4e86\uff0c\u518d\u6765\u4e00\u904d\u5427\u3002', 4: '2', 18: '100018863'}"
+        "Params": "{2: 'Helentine', 3: \"I'm fine now. Let's go again.\", 4: '2', 18: '100018863'}"
     },
     {
         "Id": 488,
@@ -6367,7 +6367,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 3: '\u6d77\u4f26\u6c40\u50cf\u51b7\u5374\u7684\u70e7\u6c34\u58f6\u4e00\u6837\u5e73\u590d\u4e86\u4e0b\u6765\uff0c\u521a\u624d\u7126\u8651\u4e0d\u5df2\u7684\u6e38\u84dd\u957f\u8212\u4e00\u53e3\u6c14\u3002'}"
+        "Params": "{1: '1', 3: 'Helentine settles down like a kettle taken off the stove. Ellen, anxious just moments ago, finally exhales in relief.'}"
     },
     {
         "Id": 491,
@@ -6393,7 +6393,7 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6e38\u84dd', 3: '\u55ef\uff0c\u91cd\u65b0\u542f\u52a8\u4e00\u4e0b\u5427\u3002', 4: '1', 18: '100018864'}"
+        "Params": "{2: 'Ellen', 3: \"Alright, let's start over.\", 4: '1', 18: '100018864'}"
     },
     {
         "Id": 493,
@@ -6536,7 +6536,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '<phonetic=\u6d77\u4f26\u6c40>\u201c\u6d77\u4f26\u5a1c\u201d</phonetic>\u548c\u745e\u6587\u518d\u6b21\u5728\u5927\u8863\u7684\u906e\u853d\u4e0b\u5230\u8fbe\u4e86\u5730\u94c1\u7ad9\u53e3\uff0c\u8bf4\u5b8c\u524d\u9762\u7684\u53f0\u8bcd\u540e\u3002'}"
+        "Params": "{3: '<phonetic=Helentine>\"Helena\"</phonetic> and <phonetic=\u3010kuroname\u3011>Raven</phonetic> reach the subway station entrance once more, sheltered beneath the same coat. After delivering the previous lines\u2014'}"
     },
     {
         "Id": 504,
@@ -6549,7 +6549,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u76ee\u7684\u5730\u5df2\u5230\u8fbe\u3002', 3: '505'}"
+        "Params": "{2: \"We've reached our destination.\", 3: '505'}"
     },
     {
         "Id": 505,
@@ -6575,7 +6575,7 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: '\u201c\u6d77\u4f26\u5a1c\u201d', 3: '\u8981\u5728\u8fd9\u91cc\u5206\u522b\u5417?', 4: '1', 18: '100018865'}"
+        "Params": "{1: '1', 2: '\"Helena\"', 3: 'Are we parting ways here?', 4: '1', 18: '100018865'}"
     },
     {
         "Id": 507,
@@ -6588,7 +6588,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u55ef\uff0c\u6211\u5de5\u4f5c\u7684\u533b\u9662\u79bb\u8fd9\u91cc\u5f88\u8fd1\u3002', 3: '508'}"
+        "Params": "{2: 'Yeah. The hospital I work at is close by.', 3: '508'}"
     },
     {
         "Id": 508,
@@ -6601,7 +6601,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u8863\u670d\u7ed9\u4f60\uff0c\u4e0b\u6b21\u89c1\u9762\u65f6\u518d\u8fd8\u7ed9\u6211\u5427\u3002', 3: '509'}"
+        "Params": "{2: 'Keep the coat. You can give it back next time we meet.', 3: '509'}"
     },
     {
         "Id": 509,
@@ -6640,7 +6640,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '<phonetic=\u3010kuroname\u3011>\u745e\u6587</phonetic>\u5c06\u8863\u670d\u6263\u5728<phonetic=\u6d77\u4f26\u6c40>\u201c\u6d77\u4f26\u5a1c\u201d</phonetic>\u7684\u8eab\u4e0a\uff0c\u786e\u4fdd\u80fd\u4e3a\u6bcf\u4e2a\u89d2\u843d\u906e\u4f4f\u96e8\u6ef4\u540e\uff0c\u8f6c\u8eab\u51c6\u5907\u79bb\u53bb\u3002'}"
+        "Params": "{3: 'You drape the coat over <phonetic=Helentine>\"Helena\"</phonetic>, adjusting it carefully to shield her from the rain before turning to leave.'}"
     },
     {
         "Id": 512,
@@ -6666,7 +6666,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '<phonetic=\u6d77\u4f26\u6c40>\u201c\u6d77\u4f26\u5a1c\u201d</phonetic>\u7ad9\u5728\u5730\u94c1\u7ad9\u53e3\uff0c\u770b\u7740\u90a3\u4e2a\u80cc\u5f71\u9010\u6e10\u88ab\u96e8\u5e55\u7a00\u91ca\u2014\u2014'}"
+        "Params": "{3: '<phonetic=Helentine>\"Helena\"</phonetic> stands at the entrance to the subway station, watching your retreating figure fade into the curtain of rain\u2014'}"
     },
     {
         "Id": 514,
@@ -6679,7 +6679,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u8bf4\u51fa\u4e86\u90a3\u53e5\u8bdd\u3002'}"
+        "Params": "{3: 'She speaks her line.'}"
     },
     {
         "Id": 515,
@@ -6705,7 +6705,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u201c\u6d77\u4f26\u5a1c\u201d', 3: '\u6211\uff0c\u660e\u5929\u8fd8\u60f3\u6765\u627e\u4f60\u3002', 4: '1', 18: '100018866'}"
+        "Params": "{2: '\"Helena\"', 3: 'I... want to see you again tomorrow.', 4: '1', 18: '100018866'}"
     },
     {
         "Id": 517,
@@ -6718,7 +6718,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u96e8\u58f0\u5f88\u5927\uff0c\u4f46\u90a3\u53e5\u8bdd\u843d\u5730\u5f88\u6e05\u6670\u3002'}"
+        "Params": "{3: 'The rain pounds down, but her words ring out clear.'}"
     },
     {
         "Id": 518,
@@ -6731,7 +6731,7 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u5bf9\u65b9\u542c\u5230\u8fd9\u53e5\u8bdd\u540e\uff0c\u8f6c\u8eab\u5411\u58f0\u97f3\u7684\u6765\u6e90\u505a\u51fa\u5fae\u7b11\uff0c\u7b11\u610f\u7a7f\u8fc7\u96e8\u6ef4\u5f62\u6210\u7684\u73e0\u5e18\u56de\u4f20\u81f3\u6d77\u4f26\u5a1c\u8fd9\u91cc\u3002'}"
+        "Params": "{3: 'Hearing this, you turn around and smile, and Helena catches it through the curtain of falling rain.'}"
     },
     {
         "Id": 519,
@@ -6744,7 +6744,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u968f\u65f6\u6b22\u8fce\u3002', 3: '520'}"
+        "Params": "{2: 'Anytime.', 3: '520'}"
     },
     {
         "Id": 520,
@@ -6861,7 +6861,7 @@
         "EndAnim": "AniZhuanchangBegin",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: '\u6e38\u84dd', 3: '\u5361!\u8fd9\u6b21\u975e\u5e38\u5b8c\u7f8e!', 4: '18', 18: '100018867'}"
+        "Params": "{1: '1', 2: 'Ellen', 3: 'Cut! That was perfect!', 4: '18', 18: '100018867'}"
     },
     {
         "Id": 529,
@@ -6978,7 +6978,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 3: '\u6e38\u84dd\u8fd9\u6b21\u662f\u8e66\u8df3\u7740\u8fdb\u6765\u7684\u3002'}"
+        "Params": "{1: '1', 3: 'Ellen practically bounces into the scene this time.'}"
     },
     {
         "Id": 538,
@@ -6991,7 +6991,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6e38\u84dd', 3: '\u603b\u7b97\u6709\u4e9b\u6210\u6548\u3002', 4: '2', 18: '100018868'}"
+        "Params": "{2: 'Ellen', 3: 'Finally, some progress!', 4: '2', 18: '100018868'}"
     },
     {
         "Id": 539,
@@ -7004,7 +7004,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6e38\u84dd', 3: '\u6d77\u6d77\u6709\u6ca1\u6709\u627e\u5230\u90a3\u79cd\u201c\u559c\u6b22\u5bf9\u65b9\u201d\u7684\u611f\u89c9?', 4: '2', 18: '100018869'}"
+        "Params": "{2: 'Ellen', 3: 'Nelly, did you find that feeling of \"being in love\"?', 4: '2', 18: '100018869'}"
     },
     {
         "Id": 540,
@@ -7043,7 +7043,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 3: '\u5979\u6ca1\u6709\u770b\u6e38\u84dd\uff0c\u76ee\u5149\u8fd8\u7559\u5728\u521a\u624d\u548c\u4eba\u7c7b\u6307\u6325\u5b98\u5206\u522b\u7684\u65b9\u5411\u3002'}"
+        "Params": "{1: '1', 3: \"Helentine doesn't look at Ellen. Her gaze lingers in the direction where she and you just parted.\"}"
     },
     {
         "Id": 543,
@@ -7056,7 +7056,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: 'Helentine', 3: '\u6211\u53ea\u662f\u89c9\u5f97\u3010kuroname\u3011\u5f88\u503c\u5f97\u4fe1\u4efb\uff0c\u5f88\u60f3\u8ba9\u4eba\u4eb2\u8fd1\u3002', 4: '1', 18: '100018870'}"
+        "Params": "{2: 'Helentine', 3: 'I just feel like \u3010kuroname\u3011 is someone I can trust and someone I want to be close to.', 4: '1', 18: '100018870'}"
     },
     {
         "Id": 544,
@@ -7069,7 +7069,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u6d77\u4f26\u6c40\u8868\u73b0\u5f97\u76f8\u5f53\u68d2\u3002', 3: '545'}"
+        "Params": "{2: 'You did great.', 3: '545'}"
     },
     {
         "Id": 545,
@@ -7095,7 +7095,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{3: '\u770b\u7740\u8fdc\u5904\u7684\u4eba\u7c7b\u5bf9\u81ea\u5df1\u7ad6\u8d77\u7684\u5927\u62c7\u6307\uff0c\u6d77\u4f26\u6c40\u6709\u4e86\u6d45\u6d45\u7684\u7b11\u610f\u3002'}"
+        "Params": "{3: 'Seeing you give her a thumbs-up from afar, Helentine allows herself a faint smile.'}"
     },
     {
         "Id": 547,
@@ -7108,7 +7108,7 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: 'Helentine', 3: '\u55ef\uff0c\u6709\u5173\u8868\u6f14\u7684\u6280\u5de7\uff0c\u6211\u60f3\u8d77\u6765\u4e86\u4e00\u4e9b\u3002', 4: '1', 18: '100018871'}"
+        "Params": "{2: 'Helentine', 3: \"Yes, I'm starting to remember some of the acting techniques from the past.\", 4: '1', 18: '100018871'}"
     },
     {
         "Id": 548,
@@ -7147,6 +7147,6 @@
         "EndAnim": "AniZhuanchangBegin",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '1', 2: '\u6e38\u84dd', 3: '\u90a3\u4e48\uff0c\u8d81\u7740\u8fd9\u4e2a\u52b2\u5934\uff0c\u6211\u4eec\u628a\u540e\u9762\u7684\u60c5\u8282\u90fd\u62cd\u5b8c\u5427!', 4: '2', 18: '100018872'}"
+        "Params": "{1: '1', 2: 'Ellen', 3: \"Alright then, let's ride this momentum and film the rest of the scenes!\", 4: '2', 18: '100018872'}"
     }
 ]

@@ -43,7 +43,7 @@ function XBuffScript10272040:OnLuaSkillStart(eventArgs)
     if eventArgs._launcherUUID ~= self._npcUUID then return end
     self.originAttrib2 = self._proxy:GetNpcProtector(self._npcUUID) --取一下玩家的护盾值
     if self.originAttrib2 > 0 then
-        self._proxy:RemoveProtector() --清除护盾
+        self._proxy:RemoveBuff(self._npcUUID, 111) -- 清除护盾，护盾控制器同款方法
         self.dmgTriggerProtector = true
         self._proxy:ApplyMagic(self._npcUUID,self._enemyUUID,self.dmgExtraMagicId, 1, 0, 1) --对敌人造成一次附加伤害
     end
@@ -74,7 +74,12 @@ function XBuffScript10272040:AfterDamageCalc(eventArgs)
 
     self.ExtraDmg = self.originAttrib2 * self.DmgPerProtector
     if self._proxy:GetBuffCountByKind(self._npcUUID,1025800) >= 1 then
-        self.ExtraDmg = self.ExtraDmg // 2 -- 存在PVP全减伤50%的特殊处理，伤害减半
+        local DmgReduce = 1
+        DmgReduce = DmgReduce * (1 + self._proxy:GetNpcAttribValue(self._npcUUID,ENpcAttrib.PhysicalAmpP) / 10000)
+        DmgReduce = DmgReduce * (1 - self._proxy:GetNpcAttribValue(self._npcUUID,ENpcAttrib.PhysicalReductionP) / 10000)
+        --self:LogError(".....打印下最终减伤"..DmgReduce)
+        self.ExtraDmg = self.ExtraDmg * DmgReduce -- 存在PVP全减伤50%的特殊处理，伤害减半
+        --self:LogError(".....触发减伤通知")
     end
 
     self._proxy:SetAfterDamageMagicContext(eventArgs.ContextId, self.ExtraDmg, eventArgs.ElementDamage, eventArgs.FinalHackDamage)

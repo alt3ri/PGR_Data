@@ -62,9 +62,7 @@ function XUiFashionSuitDetail:OnStart(fashionSuitId, id, skipType, updateCb)
     ---@type XUiPanelFashionSuitButtonGroup
 
     local uiConfig = self._Control:GetFashionSuitUiConfigById(self._SuitId)
-    self._PanelDetailPrefabPath = uiConfig.PanelFashionDetailPrefabPath
-    local panelDetailRes = self._Control:GetLoader():Load(self._PanelDetailPrefabPath)
-    local panelDetailGo = XUiHelper.Instantiate(panelDetailRes, self.PanelFashionDetailRoot)
+    local panelDetailGo = self.PanelFashionDetailRoot:LoadPrefabEx(uiConfig.PanelFashionDetailPrefabPath)
     self._SuitDetail = XUiPanelFashionDetail.New(panelDetailGo,self,self._SuitId)
     self._SuitDetail:Open()
     self:InitModelHandler()
@@ -72,10 +70,18 @@ function XUiFashionSuitDetail:OnStart(fashionSuitId, id, skipType, updateCb)
     self:InitView()
     self:StartTimer()
 
-    XUiHelper.NewPanelTopControl(self, self.TopControlWhite)
+    if self._SuitId == tonumber(self._Control:GetClientConfig("SpecialBackBtn")) then
+        XUiHelper.NewPanelTopControl(self, self.TopControlWhite2)
+        self.TopControlWhite.gameObject:SetActiveEx(false)
+        self.TopControlWhite2.gameObject:SetActiveEx(true)
+    else
+        XUiHelper.NewPanelTopControl(self, self.TopControlWhite)
+        self.TopControlWhite2.gameObject:SetActiveEx(false)
+        self.TopControlWhite.gameObject:SetActiveEx(true)
+
+    end
     XUiHelper.NewPanelActivityAssetSafe({ XDataCenter.ItemManager.ItemId.FreeGem, XDataCenter.ItemManager.ItemId.HongKa }, self.PanelSpecialTool, self)
     XEventManager.AddEventListener(XEventId.EVENT_PURCHASE_CLEAR_DATA, self.SignGetShopInfo, self)
-    XEventManager.AddEventListener(XEventId.EVENT_PURCHASE_QUICK_BUY_SKIP, self.Close, self)
 end
 
 function XUiFashionSuitDetail:OnEnable()
@@ -90,10 +96,12 @@ function XUiFashionSuitDetail:OnEnable()
     self._ReqShopInfo = false
 
     XEventManager.AddEventListener(XEventId.EVENT_RES_COMPLETE, self.OnFashionDownloadComplete, self)
+    self:_AddConsumeCountListener()
 end
 
 function XUiFashionSuitDetail:OnDisable()
     XEventManager.RemoveEventListener(XEventId.EVENT_RES_COMPLETE, self.OnFashionDownloadComplete, self)
+    self:_RemoveConsumeCountListener()
 end
 
 --历史遗留逻辑：XPurchaseManager.ClearData和UiPurchase绑定
@@ -112,7 +120,27 @@ function XUiFashionSuitDetail:OnDestroy()
         self._PanelDetailPrefabPath = nil
     end
     XEventManager.RemoveEventListener(XEventId.EVENT_PURCHASE_CLEAR_DATA, self.SignGetShopInfo, self)
-    XEventManager.RemoveEventListener(XEventId.EVENT_PURCHASE_QUICK_BUY_SKIP, self.Close, self)
+end
+
+--- 购买货币数量变化时刷新购买按钮价格充足性（复用全链路，正确处理免费/下架/折扣分支，不重载模型）
+function XUiFashionSuitDetail:_OnConsumeCountChanged()
+    if XTool.UObjIsNil(self.GameObject) then return end
+    if not self._SuitDetail then return end
+    self._SuitDetail:UpdateBuyBtn()
+end
+
+--- 注册购买货币数量变化监听（监听界面声明货币 FreeGem/PaidGem/HongKa，node 用 PanelSpecialTool）
+function XUiFashionSuitDetail:_AddConsumeCountListener()
+    self:_RemoveConsumeCountListener()   -- 先移除防重复叠加
+    -- 以表传入会跳过 AddCountUpdateListener 内 FreeGem→{FreeGem,PaidGem} 的自动扩展，故显式补 PaidGem，与资源栏币种口径一致
+    local ids = { XDataCenter.ItemManager.ItemId.FreeGem, XDataCenter.ItemManager.ItemId.PaidGem, XDataCenter.ItemManager.ItemId.HongKa }
+    XDataCenter.ItemManager.AddCountUpdateListener(ids, handler(self, self._OnConsumeCountChanged), self.PanelSpecialTool)
+end
+
+function XUiFashionSuitDetail:_RemoveConsumeCountListener()
+    if not XTool.UObjIsNil(self.PanelSpecialTool) then
+        XDataCenter.ItemManager.RemoveCountUpdateListener(self.PanelSpecialTool)
+    end
 end
 
 function XUiFashionSuitDetail:InitView()
@@ -306,8 +334,6 @@ function XUiFashionSuitDetail:UpdateFashionModel()
     self.PanelWeapon.gameObject:SetActiveEx(false)
     self.UiModelParent.gameObject:SetActiveEx(true)
     self.RoleModelPanel:UpdateCharacterResModel(fashionConfig.ResourcesId, fashionConfig.CharacterId, XModelManager.MODEL_UINAME.XUiFashionSuitDetail, function(model)
-        model.transform.localPosition = self._FashionModelPos
-        model.transform.localEulerAngles = self._FashionModleRotation
         if self._IsModelDrag then
             self.PanelDrag.gameObject:SetActiveEx(true)
             self.PanelDrag:GetComponent("XDrag").Target = model.transform

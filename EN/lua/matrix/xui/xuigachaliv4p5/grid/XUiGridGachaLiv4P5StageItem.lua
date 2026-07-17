@@ -99,7 +99,7 @@ end
 
 function XUiGridGachaLiv4P5StageItem:ResetItemPosition(pos)
     if self.ImgHideLine then
-        local rect = self.ImgHideLine:GetComponent("RectTransform").rect
+        local rect = self.ImgHideLine:GetComponent(typeof(CS.UnityEngine.RectTransform)).rect
         self.Transform.localPosition = CS.UnityEngine.Vector3(pos.x, pos.y - rect.height, pos.z)
     end
 end

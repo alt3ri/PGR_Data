@@ -39,6 +39,8 @@ function XUiDyeMergeGame:_EnterStage(stageId)
     self._Control:EnterStage(stageId)
     self:_InitStageInfoShow()
     self.PanelBoard:ResetBoard()
+    
+    XDataCenter.GuideManager.CheckGuideOpen()
 end
 
 function XUiDyeMergeGame:OnEnable()

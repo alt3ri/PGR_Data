@@ -11,11 +11,10 @@ function XUiBossInshotRank:OnAwake()
 end
 
 function XUiBossInshotRank:OnStart()
-
+    self.BtnContent:SelectIndex(1)
 end
 
 function XUiBossInshotRank:OnEnable()
-    self.BtnContent:SelectIndex(1)
 end
 
 function XUiBossInshotRank:OnDestroy()

@@ -304,6 +304,8 @@ end
 function XMonsterArchiveAgency:UpdateMonsterList() --更新图鉴怪物列表数据
     local monsterModel = self._Model.MonsterArchiveModel
     local killCount = {}
+    -- monsterId → {sameNpcId → count}：先聚合，避免逐条 UpdateData 整表替换丢失同怪其它 npcId 的击杀数
+    local monsterKillMap = {}
     for _, showedMonster in pairs(monsterModel:GetShowedMonsterList()) do
         local sameNpcId = monsterModel:GetSameNpcId(showedMonster.Id)
         local monsterId = monsterModel:GetArchiveNpcToMonster()[sameNpcId]
@@ -312,11 +314,16 @@ function XMonsterArchiveAgency:UpdateMonsterList() --更新图鉴怪物列表数
             killCount[sameNpcId] = killCount[sameNpcId] + showedMonster.Killed
             monsterModel:SetMonsterKillCount(sameNpcId, killCount[sameNpcId])
             monsterModel:SetMonsterRedPointDic(monsterId, XEnumConst.Archive.MonsterRedPointType.Monster, nil)
-            -- 若 Entity 已创建，同步写入（UI 已打开的场景）
-            local monsterData = monsterModel:GetRawMonsterData()[monsterId]
-            if monsterData then
-                monsterData:UpdateData({ IsLockMain = false, Kill = { [sameNpcId] = killCount[sameNpcId] } })
-            end
+            if not monsterKillMap[monsterId] then monsterKillMap[monsterId] = {} end
+            monsterKillMap[monsterId][sameNpcId] = killCount[sameNpcId]
+        end
+    end
+    -- 聚合完再一次性写 Entity（与冷路径 InitMonsterEntities 对齐），UpdateData 整表替换但 killMap 已含该怪全部 npcId
+    local rawData = monsterModel:GetRawMonsterData()
+    for monsterId, killMap in pairs(monsterKillMap) do
+        local monsterData = rawData[monsterId]
+        if monsterData then -- 仅 Entity 已创建（UI 已打开）时同步
+            monsterData:UpdateData({ IsLockMain = false, Kill = killMap })
         end
     end
 end

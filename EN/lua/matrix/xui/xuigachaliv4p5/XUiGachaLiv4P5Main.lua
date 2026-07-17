@@ -473,7 +473,7 @@ function XUiGachaLiv4P5Main:RefreshUiShow()
     self.BtnGacha:SetDisable(not self.IsCanGacha1)
     self.BtnGacha2:SetDisable(not self.IsCanGacha10)
     
-    local btnGachaRawImage = self.BtnGacha.transform:GetComponent("RawImage")
+    local btnGachaRawImage = self.BtnGacha.transform:GetComponent(typeof(CS.UnityEngine.UI.RawImage))
 
     if btnGachaRawImage then
         btnGachaRawImage.enabled = self.IsCanGacha1

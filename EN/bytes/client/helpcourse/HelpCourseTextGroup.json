@@ -465,7 +465,7 @@
     },
     {
         "Id": 1022320,
-        "Texts": "['\u2460.\u70b9\u51fb\u8fdb\u5165\u865a\u50cf\u7834\u6267\u7684<color=#0E70BD>\u56db\u4e2a\u7ae0\u8282</color>\uff0c\u6bcf<color=#0E70BD>\u5355\u4e2a\u7ae0\u8282</color>\u5185\u53ea\u80fd\u4f7f\u7528<color=#0E70BD>\u6307\u5b9a\u89d2\u8272</color>\u8fdb\u884c\u6311\u6218', '\u2461. Tap the <color=#0E70BD>Event Mission</color> button to go to the <color=#0E70BD>Claim Event Rewards</color> page.']"
+        "Texts": "['\u2460 Tap to enter the <color=#0E70BD>four chapters</color> of Shattered Mirage. Only <color=#0E70BD>specified characters</color> can be used in each <color=#0E70BD>chapter</color>.', '\u2461. Tap the <color=#0E70BD>Event Mission</color> button to go to the <color=#0E70BD>Claim Event Rewards</color> page.']"
     },
     {
         "Id": 1022321,
@@ -549,11 +549,11 @@
     },
     {
         "Id": 1033102,
-        "Texts": "['\u2460.\u53ef\u4ee5\u5c06\u81ea\u8eab\u7684\u989c\u8272\u8d4b\u4e88\u9644\u8fd1\u7684<color=#0E70BD>\u7f3a\u5c11\u989c\u8272\u7684\u5757</color>\u3002', '\u2461.\u591a\u4e2a\u989c\u8272\u540c\u65f6\u8d4b\u4e88\u65f6\uff0c<color=#0E70BD>\u989c\u8272\u5c06\u8fdb\u884c\u5408\u6210</color>\u3002', '\u2462.<color=#0E70BD>\u7f3a\u5c11\u989c\u8272\u7684\u5757</color>\u88ab\u67d3\u989c\u8272\u4e0e\u81ea\u8eab\u989c\u8272\u9700\u6c42\u4e00\u81f4\u65f6\uff0c\u5373\u53ef\u6fc0\u6d3b\u3002', '\u2463.<color=#0E70BD>\u6fc0\u6d3b\u6240\u6709\u7f3a\u5c11\u989c\u8272\u7684\u5757</color>\u5373\u53ef\u5b8c\u6210\u5173\u5361\u3002', '\u2464.\u6b64\u5904\u53ef\u4ee5\u67e5\u770b<color=#0E70BD>\u6446\u653e\u63d0\u793a</color>\u3002']"
+        "Texts": "['\u2460. <color=#0E70BD>Only patterned tiles</color> can pass their color to adjacent <color=#0E70BD>colorless tiles</color>.', \"\u2461. When a colorless tile is adjacent to multiple patterned tiles, <color=#0E70BD>their colors are combined</color>. <color=#0E70BD>If the colors can't be combined, an \u00d7 appears</color>.\", \"\u2462. The bottom of a <color=#0E70BD>colorless tile</color> shows the color it needs. The top shows the color it's currently receiving. When the two match, the tile is activated.\", '\u2463. <color=#0E70BD>Activate all colorless tiles</color> to complete the stage.', '\u2464. You can view <color=#0E70BD>placement tips</color> here.']"
     },
     {
         "Id": 1033103,
-        "Texts": "['\u2460.\u53ef\u5c06\u81ea\u8eab\u7684\u989c\u8272\u8d4b\u4e88\u9644\u8fd1\u7684\u7f3a\u5c11\u989c\u8272\u7684\u5757\u3002', '\u2461. Switch between up to four colors and apply them to tiles.', '\u2462. Generate up to four tiles in a chosen direction and apply a color to them.', '\u2463. Rotate to project color in a chosen direction. Mirrors can change its path.']"
+        "Texts": "['\u2460. A patterned tile can pass its color to nearby colorless tiles.', '\u2461. Cycles through up to 4 colors and passes color to adjacent tiles.', '\u2462. Creates up to 4 tiles in a set direction and passes color to nearby tiles.', '\u2463. Rotates to color the first tile along its path. Mirrors can change its direction.']"
     },
     {
         "Id": 1022401,
@@ -645,7 +645,7 @@
     },
     {
         "Id": 1022601,
-        "Texts": "['\u2460 In <color=#0E70BD>[Nightshroud Tales]</color> mode, you can learn the <color=#0E70BD>personal stories</color> of the characters and uncover the truth of the world.', '\u2461 In <color=#0E70BD>[Labyrinth Breakout]</color> mode, you can <color=#0E70BD>repeat challenges</color> to earn resources and gain power.', '\u2462 In the upcoming <color=#0E70BD>[Phantom Clash]</color> mode, you will be able to battle <color=#0E70BD>other players</color>.']"
+        "Texts": "['\u2460 In <color=#0E70BD>[Nightshroud Tales]</color> mode, you can learn the <color=#0E70BD>personal stories</color> of the characters and uncover the truth of the world.', '\u2461 In <color=#0E70BD>[Labyrinth Breakout]</color> mode, you can <color=#0E70BD>repeat challenges</color> to earn resources and gain power.', '\u2462 In <color=#0E70BD>[Phantom Clash]</color>, you can battle <color=#0E70BD>other players</color>.']"
     },
     {
         "Id": 1022602,
@@ -678,6 +678,30 @@
     {
         "Id": 1022609,
         "Texts": "['\u2460 The side being attacked builds up <color=#0E70BD>Hypersequence</color> based on their <color=#0E70BD>Hypersequence</color> stat. Once it reaches the limit, a <color=#0E70BD>Counter</color> check begins. If the <color=#0E70BD>Counter</color> succeeds, they take <color=#0E70BD>First Strike</color>.']"
+    },
+    {
+        "Id": 1022610,
+        "Texts": "['\u2460 In [Phantom Clash], you can battle <color=#0E70BD>other Commandants</color> using your <color=#0E70BD>saved Archives</color>.', '\u2461 Each battle costs <color=#0E70BD>1 Stamina</color>, which recovers <color=#0E70BD>over time</color>.', '\u2462 Tap <color=#0E70BD>Refresh</color> to find new opponents.', '\u2463 At higher ranks, some opponents will be hidden in the <color=#0E70BD>Mist Hideout</color>. Their information cannot be viewed.', '\u2463 You can customize your <color=#0E70BD>Defense Lineup</color> for [Phantom Clash].']"
+    },
+    {
+        "Id": 1022611,
+        "Texts": "[\"\u2460 From the Matchups screen, you can view <color=#0E70BD>detailed information</color> about your opponent's characters.\", '\u2461 <color=#0E70BD>Tap the Deploy button</color>, or <color=#0E70BD>press and hold a character</color> to drag them into your lineup.', '\u2462 You can deploy up to <color=#0E70BD>2 Archives</color> when attacking. Each Archive can be deployed <color=#0E70BD>twice</color>.', '\u2463 You can also tap Quick Deploy to automatically deploy your 2 <color=#0E70BD>strongest</color> Archives.', '\u2464 After unlocking the <color=#0E70BD>Stealth Barrier</color>, you can edit the Stealth Barrier effects used while attacking.']"
+    },
+    {
+        "Id": 1022612,
+        "Texts": "['\u2460 You can deploy up to <color=#0E70BD>3 Archives</color> on defense.', '\u2461 <color=#0E70BD>Successful defenses</color> earn points, while <color=#0E70BD>failed defenses</color> deduct points.', '\u2462 After unlocking the <color=#0E70BD>Stealth Barrier</color>, you can edit the Stealth Barrier effects used by your defense lineup here.']"
+    },
+    {
+        "Id": 1022613,
+        "Texts": "['\u2460 Your score changes based on the outcome of each battle.', \"\u2461 Defeat your opponent to earn points. <color=#0E70BD>The higher your opponent's score</color>, the more points you'll receive. Winning <color=#0E70BD>all three battles</color> also awards <color=#0E70BD>bonus</color> points.\", '\u2462 Once you reach the score cap for your current rank, your score is <color=#0E70BD>locked</color>. Wins and losses no longer affect it.']"
+    },
+    {
+        "Id": 1022614,
+        "Texts": "[\"\u2460 In the Promotion Challenge, you'll face opponents from the next rank with the mechanics of <color=#0E70BD>the next rank</color> already in effect.\", '\u2461 Promotion Challenges <color=#0E70BD>do not consume Stamina</color>, so feel free to give them a try.', '\u2462 Complete the <color=#0E70BD>Promotion Challenge</color> to <color=#0E70BD>advance to the next rank</color>.']"
+    },
+    {
+        "Id": 1022615,
+        "Texts": "['\u2460 If the next rank is <color=#0E70BD>not yet available</color>, reaching the maximum score will match you against other Commandants who have also reached the <color=#0E70BD>score cap</color>.', '\u2461 Battles at this stage <color=#0E70BD>consume Stamina</color>, and even if you win, you <color=#0E70BD>cannot advance</color> to the next rank.']"
     },
     {
         "Id": 1023201,
@@ -750,5 +774,13 @@
     {
         "Id": 1019906,
         "Texts": "['\u2460 Tap to save battle recording.', '\u2461 Tap to view score details.', '\u2462 Receive a rating based on combat performance at the end of the stage.']"
+    },
+    {
+        "Id": 1023501,
+        "Texts": "['\u2460 Tap the Harmony II <color=#0E70BD>node button</color> to enter the Details screen and view detailed information such as <color=#0E70BD>node effects</color>.', '\u2461 Displays the <color=#0E70BD>activation</color> progress of the current weapon Harmony node.']"
+    },
+    {
+        "Id": 1023502,
+        "Texts": "['\u2460 The <color=#0E70BD>currently selected</color> node. Tap other node buttons to <color=#0E70BD>switch</color> and view other node info.', '\u2461 Node <color=#0E70BD>effect</color> details.', '\u2462 You can also <color=#0E70BD>switch</color> nodes by tapping the list buttons below to view effect info of different nodes.', '\u2463 Details of the <color=#0E70BD>resource</color> <color=#0E70BD>consumed</color> to activate a node.']"
     }
 ]

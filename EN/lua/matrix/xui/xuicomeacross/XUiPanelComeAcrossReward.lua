@@ -1,4 +1,4 @@
-local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XUiPanelComeAcrossReward = XClass(nil, "XUiPanelComeAcrossReward")
 
 function XUiPanelComeAcrossReward:Ctor(ui, parent)
@@ -41,7 +41,7 @@ function XUiPanelComeAcrossReward:AutoInitUi()
     self.ImgRoleA = self.Transform:Find("GameObject/PanelRewardInfo/PanelRole/ImgRole"):GetComponent("Image")
     self.PanelFavor = self.Transform:Find("GameObject/PanelRewardInfo/PanelFavor")
     self.TxtFavorAdd = self.Transform:Find("GameObject/PanelRewardInfo/PanelFavor/TxtFavorAdd"):GetComponent("Text")
-    self.SliderFavor = self.Transform:Find("GameObject/PanelRewardInfo/PanelFavor/SliderFavor"):GetComponent("Slider")
+    self.SliderFavor = self.Transform:Find("GameObject/PanelRewardInfo/PanelFavor/SliderFavor"):GetComponent(typeof(CS.UnityEngine.UI.Slider))
     self.PanelRewardBig = self.Transform:Find("GameObject/PanelRewardInfo/PanelRewardBig")
     self.PanelMaskA = self.Transform:Find("PanelMask")
 end
