@@ -50,6 +50,35 @@ XLottoManagerCreator = function()
         return LPrimaryIdLottoIdDic[lottoPrimaryId]
     end
 
+    -- LottoPrimary 下挂多个 LottoId 即为自选卡池
+    function XLottoManager.IsLottoIdBelongSelfChoice(lottoId)
+        return XLottoManager.GetLottoModeByLottoId(lottoId) == XLottoConfigs.LottoMode.SelfChoice
+    end
+
+    function XLottoManager.GetLottoModeByPrimaryId(lottoPrimaryId)
+        if not XTool.IsNumberValid(lottoPrimaryId) then return XLottoConfigs.LottoMode.Single end
+        local lpCfg = XLottoConfigs.GetLottoPrimaryCfgById(lottoPrimaryId)
+        if lpCfg and lpCfg.LottoIdList and #lpCfg.LottoIdList > 1 then
+            return XLottoConfigs.LottoMode.SelfChoice
+        end
+        return XLottoConfigs.LottoMode.Single
+    end
+
+    function XLottoManager.GetLottoModeByLottoId(lottoId)
+        if not XTool.IsNumberValid(lottoId) then return XLottoConfigs.LottoMode.Single end
+        return XLottoManager.GetLottoModeByPrimaryId(XLottoManager.GetLottoPrimaryIdByLottoId(lottoId))
+    end
+
+    -- 切换卡池入口：界面已开则抛事件由界面自身刷新到切换态，未开则新开
+    function XLottoManager.OpenSelfChoiceEntranceForChange()
+        local uiName = "UiLottoFashionSelfChoiceEntrance"
+        if XLuaUiManager.IsUiLoad(uiName) then
+            XEventManager.DispatchEvent(XEventId.EVENT_LOTTO_SELF_CHOICE_ENTER_CHANGE_MODE)
+        else
+            XLuaUiManager.Open(uiName, true)
+        end
+    end
+
     function XLottoManager.GetLottoPrimaryIdByLottoId(lottoId)
         local resLottoPrimaryId = LottoIdLPrimaryIdDic[lottoId]
         if XTool.IsNumberValid(resLottoPrimaryId) then
@@ -86,7 +115,7 @@ XLottoManagerCreator = function()
                     UiName = "UiLotto"
                 end
                 if XLuaUiManager.IsUiLoad(UiName) then
-                    XLuaUiManager.Close(XLuaUiManager.GetTopUiName())
+                    XLuaUiManager.Close(UiName)
                 else
                     XLuaUiManager.Open(UiName, entity, nil, entity:GetUiBackGround(), param1)
                 end
@@ -272,9 +301,15 @@ XLottoManagerCreator = function()
                 table.insert(tmpInfoList[lottoCfg.LottoGroupId], lottoInfo)
             end
     
-            -- 原有字典更新逻辑保持不变
             LottoIdLPrimaryIdDic[lottoInfo.Id] = lottoInfo.LottoPrimaryId
-            LPrimaryIdLottoIdDic[lottoInfo.LottoPrimaryId] = lottoInfo.Id
+
+            -- LPrimaryIdLottoIdDic 存"该 Primary 下玩家选中的 LottoId"，权威来源是
+            -- LottoSelfChoiceSelectRequest 回调与 NotifySelfChoiceLottoData。这里只能覆盖
+            -- 单选 Primary（1:1），自选 Primary 跳过，否则会被 pairs 遍历的最后一条污染。
+            local lpCfg = XLottoConfigs.GetLottoPrimaryCfgById(lottoInfo.LottoPrimaryId)
+            if lpCfg and lpCfg.LottoIdList and #lpCfg.LottoIdList <= 1 then
+                LPrimaryIdLottoIdDic[lottoInfo.LottoPrimaryId] = lottoInfo.Id
+            end
         end
     
         -- 二、更新已有实体内容
@@ -325,7 +360,8 @@ XLottoManagerCreator = function()
     function XLottoManager.DoLotto(lottoId, cb, errorCb)
         IsInterceptUiObtain = true
         local lottoPrimaryId = XLottoManager.GetLottoPrimaryIdByLottoId(lottoId)
-        XNetwork.Call(METHOD_NAME.LottoRequest, { Id = lottoPrimaryId }, function(res)
+        -- LottoId 字段：自选 Lotto 必填，普通 Lotto 多传无影响
+        XNetwork.Call(METHOD_NAME.LottoRequest, { Id = lottoPrimaryId, LottoId = lottoId }, function(res)
             IsInterceptUiObtain = false
             if res.Code ~= XCode.Success then
                 XUiManager.TipCode(res.Code)
@@ -339,7 +375,8 @@ XLottoManagerCreator = function()
 
     function XLottoManager.BuyTicket(lottoId, BuyTicketRuleId, ticketKey, cb)
         local lottoPrimaryId = XLottoManager.GetLottoPrimaryIdByLottoId(lottoId)
-        XNetwork.Call(METHOD_NAME.LottoBuyTicketRequest, { LottoPrimaryId = lottoPrimaryId, TicketId = BuyTicketRuleId, TicketKey = ticketKey }, function(res)
+        -- LottoId 字段：自选 Lotto 必填，普通 Lotto 多传无影响
+        XNetwork.Call(METHOD_NAME.LottoBuyTicketRequest, { LottoPrimaryId = lottoPrimaryId, LottoId = lottoId, TicketId = BuyTicketRuleId, TicketKey = ticketKey }, function(res)
             if res.Code ~= XCode.Success then
                 XUiManager.TipCode(res.Code)
                 return
@@ -357,7 +394,9 @@ XLottoManagerCreator = function()
             end
             LPrimaryIdLottoIdDic[lottoPrimaryId] = lottoId
             LottoIdLPrimaryIdDic[lottoId] = lottoPrimaryId
-            if cb then cb() end
+            -- 新选的子池需重新拉取才会下发，清零时间戳绕过 10s 节流，拉完再回调进池
+            LastGetLottoRewardInfoTimes = 0
+            XLottoManager.GetLottoRewardInfoRequest(cb, true)
         end)
     end
 
@@ -372,16 +411,17 @@ XLottoManagerCreator = function()
         end
     end
 
+    -- CurrentPrimaryIdToLottoId 是新协议字段（旧 SelectedPrimaryIdToLottoId 已拆分），表示当前选中
     function XLottoManager.OnlyUpdateLPPrimaryAndReverseDicByServerNotify(data)
-        if not data then 
-            return 
-        end
-
-        if XTool.IsTableEmpty(data.SelectedPrimaryIdToLottoId) then
+        if not data then
             return
         end
 
-        for lottoPrimaryId, lottoId in pairs(data.SelectedPrimaryIdToLottoId) do
+        if XTool.IsTableEmpty(data.CurrentPrimaryIdToLottoId) then
+            return
+        end
+
+        for lottoPrimaryId, lottoId in pairs(data.CurrentPrimaryIdToLottoId) do
             LPrimaryIdLottoIdDic[lottoPrimaryId] = lottoId
             LottoIdLPrimaryIdDic[lottoId] = lottoPrimaryId
         end

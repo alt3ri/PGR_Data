@@ -5997,7 +5997,7 @@
     },
     {
         "Key": "ActivityBossSingleSchedule",
-        "Text": "{0}/<color=#00000><size=20>{1}</size></color>"
+        "Text": "{0}/<color=#00EEEE><size=28>{1}</size></color>"
     },
     {
         "Key": "GuildSettingLevelLessThanZero",
@@ -19957,7 +19957,7 @@
     },
     {
         "Key": "BountyChallengeProgress",
-        "Text": "{0}<color=#FFFFFF><size=40>/{1}</size></color>"
+        "Text": "{0}<color=#937B4E><size=25>/{1}</size></color>"
     },
     {
         "Key": "UiCharacterSkillSwitchTitle",
@@ -21109,7 +21109,7 @@
     },
     {
         "Key": "PassportObtain",
-        "Text": "\u672c\u671f\u901a\u884c\u8bc1\u8f6e\u6b21\u4e3a <color=#0f70bc>6</color> \u8f6e\uff0c\u8d60\u9001\u60a8\u8865\u507f\u5956\u52b1"
+        "Text": "\u56e0\u672c\u671f\u6218\u7565\u8bc4\u5b9a\u624b\u518c\u5468\u671f\u8c03\u6574\uff0c\u73b0\u4e3a\u60a8\u53d1\u653e\u60c5\u62a5\u503c\u8865\u507f"
     },
     {
         "Key": "ShopItemRoleTips",
@@ -21256,10 +21256,6 @@
         "Text": "\u8ddd\u97f3\u4e50\u4f1a\u8fd8\u6709{0}\u5929"
     },
     {
-        "Key": "ConcertPreHeatingFinalStageName",
-        "Text": "\u63ed\u5e55"
-    },
-    {
         "Key": "ConcertPreHeatingTuneSignalFar",
         "Text": "\u53c2\u6570\u504f\u79bb\u76ee\u6807\u6307\u6570"
     },
@@ -21310,5 +21306,233 @@
     {
         "Key": "PurchaseFashionSuitDetailCoinNotEnough",
         "Text": "<color=#FF0000>{0}</color>"
+    },
+    {
+        "Key": "EnvelopeGuessingRewardPanelLeftTitle",
+        "Text": "\u6bcf\u65e5\u8d60\u9001"
+    },
+    {
+        "Key": "EnvelopeGuessingRewardPanelLeftTitleWithDays",
+        "Text": "\u6bcf\u65e5\u8d60\u9001\uff08\u7d2f\u8ba1{0}\u5929\uff09"
+    },
+    {
+        "Key": "EnvelopeGuessingRewardPanelRightTitle",
+        "Text": "\u672a\u9886\u4efb\u52a1\u8865\u53d1"
+    },
+    {
+        "Key": "EnvelopeGuessingRewardPanelItemCount",
+        "Text": "x{0}"
+    },
+    {
+        "Key": "EnvelopeGuessingNormalTaskTitle",
+        "Text": "\u9080\u7ea6\u4efb\u52a1"
+    },
+    {
+        "Key": "EnvelopeGuessingDailyTaskTitle",
+        "Text": "\u6bcf\u65e5\u4efb\u52a1"
+    },
+    {
+        "Key": "EnvelopeGuessingDailyTaskSubTitle",
+        "Text": "\u6bcf\u65e55:00\u5237\u65b0"
+    },
+    {
+        "Key": "EnvelopeGuessingDailyActivityRemainDays",
+        "Text": "{0}\u5929"
+    },
+    {
+        "Key": "EnvelopeGuessingCollectionUiLockedCharacterName",
+        "Text": "\u672a\u77e5"
+    },
+    {
+        "Key": "EnvelopeGuessingCollectionUiClickLockedCharacterTips",
+        "Text": "\u5c1a\u672a\u63a5\u53d7\u6765\u81ea\u8be5\u89d2\u8272\u7684\u9080\u7ea6\u3002"
+    },
+    {
+        "Key": "EnvelopeGuessingMainUiAllCharactersAlreadyOpened",
+        "Text": "\u5df2\u63a5\u53d7\u5168\u90e8\u89d2\u8272\u7684\u9080\u7ea6\u3002"
+    },
+    {
+        "Key": "EnvelopeGuessingCharacterCardSpecifyCardTip",
+        "Text": "{0}\u6b63\u5728\u7b49\u5f85\u4f60\u63a5\u53d7\u9080\u7ea6"
+    },
+    {
+        "Key": "UiEnvelopeGuessingInvitationTicketNotEnough",
+        "Text": "\u60a0\u4e50\u51ed\u5238\u4e0d\u8db3"
+    },
+    {
+        "Key": "UiEnvelopeGuessingInvitationChoiceTicketNotEnough",
+        "Text": "\u4e13\u5c5e\u51ed\u5238\u4e0d\u8db3"
+    },
+    {
+        "Key": "UiEnvelopeGuessingInvitationInviteButtonRedOne",
+        "Text": "<color=red>1</color>"
+    },
+    {
+        "Key": "UiEnvelopeGuessingInvitationInviteButtonWhiteOne",
+        "Text": "<color=#302918>1</color>"
+    },
+    {
+        "Key": "EnvelopeGuessingChoosePanelBindingSuccess",
+        "Text": "\u4e50\u624b{0}\u5df2\u4e0a\u9635"
+    },
+    {
+        "Key": "EnvelopeGuessingChoosePanelUnbindingSuccess",
+        "Text": "\u4e50\u624b{0}\u6b63\u5728\u9000\u573a"
+    },
+    {
+        "Key": "EnvelopeGuessingChoosePanelSwapSuccess",
+        "Text": "\u4e50\u624b{0}\u548c\u4e50\u624b{1}\u5df2\u4ea4\u6362\u4f4d\u7f6e"
+    },
+    {
+        "Key": "EnvelopeGuessingChoosePanelMoveSuccess",
+        "Text": "\u4e50\u624b{0}\u5df2\u66f4\u6362\u4e50\u5668"
+    },
+    {
+        "Key": "EnvelopeGuessingChoosePanelLocked",
+        "Text": "\u63a5\u53d7{0}\u6b21\u9080\u7ea6\u540e\u89e3\u9501"
+    },
+    {
+        "Key": "EnvelopeGuessingTaskButtonFinish",
+        "Text": "\u9886 \u53d6"
+    },
+    {
+        "Key": "EnvelopeGuessingTaskButtonTomorrowRefresh",
+        "Text": "\u660e \u65e5 \u5237 \u65b0"
+    },
+    {
+        "Key": "EnvelopeGuessingTaskButtonArchived",
+        "Text": "\u5df2 \u5b8c \u6210"
+    },
+    {
+        "Key": "EnvelopeGuessingTaskButtonSkip",
+        "Text": "\u524d \u5f80"
+    },
+    {
+        "Key": "EnvelopeGuessingTaskButtonNotFinished",
+        "Text": "\u672a \u5b8c \u6210"
+    },
+    {
+        "Key": "MusicPlayerResetBGMList",
+        "Text": "\u5df2\u8fd8\u539f\u4e3b\u754c\u9762\u80cc\u666f\u97f3\u4e50"
+    },
+    {
+        "Key": "MusicPlayerListTitleLike",
+        "Text": "\u5fc3\u9009\u6b4c\u5355"
+    },
+    {
+        "Key": "MusicPlayerListTitleBgm",
+        "Text": "\u80cc\u666f\u97f3\u4e50"
+    },
+    {
+        "Key": "MusicPlayerListTitleTotle",
+        "Text": "\u6240\u6709\u6b4c\u66f2"
+    },
+    {
+        "Key": "MusicPlayerTipLikeAddSuccess",
+        "Text": "\u52a0\u5165\u5fc3\u9009\u97f3\u4e50\u5217\u8868"
+    },
+    {
+        "Key": "MusicPlayerTipBgmAddSuccess",
+        "Text": "\u52a0\u5165\u80cc\u666f\u97f3\u4e50\u5217\u8868"
+    },
+    {
+        "Key": "MusicPlayerTipLikeRemoveSuccess",
+        "Text": "\u79fb\u51fa\u5fc3\u9009\u97f3\u4e50\u5217\u8868"
+    },
+    {
+        "Key": "MusicPlayerTipBgmRemoveSuccess",
+        "Text": "\u79fb\u51fa\u80cc\u666f\u97f3\u4e50\u5217\u8868"
+    },
+    {
+        "Key": "MusicPlayerErrorTipBgmRemoveNeedOne",
+        "Text": "\u8bf7\u81f3\u5c11\u8bbe\u7f6e\u4e00\u9996\u80cc\u666f\u97f3\u4e50"
+    },
+    {
+        "Key": "MusicPlayerErrorTipUnlockPlay",
+        "Text": "\u5f53\u524d\u6b4c\u66f2\u672a\u89e3\u9501\uff0c\u65e0\u6cd5\u64ad\u653e"
+    },
+    {
+        "Key": "MusicPlayerErrorTipLikeAddAllBgm",
+        "Text": "\u80cc\u666f\u97f3\u4e50\u5df2\u8fbe\u4e0a\u9650\uff0c\u65e0\u6cd5\u6279\u91cf\u6dfb\u52a0"
+    },
+    {
+        "Key": "MusicPlayerErrorTipLikeAddLimitMax",
+        "Text": "\u5fc3\u9009\u6b4c\u5355\u5df2\u8fbe\u4e0a\u9650\uff0c\u65e0\u6cd5\u6dfb\u52a0"
+    },
+    {
+        "Key": "MusicPlayerErrorTipLikeRemove",
+        "Text": "\u8be5\u6b4c\u66f2\u4e0d\u5728\u5fc3\u9009\u6b4c\u5355\u4e2d\uff0c\u65e0\u9700\u79fb\u9664"
+    },
+    {
+        "Key": "MusicPlayerErrorTipBgmAddRepeat",
+        "Text": "\u8be5\u6b4c\u66f2\u5df2\u5728\u80cc\u666f\u97f3\u4e50\u4e2d"
+    },
+    {
+        "Key": "MusicPlayerErrorTipBgmAddLimit",
+        "Text": "\u80cc\u666f\u6b4c\u5355\u5df2\u8fbe\u4e0a\u9650\uff0c\u65e0\u6cd5\u6dfb\u52a0"
+    },
+    {
+        "Key": "MusicPlayerErrorTipBgmRemoveNoExit",
+        "Text": "\u8be5\u6b4c\u66f2\u4e0d\u5728\u80cc\u666f\u97f3\u4e50\u6b4c\u5355\u4e2d\uff0c\u65e0\u9700\u79fb\u9664"
+    },
+    {
+        "Key": "MusicPlayerErrorTipIndex2TopFaild",
+        "Text": "\u5df2\u7ecf\u662f\u7b2c\u4e00\u9996,\u65e0\u6cd5\u518d\u7f6e\u9876"
+    },
+    {
+        "Key": "MusicPlayerErrorTipIndex2NextFaild",
+        "Text": "\u5df2\u7ecf\u662f\u6700\u540e\u4e00\u9996,\u65e0\u6cd5\u518d\u4e0b\u79fb"
+    },
+    {
+        "Key": "MusicPlayerErrorTipLikeAddBgmNoNeed",
+        "Text": "\u5fc3\u9009\u6279\u91cf\u6dfb\u52a0\u5230\u80cc\u666f\u97f3\u4e50\uff0c\u6ca1\u6709\u9700\u8981\u6dfb\u52a0\u7684\u6b4c\u66f2"
+    },
+    {
+        "Key": "MusicPlayerMusicListSortTipOld2New",
+        "Text": "\u53d1\u5e03\u65f6\u95f4\u4ece\u65e7\u5230\u65b0"
+    },
+    {
+        "Key": "MusicPlayerMusicListSortTipNew2Old",
+        "Text": "\u53d1\u5e03\u65f6\u95f4\u4ece\u65b0\u5230\u65e7"
+    },
+    {
+        "Key": "MusicPlayerPlaylistTipLimitedFree",
+        "Text": "\u9650\u65f6\u83b7\u53d6\u6b4c\u66f2"
+    },
+    {
+        "Key": "MusicPlayerPlaylistTipBgm",
+        "Text": "\u5f53\u524d\u6b4c\u5355-\u80cc\u666f\u97f3\u4e50"
+    },
+    {
+        "Key": "MusicPlayerPlaylistTipFavorite",
+        "Text": "\u5f53\u524d\u6b4c\u5355-\u5fc3\u9009\u6b4c\u5355"
+    },
+    {
+        "Key": "MusicPlayerPlaylistTipNormal",
+        "Text": "\u5f53\u524d\u6b4c\u5355-\u6240\u6709\u6b4c\u66f2"
+    },
+    {
+        "Key": "MusicPlayerLoopTypeSingleLoop",
+        "Text": "\u5355\u66f2\u5faa\u73af"
+    },
+    {
+        "Key": "MusicPlayerLoopTypeRandomLoop",
+        "Text": "\u968f\u673a\u64ad\u653e"
+    },
+    {
+        "Key": "MusicPlayerLoopTypeListLoop",
+        "Text": "\u5217\u8868\u5faa\u73af"
+    },
+    {
+        "Key": "MusicPlayerMusicDetailTitle",
+        "Text": "\u6b4c\u66f2\u4fe1\u606f"
+    },
+    {
+        "Key": "MusicPlayerConfirmLikeAllSetBgm",
+        "Text": "\u786e\u8ba4\u5c06\u5fc3\u9009\u6b4c\u5355\u4e2d\u7684\u5168\u90e8\u6b4c\u66f2\u52a0\u5165\u80cc\u666f\u97f3\u4e50\u5417\uff1f"
+    },
+    {
+        "Key": "MusicPlayerConfirmBgmReset",
+        "Text": "\u786e\u8ba4\u5c06\u80cc\u666f\u97f3\u4e50\u5217\u8868\u6062\u590d\u81f3\u521d\u59cb\u72b6\u6001\u5417\uff1f"
     }
 ]

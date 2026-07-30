@@ -86,10 +86,6 @@ XFubenActivityBossSingleManagerCreator = function()
             return
         end
 
-        if not XFubenActivityBossSingleManager.IsHardBossLevel(settleData.StageId)   then
-            CS.XFight.ExitForClient(true)
-            return 
-        end
 
         if not res or not settleData then
             CS.XFight.ExitForClient(true)
@@ -123,7 +119,9 @@ XFubenActivityBossSingleManagerCreator = function()
         if stageType ~= XEnumConst.FuBen.StageType.ActivityBossSingle then
             return
         end
+        
         if not XFubenActivityBossSingleManager.IsHardBossLevel(stageId) then
+            CS.XFight.ExitForClient(true)
             return
         end
         XFubenActivityBossSingleManager._OpenRewardUi(FightSettleDataCache)

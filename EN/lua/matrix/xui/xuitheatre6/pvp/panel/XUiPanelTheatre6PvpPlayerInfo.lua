@@ -19,9 +19,14 @@ function XUiPanelTheatre6PvpPlayerInfo:OnStart()
     self._RankGrid = nil
 end
 
+function XUiPanelTheatre6PvpPlayerInfo:OnEnable()
+    self.BtnDefend:ShowReddot(self._Control:IsChooseEnvRedPoint())
+end
+
 function XUiPanelTheatre6PvpPlayerInfo:Refresh()
     self:RefreshMember()
     self:RefreshRank()
+    self:RefreshTips()
 end
 
 function XUiPanelTheatre6PvpPlayerInfo:RefreshMember()
@@ -47,17 +52,27 @@ function XUiPanelTheatre6PvpPlayerInfo:RefreshRank()
     local index = score >= maxScore and 2 or 1
     local rankScoreContent = self._Control:GetPvpClientConfigValue("RankScoreContent", index)
     self.TxtRankScore.text = string.format(rankScoreContent, score, maxScore)
-    -- 段位时间提示
+end
+
+-- 刷新段位时间提示 当前分数已满且下一段位未开启时，才显示提示
+function XUiPanelTheatre6PvpPlayerInfo:RefreshTips()
     local showTips = false
-    local timeId = rankConfig and rankConfig.TimeId
-    if XTool.IsNumberValid(timeId) then
-        local nowTime = XTime.GetServerNowTimestamp()
-        local startTime = XFunctionManager.GetStartTimeByTimeId(timeId)
-        if nowTime < startTime then
-            local rankTimeTips = self._Control:GetPvpClientConfigValue("RankTimeTips")
-            local rankTime = XUiHelper.GetTime(startTime - nowTime, XUiHelper.TimeFormatType.DEFAULT)
-            self.TxtTips.text = string.format(rankTimeTips, rankTime, rankConfig.Name)
-            showTips = true
+    local curRankConfig = self._Control:GetCurrentRankConfig()
+    local score = self._Control:GetPvpCurScore()
+    local maxScore = curRankConfig and curRankConfig.MaxScore or 0
+    local isScoreFull = XTool.IsNumberValid(maxScore) and score >= maxScore
+    local rankConfig = self._Control:GetNextRankConfig()
+    if isScoreFull and rankConfig then
+        local timeId = rankConfig.TimeId
+        if XTool.IsNumberValid(timeId) then
+            local nowTime = XTime.GetServerNowTimestamp()
+            local startTime = XFunctionManager.GetStartTimeByTimeId(timeId)
+            if nowTime < startTime then
+                local rankTimeTips = self._Control:GetPvpClientConfigValue("RankTimeTips")
+                local rankTime = XUiHelper.GetTime(startTime - nowTime, XUiHelper.TimeFormatType.MOE_WAR)
+                self.TxtTips.text = string.format(rankTimeTips, rankTime, rankConfig.Name)
+                showTips = true
+            end
         end
     end
     self.TxtTips.gameObject:SetActiveEx(showTips)

@@ -157,7 +157,7 @@ function XUiPacMan2Game:OnAwake()
     local text3 = XUiHelper.Instantiate(text1.transform, text1.transform.parent)
     text1.gameObject:SetActiveEx(false)
     text2.gameObject:SetActiveEx(false)
-    self._TxtTipsArray = { text3:GetComponent("Text"), text2:GetComponent("Text"), text1 }
+    self._TxtTipsArray = { text3:GetComponent(typeof(CS.UnityEngine.UI.Text)), text2:GetComponent(typeof(CS.UnityEngine.UI.Text)), text1 }
 
     self._BackgroundType = BackgroundType.Default
     self._Backgounrd = {}
@@ -1303,7 +1303,7 @@ function XUiPacMan2Game:ShowPixelationEffect()
         return
     end
     
-    local sceneCamera = sceneCameraTransform:GetComponent("Camera")
+    local sceneCamera = sceneCameraTransform:GetComponent(typeof(CS.UnityEngine.Camera))
     if not sceneCamera then
         return
     end

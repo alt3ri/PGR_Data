@@ -29,6 +29,10 @@ XAgencyEventId = {
     -- 上传日志
     EVENT_LOG_UPLOAD_PROGRESS = "EVENT_LOG_UPLOAD_PROGRESS", -- 上传日志更新进度
     EVENT_LOG_UPLOAD_COMPLETE = "EVENT_LOG_UPLOAD_COMPLETE", -- 上传日志完成
+
+    -- 音乐播放器(XMusicPlayer) - 服务端 Push 后由 Agency 转发的全局事件
+    EVENT_NOTIFY_MUSIC_LIST_BGM_CHANGE  = "EVENT_NOTIFY_MUSIC_LIST_BGM_CHANGE",  -- BGM歌单数据变化(登录/服务端推送)
+    EVENT_NOTIFY_MUSIC_LIST_LICK_CHANGE = "EVENT_NOTIFY_MUSIC_LIST_LICK_CHANGE", -- 心选歌单数据变化(登录/服务端推送)
 }
 
 ---Control内部事件, 通过Agency派发

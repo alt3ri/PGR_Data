@@ -24,9 +24,12 @@ function XUiTheatre6PVPSettlement:OnStart(fightResult)
 
     self._PanelEnergy:Open()
     self._PanelEnergy:Refresh()
+    self._PanelEnergy:HideEnergyChange()
     self:ShowResult()
     self:ShowBattleResult()
     self:ShowRankChange()
+
+    XLuaUiManager.SafeClose("UiTheatre6PVPAttackDefend")
 end
 
 function XUiTheatre6PVPSettlement:ShowResult()
@@ -104,13 +107,6 @@ function XUiTheatre6PVPSettlement:RefreshTips()
         XLog.Error(string.format("【未知的Pvp段位状态】battlePhase=%s,isFinalWin=%s,isAdvanceBattleWin=%s", battlePhase, tostring(isFinalWin), tostring(isAdvanceBattleWin)))
     end
 
-    if isAdvancedSucc or isAdvancedFail then
-        self._PanelEnergy:HideEnergyChange() --进阶战斗不扣体力
-    else
-        local changeValue = self._Control:GetIntPvpConfigValue("ActionPointPerCost")
-        self._PanelEnergy:ShowEnergyChange(-changeValue)
-    end
-
     if #self._Tips == 0 then
         self.TxtDetail.gameObject:SetActiveEx(false)
     else
@@ -120,6 +116,15 @@ function XUiTheatre6PVPSettlement:RefreshTips()
         end
     end
     self.PanelScoreMax.gameObject:SetActiveEx(isNextAdvanced)
+
+    --动效
+    if isAdvancedSucc then
+        local rankId = self._Control:GetPvpCurRankId()
+        local anim = string.format("Rank%sTo%s", rankId - 1, rankId)
+        self:PlayAnimationWithMask(anim)
+    else
+        self:PlayAnimationWithMask("Enable")
+    end
 end
 
 function XUiTheatre6PVPSettlement:ShowNormalBattleTip()
@@ -136,7 +141,10 @@ function XUiTheatre6PVPSettlement:ShowNormalBattleTip()
     else
         --挑战失败
         --如果当前1002分 失败扣了5分 应该显示-1 而不是-5
-        table.insert(self._Tips, XUiHelper.GetText("Theatre6PvpScoreDetailDesc3", math.abs(self._FightResult.NewScore - self._FightResult.OldScore)))
+        --挑战失败可能会加分（K值配置为负数）
+        local score = self._FightResult.NewScore - self._FightResult.OldScore
+        local socreStr = score == 0 and "" or string.format(" %+d", score)
+        table.insert(self._Tips, XUiHelper.GetText("Theatre6PvpScoreDetailDesc3", socreStr))
     end
 end
 

@@ -43,6 +43,7 @@ XMovieManagerCreator = function()
     local Speed                     -- 自动播放的倍速
     local StageId                   -- 剧情对应的关卡Id
     local SelectionDataDic = {}     -- 当前剧情选项记录
+    local _PlayingId                -- 当前播放的剧情Id
 
     local function InitMovieActions(movieId)
         local movieActions = {}
@@ -151,11 +152,18 @@ XMovieManagerCreator = function()
                         return true
                     end
                 end
-            end
-            return false
-        end
-        
-        local nextActionId = curAction:GetNextActionId()
+            end
+            return false
+        end
+
+        if curAction:GetType() == XMVCA.XMovie.EnumConst.ACTION_TYPE.SINGLE_CLICK_BUTTON then
+            local clickActionId = curAction:GetClickActionId()
+            if XTool.IsNumberValidEx(clickActionId) and IsCanReachAction(clickActionId, targetActionId, searchActionIdDic) then
+                return true
+            end
+        end
+        
+        local nextActionId = curAction:GetNextActionId()
         if XTool.IsNumberValidEx(nextActionId) then
             -- 有配置NextActionId
             return IsCanReachAction(nextActionId, targetActionId, searchActionIdDic)
@@ -199,7 +207,24 @@ XMovieManagerCreator = function()
     end
 
     -- 从startActionId开始播剧情，获取前面播放过的Action列表
-    local function GetPassedActions(startActionId, optionDic)
+    local function GetSingleClickButtonNextActionId(action, animActionId, optionDic)
+        local actionId = action:GetActionId()
+        local optionIndex = optionDic[actionId]
+        local clickActionId = action:GetClickActionId()
+
+        if XTool.IsNumberValidEx(optionIndex) then
+            return clickActionId
+        end
+
+        if XTool.IsNumberValidEx(clickActionId) and IsCanReachAction(clickActionId, animActionId) then
+            optionDic[actionId] = action:GetClickButtonOptionIndex()
+            return clickActionId
+        end
+
+        return 0
+    end
+
+    local function GetPassedActions(startActionId, optionDic)
         local delaySelectionDic = {} -- 延迟做出选择的选项
         local result = {}
         local isSuccess = false
@@ -231,9 +256,11 @@ XMovieManagerCreator = function()
                 local selectionActionIndex = GetActionIndexById(CurPlayingMovieId, selectionActionId)
                 local selectionAction = WaitToPlayList[selectionActionIndex]
                 nextActionId = GetSelectionNextActionId(selectionAction, startActionId, optionDic)
-            elseif action:GetType() == XMVCA.XMovie.EnumConst.ACTION_TYPE.AUTO_SKIP then
-                nextActionId = action:GetSelectedActionId()
-            end
+            elseif action:GetType() == XMVCA.XMovie.EnumConst.ACTION_TYPE.AUTO_SKIP then
+                nextActionId = action:GetSelectedActionId()
+            elseif action:GetType() == XMVCA.XMovie.EnumConst.ACTION_TYPE.SINGLE_CLICK_BUTTON then
+                nextActionId = GetSingleClickButtonNextActionId(action, startActionId, optionDic)
+            end
             
             if not XTool.IsNumberValidEx(nextActionId) then
                 nextActionId = action:GetNextActionId()
@@ -338,6 +365,7 @@ XMovieManagerCreator = function()
     local function OnPlayEnd(isLoginOut)
         if not CurPlayingMovieId then return end
         
+        XDataCenter.MovieManager.EndAutoCollect()
         XDataCenter.MovieManager.RecordStorylineEnd(CurPlayingMovieId)
         
         if not CS.XFight.IsRunning and not isLoginOut then
@@ -469,6 +497,7 @@ XMovieManagerCreator = function()
     local function PlayOldMovie(movieId, cb)
         if not CSMovieXMovieManagerInstance:CheckMovieExist(movieId) then return end
         CSMovieXMovieManagerInstance:PlayById(movieId, function()
+            XDataCenter.MovieManager.EndAutoCollect()
             if cb then cb() end
         end)
     end
@@ -495,13 +524,25 @@ XMovieManagerCreator = function()
         return DisableFunction or XUiManager.IsHideFunc
     end
 
+    function XMovieManager.EndAutoCollect()
+        if not _PlayingId or not CS.XAssetCollectManager.MovieAutoEnd then
+            return
+        end
+        CS.XAssetCollectManager.MovieAutoEnd(_PlayingId)
+    end
+
     ---@param startActionId number 开始播放的ActionId
     ---@param is2D bool 是否仅使用不带3D场景的UI界面
     function XMovieManager.PlayMovie(movieId, cb, yieldCb, hideSkipBtn, isRelease, startActionId, optionDic, stageId, is2D)
         if XMain.IsEditorDebug then
             XLog.Debug("开始播放剧情 MovieId = " .. tostring(movieId))
         end
-        
+
+        if CS.XAssetCollectManager.RuntimeAutoCollectEnable and CS.XAssetCollectManager.MovieAutoStart then
+            _PlayingId = movieId
+            CS.XAssetCollectManager.MovieAutoStart(_PlayingId)
+        end
+
         local fun = function ()
             if isRelease == nil then
                 isRelease = true

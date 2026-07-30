@@ -9,7 +9,7 @@ local XUiPBRShopNewGridItem = require("XUi/XUiPBRGame/XUiPBRShopNew/GoodsPanel/X
 ---@class XUiPBRShopNewPanelItem : XUiNode
 local XUiPBRShopNewPanelItem = XClass(XUiNode, "XUiPBRShopNewPanelItem")
 
---- 固定商品格子数：没有商品表现为空
+--- 固定商品格子数：prefab 已预置 PanelItem1..PanelItemN，没有商品表现为空
 local ConstSlotCount = 3
 
 function XUiPBRShopNewPanelItem:OnStart(...)
@@ -28,32 +28,19 @@ end
 function XUiPBRShopNewPanelItem:InitComponents()
     ---@type XUiPBRShopNewGridItem[]
     self.GoodsPanelList = {}
-    
-    local prefabName = self.PanelItem.gameObject.name
-    
+
     for i = 1, ConstSlotCount do
-        local go = nil
-        
-        if i == 1 then
-            self.PanelItem.gameObject:SetActiveEx(true)
+        local go = self["PanelItem" .. i]   -- prefab 预置节点：PanelItem1、PanelItem2…
 
-            go = self.PanelItem
-        else
-            go = XUiHelper.Instantiate(self.PanelItem.gameObject, self.PanelItem.transform.parent)
+        if go then
+            self.GoodsPanelList[i] = XUiPBRShopNewGridItem.New(go, self, self.Parent)
         end
-        
-        -- 有序命名，用于引导聚焦
-        go.gameObject.name = prefabName .. i
-        
-        local panel = XUiPBRShopNewGridItem.New(go, self, self.Parent)
-
-        self.GoodsPanelList[i] = panel
     end
 end
 
 ---@param itemIds number[]
 function XUiPBRShopNewPanelItem:RefreshGoodsShow(itemIds)
-    for i = 1, ConstSlotCount do
+    for i = 1, #self.GoodsPanelList do
         local panel = self.GoodsPanelList[i]
 
         if panel then

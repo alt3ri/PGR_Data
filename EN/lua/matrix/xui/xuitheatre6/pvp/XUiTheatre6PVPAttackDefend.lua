@@ -17,6 +17,13 @@ end
 ---@param mode number LineupMode
 ---@param enemyData XTheatre6PvpMatchEnemy|nil 敌方玩家数据（仅进攻态）
 function XUiTheatre6PVPAttackDefend:OnStart(mode, enemyData)
+    -- 设置自动关闭
+    self:SetAutoCloseInfo(self._Control:GetPvpActivityEndTime(), function(isClose)
+        if isClose then
+            XMVCA.XTheatre6:HandlePvpActivityEnd()
+        end
+    end)
+
     self._Mode = mode or XEnumConst.Theatre6.Pvp.LineupMode.Attack
     self._EnemyData = enemyData
     self._IsChallenge = self._Control:IsPVPChallengeState()
@@ -65,10 +72,7 @@ end
 ---@return Theatre6FileData[]
 function XUiTheatre6PVPAttackDefend:GetFileDataList()
     local battleData = self._EnemyData and self._EnemyData.BattleData
-    local fileDataList = battleData.SaveFiles or {}
-    if XTool.IsTableEmpty(fileDataList) and XTool.IsNumberValid(battleData.RobotId) then
-        fileDataList = self._Control:BuiltRobotSaveFiles(battleData.RobotId)
-    end
+    local fileDataList = self._Control:GetEnemySaveFiles(battleData)
     return fileDataList
 end
 
@@ -102,6 +106,12 @@ end
 function XUiTheatre6PVPAttackDefend:RefreshArchiveOther()
     if self._PanelArchive then
         self._PanelArchive:RefreshBtn()
+    end
+end
+
+function XUiTheatre6PVPAttackDefend:RefreshArchiveTips()
+    if self._PanelArchive then
+        self._PanelArchive:RefreshTips()
     end
 end
 
@@ -271,7 +281,6 @@ function XUiTheatre6PVPAttackDefend:OnBtnFightClick()
     end
     self._Control:RequestPvpStartFight(self._EnemyData.Uid, lineupInfoList, buffId, function()
         XLuaUiManager.Open("UiTheatre6PVPLoading", self:GetLineupMode()) --UiTheatre6PVPLoading是TopMask类型，不能PopThenOpen
-        self:Close()
     end)
 end
 

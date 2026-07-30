@@ -4,6 +4,7 @@ local XUiPBRCharacterDetail = require('XUi/XUiPBRGame/XUiPBRCharacterDetail/XUiP
 ---@class XUiPBRCharacterSelection: XUiPBRCharacterDetail
 ---@field protected _Control XPBRGameControl
 local XUiPBRCharacterSelection = XLuaUiManager.Register(XUiPBRCharacterDetail, "UiPBRCharacterSelection")
+local XUiGridMusicOptionEntrance = require("XUi/XUiPBRGame/CommonUiTemplate/XUiGridMusicOptionEntrance")
 
 function XUiPBRCharacterSelection:OnStart(stageId)
     self.CurStageId = stageId
@@ -15,6 +16,18 @@ function XUiPBRCharacterSelection:OnStart(stageId)
         self.PanelPick:ShowAndSelectRecommendChar(stageCfg.RecommendChar)
     else
         self.PanelPick:SelectByIndex(1)
+    end
+
+    if self.UiGridMusic then
+        self.UiGridMusic:SetVisible(self._Control:CheckIsEndlessStagePassed(self.CurStageId))
+    end
+
+    if self.PanelStage then
+        self.PanelStage.gameObject:SetActiveEx(true)
+
+        if self.TxtStageName then
+            self.TxtStageName.text = XUiHelper.FormatTextEx(self._Control:GetClientPBRText("StageNameInSelection"), stageCfg.StageName)
+        end
     end
 end
 
@@ -28,6 +41,12 @@ function XUiPBRCharacterSelection:InitComponents()
     if self.BtnGenius then
         self.BtnGenius.gameObject:SetActiveEx(true)
         self.BtnGenius:AddEventListener(function() self:OnBtnGeniusClick() end)
+    end
+
+    if self.BtnMusic then
+        ---@type XUiGridMusicOptionEntrance
+        self.UiGridMusic = XUiGridMusicOptionEntrance.New(self.BtnMusic, self)
+        self.UiGridMusic:AddEventListener(handler(self, self.OnBtnMusicClick))
     end
 end
 
@@ -43,6 +62,18 @@ function XUiPBRCharacterSelection:OnEnable()
             self.PanelExclusive:RefreshCharacterExclusiveDesc(charCfg.CharacterId)
         end
     end
+
+    if self.UiGridMusic then
+        self.UiGridMusic:RefreshBgmName(self.CurStageId)
+    end
+    
+    self._Control:AddEventListener(XMVCA.XPBRGame.EventId.EVENT_PBR_INNER_MUSIC_POPUP_CLOSED, self.OnMusicChooseClose, self)
+end
+
+function XUiPBRCharacterSelection:OnDisable()
+    XUiPBRCharacterDetail.OnDisable(self)
+
+    self._Control:RemoveEventListener(XMVCA.XPBRGame.EventId.EVENT_PBR_INNER_MUSIC_POPUP_CLOSED, self.OnMusicChooseClose, self)
 end
 
 ---@overload
@@ -73,6 +104,21 @@ function XUiPBRCharacterSelection:RefreshReddot()
     end
 end
 
+function XUiPBRCharacterSelection:OnBtnMusicClick()
+    -- 打开弹窗前快照当前正在播的 BGM（选人界面默认 bgm1，由 prefab 组件播放、
+    -- 不在 MusicControl 托管内），弹窗试听会顶掉它，关闭弹窗时按此 CueId 恢复
+    self._BgmBeforeCueId = self._Control.MusicControl:GetCurrentSystemMusicCueId()
+    XLuaUiManager.Open("UiPBRPopupMusicChoose", self.CurStageId)
+end
 
+function XUiPBRCharacterSelection:OnMusicChooseClose()
+    -- 选人界面无条件恢复 bgm1：弹窗里选的曲只存不播（供后续商店使用），
+    -- 界面自身始终回到默认 BGM
+    self._Control.MusicControl:StopPreviewAndRestoreByCueId(self._BgmBeforeCueId)
+
+    if self.UiGridMusic then
+        self.UiGridMusic:RefreshBgmName(self.CurStageId)
+    end
+end
 
 return XUiPBRCharacterSelection

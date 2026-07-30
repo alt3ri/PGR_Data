@@ -15,6 +15,12 @@ function XPBRGameControl:OnInit()
     
     ---@type XPBRTaskControl
     self.TaskControl = self:AddSubControl(require('XModule/XPBRGame/SubModules/Task/XPBRTaskControl'))
+    
+    ---@type XPBRMusicControl
+    self.MusicControl = self:AddSubControl(require("XModule/XPBRGame/SubModules/Music/XPBRMusicControl"))
+
+    ---@type XPBRCalibrateControl
+    self.CalibrateControl = self:AddSubControl(require("XModule/XPBRGame/SubModules/Music/XPBRCalibrateControl"))
 
     self:StartActivityTimer()
 end
@@ -167,6 +173,15 @@ function XPBRGameControl:GetStageProgressByStageId(stageId)
     return curWave, maxWave
 end
 
+--- 判断指定关卡是否是无尽关类型且已通关
+function XPBRGameControl:CheckIsEndlessStagePassed(stageId)
+    local stageCfg = self._Model:GetTablePBRStageCfgById(stageId)
+    if not stageCfg or stageCfg.StageType ~= XMVCA.XPBRGame.EnumConst.StageCustomType.Challenge then
+        return false
+    end
+    return XMVCA.XPBRGame:CheckPassedByStageId(stageId)
+end
+
 --- 根据ItemId获取PBR道具配置
 ---@return XTablePBRItem
 function XPBRGameControl:GetPBRItemCfgById(itemId)
@@ -215,6 +230,18 @@ function XPBRGameControl:GetRichTextImageRequestHandler()
     end
     
     return self._RichTextImageRequestHandler
+end
+
+function XPBRGameControl:GetShowCharacterIdInMain()
+    -- 先拿缓存
+    local charId = self._Model:GetLastPassStageCharId()
+
+    if not XTool.IsNumberValidEx(charId) then
+        -- 再拿解锁顺位第一个
+        charId = self.CharacterControl:GetFirstOneUnlockCharId()
+    end
+    
+    return charId
 end
 
 function XPBRGameControl:GetCuteModelNameShowInMain()
@@ -394,6 +421,78 @@ function XPBRGameControl:_StopTickOutTimer()
         self._TickOutTimerId = nil
     end
 end
+--endregion
+
+--region SkinPopup（涂装打脸弹窗）
+
+function XPBRGameControl:GetSkinTaskId()
+    return self:GetClientPBRNumber("PBRSkinTaskId")
+end
+
+--- 任务条件已达成（可领取）
+function XPBRGameControl:IsSkinTaskAchieved()
+    local taskId = self:GetSkinTaskId()
+    if not XTool.IsNumberValidEx(taskId) then
+        return false
+    end
+    local taskData = XDataCenter.TaskManager.GetTaskDataById(taskId)
+    return taskData and taskData.State == XDataCenter.TaskManager.TaskState.Achieved
+end
+
+--- 涂装奖励已领取
+function XPBRGameControl:IsSkinRewardClaimed()
+    local taskId = self:GetSkinTaskId()
+    if not XTool.IsNumberValidEx(taskId) then
+        return true
+    end
+    local taskData = XDataCenter.TaskManager.GetTaskDataById(taskId)
+    return taskData and taskData.State == XDataCenter.TaskManager.TaskState.Finish
+end
+
+--- 双闸门判定：是否应自动弹出涂装弹窗
+function XPBRGameControl:CheckShowSkinPopup()
+    if self:IsSkinRewardClaimed() then
+        return false
+    end
+    if XLuaUiManager.IsUiShow("UiPBRPopupSkin") then
+        return false
+    end
+    local guideId = self:GetClientPBRNumber("PBRPopupSkinCheckGuide")
+    if XTool.IsNumberValidEx(guideId) then
+        return XDataCenter.GuideManager.CheckIsGuide(guideId)
+    end
+    return true
+end
+
+--- 领取涂装奖励
+function XPBRGameControl:RequestClaimSkinReward(cb)
+    local taskId = self:GetSkinTaskId()
+    if not XTool.IsNumberValidEx(taskId) then
+        return
+    end
+    XDataCenter.TaskManager.FinishTask(taskId, function(rewardGoodsList)
+        if rewardGoodsList then
+            XUiManager.OpenUiObtain(rewardGoodsList)
+        end
+        if cb then
+            cb()
+        end
+    end)
+end
+
+--endregion
+
+--region ClientConfig
+
+---@return string, string, string @正文，左按钮文本，右按钮文本
+function XPBRGameControl:GetClientBattleShopBackTips()
+    local content = self._Model:GetClientPBRText("BattleShopBackTips", 1)
+    local btnLeftTxt = self._Model:GetClientPBRText("BattleShopBackTips", 2)
+    local btnRightTxt = self._Model:GetClientPBRText("BattleShopBackTips", 3)
+
+    return content, btnLeftTxt, btnRightTxt
+end
+
 --endregion
 
 return XPBRGameControl

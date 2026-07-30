@@ -175,7 +175,7 @@ function XUiGridSuitSkill:UpdateView(characterId, suitInfo)
         end
         desGo.gameObject:SetActiveEx(true)
         desGo.transform:SetAsLastSibling()
-        desGo:GetComponent("Text").text = skillInfo.SkillDes
+        desGo:GetComponent(typeof(CS.UnityEngine.UI.Text)).text = skillInfo.SkillDes
         local txtTitle = XUiHelper.TryGetComponent(desGo.transform, "TxtTitle", "Text")
         txtTitle.text = skillInfo.PosDes
     end

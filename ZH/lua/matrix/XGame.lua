@@ -151,4 +151,4 @@ XGame.InitBreakPointTimer = function()
     -- end
     -- BreakPointTimerId = XScheduleManager.ScheduleForever(BreakSocketHandle, 0)
 end
-XGame.InitBreakPointTimer()
+XGame.InitBreakPointTimer()

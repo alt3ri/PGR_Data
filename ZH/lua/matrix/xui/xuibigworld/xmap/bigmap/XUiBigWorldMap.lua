@@ -482,7 +482,7 @@ function XUiBigWorldMap:OpenPinSelectList(pinDatas, transform)
     if self._IsDetailShow then
         self:_CloseDetail()
     end
-    if not XTool.IsTableEmpty(pinDatas) and table.nums(pinDatas) > 1 then
+    if not XTool.IsTableEmpty(pinDatas) and table.size(pinDatas) > 1 then
         self._SelectPanel:Open()
         self._SelectPanel:Refresh(self._LevelId, pinDatas, transform)
         self:_ActiveSlider(false)
@@ -692,10 +692,10 @@ function XUiBigWorldMap:_RefreshPin()
         end
         self:_RefreshPinNodeIndex()
     end
-    for i = index, table.nums(self._PinNodeList) do
+    for i = index, #self._PinNodeList do
         self._PinNodeList[i]:Close()
     end
-    for i = areaIndex, table.nums(self._PinAreaList) do
+    for i = areaIndex, #self._PinAreaList do
         self._PinAreaList[i]:Close()
     end
     self.PanelPlayer.gameObject:SetActiveEx(self:_IsInLevelNotDep())
@@ -887,7 +887,7 @@ function XUiBigWorldMap:_RefreshTrackPin()
             trackPinNode.Node:SetSiblingIndex(i)
         end
     end
-    for i = index, table.nums(self._TrackPinList) do
+    for i = index, #self._TrackPinList do
         self._TrackPinList[i]:Close()
     end
 end
@@ -1256,7 +1256,7 @@ function XUiBigWorldMap:_InitAreaList()
         self.MapLevel.gameObject:SetActiveEx(true)
         self.AreaList.gameObject:SetActiveEx(true)
 
-        self._IsOnlyOneFloor = table.nums(groupIds) == 1
+        self._IsOnlyOneFloor = table.size(groupIds) == 1
         self.AreaList:Init(buttonList, Handler(self, self.OnAreaListClick))
         self.AreaList:SelectIndex(currentIndex)
         self.AreaList.gameObject:SetActiveEx(not self._IsOnlyOneFloor)
@@ -1463,13 +1463,13 @@ function XUiBigWorldMap:_InitTitle(levelId)
         end
     end
 
-    for i = totalIndex, table.nums(self._TitleTargetList) do
+    for i = totalIndex, #self._TitleTargetList do
         self._TitleTargetList[i].gameObject:SetActiveEx(false)
     end
-    for i = index, table.nums(self._TitleList) do
+    for i = index, #self._TitleList do
         self._TitleList[i]:Close()
     end
-    for i = subIndex, table.nums(self._SubTitleList) do
+    for i = subIndex, #self._SubTitleList do
         self._SubTitleList[i]:Close()
     end
 end
@@ -1484,7 +1484,7 @@ function XUiBigWorldMap:_InitChangeList()
     if not XTool.IsTableEmpty(overviewMapConfigs) then
         local totalConditionId = XMVCA.XBigWorldGamePlay:GetCurrentAgency():GetInt("BigWorldMapOverviewOpenCondition")
 
-        isShow = table.nums(overviewMapConfigs) >= 1
+        isShow = table.size(overviewMapConfigs) >= 1
 
         if totalConditionId ~= 0 and not XMVCA.XBigWorldService:CheckCondition(totalConditionId) then
             isShow = false

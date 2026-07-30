@@ -37,7 +37,7 @@ function XTheatre6AngerController:Ctor(proxy, npc)
     self._dmgFixActId = nil
     self._maxAnger = 100
     self._angerCost = 10
-    self:LogError(".....怒火控制器注册")
+    -- self:LogError(".....怒火控制器注册")
     self._dmgAddValue = 2000 --怒火期间增伤20%
 end
 

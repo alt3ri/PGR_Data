@@ -565,9 +565,45 @@ XItemManagerCreator = function()
             local item = Items[id]
             item.Count = XDataCenter.GuildManager.GetShopCoin()
             return item
+        elseif XMVCA.XItem:CheckItemHasGroupConfig(id) then
+            local item = Items[id]
+            if not item then
+                return nil
+            end
+
+            local mergeItem = XItem.New(nil, item.Template)
+            mergeItem.Count = XItemManager.GetCount(id)
+            return mergeItem
         else
             return Items[id]
         end
+    end
+
+    local function ResolvePhysicalItemIds(itemId)
+        local resolvedItemIds = XMVCA.XItem:GetItemCombineIdsByItemId(itemId) or { itemId }
+
+        local physicalItemIds = {}
+        local physicalItemIdSet = {}
+        for _, physicalItemId in pairs(resolvedItemIds) do
+            if not physicalItemIdSet[physicalItemId] then
+                physicalItemIdSet[physicalItemId] = true
+                tableInsert(physicalItemIds, physicalItemId)
+            end
+        end
+        return physicalItemIds
+    end
+
+    local function GetPhysicalItemCount(itemId)
+        return Items[itemId] and Items[itemId]:GetCount() or 0
+    end
+
+    local function GetResolvedItemCount(itemId)
+        local count = 0
+        local physicalItemIds = ResolvePhysicalItemIds(itemId)
+        for _, physicalItemId in pairs(physicalItemIds) do
+            count = count + GetPhysicalItemCount(physicalItemId)
+        end
+        return count
     end
 
     function XItemManager.GetCount(id)
@@ -581,11 +617,16 @@ XItemManagerCreator = function()
         elseif id == XGuildConfig.GoodsCoinId then
             return XDataCenter.GuildManager.GetShopCoin()
         end
-        return Items[id] and Items[id]:GetCount() or 0
+        return GetResolvedItemCount(id)
     end
 
     function XItemManager.GetMaxCount(id)
         return Items[id] and Items[id]:GetMaxCount() or 0
+    end
+
+    ---获取道具物理数量（不执行任何逻辑合并）
+    function XItemManager.GetItemRawCount(id)
+        return GetPhysicalItemCount(id)
     end
 
     function XItemManager.GetItemsByType(itemType)
@@ -1708,9 +1749,26 @@ XItemManagerCreator = function()
             end
         end
 
-        for _, id in pairs(ids) do
-            if not Items[id] then
-                XLog.ErrorTableDataNotFound("XItemManager.AddCountUpdateListener", "Items", "Share/Item/Item.tab", "Id", tostring(id))
+        local physicalItemIds = {}
+        local physicalItemIdSet = {}
+        for _, logicalItemId in pairs(ids) do
+            local resolvedItemIds
+            if logicalItemId == XItemManager.ItemId.FreeGem or logicalItemId == XItemManager.ItemId.PaidGem then
+                resolvedItemIds = { logicalItemId }
+            else
+                resolvedItemIds = ResolvePhysicalItemIds(logicalItemId)
+            end
+            for _, physicalItemId in pairs(resolvedItemIds) do
+                if not physicalItemIdSet[physicalItemId] then
+                    physicalItemIdSet[physicalItemId] = true
+                    tableInsert(physicalItemIds, physicalItemId)
+                end
+            end
+        end
+
+        for _, physicalItemId in pairs(physicalItemIds) do
+            if not Items[physicalItemId] then
+                XLog.ErrorTableDataNotFound("XItemManager.AddCountUpdateListener", "Items", "Share/Item/Item.tab", "Id", tostring(physicalItemId))
                 return
             end
         end
@@ -1720,8 +1778,8 @@ XItemManagerCreator = function()
             return
         end
 
-        for _, id in pairs(ids) do
-            XEventManager.BindEvent(ui, XEventId.EVENT_ITEM_COUNT_UPDATE_PREFIX .. id, func, obj)
+        for _, physicalItemId in pairs(physicalItemIds) do
+            XEventManager.BindEvent(ui, XEventId.EVENT_ITEM_COUNT_UPDATE_PREFIX .. physicalItemId, func, obj)
         end
     end
 

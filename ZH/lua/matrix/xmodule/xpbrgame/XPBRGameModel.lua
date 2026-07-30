@@ -91,6 +91,38 @@ function XPBRGameModel:SetLastPassStageCharId(charId)
     return self._SaveUtil:SaveData("LastPassStageCharId", charId)
 end
 
+function XPBRGameModel:GetBeatOffset()
+    return self._SaveUtil:GetData("BeatOffsetMs") or 0
+end
+
+function XPBRGameModel:SetBeatOffset(ms)
+    self._SaveUtil:SaveData("BeatOffsetMs", ms)
+end
+
+function XPBRGameModel:GetHasAutoCalibrated()
+    return self._SaveUtil:GetData("HasAutoCalibrated") or false
+end
+
+function XPBRGameModel:SetHasAutoCalibrated(value)
+    self._SaveUtil:SaveData("HasAutoCalibrated", value)
+end
+
+function XPBRGameModel:GetAutoCalibrationResult()
+    return self._SaveUtil:GetData("AutoCalibrationResultMs")
+end
+
+function XPBRGameModel:SetAutoCalibrationResult(ms)
+    self._SaveUtil:SaveData("AutoCalibrationResultMs", ms)
+end
+
+function XPBRGameModel:GetSelectedBgmId(stageId)
+    return self._SaveUtil:GetData("SelectedBgmId_Stage_" .. stageId)
+end
+
+function XPBRGameModel:SetSelectedBgmId(stageId, bgmId)
+    self._SaveUtil:SaveData("SelectedBgmId_Stage_" .. stageId, bgmId)
+end
+
 --endregion
 
 return XPBRGameModel

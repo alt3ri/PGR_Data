@@ -26,6 +26,7 @@ function XUiGridCommon:Ctor(rootUi, ui)
     self.CustomItemTipFunc = nil
     self._WeaopnFashionId = nil
     self._ShowWeaopnFashionDesc = nil
+    self._NameplateScaleFactor = 0.9
 end
 
 function XUiGridCommon:Init(rootUi)
@@ -642,23 +643,23 @@ function XUiGridCommon:RefreshNameplate()
         if not self.PanelNamePlate then
             local prefab = self.GameObject:LoadPrefab(XMedalConfigs.XNameplatePanelPath)
             prefab.transform:SetSiblingIndex(BtnSiblingIndex)
-            local rectTransform = prefab.transform:GetComponent("RectTransform")
+            local rectTransform = prefab.transform:GetComponent(typeof(CS.UnityEngine.RectTransform))
             if rectTransform then
                 local vX = 0
                 local vY = 15
                 local scale = CS.UnityEngine.Vector3(0.6, 0.6, 0.6)
                 if self.Bg then
-                    local tmpTrans = self.Bg:GetComponent("RectTransform")
+                    local tmpTrans = self.Bg:GetComponent(typeof(CS.UnityEngine.RectTransform))
                     local vect = tmpTrans.anchoredPosition
                     rectTransform.anchorMin = tmpTrans.anchorMin
                     rectTransform.anchorMax = tmpTrans.anchorMax
                     vX = vect.x
                     vY = vect.y
-                    local bgX= self.Bg:GetComponent("RectTransform").sizeDelta.x
+                    local bgX= self.Bg:GetComponent(typeof(CS.UnityEngine.RectTransform)).sizeDelta.x
                     local bgScale = self.Bg.transform.localScale.x
                     local realBgWidth = bgX * bgScale
                     local tempX = rectTransform.sizeDelta.x
-                    local scaleNum = 0.9 * realBgWidth/tempX
+                    local scaleNum = self._NameplateScaleFactor * realBgWidth/tempX
                     scale = CS.UnityEngine.Vector3(scaleNum, scaleNum, scaleNum)  -- 铭牌大小为标准背景宽高的90%防止超出格子
                 end
                 rectTransform.anchoredPosition = CS.UnityEngine.Vector2(vX, vY)
@@ -682,6 +683,10 @@ function XUiGridCommon:SetNameplateEffectActive(isActive)
     if self.PanelNamePlate then
         self.PanelNamePlate:SetEffectActive(isActive)
     end
+end
+
+function XUiGridCommon:SetNameplateScaleFactor(scaleFactor)
+    self._NameplateScaleFactor = scaleFactor
 end
 
 function XUiGridCommon:RefreshLabel()

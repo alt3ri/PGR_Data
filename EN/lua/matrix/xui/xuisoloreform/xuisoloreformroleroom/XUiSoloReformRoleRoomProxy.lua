@@ -129,7 +129,8 @@ end
 
 ---检查index位置是否可以拖起角色
 function XUiSoloReformRoleRoomProxy:CheckIsCanMoveUpCharacter(index, time)
-    return false
+    local maxCount = self:GetMaxCharCount()
+    return maxCount > 1
 end
 
 return XUiSoloReformRoleRoomProxy

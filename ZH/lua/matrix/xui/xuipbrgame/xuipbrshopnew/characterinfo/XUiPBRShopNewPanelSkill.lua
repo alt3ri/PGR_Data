@@ -57,6 +57,13 @@ function XUiPBRShopNewPanelSkill:InitComponents()
         [ColorType.Yellow] = self.GridSkillYellow,
     }
     
+    -- 技能预制默认隐藏
+    if not XTool.IsTableEmpty(self.Color2GridSkillUi) then
+        for i, v in pairs(self.Color2GridSkillUi) do
+            v.gameObject:SetActiveEx(false)
+        end
+    end
+    
     self.Color2GridSkillItem = {}
 end
 

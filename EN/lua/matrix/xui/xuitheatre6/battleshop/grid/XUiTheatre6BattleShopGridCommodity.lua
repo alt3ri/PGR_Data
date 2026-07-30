@@ -12,8 +12,14 @@ local XUiGridTheatre6Skill = require("XUi/XUiTheatre6/Character/Grid/XUiGridThea
 local XUiGridTheatre6Relic = require("XUi/XUiTheatre6/Character/Grid/XUiGridTheatre6Relic")
 local ItemType = { None = 0, Skill = 1, AttrPack = 2 }
 local CoinStatus = { Free = 1, Enough = 2, NoEnough = 3 }
+
 function XUiTheatre6BattleShopGridCommodity:OnStart()
     self:InitComponents()
+    XEventManager.AddEventListener(XEventId.EVENT_THEATRE6_LOCK_GOOD, self.OnLockGoods, self)
+    XEventManager.AddEventListener(XEventId.EVENT_THEATRE6_BUY_GOOD, self.OnBuyGoods, self)
+    XEventManager.AddEventListener(XEventId.EVENT_THEATRE6_GOLD_CHANGE, self.OnGoldChange, self)
+    XEventManager.AddEventListener(XEventId.EVENT_THEATRE6_UPDATE_SKILL, self.OnSkillUpdate, self)
+    XEventManager.AddEventListener(XEventId.EVENT_THEATRE6_TAG_HIGHLIGHT_SOURCE_CHANGE, self.RefreshTagHightLight, self)
 end
 
 function XUiTheatre6BattleShopGridCommodity:InitComponents()
@@ -27,38 +33,40 @@ function XUiTheatre6BattleShopGridCommodity:InitComponents()
     self._AvoidTransforms = { self.Transform, self.Parent.PanelRoleDetail.Transform }
 end
 
-function XUiTheatre6BattleShopGridCommodity:OnGetLuaEvents()
-    return {
-        XEventId.EVENT_THEATRE6_LOCK_GOOD, XEventId.EVENT_THEATRE6_BUY_GOOD, XEventId.EVENT_THEATRE6_GOLD_CHANGE,
-        XEventId.EVENT_THEATRE6_UPDATE_SKILL, XEventId.EVENT_THEATRE6_TAG_HIGHLIGHT_SOURCE_CHANGE
-    }
+function XUiTheatre6BattleShopGridCommodity:OnDestroy()
+    XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE6_LOCK_GOOD, self.OnLockGoods, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE6_BUY_GOOD, self.OnBuyGoods, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE6_GOLD_CHANGE, self.OnGoldChange, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE6_UPDATE_SKILL, self.OnSkillUpdate, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE6_TAG_HIGHLIGHT_SOURCE_CHANGE, self.RefreshTagHightLight, self)
 end
 
-function XUiTheatre6BattleShopGridCommodity:OnNotify(evt, ...)
-    local args = { ... }
-    if evt == XEventId.EVENT_THEATRE6_LOCK_GOOD then
-        self:OnLockClick(args[1], args[2])
-    elseif evt == XEventId.EVENT_THEATRE6_BUY_GOOD then
-        if args[1] == self.GridData.Position then
-            self.IsSell = true
-            self:RefreshSellStatus()
-            self:RefreshTagHightLight()
-            self.IsLock = false
-            self:RefreshLockStatus()
-        else
-            self:RefreshCanUpgrade()
-            self:RefreshTagHightLight()
-        end
-    elseif evt == XEventId.EVENT_THEATRE6_GOLD_CHANGE then
-        if not self:IsSellOut() then
-            self:RefreshBuyBtnStatus()
-        end
-    elseif evt == XEventId.EVENT_THEATRE6_UPDATE_SKILL then
+function XUiTheatre6BattleShopGridCommodity:OnLockGoods(isLock, pos)
+    self:OnLockClick(isLock, pos)
+end
+
+function XUiTheatre6BattleShopGridCommodity:OnBuyGoods(pos)
+    if pos == self.GridData.Position then
+        self.IsSell = true
+        self:RefreshSellStatus()
+        self:RefreshTagHightLight()
+        self.IsLock = false
+        self:RefreshLockStatus()
+    else
         self:RefreshCanUpgrade()
         self:RefreshTagHightLight()
-    elseif evt == XEventId.EVENT_THEATRE6_TAG_HIGHLIGHT_SOURCE_CHANGE then
-        self:RefreshTagHightLight()
     end
+end
+
+function XUiTheatre6BattleShopGridCommodity:OnGoldChange()
+    if not self:IsSellOut() then
+        self:RefreshBuyBtnStatus()
+    end
+end
+
+function XUiTheatre6BattleShopGridCommodity:OnSkillUpdate()
+    self:RefreshCanUpgrade()
+    self:RefreshTagHightLight()
 end
 
 function XUiTheatre6BattleShopGridCommodity:RefreshCanUpgrade()

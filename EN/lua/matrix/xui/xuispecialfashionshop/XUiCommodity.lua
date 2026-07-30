@@ -342,6 +342,7 @@ function XUiCommodity:OnBtnBuyClick()
     buyData.ItemIcon = self.ItemIcon
     buyData.ItemCount = self.NeedCount
     buyData.ConsumeId = self.Data.ConsumeList[1].Id
+    buyData.EndTime = self.Data.SelloutTime
     if self.NeedCount ~= self.Data.ConsumeList[1].Count then
         buyData.OriginCount = self.Data.ConsumeList[1].Count
     end

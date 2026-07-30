@@ -111,15 +111,17 @@ function XUiGridTheatre6PvpRecord:OnDefFail(data)
 end
 
 function XUiGridTheatre6PvpRecord:ShowWinText(key, param)
+    local str = param == 0 and "" or string.format(" +%s", param)
     self.ImgBgWin.gameObject:SetActiveEx(true)
     self.ImgBgLose.gameObject:SetActiveEx(false)
-    self.TxtWin.text = string.format(self._Control:GetPvpClientConfigValue(key), param)
+    self.TxtWin.text = string.format(self._Control:GetPvpClientConfigValue(key), str)
 end
 
 function XUiGridTheatre6PvpRecord:ShowFailText(key, param)
+    local str = param == 0 and "" or string.format(" -%s", param)
     self.ImgBgWin.gameObject:SetActiveEx(false)
     self.ImgBgLose.gameObject:SetActiveEx(true)
-    self.TxtLose.text = string.format(self._Control:GetPvpClientConfigValue(key), param)
+    self.TxtLose.text = string.format(self._Control:GetPvpClientConfigValue(key), str)
 end
 
 --endregion

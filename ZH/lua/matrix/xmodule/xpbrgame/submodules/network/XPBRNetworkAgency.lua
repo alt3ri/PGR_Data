@@ -214,12 +214,14 @@ function XPBRNetworkAgency:DoPbrForceSettleRequest(cb)
 
             -- 清理局内数据
             self._Model:UpdateFullSegmentSettleData(nil)
-        end
 
+            XLuaUiManager.Open('UiPBRSettlement', stageId, pbrSettleData.FinalSettleShowData, res.IsWin)
+        end
+        
         if not XTool.IsTableEmpty(res.RewardGoodsList) then
             XUiManager.OpenUiTipReward(res.RewardGoodsList)
         end
-
+        
         if cb then
             cb(true)
         end

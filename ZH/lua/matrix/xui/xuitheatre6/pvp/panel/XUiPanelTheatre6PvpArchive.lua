@@ -176,7 +176,22 @@ function XUiPanelTheatre6PvpArchive:RefreshTips()
     end
 end
 
+function XUiPanelTheatre6PvpArchive:RefreshArchiveRoleMask()
+    local lineupMode = self.Parent:GetLineupMode()
+    local targetIndex = self.Parent:GetCurSelectedIndex()
+    for _, grid in pairs(self._ArchiveGrids) do
+        local isMask = false
+        local fileData = grid.FileData
+        if fileData and XTool.IsNumberValid(targetIndex) and targetIndex > 0 then
+            local isValid = self._Control:CheckPvpArchiveBeforeLineup(lineupMode, fileData.CharacterId, fileData.SlotId, targetIndex)
+            isMask = not isValid
+        end
+        grid:SetRoleMask(isMask)
+    end
+end
+
 function XUiPanelTheatre6PvpArchive:RefreshBtn()
+    self:RefreshArchiveRoleMask()
     if self._CurSelectedCharacterId <= 0 or self._CurSelectedSlotId <= 0 then
         return
     end

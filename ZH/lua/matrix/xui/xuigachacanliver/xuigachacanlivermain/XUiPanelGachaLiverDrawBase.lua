@@ -510,7 +510,7 @@ function XUiPanelGachaLiverDrawBase:OnGachaDoSuccess(rewardList, newUnlockGachaI
                 self._Control:SetLockTickout(false)
             end, (isSkip and isMultyReward) and DrawState.Result or DrawState.Show)
         else
-            XLuaUiManager.PopThenOpen("UiDrawShowNew",  nil, rewardList, nil, (isSkip and isMultyReward) and DrawState.Result or DrawState.Show, function()
+            XLuaUiManager.PopThenOpen("UiDrawShowNew",  nil, rewardList, (isSkip and isMultyReward) and DrawState.Result or DrawState.Show, function()
                 XDataCenter.KickOutManager.Unlock(XEnumConst.KICK_OUT.LOCK.GACHA, false)
                 -- 刷新
                 self:RefreshAllWhithCheckDone()

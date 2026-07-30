@@ -153,7 +153,7 @@ function XUiWeaponOverrunSkillDetails:RefreshBtnSpecial(skillCfg, level)
     for _, stateName in ipairs(BtnSpecialStateNames) do
         local iconTrans = self.BtnSpecial.transform:Find(stateName .. "/Icon")
         if iconTrans then
-            iconTrans:GetComponent("Image"):SetSprite(skillCfg.Icon)
+            iconTrans:GetComponent(typeof(CS.UnityEngine.UI.Image)):SetSprite(skillCfg.Icon)
         end
 
         local imgLock = self.BtnSpecial.transform:Find(stateName .. "/ImgLcok")

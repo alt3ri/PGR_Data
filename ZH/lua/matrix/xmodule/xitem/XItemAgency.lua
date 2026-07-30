@@ -86,6 +86,43 @@ end
 function XItemAgency:GetItemCombinesByGroupId(groupId)
     return self._Model:GetItemCombinesByGroupId(groupId)
 end
+
+function XItemAgency:GetItemCombineIdsByItemId(itemId)
+    local itemCombineConfig = self:GetItemCombineById(itemId)
+    if not itemCombineConfig then
+        return nil
+    end
+
+    local itemIds = {}
+    local itemIdSet = {}
+    local configs = self:GetItemCombinesByGroupId(itemCombineConfig.GroupId)
+    for _, combineConfig in pairs(configs or {}) do
+        local combineItemId = combineConfig.ItemId
+        if not itemIdSet[combineItemId] then
+            itemIdSet[combineItemId] = true
+            table.insert(itemIds, combineItemId)
+        end
+    end
+
+    if #itemIds == 0 then
+        return { itemId }
+    end
+
+    return itemIds
+end
 --endregion
+
+function XItemAgency:CheckItemHasGroupConfig(id)
+    local cfg = self._Model:GetItemCombineById(id)
+    if cfg then
+        return true
+    end
+
+    return false
+end
+
+function XItemAgency:GetGroupSubItemCount(id)
+    return XGoodsCommonManager.GetGoodsCurrentCount(id)
+end
 
 return XItemAgency

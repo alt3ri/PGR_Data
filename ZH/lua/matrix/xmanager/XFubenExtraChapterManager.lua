@@ -491,12 +491,11 @@ XFubenExtraChapterCreator = function()
             for _, chapterMain in pairs(SortChapterExtraCfgs) do
                 for difficult, chapterId in pairs(chapterMain.ChapterId) do
                     local chapter = ChapterExtraDetailsCfgs[chapterId]
-                    -- 直接查服务器阶段数据，避免触发 GetChapterInfo 懒加载
+                    -- 优先查服务器阶段数据，避免有进度账号触发 GetChapterInfo 懒加载
                     if chapter and #chapter.StageId > 0 and difficult == DifficultType.Normal then
                         CurrentClearData.ChapterTotalNum = CurrentClearData.ChapterTotalNum + 1
-                        -- 第一关有服务器数据即视为章节已解锁
-                        local unlock = XMVCA.XFuben:GetStageData(chapter.StageId[1]) ~= nil
-                        if CurrentClearData.AllChapterClear and unlock then
+                        local hasFirstStageData = XMVCA.XFuben:GetStageData(chapter.StageId[1]) ~= nil
+                        if CurrentClearData.AllChapterClear and hasFirstStageData then
                             local allPassed = true
                             local activeStage = nil
                             local lastStageOrder = nil
@@ -504,7 +503,7 @@ XFubenExtraChapterCreator = function()
                             for _, stageId in ipairs(chapter.StageId) do
                                 local stageData = XMVCA.XFuben:GetStageData(stageId)
                                 if stageData then
-                                    -- 有服务器数据视为已解锁，取最后一个已解锁关卡
+                                    -- 取最后一个有服务端数据的关卡
                                     activeStage = stageId
                                     lastStageOrder = XDataCenter.FubenManager.GetStageOrderId(stageId)
                                     if stageData.Passed then
@@ -523,9 +522,18 @@ XFubenExtraChapterCreator = function()
                             CurrentClearData.IsClear = allPassed
                             CurrentClearData.PassStageNum = passStageNum
                             if not allPassed then CurrentClearData.AllChapterClear = false end
-                        elseif not unlock then
-                            -- 未解锁章节视为未通关
-                            CurrentClearData.AllChapterClear = false
+                        elseif CurrentClearData.AllChapterClear then
+                            -- 无服务端关卡数据时，按客户端解锁规则回填零进度章节
+                            local chapterInfo = ExtraChapterManager.GetChapterInfo(chapterId)
+                            if chapterInfo.Unlock then
+                                CurrentClearData.ChapterId = chapterMain.Id
+                                CurrentClearData.StageTitle = chapter.StageTitle
+                                CurrentClearData.StageId = chapterInfo.ActiveStage
+                                CurrentClearData.LastStageOrder = chapterInfo.LastStageOrder
+                                CurrentClearData.IsClear = chapterInfo.Passed
+                                CurrentClearData.PassStageNum = chapterInfo.PassStageNum
+                            end
+                            if not chapterInfo.Passed then CurrentClearData.AllChapterClear = false end
                         end
                     end
                 end

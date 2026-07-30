@@ -67,6 +67,7 @@
 ---@field CloudGameManager XCloudGameManager
 ---@field AutoWindowManager XAutoWindowManager
 ---@field NoticeManager XNoticeManager
+---@field FubenExperimentManager XFubenExperimentManager
 XDataCenter = XDataCenter or {}
 
 local IsWindowsEditor = XMain.IsWindowsEditor

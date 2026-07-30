@@ -88,6 +88,7 @@ function XUiPBRCommonItemDetailGrid:Refresh(itemId, resetScroll)
             self.PanelStarBase.gameObject:SetActiveEx(true)
         end
         self:ShowStartByLevel(itemCfg.ItemTier, itemCfg.OrbColor)
+        self:RefreshStartBgShow(itemCfg.OrbColor)
     else
         -- 非技能，详情里不显示额外的星星
         self:ShowStartByLevel(0, 0)
@@ -103,16 +104,33 @@ function XUiPBRCommonItemDetailGrid:Refresh(itemId, resetScroll)
 end
 
 function XUiPBRCommonItemDetailGrid:ShowStartByLevel(level, orbColor)
-    local colorTextList = self._Control:GetClientPBRTextArray('SkillOrbStarColor')
-    local colorStr = colorTextList[orbColor + 1] or ''
+    local iconList = self._Control:GetClientPBRTextArray('SkillOrbStarIcon')
+    local icon = iconList[orbColor] or ''
     
     XUiHelper.RefreshCustomizedList(self.PanelStar, self.ImgStar, level, function(index, go)
         local img = go:GetComponent(typeof(CS.UnityEngine.UI.Image))
 
-        if img and not string.IsNilOrEmpty(colorStr) then
-            img.color = XUiHelper.Hexcolor2Color(string.gsub(colorStr, "#", ""))
+        if img and not string.IsNilOrEmpty(icon) then
+            img:SetSprite(icon)
         end
     end)
+end
+
+function XUiPBRCommonItemDetailGrid:RefreshStartBgShow(orbColor)
+    local iconList = self._Control:GetClientPBRTextArray('SkillOrbStarBgIcon')
+    local icon = iconList[orbColor] or ''
+
+    if not string.IsNilOrEmpty(icon) then
+        for i = 1, 10 do
+            local img = self["ImgStarBg" .. i]
+
+            if img then
+                img:SetSprite(icon)
+            else
+                break
+            end
+        end
+    end
 end
 
 function XUiPBRCommonItemDetailGrid:RefreshTagsShow(tags)

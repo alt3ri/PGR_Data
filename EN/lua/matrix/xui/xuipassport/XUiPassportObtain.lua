@@ -5,7 +5,7 @@ local XUiPassportObtain = XLuaUiManager.Register(XUiObtain, "UiPassportObtain")
 
 function XUiPassportObtain:OnAwake()
     XUiPassportObtain.Super.OnAwake(self)
-    self.TxtRule = self.Transform:Find("SafeAreaContentPane/TxtRule"):GetComponent("Text")
+    self.TxtRule = self.Transform:Find("SafeAreaContentPane/TxtRule"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.TxtRule.text = CS.XTextManager.GetText("PassportObtain")
 end
 

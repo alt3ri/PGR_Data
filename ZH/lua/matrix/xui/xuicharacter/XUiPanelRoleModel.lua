@@ -52,6 +52,7 @@ useMultiModel)
     self._PartnerSToCVoicePlayedCueIdSet = {} -- 辅助机SToCVoice播放记录，避免同一面板重复播放同一个cueId
     self._PartnerSToCVoiceActiveCueId = nil -- 当前PartnerSToCVoice链路的停止目标cueId
     self._PartnerSToCVoiceFallbackAudioInfo = nil -- 辅助机缺少XAnimationSound时，SToCVoice的历史兼容播放句柄
+    self._PartnerSToCVoiceFallbackUpdateCb = nil
     self.UiStandCallBack = {}
     self.NowFashionId = nil
     self.PlayUiStandCallBackList = {}
@@ -431,12 +432,13 @@ end
 function XUiPanelRoleModel:_PlayPartnerSToCVoiceFallback(cueId)
     local audioInfo = XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, cueId)
     if audioInfo then
-        audioInfo.UpdateCb = function()
+        self._PartnerSToCVoiceFallbackUpdateCb = function()
             local curModel = self:GetCurRoleModel()
             if XTool.UObjIsNil(curModel) or not curModel.activeSelf then
                 self:StopPartnerSToCVoice()
             end
         end
+        audioInfo:AddUpdateCallback(self._PartnerSToCVoiceFallbackUpdateCb)
     end
     return audioInfo
 end
@@ -474,11 +476,12 @@ function XUiPanelRoleModel:StopPartnerSToCVoice()
         XLuaAudioManager.StopAudioByCueId(cueId)
     end
 
-    if self._PartnerSToCVoiceFallbackAudioInfo then
-        self._PartnerSToCVoiceFallbackAudioInfo.UpdateCb = nil
+    if self._PartnerSToCVoiceFallbackAudioInfo and self._PartnerSToCVoiceFallbackUpdateCb then
+        self._PartnerSToCVoiceFallbackAudioInfo:RemoveUpdateCallback(self._PartnerSToCVoiceFallbackUpdateCb)
     end
     self._PartnerSToCVoiceActiveCueId = nil
     self._PartnerSToCVoiceFallbackAudioInfo = nil
+    self._PartnerSToCVoiceFallbackUpdateCb = nil
 end
 
 ---内部停止RoleModel当前托管的Lua主动播放音频；不包含动画事件SFX。

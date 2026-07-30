@@ -40,6 +40,8 @@ function XUiPhotograph:OnAwake()
     self.SDKPanel = XUiPhotographSDKPanel.New(self, self.PanelSDK)
     ---@type XUiPanelSwitchableSceneAnim
     self.SwitchableScene = require("XUi/XUiSwitchableScene/XUiPanelSwitchableSceneAnim").New()
+    ---@type XUiPanelMusicScene
+    self.MusicScene = require("XUi/XUiMusicScene/XUiPanelMusicScene").New(self)
     self.PanelAutoLayout = self.PanelName:GetComponent("XAutoLayoutGroup")
     self.TxtRank = self.TxtLevel.transform.parent:Find("TxtLv"):GetComponent(typeof(CS.UnityEngine.UI.Text))
     self.ImgGlory = self.TxtLevel.transform.parent:Find("Icon")
@@ -192,6 +194,7 @@ function XUiPhotograph:OnDisable()
         self.ClockTimer = nil
     end
     self.SwitchableScene:Stop()
+    self.MusicScene:Stop()
 end
 
 function XUiPhotograph:OnDestroy()
@@ -204,6 +207,7 @@ function XUiPhotograph:OnDestroy()
         self.SignBoardPlayer:OnDestroy()
     end
     self.SwitchableScene:OnDestory()
+    self.MusicScene:OnDestroy()
     XDataCenter.PhotographManager.ClearTextureCache()
     CsXGameEventManager.Instance:RemoveEvent(CS.XEventId.EVENT_HOMECHAR_ACTION_ENTER, self.OnAnimationEnterCb)
 end
@@ -339,7 +343,10 @@ function XUiPhotograph:OnUiSceneLoaded()
     self:UpdatePartner(self.PartnerTemplateId)
     self:UpdateCamera()
     self:UpdateBatteryMode()
-    self.SwitchableScene:Play(XDataCenter.PhotographManager.GetCurSelectSceneId(), self.UiSceneInfo.Transform)
+    local sceneId = XDataCenter.PhotographManager.GetCurSelectSceneId()
+    self.SwitchableScene:Play(sceneId, self.UiSceneInfo.Transform)
+    self.MusicScene:SetForbidSwitch()
+    self.MusicScene:Play(sceneId, self.UiSceneInfo.Transform)
 end
 
 function XUiPhotograph:InitSceneRoot()
@@ -452,13 +459,13 @@ function XUiPhotograph:_DoPlayCv(cvId, cvType, element)
     if element.SignBoardConfig.TurnOffBgm then
         if self.PlayingCv then
             XLuaAudioManager.MuteAisacByPlayType(XLuaAudioManager.SoundType.Music, true, 0.5)
-            self.PlayingCv.FinishCb = function ()
+            self.PlayingCv:AddFinishCallback(function()
                 if self.CurElement and element.SignBoardConfig.Id ~= self.CurElement.SignBoardConfig.Id and self.CurElement.SignBoardConfig.TurnOffBgm then
                     -- 还处于Mute的config播放中，暂不做处理
                 else
                     XLuaAudioManager.MuteAisacByPlayType(XLuaAudioManager.SoundType.Music, false, 0.5)
                 end
-            end
+            end)
         end
     end
 end

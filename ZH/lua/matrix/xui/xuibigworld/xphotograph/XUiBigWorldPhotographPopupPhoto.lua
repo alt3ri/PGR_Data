@@ -25,7 +25,7 @@ function XUiBigWorldPhotographPopupPhoto:OnStart(isHideOtherBtn, needCloseContro
     self._objectiveId = 0
 
     local finishTask = {}
-    if t and t.CompletedObjectiveIds and table.nums(t.CompletedObjectiveIds) > 0 then
+    if t and t.CompletedObjectiveIds and #t.CompletedObjectiveIds > 0 then
         local isNeedUpload, objectiveId = XMVCA.XBigWorldQuest:CheckPhotoQuestNeedUpload()
         self._isNeedUpload = isNeedUpload
         self._objectiveId = objectiveId

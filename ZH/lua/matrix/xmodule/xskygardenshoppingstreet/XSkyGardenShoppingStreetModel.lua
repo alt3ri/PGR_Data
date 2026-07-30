@@ -847,7 +847,11 @@ end
 
 -- 是否有促销
 function XSkyGardenShoppingStreetModel:HasPromotion()
-    return table.nums(self.PromotionDatas) > 0
+    if XTool.IsTableEmpty(self.PromotionDatas) then
+        return false
+    end
+
+    return table.size(self.PromotionDatas) > 0
 end
 
 -- 获取已选促销数量

@@ -16,6 +16,7 @@ local MainTabIndex = {
 
 --战斗通行证主界面
 function XUiPassport:OnAwake()
+    self.PanelPassport.gameObject:SetActiveEx(false)
     self.CurWeeklyGroupId = self._Control:GetPassportTaskGroupIdByType(XEnumConst.PASSPORT.TASK_TYPE.WEEKLY)
 end
 

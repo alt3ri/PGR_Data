@@ -34,10 +34,11 @@ function XFashionStoryAgency:OnInit()
 
     --奖励领取状态
     self.RewardState = {
-        None       = 0, --无奖励配置(RewardId 为空或 0)
+        None       = 0, --无奖励配置(RewardTaskId 为空或 0)
         Locked     = 1, --奖励活动未到开启时间
-        CanReceive = 2, --可领取(已开启、未领取)
-        Received   = 3, --已领取
+        CanReceive = 3, --可领取(任务已达成、未领取)
+        Received   = 4, --已领取
+        Ended      = 5, --奖励活动已结束
     }
 
     --关卡未解锁原因
@@ -415,9 +416,10 @@ function XFashionStoryAgency:GetRewardActivityTimeId(activityId)
 end
 
 --判断奖励活动入口是否已解锁
-function XFashionStoryAgency:IsRewardActivityUnlock(activityId)
-    local timeId = self:GetRewardActivityTimeId(activityId)
-    return timeId > 0 and XFunctionManager.CheckInTimeByTimeId(timeId, false)
+--@param timeId 可选，调用方已取到 timeId 时传入以复用，避免重复查表
+function XFashionStoryAgency:IsRewardActivityUnlock(activityId, timeId)
+    timeId = timeId or self:GetRewardActivityTimeId(activityId)
+    return timeId and timeId > 0 and XFunctionManager.CheckInTimeByTimeId(timeId, false)
 end
 
 function XFashionStoryAgency:GetLockTextByTimeId(timeId, beforeStartTextKey, afterEndTextKey)
@@ -439,9 +441,9 @@ function XFashionStoryAgency:GetRewardActivityLockText(timeId)
     return self:GetLockTextByTimeId(timeId, 'FashionStoryRewardLock', 'FashionStoryRewardActivityEnd')
 end
 
---获取奖励 RewardId(0 表示该条目未配置奖励)
-function XFashionStoryAgency:GetRewardId(activityId)
-    return self._Model:GetRewardId(activityId) or 0
+--获取奖励 RewardTaskId(0 表示该条目未配置奖励)
+function XFashionStoryAgency:GetRewardTaskId(activityId)
+    return self._Model:GetRewardTaskId(activityId) or 0
 end
 
 --获取奖励活动跳转 SkipId
@@ -450,22 +452,27 @@ function XFashionStoryAgency:GetRewardSkipId(activityId)
 end
 
 --判断奖励是否已领取
---TODO(@奖励活动接入后改成委托查询):
---  return XMVCA.XSomeRewardActivity:IsRewardReceived(rewardId)
---  其中 XSomeRewardActivity 为 RewardSkipId 跳转目标的活动 Manager
 function XFashionStoryAgency:IsRewardReceived(activityId)
-    local rewardId = self:GetRewardId(activityId)
-    if rewardId == 0 then return false end
-    return false
+    local taskId = self:GetRewardTaskId(activityId)
+    if taskId == 0 then return false end
+    local taskData = XDataCenter.TaskManager.GetTaskDataById(taskId)
+    return taskData and taskData.State == XDataCenter.TaskManager.TaskState.Finish
 end
 
 --获取奖励领取状态(供 UI 按钮、红点统一使用)
 function XFashionStoryAgency:GetRewardClaimState(activityId)
-    local rewardId = self:GetRewardId(activityId)
-    if not self:IsRewardActivityUnlock(activityId) then
+    local taskId = self:GetRewardTaskId(activityId)
+    local timeId = self:GetRewardActivityTimeId(activityId)
+    if not self:IsRewardActivityUnlock(activityId, timeId) then
+        -- 不在开放时间内需进一步区分"未开始"与"已结束"：
+        -- CheckInTimeByTimeId 只判区间内外、不分方向，故此处用结束时间兜底判断
+        local endTime = XFunctionManager.GetEndTimeByTimeId(timeId)
+        if timeId and timeId > 0 and endTime > 0 and XTime.GetServerNowTimestamp() >= endTime then
+            return self.RewardState.Ended
+        end
         return self.RewardState.Locked
     end
-    if rewardId == 0 then
+    if taskId == 0 then
         return self.RewardState.None
     end
     if self:IsRewardReceived(activityId) then

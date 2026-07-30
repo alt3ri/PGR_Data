@@ -112,9 +112,9 @@ function XFashionStoryModel:GetRewardActivityTimeId(id)
     return cfg and cfg.RewardActivityTimeId
 end
 
-function XFashionStoryModel:GetRewardId(id)
+function XFashionStoryModel:GetRewardTaskId(id)
     local cfg = self:GetFashionStoryCfg(id)
-    return cfg and cfg.RewardId
+    return cfg and cfg.RewardTaskId
 end
 
 function XFashionStoryModel:GetRewardSkipId(id)

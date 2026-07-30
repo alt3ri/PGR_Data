@@ -26,6 +26,7 @@ function XTransfiniteResult:Ctor()
     self._LastStageGroupClearTime = 0
     self._IsNewMedal = false
     self._IsSomeoneDead = false
+    self._IsGiveUp = false
 end
 
 function XTransfiniteResult:SetDataFromClient(data)
@@ -268,6 +269,14 @@ end
 
 function XTransfiniteResult:IsIsland()
     return self:GetStageGroup():IsIsland()
+end
+
+function XTransfiniteResult:SetIsGiveUp(value)
+    self._IsGiveUp = value
+end
+
+function XTransfiniteResult:IsGiveUp()
+    return self._IsGiveUp
 end
 
 return XTransfiniteResult

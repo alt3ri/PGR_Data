@@ -682,6 +682,13 @@ function XUiSet:ShowSubPanel(index)
             XLog.Warning("[XUiSet] StageGamePlayDesc配置显示了\"重新开始\"，但关卡表没配置可重新开始，请检查")
         end
     end
+
+    if self.IsFight then
+        -- 评分玩法（BossInshot）对重新开始按钮特殊处理
+        if XMVCA.XBossInshot:IsTowerAllClear() then
+            self.BtnRestart.gameObject:SetActiveEx(true)
+        end
+    end
 end
 
 function XUiSet:SetBtnVisibleByCfg(btn, value)

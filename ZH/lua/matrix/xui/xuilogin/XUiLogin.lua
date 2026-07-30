@@ -52,6 +52,7 @@ function XUiLogin:OnEnable()
     XLuaAudioManager.ResetSystemAudioVolume()
     -- 清除 BGM 中转区恢复状态，防止跨会话残留
     CS.XAudioManager.ClearBgmRestoreState()
+    CS.XAudioManager.StartAnalyzer()
 end
 
 function XUiLogin:CheckFool()
@@ -561,12 +562,12 @@ function XUiLogin:LoadNetworkPanel()
     local uiLoginNetworkModePanel = require("XUi/XUiLogin/XUiLoginNetworkModePanel")
     self.SafeAreaContentPane = self.Transform:Find("SafeAreaContentPane")
     self.SafeAreaContentPane.gameObject:AddComponent(typeof(CS.XUiLoadPrefab))
-    self.PanelNetworkModeTip = self.SafeAreaContentPane:LoadPrefab("Assets/Product/Ui/ComponentPrefab/UiLogin/PanelNetworkModeTip.prefab")
+    self.PanelNetworkModeTip = self.SafeAreaContentPane:LoadPrefab(XUiConfigs.GetComponentUrl("PanelNetworkModeTip"))
     self.PanelLoginNetworkMode = uiLoginNetworkModePanel.New(self, self.PanelNetworkModeTip)
     self.PanelLoginNetworkMode.GameObject:SetActiveEx(false)
 
     self.PanelUser.gameObject:AddComponent(typeof(CS.XUiLoadPrefab))
-    self.BtnNetworkMode = self.PanelUser:LoadPrefab("Assets/Product/Ui/ComponentPrefab/UiLogin/BtnNetworkMode.prefab"):GetComponent(typeof(CS.XUiComponent.XUiButton))
+    self.BtnNetworkMode = self.PanelUser:LoadPrefab(XUiConfigs.GetComponentUrl("BtnNetworkMode")):GetComponent(typeof(CS.XUiComponent.XUiButton))
 
     self.BtnNetworkMode.CallBack = function() self:OnBtnNetworkModeClick() end
 end

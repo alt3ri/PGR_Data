@@ -4,6 +4,8 @@ local XMainLine2Control = XClass(XControl, "XMainLine2Control")
 
 local ChapterId2Cls = {
     [1041] = "XUi/XUiMainLine2/CustomUiChapter/XUiMainLine2PanelChapter4P5",
+    [1042] = "XUi/XUiMainLine2/CustomUiChapter/XUiMainLine2PanelChapter4P7",
+    [1142] = "XUi/XUiMainLine2/CustomUiChapter/XUiMainLine2PanelChapter4P7",
     [2016] = "XUi/XUiMainLine2/CustomUiChapter/XUiMainLine2PanelChapter4P6",
 }
 
@@ -174,6 +176,16 @@ end
 -- 获取章节向后切换Spine的动画名
 function XMainLine2Control:GetChapterSwitchBackwardSpineName(chapterId)
     return self._Model:GetChapterSwitchBackwardSpineName(chapterId)
+end
+
+-- 获取章节待机Spine的关卡下标
+function XMainLine2Control:GetChapterIdleSpineStageIndexs(chapterId)
+    return self._Model:GetChapterIdleSpineStageIndexs(chapterId)
+end
+
+-- 获取章节待机Spine的动画名
+function XMainLine2Control:GetChapterIdleSpineName(chapterId)
+    return self._Model:GetChapterIdleSpineName(chapterId)
 end
 
 -- 获取主章节标题

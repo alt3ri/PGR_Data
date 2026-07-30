@@ -24,7 +24,8 @@ function XUiSceneTip:OnStart(sceneId,openType)
                 handler(self, self.OnClickDropData),
                 handler(self, self.OnClickDropPower),
                 handler(self, self.OnClickDropGyro),
-                handler(self, self.OnClickDropEnvMusic))
+                handler(self, self.OnClickDropEnvMusic),
+                handler(self, self.OnClickDropSceneMusic))
     end
     
     local sceneTemplate = XDataCenter.PhotographManager.GetSceneTemplateById(self.SceneId)
@@ -260,4 +261,8 @@ function XUiSceneTip:OnClickDropEnvMusic()
 
     local isOn =  self.PanelDropDownCtrl and self.PanelDropDownCtrl:GetDropMusicIsOn() or false
     sceneSfxControl:SetMuteAndSave(not isOn)
+end
+
+function XUiSceneTip:OnClickDropSceneMusic(index)
+    XMVCA.XMusicScene:UpdateMusicSceneMode(self.SceneId, index + 1) --index从0开始
 end

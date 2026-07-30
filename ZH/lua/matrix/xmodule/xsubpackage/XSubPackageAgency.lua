@@ -7,12 +7,9 @@ local XSubPackageAgency = XClass(XAgency, "XSubPackageAgency")
 
 local MIN_SIZE = 1024
 local BATCH_DELETE_COUNT = 10
+local MUSIC_SUBPACKAGE_ID = 3000
 
 local CheckStageId = 10030304
-
-local LaunchTestPath = CS.UnityEngine.Application.dataPath .. "/../../../Product/Temp/LocalCdn"
-local LaunchTestDirApp = CS.UnityEngine.Application.dataPath .. "/../../../Product/Temp/LocalDirApp"
-local LaunchTestDirDoc = CS.UnityEngine.Application.dataPath .. "/../../../Product/Temp/LocalDirDoc"
 
 local SingleThreadCount = 1 --单线程线程数
 local MultiThreadCount = 5 --多线程线程数
@@ -69,11 +66,13 @@ function XSubPackageAgency:OnInit()
     --是否需要测试
     self._IsNeedLaunchTest = CS.XResourceManager.NeedLaunchTest
 
-    self._DocumentUrl = self._LaunchDlcManager.GetPathModule().GetDocumentUrl()
+    local ModuleUpdateInfoClass = require("XLaunchUpdate/XModuleUpdateInfo")
+    local moduleUpdateInfo = ModuleUpdateInfoClass.New()
+    moduleUpdateInfo:Init(RES_FILE_TYPE.MATRIX_FILE)
 
-    self._DocumentVersion = self._LaunchDlcManager.GetVersionModule().GetNewDocVersion()
-
-    self._DocumentFilePath = self._LaunchDlcManager.GetPathModule().GetDocumentFilePath()
+    self._ModuleUpdateInfo = moduleUpdateInfo
+    self._DocumentFilePath = moduleUpdateInfo:GetDocumentFilePath()
+    self._DocumentVersion = moduleUpdateInfo:GetNewVersion()
 
     self._DownloadCenter = nil
 
@@ -998,6 +997,27 @@ function XSubPackageAgency:UninstallSubpackageById(subpackageId, cb)
             return
         end
 
+        local currentMusicInfo = XLuaAudioManager.GetCurrentMusicAudioInfo()
+        local currentCueId = currentMusicInfo and currentMusicInfo.CueId
+        local fallbackAlbumId = CS.XGame.ClientConfig:GetInt("MusicPlayerFallbackAlbumId")
+        local fallbackAlbumCo = XMVCA.XMusicPlayer:COGetMusicPlayerAlbumCOByid(fallbackAlbumId)
+        local fallbackCueId = fallbackAlbumCo and fallbackAlbumCo.CueId
+
+        -- 卸载CD机分包且当前正在播放CD机音乐时，先切换到不依赖该分包的fallback音乐，再释放旧CueSheet
+        if subpackageId == MUSIC_SUBPACKAGE_ID and XTool.IsNumberValid(currentCueId) and CS.XAudioManager.CheckCueIsCDMusic(currentCueId) and currentCueId ~= fallbackCueId then
+            local oldCueSheetId = currentMusicInfo.CueSheetId
+            if not XMVCA.XMusicPlayer:TryEnterFallbackForUninstall() then
+                self._IsUninstalling = false
+                XLog.Warning("[XSubPackageAgency] CD机分包卸载前切换fallback音乐失败")
+                if cb then cb() end
+                return
+            end
+
+            CS.XAudioManager.RemoveCueSheetById(oldCueSheetId)
+            -- RemoveCueSheetById没有句柄释放完成回调，物理删除前让出一帧，为旧AudioInfo和CueSheet提供释放边界
+            asynWaitSecond(0)
+        end
+
         XLog.Warning(string.format("[XSubPackageAgency] 开始协程卸载 SubpackageId=%d", subpackageId))
 
         for _, resId in ipairs(template.ResIds) do
@@ -1296,6 +1316,9 @@ function XSubPackageAgency:InitDownloader()
                     for k, taskGroup in pairs(taskGroups) do
                         taskGroup.NotifyStateChanged = handler(self, self.OnStateChanged)
                         taskGroup.NotifyProgressChanged = handler(self, self.OnProgressUpdate)
+                        taskGroup.NotifyUrlDownloadFinish = function(url)
+                            self:OnSingleTaskFinishByUrl(url)
+                        end
                         self._DownloadCenter:RegisterTaskGroup(taskGroup)
                     end
                 end
@@ -1307,28 +1330,12 @@ function XSubPackageAgency:InitDownloader()
 end
 
 function XSubPackageAgency:GetSavePath(fileName)
-    if self._IsNeedLaunchTest then
-        return stringFormat("%s/%s/%s", LaunchTestDirDoc, RES_FILE_TYPE.MATRIX_FILE, fileName)
-    end
     return stringFormat("%s/%s/%s", self._DocumentFilePath, RES_FILE_TYPE.MATRIX_FILE, fileName)
 end
 
-function XSubPackageAgency:GetUrlPath(fileName)
-
-    return stringFormat("%s/%s", self:GetUrlPrefix(), fileName)
-end
-
-function XSubPackageAgency:GetUrlPrefix()
-    if self._UrlPrefix then
-        return self._UrlPrefix
-    end
-    if self._IsNeedLaunchTest then
-        self._UrlPrefix = stringFormat("%s/%s/%s", "client/patch/com.kurogame.haru.internal.debug.subpack/1.0.0/android", CS.XRemoteConfig.DocumentVersion, RES_FILE_TYPE.MATRIX_FILE)
-        return self._UrlPrefix
-    end
-    self._UrlPrefix = stringFormat("%s/%s/%s", self._DocumentUrl, CS.XRemoteConfig.DocumentVersion, RES_FILE_TYPE.MATRIX_FILE)
-
-    return self._UrlPrefix
+function XSubPackageAgency:GetUrlPath(fileName, version)
+    local DocumentUrl = self._ModuleUpdateInfo:GetUrlByVersion(version)
+    return stringFormat("%s/%s/%s/%s", DocumentUrl, version, RES_FILE_TYPE.MATRIX_FILE, fileName)
 end
 
 function XSubPackageAgency:GetNecessarySubIds()
@@ -1947,14 +1954,15 @@ function XSubPackageAgency:OnLoginOut()
     self:PauseAll()
 end
 
-function XSubPackageAgency:OnSingleTaskFinish(eventName, args)
-    local resourceName = args[0]
-    --resourceName 是带前缀的
-    local fullLen = string.len(resourceName)
-    local prefixLen = string.len(self:GetUrlPrefix())
-    --Lua 下标从1开始，去掉斜杠
-    local fileName = string.sub(resourceName, prefixLen + 2, fullLen)
+function XSubPackageAgency:OnSingleTaskFinishByUrl(url)
+    local fileName = XLaunchConst.GetFileName(url)
     self._LaunchDlcManager.SetDownloadedFile(fileName, true)
+end
+
+function XSubPackageAgency:OnSingleTaskFinish(eventName, args)
+    -- 完整url
+    local resourceName = args[0]
+    self:OnSingleTaskFinishByUrl(resourceName)
 end
 
 function XSubPackageAgency:IsPreparePause()

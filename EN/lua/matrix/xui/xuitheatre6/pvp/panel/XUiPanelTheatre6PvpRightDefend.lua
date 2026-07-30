@@ -48,6 +48,7 @@ function XUiPanelTheatre6PvpRightDefend:RefreshBtn()
     if buffConfig then
         self.BtnEnvironment:SetRawImageEx(buffConfig.Icon)
         self.BtnEnvironment:SetNameByGroup(0, buffConfig.Name)
+        self.BtnEnvironment:ShowReddot(self._Control:IsChooseEnvRedPoint())
     end
 end
 
@@ -65,6 +66,7 @@ function XUiPanelTheatre6PvpRightDefend:OnBtnDetailClick()
 end
 
 function XUiPanelTheatre6PvpRightDefend:OnBtnEnvironmentClick()
+    self._Control:CloseChooseEnvRedPoint()
     XLuaUiManager.OpenWithCloseCallback("UiTheatre6PopupChooseEnvironment", function()
         self:RefreshBtn()
     end, self.Parent:GetLineupMode())

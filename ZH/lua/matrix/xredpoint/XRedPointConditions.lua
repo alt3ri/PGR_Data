@@ -333,6 +333,8 @@ local type = {
     CONDITION_FASHION_STORY_TASK = "XRedPointConditionFashionStoryTask", --有任务待领取
     CONDITION_FASHION_STORY_NEWCHAPTER_UNLOCK = "XRedPointConditionFashionStoryNewChapterUnLock", --有待查看的新解锁章节
     CONDITION_FASHION_STORY_REWARD = "XRedPointConditionFashionStoryReward", --奖励活动可领取
+    -- 4.7 七夕开包玩法
+    CONDITION_ENVELOPE_GUESSING_ENTRANCE = "XRedPointConditionEnvelopeGuessingEntrance", --入口红点
     --杀戮空间
     --XRedPointConditionKillZoneActivity = "XRedPointConditionKillZoneActivity", --入口红点
     --XRedPointConditionKillZoneNewChapter = "XRedPointConditionKillZoneNewChapter", --有新章节可挑战

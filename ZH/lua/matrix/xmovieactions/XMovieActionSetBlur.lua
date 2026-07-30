@@ -4,6 +4,8 @@ local SPINE_INDEX_OFFSET = 100
 local ALL_BG_INDEX = 999
 local TARGET_START_INDEX = 4
 local TARGET_END_INDEX = 9
+local GRAYSCALE_PARAM_INDEX = 11
+local GRAYSCALE_DURATION_PARAM_INDEX = 12
 
 -- BlurType: 0=关闭, 1=Directional, 2=Radial, 3=Gaussian
 local BLUR_TYPE = {
@@ -44,6 +46,9 @@ function XMovieActionSetBlur:OnInit(actionData)
     self.BlurType = paramToNumber(params[1])
     self.Strength = XMath.Clamp(paramToNumber(params[2]), 0, 1)
     self.Duration = paramToNumber(params[3])
+    self.HasGrayScale = not string.IsNilOrEmpty(params[GRAYSCALE_PARAM_INDEX])
+    self.GrayScale = self.HasGrayScale and XMath.Clamp(paramToNumber(params[GRAYSCALE_PARAM_INDEX]), 0, 1) or nil
+    self.GrayDuration = self.HasGrayScale and paramToNumber(params[GRAYSCALE_DURATION_PARAM_INDEX]) or 0
 
     self.IndexList = {}
     for i = TARGET_START_INDEX, TARGET_END_INDEX do
@@ -61,11 +66,16 @@ function XMovieActionSetBlur:_GetRunDuration()
     return self.IsPassedRunning and 0 or self.Duration
 end
 
+function XMovieActionSetBlur:_GetGrayRunDuration()
+    return self.IsPassedRunning and 0 or self.GrayDuration
+end
+
 function XMovieActionSetBlur:_ApplyToAllBg()
     local duration = self:_GetRunDuration()
+    local grayDuration = self:_GetGrayRunDuration()
     local bgDic = self.UiRoot.UiMovieBg:GetBgDic()
     for _, bg in pairs(bgDic) do
-        bg:SetBlur(self.BlurType, self.Strength, duration, self.Extra)
+        bg:SetBlur(self.BlurType, self.Strength, duration, self.Extra, self.GrayScale, grayDuration)
     end
 end
 
@@ -77,7 +87,7 @@ function XMovieActionSetBlur:_ApplyToBg(index)
     local bgIndex = index % 1000
     local bg = self.UiRoot.UiMovieBg:GetBg(bgIndex)
     if bg then
-        bg:SetBlur(self.BlurType, self.Strength, self:_GetRunDuration(), self.Extra)
+        bg:SetBlur(self.BlurType, self.Strength, self:_GetRunDuration(), self.Extra, self.GrayScale, self:_GetGrayRunDuration())
     end
 end
 
@@ -86,12 +96,13 @@ function XMovieActionSetBlur:OnRunning()
     local indexList = self.IndexList
     local hasTarget = false
     local duration = self:_GetRunDuration()
+    local grayDuration = self:_GetGrayRunDuration()
 
     for _, index in pairs(indexList) do
         if index > 0 and index <= maxActorNum then
             ---@type XUiGridMovieActor
             local actor = self.UiRoot:GetActor(index)
-            actor:SetBlur(self.BlurType, self.Strength, duration, self.Extra)
+            actor:SetBlur(self.BlurType, self.Strength, duration, self.Extra, self.GrayScale, grayDuration)
             hasTarget = true
         elseif index > SPINE_INDEX_OFFSET and index <= SPINE_INDEX_OFFSET + maxActorNum then
             -- Spine 走的是非 UGUI 渲染（XUiMaterialController 一类），
@@ -110,7 +121,7 @@ function XMovieActionSetBlur:OnRunning()
         for index = 1, maxActorNum do
             ---@type XUiGridMovieActor
             local actor = self.UiRoot:GetActor(index)
-            actor:SetBlur(self.BlurType, self.Strength, duration, self.Extra)
+            actor:SetBlur(self.BlurType, self.Strength, duration, self.Extra, self.GrayScale, grayDuration)
         end
     end
 end
@@ -121,7 +132,7 @@ end
 
 function XMovieActionSetBlur:IsPassedActionRun(index)
     -- 关闭模糊（strength=0 / blurType=0）的节点不需要重放
-    if self.Strength == 0 or self.BlurType == BLUR_TYPE.NONE then
+    if (self.Strength == 0 or self.BlurType == BLUR_TYPE.NONE) and (not self.HasGrayScale or self.GrayScale == 0) then
         return false
     end
     local isCover = XDataCenter.MovieManager.IsBehindPassedActionCover(index)

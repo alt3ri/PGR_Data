@@ -35,6 +35,8 @@ function XUiFavorabilityNew:OnAwake()
     local modelUrl = self:GetDefaultUiModelUrl()
     ---@type XUiPanelSwitchableSceneAnim
     self.SwitchableScene = require("XUi/XUiSwitchableScene/XUiPanelSwitchableSceneAnim").New()
+    ---@type XUiPanelMusicScene
+    self.MusicScene = require("XUi/XUiMusicScene/XUiPanelMusicScene").New(self)
     self:LoadUiScene(curSceneUrl, modelUrl, function() self:OnUiSceneLoaded() end, false)
     self.ThemeCtrl=XUiMainPanelBase.New(self.PanelTheme,self)
     self.ThemeCtrl:InitTheme(self.PanelTheme.transform)
@@ -76,6 +78,7 @@ function XUiFavorabilityNew:OnEnable()
     --刷新主题
     self:UpdateTheme()
     self.SwitchableScene:Resume()
+    self.MusicScene:Resume()
 end
 
 function XUiFavorabilityNew:OnDisable()
@@ -90,6 +93,7 @@ function XUiFavorabilityNew:OnDisable()
         self.ClockTimer = nil
     end
     self.SwitchableScene:Stop()
+    self.MusicScene:Stop()
 end
 
 function XUiFavorabilityNew:OnDestroy()
@@ -98,6 +102,7 @@ function XUiFavorabilityNew:OnDestroy()
     end
 
     self.SwitchableScene:OnDestory()
+    self.MusicScene:OnDestroy()
     self.FavorabilityMain:OnClose()
     self.CurrentCharacterId = nil
 end
@@ -424,6 +429,8 @@ function XUiFavorabilityNew:OnUiSceneLoaded()
     self:UpdateCamera(false)
     self:UpdateBatteryMode()
     self.SwitchableScene:Play(XDataCenter.PhotographManager.GetCurSceneId(), self.UiSceneInfo.Transform)
+    self.MusicScene:SetForbidSwitch()
+    self.MusicScene:Play(XDataCenter.PhotographManager.GetCurSceneId(), self.UiSceneInfo.Transform)
 end
 
 function XUiFavorabilityNew:UpdateBatteryMode() -- editor模式下 BatteryComponent.BatteryLevel 默认值为-1

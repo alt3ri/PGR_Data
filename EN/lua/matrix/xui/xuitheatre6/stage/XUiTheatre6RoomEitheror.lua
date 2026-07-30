@@ -31,7 +31,7 @@ function XUiTheatre6RoomEitheror:OnStart()
     self:CheckFightReconnect()
     self:InitBackgroup()
     self:InitDrag()
-
+    self:CheckPlayKamuiGuide()
 end
 
 function XUiTheatre6RoomEitheror:OnEnable()
@@ -766,6 +766,22 @@ function XUiTheatre6RoomEitheror:HideRewardSkillGrid()
     for _, grid in ipairs(self.RewardGrids) do
         grid:Close()
     end
+end
+
+---选择神威进入二择界面
+function XUiTheatre6RoomEitheror:CheckPlayKamuiGuide()
+    local characterId = self._Control:GetIntClientConfigValue("EitherorKamuiGuideId", 1)
+    local guideId = self._Control:GetIntClientConfigValue("EitherorKamuiGuideId", 2)
+    if not XTool.IsNumberValid(characterId) or not XTool.IsNumberValid(guideId) then
+        return
+    end
+    if characterId ~= self._ModelData.CharacterId then
+        return
+    end
+    if XDataCenter.GuideManager.CheckIsGuide(guideId) then
+        return
+    end
+    XDataCenter.GuideManager.PlayGuide(guideId)
 end
 
 --region Mask

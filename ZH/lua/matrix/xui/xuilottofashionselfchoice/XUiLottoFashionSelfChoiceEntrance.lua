@@ -1,5 +1,24 @@
 local XUiLottoFashionSelfChoiceEntrance = XLuaUiManager.Register(XLuaUi, "UiLottoFashionSelfChoiceEntrance")
 
+function XUiLottoFashionSelfChoiceEntrance:OnStart(isChangeMode)
+    -- isChangeMode=true：从卡池界面 BtnChange 跳回，跳过 OnEnable 的"已选过自动关闭"
+    self.IsChangeMode = isChangeMode and true or false
+    -- OnAwake 时 IsChangeMode 还没传入，默认 index 在这里二次计算
+    if not XTool.IsTableEmpty(self.LottoPrimaryCfg) then
+        self.CurSelectGridIndex = self:GetDefaultSelectIndex()
+    end
+end
+
+-- 走唤醒路径时 OnStart 不会再跑，需外部显式调用以翻起 IsChangeMode + 刷新默认选中
+function XUiLottoFashionSelfChoiceEntrance:EnterChangeMode()
+    if XTool.IsTableEmpty(self.LottoPrimaryCfg) then return end
+    self.IsChangeMode = true
+    self.CurSelectLottoId = nil
+    self.CurSelectGrid = nil
+    self.CurSelectGridIndex = self:GetDefaultSelectIndex()
+    self:RefreshDynamicTable()
+end
+
 function XUiLottoFashionSelfChoiceEntrance:OnAwake()
     self.LottoPrimaryId = XDataCenter.LottoManager.GetCurSelfChoiceLottoPrimaryId()
     self.LottoPrimaryCfg = XLottoConfigs.GetLottoPrimaryCfgById(self.LottoPrimaryId)
@@ -14,13 +33,44 @@ function XUiLottoFashionSelfChoiceEntrance:OnAwake()
     self:InitTimes()
 end
 
+-- 切换模式下定位玩家上次选择，否则回到首项
+function XUiLottoFashionSelfChoiceEntrance:GetDefaultSelectIndex()
+    if not self.IsChangeMode then return 1 end
+    local targetLottoId = XDataCenter.LottoManager.GetCurSelectedLottoIdByPrimartLottoId(self.LottoPrimaryId)
+    if not XTool.IsNumberValid(targetLottoId) then
+        return 1
+    end
+    for i, lottoId in ipairs(self.LottoPrimaryCfg.LottoIdList) do
+        if lottoId == targetLottoId then
+            return i
+        end
+    end
+    return 1
+end
+
 function XUiLottoFashionSelfChoiceEntrance:InitButton()
-    self.BtnHelp.CallBack = function() XLuaUiManager.Open("UiLottoFashionSelfChoiceDescribe", self.LottoPrimaryId) end
-    self.BtnBack.CallBack = function() self:Close() end
-    self.BtnMainUi.CallBack = function() XLuaUiManager.RunMain() end
-    self.BtnChoose.CallBack = function() self:OnBtnChooseClick() end
-    self.BtnAudio.CallBack = function() XLuaUiManager.Open("UiSet") end
+    self.BtnHelp:AddEventListener(handler(self, self.OnBtnHelpClick))
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
+    self.BtnMainUi:AddEventListener(handler(self, self.OnBtnMainUiClick))
+    self.BtnChoose:AddEventListener(handler(self, self.OnBtnChooseClick))
+    self.BtnAudio:AddEventListener(handler(self, self.OnBtnAudioClick))
     self.AssetPanel = XUiHelper.XUiPanelAsset(self, self.PanelAsset, XDataCenter.ItemManager.ItemId.FreeGem, XDataCenter.ItemManager.ItemId.HongKa)
+end
+
+function XUiLottoFashionSelfChoiceEntrance:OnBtnHelpClick()
+    XLuaUiManager.Open("UiLottoFashionSelfChoiceDescribe", self.LottoPrimaryId)
+end
+
+function XUiLottoFashionSelfChoiceEntrance:OnBtnBackClick()
+    self:Close()
+end
+
+function XUiLottoFashionSelfChoiceEntrance:OnBtnMainUiClick()
+    XLuaUiManager.RunMain()
+end
+
+function XUiLottoFashionSelfChoiceEntrance:OnBtnAudioClick()
+    XLuaUiManager.Open("UiSet")
 end
 
 function XUiLottoFashionSelfChoiceEntrance:InitDynamicTable()
@@ -50,14 +100,22 @@ function XUiLottoFashionSelfChoiceEntrance:RefreshTitleByTimeId()
 end
 
 function XUiLottoFashionSelfChoiceEntrance:OnEnable()
-    local curSelectLottoId = XDataCenter.LottoManager.GetCurSelectedLottoIdByPrimartLottoId(self.LottoPrimaryId)
-    if XTool.IsNumberValid(curSelectLottoId) then
-        self:CloseImmediately()
-        return
+    -- 切换模式：从已打开的卡池界面跳回来，跳过"已选过自动关闭"逻辑
+    if not self.IsChangeMode then
+        local curSelectLottoId = XDataCenter.LottoManager.GetCurSelectedLottoIdByPrimartLottoId(self.LottoPrimaryId)
+        if XTool.IsNumberValid(curSelectLottoId) then
+            self:CloseImmediately()
+            return
+        end
     end
 
     self:RefreshDynamicTable()
     XSaveTool.SaveData("OpenUiLottoFashionSelfChoiceEntrance", {NextCanShowTimeStamp = XTime.GetSeverTomorrowFreshTime()})
+    XEventManager.AddEventListener(XEventId.EVENT_LOTTO_SELF_CHOICE_ENTER_CHANGE_MODE, self.EnterChangeMode, self)
+end
+
+function XUiLottoFashionSelfChoiceEntrance:OnDisable()
+    XEventManager.RemoveEventListener(XEventId.EVENT_LOTTO_SELF_CHOICE_ENTER_CHANGE_MODE, self.EnterChangeMode, self)
 end
 
 function XUiLottoFashionSelfChoiceEntrance:RefreshDynamicTable()
@@ -72,7 +130,7 @@ end
 function XUiLottoFashionSelfChoiceEntrance:OnDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         local lottoId = self.DynamicTable.DataSource[index]
-        grid:Refresh(lottoId, index)
+        grid:Refresh(lottoId, index, self.LottoPrimaryId)
         if self.CurSelectGridIndex == index then
             if self.CurSelectGrid then
                 self.CurSelectGrid:SetUnSelect()
@@ -128,10 +186,18 @@ end
 function XUiLottoFashionSelfChoiceEntrance:OnBtnChooseClick()
     ---@type XTableLottoFashionSelfChoiceResources
     local lottoResConfig = XLottoConfigs.GetAllConfigs(XLottoConfigs.TableKey.LottoFashionSelfChoiceResources)[self.CurSelectLottoId]
-    -- 检测是否弹出弹窗提示
-    XLuaUiManager.Open("UiLottoFashionSelfChoiceDialog", self.CurSelectLottoId, self.CurSelectGrid.IsAllRewardGet, function ()
+    local isAllRewardGet = self.CurSelectGrid and self.CurSelectGrid.IsAllRewardGet or false
+
+    local doConfirm = function()
         XDataCenter.LottoManager.LottoSelfChoiceSelectRequest(self.LottoPrimaryId, self.CurSelectLottoId, function ()
             XFunctionManager.SkipInterface(lottoResConfig.SkipId)
         end)
-    end)
+    end
+
+    -- 已全收奖励时弹确认 Dialog，避免误切换；否则直跳卡池
+    if isAllRewardGet then
+        XLuaUiManager.Open("UiLottoFashionSelfChoiceDialog", self.CurSelectLottoId, isAllRewardGet, doConfirm, self.IsChangeMode)
+    else
+        doConfirm()
+    end
 end

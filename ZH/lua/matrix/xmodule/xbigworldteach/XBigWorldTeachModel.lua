@@ -155,7 +155,7 @@ function XBigWorldTeachModel:UpdateTeachUnlockServerData(teachList)
     self._TeachUnlockServerDatas = {}
     self._TeachUnlockServerDataMap = {}
     if not XTool.IsTableEmpty(teachList) then
-        local count = table.nums(teachList)
+        local count = #teachList
 
         for i = count, 1, -1 do
             if latestCount >= count - i + 1 then
@@ -189,7 +189,7 @@ function XBigWorldTeachModel:AddTeachUnlockServerData(teachData)
                 table.sort(self._TeachUnlockServerDatas, function(teachA, teachB)
                     return teachA.CreateTime > teachB.CreateTime
                 end)
-                for i = 1, table.nums(self._TeachUnlockServerDatas) do
+                for i = 1, #self._TeachUnlockServerDatas do
                     if i <= latestCount then
                         table.insert(self._TeachLatestList, self._TeachUnlockServerDatas[i])
                     end
@@ -200,7 +200,7 @@ function XBigWorldTeachModel:AddTeachUnlockServerData(teachData)
             table.insert(self._TeachUnlockServerDatas, 1, teachData)
             table.insert(self._TeachLatestList, 1, teachData)
 
-            for i = latestCount + 1, table.nums(self._TeachLatestList) do
+            for i = latestCount + 1, #self._TeachLatestList do
                 self._TeachLatestList[i] = nil
             end
         end

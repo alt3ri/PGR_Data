@@ -18,6 +18,7 @@ end
 function XUiPurchaseBuyCoatingTips:OnStart(viewModel, buyCb, closeDetailCb)
     self._BuyCb = buyCb
     self._CloseDetailCb = closeDetailCb
+    self._ViewModel = viewModel
 
     self.TxtName.text = viewModel.Title or ''
     self.Desc.text = viewModel.SubTitle or ''
@@ -61,7 +62,11 @@ function XUiPurchaseBuyCoatingTips:OnStart(viewModel, buyCb, closeDetailCb)
 end
 
 function XUiPurchaseBuyCoatingTips:OnEnable()
+    self:RefreshTime()
     self:StartTimer()
+    if self._ViewModel then
+        self:RefreshPriceShow(self._ViewModel)
+    end
 end
 
 function XUiPurchaseBuyCoatingTips:OnDisable()
@@ -72,6 +77,7 @@ function XUiPurchaseBuyCoatingTips:OnDestroy()
     self:DestroyTimer()
     self._BuyCb = nil
     self._CloseDetailCb = nil
+    self._ViewModel = nil
 end
 
 --endregion

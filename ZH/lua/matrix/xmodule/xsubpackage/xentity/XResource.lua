@@ -3,7 +3,7 @@
 ---@field _TaskGroup XMTDownloadTaskGroup
 local XResource = XClass(nil, "XResource")
 local XLaunchDlcManager = require("XLaunchDlcManager")
-local CSXMTDownloadTaskGroupState = XTool.GetDownloadStateEnum()
+local CSDownloadTaskGroupState = XTool.GetDownloadStateEnum()
 
 function XResource:Ctor(resId)
     self._Id = resId
@@ -179,7 +179,7 @@ function XResource:GetSourceSizeWithUnit()
 end
 
 function XResource:InitFileInfo(filePath, data)
-    local fileName, sha1, size = data[1], data[2], data[3]
+    local fileName, sha1, size, version = data[1], data[2], data[3], data[4]
     if self._RepeatName[fileName] then
         return
     end
@@ -187,8 +187,9 @@ function XResource:InitFileInfo(filePath, data)
     local isComplete = XLaunchDlcManager.IsNameDownloaded(fileName)
     if isComplete then
         self._DownSize = self._DownSize + size
-    else --只添加未下载
-        self._TaskGroup:AddTask(XMVCA.XSubPackage:GetUrlPath(fileName), XMVCA.XSubPackage:GetSavePath(fileName), size, sha1)
+    else
+        -- 只添加未下载
+        self._TaskGroup:AddTask(XMVCA.XSubPackage:GetUrlPath(fileName, version), XMVCA.XSubPackage:GetSavePath(fileName), size, sha1)
     end
 end
 
@@ -232,23 +233,23 @@ function XResource:GetDownloadSize()
 end
 
 function XResource:IsComplete()
-    return self._TaskGroup.State == CSXMTDownloadTaskGroupState.Complete
+    return self._TaskGroup.State == CSDownloadTaskGroupState.Complete
 end
 
 ---@param center XMTDownloadCenter
 function XResource:OnStateChanged()
     local state = self._TaskGroup.State
     -- print("SP/DN XResource:OnStateChanged", self._Id, state)
-    if state == CSXMTDownloadTaskGroupState.Registered and self._WaitPause then
+    if state == CSDownloadTaskGroupState.Registered and self._WaitPause then
         XMVCA.XSubPackage:OnResDownloadRelease(self._Id)
         self._WaitPause = false
-    elseif state == CSXMTDownloadTaskGroupState.Complete then
+    elseif state == CSDownloadTaskGroupState.Complete then
         self:Complete()
         XMVCA.XSubPackage:OnResDownloadRelease(self._Id)
         self._WaitPause = false
-    elseif state == CSXMTDownloadTaskGroupState.Pausing then
+    elseif state == CSDownloadTaskGroupState.Pausing then
         self._WaitPause = true
-    elseif state == CSXMTDownloadTaskGroupState.CompleteError then
+    elseif state == CSDownloadTaskGroupState.CompleteError then
         XMVCA.XSubPackage:OnResDownloadRelease(self._Id)
     end
 

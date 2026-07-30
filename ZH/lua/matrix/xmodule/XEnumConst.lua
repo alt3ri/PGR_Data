@@ -3845,4 +3845,15 @@ XEnumConst = {
             TopLeft = 2, -- 左上角
         }
     },
+    --音乐场景b
+    MusicScene = {
+        Mode = {
+            Normal = 1, --常规模式
+            Music = 2, --音乐模式
+        },
+        PlayLogic = {
+            Simple = 1, --简单版
+            Full = 2, --完整版
+        },
+    },
 }

@@ -423,7 +423,7 @@ function XUiMainRightMid:RefreshExtraProgress()
     local clearData = XDataCenter.ExtraChapterManager.GetChapterClearData()
     local extraClear = clearData and clearData.ChapterId and clearData.IsClear and clearData.AllChapterClear
     if not extraClear then
-        self.TxtCurChapter.text = clearData.StageTitle .. "-" .. clearData.LastStageOrder
+        self.TxtCurChapter.text = tostring(clearData.StageTitle) .. "-" .. tostring(clearData.LastStageOrder)
         self.TxtCurDifficult.text = CSXTextManagerGetText("DifficultMode") .. CSXTextManagerGetText("Difficult" .. XDataCenter.FubenManager.DifficultNormal)
     end
     return extraClear

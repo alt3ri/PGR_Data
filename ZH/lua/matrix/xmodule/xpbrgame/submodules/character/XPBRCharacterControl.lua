@@ -258,6 +258,38 @@ function XPBRCharacterControl:GetStatusFightValueSrcById(statusId)
     return 0
 end
 
+
+--region Animation
+
+function XPBRCharacterControl:GetCharacterIdleActionById(customCharId)
+    local charCfg = self._Model:GetTablePBRCharacterCfgById(customCharId)
+
+    if charCfg then
+        return charCfg.IdleAction
+    end
+end
+
+function XPBRCharacterControl:GetCharacterWinActionById(customCharId)
+    local charCfg = self._Model:GetTablePBRCharacterCfgById(customCharId)
+
+    if charCfg then
+        return charCfg.WinAction
+    end
+end
+
+function XPBRCharacterControl:GetCharacterFailActionById(customCharId)
+    if not XTool.IsNumberValidEx(customCharId) then
+        return
+    end
+    
+    local charCfg = self._Model:GetTablePBRCharacterCfgById(customCharId)
+
+    if charCfg then
+        return charCfg.FailAction
+    end
+end
+--endregion
+
 return XPBRCharacterControl
 
 --- 角色的属性参数定义

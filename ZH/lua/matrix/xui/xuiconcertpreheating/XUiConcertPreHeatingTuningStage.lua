@@ -14,6 +14,10 @@ function XUiConcertPreHeatingTuningStage:OnAwake()
     self:InitPanelSpine()
 end
 
+function XUiConcertPreHeatingTuningStage:OnDestroy()
+    self:StopSnapTransition()
+end
+
 function XUiConcertPreHeatingTuningStage:InitButton()
     self:BindHelpBtn(self.BtnHelp, "ConcertPreHeatingHelp")
     self.BtnBack.CallBack = function() self:Close() end
@@ -178,17 +182,65 @@ function XUiConcertPreHeatingTuningStage:TryFinishTuneStage(tuneProgress)
     self:FinishTuneStage()
 end
 
--- 完成时将滑条吸附到目标值。
-function XUiConcertPreHeatingTuningStage:SyncSliderToTarget()
+-- 完成时将滑条吸附到目标值：配置过渡时间 > 0 时逐帧平滑过渡，否则瞬间吸附。
+function XUiConcertPreHeatingTuningStage:SyncSliderToTarget(onComplete)
+    self:StopSnapTransition()
+
+    local transitionTime = self._Control:GetTuneSnapTransitionTime()
+    if not transitionTime or transitionTime <= 0 then
+        self:ApplySliderTargetValues(1)
+        if onComplete then
+            onComplete()
+        end
+        return
+    end
+
+    -- 记录每条滑条的起点值，按归一化进度插值到目标。
+    self._SnapStartValues = {}
     for index, controlParamCfg in ipairs(self._ControlParamCfgs) do
         local slider = self._Sliders[index]
-        local target = controlParamCfg.Target or controlParamCfg.MinParam or 0
+        self._SnapStartValues[index] = slider and slider.value or (controlParamCfg.MinParam or 0)
+    end
+
+    local elapsed = 0
+    self._SnapTransitionTimer = XScheduleManager.ScheduleForever(function()
+        elapsed = elapsed + (CS.UnityEngine.Time.deltaTime or 0)
+        local progress = XMath.Clamp(elapsed / transitionTime, 0, 1)
+        self:ApplySliderTargetValues(progress)
+
+        if progress >= 1 then
+            self:StopSnapTransition()
+            if onComplete then
+                onComplete()
+            end
+        end
+    end, 0)
+end
+
+-- 按归一化进度把滑条从起点插值到目标值；progress>=1 直接落到目标。
+function XUiConcertPreHeatingTuningStage:ApplySliderTargetValues(progress)
+    for index, controlParamCfg in ipairs(self._ControlParamCfgs) do
+        local slider = self._Sliders[index]
         if slider then
-            slider:SetValueWithoutNotify(target)
+            local target = controlParamCfg.Target or controlParamCfg.MinParam or 0
+            local value = target
+            if progress < 1 then
+                local startValue = self._SnapStartValues and self._SnapStartValues[index] or target
+                value = startValue + (target - startValue) * progress
+            end
+            slider:SetValueWithoutNotify(value)
         end
     end
 
     self:RefreshSliderDrivenState()
+end
+
+function XUiConcertPreHeatingTuningStage:StopSnapTransition()
+    if self._SnapTransitionTimer then
+        XScheduleManager.UnSchedule(self._SnapTransitionTimer)
+        self._SnapTransitionTimer = nil
+    end
+    self._SnapStartValues = nil
 end
 
 function XUiConcertPreHeatingTuningStage:FinishTuneStage()
@@ -198,11 +250,14 @@ function XUiConcertPreHeatingTuningStage:FinishTuneStage()
         slider.interactable = false
     end
 
-    self:SyncSliderToTarget()
-    self.TargetImagePointCloudMorph.gameObject:SetActiveEx(false)
-
-    XMVCA.XConcertPreHeating:ConcertPreHeatingSettleRequest(self._TuningStageId, XTime.GetServerNowTimestamp() - self._StageStartTime)
-    XLuaUiManager.Open("UiConcertPreHeatingTuningStageCorrectTips", function() self:OnCorrectTipsClose() end)
+    -- 完成耗时在命中时刻固定，不把吸附过渡时间算进上报值。
+    local settleDuration = XTime.GetServerNowTimestamp() - self._StageStartTime
+    -- 吸附过渡结束后再隐藏点云并发起结算，保证过渡过程玩家可见。
+    self:SyncSliderToTarget(function()
+        self.TargetImagePointCloudMorph.gameObject:SetActiveEx(false)
+        XMVCA.XConcertPreHeating:ConcertPreHeatingSettleRequest(self._TuningStageId, settleDuration)
+        XLuaUiManager.Open("UiConcertPreHeatingTuningStageCorrectTips", function() self:OnCorrectTipsClose() end)
+    end)
 end
 
 function XUiConcertPreHeatingTuningStage:OnCorrectTipsClose()

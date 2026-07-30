@@ -17,7 +17,8 @@ XPlayerInfoManagerCreator = function()
         PlayerFashion = 3,          --成员涂装
         PlayerWeaponFashion = 4,    --武器涂装
         PlayerTitle = 5,            --收藏品列表
-        CharacterInfo = 6           --成员的详情信息(等级、技能、装备等)
+        CharacterInfo = 6,           --成员的详情信息(等级、技能、装备等)
+        FashionColor = 7            --涂装颜色
     }
 
     local PlayerInfoRequest = {
@@ -147,15 +148,16 @@ XPlayerInfoManagerCreator = function()
                 end
 
                 cache[playerId][dataType.PlayerFashion] = res.Fashions
+                cache[playerId][dataType.FashionColor] = res.FashionColors
                 cacheTime[playerId][dataType.PlayerFashion] = XTime.GetServerNowTimestamp()
 
                 if cb then
-                    cb(cache[playerId][dataType.PlayerFashion])
+                    cb(cache[playerId][dataType.PlayerFashion],cache[playerId][dataType.FashionColor])
                 end
             end)
         else
             if cb then
-                cb(cache[playerId][dataType.PlayerFashion])
+                cb(cache[playerId][dataType.PlayerFashion],cache[playerId][dataType.FashionColor])
             end
         end
     end

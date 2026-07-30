@@ -271,6 +271,7 @@ function XUiEquipOverrunV4P6:HidePanelDetail()
     self.BgTranslateRight:PlayTimelineAnimation()
     self.ParentUi:ShowPanelTabGroup(true)
     self.PanelActivated.gameObject:SetActiveEx(true)
+    self:RefreshProgress()
 
     self:RefreshGridOverruns()
     self:RefreshGridOverrunPositions(false)

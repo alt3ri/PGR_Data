@@ -148,6 +148,9 @@
 ---@field XBigWorldMemory XBigWorldMemoryAgency
 ---@field XLowMemory XLowMemoryAgency
 ---@field XDyeMergeGame XDyeMergeGameAgency
+---@field XEnvelopeGuessing XEnvelopeGuessingAgency
+---@field XMusicPlayer XMusicPlayerAgency
+---@field XMusicScene XMusicSceneAgency
 local XMVCACls = require("MVCA/XMVCACls")
 
 ---常用的一些模块放在这里初始化
@@ -290,6 +293,10 @@ function XMVCACls:InitModule()
     self:RegisterAgency(ModuleId.XGameCollection)
     self:RegisterAgency(ModuleId.XFashion)
     self:RegisterAgency(ModuleId.XDyeMergeGame)
+
+    self:RegisterAgency(ModuleId.XEnvelopeGuessing)
+    self:RegisterAgency(ModuleId.XMusicPlayer)
+    self:RegisterAgency(ModuleId.XMusicScene)
 end
 
 ---@type XMVCACls

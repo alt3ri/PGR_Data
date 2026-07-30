@@ -14,6 +14,17 @@ function XUiTheatre6PVPMain:OnAwake()
 end
 
 function XUiTheatre6PVPMain:OnStart()
+    -- 设置自动关闭
+    self:SetAutoCloseInfo(self._Control:GetPvpActivityEndTime(), function(isClose)
+        if isClose then
+            XMVCA.XTheatre6:HandlePvpActivityEnd()
+        else
+            if self._PanelPlayerInfo then
+                self._PanelPlayerInfo:RefreshTips()
+            end
+        end
+    end)
+
     ---@type XUiGridTheatre6PvpEnemy[]
     self._EnemyGrids = {}
     if not self._HasEnteredFunction then

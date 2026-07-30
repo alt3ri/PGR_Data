@@ -676,9 +676,15 @@ function XUiPurchase:GroupTabSkip(tab)
 
     local n = PanelExNameConfig[cfg.UiPrefabStyle]
     self.CurUiView = self.UiPanel[n]
-    -- 切换到非礼包页签，默认多隐藏礼包页签一次，防止数据未到达时快速切换到皮肤礼包导致隐藏错误
-    if n ~= PanelExNameConfig.PanelLb then
-        self.UiPanel[PanelExNameConfig.PanelLb]:HidePanel()
+
+    if not XTool.IsTableEmpty(PanelExNameConfig) then
+        -- 隐藏所有非目标的Ex兄弟面板，避免购买回调等路径把非当前子页签面板泄漏点亮后与目标面板同时显示
+        -- （原仅在切到非礼包页签时补隐藏礼包页签一次，反向切到礼包时不隐藏皮肤补给包等兄弟面板会残留）
+        for _, name in pairs(PanelExNameConfig) do
+            if name ~= n and self.UiPanel[name] and self.UiPanel[name].HidePanel then
+                self.UiPanel[name]:HidePanel()
+            end
+        end
     end
     self.CurUiView:OnRefresh(cfg.UiType)
     self:PlayAnimationWithMask("QieHuanSmall")

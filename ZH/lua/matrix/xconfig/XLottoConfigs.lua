@@ -14,6 +14,11 @@ XLottoConfigs.TableKey = enum({
     LottoSceneVideo = { DirType = XConfigCenter.DirectoryType.Client, ReadKeyName = "LottoId" },
 })
 
+XLottoConfigs.LottoMode = {
+    Single = 1,
+    SelfChoice = 2,
+}
+
 local TABLE_LOTTO = "Share/Lotto/Lotto.tab"
 local TABLE_LOTTO_REWARD = "Share/Lotto/LottoReward.tab"
 local TABLE_LOTTO_BUY_TICKET_RULE = "Share/Lotto/LottoBuyTicketRule.tab"

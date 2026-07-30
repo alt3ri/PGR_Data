@@ -105,7 +105,7 @@ function XUiLottoDrawControl:ShowDrawResult()
         return
     end
     self._IsAfterDrawAim = true
-    XLuaUiManager.Open("UiDrawShowNew", drawData, self._RewardList, nil, 1, function()
+    XLuaUiManager.Open("UiDrawShowNew", drawData, self._RewardList, 1, function()
         self._IsAfterShowDrawResult = true
         self._IsAfterDrawAim = false
     end)

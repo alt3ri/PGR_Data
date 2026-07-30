@@ -39,6 +39,9 @@ function XUiTheatre6PopupChooseEnvironment:OnEnable()
     local historyEnvId = self._Control:GetPvpCurrentLineupBuffId(self._PvpCamp)
     local selectIndex = historyEnvId and table.indexof(buffIds, historyEnvId) or 1
     self.ListEnvironment:Init(tabs, function(index)
+        if self._SelectEnvId then
+            self:PlayAnimation("Tab")
+        end
         self._SelectEnvId = buffIds[index]
         self._EnvDetail:SetData(self._SelectEnvId)
     end)

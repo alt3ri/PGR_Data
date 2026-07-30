@@ -23,7 +23,7 @@ end
 function XUiConcertPreHeatingPanelSpine:LoadSpinePrefab(spinePrefabUrl)
     self:RemoveSpineComplete()
     local spineGo = self.SpinePrefabRoot:LoadPrefab(spinePrefabUrl)
-    self._SkeletonAnimation = spineGo.transform:Find("Root/Role"):GetComponent(typeof(CS.Spine.Unity.SkeletonAnimation))
+    self._SkeletonAnimation = spineGo.transform:FindTransform("Role"):GetComponent(typeof(CS.Spine.Unity.SkeletonAnimation))
 end
 
 function XUiConcertPreHeatingPanelSpine:PlaySpinePerformance(isFirstPlay, enableCompleteCb)

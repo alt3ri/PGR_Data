@@ -96,7 +96,12 @@ function XUiSceneMainPreview:AutoSetUi()
     if self.SwitchBtn == nil then return end
     if not XTool.IsTableEmpty(XPhotographConfigs.GetBackgroundSwitchDescById(self.SceneId)) then
         local btn = require("XUi/XUiSceneTip/XUiSwitchBtn")
-        local isFirst = XDataCenter.PhotographManager.GetPreviewState() == XPhotographConfigs.BackGroundState.Full
+        local isFirst = true
+        if XMVCA.XMusicScene:IsMusicScene(self.SceneId) then
+            isFirst = XMVCA.XMusicScene:GetCurPlayMode(self.SceneId) == XEnumConst.MusicScene.Mode.Normal
+        else
+            isFirst = XDataCenter.PhotographManager.GetPreviewState() == XPhotographConfigs.BackGroundState.Full
+        end
         self.BtnSwitch = btn.New(self.SwitchBtn, isFirst, self.SceneId, function ()
             self:OnBtnUiClick()
         end)

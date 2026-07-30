@@ -2570,7 +2570,8 @@ XFunctionalSkipManagerCreator = function()
             XUiManager.TipText("FunctionNotOpen")
             return 
         end
-        XLuaUiManager.Open("UiPaintingExperiencePassV4P2", param1)
+        local isShowSwitch = list.CustomParams[2] == 1
+        XDataCenter.FubenExperimentManager:OpenPaintingExperiencePass(param1, isShowSwitch)
     end
     
 

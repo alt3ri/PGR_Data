@@ -2435,6 +2435,11 @@
         "Value": "10"
     },
     {
+        "Key": "MusicPlayerFallbackAlbumId",
+        "Type": "int",
+        "Value": "1"
+    },
+    {
         "Key": "MusicPlayerIconRotateSpeed",
         "Type": "float",
         "Value": "10"
@@ -2462,7 +2467,7 @@
     {
         "Key": "MusicPlayerSpectrumBandNum",
         "Type": "int",
-        "Value": "64"
+        "Value": "512"
     },
     {
         "Key": "MusicPlayerSpectrumBaseHeight",
@@ -2482,7 +2487,7 @@
     {
         "Key": "MusicPlayerSpectrumLogBandNum",
         "Type": "int",
-        "Value": "60"
+        "Value": "256"
     },
     {
         "Key": "MusicPlayerSpectrumMaxHeight",
@@ -2493,6 +2498,21 @@
         "Key": "MusicPlayerSpectrumMinHeight",
         "Type": "float",
         "Value": "2"
+    },
+    {
+        "Key": "MusicPlayerSpectrumHaruNormalizeMinDb",
+        "Type": "float",
+        "Value": "-70"
+    },
+    {
+        "Key": "MusicPlayerSpectrumHaruNormalizeMaxDb",
+        "Type": "float",
+        "Value": "0"
+    },
+    {
+        "Key": "MusicPlayerSpectrumHaruNormalizeReferenceOffset",
+        "Type": "float",
+        "Value": "-42"
     },
     {
         "Key": "MusicPlayerTextScrollSpeed",
@@ -4697,7 +4717,7 @@
     {
         "Key": "IsBtnSceneSettingShow",
         "Type": "int",
-        "Value": "1"
+        "Value": "0"
     },
     {
         "Key": "AprilFoolsDayCuteHeadEndTime2025",
@@ -5173,5 +5193,60 @@
         "Key": "PassportPointItemId",
         "Type": "int",
         "Value": "60"
+    },
+    {
+        "Key": "RenderPipelineDummyMaterialSVC",
+        "Type": "string",
+        "Value": "Assets/Product/Common/RenderPipelineDummyMaterialSVC.shadervariants"
+    },
+    {
+        "Key": "ProductMaterialSVC",
+        "Type": "string",
+        "Value": "Assets/Product/Common/ProductMaterialSVC.shadervariants"
+    },
+    {
+        "Key": "MusicPlayerRandomPlayListMaxCount",
+        "Type": "int",
+        "Value": "200"
+    },
+    {
+        "Key": "EnvelopeGuessingClueInvitionRandomAnimationDuration",
+        "Type": "int",
+        "Value": "1000"
+    },
+    {
+        "Key": "EnvelopeGuessingClueInvitionRandomMinGrids",
+        "Type": "int",
+        "Value": "5"
+    },
+    {
+        "Key": "EnvelopeGuessingClueInvitionRandomMaxGrids",
+        "Type": "int",
+        "Value": "9"
+    },
+    {
+        "Key": "EnvelopeGuessingCharacterAnimationControllerMale",
+        "Type": "string",
+        "Value": "Assets/Product/Role/Room/Animation/QRMaleMdCommon/QRMaleMdCommon/QixiCharMaleCommon.controller"
+    },
+    {
+        "Key": "EnvelopeGuessingCharacterAnimationControllerFemale",
+        "Type": "string",
+        "Value": "Assets/Product/Role/Room/Animation/QRFemaleMdCommon/QRFemaleMdCommon/QixiCharFemaleCommon.controller"
+    },
+    {
+        "Key": "EnvelopeGuessingEnvelopeCardSlideProgressMin",
+        "Type": "float",
+        "Value": "0"
+    },
+    {
+        "Key": "EnvelopeGuessingEnvelopeCardSlideProgressAuto",
+        "Type": "float",
+        "Value": "0.29"
+    },
+    {
+        "Key": "EnvelopeGuessingEnvelopeBGMFadeDuration",
+        "Type": "int",
+        "Value": "500"
     }
 ]

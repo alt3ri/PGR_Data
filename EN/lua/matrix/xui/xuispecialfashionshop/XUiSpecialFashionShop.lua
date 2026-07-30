@@ -43,6 +43,7 @@ function XUiSpecialFashionShop:OnEnable()
 
     if self._NeedRefreshDynamicTable then
         self._NeedRefreshDynamicTable = nil
+        self:FilterGoodList()
         self:RefreshDynamicTable()
     end
 end
@@ -141,11 +142,18 @@ function XUiSpecialFashionShop:OnBtnFilterClick()
     end
     local dataProvider = {}
     -- 获取商品里对应的角色Id
-    if not XTool.IsTableEmpty(self.GoodList) then
-        for i, goods in pairs(self.GoodList) do
-            local characterId = XDataCenter.FashionManager.GetCharacterId(goods.RewardGoods.TemplateId)
+    local shopData = self.IndexToShopData[self.CurTabIndex]
+    local allGoodList
+    if shopData.ShopId == self.ShopId then
+        allGoodList = XDataCenter.SpecialShopManager.GetFashionListBySeriesId(shopData.ShopId, shopData.SeriesId)
+    else
+        allGoodList = XDataCenter.SpecialShopManager.GetWeaponFashionListByTag(shopData.ShopId)
+    end
+    if not XTool.IsTableEmpty(allGoodList) then
+        for i, goods in pairs(allGoodList) do
+            local goodsCharacterId = XDataCenter.FashionManager.GetCharacterId(goods.RewardGoods.TemplateId)
             dataProvider[#dataProvider + 1] = {
-                characterId = characterId,
+                characterId = goodsCharacterId,
             }
         end
     end

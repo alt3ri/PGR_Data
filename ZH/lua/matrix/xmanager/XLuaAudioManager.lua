@@ -359,13 +359,9 @@ function XLuaAudioManager.PlayMusicInOut2(cueId, stopDuration, startTime, endTim
     return XAudioManager.PlayMusicInOut2(cueId, stopDuration, startTime, endTime, lastFor, attack, release, finishCb)
 end
 
-function XLuaAudioManager.PlayMusicCD(cueId, attack, release, finCb)
-    XAudioManager.PlayMusicCD(cueId, attack, release, finCb)
-end
-
-function XLuaAudioManager.PauseMusic()
-    XAudioManager.PauseMusic()
-end
+function XLuaAudioManager.PauseMusic()
+    XAudioManager.PauseMusic()
+end
 
 function XLuaAudioManager.ResumeMusic()
     XAudioManager.ResumeMusic()

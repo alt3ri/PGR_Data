@@ -79,8 +79,9 @@ function XUiTheatre6ChooseCharacter:Init3DPanel()
     end
 end
 
-function XUiTheatre6ChooseCharacter:OnStart(playMode)
+function XUiTheatre6ChooseCharacter:OnStart(playMode, tagType)
     self._PlayMode = playMode
+    self._TagType = tagType
     self:ApplyStatus(FuncName.Init)
     self:InitCommon()
 end
@@ -136,7 +137,7 @@ function XUiTheatre6ChooseCharacter:InitCommon()
     end)
     
     local unlockIndexDict = {}
-    local showTagIds = self._Control:GetNewCharacterShowTagMap()
+    local showTagIds = self._Control:GetNewCharacterShowTagMap(self._TagType)
 
     ---@type XUiComponent.XUiButton[]
     self._RoleTabs = {}
@@ -197,7 +198,7 @@ function XUiTheatre6ChooseCharacter:UpdateNewTag(index)
             tab:ShowTag(false)
         end
         if config then
-            self._Control:AddNewCharacterShowTag(config.Id)
+            self._Control:AddNewCharacterShowTag(config.Id, self._TagType)
         end
     end
 

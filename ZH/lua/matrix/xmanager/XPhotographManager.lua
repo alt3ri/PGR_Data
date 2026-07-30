@@ -879,6 +879,11 @@ XPhotographManagerCreator = function()
     function XPhotographManager.ClearPreviewSceneId()
         PreviewSceneId = nil
     end
+
+    ---是否处于场景预览状态
+    function XPhotographManager.IsInScenePreview()
+        return XTool.IsNumberValid(PreviewSceneId)
+    end
     
     -- 获取场景预览状态相关键名
     function XPhotographManager.GetSceneStateKey(sceneId)

@@ -146,7 +146,12 @@ end
 
 ---@return XBigWorldUiData
 function XBigWorldQueueUiHelper:_DequeueData()
-    local count = table.nums(self._AwaitUiQueue)
+    local count = 0
+
+    if not XTool.IsTableEmpty(self._AwaitUiQueue) then
+        count = #self._AwaitUiQueue
+    end
+
     local uiData = table.remove(self._AwaitUiQueue, count)
 
     return uiData
@@ -158,14 +163,19 @@ function XBigWorldQueueUiHelper:_PeekData()
         return nil
     end
 
-    local count = table.nums(self._AwaitUiQueue)
+    local count = #self._AwaitUiQueue
 
     return self._AwaitUiQueue[count]
 end
 
 ---@return XBigWorldUiData
 function XBigWorldQueueUiHelper:_FetchUiData(uiName, ...)
-    local count = table.nums(self._UiDataPool)
+    local count = 0
+
+    if not XTool.IsTableEmpty(self._UiDataPool) then
+        count = #self._UiDataPool
+    end
+
     local data = false
 
     if count > 0 then

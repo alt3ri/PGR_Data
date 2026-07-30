@@ -537,11 +537,24 @@ function XUiChatServeMain:ShowChangeChatChannel(channelId)
     self.PanelMsgTips.gameObject:SetActive(true)
 
     local currentChannelId = XDataCenter.ChatManager.GetCurrentChatChannelId()
+    local showChannelId = currentChannelId
     if not XOverseaManager.IsOverSeaRegion() then
-        currentChannelId = currentChannelId >= 5 and (currentChannelId + 1) or currentChannelId
+        showChannelId = currentChannelId >= 5 and (currentChannelId + 1) or currentChannelId
     end
 
-    self.TxtMsgCount.text = CS.XTextManager.GetText("ChannelChanged", currentChannelId ~= XDataCenter.ChatManager.GetRecruitChannelId() and tostring(currentChannelId) or CS.XTextManager.GetText("ChannelRecruitIdStr"))
+    local roomNumStr = ''
+
+    if currentChannelId == XDataCenter.ChatManager.GetRecruitChannelId() then
+        -- 优先招募频道
+        roomNumStr = CS.XTextManager.GetText("ChannelRecruitIdStr")
+    elseif XMVCA.XReCallActivity:CheckInviteActivityOpen() and currentChannelId == XMVCA.XReCallActivity:GetCurReCallChatChannelId() + 1 then -- 客户端缓存的频道id在服务端基础上+1，所以配置也要+1保持一致
+        -- 回归频道次之
+        roomNumStr = XMVCA.XReCallActivity:GetClientConfigReCallText('InviteChannelTitle', 2)
+    else
+        roomNumStr = tostring(showChannelId)
+    end
+
+    self.TxtMsgCount.text = CS.XTextManager.GetText("ChannelChanged", roomNumStr)
     -- 开计时器关闭
     self:StartMsgTipsTimer()
 end
@@ -690,7 +703,7 @@ function XUiChatServeMain:UpdateCurrentChannel()
     
     local roomNumStr = ''
 
-    if showChannelId == XDataCenter.ChatManager.GetRecruitChannelId() then
+    if currentChannelId == XDataCenter.ChatManager.GetRecruitChannelId() then
         -- 优先招募频道
         roomNumStr = CS.XTextManager.GetText("ChannelRecruitIdStr")
     elseif XMVCA.XReCallActivity:CheckInviteActivityOpen() and currentChannelId == XMVCA.XReCallActivity:GetCurReCallChatChannelId() + 1 then -- 客户端缓存的频道id在服务端基础上+1，所以配置也要+1保持一致

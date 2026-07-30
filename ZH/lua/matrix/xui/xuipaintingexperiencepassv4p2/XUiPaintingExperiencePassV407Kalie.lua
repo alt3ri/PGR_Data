@@ -1,0 +1,6 @@
+local XUiPaintingExperiencePassV4P2 = require("XUi/XUiPaintingExperiencePassV4P2/XUiPaintingExperiencePassV4P2")
+
+---@class XUiPaintingExperiencePassV407Kalie : XUiPaintingExperiencePassV4P2 卡列特殊试玩关界面
+local XUiPaintingExperiencePassV407Kalie = XLuaUiManager.Register(XUiPaintingExperiencePassV4P2, "UiPaintingExperiencePassV407Kalie")
+
+return XUiPaintingExperiencePassV407Kalie

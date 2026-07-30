@@ -20,6 +20,7 @@ local DownloadType = DOWNLOAD_SOURCE.PRELOAD
 
 local SingleThread = 1 --单线程数量
 local MultiThread = 5 --多线程数量
+local IsNewDownload = true      -- 是否是新版预下载
 
 local State = XEnumConst.Preload.State
 local CSXMTDownloadTaskGroupState = XTool.GetDownloadStateEnum()
@@ -92,11 +93,19 @@ function XPreloadAgency:OnInit()
     self._OnDownloadProgressUpdate = handler(self, self.DownloadProgressUpdate)
     self._ProgressTimer = nil
     self._DownloadEnable = false --该时机是否可以下载
+    
+    local XModuleUpdateManager = require("XLaunchUpdate/XModuleUpdateManager")
+    self._XModuleUpdateManager = XModuleUpdateManager.New()
+    self._XModuleUpdateManager:Init(RES_FILE_TYPE.MATRIX_FILE)
 end
 
 ---下载完成清理所有数据
 function XPreloadAgency:ClearAllDownload()
     self._AllDownloadAssets = nil --所有下载资源列表
+    if self._XModuleUpdateManager then
+        self._XModuleUpdateManager:CloseCacheWriter()
+        self._XModuleUpdateManager:Clear(true)
+    end
     if self._CurDownloader then
         self._CurDownloader = nil --当前的下载器
         self._CurTaskGroup.NotifyStateChanged = nil
@@ -175,6 +184,13 @@ function XPreloadAgency:GetCurStateMessage()
 end
 
 function XPreloadAgency:TestMovePreFiles(onProgress, onComplete)
+    if IsNewDownload then
+        XLaunchConst.PredownloadMergeTest = true
+        self._XModuleUpdateManager:SetProgressCallback(onProgress)
+        self._XModuleUpdateManager:SetCompleteCallback(onComplete)
+        self._XModuleUpdateManager:ExecuteMergePredownload()
+        return
+    end
     if self._PreloadModule then
         --CSPlayerPrefs.SetString(self._PreloadModule.PrefKeys.PreloadIndexKey, "2.8.2")
         --CSPlayerPrefs.Save()
@@ -488,6 +504,24 @@ end
 
 ---下载预下载index文件
 function XPreloadAgency:DownloadPreloadIndex()
+    if IsNewDownload then
+        local preloadStartUrl, preloadEndUrl = self._XModuleUpdateManager:GetPreloadIndexUrl()
+        local preloadStartFilePath, preloadEndFilePath = self._XModuleUpdateManager:GetPreloadIndexPath()
+        XLaunchConst.StartDownloadFile(function(downloadGroup)
+            downloadGroup:AddTask(preloadStartUrl, preloadStartFilePath)
+            downloadGroup:AddTask(preloadEndUrl, preloadEndFilePath)
+        end, function()
+            self._Model:SavePreloadVersion() --下载完成保存记录
+            self:ResolvePreloadIndex()
+        end, function()
+            self:SetStatus(State.IndexDownloadFail) --下载index失败
+            local dict = {}
+            dict.file = PreloadIndexName
+            CS.XRecord.Record(dict, "88804", "PreloadDownloadFail") --下载index文件失败
+            CsLog.Error("[Preload] 下载preindex文件失败")
+        end)
+        return
+    end
     local indexUrl = self:GetUrlByName(PreloadIndexName)
     local sha1 = self._Model:GetPreloadSha()
     local size = self._Model:GetPreloadSize()
@@ -519,6 +553,45 @@ end
 --- {[assetPath] = value{[1] = Name, [2] = Sha1, [3] = Size}, ... }
 function XPreloadAgency:ResolvePreloadIndex()
     self:SetStatus(State.ResolveIndex)
+
+    if IsNewDownload then
+        if self._AllDownloadAssets then return end
+        self._AllDownloadAssets = {}
+        self._AllDownloadCount = 0
+        self._AllDownloadSize = 0
+
+        local initPreloadFinishFunc = function(isAbort)
+            if isAbort then
+                self:SetStatus(State.PreIndexLoadFail) --加载preindex失败弹窗
+                CsLog.Error("[Preload] 解析preindex index失败")
+                return
+            end
+
+            local downloadMap = self._XModuleUpdateManager:GetDownloadABMap()
+            local patchMap = self._XModuleUpdateManager:GetDownloadPatchMap()
+
+            local XFileInfoSizeIndex = XLaunchConst.XFileInfoSizeIndex
+            for assetPath, info in pairs(downloadMap) do
+                self._AllDownloadAssets[assetPath] = true
+                self._AllDownloadCount = self._AllDownloadCount + 1
+                self._AllDownloadSize = self._AllDownloadSize + info[XFileInfoSizeIndex]
+            end
+            for assetPath, patchInfo in pairs(patchMap) do
+                self._AllDownloadAssets[assetPath] = patchInfo
+                self._AllDownloadCount = self._AllDownloadCount + 1
+                self._AllDownloadSize = self._AllDownloadSize + patchInfo.Size
+            end
+            self._AllDownloadSizeMB = self._AllDownloadSize / 1024 / 1024
+
+            CsLog.Debug(string.format("[Preload] 预下载资源总数: %s (%sMB)", self._AllDownloadCount, self._AllDownloadSizeMB))
+            -- 无需解析本地包体里有没有, preloadIndex已经过滤下个版本进包的资源了
+
+            self:StartDownload()
+        end
+        self._XModuleUpdateManager:Init(RES_FILE_TYPE.MATRIX_FILE, initPreloadFinishFunc)
+        self._XModuleUpdateManager:ExecutePredownload()
+        return
+    end
 
     local preAssetTable, preDlcAssetTable = self:LoadIndexBundle(self._LocalPreloadIndexPath)
     if not preAssetTable or not preDlcAssetTable then
@@ -655,8 +728,13 @@ function XPreloadAgency:StartDownload()
         self:PreloadComplete()
         return
     end
-    self:SetStatus(State.Downloading)
-    self:MultiThreadDownload()
+    -- 检查磁盘空间
+    XLaunchConst.CheckDiskSize(self._AllDownloadSize, function()
+        self:SetStatus(State.Downloading)
+        self:MultiThreadDownload()
+    end, function()
+        self:SetStatus(State.None)
+    end)
 end
 
 --暂停下载
@@ -719,7 +797,6 @@ end
 -- 获取URL路径
 function XPreloadAgency:GetUrlByName(name)
     local preloadVersion = self._Model:GetPreloadVersion()
-    -- {[self._PreloadCdnUrl]=(c/p/pn/baseVersion/p)}/(preloadVersion)/(ResFileType)->{(c/p/pn/version/p)}/(preloadVersion)/predownload/(ResFileType)
     return string.format("%s/%s/predownload/%s/%s", self._PreloadCdnUrl, preloadVersion, ResFileType, name)
 end
 
@@ -742,12 +819,30 @@ function XPreloadAgency:MultiThreadDownload()
     self._CurTaskGroup.NotifyStateChanged = self._OnDownloadStateUpdate
     --self._CurTaskGroup.NotifyProgressChanged = self._OnDownloadProgressUpdate --使用定时器
 
-    for name, info in pairs(self._AllDownloadAssets) do
-        local url = self:GetUrlByName(name)
-        local path = string.format("%s/%s/%s", self._PreloadDirPath, ResFileType, name)
-        local sha1 = info[2]
-        local fileSize = info[3]
-        self._CurTaskGroup:AddTask(url, path, fileSize, sha1)
+    if IsNewDownload then
+        for assetPath, isAb in pairs(self._AllDownloadAssets) do
+            local url, size, sha1, name = self._XModuleUpdateManager:GetDownloadUrlInfo(assetPath)
+            if url then
+                local path
+                if isAb == true then
+                    path = string.format("%s/%s/%s/%s", self._PreloadDirPath, ResFileType, XLaunchConst.AB_Directory_Name, name)
+                else
+                    path = string.format("%s/%s/%s/%s.patch", self._PreloadDirPath, ResFileType, XLaunchConst.Patch_Directory_Name, name)
+                end
+                self._CurTaskGroup:AddTask(url, path, size, sha1)
+            end
+        end
+        self._CurTaskGroup.NotifyUrlDownloadFinish = function (name)
+            self._XModuleUpdateManager:WriteDownloadCache(name)
+        end
+    else
+        for name, info in pairs(self._AllDownloadAssets) do
+            local url = self:GetUrlByName(name)
+            local path = string.format("%s/%s/%s", self._PreloadDirPath, ResFileType, name)
+            local sha1 = info[2]
+            local fileSize = info[3]
+            self._CurTaskGroup:AddTask(url, path, fileSize, sha1)
+        end
     end
     self._CurDownloader:RegisterTaskGroup(self._CurTaskGroup)
     self._CurDownloader:Run()
@@ -1048,13 +1143,13 @@ function XPreloadAgency:InitPath()
     self._PreloadDirPath = UnityApplication.persistentDataPath .. "/preload"
     self._LocalPreloadIndexPath = string.format("%s/%s/%s", self._PreloadDirPath, ResFileType, PreloadIndexName)
     local baseVersion = CsInfo.Version -- self._Model:GetPreloadBaseVersion()
-    local platformName = ""
+    local platformName = "unknow"
     if UnityApplication.platform == UnityRuntimePlatform.Android then
         platformName = "android"
     elseif UnityApplication.platform == UnityRuntimePlatform.IPhonePlayer then
         platformName = "ios"
     elseif UnityApplication.platform == UnityRuntimePlatform.WindowsEditor then
-        platformName = "android"
+        platformName = "editor"
     elseif UnityApplication.platform == UnityRuntimePlatform.WindowsPlayer then
         platformName = "standalone"
     end
@@ -1076,6 +1171,7 @@ function XPreloadAgency:ClearPreloadHistory()
     CS.XFileTool.DeleteDirectory(self._PreloadDirPath, true)
     self._Model:ClearPreloadAll()
     self:SetStatus(State.None)
+    self._XModuleUpdateManager:ClearCache()
 end
 
 function XPreloadAgency:OnRelease()
@@ -1089,4 +1185,4 @@ end
 
 ----------private end----------
 
-return XPreloadAgency
+return XPreloadAgency

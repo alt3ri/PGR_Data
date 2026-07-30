@@ -186,7 +186,8 @@ end
 
 function XUiBountyChallengeChapterDetail:UpdateDifficultyUI()
     local currentLevel = self._Control._DifficultyLevel
-    local isLianyuDifficulty = (currentLevel == 4)
+    local maxLevel = self._Control:GetBossMaxDifficultyLevel(self._Control._SelectedBossId)
+    local isLianyuDifficulty = (currentLevel == maxLevel)
 
     self.PanelLianyu.gameObject:SetActiveEx(isLianyuDifficulty)
     self.BtnLianyu.gameObject:SetActiveEx(isLianyuDifficulty)

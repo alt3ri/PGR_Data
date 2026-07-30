@@ -222,6 +222,8 @@ local function _ApplyBlurSettings(controller, blurType, strength, extra)
             (extra and extra.noiseScale) or 0.7
         )
     elseif blurType == 3 then
+        -- 临时处理, 仅限v4.6 后续由C#侧更新默认值
+        controller.gaussian.remapStrengthValue = 1
         controller:SetGaussianBlur(strength)
     end
 end

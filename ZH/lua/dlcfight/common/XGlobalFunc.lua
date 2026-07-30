@@ -115,27 +115,6 @@ function math.round(value)
     return math.floor(value + 0.5)
 end
 
-function table.indexof(array, value, begin)
-    for i = begin or 1, #array do
-        if array[i] == value then
-            return i
-        end
-    end
-    return false
-end
-
---- 判断是否包含元素
----@param tbl table
----@param ele string
-function table.contains(tbl, ele)
-    for i, v in pairs(tbl) do
-        if v == ele then
-            return true, i
-        end
-    end
-    return false
-end
-
 --- 字典转数组
 ---@param tbl table
 ---@param valueKey string

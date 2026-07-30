@@ -95,15 +95,16 @@ function XUiTheatre6BattleShop:OnStart(...)
     self.GridCommodity.gameObject:SetActiveEx(false)
     self.GridRefresh.gameObject:SetActiveEx(false)
     self:Refresh()
+    self:AddEvent()
 end
 
-function XUiTheatre6BattleShop:OnEnable()
+function XUiTheatre6BattleShop:AddEvent()
     XEventManager.AddEventListener(XEventId.EVENT_THEATRE6_BUY_GOOD, self.OnGoodBought, self)
     XEventManager.AddEventListener(XEventId.EVENT_THEATRE6_UPDATE_SKILL, self._RefreshTagHighlightSource, self)
     XEventManager.AddEventListener(XEventId.EVENT_THEATRE6_GOLD_CHANGE, self.UpdatePurchaseSanPrice, self)
 end
 
-function XUiTheatre6BattleShop:OnDisable()
+function XUiTheatre6BattleShop:RemoveEvent()
     XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE6_BUY_GOOD, self.OnGoodBought, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE6_UPDATE_SKILL, self._RefreshTagHighlightSource, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_THEATRE6_GOLD_CHANGE, self.UpdatePurchaseSanPrice, self)
@@ -111,6 +112,7 @@ end
 
 function XUiTheatre6BattleShop:OnDestroy()
     self._Control:ClearTagHighlightSourceTagIds()
+    self:RemoveEvent()
 end
 
 function XUiTheatre6BattleShop:OnGoodBought()

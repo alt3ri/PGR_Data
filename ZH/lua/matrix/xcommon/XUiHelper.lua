@@ -179,6 +179,8 @@ function XUiHelper.CreateScrollItem(datas, template, parent, cb, scrollstyle)
     end
 end
 
+-- type 须传 typeof() 类型对象，不要传类名字符串：
+-- GetComponent(string) 用简单类名匹配，遇 Spine.Slider / UnityEngine.UI.Slider 等顶层同名类型会歧义返回 nil，typeof() 走 Type 重载不受影响
 function XUiHelper.TryGetComponent(transform, path, type)
     local temp = transform:Find(path)
     if temp then
@@ -267,6 +269,32 @@ function XUiHelper.SetQualityIcon(rootUi, imgQuality, quality)
         rootUi:SetUiSprite(imgQuality, spriteName)
     else
         imgQuality:SetSprite(spriteName)
+    end
+end
+
+-- 将UI的坐标同步到3D场景中的物体
+function XUiHelper.SetUiObjectPositionTo3D(
+    uiCamera,               -- UI相机
+    uiObjectTransform,      -- UI对象的Transform
+    threeDCamera,           -- 3D相机，可以为Near或Far
+    threeDObjectTransform)  -- 3D对象的Transform
+
+    uiCamera = uiCamera or CS.XUiManager.Instance.UiCamera
+    local screenPos3D = threeDCamera:WorldToScreenPoint(threeDObjectTransform.position)
+    local screenPos2D = XLuaVector2.New(screenPos3D.x, screenPos3D.y)
+    local success, localPoint = CS
+        .UnityEngine
+        .RectTransformUtility
+        .ScreenPointToLocalPointInRectangle(
+            uiObjectTransform.parent,
+            screenPos2D,
+            uiCamera)
+
+    if success then
+        uiObjectTransform.localPosition = XLuaVector3.New(
+            localPoint.x,
+            localPoint.y,
+            0)
     end
 end
 

@@ -205,7 +205,13 @@ function XBigWorldCourseControl:GetTaskProgressIdsByContentId(contentId)
 end
 
 function XBigWorldCourseControl:GetTaskProgressCountByContentId(contentId)
-    return table.nums(self:GetTaskProgressIdsByContentId(contentId))
+    local taskProgressIds = self:GetTaskProgressIdsByContentId(contentId)
+
+    if XTool.IsTableEmpty(taskProgressIds) then
+        return 0
+    end
+
+    return #taskProgressIds
 end
 
 function XBigWorldCourseControl:GetCurrentRecordTaskProgress(versionId)
@@ -244,7 +250,11 @@ end
 function XBigWorldCourseControl:GetExploreTotalProgress(contentId)
     local exploreIds = self:GetExploreIdsByContentId(contentId)
 
-    return table.nums(exploreIds)
+    if XTool.IsTableEmpty(exploreIds) then
+        return 0
+    end
+
+    return #exploreIds
 end
 
 function XBigWorldCourseControl:GetExploreCurrentProgress(versionId, contentId)

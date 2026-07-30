@@ -40,7 +40,8 @@ end
 
 ---@param battleData XTheatre6PvpPlayerBattleDb
 function XUiGridTheatre6PvpEnemy:RefreshCharacter(battleData, mistNum)
-    local icon = self._Control:GetPvpPlayerBigPortrait(battleData.SaveFiles, mistNum, 1)
+    local fileDataList = self._Control:GetEnemySaveFiles(battleData)
+    local icon = self._Control:GetPvpPlayerBigPortrait(fileDataList, mistNum, 1)
     self.RImgCharacter:SetRawImageEx(icon)
 end
 
@@ -65,10 +66,7 @@ end
 
 ---@param battleData XTheatre6PvpPlayerBattleDb
 function XUiGridTheatre6PvpEnemy:RefreshRoles(battleData, mistNum)
-    local fileDataList = battleData.SaveFiles or {}
-    if XTool.IsTableEmpty(fileDataList) and XTool.IsNumberValid(battleData.RobotId) then
-        fileDataList = self._Control:BuiltRobotSaveFiles(battleData.RobotId)
-    end
+    local fileDataList = self._Control:GetEnemySaveFiles(battleData)
     local roleCount = #fileDataList
     local hasRole = roleCount > 0
     self.ListRole.gameObject:SetActiveEx(hasRole)

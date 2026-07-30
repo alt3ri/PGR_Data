@@ -19,6 +19,9 @@ function XUiPBRChapter:InitComponents()
     self:BindExitBtns()
 
     -- Button
+    if self.BtnRhythm then
+        self.BtnRhythm:AddEventListener(handler(self, self.OnBtnRhythmClick))
+    end
 
     -- PanelAsset
     local showItems = self._Control:GetClientPBRNumberArray('PanelAssetItems')
@@ -52,6 +55,10 @@ end
 
 function XUiPBRChapter:OnDestroy()
     
+end
+
+function XUiPBRChapter:OnBtnRhythmClick()
+    XLuaUiManager.Open("UiPBRCalibration")
 end
 
 return XUiPBRChapter

@@ -115,27 +115,6 @@ function math.round(value)
     return math.floor(value + 0.5)
 end
 
-function table.indexof(array, value, begin)
-    for i = begin or 1, #array do
-        if array[i] == value then
-            return i
-        end
-    end
-    return false
-end
-
---- 判断是否包含元素
----@param tbl table
----@param ele string
-function table.contains(tbl, ele)
-    for i, v in pairs(tbl) do
-        if v == ele then
-            return true, i
-        end
-    end
-    return false
-end
-
 --- 字典转数组
 ---@param tbl table
 ---@param valueKey string
@@ -176,19 +155,6 @@ function table.arrayToDic(array)
     return dic
 end
 
---- 数组截取
----@param t table
----@param start number
----@param count number
-function table.range(t, start, count)
-    local ret = {}
-    for i = start, start + count - 1 do
-        ret[#ret + 1] = t[i]
-    end
-    return ret
-end
-
-
 --- 数组数量
 function table.nums(t)
     return XTool.GetTableCount(t)
@@ -227,16 +193,6 @@ function table.unique(t, bArray)
         end
     end
     return n
-end
-
--- 反转数组不产生新数组
-function table.reverse(t)
-    local len = #t
-    local mid = math.floor(len / 2)
-    for i = 1, mid do
-        t[i], t[len - i + 1] = t[len - i + 1], t[i]
-    end
-    return t
 end
 
 --程序暂停

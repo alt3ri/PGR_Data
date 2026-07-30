@@ -1,5 +1,6 @@
 local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
 local XUiGridFashionStoryGroup = require("XUi/XUiFubenFashionStory/GroupType/XUiGridFashionStoryGroup")
+---@class XUiFubenFashionStoryNew : XLuaUi
 local XUiFubenFashionStoryNew = XLuaUiManager.Register(XLuaUi, "UiFubenFashionStoryNew")
 
 --region 生命周期
@@ -18,6 +19,16 @@ function XUiFubenFashionStoryNew:OnEnable()
     self:UpdateGroupGridUi()
     self:UpdateLeftTime(XMVCA.XFashionStory:GetLeftTimeStamp(XMVCA.XFashionStory:GetCurrentActivityId()) <= 0)
     XRedPointManager.Check(self.TaskRedPointId)
+    XRedPointManager.Check(self.RewardRedPointId)
+    self:RefreshRewardState()
+    XEventManager.AddEventListener(XEventId.EVENT_TASK_SYNC, self.OnTaskSync, self)
+end
+
+function XUiFubenFashionStoryNew:OnDisable()
+    XEventManager.RemoveEventListener(XEventId.EVENT_TASK_SYNC, self.OnTaskSync, self)
+end
+
+function XUiFubenFashionStoryNew:OnTaskSync()
     XRedPointManager.Check(self.RewardRedPointId)
     self:RefreshRewardState()
 end
@@ -76,14 +87,14 @@ function XUiFubenFashionStoryNew:OnBtnSkinGoClick()
     local state = self.RewardState
     local RewardState = XMVCA.XFashionStory.RewardState
 
-    if state == RewardState.Locked then
+    if state == RewardState.Locked or state == RewardState.Ended then
         local timeId = XMVCA.XFashionStory:GetRewardActivityTimeId(activityId)
         local tipText = XMVCA.XFashionStory:GetRewardActivityLockText(timeId)
         XUiManager.TipMsg(tipText)
         return
     end
     if state == RewardState.None then
-        XLog.Error(string.format("[XUiFubenFashionStoryNew] RewardId 未配置, activityId=%s", tostring(activityId)))
+        XLog.Error(string.format("[XUiFubenFashionStoryNew] RewardTaskId 未配置, activityId=%s", tostring(activityId)))
         return
     end
 
@@ -115,8 +126,9 @@ function XUiFubenFashionStoryNew:UpdateLeftTime(isClose)
         for _, ctrl in ipairs(self.GroupCtrl) do
             ctrl:RefreshLockCountDown()
         end
-        -- 奖励入口锁定时显示倒计时，需要每秒刷一次以驱动文本和解锁翻转
-        if self.RewardState == XMVCA.XFashionStory.RewardState.Locked then
+        -- 奖励入口状态可能随活动开始/结束翻转，非终态时每秒刷一次以驱动倒计时与状态切换
+        local RewardState = XMVCA.XFashionStory.RewardState
+        if self.RewardState ~= RewardState.Ended and self.RewardState ~= RewardState.None then
             self:RefreshRewardState()
         end
     end
@@ -128,21 +140,28 @@ function XUiFubenFashionStoryNew:RefreshRewardState()
     local RewardState = XMVCA.XFashionStory.RewardState
 
     self.ActivityId = activityId
-    self.RewardState = state
 
-    if state == RewardState.Locked then
-        self.BtnSkinGo:SetDisable(true)
-    else
-        self.BtnSkinGo:SetDisable(false)
-        if state == RewardState.Received then
-            self.BtnSkinGo:SetButtonState(CS.UiButtonState.Select)
+    if self.RewardState ~= state then
+        self.RewardState = state
+        -- 锁定/结束态共用按钮 Disable，表现差异由 RefreshSkinGoLockView 的子对象负责
+        if state == RewardState.Locked or state == RewardState.Ended then
+            self.BtnSkinGo:SetDisable(true)
         else
-            self.BtnSkinGo:SetButtonState(CS.UiButtonState.Normal)
+            self.BtnSkinGo:SetDisable(false)
+            self.BtnSkinGo:SetButtonState(state == RewardState.Received and CS.UiButtonState.Select or CS.UiButtonState.Normal)
+        end
+        self:RefreshSkinGoLockView(state)
+        self:RefreshRewardLoopAnim(state == RewardState.CanReceive)
+        if self.RewardRedPointId then
+            XRedPointManager.Check(self.RewardRedPointId)
+        end
+        if state == RewardState.None then
+            XLog.Error(string.format("[XUiFubenFashionStoryNew] RewardTaskId 未配置, activityId=%s", tostring(activityId)))
         end
     end
 
     local text
-    if state == RewardState.Locked then
+    if state == RewardState.Locked or state == RewardState.Ended then
         local timeId = XMVCA.XFashionStory:GetRewardActivityTimeId(activityId)
         text = XMVCA.XFashionStory:GetRewardActivityLockText(timeId)
     elseif state == RewardState.CanReceive then
@@ -151,9 +170,30 @@ function XUiFubenFashionStoryNew:RefreshRewardState()
         text = XUiHelper.GetText("FashionStoryRewardReceived")
     else
         text = ""
-        XLog.Error(string.format("[XUiFubenFashionStoryNew] RefreshRewardState 未知 RewardState=%s, activityId=%s", tostring(state), tostring(activityId)))
     end
-    self.BtnSkinGo:SetNameByGroup(0, text)
+    if self._LastRewardText ~= text then
+        self._LastRewardText = text
+        self.BtnSkinGo:SetNameByGroup(0, text)
+    end
+end
+
+function XUiFubenFashionStoryNew:RefreshSkinGoLockView(state)
+    local RewardState = XMVCA.XFashionStory.RewardState
+    -- 锁定态与结束态共用按钮 Disable：各自一个子对象负责表现，按状态二选一显隐
+    if self.SkinGoLock then
+        self.SkinGoLock.gameObject:SetActiveEx(state == RewardState.Locked)
+    end
+    if self.SkinGoEnded then
+        self.SkinGoEnded.gameObject:SetActiveEx(state == RewardState.Ended)
+    end
+end
+
+function XUiFubenFashionStoryNew:RefreshRewardLoopAnim(isPlay)
+    if isPlay then
+        self.Loop:PlayTimelineAnimation(nil, nil, CS.UnityEngine.Playables.DirectorWrapMode.Loop)
+    else
+        self.Loop:StopTimelineAnimation()
+    end
 end
 --endregion
 

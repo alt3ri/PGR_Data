@@ -74,7 +74,12 @@ end
 
 --- 玩家退出后重新战斗
 function XTheatre6Control:RequestPvpRestartFight(cb)
-    XNetwork.CallWithAutoHandleErrorCode("Theatre6PvpRestartFightRequest", nil, function(res)
+    XNetwork.Call("Theatre6PvpRestartFightRequest", nil, function(res)
+        if res.Code ~= XCode.Success then
+            self:ClearPvpTinyBattleState()
+            XUiManager.TipCode(res.Code)
+            return
+        end
         if res.BattleState then
             self._Model.Pvp:UpdateTinyBattleState(res.BattleState)
             self._Model.Pvp:RecordBattleResults(res.BattleState.RoundResults)

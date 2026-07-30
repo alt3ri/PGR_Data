@@ -626,6 +626,8 @@ function XUiMovie:OnClickBtnAuto()
 
         -- 自动播放和暂停文本
         self:RefreshTextPause()
+    else
+        self:ClearAutoTimer()
     end
 
     XDataCenter.MovieManager.DispatchAutoPlayEvent()

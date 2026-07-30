@@ -3995,6 +3995,10 @@ function XConditionManager.GetConditionTemplate(id)
     return template
 end
 
+function XConditionManager.GetAllConditionTemplate()
+    return ConditionTemplate
+end
+
 local function LCheckCharacterCondition(template, ...)
     local func = CharacterCondition[template.Type]
     if not func then

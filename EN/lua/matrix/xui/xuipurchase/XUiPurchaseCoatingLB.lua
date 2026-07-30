@@ -161,6 +161,12 @@ function XUiPurchaseCoatingLB:OnUpdate(rewardList)
         self:CheckAddTimeTips(rewardList)
         self.IsCheckOpenAddTimeTips = false
     end
+    -- 面板已隐藏（当前非皮肤补给包子页签）时，购买回调不应重新点亮本面板，否则会与其他Ex面板同时显示
+    -- 返回本子页签时 GroupTabSkip 会重新 OnRefresh，数据不会漏刷
+    if XTool.UObjIsNil(self.GameObject) or not self.GameObject.activeSelf then
+        self._NeedRefreshOnShow = true
+        return
+    end
     if self.CurUiType then
         self:OnRefresh(self.CurUiType)
     end
@@ -173,6 +179,10 @@ end
 
 function XUiPurchaseCoatingLB:ShowPanel()
     self.GameObject:SetActive(true)
+    if self._NeedRefreshOnShow and self.CurUiType then
+        self._NeedRefreshOnShow = false
+        self:OnRefresh(self.CurUiType)
+    end
 end
 
 function XUiPurchaseCoatingLB:DestroyTimer()

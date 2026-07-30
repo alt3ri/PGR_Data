@@ -1619,6 +1619,19 @@ XTeamManagerCreator = function()
         return BattleRoomCacheTeam
     end
 
+    -- 涂装回退位下标是否为空：无表或全 0（没有任何位需要回退）时返回 true
+    function XTeamManager.IsNoFashionResPositionsEmpty(positions)
+        if not positions then
+            return true
+        end
+        for _, v in ipairs(positions) do
+            if v ~= 0 then
+                return false
+            end
+        end
+        return true
+    end
+
     XTeamManager.Init()
     return XTeamManager
 end

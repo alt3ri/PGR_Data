@@ -12,6 +12,9 @@ local EventId = {
     
     --- 天赋点击详情
     EVENT_PBR_INNER_OPEN_GENIUS_DETAIL = 4,
+
+    --- BGM选择弹窗关闭（商店恢复BGM播放）
+    EVENT_PBR_INNER_MUSIC_POPUP_CLOSED = 5,
     
     --endregion
     

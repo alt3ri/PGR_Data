@@ -99,7 +99,6 @@ function XUiPBRPause:OnBtnTanchuangCloseWhiteClick()
 end
 
 function XUiPBRPause:OnBtnSettleClick()
-    local title = CS.XTextManager.GetText("TipTitle")
     local content = self._Control:GetClientPBRText('BattleSettleByHandTips')
     
     local confirmCb = function()
@@ -111,7 +110,7 @@ function XUiPBRPause:OnBtnSettleClick()
         -- 无尽模式无需二次确认
         confirmCb()
     else
-        XUiManager.DialogTip(title, content, XUiManager.DialogType.Normal, nil, confirmCb)
+        XMVCA.XPBRGame:OpenCommonTips(content, nil, nil, confirmCb)
     end
 end
 

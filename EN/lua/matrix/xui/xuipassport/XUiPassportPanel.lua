@@ -55,8 +55,8 @@ function XUiPassportPanel:InitDynamicList()
     self.DynamicTable:SetDelegate(self)
     self.Grid01.gameObject:SetActiveEx(false)
 
-    local gridWidth = self.Grid01:GetComponent("RectTransform").rect.size.x
-    local panelWidth = self.PanelItemList:GetComponent("RectTransform").rect.size.x
+    local gridWidth = self.Grid01:GetComponent(typeof(CS.UnityEngine.RectTransform)).rect.size.x
+    local panelWidth = self.PanelItemList:GetComponent(typeof(CS.UnityEngine.RectTransform)).rect.size.x
     self.DynamicTableOffsetIndex = math.floor(panelWidth / gridWidth / 2)
 end
 

@@ -176,7 +176,7 @@ function XUiSpecialTrainMusic:UpdateSpectrum(id)
         self.ScheduleId = nil
     end
     self.ScheduleId = XScheduleManager.ScheduleForever(function()
-        local spectrumData = CSXAudioManager.GetSpectrumLvData()
+        local spectrumData = CSXAudioManager.MusicVisualSpectrumProcessor:Get()
         for _, panel in ipairs(self.PanelSpectrumList) do
             panel:UpdateSpectrum(spectrumData)
         end

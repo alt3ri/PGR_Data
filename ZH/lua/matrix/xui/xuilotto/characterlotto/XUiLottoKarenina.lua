@@ -200,6 +200,7 @@ function XUiLottoKarenina:StartAutoCloseTimer()
     local drawData = self._LottoGroupData:GetDrawData()
     local timeId = drawData:GetTimeId()
     local endTime = XFunctionManager.GetEndTimeByTimeId(timeId)
+    self:_RefreshTimeText(endTime)
     self._CloseTimer = XScheduleManager.ScheduleForever(function()
         if XTool.UObjIsNil(self.Transform) then
             self:CloseAutoCloseTimer()
@@ -207,7 +208,23 @@ function XUiLottoKarenina:StartAutoCloseTimer()
         if XTime.GetServerNowTimestamp() > endTime then
             XDataCenter.LottoManager.OnActivityEnd()
         end
+        self:_RefreshTimeText(endTime)
     end, XScheduleManager.SECOND, 0)
+end
+
+function XUiLottoKarenina:_RefreshTimeText(endTime)
+    local time = endTime - XTime.GetServerNowTimestamp()
+    local timeStr = XUiHelper.GetText("GachaAlphaTime", XUiHelper.GetTime(time, XUiHelper.TimeFormatType.CHATEMOJITIMER))
+    if self._LastTimeStr == timeStr then
+        return
+    end
+    self._LastTimeStr = timeStr
+    if self.TxtTime then
+        self.TxtTime.text = timeStr
+    end
+    if self.TxtDay then
+        self.TxtDay.text = timeStr
+    end
 end
 
 function XUiLottoKarenina:CloseAutoCloseTimer()
@@ -558,8 +575,13 @@ function XUiLottoKarenina:InitSceneVideo()
         return
     end
 
-    local videoId = XLottoConfigs.GetAllConfigs(XLottoConfigs.TableKey.LottoSceneVideo)[self._DrawControl:GetLottoId()].VideoConfigId
-    self._SceneVideoPlayer:SetInfoByVideoId(videoId)
+    local lottoId = self._DrawControl:GetLottoId()
+    local sceneVideoCfg = XLottoConfigs.GetAllConfigs(XLottoConfigs.TableKey.LottoSceneVideo)[lottoId]
+    if not sceneVideoCfg then
+        XLog.Error(string.format("[XUiLottoKarenina] LottoSceneVideo 缺少 LottoId=%s 的配置", tostring(lottoId)))
+        return
+    end
+    self._SceneVideoPlayer:SetInfoByVideoId(sceneVideoCfg.VideoConfigId)
 end
 
 function XUiLottoKarenina:InitSceneModel()
@@ -590,26 +612,49 @@ end
 
 --region Ui - BtnListener
 function XUiLottoKarenina:AddBtnListener()
-    XUiHelper.RegisterClickEvent(self, self.BtnBack, self.OnBtnBackClick)
-    XUiHelper.RegisterClickEvent(self, self.BtnMainUi, self.OnBtnMainUiClick)
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
+    self.BtnMainUi:AddEventListener(handler(self, self.OnBtnMainUiClick))
 
-    XUiHelper.RegisterClickEvent(self, self.BtnDrawRule, self.OnBtnDrawRuleClick)
-    XUiHelper.RegisterClickEvent(self, self.BtnXiangqing, self.OnBtnRewardDetailClick)
-    XUiHelper.RegisterClickEvent(self, self.BtnShield, self.OnBtnSkipAnimClick)
-    XUiHelper.RegisterClickEvent(self, self.BtnVoice, self.OnBtnSetClick)
-    XUiHelper.RegisterClickEvent(self, self.BtnVoiceStage, self.OnBtnSetClick)
-    
-    XUiHelper.RegisterClickEvent(self, self.BtnDrawShow, self.OnBtnDrawShowClick)
-    XUiHelper.RegisterClickEvent(self, self.BtnStory, self.OnBtnStageClick)
-    XUiHelper.RegisterClickEvent(self, self.BtnGo, self.OnBtnBeDrawClick)
+    self.BtnDrawRule:AddEventListener(handler(self, self.OnBtnDrawRuleClick))
+    self.BtnXiangqing:AddEventListener(handler(self, self.OnBtnRewardDetailClick))
+    self.BtnShield:AddEventListener(handler(self, self.OnBtnSkipAnimClick))
+    self.BtnVoice:AddEventListener(handler(self, self.OnBtnSetClick))
+    self.BtnVoiceStage:AddEventListener(handler(self, self.OnBtnSetClick))
 
-    XUiHelper.RegisterClickEvent(self, self.BtnStart, self.OnBtnStartClick)
+    self.BtnDrawShow:AddEventListener(handler(self, self.OnBtnDrawShowClick))
+    self.BtnStory:AddEventListener(handler(self, self.OnBtnStageClick))
+    self.BtnGo:AddEventListener(handler(self, self.OnBtnBeDrawClick))
+
+    self.BtnStart:AddEventListener(handler(self, self.OnBtnStartClick))
     if self.BtnSkip then
-        XUiHelper.RegisterClickEvent(self, self.BtnSkip, self.OnBtnSkipDrawClick)
+        self.BtnSkip:AddEventListener(handler(self, self.OnBtnSkipDrawClick))
+    end
+
+    if self.BtnChange then
+        self.BtnChange:AddEventListener(handler(self, self.OnBtnChangeClick))
+        self:RefreshBtnChange()
     end
 end
 
+function XUiLottoKarenina:RefreshBtnChange()
+    if not self.BtnChange then return end
+    local lottoId = self._LottoGroupData:GetDrawData():GetId()
+    self.BtnChange.gameObject:SetActiveEx(XDataCenter.LottoManager.IsLottoIdBelongSelfChoice(lottoId))
+end
+
+function XUiLottoKarenina:OnBtnChangeClick()
+    -- 必须先翻 Entrance.IsChangeMode 再 Close，否则 Entrance.OnEnable 会因 dic 已选直接 CloseImmediately
+    XDataCenter.LottoManager.OpenSelfChoiceEntranceForChange()
+    self:Close()
+end
+
 function XUiLottoKarenina:OnBtnBackClick()
+    -- 自选卡池：直接回主界面（Entrance 由 RunMain 一并关闭）
+    local lottoId = self._LottoGroupData:GetDrawData():GetId()
+    if XDataCenter.LottoManager.IsLottoIdBelongSelfChoice(lottoId) then
+        XLuaUiManager.RunMain()
+        return
+    end
     self:Close()
 end
 

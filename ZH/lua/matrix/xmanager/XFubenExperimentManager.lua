@@ -6,11 +6,16 @@ local tableSort = table.sort
 local CSGameEventManager = CS.XGameEventManager.Instance
 
 XFubenExperimentManagerCreator = function()
+    ---@class XFubenExperimentManager
     local XFubenExperimentManager = XExFubenCollegeStudyManager.New(XEnumConst.FuBen.ChapterType.Experiment)
 
+    ---@type XTableExperimentGroup[]
     local TrialGroup = {}
+    ---@type XTableExperimentLevel[]
     local TrialLevel = {}
+    ---@type table<number, XTableExperimentLevel[]>
 	local TrialLevelDic = {}
+    ---@type XTableExperimentGroup[]
 	local ShowTrialGroup = {}
     -- local BattleTrial = {}
     local FinishExperimentIds = {}
@@ -47,6 +52,31 @@ XFubenExperimentManagerCreator = function()
         TrialLevel = XFubenExperimentConfigs.GetTrialLevelCfg()
 		InitLevelDic()
         -- BattleTrial = XFubenExperimentConfigs.GetBattleTrialCfg()
+    end
+
+    ---进入试玩关
+    ---@param trialLevelId number ExperimentLevel表Id
+    ---@param isShowSwitch boolean 是否显示切换按钮
+    function XFubenExperimentManager:OpenPaintingExperiencePass(trialLevelId, isShowSwitch)
+        local uiName = XFubenExperimentManager:GetPaintingExperiencePassName(trialLevelId)
+        XLuaUiManager.Open(uiName, trialLevelId, isShowSwitch)
+    end
+
+    ---进入试玩关，并且关闭上一个界面
+    ---@param trialLevelId number ExperimentLevel表Id
+    ---@param isShowSwitch boolean 是否显示切换按钮
+    function XFubenExperimentManager:PopThenOpenPaintingExperiencePass(trialLevelId, isShowSwitch)
+        local uiName = XFubenExperimentManager:GetPaintingExperiencePassName(trialLevelId)
+        XLuaUiManager.PopThenOpen(uiName, trialLevelId, isShowSwitch)
+    end
+
+    ---获取试玩关Ui名
+    function XFubenExperimentManager:GetPaintingExperiencePassName(trialLevelId)
+        local sceneInfo = XFubenExperimentConfigs.GetSceneShowConfig(trialLevelId)
+        if sceneInfo and not string.IsNilOrEmpty(sceneInfo.SpecialUiName) then
+            return sceneInfo.SpecialUiName
+        end
+        return "UiPaintingExperiencePassV4P2"
     end
     
     function XFubenExperimentManager.RecordMode(stageId,mode)
@@ -99,6 +129,7 @@ XFubenExperimentManagerCreator = function()
 		return levelConfig
 	end
 
+    ---@return XTableExperimentLevel[]
 	function XFubenExperimentManager.GetTrialLevelByGroupID(groupID)
 		local levels = TrialLevelDic[groupID] or {}
 		local temps = {}

@@ -25,7 +25,7 @@ function XUiBigWorldMapOverviewPanel:PlayEnableAnimation(parent)
             animation:PlayTimelineAnimation(function()
                 self._CurrentEnableCount = self._CurrentEnableCount + 1
 
-                if self._CurrentEnableCount >= table.nums(self._EnableAnimations) then
+                if self._CurrentEnableCount >= #self._EnableAnimations then
                     XMVCA.XBigWorldUI:SetMaskActive(false, "XUiBigWorldMapOverviewPanel")
                     self:SetParent(parent)
                 end
@@ -45,7 +45,7 @@ function XUiBigWorldMapOverviewPanel:PlayDisableAnimation(parent)
             animation:PlayTimelineAnimation(function()
                 self._CurrentDisableCount = self._CurrentDisableCount + 1
 
-                if self._CurrentDisableCount >= table.nums(self._DisableAnimations) then
+                if self._CurrentDisableCount >= #self._DisableAnimations then
                     XMVCA.XBigWorldUI:SetMaskActive(false, "XUiBigWorldMapOverviewPanel")
                     self:SetParent(parent)
                     self:Close()

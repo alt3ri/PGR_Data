@@ -12,11 +12,26 @@ local XUiPBRShopNewPanelProp = require("XUi/XUiPBRGame/XUiPBRShopNew/CharacterIn
 local XUiPBRShopNewUiPBRPanelDetail = require("XUi/XUiPBRGame/XUiPBRShopNew/ItemDetailPopupPanel/XUiPBRShopNewUiPBRPanelDetail")
 local XUiPBRShopNewUiPBRPanelAttribute = require("XUi/XUiPBRGame/XUiPBRShopNew/CharacterInfo/XUiPBRShopNewUiPBRPanelAttribute")
 
----@field _Control XPBRGameControl
 ---@class XUiPBRShopNew : XLuaUi
+---@field _Control XPBRGameControl
+--- 以下面板节点为 prefab 原始节点，在 InitComponents / OnStart 中被包装为对应子 UI 类
+---@field PanelItem XUiPBRShopNewPanelItem 商品列表面板（展示在售商品）
+---@field PanelSkill XUiPBRShopNewPanelSkill 已拥有技能列表
+---@field PanelProp XUiPBRShopNewPanelProp 已拥有道具列表
+---@field PanelRound XUiPBRShopNewPanelRound 波次进度面板
+---@field UiPBRPanelDetail XUiPBRShopNewUiPBRPanelDetail 商品详情弹窗
+---@field UiPBRPanelAttribute XUiPBRShopNewUiPBRPanelAttribute 角色属性详情面板
+---@field BtnCharacter XUiPBRShopNewBtnCharacter 角色信息按钮（prefab 按钮节点，包装为子 UI 类）
+--- 以下为 prefab 自动注入的按钮与文本节点
+---@field BtnExit XUiComponent.XUiButton 退出商店
+---@field BtnRefresh XUiComponent.XUiButton 刷新商品（按钮名展示剩余刷新次数）
+---@field BtnGiveup XUiComponent.XUiButton 放弃本次选择 / 进入下一波
+---@field BtnMusic XUiComponent.XUiButton 选择 BGM（仅无尽模式显示）
+---@field TxtSelectNum UnityEngine.UI.Text 剩余强化（选择）次数文本
 local XUiPBRShopNew = XLuaUiManager.Register(XLuaUi, "UiPBRShopNew")
 
 local XInputSignalMediator = require('XModule/XPBRGame/Entity/XInputSignalMediator')
+local XUiGridMusicOptionEntrance = require("XUi/XUiPBRGame/CommonUiTemplate/XUiGridMusicOptionEntrance")
 
 function XUiPBRShopNew:OnAwake()
     self:InitComponents()
@@ -31,6 +46,7 @@ function XUiPBRShopNew:InitComponents()
     self.InputSignalMediator:RegisterSignalHandler(XMVCA.XPBRGame.EnumConst.UIInputTypes.UIShop.GoNextWave, handler(self, self.OnBtnGoSignal))
     self.InputSignalMediator:RegisterSignalHandler(XMVCA.XPBRGame.EnumConst.UIInputTypes.UIShop.RefreshGoods, handler(self, self.OnBtnRefreshSignal))
     self.InputSignalMediator:RegisterSignalHandler(XMVCA.XPBRGame.EnumConst.UIInputTypes.UIShop.SelectGoods, handler(self, self.OnSelectItemSignal))
+    self.InputSignalMediator:RegisterSignalHandler(XMVCA.XPBRGame.EnumConst.UIInputTypes.UIShop.BGMSelect, handler(self, self.OnBtnMusicClickSignal))
     
     
     -- Button
@@ -47,7 +63,14 @@ function XUiPBRShopNew:InitComponents()
     end)
     
     self.BtnCharacter:AddEventListener(function() self:OnBtnCharacterClick() end)
-    
+
+    if self.BtnMusic then
+        ---@type XUiGridMusicOptionEntrance
+        self.UiGridMusic = XUiGridMusicOptionEntrance.New(self.BtnMusic, self)
+        self.UiGridMusic:AddEventListener(function()
+            self.InputSignalMediator:ReceiveInputSignal(XMVCA.XPBRGame.EnumConst.UIInputTypes.UIShop.BGMSelect)
+        end)
+    end
 
     -- XUiNode
     
@@ -79,22 +102,34 @@ function XUiPBRShopNew:OnStart(stageId)
     self:InitWavesShow()
     
     self:RefreshAll()
+
+    if self.UiGridMusic then
+        self.UiGridMusic:SetVisible(self._Control.InGameControl:CheckIsInEndlessMode())
+    end
+
+    self:_PlaySelectedBgm()
 end
 
 function XUiPBRShopNew:OnEnable()
     self.InputSignalMediator:StartInputSignalUpdateTimer()
-    
+
     self._Control:AddEventListener(XMVCA.XPBRGame.EventId.EVENT_PBR_INNER_OPEN_ITEM_DETAIL, self.OnItemDetailOpenEvent, self)
+    self._Control:AddEventListener(XMVCA.XPBRGame.EventId.EVENT_PBR_INNER_MUSIC_POPUP_CLOSED, self._OnMusicPopupClosed, self)
+
+    if self.UiGridMusic then
+        self.UiGridMusic:RefreshBgmName(self.StageId)
+    end
 end
 
 function XUiPBRShopNew:OnDisable()
     self.InputSignalMediator:StopInputSignalUpdateTimer()
 
     self._Control:RemoveEventListener(XMVCA.XPBRGame.EventId.EVENT_PBR_INNER_OPEN_ITEM_DETAIL, self.OnItemDetailOpenEvent, self)
+    self._Control:RemoveEventListener(XMVCA.XPBRGame.EventId.EVENT_PBR_INNER_MUSIC_POPUP_CLOSED, self._OnMusicPopupClosed, self)
 end
 
 function XUiPBRShopNew:OnDestroy()
-
+    self:_StopSelectedBgm()
 end
 
 function XUiPBRShopNew:InitWavesShow()
@@ -106,7 +141,7 @@ end
 
 function XUiPBRShopNew:RefreshAll()
     self:RefreshCharacterInfo()
-    self:RefreshShopShow() 
+    self:RefreshShopShow()
 end
 
 function XUiPBRShopNew:RefreshShopShow()
@@ -152,10 +187,12 @@ end
 
 function XUiPBRShopNew:_GetHintInfo()
     if self._HintInfo == nil then
+        ---@type XUiPBRPopupComTipsExtraData
         self._HintInfo = {
-            HintText = self._Control:GetClientPBRText('ShopDialogHintDesc'),
-            Status = self._Control.InGameControl:GetIsShopSelectGiveupIgnorePopup(),
-            SetHintCb = function(status)
+            IsShowHint = true,
+            HintContent = self._Control:GetClientPBRText('ShopDialogHintDesc'),
+            HintStatus = self._Control.InGameControl:GetIsShopSelectGiveupIgnorePopup(),
+            HintStatusChangedCb = function(status)
                 if self._Control and self._Control.InGameControl then
                     self._Control.InGameControl:SetShopSelectGiveupIgnorePopup(status) 
                 end
@@ -163,7 +200,7 @@ function XUiPBRShopNew:_GetHintInfo()
         }
     else
         -- 只更新状态 
-        self._HintInfo.Status = self._Control.InGameControl:GetIsShopSelectGiveupIgnorePopup()
+        self._HintInfo.HintStatus = self._Control.InGameControl:GetIsShopSelectGiveupIgnorePopup()
     end
     
     return self._HintInfo
@@ -173,17 +210,7 @@ end
 
 --- 信号处理：退出界面
 function XUiPBRShopNew:OnBtnExitSignal()
-    if XMVCA.XPBRGame:DoSafeFightExit() then
-        -- 隔一帧
-        -- 加遮罩防止退出期间点击
-        XLuaUiManager.SetMask(true)
-        self:_AddTimerId(XScheduleManager.ScheduleNextFrame(function()
-            XLuaUiManager.CloseAllUpperUi('UiPBRMain')
-            XLuaUiManager.SetMask(false)
-        end))
-    else
-        XLuaUiManager.CloseAllUpperUi('UiPBRMain')
-    end
+    self:_OnShopExit()
 end
 
 --- 信号处理：放弃当次选择
@@ -195,16 +222,16 @@ function XUiPBRShopNew:OnBtnGoSignal()
         local hintInfo = self:_GetHintInfo()
         
         if leftTimes > 1 then
-            if not hintInfo.Status then
-                XUiManager.DialogHintTip(CS.XTextManager.GetText("TipTitle"), self._Control:GetClientPBRText('ShopGiveUpWithMultyChooseTime'), nil, nil, function()
+            if not hintInfo.HintStatus then
+                XMVCA.XPBRGame:OpenCommonTips(self._Control:GetClientPBRText('ShopGiveUpWithMultyChooseTime'), nil, nil, function()
                     self:_DoShopFresh(true)
                 end, hintInfo)
             else
                 self:_DoShopFresh(true)
             end
         else
-            if not hintInfo.Status then
-                XUiManager.DialogHintTip(CS.XTextManager.GetText("TipTitle"), self._Control:GetClientPBRText('ShopGiveUpWithLastChooseTime'), nil, nil, function()
+            if not hintInfo.HintStatus then
+                XMVCA.XPBRGame:OpenCommonTips(self._Control:GetClientPBRText('ShopGiveUpWithLastChooseTime'), nil, nil, function()
                     self:_DoNextWave()
                 end, hintInfo)
             else
@@ -266,6 +293,80 @@ function XUiPBRShopNew:OnSelectItemSignal(itemId)
             
         end
     end)
+end
+
+function XUiPBRShopNew:OnBtnMusicClickSignal()
+    XLuaUiManager.Open("UiPBRPopupMusicChoose", self.StageId)
+end
+--endregion
+
+--region 退出界面流程相关子逻辑
+
+function XUiPBRShopNew:_OnShopExit()
+    -- 打开二级弹窗
+    local content, btnLeftText, btnRightText = self._Control:GetClientBattleShopBackTips()
+    
+    XMVCA.XPBRGame:OpenCommonTips(content, nil, handler(self, self._OnShopExitTipsSettle), handler(self, self._OnShopExitTipsOnlyExit), {
+        BtnLeftText = btnLeftText,
+        BtnRightText = btnRightText
+    })
+end
+
+--- 走提前结算流程
+function XUiPBRShopNew:_OnShopExitTipsSettle()
+    local confirmCb = function()
+        XMVCA.XPBRGame.NetworkAgency:DoPbrForceSettleRequest(function(success)
+            if success then
+                XLuaUiManager.SafeClose("UiPBRShopNew")
+                XMVCA.XPBRGame:DoSafeFightExit()
+            end
+        end)
+    end
+    
+    if self._Control.InGameControl:CheckIsInEndlessMode() then
+        -- 无尽模式无需二次确认
+        confirmCb()
+    else
+        XMVCA.XPBRGame:OpenCommonTips(self._Control:GetClientPBRText('BattleSettleByHandTips'), nil, nil, confirmCb)
+    end
+end
+
+--- 纯退出逻辑
+function XUiPBRShopNew:_OnShopExitTipsOnlyExit()
+    if XMVCA.XPBRGame:DoSafeFightExit() then
+        -- 隔一帧
+        -- 加遮罩防止退出期间点击
+        XLuaUiManager.SetMask(true)
+        self:_AddTimerId(XScheduleManager.ScheduleNextFrame(function()
+            XLuaUiManager.CloseAllUpperUi('UiPBRMain')
+            XLuaUiManager.SetMask(false)
+        end))
+    else
+        XLuaUiManager.CloseAllUpperUi('UiPBRMain')
+    end
+end
+
+--endregion
+
+--region BGM
+
+function XUiPBRShopNew:_PlaySelectedBgm()
+    local bgmId = self._Control.MusicControl:GetSelectedBgmIdByStageId(self.StageId)
+    if bgmId then
+        self._Control.MusicControl:PlayBgmIfNotCurrent(bgmId)
+    end
+end
+
+function XUiPBRShopNew:_StopSelectedBgm()
+    self._Control.MusicControl:StopPreview()
+end
+
+function XUiPBRShopNew:_OnMusicPopupClosed()
+    self:_PlaySelectedBgm()
+
+    if self.UiGridMusic then
+        self.UiGridMusic:RefreshBgmName(self.StageId)
+    end
 end
 
 --endregion

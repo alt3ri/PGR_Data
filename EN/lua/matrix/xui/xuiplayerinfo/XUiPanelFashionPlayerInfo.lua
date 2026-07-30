@@ -30,6 +30,7 @@ function XUiPanelFashionPlayerInfo:Ctor(ui, rootUi)
     XTool.InitUiObject(self)
 
     self.FashionList = {}           --拥有的成员涂装
+    self.FashionColors = {}
     self.WeaponFashionList = {}     --拥有的武器涂装
     self.AllFashionList = {}        --全部成员涂装信息
     self.AllWeaponFashionList = {}  --全部武器涂装信息
@@ -87,8 +88,9 @@ end
 function XUiPanelFashionPlayerInfo:RequestData()
         if self.FashionType == XPlayerInfoConfigs.FashionType.Character then
             --请求成员涂装数据
-            XDataCenter.PlayerInfoManager.RequestPlayerFashionData(self.RootUi.Data.Id, function(data)
+            XDataCenter.PlayerInfoManager.RequestPlayerFashionData(self.RootUi.Data.Id, function(data,colorsData)
                 self.FashionList = data
+                self.FashionColors = colorsData
                 self:Refresh(true)
             end)
         else
@@ -106,7 +108,7 @@ end
 
 function XUiPanelFashionPlayerInfo:SetupDynamicTable(hasPermission,index)
     if self.FashionType == XPlayerInfoConfigs.FashionType.Character then
-        self.AllFashionList = self:HandleData(XDataCenter.FashionManager.GetAllFashionTemplateInTime(), self.FashionList, XPlayerInfoConfigs.FashionType.Character, hasPermission)
+        self.AllFashionList = self:HandleData(XDataCenter.FashionManager.GetAllFashionTemplateInTime(), self.FashionList, XPlayerInfoConfigs.FashionType.Character, hasPermission,self.FashionColors)
         self.DynamicTable:SetDataSource(self.AllFashionList)
     else
         self.AllWeaponFashionList = self:HandleData(XWeaponFashionConfigs.GetWeaponFashionResTemplatesInTime(), self.WeaponFashionList, XPlayerInfoConfigs.FashionType.Weapon, hasPermission)
@@ -141,9 +143,10 @@ end
 --@allFashion: 配置表得到的全部涂装数据
 --@ownFashion: 服务器返回的已拥有涂装
 --@fashionType: 涂装类型，成员涂装需要过滤泛用式涂装
+--@fashionColors:服务器返回的已拥有涂装颜色属性
 --@return: 有序的涂装数据
 --==============================--
-function XUiPanelFashionPlayerInfo:HandleData(allFashion, ownFashion, fashionType, hasPermission)
+function XUiPanelFashionPlayerInfo:HandleData(allFashion, ownFashion, fashionType, hasPermission,fashionColors)
     if not hasPermission then
         self.PanelScore.gameObject:SetActiveEx(false)
         self.PanelFashionNone.gameObject:SetActiveEx(true)
@@ -158,6 +161,7 @@ function XUiPanelFashionPlayerInfo:HandleData(allFashion, ownFashion, fashionTyp
     local ownCount = 0
     local allFashionList = {}       --最终数据，拥有涂装排在前面
     local fashionListById = {}      --拥有涂装字典,Id做索引，用来查询未解锁成员
+    local isSelf = self.RootUi.Data.Id == XPlayer.Id
 
     for _, v in ipairs(ownFashion) do
         fashionListById[v] = v
@@ -168,9 +172,16 @@ function XUiPanelFashionPlayerInfo:HandleData(allFashion, ownFashion, fashionTyp
         local isWeaponFashion = fashionType ~= XPlayerInfoConfigs.FashionType.Character
         if isWeaponFashion or v.Quality > FASHION_QUALITY_LIMIT then
             local temData = { Data = v, IsLocked = true }
+
             if not isWeaponFashion and v.DefaultHide then
-                -- 成员涂装中 DefaultHide 的颜色涂装:用涂装Id匹配 FashionColor.TargetFashionId,判断是否已拥有该颜色
-                if XMVCA.XFashion:IsTargetFashionColorHas(v.Id) then
+                --查看自己（含设置预览）读本地颜色数据；查看其他玩家只使用后端下发的颜色数据，不可回退本地数据
+                local condition
+                if isSelf then
+                    condition = XMVCA.XFashion:IsTargetFashionColorHas(v.Id)
+                else
+                    condition = fashionColors ~= nil  and XMVCA.XFashion:IsColorContains(fashionColors, v.Id)
+                end
+                if condition then
                     temData.IsLocked = false
                     ownCount = ownCount + 1
                 end
@@ -204,6 +215,7 @@ end
 
 function XUiPanelFashionPlayerInfo:Close()
     self.FashionList = {}
+    self.FashionColors = {}
     self.WeaponFashionList = {}
     self.AllFashionList = {}
     self.AllWeaponFashionList = {}

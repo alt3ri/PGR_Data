@@ -99,6 +99,7 @@ function XDlcActivityAgency:DlcGetNonnegativeAttribs()
         [XDlcNpcAttribType.NormalAtkDmgAmpP] = true,
         [XDlcNpcAttribType.ExSkillDmgAmpP] = true,
         [XDlcNpcAttribType.DodgeEnergy] = true,
+        [XDlcNpcAttribType.HeavyEnergy] = true,
     }
 end
 

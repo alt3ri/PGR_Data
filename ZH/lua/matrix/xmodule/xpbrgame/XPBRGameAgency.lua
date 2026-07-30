@@ -403,6 +403,33 @@ function XPBRGameAgency:ReddotIsTaskGroupAchieved(taskGroupId)
     
     return false
 end
+
+--- 涂装奖励未领取
+function XPBRGameAgency:ReddotIsSkinRewardNotGet()
+    local taskId = self._Model:GetClientPBRNumber("PBRSkinTaskId")
+    
+    if not XTool.IsNumberValidEx(taskId) then
+        return false
+    end
+    
+    local taskData = XDataCenter.TaskManager.GetTaskDataById(taskId)
+
+    if not taskData then
+        return false
+    end
+    
+    return taskData.State ~= XDataCenter.TaskManager.TaskState.Finish
+end
+--endregion
+
+--region 通用接口
+
+--- 通用确认弹窗
+---@param extraData XUiPBRPopupComTipsExtraData
+function XPBRGameAgency:OpenCommonTips(content, closeCb, leftCb, rightCb, extraData)
+    XLuaUiManager.Open("UiPBRPopupComTips", content, closeCb, leftCb, rightCb, extraData)
+end
+
 --endregion
 
 return XPBRGameAgency

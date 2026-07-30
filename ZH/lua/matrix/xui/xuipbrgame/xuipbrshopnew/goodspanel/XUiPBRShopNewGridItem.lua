@@ -1,5 +1,12 @@
 ---@class XUiPBRShopNewGridItem : XUiNode
 ---@field _Control XPBRGameControl
+--- 以下为按商品颜色互斥显示的样式节点；均包装为 XUiPBRShopNewGridStyle，商品名称/描述/升阶提示/购买按钮等已下沉其中
+---@field GridNull UnityEngine.RectTransform 空位样式（无商品时显示）
+---@field GridPropStyle UnityEngine.RectTransform 道具样式节点
+---@field GridSkillStyleRed UnityEngine.RectTransform 红色技能样式节点
+---@field GridSkillStyleBlue UnityEngine.RectTransform 蓝色技能样式节点
+---@field GridSkillStyleYellow UnityEngine.RectTransform 黄色技能样式节点
+---@field ImgUp UnityEngine.RectTransform 可升阶提示箭头（拥有可合成技能时显示，由 GridItem 统一管理）
 local XUiPBRShopNewGridItem = XClass(XUiNode, "XUiPBRShopNewGridItem")
 local XUiPBRShopNewGridStyle = require('XUi/XUiPBRGame/XUiPBRShopNew/GoodsPanel/XUiPBRShopNewGridStyle')
 
@@ -37,14 +44,6 @@ end
 
 ---@overload
 function XUiPBRShopNewGridItem:InitComponents()
-    if self.TxtDetail:GetType() == typeof(CS.XUiComponent.XUiRichTextCustomRender) then
-        self.TxtDetail.requestImage = self._Control:GetRichTextImageRequestHandler()
-    end
-    
-    if self.BtnChoose then
-        self.BtnChoose:AddEventListener(function() self:OnBtnChooseClick() end)
-    end
-    
     -- 与配置枚举对应
     self.GridStyleUiDict = {
         [GridStyleType.Null] = self.GridNull,
@@ -58,116 +57,61 @@ function XUiPBRShopNewGridItem:InitComponents()
     self.GridStyleDict = {}
 end
 
-function XUiPBRShopNewGridItem:OnBtnChooseClick()
-    self.RootUi:OnSelectItemSignal(self.ItemId)
-end
-
 ---@param itemId number
 function XUiPBRShopNewGridItem:Refresh(itemId, resetScroll)
-    self:AOPRefreshBefore()
+    self:HideAllGridStyles()
 
     if not itemId then
         -- 显示空
         self:ShowEmpty()
+        if self.ImgUp then
+            self.ImgUp.gameObject:SetActiveEx(false)
+        end
         return
-    end
-
-    if resetScroll then
-        self.PanelDesc.verticalNormalizedPosition = 1
     end
 
     self.ItemId = itemId
 
-
     local itemCfg = self._Control:GetPBRItemCfgById(itemId)
 
-    -- 基础信息
-    self.TxtName.text = itemCfg.ItemName
-    self.TxtDetail.text = XUiHelper.ReplaceTextNewLine(itemCfg.ItemDesc)
-
-    -- 根据颜色获取对应的样式
+    -- 根据颜色获取对应的样式，商品名称/描述/升阶提示/购买按钮等展示均由样式节点自行处理
     local gridStyle = self:_GetGridStyleByColor(itemCfg.OrbColor)
 
     if gridStyle then
         gridStyle:Open()
-        
-        gridStyle:Refresh(self.ItemId)
 
-        if itemCfg.ItemType == XMVCA.XPBRGame.EnumConst.ItemType.Skill then
-            self:AOPRefreshSkillShowAddition()
-        end
+        gridStyle:Refresh(self.ItemId, resetScroll)
     end
 
-    self:AOPRefreshAfter()
+    self:_RefreshImgUp(itemId, itemCfg)
 end
 
----@overload
-function XUiPBRShopNewGridItem:AOPRefreshBefore()
-    self:HideAllGridStyles()
-
-    -- 默认隐藏
-    if self.ImgUp then
-        self.ImgUp.gameObject:SetActiveEx(false)
+function XUiPBRShopNewGridItem:_RefreshImgUp(itemId, itemCfg)
+    if not self.ImgUp then
+        return
     end
 
-    if self.TxtUpDesc then
-        self.TxtUpDesc.gameObject:SetActiveEx(false)
-    end
+    local show = false
 
-    if self.ImgUpBg then
-        self.ImgUpBg.gameObject:SetActiveEx(false)
-    end
-end
+    if itemCfg and itemCfg.ItemType == XMVCA.XPBRGame.EnumConst.ItemType.Skill then
+        local isHigherOrCanBeHigher = false
+        local isOwned, nextLevelItemId = self._Control.InGameControl:CheckIsHasItemAndGetNextItemId(itemId)
 
----@overload
-function XUiPBRShopNewGridItem:AOPRefreshSkillShowAddition()
-    -- 对于技能而言，存在合并升阶，需要判断当前技能是否已拥有
-    local isHigherOrCanBeHigher = false
-    local isOwned, nextLevelItemId = self._Control.InGameControl:CheckIsHasItemAndGetNextItemId(self.ItemId)
-
-    if isOwned and nextLevelItemId then
-        isHigherOrCanBeHigher = true
-    else
-        local isHigher, oldItemId = self._Control.InGameControl:CheckItemIsHigherThanOwnedSkill(self.ItemId)
-
-        if isHigher and oldItemId then
+        if isOwned and nextLevelItemId then
             isHigherOrCanBeHigher = true
-        end
-    end
-    
-    local notSold = not self._Control.InGameControl:GetIsItemChoseByItemId(self.ItemId)
-    
-    if isHigherOrCanBeHigher and notSold then
-        -- 显示升级箭头和描述
-        if self.ImgUp then
-            self.ImgUp.gameObject:SetActiveEx(true)
-        end
-        
-        if XTool.IsNumberValidEx(nextLevelItemId) then
-            -- 只有同阶合成时才需要显示下一阶的效果描述
-            if self.ImgUpBg then
-                self.ImgUpBg.gameObject:SetActiveEx(true)
-            end
-            
-            if self.TxtUpDesc then
-                self.TxtUpDesc.gameObject:SetActiveEx(true)
-            end
+        else
+            local isHigher, oldItemId = self._Control.InGameControl:CheckItemIsHigherThanOwnedSkill(itemId)
 
-            local nextItemCfg = self._Control:GetPBRItemCfgById(nextLevelItemId)
-            
-            if nextItemCfg and self.TxtUpDesc then
-                self.TxtUpDesc.text = XUiHelper.ReplaceTextNewLine(nextItemCfg.ItemDesc)
+            if isHigher and oldItemId then
+                isHigherOrCanBeHigher = true
             end
         end
-    end
-end
 
----@overload
-function XUiPBRShopNewGridItem:AOPRefreshAfter()
-    if self.BtnChoose then
-        -- 判断当前是否已选择该物品，如果是则置灰按钮
-        self.BtnChoose:SetButtonState(self._Control.InGameControl:GetIsItemChoseByItemId(self.ItemId) and CS.UiButtonState.Disable or CS.UiButtonState.Normal)
+        local notSold = not self._Control.InGameControl:GetIsItemChoseByItemId(itemId)
+        show = isHigherOrCanBeHigher and notSold
     end
+
+    self.ImgUp.gameObject:SetActiveEx(show)
 end
 
 function XUiPBRShopNewGridItem:HideAllGridStyles()
@@ -187,9 +131,6 @@ function XUiPBRShopNewGridItem:HideAllGridStyles()
 end
 
 function XUiPBRShopNewGridItem:ShowEmpty()
-    self.TxtName.text = ''
-    self.TxtDetail.text = ''
-
     if self.GridNull then
         self.GridNull.gameObject:SetActiveEx(true)
     end
@@ -206,7 +147,7 @@ function XUiPBRShopNewGridItem:_GetGridStyleByColor(color)
             local go = self.GridStyleUiDict[styleType]
 
             if go then
-                grid = XUiPBRShopNewGridStyle.New(go, self, self.RootUi)
+                grid = self:GetGridStyleCls().New(go, self, self.RootUi)
 
                 self.GridStyleDict[styleType] = grid
             end
@@ -214,6 +155,12 @@ function XUiPBRShopNewGridItem:_GetGridStyleByColor(color)
         
         return grid
     end
+end
+
+--- 子类可重写：返回样式节点使用的类（详情弹窗复用商品结构时替换为详情样式类）
+---@return XUiPBRShopNewGridStyle
+function XUiPBRShopNewGridItem:GetGridStyleCls()
+    return XUiPBRShopNewGridStyle
 end
 
 return XUiPBRShopNewGridItem

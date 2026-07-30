@@ -82,17 +82,23 @@ function XUiPanelMainLine:OnDisable()
     self.IsEnable = false
     self.CurrentChapterListControl:SetCurrGridOpen() -- 退出时要强设一遍展开样式，防止在滑动侧边栏过程中，快速切换底部标签再切回来导致open动画播放错误
 
-    self.RootUi.BgmMusicPlayer:ClearTempMusic()
-end
-
-function XUiPanelMainLine:RefreshBgm(groupConfig)
-    local bgmCueId = groupConfig.BgmCueId
-    if bgmCueId ~= 0 then
-        self.RootUi.BgmMusicPlayer:SetTempMusic(bgmCueId)
-    else
-        self.RootUi.BgmMusicPlayer:ClearTempMusic()
-    end
-end
+    -- 临时 BGM 功能本期暂不启用
+    -- self.RootUi.BgmMusicPlayer:ClearTempMusic()
+end
+
+function XUiPanelMainLine:RefreshBgm(groupConfig)
+    if not self or not groupConfig then
+        return
+    end
+
+    -- 临时 BGM 功能本期暂不启用
+    -- local bgmCueId = groupConfig.BgmCueId
+    -- if bgmCueId ~= 0 then
+    --     self.RootUi.BgmMusicPlayer:SetTempMusic(bgmCueId)
+    -- else
+    --     self.RootUi.BgmMusicPlayer:ClearTempMusic()
+    -- end
+end
 
 function XUiPanelMainLine:RefreshChapterList(groupId, index, isFirstChange)
     if index == nil then

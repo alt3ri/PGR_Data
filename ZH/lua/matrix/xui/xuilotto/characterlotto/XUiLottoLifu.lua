@@ -277,9 +277,34 @@ function XUiLottoLifu:AddBtnListener()
     self.BtnXiangqing.CallBack = function() self:OnBtnShowRewardClick() end
     self.BtnStory.CallBack = function() self:OnBtnSkip2StoryClick() end
     self.BtnVoice.CallBack = function() self:OnBtnVoiceClick() end
+
+    if self.BtnChange then
+        self.BtnChange.CallBack = function()
+            self:OnBtnChangeClick()
+        end
+        self:RefreshBtnChange()
+    end
+end
+
+function XUiLottoLifu:RefreshBtnChange()
+    if not self.BtnChange then return end
+    local lottoId = self._LottoGroupData:GetDrawData():GetId()
+    self.BtnChange.gameObject:SetActiveEx(XDataCenter.LottoManager.IsLottoIdBelongSelfChoice(lottoId))
+end
+
+function XUiLottoLifu:OnBtnChangeClick()
+    -- 必须先翻 Entrance.IsChangeMode 再 Close，否则 Entrance.OnEnable 会因 dic 已选直接 CloseImmediately
+    XDataCenter.LottoManager.OpenSelfChoiceEntranceForChange()
+    self:Close()
 end
 
 function XUiLottoLifu:OnBtnBackClick()
+    -- 自选卡池：直接回主界面（Entrance 由 RunMain 一并关闭）
+    local lottoId = self._LottoGroupData:GetDrawData():GetId()
+    if XDataCenter.LottoManager.IsLottoIdBelongSelfChoice(lottoId) then
+        XLuaUiManager.RunMain()
+        return
+    end
     self:Close()
 end
 

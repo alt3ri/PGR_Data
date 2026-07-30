@@ -258,11 +258,11 @@ end
 ---替换 {Attr:属性Id} 占位符为角色当前属性值
 ---@param desc string
 ---@return string
-function XTheatre6Control:ReplaceAttrPlaceholder(desc)
+function XTheatre6Control:ReplaceAttrPlaceholder(desc, customModelData)
     if not desc or not string.find(desc, "{Attr:", 1, true) then
         return desc
     end
-    local modelData = self:GetCurPlayModeData()
+    local modelData = customModelData or self:GetCurPlayModeData()
     return string.gsub(desc, "{Attr:(%d+)}", function(idStr)
         local attrId = tonumber(idStr)
         local attrData = modelData and modelData.Attrs[attrId]
@@ -273,13 +273,13 @@ end
 ---获取技能描述
 ---@param skillId number 技能Id
 ---@param isShort boolean 是否获取短描述
-function XTheatre6Control:GetSkillDesc(skillId, isShort, isShowLevelUp)
+function XTheatre6Control:GetSkillDesc(skillId, isShort, isShowLevelUp, customModelData)
     local config = self:GetSkillCfgById(skillId)
     local desc = isShort and config.ShortDesc or config.Desc
     if not desc then
         return nil
     end
-    desc = self:ReplaceAttrPlaceholder(desc)
+    desc = self:ReplaceAttrPlaceholder(desc, customModelData)
     desc = XUiHelper.ReplaceTextNewLine(desc)
 
     local descParams = config.DescParams

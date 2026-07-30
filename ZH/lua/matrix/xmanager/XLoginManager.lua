@@ -1199,6 +1199,10 @@ XRpc.NotifyLogin = function(data)
     end
     noticeProfiler:Stop()
     
+    if data.AudioPlayerLoginData then
+        XMVCA.XMusicPlayer:OnNotifyAudioPlayerLoginData(data.AudioPlayerLoginData)
+    end
+    
     XEventManager.DispatchEvent(XEventId.EVENT_LOGIN_DATA_LOAD_COMPLETE)
 
     local onloginProfiler = loginProfiler:CreateChild("OnLogin")
@@ -1336,6 +1340,7 @@ XRpc.ForceLogoutNotify = function(res)
     XLoginManager.Disconnect()
     CS.XFightNetwork.Disconnect()
     ClearHeartbeatTimer()
+    XEventManager.DispatchEvent(XEventId.EVENT_FORCE_LOGOUT)
     if XDataCenter.UiPcManager.IsCloudGame() then
         -- 云游戏在部分错误情况下，直接弹出提示，关闭游戏
         CS.XWLinkAgent.Exit(error_txt)

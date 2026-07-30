@@ -32,9 +32,12 @@ function XUiPBRTask:InitComponents()
     self.DynamicTable = XUiHelper.DynamicTableNormal(self, self.TaskList, XUiPBRTaskGridTask)
 end
 
-function XUiPBRTask:OnStart(...)
+function XUiPBRTask:OnStart(tabIndex, focusTaskId)
     -- 默认选中第一个页签
-    self.BtnGroup:SelectIndex(1)
+    tabIndex = tabIndex or 1
+    self._FocusTaskIdFirst = focusTaskId
+    
+    self.BtnGroup:SelectIndex(tabIndex)
 end
 
 function XUiPBRTask:OnEnable()
@@ -112,7 +115,7 @@ function XUiPBRTask:RefreshCurTabTasks()
 
         if not XTool.IsTableEmpty(taskDataList) then
             self.DynamicTable:SetDataSource(taskDataList)
-            self.DynamicTable:ReloadDataASync(1)
+            self.DynamicTable:ReloadDataASync(self:_GetTaskDynamicTableStartIndex(taskDataList))
             self.ImgEmpty.gameObject:SetActiveEx(false)
             return
         end
@@ -121,6 +124,25 @@ function XUiPBRTask:RefreshCurTabTasks()
     self.DynamicTable:SetDataSource(nil)
     self.DynamicTable:RecycleAllTableGrid()
     self.ImgEmpty.gameObject:SetActiveEx(true)
+end
+
+function XUiPBRTask:_GetTaskDynamicTableStartIndex(taskDataList)
+    if self._FocusTaskIdFirst then
+        local targetTaskId = self._FocusTaskIdFirst
+        self._FocusTaskIdFirst = nil
+        
+        -- 找到次序索引
+        if not XTool.IsTableEmpty(taskDataList) then
+            for i, v in pairs(taskDataList) do
+                if v.TaskId == targetTaskId then
+                    return i
+                end
+            end
+        end
+    end
+    
+    -- 默认为1
+    return 1
 end
 
 function XUiPBRTask:RefreshTabReddot()
