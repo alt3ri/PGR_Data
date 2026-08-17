@@ -210,7 +210,7 @@ function XUiBigWorldProcessCourse:_RefreshProgressReward(progressEntitys)
             count = count + 1
         end
     end
-    for i = count + 1, table.nums(self._ProgressGrids) do
+    for i = count + 1, #self._ProgressGrids do
         self._ProgressGrids[i]:Close()
     end
 end

@@ -304,6 +304,12 @@ function XUiFashionDetail:ShowBuyPrice()
             self._PriceHandlers.SetDatas[gainType](dataDict[gainType], params)
         end
         local datas = dataDict[gainType]
+        -- 套装已全部拥有时 GetGroupNeedToBuyInfo 返回空 dict，dataDict[gainType] 未赋值，datas 为 nil。
+        -- 此时购买按钮由 ShowBuyButton 切换为穿戴态（已隐藏 BtnBuy），无需算价格，直接返回；
+        -- 否则 TotalPrice/RealPrice 会以 nil 调 PurchaseConsumeCount(nil)→ ipairs(nil) 崩溃。
+        if not datas or XTool.IsTableEmpty(datas) then
+            return
+        end
         local totalPrice = self._PriceHandlers.TotalPrice[gainType](datas)
         local realPrice = self._PriceHandlers.RealPrice[gainType](datas)
 
@@ -503,7 +509,9 @@ function XUiFashionDetail:SetDetailData()
         end
         self.GridItemObj:ResetUi()
         self.GridItemObj:ShowIcon(icon)
-        self.GridItemObj:SetUiActive(self.GridItemObj.TxtHave, isHave)
+        -- GridCommon 按名绑定的 TxtHave 与本预制 UI 命名不一致导致对象冗余，改用 UiObject 手动绑定的 TxtIsHave/ImgIsHave 控制已拥有显示
+        self.GridItemObj:SetUiActive(self.GridItemObj.TxtIsHave, isHave)
+        self.GridItemObj:SetUiActive(self.GridItemObj.ImgIsHave, isHave)
     elseif not XTool.IsTableEmpty(goodIdList) and not self.IsShowFashionIconWithoutGift then
         self.GridItem.gameObject:SetActiveEx(false)
         self.RewordGoodList.gameObject:SetActiveEx(true)
@@ -687,18 +695,54 @@ function XUiFashionDetail:OnBeforeBtnBuyClick(cb)
     -- 构建viewmodel
 
     ---@type CoatingBuyTipsViewModel
-    local viewModel = {
-        Title = self.TxtFashionName.text, -- 和UI文本一致即可
-        SubTitle = self.Desc.text, -- 和UI文本一致即可
-        DetailDesc = self.WorldDesc.text, -- 和UI文本一致即可
-        RewardDataList = self.RewardDataList,
-        RealCost = self.BuyData.ItemCount,
-        OriginCost = self.BuyData.OriginCount,
-        ItemId = self.BuyData.ConsumeId,
-        AssetsItemIds = self._ShowAssetsItemIds,
-        EndTime = self.BuyData.EndTime,
-        IsTimeLimit = XTool.IsNumberValid(self.BuyData.EndTime),
-    }
+    local viewModel
+    if self.IsEnableGroupSales and self.FashionGroup.GainType == XEnumConst.FashionSuit.GainType.Purchase then
+        -- 套装分支（Purchase gainType）：对齐套装购买界面 XUiPanelFashionSuitPurchase:GetPrice / OnBuyBefore。
+        -- 价格/原价/货币/EndTime 全部取套装口径（首件礼包），不再用单件 BuyData。
+        -- 首件取法与 XFashionSuitAgency:PurchaseBuyFashionGroup 一致：packageItems[1]。
+        -- Shop gainType 套装暂未接入套装数据（回退单件 viewModel，保留原双弹窗行为），
+        -- 待确认 shop 组合经本界面可达性后单独补齐。
+        local dict = XMVCA.XFashionSuit:GetGroupNeedToBuyInfo(self.FashionGroup.Id)
+        local packageItems = {}
+        for _, params in pairs(dict) do
+            local item = XDataCenter.PurchaseManager.GetPurchaseDataById(params[1])
+            if item then
+                table.insert(packageItems, item)
+            end
+        end
+        if XTool.IsTableEmpty(packageItems) then
+            XLog.Error(string.format("套装购买数据不存在或已全部拥有：%s", self.FashionGroup.Id))
+            return
+        end
+        local packageData = packageItems[1]
+        local realCost, originCost = XMVCA.XFashionSuit:GetRealPurchasePriceWithDiscount(packageItems)
+        local endTime = XDataCenter.PurchaseManager.GetPurchaseBuyDataEndTime(packageData)
+        viewModel = {
+            Title = self.TxtFashionName.text,
+            SubTitle = self.Desc.text,
+            DetailDesc = self.WorldDesc.text,
+            RewardDataList = self.RewardDataList, -- 套装两件（角色+武器），_GetRewardDataList 套装分支已塞
+            RealCost = realCost,
+            OriginCost = originCost,
+            ItemId = packageData.ConsumeId,
+            AssetsItemIds = self._ShowAssetsItemIds,
+            EndTime = endTime,
+            IsTimeLimit = XTool.IsNumberValid(endTime),
+        }
+    else
+        viewModel = {
+            Title = self.TxtFashionName.text, -- 和UI文本一致即可
+            SubTitle = self.Desc.text, -- 和UI文本一致即可
+            DetailDesc = self.WorldDesc.text, -- 和UI文本一致即可
+            RewardDataList = self.RewardDataList,
+            RealCost = self.BuyData.ItemCount,
+            OriginCost = self.BuyData.OriginCount,
+            ItemId = self.BuyData.ConsumeId,
+            AssetsItemIds = self._ShowAssetsItemIds,
+            EndTime = self.BuyData.EndTime,
+            IsTimeLimit = XTool.IsNumberValid(self.BuyData.EndTime),
+        }
+    end
 
     -- 打开详情界面
     XLuaUiManager.Open("UiPurchaseBuyCoatingTips", viewModel, cb, handler(self, self.Close))
@@ -886,18 +930,46 @@ function XUiFashionDetail:OnBtnRandomWearClick()
     end)
 end
 
+--- 套装购买：Purchase gainType 对齐套装购买界面 XUiPanelFashionSuitPurchase:OnPurchaseBuy；
+--- Shop 等 gainType 保留老 GroupBuyCallBack 分派（经 ShopBuyFashionGroup 含 ShowGroupSalesPopup），
+--- 套装数据接入二级弹窗暂未对齐 Shop（待确认 shop 组合经本界面可达性后单独补齐）。
 function XUiFashionDetail:BuyFashionGroup()
-    if self.BuyData.PurchaseLBUpdateCb then
-        XMVCA.XFashionSuit:PurchaseBuyFashionGroup(self.FashionGroup.Id, self.BuyData.PurchaseLBUpdateCb)
-        -- self:OnBtnBackClick()
+    local gainType = self.FashionGroup.GainType
+    if gainType ~= XEnumConst.FashionSuit.GainType.Purchase then
+        -- Shop 等 gainType：走老 GroupBuyCallBack 分派（保留原行为，含 ShowGroupSalesPopup）
+        if not self.BuyData.GroupBuyCallBack then
+            XLog.Error("购买套装组合失败：未注册GroupBuyCallBack方法.")
+            return
+        end
+        self.BuyData.GroupBuyCallBack(self.FashionGroup.Id)
         return
     end
-    if not self.BuyData.GroupBuyCallBack then
-        XLog.Error("购买套装组合失败：未注册GroupBuyCallBack方法.")
+    -- Purchase gainType：对齐套装购买界面 OnPurchaseBuy。二级弹窗(UiPurchaseBuyCoatingTips)已做
+    -- 下架拦截与购买确认，此处确认后直接批量购买，不再经 XFashionSuitAgency:PurchaseBuyFashionGroup
+    -- ——其内部会再弹 ShowGroupSalesPopup，造成双弹窗。
+    local dict = XMVCA.XFashionSuit:GetGroupNeedToBuyInfo(self.FashionGroup.Id)
+    local packageItems, packageIds = {}, {}
+    for _, params in pairs(dict) do
+        local item = XDataCenter.PurchaseManager.GetPurchaseDataById(params[1])
+        if item then
+            table.insert(packageItems, item)
+            table.insert(packageIds, params[1])
+        end
+    end
+    if XTool.IsTableEmpty(packageItems) then
+        XLog.Error(string.format("购买套装组合失败：商店数据不存在或已全部购买：%s", self.FashionGroup.Id))
         return
     end
-    self.BuyData.GroupBuyCallBack(self.FashionGroup.Id)
-    -- self:OnBtnBackClick()
+    -- 下架/售罄/余额不足拦截（含跳转充值页），与原 PurchaseBuyFashionGroup 内部一致
+    if not XMVCA.XFashionSuit:CheckPurchaseGroupBuy(packageItems) then
+        return
+    end
+    -- 直接批量购买
+    XDataCenter.PurchaseManager.MultiPurchaseRequest(packageIds, XPurchaseConfigs.GetLBUiTypesList(), function(rewardList)
+        if self.BuyData.PurchaseLBUpdateCb then
+            self.BuyData.PurchaseLBUpdateCb(rewardList)
+        end
+    end)
 end
 
 --endregion
@@ -950,56 +1022,54 @@ end
 
 --- 封装获取标准奖励格式的对象列表
 function XUiFashionDetail:_GetRewardDataList()
-    if self.RewardDataList == nil then
-        self.RewardDataList = {}
+    self.RewardDataList = {}
 
-        -- v1.28-采购优化-赠品队列展示
-        -- 传入Data为单一rewardId的情况
-        local giftRewardId = self.BuyData and self.BuyData.GiftRewardId
-        
-        if type(giftRewardId) == "number" then
-            if giftRewardId ~= 0 then
-                local datas = XRewardManager.GetRewardList(giftRewardId)
-                if datas then
-                    self.RewardDataList = datas
-                end
+    -- v1.28-采购优化-赠品队列展示
+    -- 传入Data为单一rewardId的情况
+    local giftRewardId = self.BuyData and self.BuyData.GiftRewardId
+
+    if type(giftRewardId) == "number" then
+        if giftRewardId ~= 0 then
+            local datas = XRewardManager.GetRewardList(giftRewardId)
+            if datas then
+                self.RewardDataList = datas
             end
-        elseif self.BuyData and self.BuyData.GiftRewardId then
-            self.RewardDataList = self.BuyData.GiftRewardId
         end
+    elseif self.BuyData and self.BuyData.GiftRewardId then
+        self.RewardDataList = XTool.Clone(self.BuyData.GiftRewardId)
+    end
 
-        local id = self.FashionId
-        local fashionId = self.IsEnableGroupSales and self.FashionGroup.FashionId or (self.IsWeaponFashion and 0 or (self.FashionType == FashionType.Color and 0 or id))
-        local weaponFashionId = self.IsEnableGroupSales and self.FashionGroup.WeaponFashionId or (self.IsWeaponFashion and id or 0)
+    local id = self.FashionId
+    local fashionId = self.IsEnableGroupSales and self.FashionGroup.FashionId or (self.IsWeaponFashion and 0 or (self.FashionType == FashionType.Color and 0 or id))
+    local weaponFashionId = self.IsEnableGroupSales and self.FashionGroup.WeaponFashionId or (self.IsWeaponFashion and id or 0)
 
-        if XTool.IsNumberValid(fashionId) then
-            -- v1.31-采购优化-涂装增加CG展示道具
-            local subItems = XDataCenter.FashionManager.GetFashionSubItems(fashionId)
-            if subItems then
-                for _, itemTemplateId in ipairs(subItems) do
-                    table.insert(self.RewardDataList, { TemplateId = itemTemplateId, Count = 1, IsSubItem = true })
-                end
-            end
-
-            local giftId = XFashionConfigs.GetFashionTemplate(fashionId).GiftId
-            if XTool.IsNumberValid(giftId) then
-                local giftGoodShowData = XGoodsCommonManager.GetGoodsShowParamsByTemplateId(giftId)
-                giftGoodShowData.IsGift = true
-                giftGoodShowData.Count = 1
-                table.insert(self.RewardDataList, giftGoodShowData)
+    if XTool.IsNumberValid(fashionId) then
+        -- v1.31-采购优化-涂装增加CG展示道具
+        local subItems = XDataCenter.FashionManager.GetFashionSubItems(fashionId)
+        if subItems then
+            for _, itemTemplateId in ipairs(subItems) do
+                table.insert(self.RewardDataList, { TemplateId = itemTemplateId, Count = 1, IsSubItem = true })
             end
         end
 
-        --若开启套装购买，则显示全部（角色+武器）
-        if self.IsEnableGroupSales then
-            table.insert(self.RewardDataList, 1, { TemplateId = weaponFashionId, Count = 1, Disable = true })
-            table.insert(self.RewardDataList, 1, { TemplateId = fashionId, Count = 1, Disable = true })
-        elseif not XTool.IsTableEmpty(self.RewardDataList) and not self.IsShowFashionIconWithoutGift then
-            --显示商品本身
-            table.insert(self.RewardDataList, 1, { TemplateId = id, Count = 1, Disable = true })
-        else
-            self.RewardDataList = { { TemplateId = id, Count = 1, Disable = true } }
+        local giftId = XFashionConfigs.GetFashionTemplate(fashionId).GiftId
+        if XTool.IsNumberValid(giftId) then
+            local giftGoodShowData = XGoodsCommonManager.GetGoodsShowParamsByTemplateId(giftId)
+            giftGoodShowData.IsGift = true
+            giftGoodShowData.Count = 1
+            table.insert(self.RewardDataList, giftGoodShowData)
         end
+    end
+
+    --若开启套装购买，则显示全部（角色+武器）
+    if self.IsEnableGroupSales then
+        table.insert(self.RewardDataList, 1, { TemplateId = weaponFashionId, Count = 1, Disable = true })
+        table.insert(self.RewardDataList, 1, { TemplateId = fashionId, Count = 1, Disable = true })
+    elseif not XTool.IsTableEmpty(self.RewardDataList) and not self.IsShowFashionIconWithoutGift then
+        --显示商品本身
+        table.insert(self.RewardDataList, 1, { TemplateId = id, Count = 1, Disable = true })
+    else
+        self.RewardDataList = { { TemplateId = id, Count = 1, Disable = true } }
     end
 
     return self.RewardDataList

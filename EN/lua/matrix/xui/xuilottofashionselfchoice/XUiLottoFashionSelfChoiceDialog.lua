@@ -41,7 +41,7 @@ function XUiLottoFashionSelfChoiceDialog:OnBtnYesClick()
     self:Close()
 end
 
-function XUiLottoFashionSelfChoiceDialog:OnStart(lottoId, isAllGet, confirmCb)
+function XUiLottoFashionSelfChoiceDialog:OnStart(lottoId, isAllGet, confirmCb, isChangeMode)
     self.LottoId = lottoId
     self.ConfirmCb = confirmCb
 
@@ -55,7 +55,9 @@ function XUiLottoFashionSelfChoiceDialog:OnStart(lottoId, isAllGet, confirmCb)
     local tradeName = XMVCA.XCharacter:GetCharacterTradeName(charId)
     local charName = XUiHelper.GetText("CharacterFullName2", name, tradeName)
     local text = nil
-    if isAllGet then
+    if isChangeMode then
+        text = XUiHelper.FormatText(XLottoConfigs.GetLottoClientConfig('LottoFashionSelfChoiceDialogChangeText'), charName, lottoResConfig.Desc)
+    elseif isAllGet then
         text = XUiHelper.FormatText(XGachaConfigs.GetClientConfig('GachaFashionSelfChoiceDialogText1'), charName, lottoResConfig.Desc)
     else
         text = XUiHelper.FormatText(XGachaConfigs.GetClientConfig('GachaFashionSelfChoiceDialogText2'), charName, lottoResConfig.Desc)

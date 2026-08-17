@@ -1,6 +1,6 @@
 local XUiPanelAsset = require("XUi/XUiCommon/XUiPanelAsset")
 local CsXTextManagerGetText = CS.XTextManager.GetText
----@class XUiFubenRepeatchallenge
+---@class XUiFubenRepeatchallenge:XLuaUi
 local XUiFubenRepeatchallenge = XLuaUiManager.Register(XLuaUi, "UiFubenRepeatchallenge")
 
 local XUiPanelRepeatChallengeShowGoods = require('XUi/XUiFubenRepeatchallenge/XUiPanelRepeatChallengeShowGoods')
@@ -12,6 +12,7 @@ function XUiFubenRepeatchallenge:OnAwake()
     self:RegisterClickEvent(self.BtnMainUi, self.OnBtnMainUiClick)
     self:RegisterClickEvent(self.BtnHelp, self.OnBtnHelpClick)
     self:RegisterClickEvent(self.BtnRewardInfo, self.OnBtnRewardInfo)
+    self.BtnMultiHelp:AddEventListener(handler(self, self.OnBtnMultiHelpClick))
     --待机面板(显示等级 奖励 商店)
     local panel = self.PanelStandByInfo
     self.PanelStandByInfo = {}
@@ -79,6 +80,10 @@ function XUiFubenRepeatchallenge:OnStart()
 end
 
 function XUiFubenRepeatchallenge:OnEnable()
+    if self._TimerId then
+        XScheduleManager.UnSchedule(self._TimerId)
+    end
+    self._TimerId = XScheduleManager.ScheduleForeverEx(handler(self, self.TimeUpdate), 1000)
     if not XDataCenter.FubenRepeatChallengeManager.GetIsFirstAutoFightOpen() and XDataCenter.FubenRepeatChallengeManager.IsAutoFightOpen() then
         XDataCenter.FubenRepeatChallengeManager.SetAutoFightOpen()
         XUiManager.TipErrorWithKey("AutoFightUnLock")
@@ -87,10 +92,17 @@ function XUiFubenRepeatchallenge:OnEnable()
 end
 
 function XUiFubenRepeatchallenge:OnDisable()
+    if self._TimerId then
+        XScheduleManager.UnSchedule(self._TimerId)
+    end
 end
 
 function XUiFubenRepeatchallenge:OnDestroy()
     XRedPointManager.RemoveRedPointEvent(self.CoinRedPointId)
+end
+
+function XUiFubenRepeatchallenge:TimeUpdate()
+    self:RefreshMultiReward()
 end
 
 --刷新主面板界面
@@ -291,4 +303,31 @@ function XUiFubenRepeatchallenge:SetMaxChallengeTimes()
     end
     self.ChallengeCount = maxChallengeCount
     self:RefreshChallengeTimes()
-end 
+end
+
+function XUiFubenRepeatchallenge:RefreshMultiReward()
+    if not XDataCenter.FubenRepeatChallengeManager.IsMultiRewardOpen() then
+        self.Tag.gameObject:SetActiveEx(false)
+        return
+    end
+    local multiRewardCfg = XDataCenter.FubenRepeatChallengeManager.GetMultiRewardActivityCfg()
+    local usedCount = XDataCenter.FubenRepeatChallengeManager.GetMultiRewardDailyUsedCount()
+    local dailyMultiRewardCount = multiRewardCfg.DailyMultiRewardCount
+    local countStr = XTool.ConvertChineseNumberString(multiRewardCfg.Multiple)
+    self.Tag.gameObject:SetActiveEx(true)
+    self.TextAT.text = XUiHelper.GetText("ActivityRepeatChallengeMultiRewardTimes", countStr)
+    self.TxtATNums.text = string.format("%s/%s", dailyMultiRewardCount - usedCount, dailyMultiRewardCount)
+end
+
+function XUiFubenRepeatchallenge:OnBtnMultiHelpClick()
+    local multiRewardCfg = XDataCenter.FubenRepeatChallengeManager.GetMultiRewardActivityCfg()
+    local usedCount = XDataCenter.FubenRepeatChallengeManager.GetMultiRewardTotalUsedCount()
+    local leftCount = multiRewardCfg.MultiRewardCount - usedCount
+    local countStr = XTool.ConvertChineseNumberString(multiRewardCfg.Multiple)
+    local title = XUiHelper.GetText("ActivityRepeatChallengeMultiRewardTitle")
+    local content = XUiHelper.GetText("ActivityRepeatChallengeMultiRewardDesc",
+            multiRewardCfg.DailyMultiRewardCount, countStr, multiRewardCfg.MultiRewardCount, leftCount)
+    XLuaUiManager.Open("UiFubenDialog", title, XUiHelper.ReplaceTextNewLine(content))
+end
+
+return XUiFubenRepeatchallenge

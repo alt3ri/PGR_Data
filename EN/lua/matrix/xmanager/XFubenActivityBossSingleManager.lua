@@ -50,7 +50,6 @@ XFubenActivityBossSingleManagerCreator = function()
 
         return sections
     end
-    
 
 
     function XFubenActivityBossSingleManager.PreFight(stage, teamId, isAssist, challengeCount, challengeId)
@@ -86,10 +85,6 @@ XFubenActivityBossSingleManagerCreator = function()
             return
         end
 
-        if not XFubenActivityBossSingleManager.IsHardBossLevel(settleData.StageId)   then
-            CS.XFight.ExitForClient(true)
-            return 
-        end
 
         if not res or not settleData then
             CS.XFight.ExitForClient(true)
@@ -123,7 +118,9 @@ XFubenActivityBossSingleManagerCreator = function()
         if stageType ~= XEnumConst.FuBen.StageType.ActivityBossSingle then
             return
         end
+        
         if not XFubenActivityBossSingleManager.IsHardBossLevel(stageId) then
+            CS.XFight.ExitForClient(true)
             return
         end
         XFubenActivityBossSingleManager._OpenRewardUi(FightSettleDataCache)
@@ -507,11 +504,13 @@ XFubenActivityBossSingleManagerCreator = function()
         if XTool.IsNumberValid(stageId) then
             local needCount = XFubenActivityBossSingleConfigs.GetNeedCharacterCount(stageId)
             clearAll = teamCount ~= needCount
+            if needCount == 1 then
+                clearAll =  XTool.IsNumberValid(tmpIds[2]) or XTool.IsNumberValid(tmpIds[3]) 
+            end
         end
 
         for pos, id in ipairs(ids) do
-            if  clearAll or not XMVCA.XCharacter:IsOwnCharacter(id)
-                    and not XRobotManager.CheckIsRobotId(id) then
+            if clearAll or (not XMVCA.XCharacter:IsOwnCharacter(id) and not XRobotManager.CheckIsRobotId(id)) then
                 tmpIds[pos] = 0
             end
         end

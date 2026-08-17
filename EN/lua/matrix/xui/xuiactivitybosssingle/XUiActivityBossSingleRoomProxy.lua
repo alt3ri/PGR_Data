@@ -41,6 +41,14 @@ end
 
 --######################## AOP ########################
 
+function XUiActivityBossSingleRoomProxy:AOPOnStartAfter(rootUi)
+    if self._NeedCharacterCount ~= 1 then return end
+    local team = rootUi.Team
+    if not XTool.IsNumberValid(team:GetEntityIdByTeamPos(1)) then return end
+    team:UpdateCaptainPos(1)
+    team:UpdateFirstFightPos(1)
+end
+
 function XUiActivityBossSingleRoomProxy:AOPOnEnableAfter(rootUi)
     local count = self._NeedCharacterCount
     if count >= MAX_ROLE_COUNT then return end
@@ -54,6 +62,16 @@ function XUiActivityBossSingleRoomProxy:AOPOnEnableAfter(rootUi)
         rootUi.BtnTeamPrefab.gameObject:SetActiveEx(false)
     else
         rootUi.BtnTeamPrefab.gameObject:SetActiveEx(true)
+    end
+
+    -- 1人关时，确保队长位和首发位在1号位
+    if count == 1 then
+        local team = rootUi.Team
+        if XTool.IsNumberValid(team:GetEntityIdByTeamPos(1)) then
+            team:UpdateCaptainPos(1)
+            team:UpdateFirstFightPos(1)
+            rootUi:RefreshCaptainPosInfo()
+        end
     end
 end
 

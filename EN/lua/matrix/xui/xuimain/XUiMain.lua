@@ -64,6 +64,8 @@ function XUiMain:InitPanel()
     self.MainBoardEffect = XUiMainBoardEffect.New(self)
     ---@type XUiPanelSwitchableSceneAnim
     self.SwitchableScene = require("XUi/XUiSwitchableScene/XUiPanelSwitchableSceneAnim").New()
+    ---@type XUiPanelMusicScene
+    self.MusicScene = require("XUi/XUiMusicScene/XUiPanelMusicScene").New(self)
 
     self._CGFinishCallBack = function()
         self.SwitchableScene:OnVideoEnd()
@@ -226,6 +228,7 @@ function XUiMain:OnDisable()
     end
 
     self.SwitchableScene:Stop()
+    self.MusicScene:Stop()
 
     XEventManager.DispatchEvent(XEventId.EVENT_SCENE_UIMAIN_DISABLE)
 
@@ -239,6 +242,7 @@ function XUiMain:OnDestroy()
     self.LeftTop:OnDestroy()
     self.RightBottom:OnDestroy()
     self.SwitchableScene:OnDestory()
+    self.MusicScene:OnDestroy()
     XEventManager.RemoveEventListener(XEventId.EVENT_PRE_ENTER_FIGHT, self.PreEnterFightCallback)
     XEventManager.RemoveEventListener(XEventId.EVENT_SCENE_UIMAIN_RIGHTMIDTYPE_CHANGE, self.ForceChangeUiMainRightMidType, self)
     self._IsClose = true
@@ -460,6 +464,8 @@ function XUiMain:PlayEnterAnim()
             -- if XDataCenter.DlcRoomManager.IsCanReconnect() then
             --     XDataCenter.DlcRoomManager.DialogReconnect()
             -- end
+
+            self:PlayAnimation("CDViewToMain")
             --- 打开邀请界面
             self:OnDlcReceiveInvite()
             --发送公告请求
@@ -602,6 +608,12 @@ function XUiMain:OnUiSceneLoaded(particleGroupName)
         self:UpdateCamera(camera)
     end
     self.SwitchableScene:Play(self.CurSceneId, self.UiSceneInfo.Transform)
+
+    if XDataCenter.PhotographManager.IsInScenePreview() then
+        self.MusicScene:SetForbidSwitch()
+        self.MusicScene:DontSaveData()
+    end
+    self.MusicScene:Play(self.CurSceneId, self.UiSceneInfo.Transform)
 end
 
 function XUiMain:IsShowTerminal()
@@ -661,7 +673,11 @@ function XUiMain:PlayRoleActionUiDisableAnim(signBoardid, stopTime)
     end
     if XMVCA.XFavorability:CheckIsUseNormalUiAnim(signBoardid, self.Name) then
         XEventManager.DispatchEvent(XEventId.EVENT_MAIN_SCENE_ANIM_PLAY_BEGIN)
-        self:PlayAnimation("UiDisable")
+        self:PlayAnimation("UiDisable", function()
+            if self.CG:IsCGPlaying() then
+                self.UiSceneInfo:SetActive(false)
+            end
+        end)
     end
 end
 
@@ -675,6 +691,7 @@ function XUiMain:PlayRoleActionUiEnableAnim(signBoardid)
             XEventManager.DispatchEvent(XEventId.EVENT_MAIN_SCENE_ANIM_PLAY_END)
         end)
     elseif XMVCA.XFavorability:CheckIsUseNormalUiAnim(signBoardid, self.Name) then
+        self.UiSceneInfo:SetActive(true)
         self:PlayAnimationWithMask("UiEnable", function()
             XEventManager.DispatchEvent(XEventId.EVENT_MAIN_SCENE_ANIM_PLAY_END)
         end)

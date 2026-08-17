@@ -1536,6 +1536,8 @@ end
 
 --获取武器超限提升的技能等级
 function XCharacterAgency:GetWeaponOverrunUpSkillLevel(characterId, skillId)
+    if not characterId or characterId == 0 then return 0 end
+    if not self:IsOwnCharacter(characterId) then return 0 end
     local skillGroupId = XMVCA.XCharacter:GetSkillGroupIdAndIndex(skillId)
     local weapon = XMVCA.XEquip:GetCharacterWeapon(characterId)
     return weapon:GetOverrunUpSkillLevel(skillGroupId)

@@ -41,6 +41,7 @@ XDlcHuntAttrManagerCreator = function()
         [XDlcNpcAttribType.NormalAtkDmgAmpP] = true,
         [XDlcNpcAttribType.ExSkillDmgAmpP] = true,
         [XDlcNpcAttribType.DodgeEnergy] = true,
+        [XDlcNpcAttribType.HeavyEnergy] = true,
     }
 
     local function ToXAttrib(attrTable)

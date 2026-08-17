@@ -10,8 +10,6 @@ XClassPartialRequire("XModule/XMusicPlayer/XMusicPlayerConfigAgency", "XMusicPla
 function XMusicPlayerAgency:OnInit()
     --初始化一些变量
     self:InitConfig()
-
-
     self.EventIds = require('XModule/XMusicPlayer/XMusicPlayerEventId')
     self.Enum     = require('XModule/XMusicPlayer/XMusicPlayerEnum')
     self.Util     = require('XModule/XMusicPlayer/XMusicPlayerUtil')
@@ -24,11 +22,7 @@ function XMusicPlayerAgency:InitRpc()
     self:AddRpc("NotifyAudioPlayerBackgroundSongsChange", handler(self, self._OnNotifyAudioPlayerBackgroundSongsChange))
 end
 
-
-
 function XMusicPlayerAgency:InitEvent()
-    --实现跨Agency事件注册
-    --self:AddAgencyEvent()
 end
 
 --region ----------播放和停止接口----------
@@ -45,23 +39,10 @@ function XMusicPlayerAgency:PlayCommonSystemBgm()
     local index = bgmModel:GetPlayIndex()
     local interruptTime = bgmModel:GetInterruptTime()
     bgmModel:SetInterruptTime(0)
-    self:_PlayCommonSystemBgmByIndex(index, interruptTime)
+    self:_PlayCommonSystemBgmByIndex(index, interruptTime/1000)
 end
 
----进入资源卸载期间的fallback播放模式
----@return boolean
-function XMusicPlayerAgency:TryEnterFallbackForUninstall()
-end
 
----设置Cd机失能
-function XMusicPlayerAgency:SetLock(isLock)
-    self._Model.IsLock = isLock
-end
-
----Cd机是否失能
-function XMusicPlayerAgency:IsLock()
-    return self._Model.IsLock
-end
 
 function XMusicPlayerAgency:StopCommonSystemBgmAndRecord()
     local audioInfo = XLuaAudioManager.GetCurrentMusicAudioInfo()
@@ -79,6 +60,22 @@ end
 function XMusicPlayerAgency:RecordAndRemoveCueInfoEvent(audioInfo)
     self:_RemoveCueInfoEvent(audioInfo)
     self:_RecordInterruptInfo(audioInfo) 
+end
+
+
+function XMusicPlayerAgency:SyncCommonSystemBgmFromCdPlayer(musicID)
+    local bgmModel = self._Model:GetCommonSystemBgmModel()
+    local bgmList = self._Model:GetMusicListModel():GetMusicListByListType(self.Enum.MusicListType.BGM)
+
+    local targetMusicID
+    if bgmList and table.indexof(bgmList, musicID) then
+        targetMusicID = musicID
+    elseif bgmList and #bgmList > 0 then
+        targetMusicID = bgmList[1]
+    end
+    bgmModel:SetCurPlayingMusicID(targetMusicID)
+    bgmModel:SetPlayingMusicList(nil)
+    bgmModel:SetInterruptTime(0)
 end
 --endregion ----------播放和停止接口----------
 
@@ -102,8 +99,43 @@ function XMusicPlayerAgency:GetCurCommonBgnCO()
     end
     return self:COGetMusicPlayerAlbumCOByid(musicID)
 end
---endregion ----------public end----------
+--endregion
 
+--region ----------Skip 跳转----------
+---SkipInterface 跳转入口
+---CustomParams[1]=1 表示打开 UiMusicPlayerMain，CustomParams[2] 为 bgmId
+---@param skipCfg XTableSkipFunctional SkipFunctional 配置
+function XMusicPlayerAgency:ExOnSkip(skipCfg, ...)
+    local params = skipCfg.CustomParams
+    if params[1] == 1 then
+        XLuaUiManager.Open("UiMusicPlayerMain", params[2])
+        return true
+    end
+    XLog.Error("XMusicPlayerAgency:ExOnSkip unknown skip type: " .. tostring(params[1]))
+    return false
+end
+--endregion
+
+--region ----------分包处理----------
+---进入资源卸载期间的fallback播放模式
+---@return boolean
+function XMusicPlayerAgency:TryEnterFallbackForUninstall()
+    self:_RebuildCommonSystemBgmPlayingList(false,true)
+    self:PlayCommonSystemBgm()
+end
+--endregion
+
+
+---设置Cd机失能
+function XMusicPlayerAgency:SetLock(isLock)
+    self._IsLock = isLock
+end
+
+---Cd机是否失能
+function XMusicPlayerAgency:IsLock()
+    return self._IsLock
+end
+--endregion
 
 
 
@@ -135,9 +167,18 @@ function XMusicPlayerAgency:_GetCommonSystemBgmPlayingList()
     return self:_RebuildCommonSystemBgmPlayingList(true)
 end
 
-function XMusicPlayerAgency:_RebuildCommonSystemBgmPlayingList(keepCurrentMusic)
+function XMusicPlayerAgency:_RebuildCommonSystemBgmPlayingList(keepCurrentMusic,willUnInstall)
     local bgmModel = self._Model:GetCommonSystemBgmModel()
-    local sourceList = self._Model:GetMusicListModel():GetMusicListByListType(self.Enum.MusicListType.BGM)
+
+    local isDownloaded = XMVCA.XSubPackage:CheckSubpackageDownloadByFunctionType(XFunctionManager.FunctionName.UiMainMusicAlbum)
+    local sourceList 
+    if not isDownloaded or willUnInstall then
+        local fallbackAlbumId = CS.XGame.ClientConfig:GetInt("MusicPlayerFallbackAlbumId")
+        sourceList = {fallbackAlbumId}
+    else
+        sourceList = self._Model:GetMusicListModel():GetMusicListByListType(self.Enum.MusicListType.BGM)
+    end
+
     local playingList = {}
     for i = 1, #sourceList do
         playingList[i] = sourceList[i]
@@ -167,7 +208,7 @@ function XMusicPlayerAgency:_RebuildCommonSystemBgmPlayingList(keepCurrentMusic)
     return playingList
 end
 
-function XMusicPlayerAgency:_PlayCommonSystemBgmByIndex(index,startTime)
+function XMusicPlayerAgency:_PlayCommonSystemBgmByIndex(index,startTime,isLoopPlay)
     if startTime == nil then startTime = 0 end
 
     local cueId, normalizedIndex, musicID = self:_GetCommonSystemBgmCueIdByIndex(index)
@@ -176,11 +217,10 @@ function XMusicPlayerAgency:_PlayCommonSystemBgmByIndex(index,startTime)
     bgmModel:SetCurPlayingMusicID(musicID)
     bgmModel:SetCurBgmCueId(cueId)
 
-    local audioInfo = XLuaAudioManager.PlayMusicInOut2(cueId, -1, startTime, -1, -1, 0, 0)
+    local audioInfo = XLuaAudioManager.PlayMusicInOut2(cueId, -1, startTime, -1, -1, 0, 0, nil, isLoopPlay)
     self:_AddCueInfoEvent(audioInfo)
     XEventManager.DispatchEvent(XEventId.EVENT_MUSIC_PLAYER_CHANGE, cueId)
 end
- 
 
 --region cueInfo 事件
 function XMusicPlayerAgency:_AddCueInfoEvent(audioInfo)
@@ -190,11 +230,14 @@ function XMusicPlayerAgency:_AddCueInfoEvent(audioInfo)
     audioInfo:RemoveUpdateCallback(self._BgmUpdateCb)
     audioInfo:RemoveFinishCallback(self._BgmFinishCb)
     audioInfo:AddUpdateCallback(self._BgmUpdateCb)
-    audioInfo:AddFinishCallback(self._BgmFinishCb)
+    audioInfo:AddFinishCallback(self._BgmFinishCb,self)
 end
 
 function XMusicPlayerAgency:_RemoveCueInfoEvent(audioInfo)
-    -- 弃用：AudioInfo 回收时统一清理回调。
+    if audioInfo then 
+        audioInfo:RemoveUpdateCallback(self._BgmUpdateCb)
+        audioInfo:RemoveFinishCallback(self._BgmFinishCb)
+    end
 end
 
 function XMusicPlayerAgency:_OnBgmUpdateCb()
@@ -221,14 +264,19 @@ function XMusicPlayerAgency:_OnBgmUpdateCb()
         bgmModel:SetInterruptTime(0)
         local playingList = self:_GetCommonSystemBgmPlayingList()
         local loopType = bgmModel:GetMusicCycleType()
-        local nextIndex = bgmModel:GetPlayIndex() + 1
+
+        local curIndex = bgmModel:GetPlayIndex()
+        local nextIndex = curIndex + 1
         if loopType == self.Enum.LoopType.SingleLoop then
-            nextIndex = bgmModel:GetPlayIndex()
+            nextIndex = curIndex
         elseif loopType == self.Enum.LoopType.RandomLoop and nextIndex > #playingList then
             self:_RebuildCommonSystemBgmPlayingList(false)
             nextIndex = 1
         end
-        self:_PlayCommonSystemBgmByIndex(nextIndex)
+
+        local cueId, normalizedNextIndex, musicID = self:_GetCommonSystemBgmCueIdByIndex(nextIndex)
+        local isLoopPlay = normalizedNextIndex ==  curIndex
+        self:_PlayCommonSystemBgmByIndex(nextIndex, 0, isLoopPlay)
     end
 end
 
@@ -259,28 +307,47 @@ end
 ---region 后端事件 
 function XMusicPlayerAgency:OnNotifyAudioPlayerLoginData(data)
     if not data then return end
+    local favoriteListType = self.Enum.MusicListType.Favorite
+    local bgmListType = self.Enum.MusicListType.BGM
+    local oldFavoriteList = self:_CopyMusicList(favoriteListType)
+    local oldBgmList = self:_CopyMusicList(bgmListType)
     local bgmModel = self._Model:GetCommonSystemBgmModel()    
     local isEmpty = #bgmModel  == 0 
 
-    self:_ReplaceMusicListReversed(self.Enum.MusicListType.Favorite, data.FavoriteSongs)
-    self:_ReplaceMusicListReversed(self.Enum.MusicListType.BGM,      data.BackgroundSongs)
-    self._Model:GetCommonSystemBgmModel():MarkChangedAndReset()
-    self:DispatchEvent(XAgencyEventId.EVENT_NOTIFY_MUSIC_LIST_LICK_CHANGE)
-    self:DispatchEvent(XAgencyEventId.EVENT_NOTIFY_MUSIC_LIST_BGM_CHANGE)
+    self:_ReplaceMusicListReversed(favoriteListType, data.FavoriteSongs)
+    self:_ReplaceMusicListReversed(bgmListType, data.BackgroundSongs)
+    if not isEmpty then
+        self._Model:GetCommonSystemBgmModel():SetPlayingMusicList(nil)
+    end
+    self:DispatchEvent(XAgencyEventId.EVENT_NOTIFY_MUSIC_LIST_LICK_CHANGE, oldFavoriteList)
+    self:DispatchEvent(XAgencyEventId.EVENT_NOTIFY_MUSIC_LIST_BGM_CHANGE, oldBgmList)
 end
 
 function XMusicPlayerAgency:_OnNotifyAudioPlayerFavoriteSongsChange(data)
     if not data then return end
-    self:_ReplaceMusicListReversed(self.Enum.MusicListType.Favorite, data.FavoriteSongs)
-    self:DispatchEvent(XAgencyEventId.EVENT_NOTIFY_MUSIC_LIST_LICK_CHANGE)
+    local listType = self.Enum.MusicListType.Favorite
+    local oldList = self:_CopyMusicList(listType)
+    self:_ReplaceMusicListReversed(listType, data.FavoriteSongs)
+    self:DispatchEvent(XAgencyEventId.EVENT_NOTIFY_MUSIC_LIST_LICK_CHANGE, oldList)
 end
 
 function XMusicPlayerAgency:_OnNotifyAudioPlayerBackgroundSongsChange(data)
     if not data then return end
-    self:_ReplaceMusicListReversed(self.Enum.MusicListType.BGM, data.BackgroundSongs)
+    local listType = self.Enum.MusicListType.BGM
+    local oldList = self:_CopyMusicList(listType)
+    self:_ReplaceMusicListReversed(listType, data.BackgroundSongs)
     self._Model:GetCommonSystemBgmModel():MarkChangedAndReset()
-    self:DispatchEvent(XAgencyEventId.EVENT_NOTIFY_MUSIC_LIST_BGM_CHANGE)
+    self:DispatchEvent(XAgencyEventId.EVENT_NOTIFY_MUSIC_LIST_BGM_CHANGE, oldList)
 
+end
+
+function XMusicPlayerAgency:_CopyMusicList(listType)
+    local sourceList = self._Model:GetMusicListModel():GetMusicListByListType(listType)
+    local copiedList = {}
+    for i = 1, #sourceList do
+        copiedList[i] = sourceList[i]
+    end
+    return copiedList
 end
 
 function XMusicPlayerAgency:_ReplaceMusicListReversed(listType, srcList)

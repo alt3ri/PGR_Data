@@ -1,4 +1,4 @@
-local XActivityBrieIsOpen = require("XUi/XUiActivityBrief/XActivityBrieIsOpen")
+local XActivityBrieIsOpen = require("XUi/XUiActivityBrief/XActivityBrieIsOpen")
 --V2.1 复刷关玩法重做(如果想找回旧复刷关的代码，请从V2.0分支获取。)
 XFubenRepeatChallengeManagerCreator = function()
     local METHOD_NAME = { --请求协议
@@ -19,6 +19,14 @@ XFubenRepeatChallengeManagerCreator = function()
     }
     local AddLevelTip -- 权限等级增加提示
 
+    ---多倍奖励活动Id
+    local MultiRewardActivityId
+    ---多倍奖励活动期间已消耗的双倍奖励次数
+    local MultiRewardTotalUsedCount = 0
+    ---多倍奖励活动当日已消耗的双倍奖励次数
+    local MultiRewardDailyUsedCount = 0
+
+    ---@class XFubenRepeatChallengeManager
     local XFubenRepeatChallengeManager = {}
     
     ---是否要重设界面状态（不打开详细界面）
@@ -31,7 +39,9 @@ XFubenRepeatChallengeManagerCreator = function()
         return "FubenRepeatChallengeIsFirstAutoFightOpen" .. XPlayer.Id .. activityId
     end
 
-    function XFubenRepeatChallengeManager.Init() end
+    function XFubenRepeatChallengeManager.Init()
+        XFubenRepeatChallengeManager.InitMultiRewardData()
+    end
     
     --======== 活动 功能开启相关 begin ============
     --region 活动 功能开启相关
@@ -291,6 +301,42 @@ XFubenRepeatChallengeManagerCreator = function()
     function XFubenRepeatChallengeManager.IsResetPanelState()
         return resetPanelState
     end
+
+    function XFubenRepeatChallengeManager.NotifyRepeatChallengeMultiRewardData(data)
+        MultiRewardActivityId = data.ActivityId
+        MultiRewardTotalUsedCount = data.TotalUsedCount
+        MultiRewardDailyUsedCount = data.DailyUsedCount
+    end
+
+    function XFubenRepeatChallengeManager.IsMultiRewardOpen()
+        if not XTool.IsNumberValid(MultiRewardActivityId) then
+            return false
+        end
+        local cfg = XFubenRepeatChallengeManager.GetMultiRewardActivityCfg(MultiRewardActivityId)
+        return cfg and XFunctionManager.CheckInTimeByTimeId(cfg.TimeId, false)
+    end
+
+    ---@return XTableRepeatChallengeMultiReward
+    function XFubenRepeatChallengeManager.GetMultiRewardActivityCfg()
+        if XTool.IsNumberValid(MultiRewardActivityId) then
+            return XFubenRepeatChallengeConfigs.GetMultiRewardConfig(MultiRewardActivityId)
+        end
+        return nil
+    end
+
+    function XFubenRepeatChallengeManager.GetMultiRewardTotalUsedCount()
+        return MultiRewardTotalUsedCount
+    end
+
+    function XFubenRepeatChallengeManager.GetMultiRewardDailyUsedCount()
+        return MultiRewardDailyUsedCount
+    end
+
+    function XFubenRepeatChallengeManager.InitMultiRewardData()
+        MultiRewardActivityId = nil
+        MultiRewardTotalUsedCount = 0
+        MultiRewardDailyUsedCount = 0
+    end
     
     XFubenRepeatChallengeManager.Init()
     return XFubenRepeatChallengeManager
@@ -302,4 +348,8 @@ end
 
 XRpc.NotifyRcExpChange = function(data)
     XDataCenter.FubenRepeatChallengeManager.NotifyRcExpChange(data)
+end
+
+XRpc.NotifyRepeatChallengeMultiRewardData = function(data)
+    XDataCenter.FubenRepeatChallengeManager.NotifyRepeatChallengeMultiRewardData(data)
 end

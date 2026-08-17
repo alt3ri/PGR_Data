@@ -49,7 +49,7 @@ function XUiMusicPlayerMain:OnAwake()
     }
 
     self._TransActionQueue = {}
-    self._ImageMainColorAnalyzer = CS.XImageMainColorAnalyse(8, 24)
+    -- self._ImageMainColorAnalyzer = CS.XImageMainColorAnalyse(8, 24)
 
     self:InitComponents()
 end
@@ -88,7 +88,8 @@ function XUiMusicPlayerMain:InitComponents()
 
 end
 
-function XUiMusicPlayerMain:OnStart(...)
+function XUiMusicPlayerMain:OnStart(bgmId)
+    self._JumpBgmId = bgmId
     self:Refresh()
     self:PlayAnimation("ZhenEnable", function()
         self._Control:SetCDAutoRotateEnabled(true)
@@ -98,7 +99,15 @@ end
 
 function XUiMusicPlayerMain:OnEnable()
     self:_SetEvent(true)
-    self._Control:GetCDPlayerControl():EnterMusicFirstPlayerMusicNotify()
+    local cdControl = self._Control:GetCDPlayerControl()
+    cdControl:EnterMusicFirstPlayerMusicNotify()
+    -- Skip 跳转携带的 bgmId：初始化完成后跳转播放指定歌曲
+    if XTool.IsNumberValid(self._JumpBgmId) then
+        local bgmId = self._JumpBgmId
+        self._JumpBgmId = nil
+        local XMusicPlayerEnum = XMVCA.XMusicPlayer.Enum
+        cdControl:JumpPlayByMusicIDWithNotify(XMusicPlayerEnum.MusicListType.Normal, bgmId)
+    end
 end
 
 function XUiMusicPlayerMain:OnDisable()
@@ -106,10 +115,10 @@ function XUiMusicPlayerMain:OnDisable()
 end
 
 function XUiMusicPlayerMain:OnDestroy()
-    if self._ImageMainColorAnalyzer then
-        self._ImageMainColorAnalyzer:Release()
-        self._ImageMainColorAnalyzer = nil
-    end
+    -- if self._ImageMainColorAnalyzer then
+    --     self._ImageMainColorAnalyzer:Release()
+    --     self._ImageMainColorAnalyzer = nil
+    -- end
     self._Control:GetCDPlayerControl():ExitMusicMainUI()
 end
 
@@ -147,6 +156,7 @@ function XUiMusicPlayerMain:_SetEvent(flag)
         self._Control:AddEventListener(XMusicPlayerEventId.EVENT_VIEW_CALL_SWITCH_STATE, self._EventRequestSwitchStatus, self)
         self._Control:AddEventListener(XMusicPlayerEventId.EVENT_VIEW_CONSOLE_BTN_CLICK, self._RefreshImmerseIdleRecordTime, self)
         self._Control:AddEventListener(XMusicPlayerEventId.EVENT_VIEW_CALL_JUMP_PLAYLIST, self._OnCallJumpPlaylist, self)
+        self._Control:AddEventListener(XMusicPlayerEventId.EVENT_VIEW_PLAY_SFX, self._OnPlaySfx, self)
         self._Control:AddEventListener(XMusicPlayerEventId.EVENT_PLAYER_MUSIC_CHANGE, self._OnCurPlayMusicChange, self)
         self._Control:AddEventListener(XMusicPlayerEventId.EVENT_PLAYER_PLAY_STATE_CHANGE, self._OnPlayStateChange, self)
         self._TickTimer = XScheduleManager.ScheduleForever(function()
@@ -156,6 +166,7 @@ function XUiMusicPlayerMain:_SetEvent(flag)
         self._Control:RemoveEventListener(XMusicPlayerEventId.EVENT_VIEW_CALL_SWITCH_STATE, self._EventRequestSwitchStatus, self)
         self._Control:RemoveEventListener(XMusicPlayerEventId.EVENT_VIEW_CONSOLE_BTN_CLICK, self._RefreshImmerseIdleRecordTime, self)
         self._Control:RemoveEventListener(XMusicPlayerEventId.EVENT_VIEW_CALL_JUMP_PLAYLIST, self._OnCallJumpPlaylist, self)
+        self._Control:RemoveEventListener(XMusicPlayerEventId.EVENT_VIEW_PLAY_SFX, self._OnPlaySfx, self)
         self._Control:RemoveEventListener(XMusicPlayerEventId.EVENT_PLAYER_MUSIC_CHANGE, self._OnCurPlayMusicChange, self)
         self._Control:RemoveEventListener(XMusicPlayerEventId.EVENT_PLAYER_PLAY_STATE_CHANGE, self._OnPlayStateChange, self)
         if self._TickTimer then
@@ -167,9 +178,11 @@ end
 
 function XUiMusicPlayerMain:_OnCurPlayMusicChange()
     local co = self._Control:GetCDPlayerControl():GetCurPlayingMusicCO()
-    self.RImgBg:SetRawImage(co.Bg, function()
-            self:_AnalyzeCurrentMusicBgMainColor()
-    end)
+    -- self.RImgBg:SetRawImage(co.Bg, function()
+    --     self:_AnalyzeCurrentMusicBgMainColor()
+    -- end)
+    self.RImgBg:SetRawImage(co.Bg)
+    self._Control:SetMusicBakedColorStyle(co.Id)
     self:PlayAnimation("ZhenEnable", function()
         self._Control:SetCDAutoRotateEnabled(true)
         self._Control:DispatchEvent(XMVCA.XMusicPlayer.EventIds.EVENT_VIEW_ZHEN_ENABLE_COMPLETE)
@@ -188,23 +201,27 @@ function XUiMusicPlayerMain:_OnPlayStateChange(isPlaying)
     end
 end
 
-function XUiMusicPlayerMain:_AnalyzeCurrentMusicBgMainColor()
-    if not self._ImageMainColorAnalyzer or not self.RImgBg or not self.RImgBg.texture then
-        return
-    end
-
-    local loaded = self._ImageMainColorAnalyzer:LoadTexture2ReadAbleTex(self.RImgBg.texture)
-    if not loaded then
-        XLog.Error("[ImageMainColor] LoadTexture2ReadAbleTex failed, bg=" .. tostring(self.RImgBg.texture.name))
-        return
-    end
-    local color = self._ImageMainColorAnalyzer:AnalyzeMainColor()
-    if not color then
-        XLog.Error("[ImageMainColor] AnalyzeMainColor returned nil mainColor")
-        return
-    end
-    self._Control:SetMusicBgMainColor(color)
+function XUiMusicPlayerMain:_OnPlaySfx(cueName)
+    self.AudioObjectPlayer:PlayByKeyName(cueName)
 end
+
+-- function XUiMusicPlayerMain:_AnalyzeCurrentMusicBgMainColor()
+--     if not self._ImageMainColorAnalyzer or not self.RImgBg or not self.RImgBg.texture then
+--         return
+--     end
+
+--     local loaded = self._ImageMainColorAnalyzer:LoadTexture2ReadAbleTex(self.RImgBg.texture)
+--     if not loaded then
+--         XLog.Error("[ImageMainColor] LoadTexture2ReadAbleTex failed, bg=" .. tostring(self.RImgBg.texture.name))
+--         return
+--     end
+--     local color = self._ImageMainColorAnalyzer:AnalyzeMainColor()
+--     if not color then
+--         XLog.Error("[ImageMainColor] AnalyzeMainColor returned nil mainColor")
+--         return
+--     end
+--     self._Control:SetMusicBgMainColor(color)
+-- end
 
 function XUiMusicPlayerMain:_EventRequestSwitchStatus(targetStatus)
     self:_SwitchStatus(targetStatus)

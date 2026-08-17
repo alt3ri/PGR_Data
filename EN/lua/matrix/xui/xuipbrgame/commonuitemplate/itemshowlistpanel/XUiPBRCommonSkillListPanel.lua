@@ -6,7 +6,18 @@
 
 ---@class XUiPBRCommonSkillListPanel : XUiNode
 ---@field _Control XPBRGameControl
+--- 三色技能预制，各自常驻显示；每种颜色最多 1 个技能，无对应技能时显示空（ImgEmpty）
+---@field GridSkillRed UnityEngine.RectTransform 红色技能格子
+---@field GridSkillBlue UnityEngine.RectTransform 蓝色技能格子
+---@field GridSkillYellow UnityEngine.RectTransform 黄色技能格子
 local XUiPBRCommonSkillListPanel = XClass(XUiNode, "XUiPBRCommonSkillListPanel")
+
+-- 技能颜色枚举（OrbColor 全局一致：1=红 2=蓝 3=黄）
+local ColorType = {
+    Red = 1,
+    Blue = 2,
+    Yellow = 3,
+}
 
 function XUiPBRCommonSkillListPanel:OnStart(...)
     self:InitComponents()
@@ -19,31 +30,44 @@ function XUiPBRCommonSkillListPanel:OnDisable()
 end
 
 function XUiPBRCommonSkillListPanel:OnDestroy()
-    
+
 end
 
 function XUiPBRCommonSkillListPanel:InitComponents()
-    self.GridSkill.gameObject:SetActiveEx(false)
+    -- 三色预制各自绑定一个常驻格子；旧的单预制 GridSkill 克隆逻辑已废弃
+    local skillGridCls = self:GetSkillGridCls()
 
-    -- 预生成固定格子
-    local slotSkillCount = self._Control:GetClientPBRNumber('SettleSkillSlotCount')
+    self.ColorGridList = {
+        [ColorType.Red] = skillGridCls.New(self.GridSkillRed, self),
+        [ColorType.Blue] = skillGridCls.New(self.GridSkillBlue, self),
+        [ColorType.Yellow] = skillGridCls.New(self.GridSkillYellow, self),
+    }
 
-    self.GridSkillList = {}
-
-    for i = 1, slotSkillCount do
-        local go = XUiHelper.Instantiate(self.GridSkill, self.ListSkill)
-
-        self.GridSkillList[i] = self:GetSkillGridCls().New(go, self)
-        self.GridSkillList[i]:Open()
+    -- 显式 Open 保证格子常驻显示（空槽靠内部 ImgEmpty 表达），不依赖 prefab 的初始 active 状态
+    for _, grid in pairs(self.ColorGridList) do
+        grid:Open()
     end
 end
 
---- 根据传入的道具Id列表刷新Id显示，如果列表为空则显示“无”的提示
+--- 根据传入的道具Id列表刷新Id显示，每种颜色最多 1 个技能，无对应技能的颜色显示空
 ---@param itemDatas PbrItem[]
 function XUiPBRCommonSkillListPanel:RefreshItemShow(itemDatas)
-    for index, grid in pairs(self.GridSkillList) do
-        local itemData = itemDatas and itemDatas[index] or nil
-        grid:UpdateItem(itemData)
+    -- 按颜色归位：每色最多 1 个
+    local color2Item = {}
+
+    if itemDatas then
+        for _, itemData in ipairs(itemDatas) do
+            local itemCfg = self._Control:GetPBRItemCfgById(itemData.ItemId)
+
+            if itemCfg then
+                color2Item[itemCfg.OrbColor] = itemData
+            end
+        end
+    end
+
+    -- 三色各自刷新：有该色技能则显示，没有则 UpdateItem(nil) 显示空
+    for color, grid in pairs(self.ColorGridList) do
+        grid:UpdateItem(color2Item[color])
     end
 end
 

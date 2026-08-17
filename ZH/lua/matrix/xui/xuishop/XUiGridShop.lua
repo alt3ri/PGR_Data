@@ -104,6 +104,19 @@ function XUiGridShop:OnBtnBuyClick()
     self:OnBuyGoods()
 end
 
+---是否为可购买的免费商品
+function XUiGridShop:IsFreeGoodsCanBuy()
+    local isCanBuy = self:GetIsCanBuy()
+    return not self.IsShopLock and isCanBuy and self._NeedCount <= 0
+end
+
+function XUiGridShop:RefreshRedPoint()
+    if not self.Red then
+        return
+    end
+    self.Red.gameObject:SetActiveEx(self:IsFreeGoodsCanBuy())
+end
+
 function XUiGridShop:OnBuyGoods()
     local isCanBuy = self:GetIsCanBuy()
     if not self.IsShopLock and isCanBuy then
@@ -116,6 +129,7 @@ function XUiGridShop:OnBuyGoods()
                     self:RefreshOnSales()
                     self:RefreshPrice()
                     self:RefreshBuyCount()
+                    self:RefreshRedPoint()
                     --检查是否有特殊的购买成功提示
 
                 end
@@ -158,6 +172,7 @@ function XUiGridShop:UpdateData(data, shopItemTextColor, shopId)
         -- 刷新销售结束时间
         self:RefreshTimer(self.Data.SelloutTime)
     end
+    self:RefreshRedPoint()
 end
 
 --- 当商品是时装时，在时装详情里显示购买按钮，并且屏蔽外面的购买界面

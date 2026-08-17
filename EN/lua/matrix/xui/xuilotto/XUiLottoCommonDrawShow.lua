@@ -28,8 +28,7 @@ function XUiLottoCommonDrawShow:RegisterButton()
         self.IsSkip = true
         XLuaUiManager.Remove("UiLottoCommonDrawShow")
         local state = #self.RewardList == 1 and 1 or 2 -- 单抽的时候点击跳转停留在展示界面
-        XLuaUiManager.Open("UiDrawShowNew", self.DrawInfo, self.RewardList, function()
-        end, state)
+        XLuaUiManager.Open("UiDrawShowNew", self.DrawInfo, self.RewardList, state)
     end
 end
 
@@ -83,11 +82,7 @@ function XUiLottoCommonDrawShow:OnDrawEnd()
         return
     end
     XLuaUiManager.Remove("UiLottoCommonDrawShow")
-    XLuaUiManager.Open("UiDrawShowNew",self.DrawInfo,self.RewardList,function()
-        XLuaUiManager.Open("UiDrawResult",self.DrawInfo,self.RewardList,function()
-
-        end,self.Background)
-    end,nil)
+    XLuaUiManager.Open("UiDrawShowNew",self.DrawInfo,self.RewardList)
 end
 
 function XUiLottoCommonDrawShow:RefreshItem()

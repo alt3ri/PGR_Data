@@ -28,6 +28,7 @@ end
 
 function XMusicPlayerCDPlayerControl:OnRelease()
     self._TempListBatch = nil
+    self._LastBgmMusicID = nil
 end
 
 ---region 兄弟Control的获取（统一从主Control取，避免初始化顺序问题）
@@ -55,6 +56,7 @@ function XMusicPlayerCDPlayerControl:EnterMusicMainUI()
 
     local outerBgmMusicID = XMVCA.XMusicPlayer:GetCurCommonSystemBgmMusicID()
     if XTool.IsNumberValid(outerBgmMusicID) then
+        self._LastBgmMusicID = outerBgmMusicID 
         if prevListType == XMusicPlayerEnum.MusicListType.BGM then
             -- 当前歌单是BGM(非默认): 跳转到普通列表
             self:JumpPlayByMusicIDWithNotify(XMusicPlayerEnum.MusicListType.Normal, outerBgmMusicID)
@@ -76,9 +78,11 @@ function XMusicPlayerCDPlayerControl:EnterMusicFirstPlayerMusicNotify()
     self._MainControl:DispatchEvent(XMVCA.XMusicPlayer.EventIds.EVENT_PLAYER_MUSIC_CHANGE, XMusicPlayerEnum.MusicSwitchDirection.Jump)
 end
 
-function XMusicPlayerCDPlayerControl:ExitMusicMainUI(loopType)
+function XMusicPlayerCDPlayerControl:ExitMusicMainUI()
     local audioInfo = XLuaAudioManager.GetCurrentMusicAudioInfo()
     self:_RemoveCurMusicTick(audioInfo)
+    XMVCA.XMusicPlayer:SyncCommonSystemBgmFromCdPlayer(self._LastBgmMusicID)
+    self._LastBgmMusicID = nil
 end
 
 
@@ -259,9 +263,11 @@ function XMusicPlayerCDPlayerControl:_PlayByPlayingListIndex(index, direction)
         index = ((index - 1) % count) + 1
     end
 
+    local musicId = playingList[index]
+    local isSame = musicId == self._CdViewModel:GetCurPlayingMusicID()
     self._CdViewModel:SetCurPlayMusicCacheIndex(index)
-    self._CdViewModel:SetCurPlayingMusicID(playingList[index])
-    self:PlayCurrentMusic()
+    self._CdViewModel:SetCurPlayingMusicID(musicId)
+    self:PlayCurrentMusic(isSame)
     self._MainControl:DispatchEvent(XMVCA.XMusicPlayer.EventIds.EVENT_PLAYER_MUSIC_CHANGE, direction)
 end
 
@@ -290,6 +296,10 @@ function XMusicPlayerCDPlayerControl:JumpPlayByMusicIDWithNotify(switchMusicType
         self:PlayCurrentMusic()
         self._MainControl:DispatchEvent(XMVCA.XMusicPlayer.EventIds.EVENT_PLAYER_MUSIC_CHANGE, XMusicPlayerEnum.MusicSwitchDirection.Jump)
     end
+    
+    if switchMusicType == XMusicPlayerEnum.MusicListType.BGM then
+        self._LastBgmMusicID = musicID
+    end
 
     -- 随机模式:以当前歌为起点重建随机序列;列表模式:播放队列同步为服务器原始列表(只含可播放歌)
     if self:GetMusicCycleType() == XMusicPlayerEnum.LoopType.RandomLoop then
@@ -315,6 +325,14 @@ end
 ---region 当前歌曲配置信息
 function XMusicPlayerCDPlayerControl:GetCurPlayingMusicID()
     return  self._CdViewModel:GetCurPlayingMusicID()
+end
+
+function XMusicPlayerCDPlayerControl:SetCurPlayingCDRotationAngle(angle)
+    self._CdViewModel:SetCurPlayingCDRotationAngle(angle)
+end
+
+function XMusicPlayerCDPlayerControl:GetCurPlayingCDRotationAngle()
+    return self._CdViewModel:GetCurPlayingCDRotationAngle()
 end
 
 function XMusicPlayerCDPlayerControl:GetCurPlayingMusicCO()
@@ -458,7 +476,7 @@ end
 ---region 音乐播放相关的接口
 function XMusicPlayerCDPlayerControl:_MusicFinishAutoNext()
     if self:GetMusicCycleType() == XMVCA.XMusicPlayer.Enum.LoopType.SingleLoop then
-        self:PlayCurrentMusic()
+        self:PlayCurrentMusic(true)
         return
     end
 
@@ -466,7 +484,7 @@ function XMusicPlayerCDPlayerControl:_MusicFinishAutoNext()
 end
 
 -- 播放当前歌曲；返回是否播放成功
-function XMusicPlayerCDPlayerControl:PlayCurrentMusic()
+function XMusicPlayerCDPlayerControl:PlayCurrentMusic(isIgnoreSameMusic)
     if not self:IsCurMusicOpen() then
         XUiManager.TipError(CS.XTextManager.GetText("MusicPlayerErrorTipUnlockPlay" ))
         return false
@@ -479,10 +497,14 @@ function XMusicPlayerCDPlayerControl:PlayCurrentMusic()
 
     local audioInfo = XLuaAudioManager.GetCurrentMusicAudioInfo()
     self:_RemoveCurMusicTick(audioInfo)
-    CS.XAudioManager.StartAnalyzer()
-    local audioInfo = XLuaAudioManager.PlayMusicInOut2(cueId, -1, -1, -1, -1, 1, 1)
+    XLuaAudioManager.StartAnalyzer()
+    local audioInfo = XLuaAudioManager.PlayMusicInOut2(cueId, -1, -1, -1, -1, 1, 1, nil, isIgnoreSameMusic)
     self:_StartCurMusicTick(audioInfo)
     self:SetIsPlaying(true)
+
+    if self:GetCurMusicListType() == XMVCA.XMusicPlayer.Enum.MusicListType.BGM then
+        self._LastBgmMusicID = self._CdViewModel:GetCurPlayingMusicID()
+    end
     return true
 end
 
@@ -506,7 +528,7 @@ function XMusicPlayerCDPlayerControl:_OnAudioInfoUpdate()
         return
     end
 
-    local durationMs = CS.XAudioManager.GetCueWavRealDuration(co.CueId)
+    local durationMs = XLuaAudioManager.GetCueWavRealDuration(co.CueId)
     if durationMs <= 0 then
         return
     end
@@ -533,14 +555,14 @@ end
 
 function XMusicPlayerCDPlayerControl:GetTimeIdLeftStr(timeId)
     if not XTool.IsNumberValid(timeId) then
-        return "00:00:00"
+        return ""
     end
     local endTime = XFunctionManager.GetEndTimeByTimeId(timeId)
     if endTime <= 0 then
-        return "00:00:00"
+        return ""
     end
     local left = math.max(0, endTime - XTime.GetServerNowTimestamp())
-    return XUiHelper.GetTime(left, XUiHelper.TimeFormatType.DEFAULT)
+    return XUiHelper.GetTime(left, XUiHelper.TimeFormatType.DAY_HOUR_MINUTE)
 end
 
 -- 是否需要显示彩蛋标记:歌曲已获取(gain) 且 配置了彩蛋文本

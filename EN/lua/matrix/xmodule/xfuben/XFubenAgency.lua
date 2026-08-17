@@ -3740,7 +3740,7 @@ function XFubenAgency:EnterStrongholdFight(stageId, characterIds, captainPos, fi
                 positions[i] = 1
             end
         end
-        preFight.NoFashionResPositions = positions
+        preFight.NoFashionResPositions = not XDataCenter.TeamManager.IsNoFashionResPositionsEmpty(positions) and positions or nil
     end
     local req = { PreFightData = preFight }
     self:NetWorkPreFightRequest(req, function(res)
@@ -4240,7 +4240,7 @@ function XFubenAgency:NetWorkPreFightRequest(request, ...)
                 positions[i] = 1
             end
         end
-        request.PreFightData.NoFashionResPositions = positions
+        request.PreFightData.NoFashionResPositions = not XDataCenter.TeamManager.IsNoFashionResPositionsEmpty(positions) and positions or nil
     end
 
     XMVCA.XSubPackage:CheckStageIdListResIdListDownloadComplete({ stageId }, function()

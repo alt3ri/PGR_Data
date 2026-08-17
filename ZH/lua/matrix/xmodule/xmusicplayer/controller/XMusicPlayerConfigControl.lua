@@ -3,6 +3,8 @@ local XMusicPlayerConfigControl = XClass(XControl, "XMusicPlayerConfigControl")
 
 local TableKey = {
     MusicPlayerColorStyleRes = { DirPath = XConfigUtil.DirectoryType.Client, ReadFunc = XConfigUtil.ReadType.String, Identifier = 'ColorType' },
+    MusicPlayerConfig = { DirPath = XConfigUtil.DirectoryType.Share, ReadFunc = XConfigUtil.ReadType.String, Identifier = 'Key' },
+    MusicPlayerAlbumDetail = { DirPath = XConfigUtil.DirectoryType.Client, ReadFunc = XConfigUtil.ReadType.Int, Identifier = 'Id' },
 }
 
 function XMusicPlayerConfigControl:OnInit()
@@ -27,6 +29,13 @@ function XMusicPlayerConfigControl:GetMusicPlayerColorStyleCO(colorType)
     return self:GetConfigByTabKeyAndIdKey(TableKey.MusicPlayerColorStyleRes, colorType)
 end
 
+---@param albumId number
+---@return string|nil
+function XMusicPlayerConfigControl:GetBakedColorStyle(albumId)
+    local config = self:GetConfigByTabKeyAndIdKey(TableKey.MusicPlayerAlbumDetail, albumId)
+    return config and config.ColorStyle
+end
+
 ---region Share/Config/Config.tab 全局常量读取
 
 ---@return number
@@ -36,11 +45,13 @@ end
 
 ---@return number
 function XMusicPlayerConfigControl:GetFavoriteSongMaxCount()
-    return CS.XGame.Config:GetInt("AudioPlayerFavoriteSongMaxCount")
+    local config = self:GetConfigByTabKeyAndIdKey(TableKey.MusicPlayerConfig, "FavoriteSongMaxCount")
+    return tonumber(config and config.Values and config.Values[1]) or 200
 end
 
 function XMusicPlayerConfigControl:GetRandomPlayIngListMaxCount()
-    return  CS.XGame.ClientConfig:GetInt("MusicPlayerRandomPlayListMaxCount")
+    local config = self:GetConfigByTabKeyAndIdKey(TableKey.MusicPlayerConfig, "BackgroundSongMaxCount")
+    return tonumber(config and config.Values and config.Values[1]) or 200
 end
 ---endregion
 

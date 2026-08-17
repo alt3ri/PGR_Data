@@ -1,7 +1,8 @@
-local TABLE_MOVIE_PATH_PREFIX = "Client/Movie/Movies/Movie%s.tab"
-local TABLE_MOVIE_ACTOR_PATH = "Client/Movie/MovieActor.tab"
-local TABLE_MOVIE_SPINE_ACTOR_PATH = "Client/Movie/MovieSpineActor.tab"
-local TABLE_MOVIE_ROLE_FACE_PATH = "Client/Movie/MovieRoleFace.tab"
+local TABLE_MOVIE_PATH_PREFIX = "Client/Movie/Movies/Movie%s.tab"
+local TABLE_MOVIE_ACTOR_PATH = "Client/Movie/MovieActor.tab"
+local TABLE_MOVIE_SPINE_ACTOR_PATH = "Client/Movie/MovieSpineActor.tab"
+local TABLE_MOVIE_SPINE_ACTOR_V2_PATH = "Client/Movie/MovieSpineActorV2.tab"
+local TABLE_MOVIE_ROLE_FACE_PATH = "Client/Movie/MovieRoleFace.tab"
 local TABLE_MOVIE_SKIP_PATH = "Client/Movie/MovieSkips"
 local TABLE_MOVIE_STAFF_PATH = "Client/Movie/MovieStaffs"
 local TABLE_MOVIE_SPEED_PATH = "Client/Movie/MovieSpeed.tab"
@@ -14,18 +15,19 @@ local tableInsert = table.insert
 local pairs = pairs
 local stringGsub = string.gsub
 
-local MovieTemplates = {}
-local MovieActorTemplates = {}
-local MovieSpineActorTemplates = {}
-local MovieRoleFaceTemplates = {}
+local MovieTemplates = {}
+local MovieActorTemplates = {}
+local MovieSpineActorTemplates = {}
+local MovieSpineActorV2Templates = {}
+local MovieRoleFaceTemplates = {}
 local MovieSkipTemplates = {}
 local MovieStaffTemplates = {}
-local MovieSpeedTemplates = {}
-local MovieSkipSummaryTemplates = {}
-
-local IsLoadMovieSkipSummary = false
-
-XMovieConfigs = XMovieConfigs or {}
+local MovieSpeedTemplates = {}
+local MovieSkipSummaryTemplates = {}
+
+local IsLoadMovieSkipSummary = false
+
+XMovieConfigs = XMovieConfigs or {}
 
 XMovieConfigs.PLAYER_NAME_REPLACEMENT = "【kuroname】"
 XMovieConfigs.TYPE_WRITER_SPEED = CS.XGame.ClientConfig:GetFloat("MovieWriterSpeed") or 0.04
@@ -56,35 +58,53 @@ XMovieConfigs.MOVIE_CURVE_TYPE = {
 }
 
 -- 通用的spine动画
-XMovieConfigs.SpineActorAnim =
-{
-    PanelActorEnable = "PanelActorEnable",
-    PanelActorDisable = "PanelActorDisable",
-    PanelActorBlowUp = "PanelActorBlowUp",
+XMovieConfigs.SpineActorAnim =
+{
+    PanelActorEnable = "PanelActorEnable",
+    PanelActorDisable = "PanelActorDisable",
+    PanelActorBlowUp = "PanelActorBlowUp",
     PanelActorDark = "PanelActorDark",
     PanelActorDarkNor = "PanelActorDarkNor",
     PanelActorBlowUpNor = "PanelActorBlowUpNor",
-    PanelActorDarkDisable = "PanelActorDarkDisable",
-}
-
-local InitStaffConfigs = function()
-    local paths = CS.XTableManager.GetPaths(TABLE_MOVIE_STAFF_PATH)
-    XTool.LoopCollection(paths, function(path)
-        local key = XTool.GetFileNameWithoutExtension(path)
-        MovieStaffTemplates[key] = XTableManager.ReadByIntKey(path, XTable.XTableMovieStaff, "Id")
-    end)
-end
-
-function XMovieConfigs.Init()
-    MovieActorTemplates = XTableManager.ReadByIntKey(TABLE_MOVIE_ACTOR_PATH, XTable.XTableMovieActor, "RoleId")
-    MovieSpineActorTemplates = XTableManager.ReadByIntKey(TABLE_MOVIE_SPINE_ACTOR_PATH, XTable.XTableMovieSpineActor, "RoleId")
-    MovieRoleFaceTemplates = XTableManager.ReadByIntKey(TABLE_MOVIE_ROLE_FACE_PATH, XTable.XTableMovieRoleFace, "RoleId")
-    MovieSkipTemplates = {}--= XTableManager.ReadByStringKey(TABLE_MOVIE_SKIP_PATH, XTable.XTableMovieSkip, "Id")
-    MovieSpeedTemplates = XTableManager.ReadByIntKey(TABLE_MOVIE_SPEED_PATH, XTable.XTableMovieSpeed, "Id")
-    InitStaffConfigs()
-
-    IsLoadMovieSkipSummary = false
-end
+    PanelActorDarkDisable = "PanelActorDarkDisable",
+}
+
+XMovieConfigs.SpineActorTrackType =
+{
+    Base = 0,
+    Mouth = 1,
+    Face = 2,
+}
+
+local InitStaffConfigs = function()
+    local paths = CS.XTableManager.GetPaths(TABLE_MOVIE_STAFF_PATH)
+    XTool.LoopCollection(paths, function(path)
+        local key = XTool.GetFileNameWithoutExtension(path)
+        MovieStaffTemplates[key] = XTableManager.ReadByIntKey(path, XTable.XTableMovieStaff, "Id")
+    end)
+end
+
+local InitSpineActorV2Configs = function()
+    MovieSpineActorV2Templates = {}
+
+    if not checkTableExist(TABLE_MOVIE_SPINE_ACTOR_V2_PATH) then
+        return
+    end
+
+    MovieSpineActorV2Templates = XTableManager.ReadByIntKey(TABLE_MOVIE_SPINE_ACTOR_V2_PATH, XTable.XTableMovieSpineActorV2, "RoleId")
+end
+
+function XMovieConfigs.Init()
+    MovieActorTemplates = XTableManager.ReadByIntKey(TABLE_MOVIE_ACTOR_PATH, XTable.XTableMovieActor, "RoleId")
+    MovieSpineActorTemplates = XTableManager.ReadByIntKey(TABLE_MOVIE_SPINE_ACTOR_PATH, XTable.XTableMovieSpineActor, "RoleId")
+    MovieRoleFaceTemplates = XTableManager.ReadByIntKey(TABLE_MOVIE_ROLE_FACE_PATH, XTable.XTableMovieRoleFace, "RoleId")
+    MovieSkipTemplates = {}--= XTableManager.ReadByStringKey(TABLE_MOVIE_SKIP_PATH, XTable.XTableMovieSkip, "Id")
+    MovieSpeedTemplates = XTableManager.ReadByIntKey(TABLE_MOVIE_SPEED_PATH, XTable.XTableMovieSpeed, "Id")
+    InitSpineActorV2Configs()
+    InitStaffConfigs()
+
+    IsLoadMovieSkipSummary = false
+end
 
 local function GetMoviePath(movieId)
     return stringFormat(TABLE_MOVIE_PATH_PREFIX, movieId)
@@ -180,14 +200,14 @@ function XMovieConfigs.GetActorFaceImgPath(actorId, faceId)
     return face
 end
 
-function XMovieConfigs.GetSpineActorSpinePath(actorId)
-    local config = MovieSpineActorTemplates[actorId]
-    if not config then
-        XLog.ErrorTableDataNotFound("XMovieConfigs.GetSpineActorSpinePath", "MovieSpineActor", TABLE_MOVIE_SPINE_ACTOR_PATH, "actorId", tostring(actorId))
-        return
-    end
-
-    return config.SpinePath
+function XMovieConfigs.GetSpineActorSpinePath(actorId)
+    local config = MovieSpineActorTemplates[actorId]
+    if not config then
+        XLog.ErrorTableDataNotFound("XMovieConfigs.GetSpineActorSpinePath", "MovieSpineActor", TABLE_MOVIE_SPINE_ACTOR_PATH, "actorId", tostring(actorId))
+        return
+    end
+
+    return config.SpinePath
 end
 
 function XMovieConfigs.GetSpineActorRoleAnim(actorId, index)
@@ -202,6 +222,11 @@ end
 
 function XMovieConfigs.GetSpineActorRoleAnim2(actorId, index)
     local config = MovieSpineActorTemplates[actorId]
+    if not config then
+        XLog.ErrorTableDataNotFound("XMovieConfigs.GetSpineActorRoleAnim2", "MovieSpineActor", TABLE_MOVIE_SPINE_ACTOR_PATH, "actorId", tostring(actorId) .." index:", tostring(index))
+        return
+    end
+
     return config.RoleAnims2[index]
 end
 
@@ -225,17 +250,31 @@ function XMovieConfigs.GetSpineActorKouTalkAnim(actorId, index)
     return config.KouTalkAnims[index]
 end
 
-function XMovieConfigs.GetSpineActorTransitionAnim(actorId, index)
-    local config = MovieSpineActorTemplates[actorId]
-    if not config then
-        XLog.ErrorTableDataNotFound("XMovieConfigs.GetSpineActorTransitionAnim", "MovieSpineActor", TABLE_MOVIE_SPINE_ACTOR_PATH, "actorId", tostring(actorId) .." index:", tostring(index))
-        return
+function XMovieConfigs.GetSpineActorTransitionAnim(actorId, index)
+    local config = MovieSpineActorTemplates[actorId]
+    if not config then
+        XLog.ErrorTableDataNotFound("XMovieConfigs.GetSpineActorTransitionAnim", "MovieSpineActor", TABLE_MOVIE_SPINE_ACTOR_PATH, "actorId", tostring(actorId) .." index:", tostring(index))
+        return
     end
-
-    return config.TransitionAnims[index]
-end
-
-local function GetMovieSkipConfig(movieId)
+
+    return config.TransitionAnims[index]
+end
+
+function XMovieConfigs.IsSpineActorV2(actorId)
+    return MovieSpineActorV2Templates[actorId] ~= nil
+end
+
+function XMovieConfigs.GetSpineActorV2Config(actorId)
+    local config = MovieSpineActorV2Templates[actorId]
+    if not config then
+        XLog.ErrorTableDataNotFound("XMovieConfigs.GetSpineActorV2Config", "MovieSpineActorV2", TABLE_MOVIE_SPINE_ACTOR_V2_PATH, "actorId", tostring(actorId))
+        return
+    end
+
+    return config
+end
+
+local function GetMovieSkipConfig(movieId)
     local config = MovieSkipTemplates[movieId]
     if not config then
         XLog.ErrorTableDataNotFound("XMovieConfigs.GetMovieSkipHaveSkipDesc", "MovieSkip", TABLE_MOVIE_SKIP_PATH, "movieId", tostring(movieId))

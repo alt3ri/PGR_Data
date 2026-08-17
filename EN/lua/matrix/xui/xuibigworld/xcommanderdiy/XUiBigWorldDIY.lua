@@ -653,7 +653,7 @@ function XUiBigWorldDIY:_RefreshColorList(isPlayEnable)
             end
         end
 
-        for i = table.nums(self._CurrentColorEntitys) + 1, table.nums(self._ColorGridList) do
+        for i = #self._CurrentColorEntitys + 1, #self._ColorGridList do
             self._ColorGridList[i]:Close()
         end
     else

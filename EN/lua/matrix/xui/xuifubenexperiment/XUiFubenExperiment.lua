@@ -164,8 +164,7 @@ end
 
 function XUiFubenExperiment:OnBannerClick(index, curType)
     if curType == XDataCenter.FubenExperimentManager.TrialLevelType.SkinTrial then
-        XLuaUiManager.Open("UiPaintingExperiencePassV4P2",self.PageDatas[index].Id)
-        -- XLuaUiManager.Open("UiFubenExperimentSkinTrialDetail", self.PageDatas[index], curType)
+        XDataCenter.FubenExperimentManager:OpenPaintingExperiencePass(self.PageDatas[index].Id, true)
     else
         XLuaUiManager.Open("UiFubenExperimentDetail", self.PageDatas[index], curType)
     end

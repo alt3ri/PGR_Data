@@ -1,30 +1,33 @@
-local XUiPanelEnvelopeGuessingCharacterCard =
-    XClass(XUiNode, "XUiPanelEnvelopeGuessingCharacterCard")
+---@class XUiPanelEnvelopeGuessingCharacterCard : XUiNode
+---@field private _Control XEnvelopeGuessingControl
+local XUiPanelEnvelopeGuessingCharacterCard = XClass(XUiNode, "XUiPanelEnvelopeGuessingCharacterCard")
 
-function XUiPanelEnvelopeGuessingCharacterCard:OnStart(
-    charConf,
-    onOpenCardCallback)
-
+function XUiPanelEnvelopeGuessingCharacterCard:OnStart(charConf, onOpenCardCallback)
     self._CharConf = charConf
     self._OnOpenCard = onOpenCardCallback
     self.RlmgCardRole:SetRawImage(charConf.CgAssetPathLocked)
     self.RImgCardBg:SetRawImage(charConf.CgAssetPathUnlocked)
     self.TxtCardTip.text = string.gsub(charConf.Desc, "\\n", "\n")
 
-    self._MaxSlideProgress = CS.XGame.ClientConfig:GetFloat(
-        "EnvelopeGuessingEnvelopeCardSlideProgressAuto")
-
-    self._MinSlideProgress = CS.XGame.ClientConfig:GetFloat(
-        "EnvelopeGuessingEnvelopeCardSlideProgressMin")
+    self._MaxSlideProgress = CS.XGame.ClientConfig:GetFloat("EnvelopeGuessingEnvelopeCardSlideProgressAuto")
+    self._MinSlideProgress = CS.XGame.ClientConfig:GetFloat("EnvelopeGuessingEnvelopeCardSlideProgressMin")
 
     self:_InitSlider()
 end
 
-function XUiPanelEnvelopeGuessingCharacterCard:SetAsOpenedAndPlayUnlockAnimation()
+function XUiPanelEnvelopeGuessingCharacterCard:OnDisable()
+    self:_KillReverseOpenPackageAnimation()
+end
+
+function XUiPanelEnvelopeGuessingCharacterCard:SetAsOpenedAndPlayUnlockAnimation(isPlay)
     self.RImgCardPackage.gameObject:SetActiveEx(false)
     self.Slider.gameObject:SetActiveEx(false)
     self.TxtCardTip.gameObject:SetActiveEx(false)
-    self:PlayAnimation("StoryReadFinished")
+    if isPlay then
+        self:PlayAnimationWithMask("StoryReadFinished")
+    else
+        self:ForceSkipToEndAnimation("StoryReadFinished")
+    end
 end
 
 function XUiPanelEnvelopeGuessingCharacterCard:_InitSlider()
@@ -32,16 +35,14 @@ function XUiPanelEnvelopeGuessingCharacterCard:_InitSlider()
     local widget = self.SliderUiWidget
 
     widget:AddPointerDownListener(function(eventData)
-        local ok, localPt = CS.UnityEngine.RectTransformUtility
-            .ScreenPointToLocalPointInRectangle(sliderRt, eventData.position, CS.XUiManager.Instance.UiCamera)
+        local ok, localPt = CS.UnityEngine.RectTransformUtility.ScreenPointToLocalPointInRectangle(sliderRt, eventData.position, CS.XUiManager.Instance.UiCamera)
         if ok then
             self._SliderPressLocalX = localPt.x
         end
     end)
 
     widget:AddDragListener(function(eventData)
-        local ok, localPt = CS.UnityEngine.RectTransformUtility
-            .ScreenPointToLocalPointInRectangle(sliderRt, eventData.position, CS.XUiManager.Instance.UiCamera)
+        local ok, localPt = CS.UnityEngine.RectTransformUtility.ScreenPointToLocalPointInRectangle(sliderRt, eventData.position, CS.XUiManager.Instance.UiCamera)
         if not ok or not self._SliderPressLocalX then return end
         local r = sliderRt.rect
         local v = (localPt.x - self._SliderPressLocalX) / (r.xMax - r.xMin)
@@ -62,8 +63,12 @@ end
 
 function XUiPanelEnvelopeGuessingCharacterCard:_OnRelease()
     if self._ForceOpened then return end
-
+    self:_KillReverseOpenPackageAnimation()
     self._ReverseOpenPackageSchedule = XScheduleManager.ScheduleForever(function()
+        if XTool.UObjIsNil(self.OpenPackage) then
+            self:_KillReverseOpenPackageAnimation()
+            return
+        end
         self.OpenPackage.time = self.OpenPackage.time - CS.UnityEngine.Time.deltaTime
 
         if self.OpenPackage.time <= 0 then
@@ -95,6 +100,7 @@ function XUiPanelEnvelopeGuessingCharacterCard:ForceOpen(isForceOpen)
     if isForceOpen then
         self.OpenPackage:Play()
     else
+        self.OpenPackage:Evaluate()
         self.OpenPackage:Resume()
     end
 

@@ -162,10 +162,9 @@ function XUiPanelBossInshotTowerRight:_RefreshSkillInfo()
     -- 技能视频
     self:_StopSkillVideo()
     local videoUrl = self._Control:GetSkillVideoUrl(skillId)
-    self.VideoComponent = XUiHelper.Instantiate(self.VideoPlayerUgui, self.VideoPlayerUgui.transform.parent)
-    self.VideoComponent.gameObject:SetActiveEx(true)
-    self.VideoComponent:SetVideoFromRelateUrl(videoUrl)
-    self.VideoComponent:Play()
+    self.VideoPlayerUgui.gameObject:SetActiveEx(true)
+    self.VideoPlayerUgui:SetVideoFromRelateUrl(videoUrl)
+    self.VideoPlayerUgui:RePlay()
 
     -- 点列表
     local isShowDot = #self._BossInfo.SkillIds > 1
@@ -209,11 +208,9 @@ function XUiPanelBossInshotTowerRight:RefreshTowerBossSkill(stageId)
 end
 
 function XUiPanelBossInshotTowerRight:_StopSkillVideo()
-    if self.VideoComponent then
-        self.VideoComponent:Stop()
-        self.VideoComponent.gameObject:SetActiveEx(false)
-        CS.UnityEngine.Object.Destroy(self.VideoComponent.gameObject)
-        self.VideoComponent = nil
+    if self.VideoPlayerUgui then
+        self.VideoPlayerUgui:Stop()
+        self.VideoPlayerUgui.gameObject:SetActiveEx(false)
     end
 end
 

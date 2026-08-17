@@ -252,6 +252,8 @@ function XUiTip:Refresh(data)
             local count = nil
             if self.ShowNum then
                 count = self.ShowNum
+            elseif XMVCA.XItem:CheckItemHasGroupConfig(self.TemplateId) then
+                count = XMVCA.XItem:GetGroupSubItemCount(self.TemplateId)
             else
                 count = XGoodsCommonManager.GetGoodsCurrentCount(self.TemplateId)
             end
@@ -364,7 +366,7 @@ function XUiTip:Refresh(data)
             local groupCfgs = XMVCA.XItem:GetItemCombinesByGroupId(combineCfg.GroupId)
             local parts = {}
             for _, cfg in ipairs(groupCfgs) do
-                local cnt = XGoodsCommonManager.GetGoodsCurrentCount(cfg.ItemId) or 0
+                local cnt = XDataCenter.ItemManager.GetItemRawCount(cfg.ItemId)
                 table.insert(parts, string.format("%s*%s", cfg.ItemId, cnt))
             end
             if #parts > 0 then

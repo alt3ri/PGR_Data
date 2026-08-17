@@ -3,6 +3,7 @@ local TABLE_CHAPTER_PATH = "Share/Fuben/RepeatChallenge/RepeatChallengeChapter.t
 local TABLE_STAGE_PATH = "Share/Fuben/RepeatChallenge/RepeatChallengeStage.tab"
 local TABLE_LEVEL_PATH = "Share/Fuben/RepeatChallenge/RepeatChallengeLevel.tab"
 local TABLE_REWARD_PATH = "Share/Fuben/RepeatChallenge/RepeatChallengeReward.tab"
+local TABLE_MULTI_REWARD_PATH = "Share/Fuben/RepeatChallenge/RepeatChallengeMultiReward.tab"
 
 local pairs = pairs
 
@@ -11,6 +12,8 @@ local RepeatChallengeChapterTemplates = {}
 local RepeatChallengeStageTemplates = {}
 local RepeatChallengeLevelTemplates = {}
 local RepeatChallengeRewardTemplates = {}
+---@type XTableRepeatChallengeMultiReward[]
+local RepeatChallengeMultiRewardTemplates = {}
 
 local DefaultActivityId = 0
 local StageIdToChapterIdDic = {}
@@ -23,6 +26,7 @@ function XFubenRepeatChallengeConfigs.Init()
     RepeatChallengeStageTemplates = XTableManager.ReadByIntKey(TABLE_STAGE_PATH, XTable.XTableRepeatChallengeStage, "Id")
     RepeatChallengeLevelTemplates = XTableManager.ReadByIntKey(TABLE_LEVEL_PATH, XTable.XTableRepeatChallengeLevel, "Id")
     RepeatChallengeRewardTemplates = XTableManager.ReadByIntKey(TABLE_REWARD_PATH, XTable.XTableRepeatChallengeReward, "Id")
+    RepeatChallengeMultiRewardTemplates = XTableManager.ReadByIntKey(TABLE_MULTI_REWARD_PATH, XTable.XTableRepeatChallengeMultiReward, "Id")
 
     for activityId, config in pairs(RepeatChallengeActivityTemplates) do
         if XTool.IsNumberValid(config.ActivityTimeId) then
@@ -46,6 +50,16 @@ function XFubenRepeatChallengeConfigs.GetActivityConfig(activityId)
         return
     end
     return activityCfg
+end
+
+function XFubenRepeatChallengeConfigs.GetMultiRewardConfig(activityId)
+    local multiRewardCfg = RepeatChallengeMultiRewardTemplates[activityId]
+    if not multiRewardCfg then
+        XLog.ErrorTableDataNotFound("XFubenRepeatChallengeConfigs.GetMultiRewardConfig",
+                "RepeatChallengeMultiReward", TABLE_MULTI_REWARD_PATH, "Id", tostring(activityId))
+        return nil
+    end
+    return multiRewardCfg
 end
 
 function XFubenRepeatChallengeConfigs.GetActivityChapterId(activityId)

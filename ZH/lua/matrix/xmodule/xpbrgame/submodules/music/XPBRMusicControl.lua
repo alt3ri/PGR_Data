@@ -145,6 +145,23 @@ function XPBRMusicControl:PlayBgmIfNotCurrent(bgmId)
     self._IsPlaying = true
 end
 
+--- 从战斗场景接管 BGM：若系统层正在播同一 CueId 则直接接管不重播，否则正常播放。
+--- 仅用于商店首次打开（OnStart），此时 _AudioInfo 为 nil 但战斗 BGM 可能仍在播，
+--- 不受 PlayBgmIfNotCurrent 的 _AudioInfo 守卫限制。
+function XPBRMusicControl:TakeoverBgmOrPlay(bgmId)
+    local bgmCfg = self:GetTablePBRBgmCfgById(bgmId)
+    if not bgmCfg then
+        return
+    end
+    if XLuaAudioManager.GetCurrentMusicId() == bgmCfg.CueId then
+        self._AudioInfo = XLuaAudioManager.GetCurrentMusicAudioInfo()
+        self._CurrentBgmId = bgmId
+        self._IsPlaying = true
+        return
+    end
+    self:PlayBgmIfNotCurrent(bgmId)
+end
+
 --endregion
 
 --region BGM 选择缓存

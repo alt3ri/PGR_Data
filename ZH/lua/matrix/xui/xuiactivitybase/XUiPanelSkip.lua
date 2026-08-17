@@ -1,4 +1,4 @@
-
+---@class XUiPanelSkip
 local XUiPanelSkip = XClass(nil, "XUiPanelSkip")
 
 function XUiPanelSkip:Ctor(ui)

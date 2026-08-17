@@ -2349,6 +2349,7 @@ local UiRegistry = {
     UiGuildWarUpTeam = "XUi/XUiGuildWar/UiGuildWarUpTeam/XUiGuildWarUpTeam",
     UiBigWorldMapOverview = "XUi/XUiBigWorld/XMap/XOverview/XUiBigWorldMapOverview",
     UiPaintingExperiencePassV4P2 = "XUi/XUiPaintingExperiencePassV4P2/XUiPaintingExperiencePassV4P2",
+    UiPaintingExperiencePassV407Kalie = "XUi/XUiPaintingExperiencePassV4P2/XUiPaintingExperiencePassV407Kalie",
     UiTheatre5PopupChooseTaskReward = "XUi/XUiTheatre5/XUiTheatre5PopupChooseTaskReward/XUiTheatre5PopupChooseTaskReward",
     UiAccumulateExpendShopMain = "XUi/XUiAccumulateExpendShop/XUiAccumulateExpendShopMain",
     UiAccumulateExpendShopPopupDailyReward = "XUi/XUiAccumulateExpendShop/XUiAccumulateExpendShopObtaion",
@@ -2399,6 +2400,11 @@ local UiRegistry = {
     UiPBRGenius = "XUi/XUiPBRGame/XUiPBRGenius/XUiPBRGenius",
     UiPBRTask = "XUi/XUiPBRGame/XUiPBRTask/XUiPBRTask",
     UiPBRMainFightTips = "XUi/XUiPBRGame/XUiPBRMainFightTips/XUiPBRMainFightTips",
+    UiPBRPopupSkillReplace = "XUi/XUiPBRGame/XUiPBRShopNew/UiPBRPopupSkillReplace/XUiPBRPopupSkillReplace",
+    UiPBRPopupComTips = "XUi/XUiPBRGame/XUiPBRPopupComTips/XUiPBRPopupComTips",
+    UiPBRCalibration = "XUi/XUiPBRGame/XUiPBRCalibration/XUiPBRCalibration",
+    UiPBRPopupMusicChoose = "XUi/XUiPBRGame/XUiPBRPopupMusicChoose/XUiPBRPopupMusicChoose",
+    UiPBRPopupSkin = "XUi/XUiPBRGame/XUiPBRPopupSkin/XUiPBRPopupSkin",
     --endregion
 
     --region XCommanderCollege
@@ -2515,6 +2521,16 @@ local UiRegistry = {
     UiDyeMergeTask = "XUi/XUiDyeMergeGame/UiDyeMergeTask/XUiDyeMergeTask",
     --endregion
 
+    --region v4.7 七夕开包玩法
+    UiEnvelopeGuessingMain = "XUi/XUiEnvelopeGuessing/XUiEnvelopeGuessingMain",
+    UiEnvelopeGuessingReward = "XUi/XUiEnvelopeGuessing/XUiEnvelopeGuessingReward",
+    UiEnvelopeGuessingTask = "XUi/XUiEnvelopeGuessing/XUiEnvelopeGuessingTask",
+    UiEnvelopeGuessingCollection = "XUi/XUiEnvelopeGuessing/XUiEnvelopeGuessingCollection",
+    UiEnvelopeGuessingDetail = "XUi/XUiEnvelopeGuessing/XUiEnvelopeGuessingDetail",
+    UiEnvelopeGuessingInvitation = "XUi/XUiEnvelopeGuessing/XUiEnvelopeGuessingInvitation",
+    UiEnvelopeGuessingOpenPackage = "XUi/XUiEnvelopeGuessing/XUiEnvelopeGuessingOpenPackage",
+    --endregion
+
     UiConcertPreHeatingMain = "XUi/XUiConcertPreHeating/XUiConcertPreHeatingMain",
     UiConcertPreHeatingTuningStageCorrectTips = "XUi/XUiConcertPreHeating/XUiConcertPreHeatingTuningStageCorrectTips",
     UiConcertPreHeatingTuningStage = "XUi/XUiConcertPreHeating/XUiConcertPreHeatingTuningStage",
@@ -2523,9 +2539,12 @@ local UiRegistry = {
 
     UiActivityBossSingleSettlement = "XUi/XUiActivityBossSingle/battlewin/XUiActivityBossSingleSettlement",
     UiMainActivityToastHall = "XUi/XUiActivityToastHall/XUiMainActivityToastHall",
-
+    --region XMusicPlayer
+    UiMusicPlayerMain = "XUi/XUiMusicPlayer/XUiMusicPlayerMain/XUiMusicPlayerMain",
+    UiCdPlayerMusicDetailPopup = "XUi/XUiMusicPlayer/XUIMusicPlayerPopup/XUiCdPlayerMusicDetailPopup",
+    --endregion    
     UiPurchaseBuyCoatingTips = "XUi/XUiPurchase/XUiPurchaseBuyCoatingTips/XUiPurchaseBuyCoatingTips",
+    UiDemo = "EditorOnly/XUiDemo/XUiDemo",
 }
-
 return UiRegistry
 

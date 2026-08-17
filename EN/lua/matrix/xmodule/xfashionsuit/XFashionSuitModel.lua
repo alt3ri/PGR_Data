@@ -121,12 +121,19 @@ function XFashionSuitModel:IsAllowGroupSales(fashionId)
             return false
         end
     elseif config.GainType == XEnumConst.FashionSuit.GainType.Purchase then
-        if not self:CheckPurchageValid(config.FashionGainParams[1]) then
+        if not isHaveFashion and not self:CheckPurchageValid(config.FashionGainParams[1]) then
             --角色涂装礼包无效
             return false
         end
-        if not self:CheckPurchageValid(config.WeaponFashionGainParams[1]) then
+        if not isHaveWeaponFashion and not self:CheckPurchageValid(config.WeaponFashionGainParams[1]) then
             --武器涂装礼包无效
+            return false
+        end
+    elseif config.GainType == XEnumConst.FashionSuit.GainType.Skip then
+        if not isHaveFashion and not self:CheckSkipValid(config.FashionGainParams[1]) then
+            return false
+        end
+        if not isHaveWeaponFashion and not self:CheckSkipValid(config.WeaponFashionGainParams[1]) then
             return false
         end
     end
@@ -182,6 +189,29 @@ function XFashionSuitModel:CheckPurchageValid(packageId)
     return true
 end
 
+function XFashionSuitModel:CheckSkipValid(skipId)
+    if not XTool.IsNumberValid(skipId) then
+        return false
+    end
+
+    return XFunctionManager.CheckSkipInDuration(skipId)
+end
+
+function XFashionSuitModel:CheckGainParamsValid(gainType, params)
+    if XTool.IsTableEmpty(params) then
+        return false
+    end
+
+    if gainType == XEnumConst.FashionSuit.GainType.Shop then
+        return self:CheckGoodsValid(params[1], params[2])
+    elseif gainType == XEnumConst.FashionSuit.GainType.Purchase then
+        return self:CheckPurchageValid(params[1])
+    elseif gainType == XEnumConst.FashionSuit.GainType.Skip then
+        return self:CheckSkipValid(params[1])
+    end
+
+    return false
+end
 ----------public end----------
 
 ----------private start----------

@@ -18,6 +18,7 @@ function XUiGridActivity:SetData(data)
         self:SetChapter(data)
     end
     self:RefreshRedPoint()
+    self:RefreshMultiReward()
 end
 
 function XUiGridActivity:SetManager(data)
@@ -74,6 +75,24 @@ function XUiGridActivity:RefreshProgressTips()
         progressTips = self.Data:GetProgressTips()
     end
     self.TxtConsumeCount.text = progressTips
+end
+
+function XUiGridActivity:RefreshMultiReward()
+    if not self.PanelMultiRewardTag then
+        return
+    end
+
+    self.PanelMultiRewardTag.gameObject:SetActiveEx(false)
+
+    if XDataCenter.FubenRepeatChallengeManager.IsMultiRewardOpen() then
+        local multiRewardCfg = XDataCenter.FubenRepeatChallengeManager.GetMultiRewardActivityCfg()
+        if multiRewardCfg.FunctionalOpenId == self.Data:ExGetFunctionNameType() then
+            local countStr = XTool.ConvertChineseNumberString(multiRewardCfg.Multiple)
+            self.PanelMultiRewardTag.gameObject:SetActiveEx(true)
+            self.TxtTag.text = XUiHelper.GetText("ActivityRepeatChallengeName", countStr)
+            return
+        end
+    end
 end
 
 function XUiGridActivity:ExGetProgressTip()

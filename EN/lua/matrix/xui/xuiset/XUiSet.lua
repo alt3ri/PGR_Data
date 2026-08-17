@@ -91,9 +91,10 @@ function XUiSet:OnAwake()
     CS.XInputManager.SetCurInputMap(CS.XInputMapId.System)
 end
 
-function XUiSet:OnStart(isFight, panelIndex, secondIndex)
+function XUiSet:OnStart(isFight, panelIndex, secondIndex, showAccount)
     self.IsFight = isFight
     self.SecondIndex = secondIndex
+    self.ShowAccount = showAccount
 
     local stageType
     local beginData = XDataCenter.FubenManager.GetFightBeginData()
@@ -128,18 +129,18 @@ function XUiSet:OnStart(isFight, panelIndex, secondIndex)
     local defaultIndex
     if self.IsFight then
         if XFightUtil.IsDlcOnline() then
-            defaultIndex = panelIndex or PANEL_INDEX.DlcHunt
+            defaultIndex = XTool.IsNumberValid(panelIndex) and panelIndex or PANEL_INDEX.DlcHunt
         elseif not CheckInstructionEnable(stageType) then
-            defaultIndex = panelIndex or PANEL_INDEX.Sound
+            defaultIndex = XTool.IsNumberValid(panelIndex) and panelIndex or PANEL_INDEX.Sound
         elseif XFubenConfigs.HasStageGamePlayDesc(stageType) then
-            defaultIndex = panelIndex or PANEL_INDEX.SpecialTrain
+            defaultIndex = XTool.IsNumberValid(panelIndex) and panelIndex or PANEL_INDEX.SpecialTrain
         elseif stageType == XEnumConst.FuBen.StageType.FpsGame then
-            defaultIndex = panelIndex or PANEL_INDEX.FpsGame
+            defaultIndex = XTool.IsNumberValid(panelIndex) and panelIndex or PANEL_INDEX.FpsGame
         else
-            defaultIndex = panelIndex or PANEL_INDEX.Instruction
+            defaultIndex = XTool.IsNumberValid(panelIndex) and panelIndex or PANEL_INDEX.Instruction
         end
     else
-        defaultIndex = panelIndex or PANEL_INDEX.Sound
+        defaultIndex = XTool.IsNumberValid(panelIndex) and panelIndex or PANEL_INDEX.Sound
     end
     self.PanelTabToggles:SelectIndex(defaultIndex)
     self.TipTitle = CS.XTextManager.GetText("TipTitle")
@@ -451,7 +452,7 @@ function XUiSet:InitLeftTagPanel(isFight, stageType)
         self.BtnDownload.gameObject:SetActiveEx(false)
         self.BtnInstruction.gameObject:SetActiveEx(CheckInstructionEnable(stageType))
         self.BtnGeneralSkill.gameObject:SetActiveEx(CheckGeneralSkillEnable())
-        self.BtnAccount.gameObject:SetActiveEx(false)
+        self.BtnAccount.gameObject:SetActiveEx(self.ShowAccount)
         if XFubenConfigs.HasStageGamePlayDesc(stageType) then
             self.BtnSpecialTrain.gameObject:SetActiveEx(true)
             self.BtnSpecialTrain:SetNameByGroup(0, XFubenConfigs.GetStageGamePlayTitle(stageType))
@@ -482,11 +483,7 @@ function XUiSet:InitLeftTagPanel(isFight, stageType)
         self.BtnSpecialTrain.gameObject:SetActiveEx(false)
         self.BtnGeneralSkill.gameObject:SetActiveEx(false)
         self.BtnFpsGame.gameObject:SetActiveEx(false)
-        if XOverseaManager.IsOverSeaRegion() then
-            self.BtnAccount.gameObject:SetActiveEx(true)
-        else
-            self.BtnAccount.gameObject:SetActiveEx(false)
-        end
+        self.BtnAccount.gameObject:SetActiveEx(self.ShowAccount)
         self:FpsGameSpecialShow()
     end
 end

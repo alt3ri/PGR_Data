@@ -134,7 +134,7 @@ function XUiBigWorldProcessExplore:_RefreshProgress(contentEntity)
 
         self.TxtExploreProgress.text = contentEntity:GetExploreProgressText()
         self.BtnReward.gameObject:SetActiveEx(true)
-        if table.nums(rewardList) == 1 then
+        if not XTool.IsTableEmpty(rewardList) and #rewardList == 1 then
             self.BtnReward:ShowTag(false)
             self.BtnReward:SetRawImageVisible(true)
             self.BtnReward:SetRawImage(contentEntity:GetExploreRewardIcon())

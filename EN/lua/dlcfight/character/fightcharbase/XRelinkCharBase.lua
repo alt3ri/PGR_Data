@@ -461,7 +461,7 @@ function XRelinkCharBase:OnNpcCastActionAfterEvent(skillId, launcherId, targetId
 end
 
 function XRelinkCharBase:OnNpcCastActionBeforeEvent(SkillId, LauncherId, TargetId, TargetSceneObjId, IsAbort)
-    --技能目标为自己，返回
+    --[[--技能目标为自己，返回
     if TargetId == self._uuid then
         return
     end
@@ -484,7 +484,7 @@ function XRelinkCharBase:OnNpcCastActionBeforeEvent(SkillId, LauncherId, TargetI
         if locktargetid == 0 then
             return
         end
-    end
+    end]]
 end
 
 function XRelinkCharBase:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
@@ -563,18 +563,20 @@ end
 function XRelinkCharBase:HardLockInput() -- tab键手动锁定
     ----新tab逻辑
     if self._proxy:IsKeyDown(ENpcOperationKey.Focus) then  --按下tab键
-        local locktarget, _ = self._proxy:GetLockTarget()
-        if locktarget ~= 0 then               --锁定目标不为空
+        local targetId, npcId = self._proxy:GetLockTarget()
+        if targetId ~= 0 then               --锁定目标不为空
             local locktargettype = self._proxy:GetCurLockTargetType()
-            self._proxy:ApplyMagic(self._uuid,self._uuid,105296,1)  --限制镜头拖动输入
-            self:CheckFocusTarget()
+--[[            self._proxy:ApplyMagic(self._uuid,self._uuid,105296,1)  --限制镜头拖动输入]]
+--[[            self:CheckFocusTarget()]]
             if locktargettype == ELockTargetType.ForceLock then   --强制锁定，直接返回
                 return
             elseif locktargettype == ELockTargetType.HardLock then    --硬锁定，取消
                 self._proxy:CancelHardLockTarget(self._uuid)
                 self._proxy:CancelSoftLockTarget(self._uuid)
+                --[[self._proxy:SetNpcFocusTarget(self._uuid, nil)]]
             else
-                self._proxy:SetHardLock(self._uuid,locktarget) --软锁，切硬锁
+                self._proxy:SetHardLock(self._uuid, targetId) --软锁，切硬锁
+--[[                self._proxy:SetNpcFocusTarget(self._uuid, npcId)]]
             end
         else
             local searchtarget = self._proxy:GetFirstSearchTarget(self._uuid,ENpcTargetType.Enemy)
@@ -582,6 +584,8 @@ function XRelinkCharBase:HardLockInput() -- tab键手动锁定
                 return
             end
             self._proxy:SetHardLock(self._uuid,searchtarget)
+            npcId = self._proxy:GetLockTarget()
+            self._proxy:SetNpcFocusTarget(self._uuid, npcId)
         end
     end
 end

@@ -237,6 +237,10 @@ end
 --region 蓝点
 
 function XSoloReformAgency:CheckChapterReddot(chapterId)
+    local activityId = self._Model:GetActivityId()
+    if not XTool.IsNumberValid(activityId) then
+        return false
+    end
     if not XTool.IsNumberValid(chapterId) then
         return false
     end
@@ -298,7 +302,10 @@ function XSoloReformAgency:CheckStrengthReddot(fightEventId, isUnlock)
     if not isUnlock then
         return false
     end
-
+    local activityId = self._Model:GetActivityId()
+    if not XTool.IsNumberValid(activityId) then
+        return false
+    end
     return self._Model:CheckLocalStrengthReddot(fightEventId)
 end
 

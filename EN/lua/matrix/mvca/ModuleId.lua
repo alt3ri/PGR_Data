@@ -147,4 +147,7 @@ ModuleId = {
   XLowMemory = "XLowMemory",
   XDyeMergeGame = "XDyeMergeGame",
   XConcertPreHeating = "XConcertPreHeating",
+  XMusicPlayer = "XMusicPlayer",
+  XMusicScene = "XMusicScene",
+  XEnvelopeGuessing = "XEnvelopeGuessing"
 }

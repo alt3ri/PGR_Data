@@ -39,7 +39,8 @@ function XUiSceneSettingObtain:OnBtnWearClick()
     --执行同步
     local curChara = XDataCenter.DisplayManager.GetDisplayChar()
     XDataCenter.PhotographManager.ChangeDisplay(self.RewardSceneId, curChara.Id, curChara.FashionId, function ()
-        XUiManager.TipText("PhotoModeChangeSuccess")    
+        XUiManager.TipText("PhotoModeChangeSuccess")
+        XMVCA.XMusicScene:ShowSwitchMusicPopup(self.RewardSceneId)
     end)
 end
 

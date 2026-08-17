@@ -300,28 +300,37 @@ function XSkillBase:CheckCastCondition(actionId, timingId)
     return true
 end
 
----@desc 刷新索敌并对索敌目标(敌人)释放技能，若无索敌目标，则对Npc面前10米处释放
-function XSkillBase:CastActionBySearchEnemy(actionId, startTime, endTime)
+function XSkillBase:SearchTarget(actionId, startTime, endTime)
+    local locktargettype = self._proxy:GetCurLockTargetType()
     local LauncherId = self._uuid
+    local curTarId = self._proxy:GetLockTarget()
+
+    if locktargettype ~= ELockTargetType.SoftLock and locktargettype ~= ELockTargetType.None then return curTarId end
+
     local searchConfigId = self.Template.SearchConfigId
     self._proxy:SwitchSearchMode(LauncherId, searchConfigId)
     local searchId = self._proxy:GetFirstSearchTarget(self._uuid, ENpcTargetType.Enemy)
-    local curTarId = self._proxy:GetLockTarget(LauncherId)
 
-    if searchId ~= curTarId then
-        curTarId = searchId
-        if searchId ~= 0 then
-            local locktargettype = self._proxy:GetCurLockTargetType()
-            if locktargettype == ELockTargetType.HardLock then
-                self._proxy:SetHardLock(self._uuid, searchId)
+    if searchId == curTarId then return curTarId end
+
+    if searchId == 0 then return 0 end
+    --[[local locktargettype = self._proxy:GetCurLockTargetType()]]
+    --[[            if locktargettype == ELockTargetType.HardLock then
+                    ]]--[[self._proxy:SetAllPlayerForceLockToPart(self._uuid, searchId)]]--[[
             else
                 self._proxy:SetSoftLock(self._uuid, searchId) --直接使用新索敌获得目标设置为软锁目标，新索敌获得的id不可读，为组合生成内容
-            end
+            end]]
 
-            local _, targetId = self._proxy:GetLockTarget()     --转换新索敌目标为搜索目标id，npcuuid
-            self._proxy:SetNpcFocusTarget(LauncherId, targetId) --镜头锁定
-        end
-    end
+    self._proxy:SetSoftLock(self._uuid, searchId) --直接使用新索敌获得目标设置为软锁目标，新索敌获得的id不可读，为组合生成内容
+
+    local targetId, npcId = self._proxy:GetLockTarget()     --转换新索敌目标为搜索目标id，npcuuid
+    self._proxy:SetNpcFocusTarget(LauncherId, npcId) --镜头锁定
+    return searchId
+end
+
+---@desc 刷新索敌并对索敌目标(敌人)释放技能，若无索敌目标，则对Npc面前10米处释放
+function XSkillBase:CastActionBySearchEnemy(actionId, startTime, endTime)
+    local curTarId = self:SearchTarget(actionId, startTime, endTime)
 
     local actionTemplate = self._proxy:GetSkillActionTemplate(actionId)
     startTime = startTime or (actionTemplate and actionTemplate.StartTime)

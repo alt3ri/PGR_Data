@@ -486,6 +486,7 @@ function XUiPanelTheatre6CharacterAttrDetail:SetGridClick(grid, slotType)
                 ReadOnly = self._IsUseParamData,
                 IsBaseSkill = grid:IsBaseSkill(),
                 IsCanUpgrade = grid:IsCanUpgrade(),
+                ModelData = self._ModelData,
             }
             self._Control:OpenSkillTip(skillId, grid.Transform, params)
         end

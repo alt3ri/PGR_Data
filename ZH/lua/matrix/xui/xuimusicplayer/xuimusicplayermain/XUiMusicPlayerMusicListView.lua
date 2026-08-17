@@ -20,6 +20,7 @@
 ---@field ScrollViewListMusic UnityEngine.RectTransform
 ---@field PanelManage UnityEngine.RectTransform
 ---@field GoDontHasMusic UnityEngine.RectTransform
+---@field GoDontSearchMusic UnityEngine.RectTransform
 ---@field TxtDontHasMusic UnityEngine.UI.Text
 ---@field BtnTabAllMusic XUiComponent.XUiButton
 ---@field BtnTabLike XUiComponent.XUiButton
@@ -184,6 +185,7 @@ end
 ---endregion
 
 
+---region event
 function XUiMusicPlayerMusicListView:_SetEvent(flag)
     local XMusicPlayerEventId = XMVCA.XMusicPlayer.EventIds
     if flag then
@@ -207,6 +209,27 @@ function XUiMusicPlayerMusicListView:_RefreshPlayingListType()
     self.GoBgmPlaying.gameObject:SetActive(curListType == XMusicPlayerEnum.MusicListType.BGM)
 end
 
+function XUiMusicPlayerMusicListView:_OnMusicListDataChange(listType)
+    if listType == self._ListType then
+        local XMusicPlayerEnum = XMVCA.XMusicPlayer.Enum
+        if self._Status == XMusicPlayerEnum.MusicListUIStatus.search then
+            self:_SearchByInput(self:_GetCurSeverDataList(), self.InputSearchMusic.text or "")
+        end
+        self:_RefreshAll(self._ListType,self._Status)
+    end
+end
+
+function XUiMusicPlayerMusicListView:_OnLikeAllSetBgmSuccess()
+    local XMusicPlayerEnum = XMVCA.XMusicPlayer.Enum
+    self:_SwitchMusicListStatus(XMusicPlayerEnum.MusicListUIStatus.normal)
+end
+
+function XUiMusicPlayerMusicListView:_OnBgmListResetSuccess()
+    local XMusicPlayerEnum = XMVCA.XMusicPlayer.Enum
+    self:_SwitchMusicListStatus(XMusicPlayerEnum.MusicListUIStatus.normal)
+end
+---endregion
+
 
 
 
@@ -220,18 +243,34 @@ function XUiMusicPlayerMusicListView:_SwitchMusicListTypeAndStatus(listType,stat
     end
 
     self:_RefreshAll(listType,status)
-
-    self._Control:DispatchEvent(XMVCA.XMusicPlayer.EventIds.EVENT_VIEW_MUSIC_LIST_MANAGER_STATE_CHANGE, status)
 end
 
 function XUiMusicPlayerMusicListView:_SwitchMusicListStatus(status)
-    self:_SwitchMusicListTypeAndStatus(self._ListType,status) 
+    local listType = self._ListType 
+    local XMusicPlayerEnum = XMVCA.XMusicPlayer.Enum
+    if status == XMusicPlayerEnum.MusicListUIStatus.search then
+        self:_SearchByInput(self:_GetCurSeverDataList(), self.InputSearchMusic.text or "")
+    end
+    
+    self:_RefreshTablBtn(listType)
+    if self._Status == XMusicPlayerEnum.MusicListUIStatus.search or  status == XMusicPlayerEnum.MusicListUIStatus.search then
+        self:_RefreshMusicListByData(listType,status)
+    end
+    self:_RefreshMusicShow(listType,status)
+    self:_RefreshManageBtn(listType,status)
 
+    self._Status = status
     self._Control:DispatchEvent(XMVCA.XMusicPlayer.EventIds.EVENT_VIEW_MUSIC_LIST_MANAGER_STATE_CHANGE, status)
 end
 
 function XUiMusicPlayerMusicListView:_SwitchMusicListType(listType)
     self:_SwitchMusicListTypeAndStatus(listType,self._Status) 
+
+    local XMusicPlayerEnum = XMVCA.XMusicPlayer.Enum
+    if self._Status ~= XMusicPlayerEnum.MusicListUIStatus.search then
+        local curMusicID = self._Control:GetCDPlayerControl():GetCurPlayingMusicID()
+        self:SetJumpMusicIdAndDo(curMusicID, true)
+    end
 end
 
 function XUiMusicPlayerMusicListView:_RefreshAll(listType,status)
@@ -280,9 +319,11 @@ function XUiMusicPlayerMusicListView:_RefreshTablBtn (listType)
 end
 
 function XUiMusicPlayerMusicListView:_RefreshMusicListByData(listType,status)
-    local XMusicPlayerEnum = XMVCA.XMusicPlayer.Enum 
-    self._MusicListTable:SetDataSource(self:_GetCurShowListDataList())
+    local XMusicPlayerEnum = XMVCA.XMusicPlayer.Enum
+    local dataList = self:_GetCurShowListDataList()
+    self._MusicListTable:SetDataSource(dataList)
     self._MusicListTable:ReloadDataSync(1)
+    self.GoDontSearchMusic.gameObject:SetActive(status == XMusicPlayerEnum.MusicListUIStatus.search and #dataList == 0)
 end
 
 function XUiMusicPlayerMusicListView:OnDynamicTableEvent(event, index, grid)
@@ -321,11 +362,9 @@ function XUiMusicPlayerMusicListView:_DoJumpIfNeed()
         return
     end
     local dataList = self:_GetCurShowListDataList()
-    local index = dataList and table.indexof(dataList, self._JumpMusicID)
+    local index = dataList and table.indexof(dataList, self._JumpMusicID) or 1
     self._JumpMusicID = nil
-    if index then
-        self._MusicListTable:ReloadDataSync(index)
-    end
+    self._MusicListTable:ReloadDataSync(index)
 end
 
 
@@ -335,16 +374,17 @@ function XUiMusicPlayerMusicListView:_RefreshMusicShow(listType,status)
 
     self.GoDontHasMusic.gameObject:SetActive(false)
     local musicCount = #self:_GetCurSeverDataList()
+    local XMusicPlayerEnum = XMVCA.XMusicPlayer.Enum
     
     local musicTitleStr = "" 
-    if listType == XMVCA.XMusicPlayer.Enum.MusicListType.BGM then
+    if listType == XMusicPlayerEnum.MusicListType.BGM then
         musicTitleStr = CS.XTextManager.GetText("MusicPlayerListTitleBgm" ) 
-    elseif listType == XMVCA.XMusicPlayer.Enum.MusicListType.Favorite then
+    elseif listType == XMusicPlayerEnum.MusicListType.Favorite then
         musicTitleStr = CS.XTextManager.GetText("MusicPlayerListTitleLike")
-        if musicCount == 0 then
+        if status ~= XMusicPlayerEnum.MusicListUIStatus.search and musicCount == 0 then
             self.GoDontHasMusic.gameObject:SetActive(true)
         end
-    elseif listType == XMVCA.XMusicPlayer.Enum.MusicListType.Normal then
+    elseif listType == XMusicPlayerEnum.MusicListType.Normal then
         musicTitleStr = CS.XTextManager.GetText("MusicPlayerListTitleTotle" )
     end
     
@@ -352,21 +392,9 @@ function XUiMusicPlayerMusicListView:_RefreshMusicShow(listType,status)
     self.TxtMusicNum.text = #self:_GetCurSeverDataList()
 end
 
-function XUiMusicPlayerMusicListView:_OnMusicListDataChange(listType)
-    if listType == self._ListType then
-        self:_RefreshAll(self._ListType,self._Status)
-    end
-end
 
-function XUiMusicPlayerMusicListView:_OnLikeAllSetBgmSuccess()
-    local XMusicPlayerEnum = XMVCA.XMusicPlayer.Enum
-    self:_SwitchMusicListStatus(XMusicPlayerEnum.MusicListUIStatus.normal)
-end
 
-function XUiMusicPlayerMusicListView:_OnBgmListResetSuccess()
-    local XMusicPlayerEnum = XMVCA.XMusicPlayer.Enum
-    self:_SwitchMusicListStatus(XMusicPlayerEnum.MusicListUIStatus.normal)
-end
+
 
 
 

@@ -1185,7 +1185,13 @@ local UIBindControl = {
     UiPBRGenius = ModuleId.XPBRGame,
     UiPBRTask = ModuleId.XPBRGame,
     UiPBRMainFightTips = ModuleId.XPBRGame,
+    UiPBRPopupSkillReplace = ModuleId.XPBRGame,
+    UiPBRPopupComTips = ModuleId.XPBRGame,
+    UiPBRCalibration = ModuleId.XPBRGame,
+    UiPBRPopupMusicChoose = ModuleId.XPBRGame,
+    UiPBRPopupSkin = ModuleId.XPBRGame,
     --endregion
+    
     --region XLineArithmetic3
     UiLineArithmetic3Chapter = ModuleId.XLineArithmetic3,
     UiLineArithmetic3Game = ModuleId.XLineArithmetic3,
@@ -1285,6 +1291,18 @@ local UIBindControl = {
     UiDyeMergeTask = ModuleId.XDyeMergeGame,
     --endregion
 
+    --region XMusicPlayer
+    UiMusicPlayerMain = ModuleId.XMusicPlayer,
+    UiCdPlayerMusicDetailPopup = ModuleId.XMusicPlayer,
+    --endregion
+    --region v4.7 七夕开包玩法
+    UiEnvelopeGuessingMain = ModuleId.XEnvelopeGuessing,
+    UiEnvelopeGuessingTask = ModuleId.XEnvelopeGuessing,
+    UiEnvelopeGuessingCollection = ModuleId.XEnvelopeGuessing,
+    UiEnvelopeGuessingDetail = ModuleId.XEnvelopeGuessing,
+    UiEnvelopeGuessingInvitation = ModuleId.XEnvelopeGuessing,
+    UiEnvelopeGuessingOpenPackage = ModuleId.XEnvelopeGuessing,
+    --endregion
 }
 
 return UIBindControl

@@ -468,10 +468,10 @@ function XUiBigWorldPanelLittleMap:_RefreshPin()
         end
         self:_RefreshPinNodeIndex()
     end
-    for i = index, table.nums(self._PinNodeList) do
+    for i = index, #self._PinNodeList do
         self._PinNodeList[i]:Close()
     end
-    for i = areaIndex, table.nums(self._PinAreaList) do
+    for i = areaIndex, #self._PinAreaList do
         self._PinAreaList[i]:Close()
     end
 end

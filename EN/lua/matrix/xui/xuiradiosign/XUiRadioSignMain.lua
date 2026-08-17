@@ -886,10 +886,7 @@ function XUiRadioSignMain:PlayVideo(content)
         end
     end
 
-    -- 视频播放前，暂停 RMS 分析器
-    XAudioManager.StopAnalyzer()
-
-    -- 使用全屏视频播放器播放视频
+    -- 使用全屏视频播放器播放视频；全局 Analyzer 保持常驻
     local videoId = content.VideoConfigId
 
     -- 在视频播放时, 就发送请求获取奖励, 但是表现上, 弹出奖励和切换重播状态等, 都要等到视频播放完成后
@@ -1123,16 +1120,12 @@ function XUiRadioSignMain:PlayCV(content)
     -- 播放CV
     self._PlayingAudioInfo = XLuaAudioManager.PlayCvWithCvType(cvId, cvType)
 
-    -- 设置CV播放结束回调
-    if self._PlayingAudioInfo then
-        local originalFinishCb = self._PlayingAudioInfo.FinishCb
-        self._PlayingAudioInfo.FinishCb = function()
-            if originalFinishCb then
-                originalFinishCb()
-            end
-            self:StopCV()
-        end
-    end
+    -- 设置CV播放结束回调
+    if self._PlayingAudioInfo then
+        self._PlayingAudioInfo:AddFinishCallback(function()
+            self:StopCV()
+        end)
+    end
 
     -- 清理之前的字幕定时器
     self:CancelSubtitleTimers()
@@ -1589,12 +1582,9 @@ function XUiRadioSignMain:PlayRMS()
     end, RMS_SCHEDULE_INTERVAL, 0)
 end
 
--- 停止RMS分析器
+-- 停止RMS刷新
 function XUiRadioSignMain:StopRMS()
-    -- 停止音频分析器
-    XAudioManager.StopAnalyzer()
-
-    -- 清理定时器
+    -- 清理RMS定时器
     if self._RMSScheduleId then
         XScheduleManager.UnSchedule(self._RMSScheduleId)
         self._RMSScheduleId = nil

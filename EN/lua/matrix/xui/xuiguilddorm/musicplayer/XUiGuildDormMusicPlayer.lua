@@ -160,7 +160,7 @@ function XUiGuildDormMusicPlayer:UpdateSpectrum()
         self.ScheduleId = nil
     end
     self.ScheduleId = XScheduleManager.ScheduleForever(function()
-        local spectrumData = CSXAudioManager.GetSpectrumLvData()
+        local spectrumData = CSXAudioManager.MusicVisualSpectrumProcessor:Get()
         self.PanelSpectrum:UpdateSpectrum(spectrumData)
     end, ScheduleIntervalTime, 0)
 end

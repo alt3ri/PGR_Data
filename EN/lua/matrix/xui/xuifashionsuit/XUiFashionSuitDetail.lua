@@ -478,7 +478,7 @@ function XUiFashionSuitDetail:UpdatePlayBtn()
 end
 
 function XUiFashionSuitDetail:OnBtnPlayClick()
-    XLuaUiManager.Open("UiPaintingExperiencePassV4P2", self._TrialLevelInfo.Id)
+    XDataCenter.FubenExperimentManager:OpenPaintingExperiencePass(self._TrialLevelInfo.Id)
 end
 
 --endregion

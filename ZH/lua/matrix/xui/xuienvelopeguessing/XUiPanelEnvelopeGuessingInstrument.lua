@@ -1,7 +1,7 @@
 local XUiPanelRoleModel = require("XUi/XUiCharacter/XUiPanelRoleModel")
-
-local XUiPanelEnvelopeGuessingInstrument =
-    XClass(XUiNode, "XUiPanelEnvelopeGuessingInstrument")
+---@class XUiPanelEnvelopeGuessingInstrument : XUiNode
+---@field private _Control XEnvelopeGuessingControl
+local XUiPanelEnvelopeGuessingInstrument = XClass(XUiNode, "XUiPanelEnvelopeGuessingInstrument")
 
 function XUiPanelEnvelopeGuessingInstrument:OnStart(
     instrumentConf,
@@ -19,39 +19,39 @@ function XUiPanelEnvelopeGuessingInstrument:OnStart(
     self._InstrumentConf = instrumentConf
     self._Unlocked = false
 
-    function self.BtnMusician.CallBack()
+    self.BtnMusician:AddEventListener(function()
         if not self._Unlocked then
-            XUiManager.TipMsg(CS.XTextManager.GetText(
-                "EnvelopeGuessingChoosePanelLocked",
-                self._InstrumentConf.OpenTarget))
+            XUiManager.TipMsg(CS.XTextManager.GetText("EnvelopeGuessingChoosePanelLocked", self._InstrumentConf.OpenTarget))
             return
         end
+        clickInstrumentMusicianChoosePanel(instrumentConf, self.ChoosePanel)
+    end)
 
-        clickInstrumentMusicianChoosePanel(
-            instrumentConf,
-            self.ChoosePanel)
-    end
-
+    ---@type XUiPanelRoleModel
     self._ModelInst = XUiPanelRoleModel.New(self.InstrumentModel, uiName, nil, true, false)
+    ---@type XUiPanelRoleModel
     self._ModelChar = XUiPanelRoleModel.New(self.CharacterModel, uiName, nil, true, false)
     self._ParentUiName = uiName
 end
 
 XUiPanelEnvelopeGuessingInstrument.RefreshType = {
-    Normal = 0,     -- 默认
-    Enter = 1,      -- 进入时
-    Exit = 2        -- 退出时
+    Normal = 0, -- 默认
+    Enter = 1, -- 进入时
+    Exit = 2 -- 退出时
 }
 
 function XUiPanelEnvelopeGuessingInstrument:Refresh(refreshType)
     --self:_UpdatePosition()
 
-    local playerCharacterId = self._Control:GetInstrumentBinding(
-        self._InstrumentConf.Id)
+    local playerCharacterId = self._Control:GetInstrumentBinding(self._InstrumentConf.Id)
 
+    -- 乐器模型三态：未解锁用 ModelLockedId，已解锁有人演奏用 ModelPlayingId，已解锁无人演奏用 ModelId
     local modelInstId
     local instrumentPos
-    if playerCharacterId then
+    if not self._Unlocked then
+        modelInstId = self._InstrumentConf.ModelLockedId
+        instrumentPos = self.InstrumentPos1
+    elseif playerCharacterId then
         modelInstId = self._InstrumentConf.ModelPlayingId
         instrumentPos = self.InstrumentPos2
     else
@@ -59,11 +59,25 @@ function XUiPanelEnvelopeGuessingInstrument:Refresh(refreshType)
         instrumentPos = self.InstrumentPos1
     end
 
+    -- 特殊处理模型
+    if self.QixiCharPianoChair01 then
+        self.QixiCharPianoChair01.gameObject:SetActiveEx(self._Unlocked)
+    end
+    if self.QixiCharPianoChair02 then
+        self.QixiCharPianoChair02.gameObject:SetActiveEx(not self._Unlocked)
+    end
+
     -- 递增刷新序号，供延迟回调判断自身是否已被更晚的刷新覆盖
     self._RefreshSeq = (self._RefreshSeq or 0) + 1
     local refreshSeq = self._RefreshSeq
 
     local function applyInstModel()
+        if string.IsNilOrEmpty(modelInstId) then
+            self._ModelInst:HideRoleModel()
+            self.CurrentInstModel = nil
+            return
+        end
+
         if self.CurrentInstModel ~= modelInstId then
             self._ModelInst:UpdateRoleModel(modelInstId, nil, self._ParentUiName, function(roleModel)
                 roleModel.transform.localPosition = instrumentPos.localPosition
@@ -72,6 +86,8 @@ function XUiPanelEnvelopeGuessingInstrument:Refresh(refreshType)
             end)
             self.CurrentInstModel = modelInstId
         end
+
+        self._ModelInst:ShowRoleModel()
     end
 
     -- Exit 时若有小人正在演奏，需等其停止演奏动画（03）播完再切换乐器模型；
@@ -95,15 +111,10 @@ function XUiPanelEnvelopeGuessingInstrument:Refresh(refreshType)
 
     local bgmTrackFadeDuration = 0.0
     if refreshType == self.RefreshType.Enter or refreshType == self.RefreshType.Exit then
-        bgmTrackFadeDuration = CS.XGame.ClientConfig:GetInt(
-            "EnvelopeGuessingEnvelopeBGMFadeDuration") / 1000.0
+        bgmTrackFadeDuration = CS.XGame.ClientConfig:GetInt("EnvelopeGuessingEnvelopeBGMFadeDuration") / 1000.0
     end
 
-    CS.XAudioManager.ChangeMusicSourceAisac(
-        self._InstrumentConf.BGMTrackControlName,
-        bgmTrackTargetValue,
-        bgmTrackFadeDuration,
-        XTool.Nop)
+    CS.XAudioManager.ChangeMusicSourceAisac(self._InstrumentConf.BGMTrackControlName, bgmTrackTargetValue, bgmTrackFadeDuration, XTool.Nop)
 
     if playerCharacterId then
         self._SomeCharacterIsPlaying = true
@@ -112,27 +123,23 @@ function XUiPanelEnvelopeGuessingInstrument:Refresh(refreshType)
         local charConf = self._Control:GetCharacterConfig(playerCharacterId)
         local charModelId = charConf.ModelId
 
-        self._ModelChar:UpdateRoleModel(
-            charModelId,
-            nil,
-            self._ParentUiName,
-            function(model)
-                self._LoadedCharModel = model
-                local ctrl = self._LoadCharacterAnimationController(charConf.IsFemale)
-                model:GetComponent(typeof(CS.UnityEngine.Animator)).runtimeAnimatorController = ctrl
+        self._ModelChar:UpdateRoleModel(charModelId, nil, self._ParentUiName, function(model)
+            self._LoadedCharModel = model
+            local pathKey = self._LoadCharacterAnimationController(charConf.IsFemale, charConf.ModelId)
+            local animator = model:GetComponent(typeof(CS.UnityEngine.Animator))
+            animator.runtimeAnimatorController = CS.LoadHelper.LoadUiController(CS.XGame.ClientConfig:GetString(pathKey), animator.gameObject)
 
-                local charAnima = self._InstrumentConf.CharacterAnimationId
-                self._PrevCharAnimationPrefix = charAnima
+            local charAnima = self._InstrumentConf.CharacterAnimationId
+            self._PrevCharAnimationPrefix = charAnima
 
-                if refreshType == self.RefreshType.Enter then
-                    charAnima = charAnima .. "01"
-                else
-                    charAnima = charAnima .. "02"
-                end
+            if refreshType == self.RefreshType.Enter then
+                charAnima = charAnima .. "01"
+            else
+                charAnima = charAnima .. "02"
+            end
 
-                self._ModelChar:PlayAnima(charAnima, true)
-            end,
-            false)
+            self._ModelChar:PlayAnima(charAnima, true)
+        end, false)
     else
         self._SomeCharacterIsPlaying = false
 
@@ -162,17 +169,10 @@ end
 
 function XUiPanelEnvelopeGuessingInstrument:_UpdatePosition()
     CS.UnityEngine.Canvas.ForceUpdateCanvases()
-
-    XUiHelper.SetUiObjectPositionTo3D(
-        self._UiCamera,
-        self.Transform,
-        self._NearCamera,
-        self.ButtonPosition)
+    XUiHelper.SetUiObjectPositionTo3D(self._UiCamera, self.Transform, self._NearCamera, self.ButtonPosition)
 end
 
-function XUiPanelEnvelopeGuessingInstrument:SetUnlockState(
-    prevOpenedCharacters, currentOpenedCharacters)
-
+function XUiPanelEnvelopeGuessingInstrument:SetUnlockState(prevOpenedCharacters, currentOpenedCharacters)
     prevOpenedCharacters = prevOpenedCharacters or currentOpenedCharacters
     local prevUnlocked = prevOpenedCharacters >= self._InstrumentConf.OpenTarget
     self._Unlocked = currentOpenedCharacters >= self._InstrumentConf.OpenTarget
@@ -192,9 +192,7 @@ end
 
 function XUiPanelEnvelopeGuessingInstrument:_SetAsLocked(curOpenedChars)
     self.BtnMusician:SetButtonState(CS.UiButtonState.Disable)
-    self.BtnMusician:SetNameByGroup(0,
-        curOpenedChars .. "/" .. self._InstrumentConf.OpenTarget)
-
+    self.BtnMusician:SetNameByGroup(0, curOpenedChars .. "/" .. self._InstrumentConf.OpenTarget)
     self.PanelUnlock.gameObject:SetActiveEx(false)
 end
 

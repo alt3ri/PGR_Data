@@ -1928,6 +1928,14 @@
         "Description": "War Zone Alpha"
     },
     {
+        "Id": 4200,
+        "ConditionId": null,
+        "BornMagic": "[784493]",
+        "EnemyBornMagic": null,
+        "PartnerBornMagic": null,
+        "Description": "War Zone Karenina"
+    },
+    {
         "Id": 4201,
         "ConditionId": null,
         "BornMagic": "[764151, 764018, 764136, 175264]",
@@ -2014,6 +2022,54 @@
         "EnemyBornMagic": null,
         "PartnerBornMagic": null,
         "Description": "Battle Rating Mode Selena"
+    },
+    {
+        "Id": 4220,
+        "ConditionId": null,
+        "BornMagic": "[764325, 756379]",
+        "EnemyBornMagic": "[764367]",
+        "PartnerBornMagic": null,
+        "Description": "15F Environment 1"
+    },
+    {
+        "Id": 4221,
+        "ConditionId": null,
+        "BornMagic": "[764325]",
+        "EnemyBornMagic": "[764367, 756363]",
+        "PartnerBornMagic": null,
+        "Description": "Boss Custom 15F Environment 1"
+    },
+    {
+        "Id": 4222,
+        "ConditionId": null,
+        "BornMagic": "[764325, 756372]",
+        "EnemyBornMagic": "[764367]",
+        "PartnerBornMagic": null,
+        "Description": "15F Environment 2"
+    },
+    {
+        "Id": 4223,
+        "ConditionId": null,
+        "BornMagic": "[764325]",
+        "EnemyBornMagic": "[764367, 756369]",
+        "PartnerBornMagic": null,
+        "Description": "Boss Custom 15F Environment 2"
+    },
+    {
+        "Id": 4224,
+        "ConditionId": null,
+        "BornMagic": "[764325, 756365]",
+        "EnemyBornMagic": "[764367]",
+        "PartnerBornMagic": null,
+        "Description": "15F Environment 3"
+    },
+    {
+        "Id": 4225,
+        "ConditionId": null,
+        "BornMagic": "[764325]",
+        "EnemyBornMagic": "[764367, 756377]",
+        "PartnerBornMagic": null,
+        "Description": "Boss Custom 15F Environment 3"
     },
     {
         "Id": 4501,
@@ -2362,7 +2418,7 @@
     {
         "Id": 4545,
         "ConditionId": null,
-        "BornMagic": "[809550]",
+        "BornMagic": "[809550, 809552]",
         "EnemyBornMagic": null,
         "PartnerBornMagic": null,
         "Description": "Rating Crimson Abyss Talent 2"
@@ -51414,6 +51470,22 @@
         "EnemyBornMagic": "[785370]",
         "PartnerBornMagic": null,
         "Description": "Dealing Glaciation DMG makes the enemy take significantly more Glaciation DMG. Initial: 3%, then 1.5% per stack, up to 5 stacks (Glaciation Weakness). Lasts 10s. Duration resets every time the effect is triggered."
+    },
+    {
+        "Id": 2300067,
+        "ConditionId": null,
+        "BornMagic": null,
+        "EnemyBornMagic": "[785378]",
+        "PartnerBornMagic": null,
+        "Description": "Upon a Critical Hit, significantly increases the Boss' Physical DMG taken by 7% first and then by 3.5% per stack. Max 6 stacks. (Physical Fragility). Lasts 10s. Duration resets every time it is triggered."
+    },
+    {
+        "Id": 2300068,
+        "ConditionId": null,
+        "BornMagic": null,
+        "EnemyBornMagic": "[785374]",
+        "PartnerBornMagic": null,
+        "Description": "Every time when Darkflow DMG (DMG Type is Darkflow DMG) is dealt, Boss takes significantly more damage (Darkflow Weakness). Initial: 14%. Then, 7% per stack, up to 20%. Lasts 10s. Duration resets every time it is triggered."
     },
     {
         "Id": 2301001,

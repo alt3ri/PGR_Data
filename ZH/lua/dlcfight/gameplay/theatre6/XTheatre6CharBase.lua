@@ -1356,6 +1356,7 @@ end
 
 --检查单位是否处于可以触发格挡的状态
 function XTheatre6CharBase:CanBlock()
+    if self:CheckState(StateEnum.Delay) then return false end
     return self._states.Hit:CanBlock()
 end
 

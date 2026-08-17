@@ -30,8 +30,6 @@ end
 
 ---初始化事件回调注册
 function XBuffScript1025815:InitEventCallBackRegister()
-    self._canUse = self._proxy:GetTheatre6BuffActionValue(self._uuid,self._key)
-    if self._canUse == 2 then return end
     self._proxy:RegisterEvent(EWorldEvent.Theatre6Environment)
 end
 
@@ -40,11 +38,14 @@ function XBuffScript1025815:HandleEvent(eventType, eventArgs)
     --保底处理
     if eventType ~= EWorldEvent.Theatre6Environment then return end
     if eventArgs.UUID == self._uuid then return end
+    --防止重复调用
+    if self._canUse == 2 then return end
+    
+    self._canUse = self._proxy:GetTheatre6BuffActionValue(self._uuid,self._key)
     if self._canUse == 2 then return end
     
     --获取下对方身上buff的等级，自身添加同等级的1.5倍效果buff
     if self._proxy:CheckBuffByKind(self._enemyUUID, self._enemyAttkBuff) then
-        if self._canUse == 2 then return end
         if self.hasLevel == false then
             self.hasLevel,self.level = self._proxy:TryQueryBuffLevel(self._enemyUUID, self._enemyAttkBuff)
         end
@@ -55,6 +56,7 @@ function XBuffScript1025815:HandleEvent(eventType, eventArgs)
 
         --防止后续继续触发
         self._proxy:SetTheatre6BuffActionValue(self._uuid,self._key,2)
+        
         self._canUse = 2
     end
 end

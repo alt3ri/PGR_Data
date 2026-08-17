@@ -91,8 +91,10 @@ function XUiPBRCharacterDetail:OnCharacterSelectChanged(cfg)
         end
     end
     
-    -- 切换模型
-    self.RoleModel:InitShowCharacter(cfg.CuteModelName)
+    -- 切换模型，加载完成后播放 IdleAction（异步加载，须在 onLoaded 回调里播，避免 animator 未就绪失效）
+    self.RoleModel:InitShowCharacter(cfg.CuteModelName, function()
+        self.RoleModel:PlayRoleAnimation(self._Control.CharacterControl:GetCharacterIdleActionById(cfg.CharacterId))
+    end)
     
     self.CurCharacterId = cfg.CharacterId
 end

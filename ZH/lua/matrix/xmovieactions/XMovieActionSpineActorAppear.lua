@@ -1,7 +1,6 @@
 local vector = CS.UnityEngine.Vector3
 local CSDOTween = CS.DG.Tweening.DOTween
 local DEFAULT_FADE_DURATION = 0.8
-local MILLIS_TO_SECONDS = 0.001
 
 local XMovieActionSpineActorAppear = XClass(XMovieActionBase, "XMovieActionSpineActorAppear")
 
@@ -60,15 +59,20 @@ function XMovieActionSpineActorAppear:OnInit(actionData)
     local posZ = paramToNumber(params[6])
     self.FixPos = vector(XDataCenter.MovieManager.Fit(posX), posY, posZ)
     self.IsSkipAnim = paramToNumber(params[7]) == 1
-    local endDelay = paramToNumber(actionData.EndDelay)
-    self.FadeDuration = endDelay > 0 and endDelay * MILLIS_TO_SECONDS or DEFAULT_FADE_DURATION
+    self.FadeDuration = DEFAULT_FADE_DURATION
 end
 
 function XMovieActionSpineActorAppear:OnEnter()
     local actor = self.UiRoot:GetSpineActor(self.ActorIndex)
+    actor:CleanupSpineFadeComponent()
     actor:SetShow(true)
     actor:UpdateSpineActor(self.ActorId, self.AnimId)
     actor:SetPos(self.FixPos)
+
+    if self.IsSkipAnim then
+        return
+    end
+
     FadeSpineImageAlpha(actor, 0, 1, self.FadeDuration, function()
         actor:CleanupSpineFadeComponent(false)
     end)

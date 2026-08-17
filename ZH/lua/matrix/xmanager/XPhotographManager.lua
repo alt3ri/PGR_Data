@@ -939,6 +939,15 @@ XPhotographManagerCreator = function()
         XLuaUiManager.Open("UiSceneSettingMain", ...)
     end
 
+    ---模式切换按钮是否选中第一个选项
+    function XPhotographManager:IsBtnSwitchFirst(sceneId)
+        if XMVCA.XMusicScene:IsMusicScene(sceneId) then
+            return XMVCA.XMusicScene:GetCurPlayMode(sceneId) == XEnumConst.MusicScene.Mode.Normal
+        else
+            return PreviewState == XPhotographConfigs.BackGroundState.Full
+        end
+    end
+
     XPhotographManager.Init()
     return XPhotographManager
 end

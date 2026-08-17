@@ -474,6 +474,7 @@ function XModelManager.LoadRoleModel(modelId, target, cb)
     local hideNodePaths = XModelManager.GetUiModelHideNodes(modelId)
     local model = CS.LoadHelper.InstantiateNpc(modelPath)
     model.transform:SetParent(target, false)
+    model.gameObject:SetActiveEx(true)
     model.gameObject:SetLayerRecursively(target.gameObject.layer)
     model.transform.localScale = CS.UnityEngine.Vector3.one
     model.transform.localPosition = CS.UnityEngine.Vector3.zero

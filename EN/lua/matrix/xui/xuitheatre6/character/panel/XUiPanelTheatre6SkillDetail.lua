@@ -99,7 +99,8 @@ function XUiPanelTheatre6SkillDetail:Refresh(skillId, params)
     self.TxtSp.text = skillConfig.CostTL                                                  --SP消耗
     self.ImgIconSp:SetSprite(self._Control:GetClientConfigValue("IconSp"))                --SP图标
     self.TxtType.text = self._Control:GetClientConfigValue("SkillType", skillConfig.Type) --技能类型
-    self.TxtDesc.text = self._Control:GetSkillDesc(self._SkillId, false, isCanUpgrade)
+    local customModelData = params and params.ModelData
+    self.TxtDesc.text = self._Control:GetSkillDesc(self._SkillId, false, isCanUpgrade, customModelData)
     if self.UiRImgIcon then
         self.UiRImgIcon:SetRawImage(skillConfig.Icon) --技能图标
     end

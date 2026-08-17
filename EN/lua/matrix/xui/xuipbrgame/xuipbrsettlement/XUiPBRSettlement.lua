@@ -89,6 +89,19 @@ function XUiPBRSettlement:OnStart(stageId, settleData, isWin)
     local cfg = self._Control.CharacterControl:GetCharacterCfg(self.SettleData.CharacterId)
     if cfg then
         self.RoleModel:InitShowCharacter(cfg.CuteModelName)
+        
+        -- 播放动画
+        local animName = nil
+
+        if isWin then
+            animName = self._Control.CharacterControl:GetCharacterWinActionById(self.SettleData.CharacterId)
+        else
+            animName = self._Control.CharacterControl:GetCharacterFailActionById(self.SettleData.CharacterId)
+        end
+
+        if not string.IsNilOrEmpty(animName) then
+            self.RoleModel:PlayRoleAnimation(animName)
+        end
     end
     
     self.RoleModel:RefreshShowBySettle(isWin)

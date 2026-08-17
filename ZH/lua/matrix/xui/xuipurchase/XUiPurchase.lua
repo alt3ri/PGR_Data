@@ -707,7 +707,9 @@ function XUiPurchase:OnDestroy()
     XEventManager.RemoveEventListener(XEventId.EVENT_FIGHT_BEFORE_ENTER, self.SignDontClearDataOnFight, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_FASHION_SUIT_PURCHASE_BUY, self.UpdateFashionSuitBuy, self)
     self.Btns = nil
-    if self.IsClearData and not XLuaUiManager.IsUiLoad("UiPurchase")  then
+    local isUiPurchaseExist = XLuaUiManager.IsUiLoad("UiPurchase")
+    local isFashionDetailExist = XLuaUiManager.IsUiPushing("UiFashionDetail") or XLuaUiManager.IsUiLoad("UiFashionDetail")
+    if self.IsClearData and not isUiPurchaseExist and not isFashionDetailExist then
         XDataCenter.PurchaseManager.ClearData()
     end
 

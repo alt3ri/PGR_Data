@@ -863,7 +863,16 @@ XFashionManagerCreator = function()
             fashionId = XMVCA.XCharacter:GetCharacterTemplate(charId).DefaultNpcFashtionId
         end
 
-        local resId = XMVCA.XFashion:GetOwnFashionColorResourcesId(fashionId)
+        local colorId
+        if fightNpcData.IsRobot then
+            local robotTemplate = XRobotManager.GetRobotTemplate(fightNpcData.RobotId)
+            if robotTemplate and robotTemplate.UseFashionColor == 1 then
+                -- 传入 0 可跳过玩家保存的异色配置，强制使用机器人涂装的原色资源。
+                colorId = 0
+            end
+        end
+
+        local resId = XMVCA.XFashion:GetOwnFashionColorResourcesId(fashionId, colorId)
 
         return XMVCA.XCharacter:GetCharResModel(resId)
     end

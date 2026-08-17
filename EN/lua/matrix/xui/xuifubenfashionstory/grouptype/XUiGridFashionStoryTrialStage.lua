@@ -67,7 +67,7 @@ function XUiGridFashionStoryTrialStage:OnClickEvent()
             -- v4.6 改为试验关跳转
             local trialLevel = XDataCenter.FubenExperimentManager.GetTrialLevelByStageId(self.Id)
             if trialLevel then
-                XLuaUiManager.Open("UiPaintingExperiencePassV4P2", trialLevel.Id)
+                XDataCenter.FubenExperimentManager:OpenPaintingExperiencePass(trialLevel.Id)
             else
                 XLog.Error(string.format("[XUiGridFashionStoryTrialStage] 未找到 StageId=%s 对应的 TrialLevel，请检查 ExperimentLevel.tab 中的 SingStageId 配置", tostring(self.Id)))
                 XUiManager.TipText("CommonNotOpen")

@@ -37,6 +37,16 @@ function XUiPBRCharacterDetail:InitComponents()
     if self.BtnGenius then
         self.BtnGenius.gameObject:SetActiveEx(false)
     end
+    
+    -- 默认隐藏BGM入口
+    if self.BtnMusic then
+        self.BtnMusic.gameObject:SetActiveEx(false)
+    end
+    
+    -- 默认隐藏关卡显示
+    if self.PanelStage then
+        self.PanelStage.gameObject:SetActiveEx(false)
+    end
 end
 
 function XUiPBRCharacterDetail:OnStart()

@@ -64,6 +64,7 @@ function XUiNewDrawMain:OnStart(ruleType, groupId, defaultDrawId, groupIdPool, o
 end
 
 function XUiNewDrawMain:OnEnable()
+    self.DefaultDrawId = self.DefaultDrawId or (self.DrawInfo and self.DrawInfo.Id)
     self:InitDrawCardsData()
     if self.CurBanner then
         self.CurBanner:Refresh()
@@ -554,14 +555,7 @@ end
 function XUiNewDrawMain:CreateBanner(data)
     local groupActivityTargetData = XDataCenter.DrawManager.GetDrawGroupActivityTargetInfo(self.GroupId)
     local activeTargetId = groupActivityTargetData and groupActivityTargetData:GetActivityId()
-    -- 使用 option 维度获取 drawInfo
-    local drawInfo
-    if not string.IsNilOrEmpty(self.CurrentOptionKey) then
-        drawInfo = XDataCenter.DrawManager.GetUseDrawInfoByOptionKey(self.CurrentOptionKey)
-    end
-    if not drawInfo then
-        drawInfo = XDataCenter.DrawManager.GetUseDrawInfoByGroupId(data:GetId())
-    end
+    local drawInfo = self.DrawInfo
 
     -- 切换创建新的banner要销毁上一个
     if self.CurBanner then
@@ -1479,6 +1473,8 @@ function XUiNewDrawMain:OnBtnOptionDrawClick()
     self._IsNormalTargetChange = true
     XLuaUiManager.Open("UiDrawOptional", self,
             function(drawId)
+                -- 主动选择后，入口指定的默认卡池不再生效
+                self.DefaultDrawId = nil
                 self:OnSelectUp(drawId)
                 self:RefreshScene()
             end,
@@ -1486,6 +1482,8 @@ function XUiNewDrawMain:OnBtnOptionDrawClick()
                 self:Close()
             end,
             function()
+                -- 未选择目标时，首个卡池接管后续刷新
+                self.DefaultDrawId = nil
                 self:SelectFirstTab()
             end)
 end

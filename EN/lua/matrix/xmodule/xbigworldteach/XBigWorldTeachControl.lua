@@ -53,7 +53,11 @@ end
 function XBigWorldTeachControl:GetTeachContentCountByTeachId(teachId)
     local contents = self._Model:GetTeachContentsByTeachId(teachId)
 
-    return table.nums(contents)
+    if XTool.IsTableEmpty(contents) then
+        return 0
+    end
+
+    return #contents
 end
 
 function XBigWorldTeachControl:GetTeachsByGroupId(groupId)

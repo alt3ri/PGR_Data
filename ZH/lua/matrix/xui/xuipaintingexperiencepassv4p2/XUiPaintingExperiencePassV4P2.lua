@@ -31,10 +31,25 @@ end
 ---@param isShowSwitch boolean 是否显示切换按钮
 function XUiPaintingExperiencePassV4P2:OnStart(trialLevelId, isShowSwitch)
     self.RewardPanelList = {}
-    self.IsShowSwitch = isShowSwitch
-    self.CurLevelId = trialLevelId
+    if self.ResumeData then
+        --战斗返回时栈参数仍是打开界面时的关卡Id，需用OnResume保存的当前关卡Id恢复
+        self.IsShowSwitch = self.ResumeData.IsShowSwitch
+        self.CurLevelId = self.ResumeData.CurLevelId
+        self.ResumeData = nil
+    else
+        self.IsShowSwitch = isShowSwitch
+        self.CurLevelId = trialLevelId
+    end
     self:InitData()
     self:InitView()
+end
+
+function XUiPaintingExperiencePassV4P2:OnReleaseInst()
+    return { CurLevelId = self.CurLevelId, IsShowSwitch = self.IsShowSwitch }
+end
+
+function XUiPaintingExperiencePassV4P2:OnResume(data)
+    self.ResumeData = data
 end
 
 function XUiPaintingExperiencePassV4P2:OnDestroy()
@@ -82,7 +97,8 @@ end
 
 function XUiPaintingExperiencePassV4P2:UpdateView()
     self.SkipIds = {}
-    local skipIds = XDataCenter.FashionManager.GetFashionSkipIdParams(self.TrialLevelInfo.FashionId)
+    local fashionId = self.TrialLevelInfo.FashionId
+    local skipIds = XTool.IsNumberValid(fashionId) and XDataCenter.FashionManager.GetFashionSkipIdParams(fashionId)
     if skipIds then
         for _, v in pairs(skipIds) do
             if XFunctionManager.CheckSkipInDuration(v, false) then
@@ -113,6 +129,11 @@ function XUiPaintingExperiencePassV4P2:UpdateRoleInfo()
     self.IsShow2D = not self.IsExistScene --有场景则默认显示场景
 
     self.TxtTitle.text = self.TrialLevelInfo.Name
+    if self.TrialLevelInfo.IsTopAlignment then
+        self.ImgFullScreen.transform:SetPivotY(1)
+    else
+        self.ImgFullScreen.transform:SetPivotY(0.5)
+    end
     if self.TrialLevelInfo.DetailBackGroundIco then
         self.ImgFullScreen:SetRawImage(self.TrialLevelInfo.DetailBackGroundIco)
     end
@@ -236,14 +257,29 @@ function XUiPaintingExperiencePassV4P2:HideDesc()
     self.PanelNor.gameObject:SetActiveEx(false)
 end
 
-function XUiPaintingExperiencePassV4P2:SkipFunction(skipId)
+function XUiPaintingExperiencePassV4P2:SaftSkipToFashion(skipId)
+    if XDataCenter.PurchaseManager.IsPurchaseInfosEmpty() then
+        --礼包数据被清空，需要重新请求协议
+        XDataCenter.PurchaseManager.GetPurchaseListRequest(XPurchaseConfigs.GetLBUiTypesList(), function()
+            self:SkipToFashion(skipId)
+        end)
+    else
+        self:SkipToFashion(skipId)
+    end
+end
+
+function XUiPaintingExperiencePassV4P2:SkipToFashion(skipId)
     if XLuaUiManager.IsUiLoad("UiFashionDetail") or XLuaUiManager.IsUiLoad("UiFashionSuitDetail")
             or XLuaUiManager.IsStackUiOpen("UiFashionDetail") or XLuaUiManager.IsStackUiOpen("UiFashionSuitDetail") then
         self:Close()
     else
-        local fromMsg = XDataCenter.FubenExperimentManager:GetPaintingExperiencePassName(self.CurLevelId)
-        XFunctionManager.SkipInterface(skipId, fromMsg)
+        self:SkipFunction(skipId)
     end
+end
+
+function XUiPaintingExperiencePassV4P2:SkipFunction(skipId)
+    local fromMsg = XDataCenter.FubenExperimentManager:GetPaintingExperiencePassName(self.CurLevelId)
+    XFunctionManager.SkipInterface(skipId, fromMsg)
 end
 
 function XUiPaintingExperiencePassV4P2:OnBtnSingleEnterClick()
@@ -259,7 +295,7 @@ function XUiPaintingExperiencePassV4P2:OnBtnSingleEnterClick()
 end
 
 function XUiPaintingExperiencePassV4P2:OnBtnPurchase()
-    self:SkipFunction(self.SkipIds[1])
+    self:SaftSkipToFashion(self.SkipIds[1])
 end
 
 function XUiPaintingExperiencePassV4P2:OnBtnPurchaseCombinationClick()
@@ -271,7 +307,7 @@ function XUiPaintingExperiencePassV4P2:OnBtnPurchaseSceneClick()
 end
 
 function XUiPaintingExperiencePassV4P2:OnBtnPurchaseSkinClick()
-    self:SkipFunction(self.TrialSceneInfo.SkipFunctionals[2])
+    self:SaftSkipToFashion(self.TrialSceneInfo.SkipFunctionals[2])
 end
 
 function XUiPaintingExperiencePassV4P2:OnBtnArrowLeftClick()

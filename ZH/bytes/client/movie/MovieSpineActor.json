@@ -873,20 +873,50 @@
         "RoleId": 1021088,
         "Name": "\u6d77\u4f26\u6c40\u6cf3\u88c5\u76ae",
         "SpinePath": "Assets/Product/Ui/Spine/4_6_Spine/V46UIMovie_Helentine/V46UIMovie_Helentine.prefab",
-        "RoleAnims": "['idle', 'face_biyan', 'face_haixiu', 'face_jingya', 'face_sikao', 'face_weixiao', 'face_wenrou', 'idle_to_AC_qs', 'AC_qs_to_AC_cszl']",
-        "RoleAnims2": "{1: 'idle_blink', 2: 'face_biyan', 3: 'face_haixiu_blink', 4: 'face_jingya_blink', 5: 'face_sikao_blink', 6: 'face_weixiao_blink', 7: 'face_wenrou_blink', 12: 'AC_qs_to_idle_blink', 13: 'AC_cszl_to_AC_qs'}",
-        "KouIdleAnims": "['idle', 'face_biyan', 'face_haixiu', 'face_jingya', 'face_sikao', 'face_weixiao', 'face_wenrou', 'idle_to_AC_cszl']",
-        "KouTalkAnims": "['idle', 'face_biyan', 'face_haixiu', 'face_jingya', 'face_sikao', 'face_weixiao', 'face_wenrou', 'AC_cszl_to_idle_blink']",
+        "RoleAnims": "['idle', 'face_biyan', 'face_haixiu', 'face_jingya', 'face_sikao', 'face_weixiao', 'face_wenrou']",
+        "RoleAnims2": "{1: 'idle_blink', 2: 'face_biyan', 3: 'face_haixiu_blink', 4: 'face_jingya_blink', 5: 'face_sikao_blink', 6: 'face_weixiao_blink', 7: 'face_wenrou_blink'}",
+        "KouIdleAnims": "['idle', 'face_biyan', 'face_haixiu', 'face_jingya', 'face_sikao', 'face_weixiao', 'face_wenrou']",
+        "KouTalkAnims": "['idle', 'face_biyan', 'face_haixiu', 'face_jingya', 'face_sikao', 'face_weixiao', 'face_wenrou']",
         "TransitionAnims": null
     },
     {
         "RoleId": 1021089,
         "Name": "\u8d5b\u7433\u5a1c\u6cf3\u88c5\u76ae",
         "SpinePath": "Assets/Product/Ui/Spine/4_6_Spine/V46UIMovie_Selena/V46UIMovie_Selena.prefab",
-        "RoleAnims": "['idle', 'face_biyan', 'face_haixiu', 'face_beishang', 'face_bypj', 'face_weixiao', 'face_wunai', 'face_zypj', 'face_beishang2', 'idle_to_AC_qs', 'AC_qs_to_AC_cszl']",
-        "RoleAnims2": "{1: 'idle_blink', 2: 'face_bypj', 3: 'face_haixiu_blink', 4: 'face_beishang_blink', 5: 'face_bypj', 6: 'face_weixiao_blink', 7: 'face_wunai_blink', 8: 'face_zypj_blink', 9: 'face_beishang2_blink', 12: 'AC_qs_to_idle', 13: 'AC_cszl_to_AC_qs'}",
-        "KouIdleAnims": "['idle', 'face_biyan', 'face_haixiu', 'face_beishang', 'face_bypj', 'face_weixiao', 'face_wunai', 'face_zypj', 'face_beishang2', 'idle_to_AC_cszl']",
-        "KouTalkAnims": "['idle', 'face_biyan', 'face_haixiu', 'face_beishang', 'face_bypj', 'face_weixiao', 'face_wunai', 'face_zypj', 'face_beishang2', 'AC_cszl_to_idle']",
+        "RoleAnims": "['idle', 'face_biyan', 'face_haixiu', 'face_beishang', 'face_bypj', 'face_weixiao', 'face_wunai', 'face_zypj', 'face_beishang2']",
+        "RoleAnims2": "{1: 'idle_blink', 2: 'face_bypj', 3: 'face_haixiu_blink', 4: 'face_beishang_blink', 5: 'face_bypj', 6: 'face_weixiao_blink', 7: 'face_wunai_blink', 8: 'face_zypj_blink', 9: 'face_beishang2_blink'}",
+        "KouIdleAnims": "['idle', 'face_biyan', 'face_haixiu', 'face_beishang', 'face_bypj', 'face_weixiao', 'face_wunai', 'face_zypj', 'face_beishang2']",
+        "KouTalkAnims": "['idle', 'face_biyan', 'face_haixiu', 'face_beishang', 'face_bypj', 'face_weixiao', 'face_wunai', 'face_zypj', 'face_beishang2']",
+        "TransitionAnims": null
+    },
+    {
+        "RoleId": 1021091,
+        "Name": "\u6d77\u5c9b\u6751\u8001\u5987",
+        "SpinePath": "Assets/Product/Ui/Spine/4_7_Spine/V47UIMovie_haidaocunlaotai/V47UIMovie_haidaocunlaotai.prefab",
+        "RoleAnims": "['Fa/idle']",
+        "RoleAnims2": null,
+        "KouIdleAnims": "['Mo/idle']",
+        "KouTalkAnims": "['Mo/idle']",
+        "TransitionAnims": null
+    },
+    {
+        "RoleId": 1021092,
+        "Name": "\u6bd4\u5b89\u5361\u6cf3\u88c5\u76ae",
+        "SpinePath": "Assets/Product/Ui/Spine/4_7_Spine/V47UIMovie_bianka/V47UIMovie_bianka.prefab",
+        "RoleAnims": "['Fa/idle', 'Fa/biyanweixiao', 'Fa/weixiao', 'Fa/shengqi', 'Fa/biyansikao', 'Fa/jingya', 'Fa/haixiu', 'Fa/shishen']",
+        "RoleAnims2": "{1: 'Fa/idle_blink', 2: 'Fa/biyanweixiao', 3: 'Fa/weixiao_blink', 4: 'Fa/shengqi_blink', 5: 'Fa/biyansikao', 6: 'Fa/jingya_blink', 7: 'Fa/haixiu_blink', 8: 'Fa/shishen_blink'}",
+        "KouIdleAnims": "['Mo/idle', 'Mo/biyanweixiao', 'Mo/weixiao', 'Mo/shengqi', 'Mo/biyansikao', 'Mo/jingya', 'Mo/haixiu', 'Mo/shishen']",
+        "KouTalkAnims": "['Mo/idle_blink', 'Mo/biyanweixiao', 'Mo/weixiao_blink', 'Mo/shengqi_blink', 'Mo/biyansikao', 'Mo/jingya_blink', 'Mo/haixiu_blink', 'Mo/shishen_blink']",
+        "TransitionAnims": null
+    },
+    {
+        "RoleId": 1021093,
+        "Name": "\u5e03\u5076\u718a\u6cf3\u88c5",
+        "SpinePath": "Assets/Product/Ui/Spine/4_7_Spine/V47UIMovie_buouxiong/V47UIMovie_buouxiong.prefab",
+        "RoleAnims": "['Fa/idle', 'Fa/weixiao', 'Fa/shengqi', 'Fa/biyan', 'Fa/jingya', 'Fa/haixiu', 'Fa/renzhen', 'Fa/sikao', 'Fa/lengxiao']",
+        "RoleAnims2": "{1: 'Fa/idle_blink', 2: 'Fa/weixiao_blink', 3: 'Fa/shengqi_blink', 4: 'Fa/biyan', 5: 'Fa/jingya_blink', 6: 'Fa/haixiu_blink', 7: 'Fa/renzhen_blink', 8: 'Fa/sikao_blink', 9: 'Fa/lengxiao_blink'}",
+        "KouIdleAnims": "['Mo/idle', 'Mo/weixiao', 'Mo/shengqi', 'Mo/biyan', 'Mo/jingya', 'Mo/haixiu', 'Mo/renzhen', 'Mo/sikao', 'Mo/lengxiao']",
+        "KouTalkAnims": "['Mo/idle_blink', 'Mo/weixiao_blink', 'Mo/shengqi_blink', 'Mo/biyan', 'Mo/jingya_blink', 'Mo/haixiu_blink', 'Mo/renzhen_blink', 'Mo/sikao_blink', 'Mo/lengxiao_blink']",
         "TransitionAnims": null
     }
 ]

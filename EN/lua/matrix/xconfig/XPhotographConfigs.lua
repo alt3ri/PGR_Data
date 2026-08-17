@@ -16,6 +16,7 @@ XPhotographConfigs.BackGroundType = {
     Date = 2,           -- 昼夜模式
     Normal=3,           -- 普通类型，无特殊模式
     Gyro = 4,           -- 交互模式（陀螺仪）
+    Music = 5,          -- 音乐模式
 }
 
 XPhotographConfigs.SceneRotationType = {

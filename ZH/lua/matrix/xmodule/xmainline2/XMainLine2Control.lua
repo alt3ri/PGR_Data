@@ -6,6 +6,7 @@ local ChapterId2Cls = {
     [1041] = "XUi/XUiMainLine2/CustomUiChapter/XUiMainLine2PanelChapter4P5",
     [1042] = "XUi/XUiMainLine2/CustomUiChapter/XUiMainLine2PanelChapter4P7",
     [1142] = "XUi/XUiMainLine2/CustomUiChapter/XUiMainLine2PanelChapter4P7",
+    [1242] = "XUi/XUiMainLine2/CustomUiChapter/XUiMainLine2PanelChapter4P7",
     [2016] = "XUi/XUiMainLine2/CustomUiChapter/XUiMainLine2PanelChapter4P6",
 }
 
@@ -186,6 +187,21 @@ end
 -- 获取章节待机Spine的动画名
 function XMainLine2Control:GetChapterIdleSpineName(chapterId)
     return self._Model:GetChapterIdleSpineName(chapterId)
+end
+
+-- 获取章节待机音效
+function XMainLine2Control:GetChapterIdleSoundName(chapterId)
+    return self._Model:GetChapterIdleSoundName(chapterId)
+end
+
+-- 获取章节向前切换音效
+function XMainLine2Control:GetChapterSwitchAheadSoundName(chapterId)
+    return self._Model:GetChapterSwitchAheadSoundName(chapterId)
+end
+
+-- 获取章节向后切换音效
+function XMainLine2Control:GetChapterSwitchBackwardSoundName(chapterId)
+    return self._Model:GetChapterSwitchBackwardSoundName(chapterId)
 end
 
 -- 获取主章节标题
@@ -494,6 +510,18 @@ end
 ---@param chapterId number 主章节Id
 function XMainLine2Control:GetIsPlaySwitchEnterEffect(chapterId)
     return self._Model:GetIsPlaySwitchEnterEffect(chapterId)
+end
+
+--- 设置已执行过章节直跳（无特效跳转）
+---@param chapterId number 章节Id
+function XMainLine2Control:SetIsAutoSwitchChapterDirect(chapterId)
+    self._Model:SetIsAutoSwitchChapterDirect(chapterId)
+end
+
+--- 是否已执行过章节直跳（无特效跳转）
+---@param chapterId number 章节Id
+function XMainLine2Control:GetIsAutoSwitchChapterDirect(chapterId)
+    return self._Model:GetIsAutoSwitchChapterDirect(chapterId)
 end
 
 -- 缓存主章节释放的数据

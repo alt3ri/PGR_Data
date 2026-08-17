@@ -162,7 +162,9 @@ end
 function XFashionSuitAgency:IsAllowGroupSales(fashionId)
     return self._Model:IsAllowGroupSales(fashionId)
 end
-
+function XFashionSuitAgency:CheckGainParamsValid(gainType, params)
+    return self._Model:CheckGainParamsValid(gainType, params)
+end
 ---自选礼包点涂装详情前置位，XUiFashionDetail 打开时消费
 function XFashionSuitAgency:SetFromSelfChoicePack(value)
     self._FromSelfChoicePack = value

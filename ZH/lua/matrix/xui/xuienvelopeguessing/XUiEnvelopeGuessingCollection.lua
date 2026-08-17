@@ -1,14 +1,8 @@
-local XUiEnvelopeGuessingCollectionCharacterCard =
-    require("XUi/XUiEnvelopeGuessing/XUiEnvelopeGuessingCollectionCharacterCard")
-
-local XDynamicTableNormal =
-    require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
-
-local XUiEnvelopeGuessingSubUi =
-    require("XUi/XUiEnvelopeGuessing/XUiEnvelopeGuessingSubUi")
-
-local XUiEnvelopeGuessingCollection =
-    XLuaUiManager.Register(XUiEnvelopeGuessingSubUi, "UiEnvelopeGuessingCollection")
+local XUiEnvelopeGuessingCollectionCharacterCard = require("XUi/XUiEnvelopeGuessing/XUiEnvelopeGuessingCollectionCharacterCard")
+local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
+---@class XUiEnvelopeGuessingCollection : XLuaUi
+---@field private _Control XEnvelopeGuessingControl
+local XUiEnvelopeGuessingCollection = XLuaUiManager.Register(XLuaUi, "UiEnvelopeGuessingCollection")
 
 -- 卡片入场动画间隔（0.02s）
 local ENTER_ANIM_INTERVAL = 20
@@ -17,7 +11,7 @@ function XUiEnvelopeGuessingCollection:OnStart()
     self:BindExitBtns(self.BtnBack, self.BtnMainUi)
     self:BindHelpBtn(self.BtnHelp, "EnvelopeGuessingHelp")
 
-    self._OnGridClickHandler = handler(self, self._OnGridClick),
+    self._OnGridClickHandler = handler(self, self._OnGridClick)
 
     self.GridCollection.gameObject:SetActiveEx(false)
 
@@ -28,6 +22,13 @@ function XUiEnvelopeGuessingCollection:OnStart()
     local allCharConf = self._Control:GetAllCharacterConfigs()
 
     self._Collection = XTool.Clone(allCharConf)
+
+    -- 设置自动关闭
+    self:SetAutoCloseInfo(XMVCA.XEnvelopeGuessing:GetActivityEndTime(), function(isClose)
+        if isClose then
+            self._Control:HandleActivityEnd()
+        end
+    end)
 end
 
 function XUiEnvelopeGuessingCollection:_Refresh()
@@ -61,19 +62,34 @@ function XUiEnvelopeGuessingCollection:_Refresh()
     end)
 
     self._DynTable:SetDataSource(self._Collection)
-    self._DynTable:ReloadDataASync()
+    -- 排序后角色位置会变，定位到上次查看的角色
+    self._DynTable:ReloadDataASync(self:_GetLastViewedIndex())
+end
+
+-- 上次查看角色在排序后列表中的下标
+function XUiEnvelopeGuessingCollection:_GetLastViewedIndex()
+    if not XTool.IsNumberValid(self._LastViewedCharacterId) then
+        return -1
+    end
+
+    for index, characterConf in ipairs(self._Collection) do
+        if characterConf.Id == self._LastViewedCharacterId then
+            return index
+        end
+    end
+
+    return -1
 end
 
 function XUiEnvelopeGuessingCollection:OnEnable()
     self:_Refresh()
-    self.Super.OnEnable(self)
 end
 
 function XUiEnvelopeGuessingCollection:OnDisable()
     self:_StopGridsEnterAnimation()
-    self.Super.OnDisable(self)
 end
 
+---@param grid XUiEnvelopeGuessingCollectionCharacterCard
 function XUiEnvelopeGuessingCollection:OnDynamicTableEvent(evt, index, grid)
     if evt == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         grid:SetData(self._Collection[index], self._OnGridClickHandler)
@@ -86,23 +102,35 @@ end
 function XUiEnvelopeGuessingCollection:_PlayGridsEnterAnimation()
     self:_StopGridsEnterAnimation()
 
+    local visibleGrids = {}
     local grids = self._DynTable:GetGrids()
-    local count = #grids
+    for _, grid in pairs(grids or {}) do
+        table.insert(visibleGrids, grid)
+    end
+
+    local count = #visibleGrids
     if count == 0 then
         return
     end
+
+    table.sort(visibleGrids, function(a, b)
+        return a.Index < b.Index
+    end)
 
     XLuaUiManager.SetMask(true, self.Name)
 
     -- 播放前先隐藏所有卡片
     for i = 1, count do
-        grids[i]:HideForEnterAnimation()
+        local grid = visibleGrids[i]
+        if grid then
+            grid:HideForEnterAnimation()
+        end
     end
 
     local index = 0
     self._EnterAnimTimerId = XScheduleManager.Schedule(function()
         index = index + 1
-        local grid = grids[index]
+        local grid = visibleGrids[index]
         if grid then
             grid:PlayEnterAnimation()
         end
@@ -124,9 +152,21 @@ end
 
 function XUiEnvelopeGuessingCollection:_OnGridClick(characterConf)
     if self._Control:IsCharacterOpened(characterConf.Id) then
+        -- 缓存查看的角色
+        self._LastViewedCharacterId = characterConf.Id
         XLuaUiManager.Open("UiEnvelopeGuessingDetail", characterConf)
     else
         XUiManager.TipText("EnvelopeGuessingCollectionUiClickLockedCharacterTips")
+    end
+end
+
+function XUiEnvelopeGuessingCollection:OnReleaseInst()
+    return self._LastViewedCharacterId
+end
+
+function XUiEnvelopeGuessingCollection:OnResume(value)
+    if XTool.IsNumberValid(value) then
+        self._LastViewedCharacterId = value
     end
 end
 

@@ -11,6 +11,10 @@ local MUSIC_SUBPACKAGE_ID = 3000
 
 local CheckStageId = 10030304
 
+local LaunchTestPath = CS.UnityEngine.Application.dataPath .. "/../../../Product/Temp/LocalCdn"
+local LaunchTestDirApp = CS.UnityEngine.Application.dataPath .. "/../../../Product/Temp/LocalDirApp"
+local LaunchTestDirDoc = CS.UnityEngine.Application.dataPath .. "/../../../Product/Temp/LocalDirDoc"
+
 local SingleThreadCount = 1 --单线程线程数
 local MultiThreadCount = 5 --多线程线程数
 
@@ -66,13 +70,11 @@ function XSubPackageAgency:OnInit()
     --是否需要测试
     self._IsNeedLaunchTest = CS.XResourceManager.NeedLaunchTest
 
-    local ModuleUpdateInfoClass = require("XLaunchUpdate/XModuleUpdateInfo")
-    local moduleUpdateInfo = ModuleUpdateInfoClass.New()
-    moduleUpdateInfo:Init(RES_FILE_TYPE.MATRIX_FILE)
+    self._DocumentUrl = self._LaunchDlcManager.GetPathModule().GetDocumentUrl()
 
-    self._ModuleUpdateInfo = moduleUpdateInfo
-    self._DocumentFilePath = moduleUpdateInfo:GetDocumentFilePath()
-    self._DocumentVersion = moduleUpdateInfo:GetNewVersion()
+    self._DocumentVersion = self._LaunchDlcManager.GetVersionModule().GetNewDocVersion()
+
+    self._DocumentFilePath = self._LaunchDlcManager.GetPathModule().GetDocumentFilePath()
 
     self._DownloadCenter = nil
 
@@ -1316,9 +1318,6 @@ function XSubPackageAgency:InitDownloader()
                     for k, taskGroup in pairs(taskGroups) do
                         taskGroup.NotifyStateChanged = handler(self, self.OnStateChanged)
                         taskGroup.NotifyProgressChanged = handler(self, self.OnProgressUpdate)
-                        taskGroup.NotifyUrlDownloadFinish = function(url)
-                            self:OnSingleTaskFinishByUrl(url)
-                        end
                         self._DownloadCenter:RegisterTaskGroup(taskGroup)
                     end
                 end
@@ -1330,12 +1329,28 @@ function XSubPackageAgency:InitDownloader()
 end
 
 function XSubPackageAgency:GetSavePath(fileName)
+    if self._IsNeedLaunchTest then
+        return stringFormat("%s/%s/%s", LaunchTestDirDoc, RES_FILE_TYPE.MATRIX_FILE, fileName)
+    end
     return stringFormat("%s/%s/%s", self._DocumentFilePath, RES_FILE_TYPE.MATRIX_FILE, fileName)
 end
 
-function XSubPackageAgency:GetUrlPath(fileName, version)
-    local DocumentUrl = self._ModuleUpdateInfo:GetUrlByVersion(version)
-    return stringFormat("%s/%s/%s/%s", DocumentUrl, version, RES_FILE_TYPE.MATRIX_FILE, fileName)
+function XSubPackageAgency:GetUrlPath(fileName)
+
+    return stringFormat("%s/%s", self:GetUrlPrefix(), fileName)
+end
+
+function XSubPackageAgency:GetUrlPrefix()
+    if self._UrlPrefix then
+        return self._UrlPrefix
+    end
+    if self._IsNeedLaunchTest then
+        self._UrlPrefix = stringFormat("%s/%s/%s", "client/patch/com.kurogame.haru.internal.debug.subpack/1.0.0/android", CS.XRemoteConfig.DocumentVersion, RES_FILE_TYPE.MATRIX_FILE)
+        return self._UrlPrefix
+    end
+    self._UrlPrefix = stringFormat("%s/%s/%s", self._DocumentUrl, CS.XRemoteConfig.DocumentVersion, RES_FILE_TYPE.MATRIX_FILE)
+
+    return self._UrlPrefix
 end
 
 function XSubPackageAgency:GetNecessarySubIds()
@@ -1954,15 +1969,14 @@ function XSubPackageAgency:OnLoginOut()
     self:PauseAll()
 end
 
-function XSubPackageAgency:OnSingleTaskFinishByUrl(url)
-    local fileName = XLaunchConst.GetFileName(url)
-    self._LaunchDlcManager.SetDownloadedFile(fileName, true)
-end
-
 function XSubPackageAgency:OnSingleTaskFinish(eventName, args)
-    -- 完整url
     local resourceName = args[0]
-    self:OnSingleTaskFinishByUrl(resourceName)
+    --resourceName 是带前缀的
+    local fullLen = string.len(resourceName)
+    local prefixLen = string.len(self:GetUrlPrefix())
+    --Lua 下标从1开始，去掉斜杠
+    local fileName = string.sub(resourceName, prefixLen + 2, fullLen)
+    self._LaunchDlcManager.SetDownloadedFile(fileName, true)
 end
 
 function XSubPackageAgency:IsPreparePause()

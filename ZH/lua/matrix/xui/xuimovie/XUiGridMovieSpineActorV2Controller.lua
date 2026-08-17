@@ -4,6 +4,8 @@ local XUiGridMovieSpineActorV2Controller = XClass(nil, "XUiGridMovieSpineActorV2
 
 -- MARK: 调试开关。需要排查 SkeletonMecanim 自身问题时可临时开启。
 local DISABLE_V2_MECANIM_DRIVER = false
+local LIP_SYNC_TRANSITION_DURATION = 0.05
+local LIP_SYNC_ANIM_PREFIXES = { "", "Mouth/", "MO/", "Mo/" }
 
 local function GetComponent(gameObject, componentType)
     if XTool.UObjIsNil(gameObject) then
@@ -56,10 +58,6 @@ function XUiGridMovieSpineActorV2Controller:FindRoleAnimator(spineRoot)
     return GetComponent(roleTransform.gameObject, CS.UnityEngine.Animator)
 end
 
-function XUiGridMovieSpineActorV2Controller:GetRoleComponent()
-    return nil
-end
-
 function XUiGridMovieSpineActorV2Controller:Destroy()
     for _, controller in pairs(self.TrackControllers) do
         controller:Stop()
@@ -74,6 +72,12 @@ function XUiGridMovieSpineActorV2Controller:GetTrackController(trackType)
     return self.TrackControllers and self.TrackControllers[trackType]
 end
 
+function XUiGridMovieSpineActorV2Controller:IsLipSyncPlaying()
+    local owner = self.Owner
+    local controller = owner and owner.V2LipSyncController
+    return controller and controller:IsPlaying()
+end
+
 function XUiGridMovieSpineActorV2Controller:PlayAnim(animIndex, transIndex)
     self.AnimIndex = XTool.IsNumberValidEx(animIndex) and animIndex or 1
 
@@ -85,6 +89,10 @@ function XUiGridMovieSpineActorV2Controller:PlayAnim(animIndex, transIndex)
     local animName2 = XMovieConfigs.GetSpineActorRoleAnim2(self.ActorId, self.AnimIndex)
     local transAnimName = XTool.IsNumberValidEx(transIndex) and XMovieConfigs.GetSpineActorTransitionAnim(self.ActorId, transIndex) or nil
     self:PlayFaceAnimationsLoop(animName, animName2, transAnimName)
+
+    if self:IsLipSyncPlaying() then
+        return
+    end
 
     if self.Owner then
         if self.Owner.IsTalking then
@@ -117,6 +125,17 @@ function XUiGridMovieSpineActorV2Controller:PlayFaceAnimationsLoop(animName, ani
     end
 end
 
+function XUiGridMovieSpineActorV2Controller:PlayMouthAnimationsLoop(animName, animName2, transAnimName)
+    if DISABLE_V2_MECANIM_DRIVER then
+        return
+    end
+
+    local controller = self:GetTrackController(XMovieConfigs.SpineActorTrackType.Mouth)
+    if controller then
+        controller:PlayAnimationsLoop(animName, animName2, transAnimName)
+    end
+end
+
 function XUiGridMovieSpineActorV2Controller:PlayKouTalkAnim(speed)
     local animIndex = XTool.IsNumberValidEx(self.AnimIndex) and self.AnimIndex or 1
 
@@ -143,6 +162,48 @@ function XUiGridMovieSpineActorV2Controller:PlayKouIdleAnim()
     if controller then
         controller:PlayAnimationsLoopIfChanged(idleAnim)
     end
+end
+
+function XUiGridMovieSpineActorV2Controller:HasMouthState(animName)
+    local controller = self:GetTrackController(XMovieConfigs.SpineActorTrackType.Mouth)
+    if not controller or not controller:IsAnimatorValid(true) or not controller:HasLayer() then
+        return false
+    end
+
+    local stateId = CS.UnityEngine.Animator.StringToHash(animName)
+    return controller.Animator:HasState(controller.TrackType, stateId)
+end
+
+function XUiGridMovieSpineActorV2Controller:GetLipSyncAnimName(lipName)
+    if string.IsNilOrEmpty(lipName) then
+        return nil
+    end
+
+    for _, prefix in ipairs(LIP_SYNC_ANIM_PREFIXES) do
+        local animName = prefix .. lipName
+        if self:HasMouthState(animName) then
+            return animName
+        end
+    end
+    return nil
+end
+
+function XUiGridMovieSpineActorV2Controller:HasLipSyncAnim(lipName)
+    return self:GetLipSyncAnimName(lipName) ~= nil
+end
+
+function XUiGridMovieSpineActorV2Controller:PlayLipSyncAnim(lipName)
+    local animName = self:GetLipSyncAnimName(lipName)
+    local controller = self:GetTrackController(XMovieConfigs.SpineActorTrackType.Mouth)
+    if not animName or not controller then
+        return false
+    end
+
+    controller:RemoveTimer()
+    if controller.CurrentAnimName == animName then
+        return true
+    end
+    return controller:PlayState(animName, LIP_SYNC_TRANSITION_DURATION)
 end
 
 return XUiGridMovieSpineActorV2Controller

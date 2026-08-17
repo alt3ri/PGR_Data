@@ -98,6 +98,7 @@ function XBuffScript10272060:TriggerEffect()
     -- 消耗当前应消耗的坚毅层数
     if self._blockController then
         self._blockController:RemoveStackBuff(self.CurrentResolveCost)
+        self._blockController:SetDefCountByBuff()
     end
 end
 

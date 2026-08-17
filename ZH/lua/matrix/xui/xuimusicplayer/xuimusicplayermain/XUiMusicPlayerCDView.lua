@@ -20,6 +20,7 @@
 ---@field ImgColorInBgmList  UnityEngine.UI.Image
 ---@field GoGridCdCell UnityEngine.RectTransform
 ---@field GoCdDynamicCdList UnityEngine.RectTransform
+---@field GoEggTip UnityEngine.RectTransform
 local XUiMusicPlayerCDView = XClass(XUiNode, "XUiMusicPlayerCDView")
 function XUiMusicPlayerCDView:InitComponents()
     -- Button
@@ -98,7 +99,7 @@ function XUiMusicPlayerCDView:OnBtnMusicFullInfoClick(eventData)
 end
 
 function XUiMusicPlayerCDView:OnBtnEggClick(eventData)
-    self.TxtEggTip.gameObject:SetActive(not self.TxtEggTip.gameObject.activeSelf)
+    self.GoEggTip.gameObject:SetActive(not self.GoEggTip.gameObject.activeSelf)
 end
 ---endregion
 
@@ -157,12 +158,18 @@ function XUiMusicPlayerCDView:_OnCurPlayMusicChange(direction)
             end
         end
     end
-    self._CDListTable:TweenToIndex(rawCur + diff)
+    if self._CDListTable.Imp.MoveType == CS.XDynamicTableCurve.MovementType.Clamped then
+        -- Clamped 模式不支持虚拟索引，直接定位到实际下标
+        self._CDListTable:TweenToIndex(target)
+    else
+        self._CDListTable:TweenToIndex(rawCur + diff)
+    end
 end
 
 ---拖拽滑动切换CD: 按视图位置移动一格,能播则跳转播放,不能播则只滚动展示
 ---@param isNext boolean true=右滑下一首, false=左滑上一首
 function XUiMusicPlayerCDView:OnCDSwipe(isNext)
+    self._Control:DispatchEvent(XMVCA.XMusicPlayer.EventIds.EVENT_VIEW_PLAY_SFX, XMVCA.XMusicPlayer.Enum.AudioName.cdSFXSwitch)
     local cdControl = self._Control:GetCDPlayerControl()
     local rawList = cdControl:GetCurRawMusicIdList()
     local totalCount = #rawList
@@ -185,12 +192,24 @@ function XUiMusicPlayerCDView:OnCDSwipe(isNext)
 
     local XMusicPlayerEnum = XMVCA.XMusicPlayer.Enum
     local useStatus = cdControl:GetMusicUseStatusAndConditionDesc(musicID)
+    -- Clamped 模式使用实际索引；Loop 模式使用虚拟索引以保持移动方向
+    local targetIdx
+    if self._CDListTable.Imp.MoveType == CS.XDynamicTableCurve.MovementType.Clamped then
+        targetIdx = nextViewIdx
+    else
+        targetIdx = isNext and (rawCur + 1) or (rawCur - 1)
+    end
     if useStatus ~= XMusicPlayerEnum.MusicUseStatus.unlock then
-        -- 可播放: 跳转到该歌(tween 由 _OnCurPlayMusicChange 驱动)
-        cdControl:JumpPlayByMusicIDWithNotify(cdControl:GetCurMusicListType(), musicID)
+        if musicID == cdControl:GetCurPlayingMusicID() then
+            -- 拖回当前正在播放的歌曲，不重复播，直接滚回去
+            self._CDListTable:TweenToIndex(targetIdx)
+        else
+            -- 不同歌曲: 跳转播放(tween 由 _OnCurPlayMusicChange 驱动)
+            cdControl:JumpPlayByMusicIDWithNotify(cdControl:GetCurMusicListType(), musicID)
+        end
     else
         -- 不可播放: 只滚动到该CD展示
-        self._CDListTable:TweenToIndex(nextViewIdx)
+        self._CDListTable:TweenToIndex(targetIdx)
     end
 end
 
@@ -247,9 +266,9 @@ function XUiMusicPlayerCDView:_RefreshCDByMusicID(musicID)
     end
     self:_RefreshFullInfoBtn()
 
-    self.TxtEggTip.gameObject:SetActive(false)
+    self.GoEggTip.gameObject:SetActive(false)
+    self.TxtEggTip.text = co.EggText
     if cdControl:NeedShowEggTag(musicID) then
-        self.TxtEggTip.text = co.EggText
         self.BtnEgg.gameObject:SetActive(true)
     else
         self.BtnEgg.gameObject:SetActive(false)
@@ -262,7 +281,7 @@ function XUiMusicPlayerCDView:_RefreshCDList(musicID)
     local rawList = cdControl:GetCurRawMusicIdList()
     local count = #rawList
     -- 仅1首时走Clamped(不可循环滚动), 多首走Loop(无限循环)
-    self._CDListTable.Imp.MoveType = count <= 1
+    self._CDListTable.Imp.MoveType = count <= 2
             and CS.XDynamicTableCurve.MovementType.Clamped
             or CS.XDynamicTableCurve.MovementType.Loop
     self._CDListTable:SetDataSource(rawList)
@@ -274,8 +293,9 @@ end
 
 function XUiMusicPlayerCDView:OnDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
+        local visualIndex = index
         index = index % self._CDListTable.Imp.TotalCount + 1
-        grid:UpdateCDCellData(index, self)
+        grid:UpdateCDCellData(index, self, visualIndex)
     end
 end
 

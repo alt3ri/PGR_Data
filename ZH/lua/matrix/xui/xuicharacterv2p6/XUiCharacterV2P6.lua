@@ -123,7 +123,7 @@ function XUiCharacterV2P6:RefreshButtonShow()
     local isOpenTeachingActivity = XDataCenter.FubenNewCharActivityManager.CheckActivityIsOpenByCharacterId(self.CurCharacter.Id)
 
     --self.BtnFiles.gameObject:SetActiveEx(isOpenTeachingActivity)
-    self._FuncShowBtnFiles:SetActiveByHand(false)
+    self._FuncShowBtnFiles:SetActiveByHand(isOpenTeachingActivity)
     self.BtnTeaching.gameObject:SetActiveEx(false)
     
     self._FuncShowBtnOwnedDetail:SetActiveByHand(not isOpenTeachingActivity)

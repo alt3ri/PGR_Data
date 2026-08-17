@@ -8,6 +8,7 @@ local XUiCommonDraggable = require("XUi/XUiCommon/XCommonDrag/XUiCommonDraggable
 function XUiGridTheatre6PvpArchive:OnStart()
     self.BtnArchive:AddEventListener(handler(self, self.OnBtnArchiveClick))
     self.Select.gameObject:SetActiveEx(false)
+    self.ImgRoleMask.gameObject:SetActiveEx(false)
     self:_InitDraggable()
 end
 
@@ -92,6 +93,10 @@ end
 
 function XUiGridTheatre6PvpArchive:SetSelect(isSelected)
     self.Select.gameObject:SetActiveEx(isSelected)
+end
+
+function XUiGridTheatre6PvpArchive:SetRoleMask(isMask)
+    self.ImgRoleMask.gameObject:SetActiveEx(isMask)
 end
 
 function XUiGridTheatre6PvpArchive:OnBtnArchiveClick()

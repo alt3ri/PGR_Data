@@ -93,6 +93,8 @@ function XUiMainOther:OnChangeSync()
             -- 如果现在在拍照界面 直接销毁self.SignBoard会把PlayingElement也销毁 从而影响拍照界面的逻辑 所以这里做了延后处理
             self.SignBoard:SetPrepareDestory()
         end
+        local curSceneId = XDataCenter.PhotographManager.GetCurSceneId()
+        XMVCA.XMusicScene:ShowSwitchMusicPopup(curSceneId)
     end
 end
 

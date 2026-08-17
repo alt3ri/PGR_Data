@@ -13,6 +13,7 @@ local SYNC_SHOP_SECOND = 5
 -- local ShopBaseInfosTemplates = {}            -- Tap显示信息(普通+活动)
 local LastSyncShopTimes = {}               -- 商店刷新时间
 local ActivityLastSyncShopTime = {}               -- 活动商店刷新时间
+local RedPointShopIdList = {}                  -- 红点商店列表
 
 -- local LastSyncBaseInfoTime = 0             -- 商店基础信息同步时间
 local ShopBaseInfoDict = {}             -- 商店基础信息
@@ -1282,4 +1283,30 @@ function XShopManager.GetShopActivityStartTime(shopId)
 
     return info.ActivityStartTime
     
+end
+
+function XShopManager.UpdateMainUiShopRedpoint(shopIdList)
+    RedPointShopIdList = shopIdList or table.empty
+    XEventManager.DispatchEvent(XEventId.EVENT_SHOP_FREE_GOODS_RED_POINT_UPDATE)
+end
+
+-- 商店是否有免费商品可购买(红点), 数据由服务端MainUiShopRedpointNotify下发
+function XShopManager.CheckShopFreeGoodsRedPoint(shopId)
+    if XShopManager.CheckAnyShopFreeGoodsRedPoint() then
+        for _, id in pairs(RedPointShopIdList) do
+            if id == shopId then
+                return true
+            end
+        end
+    end
+    return false
+end
+
+-- 是否有任意商店存在免费商品红点(主界面商店入口用)
+function XShopManager.CheckAnyShopFreeGoodsRedPoint()
+    return not XTool.IsTableEmpty(RedPointShopIdList)
+end
+
+XRpc.MainUiShopRedpointNotify = function(data)
+    XShopManager.UpdateMainUiShopRedpoint(data.ShopIdList)
 end

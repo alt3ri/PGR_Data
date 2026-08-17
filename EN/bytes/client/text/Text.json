@@ -5997,7 +5997,7 @@
     },
     {
         "Key": "ActivityBossSingleSchedule",
-        "Text": "{0}/<color=#00000><size=20>{1}</size></color>"
+        "Text": "{0}/<color=#00EEEE><size=28>{1}</size></color>"
     },
     {
         "Key": "GuildSettingLevelLessThanZero",
@@ -13829,11 +13829,11 @@
     },
     {
         "Key": "GoldenMinerReqportScore",
-        "Text": "{0}/{1}<color=#34AFF8><size=28>(+{2})</size></color>"
+        "Text": "{0}/{1} <color=#34AFF8><size=28>(+{2})</size></color>"
     },
     {
         "Key": "GoldenMinerReqportObjScore",
-        "Text": "{0}<color=#34AFF8><size=32>(+{1})</size></color>"
+        "Text": "{0} <color=#34AFF8><size=32>(+{1})</size></color>"
     },
     {
         "Key": "GoldenMinerReqportTotalScore",
@@ -18057,7 +18057,7 @@
     },
     {
         "Key": "MailCanCollect",
-        "Text": "Collection"
+        "Text": "Add to Collection"
     },
     {
         "Key": "MailCanReceive",
@@ -19957,7 +19957,7 @@
     },
     {
         "Key": "BountyChallengeProgress",
-        "Text": "{0}<color=#FFFFFF><size=40>/{1}</size></color>"
+        "Text": "{0}<color=#937B4E><size=25>/{1}</size></color>"
     },
     {
         "Key": "UiCharacterSkillSwitchTitle",
@@ -24389,7 +24389,7 @@
     },
     {
         "Key": "PassportObtain",
-        "Text": "This Pass period has <color=#0f70bc>6</color> rounds. Compensation rewards have been sent to you."
+        "Text": "Due to a cycle adjustment for this period's Tactical Assessment Manual, an Intel Value compensation has been issued to you."
     },
     {
         "Key": "ShopItemRoleTips",
@@ -24536,10 +24536,6 @@
         "Text": "Concert begins in {0} day(s)"
     },
     {
-        "Key": "ConcertPreHeatingFinalStageName",
-        "Text": "Awakening"
-    },
-    {
         "Key": "ConcertPreHeatingTuneSignalFar",
         "Text": "Parameters deviating from target index"
     },
@@ -24590,5 +24586,237 @@
     {
         "Key": "PurchaseFashionSuitDetailCoinNotEnough",
         "Text": "<color=#FF0000>{0}</color>"
+    },
+    {
+        "Key": "EnvelopeGuessingRewardPanelLeftTitle",
+        "Text": "Daily Gift"
+    },
+    {
+        "Key": "EnvelopeGuessingRewardPanelLeftTitleWithDays",
+        "Text": "Daily Gift ({0} Days Total)"
+    },
+    {
+        "Key": "EnvelopeGuessingRewardPanelRightTitle",
+        "Text": "Unclaimed Mission Reissue"
+    },
+    {
+        "Key": "EnvelopeGuessingRewardPanelItemCount",
+        "Text": "x{0}"
+    },
+    {
+        "Key": "EnvelopeGuessingNormalTaskTitle",
+        "Text": "Invitation Mission"
+    },
+    {
+        "Key": "EnvelopeGuessingDailyTaskTitle",
+        "Text": "Daily Mission"
+    },
+    {
+        "Key": "EnvelopeGuessingDailyTaskSubTitle",
+        "Text": "Reset at 07:00 daily"
+    },
+    {
+        "Key": "EnvelopeGuessingDailyActivityRemainDays",
+        "Text": "{0} Day(s)"
+    },
+    {
+        "Key": "EnvelopeGuessingCollectionUiLockedCharacterName",
+        "Text": "Unknown"
+    },
+    {
+        "Key": "EnvelopeGuessingCollectionUiClickLockedCharacterTips",
+        "Text": "You have not yet accepted this character's invitation."
+    },
+    {
+        "Key": "EnvelopeGuessingMainUiAllCharactersAlreadyOpened",
+        "Text": "You have accepted invitations from all characters."
+    },
+    {
+        "Key": "EnvelopeGuessingCharacterCardSpecifyCardTip",
+        "Text": "{0} is waiting for you to accept the invitation."
+    },
+    {
+        "Key": "UiEnvelopeGuessingInvitationTicketNotEnough",
+        "Text": "Not enough Leisure Vouchers"
+    },
+    {
+        "Key": "UiEnvelopeGuessingInvitationChoiceTicketNotEnough",
+        "Text": "Not enough Exclusive Vouchers"
+    },
+    {
+        "Key": "UiEnvelopeGuessingInvitationInviteButtonRedOne",
+        "Text": "<color=red>1</color>"
+    },
+    {
+        "Key": "UiEnvelopeGuessingInvitationInviteButtonWhiteOne",
+        "Text": "<color=#302918>1</color>"
+    },
+    {
+        "Key": "EnvelopeGuessingChoosePanelBindingSuccess",
+        "Text": "{0} has joined the stage"
+    },
+    {
+        "Key": "EnvelopeGuessingChoosePanelUnbindingSuccess",
+        "Text": "{0} is leaving the stage"
+    },
+    {
+        "Key": "EnvelopeGuessingChoosePanelSwapSuccess",
+        "Text": "{0} and {1} have swapped positions"
+    },
+    {
+        "Key": "EnvelopeGuessingChoosePanelMoveSuccess",
+        "Text": "{0} has switched instruments"
+    },
+    {
+        "Key": "EnvelopeGuessingChoosePanelLocked",
+        "Text": "Unlocks after accepting {0} invitations"
+    },
+    {
+        "Key": "EnvelopeGuessingTaskButtonFinish",
+        "Text": "Claim"
+    },
+    {
+        "Key": "EnvelopeGuessingTaskButtonTomorrowRefresh",
+        "Text": "Refreshes Tomorrow"
+    },
+    {
+        "Key": "EnvelopeGuessingTaskButtonArchived",
+        "Text": "Completed"
+    },
+    {
+        "Key": "EnvelopeGuessingTaskButtonSkip",
+        "Text": "Advance"
+    },
+    {
+        "Key": "EnvelopeGuessingTaskButtonNotFinished",
+        "Text": "Incomplete"
+    },
+    {
+        "Key": "MusicPlayerResetBGMList",
+        "Text": "Main interface music restored to default"
+    },
+    {
+        "Key": "MusicPlayerListTitleLike",
+        "Text": "Favorites"
+    },
+    {
+        "Key": "MusicPlayerListTitleBgm",
+        "Text": "BGM"
+    },
+    {
+        "Key": "MusicPlayerListTitleTotle",
+        "Text": "All Songs"
+    },
+    {
+        "Key": "MusicPlayerTipLikeAddSuccess",
+        "Text": "Add to Favorites"
+    },
+    {
+        "Key": "MusicPlayerTipBgmAddSuccess",
+        "Text": "Add to Background Music"
+    },
+    {
+        "Key": "MusicPlayerTipLikeRemoveSuccess",
+        "Text": "Remove from Favorites"
+    },
+    {
+        "Key": "MusicPlayerTipBgmRemoveSuccess",
+        "Text": "Remove from Background Music"
+    },
+    {
+        "Key": "MusicPlayerErrorTipBgmRemoveNeedOne",
+        "Text": "Add at least one track to Background Music."
+    },
+    {
+        "Key": "MusicPlayerErrorTipUnlockPlay",
+        "Text": "This track is locked."
+    },
+    {
+        "Key": "MusicPlayerErrorTipLikeAddAllBgm",
+        "Text": "Can't add. Background Music playlist is full."
+    },
+    {
+        "Key": "MusicPlayerErrorTipLikeAddLimitMax",
+        "Text": "Favorites playlist is full."
+    },
+    {
+        "Key": "MusicPlayerErrorTipLikeRemove",
+        "Text": "This song isn't in Favorites."
+    },
+    {
+        "Key": "MusicPlayerErrorTipBgmAddRepeat",
+        "Text": "Already in Background Music."
+    },
+    {
+        "Key": "MusicPlayerErrorTipBgmAddLimit",
+        "Text": "Background Music playlist is full."
+    },
+    {
+        "Key": "MusicPlayerErrorTipBgmRemoveNoExit",
+        "Text": "This song isn't in Background Music."
+    },
+    {
+        "Key": "MusicPlayerErrorTipIndex2TopFaild",
+        "Text": "Already at the top of the list."
+    },
+    {
+        "Key": "MusicPlayerErrorTipIndex2NextFaild",
+        "Text": "Already at the bottom of the list."
+    },
+    {
+        "Key": "MusicPlayerErrorTipLikeAddBgmNoNeed",
+        "Text": "No songs to add. Everything in Favorites is already in Background Music."
+    },
+    {
+        "Key": "MusicPlayerMusicListSortTipOld2New",
+        "Text": "Oldest First"
+    },
+    {
+        "Key": "MusicPlayerMusicListSortTipNew2Old",
+        "Text": "Newest First"
+    },
+    {
+        "Key": "MusicPlayerPlaylistTipLimitedFree",
+        "Text": "Limited-Time Tracks"
+    },
+    {
+        "Key": "MusicPlayerPlaylistTipBgm",
+        "Text": "Current Playlist: Background Music"
+    },
+    {
+        "Key": "MusicPlayerPlaylistTipFavorite",
+        "Text": "Current Playlist: Favorites"
+    },
+    {
+        "Key": "MusicPlayerPlaylistTipNormal",
+        "Text": "Current Playlist: All Songs"
+    },
+    {
+        "Key": "MusicPlayerLoopTypeSingleLoop",
+        "Text": "Repeat One"
+    },
+    {
+        "Key": "MusicPlayerLoopTypeRandomLoop",
+        "Text": "Shuffle"
+    },
+    {
+        "Key": "MusicPlayerLoopTypeListLoop",
+        "Text": "Repeat All"
+    },
+    {
+        "Key": "MusicPlayerMusicDetailTitle",
+        "Text": "Track Info"
+    },
+    {
+        "Key": "MusicPlayerConfirmLikeAllSetBgm",
+        "Text": "Add all songs from your Favorites to the background music?"
+    },
+    {
+        "Key": "MusicPlayerConfirmBgmReset",
+        "Text": "Reset the background music list to its default state?"
+    },
+    {
+        "Key": "MusicPlayerOperationTooFrequentTip",
+        "Text": "Action too frequent. Please try again later."
     }
 ]

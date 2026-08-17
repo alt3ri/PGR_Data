@@ -36,6 +36,7 @@ end
 
 function XUiGridMovieActor:OnDestroy()
     self:RemoveBlurTimer()
+    self:RemoveBlurGrayTimer()
     self.UiMovie = nil
 end
 
@@ -79,7 +80,6 @@ end
 function XUiGridMovieActor:UpdateActor(actorId)
     if self.ActorId == actorId then return end
     self.ActorId = actorId
-    self.CustomScale = nil -- 换角色时重置自定义缩放，避免残留到不同角色
 
     self:LoadPrefab()
     self:SetImage()
@@ -234,10 +234,22 @@ local function _CloseBlur(controller)
     controller.enabled = false
 end
 
+local function _ApplyBlurGrayScale(controller, grayscale)
+    if not controller or grayscale == nil then return end
+    controller:SetGrayScale(grayscale)
+end
+
 function XUiGridMovieActor:RemoveBlurTimer()
     if self.BlurTimer then
         XScheduleManager.UnSchedule(self.BlurTimer)
         self.BlurTimer = nil
+    end
+end
+
+function XUiGridMovieActor:RemoveBlurGrayTimer()
+    if self.BlurGrayTimer then
+        XScheduleManager.UnSchedule(self.BlurGrayTimer)
+        self.BlurGrayTimer = nil
     end
 end
 
@@ -246,7 +258,7 @@ end
 -- strength: 0~1
 -- duration: 秒，>0 时对 strength 做插值（开启渐入/关闭渐出），<=0 为瞬时
 -- extra: 类型相关参数表（angle / focusX/focusY / radius / gradient / noiseScale）
-function XUiGridMovieActor:SetBlur(blurType, strength, duration, extra)
+function XUiGridMovieActor:SetBlur(blurType, strength, duration, extra, grayscale, grayDuration)
     if not self:IsLoaded() then return end
 
     local actorImg = self.RImgActor
@@ -255,9 +267,35 @@ function XUiGridMovieActor:SetBlur(blurType, strength, duration, extra)
     local ctrlFace = _GetOrAddBlur(faceImg)
 
     self:RemoveBlurTimer()
+    if grayscale ~= nil then
+        self:RemoveBlurGrayTimer()
+    end
 
     local BlurTypeNone = CS.XUiBlurController.BlurType.None
     local isClose = blurType == 0 or strength <= 0
+
+    local applyGrayScale = function(value)
+        _ApplyBlurGrayScale(ctrlActor, value)
+        _ApplyBlurGrayScale(ctrlFace, value)
+    end
+
+    if grayscale ~= nil then
+        if not grayDuration or grayDuration <= 0 then
+            applyGrayScale(grayscale)
+        else
+            local baseCtrl = ctrlActor or ctrlFace
+            if baseCtrl then
+                local startGrayScale = baseCtrl.grayscale
+                self.BlurGrayTimer = XUiHelper.Tween(grayDuration, function(t)
+                    local cur = startGrayScale + (grayscale - startGrayScale) * t
+                    applyGrayScale(cur)
+                end, function()
+                    applyGrayScale(grayscale)
+                    self.BlurGrayTimer = nil
+                end)
+            end
+        end
+    end
 
     -- 瞬时
     if not duration or duration <= 0 then

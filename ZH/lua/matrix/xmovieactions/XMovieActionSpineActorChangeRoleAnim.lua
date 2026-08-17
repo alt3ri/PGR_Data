@@ -17,6 +17,10 @@ end
 function XMovieActionSpineActorChangeRoleAnim:OnRunning()
     ---@type XUiGridMovieSpineActor
     local actor = self.UiRoot:GetSpineActor(self.ActorIndex)
+    if not actor then
+        return
+    end
+
     if actor.IsV2 then
         actor:PlayAnim(self.AnimId, self.TransitionAnimId)
         return

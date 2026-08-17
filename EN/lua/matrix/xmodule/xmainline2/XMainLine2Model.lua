@@ -217,7 +217,7 @@ end
 
 function XMainLine2Model:GetMainChapterIds(mainId)
     local config = self:GetConfigMain(mainId)
-    return config and config.ChapterIds or {}
+    return config and config.ChapterIds or table.empty
 end
 
 function XMainLine2Model:GetMainAchievementId(mainId)
@@ -329,7 +329,7 @@ end
 
 function XMainLine2Model:GetChapterStageGroupIds(chapterId)
     local config = self:GetConfigChapter(chapterId)
-    return config and config.StageGroupIds or {}
+    return config and config.StageGroupIds or table.empty
 end
 
 function XMainLine2Model:GetChapterPrefabName(chapterId)
@@ -339,7 +339,7 @@ end
 
 function XMainLine2Model:GetChapterBgStageIndexs(chapterId)
     local config = self:GetConfigChapter(chapterId)
-    return config and config.BgStageIndexs or {}
+    return config and config.BgStageIndexs or table.empty
 end
 
 function XMainLine2Model:GetChapterTreasureId(chapterId)
@@ -349,52 +349,62 @@ end
 
 function XMainLine2Model:GetChapterEggIds(chapterId)
     local config = self:GetConfigChapter(chapterId)
-    return config and config.EggIds or {}
+    return config and config.EggIds or table.empty
 end
 
 function XMainLine2Model:GetChapterBgSpineStageIndexs(chapterId)
     local config = self:GetConfigChapter(chapterId)
-    return config and config.BgSpineStageIndexs or {}
+    return config and config.BgSpineStageIndexs or table.empty
 end
 
 function XMainLine2Model:GetChapterBgSpineProgressWans(chapterId)
     local config = self:GetConfigChapter(chapterId)
-    return config and config.BgSpineProgressWans or {}
+    return config and config.BgSpineProgressWans or table.empty
 end
 
 function XMainLine2Model:GetChapterSpineStageIndexs(chapterId)
     local config = self:GetConfigChapter(chapterId)
-    return config and config.SpineStageIndexs or {}
+    return config and config.SpineStageIndexs or table.empty
 end
 
 function XMainLine2Model:GetChapterSpineProgressWans(chapterId)
     local config = self:GetConfigChapter(chapterId)
-    return config and config.SpineProgressWans or {}
+    return config and config.SpineProgressWans or table.empty
 end
 
 function XMainLine2Model:GetChapterEnterSpineStageIndex(chapterId)
     local config = self:GetConfigChapter(chapterId)
-    return config and config.EnterSpineStageIndex or {}
+    return config and config.EnterSpineStageIndex or table.empty
 end
 
 function XMainLine2Model:GetChapterEnterSpineName(chapterId)
     local config = self:GetConfigChapter(chapterId)
-    return config and config.EnterSpineName or {}
+    return config and config.EnterSpineName or table.empty
 end
 
 function XMainLine2Model:GetChapterSwitchSpineStageIndex(chapterId)
     local config = self:GetConfigChapter(chapterId)
-    return config and config.SwitchSpineStageIndex or {}
+    return config and config.SwitchSpineStageIndex or table.empty
 end
 
 function XMainLine2Model:GetChapterSwitchAheadSpineName(chapterId)
     local config = self:GetConfigChapter(chapterId)
-    return config and config.SwitchAheadSpineName or {}
+    return config and config.SwitchAheadSpineName or table.empty
 end
 
 function XMainLine2Model:GetChapterSwitchBackwardSpineName(chapterId)
     local config = self:GetConfigChapter(chapterId)
-    return config and config.SwitchBackwardSpineName or {}
+    return config and config.SwitchBackwardSpineName or table.empty
+end
+
+function XMainLine2Model:GetChapterIdleSpineStageIndexs(chapterId)
+    local config = self:GetConfigChapter(chapterId)
+    return config and config.IdleSpineStageIndexs or table.empty
+end
+
+function XMainLine2Model:GetChapterIdleSpineName(chapterId)
+    local config = self:GetConfigChapter(chapterId)
+    return config and config.IdleSpineName or table.empty
 end
 
 function XMainLine2Model:GetChapterLastStageId(chapterId)
@@ -420,7 +430,7 @@ end
 
 function XMainLine2Model:GetGroupStageIds(groupId)
     local config = self:GetConfigStageGroup(groupId)
-    return config and config.StageIds or {}
+    return config and config.StageIds or table.empty
 end
 
 -- 关卡是否存在
@@ -464,17 +474,17 @@ end
 
 function XMainLine2Model:GetStageMonsterHeads(stageId)
     local config = self:GetConfigStage(stageId)
-    return config and config.MonsterHeads or {}
+    return config and config.MonsterHeads or table.empty
 end
 
 function XMainLine2Model:GetStageMonsterReplaceOrders(stageId)
     local config = self:GetConfigStage(stageId)
-    return config and config.MonsterReplaceOrders or {}
+    return config and config.MonsterReplaceOrders or table.empty
 end
 
 function XMainLine2Model:GetStageProgressConditions(stageId)
     local config = self:GetConfigStage(stageId)
-    return config and config.ProgressConditions or {}
+    return config and config.ProgressConditions or table.empty
 end
 
 -- 关卡是否忽略新章节标签、完成进度的计算

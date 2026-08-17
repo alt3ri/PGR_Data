@@ -1221,7 +1221,7 @@ end
 
 
 function XUiFashion:GetCharacterResourcesId(fashionId)
-    local colorId = self.LeftBottomPanel.FashionColorPanel:GetColorId()
+    local colorId = self.LeftBottomPanel.FashionColorPanel:GetColorId(fashionId)
     if not colorId or colorId == 0 then
         local template = XDataCenter.FashionManager.GetFashionTemplate(fashionId)
         return template.ResourcesId

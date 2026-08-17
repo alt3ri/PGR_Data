@@ -29,7 +29,7 @@ function XBuffScript1025111:ScriptInit()
     self.tiredDmg = 50 --初始疲劳伤害
     -- self:LogError("疲劳初始化")
     self._levelTime = 0
-    self.timer = self._proxy:GetNpcTime(self._npcUUID)
+    self.timer = self._proxy:GetFightTime(self._npcUUID)
 end
 
 function XBuffScript1025111:InitEventCallBackRegister()
@@ -42,7 +42,7 @@ end
 ---@param dt number @ delta time
 function XBuffScript1025111:Update(dt)
     --每帧执行
-    if self.timer > self._proxy:GetNpcTime(self._npcUUID) then return end
+    if self.timer > self._proxy:GetFightTime(self._npcUUID) then return end
     self.timer = self.timer + 1
     self._proxy:ApplyMagic(self._npcUUID, self._npcUUID, self._damageMagicId, 1)
     --self._proxy:ApplyMagic(self._enemyUUID, self._enemyUUID, self._dmgMagicId, 1)
@@ -55,7 +55,7 @@ function XBuffScript1025111:AfterDamageCalc(eventArgs)
     if eventArgs.Id ~= self._damageMagicId then return end
     local extraDmg = self.tiredDmg
     self._proxy:SetAfterDamageMagicContext(eventArgs.ContextId, extraDmg, eventArgs.ElementDamage, eventArgs.FinalHackDamage)
-    -- self:LogError("本次疲劳伤害"..extraDmg)
+    --self:LogError("本次疲劳伤害"..extraDmg)
 end
 
 return XBuffScript1025111

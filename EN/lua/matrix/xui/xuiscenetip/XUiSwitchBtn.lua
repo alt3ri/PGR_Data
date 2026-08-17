@@ -80,7 +80,11 @@ function XUiSwitchBtn:OnClickBtnFirst()
     self:SetListStatus(LIST_STATUS.HIDE)
     if self.TxtTitle.text == self.SwitchDescs[1] then return end
 
-    XDataCenter.PhotographManager.UpdatePreviewState(true)
+    if XMVCA.XMusicScene:IsMusicScene(self.SceneId) then
+        XMVCA.XMusicScene:UpdateMusicSceneMode(self.SceneId, XEnumConst.MusicScene.Mode.Normal)
+    else
+        XDataCenter.PhotographManager.UpdatePreviewState(true)
+    end
     self:RefreshSelect(true)
 
     if self.Cb then self.Cb() end
@@ -90,7 +94,11 @@ function XUiSwitchBtn:OnClickBtnSecond()
     self:SetListStatus(LIST_STATUS.HIDE)
     if self.TxtTitle.text == self.SwitchDescs[2] then return end
 
-    XDataCenter.PhotographManager.UpdatePreviewState(false)
+    if XMVCA.XMusicScene:IsMusicScene(self.SceneId) then
+        XMVCA.XMusicScene:UpdateMusicSceneMode(self.SceneId, XEnumConst.MusicScene.Mode.Music)
+    else
+        XDataCenter.PhotographManager.UpdatePreviewState(false)
+    end
     self:RefreshSelect(false)
 
     if self.Cb then self.Cb() end

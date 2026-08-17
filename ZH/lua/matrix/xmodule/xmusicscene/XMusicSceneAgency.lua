@@ -37,13 +37,22 @@ function XMusicSceneAgency:IsMusicScene(sceneId)
     return XPhotographConfigs.GetBackgroundTypeById(sceneId) == XPhotographConfigs.BackGroundType.Music
 end
 
----获取音乐场景的专属CueId
-function XMusicSceneAgency:GetSpecialCueId(sceneId)
-    local cfg = self:GetMusicSceneConfig(sceneId)
-    if not XTool.IsNumberValid(cfg.MusicId) then
-        return nil
+---是否音乐场景的专属CueId
+function XMusicSceneAgency:IsSpecialCueId(sceneId, cueId)
+    if not XTool.IsNumberValid(cueId) then
+        return false
     end
-    return XMVCA.XMusicPlayer:COGetMusicPlayerAlbumCOByid(cfg.MusicId).CueId
+    local cfg = self:GetMusicSceneConfig(sceneId)
+    if XTool.IsTableEmpty(cfg.MusicIds) then
+        return false
+    end
+    for _, musicId in ipairs(cfg.MusicIds) do
+        local specialCueId = XMVCA.XMusicPlayer:COGetMusicPlayerAlbumCOByid(musicId).CueId
+        if specialCueId == cueId then
+            return true
+        end
+    end
+    return false
 end
 
 ---外部通过设置按钮修改音乐场景播放模式
@@ -85,8 +94,7 @@ function XMusicSceneAgency:ShowSwitchMusicPopup(sceneId)
     end
     local bgmCO = XMVCA.XMusicPlayer:GetCurCommonBgnCO()
     local curCueId = bgmCO and bgmCO.CueId
-    local cueId = self:GetSpecialCueId(sceneId)
-    if cueId == curCueId then
+    if self:IsSpecialCueId(sceneId, curCueId) then
         self._Model:SetSwitchMusicPopupShow(sceneId)
         return
     end
@@ -94,7 +102,10 @@ function XMusicSceneAgency:ShowSwitchMusicPopup(sceneId)
     local content = self:GetClientConfigValue("DialogContent")
     XUiManager.DialogTip(title, content, XUiManager.DialogType.Normal, nil, function()
         self._Model:SetSwitchMusicPopupShow(sceneId)
-        XLuaUiManager.Open("UiMusicPlayerMain")
+        local skipId = self:GetIntClientConfigValue("SwitchMusicPopupSkipId")
+        if XTool.IsNumberValid(skipId) then
+            XFunctionManager.SkipInterface(skipId)
+        end
     end)
 end
 

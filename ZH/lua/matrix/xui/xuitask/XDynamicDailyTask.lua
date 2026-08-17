@@ -1,4 +1,6 @@
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+
+---@class XDynamicDailyTask:XUiNode
 local XDynamicDailyTask = XClass(XUiNode, "XDynamicDailyTask")
 
 -- 每日任务为时间段的condition类型，除了这些类型其他任务有效时间都是一天

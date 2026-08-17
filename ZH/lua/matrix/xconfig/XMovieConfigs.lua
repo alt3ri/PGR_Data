@@ -22,12 +22,12 @@ local MovieSpineActorV2Templates = {}
 local MovieRoleFaceTemplates = {}
 local MovieSkipTemplates = {}
 local MovieStaffTemplates = {}
-local MovieSpeedTemplates = {}
-local MovieSkipSummaryTemplates = {}
-
-local IsLoadMovieSkipSummary = false
-
-XMovieConfigs = XMovieConfigs or {}
+local MovieSpeedTemplates = {}
+local MovieSkipSummaryTemplates = {}
+
+local IsLoadMovieSkipSummary = false
+
+XMovieConfigs = XMovieConfigs or {}
 
 XMovieConfigs.PLAYER_NAME_REPLACEMENT = "【kuroname】"
 XMovieConfigs.TYPE_WRITER_SPEED = CS.XGame.ClientConfig:GetFloat("MovieWriterSpeed") or 0.04
@@ -94,14 +94,6 @@ local InitSpineActorV2Configs = function()
     MovieSpineActorV2Templates = XTableManager.ReadByIntKey(TABLE_MOVIE_SPINE_ACTOR_V2_PATH, XTable.XTableMovieSpineActorV2, "RoleId")
 end
 
-local EnsureSpineActorV2Configs = function()
-    if next(MovieSpineActorV2Templates) ~= nil then
-        return
-    end
-
-    InitSpineActorV2Configs()
-end
-
 function XMovieConfigs.Init()
     MovieActorTemplates = XTableManager.ReadByIntKey(TABLE_MOVIE_ACTOR_PATH, XTable.XTableMovieActor, "RoleId")
     MovieSpineActorTemplates = XTableManager.ReadByIntKey(TABLE_MOVIE_SPINE_ACTOR_PATH, XTable.XTableMovieSpineActor, "RoleId")
@@ -268,15 +260,11 @@ function XMovieConfigs.GetSpineActorTransitionAnim(actorId, index)
     return config.TransitionAnims[index]
 end
 
-function XMovieConfigs.IsSpineActorV2(actorId)
-    EnsureSpineActorV2Configs()
-
-    return MovieSpineActorV2Templates[actorId] ~= nil
-end
-
-function XMovieConfigs.GetSpineActorV2Config(actorId)
-    EnsureSpineActorV2Configs()
-
+function XMovieConfigs.IsSpineActorV2(actorId)
+    return MovieSpineActorV2Templates[actorId] ~= nil
+end
+
+function XMovieConfigs.GetSpineActorV2Config(actorId)
     local config = MovieSpineActorV2Templates[actorId]
     if not config then
         XLog.ErrorTableDataNotFound("XMovieConfigs.GetSpineActorV2Config", "MovieSpineActorV2", TABLE_MOVIE_SPINE_ACTOR_V2_PATH, "actorId", tostring(actorId))

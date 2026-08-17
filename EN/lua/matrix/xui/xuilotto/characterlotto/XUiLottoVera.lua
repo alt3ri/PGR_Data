@@ -2,21 +2,18 @@ local XUiPanelActivityAsset = require("XUi/XUiShop/XUiPanelActivityAsset")
 ---@class XUiLottoVera : XLuaUi
 local XUiLottoVera = XLuaUiManager.Register(XLuaUi, "UiLottoVera")
 
-function XUiLottoVera:OnAwake()
-    self:AddBtnListener()
-end
-
 ---@param groupData XLottoGroupEntity
 function XUiLottoVera:OnStart(groupData, closeCb, backGround)
     ---@type XLottoGroupEntity
     self._LottoGroupData = groupData
     --- ui缓存数据,需考虑进入战斗时UI回收缓存
     self._LottoUiData = self._LottoUiData or XDataCenter.LottoManager.CreateLottoUiData()
-    
+
     self:InitPanelAsset()
     self:InitPanelReward()
     self:InitDraw()
     self:InitScene()
+    self:AddBtnListener()
 end
 
 function XUiLottoVera:OnEnable()
@@ -47,6 +44,7 @@ function XUiLottoVera:StartAutoCloseTimer()
     local drawData = self._LottoGroupData:GetDrawData()
     local timeId = drawData:GetTimeId()
     local endTime = XFunctionManager.GetEndTimeByTimeId(timeId)
+    self:_RefreshTimeText(endTime)
     self._CloseTimer = XScheduleManager.ScheduleForever(function()
         if XTool.UObjIsNil(self.Transform) then
             self:CloseAutoCloseTimer()
@@ -54,7 +52,26 @@ function XUiLottoVera:StartAutoCloseTimer()
         if XTime.GetServerNowTimestamp() > endTime then
             XDataCenter.LottoManager.OnActivityEnd()
         end
+        self:_RefreshTimeText(endTime)
     end, XScheduleManager.SECOND, 0)
+end
+
+-- 每秒调用，number/unit 未变则跳过 Text 赋值，避免无意义的 UI 重绘
+function XUiLottoVera:_RefreshTimeText(endTime)
+    local time = endTime - XTime.GetServerNowTimestamp()
+    local number, unit = XUiHelper.GetTime(time, XUiHelper.TimeFormatType.ESCAPE_ACTIVITY)
+    if self._LastTimeNumber == number and self._LastTimeUnit == unit then
+        return
+    end
+    self._LastTimeNumber = number
+    self._LastTimeUnit = unit
+
+    if self.TxtNumber then
+        self.TxtNumber.text = tostring(number)
+    end
+    if self.TxtDay then
+        self.TxtDay.text = unit
+    end
 end
 
 function XUiLottoVera:CloseAutoCloseTimer()
@@ -194,20 +211,43 @@ end
 
 --region Ui - BtnListener
 function XUiLottoVera:AddBtnListener()
-    XUiHelper.RegisterClickEvent(self, self.BtnBack, self.OnBtnBackClick)
-    XUiHelper.RegisterClickEvent(self, self.BtnMainUi, self.OnBtnMainUiClick)
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
+    self.BtnMainUi:AddEventListener(handler(self, self.OnBtnMainUiClick))
 
-    XUiHelper.RegisterClickEvent(self, self.BtnDrawRule, self.OnBtnDrawRuleClick)
-    XUiHelper.RegisterClickEvent(self, self.BtnXiangqing, self.OnBtnRewardDetailClick)
-    XUiHelper.RegisterClickEvent(self, self.BtnShield, self.OnBtnSkipAnimClick)
-    XUiHelper.RegisterClickEvent(self, self.BtnVoice, self.OnBtnSetClick)
-    XUiHelper.RegisterClickEvent(self, self.BtnStory, self.OnBtnStageClick)
+    self.BtnDrawRule:AddEventListener(handler(self, self.OnBtnDrawRuleClick))
+    self.BtnXiangqing:AddEventListener(handler(self, self.OnBtnRewardDetailClick))
+    self.BtnShield:AddEventListener(handler(self, self.OnBtnSkipAnimClick))
+    self.BtnVoice:AddEventListener(handler(self, self.OnBtnSetClick))
+    self.BtnStory:AddEventListener(handler(self, self.OnBtnStageClick))
     --Draw
-    XUiHelper.RegisterClickEvent(self, self.BtnGo, self.OnBtnDrawClick)
-    XUiHelper.RegisterClickEvent(self, self.BtnSkip, self.SkipDrawAnim)
+    self.BtnGo:AddEventListener(handler(self, self.OnBtnDrawClick))
+    self.BtnSkip:AddEventListener(handler(self, self.SkipDrawAnim))
+
+    if self.BtnChange then
+        self.BtnChange:AddEventListener(handler(self, self.OnBtnChangeClick))
+        self:RefreshBtnChange()
+    end
+end
+
+function XUiLottoVera:RefreshBtnChange()
+    if not self.BtnChange then return end
+    local lottoId = self._LottoGroupData:GetDrawData():GetId()
+    self.BtnChange.gameObject:SetActiveEx(XDataCenter.LottoManager.IsLottoIdBelongSelfChoice(lottoId))
+end
+
+function XUiLottoVera:OnBtnChangeClick()
+    -- 必须先翻 Entrance.IsChangeMode 再 Close，否则 Entrance.OnEnable 会因 dic 已选直接 CloseImmediately
+    XDataCenter.LottoManager.OpenSelfChoiceEntranceForChange()
+    self:Close()
 end
 
 function XUiLottoVera:OnBtnBackClick()
+    -- 自选卡池：直接回主界面（Entrance 由 RunMain 一并关闭）
+    local lottoId = self._LottoGroupData:GetDrawData():GetId()
+    if XDataCenter.LottoManager.IsLottoIdBelongSelfChoice(lottoId) then
+        XLuaUiManager.RunMain()
+        return
+    end
     self:Close()
 end
 

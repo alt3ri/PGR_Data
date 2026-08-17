@@ -37,6 +37,11 @@ function XPBRGameRedPointMain.Check(arg)
     if XMVCA.XPBRGame:ReddotIsAnyTaskAchieved() then
         return true
     end
+    
+    -- 涂装未领取
+    if XMVCA.XPBRGame:ReddotIsSkinRewardNotGet() then
+        return true
+    end
 end
 
 return XPBRGameRedPointMain

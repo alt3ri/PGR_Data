@@ -256,7 +256,7 @@ function XUiBigWorldMessageChat:_RefreshAnswerOptions(content)
             XEventManager.DispatchEvent(XMVCA.XBigWorldService.DlcEventId.EVENT_MESSAGE_OPTION_SELECT_NOTIFY, index)
         end)
     end
-    for i = count + 1, table.nums(self._AnswerGroup) do
+    for i = count + 1, table.size(self._AnswerGroup) do
         self._AnswerGroup[i].gameObject:SetActiveEx(false)
     end
 end

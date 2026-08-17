@@ -1297,4 +1297,10 @@ function XUiActivityBriefRefreshButton:RefreshConstRewardShow(activityGroupId)
     end
 end
 
+function XUiActivityBriefRefreshButton:RefreshActivityTag()
+    for _, btn in pairs(self.TlActivityBrieButton) do
+        btn:ShowActivityTag()
+    end
+end
+
 return XUiActivityBriefRefreshButton

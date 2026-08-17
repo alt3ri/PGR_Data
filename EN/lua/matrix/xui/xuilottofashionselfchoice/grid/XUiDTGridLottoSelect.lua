@@ -14,7 +14,7 @@ function XUiDTGridLottoSelect:OnStart(clickCb)
     end
 end
 
-function XUiDTGridLottoSelect:Refresh(lottoId, index)
+function XUiDTGridLottoSelect:Refresh(lottoId, index, primaryId)
     self.LottoId = lottoId
     self.Index = index
 
@@ -32,6 +32,12 @@ function XUiDTGridLottoSelect:Refresh(lottoId, index)
     end
     self.Btn.TagObj.gameObject:SetActiveEx(isAllRewardGet)
     self.IsAllRewardGet = isAllRewardGet
+
+    local curSelectedLottoId = XDataCenter.LottoManager.GetCurSelectedLottoIdByPrimartLottoId(primaryId)
+    local isLastSelected = XTool.IsNumberValid(curSelectedLottoId) and curSelectedLottoId == lottoId
+    if self.TagLastSelect then
+        self.TagLastSelect.gameObject:SetActiveEx(isLastSelected)
+    end
 end
 
 function XUiDTGridLottoSelect:SetSelect()

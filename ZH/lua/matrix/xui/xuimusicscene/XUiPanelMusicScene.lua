@@ -25,19 +25,26 @@ function XUiPanelMusicScene:Ctor(root)
     }
     self._KuroroEffectHandler = {
         [Mode.Normal] = {
-            [true] = handler(self, self.ShowKuroroToNormalEffect),
-            [false] = handler(self, self.ShowKuroroNormalEffect)
+            [1] = handler(self, self.ShowKuroroToNormalEffect),
+            [2] = handler(self, self.ShowKuroroNormalEffect)
         },
         [Mode.Music] = {
-            [true] = handler(self, self.ShowKuroroToMusicEffect),
-            [false] = handler(self, self.ShowKuroroMusicEffect)
+            [1] = handler(self, self.ShowKuroroToMusicEffect),
+            [2] = handler(self, self.ShowKuroroMusicEffect)
         },
     }
+    self._TrackKey = {
+        [1] = CS.XAudioManager.GetAudioClientConfig("MusicTrack_Volume_3"), --试玩界面
+        [2] = CS.XAudioManager.GetAudioClientConfig("MusicTrack_Volume_2") --主界面
+    }
+    self._MusicCurveTime = {
+        [1] = XMVCA.XMusicScene:GetIntClientConfigValue("MusicCurveTime", 2), --试玩界面
+        [2] = XMVCA.XMusicScene:GetIntClientConfigValue("MusicCurveTime", 1) --主界面
+    }
 
-    self._TrackKey = CS.XAudioManager.GetAudioClientConfig("MusicTrack_Volume_2")
+    self.IsExclusiveMusic = false
     self._NormalTargetValue = XMVCA.XMusicScene:GetIntClientConfigValue("AisacTargetValue", Mode.Normal)
     self._MusicTargetValue = XMVCA.XMusicScene:GetIntClientConfigValue("AisacTargetValue", Mode.Music)
-    self._CurveTime = XMVCA.XMusicScene:GetIntClientConfigValue("MusicCurveTime")
     self._Cd = XMVCA.XMusicScene:GetIntClientConfigValue("KuroroClickCd")
     ---@type XLuaUi
     self._Root = root
@@ -66,19 +73,18 @@ function XUiPanelMusicScene:Play(sceneId, sceneTran)
     local bgmCO = XMVCA.XMusicPlayer:GetCurCommonBgnCO()
     self._IsPlaying = true
     self._Cfg = XMVCA.XMusicScene:GetMusicSceneConfig(sceneId)
-    self._PlayMode = XMVCA.XMusicScene:GetCurPlayMode(sceneId)
-    self._ExclusiveCueId = XMVCA.XMusicScene:GetSpecialCueId(sceneId)
+    self._PlayMode = self._ForceFullMusic and Mode.Music or XMVCA.XMusicScene:GetCurPlayMode(sceneId)
     self._CurCueId = bgmCO and bgmCO.CueId or nil
     self._SceneId = sceneId
     self._SceneTran = sceneTran
     self._StateNameMap = {
         [Mode.Normal] = {
-            [true] = self._Cfg.ToNormalAnim,
-            [false] = self._Cfg.NormalAnim
+            [1] = self._Cfg.ToNormalAnim,
+            [2] = self._Cfg.NormalAnim
         },
         [Mode.Music] = {
-            [true] = self._Cfg.ToMusicAnim,
-            [false] = self._Cfg.MusicAnim
+            [1] = self._Cfg.ToMusicAnim,
+            [2] = self._Cfg.MusicAnim
         },
     }
 
@@ -104,7 +110,7 @@ function XUiPanelMusicScene:PlayExclusiveMusic()
     if not self._PlayExclusiveMusic or not XTool.IsNumberValid(self._Cfg.LoopCueId) then
         return
     end
-    XMVCA.XMusicPlayer:StopCommonSystemBgmAndRecord() --返回其他界面自动恢复播放
+    self.IsExclusiveMusic = true
     XMVCA.XMusicPlayer:SetLock(true)
     XLuaAudioManager.PlayMusicInOut2(self._Cfg.LoopCueId, -1, -1, -1, -1, 1, 1)
 end
@@ -127,9 +133,6 @@ end
 function XUiPanelMusicScene:SetForceFullMusic()
     self._ForceFullMusic = true
     self:DontSaveData()
-    if self._IsPlaying then
-        self:ApplyModel()
-    end
 end
 
 ---屏蔽cd机，单曲循环播放指定的音乐
@@ -257,16 +260,17 @@ function XUiPanelMusicScene:ResolveMusicLogic()
     if self._ForceFullMusic then
         return PlayLogic.Full
     end
-    return self._ExclusiveCueId == self._CurCueId and PlayLogic.Full or PlayLogic.Simple
+    return XMVCA.XMusicScene:IsSpecialCueId(self._SceneId, self._CurCueId) and PlayLogic.Full or PlayLogic.Simple
 end
 
 ---播放切换动画
 function XUiPanelMusicScene:PlayKuroroAnimation(isPressKuroro)
-    local stateName = self._StateNameMap[self._PlayMode][isPressKuroro]
+    local i = isPressKuroro and 1 or 2
+    local stateName = self._StateNameMap[self._PlayMode][i]
     if self._InputAnim and not string.IsNilOrEmpty(stateName) then
         self._InputAnim:CrossFade(stateName, 0.2, 0)
     end
-    local effectHandler = self._KuroroEffectHandler[self._PlayMode][isPressKuroro]
+    local effectHandler = self._KuroroEffectHandler[self._PlayMode][i]
     if effectHandler then
         effectHandler()
     end
@@ -305,6 +309,7 @@ function XUiPanelMusicScene:SetSceneEffectVisible(isNormal, isMusic)
     end
     self:SetSceneNodeVisible(self._SceneUiObj.NormalMod, isNormal) --常驻特效
     self:SetSceneNodeVisible(self._SceneUiObj.MusicMod, isMusic) --音乐模式增强特效
+    self:SetSceneNodeVisible(self._SceneUiObj.Beat, isMusic)
 end
 
 function XUiPanelMusicScene:SetClickEffectVisible(isVisible)
@@ -322,15 +327,16 @@ end
 
 ---切换器乐和人声
 function XUiPanelMusicScene:ChangeMusicSourceAisac(targetValue)
-    CS.XAudioManager.ChangeMusicSourceAisac(self._TrackKey, targetValue, self._CurveTime)
+    local i = self.IsExclusiveMusic and 1 or 2
+    CS.XAudioManager.ChangeMusicSourceAisac(self._TrackKey[i], targetValue, self._MusicCurveTime[i])
 end
 
 ---cd机切换bgm（切换简单版和完全版音乐状态）
 function XUiPanelMusicScene:OnMusicPlayerChange(cueId)
-    self._CurCueId = cueId
     if not self._IsPlaying or self._CurCueId == cueId or self:ResolvePlayMode() == Mode.Normal then
         return
     end
+    self._CurCueId = cueId
     self:ApplyModel()
 end
 

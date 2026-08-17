@@ -750,6 +750,11 @@ end
 -- region Protocol
 
 function XBigWorldCommanderDIYControl:RequestUpdate(outfitType, gender, fashionList, callback)
+    -- 发包前先校验拥有性，避免把未拥有部件发出去再被服务端 HasOwnPart 打回
+    if not self._Model:IsFashionListAllOwned(fashionList) then
+        -- XUiManager.TipCode(XCode.DlcFashionPartIdNotOwn)
+        return
+    end
     XMessagePack.MarkAsTable(fashionList)
     XNetwork.Call(Protocol.BigWorldCommanderFashionUpdateRequest, {
         OutfitType = outfitType,

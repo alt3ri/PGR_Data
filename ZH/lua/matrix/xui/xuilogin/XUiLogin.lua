@@ -53,6 +53,7 @@ function XUiLogin:OnEnable()
     -- 清除 BGM 中转区恢复状态，防止跨会话残留
     CS.XAudioManager.ClearBgmRestoreState()
     CS.XAudioManager.StartAnalyzer()
+    CS.XAudioManager.ChangeMusicSourceAisac(CS.XAudioManager.GetAudioClientConfig("MusicTrack_Volume_2"), 0.1)
 end
 
 function XUiLogin:CheckFool()
@@ -150,7 +151,7 @@ function XUiLogin:OnStart()
     end, 100)
 
     if XOverseaManager.IsOverSeaRegion() then
-        XAgreementManager.LoadAgreeInfo()
+        --XAgreementManager.LoadAgreeInfo()
         self.TxtUser.text = XUserManager.UserId or XUserManager.UserName or "" -- 海外使用uid显示
     end
 

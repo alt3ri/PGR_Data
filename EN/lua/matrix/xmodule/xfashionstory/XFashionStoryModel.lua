@@ -112,9 +112,9 @@ function XFashionStoryModel:GetRewardActivityTimeId(id)
     return cfg and cfg.RewardActivityTimeId
 end
 
-function XFashionStoryModel:GetRewardId(id)
+function XFashionStoryModel:GetRewardTaskId(id)
     local cfg = self:GetFashionStoryCfg(id)
-    return cfg and cfg.RewardId
+    return cfg and cfg.RewardTaskId
 end
 
 function XFashionStoryModel:GetRewardSkipId(id)
@@ -215,6 +215,12 @@ end
 function XFashionStoryModel:GetSingleLineTimeId(id)
     local cfg = self:GetSingleLineCfg(id)
     return cfg and cfg.StoryTimeId
+end
+
+-- 采购按钮显隐时间：分线对应涂装的售卖时间，直接配在 SingleLine 表，与开放时间(StoryTimeId)解耦
+function XFashionStoryModel:GetSingleLinePurchaseTimeId(id)
+    local cfg = self:GetSingleLineCfg(id)
+    return cfg and cfg.PurchaseTimeId
 end
 
 function XFashionStoryModel:GetChapterPrefab(id)

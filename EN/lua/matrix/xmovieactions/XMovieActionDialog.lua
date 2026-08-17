@@ -225,24 +225,28 @@ function XMovieActionDialog:OnUndo()
 end
 
 -- 播放语音时切换spine讲话动画
-function XMovieActionDialog:PlaySpineActorTalk()
-    if #self.SpineActorIndexs > 0 and not self.LipAnimFolder then
-        for _, index in ipairs(self.SpineActorIndexs) do
-            local actor = self.UiRoot:GetSpineActor(index)
-            actor:PlayKouTalkAnim(self.SpineActorKouSpeed)
-        end
-    end
-end
+function XMovieActionDialog:PlaySpineActorTalk()
+    if #self.SpineActorIndexs > 0 and not self.LipAnimFolder then
+        for _, index in ipairs(self.SpineActorIndexs) do
+            local actor = self.UiRoot:GetSpineActor(index)
+            if actor then
+                actor:PlayKouTalkAnim(self.SpineActorKouSpeed)
+            end
+        end
+    end
+end
 
 -- 停止spine讲话动画，切回之前的动画
-function XMovieActionDialog:StopSpineActorTalk()
-    if #self.SpineActorIndexs > 0 and not self.LipAnimFolder then
-        for _, index in ipairs(self.SpineActorIndexs) do
-            local actor = self.UiRoot:GetSpineActor(index)
-            actor:PlayKouIdleAnim()
-        end
-    end
-end
+function XMovieActionDialog:StopSpineActorTalk()
+    if #self.SpineActorIndexs > 0 and not self.LipAnimFolder then
+        for _, index in ipairs(self.SpineActorIndexs) do
+            local actor = self.UiRoot:GetSpineActor(index)
+            if actor then
+                actor:PlayKouIdleAnim()
+            end
+        end
+    end
+end
 
 -- 生成要显示的DialogContent
 function XMovieActionDialog:GenDialogContent()

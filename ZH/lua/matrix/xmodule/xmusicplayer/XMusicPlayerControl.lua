@@ -16,7 +16,7 @@ function XMusicPlayerControl:OnInit()
     self._MusicPlayerConfigControl =  self:AddSubControl(require('XModule/XMusicPlayer/Controller/XMusicPlayerConfigControl'))
     self._CdPlayerControl =  self:AddSubControl(require('XModule/XMusicPlayer/Controller/XMusicPlayerCDPlayerControl'))
 
-    self:_InitReferenceHues()
+    -- self:_InitReferenceHues()
     self:_InitColorMaterials()
 end
 
@@ -31,7 +31,6 @@ function XMusicPlayerControl:RemoveAgencyEvent()
 end
 
 function XMusicPlayerControl:OnRelease()
-   self._ReferenceHues = {}
    self._JumpAlbumCollectionClickMusicID = nil
    self._CDAutoRotateEnabled = nil
    self._ColorMaterialDic = nil
@@ -129,7 +128,7 @@ end
 
 
 --region ----------背景主色→UI色调----------
-
+--目前已废弃
 --- 色相环形距离(0-0.5, Unity HSV hue 范围 0-1)
 ---@param h1 number
 ---@param h2 number
@@ -177,6 +176,22 @@ function XMusicPlayerControl:_FindClosestColorEnum(color)
 end
 
 --endregion ----------背景主色→UI色调----------
+
+
+--region ----------烘焙颜色风格----------
+
+---@param musicId number
+function XMusicPlayerControl:SetMusicBakedColorStyle(musicId)
+    local colorStyle = self:GetMusicPlayerconfigControl():GetBakedColorStyle(musicId)
+    if string.IsNilOrEmpty(colorStyle) then
+        colorStyle = XMVCA.XMusicPlayer.Enum.UiButtonColor.Blue
+    end
+    self._CurColorEnum = colorStyle
+    self:DispatchEvent(XMVCA.XMusicPlayer.EventIds.EVENT_CHANGE_UI_COLOR_STYLE)
+end
+
+--endregion ----------烘焙颜色风格----------
+
 
 
 --region ----------颜色材质加载与查询----------

@@ -60,6 +60,7 @@ local SelectType = {
 
 function XUiShop:OnAwake()
     self.TabBtnGroupSelectIndex = nil
+    self._MainUiShopTypeList = XShopConfigs.GetConfigValues("MainUiShopTypeList")
     self:InitAutoScript()
 end
 
@@ -118,6 +119,8 @@ function XUiShop:OnStart(typeId, cb, configShopId, screenId)
 
     self.TagBtnShopGroup = {}
     self.FilterResult = {}
+    -- 页签配置条件红点状态缓存: [shopId] = boolean, 与服务端免费商品红点合并后显示
+    self.TabConditionRedPointDic = {}
     XShopManager.ClearBaseInfoData()
 
     -- XShopManager.GetBaseInfo(function()
@@ -136,10 +139,12 @@ function XUiShop:OnEnable()
         self:UpdateTog()
     end)
     XEventManager.AddEventListener(XEventId.EVENT_SHOP_ITEM_NOT_ENOUGH, self.OnShopItemNotEnough, self)
+    XEventManager.AddEventListener(XEventId.EVENT_SHOP_FREE_GOODS_RED_POINT_UPDATE, self.OnFreeGoodsRedPointUpdate, self)
 end
 
 function XUiShop:OnDisable()
     XEventManager.RemoveEventListener(XEventId.EVENT_SHOP_ITEM_NOT_ENOUGH, self.OnShopItemNotEnough, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_SHOP_FREE_GOODS_RED_POINT_UPDATE, self.OnFreeGoodsRedPointUpdate, self)
 end
 
 function XUiShop:OnShopItemNotEnough(code, shopId, isHasCache)
@@ -397,8 +402,11 @@ function XUiShop:UpdateTog()
             local shopDetail = XShopConfigs.GetShopDetailById(info.Id)
             if shopDetail and not XTool.IsTableEmpty(shopDetail.ShopBtnRedPointConditions) then
                 local redPointArgs = { Id = info.Id, IsNeedFirstBluePoint = shopDetail.IsNeedFirstBluePoint }
-                self:AddRedPointEvent(uiButton, function(_, count) uiButton:ShowReddot(count >= 0) end, self,
-                    shopDetail.ShopBtnRedPointConditions, redPointArgs)
+                local conditionShopId = info.Id
+                self:AddRedPointEvent(uiButton, function(_, count)
+                    self.TabConditionRedPointDic[conditionShopId] = count >= 0
+                    self:RefreshTabRedPoint(uiButton, conditionShopId)
+                end, self, shopDetail.ShopBtnRedPointConditions, redPointArgs)
             end
 
             local isShowTag = XShopManager.CheckShopActivityPeriod(info.Id)
@@ -413,6 +421,7 @@ function XUiShop:UpdateTog()
         end
 
         uiButton.gameObject:SetActiveEx(true)
+        self:RefreshTabRedPoint(uiButton, info.Id)
         table.insert(self.BtnGoList, uiButton)
         self.ShopTables[index] = info
         self.ShopIndex2IdDic[index] = info.Id
@@ -433,6 +442,25 @@ function XUiShop:UpdateTog()
     end)
     self.TabBtnGroup:SelectIndex(selectIndex)
     self.UiShopFashionDiscountActivity:ResetDiscountActivityTag()
+end
+
+-- 页签红点 = 配置条件红点 or 免费商品红点(服务端下发)
+function XUiShop:RefreshTabRedPoint(uiButton, shopId)
+    local isShow = self.TabConditionRedPointDic[shopId] or XShopManager.CheckShopFreeGoodsRedPoint(shopId)
+    uiButton:ShowReddot(isShow)
+end
+
+-- 服务端下发MainUiShopRedpointNotify后刷新当前类型的页签红点
+function XUiShop:OnFreeGoodsRedPointUpdate()
+    if XTool.IsTableEmpty(self.BtnGoList) then
+        return
+    end
+    for index, uiButton in ipairs(self.BtnGoList) do
+        local info = self.ShopTables[index]
+        if info then
+            self:RefreshTabRedPoint(uiButton, info.Id)
+        end
+    end
 end
 
 -- 默认选中页签(返回当前 infoList 的局部索引): Recharge 类型按持有代币优先定位, 其余类型取首个
@@ -615,11 +643,14 @@ end
 
 function XUiShop:GetShopBaseInfoByTypeAndTag(shopType)
     if shopType == XShopManager.ShopType.Common then
-        local shopList1 = XShopManager.GetShopBaseInfoByTypeAndTag(XShopManager.ShopType.Common)
-        local shopList2 = XShopManager.GetShopBaseInfoByTypeAndTag(XShopManager.ShopType.Boss)
-        local shopList3 = XShopManager.GetShopBaseInfoByTypeAndTag(XShopManager.ShopType.Arena)
-        local shopList4 = XShopManager.GetShopBaseInfoByTypeAndTag(XShopManager.ShopType.Guild)
-        return XTool.MergeArray(shopList1, shopList2, shopList3, shopList4)
+        local mergeArray = {}
+        for _, sType in ipairs(self._MainUiShopTypeList) do
+            local shopList = XShopManager.GetShopBaseInfoByTypeAndTag(tonumber(sType))
+            for _, shopInfo in pairs(shopList) do
+                table.insert(mergeArray, shopInfo)
+            end
+        end
+        return mergeArray
     end
     return XShopManager.GetShopBaseInfoByTypeAndTag(shopType)
 end

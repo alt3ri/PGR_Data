@@ -351,12 +351,22 @@ local RomanNumberText = {
     [10] = CS.XTextManager.GetText("RomanTen")
 }
 
+local DoubleText = CS.XTextManager.GetText("Double")
+
 XTool.ParseNumberString = function(num)
     return NumberText[mathModf(num / 10)] .. NumberText[num % 10]
 end
 
 XTool.ConvertNumberString = function(num)
     return NumberText[num] or ""
+end
+
+---“2”→“双”
+XTool.ConvertChineseNumberString = function(num)
+    if num == 2 then
+        return DoubleText
+    end
+    return XTool.ConvertNumberString(num)
 end
 
 XTool.ConvertRomanNumberString = function(num)

@@ -54,16 +54,25 @@ function XMovieActionSpineActorDisappear:OnInit(actionData)
 
     self.SkipAnim = paramToNumber(params[6]) ~= 0
     local endDelay = paramToNumber(actionData.EndDelay)
-    self.FadeDuration = endDelay > 0 and endDelay * MILLIS_TO_SECONDS or DEFAULT_FADE_DURATION
+    if endDelay > 0 then
+        self.FadeDuration = endDelay * MILLIS_TO_SECONDS
+    else
+        self.FadeDuration = DEFAULT_FADE_DURATION
+    end
 end
 
 function XMovieActionSpineActorDisappear:OnEnter()
     for actorIndex, _ in pairs(self.ActorIndexs) do
         local actor = self.UiRoot:GetSpineActor(actorIndex)
-        FadeSpineImageAlpha(actor, 1, 0, self.FadeDuration, function()
+        if self.SkipAnim then
+            actor:CleanupSpineFadeComponent()
             actor:SetShow(false)
-            actor:CleanupSpineFadeComponent(false)
-        end)
+        else
+            FadeSpineImageAlpha(actor, 1, 0, self.FadeDuration, function()
+                actor:SetShow(false)
+                actor:CleanupSpineFadeComponent(false)
+            end)
+        end
     end
 end
 

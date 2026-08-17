@@ -196,7 +196,7 @@ function XUiBigWorldBackpack:_RefreshDynamicTable()
         local spacing = self._DynamicTable:GetSpacing()
         local xCount = math.floor(viewSize.x / (gridSize.x + spacing.x))
         local maxFactor = 1
-        local itemCount = table.nums(items)
+        local itemCount = #items
 
         if XTool.IsNumberValid(xCount) then
             while maxFactor * xCount < itemCount do

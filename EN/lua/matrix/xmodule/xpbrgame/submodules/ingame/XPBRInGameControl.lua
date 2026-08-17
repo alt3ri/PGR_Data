@@ -286,6 +286,7 @@ function XPBRInGameControl:TrySelectItem(itemId, cb)
     if itemCfg.ItemType == XMVCA.XPBRGame.EnumConst.ItemType.Skill then
         local items = self._Model:GetAllItemsInSegmentSettleData()
         local hasSameColorDiffGroupSkill = false
+        local oldItemId = nil
         
         if not XTool.IsTableEmpty(items) then
             for i, v in pairs(items) do
@@ -295,6 +296,7 @@ function XPBRInGameControl:TrySelectItem(itemId, cb)
                     -- 判断是否同组
                     if itemCfg.OrbGroup ~= tempItemCfg.OrbGroup then
                         hasSameColorDiffGroupSkill = true
+                        oldItemId = tempItemCfg.ItemId
                         break
                     end
                 end
@@ -303,10 +305,9 @@ function XPBRInGameControl:TrySelectItem(itemId, cb)
 
         if hasSameColorDiffGroupSkill then
             -- 提示会替换
-            XUiManager.DialogTip(CS.XTextManager.GetText("TipTitle"), self._Model:GetClientPBRText('ShopSelectSkillSameColorDiffGroupTips'), nil, nil, function()
+            XLuaUiManager.Open("UiPBRPopupSkillReplace", oldItemId, itemId, function()
                 XMVCA.XPBRGame.NetworkAgency:DoPbrShopChooseRequest(itemId, cb)
             end)
-            
             return
         end
     end
@@ -386,7 +387,7 @@ function XPBRInGameControl:CheckIsInEndlessMode()
     if stageCfg and stageCfg.StageType == XMVCA.XPBRGame.EnumConst.StageCustomType.Challenge then
         local wave = self._Model:GetWaveInSegmentSettleData()
         
-        return XTool.IsNumberValidEx(wave) and wave >= stageCfg.FinishWaves
+        return XTool.IsNumberValidEx(wave) and wave > stageCfg.FinishWaves
     end
 end
 

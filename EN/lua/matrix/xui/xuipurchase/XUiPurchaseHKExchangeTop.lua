@@ -49,7 +49,6 @@ end
 function XUiPurchaseHKExchangeTop:SetListItemActive(index, grid, data)
     self.CurrentData = data
     self:RefreshBuyInfo(data)
-    XLuaAudioManager.PlayAudioByType(XLuaAudioManager.SoundType.SFX, 1011)
     -- 处理切换点击状态
     self:SetListItemState(index)
     if self.IsShowBuyTipDataId == nil then

@@ -93,7 +93,11 @@ function XMaverick3Activity:GetRankStageInfo()
 end
 
 function XMaverick3Activity:IsTalentUnlock(id)
-    return table.indexof(self._UnlockTalents, id) ~= false
+    local index = table.indexof(self._UnlockTalents, id)
+    if index and index > 0 then
+        return true
+    end
+    return false
 end
 
 return XMaverick3Activity

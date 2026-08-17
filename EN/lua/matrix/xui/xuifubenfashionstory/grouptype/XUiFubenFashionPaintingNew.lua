@@ -19,6 +19,7 @@ end
 function XUiFubenFashionPaintingNew:OnEnable()
     self:RefreshProcess()
     self:RefreshStoryGrids()
+    self:RefreshSkipBtn()
     self:UpdateLeftTime(XMVCA.XFashionStory:GetLeftTimeStamp(XMVCA.XFashionStory:GetCurrentActivityId()) <= 0)
 end
 --endregion
@@ -80,6 +81,12 @@ end
 --endregion
 
 --region 数据更新
+-- 采购按钮显隐：按分线配置的涂装售卖时间(PurchaseTimeId)判断
+function XUiFubenFashionPaintingNew:RefreshSkipBtn()
+    local show = XMVCA.XFashionStory:CheckSingleLinePurchaseInTime(self.GroupId)
+    self.BtnSkip1.gameObject:SetActiveEx(show)
+end
+
 function XUiFubenFashionPaintingNew:RefreshProcess()
     local stagesCount = XMVCA.XFashionStory:GetSingleLineStagesCount(self.GroupId)
     local passedCount = XMVCA.XFashionStory:GetGroupStagesPassCount(XMVCA.XFashionStory:GetSingleLineStages(self.GroupId))

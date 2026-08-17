@@ -24,6 +24,21 @@ function XUiBiancaTheatreBattleRoleRoom:CheckTeam(team)
             end
         end
     end
+
+    -- 构建当前已招募角色Id集合（包含试玩角色）
+    local validRoleIds = {}
+    local roles = self.AdventureManager:GetCurrentRoles(true)
+    for _, role in ipairs(roles) do
+        validRoleIds[role:GetId()] = true
+    end
+    -- 校验队伍内的角色是否是当前已招募的角色，非法角色清0
+    local entityIds = team:GetEntityIds()
+    for pos, entityId in ipairs(entityIds) do
+        if XTool.IsNumberValid(entityId) and not validRoleIds[entityId] then
+            XLog.Error("队伍存在非当前招募角色，已清除，pos：" .. pos .. "，entityId：" .. entityId)
+            entityIds[pos] = 0
+        end
+    end
 end
 
 function XUiBiancaTheatreBattleRoleRoom:AOPOnStartAfter(rootUi)

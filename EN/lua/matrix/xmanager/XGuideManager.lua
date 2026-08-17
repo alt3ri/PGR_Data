@@ -177,6 +177,7 @@ XGuideManagerCreator = function()
     function XGuideManager.Init()
         --监听登出
         XEventManager.AddEventListener(XEventId.EVENT_USER_LOGOUT, XGuideManager.HandleSignOut)
+        XEventManager.AddEventListener(XEventId.EVENT_FORCE_LOGOUT, XGuideManager.HandleSignOut)
         XEventManager.AddEventListener(XEventId.EVENT_GUIDE_OPEN_CONTROL_EVENT, XGuideManager.SwitchOpenControlEvent)
         --XEventManager.AddEventListener(XEventId.EVENT_NETWORK_DISCONNECT, XGuideManager.HandleSignOut)
         --监听Ui打开
@@ -275,6 +276,7 @@ XGuideManagerCreator = function()
     
     function XGuideManager.HandleSignOut()
         XGuideManager.ReloadAgent()
+        XGuideManager.ResetGuide()
     end
     
     ---- UI打开时检测引导开启

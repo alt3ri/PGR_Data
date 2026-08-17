@@ -4,6 +4,7 @@ local XActivityBrieIsOpen = require("XUi/XUiActivityBrief/XActivityBrieIsOpen")
     XActivityBrieIsOpen.lua：管理各按钮的开放条件与显示日期的代码
     XActivityBrieButton.lua：按钮的交互逻辑代码
 ]]
+---@class XUiActivityBriefBase : XLuaUi
 local XUiActivityBriefBase = XLuaUiManager.Register(XLuaUi, "UiActivityBriefBase")
 local OpMovieId = CS.XGame.ClientConfig:GetInt("ActivityBriefMovie")
 local XUiActivityBriefRefreshButton = require("XUi/XUiActivityBrief/XUiActivityBriefRefreshButton")
@@ -89,6 +90,7 @@ function XUiActivityBriefBase:OnDisable()
 end
 
 function XUiActivityBriefBase:OnDestroy()
+    self:RemoveBgmSpineSync()
 end
 
 
@@ -144,12 +146,44 @@ end
 
 function XUiActivityBriefBase:Refresh()
     self:RefreshDefaultSkipBtn()
+    self:RefreshSubTitle()
+    self:RefreshFxTitle()
     if self.BgType == XActivityBriefConfigs.BgType.Spine then
         self:RefreshSpinePanel()
     elseif self.BgType == XActivityBriefConfigs.BgType.Scene then
         self:RefreshScene()
     elseif self.BgType == XActivityBriefConfigs.BgType.Video then
         self:RefreshVideoPanel()
+    end
+end
+
+---副标题按条件互斥显隐：condition 不满足(含0/空)显示 SubTitle1，满足显示 SubTitle2
+function XUiActivityBriefBase:RefreshSubTitle()
+    if XTool.UObjIsNil(self.SubTitle1) and XTool.UObjIsNil(self.SubTitle2) then
+        return
+    end
+    local conditionId = XActivityBriefConfigs.GetTitleDiffCondition(self.PanelType)
+    local isPassed = XTool.IsNumberValid(conditionId) and XConditionManager.CheckCondition(conditionId)
+    if not XTool.UObjIsNil(self.SubTitle1) then
+        self.SubTitle1.gameObject:SetActiveEx(not isPassed)
+    end
+    if not XTool.UObjIsNil(self.SubTitle2) then
+        self.SubTitle2.gameObject:SetActiveEx(isPassed)
+    end
+end
+
+---特效标题按条件互斥显隐：复用 TitleDiffCondition，不满足(含0/空)显示 FxTitle1，满足显示 FxTitle2
+function XUiActivityBriefBase:RefreshFxTitle()
+    if XTool.UObjIsNil(self.FxTitle1) and XTool.UObjIsNil(self.FxTitle2) then
+        return
+    end
+    local conditionId = XActivityBriefConfigs.GetTitleDiffCondition(self.PanelType)
+    local isPassed = XTool.IsNumberValid(conditionId) and XConditionManager.CheckCondition(conditionId)
+    if not XTool.UObjIsNil(self.FxTitle1) then
+        self.FxTitle1.gameObject:SetActiveEx(not isPassed)
+    end
+    if not XTool.UObjIsNil(self.FxTitle2) then
+        self.FxTitle2.gameObject:SetActiveEx(isPassed)
     end
 end
 
@@ -377,6 +411,8 @@ function XUiActivityBriefBase:_PlaySpineAnimation(fromAnim, toAnim)
             end
         end
     end
+    -- 背景 spine 已加载，接入 BGM 标签回调驱动差分动画
+    self:InitBgmSpineSync()
 end
 
 ---Spine特殊入场动画
@@ -397,6 +433,68 @@ end
 function XUiActivityBriefBase:PlaySpineLoopAnim()
     local loopName = XActivityBriefConfigs.GetLoopAnimName(self.PanelType)
     self:_PlaySpineAnimation(loopName)
+end
+
+--endregion
+
+
+--region BGM标签驱动Spine差分
+
+---获取面板上的 XAudioCueEventListener(prefab 已挂好并配置好 CueIds)并注册 Sequence 回调，只注册一次
+function XUiActivityBriefBase:InitBgmSpineSync()
+    if self.PanelType ~= XActivityBriefConfigs.PanelType.Main then
+        return
+    end
+    if self.BgmSpineListener then
+        return
+    end
+    local listener = self.GameObject:GetComponentInChildren(typeof(CS.XAudioCueEventListener), true)
+    if XTool.UObjIsNil(listener) then
+        return
+    end
+    self.BgmSpineListener = listener
+    self.BgmSpineCb = function(info, audioInfo)
+        self:OnBgmSequenceEvent(info, audioInfo)
+    end
+    listener:AddSequenceListener(self.BgmSpineCb)
+end
+
+---BGM 播放光标运行到 Marker 时触发：按标签切换背景 spine 差分动画
+function XUiActivityBriefBase:OnBgmSequenceEvent(info, _)
+    local tag = info and info.tag
+    -- tag 命中配置 SpineDiffTag 则播对齐的 SpineDiffAnimName 差分动画；
+    -- 未命中(含 tag 为空/未配置)回落到默认循环动画 LoopAnimName
+    local animName = XActivityBriefConfigs.GetSpineDiffAnimNameByTag(self.PanelType, tag)
+    if string.IsNilOrEmpty(animName) then
+        animName = XActivityBriefConfigs.GetLoopAnimName(self.PanelType)
+    end
+    if string.IsNilOrEmpty(animName) then
+        return
+    end
+    self:_PlayBgmDiffAnim(animName)
+end
+
+---对已加载的所有背景 spine 切换到差分动画并循环(_PlaySpineObjAnimation 内部会判断该 spine 是否存在此动画)
+function XUiActivityBriefBase:_PlayBgmDiffAnim(animName)
+    for _, spineList in pairs(self.LoadSpineObjListDir) do
+        for _, spineObj in pairs(spineList) do
+            self:_PlaySpineObjAnimation(spineObj, animName)
+        end
+    end
+    for _, spineList in pairs(self.UiSpineObjListDir) do
+        for _, spineObj in ipairs(spineList) do
+            self:_PlaySpineObjAnimation(spineObj, animName)
+        end
+    end
+end
+
+---解绑 Sequence 回调，避免面板销毁后回调仍持有 self
+function XUiActivityBriefBase:RemoveBgmSpineSync()
+    if self.BgmSpineListener and self.BgmSpineCb and not XTool.UObjIsNil(self.BgmSpineListener) then
+        self.BgmSpineListener:RemoveSequenceListener(self.BgmSpineCb)
+    end
+    self.BgmSpineListener = nil
+    self.BgmSpineCb = nil
 end
 
 --endregion

@@ -3,10 +3,11 @@
 local XConcertPreHeatingControl = XClass(XControl, "XConcertPreHeatingControl", false)
 
 local TUNE_PROGRESS_MAX = 100
--- 原始准确度达到该值后，换算后的同步率直接视为 100。
-local TUNE_COMPLETE_ACCURACY = 85
 local TUNE_TARGET_LIGHT_OFFSET_RATIO = 0.005
 local TUNE_TARGET_LIGHT_MIN_OFFSET = 0.001
+
+local CLIENT_CONFIG_TUNE_COMPLETE_ACCURACY = "TuneCompleteAccuracy"
+local CLIENT_CONFIG_TUNE_SNAP_TRANSITION_TIME = "TuneSnapTransitionTimeSecond"
 
 -- 客户端杂项配置预留：表暂为空，后续按 Id 读取 Values[]。
 function XConcertPreHeatingControl:GetClientConfig(configId, index)
@@ -163,9 +164,11 @@ local function CalculateTuneAccuracy(controlParamCfg, value)
     return XMath.Clamp(accuracy, 0, TUNE_PROGRESS_MAX)
 end
 
-local function ConvertTuneAccuracyToMatchProgress(accuracy)
+local function ConvertTuneAccuracyToMatchProgress(accuracy, completeAccuracy)
     accuracy = XMath.Clamp(accuracy or 0, 0, TUNE_PROGRESS_MAX)
-    if accuracy >= TUNE_COMPLETE_ACCURACY then
+    -- completeAccuracy 由调用方 GetTuneCompleteAccuracy() 传入；未传时取 0，使任何准确度都判定完成，暴露漏配。
+    completeAccuracy = completeAccuracy or 0
+    if accuracy >= completeAccuracy then
         return TUNE_PROGRESS_MAX
     end
 
@@ -243,6 +246,28 @@ function XConcertPreHeatingControl.GetTuneAisacValue(controlParamCfg, value)
     return aisacTargetValue * (maxParam - value) / fallRange
 end
 
+-- 调频界面使用：完成判定的准确度阈值，读客户端杂项配置，未配置时报错。
+function XConcertPreHeatingControl:GetTuneCompleteAccuracy()
+    local value = self:GetClientConfigNumber(CLIENT_CONFIG_TUNE_COMPLETE_ACCURACY)
+    if not value then
+        XLog.Error(string.format("ConcertClientConfig missing config, Id: %s", CLIENT_CONFIG_TUNE_COMPLETE_ACCURACY))
+        return 0
+    end
+
+    return value
+end
+
+-- 调频界面使用：完成后滑条吸附到目标值的过渡时长（秒），未配置时报错，非正数视为瞬间吸附。
+function XConcertPreHeatingControl:GetTuneSnapTransitionTime()
+    local value = self:GetClientConfigNumber(CLIENT_CONFIG_TUNE_SNAP_TRANSITION_TIME)
+    if not value then
+        XLog.Error(string.format("ConcertClientConfig missing config, Id: %s", CLIENT_CONFIG_TUNE_SNAP_TRANSITION_TIME))
+        return 0
+    end
+
+    return value
+end
+
 -- 调频界面使用：计算内部匹配度。初始参数可能已有较高匹配度，不直接作为关卡完成度。
 function XConcertPreHeatingControl:CalculateTuneMatchProgress(tuningStageId, values)
     local controlParamCfgs = self:GetTuningStageControlParamCfgs(tuningStageId)
@@ -259,7 +284,7 @@ function XConcertPreHeatingControl:CalculateTuneMatchProgress(tuningStageId, val
         accuracy = accuracy + singleAccuracy * tuneControlWeight
     end
 
-    return ConvertTuneAccuracyToMatchProgress(accuracy)
+    return ConvertTuneAccuracyToMatchProgress(accuracy, self:GetTuneCompleteAccuracy())
 end
 
 function XConcertPreHeatingControl:GetTuneBaseMatchProgress(tuningStageId)

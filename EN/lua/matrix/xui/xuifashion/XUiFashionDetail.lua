@@ -799,7 +799,7 @@ end
 
 --region 跳转试玩
 function XUiFashionDetail:OnPlayClick()
-    XLuaUiManager.Open("UiPaintingExperiencePassV4P2",self.TrialLevelInfo.Id)
+    XDataCenter.FubenExperimentManager:OpenPaintingExperiencePass(self.TrialLevelInfo.Id)
 end
     
 --endregion

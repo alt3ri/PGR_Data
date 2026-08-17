@@ -314,6 +314,8 @@ function XBountyChallengeControl:GetUiChapterDetail()
     local oldTaskList = data.TaskList
     data.TaskList = {}
     
+    local maxDifficulty = self._Model:GetBossMaxDifficultyLevel(self._SelectedBossId)
+
     for i, difficulty in pairs(difficulties) do
         if not XTool.IsTableEmpty(difficulty) then
             local taskList = self._Model:GetTaskCfgList(difficulty.TaskGroupId)
@@ -334,7 +336,8 @@ function XBountyChallengeControl:GetUiChapterDetail()
                     IsPlayAnimation = false,
                     Priority = cfg.Priority,
                     Config = cfg,
-                    Difficulty = cfg.Difficulty
+                    Difficulty = cfg.Difficulty,
+                    IsMaxDifficulty = cfg.Difficulty == maxDifficulty,
                 }
                 local taskData = XDataCenter.TaskManager.GetTaskDataById(taskId)
                 if taskData then
@@ -530,6 +533,10 @@ end
 
 function XBountyChallengeControl:GetDifficultyConfigByBossAndLevel(bossId, level)
     return self._Model:GetDifficultyConfigByBossAndLevel(bossId, level)
+end
+
+function XBountyChallengeControl:GetBossMaxDifficultyLevel(bossId)
+    return self._Model:GetBossMaxDifficultyLevel(bossId)
 end
 
 return XBountyChallengeControl

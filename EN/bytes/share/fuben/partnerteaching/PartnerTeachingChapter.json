@@ -642,7 +642,7 @@
     {
         "Id": 33,
         "Name": "Adaptation Fitting - Ignis",
-        "ActivityTimeId": 46203.0,
+        "ActivityTimeId": null,
         "ActivityCondition": "[8006]",
         "StagePrefix": "YS-",
         "OpenCondition": "[1002147]",
@@ -698,5 +698,25 @@
         "Order": 35,
         "NewTag": "New CUB",
         "PartnerId": 16400000
+    },
+    {
+        "Id": 37,
+        "Name": "Adaptation Fitting - Patrick",
+        "ActivityTimeId": 49103.0,
+        "ActivityCondition": "[8006]",
+        "StagePrefix": "PDL-",
+        "OpenCondition": "[1002151]",
+        "BannerIcon": "Assets/Product/Texture/Image/UiPartnerTeaching/Banner/UiPartnerTeachingBannerChapter37.png",
+        "Background": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterBg37.png",
+        "ChapterIcon": "Assets/Product/Texture/Image/UiPartnerTeaching/Banner/UiPartnerTeachingBigBanner31.png",
+        "FubenPrefab": "Assets/Product/Ui/ComponentPrefab/PartnerTeaching/TuTeachingChapter.prefab",
+        "FightStagePrefab": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagePartnerTeachingFight.prefab",
+        "StoryStagePrefab": "Assets/Product/Ui/ComponentPrefab/GridStage/GridStagePartnerTeachingStory.prefab",
+        "StoryStageDetailBg": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingChapterStarfishStage01.png",
+        "StoryStageDetailIcon": "Assets/Product/Texture/Image/UiPartnerTeaching/Chapter/UiPartnerTeachingImgBgMa02.png",
+        "StageIds": "[30101137]",
+        "Order": 37,
+        "NewTag": "New CUB",
+        "PartnerId": 16410000
     }
 ]

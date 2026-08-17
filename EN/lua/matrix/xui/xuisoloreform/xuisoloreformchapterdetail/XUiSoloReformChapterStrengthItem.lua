@@ -26,10 +26,6 @@ function XUiSoloReformChapterStrengthItem:OnStrengthReddotEvent(count)
     self.BtnGridReform:ShowReddot(count >= 0)
 end
 
-function XUiSoloReformChapterStrengthItem:SetSelect(fightEventId)
-    -- self.BtnGridReform:SetButtonState(CS.UiButtonState.Select)
-end
-
 function XUiSoloReformChapterStrengthItem:OnClickStrength()
     if self._IsUnlock then
         self._Control:MarkLocalStrengthReddot(self._FightEventId)

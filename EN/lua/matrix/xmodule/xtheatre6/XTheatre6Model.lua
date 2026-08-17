@@ -678,6 +678,8 @@ function XTheatre6Model:UpdateEndGame(mode, storyModeSaveDb, settleData)
     self._CurrentMode = mode
     self._ModeSaveDict[PlayMode.Story] = storyModeSaveDb
     self._StoryLineDatas = storyModeSaveDb.StoryLineDatas
+    self._PassStageRecords = settleData.PassStageRecords
+    self._PassDiffRecords = settleData.PassDiffRecords
     local modelData = self:GetCurPlayModeData()
     modelData.SettleData = settleData
     modelData.IsSettle = true

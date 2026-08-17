@@ -1,5 +1,7 @@
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 
+local DEFAULT_SKILL_LEVEL = 1
+
 ---@class XUiEquipOverrunV4P6PanelDetail : XUiNode
 ---@field _Control XEquipControl
 ---@field Parent XUiEquipOverrunV4P6
@@ -234,9 +236,18 @@ function XUiEquipOverrunV4P6PanelDetail:RefreshPanelSkill(overrunConfig)
     self.TxtSkillTitle.text = isUpSkill and CS.XTextManager.GetText("EquipOverrunSkillTitleUnlock") or CS.XTextManager.GetText("EquipOverrunSkillTitleStrength")
     -- 技能图标
     if isUpSkill then
+        local skillGroupId = overrunConfig.UpSkillGroupId
         local character = XMVCA.XCharacter:GetCharacter(overrunConfig.CharacterId)
-        local skillId = character:GetGroupCurSkillId(overrunConfig.UpSkillGroupId)
-        local skillLevel = character:GetSkillLevel(overrunConfig.UpSkillGroupId)
+        local skillId
+        local skillLevel
+        if character then
+            skillId = character:GetGroupCurSkillId(skillGroupId)
+            skillLevel = character:GetSkillLevel(skillGroupId)
+        else
+            -- 仓库入口允许在未拥有对应角色时查看武器，此时用默认技能的1级配置展示基础信息
+            skillId = XMVCA.XCharacter:GetGroupDefaultSkillId(skillGroupId)
+            skillLevel = DEFAULT_SKILL_LEVEL
+        end
         local skillDetailCfg = XMVCA.XCharacter:GetSkillGradeDesWithDetailConfig(skillId, skillLevel)
         self.ImgSkill:SetSprite(skillDetailCfg.Icon)
         self.TxtSkillName.text = skillDetailCfg.Name

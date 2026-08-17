@@ -9,6 +9,7 @@
 ---@field TxtTitle UnityEngine.UI.Text
 ---@field TxtContent UnityEngine.UI.Text
 ---@field BtnClose UnityEngine.UI.Button
+---@field BtnTanchuangCloseBig UnityEngine.UI.Button
 local XUiCdPlayerMusicDetailPopup = XLuaUiManager.Register(XLuaUi, "UiCdPlayerMusicDetailPopup")
 function XUiCdPlayerMusicDetailPopup:OnAwake()
     self:InitComponents()
@@ -16,6 +17,7 @@ end
 
 function XUiCdPlayerMusicDetailPopup:InitComponents()
     self.BtnClose:AddEventListener(function() self:OnBtnCloseClick() end)
+    self.BtnTanchuangCloseBig:AddEventListener(function() self:OnBtnCloseClick() end)
 end
 
 ---@param musicID number 要展示详情的歌曲ID

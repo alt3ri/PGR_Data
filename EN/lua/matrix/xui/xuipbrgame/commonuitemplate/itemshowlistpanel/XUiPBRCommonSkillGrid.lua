@@ -1,6 +1,14 @@
 --- 通用的技能格子展示，使用该类至少大体上结构是一致的
 ---@class XUiPBRCommonSkillGrid : XUiNode
 ---@field _Control XPBRGameControl
+--- 以下为 prefab 自动注入的 UI 节点
+---@field ShowRoot UnityEngine.RectTransform 有技能时显示的根节点（内含图标/星级）
+---@field EmptyRoot UnityEngine.RectTransform 无技能时显示的空占位根节点
+---@field GridBtn XUiComponent.XUiButton 格子点击按钮（打开技能详情）
+---@field RImgIcon UnityEngine.UI.RawImage 技能图标
+---@field PanelStar UnityEngine.RectTransform 星级列表容器
+---@field ImgStar UnityEngine.RectTransform 单颗星级图标模板（按品阶数量动态生成并按颜色染色）
+---@field DetailPos UnityEngine.RectTransform 详情弹窗的锚点位置
 local XUiPBRCommonSkillGrid = XClass(XUiNode, "XUiPBRCommonSkillGrid")
 
 function XUiPBRCommonSkillGrid:OnStart(...)
@@ -28,27 +36,32 @@ end
 
 
 function XUiPBRCommonSkillGrid:SetEmptyShow()
-    self.ImgStar.gameObject:SetActiveEx(false)
-    self.RImgIcon.gameObject:SetActiveEx(false)
+    -- 无技能：整体切到空占位根节点
+    if self.ShowRoot then
+        self.ShowRoot.gameObject:SetActiveEx(false)
+    end
 
-    if self.ImgEmpty then
-        self.ImgEmpty.gameObject:SetActiveEx(true)
+    if self.EmptyRoot then
+        self.EmptyRoot.gameObject:SetActiveEx(true)
     end
 end
 
 ---@param itemData PbrItem
 function XUiPBRCommonSkillGrid:UpdateItem(itemData)
     self.ItemId = nil
-    
+
     if not XTool.IsTableEmpty(itemData) then
         self.ItemId = itemData.ItemId
 
-        self.RImgIcon.gameObject:SetActiveEx(true)
-
-        if self.ImgEmpty then
-            self.ImgEmpty.gameObject:SetActiveEx(false)
+        -- 有技能：整体切到内容根节点
+        if self.ShowRoot then
+            self.ShowRoot.gameObject:SetActiveEx(true)
         end
-        
+
+        if self.EmptyRoot then
+            self.EmptyRoot.gameObject:SetActiveEx(false)
+        end
+
         -- 显示道具图标
         local itemCfg = self._Control:GetPBRItemCfgById(self.ItemId)
 
@@ -58,7 +71,7 @@ function XUiPBRCommonSkillGrid:UpdateItem(itemData)
             end
             -- 显示星级
             self:ShowStartByLevel(itemCfg.ItemTier, itemCfg.OrbColor)
-            
+
             self:AOPRefreshItemAdditionShow()
         else
             self.RImgIcon:SetRawImage("")
@@ -70,16 +83,7 @@ function XUiPBRCommonSkillGrid:UpdateItem(itemData)
 end
 
 function XUiPBRCommonSkillGrid:ShowStartByLevel(level, orbColor)
-    local colorTextList = self._Control:GetClientPBRTextArray('SkillOrbStarColor')
-    local colorStr = colorTextList[orbColor + 1] or ''
-    
-    XUiHelper.RefreshCustomizedList(self.PanelStar, self.ImgStar, level, function(index, go)
-        local img = go:GetComponent(typeof(CS.UnityEngine.UI.Image))
-
-        if img and not string.IsNilOrEmpty(colorStr) then
-            img.color = XUiHelper.Hexcolor2Color(string.gsub(colorStr, "#", ""))
-        end
-    end)
+    XUiHelper.RefreshCustomizedList(self.PanelStar, self.ImgStar, level, nil)
 end
 
 function XUiPBRCommonSkillGrid:OnGridBtnClick()

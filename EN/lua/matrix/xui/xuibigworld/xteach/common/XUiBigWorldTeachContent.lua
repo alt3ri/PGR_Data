@@ -79,7 +79,7 @@ function XUiBigWorldTeachContent:_RefreshDotList()
         dot:Open()
         dot:Refresh(i == self._CurrentIndex)
     end
-    for i = count + 1, table.nums(self._TeachDotList) do
+    for i = count + 1, #self._TeachDotList do
         self._TeachDotList[i]:Close()
     end
     self.GridDot.gameObject:SetActiveEx(false)

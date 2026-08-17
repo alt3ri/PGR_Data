@@ -68,7 +68,7 @@ function XUiPanelFightSet:OnStart()
     self:InitKeyboardPanel()
     self:RefreshKeyboardPanel()
 
-    self.CurPageType = self.SecondIndex and self.SecondIndex or self:GetDefaultIndex() -- 在XUiPanelFightSetPc的OnShow设置
+    self.CurPageType = XTool.IsNumberValid(self.SecondIndex) and self.SecondIndex or self:GetDefaultIndex()
     self.BtnTabGroup:SelectIndex(self.CurPageType, false)
     self.PatternGroup:SelectIndex(XInputManager.GetJoystickType())
 

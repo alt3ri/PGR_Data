@@ -56,14 +56,35 @@ function XUiPBRMain:InitComponents()
     end
 end
 
-function XUiPBRMain:OnStart(...)
+function XUiPBRMain:OnStart()
+    self._IsFirstEnable = true
     self.IsCheckUpdateScene = false
     self:_ShowSkinPopup()
+end
+
+function XUiPBRMain:OnResume()
+    self._IsResumeOpen = true
 end
 
 function XUiPBRMain:OnEnable()
     self._Control:AddTimeEventListener(self.OnActivityTimeTimerUpdate, self)
     self:RefreshAll()
+    if self.SceneAnim then
+        if self._IsFirstEnable then
+            self._IsFirstEnable = false
+            if self._IsResumeOpen then
+                self._IsResumeOpen = false
+                self.SceneAnim:PlayAnimEnable()
+                self:PlayAnimation("Enable")
+            else
+                self.SceneAnim:PlayAnimStart()
+                self:PlayAnimation("Start")
+            end
+        else
+            self.SceneAnim:PlayAnimEnable()
+            self:PlayAnimation("Enable")
+        end
+    end
 end
 
 function XUiPBRMain:OnDisable()
@@ -139,13 +160,9 @@ function XUiPBRMain:RefreshRoleModel()
     local cuteModelName = self._Control:GetCuteModelNameShowInMain()
 
     if not string.IsNilOrEmpty(cuteModelName) then
+        -- 主界面不显式播放 IdleAction，任由已加载的动画控制器状态机自由播放默认状态
         self.RoleModel:InitShowCharacter(cuteModelName)
-        self:_RefreshRoleAnimation()
     end
-end
-
-function XUiPBRMain:_RefreshRoleAnimation()
-    self.RoleModel:PlayRoleAnimation(self._Control.CharacterControl:GetCharacterIdleActionById(self._Control:GetShowCharacterIdInMain()))
 end
 
 --region EventListener
@@ -182,24 +199,6 @@ function XUiPBRMain:OnActivityTimeTimerUpdate(timeId)
     local leftTime = math.max(0, endTime - now)
 
     self.TxtTime.text = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.ACTIVITY)
-
-    self:CheckUpdateScene()
-end
-
--- 检查未退出战斗打开UI，等战斗退出了重新刷新UI场景
-function XUiPBRMain:CheckUpdateScene()
-    if not self.UiSceneInfo then
-        return
-    end
-    
-    if not self.IsCheckUpdateScene and XFightUtil.IsFighting() then
-        self.IsCheckUpdateScene = true
-    elseif self.IsCheckUpdateScene and not XFightUtil.IsFighting() then
-        self.UiSceneInfo.GameObject:SetActiveEx(false)
-        self.UiSceneInfo.GameObject:SetActiveEx(true)
-        self.IsCheckUpdateScene = false
-        self:_RefreshRoleAnimation()
-    end
 end
 --endregion
 

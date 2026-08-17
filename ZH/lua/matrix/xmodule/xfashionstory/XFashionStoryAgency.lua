@@ -105,6 +105,16 @@ function XFashionStoryAgency:GetActivityChapters(noNeedInTime)
     return chapter
 end
 
+--- 分线id → 采购按钮是否应显示：按 SingleLine 表配置的 PurchaseTimeId(涂装售卖时间)判断
+--- 未配置(nil/0)则视为不显示，避免无涂装售卖的前置分线误显示采购按钮
+function XFashionStoryAgency:CheckSingleLinePurchaseInTime(singleLineId)
+    local timeId = self._Model:GetSingleLinePurchaseTimeId(singleLineId)
+    if not XTool.IsNumberValid(timeId) then
+        return false
+    end
+    return XFunctionManager.CheckInTimeByTimeId(timeId, false)
+end
+
 ---
 --- 获取'id'活动中处于开放时间的试玩关
 function XFashionStoryAgency:GetActiveTrialStage(id)

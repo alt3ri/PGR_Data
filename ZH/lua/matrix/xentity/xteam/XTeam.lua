@@ -760,6 +760,7 @@ function XTeam:GetObservationActiveCareer()
     local obsCount = 0
     local obsPos = 0
     local physicalCount = 0
+    local observationCareerCount = 0
     
     local supportAmpCount = 0
     local supportAmpEntityId = 0 
@@ -782,19 +783,27 @@ function XTeam:GetObservationActiveCareer()
             if career == XEnumConst.CHARACTER.Career.Observation then
                 obsCount = obsCount + 1
                 obsPos = i
-            elseif isPhysical then
-                physicalCount = physicalCount + 1
             else
+                if isPhysical then
+                    physicalCount = physicalCount + 1
+                end
+
                 if AMPLIFIER_CAREERS[career] then
-                    supportAmpCount = supportAmpCount + 1
-                    supportAmpEntityId = fixedId
-                    -- 统计空元素增幅型职业数量
-                    if element == XEnumConst.CHARACTER.Element.Nihil and career == XEnumConst.CHARACTER.Career.Amplifier then
-                        nihilAmplifierCount = nihilAmplifierCount + 1
+                    observationCareerCount = observationCareerCount + 1
+                    if not isPhysical then
+                        supportAmpCount = supportAmpCount + 1
+                        supportAmpEntityId = fixedId
+                        -- 统计空元素增幅型职业数量
+                        if element == XEnumConst.CHARACTER.Element.Nihil and career == XEnumConst.CHARACTER.Career.Amplifier then
+                            nihilAmplifierCount = nihilAmplifierCount + 1
+                        end
                     end
                 elseif TANK_CAREERS[career] then
-                    tankBreakerCount = tankBreakerCount + 1
-                    tankBreakerEntityId = fixedId
+                    observationCareerCount = observationCareerCount + 1
+                    if not isPhysical then
+                        tankBreakerCount = tankBreakerCount + 1
+                        tankBreakerEntityId = fixedId
+                    end
                 end
             end
         end
@@ -807,8 +816,8 @@ function XTeam:GetObservationActiveCareer()
         return res, obsPos 
     end
 
-    -- 3. [关键屏蔽]：非物理候选职业总数 >= 2 时不转化
-    if (supportAmpCount + tankBreakerCount) >= 2 then
+    -- 3. 已有两名对应职业队友时不转换
+    if observationCareerCount >= 2 then
         return res, obsPos
     end
 

@@ -107,6 +107,30 @@ local KeyFunc = {
     ["string"] = ToString
 }
 
+-- 期望数值的类型在 tonumber 失败时报错（仅编辑器调试模式）
+local NumericTypes = { ["int"] = true, ["float"] = true, ["fix"] = true, ["byte"] = true, ["bool"] = true }
+local CheckNumericTypeError = function(valueType, rawValue, parsed)
+    if not IsEditorDebug then return end
+    if not NumericTypes[valueType] then return end
+    if rawValue == nil or #rawValue == 0 then return end
+    -- bool 用 tonumber(value) ~= 0 实现，非数值会被算成 false 而非 nil，所以单独判 tonumber 结果
+    if valueType == "bool" then
+        if tonumber(rawValue) == nil then
+            XLog.Error(string.format(
+                "[XTableTabLoader] 配置类型不匹配: path=%s, 行=%s, 列=%s, 字段=%s, 期望类型=%s, 实际值=%q",
+                tostring(CurrentPath), tostring(CurrentRow), tostring(CurrentCol),
+                tostring(CurrentKey), valueType, tostring(rawValue)))
+        end
+        return
+    end
+    if parsed == nil then
+        XLog.Error(string.format(
+            "[XTableTabLoader] 配置类型不匹配: path=%s, 行=%s, 列=%s, 字段=%s, 期望类型=%s, 实际值=%q",
+            tostring(CurrentPath), tostring(CurrentRow), tostring(CurrentCol),
+            tostring(CurrentKey), valueType, tostring(rawValue)))
+    end
+end
+
 local GetSingleValueNew = function(type, value)
     local func = ValueFunc[type]
     if not func then
@@ -117,7 +141,9 @@ local GetSingleValueNew = function(type, value)
         return nil
     end
 
-    return func(value)
+    local result = func(value)
+    CheckNumericTypeError(type, value, result)
+    return result
 end
 
 local GetSingleValue = function(type, value)
@@ -143,7 +169,9 @@ local GetContainerValue = function(type, value)
         return
     end
 
-    return func(value)
+    local result = func(value)
+    CheckNumericTypeError(type, value, result)
+    return result
 end
 
 local GetDictionaryKey = function(type, value)

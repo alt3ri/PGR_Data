@@ -308,6 +308,9 @@ XTool.GetExtension = function(path)
 end
 
 XTool.GetTableCount = function(list)
+    if XMain.IsEditorDebug then
+        XLog.Warning("Hash表可以更换为table.size接口，换取更高性能")
+    end
     if type(list) ~= "table" then
         return 0
     end
@@ -373,7 +376,7 @@ XTool.CopyToClipboard = function(text)
     XUiManager.TipText("Clipboard", XUiManager.UiTipType.Tip)
 end
 
--- 将一组延续组合成一个函数
+-- 将一组CPS风格的函数组合成一个函数，适用于纯函数
 -- (cont -> args -> result) array -> (args -> result)
 XTool.ChainContinuations = function(continuations)
     local function chain(index)
@@ -384,6 +387,23 @@ XTool.ChainContinuations = function(continuations)
     end
 
     return chain(1)
+end
+
+XTool.ExportMemberMethods = function(selfType, memberName, methodNames)
+    for _, methodName in ipairs(methodNames) do
+        selfType[methodName] = function(self, ...)
+            local member = self[memberName]
+            return member[methodName](member, ...)
+        end
+    end
+end
+
+XTool.FindKeyByValue = function(tbl, value)
+    for k, v in pairs(tbl) do
+        if v == value then return k end
+    end
+
+    return nil
 end
 
 -- 求列表中最大项
@@ -425,12 +445,31 @@ XTool.MakeArray = function(arraySize, valueFactory)
     return array
 end
 
+-- 创建一个指定数组的切片拷贝，切片拷贝同样也是一个数组
+XTool.ArraySliceCopy = function(array, beginIndex, endIndex)
+    local slice = {}
+    for i = beginIndex, endIndex do
+        table.insert(slice, array[i])
+    end
+
+    return slice
+end
+
 XTool.ToArray = function(t)
     local array = {}
     for _, v in pairs(t) do
         table.insert(array, v)
     end
     return array
+end
+
+XTool.ArrayToSet = function(array)
+    local set = {}
+    for _, v in ipairs(array) do
+        set[v] = true
+    end
+
+    return set
 end
 
 XTool.MergeArray = function(...)
@@ -443,6 +482,17 @@ XTool.MergeArray = function(...)
         end
     end
     return res
+end
+
+XTool.ArrayGroupBy = function(array, groupBy)
+    local r = {}
+    for _, v in ipairs(array) do
+        local k = groupBy(v)
+        if not r[k] then r[k] = {} end
+        table.insert(r[k], v)
+    end
+
+    return r
 end
 
 function XTool.ReverseList(list)
@@ -585,6 +635,9 @@ XTool.IsNumberValidEx = function(number)
     
     return number ~= 0
 end
+
+XTool.Nop = function() end
+XTool.Id = function(...) return ... end
 
 XTool.GetStackTraceName = function(level)
     level = level or 3
@@ -1407,7 +1460,19 @@ function XTool.SetDataForGenericGrid(
     gridContainerTransform, -- Grid容器节点，需要是一个Transform，所有的Grid都在这里生成
     parentUi,               -- 父节点Lua对象，用于classOfGrid.New时传入
     classOfGrid,            -- Grid类，需要包含SetData方法
-    commonArg)              -- 通用参数，会被传入到SetData方法的第二个参数里，所有的Grid共用一个
+    commonArg,              -- 通用参数，会被传入到SetData方法的第二个参数里，所有的Grid共用一个
+    customSetDataFunction)  -- 自定义SetData方法
+
+    customSetDataFunction = customSetDataFunction or classOfGrid.SetData
+
+    assert(gridArray)
+    assert(dataArray)
+    assert(firstGridGameObject)
+    assert(gridContainerTransform)
+    assert(firstGridGameObject.SetActiveEx)
+    assert(parentUi)
+    assert(classOfGrid)
+    assert(customSetDataFunction)
 
     if XTool.IsTableEmpty(gridArray) then
         firstGridGameObject:SetActiveEx(not XTool.IsTableEmpty(dataArray))
@@ -1432,7 +1497,7 @@ function XTool.SetDataForGenericGrid(
         end
 
         grid:Open()
-        grid:SetData(data, commonArg)
+        customSetDataFunction(grid, data, commonArg)
     end
 
     for i = #dataArray + 1, #gridArray do

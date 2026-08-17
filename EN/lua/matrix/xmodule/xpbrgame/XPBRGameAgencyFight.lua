@@ -237,3 +237,37 @@ function XPBRGameAgency:_ShowWinSettle(settleData)
         end
     end
 end
+
+--region CsCallLua特供
+
+--- 获取当前偏移值（ms）
+function XPBRGameAgency:GetBgmBeatOffsetMs()
+    return self._Model:GetBeatOffset()
+end
+
+function XPBRGameAgency:GetBgmIdByStageId(stageId)
+    -- 先读缓存
+    local bgmId = self._Model:GetSelectedBgmId(stageId)
+
+    if XTool.IsNumberValidEx(bgmId) then
+        return bgmId
+    end
+    
+    -- 再读配置
+    local stageCfg = self._Model:GetTablePBRStageCfgById(stageId)
+
+    if stageCfg then
+        return stageCfg.BgmIds and stageCfg.BgmIds[1] or 0
+    end
+    
+    return 0
+end
+
+function XPBRGameAgency:GetConfigPBRNumber(key)
+    return self._Model:GetConfigPBRNumber(key)
+end
+
+function XPBRGameAgency:GetClientPBRText(key)
+    return self._Model:GetClientPBRText(key)
+end
+--endregion

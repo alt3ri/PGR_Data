@@ -180,6 +180,18 @@ XPurchaseManagerCreator = function()
         XEventManager.DispatchEvent(XEventId.EVENT_PURCHASE_CLEAR_DATA)
     end
 
+    ---礼包数据是否被清空
+    function XPurchaseManager.IsPurchaseInfosEmpty()
+        local uiTypes = XPurchaseConfigs.GetYKUiTypes()
+        local yktype = uiTypes and uiTypes[1]
+        for uiType in pairs(PurchaseInfosData) do
+            if uiType ~= yktype then
+                return false
+            end
+        end
+        return true
+    end
+
     -- RPC
     -- // 失效时间
     -- public int TimeToInvalid;

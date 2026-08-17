@@ -170,7 +170,7 @@ function XUiPanelFavorabilityAudio:OnAudioClick(clickAudio, grid, index)
             XLuaAudioManager.MuteAisacByPlayType(XLuaAudioManager.SoundType.Music, true, 0.5)
         end
 
-        self.CurrentPlayAudio.FinishCb = function()
+        self.CurrentPlayAudio:AddFinishCallback(function()
             if self.CurAudio and clickAudio.config.Id ~= self.CurAudio.config.Id and self.CurAudio.config.TurnOffBgm then
                 -- 还处于Mute的config播放中，暂不做处理
             elseif isMuteBgm then
@@ -189,7 +189,7 @@ function XUiPanelFavorabilityAudio:OnAudioClick(clickAudio, grid, index)
                 end
                 self:UnScheduleAudio(clickAudio, clickGrid)
             end
-        end
+        end)
         
         self.UiRoot:PlayCvContent(clickAudio.config.CvId, self.Parent.CvType)
         self.NotFreeze=true

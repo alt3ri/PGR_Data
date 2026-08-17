@@ -1,52 +1,58 @@
-local XUiPanelEnvelopeGuessingInstrument =
-    require("XUi/XUiEnvelopeGuessing/XUiPanelEnvelopeGuessingInstrument")
+local XUiPanelEnvelopeGuessingInstrument = require("XUi/XUiEnvelopeGuessing/XUiPanelEnvelopeGuessingInstrument")
+local XUiPanelEnvelopeGuessingMusicianChoose = require("XUi/XUiEnvelopeGuessing/XUiPanelEnvelopeGuessingMusicianChoose")
 
-local XUiPanelEnvelopeGuessingMusicianChoose =
-    require("XUi/XUiEnvelopeGuessing/XUiPanelEnvelopeGuessingMusicianChoose")
+--region 埋点
+-- 离开主界面时的交互按钮类型
+local ReportExitType = {
+    Other = 0, -- 其他
+    Back = 1, -- 返回
+    MainUi = 2, -- 主干界面
+    Collection = 3, -- 图鉴
+    Task = 4, -- 任务
+    Invitation = 5, -- 邀请
+}
 
-local UiName = "UiEnvelopeGuessingMain"
+-- 停留时长不足该秒数不上报
+local REPORT_MIN_STAY_SECONDS = 3
+-- 固定上报的乐器数量
+local REPORT_INSTRUMENT_COUNT = 4
+--endregion
+
+-- 特殊角色模型对应的动画控制器
+local SPECIAL_CONTROLLER = {
+    ["QR4LuosaitaMd010011TX"] = "EnvelopeGuessingControllerLuosaita",
+    ["QR3CibeizheMd010011TX"] = "EnvelopeGuessingControllerCibeizhe",
+    ["QR3HelentineMd010011TX"] = "EnvelopeGuessingControllerHelentine",
+}
 
 ---@class XUiEnvelopeGuessingMain : XLuaUi
----@field _Control XEnvelopeGuessingControl
+---@field private _Control XEnvelopeGuessingControl
+---@field private _Instruments table<number, XUiPanelEnvelopeGuessingInstrument>
+local XUiEnvelopeGuessingMain = XLuaUiManager.Register(XLuaUi, "UiEnvelopeGuessingMain")
 
-local XUiEnvelopeGuessingMain = XLuaUiManager.Register(
-    XLuaUi, UiName)
-
-function XUiEnvelopeGuessingMain:OnStart()
-    self._Agency = XMVCA.XEnvelopeGuessing
+function XUiEnvelopeGuessingMain:OnStart(rewardGoodsList, taskRewardGoodsList)
     self:_RegisterButtons()
-
-    local activityConf = self._Agency:GetCurrentActivity()
-
-    if activityConf then
-        self._ActivityId = activityConf.Id
-    end
-
-    if self:_CloseUiIfActivityOver(activityConf) then
-        return
-    end
-
+    local activityConf = XMVCA.XEnvelopeGuessing:GetActivityConfig()
     self:_InitInstruments()
     self:_InitShowRewards(activityConf)
-
-    XUiHelper.XUiPanelAsset(
-        self,
-        self.PanelAsset1,
-        activityConf.TicketItemId,
-        activityConf.SelectChoiceItemId)
-
-    self:_InitAutoRefreshTime(activityConf)
-end
-
-function XUiEnvelopeGuessingMain:_InitAutoRefreshTime(activityConf)
+    -- 资产面板
+    XUiHelper.XUiPanelAsset(self, self.PanelAsset1, activityConf.TicketItemId, activityConf.SelectChoiceItemId)
+    -- 设置自动关闭
     self.EndTime = XFunctionManager.GetEndTimeByTimeId(activityConf.TimeId)
     self:SetAutoCloseInfo(self.EndTime, function(isClose)
-        if not isClose then
+        if isClose then
+            self._Control:HandleActivityEnd()
+        else
             self:RefreshTime()
         end
     end)
+
+    if not self._IsResume then
+        self:_CheckEnterRewards(rewardGoodsList, taskRewardGoodsList)
+    end
 end
 
+--region 初始化
 function XUiEnvelopeGuessingMain:_InitShowRewards(activityConf)
     local rewardList = XRewardManager.GetRewardList(activityConf.ShowRewardId)
     if XTool.IsTableEmpty(rewardList) then
@@ -55,19 +61,14 @@ function XUiEnvelopeGuessingMain:_InitShowRewards(activityConf)
     end
 
     self._GridShowRewards = {}
-
-    XUiHelper.RefreshCustomizedList(
-        self.Grid256New.parent,
-        self.Grid256New,
-        #rewardList,
-        function(index, go)
-            local grid = self._GridShowRewards[go]
-            if not grid then
-                grid = XUiHelper.XUiGridCommon(self, go)
-                self._GridShowRewards[go] = grid
-            end
-            grid:Refresh(rewardList[index])
-        end)
+    XUiHelper.RefreshCustomizedList(self.Grid256New.parent, self.Grid256New, #rewardList, function(index, go)
+        local grid = self._GridShowRewards[go]
+        if not grid then
+            grid = XUiHelper.XUiGridCommon(self, go)
+            self._GridShowRewards[go] = grid
+        end
+        grid:Refresh(rewardList[index])
+    end)
 end
 
 function XUiEnvelopeGuessingMain:_InitInstruments()
@@ -77,82 +78,53 @@ function XUiEnvelopeGuessingMain:_InitInstruments()
     self._BtnCloseInstrumentMusicianChoosePanel = instruments.BtnClose
     self._UiEnvelopeGuessingPanelChoose = instruments.UiEnvelopeGuessingPanelChoose
 
-    self._BtnCloseInstrumentMusicianChoosePanel.CallBack = handler(
-        self, self._CloseInstrumentMusicianChoosePanel)
+    self._BtnCloseInstrumentMusicianChoosePanel:AddEventListener(handler(self, self._CloseInstrumentMusicianChoosePanel))
 
     self._Instruments = {}
 
-    local openInstrumentMusicianChoosePanel = handler(
-        self, self._OnBtnInstrumentMusician)
+    local openInstrumentMusicianChoosePanel = handler(self, self._OnBtnInstrumentMusician)
 
     local threeDSceneUiObject = self.UiModel:GetComponent("UiObject")
     local threeDSceneUiObjects = {}
+    XTool.InitUiObjectByInstance(threeDSceneUiObject, threeDSceneUiObjects)
 
-    XTool.InitUiObjectByInstance(
-        threeDSceneUiObject,
-        threeDSceneUiObjects)
-
-    local loadAnimationController = handler(
-        self, self._LoadCharacterAnimationController)
+    local loadAnimationController = handler(self, self._LoadCharacterAnimationController)
 
     for _, instrumentConf in pairs(self._Control:GetAllInstruments()) do
         local instName = "Instrument" .. instrumentConf.Id
         local panelGo = instruments[instName]
         panelGo.gameObject:SetActiveEx(true)
-        self._Instruments[instrumentConf.Id] =
-            XUiPanelEnvelopeGuessingInstrument.New(
-                panelGo,
-                self,
-                instrumentConf,
-                openInstrumentMusicianChoosePanel,
-                threeDSceneUiObjects[instName],
-                threeDSceneUiObjects.UiNearCamera,
-                UiName,
-                loadAnimationController)
+        self._Instruments[instrumentConf.Id] = XUiPanelEnvelopeGuessingInstrument.New(panelGo, self, instrumentConf, openInstrumentMusicianChoosePanel,
+            threeDSceneUiObjects[instName], threeDSceneUiObjects.UiNearCamera, self.Name, loadAnimationController)
     end
+
+    -- 播放场景镜头动画
+    threeDSceneUiObjects.AnimStart.gameObject:PlayTimelineAnimation()
 end
 
-function XUiEnvelopeGuessingMain:_LoadCharacterAnimationController(isFemale)
-    if not self._AnimationControllerCache then
-        self._AnimationControllerCache = {}
+function XUiEnvelopeGuessingMain:_LoadCharacterAnimationController(isFemale, modelId)
+    -- 优先根据modelId获取特殊角色的动画控制器，没有再按性别使用默认
+    local pathKey = SPECIAL_CONTROLLER[modelId]
+    if not pathKey then
+        pathKey = isFemale and "EnvelopeGuessingCharacterAnimationControllerFemale" or "EnvelopeGuessingCharacterAnimationControllerMale"
     end
-
-    local cached = self._AnimationControllerCache[isFemale]
-
-    if not cached then
-        local pathKey
-        local lifeTimeBoundGameObject   -- Controller绑定生命周期的GameObject
-        if isFemale then
-            pathKey = "EnvelopeGuessingCharacterAnimationControllerFemale"
-            lifeTimeBoundGameObject = self.GameObject
-        else
-            pathKey = "EnvelopeGuessingCharacterAnimationControllerMale"
-            lifeTimeBoundGameObject = self.PanelAsset1.gameObject   -- 没有必要专门建个GameObject来存生命周期，直接随便找个已有的
-        end
-
-        cached = CS.LoadHelper.LoadUiController(
-            CS.XGame.ClientConfig:GetString(pathKey),
-            lifeTimeBoundGameObject)
-
-        self._AnimationControllerCache[isFemale] = cached
-    end
-
-    return cached
+    return pathKey
 end
 
 function XUiEnvelopeGuessingMain:_CloseInstrumentMusicianChoosePanel()
-    assert(self._MusicianChoosePanelContainer)
+    if XTool.UObjIsNil(self._MusicianChoosePanelContainer) then
+        return
+    end
     self._MusicianChoosePanel:Close()
     self._MusicianChoosePanelContainer.gameObject:SetActiveEx(false)
     self._BtnCloseInstrumentMusicianChoosePanel.gameObject:SetActiveEx(false)
     self._MusicianChoosePanelContainer = nil
 end
 
-function XUiEnvelopeGuessingMain:_OpenInstrumentMusicianChoosePanel(
-    instrumentConfig,
-    choosePanelContainer)
-
-    assert(not self._MusicianChoosePanelContainer)
+function XUiEnvelopeGuessingMain:_OpenInstrumentMusicianChoosePanel(instrumentConfig, choosePanelContainer)
+    if XTool.UObjIsNil(choosePanelContainer) then
+        return
+    end
 
     self._MusicianChoosePanelContainer = choosePanelContainer
     choosePanelContainer.gameObject:SetActiveEx(true)
@@ -161,116 +133,75 @@ function XUiEnvelopeGuessingMain:_OpenInstrumentMusicianChoosePanel(
     self._UiEnvelopeGuessingPanelChoose.localPosition = Vector3.zero
 
     if not self._MusicianChoosePanel then
-        self._MusicianChoosePanel = XUiPanelEnvelopeGuessingMusicianChoose.New(
-            self._UiEnvelopeGuessingPanelChoose,
-            self,
-            function(instId, ...) self._Instruments[instId]:Refresh(...) end,
-            handler(self, self._CloseInstrumentMusicianChoosePanel))
+        ---@type XUiPanelEnvelopeGuessingMusicianChoose
+        self._MusicianChoosePanel = XUiPanelEnvelopeGuessingMusicianChoose.New(self._UiEnvelopeGuessingPanelChoose, self, function(instId, ...)
+            self._Instruments[instId]:Refresh(...)
+        end, handler(self, self._CloseInstrumentMusicianChoosePanel))
     end
 
     self._MusicianChoosePanel:Open()
     self._MusicianChoosePanel:Reset(instrumentConfig)
 end
 
-function XUiEnvelopeGuessingMain:_OnBtnInstrumentMusician(
-    instrumentConfig,
-    choosePanelContainer)
-
+function XUiEnvelopeGuessingMain:_OnBtnInstrumentMusician(instrumentConfig, choosePanelContainer)
     if choosePanelContainer == self._MusicianChoosePanelContainer then
         self:_CloseInstrumentMusicianChoosePanel()
     elseif self._MusicianChoosePanelContainer then
         self:_CloseInstrumentMusicianChoosePanel()
-        self:_OpenInstrumentMusicianChoosePanel(
-            instrumentConfig,
-            choosePanelContainer)
+        self:_OpenInstrumentMusicianChoosePanel(instrumentConfig, choosePanelContainer)
     else
-        self:_OpenInstrumentMusicianChoosePanel(
-            instrumentConfig,
-            choosePanelContainer)
+        self:_OpenInstrumentMusicianChoosePanel(instrumentConfig, choosePanelContainer)
     end
 end
+--endregion
 
 function XUiEnvelopeGuessingMain:OnEnable()
-    self:_Refresh(function()
-        assert(not self._ListenersSetup)
-        self._ListenersSetup = true
-
-        XMVCA.XEnvelopeGuessing:AddEventListener(
-            XMVCA.XEnvelopeGuessing.EventIds.EVENT_ON_NOTIFY_ENVELOPE,
-            self._Refresh, self)
-
-        XEventManager.AddEventListener(
-            XEventId.EVENT_DAILY_RESET,
-            self._Refresh, self)
-    end)
+    self:_Refresh()
+    self._ReportStayStartTime = CS.UnityEngine.Time.realtimeSinceStartup
 end
 
-function XUiEnvelopeGuessingMain:OnDisable()
-    if self._ListenersSetup then
-        XMVCA.XEnvelopeGuessing:RemoveEventListener(
-            XMVCA.XEnvelopeGuessing.EventIds.EVENT_ON_NOTIFY_ENVELOPE,
-            self._Refresh, self)
+function XUiEnvelopeGuessingMain:OnDestroy()
+    self:_ReportStay(ReportExitType.Other)
+end
 
-        XEventManager.RemoveEventListener(
-            XEventId.EVENT_DAILY_RESET,
-            self._Refresh, self)
+function XUiEnvelopeGuessingMain:OnGetLuaEvents()
+    return {
+        XEventId.EVENT_DAILY_RESET,
+        XEventId.EVENT_ENVELOPE_UPDATE_DATA,
+    }
+end
 
-        self._ListenersSetup = false
+function XUiEnvelopeGuessingMain:OnNotify(event, ...)
+    if event == XEventId.EVENT_DAILY_RESET or event == XEventId.EVENT_ENVELOPE_UPDATE_DATA then
+        self:_Refresh()
     end
 end
 
-function XUiEnvelopeGuessingMain:_CloseUiIfActivityOver(activityConf)
-    if not activityConf or activityConf.Id ~= self._ActivityId then
-        self:Close()
-        XUiManager.TipText("ActivityAlreadyOver")
-        return true
-    end
-
-    return false
+function XUiEnvelopeGuessingMain:OnResume()
+    self._IsResume = true
 end
 
-function XUiEnvelopeGuessingMain:_Refresh(continuation)
-    local activityConf = self._Agency:GetCurrentActivity()
-
-    if not self:_CloseUiIfActivityOver(activityConf) then
-        self.BtnTask:ShowReddot(
-            XMVCA.XEnvelopeGuessing:HasAnyAchievedTask())
-
-        self:RefreshTime()
-
-        XLuaUiManager.SetMask(true)
-
-        self:_RequestEnterRewards(
-            function()
-                if continuation then continuation() end
-                XLuaUiManager.SetMask(false)
-
-                local allCharConf = self._Control:GetAllCharacterConfigs()
-                local unlockedCharacters = self._Control:GetOpenedCharacterCount()
-                self.BtnCollection:SetNameByGroup(0, string.format("%s/%s", unlockedCharacters, #allCharConf))
-
-                if self._Control:IsAllCharactersOpened() then
-                    self.BtnInvitation:SetButtonState(CS.UiButtonState.Disable)
-                else
-                    self.BtnInvitation:SetButtonState(CS.UiButtonState.Normal)
-                end
-
-                for _, inst in pairs(self._Instruments) do
-                    inst:Refresh()
-                end
-
-                self.BtnTask:ShowReddot(
-                    XMVCA.XEnvelopeGuessing:HasAnyAchievedTask())
-            end,
-            function()
-                local prev, cur =
-                    self._Control:UpdatePrevOpenedCharacterCount()
-
-                for _, inst in pairs(self._Instruments) do
-                    inst:SetUnlockState(prev, cur)
-                end
-            end)
+function XUiEnvelopeGuessingMain:_Refresh()
+    self:RefreshTime()
+    -- 刷新已解锁角色数量
+    local allCharConf = self._Control:GetAllCharacterConfigs()
+    local unlockedCharacters = self._Control:GetOpenedCharacterCount()
+    self.BtnCollection:SetNameByGroup(0, string.format("%s/%s", unlockedCharacters, #allCharConf))
+    -- 刷新邀请按钮状态
+    if self._Control:IsAllCharactersOpened() then
+        self.BtnInvitation:SetButtonState(CS.UiButtonState.Disable)
+    else
+        self.BtnInvitation:SetButtonState(CS.UiButtonState.Normal)
     end
+    -- 刷新乐器状态
+    local prev, cur = self._Control:UpdatePrevOpenedCharacterCount()
+    for _, inst in pairs(self._Instruments) do
+        -- 必须先刷新解锁状态：Refresh 内部依赖 _Unlocked 选择乐器模型
+        inst:SetUnlockState(prev, cur)
+        inst:Refresh()
+    end
+    -- 刷新任务红点
+    self.BtnTask:ShowReddot(XMVCA.XEnvelopeGuessing:HasAnyAchievedTask())
 end
 
 function XUiEnvelopeGuessingMain:RefreshTime()
@@ -285,14 +216,26 @@ function XUiEnvelopeGuessingMain:RefreshTime()
 end
 
 function XUiEnvelopeGuessingMain:_RegisterButtons()
-    self:BindExitBtns(self.BtnBack, self.BtnMainUi)
-    self.BtnTask.CallBack = handler(self, self._OnBtnTaskClicked)
-    self.BtnCollection.CallBack = handler(self, self._OnBtnCollectionClicked)
-    self.BtnInvitation.CallBack = handler(self, self._OnBtnInvitationClicked)
+    self.BtnBack:AddEventListener(handler(self, self._OnBtnBackClicked))
+    self.BtnMainUi:AddEventListener(handler(self, self._OnBtnMainUiClicked))
+    self.BtnTask:AddEventListener(handler(self, self._OnBtnTaskClicked))
+    self.BtnCollection:AddEventListener(handler(self, self._OnBtnCollectionClicked))
+    self.BtnInvitation:AddEventListener(handler(self, self._OnBtnInvitationClicked))
     self:BindHelpBtn(self.BtnHelp, "EnvelopeGuessingHelp")
 end
 
+function XUiEnvelopeGuessingMain:_OnBtnBackClicked()
+    self:_ReportStay(ReportExitType.Back)
+    self:Close()
+end
+
+function XUiEnvelopeGuessingMain:_OnBtnMainUiClicked()
+    self:_ReportStay(ReportExitType.MainUi)
+    XLuaUiManager.RunMain()
+end
+
 function XUiEnvelopeGuessingMain:_OnBtnCollectionClicked()
+    self:_ReportStay(ReportExitType.Collection)
     XLuaUiManager.Open("UiEnvelopeGuessingCollection")
 end
 
@@ -300,39 +243,71 @@ function XUiEnvelopeGuessingMain:_OnBtnInvitationClicked()
     if self._Control:IsAllCharactersOpened() then
         XUiManager.TipText("EnvelopeGuessingMainUiAllCharactersAlreadyOpened")
     else
+        self:_ReportStay(ReportExitType.Invitation)
         XLuaUiManager.Open("UiEnvelopeGuessingInvitation")
     end
 end
 
 function XUiEnvelopeGuessingMain:_OnBtnTaskClicked()
+    self:_ReportStay(ReportExitType.Task)
     XLuaUiManager.Open("UiEnvelopeGuessingTask")
 end
 
-function XUiEnvelopeGuessingMain:_RequestEnterRewards(
-    cbAlways,
-    cbAfterClosePopups)
-
-    self._Control:EnvelopeEnterRequest(function(data)
-        if cbAlways then cbAlways() end
-
-        if data.Code ~= XCode.Success then
-            XUiManager.TipCode(data.Code)
-            self:Close()
-            return
-        end
-
-        if not XTool.IsTableEmpty(data.RewardGoodsList)
-            or not XTool.IsTableEmpty(data.TaskRewardGoodsList) then
-
-            XLuaUiManager.Open(
-                "UiEnvelopeGuessingReward",
-                data,
-                self._Agency:GetCurrentActivity(),
-                cbAfterClosePopups)
-        else
-            if cbAfterClosePopups then cbAfterClosePopups() end
-        end
-    end)
+function XUiEnvelopeGuessingMain:_CheckEnterRewards(rewardGoodsList, taskRewardGoodsList)
+    if not XTool.IsTableEmpty(rewardGoodsList) or not XTool.IsTableEmpty(taskRewardGoodsList) then
+        XLuaUiManager.Open("UiEnvelopeGuessingReward", rewardGoodsList, taskRewardGoodsList)
+    end
 end
+
+--region 埋点
+-- 上报本次停留的乐器状态、停留时长与离开方式
+function XUiEnvelopeGuessingMain:_ReportStay(exitType)
+    if not self._ReportStayStartTime then
+        return
+    end
+
+    local duration = math.floor(CS.UnityEngine.Time.realtimeSinceStartup - self._ReportStayStartTime)
+    self._ReportStayStartTime = nil
+
+    -- 仅上报停留时长达到阈值的记录
+    if duration < REPORT_MIN_STAY_SECONDS then
+        return
+    end
+
+    local dict = {}
+    dict["role_id"] = XPlayer.Id
+    dict["i_stay_duration"] = duration
+    dict["i_exit_type"] = exitType
+
+    -- 按配表Id升序，保证「乐器N」与配表顺序稳定对应
+    ---@type XTableEnvelopeInstrument[]
+    local instrumentConfigs = {}
+    for _, conf in pairs(self._Control:GetAllInstruments()) do
+        table.insert(instrumentConfigs, conf)
+    end
+    table.sort(instrumentConfigs, function(a, b)
+        return a.Id < b.Id
+    end)
+
+    local openedCount = self._Control:GetOpenedCharacterCount()
+    for i = 1, REPORT_INSTRUMENT_COUNT do
+        local conf = instrumentConfigs[i]
+        local unlock = 0
+        local characterId = 0
+        if conf then
+            unlock = openedCount >= conf.OpenTarget and 1 or 0
+            characterId = self._Control:GetInstrumentBinding(conf.Id) or 0
+        end
+        dict["i_instrument" .. i .. "_unlock"] = unlock
+        dict["i_instrument" .. i .. "_character"] = characterId
+    end
+
+    if XMain.IsWindowsEditor then
+        CS.XRecord.RecordTest(dict, "1000048", "EnvelopeGuessingMain")
+    else
+        CS.XRecord.Record(dict, "1000048", "EnvelopeGuessingMain")
+    end
+end
+--endregion
 
 return XUiEnvelopeGuessingMain

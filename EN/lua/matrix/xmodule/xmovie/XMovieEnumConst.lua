@@ -34,7 +34,8 @@ local XMovieEnumConst = {
         [301] = "Ignore", -- 此节点的对话自己实现了自动播放逻辑，忽略辅助点击
     },
     -- Action对应的TypeId
-    ACTION_TYPE = {
+    ACTION_TYPE = {
+        SPINE_CHANGE_ALPHA = 221,       -- Spine alpha change
         BG_SWITCH = 101,                -- 背景图切换
         THEME = 102,                    -- 主题节点
         SPINE_LOAD = 105,               -- spine加载
@@ -67,9 +68,10 @@ local XMovieEnumConst = {
         SELECTION_DELAY_SKIP = 303,     -- 选择分支延迟跳转
         AUTO_SKIP = 308,                -- 自动跳转节点
         CHANNEL_OFFSET_ENABLE = 311,    -- 字幕色相偏移启用
-        CHANNEL_OFFSET_DISABLE = 312,   -- 字幕色相偏移停用
-
-        AUDIO_PLAY = 401,               -- 音频播放
+        CHANNEL_OFFSET_DISABLE = 312,   -- 字幕色相偏移停用
+        SINGLE_CLICK_BUTTON = 313,      -- single click button jump
+
+        AUDIO_PLAY = 401,               -- 音频播放
         AUDIO_INTERRUPT = 402,          -- 音频中断
         AUTO_CV_PLAY = 403,             -- 配音播放（按玩家配音语种自动切换）
         
@@ -129,7 +131,8 @@ local XMovieEnumConst = {
 }
 
 function XMovieEnumConst:GetActionClass(actionType)
-    self.ACTION_CLASS = self.ACTION_CLASS or {
+    self.ACTION_CLASS = self.ACTION_CLASS or {
+        [221] = require("XMovieActions/XMovieActionSpineActorAlphaChange"), --spine actor alpha change
         [101] = require("XMovieActions/XMovieActionBgSwitch"), --背景切换
         [102] = require("XMovieActions/XMovieActionTheme"), --章节主题
         [103] = require("XMovieActions/XMovieActionBgScale"), --背景缩放位置调整
@@ -175,9 +178,10 @@ function XMovieEnumConst:GetActionClass(actionType)
         [309] = require("XMovieActions/XMovieActionAddReview"), --增加回顾记录
         [310] = require("XMovieActions/XMovieActionFullScreenDialogNew"), -- 新全屏字幕
         [311] = require("XMovieActions/XMovieActionChannelOffsetEnable"), --字幕色相偏移启用
-        [312] = require("XMovieActions/XMovieActionChannelOffsetDisable"), --字幕色相偏移停用
-
-        [401] = require("XMovieActions/XMovieActionSoundPlay"), --BGM/CV/音效 播放
+        [312] = require("XMovieActions/XMovieActionChannelOffsetDisable"), --字幕色相偏移停用
+        [313] = require("XMovieActions/XMovieActionSingleClickButton"), --single click button jump
+
+        [401] = require("XMovieActions/XMovieActionSoundPlay"), --BGM/CV/音效 播放
         [402] = require("XMovieActions/XMovieActionAudioInterrupt"), --BGM/CV/音效 打断
         [403] = require("XMovieActions/XMovieActionAutoCvPlay"), --配音播放（按玩家配音语种自动切换）
 

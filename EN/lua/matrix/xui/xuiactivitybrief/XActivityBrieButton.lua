@@ -21,6 +21,7 @@ end
 function XActivityBrieButton:OnDisable()
     self:_ReleaseRedPoint()
     self:_ReleaseTagRedPoint()
+    self:_CancelUnlockAnimTimer()
 end
 
 function XActivityBrieButton:Refresh(args)
@@ -60,13 +61,23 @@ function XActivityBrieButton:PlayUnlockAnim(cb)
         self.PanelEffectLock.gameObject:SetActiveEx(false)
         self.PanelEffectLock.gameObject:SetActiveEx(true)
         self.BtnCom:SetDisable(false)
-        XScheduleManager.ScheduleOnce(function()
+        self._UnlockAnimTimer = XScheduleManager.ScheduleOnce(function()
+            self._UnlockAnimTimer = nil
             -- 关闭特效防止跳转其他界面返回时出现特效
-            self.PanelEffectLock.gameObject:SetActiveEx(false)
+            if not XTool.UObjIsNil(self.PanelEffectLock) then
+                self.PanelEffectLock.gameObject:SetActiveEx(false)
+            end
             if cb then cb() end
         end, 800)
     else
         if cb then cb() end
+    end
+end
+
+function XActivityBrieButton:_CancelUnlockAnimTimer()
+    if self._UnlockAnimTimer then
+        XScheduleManager.UnSchedule(self._UnlockAnimTimer)
+        self._UnlockAnimTimer = nil
     end
 end
 --endregion

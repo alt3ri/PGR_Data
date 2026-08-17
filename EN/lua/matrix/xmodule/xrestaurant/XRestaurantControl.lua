@@ -68,12 +68,14 @@ function XRestaurantControl:OnRelease()
     end
 
     self:ClearRequest()
-    self:UnloadAll()
 
     XMVCA.XRestaurant:SetInActivity(false)
 end
 
 function XRestaurantControl:InitRequire()
+    require("XRestaurant/XRestaurantCharAgent")
+    require("XRestaurant/XRestaurantPerformAgent")
+    
     --带Cd的请求
     XNetworkCallCd = require("XCommon/XNetworkCallCd")
     --工作台

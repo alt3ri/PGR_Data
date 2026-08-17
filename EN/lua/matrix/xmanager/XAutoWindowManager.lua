@@ -80,6 +80,7 @@ XAutoWindowManagerCreator = function()
     
     -- 检测添加弹窗数据
     function XAutoWindowManager.CheckAddWindow(autoType)
+        ---@type table<number, XTableAutoWindowController>
         local autoWindowControllerConfig = XAutoWindowConfigs.GetAutoWindowControllerConfig()
         for _, v in pairs(autoWindowControllerConfig) do
             -- 过滤不符合的类型
@@ -182,6 +183,10 @@ XAutoWindowManagerCreator = function()
                 local subConfigId = XSignInConfigs.GetWelfareConfig(paramId).SubConfigId
                 local weekCardData = XDataCenter.PurchaseManager.GetWeekCardDataBySignInId(subConfigId)
                 if not weekCardData or weekCardData.IsGotToday then -- 没数据代表领过了或者没买
+                    goto continue
+                end
+                if weekCardData and weekCardData.CurDay > weekCardData.TotalDays then --正常流程，CurDay > TotalDays 服务器不应该下发了，这里加个容错。
+                    XLog.Error(string.format("WeekCard data is invalid! CfgId = %s Id = %s CurDay = %s, TotalDay = %s", v.Id, weekCardData.Id, weekCardData.CurDay, weekCardData.TotalDays))
                     goto continue
                 end
             end

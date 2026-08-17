@@ -5,7 +5,8 @@
         "Desc": "3.5 Choice",
         "LottoIdList": "[17, 18, 19, 20]",
         "RuleTitleList": "['Event Description', 'Confirm Research', 'Rewards Description', 'Research Cost', 'Token Description', 'Probability', 'Bonus Rewards']",
-        "RuleTextList": "['The event consists of [Tainted Moonrise], [Grandiose Glamor], [Neon Dynamite], and [Dreamcatcher]. You can choose one from these three Coatings to research.', 'You may choose one of the Coatings to research. Once selected, it cannot be changed again.', 'All rewards are limited, and cannot be obtained again after drawing;\\\\nyou will be guaranteed to obtain the selected Construct Coating once you complete [10x] research.', 'Each research needs to cost Research Items and the research cost increases\\\\nCost per research as follows: 50/100/250/400/600/800/1200/1700/2200/2700', 'When there are not enough Research Items for research, you can use Black Cards or Rainbow Cards to exchange for them.\\\\nBlack Card: Equivalent, Rainbow Card: Discount\\\\nAfter the research event, the unused [Research Items] will be converted into Black Cards at a ratio of 1:1.', 'The probability of obtaining various rewards for each research is different, and there is a probability of obtaining the selected Coating from the starting of [5th] research;\\\\nYou can go to [Drop Details] to check the probability', 'When the [8th] research is reached, you will obtain the extra reward of Coating Portrait].']"
+        "RuleTextList": "['The event consists of [Tainted Moonrise], [Grandiose Glamor], [Neon Dynamite], and [Dreamcatcher]. You can choose one from these three Coatings to research.', 'You may choose one of the Coatings to research. Once selected, it cannot be changed again.', 'All rewards are limited, and cannot be obtained again after drawing;\\\\nyou will be guaranteed to obtain the selected Construct Coating once you complete [10x] research.', 'Each research needs to cost Research Items and the research cost increases\\\\nCost per research as follows: 50/100/250/400/600/800/1200/1700/2200/2700', 'When there are not enough Research Items for research, you can use Black Cards or Rainbow Cards to exchange for them.\\\\nBlack Card: Equivalent, Rainbow Card: Discount\\\\nAfter the research event, the unused [Research Items] will be converted into Black Cards at a ratio of 1:1.', 'The probability of obtaining various rewards for each research is different, and there is a probability of obtaining the selected Coating from the starting of [5th] research;\\\\nYou can go to [Drop Details] to check the probability', 'When the [8th] research is reached, you will obtain the extra reward of Coating Portrait].']",
+        "MaxSelectCount": 1
     },
     {
         "Id": 2,
@@ -13,7 +14,8 @@
         "Desc": "Permanent Wheelchair Manual",
         "LottoIdList": "[15]",
         "RuleTitleList": null,
-        "RuleTextList": null
+        "RuleTextList": null,
+        "MaxSelectCount": 1
     },
     {
         "Id": 3,
@@ -21,7 +23,8 @@
         "Desc": "Departure Card Pool",
         "LottoIdList": "[21]",
         "RuleTitleList": null,
-        "RuleTextList": null
+        "RuleTextList": null,
+        "MaxSelectCount": 1
     },
     {
         "Id": 4,
@@ -29,6 +32,16 @@
         "Desc": "4.0 The Merciful One Pool",
         "LottoIdList": "[22]",
         "RuleTitleList": null,
-        "RuleTextList": null
+        "RuleTextList": null,
+        "MaxSelectCount": 1
+    },
+    {
+        "Id": 5,
+        "TimeId": 49501.0,
+        "Desc": "3.7 Choice",
+        "LottoIdList": "[2001, 2002, 2003, 2004]",
+        "RuleTitleList": "['Event Details', 'Research Story', 'Rewards Description', 'Research Cost', 'Token Description', 'Probability', 'Extra Reward']",
+        "RuleTextList": "['The event consists of [Tainted Moonrise], [Grandiose Glamor], [Neon Dynamite], and [Nightfall Finale]. You can choose one from these four Coatings to research. Progress is tracked separately for each.', 'Story rewards for each coating in the Coating Research event can only be claimed once. This limit still applies even if the event returns in the future.', 'All rewards are limited, and cannot be obtained again after drawing;\\\\nyou will be guaranteed to obtain the selected Construct Coating once you complete [10x] research.', 'Each research needs to cost Research Items and the research cost increases\\\\nCost per research as follows: 50/100/250/400/600/800/1200/1700/2200/2700', 'When there are not enough Research Items for research, you can use Black Cards or Rainbow Cards to exchange for them.\\\\nBlack Card: Equivalent, Rainbow Card: Discount\\\\nAfter the research event, the unused [Research Items] will be converted into Black Cards at a ratio of 1:1.', 'The probability of obtaining various rewards for each research is different, and there is a probability of obtaining the selected Coating from the starting of [5th] research;\\\\nYou can go to [Drop Details] to check the probability', 'When the [8th] research is reached, you will obtain the extra reward of Coating Portrait].']",
+        "MaxSelectCount": 4
     }
 ]

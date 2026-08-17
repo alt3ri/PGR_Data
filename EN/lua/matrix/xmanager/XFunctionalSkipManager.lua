@@ -2570,7 +2570,8 @@ XFunctionalSkipManagerCreator = function()
             XUiManager.TipText("FunctionNotOpen")
             return 
         end
-        XLuaUiManager.Open("UiPaintingExperiencePassV4P2", param1)
+        local isShowSwitch = list.CustomParams[2] == 1
+        XDataCenter.FubenExperimentManager:OpenPaintingExperiencePass(param1, isShowSwitch)
     end
     
 
@@ -2604,6 +2605,11 @@ XFunctionalSkipManagerCreator = function()
             XLuaUiManager.Remove("UiInvertCardGame")
         end
         XLuaUiManager.Open("UiInvertCardGame")
+    end
+
+    -- 跳转到夕韵暇光
+    function XFunctionalSkipManager.SkipToEnvelopeGuessing()
+        return XMVCA.XEnvelopeGuessing:OpenMainUi()
     end
 
     return XFunctionalSkipManager

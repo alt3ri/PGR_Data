@@ -355,12 +355,8 @@ function XLuaAudioManager.PrintVolumeInfo()
     XAudioManager.PrintVolumeInfo()
 end
 
-function XLuaAudioManager.PlayMusicInOut2(cueId, stopDuration, startTime, endTime, lastFor, attack, release, finishCb)
-    return XAudioManager.PlayMusicInOut2(cueId, stopDuration, startTime, endTime, lastFor, attack, release, finishCb)
-end
-
-function XLuaAudioManager.PlayMusicCD(cueId, attack, release, finCb)
-    XAudioManager.PlayMusicCD(cueId, attack, release, finCb)
+function XLuaAudioManager.PlayMusicInOut2(cueId, stopDuration, startTime, endTime, lastFor, attack, release, finishCb, isIgnoreSameMusic)
+    return XAudioManager.PlayMusicInOut2(cueId, stopDuration, startTime, endTime, lastFor, attack, release, finishCb, isIgnoreSameMusic == true)
 end
 
 function XLuaAudioManager.PauseMusic()
@@ -377,6 +373,15 @@ end
 
 function XLuaAudioManager.GetCurrentMusicAudioInfo()
     return XAudioManager.CurrentMusicAudioInfo1
+end
+
+function XLuaAudioManager.StartAnalyzer()
+    XAudioManager.StartAnalyzer()
+end
+
+---获取 cue 真实播放时长(ms)
+function XLuaAudioManager.GetCueWavRealDuration(cueId)
+    return XAudioManager.GetCueWavRealDuration(cueId)
 end
 
 function XLuaAudioManager.StopAudioByCueId(cueId)

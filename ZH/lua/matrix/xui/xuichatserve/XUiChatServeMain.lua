@@ -864,7 +864,7 @@ function XUiChatServeMain:StartConcertPreHeatingToastScroll()
     ui.Content1.anchoredPosition = Vector2(startPosX, 0)
     ui.Content2.anchoredPosition = Vector2(startPosX, 0)
 
-    self._ConcertPreHeatingScrollTimer = XUiHelper.Tween(scrollSeconds, function(t)
+    self._ConcertPreHeatingScrollTimer = self:Tween(scrollSeconds, function(t)
         if not ui.Content1:Exist() or not ui.Content2:Exist() then
             return true
         end

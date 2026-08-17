@@ -15,6 +15,8 @@ function XUiSceneTip:OnStart(sceneId,openType)
     self.OpenType = openType
     ---@type XUiPanelSwitchableSceneAnim
     self.SwitchableScene = require("XUi/XUiSwitchableScene/XUiPanelSwitchableSceneAnim").New()
+    ---@type XUiPanelMusicScene
+    self.MusicScene = require("XUi/XUiMusicScene/XUiPanelMusicScene").New(self)
 
     if self.PanelDropDown then
         ---@type XScenePanelDropDown
@@ -49,6 +51,7 @@ end
 function XUiSceneTip:OnDisable()
     self:RemoveEventListener()
     self.SwitchableScene:Stop()
+    self.MusicScene:Stop()
     -- 关闭时钟
     if self.ClockTimer then
         XUiHelper.StopClockTimeTempFun(self, self.ClockTimer)
@@ -58,12 +61,13 @@ end
 
 function XUiSceneTip:OnDestroy()
     self.SwitchableScene:OnDestory()
+    self.MusicScene:OnDestroy()
 end
 
 function XUiSceneTip:Refresh()
     self:UpdateBatteryMode()
     self.TogPreview.isOn = false
-    local isFirst = XDataCenter.PhotographManager.GetPreviewState() == XPhotographConfigs.BackGroundState.Full
+    local isFirst = XDataCenter.PhotographManager:IsBtnSwitchFirst(self.SceneId)
     if self.BtnSwitch then self.BtnSwitch:RefreshSelect(isFirst) end
     
     self:RefreshDropDown()
@@ -104,6 +108,9 @@ function XUiSceneTip:SetBatteryUi()
     -- 场景虚拟相机
     self.CamFarMain = self:FindVirtualCamera("CamFarMain")
     if self.CamFarMain then self.CamFarMain.gameObject:SetActive(true) end
+    self.MusicScene:SetForbidSwitch()
+    self.MusicScene:DontSaveData()
+    self.MusicScene:Play(self.SceneId, self.UiSceneInfo.Transform)
     --判断是否开启陀螺仪动画
     if XMVCA.XSwitchableScene:IsSceneGyro(self.SceneId) then
         self.SwitchableScene:Play(self.SceneId, self.UiSceneInfo.Transform)
@@ -170,7 +177,7 @@ function XUiSceneTip:AutoSetUi()
     if self.SwitchBtn == nil then return end
     if  not XTool.IsTableEmpty(XPhotographConfigs.GetBackgroundSwitchDescById(self.SceneId))  then
         local btn = require("XUi/XUiSceneTip/XUiSwitchBtn")
-        self.BtnSwitch = btn.New(self.SwitchBtn, XDataCenter.PhotographManager.GetPreviewState() == XPhotographConfigs.BackGroundState.Full, self.SceneId)
+        self.BtnSwitch = btn.New(self.SwitchBtn, XDataCenter.PhotographManager:IsBtnSwitchFirst(self.SceneId), self.SceneId)
     else
         self.SwitchBtn.gameObject:SetActiveEx(false)
     end

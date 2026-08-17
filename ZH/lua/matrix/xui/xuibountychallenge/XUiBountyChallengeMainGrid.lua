@@ -12,6 +12,10 @@ function XUiBountyChallengeMainGrid:OnEnable()
 end
 
 function XUiBountyChallengeMainGrid:OnDisable()
+    self:StopCountDown()
+end
+
+function XUiBountyChallengeMainGrid:StopCountDown()
     if self._Timer then
         XScheduleManager.UnSchedule(self._Timer)
         self._Timer = false
@@ -33,8 +37,8 @@ function XUiBountyChallengeMainGrid:CountDown()
     if not self._Timer then
         self._Timer = XScheduleManager.ScheduleForever(function()
             if XFunctionManager.CheckInTimeByTimeId(timerId) then
-                self._Data.IsLock4Time = false
-                self:Update(self._Data)
+                self:StopCountDown()
+                self.Parent:Update()
             else
                 self:UpdateTxtLock()
             end
@@ -61,7 +65,7 @@ end
 function XUiBountyChallengeMainGrid:Update(data)
     self._Data = data
     self.TxtName.text = data.Name
-    self.Red.gameObject:SetActive(data.Red)
+    self.Red.gameObject:SetActiveEx(data.Red)
     self.TxtNum.text = XUiHelper.GetText("BountyChallengeProgress", data.Progress, data.ProgressMax)
 
     if data.IsLock4Time then

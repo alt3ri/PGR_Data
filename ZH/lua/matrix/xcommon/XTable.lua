@@ -1,19 +1,19 @@
-local ValueTypestringPrimaryKey = {ValueType = "string",PrimaryKey=true}
-local ValueTypestring = {ValueType = "string"}
-local ValueTypeintPrimaryKey = {ValueType = "int",PrimaryKey=true}
-local ValueTypeint = {ValueType = "int"}
-local ValueTypefloat = {ValueType = "float"}
-local ValueTypefix = {ValueType = "fix"}
-local ValueTypebool = {ValueType = "bool"}
-local Type2KeyTypestringValueTypestring = {Type = 2, KeyType = "string", ValueType = "string"}
-local Type2KeyTypeintValueTypestring = {Type = 2, KeyType = "int", ValueType = "string"}
-local Type2KeyTypeintValueTypeint = {Type = 2, KeyType = "int", ValueType = "int"}
-local Type2KeyTypeintValueTypefloat = {Type = 2, KeyType = "int", ValueType = "float"}
-local Type1ValueTypestring = {Type = 1, ValueType = "string"}
-local Type1ValueTypeint = {Type = 1, ValueType = "int"}
-local Type1ValueTypefloat = {Type = 1, ValueType = "float"}
-local Type1ValueTypefix = {Type = 1, ValueType = "fix"}
-local Type1ValueTypebool = {Type = 1, ValueType = "bool"}
+local ValueTypestringPrimaryKey = {ValueType = "string",PrimaryKey=true}
+local ValueTypestring = {ValueType = "string"}
+local ValueTypeintPrimaryKey = {ValueType = "int",PrimaryKey=true}
+local ValueTypeint = {ValueType = "int"}
+local ValueTypefloat = {ValueType = "float"}
+local ValueTypefix = {ValueType = "fix"}
+local ValueTypebool = {ValueType = "bool"}
+local Type2KeyTypestringValueTypestring = {Type = 2, KeyType = "string", ValueType = "string"}
+local Type2KeyTypeintValueTypestring = {Type = 2, KeyType = "int", ValueType = "string"}
+local Type2KeyTypeintValueTypeint = {Type = 2, KeyType = "int", ValueType = "int"}
+local Type2KeyTypeintValueTypefloat = {Type = 2, KeyType = "int", ValueType = "float"}
+local Type1ValueTypestring = {Type = 1, ValueType = "string"}
+local Type1ValueTypeint = {Type = 1, ValueType = "int"}
+local Type1ValueTypefloat = {Type = 1, ValueType = "float"}
+local Type1ValueTypefix = {Type = 1, ValueType = "fix"}
+local Type1ValueTypebool = {Type = 1, ValueType = "bool"}
 XTable = {
     BindLauncherNpc = {
         BindBone = ValueTypestring,
@@ -3807,6 +3807,9 @@ XTable = {
         SpecialEnterAnimName = ValueTypestring,
         EnterAnimName = ValueTypestring,
         LoopAnimName = ValueTypestring,
+        SpineDiffTag = Type1ValueTypestring,
+        SpineDiffAnimName = Type1ValueTypestring,
+        SpineDiffSoundCueId = Type1ValueTypeint,
         VideoEnterSoundCueId = ValueTypeint,
         VideoLoopSoundCueId = ValueTypeint,
         IsAfterFirstAnimSetSkip = ValueTypeint,
@@ -3814,6 +3817,7 @@ XTable = {
         UIModelId = Type1ValueTypestring,
         SpinePath = Type1ValueTypestring,
         GroupIdList = Type1ValueTypeint,
+        TitleDiffCondition = ValueTypeint,
     },
     XTableBrilliantWalkActivity = {
         Id = ValueTypeintPrimaryKey,
@@ -3906,6 +3910,7 @@ XTable = {
         CanMutiply = ValueTypeint,
         AutoClose = ValueTypeint,
         IsRestrictFreeBuy = ValueTypeint,
+        ItemCombineGroupId = ValueTypeint,
     },
     XTableBuyAssetConfig = {
         Id = ValueTypeintPrimaryKey,
@@ -8014,6 +8019,7 @@ XTable = {
         OpenTarget = ValueTypeint,
         ModelId = ValueTypestring,
         ModelPlayingId = ValueTypestring,
+        ModelLockedId = ValueTypestring,
         CharacterAnimationId = ValueTypestring,
         BGMTrackControlName = ValueTypestring,
     },
@@ -8572,6 +8578,7 @@ XTable = {
         StarReward = ValueTypeint,
         SpinePath = ValueTypestring,
         FashionId = ValueTypeint,
+        IsTopAlignment = ValueTypebool,
     },
     XTableExperimentReward = {
         Id = ValueTypeintPrimaryKey,
@@ -8996,6 +9003,7 @@ XTable = {
         StoryStagePrefab = ValueTypestring,
         ChapterStages = Type1ValueTypeint,
         StoryTimeId = ValueTypeint,
+        PurchaseTimeId = ValueTypeint,
         StoryEntranceBg = ValueTypestring,
         StoryFinishTag = ValueTypestring,
         AsGroupStoryIcon = ValueTypestring,
@@ -9062,7 +9070,7 @@ XTable = {
         PanelFashionDetailPrefabPath = ValueTypestring,
         CameraPrefabPath = ValueTypestring,
         SliderMax = ValueTypefloat,
-        EnableAnimDelay = ValueTypeint
+        EnableAnimDelay = ValueTypeint,
     },
     XTableFashionVoice = {
         Id = ValueTypeint,
@@ -11835,6 +11843,11 @@ XTable = {
         Quality = ValueTypeint,
         Priority = ValueTypeint,
     },
+    XTableItemCombine = {
+        ItemId = ValueTypeintPrimaryKey,
+        GroupId = ValueTypeint,
+        Priority = ValueTypeint,
+    },
     XTableItemExchange = {
         Id = ValueTypeintPrimaryKey,
         ItemId = ValueTypeint,
@@ -12776,7 +12789,6 @@ XTable = {
         LeftTimeTextColors = Type1ValueTypestring,
         ProgressTextColors = Type1ValueTypestring,
         TreasureId = ValueTypeint,
-        AchievementId = ValueTypeint,
         SkipIds = Type1ValueTypeint,
         SkipConditions = Type1ValueTypeint,
         SkipIcons = Type1ValueTypestring,
@@ -12794,6 +12806,9 @@ XTable = {
         SwitchBackwardSpineName = Type1ValueTypestring,
         IdleSpineStageIndexs = Type1ValueTypeint,
         IdleSpineName = Type1ValueTypestring,
+        IdleSoundName = Type1ValueTypestring,
+        SwitchAheadSoundName = Type1ValueTypestring,
+        SwitchBackwardSoundName = Type1ValueTypestring,
     },
     XTableMainLine2ClientConfig = {
         Key = ValueTypestringPrimaryKey,
@@ -13631,6 +13646,10 @@ XTable = {
         UiDefaultAnimationPath = ValueTypestring,
         LevelControllerPath = Type1ValueTypestring,
     },
+    XTableModuleTag = {
+        Key = ValueTypestringPrimaryKey,
+        Tag = ValueTypestring,
+    },
     XTableMoeRankGroup = {
         RankType = ValueTypeintPrimaryKey,
         TagName = ValueTypestring,
@@ -14101,24 +14120,28 @@ XTable = {
         Name = ValueTypestring,
         Speed = ValueTypeint,
     },
-    XTableMovieSpineActor = {
-        RoleId = ValueTypeintPrimaryKey,
-        Name = ValueTypestring,
-        SpinePath = ValueTypestring,
-        RoleAnims = Type1ValueTypestring,
-        RoleAnims2 = Type2KeyTypeintValueTypestring,
-        KouIdleAnims = Type1ValueTypestring,
-        KouTalkAnims = Type1ValueTypestring,
-        TransitionAnims = Type2KeyTypeintValueTypestring,
-    },
+    XTableMovieSpineActor = {
+        RoleId = ValueTypeintPrimaryKey,
+        Name = ValueTypestring,
+        SpinePath = ValueTypestring,
+        RoleAnims = Type1ValueTypestring,
+        RoleAnims2 = Type2KeyTypeintValueTypestring,
+        KouIdleAnims = Type1ValueTypestring,
+        KouTalkAnims = Type1ValueTypestring,
+        TransitionAnims = Type2KeyTypeintValueTypestring,
+    },
     XTableMovieSpineActorV2 = {
         RoleId = ValueTypeintPrimaryKey,
         Name = ValueTypestring,
     },
-    XTableMovieStaff = {
-        Id = ValueTypeintPrimaryKey,
-        Name = ValueTypestring,
-    },
+    XTableMovieStaff = {
+        Id = ValueTypeintPrimaryKey,
+        Name = ValueTypestring,
+    },
+    XTableMovieStoryTag = {
+        Id = ValueTypestringPrimaryKey,
+        Tag = ValueTypestring,
+    },
     XTableMultiChallengeStage = {
         Id = ValueTypeintPrimaryKey,
         ConsumeId = Type1ValueTypeint,
@@ -14297,6 +14320,10 @@ XTable = {
         SkipId = ValueTypeint,
         EggText = ValueTypestring,
     },
+    XTableMusicPlayerAlbumDetail = {
+        Id = ValueTypeintPrimaryKey,
+        ColorStyle = ValueTypestring,
+    },
     XTableMusicPlayerColorStyleRes = {
         ColorType = ValueTypestringPrimaryKey,
         BgmListBtnSprite = ValueTypestring,
@@ -14312,9 +14339,18 @@ XTable = {
         MusicGongxing = ValueTypestring,
         Sanjiao2 = ValueTypestring,
     },
+    XTableMusicPlayerConfig = {
+        Key = ValueTypestringPrimaryKey,
+        Values = Type1ValueTypestring,
+    },
+    XTableMusicPlayerEasterEggActivity = {
+        Id = ValueTypeintPrimaryKey,
+        TimeCtrlId = ValueTypeint,
+        MusicAlbumIds = Type1ValueTypeint,
+    },
     XTableMusicScene = {
         Id = ValueTypeintPrimaryKey,
-        MusicId = ValueTypeint,
+        MusicIds = Type1ValueTypeint,
         LoopCueId = ValueTypeint,
         ToNormalAnim = ValueTypestring,
         NormalAnim = ValueTypestring,
@@ -16615,6 +16651,7 @@ XTable = {
         RemainDayMailId = ValueTypeint,
         TargetMonthlyCard = ValueTypeint,
         MonthlyCardAddDailyCount = ValueTypeint,
+        ItemCombineGroupId = ValueTypeint,
     },
     XTablePurchasePackageConvert = {
         Id = ValueTypeint,
@@ -17596,6 +17633,17 @@ XTable = {
         SimpleDesc = ValueTypestring,
         BuffId = Type1ValueTypeint,
     },
+    XTableRepeatChallengeMultiReward = {
+        Id = ValueTypeintPrimaryKey,
+        TimeId = ValueTypeint,
+        MultiRewardCount = ValueTypeint,
+        DailyMultiRewardCount = ValueTypeint,
+        Multiple = ValueTypeint,
+        TaskId = ValueTypeint,
+        ActivityBriefGroupId = ValueTypeint,
+        FunctionalOpenId = ValueTypeint,
+        DailyDungonRuleId = ValueTypeint,
+    },
     XTableRepeatChallengeReward = {
         Id = ValueTypeintPrimaryKey,
         Condition = ValueTypeint,
@@ -18334,6 +18382,7 @@ XTable = {
         RemoveSkillId = Type1ValueTypeint,
         FashionId = ValueTypeint,
         UseFashionId = ValueTypeint,
+        UseFashionColor = ValueTypeint,
         WeaponId = ValueTypeint,
         WeaponLevel = ValueTypeint,
         WeaponBeakThrough = ValueTypeint,
@@ -20673,6 +20722,7 @@ XTable = {
         ScreenGroup = Type1ValueTypeint,
         RefreshTips = ValueTypestring,
         ActivityId = ValueTypeint,
+        VersionForceRefresh = ValueTypeint,
     },
     XTableShopActivity = {
         Id = ValueTypeintPrimaryKey,
@@ -20682,6 +20732,11 @@ XTable = {
     XTableShopBuyLimitLabel = {
         ClockId = ValueTypeintPrimaryKey,
         TextLimitLabel = ValueTypestring,
+    },
+    XTableShopConfig = {
+        Key = ValueTypestringPrimaryKey,
+        Desc = ValueTypestring,
+        Values = Type1ValueTypeint,
     },
     XTableShopDetail = {
         Id = ValueTypeintPrimaryKey,
@@ -21605,6 +21660,10 @@ XTable = {
     },
     XTableStageTag = {
         Type = ValueTypeintPrimaryKey,
+        Tag = ValueTypestring,
+    },
+    XTableStageTagDefine = {
+        Id = ValueTypeintPrimaryKey,
         Tag = ValueTypestring,
     },
     XTableStageTeamBuff = {
@@ -24948,6 +25007,7 @@ XTable = {
         MinScore = ValueTypeint,
         RobotProp = ValueTypeint,
         MaxPoolSize = ValueTypeint,
+        PoolCount = ValueTypeint,
     },
     XTableTheatre6PvpRobot = {
         Id = ValueTypeintPrimaryKey,
@@ -24956,6 +25016,7 @@ XTable = {
         Name = ValueTypestring,
         HeadIcon = ValueTypeint,
         HeadFrameId = ValueTypeint,
+        BuffId = ValueTypeint,
     },
     XTableTheatre6RandomPool = {
         Id = ValueTypeintPrimaryKey,
@@ -26667,8 +26728,8 @@ XTable = {
         ActiveSuitItemId = ValueTypeint,
         ActiveSuitItemCount = ValueTypeint,
         MagicIds = Type1ValueTypeint,
-        ShowOverrunSkillId = ValueTypeint,
-        ShowOverrunEffect = ValueTypebool,
+        ShowOverrunSkillId = ValueTypeint,
+        ShowOverrunEffect = ValueTypebool,
         CharacterId = ValueTypeint,
         Name = ValueTypestring,
         Desc = ValueTypestring,
@@ -27115,10 +27176,5 @@ XTable = {
         PrefabName = ValueTypestring,
         OrderId = ValueTypeint,
         StageId = Type1ValueTypeint,
-    },
-    XTableItemCombine = {
-        ItemId = ValueTypeintPrimaryKey,
-        GroupId = ValueTypeint,
-        Priority = ValueTypeint,
     },
 }

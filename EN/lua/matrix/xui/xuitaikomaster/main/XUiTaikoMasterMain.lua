@@ -164,7 +164,7 @@ function XUiTaikoMasterMain:_UpdateMusicSpectrum()
         return
     end
     if CSXAudioManager.GetMusicVolume() > 0 then
-        local spectrumData = CSXAudioManager.GetSpectrumLvData()
+        local spectrumData = CSXAudioManager.MusicVisualSpectrumProcessor:Get()
         self._BarMusic1:UpdateSpectrum(spectrumData)
         self._BarMusic2:UpdateSpectrum(spectrumData)
     end

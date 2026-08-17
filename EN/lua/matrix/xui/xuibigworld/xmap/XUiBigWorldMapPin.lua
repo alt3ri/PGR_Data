@@ -53,7 +53,7 @@ function XUiBigWorldMapPin:OnBtnPinClick()
         local mousePosition = axisConversion:UIToScreenPosition2D(self.Transform)
         local pinDatas = self:_GetNearPinDatas(mousePosition)
 
-        if XTool.IsTableEmpty(pinDatas) or table.nums(pinDatas) <= 1 then
+        if XTool.IsTableEmpty(pinDatas) or #pinDatas <= 1 then
             self:AnchorToAndSelect()
         else
             self:AnchorTo(true)
@@ -271,7 +271,7 @@ function XUiBigWorldMapPin:_RefreshTag(pinData)
             end
         end
     end
-    for i = index, table.nums(self._TagList) do
+    for i = index, #self._TagList do
         self._TagList[i]:Close()
     end
 end

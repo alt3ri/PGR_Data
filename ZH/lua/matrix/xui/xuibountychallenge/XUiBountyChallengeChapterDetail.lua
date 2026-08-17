@@ -165,7 +165,9 @@ end
 
 function XUiBountyChallengeChapterDetail:_OnClickTask()
     self.PanelTaskBg.gameObject:SetActiveEx(true)
-    XTool.UpdateDynamicItem(self._GridTasks, self._Data.TaskList, self.GridTask, XUiBountyChallengeChapterDetailTask, self)
+    local data = self._Control:GetUiChapterDetail()
+    self._Data = data
+    XTool.UpdateDynamicItem(self._GridTasks, data.TaskList, self.GridTask, XUiBountyChallengeChapterDetailTask, self)
     self:_PlayGridTaskEnableAnim()
 end
 

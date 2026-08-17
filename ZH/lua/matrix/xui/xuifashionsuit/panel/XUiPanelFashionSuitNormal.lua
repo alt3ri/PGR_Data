@@ -185,10 +185,15 @@ function XUiPanelFashionSuitNormal:OnDynamicTableEvent(event, index, grid)
         index = index % self.DynamicTable.Imp.TotalCount + 1
         grid:Refresh(self._Id, self._Config.FashionIds[index])
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_TWEEN_OVER then
-        local startIndex = self.DynamicTable.Imp.StartIndex
-        local selectIndex = startIndex % self.DynamicTable.Imp.TotalCount + 1
-        self._SelectIndex = selectIndex - 1
-        self:UpdateFashionSelect(selectIndex)
+        XScheduleManager.ScheduleNextFrame(function()
+            if XTool.UObjIsNil(self.GameObject) then
+                return
+            end
+            local startIndex = self.DynamicTable.Imp.StartIndex
+            local selectIndex = startIndex % self.DynamicTable.Imp.TotalCount + 1
+            self._SelectIndex = selectIndex - 1
+            self:UpdateFashionSelect(selectIndex)
+        end)
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_TOUCHED then
         self.DynamicTable.Imp:TweenToIndex(index)
         if self.DynamicTable.Imp.StartIndex == index then

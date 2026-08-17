@@ -15,18 +15,30 @@ function XUiPBRGeniusGridBase:RefreshShow(cfg)
     self.BtnGenuis:SetRawImage(cfg.NodeIcon)
 
     self.Cfg = cfg
-    
+
+    local GeniusNodeType = XMVCA.XPBRGame.EnumConst.GeniusNodeType
+    if cfg.NodeType == GeniusNodeType.Normal or cfg.NodeType == GeniusNodeType.Important then
+        local animTrans = self.Transform.parent:Find("Animation")
+        self._AnimSibling = animTrans and animTrans.gameObject or nil
+    end
+
     self:RefreshStateShow()
 end
 
 --- 刷新，只刷新状态，不更换关联节点
 function XUiPBRGeniusGridBase:RefreshStateShow()
-    if self._Control.GeniusControl:GetIsNodeUnlock(self.Cfg.NodeId) then
+    local isUnlock = self._Control.GeniusControl:GetIsNodeUnlock(self.Cfg.NodeId)
+
+    if isUnlock then
         self.GridStateCtrl:ChangeState('Unlock')
         self.PanelLock.gameObject:SetActiveEx(false)
     else
         self.GridStateCtrl:ChangeState('Lock')
         self.PanelLock.gameObject:SetActiveEx(true)
+    end
+
+    if self._AnimSibling then
+        self._AnimSibling:SetActiveEx(isUnlock)
     end
 
     self.BtnGenuis:ShowReddot(XMVCA.XPBRGame:GetIsNodeCanUnlock(self.Cfg.NodeId))

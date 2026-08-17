@@ -24,6 +24,7 @@ local EnumConst = {
             GoNextWave = 2, -- 进入下一波战斗
             SelectGoods = 3, -- 选择商品
             RefreshGoods = 4, -- 刷新商品
+            BGMSelect = 5, -- 打开BGM选择界面
         }
     },
     

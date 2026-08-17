@@ -80,7 +80,7 @@ function XUiPurchaseSceneMainPreview:AutoSetUi()
     if self.SwitchBtn == nil then return end
     if not XTool.IsTableEmpty(XPhotographConfigs.GetBackgroundSwitchDescById(self.SceneId)) then
         local btn = require("XUi/XUiSceneTip/XUiSwitchBtn")
-        local isFirst = XDataCenter.PhotographManager.GetPreviewState() == XPhotographConfigs.BackGroundState.Full
+        local isFirst = XDataCenter.PhotographManager:IsBtnSwitchFirst(self.SceneId)
         self.BtnSwitch = btn.New(self.SwitchBtn, isFirst, self.SceneId, function ()
             self:OnBtnUiClick()
         end)
@@ -101,7 +101,7 @@ end
 --region 界面刷新
 function XUiPurchaseSceneMainPreview:Refresh()
     self.TogPreview.isOn = true
-    local isFirst = XDataCenter.PhotographManager.GetPreviewState() == XPhotographConfigs.BackGroundState.Full
+    local isFirst = XDataCenter.PhotographManager:IsBtnSwitchFirst(self.SceneId)
     if self.BtnSwitch then
         self.BtnSwitch:RefreshSelect(isFirst)
     end

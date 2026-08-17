@@ -37,4 +37,12 @@ function XUiPBRRoleModel:InitShowCharacter(cuteModelName)
     end
 end
 
+function XUiPBRRoleModel:PlayRoleAnimation(animName)
+    if self._PanelRoleModel then
+        if not string.IsNilOrEmpty(animName) then
+            self._PanelRoleModel:PlayAnima(animName)
+        end
+    end
+end
+
 return XUiPBRRoleModel

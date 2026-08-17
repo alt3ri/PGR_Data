@@ -48,10 +48,10 @@ function XUiGridActivityBossSingle:Refresh(stageId, index)
     else
         self.goHardRoot.gameObject:SetActiveEx(true)
 
-        self.hardLv0.gameObject:SetActiveEx(false)
         self.goHardLv1.gameObject:SetActiveEx(false)
         self.goHardLv2.gameObject:SetActiveEx(false)
         self.goHardLv3 .gameObject:SetActiveEx(false)
+
         self.PanelBgNorma01.gameObject:SetActiveEx(false)
         self.PanelBgNorma02.gameObject:SetActiveEx(false)
         self.PanelBgNorma03.gameObject:SetActiveEx(false)
@@ -86,6 +86,11 @@ function XUiGridActivityBossSingle:Refresh(stageId, index)
             self:_PlayHardLevelChangeAnim(curLevelCO.Id, laseLevelCO.Id)
         end
         local levelCO = XFubenActivityBossSingleConfigs.GetBossLevelScoreCOByScore(curScore)
+        local hardLevel = levelCO.Id
+        if hardLevel == 1 then
+            self.goHardLv1.gameObject:SetActiveEx(true)
+        elseif hardLevel == 2 then
+            self.goHardLv2.gameObject:SetActiveEx(true)
         if isUnLock then
             local hardLevel = levelCO.Id
             if hardLevel == 1 then
@@ -99,8 +104,8 @@ function XUiGridActivityBossSingle:Refresh(stageId, index)
                 self.PanelBgNorma03.gameObject:SetActiveEx(true)
             end
         else
-            self.hardLv0.gameObject:SetActiveEx(true)
-        end 
+            self.goHardLv3.gameObject:SetActiveEx(true)
+        end
         self.txtHardDesc.text =  levelCO.Des
     end
 end

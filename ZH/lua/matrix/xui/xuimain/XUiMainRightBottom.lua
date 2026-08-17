@@ -39,30 +39,21 @@ function XUiMainRightBottom:OnStart(rootUi)
 end
 
 function XUiMainRightBottom:OnEnable()
+    self:_SetEvent(true)
     self:ResetAudioCueEffectState()
     self:UpdateView()
     self:RefreshTips()
     self:CheckRedPoint()
     self:StartTimer()
-    --界面状态事件，也会触发红点检查
-    XEventManager.AddEventListener(XEventId.EVENT_MAINUI_TERMINAL_STATUS_CHANGE, self.RefreshTips, self)
-    XEventManager.AddEventListener(XEventId.EVENT_MAINUI_EXPENSIVE_ITEM_CHANGE, self.RefreshTips, self)
-    XEventManager.AddEventListener(XEventId.EVENT_DORM_NOTIFY_DORMITORY_DATA, self.RefreshTips, self)
-
-    XMVCA.XPreload:AddAgencyEvent(XAgencyEventId.EVENT_PRELOAD_DOWNLOAD_STATE, self.RefreshTips, self)
 end
 
 function XUiMainRightBottom:OnDisable()
+    self:_SetEvent(false)
     if self.ScrollSequence then
         self.ScrollSequence:Kill()
         self.ScrollSequence = nil
     end
     self:StopTimer()
-    XEventManager.RemoveEventListener(XEventId.EVENT_MAINUI_TERMINAL_STATUS_CHANGE, self.RefreshTips, self)
-    XEventManager.RemoveEventListener(XEventId.EVENT_MAINUI_EXPENSIVE_ITEM_CHANGE, self.RefreshTips, self)
-    XEventManager.RemoveEventListener(XEventId.EVENT_DORM_NOTIFY_DORMITORY_DATA, self.RefreshTips, self)
-
-    XMVCA.XPreload:RemoveAgencyEvent(XAgencyEventId.EVENT_PRELOAD_DOWNLOAD_STATE, self.RefreshTips, self)
     self:ClearGrids()
 
     self.ChangeColorFin = false
@@ -72,6 +63,29 @@ end
 function XUiMainRightBottom:OnDestroy()
 
 end
+
+--region event
+function XUiMainRightBottom:_SetEvent(flag)
+    if flag then
+        --界面状态事件，也会触发红点检查
+        XEventManager.AddEventListener(XEventId.EVENT_MAINUI_TERMINAL_STATUS_CHANGE, self.RefreshTips, self)
+        XEventManager.AddEventListener(XEventId.EVENT_MAINUI_EXPENSIVE_ITEM_CHANGE, self.RefreshTips, self)
+        XEventManager.AddEventListener(XEventId.EVENT_DORM_NOTIFY_DORMITORY_DATA, self.RefreshTips, self)
+        XEventManager.AddEventListener(XEventId.EVENT_MUSIC_PLAYER_CHANGE, self._OnMusicPlayerChange, self)
+        XMVCA.XPreload:AddAgencyEvent(XAgencyEventId.EVENT_PRELOAD_DOWNLOAD_STATE, self.RefreshTips, self)
+    else
+        XEventManager.RemoveEventListener(XEventId.EVENT_MAINUI_TERMINAL_STATUS_CHANGE, self.RefreshTips, self)
+        XEventManager.RemoveEventListener(XEventId.EVENT_MAINUI_EXPENSIVE_ITEM_CHANGE, self.RefreshTips, self)
+        XEventManager.RemoveEventListener(XEventId.EVENT_DORM_NOTIFY_DORMITORY_DATA, self.RefreshTips, self)
+        XEventManager.RemoveEventListener(XEventId.EVENT_MUSIC_PLAYER_CHANGE, self._OnMusicPlayerChange, self)
+        XMVCA.XPreload:RemoveAgencyEvent(XAgencyEventId.EVENT_PRELOAD_DOWNLOAD_STATE, self.RefreshTips, self)
+    end
+end
+
+function XUiMainRightBottom:_OnMusicPlayerChange()
+    self:RefreshTips()
+end
+--endregion
 
 function XUiMainRightBottom:CheckFilterFunctions()
 
@@ -89,12 +103,11 @@ function XUiMainRightBottom:GetScrollTips()
     local tipList = XMVCA.XUiMain:GetScrollTipList(false)
     
     if XTool.IsTableEmpty(tipList) then
-        local albumId = XMVCA.XAudio:GetUiMainNeedPlayedAlbumId()
-        local template = XMVCA.XAudio:GetAlbumTemplateById(albumId)
-        if template then
+        local musicCO = XMVCA.XMusicPlayer:GetCurCommonBgnCO()
+        if musicCO then
             local name = string.format("%s - %s",
-                    string.gsub(XUiHelper.ReplaceTextNewLine(template.Name), "\n", ""),
-                    string.gsub(XUiHelper.ReplaceTextNewLine(template.Composer), "\n", ""))
+                    string.gsub(XUiHelper.ReplaceTextNewLine(musicCO.Name), "\n", ""),
+                    string.gsub(XUiHelper.ReplaceTextNewLine(musicCO.Composer), "\n", ""))
             table.insert(tipList, {
                 Tips = name,
                 Type = TipsType.Music
@@ -205,6 +218,9 @@ end
 function XUiMainRightBottom:ResetAudioCueEffectState()
     self.AudioCueEffectActiveIds = {}
     self.AudioCueEffectActiveCount = 0
+    self.RootUi:StopAnimation("V4P7V‌EasterEgg‌On", true, false)
+    self.RootUi:StopAnimation("V4P7V‌EasterEgg‌Off", true, false)
+    self.RootUi:ForceSkipToEndAnimation("V4P7V‌EasterEgg‌Off")
     self.V4P7Background.gameObject:SetActiveEx(false)
     if self.EffectSoundGroup then
         self.EffectSoundGroup.gameObject:SetActiveEx(false)
@@ -224,6 +240,7 @@ function XUiMainRightBottom:OnAudioCueEffectPlay(audioInfo)
     self.AudioCueEffectActiveCount = self.AudioCueEffectActiveCount + 1
 
     if self.AudioCueEffectActiveCount == 1 then
+        self.RootUi:StopAnimation("V4P7V‌EasterEgg‌Off", false, false)
         self.V4P7Background.gameObject:SetActiveEx(true)
         self.EffectSoundGroup.gameObject:SetActiveEx(true)
         self.RootUi:PlayAnimation("V4P7V‌EasterEgg‌On")
@@ -239,6 +256,7 @@ function XUiMainRightBottom:OnAudioCueEffectStop(audioInfo)
     self.AudioCueEffectActiveCount = self.AudioCueEffectActiveCount - 1
 
     if self.AudioCueEffectActiveCount <= 0 then
+        self.RootUi:StopAnimation("V4P7V‌EasterEgg‌On", false, false)
         self.RootUi:PlayAnimation("V4P7V‌EasterEgg‌Off", function()
             if self.AudioCueEffectActiveCount <= 0 then
                 self.V4P7Background.gameObject:SetActiveEx(false)

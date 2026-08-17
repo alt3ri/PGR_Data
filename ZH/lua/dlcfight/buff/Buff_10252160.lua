@@ -17,7 +17,7 @@ function XBuffScript10252160:ScriptInit(isGainControl) --初始化
     self.ChanceCheck = 0
     self.ChanceCheckSkillUse = 0
     self.Count = 0
-    self._proxy:ApplyMagic(self._uuid, self._uuid, 1025105,1,0, 3)
+    --self._proxy:ApplyMagic(self._uuid, self._uuid, 1025105,1,0, 3)
     self._HitFlyController = self:GetNpc():GetHitFlyController()
 end
 

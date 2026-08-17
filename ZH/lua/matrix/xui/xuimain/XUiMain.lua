@@ -465,7 +465,6 @@ function XUiMain:PlayEnterAnim()
             --     XDataCenter.DlcRoomManager.DialogReconnect()
             -- end
 
-            self:PlayAnimation("CDViewToMain")
             --- 打开邀请界面
             self:OnDlcReceiveInvite()
             --发送公告请求

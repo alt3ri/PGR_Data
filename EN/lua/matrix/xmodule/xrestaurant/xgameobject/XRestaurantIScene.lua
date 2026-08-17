@@ -44,7 +44,7 @@ function XRestaurantIScene:Load(onLoadCb)
             self._IsLoading = false
             return
         end
-        self._GameObject = XUiHelper.Instantiate(resource.Asset)
+        self._GameObject = XUiHelper.Instantiate(asset)
         if not XTool.UObjIsNil(self._GameObject) then
             self._Transform = self._GameObject.transform
             self:ResetTransform()

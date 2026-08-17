@@ -51,9 +51,12 @@ function XUiBigWorldRoleRoom:RefreshExpression()
         local entityId = self._EntityIds[index]
         if XTool.IsNumberValid(entityId) and not self._Proxy:IsCommandant(entityId) then
             local modelId = self._Proxy:GetUiModelId(entityId)
-            local fashionId = self._Proxy:GetFashionId(entityId)
-            local animaName = self._Proxy:GetDefaultAnimName(entityId)
-            XUiModelDisplayHelper.PlayExpression(self._DisplayController, modelId, fashionId, animaName)
+
+            if self._DisplayController:IsModelExist(modelId) then
+                local fashionId = self._Proxy:GetFashionId(entityId)
+                local animaName = self._Proxy:GetDefaultAnimName(entityId)
+                XUiModelDisplayHelper.PlayExpression(self._DisplayController, modelId, fashionId, animaName)
+            end
         end
     end
 end
@@ -254,8 +257,10 @@ function XUiBigWorldRoleRoom:ForceUpdateCommandant(index, entityId)
         XScheduleManager.UnSchedule(self.effectTimerId)
         self.effectTimerId = 0
     end
+
+    index = self._CurrentSelectIndex or index
+
     XMVCA.XBigWorldCommanderDIY:ForceUpdateCommandant(display, self._NearCamera, self._ParentList[index])
-    display:GetModelObject(modelId, XEnumConst.PlayerFashion.PartType.Fashion)
 end
 
 function XUiBigWorldRoleRoom:UpdateSingleModel(index, entityId)
@@ -366,6 +371,7 @@ function XUiBigWorldRoleRoom:OnBtnDetailClicked()
         end
         self._PanelRoleVList:Close()
         self._PanelRoleInfo:Close()
+        self._CurrentSelectIndex = false
         self.PanelRoom.gameObject:SetActiveEx(true)
         self:UpdateView()
         self:UpdateRoleActive(0)
@@ -398,6 +404,8 @@ function XUiBigWorldRoleRoom:OnClickRole(index)
         self._VirtualCameraDict[VirtualCamera.Role].transform.localPosition = data.Point
         self._VirtualCameraDict[VirtualCamera.Role].transform.localRotation = data.Rotation
     end
+
+    self._CurrentSelectIndex = index
 
     self.PanelRoom.gameObject:SetActiveEx(false)
     self.PanelUnder.gameObject:SetActiveEx(false)

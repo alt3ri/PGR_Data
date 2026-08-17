@@ -89,6 +89,10 @@ function XMovieActionFullScreenDialogNew:StopLastCv()
 end
 
 function XMovieActionFullScreenDialogNew:OnDestroy()
+    self.IsTyping = nil
+    self.IsSkipped = nil
+    self.UiRoot:RemoveBtnNextCallback()
+
     if self.IsLastText then
         self.Panel:RecycleAllDialog()
     end

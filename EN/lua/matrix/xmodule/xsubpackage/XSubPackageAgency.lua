@@ -7,6 +7,7 @@ local XSubPackageAgency = XClass(XAgency, "XSubPackageAgency")
 
 local MIN_SIZE = 1024
 local BATCH_DELETE_COUNT = 10
+local MUSIC_SUBPACKAGE_ID = 3000
 
 local CheckStageId = 10030304
 
@@ -997,6 +998,27 @@ function XSubPackageAgency:UninstallSubpackageById(subpackageId, cb)
             if cb then cb() end
             return
         end
+
+        local currentMusicInfo = XLuaAudioManager.GetCurrentMusicAudioInfo()
+        local currentCueId = currentMusicInfo and currentMusicInfo.CueId
+        local fallbackAlbumId = CS.XGame.ClientConfig:GetInt("MusicPlayerFallbackAlbumId")
+        local fallbackAlbumCo = XMVCA.XMusicPlayer:COGetMusicPlayerAlbumCOByid(fallbackAlbumId)
+        local fallbackCueId = fallbackAlbumCo and fallbackAlbumCo.CueId
+
+        -- 卸载CD机分包且当前正在播放CD机音乐时，先切换到不依赖该分包的fallback音乐，再释放旧CueSheet
+        if subpackageId == MUSIC_SUBPACKAGE_ID and XTool.IsNumberValid(currentCueId) and CS.XAudioManager.CheckCueIsCDMusic(currentCueId) and currentCueId ~= fallbackCueId then
+            local oldCueSheetId = currentMusicInfo.CueSheetId
+            if not XMVCA.XMusicPlayer:TryEnterFallbackForUninstall() then
+                self._IsUninstalling = false
+                XLog.Warning("[XSubPackageAgency] CD机分包卸载前切换fallback音乐失败")
+                if cb then cb() end
+                return
+            end
+
+            CS.XAudioManager.RemoveCueSheetById(oldCueSheetId)
+            -- RemoveCueSheetById没有句柄释放完成回调，物理删除前让出一帧，为旧AudioInfo和CueSheet提供释放边界
+            asynWaitSecond(0)
+        end
 
         XLog.Warning(string.format("[XSubPackageAgency] 开始协程卸载 SubpackageId=%d", subpackageId))
 

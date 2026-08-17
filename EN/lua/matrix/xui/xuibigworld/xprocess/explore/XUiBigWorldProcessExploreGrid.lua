@@ -151,7 +151,7 @@ function XUiBigWorldProcessExploreGrid:_RefreshRegion(poiEntitys)
         end
     end
 
-    for i = index + 1, table.nums(self._RegionGrids) do
+    for i = index + 1, #self._RegionGrids do
         self._RegionGrids[i]:Close()
     end
 end

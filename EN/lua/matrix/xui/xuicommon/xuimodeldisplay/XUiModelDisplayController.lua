@@ -1,4 +1,5 @@
 local XUiModelDisplayHelper = require("XUi/XUiCommon/XUiModelDisplay/XUiModelDisplayHelper")
+local XUiModelDisplayCacheInfo = require("XUi/XUiCommon/XUiModelDisplay/XUiModelDisplayCacheInfo")
 
 ---@class XUiModelDisplayController
 ---@field Controller XUiComponent.XModelDisplay.XUiModelDisplayController
@@ -22,6 +23,13 @@ function XUiModelDisplayController:Ctor(modelRoot, showShadow, fixLight)
     -- 单个模型才能使用，耗性能
     self.FixLight = fixLight
 
+    self.MaxCacheCount = 5
+    self.MaxCacheTime = 5
+
+    ---@type table<string, XUiModelDisplayCacheInfo>
+    self._ModelCache = {}
+
+    ---@type table<string, XUiModelDisplayInfo[]>
     self._ModelInfos = {}
 
     self.Controller:SetShadow(showShadow, fixLight)
@@ -42,8 +50,9 @@ function XUiModelDisplayController:AddModel(modelInfo)
     local componentType = helper.ConvertComponentType(modelInfo.ComponentType)
     local parent = modelInfo.Parent or self.Transform
     self:SetModelActive(modelInfo.Key, true)
-    local isSuccess = self.Controller:AddModelDisplay(componentType, modelInfo.Key, modelInfo.ComponentId,
-        modelInfo.ModelUrl, modelInfo.ControllerUrl, parent)
+    local isSuccess = self.Controller:AddModelDisplay(
+        componentType, modelInfo.Key, modelInfo.ComponentId, modelInfo.ModelUrl, modelInfo.ControllerUrl, parent
+    )
 
     if isSuccess then
         self:_AfterModelLoaded(modelInfo)
@@ -85,8 +94,9 @@ function XUiModelDisplayController:AddModelComponent(modelInfo)
     local helper = self:GetDisplayHelper()
     local componentType = helper.ConvertComponentType(modelInfo.ComponentType)
     local parent = modelInfo.Parent or self.Transform
-    local isSuccess = self.Controller:AddModelComponent(componentType, modelInfo.Key, modelInfo.ComponentId,
-        modelInfo.ModelUrl, modelInfo.ControllerUrl, parent)
+    local isSuccess = self.Controller:AddModelComponent(
+        componentType, modelInfo.Key, modelInfo.ComponentId, modelInfo.ModelUrl, modelInfo.ControllerUrl, parent
+    )
 
     if isSuccess then
         self:_AfterModelLoaded(modelInfo)
@@ -112,8 +122,9 @@ function XUiModelDisplayController:ChangeModelComponent(modelInfo)
     local helper = self:GetDisplayHelper()
     local componentType = helper.ConvertComponentType(modelInfo.ComponentType)
     local parent = modelInfo.Parent or self.Transform
-    local isSuccess = self.Controller:ChangeModelComponent(componentType, modelInfo.Key, modelInfo.ComponentId,
-        modelInfo.ModelUrl, modelInfo.ControllerUrl, parent)
+    local isSuccess = self.Controller:ChangeModelComponent(
+        componentType, modelInfo.Key, modelInfo.ComponentId, modelInfo.ModelUrl, modelInfo.ControllerUrl, parent
+    )
 
     if isSuccess then
         self:_AfterModelLoaded(modelInfo)
@@ -141,17 +152,24 @@ function XUiModelDisplayController:SetModelActive(id, isActive)
 
         self.Controller:SetModelActive(id, isActive)
     end
+    if self._ModelCache[id] then
+        self._ModelCache[id]:SetActive(isActive)
+    end
 end
 
 function XUiModelDisplayController:HideAllModel()
     self.Controller:HideAllModel()
 
     if not XTool.IsTableEmpty(self._ModelInfos) then
-        for _, modelInfos in pairs(self._ModelInfos) do
+        for key, modelInfos in pairs(self._ModelInfos) do
             if not XTool.IsTableEmpty(modelInfos) then
                 for _, modelInfo in pairs(modelInfos) do
                     modelInfo.IsActive = false
                 end
+            end
+
+            if self._ModelCache[key] then
+                self._ModelCache[key]:SetActive(false)
             end
         end
     end
@@ -194,11 +212,13 @@ end
 function XUiModelDisplayController:DestroyAllModel()
     self.Controller:DestroyAllModel()
     self._ModelInfos = {}
+    self._ModelCache = {}
 end
 
 function XUiModelDisplayController:DestroyModel(id)
     self.Controller:DestroyModel(id)
     self._ModelInfos[id] = nil
+    self._ModelCache[id] = nil
 end
 
 function XUiModelDisplayController:DestroyModelComponent(modelId, componentId)
@@ -217,6 +237,7 @@ function XUiModelDisplayController:_AddModelInfo(modelInfo)
     end
 
     self._ModelInfos[modelInfo.Key][modelInfo.ComponentId] = modelInfo
+    self._ModelCache[modelInfo.Key] = XUiModelDisplayCacheInfo.New(modelInfo.Key, self.MaxCacheTime)
 end
 
 function XUiModelDisplayController:_RemoveModelInfo(key, componentId)
@@ -245,6 +266,60 @@ function XUiModelDisplayController:_AfterModelLoaded(modelInfo)
     self:_AddModelInfo(modelInfo)
     modelInfo:InjectController(self)
     self:SetModelComponentActive(modelInfo.Key, modelInfo.ComponentId, modelInfo.IsActive)
+    self:_CleanUpModelCache()
+end
+
+function XUiModelDisplayController:_CleanUpModelCache()
+    self:_ClearUpOutTimeModel()
+    self:_ClearUpOutCountModel()
+end
+
+function XUiModelDisplayController:_ClearUpOutTimeModel()
+    local couldClears = {}
+
+    if not XTool.IsTableEmpty(self._ModelCache) then
+        for _, modelCache in pairs(self._ModelCache) do
+            if modelCache:CouldClear() then
+                table.insert(couldClears, modelCache)
+            end
+        end
+    end
+
+    for i, cache in pairs(couldClears) do
+        self:DestroyModel(cache.Key)
+    end
+end
+
+function XUiModelDisplayController:_ClearUpOutCountModel()
+    local couldClears = {}
+
+    if not XTool.IsTableEmpty(self._ModelCache) and #self._ModelCache > self.MaxCacheCount then
+        for _, modelCache in pairs(self._ModelCache) do
+            local isInsert = false
+
+            for i, cache in ipairs(couldClears) do
+                if cache.Timestamp > modelCache.Timestamp then
+                    isInsert = true
+                    table.insert(couldClears, i, modelCache)
+                    break
+                end
+            end
+
+            if not isInsert then
+                table.insert(couldClears, modelCache)
+            end
+        end
+    end
+
+    local clearCount = #couldClears - self.MaxCacheCount
+
+    if clearCount > 0 then
+        for i = 1, clearCount do
+            local cache = couldClears[i]
+
+            self:DestroyModel(cache.Key)
+        end
+    end
 end
 
 function XUiModelDisplayController:SetLookAtIKWithInfo(id, componentId, target, lerpTime)
@@ -272,8 +347,12 @@ function XUiModelDisplayController:SetLookAtIKTarget(id, componentId, target)
     self.Controller:SetLookAtIKTarget(id, componentId, target)
 end
 
-function XUiModelDisplayController:SetLookAtIKWeight(id, componentId, weight,  bodyWeight, headWeight, eyesWeight, clampWeight, clampWeightHead, clampWeightEyes)
-    self.Controller:SetLookAtIKWeight(id, componentId, weight,  bodyWeight, headWeight, eyesWeight, clampWeight, clampWeightHead, clampWeightEyes)
+function XUiModelDisplayController:SetLookAtIKWeight(
+    id, componentId, weight, bodyWeight, headWeight, eyesWeight, clampWeight, clampWeightHead, clampWeightEyes
+)
+    self.Controller:SetLookAtIKWeight(
+        id, componentId, weight, bodyWeight, headWeight, eyesWeight, clampWeight, clampWeightHead, clampWeightEyes
+    )
 end
 
 function XUiModelDisplayController:DisableLookAtIK(id, componentId)

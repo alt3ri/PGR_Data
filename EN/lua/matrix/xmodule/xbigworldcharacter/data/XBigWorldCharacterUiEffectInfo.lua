@@ -64,7 +64,11 @@ function XBigWorldCharacterUiEffectInfo:GetEffectIdByIndex(index)
 end
 
 function XBigWorldCharacterUiEffectInfo:GetEffectCount()
-    return table.nums(self._Effects)
+    if XTool.IsTableEmpty(self._Effects) then
+        return 0
+    end
+
+    return #self._Effects
 end
 
 function XBigWorldCharacterUiEffectInfo:GetEffectPathByIndex(index)

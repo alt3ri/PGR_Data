@@ -68,6 +68,7 @@
 ---@field AutoWindowManager XAutoWindowManager
 ---@field NoticeManager XNoticeManager
 ---@field FubenExperimentManager XFubenExperimentManager
+---@field FubenRepeatChallengeManager XFubenRepeatChallengeManager
 XDataCenter = XDataCenter or {}
 
 local IsWindowsEditor = XMain.IsWindowsEditor

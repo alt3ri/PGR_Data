@@ -101,10 +101,10 @@ function XUiBigWorldRewardSidebar:_RefreshAsync()
             return
         end
 
-        local showCount = table.nums(showRewardBar)
+        local showCount = #showRewardBar
 
         for index, bar in pairs(showRewardBar) do
-            if i == table.nums(self._RewardData) then
+            if i == table.size(self._RewardData) then
                 bar:PlayAnimation("RewardLevelDisable", function()
                     if index == showCount then
                         self:Close()
@@ -137,7 +137,7 @@ function XUiBigWorldRewardSidebar:_RefreshRewardBar(rewardList)
             table.insert(showRewardBar, gridBar)
         end
     end
-    for i = table.nums(rewardList) + 1, table.nums(self._RewardBarList) do
+    for i = #rewardList + 1, #self._RewardBarList do
         self._RewardBarList[i]:Close()
     end
 

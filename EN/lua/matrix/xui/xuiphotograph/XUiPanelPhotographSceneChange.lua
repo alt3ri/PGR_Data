@@ -6,6 +6,8 @@ local Day_Full = 1
 local Night_Low = 2
 local Open = XEnumConst.SwitchableScene.Setting.Open
 local Close = XEnumConst.SwitchableScene.Setting.Close
+local Normal = XEnumConst.MusicScene.Mode.Normal
+local Music = XEnumConst.MusicScene.Mode.Music
 
 function XUiPanelPhotographSceneChange:OnStart()
     self._SceneChangeBtns = { self.BtnSceneChange1, self.BtnSceneChange2, self.BtnSceneChange3 }
@@ -34,6 +36,11 @@ function XUiPanelPhotographSceneChange:UpdateSceneChangeBtn()
         self.BtnSceneChange1.gameObject:SetActiveEx(op == Close)
         self.BtnSceneChange2.gameObject:SetActiveEx(false)
         self.BtnSceneChange3.gameObject:SetActiveEx(op == Open)
+    elseif type == XPhotographConfigs.BackGroundType.Music then
+        --开、关
+        local mode = XMVCA.XMusicScene:GetCurPlayMode(sceneId)
+        self.BtnSceneChange2.gameObject:SetActiveEx(mode == Normal)
+        self.BtnSceneChange3.gameObject:SetActiveEx(mode == Music)
     else
         for i, btn in ipairs(self._SceneChangeBtns) do
             btn.gameObject:SetActiveEx(false)
@@ -60,6 +67,12 @@ function XUiPanelPhotographSceneChange:SwitchGyroModel(index)
     self:UpdateSceneChangeBtn()
 end
 
+function XUiPanelPhotographSceneChange:SwitchMusicMode(mode)
+    local sceneId = XDataCenter.PhotographManager.GetCurSelectSceneId()
+    XMVCA.XMusicScene:UpdateMusicSceneMode(sceneId, mode)
+    self:UpdateSceneChangeBtn()
+end
+
 function XUiPanelPhotographSceneChange:OnBtnSceneChange1Click()
     if self:GetType() == XPhotographConfigs.BackGroundType.Gyro then
         self:SwitchGyroModel(Open)
@@ -69,15 +82,22 @@ function XUiPanelPhotographSceneChange:OnBtnSceneChange1Click()
 end
 
 function XUiPanelPhotographSceneChange:OnBtnSceneChange2Click()
-    if self:GetType() == XPhotographConfigs.BackGroundType.Gyro then
+    local sceneType = self:GetType()
+    if sceneType == XPhotographConfigs.BackGroundType.Gyro then
         return
+    elseif sceneType == XPhotographConfigs.BackGroundType.Music then
+        self:SwitchMusicMode(Music)
+    else
+        self:SwitchSceneMode(Night_Low)
     end
-    self:SwitchSceneMode(Night_Low)
 end
 
 function XUiPanelPhotographSceneChange:OnBtnSceneChange3Click()
-    if self:GetType() == XPhotographConfigs.BackGroundType.Gyro then
+    local sceneType = self:GetType()
+    if sceneType == XPhotographConfigs.BackGroundType.Gyro then
         self:SwitchGyroModel(Close)
+    elseif sceneType == XPhotographConfigs.BackGroundType.Music then
+        self:SwitchMusicMode(Normal)
     else
         self:SwitchSceneMode(Auto)
     end

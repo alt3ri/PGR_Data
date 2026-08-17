@@ -7,6 +7,13 @@ function XUiLottoFashionSelfChoiceEntrance:OnStart(isChangeMode)
     if not XTool.IsTableEmpty(self.LottoPrimaryCfg) then
         self.CurSelectGridIndex = self:GetDefaultSelectIndex()
     end
+    -- 监听常驻整个生命周期（而非 OnEnable/OnDisable）：切换入口跳回时本界面处于 disable 态，
+    -- 若监听随 OnDisable 移除，DispatchEvent 会落空，导致 IsChangeMode 翻不起来被 OnEnable 直接关闭
+    XEventManager.AddEventListener(XEventId.EVENT_LOTTO_SELF_CHOICE_ENTER_CHANGE_MODE, self.EnterChangeMode, self)
+end
+
+function XUiLottoFashionSelfChoiceEntrance:OnDestroy()
+    XEventManager.RemoveEventListener(XEventId.EVENT_LOTTO_SELF_CHOICE_ENTER_CHANGE_MODE, self.EnterChangeMode, self)
 end
 
 -- 走唤醒路径时 OnStart 不会再跑，需外部显式调用以翻起 IsChangeMode + 刷新默认选中
@@ -109,13 +116,15 @@ function XUiLottoFashionSelfChoiceEntrance:OnEnable()
         end
     end
 
+    -- 进入枢纽即停掉上一个卡池残留的 BGM，避免在下一个卡池 BGM 起来前的间隙里漏出。
+    -- 副作用：StopMusic 只是停止、等 LateUpdate 回收，若在回收前快速返回同一个卡池、且新 BGM 用相同 cueId，
+    -- 会复用这个待回收实例后被同帧误回收，导致该卡池 BGM 丢失。
+    -- 兜底：若某个卡池出现 BGM 丢失，给它负责播放 BGM 的 XPlayMusic 组件配一个较小的 Delay，
+    -- 把新 BGM 的启动时机推迟到旧实例回收之后即可绕开；各卡池预制结构不同，生效的 XPlayMusic 组件位置需在对应卡池里排查。
+    XLuaAudioManager.StopCurrentBGM()
+
     self:RefreshDynamicTable()
     XSaveTool.SaveData("OpenUiLottoFashionSelfChoiceEntrance", {NextCanShowTimeStamp = XTime.GetSeverTomorrowFreshTime()})
-    XEventManager.AddEventListener(XEventId.EVENT_LOTTO_SELF_CHOICE_ENTER_CHANGE_MODE, self.EnterChangeMode, self)
-end
-
-function XUiLottoFashionSelfChoiceEntrance:OnDisable()
-    XEventManager.RemoveEventListener(XEventId.EVENT_LOTTO_SELF_CHOICE_ENTER_CHANGE_MODE, self.EnterChangeMode, self)
 end
 
 function XUiLottoFashionSelfChoiceEntrance:RefreshDynamicTable()
@@ -200,4 +209,4 @@ function XUiLottoFashionSelfChoiceEntrance:OnBtnChooseClick()
     else
         doConfirm()
     end
-end
+end

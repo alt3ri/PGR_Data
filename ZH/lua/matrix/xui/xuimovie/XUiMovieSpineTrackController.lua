@@ -3,7 +3,9 @@ local XUiMovieSpineTrackController = XClass(nil, "XUiMovieSpineTrackController")
 
 local DEFAULT_MAIN_LOOP_COUNT = 4
 local DEFAULT_INSERT_LOOP_COUNT = 1
+local DEFAULT_TRANSITION_DURATION = 0.25
 local UPDATE_INTERVAL = 0
+local CSXUnityInterface = CS.XUnityInterface
 
 local function IsValidAnim(animName)
     return not string.IsNilOrEmpty(animName)
@@ -130,12 +132,19 @@ function XUiMovieSpineTrackController:HasState(animName)
     return true
 end
 
-function XUiMovieSpineTrackController:PlayState(animName)
+function XUiMovieSpineTrackController:PlayState(animName, transitionDuration)
     if not self:HasState(animName) then
         return false
     end
 
-    self.Animator:Play(animName, self.TrackType, 0)
+    transitionDuration = transitionDuration or DEFAULT_TRANSITION_DURATION
+    CSXUnityInterface.XCrossFadeInFixedTime(
+        self.Animator,
+        animName,
+        transitionDuration,
+        self.TrackType,
+        0
+    )
     self.CurrentAnimName = animName
     self.LastLoopIndex = 0
     self.HasEnteredState = false

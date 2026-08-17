@@ -39,6 +39,16 @@ end
 function XUIMusciPlayerAlbumCollectionView:OnEnable()
     self:_SetEvent(true)
     self:_refreshColorFX()
+
+    local jumpMusicID = self._Control:GetJumpAlbumCollectionClickMusicID()
+    local cdControl = self._Control:GetCDPlayerControl()
+    if XTool.IsNumberValid(jumpMusicID) and jumpMusicID ~= cdControl:GetCurPlayingMusicID() then
+        local useStatus, conditionDesc = cdControl:GetMusicUseStatusAndConditionDesc(jumpMusicID)
+        local XMusicPlayerEnum = XMVCA.XMusicPlayer.Enum
+        if useStatus ~= XMusicPlayerEnum.MusicUseStatus.unlock then
+            cdControl:JumpPlayByMusicIDWithNotify(self:_GetCurListType(), jumpMusicID)
+        end
+    end
     self:_UpdateDynamicTable()
     self:_UpdateSelect()
 end
@@ -54,8 +64,12 @@ end
 
 function XUIMusciPlayerAlbumCollectionView:_UpdateDynamicTable()
     local dataList = self:_GetCurSeverDataList()
+    local count = #dataList
+    self._DynamicTable.Imp.MoveType = count <= 1
+            and CS.XDynamicTableCurve.MovementType.Clamped
+            or CS.XDynamicTableCurve.MovementType.Loop
     self._DynamicTable:SetDataSource(dataList)
-    self._DynamicTable:ReloadData(#dataList > 0 and (self:_GetCurIndex() - 1) or -1)
+    self._DynamicTable:ReloadData(count > 0 and (self:_GetCurIndex() - 1) or -1)
 end
 
 ---把当前居中那一格的 grid 高亮(选中态由 controller 当前播放索引决定)
@@ -127,24 +141,24 @@ function XUIMusciPlayerAlbumCollectionView:OnDynamicTableEvent(event, index, gri
         index = index % self._DynamicTable.Imp.TotalCount + 1
         local musicID = dataList[index]
         -- 关键差异:musicID -> musicCO,然后把 CO 喂进去走 grid 的 else 分支(避免 grid 把 number 当 albumId 查)
-        grid:Refresh(self:_GetMusicCO(musicID))
+        grid:Refresh(self:_GetMusicCO(musicID), self._Control)
         grid:UpdateSelect(false)
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_TWEEN_OVER then
+
         local startIndex = self._DynamicTable.Imp.StartIndex
         local selectIndex = startIndex % self._DynamicTable.Imp.TotalCount + 1
         self:_UpdateSelect()
-        -- 滑动停下时把"当前选中"以 musicID 发起跳转播放(随机模式内部会重建随机序列)
 
         local selectMusicID = self:_GetCurSeverDataList()[selectIndex]
         local cdControl = self._Control:GetCDPlayerControl()
         local useStatus = cdControl:GetMusicUseStatusAndConditionDesc(selectMusicID)
         if useStatus ~= XMVCA.XMusicPlayer.Enum.MusicUseStatus.unlock then
             cdControl:JumpPlayByMusicIDWithNotify(self:_GetCurListType(), selectMusicID)
+            self._Control:DispatchEvent(XMVCA.XMusicPlayer.EventIds.EVENT_VIEW_PLAY_SFX,XMVCA.XMusicPlayer.Enum.AudioName.cdSFXSwitch)
         end
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_TOUCHED then
         self._DynamicTable.Imp:TweenToIndex(index)
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_BEGIN_DRAG then
-        -- 原界面这里调 self:PlayFrontEffect(false) 关闭前景特效,本视图暂无对应资源,留空
     end
 end
 

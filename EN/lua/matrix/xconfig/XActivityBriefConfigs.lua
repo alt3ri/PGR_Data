@@ -249,6 +249,15 @@ function XActivityBriefConfigs.GetActivityBgType(panelType)
     return config.BgType or nil
 end
 
+---根据主副面板Id获取标题变换条件Id(0表示不启用)，副标题与特效标题共用此条件
+---@param panelType integer
+---@return integer
+function XActivityBriefConfigs.GetTitleDiffCondition(panelType)
+    local config = ActivityTemplates[panelType]
+    if XTool.IsTableEmpty(config) then return 0 end
+    return config.TitleDiffCondition or 0
+end
+
 ---v2.2 根据活动主题主副面板Id第一次播放完动画是否默认选择跳过动画
 ---@param panelType integer
 ---@return boolean
@@ -301,6 +310,23 @@ function XActivityBriefConfigs.GetLoopAnimName(panelType)
     local config = ActivityTemplates[panelType]
     if XTool.IsTableEmpty(config) then return nil end
     return config.LoopAnimName or nil
+end
+
+-- 按 bgm 序列 Marker 的 tag 命中 SpineDiffTag，返回对齐的 SpineDiffAnimName 差分动画名；
+-- 未配置或未命中返回 nil（由调用方回落到 LoopAnimName）
+function XActivityBriefConfigs.GetSpineDiffAnimNameByTag(panelType, tag)
+    local config = ActivityTemplates[panelType]
+    if XTool.IsTableEmpty(config) then return nil end
+    local tags = config.SpineDiffTag
+    local anims = config.SpineDiffAnimName
+    if not tags or not anims or string.IsNilOrEmpty(tag) then return nil end
+    local lowerTag = string.lower(tag)
+    for i = 1, #tags do
+        if tags[i] and string.lower(tags[i]) == lowerTag then
+            return anims[i]
+        end
+    end
+    return nil
 end
 
 function XActivityBriefConfigs.GetVideoEnterSoundCueId(panelType)

@@ -775,13 +775,9 @@ end
 
 --endregion
 
---- 获取当前 DrawInfo（优先使用 OptionKey 维度）
+--- 获取当前界面正在展示的 DrawInfo
 function XUiNewGridDrawBanner:_GetDrawInfo()
-    if not string.IsNilOrEmpty(self.OptionKey) then
-        return XDataCenter.DrawManager.GetUseDrawInfoByOptionKey(self.OptionKey)
-    else
-        return XDataCenter.DrawManager.GetUseDrawInfoByGroupId(self.Data:GetId())
-    end
+    return self.Base.DrawInfo
 end
 
 return XUiNewGridDrawBanner

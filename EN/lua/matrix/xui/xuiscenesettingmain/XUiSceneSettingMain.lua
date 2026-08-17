@@ -100,7 +100,8 @@ function XUiSceneSettingMain:InitButton()
                 handler(self, self.OnClickDropData), 
                 handler(self, self.OnClickDropPower), 
                 handler(self, self.OnClickDropGyro),
-                handler(self, self.OnClickDropEnvMusic))
+                handler(self, self.OnClickDropEnvMusic),
+                handler(self, self.OnClickDropSceneMusic))
     end
 end
 
@@ -265,6 +266,10 @@ function XUiSceneSettingMain:OnClickDropEnvMusic()
 
     local isOn =  self.PanelDropDownCtrl and self.PanelDropDownCtrl:GetDropMusicIsOn() or false
     sceneSfxControl:SetMuteAndSave(not isOn)
+end
+
+function XUiSceneSettingMain:OnClickDropSceneMusic(index)
+    XMVCA.XMusicScene:UpdateMusicSceneMode(self.CurSelectedBackgroundId, index + 1) --index从0开始
 end
 
 function XUiSceneSettingMain:InitDynamicTable()
@@ -555,6 +560,8 @@ function XUiSceneSettingMain:OnUiSceneLoaded(firstload, scenePath)
     self.FirstLoad = false
     self.LastScenePath = scenePath
     self.SwitchableScene:Play(self.CurSelectedBackgroundId, self.UiSceneInfo.Transform)
+    self.MusicScene:SetForbidSwitch()
+    self.MusicScene:Play(self.CurSelectedBackgroundId, self.UiSceneInfo.Transform)
 end
 
 -- [场景电池相关]
@@ -853,6 +860,8 @@ end
 function XUiSceneSettingMain:OnStart()
     ---@type XUiPanelSwitchableSceneAnim
     self.SwitchableScene = require("XUi/XUiSwitchableScene/XUiPanelSwitchableSceneAnim").New()
+    ---@type XUiPanelMusicScene
+    self.MusicScene = require("XUi/XUiMusicScene/XUiPanelMusicScene").New(self)
     
     local curSceneId = XDataCenter.PhotographManager.GetCurSceneId()
     self.CurSelectedBackgroundId = curSceneId    
@@ -889,10 +898,12 @@ function XUiSceneSettingMain:OnDisable()
     end
     self.LastScenePath = nil
     self.SwitchableScene:Stop()
+    self.MusicScene:Stop()
 end
 
 function XUiSceneSettingMain:OnDestroy()
     self.SwitchableScene:OnDestory()
+    self.MusicScene:OnDestroy()
     XEventManager.RemoveEventListener(XEventId.EVENT_FAVORABILITY_ASSISTLIST_CHANGE, self.RefreshPanelAssistantByServerSync, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_PHOTO_SYNC_CHANGE_TO_MAIN, self.RefreshPanelSceneByServerSync, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_PHOTO_SYNC_CHANGE_TO_MAIN, self.RefreshSyncBtnState, self)

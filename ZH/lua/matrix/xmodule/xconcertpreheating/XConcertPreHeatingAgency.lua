@@ -6,9 +6,6 @@ local XConcertPreHeatingAgency = XClass(XFubenActivityAgency, "XConcertPreHeatin
 
 local LiveState = XEnumConst.ConcertPreHeating.LiveState
 local CHAT_TOAST_SHOW_SECONDS = 24 * 60 * 60
-local LIVE_OPEN_OFFSET_SECONDS = 10 * 60
-local LOCAL_SELECT_STAGE_ID_KEY = "XConcertPreHeatingSelectStageId_"
-local LOCAL_STAGE_NEW_KEY = "XConcertPreHeatingStageNew_"
 
 function XConcertPreHeatingAgency:OnInit()
     self:RegisterActivityAgency()
@@ -85,7 +82,7 @@ end
 
 -- 活动主界面页签列表使用：当前活动配置的关卡顺序。
 function XConcertPreHeatingAgency:GetStageIds()
-    local activityCfg = self:GetCurActivityCfg()
+    local activityCfg = self._Model:GetActivityCfg(self._Model:GetCurActivityId())
     return activityCfg and activityCfg.StageIds or {}
 end
 
@@ -98,31 +95,20 @@ function XConcertPreHeatingAgency:IsStageOpen(stageId)
     return not XTool.IsNumberValid(stageCfg.TimeId) or XFunctionManager.CheckInTimeByTimeId(stageCfg.TimeId)
 end
 
--- 活动主界面倒计时使用：所有关卡是否已完成。
-function XConcertPreHeatingAgency:IsAllStageFinished()
-    local stageIds = self:GetStageIds()
-    if XTool.IsTableEmpty(stageIds) then
-        return false
-    end
-
-    local finishedStageIdMap = self._Model:GetFinishedStageIdMap()
-    for _, stageId in ipairs(stageIds) do
-        if finishedStageIdMap[stageId] ~= true then
-            return false
+-- 活动主界面倒计时使用：主表现关是否已完成。
+function XConcertPreHeatingAgency:IsMainPerformanceStageFinished()
+    for _, stageId in ipairs(self:GetStageIds()) do
+        if self._Model:GetStageCfg(stageId).IsMainPerformance == true then
+            return self._Model:GetFinishedStageIdMap()[stageId] == true
         end
     end
 
-    return true
+    return false
 end
 
--- UiActivityChapter入口使用：当前活动Stage完成进度。
-function XConcertPreHeatingAgency:GetStageFinishProgress()
+-- UiActivityChapter入口 TxtConsumeCount 使用：自定义进度文本。
+function XConcertPreHeatingAgency:ExGetProgressTip()
     local stageIds = self:GetStageIds()
-    local totalCount = #stageIds
-    if totalCount <= 0 then
-        return 0, 0
-    end
-
     local finishedCount = 0
     local finishedStageIdMap = self._Model:GetFinishedStageIdMap()
     for _, stageId in ipairs(stageIds) do
@@ -131,13 +117,7 @@ function XConcertPreHeatingAgency:GetStageFinishProgress()
         end
     end
 
-    return finishedCount, totalCount
-end
-
--- UiActivityChapter入口 TxtConsumeCount 使用：自定义进度文本。
-function XConcertPreHeatingAgency:ExGetProgressTip()
-    local finishedCount, totalCount = self:GetStageFinishProgress()
-    return string.format("%s/%s", finishedCount, totalCount)
+    return finishedCount .. "/" .. #stageIds
 end
 
 -- 活动主界面页签点击使用：保存玩家当前展示关卡。
@@ -203,20 +183,6 @@ end
 function XConcertPreHeatingAgency:GetTaskGroupId()
     local activityCfg = self:GetCurActivityCfg()
     return activityCfg and activityCfg.TaskGroupId or 0
-end
-
--- 客户端杂项配置预留：表暂为空，后续按 Id 读取 Values[]。
-function XConcertPreHeatingAgency:GetClientConfig(configId, index)
-    return self._Model:GetClientConfigValue(configId, index)
-end
-
-function XConcertPreHeatingAgency:GetClientConfigNumber(configId, index)
-    local value = self:GetClientConfig(configId, index)
-    return value and tonumber(value) or nil
-end
-
-function XConcertPreHeatingAgency:GetClientConfigValues(configId)
-    return self._Model:GetClientConfigValues(configId)
 end
 
 -- UiMain入口/活动主界面任务按钮使用：是否有任务奖励可领。
@@ -335,20 +301,17 @@ end
 
 -- 活动主界面 GotoLive 使用：直播前 10 分钟内点亮入口。
 function XConcertPreHeatingAgency:IsLiveSoon(liveState)
-    return self:IsBeforeLive(liveState) and (liveState.LeftTime or 0) <= LIVE_OPEN_OFFSET_SECONDS
+    return self:IsBeforeLive(liveState) and (liveState.LeftTime or 0) <= 10 * 60
 end
 
 -- 活动主界面倒计时文本使用：时分秒。
 function XConcertPreHeatingAgency:GetLiveCountDownText(liveState)
-    local leftTime = liveState and liveState.LeftTime or 0
-    return XUiHelper.GetTime(math.max(leftTime, 0), XUiHelper.TimeFormatType.HOUR_MINUTE_SECOND)
+    return XUiHelper.GetTime(math.max(liveState and liveState.LeftTime or 0, 0), XUiHelper.TimeFormatType.HOUR_MINUTE_SECOND)
 end
 
 -- 活动主界面倒计时文本使用：距音乐会还有 N 天。
 function XConcertPreHeatingAgency:GetLiveDayText(liveState)
-    local leftTime = liveState and liveState.LeftTime or 0
-    local dayCount = math.max(math.ceil(leftTime / 86400), 1)
-    return XUiHelper.GetText("ConcertPreHeatingLiveDayText", dayCount)
+    return XUiHelper.GetText("ConcertPreHeatingLiveDayText", math.max(math.ceil((liveState and liveState.LeftTime or 0) / 86400), 1))
 end
 
 -- 活动主界面未开放 toast 使用：直播开始时间。
@@ -374,8 +337,7 @@ function XConcertPreHeatingAgency:GetChatToastLiveState()
 
     local liveState = self:GetLiveState()
     if self:IsBeforeLive(liveState) then
-        local leftTime = liveState.LeftTime or 0
-        return leftTime <= CHAT_TOAST_SHOW_SECONDS, liveState
+        return (liveState.LeftTime or 0) <= CHAT_TOAST_SHOW_SECONDS, liveState
     end
 
     if self:IsLive(liveState) then
@@ -555,11 +517,11 @@ function XConcertPreHeatingAgency:_GetTaskPreviewRewardItem(taskData)
 end
 
 function XConcertPreHeatingAgency:_GetSelectStageSaveKey()
-    return LOCAL_SELECT_STAGE_ID_KEY .. XPlayer.Id .. "_" .. self:GetCurActivityId()
+    return "XConcertPreHeatingSelectStageId_" .. XPlayer.Id .. "_" .. self:GetCurActivityId()
 end
 
 function XConcertPreHeatingAgency:_GetStageNewSaveKey(stageId)
-    return LOCAL_STAGE_NEW_KEY .. XPlayer.Id .. "_" .. self:GetCurActivityId() .. "_" .. stageId
+    return "XConcertPreHeatingStageNew_" .. XPlayer.Id .. "_" .. self:GetCurActivityId() .. "_" .. stageId
 end
 
 --endregion ----------private end----------

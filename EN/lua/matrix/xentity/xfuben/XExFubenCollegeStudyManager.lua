@@ -1,4 +1,6 @@
 local XExFubenBaseManager = require("XEntity/XFuben/XExFubenBaseManager")
+
+---@class XExFubenCollegeStudyManager:XExFubenBaseManager
 local XExFubenCollegeStudyManager = XClass(XExFubenBaseManager, "XExFubenCollegeStudyManager")
 
 function XExFubenCollegeStudyManager:Ctor(chapterType)

@@ -17,6 +17,7 @@ function XBuffScript10272040:ScriptInit(isGainControl) --初始化
     self.ExtraDmg = 0 --附加伤害
     self.DmgPerProtector = 2 --每点护盾转伤
     self.DmgPerBlock = 7000 --每层格挡转倍率
+    self._blockController = self:GetNpc():GetBlockController()
 end
 
 function XBuffScript10272040:InitEventCallBackRegister()
@@ -47,9 +48,10 @@ function XBuffScript10272040:OnLuaSkillStart(eventArgs)
         self.dmgTriggerProtector = true
         self._proxy:ApplyMagic(self._npcUUID,self._enemyUUID,self.dmgExtraMagicId, 1, 0, 1) --对敌人造成一次附加伤害
     end
-    self.originAttrib3 = self._proxy:GetBuffCountByKind(self._npcUUID,self.BlockBuffId) --取格挡层数
+    self.originAttrib3 = self._proxy:GetBuffStacks(self._npcUUID,self.BlockBuffId) --取格挡层数
     if self.originAttrib3 > 0 then
-        self._proxy:RemoveBuff(self._npcUUID,self.BlockBuffId) --清除格挡
+        self._blockController:RemoveStackBuff(self.originAttrib3)
+        self._blockController:SetDefCountByBuff()
         self.dmgTriggerBlock = true
     end
 end

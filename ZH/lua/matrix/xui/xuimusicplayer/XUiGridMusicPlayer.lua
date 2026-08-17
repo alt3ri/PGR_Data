@@ -12,20 +12,33 @@ function UiGridMusicPlayer:Ctor(ui)
     XTool.InitUiObject(self)
 end
 
-function UiGridMusicPlayer:Refresh(data)
+function UiGridMusicPlayer:Refresh(data, control)
     local template
     if type(data) == "number" then
         template = XMVCA.XAudio:GetAlbumTemplateById(data)
     else
         template = data
     end
-    self.isLock = false
-    if template.ConditionId and template.ConditionId ~= 0 then 
-        local isReach, lockDesc = XConditionManager.CheckCondition(template.ConditionId)
-        self.isLock = not isReach
-        self.LockText.text = lockDesc
+    self.template = template 
+
+    if control then
+        local musicID = template.Id or template.MusicId
+        if musicID then
+            local cdControl = control:GetCDPlayerControl()
+            local useStatus, conditionDesc = cdControl:GetMusicUseStatusAndConditionDesc(musicID)
+            self.isLock = (useStatus == XMVCA.XMusicPlayer.Enum.MusicUseStatus.unlock)
+            self.LockText.text = conditionDesc or ""
+        end
+    else
+        -- 旧逻辑兜底：无 Control 时按 ConditionId 判断
+        self.isLock = false
+        if template.ConditionId and template.ConditionId ~= 0 then 
+            local isReach, lockDesc = XConditionManager.CheckCondition(template.ConditionId)
+            self.isLock = not isReach
+            self.LockText.text = lockDesc
+        end
     end
-    self.template = template -- todo
+
     local coverPath = template.Cover
     self.RImgCoverSelect:SetRawImage(coverPath)
     self.RImgCoverNotSelect:SetRawImage(coverPath)

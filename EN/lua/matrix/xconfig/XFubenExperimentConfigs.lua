@@ -1,3 +1,4 @@
+---@class XFubenExperimentConfigs
 XFubenExperimentConfigs = XFubenExperimentConfigs or {}
 
 local TABLE_TRIAL_GROUP =    "Share/Fuben/Experiment/ExperimentGroup.tab"
@@ -5,12 +6,20 @@ local TABLE_TRIAL_LEVEL =    "Share/Fuben/Experiment/ExperimentLevel.tab"
 local TABLE_TRIAL_BATTLETRIAL = "Client/Fuben/Experiment/BattleExperiment.tab"
 local TABLE_TRIAL_LEVELSKILL = "Client/Fuben/Experiment/ExperimentSkillExplainId.tab"
 local TABLE_TRIAL_REWARD = "Share/Fuben/Experiment/ExperimentReward.tab"
+local TABLE_TRIAL_SCENE_SHOW = "Client/Fuben/Experiment/ExperimentSceneShow.tab"
 
+---@type XTableExperimentGroup[]
 local TrialGroupCfg = {}
+---@type XTableExperimentLevel[]
 local TrialLevelCfg = {}
+---@type XTableBattleExperiment[]
 local BattleTrialCfg = {}
+---@type XTableExperimentSkillExplainId[]
 local TrialSkillExplainCfg = {}
+---@type XTableExperimentReward[]
 local TrialRewardCfg = {}
+---@type XTableExperimentSceneShow[]
+local TrialSceneShow = {}
 
 function XFubenExperimentConfigs.Init()
     TrialGroupCfg = XTableManager.ReadByIntKey(TABLE_TRIAL_GROUP, XTable.XTableExperimentGroup, "Id")
@@ -18,6 +27,7 @@ function XFubenExperimentConfigs.Init()
     BattleTrialCfg = XTableManager.ReadByIntKey(TABLE_TRIAL_BATTLETRIAL, XTable.XTableBattleExperiment, "Id")
     TrialSkillExplainCfg = XTableManager.ReadByIntKey(TABLE_TRIAL_LEVELSKILL, XTable.XTableExperimentSkillExplainId, "Id")
     TrialRewardCfg = XTableManager.ReadByIntKey(TABLE_TRIAL_REWARD, XTable.XTableExperimentReward, "Id")
+    TrialSceneShow = XTableManager.ReadByIntKey(TABLE_TRIAL_SCENE_SHOW, XTable.XTableExperimentSceneShow, "Id")
 end
 
 function XFubenExperimentConfigs.GetTrialGroupCfg()
@@ -59,4 +69,10 @@ end
 
 function XFubenExperimentConfigs.GetTrialStarRewardCfgById(rewardId)
     return TrialRewardCfg[rewardId]
+end
+
+---@return XTableExperimentSceneShow
+---@param levelId number 对应ExperimentLevel表Id
+function XFubenExperimentConfigs.GetSceneShowConfig(levelId)
+    return TrialSceneShow[levelId]
 end

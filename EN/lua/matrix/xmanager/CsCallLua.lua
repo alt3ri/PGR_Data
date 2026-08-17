@@ -23,6 +23,8 @@ local Function = {}
 local Theatre6 = {}
 local Time = {}
 local FashionManager = {}
+local PBRGame = {}
+local MusicPlayer = {}
 
 local TrueString = "True"
 local FalseString = "False"
@@ -696,6 +698,25 @@ function Theatre6.GetBuildTagConfig(buildTagId)
 end
 --endregion
 
+--region 战双兄弟
+
+function PBRGame.GetBgmByStageId(stageId)
+    return XMVCA.XPBRGame:GetBgmIdByStageId(stageId)
+end
+
+function PBRGame.GetBeatOffset()
+    return XMVCA.XPBRGame:GetBgmBeatOffsetMs()
+end
+
+function PBRGame.GetConfigPBRNumber(key)
+    return XMVCA.XPBRGame:GetConfigPBRNumber(key)
+end
+
+function PBRGame.GetClientPBRText(key)
+    return XMVCA.XPBRGame:GetClientPBRText(key)
+end
+--endregion
+
 function Time.GetServerNowTimestamp()
     return XTime.GetServerNowTimestamp()
 end
@@ -704,6 +725,16 @@ function FashionManager.GetRoleDefaultNpcResModelId(characterId)
     local fashionId = XMVCA.XCharacter:GetCharacterTemplate(characterId).DefaultNpcFashtionId
     local resId = XMVCA.XFashion:GetOwnFashionColorResourcesId(fashionId)
     return XMVCA.XCharacter:GetCharResModel(resId)
+end
+
+--- 播放外部背景音乐(CommonSystemBgm)，从Model记录的独立播放索引开始
+function MusicPlayer.PlayCommonSystemBgm()
+    XMVCA.XMusicPlayer:PlayCommonSystemBgm()
+end
+
+--- 停止外部背景音乐(CommonSystemBgm)，当前播放索引已维护在Model内可供下次继续
+function MusicPlayer.StopCommonSystemBgmAndRecord()
+    XMVCA.XMusicPlayer:StopCommonSystemBgmAndRecord()
 end
 
 CsCallLua = {}
@@ -731,4 +762,6 @@ CsCallLua.Movie = Movie
 CsCallLua.Function = Function
 CsCallLua.Theatre6 = Theatre6
 CsCallLua.Time = Time
-CsCallLua.FashionManager = FashionManager
+CsCallLua.FashionManager = FashionManager
+CsCallLua.PBRGame = PBRGame
+CsCallLua.MusicPlayer = MusicPlayer

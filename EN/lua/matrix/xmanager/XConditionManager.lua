@@ -2728,6 +2728,11 @@ PlayerCondition = {
         local isMeet = condition.Params[1] == 1
         return XMVCA.XFangKuai:IsGuideExitFever(isMeet), condition.Desc
     end,
+    [17437] = function(condition)
+        -- 七夕邀请函开包活动 - 检查已开启的信封数量是否达到目标数量
+        local targetCount = condition.Params[1] -- 目标开启的信封数量
+        return XMVCA.XEnvelopeGuessing:CheckOpenEnvelopeCount(targetCount), condition.Desc
+    end,
     
     --region 推箱子
     [64103] = function(condition)  
@@ -3306,28 +3311,28 @@ local CharacterCondition = {
             res1 = carrer1 and XMVCA.XCharacter:GetCharacterCareer(charId) == carrer1
             res2 = carrer2 and XMVCA.XCharacter:GetCharacterCareer(charId) == carrer2
         end
-        return res1 or res2, condition.Desc
-    end,
-    -- 当前选中成员已装备的武器是否存在二阶谐振配置
-    [13124] = function(condition)
-        local characterId = XMVCA.XCharacter:GetCurSelectCharacterId()
-        if not XTool.IsNumberValid(characterId) then
-            return false, condition.Desc
-        end
-
-        local weaponId = XMVCA.XEquip:GetCharacterWeaponId(characterId)
-        if not XTool.IsNumberValid(weaponId) then
-            return false, condition.Desc
-        end
-
-        local weapon = XMVCA.XEquip:GetEquip(weaponId)
-        if not weapon then
-            return false, condition.Desc
-        end
-
-        return weapon:IsHasOverrunLevel2(), condition.Desc
-    end,
-}
+        return res1 or res2, condition.Desc
+    end,
+    -- 当前选中成员已装备的武器是否存在二阶谐振配置
+    [13124] = function(condition)
+        local characterId = XMVCA.XCharacter:GetCurSelectCharacterId()
+        if not XTool.IsNumberValid(characterId) then
+            return false, condition.Desc
+        end
+
+        local weaponId = XMVCA.XEquip:GetCharacterWeaponId(characterId)
+        if not XTool.IsNumberValid(weaponId) then
+            return false, condition.Desc
+        end
+
+        local weapon = XMVCA.XEquip:GetEquip(weaponId)
+        if not weapon then
+            return false, condition.Desc
+        end
+
+        return weapon:IsHasOverrunLevel2(), condition.Desc
+    end,
+}
 
 local TeamCondition = {
     [18101] = function(condition, characterIds)
@@ -3928,26 +3933,26 @@ local EquipCondition = {
     end,
     [31106] = function(condition, suitId)
         -- 套装中不同的意识的数量达到目标数量
-        return XMVCA.XArchive.AwarenessArchiveCom:GetAwarenessCountBySuitId(suitId) >= condition.Params[1], condition.Desc
-    end,
-    -- 指定TemplateId武器的谐振等级是否达到目标等级
-    [31107] = function(condition)
-        local templateId = condition.Params[1]
-        local targetLevel = condition.Params[2]
-        if not XTool.IsNumberValid(templateId) or not XTool.IsNumberValid(targetLevel) then
-            return false, condition.Desc
-        end
-
-        local equips = XMVCA.XEquip:GetEquipsByTemplateId(templateId)
-        for _, equip in pairs(equips) do
-            if equip:GetOverrunLevel() >= targetLevel then
-                return true, condition.Desc
-            end
-        end
-
-        return false, condition.Desc
-    end,
-
+        return XMVCA.XArchive.AwarenessArchiveCom:GetAwarenessCountBySuitId(suitId) >= condition.Params[1], condition.Desc
+    end,
+    -- 指定TemplateId武器的谐振等级是否达到目标等级
+    [31107] = function(condition)
+        local templateId = condition.Params[1]
+        local targetLevel = condition.Params[2]
+        if not XTool.IsNumberValid(templateId) or not XTool.IsNumberValid(targetLevel) then
+            return false, condition.Desc
+        end
+
+        local equips = XMVCA.XEquip:GetEquipsByTemplateId(templateId)
+        for _, equip in pairs(equips) do
+            if equip:GetOverrunLevel() >= targetLevel then
+                return true, condition.Desc
+            end
+        end
+
+        return false, condition.Desc
+    end,
+
     -- 以下为海外svn分支新增
     -- en版本[10501]
 }
@@ -3993,6 +3998,10 @@ function XConditionManager.GetConditionTemplate(id)
         return
     end
     return template
+end
+
+function XConditionManager.GetAllConditionTemplate()
+    return ConditionTemplate
 end
 
 local function LCheckCharacterCondition(template, ...)

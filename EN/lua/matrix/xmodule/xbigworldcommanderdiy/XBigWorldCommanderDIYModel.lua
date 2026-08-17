@@ -395,6 +395,15 @@ function XBigWorldCommanderDIYModel:CheckPartUnlcok(partId)
     return self._UnlockPartMap[partId] or false
 end
 
+function XBigWorldCommanderDIYModel:IsFashionListAllOwned(fashionList)
+    for _, data in pairs(fashionList) do
+        if not self:CheckPartUnlcok(data.PartId) then
+            return false
+        end
+    end
+    return true
+end
+
 function XBigWorldCommanderDIYModel:_WearSuit(typeId, partId, outfitType)
     local partIds = self:GetDlcPlayerFashionPartPartsById(partId)
     local incompatibleParts = self:GetDlcPlayerFashionPartIncompatibleTypeById(partId)

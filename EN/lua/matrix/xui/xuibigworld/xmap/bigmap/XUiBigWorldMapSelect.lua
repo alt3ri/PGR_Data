@@ -66,7 +66,7 @@ function XUiBigWorldMapSelect:_RefreshOptions(pinDatas)
             table.insert(optionList, option)
         end
     end
-    for i = table.nums(optionList) + 1, table.nums(self._OptionCache) do
+    for i = #optionList + 1, #self._OptionCache do
         local option = self._OptionCache[i]
 
         option.gameObject:SetActiveEx(false)

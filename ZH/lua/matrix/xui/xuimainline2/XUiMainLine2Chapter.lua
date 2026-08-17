@@ -45,18 +45,29 @@ function XUiMainLine2Chapter:OnStart(mainId, chapterId, stageId, isOpenStageDeta
         end
     end
     
-    -- 显示未通关的章节
+    -- 显示已解锁且未通关的章节
     if not self.CurChapterId then
         for _, cId in ipairs(self.ChapterIds) do
-            local isPass = self._Control:IsChapterPassed(cId)
-            if not isPass then
+            local isUnlock = self._Control:IsChapterUnlock(cId)
+            if isUnlock and not self._Control:IsChapterPassed(cId) then
                 self.CurChapterId = cId
                 break
             end
         end
     end
 
-    -- 默认/全通关打开第一个章节
+    -- 已解锁章节全通关时，停在最后一个已解锁的章节
+    if not self.CurChapterId then
+        for i = #self.ChapterIds, 1, -1 do
+            local cId = self.ChapterIds[i]
+            if self._Control:IsChapterUnlock(cId) then
+                self.CurChapterId = cId
+                break
+            end
+        end
+    end
+
+    -- 默认打开第一个章节
     if not self.CurChapterId then
         self.CurChapterId = self.ChapterIds[1]
     end
@@ -702,6 +713,9 @@ function XUiMainLine2Chapter:CheckPlayEffect()
 
     -- 自动切换章节特效
     self:CheckAutoSwitchChapter()
+
+    -- 无特效直跳：打完当前章节直接跳到配置指定的目标章节
+    self:CheckAutoSwitchChapterDirect()
 end
 
 -- 检查是否播第一次进入特效
@@ -814,6 +828,47 @@ function XUiMainLine2Chapter:CheckAutoSwitchChapter()
         self:SwitchChapter(self.CurChapterIndex + 1)
         XLuaUiManager.SetMask(false)
     end, DELAY_SWITCH_TIME)
+end
+
+-- 检查是否直接跳转：当前章节全通时，直接跳到配置指定的目标章节（要播特效的用CheckAutoSwitchChapter方法）
+function XUiMainLine2Chapter:CheckAutoSwitchChapterDirect()
+    -- 未配置直跳，不处理
+    if not self._Control:IsClientConfigExit("AutoSwitchChapterDirectTriggerIds") then return end
+    if not self._Control:IsClientConfigExit("AutoSwitchChapterDirectTargetIds") then return end
+
+    -- 已跳过，不重复
+    if self._Control:GetIsAutoSwitchChapterDirect(self.CurChapterId) then return end
+
+    -- 当前章节未全通，不跳
+    if not self._Control:IsChapterPassed(self.CurChapterId) then return end
+
+    -- 主线已全通，不跳
+    if self._Control:IsMainPassed(self.MainId) then return end
+
+    -- 找当前章节在触发组中的下标，取同下标的目标 ChapterId
+    local triggerIds = self._Control:GetClientConfigParams("AutoSwitchChapterDirectTriggerIds")
+    local targetIds = self._Control:GetClientConfigParams("AutoSwitchChapterDirectTargetIds")
+    local targetChapterIdNum
+    for i = 1, #triggerIds do
+        if tonumber(triggerIds[i]) == self.CurChapterId then
+            local target = targetIds[i]
+            targetChapterIdNum = target and tonumber(target)
+            break
+        end
+    end
+    if not targetChapterIdNum then return end
+
+    -- 目标 ChapterId 必须在当前主线章节列表内，避免 SwitchChapter 越界
+    local isContain, targetIndex = table.contains(self.ChapterIds, targetChapterIdNum)
+    if not isContain then return end
+
+    -- 判断目标章节满足开放条件
+    local isUnlock = self._Control:IsChapterUnlock(targetChapterIdNum)
+    if not isUnlock then return end
+
+    -- 标记已跳 + 直接切换
+    self._Control:SetIsAutoSwitchChapterDirect(self.CurChapterId)
+    self:SwitchChapter(targetIndex)
 end
 
 -- 清除延迟截图屏幕定时器

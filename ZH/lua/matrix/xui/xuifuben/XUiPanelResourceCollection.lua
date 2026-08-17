@@ -1,6 +1,7 @@
 local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
 local XUiGridResourceCollection = require("XUi/XUiFuben/ResourceCollection/XUiGridResourceCollection")  -- Chapter列表Grid
 
+---@class XUiPanelResourceCollection:XSignalData
 local XUiPanelResourceCollection = XClass(XSignalData, "XUiPanelResourceCollection")
 -- 资源收集 主界面(副本入口翻新)
 
@@ -21,6 +22,7 @@ function XUiPanelResourceCollection:Ctor(ui, parent, config)
     self:InitData() -- 基础数据，包括加载标签数据，标签对应的管理器数据
     self:InitResourcePanel()
     self:InitDynamicTable() -- 初始化副本入口动态列表
+    self:ShowMultiRewardTag()
 end
 
 function XUiPanelResourceCollection:SetData(firstTagId, secondTagIndex)
@@ -83,6 +85,7 @@ function XUiPanelResourceCollection:InitDynamicTable()
 end
 
 function XUiPanelResourceCollection:InitResourcePanel()
+    ---@type XUiGridResourceCollection
     self.PanelResource = XUiGridResourceCollection.New(self.PanelResource)
     --self.PanelResource:UpdateGrid(self.StrengthUpUseModelView[1], 1)
     if self.PanelResource.BtnEnter then
@@ -208,6 +211,25 @@ function XUiPanelResourceCollection:RefreshAllRedPoints()
     for i = minIndex, minIndex + useNum - 1 do
         local grid = allUseGird[i]
         grid:RefreshRedPoint(self.CharacterFragmentUseModelView[i])
+    end
+end
+
+function XUiPanelResourceCollection:TimeUpdate()
+    self:ShowMultiRewardTag()
+end
+
+function XUiPanelResourceCollection:ShowMultiRewardTag()
+    self.PanelResource:ShowMultiRewardTag(false)
+
+    if XDataCenter.FubenRepeatChallengeManager.IsMultiRewardOpen() then
+        local multiRewardCfg = XDataCenter.FubenRepeatChallengeManager.GetMultiRewardActivityCfg()
+        local chapterViewModel = self.StrengthUpUseModelView and self.StrengthUpUseModelView[1]
+        if chapterViewModel and multiRewardCfg.DailyDungonRuleId == chapterViewModel:GetId() then
+            local countStr = XTool.ConvertChineseNumberString(multiRewardCfg.Multiple)
+            local tagText = XUiHelper.GetText("ActivityRepeatChallengeName", countStr)
+            self.PanelResource:ShowMultiRewardTag(true, tagText)
+            return
+        end
     end
 end
 

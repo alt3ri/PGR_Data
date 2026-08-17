@@ -100,8 +100,8 @@ function XUiPurchaseSceneTip:AutoSetUi()
 
     if self.SwitchBtn == nil then return end
     if  not XTool.IsTableEmpty(XPhotographConfigs.GetBackgroundSwitchDescById(self.SceneId))  then
-        local btn = require("XUi/XUiPurchaseSceneTip/XUiSwitchBtn")
-        self.BtnSwitch = btn.New(self.SwitchBtn, XDataCenter.PhotographManager.GetPreviewState() == XPhotographConfigs.BackGroundState.Full, self.SceneId)
+        local btn = require("XUi/XUiSceneTip/XUiSwitchBtn")
+        self.BtnSwitch = btn.New(self.SwitchBtn, XDataCenter.PhotographManager:IsBtnSwitchFirst(self.SceneId), self.SceneId)
     else
         self.SwitchBtn.gameObject:SetActiveEx(false)
     end
@@ -119,7 +119,7 @@ end
 function XUiPurchaseSceneTip:Refresh()
     self:UpdateBatteryMode()
     self.TogPreview.isOn = false
-    local isFirst = XDataCenter.PhotographManager.GetPreviewState() == XPhotographConfigs.BackGroundState.Full
+    local isFirst = XDataCenter.PhotographManager:IsBtnSwitchFirst(self.SceneId)
     if self.BtnSwitch then self.BtnSwitch:RefreshSelect(isFirst) end
 end
 

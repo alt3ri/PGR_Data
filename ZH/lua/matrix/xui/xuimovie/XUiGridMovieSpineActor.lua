@@ -1,6 +1,7 @@
 ---@class XUiGridMovieSpineActor
-local XUiGridMovieSpineActor = XClass(nil, "XUiGridMovieSpineActor")
+local XUiGridMovieSpineActor = XClass(nil, "XUiGridMovieSpineActor")
 local XUiGridMovieSpineActorV2Controller = require("XUi/XUiMovie/XUiGridMovieSpineActorV2Controller")
+local XUiMovieSpineActorV2LipSyncController = require("XUi/XUiMovie/XUiMovieSpineActorV2LipSyncController")
 local CSUnityObjectDestroy = CS.UnityEngine.Object.Destroy
 local CSXSpineRenderTextureFade = CS.Spine.Unity.Examples.XSpineRenderTextureFade
 local DEFAULT_KOU_SPEED = 1
@@ -24,12 +25,28 @@ function XUiGridMovieSpineActor:Ctor(uiRoot, obj, actorIndex)
 end
 
 function XUiGridMovieSpineActor:OnDestroy()
+    self:DestroyV2LipSyncController()
     if self.V2Controller then
         self.V2Controller:Destroy()
         self.V2Controller = nil
     end
     self:CleanupSpineFadeComponent()
     self.UiRoot = nil
+end
+
+function XUiGridMovieSpineActor:GetOrCreateV2LipSyncController()
+    if not self.V2LipSyncController and self.V2Controller then
+        self.V2LipSyncController = XUiMovieSpineActorV2LipSyncController.New(self, self.V2Controller)
+    end
+
+    return self.V2LipSyncController
+end
+
+function XUiGridMovieSpineActor:DestroyV2LipSyncController()
+    if self.V2LipSyncController then
+        self.V2LipSyncController:Destroy()
+        self.V2LipSyncController = nil
+    end
 end
 
 function XUiGridMovieSpineActor:StopSpineAlphaFade()
@@ -107,7 +124,8 @@ function XUiGridMovieSpineActor:LoadSpine()
         if XMovieConfigs.IsSpineActorV2(self.ActorId) then
             self.IsV2 = true
             self.V2Controller = XUiGridMovieSpineActorV2Controller.New(self, spine, self.ActorId)
-            self.RoleComponent = self.V2Controller and self.V2Controller:GetRoleComponent() or nil
+            -- V2 使用 Animator 轨道控制，不再走 V1 的 SkeletonGraphic 组件。
+            self.RoleComponent = nil
         else
             self.IsV2 = false
             self.RoleComponent = self.SpineUiObject:GetObject("Role", false)
@@ -126,6 +144,7 @@ function XUiGridMovieSpineActor:LoadSpine()
 end
 
 function XUiGridMovieSpineActor:OnSpineRelease()
+    self:DestroyV2LipSyncController()
     if self.V2Controller then
         self.V2Controller:Destroy()
         self.V2Controller = nil
@@ -215,21 +234,37 @@ function XUiGridMovieSpineActor:UpdateKouAnim()
     end
 end
 
--- 播放口型动画
-function XUiGridMovieSpineActor:PlayLipAnim(folderName, cvId)
-    if not self.LipSyncAnimator then
-        self.LipSyncAnimator = self.SpineUiObject.gameObject:AddComponent(typeof(CS.XLipSyncAnimator))
-    end
+-- 播放口型动画
+function XUiGridMovieSpineActor:PlayLipAnim(folderName, cvId)
+    if self.IsV2 then
+        local controller = self:GetOrCreateV2LipSyncController()
+        if controller then
+            local movieId = XDataCenter.MovieManager.GetCurPlayingMovieId()
+            controller:PlayLipAnim(folderName, movieId, cvId)
+        end
+        return
+    end
+
+    if not self.LipSyncAnimator then
+        self.LipSyncAnimator = self.SpineUiObject.gameObject:AddComponent(typeof(CS.XLipSyncAnimator))
+    end
 
     local movieId = XDataCenter.MovieManager.GetCurPlayingMovieId()
     self.LipSyncAnimator:PlayLipAnim(folderName, movieId, cvId)
 end
 
--- 停止嘴型动画
-function XUiGridMovieSpineActor:StopLipAnim()
-    if self.LipSyncAnimator then
-        self.LipSyncAnimator:Stop()
-    end
+-- 停止嘴型动画
+function XUiGridMovieSpineActor:StopLipAnim()
+    if self.IsV2 then
+        if self.V2LipSyncController then
+            self.V2LipSyncController:Stop()
+        end
+        return
+    end
+
+    if self.LipSyncAnimator then
+        self.LipSyncAnimator:Stop()
+    end
 end
 --endregion
 

@@ -31,6 +31,9 @@ function XUiMusicPlayerCDPlayCellView:InitComponents()
     self.DragCdMain:AddEndDragListener(function(eventData) self:_OnCDEndDrag(eventData) end)
     self.DragCdMain:AddPointerClickListener(function(eventData) self:OnCDViewClick() end)
     self._AutoRotation = self.RImgCoverSelect:GetComponent(typeof(CS.AutoRotation_V2))
+    self._AutoRotation.enabled = false
+    self._RotationSpeed = self._AutoRotation.forward_RotationSpeed
+    self._RotateEnable = false
     if self.ParticelSanjiao then
         self._ParticleRenderer = self.ParticelSanjiao:GetComponent(typeof(CS.UnityEngine.ParticleSystemRenderer))
     end
@@ -48,14 +51,20 @@ end
 
 function XUiMusicPlayerCDPlayCellView:OnEnable()
     self:_SetEvent(true)
+    self:_RefreachRotateStatus()
     self:_RefreshColorFX()
+    self:_RefreshPlayFXState()
+    self:_UpdateImmerseTick()
 end
 
 function XUiMusicPlayerCDPlayCellView:OnDisable()
+    self:_RecordCurPlayingCDRotation()
     self:_SetEvent(false)
+    self:_StopImmerseTick()
 end
 
 function XUiMusicPlayerCDPlayCellView:OnDestroy()
+    self:_StopImmerseTick()
 end
 
 ---region event
@@ -74,10 +83,19 @@ function XUiMusicPlayerCDPlayCellView:_SetEvent(flag)
                 self:_RefreshLimitTime(self._MusicID)
             end, 1000, 0)
         end
+        if not self._RotationTickId then
+            self._RotationTickId = XScheduleManager.ScheduleForever(function()
+                self:_TickRotation()
+            end, 0)
+        end
     else
         if self._LimitTimeTimerId then
             XScheduleManager.UnSchedule(self._LimitTimeTimerId)
             self._LimitTimeTimerId = nil
+        end
+        if self._RotationTickId then
+            XScheduleManager.UnSchedule(self._RotationTickId)
+            self._RotationTickId = nil
         end
         self._Control:RemoveEventListener(XMusicPlayerEventId.EVENT_PLAYER_MUSIC_CHANGE, self._OnCurPlayMusicChange, self)
         self._Control:RemoveEventListener(XMusicPlayerEventId.EVENT_PLAYER_PLAY_STATE_CHANGE, self._OnPlayStateChange, self)
@@ -90,20 +108,19 @@ function XUiMusicPlayerCDPlayCellView:_SetEvent(flag)
 end
 
 function XUiMusicPlayerCDPlayCellView:_OnCurPlayMusicChange()
-    self:_RefreachRotateStatus()
     if self._MusicID then
         self:Refresh(self._MusicID)
     end
+    self._RotateEnable = false
     self:_InImmerseHideNoPlayCD()
 end
 
 function XUiMusicPlayerCDPlayCellView:_OnZhenEnableComplete()
-    local cdControl = self._Control:GetCDPlayerControl()
-    local isSelect = cdControl:GetCurPlayingMusicID() == self._MusicID
     self:_RefreachRotateStatus()
 end
 
 function XUiMusicPlayerCDPlayCellView:_OnPlayStateChange(isPlaying)
+    self:_RefreshPlayFXState()
     self:_RefreachRotateStatus()
 end
 
@@ -123,14 +140,14 @@ function XUiMusicPlayerCDPlayCellView:_OnMainViewStatusChange(lastStatus, curSta
     local XMusicPlayerEnum = XMVCA.XMusicPlayer.Enum
 
     if self:_IsCurSelect() then
-        if curStatus == XMusicPlayerEnum.MusicMainUIStatus.immerse
-            and lastStatus ~= XMusicPlayerEnum.MusicMainUIStatus.immersePro then
+    if curStatus == XMusicPlayerEnum.MusicMainUIStatus.immerse
+        and lastStatus ~= XMusicPlayerEnum.MusicMainUIStatus.immersePro then
             self:PlayAnimation("Enable")
         end
     end
 
     self:_InImmerseHideNoPlayCD()
-
+    self:_UpdateImmerseTick()
 end
 
 function XUiMusicPlayerCDPlayCellView:_OnColorStyleChange()
@@ -140,6 +157,26 @@ end
 function XUiMusicPlayerCDPlayCellView:_OnColorMaterialLoaded()
     self:_RefreshColorFX()
 end
+
+function XUiMusicPlayerCDPlayCellView:_TickRotation()
+    if not self._RotateEnable or not self._MusicID then
+        return
+    end
+
+    local cdControl = self._Control:GetCDPlayerControl()
+    if self._MusicID ~= cdControl:GetCurPlayingMusicID()
+            or not self._Control:GetCDAutoRotateEnabled() then
+        return
+    end
+
+    local angle = (cdControl:GetCurPlayingCDRotationAngle() or 0)
+            + CS.UnityEngine.Time.deltaTime * self._RotationSpeed
+    angle = angle % 360
+    self:_SetCurPlayingCDRotation(angle)
+    self:_WriteCurPlayingCDRotationAngle(angle)
+end
+
+
 ---endregion
 
 ---region ui event
@@ -203,9 +240,11 @@ end
 ---endregion
 
 ---由动态列表回调，传入索引和父View
-function XUiMusicPlayerCDPlayCellView:UpdateCDCellData(index, parentView)
+function XUiMusicPlayerCDPlayCellView:UpdateCDCellData(index, parentView, visualIndex)
+    self:_RecordCurPlayingCDRotation()
     self._ParentView = parentView
     self._Index = index
+    self._VisualIndex = visualIndex
     local rawList = parentView._Control:GetCDPlayerControl():GetCurRawMusicIdList()
     self._MusicID = rawList and rawList[index]
     self:Refresh(self._MusicID)
@@ -226,6 +265,9 @@ function XUiMusicPlayerCDPlayCellView:Refresh(musicID)
     local curMusicStatus = cdControl:GetMusicUseStatusAndConditionDesc(musicID)
     local isSelect = cdControl:GetCurPlayingMusicID() == musicID
     local isLock = curMusicStatus == XMusicPlayerEnum.MusicUseStatus.unlock
+    if isSelect then
+        self:_SetCurPlayingCDRotation()
+    end
 
     self.GoCDSelectLock.gameObject:SetActive(false)
     self.GoCDSelect.gameObject:SetActive(false)
@@ -262,7 +304,8 @@ function XUiMusicPlayerCDPlayCellView:Refresh(musicID)
         self:_InImmerseHideNoPlayCD()
     end, 0)
 
-    self:_RefreachRotateStatus() 
+    self:_RefreachRotateStatus()
+    self:_RefreshPlayFXState()
     self:_RefreshLimitTime(musicID)
 end
 
@@ -308,17 +351,40 @@ function XUiMusicPlayerCDPlayCellView:_ISInImmerse()
         or curStatus == XMusicPlayerEnum.MusicMainUIStatus.immersePro
 end
 
+---沉浸模式期间持续tick，每帧检测并更新显隐
+function XUiMusicPlayerCDPlayCellView:_UpdateImmerseTick()
+    if not self._ParentView then return end
+    if self:_ISInImmerse() then
+        if not self._ImmerseTickId then
+            self._ImmerseTickId = XScheduleManager.ScheduleForever(function()
+                self:_InImmerseHideNoPlayCD()
+            end, 0)
+        end
+    else
+        self:_StopImmerseTick()
+    end
+end
+
+function XUiMusicPlayerCDPlayCellView:_StopImmerseTick()
+    if self._ImmerseTickId then
+        XScheduleManager.UnSchedule(self._ImmerseTickId)
+        self._ImmerseTickId = nil
+    end
+end
+
 
 function XUiMusicPlayerCDPlayCellView:_InImmerseHideNoPlayCD()
-    local XMusicPlayerEnum = XMVCA.XMusicPlayer.Enum
-    local cdControl = self._Control:GetCDPlayerControl()
-    local isSelect = cdControl:GetCurPlayingMusicID() == self._MusicID
+    if not self._ParentView then return end
 
     if self:_ISInImmerse() then
-        if isSelect then
-            self.GameObject:SetActive(true)
-        else
-            self.GameObject:SetActive(false)
+        -- 沉浸模式只显示中心 cell，不能仅靠 ID 判断（Loop 模式下同一首歌会有多个 cell）
+        -- math.floor 处理 tween 期间 StartIndex 为浮点数的情况
+        local startIndex = math.floor(self._ParentView._CDListTable.Imp.StartIndex + 0.5)
+        local isCenter = self._VisualIndex == startIndex
+        local isChangedFromInactive = not self.GameObject.activeSelf and isCenter
+        self.GameObject:SetActive(isCenter)
+        if isChangedFromInactive then -- 因为动画 只有在active才能播。我们切换状态又强依赖这个
+            self:PlayAnimation("Chengjin")
         end
     else
         self.GameObject:SetActive(true)
@@ -331,12 +397,6 @@ function XUiMusicPlayerCDPlayCellView:_IsCurSelect()
     local isSelect = cdControl:GetCurPlayingMusicID() == self._MusicID
     return  isSelect
 end
-
-function XUiMusicPlayerCDPlayCellView:_RefreachRotateStatus()
-    local needRotate = self:_IsCurSelect() and self._Control:GetCDAutoRotateEnabled()
-    self._AutoRotation.enabled = needRotate
-end
-
 
 function XUiMusicPlayerCDPlayCellView:_RefreshColorFX()
     local UiMaterialKey = XMVCA.XMusicPlayer.Enum.UiMaterialKey
@@ -367,5 +427,38 @@ function XUiMusicPlayerCDPlayCellView:_RefreshColorFX()
     end
 end
 
+function XUiMusicPlayerCDPlayCellView:_RefreshPlayFXState()
+    local  isPlaying = self._Control:GetCDPlayerControl():IsPlaying()
+    self._ParticleRenderer.enabled = isPlaying
+end
+
+function XUiMusicPlayerCDPlayCellView:_RefreachRotateStatus()
+    local cdControl = self._Control:GetCDPlayerControl()
+    local isSelect = self._MusicID == cdControl:GetCurPlayingMusicID()
+    self._RotateEnable = self._Control:GetCDAutoRotateEnabled() and isSelect
+end
+
+function XUiMusicPlayerCDPlayCellView:_SetCurPlayingCDRotation(angle)
+    if angle == nil then
+        angle = self._Control:GetCDPlayerControl():GetCurPlayingCDRotationAngle() or 0
+    end
+    self._AutoRotation.transform:SetLocalRotation(0, 0, angle)
+end
+
+function XUiMusicPlayerCDPlayCellView:_WriteCurPlayingCDRotationAngle(angle)
+    self._Control:GetCDPlayerControl():SetCurPlayingCDRotationAngle(angle)
+end
+
+function XUiMusicPlayerCDPlayCellView:_RecordCurPlayingCDRotation()
+    if not self._AutoRotation or not self._MusicID then
+        return
+    end
+
+    local cdControl = self._Control:GetCDPlayerControl()
+    if self._MusicID == cdControl:GetCurPlayingMusicID() then
+        local _, _, angle = self._AutoRotation.transform:GetLocalRotation()
+        self:_WriteCurPlayingCDRotationAngle(angle)
+    end
+end
 
 return XUiMusicPlayerCDPlayCellView
