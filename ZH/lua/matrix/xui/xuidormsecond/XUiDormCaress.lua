@@ -155,7 +155,7 @@ function XUiDormCaress:Update()
     local point = self:GetPiston()
     if not XTool.UObjIsNil(self.Camera) and point then
         local ray = self.Camera:ScreenPointToRay(point)
-        local layerMask = CS.UnityEngine.LayerMask.GetMask("HomeCharacter")
+        local layerMask = CS.UnityEngine.LayerMask.GetMask(LayerMaskName.Npc)
         if layerMask then
             local rect, hit = ray:RayCast(layerMask)
             if rect and hit and self.CurSelectCharacter.Transform == hit.transform.parent.transform then

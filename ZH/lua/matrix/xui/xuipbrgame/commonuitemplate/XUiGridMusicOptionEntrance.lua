@@ -26,7 +26,9 @@ function XUiGridMusicOptionEntrance:AddEventListener(callback)
 end
 
 function XUiGridMusicOptionEntrance:RefreshBgmName(stageId)
+    self._TextScrolling:Reset()
     self.GridBtn:SetNameByGroup(0, self._Control.MusicControl:GetCurrentSelectBgmName(stageId))
+    self._TextScrolling:Play()
 end
 
 return XUiGridMusicOptionEntrance

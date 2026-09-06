@@ -67,7 +67,7 @@ end
 function XTemple2Model:GetStageGameConfig(stageId, isEditor)
     if XMain.IsWindowsEditor then
         local fullPath = self:GetStageGamePath(stageId, true)
-        if not XTool.IsFileExists(fullPath) then
+        if not XTool.FileExists(fullPath) then
             XLog.Debug("[XTemple2Model] 文件尚不存在:", fullPath)
             return false
         end
@@ -111,7 +111,7 @@ end
 function XTemple2Model:GetAllBlocks()
     if XMain.IsWindowsEditor then
         local fullPath = self:EditorGetBlockPath()
-        if not XTool.IsFileExists(fullPath) then
+        if not XTool.FileExists(fullPath) then
             XLog.Debug("[XTemple2Model] 文件尚不存在:", fullPath)
             return false
         end

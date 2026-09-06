@@ -119,7 +119,7 @@ function XRLGuildDormRole:LoadModel(root)
     -- 设置动画组件
     self.Animator = self.GameObject:GetComponent(typeof(CS.UnityEngine.Animator))
     --层级
-    self.GameObject:SetLayerRecursively(CS.UnityEngine.LayerMask.NameToLayer(HomeSceneLayerMask.HomeCharacter))
+    self.GameObject:SetLayerRecursively(CS.UnityEngine.LayerMask.NameToLayer(LayerMaskName.Npc))
     --阴影 开关
     local isSelfPlayer = self:CheckIsSelfPlayer()
     if isSelfPlayer and CS.XMaterialContainerHelper.GlobalShadowVolumeEnable() then

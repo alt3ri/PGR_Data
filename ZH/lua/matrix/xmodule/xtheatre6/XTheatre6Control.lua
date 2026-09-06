@@ -794,37 +794,39 @@ end
 
 function XTheatre6Control:GetLatetStoryUpdateTime()
     local values = self._Model:GetClientConfigValues("StoryUpdateTime")
-    local latestUpdateTime = 0
-
-    if #values ~= 0 then
-        latestUpdateTime = XTime.ParseToTimestamp(values[#values])
+    if XTool.IsTableEmpty(values) then
+        return nil
     end
-
-    return latestUpdateTime
+    return XTime.ParseToTimestamp(values[#values])
 end
 
 function XTheatre6Control:CheckHasNewContent()
-    local currentTime = XTime.GetServerNowTimestamp()
     local latestUpdateTime = self:GetLatetStoryUpdateTime()
-
+    if not latestUpdateTime then
+        return false
+    end
+    local currentTime = XTime.GetServerNowTimestamp()
     return currentTime >= latestUpdateTime
 end
 
 function XTheatre6Control:CheckShowUpdatePopup()
-    local currentTime = XTime.GetServerNowTimestamp()
     local latestUpdateTime = self:GetLatetStoryUpdateTime()
+    if not latestUpdateTime then
+        return false
+    end
+    local currentTime = XTime.GetServerNowTimestamp()
     local localTime = self._Model:GetNewContentShowed()
-
     return currentTime >= latestUpdateTime and localTime ~= latestUpdateTime
 end
 
 function XTheatre6Control:ShowUpdatePopup()
     local latestUpdateTime = self:GetLatetStoryUpdateTime()
-
+    if not latestUpdateTime then
+        return
+    end
     if XTool.IsNumberValid(latestUpdateTime) then
         self._Model:SetNewContentShowed(latestUpdateTime)
     end
-
     XLuaUiManager.Open("UiTheatre6PopupNewContent")
 end
 

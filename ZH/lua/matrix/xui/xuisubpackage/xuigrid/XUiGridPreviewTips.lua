@@ -11,6 +11,8 @@ function XUiGridPreviewTips:Refresh(data)
     if not data then return end
     self.Data = data
 
+    self._SizeInfo = XMVCA.XSubPackage:CreateResListSizeInfo(data.ResIds)
+
     -- 选项名称
     if self.TxtTitle then
         self.TxtTitle.text = data.OptionName or ""
@@ -21,13 +23,9 @@ function XUiGridPreviewTips:Refresh(data)
         self.TxtTips.text = data.Desc or ""
     end
 
-    -- 资源大小（跨ResId去重，与Grid/下载器大小一致）
+    -- 资源大小（按物理文件名去重）
     if self.TxtNum then
-        local resIdTable = {}
-        for _, resId in ipairs(data.ResIds or {}) do
-            resIdTable[resId] = true
-        end
-        local totalSize = XMVCA.XSubPackage:GetResListTotalSize(resIdTable)
+        local totalSize = self._SizeInfo.TotalSize
         local num, unit = XMVCA.XSubPackage:TransformSize(totalSize)
         self.TxtNum.text = string.format("%d%s", num, unit)
     end
@@ -36,7 +34,7 @@ function XUiGridPreviewTips:Refresh(data)
     self:UpdateSelectState(data.IsSelected)
 
     -- 聚合进度条刷新
-    self:RefreshAggregatedProgress(data)
+    self:RefreshAggregatedProgress()
 end
 
 function XUiGridPreviewTips:UpdateSelectState(isSelected)
@@ -52,21 +50,9 @@ function XUiGridPreviewTips:OnToggleSelectClick()
     end
 end
 
-function XUiGridPreviewTips:RefreshAggregatedProgress(data)
-    if not data or XTool.IsTableEmpty(data.ResIds) then
-        return
-    end
-
-    local totalSize = 0
-    local downloadedSize = 0
-    for _, resId in ipairs(data.ResIds) do
-        local resItem = XMVCA.XSubPackage:GetResourceItem(resId)
-        if resItem then
-            totalSize = totalSize + resItem:GetTotalSize()
-            downloadedSize = downloadedSize + resItem:GetDownloadSize()
-        end
-    end
-
+function XUiGridPreviewTips:RefreshAggregatedProgress()
+    local totalSize = self._SizeInfo.TotalSize
+    local downloadedSize = XMVCA.XSubPackage:GetSizeInfoDownloadSize(self._SizeInfo)
     local progress = totalSize > 0 and (downloadedSize / totalSize) or 0
     if self.ImgBar then
         self.ImgBar.fillAmount = progress

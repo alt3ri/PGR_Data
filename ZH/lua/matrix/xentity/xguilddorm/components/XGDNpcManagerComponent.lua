@@ -69,7 +69,7 @@ function XGDNpcManagerComponent:CreateRLNpc(npc)
         XLog.Error("npc找不到配置的出生点" .. refreshConfig.InitPos)
     end
     rlRole:DisableColliders(true)
-    rlRole:SetCollidersLayer(CS.UnityEngine.LayerMask.NameToLayer(HomeSceneLayerMask.Device))
+    rlRole:SetCollidersLayer(CS.UnityEngine.LayerMask.NameToLayer(LayerMaskName.SceneObject))
     rlRole:SetCollidersRadius(refreshConfig.ColliderRadius)
     
     local info = XGuildDormInteractInfo.New()

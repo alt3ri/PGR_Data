@@ -51,21 +51,23 @@ XCloudGameManagerCreator = function()
         CS.XInputKeyboard.ControlCameraByDragLocalCache = true
     end
 
-    -- 云游戏，注册陀螺仪数据监听回调 参数默认*100转整型，使用时需要自己/100 
-    -- public class DeviceMotionAttitude 
+    -- 云游戏，添加陀螺仪数据监听回调 参数默认*100转整型，使用时需要自己/100
+    -- 注意：Remove 依赖委托相等性，Add/Remove 必须传入同一个函数对象（先用 handler 创建好并缓存复用）
+    -- 监听者从无到有时自动开启云端数据推送，清空后自动关闭，无需业务手动开关
+    -- public class DeviceMotionAttitude
     -- {
     --     public int pitch;// 俯仰角：设备前后倾斜的角度，范围 -π/2 到 π/2。向前倾斜为正，向后倾斜为负
     --     public int roll;// 横滚角：设备左右倾斜的角度，范围 -π 到 π。向右倾斜为正，向左倾斜为负
     --     public int yaw;// 偏航角：设备水平旋转的角度，范围 -π 到 π。逆时针旋转为正，顺时针旋转为负
     -- }
-    function XCloudGameManager.SeteMotionListeningAction(action)
+    function XCloudGameManager.AddMotionListener(action)
         -- Action<DeviceMotionAttitude>
-        CS.XWLinkAgent.SetMotionChangeAction(action)
+        CS.XWLinkAgent.AddMotionListener(action)
     end
 
-    -- 云游戏，开启陀螺仪数据监听，true开启，false关闭
-    function XCloudGameManager.EnableMotionListening(enable)
-        CS.XWLinkAgent.SetMotionListening(enable)
+    -- 云游戏，移除陀螺仪数据监听回调，必须传入与 Add 时同一个函数对象
+    function XCloudGameManager.RemoveMotionListener(action)
+        CS.XWLinkAgent.RemoveMotionListener(action)
     end
 
     XCloudGameManager.StartListTextInput()

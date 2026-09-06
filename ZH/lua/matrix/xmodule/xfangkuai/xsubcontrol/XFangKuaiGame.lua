@@ -78,7 +78,8 @@ function XFangKuaiGame:StartCreateInitBlock()
     self:AsynInitBlockOperate()
 end
 
-function XFangKuaiGame:StartRound(curBlockGridY)
+---@param blockData XFangKuaiBlock
+function XFangKuaiGame:StartRound(blockData, direction)
     self._HasCreated = false
     self._FevActionList = {}
     self._MainControl:ResetCombo()
@@ -86,10 +87,14 @@ function XFangKuaiGame:StartRound(curBlockGridY)
     if self._MainControl:GetCurRound(self._ChapterId) == 0 then
         self._StageData:ReduceDropBlockCd()
     end
+    local curBlockGridY = blockData:GetHeadGrid().y
     if self._MainControl:IsFever() then
         self:AddFevAction(FeverState.ForbidUp)
         self:AddFevAction(FeverState.OperateUp)
         self:AddFevAction(FeverState.UltimaSlash, curBlockGridY)
+    elseif blockData:IsKnife() then
+        --刀锋方块移动时会朝移动方向触发一次消除
+        self:AddDirClearOperate(blockData, curBlockGridY, direction)
     end
     self:AsynStartOperate(curBlockGridY)
 end
@@ -138,6 +143,8 @@ end
 function XFangKuaiGame:StartUseExchangeItem(index, kind, blockData1, blockData2)
     if kind == XEnumConst.FangKuai.ItemType.TwoLineExChange then
         self._MainControl:ExecuteTwoLineExChange(index, blockData1, blockData2)
+    elseif kind == XEnumConst.FangKuai.ItemType.TwoLineRemove then
+        self._MainControl:ExecuteTwoLineRemove(index, blockData1, blockData2)
     elseif kind == XEnumConst.FangKuai.ItemType.AdjacentExchange then
         self._MainControl:ExecuteAdjacentExchange(index, blockData1, blockData2)
     end
@@ -149,8 +156,8 @@ function XFangKuaiGame:StartAddRoundItem(index, params)
     self._MainControl:FangKuaiStageSyncOperatorRequest(self._StageId)
 end
 
-function XFangKuaiGame:StartUseFrozenRoundItem(index)
-    self._MainControl:ExecuteFrozen(index, self._ChapterId)
+function XFangKuaiGame:StartUseFrozenRoundItem(index, isPlus)
+    self._MainControl:ExecuteFrozen(index, self._ChapterId, isPlus)
     self._MainControl:FangKuaiStageSyncOperatorRequest(self._StageId)
 end
 
@@ -159,10 +166,10 @@ function XFangKuaiGame:StartUseAlignmentItem(index, gridY, direction)
     self:StartUseItem()
 end
 
-function XFangKuaiGame:StartUseConvertionItem(index)
-    local blockData = self._MainControl:ExecuteConvertion(index, self._StageId)
+function XFangKuaiGame:StartUseConvertionItem(index, isPlus)
+    local bossBlocks = self._MainControl:ExecuteConvertion(index, self._StageId, isPlus)
     self._MainControl:FangKuaiStageSyncOperatorRequest(self._StageId)
-    return blockData
+    return bossBlocks
 end
 
 function XFangKuaiGame:StartUseItem()
@@ -229,6 +236,26 @@ end
 function XFangKuaiGame:AsynStartOperate(curBlockGridY)
     RunAsyn(function()
         self:XPCall(function()
+            -- 刀锋方块同向消除
+            -- 首席受击次数在斩击时被消耗 所以要在斩击前检测 斩击表现结束后再触发首席效果
+            local chiefBlockData = self:GetDirClearChiefBlock()
+            if not self:AsynRunOperate(OperateMode.DirClear) then
+                return
+            end
+            -- 斩击触发首席最后一次消除 执行首席的半屏消除
+            if chiefBlockData then
+                if not self:AsynTriggerChiefEffect(chiefBlockData) then
+                    return
+                end
+                if not self:AsynRunOperate(OperateMode.Clear) then
+                    return
+                end
+                if not self:AsynRunOperate(OperateMode.Create) then -- 分裂BOSS消除后会生成小方块
+                    return
+                end
+                self:AsynStartOperate()
+                return
+            end
             -- 预览线
             self:CheckWaitFevLine()
             if self:ExecuteFevAction(FeverState.ExitDown) then
@@ -396,10 +423,29 @@ function XFangKuaiGame:AsynUseItemOperate()
             -- 执行道具操作
             if not self._HasApplyItem then
                 local isBlockRemove = self:IsBlockRemoveInCurOperate()
-                self:AsynRunAllOperate()
+                -- 首席受击次数在道具消除时被消耗 所以要在消除前检测 消除表现结束后再触发首席效果
+                local chiefBlockData = self:GetItemClearChiefBlock()
+                if not self:AsynRunAllOperate() then
+                    return
+                end
                 -- 有方块消除则Combo+1
                 if isBlockRemove then
                     self._MainControl:AddCombo()
+                end
+                -- 消除类道具触发首席最后一次消除 执行首席的半屏消除
+                if chiefBlockData then
+                    self._HasApplyItem = true
+                    if not self:AsynTriggerChiefEffect(chiefBlockData) then
+                        return
+                    end
+                    if not self:AsynRunOperate(OperateMode.Clear) then
+                        return
+                    end
+                    if not self:AsynRunOperate(OperateMode.Create) then -- 分裂BOSS消除后会生成小方块
+                        return
+                    end
+                    self:AsynUseItemOperate()
+                    return
                 end
             end
             self._HasApplyItem = true
@@ -613,8 +659,19 @@ function XFangKuaiGame:AddClearOperate(gridY, op)
     end
 end
 
+---@param blockData XFangKuaiBlock
+function XFangKuaiGame:AddDirClearOperate(blockData, curBlockGridY, direction)
+    if not direction then
+        return
+    end
+    local isMoveLeft = direction == XEnumConst.FangKuai.DirectionType.Left
+    local leftPos = isMoveLeft and 0 or blockData:GetHeadGrid().x
+    local rightPos = isMoveLeft and blockData:GetTailGrid().x or blockData:GetMaxWidth()
+    self:AddOperate(OperateMode.DirClear, { curBlockGridY, leftPos, rightPos })
+end
+
 function XFangKuaiGame:RunOperate(operate)
-    local clearLineDict = {}
+    local clearLineArgsDict = {}
     local maxOperateTime = 0
     local args = self._OperateMap[operate]
     if args then
@@ -625,9 +682,11 @@ function XFangKuaiGame:RunOperate(operate)
             elseif operate == OperateMode.MoveX then
                 operateTime = self:DoMoveX(arg[1], arg[2], arg[3])
             elseif operate == OperateMode.Clear then
-                local gridY = arg[1]
-                clearLineDict[gridY] = arg[2]
-                operateTime = self:DoClear(gridY, i, #args)
+                table.insert(clearLineArgsDict, arg)
+                operateTime = self:DoClear(arg[1], i, #args)
+            elseif operate == OperateMode.DirClear then
+                table.insert(clearLineArgsDict, arg)
+                operateTime = self:DoClear(arg[1], i, 0, arg[2], arg[3]) --不产生combo、不显示斩击特效
             elseif operate == OperateMode.Create then
                 operateTime = self:DoCreate(arg[1])
             elseif operate == OperateMode.Wane then
@@ -641,9 +700,9 @@ function XFangKuaiGame:RunOperate(operate)
             end
             maxOperateTime = math.max(maxOperateTime, operateTime)
         end
-        if operate == OperateMode.Clear then
+        if operate == OperateMode.Clear or operate == OperateMode.DirClear then
             -- 只是为了播特效
-            XEventManager.DispatchEvent(XEventId.EVENT_FANGKUAI_CLEAR, clearLineDict)
+            XEventManager.DispatchEvent(XEventId.EVENT_FANGKUAI_CLEAR, operate, clearLineArgsDict)
         end
         self:GetDebugOperateLog(operate, args, maxOperateTime)
         self._OperateMap[operate] = {}
@@ -926,16 +985,76 @@ end
 function XFangKuaiGame:CheckClearChiefBlock(girdY)
     -- 检查是否消除了首席方块
     local blockDatas = self._LayerBlocks[girdY]
+    if XTool.IsTableEmpty(blockDatas) then
+        return
+    end
     for blockData, _ in pairs(blockDatas) do
         if blockData:IsChief() and blockData:GetRemainHitTimes() == 1 then
-            -- 首席弹框
-            XEventManager.DispatchEvent(XEventId.EVENT_FANGKUAI_CHIEF_TIP)
-            asynWaitSecond(self._CommandantStopTime)
-            -- 触发首席方块效果
-            self._MainControl:ExecuteChief(blockData, self._MaxY)
+            self:AsynTriggerChiefEffect(blockData)
             return
         end
     end
+end
+
+---首席弹框停顿后触发首席方块效果 需在协程内调用
+---@param blockData XFangKuaiBlock
+---@return boolean 停顿后游戏是否仍在进行中
+function XFangKuaiGame:AsynTriggerChiefEffect(blockData)
+    -- 首席弹框
+    XEventManager.DispatchEvent(XEventId.EVENT_FANGKUAI_CHIEF_TIP)
+    asynWaitSecond(self._CommandantStopTime)
+    if not self:IsProceedAsyn() then
+        return false
+    end
+    -- 触发首席方块效果
+    self._MainControl:ExecuteChief(blockData, self._MaxY)
+    return true
+end
+
+---获取刀锋斩击范围内将被消除最后一次的首席方块（消除条件与DoClear的DirClear一致 首席需完整处于斩击范围内）
+---@return XFangKuaiBlock
+function XFangKuaiGame:GetDirClearChiefBlock()
+    local args = self._OperateMap[OperateMode.DirClear]
+    if XTool.IsTableEmpty(args) then
+        return nil
+    end
+    for _, arg in ipairs(args) do
+        local gridY, left, right = arg[1], arg[2], arg[3]
+        local blockDatas = self._LayerBlocks[gridY]
+        if not XTool.IsTableEmpty(blockDatas) then
+            for blockData, _ in pairs(blockDatas) do
+                if blockData:IsChief() and blockData:GetRemainHitTimes() == 1 and blockData:IsInSide(left, right) then
+                    return blockData
+                end
+            end
+        end
+    end
+    return nil
+end
+
+---获取消除类道具（单行消除/双行消除）登记的消除行中将被消除最后一次的首席方块
+---@return XFangKuaiBlock
+function XFangKuaiGame:GetItemClearChiefBlock()
+    local args = self._OperateMap[OperateMode.Clear]
+    if XTool.IsTableEmpty(args) then
+        return nil
+    end
+    ---@type XFangKuaiBlock
+    local chiefBlockData
+    for _, arg in ipairs(args) do
+        local blockDatas = self._LayerBlocks[arg[1]]
+        if not XTool.IsTableEmpty(blockDatas) then
+            for blockData, _ in pairs(blockDatas) do
+                if blockData:IsChief() and blockData:GetRemainHitTimes() == 1 then
+                    -- 双行消除可能同时消除两个首席 取最低行的首席 保证半屏消除范围最大
+                    if not chiefBlockData or blockData:GetHeadGrid().y < chiefBlockData:GetHeadGrid().y then
+                        chiefBlockData = blockData
+                    end
+                end
+            end
+        end
+    end
+    return chiefBlockData
 end
 
 ---狂热状态结束时 方块下跌到两行 || 进入狂热状态时 如果行数超过8行 则下压到第8行
@@ -994,7 +1113,7 @@ function XFangKuaiGame:DoMoveX(blockData, gridX)
     return time
 end
 
-function XFangKuaiGame:DoClear(gridY, index, len)
+function XFangKuaiGame:DoClear(gridY, index, len, left, right)
     if len > 1 and index == 1 then
         self._MainControl:AddCombo(len - 1)
     end
@@ -1006,7 +1125,9 @@ function XFangKuaiGame:DoClear(gridY, index, len)
     ---@type XFangKuaiBlock[]
     local sortData = {}
     for blockData, _ in pairs(blockDatas) do
-        table.insert(sortData, blockData)
+        if not left or not right or blockData:IsInSide(left, right) then
+            table.insert(sortData, blockData)
+        end
     end
     -- 如果一行有多个道具 而道具容量即将满了 则只有排序最靠前的会拿到
     table.sort(sortData, function(a, b)
@@ -1030,6 +1151,8 @@ function XFangKuaiGame:DoClear(gridY, index, len)
                     self:FissionBlock(blockData)
                 elseif bossType == XEnumConst.FangKuai.BlockType.Chief then
                     self:HitBlock(blockData)
+                elseif bossType == XEnumConst.FangKuai.BlockType.Knife then
+                    self:HitBlock(blockData)
                 end
             else
                 self._MainControl:AddScore(blockData)
@@ -1038,7 +1161,7 @@ function XFangKuaiGame:DoClear(gridY, index, len)
         end
     end
     self:ShowDebugScore(sortData, gridY, tempDebugScore)
-    XEventManager.DispatchEvent(XEventId.EVENT_FANGKUAI_UPDATESCORE)
+    XEventManager.DispatchEvent(XEventId.EVENT_FANGKUAI_UPDATESCORE, XTool.IsNumberValid(len))
     if index == len then
         -- 一次消除2行 分数=2行方块总分×combo2，而不是 第1行方块总分×combo1+第2行方块总分×combo2
         self._MainControl:AddCombo()
@@ -1070,19 +1193,32 @@ end
 function XFangKuaiGame:DoRemove(blockData, isImmediately)
     self:SignGridOccupyAuto(blockData, true)
     local itemId = blockData:GetItemId()
+    local isBoss = blockData:IsBoss()
+    if isBoss then
+        --积累强化道具的次数
+        self._MainControl:AddEnhanceCount()
+    end
     -- 添加道具 使用以大化小造成的消除不需要飘道具（道具转移到第一个小方块上了）
+    local itemIdx, isEnhanced
     if XTool.IsNumberValid(itemId) and not isImmediately then
-        local itemIdx
         local isFull = true
         if not self._MainControl:IsItemFull() then
             isFull = false
-            itemIdx = self._MainControl:AddItemId(itemId)
+            itemIdx, isEnhanced = self._MainControl:AddItemId(itemId)
         else
             self._MainControl:AddFevValueByItem()
         end
         XEventManager.DispatchEvent(XEventId.EVENT_FANGKUAI_ADDITEM, itemIdx, blockData, isFull)
     end
-    XEventManager.DispatchEvent(XEventId.EVENT_FANGKUAI_REMOVE, blockData, isImmediately)
+    --检查是否有剩余强化次数，存在剩余次数则强化背包里的道具
+    if isBoss then
+        local enhancedItemIdx = self._MainControl:TransformItems()
+        if XTool.IsNumberValid(enhancedItemIdx) then
+            itemIdx = enhancedItemIdx
+            isEnhanced = true
+        end
+    end
+    XEventManager.DispatchEvent(XEventId.EVENT_FANGKUAI_REMOVE, blockData, isImmediately, itemIdx, isEnhanced)
     return 0
 end
 

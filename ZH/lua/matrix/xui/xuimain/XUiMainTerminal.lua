@@ -361,6 +361,10 @@ function XUiMainTerminal:InitAudioCueEventListener()
 end
 
 function XUiMainTerminal:OnAudioCueEffectPlay(audioInfo)
+    if not XMVCA.XMusicPlayer:CheckMainUiEasterEggOpen() then
+        return
+    end
+
     if not audioInfo then
         return
     end

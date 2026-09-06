@@ -691,7 +691,7 @@ function XUiPanelTheatre6CharacterAttrDetail:ShowRelic()
                 table.insert(ids, v.Id)
                 table.insert(counts, attrPackNums[v.Id])
             end
-            XLuaUiManager.Open("UiTheatre6PopupRelicDetail", ids, counts, self._IsUseParamData)
+            XLuaUiManager.Open("UiTheatre6PopupRelicDetail", ids, counts, self._IsUseParamData, self._ModelData)
         end)
         self.RelicGrids[i] = grid
     end)

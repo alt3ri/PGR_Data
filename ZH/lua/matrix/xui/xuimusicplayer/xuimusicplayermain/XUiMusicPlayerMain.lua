@@ -98,6 +98,8 @@ function XUiMusicPlayerMain:OnStart(bgmId)
 end
 
 function XUiMusicPlayerMain:OnEnable()
+    self._Control:GetCDPlayerControl():SwitchToGuitarVersionIfNotOwned()
+
     self:_SetEvent(true)
     local cdControl = self._Control:GetCDPlayerControl()
     cdControl:EnterMusicFirstPlayerMusicNotify()

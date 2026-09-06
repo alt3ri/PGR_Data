@@ -11,7 +11,7 @@ function XExFubenExtralChapterManager:ExOpenChapterUi(viewModel, difficulty)
     local isUnlock = XDataCenter.ExtraChapterManager.GetChapterUnlock(chapterId)
     if isUnlock then
         local id = chapterCfg and chapterCfg.ChapterId or nil
-        if id and not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.ExtralChapter, id)then
+        if id and not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.ExtralChapter)then
             return
         end
         XLuaUiManager.Open("UiFubenMainLineChapterFw", chapterCfg, nil, false)
@@ -32,8 +32,8 @@ function XExFubenExtralChapterManager:ExOpenChapterUi(viewModel, difficulty)
 end
 
 function XExFubenExtralChapterManager:ExOpenChapterUiByStageId(stageId)
-    local mainId, chapterId = XFubenExtraChapterConfigs.GetStageMainId(stageId)
-    if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.ExtralChapter, mainId)then
+    local mainId = XFubenExtraChapterConfigs.GetStageMainId(stageId)
+    if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.ExtralChapter)then
         return
     end
 
@@ -134,10 +134,13 @@ function XExFubenExtralChapterManager:ExGetChapterViewModelById(id, difficulty)
                 return XDataCenter.FubenZhouMuManager.GetZhouMuNumber(config.ZhouMuId)
             end,
             GetIsLocked = function(proxy)
-                if not XMVCA.XSubPackage:CheckSubpackageDownloadByFunctionType(self:ExGetFunctionNameType(), proxy:GetId()) then
+                if not XMVCA.XSubPackage:CheckSubpackageDownloadByFunctionType(self:ExGetFunctionNameType()) then
                     return true
                 end
 
+                return proxy:GetBusinessIsLocked()
+            end,
+            GetBusinessIsLocked = function(proxy)
                 local chapterId = proxy:GetId()
                 local chapterInfo = XDataCenter.ExtraChapterManager.GetChapterInfo(chapterId)
                 local isUnlock = XDataCenter.ExtraChapterManager.GetChapterUnlock(chapterId)
@@ -153,10 +156,13 @@ function XExFubenExtralChapterManager:ExGetChapterViewModelById(id, difficulty)
                 end
             end,
             GetLockTip = function(proxy)
-                if not XMVCA.XSubPackage:CheckSubpackageDownloadByFunctionType(self:ExGetFunctionNameType(), proxy:GetId()) then
+                if not XMVCA.XSubPackage:CheckSubpackageDownloadByFunctionType(self:ExGetFunctionNameType()) then
                     return XUiHelper.GetText("NecessaryResourcesNotDownloaded")
                 end
 
+                return proxy:GetBusinessLockTip()
+            end,
+            GetBusinessLockTip = function(proxy)
                 local isActivity = proxy:CheckHasTimeLimitTag()
                 if isActivity then
                     local ret, desc = XDataCenter.ExtraChapterManager.CheckActivityCondition(proxy:GetId())

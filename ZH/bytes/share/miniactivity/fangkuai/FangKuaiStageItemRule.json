@@ -1058,5 +1058,445 @@
         "ItemIdWeights": "[100, 100]",
         "MinRefreshInterval": 10.0,
         "MaxRefreshInterval": 15.0
+    },
+    {
+        "Id": 107,
+        "StageId": 5011,
+        "MinLine": 2,
+        "MaxLine": 2,
+        "ItemIds": "[13]",
+        "ItemIdWeights": "[100]",
+        "MinRefreshInterval": null,
+        "MaxRefreshInterval": null
+    },
+    {
+        "Id": 108,
+        "StageId": 5011,
+        "MinLine": 4,
+        "MaxLine": 4,
+        "ItemIds": "[1]",
+        "ItemIdWeights": "[200]",
+        "MinRefreshInterval": null,
+        "MaxRefreshInterval": null
+    },
+    {
+        "Id": 109,
+        "StageId": 5011,
+        "MinLine": 9,
+        "MaxLine": 9999,
+        "ItemIds": "[1, 13]",
+        "ItemIdWeights": "[200, 200]",
+        "MinRefreshInterval": 3.0,
+        "MaxRefreshInterval": 4.0
+    },
+    {
+        "Id": 110,
+        "StageId": 5012,
+        "MinLine": 2,
+        "MaxLine": 2,
+        "ItemIds": "[13]",
+        "ItemIdWeights": "[100]",
+        "MinRefreshInterval": null,
+        "MaxRefreshInterval": null
+    },
+    {
+        "Id": 111,
+        "StageId": 5012,
+        "MinLine": 7,
+        "MaxLine": 7,
+        "ItemIds": "[1]",
+        "ItemIdWeights": "[200]",
+        "MinRefreshInterval": null,
+        "MaxRefreshInterval": null
+    },
+    {
+        "Id": 112,
+        "StageId": 5012,
+        "MinLine": 5,
+        "MaxLine": 20,
+        "ItemIds": "[1, 13]",
+        "ItemIdWeights": "[200, 150]",
+        "MinRefreshInterval": 3.0,
+        "MaxRefreshInterval": 4.0
+    },
+    {
+        "Id": 113,
+        "StageId": 5012,
+        "MinLine": 21,
+        "MaxLine": 9999,
+        "ItemIds": "[1, 13]",
+        "ItemIdWeights": "[200, 200]",
+        "MinRefreshInterval": 4.0,
+        "MaxRefreshInterval": 5.0
+    },
+    {
+        "Id": 114,
+        "StageId": 5013,
+        "MinLine": 3,
+        "MaxLine": 3,
+        "ItemIds": "[1]",
+        "ItemIdWeights": "[100]",
+        "MinRefreshInterval": null,
+        "MaxRefreshInterval": 1.0
+    },
+    {
+        "Id": 115,
+        "StageId": 5013,
+        "MinLine": 7,
+        "MaxLine": 20,
+        "ItemIds": "[1, 13]",
+        "ItemIdWeights": "[100, 200]",
+        "MinRefreshInterval": 3.0,
+        "MaxRefreshInterval": 4.0
+    },
+    {
+        "Id": 116,
+        "StageId": 5013,
+        "MinLine": 21,
+        "MaxLine": 9999,
+        "ItemIds": "[1, 13]",
+        "ItemIdWeights": "[100, 100]",
+        "MinRefreshInterval": 4.0,
+        "MaxRefreshInterval": 5.0
+    },
+    {
+        "Id": 117,
+        "StageId": 5014,
+        "MinLine": 2,
+        "MaxLine": 2,
+        "ItemIds": "[11]",
+        "ItemIdWeights": "[100]",
+        "MinRefreshInterval": null,
+        "MaxRefreshInterval": null
+    },
+    {
+        "Id": 118,
+        "StageId": 5014,
+        "MinLine": 6,
+        "MaxLine": 20,
+        "ItemIds": "[1, 13, 11]",
+        "ItemIdWeights": "[200, 200, 50]",
+        "MinRefreshInterval": 3.0,
+        "MaxRefreshInterval": 4.0
+    },
+    {
+        "Id": 119,
+        "StageId": 5014,
+        "MinLine": 21,
+        "MaxLine": 9999,
+        "ItemIds": "[1, 13, 11]",
+        "ItemIdWeights": "[100, 100, 100]",
+        "MinRefreshInterval": 4.0,
+        "MaxRefreshInterval": 5.0
+    },
+    {
+        "Id": 120,
+        "StageId": 5021,
+        "MinLine": 6,
+        "MaxLine": 20,
+        "ItemIds": "[1, 13, 11]",
+        "ItemIdWeights": "[200, 200, 50]",
+        "MinRefreshInterval": 3.0,
+        "MaxRefreshInterval": 4.0
+    },
+    {
+        "Id": 121,
+        "StageId": 5021,
+        "MinLine": 21,
+        "MaxLine": 9999,
+        "ItemIds": "[1, 13, 11]",
+        "ItemIdWeights": "[200, 200, 150]",
+        "MinRefreshInterval": 4.0,
+        "MaxRefreshInterval": 5.0
+    },
+    {
+        "Id": 122,
+        "StageId": 5022,
+        "MinLine": 2,
+        "MaxLine": 2,
+        "ItemIds": "[3]",
+        "ItemIdWeights": "[100]",
+        "MinRefreshInterval": null,
+        "MaxRefreshInterval": null
+    },
+    {
+        "Id": 123,
+        "StageId": 5022,
+        "MinLine": 5,
+        "MaxLine": 5,
+        "ItemIds": "[5]",
+        "ItemIdWeights": "[100]",
+        "MinRefreshInterval": null,
+        "MaxRefreshInterval": null
+    },
+    {
+        "Id": 124,
+        "StageId": 5022,
+        "MinLine": 9,
+        "MaxLine": 15,
+        "ItemIds": "[1, 13, 3, 5]",
+        "ItemIdWeights": "[100, 100, 150, 150]",
+        "MinRefreshInterval": 3.0,
+        "MaxRefreshInterval": 4.0
+    },
+    {
+        "Id": 125,
+        "StageId": 5022,
+        "MinLine": 16,
+        "MaxLine": 9999,
+        "ItemIds": "[1, 13, 3, 5]",
+        "ItemIdWeights": "[150, 150, 200, 200]",
+        "MinRefreshInterval": 3.0,
+        "MaxRefreshInterval": 4.0
+    },
+    {
+        "Id": 126,
+        "StageId": 5023,
+        "MinLine": 1,
+        "MaxLine": 6,
+        "ItemIds": "[7]",
+        "ItemIdWeights": "[100]",
+        "MinRefreshInterval": 3.0,
+        "MaxRefreshInterval": 5.0
+    },
+    {
+        "Id": 127,
+        "StageId": 5023,
+        "MinLine": 7,
+        "MaxLine": 15,
+        "ItemIds": "[5, 3]",
+        "ItemIdWeights": "[100, 100]",
+        "MinRefreshInterval": 3.0,
+        "MaxRefreshInterval": 5.0
+    },
+    {
+        "Id": 128,
+        "StageId": 5023,
+        "MinLine": 16,
+        "MaxLine": 20,
+        "ItemIds": "[1, 7]",
+        "ItemIdWeights": "[100, 150]",
+        "MinRefreshInterval": 2.0,
+        "MaxRefreshInterval": 3.0
+    },
+    {
+        "Id": 129,
+        "StageId": 5023,
+        "MinLine": 21,
+        "MaxLine": 9999,
+        "ItemIds": "[1, 3, 5, 7]",
+        "ItemIdWeights": "[100, 100, 100, 100]",
+        "MinRefreshInterval": 3.0,
+        "MaxRefreshInterval": 5.0
+    },
+    {
+        "Id": 130,
+        "StageId": 5024,
+        "MinLine": 1,
+        "MaxLine": 50,
+        "ItemIds": "[11, 3, 5, 7]",
+        "ItemIdWeights": "[50, 100, 100, 50]",
+        "MinRefreshInterval": 4.0,
+        "MaxRefreshInterval": 5.0
+    },
+    {
+        "Id": 131,
+        "StageId": 5024,
+        "MinLine": 51,
+        "MaxLine": 100,
+        "ItemIds": "[11, 3, 5, 7]",
+        "ItemIdWeights": "[100, 50, 50, 100]",
+        "MinRefreshInterval": 5.0,
+        "MaxRefreshInterval": 6.0
+    },
+    {
+        "Id": 132,
+        "StageId": 5024,
+        "MinLine": 101,
+        "MaxLine": 9999,
+        "ItemIds": "[11, 3, 5, 7]",
+        "ItemIdWeights": "[100, 100, 100, 100]",
+        "MinRefreshInterval": 6.0,
+        "MaxRefreshInterval": 8.0
+    },
+    {
+        "Id": 133,
+        "StageId": 5031,
+        "MinLine": 1,
+        "MaxLine": 10,
+        "ItemIds": "[1, 13]",
+        "ItemIdWeights": "[100, 150]",
+        "MinRefreshInterval": 1.0,
+        "MaxRefreshInterval": 2.0
+    },
+    {
+        "Id": 134,
+        "StageId": 5031,
+        "MinLine": 11,
+        "MaxLine": 25,
+        "ItemIds": "[7, 3, 5]",
+        "ItemIdWeights": "[100, 150, 100]",
+        "MinRefreshInterval": 2.0,
+        "MaxRefreshInterval": 3.0
+    },
+    {
+        "Id": 135,
+        "StageId": 5031,
+        "MinLine": 26,
+        "MaxLine": 50,
+        "ItemIds": "[1, 13, 1, 5]",
+        "ItemIdWeights": "[100, 100, 100, 150]",
+        "MinRefreshInterval": 3.0,
+        "MaxRefreshInterval": 4.0
+    },
+    {
+        "Id": 136,
+        "StageId": 5031,
+        "MinLine": 51,
+        "MaxLine": 100,
+        "ItemIds": "[7, 13, 5, 3]",
+        "ItemIdWeights": "[150, 100, 100, 100]",
+        "MinRefreshInterval": 4.0,
+        "MaxRefreshInterval": 5.0
+    },
+    {
+        "Id": 137,
+        "StageId": 5031,
+        "MinLine": 101,
+        "MaxLine": 9999,
+        "ItemIds": "[7, 13, 1, 5, 3]",
+        "ItemIdWeights": "[100, 100, 100, 100, 100]",
+        "MinRefreshInterval": 5.0,
+        "MaxRefreshInterval": 10.0
+    },
+    {
+        "Id": 138,
+        "StageId": 5032,
+        "MinLine": 1,
+        "MaxLine": 19,
+        "ItemIds": "[11, 1, 13]",
+        "ItemIdWeights": "[100, 100, 100]",
+        "MinRefreshInterval": 1.0,
+        "MaxRefreshInterval": 2.0
+    },
+    {
+        "Id": 139,
+        "StageId": 5032,
+        "MinLine": 20,
+        "MaxLine": 38,
+        "ItemIds": "[7, 3]",
+        "ItemIdWeights": "[100, 100]",
+        "MinRefreshInterval": 3.0,
+        "MaxRefreshInterval": 5.0
+    },
+    {
+        "Id": 140,
+        "StageId": 5032,
+        "MinLine": 39,
+        "MaxLine": 100,
+        "ItemIds": "[11, 3, 7, 13, 11]",
+        "ItemIdWeights": "[150, 100, 100, 150, 150]",
+        "MinRefreshInterval": 5.0,
+        "MaxRefreshInterval": 6.0
+    },
+    {
+        "Id": 141,
+        "StageId": 5032,
+        "MinLine": 101,
+        "MaxLine": 9999,
+        "ItemIds": "[11, 7, 3, 1, 13]",
+        "ItemIdWeights": "[100, 100, 100, 100, 100]",
+        "MinRefreshInterval": 5.0,
+        "MaxRefreshInterval": 10.0
+    },
+    {
+        "Id": 142,
+        "StageId": 5033,
+        "MinLine": 1,
+        "MaxLine": 29,
+        "ItemIds": "[13, 3, 5]",
+        "ItemIdWeights": "[50, 100, 100]",
+        "MinRefreshInterval": 2.0,
+        "MaxRefreshInterval": 3.0
+    },
+    {
+        "Id": 143,
+        "StageId": 5033,
+        "MinLine": 30,
+        "MaxLine": 45,
+        "ItemIds": "[13, 7, 11]",
+        "ItemIdWeights": "[50, 100, 100]",
+        "MinRefreshInterval": 4.0,
+        "MaxRefreshInterval": 5.0
+    },
+    {
+        "Id": 144,
+        "StageId": 5033,
+        "MinLine": 46,
+        "MaxLine": 55,
+        "ItemIds": "[11, 5, 3, 7, 7]",
+        "ItemIdWeights": "[50, 100, 100, 50, 100]",
+        "MinRefreshInterval": 5.0,
+        "MaxRefreshInterval": 8.0
+    },
+    {
+        "Id": 145,
+        "StageId": 5033,
+        "MinLine": 56,
+        "MaxLine": 9999,
+        "ItemIds": "[7, 13, 11, 3, 5]",
+        "ItemIdWeights": "[100, 100, 100, 100, 100]",
+        "MinRefreshInterval": 8.0,
+        "MaxRefreshInterval": 10.0
+    },
+    {
+        "Id": 146,
+        "StageId": 5034,
+        "MinLine": 1,
+        "MaxLine": 10,
+        "ItemIds": "[1, 5]",
+        "ItemIdWeights": "[100, 100]",
+        "MinRefreshInterval": 2.0,
+        "MaxRefreshInterval": 3.0
+    },
+    {
+        "Id": 147,
+        "StageId": 5034,
+        "MinLine": 11,
+        "MaxLine": 46,
+        "ItemIds": "[3, 11, 7]",
+        "ItemIdWeights": "[100, 100, 50]",
+        "MinRefreshInterval": 3.0,
+        "MaxRefreshInterval": 5.0
+    },
+    {
+        "Id": 148,
+        "StageId": 5034,
+        "MinLine": 47,
+        "MaxLine": 100,
+        "ItemIds": "[7, 1, 5]",
+        "ItemIdWeights": "[50, 100, 100]",
+        "MinRefreshInterval": 5.0,
+        "MaxRefreshInterval": 8.0
+    },
+    {
+        "Id": 149,
+        "StageId": 5034,
+        "MinLine": 101,
+        "MaxLine": 300,
+        "ItemIds": "[11, 3, 7, 5, 1]",
+        "ItemIdWeights": "[100, 150, 100, 150, 150]",
+        "MinRefreshInterval": 8.0,
+        "MaxRefreshInterval": 10.0
+    },
+    {
+        "Id": 150,
+        "StageId": 5034,
+        "MinLine": 301,
+        "MaxLine": 9999,
+        "ItemIds": "[1, 5, 3, 11, 7]",
+        "ItemIdWeights": "[100, 100, 100, 100, 100]",
+        "MinRefreshInterval": 10.0,
+        "MaxRefreshInterval": 15.0
     }
 ]

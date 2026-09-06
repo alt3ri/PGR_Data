@@ -948,6 +948,27 @@ XPhotographManagerCreator = function()
         end
     end
 
+    -- 统一"切换某场景模式"的偏好写入(唯一真相源)。渲染由调用方负责。
+    -- @param optionIndex 音乐场景: 0=常规,1=音乐; 昼夜/电量: A系统档位(0=自动,1=白昼/满电,2=夜晚/低电)
+    -- @param persist true=写偏好落库(正式界面); false=不落库(购买预览界面)
+    -- 陀螺仪场景不走此入口(由 SetGyroSetting 独立处理)
+    function XPhotographManager.ApplySceneSwitch(sceneId, optionIndex, persist)
+        if XMVCA.XMusicScene:IsMusicScene(sceneId) then
+            local mode = optionIndex + 1  -- 0/1 → Normal(1)/Music(2)
+            if persist then
+                XMVCA.XMusicScene:UpdateMusicSceneMode(sceneId, mode)  -- 落库+广播
+            else
+                -- 不落库: 只广播让监听方(MusicScene面板/宿主界面)刷新, 不经 SavePlayMode
+                XEventManager.DispatchEvent(XEventId.EVENT_MUSIC_SCENE_SETTING_CHANGE, sceneId, mode)
+            end
+        else
+            if persist then
+                XMVCA.XSwitchableScene:SetSceneSetting(sceneId, optionIndex)  -- 落库
+            end
+            -- 昼夜/电量渲染不在此: 调用方各自驱动(SwitchBtn 直接按档位 UpdatePreviewState; Dropdown 经 UpdateBatteryMode/PlaySceneAnim)
+        end
+    end
+
     XPhotographManager.Init()
     return XPhotographManager
 end

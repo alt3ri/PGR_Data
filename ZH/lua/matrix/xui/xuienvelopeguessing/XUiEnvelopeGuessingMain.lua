@@ -168,12 +168,16 @@ function XUiEnvelopeGuessingMain:OnGetLuaEvents()
     return {
         XEventId.EVENT_DAILY_RESET,
         XEventId.EVENT_ENVELOPE_UPDATE_DATA,
+        XEventId.EVENT_FINISH_TASK,
+        XEventId.EVENT_TASK_SYNC,
     }
 end
 
 function XUiEnvelopeGuessingMain:OnNotify(event, ...)
     if event == XEventId.EVENT_DAILY_RESET or event == XEventId.EVENT_ENVELOPE_UPDATE_DATA then
         self:_Refresh()
+    elseif event == XEventId.EVENT_FINISH_TASK or event == XEventId.EVENT_TASK_SYNC then
+        self.BtnTask:ShowReddot(XMVCA.XEnvelopeGuessing:HasAnyAchievedTask())
     end
 end
 

@@ -638,7 +638,7 @@ function XUiPanelRoleModel:_AttachMinorModelIfNeeded(mainModel, targetUiName)
 end
 
 local function GetDefaultAnimaName(loadAnimationClip)
-    if not XTool.UObjIsNil(loadAnimationClip) and loadAnimationClip.Clips.Length > 0 then
+    if not XTool.UObjIsNil(loadAnimationClip) and loadAnimationClip.Clips and loadAnimationClip.Clips.Length > 0 then
         return loadAnimationClip.Clips[0].name
     end
     

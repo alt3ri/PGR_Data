@@ -7,10 +7,10 @@ local BubblePos1 = CS.UnityEngine.Vector3(-70, 147, 0)
 local BubblePos2 = CS.UnityEngine.Vector3(-80, 147, 0)
 
 function XUiFangKuaiFightBubble:OnStart()
-    XUiHelper.RegisterClickEvent(self, self.BtnUse, self.OnClickUse)
-    XUiHelper.RegisterClickEvent(self, self.BtnDetele, self.OnClickDetele)
-    XUiHelper.RegisterClickEvent(self, self.BtnLeft, self.OnClickLeft)
-    XUiHelper.RegisterClickEvent(self, self.BtnRight, self.OnClickRight)
+    self.BtnUse:AddEventListener(handler(self, self.OnClickUse))
+    self.BtnDetele:AddEventListener(handler(self, self.OnClickDetele))
+    self.BtnLeft:AddEventListener(handler(self, self.OnClickLeft))
+    self.BtnRight:AddEventListener(handler(self, self.OnClickRight))
     self:RegisterChooseColorBtn()
 end
 
@@ -31,12 +31,13 @@ function XUiFangKuaiFightBubble:ShowItemTip(index, item, content)
     self.BubblePropTime.gameObject:SetActiveEx(isItemAddRound)
     self.BubblePropPull.gameObject:SetActiveEx(false)
     self.BtnDetele.gameObject:SetActiveEx(true)
+    self.BtnUse:SetDisable(false, true)
+    self.BtnUse:SetNameByGroup(0, XUiHelper.GetText("FangKuaiItemUseBtn"))
 end
 
 ---@param item XTableFangKuaiItem
 function XUiFangKuaiFightBubble:UpdateShowUseBtnView(item)
-    --todo:后面改成配置的
-    local isUseLongBg = item.Kind == XEnumConst.FangKuai.ItemType.RandomLine or item.Kind == XEnumConst.FangKuai.ItemType.RandomBlock or item.Kind == XEnumConst.FangKuai.ItemType.Frozen
+    local isUseLongBg = item.IsBubbleUseLongBg
     self._CurItemType = item.Kind
     self.TxtTimeTitle.text = item.Name
     self.TxtTimeDetail.text = item.Desc
@@ -70,6 +71,11 @@ function XUiFangKuaiFightBubble:UpdateAlignmentView(item)
 
     self.TxtPullTitle.text = item.Name
     self.TxtPullDetail.text = item.Desc
+end
+
+function XUiFangKuaiFightBubble:SetUseButtonDisable(btnText)
+    self.BtnUse:SetDisable(true, false)
+    self.BtnUse:SetNameByGroup(0, btnText)
 end
 
 function XUiFangKuaiFightBubble:HideBubble()
@@ -112,13 +118,17 @@ function XUiFangKuaiFightBubble:OnClickUse()
     if self._CurItemType == XEnumConst.FangKuai.ItemType.AddRound then
         self.Parent:OnClickAddRound()
     elseif self._CurItemType == XEnumConst.FangKuai.ItemType.Frozen then
-        self.Parent:OnClickFrozenRound()
+        self.Parent:OnClickFrozenRound(false)
+    elseif self._CurItemType == XEnumConst.FangKuai.ItemType.FrozenPlus then
+        self.Parent:OnClickFrozenRound(true)
     elseif self._CurItemType == XEnumConst.FangKuai.ItemType.RandomBlock then
         self.Parent:OnClickRandomBlock()
     elseif self._CurItemType == XEnumConst.FangKuai.ItemType.RandomLine then
         self.Parent:OnClickRandomLine()
     elseif self._CurItemType == XEnumConst.FangKuai.ItemType.Convertion then
-        self.Parent:OnClickConvertionBlock()
+        self.Parent:OnClickConvertionBlock(false)
+    elseif self._CurItemType == XEnumConst.FangKuai.ItemType.ConvertionPlus then
+        self.Parent:OnClickConvertionBlock(true)
     elseif self._CurItemType == XEnumConst.FangKuai.ItemType.LengthReduceEx then
         self.Parent:OnClickExItem()
     elseif self._CurItemType == XEnumConst.FangKuai.ItemType.BornEx then

@@ -29,7 +29,9 @@ XDrawManagerCreator = function()
     local _DrawGroupActivityTargetDir = {}
     
     local OpenDevilMayCryDrawList = {}
+    local OpenDateALiveDrawList = {}
     local IsDevilMayCryDrawOpen = false
+    local IsDateALiveDrawOpen = false
     local ActivityDrawList = {}
     local ActivityDrawListByTag = {}
     local FreeDrawTicket = {}
@@ -41,6 +43,7 @@ XDrawManagerCreator = function()
     local DrawNewGroupIds = nil
     local DrawDiscountGroupIds = nil
     local DrawDevilMayCryGroupIds = nil
+    local DrawDateALiveGroupIds = nil
     local DrawHideOptionalBtnGroupIds = nil
 
     -- ExtraOption 相关数据
@@ -52,6 +55,10 @@ XDrawManagerCreator = function()
     local CanLiverDrawCount = nil
     local CanLiverRewardIndex = nil
     XDrawManager.DrawEventType = { Normal = 0, NewHand = 1, Activity = 2, OldActivity = 3 }
+    XDrawManager.LinkageTaskType = {
+        [XEnumConst.Draw.Linkage.DevilMayCry] = XDataCenter.TaskManager.TaskType.DevilMayCryDraw,
+        [XEnumConst.Draw.Linkage.DateALive] = XDataCenter.TaskManager.TaskType.DateALiveDraw,
+    }
 
     function XDrawManager.Init()
         DrawCombinations = XDrawConfigs.GetDrawCombinations()
@@ -85,8 +92,9 @@ XDrawManagerCreator = function()
     end
     --endregion
 
-    function XDrawManager.GetFreeTicketIdByGroupId(groupId)
-        local tickets = XDrawManager.GetTicketsByGroupId(groupId)
+    ---@param isTenDraw boolean|nil nil时不区分单抽券/十连券，false只取单抽券，true只取十连券
+    function XDrawManager.GetFreeTicketIdByGroupId(groupId, isTenDraw)
+        local tickets = XDrawManager.GetTicketsByGroupId(groupId, isTenDraw)
         local expireTime = math.huge
         local ticketId = 0
         -- 存在多个时，找出关联卡池数最少、剩余时间最少、Id最小的免费券
@@ -122,8 +130,9 @@ XDrawManagerCreator = function()
     end
     
     -- 获取该卡池中有效免费券中最少的剩余时间及数量
+    ---@param isTenDraw boolean|nil nil时不区分单抽券/十连券，false只取单抽券，true只取十连券
     ---@return @TicketId: 并列集中的代表， expireTime:剩余时间，count：所有相同最小剩余时间的免费券之和
-    function XDrawManager.GetLeastExpireTimeFreeTicketIdByGroupId(groupId)
+    function XDrawManager.GetLeastExpireTimeFreeTicketIdByGroupId(groupId, isTenDraw)
         local count = 0
         local expireTime = math.huge
         local representTicketId = 0
@@ -131,7 +140,7 @@ XDrawManagerCreator = function()
         local stack = {}
         local stackCount = 0
 
-        local tickets = XDrawManager.GetTicketsByGroupId(groupId)
+        local tickets = XDrawManager.GetTicketsByGroupId(groupId, isTenDraw)
 
         for _, ticketInfo in pairs(tickets) do
             if XTool.IsNumberValid(ticketInfo.ExpireTime) and ticketInfo.Count > 0 then
@@ -166,15 +175,16 @@ XDrawManagerCreator = function()
         return representTicketId, expireTime, count
     end
     
+    ---@param isTenDraw boolean|nil nil时不区分单抽券/十连券，false只取单抽券，true只取十连券
     ---@return @param1:指定ticketId的数据, param2:是否有新的数据, param3... 多个新的数据
-    function XDrawManager.GetTicketInfoForExpireTimeDisplay(ticketId, groupId)
+    function XDrawManager.GetTicketInfoForExpireTimeDisplay(ticketId, groupId, isTenDraw)
         local ticketInfo = XDrawManager.GetTicketInfoById(ticketId)
 
         if ticketInfo and XTool.IsNumberValid(ticketInfo.ExpireTime) then
             return ticketInfo
         else
             -- 尝试查找新的最少剩余时间的免费券
-            local representTicketId, expireTime, count = XDrawManager.GetLeastExpireTimeFreeTicketIdByGroupId(groupId)
+            local representTicketId, expireTime, count = XDrawManager.GetLeastExpireTimeFreeTicketIdByGroupId(groupId, isTenDraw)
 
             if XTool.IsNumberValid(representTicketId) then
                 return nil, true, representTicketId, expireTime, count
@@ -186,14 +196,20 @@ XDrawManagerCreator = function()
         return FreeDrawTicket[id]
     end
 
-    function XDrawManager.GetTicketsByGroupId(groupId)
+    ---@param isTenDraw boolean|nil nil时不区分单抽券/十连券，false只取单抽券，true只取十连券
+    function XDrawManager.GetTicketsByGroupId(groupId, isTenDraw)
         local tickets = {}
         for _, ticketInfo in pairs(FreeDrawTicket) do
             local cfg = XDrawConfigs.GetDrawTicketCfg(ticketInfo.CfgId)
             if cfg then
-                for _, gId in pairs(cfg.DrawGroupIds) do
-                    if gId == groupId then
-                        table.insert(tickets, ticketInfo)
+                -- 配置没填 UseTenDraw 时视为单抽券（nil 归一化为 false，否则和 isTenDraw==false 比较不相等）
+                -- isTenDraw 传 nil 表示不筛选券类型，否则只要类型一致的券
+                local cfgIsTenDraw = cfg.UseTenDraw or false
+                if isTenDraw == nil or cfgIsTenDraw == isTenDraw then
+                    for _, gId in pairs(cfg.DrawGroupIds) do
+                        if gId == groupId then
+                            table.insert(tickets, ticketInfo)
+                        end
                     end
                 end
             end
@@ -201,9 +217,10 @@ XDrawManagerCreator = function()
         return tickets
     end
 
-    function XDrawManager.CheckHasFreeTicket(groupId)
+    ---@param isTenDraw boolean|nil nil时不区分单抽券/十连券，false只取单抽券，true只取十连券
+    function XDrawManager.CheckHasFreeTicket(groupId, isTenDraw)
         local now = XTime.GetServerNowTimestamp()
-        local tickets = XDrawManager.GetTicketsByGroupId(groupId)
+        local tickets = XDrawManager.GetTicketsByGroupId(groupId, isTenDraw)
         local isHasTicket = false
         local groupInfo = XDrawManager.GetDrawGroupInfoByGroupId(groupId)
         if groupInfo then
@@ -212,7 +229,7 @@ XDrawManagerCreator = function()
             end
         end
         for _, ticketInfo in pairs(tickets) do
-            if ticketInfo.Count > 0 or ticketInfo.ExpireTime > now then
+            if ticketInfo.Count > 0 and ticketInfo.ExpireTime > now then
                 isHasTicket = true
                 break
             end
@@ -220,11 +237,12 @@ XDrawManagerCreator = function()
         return isHasTicket
     end
     
-    function XDrawManager.GetFreeTicketCount(groupId)
+    ---@param isTenDraw boolean|nil nil时不区分单抽券/十连券，false只取单抽券，true只取十连券
+    function XDrawManager.GetFreeTicketCount(groupId, isTenDraw)
         local count = 0
-        
+
         local now = XTime.GetServerNowTimestamp()
-        local tickets = XDrawManager.GetTicketsByGroupId(groupId)
+        local tickets = XDrawManager.GetTicketsByGroupId(groupId, isTenDraw)
         local isHasTicket = false
         local groupInfo = XDrawManager.GetDrawGroupInfoByGroupId(groupId)
         if groupInfo then
@@ -623,8 +641,8 @@ XDrawManagerCreator = function()
 
     -- 联动卡池是否有开启
     function XDrawManager.CheckCollaborationDrawOpen()
-        -- 目前只支持鬼泣卡池
-        return XDrawManager.GetIsDevilMayCryDrawOpen()
+        -- 鬼泣卡池、约战卡池
+        return XDrawManager.GetIsDevilMayCryDrawOpen() or XDrawManager.GetIsDateALiveDrawOpen()
     end
 
     function XDrawManager.CheckDrawActivityCount()
@@ -880,51 +898,51 @@ XDrawManagerCreator = function()
         return options
     end
 
-    --- 记录页专用：服务端 HistoryGroups 决定历史下拉入口，GroupSubTypes 只补子组选项展示信息
-    function XDrawManager.GetDisplayOptionsForRecord(historyGroupInfos)
-        local options = {}
-        for _, historyGroupInfo in ipairs(historyGroupInfos) do
-            local groupId = historyGroupInfo.DrawGroupId
-            local groupRuleCfg = XDrawConfigs.GetDrawGroupRuleById(groupId)
-            local groupName = groupRuleCfg and groupRuleCfg.TitleCN or ""
-            local groupPriority = historyGroupInfo.Priority or 0
-            local groupSubTypes = historyGroupInfo.GroupSubTypes or {}
-            local hasOriginalOption = false
-
-            for _, groupSubType in ipairs(groupSubTypes) do
-                if groupSubType == 0 then
-                    hasOriginalOption = true
-                end
-            end
-
-            -- 普通入口只在服务端明确下发 GroupSubType=0 时展示
-            if hasOriginalOption then
-                tableInsert(options, {
-                    DrawGroupId = groupId,
-                    GroupSubType = 0,
-                    OptionKey = XDrawManager._MakeOptionKey(groupId, 0),
-                    Name = groupName,
-                    Priority = groupPriority,
-                    IsExtraOption = false,
-                })
-            end
-
-            -- 假 Option：服务端 GroupSubTypes 下发子组类型，展示信息从 DrawExtraTagGroup 读取
-            -- GroupSubType=0 已由上面的普通入口承载，服务端下发 0 时这里必须跳过，避免记录页出现同名重复项
-            for _, groupSubType in ipairs(groupSubTypes) do
-                if groupSubType > 0 then
-                    local extraTagCfg = XDrawConfigs.GetDrawExtraTagGroupCfgById(groupSubType)
-                    tableInsert(options, {
-                        DrawGroupId = groupId,
-                        GroupSubType = groupSubType,
-                        OptionKey = XDrawManager._MakeOptionKey(groupId, groupSubType),
-                        Name = extraTagCfg and extraTagCfg.Name or groupName,
-                        Priority = extraTagCfg and extraTagCfg.Priority or groupPriority,
-                        IsExtraOption = true,
-                    })
-                end
-            end
-        end
+    --- 记录页专用：服务端 HistoryGroups 决定历史下拉入口，GroupSubTypes 只补子组选项展示信息
+    function XDrawManager.GetDisplayOptionsForRecord(historyGroupInfos)
+        local options = {}
+        for _, historyGroupInfo in ipairs(historyGroupInfos) do
+            local groupId = historyGroupInfo.DrawGroupId
+            local groupRuleCfg = XDrawConfigs.GetDrawGroupRuleById(groupId)
+            local groupName = groupRuleCfg and groupRuleCfg.TitleCN or ""
+            local groupPriority = historyGroupInfo.Priority or 0
+            local groupSubTypes = historyGroupInfo.GroupSubTypes or {}
+            local hasOriginalOption = false
+
+            for _, groupSubType in ipairs(groupSubTypes) do
+                if groupSubType == 0 then
+                    hasOriginalOption = true
+                end
+            end
+
+            -- 普通入口只在服务端明确下发 GroupSubType=0 时展示
+            if hasOriginalOption then
+                tableInsert(options, {
+                    DrawGroupId = groupId,
+                    GroupSubType = 0,
+                    OptionKey = XDrawManager._MakeOptionKey(groupId, 0),
+                    Name = groupName,
+                    Priority = groupPriority,
+                    IsExtraOption = false,
+                })
+            end
+
+            -- 假 Option：服务端 GroupSubTypes 下发子组类型，展示信息从 DrawExtraTagGroup 读取
+            -- GroupSubType=0 已由上面的普通入口承载，服务端下发 0 时这里必须跳过，避免记录页出现同名重复项
+            for _, groupSubType in ipairs(groupSubTypes) do
+                if groupSubType > 0 then
+                    local extraTagCfg = XDrawConfigs.GetDrawExtraTagGroupCfgById(groupSubType)
+                    tableInsert(options, {
+                        DrawGroupId = groupId,
+                        GroupSubType = groupSubType,
+                        OptionKey = XDrawManager._MakeOptionKey(groupId, groupSubType),
+                        Name = extraTagCfg and extraTagCfg.Name or groupName,
+                        Priority = extraTagCfg and extraTagCfg.Priority or groupPriority,
+                        IsExtraOption = true,
+                    })
+                end
+            end
+        end
 
         tableSort(options, function(a, b)
             if a.Priority ~= b.Priority then
@@ -1075,14 +1093,40 @@ XDrawManagerCreator = function()
     --endregion
 
     --region ExtraOption：DrawId 级特性判断
-    --- 判断具体 Draw 是否为鬼泣卡池（draw级特性）
-    function XDrawManager:CheckIsDevilMayCryDrawId(drawId)
+    ---判断具体 DrawId 是否为联动卡池（鬼泣、约战）（draw级特性）
+    function XDrawManager:CheckIsLinkageDrawId(drawId)
         local drawInfo = XDrawManager.GetDrawInfo(drawId)
         if not drawInfo then
             return false
         end
-        return XDrawManager:CheckIsDevilMayCryGroupId(drawInfo.GroupId)
+        return XDrawManager:CheckIsLinkageGroupId(drawInfo.GroupId)
     end
+
+    ---判断具体 GroupId 是否为联动卡池（鬼泣、约战）
+    function XDrawManager:CheckIsLinkageGroupId(groupId)
+        return XDrawManager:GetLinkageDrawTypeByGroupId(groupId) ~= nil
+    end
+
+    ---通过DrawId获取联动卡池类型
+    function XDrawManager:GetLinkageDrawType(drawId)
+        local drawInfo = XDrawManager.GetDrawInfo(drawId)
+        if not drawInfo then
+            return nil
+        end
+        return XDrawManager:GetLinkageDrawTypeByGroupId(drawInfo.GroupId)
+    end
+
+    ---通过GroupId获取联动卡池类型
+    function XDrawManager:GetLinkageDrawTypeByGroupId(groupId)
+        if XDrawManager:CheckIsDevilMayCryGroupId(groupId) then
+            return XEnumConst.Draw.Linkage.DevilMayCry
+        elseif XDrawManager:CheckIsDateALiveGroupId(groupId) then
+            return XEnumConst.Draw.Linkage.DateALive
+        else
+            return nil
+        end
+    end
+
     --endregion
 
     function XDrawManager.GetDrawPurchase(drawId)
@@ -1293,6 +1337,17 @@ XDrawManagerCreator = function()
         return DrawDevilMayCryGroupIds[groupId]
     end
 
+    function XDrawManager:CheckIsDateALiveGroupId(groupId)
+        if not DrawDateALiveGroupIds then
+            DrawDateALiveGroupIds = {}
+            local ids = XDrawConfigs.GetDrawClientConfigs("DrawDateALiveGroupIds")
+            for _, v in pairs(ids) do
+                DrawDateALiveGroupIds[tonumber(v)] = true
+            end
+        end
+        return DrawDateALiveGroupIds[groupId]
+    end
+
     function XDrawManager:CheckIsHideOptionalBtnGroupId(groupId)
         if not DrawHideOptionalBtnGroupIds then
             DrawHideOptionalBtnGroupIds = {}
@@ -1306,17 +1361,29 @@ XDrawManagerCreator = function()
         return DrawHideOptionalBtnGroupIds[groupId]
     end
 
-    -- 可领次数，指立即点击按钮可领但是还没领的
-    function XDrawManager:CheckIsCanReceiveCharacterByDrawId(drawId)
-        local cfg = XDrawConfigs.GetDevilMayCryActivityCfgByDrawId(drawId)
-        if not cfg then
-            return
+    ---获取联动卡池任务组Id
+    function XDrawManager:GetLinkageTaskGroupId(drawId)
+        local linkage = XDrawManager:GetLinkageDrawType(drawId)
+        if linkage == XEnumConst.Draw.Linkage.DevilMayCry then
+            local cfg = XDrawConfigs.GetDevilMayCryActivityCfgByDrawId(drawId)
+            return cfg and cfg.TaskGroupId
+        elseif linkage == XEnumConst.Draw.Linkage.DateALive then
+            return XDrawConfigs.GetDateALiveTaskGroupIdByDrawId(drawId)
+        else
+            return nil
         end
+    end
 
-        local taskGroupId = cfg.TaskGroupId
-        local taskDataList = XDataCenter.TaskManager.GetTaskByTypeAndGroup(XDataCenter.TaskManager.TaskType.DevilMayCryDraw, taskGroupId)
+    ---获取联动卡池任务类型
+    function XDrawManager:GetLinkageTaskType(drawId)
+        local linkage = XDrawManager:GetLinkageDrawType(drawId)
+        return XDrawManager.LinkageTaskType[linkage]
+    end
+
+    function XDrawManager:GetLinkageDrawAchievedTask(taskGroupId, taskType)
+        local taskDataList = XDataCenter.TaskManager.GetTaskByTypeAndGroup(taskType, taskGroupId)
         if XTool.IsTableEmpty(taskDataList) then
-            return
+            return 0, table.empty
         end
         
         local leftCount = 0 -- 剩余可领次数(已完成未领取)
@@ -1331,29 +1398,46 @@ XDrawManagerCreator = function()
         return leftCount, taskList
     end
 
-    -- 剩余次数，指还可以领取的次数，包括不能立即领取的和还没触发完成的
-    function XDrawManager:GetLeftCanGetDevilCharacterCount(drawId)
-        local cfg = XDrawConfigs.GetDevilMayCryActivityCfgByDrawId(drawId)
-        if not cfg then
-            return
+    function XDrawManager:GetLinkageDrawUnFinishTaskCount(taskGroupId, taskType)
+        local taskDataList = XDataCenter.TaskManager.GetTaskByTypeAndGroup(taskType, taskGroupId)
+        if XTool.IsTableEmpty(taskDataList) then
+            return 0
         end
 
-        local taskGroupId = cfg.TaskGroupId
-        local taskDataList = XDataCenter.TaskManager.GetTaskByTypeAndGroup(XDataCenter.TaskManager.TaskType.DevilMayCryDraw, taskGroupId)
-        if XTool.IsTableEmpty(taskDataList) then
-            return
-        end
-        
         local leftCount = #taskDataList
-        local taskList = {}
         for _, v in pairs(taskDataList) do
             if v.State == XDataCenter.TaskManager.TaskState.Finish then
                 leftCount = leftCount - 1
-                table.insert(taskList, v.Id)
             end
         end
 
-        return leftCount, taskList
+        return leftCount
+    end
+
+    ---根据卡池类型，自动获取联动角色可领次数，指立即点击按钮可领但是还没领的
+    function XDrawManager:CheckIsCanReceiveLinkageRole(drawId)
+        local taskGroupId = XDrawManager:GetLinkageTaskGroupId(drawId)
+        if not taskGroupId then
+            return 0, table.empty
+        end
+        local taskType = XDrawManager:GetLinkageTaskType(drawId)
+        if not taskType then
+            return 0, table.empty
+        end
+        return XDrawManager:GetLinkageDrawAchievedTask(taskGroupId, taskType)
+    end
+
+    ---剩余次数，指还可以领取的次数，包括不能立即领取的和还没触发完成的
+    function XDrawManager:GetLeftCanGetLinkageCharacterCount(drawId)
+        local taskGroupId = XDrawManager:GetLinkageTaskGroupId(drawId)
+        if not taskGroupId then
+            return 0
+        end
+        local taskType = XDrawManager:GetLinkageTaskType(drawId)
+        if not taskType then
+            return 0
+        end
+        return XDrawManager:GetLinkageDrawUnFinishTaskCount(taskGroupId, taskType)
     end
 
     -- 刷新开启的鬼泣卡池
@@ -1374,6 +1458,23 @@ XDrawManagerCreator = function()
         return IsDevilMayCryDrawOpen
     end
 
+    ---刷新开启的约战卡池
+    function XDrawManager.UpdateDateALiveDraw(drawList)
+        --该数据暂无地方使用
+        OpenDateALiveDrawList = {}
+        for activityId, drawIds in pairs(drawList) do
+            OpenDateALiveDrawList[activityId] = {}
+            for _, drawId in ipairs(drawIds) do
+                OpenDateALiveDrawList[activityId][drawId] = true
+            end
+        end
+
+        IsDateALiveDrawOpen = not XTool.IsTableEmpty(drawList)
+    end
+
+    function XDrawManager.GetIsDateALiveDrawOpen()
+        return IsDateALiveDrawOpen
+    end
 
     function XDrawManager.NotifyDrawCanLiverData(data)
         CanLiverActivityId = data.ActivityId
@@ -1874,4 +1975,8 @@ end
 
 XRpc.NotifyDrawCanLiverData = function(data)
     XDataCenter.DrawManager.NotifyDrawCanLiverData(data.DrawCanLiverData)
+end
+
+XRpc.NotifyDateALiveDraw = function(data)
+    XDataCenter.DrawManager.UpdateDateALiveDraw(data.OpenDraws)
 end

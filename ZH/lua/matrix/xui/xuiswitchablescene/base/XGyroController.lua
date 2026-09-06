@@ -9,6 +9,7 @@
 ---@field private _OnDirectionChanged function 方向变化回调
 ---@field private _OnSpeedChanged function 速度变化回调
 ---@field private _OnInputEnd function 输入结束回调（PC模式松开按键时）
+---@field private _CloudMotionHandler function 云游戏姿态回调（缓存复用，Add/Remove 必须传同一函数对象）
 ---@field private _SpeedCalculatorByAngle function 根据角度计算速度（外部注入）
 ---@field private _SpeedCalculatorByDistance function 根据距离计算速度（外部注入）
 ---@field private _InputChecker function 输入检测器（外部注入，用于PC模式）
@@ -46,6 +47,9 @@ function XGyroController:Ctor(gyroFrequency, eulerXLimit, eulerZKeep, moveXKeep)
     self._OnSpeedChanged = nil
     self._OnInputEnd = nil
 
+    -- 云游戏姿态回调（Add/Remove 依赖委托相等性，必须全程复用同一个函数对象）
+    self._CloudMotionHandler = handler(self, self._OnCloudMotion)
+
     -- 速度计算器（外部注入）
     self._SpeedCalculatorByAngle = nil
     self._SpeedCalculatorByDistance = nil
@@ -68,8 +72,7 @@ function XGyroController:Enable()
     self._Enabled = true
 
     if XDataCenter.UiPcManager.GetUiPcMode() == XUiPcMode.CloudGame then
-        XDataCenter.CloudGameManager.SeteMotionListeningAction(handler(self, self._OnCloudMotion))
-        XDataCenter.CloudGameManager.EnableMotionListening(true)
+        XDataCenter.CloudGameManager.AddMotionListener(self._CloudMotionHandler)
     else
         CS.UnityEngine.Input.gyro.enabled = true
     end
@@ -81,14 +84,14 @@ function XGyroController:Disable()
     self._Enabled = false
 
     if XDataCenter.UiPcManager.GetUiPcMode() == XUiPcMode.CloudGame then
-        XDataCenter.CloudGameManager.SeteMotionListeningAction(nil)
-        XDataCenter.CloudGameManager.EnableMotionListening(false)
+        XDataCenter.CloudGameManager.RemoveMotionListener(self._CloudMotionHandler)
     end
 end
 
 ---销毁
 function XGyroController:OnDestroy()
     self:Disable()
+    self._CloudMotionHandler = nil
     self._OnDirectionChanged = nil
     self._OnSpeedChanged = nil
     self._OnInputEnd = nil

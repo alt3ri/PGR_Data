@@ -52,6 +52,8 @@ function XUiGachaAlphaMain:OnStart(gachaId, autoOpenStory)
             self.TxtTime.text = XUiHelper.GetText("GachaAlphaTime", XUiHelper.GetTime(time, XUiHelper.TimeFormatType.CHATEMOJITIMER))
         end
     end, nil, 0)
+
+    self:RefreshBtnChange()
 end
 
 function XUiGachaAlphaMain:OnEnable()
@@ -140,7 +142,7 @@ function XUiGachaAlphaMain:SetSelfActive(flag)
 end
 
 function XUiGachaAlphaMain:InitButton()
-    self:RegisterClickEvent(self.BtnBack, self.Close)
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
     self:RegisterClickEvent(self.BtnMainUi, function()
         XLuaUiManager.RunMain()
     end)
@@ -162,6 +164,30 @@ function XUiGachaAlphaMain:InitButton()
     self:RegisterClickEvent(self.BtnSet, function()
         XLuaUiManager.Open("UiSet")
     end)
+    -- BtnChange 为自选gacha专用切换按钮，普通卡池预制体无此节点，需判空守卫
+    if self.BtnChange then
+        self.BtnChange:AddEventListener(handler(self, self.OnBtnChangeClick))
+    end
+end
+
+function XUiGachaAlphaMain:RefreshBtnChange()
+    if not self.BtnChange then return end
+    self.BtnChange.gameObject:SetActiveEx(XDataCenter.GachaManager.IsGachaIdBelongSelfChoice(self._GachaId))
+end
+
+function XUiGachaAlphaMain:OnBtnChangeClick()
+    -- 必须先翻 Entrance.IsChangeMode 再 Close，否则 Entrance.OnEnable 会因已选直接关闭
+    XDataCenter.GachaManager.OpenSelfChoiceEntranceForChange(self._GachaId)
+    self:Close()
+end
+
+function XUiGachaAlphaMain:OnBtnBackClick()
+    -- 自选卡池：直接回主界面（Entrance 由 RunMain 一并关闭）
+    if XDataCenter.GachaManager.IsGachaIdBelongSelfChoice(self._GachaId) then
+        XLuaUiManager.RunMain()
+        return
+    end
+    self:Close()
 end
 
 function XUiGachaAlphaMain:Init3DSceneInfo()

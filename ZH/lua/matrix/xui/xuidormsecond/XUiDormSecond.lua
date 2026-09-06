@@ -481,6 +481,9 @@ function XUiDormSecond:OnEnable()
     if not self._LastSimulateMouseWithTouches then
         CS.UnityEngine.Input.simulateMouseWithTouches = true
     end
+    --当从其他界面返回到此界面时，需要重新设置光照
+    XUiHelper.SetSceneType(CS.XSceneType.Dormitory)
+    
     self.BtnPanelTask.CallBack = self.OnBtnTaskTipsClickCb
     self:SetScore()
     XDataCenter.DormManager.GetNextShowEvent()

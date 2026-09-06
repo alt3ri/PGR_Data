@@ -382,8 +382,8 @@ end
 
 --region -------------CG相关------------->>>
 
-function XArchiveControl:GetCGCompletionRate()
-    local unlocked, total = self._Model:GetCGCompletionCount()
+function XArchiveControl:GetCGCompletionRate(groupId)
+    local unlocked, total = self._Model:GetCGCompletionCount(groupId)
     if total < 1 then return 0 end
     return self:GetPercent((unlocked / total) * 100)
 end

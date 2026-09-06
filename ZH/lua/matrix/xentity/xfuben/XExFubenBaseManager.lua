@@ -158,15 +158,15 @@ function XExFubenBaseManager:ExGetCurrentChapterIndex()
         local currPrg, totalPrg = viewModel:GetCurrentAndMaxProgress()
         local isPass = currPrg >= totalPrg
 
-        if not viewModel:GetIsLocked() and isPass then
+        if not viewModel:GetBusinessIsLocked() and isPass then
             table.insert(unlockAndPassList, {viewModel = viewModel, index = i})
         end
 
-        if viewModel:CheckHasTimeLimitTag() and not viewModel:GetIsLocked() and not isPass then
+        if viewModel:CheckHasTimeLimitTag() and not viewModel:GetBusinessIsLocked() and not isPass then
             return i
         end
         
-        if not isPass and not viewModel:GetIsLocked() then
+        if not isPass and not viewModel:GetBusinessIsLocked() then
             return i
         end
     end

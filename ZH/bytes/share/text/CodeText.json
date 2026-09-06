@@ -1865,6 +1865,16 @@
         "Text": "20009063\u8be5\u72b6\u6001\u5df2\u88ab\u8bbe\u7f6e\uff0c\u4e0d\u80fd\u91cd\u590d\u8bbe\u7f6e"
     },
     {
+        "Id": 20009064.0,
+        "Key": "CharacterOneClickNothingToTrain",
+        "Text": "20009064\u8be5\u89d2\u8272\u6ca1\u6709\u53ef\u517b\u6210\u7684\u5185\u5bb9"
+    },
+    {
+        "Id": 20009065.0,
+        "Key": "CharacterOneClickTrainFail",
+        "Text": "20009065\u89d2\u8272\u4e00\u952e\u517b\u6210\u5931\u8d25"
+    },
+    {
         "Id": 20010001.0,
         "Key": "FashionManagerGetFashionNotFound",
         "Text": "\u6d82\u88c5\u672a\u627e\u5230"
@@ -2328,6 +2338,11 @@
         "Id": 20018028.0,
         "Key": "DrawManagerAdjustActiveCannotChangeGroupId",
         "Text": "\u6d3b\u52a8\u671f\u95f4\u4e0d\u80fd\u66f4\u6539\u7814\u53d1\u7ec4"
+    },
+    {
+        "Id": 20018029.0,
+        "Key": "DrawManagerDrawTicketTimesNotMatch",
+        "Text": "20018029\u62bd\u5361\u4f7f\u7528\u7684\u62bd\u5361\u5238\u5bf9\u5e94\u6b21\u6570\u4e0d\u5339\u914d"
     },
     {
         "Id": 20019001.0,
@@ -29538,6 +29553,516 @@
         "Id": 20429015.0,
         "Key": "AudioPlayerBackgroundSongCountLimit",
         "Text": "20429015\u80cc\u666f\u97f3\u4e50\u6b4c\u5355\u6570\u91cf\u5df2\u8fbe\u4e0a\u9650"
+    },
+    {
+        "Id": 20430001.0,
+        "Key": "PunishaarActivityNotOpen",
+        "Text": "20430001\u6d3b\u52a8\u672a\u5f00\u542f"
+    },
+    {
+        "Id": 20430002.0,
+        "Key": "PunishaarStageConfigNotFound",
+        "Text": "20430002\u5173\u5361\u914d\u7f6e\u4e0d\u5b58\u5728"
+    },
+    {
+        "Id": 20430003.0,
+        "Key": "PunishaarStageInProgress",
+        "Text": "20430003\u5df2\u6709\u5173\u5361\u6b63\u5728\u8fdb\u884c\u4e2d"
+    },
+    {
+        "Id": 20430004.0,
+        "Key": "PunishaarStageNotInProgress",
+        "Text": "20430004\u6ca1\u6709\u6b63\u5728\u8fdb\u884c\u7684\u5173\u5361"
+    },
+    {
+        "Id": 20430005.0,
+        "Key": "PunishaarNodeNotFound",
+        "Text": "20430005\u5f53\u524d\u6ca1\u6709\u8282\u70b9"
+    },
+    {
+        "Id": 20430006.0,
+        "Key": "PunishaarNodeTypeNotMatch",
+        "Text": "20430006\u8282\u70b9\u7c7b\u578b\u4e0d\u5339\u914d"
+    },
+    {
+        "Id": 20430007.0,
+        "Key": "PunishaarNodeConditionNotMet",
+        "Text": "20430007\u8282\u70b9\u9000\u51fa\u6761\u4ef6\u672a\u5b8c\u6210"
+    },
+    {
+        "Id": 20430008.0,
+        "Key": "PunishaarNodeHandlerNotFound",
+        "Text": "20430008\u8282\u70b9\u5904\u7406\u5668\u4e0d\u5b58\u5728"
+    },
+    {
+        "Id": 20430009.0,
+        "Key": "PunishaarNodeConfigNotFound",
+        "Text": "20430009\u8282\u70b9\u914d\u7f6e\u4e0d\u5b58\u5728"
+    },
+    {
+        "Id": 20430010.0,
+        "Key": "PunishaarStageNotOpen",
+        "Text": "20430010\u5173\u5361\u672a\u5728\u5f53\u671f\u5f00\u542f"
+    },
+    {
+        "Id": 20430011.0,
+        "Key": "PunishaarGoldNotEnough",
+        "Text": "20430011\u91d1\u5e01\u4e0d\u8db3"
+    },
+    {
+        "Id": 20430012.0,
+        "Key": "PunishaarPrevStageNotPassed",
+        "Text": "20430012\u524d\u7f6e\u5173\u5361\u672a\u901a\u5173"
+    },
+    {
+        "Id": 20430013.0,
+        "Key": "PunishaarFightNotInCandidates",
+        "Text": "20430013\u9009\u62e9\u7684\u6218\u6597\u4e0d\u5728\u5019\u9009\u5217\u8868\u4e2d"
+    },
+    {
+        "Id": 20430014.0,
+        "Key": "PunishaarEventNotInCandidates",
+        "Text": "20430014\u9009\u62e9\u7684\u4e8b\u4ef6\u4e0d\u5728\u5019\u9009\u5217\u8868\u4e2d"
+    },
+    {
+        "Id": 20430015.0,
+        "Key": "PunishaarEventAlreadySelected",
+        "Text": "20430015\u4e8b\u4ef6\u5df2\u9009\u62e9\u8fc7\uff0c\u4e0d\u80fd\u91cd\u590d\u9009\u62e9"
+    },
+    {
+        "Id": 20430016.0,
+        "Key": "PunishaarFightAlreadySelected",
+        "Text": "20430016\u6218\u6597\u5df2\u9009\u62e9\u8fc7\uff0c\u4e0d\u80fd\u91cd\u590d\u9009\u62e9"
+    },
+    {
+        "Id": 20430017.0,
+        "Key": "PunishaarEventNotSelected",
+        "Text": "20430017\u4e8b\u4ef6\u672a\u9009\u62e9"
+    },
+    {
+        "Id": 20430018.0,
+        "Key": "PunishaarEventAlreadyFinished",
+        "Text": "20430018\u4e8b\u4ef6\u5df2\u5b8c\u6210\uff0c\u4e0d\u80fd\u91cd\u590d\u5b8c\u6210"
+    },
+    {
+        "Id": 20430019.0,
+        "Key": "PunishaarEventConfigNotFound",
+        "Text": "20430019\u4e8b\u4ef6\u914d\u7f6e\u4e0d\u5b58\u5728"
+    },
+    {
+        "Id": 20430020.0,
+        "Key": "PunishaarFightNotSelected",
+        "Text": "20430020\u6218\u6597\u672a\u9009\u62e9"
+    },
+    {
+        "Id": 20430021.0,
+        "Key": "PunishaarFightAlreadyFinished",
+        "Text": "20430021\u6218\u6597\u5df2\u80dc\u5229\uff0c\u4e0d\u80fd\u91cd\u590d\u7ed3\u7b97"
+    },
+    {
+        "Id": 20430022.0,
+        "Key": "PunishaarSignalBallColorInvalid",
+        "Text": "20430022\u4fe1\u53f7\u7403\u989c\u8272\u975e\u6cd5"
+    },
+    {
+        "Id": 20430023.0,
+        "Key": "PunishaarNodeStatusNotFinished",
+        "Text": "20430023\u8282\u70b9\u72b6\u6001\u672a\u5b8c\u6210\uff0c\u4e0d\u80fd\u9000\u51fa"
+    },
+    {
+        "Id": 20430024.0,
+        "Key": "PunishaarNodeStatusTransitionInvalid",
+        "Text": "20430024\u8282\u70b9\u72b6\u6001\u8fc1\u79fb\u975e\u6cd5"
+    },
+    {
+        "Id": 20430025.0,
+        "Key": "PunishaarSaveCountLimit",
+        "Text": "20430025\u5173\u5361\u5b58\u6863\u6570\u91cf\u5df2\u8fbe\u4e0a\u9650"
+    },
+    {
+        "Id": 20430026.0,
+        "Key": "PunishaarActivityConfigNotFound",
+        "Text": "20430026\u6d3b\u52a8\u914d\u7f6e\u4e0d\u5b58\u5728"
+    },
+    {
+        "Id": 20430027.0,
+        "Key": "PunishaarStageTimeNotOpen",
+        "Text": "20430027\u5173\u5361\u4e0d\u5728\u5f00\u653e\u65f6\u6bb5"
+    },
+    {
+        "Id": 20430028.0,
+        "Key": "PunishaarStageFirstNodeNotFound",
+        "Text": "20430028\u5173\u5361\u9996\u8282\u70b9\u914d\u7f6e\u4e0d\u5b58\u5728"
+    },
+    {
+        "Id": 20430029.0,
+        "Key": "PunishaarFightNotWin",
+        "Text": "20430029\u6218\u6597\u672a\u80dc\u5229\uff0c\u4e0d\u80fd\u9000\u51fa"
+    },
+    {
+        "Id": 20430030.0,
+        "Key": "PunishaarNodeInitFailed",
+        "Text": "20430030\u8282\u70b9\u521d\u59cb\u5316\u5931\u8d25"
+    },
+    {
+        "Id": 20430031.0,
+        "Key": "PunishaarNodeStatusNotRewardReplace",
+        "Text": "20430031\u8282\u70b9\u4e0d\u5728\u5956\u52b1\u66ff\u6362\u4e2d"
+    },
+    {
+        "Id": 20430032.0,
+        "Key": "PunishaarNoPendingRewardCard",
+        "Text": "20430032\u65e0\u6682\u5b58\u5956\u52b1\u5361\u724c"
+    },
+    {
+        "Id": 20430033.0,
+        "Key": "PunishaarMasterCardNotFound",
+        "Text": "20430033\u4e3b\u5361\u4e0d\u5b58\u5728"
+    },
+    {
+        "Id": 20430034.0,
+        "Key": "PunishaarCardCountMismatch",
+        "Text": "20430034\u5361\u724c\u6570\u91cf\u4e0e\u79fb\u52a8\u524d\u4e0d\u4e00\u81f4"
+    },
+    {
+        "Id": 20430035.0,
+        "Key": "PunishaarCardPosDuplicate",
+        "Text": "20430035\u79fb\u52a8\u540e\u51fa\u73b0\u91cd\u590d\u5361\u724c"
+    },
+    {
+        "Id": 20430036.0,
+        "Key": "PunishaarCardPosOutOfRange",
+        "Text": "20430036\u5361\u724c\u4f4d\u7f6e\u8d8a\u754c\u6216\u8d85\u8fc7\u683c\u6570\u4e0a\u9650"
+    },
+    {
+        "Id": 20430037.0,
+        "Key": "PunishaarCardPosOverlap",
+        "Text": "20430037\u5361\u724c\u4f4d\u7f6e\u91cd\u53e0"
+    },
+    {
+        "Id": 20430038.0,
+        "Key": "PunishaarCardPosListNull",
+        "Text": "20430038\u5361\u724c\u4f4d\u7f6e\u5217\u8868\u4e3a\u7a7a"
+    },
+    {
+        "Id": 20430039.0,
+        "Key": "PunishaarCardAreaTypeInvalid",
+        "Text": "20430039\u5361\u724c\u6240\u5728\u533a\u57df\u975e\u6cd5"
+    },
+    {
+        "Id": 20430040.0,
+        "Key": "PunishaarCardConfigNotFound",
+        "Text": "20430040\u5361\u724c\u914d\u7f6e\u4e0d\u5b58\u5728"
+    },
+    {
+        "Id": 20430041.0,
+        "Key": "PunishaarCardSizeInvalid",
+        "Text": "20430041\u5361\u724c\u5c3a\u5bf8\u975e\u6cd5"
+    },
+    {
+        "Id": 20430042.0,
+        "Key": "PunishaarCardLevelConfigNotFound",
+        "Text": "20430042\u5361\u724c\u7b49\u7ea7\u914d\u7f6e\u4e0d\u5b58\u5728"
+    },
+    {
+        "Id": 20430043.0,
+        "Key": "PunishaarCardUpgradeError",
+        "Text": "20430044\u5361\u724c\u5347\u7ea7\u5f02\u5e38"
+    },
+    {
+        "Id": 20430044.0,
+        "Key": "PunishaarSubCardNotInMergedRange",
+        "Text": "20430045\u9009\u62e9\u7684\u526f\u5361\u4e0d\u5728\u5408\u6210\u5361\u724c\u643a\u5e26\u8303\u56f4\u5185"
+    },
+    {
+        "Id": 20430045.0,
+        "Key": "PunishaarCardTypeInvalid",
+        "Text": "20430046\u5361\u724c\u7c7b\u578b\u975e\u6cd5"
+    },
+    {
+        "Id": 20430046.0,
+        "Key": "PunishaarSubCardSlotEmpty",
+        "Text": "20430047\u526f\u5361\u5df2\u88ab\u5378\u4e0b"
+    },
+    {
+        "Id": 20430047.0,
+        "Key": "PunishaarCurrentStageNotSelected",
+        "Text": "20430048\u672a\u9009\u4e2d\u5173\u5361\u5b58\u6863"
+    },
+    {
+        "Id": 20430048.0,
+        "Key": "PunishaarConditionGoldNotMet",
+        "Text": "20430049\u5c40\u5185\u91d1\u5e01\u6570\u91cf\u6761\u4ef6\u672a\u6ee1\u8db3"
+    },
+    {
+        "Id": 20430049.0,
+        "Key": "PunishaarConditionCompareInvalid",
+        "Text": "20430050\u5c40\u5185\u6761\u4ef6\u5927\u5c0f\u5173\u7cfb\u53c2\u6570\u975e\u6cd5"
+    },
+    {
+        "Id": 20430050.0,
+        "Key": "PunishaarConditionNodeRangeNotMet",
+        "Text": "20430051\u5c40\u5185\u5f53\u524d\u8282\u70b9\u533a\u95f4\u6761\u4ef6\u672a\u6ee1\u8db3"
+    },
+    {
+        "Id": 20430051.0,
+        "Key": "PunishaarShopNotInCandidates",
+        "Text": "20430052\u9009\u62e9\u7684\u5546\u5e97\u4e0d\u5728\u5019\u9009\u5217\u8868\u4e2d"
+    },
+    {
+        "Id": 20430052.0,
+        "Key": "PunishaarShopAlreadySelected",
+        "Text": "20430053\u5546\u5e97\u5df2\u9009\u62e9\u8fc7\uff0c\u4e0d\u80fd\u91cd\u590d\u9009\u62e9"
+    },
+    {
+        "Id": 20430053.0,
+        "Key": "PunishaarShopNotSelected",
+        "Text": "20430054\u5546\u5e97\u672a\u9009\u62e9"
+    },
+    {
+        "Id": 20430054.0,
+        "Key": "PunishaarShopRefreshGoldNotEnough",
+        "Text": "20430055\u5237\u65b0\u5546\u5e97\u91d1\u5e01\u4e0d\u8db3"
+    },
+    {
+        "Id": 20430055.0,
+        "Key": "PunishaarShopAllFrozen",
+        "Text": "20430056\u5546\u5e97\u5546\u54c1\u5df2\u5168\u90e8\u51bb\u7ed3\uff0c\u4e0d\u80fd\u5237\u65b0"
+    },
+    {
+        "Id": 20430056.0,
+        "Key": "PunishaarGoodsNotFound",
+        "Text": "20430057\u5546\u5e97\u5546\u54c1\u4e0d\u5b58\u5728"
+    },
+    {
+        "Id": 20430057.0,
+        "Key": "PunishaarGoodsGoldNotEnough",
+        "Text": "20430058\u8d2d\u4e70\u5546\u54c1\u91d1\u5e01\u4e0d\u8db3"
+    },
+    {
+        "Id": 20430058.0,
+        "Key": "PunishaarBuyAddCardFailed",
+        "Text": "20430059\u8d2d\u4e70\u5546\u54c1\u53d1\u5361\u5931\u8d25"
+    },
+    {
+        "Id": 20430059.0,
+        "Key": "PunishaarCardSaleConfigNotFound",
+        "Text": "20430060\u5361\u724c\u552e\u4ef7\u914d\u7f6e\u4e0d\u5b58\u5728"
+    },
+    {
+        "Id": 20430060.0,
+        "Key": "PunishaarSellNodeInvalid",
+        "Text": "20430061\u5f53\u524d\u8282\u70b9\u4e0d\u53ef\u5356\u51fa\u5361\u724c"
+    },
+    {
+        "Id": 20430061.0,
+        "Key": "PunishaarSellCardNotFound",
+        "Text": "20430062\u8981\u5356\u51fa\u7684\u4e3b\u5361\u4e0d\u5b58\u5728"
+    },
+    {
+        "Id": 20430062.0,
+        "Key": "PunishaarSellRemoveFailed",
+        "Text": "20430063\u5356\u51fa\u4e3b\u5361\u79fb\u9664\u5931\u8d25"
+    },
+    {
+        "Id": 20430063.0,
+        "Key": "PunishaarFightInRemedy",
+        "Text": "20430064\u5904\u4e8e\u8865\u5f3a\u5546\u5e97\u4e2d"
+    },
+    {
+        "Id": 20430064.0,
+        "Key": "PunishaarGoodsAlreadyBought",
+        "Text": "20430065\u5f53\u524d\u5546\u54c1\u5df2\u8d2d\u4e70\u8fc7\uff0c\u65e0\u6cd5\u91cd\u590d\u8d2d\u4e70"
+    },
+    {
+        "Id": 20431001.0,
+        "Key": "TransfiniteTowerActivityNotOpen",
+        "Text": "20431001\u6d3b\u52a8\u672a\u5f00\u542f"
+    },
+    {
+        "Id": 20431002.0,
+        "Key": "TransfiniteTowerChapterNotOpen",
+        "Text": "20431002\u7ae0\u8282\u672a\u89e3\u9501"
+    },
+    {
+        "Id": 20431003.0,
+        "Key": "TransfiniteTowerStageProgressError",
+        "Text": "20431003\u5173\u5361\u8fdb\u5ea6\u4e0d\u7b26"
+    },
+    {
+        "Id": 20431004.0,
+        "Key": "TransfiniteTowerNavigatorRequired",
+        "Text": "20431004\u7f3a\u5c11\u5fc5\u9009\u9886\u822a\u5458"
+    },
+    {
+        "Id": 20431005.0,
+        "Key": "TransfiniteTowerChallengeCountNotEnough",
+        "Text": "20431005\u89d2\u8272\u6311\u6218\u6b21\u6570\u4e0d\u8db3"
+    },
+    {
+        "Id": 20431006.0,
+        "Key": "TransfiniteTowerNavigatorLocked",
+        "Text": "20431006\u9886\u822a\u5458\u672a\u89e3\u9501"
+    },
+    {
+        "Id": 20431007.0,
+        "Key": "TransfiniteTowerRollbackInvalid",
+        "Text": "20431007\u56de\u6eaf\u70b9\u65e0\u6548"
+    },
+    {
+        "Id": 20431008.0,
+        "Key": "TransfiniteTowerNoCurBattle",
+        "Text": "20431008\u7ae0\u8282\u6218\u6597\u4fe1\u606f\u4e3a\u7a7a"
+    },
+    {
+        "Id": 20431009.0,
+        "Key": "TransfiniteTowerSettleCondNotEnough",
+        "Text": "20431009\u7ed3\u7b97\u6761\u4ef6\u4e0d\u8db3"
+    },
+    {
+        "Id": 20431010.0,
+        "Key": "TransfiniteTowerMvpInvalid",
+        "Text": "20431010MVP\u4e0d\u5728\u51fa\u6218\u540d\u5355\u4e2d"
+    },
+    {
+        "Id": 20431011.0,
+        "Key": "TransfiniteTowerRankNotAvailable",
+        "Text": "20431011\u6392\u884c\u699c\u4e0d\u53ef\u7528"
+    },
+    {
+        "Id": 20431012.0,
+        "Key": "TransfiniteTowerChapterCfgNotFound",
+        "Text": "20431012\u7ae0\u8282\u5854\u914d\u7f6e\u4e0d\u5b58\u5728"
+    },
+    {
+        "Id": 20431013.0,
+        "Key": "TransfiniteTowerStageCfgNotFound",
+        "Text": "20431013\u5173\u5361\u914d\u7f6e\u4e0d\u5b58\u5728"
+    },
+    {
+        "Id": 20431014.0,
+        "Key": "TransfiniteTowerNotSettled",
+        "Text": "20431014\u8be5\u7ae0\u8282\u5854\u672a\u7ed3\u7b97"
+    },
+    {
+        "Id": 20431015.0,
+        "Key": "TransfiniteTowerStageNotSettled",
+        "Text": "20431015\u5b58\u5728\u672a\u786e\u8ba4\u7684\u5173\u5361\u7ed3\u7b97"
+    },
+    {
+        "Id": 20431016.0,
+        "Key": "TransfiniteTowerNoPendingStage",
+        "Text": "20431016\u65e0\u5f85\u786e\u8ba4\u7684\u5173\u5361\u6218\u6597"
+    },
+    {
+        "Id": 20431017.0,
+        "Key": "TransfiniteTowerLastRecordNotReset",
+        "Text": "20431017\u5b58\u5728\u4e0a\u8f6e\u722c\u5854\u8bb0\u5f55\uff0c\u9700\u5148\u91cd\u7f6e\u7ae0\u8282\u5854"
+    },
+    {
+        "Id": 20431018.0,
+        "Key": "TransfiniteTowerNoLastRecord",
+        "Text": "20431018\u65e0\u4e0a\u8f6e\u722c\u5854\u8bb0\u5f55\u53ef\u91cd\u7f6e"
+    },
+    {
+        "Id": 20431019.0,
+        "Key": "TransfiniteTowerTeamSlotOverLimit",
+        "Text": "20431019\u961f\u4f0d\u69fd\u4f4d\u6570\u8d85\u4e0a\u9650"
+    },
+    {
+        "Id": 20431020.0,
+        "Key": "TransfiniteTowerTeamSlotConflict",
+        "Text": "20431020\u540c\u4e00\u69fd\u4f4d\u81ea\u673a\u4e0e\u673a\u5668\u4eba\u51b2\u7a81"
+    },
+    {
+        "Id": 20431021.0,
+        "Key": "TransfiniteTowerTeamMemberDuplicate",
+        "Text": "20431021\u89d2\u8272\u91cd\u590d\u4e0a\u9635"
+    },
+    {
+        "Id": 20431022.0,
+        "Key": "TransfiniteTowerTeamMemberNotInGroup",
+        "Text": "20431022\u89d2\u8272\u4e0d\u5728\u53ef\u4e0a\u9635\u8303\u56f4\u5185"
+    },
+    {
+        "Id": 20431023.0,
+        "Key": "TransfiniteTowerTeamCharacterMismatch",
+        "Text": "20431023\u8be5\u89d2\u8272\u4e0d\u53ef\u7528\u81ea\u673a\u51fa\u6218"
+    },
+    {
+        "Id": 20431024.0,
+        "Key": "TransfiniteTowerNavigatorForbidden",
+        "Text": "20431024\u672c\u5173\u7981\u6b62\u9886\u822a\u5458\u4e0a\u9635"
+    },
+    {
+        "Id": 20431025.0,
+        "Key": "TransfiniteTowerCharacterLocked",
+        "Text": "20431025\u89d2\u8272\u672a\u89e3\u9501"
+    },
+    {
+        "Id": 20431026.0,
+        "Key": "TransfiniteTowerNavigatorCountOverLimit",
+        "Text": "20431026\u9886\u822a\u5458\u6570\u91cf\u8d85\u4e0a\u9650"
+    },
+    {
+        "Id": 20431027.0,
+        "Key": "TransfiniteTowerCharacterGroupCfgNotFound",
+        "Text": "20431027\u89d2\u8272\u7ec4\u914d\u7f6e\u4e0d\u5b58\u5728"
+    },
+    {
+        "Id": 20431028.0,
+        "Key": "TransfiniteTowerRefightTeamChanged",
+        "Text": "20431028\u91cd\u65b0\u6311\u6218\u9635\u5bb9\u4e0e\u901a\u5173\u8bb0\u5f55\u4e0d\u4e00\u81f4"
+    },
+    {
+        "Id": 20432001.0,
+        "Key": "TeamRecommendTargetLimitExceed",
+        "Text": "20432001\u9635\u5bb9\u63a8\u8350\u76ee\u6807\u6570\u91cf\u8d85\u51fa\u4e0a\u9650"
+    },
+    {
+        "Id": 20432002.0,
+        "Key": "TeamRecommendCharacterCfgNotFound",
+        "Text": "20432002\u89d2\u8272\u914d\u7f6e\u4e0d\u5b58\u5728"
+    },
+    {
+        "Id": 20432003.0,
+        "Key": "TeamRecommendBaseCharacterCfgNotFound",
+        "Text": "20432003\u89d2\u8272\u57fa\u7840\u914d\u7f6e\u4e0d\u5b58\u5728"
+    },
+    {
+        "Id": 20432004.0,
+        "Key": "TeamRecommendParamError",
+        "Text": "20432004\u8bf7\u6c42\u53c2\u6570\u975e\u6cd5"
+    },
+    {
+        "Id": 20432005.0,
+        "Key": "TeamRecommendDetailNotFound",
+        "Text": "20432005\u63a8\u8350\u8be6\u60c5\u4e0d\u5b58\u5728"
+    },
+    {
+        "Id": 20432006.0,
+        "Key": "TeamRecommendFormationCfgNotFound",
+        "Text": "20432006\u9635\u5bb9\u914d\u7f6e\u4e0d\u5b58\u5728"
+    },
+    {
+        "Id": 20432007.0,
+        "Key": "TeamRecommendBaseFormationCfgNotFound",
+        "Text": "20432007\u9635\u5bb9\u4fdd\u5e95\u914d\u7f6e\u4e0d\u5b58\u5728"
+    },
+    {
+        "Id": 20432008.0,
+        "Key": "TeamRecommendTargetNotFound",
+        "Text": "20432008\u89d2\u8272\u76ee\u6807\u4e0d\u5b58\u5728"
+    },
+    {
+        "Id": 20432009.0,
+        "Key": "TeamRecommendFormationNotMatch",
+        "Text": "20432009\u9635\u5bb9\u76ee\u6807\u4e0e\u6765\u6e90\u4e0d\u4e00\u81f4"
+    },
+    {
+        "Id": 20432010.0,
+        "Key": "TeamRecommendBaseFormationCharacterNotMatch",
+        "Text": "20432010\u76ee\u6807\u89d2\u8272\u4e0e\u914d\u7f6e\u9635\u5bb9\u89d2\u8272\u4e0d\u5339\u914d"
     },
     {
         "Id": 20433001.0,

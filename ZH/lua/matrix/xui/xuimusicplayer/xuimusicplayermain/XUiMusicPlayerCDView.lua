@@ -20,6 +20,9 @@
 ---@field ImgColorInBgmList  UnityEngine.UI.Image
 ---@field GoGridCdCell UnityEngine.RectTransform
 ---@field GoCdDynamicCdList UnityEngine.RectTransform
+---@field GoMusicOtherInfo UnityEngine.RectTransform
+---@field TxtMusictStatus UnityEngine.UI.Text
+---@field TxtOtherInfo UnityEngine.UI.Text
 ---@field GoEggTip UnityEngine.RectTransform
 local XUiMusicPlayerCDView = XClass(XUiNode, "XUiMusicPlayerCDView")
 function XUiMusicPlayerCDView:InitComponents()
@@ -273,6 +276,34 @@ function XUiMusicPlayerCDView:_RefreshCDByMusicID(musicID)
     else
         self.BtnEgg.gameObject:SetActive(false)
     end
+
+    self:_RefreshSPMusicInfo(musicID)
+end
+
+---SP歌曲(瞬息甜味-吉他)专属信息: 当前播放状态(吉他/人声) + 切换引导文本
+function XUiMusicPlayerCDView:_RefreshSPMusicInfo(musicID)
+    local spMusicId = self._Control:GetMusicPlayerconfigControl():GetSPMusicID()
+    local isSPMusic = XTool.IsNumberValid(spMusicId) and musicID == spMusicId
+    self.GoMusicOtherInfo.gameObject:SetActive(isSPMusic)
+    if not isSPMusic then return end
+
+    -- 吉他态: 已获得 + 当前处于该歌所属音乐场景 + 场景切到音乐模式
+    -- 未获得时会被强制切回常规音轨(见_SwitchToGuitarVersionIfNotOwned), 直接显示常规状态
+    local isGuitar = true
+    local useStatus = XMVCA.XMusicPlayer.Util.GetMusicUseStatus(spMusicId)
+    if useStatus == XMVCA.XMusicPlayer.Enum.MusicUseStatus.gain then
+        local sceneId = XDataCenter.PhotographManager.GetCurSceneId()
+        if XMVCA.XMusicScene:IsMusicScene(sceneId) then
+            local cfg = XMVCA.XMusicScene:GetMusicSceneConfig(sceneId)
+            isGuitar = cfg and not XTool.IsTableEmpty(cfg.MusicIds)
+                and table.contains(cfg.MusicIds, spMusicId)
+                and XMVCA.XMusicScene:GetCurPlayMode(sceneId) == XEnumConst.MusicScene.Mode.Normal --这个才是吉他
+        end
+    end
+    self.TxtMusictStatus.text = isGuitar
+        and CS.XTextManager.GetText("MusicPlayerSPMusicStatueGuitar")
+        or CS.XTextManager.GetText("MusicPlayerSPMusicStatueNormal")
+    self.TxtOtherInfo.text = CS.XTextManager.GetText("MusicPlayerSPMusicGetTip")
 end
 
 ---全量刷新CD列表(列表变更/初始化时调用)

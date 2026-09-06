@@ -228,6 +228,10 @@ function XUiMainRightBottom:ResetAudioCueEffectState()
 end
 
 function XUiMainRightBottom:OnAudioCueEffectPlay(audioInfo)
+    if not XMVCA.XMusicPlayer:CheckMainUiEasterEggOpen() then
+        return
+    end
+
     if not audioInfo then
         return
     end

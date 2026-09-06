@@ -204,7 +204,12 @@ function XUiBattleRoomRoleDetailDefaultProxy:AOPOnStartBefore(rootUi)
 end
 
 function XUiBattleRoomRoleDetailDefaultProxy:AOPOnStartAfter(rootUi)
-    
+
+end
+
+-- 选中角色刷新详情后回调（RefreshEntityInfo 末尾触发，每次切换选中角色都会调用）
+function XUiBattleRoomRoleDetailDefaultProxy:AOPOnCharacterClickAfter(rootUi)
+
 end
 
 function XUiBattleRoomRoleDetailDefaultProxy:AOPOnClickBtnBack(rootUi)

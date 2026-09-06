@@ -156,6 +156,7 @@ XDormConfig.SceneType = {
     Two = 2,
     Three = 3,
     Four = 4,
+    Five = 5,
 }
 
 XDormConfig.PersonType = {
@@ -654,6 +655,8 @@ function XDormConfig.GetDormSenceVector(dormitoryId)
     elseif dormitoryConfig.SceneId == XDormConfig.SceneType.Three then
         v3 = CS.UnityEngine.Vector3(0, -180, 0)
     elseif dormitoryConfig.SceneId == XDormConfig.SceneType.Four then
+        v3 = CS.UnityEngine.Vector3(0, -180, 0)
+    elseif dormitoryConfig.SceneId == XDormConfig.SceneType.Five then
         v3 = CS.UnityEngine.Vector3(0, -180, 0)
     end
 

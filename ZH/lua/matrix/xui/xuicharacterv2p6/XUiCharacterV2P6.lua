@@ -71,7 +71,7 @@ function XUiCharacterV2P6:InitFilter()
         grid:UpdateRedPoint()
         grid:UpdateNew()
         grid:UpdateCollect()
-        grid:UpdateIconEquipGuide()
+        grid:UpdateIconTeamRecommend()
         -- grid:AprilFoolShowHandle()
     end
 

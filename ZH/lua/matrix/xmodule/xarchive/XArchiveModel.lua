@@ -1012,11 +1012,15 @@ function XArchiveModel:CheckCGShouldShowRedPoint(cgId, nowTimestamp)
 end
 
 --- 热路径：不触发 Entity 懒加载，直接用配置表 + 热数据统计 CG 完成度
+--- @param groupId number|nil  nil=所有分组（主菜单格子全量），否则仅统计该分组（CG 列表页签）
 --- @return number unlockCount, number totalCount
-function XArchiveModel:GetCGCompletionCount()
+function XArchiveModel:GetCGCompletionCount(groupId)
     local nowTime = XTime.GetServerNowTimestamp()
     local total, unlocked = 0, 0
     for id, cfg in pairs(self:GetCGDetail()) do
+        if XTool.IsNumberValid(groupId) and cfg.GroupId ~= groupId then
+            goto continue
+        end
         if not string.IsNilOrEmpty(cfg.ShowTimeStr) then
             if nowTime < XTime.ParseToTimestamp(cfg.ShowTimeStr) then
                 goto continue

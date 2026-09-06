@@ -79,6 +79,7 @@ XUiBag.MaterialTypeToItemTypes = {
     },
     [XUiBag.MaterialType.Consumables] = {
         XItemConfigs.ItemType.Gift,
+        XItemConfigs.ItemType.NormalConsumableItem,
     },
     [XUiBag.MaterialType.Others] = {
         XItemConfigs.ItemType.ExchangeMoney,
@@ -160,6 +161,7 @@ function XUiBag:OnStart(record)
 end
 
 function XUiBag:OnEnable()
+    XMVCA.XTeamRecommend:CheckAllServerCharacterTargetProgressAndFinish()
     self.GridCount = 1
     self:Refresh(false)
     self.SelectGiftPanel:OnEnable()
@@ -168,6 +170,7 @@ function XUiBag:OnEnable()
 end
 
 function XUiBag:OnDestroy()
+    XMVCA.XTeamRecommend:CheckAllServerCharacterTargetProgressAndFinish()
     XDataCenter.ItemManager.SetPageRecordCache(self.PageRecord)
     MaterialTypeCache = self.MaterailTypeRecord
 end

@@ -6,8 +6,10 @@
 ---@field private _Enviroment XFangKuaiEnviroment 关卡环境模块
 ---@field private _Score XFangKuaiScore 计分模块
 ---@field private _Create XFangKuaiCreate 方块生成模块
----@field private _Fever XFangKuaiFever 狂热模块
+---@field private _Fever XFangKuaiFever 狂热模块（v4.8屏蔽）
 local XFangKuaiControl = XClass(XControl, "XFangKuaiModelControl")
+
+local ItemType = XEnumConst.FangKuai.ItemType
 
 function XFangKuaiControl:OnInit()
     self._BlockMove = self:AddSubControl(require("XModule/XFangKuai/XSubControl/XFangKuaiMove"))
@@ -16,7 +18,7 @@ function XFangKuaiControl:OnInit()
     self._Score = self:AddSubControl(require("XModule/XFangKuai/XSubControl/XFangKuaiScore"))
     self._Game = self:AddSubControl(require("XModule/XFangKuai/XSubControl/XFangKuaiGame"))
     self._Create = self:AddSubControl(require("XModule/XFangKuai/XSubControl/XFangKuaiCreate"))
-    self._Fever = self:AddSubControl(require("XModule/XFangKuai/XSubControl/XFangKuaiFever"))
+    --self._Fever = self:AddSubControl(require("XModule/XFangKuai/XSubControl/XFangKuaiFever"))
 end
 
 function XFangKuaiControl:AddAgencyEvent()
@@ -51,7 +53,7 @@ function XFangKuaiControl:SetGameStage(stageId)
     self._Game:SaveStageBlockData()
     self._Game:InitData()
     self._Game:SetStage(stageId)
-    self._Fever:InitData()
+    --self._Fever:InitData()
 end
 
 function XFangKuaiControl:RestartGame(stageId, cb)
@@ -240,6 +242,14 @@ function XFangKuaiControl:GetStageRankIcon(stageId, score)
     return self:GetStageRankIconByGrade(grade)
 end
 
+---是否满足提前结算的评分条件
+function XFangKuaiControl:IsSettleScoreGrade(stageId)
+    local score = self:GetScore()
+    local grade = self._Model:GetScoreGrade(stageId, score)
+    local targetGrade = self:GetStageConfig(stageId).SettleScoreGrade
+    return XTool.IsNumberValid(targetGrade) and grade >= targetGrade
+end
+
 function XFangKuaiControl:GetStageRankIconByGrade(grade)
     return self._Model:GetClientConfig("GradeRankIcon", grade)
 end
@@ -389,7 +399,7 @@ function XFangKuaiControl:ClearFightData(stageId)
     local chapterId = self:GetChapterIdByStage(stageId)
     if self._Game:GetCurFightChapterId() == chapterId then
         self._Game:InitData()
-        self._Fever:ResetFeverData()
+        --self._Fever:ResetFeverData()
     end
 
     if XTool.IsNumberValid(stageId) then
@@ -528,30 +538,46 @@ end
 --region 道具
 
 function XFangKuaiControl:AddItemId(itemId)
-    if self:IsFever() then
+    if self:GetCurStageData():ApplyEnhanceItem() then
         local config = self:GetItemConfig(itemId)
-        if XTool.IsNumberValid(config.NextItemId) then
-            return self._Item:AddItemId(config.NextItemId)
-        end
+        local enhancedItemId = XTool.IsNumberValid(config.NextItemId) and config.NextItemId or itemId
+        local index = self._Item:AddItemId(enhancedItemId)
+        local curStageData = self:GetCurStageData()
+        curStageData:SignEnhancedItemIdx(index)
+        self._Model:AddItemEnhancedCountRecord(curStageData:GetStageId())
+        return index, true
     end
-    return self._Item:AddItemId(itemId)
+    return self._Item:AddItemId(itemId), false
 end
 
 function XFangKuaiControl:RemoveItemId(stageId, index, isGiveUp)
     self._Item:RemoveItemId(index, isGiveUp)
-    self:AddFevValueByItem()
+    --self:AddFevValueByItem()
     -- 在没有移动棋盘的情况下 丢弃道具进入狂热状态 也应该上升到8行
-    if self:CheckEnterFever() then
-        self._Game:StartEnterFever()
-    else
-        self:FangKuaiStageSyncOperatorRequest(stageId)
+    --if self:CheckEnterFever() then
+    --    self._Game:StartEnterFever()
+    --else
+    self:FangKuaiStageSyncOperatorRequest(stageId)
+    --end
+end
+
+---使用额外强化次数 按顺序强化背包里的道具
+---@return number|nil enhancedItemIdx 被强化的背包槽位
+function XFangKuaiControl:TransformItems()
+    return self._Model:TransformItems(self:GetCurFightChapterId())
+end
+
+---积累强化道具的次数
+function XFangKuaiControl:AddEnhanceCount()
+    local stageData = self:GetCurStageData()
+    local limit = tonumber(self._Model:GetClientConfig("ItemEnhanceAccumulateLimit"))
+    if stageData:GetAccumulatedEnhanceCount() < limit then
+        stageData:AddEnhanceCount()
     end
 end
 
--- 进入狂热状态时 道具会转变为加强版；退出狂热状态时，道具将恢复
-function XFangKuaiControl:TransformItems(chapterId)
-    chapterId = chapterId or self:GetCurFightChapterId()
-    self._Model:TransformItems(chapterId)
+function XFangKuaiControl:GetAccumulatedEnhanceCount()
+    return self:GetCurStageData():GetAccumulatedEnhanceCount()
 end
 
 function XFangKuaiControl:IsItemFull()
@@ -563,15 +589,13 @@ function XFangKuaiControl:GetItemFlyTime()
 end
 
 function XFangKuaiControl:IsItemNeedChooseColor(itemId)
-    return itemId == XEnumConst.FangKuai.ItemType.LengthReduce or itemId == XEnumConst.FangKuai.ItemType.BecomeOneGrid or
-            itemId == XEnumConst.FangKuai.ItemType.Born or itemId == XEnumConst.FangKuai.ItemType.Grow
+    local itemConfig = self:GetItemConfig(itemId)
+    return itemConfig.IsChooseColor
 end
 
 function XFangKuaiControl:IsItemNeedUseBtn(itemId)
-    return itemId == XEnumConst.FangKuai.ItemType.AddRound or itemId == XEnumConst.FangKuai.ItemType.Frozen or
-            itemId == XEnumConst.FangKuai.ItemType.RandomBlock or itemId == XEnumConst.FangKuai.ItemType.RandomLine or
-            itemId == XEnumConst.FangKuai.ItemType.Convertion or itemId == XEnumConst.FangKuai.ItemType.LengthReduceEx or
-            itemId == XEnumConst.FangKuai.ItemType.BornEx or itemId == XEnumConst.FangKuai.ItemType.BecomeOneGridEx
+    local itemConfig = self:GetItemConfig(itemId)
+    return itemConfig.IsShowUseBtn
 end
 
 -- 对应符合颜色的方块，长度缩减一个单位（原为1单位长度的方块则直接消除）
@@ -597,6 +621,11 @@ function XFangKuaiControl:ExecuteTwoLineExChange(itemIdx, blockData1, blockData2
     self._Item:ExecuteTwoLineExChange(itemIdx, blockData1, blockData2)
 end
 
+---选择两行并执行一次消除
+function XFangKuaiControl:ExecuteTwoLineRemove(itemIdx, blockData1, blockData2)
+    self._Item:ExecuteTwoLineRemove(itemIdx, blockData1, blockData2)
+end
+
 -- 点击选中某个方块，与其相邻交换位置
 ---@param blockData1 XFangKuaiBlock
 ---@param blockData2 XFangKuaiBlock
@@ -610,8 +639,8 @@ function XFangKuaiControl:ExecuteAddRound(itemIdx, params)
 end
 
 -- 下回合方块不会上升
-function XFangKuaiControl:ExecuteFrozen(itemIdx, chapterId)
-    self._Item:ExecuteFrozen(itemIdx, chapterId)
+function XFangKuaiControl:ExecuteFrozen(itemIdx, chapterId, isPlus)
+    self._Item:ExecuteFrozen(itemIdx, chapterId, isPlus)
 end
 
 -- 某行方块向左/右对齐
@@ -619,9 +648,9 @@ function XFangKuaiControl:ExecuteAlignment(itemIdx, gridY, direction, maxCount)
     self._Item:ExecuteAlignment(itemIdx, gridY, direction, maxCount)
 end
 
--- BOSS方块转化为普通方块
-function XFangKuaiControl:ExecuteConvertion(itemIdx, stageId)
-    return self._Item:ExecuteConvertion(itemIdx, stageId)
+-- BOSS方块转化为普通方块（首席和刀锋方块除外）
+function XFangKuaiControl:ExecuteConvertion(itemIdx, stageId, isPlus)
+    return self._Item:ExecuteConvertion(itemIdx, stageId, isPlus)
 end
 
 -- 选择某个颜色 该颜色的非BOSS方块两侧会长出1长度的方块直到遇到障碍
@@ -669,10 +698,13 @@ function XFangKuaiControl:GetRandomPropToLine()
     return self._Model:GetClientConfigs("RandomPropToLine")
 end
 
-function XFangKuaiControl:AddFrozenRound(chapterId)
+function XFangKuaiControl:AddFrozenRound(chapterId, isPlus)
     if self:CanAddFrozenRound(chapterId) then
         local stageData = self._Model.ActivityData:GetStageData(chapterId)
-        stageData:AddFrozenRound()
+        local count = tonumber(self:GetClientConfig("AddFrozenRound", isPlus and 2 or 1))
+        local stageConfig = self:GetStageConfig(stageData:GetStageId())
+        local addCount = math.min(count, stageConfig.MaxUseCount - stageData:GetFrozenRound())
+        stageData:AddFrozenRound(addCount)
     end
 end
 
@@ -901,9 +933,9 @@ end
 
 function XFangKuaiControl:AddCombo(num)
     num = num or 1
-    for i = 0, num - 1 do
-        self._Fever:AddFevValueByCombo(i)
-    end
+    --for i = 0, num - 1 do
+    --    self._Fever:AddFevValueByCombo(i)
+    --end
     self:GetCurStageData():AddCombo(num)
 end
 
@@ -976,11 +1008,12 @@ function XFangKuaiControl:FangKuaiStageStartRequest(stageId, cb)
     local chapterId = self._Model:GetStageIdChapterId(stageId)
     XNetwork.CallWithAutoHandleErrorCode("FangKuaiStageStartRequest", { StageId = stageId, CharacterId = characterId }, function(res)
         self._Model.ActivityData:UpdateStageData(chapterId, res.CurData)
-        self:TransformItems(chapterId)
+        --self:TransformItems(chapterId)
         self._Enviroment:InitEnviroment(stageId)
         self._Create:ReqStageStart(stageId, chapterId, characterId)
         self._Enviroment:InitDropBlockEnviroment(stageId)
         self._Model.ActivityData:UpdateSettleData(nil)
+        self._Model:InitItemEnhancedCountRecord(stageId)
         self:SetGameStage(stageId)
         if cb then
             cb()
@@ -1005,6 +1038,8 @@ function XFangKuaiControl:FangKuaiStageSyncOperatorRequest(stageId)
     operatorData.FrenzyVal = math.floor(self:GetFeverValue() * 10000) -- 可能是浮点数 为了避免误差 使用万分比
     operatorData.FrenzyStage = self:GetFevLevel()
     operatorData.FrenzyEnergy = self:GetFevStep()
+    operatorData.AccumulatedEnhanceCount = stageData:GetAccumulatedEnhanceCount()
+    operatorData.EnhancedItemIndexes = stageData:GetEnhancedItemIndexes()
     operatorData.HistoryFrenzyRecords = self:GetFeverRecord(stageId)
     stageData:ClearRoundItemData()
     stageData:ClearComboScoreList()
@@ -1017,12 +1052,13 @@ function XFangKuaiControl:FangKuaiStageSettleRequest(stageId, settleType, cb, is
         XLuaUiManager.Close("UiFangKuaiTc")
     end
     XNetwork.CallWithAutoHandleErrorCode("FangKuaiStageSettleRequest", { StageId = stageId, SettleType = settleType }, function(res)
-        self:RecordFevLevel(stageId)
+        --self:RecordFevLevel(stageId)
         if settleType == XEnumConst.FangKuai.Settle.Normal or settleType == XEnumConst.FangKuai.Settle.Advance then
             self._Model:RecordFinalRound(res.SettleData.Round)
         end
         self._Model.ActivityData:UpdateSettleData(res.SettleData, stageId)
         self:ClearFightData(stageId)
+        XMVCA.XFangKuai:RecordEnhancedCount(stageId)
         if cb then
             cb()
         end
@@ -1044,32 +1080,32 @@ function XFangKuaiControl:RecordStage(uiType, buttonType, stageId)
     CS.XRecord.Record(dir, "900003", "FangKuaiClientRecord")
 end
 
-function XFangKuaiControl:RecordFevLevel(stageId)
-    -- 到达最大回合数 游戏结束 如果此时处于狂热状态 需要手动记录一下
-    if self:IsFever() then
-        local chapterId = self:GetChapterIdByStage(stageId)
-        local stageData = self._Model.ActivityData:GetStageData(chapterId)
-        stageData:RecordFeverMaxLevel()
-    end
-    
-    local fevListStr = ""
-    local records = self:GetFeverRecord(stageId)
-
-    table.sort(records, function(a, b)
-        return a.EntryFrenzyRound < b.EntryFrenzyRound
-    end)
-
-    for i, data in ipairs(records) do
-        fevListStr = fevListStr .. string.format("%s_%s", data.EntryFrenzyRound, data.FrenzyMaxLevel)
-        if i < #records then
-            fevListStr = fevListStr .. ","
-        end
-    end
-
-    local dir = {}
-    dir["fev_list"] = fevListStr
-    CS.XRecord.Record(dir, "30242", "FangKuaiFeverRecord")
-end
+--function XFangKuaiControl:RecordFevLevel(stageId)
+--    -- 到达最大回合数 游戏结束 如果此时处于狂热状态 需要手动记录一下
+--    if self:IsFever() then
+--        local chapterId = self:GetChapterIdByStage(stageId)
+--        local stageData = self._Model.ActivityData:GetStageData(chapterId)
+--        stageData:RecordFeverMaxLevel()
+--    end
+--    
+--    local fevListStr = ""
+--    local records = self:GetFeverRecord(stageId)
+--
+--    table.sort(records, function(a, b)
+--        return a.EntryFrenzyRound < b.EntryFrenzyRound
+--    end)
+--
+--    for i, data in ipairs(records) do
+--        fevListStr = fevListStr .. string.format("%s_%s", data.EntryFrenzyRound, data.FrenzyMaxLevel)
+--        if i < #records then
+--            fevListStr = fevListStr .. ","
+--        end
+--    end
+--
+--    local dir = {}
+--    dir["fev_list"] = fevListStr
+--    CS.XRecord.Record(dir, "30242", "FangKuaiFeverRecord")
+--end
 
 --endregion
 
@@ -1110,9 +1146,9 @@ end
 function XFangKuaiControl:CheckStageDataError(data)
     local chapterId = self:GetChapterIdByStage(data.StageId)
     self._Model.ActivityData:UpdateRecordStageData(chapterId, data)
-    self:TransformItems(chapterId)
+    --self:TransformItems(chapterId)
     if self._Game then
-        self._Fever:InitData()
+        --self._Fever:InitData()
         self._Game:ResetFromService()
         XLog.Error(string.format("重置错误关卡%s数据", data.StageId))
     end
@@ -1122,20 +1158,23 @@ end
 
 --region 狂热
 
+---v4.8屏蔽狂热功能
 function XFangKuaiControl:IsFever()
-    return self._Fever:IsFever()
+    --return self._Fever:IsFever()
+    return false
 end
 
 ---溢出或丢弃道具时增加狂热值
 function XFangKuaiControl:AddFevValueByItem()
-    self._Fever:AddFevValueByItem()
+    --self._Fever:AddFevValueByItem()
 end
 
 ---在棋盘静止时检查是否能进入狂热状态
 function XFangKuaiControl:CheckEnterFever()
-    local isEnterFev, isExitFev = self._Fever:CheckEnterFever()
-    self:UpdateCueSpeed()
-    return isEnterFev, isExitFev
+    --local isEnterFev, isExitFev = self._Fever:CheckEnterFever()
+    --self:UpdateCueSpeed()
+    --return isEnterFev, isExitFev
+    return false, false
 end
 
 function XFangKuaiControl:UpdateCueSpeed()
@@ -1149,25 +1188,29 @@ end
 
 ---狂热状态下 拖动方块或使用强化道具会消耗强化次数
 function XFangKuaiControl:ReduceFevStep()
-    if self:GetCurStageData():ReduceFevStep() then
-        XEventManager.DispatchEvent(XEventId.EVENT_FANGKUAI_FEVER_VALUE)
-    end
+    --if self:GetCurStageData():ReduceFevStep() then
+    --    XEventManager.DispatchEvent(XEventId.EVENT_FANGKUAI_FEVER_VALUE)
+    --end
 end
 
 function XFangKuaiControl:GetFeverValue()
-    return self:GetCurStageData():GetFevValue()
+    --return self:GetCurStageData():GetFevValue()
+    return 0
 end
 
 function XFangKuaiControl:GetFevStep()
-    return self:GetCurStageData():GetFevStep()
+    --return self:GetCurStageData():GetFevStep()
+    return 0
 end
 
 function XFangKuaiControl:GetFevLevel()
-    return self:GetCurStageData():GetFevLevel()
+    --return self:GetCurStageData():GetFevLevel()
+    return 0
 end
 
 function XFangKuaiControl:GetFevRadio()
-    return self._Fever:GetFevRadio()
+    --return self._Fever:GetFevRadio()
+    return 1
 end
 
 function XFangKuaiControl:GetFevExcitedValue()
@@ -1192,9 +1235,10 @@ function XFangKuaiControl:GetFevScoreGainCoefficientRate()
 end
 
 function XFangKuaiControl:GetFeverRecord(stageId)
-    local chapterId = self:GetChapterIdByStage(stageId)
-    local stageData = self._Model.ActivityData:GetStageData(chapterId)
-    return stageData:GetFevRecord()
+    --local chapterId = self:GetChapterIdByStage(stageId)
+    --local stageData = self._Model.ActivityData:GetStageData(chapterId)
+    --return stageData:GetFevRecord()
+    return table.empty
 end
 
 --endregion
@@ -1236,4 +1280,4 @@ end
 
 --endregion
 
-return XFangKuaiControl
+return XFangKuaiControl

@@ -1,0 +1,3 @@
+-- 临时用注入占位文件。
+-- XLaunchModule 会通过 pcall(require, "XLaunchRuntimeGmInject") 触发本文件。
+-- 本文件只作为 GM Console RuntimeGM 的注入承载点，提交到游戏仓库时保持空壳即可。

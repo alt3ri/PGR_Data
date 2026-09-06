@@ -152,10 +152,12 @@ function XUiBagItemInfoPanel:SetupOperation()
         self.SelectCount = self.DefaultMinSelectCount
         self.TxtSelect.text = tostring(MIN_SELET_COUNT)
     end
-    self.BtnMax.gameObject:SetActive(isUseable)
-    self.BtnMinusSelect.gameObject:SetActive(isUseable)
-    self.BtnAddSelect.gameObject:SetActive(isUseable)
-    self.TxtSelect.gameObject:SetActive(isUseable)
+    --普通消耗品隐藏数量控件
+    local showCount = isUseable and not XDataCenter.ItemManager.IsNormalConsumable(self.ItemData.Id)
+    self.BtnMax.gameObject:SetActiveEx(showCount)
+    self.BtnMinusSelect.gameObject:SetActiveEx(showCount)
+    self.BtnAddSelect.gameObject:SetActiveEx(showCount)
+    self.TxtSelect.gameObject:SetActiveEx(showCount)
 end
 
 --获取当前道具的数量包括堆叠显示
@@ -175,15 +177,22 @@ function XUiBagItemInfoPanel:GetGridCount()
 end
 
 function XUiBagItemInfoPanel:OnBtnUseClick()
+    local itemId = self.ItemData.Id
+    if XDataCenter.ItemManager.IsNormalConsumable(itemId) then
+        XDataCenter.ItemManager.UseNormalConsumable(itemId)
+        self:OnBtnCloseClick()
+        return
+    end
+
     if self.SelectCount <= 0 then
         return
     end
+
     if IsLockBtnUse then
         XUiManager.TipMsg(CS.XTextManager.GetText("OverLimitCanNotUse"))
         return
     end
 
-    local itemId = self.ItemData.Id
     local callback = function(rewardGoodsList)
         if not XDataCenter.ItemManager.IsRedEnvelope(itemId) then
             XUiManager.OpenUiObtain(rewardGoodsList)

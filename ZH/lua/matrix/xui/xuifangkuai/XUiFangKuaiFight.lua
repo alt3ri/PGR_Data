@@ -13,6 +13,7 @@
 ---@field _Effects table<number,FKEffectData>
 local XUiFangKuaiFight = XLuaUiManager.Register(XLuaUi, "UiFangKuaiFight")
 
+local ItemType = XEnumConst.FangKuai.ItemType
 local NoticeLine = {
     First = 1,
     Second = 2,
@@ -43,6 +44,8 @@ function XUiFangKuaiFight:OnAwake()
     self._UltimaSlashEffectTimer = {}
     self._ItemGrids = {}
     self._FlyingItemMap = {}
+    self._EnhanceEffectPool = {}
+    self._EnhanceEffectRoot = self.PanelTailEffect.parent
     self._MinShowCombo = self._Control:GetMinShowCombo()
     self._WarnDistance = self._Control:GetBlockWarnDistance()
     self._Alpha = self._Control:GetCannotUseAlpha()
@@ -52,9 +55,10 @@ function XUiFangKuaiFight:OnAwake()
     self._TopBlock = require("XUi/XUiFangKuai/XUiGrid/XUiGridFangKuaiNoticeBlock").New(self.GridTop, self)
     self._CommanderPop = require("XUi/XUiFangKuai/XUiPanel/XUiPanelFangKuaiCommander").New(self.PanelCommanderToast, self)
 
-    self._FevLineTop = tonumber(self._Control:GetClientConfig("FevLineTop"))
-    self._FevLineBottom = tonumber(self._Control:GetClientConfig("FevLineBottom"))
+    --self._FevLineTop = tonumber(self._Control:GetClientConfig("FevLineTop"))
+    --self._FevLineBottom = tonumber(self._Control:GetClientConfig("FevLineBottom"))
     self._ClearBlockTime = tonumber(self._Control:GetClientConfig("ClearBlockTime")) * 1000
+    self._EnhanceAccumulateLimit = tonumber(self._Control:GetClientConfig("ItemEnhanceAccumulateLimit"))
 
     self._BlockPool = XObjectPool.New(function()
         return self:OnBlockCreate()
@@ -108,6 +112,7 @@ function XUiFangKuaiFight:OnStart(game, isNewGame)
     self.PanelCheckerboard.anchoredPosition = Vector2(self._IsBigMap and 1.5 or 40, self.PanelCheckerboard.anchoredPosition.x)
     self._TopBlock:Close()
     self._CommanderPop:Close()
+    self.PanelFevMove.gameObject:SetActiveEx(false)
 
     self:OnClickCancelUseItem()
     self:ForbidClick(false)
@@ -115,7 +120,7 @@ function XUiFangKuaiFight:OnStart(game, isNewGame)
     self:HideCompareBg()
     self:HideHorizontalTip()
     self:ShowWarnEffect()
-    self:HideUltimaSlashEffect()
+    self:HideSwordTrailEffect()
     self:HideFevTailEffect()
 
     self.EndTime = self._Control:GetActivityGameEndTime()
@@ -134,7 +139,8 @@ function XUiFangKuaiFight:OnEnable()
     self:UpdateScore()
     self:UpdateFrozen()
     self:UpdateFeverProgress()
-    self:UpdateFevLineState()
+    --self:UpdateFevLineState()
+    self:UpdateEnhanceCount()
     self:AddEventListener()
     self:StartCreateInitBlock(self._IsNewGame)
     self._Game:InitExitFevGuideFlag()
@@ -194,16 +200,16 @@ end
 
 function XUiFangKuaiFight:AddEventListener()
     XEventManager.AddEventListener(XEventId.EVENT_FANGKUAI_TOPPREVIEW, self.OnTopPreviewBlockShow, self)
-    XEventManager.AddEventListener(XEventId.EVENT_FANGKUAI_FEVER_VALUE, self.UpdateFeverProgress, self)
+    --XEventManager.AddEventListener(XEventId.EVENT_FANGKUAI_FEVER_VALUE, self.UpdateFeverProgress, self)
     XEventManager.AddEventListener(XEventId.EVENT_FANGKUAI_STARTDRAG, self.OnBlockDragStart, self)
     XEventManager.AddEventListener(XEventId.EVENT_FANGKUAI_UPDATESCORE, self.OnScoreUpdate, self)
     XEventManager.AddEventListener(XEventId.EVENT_FANGKUAI_TRANSITEM, self.OnItemTransform, self)
-    XEventManager.AddEventListener(XEventId.EVENT_FANGKUAI_FEVMOVEY, self.OnBlockFevMoveY, self)
+    --XEventManager.AddEventListener(XEventId.EVENT_FANGKUAI_FEVMOVEY, self.OnBlockFevMoveY, self)
     XEventManager.AddEventListener(XEventId.EVENT_FANGKUAI_SRARTROUND, self.OnStartRound, self)
     XEventManager.AddEventListener(XEventId.EVENT_FANGKUAI_USEITEMEND, self.OnUseItemEnd, self)
     XEventManager.AddEventListener(XEventId.EVENT_FANGKUAI_REMOVEITEM, self.OnItemRemove, self)
     XEventManager.AddEventListener(XEventId.EVENT_FANGKUAI_ERROR_RESET, self.RestartGame, self)
-    XEventManager.AddEventListener(XEventId.EVENT_FANGKUAI_LINE_MOVE, self.OnFevLineMove, self)
+    --XEventManager.AddEventListener(XEventId.EVENT_FANGKUAI_LINE_MOVE, self.OnFevLineMove, self)
     XEventManager.AddEventListener(XEventId.EVENT_FANGKUAI_TOPDROP, self.OnTopBlockDrop, self)
     XEventManager.AddEventListener(XEventId.EVENT_FANGKUAI_ENDDRAG, self.OnBlockDragEnd, self)
     XEventManager.AddEventListener(XEventId.EVENT_FANGKUAI_CHIEF_TIP, self.ShowChiefTip, self)
@@ -212,7 +218,7 @@ function XUiFangKuaiFight:AddEventListener()
     XEventManager.AddEventListener(XEventId.EVENT_FANGKUAI_GAMEOVER, self.OnGameOver, self)
     XEventManager.AddEventListener(XEventId.EVENT_FANGKUAI_MOVEX, self.OnBlockMoveX, self)
     XEventManager.AddEventListener(XEventId.EVENT_FANGKUAI_MOVEY, self.OnBlockMoveY, self)
-    XEventManager.AddEventListener(XEventId.EVENT_FANGKUAI_EXITFEV, self.OnFevDestory, self)
+    --XEventManager.AddEventListener(XEventId.EVENT_FANGKUAI_EXITFEV, self.OnFevDestory, self)
     XEventManager.AddEventListener(XEventId.EVENT_FANGKUAI_ADDLINE, self.OnLineAdd, self)
     XEventManager.AddEventListener(XEventId.EVENT_FANGKUAI_CLEAR, self.OnLineClear, self)
     XEventManager.AddEventListener(XEventId.EVENT_FANGKUAI_ADDITEM, self.OnItemAdd, self)
@@ -226,16 +232,16 @@ end
 
 function XUiFangKuaiFight:RemoveEventListener()
     XEventManager.RemoveEventListener(XEventId.EVENT_FANGKUAI_TOPPREVIEW, self.OnTopPreviewBlockShow, self)
-    XEventManager.RemoveEventListener(XEventId.EVENT_FANGKUAI_FEVER_VALUE, self.UpdateFeverProgress, self)
+    --XEventManager.RemoveEventListener(XEventId.EVENT_FANGKUAI_FEVER_VALUE, self.UpdateFeverProgress, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_FANGKUAI_STARTDRAG, self.OnBlockDragStart, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_FANGKUAI_UPDATESCORE, self.OnScoreUpdate, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_FANGKUAI_TRANSITEM, self.OnItemTransform, self)
-    XEventManager.RemoveEventListener(XEventId.EVENT_FANGKUAI_FEVMOVEY, self.OnBlockFevMoveY, self)
+    --XEventManager.RemoveEventListener(XEventId.EVENT_FANGKUAI_FEVMOVEY, self.OnBlockFevMoveY, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_FANGKUAI_REMOVEITEM, self.OnItemRemove, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_FANGKUAI_SRARTROUND, self.OnStartRound, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_FANGKUAI_USEITEMEND, self.OnUseItemEnd, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_FANGKUAI_ERROR_RESET, self.RestartGame, self)
-    XEventManager.RemoveEventListener(XEventId.EVENT_FANGKUAI_LINE_MOVE, self.OnFevLineMove, self)
+    --XEventManager.RemoveEventListener(XEventId.EVENT_FANGKUAI_LINE_MOVE, self.OnFevLineMove, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_FANGKUAI_ENDDRAG, self.OnBlockDragEnd, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_FANGKUAI_TOPDROP, self.OnTopBlockDrop, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_FANGKUAI_CHIEF_TIP, self.ShowChiefTip, self)
@@ -244,7 +250,7 @@ function XUiFangKuaiFight:RemoveEventListener()
     XEventManager.RemoveEventListener(XEventId.EVENT_FANGKUAI_GAMEOVER, self.OnGameOver, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_FANGKUAI_MOVEX, self.OnBlockMoveX, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_FANGKUAI_MOVEY, self.OnBlockMoveY, self)
-    XEventManager.RemoveEventListener(XEventId.EVENT_FANGKUAI_EXITFEV, self.OnFevDestory, self)
+    --XEventManager.RemoveEventListener(XEventId.EVENT_FANGKUAI_EXITFEV, self.OnFevDestory, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_FANGKUAI_ADDLINE, self.OnLineAdd, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_FANGKUAI_CLEAR, self.OnLineClear, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_FANGKUAI_ADDITEM, self.OnItemAdd, self)
@@ -277,12 +283,12 @@ end
 
 ---移动结束
 ---@param blockData XFangKuaiBlock
-function XUiFangKuaiFight:OnBlockDragEnd(blockData, isMoved)
+function XUiFangKuaiFight:OnBlockDragEnd(blockData, isMoved, direction)
     self.PanelBtnMask.gameObject:SetActiveEx(false)
     self._Panel3D:PlayRoleAnimation(XEnumConst.FangKuai.RoleAnim.Standby)
     if isMoved then
         self._Control:ReduceFevStep()
-        self._Game:StartRound(blockData:GetHeadGrid().y)
+        self._Game:StartRound(blockData, direction)
         self:ForbidClick(true)
     end
     self:HideOriginalBlock()
@@ -292,7 +298,7 @@ end
 
 ---消除
 ---@param blockData XFangKuaiBlock
-function XUiFangKuaiFight:OnBlockRemove(blockData, isImmediately)
+function XUiFangKuaiFight:OnBlockRemove(blockData, isImmediately, itemIdx, isEnhanced)
     local block = self:GetBlock(blockData)
     if block then
         if isImmediately then
@@ -303,12 +309,16 @@ function XUiFangKuaiFight:OnBlockRemove(blockData, isImmediately)
                 self:BlockPoolRecycle(block)
             end)
         end
+        if blockData:IsBoss() then
+            self:PlayEnhanceEffect(block, itemIdx, isEnhanced)
+        end
         self._Panel3D:PlayRoleAnimation(XEnumConst.FangKuai.RoleAnim.Attack, 2000)
     end
+    self:UpdateEnhanceCount()
     self:RemoveBlock(blockData)
 end
 
----销毁
+--[[---销毁
 function XUiFangKuaiFight:OnFevDestory(isUp)
     local map = {}
     local line = self._Game:GetFevDestoryMaxLine(isUp)
@@ -322,7 +332,7 @@ function XUiFangKuaiFight:OnFevDestory(isUp)
         end
     end
     self._BlockMap = map
-end
+end]]
 
 ---变短
 ---@param blockData XFangKuaiBlock
@@ -359,8 +369,7 @@ end
 
 ---添加新方块
 ---@param blockData XFangKuaiBlock
----@param isClear boolean 是否等整行消除完再创建方块
-function XUiFangKuaiFight:OnBlockAdd(blockData, isClear)
+function XUiFangKuaiFight:OnBlockAdd(blockData)
     self:AddBlock(blockData)
     self._Panel3D:PlayBossAnimation(XEnumConst.FangKuai.BossAnim.BossAttack, 2000)
 end
@@ -393,12 +402,22 @@ function XUiFangKuaiFight:OnGameOver(isAdvanceEnd)
 end
 
 ---播消除行特效
-function XUiFangKuaiFight:OnLineClear(gridYs)
-    for gridY, op in pairs(gridYs) do
+function XUiFangKuaiFight:OnLineClear(operate, argsDict)
+    if operate == XEnumConst.FangKuai.OperateMode.Clear then
+        self:OnNormalLineClear(argsDict)
+    elseif operate == XEnumConst.FangKuai.OperateMode.DirClear then
+        self:OnDirLineClear(argsDict)
+    end
+end
+
+---播放普通消除特效
+function XUiFangKuaiFight:OnNormalLineClear(argsDict)
+    for _, args in ipairs(argsDict) do
+        local gridY, op = args[1], args[2]
         local normalOp = op & XEnumConst.FangKuai.ClearType.Normal
         local chiefOp = op & XEnumConst.FangKuai.ClearType.Chief
         local ultimaSlashOp = op & XEnumConst.FangKuai.ClearType.UltimaSlash
-        
+
         if ultimaSlashOp ~= 0 then
             -- 真意斩特效只会有一个
             self:OnUltimaSlashLineClear(gridY)
@@ -451,6 +470,11 @@ function XUiFangKuaiFight:OnLineClear(gridYs)
     end
 end
 
+---播放同侧消除特效
+function XUiFangKuaiFight:OnDirLineClear()
+    self:HideSwordTrailEffect()
+end
+
 function XUiFangKuaiFight:OnUltimaSlashLineClear(gridY)
     local v3 = self.PanelUltimaSlashEffect.localPosition
     v3.y = self._Control:GetPosByGridY(gridY)
@@ -461,7 +485,7 @@ function XUiFangKuaiFight:OnUltimaSlashLineClear(gridY)
         self._UltimaSlashEffectTimer[gridY] = nil
     end
 
-    self:HideUltimaSlashEffect()
+    self:HideSwordTrailEffect()
     self.PanelUltimaSlashEffect.gameObject:SetActiveEx(true)
     self._UltimaSlashEffectTimer[gridY] = XScheduleManager.ScheduleOnce(function()
         self.PanelUltimaSlashEffect.gameObject:SetActiveEx(false)
@@ -479,9 +503,11 @@ function XUiFangKuaiFight:RestartGame()
     self:ShowWarnEffect()
 end
 
-function XUiFangKuaiFight:OnScoreUpdate()
+function XUiFangKuaiFight:OnScoreUpdate(isShowCombo)
     self:UpdateScore()
-    self:ShowCombo()
+    if isShowCombo then
+        self:ShowCombo()
+    end
 end
 
 function XUiFangKuaiFight:OnBlockCreate()
@@ -498,7 +524,7 @@ end
 function XUiFangKuaiFight:OnClear()
     for _, block in pairs(self._BlockMap) do
         block:Close()
-        self:BlockPoolRecycle(block, true)
+        self:BlockPoolRecycle(block)
     end
     for _, notices in pairs(self._NoticeBlocks) do
         for _, notice in pairs(notices) do
@@ -523,7 +549,7 @@ function XUiFangKuaiFight:OnRestart()
     self:UpdateItem()
     self:StartCreateInitBlock(true)
     self:UpdateFeverProgress()
-    self:UpdateFevLineState()
+    --self:UpdateFevLineState()
     self._Game:InitExitFevGuideFlag()
 end
 
@@ -573,7 +599,7 @@ function XUiFangKuaiFight:OnTopBlockDrop(blockData)
     self:AddBlock(blockData)
 end
 
----预览线动画（固定从第3行移动到第9行，或者反过来）
+--[[---预览线动画（固定从第3行移动到第9行，或者反过来）
 function XUiFangKuaiFight:OnFevLineMove(isUp)
     self:SetFevLineState(true)
     self:SetFevLineArrow(true, isUp)
@@ -598,7 +624,7 @@ function XUiFangKuaiFight:OnBlockFevMoveY(blockData, gridY, isUp)
         end
     end)
     self:ShowWarnEffect()
-end
+end]]
 
 --endregion
 
@@ -784,11 +810,6 @@ function XUiFangKuaiFight:ShowItemTip(index, item, content)
         return
     end
 
-    if item.Kind == XEnumConst.FangKuai.ItemType.Frozen and not self._Control:CanAddFrozenRound(self._ChapterId) then
-        self:ShowTip(XUiHelper.GetText("FangKuaiMaxFrozenTip"))
-        return
-    end
-
     local isNeedChooseColor = self._Control:IsItemNeedChooseColor(item.Kind)
     local isNeedUseBtn = self._Control:IsItemNeedUseBtn(item.Kind)
 
@@ -812,6 +833,10 @@ function XUiFangKuaiFight:ShowItemTip(index, item, content)
         self._Bubble:UpdateNormalView(item)
         self:ForbidBlock(false, true)
     end
+
+    if (item.Kind == ItemType.Frozen or item.Kind == ItemType.FrozenPlus) and not self._Control:CanAddFrozenRound(self._ChapterId) then
+        self._Bubble:SetUseButtonDisable(XUiHelper.GetText("FangKuaiItemUseLimitBtn"))
+    end
 end
 
 function XUiFangKuaiFight:OnClickCancelUseItem()
@@ -833,8 +858,8 @@ function XUiFangKuaiFight:OnClickAddRound()
     -- 增加回合数道具没有执行方块操作的阶段（只有回合数增加） 不需要屏蔽点击
 end
 
-function XUiFangKuaiFight:OnClickFrozenRound()
-    self._Game:StartUseFrozenRoundItem(self._CurChooseIndex)
+function XUiFangKuaiFight:OnClickFrozenRound(isPlus)
+    self._Game:StartUseFrozenRoundItem(self._CurChooseIndex, isPlus)
     self:OnClickCancelUseItem()
     self:UpdateFrozen()
 end
@@ -865,13 +890,13 @@ function XUiFangKuaiFight:OnClickRandomLine()
     local randomLine1 = randomLines[XTool.Random(1, #randomLines)]
     self._FirstBlock = self:GetBlock(next(self._Game:GetLayerBlocks(randomLine1)))
 
-    if self._CurChooseKind == XEnumConst.FangKuai.ItemType.TwoLineExChange then
+    if self._CurChooseKind == ItemType.TwoLineExChange then
         table.remove(randomLines, randomLine1)
         local randomLine2 = randomLines[XTool.Random(1, #randomLines)]
         local block2 = self:GetBlock(next(self._Game:GetLayerBlocks(randomLine2)))
         -- 只有1行 交换不了 但是道具正常被消耗
         self:OnClickBlock(block2, true)
-    elseif self._CurChooseKind == XEnumConst.FangKuai.ItemType.Alignment then
+    elseif self._CurChooseKind == ItemType.Alignment then
         self:DoAlignmentBlock(XTool.Random(0, 1))
     else
         self:OnClickBlock(self._FirstBlock)
@@ -879,12 +904,14 @@ function XUiFangKuaiFight:OnClickRandomLine()
     self:ShowHorizontalTip(XUiHelper.GetText("FangKuaiRandomLine1", item.Name))
 end
 
-function XUiFangKuaiFight:OnClickConvertionBlock()
-    local blockData = self._Game:StartUseConvertionItem(self._CurChooseIndex)
-    if blockData then
-        local block = self:GetBlock(blockData)
-        block:UpdateBlock()
-        block:PlayExpression(XEnumConst.FangKuai.Expression.Standby)
+function XUiFangKuaiFight:OnClickConvertionBlock(isPlus)
+    local bossBlocks = self._Game:StartUseConvertionItem(self._CurChooseIndex, isPlus)
+    if not XTool.IsTableEmpty(bossBlocks) then
+        for _, blockData in ipairs(bossBlocks) do
+            local block = self:GetBlock(blockData)
+            block:UpdateBlock()
+            block:PlayExpression(XEnumConst.FangKuai.Expression.Standby)
+        end
     else
         self:ShowTip(XUiHelper.GetText("FangKuaiUseConvertTip"))
     end
@@ -908,13 +935,13 @@ end
 ---@param isIgnoreLimit boolean 是否忽略条件限制 直接使用道具（如果不符合条件 道具不会生效 但是会被消耗掉）
 function XUiFangKuaiFight:OnClickBlock(block, isIgnoreLimit)
     local isSuccess = false
-    if self._CurChooseKind == XEnumConst.FangKuai.ItemType.SingleLineRemove then
+    if self._CurChooseKind == ItemType.SingleLineRemove then
         isSuccess = self:DoSingleLineRemove(block)
-    elseif self._CurChooseKind == XEnumConst.FangKuai.ItemType.TwoLineExChange then
-        isSuccess = self:DoTwoLineExChange(block, isIgnoreLimit)
-    elseif self._CurChooseKind == XEnumConst.FangKuai.ItemType.AdjacentExchange then
+    elseif self._CurChooseKind == ItemType.TwoLineExChange or self._CurChooseKind == ItemType.TwoLineRemove then
+        isSuccess = self:DoTwoLineExChange(block, isIgnoreLimit, self._CurChooseKind)
+    elseif self._CurChooseKind == ItemType.AdjacentExchange then
         isSuccess = self:DoAdjacentExchange(block)
-    elseif self._CurChooseKind == XEnumConst.FangKuai.ItemType.Alignment then
+    elseif self._CurChooseKind == ItemType.Alignment then
         isSuccess = self:DoShowChooseDirTip(block)
     end
     if not isSuccess then
@@ -931,7 +958,7 @@ function XUiFangKuaiFight:DoSingleLineRemove(block)
 end
 
 ---@param block XUiGridFangKuaiBlock
-function XUiFangKuaiFight:DoTwoLineExChange(block, isIgnoreLimit)
+function XUiFangKuaiFight:DoTwoLineExChange(block, isIgnoreLimit, itemType)
     local blockData = block.BlockData
     if not self._FirstBlock or self._FirstBlock == block then
         self._FirstBlock = block
@@ -941,7 +968,7 @@ function XUiFangKuaiFight:DoTwoLineExChange(block, isIgnoreLimit)
     if self._FirstBlock.BlockData:GetHeadGrid().y == blockData:GetHeadGrid().y and not isIgnoreLimit then
         return false
     end
-    self._Game:StartUseExchangeItem(self._CurChooseIndex, XEnumConst.FangKuai.ItemType.TwoLineExChange, self._FirstBlock.BlockData, blockData)
+    self._Game:StartUseExchangeItem(self._CurChooseIndex, itemType, self._FirstBlock.BlockData, blockData)
     return true
 end
 
@@ -961,7 +988,7 @@ function XUiFangKuaiFight:DoAdjacentExchange(block)
         self:ChangeBlockAlpha(blockData)
         return false
     end
-    self._Game:StartUseExchangeItem(self._CurChooseIndex, XEnumConst.FangKuai.ItemType.AdjacentExchange, self._FirstBlock.BlockData, blockData)
+    self._Game:StartUseExchangeItem(self._CurChooseIndex, ItemType.AdjacentExchange, self._FirstBlock.BlockData, blockData)
     return true
 end
 
@@ -1062,12 +1089,12 @@ end
 --region 特效
 
 function XUiFangKuaiFight:ShowWarnEffect()
-    if self._Control:IsFever() then
+    --[[if self._Control:IsFever() then
         -- 狂热状态下 屏蔽警戒特效
         self.PanelEffect.gameObject:SetActiveEx(false)
         self.PanelEffect2.gameObject:SetActiveEx(false)
         return
-    end
+    end]]
     local isWarn = false
     local maxY = self._StageConfig.SizeY
     for y = maxY - self._WarnDistance, maxY do
@@ -1116,7 +1143,7 @@ function XUiFangKuaiFight:UpdateFrozen()
     self._TempFrozenRound = times
 end
 
----@param block XUiGridFangKuaiBlock
+--[[---@param block XUiGridFangKuaiBlock
 function XUiFangKuaiFight:ShowFevTailEffect(block)
     if not self._Control:IsFever() then
         return
@@ -1124,15 +1151,11 @@ function XUiFangKuaiFight:ShowFevTailEffect(block)
     self.PanelTailEffect:SetParent(block.Transform, false)
     self.PanelTailEffect:SetSiblingIndex(0)
     self.PanelTailEffect.gameObject:SetActiveEx(true)
-end
+end]]
 
----狂热斩击特效
+---剑痕特效（狂热状态 or 刀锋方块）
 ---@param block XUiGridFangKuaiBlock
-function XUiFangKuaiFight:ShowFevDragEffect(initGridX, curGridX, block)
-    if not self._Control:IsFever() then
-        return
-    end
-    
+function XUiFangKuaiFight:ShowSwordTrailEffect(initGridX, curGridX, block)
     if not self._FevDragEffect then
         self._FevDragEffectV3 = self.PanelFevDragEffect.localPosition
         self._FevDragEffect = {}
@@ -1143,12 +1166,11 @@ function XUiFangKuaiFight:ShowFevDragEffect(initGridX, curGridX, block)
     curGridX = math.floor(curGridX)
 
     if initGridX == curGridX then
-        self:HideUltimaSlashEffect()
+        self:HideSwordTrailEffect()
         return
     end
 
     local gridY = block.BlockData:GetHeadGrid().y
-    local len = block.BlockData:GetLen()
     self.PanelFevDragEffect.gameObject:SetActiveEx(true)
     self._FevDragEffectV3.y = self._Control:GetPosByGridY(gridY)
     self.PanelFevDragEffect.localPosition = self._FevDragEffectV3
@@ -1161,7 +1183,7 @@ function XUiFangKuaiFight:ShowFevDragEffect(initGridX, curGridX, block)
     end
 end
 
-function XUiFangKuaiFight:HideUltimaSlashEffect()
+function XUiFangKuaiFight:HideSwordTrailEffect()
     if self._FevDragEffect then
         for i = 1, 9 do
             self._FevDragEffect["DragEffect" .. i].gameObject:SetActiveEx(false)
@@ -1219,7 +1241,9 @@ function XUiFangKuaiFight:UpdateRound()
             self:PlayAnimation("TxtNumQieHuan")
         end
         self._Round = round
-        self.BtnSettlement.gameObject:SetActiveEx(self._Control:GetCurRound() >= self._SettleRound)
+        local isTargetRound = self._Control:GetCurRound() >= self._SettleRound
+        local isTargetGrade = self._Control:IsSettleScoreGrade(self._StageId)
+        self.BtnSettlement.gameObject:SetActiveEx(isTargetRound or isTargetGrade)
     else
         self.BtnSettlement.gameObject:SetActiveEx(false)
     end
@@ -1317,7 +1341,7 @@ function XUiFangKuaiFight:RemoveFrozenTimer()
 end
 
 ---@param block XUiGridFangKuaiBlock
-function XUiFangKuaiFight:BlockPoolRecycle(block, isRestart)
+function XUiFangKuaiFight:BlockPoolRecycle(block)
     self._BlockPool:Recycle(block)
 end
 
@@ -1430,7 +1454,12 @@ end
 --region 狂热
 
 function XUiFangKuaiFight:UpdateFeverProgress()
-    -- 狂热值
+    self.PanelStep.gameObject:SetActiveEx(false)
+    self.PanelFeverLv.gameObject:SetActiveEx(false)
+    self.PanelScoreUp.gameObject:SetActiveEx(false)
+    self.PanelFeverEffect.gameObject:SetActiveEx(false)
+    self.PanelFeverEffect2.gameObject:SetActiveEx(false)
+    --[[-- 狂热值
     local value = self._Control:GetFeverValue()
     local maxValue = self._Control:GetFevExcitedValue()
     local fevLv = self._Control:GetFevLevel()
@@ -1489,12 +1518,12 @@ function XUiFangKuaiFight:UpdateFeverProgress()
         effect.gameObject:SetActiveEx(false)
         effect.gameObject:SetActiveEx(true)
     end
-    self._TempFevLv = fevLv
+    self._TempFevLv = fevLv]]
 end
 
 --region 预览线
 
-function XUiFangKuaiFight:UpdateFevLineState()
+--[[function XUiFangKuaiFight:UpdateFevLineState()
     if not self._FevLineMove then
         self._FevLineMove = {}
         XUiHelper.InitUiClass(self._FevLineMove, self.PanelFevMove)
@@ -1544,11 +1573,55 @@ function XUiFangKuaiFight:SetFevLineArrow(isShow, isUp)
         self._FevLineMove.NineDown.gameObject:SetActiveEx(false)
         self._FevLineMove.NineUp.gameObject:SetActiveEx(false)
     end
+end]]
+
+--endregion
+
+--endregion
+
+function XUiFangKuaiFight:UpdateEnhanceCount()
+    self.TxtEnhanceCount.text = string.format("%s/%s", self._Control:GetAccumulatedEnhanceCount(), self._EnhanceAccumulateLimit)
 end
 
---endregion
+---@param block XUiGridFangKuaiBlock
+---@param itemIdx number
+---@param isEnhanced boolean
+function XUiFangKuaiFight:PlayEnhanceEffect(block, itemIdx, isEnhanced)
+    if XTool.UObjIsNil(block.Transform) then
+        return
+    end
 
---endregion
+    local targetTransform
+    if isEnhanced then
+        local itemGrid = self[string.format("BtnProp%s", itemIdx)]
+        targetTransform = itemGrid.transform
+    end
+    -- 没有强化背包道具时，本次强化次数会累计到积累条
+    targetTransform = targetTransform or self.TxtEnhanceCount.transform
+
+    -- PanelTailEffect保留给狂热逻辑使用，这里只将它作为模板创建拖尾实例
+    local effect
+    if #self._EnhanceEffectPool > 0 then
+        effect = table.remove(self._EnhanceEffectPool, 1)
+    end
+    if XTool.UObjIsNil(effect) then
+        effect = XUiHelper.Instantiate(self.PanelTailEffect, self._EnhanceEffectRoot)
+    end
+
+    local parent = effect.parent
+    effect:DOKill()
+    effect.gameObject:SetActiveEx(true)
+    effect:SetAsLastSibling()
+    -- block.Transform的位置即方块数据中HeadGrid（第一格）对应的UI位置
+    effect.localPosition = parent:InverseTransformPoint(block.Transform.position)
+    local targetPosition = parent:InverseTransformPoint(targetTransform.position)
+    effect:DOLocalMove(targetPosition, self._Control:GetItemFlyTime()):OnComplete(function()
+        if not XTool.UObjIsNil(effect) then
+            effect.gameObject:SetActiveEx(false)
+            table.insert(self._EnhanceEffectPool, effect)
+        end
+    end)
+end
 
 ---@class FKEffectData
 ---@field Root UnityEngine.RectTransform

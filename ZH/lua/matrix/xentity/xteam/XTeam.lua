@@ -740,16 +740,6 @@ end
 
 -- XTeam.lua
 
--- [引用定义好的职业分类]
-local TANK_CAREERS = {
-    [XEnumConst.CHARACTER.Career.Tank] = true,
-    [XEnumConst.CHARACTER.Career.Breaker] = true,
-}
-local AMPLIFIER_CAREERS = {
-    [XEnumConst.CHARACTER.Career.Amplifier] = true,
-    [XEnumConst.CHARACTER.Career.Support] = true,
-}
-
 ---子类需重写此接口，统一返回 {[pos] = entityId} 的简单表
 function XTeam:GetEntityIdListForObservation()
     return self:GetEntityIds()
@@ -761,12 +751,9 @@ function XTeam:GetObservationActiveCareer()
     local obsPos = 0
     local physicalCount = 0
     local observationCareerCount = 0
-    
-    local supportAmpCount = 0
-    local supportAmpEntityId = 0 
-    local tankBreakerCount = 0
-    local tankBreakerEntityId = 0
-    local nihilAmplifierCount = 0
+
+    local matchedCount = 0
+    local transformCareer = XEnumConst.CHARACTER.Career.None
 
     -- 1. 获取标准化后的 ID 列表并统计
     local idList = self:GetEntityIdListForObservation()
@@ -775,7 +762,7 @@ function XTeam:GetObservationActiveCareer()
             -- 处理特殊实体（肉鸽等）拿到原始角色ID
             local fixedId = self:GetSpecialEntityId(entityId)
             fixedId = XTool.IsNumberValid(fixedId) and fixedId or entityId
-            
+
             local career = XMVCA.XCharacter:GetCharacterCareer(fixedId)
             local element = XMVCA.XCharacter:GetCharacterElement(fixedId)
             local isPhysical = (element == XEnumConst.CHARACTER.Element.Physical)
@@ -788,22 +775,13 @@ function XTeam:GetObservationActiveCareer()
                     physicalCount = physicalCount + 1
                 end
 
-                if AMPLIFIER_CAREERS[career] then
+                local matchedCareer, hasCareerConfig = self:MatchObsTransformCareer(career, element)
+                if hasCareerConfig then
                     observationCareerCount = observationCareerCount + 1
-                    if not isPhysical then
-                        supportAmpCount = supportAmpCount + 1
-                        supportAmpEntityId = fixedId
-                        -- 统计空元素增幅型职业数量
-                        if element == XEnumConst.CHARACTER.Element.Nihil and career == XEnumConst.CHARACTER.Career.Amplifier then
-                            nihilAmplifierCount = nihilAmplifierCount + 1
-                        end
-                    end
-                elseif TANK_CAREERS[career] then
-                    observationCareerCount = observationCareerCount + 1
-                    if not isPhysical then
-                        tankBreakerCount = tankBreakerCount + 1
-                        tankBreakerEntityId = fixedId
-                    end
+                end
+                if not isPhysical and XTool.IsNumberValid(matchedCareer) then
+                    matchedCount = matchedCount + 1
+                    transformCareer = matchedCareer
                 end
             end
         end
@@ -812,8 +790,8 @@ function XTeam:GetObservationActiveCareer()
     local res = XEnumConst.CHARACTER.Career.None
 
     -- 2. 核心屏蔽逻辑
-    if obsCount ~= 1 or physicalCount > 1 then 
-        return res, obsPos 
+    if obsCount ~= 1 or physicalCount > 1 then
+        return res, obsPos
     end
 
     -- 3. 已有两名对应职业队友时不转换
@@ -821,30 +799,32 @@ function XTeam:GetObservationActiveCareer()
         return res, obsPos
     end
 
-    -- 4. 特殊空增幅（仅当目标角色是空元素且为增幅型职业时直接返回Breaker）
-    if nihilAmplifierCount == 1 then
-        return XEnumConst.CHARACTER.Career.Breaker, obsPos
+    -- 4. 有且只有一个队友命中表内配置时才转换
+    if matchedCount ~= 1 then
+        return res, obsPos
     end
 
-    -- 5. 按照优先级顺序判定
-    -- 【优先级 1 & 3】：处理 增幅/辅助 触发
-    if supportAmpCount == 1 then
-        local element = XMVCA.XCharacter:GetCharacterElement(supportAmpEntityId)
-        local hasBreaker = XMVCA.XCharacter:CheckHasCareerByElement(element, XEnumConst.CHARACTER.Career.Breaker)
-        
-        if hasBreaker then
-            return XEnumConst.CHARACTER.Career.Breaker, obsPos -- 优先级 1
-        else
-            return XEnumConst.CHARACTER.Career.Tank, obsPos    -- 优先级 3
+    return transformCareer, obsPos
+end
+
+---按 CharacterObsTransform.tab 精确匹配队友的职业和元素
+function XTeam:MatchObsTransformCareer(career, element)
+    local configs = XMVCA.XCharacter:GetModelCharacterObsTransform()
+    if XTool.IsTableEmpty(configs) then
+        return XEnumConst.CHARACTER.Career.None
+    end
+
+    local hasCareerConfig = false
+    for _, cfg in pairs(configs) do
+        if cfg.SourceCareer == career then
+            hasCareerConfig = true
+            if cfg.SourceElement == element and XTool.IsNumberValid(cfg.TransformCareer) then
+                return cfg.TransformCareer, hasCareerConfig
+            end
         end
     end
 
-    -- 【优先级 2】：处理 破甲/装甲 触发
-    if tankBreakerCount == 1 then
-        return XEnumConst.CHARACTER.Career.Amplifier, obsPos -- 优先级 2
-    end
-
-    return res, obsPos
+    return XEnumConst.CHARACTER.Career.None, hasCareerConfig
 end
 
 --肉鸽特殊实体Id处理

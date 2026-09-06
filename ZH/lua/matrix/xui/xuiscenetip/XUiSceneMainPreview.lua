@@ -46,6 +46,7 @@ function XUiSceneMainPreview:Refresh()
     if self.BtnSwitch then
         self.BtnSwitch:RefreshSelect(isFirst)
     end
+    self:RefreshHintText()
     -- Todo 角色特效
 end
 
@@ -169,4 +170,14 @@ function XUiSceneMainPreview:ClearPreviewData()
         end)
     end
     
-end 
+end
+
+function XUiSceneMainPreview:RefreshHintText()
+    local hintText = XPhotographConfigs.GetBackgroundHintText(self.SceneId)
+    if string.IsNilOrEmpty(hintText) then
+        self.PanelHintText.gameObject:SetActiveEx(false)
+    else
+        self.PanelHintText.gameObject:SetActiveEx(true)
+        self.HintText.text = XUiHelper.ReplaceTextNewLine(hintText)
+    end
+end

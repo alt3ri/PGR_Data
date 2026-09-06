@@ -343,7 +343,7 @@ function XUiFubenExtraChapter:OnBtnHardClick(IsAutoMove)
                 return false
             end
             if XTool.IsNumberValid(chapterId) then
-                if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.ExtralChapter, chapterId) then
+                if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.ExtralChapter) then
                     return false
                 end
             end

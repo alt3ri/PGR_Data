@@ -1006,7 +1006,8 @@ function XUiBattleRoleRoom:RefreshCharacterRImgType()
         local tankEffect = curRImgType.transform:Find("TankEffect")
         local amplifierEffect = curRImgType.transform:Find("AmplifierEffect")
         local breakerEffect = curRImgType.transform:Find("BreakerEffect")
-        if not (tankEffect and amplifierEffect and breakerEffect) then
+        local overlinkerEffect = curRImgType.transform:Find("OverlinkerEffect")
+        if not (tankEffect and amplifierEffect and breakerEffect and overlinkerEffect) then
             return
         end
 
@@ -1014,6 +1015,7 @@ function XUiBattleRoleRoom:RefreshCharacterRImgType()
         tankEffect.gameObject:SetActiveEx(isObsPos and obsActiveCarrer == XEnumConst.CHARACTER.Career.Tank)
         amplifierEffect.gameObject:SetActiveEx(isObsPos and (obsActiveCarrer == XEnumConst.CHARACTER.Career.Amplifier or obsActiveCarrer == XEnumConst.CHARACTER.Career.Support))
         breakerEffect.gameObject:SetActiveEx(isObsPos and obsActiveCarrer == XEnumConst.CHARACTER.Career.Breaker)
+        overlinkerEffect.gameObject:SetActiveEx(isObsPos and obsActiveCarrer == XEnumConst.CHARACTER.Career.Fusion)
 
         if isObsPos then
             iconPath = XMVCA.XCharacter:GetNpcTypeIconObs(obsActiveCarrer)

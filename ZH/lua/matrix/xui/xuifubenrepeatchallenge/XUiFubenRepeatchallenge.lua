@@ -56,7 +56,8 @@ function XUiFubenRepeatchallenge:OnAwake()
     if self.PanelDouble then
         self.PanelDouble.gameObject:SetActiveEx(false)
 
-        if XMVCA.XReCallActivity:CheckIsRegressionPlayer() then
+        self.IsRegressionPlayer = XMVCA.XReCallActivity:CheckIsRegressionPlayer()
+        if self.IsRegressionPlayer then
             ---@type XUiGridFubenRepeatDouble
             self.GridDouble = require("XUi/XUiFubenRepeatchallenge/XUiGridFubenRepeatDouble").New(self.PanelDouble, self)
             self.GridDouble:Open()
@@ -313,6 +314,11 @@ function XUiFubenRepeatchallenge:RefreshMultiReward()
     local multiRewardCfg = XDataCenter.FubenRepeatChallengeManager.GetMultiRewardActivityCfg()
     local usedCount = XDataCenter.FubenRepeatChallengeManager.GetMultiRewardDailyUsedCount()
     local dailyMultiRewardCount = multiRewardCfg.DailyMultiRewardCount
+    if usedCount >= dailyMultiRewardCount and self.IsRegressionPlayer then
+        --每日双倍奖励次数用尽且属于回归玩家时，显示回归双倍奖励Tag
+        self.Tag.gameObject:SetActiveEx(false)
+        return
+    end
     local countStr = XTool.ConvertChineseNumberString(multiRewardCfg.Multiple)
     self.Tag.gameObject:SetActiveEx(true)
     self.TextAT.text = XUiHelper.GetText("ActivityRepeatChallengeMultiRewardTimes", countStr)

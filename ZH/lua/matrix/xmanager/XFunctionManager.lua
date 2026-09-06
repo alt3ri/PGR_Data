@@ -63,7 +63,7 @@ XFunctionManager.FunctionName = {
     EquipStrengthenAutoSelect = 204, --装备一键强化
     EquipAwake = 205, --装备觉醒
     EquipQuick = 206, --一键培养
-    EquipGuideRecommend = 207, --装备目标-推荐
+    TeamRecommend = 207, --队伍养成推荐
     EquipGuideSetTarget = 208, --装备目标-设定
     EquipOverrun = 209, --装备超限
 
@@ -287,7 +287,11 @@ XFunctionManager.FunctionName = {
     ConcertPreHeating = 10505, -- 音乐会预热活动
     Theatre6Pvp = 10506, -- 肉鸽6PVP
     Envelope = 10507, -- 七夕邀请函开包活动
+    Punishaar = 10509, -- 大巴扎玩法
+    CharacterOneClick = 10511, --角色一键养成
+    TransfiniteTower = 10510, -- 超限启航（爬塔活动
 }   
+
 
 XFunctionManager.FunctionType = {
     System = 1,
@@ -454,6 +458,9 @@ function XFunctionManager.SkipInterface(id, fromMsg, ...)
                 showAccount = list.CustomParams[3] == 1
             end
             XLuaUiManager.Open(list.UiName, isFight, list.ParamId, list.CustomParams[2], showAccount)
+        elseif list.UiName == "UiSignBanner" then
+            local isForceInteractive = list.CustomParams[1] == 1
+            XLuaUiManager.Open(list.UiName, list.ParamId, isForceInteractive)
         else
             XLuaUiManager.Open(list.UiName, list.ParamId)
         end

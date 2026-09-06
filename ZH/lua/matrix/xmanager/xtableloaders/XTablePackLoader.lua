@@ -140,9 +140,7 @@ function loader.TestCode()
     str = str .. "  for k, v in pairs(tab) do\n"
     str = str .. "  end\n"
     str = str .. "end"
-    local file = io.open(TABLE_PACK_DIRECTORY .. "testCode.txt", "w")
-    file:write(str)
-    file:close()
+    XTool.WriteAllText(TABLE_PACK_DIRECTORY .. "testCode.txt", str, "w")
     return str
 end
 

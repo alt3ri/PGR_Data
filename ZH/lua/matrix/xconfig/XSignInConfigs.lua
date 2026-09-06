@@ -19,14 +19,20 @@ local TABLE_SIGN_IN_SUBROUND = "Client/SignIn/SubRound.tab"
 local TABLE_SIGN_CARD = "Client/SignIn/SignCard.tab"
 local TABLE_SIGN_RECHARGE = "Client/SignIn/SignFirstRecharge.tab"
 local TABLE_SIGN_WELFARE = "Client/SignIn/Welfare.tab"
+local TABLE_SIGN_IN_CLIENT_CONFIG = "Client/SignIn/SignInClientConfig.tab"
 
+---@type XTableSignIn[]
 local SignInConfig = {}           -- 签到配置表
 local SignInRewardConfig = {}     -- 签到奖励配置表[key = signId, value = (key = round, value = {conifig1, config2 ...})]
 local SignInSubRound = {}         -- 客户端显示子轮次配置表
 local SignCard = {}               -- 客户端月卡签到表
 local SignRecharge = {}           -- 首充签到表
+---@type XTableWelfare[]
 local SignWelfareList = {}        -- 福利配置表List
+---@type XTableWelfare[]
 local SignWelfareDir = {}         -- 福利配置表dir
+---@type XTableSignInClientConfig[]
+local SignInClientConfig = {}     -- 客户端配置表
 
 local EnWelfareMonthlyCardMap = {} -- 福利Id到月卡Id
 
@@ -54,6 +60,7 @@ function XSignInConfigs.Init()
     SignCard = XTableManager.ReadByIntKey(TABLE_SIGN_CARD, XTable.XTableSignCard, "Id")
     SignRecharge = XTableManager.ReadByIntKey(TABLE_SIGN_RECHARGE, XTable.XTableSignFirstRecharge, "Id")
     SignWelfareDir = XTableManager.ReadByIntKey(TABLE_SIGN_WELFARE, XTable.XTableWelfare, "Id")
+    SignInClientConfig = XTableManager.ReadByStringKey(TABLE_SIGN_IN_CLIENT_CONFIG, XTable.XTableSignInClientConfig, "Id")
     local signInReward = XTableManager.ReadByIntKey(TABLE_SIGN_IN_REWARD, XTable.XTableSignInReward, "Id")
 
     local signInRewardSort = {}
@@ -186,7 +193,7 @@ function XSignInConfigs.GetWelfareConfigsWithActivity()
     local openWelfare = XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.Welfare)
     for _, cfg in pairs(SignWelfareList) do
         if cfg.FunctionType == XAutoWindowConfigs.AutoFunctionType.Sign and openWelfare then
-            if XDataCenter.SignInManager.IsShowSignIn(cfg.SubConfigId, true) and
+            if XTool.IsNumberValid(cfg.Sort) and XDataCenter.SignInManager.IsShowSignIn(cfg.SubConfigId, true) and --v4.8联动卡池签到 Sort配0则不在【活动】里显示页签
                     not XFunctionManager.CheckFunctionFitter(XFunctionManager.FunctionName.SignIn) then
                 local subCfg = XSignInConfigs.GetSignInConfig(cfg.SubConfigId)
                 table.insert(list, setConfig(subCfg.Id, subCfg.Name, cfg.Id, {}, subCfg.PrefabPath, XAutoWindowConfigs.AutoFunctionType.Sign, subCfg.BtnBg, subCfg.FullScreenBg))
@@ -448,6 +455,7 @@ local GetDailyRewardConfigs = function(data, sunRoundId, subRound)
 end
 
 -- 获得每轮奖励配置表List
+---@return XTableSignInReward[]
 function XSignInConfigs.GetSignInRewardConfigs(signInId, round)
     local signInInfo = SignInRewardConfig[signInId]
     local config = XSignInConfigs.GetSignInConfig(signInId)
@@ -524,7 +532,7 @@ function XSignInConfigs.IsShowSignIn(signInId)
     end
 
     local now = XTime.GetServerNowTimestamp()
-    if now <= startTime and now > closeTime then
+    if now < startTime or now > closeTime then
         return false
     end
 
@@ -609,4 +617,19 @@ end
 function XSignInConfigs.GetSignTimeId(signInId)
     local cfg = XSignInConfigs.GetSignInConfig(signInId)
     return cfg.TimeId
+end
+
+function XSignInConfigs.GetIntClientConfigValue(key, index)
+    local value = XSignInConfigs.GetClientConfigValue(key, index)
+    return value and tonumber(value) or 0
+end
+
+function XSignInConfigs.GetClientConfigValue(key, index)
+    index = index or 1
+    local cfg = SignInClientConfig[key]
+    if not cfg then
+        XLog.Error(string.format("SignInClientConfig表里不存在key=%s", key))
+        return nil
+    end
+    return cfg.Values[index]
 end

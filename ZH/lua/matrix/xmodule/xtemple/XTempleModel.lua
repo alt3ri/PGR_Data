@@ -89,20 +89,10 @@ function XTempleModel:EditorGetBlockPath()
     return CS.UnityEngine.Application.dataPath .. "../../../../Product/Table/Client/MiniActivity/TempleFair/TempleBlock.tab"
 end
 
-local function FileExists(filePath)
-    local file = io.open(filePath, "r")
-    if file then
-        io.close(file)
-        return true
-    else
-        return false
-    end
-end
-
 function XTempleModel:GetStageGameConfig(stageId)
     if XMain.IsWindowsEditor then
         local fullPath = self:GetStageGamePath(stageId, true)
-        if not FileExists(fullPath) then
+        if not XTool.FileExists(fullPath) then
             XLog.Debug("[XTempleModel] 文件尚不存在:", fullPath)
             return {}
         end
@@ -134,7 +124,7 @@ end
 function XTempleModel:GetActionRecord(stageId)
     if XMain.IsWindowsEditor then
         local fullPath = self:GetActionRecordPath(stageId, true)
-        if not FileExists(fullPath) then
+        if not XTool.FileExists(fullPath) then
             XLog.Debug("[XTempleModel] 文件尚不存在:", fullPath)
             return {}
         end

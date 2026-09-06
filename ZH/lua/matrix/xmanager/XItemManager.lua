@@ -113,6 +113,8 @@ XItemManagerCreator = function()
         EquipAwakeCoin2 = 70002, -- 意识超频代币2
         EquipOverrunCoin1 = 34000, -- 谐振加速器
         EquipOverrunCoin2 = 34001, -- 谐振增幅器
+        WeaponStrengthenMaterial4 = 31104, -- 武器强化素材Ⅳ
+        AwarenessStrengthenMaterial4 = 31204, -- 意识强化素材Ⅳ
         Theatre4TechTreeCoin = 96200, -- 肉鸽4外循环货币
         Theatre4BpExperience = 96201, -- 肉鸽4Bp经验
         Temple2 = 97034, -- 庙会2代币
@@ -120,10 +122,13 @@ XItemManagerCreator = function()
         RepeatChallengeCoin = 62738, -- 复刷关代币
         DlcMultiplayerCoin = 97020,  --DLC多人联机玩法货币
         DlcMultiplayerBpExp = 97045, --DLC多人联机玩法Bp经验
+        TantalumIronOre = 96002, -- 钽铁合矿
         ScoreTowerCoin = 96203, -- 新矿区代币
         Theatre5Coin = 97054, -- 肉鸽5货币
         DlcRelinkStoreCoin = 97070, -- DLC联机共斗商店货币
         DlcRelinkGameplayCoin = 97072, -- DLC联机共斗局内货币
+        LeapWaferChip = 32000, -- 跃升晶元
+        SoloDomainCrystal = 33000, -- 独域单晶
     }
 
     --时效性道具初始时间计算方式
@@ -152,6 +157,40 @@ XItemManagerCreator = function()
 
     XItemManager.SubType_1 = {
         Reward = 1,
+    }
+    
+    local function OpenCharacterPropertyV2P6()
+        local list = XMVCA.XCharacter:GetOwnCharacterList()
+        -- 等级最低 → 同等级取 Priority 最大
+        local function PickBest(onlyNewState)
+            local characterId, bestPriority, bestLevel
+            for _, char in ipairs(list) do
+                if not onlyNewState or XMVCA.XCharacter:CheckIsNewStateForSort(char.Id) then
+                    local priority = XMVCA.XCharacter:GetCharacterPriority(char.Id) or 0
+                    local level = char.Level or 0
+                    if not characterId
+                        or level < bestLevel
+                        or (level == bestLevel and priority > bestPriority) then
+                        characterId = char.Id
+                        bestPriority = priority
+                        bestLevel = level
+                    end
+                end
+            end
+            return characterId
+        end
+
+        -- 优先新角色；
+        local characterId = PickBest(true) or PickBest(false)
+        if not characterId then
+            local recordData = XMVCA.XCommonCharacterFilter:GetRecordLastTag("UiCharacterV2P6")
+            characterId = recordData and recordData.CharacterId
+        end
+        XLuaUiManager.Open("UiCharacterSystemV2P6", characterId, XEnumConst.CHARACTER.SkipEnumV2P6.PropertyLvUp)
+    end
+
+    XItemManager.NormalConsumableUseFunc = {
+        [1] = OpenCharacterPropertyV2P6,
     }
 
     XItemManager.SUBTYPE_EXP = 2
@@ -567,43 +606,43 @@ XItemManagerCreator = function()
             return item
         elseif XMVCA.XItem:CheckItemHasGroupConfig(id) then
             local item = Items[id]
-            if not item then
-                return nil
+            if not item then
+                return nil
             end
-
+
             local mergeItem = XItem.New(nil, item.Template)
-            mergeItem.Count = XItemManager.GetCount(id)
+            mergeItem.Count = XItemManager.GetCount(id)
             return mergeItem
         else
             return Items[id]
         end
-    end
-
-    local function ResolvePhysicalItemIds(itemId)
-        local resolvedItemIds = XMVCA.XItem:GetItemCombineIdsByItemId(itemId) or { itemId }
-
-        local physicalItemIds = {}
-        local physicalItemIdSet = {}
-        for _, physicalItemId in pairs(resolvedItemIds) do
-            if not physicalItemIdSet[physicalItemId] then
-                physicalItemIdSet[physicalItemId] = true
-                tableInsert(physicalItemIds, physicalItemId)
-            end
-        end
-        return physicalItemIds
-    end
-
-    local function GetPhysicalItemCount(itemId)
-        return Items[itemId] and Items[itemId]:GetCount() or 0
-    end
-
-    local function GetResolvedItemCount(itemId)
-        local count = 0
-        local physicalItemIds = ResolvePhysicalItemIds(itemId)
-        for _, physicalItemId in pairs(physicalItemIds) do
-            count = count + GetPhysicalItemCount(physicalItemId)
-        end
-        return count
+    end
+
+    local function ResolvePhysicalItemIds(itemId)
+        local resolvedItemIds = XMVCA.XItem:GetItemCombineIdsByItemId(itemId) or { itemId }
+
+        local physicalItemIds = {}
+        local physicalItemIdSet = {}
+        for _, physicalItemId in pairs(resolvedItemIds) do
+            if not physicalItemIdSet[physicalItemId] then
+                physicalItemIdSet[physicalItemId] = true
+                tableInsert(physicalItemIds, physicalItemId)
+            end
+        end
+        return physicalItemIds
+    end
+
+    local function GetPhysicalItemCount(itemId)
+        return Items[itemId] and Items[itemId]:GetCount() or 0
+    end
+
+    local function GetResolvedItemCount(itemId)
+        local count = 0
+        local physicalItemIds = ResolvePhysicalItemIds(itemId)
+        for _, physicalItemId in pairs(physicalItemIds) do
+            count = count + GetPhysicalItemCount(physicalItemId)
+        end
+        return count
     end
 
     function XItemManager.GetCount(id)
@@ -617,16 +656,16 @@ XItemManagerCreator = function()
         elseif id == XGuildConfig.GoodsCoinId then
             return XDataCenter.GuildManager.GetShopCoin()
         end
-        return GetResolvedItemCount(id)
+        return GetResolvedItemCount(id)
     end
 
     function XItemManager.GetMaxCount(id)
         return Items[id] and Items[id]:GetMaxCount() or 0
-    end
-
-    ---获取道具物理数量（不执行任何逻辑合并）
-    function XItemManager.GetItemRawCount(id)
-        return GetPhysicalItemCount(id)
+    end
+
+    ---获取道具物理数量（不执行任何逻辑合并）
+    function XItemManager.GetItemRawCount(id)
+        return GetPhysicalItemCount(id)
     end
 
     function XItemManager.GetItemsByType(itemType)
@@ -1003,7 +1042,39 @@ XItemManagerCreator = function()
         else
             template = XItemManager.GetItemTemplate(id)
         end
-        return template.ItemType == XItemConfigs.ItemType.Gift
+        if template.ItemType == XItemConfigs.ItemType.Gift then
+            return true
+        end
+        if template.ItemType == XItemConfigs.ItemType.NormalConsumableItem then
+            local funcType = XItemManager.GetNormalConsumableFuncType(id)
+            return funcType > 0 and XItemManager.NormalConsumableUseFunc[funcType] ~= nil
+        end
+        return false
+    end
+
+    function XItemManager.IsNormalConsumable(id)
+        if not XItemManager.CheckItemTemplateExist(id) then
+            return false
+        end
+        local template = XItemManager.GetItemTemplate(id)
+        return template.ItemType == XItemConfigs.ItemType.NormalConsumableItem
+    end
+
+    function XItemManager.GetNormalConsumableFuncType(id)
+        if not XItemManager.CheckItemTemplateExist(id) then
+            return 0
+        end
+        local template = XItemManager.GetItemTemplate(id)
+        local subTypeParams = template.SubTypeParams
+        return subTypeParams and subTypeParams[1] or 0
+    end
+
+    function XItemManager.UseNormalConsumable(id)
+        local funcType = XItemManager.GetNormalConsumableFuncType(id)
+        local func = XItemManager.NormalConsumableUseFunc[funcType]
+        if func then
+            func(id)
+        end
     end
 
     function XItemManager.IsWeaponFashion(id)
@@ -1749,26 +1820,26 @@ XItemManagerCreator = function()
             end
         end
 
-        local physicalItemIds = {}
-        local physicalItemIdSet = {}
-        for _, logicalItemId in pairs(ids) do
-            local resolvedItemIds
-            if logicalItemId == XItemManager.ItemId.FreeGem or logicalItemId == XItemManager.ItemId.PaidGem then
-                resolvedItemIds = { logicalItemId }
-            else
-                resolvedItemIds = ResolvePhysicalItemIds(logicalItemId)
-            end
-            for _, physicalItemId in pairs(resolvedItemIds) do
-                if not physicalItemIdSet[physicalItemId] then
-                    physicalItemIdSet[physicalItemId] = true
-                    tableInsert(physicalItemIds, physicalItemId)
-                end
-            end
-        end
-
-        for _, physicalItemId in pairs(physicalItemIds) do
-            if not Items[physicalItemId] then
-                XLog.ErrorTableDataNotFound("XItemManager.AddCountUpdateListener", "Items", "Share/Item/Item.tab", "Id", tostring(physicalItemId))
+        local physicalItemIds = {}
+        local physicalItemIdSet = {}
+        for _, logicalItemId in pairs(ids) do
+            local resolvedItemIds
+            if logicalItemId == XItemManager.ItemId.FreeGem or logicalItemId == XItemManager.ItemId.PaidGem then
+                resolvedItemIds = { logicalItemId }
+            else
+                resolvedItemIds = ResolvePhysicalItemIds(logicalItemId)
+            end
+            for _, physicalItemId in pairs(resolvedItemIds) do
+                if not physicalItemIdSet[physicalItemId] then
+                    physicalItemIdSet[physicalItemId] = true
+                    tableInsert(physicalItemIds, physicalItemId)
+                end
+            end
+        end
+
+        for _, physicalItemId in pairs(physicalItemIds) do
+            if not Items[physicalItemId] then
+                XLog.ErrorTableDataNotFound("XItemManager.AddCountUpdateListener", "Items", "Share/Item/Item.tab", "Id", tostring(physicalItemId))
                 return
             end
         end
@@ -1778,8 +1849,8 @@ XItemManagerCreator = function()
             return
         end
 
-        for _, physicalItemId in pairs(physicalItemIds) do
-            XEventManager.BindEvent(ui, XEventId.EVENT_ITEM_COUNT_UPDATE_PREFIX .. physicalItemId, func, obj)
+        for _, physicalItemId in pairs(physicalItemIds) do
+            XEventManager.BindEvent(ui, XEventId.EVENT_ITEM_COUNT_UPDATE_PREFIX .. physicalItemId, func, obj)
         end
     end
 
@@ -2036,6 +2107,85 @@ XItemManagerCreator = function()
         end
     end
 
+    -- 通过道具Id获取自动兑换信息
+    -- 路径1：意识专用路径，根据星级枚举 ShopIdList，再用 shopId + templateId 反查商品
+    -- 路径2：普通道具路径，沿用 ItemAutoExchange.tab 的 ShopId/GoodsId
+    -- @return table|nil
+    -- {
+    --     TemplateId, ShopIdList, GoodsIdList, RewardCountList,
+    --     ConsumeList = { [routeIndex] = { { ConsumeId, ConsumeCount }, ... } },
+    -- }
+    function XItemManager.GetItemAutoExchangeInfo(itemId, shopId)
+        local info = {
+            TemplateId = itemId,
+            ShopIdList = {},
+            GoodsIdList = {},
+            RewardCountList = {},
+            ConsumeList = {},
+        }
+
+        -- 路径1：意识不走 ItemAutoExchange.tab，返回内容仍和路径2保持同一结构。
+        if XMVCA.XEquip:CheckTemplateIdIsEquip(itemId) and XMVCA.XEquip:IsEquipAwareness(itemId) then
+            local star = XMVCA.XEquip:GetEquipStar(itemId)
+            local shopIdList = XEnumConst.Shop.AwarenessStarToShopIdList[star]
+            if XTool.IsTableEmpty(shopIdList) then
+                return nil
+            end
+
+            local hasTargetShopId = XTool.IsNumberValid(shopId)
+            for _, candidateShopId in ipairs(shopIdList) do
+                if not hasTargetShopId or candidateShopId == shopId then
+                    local goodsList = XShopManager.GetShopGoodsList(candidateShopId, true, true)
+                    for _, goods in ipairs(goodsList or {}) do
+                        if goods and goods.RewardGoods and goods.RewardGoods.TemplateId == itemId then
+                            if XTool.IsTableEmpty(goods.ConsumeList) then
+                                XLog.Error(string.format(
+                                    "XItemManager.GetItemAutoExchangeInfo error: 商品没有配置消耗, shopId=%s, goodsId=%s",
+                                    tostring(candidateShopId), tostring(goods.Id)))
+                            else
+                                local sales = goods.Sales or 100
+                                local consumeList = {}
+                                for _, consume in ipairs(goods.ConsumeList) do
+                                    tableInsert(consumeList, {
+                                        ConsumeId = consume.Id,
+                                        ConsumeCount = math.floor(consume.Count * sales / 100),
+                                    })
+                                end
+
+                                tableInsert(info.ShopIdList, candidateShopId)
+                                tableInsert(info.GoodsIdList, goods.Id)
+                                tableInsert(info.RewardCountList, goods.RewardGoods.Count)
+                                tableInsert(info.ConsumeList, consumeList)
+                            end
+                            break
+                        end
+                    end
+
+                    if hasTargetShopId then
+                        break
+                    end
+                end
+            end
+
+            return XTool.IsTableEmpty(info.ShopIdList) and nil or info
+        end
+
+        -- 路径2：原有逻辑只改返回包装，单条路线按下标 1 对齐。
+        local cfg = XItemConfigs.GetItemAutoExchangeById(itemId)
+        if not cfg then
+            return nil
+        end
+        local exchangeInfo = XShopManager.GetGoodsExchangeInfo(itemId, cfg.ShopId, cfg.GoodsId)
+        if not exchangeInfo then
+            return nil
+        end
+        tableInsert(info.ShopIdList, exchangeInfo.ShopId)
+        tableInsert(info.GoodsIdList, exchangeInfo.GoodsId)
+        tableInsert(info.RewardCountList, exchangeInfo.RewardCount)
+        tableInsert(info.ConsumeList, exchangeInfo.ConsumeList)
+        return info
+    end
+
     XItemManager.Init()
     return XItemManager
 end
@@ -2066,4 +2216,4 @@ end
 
 XRpc.NotifyAddItemCollectionData = function(data)
     XDataCenter.ItemManager.NotifyAddItemCollectionData(data)
-end
+end

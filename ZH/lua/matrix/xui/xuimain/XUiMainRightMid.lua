@@ -88,7 +88,7 @@ function XUiMainRightMid:OnStart(rootUi)
     self.BtnClose.CallBack = function() self:OnBtnCloseClick() end
     self.BtnMember.CallBack = function() self:OnBtnMember() end
     self.BtnRecharge.CallBack = function() self:OnBtnRecharge() end
-    self.BtnEquipGuide.CallBack = function() XDataCenter.EquipGuideManager.OpenEquipGuideDetail() end
+    self.BtnEquipGuide.CallBack = function() XMVCA.XTeamRecommend:OpenFirstServerCharacterTarget() end
     self.BtnBag.CallBack = function() self:OnBtnBag() end
     self.BtnStore.CallBack = function() self:OnBtnStore() end
 
@@ -129,7 +129,7 @@ function XUiMainRightMid:OnEnable()
     self:CheckRedPoint()
     
     XEventManager.AddEventListener(XEventId.EVENT_DRAW_ACTIVITYCOUNT_CHANGE, self.CheckDrawTag, self)
-    XEventManager.AddEventListener(XEventId.EVENT_EQUIP_GUIDE_REFRESH_TARGET_STATE, self.OnCheckMemberTag, self)
+    XEventManager.AddEventListener(XEventId.EVENT_TEAM_RECOMMEND_TARGET_STATE_CHANGE, self.OnCheckMemberTag, self)
     XEventManager.AddEventListener(XEventId.EVENT_DAYLY_REFESH_RECHARGE_BTN, self.OnCheckRechargeNews, self)
     
     self:RefreshFubenProgress()
@@ -162,6 +162,7 @@ function XUiMainRightMid:OnEnable()
                 self:AddRedPointEvent(self.BtnReward, self.OnCheckDrawFreeTicketTag, self, { XRedPointConditions.Types.CONDITION_DRAW_FREE_TAG })
                 self:AddRedPointEvent(self.BtnReward.ReddotObj, self.OnCheckARewardNews, self, {
                     XRedPointConditions.Types.CONDITION_DEVILMAYCRY_CAN_RECEIVE_CHARACTER,
+                    XRedPointConditions.Types.CONDITION_DATEALIVE_CAN_RECEIVE_CHARACTER,
                     XRedPointConditions.Types.CONDITION_DRAW_CAN_LIVER_JOURNEY_REWARD
                 })
             end)
@@ -214,7 +215,7 @@ end
 function XUiMainRightMid:OnDisable()
     XEventManager.RemoveEventListener(XEventId.EVENT_DRAW_ACTIVITYCOUNT_CHANGE, self.CheckDrawTag, self)
     --XEventManager.RemoveEventListener(XEventId.EVENT_TASKFORCE_INFO_NOTIFY, self.SetupDispatch, self)
-    XEventManager.RemoveEventListener(XEventId.EVENT_EQUIP_GUIDE_REFRESH_TARGET_STATE, self.OnCheckMemberTag, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_TEAM_RECOMMEND_TARGET_STATE_CHANGE, self.OnCheckMemberTag, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_DAYLY_REFESH_RECHARGE_BTN, self.OnCheckRechargeNews, self)
     
 
@@ -222,7 +223,7 @@ function XUiMainRightMid:OnDisable()
         XScheduleManager.UnSchedule(self.guildTimer)
         self.guildTimer = nil
     end
-    
+
     XDataCenter.DormManager.StopDormRedTimer()
     self:StopActivityEntryTimer()
 end
@@ -324,7 +325,7 @@ function XUiMainRightMid:OnBtnReward()
     end
     XUiHelper.RecordBuriedSpotTypeLevelOne(XGlobalVar.BtnBuriedSpotTypeLevelOne.BtnUiMainBtnDrawMain)
     XDataCenter.DrawManager.MarkActivityDraw()
-    XDataCenter.DrawManager.OpenDrawUi(DefaultType)
+    XDataCenter.DrawManager.OpenDrawUi()
 end
 
 --伙伴入口
@@ -380,12 +381,12 @@ function XUiMainRightMid:RefreshMainLineProgress()
         local chapterViewModels = XDataCenter.FubenMainLineManager:ExGetChapterViewModels(config.Id, XDataCenter.FubenManager.DifficultNormal)
         for j, viewModel in ipairs(chapterViewModels) do
             -- 遍历到上锁，直接结束
-            if viewModel:GetIsLocked() then
+            if viewModel:GetBusinessIsLocked() then
                 isFindViewModel = true
                 break
 
             -- 解锁
-            elseif not viewModel:GetIsLocked() then
+            elseif not viewModel:GetBusinessIsLocked() then
                 chapterViewModel = viewModel
                 isLastChapter = i == #groupCfgs and j == #chapterViewModels
                 if not viewModel:CheckIsPassed() then
@@ -792,19 +793,14 @@ function XUiMainRightMid:OnCheckMemberNews(count)
     self.BtnMember:ShowReddot(count >= 0)
 end
 
---成员装备推荐Tag
+--成员养成目标Tag
 function XUiMainRightMid:OnCheckMemberTag()
-    local isSetEquipTarget = XDataCenter.EquipGuideManager.IsSetEquipTarget()
-    self.BtnMember:ShowTag(isSetEquipTarget)
-    if not isSetEquipTarget then
-        return
-    end
-    local strongerWeapon = XDataCenter.EquipGuideManager.CheckHasStrongerWeapon()
-    local hasEquipCanEquip = XDataCenter.EquipGuideManager.CheckEquipCanEquip()
-    self.BtnEquipGuide.ReddotObj.gameObject:SetActiveEx(strongerWeapon or hasEquipCanEquip)
+    local hasTarget = XMVCA.XTeamRecommend:GetFirstServerCharacterTargetId() ~= nil
+    self.BtnMember:ShowTag(hasTarget)
+    self.BtnEquipGuide.ReddotObj.gameObject:SetActiveEx(hasTarget and XMVCA.XTeamRecommend:CheckHasTargetEquipCanWear())
 end
 
-function XUiMainRightMid:SetBtnEquipGuideState(state)
+function XUiMainRightMid:SetBtnTeamRecommendState(state)
     self.BtnEquipGuide.enabled = state
 end
 

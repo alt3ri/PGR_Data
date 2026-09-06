@@ -1,4 +1,5 @@
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
+---@class XUiSignGridDay
 local XUiSignGridDay = XClass(nil, "XUiSignGridDay")
 local XUiObtain = require("XUi/XUiObtain/XUiObtain")
 
@@ -6,7 +7,10 @@ function XUiSignGridDay:Ctor(ui, rootUi)
     self.GameObject = ui.gameObject
     self.Transform = ui.transform
     self.RootUi = rootUi
+    ---@type XUiGridCommon
     self.Grid = nil
+    ---@type XUiGridCommon[]
+    self.GridSmalls = nil
 
     XTool.InitUiObject(self)
     self:InitComponent()
@@ -79,8 +83,19 @@ function XUiSignGridDay:Refresh(config, isShow, forceSetTomorrow)
         self.Grid = XUiGridCommon.New(self.RootUi, self.GridCommon)
     end
 
+    --v4.8联动卡池签到显示3个奖励（外观上一大两小）
+    local totalCount = #rewardList - 1
+    self:CheckShowExtraReward(self.PanelExtraReward1, 1, totalCount)
+    self:CheckShowExtraReward(self.PanelExtraReward2, 2, totalCount)
+    self:CheckShowExtraReward(self.PanelExtraReward3, 3, totalCount)
+
     self:SetCardInfo(isAlreadyGet)
     self.Grid:Refresh(rewardList[1], nil, true)
+    if self.GridSmalls then
+        for i, grid in ipairs(self.GridSmalls) do
+            grid:Refresh(rewardList[i + 1])
+        end
+    end
     self.GameObject:SetActiveEx(true)
     self:AnimaStart()
 
@@ -101,6 +116,30 @@ function XUiSignGridDay:Refresh(config, isShow, forceSetTomorrow)
     local data = XDataCenter.PurchaseManager.GetYKInfoData()
     if self.TxtCardNum and data then
         self.TxtCardNum.text = XUiHelper.GetText("DailyMonthlyCardAmount", data.DailyRewardGoodsList[1].Count)
+    end
+end
+
+function XUiSignGridDay:CheckShowExtraReward(panel, showCount, totalCount)
+    if not panel then
+        return
+    end
+    if showCount == totalCount then
+        panel.gameObject:SetActiveEx(true)
+        if not self.GridSmalls then
+            self.GridSmalls = {}
+            local uiObj = {}
+            XUiHelper.InitUiClass(uiObj, panel)
+            for i = 1, totalCount do
+                local grid = string.format("GridCommon%s", i)
+                if uiObj[grid] then
+                    self.GridSmalls[i] = XUiGridCommon.New(self.RootUi, uiObj[grid])
+                else
+                    break
+                end
+            end
+        end
+    else
+        panel.gameObject:SetActiveEx(false)
     end
 end
 
@@ -163,7 +202,6 @@ function XUiSignGridDay:SetCardInfo()
     local isOverdue, canClickYk = XDataCenter.SignInManager.JudgeYKInSignOverdue(self.Config.SignId, self.Config.Round, self.Config.Day, remainDay)
     local isToday, _ = XDataCenter.SignInManager.JudgeTodayGet(self.Config.SignId, self.Config.Round, self.Config.Day)
     if isOverdue then
-        self:SetPanelEnableActive(true)
         self:SetPanelEnableActive(false)
         self:SetPanelDisableActive(true)
         self:SetBtnCardActive(canClickYk and not isToday)

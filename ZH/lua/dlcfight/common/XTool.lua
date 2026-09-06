@@ -783,5 +783,11 @@ function XTool.StrToTable(str)
 end
 
 function XTool.SortIdTable(idTable, isDescend)
-    table.sort(idTable, function(a, b) return isDescend and a > b or a < b end)
+    table.sort(idTable, function(a, b)
+        if isDescend then
+            return a > b
+        else
+            return a < b
+        end
+    end)
 end 

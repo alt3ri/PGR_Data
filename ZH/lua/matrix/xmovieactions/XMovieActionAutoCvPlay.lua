@@ -6,6 +6,8 @@ local XMovieActionAutoCvPlay = XClass(XMovieActionBase, "XMovieActionAutoCvPlay"
 function XMovieActionAutoCvPlay:OnInit(actionData)
     local params = actionData.Params
     self.CueId = XDataCenter.MovieManager.ParamToNumber(params[1])
+    local movieId = XDataCenter.MovieManager.GetCurPlayingMovieId()
+    self.IsVoiceMuted = XMovieConfigs.IsMovieVoiceMuted(movieId)
 end
 
 function XMovieActionAutoCvPlay:GetCueId()
@@ -13,6 +15,10 @@ function XMovieActionAutoCvPlay:GetCueId()
 end
 
 function XMovieActionAutoCvPlay:OnRunning()
+    if self.IsVoiceMuted then
+        return
+    end
+
     CS.XTool.WaitForEndOfFrame(function()
         -- 加速播放时不播 CV
         if XDataCenter.MovieManager.IsSpeedUp() then

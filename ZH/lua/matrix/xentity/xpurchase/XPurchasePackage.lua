@@ -35,6 +35,11 @@ function XPurchasePackage:GetUiType()
     return self.Data.UiType
 end
 
+---是否为皮肤补给包
+function XPurchasePackage:IsCoatingLB()
+    return self.Data.UiType == XPurchaseConfigs.UiType.CoatingLB
+end
+
 function XPurchasePackage:GetSkipId()
     return self.Data.SkipId
 end
@@ -64,6 +69,11 @@ end
 -- 获取每日奖励领取剩余天数
 function XPurchasePackage:GetDailyRewardRemainDay()
     return self.Data.DailyRewardRemainDay
+end
+
+-- 获取资源月卡（武器/血清月卡）剩余天数列表（每月可购买一次，可能存在多个过期时间）
+function XPurchasePackage:GetResMonthlyCardRemainDayList()
+    return self.Data.ResMonthlyCardRemainDayList or table.empty
 end
 
 function XPurchasePackage:GetBuyLimitRemainDay()

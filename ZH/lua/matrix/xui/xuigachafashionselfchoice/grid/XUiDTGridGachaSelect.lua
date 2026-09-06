@@ -8,7 +8,7 @@ function XUiDTGridGachaSelect:OnStart(clickCb)
     end
 end
 
-function XUiDTGridGachaSelect:Refresh(gachaId, index)
+function XUiDTGridGachaSelect:Refresh(gachaId, index, groupId)
     self.GachaId = gachaId
     self.Index = index
 
@@ -26,6 +26,12 @@ function XUiDTGridGachaSelect:Refresh(gachaId, index)
     end
     self.Btn.TagObj.gameObject:SetActiveEx(isAllRewardGet)
     self.IsAllRewardGet = isAllRewardGet
+
+    local curSelectedGachaId = XDataCenter.GachaManager.GetCurSelfChoiceSelectGachId(groupId)
+    local isLastSelected = XTool.IsNumberValid(curSelectedGachaId) and curSelectedGachaId == gachaId
+    if self.TagLastSelect then
+        self.TagLastSelect.gameObject:SetActiveEx(isLastSelected)
+    end
 end
 
 function XUiDTGridGachaSelect:SetSelect()

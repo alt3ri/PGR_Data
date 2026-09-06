@@ -54,6 +54,8 @@ function XUiFashionDetail:OnAwake()
     if self.PanelLackResources then
         self._PanelLackRes = XUiPanelLackResources.New(self.PanelLackResources, self)
     end
+
+    XUiHelper.SetSceneType(CS.XSceneType.Ui)
 end
 
 ---@param buyData XPurchaseBuyData 礼包购买数据契约，定义见 XPurchaseConfigs
@@ -96,8 +98,10 @@ function XUiFashionDetail:OnStart(
     elseif self.FashionType == FashionType.Color then
         local fashionId = XMVCA.XFashion:GetFashionColorOriginalFashionId(self.FashionId)
         self.CharacterId = XDataCenter.FashionManager.GetCharacterId(fashionId)
+        self.GiftId = XFashionConfigs.GetFashionTemplate(fashionId).GiftId
     else
         self.CharacterId = XDataCenter.FashionManager.GetCharacterId(fashionId)
+        self.GiftId = XFashionConfigs.GetFashionTemplate(fashionId).GiftId
     end
 
     if XWeaponFashionConfigs.IsWeaponFashion(self.FashionId) then
@@ -691,6 +695,8 @@ function XUiFashionDetail:OnBeforeBtnBuyClick(cb)
             end
         end
     end
+
+    local isHideWorldDesc = self.IsEnableGroupSales and not XTool.IsNumberValid(self.GiftId)
     
     -- 构建viewmodel
 
@@ -728,6 +734,7 @@ function XUiFashionDetail:OnBeforeBtnBuyClick(cb)
             AssetsItemIds = self._ShowAssetsItemIds,
             EndTime = endTime,
             IsTimeLimit = XTool.IsNumberValid(endTime),
+            IsHideWorldDesc = isHideWorldDesc,
         }
     else
         viewModel = {
@@ -741,6 +748,7 @@ function XUiFashionDetail:OnBeforeBtnBuyClick(cb)
             AssetsItemIds = self._ShowAssetsItemIds,
             EndTime = self.BuyData.EndTime,
             IsTimeLimit = XTool.IsNumberValid(self.BuyData.EndTime),
+            IsHideWorldDesc = isHideWorldDesc,
         }
     end
 

@@ -124,7 +124,7 @@ function XNetwork.ConnectGateServer(args)
                         else
                             CS.XTool.WaitCoroutine(CS.XApplication.CoDialog(CS.XApplication.GetText("Tip"),
                                 CS.XStringEx.Format(CS.XApplication.GetText("UpdateApplication"), CS.XInfo.Version), cancelCb, 
-                            function() CS.XTool.WaitCoroutine(CS.XApplication.GoToUpdateURL(GetAppUpgradeUrl()), nil) end))
+                            function() CS.XTool.WaitCoroutine(CS.XApplication.GoToUpdateURL(XLaunchConst.GetAppUpgradeUrl()), nil) end))
                         end
                     elseif response.Code == XCode.LoginDocumentVersionError then
                         XUiManager.DialogTip("", CS.XTextManager.GetCodeText(response.Code), XUiManager.DialogType.OnlySure, nil, function()

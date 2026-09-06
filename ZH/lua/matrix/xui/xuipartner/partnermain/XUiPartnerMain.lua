@@ -15,7 +15,7 @@ local TagIndexEnum = {
     Link = 3,
 }
 
-function XUiPartnerMain:OnStart(state, partner, IsNotBackChange, IsNotSelectPartner)
+function XUiPartnerMain:OnStart(state, partner, IsNotBackChange, IsNotSelectPartner, priorityTabIndex)
     self.LastPartner = {}
     self.ModelEffect = {}
     self.IsChangeUiState = true
@@ -32,6 +32,7 @@ function XUiPartnerMain:OnStart(state, partner, IsNotBackChange, IsNotSelectPart
     self.IsNotSelectPartner = self.FightBackIsNotSelectPartner or IsNotSelectPartner
 
     self.isComposePanelOpenByStar = false
+    self.PriorityTabIndex = priorityTabIndex
 
     self:SetButtonCallBack()
     self:InitSceneRoot()
@@ -65,13 +66,15 @@ function XUiPartnerMain:OnStart(state, partner, IsNotBackChange, IsNotSelectPart
 end
 
 function XUiPartnerMain:OnDestroy()
-
+    XMVCA.XTeamRecommend:CheckAllServerCharacterTargetProgressAndFinish()
 end
 
 function XUiPartnerMain:OnEnable()
     self:ChangeUiState(self.CurUiState)
     XEventManager.AddEventListener(XEventId.EVENT_PARTNER_DATAUPDATE, self.UpdatePanelByEvent, self)
     XEventManager.AddEventListener(XEventId.EVENT_PARTNER_SKILLUNLOCK_CLOSERED, self.UpdatePanelByEvent, self)
+    XMVCA.XTeamRecommend:CheckAllServerCharacterTargetProgressAndFinish()
+
     
     -- 总览页面下每次激活刷新一次联动标签显示
     if self.CurUiState == XPartnerConfigs.MainUiState.Overview then
@@ -428,9 +431,10 @@ function XUiPartnerMain:ShowPanel()
         self:SetupDynamicTable()
 
     elseif self:IsUiProperty() then
-        local tabIndex = self.isComposePanelOpenByStar and XPartnerConfigs.PriorityTabType.Quality or XPartnerConfigs.PriorityTabType.Level
+        local tabIndex = self.PriorityTabIndex or (self.isComposePanelOpenByStar and XPartnerConfigs.PriorityTabType.Quality or XPartnerConfigs.PriorityTabType.Level)
+        self.PriorityTabIndex = nil
         self:DoPartnerStateChange(XPartnerConfigs.PartnerState.Combat)
-        self:OpenChildUi("UiPartnerProperty", self, tabIndex)
+        self:OpenChildUi("UiPartnerProperty", self, lastPartner, tabIndex)
         self:UpdateChildUi("UiPartnerProperty", lastPartner)
     end
 

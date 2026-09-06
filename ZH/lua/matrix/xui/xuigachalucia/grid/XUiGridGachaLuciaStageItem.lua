@@ -36,7 +36,7 @@ function XUiGridGachaLuciaStageItem:UpdateNode(index, festivalId, stageId)
     local isOpen, description = self._FStage:GetCanOpen()
     self.GameObject:SetActiveEx(isOpen)
     local gridGameObject = self.Transform:LoadPrefab(stagePrefabName)
-    local uiObj = gridGameObject.transform:GetComponent("UiObject")
+    local uiObj = gridGameObject.transform:GetComponent(typeof(CS.UiObject))
     for i = 0, uiObj.NameList.Count - 1 do
         self[uiObj.NameList[i]] = uiObj.ObjList[i]
     end

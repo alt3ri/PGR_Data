@@ -154,8 +154,8 @@ end
 
 ---获取最新剧情更新时间
 ---@return number
-function XTheatre6Agency:GetLatestStoryUpdateTime()
-    local timeStr = self._Model:GetClientConfigValue("StoryUpdateTime")
+function XTheatre6Agency:GetLatestStoryButtonNewTime()
+    local timeStr = self._Model:GetClientConfigValue("StoryButtonNewTime")
     if string.IsNilOrEmpty(timeStr) then
         return nil
     end

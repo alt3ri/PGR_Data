@@ -269,7 +269,7 @@ function XUiSceneSettingMain:OnClickDropEnvMusic()
 end
 
 function XUiSceneSettingMain:OnClickDropSceneMusic(index)
-    XMVCA.XMusicScene:UpdateMusicSceneMode(self.CurSelectedBackgroundId, index + 1) --index从0开始
+    XDataCenter.PhotographManager.ApplySceneSwitch(self.CurSelectedBackgroundId, index, true) --index从0开始, 门面内 +1
 end
 
 function XUiSceneSettingMain:InitDynamicTable()
@@ -544,6 +544,7 @@ function XUiSceneSettingMain:OnUiSceneLoaded(firstload, scenePath)
     --刷新右上角信息栏显示
     self:RefreshSceneInfo()
     self:RefreshEvnirmentSoundControl()
+    self:RefreshHintText()
     -- self.Parent:RefreshRightTagPanel()
 
     -- 恢复相机
@@ -927,14 +928,14 @@ end
 --region 场景切换选项
 
 function XUiSceneSettingMain:OnClickDropData(index)
-    XMVCA.XSwitchableScene:SetSceneSetting(self.CurSelectedBackgroundId, index)
+    XDataCenter.PhotographManager.ApplySceneSwitch(self.CurSelectedBackgroundId, index, true)
     if self:InitBatteryUi() then
         self:UpdateBatteryMode()
     end
 end
 
 function XUiSceneSettingMain:OnClickDropPower(index)
-    XMVCA.XSwitchableScene:SetSceneSetting(self.CurSelectedBackgroundId, index)
+    XDataCenter.PhotographManager.ApplySceneSwitch(self.CurSelectedBackgroundId, index, true)
     if self:InitBatteryUi() then
         self:UpdateBatteryMode()
     end
@@ -987,6 +988,16 @@ function XUiSceneSettingMain:RefreshEvnirmentSoundControl()
     -- 读取缓存静音状态（游戏逻辑：true=开？false=关？你原逻辑不变）
     if self.PanelDropDownCtrl then
         self.PanelDropDownCtrl:SetDropMusicState(not sceneSfxControl:GetCacheMuteState())
+    end
+end
+
+function XUiSceneSettingMain:RefreshHintText()
+    local hintText = XPhotographConfigs.GetBackgroundHintText(self.CurSelectedBackgroundId)
+    if string.IsNilOrEmpty(hintText) then
+        self.PanelHintText.gameObject:SetActiveEx(false)
+    else
+        self.PanelHintText.gameObject:SetActiveEx(true)
+        self.HintText.text = XUiHelper.ReplaceTextNewLine(hintText)
     end
 end
 

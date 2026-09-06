@@ -631,9 +631,7 @@ function XEquip:IsShowEnterOverrun2Red()
 end
 
 function XEquip:IsHasOverrunLevel2()
-    local characterId = XTool.IsNumberValidEx(self.CharacterId) and self.CharacterId or XMVCA.XEquip:GetWeaponOverrunCharacterId(self.TemplateId)
-    local overrunCfgIds = XMVCA.XEquip:GetWeaponOverrunCfgIds(self.TemplateId, characterId)
-    return XTool.IsNumberValidEx(overrunCfgIds[XEnumConst.EQUIP.WEAPON_OVERRUN_LEVEL_TYPE.LEVEL2])
+    return XMVCA.XEquip:IsHasOverrunLevel2(self.TemplateId, self.CharacterId)
 end
 
 function XEquip:GetEnterOverrunSaveKey()

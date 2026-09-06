@@ -18,6 +18,9 @@ function XUiPanelTerminalTips:ShowFileTips()
     self.GameObject:SetActiveEx(true)
     self.ImgTips02.gameObject:SetActiveEx(true)
     self.FileTimer = XScheduleManager.ScheduleOnce(function()
+        if XTool.UObjIsNil(self.GameObject) then
+            return
+        end
         --隐藏
         self.ImgTips02.gameObject:SetActiveEx(false)
         self.GameObject:SetActiveEx(false)
@@ -29,6 +32,9 @@ function XUiPanelTerminalTips:ShowUpgradeTips()
     self.GameObject:SetActiveEx(true)
     self.ImgTips01.gameObject:SetActiveEx(true)
     self.UpgradeTimer = XScheduleManager.ScheduleOnce(function()
+        if XTool.UObjIsNil(self.GameObject) then
+            return
+        end
         -- 隐藏
         self.ImgTips01.gameObject:SetActiveEx(false)
         self.GameObject:SetActiveEx(false)
@@ -40,6 +46,9 @@ function XUiPanelTerminalTips:ShowAutoQuestSuccess()
     self.GameObject:SetActiveEx(true)
     self.ImgTips03.gameObject:SetActiveEx(true)
     self.UpgradeTimer = XScheduleManager.ScheduleOnce(function()
+        if XTool.UObjIsNil(self.GameObject) then
+            return
+        end
         -- 隐藏
         self.ImgTips03.gameObject:SetActiveEx(false)
         self.GameObject:SetActiveEx(false)

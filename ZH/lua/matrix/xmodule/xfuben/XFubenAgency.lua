@@ -1754,7 +1754,7 @@ function XFubenAgency:OpenFubenByStageId(stageId)
             XUiManager.TipMsg(CSTextManagerGetText("FubenMainLineNoneOpen"))
             return
         end
-        if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.MainLine, chapter.ChapterId) then
+        if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.MainLine) then
             return
         end
         XLuaUiManager.Open("UiFubenMainLineChapter", chapter, stageId)
@@ -2629,7 +2629,7 @@ function XFubenAgency:GoToCurrentMainLine(stageId)
         return
     end
 
-    if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.MainLine, stageInfo.ChapterId) then
+    if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.MainLine) then
         return
     end
 

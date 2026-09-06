@@ -24,9 +24,13 @@ function XUiGachaFashionSelfChoiceDialog:OnAwake()
 end
 
 function XUiGachaFashionSelfChoiceDialog:InitButton()
-    self.BtnTanchuangCloseBig.CallBack = function() self:Close() end
-    self.BtnYes.CallBack = function() self:OnBtnYesClick() end
-    self.BtnCancel.CallBack = function() self:Close() end
+    self.BtnTanchuangCloseBig:AddEventListener(handler(self, self.OnBtnCloseClick))
+    self.BtnYes:AddEventListener(handler(self, self.OnBtnYesClick))
+    self.BtnCancel:AddEventListener(handler(self, self.OnBtnCloseClick))
+end
+
+function XUiGachaFashionSelfChoiceDialog:OnBtnCloseClick()
+    self:Close()
 end
 
 function XUiGachaFashionSelfChoiceDialog:OnBtnYesClick()
@@ -41,7 +45,7 @@ function XUiGachaFashionSelfChoiceDialog:OnBtnYesClick()
     self:Close()
 end
 
-function XUiGachaFashionSelfChoiceDialog:OnStart(gachaId, isAllGet, confirmCb)
+function XUiGachaFashionSelfChoiceDialog:OnStart(gachaId, isAllGet, confirmCb, isChangeMode)
     self.GachaId = gachaId
     self.ConfirmCb = confirmCb
 
@@ -55,7 +59,9 @@ function XUiGachaFashionSelfChoiceDialog:OnStart(gachaId, isAllGet, confirmCb)
     local tradeName = XMVCA.XCharacter:GetCharacterTradeName(charId)
     local charName = XUiHelper.GetText("CharacterFullName2", name, tradeName)
     local text = nil
-    if isAllGet then
+    if isChangeMode then
+        text = XUiHelper.FormatText(XGachaConfigs.GetClientConfig('GachaFashionSelfChoiceDialogChangeText'), charName, gachaConfig.Desc)
+    elseif isAllGet then
         text = XUiHelper.FormatText(XGachaConfigs.GetClientConfig('GachaFashionSelfChoiceDialogText1'), charName, gachaConfig.Desc)
     else
         text = XUiHelper.FormatText(XGachaConfigs.GetClientConfig('GachaFashionSelfChoiceDialogText2'), charName, gachaConfig.Desc)

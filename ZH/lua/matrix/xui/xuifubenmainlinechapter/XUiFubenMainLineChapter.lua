@@ -1452,7 +1452,7 @@ function XUiFubenMainLineChapter:OnBtnHardClick(IsAutoMove)
             end
 
             if XTool.IsNumberValid(chapterId) then
-                if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.MainLine, chapterId) then
+                if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.MainLine) then
                     return false
                 end
             end
@@ -1475,7 +1475,7 @@ function XUiFubenMainLineChapter:OnBtnVtClick(IsAutoMove)
     .Chapter.OrderId)
         local chapterId = XDataCenter.FubenMainLineManager.GetChapterIdByChapterMain(chapterInfo.ChapterMainId, XDataCenter.FubenManager.DifficultVariations)
         if XTool.IsNumberValid(chapterId) then
-            if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.MainLine, chapterId) then
+            if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.MainLine) then
                 return false
             end
         end

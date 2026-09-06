@@ -168,7 +168,7 @@ function XUiDownloadPreviewForTips:RefreshGridProgressByResId(resId)
                 if id == resId then
                     local grid = grids[index]
                     if grid then
-                        grid:RefreshAggregatedProgress(data)
+                        grid:RefreshAggregatedProgress()
                     end
                     break
                 end

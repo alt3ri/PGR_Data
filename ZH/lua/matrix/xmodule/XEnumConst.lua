@@ -52,6 +52,14 @@ XEnumConst = {
         MAX_RESONANCE_SKILL_COUNT = 3, -- 共鸣：装备最大共鸣数量
         WEAPON_RESONANCE_COUNT = 3, -- 共鸣：武器的共鸣数量
         AWARENESS_RESONANCE_COUNT = 2, -- 共鸣：意识的共鸣数量
+        -- 意识共鸣槽位
+        ---@class XEquipAwarenessResonancePos
+        ---@field UP number 上排共鸣槽位
+        ---@field DOWN number 下排共鸣槽位
+        AWARENESS_RESONANCE_POS = {
+            UP = 1,
+            DOWN = 2,
+        },
         MAX_AWAKE_COUNT = 2, -- 超频：意识的最大超频个数
         AWAKE_CRYSTAL_MONEY = 2, -- 超频：超频激活的晶币
         OVERRUN_ADD_SUIT_CNT = 2, -- 超限：超限增加意识数量
@@ -73,6 +81,32 @@ XEnumConst = {
             RESONANCE = 2, -- 共鸣
             OVERCLOCKING = 3, -- 超频
             OVERRUN = 4, -- 超限
+        },
+        -- 共鸣消耗展示类型
+        ---@class XEquipResonanceCostType
+        ---@field TARGETED number 定向共鸣材料
+        ---@field TOKEN number 随机共鸣代币
+        ---@field AWARENESS number 意识材料
+        RESONANCE_COST_TYPE = {
+            TARGETED = 1, -- 定向共鸣材料
+            TOKEN = 2, -- 随机共鸣代币
+            AWARENESS = 3, -- 意识材料
+        },
+        -- 武器一键养成模块类型
+        ONE_CLICK_CULTURE_MODULE_TYPE = {
+            LEVEL = 1, -- 等级与突破
+            RESONANCE = 2, -- 共鸣
+            OVERRUN = 3, -- 谐振
+        },
+        -- 意识共鸣目标匹配模式
+        ---@class XEquipAwarenessResonanceTargetMatchMode
+        ---@field ANY number 任意技能
+        ---@field ATTACK number 任意攻击技能
+        ---@field TARGET number 指定目标技能
+        AWARENESS_RESONANCE_TARGET_MATCH_MODE = {
+            ANY = 1,
+            ATTACK = 2,
+            TARGET = 3,
         },
         -- 武器模型用途
         WEAPON_USAGE = {
@@ -175,6 +209,18 @@ XEnumConst = {
         SIGNBOARD_ACTIVE_TYPE = {
             CHARACTER = 1,
             FASHION = 1,
+        },
+    },
+    TeamRecommend = {
+        MainTabIndex = {
+            Character = 1, -- 按角色培养
+            Formation = 2, -- 按阵容培养
+        },
+        -- 阵容目标来源类型，对应服务端 XTeamRecommendTargetSrcType
+        TargetSrcType = {
+            FromConfig = 1, -- 来源配置表，SourceId=TeamRecommendBaseFormation.Id
+            FromTopDetail = 2, -- 来源角色top推荐快照，SourceId=来源角色Id
+            FromOtherTarget = 3, -- 来源其他角色目标快照，SourceId=目标拥有者角色Id
         },
     },
     FuBen = {
@@ -305,7 +351,8 @@ XEnumConst = {
             BountyChallenge = 99, -- 悬赏挑战
             SoloReform = 100, -- mini改造
             PBRGame = 101, -- 战双兄弟
-            BossInshotTower = 102 -- 评分爬塔
+            BossInshotTower = 102, -- 评分爬塔
+            TransfiniteTower = 103 -- 超限启航（爬塔活动）
         },
         ChapterType = {
             MainLine = 0,
@@ -470,6 +517,7 @@ XEnumConst = {
             PropertyLvUp = 2.1,
             PropertyGrade = 2.2,
             PropertySkill = 2.3,
+            Quality = 3,
         },
         -- 角色类型
         CharacterType = {
@@ -528,6 +576,7 @@ XEnumConst = {
             Annihilator = 6, -- 湮灭
             Observation = 7, -- 侦察
             Breaker = 8, -- 破甲
+            Fusion = 9, -- 聚变
         },
         -- 元素类型
         Element = {
@@ -1883,6 +1932,9 @@ XEnumConst = {
             LengthReduceEx = 15, --长度缩减强化版
             BornEx = 16, --孵化强化版
             BecomeOneGridEx = 17, --以大化小强化版
+            TwoLineRemove = 18, --双行消除（类型5强化版）
+            FrozenPlus = 19, --冻结3次（类型7强化版）
+            ConvertionPlus = 20, --净化除首席和刀锋以外的特殊方块（类型11强化版）
         },
         RoleAnim = {
             Standby = 1, -- 待机
@@ -1904,6 +1956,7 @@ XEnumConst = {
             Create = 7,
             Grow = 8,
             FevDrop = 9, -- 狂热状态结束
+            DirClear = 10, -- 消除某一侧的所有方块
         },
         Environment = {
             Up = 1, -- 上升规则变化
@@ -1915,6 +1968,7 @@ XEnumConst = {
             BossHit = 3, -- 受击BOSS
             BossFission = 4, -- 分裂BOSS
             Chief = 5, -- 首席方块
+            Knife = 6, -- 刀锋方块
         },
         Difficulty = {
             Normal = 1,
@@ -1966,6 +2020,10 @@ XEnumConst = {
             Normal = 1 << 0, -- 正常消除
             Chief = 1 << 1, -- 首席造成的消除
             UltimaSlash = 1 << 2, -- 真意斩造成的消除
+        },
+        PropDetail = {
+            Block = 1, --方块详情弹窗
+            Item = 2, --道具详情弹窗
         },
     },
     GOLDEN_MINER = {
@@ -3845,6 +3903,14 @@ XEnumConst = {
             TopLeft = 2, -- 左上角
         }
     },
+    --卡池
+    Draw = {
+        --联动卡池
+        Linkage = {
+            DevilMayCry = 1, --鬼泣
+            DateALive = 2, --约战
+        },
+    },
     --音乐场景b
     MusicScene = {
         Mode = {
@@ -3855,5 +3921,11 @@ XEnumConst = {
             Simple = 1, --简单版
             Full = 2, --完整版
         },
+    },
+    Shop = {
+        AwarenessStarToShopIdList = {
+            [5] = { 405 },
+            [6] = { 406, 1423 },
+        }
     },
 }

@@ -5,8 +5,12 @@ function XUiGachaFashionSelfChoiceDescribe:OnAwake()
 end
 
 function XUiGachaFashionSelfChoiceDescribe:InitButton()
-    self.BtnTanchuangClose.CallBack = function() self:Close() end
-    self.BtnClose.CallBack = function() self:Close() end
+    self.BtnTanchuangClose:AddEventListener(handler(self, self.OnBtnCloseClick))
+    self.BtnClose:AddEventListener(handler(self, self.OnBtnCloseClick))
+end
+
+function XUiGachaFashionSelfChoiceDescribe:OnBtnCloseClick()
+    self:Close()
 end
 
 function XUiGachaFashionSelfChoiceDescribe:OnStart(groupId)

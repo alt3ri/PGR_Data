@@ -172,7 +172,7 @@ function XRestaurantRoom:OnLoadSuccess()
     
     local floor = self._Transform:Find("GroupBase/@Floor")
     if not XTool.UObjIsNil(floor) then
-        floor.gameObject:SetLayerRecursively(CS.UnityEngine.LayerMask.NameToLayer(HomeSceneLayerMask.Room))
+        floor.gameObject:SetLayerRecursively(CS.UnityEngine.LayerMask.NameToLayer(LayerMaskName.Room))
         local inputHandler = floor.gameObject:GetComponent(typeof(CS.XGoInputHandler))
         if not inputHandler then
             inputHandler = floor.gameObject:AddComponent(typeof(CS.XGoInputHandler))

@@ -360,7 +360,21 @@
         "Role": "R3AdelaideMd010021",
         "Layer": null,
         "State": null,
+        "Target": "SprintStop",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3AdelaideMd010021",
+        "Layer": null,
+        "State": null,
         "Target": "SprintStart",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3AdelaideMd010021",
+        "Layer": null,
+        "State": null,
+        "Target": "SprintStartEnd",
         "TransitionDuration": 0.1
     },
     {
@@ -374,7 +388,21 @@
         "Role": "R3AdelaideMd010021",
         "Layer": null,
         "State": null,
+        "Target": "HitHL",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3AdelaideMd010021",
+        "Layer": null,
+        "State": null,
         "Target": "HitHR",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3AdelaideMd010021",
+        "Layer": null,
+        "State": null,
+        "Target": "HitHF",
         "TransitionDuration": 0.1
     },
     {
@@ -508,20 +536,6 @@
         "Layer": null,
         "State": null,
         "Target": "Attack61",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "R3AdelaideMd010021",
-        "Layer": null,
-        "State": null,
-        "Target": "Attack66",
-        "TransitionDuration": 0.1
-    },
-    {
-        "Role": "R3AdelaideMd010021",
-        "Layer": null,
-        "State": null,
-        "Target": "Attack67",
         "TransitionDuration": 0.1
     },
     {
@@ -1038,8 +1052,36 @@
     {
         "Role": "R3AdelaideMd010021",
         "Layer": null,
+        "State": "Sprint",
+        "Target": "SprintStop",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3AdelaideMd010021",
+        "Layer": null,
+        "State": "SprintStop",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3AdelaideMd010021",
+        "Layer": null,
         "State": "SprintStart",
         "Target": "Sprint",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3AdelaideMd010021",
+        "Layer": null,
+        "State": "SprintStart",
+        "Target": "SprintStartEnd",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3AdelaideMd010021",
+        "Layer": null,
+        "State": "SprintStartEnd",
+        "Target": "Stand2",
         "TransitionDuration": 0.1
     },
     {
@@ -1052,9 +1094,30 @@
     {
         "Role": "R3AdelaideMd010021",
         "Layer": null,
+        "State": "HitHL",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3AdelaideMd010021",
+        "Layer": null,
         "State": "HitHR",
         "Target": "Stand2",
         "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3AdelaideMd010021",
+        "Layer": null,
+        "State": "HitHF",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3AdelaideMd010021",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Born",
+        "TransitionDuration": null
     },
     {
         "Role": "R3AdelaideMd010021",
@@ -1186,6 +1249,13 @@
         "Role": "R3AdelaideMd010021",
         "Layer": 1.0,
         "State": null,
+        "Target": "Win",
+        "TransitionDuration": null
+    },
+    {
+        "Role": "R3AdelaideMd010021",
+        "Layer": 1.0,
+        "State": null,
         "Target": "Stop",
         "TransitionDuration": 0.1
     },
@@ -1284,7 +1354,105 @@
         "Role": "R3AdelaideMd010021",
         "Layer": 1.0,
         "State": null,
+        "Target": "Attack09",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3AdelaideMd010021",
+        "Layer": 1.0,
+        "State": null,
         "Target": "Attack62",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3AdelaideMd010021",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Attack66",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3AdelaideMd010021",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "Attack67",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3AdelaideMd010021",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "LevelAttack01",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3AdelaideMd010021",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "LevelAttack02",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3AdelaideMd010021",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "LevelAttack03",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3AdelaideMd010021",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "LevelAttack04",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3AdelaideMd010021",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "LevelAttack05",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3AdelaideMd010021",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "LevelAttack06",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3AdelaideMd010021",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "LevelAttack07",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3AdelaideMd010021",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "LevelAttack08",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3AdelaideMd010021",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "LevelAttack09",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3AdelaideMd010021",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "LevelAttack10",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "R3AdelaideMd010021",
+        "Layer": 1.0,
+        "State": null,
+        "Target": "LevelAttack11",
         "TransitionDuration": 0.1
     },
     {

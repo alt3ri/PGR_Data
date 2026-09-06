@@ -33,6 +33,9 @@ XAgencyEventId = {
     -- 音乐播放器(XMusicPlayer) - 服务端 Push 后由 Agency 转发的全局事件
     EVENT_NOTIFY_MUSIC_LIST_BGM_CHANGE  = "EVENT_NOTIFY_MUSIC_LIST_BGM_CHANGE",  -- BGM歌单数据变化(登录/服务端推送)
     EVENT_NOTIFY_MUSIC_LIST_LICK_CHANGE = "EVENT_NOTIFY_MUSIC_LIST_LICK_CHANGE", -- 心选歌单数据变化(登录/服务端推送)
+
+    -- 一键养成自动通用设置变更（XEquip → 跨模块通知）
+    EVENT_ONE_KEY_AUTO_COMMONSETTING_CHANGE = "EVENT_ONE_KEY_AUTO_COMMONSETTING_CHANGE",
 }
 
 ---Control内部事件, 通过Agency派发

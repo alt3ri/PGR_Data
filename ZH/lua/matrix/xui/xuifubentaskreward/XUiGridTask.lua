@@ -1,6 +1,6 @@
 local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 local XUiGridTask = XClass(nil, "XUiGridTask")
- 
+
 function XUiGridTask:Ctor(ui)
     self.GameObject = ui.gameObject
     self.Transform = ui.transform
@@ -69,16 +69,18 @@ function XUiGridTask:InitAutoScript()
     self:AutoAddListener()
 end
 
-
-
 function XUiGridTask:GetAutoKey(uiNode, eventName)
-    if not uiNode then return end
+    if not uiNode then
+        return
+    end
     return eventName .. uiNode:GetHashCode()
 end
 
 function XUiGridTask:RegisterListener(uiNode, eventName, func)
     local key = self:GetAutoKey(uiNode, eventName)
-    if not key then return end
+    if not key then
+        return
+    end
     local listener = self.AutoCreateListeners[key]
     if listener ~= nil then
         uiNode[eventName]:RemoveListener(listener)
@@ -107,7 +109,9 @@ function XUiGridTask:AutoAddListener()
         XUiHelper.RegisterClickEvent(self, self.BtnFinish, self.OnBtnFinishClick)
     else
         self.BtnFinish = finishXUiBtn
-        self.BtnFinish.CallBack = function() self:OnBtnFinishClick() end
+        self.BtnFinish.CallBack = function()
+            self:OnBtnFinishClick()
+        end
     end
 
     local skipXUiBtn = self.BtnSkip:GetComponent("XUiButton")
@@ -115,7 +119,9 @@ function XUiGridTask:AutoAddListener()
         XUiHelper.RegisterClickEvent(self, self.BtnSkip, self.OnBtnSkipClick)
     else
         self.BtnSkip = skipXUiBtn
-        self.BtnSkip.CallBack = function() self:OnBtnSkipClick() end
+        self.BtnSkip.CallBack = function()
+            self:OnBtnSkipClick()
+        end
     end
 end
 
@@ -131,7 +137,7 @@ function XUiGridTask:OnBtnFinishClick()
         end
     end
     if weaponCount > 0 and XMVCA.XEquip:CheckBagCount(weaponCount, XEnumConst.EQUIP.CLASSIFY.WEAPON) == false or
-    chipCount > 0 and XMVCA.XEquip:CheckBagCount(chipCount, XEnumConst.EQUIP.CLASSIFY.AWARENESS) == false then
+        chipCount > 0 and XMVCA.XEquip:CheckBagCount(chipCount, XEnumConst.EQUIP.CLASSIFY.AWARENESS) == false then
         return
     end
     XDataCenter.TaskManager.FinishTask(self.Data.Id, function(rewardGoodsList)
@@ -158,7 +164,8 @@ end
 function XUiGridTask:UpdateProgress(data)
     self.Data = data
     local config = XDataCenter.TaskManager.GetTaskTemplate(data.Id)
-    if #config.Condition < 2 then--显示进度
+    if #config.Condition < 2 then
+        --显示进度
         self.ImgProgress.transform.parent.gameObject:SetActive(true)
         self.TxtTaskNumQian.gameObject:SetActive(true)
         local result = config.Result > 0 and config.Result or 1

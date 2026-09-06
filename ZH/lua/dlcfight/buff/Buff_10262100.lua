@@ -34,7 +34,7 @@ function XBuffScript10262100:ScriptInit(isGainControl) --初始化
     --最终改伤万分比，不能注释，注释了在抓不到值的时候会报错
     self._exDamageRate = 0
     self._hasChangedDamage = true
-
+    self._totalCostTL = 0
 end
 
 ---@param eventType number
@@ -48,32 +48,20 @@ function XBuffScript10262100:InitEventCallBackRegister()
     self._proxy:RegisterEventByTarget(EWorldEvent.NpcCalcDamageBefore, self._npcUUID)
 end
 
-function XBuffScript10262100:Update(dt)
-    --确保玩家能被赋值
-    if not self._player then
-        self._player = self._npcUUID
-    end
-    --历史体力值
-    if not self._nowTL then
-        self._nowTL = self._proxy:GetNpcGameplayAttribValue(self._player,ETheatre6AttribType.Stamina)
-    end
-    --当前体力值
-    local _nowTL2 = self._proxy:GetNpcGameplayAttribValue(self._player,ETheatre6AttribType.Stamina)
-
-    --体力消耗记录
-    if _nowTL2 > self._nowTL then
-        self._nowTL = _nowTL2
-        return
-    end
-    if _nowTL2 < self._nowTL then
-        self._nowCostTL = self._nowCostTL + self._nowTL - _nowTL2
-        self._nowTL = _nowTL2
-        --如果超过目标，就插入技能
-        if self._nowCostTL >= self._targetTL then
+function XBuffScript10262100:OnLuaSkillEnd(eventArgs)
+    ------------执行------------
+    if eventArgs._launcherUUID == self._npcUUID then
+        local skillConfig = self._proxy:Theatre6GetSkillConfig(eventArgs._skillId)
+        local TLCost = skillConfig.CostTL
+        self._totalCostTL = self._totalCostTL + TLCost
+        --self:LogError("现在记录体力=***"..self._totalCostTL)
+        if self._totalCostTL >= self._targetTL then
             self._level:RequestInsertSkill(self._npcUUID,self._skillId)
-            self._nowCostTL = 0
+            self._totalCostTL = self._totalCostTL - self._targetTL
             return
         end
+        if eventArgs._skillId ~= self._skillId then return end
+        if self._hasChangedDamage == true then self._hasChangedDamage = false end
     end
 end
 
@@ -129,14 +117,6 @@ function XBuffScript10262100:ChangeDamageBeforeCalc(eventArgs)
     self._proxy:SetBeforeDamageMagicContext(eventArgs.ContextId, FinalDMGRate, eventArgs.ElementPermyriad, eventArgs.HackDamage, eventArgs.HackPermyriad, eventArgs.IsCrit)
     --self:LogError("打印下我改伤害了吗")
     self._hasChangedDamage = false
-end
-
-function XBuffScript10262100:OnLuaSkillEnd(eventArgs)
-    ------------执行------------
-    if eventArgs._skillId ~= self._skillId then return end
-    if eventArgs._launcherUUID ~= self._npcUUID then return end
-    --本技能放完后，取消加伤
-    if self._hasChangedDamage == true then self._hasChangedDamage = false end
 end
 
 return XBuffScript10262100

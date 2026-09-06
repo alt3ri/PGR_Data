@@ -6,6 +6,7 @@ function XUiSignPrefabContent:Ctor(ui, rootUi)
     self.GameObject = ui.gameObject
     self.Transform = ui.transform
     self.RootUi = rootUi
+    ---@type XUiSignPrefab[]
     self.PanelSignPrefabs = {}
     self.SetTomorrowRound = -1
 end

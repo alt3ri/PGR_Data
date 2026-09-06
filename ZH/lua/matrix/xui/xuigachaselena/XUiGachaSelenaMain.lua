@@ -72,6 +72,8 @@ function XUiGachaSelenaMain:OnStart(gachaId, autoOpenStory)
         self:OpenGachaItemShop()
     end)
     self.BtnTemp.gameObject:SetActiveEx(false)
+
+    self:RefreshBtnChange()
 end
 
 function XUiGachaSelenaMain:OnEnable()
@@ -157,7 +159,7 @@ function XUiGachaSelenaMain:SetSelfActive(flag)
 end
 
 function XUiGachaSelenaMain:InitButton()
-    self:RegisterClickEvent(self.BtnBack, self.Close)
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
     self:RegisterClickEvent(self.BtnMainUi, function()
         XLuaUiManager.RunMain()
     end)
@@ -178,6 +180,30 @@ function XUiGachaSelenaMain:InitButton()
     self:RegisterClickEvent(self.BtnSet, function()
         XLuaUiManager.Open("UiSet")
     end)
+    -- BtnChange 为自选gacha专用切换按钮，普通卡池预制体无此节点，需判空守卫
+    if self.BtnChange then
+        self.BtnChange:AddEventListener(handler(self, self.OnBtnChangeClick))
+    end
+end
+
+function XUiGachaSelenaMain:RefreshBtnChange()
+    if not self.BtnChange then return end
+    self.BtnChange.gameObject:SetActiveEx(XDataCenter.GachaManager.IsGachaIdBelongSelfChoice(self._GachaId))
+end
+
+function XUiGachaSelenaMain:OnBtnChangeClick()
+    -- 必须先翻 Entrance.IsChangeMode 再 Close，否则 Entrance.OnEnable 会因已选直接关闭
+    XDataCenter.GachaManager.OpenSelfChoiceEntranceForChange(self._GachaId)
+    self:Close()
+end
+
+function XUiGachaSelenaMain:OnBtnBackClick()
+    -- 自选卡池：直接回主界面（Entrance 由 RunMain 一并关闭）
+    if XDataCenter.GachaManager.IsGachaIdBelongSelfChoice(self._GachaId) then
+        XLuaUiManager.RunMain()
+        return
+    end
+    self:Close()
 end
 
 function XUiGachaSelenaMain:Init3DSceneInfo()
@@ -768,7 +794,9 @@ function XUiGachaSelenaMain:OnBtnStoryLineClick(isAutoOpen)
     -- 防止AnimEnableStory和AnimEnableLong冲突
     if not self._CanPlayEnableAnim or isAutoOpen then
         -- 在Hold状态时，最后一个事件帧触发会有问题
-        self:PlayAnimationWithMask("AnimStart2")
+
+        -- AnimStart2 为表现为 Start 动画，此处是复制带来的冗余，停用
+        -- self:PlayAnimationWithMask("AnimStart2")
     end
     self.Panel3D.UiFarCamStory.gameObject:SetActiveEx(false)
     self.Panel3D.UiNearCamStory.gameObject:SetActiveEx(false)

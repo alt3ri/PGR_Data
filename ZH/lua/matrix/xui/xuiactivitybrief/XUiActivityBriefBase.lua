@@ -63,6 +63,8 @@ function XUiActivityBriefBase:OnEnterAnimFinished()
 end
 
 function XUiActivityBriefBase:OnEnable()
+    -- 返回本面板：解除非激活标记，Marker 回调恢复响应；差分音效由下方 PlayLoopAnim→PlaySpineLoopAnim 据缓存恢复
+    self._IsPanelDisabled = false
     local firstOpen = XDataCenter.ActivityBriefManager.IsShowEnterAni(self.PanelType)
     if firstOpen then
         XDataCenter.ActivityBriefManager.SetDontShowEnterAni(self.PanelType)
@@ -88,10 +90,14 @@ function XUiActivityBriefBase:OnEnable()
 end
 
 function XUiActivityBriefBase:OnDisable()
+    -- 标记非激活：被覆盖/跳转期间 Marker 回调仍会触发，据此空转不播音，避免音效残留
+    self._IsPanelDisabled = true
     if self._TimerId then
         XScheduleManager.UnSchedule(self._TimerId)
     end
     self:StopVideoSound()
+    -- 停差分音效但保留缓存，返回本面板由 PlaySpineLoopAnim 据缓存恢复
+    self:StopBgmDiffSound(true)
     self.UiActivityBriefRefreshButton:OnDisable()
 end
 
@@ -124,8 +130,6 @@ function XUiActivityBriefBase:OnBtnMainUiClick()
 end
 
 function XUiActivityBriefBase:OnClickBtnDetail()
-    -- 离开面板收不到 Marker，先停掉差分音效但保留缓存，返回时恢复
-    self:StopBgmDiffSound(true)
     XLuaUiManager.Open("UiWelfare")
 end
 
@@ -500,15 +504,18 @@ function XUiActivityBriefBase:InitBgmSpineSync()
         return
     end
     self.BgmSpineListener = listener
-    self.BgmSpineCb = function(info, audioInfo)
-        self:OnBgmSequenceEvent(info, audioInfo)
+    self.BgmSpineCb = function(tag, audioInfo)
+        self:OnBgmSequenceEvent(tag, audioInfo)
     end
     listener:AddSequenceListener(self.BgmSpineCb)
 end
 
 ---BGM 播放光标运行到 Marker 时触发：按标签切换背景 spine 差分动画与差分音效
-function XUiActivityBriefBase:OnBgmSequenceEvent(info, _)
-    local tag = info and info.tag
+function XUiActivityBriefBase:OnBgmSequenceEvent(tag, _)
+    -- 面板被覆盖/离开期间 BGM 光标仍在跑，Marker 回调会持续触发；此时空转不播音、不切动画，避免音效残留
+    if self._IsPanelDisabled then
+        return
+    end
     -- tag 命中配置 SpineDiffTag 则播对齐的 SpineDiffAnimName 差分动画；
     -- 未命中(含 tag 为空/未配置)回落到默认循环动画 LoopAnimName
     local animName = XActivityBriefConfigs.GetSpineDiffAnimNameByTag(self.PanelType, tag)

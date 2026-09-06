@@ -23,6 +23,7 @@ local CharacterTableKey =
     CharacterEquipTypeToIdAuto = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "EquipType" }, --由源表工具根据Character.tab生成，其中的角色Id列表已根据Priority由大到小排序
     CharacterClientConfig = { CacheType = XConfigUtil.CacheType.Normal, ReadFunc = XConfigUtil.ReadType.String, DirPath = XConfigUtil.DirectoryType.Client, Identifier = "Key", },
     CharacterPopupGetCharacterController = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "CharacterId" },
+    CharacterObsTransform = {}, -- 观测者职业转换规则表（Share/Character/CharacterObsTransform.tab）
 }
 
 local CharacterEnhanceSkillTableKey = 
@@ -58,6 +59,7 @@ local CharacterQualityTableKey =
 local CharacterSkillTableKey = 
 {
     CharacterObsTriggerMagic = { Identifier = "SkillId" },
+    UiSkillObservationMagicInfoController = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "TabId" },
     CharacterSkill = { Identifier = "CharacterId" },
     CharacterSkillGroup = {},
     -- CharacterSkillPos = {},
@@ -304,6 +306,16 @@ end
 --- @return XTableCharacterObsTriggerMagic[]
 function XCharacterModel:GetCharacterObsTriggerMagic()
     return self._ConfigUtil:GetByTableKey(CharacterSkillTableKey.CharacterObsTriggerMagic)
+end
+
+--- @return XTableUiSkillObservationMagicInfoController[]
+function XCharacterModel:GetUiSkillObservationMagicInfoController()
+    return self._ConfigUtil:GetByTableKey(CharacterSkillTableKey.UiSkillObservationMagicInfoController)
+end
+
+--- @return XTableCharacterObsTransform[]
+function XCharacterModel:GetCharacterObsTransform()
+    return self._ConfigUtil:GetByTableKey(CharacterTableKey.CharacterObsTransform)
 end
 
 --- @return XTableCharacterSkill[]
@@ -750,6 +762,19 @@ end
 
 ----------public start----------
 
+local ROLE_CULTURE_AUTO_EXCHANGE_SAVE_KEY = "RoleCultureAutoExchange"
+
+function XCharacterModel:GetRoleCultureAutoExchange()
+    local value = self._SaveUtil:GetData(ROLE_CULTURE_AUTO_EXCHANGE_SAVE_KEY)
+    if value == nil then
+        return true
+    end
+    return value == true
+end
+
+function XCharacterModel:SetRoleCultureAutoExchange(value)
+    self._SaveUtil:SaveData(ROLE_CULTURE_AUTO_EXCHANGE_SAVE_KEY, value and true or false)
+end
 
 ----------public end----------
 

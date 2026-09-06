@@ -85,6 +85,26 @@ function XMusicPlayerCDPlayerControl:ExitMusicMainUI()
     self._LastBgmMusicID = nil
 end
 
+function XMusicPlayerCDPlayerControl:SwitchToGuitarVersionIfNotOwned()
+    local guitarMusicId = self:_GetConfigControl():GetSPMusicID()
+    ---@cast guitarMusicId integer
+    if not XTool.IsNumberValid(guitarMusicId) then
+        return
+    end
+
+    local normalMode = XEnumConst.MusicScene.Mode.Normal
+    local XMusicPlayerEnum = XMVCA.XMusicPlayer.Enum
+    local useStatus = XMVCA.XMusicPlayer.Util.GetMusicUseStatus(guitarMusicId)
+    if useStatus == XMusicPlayerEnum.MusicUseStatus.gain then
+        return
+    end
+
+    local trackConfigKey = XMVCA.XMusicScene:GetClientConfigValue("MusicTrackConfigKey")
+    local trackKey = CS.XAudioManager.GetAudioClientConfig(trackConfigKey)
+    local targetValue = XMVCA.XMusicScene:GetIntClientConfigValue("AisacTargetValue", normalMode)
+    local curveTime = XMVCA.XMusicScene:GetIntClientConfigValue("MusicCurveTime", normalMode)
+    CS.XAudioManager.ChangeMusicSourceAisac(trackKey, targetValue, curveTime)
+end
 
 ---region 播放模式切换
 function XMusicPlayerCDPlayerControl:SwitchMusicCycleType(loopType)

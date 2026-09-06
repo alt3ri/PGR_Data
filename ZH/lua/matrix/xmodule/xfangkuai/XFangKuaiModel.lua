@@ -30,6 +30,7 @@ function XFangKuaiModel:OnInit()
     self._CharacterMap = {}
     self._AllPlayerNpcMap = {}
     self._StageDifficultyMap = {}
+    self._ItemEnhancedCountRecord = {} --运营埋点用（不考虑换号、换设备、中途离开游戏等情况）
 end
 
 function XFangKuaiModel:ClearPrivate()
@@ -192,17 +193,21 @@ end
 function XFangKuaiModel:GetProgress()
     local all = 0
     local pass = 0
-    ---@type XTableFangKuaiStageGroup[]
-    local configs = self._ConfigUtil:GetByTableKey(TableKey.FangKuaiStageGroup)
-    for _, config in pairs(configs) do
-        if self.ActivityData then
-            local isSimplePass = not XTool.IsNumberValid(config.SimpleStageId) or self.ActivityData:IsStagePass(config.SimpleStageId)
-            local isDiffcultPass = not XTool.IsNumberValid(config.DiffcultStageId) or self.ActivityData:IsStagePass(config.DiffcultStageId)
-            if isSimplePass and isDiffcultPass then
-                pass = pass + 1
+    local activityId = self.ActivityData and self.ActivityData:GetActivityId()
+    if XTool.IsNumberValid(activityId) then
+        local cfg = self:GetActivityConfig(activityId)
+        for _, chapterId in ipairs(cfg.ChapterIds) do
+            local chapterCfg = self:GetChapterConfig(chapterId)
+            for _, stageGroupId in ipairs(chapterCfg.StageGroupIds) do
+                local stageGroupCfg = self:GetStageGroupConfig(stageGroupId)
+                local isSimplePass = not XTool.IsNumberValid(stageGroupCfg.SimpleStageId) or self.ActivityData:IsStagePass(stageGroupCfg.SimpleStageId)
+                local isDiffcultPass = not XTool.IsNumberValid(stageGroupCfg.DiffcultStageId) or self.ActivityData:IsStagePass(stageGroupCfg.DiffcultStageId)
+                if isSimplePass and isDiffcultPass then
+                    pass = pass + 1
+                end
+                all = all + 1
             end
         end
-        all = all + 1
     end
     return pass, all
 end
@@ -736,37 +741,52 @@ end
 
 --region 道具
 
--- 进入狂热状态时 道具会转变为加强版；退出狂热状态时，道具将恢复
+---使用额外强化次数 按顺序强化背包里的道具
+---@return number|nil enhancedItemIdx 被强化的背包槽位
 function XFangKuaiModel:TransformItems(chapterId)
-    local log = ""
     local isTransform = false
-    local stageDatas = self.ActivityData:GetStageDatas()
-    for id, stageData in pairs(stageDatas) do
-        if chapterId == nil or chapterId == id then
-            local isEnter = stageData.FevStep > 0
-            local itemIds = stageData:GetItems()
-            log = log .. string.format("章节:%s\n%s\n", id, isEnter and "普通道具转变为狂热道具" or "狂热道具恢复为普通道具")
-            for i = 1, 4 do
-                local itemId = itemIds[i]
-                if XTool.IsNumberValid(itemId) then
-                    local config = self:GetItemConfig(itemId)
-                    if isEnter and XTool.IsNumberValid(config.NextItemId) then
-                        isTransform = true
-                        stageData:TransformItem(i, config.NextItemId)
-                        log = log .. string.format("%s → %s\n", itemId, config.NextItemId)
-                    elseif not isEnter and XTool.IsNumberValid(config.BackItemId) then
-                        isTransform = true
-                        stageData:TransformItem(i, config.BackItemId)
-                        log = log .. string.format("%s → %s\n", itemId, config.BackItemId)
-                    end
+    local enhancedItemIdx
+    local stageData = self.ActivityData:GetStageData(chapterId)
+    local itemIds = stageData:GetItems()
+
+    for i, itemId in pairs(itemIds) do
+        if XTool.IsNumberValid(itemId) and not stageData:IsItemEnhanced(i) then
+            if stageData:ApplyEnhanceItem() then
+                enhancedItemIdx = i
+                local config = self:GetItemConfig(itemId)
+                if XTool.IsNumberValid(config.NextItemId) then
+                    isTransform = true
+                    stageData:TransformItem(i, config.NextItemId)
                 end
+                --没有配置也消耗强化次数
+                stageData:SignEnhancedItemIdx(i)
+                self:AddItemEnhancedCountRecord(stageData:GetStageId())
+            else
+                break
             end
         end
     end
+
     if isTransform then
         XEventManager.DispatchEvent(XEventId.EVENT_FANGKUAI_TRANSITEM)
-        XLog.Debug(log)
     end
+
+    return enhancedItemIdx
+end
+
+function XFangKuaiModel:InitItemEnhancedCountRecord(stageId)
+    self._ItemEnhancedCountRecord[stageId] = 0
+end
+
+function XFangKuaiModel:AddItemEnhancedCountRecord(stageId)
+    if not self._ItemEnhancedCountRecord[stageId] then
+        self:InitItemEnhancedCountRecord(stageId)
+    end
+    self._ItemEnhancedCountRecord[stageId] = self._ItemEnhancedCountRecord[stageId] + 1
+end
+
+function XFangKuaiModel:GetItemEnhancedCountRecord(stageId)
+    return self._ItemEnhancedCountRecord[stageId] or 0
 end
 
 --endregion
@@ -783,7 +803,7 @@ function XFangKuaiModel:NotifyFangKuaiData(data)
         self.ActivityData = require("XModule/XFangKuai/XEntity/XFangKuaiActivity").New()
     end
     self.ActivityData:NotifyFangKuaiData(data)
-    self:TransformItems()
+    --self:TransformItems()
 end
 
 function XFangKuaiModel:NotifyFangKuaiCurStageData(data)
@@ -838,4 +858,4 @@ end
 
 --endregion
 
-return XFangKuaiModel
+return XFangKuaiModel

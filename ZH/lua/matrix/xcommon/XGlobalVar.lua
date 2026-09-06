@@ -51,7 +51,7 @@ XGlobalVar = {
         BtnUiMainBtnSocial          = 33, --主界面点击好友
         BtnUiMainBtnWelfare         = 34, --主界面点击福利
         BtnUiMainBtnMentor          = 35, --主界面点击指导
-        BtnUiMainBtnEquipGuide      = 36, --主界面点击装备目标
+        BtnUiMainBtnTeamRecommend   = 36, --主界面点击队伍养成推荐
         BtnUiMainBtnKuJieQu         = 37, --主界面点击库街区
         BtnUiMainBtnCalendar        = 38, --主界面点击新周历
 
@@ -150,5 +150,35 @@ XGlobalVar = {
         BtnTeaching = 35, -- 教学按钮
         ScrollUpPanelEquip = 36, -- 向上滚动装备面板
         ScrollDownPanelEquip = 37, -- 向下滚动装备面板
-    }
+    },
+    BtnUiTeamRecommendRoleTargetDetail = {
+        BtnDeleteTarget = 1, -- 删除培养目标
+        BtnSwitchTarget = 2, -- 切换培养目标
+        BtnSwitchPlan = 3, -- 切换方案
+        BtnWearWeapon = 4, -- 穿戴武器
+        BtnCultureWeapon = 5, -- 培养武器
+        BtnWearPartner = 6, -- 穿戴辅助机
+        BtnCulturePartner = 7, -- 培养辅助机
+        BtnCultureAwareness = 8, -- 意识批量培养
+        BtnObtainAwareness = 9, -- 一键获取
+    },
+}
+
+LayerMaskName = {
+    Terrain = "Terrain",
+    Npc = "Npc",
+    Scene = "Scene",
+    Ui3d = "Ui3d",
+    Block = "Block",
+    MirrorNpc = "MirrorNpc",
+    Distortion = "Distortion",
+    SceneObject = "SceneObject",
+    Debug = "Debug",
+    Room = "Room",
+    UiFar = "UiFar",
+    UiNear = "UiNear",
+    WallDither = "WallDither",
+    LightProbe = "LightProbe",
+    Hidden = "Hidden",
+    ShadowVolume = "ShadowVolume",
 }

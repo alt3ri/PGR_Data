@@ -2934,6 +2934,55 @@ PlayerCondition = {
     end,
     
     --endregion
+    
+    --region 大巴扎玩法
+    
+    --- 判断局内当前持有金币数量边界
+    [23301] = function(condition)
+        local rightVal = condition.Params[1]
+        local op = condition.Params[2]
+        
+        return XMVCA.XPunishaar:CheckGoldRelation(rightVal, op), condition.Desc
+    end,
+    
+    --- 判断局内当前节点所处区间
+    [23302] = function(condition)
+        local left = condition.Params[1]
+        local right = condition.Params[2]
+        
+        return XMVCA.XPunishaar:CheckNodeInterval(left, right), condition.Desc
+    end,
+
+    --- 判断局内当前节点所处区间[纯客户端，和服务端隔离]
+    [23303] = function(condition)
+        local left = condition.Params[1]
+        local right = condition.Params[2]
+        local stageId = condition.Params[3]
+        local status = condition.Params[4]
+
+        if not XTool.IsNumberValid(stageId) then
+            return false, condition.Desc
+        end
+
+        return XMVCA.XPunishaar:CheckNodeInterval(left, right, stageId, status), condition.Desc
+    end,
+    --endregion
+
+    --region 超限启航
+    [23401] = function(condition)
+        -- 当前是否处于指定塔的选关界面（引导用）
+        local curTowerCfgId = XMVCA.XTransfiniteTower:GetStageUiTowerCfgId()
+        if not XTool.IsNumberValid(curTowerCfgId) then
+            return false, condition.Desc
+        end
+        for _, towerCfgId in ipairs(condition.Params or table.empty) do
+            if curTowerCfgId == towerCfgId then
+                return true, condition.Desc
+            end
+        end
+        return false, condition.Desc
+    end,
+    --endregion
 }
 
 local CharacterCondition = {

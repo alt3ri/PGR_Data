@@ -2,11 +2,12 @@ local XUiGridResonanceSkill = require("XUi/XUiEquipResonanceSkill/XUiGridResonan
 ---@class XUiGridResonanceDoubleSkillV2P6
 local XUiGridResonanceDoubleSkillV2P6 = XClass(nil, "XUiGridResonanceDoubleSkillV2P6")
 
-function XUiGridResonanceDoubleSkillV2P6:Ctor(ui, rootUi)
+function XUiGridResonanceDoubleSkillV2P6:Ctor(ui, rootUi, onClickCb)
     self.GameObject = ui.gameObject
     self.Transform = ui.transform
     self.ResonanceSkillGrids = {}
     self.RootUi = rootUi
+    self.OnClickCb = onClickCb  -- 可选外部回调，签名 cb(awarenessIndex, slot)
     XTool.InitUiObject(self)
 
     for i = 1, XEnumConst.EQUIP.AWARENESS_RESONANCE_COUNT do
@@ -16,13 +17,19 @@ function XUiGridResonanceDoubleSkillV2P6:Ctor(ui, rootUi)
     end
 end
 
-function XUiGridResonanceDoubleSkillV2P6:SetForbidGotoEquip(flag)
-    self.ForbidGotoEquip = flag
-end
+function XUiGridResonanceDoubleSkillV2P6:SetForbidGotoEquip(flag)
+    self.ForbidGotoEquip = flag
+end
+
+function XUiGridResonanceDoubleSkillV2P6:GetGridResonanceSkill(skillIndex)
+    -- 旧单子将共鸣节点误命名为 GridResnanceSkill，这里兼容旧错误命名和新的正确命名。
+    return self["GridResonanceSkill" .. skillIndex] or self["GridResnanceSkill" .. skillIndex]
+end
 
 --@site: 意识的位置
 function XUiGridResonanceDoubleSkillV2P6:RefreshBySite(characterId, site)
     self.CharacterId = characterId
+    self.Site = site
     self.EquipId = XMVCA.XEquip:GetCharacterEquipId(characterId, site)
 
     self:RefreshTxtPos(site)
@@ -35,8 +42,8 @@ function XUiGridResonanceDoubleSkillV2P6:RefreshBySite(characterId, site)
         self.PanelEmpty.gameObject:SetActiveEx(true)
         self.PanelNoResnoanceSkill.gameObject:SetActiveEx(false)
         self.ImgPos.gameObject:SetActiveEx(false)
-        self.GridResnanceSkill1.gameObject:SetActive(false)
-        self.GridResnanceSkill2.gameObject:SetActive(false)
+        self:GetGridResonanceSkill(1).gameObject:SetActive(false)
+        self:GetGridResonanceSkill(2).gameObject:SetActive(false)
     end
 end
 
@@ -47,12 +54,12 @@ function XUiGridResonanceDoubleSkillV2P6:RefreshResonanceSkill(characterId, equi
         self.PanelEmpty.gameObject:SetActiveEx(true)
         self.PanelNoResnoanceSkill.gameObject:SetActiveEx(false)
         self.ImgPos.gameObject:SetActiveEx(false)
-        self.GridResnanceSkill1.gameObject:SetActiveEx(false)
-        self.GridResnanceSkill2.gameObject:SetActiveEx(false)
+        self:GetGridResonanceSkill(1).gameObject:SetActiveEx(false)
+        self:GetGridResonanceSkill(2).gameObject:SetActiveEx(false)
     else
         --有共鸣技能时
         for skillIndex = 1, XEnumConst.EQUIP.AWARENESS_RESONANCE_COUNT do
-            local go = self["GridResnanceSkill" .. skillIndex]
+            local go = self:GetGridResonanceSkill(skillIndex)
             local haveResonance = XMVCA.XEquip:CheckEquipPosResonanced(equipId, skillIndex)
             go.gameObject:SetActiveEx(haveResonance)
             self["PanelNoEquip0" .. skillIndex].gameObject:SetActiveEx(not haveResonance)
@@ -60,7 +67,7 @@ function XUiGridResonanceDoubleSkillV2P6:RefreshResonanceSkill(characterId, equi
                 local grid = self.ResonanceSkillGrids[skillIndex]
                 if not grid then
                     grid = XUiGridResonanceSkill.New(go, equipId, skillIndex, characterId, function()
-                        self:OnBtnResonanceClick()
+                        self:OnBtnResonanceClick(skillIndex)
                     end)
                     self.ResonanceSkillGrids[skillIndex] = grid
                 end
@@ -83,6 +90,11 @@ end
 
 function XUiGridResonanceDoubleSkillV2P6:OnBtnResonanceClick(pos)
     if self.ForbidGotoEquip then
+        return
+    end
+
+    if self.OnClickCb then
+        self.OnClickCb(self.Site, pos)
         return
     end
 

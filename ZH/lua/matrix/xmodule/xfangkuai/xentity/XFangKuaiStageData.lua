@@ -5,6 +5,8 @@
 ---@field FevValue number 狂热值=关卡系数 ×（combo狂热值+（溢出道具数+丢弃道具数）×道具系数）
 ---@field FevStep number 狂热步数
 ---@field FevLevel number 狂热阶段
+---@field AccumulatedEnhanceCount number 溢出强化次数
+---@field HasEnhancedItemIds number[] 已经强化过的道具
 local XFangKuaiStageData = XClass(nil, "XFangKuaiStageData")
 
 function XFangKuaiStageData:Ctor()
@@ -34,6 +36,7 @@ function XFangKuaiStageData:UpdateStageData(data)
     self.HistoryMaxCombo = data.Combo or 1
     self.FevValue = XTool.IsNumberValid(data.FrenzyVal) and data.FrenzyVal / 10000 or 0
     self.FevStep = data.FrenzyEnergy or 0
+    self.AccumulatedEnhanceCount = data.AccumulatedEnhanceCount or 0
     self.FevLevel = data.FrenzyStage or 0
     self.ItemIds = {}
     if not XTool.IsTableEmpty(data.ItemIds) then
@@ -43,6 +46,7 @@ function XFangKuaiStageData:UpdateStageData(data)
             end
         end
     end
+    self.HasEnhancedItemIds = data.EnhancedItemIndexes or {}
     self.HistoryFevRecords = {}
     if not XTool.IsTableEmpty(data.HistoryFrenzyRecords) then
         for _, record in ipairs(data.HistoryFrenzyRecords) do
@@ -196,8 +200,8 @@ function XFangKuaiStageData:TransformItem(index, itemId)
     end
 end
 
-function XFangKuaiStageData:AddFrozenRound()
-    self.FrozenRound = self.FrozenRound + 1
+function XFangKuaiStageData:AddFrozenRound(count)
+    self.FrozenRound = self.FrozenRound + count
 end
 
 function XFangKuaiStageData:AddDropBlockTimes()
@@ -210,6 +214,10 @@ function XFangKuaiStageData:RemoveItem(index, isGiveUp)
         OperatorType = operate, Index = index, Id = self.ItemIds[index]
     })
     self.ItemIds[index] = nil
+    local idx = table.indexof(self.HasEnhancedItemIds, index)
+    if XTool.IsNumberValid(idx) then
+        table.remove(self.HasEnhancedItemIds, idx)
+    end
 end
 
 function XFangKuaiStageData:ReduceFrozenRound()
@@ -336,6 +344,42 @@ function XFangKuaiStageData:SaveStageBlockData(blockMap, previewBlockMap)
     end
 end
 
+function XFangKuaiStageData:GetAccumulatedEnhanceCount()
+    return self.AccumulatedEnhanceCount
+end
+
+---消灭BOSS方块时 强化道具次数+1
+function XFangKuaiStageData:AddEnhanceCount()
+    self.AccumulatedEnhanceCount = self.AccumulatedEnhanceCount + 1
+end
+
+---判断并消耗强化次数
+function XFangKuaiStageData:ApplyEnhanceItem()
+    if self.AccumulatedEnhanceCount > 0 then
+        self.AccumulatedEnhanceCount = self.AccumulatedEnhanceCount - 1
+        return true
+    end
+    return false
+end
+
+---将该道具标记为已经强化过
+function XFangKuaiStageData:SignEnhancedItemIdx(index)
+    if self:IsItemEnhanced(index) then
+        XLog.Error("道具已被强化过")
+        return
+    end
+    table.insert(self.HasEnhancedItemIds, index)
+end
+
+---道具是否已被强化过
+function XFangKuaiStageData:IsItemEnhanced(index)
+    return table.contains(self.HasEnhancedItemIds, index)
+end
+
+function XFangKuaiStageData:GetEnhancedItemIndexes()
+    return self.HasEnhancedItemIds
+end
+
 function XFangKuaiStageData:ClearBlock()
     self.Blocks = {}
 end
@@ -362,6 +406,7 @@ function XFangKuaiStageData:ResetData()
     self.Round = 0
     self.ExtraRound = 0
     self.ItemIds = {}
+    self.HasEnhancedItemIds = {}
     self.HistoryItemIds = {}
     self.HistoryUsedItemIds = {}
     self.HistoryDiscardItemIds = {}
@@ -372,6 +417,7 @@ function XFangKuaiStageData:ResetData()
     self.FevLevel = 0
     self.FevStep = 0
     self.FevValue = 0
+    self.AccumulatedEnhanceCount = 0
     self.HistoryFevRecords = {}
     self:ClearBlock()
     self:ClearRoundItemData()

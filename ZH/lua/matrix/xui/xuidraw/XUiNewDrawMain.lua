@@ -126,20 +126,20 @@ function XUiNewDrawMain:RefreshNormalUiShow()
 end
 -- region 鬼泣五相关
 function XUiNewDrawMain:RefreshPanelTwoForOne()
-    local isDevilMayGroupId = XDataCenter.DrawManager:CheckIsDevilMayCryGroupId(self.GroupId)
-    self.PanelTwoForOne.gameObject:SetActiveEx(isDevilMayGroupId)
+    local isLinkageGroupId = XDataCenter.DrawManager:CheckIsLinkageGroupId(self.GroupId)
+    self.PanelTwoForOne.gameObject:SetActiveEx(isLinkageGroupId)
 
-    local canReceiveCount = XDataCenter.DrawManager:CheckIsCanReceiveCharacterByDrawId(self.DrawInfo.Id)
+    local canReceiveCount = XDataCenter.DrawManager:CheckIsCanReceiveLinkageRole(self.DrawInfo.Id)
     self.PanelTwoForOne:GetObject("BtnReceive").gameObject:SetActiveEx(XTool.IsNumberValid(canReceiveCount))
 
-    local leftCount = XDataCenter.DrawManager:GetLeftCanGetDevilCharacterCount(self.DrawInfo.Id)
+    local leftCount = XDataCenter.DrawManager:GetLeftCanGetLinkageCharacterCount(self.DrawInfo.Id)
     local textComponent = self.PanelTwoForOne:GetObject("TxtNum")
     textComponent.text = leftCount or 0
     textComponent.color = (XTool.IsNumberValid(leftCount)) and CS.UnityEngine.Color.white or CS.UnityEngine.Color.red
 end
 
 function XUiNewDrawMain:OnDevilMayCryBtnReceiveClick()
-    local lfc, needRequestTaskList = XDataCenter.DrawManager:CheckIsCanReceiveCharacterByDrawId(self.DrawInfo.Id)
+    local _, needRequestTaskList = XDataCenter.DrawManager:CheckIsCanReceiveLinkageRole(self.DrawInfo.Id)
     if XTool.IsTableEmpty(needRequestTaskList) then
         return
     end
@@ -728,7 +728,7 @@ function XUiNewDrawMain:_RefreshCharacterDrawTarget()
     local isHaveTarget = XTool.IsNumberValid(groupActivityTargetData:GetTargetId())
 
     -- rule按钮文本
-    self.BtnOptionalDraw.gameObject:SetActiveEx(not self.CurBanner.TargetBtnDetails and not self:CheckIsNewDraw() and not XDataCenter.DrawManager:CheckIsDevilMayCryGroupId(self.GroupId))
+    self.BtnOptionalDraw.gameObject:SetActiveEx(not self.CurBanner.TargetBtnDetails and not self:CheckIsNewDraw() and not XDataCenter.DrawManager:CheckIsLinkageGroupId(self.GroupId))
     if self.CurBanner.TargetBtnDetails then
         local targetCount = groupActivityTargetData:GetTargetCount()
         local txt = isHaveTarget and XDrawConfigs.GetDrawActivityTargetShowActiveTipTxt(groupActivityTargetData:GetActivityId())
@@ -978,15 +978,16 @@ function XUiNewDrawMain:CreateMainBtn(data)
     -- 校准一级页签
     local groupTargetData
     local isShowTag = false
-    local isDevilCanReceive = false
+    local isLinkageCanReceive = false
     local isTenDiscount = false
     for _, drawData in ipairs(data.DrawGroupList) do
         groupTargetData = XDataCenter.DrawManager.GetDrawGroupActivityTargetInfo(drawData.Id)
         if groupTargetData then
             isShowTag = true
         end
-        if XDataCenter.DrawManager.CheckIsCanReceiveCharacterByDrawId(drawData.Id) then
-            isDevilCanReceive = true
+        local receiveCount, _ = XDataCenter.DrawManager:CheckIsCanReceiveLinkageRole(drawData.Id)
+        if XTool.IsNumberValid(receiveCount) then
+            isLinkageCanReceive = true
         end
         if XDataCenter.DrawManager.IsShowTagTenDiscount(drawData.Id) then
             isTenDiscount = true
@@ -1038,7 +1039,7 @@ function XUiNewDrawMain:CreateMainBtn(data)
             local canShowTag = (not needShowPower) and (data:IsShowTag() and (not data:IsShowFreeTip()) or isShowTag) and (not isTenDiscount)
             uiButton:ShowTag(canShowTag)
             -- uiButton:ShowReddot(data:IsShowFreeTip()) -- [Fixed] Removed to prevent overwriting CanLiver RedDot
-            uiObject:GetObject("TagReceive").gameObject:SetActiveEx(isDevilCanReceive)
+            uiObject:GetObject("TagReceive").gameObject:SetActiveEx(isLinkageCanReceive)
         end, XScheduleManager.SECOND * 0.7)
 
         table.insert(self.AllBtnList, uiButton)
@@ -1193,9 +1194,9 @@ function XUiNewDrawMain:CreateSubBtn(subGroupIndex, data)
             if not drawInfo then
                 drawInfo = XDataCenter.DrawManager.GetUseDrawInfoByGroupId(data.Id)
             end
-            local isCanReceive = XDataCenter.DrawManager:CheckIsCanReceiveCharacterByDrawId(drawInfo and drawInfo.Id)
+            local isCanReceive = XDataCenter.DrawManager:CheckIsCanReceiveLinkageRole(drawInfo and drawInfo.Id)
             uiObject:GetObject("TagReceive").gameObject:SetActiveEx(XTool.IsNumberValid(isCanReceive))
-            uiObject:GetObject("TagDiscount").gameObject:SetActiveEx(XDataCenter.DrawManager:CheckIsDevilMayCryGroupId(data.Id))
+            uiObject:GetObject("TagDiscount").gameObject:SetActiveEx(XDataCenter.DrawManager:CheckIsLinkageGroupId(data.Id))
             local isTenDiscount, discountText = XDataCenter.DrawManager.IsShowTagTenDiscount(data:GetId())
             uiObject:GetObject("Tag10Discount").gameObject:SetActiveEx(isTenDiscount)
             if isTenDiscount then
@@ -1256,7 +1257,7 @@ function XUiNewDrawMain:CheckAutoOpen()
         return
     end
 
-    if XDataCenter.DrawManager:CheckIsDevilMayCryGroupId(self.GroupId) then
+    if XDataCenter.DrawManager:CheckIsLinkageGroupId(self.GroupId) then
         return
     end
 
@@ -1311,7 +1312,7 @@ end
 
 function XUiNewDrawMain:UpdateOptionalBtn()
     local isShow = not self:CheckIsNewDraw()
-                   and not XDataCenter.DrawManager:CheckIsDevilMayCryGroupId(self.GroupId)
+                   and not XDataCenter.DrawManager:CheckIsLinkageGroupId(self.GroupId)
                    and not XDataCenter.DrawManager:CheckIsHideOptionalBtnGroupId(self.GroupId)
                    and not (self.CurBanner and self.CurBanner.TargetBtnDetails)
     self.BtnOptionalDraw.gameObject:SetActiveEx(isShow)

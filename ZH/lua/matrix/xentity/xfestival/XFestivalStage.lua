@@ -259,11 +259,41 @@ function XFestivalStage:GetIcon()
     return cfg and cfg.Icon
 end
 --====================
+--获取时钟时针指向小时
+--====================
+function XFestivalStage:GetClockHour()
+    return self.FestivalStageCfg and self.FestivalStageCfg.ClockHour or 0
+end
+--====================
+--获取时钟分针指向分钟
+--====================
+function XFestivalStage:GetClockMinute()
+    return self.FestivalStageCfg and self.FestivalStageCfg.ClockMinute or 0
+end
+--====================
 --获取剧情关卡图标
 --====================
 function XFestivalStage:GetStoryIcon()
     local cfg = self:GetStageCfg()
     return cfg and cfg.StoryIcon
+end
+--====================
+--获取剧情关详情页影片区底图
+--====================
+function XFestivalStage:GetDetailStoryBg()
+    return self.FestivalStageCfg and self.FestivalStageCfg.DetailStoryBg
+end
+--====================
+--获取剧情关节点要播放的Timeline动画节点名
+--====================
+function XFestivalStage:GetStoryAnimName()
+    return self.FestivalStageCfg and self.FestivalStageCfg.StoryAnimName
+end
+--====================
+--获取剧情关节点动画播放条件ID
+--====================
+function XFestivalStage:GetStoryAnimCondition()
+    return self.FestivalStageCfg and self.FestivalStageCfg.StoryAnimCondition or 0
 end
 --====================
 --获取关卡首通奖励

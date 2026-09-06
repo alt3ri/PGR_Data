@@ -7,13 +7,15 @@ function XMovieActionInterrupt:OnInit(actionData)
     -- 参数1=普通音频CueId，参数2=配音CvId。两套编号空间各占一位，按需各自打断
     self.CueId = paramToNumber(params[1])
     self.CvId = paramToNumber(params[2])
+    local movieId = XDataCenter.MovieManager.GetCurPlayingMovieId()
+    self.IsVoiceMuted = XMovieConfigs.IsMovieVoiceMuted(movieId)
 end
 
 function XMovieActionInterrupt:OnRunning()
     if XTool.IsNumberValid(self.CueId) then
         XLuaAudioManager.StopAudioByCueId(self.CueId)
     end
-    if XTool.IsNumberValid(self.CvId) then
+    if XTool.IsNumberValid(self.CvId) and not self.IsVoiceMuted then
         CS.XAudioManager.StopCv(self.CvId)
     end
 end

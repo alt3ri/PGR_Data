@@ -124,6 +124,7 @@ function XUiCharacterSystemV2P6:OnStart(initCharId, skipArgs)
 end
 
 function XUiCharacterSystemV2P6:OnEnable()
+    XMVCA.XTeamRecommend:CheckAllServerCharacterTargetProgressAndFinish()
     self:RefreshRoleModel()
 
     if self.IsUiInit then
@@ -147,6 +148,7 @@ function XUiCharacterSystemV2P6:OnDisable()
 end
 
 function XUiCharacterSystemV2P6:OnDestroy()
+    XMVCA.XTeamRecommend:CheckAllServerCharacterTargetProgressAndFinish()
     XEventManager.RemoveEventListener(XEventId.EVENT_CHARACTER_CHANGE_SYNC_SYSTEM, self.SetCurCharacter, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_CHARACTER_CHANGE_SYNC_SYSTEM, self.SetSyncCharFlag, self)
 end
@@ -163,6 +165,8 @@ function XUiCharacterSystemV2P6:OpenBySkipArgs()
     elseif arg == XEnumConst.CHARACTER.SkipEnumV2P6.PropertySkill then
         local pageNum = 3
         self:OpenChildUi("UiCharacterPropertyV2P6", pageNum)
+    elseif arg == XEnumConst.CHARACTER.SkipEnumV2P6.Quality then
+        self:OpenChildUi("UiCharacterQualitySystemV2P6")
     else
         self:OpenChildUi("UiCharacterV2P6")
         XLog.Error("SkipArgs传入的枚举错误 查看 XEnumConst.CHARACTER.SkipEnumV2P6，传入", self.SkipArgs)

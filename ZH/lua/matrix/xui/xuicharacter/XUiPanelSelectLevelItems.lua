@@ -280,24 +280,21 @@ function XUiPanelSelectLevelItems:DealSelectItem(index, newCount)
     local diffCount = newCount - selectCount
 
     -- 由于长按可能导致道具超出理论极限使用个数，因此加个范围检测
-    local exp = XDataCenter.ItemManager.GetCharExp(self.ExpItems[index].Data.Id, character.Type)
-    local addExp = exp * diffCount
-    local preExp = addExp ~= 0 and self.AddExp + addExp + self.RedundantExp or 0
-    local showNextLevel, _ = XMVCA.XCharacter:CalLevelAndExp(character, preExp)
-    if showNextLevel > self.MaxLevel and newCount > selectCount  then
-        while showNextLevel >= self.MaxLevel do
-            diffCount = diffCount - 1
-            addExp = exp * diffCount
-            preExp = self.AddExp + addExp ~= 0 and self.AddExp + addExp + self.RedundantExp or 0
-            showNextLevel, _ = XMVCA.XCharacter:CalLevelAndExp(character, preExp)
+    if newCount > selectCount then
+        local maxCount = self:CalcMaxCount(expItem)
+        if newCount > maxCount then
+            newCount = maxCount
+            diffCount = newCount - selectCount
+            if diffCount <= 0 then
+                return false
+            end
+            self:UpdateAddExp(index, diffCount)
+            expItem:SetSelectCount(newCount)
+            self:UpdateUiAdd(index)
+            character.Exp = self.CurCharacterExp
+            self:CheckMaxLevel()
+            return false
         end
-        diffCount = diffCount + 1
-        self:UpdateAddExp(index, diffCount)
-        expItem:SetSelectCount(selectCount + diffCount)
-        self:UpdateUiAdd(index)
-        character.Exp = self.CurCharacterExp
-        self:CheckMaxLevel()
-        return false
     end
 
     self:UpdateAddExp(index, diffCount)

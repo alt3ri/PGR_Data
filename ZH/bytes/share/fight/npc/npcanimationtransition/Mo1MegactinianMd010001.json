@@ -304,6 +304,69 @@
         "Role": "Mo1MegactinianMd010001",
         "Layer": null,
         "State": null,
+        "Target": "WalkStart",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "Layer": null,
+        "State": null,
+        "Target": "WalkStop",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "Layer": null,
+        "State": null,
+        "Target": "WalkStartEnd",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "Layer": null,
+        "State": null,
+        "Target": "LTurn90",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "Layer": null,
+        "State": null,
+        "Target": "LTurn180",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "Layer": null,
+        "State": null,
+        "Target": "RTurn90",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "Layer": null,
+        "State": null,
+        "Target": "RTurn180",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "Layer": null,
+        "State": null,
+        "Target": "Sprint",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "Layer": null,
+        "State": null,
+        "Target": "HitLB",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "Layer": null,
+        "State": null,
         "Target": "Attack01",
         "TransitionDuration": 0.1
     },
@@ -382,6 +445,13 @@
         "Layer": null,
         "State": null,
         "Target": "Attack12",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "Layer": null,
+        "State": null,
+        "Target": "Attack13",
         "TransitionDuration": 0.1
     },
     {
@@ -702,6 +772,13 @@
     {
         "Role": "Mo1MegactinianMd010001",
         "Layer": null,
+        "State": "RunStartEnd01",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "Layer": null,
         "State": "Hit1",
         "Target": "Stand2",
         "TransitionDuration": null
@@ -801,6 +878,76 @@
         "Role": "Mo1MegactinianMd010001",
         "Layer": null,
         "State": "Caught",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "Layer": null,
+        "State": "WalkStart",
+        "Target": "Walk",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "Layer": null,
+        "State": "WalkStart",
+        "Target": "WalkStartEnd",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "Layer": null,
+        "State": "WalkStart",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "Layer": null,
+        "State": "WalkStop",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "Layer": null,
+        "State": "WalkStartEnd",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "Layer": null,
+        "State": "LTurn90",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "Layer": null,
+        "State": "LTurn180",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "Layer": null,
+        "State": "RTurn90",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "Layer": null,
+        "State": "RTurn180",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mo1MegactinianMd010001",
+        "Layer": null,
+        "State": "HitLB",
         "Target": "Stand2",
         "TransitionDuration": 0.1
     }

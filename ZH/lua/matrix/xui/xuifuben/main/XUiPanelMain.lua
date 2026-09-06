@@ -106,7 +106,7 @@ function XUiPanelMain:OnBtnChapterClicked()
         return
     end
     --增加分包判断，界面打开，放到这个判断之后
-    if not XMVCA.XSubPackage:CheckSubpackage(self.EntryType, self.CurrentChapter:GetId()) then
+    if not XMVCA.XSubPackage:CheckSubpackage(self.EntryType) then
         return
     end
     XMVCA.XMainLine2:RecordEnterChapterWay(XEnumConst.MAINLINE2.ENTER_CHAPTER_WAY_TYPE.FIGHT)

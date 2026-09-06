@@ -1,3 +1,5 @@
+---@class XPanelCharacterLevelV2P6 : XUiNode
+---@field _Control XCharacterControl
 local XPanelCharacterLevelV2P6 = XClass(XUiNode, "XPanelCharacterLevelV2P6")
 
 function XPanelCharacterLevelV2P6:OnStart()
@@ -10,6 +12,11 @@ end
 function XPanelCharacterLevelV2P6:InitButton()
     XUiHelper.RegisterClickEvent(self, self.BtnLevelUpButton, self.OnBtnLevelUpButtonClick)
     XUiHelper.RegisterClickEvent(self, self.BtnGetMore, self.OnBtnGetMoreClick)
+    self.BtnOneClick:AddEventListener(handler(self, self.OnBtnOneClickClick))
+end
+
+function XPanelCharacterLevelV2P6:OnBtnOneClickClick()
+    XMVCA.XCharacter:OpenUiRoleCultureDetailMain(self.CharacterId)
 end
 
 function XPanelCharacterLevelV2P6:RefreshUiShow()
@@ -17,9 +24,24 @@ function XPanelCharacterLevelV2P6:RefreshUiShow()
 
     -- self.LeveInfoQiehuan:PlayTimelineAnimation()
     self.PanelLeveInfo.gameObject:SetActive(true)
+    local isOneClickOpen = XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.CharacterOneClick)
+        and self._Control:CheckRoleCultureHasAnyUpgradableByCurState(self.CharacterId)
+    self.BtnOneClick.gameObject:SetActiveEx(isOneClickOpen)
+    self:RefreshTrainingItemBubble()
     self:HideSelectLevelItems()
     self:UpdatePanel()
     self:CheckMaxLevel()
+end
+
+--- 一键养成道具持有提示：有道具才展示气泡
+function XPanelCharacterLevelV2P6:RefreshTrainingItemBubble()
+    local count = self._Control:GetRoleCultureSpecialItemCount()
+    self.GroupBubble.gameObject:SetActiveEx(count > 0)
+    if count <= 0 then
+        return
+    end
+    self.IconTrainingItem:SetRawImage(XDataCenter.ItemManager.GetItemIcon(self._Control:GetRoleCultureSpecialItemId()))
+    self.TxtItemNum.text = "x" .. count
 end
 
 function XPanelCharacterLevelV2P6:HideSelectLevelItems()

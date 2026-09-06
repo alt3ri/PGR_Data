@@ -11,10 +11,6 @@ local MUSIC_SUBPACKAGE_ID = 3000
 
 local CheckStageId = 10030304
 
-local LaunchTestPath = CS.UnityEngine.Application.dataPath .. "/../../../Product/Temp/LocalCdn"
-local LaunchTestDirApp = CS.UnityEngine.Application.dataPath .. "/../../../Product/Temp/LocalDirApp"
-local LaunchTestDirDoc = CS.UnityEngine.Application.dataPath .. "/../../../Product/Temp/LocalDirDoc"
-
 local SingleThreadCount = 1 --单线程线程数
 local MultiThreadCount = 5 --多线程线程数
 
@@ -35,6 +31,8 @@ function XSubPackageAgency:OnInit()
     self._SubpackageWaitDnLdQueue = {}
     self._ResWaitDnLdQueue = {}
     self._FileToResIds = {}
+    -- SubpackageId -> 物理文件名 -> 文件大小，避免跨 Res 共享文件重复累计
+    self._SubpackageFileSizeMap = {}
 
     self._IsUninstalling = false
     self._UninstallVersion = 0
@@ -70,11 +68,13 @@ function XSubPackageAgency:OnInit()
     --是否需要测试
     self._IsNeedLaunchTest = CS.XResourceManager.NeedLaunchTest
 
-    self._DocumentUrl = self._LaunchDlcManager.GetPathModule().GetDocumentUrl()
+    local ModuleUpdateInfoClass = require("XLaunchUpdate/XModuleUpdateInfo")
+    local moduleUpdateInfo = ModuleUpdateInfoClass.New()
+    moduleUpdateInfo:Init(RES_FILE_TYPE.MATRIX_FILE)
 
-    self._DocumentVersion = self._LaunchDlcManager.GetVersionModule().GetNewDocVersion()
-
-    self._DocumentFilePath = self._LaunchDlcManager.GetPathModule().GetDocumentFilePath()
+    self._ModuleUpdateInfo = moduleUpdateInfo
+    self._DocumentFilePath = moduleUpdateInfo:GetDocumentFilePath()
+    self._DocumentVersion = moduleUpdateInfo:GetNewVersion()
 
     self._DownloadCenter = nil
 
@@ -287,44 +287,21 @@ function XSubPackageAgency:TransformSize(size)
     return math.ceil(num), unit
 end
 
+function XSubPackageAgency:GetSubpackageDownloadSize(subpackageId)
+    local size = 0
+    for fileName, fileSize in pairs(self._SubpackageFileSizeMap[subpackageId]) do
+        if self._LaunchDlcManager.IsNameDownloaded(fileName) then
+            size = size + fileSize
+        end
+    end
+    return size
+end
+
 function XSubPackageAgency:GetSubpackageTotalSize(subpackageId)
     local size = 0
-    local t = self._Model:GetSubpackageTemplate(subpackageId)
-    local resIds = t.ResIds
-
-    -- 字典表优化
-    local dict = self._tempDict
-    if not dict then
-        dict = {}
-        self._tempDict = dict
-    else
-        -- 清空字典表，准备复用
-        for k in pairs(dict) do
-            dict[k] = nil
-        end
+    for _, fileSize in pairs(self._SubpackageFileSizeMap[subpackageId]) do
+        size = size + fileSize
     end
-
-    if not XTool.IsTableEmpty(resIds) then
-        for _, resId in pairs(resIds) do
-            local indexInfo = self._SubIndexInfo[resId]
-            if indexInfo then
-                for _, info in pairs(indexInfo) do
-                    local fileName = info[1]
-                    --如果有同名文件只记录一次
-                    if not dict[fileName] then
-                        dict[fileName] = true
-                        size = size + info[3]
-                    end
-                end
-            else
-                if IsDebugBuild then
-                    local str = stringFormat("分包 SubpackageId = %s 不存在IndexInfo, ResId = %s", subpackageId, resId)
-                    XLog.Warning(str)
-                end
-            end
-        end
-    end
-
     return size
 end
 
@@ -384,6 +361,38 @@ function XSubPackageAgency:GetResListTotalSize(resIdTable)
         end
     end
     return size
+end
+
+--- 按文件名统计Res文件大小，供预览总量和进度使用
+function XSubPackageAgency:CreateResListSizeInfo(resIds)
+    local fileSizeMap = {}
+    local totalSize = 0
+    for _, resId in ipairs(resIds) do
+        local indexInfo = self._SubIndexInfo[resId]
+        for _, info in pairs(indexInfo) do
+            local fileName = info[1]
+            if not fileSizeMap[fileName] then
+                local fileSize = info[3]
+                fileSizeMap[fileName] = fileSize
+                totalSize = totalSize + fileSize
+            end
+        end
+    end
+    return {
+        FileSizeMap = fileSizeMap,
+        TotalSize = totalSize,
+    }
+end
+
+--- 按文件落盘状态计算已下载大小
+function XSubPackageAgency:GetSizeInfoDownloadSize(sizeInfo)
+    local downloadSize = 0
+    for fileName, fileSize in pairs(sizeInfo.FileSizeMap) do
+        if self._LaunchDlcManager.IsNameDownloaded(fileName) then
+            downloadSize = downloadSize + fileSize
+        end
+    end
+    return downloadSize
 end
 
 --- Res粒度开始下载
@@ -999,26 +1008,26 @@ function XSubPackageAgency:UninstallSubpackageById(subpackageId, cb)
             return
         end
 
-        local currentMusicInfo = XLuaAudioManager.GetCurrentMusicAudioInfo()
-        local currentCueId = currentMusicInfo and currentMusicInfo.CueId
-        local fallbackAlbumId = CS.XGame.ClientConfig:GetInt("MusicPlayerFallbackAlbumId")
-        local fallbackAlbumCo = XMVCA.XMusicPlayer:COGetMusicPlayerAlbumCOByid(fallbackAlbumId)
-        local fallbackCueId = fallbackAlbumCo and fallbackAlbumCo.CueId
-
-        -- 卸载CD机分包且当前正在播放CD机音乐时，先切换到不依赖该分包的fallback音乐，再释放旧CueSheet
-        if subpackageId == MUSIC_SUBPACKAGE_ID and XTool.IsNumberValid(currentCueId) and CS.XAudioManager.CheckCueIsCDMusic(currentCueId) and currentCueId ~= fallbackCueId then
-            local oldCueSheetId = currentMusicInfo.CueSheetId
-            if not XMVCA.XMusicPlayer:TryEnterFallbackForUninstall() then
-                self._IsUninstalling = false
-                XLog.Warning("[XSubPackageAgency] CD机分包卸载前切换fallback音乐失败")
-                if cb then cb() end
-                return
-            end
-
-            CS.XAudioManager.RemoveCueSheetById(oldCueSheetId)
-            -- RemoveCueSheetById没有句柄释放完成回调，物理删除前让出一帧，为旧AudioInfo和CueSheet提供释放边界
-            asynWaitSecond(0)
-        end
+        local currentMusicInfo = XLuaAudioManager.GetCurrentMusicAudioInfo()
+        local currentCueId = currentMusicInfo and currentMusicInfo.CueId
+        local fallbackAlbumId = CS.XGame.ClientConfig:GetInt("MusicPlayerFallbackAlbumId")
+        local fallbackAlbumCo = XMVCA.XMusicPlayer:COGetMusicPlayerAlbumCOByid(fallbackAlbumId)
+        local fallbackCueId = fallbackAlbumCo and fallbackAlbumCo.CueId
+
+        -- 卸载CD机分包且当前正在播放CD机音乐时，先切换到不依赖该分包的fallback音乐，再释放旧CueSheet
+        if subpackageId == MUSIC_SUBPACKAGE_ID and XTool.IsNumberValid(currentCueId) and CS.XAudioManager.CheckCueIsCDMusic(currentCueId) and currentCueId ~= fallbackCueId then
+            local oldCueSheetId = currentMusicInfo.CueSheetId
+            if not XMVCA.XMusicPlayer:TryEnterFallbackForUninstall() then
+                self._IsUninstalling = false
+                XLog.Warning("[XSubPackageAgency] CD机分包卸载前切换fallback音乐失败")
+                if cb then cb() end
+                return
+            end
+
+            CS.XAudioManager.RemoveCueSheetById(oldCueSheetId)
+            -- RemoveCueSheetById没有句柄释放完成回调，物理删除前让出一帧，为旧AudioInfo和CueSheet提供释放边界
+            asynWaitSecond(0)
+        end
 
         XLog.Warning(string.format("[XSubPackageAgency] 开始协程卸载 SubpackageId=%d", subpackageId))
 
@@ -1289,7 +1298,13 @@ function XSubPackageAgency:ResolveResIndex()
                 for _, subpackageId in pairs(subpackageIds) do
                     local item = self._Model:GetSubpackageItem(subpackageId)
                     if item then
+                        local fileSizeMap = self._SubpackageFileSizeMap[subpackageId]
+                        if not fileSizeMap then
+                            fileSizeMap = {}
+                            self._SubpackageFileSizeMap[subpackageId] = fileSizeMap
+                        end
                         for assetPath, info in pairs(indexInfo) do
+                            fileSizeMap[info[1]] = info[3]
                             item:InitFileInfo(assetPath, info, resId)
                         end
                     end
@@ -1318,6 +1333,9 @@ function XSubPackageAgency:InitDownloader()
                     for k, taskGroup in pairs(taskGroups) do
                         taskGroup.NotifyStateChanged = handler(self, self.OnStateChanged)
                         taskGroup.NotifyProgressChanged = handler(self, self.OnProgressUpdate)
+                        taskGroup.NotifyUrlDownloadFinish = function(url)
+                            self:OnSingleTaskFinishByUrl(url)
+                        end
                         self._DownloadCenter:RegisterTaskGroup(taskGroup)
                     end
                 end
@@ -1329,28 +1347,12 @@ function XSubPackageAgency:InitDownloader()
 end
 
 function XSubPackageAgency:GetSavePath(fileName)
-    if self._IsNeedLaunchTest then
-        return stringFormat("%s/%s/%s", LaunchTestDirDoc, RES_FILE_TYPE.MATRIX_FILE, fileName)
-    end
     return stringFormat("%s/%s/%s", self._DocumentFilePath, RES_FILE_TYPE.MATRIX_FILE, fileName)
 end
 
-function XSubPackageAgency:GetUrlPath(fileName)
-
-    return stringFormat("%s/%s", self:GetUrlPrefix(), fileName)
-end
-
-function XSubPackageAgency:GetUrlPrefix()
-    if self._UrlPrefix then
-        return self._UrlPrefix
-    end
-    if self._IsNeedLaunchTest then
-        self._UrlPrefix = stringFormat("%s/%s/%s", "client/patch/com.kurogame.haru.internal.debug.subpack/1.0.0/android", CS.XRemoteConfig.DocumentVersion, RES_FILE_TYPE.MATRIX_FILE)
-        return self._UrlPrefix
-    end
-    self._UrlPrefix = stringFormat("%s/%s/%s", self._DocumentUrl, CS.XRemoteConfig.DocumentVersion, RES_FILE_TYPE.MATRIX_FILE)
-
-    return self._UrlPrefix
+function XSubPackageAgency:GetUrlPath(fileName, version)
+    local DocumentUrl = self._ModuleUpdateInfo:GetUrlByVersion(version)
+    return stringFormat("%s/%s/%s/%s", DocumentUrl, version, RES_FILE_TYPE.MATRIX_FILE, fileName)
 end
 
 function XSubPackageAgency:GetNecessarySubIds()
@@ -1659,7 +1661,7 @@ function XSubPackageAgency:CheckSubpackage(enterType, param, ignorePopUi)
 
     -- 4. 收集散装涂装Res数据（传入Sub的resIdSet用于去重）
     local subResIdSet = self:_BuildSubResIdSet(subIds, weakSubIds)
-    local fashionResIds, fashionIsWeak = self:CollectFashionResIds(enterType, param, subResIdSet)
+    local fashionResIds, fashionIsWeak = self:CollectFashionResIds(enterType, subResIdSet)
     local hasExtraRes = not XTool.IsTableEmpty(fashionResIds)
     -- 散装强Res视为强选项
     local hasStrongExtraRes = hasExtraRes and not fashionIsWeak
@@ -1969,14 +1971,15 @@ function XSubPackageAgency:OnLoginOut()
     self:PauseAll()
 end
 
-function XSubPackageAgency:OnSingleTaskFinish(eventName, args)
-    local resourceName = args[0]
-    --resourceName 是带前缀的
-    local fullLen = string.len(resourceName)
-    local prefixLen = string.len(self:GetUrlPrefix())
-    --Lua 下标从1开始，去掉斜杠
-    local fileName = string.sub(resourceName, prefixLen + 2, fullLen)
+function XSubPackageAgency:OnSingleTaskFinishByUrl(url)
+    local fileName = XLaunchConst.GetFileName(url)
     self._LaunchDlcManager.SetDownloadedFile(fileName, true)
+end
+
+function XSubPackageAgency:OnSingleTaskFinish(eventName, args)
+    -- 完整url
+    local resourceName = args[0]
+    self:OnSingleTaskFinishByUrl(resourceName)
 end
 
 function XSubPackageAgency:IsPreparePause()
@@ -2442,11 +2445,10 @@ end
 --- 收集玩法关联的散装涂装ResIds
 --- 会对比subResIdSet去重：如果散装resId已存在于Sub选项的resIds中，跳过并输出warning
 ---@param enterType number 入口类型（对应FunctionIdFashionRelative的FunctionId）
----@param param number|nil 附加参数（ChapterMainId等，注意不是ChapterFashionRelative的拼接主键）
 ---@param subResIdSet table<number, boolean>|nil Sub选项已包含的resId集合，用于去重
 ---@return table|nil resIds列表
 ---@return boolean|nil isWeak 是否弱拦截
-function XSubPackageAgency:CollectFashionResIds(enterType, param, subResIdSet)
+function XSubPackageAgency:CollectFashionResIds(enterType, subResIdSet)
     if not enterType then
         return nil, nil
     end
@@ -2455,28 +2457,12 @@ function XSubPackageAgency:CollectFashionResIds(enterType, param, subResIdSet)
     local resIdDict = {}
     local hasStrongConfig = false
 
-    -- 1. 收集玩法关联配置（FunctionIdFashionRelative）
+    -- 收集玩法关联配置（FunctionIdFashionRelative）
     local funcConfig = self._Model:GetFunctionIdFashionRelativeConfig(enterType)
     if funcConfig then
         self:_AppendFashionResIds(resIds, resIdDict, funcConfig.FashionIds, funcConfig.IsWeakInterput, subResIdSet)
         if not funcConfig.IsWeakInterput and not XTool.IsTableEmpty(funcConfig.FashionIds) then
             hasStrongConfig = true
-        end
-    end
-
-    -- 2. 收集章节关联配置（ChapterFashionRelative）
-    -- 注意：ChapterFashionRelative的主键是拼接Id = enterType * 10000 + param
-    -- 参见 XSubPackageEditorTool.CollectRawChapterStages() 的注释:
-    -- Key: FunctionType * 10000 + ChapterMainId/ChapterId
-    if param and type(param) == "number" then
-        local chapterHashId = enterType * 10000 + param
-        local chapterConfig = self._Model:GetChapterFashionRelativeConfig(chapterHashId)
-        if chapterConfig then
-            local chapterIsWeak = chapterConfig.IsWeakInterput
-            self:_AppendFashionResIds(resIds, resIdDict, chapterConfig.FashionIds, chapterIsWeak, subResIdSet)
-            if not chapterIsWeak and not XTool.IsTableEmpty(chapterConfig.FashionIds) then
-                hasStrongConfig = true
-            end
         end
     end
 

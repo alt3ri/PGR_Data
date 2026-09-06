@@ -167,9 +167,10 @@ function XTheatre6CharBase:HideComboUi()
 end
 
 --更新技能播报UI
-function XTheatre6CharBase:UpdateSkillUi(curSkillId, previewMainSkillId)
+---@param skillType ETheatre6SkillType 本次实际释放的技能类型, 决定UI动效
+function XTheatre6CharBase:UpdateSkillUi(curSkillId, previewMainSkillId, skillType)
     if not self._uiStates.skill then self:ShowSkillUi() end
-    self._proxy:Theatre6UpdateSkillUI(self._uuid, curSkillId, previewMainSkillId)
+    self._proxy:Theatre6UpdateSkillUI(self._uuid, curSkillId, previewMainSkillId, skillType)
 end
 
 --开启技能播报UI
@@ -1409,6 +1410,16 @@ end
 ---@return XTheatre6ProtectorController
 function XTheatre6CharBase:GetProtectorController()
     return self:GetAffixControllerByName("Protector") --[[@as XTheatre6ProtectorController]]
+end
+
+---@return XTheatre6HypnoController
+function XTheatre6CharBase:GetHypnoController()
+    return self:GetAffixControllerByName("Hypno") --[[@as XTheatre6HypnoController]]
+end
+
+---@return XTheatre6PoisonedController
+function XTheatre6CharBase:GetPoisonedController()
+    return self:GetAffixControllerByName("Poisoned") --[[@as XTheatre6PoisonedController]]
 end
 
 ---@param tag EGameplayTag [受击效果tag, 只能为Missle.Theatre6.HitAffixType的子tag](https://kurogame.feishu.cn/wiki/UadMwIczpirAH9k22YPcOI7WnJc#share-Pyibd6tS5oSwOAxOLvMccKmmn2c)

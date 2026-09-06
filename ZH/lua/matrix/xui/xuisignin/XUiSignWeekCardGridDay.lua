@@ -2,11 +2,14 @@ local XUiGridCommon = require("XUi/XUiObtain/XUiGridCommon")
 ---@class XUiSignWeekCardGridDay:XUiNode
 local XUiSignWeekCardGridDay = XClass(XUiNode, "XUiSignWeekCardGridDay")
 
+-- 购买礼包预览态固定表现:第 1 天高亮、第 2 天"明日获得"(此时无真实签到进度,按卡位模拟)
+local PREVIEW_HIGHLIGHT_DAY = 1
+local PREVIEW_TOMORROW_DAY = 2
+
 function XUiSignWeekCardGridDay:Ctor(ui, rootUi)
     self.GameObject = ui.gameObject
     self.Transform = ui.transform
     self.RootUi = rootUi
-    self.Grid = nil
 
     XTool.InitUiObject(self)
     self:InitComponent()
@@ -61,16 +64,39 @@ end
 function XUiSignWeekCardGridDay:RefreshByRewardInfo(rewardInfo, index)
     self.PanelHaveGroup.alpha = 0
     self.PanelHaveReceive.gameObject:SetActiveEx(false)
+    self.PanelCheck.gameObject:SetActiveEx(false)
     self:SetEffectActive(false)
+    -- 预览态无真实进度,用卡位模拟:第 1 天高亮底图,第 2 天显示"明日获得"
+    local isFirstCard = index == PREVIEW_HIGHLIGHT_DAY
+    local isSecondCard = index == PREVIEW_TOMORROW_DAY
+    self:RefreshBaseImg(isFirstCard)
+    self.PanelNext.gameObject:SetActiveEx(isSecondCard)
 
     local rewardList = XRewardManager.GetRewardList(rewardInfo)
     self.TxtDay.text = string.format("%02d", index)
-    if not self.Grid then
-        self.Grid = XUiGridCommon.New(self.RootUi, self.GridCommon)
-    end
 
-    --self:SetCardInfo(false)
-    self.Grid:Refresh(rewardList[1])
+    self:RefreshRewardGrids(rewardList)
+end
+
+-- 按 rewardList 动态渲染多个道具格子:以 self.GridCommon 为模板,实例化到 ItemGroup 下,复用缓存
+function XUiSignWeekCardGridDay:RefreshRewardGrids(rewardList)
+    self.GridList = self.GridList or {}
+    local parent = self.GridCommon.transform.parent
+    local count = rewardList and #rewardList or 0
+    for i = 1, count do
+        local grid = self.GridList[i]
+        if not grid then
+            local go = (i == 1) and self.GridCommon
+                or CS.UnityEngine.GameObject.Instantiate(self.GridCommon.gameObject, parent)
+            grid = XUiGridCommon.New(self.RootUi, go)
+            self.GridList[i] = grid
+        end
+        grid:Refresh(rewardList[i])
+        grid.GameObject:SetActiveEx(true)
+    end
+    for i = count + 1, #self.GridList do
+        self.GridList[i].GameObject:SetActiveEx(false)
+    end
 end
 
 function XUiSignWeekCardGridDay:Refresh(weekCardData, roundIndex, index, isShow, forceSetTomorrow)
@@ -93,6 +119,7 @@ function XUiSignWeekCardGridDay:Refresh(weekCardData, roundIndex, index, isShow,
     self.PanelHaveReceive.gameObject:SetActiveEx(isPreviousDay)
     self.PanelCheck.gameObject:SetActiveEx(isAlreadyGet)
     self:SetEffectActive(false)
+    self:RefreshBaseImg(self.IsToday and not isAlreadyGet)
 
     local rewardList = XRewardManager.GetRewardList(self.RewardId)
     if not rewardList or #rewardList <= 0 then
@@ -100,11 +127,17 @@ function XUiSignWeekCardGridDay:Refresh(weekCardData, roundIndex, index, isShow,
         return
     end
 
-    if not self.Grid then
-        self.Grid = XUiGridCommon.New(self.RootUi, self.GridCommon)
-    end
+    self:RefreshRewardGrids(rewardList)
+end
 
-    self.Grid:Refresh(rewardList[1])
+-- 当日可领时显示高亮底图,否则(未到/往日/已领)显示普通底图。ImgNormal/ImgHighlight 仅部分预制注册,故判空
+function XUiSignWeekCardGridDay:RefreshBaseImg(canReceiveToday)
+    if self.ImgNormal then
+        self.ImgNormal.gameObject:SetActiveEx(not canReceiveToday)
+    end
+    if self.ImgHighlight then
+        self.ImgHighlight.gameObject:SetActiveEx(canReceiveToday)
+    end
 end
 
 function XUiSignWeekCardGridDay:SetTomorrow()
@@ -169,6 +202,7 @@ function XUiSignWeekCardGridDay:SetReward(rewardItems)
     self.GameObject:PlayTimelineAnimation(function()
         XUiManager.OpenUiObtain(rewardItems)
         self:SetEffectActive(false)
+        self:RefreshBaseImg(false)
         XEventManager.DispatchEvent(XEventId.EVENT_SING_IN_OPEN_BTN, true, self.Config)
     end, function()
         self:SetEffectActive(true)

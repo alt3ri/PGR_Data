@@ -925,6 +925,7 @@ XPurchaseManagerCreator = function()
         data.Priority = purchaseInfo.Priority
         data.Icon = purchaseInfo.Icon
         data.DailyRewardRemainDay = purchaseInfo.DailyRewardRemainDay
+        data.ResMonthlyCardRemainDayList = purchaseInfo.ResMonthlyCardRemainDayList
         data.UiType = purchaseInfo.UiType
         data.ConsumeId = purchaseInfo.ConsumeId
         data.TimeToShelve = purchaseInfo.TimeToShelve

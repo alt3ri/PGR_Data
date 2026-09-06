@@ -100,6 +100,7 @@ XShopManager.ActivityShopType = {
     RaceShop = 14, --赛马商店
     FashionShop = 15, --涂装商店
     Theatre6Shop = 16, --肉鸽6商店
+    AwarenessOneKeyEnhance = 17, --意识一键养成商店
 }
 
 --分解商店分类
@@ -122,6 +123,11 @@ XShopManager.RechargeShopType = {
     EquipShop = 1002,
     PartnerShop = 1003,
 }
+
+-- 材料商店ID
+XShopManager.MaterialShopId = 1422
+XShopManager.EnhanceShopId = 410
+XShopManager.UniqueShopId = 411
 
 function XShopManager.ClearBaseInfoData()
     ShopBaseInfoDict = {}
@@ -407,6 +413,50 @@ function XShopManager.GetShopGoodsInfo(shopId, goodsId)
         end
     end
     return nil
+end
+
+-- 根据 templateId、shopId、goodsId 获取该道具的兑换信息
+-- @return table|nil { TemplateId, ShopId, GoodsId, RewardCount, ConsumeList = { { ConsumeId, ConsumeCount }, ... } }
+function XShopManager.GetGoodsExchangeInfo(templateId, shopId, goodsId)
+    local goods = XShopManager.GetShopGoodsInfo(shopId, goodsId)
+    if not goods then
+        XLog.Error(string.format(
+            "XShopManager.GetGoodsExchangeInfo error: 找不到商品, shopId=%s, goodsId=%s",
+            tostring(shopId), tostring(goodsId)))
+        return nil
+    end
+
+    if not goods.RewardGoods or goods.RewardGoods.TemplateId ~= templateId then
+        XLog.Error(string.format(
+            "XShopManager.GetGoodsExchangeInfo error: 商品奖励道具不匹配, shopId=%s, goodsId=%s, 期望templateId=%s, 实际templateId=%s",
+            tostring(shopId), tostring(goodsId), tostring(templateId),
+            tostring(goods.RewardGoods and goods.RewardGoods.TemplateId)))
+        return nil
+    end
+
+    if XTool.IsTableEmpty(goods.ConsumeList) then
+        XLog.Error(string.format(
+            "XShopManager.GetGoodsExchangeInfo error: 商品没有配置消耗, shopId=%s, goodsId=%s",
+            tostring(shopId), tostring(goodsId)))
+        return nil
+    end
+
+    local sales = goods.Sales or 100
+    local consumeList = {}
+    for _, consume in ipairs(goods.ConsumeList) do
+        table.insert(consumeList, {
+            ConsumeId = consume.Id,
+            ConsumeCount = math.floor(consume.Count * sales / 100),
+        })
+    end
+
+    return {
+        TemplateId = templateId,
+        ShopId = shopId,
+        GoodsId = goodsId,
+        RewardCount = goods.RewardGoods.Count,
+        ConsumeList = consumeList,
+    }
 end
 
 function XShopManager.GetShopGoodsList(shopId, notDebugError, ignoreSort)
@@ -718,6 +768,9 @@ end
 
 function XShopManager.BuyShop(shopId, goodsId, count, cb, err_cb, isActivityOpen)
     if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.ShopCommon) then
+        if err_cb then
+            err_cb("ShopCommonNotOpen")
+        end
         return
     end
     local req = { ShopId = shopId, GoodsId = goodsId, Count = count, IsActivityOpen = isActivityOpen}
@@ -1249,6 +1302,24 @@ function XShopManager.IsShopOpen(shopId)
     end
     return true
 end
+
+-- 玩家是否满足商店开放条件(基于 ShopBaseInfoDict 的 ConditionIds,需先 GetBaseInfo 拉取基础信息)
+function XShopManager.IsShopUnlock(shopId)
+    local info = ShopBaseInfoDict[shopId]
+    if not info then
+        return false
+    end
+    if XTool.IsTableEmpty(info.ConditionIds) then
+        return true
+    end
+    for _, conditionId in pairs(info.ConditionIds) do
+        if not XConditionManager.CheckCondition(conditionId) then
+            return false
+        end
+    end
+    return true
+end
+
 function XShopManager.GetShopActivityIsOpen(shopId)
     local shop = ShopBaseInfoDict[shopId]
     if not shop then

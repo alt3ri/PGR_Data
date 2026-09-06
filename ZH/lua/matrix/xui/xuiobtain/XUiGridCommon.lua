@@ -586,6 +586,12 @@ function XUiGridCommon:SetCount(value)
         self:SetUiActive(self.TxtCount, true)
     end
 end
+
+function XUiGridCommon:SetCountColor(color)
+    if self.TxtCount then
+        self.TxtCount.color = color
+    end
+end
 --============
 --获取物品显示数据
 --============

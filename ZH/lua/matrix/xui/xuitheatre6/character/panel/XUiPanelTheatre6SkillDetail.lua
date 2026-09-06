@@ -157,12 +157,10 @@ function XUiPanelTheatre6SkillDetail:UpdateCSMag(isCanUpgrade)
     if isShowTagScUp then
         local nextSkillConfig = self._Control:GetSkillCfgById(nextSkillLevelId)
         local nextCSMag = math.floor(nextSkillConfig.CSMag / 100)
-        if curCSMag ~= nextCSMag then
-            self.GridTagSc02.gameObject:SetActiveEx(true)
-            self.GridTagSc02:SetNameByGroup(0, XUiHelper.GetText("Theatre6OverClockEfficiency"))
-            self.GridTagSc02:SetNameByGroup(1, string.format("%s%%", curCSMag))
-            self.GridTagSc02:SetNameByGroup(2, string.format("%s%%", nextCSMag))
-        end
+        self.GridTagSc02.gameObject:SetActiveEx(true)
+        self.GridTagSc02:SetNameByGroup(0, XUiHelper.GetText("Theatre6OverClockEfficiency"))
+        self.GridTagSc02:SetNameByGroup(1, string.format("%s%%", curCSMag))
+        self.GridTagSc02:SetNameByGroup(2, string.format("%s%%", nextCSMag))
         return
     end
 

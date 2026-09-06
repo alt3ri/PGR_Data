@@ -34,6 +34,9 @@ function XUiDormMain:InitFun()
     self:BindHelpBtn(self.BtnHelp, self.HelpCourseKey, nil, XDormConfig.MarkDormCourseGuide)
     self.BtnVisit.CallBack = function() self:OnBtnVisitClick() end
     self.DormFinishAllCharEventCB = function(characterMoodsChangeList, rewardGoodsMergeDic) self:RefreshAllRoomEventTag(characterMoodsChangeList, rewardGoodsMergeDic) end
+    
+    XEventManager.AddEventListener(XEventId.EVENT_SCENE_TYPE_CHANGED, self.OnSceneTypeChanged, self)
+    XEventManager.AddEventListener(XEventId.EVENT_FIGHT_BEFORE_ENTER, self.OnBeforeEnterFight, self)
 end
 
 function XUiDormMain:InitEnter()
@@ -251,6 +254,9 @@ function XUiDormMain:OnEnable()
     self:AddRedPointEvent(self.BtnTask.ReddotObj, self.RefreshTaskTabRedDot, self, { redPointTypes.CONDITION_DORM_MAIN_TASK_RED })
     self:AddRedPointEvent(self.BtnBuild.ReddotObj, self.OnCheckBuildFurniture, self, { redPointTypes.CONDITION_FURNITURE_CREATE })
 
+    --当从其他界面返回到此界面时，需要重新设置光照
+    XUiHelper.SetSceneType(CS.XSceneType.Dormitory)
+    
     XEventManager.AddEventListener(XEventId.EVENT_CHARACTER_DORMMAIN_EVENT_NOTIFY, self.DormCharEventCB)
     XEventManager.AddEventListener(XEventId.EVENT_DORM_ROOM_ACTIVE_SUCCESS, self.DormActiveRespCB, self)
     XEventManager.AddEventListener(XEventId.EVENT_DORM_CHARACTER_FINISH_ALL_EVENT, self.DormFinishAllCharEventCB)
@@ -353,6 +359,8 @@ function XUiDormMain:OnDisable()
 end
 
 function XUiDormMain:OnDestroy()
+    XEventManager.RemoveEventListener(XEventId.EVENT_SCENE_TYPE_CHANGED, self.OnSceneTypeChanged, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_FIGHT_BEFORE_ENTER, self.OnBeforeEnterFight, self)
     XHomeSceneManager.LeaveScene()
     XEventManager.DispatchEvent(XEventId.EVENT_DORM_HIDE_COMPONENT)
 end
@@ -377,6 +385,7 @@ function XUiDormMain:InitBtnTabsGroup()
         self.BtnTab2,
         self.BtnTab3,
         self.BtnTab4,
+        self.BtnTab5,
     }
 
     self.BtnGroup:Init(tab, function(tabIndex) self:ChangeSceneOnBtnTabClick(tabIndex) end)
@@ -564,4 +573,13 @@ end
 
 function XUiDormMain:RefreshBtnAutoEventVisible()
     self.BtnAutoEvent.gameObject:SetActiveEx(XDataCenter.DormManager.IsHaveAllDormCharactersEvent())
+end
+
+function XUiDormMain:OnSceneTypeChanged(fromSceneType, toSceneType)
+    XHomeDormManager.SetSceneActive(toSceneType == CS.XSceneType.Dormitory)
+end
+
+function XUiDormMain:OnBeforeEnterFight()
+    XLuaUiManager.SafeClose("UiDormSecond")
+    XLuaUiManager.SafeClose(self.UiName)
 end

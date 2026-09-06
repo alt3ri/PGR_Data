@@ -20,6 +20,10 @@ function XMovieActionFullScreenDialog:OnInit(actionData)
     self.Duration = paramToNumber(params[3])
     self.BgPath = params[4]
     self.CvId = paramToNumber(params[5])
+    local movieId = XDataCenter.MovieManager.GetCurPlayingMovieId()
+    if XMovieConfigs.IsMovieVoiceMuted(movieId) then
+        self.CvId = 0
+    end
     self.IsCanSkip = paramToNumber(params[6]) ~= 0
     self.ChangeLinePlus = paramToNumber(params[7])
     self.IsReset = paramToNumber(params[8]) ~= 0

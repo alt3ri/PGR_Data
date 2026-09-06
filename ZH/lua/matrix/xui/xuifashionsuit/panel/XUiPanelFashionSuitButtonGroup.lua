@@ -272,6 +272,9 @@ function XUiPanelFashionSuitButtonGroup:OnBuyBefore()
         endTime = XTime.GetServerNowTimestamp() + self._RemainTime
     end
 
+    local giftId = XFashionConfigs.GetFashionTemplate(self._Id).GiftId
+    local isHideWorldDesc = self._Helper:IsEnableGroupSales() and not XTool.IsNumberValid(giftId)
+
     ---@type CoatingBuyTipsViewModel
     local viewModel = {
         Title = self._Helper:GetName(),
@@ -284,6 +287,7 @@ function XUiPanelFashionSuitButtonGroup:OnBuyBefore()
         AssetsItemIds = { XDataCenter.ItemManager.ItemId.FreeGem, XDataCenter.ItemManager.ItemId.HongKa },
         EndTime = endTime,
         IsTimeLimit = XTool.IsNumberValid(endTime),
+        IsHideWorldDesc = isHideWorldDesc,
     }
 
     -- 打开详情界面

@@ -270,13 +270,13 @@ XCommonCharacterFiltManagerCreator = function()
                 end
             else
                 if XDataCenter.TeamManager.CheckInTeam(v.Id) then
-                    if XDataCenter.EquipGuideManager.IsEquipGuideCharacter(v.Id) then
+                    if XMVCA.XTeamRecommend:GetServerCharacterTarget(v.Id) ~= nil then
                         table.insert(targetCharacterInTeam, v)
                     else
                         table.insert(inTeamList, v)
                     end
                 else
-                    if XDataCenter.EquipGuideManager.IsEquipGuideCharacter(v.Id) then
+                    if XMVCA.XTeamRecommend:GetServerCharacterTarget(v.Id) ~= nil then
                         table.insert(targetCharacterNotInTeam, v)
                     else
                         table.insert(nmOwnCharaList, v)

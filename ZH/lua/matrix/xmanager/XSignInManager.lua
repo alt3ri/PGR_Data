@@ -1,4 +1,5 @@
 XSignInManagerCreator = function()
+    ---@class XSignInManager
     local XSignInManager = {}
 
     local SignInData = {}                   -- 签到数据
@@ -270,6 +271,7 @@ XSignInManagerCreator = function()
             if successCb then
                 successCb(res.RewardGoodsList)
             end
+            XEventManager.DispatchEvent(XEventId.EVENT_SIGN_IN_SUCCESS_REFRESH)
         end)
     end
     

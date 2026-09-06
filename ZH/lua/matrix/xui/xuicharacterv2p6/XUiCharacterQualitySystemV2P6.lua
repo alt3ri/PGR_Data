@@ -10,6 +10,7 @@ local PanelName =
 function XUiCharacterQualitySystemV2P6:OnAwake()
     self.OpenChildStack = XStack.New()
     self.IsEvoPerform = nil --演出锁
+    self.IsFirstOnEnable = true
 
     -- 初始化3d动态列表
     self.ParentUi.PanelModel:InitDynamicTable3D(self)
@@ -50,14 +51,32 @@ function XUiCharacterQualitySystemV2P6:InitPanel()
 end
 
 function XUiCharacterQualitySystemV2P6:OnStart()
-    self:OpenChildPanel(PanelName.XPanelQualityWholeV2P6) 
 end
 
 function XUiCharacterQualitySystemV2P6:OnEnable()
+    -- 跳转进入时初始化角色（参考 XUiCharacterPropertyV2P6:OnEnable）
+    local initCharId = self.ParentUi.InitCharId
+    local skipArgs = self.ParentUi.SkipArgs
+    if initCharId and skipArgs and not self.ParentUi.IsUiInit then
+        local char = XMVCA.XCharacter:GetCharacter(initCharId)
+        self.ParentUi:SetCurCharacter(char)
+        self.ParentUi:RefreshRoleModel()
+    end
+
+    -- 判空保底：跳转的角色未拥有时 CurCharacter 可能仍为 nil
+    if not self.ParentUi.CurCharacter then
+        return
+    end
+
     -- 进化界面更改资源栏为对应角色碎片
     local character = self.ParentUi.CurCharacter
     local fragmentItemId = XMVCA.XCharacter:GetCharacterItemId(character.Id)
     self.ParentUi:SetPanelAsset(XDataCenter.ItemManager.ItemId.FreeGem, fragmentItemId, XDataCenter.ItemManager.ItemId.Coin)
+
+    if self.IsFirstOnEnable then
+        self:OpenChildPanel(PanelName.XPanelQualityWholeV2P6) 
+        self.IsFirstOnEnable = false
+    end
 end
 
 -- 不是真的子ui，是panel

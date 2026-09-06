@@ -1961,8 +1961,10 @@ end
 ---@param count any
 ---@param handleFunc any
 ---@param isAddRange boolean 往container追加元素，而不是拿它本来的子节点使用
+---@param uiNodeClass XUiNode
+---@param parent any
 ---【警告】该方法不能兼容XUiNode类型子节点, 如果子节点为XUiNode类型尽量使用 XTool.UpdateDynamicItem 替代
-function XUiHelper.RefreshUiObjectList(uiList, container, gridGo, count, handleFunc, isAddRange)
+function XUiHelper.RefreshUiObjectList(uiList, container, gridGo, count, handleFunc, isAddRange,uiNodeClass,parent)
     uiList = uiList or {}
 
     -- 先隐藏不需要的
@@ -1980,7 +1982,12 @@ function XUiHelper.RefreshUiObjectList(uiList, container, gridGo, count, handleF
         end
     else
         if not isAddRange then
-            local child = XTool.InitUiObjectByUi({}, gridGo)
+            local child
+            if uiNodeClass then
+                child = uiNodeClass.New(gridGo,parent)
+            else
+                child = XTool.InitUiObjectByUi({}, gridGo)
+            end
             uiList[1] = child
         end
         gridGo.gameObject:SetActiveEx(false)
@@ -1991,7 +1998,12 @@ function XUiHelper.RefreshUiObjectList(uiList, container, gridGo, count, handleF
         local child = uiList[i]
         if not child or isAddRange then
             local childNode = XUiHelper.Instantiate(gridGo, container)
-            child = XTool.InitUiObjectByUi({}, childNode)
+            if uiNodeClass then
+                child = uiNodeClass.New(childNode,parent)
+            else
+                child = XTool.InitUiObjectByUi({}, childNode)
+            end
+            
             uiList[i] = child
         end
 
@@ -2272,11 +2284,17 @@ function XUiHelper.SetSceneType(sceneType)
     if not sceneType then
         return
     end
+    local currentSceneType = CS.XGlobalIllumination.SceneType
+    if sceneType == currentSceneType then
+        return
+    end
+    
     if sceneType == CS.XSceneType.Dormitory then
         XEventManager.DispatchEvent(XEventId.EVENT_SCENE_SET_NONE_STATE)
         CsXGameEventManager.Instance:Notify(XEventId.EVENT_SCENE_SET_NONE_STATE)
     end
     CS.XGlobalIllumination.SetSceneType(sceneType)
+    XEventManager.DispatchEvent(XEventId.EVENT_SCENE_TYPE_CHANGED, currentSceneType, sceneType)
 end
 
 -- xxxx年x月x日 年月日

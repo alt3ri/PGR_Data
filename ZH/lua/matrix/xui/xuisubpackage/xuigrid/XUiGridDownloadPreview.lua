@@ -11,6 +11,8 @@ function XUiGridDownloadPreview:Refresh(data)
     if not data then return end
     self.Data = data
 
+    self._SizeInfo = XMVCA.XSubPackage:CreateResListSizeInfo(data.ResIds)
+
     -- 选项名称
     if self.TxtTitle then
         self.TxtTitle.text = data.OptionName or ""
@@ -21,12 +23,9 @@ function XUiGridDownloadPreview:Refresh(data)
         self.TxtTips.text = data.Desc or ""
     end
 
-    -- 资源大小（聚合所有ResIds）
+    -- 资源大小（按物理文件名去重）
     if self.TxtNum then
-        local totalSize = 0
-        for _, resId in ipairs(data.ResIds or {}) do
-            totalSize = totalSize + XMVCA.XSubPackage:GetResTotalSize(resId)
-        end
+        local totalSize = self._SizeInfo.TotalSize
         local num, unit = XMVCA.XSubPackage:TransformSize(totalSize)
         self.TxtNum.text = string.format("%d%s", num, unit)
     end
@@ -54,7 +53,7 @@ function XUiGridDownloadPreview:Refresh(data)
     end
 
     -- 聚合进度条刷新
-    self:RefreshAggregatedProgress(data)
+    self:RefreshAggregatedProgress()
 end
 
 function XUiGridDownloadPreview:UpdateSelectState(isSelected)
@@ -75,21 +74,9 @@ function XUiGridDownloadPreview:OnToggleSelectClick()
 end
 
 -- 刷新聚合进度
-function XUiGridDownloadPreview:RefreshAggregatedProgress(data)
-    if not data or XTool.IsTableEmpty(data.ResIds) then
-        return
-    end
-
-    local totalSize = 0
-    local downloadedSize = 0
-    for _, resId in ipairs(data.ResIds) do
-        local resItem = XMVCA.XSubPackage:GetResourceItem(resId)
-        if resItem then
-            totalSize = totalSize + resItem:GetTotalSize()
-            downloadedSize = downloadedSize + resItem:GetDownloadSize()
-        end
-    end
-
+function XUiGridDownloadPreview:RefreshAggregatedProgress()
+    local totalSize = self._SizeInfo.TotalSize
+    local downloadedSize = XMVCA.XSubPackage:GetSizeInfoDownloadSize(self._SizeInfo)
     local progress = totalSize > 0 and (downloadedSize / totalSize) or 0
     if self.ImgBar then
         self.ImgBar.fillAmount = progress

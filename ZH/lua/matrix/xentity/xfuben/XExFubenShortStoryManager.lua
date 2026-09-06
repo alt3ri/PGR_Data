@@ -4,7 +4,7 @@ local XExFubenBaseManager = require("XEntity/XFuben/XExFubenBaseManager")
 local XExFubenShortStoryManager = XClass(XExFubenBaseManager, "XExFubenShortStoryManager")
 
 function XExFubenShortStoryManager:ExOpenChapterUi(viewModel)
-    if not XMVCA.XSubPackage:CheckSubpackage(self:ExGetFunctionNameType(), viewModel:GetId()) then
+    if not XMVCA.XSubPackage:CheckSubpackage(self:ExGetFunctionNameType()) then
         return
     end
 
@@ -174,10 +174,13 @@ function XExFubenShortStoryManager:GetChapterViewModel(id, difficulty)
                 return XDataCenter.FubenZhouMuManager.GetZhouMuNumber(zhouMuId)
             end,
             GetIsLocked = function(proxy)
-                if not XMVCA.XSubPackage:CheckSubpackageDownloadByFunctionType(self:ExGetFunctionNameType(), proxy:GetId()) then
+                if not XMVCA.XSubPackage:CheckSubpackageDownloadByFunctionType(self:ExGetFunctionNameType()) then
                     return true
                 end
 
+                return proxy:GetBusinessIsLocked()
+            end,
+            GetBusinessIsLocked = function(proxy)
                 local result = not XDataCenter.ShortStoryChapterManager.IsUnlock(proxy:GetId())    
                 local isActivity = proxy:CheckHasTimeLimitTag()
                 -- 如果锁定并且是活动，判断下一层
@@ -187,10 +190,13 @@ function XExFubenShortStoryManager:GetChapterViewModel(id, difficulty)
                 return result
             end,
             GetLockTip = function(proxy)
-                if not XMVCA.XSubPackage:CheckSubpackageDownloadByFunctionType(self:ExGetFunctionNameType(), proxy:GetId()) then
+                if not XMVCA.XSubPackage:CheckSubpackageDownloadByFunctionType(self:ExGetFunctionNameType()) then
                     return XUiHelper.GetText("NecessaryResourcesNotDownloaded")
                 end
 
+                return proxy:GetBusinessLockTip()
+            end,
+            GetBusinessLockTip = function(proxy)
                 local isActivity = proxy:CheckHasTimeLimitTag()
                 if not isActivity then 
                     local ret, desc = XDataCenter.ShortStoryChapterManager.CheckOpenCondition(proxy:GetId())

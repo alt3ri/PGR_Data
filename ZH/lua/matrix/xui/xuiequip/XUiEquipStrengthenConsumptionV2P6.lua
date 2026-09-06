@@ -20,13 +20,8 @@ function XUiEquipStrengthenConsumptionV2P6:OnStart(equipId, consumes, changeCb)
     self.Consumes = consumes
     self.ChangeCb = changeCb
 
-    -- 展示用的列表
-    self.ShowConsumes = {}
-    for _, consume in ipairs(consumes) do
-        if not XDataCenter.TeamManager.CheckEquipIdIsInTeamPrefab(consume.Id) then
-            table.insert(self.ShowConsumes, consume)
-        end
-    end
+    -- 展示用的列表（编队装备已在 Control 层 GetAllConsumeItems 过滤，这里只排序）
+    self.ShowConsumes = consumes
     table.sort(self.ShowConsumes, self.ShowOrderSort)
 
     -- 刷新列表
@@ -121,10 +116,9 @@ function XUiEquipStrengthenConsumptionV2P6:CalculateCosumes(allConsumes)
         if not isReachLimit then
             local addExp, costMoney, operation
             reachLevel, isReachLimit, addExp, costMoney, operation = self:CalculateLevelUp(breakthrough, levelLimit, curExp, curLevel, selConsumes, eatCntDic)
-            local needComfirm = self:CheckExpOverflowConfirm(breakthrough, levelLimit, (curExp + addExp))
-            if needComfirm then
-                showExpOverflowConfirm = true
-            end
+            if isReachLimit and self:CheckUnretainedExpOverflowConfirm(breakthrough, levelLimit, curExp + addExp) then
+                showExpOverflowConfirm = true
+            end
             
             reachBreakthrough = breakthrough
             totalAddExp = totalAddExp + addExp
@@ -270,11 +264,11 @@ function XUiEquipStrengthenConsumptionV2P6:IsEatAllConsume(selConsumes, eatCntDi
 end
 
 -- 检测是否需要弹经验溢出二次确认
-function XUiEquipStrengthenConsumptionV2P6:CheckExpOverflowConfirm(breakthrough, levelLimit, allExp)
-    local levelCfg = self._Control:GetLevelUpCfg(self.TemplateId, breakthrough, levelLimit)
-    local needComfirm = (allExp - levelCfg.AllExp) > XEnumConst.EQUIP.STRENGTHEN_EXP_OVERFLOW_CONFIRM
-    return needComfirm
-end
+function XUiEquipStrengthenConsumptionV2P6:CheckUnretainedExpOverflowConfirm(breakthrough, levelLimit, allExp)
+    local levelCfg = self._Control:GetLevelUpCfg(self.TemplateId, breakthrough, levelLimit)
+    local unretainedOverflowExp = allExp - levelCfg.AllExp
+    return unretainedOverflowExp > XEnumConst.EQUIP.STRENGTHEN_EXP_OVERFLOW_CONFIRM
+end
 
 -- 刷新强化预览信息
 function XUiEquipStrengthenConsumptionV2P6:RefreshStrengthPreviewInfo()

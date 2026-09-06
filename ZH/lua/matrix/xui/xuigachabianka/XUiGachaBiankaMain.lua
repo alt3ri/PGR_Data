@@ -73,6 +73,8 @@ function XUiGachaBiankaMain:OnStart(gachaId, isPlayEnterAnim, isPlayStoryAnim)
     end)
     
     self._SceneId = XGachaConfigs.GetClientConfigNumber('Bianka4P2SceneId')
+
+    self:RefreshBtnChange()
 end
 
 function XUiGachaBiankaMain:OnEnable()
@@ -156,7 +158,7 @@ function XUiGachaBiankaMain:OnResume(data)
 end
 
 function XUiGachaBiankaMain:InitButton()
-    self:RegisterClickEvent(self.BtnBack, self.Close)
+    self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
     self:RegisterClickEvent(self.BtnMainUi, function()
         if XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.Pc and self._FinishCbTrigger ~= nil then
             --pc端抽卡时不能通过点击Home回到主界面
@@ -183,6 +185,35 @@ function XUiGachaBiankaMain:InitButton()
     self:RegisterClickEvent(self.BtnSet, function()
         XLuaUiManager.Open("UiSet")
     end)
+    -- BtnChange 为自选gacha专用切换按钮，普通卡池预制体无此节点，需判空守卫
+    if self.BtnChange then
+        self.BtnChange:AddEventListener(handler(self, self.OnBtnChangeClick))
+    end
+end
+
+function XUiGachaBiankaMain:RefreshBtnChange()
+    if not self.BtnChange then return end
+    self.BtnChange.gameObject:SetActiveEx(XDataCenter.GachaManager.IsGachaIdBelongSelfChoice(self._GachaId))
+end
+
+function XUiGachaBiankaMain:OnBtnChangeClick()
+    -- 必须先翻 Entrance.IsChangeMode 再 Close，否则 Entrance.OnEnable 会因已选直接关闭
+    XDataCenter.GachaManager.OpenSelfChoiceEntranceForChange(self._GachaId)
+    self:Close()
+end
+
+function XUiGachaBiankaMain:OnBtnBackClick()
+    -- 自选卡池：直接回主界面（Entrance 由 RunMain 一并关闭）
+    if XDataCenter.GachaManager.IsGachaIdBelongSelfChoice(self._GachaId) then
+        if XDataCenter.UiPcManager.GetUiPcMode() == XDataCenter.UiPcManager.XUiPcMode.Pc and self._FinishCbTrigger ~= nil then
+            --pc端抽卡时不能通过点击返回回到主界面
+            return
+        end
+        XLuaUiManager.RunMain()
+        return
+    end
+    -- 普通卡池：走重写的 Close（内含 pc 端抽卡时禁止关闭的保护）
+    self:Close()
 end
 
 function XUiGachaBiankaMain:PlayEnableAnim()

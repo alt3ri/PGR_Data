@@ -3,6 +3,8 @@
 ---@field _Model XFangKuaiModel
 local XFangKuaiCreate = XClass(XControl, "XFangKuaiCreate")
 
+local BlockType = XEnumConst.FangKuai.BlockType
+
 function XFangKuaiCreate:OnInit()
 
 end
@@ -33,8 +35,12 @@ function XFangKuaiCreate:GetBlockTemplateByLength(stageId, length, blockType)
             -- 允许只创建某种类型的方块
             goto continue
         end
-        if config.Type == XEnumConst.FangKuai.BlockType.Chief and self:HasChiefBlock(stageId) then
+        if config.Type == BlockType.Chief and self:HasSingleBlock(stageId, BlockType.Chief) then
             -- 场上只能有1个首席方块
+            goto continue
+        end
+        if config.Type == BlockType.Knife and self:HasSingleBlock(stageId, BlockType.Knife) then
+            -- 场上只能有1个刀锋方块
             goto continue
         end
         if not XTool.IsNumberValid(config.UnBuild) then
@@ -47,16 +53,16 @@ function XFangKuaiCreate:GetBlockTemplateByLength(stageId, length, blockType)
     end
     if XTool.IsTableEmpty(ids) then
         if blockType then
-            if blockType == XEnumConst.FangKuai.BlockType.Chief then
+            if blockType == BlockType.Chief or blockType == BlockType.Knife then
                 -- 首席方块转化为类型1同长度的普通方块
                 local replaceBlocks = {}
                 for _, config in pairs(blocks) do
-                    if config.Type == XEnumConst.FangKuai.BlockType.Normal then
+                    if config.Type == BlockType.Normal then
                         table.insert(replaceBlocks, config)
                     end
                 end
                 if #replaceBlocks == 0 then
-                    XLog.Error(string.format("首席方块替换失败，关卡%s里没有类型1长度1的配置"), stageId)
+                    XLog.Error(string.format("首席方块替换失败，关卡%s里没有类型1长度1的配置", stageId))
                 else
                     table.insert(ids, replaceBlocks[XTool.Random(1, #replaceBlocks)])
                 end
@@ -77,8 +83,8 @@ function XFangKuaiCreate:GetBlockTemplateByLength(stageId, length, blockType)
     end
 end
 
--- 顶部预览、底部方块池和场上只能有1个首席方块
-function XFangKuaiCreate:HasChiefBlock(stageId)
+-- 顶部预览、底部方块池和场上只能有1个首席方块、1个刀锋方块
+function XFangKuaiCreate:HasSingleBlock(stageId, blockType)
     local chapterId = self._MainControl:GetChapterIdByStage(stageId)
     local stageData = self._Model.ActivityData:GetStageData(chapterId)
     if not stageData then
@@ -88,14 +94,14 @@ function XFangKuaiCreate:HasChiefBlock(stageId)
     -- 棋盘上
     local blockDatas = self._MainControl:GetBlockMap()
     for block, _ in pairs(blockDatas) do
-        if block:IsChief() then
+        if block:CheckBlock(blockType) then
             return true
         end
     end
 
     -- 顶部预览
     local topPreviewBlock = stageData:GetTopPreviewBlock()
-    if topPreviewBlock and topPreviewBlock:IsChief() then
+    if topPreviewBlock and topPreviewBlock:CheckBlock(blockType) then
         return true
     end
 
@@ -103,7 +109,7 @@ function XFangKuaiCreate:HasChiefBlock(stageId)
     local newBlockDatas = self._MainControl:GetNewBlockPool()
     for _, blocks in pairs(newBlockDatas) do
         for _, block in pairs(blocks) do
-            if block:IsChief() then
+            if block:CheckBlock(blockType) then
                 return true
             end
         end
@@ -112,7 +118,7 @@ function XFangKuaiCreate:HasChiefBlock(stageId)
     -- 新创建的方块（还未入池）
     local blocks = self._MainControl:GetCurCreateBlocks(chapterId)
     for _, blockData in pairs(blocks) do
-        if blockData:IsChief() then
+        if blockData:CheckBlock(blockType) then
             return true
         end
     end
@@ -415,7 +421,7 @@ function XFangKuaiCreate:AttachItemToBlocks(stageData, blocks, itemRuleExpand)
     ---@type XFangKuaiBlock[]
     local filteredBlocks = {}
     for _, block in pairs(blocks) do
-        if block:GetBlockType() == XEnumConst.FangKuai.BlockType.Normal then
+        if block:GetBlockType() == BlockType.Normal then
             table.insert(filteredBlocks, block)
         end
     end

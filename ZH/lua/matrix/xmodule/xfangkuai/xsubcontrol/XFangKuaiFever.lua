@@ -68,7 +68,7 @@ function XFangKuaiFever:CheckEnterFever()
         stageData:AddFevLevel(addLevel, maxLevel)
         isEnterFev = not self._IsFev
         self._IsFev = true
-        self._MainControl:TransformItems()
+        --self._MainControl:TransformItems()
         if isEnterFev then
             stageData:RecordFeverRound()
         end
@@ -76,7 +76,7 @@ function XFangKuaiFever:CheckEnterFever()
         stageData:RecordFeverMaxLevel()
         stageData:SetFevLevel(0)
         self._IsFev = false
-        self._MainControl:TransformItems()
+        --self._MainControl:TransformItems()
         isExitFev = true
     end
     self:UpdateRadio()

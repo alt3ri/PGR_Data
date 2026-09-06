@@ -26,7 +26,7 @@ function XBuffScript10263030:OnLuaSkillStart(eventArgs)
     if eventArgs._skillId ~= self._skillId then return end
     if eventArgs._launcherUUID ~= self._npcUUID then return end
     ------------执行------------
-    self.originAttrib1 = self._proxy:GetNpcGameplayAttribValue(self._uuid,ETheatre6AttribType.WrestlePoint)
+    self.originAttrib1 = self._proxy:GetNpcGameplayAttribValue(self._npcUUID,ETheatre6AttribType.WrestlePoint)
     --self:LogError(".....抓到拼刀属性"..self.originAttrib1)
     if self.originAttrib1 > 230 then
         self._hasChangedDamage = false

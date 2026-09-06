@@ -53,6 +53,15 @@ function XMusicPlayerConfigControl:GetRandomPlayIngListMaxCount()
     local config = self:GetConfigByTabKeyAndIdKey(TableKey.MusicPlayerConfig, "BackgroundSongMaxCount")
     return tonumber(config and config.Values and config.Values[1]) or 200
 end
+
+
+---@return integer
+function XMusicPlayerConfigControl:GetSPMusicID()
+    local config = self:GetConfigByTabKeyAndIdKey(TableKey.MusicPlayerConfig, "SPMusicID")
+    local musicId = math.floor(tonumber(config and config.Values and config.Values[1]) or 0)
+    ---@cast musicId integer
+    return musicId
+end
 ---endregion
 
 

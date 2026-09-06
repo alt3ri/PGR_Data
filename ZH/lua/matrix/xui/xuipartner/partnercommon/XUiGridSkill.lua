@@ -1,9 +1,16 @@
+---@class XUiGridSkill
 local XUiGridSkill = XClass(nil, "XUiGridSkill")
 local CSTextManagerGetText = CS.XTextManager.GetText
-function XUiGridSkill:Ctor(ui)
+
+
+---@param ui UiObject
+---@param isUseNewSkillSelect boolean|nil 是否打开一键养成的新技能选择页
+function XUiGridSkill:Ctor(ui, isUseNewSkillSelect)
     self.GameObject = ui.gameObject
     self.Transform = ui.transform
     self.IsLock = false
+    self._IsUseNewSkillSelect = isUseNewSkillSelect or false
+    self:SetRedDotActive(false)
     XTool.InitUiObject(self)
     self:SetButtonCallBack()
 end
@@ -21,6 +28,11 @@ function XUiGridSkill:OnBtnSkillClick()
 
     if self.IsLock then
         XUiManager.TipMsg(CSTextManagerGetText("PartnerSkillFieldIsLock", XPartnerConfigs.GetQualityString(self.UnLockQuality)))
+        return
+    end
+
+    if self._IsUseNewSkillSelect then
+        XLuaUiManager.Open("UiEquipOneClickCulturePartnerSkillPopup", self.Partner:GetId(), self.Type)
         return
     end
 
@@ -94,6 +106,12 @@ end
 
 function XUiGridSkill:IsPassiveSkill()
     return self.Type == XPartnerConfigs.SkillType.PassiveSkill
+end
+
+function XUiGridSkill:SetRedDotActive(flag)
+    if self.Red then
+        self.Red.gameObject:SetActiveEx(flag)
+    end
 end
 
 return XUiGridSkill

@@ -6,8 +6,6 @@ local XUiGridWheelchairManualStepRewardPlan = XClass(XUiNode, 'XUiGridWheelchair
 ---@param rootUi XLuaUi
 function XUiGridWheelchairManualStepRewardPlan:OnStart(rootUi)
     self.Grid256New.gameObject:SetActiveEx(false)
-    self.BtnClick.CallBack = handler(self, self.OnClickEvent)
-    
     self.RootUi = rootUi
 end
 
@@ -32,9 +30,11 @@ function XUiGridWheelchairManualStepRewardPlan:RefreshData(planId, index)
         isAchieved = self._Control:CheckPlanIsGetReward(self.PlanId)
     end
 
-    self.PanelReceive.gameObject:SetActiveEx(isAchieved)
-    self.BtnClick:ShowReddot(isFinish and not isAchieved)
-    self.Collect.gameObject:SetActiveEx(isFinish and not isAchieved)
+    self.PanelReceive.gameObject:SetActiveEx(false)
+    self.Collect.gameObject:SetActiveEx(false)
+
+    self._CanReceive = isFinish and not isAchieved
+    self.BtnClick:ShowReddot(self._CanReceive)
 
     -- 进度显示控制
     if isCurrent and not isAchieved then
@@ -46,59 +46,79 @@ function XUiGridWheelchairManualStepRewardPlan:RefreshData(planId, index)
     self.PanelOngoing.gameObject:SetActiveEx(isCurrent and not isFinish)
     self.Normal.gameObject:SetActiveEx(not isCurrent or isFinish)
     -- 刷新奖励道具
-    self:RefreshRewardGrids()
+    self:RefreshRewardGrids(isAchieved)
     
     self.BtnClick:SetNameByGroup(0, XUiHelper.FormatText(XMVCA.XWheelchairManual:GetWheelchairManualConfigString('PlanTitle'), self.Index))
     self.BtnClick:SetRawImage(self._Control:GetManualPlanTitleIcon(self.PlanId))
 end
 
-function XUiGridWheelchairManualStepRewardPlan:RefreshRewardGrids()
+function XUiGridWheelchairManualStepRewardPlan:RefreshRewardGrids(isAchieved)
     if self._RewardGrids == nil then
         self._RewardGrids = {}
     end
 
-    if not XTool.IsTableEmpty(self._RewardGrids) then
-        -- 回收
-        for i, v in pairs(self._RewardGrids) do
-            v.GameObject:SetActiveEx(false)
+    -- 隐藏旧格子
+    for _, grid in pairs(self._RewardGrids) do
+        grid.GameObject:SetActiveEx(false)
+    end
+
+    local rewardGoodsList = {}
+
+    -- 按顺序追加奖励
+    local function appendRewardList(rewardId)
+        if not XTool.IsNumberValid(rewardId) then
+            return
+        end
+
+        local rewards = XRewardManager.GetRewardList(rewardId)
+        if XTool.IsTableEmpty(rewards) then
+            return
+        end
+
+        for _, reward in ipairs(rewards) do
+            table.insert(rewardGoodsList, reward)
         end
     end
-    
-    local rewardId = self._Control:GetManualPlanRewardId(self.PlanId)
 
-    if XTool.IsNumberValid(rewardId) then
-        local rewardGoodsList = XRewardManager.GetRewardList(rewardId)
-        -- 显示奖励
-        if not XTool.IsTableEmpty(rewardGoodsList) then
-            for i, v in ipairs(rewardGoodsList) do
-                ---@type XUiGridCommon
-                local grid = self._RewardGrids[i]
+    -- 原奖励在前，新增奖励在后
+    appendRewardList(self._Control:GetManualPlanRewardId(self.PlanId))
+    appendRewardList(self._Control:GetManualPlanExtRewardId(self.PlanId))
 
-                if not grid then
-                    local go = CS.UnityEngine.GameObject.Instantiate(self.Grid256New, self.Grid256New.transform.parent)
-                    grid = XUiGridCommon.New(self.RootUi, go)
-                    table.insert(self._RewardGrids, grid)
-                end
-                
-                grid.GameObject:SetActiveEx(true)
-                grid:Refresh(v)
-            end
+    for index, reward in ipairs(rewardGoodsList) do
+        ---@type XUiGridCommon
+        local grid = self._RewardGrids[index]
+
+        if not grid then
+            local go = CS.UnityEngine.GameObject.Instantiate(
+                self.Grid256New,
+                self.Grid256New.transform.parent
+            )
+            grid = XUiGridCommon.New(self.RootUi, go)
+            table.insert(self._RewardGrids, grid)
         end
+
+        grid:Refresh(reward)
+        grid.GameObject:SetActiveEx(true)
+        grid.PanelEffect.gameObject:SetActiveEx(self._CanReceive)
+        grid:SetReceived(isAchieved)
+
+        grid:SetProxyClickFunc(function()
+            if self._CanReceive then
+                self:OnClickEvent()
+                return false
+            end
+
+            return true
+        end)
     end
 end
 
 function XUiGridWheelchairManualStepRewardPlan:OnClickEvent()
-    if self._Control:CheckAnyPlanCanGetReward() then
-        XDataCenter.ItemManager.SetAutoGiftRewardShowLock(true)
-        XMVCA.XWheelchairManual:RequestWheelchairManualGetPlanReward(function(success, rewardList)
-            if success then
-                self.Parent:RefreshPlanShow()
-                self._Control:ShowRewardList(rewardList)
-            else
-                XDataCenter.ItemManager.SetAutoGiftRewardShowLock(false)
-            end
-        end)
+    if not self._CanReceive then
+        return
     end
+
+    self.Parent:RequestPlanReward()
 end
 
 return XUiGridWheelchairManualStepRewardPlan

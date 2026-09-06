@@ -110,9 +110,19 @@ function XChapterViewModel:GetIsLocked()
     return false 
 end
 
+-- 获取业务是否已锁，不包含分包资源状态
+function XChapterViewModel:GetBusinessIsLocked()
+    return self:GetIsLocked()
+end
+
 -- 获取锁提示
 function XChapterViewModel:GetLockTip()
     return XUiHelper.GetText("CommonLockedTip")
+end
+
+-- 获取业务锁提示，不包含分包资源状态
+function XChapterViewModel:GetBusinessLockTip()
+    return self:GetLockTip()
 end
 
 -- 获取运行时间提示

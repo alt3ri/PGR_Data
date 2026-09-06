@@ -14,10 +14,13 @@ function XUiEquipOverrunSelect:OnAwake()
     self:InitDynamicTable()
 end
 
-function XUiEquipOverrunSelect:OnStart(equipId, selectCallBack, isPreview)
+function XUiEquipOverrunSelect:OnStart(equipId, selectCallBack, isPreview, recommendSuitId)
     self.EquipId = equipId
     self.SelectCallBack = selectCallBack
     self.IsPreview = isPreview == true
+    self.RecommendSuitId = recommendSuitId or 0
+    -- 养成方案展示模式（传了推荐套装即为该模式）：纯展示，隐藏底部激活按钮与消耗
+    self.IsCultureMode = XTool.IsNumberValid(self.RecommendSuitId)
     self.Equip = XMVCA.XEquip:GetEquip(self.EquipId)
     self.LastSelectSuitId = self.Equip:GetOverrunChoseSuit()
     self.CurSelectSuitId = self.LastSelectSuitId
@@ -180,6 +183,15 @@ function XUiEquipOverrunSelect:GetSuitDataList()
 
     -- 排序
     table.sort(suitDataList, function(a, b)
+        -- 展示模式：养成方案推荐套装排第一（优先级最高）
+        if self.IsCultureMode and XTool.IsNumberValid(self.RecommendSuitId) then
+            local recA = a.Id == self.RecommendSuitId
+            local recB = b.Id == self.RecommendSuitId
+            if recA ~= recB then
+                return recA
+            end
+        end
+
         -- 当前已绑定的意识套装
         local priorityA = a.Id == self.LastSelectSuitId and 10000 or 0
         local priorityB = b.Id == self.LastSelectSuitId and 10000 or 0
@@ -227,7 +239,8 @@ function XUiEquipOverrunSelect:OnDynamicTableEvent(event, index, grid)
         local suitData = self.SuitDataList[index]
         local isLastSelect = suitData.Id == self.LastSelectSuitId
         local isCurSelect = suitData.Id == self.CurSelectSuitId
-        grid:Refresh(suitData, isLastSelect)
+        local isRecommend = self.IsCultureMode and suitData.Id == self.RecommendSuitId
+        grid:Refresh(suitData, isLastSelect, self.IsCultureMode, isRecommend)
         grid:SetCurSelect(isCurSelect)
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_TOUCHED then
         local suitData = self.SuitDataList[index]
@@ -318,7 +331,13 @@ function XUiEquipOverrunSelect:RefreshSuitDetail(suitData)
     end
 
     -- 按钮
-    if self.IsPreview then
+    if self.IsCultureMode then
+        -- 养成展示模式：纯展示，隐藏所有激活按钮与消耗
+        self.BtnCanActive.gameObject:SetActiveEx(false)
+        self.BtnChange.gameObject:SetActiveEx(false)
+        self.BtnActive.gameObject:SetActiveEx(false)
+        self.TxtSpend.gameObject:SetActiveEx(false)
+    elseif self.IsPreview then
         self.BtnCanActive.gameObject:SetActiveEx(true)
         self.BtnCanActive:SetDisable(true)
         self.BtnChange.gameObject:SetActiveEx(false)

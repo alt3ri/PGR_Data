@@ -168,7 +168,7 @@ function XUiMain:OnEnable()
     XEventManager.AddEventListener(XEventId.EVENT_DLC_RECEIVE_INVITE, self.OnDlcReceiveInvite, self)
     XMVCA.XFavorability:AddRoleActionUiAnimListener(self)
     if not XLoginManager.IsFirstOpenMainUi() then
-        self:PlayEquipGuide(false)
+        self:PlayTeamRecommend(false)
     end
 
     -- 开启时钟
@@ -444,7 +444,7 @@ function XUiMain:PlayEnterAnim()
             anim = "AnimEnter2"
             self:PlayAnimation(anim, endCb)
             self:UpdateCamera(CameraIndex.Main)
-            self:PlayEquipGuide(true)
+            self:PlayTeamRecommend(true)
             XLoginManager.SetFirstOpenMainUi(false)
             --第一次进入界面，拦截公告请求
             self.InterceptNotice = true
@@ -494,17 +494,17 @@ function XUiMain:PlayMainChatIn()
     self:PlayAnimation("AnimChatOut")
 end
 
---播放装备目标动画
-function XUiMain:PlayEquipGuide(isFirst)
-    local isSetEquipTarget = XDataCenter.EquipGuideManager.IsSetEquipTarget()
-    if not isSetEquipTarget then
+-- 播放队伍养成推荐入口动画
+function XUiMain:PlayTeamRecommend(isFirst)
+    local hasTeamRecommendTarget = XMVCA.XTeamRecommend:GetFirstServerCharacterTargetId() ~= nil
+    if not hasTeamRecommendTarget then
         return
     end
     local anim = isFirst and "EquipGuideEnableLong" or "EquipGuideEnableShort"
     self:PlayAnimation(anim, function()
-        self.RightMid:SetBtnEquipGuideState(false)
+        self.RightMid:SetBtnTeamRecommendState(false)
     end, function() 
-        self.RightMid:SetBtnEquipGuideState(true)
+        self.RightMid:SetBtnTeamRecommendState(true)
     end)
 end
 

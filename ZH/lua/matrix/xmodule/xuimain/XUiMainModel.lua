@@ -14,6 +14,10 @@ local BoardTableKey = {
     BoardEffectActivity = { CacheType = XConfigUtil.CacheType.Normal },
 }
 
+-- 活动按钮永久一次性红点用独立 block，设恒定版本号避免随应用版本清（跨版本常驻不二次红点）
+-- 不影响实例内其他 _SaveUtil 数据（如 ActivityToastHallLastShowTime 继续走默认版本检查）
+local ActivityBtnRedOnceBlockKey = "ActivityBtnRedOnce"
+
 function XUiMainModel:OnInit()
     --初始化内部变量
     --这里只定义一些基础数据, 请不要一股脑把所有表格在这里进行解析
@@ -21,6 +25,10 @@ function XUiMainModel:OnInit()
     --定义TableKey
     self._ConfigUtil:InitConfigByTableKey("UiMain", TableKey)
     self._ConfigUtil:InitConfigByTableKey("BoardEffect", BoardTableKey)
+
+    -- 活动按钮永久一次性红点 block 设恒定版本号，使该 block 永不随应用版本清
+    -- 不调实例级 SetVersionCheckEnable(false)，避免污染其他默认 block 数据
+    self._SaveUtil:SetCustomVersionGetFunc(handler(self, self.GetActivityBtnRedOnceVersion), ActivityBtnRedOnceBlockKey)
 
     self.BoardEffectData = false
     --新手任务合集ActivityBtn配置Id
@@ -55,6 +63,44 @@ function XUiMainModel:GetActivityBtnConfigById(id)
 
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.ActivityBtn, id)
 end
+
+--region 活动按钮永久一次性红点
+
+--- 活动按钮永久一次性红点 block 的版本号：恒定，使该 block 永不随应用版本清
+function XUiMainModel:GetActivityBtnRedOnceVersion()
+    return 1
+end
+
+--- 生成活动按钮永久一次性红点的存档 key（字符串）
+--- 【分层】此方法是唯一知道 key 组成的地方；下层 Save/Is/条件类只透明接收 key 不问结构
+--- 其他系统复用永久一次性红点模式时，仿此方法用自己的字段组 key，存取接口不变
+--- 含 Id/TimeId/SkipId 三字段，不含 Name：
+--- 跨版本复用 Id 给新活动时，TimeId/SkipId 不同 → key 不同 → 新活动正常显示红点；
+--- 同一活动跨版本常驻时，三字段稳定 → key 稳定 → 不被清缓存、无二次红点
+--- 字符串拼接零碰撞（hash 才有碰撞）；key 在 grid Init 时生成一次并缓存，Check 热路径复用，无 GC 顾虑
+---@param activityBtnConfig XTableActivityBtn
+---@return string
+function XUiMainModel:GetActivityBtnIdentityKey(activityBtnConfig)
+    local id = activityBtnConfig.Id or 0
+    local timeId = activityBtnConfig.TimeId or 0
+    local skipId = activityBtnConfig.SkipId or 0
+    return string.format("%s_%s_%s", id, timeId, skipId)
+end
+
+--- 记录活动按钮永久一次性红点已点击
+---@param key string 身份key（组成由 GetActivityBtnIdentityKey 封装，此处不问）
+function XUiMainModel:SaveActivityBtnRedOnceClicked(key)
+    self._SaveUtil:SaveDataByBlockKey(ActivityBtnRedOnceBlockKey, key, true)
+end
+
+--- 活动按钮永久一次性红点是否已点击过
+---@param key string 身份key
+---@return boolean
+function XUiMainModel:IsActivityBtnRedOnceClicked(key)
+    return self._SaveUtil:GetDataByBlockKey(ActivityBtnRedOnceBlockKey, key) == true
+end
+
+--endregion
 
 ---@return table<number, XTableActivityToastHall>
 function XUiMainModel:GetActivityToastHallCfgs()

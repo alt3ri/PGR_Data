@@ -256,17 +256,37 @@ function XTheatre6Control:GetStageFightCfgById(id)
 end
 
 ---替换 {Attr:属性Id} 占位符为角色当前属性值
+---Attrs支持三种形状：当前局协议的字典(attrId->{AttrId,Value})、存档协议的数组({AttrId,Value}[])、配置表的字典(attrId->数值)
 ---@param desc string
+---@param customModelData Theatre6FileData|nil 非当前局数据（存档/PVP/怪物），nil 时取当前局
 ---@return string
 function XTheatre6Control:ReplaceAttrPlaceholder(desc, customModelData)
     if not desc or not string.find(desc, "{Attr:", 1, true) then
         return desc
     end
     local modelData = customModelData or self:GetCurPlayModeData()
+    local attrs = modelData and modelData.Attrs
     return string.gsub(desc, "{Attr:(%d+)}", function(idStr)
         local attrId = tonumber(idStr)
-        local attrData = modelData and modelData.Attrs[attrId]
-        return tostring(attrData and attrData.Value or 0)
+        if not attrs then
+            return "0"
+        end
+        local attrData = attrs[attrId]
+        --配置表来源：值就是属性数值
+        if type(attrData) == "number" then
+            return tostring(attrData)
+        end
+        --当前局协议：以属性Id为键的字典
+        if attrData and attrData.AttrId == attrId then
+            return tostring(attrData.Value or 0)
+        end
+        --存档/PVP协议：顺序数组，需按AttrId字段查
+        for _, data in pairs(attrs) do
+            if type(data) == "table" and data.AttrId == attrId then
+                return tostring(data.Value or 0)
+            end
+        end
+        return "0"
     end)
 end
 
@@ -306,24 +326,28 @@ end
 ---获取遗物描述
 ---@param attrPackId number 遗物Id
 ---@param isShort boolean 是否获取短描述
-function XTheatre6Control:GetAttrPackDesc(attrPackId, isShort)
+---@param customModelData Theatre6FileData|nil 非当前局数据（存档/PVP），nil 时取当前局
+function XTheatre6Control:GetAttrPackDesc(attrPackId, isShort, customModelData)
     local config = self:GetAttrPackCfgById(attrPackId)
     local desc = isShort and config.ShortDesc or config.Desc
     if not desc then
         return nil
     end
+    desc = self:ReplaceAttrPlaceholder(desc, customModelData)
     desc = XUiHelper.ReplaceTextNewLine(desc)
     return CS.XTextManager.FormatString(desc, table.unpack(config.DescParams))
 end
 
 ---获取Buff描述
 ---@param buffId number BuffId
-function XTheatre6Control:GetBuffDesc(buffId)
+---@param customModelData Theatre6FileData|nil 非当前局数据（存档/PVP），nil 时取当前局
+function XTheatre6Control:GetBuffDesc(buffId, customModelData)
     local config = self:GetBuffConfig(buffId)
     if not config.Desc then
         return nil
     end
-    local desc = XUiHelper.ReplaceTextNewLine(config.Desc)
+    local desc = self:ReplaceAttrPlaceholder(config.Desc, customModelData)
+    desc = XUiHelper.ReplaceTextNewLine(desc)
     return CS.XTextManager.FormatString(desc, table.unpack(config.DescParams))
 end
 

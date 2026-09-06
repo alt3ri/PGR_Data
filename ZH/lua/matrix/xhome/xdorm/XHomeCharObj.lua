@@ -88,7 +88,7 @@ function XHomeCharObj:OnLoadComplete()
     end
 
     --层级
-    self.GameObject:SetLayerRecursively(CS.UnityEngine.LayerMask.NameToLayer(HomeSceneLayerMask.HomeCharacter))
+    self.GameObject:SetLayerRecursively(CS.UnityEngine.LayerMask.NameToLayer(LayerMaskName.Npc))
     --阴影
     CS.XMaterialContainerHelper.ProcessCharacterShadowVolume(self.GameObject)
 
@@ -411,7 +411,7 @@ function XHomeCharObj:OnDrag(eventData)
     self.Transform.position = CS.UnityEngine.Vector3(pos.x, self.OrignalPosition.y + 0.5, pos.z)
 
     --判断射线碰到家私
-    local layerMask = CS.UnityEngine.LayerMask.GetMask("Device")
+    local layerMask = CS.UnityEngine.LayerMask.GetMask(LayerMaskName.SceneObject)
     if layerMask then
 
         local hit = self.Transform:PhysicsRayCast(CS.UnityEngine.Vector3.up * 100, CS.UnityEngine.Vector3.down, layerMask)

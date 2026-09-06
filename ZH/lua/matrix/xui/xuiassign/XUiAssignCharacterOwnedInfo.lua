@@ -100,7 +100,7 @@ end
 --------支援相关 begin---------
 function XUiAssignCharacterOwnedInfo:UpdateSupport(characterId)
     local supportData = self.SupportData
-    local openRecommend = XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.EquipGuideRecommend)
+    local openRecommend = XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.TeamRecommend)
     self.BtnRecommend.gameObject:SetActiveEx(not XUiManager.IsHideFunc and openRecommend)
     if XTool.IsTableEmpty(supportData) then return end
 
@@ -130,7 +130,7 @@ function XUiAssignCharacterOwnedInfo:AddListener()
     self.BtnSupport.CallBack = function() self:OnBtnSupportClick() end
     self.BtnSupportCancel.CallBack = function() self:OnBtnSupportCancelClick() end
     self.BtnCarryPartner.CallBack = function() self:OnCarryPartnerClick() end
-    self.BtnRecommend.CallBack = function() XDataCenter.EquipGuideManager.OpenEquipGuideView(self.CharacterId) end
+    self.BtnRecommend.CallBack = function() XMVCA.XTeamRecommend:OpenCharacterRecommend(self.CharacterId) end
 end
 
 function XUiAssignCharacterOwnedInfo:OnBtnAwarenessReplace5Click()

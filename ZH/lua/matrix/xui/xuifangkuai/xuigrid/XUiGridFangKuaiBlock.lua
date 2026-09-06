@@ -116,21 +116,24 @@ function XUiGridFangKuaiBlock:UpdateBlock()
         self.RImgItem.gameObject:SetActiveEx(false)
     end
 
-    local isBossHit = self.BlockData:GetBlockType() == XEnumConst.FangKuai.BlockType.BossHit
-    local isChief = self.BlockData:GetBlockType() == XEnumConst.FangKuai.BlockType.Chief
-    self.PanelNum.gameObject:SetActiveEx(isBossHit or isChief)
+    local blockType = self.BlockData:GetBlockType()
+    local isBossHit = blockType == XEnumConst.FangKuai.BlockType.BossHit
+    local isChief = blockType == XEnumConst.FangKuai.BlockType.Chief
+    local isKnife = blockType == XEnumConst.FangKuai.BlockType.Knife
+    self.PanelNum.gameObject:SetActiveEx(isBossHit or isChief or isKnife)
     self.PanelNum.transform.localScale = self._ScaleVec3
     self.RImgNum.gameObject:SetActiveEx(isChief)
     self.ImgNumBg.gameObject:SetActiveEx(isBossHit)
-    self.TxtNum.gameObject:SetActiveEx(isBossHit)
-    if self.BlockData:GetBlockType() == XEnumConst.FangKuai.BlockType.Chief then
+    self.ImgNumBg2.gameObject:SetActiveEx(isKnife)
+    self.TxtNum.gameObject:SetActiveEx(isBossHit or isKnife)
+    if isChief then
         local hitTimes = self.BlockData:GetHitTimes()
         if hitTimes > 0 then
             self.RImgNum:SetRawImage(self._Control:GetClientConfig("ChiefBossLevelIcon", hitTimes))
         else
             self.RImgNum.gameObject:SetActiveEx(false)
         end
-    elseif self.BlockData:GetBlockType() == XEnumConst.FangKuai.BlockType.BossHit then
+    elseif isBossHit or isKnife then
         self.TxtNum.text = self.BlockData:GetRemainHitTimes()
     end
 
@@ -186,7 +189,7 @@ function XUiGridFangKuaiBlock:OnLongClickBlock()
         self._MoveOffset = self._Control:GetMouseClickGrid(self) - self._InitGridX
         self._Control:PlayClickSound()
         self.Parent:SetCurClickBlockId(self.BlockData:GetId())
-        self.Parent:ShowFevTailEffect(self)
+        --self.Parent:ShowFevTailEffect(self)
     end
     if not self._MinX or not self._MaxX then
         self._MinX, self._MaxX = self.Parent:GetBlockMoveArea(self.BlockData)
@@ -212,7 +215,10 @@ function XUiGridFangKuaiBlock:OnLongClickBlock()
             self:CheckOperateEnd()
         end)
         self.BlockData:UpdatePos(gridX)
-        self.Parent:ShowFevDragEffect(self._InitGridX, gridX, self)
+        --狂热状态下/拖动刀锋方块时 需要显示剑痕特效
+        if self._Control:IsFever() or self.BlockData:IsKnife() then
+            self.Parent:ShowSwordTrailEffect(self._InitGridX, gridX, self)
+        end
     end
 end
 
@@ -228,18 +234,22 @@ function XUiGridFangKuaiBlock:OnUpClickBlock()
 end
 
 function XUiGridFangKuaiBlock:CheckOperateEnd()
+    if self._IsClicking or self._IsMoving then
+        return
+    end
+
     local finalGrid = self.BlockData:GetHeadGrid()
     local isMoved = self._InitGridX and (self._InitGridX ~= finalGrid.x)
-    if not self._IsClicking and not self._IsMoving then
-        self._InitGridX = nil
-        if isMoved then
-            self._Control:SignGridOccupyAuto(self.BlockData)
-        end
-        self:PlayExpression(XEnumConst.FangKuai.Expression.Standby)
-        self.Parent:ClearClickBlockId()
-        self.Parent:HideFevTailEffect()
-        XEventManager.DispatchEvent(XEventId.EVENT_FANGKUAI_ENDDRAG, self.BlockData, isMoved)
+    local dir = self:GetMoveDir(self._InitGridX, finalGrid.x)
+    if isMoved then
+        self._Control:SignGridOccupyAuto(self.BlockData)
     end
+
+    self._InitGridX = nil
+    self:PlayExpression(XEnumConst.FangKuai.Expression.Standby)
+    self.Parent:ClearClickBlockId()
+    self.Parent:HideFevTailEffect()
+    XEventManager.DispatchEvent(XEventId.EVENT_FANGKUAI_ENDDRAG, self.BlockData, isMoved, dir)
 end
 
 function XUiGridFangKuaiBlock:OnFocusExit()
@@ -307,7 +317,7 @@ end
 
 function XUiGridFangKuaiBlock:PlayExpression(expression)
     -- 方块长度=1并且有道具时不显示表情
-    if XTool.IsNumberValid(self.BlockData:GetItemId()) or self.BlockData:IsChief() then
+    if XTool.IsNumberValid(self.BlockData:GetItemId()) or self.BlockData:IsChief() or self.BlockData:IsKnife() then
         self.RImgExpression.gameObject:SetActiveEx(false)
         return
     end
@@ -335,12 +345,12 @@ end
 --region 引导
 
 function XUiGridFangKuaiBlock:ForceMoveX(gridX)
+    local moveDir = self:GetMoveDir(self.BlockData:GetHeadGrid().x, gridX)
     self._Move = self._Control:MoveX(self, gridX, function()
         self.Parent:UpdateCompareBgPos(self.Transform.anchoredPosition.x)
     end, function()
-        local finalGrid = self.BlockData:GetHeadGrid()
         self._Control:SignGridOccupyAuto(self.BlockData)
-        XEventManager.DispatchEvent(XEventId.EVENT_FANGKUAI_ENDDRAG, self.BlockData, true)
+        XEventManager.DispatchEvent(XEventId.EVENT_FANGKUAI_ENDDRAG, self.BlockData, true, moveDir)
     end, 0.5)
     self.BlockData:UpdatePos(gridX)
 end
@@ -349,6 +359,13 @@ end
 
 function XUiGridFangKuaiBlock:GetCurGridY()
     return self._Control:GetGridYByPos(self.Transform.localPosition.y)
+end
+
+function XUiGridFangKuaiBlock:GetMoveDir(initPos, targetPos)
+    if not initPos or not targetPos or initPos == targetPos then
+        return nil
+    end
+    return initPos > targetPos and XEnumConst.FangKuai.DirectionType.Left or XEnumConst.FangKuai.DirectionType.Right
 end
 
 return XUiGridFangKuaiBlock

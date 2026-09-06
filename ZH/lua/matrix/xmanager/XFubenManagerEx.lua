@@ -250,7 +250,7 @@ XFubenManagerExCreator = function()
             if viewModel:CheckHasTimeLimitTag() and not isPass then
                 currActivityViewModel = viewModel
                 currActivityManager = getManagerFunc(i)
-                if not viewModel:GetIsLocked() then
+                if not viewModel:GetBusinessIsLocked() then
                     return viewModel, getManagerFunc(i)
                 end
             end
@@ -300,7 +300,7 @@ XFubenManagerExCreator = function()
         end
 
         -- 如果限时和当前进度中的chapter都上锁了，进入判断
-        if currActivityViewModel and currActivityViewModel:GetIsLocked() and cuurChapterViewModel and cuurChapterViewModel:GetIsLocked() then
+        if currActivityViewModel and currActivityViewModel:GetBusinessIsLocked() and cuurChapterViewModel and cuurChapterViewModel:GetBusinessIsLocked() then
             local currViewModelFirstStage = cuurChapterViewModel:GetConfig().FirstStage
             local activityCondition = currActivityViewModel:GetConfig().ActivityCondition
             if currViewModelFirstStage and activityCondition then

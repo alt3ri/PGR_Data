@@ -143,7 +143,9 @@ function XUiPanelTheatre6BossAttrDetail:ShowRelic()
                 table.insert(ids, v.Id)
                 table.insert(counts, attrPackNums[v.Id])
             end
-            XLuaUiManager.Open("UiTheatre6PopupRelicDetail", ids, counts)
+            --传怪物属性，避免遗物描述里的{Attr:x}回退成玩家自己的属性值
+            XLuaUiManager.Open("UiTheatre6PopupRelicDetail", ids, counts, true,
+                { Attrs = self._MonsterConfig.AttrTypes })
         end)
     end)
     self.TxtRelicEmpty.gameObject:SetActiveEx(showCount == 0)

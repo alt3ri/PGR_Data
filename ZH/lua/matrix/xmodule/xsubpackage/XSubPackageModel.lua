@@ -45,12 +45,6 @@ local TableKey = {
         DirPath = XConfigUtil.DirectoryType.Client,
         Identifier = "FunctionId",
     },
-    --章节涂装关联配置
-    ChapterFashionRelative = {
-        CacheType = XConfigUtil.CacheType.Temp,
-        DirPath = XConfigUtil.DirectoryType.Client,
-        Identifier = "ChapterId",
-    },
 }
 
 function XSubPackageModel:OnInit()
@@ -481,13 +475,6 @@ end
 ---@return XTableFunctionIdFashionRelative|nil
 function XSubPackageModel:GetFunctionIdFashionRelativeConfig(functionId)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.FunctionIdFashionRelative, functionId, true)
-end
-
---- 获取章节涂装关联配置
----@param chapterId number 章节Id
----@return XTableChapterFashionRelative|nil
-function XSubPackageModel:GetChapterFashionRelativeConfig(chapterId)
-    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.ChapterFashionRelative, chapterId, true)
 end
 
 --endregion

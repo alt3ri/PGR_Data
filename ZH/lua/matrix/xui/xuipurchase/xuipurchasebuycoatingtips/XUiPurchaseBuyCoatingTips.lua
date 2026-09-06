@@ -22,7 +22,7 @@ function XUiPurchaseBuyCoatingTips:OnStart(viewModel, buyCb, closeDetailCb)
 
     self.TxtName.text = viewModel.Title or ''
     self.Desc.text = viewModel.SubTitle or ''
-    self.WorldDesc.text = viewModel.DetailDesc or ''
+    self.WorldDesc.text = viewModel.IsHideWorldDesc and '' or viewModel.DetailDesc
 
     self._IsTimeLimit = viewModel.IsTimeLimit or false
     self._EndTime = viewModel.EndTime
@@ -202,3 +202,4 @@ return XUiPurchaseBuyCoatingTips
 ---@field OriginCost number | nil 原价
 ---@field ItemId number 货币Id
 ---@field AssetsItemIds number[] | nil 资源栏展示item
+---@field IsHideWorldDesc boolean 套装购买时，如果fashion.tab的这个涂装GiftId配置为空，就隐藏WorldDesc的UI组件
