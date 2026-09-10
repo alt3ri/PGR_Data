@@ -13,9 +13,6 @@ function BuffEntity:Ctor(id, env, buffId, ownEntityId, targetEntityId, targetFie
     self.Fields.TargetEntityId = STEHelper.NewPropertySingle(id, env, targetEntityId)
     self.Fields.TargetFieldNameEnum = STEHelper.NewPropertySingle(id, env, targetFieldNameEnum)
 
-    --- 自由值
-    self.Fields.Alpha = STEHelper.NewPropertyModifiedNum(id, env, 0, 0)
-
     --- 生命周期(走累计量，而不是扣除量，即到时间的判断是，该值>=配置值）
     self.Fields.LifeTimes = STEHelper.NewPropertySingle(id, env, 0)
 
@@ -48,18 +45,11 @@ function BuffEntity:ResetForReuse(id, env, buffId, ownEntityId, targetEntityId, 
     f.ExDoneTimes:SetOriginVal(0)
     f.Layer:SetOriginVal(0)
 
-    -- Alpha：base 归零、运算队列经 Release 回池（见 Release）；此处仅当 Release 置 _Ops=nil 后重建取池 ListSnap（对齐 STEVM 池，避免 = {} 破坏池/泄漏）#Buff池对齐STEVM
-    f.Alpha:SetOriginVal(0)
-    if f.Alpha._Ops == nil then
-        f.Alpha._Ops = self._Env:GetPoolListSnap()
-    end
-
     -- 各 property / Tags 的归属 scope id 同步为新 uid
     f.BuffId._OwnScopeId = id
     f.OwnEntityId._OwnScopeId = id
     f.TargetEntityId._OwnScopeId = id
     f.TargetFieldNameEnum._OwnScopeId = id
-    f.Alpha._OwnScopeId = id
     f.LifeTimes._OwnScopeId = id
     f.State._OwnScopeId = id
     f.ExTickCD._OwnScopeId = id
@@ -72,11 +62,6 @@ end
 --- Release 是「对象确定性消失」的唯一钩子（commit / 非事务 remove / 回滚，见 STEEnv），
 ---   因此在此归还池是安全时机，绝无回滚复活导致的别名。
 function BuffEntity:Release()
-    -- Alpha 运算队列经 STEVM PropertyModifiedNum:Release 回池（op-tables + ListSnap 数组），对齐池复用（避免 = {} 丢弃致池对象泄漏/破坏池）#Buff池对齐STEVM
-    local alpha = self.Fields.Alpha
-    if alpha then
-        alpha:Release()
-    end
     if self.Tags and self.Tags.Release then
         self.Tags:Release()
     end

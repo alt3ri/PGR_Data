@@ -3017,9 +3017,9 @@
     {
         "Id": 338,
         "GroupId": 239,
-        "TriggerId": 224.0,
+        "TriggerId": 239.0,
         "ScopeType": 8,
-        "ScopeParams": "[3]",
+        "ScopeParams": "[1]",
         "EffectType": 1,
         "EffectParams": "[3.0, 4.0, 1.6]"
     },
@@ -3044,9 +3044,9 @@
     {
         "Id": 563,
         "GroupId": 241,
-        "TriggerId": 219.0,
+        "TriggerId": 218.0,
         "ScopeType": 8,
-        "ScopeParams": "[3]",
+        "ScopeParams": "[1]",
         "EffectType": 1,
         "EffectParams": "[3.0, 4.0, 1.1]"
     },
@@ -4285,8 +4285,8 @@
     },
     {
         "Id": 480,
-        "GroupId": 265,
-        "TriggerId": null,
+        "GroupId": 308,
+        "TriggerId": 1.0,
         "ScopeType": 3,
         "ScopeParams": null,
         "EffectType": 7,
@@ -4640,8 +4640,8 @@
         "TriggerId": 174.0,
         "ScopeType": 1,
         "ScopeParams": null,
-        "EffectType": 1,
-        "EffectParams": "[8.0, 2.0, 1.0]"
+        "EffectType": 3,
+        "EffectParams": "[8.0, 2.0, 1.0, 272.0]"
     },
     {
         "Id": 600,
@@ -4743,6 +4743,42 @@
         "EffectParams": "[3.0, 2.0, 1.0]"
     },
     {
+        "Id": 602,
+        "GroupId": 353,
+        "TriggerId": 217.0,
+        "ScopeType": 1,
+        "ScopeParams": null,
+        "EffectType": 4,
+        "EffectParams": "[353.0]"
+    },
+    {
+        "Id": 603,
+        "GroupId": 353,
+        "TriggerId": null,
+        "ScopeType": 4,
+        "ScopeParams": null,
+        "EffectType": 2,
+        "EffectParams": "[1.0, 1.0, 1.0, 1.0]"
+    },
+    {
+        "Id": 604,
+        "GroupId": 354,
+        "TriggerId": 174.0,
+        "ScopeType": 1,
+        "ScopeParams": null,
+        "EffectType": 3,
+        "EffectParams": "[8.0, 2.0, 1.0, 272.0]"
+    },
+    {
+        "Id": 605,
+        "GroupId": 354,
+        "TriggerId": null,
+        "ScopeType": 3,
+        "ScopeParams": null,
+        "EffectType": 8,
+        "EffectParams": "[7.0]"
+    },
+    {
         "Id": 1004,
         "GroupId": 1003,
         "TriggerId": 217.0,
@@ -4785,7 +4821,7 @@
         "ScopeType": 3,
         "ScopeParams": null,
         "EffectType": 2,
-        "EffectParams": "[1.0, 1.0, 1.0, 0.8999]"
+        "EffectParams": "[1.0, 1.0, 1.0, 1.0]"
     },
     {
         "Id": 1013,
@@ -4821,7 +4857,7 @@
         "ScopeType": 3,
         "ScopeParams": null,
         "EffectType": 2,
-        "EffectParams": "[1.0, 1.0, 1.0, 0.8999]"
+        "EffectParams": "[1.0, 1.0, 1.0, 1.0]"
     },
     {
         "Id": 1020,
@@ -4889,7 +4925,7 @@
     {
         "Id": 1026,
         "GroupId": 1014,
-        "TriggerId": 234.0,
+        "TriggerId": 233.0,
         "ScopeType": 4,
         "ScopeParams": null,
         "EffectType": 3,
@@ -4903,5 +4939,23 @@
         "ScopeParams": null,
         "EffectType": 7,
         "EffectParams": "[3.0, 3.0]"
+    },
+    {
+        "Id": 1045,
+        "GroupId": 1006,
+        "TriggerId": 229.0,
+        "ScopeType": 4,
+        "ScopeParams": null,
+        "EffectType": 3,
+        "EffectParams": "[3.0, 4.0, 0.8999, 355.0]"
+    },
+    {
+        "Id": 1046,
+        "GroupId": 1009,
+        "TriggerId": 230.0,
+        "ScopeType": 4,
+        "ScopeParams": null,
+        "EffectType": 3,
+        "EffectParams": "[3.0, 4.0, 0.8999, 355.0]"
     }
 ]

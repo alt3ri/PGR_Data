@@ -225,11 +225,6 @@ end
 local function GetFormationTargetDesc(formationGridData)
     local descList = {}
     local formationCfg = formationGridData.Formation
-    if formationCfg.StageType == XEnumConst.FuBen.StageType.BossSingle then
-        table.insert(descList, XUiHelper.GetText("TeamRecommendStageTypeBossSingle"))
-    elseif formationCfg.StageType == XEnumConst.FuBen.StageType.Arena then
-        table.insert(descList, XUiHelper.GetText("TeamRecommendStageTypeArena"))
-    end
     if not string.IsNilOrEmpty(formationGridData.BaseFormation.Desc) then
         table.insert(descList, formationGridData.BaseFormation.Desc)
     end

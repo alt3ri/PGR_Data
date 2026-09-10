@@ -119,13 +119,25 @@ function XUiCharacterV2P6:RefresFilter()
     self.PanelFilter:UpdateElementStateByGeneralSkill()
 end
 
+-- xf分支临时隐藏：这些角色隐藏档案、详情入口
+local HideEntryCharIds = {
+    [1411003] = true, -- 时崎狂三
+}
+
 function XUiCharacterV2P6:RefreshButtonShow()
+    if HideEntryCharIds[self.CurCharacter.Id] then
+        self._FuncShowBtnFiles:SetActiveByHand(false)
+        self._FuncShowBtnOwnedDetail:SetActiveByHand(false)
+        self.BtnTeaching.gameObject:SetActiveEx(false)
+        return
+    end
+
     local isOpenTeachingActivity = XDataCenter.FubenNewCharActivityManager.CheckActivityIsOpenByCharacterId(self.CurCharacter.Id)
 
     --self.BtnFiles.gameObject:SetActiveEx(isOpenTeachingActivity)
     self._FuncShowBtnFiles:SetActiveByHand(isOpenTeachingActivity)
     self.BtnTeaching.gameObject:SetActiveEx(false)
-    
+
     self._FuncShowBtnOwnedDetail:SetActiveByHand(not isOpenTeachingActivity)
     --self.BtnOwnedDetail.gameObject:SetActiveEx(not isOpenTeachingActivity)
 end

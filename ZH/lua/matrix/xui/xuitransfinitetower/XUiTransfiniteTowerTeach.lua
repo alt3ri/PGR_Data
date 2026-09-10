@@ -23,10 +23,36 @@ function XUiTransfiniteTowerTeach:OnStart(defaultSelectCharId)
 end
 
 function XUiTransfiniteTowerTeach:OnEnable()
+    if self._IsSkipEnableAnim then
+        self._IsSkipEnableAnim = false
+        self:SkipLifeAnim("AnimEnable")
+    end
     self:Refresh()
 end
 
+function XUiTransfiniteTowerTeach:SkipLifeAnim(animName)
+    if self._SkipAnimTimer then
+        XScheduleManager.UnSchedule(self._SkipAnimTimer)
+    end
+    self._SkipAnimTimer = XScheduleManager.ScheduleNextFrame(function()
+        self._SkipAnimTimer = nil
+        self:ForceSkipToEndAnimation(animName)
+        self:FinishAnimation(animName)
+    end)
+end
+
+function XUiTransfiniteTowerTeach:OnDisable()
+    if self._SkipAnimTimer then
+        XScheduleManager.UnSchedule(self._SkipAnimTimer)
+        self._SkipAnimTimer = nil
+    end
+end
+
 function XUiTransfiniteTowerTeach:OnDestroy()
+    if self._SkipAnimTimer then
+        XScheduleManager.UnSchedule(self._SkipAnimTimer)
+        self._SkipAnimTimer = nil
+    end
     self:StopVideo()
 end
 
@@ -127,7 +153,11 @@ end
 --region 按钮回调
 
 function XUiTransfiniteTowerTeach:OnBtnEnterTeachClick()
+    self._IsSkipEnableAnim = true
     self._Control:EnterTeachStage(self._RoleDataList[self._SelectedIndex])
+    self:ForceSkipToEndAnimation("AnimDisable")
+    self:FinishAnimation("AnimDisable")
+    XEventManager.DispatchEvent(XEventId.EVENT_TRANSFINITE_TOWER_SKIP_LIFE_ANIM)
 end
 
 --endregion

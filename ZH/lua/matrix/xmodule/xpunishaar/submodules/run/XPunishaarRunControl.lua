@@ -578,7 +578,11 @@ function XPunishaarRunControl:_PrepareBattleData()
     -- 构造期排序：_Cards(pairs 序) → _SortedCards(posIndex 序)，供 SetupBattle 建实体 + GetCardLevelByIndex 读 level（#82）
     data:BuildSortedCards()
 
-    -- 进入战斗节点：打印 FightID + 玩家阵容配置（对战区卡）#战斗节点日志
+    -- 固定 seed：若未 SetSeed，GetSeed 兜底取服务器时间戳——但每次调取当前时间不一致，
+    -- 此处 SetSeed 固化首次取的值，确保打印的 seed 与后续 InitNewGame 建 env 用的 seed 一致（问题复现环境一致）#战斗种子
+    data:SetSeed(data:GetSeed())
+
+    -- 进入战斗节点：打印 FightID + Seed + 玩家阵容配置（对战区卡）#战斗节点日志
     local lineup = {}
     if cards then
         for _, card in pairs(cards) do
@@ -588,8 +592,8 @@ function XPunishaarRunControl:_PrepareBattleData()
             end
         end
     end
-    XLog.Debug(string.format("[Punishaar] 进入战斗节点 FightID=%s 阵容(%d):%s",
-            tostring(fightId), #lineup, table.concat(lineup, " ")))
+    XLog.Error(string.format("[Punishaar] 进入战斗节点 FightID=%s Seed=%s 阵容(%d):%s",
+            tostring(fightId), tostring(data:GetSeed()), #lineup, table.concat(lineup, " ")))
 end
 
 --endregion ----------private end----------

@@ -134,25 +134,35 @@ function XUiCardDragHandler:_CacheDragBaseline(eventData)
     self._DragBaselineK = 0
     self._LastFocusPos = nil
     local gc = self._Host._Control.GameControl
-    if not gc or not gc.GetDragFocusBars then
+    if not gc then
         return
     end
-    local bars = gc:GetDragFocusBars()
-    if not bars then
-        return
-    end
-    -- 源栏 = 注册栏中 DragArea==host._DragArea 者；取其 slot 格周期
-    local srcArea = self._Host._DragArea
-    local slotWidth
-    for i = 1, #bars do
-        local bar = bars[i]
-        if bar:GetDragArea() == srcArea then
-            slotWidth = bar.GetDragSlotWidth and bar:GetDragSlotWidth()
-            break
+    -- K = floor(抓取偏移 / 卡自身格周期)。卡 sizeDelta.x = unitWidth×size（XUiGridShopCard:166），perSlot=cardWidth/cardSize。
+    -- 不依赖源栏 bar slotWidth：Shop 源无注册栏（商店栏未 RegisterDragFocusBar），原 K=0 致多格卡未扣抓取偏移、
+    -- focusSlot=hitSlot 卡左缘跟指针 → 3 格卡抓中间拖 slot2 占 2,3,4 越界。Fight/Bag 源 perSlot=源栏 slot.sizeDelta.x 结果不变。#3格卡点中间修复
+    -- latent 假设：perSlot 取卡本地 sizeDelta（localScale==1 前提）；若未来给卡加动态缩放须改回 slot parent 宽度
+    local cardData = self._Host._DragCardData
+    local cardId = cardData and (cardData.CardId or cardData.TemplateId) or nil
+    local cardCfg = cardId and gc.GetTablePunishaarCard and gc:GetTablePunishaarCard(cardId, true) or nil
+    local cardSize = (cardCfg and cardCfg.Size) or 1
+    local cardTransform = self._Host.Transform
+    local cardWidth = cardTransform.sizeDelta.x or 0
+    local perSlot = cardSize > 0 and cardWidth / cardSize or 0
+    if perSlot > 0 and self._DragOffsetX then
+        -- pivot.x 鲁棒折算：_DragOffsetX 是相对 pivot 的偏移，左缘在 pivot 左 pivotX*cardWidth 处。
+        -- 折算到左缘后 floor：pivot=0（主卡）退化原式无回归；pivot=0.5（商品副卡）左半按下 _DragOffsetX<0 →
+        -- 旧式 K=-1 致 focusSlot=hitSlot+1 偏右一格，折算后 K=0，副卡单格恒落 hitSlot。#副卡落点pivot修复
+        local pivotX = cardTransform.pivot.x or 0
+        local offsetFromLeftEdge = self._DragOffsetX + pivotX * cardWidth
+        self._DragBaselineK = math.floor(offsetFromLeftEdge / perSlot)
+        -- K 语义=光标落在卡的第几格(0-based)，不得越 [0, cardSize-1]：
+        -- 副卡商品 icon 比格窄(Size=1 但 cardWidth<slotWidth)，抓右缘 floor 得 1 → focusSlot 左偏 1 格(误判)；
+        -- 多格卡抓右缘同理得 Size → clamp 回末格(Size-1)。clamp 后单格卡(含副卡)恒 K=0。#副卡窄icon误判
+        if self._DragBaselineK < 0 then
+            self._DragBaselineK = 0
+        elseif self._DragBaselineK >= cardSize then
+            self._DragBaselineK = cardSize - 1
         end
-    end
-    if slotWidth and slotWidth > 0 and self._DragOffsetX then
-        self._DragBaselineK = math.floor(self._DragOffsetX / slotWidth)
     end
 end
 
@@ -224,16 +234,6 @@ function XUiCardDragHandler:_RecomputeFocus(eventData)
         return
     end
     self._LastFocusPos = focusSlot
-    -- 临时日志：聚焦槽位 + 偏左/右（测后移除 #调试；cardArea 复用 clamp 段转换）
-    local B = gc.GetMasterCardByAreaPos and gc:GetMasterCardByAreaPos(cardArea, focusSlot)
-    if B then
-        local bCfg = gc.GetTablePunishaarCard and gc:GetTablePunishaarCard(B.TemplateId, true)
-        local bSize = (bCfg and bCfg.Size) or 1
-        local side = (focusSlot * 2 > B.StartPos * 2 + bSize - 1) and "偏右后插" or "偏左前插"
-        XLog.Debug("[DragTrace] focus=" .. focusSlot .. " B@" .. B.StartPos .. "+size" .. bSize .. " " .. side)
-    else
-        XLog.Debug("[DragTrace] focus=" .. focusSlot .. " 空格无B")
-    end
     gc:SetDragFocusTarget(barArea, focusSlot)
 end
 
@@ -270,6 +270,10 @@ function XUiCardDragHandler:_CheckCanDrag(eventData)
     XEventManager.AddEventListener(XEventId.EVENT_APPLICATION_PAUSE, self.OnApplicationPause, self)
     self:_ReparentToDragRoot()
     host._Control.GameControl:BeginDragCard(host._DragCardData, host._DragArea, host._DragSourcePos)
+    -- 通知 host 拖拽开始（host 按需覆写，如商品 grid 隐 PanelBuy）#PanelDragBuyTips
+    if host.OnDragBegin then
+        host:OnDragBegin()
+    end
     return true
 end
 
@@ -301,6 +305,17 @@ function XUiCardDragHandler:_RestorePosition()
     end
     if self._DragDefaultSibling then
         host.Transform:SetSiblingIndex(self._DragDefaultSibling)
+    end
+    -- 拖拽归位完成：派发 DragSettled。normal-end（_OnDragEndCallback）+ force-end（CancelDragIfDragging）均经此，
+    -- 单点全覆盖；购买走异步 cb→_OnDragEndCallback→本方法（等 cb 展开），取消/无效走同步（松手即展开）。
+    -- 非副卡拖拽商店栏未收起则 PanelShop no-op。#副卡拖拽收起展开
+    local gc = host._Control and host._Control.GameControl
+    if gc then
+        gc:DispatchEvent(gc.DragEventId.DragSettled)
+    end
+    -- 通知 host 拖拽结束归位（host 按需覆写，如商品 grid 恢复 PanelBuy；_RestorePosition 单点全覆盖 normal+cancel）#PanelDragBuyTips
+    if host.OnDragEnd then
+        host:OnDragEnd()
     end
 end
 

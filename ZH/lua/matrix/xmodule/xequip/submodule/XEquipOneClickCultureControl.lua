@@ -1711,7 +1711,8 @@ function XEquipOneClickCultureControl:_ExecuteResonanceSubChain(result, onFinish
     local taskList = result.ResonanceTaskList or table.empty
     local equipId = result.EquipId
     local equip = self._MainControl:GetEquip(equipId)
-    local characterId = equip and equip.CharacterId or 0
+    local canBindCharacter = equip ~= nil and XMVCA.XEquip:CanResonanceBindCharacter(equipId)
+    local characterId = canBindCharacter and equip.CharacterId or nil
     -- 五星武器不选技能
     local isFiveStar = equip ~= nil and IsFiveStarWeapon(equip)
     local index = 1

@@ -77,7 +77,7 @@ function XUiRoleCultureDetailMain:AdaptScreenAspectRatio()
     if not nearRoot then
         return
     end
-    local cameraNames = { "CamNearMainPad", "CamNearMainStandard", "CamNearMainWidescreen"}
+    local cameraNames = { "CamNearMainPad", "CamNearMainStandard", "CamNearMainWidescreen", "CamNearMainSuperWidescreen" }
     local ratios = string.Split(CS.XGame.ClientConfig:GetString("PassportModelAdapt"))
 
     local width = CS.XUiManager.RealScreenWidth
@@ -87,7 +87,7 @@ function XUiRoleCultureDetailMain:AdaptScreenAspectRatio()
     local currentIndex = 1
     for _, targetRatio in pairs(ratios) do
         if realRatio > tonumber(targetRatio) then
-            currentIndex = currentIndex + 1
+            currentIndex = math.min(currentIndex + 1, #cameraNames)
         else
             break
         end

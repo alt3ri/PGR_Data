@@ -302,7 +302,8 @@ function XTransfiniteTowerAgency:ShowReward(winData, playEndStory)
         return
     end
     XLuaUiManager.OpenWithCloseCallback("UiSettleWin", function()
-        XLuaUiManager.CloseAllUpperUi("UiTransfiniteTowerMain")
+        -- 直接Remove，避免播动效
+        XLuaUiManager.Remove("UiTransfiniteTowerStage")
     end, winData)
 end
 

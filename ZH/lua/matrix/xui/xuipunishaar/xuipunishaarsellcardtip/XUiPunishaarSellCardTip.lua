@@ -59,11 +59,21 @@ end
 --- 刷背包视图（显腾位后状态）+ 触发 gc:TryAutoPlacePendingReward 自动找位放置（空槽充足即入背包）。
 function XUiPunishaarSellCardTip:_OnMasterCardChange()
     if self._ComBottomBag then
-        self._ComBottomBag:Refresh()
+        self._ComBottomBag:Refresh()                    -- 刷战斗区(FightArea 卡列表)
+        self._ComBottomBag:RefreshBagLayoutIfShow()     -- 刷暂存区(Bag _BagLayout,若展开)
     end
     local gc = self._Control and self._Control.GameControl
-    if gc then
-        gc:TryAutoPlacePendingReward()
+    -- 仅在主卡保留环节活跃 + 无放置在途时(丢弃→放置链路),尝试放置 + 弹丢弃 tip。
+    -- 放置在途(_RewardHandling=true)→ 此 MasterCardChange 来自放置后服务端回流(非玩家丢弃),
+    -- 不弹丢弃 tip(避免顶替放置成功 tip);流程结束(_RewardPlacementActive=false)同仅刷背包
+    if gc and gc:IsRewardPlacementActive() and not gc:IsRewardHandling() then
+        local placed = gc:TryAutoPlacePendingReward()
+        if not placed then
+            local tip = XMVCA.XPunishaar:GetClientStringByKey("DiscardMasterCardSuccess")
+            if not string.IsNilOrEmpty(tip) then
+                XUiManager.TipMsg(tip)
+            end
+        end
     end
 end
 
@@ -179,7 +189,10 @@ function XUiPunishaarSellCardTip:Refresh(data)
             local cardId = data.cardId
             local cardCfg = self._Control:GetTablePunishaarCard(cardId, true)
             local size = cardCfg and cardCfg.Size or 1
-            self._UiPunishaarGridCard:RefreshAsEquipped({ TemplateId = cardId, Level = data.level or 1 }, size)
+            -- 借背包栏(ComBottomBag)的 GridSlot 槽位宽作 unitWidth（奖励卡 grid 无自身 slot，
+            -- RefreshAsEquipped 无 slot→_GetSlotUnitWidth 返 nil→_ApplyWidthBySlot no-op→尺寸不跟配置 Size）
+            local slot = self._ComBottomBag and self._ComBottomBag.GridSlot
+            self._UiPunishaarGridCard:RefreshAsEquipped({ TemplateId = cardId, Level = data.level or 1 }, size, slot)
         end
         if self.BtnSkipReward then
             self.BtnSkipReward.gameObject:SetActiveEx(true)

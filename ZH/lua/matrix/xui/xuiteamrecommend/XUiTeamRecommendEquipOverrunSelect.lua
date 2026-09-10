@@ -35,8 +35,7 @@ end
 function XUiTeamRecommendEquipOverrunSelect:Refresh()
     self.TxtTitle.gameObject:SetActiveEx(false)
     self.TxtPreviewTitle.gameObject:SetActiveEx(true)
-    self.BtnCanActive.gameObject:SetActiveEx(true)
-    self.BtnCanActive:SetDisable(true)
+    self.BtnCanActive.gameObject:SetActiveEx(false)
     self.BtnChange.gameObject:SetActiveEx(false)
     self.BtnActive.gameObject:SetActiveEx(false)
     self.TxtSpend.gameObject:SetActiveEx(false)
@@ -107,13 +106,8 @@ function XUiTeamRecommendEquipOverrunSelect:OnDynamicTableEvent(event, index, gr
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         local suitData = self.SuitDataList[index]
         grid:Refresh(suitData)
-        grid:SetCurSelect(suitData.Id == self.CurSelectSuitId)
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_TOUCHED then
         self.CurSelectSuitId = self.SuitDataList[index].Id
-        for _, item in pairs(self.DynamicTable:GetGrids()) do
-            item:SetCurSelect(false)
-        end
-        grid:SetCurSelect(true)
         self:RefreshSuitDetail(self.SuitDataList[index])
     end
 end

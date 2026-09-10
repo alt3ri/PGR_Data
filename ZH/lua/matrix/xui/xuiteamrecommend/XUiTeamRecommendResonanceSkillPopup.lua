@@ -176,7 +176,14 @@ function XUiTeamRecommendResonanceSkillPopup:RefreshTargetSkillList()
 
     local characterId = self.RecommendCharData.CharacterId
     local skillInfoList = XMVCA.XEquip:GetResonancePreviewSkillInfoListByTemplateId(targetSlotData.EquipTemplateId, characterId, self.SelectPos) or {}
-    local actualSkillInfo = self:GetActualSkillInfo(targetSlotData)
+    local wearingEquipId = self:GetWearingAwarenessEquipId(targetSlotData)
+    local actualSkillInfo
+    local actualBindCharacterId = 0
+    if wearingEquipId then
+        actualSkillInfo = XMVCA.XEquip:GetResonanceSkillInfo(wearingEquipId, self.SelectPos)
+        actualBindCharacterId = XMVCA.XEquip:GetResonanceBindCharacterId(wearingEquipId, self.SelectPos)
+    end
+    local isBindOtherCharacter = XTool.IsNumberValid(actualBindCharacterId) and actualBindCharacterId ~= characterId
     local isAttackTargetScheme = self:IsAttackTargetSchemeSelected()
     local configuredTargetSkillInfo = self:GetConfiguredTargetSkillInfo(targetSlotData)
     local resonanceControl = self._Control.ResonanceControl
@@ -202,15 +209,30 @@ function XUiTeamRecommendResonanceSkillPopup:RefreshTargetSkillList()
     end)
 
     for index, skillInfo in ipairs(skillInfoList) do
+        local isResonance = not isBindOtherCharacter and skillInfo:IsSame(actualSkillInfo)
         self:GetTargetSkillGrid(index):Refresh({
             SkillInfo = skillInfo,
             IsTarget = isTargetMap[skillInfo],
-            ActualSkillInfo = actualSkillInfo,
+            IsResonance = isResonance,
+            IsBindOtherCharacter = false,
             Pos = self.SelectPos,
         })
     end
 
-    for index = #skillInfoList + 1, #self.TargetSkillGridList do
+    local skillGridCount = #skillInfoList
+    if isBindOtherCharacter then
+        skillGridCount = skillGridCount + 1
+        self:GetTargetSkillGrid(skillGridCount):Refresh({
+            SkillInfo = actualSkillInfo,
+            IsTarget = false,
+            IsResonance = false,
+            IsBindOtherCharacter = true,
+            BindCharacterId = actualBindCharacterId,
+            Pos = self.SelectPos,
+        })
+    end
+
+    for index = skillGridCount + 1, #self.TargetSkillGridList do
         self.TargetSkillGridList[index]:Close()
     end
 end
@@ -280,15 +302,6 @@ function XUiTeamRecommendResonanceSkillPopup:GetConfiguredTargetSkillInfo(target
     end
 
     return XMVCA.XEquip:CreateResonanceSkillInfo(resonanceData.ResonanceType, resonanceData.SkillId)
-end
-
-function XUiTeamRecommendResonanceSkillPopup:GetActualSkillInfo(targetSlotData)
-    local wearingEquipId = self:GetWearingAwarenessEquipId(targetSlotData)
-    if not wearingEquipId then
-        return nil
-    end
-
-    return XMVCA.XEquip:GetResonanceSkillInfo(wearingEquipId, self.SelectPos)
 end
 
 function XUiTeamRecommendResonanceSkillPopup:OnSelectTargetResonance(site, pos)

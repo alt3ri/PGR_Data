@@ -124,6 +124,7 @@ end
 function XUiEquipAwarenessEnhanceMain:OnNotify(evt)
     if evt == XEventId.EVENT_EQUIP_AWARENESS_ENHANCE_REFRESH then
         self:Refresh()
+        XMVCA.XTeamRecommend:GetServerCharacterTargetProgressAndCheckFinishByCharacterId(self.CharacterId)
     end
 end
 

@@ -51,26 +51,44 @@ function XPunishaarInstruction:Execute(vm, damageDict)
     end
     -- ① M1 守卫：已死目标不再落地（post-death overkill 取消，含 dict 登记也跳过）#75 M1
     local hp = vm:Read(self.target, STECustomEnum.FieldNameType.HP)
-
-    -- 血量读取异常或血量归零则不处理
     if not XTool.IsNumberValidEx(hp) or hp <= 0 then
+        return
+    end
+
+    -- 甄别 0 段攻击/0 伤害：不消护盾不扣 HP（防骗盾——0 伤害消护盾层属骗盾；上游 AttackTarget 已拦，此处兜底）#护盾按段消
+    if self.attackTimes <= 0 or self.atk <= 0 then
         return
     end
 
     -- ② 登记 TickDamageDealtDict[owner] += attackTimes（land-time；护盾不影响计数）
     vm:PropSet(damageDict, self.owner, (vm:PropGet(damageDict, self.owner) or 0) + self.attackTimes)
-    -- ③ 重读护盾（实时）
+    -- ③ 重读护盾（实时）；单段伤害 = 总/段
     local noHurtTimes = vm:Read(self.target, STECustomEnum.FieldNameType.NoHurtTimes) or 0
+    local atkPerHit = math.floor(self.atk / self.attackTimes)  -- 单段伤害（floor 保整数，对齐 HP 整数不变量 Effect:130；atk=总=单段×段数精确整除，floor 兜底防未来调用方破坏总契约致漂移）
     -- ④ 分支
     if noHurtTimes > 0 and self.atkType ~= STECustomEnum.ConfigATKType.IgnoreNoHurtTimes then
-        vm:Store(self.target, STECustomEnum.FieldNameType.NoHurtTimes, STEEnum.ValChangeType.Subtract, 1)
-        Effect._EmitShieldChanged(vm, self.target)
+        -- 按段消护盾：护盾抵消段数 = min(攻击段数, 护盾层数)；每段消 1 层，突破后剩段扣 HP
+        local shieldConsume = math.min(self.attackTimes, noHurtTimes)
+        if shieldConsume > 0 then
+            vm:Store(self.target, STECustomEnum.FieldNameType.NoHurtTimes, STEEnum.ValChangeType.Subtract, shieldConsume)
+            Effect._EmitShieldChanged(vm, self.target)
+        end
+        -- 突破护盾后扣 HP：总伤害减护盾抵消段（self.atk - atkPerHit*shieldConsume），
+        -- 保留 floor 余数（与无护盾路径 self.atk 口径一致——总减护盾抵消部分，余数归 HP）#护盾按段消
+        local hpHits = self.attackTimes - shieldConsume
+        if hpHits > 0 then
+            vm:Store(self.target, STECustomEnum.FieldNameType.HP, STEEnum.ValChangeType.Subtract, self.atk - atkPerHit * shieldConsume)
+            Effect._EmitHpChanged(vm, self.target)
+            if atkPerHit > 0 then
+                env:AppendDamageLanded(self.target, self.owner, hpHits, math.floor(atkPerHit))
+            end
+        end
     else
+        -- 无护盾/真伤（IgnoreNoHurtTimes）：全段扣 HP
         vm:Store(self.target, STECustomEnum.FieldNameType.HP, STEEnum.ValChangeType.Subtract, self.atk)
         Effect._EmitHpChanged(vm, self.target)
-        -- 落地伤害记飘字缓冲（扣血同帧，帧末 DrainDamageLanded 取；护盾路径不计）
-        if self.attackTimes > 0 then  -- Init 已守>0，此处兜底防除零
-            env:AppendDamageLanded(self.target, self.owner, self.attackTimes, math.floor(self.atk / self.attackTimes))
+        if atkPerHit > 0 then
+            env:AppendDamageLanded(self.target, self.owner, self.attackTimes, math.floor(atkPerHit))
         end
     end
 end

@@ -18,6 +18,8 @@
 ---@field private _SkillLevelUpCell XUiEquipPartnerEnhanceProgressCell
 ---@field private _CommitFlowRoot XFlowTreeRoot
 ---@field private _HasCultureSuccess boolean
+---@field private _IsCultureRecorded boolean
+---@field private _InitialCultureState table
 local XUiEquipPartnerEnhanceProgressPopup = XLuaUiManager.Register(XLuaUi, "UiEquipPartnerEnhanceProgressPopup")
 
 local XUiEquipPartnerEnhanceProgressCell = require("XUi/XUiPartnerOneKeyCulture/XUiEquipPartnerEnhanceProgressPopup/XUiEquipPartnerEnhanceProgressCell")
@@ -44,6 +46,8 @@ end
 
 function XUiEquipPartnerEnhanceProgressPopup:OnStart(...)
     self:SetHasCultureSuccess(false)
+    self._IsCultureRecorded = false
+    self:_InitCultureRecordData()
     self:_Refresh()
     self:_StartCommitFlow()
 end
@@ -331,8 +335,10 @@ end
 
 ---@param result XFlowTreeEnum.Result 行为树执行结果
 function XUiEquipPartnerEnhanceProgressPopup:_Finish(result)
+-- 这里一起处理 打断状态 和 普通状态
     local XFlowTreeEnum = require("XFlowTree/XFlowTreeEnum")
     self:_SetFinishView(result == XFlowTreeEnum.Result.Succeed)
+    self:_RecordCultureFinish(result)
     self:_NotifyOneKeyCultureFinish()
 end
 
@@ -340,5 +346,61 @@ function XUiEquipPartnerEnhanceProgressPopup:_NotifyOneKeyCultureFinish()
     self._Control:GetOneKeyCultureMainControl():GetBaseCostControl():CalcAllCostData()
     self._Control:DispatchEvent(XMVCA.XPartner.EventIds.EVENT_ONE_KEY_CULTURE_FINISH)
 end
+
+function XUiEquipPartnerEnhanceProgressPopup:_GetPartnerCultureState(partner)
+    local skillLevels = {}
+    for _, skillGroup in ipairs(partner:GetCarryMainSkillGroupList()) do
+        skillLevels[skillGroup:GetId()] = skillGroup:GetLevel()
+    end
+    for _, skillGroup in ipairs(partner:GetCarryPassiveSkillGroupList()) do
+        skillLevels[skillGroup:GetId()] = skillGroup:GetLevel()
+    end
+
+    return {
+        level = partner:GetLevel(),
+        quality = partner:GetQuality(),
+        skill_levels = skillLevels,
+    }
+end
+
+function XUiEquipPartnerEnhanceProgressPopup:_InitCultureRecordData()
+    local partner = self._Control:GetOneKeyCultureMainControl():GetCurPartnerEntity()
+    self._InitialCultureState = self:_GetPartnerCultureState(partner)
+end
+
+---@param result XFlowTreeEnum.Result 行为树执行结果
+function XUiEquipPartnerEnhanceProgressPopup:_RecordCultureFinish(result)
+    if self._IsCultureRecorded or not self._InitialCultureState then
+        return
+    end
+    self._IsCultureRecorded = true
+
+    local XFlowTreeEnum = require("XFlowTree/XFlowTreeEnum")
+    local XPartnerEnum = XMVCA.XPartner.Enum
+    local mainControl = self._Control:GetOneKeyCultureMainControl()
+    local commitControl = mainControl:GetCommitControl()
+    local partner = mainControl:GetCurPartnerEntity()
+    local finalState = self:_GetPartnerCultureState(partner)
+
+    local data = {
+        partner_id = partner:GetTemplateId(),
+        include_level = commitControl:IsCultureSelected(XPartnerEnum.CultureType.LevelUp),
+        include_evolution = commitControl:IsCultureSelected(XPartnerEnum.CultureType.StarUp) ,
+        include_skill = commitControl:IsCultureSelected(XPartnerEnum.CultureType.SkillLevelUp) ,
+        is_interrupt = result == XFlowTreeEnum.Result.Interrupt,
+
+        is_reached = {
+            level = not mainControl:IsNeedCulture(XPartnerEnum.CultureType.LevelUp) ,
+            evolution = not mainControl:IsNeedCulture(XPartnerEnum.CultureType.StarUp) ,
+            skill = not mainControl:IsNeedCulture(XPartnerEnum.CultureType.SkillLevelUp),
+        },
+        partner_init_state = self._InitialCultureState,
+        partner_final_state = finalState,
+    }
+
+    -- XLog.Debug("[PartnerOneClickCulture] Record data:", data)
+    CS.XRecord.Record(data, "1000004", "PartnerOneClickCulture")
+end
+
 
 return XUiEquipPartnerEnhanceProgressPopup

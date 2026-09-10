@@ -369,13 +369,17 @@ function XSubPackageAgency:CreateResListSizeInfo(resIds)
     local totalSize = 0
     for _, resId in ipairs(resIds) do
         local indexInfo = self._SubIndexInfo[resId]
-        for _, info in pairs(indexInfo) do
-            local fileName = info[1]
-            if not fileSizeMap[fileName] then
-                local fileSize = info[3]
-                fileSizeMap[fileName] = fileSize
-                totalSize = totalSize + fileSize
+        if indexInfo then
+            for _, info in pairs(indexInfo) do
+                local fileName = info[1]
+                if not fileSizeMap[fileName] then
+                    local fileSize = info[3]
+                    fileSizeMap[fileName] = fileSize
+                    totalSize = totalSize + fileSize
+                end
             end
+        else
+            CS.XLog.Warning(string.format("XSubPackageAgency:ResId %d 没有索引信息", resId))
         end
     end
     return {
@@ -1500,6 +1504,13 @@ function XSubPackageAgency:CheckStageIdListResIdListDownloadComplete(stageIdList
             for _, resId in ipairs(config.ResIdList) do
                 resIdSet[resId] = true -- 去重
             end
+        end
+    end
+
+    -- 过滤无实质下载内容的ResId（总大小<=0，即0b），避免在视频拦截弹窗显示条目并阻塞进关
+    for resId, _ in pairs(resIdSet) do
+        if self:GetResTotalSize(resId) <= 0 then
+            resIdSet[resId] = nil
         end
     end
 

@@ -148,8 +148,34 @@ function XUiPunishaarFightMain:_OnShopPanelAnimEnable()
 end
 
 --- 商店栏收起动效：播 PanelShopDisable 根动画（BtnFoldUp/背包展开前/PickHost进入）。#商店栏动效
+--- PickHost 进入收起后，动画 cb 调 _OnShopPanelAnimDisableDone→gc:FlushPendingPickHostTip 开弹窗（用户要求：动画回调后再开）。#副卡购买收起后开弹窗
 function XUiPunishaarFightMain:_OnShopPanelAnimDisable()
-    self:PlayAnimation("PanelShopDisable")
+    local isBegin = false
+    
+    self:PlayAnimation("PanelShopDisable", function()
+        self:_OnShopPanelAnimDisableDone()
+    end, function()
+        -- 播放成功了才加遮罩
+        XLuaUiManager.SetMask(true)
+        isBegin = true
+    end)
+
+    if not isBegin then
+        self:_OnShopPanelAnimDisableDone(true)
+    end
+end
+
+--- PanelShopDisable 动画完成回调：触发副卡详情购买收起后的延迟开 PickHost 弹窗。
+--- 非副卡购买收起（BtnFoldUp/背包展开）_PendingPickHostTipOpen=false，FlushPendingPickHostTip no-op。#副卡购买收起后开弹窗
+function XUiPunishaarFightMain:_OnShopPanelAnimDisableDone(noMaskClear)
+    local gc = self._Control and self._Control.GameControl
+    if gc and gc.FlushPendingPickHostTip then
+        gc:FlushPendingPickHostTip()
+    end
+
+    if not noMaskClear then
+        XLuaUiManager.SetMask(false)
+    end
 end
 
 function XUiPunishaarFightMain:OnEnable()

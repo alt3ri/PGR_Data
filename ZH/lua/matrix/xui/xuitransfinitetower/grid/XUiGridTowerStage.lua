@@ -47,6 +47,10 @@ function XUiGridTowerStage:InitMemberSlots()
     end
 end
 
+function XUiGridTowerStage:PlayAnimation()
+    self.GridTowerStageEnable:PlayTimelineAnimation()
+end
+
 ---刷新塔层项
 ---@param stageCfgId number 关卡配置id
 function XUiGridTowerStage:Refresh(stageCfgId)

@@ -29,6 +29,18 @@ function XUiTransfiniteTowerBattleRoleRoomProxy:AOPOnCharacterClickBefore(rootUi
     return false
 end
 
+---队伍锁定时不允许编辑队伍
+---@return boolean
+function XUiTransfiniteTowerBattleRoleRoomProxy:CheckIsCanEditorTeam(stageId, showTip)
+    if self._IsTeamLocked then
+        if showTip then
+            XUiManager.TipText("BattleRoleRoomRoleCannotEditTips")
+        end
+        return false
+    end
+    return XUiBattleRoleRoomDefaultProxy.CheckIsCanEditorTeam(self, stageId, showTip)
+end
+
 ---角色详情界面用超限启航定制 Proxy
 function XUiTransfiniteTowerBattleRoleRoomProxy:GetRoleDetailProxy()
     return XUiTransfiniteTowerBattleRoomRoleDetailProxy

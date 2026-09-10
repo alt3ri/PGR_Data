@@ -313,16 +313,25 @@ end
 
 --region ----------副卡选宿主子流程（PickingHost）#69----------
 
---- 进入副卡选宿主子流程：设 ctx + 派发事件让 UI 刷副作用（收商店栏+锁背包+主卡 Disable）+ 打开 NormalPop 承载弹窗(预留)。
---- 本玩法专属详情页购买路径（与拖拽路径有意不同：覆盖不二次确认，见方案 Q2）。
---- Control 只派发事件，UI 订阅自刷；NormalPop 弹窗本体 prefab 后补，现预留打开/关闭流程。
+--- 进入副卡选宿主子流程：设 ctx + 派发 PickHostChange 让 UI 收商店栏（FoldTopShop 播 PanelShopAnimDisable），
+--- **延迟开弹窗**：收起动画 cb 完成后由 FightMain:_OnShopPanelAnimDisableDone 调 FlushPendingPickHostTip 开弹窗
+--- （用户要求：先收起商品栏、动画回调后再开弹窗）。已收起态（玩家先开背包互斥折叠）无动画，PanelShop 直接 flush 兜底。#副卡购买收起后开弹窗
 ---@param goodsIndex number 商品槽位 index（source=Goods 副卡）
 ---@param subCardId number 待购入副卡模板 Id
 function XPunishaarGameControl:EnterPickHost(goodsIndex, subCardId)
     self._PickingHostCtx = { goodsIndex = goodsIndex, subCardId = subCardId }
-    -- NormalPop 承载弹窗（通用：选宿主/奖励位置不足）透明底不挡背包编排 #69
-    XLuaUiManager.Open("UiPunishaarSellCardTip", { mode = "PickHost", subCardId = subCardId, goodsIndex = goodsIndex })
+    self._PendingPickHostTipOpen = true  -- 标记待开弹窗，收起动画 cb / 已收起兜底时消费
     self:DispatchEvent(self.ShopEventId.PickHostChange, true)
+end
+
+--- 开 PickHost 弹窗（收起动画完成 cb 或已收起态直接调）。幂等：无 pending no-op。
+--- 由 FightMain:_OnShopPanelAnimDisableDone（动画 cb）或 PanelShop:_OnPickHostChange wasFolded 分支调用。#副卡购买收起后开弹窗
+function XPunishaarGameControl:FlushPendingPickHostTip()
+    if not self._PendingPickHostTipOpen then
+        return
+    end
+    self._PendingPickHostTipOpen = nil
+    XLuaUiManager.Open("UiPunishaarSellCardTip", { mode = "PickHost", subCardId = self:GetPickingSubCardId(), goodsIndex = self:GetPickingGoodsIndex() })
 end
 
 --- 退出副卡选宿主子流程：清 ctx + 派发事件让 FightMain 还原（展商店栏）+ 关弹窗。
@@ -332,6 +341,7 @@ function XPunishaarGameControl:ExitPickHost()
         return
     end
     self._PickingHostCtx = nil
+    self._PendingPickHostTipOpen = nil  -- 取消延迟开（动画 cb 前退出防误开）#副卡购买收起后开弹窗
     XLuaUiManager.Close("UiPunishaarSellCardTip")
     self:DispatchEvent(self.ShopEventId.PickHostChange, false)
 end

@@ -44,6 +44,19 @@ end
 
 function XUiPunishaarFightMainPanelTopShop:OnStart(...)
     self:InitComponents()
+    self._IsFolded = false  -- 商店栏展开/收起态（始终 Open 不 Close，靠动画收起）；收起态跳过刷新，展开时手动 Refresh #副卡拖拽收起展开
+end
+
+--- 商店栏是否处于收起态（PanelShop.FoldTopShop/ExpandTopShop 设）。
+---@return boolean
+function XUiPunishaarFightMainPanelTopShop:IsFolded()
+    return self._IsFolded == true
+end
+
+--- 设置收起/展开态（PanelShop.FoldTopShop/ExpandTopShop 调；展开须在 Refresh 前设 false）。
+---@param folded boolean
+function XUiPunishaarFightMainPanelTopShop:SetFolded(folded)
+    self._IsFolded = folded == true
 end
 
 function XUiPunishaarFightMainPanelTopShop:OnEnable()
@@ -105,6 +118,10 @@ end
 
 --- 金币变动：刷刷新按钮 + 局部刷商品卡价格颜色（不重建列表，只刷价格域；grid 未开/无 _Goods 时 RefreshPrice 自行 no-op）。#商品价格颜色
 function XUiPunishaarFightMainPanelTopShop:_OnGoldChange()
+    -- 收起态跳过价格刷新（展开时 ExpandTopShop→Refresh 补刷）#副卡拖拽收起展开
+    if self._IsFolded then
+        return
+    end
     self:_RefreshRefreshBtn()
     if self._CardList then
         -- ForEachActive 只遍历在用项（已 Close 的不在其中），无需再判 IsNodeShow
@@ -126,6 +143,10 @@ function XUiPunishaarFightMainPanelTopShop:_RefreshRefreshBtn()
 end
 
 function XUiPunishaarFightMainPanelTopShop:Refresh()
+    -- 收起态跳过刷新（商店栏靠动画收起不 Close、_IsNodeShow 仍 true；展开时 ExpandTopShop 手动调本方法补刷）#副卡拖拽收起展开
+    if self._IsFolded then
+        return
+    end
     local goods = self._Control:GetCurrentShopGoods()
     if not goods then return end
 

@@ -118,14 +118,13 @@ function XUiGridShopCard:_SetOutlineSelected(isSelected)
         if cardCfg then
             local gc = self._Control.GameControl
             local sprite = gc and CardBgSettingsReader.GetOutlineSprite(gc, cardCfg.Type, cardCfg.Size) or nil
-            if sprite and show.RImgOutline then
-                show.RImgOutline:SetRawImage(sprite)
-            end
-            show.RImgOutlineGroup.gameObject:SetActiveEx(sprite ~= nil)
+
+            self.CardShowNormal:RefreshOutlineShow(true, sprite)
+            return
         end
-    else
-        show.RImgOutlineGroup.gameObject:SetActiveEx(false)
     end
+
+    self.CardShowNormal:RefreshOutlineShow(false)
 end
 
 --- 切换正常态 / 禁用态：转发给 CardShow 控其内部 PnlDisable 半透明遮罩显隐（#71）。
@@ -270,6 +269,9 @@ function XUiGridShopCard:Refresh(goods, goodsIndex, slot)
         end
         -- 商品态默认非置灰（遮罩复位，防 grid 复用残留 #71）
         self:SetDisable(false)
+        -- 刷新重置隐藏外发光
+        self.CardShowNormal:RefreshOutlineShow(false)
+        
         if self.CardShowNormal then
             self.CardShowNormal:RefreshAsGoods(goods)
         end
@@ -585,6 +587,21 @@ function XUiGridShopCard:SetBlocksRaycasts(value)
 end
 
 --endregion
+
+--- 拖拽开始钩子（由 XUiCardDragHandler 在真拖拽触发时调）。商品模式隐 PanelBuy（购买区跟拖拽走无意义）#PanelDragBuyTips
+function XUiGridShopCard:OnDragBegin()
+    if self._Goods and self.PanelBuy then
+        self.PanelBuy.gameObject:SetActiveEx(false)
+    end
+end
+
+--- 拖拽结束归位钩子（由 XUiCardDragHandler 在 _RestorePosition 末尾调，正常结束+取消单点全覆盖）。
+--- 商品模式恢复 PanelBuy（购买失败/取消归位恢复；购买成功 grid 已被 Refresh 重设 PanelBuy，此处 if _Goods 重复显 no-op）#PanelDragBuyTips
+function XUiGridShopCard:OnDragEnd()
+    if self._Goods and self.PanelBuy then
+        self.PanelBuy.gameObject:SetActiveEx(true)
+    end
+end
 
 function XUiGridShopCard:OnDestroy()
     if self._DragHandler then

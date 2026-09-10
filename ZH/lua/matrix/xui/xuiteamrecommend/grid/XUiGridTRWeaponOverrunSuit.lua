@@ -23,10 +23,8 @@ function XUiGridTRWeaponOverrunSuit:Refresh(suitData)
     self.TagNotActive.gameObject:SetActiveEx(false)
     self.TagBind.gameObject:SetActiveEx(suitData.IsEquipBoundSuit)
     self.TagNotBind.gameObject:SetActiveEx(not suitData.IsTarget and not suitData.IsEquipBoundSuit)
+    self.Select.gameObject:SetActiveEx(false)
 end
 
-function XUiGridTRWeaponOverrunSuit:SetCurSelect(isCurSelect)
-    self.Select.gameObject:SetActiveEx(isCurSelect)
-end
 
 return XUiGridTRWeaponOverrunSuit

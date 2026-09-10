@@ -42,6 +42,16 @@ function XUiPunishaarFightMainPanelBattleCardList:_RefreshBtnBagCapacity()
         self._BagCapacityList = XTool.XListNew()
     end
     local used = self._Control:FillBagAreaCards(self._BagCapacityList)
+    -- 多格卡占多格：used 改为格子数（sum card.Size）而非卡牌数 #背包容量格子数
+    local slotUsed = 0
+    for i = 1, used do
+        local card = self._BagCapacityList:GetValueByIndex(i)
+        if card then
+            local cfg = self._Control:GetTablePunishaarCard(card.TemplateId, true)
+            slotUsed = slotUsed + ((cfg and cfg.Size) or 1)
+        end
+    end
+    used = slotUsed
     local fmt = self._Control:GetBagCapacityText()
     local capacityText
     if not string.IsNilOrEmpty(fmt) then

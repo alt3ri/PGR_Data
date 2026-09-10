@@ -37,8 +37,7 @@ end
 ---@field IsChoose boolean 强化功能是否参与一键养成
 ---@field IsEmptyState boolean 当前功能是否不可参与一键养成
 ---@field DefaultTitleColor UnityEngine.Color 标题默认颜色
----@field DefaultPreviewColor UnityEngine.Color 预览文本默认颜色
----@field DefaultArrowColor UnityEngine.Color 箭头默认颜色
+---@field DefaultPreviewColor UnityEngine.Color 预览文本和箭头的默认颜色
 local XUiPanelAwarenessOneClickStrengthen = XClass(XUiNode, "XUiPanelAwarenessOneClickStrengthen")
 
 -- 初始化强化面板运行期缓存和默认选择状态
@@ -48,7 +47,6 @@ function XUiPanelAwarenessOneClickStrengthen:OnStart()
     self.IsChoose = self._Control.OneClickAutoSettingControl:GetSetting(XMVCA.XEquip.Enum.OneClickAutoSettingType.AwarenessLevel)
     self.DefaultTitleColor = self.UiTxtTitle.color
     self.DefaultPreviewColor = self.UiTxtPreview.color
-    self.DefaultArrowColor = self.ImgArrow.color
     self:InitComponents()
 end
 
@@ -296,8 +294,9 @@ function XUiPanelAwarenessOneClickStrengthen:RefreshMaterialState(isMaterialNotE
     local isBreakIconVisible = self.IsChoose and not isMaterialNotEnough
     self.ImgBreakIcon.gameObject:SetActiveEx(isBreakIconVisible)
     self.UiTxtTitle.color = self.IsEmptyState and EMPTY_CONTENT_TITLE_COLOR or self.DefaultTitleColor
-    self.UiTxtPreview.color = self.IsEmptyState and EMPTY_CONTENT_TITLE_COLOR or self.DefaultPreviewColor
-    self.ImgArrow.color = self.IsEmptyState and EMPTY_CONTENT_TITLE_COLOR or self.DefaultArrowColor
+    local previewColor = self.IsEmptyState and EMPTY_CONTENT_TITLE_COLOR or self.DefaultPreviewColor
+    self.UiTxtPreview.color = previewColor
+    self.ImgArrow.color = previewColor
     if isMaterialNotEnough then
         self.UiTxtPreview.text = XUiHelper.GetText("AwarenessOneClickMaterialNotEnough")
         self:RefreshNoneText()

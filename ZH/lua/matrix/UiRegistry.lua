@@ -2558,6 +2558,7 @@ local UiRegistry = {
     UiTeamRecommendMain = "XUi/XUiTeamRecommend/XUiTeamRecommendMain",
     UiTeamRecommendDetail = "XUi/XUiTeamRecommend/XUiTeamRecommendDetail",
     UiTeamRecommendRoleTargetDetail = "XUi/XUiTeamRecommend/XUiTeamRecommendRoleTargetDetail",
+    UiEquipGuideSuccess = "XUi/XUiTeamRecommend/XUiEquipGuideSuccess",
     UiTeamRecommendAwarenessTipsPopup = "XUi/XUiTeamRecommend/XUiTeamRecommendAwarenessTipsPopup",
     UiTeamRecommendEquipItemInfo = "XUi/XUiTeamRecommend/XUiTeamRecommendEquipItemInfo",
     UiTeamRecommendResonanceSkillPopup = "XUi/XUiTeamRecommend/XUiTeamRecommendResonanceSkillPopup",

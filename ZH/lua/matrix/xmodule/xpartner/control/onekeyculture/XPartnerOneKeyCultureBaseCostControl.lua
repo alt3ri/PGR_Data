@@ -104,7 +104,8 @@ function XPartnerOneKeyCultureBaseCostControl:GetStarUpPartnerHaveCount()
     local looseChips = XPartnerUtil.GetChipHaveCount(chipItemId)
     local oreChips = 0
     if self._MainControl:IsAutoExchange() then
-        oreChips = XPartnerUtil.GetOreExchangeChipCount(chipItemId)
+        local maxOreChips = self:GetStarUpPartnerNeedCount() * chipPerPartner
+        oreChips = math.min(XPartnerUtil.GetOreExchangeChipCount(chipItemId), maxOreChips)
     end
 
     local totalChips = ownFoodChips + looseChips + oreChips

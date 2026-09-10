@@ -189,6 +189,17 @@ function XUiComShopCardShow:RefreshAsEquipped(card)
     end
 end
 
+function XUiComShopCardShow:RefreshOutlineShow(isShow, rimg)
+    if self.RImgOutlineGroup then
+        if isShow and not string.IsNilOrEmpty(rimg) and self.RImgOutline then
+            self.RImgOutlineGroup.gameObject:SetActiveEx(true)
+            self.RImgOutline:SetRawImage(rimg)
+        else
+            self.RImgOutlineGroup.gameObject:SetActiveEx(false)
+        end
+    end
+end
+
 --- 脏则按缓存的模式分派到对应私有刷新，再清脏。分派读缓存，但真正的 _DoRefreshAsXxx 无数据感知。
 function XUiComShopCardShow:_FlushIfDirty()
     if not self._Dirty then

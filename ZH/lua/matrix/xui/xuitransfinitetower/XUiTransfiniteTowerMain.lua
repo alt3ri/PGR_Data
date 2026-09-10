@@ -49,16 +49,47 @@ function XUiTransfiniteTowerMain:OnActivityClosed(isClose)
 end
 
 function XUiTransfiniteTowerMain:OnEnable()
+    XEventManager.AddEventListener(XEventId.EVENT_TRANSFINITE_TOWER_SKIP_LIFE_ANIM, self.OnSkipLifeAnim, self)
+    if self._IsSkipEnableAnim then
+        self._IsSkipEnableAnim = false
+        self:ScheduleSkipAnim("AnimEnable")
+    end
     self:Refresh()
     XMVCA.XFunction:EnterFunction(XFunctionManager.FunctionName.TransfiniteTower)
 end
 
+function XUiTransfiniteTowerMain:OnSkipLifeAnim()
+    self._IsSkipEnableAnim = true
+    self:ForceSkipToEndAnimation("AnimDisable")
+    self:FinishAnimation("AnimDisable")
+end
+
+function XUiTransfiniteTowerMain:ScheduleSkipAnim(animName)
+    if self._SkipAnimTimer then
+        XScheduleManager.UnSchedule(self._SkipAnimTimer)
+    end
+    self._SkipAnimTimer = XScheduleManager.ScheduleNextFrame(function()
+        self._SkipAnimTimer = nil
+        self:ForceSkipToEndAnimation(animName)
+        self:FinishAnimation(animName)
+    end)
+end
+
 function XUiTransfiniteTowerMain:OnDisable()
+    XEventManager.RemoveEventListener(XEventId.EVENT_TRANSFINITE_TOWER_SKIP_LIFE_ANIM, self.OnSkipLifeAnim, self)
+    if self._SkipAnimTimer then
+        XScheduleManager.UnSchedule(self._SkipAnimTimer)
+        self._SkipAnimTimer = nil
+    end
     XMVCA.XFunction:ExitFunction(XFunctionManager.FunctionName.TransfiniteTower)
     self:StopTimeTimer()
 end
 
 function XUiTransfiniteTowerMain:OnDestroy()
+    if self._SkipAnimTimer then
+        XScheduleManager.UnSchedule(self._SkipAnimTimer)
+        self._SkipAnimTimer = nil
+    end
     self:StopTimeTimer()
 end
 

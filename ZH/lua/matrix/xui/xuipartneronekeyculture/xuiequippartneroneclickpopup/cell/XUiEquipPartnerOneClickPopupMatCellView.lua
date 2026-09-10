@@ -74,9 +74,10 @@ function XUiEquipPartnerOneClickPopupMatCellView:RefreshByData(icon, quality, ne
     self.GoExchange.gameObject:SetActiveEx(isExchange == true)
 end
 
-function XUiEquipPartnerOneClickPopupMatCellView:RefreshByStringData(icon, quality, customText, isSatisfied)
+function XUiEquipPartnerOneClickPopupMatCellView:RefreshByStringData(icon, quality, customText, isSatisfied, isExchange)
     self._GridCostItem:RefreshByStringData(icon, quality, customText)
     self.TxtCountCenter.text = customText
+    self.GoExchange.gameObject:SetActiveEx(false)
 end
 
 --- 设置自定义点击回调，覆盖默认的转发行为

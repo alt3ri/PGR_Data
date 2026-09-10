@@ -231,6 +231,7 @@ function XPartnerOneKeyCultureFoodSelectControl:GetLooseChipPartnerCount()
 end
 
 --- 可由矿石兑换补足的碎片格数量（包含仓库余片与兑换碎片组成的混合格）
+--- 兑换标签格总数不超过升至品质上限所需的狗粮数量
 ---@return number foodCount
 function XPartnerOneKeyCultureFoodSelectControl:GetOreExchangePartnerCount()
     if not self._MainControl:IsAutoExchange() then
@@ -244,12 +245,15 @@ function XPartnerOneKeyCultureFoodSelectControl:GetOreExchangePartnerCount()
     if not chipNeedCount or chipNeedCount <= 0 then
         return 0
     end
+
     local chipItemId = partner:GetChipItemId()
     local ownChipCount = XMVCA.XPartner.Util.GetChipHaveCount(chipItemId)
     local exchangeChipCount = XMVCA.XPartner.Util.GetOreExchangeChipCount(chipItemId)
     local ownPartnerCount = math.floor(ownChipCount / chipNeedCount)
     local totalPartnerCount = math.floor((ownChipCount + exchangeChipCount) / chipNeedCount)
-    return math.max(0, totalPartnerCount - ownPartnerCount)
+    local exchangePartnerCount = math.max(0, totalPartnerCount - ownPartnerCount)
+    local needPartnerCount = self._MainControl:GetBaseCostControl():GetStarUpPartnerNeedCount()
+    return math.min(exchangePartnerCount, needPartnerCount)
 end
 
 --- 指定矿石兑换格实际需要兑换的碎片数；第一个格子可能与仓库余片组成混合格

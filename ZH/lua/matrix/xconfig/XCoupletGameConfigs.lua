@@ -40,7 +40,7 @@ local DownWordArrList = {}
 function XCoupletGameConfigs.Init()
     ActivityBaseTemplates = XTableManager.ReadByIntKey(COUPLET_ACTIVITY_BASE_PATH, XTable.XTableCoupletActivityBase, "Id")
     CoupletTemplates = XTableManager.ReadByIntKey(COUPLET_PATH, XTable.XTableCouplet, "Id")
-    CoupletWordTemplates = XTableManager.ReadByIntKey(COUPLET_WORD_PATH, XTable.XTabelCoupletWord, "Id")
+    CoupletWordTemplates = XTableManager.ReadByIntKey(COUPLET_WORD_PATH, XTable.XTableCoupletWord, "Id")
     for _, coupletTemplet in ipairs(CoupletTemplates) do
         if coupletTemplet.ActivityId then
             if not CoupletTemplatesWithAct[coupletTemplet.ActivityId] then

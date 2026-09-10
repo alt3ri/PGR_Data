@@ -192,8 +192,10 @@ function Effect._DestroyBuff(vm, uid)
     local layer = vm:Read(uid, STECustomEnum.FieldNameType.Layer) or 0
     if layer ~= 0 then
         vm:Emit(STECustomEnum.EventEnum.DotBuffLayerChanged)
-        XLog.Debug(string.format("Buff [uid%s] 销毁：Layer=%s，发 DotBuffLayerChanged",
-                tostring(uid), tostring(layer)))
+        if XMain.IsWindowsEditor then
+            XLog.Debug(string.format("Buff [uid%s] 销毁：Layer=%s，发 DotBuffLayerChanged",
+                    tostring(uid), tostring(layer)))
+        end
     end
 
     -- 2. 从全局索引摘除（按值删）
@@ -203,7 +205,9 @@ function Effect._DestroyBuff(vm, uid)
     -- 3. 销毁实体
     vm:GetEnv():RemoveScope(uid)
 
-    XLog.Debug(string.format("Buff [uid%s] 销毁：撤销对 %s.%s 的修正", tostring(uid), tostring(target), tostring(fieldName)))
+    if XMain.IsWindowsEditor then
+        XLog.Debug(string.format("Buff [uid%s] 销毁：撤销对 %s.%s 的修正", tostring(uid), tostring(target), tostring(fieldName)))
+    end
 end
 
 --- 按被击实体 id 发对应 HP 变更事件(仅 Player/Enemy;其它实体无对应枚举,静默)
@@ -271,8 +275,10 @@ function Effect._TempModifyOne(vm, target, targetFieldEnum, fieldName, op, right
     -- 覆盖：存在四要素全同的旧 buff → 原地复用同一实体与 uid（不销毁重建）
     local oldUid = Effect._FindSameBuff(vm, buffId, ownCardId, target, targetFieldEnum)
     if oldUid then
-        XLog.Debug(string.format("Buff 覆盖：原地刷新 [uid%s]（buffId%s own%s target%s field%s）",
-                tostring(oldUid), tostring(buffId), tostring(ownCardId), tostring(target), tostring(targetFieldEnum)))
+        if XMain.IsWindowsEditor then
+            XLog.Debug(string.format("Buff 覆盖：原地刷新 [uid%s]（buffId%s own%s target%s field%s）",
+                    tostring(oldUid), tostring(buffId), tostring(ownCardId), tostring(target), tostring(targetFieldEnum)))
+        end
         vm:RemoveModifier(target, fieldName, oldUid)
         vm:AddModifier(target, fieldName, op, rightVal, oldUid)
         vm:Store(oldUid, STECustomEnum.FieldNameType.LifeTimes, STEEnum.ValChangeType.Set, 0)
@@ -436,8 +442,10 @@ end
 function Effect._CreateBuffOne(vm, target, buffId, ownCardId)
     local uid = vm:GetEnv():GetNewUniqueNumber()
     Effect._InitBuffEntity(vm, uid, buffId, ownCardId, target, nil)
-    XLog.Debug(string.format("生成 Ex 驱动 buff [uid%s buffId%s] own%s target%s",
-            tostring(uid), tostring(buffId), tostring(ownCardId), tostring(target)))
+    if XMain.IsWindowsEditor then
+        XLog.Debug(string.format("生成 Ex 驱动 buff [uid%s buffId%s] own%s target%s",
+                tostring(uid), tostring(buffId), tostring(ownCardId), tostring(target)))
+    end
 end
 
 --- 直接生成一个 buff（自身无 modifier 效果，实际效果由 buff 表 Ex 字段驱动，见 TickAllBuffs 的 Ex 执行）。
@@ -463,7 +471,9 @@ end
 --- 单目标私有（单/多分支收敛至此）#72
 function Effect._AddNoConsumeBallTagOne(vm, target)
     vm:AddTag(target, STECustomEnum.EntityTags.NoConsumeBall)
-    XLog.Debug(string.format("卡牌 [uid%s] 获得「下次不消耗球」标签", tostring(target)))
+    if XMain.IsWindowsEditor then
+        XLog.Debug(string.format("卡牌 [uid%s] 获得「下次不消耗球」标签", tostring(target)))
+    end
 end
 
 --- 给指定卡牌添加「下次触发不消耗球」标签（一次性，卡牌下次激发时消费并清除，见 ExecuteOneCardEffects）。
@@ -509,8 +519,6 @@ function Effect.ConsumeBallByColor(vm, entityIds, color, count)
         -- 埋点统计：信号球消费总量累加（循环后一次 Store，非每球；事务可回滚）
         vm:Store(STECustomEnum.GlobalEntityIds.Global, STECustomEnum.FieldNameType.TotalBallConsumed, STEEnum.ValChangeType.Add, removed)
     end
-    XLog.Debug(string.format("Effect 消球：色%s 请求%s 实消%s，剩余球池[%s]",
-            tostring(color), tostring(count), tostring(removed), tostring(vm:PropLen(ballList))))
 end
 
 --- 产出指定颜色指定数量的球（入队尾；球池满则挤压队头最早产的球 FIFO #球槽挤压）。
@@ -538,9 +546,6 @@ function Effect.ProduceBallByColor(vm, entityIds, color, count)
         -- 埋点统计：信号球生成总量累加（循环后一次 Store，非每球；事务可回滚）
         vm:Store(STECustomEnum.GlobalEntityIds.Global, STECustomEnum.FieldNameType.TotalBallProduced, STEEnum.ValChangeType.Add, produced)
     end
-    XLog.Debug(string.format("Effect 产球：色%s 请求%s 实产%s（满则挤压队头 FIFO），当前球池[%s/%s]",
-            tostring(color), tostring(count), tostring(produced),
-            tostring(vm:PropLen(ballList)), tostring(capacity)))
 end
 
 --- 向事件总线派发一个指定事件（低业务语义函数的事件补足）。

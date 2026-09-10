@@ -57,15 +57,71 @@ function XUiTransfiniteTowerStage:OnEnable()
     -- 结算/回溯/重置后服务端推单章节数据，靠该事件即时刷新本界面
     XEventManager.AddEventListener(XEventId.EVENT_TRANSFINITE_TOWER_DATA_CHANGE, self.Refresh, self)
     XEventManager.AddEventListener(XEventId.EVENT_TRANSFINITE_TOWER_GUIDE_SCROLL_STAGE, self.RollToStageIndex, self)
+    XEventManager.AddEventListener(XEventId.EVENT_TRANSFINITE_TOWER_SKIP_LIFE_ANIM, self.OnSkipLifeAnim, self)
     XMVCA.XTransfiniteTower:SetStageUiTowerCfgId(self.TowerCfgId)
+    if self._IsSkipEnableAnim then
+        self._IsSkipEnableAnim = false
+        self:ScheduleSkipAnim("AnimEnable")
+    end
     self._NeedRollToTop = true
+    self._NeedPlayGridEnableAnim = true --防止提前结算的时候重复播动效用的
+    self:PlayBossGridEnableAnim()
     self:Refresh()
+end
+
+function XUiTransfiniteTowerStage:PlayBossGridEnableAnim()
+    if not self._NeedPlayGridEnableAnim then
+        return
+    end
+    if not self._Control:IsShowBossGrid(self.TowerCfgId) then
+        return
+    end
+    if not self._BossGrid then
+        self._BossGrid = XUiGridTowerStage.New(self.GridTowerBoss, self)
+    end
+    self._BossGrid:PlayAnimation()
+end
+function XUiTransfiniteTowerStage:OnSkipLifeAnim()
+    self._IsSkipEnableAnim = true
+    self:ForceSkipToEndAnimation("AnimDisable")
+    self:FinishAnimation("AnimDisable")
+end
+
+function XUiTransfiniteTowerStage:ScheduleSkipAnim(animName)
+    if self._SkipAnimTimer then
+        XScheduleManager.UnSchedule(self._SkipAnimTimer)
+    end
+    self._SkipAnimTimer = XScheduleManager.ScheduleNextFrame(function()
+        self._SkipAnimTimer = nil
+        self:ForceSkipToEndAnimation(animName)
+        self:FinishAnimation(animName)
+    end)
 end
 
 function XUiTransfiniteTowerStage:OnDisable()
     XEventManager.RemoveEventListener(XEventId.EVENT_TRANSFINITE_TOWER_DATA_CHANGE, self.Refresh, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_TRANSFINITE_TOWER_GUIDE_SCROLL_STAGE, self.RollToStageIndex, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_TRANSFINITE_TOWER_SKIP_LIFE_ANIM, self.OnSkipLifeAnim, self)
+    if self._SkipAnimTimer then
+        XScheduleManager.UnSchedule(self._SkipAnimTimer)
+        self._SkipAnimTimer = nil
+    end
+    if self._RollToTopTimer then
+        XScheduleManager.UnSchedule(self._RollToTopTimer)
+        self._RollToTopTimer = nil
+    end
     XMVCA.XTransfiniteTower:SetStageUiTowerCfgId(nil)
+end
+
+function XUiTransfiniteTowerStage:OnDestroy()
+    if self._SkipAnimTimer then
+        XScheduleManager.UnSchedule(self._SkipAnimTimer)
+        self._SkipAnimTimer = nil
+    end
+    if self._RollToTopTimer then
+        XScheduleManager.UnSchedule(self._RollToTopTimer)
+        self._RollToTopTimer = nil
+    end
 end
 
 --region 初始化
@@ -86,6 +142,9 @@ function XUiTransfiniteTowerStage:InitDynamicTable()
     self._DynamicTable:SetProxy(XUiGridTowerStage, self)
     self._DynamicTable:SetDelegate(self)
     self.GridTowerStage.gameObject:SetActiveEx(false)
+    local gridNodes = {}
+    XTool.InitUiObjectByUi(gridNodes, self.GridTowerStage)
+    self._GridEnablePlayable = gridNodes.GridTowerStageEnable:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
     -- 监听滚动，实时刷新定位按钮显隐
     self._DynamicTable:GetImpl().ScrRect.onValueChanged:AddListener(handler(self, self.OnListScroll))
 end
@@ -167,6 +226,23 @@ function XUiTransfiniteTowerStage:RefreshStageList()
     self._StageCfgIds = self._Control:GetTowerStageCfgIds(self.TowerCfgId)
     -- 最高层下标随通关进度变化，列表刷新时算一次；滚动回调只比对可视区间
     self._TopStageIndex = self:CalcTopStageIndex()
+    local dataSource = self._DynamicTable.DataSource
+    if #dataSource == #self._StageCfgIds then
+        local isSame = true
+        for i = 1, #self._StageCfgIds do
+            if dataSource[i] ~= self._StageCfgIds[i] then
+                isSame = false
+                break
+            end
+        end
+        if isSame then
+            local grids = self._DynamicTable:GetGrids()
+            for index, grid in pairs(grids) do
+                grid:Refresh(self._StageCfgIds[index])
+            end
+            return
+        end
+    end
     self._DynamicTable:SetDataSource(self._StageCfgIds)
     self._DynamicTable:ReloadDataSync(1)
 end
@@ -175,11 +251,32 @@ function XUiTransfiniteTowerStage:OnDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         grid:Refresh(self._StageCfgIds[index])
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_RELOAD_COMPLETED then
+        -- 动效控制必须放这里，放Grid里会被重建打断
+        if self._NeedPlayGridEnableAnim then
+            self._NeedPlayGridEnableAnim = false
+            local grids = self._DynamicTable:GetGrids()
+            for _, grid in pairs(grids) do
+                grid:PlayAnimation()
+            end
+        end
         if self._NeedRollToTop then
-            self:RollToTopStage()
+            self:ScheduleRollToTop()
             self._NeedRollToTop = false
         end
     end
+end
+
+function XUiTransfiniteTowerStage:ScheduleRollToTop()
+    local playable = self._GridEnablePlayable
+    local remainTime = playable and playable.duration - playable.time or 0
+    if remainTime <= 0 then
+        self:RollToTopStage()
+        return
+    end
+    self._RollToTopTimer = XScheduleManager.ScheduleOnce(function()
+        self._RollToTopTimer = nil
+        self:RollToTopStage()
+    end, remainTime * XScheduleManager.SECOND)
 end
 
 ---最终层：3 层塔隐藏，8/15 层塔显示
@@ -197,6 +294,8 @@ end
 function XUiTransfiniteTowerStage:RefreshTitle()
     self.TxtTowerName.text = self._Control:GetTowerTitle(self.TowerCfgId, self._SelectedStageCfgId)
     self.TxtTowerTip.text = self._Control:GetTowerSubTitle(self._SelectedStageCfgId)
+    self.TxtTowerTip.gameObject:SetActiveEx(false)
+    self.TxtTowerTip.gameObject:SetActiveEx(true)
 end
 
 function XUiTransfiniteTowerStage:RefreshTrait()

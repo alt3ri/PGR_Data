@@ -10,6 +10,8 @@ local XUiPanelTransfiniteTowerTraitTips = XClass(XUiNode, "XUiPanelTransfiniteTo
 function XUiPanelTransfiniteTowerTraitTips:Refresh(traitData)
     self.ImgTrait1:SetRawImage(traitData.Icon)
     self.TxtTraitName.text = traitData.Name
+    self.TxtFormationTips.gameObject:SetActiveEx(false)
+    self.TxtFormationTips.gameObject:SetActiveEx(true)
     self.TxtFormationTips.text = XUiHelper.ReplaceTextNewLine(traitData.Desc)
 end
 

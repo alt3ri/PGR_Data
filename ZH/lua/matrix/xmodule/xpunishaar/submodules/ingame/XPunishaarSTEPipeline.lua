@@ -65,11 +65,6 @@ local ConsumeBall = function(vm, executorId, color, count)
     -- 帧缓存：本帧有实体消耗了球
     local consumeList = vm:ReadProperty(STECustomEnum.GlobalEntityIds.Global, STECustomEnum.FieldNameType.TickConsumeBallEntityList)
     vm:PropAppend(consumeList, executorId)
-
-    -- 消耗球的实体不一定是卡（CardId 读不到则只显示 uid）
-    local cardId = vm:ReadProperty(executorId, STECustomEnum.FieldNameType.CardId) and vm:Read(executorId, STECustomEnum.FieldNameType.CardId)
-    XLog.Debug(string.format("实体 [uid%s cid%s] 消耗球：色%s x%s（实消%s），剩余球池[%s]",
-            tostring(executorId), tostring(cardId), tostring(color), tostring(count), tostring(removed), tostring(vm:PropLen(ballList))))
 end
 
 --- 产球（入队尾，保持产出次序）
@@ -103,12 +98,6 @@ local ProduceBall = function(vm, executorId, color, count)
         -- 埋点统计：信号球生成总量累加（循环后一次 Store，非每球；事务可回滚）
         vm:Store(STECustomEnum.GlobalEntityIds.Global, STECustomEnum.FieldNameType.TotalBallProduced, STEEnum.ValChangeType.Add, produced)
     end
-
-    XLog.Debug(string.format("实体 [uid%s cid%s] 产球：色%s 请求%s 实产%s（满则挤压队头 FIFO），当前球池[%s/%s]",
-            tostring(executorId),
-            tostring(vm:ReadProperty(executorId, STECustomEnum.FieldNameType.CardId) and vm:Read(executorId, STECustomEnum.FieldNameType.CardId)),
-            tostring(color), tostring(count), tostring(produced),
-            tostring(vm:PropLen(ballList)), tostring(capacity)))
 end
 
 --- 把某效果组的 effectId 追加到 out 列表（保持组内配置顺序）。用于合并主/副卡效果。
@@ -401,7 +390,9 @@ function XPunishaarSTEPipeline.OutputCanActiveCardIds(vm, queue, control, maxAct
                     goto CONTINUE
                 end
             end
-            XLog.Debug(string.format("卡牌 [uid%s cid%s]（手动）检测到输入，进入激活", tostring(cardEntityId), tostring(cardId)))
+            if XMain.IsWindowsEditor then
+                XLog.Debug(string.format("卡牌 [uid%s cid%s]（手动）检测到输入，进入激活", tostring(cardEntityId), tostring(cardId)))
+            end
         end
 
         queue:Enqueue(cardEntityId)
@@ -447,7 +438,9 @@ function XPunishaarSTEPipeline.ExecuteOneCardEffects(vm, entityId, control)
     -- 先消球（消耗是前提）；持有「不消耗球」标签则本次跳过消球并清除标签（一次性）
     if noConsumeBall then
         vm:RemoveTag(entityId, STECustomEnum.EntityTags.NoConsumeBall)
-        XLog.Debug(string.format("卡牌 [uid%s cid%s] 本次不消耗球（消耗「下次不消球」标签）", tostring(entityId), tostring(cardId)))
+        if XMain.IsWindowsEditor then
+            XLog.Debug(string.format("卡牌 [uid%s cid%s] 本次不消耗球（消耗「下次不消球」标签）", tostring(entityId), tostring(cardId)))
+        end
     else
         ConsumeBall(vm, entityId, color, consumeCount)
     end
@@ -491,9 +484,6 @@ function XPunishaarSTEPipeline.ExecuteOneCardEffects(vm, entityId, control)
                 vm:Error("Selector函数不存在，枚举值：" .. effectCfg.ScopeType)
                 return
             end
-
-            XLog.Debug(string.format("卡牌 [uid%s cid%s] 打出效果：effectId=%s EffectType=%s ScopeType=%s",
-                    tostring(entityId), tostring(cardId), tostring(effectCfg.Id), tostring(effectCfg.EffectType), tostring(effectCfg.ScopeType)))
 
             ExecuteEffectByConfig(vm, selectorFunc, effectCfg.ScopeParams, effectFunc, effectCfg.EffectParams)
         end
@@ -596,8 +586,6 @@ function XPunishaarSTEPipeline.ExecuteEnemyEffects(vm, control, groupIdBuffer)
                     vm:Error("Selector函数不存在，枚举值：" .. tostring(effectCfg.ScopeType))
                     return false
                 end
-                XLog.Debug(string.format("敌人 [uid%s] 打出效果：effectId=%s EffectType=%s ScopeType=%s",
-                        tostring(enemyId), tostring(item.id), tostring(effectCfg.EffectType), tostring(effectCfg.ScopeType)))
                 ExecuteEffectByConfig(vm, selectorFunc, effectCfg.ScopeParams, effectFunc, effectCfg.EffectParams)
             end
         end

@@ -120,6 +120,15 @@ end
 
 function XUiEquipOneClickCulturePartnerMain:_OnOneKeyCultureFinish()
     self:_Refresh()
+    local partner = self._Control:GetOneKeyCultureMainControl():GetCurPartnerEntity()
+    if not partner then
+        return
+    end
+
+    local characterId = partner:GetCharacterId()
+    if XTool.IsNumberValid(characterId) then
+        XMVCA.XTeamRecommend:GetServerCharacterTargetProgressAndCheckFinishByCharacterId(characterId)
+    end
 end
 
 function XUiEquipOneClickCulturePartnerMain:_OnOneKeyCultureEffect()

@@ -1,11 +1,21 @@
 local XChapterViewModel = require("XEntity/XFuben/XChapterViewModel")
 local XExFubenBaseManager = require("XEntity/XFuben/XExFubenBaseManager")
 
+-- 4.8旧线关停，序章至第三章不做分包拦截
+local NoInterceptChapterIds = {
+    [1000] = true,
+    [1001] = true,
+    [1002] = true,
+    [1003] = true,
+}
+
 ---@class XExFubenMainLineManager
 local XExFubenMainLineManager = XClass(XExFubenBaseManager, "XExFubenMainLineManager")
 
 function XExFubenMainLineManager:ExOpenChapterUi(viewModel, difficulty)
-    if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.MainLine) then
+    local chapterId = viewModel:GetId()
+    if not NoInterceptChapterIds[chapterId]
+        and not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.MainLine) then
         return
     end
     

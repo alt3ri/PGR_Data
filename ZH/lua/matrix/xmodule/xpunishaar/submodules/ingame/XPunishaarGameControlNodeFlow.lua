@@ -237,8 +237,11 @@ function XPunishaarGameControl:FinishFight(isWin, loseMaxColor, stats)
         if not isWin then
             local afterDur = beforeDur
             if stage then
+                -- 非最终结算（Remedy/Processing 连战）：stage 在场取战后 Durability（服务端已扣减）
                 afterDur = stage.Durability or beforeDur
-            elseif settleInfo and settleInfo.SettleType == XMVCA.XPunishaar.EnumConst.SettleType.DurabilityEnd then
+            elseif settleInfo then
+                -- 最终结算（settleInfo 存在 = 整局结束）：失败必耐久归零（纯客户端算，不依赖 SettleType——
+                -- 无尽关回 Finished 也能显 -1，普通关 DurabilityEnd 同覆盖）#耐久扣除
                 afterDur = 0
             end
             local delta = beforeDur - afterDur
@@ -276,7 +279,7 @@ function XPunishaarGameControl:_TryUpgradePendingReward(node)
     if not owned or not self:HasNextCardLevel(pendingCardId, pendingLevel) then
         return false  -- 非升级（无同级持有 / 到顶共存 / 无下一级）
     end
-    XLog.Debug(string.format("[主卡Discard诊断] 升级预判命中: pendingCardId=%s L%s → 合并进 owned.Id=%s", tostring(pendingCardId), tostring(pendingLevel), tostring(owned.Id)))
+
     self:HandlePendingReward(true, { MasterCardId = owned.Id, SubCardId = 0 }, function(success)
         if not success then
             XLog.Error("[Punishaar] _TryUpgradePendingReward: 升级 HandlePendingReward 失败, pendingCardId=" .. tostring(pendingCardId))
@@ -351,39 +354,50 @@ end
 --- 复用 _FindPlacementForDirectBuy（优先对战区→背包，不挤压）；有位→HandlePendingReward(true)→_FinishRewardPlacement。
 function XPunishaarGameControl:TryAutoPlacePendingReward()
     if not self._RewardPlacementActive or self._RewardHandling or self._RewardDone then
-        return
+        return false
     end
-    local detail = self:_FindPlacementForDirectBuy(self._RewardCardId)
-    XLog.Debug(string.format("[主卡Discard诊断] TryAutoPlace: _RewardCardId=%s detail=%s",
-            tostring(self._RewardCardId),
-            detail and string.format("{AreaType=%s,StartPos=%s,SubCardId=%s,MasterCardId=%s}",
-                    tostring(detail.AreaType), tostring(detail.StartPos), tostring(detail.SubCardId), tostring(detail.MasterCardId)) or "nil"))
-    if not detail then
-        return  -- 仍无空位，等玩家继续腾位或点放弃
-    end
-    self._RewardHandling = true
-    XLog.Debug(string.format("[主卡Discard诊断] 发 HandlePendingReward(true) AreaType=%s StartPos=%s",
-            tostring(detail.AreaType), tostring(detail.StartPos)))
-    self:HandlePendingReward(true, detail, function(success)
-        self._RewardHandling = false
-        local stage = self._Model and self._Model:GetCurrentStage()
-        local cards = stage and stage.TotalMasterCards
-        local count = 0
-        local foundReward = false
-        if cards then
-            for _, c in pairs(cards) do
-                count = count + 1
-                if c.TemplateId == self._RewardCardId then
-                    foundReward = true
+    local cardId = self._RewardCardId
+    local detail = self:_FindPlacementForDirectBuy(cardId)
+
+    if detail then
+        -- 有连续空位 → 直接放置
+        self._RewardHandling = true
+        self:HandlePendingReward(true, detail, function(success)
+            self._RewardHandling = false
+            if success then
+                local tip = XMVCA.XPunishaar:GetClientStringByKey("PunishaarRewardCardPlacedSuccess")
+                if not string.IsNilOrEmpty(tip) then
+                    XUiManager.TipMsg(tip)
                 end
+                self:_FinishRewardPlacement()
             end
-        end
-        XLog.Debug(string.format("[主卡Discard诊断] HandlePendingReward 响应 success=%s; 放置后(本地)stage.TotalMasterCards count=%s 含奖励卡(TemplateId=%s)=%s",
-                tostring(success), tostring(count), tostring(self._RewardCardId), tostring(foundReward)))
+        end)
+        return true
+    end
+
+    -- 无连续空位但可能有足够非连续空位 → repack+放置 一体（对齐商店 BuyAutoPlace 的
+    -- _FindRepackPlacementForBuy + DoBuyGoods 一体提交：cardDetail 带 CardPosList + IsCardsPosChange，
+    -- 服务端 repack+place 原子处理，不拆两步避免时序问题）
+    local cardCfg = self:GetTablePunishaarCard(cardId, true)
+    local size = cardCfg and cardCfg.Size or 1
+    local repack = self:_FindRepackPlacementForBuy(size)
+    if not repack then
+        return false  -- 无足够空位（连续或非连续），等玩家继续腾位或点放弃
+    end
+
+    self._RewardHandling = true
+    -- HandlePendingReward(true, repack) — repack(CardPosList) + 放置 一体请求
+    self:HandlePendingReward(true, repack, function(success)
+        self._RewardHandling = false
         if success then
+            local tip = XMVCA.XPunishaar:GetClientStringByKey("PunishaarRewardCardPlacedSuccess")
+            if not string.IsNilOrEmpty(tip) then
+                XUiManager.TipMsg(tip)
+            end
             self:_FinishRewardPlacement()
         end
     end)
+    return true
 end
 
 --- RewardFull 流程：放弃暂存卡（SellCardTip 的 BtnSkipReward 调）。
@@ -413,6 +427,13 @@ end
 ---@return boolean
 function XPunishaarGameControl:IsRewardPlacementActive()
     return self._RewardPlacementActive == true
+end
+
+--- 是否有放置请求在途（TryAutoPlace 已发 HandlePendingReward 未回 cb）。
+--- 供 SellCardTip _OnMasterCardChange 区分：丢弃触发的 MasterCardChange(_RewardHandling=false) vs
+--- 放置后服务端回流的 MasterCardChange(_RewardHandling=true,放置在途)→ 后者不弹丢弃 tip（避免顶替放置成功 tip）
+function XPunishaarGameControl:IsRewardHandling()
+    return self._RewardHandling == true
 end
 
 return XPunishaarGameControl

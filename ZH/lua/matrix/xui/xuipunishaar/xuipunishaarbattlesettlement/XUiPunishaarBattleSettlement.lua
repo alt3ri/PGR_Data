@@ -56,6 +56,10 @@ end
 --- 刷新奖励列表：拉 Model 缓存，按 RewardType 实例化 grid 展示
 function XUiPunishaarBattleSettlement:_RefreshRewardList()
     local rewardGoodsList = (self._Control and self._Control:GetLastRewardGoodsList()) or {}
+    -- 显示后清缓存（防连战残留致下次 BattleSettlement 误显上局 reward）#reward残留
+    if self._Control then
+        self._Control:ClearLastRewardGoodsList()
+    end
     -- 追加耐久扣减项（UI 层合并，不写 Model，不依赖 Notify/Response 时序）。
     -- 失败+扣减才显；Amount=-delta，grid 走 else 分支 tostring 显 "-1"。
     -- 服务端失败 reward（如补偿金币）仍保留显示，耐久项追加到末尾。

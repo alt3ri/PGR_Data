@@ -2,6 +2,12 @@ local XUiGridShopCardSlot = require("XUi/XUiPunishaar/XUiPunishaarFightMain/UiSh
 local XUiGridShopCard = require("XUi/XUiPunishaar/XUiPunishaarFightMain/UiShop/XUiGridShopCard")
 local XUiPunishaarPanelBagLayoutBase = require("XUi/XUiPunishaar/XUiPunishaarFightMain/CommonUiTemplate/XUiPunishaarPanelBagLayoutBase")
 local XUiNodeList = require("XUi/XUiCommon/XUiNodeList")
+local XUiPanelPunishaarDragBuyTips = require("XUi/XUiPunishaar/XUiPunishaarFightMain/UiShop/Panel/XUiPanelPunishaarDragBuyTips")
+
+-- PanelDragBuyTips cardType/state 值（对齐 XUiPanelPunishaarDragBuyTips 内部 file-local 枚举；
+-- 项目禁类静态字段直接访问 ClassName.Field，容器本地镜像约定值，Tips 枚举值变更须两边同步）
+local DragBuyCardType = { MainCard = 1, SubCard = 2 }
+local DragBuyState = { Invalid = 1, Neutral = 2, BuyZone = 3 }
 
 --- 对战区卡牌-slot 容器基类：持有对战区卡牌列表 + 槽位列表 + 背包暂存区(BagLayout)。
 --- 商店态/战前态共用；当前两子类零差异，派生点(_Get* 系列)预留供将来分离时重写。
@@ -13,6 +19,7 @@ local XUiNodeList = require("XUi/XUiCommon/XUiNodeList")
 ---@field GridCard UnityEngine.RectTransform 对战区卡牌模板
 ---@field PanelBagSlotList UnityEngine.RectTransform 对战区格子父节点
 ---@field GridSlot UnityEngine.RectTransform 对战区格子模板
+---@field PanelDragBuyTips UnityEngine.RectTransform 拖拽购买提示根节点（仅商店态实例化 XUiNode，其他态直接隐 GO）#PanelDragBuyTips
 local XUiPunishaarComBottomBagBase = XClass(XUiNode, "XUiPunishaarComBottomBagBase")
 
 --region 派生点（hook，子类按需覆写；当前两子类用默认实现）
@@ -47,6 +54,12 @@ function XUiPunishaarComBottomBagBase:_GetGridLimit()
     return self._Control:GetFightAreaGridLimit()
 end
 
+--- 拖拽购买提示 XUiNode 类（默认 nil=不实例化；商店态子类覆写返回 XUiPanelPunishaarDragBuyTips）。
+--- 非商店态 nil 时若 prefab 有 PanelDragBuyTips 引用则直接隐 GO 不实例化 #PanelDragBuyTips
+function XUiPunishaarComBottomBagBase:_GetDragBuyTipsClass()
+    return nil
+end
+
 --- 背包暂存区开合的互斥回调（自上而下注入，由父对象统一管理互斥）。
 --- 父对象（如商店态 PanelShop）注入后，本容器在开合时机回调通知，自身不知也不碰父对象。
 --- 不注入时为 nil，开合行为不变（战前态/基底态无互斥需求，不注入）。
@@ -75,6 +88,17 @@ function XUiPunishaarComBottomBagBase:OnStart()
     self._BagLayout = self:_GetBagLayoutClass().New(self.PanelBagLayout, self)
     self:_RefreshSlots()
     self:_RefreshBtnBagState()
+
+    -- 拖拽购买提示（PanelDragBuyTips）：仅商店态实例化 XUiNode（_GetDragBuyTipsClass 派生点），
+    -- 非商店态若 prefab 有引用则直接隐 GO 不实例化。先 SetActiveEx(false) 防 New 时 activeSelf=true 自动 Open #PanelDragBuyTips
+    if self.PanelDragBuyTips then
+        self.PanelDragBuyTips.gameObject:SetActiveEx(false)
+        local tipsCls = self:_GetDragBuyTipsClass()
+        if tipsCls then
+            ---@type XUiPanelPunishaarDragBuyTips
+            self._DragBuyTips = tipsCls.New(self.PanelDragBuyTips, self)
+        end
+    end
 end
 
 --- 刷新 BtnBag 按钮态 + 容量文本：背包展开→Select，收起→Normal；Disable（_BagLocked）优先不覆盖。
@@ -89,6 +113,16 @@ function XUiPunishaarComBottomBagBase:_RefreshBtnBagState()
         self._BagCapacityList = XTool.XListNew()
     end
     local used = self._Control:FillBagAreaCards(self._BagCapacityList)
+    -- 多格卡占多格：used 改为格子数（sum card.Size）而非卡牌数 #背包容量格子数
+    local slotUsed = 0
+    for i = 1, used do
+        local card = self._BagCapacityList:GetValueByIndex(i)
+        if card then
+            local cfg = self._Control:GetTablePunishaarCard(card.TemplateId, true)
+            slotUsed = slotUsed + ((cfg and cfg.Size) or 1)
+        end
+    end
+    used = slotUsed
     local fmt = self._Control:GetBagCapacityText()
     local capacityText
     if not string.IsNilOrEmpty(fmt) then
@@ -128,6 +162,40 @@ function XUiPunishaarComBottomBagBase:_OnBtnBag()
         -- 互斥：背包展开，通知 FightMain 纯遮蔽隐 HUD（不标 DismissHud，收起后可恢复）#背包HUD互斥
         local gc = self._Control and self._Control.GameControl
         if gc then gc:DispatchEvent(gc.BagEventId.Open) end
+    end
+    self:_RefreshBtnBagState()
+end
+
+--- 程序化展开背包暂存区（带互斥 beforeOpenCb 收商店栏 + BagEventId.Open）。幂等：已展开则 no-op。
+--- 供副卡拖拽等非玩家点击场景调用（#副卡拖拽收起展开）。与 _OnBtnBag 开分支同语义但非 toggle。
+function XUiPunishaarComBottomBagBase:OpenBag()
+    if self._BagLocked then
+        return
+    end
+    if not self._BagLayout or self._BagLayout:IsNodeShow() then
+        return  -- 无 _BagLayout 或已展开，幂等 no-op（守卫对称 CloseBag/CloseBagIfShow）
+    end
+    if self._BeforeBagOpenCb then
+        self._BeforeBagOpenCb()  -- 互斥：收商店栏 #70
+    end
+    self._BagLayout:Open()
+    self._BagLayout:Refresh()
+    local gc = self._Control and self._Control.GameControl
+    if gc then gc:DispatchEvent(gc.BagEventId.Open) end  -- 互斥：隐 HUD #背包HUD互斥
+    self:_RefreshBtnBagState()
+end
+
+--- 程序化收起背包暂存区（带互斥 afterCloseCb 展商店栏 + BagEventId.Close）。幂等：已收则 no-op。
+--- 供副卡拖拽归位等非玩家点击场景调用（#副卡拖拽收起展开）。与 CloseBagIfShow 区别：本方法触发互斥展商店栏。
+function XUiPunishaarComBottomBagBase:CloseBag()
+    if not (self._BagLayout and self._BagLayout:IsNodeShow()) then
+        return
+    end
+    self._BagLayout:Close()
+    local gc = self._Control and self._Control.GameControl
+    if gc then gc:DispatchEvent(gc.BagEventId.Close) end  -- 互斥：恢复 HUD #背包HUD互斥
+    if self._AfterBagCloseCb then
+        self._AfterBagCloseCb()  -- 互斥：展商店栏 #70
     end
     self:_RefreshBtnBagState()
 end
@@ -226,14 +294,23 @@ function XUiPunishaarComBottomBagBase:OnEnable()
     -- 主卡拖拽编排时关 blocksRaycasts 让 Slot 射线穿透报精确格位 #52
     XEventManager.AddEventListener(XEventId.EVENT_PUNISHAAR_DRAG_BEGIN, self._OnDragBegin, self)
     XEventManager.AddEventListener(XEventId.EVENT_PUNISHAAR_DRAG_END, self._OnDragEnd, self)
+    -- 拖拽焦点变化→刷购买提示态（Neutral/BuyZone）#PanelDragBuyTips
+    self._Control.GameControl:AddEventListener(self._Control.GameControl.DragEventId.FocusChange, self._OnDragFocusChange, self)
     -- 栏级落点反算注册：handler OnDragging 遍历注册栏做落点反算 #批次2
     self._Control.GameControl:RegisterDragFocusBar(self)
 end
 
 function XUiPunishaarComBottomBagBase:OnDisable()
+    -- 兜底隐购买提示：若拖拽进行中切态（DRAG_END 订阅随本 OnDisable 注销，tips 收不到 Hide），
+    -- 防 _DragBuyTips 残留 Open 态挂 inactive 祖先下违 active-ancestor 不变量 + 重显时 stale 闪 #PanelDragBuyTips
+    if self._DragBuyTips then
+        self._DragBuyTips:Close()
+    end
+    self._IsBuyAreaFull = nil  -- 清满区标记（防切态残留，与 _DragBuyTips:Close 并列）#PanelDragBuyTips
     XEventManager.RemoveEventListener(XEventId.EVENT_PUNISHAAR_FIGHT_AREA_GRID_UNLOCK, self._RefreshSlots, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_PUNISHAAR_DRAG_BEGIN, self._OnDragBegin, self)
     XEventManager.RemoveEventListener(XEventId.EVENT_PUNISHAAR_DRAG_END, self._OnDragEnd, self)
+    self._Control.GameControl:RemoveEventListener(self._Control.GameControl.DragEventId.FocusChange, self._OnDragFocusChange, self)
     self._Control.GameControl:RemoveEventListener(self._Control.GameControl.DragEventId.SubCardHostHintBegin, self.OnSubCardHostHintBegin, self)
     self._Control.GameControl:RemoveEventListener(self._Control.GameControl.DragEventId.SubCardHostHintEnd, self.OnSubCardHostHintEnd, self)
     self._Control.GameControl:UnregisterDragFocusBar(self)
@@ -263,9 +340,27 @@ end
 
 --- 主卡拖拽开始：关 blocksRaycasts 让 Slot 射线穿透报精确格位 #52
 --- 副卡拖拽（Shop 来源）不关——Card.OnEnter 需收射线作 #36 落点
+--- 商店主卡商品拖拽显主卡态购买提示；副卡商品拖拽不显（由 PanelBagLayout 显副卡态）#PanelDragBuyTips
 function XUiPunishaarComBottomBagBase:_OnDragBegin()
-    local srcArea = self._Control.GameControl:GetDraggingSourceArea()
-    if srcArea == self._Control.GameControl.DragArea.Shop then
+    local gc = self._Control.GameControl
+    local srcArea = gc:GetDraggingSourceArea()
+    if srcArea == gc.DragArea.Shop then
+        -- 仅主卡商品拖拽显主卡态提示；副卡商品拖拽跳过（PanelBagLayout 的 _DragBuyTips 显副卡态）。
+        -- 主卡/副卡判定复刻 BeginDragCard（gc._IsDraggingSubCard 无公开 getter，UI 层不跨入逻辑层读私有字段）#PanelDragBuyTips
+        if self._DragBuyTips then
+            local cardData = gc:GetDraggingCardData()
+            local isSubCard = cardData and cardData.CardId and self._Control:IsSubCard(cardData.CardId) or false
+            if not isSubCard then
+                self._DragBuyTips:Show(DragBuyCardType.MainCard)
+                -- 满区判定（拖起时算一次）：两区均放不下→Invalid 态（TxtCardNoneSlot）；否则 Neutral（_OnDragFocusChange 后续刷 BuyZone）#PanelDragBuyTips
+                local cardCfg = cardData and cardData.CardId and self._Control:GetTablePunishaarCard(cardData.CardId, true) or nil
+                local cardSize = cardCfg and cardCfg.Size or 1
+                self._IsBuyAreaFull = gc:IsBuyAreaFull(cardSize)
+                if self._IsBuyAreaFull then
+                    self._DragBuyTips:RefreshState(DragBuyState.Invalid, true)
+                end
+            end
+        end
         return
     end
     if not self._CardList then
@@ -278,12 +373,45 @@ end
 
 --- 拖拽结束：恢复 blocksRaycasts #52
 function XUiPunishaarComBottomBagBase:_OnDragEnd()
+    -- 隐购买提示（幂等，nil 跳过；置 _CardList 守卫前防 Shop 源结束漏隐）#PanelDragBuyTips
+    if self._DragBuyTips then
+        self._DragBuyTips:Hide()
+    end
+    self._IsBuyAreaFull = nil  -- 清满区标记 #PanelDragBuyTips
     if not self._CardList then
         return
     end
     self._CardList:ForEachActive(function(_, grid)
         grid:SetBlocksRaycasts(true)
     end)
+end
+
+--- 拖拽焦点变化→刷主卡态购买提示（Neutral/BuyZone）#PanelDragBuyTips
+--- 仅主卡商品拖拽处理；副卡拖拽由 PanelBagLayout 显副卡态。Invalid 态留阶段2（暂 Neutral 兜底）
+---@param payload table|nil {Area,Pos} 或 nil（焦点清空）
+function XUiPunishaarComBottomBagBase:_OnDragFocusChange(payload)
+    if not self._DragBuyTips then
+        return
+    end
+    local gc = self._Control.GameControl
+    if gc:GetDraggingSourceArea() ~= gc.DragArea.Shop then
+        return
+    end
+    local cardData = gc:GetDraggingCardData()
+    local isSubCard = cardData and cardData.CardId and self._Control:IsSubCard(cardData.CardId) or false
+    if isSubCard then
+        return
+    end
+    -- 满区恒 Invalid，不切 BuyZone/Neutral（_OnDragBegin 已置 Invalid）#PanelDragBuyTips
+    if self._IsBuyAreaFull then
+        return
+    end
+    local area = payload and payload.Area
+    if (area == gc.DragArea.FightArea or area == gc.DragArea.Bag) and gc:CheckDragDropValid() then
+        self._DragBuyTips:RefreshState(DragBuyState.BuyZone, true)
+    else
+        self._DragBuyTips:RefreshState(DragBuyState.Neutral, true)
+    end
 end
 
 function XUiPunishaarComBottomBagBase:OnDestroy()

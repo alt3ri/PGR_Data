@@ -168,6 +168,11 @@ function XPunishaarModel:GetLastRewardGoodsList()
     return self._LastRewardGoodsList
 end
 
+--- 清除最近一次奖励列表缓存（BattleSettlement 显示后调，防连战残留致下次 BattleSettlement 误显上局 reward）#reward残留
+function XPunishaarModel:ClearLastRewardGoodsList()
+    self._LastRewardGoodsList = nil
+end
+
 function XPunishaarModel:GetOutSideModel()
     return self._OutSideModel
 end

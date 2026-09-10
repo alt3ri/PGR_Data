@@ -230,7 +230,11 @@ function XUiPunishaarMainCardTips:_ResolveOperationMode(detail)
         -- 已购商品只读（无 Buy 按钮）
         return detail.isBought and OperationMode.None or OperationMode.Buy
     elseif detail.source == TipsSource.Equipped then
-        -- 主卡保留环节（reward-placement）：主卡走丢弃路径（非商店不售出）；其余场景售出 #主卡Discard
+        -- 奖励卡（未拥有，无 Id）→ 只读（None），不显 Sell/Discard（玩家未拥有此卡，不能卖/弃）
+        if not detail.masterCard or not detail.masterCard.Id then
+            return OperationMode.None
+        end
+        -- 主卡保留环节（reward-placement）：已拥有主卡走丢弃路径（非商店不售出）；其余场景售出 #主卡Discard
         local gc = self._Control and self._Control.GameControl
         if gc and gc.IsRewardPlacementActive and gc:IsRewardPlacementActive() then
             return OperationMode.Discard
@@ -322,14 +326,14 @@ function XUiPunishaarMainCardTips:_OnBtnDiscard()
     -- IsMasterCard=true：丢弃主卡自身（服务端 XPunishaarDiscardCardRequest）；成功关详情，MasterCardChange 触发 SellCardTip 刷背包+TryAutoPlace
     self._Control.GameControl:DiscardCard(masterCard.Id, true, function(success)
         self._IsOperating = false
-        XLog.Debug(string.format("[主卡Discard诊断] DiscardCard 响应: masterCard.Id=%s success=%s", tostring(masterCard.Id), tostring(success)))
+
         if success then
             if self.Parent then
                 self.Parent:Hide()
             end
+            -- 丢弃成功 tip 移至 SellCardTip _OnMasterCardChange（TryAutoPlace 未放置时弹，避免与放置成功 tip 冲突）
             -- DiscardCard 仅本地 UpdateMasterCardByNotify + BuySuccess，未发 MasterCardChange；
             -- 主卡保留环节 SellCardTip 订阅 MasterCardChange 刷背包+TryAutoPlace，故显式补发触发腾位后自动放入奖励卡 #主卡Discard
-            XLog.Debug("[主卡Discard诊断] 补发 MasterCardChange（触发 SellCardTip 刷背包+TryAutoPlace）")
             XEventManager.DispatchEvent(XEventId.EVENT_PUNISHAAR_MASTER_CARD_CHANGE)
         end
     end)

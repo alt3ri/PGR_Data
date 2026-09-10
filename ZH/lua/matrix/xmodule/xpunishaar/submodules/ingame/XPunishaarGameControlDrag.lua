@@ -24,6 +24,12 @@ XPunishaarGameControl.DragEventId = {
     -- 松手（无论成败）时派发 End(无 payload)，UI 恢复全部主卡格。
     SubCardHostHintBegin = "PunishaarSubCardHostHintBegin",
     SubCardHostHintEnd   = "PunishaarSubCardHostHintEnd",
+    -- 拖拽归位完成（_RestorePosition 派发）：购买走异步 cb→归位=等 cb；取消/无效走同步=松手即展开。
+    -- PanelShop 据此展开副卡拖拽收起的商店栏；非副卡拖拽商店栏未收起则 no-op。#副卡拖拽收起展开
+    DragSettled = "PunishaarDragSettled",
+    -- 拖拽焦点变化（SetDragFocusTarget/ClearDragFocusTarget 派发）：payload={Area,Pos} 或 nil（清空）。
+    -- PanelDragBuyTips 订阅据此在 Neutral/BuyZone 间实时切换 #PanelDragBuyTips
+    FocusChange = "PunishaarDragFocusChange",
 }
 
 --region 拖拽会话状态 ----------------------------------------------------------
@@ -71,12 +77,16 @@ end
 function XPunishaarGameControl:SetDragFocusTarget(area, pos)
     self._FocusArea = area
     self._FocusPos  = pos
+    -- 焦点变化通知 UI：PanelDragBuyTips 据此切 Neutral/BuyZone（_RecomputeFocus 防抖下仅变化时调）#PanelDragBuyTips
+    self:DispatchEvent(self.DragEventId.FocusChange, { Area = area, Pos = pos })
 end
 
 --- 清除落点目标（落点容器 OnExit 调用）。
 function XPunishaarGameControl:ClearDragFocusTarget()
     self._FocusArea = nil
     self._FocusPos  = nil
+    -- 焦点清空通知 UI 切回 Neutral #PanelDragBuyTips
+    self:DispatchEvent(self.DragEventId.FocusChange, nil)
 end
 
 --- 当前落点区域（栏级反算 handler 读以判定是否清空 / 防抖，避免越权清卖出区焦点 #批次2）。

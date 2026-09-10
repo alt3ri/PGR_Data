@@ -14191,6 +14191,10 @@ XTable = {
         Id = ValueTypestringPrimaryKey,
         Tag = ValueTypestring,
     },
+    XTableMovieVoiceMuteList = {
+        Id = ValueTypeint,
+        MovieTableName = ValueTypestringPrimaryKey,
+    },
     XTableMultiChallengeStage = {
         Id = ValueTypeintPrimaryKey,
         ConsumeId = Type1ValueTypeint,
@@ -27073,6 +27077,17 @@ XTable = {
         VideoUrl = ValueTypestring,
         VideoUrlPc = ValueTypestring,
     },
+    XTableVideoMetadata = {
+        Url = ValueTypestringPrimaryKey,
+        DurationMs = ValueTypeint,
+        Width = ValueTypeint,
+        Height = ValueTypeint,
+        TotalFrames = ValueTypeint,
+        FrameRateN = ValueTypeint,
+        FrameRateD = ValueTypeint,
+        AudioStreamCount = ValueTypeint,
+        SubtitleChannelCount = ValueTypeint,
+    },
     XTableWaveRevise = {
         Id = ValueTypeint,
         ChallengeId = ValueTypeint,
@@ -27149,6 +27164,15 @@ XTable = {
         SelectedCameraRotX = ValueTypefloat,
         SelectedCameraRotY = ValueTypefloat,
         SelectedCameraRotZ = ValueTypefloat,
+    },
+    XTableWeaponOverrunCamera = {
+        WeaponId = ValueTypeintPrimaryKey,
+        PositionX = ValueTypefloat,
+        PositionY = ValueTypefloat,
+        PositionZ = ValueTypefloat,
+        RotationX = ValueTypefloat,
+        RotationY = ValueTypefloat,
+        RotationZ = ValueTypefloat,
     },
     XTableWeaponOverrunSkill = {
         Id = ValueTypeintPrimaryKey,

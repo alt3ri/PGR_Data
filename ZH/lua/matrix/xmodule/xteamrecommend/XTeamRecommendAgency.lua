@@ -994,7 +994,12 @@ function XTeamRecommendAgency:GetServerCharacterTargetProgressAndCheckFinish(rec
     local progress = math.min(finishWeight / totalWeight, 1)
 
     if progress >= 1 then
-        self:TeamRecommendFinishTargetRequest(characterId)
+        self:TeamRecommendFinishTargetRequest(characterId, function(success)
+            if not success then
+                return
+            end
+            XLuaUiManager.Open("UiEquipGuideSuccess", characterId)
+        end)
     elseif progress * 100 >= self:GetTargetFinishPercentage() then
         self:TeamRecommendFinishTargetEventRequest(characterId)
     end
@@ -1147,12 +1152,14 @@ function XTeamRecommendAgency:FromServerData(characterData)
         awarenessTargetSlotList[site] = BuildAwarenessTargetSlotData(site, awarenessEquipIds[site] or 0)
     end
 
-    -- EquipResonanceDatas 固定12条平铺（第1件第1/2条、第2件第1/2条…），空槽占位。
-    -- 件序=ceil(下标/每件共鸣数)，条目里的 Slot 是该意识上的共鸣槽位。
-    for index, resonanceData in ipairs(characterData.EquipResonanceDatas or {}) do
-        local site = math.ceil(index / XEnumConst.EQUIP.AWARENESS_RESONANCE_COUNT)
+    -- 同一共鸣槽的第N条对应第N件意识，服务端归一化后会按Slot分组排序。
+    local resonanceSiteMap = {}
+    for _, resonanceData in ipairs(characterData.EquipResonanceDatas or {}) do
+        local slot = resonanceData.Slot
+        local site = (resonanceSiteMap[slot] or 0) + 1
+        resonanceSiteMap[slot] = site
         local targetSlotData = awarenessTargetSlotList[site]
-        SetAwarenessResonance(targetSlotData, resonanceData.TemplateId, resonanceData.Type, resonanceData.Slot)
+        SetAwarenessResonance(targetSlotData, resonanceData.TemplateId, resonanceData.Type, slot)
     end
     for site, targetSlotData in pairs(awarenessTargetSlotList) do
         awarenessTargetSlotList[site] = ApplyAwarenessResonanceExpectCache(targetSlotData, characterId, characterData.BaseCfgId)
@@ -1173,23 +1180,17 @@ function XTeamRecommendAgency:FromServerData(characterData)
         end
     end
 
-    -- 从 EquipResonanceDatas 提取共鸣技能，按 suitId 归组（固定12条平铺，件序=ceil(下标/每件共鸣数)）
-    if equipIds then
-        for index, resonanceData in ipairs(characterData.EquipResonanceDatas or {}) do
-            local skillId = resonanceData.TemplateId
-            if XTool.IsNumberValid(skillId) then
-                local site = math.ceil(index / XEnumConst.EQUIP.AWARENESS_RESONANCE_COUNT)
-                local templateId = equipIds[site]
-                if XTool.IsNumberValid(templateId) then
-                    local suitId = XMVCA.XEquip:GetEquipSuitId(templateId)
-                    local data = suitDataMap[suitId]
-                    if data then
-                        table.insert(data.SkillIds, {
-                            SkillId = skillId,
-                            ResonanceType = resonanceData.Type or 0,
-                            EquipTemplateId = templateId,
-                        })
-                    end
+    -- 从归一化意识槽提取共鸣技能，按套装归组。
+    for _, targetSlotData in ipairs(awarenessTargetSlotList) do
+        local data = suitDataMap[targetSlotData.SuitId]
+        if data then
+            for _, resonanceData in ipairs(targetSlotData.ResonanceList) do
+                if XTool.IsNumberValid(resonanceData.SkillId) then
+                    table.insert(data.SkillIds, {
+                        SkillId = resonanceData.SkillId,
+                        ResonanceType = resonanceData.ResonanceType,
+                        EquipTemplateId = targetSlotData.EquipTemplateId,
+                    })
                 end
             end
         end

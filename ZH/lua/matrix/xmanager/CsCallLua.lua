@@ -651,6 +651,35 @@ function VideoManager.PlayMovie(movieId, cb)
     XDataCenter.MovieManager.PlayMovie(movieId, cb, nil, nil, nil, nil, nil, nil, true)
 end
 
+local VideoMetadataTemplates = {}
+
+function VideoManager.GetVideoMetadata(url)
+    local tablePath = XDataCenter.UiPcManager.IsPc()
+            and "Client/Video/VideoMetadataPC.tab"
+            or "Client/Video/VideoMetadata.tab"
+    local templates = VideoMetadataTemplates[tablePath]
+    if not templates then
+        templates = XTableManager.ReadByStringKey(tablePath, XTable.XTableVideoMetadata, "Url")
+        VideoMetadataTemplates[tablePath] = templates
+    end
+
+    local metadata = templates[url]
+    if not metadata then
+        XLog.Error("VideoManager.GetVideoMetadata not found, Url:" .. url)
+        return nil
+    end
+
+    return table.concat({
+        metadata.Width,
+        metadata.Height,
+        metadata.TotalFrames,
+        metadata.FrameRateN,
+        metadata.FrameRateD,
+        metadata.AudioStreamCount,
+        metadata.SubtitleChannelCount,
+    }, "\t")
+end
+
 function Movie.ExtractGenderContent(content, specGender)
     local content = XMVCA.XMovie:ExtractGenderContent(content, specGender)
     return content

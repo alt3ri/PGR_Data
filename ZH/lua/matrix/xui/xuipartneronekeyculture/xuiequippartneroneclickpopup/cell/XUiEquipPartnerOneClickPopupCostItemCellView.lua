@@ -14,6 +14,8 @@
 ---@field GoMaterialCell UnityEngine.RectTransform
 ---@field GoMaterialList UnityEngine.RectTransform
 ---@field GoPanelNone UnityEngine.RectTransform
+---@field TxtNone UnityEngine.UI.Text 无可用材料时的定制提示文本
+---@field GoPreview UnityEngine.RectTransform 养成结果预览节点
 ---@field ImgBreakIcon UnityEngine.UI.Image 突破阶级图标
 ---@field TxtSkillPlan UnityEngine.UI.Text 主动技/被动技装配数量文本（如 主动技1/1 被动技2/4）
 ---@field BtnSkillSwitch XUiComponent.XUiButton 打开技能选中面板按钮
@@ -274,6 +276,42 @@ function XUiEquipPartnerOneClickPopupCostItemCellView:_RefreshCostList(costList,
     local showNone = self:_IsCurCultureSelected() and not hasDisplayCost
     self.GoMaterialList.gameObject:SetActiveEx(true)
     self.GoPanelNone.gameObject:SetActiveEx(showNone)
+
+    if showNone then
+        local XPartnerEnum = XMVCA.XPartner.Enum
+        if self._CultureType == XPartnerEnum.CultureType.LevelUp then
+            local levelUpMOList = self._Control:GetOneKeyCultureMainControl():GetBaseCostControl():GetLevelUpMOList()
+            local firstMO = levelUpMOList[1]
+            local isCoinLack = false
+            if firstMO then
+                local coinId = XDataCenter.ItemManager.ItemId.Coin
+                for _, item in ipairs(firstMO:GetNeedList()) do
+                    if item.Id == coinId and XDataCenter.ItemManager.GetCount(coinId) < item.Count then
+                        isCoinLack = true
+                        break
+                    end
+                end
+            end
+            local textKey = isCoinLack and "PartnerOneKeyLackCoin" or "PartnerOneKeyLackLevelUpMaterial"
+            self.TxtNone.text = XUiHelper.GetText(textKey)
+        elseif self._CultureType == XPartnerEnum.CultureType.SkillLevelUp then
+            local skillMOList = self._Control:GetOneKeyCultureMainControl():GetBaseCostControl():GetSkillMOList()
+            local firstMO = skillMOList[1]
+            local isNonCoinCostEnough = firstMO ~= nil
+            if firstMO then
+                local coinId = XDataCenter.ItemManager.ItemId.Coin
+                for _, item in ipairs(firstMO:GetNeedList()) do
+                    if item.Id ~= coinId and XDataCenter.ItemManager.GetCount(item.Id) < item.Count then
+                        isNonCoinCostEnough = false
+                        break
+                    end
+                end
+            end
+            local textKey = isNonCoinCostEnough and "PartnerOneKeyLackCoin" or "PartnerOneKeyLackSkillUpMaterial"
+            self.TxtNone.text = XUiHelper.GetText(textKey)
+        end
+    end
+
     if not hasDisplayCost then
         for _, grid in ipairs(self._CostGridList) do
             grid.GameObject:SetActiveEx(false)
@@ -324,6 +362,7 @@ end
 function XUiEquipPartnerOneClickPopupCostItemCellView:_SetSelected(isSelected)
     self.GoBgTitleChoose.gameObject:SetActiveEx(isSelected)
     self.GoBgTitleNotChoose.gameObject:SetActiveEx(not isSelected)
+    self.GoPreview.gameObject:SetActiveEx(isSelected)
     self.BtnChoose:SetButtonState(isSelected and CS.UiButtonState.Select or CS.UiButtonState.Normal)
 end
 

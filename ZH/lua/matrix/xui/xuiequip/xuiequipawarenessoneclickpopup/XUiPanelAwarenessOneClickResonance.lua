@@ -34,8 +34,7 @@ local XUiGridAwarenessOneClickResonanceMaterial = require("XUi/XUiEquip/XUiEquip
 ---@field IsChoose boolean 共鸣功能是否参与一键养成
 ---@field IsEmptyState boolean 当前功能是否不可参与一键养成
 ---@field DefaultTitleColor UnityEngine.Color 标题默认颜色
----@field DefaultPreviewColor UnityEngine.Color 预览文本默认颜色
----@field DefaultArrowColor UnityEngine.Color 箭头默认颜色
+---@field DefaultPreviewColor UnityEngine.Color 预览文本和箭头的默认颜色
 ---@field CachedSelectedResonanceSkillMap table<number, table<number, boolean>> 用户缓存的目标槽位选择，包含当前方案下已达成槽位
 ---@field SelectedResonanceSkillMap table<number, table<number, boolean>> 当前可共鸣且未达成的已选目标槽位
 ---@field SelectableTargetSlotCount number 当前方案下可共鸣且未达成的目标槽位数量
@@ -207,7 +206,6 @@ function XUiPanelAwarenessOneClickResonance:OnStart()
     self.IsEmptyState = true
     self.DefaultTitleColor = self.UiTxtTitle.color
     self.DefaultPreviewColor = self.UiTxtPreview.color
-    self.DefaultArrowColor = self.ImgArrow.color
 
     self:InitComponents()
 end
@@ -388,8 +386,9 @@ function XUiPanelAwarenessOneClickResonance:RefreshPreviewText(unachievedList)
     self.TxtChoosePreview.text = string.format("%d/%d", selectedTargetSlotCount, self.SelectableTargetSlotCount)
     self.IsEmptyState = not self.IsChoose or hasMissingSetting
     self.UiTxtTitle.color = self.IsEmptyState and EMPTY_CONTENT_TITLE_COLOR or self.DefaultTitleColor
-    self.UiTxtPreview.color = self.IsEmptyState and EMPTY_CONTENT_TITLE_COLOR or self.DefaultPreviewColor
-    self.ImgArrow.color = self.IsEmptyState and EMPTY_CONTENT_TITLE_COLOR or self.DefaultArrowColor
+    local previewColor = self.IsEmptyState and EMPTY_CONTENT_TITLE_COLOR or self.DefaultPreviewColor
+    self.UiTxtPreview.color = previewColor
+    self.ImgArrow.color = previewColor
     self.ImgArrow.gameObject:SetActiveEx(self.IsChoose)
     self.UiTxtPreview.gameObject:SetActiveEx(self.IsChoose)
     self:RefreshTitleState()
@@ -935,7 +934,12 @@ function XUiPanelAwarenessOneClickResonance:BuildMaterialDisplayNeedCountMap(pre
             and targetedOwnedCount >= targetedSkillCount
         local displayNeedCountMap
         if not isTargetedMaterialEnough then
-            displayNeedCountMap = XTool.Clone(selectedCountMap)
+            -- 固定次数可按定向材料抵扣后的实际消耗展示；直至达成目标无法确定最终次数，仍展示已选材料总量。
+            if previewContext.IsUntilTarget then
+                displayNeedCountMap = XTool.Clone(selectedCountMap)
+            else
+                displayNeedCountMap = XTool.Clone(previewContext.NeedCountMap)
+            end
         elseif #remainingSkillList == 0 then
             displayNeedCountMap = {}
         elseif previewContext.IsUntilTarget then
