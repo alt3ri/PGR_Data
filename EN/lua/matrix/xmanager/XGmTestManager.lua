@@ -1674,6 +1674,36 @@ local function AddSubPackageFunction()
     skipGmToggle.isOn = XMVCA.XSubPackage:IsSkipGMTest()
 end
 
+local function AddFangKuaiDebugFunction()
+    local isInit = true
+    local debugToggle = Panel:AddToggle("显示Debug信息", function(isOn)
+        if isInit then
+            return
+        end
+        if isOn then
+            XMVCA.XFangKuai:EnterDebegMode()
+        else
+            XMVCA.XFangKuai:CloseDebegMode()
+        end
+    end)
+    if debugToggle then
+        debugToggle.isOn = XSaveTool.GetData("FangKuai_Debug") == true
+    end
+    isInit = false
+
+    local itemId
+    Panel:AddInput(
+        "道具Id:",
+        function(value)
+            itemId = tonumber(value)
+        end
+    )
+
+    Panel:AddButton("添加道具", function()
+        XMVCA.XFangKuai:DebugAddItem(itemId)
+    end)
+end
+
 --------------Ui组件创建 begin----------------
 local function AddLuaUnitTest()
     local XLuaTestRunner = require("EditorOnly/XUnitTest/XLuaTestRunner")
@@ -1852,6 +1882,7 @@ function XGmTestManager.Init()
     Panel:AddSubMenu("2048玩法", AddGame2048DebugFunction)
     Panel:AddSubMenu("黄金矿工玩法", AddGoldenMinerDebugFunction)
     Panel:AddSubMenu("分包调试", AddSubPackageFunction)
+    Panel:AddSubMenu("熊熊破坏王", AddFangKuaiDebugFunction)
 
     local isInit = true
     local skipRecordTog = Panel:AddToggle("通用跳转埋点测试", function(isOn)

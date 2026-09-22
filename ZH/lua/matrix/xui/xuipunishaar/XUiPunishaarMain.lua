@@ -102,7 +102,9 @@ function XUiPunishaarMain:UpdateLeftTime(timeId)
     local endTime = XFunctionManager.GetEndTimeByTimeId(timeId)
     local leftTime = math.max(endTime - XTime.GetServerNowTimestamp(), 0)
 
-    self.TxtTime.text = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.ACTIVITY)
+    local timeText = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.ACTIVITY)
+
+    self.TxtTime.text = XUiHelper.FormatTextEx(self._Control:GetMainLeftTimeText(), timeText)
 end
 
 function XUiPunishaarMain:RefreshRewardPreview()
@@ -114,7 +116,7 @@ function XUiPunishaarMain:RefreshRewardPreview()
     local rewards = {}
 
     if XTool.IsNumberValid(rewardId) then
-        rewards = XRewardManager.GetRewardListNotCount(rewardId) or {}
+        rewards = XRewardManager.GetRewardList(rewardId) or {}
     end
 
     XUiHelper.RefreshCustomizedList(

@@ -7,7 +7,7 @@ function XUiConcertPreHeatingTuningStage:OnAwake()
     self._Sliders = { self.Slider1, self.Slider2, self.Slider3, self.Slider4 }
     local lights = { self.ImgSliderLightOn1, self.ImgSliderLightOn2, self.ImgSliderLightOn3, self.ImgSliderLightOn4 }
     self._SliderTargetLights = lights
-    self._SliderValues = {}
+    self._ControlValues = {}
 
     self:InitButton()
     self:InitSliderEvent()
@@ -93,23 +93,23 @@ function XUiConcertPreHeatingTuningStage:InitPointCloudMorph()
     self.TargetImagePointCloudMorph:SetMorphProgress(0)
 end
 
-local function GetSignalTipText(tuneProgress)
-    if tuneProgress < 70 then
+local function GetSignalTipText(stageProgress)
+    if stageProgress < 70 then
         return XUiHelper.GetText("ConcertPreHeatingTuneSignalFar")
     end
 
-    if tuneProgress < 80 then
+    if stageProgress < 80 then
         return XUiHelper.GetText("ConcertPreHeatingTuneSignalNear")
     end
 
-    if tuneProgress < 95 then
+    if stageProgress < 95 then
         return XUiHelper.GetText("ConcertPreHeatingTuneSignalVeryNear")
     end
 
     return XUiHelper.GetText("ConcertPreHeatingTuneSignalSyncing")
 end
 
-function XUiConcertPreHeatingTuningStage:RefreshChannelTips(tuneProgress)
+function XUiConcertPreHeatingTuningStage:RefreshChannelTips(stageProgress)
     self.PanelChannelTips.gameObject:SetActiveEx(not self._IsFinished)
     if self._IsFinished then
         return
@@ -119,7 +119,7 @@ function XUiConcertPreHeatingTuningStage:RefreshChannelTips(tuneProgress)
     self.PanelSignal.gameObject:SetActiveEx(self._HasSearch)
 
     if self._HasSearch then
-        self.TxtSignalTips.text = GetSignalTipText(tuneProgress or 0)
+        self.TxtSignalTips.text = GetSignalTipText(stageProgress or 0)
     end
 end
 
@@ -134,29 +134,29 @@ function XUiConcertPreHeatingTuningStage:RefreshSliderTargetLights()
     end
 end
 
--- 按当前滑条值刷新调频表现，并返回当前调频进度。
+-- 按当前滑条值刷新调频表现，并返回权威关卡完成度。
 function XUiConcertPreHeatingTuningStage:RefreshSliderDrivenState()
-    local sliderValues = self._SliderValues
+    local controlValues = self._ControlValues
     for index, controlParamCfg in ipairs(self._ControlParamCfgs) do
         local slider = self._Sliders[index]
-        sliderValues[index] = slider and slider.value or controlParamCfg.MinParam
+        controlValues[index] = slider and slider.value or controlParamCfg.MinParam
         if slider and not string.IsNilOrEmpty(controlParamCfg.AisacControlName) then
-            local aisacValue = self._Control.GetTuneAisacValue(controlParamCfg, sliderValues[index])
+            local aisacValue = self._Control.GetTuneAisacValue(controlParamCfg, controlValues[index])
             CS.XAudioManager.ChangeMusicSourceAisac(controlParamCfg.AisacControlName, aisacValue)
         end
     end
 
-    for index = #self._ControlParamCfgs + 1, #sliderValues do
-        sliderValues[index] = nil
+    for index = #self._ControlParamCfgs + 1, #controlValues do
+        controlValues[index] = nil
     end
 
-    local tuneProgress = self._Control:CalculateTuneProgress(self._TuningStageId, sliderValues)
+    local stageProgress = self._Control:CalculateTuneStageProgress(self._TuningStageId, controlValues)
     self:RefreshSliderTargetLights()
-    self.TargetImagePointCloudMorph:SetMorphProgress((tuneProgress or 0) / 100)
-    self:RefreshChannelTips(tuneProgress)
+    self.TargetImagePointCloudMorph:SetMorphProgress((stageProgress or 0) / 100)
+    self:RefreshChannelTips(stageProgress)
     -- TODO：SandControlType/CueControlType 枚举和表现接口确定后，在这里驱动音频和强度分档表现。
 
-    return tuneProgress
+    return stageProgress
 end
 
 function XUiConcertPreHeatingTuningStage:OnSliderValueChanged()
@@ -165,17 +165,17 @@ function XUiConcertPreHeatingTuningStage:OnSliderValueChanged()
     end
 
     self._HasSearch = true
-    local tuneProgress = self:RefreshSliderDrivenState()
-    self:TryFinishTuneStage(tuneProgress)
+    local stageProgress = self:RefreshSliderDrivenState()
+    self:TryFinishTuneStage(stageProgress)
 end
 
--- 玩家操作后检查是否完成调频关卡。
-function XUiConcertPreHeatingTuningStage:TryFinishTuneStage(tuneProgress)
+-- 玩家操作后使用权威关卡完成度检查是否完成调频关卡。
+function XUiConcertPreHeatingTuningStage:TryFinishTuneStage(stageProgress)
     if self._IsFinished then
         return
     end
 
-    if not self._Control.IsTuneComplete(tuneProgress) then
+    if not self._Control.IsTuneStageComplete(stageProgress) then
         return
     end
 

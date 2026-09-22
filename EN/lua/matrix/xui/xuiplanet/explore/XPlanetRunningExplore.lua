@@ -377,7 +377,7 @@ function XPlanetRunningExplore:CreateModel(entity, delay)
     if modelName then
         local nodeCharacter = CS.UnityEngine.GameObject("Role")
         nodeCharacter.transform:SetParent(rootCharacter.transform, false)
-        nodeCharacter.gameObject:SetLayerRecursively(CS.UnityEngine.LayerMask.NameToLayer(HomeSceneLayerMask.HomeCharacter))
+        nodeCharacter.gameObject:SetLayerRecursively(CS.UnityEngine.LayerMask.NameToLayer(LayerMaskName.Npc))
 
         ---@type XUiPanelRoleModel
         local panelModel = XUiPanelRoleModel.New(nodeCharacter)
@@ -784,7 +784,7 @@ function XPlanetRunningExplore:InitRootModel()
         local transformPlanet = self.Scene._Planet._Transform
         local rootCharacter = CS.UnityEngine.GameObject("CharacterRoot")
         rootCharacter.transform:SetParent(transformPlanet, false)
-        rootCharacter.gameObject:SetLayerRecursively(CS.UnityEngine.LayerMask.NameToLayer(HomeSceneLayerMask.HomeCharacter))
+        rootCharacter.gameObject:SetLayerRecursively(CS.UnityEngine.LayerMask.NameToLayer(LayerMaskName.Npc))
         self._RootCharacter = rootCharacter
     end
 end

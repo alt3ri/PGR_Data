@@ -6,7 +6,7 @@ function XUiTeamRecommendDetail:OnAwake()
     self:InitDynamicTable()
 end
 
----@param formationGridData table { Formation=cfg, BaseFormation=cfg, ServerFormation=快照, TargetFormation=目标快照 }
+---@param formationGridData table { Formation=cfg, BaseFormation=cfg|nil, ServerFormation=快照|nil, TargetFormation=目标快照|nil }
 ---@param characterId number 入口角色ID
 ---@param isFromMyChoice boolean|nil true=从GridMyChoice（入口角色目标）进入；来源身份OnStart定死，此后不变
 function XUiTeamRecommendDetail:OnStart(formationGridData, characterId, isFromMyChoice)
@@ -15,7 +15,7 @@ function XUiTeamRecommendDetail:OnStart(formationGridData, characterId, isFromMy
     self.IsFromMyChoice = isFromMyChoice
 
     self:RefreshTeamName()
-    self:RefreshTagName()
+    self:RefreshFormationTags()
 end
 
 --- 首次打开和从上层界面（目标详情删除目标等）返回都走这里，按最新目标缓存刷新卡片按钮
@@ -39,20 +39,30 @@ function XUiTeamRecommendDetail:InitDynamicTable()
 end
 
 function XUiTeamRecommendDetail:RefreshTeamName()
-    local baseFormationCfg = self.FormationGridData and self.FormationGridData.BaseFormation
-    self.TxtTeamName.text = baseFormationCfg and baseFormationCfg.Desc or ""
+    local formationCfg = self.FormationGridData and self.FormationGridData.Formation
+    self.TxtTeamName.text = formationCfg and formationCfg.Name or ""
 end
 
-function XUiTeamRecommendDetail:RefreshTagName()
+function XUiTeamRecommendDetail:RefreshFormationTags()
     local formationCfg = self.FormationGridData and self.FormationGridData.Formation
     local tags = formationCfg and formationCfg.Tags or {}
-    self.TxtTagName.text = #tags > 0 and table.concat(tags, ",") or ""
+    local tagName = #tags > 0 and table.concat(tags, ",") or ""
+    self.TxtTagName.text = tagName
+    self.TagNode.gameObject:SetActiveEx(formationCfg ~= nil)
+    self.ImgRankBg.gameObject:SetActiveEx(formationCfg ~= nil)
+    if formationCfg then
+        local qualityTagName, qualityTagBg = XMVCA.XTeamRecommend:GetFormationQualityTag(formationCfg)
+        self.TxtTagRank.text = qualityTagName
+        self.ImgRankBg:SetSprite(qualityTagBg)
+    end
 end
 
 function XUiTeamRecommendDetail:OnCharDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         local recommendCharData = self.CharDataList and self.CharDataList[index]
         grid:Refresh(recommendCharData, self.TxtTeamName.text, nil, self.FormationGridData)
+        local showSetTargetBubble = grid:CanShowSetTargetBubble() and XMVCA.XTeamRecommend:TryRecordBubbleShown(self.Name)
+        grid:SetShowSetTargetBubble(showSetTargetBubble)
     end
 end
 

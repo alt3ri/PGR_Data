@@ -415,6 +415,14 @@ XPartnerManagerCreator = function()
         return count
     end
 
+    function XPartnerManager.GetAllPartnerIds()
+        local ids = {}
+        for _, entity in pairs(PartnerEntityDic or {}) do
+            table.insert(ids, entity:GetId())
+        end
+        return ids
+    end
+
     function XPartnerManager.GetMaxPartnerCount()
         return PartnerMaxCount
     end
@@ -791,7 +799,7 @@ XPartnerManagerCreator = function()
         return eventIds
     end
     -----------------------------------------------------------------服务器通讯----------------------------------------------------
-    function XPartnerManager.PartnerComposeRequest(templateIds, isOneKey)--伙伴合成请求
+    function XPartnerManager.PartnerComposeRequest(templateIds, isOneKey, cb)--伙伴合成请求
         XNetwork.Call(METHOD_NAME.PartnerComposeRequest, { TemplateIds = templateIds, IsOneKey = isOneKey }, function(res)
             if res.Code ~= XCode.Success then
                 XUiManager.TipCode(res.Code)
@@ -817,15 +825,16 @@ XPartnerManagerCreator = function()
         end)
     end
 
-    function XPartnerManager.PartnerCarryRequest(characterId, partnerId, errorCb)--伙伴携带请求
-        local partnerEntity = PartnerEntityDic[partnerId]
-
+    function XPartnerManager.PartnerCarryRequest(characterId, partnerId, errorCb, cb)--伙伴携带请求
         XNetwork.Call(METHOD_NAME.PartnerCarryRequest, { CharacterId = characterId, PartnerId = partnerId }, function(res)
             if res.Code ~= XCode.Success then
                 XUiManager.TipCode(res.Code)
-                if errorCb then errorCb() end
+                if errorCb then errorCb(res.Code) end
                 return
             end
+
+            -- 成功回调时本地伙伴数据已更新：服务端框架统一先Sync脏数据推送（NotifyPartnerDataList）再回响应
+            if cb then cb() end
         end)
     end
     
@@ -943,7 +952,7 @@ XPartnerManagerCreator = function()
         XNetwork.Call(METHOD_NAME.PartnerBreakAwayRequest, { PartnerId = partnerId }, function(res)
             if res.Code ~= XCode.Success then
                 XUiManager.TipCode(res.Code)
-                if errorCb then errorCb() end
+                if errorCb then errorCb(res.Code) end
                 return
             end
         end)
@@ -997,10 +1006,11 @@ XPartnerManagerCreator = function()
         end)
     end
 
-    function XPartnerManager.PartnerLevelUpRequest(partnerId, useItems, cb)--伙伴升级请求
+    function XPartnerManager.PartnerLevelUpRequest(partnerId, useItems, cb, errorCb)--伙伴升级请求
         local partnerEntity = PartnerEntityDic[partnerId]
         if partnerEntity:GetIsLevelMax() then
             XUiManager.TipText("PartnerLevelUpMaxLevel")
+            if errorCb then errorCb() end
             return
         end
 
@@ -1015,18 +1025,21 @@ XPartnerManagerCreator = function()
 
         if costEmpty then
             XUiManager.TipText("PartnerLevelUpItemEmpty")
+            if errorCb then errorCb() end
             return
         end
 
         if not XDataCenter.ItemManager.DoNotEnoughBuyAsset(XDataCenter.ItemManager.ItemId.Coin, costMoney, 1, function()
-            XPartnerManager.PartnerLevelUpRequest(partnerId, useItems, cb)
+            XPartnerManager.PartnerLevelUpRequest(partnerId, useItems, cb, errorCb)
         end, "PartnerCoinNotEnough") then
+            if errorCb then errorCb() end
             return
         end
 
         XNetwork.Call(METHOD_NAME.PartnerLevelUpRequest, { PartnerId = partnerId, UseItems = useItems }, function(res)
             if res.Code ~= XCode.Success then
                 XUiManager.TipCode(res.Code)
+                if errorCb then errorCb(res.Code) end
                 return
             end
             local tmpData = {
@@ -1043,22 +1056,25 @@ XPartnerManagerCreator = function()
         end)
     end
 
-    function XPartnerManager.PartnerBreakThroughRequest(partnerId, cb)--伙伴突破请求
+    function XPartnerManager.PartnerBreakThroughRequest(partnerId, cb, errorCb)--伙伴突破请求
         local partnerEntity = PartnerEntityDic[partnerId]
 
         if partnerEntity:GetIsMaxBreakthrough() then
             XUiManager.TipText("PartnerBreakMax")
+            if errorCb then errorCb() end
             return
         end
 
         if not partnerEntity:GetIsLevelMax() then
             XUiManager.TipText("PartnerBreakMinLevel")
+            if errorCb then errorCb() end
             return
         end
 
         local consumeItems = partnerEntity:GetBreakthroughItem()
         if not XDataCenter.ItemManager.CheckItemsCount(consumeItems) then
             XUiManager.TipText("PartnerItemNotEnough")
+            if errorCb then errorCb() end
             return
         end
 
@@ -1067,15 +1083,17 @@ XPartnerManagerCreator = function()
         money.Count,
         1,
         function()
-            XPartnerManager.PartnerBreakThroughRequest(partnerId, cb)
+            XPartnerManager.PartnerBreakThroughRequest(partnerId, cb, errorCb)
         end,
         "PartnerCoinNotEnough") then
+            if errorCb then errorCb() end
             return
         end
 
         XNetwork.Call(METHOD_NAME.PartnerBreakThroughRequest, { PartnerId = partnerId }, function(res)
             if res.Code ~= XCode.Success then
                 XUiManager.TipCode(res.Code)
+                if errorCb then errorCb(res.Code) end
                 return
             end
             local tmpData = {
@@ -1093,22 +1111,25 @@ XPartnerManagerCreator = function()
         end)
     end
 
-    function XPartnerManager.PartnerStarActivateRequest(partnerId, costPartnerIds, cb)--伙伴星数进度激活请求
+    function XPartnerManager.PartnerStarActivateRequest(partnerId, costPartnerIds, cb, errorCb)--伙伴星数进度激活请求
         local partnerEntity = PartnerEntityDic[partnerId]
 
         if not costPartnerIds or not next(costPartnerIds) then
             XUiManager.TipText("PartnerQualityUpEmpty")
+            if errorCb then errorCb() end
             return
         end
 
         if partnerEntity:GetCanUpQuality() then
             XUiManager.TipText("PartnerAllStarActivate")
+            if errorCb then errorCb() end
             return
         end
 
         XNetwork.Call(METHOD_NAME.PartnerStarActivateRequest, { PartnerId = partnerId, CostPartnerIds = costPartnerIds }, function(res)
             if res.Code ~= XCode.Success then
                 XUiManager.TipCode(res.Code)
+                if errorCb then errorCb(res.Code) end
                 return
             end
             local tmpData = {
@@ -1130,16 +1151,18 @@ XPartnerManagerCreator = function()
         end)
     end
 
-    function XPartnerManager.PartnerEvolutionRequest(partnerId, cb)--伙伴进化请求
+    function XPartnerManager.PartnerEvolutionRequest(partnerId, cb, errorCb)--伙伴进化请求
         local partnerEntity = PartnerEntityDic[partnerId]
 
         if partnerEntity:GetIsMaxQuality() then
             XUiManager.TipText("PartnerQualityMax")
+            if errorCb then errorCb() end
             return
         end
 
         if not partnerEntity:GetCanUpQuality() then
             XUiManager.TipText("PartnerClipNotEnough")
+            if errorCb then errorCb() end
             return
         end
 
@@ -1148,15 +1171,17 @@ XPartnerManagerCreator = function()
         money.Count,
         1,
         function()
-            XPartnerManager.PartnerEvolutionRequest(partnerId, cb)
+            XPartnerManager.PartnerEvolutionRequest(partnerId, cb, errorCb)
         end,
         "PartnerCoinNotEnough") then
+            if errorCb then errorCb() end
             return
         end
 
         XNetwork.Call(METHOD_NAME.PartnerEvolutionRequest, { PartnerId = partnerId }, function(res)
             if res.Code ~= XCode.Success then
                 XUiManager.TipCode(res.Code)
+                if errorCb then errorCb(res.Code) end
                 return
             end
             local tmpData = {
@@ -1235,14 +1260,14 @@ XPartnerManagerCreator = function()
         XNetwork.Call(METHOD_NAME.PartnerSkillUpRequest, { PartnerId = partnerId, SkillId = skillId, Times = count }, function(res)
             if res.Code ~= XCode.Success then
                 XUiManager.TipCode(res.Code)
-                if errorCb then errorCb() end
+                if errorCb then errorCb(res.Code) end
                 return
             end
             if cb then cb(res.SkillUpInfo) end
         end)
     end
 
-    function XPartnerManager.PartnerSkillWearRequest(partnerId, skillDic, skillType, errorCb)--伙伴技能穿戴请求
+    function XPartnerManager.PartnerSkillWearRequest(partnerId, skillDic, skillType, errorCb, successCb)--伙伴技能穿戴请求
         local partnerEntity = PartnerEntityDic[partnerId]
 
         local skillIdToWear = {}
@@ -1253,9 +1278,10 @@ XPartnerManagerCreator = function()
         XNetwork.Call(METHOD_NAME.PartnerSkillWearRequest, { PartnerId = partnerId, SkillIdToWear = skillIdToWear, SkillType = skillType }, function(res)
             if res.Code ~= XCode.Success then
                 XUiManager.TipCode(res.Code)
-                if errorCb then errorCb() end
+                if errorCb then errorCb(res.Code) end
                 return
             end
+            if successCb then successCb(res) end
         end)
     end
 

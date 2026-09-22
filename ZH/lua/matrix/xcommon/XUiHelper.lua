@@ -1702,17 +1702,23 @@ function XUiHelper.ReplaceWithPlayerName(str, replaceStr)
 end
 
 --把大数字按照一定的规范转换成字符串
---规范：小于6位不转换，大于等于6位转换为w并保留小数点后2位
+--规范：小于阈值不转换，大于等于阈值转换为w并保留小数点后2位（阈值/除数由客户端配置 LargeIntNumThreshold/LargeIntNumDivisor 控制）
+--LargeIntNumThreshold 配置为-1时不做转换，直接返回原数
 --比如 600000 返回 60w
 function XUiHelper.GetLargeIntNumText(num)
     local tenThousandStr = XUiHelper.GetText("TenThousand")
     if XOverseaManager.IsTWRegion() then
-       tenThousandStr = XUiHelper.GetText("TenthousandGuildTw")
+        tenThousandStr = XUiHelper.GetText("TenthousandGuildTw")
     end
     local t = type(num)
     if t == "number" then
-        if num >= 100000 then
-            local bigNum = num / 10000
+        local threshold = CS.XGame.ClientConfig:GetInt("LargeIntNumThreshold")
+        if threshold == -1 then
+            return tostring(num)
+        end
+        if num >= threshold then
+            local divisor = CS.XGame.ClientConfig:GetInt("LargeIntNumDivisor")
+            local bigNum = num / divisor
             if math.floor(bigNum) < bigNum then
                 return string.format("%.2f", bigNum) .. tenThousandStr
             else

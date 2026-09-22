@@ -1,10 +1,12 @@
 local XUiSignGridDay = require("XUi/XUiSignIn/XUiSignGridDay")
-local XUiSignPrefab = XClass(nil, "XUiSignPrefab")
 
+---@class XUiSignPrefab
+local XUiSignPrefab = XClass(nil, "XUiSignPrefab")
 
 function XUiSignPrefab:Ctor(ui, rootUi, parent, setTomorrow)
     self.GameObject = ui.gameObject
     self.Transform = ui.transform
+    ---@type XLuaUi
     self.RootUi = rootUi
     self.Parent = parent
     self.SetTomorrow = setTomorrow
@@ -13,16 +15,26 @@ function XUiSignPrefab:Ctor(ui, rootUi, parent, setTomorrow)
     XTool.InitUiObject(self)
     self:InitAddListen()
 
+    ---@type XUiSignGridDay[]
     self.DaySmallGrids = {}
     table.insert(self.DaySmallGrids, XUiSignGridDay.New(self.GridDaySmall, self.RootUi))
+    ---@type XUiSignGridDay[]
     self.DayBigGrids = {}
     table.insert(self.DayBigGrids, XUiSignGridDay.New(self.GridDayBig, self.RootUi))
+    ---@type XUiSignGridDay[]
+    self.DaySpecialGrids = {}
+    if self.GridDaySpecialBig then
+        table.insert(self.DaySpecialGrids, XUiSignGridDay.New(self.GridDaySpecialBig, self.RootUi))
+    end
     self.BtnList = {}
     table.insert(self.BtnList, self.BtnTab)
 end
 
 function XUiSignPrefab:InitAddListen()
     self.RootUi:RegisterClickEvent(self.BtnHelp, self.OnBtnHelpClickCb)
+    if self.BtnSkip then
+        self.BtnSkip:AddEventListener(handler(self, self.OnBtnSkipClick))
+    end
 end
 
 function XUiSignPrefab:OnBtnHelpClick()
@@ -65,6 +77,8 @@ function XUiSignPrefab:Refresh(signId, round, isShow)
     self:SetSignTime(self.EndTime2, endTimeStamp,"HH:mm")
 
     self:InitTabGroup()
+    self:ShowSkip()
+    self:RefreshSkipRedPoint()
 end
 
 ---
@@ -139,8 +153,13 @@ function XUiSignPrefab:SetRewardInfos(index)
         v.GameObject:SetActiveEx(false)
     end
 
+    for _, v in ipairs(self.DaySpecialGrids) do
+        v.GameObject:SetActiveEx(false)
+    end
+
     local smallIndex = 1
     local bigIndex = 1
+    local specialIndex = 1
 
     for _, config in ipairs(rewardConfigs) do
         if config.IsGrandPrix then                          -- 设置大奖励
@@ -155,6 +174,22 @@ function XUiSignPrefab:SetRewardInfos(index)
             dayGrid:Refresh(config, self.IsShow, self.SetTomorrow)
             dayGrid.Transform:SetAsLastSibling()
             bigIndex = bigIndex + 1
+        elseif config.IsSpecialPrix then                     -- 设置特殊奖励（第三种奖励样式）
+            if not self.GridDaySpecialBig then
+                XLog.Error(string.format("XUiSignPrefab:SetRewardInfos 配置了IsSpecialPrix特殊奖励，但当前预制无GridDaySpecialBig槽位，signId=%s", tostring(self.SignId)))
+            else
+                local dayGrid = self.DaySpecialGrids[specialIndex]
+                if not dayGrid then
+                    local grid = CS.UnityEngine.GameObject.Instantiate(self.GridDaySpecialBig)
+                    grid.transform:SetParent(self.PanelDayContent, false)
+                    dayGrid = XUiSignGridDay.New(grid, self.RootUi)
+                    table.insert(self.DaySpecialGrids, dayGrid)
+                end
+
+                dayGrid:Refresh(config, self.IsShow, self.SetTomorrow)
+                dayGrid.Transform:SetAsLastSibling()
+                specialIndex = specialIndex + 1
+            end
         else                                                -- 设置小奖励
             local dayGrid = self.DaySmallGrids[smallIndex]
             if not dayGrid then
@@ -191,6 +226,16 @@ function XUiSignPrefab:SetTomorrowOpen(dayRewardConfig, isRoundLastDay)
                 v.Config.SignId == dayRewardConfig.SignId and
                 v.Config.Round == dayRewardConfig.Round + 1 and
                 v.Config.Day == 1 then
+                v:SetTomorrow()
+                return
+            end
+        end
+
+        for _, v in ipairs(self.DaySpecialGrids) do
+            if v.GameObject.activeSelf and v.Config and
+                    v.Config.SignId == dayRewardConfig.SignId and
+                    v.Config.Round == dayRewardConfig.Round + 1 and
+                    v.Config.Day == 1 then
                 v:SetTomorrow()
                 return
             end
@@ -245,6 +290,99 @@ end
 
 function XUiSignPrefab:SetTomorrowForce(isForce)
     self.SetTomorrow = isForce
+end
+
+function XUiSignPrefab:ShowSkip()
+    self:RemoveSkipTimer()
+    self.IsSkipOpen = false
+
+    if XTool.UObjIsNil(self.BtnSkip) or XTool.UObjIsNil(self.TxtSkip) then
+        self:RefreshSkipRedPointDisplay()
+        return
+    end
+
+    local signInCfg = XSignInConfigs.GetSignInConfig(self.SignId)
+    self.SkipTimeId = signInCfg.SkipTimeId
+    self.SkipId = signInCfg.SkipId
+
+    local endTime = XFunctionManager.GetEndTimeByTimeId(self.SkipTimeId)
+    if XTime.GetServerNowTimestamp() > endTime then
+        --跳转入口已关闭
+        self.BtnSkip:SetDisable(true, false)
+        self.TxtSkip.gameObject:SetActiveEx(false)
+        self:RefreshSkipRedPointDisplay()
+        return
+    end
+
+    local startTime = XFunctionManager.GetStartTimeByTimeId(self.SkipTimeId)
+    local nowTime = XTime.GetServerNowTimestamp()
+    if nowTime >= startTime then
+        --跳转入口已开启
+        self.IsSkipOpen = true
+        self.TxtSkip.text = XUiHelper.GetText("DrawLinkageSkipOpen", XUiHelper.GetTime(endTime - nowTime, XUiHelper.TimeFormatType.DAY_HOUR_MINUTE))
+    else
+        --跳转入口未开启
+        self.TxtSkip.text = XUiHelper.GetText("DrawLinkageSkipClose", XUiHelper.GetTime(startTime - nowTime, XUiHelper.TimeFormatType.DAY_HOUR_MINUTE))
+    end
+    self:RefreshSkipRedPointDisplay()
+
+    self.SkipTimer = XScheduleManager.ScheduleOnce(handler(self, self.ShowSkip), 1000)
+end
+
+function XUiSignPrefab:RefreshSkipRedPoint()
+    if self.SkipRedPointId then
+        self.RootUi:RemoveRedPointEvent(self.SkipRedPointId)
+        self.SkipRedPointId = nil
+    end
+
+    self.IsSkipRedPoint = false
+    self:RefreshSkipRedPointDisplay()
+    if XTool.UObjIsNil(self.BtnSkip) then
+        return
+    end
+
+    local signInCfg = XSignInConfigs.GetSignInConfig(self.SignId)
+    local conditions = {}
+    for _, conditionName in ipairs(signInCfg.SkipRedPointConditions) do
+        local condition = XRedPointConditions.Types[conditionName]
+        if condition then
+            table.insert(conditions, condition)
+        end
+    end
+    if XTool.IsTableEmpty(conditions) then
+        return
+    end
+
+    self.SkipRedPointId = self.RootUi:AddRedPointEvent(self.BtnSkip, self.OnSkipRedPoint, self, conditions)
+end
+
+function XUiSignPrefab:OnSkipRedPoint(count)
+    self.IsSkipRedPoint = count >= 0
+    self:RefreshSkipRedPointDisplay()
+end
+
+function XUiSignPrefab:RefreshSkipRedPointDisplay()
+    if XTool.UObjIsNil(self.BtnSkip) then
+        return
+    end
+    self.BtnSkip:ShowReddot(self.IsSkipOpen and self.IsSkipRedPoint or false)
+end
+
+function XUiSignPrefab:RemoveSkipTimer()
+    if self.SkipTimer then
+        XScheduleManager.UnSchedule(self.SkipTimer)
+        self.SkipTimer = nil
+    end
+end
+
+function XUiSignPrefab:OnBtnSkipClick()
+    if not self.IsSkipOpen then
+        local startTime = XFunctionManager.GetStartTimeByTimeId(self.SkipTimeId)
+        local timeStr = XTime.TimestampToGameDateTimeString(startTime, "yyyy/MM/dd")
+        XUiManager.TipErrorWithKey("DrawLinkageSkipUnlockTip", timeStr)
+        return
+    end
+    XFunctionManager.SkipInterface(self.SkipId)
 end
 
 return XUiSignPrefab

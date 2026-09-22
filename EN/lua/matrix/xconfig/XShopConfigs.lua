@@ -1,3 +1,4 @@
+---@class XShopConfigs
 XShopConfigs = {}
 
 local ShopGroupTemplate = {}
@@ -10,6 +11,7 @@ local CostHintTemplate = {}
 local GoodsBuyPriorityDescTemplate = {}
 ---@type XTableShopDetail[]
 local ShopDetailTemplate = {}
+local ShopConfigTemplate = {}
 -- 体验包屏蔽的商店id数据
 local ShopHideFuncIdDic = {
     [1] = true,
@@ -37,6 +39,7 @@ local TABLE_SHOP_BUY_LIMIT_LABEL = "Client/Shop/ShopBuyLimitLabel.tab"
 local TABLE_SHOP_COST_HINT = "Client/Shop/CostHint.tab"
 local TABLE_GOODS_BUY_PRIORITY_DESC = "Client/Shop/GoodsBuyPriorityDesc.tab"
 local TABLE_SHOP_SHOP_DETAIL = "Client/Shop/ShopDetail.tab"
+local TABLE_SHOP_CONFIG = "Share/Shop/ShopConfig.tab"
 
 XShopConfigs.ShowType = {
     Normal = 0,     --通常
@@ -59,6 +62,7 @@ function XShopConfigs.Init()
     CostHintTemplate = XTableManager.ReadByIntKey(TABLE_SHOP_COST_HINT, XTable.XTableCostHint, "Id")
     GoodsBuyPriorityDescTemplate = XTableManager.ReadByIntKey(TABLE_GOODS_BUY_PRIORITY_DESC, XTable.XTableGoodsBuyPriorityDesc, "Id")
     ShopDetailTemplate = XTableManager.ReadByIntKey(TABLE_SHOP_SHOP_DETAIL, XTable.XTableShopDetail, "Id")
+    ShopConfigTemplate = XTableManager.ReadByStringKey(TABLE_SHOP_CONFIG, XTable.XTableShopConfig, "Key")
 end
 
 function XShopConfigs.GetShopGroupTemplate()
@@ -152,4 +156,21 @@ end
 
 function XShopConfigs.GetShopDetailById(id)
     return ShopDetailTemplate[id]
+end
+
+---@return string[]
+function XShopConfigs.GetConfigValues(key)
+    local cfg = ShopConfigTemplate[key]
+    if not cfg then
+        XLog.Error(string.format("XShopConfigs.GetConfigValues error: key[%s] not found in ShopConfig", key))
+        return nil
+    end
+    return cfg.Values
+end
+
+---@return string
+function XShopConfigs.GetConfigValue(key, index)
+    index = index or 1
+    local values = XShopConfigs.GetConfigValues(key)
+    return values and values[index] or nil
 end

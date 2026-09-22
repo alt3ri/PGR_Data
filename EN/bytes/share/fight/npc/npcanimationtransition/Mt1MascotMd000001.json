@@ -402,8 +402,57 @@
         "Role": "Mt1MascotMd000001",
         "Layer": null,
         "State": null,
+        "Target": "SprintStart",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mt1MascotMd000001",
+        "Layer": null,
+        "State": null,
         "Target": "HitLB",
         "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mt1MascotMd000001",
+        "Layer": null,
+        "State": null,
+        "Target": "HitHR",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mt1MascotMd000001",
+        "Layer": null,
+        "State": null,
+        "Target": "Attack100",
+        "TransitionDuration": null
+    },
+    {
+        "Role": "Mt1MascotMd000001",
+        "Layer": null,
+        "State": null,
+        "Target": "Attack101",
+        "TransitionDuration": null
+    },
+    {
+        "Role": "Mt1MascotMd000001",
+        "Layer": null,
+        "State": null,
+        "Target": "Attack102",
+        "TransitionDuration": null
+    },
+    {
+        "Role": "Mt1MascotMd000001",
+        "Layer": null,
+        "State": null,
+        "Target": "Attack103",
+        "TransitionDuration": null
+    },
+    {
+        "Role": "Mt1MascotMd000001",
+        "Layer": null,
+        "State": null,
+        "Target": "Attack104",
+        "TransitionDuration": null
     },
     {
         "Role": "Mt1MascotMd000001",
@@ -898,7 +947,21 @@
     {
         "Role": "Mt1MascotMd000001",
         "Layer": null,
+        "State": "SprintStart",
+        "Target": "Sprint",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mt1MascotMd000001",
+        "Layer": null,
         "State": "HitLB",
+        "Target": "Stand2",
+        "TransitionDuration": 0.1
+    },
+    {
+        "Role": "Mt1MascotMd000001",
+        "Layer": null,
+        "State": "HitHR",
         "Target": "Stand2",
         "TransitionDuration": 0.1
     }

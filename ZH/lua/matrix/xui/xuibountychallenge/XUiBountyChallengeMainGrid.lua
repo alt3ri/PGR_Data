@@ -137,7 +137,7 @@ function XUiBountyChallengeMainGrid:OnClick()
     if self._Data.IsLock4Time then
         return
     end
-    XSaveTool.SaveData("BountyChallengeNewBoss" .. XPlayer.Id .. self._Data.BossId, true)
+    self._Control:SetBossNewRed(self._Data.BossId, true)
     XLuaUiManager.Open("UiBountyChallengeChapterDetail", self._Data)
 end
 

@@ -8,9 +8,14 @@ local XUiGridAwarenessOneClickResonanceMaterial = require("XUi/XUiEquip/XUiEquip
 ---@field Parent XUiEquipAwarenessOneClickPopup 所属一键养成弹窗
 ---@field _Control XEquipControl 装备控制器
 ---@field BtnChoose XUiComponent.XUiButton 是否勾选共鸣功能的按钮
+---@field BtnSkip XUiComponent.XUiButton 跳转至意识共鸣界面的按钮
 ---@field BtnEditTarget XUiComponent.XUiButton 编辑目标共鸣技能按钮
 ---@field TxtChoosePreview UnityEngine.UI.Text 已选目标数量文本
 ---@field UiTxtPreview UnityEngine.UI.Text 共鸣预览文本
+---@field PanelPreview UiObject 共鸣预览区域节点
+---@field PanelDetail UiObject 已解锁的共鸣功能内容节点
+---@field PanelNone UiObject 未解锁的空状态节点
+---@field TxtNone UnityEngine.UI.Text 未解锁提示文本
 ---@field PanelChooseMaterial UiObject 共鸣材料展示区域节点
 ---@field GridChooseMaterial UiObject 共鸣材料展示格子模板
 ---@field PanelSkillTypeUp XUiButtonGroup 上排共鸣技能类型按钮组
@@ -32,6 +37,7 @@ local XUiGridAwarenessOneClickResonanceMaterial = require("XUi/XUiEquip/XUiEquip
 ---@field SkillTypeDownIndex number 当前选中的下排共鸣技能类型下标
 ---@field TimesIndex number 当前选中的共鸣次数下标
 ---@field IsChoose boolean 共鸣功能是否参与一键养成
+---@field IsFunctionOpen boolean 意识一键共鸣功能是否开放
 ---@field IsEmptyState boolean 当前功能是否不可参与一键养成
 ---@field DefaultTitleColor UnityEngine.Color 标题默认颜色
 ---@field DefaultPreviewColor UnityEngine.Color 预览文本和箭头的默认颜色
@@ -203,6 +209,7 @@ function XUiPanelAwarenessOneClickResonance:OnStart()
     self.SelectedItemIdMap = {}
     self.PreviewSkillExistsMap = {}
     self.PreviewContext = nil
+    self.IsFunctionOpen = false
     self.IsEmptyState = true
     self.DefaultTitleColor = self.UiTxtTitle.color
     self.DefaultPreviewColor = self.UiTxtPreview.color
@@ -218,6 +225,9 @@ function XUiPanelAwarenessOneClickResonance:InitComponents()
     self.Parent:RegisterClickEvent(self.BtnChoose, function()
         self:OnBtnChooseClick()
     end)
+    self.Parent:RegisterClickEvent(self.BtnSkip, function()
+        self:OnBtnSkipClick()
+    end)
     self.Parent:RegisterClickEvent(self.BtnEditTarget, function()
         self:OnBtnEditTargetClick()
     end)
@@ -230,6 +240,10 @@ end
 ---@param previewRemainItemCountDic table<number, number> 强化预览后的剩余资源数量
 ---@return table<number, number> previewRemainItemCountDic 首次共鸣预占后的剩余资源数量
 function XUiPanelAwarenessOneClickResonance:RefreshPreviewBeforeOverclocking(previewRemainItemCountDic)
+    if not self:RefreshFunctionOpenState() then
+        return previewRemainItemCountDic
+    end
+
     self:RefreshSetting()
     local unachievedList = self:BuildUnachievedSelectedResonanceSkillList()
     self.PreviewContext = self:BuildSelectedMaterialPreviewContext(unachievedList, previewRemainItemCountDic)
@@ -239,13 +253,49 @@ function XUiPanelAwarenessOneClickResonance:RefreshPreviewBeforeOverclocking(pre
     return self.PreviewContext.PreviewRemainItemCountDic
 end
 
+---刷新意识一键共鸣功能开放状态。
+---@return boolean 是否已开放
+function XUiPanelAwarenessOneClickResonance:RefreshFunctionOpenState()
+    local functionId = XFunctionManager.FunctionName.AwarenessOneClickResonance
+    self.IsFunctionOpen = XFunctionManager.JudgeOpen(functionId)
+    self.PanelPreview.gameObject:SetActiveEx(self.IsFunctionOpen)
+    self.PanelDetail.gameObject:SetActiveEx(self.IsFunctionOpen)
+    self.PanelNone.gameObject:SetActiveEx(not self.IsFunctionOpen)
+    if self.IsFunctionOpen then
+        return true
+    end
+
+    self.PreviewContext = nil
+    -- 一键共鸣未开放时不会产生新增共鸣预览，但超频仍需基于当前已有共鸣技能判断可用槽位。
+    self.PreviewSkillExistsMap = self:BuildCurrentSkillExistsMap()
+    self.IsEmptyState = true
+    self.BtnChoose:SetButtonState(CS.UiButtonState.Disable)
+    self.UiTxtTitle.color = EMPTY_CONTENT_TITLE_COLOR
+    self:RefreshTitleState()
+
+    self.TxtNone.text = XFunctionManager.GetFunctionOpenCondition(functionId)
+    return false
+end
+
+---未解锁时保留共鸣面板展示解锁条件，已解锁后沿用原有内容显隐规则。
+---@return boolean
+function XUiPanelAwarenessOneClickResonance:ShouldShowPanel()
+    return not self.IsFunctionOpen or self:HasUnachievedTargetResonanceSkill()
+end
+
 -- 判断当前穿戴且可共鸣的意识中，是否存在未达成当前方案的推荐目标共鸣技能。
 ---@return boolean 是否存在未达成的推荐目标共鸣技能
 function XUiPanelAwarenessOneClickResonance:HasUnachievedTargetResonanceSkill()
+    return self:GetFirstUnachievedTargetAwarenessEquipId() ~= nil
+end
+
+---查找第一个未达到当前推荐目标的意识。
+---@return number|nil equipId
+function XUiPanelAwarenessOneClickResonance:GetFirstUnachievedTargetAwarenessEquipId()
     local characterId = self.Parent.CharacterId
     local awarenessSlotList = XMVCA.XTeamRecommend:GetCharacterTargetAwarenessSlotList(characterId)
     if XTool.IsTableEmpty(awarenessSlotList) then
-        return false
+        return
     end
 
     local resonanceControl = self._Control.ResonanceControl
@@ -263,21 +313,23 @@ function XUiPanelAwarenessOneClickResonance:HasUnachievedTargetResonanceSkill()
                             and self.SkillTypeUpIndex or self.SkillTypeDownIndex
                         local target = self:BuildResonanceTarget(pos, skillOptionIndex, targetResonanceData)
                         if not IsTargetSlotAchieved(resonanceControl, equip, target, characterId) then
-                            return true
+                            return equipId
                         end
                     end
                 end
             end
         end
     end
-
-    return false
 end
 
 -- 刷新超频后共鸣预览：扣除超频占用后，再预估剩余共鸣次数并刷新材料格
 ---@param previewRemainItemCountDic table<number, number> 超频预览后的剩余资源数量
 ---@return table<number, number> previewRemainItemCountDic 剩余共鸣预览后的剩余资源数量
 function XUiPanelAwarenessOneClickResonance:RefreshPreviewAfterOverclocking(previewRemainItemCountDic)
+    if not self.IsFunctionOpen then
+        return previewRemainItemCountDic
+    end
+
     local previewContext = self.PreviewContext
     self:ConsumeRemainResonancePreviewAfterOverclocking(previewContext, previewRemainItemCountDic)
     previewContext.PreviewRemainItemCountDic = self:BuildPreviewRemainItemCountDicAfterOverclocking(previewContext, previewRemainItemCountDic)
@@ -289,7 +341,7 @@ end
 -- 获取已勾选共鸣时缺失的设置提示文本 Key；设置完整或当前无可共鸣目标时返回 nil。
 ---@return string|nil
 function XUiPanelAwarenessOneClickResonance:GetMissingSettingTipKey()
-    if not self.IsChoose then
+    if not self.IsFunctionOpen or not self.IsChoose then
         return nil
     end
 
@@ -332,7 +384,7 @@ end
 -- 获取传给进度弹窗的共鸣执行结果；未勾选时不参与后续流程
 ---@return XUiPanelAwarenessOneClickResonanceResult|nil
 function XUiPanelAwarenessOneClickResonance:GetResult()
-    if not self.IsChoose or not self.PreviewContext then
+    if not self.IsFunctionOpen or not self.IsChoose or not self.PreviewContext then
         return nil
     end
 
@@ -352,7 +404,7 @@ end
 ---@return table<number, number> costMap 道具 Id -> 展示数量
 function XUiPanelAwarenessOneClickResonance:GetPreviewCostMap()
     local previewContext = self.PreviewContext
-    if not self.IsChoose or not previewContext then
+    if not self.IsFunctionOpen or not self.IsChoose or not previewContext then
         return table.empty
     end
 
@@ -707,9 +759,24 @@ end
 
 -- 切换共鸣功能是否参与一键养成
 function XUiPanelAwarenessOneClickResonance:OnBtnChooseClick()
+    if not self.IsFunctionOpen then
+        return
+    end
+
     self.IsChoose = self.BtnChoose:GetToggleState()
     self:RefreshTitleState()
     self.Parent:RefreshPreview()
+end
+
+---跳转至第一个未达到推荐目标的意识共鸣界面。
+function XUiPanelAwarenessOneClickResonance:OnBtnSkipClick()
+    local equipId = self:GetFirstUnachievedTargetAwarenessEquipId()
+    if not equipId then
+        return
+    end
+
+    XLuaUiManager.Open("UiEquipDetailV2P6", equipId, nil, self.Parent.CharacterId, nil,
+        XEnumConst.EQUIP.UI_EQUIP_DETAIL_BTN_INDEX.RESONANCE, nil, nil, true)
 end
 
 -- 刷新共鸣标题背景；仅在已勾选且存在可执行内容时显示选中背景

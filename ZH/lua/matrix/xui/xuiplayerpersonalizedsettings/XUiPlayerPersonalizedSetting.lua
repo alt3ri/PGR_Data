@@ -1,4 +1,4 @@
-local XUiPanelHeadPortrait = require("XUi/XUiPlayer/XUiPanelHeadPortrait")
+local XUiPanelHeadPortrait = require("XUi/XUiPlayer/XUiPanelHeadPortrait")
 local XUiPlayerPersonalizedSetting = XLuaUiManager.Register(XLuaUi, "UiPlayerPersonalizedSetting")
 
 local XUiPanelHeadPortraitSetting = require('XUi/XUiPlayerPersonalizedSettings/XUiPanelHeadPortraitSetting')
@@ -34,6 +34,7 @@ function XUiPlayerPersonalizedSetting:OnAwake()
     self._PanelNoSelectInfo = XUiPanelNoSelectInfo.New(self.PanelNoSelectInfoObj, self)
     self._PanelNameplate = XUiPanelNameplate.New(self.PanelNameplate, self)
     self._ChatBoradPreview = XUiChatBoard.New(self.ChatBoardPreview, self)
+    self._ChatBoradPreview:SetPlayEnableAnimOnRefresh(true)
 end
 
 function XUiPlayerPersonalizedSetting:OnStart(defaultSelectIndex)

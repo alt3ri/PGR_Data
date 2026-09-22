@@ -95,11 +95,11 @@ end
 
 --- 刷新 HUD 引导提示（读 GameControl:GetDisplayHud 显/隐；未手动关闭则显当前节点选的 HUD）。#86
 function XUiPunishaarFightMain:_RefreshGuideTips()
-    local gc = self._Control and self._Control.GameControl
-    if not gc or not self._GuideTips then
+    local gameControl = self._Control and self._Control.GameControl
+    if not gameControl or not self._GuideTips then
         return
     end
-    local hudCfg = gc:GetDisplayHud()
+    local hudCfg = gameControl:GetDisplayHud()
     XLog.Debug("[HudTrace][3传达] _RefreshGuideTips GetDisplayHud=" .. (hudCfg and hudCfg.Id or "nil"))
     if hudCfg then
         self._GuideTips:Show(hudCfg)
@@ -111,9 +111,9 @@ end
 --- 玩家手动关闭 HUD（标记本次节点不再显 + 隐）。#86
 --- 由 GuideTips:BtnClose 点击触发（SetOnClose 注入回调，GuideTips:OnStart 绑定）。
 function XUiPunishaarFightMain:_DismissGuideTips()
-    local gc = self._Control and self._Control.GameControl
-    if gc then
-        gc:DismissHud()
+    local gameControl = self._Control and self._Control.GameControl
+    if gameControl then
+        gameControl:DismissHud()
     end
     if self._GuideTips then
         self._GuideTips:Hide()
@@ -148,7 +148,7 @@ function XUiPunishaarFightMain:_OnShopPanelAnimEnable()
 end
 
 --- 商店栏收起动效：播 PanelShopDisable 根动画（BtnFoldUp/背包展开前/PickHost进入）。#商店栏动效
---- PickHost 进入收起后，动画 cb 调 _OnShopPanelAnimDisableDone→gc:FlushPendingPickHostTip 开弹窗（用户要求：动画回调后再开）。#副卡购买收起后开弹窗
+--- PickHost 进入收起后，动画 cb 调 _OnShopPanelAnimDisableDone→gameControl:FlushPendingPickHostTip 开弹窗（用户要求：动画回调后再开）。#副卡购买收起后开弹窗
 function XUiPunishaarFightMain:_OnShopPanelAnimDisable()
     local isBegin = false
     
@@ -168,9 +168,9 @@ end
 --- PanelShopDisable 动画完成回调：触发副卡详情购买收起后的延迟开 PickHost 弹窗。
 --- 非副卡购买收起（BtnFoldUp/背包展开）_PendingPickHostTipOpen=false，FlushPendingPickHostTip no-op。#副卡购买收起后开弹窗
 function XUiPunishaarFightMain:_OnShopPanelAnimDisableDone(noMaskClear)
-    local gc = self._Control and self._Control.GameControl
-    if gc and gc.FlushPendingPickHostTip then
-        gc:FlushPendingPickHostTip()
+    local gameControl = self._Control and self._Control.GameControl
+    if gameControl and gameControl.FlushPendingPickHostTip then
+        gameControl:FlushPendingPickHostTip()
     end
 
     if not noMaskClear then
@@ -196,25 +196,25 @@ function XUiPunishaarFightMain:OnEnable()
         runControl._CurrentFightState = XMVCA.XPunishaar.EnumConst.FightState.Fighting
     end
     local runControl = self._Control.GameControl.RunControl
-    local gc = self._Control.GameControl
+    local gameControl = self._Control.GameControl
     -- 商店栏动效订阅放 SwitchToState 前：首次切态开 PanelShop 时 OnEnable 派发 ShopPanelAnimEnable，须已订阅 #商店栏动效
-    gc:AddEventListener(gc.ShopEventId.ShopPanelAnimEnable, self._OnShopPanelAnimEnable, self)
-    gc:AddEventListener(gc.ShopEventId.ShopPanelAnimDisable, self._OnShopPanelAnimDisable, self)
-    -- 背包↔HUD 互斥订阅（局内事件 gc.BagEventId；背包开合派发→隐/恢复 HUD）#背包HUD互斥
-    gc:AddEventListener(gc.BagEventId.Open, self._OnBagOpen, self)
-    gc:AddEventListener(gc.BagEventId.Close, self._OnBagClose, self)
+    gameControl:AddEventListener(gameControl.EventId.Shop.ShopPanelAnimEnable, self._OnShopPanelAnimEnable, self)
+    gameControl:AddEventListener(gameControl.EventId.Shop.ShopPanelAnimDisable, self._OnShopPanelAnimDisable, self)
+    -- 背包↔HUD 互斥订阅（局内事件 gameControl.BagEventId；背包开合派发→隐/恢复 HUD）#背包HUD互斥
+    gameControl:AddEventListener(gameControl.EventId.Bag.Open, self._OnBagOpen, self)
+    gameControl:AddEventListener(gameControl.EventId.Bag.Close, self._OnBagClose, self)
     -- 拖拽开始自动关 Tips（防视觉遮挡；BtnClose 射线穿透不阻塞拖拽，此为视觉优化）§11
-    XEventManager.AddEventListener(XEventId.EVENT_PUNISHAAR_DRAG_BEGIN, self._OnDragBegin, self)
+    gameControl:AddEventListener(gameControl.EventId.Drag.DragBegin, self._OnDragBegin, self)
     local state = runControl:GetCurrentFightState()
     if state then
         self:SwitchToState(state)
     end
     runControl:AddEventListener(
-        runControl.RunEventId.FightStateChanged,
+        runControl.EventId.FightStateChanged,
         self.SwitchToState, self)
     -- 商店刷新动效：订阅 RefreshShopSuccess/Fail 播根动画 #商店刷新动效
-    gc:AddEventListener(gc.ShopEventId.RefreshShopSuccess, self._OnShopRefreshSuccess, self)
-    gc:AddEventListener(gc.ShopEventId.RefreshShopFail, self._OnShopRefreshFail, self)
+    gameControl:AddEventListener(gameControl.EventId.Shop.RefreshShopSuccess, self._OnShopRefreshSuccess, self)
+    gameControl:AddEventListener(gameControl.EventId.Shop.RefreshShopFail, self._OnShopRefreshFail, self)
     -- FightMain OnEnable 就绪（监听已注册）后主动触发节点路由，替代 OpenWithCallback onReady（不等 AnimEnable 动画）。#OpenAfterAnim
     -- 子态分支 sync 立即切消入场动画 ~2秒等待；新面板分支受 OperatingMask 自动排队等动画。仅首次进入触发（_PendingRouteNode 由 EnterRun 设）。
     runControl:OnFightMainReady()
@@ -231,17 +231,17 @@ function XUiPunishaarFightMain:OnDisable()
     self:_UnregisterStateListener()
     -- 注销商店刷新动效事件（对称）
     if self._Control and self._Control.GameControl then
-        local gc = self._Control.GameControl
-        gc:RemoveEventListener(gc.ShopEventId.RefreshShopSuccess, self._OnShopRefreshSuccess, self)
-        gc:RemoveEventListener(gc.ShopEventId.RefreshShopFail, self._OnShopRefreshFail, self)
-        gc:RemoveEventListener(gc.ShopEventId.ShopPanelAnimEnable, self._OnShopPanelAnimEnable, self)
-        gc:RemoveEventListener(gc.ShopEventId.ShopPanelAnimDisable, self._OnShopPanelAnimDisable, self)
-        -- 背包↔HUD 互斥注销（对称，幂等；同 ShopEventId 注销同级，依赖 gc）#背包HUD互斥
-        gc:RemoveEventListener(gc.BagEventId.Open, self._OnBagOpen, self)
-        gc:RemoveEventListener(gc.BagEventId.Close, self._OnBagClose, self)
+        local gameControl = self._Control.GameControl
+        gameControl:RemoveEventListener(gameControl.EventId.Shop.RefreshShopSuccess, self._OnShopRefreshSuccess, self)
+        gameControl:RemoveEventListener(gameControl.EventId.Shop.RefreshShopFail, self._OnShopRefreshFail, self)
+        gameControl:RemoveEventListener(gameControl.EventId.Shop.ShopPanelAnimEnable, self._OnShopPanelAnimEnable, self)
+        gameControl:RemoveEventListener(gameControl.EventId.Shop.ShopPanelAnimDisable, self._OnShopPanelAnimDisable, self)
+        -- 背包↔HUD 互斥注销（对称，幂等；同 ShopEventId 注销同级，依赖 gameControl）#背包HUD互斥
+        gameControl:RemoveEventListener(gameControl.EventId.Bag.Open, self._OnBagOpen, self)
+        gameControl:RemoveEventListener(gameControl.EventId.Bag.Close, self._OnBagClose, self)
+        -- 拖拽关 Tips 注销（经 gameControl 派发器；幂等）§11
+        gameControl:RemoveEventListener(gameControl.EventId.Drag.DragBegin, self._OnDragBegin, self)
     end
-    -- 拖拽关 Tips 注销（全局事件不依赖 gc；幂等）§11
-    XEventManager.RemoveEventListener(XEventId.EVENT_PUNISHAAR_DRAG_BEGIN, self._OnDragBegin, self)
 end
 
 function XUiPunishaarFightMain:OnDestroy()
@@ -249,17 +249,17 @@ function XUiPunishaarFightMain:OnDestroy()
     -- 监听不会被 OnDisable 注销 → 须在此收口，防残留监听指向已销毁实例。
     self:_UnregisterStateListener()
     if self._Control and self._Control.GameControl then
-        local gc = self._Control.GameControl
-        gc:RemoveEventListener(gc.ShopEventId.RefreshShopSuccess, self._OnShopRefreshSuccess, self)
-        gc:RemoveEventListener(gc.ShopEventId.RefreshShopFail, self._OnShopRefreshFail, self)
-        gc:RemoveEventListener(gc.ShopEventId.ShopPanelAnimEnable, self._OnShopPanelAnimEnable, self)
-        gc:RemoveEventListener(gc.ShopEventId.ShopPanelAnimDisable, self._OnShopPanelAnimDisable, self)
-        -- 背包↔HUD 互斥注销（对称，幂等；同 ShopEventId 注销同级，依赖 gc）#背包HUD互斥
-        gc:RemoveEventListener(gc.BagEventId.Open, self._OnBagOpen, self)
-        gc:RemoveEventListener(gc.BagEventId.Close, self._OnBagClose, self)
+        local gameControl = self._Control.GameControl
+        gameControl:RemoveEventListener(gameControl.EventId.Shop.RefreshShopSuccess, self._OnShopRefreshSuccess, self)
+        gameControl:RemoveEventListener(gameControl.EventId.Shop.RefreshShopFail, self._OnShopRefreshFail, self)
+        gameControl:RemoveEventListener(gameControl.EventId.Shop.ShopPanelAnimEnable, self._OnShopPanelAnimEnable, self)
+        gameControl:RemoveEventListener(gameControl.EventId.Shop.ShopPanelAnimDisable, self._OnShopPanelAnimDisable, self)
+        -- 背包↔HUD 互斥注销（对称，幂等；同 ShopEventId 注销同级，依赖 gameControl）#背包HUD互斥
+        gameControl:RemoveEventListener(gameControl.EventId.Bag.Open, self._OnBagOpen, self)
+        gameControl:RemoveEventListener(gameControl.EventId.Bag.Close, self._OnBagClose, self)
+        -- 拖拽关 Tips 注销兜底（经 gameControl 派发器；幂等）§11
+        gameControl:RemoveEventListener(gameControl.EventId.Drag.DragBegin, self._OnDragBegin, self)
     end
-    -- 拖拽关 Tips 注销兜底（全局事件不依赖 gc；幂等）§11
-    XEventManager.RemoveEventListener(XEventId.EVENT_PUNISHAAR_DRAG_BEGIN, self._OnDragBegin, self)
 end
 
 --- 注销状态切换事件监听（OnDisable 与 OnDestroy 兜底共用，幂等：AddEventListener 有防重复，
@@ -268,7 +268,7 @@ function XUiPunishaarFightMain:_UnregisterStateListener()
     if self._Control and self._Control.GameControl then
         local runControl = self._Control.GameControl.RunControl
         runControl:RemoveEventListener(
-            runControl.RunEventId.FightStateChanged,
+            runControl.EventId.FightStateChanged,
             self.SwitchToState, self)
     end
 end
@@ -358,9 +358,9 @@ function XUiPunishaarFightMain:_OpenShopPanel()
     -- 共用 PunishaarConfig.RemedyShopHudGroupId；SelectHudByGroup 在切态末 _RefreshGuideTips 前调，确保读到新 _HudCfg）#补强HUD
     if self._Control:IsInRemedyShop() then
         local remedyShopHudGroupId = self._Control:GetRemedyShopHudGroupId()
-        local gc = self._Control.GameControl
-        if gc then
-            gc:SelectHudByGroup(remedyShopHudGroupId)
+        local gameControl = self._Control.GameControl
+        if gameControl then
+            gameControl:SelectHudByGroup(remedyShopHudGroupId)
         end
     end
 

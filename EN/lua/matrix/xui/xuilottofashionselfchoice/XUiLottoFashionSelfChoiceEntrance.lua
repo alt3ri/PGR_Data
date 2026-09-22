@@ -116,6 +116,13 @@ function XUiLottoFashionSelfChoiceEntrance:OnEnable()
         end
     end
 
+    -- 进入枢纽即停掉上一个卡池残留的 BGM，避免在下一个卡池 BGM 起来前的间隙里漏出。
+    -- 副作用：StopMusic 只是停止、等 LateUpdate 回收，若在回收前快速返回同一个卡池、且新 BGM 用相同 cueId，
+    -- 会复用这个待回收实例后被同帧误回收，导致该卡池 BGM 丢失。
+    -- 兜底：若某个卡池出现 BGM 丢失，给它负责播放 BGM 的 XPlayMusic 组件配一个较小的 Delay，
+    -- 把新 BGM 的启动时机推迟到旧实例回收之后即可绕开；各卡池预制结构不同，生效的 XPlayMusic 组件位置需在对应卡池里排查。
+    XLuaAudioManager.StopCurrentBGM()
+
     self:RefreshDynamicTable()
     XSaveTool.SaveData("OpenUiLottoFashionSelfChoiceEntrance", {NextCanShowTimeStamp = XTime.GetSeverTomorrowFreshTime()})
 end
@@ -202,4 +209,4 @@ function XUiLottoFashionSelfChoiceEntrance:OnBtnChooseClick()
     else
         doConfirm()
     end
-end
+end

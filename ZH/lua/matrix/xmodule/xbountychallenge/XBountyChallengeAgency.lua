@@ -103,10 +103,7 @@ end
 function XBountyChallengeAgency:IsBossNewRed(bossId)
     local isBossOpen = self._Model:IsBossOpen(bossId)
     if isBossOpen then
-        local value = XSaveTool.GetData("BountyChallengeNewBoss" .. XPlayer.Id .. bossId)
-        if value == nil then
-            return true
-        end
+        return not self._Model:GetBossNewRed(bossId)
     end
     return false
 end

@@ -629,6 +629,13 @@ function XWheelchairManualControl:GetManualPlanRewardId(planId)
     end
 end
 
+function XWheelchairManualControl:GetManualPlanExtRewardId(planId)
+    local cfg = self._Model:GetWheelchairManualPlanCfg(planId)
+    if cfg then
+        return cfg.ExtRewardId
+    end
+end
+
 function XWheelchairManualControl:GetManualPlanRewardHighlightList(planId)
     local cfg = self._Model:GetWheelchairManualPlanCfg(planId)
     if cfg then

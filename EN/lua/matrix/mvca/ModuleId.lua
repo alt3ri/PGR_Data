@@ -148,6 +148,10 @@ ModuleId = {
   XDyeMergeGame = "XDyeMergeGame",
   XConcertPreHeating = "XConcertPreHeating",
   XMusicPlayer = "XMusicPlayer",
+  XEnvelopeGuessing = "XEnvelopeGuessing",
+  XTeamRecommend = "XTeamRecommend",
+  XPunishaar = "XPunishaar",
   XMusicScene = "XMusicScene",
-  XEnvelopeGuessing = "XEnvelopeGuessing"
+    XPartner = "XPartner",
+  XTransfiniteTower = "XTransfiniteTower",
 }

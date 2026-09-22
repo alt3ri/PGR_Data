@@ -20,6 +20,7 @@ local DragBuyState = { Invalid = 1, Neutral = 2, BuyZone = 3 }
 ---@field PanelBagSlotList UnityEngine.RectTransform 对战区格子父节点
 ---@field GridSlot UnityEngine.RectTransform 对战区格子模板
 ---@field PanelDragBuyTips UnityEngine.RectTransform 拖拽购买提示根节点（仅商店态实例化 XUiNode，其他态直接隐 GO）#PanelDragBuyTips
+---@field GridHighLight UnityEngine.RectTransform 主卡拖拽落点高亮（尺寸=卡覆盖的已解锁格部分，裁剪到 gridLimit；prefab 须绑本栏 slot 容器 PanelBagSlotList 下、与 slot 同 parent）#GridHighLight
 local XUiPunishaarComBottomBagBase = XClass(XUiNode, "XUiPunishaarComBottomBagBase")
 
 --region 派生点（hook，子类按需覆写；当前两子类用默认实现）
@@ -99,6 +100,11 @@ function XUiPunishaarComBottomBagBase:OnStart()
             self._DragBuyTips = tipsCls.New(self.PanelDragBuyTips, self)
         end
     end
+    -- 落点高亮：强制 pivot.x=0 左对齐（多格卡左缘对齐 slot[pos]），y 保持 prefab；初始隐 #GridHighLight
+    if self.GridHighLight then
+        self.GridHighLight.pivot = CS.UnityEngine.Vector2(0, self.GridHighLight.pivot.y)
+        self.GridHighLight.gameObject:SetActiveEx(false)
+    end
 end
 
 --- 刷新 BtnBag 按钮态 + 容量文本：背包展开→Select，收起→Normal；Disable（_BagLocked）优先不覆盖。
@@ -143,11 +149,14 @@ function XUiPunishaarComBottomBagBase:_OnBtnBag()
     if self._BagLocked then
         return
     end
+    if self._Control.GameControl:GetIsDraggingCard() then
+        return  -- 拖拽中功能按钮不响应 #拖拽中禁功能按钮
+    end
     if self._BagLayout:IsNodeShow() then
         self._BagLayout:Close()
         -- 互斥：背包收起，通知 FightMain 恢复 HUD 显隐（读 GetDisplayHud，未手动关才显）#背包HUD互斥
-        local gc = self._Control and self._Control.GameControl
-        if gc then gc:DispatchEvent(gc.BagEventId.Close) end
+        local gameControl = self._Control and self._Control.GameControl
+        if gameControl then gameControl:DispatchEvent(gameControl.EventId.Bag.Close) end
         -- 玩家主动收起后回调父对象（商店态：展开商店栏 #70）
         if self._AfterBagCloseCb then
             self._AfterBagCloseCb()
@@ -160,13 +169,13 @@ function XUiPunishaarComBottomBagBase:_OnBtnBag()
         self._BagLayout:Open()
         self._BagLayout:Refresh()
         -- 互斥：背包展开，通知 FightMain 纯遮蔽隐 HUD（不标 DismissHud，收起后可恢复）#背包HUD互斥
-        local gc = self._Control and self._Control.GameControl
-        if gc then gc:DispatchEvent(gc.BagEventId.Open) end
+        local gameControl = self._Control and self._Control.GameControl
+        if gameControl then gameControl:DispatchEvent(gameControl.EventId.Bag.Open) end
     end
     self:_RefreshBtnBagState()
 end
 
---- 程序化展开背包暂存区（带互斥 beforeOpenCb 收商店栏 + BagEventId.Open）。幂等：已展开则 no-op。
+--- 程序化展开背包暂存区（带互斥 beforeOpenCb 收商店栏 + EventId.Bag.Open）。幂等：已展开则 no-op。
 --- 供副卡拖拽等非玩家点击场景调用（#副卡拖拽收起展开）。与 _OnBtnBag 开分支同语义但非 toggle。
 function XUiPunishaarComBottomBagBase:OpenBag()
     if self._BagLocked then
@@ -180,20 +189,27 @@ function XUiPunishaarComBottomBagBase:OpenBag()
     end
     self._BagLayout:Open()
     self._BagLayout:Refresh()
-    local gc = self._Control and self._Control.GameControl
-    if gc then gc:DispatchEvent(gc.BagEventId.Open) end  -- 互斥：隐 HUD #背包HUD互斥
+    local gameControl = self._Control and self._Control.GameControl
+    if gameControl then gameControl:DispatchEvent(gameControl.EventId.Bag.Open) end  -- 互斥：隐 HUD #背包HUD互斥
+    -- 若副卡拖拽中，Open+Refresh 后补刷置灰（卡牌已就位可靠；不依赖 BagLayout OnEnable 时序——OnEnable 可能在 OnStart 前 _CardList nil）#副卡置灰时序
+    if gameControl and gameControl:GetIsDraggingSubCard() then
+        local dragData = gameControl:GetDraggingCardData()
+        if dragData and dragData.CardId then
+            self._BagLayout:OnSubCardHostHintBegin(dragData.CardId)
+        end
+    end
     self:_RefreshBtnBagState()
 end
 
---- 程序化收起背包暂存区（带互斥 afterCloseCb 展商店栏 + BagEventId.Close）。幂等：已收则 no-op。
+--- 程序化收起背包暂存区（带互斥 afterCloseCb 展商店栏 + EventId.Bag.Close）。幂等：已收则 no-op。
 --- 供副卡拖拽归位等非玩家点击场景调用（#副卡拖拽收起展开）。与 CloseBagIfShow 区别：本方法触发互斥展商店栏。
 function XUiPunishaarComBottomBagBase:CloseBag()
     if not (self._BagLayout and self._BagLayout:IsNodeShow()) then
         return
     end
     self._BagLayout:Close()
-    local gc = self._Control and self._Control.GameControl
-    if gc then gc:DispatchEvent(gc.BagEventId.Close) end  -- 互斥：恢复 HUD #背包HUD互斥
+    local gameControl = self._Control and self._Control.GameControl
+    if gameControl then gameControl:DispatchEvent(gameControl.EventId.Bag.Close) end  -- 互斥：恢复 HUD #背包HUD互斥
     if self._AfterBagCloseCb then
         self._AfterBagCloseCb()  -- 互斥：展商店栏 #70
     end
@@ -207,8 +223,8 @@ function XUiPunishaarComBottomBagBase:CloseBagIfShow()
     if self._BagLayout and self._BagLayout:IsNodeShow() then
         self._BagLayout:Close()
         -- 互斥：父对象主动收也恢复 HUD（一致性；切态末 _RefreshGuideTips 兜底防与商店栏冲突）#背包HUD互斥
-        local gc = self._Control and self._Control.GameControl
-        if gc then gc:DispatchEvent(gc.BagEventId.Close) end
+        local gameControl = self._Control and self._Control.GameControl
+        if gameControl then gameControl:DispatchEvent(gameControl.EventId.Bag.Close) end
     end
     self:_RefreshBtnBagState()
 end
@@ -224,8 +240,8 @@ function XUiPunishaarComBottomBagBase:OpenBagWithLock()
         self._BagLayout:Open()
         self._BagLayout:Refresh()
         -- 互斥：强制展开也隐 HUD（与手动展开一致）#背包HUD互斥
-        local gc = self._Control and self._Control.GameControl
-        if gc then gc:DispatchEvent(gc.BagEventId.Open) end
+        local gameControl = self._Control and self._Control.GameControl
+        if gameControl then gameControl:DispatchEvent(gameControl.EventId.Bag.Open) end
     end
     if self._BagLocked then
         return
@@ -261,8 +277,8 @@ function XUiPunishaarComBottomBagBase:RefreshBagReddot()
     if not self.BtnBag then
         return
     end
-    local gc = self._Control and self._Control.GameControl
-    if not gc or not gc.CanOwnedCardUpgradeByShop then
+    local gameControl = self._Control and self._Control.GameControl
+    if not gameControl or not gameControl.CanOwnedCardUpgradeByShop then
         self.BtnBag:ShowReddot(false)
         return
     end
@@ -275,7 +291,7 @@ function XUiPunishaarComBottomBagBase:RefreshBagReddot()
     local hasUpgrade = false
     for i = 1, count do
         local card = list:GetValueByIndex(i)
-        if card and gc:CanOwnedCardUpgradeByShop(card) then
+        if card and gameControl:CanOwnedCardUpgradeByShop(card) then
             hasUpgrade = true
             break
         end
@@ -284,35 +300,45 @@ function XUiPunishaarComBottomBagBase:RefreshBagReddot()
 end
 
 function XUiPunishaarComBottomBagBase:OnEnable()
+    local gameControl = self._Control.GameControl  -- #事件统合 补 local（DRAG 订阅经 gameControl:）
     -- Enable 时刷新 slot 解锁态（重读 _GetGridLimit，子界面切换/重新进入均刷）
     self:_RefreshSlots()
     -- 副卡宿主选择态：拖起副卡时给"不可作宿主的对战区主卡格"置灰，松手时恢复（OnEnable 订阅 / OnDisable 注销）
-    self._Control.GameControl:AddEventListener(self._Control.GameControl.DragEventId.SubCardHostHintBegin, self.OnSubCardHostHintBegin, self)
-    self._Control.GameControl:AddEventListener(self._Control.GameControl.DragEventId.SubCardHostHintEnd, self.OnSubCardHostHintEnd, self)
+    self._Control.GameControl:AddEventListener(self._Control.GameControl.EventId.Drag.SubCardHostHintBegin, self.OnSubCardHostHintBegin, self)
+    self._Control.GameControl:AddEventListener(self._Control.GameControl.EventId.Drag.SubCardHostHintEnd, self.OnSubCardHostHintEnd, self)
     -- 激活态槽位解锁刷新：服务端经 NotifyPunishaarRewardResult 推 FightAreaGridLimit 奖励时实时刷 slot
-    XEventManager.AddEventListener(XEventId.EVENT_PUNISHAAR_FIGHT_AREA_GRID_UNLOCK, self._RefreshSlots, self)
+    XMVCA.XPunishaar:AddEventListener(XMVCA.XPunishaar.EventIds.EVENT_PUNISHAAR_INNER_FIGHT_AREA_GRID_UNLOCK, self._RefreshSlots, self)
     -- 主卡拖拽编排时关 blocksRaycasts 让 Slot 射线穿透报精确格位 #52
-    XEventManager.AddEventListener(XEventId.EVENT_PUNISHAAR_DRAG_BEGIN, self._OnDragBegin, self)
-    XEventManager.AddEventListener(XEventId.EVENT_PUNISHAAR_DRAG_END, self._OnDragEnd, self)
+    gameControl:AddEventListener(gameControl.EventId.Drag.DragBegin, self._OnDragBegin, self)
+    gameControl:AddEventListener(gameControl.EventId.Drag.DragEnd, self._OnDragEnd, self)
     -- 拖拽焦点变化→刷购买提示态（Neutral/BuyZone）#PanelDragBuyTips
-    self._Control.GameControl:AddEventListener(self._Control.GameControl.DragEventId.FocusChange, self._OnDragFocusChange, self)
+    self._Control.GameControl:AddEventListener(self._Control.GameControl.EventId.Drag.FocusChange, self._OnDragFocusChange, self)
     -- 栏级落点反算注册：handler OnDragging 遍历注册栏做落点反算 #批次2
     self._Control.GameControl:RegisterDragFocusBar(self)
 end
 
 function XUiPunishaarComBottomBagBase:OnDisable()
+    local gameControl = self._Control.GameControl  -- #事件统合 补 local（DRAG 注销经 gameControl:）
+    -- 兜底恢复 BtnBag（防拖拽中 OnDisable 注销 DRAG_END 后 enabled=false 残留致复用后永久不可点）#拖拽中禁功能按钮
+    if self.BtnBag then
+        self.BtnBag.enabled = true
+    end
     -- 兜底隐购买提示：若拖拽进行中切态（DRAG_END 订阅随本 OnDisable 注销，tips 收不到 Hide），
     -- 防 _DragBuyTips 残留 Open 态挂 inactive 祖先下违 active-ancestor 不变量 + 重显时 stale 闪 #PanelDragBuyTips
     if self._DragBuyTips then
         self._DragBuyTips:Close()
     end
+    -- 兜底隐落点高亮（防拖拽中切态残留 stale 闪，与 _DragBuyTips:Close 对称）#GridHighLight
+    if self.GridHighLight then
+        self.GridHighLight.gameObject:SetActiveEx(false)
+    end
     self._IsBuyAreaFull = nil  -- 清满区标记（防切态残留，与 _DragBuyTips:Close 并列）#PanelDragBuyTips
-    XEventManager.RemoveEventListener(XEventId.EVENT_PUNISHAAR_FIGHT_AREA_GRID_UNLOCK, self._RefreshSlots, self)
-    XEventManager.RemoveEventListener(XEventId.EVENT_PUNISHAAR_DRAG_BEGIN, self._OnDragBegin, self)
-    XEventManager.RemoveEventListener(XEventId.EVENT_PUNISHAAR_DRAG_END, self._OnDragEnd, self)
-    self._Control.GameControl:RemoveEventListener(self._Control.GameControl.DragEventId.FocusChange, self._OnDragFocusChange, self)
-    self._Control.GameControl:RemoveEventListener(self._Control.GameControl.DragEventId.SubCardHostHintBegin, self.OnSubCardHostHintBegin, self)
-    self._Control.GameControl:RemoveEventListener(self._Control.GameControl.DragEventId.SubCardHostHintEnd, self.OnSubCardHostHintEnd, self)
+    XMVCA.XPunishaar:RemoveEventListener(XMVCA.XPunishaar.EventIds.EVENT_PUNISHAAR_INNER_FIGHT_AREA_GRID_UNLOCK, self._RefreshSlots, self)
+    gameControl:RemoveEventListener(gameControl.EventId.Drag.DragBegin, self._OnDragBegin, self)
+    gameControl:RemoveEventListener(gameControl.EventId.Drag.DragEnd, self._OnDragEnd, self)
+    self._Control.GameControl:RemoveEventListener(self._Control.GameControl.EventId.Drag.FocusChange, self._OnDragFocusChange, self)
+    self._Control.GameControl:RemoveEventListener(self._Control.GameControl.EventId.Drag.SubCardHostHintBegin, self.OnSubCardHostHintBegin, self)
+    self._Control.GameControl:RemoveEventListener(self._Control.GameControl.EventId.Drag.SubCardHostHintEnd, self.OnSubCardHostHintEnd, self)
     self._Control.GameControl:UnregisterDragFocusBar(self)
 end
 
@@ -342,20 +368,24 @@ end
 --- 副卡拖拽（Shop 来源）不关——Card.OnEnter 需收射线作 #36 落点
 --- 商店主卡商品拖拽显主卡态购买提示；副卡商品拖拽不显（由 PanelBagLayout 显副卡态）#PanelDragBuyTips
 function XUiPunishaarComBottomBagBase:_OnDragBegin()
-    local gc = self._Control.GameControl
-    local srcArea = gc:GetDraggingSourceArea()
-    if srcArea == gc.DragArea.Shop then
+    -- 拖拽中禁 BtnBag（enabled=false 禁用 Selectable 组件，不切 Select 态、不响应点击、视觉态不变）#拖拽中禁功能按钮
+    if self.BtnBag then
+        self.BtnBag.enabled = false
+    end
+    local gameControl = self._Control.GameControl
+    local srcArea = gameControl:GetDraggingSourceArea()
+    if srcArea == gameControl.DragArea.Shop then
         -- 仅主卡商品拖拽显主卡态提示；副卡商品拖拽跳过（PanelBagLayout 的 _DragBuyTips 显副卡态）。
-        -- 主卡/副卡判定复刻 BeginDragCard（gc._IsDraggingSubCard 无公开 getter，UI 层不跨入逻辑层读私有字段）#PanelDragBuyTips
+        -- 主卡/副卡判定复刻 BeginDragCard（gameControl._IsDraggingSubCard 无公开 getter，UI 层不跨入逻辑层读私有字段）#PanelDragBuyTips
         if self._DragBuyTips then
-            local cardData = gc:GetDraggingCardData()
+            local cardData = gameControl:GetDraggingCardData()
             local isSubCard = cardData and cardData.CardId and self._Control:IsSubCard(cardData.CardId) or false
             if not isSubCard then
                 self._DragBuyTips:Show(DragBuyCardType.MainCard)
                 -- 满区判定（拖起时算一次）：两区均放不下→Invalid 态（TxtCardNoneSlot）；否则 Neutral（_OnDragFocusChange 后续刷 BuyZone）#PanelDragBuyTips
                 local cardCfg = cardData and cardData.CardId and self._Control:GetTablePunishaarCard(cardData.CardId, true) or nil
                 local cardSize = cardCfg and cardCfg.Size or 1
-                self._IsBuyAreaFull = gc:IsBuyAreaFull(cardSize)
+                self._IsBuyAreaFull = gameControl:IsBuyAreaFull(cardSize)
                 if self._IsBuyAreaFull then
                     self._DragBuyTips:RefreshState(DragBuyState.Invalid, true)
                 end
@@ -373,9 +403,17 @@ end
 
 --- 拖拽结束：恢复 blocksRaycasts #52
 function XUiPunishaarComBottomBagBase:_OnDragEnd()
+    -- 恢复 BtnBag（_OnDragBegin enabled=false 的对称）#拖拽中禁功能按钮
+    if self.BtnBag then
+        self.BtnBag.enabled = true
+    end
     -- 隐购买提示（幂等，nil 跳过；置 _CardList 守卫前防 Shop 源结束漏隐）#PanelDragBuyTips
     if self._DragBuyTips then
         self._DragBuyTips:Hide()
+    end
+    -- 隐落点高亮（DragEnd 兜底：_ClearDragSession 清 _FocusArea 不派发 FocusChange，FocusChange nil 收不住高亮）#GridHighLight
+    if self.GridHighLight then
+        self.GridHighLight.gameObject:SetActiveEx(false)
     end
     self._IsBuyAreaFull = nil  -- 清满区标记 #PanelDragBuyTips
     if not self._CardList then
@@ -390,14 +428,16 @@ end
 --- 仅主卡商品拖拽处理；副卡拖拽由 PanelBagLayout 显副卡态。Invalid 态留阶段2（暂 Neutral 兜底）
 ---@param payload table|nil {Area,Pos} 或 nil（焦点清空）
 function XUiPunishaarComBottomBagBase:_OnDragFocusChange(payload)
+    -- 落点高亮（主卡拖拽显、副卡/无效隐；_RefreshDragHighLight 内部全 gating，放最前不受下方 tips 早返影响）#GridHighLight
+    self:_RefreshDragHighLight(payload)
     if not self._DragBuyTips then
         return
     end
-    local gc = self._Control.GameControl
-    if gc:GetDraggingSourceArea() ~= gc.DragArea.Shop then
+    local gameControl = self._Control.GameControl
+    if gameControl:GetDraggingSourceArea() ~= gameControl.DragArea.Shop then
         return
     end
-    local cardData = gc:GetDraggingCardData()
+    local cardData = gameControl:GetDraggingCardData()
     local isSubCard = cardData and cardData.CardId and self._Control:IsSubCard(cardData.CardId) or false
     if isSubCard then
         return
@@ -407,16 +447,72 @@ function XUiPunishaarComBottomBagBase:_OnDragFocusChange(payload)
         return
     end
     local area = payload and payload.Area
-    if (area == gc.DragArea.FightArea or area == gc.DragArea.Bag) and gc:CheckDragDropValid() then
+    if (area == gameControl.DragArea.FightArea or area == gameControl.DragArea.Bag) and gameControl:CheckDragDropValid() then
         self._DragBuyTips:RefreshState(DragBuyState.BuyZone, true)
     else
         self._DragBuyTips:RefreshState(DragBuyState.Neutral, true)
     end
 end
 
+--- 拖拽落点高亮：主卡拖拽时在预测落点格显 GridHighLight，尺寸=卡覆盖的已解锁格部分（裁剪到 gridLimit）。
+--- 副卡不显（落宿主不落格）；focus 离开本栏/清空/无效 → 隐。不查占位（位置示意非可放性判定）。#GridHighLight
+---@param payload table|nil {Area,Pos} 或 nil（焦点清空）
+function XUiPunishaarComBottomBagBase:_RefreshDragHighLight(payload)
+    if not self.GridHighLight then
+        return
+    end
+    local gameControl = self._Control.GameControl
+    -- 副卡拖拽不显（落宿主主卡、不落格）
+    if gameControl:GetIsDraggingSubCard() then
+        self.GridHighLight.gameObject:SetActiveEx(false)
+        return
+    end
+    local area = payload and payload.Area
+    local pos = payload and payload.Pos
+    -- 仅本栏区域 + 有 pos 才显（含原位：拖回原位也显高亮，与其他位置表现一致；
+    -- 不用 CheckDragDropValid——它对原位返 false 会致原位不显高亮、表现不一致）#GridHighLight 原位一致
+    if area ~= self:_GetDragArea() or not pos then
+        self.GridHighLight.gameObject:SetActiveEx(false)
+        return
+    end
+    -- 拖拽卡尺寸（cardId 解析对齐 _OnDragBegin：商品走 CardId、已装备卡走 TemplateId）
+    local data = gameControl:GetDraggingCardData()
+    local cardId = data and (data.CardId or data.TemplateId) or nil
+    local cfg = cardId and self._Control:GetTablePunishaarCard(cardId, true) or nil
+    local cardSize = (cfg and cfg.Size) or 1
+    local gridLimit = self:_GetGridLimit() or 0
+    -- 裁剪到已解锁区 [1, gridLimit]：卡覆盖 [pos, pos+cardSize-1] 与之交集格数（不查占位）
+    local validCount = 0
+    if pos <= gridLimit then
+        validCount = math.min(cardSize, gridLimit - pos + 1)
+    end
+    if validCount <= 0 then
+        -- 整卡落在锁定区（pos > gridLimit）→ 不显
+        self.GridHighLight.gameObject:SetActiveEx(false)
+        return
+    end
+    local slot = self:GetSlotByIndex(pos)
+    if not slot or XTool.UObjIsNil(slot.Transform) then
+        self.GridHighLight.gameObject:SetActiveEx(false)
+        return
+    end
+    local slotTransform = slot.Transform
+    local slotSize = slotTransform.sizeDelta
+    -- GridHighLight 与 slot 不同 parent（gh 在 PnlHighLightList、slot 在 PanelBagSlotList），local 空间 origin 不一致致 localPosition 偏移；
+    -- 改用 world position 对齐（免疫 parent local 空间差异）。两者 pivot 均 (0,0.5) 左中 → slot.position 即左缘+垂直中心，
+    -- gh 同 pivot 落此点即重合；多格向右延伸 validCount 格（sizeDelta.x = 格周期×validCount）#GridHighLight world定位
+    self.GridHighLight.position = slotTransform.position
+    self.GridHighLight.sizeDelta = CS.UnityEngine.Vector2(slotSize.x * validCount, slotSize.y)
+    self.GridHighLight.gameObject:SetActiveEx(true)
+end
+
 function XUiPunishaarComBottomBagBase:OnDestroy()
     self._BeforeBagOpenCb = nil
     self._AfterBagCloseCb = nil
+    -- 兜底恢复 BtnBag（防 Destroy 路径未恢复 enabled=false 残留）#拖拽中禁功能按钮
+    if self.BtnBag then
+        self.BtnBag.enabled = true
+    end
 end
 
 --- 核心骨架：刷对战区卡牌列表（按 StartPos 找对应槽位坐标重合；复用 XList 容器，零 per-call GC）。

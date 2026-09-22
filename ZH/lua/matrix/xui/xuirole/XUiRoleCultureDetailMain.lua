@@ -16,6 +16,14 @@ local COLOR_COST_NORMAL = CS.UnityEngine.Color.black
 local COLOR_COST_LACK = CS.UnityEngine.Color.red
 local _, COLOR_LEVEL_PREVIEW = CS.UnityEngine.ColorUtility.TryParseHtmlString("#3270BB")
 
+local CostItemIdList = {
+    XDataCenter.ItemManager.ItemId.Coin,
+    XDataCenter.ItemManager.ItemId.SkillPoint,
+    XDataCenter.ItemManager.ItemId.LeapWaferChip,
+    XDataCenter.ItemManager.ItemId.SoloDomainCrystal,
+    XDataCenter.ItemManager.ItemId.RepeatChallengeCoin,
+}
+
 function XUiRoleCultureDetailMain:OnAwake()
     self.CostGrids = {}
     self:RegisterButtonEvent()
@@ -106,6 +114,22 @@ function XUiRoleCultureDetailMain:OnEnable()
         return
     end
 
+    -- 道具变化时重算消耗
+    for _, itemId in ipairs(CostItemIdList) do
+        XEventManager.AddEventListener(XEventId.EVENT_ITEM_COUNT_UPDATE_PREFIX .. itemId, self.OnItemCountUpdate, self)
+    end
+
+    self:OnPreviewChanged()
+end
+
+function XUiRoleCultureDetailMain:OnDisable()
+    for _, itemId in ipairs(CostItemIdList) do
+        XEventManager.RemoveEventListener(XEventId.EVENT_ITEM_COUNT_UPDATE_PREFIX .. itemId, self.OnItemCountUpdate, self)
+    end
+end
+
+--- 道具数量变化重算消耗并刷新
+function XUiRoleCultureDetailMain:OnItemCountUpdate()
     self:OnPreviewChanged()
 end
 
@@ -394,6 +418,7 @@ function XUiRoleCultureDetailMain:CaptureCultureSnapshot()
         Attack = attribs[XNpcAttribType.AttackNormal],
         Defense = attribs[XNpcAttribType.DefenseNormal],
         Crit = attribs[XNpcAttribType.Crit],
+        Power = character.Ability,
     }
 end
 
@@ -431,7 +456,7 @@ function XUiRoleCultureDetailMain:RecordCultureFinish(isSuccess)
         for _, skillGroupId in pairs(skillGroupIds) do
             local skillId = character:GetGroupCurSkillId(skillGroupId)
             if skillId > 0 then
-                skillLevels[skillId] = character:GetSkillLevel(skillGroupId)
+                skillLevels[tostring(skillId)] = character:GetSkillLevel(skillGroupId)
             end
         end
     end
@@ -442,7 +467,7 @@ function XUiRoleCultureDetailMain:RecordCultureFinish(isSuccess)
         target_skill_level = self.SkillTargetLevel or 0,
         is_auto_allocate = self._SkillFromMaxOrAllocate == true and 1 or 0,
         final_state = {
-            [self.CharacterId] = {
+            [tostring(self.CharacterId)] = {
                 level = character.Level,
                 grade = character.Grade,
                 skill_levels = skillLevels,
@@ -517,6 +542,7 @@ function XUiRoleCultureDetailMain:OpenStrengthenTip()
         Attack = afterAttack,
         Defense = afterDefense,
         Crit = afterCrit,
+        Power = character.Ability,
     }
     -- 强化后属性与快照逐项对比，四项均无变化则不弹窗
     if FixToDouble(afterAttribs.Life) == FixToDouble(before.Life)
@@ -531,7 +557,7 @@ function XUiRoleCultureDetailMain:OpenStrengthenTip()
         CharacterId = self.CharacterId,
         AfterLevel = character.Level,
         AfterGrade = character.Grade,
-        BeforeAttribs = { Life = before.Life, Attack = before.Attack, Defense = before.Defense, Crit = before.Crit },
+        BeforeAttribs = { Life = before.Life, Attack = before.Attack, Defense = before.Defense, Crit = before.Crit, Power = before.Power },
         AfterAttribs = afterAttribs,
     })
 end
@@ -626,7 +652,6 @@ function XUiRoleCultureDetailMain:RefreshAll()
     elseif self._SkillFromMaxOrAllocate and XTool.IsTableEmpty(result.SkillCostMap) then
         self.SkillTargetLevel = 0
     end
-    self._SkillFromMaxOrAllocate = false
 
     local skillMin = result.FreeSkillLevel or 0
     if self._SkillInitPending then

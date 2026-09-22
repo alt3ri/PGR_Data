@@ -27,9 +27,12 @@ function XUiGridTRTargetDetailWeaponEquip:RefreshEquipInfo()
     self.Parent:SetUiSprite(self.ImgQuality, qualityPath)
     if self.ImgQualityEffect then
         local effectPath = equip and equip:GetEquipQualityEffectPath() or nil
-        self.ImgQualityEffect.gameObject:SetActiveEx(effectPath ~= nil)
+        local effectGo = self.ImgQualityEffect.gameObject
+        effectGo:UnLoadUiEffect()
+        effectGo:SetActiveEx(effectPath ~= nil)
         if effectPath then
-            self.ImgQualityEffect.gameObject:LoadUiEffect(effectPath)
+            -- 格子会在不同目标武器间复用，避免节点重新激活时按旧 Url 自动恢复上一把武器的品质特效
+            effectGo:LoadUiEffect(effectPath, false)
         end
     end
     self.TxtName.text = XMVCA.XEquip:GetEquipName(self.TemplateId)

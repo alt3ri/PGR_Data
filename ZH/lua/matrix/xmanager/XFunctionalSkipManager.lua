@@ -689,6 +689,29 @@ XFunctionalSkipManagerCreator = function()
         return true
     end
 
+    -- 跳转狂三(DAL)剧情关
+    function XFunctionalSkipManager.OnOpenDALFestival(list)
+        local param1 = (list.CustomParams[1] ~= 0) and list.CustomParams[1] or nil --  活动Id
+        local param2 = (list.CustomParams[2] ~= 0) and list.CustomParams[2] or nil -- 默认选中的关卡
+
+        if not XDataCenter.FubenFestivalActivityManager.IsFestivalInActivity(param1) then
+            XUiManager.TipText("FestivalActivityNotInActivityTime")
+            return false
+        end
+
+        if param2 then
+            if XFunctionalSkipManager.IsStageLock(param2) then
+                return false
+            end
+
+            XLuaUiManager.Open("UiDALFestivalActivityMain", param1, param2)
+        else
+            XLuaUiManager.Open("UiDALFestivalActivityMain", param1)
+        end
+
+        return true
+    end
+
     -- 复刷本
     function XFunctionalSkipManager.OnOpenRepeatChallengeActivity(list)
         local param = (list.CustomParams[1] ~= 0) and list.CustomParams[1] or nil
@@ -759,7 +782,7 @@ XFunctionalSkipManagerCreator = function()
             XUiManager.TipMsg(CS.XTextManager.GetText("FubenMainLineNoneOpen"))
             return
         end
-        if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.MainLine) then
+        if not XMVCA.XSubPackage:CheckSubpackage(XFunctionManager.FunctionName.MainLine, stageInfo.ChapterId) then
             return
         end
         if openStageDetail then
@@ -1655,9 +1678,11 @@ XFunctionalSkipManagerCreator = function()
     function XFunctionalSkipManager.SkipToUiWelfare(list)
         local functionType = list.CustomParams[1]
         local welfareId = list.CustomParams[2]
+        local activityId = (list.CustomParams[3] ~= 0) and list.CustomParams[3] or nil
         XLuaUiManager.Open("UiWelfare", nil, nil,{
             FunctionType = functionType,
             WelfareId = welfareId,
+            ActivityId = activityId,
         })
     end
 
@@ -2492,7 +2517,9 @@ XFunctionalSkipManagerCreator = function()
 
         local curGachaId = XDataCenter.GachaManager.GetCurSelfChoiceSelectGachId(groupId)
         if not XTool.IsNumberValid(curGachaId) then
-            XLuaUiManager.Open("UiGachaFashionSelfChoiceEntrance", groupId)
+            -- 缺配置(返回0)默认走切换模式;策划在 GachaClientConfig 配 FashionSelfChoiceEntranceForceNormalMode=1 可强制普通模式
+            local forceNormalMode = XGachaConfigs.GetClientConfigNumber("FashionSelfChoiceEntranceForceNormalMode", 1, true) == 1
+            XLuaUiManager.Open("UiGachaFashionSelfChoiceEntrance", groupId, not forceNormalMode)
             return
         end
 
@@ -2602,6 +2629,11 @@ XFunctionalSkipManagerCreator = function()
             XLuaUiManager.Remove("UiInvertCardGame")
         end
         XLuaUiManager.Open("UiInvertCardGame")
+    end
+
+    -- 跳转到夕韵暇光
+    function XFunctionalSkipManager.SkipToEnvelopeGuessing()
+        return XMVCA.XEnvelopeGuessing:OpenMainUi()
     end
 
     return XFunctionalSkipManager

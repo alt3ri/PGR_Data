@@ -69,8 +69,9 @@ function XUiSceneTip:Refresh()
     self.TogPreview.isOn = false
     local isFirst = XDataCenter.PhotographManager:IsBtnSwitchFirst(self.SceneId)
     if self.BtnSwitch then self.BtnSwitch:RefreshSelect(isFirst) end
-    
+
     self:RefreshDropDown()
+    self:RefreshHintText()
 end
 
 function XUiSceneTip:RefreshDropDown()
@@ -129,6 +130,14 @@ function XUiSceneTip:SetBatteryUi()
     self.ToFullTimeLine.gameObject:SetActiveEx(false)
     self.FullTimeLine.gameObject:SetActiveEx(false)
     self.ChargeTimeLine.gameObject:SetActiveEx(false)
+
+    -- 全局 PreviewState 无场景维度, 进入时会残留上个场景的满/低电值,
+    -- 导致 SwitchBtn 初始档位(读B)与渲染(读B)错位于 Dropdown(读本场景A偏好)。
+    -- 进入时按本场景 A 偏好静默重算并写回 B, 再 Refresh 让两侧对齐。
+    XMVCA.XSwitchableScene:PlaySceneAnim(self.SceneId,
+        function() XDataCenter.PhotographManager.UpdatePreviewState(true, true) end,
+        function() XDataCenter.PhotographManager.UpdatePreviewState(false, true) end)
+    self:Refresh()
 end
 
 function XUiSceneTip:UpdateBatteryMode()
@@ -232,10 +241,13 @@ end
 
 function XUiSceneTip:AddEventListener()
     XEventManager.AddEventListener(XEventId.EVENT_SCENE_PREVIEW_STATE_CHANGE, self.PlayChangeModeAnim, self)
+    -- 音乐切换走独立事件，同样触发刷新，让 Dropdown 与 SwitchBtn 双向同步
+    XEventManager.AddEventListener(XEventId.EVENT_MUSIC_SCENE_SETTING_CHANGE, self.PlayChangeModeAnim, self)
 end
 
 function XUiSceneTip:RemoveEventListener()
     XEventManager.RemoveEventListener(XEventId.EVENT_SCENE_PREVIEW_STATE_CHANGE, self.PlayChangeModeAnim, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_MUSIC_SCENE_SETTING_CHANGE, self.PlayChangeModeAnim, self)
 end
 
 function XUiSceneTip:PlayChangeModeAnim()
@@ -247,13 +259,21 @@ function XUiSceneTip:PlayChangeModeAnim()
 end
 
 function XUiSceneTip:OnClickDropData(index)
-    XMVCA.XSwitchableScene:SetSceneSetting(self.SceneId, index)
-    self:UpdateBatteryMode()
+    XDataCenter.PhotographManager.ApplySceneSwitch(self.SceneId, index, true)
+    self:DriveBatteryBySetting()
 end
 
 function XUiSceneTip:OnClickDropPower(index)
-    XMVCA.XSwitchableScene:SetSceneSetting(self.SceneId, index)
-    self:UpdateBatteryMode()
+    XDataCenter.PhotographManager.ApplySceneSwitch(self.SceneId, index, true)
+    self:DriveBatteryBySetting()
+end
+
+-- 下拉写入的是 A 系统(SwitchableScene 设置)，而 UpdateBatteryMode 读的是 B 系统(PreviewState)。
+-- 借 PlaySceneAnim 依据 A 系统算出满/低电，再驱动 B 系统，与 SwitchBtn 走同一渲染闭环。
+function XUiSceneTip:DriveBatteryBySetting()
+    XMVCA.XSwitchableScene:PlaySceneAnim(self.SceneId,
+        function() XDataCenter.PhotographManager.UpdatePreviewState(true) end,
+        function() XDataCenter.PhotographManager.UpdatePreviewState(false) end)
 end
 
 function XUiSceneTip:OnClickDropGyro(index)
@@ -271,5 +291,15 @@ function XUiSceneTip:OnClickDropEnvMusic()
 end
 
 function XUiSceneTip:OnClickDropSceneMusic(index)
-    XMVCA.XMusicScene:UpdateMusicSceneMode(self.SceneId, index + 1) --index从0开始
+    XDataCenter.PhotographManager.ApplySceneSwitch(self.SceneId, index, true) --index从0开始, 门面内 +1
+end
+
+function XUiSceneTip:RefreshHintText()
+    local hintText = XPhotographConfigs.GetBackgroundHintText(self.SceneId)
+    if string.IsNilOrEmpty(hintText) then
+        self.PanelHintText.gameObject:SetActiveEx(false)
+    else
+        self.PanelHintText.gameObject:SetActiveEx(true)
+        self.HintText.text = XUiHelper.ReplaceTextNewLine(hintText)
+    end
 end

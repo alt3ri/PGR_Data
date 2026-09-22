@@ -36,9 +36,10 @@ function XChar1028:_BaseInit()
 end
 
 function XChar1028:InitEventCallBackRegister()
-    --涅媞娅独特注册脚本
-    XTheatre6CharBase.InitEventCallBackRegister(self)
-    self._proxy:RegisterEvent(EWorldEvent.NpcCastActionAfter)
+    --涅媞娅独特注册脚本
+    XTheatre6CharBase.InitEventCallBackRegister(self)
+    self._proxy:RegisterEvent(EWorldEvent.NpcCastActionAfter)
+    self._proxy:RegisterEvent(EWorldEvent.NpcExitAction)
 end
 
 ---@param eventType number
@@ -69,9 +70,28 @@ function XChar1028:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, 
         ---self._proxy:ApplyMagic(self._uuid, self._uuid, 1028007)
         ---self._proxy:ApplyMagic(self._uuid, self._uuid, 1028008)
     end
-end
-
-function XChar1028:OnNpcSkillActionKeyframeSendEvent(launcher, eventName, skillActionId, keyFrameId, skillId)
+end
+
+-- 拼刀成功技能1的近景镜头期间关闭角色裁切 Dither；动作结束或中断后恢复。
+function XChar1028:OnNpcCastActionAfterEvent(skillActionId, launcherId, targetId, targetSceneObjId, isAbort)
+    XTheatre6CharBase.OnNpcCastActionAfterEvent(self, skillActionId, launcherId, targetId, targetSceneObjId, isAbort)
+    if launcherId ~= self._uuid or skillActionId ~= 1028301 then
+        return
+    end
+
+    self._proxy:SetNpcDither(self._uuid, false)
+end
+
+function XChar1028:OnNpcExitActionEvent(skillActionId, launcherId, targetId, targetSceneObjId, isAbort)
+    XTheatre6CharBase.OnNpcExitActionEvent(self, skillActionId, launcherId, targetId, targetSceneObjId, isAbort)
+    if launcherId ~= self._uuid or skillActionId ~= 1028301 then
+        return
+    end
+
+    self._proxy:SetNpcDither(self._uuid, true)
+end
+
+function XChar1028:OnNpcSkillActionKeyframeSendEvent(launcher, eventName, skillActionId, keyFrameId, skillId)
     XTheatre6CharBase.OnNpcSkillActionKeyframeSendEvent(self, launcher, eventName, skillActionId, keyFrameId, skillId)
 
     if launcher ~= self._uuid then

@@ -109,8 +109,14 @@ function XUiFashionColor:SetColorId(colorId)
     self.ColorId = colorId
 end
 
-function XUiFashionColor:GetColorId()
-    return self.ColorId
+function XUiFashionColor:GetColorId(fashionId)
+    -- 面板正在跟踪该涂装(或调用方未指定)时,返回面板当前选中色
+    if not XTool.IsNumberValid(fashionId) or fashionId == self.CurFashionId then
+        return self.ColorId
+    end
+    -- 面板未跟踪该涂装(武器/头像页签下已被 Refresh(nil) 清空),回退到已保存的染色
+    local fashionData = XDataCenter.FashionManager.GetOwnFashionDataById(fashionId)
+    return self:NormalizeSavedColorId(fashionData and fashionData.ColorId)
 end
 
 function XUiFashionColor:IsUseNewColor()

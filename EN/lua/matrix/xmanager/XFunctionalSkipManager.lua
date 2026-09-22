@@ -689,6 +689,29 @@ XFunctionalSkipManagerCreator = function()
         return true
     end
 
+    -- 跳转狂三(DAL)剧情关
+    function XFunctionalSkipManager.OnOpenDALFestival(list)
+        local param1 = (list.CustomParams[1] ~= 0) and list.CustomParams[1] or nil --  活动Id
+        local param2 = (list.CustomParams[2] ~= 0) and list.CustomParams[2] or nil -- 默认选中的关卡
+
+        if not XDataCenter.FubenFestivalActivityManager.IsFestivalInActivity(param1) then
+            XUiManager.TipText("FestivalActivityNotInActivityTime")
+            return false
+        end
+
+        if param2 then
+            if XFunctionalSkipManager.IsStageLock(param2) then
+                return false
+            end
+
+            XLuaUiManager.Open("UiDALFestivalActivityMain", param1, param2)
+        else
+            XLuaUiManager.Open("UiDALFestivalActivityMain", param1)
+        end
+
+        return true
+    end
+
     -- 复刷本
     function XFunctionalSkipManager.OnOpenRepeatChallengeActivity(list)
         local param = (list.CustomParams[1] ~= 0) and list.CustomParams[1] or nil
@@ -1730,14 +1753,11 @@ XFunctionalSkipManagerCreator = function()
     end
     
     --3.0新增：跳转装备推荐
-    function XFunctionalSkipManager.SkipToEquipGuideView(list)
+    function XFunctionalSkipManager.SkipToTeamRecommendView(list)
         local characterId = list.CustomParams[1] or 0
 
         if XTool.IsNumberValid(characterId) then
-            local isOwn = XMVCA:GetAgency(ModuleId.XCharacter):IsOwnCharacter(characterId)
-            local isUnlock = XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.EquipGuideRecommend)
-            local canSet = isOwn and isUnlock
-            XDataCenter.EquipGuideManager.OpenEquipGuideRecommend(characterId, not canSet)
+            XMVCA.XTeamRecommend:OpenCharacterRecommend(characterId)
         else
             XLog.Error('跳转配置参数错误，不是个有效的角色Id:', characterId, 'SkipId:'..tostring(list.SkipId))    
         end
@@ -2495,7 +2515,9 @@ XFunctionalSkipManagerCreator = function()
 
         local curGachaId = XDataCenter.GachaManager.GetCurSelfChoiceSelectGachId(groupId)
         if not XTool.IsNumberValid(curGachaId) then
-            XLuaUiManager.Open("UiGachaFashionSelfChoiceEntrance", groupId)
+            -- 缺配置(返回0)默认走切换模式;策划在 GachaClientConfig 配 FashionSelfChoiceEntranceForceNormalMode=1 可强制普通模式
+            local forceNormalMode = XGachaConfigs.GetClientConfigNumber("FashionSelfChoiceEntranceForceNormalMode", 1, true) == 1
+            XLuaUiManager.Open("UiGachaFashionSelfChoiceEntrance", groupId, not forceNormalMode)
             return
         end
 

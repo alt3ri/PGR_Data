@@ -134,6 +134,7 @@ function XFangKuaiAgency:GiveUpStageFromCollection(stageId, cb)
         self._Model.ActivityData:UpdateSettleData(res.SettleData, stageId)
         local chapterId = self:GetChapterIdByStage(stageId)
         self._Model.ActivityData:ClearStageData(chapterId)
+        self:RecordEnhancedCount(stageId)
         if cb then
             cb(res)
         end
@@ -162,6 +163,13 @@ function XFangKuaiAgency:IsGuideExitFever(isMeet)
         return fight:GetExitFevGuideFlag() == isMeet
     end
     return false
+end
+
+function XFangKuaiAgency:RecordEnhancedCount(stageId)
+    local dir = {}
+    dir["chapter_id"] = stageId
+    dir["enhance_count"] = self._Model:GetItemEnhancedCountRecord(stageId)
+    CS.XRecord.Record(dir, "1000044", "FangKuaiEnhancedCount")
 end
 
 --region 副本入口扩展

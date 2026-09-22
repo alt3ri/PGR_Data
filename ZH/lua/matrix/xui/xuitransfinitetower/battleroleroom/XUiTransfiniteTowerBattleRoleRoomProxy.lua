@@ -9,6 +9,12 @@ local XUiTransfiniteTowerBattleRoleRoomProxy = XClass(XUiBattleRoleRoomDefaultPr
 
 local POS_COUNT = 3
 
+---角色不可上阵的原因
+local ROLE_INVALID_REASON = {
+    Unfit = 1,       -- 不满足本关使用条件（角色未开放 / 本关禁止上阵超频核心）
+    EnergyEmpty = 2, -- 算力耗尽
+}
+
 function XUiTransfiniteTowerBattleRoleRoomProxy:Ctor(team, stageId, proxyArg)
     proxyArg = proxyArg or table.empty
     self._TowerCfgId = proxyArg.TowerCfgId
@@ -63,6 +69,9 @@ end
 --region 生命周期钩子
 
 function XUiTransfiniteTowerBattleRoleRoomProxy:GetAutoCloseInfo()
+    if not XTool.IsNumberValid(self._TowerCfgId) then
+        return false
+    end
     local endTime = XMVCA.XTransfiniteTower:GetTowerUnlockEndTime(self._TowerCfgId)
     if endTime <= 0 then
         return false
@@ -76,6 +85,11 @@ function XUiTransfiniteTowerBattleRoleRoomProxy:OnTowerClosed(isClose)
     end
     XUiManager.TipMsg(XUiHelper.GetText("TransfiniteTowerTowerClosed"))
     self._RootUi:Close()
+end
+
+function XUiTransfiniteTowerBattleRoleRoomProxy:AOPOnEnableAfter(rootUi)
+    XMVCA.XTransfiniteTower:SetCurrentChapterId(self._TowerCfgId)
+    XMVCA.XTransfiniteTower:SetCurrentStageCfgId(self._StageCfgId)
 end
 
 function XUiTransfiniteTowerBattleRoleRoomProxy:AOPOnStartAfter(rootUi)
@@ -99,10 +113,26 @@ function XUiTransfiniteTowerBattleRoleRoomProxy:RestoreGeneralSkill(rootUi)
     if not XTool.IsNumberValid(skillId) then
         return
     end
-    rootUi.Team:UpdateSelectGeneralSkill(skillId, true)
+    local team = rootUi.Team
+    if self:IsGeneralSkillValid(team, skillId) then
+        team:UpdateSelectGeneralSkill(skillId, true)
+    else
+        team:AutoSelectGeneralSkill()
+    end
     if rootUi.PanelGeneralSkill then
         rootUi.PanelGeneralSkill:Refresh(true)
     end
+end
+
+---当前队伍是否还有角色符合该效应
+---@return boolean
+function XUiTransfiniteTowerBattleRoleRoomProxy:IsGeneralSkillValid(team, skillId)
+    for _, skill in ipairs(team:GetGeneralSkillList()) do
+        if skill.Id == skillId then
+            return true
+        end
+    end
+    return false
 end
 
 ---记录效应
@@ -117,27 +147,74 @@ function XUiTransfiniteTowerBattleRoleRoomProxy:SaveGeneralSkill()
     XMVCA.XTransfiniteTower:SaveLastGeneralSkill(self._TowerCfgId, team:GetCurGeneralSkill())
 end
 
+---角色在当前编队是否不可上阵
+---@return number|nil ROLE_INVALID_REASON
+function XUiTransfiniteTowerBattleRoleRoomProxy:GetRoleInvalidReason(entityId)
+    local agency = XMVCA.XTransfiniteTower
+    if agency:IsEntityUnfitStage(entityId) then
+        return ROLE_INVALID_REASON.Unfit
+    end
+    if agency:IsEntityEnergyEmpty(entityId) then
+        return ROLE_INVALID_REASON.EnergyEmpty
+    end
+end
+
 function XUiTransfiniteTowerBattleRoleRoomProxy:KickOutExhaustedRoles(rootUi)
     -- 重新挑战时队伍锁定为原阵容，不做剔除
     if self._IsTeamLocked then
         return
     end
     local team = rootUi.Team
-    local hasKickOut = false
+    local hasUnfit = false
+    local hasEnergyEmpty = false
     for i = 1, POS_COUNT do
         local entityId = team:GetEntityIdByTeamPos(i)
-        if XTool.IsNumberValid(entityId) and XMVCA.XTransfiniteTower:IsEntityEnergyEmpty(entityId) then
+        local reason = XTool.IsNumberValid(entityId) and self:GetRoleInvalidReason(entityId)
+        if reason then
             team:UpdateEntityTeamPos(entityId, i, false)
-            hasKickOut = true
+            hasUnfit = hasUnfit or reason == ROLE_INVALID_REASON.Unfit
+            hasEnergyEmpty = hasEnergyEmpty or reason == ROLE_INVALID_REASON.EnergyEmpty
         end
     end
-    if hasKickOut then
+    if hasUnfit or hasEnergyEmpty then
         local agency = XMVCA.XTransfiniteTower
         local progress = agency:GetStageProgressIndex(self._TowerCfgId)
         if not agency:HasKickTipShown(self._TowerCfgId, progress) then
-            XUiManager.TipMsg(XUiHelper.GetText("TransfiniteTowerBattleEnergyEmptyKick"))
+            self:EnqueueKickOutTips(hasUnfit, hasEnergyEmpty)
             agency:MarkKickTipShown(self._TowerCfgId, progress)
         end
+    end
+end
+
+---剔除角色提示入队：算力耗尽与不满足出战条件分别提示
+function XUiTransfiniteTowerBattleRoleRoomProxy:EnqueueKickOutTips(hasUnfit, hasEnergyEmpty)
+    if hasEnergyEmpty then
+        XUiManager.TipMsgEnqueue(XUiHelper.GetText("TransfiniteTowerBattleEnergyEmptyKick"))
+    end
+    if hasUnfit then
+        XUiManager.TipMsgEnqueue(XUiHelper.GetText("TransfiniteTowerBattleCoreNotFit"))
+    end
+end
+
+---应用队伍预设后剔除不合规角色
+function XUiTransfiniteTowerBattleRoleRoomProxy:FilterPresetTeamEntitiyIdsCallback(teamInfoData, finishCb)
+    local teamData = teamInfoData.TeamData
+    local hasUnfit = false
+    local hasEnergyEmpty = false
+    for pos, entityId in pairs(teamData or table.empty) do
+        local reason = XTool.IsNumberValid(entityId) and self:GetRoleInvalidReason(entityId)
+        if reason then
+            teamData[pos] = 0
+            hasUnfit = hasUnfit or reason == ROLE_INVALID_REASON.Unfit
+            hasEnergyEmpty = hasEnergyEmpty or reason == ROLE_INVALID_REASON.EnergyEmpty
+        end
+    end
+    if hasUnfit or hasEnergyEmpty then
+        self._RootUi.Team:UpdateEntityIds(teamData)
+        self:EnqueueKickOutTips(hasUnfit, hasEnergyEmpty)
+    end
+    if finishCb then
+        XScheduleManager.ScheduleNextFrame(finishCb)
     end
 end
 
@@ -154,14 +231,16 @@ function XUiTransfiniteTowerBattleRoleRoomProxy:OnTowerDataChange()
     if rootUi and not XTool.UObjIsNil(rootUi.GameObject) then
         rootUi:RefreshRoleInfos()
     end
+    XMVCA.XTransfiniteTower:TryPlayRollbackGuide(self._StageCfgId)
 end
 
 ---刷新每个角色位的领航员标记 + 体力槽
 function XUiTransfiniteTowerBattleRoleRoomProxy:AOPRefreshRoleInfosAfter(rootUi)
+    local agency = XMVCA.XTransfiniteTower
     for i = 1, POS_COUNT do
         local entityId = rootUi.Team:GetEntityIdByTeamPos(i)
         local hasRole = XTool.IsNumberValid(entityId)
-        local isLeader = hasRole and XMVCA.XTransfiniteTower:IsLeaderEntity(entityId)
+        local isLeader = hasRole and agency:IsLeaderEntity(entityId)
         self._LeaderPanels[i].gameObject:SetActiveEx(hasRole and isLeader)
         self._EnergyPanels[i].gameObject:SetActiveEx(hasRole)
         if hasRole then
@@ -169,16 +248,15 @@ function XUiTransfiniteTowerBattleRoleRoomProxy:AOPRefreshRoleInfosAfter(rootUi)
             if isLeader then
                 energy = 0
             elseif self._IsTeamLocked then
-                energy = XMVCA.XTransfiniteTower:GetEntityEnergyBeforeStage(self._TowerCfgId, self._StageCfgId, entityId)
+                energy = agency:GetEntityEnergyBeforeStage(self._TowerCfgId, self._StageCfgId, entityId)
             else
-                energy = XMVCA.XTransfiniteTower:GetEntityEnergy(self._TowerCfgId, entityId)
+                energy = agency:GetEntityEnergy(self._TowerCfgId, entityId)
             end
             self._EnergyGrids[i]:Refresh(isLeader, energy)
         end
     end
-    local towerCfgId = self._TowerCfgId
-    if not XTool.IsNumberValid(towerCfgId)
-        or not XMVCA.XTransfiniteTower:IsLastSettleTower(towerCfgId) then
+    if not XTool.IsNumberValid(self._TowerCfgId)
+        or not agency:IsLastSettleTower(self._TowerCfgId) then
         rootUi.BtnTeamPrefab.gameObject:SetActiveEx(false)
     end
 end
@@ -260,31 +338,37 @@ function XUiTransfiniteTowerBattleRoleRoomProxy:OnTraitClick(traitData)
     XLuaUiManager.Open("UiTransfiniteTowerHide", self._StageCfgId)
 end
 
----进战校验：体力不足 / 领航员数量不满足本层要求，任一不满足弹 toast 并拦截
+---进战校验
 ---@return boolean 返回 true 拦截默认进战
 function XUiTransfiniteTowerBattleRoleRoomProxy:AOPOnClickFight(rootUi)
+    local agency = XMVCA.XTransfiniteTower
     local team = rootUi.Team
     local leaderCount = 0
     for i = 1, POS_COUNT do
         local entityId = team:GetEntityIdByTeamPos(i)
         if XTool.IsNumberValid(entityId) then
-            if XMVCA.XTransfiniteTower:IsLeaderEntity(entityId) then
+            local reason = self:GetRoleInvalidReason(entityId)
+            if reason == ROLE_INVALID_REASON.Unfit then
+                XUiManager.TipMsg(XUiHelper.GetText("TransfiniteTowerBattleCoreNotFit"))
+                return true
+            end
+            if agency:IsLeaderEntity(entityId) then
                 leaderCount = leaderCount + 1
-            elseif XMVCA.XTransfiniteTower:IsEntityEnergyEmpty(entityId) then
+            elseif reason == ROLE_INVALID_REASON.EnergyEmpty then
                 XUiManager.TipMsg(XUiHelper.GetText("TransfiniteTowerBattleEnergyNotEnough"))
                 return true
             end
         end
     end
 
-    local leaderTip = XMVCA.XTransfiniteTower:GetLeaderCountInvalidTip(self._StageCfgId, leaderCount)
+    local leaderTip = agency:GetLeaderCountInvalidTip(self._StageCfgId, leaderCount)
     if leaderTip then
         XUiManager.TipMsg(leaderTip)
         return true
     end
 
     -- 校验通过，记下本场队伍供结算界面【重新挑战】原地重打，并缓存本塔效应选择
-    XMVCA.XTransfiniteTower:SetLastFightTeamId(team:GetId(), self._StageCfgId)
+    agency:SetLastFightTeamId(team:GetId(), self._StageCfgId)
     self:SaveGeneralSkill()
     return false
 end

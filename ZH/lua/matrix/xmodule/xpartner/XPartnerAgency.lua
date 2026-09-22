@@ -47,11 +47,8 @@ end
 --- 打开辅助机一键培养界面（先预拉取自动兑换涉及的商店数据，兑换代币配置在商店商品的 ConsumeList 上，无商店数据无法计算兑换）
 ---@param partnerId number 辅助机实例 Id
 function XPartnerAgency:OpenOneKeyCultureUI(partnerId)
-    if partnerId then
-        self._Model:GetOneKeyCultureModel():SetCurPartnerId(partnerId)
-    end
     local allShopIds = { XShopManager.MaterialShopId }
-    self:_CollectChipExchangeShopId(allShopIds)
+    self:_CollectChipExchangeShopId(allShopIds, partnerId)
     --先拉商店基础信息(含 ConditionIds),才能判断玩家是否满足商店开放条件
     XShopManager.GetBaseInfo(function()
         local shopIds = {}
@@ -61,13 +58,13 @@ function XPartnerAgency:OpenOneKeyCultureUI(partnerId)
             end
         end
         if #shopIds == 0 then
-            XLuaUiManager.Open("UiEquipOneClickCulturePartnerMain")
+            XLuaUiManager.Open("UiEquipOneClickCulturePartnerMain", partnerId)
             return
         end
         --只对玩家已满足开放条件的商店请求有效信息,避免未解锁商店触发服务器异常
         XShopManager.RequestShopValidInfo(shopIds, function()
             XShopManager.GetShopInfoList(shopIds, function()
-                XLuaUiManager.Open("UiEquipOneClickCulturePartnerMain")
+                XLuaUiManager.Open("UiEquipOneClickCulturePartnerMain", partnerId)
             end, XShopManager.ShopType.Common, true)
         end)
     end)
@@ -80,12 +77,12 @@ end
 
 --- 收集当前辅助机碎片自动兑换（矿石换碎片）所在商店 Id，加入预拉列表
 ---@param shopIds number[]
-function XPartnerAgency:_CollectChipExchangeShopId(shopIds)
-    local curPartnerId = self._Model:GetOneKeyCultureModel():GetCurPartnerId()
-    if not XTool.IsNumberValid(curPartnerId) then
+---@param partnerId number 辅助机实例 Id
+function XPartnerAgency:_CollectChipExchangeShopId(shopIds, partnerId)
+    if not XTool.IsNumberValid(partnerId) then
         return
     end
-    local partner = XDataCenter.PartnerManager.GetPartnerEntityById(curPartnerId)
+    local partner = XDataCenter.PartnerManager.GetPartnerEntityById(partnerId)
     if not partner then
         return
     end

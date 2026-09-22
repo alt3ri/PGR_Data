@@ -256,7 +256,7 @@
         "Name": "Equipment Goal - Recommended",
         "Priority": 14,
         "Hint": null,
-        "Condition": "[770400]",
+        "Condition": "[770422]",
         "Type": 1,
         "FunctionType": 1
     },
@@ -265,7 +265,7 @@
         "Name": "Equipment Goal - Settings",
         "Priority": 14,
         "Hint": null,
-        "Condition": "[770400]",
+        "Condition": "[770422]",
         "Type": 1,
         "FunctionType": 1
     },
@@ -1629,6 +1629,42 @@
         "FunctionType": 1
     },
     {
+        "Id": 10509,
+        "Name": "PGR Duel Mode",
+        "Priority": 132,
+        "Hint": null,
+        "Condition": "[774800]",
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 10510,
+        "Name": "4.8\u8d85\u9650\u73a9\u6cd5",
+        "Priority": 133,
+        "Hint": null,
+        "Condition": "[774800]",
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 10512,
+        "Name": "Simulated Battlefield 2x Bonus Mission",
+        "Priority": 134,
+        "Hint": null,
+        "Condition": "[770422]",
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 10513,
+        "Name": "4.8\u8054\u52a8\u5f00\u542f",
+        "Priority": 135,
+        "Hint": null,
+        "Condition": "[100001]",
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
         "Id": 109001,
         "Name": "Special Training RS-2",
         "Priority": 81,
@@ -2480,6 +2516,15 @@
         "Priority": 70,
         "Hint": null,
         "Condition": null,
+        "Type": 1,
+        "FunctionType": 1
+    },
+    {
+        "Id": 10511,
+        "Name": "Member - Quick Upgrade",
+        "Priority": 11,
+        "Hint": null,
+        "Condition": "[30404]",
         "Type": 1,
         "FunctionType": 1
     },

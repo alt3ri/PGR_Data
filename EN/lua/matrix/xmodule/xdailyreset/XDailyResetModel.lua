@@ -31,6 +31,10 @@ function XDailyResetModel:GetDayZero()
     return self._dayZero
 end
 
+function XDailyResetModel:GetDateALiveDailyRedPointKey()
+    return string.format("DateALiveChapterEnter_%s", XPlayer.Id)
+end
+
 ----------public end----------
 
 ----------private start----------

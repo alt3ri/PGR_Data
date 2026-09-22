@@ -17,28 +17,20 @@ end
 function XTriggerFrequencyBlock:CheckCanTrigger()
     local now = CS.UnityEngine.Time.realtimeSinceStartup
     local queue = self._Queue
-    if queue:Count() >= self._MaxCount then
-        if now - queue:Peek() < self._WindowSeconds then
-            return false
-        end
+    -- 移除已过期的时间戳
+    while queue:Count() > 0 and (now - queue:Peek()) >= self._WindowSeconds do
+        queue:Dequeue()
     end
-    return true
+    return queue:Count() < self._MaxCount
 end
 
---- 记录一次触发
+--- 记录一次触发（仅在允许触发时才记录）
 function XTriggerFrequencyBlock:TriggerRecord()
-    local now = CS.UnityEngine.Time.realtimeSinceStartup
-    local queue = self._Queue
-    if queue:Count() >= self._MaxCount then
-        -- 队列已满（窗口已过期）：清空并用当前时间填满，
-        -- 使窗口从当前时间重新起算，避免旧记录相继过期导致连续放行
-        queue:Clear()
-        for i = 1, self._MaxCount do
-            queue:Enqueue(now)
-        end
-    else
-        queue:Enqueue(now)
+    if not self:CheckCanTrigger() then
+        return
     end
+    local now = CS.UnityEngine.Time.realtimeSinceStartup
+    self._Queue:Enqueue(now)
 end
 
 --- 重置

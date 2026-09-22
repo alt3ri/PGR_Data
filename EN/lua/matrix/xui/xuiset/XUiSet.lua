@@ -91,10 +91,18 @@ function XUiSet:OnAwake()
     CS.XInputManager.SetCurInputMap(CS.XInputMapId.System)
 end
 
+-- 注意：海外配表参数位与国服对齐，新参数一律追加在签名末尾，禁止插入到已有参数位中间
 function XUiSet:OnStart(isFight, panelIndex, secondIndex, showAccount)
-    self.IsFight = isFight
+    self.IsFight = isFight == true
     self.SecondIndex = secondIndex
-    self.ShowAccount = showAccount
+
+    if showAccount ~= nil then
+        self.ShowAccount = showAccount
+    elseif not self.IsFight then
+        self.ShowAccount = XOverseaManager.IsOverSeaRegion()
+    else
+        self.ShowAccount = false
+    end
 
     local stageType
     local beginData = XDataCenter.FubenManager.GetFightBeginData()

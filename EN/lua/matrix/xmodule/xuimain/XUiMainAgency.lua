@@ -370,6 +370,22 @@ function XUiMainAgency:GetActivityBtnConfigById(id)
     return self._Model:GetActivityBtnConfigById(id)
 end
 
+--region 活动按钮永久一次性红点
+
+function XUiMainAgency:GetActivityBtnIdentityKey(activityBtnConfig)
+    return self._Model:GetActivityBtnIdentityKey(activityBtnConfig)
+end
+
+function XUiMainAgency:SaveActivityBtnRedOnceClicked(key)
+    self._Model:SaveActivityBtnRedOnceClicked(key)
+end
+
+function XUiMainAgency:IsActivityBtnRedOnceClicked(key)
+    return self._Model:IsActivityBtnRedOnceClicked(key)
+end
+
+--endregion
+
 function XUiMainAgency:GetActivityToastHallCfgs()
     return self._Model:GetActivityToastHallCfgs()
 end

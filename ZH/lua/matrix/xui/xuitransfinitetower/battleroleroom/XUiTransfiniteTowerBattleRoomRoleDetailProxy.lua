@@ -13,7 +13,11 @@ local COLOR_DEBUFF_BG = XUiHelper.Hexcolor2Color("A32F2D")
 
 function XUiTransfiniteTowerBattleRoomRoleDetailProxy:GetAutoCloseInfo()
     local agency = XMVCA.XTransfiniteTower
-    local endTime = agency:GetTowerUnlockEndTime(agency:GetCurrentChapterId())
+    local chapterId = agency:GetCurrentChapterId()
+    if not XTool.IsNumberValid(chapterId) then
+        return false
+    end
+    local endTime = agency:GetTowerUnlockEndTime(chapterId)
     if endTime <= 0 then
         return false
     end

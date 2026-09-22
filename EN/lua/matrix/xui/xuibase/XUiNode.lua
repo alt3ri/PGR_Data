@@ -461,6 +461,15 @@ function XUiNode:StopAnimation(animeName)
     animTrans:StopTimelineAnimation()
 end
 
+-- 完成已开始播放的动画，会结束播放状态并执行完成回调
+function XUiNode:FinishAnimation(animeName)
+    local animTrans = self:GetTimelineTransform(animeName)
+    if not animTrans then return end
+
+    animTrans.gameObject:FinishTimelineAnimation()
+end
+
+-- 强制将动画采样到末帧，不要求动画播放过，也不处理播放状态和回调
 function XUiNode:ForceSkipToEndAnimation(animeName)
     local animTrans = self:GetTimelineTransform(animeName)
     if not animTrans then return end

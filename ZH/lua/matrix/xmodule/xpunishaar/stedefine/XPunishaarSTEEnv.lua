@@ -31,6 +31,14 @@ function XPunishaarSTEEnv:Ctor(seed)
     self._DamageLandedList = {}
     self._DamageLandedCount = 0
 
+    -- 球动画 step 队列（Pipeline ConsumeBall/ProduceBall 入队 / 帧末 DrainBallAnimSteps 取；替代旧 payload 通道，#消球动效动画队列）
+    -- step 项 {actionType, cardUid, color, count}；actionType 见 STECustomEnum.BallAnimStepType
+    self._BallAnimStepList = {}
+    self._BallAnimStepCount = 0
+    -- 事务内暂存球动画 step（方式1：CommitTxn flush 入 _BallAnimStepList、RollbackTxn 丢弃；防事务回滚后 step 残留致 UI 播放未提交动画 #核实1）
+    self._TxnPendingBallAnimSteps = {}
+    self._TxnPendingBallAnimCount = 0
+
     -- 待落地伤害时间轮（#77 优化：有序列表 _SchedInstructions + table.remove(1) pop 改 _SchedByTick hash map 分桶）
     -- _SchedByTick：landTick→bucket list，O(1) 入桶/空转/pop（Drain 命中 curTick 桶整桶清），O(n) 生效（遍历桶 Execute）
     --   同 landTick 多攻击共桶（一帧多卡打同 target 各算各 landTick，但 delay 常数一致→同桶）；无插入排序无 head 索引。
@@ -223,6 +231,52 @@ end
 
 --endregion
 
+--region 球动画 step 队列（替代消球 payload 通道，含 ConsumeBall+ProduceBall 步）#消球动效动画队列
+
+---@class XUiPunishaarBallAnimStep 球动画 step（跨帧持有到帧末 drain；仿 _AttackEffectList item 范式）
+---@field actionType number STECustomEnum.BallAnimStepType（ConsumeBall/ProduceBall）
+---@field cardUid number 消/产球卡 entityId
+---@field color number BallColor
+---@field count number 消/产球数
+
+--- 入队一条球动画 step（Pipeline ConsumeBall/ProduceBall 内调，STE 事务内，不做任何 UI 操作）。
+--- 事务内暂存 _TxnPendingBallAnimSteps（不直接写 _BallAnimStepList）；CommitTxn flush 才可见，RollbackTxn 丢弃防回滚后 UI 播未提交动画 #核实1。
+--- 复用 table 零 GC，item 引用非拷贝勿跨帧持有（同 _AttackEffectList 约束）。
+---@param actionType number STECustomEnum.BallAnimStepType
+---@param cardUid number 消/产球卡 entityId
+---@param color number BallColor 枚举
+---@param count number 本色消/产球数
+function XPunishaarSTEEnv:EnqueueBallAnim(actionType, cardUid, color, count)
+    local pending = self._TxnPendingBallAnimSteps
+    local n = self._TxnPendingBallAnimCount + 1
+    self._TxnPendingBallAnimCount = n
+    ---@type XUiPunishaarBallAnimStep
+    local item = pending[n]
+    if not item then
+        item = {}
+        pending[n] = item
+    end
+    item.actionType = actionType
+    item.cardUid = cardUid
+    item.color = color
+    item.count = count
+end
+
+--- 帧末 Drain：把本帧球动画 step 逐条追加到 out（item 引用，当帧消费+只读）。
+--- STEControl 在 bus drain 之前调（UI 收 BallAnimSteps 事件时 stepList 已完整）。
+---@param out XList 调用方提供并自清
+---@return number count
+function XPunishaarSTEEnv:DrainBallAnimSteps(out)
+    local n = self._BallAnimStepCount
+    for i = 1, n do
+        out:Append(self._BallAnimStepList[i])
+    end
+    self._BallAnimStepCount = 0
+    return n
+end
+
+--endregion
+
 --region 待落地伤害队列（Instruction XClass + 对象池 + 方式1 回滚 + 时间轮分桶）#76 #77
 
 --- 排程一条待落地伤害（Effect.AttackTarget 内调用，STE 事务内，不做任何 UI 操作）。
@@ -325,6 +379,28 @@ function XPunishaarSTEEnv:CommitTxn()
     for i = 1, n do
         pending[i] = nil  -- wipe 原地清空，零 GC（STE tick 高频，免每次新建 table）#76 精审
     end
+    -- flush 球动画 step：暂存 → _BallAnimStepList（提交才可见；slot 复用拷贝字段，零 GC #核实1）
+    local animPending = self._TxnPendingBallAnimSteps
+    local animN = self._TxnPendingBallAnimCount
+    if animN > 0 then
+        local stepList = self._BallAnimStepList
+        local stepCount = self._BallAnimStepCount
+        for i = 1, animN do
+            local k = stepCount + i
+            local dst = stepList[k]
+            if not dst then
+                dst = {}
+                stepList[k] = dst
+            end
+            local src = animPending[i]
+            dst.actionType = src.actionType
+            dst.cardUid = src.cardUid
+            dst.color = src.color
+            dst.count = src.count
+        end
+        self._BallAnimStepCount = stepCount + animN
+        self._TxnPendingBallAnimCount = 0  -- wipe 计数（pending slot table 留复用）
+    end
 end
 
 --- 回滚一层事务：暂存排程回池丢弃（未入 _SchedByTick，自动撤销）+ 父类快照还原。
@@ -338,6 +414,8 @@ function XPunishaarSTEEnv:RollbackTxn()
         self:ReturnInstruction(pending[i])
         pending[i] = nil  -- wipe 原地清空，零 GC #76 精审
     end
+    -- 丢弃事务内暂存球动画 step（回滚不播未提交动画；slot table 留复用 #核实1）
+    self._TxnPendingBallAnimCount = 0
     -- 父类：property/scope 快照还原、rng/tick 还原、depth-1
     STEEnv.RollbackTxn(self)
 end

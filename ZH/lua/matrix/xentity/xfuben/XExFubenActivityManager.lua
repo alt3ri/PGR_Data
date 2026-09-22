@@ -39,7 +39,7 @@ function XExFubenActivityManager:ExGetProgressTip()
     if manager == nil then return "" end
     local func = manager["GetProgressTips"]
     if func == nil then return "" end
-    return func() or ""
+    return func(self.ExConfig) or ""
 end
 
 return XExFubenActivityManager

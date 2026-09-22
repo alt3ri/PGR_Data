@@ -87,6 +87,8 @@ function XUiEquipWeaponOneClickPopup:Refresh()
     -- 先算聚合预览（消耗螺母 / 是否足够 / 升级最高等级 / 执行用），Panel 展示依赖它
     local result = self._Control.OneClickCultureControl:CalcWeaponOneClickCulturePreview(self:GetCurrentArgs())
     self._CultureResult = result
+    -- 取消勾选技能裁掉超出的已选武器/代币
+    self:ClampResonanceSelectedMaterials(result.ResonanceFirstBindCount)
 
     -- 按模块类型取消耗列表
     local costListByType = {}
@@ -178,7 +180,9 @@ function XUiEquipWeaponOneClickPopup:Refresh()
     local isResonanceTargetMissing = not isResonanceComplete
         and result.IncludeResonance == true
         and (self._ChosenResonanceCount or 0) <= 0
+    local isOverrunMaterialLack = self._PanelOverrun:GetIsChoose() and self._PanelOverrun:GetIsMaterialLack()
     local btnBool = not result.HasExecutableTask or isResonanceMaterialLack or isResonanceTargetMissing
+        or isOverrunMaterialLack
     self.BtnTongBlack:SetDisable(btnBool, not btnBool)
 end
 
@@ -354,8 +358,10 @@ function XUiEquipWeaponOneClickPopup:RecordCultureFinish(result, isSuccess)
     end
     local isFiveStar = XMVCA.XEquip:GetEquipStar(equip.TemplateId) == XEnumConst.EQUIP.FIVE_STAR
     local targetResonanceSkills = {}
+    local skillIndex = 0
     for _, task in ipairs(result.ResonanceTaskList or table.empty) do
-        targetResonanceSkills[#targetResonanceSkills + 1] = task.SkillId
+        skillIndex = skillIndex + 1
+        targetResonanceSkills[tostring(skillIndex)] = task.SkillId
     end
     local isResonanceReached = true
     for _, task in ipairs(result.ResonanceTaskList or table.empty) do
@@ -375,7 +381,7 @@ function XUiEquipWeaponOneClickPopup:RecordCultureFinish(result, isSuccess)
         resonance_skills = targetResonanceSkills,
         overrun_level = targetOverrunLevel,
         final_state = {
-            [equip.TemplateId] = {
+            [tostring(equip.TemplateId)] = {
                 level = equip.Level,
                 resonance_skills = targetResonanceSkills,
                 overrun_level = equip:GetOverrunLevel(),
@@ -428,6 +434,28 @@ function XUiEquipWeaponOneClickPopup:SetResonanceSelectedEquips(selectedEquipIdM
     end
     -- 刷新主弹窗（重建共鸣材料格子，各格子按模板统计全局选中数刷新）
     self:Refresh()
+end
+
+--- 裁掉超出上限的已选武器/代币
+---@param maxCount number|nil 选武器上限（ResonanceFirstBindCount）
+function XUiEquipWeaponOneClickPopup:ClampResonanceSelectedMaterials(maxCount)
+    local remain = maxCount or 0
+    local selectedEquipMap = self._ResonanceSelectedEquipMap
+    if selectedEquipMap then
+        for equipId in pairs(selectedEquipMap) do
+            if remain > 0 then
+                remain = remain - 1
+            else
+                selectedEquipMap[equipId] = nil
+            end
+        end
+        if XTool.IsTableEmpty(selectedEquipMap) then
+            self._ResonanceSelectedEquipMap = nil
+        end
+    end
+    if (self._ResonanceSelectedTokenCount or 0) > remain then
+        self._ResonanceSelectedTokenCount = remain > 0 and remain or nil
+    end
 end
 
 --- 取手选的共鸣代币数量（与武器共享首绑槽数上限）

@@ -303,6 +303,10 @@ function XPunishaarNetworkAgency:DoFinishFight(isWin, loseMaxColor, stats, cb)
         AutoUseSkillCount = stats and stats.AutoUseSkillCount or 0,
         BallProduction = stats and stats.BallProduction or 0,
         BallConsumption = stats and stats.BallConsumption or 0,
+        StartHp = stats and stats.StartHp or 0,
+        EndHp = stats and stats.EndHp or 0,
+        EnemyStartHp = stats and stats.EnemyStartHp or 0,
+        EnemyEndHp = stats and stats.EnemyEndHp or 0,
     }, function(res)
         self:UnlockWithFlag(NetworkLockFlagEnum.FinishFight)
         if res.Code ~= XCode.Success then
@@ -571,6 +575,8 @@ function XPunishaarNetworkAgency:DoStartStage(stageId, cb)
         end
         -- 服务端数据落 Model，RunControl / 表现层统一从 Model 读取
         self._Model:SetCurrentStage(res.Stage)
+        self._Model:GetOutSideModel():AddStageChallengeCount(stageId)
+
         if cb then
             cb(res.Stage)
         end
@@ -670,7 +676,7 @@ end
 
 function XPunishaarNetworkAgency:OnNotifyPunishaarGoldChange(data)
     self._Model:SetCurrentGold(data.Gold)
-    XEventManager.DispatchEvent(XEventId.EVENT_PUNISHAAR_GOLD_CHANGE)
+    XMVCA.XPunishaar:DispatchEvent(XMVCA.XPunishaar.EventIds.EVENT_PUNISHAAR_INNER_GOLD_CHANGE)
 end
 
 function XPunishaarNetworkAgency:OnNotifyPunishaarMasterCardChange(data)
@@ -686,7 +692,7 @@ function XPunishaarNetworkAgency:OnNotifyPunishaarMasterCardChange(data)
         end
     end
 
-    XEventManager.DispatchEvent(XEventId.EVENT_PUNISHAAR_MASTER_CARD_CHANGE)
+    XMVCA.XPunishaar:DispatchEvent(XMVCA.XPunishaar.EventIds.EVENT_PUNISHAAR_INNER_MASTER_CARD_CHANGE)
 end
 
 function XPunishaarNetworkAgency:OnNotifyPunishaarSubCardChange(data)
@@ -698,7 +704,7 @@ function XPunishaarNetworkAgency:OnNotifyPunishaarSubCardChange(data)
         self._Model:AddCollectionUnlocked(catalogType, data.SubCardId)
     end
 
-    XEventManager.DispatchEvent(XEventId.EVENT_PUNISHAAR_SUB_CARD_CHANGE)
+    XMVCA.XPunishaar:DispatchEvent(XMVCA.XPunishaar.EventIds.EVENT_PUNISHAAR_INNER_SUB_CARD_CHANGE)
 end
 
 --- 通用奖励下发：缓存整体到 Model + 更新局内槽位上限 + 派发事件（槽位解锁/整体奖励）。
@@ -713,15 +719,15 @@ function XPunishaarNetworkAgency:OnNotifyPunishaarRewardResult(data)
         local RewardType = XMVCA.XPunishaar.EnumConst.RewardType
         for _, reward in ipairs(rewardList) do
             if reward.RewardType == RewardType.FightAreaGridLimit then
-                XEventManager.DispatchEvent(XEventId.EVENT_PUNISHAAR_FIGHT_AREA_GRID_UNLOCK, reward.Amount)
+                XMVCA.XPunishaar:DispatchEvent(XMVCA.XPunishaar.EventIds.EVENT_PUNISHAAR_INNER_FIGHT_AREA_GRID_UNLOCK, reward.Amount)
             elseif reward.RewardType == RewardType.BagGridLimit then
-                XEventManager.DispatchEvent(XEventId.EVENT_PUNISHAAR_BAG_GRID_UNLOCK, reward.Amount)
+                XMVCA.XPunishaar:DispatchEvent(XMVCA.XPunishaar.EventIds.EVENT_PUNISHAAR_INNER_BAG_GRID_UNLOCK, reward.Amount)
             end
         end
     end
 
     -- 派发整体奖励事件（表现层拉 Model:GetLastRewardGoodsList 弹窗集中展示，含金币增量等）
-    XEventManager.DispatchEvent(XEventId.EVENT_PUNISHAAR_REWARD_RESULT, data.StageId)
+    XMVCA.XPunishaar:DispatchEvent(XMVCA.XPunishaar.EventIds.EVENT_PUNISHAAR_INNER_REWARD_RESULT, data.StageId)
 end
 
 --endregion

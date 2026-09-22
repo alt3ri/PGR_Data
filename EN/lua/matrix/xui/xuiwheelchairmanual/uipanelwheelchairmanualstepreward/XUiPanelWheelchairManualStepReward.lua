@@ -1,4 +1,4 @@
-local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
+local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
 ---@class XUiPanelWheelchairManualStepReward: XUiNode
 ---@field _Control XWheelchairManualControl
 local XUiPanelWheelchairManualStepReward = XClass(XUiNode, "XUiPanelWheelchairManualStepReward")
@@ -14,6 +14,7 @@ function XUiPanelWheelchairManualStepReward:OnStart()
     self:InitCharacterAndWeaponShow()
     self.BtnTask.CallBack = handler(self, self.OnBtnGetClick)
     XMVCA.XWheelchairManual:SetSubActivityIsOld(XEnumConst.WheelchairManual.ReddotKey.StepRewardNew)
+    self._IsRequestingPlanReward = false
 end
 
 function XUiPanelWheelchairManualStepReward:OnEnable()
@@ -82,6 +83,26 @@ function XUiPanelWheelchairManualStepReward:OnBtnGetClick()
             XEventManager.DispatchEvent(XEventId.EVENT_WHEELCHAIRMANUAL_TAB_GOTO, tabIndex)
         end
     end
+end
+
+function XUiPanelWheelchairManualStepReward:RequestPlanReward()
+    if self._IsRequestingPlanReward then
+        return
+    end
+
+    self._IsRequestingPlanReward = true
+    XDataCenter.ItemManager.SetAutoGiftRewardShowLock(true)
+
+    XMVCA.XWheelchairManual:RequestWheelchairManualGetPlanReward(function(success, rewardList)
+        self._IsRequestingPlanReward = false
+
+        if success then
+            self:RefreshPlanShow()
+            self._Control:ShowRewardList(rewardList)
+        else
+            XDataCenter.ItemManager.SetAutoGiftRewardShowLock(false)
+        end
+    end)
 end
 
 return XUiPanelWheelchairManualStepReward

@@ -1024,6 +1024,7 @@ end
 ---同步数据给服务端校验和保存
 function XFangKuaiControl:FangKuaiStageSyncOperatorRequest(stageId)
     local stageData = self:GetCurStageData()
+    ---@type FangKuaiOperatorDataProtocol
     local operatorData = {}
     operatorData.Round = self:GetCurRound()
     operatorData.Point = self:GetScore()

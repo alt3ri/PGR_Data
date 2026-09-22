@@ -98,10 +98,8 @@ function XUiFashionDetail:OnStart(
     elseif self.FashionType == FashionType.Color then
         local fashionId = XMVCA.XFashion:GetFashionColorOriginalFashionId(self.FashionId)
         self.CharacterId = XDataCenter.FashionManager.GetCharacterId(fashionId)
-        self.GiftId = XFashionConfigs.GetFashionTemplate(fashionId).GiftId
     else
         self.CharacterId = XDataCenter.FashionManager.GetCharacterId(fashionId)
-        self.GiftId = XFashionConfigs.GetFashionTemplate(fashionId).GiftId
     end
 
     if XWeaponFashionConfigs.IsWeaponFashion(self.FashionId) then
@@ -539,8 +537,9 @@ function XUiFashionDetail:SetDetailData()
     end
 
     if self.IsEnableGroupSales then
+        local giftId = XFashionConfigs.GetFashionTemplate(self.FashionGroup.FashionId).GiftId
         self.Desc.text = self.FashionGroup.Name
-        self.WorldDesc.text = XUiHelper.GetText("FashionGroupSalesDesc")
+        self.WorldDesc.text = XTool.IsNumberValid(giftId) and XUiHelper.GetText("FashionGroupSalesDesc") or ""
     elseif self.FashionType == FashionType.Color then
         self.WorldDesc.text = XUiHelper.ConvertLineBreakSymbol(XMVCA.XFashion:GetFashionColorWorldDescription(id))
         self.Desc.text = XUiHelper.ConvertLineBreakSymbol(XMVCA.XFashion:GetFashionColorDescription(id))
@@ -696,8 +695,12 @@ function XUiFashionDetail:OnBeforeBtnBuyClick(cb)
         end
     end
 
-    local isHideWorldDesc = self.IsEnableGroupSales and not XTool.IsNumberValid(self.GiftId)
-    
+    local isHideWorldDesc = false
+    if self.IsEnableGroupSales then
+        local giftId = XFashionConfigs.GetFashionTemplate(self.FashionGroup.FashionId).GiftId
+        isHideWorldDesc = not XTool.IsNumberValid(giftId)
+    end
+
     -- 构建viewmodel
 
     ---@type CoatingBuyTipsViewModel
@@ -864,6 +867,9 @@ function XUiFashionDetail:InitGroupSales()
         self.FashionGroup = XMVCA.XFashionSuit:GetFashionGroupByFashionId(self.FashionId)
         if not self.FashionGroup then
             XLog.Error(string.format("【涂装：%s 是否武器：%s】找不到对应配置！", self.FashionId, self.IsWeaponFashion))
+        elseif not XTool.IsNumberValid(self.GiftId) and XTool.IsNumberValid(self.FashionGroup.FashionId) then
+            -- 武器涂装不在 Fashion.tab，OnStart 武器路径未设 GiftId，此处从套装角色涂装取
+            self.GiftId = XFashionConfigs.GetFashionTemplate(self.FashionGroup.FashionId).GiftId
         end
     end
     self.BtnBuySuit.gameObject:SetActiveEx(isVisible)

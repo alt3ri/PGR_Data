@@ -151,6 +151,10 @@ function XPartnerOneKeyCultureBaseCostControl:_CalcLevelUpCostData(partner)
     local maxBreakthrough = partner:GetBreakthroughLimit()
     local curLevel = partner:GetLevel()
     local curExp = partner:GetExp()
+    local expItemPool = {}
+    for _, item in ipairs(XDataCenter.PartnerManager.GetExpItemList()) do
+        expItemPool[item.Id] = XDataCenter.ItemManager.GetCount(item.Id)
+    end
 
     for breakthrough = curBreakthrough, maxBreakthrough do
         local levelLimit = partner:GetBreakthroughLevelLimit(breakthrough)
@@ -171,7 +175,7 @@ function XPartnerOneKeyCultureBaseCostControl:_CalcLevelUpCostData(partner)
             mo:SetTargetLevelupData(startLevel, levelLimit)
 
             local expCostItems = {}
-            self:_FillExpItems(expCostItems, needExp)
+            self:_FillExpItems(expCostItems, needExp, expItemPool)
             for id, count in pairs(expCostItems) do
                 if count > 0 then
                     mo:AppendItem(id, count)
@@ -200,20 +204,21 @@ function XPartnerOneKeyCultureBaseCostControl:_CalcLevelUpCostData(partner)
 end
 
 -- 贪心填充经验道具
-function XPartnerOneKeyCultureBaseCostControl:_FillExpItems(costItemDic, needExp)
+function XPartnerOneKeyCultureBaseCostControl:_FillExpItems(costItemDic, needExp, expItemPool)
     local expItemList = XDataCenter.PartnerManager.GetExpItemList()
     local ratedExp = needExp
 
     for _, item in ipairs(expItemList) do
         local itemId = item.Id
         local itemExp = item.GetExp()
-        local haveCount = XDataCenter.ItemManager.GetCount(itemId)
+        local haveCount = expItemPool[itemId] or 0
 
         local needCount = math.floor(ratedExp / itemExp)
         if needCount > 0 then
             local useCount = math.min(needCount, haveCount)
             if useCount > 0 then
                 costItemDic[itemId] = (costItemDic[itemId] or 0) + useCount
+                expItemPool[itemId] = haveCount - useCount
                 ratedExp = ratedExp - useCount * itemExp
             end
         end
@@ -225,10 +230,10 @@ function XPartnerOneKeyCultureBaseCostControl:_FillExpItems(costItemDic, needExp
             local item = expItemList[i]
             local itemId = item.Id
             local itemExp = item.GetExp()
-            local haveCount = XDataCenter.ItemManager.GetCount(itemId)
-            local alreadyUse = costItemDic[itemId] or 0
-            if haveCount - alreadyUse > 0 then
-                costItemDic[itemId] = alreadyUse + 1
+            local haveCount = expItemPool[itemId] or 0
+            if haveCount > 0 then
+                costItemDic[itemId] = (costItemDic[itemId] or 0) + 1
+                expItemPool[itemId] = haveCount - 1
                 ratedExp = ratedExp - itemExp
                 break
             end

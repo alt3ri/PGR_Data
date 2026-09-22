@@ -608,7 +608,7 @@ end
 --region 星球对象/数据初始化
 function XPlanet:InitPlanet()
     self._Planet = self._GameObject:GetComponent("Planet")
-    self._Planet.gameObject:SetLayerRecursively(CS.UnityEngine.LayerMask.NameToLayer(HomeSceneLayerMask.Room))
+    self._Planet.gameObject:SetLayerRecursively(CS.UnityEngine.LayerMask.NameToLayer(LayerMaskName.Room))
     self._PlanetCfg = self._IsTalentPlanet and XPlanetWorldConfigs.GetTalentPlanet() or XPlanetWorldConfigs.GetStagePlanetCfg(self._StageId)
     self:_ClearPrefabModel()
     self:_InitTileDataDirByCfg()

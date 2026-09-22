@@ -2944,7 +2944,7 @@
         "Type": 202,
         "IsBlock": null,
         "IsEnd": null,
-        "BeginAnim": null,
+        "BeginAnim": "DialogDisable",
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": 500.0,
@@ -2965,19 +2965,32 @@
     },
     {
         "Id": 229,
-        "ActionId": 229,
+        "ActionId": 8000,
         "NextActionId": null,
-        "Type": 302,
+        "Type": 101,
         "IsBlock": null,
         "IsEnd": null,
         "BeginAnim": null,
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: 'Aargh!', 3: '230'}"
+        "Params": "{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}"
     },
     {
         "Id": 230,
+        "ActionId": 229,
+        "NextActionId": null,
+        "Type": 302,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": "AniZhuanchangEnd",
+        "EndAnim": "AniZhuanchangBegin",
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{2: 'Aargh!', 3: '230'}"
+    },
+    {
+        "Id": 231,
         "ActionId": 230,
         "NextActionId": null,
         "Type": 101,
@@ -2990,7 +3003,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/Bgstory52.jpg'}"
     },
     {
-        "Id": 231,
+        "Id": 232,
         "ActionId": 231,
         "NextActionId": null,
         "Type": 201,
@@ -3003,20 +3016,20 @@
         "Params": "{1: '1', 2: '500004'}"
     },
     {
-        "Id": 232,
+        "Id": 233,
         "ActionId": 232,
         "NextActionId": null,
         "Type": 501,
         "IsBlock": null,
         "IsEnd": null,
-        "BeginAnim": null,
+        "BeginAnim": "DialogEnable",
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": 500.0,
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}"
     },
     {
-        "Id": 233,
+        "Id": 234,
         "ActionId": 233,
         "NextActionId": null,
         "Type": 301,
@@ -3029,7 +3042,7 @@
         "Params": "{1: '1', 3: \"You jolt awake, your collar soaked with a cold sweat you're only now noticing.\"}"
     },
     {
-        "Id": 234,
+        "Id": 235,
         "ActionId": 234,
         "NextActionId": null,
         "Type": 401,
@@ -3042,7 +3055,7 @@
         "Params": "{1: '1', 2: '209'}"
     },
     {
-        "Id": 235,
+        "Id": 236,
         "ActionId": 235,
         "NextActionId": null,
         "Type": 505,
@@ -3055,7 +3068,7 @@
         "Params": "{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab'}"
     },
     {
-        "Id": 236,
+        "Id": 237,
         "ActionId": 236,
         "NextActionId": null,
         "Type": 301,
@@ -3068,7 +3081,7 @@
         "Params": "{2: 'Asimov', 3: '...The Heteromer Shard exhibited unusual fluctuations just now. What did you see?', 4: '1'}"
     },
     {
-        "Id": 237,
+        "Id": 238,
         "ActionId": 237,
         "NextActionId": null,
         "Type": 302,
@@ -3081,7 +3094,7 @@
         "Params": "{2: 'I...', 3: '238'}"
     },
     {
-        "Id": 238,
+        "Id": 239,
         "ActionId": 238,
         "NextActionId": null,
         "Type": 301,
@@ -3094,7 +3107,7 @@
         "Params": "{3: \"The words are right there, on the tip of your tongue, but you can't seem to get them out. All you can do is try to tell the answer by asking your own questions.\"}"
     },
     {
-        "Id": 239,
+        "Id": 240,
         "ActionId": 239,
         "NextActionId": null,
         "Type": 302,
@@ -3107,7 +3120,7 @@
         "Params": "{2: 'Have you analyzed the shard?', 3: '240'}"
     },
     {
-        "Id": 240,
+        "Id": 241,
         "ActionId": 240,
         "NextActionId": null,
         "Type": 301,
@@ -3120,7 +3133,7 @@
         "Params": "{2: 'Asimov', 3: 'Yeah.', 4: '1'}"
     },
     {
-        "Id": 241,
+        "Id": 242,
         "ActionId": 241,
         "NextActionId": null,
         "Type": 301,
@@ -3133,7 +3146,7 @@
         "Params": "{2: 'Asimov', 3: 'It appears to be... a vessel, engineered purely for data transmission. However, its encryption protocol is incredibly complex, way beyond my current grasp...', 4: '1'}"
     },
     {
-        "Id": 242,
+        "Id": 243,
         "ActionId": 242,
         "NextActionId": null,
         "Type": 301,
@@ -3146,7 +3159,7 @@
         "Params": "{2: 'Asimov', 3: \"The only segment we've managed to decrypt so far is this one...\", 4: '1'}"
     },
     {
-        "Id": 243,
+        "Id": 244,
         "ActionId": 243,
         "NextActionId": null,
         "Type": 202,
@@ -3159,7 +3172,7 @@
         "Params": "{1: '1', 6: '1'}"
     },
     {
-        "Id": 244,
+        "Id": 245,
         "ActionId": 244,
         "NextActionId": null,
         "Type": 307,
@@ -3172,7 +3185,7 @@
         "Params": "{1: '\"This is... the gift of the \\'future\\'.\"'}"
     },
     {
-        "Id": 245,
+        "Id": 246,
         "ActionId": 245,
         "NextActionId": null,
         "Type": 301,
@@ -3185,7 +3198,7 @@
         "Params": "{3: '\"This is... the gift of the \\'future\\'.\"'}"
     },
     {
-        "Id": 246,
+        "Id": 247,
         "ActionId": 246,
         "NextActionId": null,
         "Type": 401,
@@ -3198,7 +3211,7 @@
         "Params": "{1: '2', 2: '4387'}"
     },
     {
-        "Id": 247,
+        "Id": 248,
         "ActionId": 247,
         "NextActionId": null,
         "Type": 501,
@@ -3211,7 +3224,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}"
     },
     {
-        "Id": 248,
+        "Id": 249,
         "ActionId": 248,
         "NextActionId": null,
         "Type": 307,
@@ -3224,7 +3237,7 @@
         "Params": "{2: '1'}"
     },
     {
-        "Id": 249,
+        "Id": 250,
         "ActionId": 249,
         "NextActionId": null,
         "Type": 504,
@@ -3237,7 +3250,7 @@
         "Params": "{1: '0.7'}"
     },
     {
-        "Id": 250,
+        "Id": 251,
         "ActionId": 250,
         "NextActionId": null,
         "Type": 201,
@@ -3250,7 +3263,7 @@
         "Params": "{1: '1', 2: '501086', 7: '1'}"
     },
     {
-        "Id": 251,
+        "Id": 252,
         "ActionId": 251,
         "NextActionId": null,
         "Type": 101,
@@ -3263,7 +3276,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/BgStory1102.jpg'}"
     },
     {
-        "Id": 252,
+        "Id": 253,
         "ActionId": 252,
         "NextActionId": null,
         "Type": 301,
@@ -3276,7 +3289,7 @@
         "Params": "{1: '1', 2: 'Nanami', 3: 'The \"answer\" is hidden within a secret only the Commandant knows!', 4: '1'}"
     },
     {
-        "Id": 253,
+        "Id": 254,
         "ActionId": 253,
         "NextActionId": null,
         "Type": 501,
@@ -3289,7 +3302,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}"
     },
     {
-        "Id": 254,
+        "Id": 255,
         "ActionId": 254,
         "NextActionId": null,
         "Type": 504,
@@ -3302,7 +3315,7 @@
         "Params": "{1: '0'}"
     },
     {
-        "Id": 255,
+        "Id": 256,
         "ActionId": 255,
         "NextActionId": null,
         "Type": 202,
@@ -3315,7 +3328,7 @@
         "Params": "{1: '1', 6: '1'}"
     },
     {
-        "Id": 256,
+        "Id": 257,
         "ActionId": 256,
         "NextActionId": null,
         "Type": 101,
@@ -3328,7 +3341,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}"
     },
     {
-        "Id": 257,
+        "Id": 258,
         "ActionId": 257,
         "NextActionId": null,
         "Type": 302,
@@ -3341,7 +3354,7 @@
         "Params": "{2: 'The decryption code is...', 3: '258'}"
     },
     {
-        "Id": 258,
+        "Id": 259,
         "ActionId": 258,
         "NextActionId": null,
         "Type": 501,
@@ -3354,7 +3367,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}"
     },
     {
-        "Id": 259,
+        "Id": 260,
         "ActionId": 259,
         "NextActionId": null,
         "Type": 401,
@@ -3367,7 +3380,7 @@
         "Params": "{1: '2', 2: '4387'}"
     },
     {
-        "Id": 260,
+        "Id": 261,
         "ActionId": 260,
         "NextActionId": null,
         "Type": 101,
@@ -3380,7 +3393,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/BgStory799.jpg'}"
     },
     {
-        "Id": 261,
+        "Id": 262,
         "ActionId": 261,
         "NextActionId": null,
         "Type": 301,
@@ -3393,7 +3406,7 @@
         "Params": "{3: 'The dimly lit archive room, a handwritten file code, a faint sting in your fingertips...'}"
     },
     {
-        "Id": 262,
+        "Id": 263,
         "ActionId": 262,
         "NextActionId": null,
         "Type": 501,
@@ -3406,7 +3419,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab'}"
     },
     {
-        "Id": 263,
+        "Id": 264,
         "ActionId": 263,
         "NextActionId": null,
         "Type": 101,
@@ -3419,7 +3432,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/Bgstory52.jpg'}"
     },
     {
-        "Id": 264,
+        "Id": 265,
         "ActionId": 264,
         "NextActionId": null,
         "Type": 302,
@@ -3432,7 +3445,7 @@
         "Params": "{2: 'q...', 3: '265'}"
     },
     {
-        "Id": 265,
+        "Id": 266,
         "ActionId": 265,
         "NextActionId": null,
         "Type": 302,
@@ -3445,7 +3458,7 @@
         "Params": "{2: 'q31206...', 3: '266'}"
     },
     {
-        "Id": 266,
+        "Id": 267,
         "ActionId": 266,
         "NextActionId": null,
         "Type": 301,
@@ -3458,7 +3471,7 @@
         "Params": "{3: 'Memories in your mind are as hazy as if shrouded in white mist, yet this one message is seared into your brain, crystal clear.'}"
     },
     {
-        "Id": 267,
+        "Id": 268,
         "ActionId": 267,
         "NextActionId": null,
         "Type": 201,
@@ -3471,7 +3484,7 @@
         "Params": "{1: '1', 2: '500004', 3: '7', 7: '1'}"
     },
     {
-        "Id": 268,
+        "Id": 269,
         "ActionId": 268,
         "NextActionId": null,
         "Type": 301,
@@ -3484,7 +3497,7 @@
         "Params": "{1: '1', 2: 'Asimov', 3: '...?', 4: '1'}"
     },
     {
-        "Id": 269,
+        "Id": 270,
         "ActionId": 269,
         "NextActionId": null,
         "Type": 301,
@@ -3497,7 +3510,7 @@
         "Params": "{2: 'Asimov', 3: 'You mean... you \"saw\" the decryption code?', 4: '1'}"
     },
     {
-        "Id": 270,
+        "Id": 271,
         "ActionId": 270,
         "NextActionId": null,
         "Type": 302,
@@ -3510,7 +3523,7 @@
         "Params": "{2: \"I'm not sure.\", 3: '271', 4: 'Maybe I did.', 5: '271'}"
     },
     {
-        "Id": 271,
+        "Id": 272,
         "ActionId": 271,
         "NextActionId": null,
         "Type": 204,
@@ -3523,7 +3536,7 @@
         "Params": "{1: '1', 2: '8'}"
     },
     {
-        "Id": 272,
+        "Id": 273,
         "ActionId": 272,
         "NextActionId": null,
         "Type": 301,
@@ -3536,7 +3549,7 @@
         "Params": "{2: 'Asimov', 3: '...', 4: '1'}"
     },
     {
-        "Id": 273,
+        "Id": 274,
         "ActionId": 273,
         "NextActionId": null,
         "Type": 204,
@@ -3549,7 +3562,7 @@
         "Params": "{1: '1'}"
     },
     {
-        "Id": 274,
+        "Id": 275,
         "ActionId": 274,
         "NextActionId": null,
         "Type": 301,
@@ -3562,7 +3575,7 @@
         "Params": "{3: 'Without hesitation, Asimov shoves you into the examination chair and conducts another full-body scan.'}"
     },
     {
-        "Id": 275,
+        "Id": 276,
         "ActionId": 275,
         "NextActionId": null,
         "Type": 301,
@@ -3575,7 +3588,7 @@
         "Params": "{2: 'Asimov', 3: 'Brain activity is normal, and your Mind Beacon shows no issues...', 4: '1'}"
     },
     {
-        "Id": 276,
+        "Id": 277,
         "ActionId": 276,
         "NextActionId": null,
         "Type": 301,
@@ -3588,7 +3601,7 @@
         "Params": "{2: 'Asimov', 3: 'What in the world is going on here?', 4: '1'}"
     },
     {
-        "Id": 277,
+        "Id": 278,
         "ActionId": 277,
         "NextActionId": null,
         "Type": 301,
@@ -3601,7 +3614,7 @@
         "Params": "{3: 'Asimov rarely shows such confusion.'}"
     },
     {
-        "Id": 278,
+        "Id": 279,
         "ActionId": 278,
         "NextActionId": null,
         "Type": 302,
@@ -3614,7 +3627,7 @@
         "Params": "{2: \"I don't know.\", 3: '279', 4: \"I'm not sure.\", 5: '279'}"
     },
     {
-        "Id": 279,
+        "Id": 280,
         "ActionId": 279,
         "NextActionId": null,
         "Type": 202,
@@ -3627,7 +3640,7 @@
         "Params": "{1: '1'}"
     },
     {
-        "Id": 280,
+        "Id": 281,
         "ActionId": 280,
         "NextActionId": null,
         "Type": 301,
@@ -3640,7 +3653,7 @@
         "Params": "{3: 'The aftereffects of the \"Time Prison\" might explain all this, but... is it really the \"Time Prison\"?'}"
     },
     {
-        "Id": 281,
+        "Id": 282,
         "ActionId": 281,
         "NextActionId": null,
         "Type": 401,
@@ -3653,7 +3666,7 @@
         "Params": "{1: '2', 2: '4387'}"
     },
     {
-        "Id": 282,
+        "Id": 283,
         "ActionId": 282,
         "NextActionId": null,
         "Type": 501,
@@ -3666,7 +3679,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}"
     },
     {
-        "Id": 283,
+        "Id": 284,
         "ActionId": 283,
         "NextActionId": null,
         "Type": 101,
@@ -3679,7 +3692,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgCg/Cg3001_01.jpg'}"
     },
     {
-        "Id": 284,
+        "Id": 285,
         "ActionId": 284,
         "NextActionId": null,
         "Type": 301,
@@ -3692,7 +3705,7 @@
         "Params": "{3: \"The biting cold seawater, Bianca's struggle... it all feels too real to be just some figment of imagination.\"}"
     },
     {
-        "Id": 285,
+        "Id": 286,
         "ActionId": 285,
         "NextActionId": null,
         "Type": 401,
@@ -3705,7 +3718,7 @@
         "Params": "{1: '2', 2: '4388'}"
     },
     {
-        "Id": 286,
+        "Id": 287,
         "ActionId": 286,
         "NextActionId": null,
         "Type": 501,
@@ -3718,7 +3731,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab'}"
     },
     {
-        "Id": 287,
+        "Id": 288,
         "ActionId": 287,
         "NextActionId": null,
         "Type": 101,
@@ -3731,7 +3744,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/Bgstory52.jpg'}"
     },
     {
-        "Id": 288,
+        "Id": 289,
         "ActionId": 288,
         "NextActionId": null,
         "Type": 201,
@@ -3744,7 +3757,7 @@
         "Params": "{1: '1', 2: '500004'}"
     },
     {
-        "Id": 289,
+        "Id": 290,
         "ActionId": 289,
         "NextActionId": null,
         "Type": 301,
@@ -3757,7 +3770,7 @@
         "Params": "{1: '1', 2: 'Asimov', 3: \"...I'll try the code you gave me. If you experience anything like this again, come find me right away.\", 4: '1'}"
     },
     {
-        "Id": 290,
+        "Id": 291,
         "ActionId": 290,
         "NextActionId": null,
         "Type": 302,
@@ -3770,7 +3783,7 @@
         "Params": "{2: 'Yes.', 3: '291', 4: 'Okay.', 5: '291'}"
     },
     {
-        "Id": 291,
+        "Id": 292,
         "ActionId": 291,
         "NextActionId": null,
         "Type": 202,
@@ -3783,7 +3796,7 @@
         "Params": "{1: '1', 6: '1'}"
     },
     {
-        "Id": 292,
+        "Id": 293,
         "ActionId": 292,
         "NextActionId": null,
         "Type": 401,
@@ -3796,7 +3809,7 @@
         "Params": "{1: '1', 2: '210'}"
     },
     {
-        "Id": 293,
+        "Id": 294,
         "ActionId": 293,
         "NextActionId": null,
         "Type": 101,
@@ -3809,7 +3822,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}"
     },
     {
-        "Id": 294,
+        "Id": 295,
         "ActionId": 294,
         "NextActionId": null,
         "Type": 301,
@@ -3822,7 +3835,7 @@
         "Params": "{3: 'You step out of the Science Council, your mind still buzzing with questions.'}"
     },
     {
-        "Id": 295,
+        "Id": 296,
         "ActionId": 295,
         "NextActionId": null,
         "Type": 401,
@@ -3835,7 +3848,7 @@
         "Params": "{1: '2', 2: '2925'}"
     },
     {
-        "Id": 296,
+        "Id": 297,
         "ActionId": 296,
         "NextActionId": null,
         "Type": 301,
@@ -3848,7 +3861,7 @@
         "Params": "{3: 'DING-DONG\u2014'}"
     },
     {
-        "Id": 297,
+        "Id": 298,
         "ActionId": 297,
         "NextActionId": null,
         "Type": 301,
@@ -3861,7 +3874,7 @@
         "Params": "{3: 'Your terminal signals an incoming report from Celica. The military has tallied the casualty figures from the aquarium battle, and the numbers are surprisingly low.'}"
     },
     {
-        "Id": 298,
+        "Id": 299,
         "ActionId": 298,
         "NextActionId": null,
         "Type": 301,
@@ -3874,7 +3887,7 @@
         "Params": "{3: 'You can\\'t help but recall the horrifying \"vision\"\u2014the coastline strewn with bodies and the wounded, the seawater a gruesome crimson from blood, vital fluids, and the dreaded Red Tide, everyone fighting tooth and nail to survive...'}"
     },
     {
-        "Id": 299,
+        "Id": 300,
         "ActionId": 299,
         "NextActionId": null,
         "Type": 201,
@@ -3887,7 +3900,7 @@
         "Params": "{1: '18', 2: '500001'}"
     },
     {
-        "Id": 300,
+        "Id": 301,
         "ActionId": 300,
         "NextActionId": null,
         "Type": 501,
@@ -3900,7 +3913,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '18'}"
     },
     {
-        "Id": 301,
+        "Id": 302,
         "ActionId": 301,
         "NextActionId": null,
         "Type": 301,
@@ -3913,7 +3926,7 @@
         "Params": "{1: '1', 2: 'Celica', 3: \"Thanks to the quick deployment of the Omega Weapons and the elite squads' advance support, you and Bianca managed to head off the Hetero-Humanoid creature at the island...\", 4: '18'}"
     },
     {
-        "Id": 302,
+        "Id": 303,
         "ActionId": 302,
         "NextActionId": null,
         "Type": 204,
@@ -3926,7 +3939,7 @@
         "Params": "{1: '18', 2: '2'}"
     },
     {
-        "Id": 303,
+        "Id": 304,
         "ActionId": 303,
         "NextActionId": null,
         "Type": 301,
@@ -3939,7 +3952,7 @@
         "Params": "{2: 'Celica', 3: \"Casualties from this operation are way below the projected 40-50%. There's talk of an award ceremony, so you might want to get your formal uniform ironed!\", 4: '18'}"
     },
     {
-        "Id": 304,
+        "Id": 305,
         "ActionId": 304,
         "NextActionId": null,
         "Type": 505,
@@ -3952,7 +3965,7 @@
         "Params": "{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '18'}"
     },
     {
-        "Id": 305,
+        "Id": 306,
         "ActionId": 305,
         "NextActionId": null,
         "Type": 202,
@@ -3965,7 +3978,7 @@
         "Params": "{1: '18', 6: '1'}"
     },
     {
-        "Id": 306,
+        "Id": 307,
         "ActionId": 306,
         "NextActionId": null,
         "Type": 301,
@@ -3978,7 +3991,7 @@
         "Params": "{3: \"After the end of the incident, even Celica's message takes on a cheerful tone.\"}"
     },
     {
-        "Id": 307,
+        "Id": 308,
         "ActionId": 307,
         "NextActionId": null,
         "Type": 301,
@@ -3991,7 +4004,7 @@
         "Params": "{3: 'As you put away the terminal, your thoughts immediately pivot to what comes next.'}"
     },
     {
-        "Id": 308,
+        "Id": 309,
         "ActionId": 308,
         "NextActionId": null,
         "Type": 301,
@@ -4004,7 +4017,7 @@
         "Params": "{3: 'What should you do... for the next step?'}"
     },
     {
-        "Id": 309,
+        "Id": 310,
         "ActionId": 309,
         "NextActionId": null,
         "Type": 301,
@@ -4017,7 +4030,7 @@
         "Params": "{3: 'Should you hunt down Vonnegut and put a stop to his crazy plan?'}"
     },
     {
-        "Id": 310,
+        "Id": 311,
         "ActionId": 310,
         "NextActionId": null,
         "Type": 301,
@@ -4030,7 +4043,7 @@
         "Params": "{3: 'Or dig into the source of your \"visions\" and figure out what\\'s really going on?'}"
     },
     {
-        "Id": 311,
+        "Id": 312,
         "ActionId": 311,
         "NextActionId": null,
         "Type": 301,
@@ -4043,7 +4056,7 @@
         "Params": "{3: 'Or...'}"
     },
     {
-        "Id": 312,
+        "Id": 313,
         "ActionId": 312,
         "NextActionId": null,
         "Type": 101,
@@ -4056,7 +4069,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/Bgstory263.png'}"
     },
     {
-        "Id": 313,
+        "Id": 314,
         "ActionId": 313,
         "NextActionId": null,
         "Type": 501,
@@ -4069,7 +4082,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable01.prefab', 2: '2'}"
     },
     {
-        "Id": 314,
+        "Id": 315,
         "ActionId": 314,
         "NextActionId": null,
         "Type": 301,
@@ -4082,7 +4095,7 @@
         "Params": "{3: 'As a mental checklist of tasks starts to form, the sunlight of Babylonia bathes you.'}"
     },
     {
-        "Id": 315,
+        "Id": 316,
         "ActionId": 315,
         "NextActionId": null,
         "Type": 301,

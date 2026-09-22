@@ -16,6 +16,12 @@ function GlobalEntity:Ctor(id, env, ballSlotCapacity, ballSlotMax, fightId)
     --- 当前接收输入的卡牌Id
     self.Fields.TickClickCardIdDict = STEHelper.NewPropertyDict(id, env)
 
+    --- 帧末"球不足够发动"手动牌集合（uid→true）：STE tick 末球态稳定后遍历 WaittingDone 手动牌，
+    --- 球不足（NoConsumeBall 免校验）者写入。存"不足够"非"足够"：不足的牌 STE skip 持续停留 WaittingDone
+    --- 稳定，足够的是瞬时态（自动模式立即释放移出/手动模式等点击）。供 UI 隐藏"点击触发"字样+外发光
+    --- （O(1) 查询，替代 UI 每卡遍历球槽）。随 ResetGlobalTickData 每帧清零。#手动牌球不足显隐
+    self.Fields.TickBallNotEnoughCardIdDict = STEHelper.NewPropertyDict(id, env)
+
     --- 等待释放的卡牌id列表
     self.Fields.WaittingDoneCardIdList = STEHelper.NewPropertyList(id, env)
 
@@ -31,6 +37,8 @@ function GlobalEntity:Ctor(id, env, ballSlotCapacity, ballSlotMax, fightId)
     self.Fields.CardEntityIds = STEHelper.NewPropertyList(id, env)
     ---- Buff实体Id列表（方便搜索）
     self.Fields.BuffEntityIds = STEHelper.NewPropertyList(id, env)
+    ---- buff 列表脏标记（0/1，buff 增删置 1，TickAllBuffs 懒排序重排后清 0，跨帧留存不被 ResetGlobalTickData 清）#buff优先级排序
+    self.Fields.BuffListDirty = STEHelper.NewPropertySingle(id, env, 0)
 
     --- 副卡登记表（主卡uid → 副卡{cardId,level}）。副卡非独立实体，靠此在激发主卡时反查副卡去跑其效果。
     --- 值为 lua 表（非标量），仅装配期写入、战斗内只读不改，故不参与事务快照的标量约定问题。

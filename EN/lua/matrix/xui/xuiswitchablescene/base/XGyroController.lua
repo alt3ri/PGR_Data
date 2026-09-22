@@ -9,6 +9,9 @@
 ---@field private _OnDirectionChanged function 方向变化回调
 ---@field private _OnSpeedChanged function 速度变化回调
 ---@field private _OnInputEnd function 输入结束回调（PC模式松开按键时）
+---@field private _CloudMotionHandler function 云游戏姿态回调（缓存复用，Add/Remove 必须传同一函数对象）
+---@field private _CloudBaselinePitch number 云游戏进界面时的 pitch 基准（度）
+---@field private _HasCloudBaseline boolean 是否已取到云游戏姿态基准
 ---@field private _SpeedCalculatorByAngle function 根据角度计算速度（外部注入）
 ---@field private _SpeedCalculatorByDistance function 根据距离计算速度（外部注入）
 ---@field private _InputChecker function 输入检测器（外部注入，用于PC模式）
@@ -17,6 +20,7 @@ local XGyroController = XClass(nil, "XGyroController")
 local Reference = CS.UnityEngine.Quaternion.Euler(90, 0, 0)
 local Time = CS.UnityEngine.Time
 local Input = CS.UnityEngine.Input
+local Mathf = CS.UnityEngine.Mathf
 local XUiPcMode = XDataCenter.UiPcManager.XUiPcMode
 
 ---方向常量
@@ -46,6 +50,12 @@ function XGyroController:Ctor(gyroFrequency, eulerXLimit, eulerZKeep, moveXKeep)
     self._OnSpeedChanged = nil
     self._OnInputEnd = nil
 
+    -- 云游戏姿态回调（Add/Remove 依赖委托相等性，必须全程复用同一个函数对象）
+    self._CloudMotionHandler = handler(self, self._OnCloudMotion)
+    -- 云游戏姿态基准（云端给的是绝对姿态，需自行归零成相对进界面时的偏移）
+    self._CloudBaselinePitch = 0
+    self._HasCloudBaseline = false
+
     -- 速度计算器（外部注入）
     self._SpeedCalculatorByAngle = nil
     self._SpeedCalculatorByDistance = nil
@@ -68,8 +78,12 @@ function XGyroController:Enable()
     self._Enabled = true
 
     if XDataCenter.UiPcManager.GetUiPcMode() == XUiPcMode.CloudGame then
-        XDataCenter.CloudGameManager.SeteMotionListeningAction(handler(self, self._OnCloudMotion))
-        XDataCenter.CloudGameManager.EnableMotionListening(true)
+        -- 每次启用都重取基准，否则会拿上次进界面时的姿态当零点；
+        -- _CheckGyroTime 归零让首份数据立刻进来当基准，不被限频挡掉
+        self._HasCloudBaseline = false
+        self._CloudBaselinePitch = 0
+        self._CheckGyroTime = 0
+        XDataCenter.CloudGameManager.AddMotionListener(self._CloudMotionHandler)
     else
         CS.UnityEngine.Input.gyro.enabled = true
     end
@@ -81,14 +95,14 @@ function XGyroController:Disable()
     self._Enabled = false
 
     if XDataCenter.UiPcManager.GetUiPcMode() == XUiPcMode.CloudGame then
-        XDataCenter.CloudGameManager.SeteMotionListeningAction(nil)
-        XDataCenter.CloudGameManager.EnableMotionListening(false)
+        XDataCenter.CloudGameManager.RemoveMotionListener(self._CloudMotionHandler)
     end
 end
 
 ---销毁
 function XGyroController:OnDestroy()
     self:Disable()
+    self._CloudMotionHandler = nil
     self._OnDirectionChanged = nil
     self._OnSpeedChanged = nil
     self._OnInputEnd = nil
@@ -250,17 +264,34 @@ function XGyroController:_OnCloudMotion(attitude)
         return
     end
 
+    -- 与真机路径对齐限频：真机是 _UpdateGyro 每 _GyroFrequency 秒采样一次，
+    -- 云端是推流回调，不限频就会按推流帧率触发方向回调，姿态在阈值附近抖一下
+    -- 就会连续翻转播放方向
+    local nowTime = Time.time
+    if nowTime - self._CheckGyroTime < self._GyroFrequency then
+        return
+    end
+    self._CheckGyroTime = nowTime
+
     local pitch = attitude.pitch / 100
     local roll = attitude.roll / 100
 
-    if math.abs(roll) >= 90 - self._EulerXLimit then
-        self:_ProcessAngle(math.abs(pitch), pitch >= 0)
-    else
+    -- 姿态校验用绝对值：roll 接近 ±90 说明确实横持设备，这是"输入姿势对不对"的判断，不该归零
+    if math.abs(roll) < 90 - self._EulerXLimit then
         -- 输入结束，通知业务层（业务层决定是否保持方向）
         if self._OnInputEnd then
             self._OnInputEnd()
         end
+        return
     end
+    if not self._HasCloudBaseline then
+        self._HasCloudBaseline = true
+        self._CloudBaselinePitch = pitch
+        return
+    end
+
+    local delta = Mathf.DeltaAngle(self._CloudBaselinePitch, pitch)
+    self:_ProcessAngle(math.abs(delta), delta >= 0)
 end
 
 --endregion

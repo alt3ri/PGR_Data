@@ -1134,11 +1134,6 @@ local UiRegistry = {
     UiPcServer = "XUi/XUiLogin/XUiPcServer",
     UiNewFuben = "XUi/XUiFuben/XUiNewFuben",
     UiActivityChapter = "XUi/XUiFuben/XUiActivityChapter",
-    UiEquipGuideDetail = "XUi/XUiEquipGuide/XUiEquipGuideDetail",
-    UiEquipGuideRecommend = "XUi/XUiEquipGuide/XUiEquipGuideRecommend",
-    UiEquipGuideSuccess = "XUi/XUiEquipGuide/XUiEquipGuideSuccess",
-    UiEquipGuideTipsPopup = "XUi/XUiEquipGuide/XUiEquipGuideTipsPopup",
-    UiEquipGuideItemInfo = "XUi/XUiEquipGuide/XUiEquipGuideItemInfo",
     -- Bfrt 据点
     UiNewFubenChapterBfrt = "XUi/XUiBfrt/Main/XUiNewFubenChapterBfrt",
     UiBfrtChapterReward = "XUi/XUiBfrt/Chapter/XUiBfrtChapterReward",
@@ -1488,6 +1483,18 @@ local UiRegistry = {
     UiEquipPreviewV2P6 = "XUi/XUiEquip/XUiEquipPreviewV2P6",
     UiEquipAwarenessV2P6 = "XUi/XUiEquip/XUiEquipAwarenessV2P6",
     UiEquipResonanceQuick = "XUi/XUiEquip/XUiEquipResonanceQuick/XUiEquipResonanceQuick",
+    UiEquipAwarenessEnhanceMain = "XUi/XUiEquip/XUiEquipAwarenessEnhanceMain/XUiEquipAwarenessEnhanceMain",
+    UiRoleCostPreviewPopup = "XUi/XUiRole/XUiRoleCostPreviewPopup/XUiRoleCostPreviewPopup",
+    UiEquipAwarenessOneClickPopup = "XUi/XUiEquip/XUiEquipAwarenessOneClickPopup/XUiEquipAwarenessOneClickPopup",
+    UiEquipAwarenessEnhanceProgressPopup = "XUi/XUiEquip/XUiEquipAwarenessEnhanceProgressPopup/XUiEquipAwarenessEnhanceProgressPopup",
+    UiEquipGridWeaponResonanceDetailPopup = "XUi/XUiEquip/XUiEquipGridWeaponResonanceDetailPopup/XUiEquipGridWeaponResonanceDetailPopup",
+    UiRoleCultureDetailMain = "XUi/XUiRole/XUiRoleCultureDetailMain",
+    UiEquipEnhanceProgressPopup = "XUi/XUiEquip/XUiEquipEnhanceProgress/XUiEquipEnhanceProgressPopup",
+    UiEquipChooseAwarenessResonanceSkillPopup = "XUi/XUiEquip/XUiEquipChooseAwarenessResonanceSkillPopup/XUiEquipChooseAwarenessResonanceSkillPopup",
+    UiEquipChooseCostAwarenessPopup = "XUi/XUiEquip/XUiEquipChooseCostAwarenessPopup/XUiEquipChooseCostAwarenessPopup",
+    UiEquipChooseCostWeaponPopup = "XUi/XUiEquip/XUiEquipChooseCostWeaponPopup/XUiEquipChooseCostWeaponPopup",
+    UiRoleExchangeTipPopup = "XUi/XUiRole/XUiRoleExchangeTipPopup/XUiRoleExchangeTipPopup",
+    UiRoleStrengthenTip = "XUi/XUiRole/XUiRoleStrengthenTip",
     UiTheatre3Main = "XUi/XUiTheatre3/XUiTheatre3Main",
     UiTheatre3LvReward = "XUi/XUiTheatre3/Reward/XUiTheatre3LvReward",
     UiTheatre3Task = "XUi/XUiTheatre3/Task/XUiTheatre3Task",
@@ -2141,6 +2148,9 @@ local UiRegistry = {
     --endregion PacMan2
     UiDMCFestivalActivityMain = "XUi/XUiDMCFestivalActivity/XUiDMCFestivalActivityMain",
     UiDMCFestivalActivityStageDetail = "XUi/XUiDMCFestivalActivity/XUiDMCFestivalActivityStageDetail",
+    UiDALFestivalActivityMain = "XUi/XUiDALFestivalActivity/XUiDALFestivalActivityMain",
+    UiDALDetailStory = "XUi/XUiDALFestivalActivity/XUiDALDetailStory",
+    UiDALDetailBattle = "XUi/XUiDALFestivalActivity/XUiDALDetailBattle",
     UiBigWorldPhotographControl = "XUi/XUiBigWorld/XPhotograph/XUiBigWorldPhotographControl",
     UiBigWorldPhotographPopupAlbum = "XUi/XUiBigWorld/XPhotograph/XUiBigWorldPhotographPopupAlbum",
     UiBigWorldPhotographPopupAlbumDetail = "XUi/XUiBigWorld/XPhotograph/XUiBigWorldPhotographPopupAlbumDetail",
@@ -2544,7 +2554,63 @@ local UiRegistry = {
     UiCdPlayerMusicDetailPopup = "XUi/XUiMusicPlayer/XUIMusicPlayerPopup/XUiCdPlayerMusicDetailPopup",
     --endregion    
     UiPurchaseBuyCoatingTips = "XUi/XUiPurchase/XUiPurchaseBuyCoatingTips/XUiPurchaseBuyCoatingTips",
+    --region TeamRecommend
+    UiTeamRecommendMain = "XUi/XUiTeamRecommend/XUiTeamRecommendMain",
+    UiTeamRecommendDetail = "XUi/XUiTeamRecommend/XUiTeamRecommendDetail",
+    UiTeamRecommendRoleTargetDetail = "XUi/XUiTeamRecommend/XUiTeamRecommendRoleTargetDetail",
+    UiTeamRecommendAwarenessTipsPopup = "XUi/XUiTeamRecommend/XUiTeamRecommendAwarenessTipsPopup",
+    UiTeamRecommendEquipItemInfo = "XUi/XUiTeamRecommend/XUiTeamRecommendEquipItemInfo",
+    UiTeamRecommendResonanceSkillPopup = "XUi/XUiTeamRecommend/XUiTeamRecommendResonanceSkillPopup",
+    UiTeamRecommendEquipOverrunSelect = "XUi/XUiTeamRecommend/XUiTeamRecommendEquipOverrunSelect",
+    UiTeamRecommendWeaponResonanceDetailPopup = "XUi/XUiTeamRecommend/XUiTeamRecommendWeaponResonanceDetailPopup",
+	UiTeamRecommendExchangeCostPopup = "XUi/XUiTeamRecommend/XUiTeamRecommendExchangeCostPopup",
+    --endregion
+    UiTransfiniteTowerMain = "XUi/XUiTransfiniteTower/XUiTransfiniteTowerMain",
+    UiTransfiniteTowerStage = "XUi/XUiTransfiniteTower/XUiTransfiniteTowerStage",
+    UiTransfiniteTowerHide = "XUi/XUiTransfiniteTower/XUiTransfiniteTowerHide",
+    UiTransfiniteTowerTeach = "XUi/XUiTransfiniteTower/XUiTransfiniteTowerTeach",
+    UiTransfiniteTowerTask = "XUi/XUiTransfiniteTower/XUiTransfiniteTowerTask",
+    UiTransfiniteTowerLastSettlement = "XUi/XUiTransfiniteTower/XUiTransfiniteTowerLastSettlement",
+    UiTransfiniteTowerSwitchMvpPopup = "XUi/XUiTransfiniteTower/XUiTransfiniteTowerSwitchMvpPopup",
+    UiTransfiniteTowerRank = "XUi/XUiTransfiniteTower/XUiTransfiniteTowerRank",
+    UiTransfiniteTowerSettlement = "XUi/XUiTransfiniteTower/XUiTransfiniteTowerSettlement",
+    UiTransfiniteTowerSettlementPopup = "XUi/XUiTransfiniteTower/XUiTransfiniteTowerSettlementPopup",
     UiDemo = "EditorOnly/XUiDemo/XUiDemo",
+    
+    --region XPunishaar
+    UiPunishaarMain = "XUi/XUiPunishaar/XUiPunishaarMain",
+    UiPunishaarChooseStage = "XUi/XUiPunishaar/XUiPunishaarChooseStage",
+    UiPunishaarExploreDetail = "XUi/XUiPunishaar/XUiPunishaarExploreDetail",
+    UiPunishaarTask = "XUi/XUiPunishaar/XUiPunishaarTask",
+    UiPunishaarCollection = "XUi/XUiPunishaar/XUiPunishaarCollection",
+    UiPunishaarFightMain = "XUi/XUiPunishaar/XUiPunishaarFightMain/XUiPunishaarFightMain",
+    UiPunishaarBattleSettlement = "XUi/XUiPunishaar/XUiPunishaarBattleSettlement/XUiPunishaarBattleSettlement",
+    UiPunishaarEventSelection = "XUi/XUiPunishaar/XUiPunishaarEventSelection/XUiPunishaarEventSelection",
+    UiPunishaarChallengeSettlement = "XUi/XUiPunishaar/XUiPunishaarChallengeSettlement/XUiPunishaarChallengeSettlement",
+    UiPunishaarStagePause = "XUi/XUiPunishaar/XUiPunishaarStagePause/XUiPunishaarStagePause",
+    UiPunishaarMainCardLevelupTip = "XUi/XUiPunishaar/XUiPunishaarMainCardLevelupTip/XUiPunishaarMainCardLevelupTip",
+    --endregion
+
+    --region Partne 辅助机
+    UiEquipOneClickCulturePartnerMain = "XUi/XUiPartnerOneKeyCulture/OneKeyCultureMain/XUiEquipOneClickCulturePartnerMain/XUiEquipOneClickCulturePartnerMain",
+    UiEquipPartnerOneClickPopup = "XUi/XUiPartnerOneKeyCulture/XUiEquipPartnerOneClickPopup/XUiEquipPartnerOneClickPopup",
+    UiEquipPartnerOneKeyCultureSelectClipPopup = "XUi/XUiPartnerOneKeyCulture/XUiEquipPartnerOneKeyCultureSelectClipPopup/XUiEquipPartnerOneKeyCultureSelectClipPopup",
+    UiEquipPartnerEnhanceProgressPopup = "XUi/XUiPartnerOneKeyCulture/XUiEquipPartnerEnhanceProgressPopup/XUiEquipPartnerEnhanceProgressPopup",
+    UiEquipOneClickCulturePartnerSkillPopup = "XUi/XUiPartnerOneKeyCulture/XUiEquipOneClickCulturePartnerSkillPopup/XUiEquipOneClickCulturePartnerSkillPopup",
+    
+    --endregion
+
+    --region XEquip 装备一键养成
+    UiEquipOneClickAutoCommonSetting = "XUi/XUiEquip/XUiEquipOneClickAutoCommonSetting/XUiEquipOneClickAutoCommonSetting",
+    UiEquipOneClickCultureDetailMain = "XUi/XUiEquip/XUiEquipOneClickCultureDetailMain/XUiEquipOneClickCultureDetailMain",
+    UiEquipWeaponOneClickPopup = "XUi/XUiEquip/XUiEquipWeaponOneClickPopup/XUiEquipWeaponOneClickPopup",
+    UiEquipWeaponEnhanceProgressPopup = "XUi/XUiEquip/XUiEquipWeaponOneClickPopup/XUiEquipWeaponEnhanceProgressPopup",
+    UiEquipChooseWeaponResonanceSkillPopup = "XUi/XUiEquip/XUiEquipChooseWeaponResonanceSkillPopup/XUiEquipChooseWeaponResonanceSkillPopup",
+    --endregion
+
+    UiPunishaarEventSettlement = "XUi/XUiPunishaar/XUiPunishaarEventSettlement/XUiPunishaarEventSettlement",
+    UiPunishaarSellCardTip = "XUi/XUiPunishaar/XUiPunishaarSellCardTip/XUiPunishaarSellCardTip",
 }
 return UiRegistry
+
 

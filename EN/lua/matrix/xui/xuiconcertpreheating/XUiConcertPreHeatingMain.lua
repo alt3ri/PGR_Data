@@ -45,6 +45,7 @@ function XUiConcertPreHeatingMain:OnEnable()
 end
 
 function XUiConcertPreHeatingMain:OnDisable()
+    self.DynamicTable:RecycleAllTableGrid()
     self:StopTimer()
 end
 
@@ -132,6 +133,8 @@ end
 function XUiConcertPreHeatingMain:StopTimer()
     XScheduleManager.UnSchedule(self._RefreshTimer)
     self._RefreshTimer = nil
+    XScheduleManager.UnSchedule(self._MiddleCdTimer)
+    self._MiddleCdTimer = nil
 end
 
 function XUiConcertPreHeatingMain:OnConcertPreHeatingEventRefresh()
@@ -216,6 +219,10 @@ function XUiConcertPreHeatingMain:GetLatestPlayableStageIndex()
 end
 
 function XUiConcertPreHeatingMain:RefreshDynamicTable(index)
+    if not self.PanelPlay.gameObject.activeInHierarchy then
+        return
+    end
+
     self.DynamicTable:SetDataSource(self._StageIds)
     self.DynamicTable:ReloadDataSync(XTool.IsNumberValid(index) and index or 1)
 
@@ -226,6 +233,7 @@ end
 
 function XUiConcertPreHeatingMain:OnDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
+        grid:Open()
         local stageId = self.DynamicTable.DataSource[index]
         local isSelect = stageId == self._SelectStageId
         grid:Refresh(index, stageId)
@@ -234,6 +242,8 @@ function XUiConcertPreHeatingMain:OnDynamicTableEvent(event, index, grid)
         if isSelect then
             self:RefreshCurrentStageInfo()
         end
+    elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_RECYCLE then
+        grid:Close()
     end
 end
 
@@ -318,14 +328,15 @@ function XUiConcertPreHeatingMain:RefreshCountdown()
     local isReplay = XMVCA.XConcertPreHeating:IsReplay(liveState)
     local isReplayOpen = XMVCA.XConcertPreHeating:IsReplayOpen(liveState)
     local isLiveSoon = XMVCA.XConcertPreHeating:IsLiveSoon(liveState)
-    local isAllStageFinished = XMVCA.XConcertPreHeating:IsAllStageFinished()
-    local isShowTimeCd = isLive or (isBeforeLive and (isAllStageFinished or isLiveSoon))
-    local isShowPanelTime = isBeforeLive and (isAllStageFinished or isLiveSoon)
-    local isShowGotoLive = isLive or isReplay or (isBeforeLive and (isAllStageFinished or isLiveSoon))
+    local isMainPerformanceStageFinished = XMVCA.XConcertPreHeating:IsMainPerformanceStageFinished()
+    local isShowTimeCd = isLive or isReplay or (isBeforeLive and (isMainPerformanceStageFinished or isLiveSoon))
+    local isShowPanelTime = isBeforeLive and (isMainPerformanceStageFinished or isLiveSoon)
+    local isShowGotoLive = isLive or isReplay or (isBeforeLive and (isMainPerformanceStageFinished or isLiveSoon))
 
     -- 倒计时面板
     countdownUi.PanelBeforeStart.gameObject:SetActiveEx(isBeforeLive)
     timeCdUi.PanelTime.gameObject:SetActiveEx(isShowPanelTime)
+    timeCdUi.TxtPanelTimeCd.gameObject:SetActiveEx(isShowPanelTime)
     timeCdUi.PanelLive.gameObject:SetActiveEx(isLive)
     timeCdUi.PanelEnd.gameObject:SetActiveEx(isReplay)
     countdownUi.PanelTimeCd.gameObject:SetActiveEx(isShowTimeCd)
@@ -412,7 +423,21 @@ function XUiConcertPreHeatingMain:PlayMainPerformance()
     -- 主表现关完成后回 Main 的最终演出入口。
     self.PanelMiddleCd.gameObject:SetActiveEx(true)
     local liveState = XMVCA.XConcertPreHeating:GetLiveState()
-    self:SetCdText(self._MiddleCdTextUi, liveState and liveState.LeftTime or 0)
+
+    -- MiddleCd 面板文案为"距音乐会正式开始"，只对直播前有语义：
+    -- 直播中/结束后注入 0，避免把"距直播结束"的时间误当"距开始"展示。
+    local isBeforeLive = XMVCA.XConcertPreHeating:IsBeforeLive(liveState)
+    local leftTime = isBeforeLive and liveState.LeftTime or 0
+    self:SetCdText(self._MiddleCdTextUi, leftTime)
+
+    -- 仅直播前倒计时在动画期间会走动，此时每秒刷新避免快照漂移。
+    if isBeforeLive then
+        self._MiddleCdTimer = XScheduleManager.ScheduleForever(function()
+            local state = XMVCA.XConcertPreHeating:GetLiveState()
+            local before = XMVCA.XConcertPreHeating:IsBeforeLive(state)
+            self:SetCdText(self._MiddleCdTextUi, before and state.LeftTime or 0)
+        end, XScheduleManager.SECOND)
+    end
 
     self:ShowFinalSpineLoop()
     self:PlayAnimationWithMask("FinalStageFinish", function()
@@ -502,6 +527,7 @@ end
 function XUiConcertPreHeatingMain:ShowStageSpine()
     self.PanelSpineNode:Open()
     self.PanelSpineNode:PlaySpinePerformance(true, function()
+        self.DynamicTable:RecycleAllTableGrid()
         self.PanelPlay.gameObject:SetActiveEx(false)
     end)
 end
@@ -509,6 +535,7 @@ end
 function XUiConcertPreHeatingMain:OnPanelSpineClose()
     self.PanelSpineNode:Close()
     self.PanelPlay.gameObject:SetActiveEx(true)
+    self:RefreshDynamicTable(self:GetStageIndex(self._SelectStageId))
 end
 
 function XUiConcertPreHeatingMain:OnBtnFMClick()

@@ -515,6 +515,9 @@ local type = {
     CONDITION_ACTIVITY_BOSS_SINGLE_NEW = "XActivityBossSingle/XRedPointActivityBossSingleStoryNew", --超难关新解锁剧情
     --超限连战
     CONDITION_TRANSFINITE = "XTransfinite/XRedPointTransfinite", -- 有奖励
+    CONDITION_TRANSFINITE_TOWER_UNLOCK = "XTransfinite/XRedPointTransfiniteTowerUnlock", -- 塔解锁未进入
+    CONDITION_TRANSFINITE_TOWER_TASK = "XTransfinite/XRedPointTransfiniteTowerTask", -- 有任务奖励待领取
+    CONDITION_TRANSFINITE_TOWER_MAIN = "XTransfinite/XRedPointTransfiniteTowerMain", -- 活动入口聚合红点
     --黄金矿工
     CONDITION_GOLDEN_MINER_REWARD = "XGoldenMiner/XRedPointConditionGoldenMinerReward", -- 有奖励
     --大转盘

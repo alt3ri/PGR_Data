@@ -52,7 +52,7 @@ function XCompositeEvictionPolicy:SelectEvictKeys(pool, activeKey)
     end
 
     -- 超出数量上限时，额外踢掉最老的（且尚未被列入删除）
-    local totalCount  = table.nums(pool)
+    local totalCount  = table.size(pool)
     local removeCount = #toRemove
     if totalCount - removeCount >= self._MaxCount
         and oldestKey

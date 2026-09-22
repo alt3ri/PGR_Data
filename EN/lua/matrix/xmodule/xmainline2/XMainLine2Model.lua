@@ -407,6 +407,21 @@ function XMainLine2Model:GetChapterIdleSpineName(chapterId)
     return config and config.IdleSpineName or table.empty
 end
 
+function XMainLine2Model:GetChapterIdleSoundName(chapterId)
+    local config = self:GetConfigChapter(chapterId)
+    return config and config.IdleSoundName or table.empty
+end
+
+function XMainLine2Model:GetChapterSwitchAheadSoundName(chapterId)
+    local config = self:GetConfigChapter(chapterId)
+    return config and config.SwitchAheadSoundName or table.empty
+end
+
+function XMainLine2Model:GetChapterSwitchBackwardSoundName(chapterId)
+    local config = self:GetConfigChapter(chapterId)
+    return config and config.SwitchBackwardSoundName or table.empty
+end
+
 function XMainLine2Model:GetChapterLastStageId(chapterId)
     local stageGroupId = self:GetChapterStageGroupIds(chapterId)
     local lastGroupId = stageGroupId[#stageGroupId]
@@ -1319,6 +1334,24 @@ end
 
 function XMainLine2Model:GetSwitchEnterEffectKey(chapterId)
     return string.format("XMainLine2Model:GetSwitchEnterEffectKey_PlayerId:%s_ChapterId:%s", XPlayer.Id, chapterId)
+end
+
+--- 设置已执行过章节直跳（无特效跳转）
+---@param chapterId number 章节Id
+function XMainLine2Model:SetIsAutoSwitchChapterDirect(chapterId)
+    local saveKey = self:GetAutoSwitchChapterDirectKey(chapterId)
+    XSaveTool.SaveData(saveKey, true)
+end
+
+--- 是否已执行过章节直跳（无特效跳转）
+---@param chapterId number 章节Id
+function XMainLine2Model:GetIsAutoSwitchChapterDirect(chapterId)
+    local saveKey = self:GetAutoSwitchChapterDirectKey(chapterId)
+    return XSaveTool.GetData(saveKey) == true
+end
+
+function XMainLine2Model:GetAutoSwitchChapterDirectKey(chapterId)
+    return string.format("XMainLine2Model:GetAutoSwitchChapterDirectKey_PlayerId:%s_ChapterId:%s", XPlayer.Id, chapterId)
 end
 
 -- 缓存主章节释放的数据

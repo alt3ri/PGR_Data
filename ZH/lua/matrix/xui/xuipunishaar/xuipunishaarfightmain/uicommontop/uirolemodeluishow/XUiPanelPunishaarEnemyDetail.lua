@@ -45,9 +45,9 @@ function XUiPanelPunishaarEnemyDetail:Refresh(modelShow, cam)
         end
     end
     -- 取 fightId + fightCfg（双轨源，参 RefreshEnemyModel）
-    local gc = self._Control and self._Control.GameControl
-    local fightId = gc and self:_GetFightId(gc)
-    local fightCfg = gc and fightId and gc:GetTablePunishaarFight(fightId, true)
+    local gameControl = self._Control and self._Control.GameControl
+    local fightId = gameControl and self:_GetFightId(gameControl)
+    local fightCfg = gameControl and fightId and gameControl:GetTablePunishaarFight(fightId, true)
     -- 技能图标：按 EnemySkill[] 克隆 UiPunishaarSubCard
     local skillIds = fightCfg and fightCfg.EnemySkill
     local skillCount = skillIds and #skillIds or 0
@@ -64,7 +64,7 @@ function XUiPanelPunishaarEnemyDetail:Refresh(modelShow, cam)
                 self._SkillGridDict[go] = grid
             end
             grid:Open()
-            local skillCfg = gc:GetTablePunishaarEnemySkill(skillIds[index], true)
+            local skillCfg = gameControl:GetTablePunishaarEnemySkill(skillIds[index], true)
             grid:RefreshSkill(skillCfg and skillCfg.SkillIcon)
         end)
     end
@@ -106,10 +106,10 @@ end
 
 --- 取 fightId：直接读当前节点 FightInfo（与 GetCurrentFightId 同源，保证怪物详情与敌人模型数据源一致）。
 --- 旧版优先 PeekBattleInitData（开战契约），但契约只在 Fighting 态建（PreFight 不准备），通关节点切换后 PreFight 怔契约残存上一节点 fightId → 怪物详情显示旧节点怪物。#怪物详情跨节点
----@param gc table GameControl
+---@param gameControl table GameControl
 ---@return number|nil
-function XUiPanelPunishaarEnemyDetail:_GetFightId(gc)
-    local stage = gc._Model and gc._Model:GetCurrentStage()
+function XUiPanelPunishaarEnemyDetail:_GetFightId(gameControl)
+    local stage = gameControl._Model and gameControl._Model:GetCurrentStage()
     local node = stage and stage.CurrentNode
     local fightInfo = node and node.FightInfo
     if not fightInfo then return nil end
@@ -122,9 +122,9 @@ end
 function XUiPanelPunishaarEnemyDetail:_OnBtnEnemyDetailsClick()
     local host = self:_GetTipsHost()
     if not host then return end
-    local gc = self._Control and self._Control.GameControl
-    if not gc then return end
-    local fightId = self:_GetFightId(gc)
+    local gameControl = self._Control and self._Control.GameControl
+    if not gameControl then return end
+    local fightId = self:_GetFightId(gameControl)
     if not fightId then return end
     host:ShowEnemyTips(fightId, self.DetailRoot)
 end

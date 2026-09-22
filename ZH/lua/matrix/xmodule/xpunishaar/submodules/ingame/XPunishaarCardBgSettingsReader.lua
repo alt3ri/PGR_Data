@@ -127,6 +127,7 @@ function XPunishaarCardBgSettingsReader.GetBallDisplay(gameControl, configConsum
         return { showIn = false, showOut = false, count = 0, bgSprite = nil, iconSprite = nil }
     end
     local count = isConsume and (realConsume or 0) or (realOutPut or 0)
+    count = math.max(0, count)  -- 最小值约束 0（防负数显示——战斗外 configConsume 无 STE clamp 可能负，战斗内 reader 已 clamp 冗余无害）#球数最小值约束
     local id = ID_BASE + ID_COLOR_SLOT * (color or 0)
     local row = gameControl:GetTablePunishaarCardBgSettings(id, true)
     local bgSprite = row and row.BallCountBg or nil

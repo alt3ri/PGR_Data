@@ -125,7 +125,17 @@ function XUiSignCard:Refresh(configId, isShow, isAuto)
         self.ImgNormalC2.gameObject:SetActiveEx(self.IsCardC)
     end
 
-    local ykConfig = XPurchaseConfigs.GetPurchasePackageYKUiConfig(signCardConf.Param[2])
+    local packageId = signCardConf.Param[2]
+    if not XTool.IsNumberValid(packageId) then
+        XLog.Error(string.format("XUiSignCard:Refresh SignCard表配置错误，Id=%s 未配置Param[2](月卡礼包Id)", tostring(configId)))
+        return
+    end
+
+    local ykConfig = XPurchaseConfigs.GetPurchasePackageYKUiConfig(packageId)
+    if not ykConfig then
+        XLog.Error(string.format("XUiSignCard:Refresh 找不到月卡Ui配置，SignCard Id=%s Param[2]=%s", tostring(configId), tostring(packageId)))
+        return
+    end
     self.TipText01.text = ykConfig.Tips[1]
     self.TipText02.text = ykConfig.Tips[2]
 

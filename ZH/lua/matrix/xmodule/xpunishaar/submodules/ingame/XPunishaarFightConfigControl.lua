@@ -29,6 +29,7 @@ function XPunishaarFightControl:InitConfig()
         FatigueAnim = 12,  -- 疲劳弹窗动画（EffectGroup 组末尾 EmitEvent 派发，与 STECustomEnum.EventEnum 对齐）#80
         EnemyAttackPrepare = 13,  -- 敌人准备攻击（ExecuteEnemyEffects 激发时 Emit，与 STECustomEnum.EventEnum 对齐）#EnemyAttack
         DotBuffLayerChanged = 14,  -- buff Layer 变化（SnapshotFieldToBuff 值变/销毁前 Emit，与 STECustomEnum.EventEnum 对齐；PanelEnemyHp buff 图标列表订阅）
+        BallAnimSteps = 15,  -- 球动画 step 批量（STEControl 帧末 drain step 队列+dispatch，payload=stepList 引用；UI 回调同步遍历 EnqueueStep+StartPlay #消球动效动画队列）
 
         -- 战斗流程事件（非 STE present 事件，直接由 FightControl 派发；号段与上面 present 事件错开避免撞号）
         BattleEnded = 101,      -- 战斗结束，携带 result（见 XPunishaarFightControl.BattleResult）

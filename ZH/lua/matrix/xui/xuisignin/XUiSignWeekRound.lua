@@ -159,7 +159,7 @@ function XUiSignWeekRound:RefreshByPurchasePackageData()
     if icon then
         self.RawImageConsume:SetRawImage(icon)
     end
-    self.BtnBuy:SetName(self.PurchaseData.ConsumeCount)
+    self.BtnBuy:SetName(self.RootUi:GetConsumePriceColorText(self.PurchaseData.ConsumeId, self.PurchaseData.ConsumeCount))
     XUiHelper.RegisterClickEvent(self.RootUi, self.BtnBuy, self.RootUi.OnBtnBuyClick)
     if self.PurchaseData.BuyTimes < self.PurchaseData.BuyLimitTimes then
         self.BtnBuy:SetDisable(false)
@@ -174,6 +174,14 @@ function XUiSignWeekRound:RefreshByPurchasePackageData()
         self.TxtTips.text = self.PurchaseData.Desc
     end
     self:SetRewardInfos(1)
+end
+
+-- 虹卡数量变动时重刷购买按钮价格颜色(仅打脸购买态有购买按钮)
+function XUiSignWeekRound:RefreshBuyBtnColor()
+    if not self.IsPurchaseEnter or not self.PurchaseData or not self.BtnBuy then
+        return
+    end
+    self.BtnBuy:SetName(self.RootUi:GetConsumePriceColorText(self.PurchaseData.ConsumeId, self.PurchaseData.ConsumeCount))
 end
 
 function XUiSignWeekRound:RefreshImmediatelyReward()

@@ -93,31 +93,21 @@ end
 
 -- 是否上锁
 function XMainLine2Main:GetIsLocked()
-    if not XMVCA.XSubPackage:CheckSubpackageDownloadByFunctionType(XFunctionManager.FunctionName.MainLine) then
+    if not XMVCA.XSubPackage:CheckSubpackageDownloadByFunctionType(XFunctionManager.FunctionName.MainLine, self:GetId()) then
         return true
     end
 
-    return self:GetBusinessIsLocked()
-end
-
--- 业务是否已锁，不包含分包资源状态
-function XMainLine2Main:GetBusinessIsLocked()
-    local isUnlock = XMVCA.XMainLine2:IsMainUnlock(self.Id)
+    local isUnlock, tips = XMVCA.XMainLine2:IsMainUnlock(self.Id)
     return not isUnlock
 end
 
 -- 获取锁提示
 function XMainLine2Main:GetLockTip()
-    if not XMVCA.XSubPackage:CheckSubpackageDownloadByFunctionType(XFunctionManager.FunctionName.MainLine) then
+    if not XMVCA.XSubPackage:CheckSubpackageDownloadByFunctionType(XFunctionManager.FunctionName.MainLine, self:GetId()) then
         return XUiHelper.GetText("NecessaryResourcesNotDownloaded")
     end
 
-    return self:GetBusinessLockTip()
-end
-
--- 获取业务锁提示，不包含分包资源状态
-function XMainLine2Main:GetBusinessLockTip()
-    local _, tips = XMVCA.XMainLine2:IsMainUnlock(self.Id)
+    local isUnlock, tips = XMVCA.XMainLine2:IsMainUnlock(self.Id)
     return tips
 end
 

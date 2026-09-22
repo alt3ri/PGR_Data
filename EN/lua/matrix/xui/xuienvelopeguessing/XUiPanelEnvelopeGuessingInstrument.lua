@@ -125,8 +125,9 @@ function XUiPanelEnvelopeGuessingInstrument:Refresh(refreshType)
 
         self._ModelChar:UpdateRoleModel(charModelId, nil, self._ParentUiName, function(model)
             self._LoadedCharModel = model
-            local ctrl = self._LoadCharacterAnimationController(charConf.IsFemale)
-            model:GetComponent(typeof(CS.UnityEngine.Animator)).runtimeAnimatorController = ctrl
+            local pathKey = self._LoadCharacterAnimationController(charConf.IsFemale, charConf.ModelId)
+            local animator = model:GetComponent(typeof(CS.UnityEngine.Animator))
+            animator.runtimeAnimatorController = CS.LoadHelper.LoadUiController(CS.XGame.ClientConfig:GetString(pathKey), animator.gameObject)
 
             local charAnima = self._InstrumentConf.CharacterAnimationId
             self._PrevCharAnimationPrefix = charAnima

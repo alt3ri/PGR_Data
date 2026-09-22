@@ -2,6 +2,11 @@
 ---@field private _DataDb XTransfiniteTowerDataDb 活动存档（全量）
 local XTransfiniteTowerModel = XClass(XModel, "XTransfiniteTowerModel")
 
+local TOWER_ENTERED_KEY = "TowerEntered_%s"
+local RANK_RECORD_RED_DOT_KEY = "RankRecordRedDot"
+local KICK_TIP_COOKIE_KEY = "KickTipCookie"
+local GENERAL_SKILL_KEY = "GeneralSkill_%s"
+
 function XTransfiniteTowerModel:OnInit()
     self._DataDb = nil
 end
@@ -319,6 +324,58 @@ function XTransfiniteTowerModel:IsTeachStagePassed(stageId)
         end
     end
     return false
+end
+
+--endregion
+
+--region 本地存档
+
+function XTransfiniteTowerModel:IsTowerEntered(chapterId)
+    return self._SaveUtil:GetData(string.format(TOWER_ENTERED_KEY, chapterId)) == true
+end
+
+function XTransfiniteTowerModel:SetTowerEntered(chapterId)
+    self._SaveUtil:SaveData(string.format(TOWER_ENTERED_KEY, chapterId), true)
+end
+
+function XTransfiniteTowerModel:IsRankRecordRedDotShow()
+    return self._SaveUtil:GetData(RANK_RECORD_RED_DOT_KEY) == true
+end
+
+function XTransfiniteTowerModel:SetRankRecordRedDot()
+    self._SaveUtil:SaveData(RANK_RECORD_RED_DOT_KEY, true)
+end
+
+function XTransfiniteTowerModel:ClearRankRecordRedDot()
+    self._SaveUtil:SaveData(RANK_RECORD_RED_DOT_KEY, false)
+end
+
+function XTransfiniteTowerModel:HasKickTipShown(chapterId, progress)
+    local cookie = self._SaveUtil:GetData(string.format(KICK_TIP_COOKIE_KEY, chapterId))
+    return type(cookie) == 'table' and cookie[progress] == true
+end
+
+function XTransfiniteTowerModel:MarkKickTipShown(chapterId, progress)
+    local key = string.format(KICK_TIP_COOKIE_KEY, chapterId)
+    local cookie = self._SaveUtil:GetData(key)
+    if type(cookie) ~= 'table' then
+        cookie = {}
+    end
+    cookie[progress] = true
+    self._SaveUtil:SaveData(key, cookie)
+end
+
+function XTransfiniteTowerModel:ClearKickTipCookie(chapterId)
+    self._SaveUtil:SaveData(string.format(KICK_TIP_COOKIE_KEY, chapterId), false)
+end
+
+function XTransfiniteTowerModel:SaveLastGeneralSkill(towerCfgId, skillId)
+    self._SaveUtil:SaveData(string.format(GENERAL_SKILL_KEY, towerCfgId), skillId)
+end
+
+function XTransfiniteTowerModel:GetLastGeneralSkill(towerCfgId)
+    local skillId = self._SaveUtil:GetData(string.format(GENERAL_SKILL_KEY, towerCfgId))
+    return XTool.IsNumberValid(skillId) and skillId or nil
 end
 
 --endregion

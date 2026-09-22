@@ -14,6 +14,8 @@ end
 
 function XUiPanelTheatre6BottomBuffList:OnEnable()
     XEventManager.AddEventListener(XEventId.EVENT_THEATRE6_BUFF_CHANGE, self.UpdateView, self)
+    --隐藏期间(如被升星弹窗盖住)收不到Buff变化事件,重新显示时主动刷新一次
+    self:UpdateView()
 end
 
 function XUiPanelTheatre6BottomBuffList:OnDisable()

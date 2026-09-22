@@ -1,5 +1,4 @@
-local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
-local XDynamicDailyTask = require("XUi/XUiTask/XDynamicDailyTask")
+local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
 local BtnGoRedPointConditions = {
     [XActivityConfigs.TaskPanelSkipType.CanZhangHeMing_Qu] = { XRedPointConditions.Types.CONDITION_FUBEN_DRAGPUZZLEGAME_RED },
     [XActivityConfigs.TaskPanelSkipType.CanZhangHeMing_LuNa] = { XRedPointConditions.Types.CONDITION_FUBEN_DRAGPUZZLEGAME_RED },
@@ -13,22 +12,12 @@ local BtnGoRedPointConditions = {
     [XActivityConfigs.TaskPanelSkipType.InvertCardGame2] = {XRedPointConditions.Types.CONDITION_INVERTCARDGAME_RED},
 }
 
-local XUiDynamicDailyTask = XClass(XDynamicDailyTask, "XUiDynamicDailyTask")
-
---重写点击方法
-function XUiDynamicDailyTask:OnBtnSkipClick()
-    if not XMVCA.XSubPackage:CheckSubpackage() then
-        return
-    end
-    XDynamicDailyTask.OnBtnSkipClick(self)
-end
-
 ---@class XUiPanelTask:XUiNode
 local XUiPanelTask = XClass(XUiNode, "XUiPanelTask")
 
 function XUiPanelTask:OnStart()
     self.DynamicTable = XDynamicTableNormal.New(self.PanelTaskActivityList)
-    self.DynamicTable:SetProxy(XUiDynamicDailyTask,self)
+    self.DynamicTable:SetProxy(require("XUi/XUiActivityBase/XUiDynamicDailyTask"), self)
     self.DynamicTable:SetDelegate(self)
 end
 
@@ -49,11 +38,15 @@ function XUiPanelTask:RemoveTimer()
 end
 
 function XUiPanelTask:RemoveRedPoint()
-    for _, redId in pairs(self.BtnGoRedPointIdDic or {}) do
+    if XTool.IsTableEmpty(self.BtnGoRedPointIdDic) then
+        return
+    end
+    for _, redId in pairs(self.BtnGoRedPointIdDic) do
         XRedPointManager.RemoveRedPointEvent(redId)
     end
 end
 
+---@param activityCfg XTableActivity
 function XUiPanelTask:Refresh(activityCfg)
     if not activityCfg then return end
     self.ActivityCfg = activityCfg
@@ -94,15 +87,32 @@ end
 
 function XUiPanelTask:UpdateTimer()
     self:RemoveTimer()
-    local grids
     self.Timer = XScheduleManager.ScheduleForeverEx(function()
-        grids = self.DynamicTable:GetGrids()
+        self:UpdateMultiReward()
+        ---@type XUiDynamicDailyTask[]
+        local grids = self.DynamicTable:GetGrids()
         for _, grid in pairs(grids) do
             if grid:GetTaskState() ~= XDataCenter.TaskManager.TaskState.Finish then
                 grid:UpdateTimes()
+                grid:UpdateMultiReward()
             end
         end
     end, XScheduleManager.SECOND)
+end
+
+function XUiPanelTask:UpdateMultiReward()
+    self.Tag.gameObject:SetActiveEx(false)
+
+    local isMultiRewardOpen = XDataCenter.FubenRepeatChallengeManager.IsMultiRewardOpen()
+    if isMultiRewardOpen then
+        local multiRewardCfg = XDataCenter.FubenRepeatChallengeManager.GetMultiRewardActivityCfg()
+        if self.TaskIdDict and self.TaskIdDict[multiRewardCfg.TaskId] then
+            local countStr = XTool.ConvertChineseNumberString(multiRewardCfg.Multiple)
+            self.Tag.gameObject:SetActiveEx(true)
+            self.TxtTag.text = XUiHelper.GetText("ActivityRepeatChallengeMultiRewardTag1", countStr)
+            return
+        end
+    end
 end
 
 function XUiPanelTask:GetTxtContentTimeTask(activityCfg)
@@ -136,6 +146,10 @@ end
 
 function XUiPanelTask:UpdateDynamicTable()
     self.TaskDatas = XDataCenter.ActivityManager.GetActivityTaskData(self.ActivityCfg.Id)
+    self.TaskIdDict = {}
+    for _, taskData in pairs(self.TaskDatas) do
+        self.TaskIdDict[taskData.Id] = true
+    end
     self.ImgEmpty.gameObject:SetActive(#self.TaskDatas <= 0)
     self.DynamicTable:SetDataSource(self.TaskDatas)
     self.DynamicTable:ReloadDataASync()
@@ -147,6 +161,7 @@ function XUiPanelTask:OnDynamicTableEvent(event, index, grid)
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         local data = self.TaskDatas[index]
         grid:ResetData(data)
+        grid:UpdateMultiReward()
     end
 end
 

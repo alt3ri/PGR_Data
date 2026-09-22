@@ -676,6 +676,10 @@
         "Text": " hour(s) "
     },
     {
+        "Key": "Double",
+        "Text": "2"
+    },
+    {
         "Key": "Aha",
         "Text": "Haha"
     },
@@ -3509,7 +3513,7 @@
     },
     {
         "Key": "PurchaseYKDes",
-        "Text": "1. Purchase [Black Card Monthly Pass A] to claim 100 Black Cards daily at 05:00 UTC for 30 days.\\n2. Each purchase extends the duration by 30 days, up to a maximum of 180 days. [Black Card Monthly Pass A] and [Black Card Monthly Pass C] cannot be active at the same time.\\n3. Upon purchase, you will receive 300 Black Cards immediately."
+        "Text": "\u6708\u5361\u8d2d\u4e70\u540e\uff0c\u6301\u7eed30\u65e5\uff0c\u6bcf\u65e55:00\uff0c\u53ef\u9886\u53d6\u9ed1\u5361*100\uff0c\u4ee5\u53ca\u4e2d\u578b\u8840\u6e05\u7ec4\u03b2*1\u3002\\n\u6708\u5361\u6700\u591a\u8d2d\u4e706\u5f20\uff0c\u65f6\u95f4\u53e0\u52a0\uff0c\u6bcf\u5929\u53ea\u80fd\u9886\u53d6\u4e00\u6b21\u3002\\n\u8d2d\u4e70\u540e\u53ef\u7acb\u5373\u83b7\u53d6300\u9ed1\u5361\u3002"
     },
     {
         "Key": "SaveShowSetting",
@@ -3598,6 +3602,30 @@
     {
         "Key": "PurchaseYKBuyText3",
         "Text": "Cannot purchase continuously"
+    },
+    {
+        "Key": "PurchaseYKValidIng",
+        "Text": "Active:"
+    },
+    {
+        "Key": "PurchaseYKRemainDayItem1",
+        "Text": "\u2460{0}d"
+    },
+    {
+        "Key": "PurchaseYKRemainDayItem2",
+        "Text": "\u2461{0}d"
+    },
+    {
+        "Key": "PurchaseYKRemainDayItem3",
+        "Text": "\u2462{0}d"
+    },
+    {
+        "Key": "PurchaseYKRemainDaySep",
+        "Text": "\uff0c"
+    },
+    {
+        "Key": "PurchaseYKHelpRemainDesc",
+        "Text": "\\nTime remaining: {0}"
     },
     {
         "Key": "PurchaseGiftValitimeTips1",
@@ -4706,6 +4734,30 @@
     {
         "Key": "ActivityRepeatChallengeChapterLock",
         "Text": "{0} more to unlock"
+    },
+    {
+        "Key": "ActivityRepeatChallengeMultiRewardTag1",
+        "Text": "Simulated Battlefield {0}x Bonus Active"
+    },
+    {
+        "Key": "ActivityRepeatChallengeMultiRewardTag2",
+        "Text": "{0}x"
+    },
+    {
+        "Key": "ActivityRepeatChallengeMultiRewardTitle",
+        "Text": "Event Info"
+    },
+    {
+        "Key": "ActivityRepeatChallengeMultiRewardDesc",
+        "Text": "During the preview event, get up to {0} {1}x reward attempts daily, and up to {2} overall during the event ({3} remaining).\\nIf the Welcome Back {1}x Bonus event is active concurrently, daily reward attempts will be consumed first."
+    },
+    {
+        "Key": "ActivityRepeatChallengeMultiRewardTimes",
+        "Text": "Daily {0}x Reward Attempts:"
+    },
+    {
+        "Key": "ActivityRepeatChallengeName",
+        "Text": "{0}x Bonus Event"
     },
     {
         "Key": "ItemHaveSelectedCount",
@@ -5997,7 +6049,7 @@
     },
     {
         "Key": "ActivityBossSingleSchedule",
-        "Text": "{0}/<color=#00EEEE><size=28>{1}</size></color>"
+        "Text": "{0}/{1}"
     },
     {
         "Key": "GuildSettingLevelLessThanZero",
@@ -10153,7 +10205,7 @@
     },
     {
         "Key": "PartnerCanBreakthroughHint",
-        "Text": "Activate Overclock"
+        "Text": "Overclock Activated"
     },
     {
         "Key": "PartnerIsMaxHint",
@@ -15045,7 +15097,19 @@
     },
     {
         "Key": "EquipGuideChangeTargetIdenticalRoleTips",
-        "Text": "Switch the Equipment Goal [Set {0}] to [Set {1}]?"
+        "Text": "Switch the Equipment Goal [{0}] to [{1}]?"
+    },
+    {
+        "Key": "TeamRecommendCharacterTargetDesc",
+        "Text": "{0} Combination"
+    },
+    {
+        "Key": "TeamRecommendStageTypeBossSingle",
+        "Text": "Phantom Pain Cage"
+    },
+    {
+        "Key": "TeamRecommendStageTypeArena",
+        "Text": "War Zone"
     },
     {
         "Key": "EquipGuideChangeTargetInequalityRoleTips",
@@ -17921,7 +17985,7 @@
     },
     {
         "Key": "FangKuaiItemFull",
-        "Text": "Item limit reached.\\nUnable to obtain new items."
+        "Text": "Item limit reached"
     },
     {
         "Key": "FangKuaiReset",
@@ -17994,6 +18058,14 @@
     {
         "Key": "FangKuaiCollectionTitle",
         "Text": "Collectible has been upgraded"
+    },
+    {
+        "Key": "FangKuaiItemUseBtn",
+        "Text": "Use"
+    },
+    {
+        "Key": "FangKuaiItemUseLimitBtn",
+        "Text": "Limit Reached"
     },
     {
         "Key": "AnniverReviewAwarenessProcess",
@@ -23772,6 +23844,10 @@
         "Text": "Duplicate equipment in the team. Unable to deploy."
     },
     {
+        "Key": "TeamPrefabPartnerEquippedByOtherInPreset",
+        "Text": "Duplicate CUB in the team. Unable to deploy."
+    },
+    {
         "Key": "NecessaryResourcesNotDownloaded",
         "Text": "Required resources not downloaded"
     },
@@ -24084,6 +24160,18 @@
         "Text": "Fate Wishing Pool discounts: {0}/{1}"
     },
     {
+        "Key": "DrawLinkageSkipOpen",
+        "Text": "Closes in {0}"
+    },
+    {
+        "Key": "DrawLinkageSkipClose",
+        "Text": "Opens in {0}"
+    },
+    {
+        "Key": "DrawLinkageSkipUnlockTip",
+        "Text": "Starting Time: {0}"
+    },
+    {
         "Key": "PayWithLoginErrorTips",
         "Text": "Account information has expired. Please log in again."
     },
@@ -24389,7 +24477,7 @@
     },
     {
         "Key": "PassportObtain",
-        "Text": "Due to a cycle adjustment for this period's Tactical Assessment Manual, an Intel Value compensation has been issued to you."
+        "Text": "Due to an adjustment to the current Tactical Assessment Manual cycle, Intel Value has been granted as compensation."
     },
     {
         "Key": "ShopItemRoleTips",
@@ -24613,7 +24701,7 @@
     },
     {
         "Key": "EnvelopeGuessingDailyTaskSubTitle",
-        "Text": "Reset at 07:00 daily"
+        "Text": "Resets daily at 05:00 (UTC)"
     },
     {
         "Key": "EnvelopeGuessingDailyActivityRemainDays",
@@ -24677,7 +24765,7 @@
     },
     {
         "Key": "EnvelopeGuessingTaskButtonTomorrowRefresh",
-        "Text": "Refreshes Tomorrow"
+        "Text": "Resets Tomorrow"
     },
     {
         "Key": "EnvelopeGuessingTaskButtonArchived",
@@ -24701,11 +24789,11 @@
     },
     {
         "Key": "MusicPlayerListTitleBgm",
-        "Text": "BGM"
+        "Text": "Background Music"
     },
     {
         "Key": "MusicPlayerListTitleTotle",
-        "Text": "All Songs"
+        "Text": "All Tracks"
     },
     {
         "Key": "MusicPlayerTipLikeAddSuccess",
@@ -24733,15 +24821,15 @@
     },
     {
         "Key": "MusicPlayerErrorTipLikeAddAllBgm",
-        "Text": "Can't add. Background Music playlist is full."
+        "Text": "Can't add multiple tracks. Background Music is full."
     },
     {
         "Key": "MusicPlayerErrorTipLikeAddLimitMax",
-        "Text": "Favorites playlist is full."
+        "Text": "Favorites has reached its limit."
     },
     {
         "Key": "MusicPlayerErrorTipLikeRemove",
-        "Text": "This song isn't in Favorites."
+        "Text": "This track isn't in Favorites."
     },
     {
         "Key": "MusicPlayerErrorTipBgmAddRepeat",
@@ -24749,11 +24837,11 @@
     },
     {
         "Key": "MusicPlayerErrorTipBgmAddLimit",
-        "Text": "Background Music playlist is full."
+        "Text": "Background Music playlist has reached its limit."
     },
     {
         "Key": "MusicPlayerErrorTipBgmRemoveNoExit",
-        "Text": "This song isn't in Background Music."
+        "Text": "This track isn't in Background Music."
     },
     {
         "Key": "MusicPlayerErrorTipIndex2TopFaild",
@@ -24765,7 +24853,7 @@
     },
     {
         "Key": "MusicPlayerErrorTipLikeAddBgmNoNeed",
-        "Text": "No songs to add. Everything in Favorites is already in Background Music."
+        "Text": "No tracks to add. All Favorites are already in Background Music."
     },
     {
         "Key": "MusicPlayerMusicListSortTipOld2New",
@@ -24789,7 +24877,7 @@
     },
     {
         "Key": "MusicPlayerPlaylistTipNormal",
-        "Text": "Current Playlist: All Songs"
+        "Text": "Current Playlist: All Tracks"
     },
     {
         "Key": "MusicPlayerLoopTypeSingleLoop",
@@ -24813,10 +24901,714 @@
     },
     {
         "Key": "MusicPlayerConfirmBgmReset",
-        "Text": "Reset the background music list to its default state?"
+        "Text": "Restore the Background Music playlist to default?"
     },
     {
         "Key": "MusicPlayerOperationTooFrequentTip",
         "Text": "Action too frequent. Please try again later."
+    },
+    {
+        "Key": "MusicPlayerSPMusicStatueNormal",
+        "Text": "Current: Vocals"
+    },
+    {
+        "Key": "MusicPlayerSPMusicStatueGuitar",
+        "Text": "Current: Guitar"
+    },
+    {
+        "Key": "MusicPlayerSPMusicGetTip",
+        "Text": "Tap Kuroro in the [Neon Flash] scene to switch."
+    },
+    {
+        "Key": "TeamRecommendLeftSwitchTitle",
+        "Text": "Upgrade Target: {0}"
+    },
+    {
+        "Key": "TeamRecommendAwarenessResonanceTitleUp",
+        "Text": "{0} - Upper"
+    },
+    {
+        "Key": "TeamRecommendAwarenessResonanceTitleDown",
+        "Text": "{0} - Lower"
+    },
+    {
+        "Key": "AwarenessOneClickStrengthenTargetDesc",
+        "Text": "{0} Memories reach Lv.{1}"
+    },
+    {
+        "Key": "AwarenessOneClickStrengthenTips",
+        "Text": "Auto Upgrade will only select materials rated 4\u2605 or lower. 5\u2605 materials will not be selected."
+    },
+    {
+        "Key": "AwarenessOneClickStrengthenAwarenessStarTag",
+        "Text": "{0}\u2605 Memory"
+    },
+    {
+        "Key": "AwarenessOneClickChooseCostTips",
+        "Text": "After selecting an upgrade module, materials will be consumed automatically according to your chosen plan. Materials in your inventory will be used first (5\u2605 materials will never be consumed). If Auto Exchange is enabled, tokens will automatically be exchanged for any materials you are missing."
+    },
+    {
+        "Key": "AwarenessOneClickResonanceTimesDesc",
+        "Text": "Resonance Skill x{0}. Up to {1} Resonances."
+    },
+    {
+        "Key": "AwarenessOneClickResonanceTimesTips",
+        "Text": "1. This option sets the maximum number of Resonance attempts for each skill. Resonance stops once the selected target has been reached.\\n2. Selecting [Resonate Until All Targets Are Met] removes the attempt limit. Resonance will continue until all selected targets are met or you run out of materials.\\n3. You can tap Stop at any time during the process. Any unused materials will be returned."
+    },
+    {
+        "Key": "AwarenessOneClickResonanceTargetTimesDesc",
+        "Text": "Resonance Skill x{0}. Continue resonating until the target is reached."
+    },
+    {
+        "Key": "AwarenessOneClickResonanceTargetUpDesc",
+        "Text": "Upper - {0}"
+    },
+    {
+        "Key": "AwarenessOneClickResonanceTargetDownDesc",
+        "Text": "Lower - {0}"
+    },
+    {
+        "Key": "AwarenessOneClickResonanceTargetCombinedDesc",
+        "Text": "{0}, {1}"
+    },
+    {
+        "Key": "AwarenessOneClickResonanceSkillTypeAny",
+        "Text": "Any Skill"
+    },
+    {
+        "Key": "AwarenessOneClickResonanceSkillTypeAttack",
+        "Text": "Any Attack Skill"
+    },
+    {
+        "Key": "AwarenessOneClickResonanceSkillTypeAttackAttribute",
+        "Text": "Any ATK Stat"
+    },
+    {
+        "Key": "AwarenessOneClickResonanceSkillTypeTarget",
+        "Text": "Preset Skill"
+    },
+    {
+        "Key": "AwarenessOneClickResonanceTargetSettingPending",
+        "Text": "Target selection pending"
+    },
+    {
+        "Key": "AwarenessOneClickResonanceMaterialNotEnough",
+        "Text": "Insufficient Resonance materials"
+    },
+    {
+        "Key": "AwarenessOneClickResonanceMaterialSingleCostNotEnough",
+        "Text": "Insufficient materials for one use."
+    },
+    {
+        "Key": "AwarenessOneClickResonanceMaterialOwnedCount",
+        "Text": "<color=#000000>Owned</color>: {0}"
+    },
+    {
+        "Key": "AwarenessOneClickResonanceMaterialSelectedCount",
+        "Text": "<color=#000000>Selected</color>: {0}"
+    },
+    {
+        "Key": "AwarenessOneClickResonanceTargetNotSelected",
+        "Text": "Resonance target not selected."
+    },
+    {
+        "Key": "AwarenessOneClickResonanceTargetUpSchemeNotSelected",
+        "Text": "Target objective not selected."
+    },
+    {
+        "Key": "AwarenessOneClickResonanceTargetDownSchemeNotSelected",
+        "Text": "Target objective not selected."
+    },
+    {
+        "Key": "AwarenessOneClickResonanceMaterialNotSelected",
+        "Text": "Materials to consume not selected."
+    },
+    {
+        "Key": "AwarenessOneClickResonanceTimesNotSelected",
+        "Text": "Target Resonance count not selected."
+    },
+    {
+        "Key": "AwarenessOneClickResonanceTargetAchieved",
+        "Text": "Goal Completed"
+    },
+    {
+        "Key": "AwarenessOneClickResonanceTargetUpNotSelected",
+        "Text": "No upper Resonance target selected."
+    },
+    {
+        "Key": "AwarenessOneClickResonanceTargetDownNotSelected",
+        "Text": "No lower Resonance target selected."
+    },
+    {
+        "Key": "AwarenessOneClickAwakeTimesDesc",
+        "Text": "Hypertuned Resonance Skill x{0}"
+    },
+    {
+        "Key": "AwarenessOneClickAwakeNoSkillDesc",
+        "Text": "Hypertune is only available when Memory is at max level and Resonance is equipped."
+    },
+    {
+        "Key": "AwarenessOneClickAwakeNoSkillTitle",
+        "Text": "No Skills to Hypertune"
+    },
+    {
+        "Key": "AwarenessOneClickAwakeNoMaterialDesc",
+        "Text": "Insufficient {0}"
+    },
+    {
+        "Key": "AwarenessOneClickMaterialNotEnough",
+        "Text": "Not enough materials"
+    },
+    {
+        "Key": "AwarenessOneClickStrengthenLackBreakthroughMaterial",
+        "Text": "Insufficient Overclock materials."
+    },
+    {
+        "Key": "AwarenessOneClickStrengthenLackLevelUpMaterial",
+        "Text": "Insufficient upgrade materials."
+    },
+    {
+        "Key": "AwarenessOneClickStrengthenLackCoin",
+        "Text": "Insufficient Cogs."
+    },
+    {
+        "Key": "AwarenessOneClickAwakeProgressDesc",
+        "Text": "Hypertunable Skills {0}/{1}"
+    },
+    {
+        "Key": "AwarenessOneClickProgressAbort",
+        "Text": "Upgrade stopped. Remaining materials have been returned to Items."
+    },
+    {
+        "Key": "AwarenessOneClickResonanceProcessing",
+        "Text": "Resonating (Attempts: {0})"
+    },
+    {
+        "Key": "AwarenessOneClickConfirmContent",
+        "Text": "Use the selected materials for Quick Upgrade?"
+    },
+    {
+        "Key": "RoleCultureDoubleCheck",
+        "Text": "Use selected materials for Quick Upgrade?"
+    },
+    {
+        "Key": "RoleCultureHaveProgress",
+        "Text": "This character already has an upgrade in progress. Any materials spent on that upgrade won't be returned. Continue using {0}?"
+    },
+    {
+        "Key": "EquipResonanceSlotTitle",
+        "Text": "Resonance Slot {0}"
+    },
+    {
+        "Key": "TeamRecommendSetTargetSuccess",
+        "Text": "Goal set."
+    },
+    {
+        "Key": "TeamRecommendDeleteTargetSuccess",
+        "Text": "Target removed"
+    },
+    {
+        "Key": "TeamRecommendTargetFullyEquipped",
+        "Text": "This character already has this setup equipped and cannot be upgraded further."
+    },
+    {
+        "Key": "TeamRecommendResonanceSkillInvalid",
+        "Text": "Invalid Resonance Skill setup. Cannot use."
+    },
+    {
+        "Key": "TeamRecommendTargetLimitReached",
+        "Text": "You've reached the maximum number of upgrade targets. Go to the upgrade target screen to make changes?"
+    },
+    {
+        "Key": "TeamRecommendRoleTargetDetailDesc",
+        "Text": "Only the progression of the foundation modules in this config is calculated here. Additional upgrade modules (CUB evolution and CUB skills) are not included."
+    },
+    {
+        "Key": "RoleCultureUnitProcessingProgress",
+        "Text": "Upgrade in Progress ({0}/{1})"
+    },
+    {
+        "Key": "RoleCultureUnitProcessing",
+        "Text": "Upgrade in Progress"
+    },
+    {
+        "Key": "RoleCultureUnitPartiallyDone",
+        "Text": "Partially Completed ({0}/{1})"
+    },
+    {
+        "Key": "RoleCultureProgressTitle",
+        "Text": "Upgrade in Progress"
+    },
+    {
+        "Key": "RoleCultureItemNotEnough",
+        "Text": "Insufficient enhancement materials. Please reallocate your materials."
+    },
+    {
+        "Key": "RoleCultureProgressTitleDone",
+        "Text": "Upgrade Complete"
+    },
+    {
+        "Key": "RoleCultureUnitLevel",
+        "Text": "Level"
+    },
+    {
+        "Key": "RoleCultureUnitGrade",
+        "Text": "Promote"
+    },
+    {
+        "Key": "RoleCultureUnitSkill",
+        "Text": "Improve skill"
+    },
+    {
+        "Key": "RoleCultureUnitLevelTarget",
+        "Text": "Lv.{0}"
+    },
+    {
+        "Key": "RoleCultureUnitSkillTarget",
+        "Text": "Reach Skill Lv.{0}"
+    },
+    {
+        "Key": "RoleCultureProgressAbort",
+        "Text": "Upgrade stopped. Remaining materials have been returned to Items."
+    },
+    {
+        "Key": "RoleCultureUnitWaiting",
+        "Text": "Waiting"
+    },
+    {
+        "Key": "RoleCultureMaxGrade",
+        "Text": "Max Level:"
+    },
+    {
+        "Key": "RoleCultureStrengthen",
+        "Text": "Character Stat Boost"
+    },
+    {
+        "Key": "EquipOneClickCultureLevelTitle",
+        "Text": "Level & Overclock [Reach Weapon Lv.{0}]"
+    },
+    {
+        "Key": "EquipOneClickCultureResonanceTitle",
+        "Text": "Resonance [Resonate all specified skills]"
+    },
+    {
+        "Key": "EquipOneClickCultureOverrunTitle",
+        "Text": "Harmony [Unlock at Lv.{0} and bind {1}]"
+    },
+    {
+        "Key": "EquipOneClickCultureOneClick",
+        "Text": "Quick Upgrade"
+    },
+    {
+        "Key": "EquipWeaponOneClickUpgradePreview",
+        "Text": "Reach Weapon Lv.{0}"
+    },
+    {
+        "Key": "EquipWeaponOneClickResonancePreview",
+        "Text": "Resonate {0} Skills"
+    },
+    {
+        "Key": "EquipWeaponOneClickOverrunPreview",
+        "Text": "Activate Harmony Nodes: {0}/{1}"
+    },
+    {
+        "Key": "EquipWeaponOneClickOverrunRecommend",
+        "Text": "Recommended Node to Activate: {0}"
+    },
+    {
+        "Key": "EquipWeaponOneClickMaterialNotEnough",
+        "Text": "Insufficient materials"
+    },
+    {
+        "Key": "EquipWeaponOneClickDesc",
+        "Text": "After selecting an upgrade module, materials will be consumed automatically according to your chosen plan. Materials in your inventory will be used first (5\u2605 materials will never be consumed). If Auto Exchange is enabled, tokens will automatically be exchanged for any materials you are missing."
+    },
+    {
+        "Key": "RoleCultureDetail",
+        "Text": "Each skill has its own level limit and cannot be upgraded beyond that limit."
+    },
+    {
+        "Key": "RoleCultureGrade",
+        "Text": "Lv. {0}"
+    },
+    {
+        "Key": "EquipWeaponCultureUnitOverrun",
+        "Text": "Harmony"
+    },
+    {
+        "Key": "EquipWeaponCultureUnitOverrunTarget",
+        "Text": "Activate Harmony Node {0}"
+    },
+    {
+        "Key": "EquipOneClickCultureMaterialNotEnough",
+        "Text": "Not enough materials"
+    },
+    {
+        "Key": "EquipOneClickAutoSettingSaved",
+        "Text": "Settings saved"
+    },
+    {
+        "Key": "TransfiniteTowerHelp",
+        "Text": "\u8d85\u9891\u6f14\u7b97\u5e2e\u52a9"
+    },
+    {
+        "Key": "TransfiniteTowerStageHelp",
+        "Text": "\u8d85\u9891\u6f14\u7b97\u9009\u5173\u5e2e\u52a9"
+    },
+    {
+        "Key": "TransfiniteTowerTaskProgress",
+        "Text": "Mission ({0}/{1})"
+    },
+    {
+        "Key": "TransfiniteTowerActivityEnd",
+        "Text": "Event is over"
+    },
+    {
+        "Key": "TransfiniteTowerLastSettleTitle",
+        "Text": "\u6700\u4f73\u8868\u73b0"
+    },
+    {
+        "Key": "TransfiniteTowerChangeMvpTip",
+        "Text": "[MVP selection can be changed]"
+    },
+    {
+        "Key": "TransfiniteTowerSwitchMvpSuccessTip",
+        "Text": "[Changed successfully]"
+    },
+    {
+        "Key": "TransfiniteTowerEarlySettlementTitle",
+        "Text": "Early Tally"
+    },
+    {
+        "Key": "TransfiniteTowerEarlySettlementContent",
+        "Text": "\u662f\u5426\u4ee5\u76ee\u524d\u6f14\u7b97\u8fdb\u5ea6\u8fdb\u884c\u7ed3\u7b97\uff0c\u7ed3\u7b97\u540e\u5f53\u524d\u6f14\u7b97\u53ea\u80fd\u4ece\u5934\u5f00\u59cb\u3002"
+    },
+    {
+        "Key": "TransfiniteTowerRollbackTitle",
+        "Text": "Data Rollback"
+    },
+    {
+        "Key": "TransfiniteTowerRollbackContent",
+        "Text": "\u662f\u5426\u56de\u6863\u81f3\u8be5\u56de\u6863\u70b9\uff1f\u56de\u6863\u540e\u5173\u5361\u5c06\u91cd\u7f6e\u5e76\u8fd4\u8fd8\u7b97\u529b\u914d\u989d\u6d88\u8017"
+    },
+    {
+        "Key": "TransfiniteTowerRollbackSuccessTip",
+        "Text": "\u3010\u56de\u6863\u6210\u529f\u3011"
+    },
+    {
+        "Key": "TransfiniteTowerResetProgressTip",
+        "Text": "[Stage reset]"
+    },
+    {
+        "Key": "TransfiniteTowerPrevStageNotPassTip",
+        "Text": "[Complete the previous stage first]"
+    },
+    {
+        "Key": "TransfiniteTowerTowerLockedTip",
+        "Text": "[Not yet unlocked]"
+    },
+    {
+        "Key": "TransfiniteTowerBattlePrevNotPass",
+        "Text": "Previous floor not cleared"
+    },
+    {
+        "Key": "TransfiniteTowerBattleCompleted",
+        "Text": "Mission complete"
+    },
+    {
+        "Key": "TransfiniteTowerBattleRechallenge",
+        "Text": "Try Again"
+    },
+    {
+        "Key": "TransfiniteTowerBattleEnergyNotEnough",
+        "Text": "\u3010\u6210\u5458\u7b97\u529b\u4e0d\u8db3\u3011"
+    },
+    {
+        "Key": "TransfiniteTowerBattleNeedLeader",
+        "Text": "\u3010\u7f3a\u5c11\u8d85\u9891\u6838\u5fc3\u3011"
+    },
+    {
+        "Key": "TransfiniteTowerBattleForbidLeader",
+        "Text": "\u3010\u65e0\u6cd5\u4e0a\u9635\u8d85\u9891\u6838\u5fc3\u3011"
+    },
+    {
+        "Key": "TransfiniteTowerSettleNextTrait",
+        "Text": "\u3010\u4e0b\u4e00\u5c42\u4e3a\u3010\u8150\u8680\u3011\u73af\u5883\u3011"
+    },
+    {
+        "Key": "TransfiniteTowerSettleNextTeamChange",
+        "Text": "\u3010\u4e0b\u4e00\u5c42\u65e0\u6cd5\u4e0a\u9635\u3010\u8d85\u9891\u6838\u5fc3\u3011\u3011"
+    },
+    {
+        "Key": "TransfiniteTowerSettleSaveConfirm",
+        "Text": "\u662f\u5426\u4fdd\u5b58\u672c\u5173\u8bb0\u5f55\uff1f\u4fdd\u5b58\u540e\u5c06\u6263\u9664\u51fa\u6218\u6210\u5458\u7b97\u529b\u914d\u989d\u3002"
+    },
+    {
+        "Key": "TransfiniteTowerFormationAtLeast",
+        "Text": "\u4ec5\u9650{0}\u4f4d\u8d85\u9891\u6838\u5fc3\u4e0a\u9635"
+    },
+    {
+        "Key": "TransfiniteTowerFormationCan",
+        "Text": "\u53ef\u4ee5\u4e0a\u9635{0}\u4f4d\u8d85\u9891\u6838\u5fc3"
+    },
+    {
+        "Key": "TransfiniteTowerFormationForbid",
+        "Text": "\u4e0d\u53ef\u4e0a\u9635\u8d85\u9891\u6838\u5fc3"
+    },
+    {
+        "Key": "TransfiniteTowerSettlePopupTitle",
+        "Text": "Result Calculation - {0}"
+    },
+    {
+        "Key": "TransfiniteTowerTowerUnlockTime",
+        "Text": "{0} unlocked"
+    },
+    {
+        "Key": "TransfiniteTowerRankUnlockTip",
+        "Text": "\u3010\u5cf0\u503c\u6392\u884c\u5c06\u4e8e {0} \u5f00\u542f\u3011"
+    },
+    {
+        "Key": "TransfiniteTowerRankUnlockCondition",
+        "Text": "\u901a\u5173\u57fa\u51c6\u6d4b\u8bd5\u540e\u89e3\u9501"
+    },
+    {
+        "Key": "TransfiniteTowerNeedResetTip",
+        "Text": "[Reset your progress first]"
+    },
+    {
+        "Key": "TransfiniteTowerBattleLeaderTooMany",
+        "Text": "\u3010\u6700\u591a\u4e0a\u9635{0}\u4f4d\u8d85\u9891\u6838\u5fc3\u3011"
+    },
+    {
+        "Key": "TransfiniteTowerRollbackHigherActive",
+        "Text": "\u3010\u5df2\u6fc0\u6d3b\u66f4\u9ad8\u5c42\u7684\u6570\u636e\u56de\u6863\u70b9\u3011"
+    },
+    {
+        "Key": "TransfiniteTowerRollbackNotReached",
+        "Text": "[Clear this floor first]"
+    },
+    {
+        "Key": "TransfiniteTowerBattlePrepare",
+        "Text": "Battle Preparations"
+    },
+    {
+        "Key": "TransfiniteTowerNotRanked",
+        "Text": "Out of the ranking"
+    },
+    {
+        "Key": "TransfiniteTowerRankNotUpdated",
+        "Text": "Not Updated"
+    },
+    {
+        "Key": "TransfiniteTowerRankPercent",
+        "Text": "Top {0}%"
+    },
+    {
+        "Key": "WeaponOverrun1",
+        "Text": "\u2160"
+    },
+    {
+        "Key": "WeaponOverrun7",
+        "Text": "II-5"
+    },
+    {
+        "Key": "RoleExchangeShopTips",
+        "Text": "{0} Exchange"
+    },
+    {
+        "Key": "EquipWeaponOneClickBind",
+        "Text": "Bind Memory Set"
+    },
+    {
+        "Key": "TransfiniteTowerReset",
+        "Text": "Reset progress?"
+    },
+    {
+        "Key": "TransfiniteTowerSettlementTitle",
+        "Text": "Calculate All Results"
+    },
+    {
+        "Key": "TransfiniteTowerSettlementContent",
+        "Text": "\u662f\u5426\u4ee5\u5f53\u524d\u6f14\u7b97\u8fdb\u5ea6\u8fdb\u884c\u7ed3\u7b97\uff0c\u7ed3\u7b97\u540e\u5f53\u524d\u6f14\u7b97\u53ea\u80fd\u4ece\u5934\u5f00\u59cb\u3002"
+    },
+    {
+        "Key": "EquipOneClickCultureStar",
+        "Text": "{0}\u2605 Weapon"
+    },
+    {
+        "Key": "EquipOneClickCultureComplete",
+        "Text": "Complete"
+    },
+    {
+        "Key": "TransfiniteTowerBattleEnergyEmptyKick",
+        "Text": "Character removed from the team due to insufficient Computing Power."
+    },
+    {
+        "Key": "PartnerOneKeyLevelUpTitle",
+        "Text": "Level & Overclock"
+    },
+    {
+        "Key": "PartnerOneKeyLevelUpPreview",
+        "Text": "Reach CUB Lv.{0}"
+    },
+    {
+        "Key": "PartnerOneKeyStarUpTitle",
+        "Text": "Evolve"
+    },
+    {
+        "Key": "PartnerOneKeyStarUpPreview",
+        "Text": "Evolve CUB to {0}"
+    },
+    {
+        "Key": "PartnerOneKeySkillUpTitle",
+        "Text": "Skill"
+    },
+    {
+        "Key": "PartnerOneKeySkillUpPreview",
+        "Text": "Avg. Equipped Skill Level: Lv.{0}"
+    },
+    {
+        "Key": "PartnerOneKeySkillPlan",
+        "Text": "Active Skills: {0}/1; Passive Skills: {1}/{2}"
+    },
+    {
+        "Key": "PartnerOneKeyNotSelected",
+        "Text": "Not selected"
+    },
+    {
+        "Key": "PartnerOneKeySelectCostMaterial",
+        "Text": "Select Materials to Consume"
+    },
+    {
+        "Key": "PartnerOneKeyCommitConfirm",
+        "Text": "Use the selected materials for Quick Upgrade?"
+    },
+    {
+        "Key": "PartnerOneKeyNothingToCulture",
+        "Text": "\u6750\u6599\u4e0d\u8db3\uff0c\u65e0\u6cd5\u4f7f\u7528"
+    },
+    {
+        "Key": "PartnerOneKeyBubbleDetail",
+        "Text": "After selecting an upgrade module, materials will be consumed automatically according to your chosen plan. Materials in your inventory will be used first (5\u2605 materials will never be consumed). If Auto Exchange is enabled, tokens will automatically be exchanged for any materials you are missing."
+    },
+    {
+        "Key": "PartnerOneKeySelectPartnerTip",
+        "Text": "Select a CUB"
+    },
+    {
+        "Key": "PartnerOneKeySelectCountFull",
+        "Text": "Selection limit reached"
+    },
+    {
+        "Key": "PartnerOneKeyProgressTitleProcessing",
+        "Text": "Upgrading..."
+    },
+    {
+        "Key": "PartnerOneKeyProgressTitleFinish",
+        "Text": "Upgrade Complete"
+    },
+    {
+        "Key": "PartnerOneKeyProgressTitleInterrupt",
+        "Text": "Upgrade Interrupted"
+    },
+    {
+        "Key": "PartnerOneKeyUnitLevelUp",
+        "Text": "Level Up"
+    },
+    {
+        "Key": "PartnerOneKeyUnitStarUp",
+        "Text": "Star Up"
+    },
+    {
+        "Key": "PartnerOneKeyUnitSkill",
+        "Text": "Skill"
+    },
+    {
+        "Key": "PartnerOneKeyPreviewLevelUp",
+        "Text": "Reach Lv.{0}"
+    },
+    {
+        "Key": "PartnerOneKeyPreviewStarUp",
+        "Text": "Upgrade Rank to {0}"
+    },
+    {
+        "Key": "PartnerOneKeyPreviewSkill",
+        "Text": "\u6280\u80fd\u5e73\u5747\u7b49\u7ea7LV{0}"
+    },
+    {
+        "Key": "PartnerOneKeyStatusWaiting",
+        "Text": "Waiting"
+    },
+    {
+        "Key": "PartnerOneKeyProcessingLevelUp",
+        "Text": "Upgrading"
+    },
+    {
+        "Key": "PartnerOneKeyProcessingStarUp",
+        "Text": "Starring Up..."
+    },
+    {
+        "Key": "PartnerOneKeyProcessingSkillUp",
+        "Text": "Upgrading Skill..."
+    },
+    {
+        "Key": "PartnerOneKeyProcessingDefault",
+        "Text": "Upgrade in Progress"
+    },
+    {
+        "Key": "PartnerOneKeyDetailLevelTitle",
+        "Text": "Level & Overclock [CUB Reaches Lv.{0}]"
+    },
+    {
+        "Key": "PartnerOneKeyDetailStarTitle",
+        "Text": "Evolve [Rank Reaches {0}]"
+    },
+    {
+        "Key": "PartnerOneKeyDetailSkillTitle",
+        "Text": "Skill [All Equipped Skills at Max Level]"
+    },
+    {
+        "Key": "TransfiniteTowerRankCloseTip",
+        "Text": "\u3010\u5cf0\u503c\u6392\u884c\u5df2\u5173\u95ed\u3011"
+    },
+    {
+        "Key": "TransfiniteTowerTowerClosed",
+        "Text": "\u5f53\u524d\u6f14\u7b97\u5df2\u5173\u95ed"
+    },
+    {
+        "Key": "TransfiniteTowerRankTime",
+        "Text": "\u7528\u65f6\u5c11\u4e8e<color=#5AC8FF>{0}</color>\u5373\u53ef\u8ba1\u5165\u5cf0\u503c\u6392\u884c\uff0c\u6570\u636e\u6839\u636e\u6392\u884c\u60c5\u51b5\u5b9e\u65f6\u66f4\u65b0"
+    },
+    {
+        "Key": "TransfiniteTowerRankNoTime",
+        "Text": "\u5b8c\u6210\u5cf0\u503c\u6f14\u7b97\u5168\u90e8\u5173\u5361\u624d\u53ef\u8ba1\u5165\u5cf0\u503c\u6392\u884c"
+    },
+    {
+        "Key": "ItemChoose",
+        "Text": "Picked"
+    },
+    {
+        "Key": "EquipOneClickAutoSettingNoChange",
+        "Text": "\u5f53\u524d\u6ca1\u6709\u6539\u52a8\u4fe1\u606f"
+    },
+    {
+        "Key": "TransfiniteTowerTowerLockConditionNotMatch",
+        "Text": "\u901a\u5173\u57fa\u51c6\u6d4b\u8bd5\u5f00\u542f"
+    },
+    {
+        "Key": "FightGetClickOperationRecord",
+        "Text": "\u64cd\u4f5cId\uff1a{0}"
+    },
+    {
+        "Key": "PartnerOneKeyLackCoin",
+        "Text": "Not enough Cogs"
+    },
+    {
+        "Key": "PartnerOneKeyLackLevelUpMaterial",
+        "Text": "\u5347\u7ea7\u7a81\u7834\u6750\u6599\u4e0d\u8db3"
+    },
+    {
+        "Key": "PartnerOneKeyLackSkillUpMaterial",
+        "Text": "\u6280\u80fd\u5347\u7ea7\u6750\u6599\u4e0d\u8db3"
     }
 ]

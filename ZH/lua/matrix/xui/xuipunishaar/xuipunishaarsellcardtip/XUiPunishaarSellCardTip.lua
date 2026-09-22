@@ -48,26 +48,26 @@ function XUiPunishaarSellCardTip:InitChildUis()
 end
 
 function XUiPunishaarSellCardTip:OnBtnSkipRewardClick()
-    -- 放弃暂存卡：gc 走 HandlePendingReward(false)→_FinishRewardPlacement（关本弹窗+ExitNode）
-    local gc = self._Control and self._Control.GameControl
-    if gc then
-        gc:AbandonPendingReward()
+    -- 放弃暂存卡：gameControl 走 HandlePendingReward(false)→_FinishRewardPlacement（关本弹窗+ExitNode）
+    local gameControl = self._Control and self._Control.GameControl
+    if gameControl then
+        gameControl:AbandonPendingReward()
     end
 end
 
 --- MasterCardChange 回调（RewardFull 模式）：卖/弃后 UpdateMasterCardByNotify 已更新 Model。
---- 刷背包视图（显腾位后状态）+ 触发 gc:TryAutoPlacePendingReward 自动找位放置（空槽充足即入背包）。
+--- 刷背包视图（显腾位后状态）+ 触发 gameControl:TryAutoPlacePendingReward 自动找位放置（空槽充足即入背包）。
 function XUiPunishaarSellCardTip:_OnMasterCardChange()
     if self._ComBottomBag then
         self._ComBottomBag:Refresh()                    -- 刷战斗区(FightArea 卡列表)
         self._ComBottomBag:RefreshBagLayoutIfShow()     -- 刷暂存区(Bag _BagLayout,若展开)
     end
-    local gc = self._Control and self._Control.GameControl
+    local gameControl = self._Control and self._Control.GameControl
     -- 仅在主卡保留环节活跃 + 无放置在途时(丢弃→放置链路),尝试放置 + 弹丢弃 tip。
     -- 放置在途(_RewardHandling=true)→ 此 MasterCardChange 来自放置后服务端回流(非玩家丢弃),
     -- 不弹丢弃 tip(避免顶替放置成功 tip);流程结束(_RewardPlacementActive=false)同仅刷背包
-    if gc and gc:IsRewardPlacementActive() and not gc:IsRewardHandling() then
-        local placed = gc:TryAutoPlacePendingReward()
+    if gameControl and gameControl:IsRewardPlacementActive() and not gameControl:IsRewardHandling() then
+        local placed = gameControl:TryAutoPlacePendingReward()
         if not placed then
             local tip = XMVCA.XPunishaar:GetClientStringByKey("DiscardMasterCardSuccess")
             if not string.IsNilOrEmpty(tip) then
@@ -79,9 +79,9 @@ end
 
 --- 取消选择：退出 PickingHost（清 ctx + PickHostChange(false) + Close 弹窗 + FightMain 还原）#69
 function XUiPunishaarSellCardTip:OnBtnCancelClick()
-    local gc = self._Control and self._Control.GameControl
-    if gc and gc:IsPickingHost() then
-        gc:ExitPickHost()  -- 内部 XLuaUiManager.Close("UiPunishaarSellCardTip") 关弹窗
+    local gameControl = self._Control and self._Control.GameControl
+    if gameControl and gameControl:IsPickingHost() then
+        gameControl:ExitPickHost()  -- 内部 XLuaUiManager.Close("UiPunishaarSellCardTip") 关弹窗
     end
 end
 
@@ -91,11 +91,11 @@ function XUiPunishaarSellCardTip:ShowMainCardTips(data, posUi)
     if not self._CardTipsPanelRoot then
         return
     end
-    local gc = self._Control and self._Control.GameControl
-    local isPickingHost = gc and gc:IsPickingHost()
+    local gameControl = self._Control and self._Control.GameControl
+    local isPickingHost = gameControl and gameControl:IsPickingHost()
     -- PickingHost 期间置灰主卡（不能装配）不展开 B2（禁止点击响应）#69
     if isPickingHost and data and data.TemplateId ~= nil then
-        if not gc:CanMountSubCardOnMaster(gc:GetPickingSubCardId(), data) then
+        if not gameControl:CanMountSubCardOnMaster(gameControl:GetPickingSubCardId(), data) then
             return
         end
     end
@@ -105,8 +105,8 @@ function XUiPunishaarSellCardTip:ShowMainCardTips(data, posUi)
         local hasSub = data.SubCardId and data.SubCardId ~= 0
         local mode = hasSub and 3 or 4  -- BuyReplace=3 / BuyPlace=4，对应 XUiPunishaarSubCardTips.OperationMode
         self._CardTipsPanelRoot:ShowSubCardNested({
-            CardId = gc:GetPickingSubCardId(),
-            GoodsIndex = gc:GetPickingGoodsIndex(),
+            CardId = gameControl:GetPickingSubCardId(),
+            GoodsIndex = gameControl:GetPickingGoodsIndex(),
             operationMode = mode,
             masterCard = data,
         }, posUi)
@@ -125,13 +125,13 @@ function XUiPunishaarSellCardTip:_OnSubCardClick()
     if not self._CardTipsPanelRoot then
         return
     end
-    local gc = self._Control and self._Control.GameControl
-    if not gc or not gc:IsPickingHost() then
+    local gameControl = self._Control and self._Control.GameControl
+    if not gameControl or not gameControl:IsPickingHost() then
         return
     end
     self._CardTipsPanelRoot:ShowSubCardNested({
-        CardId = gc:GetPickingSubCardId(),
-        GoodsIndex = gc:GetPickingGoodsIndex(),
+        CardId = gameControl:GetPickingSubCardId(),
+        GoodsIndex = gameControl:GetPickingGoodsIndex(),
         operationMode = 0, -- OperationMode.None
     })
     -- B1 单独 sub（无 main）：ShowSubCardNested 不显 BtnClose（设计是 main 内 sub），需手动显供关闭
@@ -144,15 +144,15 @@ end
 
 function XUiPunishaarSellCardTip:OnStart(data)
     self:Refresh(data)
-    -- RewardFull：订阅 MasterCardChange，卖/弃腾位后刷背包 + 触发 gc 自动找位放置
+    -- RewardFull：订阅 MasterCardChange，卖/弃腾位后刷背包 + 触发 gameControl 自动找位放置
     if data and data.mode == "RewardFull" then
-        XEventManager.AddEventListener(XEventId.EVENT_PUNISHAAR_MASTER_CARD_CHANGE, self._OnMasterCardChange, self)
+        XMVCA.XPunishaar:AddEventListener(XMVCA.XPunishaar.EventIds.EVENT_PUNISHAAR_INNER_MASTER_CARD_CHANGE, self._OnMasterCardChange, self)
         -- 开启即重检一次：重连/重进场景下背包可能本就有空位（非双区满），直接自动放入（空槽充足自动入背包），
         -- 避免玩家卡在无放置动作的界面。双区满则 _FindPlacementForDirectBuy 返 nil 不动作，留玩家卖/弃腾位。
-        -- _EnterManualPlacement 已先置 gc 流程态；HandlePendingReward 异步，Close 在响应 cb（非 mid-OnStart）。
-        local gc = self._Control and self._Control.GameControl
-        if gc then
-            gc:TryAutoPlacePendingReward()
+        -- _EnterManualPlacement 已先置 gameControl 流程态；HandlePendingReward 异步，Close 在响应 cb（非 mid-OnStart）。
+        local gameControl = self._Control and self._Control.GameControl
+        if gameControl then
+            gameControl:TryAutoPlacePendingReward()
         end
     end
 end
@@ -209,9 +209,9 @@ function XUiPunishaarSellCardTip:Refresh(data)
         self._ComBottomBag:Refresh()
         self._ComBottomBag:OpenBagWithLock()
         -- PickingHost 期间弹窗内主卡置灰（不能装配副卡的 Disable 遮罩）#69
-        local gc = self._Control and self._Control.GameControl
-        if gc and gc:IsPickingHost() then
-            self._ComBottomBag:RefreshHostHintDisable(gc:GetPickingSubCardId())
+        local gameControl = self._Control and self._Control.GameControl
+        if gameControl and gameControl:IsPickingHost() then
+            self._ComBottomBag:RefreshHostHintDisable(gameControl:GetPickingSubCardId())
         end
     end
 end
@@ -220,7 +220,7 @@ function XUiPunishaarSellCardTip:OnEnable()
 end
 
 function XUiPunishaarSellCardTip:OnDisable()
-    XEventManager.RemoveEventListener(XEventId.EVENT_PUNISHAAR_MASTER_CARD_CHANGE, self._OnMasterCardChange, self)
+    XMVCA.XPunishaar:RemoveEventListener(XMVCA.XPunishaar.EventIds.EVENT_PUNISHAAR_INNER_MASTER_CARD_CHANGE, self._OnMasterCardChange, self)
     -- 不在异常关闭（断网重连/闪退/Esc）时默认放弃：玩家未主动点 BtnSkipReward 前，暂存卡应保留，
     -- 由重连路径（AutoPassthroughEvent RewardReplace→_EnterManualPlacement）重开 SellCardTip 让玩家决断。
     -- 仅 BtnSkipReward（放弃）/自动放置走 HandlePendingReward(false/true)→_FinishRewardPlacement 显式收尾。

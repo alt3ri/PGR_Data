@@ -44,6 +44,7 @@ function XCharacterAgency:InitEvent()
     self:AddAgencyEvent(XEventId.EVENT_CHARACTER_SKILL_UP, self.RemoveTempCharactersActiveGeneralSkillIdListDic, self)
     self:AddAgencyEvent(XEventId.EVENT_CHARACTER_ENHANCESKILL_UNLOCK, self.RemoveTempCharactersActiveGeneralSkillIdListDic, self)
     self:AddAgencyEvent(XEventId.EVENT_CHARACTER_ENHANCESKILL_UP, self.RemoveTempCharactersActiveGeneralSkillIdListDic, self)
+    self:AddAgencyEvent(XEventId.EVENT_CHARACTER_EXHIBITION_REFRESH, self.CheckAndUnlockExhibitionLiberationSkill, self)
 end
 
 function XCharacterAgency:RemoveEvent()
@@ -51,6 +52,7 @@ function XCharacterAgency:RemoveEvent()
     self:RemoveAgencyEvent(XEventId.EVENT_CHARACTER_SKILL_UP, self.RemoveTempCharactersActiveGeneralSkillIdListDic, self)
     self:RemoveAgencyEvent(XEventId.EVENT_CHARACTER_ENHANCESKILL_UNLOCK, self.RemoveTempCharactersActiveGeneralSkillIdListDic, self)
     self:RemoveAgencyEvent(XEventId.EVENT_CHARACTER_ENHANCESKILL_UP, self.RemoveTempCharactersActiveGeneralSkillIdListDic, self)
+    self:RemoveAgencyEvent(XEventId.EVENT_CHARACTER_EXHIBITION_REFRESH, self.CheckAndUnlockExhibitionLiberationSkill, self)
 end
 
 ----------public start----------
@@ -1615,6 +1617,29 @@ function XCharacterAgency:UnlockMaxLiberationSkill(characterId)
         if not skillLevel or skillLevel <= 0 then
             self:UnlockSubSkill(nil, characterId, nil, skillGroupId)
         end
+    end
+end
+
+-- 4.7 卡列(1071005)终阶解放技能因配置缺失未发放，进展览数据后补发一次
+function XCharacterAgency:CheckAndUnlockExhibitionLiberationSkill()
+    local characterId = 1071005
+    local skillGroupId = 1075270
+    if not self:IsOwnCharacter(characterId) then
+        return
+    end
+
+    if not XDataCenter.ExhibitionManager.CheckCharacterGraduation(characterId) then
+        return
+    end
+
+    local character = self._Model.OwnCharacters[characterId]
+    if not character then
+        return
+    end
+
+    local skillLevel = character:GetSkillLevel(skillGroupId)
+    if not skillLevel or skillLevel <= 0 then
+        self:UnlockSubSkill(nil, characterId, nil, skillGroupId)
     end
 end
 
@@ -4864,6 +4889,7 @@ end
 
 --- 打开一键培养主界面（先预拉取自动兑换涉及的商店数据，避免兑换计算报错）
 function XCharacterAgency:OpenUiRoleCultureDetailMain(characterId)
+    CS.XRecord.Record("1000007", "EnterRoleCultureDetailMain")
     local allShopIds = { XShopManager.MaterialShopId, XShopManager.EnhanceShopId, XShopManager.UniqueShopId }
     --先拉商店基础信息(含 ConditionIds),才能判断玩家是否满足商店开放条件
     XShopManager.GetBaseInfo(function()

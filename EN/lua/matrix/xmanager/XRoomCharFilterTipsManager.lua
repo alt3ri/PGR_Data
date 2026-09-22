@@ -53,9 +53,9 @@ XRoomCharFilterTipsManagerCreator = function()
             return isSort
         end
         
-        local EquipGuideSort = function(idA, idB, isAscendOrder) 
-            local isA = XDataCenter.EquipGuideManager.IsEquipGuideCharacter(idA)
-            local isB = XDataCenter.EquipGuideManager.IsEquipGuideCharacter(idB)
+        local TeamRecommendSort = function(idA, idB, isAscendOrder)
+            local isA = XMVCA.XTeamRecommend:GetServerCharacterTarget(idA) ~= nil
+            local isB = XMVCA.XTeamRecommend:GetServerCharacterTarget(idB) ~= nil
             local isSort = false
             if isA ~= isB then
                 isSort = true
@@ -66,8 +66,8 @@ XRoomCharFilterTipsManagerCreator = function()
 
         SortFunction[XRoomCharFilterTipsConfigs.EnumSortTag.Default] = function(idA, idB, isAscendOrder, alreadySortTag, isSortAbility)
             local isSort, sortResult
-            if alreadySortTag ~= XRoomCharFilterTipsConfigs.EnumSortTag.EquipGuide then
-                isSort, sortResult = EquipGuideSort(idA, idB, isAscendOrder)
+            if alreadySortTag ~= XRoomCharFilterTipsConfigs.EnumSortTag.TeamRecommend then
+                isSort, sortResult = TeamRecommendSort(idA, idB, isAscendOrder)
                 if isSort then
                     return sortResult
                 end

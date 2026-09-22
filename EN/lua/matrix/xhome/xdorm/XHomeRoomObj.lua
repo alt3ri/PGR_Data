@@ -385,7 +385,7 @@ function XHomeRoomObj:UpdateFurnitureData(oldFurnitureIds, newFurnitureIds)
     for _, id in pairs(oldFurnitureIds) do
         local obj = dict[id]
         if obj then
-            self:RemoveFurniture(obj)
+            obj:Storage(false)
             --self.Data:RemoveFurniture(obj.Data.Id, obj.CfgId)
         end
     end

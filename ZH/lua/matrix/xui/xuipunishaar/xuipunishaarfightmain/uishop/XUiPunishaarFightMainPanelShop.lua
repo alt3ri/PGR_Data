@@ -46,12 +46,12 @@ end
 
 function XUiPunishaarFightMainPanelShop:OnEnable()
     XUiPunishaarFightMainPanelStateBase.OnEnable(self)  -- BuySuccess/RequestCustody 订阅
-    local gc = self._Control.GameControl
-    gc:AddEventListener(gc.ShopEventId.PickHostChange, self._OnPickHostChange, self)
+    local gameControl = self._Control.GameControl
+    gameControl:AddEventListener(gameControl.EventId.Shop.PickHostChange, self._OnPickHostChange, self)
     -- 副卡拖拽收起商店栏+展开背包（互斥对称）：拖起副卡 _OnSubCardDragBegin（OpenBag 触发互斥收商店栏），
     -- 归位 DragSettled→CloseBag（互斥展商店栏）；购买走异步 cb=等 cb 展开，取消/无效走同步=松手即展开 #副卡拖拽收起展开
-    gc:AddEventListener(gc.DragEventId.SubCardHostHintBegin, self._OnSubCardDragBegin, self)
-    gc:AddEventListener(gc.DragEventId.DragSettled, self._OnDragSettled, self)
+    gameControl:AddEventListener(gameControl.EventId.Drag.SubCardHostHintBegin, self._OnSubCardDragBegin, self)
+    gameControl:AddEventListener(gameControl.EventId.Drag.DragSettled, self._OnDragSettled, self)
     -- 进态刷背包红点（商店商品就绪后判背包暂存区可升级卡）#背包红点
     if self.BottomBag then
         self.BottomBag:RefreshBagReddot()
@@ -60,9 +60,10 @@ function XUiPunishaarFightMainPanelShop:OnEnable()
     if self.TopShop and not self.TopShop:IsFolded() then
         self:_PlayShopAnimEnable()
     end
-    -- 兜底恢复：副卡拖拽收起态残留（PanelShop 在异步购买 cb 等待期被切走，cb→DragSettled 收不到致 _FoldedBySubCardDrag 残留），
-    -- 重入商店态强制还原（收背包+展商店栏）；正常进入 _FoldedBySubCardDrag=nil 跳过 #副卡拖拽收起展开
-    if self._FoldedBySubCardDrag then
+    -- 兜底恢复：进商店态强制还原（背包收+商店栏展），按实际状态判而非成因标志
+    -- 覆盖所有折叠/展开残留：①副卡拖拽 cb 丢失 _FoldedBySubCardDrag 残留 ②手动展开背包(BtnBag→互斥 FoldTopShop)后离开商店，
+    -- 下个商店进入时态残留致报错 ③手动折叠商店栏(BtnFoldUp)后离开 ④切态残留。IsFolded 实际态判覆盖全部成因 #商店进入状态重置
+    if self._FoldedBySubCardDrag or (self.TopShop and self.TopShop:IsFolded()) then
         self._FoldedBySubCardDrag = false
         if self.BottomBag then
             self.BottomBag:CloseBag()  -- 互斥展商店栏（幂等，bag 已收也无害）
@@ -75,10 +76,18 @@ end
 
 function XUiPunishaarFightMainPanelShop:OnDisable()
     XUiPunishaarFightMainPanelStateBase.OnDisable(self)
-    local gc = self._Control.GameControl
-    gc:RemoveEventListener(gc.ShopEventId.PickHostChange, self._OnPickHostChange, self)
-    gc:RemoveEventListener(gc.DragEventId.SubCardHostHintBegin, self._OnSubCardDragBegin, self)
-    gc:RemoveEventListener(gc.DragEventId.DragSettled, self._OnDragSettled, self)
+    local gameControl = self._Control.GameControl
+    gameControl:RemoveEventListener(gameControl.EventId.Shop.PickHostChange, self._OnPickHostChange, self)
+    gameControl:RemoveEventListener(gameControl.EventId.Drag.SubCardHostHintBegin, self._OnSubCardDragBegin, self)
+    gameControl:RemoveEventListener(gameControl.EventId.Drag.DragSettled, self._OnDragSettled, self)
+    -- 离开商店(PanelShop Close)前播展开动画逆转 PanelTopShop.activeSelf，防下个商店 re-enable 报错
+    -- PanelTopShop.activeSelf 由动画(PanelShopDisable/Enable Timeline GameObject Toggle)控制，非逻辑显隐；
+    -- 折叠态离开时 disable 动画留 activeSelf=false，re-enter 时 EnableChildNodes→TopShop:OnEnableUi→_CheckUIActive（XUiNode:133，在 OnEnable 之前）
+    -- 发现 Open 态但 activeInHierarchy=false 报错；逻辑 SetActiveEx 被动画覆盖无效，须播 enable 动画逆转 toggle。
+    -- 不调 ExpandTopShop（含 Refresh，会在 activeSelf=false 的 TopShop 下 Open grid 触发同类报错）；仅播动画+不置 IsFolded（留 OnEnable 兜底重置态）#商店离开状态重置
+    if self.TopShop and self.TopShop:IsFolded() then
+        self:_PlayShopAnimEnable()
+    end
 end
 
 --- 展开商店栏（TopShop 已始终 Open，只 Refresh + 隐折叠绳索 + 播展开动效）。每次展开都播（含切换/外部进入）。
@@ -144,24 +153,24 @@ function XUiPunishaarFightMainPanelShop:_OnDragSettled()
     end
 end
 
---- 播商店栏展开动效（FightMain 根 PanelShopAnimEnable，经 gc 事件派发 FightMain 订阅播）#商店栏动效
+--- 播商店栏展开动效（FightMain 根 PanelShopAnimEnable，经 gameControl 事件派发 FightMain 订阅播）#商店栏动效
 function XUiPunishaarFightMainPanelShop:_PlayShopAnimEnable()
-    local gc = self._Control and self._Control.GameControl
-    if gc then
-        gc:DispatchEvent(gc.ShopEventId.ShopPanelAnimEnable)
+    local gameControl = self._Control and self._Control.GameControl
+    if gameControl then
+        gameControl:DispatchEvent(gameControl.EventId.Shop.ShopPanelAnimEnable)
     end
 end
 
 --- 播商店栏收起动效（FightMain 根 PanelShopDisable）#商店栏动效
 function XUiPunishaarFightMainPanelShop:_PlayShopAnimDisable()
-    local gc = self._Control and self._Control.GameControl
-    if gc then
-        gc:DispatchEvent(gc.ShopEventId.ShopPanelAnimDisable)
+    local gameControl = self._Control and self._Control.GameControl
+    if gameControl then
+        gameControl:DispatchEvent(gameControl.EventId.Shop.ShopPanelAnimDisable)
     end
 end
 
 --- PickHostChange：PickingHost 进入=FightMain 收商店栏（选宿主在弹窗内独立 ComBottomBag，不锁背包/不刷主卡 Disable）；退出=还原 #69
---- 进入时收起动画 cb（FightMain _OnShopPanelAnimDisableDone）→gc:FlushPendingPickHostTip 开弹窗（用户要求动画回调后再开）；
+--- 进入时收起动画 cb（FightMain _OnShopPanelAnimDisableDone）→gameControl:FlushPendingPickHostTip 开弹窗（用户要求动画回调后再开）；
 ---   已收起态（玩家先开背包互斥折叠后点副卡购买）FoldTopShop 幂等不播动画，直接 flush 兜底防卡不开。#副卡购买收起后开弹窗
 function XUiPunishaarFightMainPanelShop:_OnPickHostChange(isPicking)
     if isPicking then
@@ -170,12 +179,12 @@ function XUiPunishaarFightMainPanelShop:_OnPickHostChange(isPicking)
         self:FoldTopShop()
         if wasFolded then
             -- 已收起态：FoldTopShop 幂等 no-op 不播动画，无 cb 可待，直接 flush 开弹窗
-            local gc = self._Control and self._Control.GameControl
-            if gc and gc.FlushPendingPickHostTip then
-                gc:FlushPendingPickHostTip()
+            local gameControl = self._Control and self._Control.GameControl
+            if gameControl and gameControl.FlushPendingPickHostTip then
+                gameControl:FlushPendingPickHostTip()
             end
         end
-        -- else 未收起：FoldTopShop 播 PanelShopAnimDisable → FightMain 动画 cb → gc:FlushPendingPickHostTip
+        -- else 未收起：FoldTopShop 播 PanelShopAnimDisable → FightMain 动画 cb → gameControl:FlushPendingPickHostTip
         if self.BtnExpand then self.BtnExpand:SetDisable(true) end
     else
         -- 还原：展 TopShop（走公共方法 #70）+ 解锁 BtnExpand + 刷新 BottomBag（购买后卡牌变化）#69
@@ -189,8 +198,8 @@ end
 --- PickingHost 期间 TopShop Close（inactive），不 RefreshAll（避免 inactive 父下子节点 SetActiveEx 报错 #69 / xuinode-active-ancestor-invariant）；
 --- ExitPickHost 还原时 _OnPickHostChange(false) 补刷 BottomBag。
 function XUiPunishaarFightMainPanelShop:_OnBuySuccess(isFromMasterCardChange)
-    local gc = self._Control.GameControl
-    if gc and gc:IsPickingHost() then
+    local gameControl = self._Control.GameControl
+    if gameControl and gameControl:IsPickingHost() then
         return
     end
     self:RefreshAll(isFromMasterCardChange)
@@ -217,7 +226,11 @@ function XUiPunishaarFightMainPanelShop:RefreshAll(isFromMasterCardChange)
     end
     self.BottomBag:Refresh()
     self.BottomBag:RefreshBagLayoutIfShow()
-    self.BottomBag:RefreshBagReddot()  -- BuySuccess 后背包卡变更，重判可升级红点 #背包红点
+    -- isFromMasterCardChange 时跳过红点（商品 IsBought 旧致 CanOwnedCardUpgradeByShop 误判可升级，同 TopShop:Refresh 跳过条件；
+    -- 后续 BuyGoods 回包 RefreshAll(false) 补刷，IsBought 更新后正确判）#背包红点闪
+    if not isFromMasterCardChange then
+        self.BottomBag:RefreshBagReddot()
+    end
 end
 
 return XUiPunishaarFightMainPanelShop

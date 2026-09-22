@@ -41,13 +41,13 @@ end
 --region 生命周期（XUiNode 钩子）
 
 function XUiPunishaarModelShow:OnEnable()
-    local gc = self._Control and self._Control.GameControl
-    if not gc then
+    local gameControl = self._Control and self._Control.GameControl
+    if not gameControl then
         return
     end
-    gc:AddEventListener(gc.ShopEventId.BuySuccess, self.RefreshFightAreaModels, self)
+    gameControl:AddEventListener(gameControl.EventId.Shop.BuySuccess, self.RefreshFightAreaModels, self)
     -- 事件获得卡（NotifyPunishaarMasterCardChange）经全局事件派发，补订刷新战斗区模型（否则事件卡上阵后模型不显示）#事件卡模型
-    XEventManager.AddEventListener(XEventId.EVENT_PUNISHAAR_MASTER_CARD_CHANGE, self.RefreshFightAreaModels, self)
+    XMVCA.XPunishaar:AddEventListener(XMVCA.XPunishaar.EventIds.EVENT_PUNISHAAR_INNER_MASTER_CARD_CHANGE, self.RefreshFightAreaModels, self)
     self:RefreshFightAreaModels()  -- 初始渲染
 end
 
@@ -55,21 +55,21 @@ end
 --- 注意：AttackEffect/CardAttackAnim 订阅由 PanelFighting:OnDisable→UnbindFightControl 转发注销，
 ---   不在此处（与 FightMain 切走对齐 vs PanelFighting 切走对齐是不同时序，订阅归 PanelFighting）。#73
 function XUiPunishaarModelShow:OnDisable()
-    local gc = self._Control and self._Control.GameControl
-    if gc then
-        gc:RemoveEventListener(gc.ShopEventId.BuySuccess, self.RefreshFightAreaModels, self)
+    local gameControl = self._Control and self._Control.GameControl
+    if gameControl then
+        gameControl:RemoveEventListener(gameControl.EventId.Shop.BuySuccess, self.RefreshFightAreaModels, self)
     end
-    XEventManager.RemoveEventListener(XEventId.EVENT_PUNISHAAR_MASTER_CARD_CHANGE, self.RefreshFightAreaModels, self)
+    XMVCA.XPunishaar:RemoveEventListener(XMVCA.XPunishaar.EventIds.EVENT_PUNISHAAR_INNER_MASTER_CARD_CHANGE, self.RefreshFightAreaModels, self)
     self:ReleaseModel()
 end
 
 --- 面板销毁清空缓存池 + 注销兜底 + 子组件 OnDestroy 转发。
 function XUiPunishaarModelShow:OnDestroy()
-    local gc = self._Control and self._Control.GameControl
-    if gc then
-        gc:RemoveEventListener(gc.ShopEventId.BuySuccess, self.RefreshFightAreaModels, self)
+    local gameControl = self._Control and self._Control.GameControl
+    if gameControl then
+        gameControl:RemoveEventListener(gameControl.EventId.Shop.BuySuccess, self.RefreshFightAreaModels, self)
     end
-    XEventManager.RemoveEventListener(XEventId.EVENT_PUNISHAAR_MASTER_CARD_CHANGE, self.RefreshFightAreaModels, self)
+    XMVCA.XPunishaar:RemoveEventListener(XMVCA.XPunishaar.EventIds.EVENT_PUNISHAAR_INNER_MASTER_CARD_CHANGE, self.RefreshFightAreaModels, self)
     self:ClearPool()
     if self._EffectPlayer then
         self._EffectPlayer:OnDestroy()
@@ -98,6 +98,10 @@ function XUiPunishaarModelShow:UnbindFightControl()
     end
     if self._EffectPlayer then
         self._EffectPlayer:UnbindFightControl()
+    end
+    -- 切走战斗态后让模型播 idle 待机（不重加载模型，只切动画状态，防滞留在攻击动画中）#动画刷新
+    if self._ModelPool then
+        self._ModelPool:PlayAllCardIdle()
     end
 end
 
@@ -156,26 +160,6 @@ function XUiPunishaarModelShow:RefreshFightAreaModels()
     if self._ModelPool then
         self._ModelPool:RefreshFightAreaModels()
     end
-end
-
---- 攻击动画（slot 默认 1，fromBegin=true 打断重播）。
---- 注意：旧签名 (cardId, slotIndex, fromBegin) → AnimationPlayer:PlayCardAttack(slotIndex, cardId, fromBegin) 参数顺序反转。#73
----@param cardId number
----@param slotIndex number|nil
----@param fromBegin boolean|nil
-function XUiPunishaarModelShow:PlayAttackAnima(cardId, slotIndex, fromBegin)
-    self._AnimationPlayer:PlayCardAttack(slotIndex, cardId, fromBegin)
-end
-
----@param cardId number
----@param slotIndex number|nil
-function XUiPunishaarModelShow:PlayIdleAnima(cardId, slotIndex)
-    self._AnimationPlayer:PlayCardIdle(slotIndex, cardId)
-end
-
----@param fromBegin boolean|nil
-function XUiPunishaarModelShow:PlayEnemyAttackAnima(fromBegin)
-    self._AnimationPlayer:PlayEnemyAttack(fromBegin)
 end
 
 ---@param slotIndex number

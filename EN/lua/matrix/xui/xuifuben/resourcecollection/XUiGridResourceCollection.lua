@@ -1,3 +1,4 @@
+---@class XUiGridResourceCollection
 local XUiGridResourceCollection = XClass(nil, "XUiGridResourceCollection")
 local IsThisTransformPlayAnim = false
 
@@ -85,6 +86,18 @@ end
 function XUiGridResourceCollection:RefreshRedPoint(chapterViewModel)
     if self.ImgRedPoint and chapterViewModel then
         self.ImgRedPoint.gameObject:SetActiveEx(chapterViewModel:CheckHasRedPoint())
+    end
+end
+
+function XUiGridResourceCollection:ShowMultiRewardTag(isVisible, tagText)
+    if not self.Tag then
+        return
+    end
+    if isVisible then
+        self.Tag.gameObject:SetActiveEx(true)
+        self.TxtTag.text = tagText
+    else
+        self.Tag.gameObject:SetActiveEx(false)
     end
 end
 

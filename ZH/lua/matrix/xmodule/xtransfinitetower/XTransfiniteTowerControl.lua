@@ -100,6 +100,10 @@ function XTransfiniteTowerControl:IsTowerEntranceUnlock(towerCfgId)
     return isPass
 end
 
+function XTransfiniteTowerControl:IsTowerUnlockRedDotShow(towerCfgId)
+    return self:GetAgency():IsTowerUnlockRedDotShow(towerCfgId)
+end
+
 ---塔入口未解锁的原因提示（时间未到 / 前置条件不满足，条件描述由条件表给）
 ---@return string
 function XTransfiniteTowerControl:GetTowerLockedTip(towerCfgId)
@@ -199,6 +203,7 @@ end
 
 ---进入指定塔（打开选关界面）
 function XTransfiniteTowerControl:OpenTower(towerCfgId)
+    self:GetAgency():MarkTowerUnlockRedDotShown(towerCfgId)
     XLuaUiManager.Open("UiTransfiniteTowerStage", towerCfgId)
 end
 
@@ -230,6 +235,7 @@ function XTransfiniteTowerControl:RefreshRankCache()
                 local mvpFightId = show.MvpFightId
                 if show.Id == XPlayer.Id and myRankInfo then
                     mvpFightId = myRankInfo.MvpFightId
+                    show.MvpFightId = mvpFightId
                 end
                 rankList[#rankList + 1] = {
                     PlayerId = show.Id,
@@ -591,6 +597,13 @@ end
 function XTransfiniteTowerControl:GetStageBossIcon(stageCfgId)
     local stage = self:GetStageCfg(stageCfgId)
     return stage and stage.ImgBoss or ""
+end
+
+---关卡是否切换背景
+---@return boolean
+function XTransfiniteTowerControl:IsStageChangeBg(stageCfgId)
+    local stage = self:GetStageCfg(stageCfgId)
+    return stage ~= nil and stage.IsChangeBg == true
 end
 
 ---关卡是否已解锁
@@ -1133,6 +1146,39 @@ function XTransfiniteTowerControl:RequestGetRank(chapterId, cb)
         end
         if cb then cb(res) end
     end)
+end
+
+--endregion
+
+--region 任务（UiTransfiniteTowerTask）
+
+---一键领取所有已完成待领的任务奖励
+function XTransfiniteTowerControl:FinishAllAchievedTask(cb)
+    local taskIds, weaponCount, chipCount = {}, 0, 0
+    local CLASSIFY = XEnumConst.EQUIP.CLASSIFY
+    for _, task in ipairs(self:GetAgency():GetTaskList()) do
+        if task.State == XDataCenter.TaskManager.TaskState.Achieved then
+            taskIds[#taskIds + 1] = task.Id
+            local config = XDataCenter.TaskManager.GetTaskTemplate(task.Id)
+            for _, reward in ipairs(config and XRewardManager.GetRewardList(config.RewardId) or table.empty) do
+                if XMVCA.XEquip:IsClassifyEqualByTemplateId(reward.TemplateId, CLASSIFY.WEAPON) then
+                    weaponCount = weaponCount + 1
+                elseif XMVCA.XEquip:IsClassifyEqualByTemplateId(reward.TemplateId, CLASSIFY.AWARENESS) then
+                    chipCount = chipCount + 1
+                end
+            end
+        end
+    end
+    if XTool.IsTableEmpty(taskIds) then
+        return
+    end
+    if weaponCount > 0 and not XMVCA.XEquip:CheckBagCount(weaponCount, CLASSIFY.WEAPON)
+            or chipCount > 0 and not XMVCA.XEquip:CheckBagCount(chipCount, CLASSIFY.AWARENESS) then
+        return
+    end
+    XDataCenter.TaskManager.FinishMultiTaskRequest(taskIds, function(rewardGoodsList)
+        XUiManager.OpenUiObtain(rewardGoodsList, nil, cb)
+    end, nil, true)
 end
 
 --endregion

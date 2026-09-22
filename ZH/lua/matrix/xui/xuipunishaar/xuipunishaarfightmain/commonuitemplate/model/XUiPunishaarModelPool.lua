@@ -209,6 +209,32 @@ function XUiPunishaarModelPool:RefreshFightAreaModels()
     end
 end
 
+--- 遍历战斗区已加载卡模型播 NormalIdleAnima（不重加载模型，只切动画回 idle）#动画刷新
+function XUiPunishaarModelPool:PlayAllCardIdle()
+    if not self._Control then
+        return
+    end
+    if not self._AreaCardsList then
+        self._AreaCardsList = XTool.XListNew()
+    end
+    local list = self._AreaCardsList
+    list:Clear()
+    local CardAreaType = XMVCA.XPunishaar.EnumConst.CardAreaType
+    local count = self._Control:FillAreaCardsSorted(CardAreaType.FightArea, list)
+    for i = 1, count do
+        local card = list:GetValueByIndex(i)
+        if card then
+            local row = self._ConfigResolver:GetCardModelRow(card.TemplateId)
+            if row and not string.IsNilOrEmpty(row.NormalIdleAnima) then
+                local panel = self._CardModelPanels and self._CardModelPanels[i]
+                if panel then
+                    panel:PlayAnimaCross(row.NormalIdleAnima)
+                end
+            end
+        end
+    end
+end
+
 --region Transform 查询（slot-based，供 EffectPlayer 调）
 
 --- 取卡牌模型挂点 Transform（按 slot 索引，1-based）。

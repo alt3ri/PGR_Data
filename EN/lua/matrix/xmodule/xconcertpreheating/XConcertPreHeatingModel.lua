@@ -97,16 +97,6 @@ function XConcertPreHeatingModel:GetClientConfigCfg(configId)
     return self._ConfigUtil:GetCfgByTableKeyAndIdKey(ConcertPreHeatingTableKey.ConcertClientConfig, configId, true)
 end
 
-function XConcertPreHeatingModel:GetClientConfigValues(configId)
-    local config = self:GetClientConfigCfg(configId)
-    return config and config.Values or nil
-end
-
-function XConcertPreHeatingModel:GetClientConfigValue(configId, index)
-    local values = self:GetClientConfigValues(configId)
-    return values and values[index or 1] or nil
-end
-
 ---@return XTableConcertPreHeatingActivity[]
 function XConcertPreHeatingModel:GetAllActivityCfgs()
     return self._ConfigUtil:GetByTableKey(ConcertPreHeatingTableKey.ConcertPreHeatingActivity) or {}

@@ -18,9 +18,18 @@ function XUiPunishaarEventSettlementGridCard:OnStart()
         ---@type XUiPanelPunishaarLevelupGroup
         self._LevelupGroup = XUiPanelPunishaarLevelupGroup.New(self.LevelupGroup, self)
     end
-    -- 奖励预览不含 pats，pats 头像及底框整组隐藏
+    -- 全 head 节点初始隐，Refresh 按 cardCfg.Type 切 Role/Pats 轨（Character→Role / Weapon辅助机→Pats）#结算头像类型
     if self.ImgHeadBgPats then
         self.ImgHeadBgPats.gameObject:SetActiveEx(false)
+    end
+    if self.ImgHeadPats then
+        self.ImgHeadPats.gameObject:SetActiveEx(false)
+    end
+    if self.ImgHeadBgRole then
+        self.ImgHeadBgRole.gameObject:SetActiveEx(false)
+    end
+    if self.ImgHeadRole then
+        self.ImgHeadRole.gameObject:SetActiveEx(false)
     end
     -- TagCheck 奖励预览无勾选概念，默认隐藏
     if self.TagCheck then
@@ -51,8 +60,31 @@ function XUiPunishaarEventSettlementGridCard:Refresh(data)
         return
     end
     local cardCfg = XMVCA.XPunishaar:GetTablePunishaarCard(data.CardId)
-    if self.ImgHeadRole and cardCfg and not string.IsNilOrEmpty(cardCfg.Icon) then
-        self.ImgHeadRole:SetRawImage(cardCfg.Icon)
+    -- 主卡头像按 Type 二选一（Character→Role / Weapon辅助机→Pats）+ 刷新图标 #结算头像类型
+    -- 显式 if/else 取 active/inactive：避 cond and a or b 在 a 为 nil 时回退陷阱（对齐 XUiComBattleCardShow:_RefreshCardHead 范式）
+    if cardCfg then
+        local isRole = cardCfg.Type == XMVCA.XPunishaar.EnumConst.CardType.Character
+        local bgActive, headActive, bgInactive, headInactive
+        if isRole then
+            bgActive, headActive = self.ImgHeadBgRole, self.ImgHeadRole
+            bgInactive, headInactive = self.ImgHeadBgPats, self.ImgHeadPats
+        else
+            bgActive, headActive = self.ImgHeadBgPats, self.ImgHeadPats
+            bgInactive, headInactive = self.ImgHeadBgRole, self.ImgHeadRole
+        end
+        if bgInactive then
+            bgInactive.gameObject:SetActiveEx(false)
+        end
+        if headInactive then
+            headInactive.gameObject:SetActiveEx(false)
+        end
+        if bgActive then
+            bgActive.gameObject:SetActiveEx(true)
+        end
+        if headActive and not string.IsNilOrEmpty(cardCfg.Icon) then
+            headActive.gameObject:SetActiveEx(true)
+            headActive:SetRawImage(cardCfg.Icon)
+        end
     end
     -- LevelupGroup（prefab 有此节点时）：SetCanLevelUp 按 CardLevel>1 显 CanLevelup + TagLevelupEnable loop
     local showLevelup = XTool.IsNumberValid(data.Level) and data.Level > 1

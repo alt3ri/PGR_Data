@@ -63,7 +63,7 @@ function XUiPBRCharacterSelection:OnEnable()
         end
     end
 
-    if self.UiGridMusic then
+    if self.UiGridMusic and self.UiGridMusic:IsNodeShow() then
         self.UiGridMusic:RefreshBgmName(self.CurStageId)
     end
     

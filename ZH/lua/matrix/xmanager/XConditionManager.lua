@@ -742,6 +742,12 @@ PlayerCondition = {
         local isHistory = XTool.IsNumberValid(tonumber(condition.Params[4]))
         return XDataCenter.StrongholdManager.CheckGroupPassUseElectric(groupId, requireUseElectric, elType, isHistory), condition.Desc
     end,
+    [12104] = function(condition)
+        -- 当前背包内意识装备的共鸣技能数量是否达到要求
+        local requiredCount = condition.Params[1]
+        local resonanceSkillCount = XMVCA.XEquip:GetAwarenessResonanceSkillCount()
+        return resonanceSkillCount >= requiredCount, condition.Desc
+    end,
     [12200] = function(condition)
         local activityId = tonumber(condition.Params[1] or 0)
         local state = tonumber(condition.Params[2] or 0)

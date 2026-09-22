@@ -20,27 +20,20 @@ function XTransfiniteTowerAgency:InitRpc()
     XRpc.NotifyTransfiniteTowerRankReward = handler(self, self.NotifyRankReward)
 end
 
-local KICK_TIP_COOKIE_KEY = "TransfiniteTowerKickTip_%s"
-local GENERAL_SKILL_KEY = "TransfiniteTowerGeneralSkill_%s_%s"
-
 function XTransfiniteTowerAgency:GetStageProgressIndex(chapterId)
     return self._Model:GetStageProgressIndex(chapterId)
 end
 
 function XTransfiniteTowerAgency:HasKickTipShown(chapterId, progress)
-    local cookie = XSaveTool.GetData(string.format(KICK_TIP_COOKIE_KEY, chapterId))
-    return cookie ~= nil and cookie[progress] == true
+    return self._Model:HasKickTipShown(chapterId, progress)
 end
 
 function XTransfiniteTowerAgency:MarkKickTipShown(chapterId, progress)
-    local key = string.format(KICK_TIP_COOKIE_KEY, chapterId)
-    local cookie = XSaveTool.GetData(key) or {}
-    cookie[progress] = true
-    XSaveTool.SaveData(key, cookie)
+    self._Model:MarkKickTipShown(chapterId, progress)
 end
 
 function XTransfiniteTowerAgency:ClearKickTipCookie(chapterId)
-    XSaveTool.RemoveData(string.format(KICK_TIP_COOKIE_KEY, chapterId))
+    self._Model:ClearKickTipCookie(chapterId)
 end
 
 ---全量存档推送（登录/战斗后）
@@ -162,6 +155,7 @@ function XTransfiniteTowerAgency:DoChapterSettle(chapterId)
         -- 存档只留最好成绩：创了新纪录才把这次的结算写回去
         if settleInfo and settleInfo.IsNewRecord then
             self._Model:UpdateSettleInfo(chapterId, settleInfo)
+            self._Model:SetRankRecordRedDot()
         end
         if self:IsLastSettleTower(chapterId) then
             XLuaUiManager.Open("UiTransfiniteTowerLastSettlement", chapterId)
@@ -169,6 +163,14 @@ function XTransfiniteTowerAgency:DoChapterSettle(chapterId)
             XLuaUiManager.Open("UiTransfiniteTowerSettlementPopup", chapterId)
         end
     end)
+end
+
+function XTransfiniteTowerAgency:IsRankRecordRedDotShow()
+    return self._Model:IsRankRecordRedDotShow()
+end
+
+function XTransfiniteTowerAgency:ClearRankRecordRedDot()
+    self._Model:ClearRankRecordRedDot()
 end
 
 ---单关卡结算（确认保留本层战绩，服务端应用 PendingStageRecord）
@@ -421,8 +423,8 @@ function XTransfiniteTowerAgency:GetTaskRewardPreview()
     local list = {}
     for _, rewardId in ipairs(rewardIds) do
         local rewards = XRewardManager.GetRewardList(tonumber(rewardId))
-        if not XTool.IsTableEmpty(rewards) then
-            list[#list + 1] = rewards[1]
+        for _, reward in ipairs(rewards or table.empty) do
+            list[#list + 1] = reward
         end
     end
     if #list <= 0 then return nil end
@@ -495,12 +497,11 @@ end
 
 ---缓存每塔上次选择的效应
 function XTransfiniteTowerAgency:SaveLastGeneralSkill(towerCfgId, skillId)
-    XSaveTool.SaveData(string.format(GENERAL_SKILL_KEY, towerCfgId, XPlayer.Id), skillId)
+    self._Model:SaveLastGeneralSkill(towerCfgId, skillId)
 end
 
 function XTransfiniteTowerAgency:GetLastGeneralSkill(towerCfgId)
-    local skillId = XSaveTool.GetData(string.format(GENERAL_SKILL_KEY, towerCfgId, XPlayer.Id))
-    return XTool.IsNumberValid(skillId) and skillId or nil
+    return self._Model:GetLastGeneralSkill(towerCfgId)
 end
 
 ---取指定关卡上一场使用的队伍 id；非同一关卡返回 nil（避免串层）
@@ -520,23 +521,14 @@ function XTransfiniteTowerAgency:GetStageSelectableEntities(characterType)
         return XMVCA.XCharacter:GetOwnCharacterList(characterType)
     end
 
-    local allowCharIds, robots, lockedCharIds = {}, {}, {}
+    local allowCharIds, robots = {}, {}
     for _, charCfgId in ipairs(group.TowerCharacterIds or table.empty) do
         local cfg = self:GetCharacterCfg(charCfgId)
         if cfg then
-            -- 解锁时间未到：该行配置的自机与试用机器人都不进选角池
-            if XTool.IsNumberValid(cfg.UnLockTimeId) and not XFunctionManager.CheckInTimeByTimeId(cfg.UnLockTimeId) then
-                if XTool.IsNumberValid(cfg.CharacterId) then
-                    lockedCharIds[cfg.CharacterId] = true
-                end
-                goto continue
-            end
             if XTool.IsNumberValid(cfg.CharacterId) then
                 allowCharIds[cfg.CharacterId] = true
-                -- 同角色其他行已解锁则整体不锁（全选模式下按角色判定）
-                lockedCharIds[cfg.CharacterId] = nil
             end
-            if XTool.IsNumberValid(cfg.RobotId) then
+            if XTool.IsNumberValid(cfg.RobotId) and not self:IsEntityUnfitStage(cfg.RobotId) then
                 local robot = XRobotManager.GetRobotById(cfg.RobotId)
                 if robot then
                     robots[#robots + 1] = robot
@@ -545,19 +537,13 @@ function XTransfiniteTowerAgency:GetStageSelectableEntities(characterType)
                 end
             end
         end
-        ::continue::
     end
 
     local isAllCharacter = XTool.IsNumberValid(group.IsAllCharacter)
-    -- 剔除自机领航员
-    local isForbidLeader = stage.NavigatorMode == NAVIGATOR_MODE_FORBIDDEN
     local entities = {}
     for _, entity in ipairs(XMVCA.XCharacter:GetOwnCharacterList(characterType)) do
-        if isAllCharacter or allowCharIds[entity.Id] then
-            -- 全选模式下，配置了解锁时间且未到的自机同样不显示
-            if not lockedCharIds[entity.Id] and not (isForbidLeader and self:IsLeaderEntity(entity.Id)) then
-                entities[#entities + 1] = entity
-            end
+        if (isAllCharacter or allowCharIds[entity.Id]) and not self:IsEntityUnfitStage(entity.Id) then
+            entities[#entities + 1] = entity
         end
     end
     for i = 1, #robots do
@@ -833,6 +819,28 @@ function XTransfiniteTowerAgency:IsShowEnterWarn(towerCfgId, stageCfgId)
     return stage.Order > rollbackOrder
 end
 
+XTransfiniteTowerAgency.ROLLBACK_GUIDE_ID = 65024
+
+---激活过回溯点后触发回溯引导
+function XTransfiniteTowerAgency:TryPlayRollbackGuide(stageCfgId)
+    local stage = self:GetStageCfg(stageCfgId)
+    if not stage then
+        return
+    end
+    local chapterId = self:GetChapterIdByStageCfg(stageCfgId)
+    if not chapterId then
+        return
+    end
+    local rollbackOrder = self._Model:GetRollbackOrder(chapterId)
+    if rollbackOrder <= 0 or stage.Order < rollbackOrder then
+        return
+    end
+    if XDataCenter.GuideManager.CheckIsGuide(self.ROLLBACK_GUIDE_ID) then
+        return
+    end
+    XDataCenter.GuideManager.PlayGuide(self.ROLLBACK_GUIDE_ID)
+end
+
 --endregion
 
 --region 角色详情对外接口（供通用角色详情界面 UiBattleRoomRoleDetail 的超限启航 Proxy 查询）
@@ -900,6 +908,27 @@ function XTransfiniteTowerAgency:GetEntityUsedCount(fightId)
     else
         return self._Model:GetCharacterUsedCountByCharacterId(chapterId, characterId)
     end
+end
+
+---战斗实体对应角色是否不在开放时间内
+---@return boolean
+function XTransfiniteTowerAgency:IsEntityLockedByTime(fightId)
+    local cfg = self:GetStageCharacterCfg(fightId)
+    if not cfg then return false end
+    return XTool.IsNumberValid(cfg.UnLockTimeId) and not XFunctionManager.CheckInTimeByTimeId(cfg.UnLockTimeId)
+end
+
+---战斗实体是否不满足本关使用条件
+---@return boolean
+function XTransfiniteTowerAgency:IsEntityUnfitStage(fightId)
+    if self:IsEntityLockedByTime(fightId) then
+        return true
+    end
+    local stage = self:GetStageCfg(self:GetCurrentStageCfgId())
+    if stage and stage.NavigatorMode == NAVIGATOR_MODE_FORBIDDEN and self:IsLeaderEntity(fightId) then
+        return true
+    end
+    return false
 end
 
 ---实体体力是否已耗尽（耗尽则不允许上阵）；领航员不受体力限制

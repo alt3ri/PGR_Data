@@ -1,4 +1,3 @@
-local MOVIE_TABLE_NAME_PREFIX = "Movie"
 local TABLE_MOVIE_PATH_PREFIX = "Client/Movie/Movies/Movie%s.tab"
 local TABLE_MOVIE_VOICE_MUTE_LIST_PATH = "Client/Movie/MovieVoiceMuteList.tab"
 local TABLE_MOVIE_ACTOR_PATH = "Client/Movie/MovieActor.tab"
@@ -134,8 +133,7 @@ function XMovieConfigs.CheckMovieConfigExist(movieId)
 end
 
 function XMovieConfigs.IsMovieVoiceMuted(movieId)
-    local movieTableName = MOVIE_TABLE_NAME_PREFIX .. movieId
-    return MovieVoiceMuteListTemplates[movieTableName] ~= nil
+    return MovieVoiceMuteListTemplates[movieId] ~= nil
 end
 
 function XMovieConfigs.GetMovieCfg(movieId)

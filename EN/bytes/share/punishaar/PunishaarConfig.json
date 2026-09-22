@@ -1,0 +1,107 @@
+[
+    {
+        "Key": "MasterCardTypeList",
+        "Desc": "Main Card Type List",
+        "Param": "['1', '2']"
+    },
+    {
+        "Key": "SubCardTypeList",
+        "Desc": "Sub-Card Type List",
+        "Param": "['3', '4']"
+    },
+    {
+        "Key": "InitialBattleCardAreaCount",
+        "Desc": "Starting battle zone slots",
+        "Param": "['4']"
+    },
+    {
+        "Key": "GrowBattleCardAreaCount",
+        "Desc": "Battle zone slots gained per victory",
+        "Param": "['1']"
+    },
+    {
+        "Key": "MaxBattleCardAreaCount",
+        "Desc": "Maximum battle zone slots",
+        "Param": "['8']"
+    },
+    {
+        "Key": "InitialBagCardAreaCount",
+        "Desc": "Starting inventory slots",
+        "Param": "['4']"
+    },
+    {
+        "Key": "GrowBagCardAreaCount",
+        "Desc": "Inventory slots gained per victory",
+        "Param": "['1']"
+    },
+    {
+        "Key": "MaxBagCardAreaCount",
+        "Desc": "Maximum inventory slots",
+        "Param": "['8']"
+    },
+    {
+        "Key": "ShopRefresh",
+        "Desc": "Coins required to refresh the shop",
+        "Param": "['1', '1']"
+    },
+    {
+        "Key": "Durability",
+        "Desc": "Durability per match, or the number of retries allowed after defeat",
+        "Param": "['3']"
+    },
+    {
+        "Key": "HPValue",
+        "Desc": "Commandant's Initial HP at the start of the stage",
+        "Param": "['400']"
+    },
+    {
+        "Key": "HPGrowthValue",
+        "Desc": "Commandant HP restored per stage victory",
+        "Param": "['250']"
+    },
+    {
+        "Key": "InitialGoldCount",
+        "Desc": "Starting Coins",
+        "Param": "['4']"
+    },
+    {
+        "Key": "EndlessStageBuff",
+        "Desc": "Enemy HP and ATK increase at the start of each new endless stage",
+        "Param": "['2500', '130']"
+    },
+    {
+        "Key": "ShopRandomAmount",
+        "Desc": "Number of shops generated per shop node",
+        "Param": "['2']"
+    },
+    {
+        "Key": "FightRandomAmount",
+        "Desc": "Number of battles generated per Type 4 battle node",
+        "Param": "['2']"
+    },
+    {
+        "Key": "MasterCardSlotTypeLimit",
+        "Desc": "Main/sub-card pairing rules: A sub-card in an even-numbered slot can be equipped to the main card in the preceding odd-numbered slot.",
+        "Param": "['1', '3', '2', '4']"
+    },
+    {
+        "Key": "MaxSaveCount",
+        "Desc": "Maximum stages with saved progress",
+        "Param": "['2']"
+    },
+    {
+        "Key": "EndlessMaxRound",
+        "Desc": "Maximum Infinite Stage rounds",
+        "Param": "['10']"
+    },
+    {
+        "Key": "MaxShopCardAreaCount",
+        "Desc": "Maximum Shop Slots",
+        "Param": "['8']"
+    },
+    {
+        "Key": "RemedyShopHudGroupId",
+        "Desc": "\u8865\u5f3a\u5546\u5e97\u4f7f\u7528\u7684hudgroupId",
+        "Param": "['11']"
+    }
+]

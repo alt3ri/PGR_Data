@@ -120,7 +120,7 @@ function XUiFirstDownloadTips:OnBtnDownloadingClickEvent()
     
     if self._IsPause then
         -- 继续
-        XMVCA.XSubPackage:AddNecessaryToDownload()
+        XMVCA.XSubPackage:AddNecessaryToDownload(true)
         XMVCA.XSubPackage:StartDownload()
         self:RefreshStateShow()
     else

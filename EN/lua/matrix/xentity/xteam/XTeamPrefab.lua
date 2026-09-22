@@ -30,67 +30,67 @@ function XTeamPrefab:Ctor(data)
     self:RefreshGeneralSkills(true, true)  -- 假设此方法本身不需要上行
 end
 
-function XTeamPrefab:UpdateEntityIds(value)
-    if not self.IsStandAlone then
-        local isSameEntityId, index = XMVCA.XCharacter:HasDuplicateCharId(value)
-        if isSameEntityId then
-            value[index] = 0
-        end
-    end
-
-    self:BeginSnapshotBatch()
-
-    for pos, entityId in ipairs(value) do
-        self.EntitiyIds[pos] = entityId
-    end
-
-    self:RefreshGeneralSkills(true)
+function XTeamPrefab:UpdateEntityIds(value)
+    if not self.IsStandAlone then
+        local isSameEntityId, index = XMVCA.XCharacter:HasDuplicateCharId(value)
+        if isSameEntityId then
+            value[index] = 0
+        end
+    end
+
+    self:BeginSnapshotBatch()
+
+    for pos, entityId in ipairs(value) do
+        self.EntitiyIds[pos] = entityId
+    end
+
+    self:RefreshGeneralSkills(true)
 end
 
 --- 重写父类方法：预设队伍更新成员时不派发 EVENT_TEAM_MEMBER_MANUAL_CHANGE_MEMBER 事件
 --- 该事件语义上是"真实队伍成员手动变更"，预设作为静态数据对象不应触发此事件
-function XTeamPrefab:UpdateEntityTeamPos(entityId, teamPos, isJoin)
-    if isJoin then
-        if self:CheckHasSameCharacterId(entityId, teamPos) and XTool.IsNumberValid(entityId) then
-            return
-        end
-
-        self:BeginSnapshotBatch()
-
-        -- 如果是替换，需要先移除前一个角色的效应统计
-        if XTool.IsNumberValid(self.EntitiyIds[teamPos]) then
-            self:UpdateGenernalSkillsByEntityId(self.EntitiyIds[teamPos], true, true)
-        end
-
-        self:UpdateGenernalSkillsByEntityId(entityId, false)
-        self.EntitiyIds[teamPos] = entityId or 0
-    else
-        self:BeginSnapshotBatch()
-
-        for pos, id in ipairs(self.EntitiyIds) do
-            if id == entityId then
-                self.EntitiyIds[pos] = 0
-                break
-            end
+function XTeamPrefab:UpdateEntityTeamPos(entityId, teamPos, isJoin)
+    if isJoin then
+        if self:CheckHasSameCharacterId(entityId, teamPos) and XTool.IsNumberValid(entityId) then
+            return
+        end
+
+        self:BeginSnapshotBatch()
+
+        -- 如果是替换，需要先移除前一个角色的效应统计
+        if XTool.IsNumberValid(self.EntitiyIds[teamPos]) then
+            self:UpdateGenernalSkillsByEntityId(self.EntitiyIds[teamPos], true, true)
+        end
+
+        self:UpdateGenernalSkillsByEntityId(entityId, false)
+        self.EntitiyIds[teamPos] = entityId or 0
+    else
+        self:BeginSnapshotBatch()
+
+        for pos, id in ipairs(self.EntitiyIds) do
+            if id == entityId then
+                self.EntitiyIds[pos] = 0
+                break
+            end
         end
         self:UpdateGenernalSkillsByEntityId(entityId, true, true)
     end
 
     -- 注意：此处故意不派发 EVENT_TEAM_MEMBER_MANUAL_CHANGE_MEMBER 事件
     -- 预设对象修改成员不应触发真实队伍的效应自动重选逻辑
-    -- self:Save() 已被重写为空实现
-end
-
-function XTeamPrefab:ClearEntityIds()
-    self:BeginSnapshotBatch()
-
-    self.EntitiyIds = {0, 0, 0}
-    self:ClearGeneralSkill()
-end
-
---- 更新伙伴预设数据
----@param partnerData table
-function XTeamPrefab:InitPartnerData(partnerData)
+    -- self:Save() 已被重写为空实现
+end
+
+function XTeamPrefab:ClearEntityIds()
+    self:BeginSnapshotBatch()
+
+    self.EntitiyIds = {0, 0, 0}
+    self:ClearGeneralSkill()
+end
+
+--- 更新伙伴预设数据
+---@param partnerData table
+function XTeamPrefab:InitPartnerData(partnerData)
     local XPartnerPrefab = require("XEntity/XPartner/XPartnerPrefab")
     self.PartnerPrefab = self.PartnerPrefab or XPartnerPrefab.New(self.Id, partnerData)
 end
@@ -133,23 +133,23 @@ function XTeamPrefab:InitEquipData(equipData)
             end
         end
     end
-end
-
-function XTeamPrefab:ClearAllData()
-    self:BeginSnapshotBatch()
-
-    self.WeaponData = {}
-    self.AwarenessData = {}
-    self:UpdateEntityIds({0,0,0})
-end
-
-function XTeamPrefab:ClearPosData(pos)
-    self:BeginSnapshotBatch()
-
-    self.WeaponData[pos] = nil
-    self.AwarenessData[pos] = nil
-    self.SwitchSkills[pos] = nil
-    local charId = self:GetEntityIdByTeamPos(pos)
+end
+
+function XTeamPrefab:ClearAllData()
+    self:BeginSnapshotBatch()
+
+    self.WeaponData = {}
+    self.AwarenessData = {}
+    self:UpdateEntityIds({0,0,0})
+end
+
+function XTeamPrefab:ClearPosData(pos)
+    self:BeginSnapshotBatch()
+
+    self.WeaponData[pos] = nil
+    self.AwarenessData[pos] = nil
+    self.SwitchSkills[pos] = nil
+    local charId = self:GetEntityIdByTeamPos(pos)
     self:UpdateEntityTeamPos(charId, pos)
 end
 
@@ -164,15 +164,15 @@ function XTeamPrefab:ClearAwarenessData(pos, notSyncToServer)
         self:SyncEquipDataToServer(pos)
     end
 end
-
---- 单独更新某个位置某槽位的装备
-function XTeamPrefab:UpdateEquipAt(pos, slot, item, notSyncToServer, cb)
-    self:BeginSnapshotBatch()
-
-    self.WeaponData = self.WeaponData or {}
-    self.AwarenessData = self.AwarenessData or {}
-
-    local curEquipId = item and item.EquipId
+
+--- 单独更新某个位置某槽位的装备
+function XTeamPrefab:UpdateEquipAt(pos, slot, item, notSyncToServer, cb)
+    self:BeginSnapshotBatch()
+
+    self.WeaponData = self.WeaponData or {}
+    self.AwarenessData = self.AwarenessData or {}
+
+    local curEquipId = item and item.EquipId
     local isConflict, conflictPos, conflictSlot = self:CheckEquipIdConflict(curEquipId, pos)
     -- 如果冲突，把被冲突的位置的意识给扒下来
     -- 如果是武器冲突则替换，因为武器是一定要穿戴的
@@ -226,6 +226,24 @@ function XTeamPrefab:CheckEquipIdInTeam(equipId)
     end
 
     return false
+end
+
+--- 检查辅助机Id是否已在队伍预设中使用
+---@param partnerId number 辅助机Id
+---@param excludePos number|nil 需要排除的位置（同位置替换会被覆盖，不算冲突）
+---@return boolean 是否冲突
+function XTeamPrefab:CheckPartnerIdInTeam(partnerId, excludePos)
+    if not XTool.IsNumberValid(partnerId) then return false end
+
+    local partnerPrefab = self:GetPartnerData()
+    if not partnerPrefab then return false end
+
+    local pos = partnerPrefab:GetPosByPartnerId(partnerId)
+    if not XTool.IsNumberValid(pos) then return false end
+
+    if excludePos and pos == excludePos then return false end
+
+    return true
 end
 
 function XTeamPrefab:CheckEquipIdConflict(equipId, targetPos)
@@ -666,13 +684,13 @@ function XTeamPrefab:CopyRealWeaponWeaponOverrunSuitId(weaponOverrunSuitId, pos,
 end
 
 -- 将角色数据复制到对应位置（武器、意识、辅助机），角色Id为空时卸载对应位置
-function XTeamPrefab:CopyRealCharacterToPos(characterId, pos, notSyncToServer)
-    self:BeginSnapshotBatch()
-
-    local getCurPosEntityId = self:GetEntityIdByTeamPos(pos)
-    if getCurPosEntityId ~= characterId then
-        local isCharIdValid = XTool.IsNumberValid(characterId)
-        self:UpdateEntityTeamPos(characterId, pos, isCharIdValid)
+function XTeamPrefab:CopyRealCharacterToPos(characterId, pos, notSyncToServer)
+    self:BeginSnapshotBatch()
+
+    local getCurPosEntityId = self:GetEntityIdByTeamPos(pos)
+    if getCurPosEntityId ~= characterId then
+        local isCharIdValid = XTool.IsNumberValid(characterId)
+        self:UpdateEntityTeamPos(characterId, pos, isCharIdValid)
     end
     if XTool.IsNumberValid(characterId) then
         self:CopyRealCharacterEquipData(characterId, pos, true)
@@ -756,10 +774,10 @@ function XTeamPrefab:UpdateSelectGeneralSkill(skillId, notSyncToServer, cb)
     end
 end
 
-function XTeamPrefab:UpdateTeamName(name, cb)
-    self:BeginSnapshotBatch()
-    local oldName = self.TeamName
-    self.TeamName = name
+function XTeamPrefab:UpdateTeamName(name, cb)
+    self:BeginSnapshotBatch()
+    local oldName = self.TeamName
+    self.TeamName = name
     self:SyncMetaDataToServer(function ()
         self.TeamName = name
         if cb then
@@ -836,7 +854,7 @@ function XTeamPrefab:GetFullSnapshot()
             EntityIds = {},
             WeaponData = {},
             AwarenessData = {},
-            PartnerSlotData = nil,
+            PartnerSlotData = nil,
             CaptainPos = 0,
             FirstFightPos = 0,
             TeamName = "",
@@ -937,8 +955,8 @@ function XTeamPrefab:GetFullSnapshot()
     end
 
     -- 4. 处理其他基础数据（直接赋值）
-    local partnerPrefab = self.PartnerPrefab
-    snapshot.PartnerSlotData = partnerPrefab and partnerPrefab:GetPartnerSlotSnapshot() or nil
+    local partnerPrefab = self.PartnerPrefab
+    snapshot.PartnerSlotData = partnerPrefab and partnerPrefab:GetPartnerSlotSnapshot() or nil
     snapshot.CaptainPos = self.CaptainPos
     snapshot.FirstFightPos = self.FirstFightPos
     snapshot.TeamName = self.TeamName
@@ -1014,21 +1032,21 @@ function XTeamPrefab:RestoreFromSnapshot()
         end
     end
     
-    -- 还原其他核心数据
-    self.CaptainPos = snapshot.CaptainPos
-    self.FirstFightPos = snapshot.FirstFightPos
-    self.TeamName = snapshot.TeamName
-    self.SelectedGeneralSkill = snapshot.SelectedGeneralSkill
-    self.EnterCgIndex = snapshot.EnterCgIndex
-    self.SettleCgIndex = snapshot.SettleCgIndex
-
-    -- 还原辅助机预设槽位，不改真实辅助机数据
-    if self.PartnerPrefab then
-        self.PartnerPrefab:RestorePartnerSlotSnapshot(snapshot.PartnerSlotData)
-    end
-
-    -- 还原标签数据
-    self.TagsSet = {}
+    -- 还原其他核心数据
+    self.CaptainPos = snapshot.CaptainPos
+    self.FirstFightPos = snapshot.FirstFightPos
+    self.TeamName = snapshot.TeamName
+    self.SelectedGeneralSkill = snapshot.SelectedGeneralSkill
+    self.EnterCgIndex = snapshot.EnterCgIndex
+    self.SettleCgIndex = snapshot.SettleCgIndex
+
+    -- 还原辅助机预设槽位，不改真实辅助机数据
+    if self.PartnerPrefab then
+        self.PartnerPrefab:RestorePartnerSlotSnapshot(snapshot.PartnerSlotData)
+    end
+
+    -- 还原标签数据
+    self.TagsSet = {}
     if snapshot.TagsSet then
         for tagId in pairs(snapshot.TagsSet) do
             self.TagsSet[tagId] = true
@@ -1040,11 +1058,11 @@ function XTeamPrefab:RestoreFromSnapshot()
     if snapshot.SwitchSkills then
         for pos, skillId in pairs(snapshot.SwitchSkills) do
             self.SwitchSkills[pos] = skillId
-        end
-    end
-
-    XEventManager.DispatchEvent(XEventId.EVENT_TEAM_PREFAB_CHANGE, self:GetId(), self)
-end
+        end
+    end
+
+    XEventManager.DispatchEvent(XEventId.EVENT_TEAM_PREFAB_CHANGE, self:GetId(), self)
+end
 
 --- 同步接口
 function XTeamPrefab:SyncFullDataToServer(cb)
@@ -1063,15 +1081,15 @@ function XTeamPrefab:SyncPartnerDataToServer(pos, cb)
     XDataCenter.PartnerManager.TeamPreSetPartnerRequest(self:GetId(), pos, partnerId, partnerData:GetSkillData(partnerId), cb)
 end
 
-function XTeamPrefab:SyncMetaDataToServer(cb)
-    local name = self:GetName()
-    if string.IsNilOrEmpty(name) then
-        self:EndSnapshotBatch()
-        return
-    end
-
-    XDataCenter.TeamManager.TeamPrefabUpdateMetadataRequest(self, cb)
-end
+function XTeamPrefab:SyncMetaDataToServer(cb)
+    local name = self:GetName()
+    if string.IsNilOrEmpty(name) then
+        self:EndSnapshotBatch()
+        return
+    end
+
+    XDataCenter.TeamManager.TeamPrefabUpdateMetadataRequest(self, cb)
+end
 
 function XTeamPrefab:SyncTagsToServer(tagIds, cb)
     XDataCenter.TeamManager.TeamPrefabSetTagsRequest(self:GetId(), tagIds, cb)

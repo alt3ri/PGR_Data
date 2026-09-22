@@ -1865,6 +1865,16 @@
         "Text": "\"20009063 Status already set, cannot set repeatedly\""
     },
     {
+        "Id": 20009064.0,
+        "Key": "CharacterOneClickNothingToTrain",
+        "Text": "20009064 This character has nothing available to upgrade"
+    },
+    {
+        "Id": 20009065.0,
+        "Key": "CharacterOneClickTrainFail",
+        "Text": "20009065 Quick Upgrade failed"
+    },
+    {
         "Id": 20010001.0,
         "Key": "FashionManagerGetFashionNotFound",
         "Text": "Coating not found"
@@ -2145,6 +2155,16 @@
         "Text": "20012040 Item exchange quantity invalid"
     },
     {
+        "Id": 20012041.0,
+        "Key": "ItemTargetIdNotFoundFromItemCombine",
+        "Text": "20012041 Exchange item not found in merged group."
+    },
+    {
+        "Id": 20012042.0,
+        "Key": "ItemTargetIdNotCostGem",
+        "Text": "20012042 Exchange item does not consume Black Cards."
+    },
+    {
         "Id": 20014001.0,
         "Key": "ArrangeManagerCalTypeFail",
         "Text": "\"Invalid ID, unable to identify the type.\""
@@ -2320,9 +2340,14 @@
         "Text": "Cannot change research group during event"
     },
     {
+        "Id": 20018029.0,
+        "Key": "DrawManagerDrawTicketTimesNotMatch",
+        "Text": "20018029 Draw tickets used do not match the number of draws"
+    },
+    {
         "Id": 20019001.0,
         "Key": "GuideManagerGetGuideGroupTableNotFound",
-        "Text": "\u83b7\u53d6\u4e0d\u5230\u5f15\u5bfc\u7ec4\u8868"
+        "Text": "Failed to load tutorial data."
     },
     {
         "Id": 20019002.0,
@@ -8788,6 +8813,11 @@
         "Id": 20065007.0,
         "Key": "ArchiveInvalidEvaluateType",
         "Text": "20065007 Invalid Codex type"
+    },
+    {
+        "Id": 20065008.0,
+        "Key": "ArchiveMailNotUnlock",
+        "Text": "20065008 Mail gallery not unlocked."
     },
     {
         "Id": 20066001.0,
@@ -29232,7 +29262,7 @@
     {
         "Id": 20427001.0,
         "Key": "Theatre6PvpNotOpen",
-        "Text": "\u8be1\u57ce\u4ea4\u950b\u672a\u5f00\u542f"
+        "Text": "Phantom Clash is not yet available"
     },
     {
         "Id": 20427002.0,
@@ -29392,137 +29422,682 @@
     {
         "Id": 20428001.0,
         "Key": "EnvelopeActivityNotOpen",
-        "Text": "20428001\u6d3b\u52a8\u672a\u5f00\u542f"
+        "Text": "20428001 Event not open"
     },
     {
         "Id": 20428002.0,
         "Key": "EnvelopeCharacterNotFound",
-        "Text": "20428002\u89d2\u8272\u914d\u8868\u4e0d\u5b58\u5728"
+        "Text": "20428002 Character config does not exist"
     },
     {
         "Id": 20428003.0,
         "Key": "EnvelopeListNotFound",
-        "Text": "20428003\u6761\u76ee\u4e0d\u5b58\u5728"
+        "Text": "20428003 Entry does not exist"
     },
     {
         "Id": 20428004.0,
         "Key": "EnvelopeCharacterAlreadyOpened",
-        "Text": "20428004\u89d2\u8272\u5df2\u5f00\u5305"
+        "Text": "20428004 Character already invited"
     },
     {
         "Id": 20428005.0,
         "Key": "EnvelopeTicketItemNotConfigured",
-        "Text": "20428005\u5f00\u5305\u5238\u914d\u7f6e\u7f3a\u5931"
+        "Text": "20428005 Voucher config missing"
     },
     {
         "Id": 20428006.0,
         "Key": "EnvelopeInstrumentNotFound",
-        "Text": "20428006\u4e50\u5668\u914d\u8868\u4e0d\u5b58\u5728"
+        "Text": "20428006 Instrument config does not exist"
     },
     {
         "Id": 20428007.0,
         "Key": "EnvelopeInstrumentNotUnlocked",
-        "Text": "20428007\u4e50\u5668\u672a\u89e3\u9501"
+        "Text": "20428007 Instrument locked"
     },
     {
         "Id": 20428008.0,
         "Key": "EnvelopeCharacterNotOpened",
-        "Text": "20428008\u89d2\u8272\u5c1a\u672a\u5f00\u5305"
+        "Text": "20428008 Character not yet invited"
     },
     {
         "Id": 20428009.0,
         "Key": "EnvelopeCharacterDuplicatedInRequest",
-        "Text": "20428009\u8bf7\u6c42\u4e2d\u5b58\u5728\u91cd\u590d\u89d2\u8272"
+        "Text": "20428009 Duplicate characters in request"
     },
     {
         "Id": 20428010.0,
         "Key": "EnvelopeRequestCountExceeded",
-        "Text": "20428010\u8bf7\u6c42\u6570\u91cf\u8d85\u51fa\u4e0a\u9650"
+        "Text": "20428010 Request count exceeds limit"
     },
     {
         "Id": 20428011.0,
         "Key": "EnvelopeFastOpenLocked",
-        "Text": "20428011\u4e00\u952e\u5f00\u5305\u5c1a\u672a\u89e3\u9501"
+        "Text": "20428011 Quick invite not unlocked"
     },
     {
         "Id": 20428012.0,
         "Key": "EnvelopeAvgAlreadyWatched",
-        "Text": "20428012\u89d2\u8272\u5df2\u8bb0\u5f55"
+        "Text": "20428012 Character already recorded"
     },
     {
         "Id": 20429001.0,
         "Key": "AudioPlayerSongNotFound",
-        "Text": "20429001\u6b4c\u66f2\u914d\u8868\u4e0d\u5b58\u5728"
+        "Text": "20429001 Music config does not exist"
     },
     {
         "Id": 20429002.0,
         "Key": "AudioPlayerFavoriteSongAlreadyExists",
-        "Text": "20429002\u6b4c\u66f2\u5df2\u5728\u5fc3\u9009\u6b4c\u5355\u4e2d"
+        "Text": "20429002 Track already in Favorites"
     },
     {
         "Id": 20429003.0,
         "Key": "AudioPlayerSongLocked",
-        "Text": "20429003\u6b4c\u66f2\u672a\u89e3\u9501(\u65e0\u4f53\u9a8c\u65f6\u95f4\u4e14\u89e3\u9501\u6761\u4ef6\u672a\u6ee1\u8db3\uff0c\u6216\u4f53\u9a8c\u65f6\u95f4\u5df2\u8fc7)"
+        "Text": "20429003 Track locked (Trial expired or unlock conditions not met)"
     },
     {
         "Id": 20429004.0,
         "Key": "AudioPlayerFavoriteSongCountLimit",
-        "Text": "20429004\u5fc3\u9009\u6b4c\u5355\u6570\u91cf\u5df2\u8fbe\u4e0a\u9650"
+        "Text": "20429004 Favorites playlist full"
     },
     {
         "Id": 20429005.0,
         "Key": "AudioPlayerFavoriteSongNotInList",
-        "Text": "20429005\u6b4c\u66f2\u4e0d\u5728\u5fc3\u9009\u6b4c\u5355\u4e2d"
+        "Text": "20429005 Track not in Favorites"
     },
     {
         "Id": 20429006.0,
         "Key": "AudioPlayerBackgroundSongAlreadyExists",
-        "Text": "20429006\u6b4c\u66f2\u5df2\u5728\u80cc\u666f\u97f3\u4e50\u6b4c\u5355\u4e2d"
+        "Text": "20429006 Track already in BGM Playlist"
     },
     {
         "Id": 20429007.0,
         "Key": "AudioPlayerBackgroundSongNotInList",
-        "Text": "20429007\u6b4c\u66f2\u4e0d\u5728\u80cc\u666f\u97f3\u4e50\u6b4c\u5355\u4e2d"
+        "Text": "20429007 Track not in BGM Playlist"
     },
     {
         "Id": 20429008.0,
         "Key": "AudioPlayerBackgroundSongCannotBeEmpty",
-        "Text": "20429008\u80cc\u666f\u97f3\u4e50\u6b4c\u5355\u81f3\u5c11\u4fdd\u7559\u4e00\u9996\uff0c\u4e0d\u53ef\u5220\u9664"
+        "Text": "20429008 BGM Playlist must contain at least one track"
     },
     {
         "Id": 20429009.0,
         "Key": "AudioPlayerBackgroundSongMoveIndexInvalid",
-        "Text": "20429009\u80cc\u666f\u97f3\u4e50\u6b4c\u5355\u79fb\u52a8\u76ee\u6807\u4f4d\u7f6e\u975e\u6cd5"
+        "Text": "20429009 Invalid target position for BGM Playlist"
     },
     {
         "Id": 20429010.0,
         "Key": "AudioPlayerBackgroundSongAlreadyAtTop",
-        "Text": "20429010\u80cc\u666f\u97f3\u4e50\u6b4c\u5355\u6b4c\u66f2\u5df2\u5728\u9876\u90e8\uff0c\u65e0\u6cd5\u7f6e\u9876"
+        "Text": "20429010 Track is already at the top"
     },
     {
         "Id": 20429011.0,
         "Key": "AudioPlayerBackgroundSongAlreadyAtBottom",
-        "Text": "20429011\u80cc\u666f\u97f3\u4e50\u6b4c\u5355\u6b4c\u66f2\u5df2\u5728\u672b\u4f4d\uff0c\u65e0\u6cd5\u4e0b\u79fb"
+        "Text": "20429011 Track is already at the bottom"
     },
     {
         "Id": 20429012.0,
         "Key": "AudioPlayerBackgroundSongMoveTypeInvalid",
-        "Text": "20429012\u80cc\u666f\u97f3\u4e50\u6b4c\u5355\u79fb\u52a8\u64cd\u4f5c\u7c7b\u578b\u975e\u6cd5"
+        "Text": "20429012 Invalid movement type for BGM Playlist"
     },
     {
         "Id": 20429013.0,
         "Key": "AudioPlayerBackgroundSongDuplicateInRequest",
-        "Text": "20429013\u6279\u91cf\u52a0\u5165\u80cc\u666f\u97f3\u4e50\u6b4c\u5355\u7684\u8bf7\u6c42\u4e2d\u5b58\u5728\u91cd\u590d\u6b4c\u66f2"
+        "Text": "20429013 Duplicate tracks in batch request"
     },
     {
         "Id": 20429014.0,
         "Key": "AudioPlayerBackgroundSongRequestEmpty",
-        "Text": "20429014\u6279\u91cf\u52a0\u5165\u80cc\u666f\u97f3\u4e50\u6b4c\u5355\u7684\u8bf7\u6c42\u4e3a\u7a7a"
+        "Text": "20429014 Batch request cannot be empty"
     },
     {
         "Id": 20429015.0,
         "Key": "AudioPlayerBackgroundSongCountLimit",
-        "Text": "20429015\u80cc\u666f\u97f3\u4e50\u6b4c\u5355\u6570\u91cf\u5df2\u8fbe\u4e0a\u9650"
+        "Text": "20429015 BGM Playlist full"
+    },
+    {
+        "Id": 20430001.0,
+        "Key": "PunishaarActivityNotOpen",
+        "Text": "20430001 Event not available"
+    },
+    {
+        "Id": 20430002.0,
+        "Key": "PunishaarStageConfigNotFound",
+        "Text": "20430002 Stage configuration not found"
+    },
+    {
+        "Id": 20430003.0,
+        "Key": "PunishaarStageInProgress",
+        "Text": "20430003 Another stage is already in progress"
+    },
+    {
+        "Id": 20430004.0,
+        "Key": "PunishaarStageNotInProgress",
+        "Text": "20430004 No ongoing stage"
+    },
+    {
+        "Id": 20430005.0,
+        "Key": "PunishaarNodeNotFound",
+        "Text": "20430005 No nodes available"
+    },
+    {
+        "Id": 20430006.0,
+        "Key": "PunishaarNodeTypeNotMatch",
+        "Text": "20430006 Node type mismatch"
+    },
+    {
+        "Id": 20430007.0,
+        "Key": "PunishaarNodeConditionNotMet",
+        "Text": "20430007 Node exit conditions not met"
+    },
+    {
+        "Id": 20430008.0,
+        "Key": "PunishaarNodeHandlerNotFound",
+        "Text": "20430008 Node handler not found"
+    },
+    {
+        "Id": 20430009.0,
+        "Key": "PunishaarNodeConfigNotFound",
+        "Text": "20430009 Node configuration not found"
+    },
+    {
+        "Id": 20430010.0,
+        "Key": "PunishaarStageNotOpen",
+        "Text": "20430010 Stage not available during the current period"
+    },
+    {
+        "Id": 20430011.0,
+        "Key": "PunishaarGoldNotEnough",
+        "Text": "20430011 Insufficient Coins"
+    },
+    {
+        "Id": 20430012.0,
+        "Key": "PunishaarPrevStageNotPassed",
+        "Text": "20430012 Previous stage not cleared"
+    },
+    {
+        "Id": 20430013.0,
+        "Key": "PunishaarFightNotInCandidates",
+        "Text": "20430013 Selected battle is not in the available list"
+    },
+    {
+        "Id": 20430014.0,
+        "Key": "PunishaarEventNotInCandidates",
+        "Text": "20430014 Selected event is not in the available list"
+    },
+    {
+        "Id": 20430015.0,
+        "Key": "PunishaarEventAlreadySelected",
+        "Text": "20430015 Event already selected"
+    },
+    {
+        "Id": 20430016.0,
+        "Key": "PunishaarFightAlreadySelected",
+        "Text": "20430016 Battle already selected"
+    },
+    {
+        "Id": 20430017.0,
+        "Key": "PunishaarEventNotSelected",
+        "Text": "20430017 No event selected"
+    },
+    {
+        "Id": 20430018.0,
+        "Key": "PunishaarEventAlreadyFinished",
+        "Text": "20430018 Event already completed"
+    },
+    {
+        "Id": 20430019.0,
+        "Key": "PunishaarEventConfigNotFound",
+        "Text": "20430019 Event configuration not found"
+    },
+    {
+        "Id": 20430020.0,
+        "Key": "PunishaarFightNotSelected",
+        "Text": "20430020 No battle selected"
+    },
+    {
+        "Id": 20430021.0,
+        "Key": "PunishaarFightAlreadyFinished",
+        "Text": "20430021 Battle already won. Cannot calculate results again"
+    },
+    {
+        "Id": 20430022.0,
+        "Key": "PunishaarSignalBallColorInvalid",
+        "Text": "20430022 Invalid Signal Orb color"
+    },
+    {
+        "Id": 20430023.0,
+        "Key": "PunishaarNodeStatusNotFinished",
+        "Text": "20430023 Node incomplete. Cannot exit"
+    },
+    {
+        "Id": 20430024.0,
+        "Key": "PunishaarNodeStatusTransitionInvalid",
+        "Text": "20430024 Invalid node state transition"
+    },
+    {
+        "Id": 20430025.0,
+        "Key": "PunishaarSaveCountLimit",
+        "Text": "20430025 Stage save limit reached"
+    },
+    {
+        "Id": 20430026.0,
+        "Key": "PunishaarActivityConfigNotFound",
+        "Text": "20430026 Event configuration not found"
+    },
+    {
+        "Id": 20430027.0,
+        "Key": "PunishaarStageTimeNotOpen",
+        "Text": "20430027 Stage not available"
+    },
+    {
+        "Id": 20430028.0,
+        "Key": "PunishaarStageFirstNodeNotFound",
+        "Text": "20430028 Initial stage node configuration not found"
+    },
+    {
+        "Id": 20430029.0,
+        "Key": "PunishaarFightNotWin",
+        "Text": "20430029 Battle not won. Cannot exit"
+    },
+    {
+        "Id": 20430030.0,
+        "Key": "PunishaarNodeInitFailed",
+        "Text": "20430030 Node initialization failed"
+    },
+    {
+        "Id": 20430031.0,
+        "Key": "PunishaarNodeStatusNotRewardReplace",
+        "Text": "20430031 Node is not eligible for reward replacement"
+    },
+    {
+        "Id": 20430032.0,
+        "Key": "PunishaarNoPendingRewardCard",
+        "Text": "20430032 No reward cards in temporary storage"
+    },
+    {
+        "Id": 20430033.0,
+        "Key": "PunishaarMasterCardNotFound",
+        "Text": "20430033 Main card does not exist"
+    },
+    {
+        "Id": 20430034.0,
+        "Key": "PunishaarCardCountMismatch",
+        "Text": "20430034 Card count changed after moving"
+    },
+    {
+        "Id": 20430035.0,
+        "Key": "PunishaarCardPosDuplicate",
+        "Text": "20430035 Duplicate card detected after moving"
+    },
+    {
+        "Id": 20430036.0,
+        "Key": "PunishaarCardAddInfoNull",
+        "Text": "20430036\u65b0\u589e\u5361\u724c\u4fe1\u606f\u4e3a\u7a7a"
+    },
+    {
+        "Id": 20430037.0,
+        "Key": "PunishaarCardPosOutOfRange",
+        "Text": "20430036 Card position is out of bounds or exceeds the grid limit"
+    },
+    {
+        "Id": 20430038.0,
+        "Key": "PunishaarCardPosOverlap",
+        "Text": "20430037 Card positions overlap"
+    },
+    {
+        "Id": 20430039.0,
+        "Key": "PunishaarCardPosListNull",
+        "Text": "20430038 Card position list is empty"
+    },
+    {
+        "Id": 20430040.0,
+        "Key": "PunishaarCardPosInfoNull",
+        "Text": "20430040\u5361\u724c\u4f4d\u7f6e\u4fe1\u606f\u4e3a\u7a7a"
+    },
+    {
+        "Id": 20430041.0,
+        "Key": "PunishaarCardAreaTypeInvalid",
+        "Text": "20430039 Invalid card area"
+    },
+    {
+        "Id": 20430042.0,
+        "Key": "PunishaarCardConfigNotFound",
+        "Text": "20430040 Card configuration not found"
+    },
+    {
+        "Id": 20430043.0,
+        "Key": "PunishaarCardSizeInvalid",
+        "Text": "20430041 Invalid card size"
+    },
+    {
+        "Id": 20430044.0,
+        "Key": "PunishaarCardLevelConfigNotFound",
+        "Text": "20430042 Card level configuration not found"
+    },
+    {
+        "Id": 20430045.0,
+        "Key": "PunishaarCardUpgradeError",
+        "Text": "20430044 Card upgrade error"
+    },
+    {
+        "Id": 20430046.0,
+        "Key": "PunishaarSubCardNotInMergedRange",
+        "Text": "20430045 Selected sub-card is outside the composite card's allowed range"
+    },
+    {
+        "Id": 20430047.0,
+        "Key": "PunishaarCardTypeInvalid",
+        "Text": "20430046 Invalid card type"
+    },
+    {
+        "Id": 20430048.0,
+        "Key": "PunishaarSubCardSlotEmpty",
+        "Text": "20430047 Sub-card already unequipped"
+    },
+    {
+        "Id": 20430049.0,
+        "Key": "PunishaarCurrentStageNotSelected",
+        "Text": "20430048 No stage save selected"
+    },
+    {
+        "Id": 20430050.0,
+        "Key": "PunishaarConditionGoldNotMet",
+        "Text": "20430049 In-game Coin requirement not met"
+    },
+    {
+        "Id": 20430051.0,
+        "Key": "PunishaarConditionCompareInvalid",
+        "Text": "20430050 Invalid comparison parameter for in-game requirement"
+    },
+    {
+        "Id": 20430052.0,
+        "Key": "PunishaarConditionNodeRangeNotMet",
+        "Text": "20430051 Current in-game node range requirement not met"
+    },
+    {
+        "Id": 20430053.0,
+        "Key": "PunishaarShopNotInCandidates",
+        "Text": "20430052 Selected shop is not in the available list"
+    },
+    {
+        "Id": 20430054.0,
+        "Key": "PunishaarShopAlreadySelected",
+        "Text": "20430053 Shop already selected"
+    },
+    {
+        "Id": 20430055.0,
+        "Key": "PunishaarShopNotSelected",
+        "Text": "20430054 No shop selected"
+    },
+    {
+        "Id": 20430056.0,
+        "Key": "PunishaarShopRefreshGoldNotEnough",
+        "Text": "20430055 Insufficient Coins to refresh the shop"
+    },
+    {
+        "Id": 20430057.0,
+        "Key": "PunishaarShopAllFrozen",
+        "Text": "20430056 All shop items are frozen. Cannot refresh"
+    },
+    {
+        "Id": 20430058.0,
+        "Key": "PunishaarGoodsNotFound",
+        "Text": "20430057 Shop item not found"
+    },
+    {
+        "Id": 20430059.0,
+        "Key": "PunishaarGoodsGoldNotEnough",
+        "Text": "20430058 Insufficient Coins to purchase the item"
+    },
+    {
+        "Id": 20430060.0,
+        "Key": "PunishaarBuyAddCardFailed",
+        "Text": "20430059 Failed to grant card after purchase"
+    },
+    {
+        "Id": 20430061.0,
+        "Key": "PunishaarCardSaleConfigNotFound",
+        "Text": "20430060 Card selling price configuration not found"
+    },
+    {
+        "Id": 20430062.0,
+        "Key": "PunishaarSellNodeInvalid",
+        "Text": "20430061 Cannot sell cards at this node"
+    },
+    {
+        "Id": 20430063.0,
+        "Key": "PunishaarSellCardNotFound",
+        "Text": "20430062 Main card selected for sale does not exist"
+    },
+    {
+        "Id": 20430064.0,
+        "Key": "PunishaarSellRemoveFailed",
+        "Text": "20430063 Failed to remove the main card being sold"
+    },
+    {
+        "Id": 20430065.0,
+        "Key": "PunishaarFightInRemedy",
+        "Text": "20430064 Currently in the reinforcement shop"
+    },
+    {
+        "Id": 20430066.0,
+        "Key": "PunishaarGoodsAlreadyBought",
+        "Text": "20430065 Cannot purchase the same item more than once"
+    },
+    {
+        "Id": 20430067.0,
+        "Key": "PunishaarRewardDetailNull",
+        "Text": "20430067\u5361\u724c\u5956\u52b1\u4fe1\u606f\u4e3a\u7a7a"
+    },
+    {
+        "Id": 20430068.0,
+        "Key": "PunishaarRewardCardDetailNull",
+        "Text": "20430068\u5361\u724c\u5956\u52b1\u8f85\u52a9\u53c2\u6570\u4e3a\u7a7a"
+    },
+    {
+        "Id": 20430069.0,
+        "Key": "PunishaarStageNotCurrent",
+        "Text": "20430069\u975e\u5f53\u524d\u9009\u4e2d\u5173\u5361\u5b58\u6863"
+    },
+    {
+        "Id": 20430070.0,
+        "Key": "PunishaarGoldCountInvalid",
+        "Text": "20430070\u4ee3\u5e01\u53d8\u66f4\u6570\u91cf\u975e\u6cd5"
+    },
+    {
+        "Id": 20431001.0,
+        "Key": "TransfiniteTowerActivityNotOpen",
+        "Text": "20431001 Event not available"
+    },
+    {
+        "Id": 20431002.0,
+        "Key": "TransfiniteTowerChapterNotOpen",
+        "Text": "20431002 Chapter locked"
+    },
+    {
+        "Id": 20431003.0,
+        "Key": "TransfiniteTowerStageProgressError",
+        "Text": "20431003 Stage progress mismatch"
+    },
+    {
+        "Id": 20431004.0,
+        "Key": "TransfiniteTowerNavigatorRequired",
+        "Text": "20431004 Required Navigator missing"
+    },
+    {
+        "Id": 20431005.0,
+        "Key": "TransfiniteTowerChallengeCountNotEnough",
+        "Text": "20431005 Insufficient character challenge attempts"
+    },
+    {
+        "Id": 20431006.0,
+        "Key": "TransfiniteTowerNavigatorLocked",
+        "Text": "20431006 Navigator locked"
+    },
+    {
+        "Id": 20431007.0,
+        "Key": "TransfiniteTowerRollbackInvalid",
+        "Text": "20431007 Invalid Replay Point"
+    },
+    {
+        "Id": 20431008.0,
+        "Key": "TransfiniteTowerNoCurBattle",
+        "Text": "20431008 Chapter battle info is empty"
+    },
+    {
+        "Id": 20431009.0,
+        "Key": "TransfiniteTowerSettleCondNotEnough",
+        "Text": "20431009 Result calculation conditions not met"
+    },
+    {
+        "Id": 20431010.0,
+        "Key": "TransfiniteTowerMvpInvalid",
+        "Text": "20431010 MVP not on the deployment roster"
+    },
+    {
+        "Id": 20431011.0,
+        "Key": "TransfiniteTowerRankNotAvailable",
+        "Text": "20431011 Leaderboard not available"
+    },
+    {
+        "Id": 20431012.0,
+        "Key": "TransfiniteTowerChapterCfgNotFound",
+        "Text": "20431012 Chapter tower configuration not found"
+    },
+    {
+        "Id": 20431013.0,
+        "Key": "TransfiniteTowerStageCfgNotFound",
+        "Text": "20431013 Stage configuration not found"
+    },
+    {
+        "Id": 20431014.0,
+        "Key": "TransfiniteTowerNotSettled",
+        "Text": "20431014 Chapter tower results have not been calculated"
+    },
+    {
+        "Id": 20431015.0,
+        "Key": "TransfiniteTowerStageNotSettled",
+        "Text": "20431015 Unconfirmed stage results found"
+    },
+    {
+        "Id": 20431016.0,
+        "Key": "TransfiniteTowerNoPendingStage",
+        "Text": "20431016 No pending stage battle to confirm"
+    },
+    {
+        "Id": 20431017.0,
+        "Key": "TransfiniteTowerLastRecordNotReset",
+        "Text": "20431017 A Tower Climb record from the previous round exists. Reset the chapter tower first"
+    },
+    {
+        "Id": 20431018.0,
+        "Key": "TransfiniteTowerNoLastRecord",
+        "Text": "20431018 No Tower Climb record from the previous round to reset"
+    },
+    {
+        "Id": 20431019.0,
+        "Key": "TransfiniteTowerTeamSlotOverLimit",
+        "Text": "20431019 Max number of team slots reached"
+    },
+    {
+        "Id": 20431020.0,
+        "Key": "TransfiniteTowerTeamSlotConflict",
+        "Text": "20431020 Player-controlled unit conflicts with the bot in the same slot"
+    },
+    {
+        "Id": 20431021.0,
+        "Key": "TransfiniteTowerTeamMemberDuplicate",
+        "Text": "20431021 Duplicate character deployed"
+    },
+    {
+        "Id": 20431022.0,
+        "Key": "TransfiniteTowerTeamMemberNotInGroup",
+        "Text": "20431022 This character is not eligible for deployment"
+    },
+    {
+        "Id": 20431023.0,
+        "Key": "TransfiniteTowerTeamCharacterMismatch",
+        "Text": "20431023 This character cannot be deployed as a player-controlled unit"
+    },
+    {
+        "Id": 20431024.0,
+        "Key": "TransfiniteTowerNavigatorForbidden",
+        "Text": "20431024 Navigators cannot be deployed in this stage"
+    },
+    {
+        "Id": 20431025.0,
+        "Key": "TransfiniteTowerCharacterLocked",
+        "Text": "20431025 Character locked"
+    },
+    {
+        "Id": 20431026.0,
+        "Key": "TransfiniteTowerNavigatorCountOverLimit",
+        "Text": "20431026 Max number of navigators reached"
+    },
+    {
+        "Id": 20431027.0,
+        "Key": "TransfiniteTowerCharacterGroupCfgNotFound",
+        "Text": "20431027 Character group configuration not found"
+    },
+    {
+        "Id": 20431028.0,
+        "Key": "TransfiniteTowerRefightTeamChanged",
+        "Text": "20431028 Retry lineup does not match the clear record"
+    },
+    {
+        "Id": 20432001.0,
+        "Key": "TeamRecommendTargetLimitExceed",
+        "Text": "20432001 Max number of lineup recommendation targets reached"
+    },
+    {
+        "Id": 20432002.0,
+        "Key": "TeamRecommendCharacterCfgNotFound",
+        "Text": "20432002 Character settings not found"
+    },
+    {
+        "Id": 20432003.0,
+        "Key": "TeamRecommendBaseCharacterCfgNotFound",
+        "Text": "20432003 Base character configuration not found"
+    },
+    {
+        "Id": 20432004.0,
+        "Key": "TeamRecommendParamError",
+        "Text": "20432004 Invalid request parameters"
+    },
+    {
+        "Id": 20432005.0,
+        "Key": "TeamRecommendDetailNotFound",
+        "Text": "20432005 Recommendation details not found"
+    },
+    {
+        "Id": 20432006.0,
+        "Key": "TeamRecommendFormationCfgNotFound",
+        "Text": "20432006 Lineup configuration not found"
+    },
+    {
+        "Id": 20432007.0,
+        "Key": "TeamRecommendBaseFormationCfgNotFound",
+        "Text": "20432007 Lineup pity configuration not found"
+    },
+    {
+        "Id": 20432008.0,
+        "Key": "TeamRecommendTargetNotFound",
+        "Text": "20432008 Character target does not exist"
+    },
+    {
+        "Id": 20432009.0,
+        "Key": "TeamRecommendFormationNotMatch",
+        "Text": "20432009 The lineup target does not match its source"
+    },
+    {
+        "Id": 20432010.0,
+        "Key": "TeamRecommendBaseFormationCharacterNotMatch",
+        "Text": "20432010 The target character does not match the character in the configured lineup"
+    },
+    {
+        "Id": 20433001.0,
+        "Key": "RepeatChallengeMultiRewardActivityNotOpen",
+        "Text": "20433001 Pre-event bonus activity not open"
     },
     {
         "Id": 25000001.0,

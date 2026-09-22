@@ -42,6 +42,7 @@ function XUiFangKuaiFight:OnAwake()
     self._Effects = {}
     self._EffectTimer = {}
     self._UltimaSlashEffectTimer = {}
+    self._KnifeClearEffectTimer = {}
     self._ItemGrids = {}
     self._FlyingItemMap = {}
     self._EnhanceEffectPool = {}
@@ -58,6 +59,7 @@ function XUiFangKuaiFight:OnAwake()
     --self._FevLineTop = tonumber(self._Control:GetClientConfig("FevLineTop"))
     --self._FevLineBottom = tonumber(self._Control:GetClientConfig("FevLineBottom"))
     self._ClearBlockTime = tonumber(self._Control:GetClientConfig("ClearBlockTime")) * 1000
+    self._KnifeClearEffectIntervalTime = tonumber(self._Control:GetClientConfig("KnifeClearEffectIntervalTime"))
     self._EnhanceAccumulateLimit = tonumber(self._Control:GetClientConfig("ItemEnhanceAccumulateLimit"))
 
     self._BlockPool = XObjectPool.New(function()
@@ -120,7 +122,7 @@ function XUiFangKuaiFight:OnStart(game, isNewGame)
     self:HideCompareBg()
     self:HideHorizontalTip()
     self:ShowWarnEffect()
-    self:HideSwordTrailEffect()
+    self:HideGridEffect()
     self:HideFevTailEffect()
 
     self.EndTime = self._Control:GetActivityGameEndTime()
@@ -406,7 +408,7 @@ function XUiFangKuaiFight:OnLineClear(operate, argsDict)
     if operate == XEnumConst.FangKuai.OperateMode.Clear then
         self:OnNormalLineClear(argsDict)
     elseif operate == XEnumConst.FangKuai.OperateMode.DirClear then
-        self:OnDirLineClear(argsDict)
+        self:OnDirLineClear(argsDict[1])
     end
 end
 
@@ -471,8 +473,41 @@ function XUiFangKuaiFight:OnNormalLineClear(argsDict)
 end
 
 ---播放同侧消除特效
-function XUiFangKuaiFight:OnDirLineClear()
-    self:HideSwordTrailEffect()
+function XUiFangKuaiFight:OnDirLineClear(argsDict)
+    if not argsDict then
+        return
+    end
+    self:InitKnifeEffect()
+    self:HideGridEffect()
+
+    local gridY, left, right = argsDict[1], argsDict[2], argsDict[3]
+    --把刀锋方块自己排除掉
+    if left == 1 then
+        right = right - 1
+    else
+        left = left + 1
+    end
+    
+    self.PanelKnifeEffect.gameObject:SetActiveEx(true)
+    self._KnifeEffectV3.y = self._Control:GetPosByGridY(gridY)
+    self.PanelKnifeEffect.localPosition = self._KnifeEffectV3
+
+    for i = left, right do
+        if self._KnifeClearEffectTimer[i] then
+            XScheduleManager.UnSchedule(self._KnifeClearEffectTimer[i])
+        end
+        local effect = self._KnifeClearEffects[i]
+        self._KnifeClearEffectTimer[i] = XScheduleManager.ScheduleOnce(function()
+            effect.gameObject:SetActiveEx(true)
+            self._KnifeClearEffectTimer[i] = XScheduleManager.ScheduleOnce(function()
+                if i == right then
+                    self:HideGridEffect()
+                else
+                    effect.gameObject:SetActiveEx(false)
+                end
+            end, self._ClearBlockTime)
+        end, (i - left) * self._KnifeClearEffectIntervalTime)
+    end
 end
 
 function XUiFangKuaiFight:OnUltimaSlashLineClear(gridY)
@@ -485,7 +520,7 @@ function XUiFangKuaiFight:OnUltimaSlashLineClear(gridY)
         self._UltimaSlashEffectTimer[gridY] = nil
     end
 
-    self:HideSwordTrailEffect()
+    self:HideGridEffect()
     self.PanelUltimaSlashEffect.gameObject:SetActiveEx(true)
     self._UltimaSlashEffectTimer[gridY] = XScheduleManager.ScheduleOnce(function()
         self.PanelUltimaSlashEffect.gameObject:SetActiveEx(false)
@@ -549,6 +584,7 @@ function XUiFangKuaiFight:OnRestart()
     self:UpdateItem()
     self:StartCreateInitBlock(true)
     self:UpdateFeverProgress()
+    self:UpdateEnhanceCount()
     --self:UpdateFevLineState()
     self._Game:InitExitFevGuideFlag()
 end
@@ -1153,20 +1189,28 @@ function XUiFangKuaiFight:ShowFevTailEffect(block)
     self.PanelTailEffect.gameObject:SetActiveEx(true)
 end]]
 
----剑痕特效（狂热状态 or 刀锋方块）
+function XUiFangKuaiFight:InitFevDragEffect()
+    if self._FevDragEffect then
+        return
+    end
+    self._FevDragEffect = {}
+    XUiHelper.InitUiClass(self._FevDragEffect, self.PanelFevDragEffect)
+    self._FevDragEffects = {}
+    for i = 1, 9 do
+        self._FevDragEffects[i] = self._FevDragEffect["DragEffect" .. i]
+    end
+    self._FevDragEffectV3 = self.PanelFevDragEffect.localPosition
+end
+
+---剑痕特效（狂热状态）
 ---@param block XUiGridFangKuaiBlock
 function XUiFangKuaiFight:ShowSwordTrailEffect(initGridX, curGridX, block)
-    if not self._FevDragEffect then
-        self._FevDragEffectV3 = self.PanelFevDragEffect.localPosition
-        self._FevDragEffect = {}
-        XUiHelper.InitUiClass(self._FevDragEffect, self.PanelFevDragEffect)
-    end
+    self:InitFevDragEffect()
 
     initGridX = math.floor(initGridX)
     curGridX = math.floor(curGridX)
-
     if initGridX == curGridX then
-        self:HideSwordTrailEffect()
+        self:HideGridEffect()
         return
     end
 
@@ -1177,23 +1221,69 @@ function XUiFangKuaiFight:ShowSwordTrailEffect(initGridX, curGridX, block)
 
     local left = math.min(initGridX, curGridX)
     local right = math.max(initGridX, curGridX)
-    for i = 1, 9 do
-        local isShow = i >= left and i <= right
-        self._FevDragEffect["DragEffect" .. i].gameObject:SetActiveEx(isShow)
+    for index, effect in pairs(self._FevDragEffects) do
+        local isShow = index >= left and index <= right
+        effect.gameObject:SetActiveEx(isShow)
     end
 end
 
-function XUiFangKuaiFight:HideSwordTrailEffect()
-    if self._FevDragEffect then
-        for i = 1, 9 do
-            self._FevDragEffect["DragEffect" .. i].gameObject:SetActiveEx(false)
+function XUiFangKuaiFight:HideGridEffect()
+    for i = 1, 9 do
+        if self._FevDragEffects and self._FevDragEffects[i] then
+            self._FevDragEffects[i].gameObject:SetActiveEx(false)
+        end
+        if self._KnifeDragEffects and self._KnifeDragEffects[i] then
+            self._KnifeDragEffects[i].gameObject:SetActiveEx(false)
+        end
+        if self._KnifeClearEffects and self._KnifeClearEffects[i] then
+            self._KnifeClearEffects[i].gameObject:SetActiveEx(false)
         end
     end
     self.PanelFevDragEffect.gameObject:SetActiveEx(false)
+    self.PanelKnifeEffect.gameObject:SetActiveEx(false)
 end
 
 function XUiFangKuaiFight:HideFevTailEffect()
     self.PanelTailEffect.gameObject:SetActiveEx(false)
+end
+
+function XUiFangKuaiFight:InitKnifeEffect()
+    if self._KnifeEffect then
+        return
+    end
+    self._KnifeEffect = {}
+    XUiHelper.InitUiClass(self._KnifeEffect, self.PanelKnifeEffect)
+    self._KnifeDragEffects = {}
+    self._KnifeClearEffects = {}
+    for i = 1, 9 do
+        self._KnifeDragEffects[i] = self._KnifeEffect["DragEffect" .. i]
+        self._KnifeClearEffects[i] = self._KnifeEffect["ClearEffect" .. i]
+    end
+    self._KnifeEffectV3 = self.PanelKnifeEffect.localPosition
+end
+
+---刀锋方块特效
+---@param block XUiGridFangKuaiBlock
+function XUiFangKuaiFight:ShowKnifeDragEffect(initGridX, curGridX, block)
+    self:InitKnifeEffect()
+
+    initGridX = math.floor(initGridX)
+    curGridX = math.floor(curGridX)
+    if initGridX == curGridX then
+        self:HideGridEffect()
+        return
+    end
+    local gridY = block.BlockData:GetHeadGrid().y
+    self.PanelKnifeEffect.gameObject:SetActiveEx(true)
+    self._KnifeEffectV3.y = self._Control:GetPosByGridY(gridY)
+    self.PanelKnifeEffect.localPosition = self._KnifeEffectV3
+
+    local left = math.min(initGridX, curGridX)
+    local right = math.max(initGridX, curGridX)
+    for index, effect in pairs(self._KnifeDragEffects) do
+        local isShow = index >= left and index <= right
+        effect.gameObject:SetActiveEx(isShow)
+    end
 end
 
 --endregion
@@ -1315,8 +1405,12 @@ function XUiFangKuaiFight:RemoveEffectTimer()
     for _, timer in pairs(self._UltimaSlashEffectTimer) do
         XScheduleManager.UnSchedule(timer)
     end
+    for _, timer in pairs(self._KnifeClearEffectTimer) do
+        XScheduleManager.UnSchedule(timer)
+    end
     self._EffectTimer = {}
     self._UltimaSlashEffectTimer = {}
+    self._KnifeClearEffectTimer = {}
 end
 
 function XUiFangKuaiFight:RemoveCreateTimer()

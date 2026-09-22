@@ -11,6 +11,7 @@ function XUiSignGridDay:Ctor(ui, rootUi)
     self.Grid = nil
     ---@type XUiGridCommon[]
     self.GridSmalls = nil
+    self._IsRewardRequesting = false
 
     XTool.InitUiObject(self)
     self:InitComponent()
@@ -49,7 +50,10 @@ function XUiSignGridDay:OnBtnCardClick()
     if XOverseaManager.IsENRegion() then
         XUiHelper.OpenMonthlyCardEn()
     else
-        XDataCenter.PurchaseManager.OpenYKPackageBuyUi()
+        -- 道具不足时跳转充值界面对应页签，而非仅弹提示
+        XDataCenter.PurchaseManager.OpenYKPackageBuyUi(function(skipIndex)
+            XLuaUiManager.Open("UiPurchase", skipIndex)
+        end)
     end
 end
 
@@ -89,7 +93,7 @@ function XUiSignGridDay:Refresh(config, isShow, forceSetTomorrow)
     self:CheckShowExtraReward(self.PanelExtraReward2, 2, totalCount)
     self:CheckShowExtraReward(self.PanelExtraReward3, 3, totalCount)
 
-    self:SetCardInfo(isAlreadyGet)
+    self:SetCardInfo()
     self.Grid:Refresh(rewardList[1], nil, true)
     if self.GridSmalls then
         for i, grid in ipairs(self.GridSmalls) do
@@ -173,11 +177,16 @@ function XUiSignGridDay:AnimaStart()
 
     -- 还未领取奖励，将会在签到动画播放完后才派发事件
     -- 这时候奖励格子已经全部初始化完成，会进入XUiSignPrefab:SetTomorrowOpen()的v:SetTomorrow()
+    if self._IsRewardRequesting then
+        return
+    end
+
+    self._IsRewardRequesting = true
     self:SetEffectActive(true)
     -- 2.10 先领月卡奖励再领签到奖励，领一半掉线重登仍有弹窗继续领取
-    self:GetYKReward(function(rewardItems)
+    self:GetYKReward(function(rewardItems, needRefreshWelfare)
         XUiObtain.SetRewardsIsShowYKTag(rewardItems)
-        self:GetSignReward(rewardItems)
+        self:GetSignReward(rewardItems, needRefreshWelfare)
     end)
 end
 
@@ -243,19 +252,19 @@ end
 -- 领取月卡奖励
 function XUiSignGridDay:GetYKReward(cb)
     if not self.BtnCard then
-        if cb then cb() end
+        if cb then cb(nil, false) end
         return
     end
 
     if not XDataCenter.PurchaseManager.IsYkBuyed() then
-        if cb then cb() end
+        if cb then cb(nil, false) end
         return
     end
 
     XDataCenter.PurchaseManager.YKInfoDataReq(function()
         local data = XDataCenter.PurchaseManager.GetYKInfoData()
         if not data or data.IsDailyRewardGet then
-            if cb then cb() end
+            if cb then cb(nil, false) end
             return
         end
 
@@ -264,18 +273,19 @@ function XUiSignGridDay:GetYKReward(cb)
             for _, reward in ipairs(rewards) do
                 table.insert(rewardItems, reward)
             end
-            if cb then cb(rewardItems) end
             -- 设置月卡信息本地缓存
             XDataCenter.PurchaseManager.SetYKLocalCache()
-            XEventManager.DispatchEvent(XEventId.EVENT_CARD_REFRESH_WELFARE_BTN)
+            if cb then cb(rewardItems, true) end
         end, function()
-            if cb then cb() end
+            if cb then cb(nil, false) end
         end)
+    end, function()
+        if cb then cb(nil, false) end
     end)
 end
 
 -- 获取签到奖励
-function XUiSignGridDay:GetSignReward(rewardItems)
+function XUiSignGridDay:GetSignReward(rewardItems, needRefreshWelfare)
     XDataCenter.SignInManager.SignInRequest(self.Config.SignId, function(rewards)
         if rewards and #rewards > 0 then
             rewardItems = rewardItems or {}
@@ -283,39 +293,53 @@ function XUiSignGridDay:GetSignReward(rewardItems)
                 table.insert(rewardItems, reward)
             end
         end
-        self:HandlerReward(rewardItems)
+        self:HandlerReward(rewardItems, needRefreshWelfare)
     end, function()
-        self:HandlerReward(rewardItems)
+        self:HandlerReward(rewardItems, needRefreshWelfare)
     end)
 end
 
-function XUiSignGridDay:HandlerReward(rewardItems)
+function XUiSignGridDay:HandlerReward(rewardItems, needRefreshWelfare)
     if rewardItems and #rewardItems > 0 then
-        self:SetReward(rewardItems)
+        self:SetReward(rewardItems, needRefreshWelfare)
     else
-        self:SetNoReward()
+        self:SetNoReward(needRefreshWelfare)
     end
 end
 
-function XUiSignGridDay:SetReward(rewardItems)
+function XUiSignGridDay:FinishRewardRequest(needRefreshWelfare)
+    if needRefreshWelfare then
+        XEventManager.DispatchEvent(XEventId.EVENT_CARD_REFRESH_WELFARE_BTN)
+    end
+    self._IsRewardRequesting = false
+end
+
+function XUiSignGridDay:SetReward(rewardItems, needRefreshWelfare)
     self.PanelHaveGroup.alpha = 1
     self.PanelHaveReceive.gameObject:SetActiveEx(true)
-    self.GameObject:PlayTimelineAnimation(function()
+    local finish = function()
         XUiManager.OpenUiObtain(rewardItems)
         self:SetEffectActive(false)
         self:SetCardInfo()
         XEventManager.DispatchEvent(XEventId.EVENT_SING_IN_OPEN_BTN, true, self.Config)
-    end)
+        self:FinishRewardRequest(needRefreshWelfare)
+    end
+
+    if not self.GameObject.activeInHierarchy then
+        finish()
+        return
+    end
+
+    self.GameObject:PlayTimelineAnimation(finish)
 end
 
-function XUiSignGridDay:SetNoReward()
+function XUiSignGridDay:SetNoReward(needRefreshWelfare)
     self:SetEffectActive(false)
     if self.BtnCard then
-        self:SetPanelEnableActive(false)
-        self:SetPanelDisableActive(true)
-        self:SetBtnCardActive(true)
+        self:SetCardInfo()
     end
     XEventManager.DispatchEvent(XEventId.EVENT_SING_IN_OPEN_BTN, true)
+    self:FinishRewardRequest(needRefreshWelfare)
 end
 
 return XUiSignGridDay

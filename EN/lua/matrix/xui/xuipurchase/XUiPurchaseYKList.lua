@@ -36,10 +36,75 @@ function XUiPurchaseYKListItem:SetData(data, finishedFunc)
     self.BtnBuy:SetNameByGroup(0, data:GetConsumeCount())
     self.BtnBuy:SetRawImage(XEntityHelper.GetItemIcon(data:GetConsumeId()))
     self.BtnHelp.gameObject:SetActiveEx(not string.IsNilOrEmpty(self.YKUiItemConfig.HelpKey))
+
+    self:RefreshRemainDayList(data)
+end
+
+-- 资源月卡每月可购买一次，可能有多个过期时间，过滤出有效（>0）的剩余天数
+function XUiPurchaseYKListItem:GetValidRemainDayList(data)
+    local remainList = {}
+    for _, day in ipairs(data:GetResMonthlyCardRemainDayList()) do
+        if day > 0 then
+            table.insert(remainList, day)
+        end
+    end
+    return remainList
+end
+
+-- 帮助界面追加用：拼接剩余时长文本；未购买（<=0）返回空串
+function XUiPurchaseYKListItem:BuildRemainDayText(data)
+    local remainList = self:GetValidRemainDayList(data)
+    if #remainList <= 0 then
+        return ""
+    end
+
+    local parts = {}
+    for i, d in ipairs(remainList) do
+        table.insert(parts, XUiHelper.GetText("PurchaseYKRemainDayItem" .. i, d))
+    end
+    return table.concat(parts, XUiHelper.GetText("PurchaseYKRemainDaySep"))
+end
+
+-- 三个文本框按剩余天数列表顺序 1 对 1 赋值，多余的隐藏
+function XUiPurchaseYKListItem:RefreshRemainDayList(data)
+    -- UI 文本框与文本 key（PurchaseYKRemainDayItem1/2/3）均为固定 3 个，超出需另行扩展
+    local txtRemainList = { self.TxtTimeRemain, self.TxtTimeRemain2, self.TxtTimeRemain3 }
+    if not self.TxtValid or not txtRemainList[1] then
+        return
+    end
+
+    local remainList = self:GetValidRemainDayList(data)
+
+    -- 未购买任何一条整行不显示；隐藏文本共用的父对象，避免其底图残留
+    local hasAny = #remainList > 0
+    self.TxtValid.transform.parent.gameObject:SetActiveEx(hasAny)
+    if not hasAny then
+        return
+    end
+
+    self.TxtValid.text = XUiHelper.GetText("PurchaseYKValidIng")
+    for i, txt in ipairs(txtRemainList) do
+        local day = remainList[i]
+        txt.gameObject:SetActiveEx(day ~= nil)
+        if day then
+            txt.text = XUiHelper.GetText("PurchaseYKRemainDayItem" .. i, day)
+        end
+    end
 end
 
 function XUiPurchaseYKListItem:OnBtnHelpClicked()
-    XUiManager.ShowHelpTip(self.YKUiItemConfig.HelpKey)
+    local helpKey = self.YKUiItemConfig.HelpKey
+    -- 血清月卡/武器研发：帮助界面末尾追加当前剩余生效时间（纯文本教程样式）
+    local remainText = self:BuildRemainDayText(self.PurchasePackage)
+    if not string.IsNilOrEmpty(remainText) then
+        local config = XMVCA.XHelpCourse:GetHelpCourseCfgByFunction(helpKey)
+        if config and config.IsShowCourse == XEnumConst.HelpCourse.UiHelpType.SimpleContent then
+            local describe = config.Describe .. XUiHelper.GetText("PurchaseYKHelpRemainDesc", remainText)
+            XUiManager.UiFubenDialogTip(config.Name, describe)
+            return
+        end
+    end
+    XUiManager.ShowHelpTip(helpKey)
 end
 
 function XUiPurchaseYKListItem:OnBtnBuyClicked()

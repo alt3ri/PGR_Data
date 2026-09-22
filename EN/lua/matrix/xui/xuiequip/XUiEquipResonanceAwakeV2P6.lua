@@ -15,11 +15,24 @@ function XUiEquipResonanceAwakeV2P6:OnAwake()
     self:SetButtonCallBack()
 end
 
-function XUiEquipResonanceAwakeV2P6:OnStart(parent, characterId, forceShowBindCharacter)
-    self.Parent = parent
-    self.CharacterId = characterId
-    self.ForceShowBindCharacter = forceShowBindCharacter
-end
+function XUiEquipResonanceAwakeV2P6:OnStart(parent, characterId, forceShowBindCharacter)
+    self.Parent = parent
+    self.CharacterId = characterId
+    self.ForceShowBindCharacter = forceShowBindCharacter
+end
+
+function XUiEquipResonanceAwakeV2P6:OnEnable()
+    -- 首次启用发生在 SetPos 之前，此时由 SetPos 完成初始化与监听注册。
+    if self.EquipId == nil then
+        return
+    end
+
+    self:_RefreshConsumeView()
+end
+
+function XUiEquipResonanceAwakeV2P6:OnDestroy()
+    XDataCenter.ItemManager.RemoveCountUpdateListener(self.Transform)
+end
 
 function XUiEquipResonanceAwakeV2P6:OnGetEvents()
     return {
@@ -42,14 +55,43 @@ function XUiEquipResonanceAwakeV2P6:OnNotify(evt, ...)
     end
 end
 
-function XUiEquipResonanceAwakeV2P6:SetPos(equipId, pos)
-    self.EquipId = equipId
-    self.Pos = pos
-    self.TemplateId = XMVCA.XEquip:GetEquipTemplateId(equipId)
-    self:UpdateView()
-end
-
-function XUiEquipResonanceAwakeV2P6:UpdateView()
+function XUiEquipResonanceAwakeV2P6:SetPos(equipId, pos)
+    self.EquipId = equipId
+    self.Pos = pos
+    self.TemplateId = XMVCA.XEquip:GetEquipTemplateId(equipId)
+    self:_RefreshConsumeItemListeners()
+    self:UpdateView()
+end
+
+---监听当前觉醒所需金币与材料的数量变化。
+function XUiEquipResonanceAwakeV2P6:_RefreshConsumeItemListeners()
+    XDataCenter.ItemManager.RemoveCountUpdateListener(self.Transform)
+
+    local itemIds = { XDataCenter.ItemManager.ItemId.Coin }
+    local consumeItemList = self:GetAwakeConsumeItemList()
+    for _, itemInfo in ipairs(consumeItemList) do
+        table.insert(itemIds, itemInfo.ItemId)
+    end
+
+    XDataCenter.ItemManager.AddCountUpdateListener(itemIds, self.OnCostItemCountChanged, self.Transform, self)
+end
+
+---刷新觉醒金币与材料的持有数量。
+function XUiEquipResonanceAwakeV2P6:OnCostItemCountChanged()
+    if not self.GameObject.activeInHierarchy then
+        return
+    end
+
+    self:_RefreshConsumeView()
+end
+
+---刷新觉醒消耗区域的持有数量与不足状态。
+function XUiEquipResonanceAwakeV2P6:_RefreshConsumeView()
+    self:UpdateConsumeCoin()
+    self:UpdateConsumeItem()
+end
+
+function XUiEquipResonanceAwakeV2P6:UpdateView()
     self:UpdateEquipName()
     self:UpdateResonanceSkill()
     self:UpdateConsumeCoin()

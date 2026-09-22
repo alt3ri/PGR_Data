@@ -956,7 +956,7 @@ end
 function XPlanetCamera:RayTileCastByScreenPoint(screenPoint, mask)
     local ray = self._Camera:ScreenPointToRay(screenPoint)
     if not mask then
-        mask = CS.UnityEngine.LayerMask.GetMask(HomeSceneLayerMask.HomeCharacter) | CS.UnityEngine.LayerMask.GetMask(HomeSceneLayerMask.Room)
+        mask = CS.UnityEngine.LayerMask.GetMask(LayerMaskName.Npc) | CS.UnityEngine.LayerMask.GetMask(LayerMaskName.Room)
     end
     local hit = self:GetCameraTransform():PhysicsRayCast(Vector3.zero, ray.direction, mask)
     return hit
@@ -965,13 +965,13 @@ end
 ---射线检测地板对象
 ---@return CS.UnityEngine.Transfrom
 function XPlanetCamera:RayTileCast()
-    return self:RayCast(CS.UnityEngine.LayerMask.GetMask(HomeSceneLayerMask.Room))
+    return self:RayCast(CS.UnityEngine.LayerMask.GetMask(LayerMaskName.Room))
 end
 
 ---射线检测角色对象
 ---@return CS.UnityEngine.Transfrom
 function XPlanetCamera:RayRoleCast()
-    return self:RayCast(CS.UnityEngine.LayerMask.GetMask(HomeSceneLayerMask.HomeCharacter))
+    return self:RayCast(CS.UnityEngine.LayerMask.GetMask(LayerMaskName.Npc))
 end
 
 ---射线检测场景所有层级对象
@@ -992,7 +992,7 @@ function XPlanetCamera:RayCast(mask)
     end
     local ray = self._Camera:ScreenPointToRay(touchPosition)
     if not mask then
-        mask = CS.UnityEngine.LayerMask.GetMask(HomeSceneLayerMask.HomeCharacter) | CS.UnityEngine.LayerMask.GetMask(HomeSceneLayerMask.Room)
+        mask = CS.UnityEngine.LayerMask.GetMask(LayerMaskName.Npc) | CS.UnityEngine.LayerMask.GetMask(LayerMaskName.Room)
     end
     local hit = self:GetCameraTransform():PhysicsRayCast(Vector3.zero, ray.direction, mask)
     return hit
@@ -1003,7 +1003,7 @@ function XPlanetCamera:GetCameraCenterRay(mask)
     local screenPointCenter = Vector3(screen.width / 2, screen.height / 2, 0)
     local ray = self._Camera:ScreenPointToRay(screenPointCenter)
     if not mask then
-        mask = CS.UnityEngine.LayerMask.GetMask(HomeSceneLayerMask.HomeCharacter) | CS.UnityEngine.LayerMask.GetMask(HomeSceneLayerMask.Room)
+        mask = CS.UnityEngine.LayerMask.GetMask(LayerMaskName.Npc) | CS.UnityEngine.LayerMask.GetMask(LayerMaskName.Room)
     end
     local hit = self:GetCameraTransform():PhysicsRayCast(Vector3.zero, ray.direction, mask)
     return hit
@@ -1063,7 +1063,7 @@ function XPlanetCamera:InitCamera()
         if not physicsRaycaster then
             physicsRaycaster = go:AddComponent(typeof(CS.UnityEngine.EventSystems.PhysicsRaycaster))
         end
-        physicsRaycaster:SetEventMask(CS.UnityEngine.LayerMask.GetMask(HomeSceneLayerMask.HomeCharacter) | CS.UnityEngine.LayerMask.GetMask(HomeSceneLayerMask.Room))
+        physicsRaycaster:SetEventMask(CS.UnityEngine.LayerMask.GetMask(LayerMaskName.Npc) | CS.UnityEngine.LayerMask.GetMask(LayerMaskName.Room))
         self:ResetCamera()
     end
     

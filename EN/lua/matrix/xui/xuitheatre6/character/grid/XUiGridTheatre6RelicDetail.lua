@@ -36,9 +36,11 @@ function XUiGridTheatre6RelicDetail:InitComponents()
     self.UiTxtDescEffect.requestImage = XMVCA.XTheatre6.RichTextImageCallBack
 end
 
-function XUiGridTheatre6RelicDetail:SetData(id, readOnly)
+---@param customModelData Theatre6FileData|nil 非当前局数据（存档/PVP），nil 时取当前局
+function XUiGridTheatre6RelicDetail:SetData(id, readOnly, customModelData)
     self._Id = id
     self._ReadOnly = readOnly and true or false
+    self._ModelData = customModelData
     self._Config = self._Control:GetAttrPackCfgById(id)
 
     self:ShowBaseInfo()
@@ -78,7 +80,7 @@ function XUiGridTheatre6RelicDetail:ShowAttribute()
 end
 
 function XUiGridTheatre6RelicDetail:ShowDesc()
-    self.UiTxtDescEffect.text = self._Control:GetAttrPackDesc(self._Id, false)
+    self.UiTxtDescEffect.text = self._Control:GetAttrPackDesc(self._Id, false, self._ModelData)
     self.UiTxtDesc.text = self._Config.PlotDesc
     if self.BtnBuy and not self._ReadOnly then
         local showPrice = tostring(self._Config.BuyPrice)
@@ -155,7 +157,7 @@ end
 
 function XUiGridTheatre6RelicDetail:Refresh(id, param)
     local readOnly = param and param.ReadOnly or false
-    self:SetData(id, readOnly)
+    self:SetData(id, readOnly, param and param.ModelData)
     self:SetBtnStatus(param)
 end
 

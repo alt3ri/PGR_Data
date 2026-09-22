@@ -413,7 +413,7 @@ do
             proxy:SetNpcPosition(uuid1, spawnPoint[4])                    --传送玩家1位置
             proxy:SetNpcFaceToPosition(uuid1, spawnPoint[3])
             proxy:SetNpcPosition(uuid2, spawnPoint[5])                    --传送玩家2位置
-            proxy:SetNpcFaceToPosition(uuid1, spawnPoint[4])
+            proxy:SetNpcFaceToPosition(uuid2, spawnPoint[4])
             fighter1:OnCenterWrestleCountinue(uuid1, uuid2)
             fighter2:OnCenterWrestleCountinue(uuid1, uuid2)
         end)
@@ -627,6 +627,7 @@ do
             local curState = self._stateMachine._curState
             self:LogError(" XLevelScript1081:OnCSDodgeRollDiceEndEvent Error: Called Outside Dodge State, curState is " ..
                 tostring(curState and curState.Name))
+            return
         end
 
         self:SetActionNpc(winnerUUID) --这里的UI表现时间点需要细化
@@ -1247,6 +1248,8 @@ function XLevelScript1081:OnMissileHitEvent(missileUUID, targetNpcUUID, launcher
     local controller, isAtkTriggered, isDefTriggered
 
     for tag, srcType in pairs(finalTags) do
+        isAtkTriggered = false
+        isDefTriggered = false
         if (srcType & DYNAMIC_ATK ~= 0) or (srcType & STATIC_ATK ~= 0) then
             -- self:LogError(tostring(tag))
             controller = attacker:GetAffixControllerByHitTag(tag)

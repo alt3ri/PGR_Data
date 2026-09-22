@@ -1,8 +1,6 @@
 local XUiDrawControl = XClass(nil, "XUiDrawControl")
 local characterRecord = require("XUi/XUiDraw/XUiDrawTools/XUiDrawCharacterRecord")
 
-local MAX_DRAW_BTN_COUNT = 2
-
 ---@class XUiDrawControl
 function XUiDrawControl:Ctor(rootUi, drawInfo, drawCb, uiDraw)
     self.RootUi = rootUi
@@ -19,23 +17,43 @@ end
 function XUiDrawControl:InitRes()
     self.UseItemIcon = XDataCenter.ItemManager.GetItemBigIcon(self.DrawInfo.UseItemId)
     self.TxtDrawCount = XUiHelper.TryGetComponent(self.RootUi.PanelDrawButtons, "TxtTotalDrawCount", "Text")
+    self.DrawBtnNameDict = {
+        [1] = { "BtnDraw1", "BtnDraw3" }, --普通单抽按钮、免费单抽按钮
+        [2] = { "BtnDraw2", "BtnDraw4" }, --普通十抽按钮、免费十抽按钮
+    }
 end
 
 function XUiDrawControl:InitButtons()
-    for i = 1, MAX_DRAW_BTN_COUNT do
-        local btnName = "BtnDraw" .. i
-        local btn = XUiHelper.TryGetComponent(self.RootUi.PanelDrawButtons, btnName)
-        if btn then
-            self:InitButton(btn, i)
+    ---@type DrawButtonView[]
+    self.DrawBtnDict = {}
+    for i, btns in pairs(self.DrawBtnNameDict) do
+        ---@type DrawButtonView
+        local btnView = {}
+        local drawCount = self.DrawInfo.BtnDrawCount[i]
+
+        --普通按钮
+        btnView.Btn = XUiHelper.TryGetComponent(self.RootUi.PanelDrawButtons, btns[1], "XUiButton")
+        if btnView.Btn then
+            self:InitButton(btnView.Btn, drawCount)
+        else
+            XLog.Error(string.format("【卡池】%s抽按钮不存在：%s", tostring(drawCount), btns[1]))
         end
+
+        --免费按钮
+        btnView.FreeBtn = XUiHelper.TryGetComponent(self.RootUi.PanelDrawButtons, btns[2], "XUiButton")
+        if btnView.FreeBtn then
+            btnView.FreeBtn:AddEventListener(function()
+                self:OnDraw(drawCount)
+            end)
+            btnView.FreeBtnTip = btnView.FreeBtn.transform:Find("Time/ImgBg/Txt"):GetComponent(typeof(CS.UnityEngine.UI.Text))
+        else
+            XLog.Error(string.format("【卡池】免费%s抽按钮不存在：%s", tostring(drawCount), btns[2]))
+        end
+
+        btnView.IsTenDraw = i == 2
+        self.DrawBtnDict[i] = btnView
     end
     self:RefreshTenDrawDiscount()
-    ---@type UnityEngine.RectTransform
-    self.FreeBtn = XUiHelper.TryGetComponent(self.RootUi.PanelDrawButtons, "BtnDraw3")
-    self.FreeTimeTip = self.FreeBtn:Find("Time/ImgBg/Txt"):GetComponent(typeof(CS.UnityEngine.UI.Text))
-    self.FreeBtn:GetComponent("XUiButton").CallBack = function()
-        self:OnDraw(1)
-    end
 end
 
 function XUiDrawControl:StartTimer()
@@ -54,13 +72,30 @@ function XUiDrawControl:RefreshFreeTime()
         return
     end
 
-    local ticketInfo, hasNewInfo, newTicketId, exprireTime, count = XDataCenter.DrawManager.GetTicketInfoForExpireTimeDisplay(self.FreeTicketIdForExpireTimeDisplay, self.GroupId)
+    local singleRunning = self:RefreshTicketTimeTip(false)
+    local tenRunning = self:RefreshTicketTimeTip(true)
+    if not singleRunning and not tenRunning then
+        self:StopTimer()
+    end
+end
+
+---@param isTenDraw boolean false刷新单抽券提示（BtnDraw3），true刷新十连券提示（BtnDraw4）
+---@return boolean 是否还有需要倒计时的券
+function XUiDrawControl:RefreshTicketTimeTip(isTenDraw)
+    local index = isTenDraw and 2 or 1
+    local tipText =  self.DrawBtnDict[index].FreeBtnTip
+    if XTool.UObjIsNil(tipText) then
+        return false
+    end
+
+    local ticketData = self.FreeTicketDataDict[index]
+    local ticketInfo, hasNewInfo, newTicketId, exprireTime, count = XDataCenter.DrawManager.GetTicketInfoForExpireTimeDisplay(ticketData.FreeTicketIdForExpireTimeDisplay, self.GroupId, isTenDraw)
 
     if ticketInfo and ticketInfo.ExpireTime then
         exprireTime = ticketInfo.ExpireTime
     elseif hasNewInfo then
-        self.FreeTicketIdForExpireTimeDisplay = newTicketId
-        self.FreeTicketCountForDisplay = count
+        ticketData.FreeTicketIdForExpireTimeDisplay = newTicketId
+        ticketData.FreeTicketCountForDisplay = count
     end
 
     if exprireTime then
@@ -69,12 +104,12 @@ function XUiDrawControl:RefreshFreeTime()
         if offset <= 0 then
             offset = 0
         end
-        self.FreeTimeTip.text = CS.XTextManager.GetText("DrawFreeTicketCoolDown", self.FreeTicketCountForDisplay, XUiHelper.GetTime(offset))
+        tipText.text = CS.XTextManager.GetText("DrawFreeTicketCoolDown", ticketData.FreeTicketCountForDisplay, XUiHelper.GetTime(offset))
+        return true
     else
-        self.FreeTimeTip.text = ""
-        self:StopTimer()
+        tipText.text = ""
+        return false
     end
-
 end
 
 function XUiDrawControl:StopTimer()
@@ -84,20 +119,20 @@ function XUiDrawControl:StopTimer()
     end
 end
 
----@param btn UnityEngine.RectTransform
-function XUiDrawControl:InitButton(btn, index)
-    --@DATA
-    local drawCount = self.DrawInfo.BtnDrawCount[index]
-    ---@type XUiComponent.XUiButton
-    local btnComponent = btn:GetComponent(typeof(CS.XUiComponent.XUiButton))
-    btnComponent:SetNameByGroup(0, CS.XTextManager.GetText("DrawCount", drawCount))
-    btnComponent:SetRawImage(self.UseItemIcon)
-    local itemCount = XDataCenter.DrawManager.GetDiscountDrawPrice(self.DrawInfo.GroupId, self.DrawInfo.UseItemCount, drawCount)
-    btnComponent:SetNameByGroup(1, itemCount)
-
+---@param btn XUiComponent.XUiButton
+function XUiDrawControl:InitButton(btn, drawCount)
+    self:UpdateButton(btn, drawCount)
     self.RootUi:RegisterClickEvent(btn:GetComponent(typeof(CS.UnityEngine.UI.Button)), function()
         self:OnDraw(drawCount)
     end)
+end
+
+---@param btn XUiComponent.XUiButton
+function XUiDrawControl:UpdateButton(btn, drawCount)
+    local itemCount = XDataCenter.DrawManager.GetDiscountDrawPrice(self.DrawInfo.GroupId, self.DrawInfo.UseItemCount, drawCount)
+    btn:SetNameByGroup(0, CS.XTextManager.GetText("DrawCount", drawCount))
+    btn:SetNameByGroup(1, itemCount)
+    btn:SetRawImage(self.UseItemIcon)
 end
 
 function XUiDrawControl:OnDraw(drawCount)
@@ -125,7 +160,15 @@ function XUiDrawControl:OnDraw(drawCount)
         XUiManager.TipText("DrawAimLeftTimeOver")
         return
     end
-    if not XDataCenter.DrawManager.CheckHasFreeTicket(self.GroupId) or (XDataCenter.DrawManager.CheckHasFreeTicket(self.GroupId) and drawCount ~= 1) then
+    -- 单抽只能用单抽券，十连只能用十连券
+    local ticketIsTen
+    if drawCount == 1 then
+        ticketIsTen = false
+    elseif drawCount == 10 then
+        ticketIsTen = true
+    end
+    local hasMatchFreeTicket = ticketIsTen ~= nil and XDataCenter.DrawManager.CheckHasFreeTicket(self.GroupId, ticketIsTen)
+    if not hasMatchFreeTicket then
         local drawGroupInfo = XDataCenter.DrawManager.GetDrawGroupInfoByGroupId(self.GroupId)
         if not drawGroupInfo then
             XLog.Error("XUiDrawControl:OnDraw 获取不到卡池信息 GroupId:" .. self.GroupId)
@@ -191,13 +234,10 @@ function XUiDrawControl:OnDraw(drawCount)
         end
 
         characterRecord.Record()
-        local freeId = XDataCenter.DrawManager.CheckHasFreeTicket(self.GroupId) and XDataCenter.DrawManager.GetFreeTicketIdByGroupId(self.GroupId) or 0
+        local freeId = hasMatchFreeTicket and XDataCenter.DrawManager.GetFreeTicketIdByGroupId(self.GroupId, ticketIsTen) or 0
         if freeId ~= 0 then
             XLog.Debug("使用了免费券 免费券Id:", freeId)
             XLog.Debug("使用了免费券 DrawId:", self.DrawInfo.Id)
-        end
-        if drawCount ~= 1 then
-            freeId = 0
         end
         XDataCenter.DrawManager.DrawCard(self.DrawInfo.Id, drawCount, freeId, function(drawInfo, rewardList, extraRewardList)
             XDataCenter.AntiAddictionManager.BeginDrawCardAction()
@@ -253,19 +293,39 @@ end
 
 function XUiDrawControl:Update(drawInfo, groupId)
     self.DrawInfo = drawInfo
-    self.GroupId = groupId
+    self.GroupId = groupId or self.GroupId
     self.UseItemIcon = XDataCenter.ItemManager.GetItemBigIcon(self.DrawInfo.UseItemId)
-    for i = 1, MAX_DRAW_BTN_COUNT do
-        local btnName = "BtnDraw" .. i
-        local btn = XUiHelper.TryGetComponent(self.RootUi.PanelDrawButtons, btnName)
-        if btn then
-            ---@type XUiComponent.XUiButton
-            local btnComponent = btn:GetComponent(typeof(CS.XUiComponent.XUiButton))
-            local drawCount = self.DrawInfo.BtnDrawCount[i]
-            btnComponent:SetNameByGroup(0, CS.XTextManager.GetText("DrawCount", drawCount))
-            btnComponent:SetRawImage(self.UseItemIcon)
-            local itemCount = XDataCenter.DrawManager.GetDiscountDrawPrice(self.DrawInfo.GroupId, self.DrawInfo.UseItemCount, drawCount)
-            btnComponent:SetNameByGroup(1, itemCount)
+    ---@type FreeTicketData[]
+    self.FreeTicketDataDict = {}
+
+    local isFreeBtnShow = false
+    for i, btnView in pairs(self.DrawBtnDict) do
+        local drawCount = self.DrawInfo.BtnDrawCount[i]
+        local isTenDraw = btnView.IsTenDraw
+        local isShowFreeBtn = XDataCenter.DrawManager.CheckHasFreeTicket(self.GroupId, isTenDraw)
+
+        --用于显示免费券多久失效的字段
+        ---@type FreeTicketData
+        local ticketData = {}
+        local representTicketId, _, count = XDataCenter.DrawManager.GetLeastExpireTimeFreeTicketIdByGroupId(self.GroupId, isTenDraw)
+        ticketData.FreeTicketIdForExpireTimeDisplay = representTicketId
+        ticketData.FreeTicketCountForDisplay = count
+        self.FreeTicketDataDict[i] = ticketData
+
+        if btnView.Btn then
+            self:UpdateButton(btnView.Btn, drawCount)
+            btnView.Btn.gameObject:SetActiveEx(not isShowFreeBtn)
+        end
+
+        if btnView.FreeBtn then
+            local freeCount = XDataCenter.DrawManager.GetFreeTicketCount(self.GroupId, isTenDraw)
+            local content = XUiHelper.GetText('DrawFreeTimeFormat', freeCount)
+            content = XUiHelper.ReplaceTextNewLine(content)
+            btnView.FreeBtn:SetNameByGroup(1, content)
+            btnView.FreeBtn.gameObject:SetActiveEx(isShowFreeBtn)
+            if isShowFreeBtn then
+                isFreeBtnShow = true
+            end
         end
     end
 
@@ -275,25 +335,7 @@ function XUiDrawControl:Update(drawInfo, groupId)
         self.TxtDrawCount.text = CS.XTextManager.GetText("DrawTotalCount", drawInfo.TotalCount)
     end
 
-    --拥有免费券隐藏单抽按钮，显示免费抽按钮
-    local isShowFreeBtn = XDataCenter.DrawManager.CheckHasFreeTicket(self.GroupId)
-    local btnSingle = XUiHelper.TryGetComponent(self.RootUi.PanelDrawButtons, "BtnDraw1")
-    local btnFree = XUiHelper.TryGetComponent(self.RootUi.PanelDrawButtons, "BtnDraw3")
-    btnSingle.gameObject:SetActiveEx(not isShowFreeBtn)
-    btnFree.gameObject:SetActiveEx(isShowFreeBtn)
-
-    local representTicketId, expireTime, count = XDataCenter.DrawManager.GetLeastExpireTimeFreeTicketIdByGroupId(self.GroupId)
-
-    -- 用于显示免费券多久失效的字段
-    self.FreeTicketIdForExpireTimeDisplay = representTicketId
-    self.FreeTicketCountForDisplay = count
-
-    if isShowFreeBtn then
-        local freeCount = XDataCenter.DrawManager.GetFreeTicketCount(self.GroupId)
-        local content = XUiHelper.GetText('DrawFreeTimeFormat', freeCount)
-        content = XUiHelper.ReplaceTextNewLine(content)
-        local btnCom = btnFree.transform:GetComponent(typeof(CS.XUiComponent.XUiButton))
-        btnCom:SetNameByGroup(1, content)
+    if isFreeBtnShow then
         self:StartTimer()
     else
         self:StopTimer()
@@ -327,3 +369,13 @@ function XUiDrawControl:RefreshTenDrawDiscount()
 end
 
 return XUiDrawControl
+
+---@class DrawButtonView
+---@field IsTenDraw boolean
+---@field Btn XUiComponent.XUiButton
+---@field FreeBtn XUiComponent.XUiButton
+---@field FreeBtnTip UnityEngine.UI.Text
+
+---@class FreeTicketData
+---@field FreeTicketIdForExpireTimeDisplay number
+---@field FreeTicketCountForDisplay number

@@ -211,8 +211,9 @@ function XUiTheatre6ChooseCharacter:UpdateFashionId()
 end
 
 function XUiTheatre6ChooseCharacter:UpdateBuyFashion()
-    local skipId = self._Control:GetFashionConfig(self._CurFashionId).SkipId
-    self.BtnBuy.gameObject:SetActiveEx(XTool.IsNumberValid(skipId))
+    local fashionCfg = self._Control:GetFashionConfig(self._CurFashionId)
+    local isInTime = XFunctionManager.CheckInTimeByTimeId(fashionCfg.TimeId, false)
+    self.BtnBuy.gameObject:SetActiveEx(XTool.IsNumberValid(fashionCfg.SkipId) and isInTime)
 end
 
 function XUiTheatre6ChooseCharacter:UpdateDetail()
@@ -222,6 +223,9 @@ function XUiTheatre6ChooseCharacter:UpdateDetail()
         local config = self._Control:GetBuildTagConfig(tagId)
         grid.UiTxtTitle.text = config.Name
         grid.UiRImgIcon:SetRawImage(config.Icon)
+        grid.BtnTag:AddEventListener(function()
+            self._Control:OpenTagTip({ tagId }, grid.Transform)
+        end)
     end)
     self:ApplyStatus(FuncName.UpdateDetail)
 end

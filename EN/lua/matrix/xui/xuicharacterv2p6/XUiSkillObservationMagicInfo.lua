@@ -1,4 +1,4 @@
-local XDynamicTableNormal = require("XUi/XUiCommon/XUiDynamicTable/XDynamicTableNormal")
+local XGridSkillObservationMagicInfo = require("XUi/XUiCharacterV2P6/Grid/XGridSkillObservationMagicInfo")
 local XUiSkillObservationMagicInfo = XLuaUiManager.Register(XLuaUi, "UiSkillObservationMagicInfo")
 
 function XUiSkillObservationMagicInfo:OnAwake()
@@ -12,28 +12,8 @@ function XUiSkillObservationMagicInfo:InitButton()
 end
 
 function XUiSkillObservationMagicInfo:InitDynamicTable()
-    local XGridSkillObservationMagicInfo = require("XUi/XUiCharacterV2P6/Grid/XGridSkillObservationMagicInfo")
-
-    -- 装甲状态
-    self.DynamicTableTank = XDynamicTableNormal.New(self.PanelList1)
-    self.DynamicTableTank:SetProxy(XGridSkillObservationMagicInfo, self, self)
-    self.DynamicTableTank:SetDelegate(self)
-    self.DynamicTableTank:SetDynamicEventDelegate(function (event, index, grid)
-        self:OnDynamicTableEventTank(event, index, grid)
-    end)
-    local grid = self.DynamicTableTank:GetGrid()
-    if grid and grid.gameObject then
-        grid.gameObject:SetActiveEx(false)
-    end
-
-    -- 增幅状态
-    self.DynamicTableAmplifier = XDynamicTableNormal.New(self.PanelList2)
-    self.DynamicTableAmplifier:SetProxy(XGridSkillObservationMagicInfo, self, self)
-    self.DynamicTableAmplifier:SetDelegate(self)
-    self.DynamicTableAmplifier:SetDynamicEventDelegate(function (event, index, grid)
-        self:OnDynamicTableEventAmplifier(event, index, grid)
-    end)
-    local grid = self.DynamicTableAmplifier:GetGrid()
+    self.DynamicTable = XUiHelper.DynamicTableNormal(self, self.PanelList, XGridSkillObservationMagicInfo)
+    local grid = self.DynamicTable:GetGrid()
     if grid and grid.gameObject then
         grid.gameObject:SetActiveEx(false)
     end
@@ -48,84 +28,92 @@ function XUiSkillObservationMagicInfo:OnEnable()
         return
     end
 
-    local obsCfg = XMVCA.XCharacter:GetModelCharacterObsTriggerMagic()[self.SkillId]
-    self.ObsCfg = obsCfg
+    self.ObsCfg = XMVCA.XCharacter:GetModelCharacterObsTriggerMagic()[self.SkillId]
     if XTool.IsTableEmpty(self.ObsCfg) then
         return
     end
 
-    self.DataTank = {} -- 装甲状态数据，key是element，value是不同level的数据
-    self.DataAmplifier = {} -- 增幅状态数据，key是element，value是不同level的数据
-
-    for k, v in pairs(obsCfg.ObservationElement) do
-        -- 创建对应的元素的数据
-        if not self.DataTank[v] then
-            self.DataTank[v] = {}
-        end
-        if not self.DataAmplifier[v] then
-            self.DataAmplifier[v] = {}
-        end
-
-        local data = { IndexInCfg = k,  Level = self.ObsCfg.Level[k] }
-        if obsCfg.ObservationCareer[k] == XEnumConst.CHARACTER.Career.Tank or obsCfg.ObservationCareer[k] == XEnumConst.CHARACTER.Career.Breaker then
-            table.insert(self.DataTank[v], data)
-        elseif obsCfg.ObservationCareer[k] == XEnumConst.CHARACTER.Career.Amplifier then
-            table.insert(self.DataAmplifier[v], data)
-        end
-    end
-
-    self.keyInTank = {}
-    for k, v in pairs(self.DataTank) do
-        if (v[1]) then
-            table.insert(self.keyInTank, k)
-        end
-    end
-
-    self.KeyInAmplifier = {}
-    for k, v in pairs(self.DataAmplifier) do
-        if (v[1]) then
-            table.insert(self.KeyInAmplifier, k)
-        end
-    end
-
     self.CurSkillLevel = XMVCA.XCharacter:GetSkillLevel(self.SkillId)
-
-    self.DynamicTableTank:SetDataSource(self.keyInTank)
-    self.DynamicTableTank:ReloadDataASync()
-
-    self.DynamicTableAmplifier:SetDataSource(self.KeyInAmplifier)
-    self.DynamicTableAmplifier:ReloadDataASync()
-   
-    -- 判空显示格子
-    self.BtnTab1.gameObject:SetActiveEx(not XTool.IsTableEmpty(self.keyInTank))
-    self.BtnTab2.gameObject:SetActiveEx(not XTool.IsTableEmpty(self.KeyInAmplifier))
-
-    local defaultSelectIndexInCSharp = 0
-    if XTool.IsTableEmpty(self.keyInTank) then
-        defaultSelectIndexInCSharp = 1
-    elseif XTool.IsTableEmpty(self.KeyInAmplifier) then
-        defaultSelectIndexInCSharp = 0
-    end
-    self.LayerSetting:DoSelectIndex(defaultSelectIndexInCSharp)
+    self:RefreshTabData()
+    self:RefreshTab()
 end
 
-function XUiSkillObservationMagicInfo:OnDynamicTableEventTank(event, index, grid)
-    if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
-        local indexInTankData = self.keyInTank[index]
-        local dataList = self.DataTank[indexInTankData]
-        local targetLevelData = XTool.FindClosestNumber(dataList, self.CurSkillLevel, "Level")
-        local targetIndex = targetLevelData.IndexInCfg
-        grid:Refresh(self.ObsCfg, targetIndex)
+function XUiSkillObservationMagicInfo:RefreshTabData()
+    local tabDataById = {}
+    local tabConfigByCareer = {}
+    local tabConfigs = XMVCA.XCharacter:GetModelUiSkillObservationMagicInfoController()
+    for _, tabConfig in pairs(tabConfigs) do
+        for _, career in ipairs(tabConfig.Career) do
+            tabConfigByCareer[career] = tabConfig
+        end
     end
+
+    self.TabData = {}
+    for index, element in ipairs(self.ObsCfg.ObservationElement) do
+        local tabConfig = tabConfigByCareer[self.ObsCfg.ObservationCareer[index]]
+        if tabConfig then
+            local tabData = tabDataById[tabConfig.TabId]
+            if not tabData then
+                tabData = {
+                    TabId = tabConfig.TabId,
+                    TabText = tabConfig.TabText,
+                    ElementList = {},
+                    ElementData = {},
+                }
+                tabDataById[tabConfig.TabId] = tabData
+                table.insert(self.TabData, tabData)
+            end
+
+            if not tabData.ElementData[element] then
+                tabData.ElementData[element] = {}
+                table.insert(tabData.ElementList, element)
+            end
+            table.insert(tabData.ElementData[element], { IndexInCfg = index, Level = self.ObsCfg.Level[index] })
+        end
+    end
+
+    table.sort(self.TabData, function(a, b)
+        return a.TabId < b.TabId
+    end)
 end
 
-function XUiSkillObservationMagicInfo:OnDynamicTableEventAmplifier(event, index, grid)
+function XUiSkillObservationMagicInfo:RefreshTab()
+    self.TabButtons = self.TabButtons or { self.BtnTab }
+    local activeTabButtons = {}
+    for index, tabData in ipairs(self.TabData) do
+        local btn = self.TabButtons[index]
+        if not btn then
+            btn = XUiHelper.Instantiate(self.BtnTab, self.BtnTab.transform.parent)
+            self.TabButtons[index] = btn
+        end
+        btn.gameObject:SetActiveEx(true)
+        btn:SetNameByGroup(0, tabData.TabText)
+        table.insert(activeTabButtons, btn)
+    end
+
+    for index = #self.TabData + 1, #self.TabButtons do
+        self.TabButtons[index].gameObject:SetActiveEx(false)
+    end
+
+    self.LayerSetting:Init(activeTabButtons, handler(self, self.OnSelectTab))
+    self.LayerSetting:SelectIndex(1)
+end
+
+function XUiSkillObservationMagicInfo:OnSelectTab(index)
+    self.CurTabData = self.TabData[index]
+    if self.TxtPanelTitle then
+        self.TxtPanelTitle.text = self.CurTabData.TabText
+    end
+    self.DynamicTable:SetDataSource(self.CurTabData.ElementList)
+    self.DynamicTable:ReloadDataASync()
+end
+
+function XUiSkillObservationMagicInfo:OnDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
-        local indexInAmplifierData = self.KeyInAmplifier[index]
-        local dataList = self.DataAmplifier[indexInAmplifierData]
+        local element = self.CurTabData.ElementList[index]
+        local dataList = self.CurTabData.ElementData[element]
         local targetLevelData = XTool.FindClosestNumber(dataList, self.CurSkillLevel, "Level")
-        local targetIndex = targetLevelData.IndexInCfg
-        grid:Refresh(self.ObsCfg, targetIndex)
+        grid:Refresh(self.ObsCfg, targetLevelData.IndexInCfg)
     end
 end
 

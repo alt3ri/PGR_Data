@@ -223,7 +223,7 @@ function XUiMainRightMid:OnDisable()
         XScheduleManager.UnSchedule(self.guildTimer)
         self.guildTimer = nil
     end
-
+    
     XDataCenter.DormManager.StopDormRedTimer()
     self:StopActivityEntryTimer()
 end
@@ -325,7 +325,7 @@ function XUiMainRightMid:OnBtnReward()
     end
     XUiHelper.RecordBuriedSpotTypeLevelOne(XGlobalVar.BtnBuriedSpotTypeLevelOne.BtnUiMainBtnDrawMain)
     XDataCenter.DrawManager.MarkActivityDraw()
-    XDataCenter.DrawManager.OpenDrawUi()
+    XDataCenter.DrawManager.OpenDrawUi(DefaultType)
 end
 
 --伙伴入口
@@ -381,12 +381,12 @@ function XUiMainRightMid:RefreshMainLineProgress()
         local chapterViewModels = XDataCenter.FubenMainLineManager:ExGetChapterViewModels(config.Id, XDataCenter.FubenManager.DifficultNormal)
         for j, viewModel in ipairs(chapterViewModels) do
             -- 遍历到上锁，直接结束
-            if viewModel:GetBusinessIsLocked() then
+            if viewModel:GetIsLocked() then
                 isFindViewModel = true
                 break
 
             -- 解锁
-            elseif not viewModel:GetBusinessIsLocked() then
+            elseif not viewModel:GetIsLocked() then
                 chapterViewModel = viewModel
                 isLastChapter = i == #groupCfgs and j == #chapterViewModels
                 if not viewModel:CheckIsPassed() then

@@ -310,8 +310,8 @@ XTransfiniteManagerCreator = function()
         end
 
         -- 保存最大的轮换关卡进度
-        if not stageGroup:IsIsland() and battleInfo then
-            _Data:SetMaxRotateStageProgressIndex(battleInfo.StageProgressIndex or 0)
+        if not stageGroup:IsIsland() then
+            _Data:SetMaxRotateStageProgressIndex(res.MaxRotateStageProgressIndex or 0)
         end
 
         stageGroup:SetDataFromServer(battleInfo)

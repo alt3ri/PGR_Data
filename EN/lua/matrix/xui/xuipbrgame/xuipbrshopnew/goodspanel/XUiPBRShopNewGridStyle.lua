@@ -39,6 +39,7 @@ end
 function XUiPBRShopNewGridStyle:InitComponents()
     if self.TxtDetail and self.TxtDetail:GetType() == typeof(CS.XUiComponent.XUiRichTextCustomRender) then
         self.TxtDetail.requestImage = self._Control:GetRichTextImageRequestHandler()
+        self._IsTxtDetailRichText = true
     end
 
     if self.BtnChoose then
@@ -85,6 +86,14 @@ function XUiPBRShopNewGridStyle:Refresh(itemId, resetScroll)
     -- 基础信息
     self.TxtName.text = itemCfg.ItemName
     self.TxtDetail.text = XUiHelper.ReplaceTextNewLine(itemCfg.ItemDesc)
+
+    -- 富文本图标在 GridStyle Close→Open(换色切回曾显示过的色) 或 OnDisable→OnEnable 循环后，
+    -- 若 text 与该样式上次显示时相同(同商品)，ParseText 不重置标志，叠加 text setter 的 RecycleAllIconRender
+    -- 与 OnPopulateMesh 填充时序冲突，usingIcons 被清空后图标永久 active=false。
+    -- 设完 text 后主动 ForcePopulateIcons 强制重填 usingIcons 并置 iconShowed=true，绕过时序竞态。
+    if self._IsTxtDetailRichText then
+        self.TxtDetail:ForcePopulateIcons()
+    end
 
     self.GridIcon:RefreshIcon(self.ItemId)
 

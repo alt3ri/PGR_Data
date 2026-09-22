@@ -71,11 +71,22 @@ function XMusicPlayerCDViewModel:GetCurPlayingMusicListAndModify()
 end
 
 function XMusicPlayerCDViewModel:SetCurPlayingMusicID(musicID)
+    if musicID ~= self:GetCurPlayingMusicID() then
+        self:SetCurPlayingCDRotationAngle(nil)
+    end
     self:_SetPrivate("CurPlayingMusicID", musicID)
 end
 
 function XMusicPlayerCDViewModel:GetCurPlayingMusicID()
     return self:_GetPrivate("CurPlayingMusicID")
+end
+
+function XMusicPlayerCDViewModel:SetCurPlayingCDRotationAngle(angle)
+    self:_SetPrivate("CurPlayingCDRotationAngle", angle)
+end
+
+function XMusicPlayerCDViewModel:GetCurPlayingCDRotationAngle()
+    return self:_GetPrivate("CurPlayingCDRotationAngle")
 end
 
 function XMusicPlayerCDViewModel:GetIsPlaying()

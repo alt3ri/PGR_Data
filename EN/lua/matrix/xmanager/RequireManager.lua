@@ -89,7 +89,6 @@ require("XManager/XDormManager") --XDataCenter
 require("XManager/XDormQuestManager") --XDataCenter
 require("XManager/XDrawManager") --XDataCenter
 require("XManager/XEliminateGameManager") --XDataCenter
-require("XManager/XEquipGuideManager") --XDataCenter
 require("XManager/XEscapeManager") --XDataCenter
 require("XManager/XExhibitionManager") --XDataCenter
 require("XManager/XFashionManager") --XDataCenter

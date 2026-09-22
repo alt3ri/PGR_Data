@@ -4145,17 +4145,6 @@ XTable = {
         SkipCondition = Type1ValueTypeint,
         SkipIcon = Type1ValueTypestring,
     },
-    XTableChapterDownloadConfig = {
-        FunctionType = ValueTypeintPrimaryKey,
-        Name = ValueTypestring,
-        ChapterConfigIds = Type1ValueTypeint,
-        ResIds = Type1ValueTypeint,
-    },
-    XTableChapterDownloadDetailControl = {
-        FunctionTypeChapterConfigId = ValueTypeintPrimaryKey,
-        AutoDownload = ValueTypebool,
-        NotShow = ValueTypebool,
-    },
     XTableChapterExtra = {
         Id = ValueTypeintPrimaryKey,
         ChapterName = ValueTypestring,
@@ -4193,6 +4182,11 @@ XTable = {
         TreasureId = ValueTypeintPrimaryKey,
         RequireStar = ValueTypeint,
         RewardId = ValueTypeint,
+    },
+    XTableChapterFashionRelative = {
+        ChapterId = ValueTypeintPrimaryKey,
+        FashionIds = Type1ValueTypeint,
+        IsWeakInterput = ValueTypebool,
     },
     XTableChapterMain = {
         Id = ValueTypeintPrimaryKey,
@@ -4938,6 +4932,7 @@ XTable = {
         Icon = ValueTypestring,
         EffectRes = ValueTypestring,
         ChatBoardImageRes = ValueTypestring,
+        TextColor = ValueTypestring,
         ConvertItemId = ValueTypeint,
         ConvertItemCount = ValueTypeint,
         IsInit = ValueTypebool,
@@ -9241,6 +9236,7 @@ XTable = {
         CBFunc = Type1ValueTypestring,
     },
     XTableFightWords = {
+        Id = ValueTypeintPrimaryKey,
         Group = ValueTypeint,
         Text = ValueTypestring,
         Duration = Type1ValueTypefloat,
@@ -9424,7 +9420,6 @@ XTable = {
         ManagerName = ValueTypestring,
         Icon = ValueTypestring,
         TimeId = ValueTypeint,
-        ShowConditionId = ValueTypeint,
         FunctionNameId = ValueTypeint,
         SkipId = ValueTypeint,
         Order = ValueTypeint,
@@ -9432,7 +9427,9 @@ XTable = {
         RedParam = ValueTypeint,
         Note = ValueTypestring,
         IsAgency = ValueTypeint,
+        ShowConditionId = ValueTypeint,
         IsRecord = ValueTypebool,
+        CustomParams = Type1ValueTypeint,
     },
     XTableFubenActivityTimeTips = {
         Id = ValueTypeintPrimaryKey,
@@ -16639,6 +16636,7 @@ XTable = {
         ExEffectCD = ValueTypeint,
         ExEffectMaxTimes = ValueTypeint,
         ExFirstImmediate = ValueTypebool,
+        Priority = ValueTypeint,
     },
     XTablePunishaarCard = {
         Id = ValueTypeintPrimaryKey,
@@ -16796,8 +16794,6 @@ XTable = {
         HudIcon = ValueTypestring,
         GroupId = ValueTypeint,
         Weight = ValueTypeint,
-        Condition = Type1ValueTypeint,
-        ConditionWeight = Type1ValueTypeint,
         GameNoRepeat = ValueTypebool,
     },
     XTablePunishaarShop = {
@@ -23036,6 +23032,10 @@ XTable = {
         BaseCharacterIds = Type1ValueTypeint,
         TargetName = Type1ValueTypestring,
     },
+    XTableTeamRecommendClientConfig = {
+        Key = ValueTypestringPrimaryKey,
+        Values = Type1ValueTypestring,
+    },
     XTableTeamRecommendConfig = {
         Key = ValueTypestringPrimaryKey,
         Desc = ValueTypestring,
@@ -23043,7 +23043,9 @@ XTable = {
     },
     XTableTeamRecommendFormation = {
         Id = ValueTypeintPrimaryKey,
+        Name = ValueTypestring,
         Desc = ValueTypestring,
+        Order = ValueTypeint,
         Tags = Type1ValueTypestring,
         FormationType = ValueTypeint,
         StageType = ValueTypeint,
@@ -26140,8 +26142,9 @@ XTable = {
         NavigatorMode = ValueTypeint,
         NavigatorCount = ValueTypeint,
         CharacterGroupId = ValueTypeint,
-        BuffDetailIds = Type1ValueTypeint,
         FightEventIds = Type1ValueTypeint,
+        BuffDetailIds = Type1ValueTypeint,
+        IsChangeBg = ValueTypebool,
     },
     XTableTreasure = {
         TreasureId = ValueTypeintPrimaryKey,
@@ -27076,17 +27079,6 @@ XTable = {
         Width = ValueTypefloat,
         VideoUrl = ValueTypestring,
         VideoUrlPc = ValueTypestring,
-    },
-    XTableVideoMetadata = {
-        Url = ValueTypestringPrimaryKey,
-        DurationMs = ValueTypeint,
-        Width = ValueTypeint,
-        Height = ValueTypeint,
-        TotalFrames = ValueTypeint,
-        FrameRateN = ValueTypeint,
-        FrameRateD = ValueTypeint,
-        AudioStreamCount = ValueTypeint,
-        SubtitleChannelCount = ValueTypeint,
     },
     XTableWaveRevise = {
         Id = ValueTypeint,

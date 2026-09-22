@@ -1096,7 +1096,9 @@ function XEquipOneClickCultureControl:BuildWeaponCultureAutoExchangeList(result)
         return table.empty
     end
     local exchangeInfoMap = {}
-    MergeLevelAutoExchange(exchangeInfoMap, result.LevelPreview)
+    if result.IncludeLevel then
+        MergeLevelAutoExchange(exchangeInfoMap, result.LevelPreview)
+    end
     MergeCostListExchange(exchangeInfoMap, result.OverrunCostList)
 
     local exchangeList = {}
@@ -1116,13 +1118,9 @@ function XEquipOneClickCultureControl:BuildWeaponCultureAutoExchangeList(result)
     return exchangeList
 end
 
---- 判断谐振能否叠加到指定等级（该等级所需材料是否足够，含自动兑换补足）
----@param equipId number
----@param targetData table
----@param targetLevel number
---- 判断谐振能否叠加到指定等级
---- 激活材料（非 SUIT）：看持有，不可兑换
---- 绑套装材料（SUIT）：需绑且升级拉满时，用剩余代币兑换判断（代币 = 持有 - usedTokenMap）
+--- 判断谐振能否叠加到指定等级（该等级所需材料是否足够）
+--- 升级材料（非SUIT）：看持有，不可兑换
+--- 绑套装材料（SUIT）：勾选自动兑换时按“持有+剩余代币可兑”判断，未勾选只看仓库持有（与 _GetOverrunStepFlags 口径一致）
 ---@param equipId number
 ---@param targetData table
 ---@param targetLevel number
@@ -1146,7 +1144,7 @@ function XEquipOneClickCultureControl:IsOverrunLevelReachable(equipId, targetDat
         return false
     end
 
-    -- 绑套装材料：不需要绑则跳过；需要绑则用剩余代币兑换判断（代币 = 持有 - usedTokenMap）
+    -- 绑套装材料：不需要绑则跳过；勾选自动兑换用剩余代币兑换判断，未勾选只看仓库持有
     local equip = self._MainControl:GetEquip(equipId)
     local targetSuitId = targetData and targetData.WeaponOverrunChoseSuit or 0
     local currentSuitId = equip and equip:GetOverrunChoseSuit() or 0
@@ -1155,7 +1153,13 @@ function XEquipOneClickCultureControl:IsOverrunLevelReachable(equipId, targetDat
         return true
     end
     for _, cost in ipairs(suitCostList) do
-        if not self:_IsSuitMaterialExchangeEnough(cost.ItemId, cost.NeedCount, usedTokenMap) then
+        local isEnough
+        if autoExchange then
+            isEnough = self:_IsSuitMaterialExchangeEnough(cost.ItemId, cost.NeedCount, usedTokenMap)
+        else
+            isEnough = XDataCenter.ItemManager.GetCount(cost.ItemId) >= (cost.NeedCount or 0)
+        end
+        if not isEnough then
             return false
         end
     end

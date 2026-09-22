@@ -11,6 +11,8 @@ local NetworkLockFlagEnum = {
     PbrForceSettleRequest = 4,
 }
 
+local LockMaxTime = 15 * 60 -- 请求锁最多锁15分钟，超时后放开（防断线/回调丢失导致永久锁死）
+
 function XPBRNetworkAgency:OnInit()
     self._NetworkRequestLock = nil
 end
@@ -21,7 +23,11 @@ function XPBRNetworkAgency:InitRpc()
 end
 
 function XPBRNetworkAgency:InitEvent()
+    XEventManager.AddEventListener(XEventId.EVENT_NETWORK_DISCONNECT, self.ClearNetLocks, self)
+end
 
+function XPBRNetworkAgency:RemoveEvent()
+    XEventManager.RemoveEventListener(XEventId.EVENT_NETWORK_DISCONNECT, self.ClearNetLocks, self)
 end
 
 function XPBRNetworkAgency:ResetAll()
@@ -35,15 +41,30 @@ end
 --region Lock - 简单的逻辑锁，主要是控制协议请求频率
 
 function XPBRNetworkAgency:CheckFlagIsLock(flag)
-    return self._NetworkRequestLock and self._NetworkRequestLock[flag] or false
+    if not self._NetworkRequestLock or not self._NetworkRequestLock[flag] then
+        return false
+    end
+
+    local data = self._NetworkRequestLock[flag]
+
+    if XTool.IsNumberValidEx(data) then
+        -- 锁值为时间戳，超时自动解锁，防止断线/回调丢失导致永久锁死
+        local passTime = XTime.GetServerNowTimestamp() - data
+        if passTime > LockMaxTime then
+            self:UnlockWithFlag(flag)
+            return false
+        end
+    end
+
+    return true
 end
 
 function XPBRNetworkAgency:LockWithFlag(flag)
     if self._NetworkRequestLock == nil then
         self._NetworkRequestLock = {}
     end
-    
-    self._NetworkRequestLock[flag] = true
+
+    self._NetworkRequestLock[flag] = XTime.GetServerNowTimestamp()
 end
 
 function XPBRNetworkAgency:UnlockWithFlag(flag)
@@ -54,6 +75,9 @@ function XPBRNetworkAgency:UnlockWithFlag(flag)
     self._NetworkRequestLock[flag] = false
 end
 
+function XPBRNetworkAgency:ClearNetLocks()
+    self._NetworkRequestLock = nil
+end
 --endregion
 
 --region Network Request

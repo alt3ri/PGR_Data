@@ -2,6 +2,7 @@
 
 ---[XGamePlayTag枚举](https://kurogame.feishu.cn/sheets/Ma88su1BThVPawtGEEPc0oolnec?sheet=b3f22f)
 ---@enum EGameplayTag
+
 local EGameplayTag = {
     root = 0,
     Missile = 1,
@@ -88,5 +89,14 @@ local EGameplayTag = {
     Magic_DamageV3_DamageType_Entry = 82,
     Magic_DamageV3_DamageType_Ultra = 83,
     Magic_DamageV3_DamageType_Skill = 84,
+    Skill = 85,
+    Skill_Haru2 = 86,
+    Skill_Haru2_Type = 87,
+    Skill_Haru2_Type_PoiseBreakBoost = 88,
+    Skill_Haru2_Type_PowerTimeBoost = 89,
+    Npc = 91,
+    Npc_Part = 92,
+    Npc_Part_SeverAttack = 93,
+    Npc_Part_SeverAttack_SAWeakness = 94,
 }
 return EGameplayTag

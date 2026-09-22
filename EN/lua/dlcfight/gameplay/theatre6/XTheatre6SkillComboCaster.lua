@@ -154,7 +154,7 @@ function XTheatre6SkillComboCaster:Cast(skillType, skillId)
         return
     end
 
-    local skillConfig, skillCount = self:GetSkillConfig(skillType, skillId)
+    local skillConfig = self:GetSkillConfig(skillType, skillId)
     local skillId = skillConfig and skillConfig.Id
     local actionList = skillConfig and skillConfig.ComboList
     local actionCount = GetListCount(actionList)
@@ -178,8 +178,8 @@ function XTheatre6SkillComboCaster:Cast(skillType, skillId)
     -- XLog.Error("角色:" .. self._npcUUID ..
     --     ", 释放" .. DebugSkillTypeName[skillType] .. ": " .. skillId .. " ，消耗体力" .. skillConfig.CostTL)
 
-    if skillType == ETheatre6SkillType.Main and skillCount > 0 then
-        self._mainSkillIndex = (self._mainSkillIndex + 1) % skillCount
+    if skillType == ETheatre6SkillType.Main or skillType == ETheatre6SkillType.Insert then
+        self:TryAdvanceMainSkillIndex(skillId)
     end
 
     --ToDo:
@@ -187,7 +187,8 @@ function XTheatre6SkillComboCaster:Cast(skillType, skillId)
     --另外这里的UI表现应该还涉及到守方的技能播报清理,以及连击数等内容
     local previewMainSkillId = self:GetPreviewMainSkillId()
     -- self._proxy:Theatre6UpdateSkillUI(self._npcUUID, skillConfig.Id, previewMainSkillId)
-    self._npc:UpdateSkillUi(skillConfig.Id, previewMainSkillId)
+    --透传本次释放类型: 插入式释放(来自RequestInsertSkill)需要UI播放切入动效, 而插入队列允许压入主动技能, 查技能表Type会误判
+    self._npc:UpdateSkillUi(skillConfig.Id, previewMainSkillId, skillType)
     self._proxy:Theatre6AddSkillCastCount(self._npcUUID, skillConfig.Id);
     self._proxy:ChangeNpcGameplayEnergy(self._npcUUID, ETheatre6AttribType.Stamina, -skillConfig.CostTL)
     self._proxy:CastSkillActionToNpcNotCheck(self._npcUUID, actionId, self._targetNpcUUID)
@@ -274,6 +275,42 @@ function XTheatre6SkillComboCaster:Continue()
     self._nextActionIndex = actionIndex + 1
     self._continueActionIndex = actionIndex + 1
     return self._activeSkillId, actionId
+end
+
+--endregion
+
+
+--region 主动技能轮转下标
+
+---推进主动技能轮转下标
+---只有本次释放的技能确实是当前下标指向的那个主动技能时才推进, 用于兼顾两种情况:
+---  1) 正常主动技能释放(skillType=Main), 释放的必然是下标指向的技能 → 正常推进
+---  2) RequestInsertSkill 压入主动技能后以插入式释放(skillType=Insert),
+---     若压入的正好是下标指向的技能, 该技能已经放掉了, 下标必须推进,
+---     否则 NOW/NEXT 两槽会显示同一个技能, 且下一次主动技能释放会重复放它;
+---     若压入的是别的主动技能(或是 Type=4 插入技), 轮转顺序不受影响, 下标保持不动。
+---@param castSkillId integer 本次实际释放的技能id
+function XTheatre6SkillComboCaster:TryAdvanceMainSkillIndex(castSkillId)
+    if not self._proxy or self._npcUUID == 0 or not castSkillId or castSkillId == 0 then
+        return
+    end
+
+    local skillList = self._proxy:Theatre6GetMainSkill(self._npcUUID)
+    local skillCount = GetListCount(skillList)
+    if skillCount <= 0 then
+        return
+    end
+
+    if self._mainSkillIndex >= skillCount then
+        self._mainSkillIndex = 0
+    end
+
+    --本次释放的不是下标指向的主动技能, 轮转顺序不受影响
+    if skillList[self._mainSkillIndex] ~= castSkillId then
+        return
+    end
+
+    self._mainSkillIndex = (self._mainSkillIndex + 1) % skillCount
 end
 
 --endregion

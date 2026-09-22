@@ -24,21 +24,21 @@ end
 
 --- 订阅卡集合变更（买/卖/移/弃/冻结 + 主卡 notify 回流 + 副卡装配变化 notify）刷我方副卡槽——卡位变化/下场/副卡增删次位 grid 经 RefreshCustomizedList 复用自然隐。#副卡槽联动
 function XUiPanelPunishaarRoleModelUi:OnEnable()
-    local gc = self._Control and self._Control.GameControl
-    if gc then
-        gc:AddEventListener(gc.ShopEventId.BuySuccess, self._OnCardSetChanged, self)
+    local gameControl = self._Control and self._Control.GameControl
+    if gameControl then
+        gameControl:AddEventListener(gameControl.EventId.Shop.BuySuccess, self._OnCardSetChanged, self)
     end
-    XEventManager.AddEventListener(XEventId.EVENT_PUNISHAAR_MASTER_CARD_CHANGE, self._OnCardSetChanged, self)
-    XEventManager.AddEventListener(XEventId.EVENT_PUNISHAAR_SUB_CARD_CHANGE, self._OnCardSetChanged, self)
+    XMVCA.XPunishaar:AddEventListener(XMVCA.XPunishaar.EventIds.EVENT_PUNISHAAR_INNER_MASTER_CARD_CHANGE, self._OnCardSetChanged, self)
+    XMVCA.XPunishaar:AddEventListener(XMVCA.XPunishaar.EventIds.EVENT_PUNISHAAR_INNER_SUB_CARD_CHANGE, self._OnCardSetChanged, self)
 end
 
 function XUiPanelPunishaarRoleModelUi:OnDisable()
-    local gc = self._Control and self._Control.GameControl
-    if gc then
-        gc:RemoveEventListener(gc.ShopEventId.BuySuccess, self._OnCardSetChanged, self)
+    local gameControl = self._Control and self._Control.GameControl
+    if gameControl then
+        gameControl:RemoveEventListener(gameControl.EventId.Shop.BuySuccess, self._OnCardSetChanged, self)
     end
-    XEventManager.RemoveEventListener(XEventId.EVENT_PUNISHAAR_MASTER_CARD_CHANGE, self._OnCardSetChanged, self)
-    XEventManager.RemoveEventListener(XEventId.EVENT_PUNISHAAR_SUB_CARD_CHANGE, self._OnCardSetChanged, self)
+    XMVCA.XPunishaar:RemoveEventListener(XMVCA.XPunishaar.EventIds.EVENT_PUNISHAAR_INNER_MASTER_CARD_CHANGE, self._OnCardSetChanged, self)
+    XMVCA.XPunishaar:RemoveEventListener(XMVCA.XPunishaar.EventIds.EVENT_PUNISHAAR_INNER_SUB_CARD_CHANGE, self._OnCardSetChanged, self)
 end
 
 --- 刷新我方副卡槽（坐标换算，PreFight 进入一次 + 卡集合变更订阅触发）。敌方槽显隐另走 Show/HideEnemyDetail。#70 #副卡槽联动

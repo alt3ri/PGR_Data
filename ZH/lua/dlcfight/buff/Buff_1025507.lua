@@ -11,7 +11,7 @@ function XBuffScript1025507:Init()
     self.Count = 10
     self.DmgBuff = 1025906
     self.IfProtector = 0
-    self:LogError("......初始化")
+    --self:LogError("......初始化")
     ------------执行------------
 end
 

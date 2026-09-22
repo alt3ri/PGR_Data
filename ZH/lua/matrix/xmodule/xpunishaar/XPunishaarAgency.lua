@@ -16,6 +16,9 @@ function XPunishaarAgency:OnInit()
     ---@type XPunishaarEnum
     self.EnumConst = require("XModule/XPunishaar/XPunishaarEnum")
 
+    ---@type table 系统级事件 Id（服务端 RPC 推送等，走本 Agency 派发/监听 #事件统合）
+    self.EventIds = require("XModule/XPunishaar/XPunishaarEventId")
+
     ---@type XPunishaarNetworkAgency
     self.NetworkAgency = self:AddSubAgency(require("XModule/XPunishaar/SubModules/Network/XPunishaarNetworkAgency"))
 end
@@ -357,6 +360,14 @@ function XPunishaarAgency:MarkCollectionRead(catalogType)
     self._Model:SaveCollectionReadDict(catalogType, readDict)
 
     XEventManager.DispatchEvent(XEventId.EVENT_PUNISHAAR_COLLECTION_RED_POINT_CHANGE)
+end
+
+--- 判断关卡是否至少挑战过一次
+---@param stageId number
+---@return boolean
+function XPunishaarAgency:CheckStageHasChallengeRecord(stageId)
+    local count = self._Model:GetOutSideModel():GetStageChallengeCount(stageId)
+    return count > 0
 end
 --endregion ----------public end----------
 

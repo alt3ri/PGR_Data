@@ -21,6 +21,9 @@
 ---@field GoPlayerModePressSingleLoop UnityEngine.RectTransform
 ---@field GoPlayerModePressRandomLoop UnityEngine.RectTransform
 ---@field BtnPlaylist XUiComponent.XUiButton
+---@field BtnLimitJump XUiComponent.XUiButton
+---@field TxtLimitJumplistM UnityEngine.UI.Text
+---@field TxtLimitJumplistP UnityEngine.UI.Text
 ---@field GoProgressBar UnityEngine.RectTransform
 ---@field GOImgBg UnityEngine.RectTransform
 ---@field TxtPlaylistNTip UnityEngine.UI.Text
@@ -40,6 +43,7 @@ function XUiMusicPlayerConsoleBtnView:InitComponents()
     self.BtnStopMusic:AddEventListener(function() self:OnBtnStopMusicClick() end)
     self.BtnSwitchNext:AddEventListener(function() self:OnBtnSwitchNextClick() end)
     self.BtnPlaylist:AddEventListener(function() self:OnBtnPlaylistClick() end)
+    self.BtnLimitJump:AddEventListener(function() self:OnBtnLimitJumpClick() end)
 end
 
 function XUiMusicPlayerConsoleBtnView:OnStart(...)
@@ -60,6 +64,10 @@ function XUiMusicPlayerConsoleBtnView:OnStart(...)
     self._PlaylistPTipScrolling:Stop()
     self._PlaylistLTipScrolling = XUiTextScrolling.New(self.TxtPlaylistLTip, self.TxtPlaylistLTip.transform.parent)
     self._PlaylistLTipScrolling:Stop()
+    self._LimitJumpMScrolling = XUiTextScrolling.New(self.TxtLimitJumplistM, self.TxtLimitJumplistM.transform.parent)
+    self._LimitJumpMScrolling:Stop()
+    self._LimitJumpPScrolling = XUiTextScrolling.New(self.TxtLimitJumplistP, self.TxtLimitJumplistP.transform.parent)
+    self._LimitJumpPScrolling:Stop()
 
     self:_Refresh()
 end
@@ -122,13 +130,15 @@ function XUiMusicPlayerConsoleBtnView:_PopupLoopModeTip(loopType)
 end
 
 
-function XUiMusicPlayerConsoleBtnView:OnBtnSwitchLastClick(eventData)
+function XUiMusicPlayerConsoleBtnView:OnBtnSwitchLastClick(eventData) 
+    self._Control:DispatchEvent(XMVCA.XMusicPlayer.EventIds.EVENT_VIEW_PLAY_SFX, XMVCA.XMusicPlayer.Enum.AudioName.cdSFXSwitch)
     self._Control:GetCDPlayerControl():PlayPrevMusic()
     self:_Refresh()
     self:_DispatchConsoleBtnClick()
 end
 
 function XUiMusicPlayerConsoleBtnView:OnBtnSwitchNextClick(eventData)
+    self._Control:DispatchEvent(XMVCA.XMusicPlayer.EventIds.EVENT_VIEW_PLAY_SFX, XMVCA.XMusicPlayer.Enum.AudioName.cdSFXSwitch)
     self._Control:GetCDPlayerControl():PlayNextMusic()
     self:_Refresh()
     self:_DispatchConsoleBtnClick()
@@ -142,17 +152,15 @@ function XUiMusicPlayerConsoleBtnView:OnBtnPlayMusicClick(eventData)
 end
 
 function XUiMusicPlayerConsoleBtnView:OnBtnPlaylistClick(eventData)
-    local XMusicPlayerEnum = XMVCA.XMusicPlayer.Enum
-    local cdControl = self._Control:GetCDPlayerControl()
-    local curMusicID = cdControl:GetCurPlayingMusicID()
-    local useStatus = cdControl:GetMusicUseStatusAndConditionDesc(curMusicID)
-    if useStatus == XMusicPlayerEnum.MusicUseStatus.limitedFree then
-        local co = self._Control:GetMusicPlayerconfigControl():GetMusicPlayerAlbumCOByid(curMusicID)
-        if co and XTool.IsNumberValid(co.SkipId) then
-            XFunctionManager.SkipInterface(co.SkipId)
-        end
-    else
-        self._Control:DispatchEvent(XMVCA.XMusicPlayer.EventIds.EVENT_VIEW_CALL_JUMP_PLAYLIST, curMusicID)
+    local curMusicID = self._Control:GetCDPlayerControl():GetCurPlayingMusicID()
+    self._Control:DispatchEvent(XMVCA.XMusicPlayer.EventIds.EVENT_VIEW_CALL_JUMP_PLAYLIST, curMusicID)
+end
+
+function XUiMusicPlayerConsoleBtnView:OnBtnLimitJumpClick(eventData)
+    local curMusicID = self._Control:GetCDPlayerControl():GetCurPlayingMusicID()
+    local co = self._Control:GetMusicPlayerconfigControl():GetMusicPlayerAlbumCOByid(curMusicID)
+    if co and XTool.IsNumberValid(co.SkipId) then
+        XFunctionManager.SkipInterface(co.SkipId)
     end
 end 
 
@@ -181,6 +189,7 @@ function XUiMusicPlayerConsoleBtnView:_SetEvent(flag)
         end, 100, 0)
         self._Control:AddEventListener(EventIds.EVENT_VIEW_UPDATE_STATE, self._OnMainViewStatusChange, self)
         self._Control:AddEventListener(EventIds.EVENT_CURRENT_PLAY_MUSICLISTTYPE_CHANGE, self._OnCurPlayListTypeChange, self)
+        self._Control:AddEventListener(EventIds.EVENT_PLAYER_MUSIC_CHANGE, self._OnCurPlayMusicChange, self)
         self._Control:AddEventListener(EventIds.EVENT_CHANGE_UI_COLOR_STYLE, self._OnUIColorStyleChange, self)
         self._Control:AddEventListener(EventIds.EVENT_PLAYER_PLAY_STATE_CHANGE, self._OnPlayStateChange, self)
     else
@@ -190,6 +199,7 @@ function XUiMusicPlayerConsoleBtnView:_SetEvent(flag)
         end
         self._Control:RemoveEventListener(EventIds.EVENT_VIEW_UPDATE_STATE, self._OnMainViewStatusChange, self)
         self._Control:RemoveEventListener(EventIds.EVENT_CURRENT_PLAY_MUSICLISTTYPE_CHANGE, self._OnCurPlayListTypeChange, self)
+        self._Control:RemoveEventListener(EventIds.EVENT_PLAYER_MUSIC_CHANGE, self._OnCurPlayMusicChange, self)
         self._Control:RemoveEventListener(EventIds.EVENT_CHANGE_UI_COLOR_STYLE, self._OnUIColorStyleChange, self)
         self._Control:RemoveEventListener(EventIds.EVENT_PLAYER_PLAY_STATE_CHANGE, self._OnPlayStateChange, self)
     end
@@ -245,6 +255,10 @@ function XUiMusicPlayerConsoleBtnView:_Tick()
         self.ImgProgress.fillAmount = 0
     end
 end
+
+function XUiMusicPlayerConsoleBtnView:_OnCurPlayMusicChange()
+    self:_RefreshPlaylistTip()
+end
 ---endregion
 
 
@@ -262,10 +276,20 @@ function XUiMusicPlayerConsoleBtnView:_RefreshPlaylistTip()
     local cdControl = self._Control:GetCDPlayerControl()
     local curMusicID = cdControl:GetCurPlayingMusicID()
     local useStatus = cdControl:GetMusicUseStatusAndConditionDesc(curMusicID)
+    local co = self._Control:GetMusicPlayerconfigControl():GetMusicPlayerAlbumCOByid(curMusicID)
+    local canLimitJump = useStatus == XMusicPlayerEnum.MusicUseStatus.limitedFree
+        and co and XTool.IsNumberValid(co.SkipId)
+
+    self.BtnLimitJump.gameObject:SetActive(canLimitJump)
+    self.BtnPlaylist.gameObject:SetActive(not canLimitJump)
 
     local tip
-    if useStatus == XMusicPlayerEnum.MusicUseStatus.limitedFree then
+    if canLimitJump then
         tip = CS.XTextManager.GetText("MusicPlayerPlaylistTipLimitedFree")
+        self.TxtLimitJumplistM.text = tip
+        self._LimitJumpMScrolling:Play()
+        self.TxtLimitJumplistP.text = tip
+        self._LimitJumpPScrolling:Play()
     else
         local listType = cdControl:GetCurMusicListType()
         if listType == XMusicPlayerEnum.MusicListType.BGM then
@@ -275,13 +299,14 @@ function XUiMusicPlayerConsoleBtnView:_RefreshPlaylistTip()
         else
             tip = CS.XTextManager.GetText("MusicPlayerPlaylistTipNormal")
         end
+
+        self.TxtPlaylistNTip.text = tip
+        self._PlaylistNTipScrolling:Play()
+        self.TxtPlaylistPTip.text = tip
+        self._PlaylistPTipScrolling:Play()
+        self.TxtPlaylistLTip.text = tip
+        self._PlaylistLTipScrolling:Play()
     end
-    self.TxtPlaylistNTip.text = tip
-    self._PlaylistNTipScrolling:Play()
-    self.TxtPlaylistPTip.text = tip
-    self._PlaylistPTipScrolling:Play()
-    self.TxtPlaylistLTip.text = tip
-    self._PlaylistLTipScrolling:Play()
 end
 
 function XUiMusicPlayerConsoleBtnView:_RefreshLoopBtnState()
@@ -307,13 +332,14 @@ function XUiMusicPlayerConsoleBtnView:_OnMainViewStatusChange(lastStatus,curStat
         self.GameObject:SetActive(true)
     end
     if lastStatus == MusicMainUIStatus.immerse and curStatus ~= MusicMainUIStatus.immersePro then
-        self.BtnPlaylist.gameObject:SetActive(true)
+        self:_RefreshPlaylistTip()
         self.GoProgressBar.gameObject:SetActive(true)
         self.GoImgBg.gameObject:SetActive(true)
     end
 
     if curStatus == MusicMainUIStatus.immerse then
         self.BtnPlaylist.gameObject:SetActive(false)
+        self.BtnLimitJump.gameObject:SetActive(false)
         self.GoProgressBar.gameObject:SetActive(false)
         self.GoImgBg.gameObject:SetActive(false)
     elseif curStatus == MusicMainUIStatus.immersePro   then

@@ -7,6 +7,7 @@ local XUiGridTransfiniteTowerTeachRole = XClass(XUiNode, "XUiGridTransfiniteTowe
 
 function XUiGridTransfiniteTowerTeachRole:OnStart()
     self.BtnClick:AddEventListener(handler(self, self.OnClick))
+    self.BtnClick.IsForeceSetStateByExternal = true
     -- Head 为通用头像子 prefab，展开一次以访问其 StandIcon
     self._HeadUi = XTool.InitUiObjectByUi({}, self.Head)
 end
@@ -31,7 +32,9 @@ end
 
 function XUiGridTransfiniteTowerTeachRole:SetSelect(isSelect)
     -- 选中态由 BtnClick 的按钮状态实现（Select 态显示选中框）
-    self.BtnClick:SetButtonState(isSelect and CS.UiButtonState.Select or CS.UiButtonState.Normal)
+    local state = isSelect and CS.UiButtonState.Select or CS.UiButtonState.Normal
+    self.BtnClick:SetButtonState(state)
+    self.BtnClick.TempState = state
 end
 
 return XUiGridTransfiniteTowerTeachRole

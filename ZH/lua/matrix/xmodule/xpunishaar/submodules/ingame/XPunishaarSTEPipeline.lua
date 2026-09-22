@@ -12,6 +12,9 @@ local EffectIdsList = XList.New()
 -- #76 重构：buffer 装的是 Instruction 引用（非 {target,...} table），TickScheduledDamages 调 ins:Execute 后回池
 local SchedLandBuf = {}
 
+-- buff 有序缓存（懒排序：BuffListDirty=1 时重排，复用至下次脏；元素 {uid, priority}，零 per-tick GC 复用）#buff优先级排序
+local BuffSortedBuf = {}
+
 --region 私有辅助方法
 
 --- 数指定颜色的球数量（纯读）
@@ -58,6 +61,7 @@ local ConsumeBall = function(vm, executorId, color, count)
     end
     -- 球池真变化才发事件（removed==0 天然不发，避免空事件）
     if removed > 0 then
+        vm:GetEnv():EnqueueBallAnim(STECustomEnum.BallAnimStepType.ConsumeBall, executorId, color, removed)  -- step 队列入队（帧末 drain→UI 队列播，替代旧 payload #消球动效动画队列）
         vm:Emit(STECustomEnum.EventEnum.BallListChanged)
         -- 埋点统计：信号球消费总量累加（循环后一次 Store，非每球；事务可回滚）
         vm:Store(STECustomEnum.GlobalEntityIds.Global, STECustomEnum.FieldNameType.TotalBallConsumed, STEEnum.ValChangeType.Add, removed)
@@ -91,6 +95,7 @@ local ProduceBall = function(vm, executorId, color, count)
 
     -- 帧缓存：仅当实际产出 >0 才登记（全溢出不算"本帧产球实体"）
     if produced > 0 then
+        vm:GetEnv():EnqueueBallAnim(STECustomEnum.BallAnimStepType.ProduceBall, executorId, color, produced)  -- step 队列入队（UI 加尾/挤头更新 _BallPosList，产球动效不做全播完 Refresh 显 #消球动效动画队列）
         local productList = vm:ReadProperty(STECustomEnum.GlobalEntityIds.Global, STECustomEnum.FieldNameType.TickProductBallEntityList)
         vm:PropAppend(productList, executorId)
         -- 球池真变化才发事件（全溢出 produced==0 不进块，天然不发）
@@ -188,6 +193,7 @@ local RunEntityEffectGroup = function(vm, control, ownerId, groupId, timingMask)
     end
 
     vm:SetToBlackBoard(STECustomEnum.BlackBoardKeys.OwnCardId, ownerId)
+    vm:SetToBlackBoard(STECustomEnum.BlackBoardKeys.TimeMask, timingMask)  -- 供 Effect 取用当前时机 #TimeMask
 
     -- 阶段1：判定（含时机过滤）
     PassedEffectsList:Clear()
@@ -251,6 +257,7 @@ local TickBuffEx = function(vm, control, uid, cfg, logicFrame)
     local ownId = vm:Read(uid, STECustomEnum.FieldNameType.OwnEntityId)
     vm:SetToBlackBoard(STECustomEnum.BlackBoardKeys.OwnCardId, ownId)
     vm:SetToBlackBoard(STECustomEnum.BlackBoardKeys.OwnBuffId, uid)
+    vm:SetToBlackBoard(STECustomEnum.BlackBoardKeys.TimeMask, STECustomEnum.TriggerTimeMask.Runtime)  -- buff Ex=运行时 #TimeMask
 
     local groupCfg = control:GetTablePunishaarEffectGroup(exGroupId)
     local effectIds = groupCfg and groupCfg.EffectIds
@@ -312,6 +319,10 @@ function XPunishaarSTEPipeline.ResetGlobalTickData(vm)
     vm:PropClear(tickAccelEntityList)
     vm:PropClear(tickAtkSnapshot)
     vm:PropClear(tickCdMaxSnapshot)
+
+    -- "球不足够发动"手动牌集合清零（每帧重算；帧末 TickBallNotEnoughCards 写入）#手动牌球不足显隐
+    local tickBallNotEnoughDict = vm:ReadProperty(STECustomEnum.GlobalEntityIds.Global, STECustomEnum.FieldNameType.TickBallNotEnoughCardIdDict)
+    vm:PropClear(tickBallNotEnoughDict)
 
     -- 单卡同帧激发次数计数清零（每帧重置；限同帧连锁激发次数）#同帧激发上限
     local cardIds = vm:ReadProperty(STECustomEnum.GlobalEntityIds.Global, STECustomEnum.FieldNameType.CardEntityIds)
@@ -416,9 +427,18 @@ function XPunishaarSTEPipeline.ExecuteOneCardEffects(vm, entityId, control)
     -- 取卡色与球消耗/产出数量（等级战斗内不变，实体字段即该等级值）
     local consumeCount = vm:Read(entityId, STECustomEnum.FieldNameType.BallConsumeCount)
     local productCount = vm:Read(entityId, STECustomEnum.FieldNameType.BallProductCount)
-    
-    consumeCount = math.floor(consumeCount)
-    productCount = math.floor(productCount)
+
+    if XTool.IsNumberValidEx(consumeCount) then
+        consumeCount = math.floor(consumeCount)
+    else
+        consumeCount = 0    
+    end
+
+    if XTool.IsNumberValidEx(productCount) then
+        productCount = math.floor(productCount)
+    else
+        productCount = 0
+    end
 
     -- 「下次触发不消耗球」标签（一次性）：本次跳过球校验+消球，执行后清除
     local noConsumeBall = vm:HasTag(entityId, STECustomEnum.EntityTags.NoConsumeBall)
@@ -434,6 +454,7 @@ function XPunishaarSTEPipeline.ExecuteOneCardEffects(vm, entityId, control)
 
     -- 载入黑板数据
     vm:SetToBlackBoard(STECustomEnum.BlackBoardKeys.OwnCardId, entityId)
+    vm:SetToBlackBoard(STECustomEnum.BlackBoardKeys.TimeMask, STECustomEnum.TriggerTimeMask.Runtime)  -- 卡牌激发=运行时 #TimeMask
 
     -- 先消球（消耗是前提）；持有「不消耗球」标签则本次跳过消球并清除标签（一次性）
     if noConsumeBall then
@@ -558,6 +579,7 @@ function XPunishaarSTEPipeline.ExecuteEnemyEffects(vm, control, groupIdBuffer)
 
     -- 执行者=敌人：Effect 内 _ReadDamageSource 取敌人 ATK；目标靠配置 ScopeType=GetPlayer
     vm:SetToBlackBoard(STECustomEnum.BlackBoardKeys.OwnCardId, enemyId)
+    vm:SetToBlackBoard(STECustomEnum.BlackBoardKeys.TimeMask, STECustomEnum.TriggerTimeMask.Runtime)  -- 敌人 CD 激发=运行时 #TimeMask
 
     -- 多 EffectGroup 各自独立两阶段（不合并；无球校验）
     for gi = 1, groupCount do
@@ -607,25 +629,24 @@ function XPunishaarSTEPipeline.ExecuteEnemyEffects(vm, control, groupIdBuffer)
     return true
 end
 
---- 战斗开始钩子：开局一次性执行所有卡牌+敌人的「装备时/战斗开始时」时机 effect。
---- 卡牌 effectGroup 取 Card.EffectGroupId（单组）；敌人取 GetEnemyEffectGroupIds（多组）。
---- 时机 mask=BattleStart（装备|战斗开始）；与运行时激发（只跑 Other）互斥分流。
+--- 跑一个开局时机阶段（OnEquip 或 OnBattleStart mask）：遍历所有卡牌（先副后主）+敌人，跑该时机 effect。
+--- 拆两阶段（OnEquip 全局先 → OnBattleStart 后）保证跨卡牌顺序固定：CDMax 修正（OnEquip）先于加速（OnBattleStart）落地，
+--- _ClampTickCDToCdMax 的向上对齐依赖此顺序一致性 #B1271760。每阶段内仍按卡牌序（先副后主）+敌人序遍历。
 ---@param vm STEVM.VM
 ---@param control XPunishaarFightControl
+---@param subDict any Global.SubCardDict
+---@param cardIds any Global.CardEntityIds
+---@param cardLen number
 ---@param groupIdBuffer table 敌人 EffectGroupId 现查缓冲（复用）
-function XPunishaarSTEPipeline.RunBattleStartEffects(vm, control, groupIdBuffer)
-    local mask = STECustomEnum.TriggerTimeMask.BattleStart
-
-    -- 卡牌：遍历 CardEntityIds，每张主卡先跑其副卡 EffectGroup（先副后主，与 ExecuteOneCardEffects 一致），
-    -- 再跑主卡 Card.EffectGroupId。副卡无实体，ownerId=宿主主卡 uid（靠主卡黑板 OwnCardId 生效）。
-    local subDict = vm:ReadProperty(STECustomEnum.GlobalEntityIds.Global, STECustomEnum.FieldNameType.SubCardDict)
-    local cardIds = vm:ReadProperty(STECustomEnum.GlobalEntityIds.Global, STECustomEnum.FieldNameType.CardEntityIds)
-    local cardLen = cardIds and vm:PropLen(cardIds) or 0
+---@param mask number TriggerTimeMask.OnEquip 或 OnBattleStart
+local RunBattleStartPhase = function(vm, control, subDict, cardIds, cardLen, groupIdBuffer, mask)
+    -- 卡牌：每张主卡先跑其副卡 EffectGroup（先副后主，与 ExecuteOneCardEffects 一致），再跑主卡。
+    -- 副卡无实体，ownerId=宿主主卡 uid（靠主卡黑板 OwnCardId 生效）。
     for i = 1, cardLen do
         local uid = vm:PropGet(cardIds, i)
-        -- 副卡先：副卡的「装备时/战斗开始时」effect 只能在此触发（运行时 Runtime mask 会过滤掉 BattleStart 时机）
+        -- 副卡先：副卡的「装备时/战斗开始时」effect 只能在此触发（运行时 Runtime mask 会过滤掉开局时机）
         local subCard = subDict and vm:PropGet(subDict, uid)
-        if subCard and XTool.IsNumberValidEx(subCard.cardId)then
+        if subCard and XTool.IsNumberValidEx(subCard.cardId) then
             RunEntityEffectGroup(vm, control, uid, control:GetConfigCardEffectGroupId(subCard.cardId), mask)
         end
         -- 主卡
@@ -644,6 +665,24 @@ function XPunishaarSTEPipeline.RunBattleStartEffects(vm, control, groupIdBuffer)
     end
 end
 
+--- 战斗开始钩子：开局一次性执行所有卡牌+敌人的「装备时/战斗开始时」时机 effect，**拆分两阶段**：
+--- 阶段1 OnEquip（装备即生效）：CDMax 修正+CD 向上对齐先全局落地；阶段2 OnBattleStart（战斗开始时）：加速等后落地。
+--- 两阶段顺序固定 → CDMax 修正先于加速 → _ClampTickCDToCdMax 向上对齐结果确定 #B1271760。
+--- 卡牌 effectGroup 取 Card.EffectGroupId（单组）；敌人取 GetEnemyEffectGroupIds（多组）；与运行时激发（只跑 Other）互斥分流。
+---@param vm STEVM.VM
+---@param control XPunishaarFightControl
+---@param groupIdBuffer table 敌人 EffectGroupId 现查缓冲（复用）
+function XPunishaarSTEPipeline.RunBattleStartEffects(vm, control, groupIdBuffer)
+    local subDict = vm:ReadProperty(STECustomEnum.GlobalEntityIds.Global, STECustomEnum.FieldNameType.SubCardDict)
+    local cardIds = vm:ReadProperty(STECustomEnum.GlobalEntityIds.Global, STECustomEnum.FieldNameType.CardEntityIds)
+    local cardLen = cardIds and vm:PropLen(cardIds) or 0
+
+    -- 阶段1：OnEquip（装备即生效）——CDMax 修正+向上对齐先全局落地
+    RunBattleStartPhase(vm, control, subDict, cardIds, cardLen, groupIdBuffer, STECustomEnum.TriggerTimeMask.OnEquip)
+    -- 阶段2：OnBattleStart（战斗开始时）——加速等在 CDMax 修正后落地，顺序固定
+    RunBattleStartPhase(vm, control, subDict, cardIds, cardLen, groupIdBuffer, STECustomEnum.TriggerTimeMask.OnBattleStart)
+end
+
 --- 推进所有 buff 的生命周期计量，到期只标记 PreEnd（不删结构，回收交给 RecycleBuffs）
 --- 时序：必须在卡牌发动循环之后（次数型 CountDownTrigger 可能依赖 TickDoneCardList）
 --- 阈值每帧现算：时间型(Tick)毫秒→帧向下取整；次数型(TriggerTick)直接用次数
@@ -654,11 +693,30 @@ function XPunishaarSTEPipeline.TickAllBuffs(vm, control, logicFrame)
     local buffList = vm:ReadProperty(STECustomEnum.GlobalEntityIds.Global, STECustomEnum.FieldNameType.BuffEntityIds)
     local len = vm:PropLen(buffList)
     if len <= 0 then
+        for i = 1, #BuffSortedBuf do BuffSortedBuf[i] = nil end
         return
     end
 
-    for i = 1, len do
-        local uid = vm:PropGet(buffList, i)
+    -- 懒排序：BuffListDirty=1（buff 增删置脏）或缓存长度不符才重排（读 B 个 cfg.Priority 一次 + sort），
+    -- 否则复用 BuffSortedBuf（稳态 O(B) 遍历无 sort 无查表）。排序：Priority 降序 + uid 升序兜底。#buff优先级排序
+    if vm:Read(STECustomEnum.GlobalEntityIds.Global, STECustomEnum.FieldNameType.BuffListDirty) == 1
+            or #BuffSortedBuf ~= len then
+        for i = 1, len do
+            local uid = vm:PropGet(buffList, i)
+            local buffId = vm:Read(uid, STECustomEnum.FieldNameType.BuffId)
+            local cfg = control:GetTablePunishaarBuff(buffId)
+            BuffSortedBuf[i] = { uid = uid, priority = (cfg and cfg.Priority or 0) }
+        end
+        for i = len + 1, #BuffSortedBuf do BuffSortedBuf[i] = nil end
+        table.sort(BuffSortedBuf, function(a, b)
+            if a.priority ~= b.priority then return a.priority > b.priority end
+            return a.uid < b.uid
+        end)
+        vm:Store(STECustomEnum.GlobalEntityIds.Global, STECustomEnum.FieldNameType.BuffListDirty, STEEnum.ValChangeType.Set, 0)
+    end
+
+    for i = 1, #BuffSortedBuf do
+        local uid = BuffSortedBuf[i].uid
 
         -- 只推进 Active 态的 buff
         if vm:Read(uid, STECustomEnum.FieldNameType.State) == STECustomEnum.BuffState.Active then
@@ -758,6 +816,40 @@ function XPunishaarSTEPipeline.OnTickEnd(vm)
     -- 输入信号延迟到帧末才清空，确保输入能够被正确消费
     local tickClickCardIdDict = vm:ReadProperty(STECustomEnum.GlobalEntityIds.Global, STECustomEnum.FieldNameType.TickClickCardIdDict)
     vm:PropClear(tickClickCardIdDict)
+end
+
+--- 帧末球态稳定后，记录"球不足够发动"手动牌到 TickBallNotEnoughCardIdDict（供 UI 隐藏点击字样+外发光）。#手动牌球不足显隐
+--- 遍历 WaittingDone 手动牌（ByHand），球不足（NoConsumeBall 免校验）者写入。
+--- 存"不足够"非"足够"：不足的牌 STE skip 持续停留 WaittingDone 稳定；足够的是瞬时态（自动模式立即释放移出/手动模式等点击）。
+--- 收口到 STE 权威层（复用 CheckBallEnough，与 ExecuteOneCardEffects:432 同口径），替代 UI 每卡遍历球槽。
+---@param vm STEVM.VM
+---@param control XPunishaarFightControl 只使用配置表读取接口（GetConfigCardColor）
+function XPunishaarSTEPipeline.TickBallNotEnoughCards(vm, control)
+    local dict = vm:ReadProperty(STECustomEnum.GlobalEntityIds.Global, STECustomEnum.FieldNameType.TickBallNotEnoughCardIdDict)
+    vm:PropClear(dict)  -- 开头清（ResetGlobalTickData 帧首已清，此处双清冗余但语义自洽，防本帧无 WaittingDone 手动牌时残留）
+    local waittingList = vm:ReadProperty(STECustomEnum.GlobalEntityIds.Global, STECustomEnum.FieldNameType.WaittingDoneCardIdList)
+    local len = vm:PropLen(waittingList)
+    for i = 1, len do
+        local uid = vm:PropGet(waittingList, i)
+        if vm:HasTag(uid, STECustomEnum.EntityTags.ByHand) then
+            -- NoConsumeBall 免校验：下次不消球，不受球量约束，不算"不足够"
+            if not vm:HasTag(uid, STECustomEnum.EntityTags.NoConsumeBall) then
+                local cardId = vm:Read(uid, STECustomEnum.FieldNameType.CardId)
+                local color = control:GetConfigCardColor(cardId)
+                local consumeCount = math.floor(vm:Read(uid, STECustomEnum.FieldNameType.BallConsumeCount))
+                if not CheckBallEnough(vm, color, consumeCount) then
+                    vm:PropSet(dict, uid, true)
+                end
+            end
+        end
+    end
+end
+
+--- 清空 STE 模块级缓存（BuffSortedBuf 跨帧缓存），战斗结束/释放时调防数据滞留下局误读。#buff优先级排序
+function XPunishaarSTEPipeline.ClearBattleBuffers()
+    for i = 1, #BuffSortedBuf do
+        BuffSortedBuf[i] = nil
+    end
 end
 --endregion
 

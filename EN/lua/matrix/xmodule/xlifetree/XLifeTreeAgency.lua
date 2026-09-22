@@ -146,6 +146,11 @@ function XLifeTreeAgency:CheckOpenUiLifeTreeChapterUnlock(exhibitionFubenType, e
         return
     end
 
+    -- 当前处于引导中
+    if XDataCenter.GuideManager.CheckIsInGuide() then
+        return
+    end
+
     -- 玩法未开启
     if not self:IsOpen() then return end
     

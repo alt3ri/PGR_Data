@@ -158,6 +158,10 @@ function XUiSignCardPopup:RefreshGet()
         return
     end
     local ykConfig = XSignInConfigs.GetSignCardConfigByPurchasePackageId(data.Id)
+    if not ykConfig then
+        XLog.Error("[XUiSignCardPopup] GetSignCardConfigByPurchasePackageId nil, data.Id=" .. tostring(data.Id))
+        return
+    end
 
     local remainDay = not XOverseaManager.IsJP_KR_ENRegion() and data.DailyRewardRemainDay or data.DailyRewardRemainDay - 1
     if remainDay < 0 then

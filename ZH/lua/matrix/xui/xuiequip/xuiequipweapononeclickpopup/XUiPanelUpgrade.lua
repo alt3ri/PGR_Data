@@ -1,4 +1,8 @@
 -- 武器升级与突破栏
+local COLOR = {
+    Grey = XUiHelper.Hexcolor2Color("A1A1A1"),
+    Blue = XUiHelper.Hexcolor2Color("0D70BC"),
+}
 ---@class XUiPanelUpgrade:XUiNode
 ---@field Parent XUiEquipWeaponOneClickPopup
 ---@field BgTitleChoose UnityEngine.RectTransform
@@ -27,15 +31,21 @@ end
 --- @param data table { PreviewText, BreakIcon, CostList }
 function XUiPanelUpgrade:Refresh(data)
     self.Data = data
-    self:RefreshChooseState()
 
     local displayList = self:BuildDisplayList(data.CostList or table.empty)
     local hasCost = not XTool.IsTableEmpty(displayList)
+    local isBgChoose = self.IsChoose and hasCost
+    self.BgTitleChoose.gameObject:SetActiveEx(isBgChoose)
+    self.BgTitleNotChoose.gameObject:SetActiveEx(not isBgChoose)
+
     if hasCost then
         self.UiTxtPreview.text = CS.XTextManager.GetText("EquipWeaponOneClickUpgradePreview", data.MaxLevel or 0)
     else
         self.UiTxtPreview.text = CS.XTextManager.GetText("EquipOneClickCultureMaterialNotEnough")
     end
+    local color = isBgChoose and COLOR.Blue or COLOR.Grey
+    self.Arrow.color = color
+    self.UiTxtPreview.color = color
     self.ImgBreakIcon.gameObject:SetActiveEx(hasCost and self.IsChoose)
     if hasCost and data.BreakIcon and data.BreakIcon ~= "" then
         self.Parent:SetUiSprite(self.ImgBreakIcon, data.BreakIcon)
@@ -111,12 +121,13 @@ function XUiPanelUpgrade:BuildDisplayList(costList)
 end
 
 function XUiPanelUpgrade:RefreshChooseState()
-    self.BgTitleChoose.gameObject:SetActiveEx(self.IsChoose)
-    self.BgTitleNotChoose.gameObject:SetActiveEx(not self.IsChoose)
     self.BtnChoose:SetButtonState(self.IsChoose and CS.UiButtonState.Select or CS.UiButtonState.Normal)
     self.ImgArrow1.gameObject:SetActiveEx(self.IsChoose)
     self.UiTxtPreview.gameObject:SetActiveEx(self.IsChoose)
     self.ImgBreakIcon.gameObject:SetActiveEx(self.IsChoose)
+    local color = self.IsChoose and COLOR.Blue or COLOR.Grey
+    self.Arrow.color = color
+    self.UiTxtPreview.color = color
 end
 
 function XUiPanelUpgrade:OnBtnChooseClick()

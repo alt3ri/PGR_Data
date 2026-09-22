@@ -4,7 +4,9 @@ local XDynamicDailyTask = require("XUi/XUiTask/XDynamicDailyTask")
 ---@class XUiPanelTaskWeekly
 local XUiPanelTaskWeekly = XClass(XUiNode, "XUiPanelTaskWeekly")
 local IsMulting = false
+-- 任务奖励与里程碑奖励分开累积，各弹一个弹窗
 local ShowRewardList = {}
+local ActivenessRewardList = {}
 
 function XUiPanelTaskWeekly:OnStart()
     self.DynamicTable = XDynamicTableNormal.New(self.PanelTaskWeeklyList)
@@ -71,15 +73,71 @@ function XUiPanelTaskWeekly:CheckRefreshLeftNewTask()
             end)
         end
     elseif not self.ReceiveAll and ShowRewardList and next(ShowRewardList) then
-        -- 没有剩余任务了，弹窗任务奖励
-        local horizontalNormalizedPosition = 0
-        XUiManager.OpenUiObtain(ShowRewardList, nil, nil, nil, horizontalNormalizedPosition)
-        ShowRewardList = {} --刷新奖励列表
-        IsMulting = false
-        XLuaUiManager.SetMask(false)
+        -- 任务已全部领完，接着领里程碑奖励并收尾
+        self:_ReceiveActivenessAndFinish()
     end
 
     return self.ReceiveAll
+end
+
+-- 是否存在已达标但未领取的任务完成数量奖励（里程碑活跃度奖励）
+function XUiPanelTaskWeekly:HasUnclaimedActivenessReward()
+    local activeness = XDataCenter.TaskManager.GetWeeklyTaskActiveness()
+    for _, target in ipairs(self.WeeklyActiveness.Activeness) do
+        if activeness >= target and not XDataCenter.TaskManager.WeeklyActivenessProgressRewardGot(target) then
+            return true
+        end
+    end
+    return false
+end
+
+-- 领取达标的里程碑（任务完成数量）奖励，随后收尾
+function XUiPanelTaskWeekly:_ReceiveActivenessAndFinish()
+    if self:HasUnclaimedActivenessReward() then
+        XDataCenter.TaskManager:GetWeeklyActivenessRewardRequest(function(resp)
+            -- 进度已推进但本次无实际发奖时 RewardGoodsList 为 nil，需判空防崩
+            if resp.RewardGoodsList then
+                for _, reward in pairs(resp.RewardGoodsList) do
+                    table.insert(ActivenessRewardList, reward)
+                end
+            end
+            self:_FinishMultiReceive()
+        end)
+    else
+        self:_FinishMultiReceive()
+    end
+end
+
+-- 一键领取收尾：任务奖励、里程碑奖励分两个弹窗依次展示。
+-- 状态复位必须在此同步执行，不能放进弹窗关闭回调，否则复位前若再有任务同步事件进来，
+-- CheckRefreshLeftNewTask 会重复进入本函数，造成重复弹窗、SetMask(false) 多减使 MaskCount 变负。
+function XUiPanelTaskWeekly:_FinishMultiReceive()
+    local horizontalNormalizedPosition = 0
+    -- 先持有旧列表引用，复位后弹窗内容不受影响
+    local taskRewards = ShowRewardList
+    local activenessRewards = ActivenessRewardList
+    local hasTaskReward = taskRewards and next(taskRewards)
+    local hasActivenessReward = activenessRewards and next(activenessRewards)
+
+    ShowRewardList = {}
+    ActivenessRewardList = {}
+    IsMulting = false
+    XLuaUiManager.SetMask(false)
+
+    -- 里程碑弹窗作为任务弹窗的关闭回调，保证两者先后出现
+    local openActivenessObtain = function()
+        if hasActivenessReward then
+            XUiManager.OpenUiObtain(activenessRewards, nil, nil, nil, horizontalNormalizedPosition)
+        end
+    end
+
+    if hasTaskReward then
+        XUiManager.OpenUiObtain(taskRewards, nil, openActivenessObtain, nil, horizontalNormalizedPosition)
+    else
+        openActivenessObtain()
+    end
+
+    self:Refresh()
 end
 
 function XUiPanelTaskWeekly:Refresh(isMulti)
@@ -110,25 +168,33 @@ function XUiPanelTaskWeekly:GetTasks(weeklyTasks)
     end
 
     local finalResultTaskDataList = {}
-    if allAchieveTasks and next(allAchieveTasks) then
-        self.ReceiveAll = true        -- 一键领取激活
+    local hasAchieveTask = allAchieveTasks and next(allAchieveTasks)
+    -- self.ReceiveAll 仅表示"还有已达标可领的任务"，供循环领取控制用，不能含里程碑，否则会死循环、mask 卡死
+    self.ReceiveAll = hasAchieveTask and true or false
+    -- 一键按钮显示条件：有可领任务，或有达标未领的里程碑奖励
+    local showReceiveAll = hasAchieveTask or self:HasUnclaimedActivenessReward()
+    if showReceiveAll then
         local receiveCb = function ()
             IsMulting = true
             XLuaUiManager.SetMask(true)
-            XDataCenter.TaskManager.FinishMultiTaskRequest(allAchieveTasks, function(rewardGoodsList)
-                -- 第一次请求返回 必不做弹窗奖励，插入奖励列表 等待refresh 检测同步的任务是否还有未领取
-                for key, reward in pairs(rewardGoodsList) do
-                    table.insert(ShowRewardList, reward)
-                end
-            end)
+            if allAchieveTasks and next(allAchieveTasks) then
+                XDataCenter.TaskManager.FinishMultiTaskRequest(allAchieveTasks, function(rewardGoodsList)
+                    -- 任务奖励只累积不弹窗，待确认无剩余任务后统一收尾
+                    for key, reward in pairs(rewardGoodsList) do
+                        table.insert(ShowRewardList, reward)
+                    end
+                end)
+            else
+                -- 无可领任务、仅有达标里程碑：直接领里程碑并收尾
+                self:_ReceiveActivenessAndFinish()
+            end
         end
         finalResultTaskDataList[1] = {ReceiveAll = true, AllAchieveTaskDatas = allAchieveTasks, ReceiveCb = receiveCb}
         for i = 1, #weeklyTasks do
             table.insert(finalResultTaskDataList, weeklyTasks[i])
         end
     else
-        self.ReceiveAll = false
-        finalResultTaskDataList = weeklyTasks 
+        finalResultTaskDataList = weeklyTasks
     end
 
     return finalResultTaskDataList

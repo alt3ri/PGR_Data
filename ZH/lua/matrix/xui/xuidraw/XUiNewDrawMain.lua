@@ -1478,6 +1478,7 @@ function XUiNewDrawMain:OnBtnOptionDrawClick()
                 self.DefaultDrawId = nil
                 self:OnSelectUp(drawId)
                 self:RefreshScene()
+                self:_RefreshCharacterDrawTarget()
             end,
             function()
                 self:Close()

@@ -5,6 +5,7 @@ local TableKey =
     TeamRecommendBaseFormation = { CacheType = XConfigUtil.CacheType.Normal },
     TeamRecommendCharacterTarget = { Identifier = "CharacterId", CacheType = XConfigUtil.CacheType.Normal },
     TeamRecommendConfig = { ReadFunc = XConfigUtil.ReadType.String, Identifier = "Key", CacheType = XConfigUtil.CacheType.Normal },
+    TeamRecommendClientConfig = { DirPath = XConfigUtil.DirectoryType.Client, ReadFunc = XConfigUtil.ReadType.String, Identifier = "Key", CacheType = XConfigUtil.CacheType.Normal },
     TeamRecommendFormation = { CacheType = XConfigUtil.CacheType.Normal },
     TeamRecommendProgressWeight = { DirPath = XConfigUtil.DirectoryType.Client, ReadFunc = XConfigUtil.ReadType.String, Identifier = "Key", CacheType = XConfigUtil.CacheType.Normal },
 }
@@ -126,6 +127,13 @@ end
 --- 获取通用配置的Values
 function XTeamRecommendModel:GetTeamRecommendConfigValues(key)
     local cfg = self:GetTeamRecommendConfig(key)
+    return cfg and cfg.Values
+end
+
+--- 获取客户端专用配置的Values
+function XTeamRecommendModel:GetTeamRecommendClientConfigValues(key)
+    local cfgs = self._ConfigUtil:GetByTableKey(TableKey.TeamRecommendClientConfig)
+    local cfg = cfgs[key]
     return cfg and cfg.Values
 end
 

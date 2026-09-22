@@ -11,6 +11,10 @@ function XMovieActionFullScreenDialogNew:OnInit(actionData)
     self.OriginContent = params[1]
     self.TypeWriteTime = XMVCA.XMovie:ParamToNumber(params[2])
     self.CvId = XMVCA.XMovie:ParamToNumber(params[3])
+    local movieId = XDataCenter.MovieManager.GetCurPlayingMovieId()
+    if XMovieConfigs.IsMovieVoiceMuted(movieId) then
+        self.CvId = 0
+    end
     self.IsCanSkip = params[4] == nil
     self.EmptyLineCount = XMVCA.XMovie:ParamToNumber(params[5])
     self.IsLastText = params[6] == "1"
@@ -89,6 +93,10 @@ function XMovieActionFullScreenDialogNew:StopLastCv()
 end
 
 function XMovieActionFullScreenDialogNew:OnDestroy()
+    self.IsTyping = nil
+    self.IsSkipped = nil
+    self.UiRoot:RemoveBtnNextCallback()
+
     if self.IsLastText then
         self.Panel:RecycleAllDialog()
     end

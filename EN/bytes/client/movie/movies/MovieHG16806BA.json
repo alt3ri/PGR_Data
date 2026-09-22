@@ -5912,24 +5912,50 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryYanChangHui.prefab', 2: '2'}"
+        "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryYanChangHui.prefab', 2: '3'}"
     },
     {
         "Id": 456,
-        "ActionId": 456,
+        "ActionId": 7001,
         "NextActionId": null,
-        "Type": 401,
+        "Type": 105,
         "IsBlock": null,
         "IsEnd": null,
         "BeginAnim": null,
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: '2', 2: '10113408'}"
+        "Params": "{1: 'Assets/Product/Ui/Spine/4_7_Spine/V47UiMovieCGDtm_KaLieNiNa/V47UiMovieCGDtm_KaLieNiNa.prefab'}"
     },
     {
         "Id": 457,
-        "ActionId": 457,
+        "ActionId": 7002,
+        "NextActionId": null,
+        "Type": 106,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": null,
+        "EndAnim": null,
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{1: '1Enab', 4: '1'}"
+    },
+    {
+        "Id": 458,
+        "ActionId": 7003,
+        "NextActionId": null,
+        "Type": 106,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": null,
+        "EndAnim": null,
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{1: '1Loop', 2: '1'}"
+    },
+    {
+        "Id": 459,
+        "ActionId": 456,
         "NextActionId": null,
         "Type": 502,
         "IsBlock": null,
@@ -5937,11 +5963,24 @@
         "BeginAnim": null,
         "EndAnim": null,
         "BeginDelay": null,
-        "EndDelay": 2000.0,
+        "EndDelay": 1000.0,
         "Params": "{1: 'AniZhuanchangEnd'}"
     },
     {
-        "Id": 458,
+        "Id": 460,
+        "ActionId": 457,
+        "NextActionId": null,
+        "Type": 401,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": null,
+        "EndAnim": null,
+        "BeginDelay": null,
+        "EndDelay": 1500.0,
+        "Params": "{1: '2', 2: '10113408'}"
+    },
+    {
+        "Id": 461,
         "ActionId": 458,
         "NextActionId": null,
         "Type": 301,
@@ -5954,7 +5993,7 @@
         "Params": "{3: 'As the first chorus kicks in, Karenina stretches out her hand, pointing at you.'}"
     },
     {
-        "Id": 459,
+        "Id": 462,
         "ActionId": 459,
         "NextActionId": null,
         "Type": 301,
@@ -5967,7 +6006,7 @@
         "Params": "{3: 'The eyes never lie. All her senses sharpen into instinct, locking onto what matters most instantly.'}"
     },
     {
-        "Id": 460,
+        "Id": 463,
         "ActionId": 460,
         "NextActionId": null,
         "Type": 301,
@@ -5980,7 +6019,7 @@
         "Params": "{3: \"The crowd's cheers surge with excitement. Karenina's voice is not perfect, but it is the sound of youth itself.\"}"
     },
     {
-        "Id": 461,
+        "Id": 464,
         "ActionId": 461,
         "NextActionId": null,
         "Type": 301,
@@ -5993,7 +6032,7 @@
         "Params": "{3: 'The raw, unpolished voice is breathing new life into Xoth, like mint, like ice, like sparks.'}"
     },
     {
-        "Id": 462,
+        "Id": 465,
         "ActionId": 462,
         "NextActionId": null,
         "Type": 401,
@@ -6006,7 +6045,46 @@
         "Params": "{1: '2', 2: '6980'}"
     },
     {
-        "Id": 463,
+        "Id": 466,
+        "ActionId": 7004,
+        "NextActionId": null,
+        "Type": 501,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": null,
+        "EndAnim": null,
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}"
+    },
+    {
+        "Id": 467,
+        "ActionId": 7005,
+        "NextActionId": null,
+        "Type": 106,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": null,
+        "EndAnim": null,
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{1: '2Enab', 4: '1'}"
+    },
+    {
+        "Id": 468,
+        "ActionId": 7006,
+        "NextActionId": null,
+        "Type": 106,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": null,
+        "EndAnim": null,
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{1: '2Loop', 2: '1'}"
+    },
+    {
+        "Id": 469,
         "ActionId": 463,
         "NextActionId": null,
         "Type": 301,
@@ -6019,7 +6097,20 @@
         "Params": "{3: 'Fireworks and confetti are launched into the air. Karenina becomes a silhouette, drawing the gaze of everyone present.'}"
     },
     {
-        "Id": 464,
+        "Id": 470,
+        "ActionId": 7007,
+        "NextActionId": null,
+        "Type": 105,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": null,
+        "EndAnim": null,
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": null
+    },
+    {
+        "Id": 471,
         "ActionId": 464,
         "NextActionId": null,
         "Type": 114,
@@ -6032,7 +6123,7 @@
         "Params": "{1: '1', 4: '0.5', 5: '0.6', 7: 'Assets/Product/Texture/Image/BgComic/V470Karenina_favor/V470_08_01.jpg', 8: 'Assets/Product/Texture/Image/BgComic/V470Karenina_favor/V470_08_02.jpg', 9: 'Assets/Product/Texture/Image/BgComic/V470Karenina_favor/V470_08_03.jpg'}"
     },
     {
-        "Id": 465,
+        "Id": 472,
         "ActionId": 465,
         "NextActionId": null,
         "Type": 301,
@@ -6045,7 +6136,7 @@
         "Params": "{3: \"She stops worrying about whether her performance is flawless. She doesn't care about beating anyone anymore.\"}"
     },
     {
-        "Id": 466,
+        "Id": 473,
         "ActionId": 466,
         "NextActionId": null,
         "Type": 301,
@@ -6058,7 +6149,7 @@
         "Params": "{3: 'So what if your story feels like something out of a third-rate cliche movie?'}"
     },
     {
-        "Id": 467,
+        "Id": 474,
         "ActionId": 467,
         "NextActionId": null,
         "Type": 301,
@@ -6071,7 +6162,7 @@
         "Params": "{3: \"So what if the performance isn't perfect? So what if there are shaky notes, awkward breaths, and missed beats?\"}"
     },
     {
-        "Id": 468,
+        "Id": 475,
         "ActionId": 468,
         "NextActionId": null,
         "Type": 301,
@@ -6084,7 +6175,7 @@
         "Params": "{3: 'This is your summer. This is your irreplaceable rhythm!'}"
     },
     {
-        "Id": 469,
+        "Id": 476,
         "ActionId": 469,
         "NextActionId": null,
         "Type": 301,
@@ -6097,7 +6188,7 @@
         "Params": "{3: 'Drenched in sweat, she sways to the rhythm with everyone else, singing her heart out.'}"
     },
     {
-        "Id": 470,
+        "Id": 477,
         "ActionId": 470,
         "NextActionId": null,
         "Type": 401,
@@ -6110,7 +6201,7 @@
         "Params": "{1: '1', 2: '36'}"
     },
     {
-        "Id": 471,
+        "Id": 478,
         "ActionId": 471,
         "NextActionId": null,
         "Type": 401,
@@ -6123,7 +6214,7 @@
         "Params": "{1: '2', 2: '4083'}"
     },
     {
-        "Id": 472,
+        "Id": 479,
         "ActionId": 472,
         "NextActionId": null,
         "Type": 401,
@@ -6136,7 +6227,7 @@
         "Params": "{1: '2', 2: '9389034'}"
     },
     {
-        "Id": 473,
+        "Id": 480,
         "ActionId": 473,
         "NextActionId": null,
         "Type": 501,
@@ -6149,7 +6240,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab', 2: '3'}"
     },
     {
-        "Id": 474,
+        "Id": 481,
         "ActionId": 474,
         "NextActionId": null,
         "Type": 114,
@@ -6162,7 +6253,7 @@
         "Params": "{1: '1', 2: '1'}"
     },
     {
-        "Id": 475,
+        "Id": 482,
         "ActionId": 475,
         "NextActionId": null,
         "Type": 505,
@@ -6175,7 +6266,7 @@
         "Params": "{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryYanChangHui.prefab'}"
     },
     {
-        "Id": 476,
+        "Id": 483,
         "ActionId": 476,
         "NextActionId": null,
         "Type": 205,
@@ -6188,7 +6279,7 @@
         "Params": "{1: '999', 2: 'Assets/Product/Texture/Image/BgComic/V470Karenina_favor/V470_09_01.jpg', 3: '0', 4: '1', 5: '0'}"
     },
     {
-        "Id": 477,
+        "Id": 484,
         "ActionId": 477,
         "NextActionId": null,
         "Type": 104,
@@ -6201,7 +6292,7 @@
         "Params": "{1: '0|0|-200', 2: '0', 4: '3'}"
     },
     {
-        "Id": 478,
+        "Id": 485,
         "ActionId": 478,
         "NextActionId": null,
         "Type": 501,
@@ -6214,7 +6305,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiEnd.prefab', 2: '3'}"
     },
     {
-        "Id": 479,
+        "Id": 486,
         "ActionId": 479,
         "NextActionId": null,
         "Type": 104,
@@ -6227,7 +6318,7 @@
         "Params": "{1: '0|0|0', 2: '4', 4: '3'}"
     },
     {
-        "Id": 480,
+        "Id": 487,
         "ActionId": 480,
         "NextActionId": null,
         "Type": 505,
@@ -6240,7 +6331,7 @@
         "Params": "{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBaiBegin.prefab'}"
     },
     {
-        "Id": 481,
+        "Id": 488,
         "ActionId": 481,
         "NextActionId": null,
         "Type": 301,
@@ -6253,7 +6344,7 @@
         "Params": "{3: 'As the drawn-out electronic tone fades to silence, the song ends. Karenina gasps for breath, lights switching off around her one by one.'}"
     },
     {
-        "Id": 482,
+        "Id": 489,
         "ActionId": 482,
         "NextActionId": null,
         "Type": 301,
@@ -6266,7 +6357,7 @@
         "Params": "{2: 'Karenina', 3: 'Whatever happens, we pulled it off!', 18: '100020178'}"
     },
     {
-        "Id": 483,
+        "Id": 490,
         "ActionId": 483,
         "NextActionId": null,
         "Type": 301,
@@ -6279,7 +6370,7 @@
         "Params": "{2: 'Karenina', 3: 'I was one with the music... I felt every single beat... I have no regrets.', 18: '100020179'}"
     },
     {
-        "Id": 484,
+        "Id": 491,
         "ActionId": 484,
         "NextActionId": null,
         "Type": 401,
@@ -6292,7 +6383,7 @@
         "Params": "{1: '2', 2: '6965'}"
     },
     {
-        "Id": 485,
+        "Id": 492,
         "ActionId": 485,
         "NextActionId": null,
         "Type": 301,
@@ -6305,7 +6396,7 @@
         "Params": "{3: 'About ten seconds later, the crowd erupts in deafening cheers.'}"
     },
     {
-        "Id": 486,
+        "Id": 493,
         "ActionId": 486,
         "NextActionId": null,
         "Type": 403,
@@ -6318,7 +6409,7 @@
         "Params": "{1: '100020208'}"
     },
     {
-        "Id": 487,
+        "Id": 494,
         "ActionId": 487,
         "NextActionId": null,
         "Type": 301,
@@ -6331,7 +6422,7 @@
         "Params": "{3: '\"Karenina, Karenina, Karenina...\"'}"
     },
     {
-        "Id": 488,
+        "Id": 495,
         "ActionId": 488,
         "NextActionId": null,
         "Type": 301,
@@ -6344,7 +6435,7 @@
         "Params": "{3: 'The crowd keeps chanting her name, and a name is the simplest declaration in the world.'}"
     },
     {
-        "Id": 489,
+        "Id": 496,
         "ActionId": 489,
         "NextActionId": null,
         "Type": 302,
@@ -6357,7 +6448,7 @@
         "Params": "{2: 'The performance was a smashing success!', 3: '490'}"
     },
     {
-        "Id": 490,
+        "Id": 497,
         "ActionId": 490,
         "NextActionId": null,
         "Type": 302,
@@ -6370,7 +6461,7 @@
         "Params": "{2: 'We did it!', 3: '491'}"
     },
     {
-        "Id": 491,
+        "Id": 498,
         "ActionId": 491,
         "NextActionId": null,
         "Type": 401,
@@ -6383,7 +6474,7 @@
         "Params": "{1: '1', 2: '36'}"
     },
     {
-        "Id": 492,
+        "Id": 499,
         "ActionId": 492,
         "NextActionId": null,
         "Type": 401,
@@ -6396,7 +6487,7 @@
         "Params": "{1: '2', 2: '2576'}"
     },
     {
-        "Id": 493,
+        "Id": 500,
         "ActionId": 493,
         "NextActionId": null,
         "Type": 402,
@@ -6409,7 +6500,7 @@
         "Params": "{1: '6965'}"
     },
     {
-        "Id": 494,
+        "Id": 501,
         "ActionId": 494,
         "NextActionId": null,
         "Type": 402,
@@ -6422,7 +6513,7 @@
         "Params": "{2: '100020208'}"
     },
     {
-        "Id": 495,
+        "Id": 502,
         "ActionId": 495,
         "NextActionId": null,
         "Type": 501,
@@ -6435,7 +6526,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}"
     },
     {
-        "Id": 496,
+        "Id": 503,
         "ActionId": 496,
         "NextActionId": null,
         "Type": 101,
@@ -6448,7 +6539,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/BgStory781.jpg'}"
     },
     {
-        "Id": 497,
+        "Id": 504,
         "ActionId": 497,
         "NextActionId": null,
         "Type": 205,
@@ -6461,7 +6552,7 @@
         "Params": "{1: '999'}"
     },
     {
-        "Id": 498,
+        "Id": 505,
         "ActionId": 498,
         "NextActionId": null,
         "Type": 205,
@@ -6474,7 +6565,7 @@
         "Params": "{1: '1004'}"
     },
     {
-        "Id": 499,
+        "Id": 506,
         "ActionId": 499,
         "NextActionId": null,
         "Type": 205,
@@ -6487,7 +6578,7 @@
         "Params": "{1: '1006'}"
     },
     {
-        "Id": 500,
+        "Id": 507,
         "ActionId": 500,
         "NextActionId": null,
         "Type": 205,
@@ -6500,7 +6591,7 @@
         "Params": "{1: '1005'}"
     },
     {
-        "Id": 501,
+        "Id": 508,
         "ActionId": 501,
         "NextActionId": null,
         "Type": 205,
@@ -6513,7 +6604,7 @@
         "Params": "{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg', 3: '0', 4: '1', 5: '0'}"
     },
     {
-        "Id": 502,
+        "Id": 509,
         "ActionId": 502,
         "NextActionId": null,
         "Type": 104,
@@ -6526,7 +6617,7 @@
         "Params": "{1: '0|0|0', 2: '0', 4: '1'}"
     },
     {
-        "Id": 503,
+        "Id": 510,
         "ActionId": 503,
         "NextActionId": null,
         "Type": 104,
@@ -6539,7 +6630,7 @@
         "Params": "{1: '0|0|0', 2: '0', 4: '3'}"
     },
     {
-        "Id": 504,
+        "Id": 511,
         "ActionId": 504,
         "NextActionId": null,
         "Type": 104,
@@ -6552,7 +6643,7 @@
         "Params": "{1: '0|0|0', 2: '0', 4: '4'}"
     },
     {
-        "Id": 505,
+        "Id": 512,
         "ActionId": 505,
         "NextActionId": null,
         "Type": 104,
@@ -6565,7 +6656,7 @@
         "Params": "{1: '0|0|0', 2: '0', 4: '6'}"
     },
     {
-        "Id": 506,
+        "Id": 513,
         "ActionId": 506,
         "NextActionId": null,
         "Type": 104,
@@ -6578,7 +6669,7 @@
         "Params": "{1: '0|0|0', 2: '0', 4: '5'}"
     },
     {
-        "Id": 507,
+        "Id": 514,
         "ActionId": 507,
         "NextActionId": null,
         "Type": 104,
@@ -6591,7 +6682,7 @@
         "Params": "{1: '0|0|0', 2: '0', 4: '7'}"
     },
     {
-        "Id": 508,
+        "Id": 515,
         "ActionId": 508,
         "NextActionId": null,
         "Type": 205,
@@ -6604,7 +6695,7 @@
         "Params": "{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg', 3: '1', 4: '0', 5: '1'}"
     },
     {
-        "Id": 509,
+        "Id": 516,
         "ActionId": 509,
         "NextActionId": null,
         "Type": 301,
@@ -6617,7 +6708,7 @@
         "Params": "{3: 'But when the lights come back up and you move to greet Karenina, the mic and electric guitar lie abandoned on an empty stage.'}"
     },
     {
-        "Id": 510,
+        "Id": 517,
         "ActionId": 510,
         "NextActionId": null,
         "Type": 401,
@@ -6630,7 +6721,7 @@
         "Params": "{1: '1', 2: '51'}"
     },
     {
-        "Id": 511,
+        "Id": 518,
         "ActionId": 511,
         "NextActionId": null,
         "Type": 301,
@@ -6643,7 +6734,7 @@
         "Params": "{3: 'Confetti drifts down like snow. The crowd falls silent, as if someone has hit the mute button.'}"
     },
     {
-        "Id": 512,
+        "Id": 519,
         "ActionId": 512,
         "NextActionId": null,
         "Type": 501,
@@ -6656,7 +6747,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '2'}"
     },
     {
-        "Id": 513,
+        "Id": 520,
         "ActionId": 513,
         "NextActionId": null,
         "Type": 502,
@@ -6669,7 +6760,7 @@
         "Params": "{1: 'RImgBg1Shake2Loop'}"
     },
     {
-        "Id": 514,
+        "Id": 521,
         "ActionId": 514,
         "NextActionId": null,
         "Type": 502,
@@ -6682,7 +6773,7 @@
         "Params": "{1: 'RImgBg3Shake2Loop'}"
     },
     {
-        "Id": 515,
+        "Id": 522,
         "ActionId": 515,
         "NextActionId": null,
         "Type": 401,
@@ -6695,7 +6786,7 @@
         "Params": "{1: '2', 2: '4009'}"
     },
     {
-        "Id": 516,
+        "Id": 523,
         "ActionId": 516,
         "NextActionId": null,
         "Type": 301,
@@ -6708,7 +6799,7 @@
         "Params": "{3: 'The number of steps ahead does not register with you. The path to the stage just feels endless.'}"
     },
     {
-        "Id": 517,
+        "Id": 524,
         "ActionId": 517,
         "NextActionId": null,
         "Type": 205,
@@ -6721,7 +6812,7 @@
         "Params": "{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory780.jpg', 3: '0', 4: '1', 5: '1'}"
     },
     {
-        "Id": 518,
+        "Id": 525,
         "ActionId": 518,
         "NextActionId": null,
         "Type": 101,
@@ -6734,7 +6825,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/BgStory780.jpg'}"
     },
     {
-        "Id": 519,
+        "Id": 526,
         "ActionId": 519,
         "NextActionId": null,
         "Type": 205,
@@ -6747,7 +6838,7 @@
         "Params": "{1: '999'}"
     },
     {
-        "Id": 520,
+        "Id": 527,
         "ActionId": 520,
         "NextActionId": null,
         "Type": 301,
@@ -6760,7 +6851,7 @@
         "Params": "{3: 'You push through the crowd and head toward backstage, searching frantically, but there is no trace of Karenina anywhere.'}"
     },
     {
-        "Id": 521,
+        "Id": 528,
         "ActionId": 521,
         "NextActionId": null,
         "Type": 401,
@@ -6773,7 +6864,7 @@
         "Params": "{1: '2', 2: '3077'}"
     },
     {
-        "Id": 522,
+        "Id": 529,
         "ActionId": 522,
         "NextActionId": null,
         "Type": 402,
@@ -6786,7 +6877,7 @@
         "Params": "{1: '4009'}"
     },
     {
-        "Id": 523,
+        "Id": 530,
         "ActionId": 523,
         "NextActionId": null,
         "Type": 501,
@@ -6799,7 +6890,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}"
     },
     {
-        "Id": 524,
+        "Id": 531,
         "ActionId": 524,
         "NextActionId": null,
         "Type": 505,
@@ -6812,7 +6903,7 @@
         "Params": "{1: 'RImgBg1Shake2Loop'}"
     },
     {
-        "Id": 525,
+        "Id": 532,
         "ActionId": 525,
         "NextActionId": null,
         "Type": 505,
@@ -6825,7 +6916,7 @@
         "Params": "{1: 'RImgBg3Shake2Loop'}"
     },
     {
-        "Id": 526,
+        "Id": 533,
         "ActionId": 526,
         "NextActionId": null,
         "Type": 502,
@@ -6838,7 +6929,7 @@
         "Params": "{1: 'RImgBg1Shake2Disable'}"
     },
     {
-        "Id": 527,
+        "Id": 534,
         "ActionId": 527,
         "NextActionId": null,
         "Type": 502,
@@ -6851,7 +6942,7 @@
         "Params": "{1: 'RImgBg3Shake2Disable'}"
     },
     {
-        "Id": 528,
+        "Id": 535,
         "ActionId": 528,
         "NextActionId": null,
         "Type": 505,
@@ -6864,7 +6955,7 @@
         "Params": "{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}"
     },
     {
-        "Id": 529,
+        "Id": 536,
         "ActionId": 529,
         "NextActionId": null,
         "Type": 101,
@@ -6877,7 +6968,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}"
     },
     {
-        "Id": 530,
+        "Id": 537,
         "ActionId": 530,
         "NextActionId": null,
         "Type": 401,
@@ -6890,7 +6981,7 @@
         "Params": "{1: '2', 2: '4785'}"
     },
     {
-        "Id": 531,
+        "Id": 538,
         "ActionId": 531,
         "NextActionId": null,
         "Type": 501,
@@ -6903,7 +6994,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab'}"
     },
     {
-        "Id": 532,
+        "Id": 539,
         "ActionId": 532,
         "NextActionId": null,
         "Type": 101,
@@ -6916,7 +7007,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/BgStory780.jpg'}"
     },
     {
-        "Id": 533,
+        "Id": 540,
         "ActionId": 533,
         "NextActionId": null,
         "Type": 218,
@@ -6929,7 +7020,7 @@
         "Params": "{1: '1', 2: 'Assets/Product/Texture/Image/IconMovie/V470chuanmaoNormal01.png', 6: '0'}"
     },
     {
-        "Id": 534,
+        "Id": 541,
         "ActionId": 534,
         "NextActionId": null,
         "Type": 301,
@@ -6942,7 +7033,7 @@
         "Params": "{3: 'You trip on a cable, causing several stage lights to fall, and an anchor pendant tumbles out.'}"
     },
     {
-        "Id": 535,
+        "Id": 542,
         "ActionId": 535,
         "NextActionId": null,
         "Type": 401,
@@ -6955,7 +7046,7 @@
         "Params": "{1: '2', 2: '4387'}"
     },
     {
-        "Id": 536,
+        "Id": 543,
         "ActionId": 536,
         "NextActionId": null,
         "Type": 501,
@@ -6968,7 +7059,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}"
     },
     {
-        "Id": 537,
+        "Id": 544,
         "ActionId": 537,
         "NextActionId": null,
         "Type": 220,
@@ -6981,7 +7072,7 @@
         "Params": "{1: '1', 2: '0'}"
     },
     {
-        "Id": 538,
+        "Id": 545,
         "ActionId": 538,
         "NextActionId": null,
         "Type": 101,
@@ -6994,7 +7085,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/BgStory1195.jpg'}"
     },
     {
-        "Id": 539,
+        "Id": 546,
         "ActionId": 539,
         "NextActionId": null,
         "Type": 505,
@@ -7007,7 +7098,7 @@
         "Params": "{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab'}"
     },
     {
-        "Id": 540,
+        "Id": 547,
         "ActionId": 540,
         "NextActionId": null,
         "Type": 501,
@@ -7020,7 +7111,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab', 2: '2'}"
     },
     {
-        "Id": 541,
+        "Id": 548,
         "ActionId": 541,
         "NextActionId": null,
         "Type": 201,
@@ -7033,7 +7124,7 @@
         "Params": "{1: '1', 2: '501734', 3: '13', 7: '1'}"
     },
     {
-        "Id": 542,
+        "Id": 549,
         "ActionId": 542,
         "NextActionId": null,
         "Type": 504,
@@ -7046,7 +7137,7 @@
         "Params": "{1: '0.7'}"
     },
     {
-        "Id": 543,
+        "Id": 550,
         "ActionId": 543,
         "NextActionId": null,
         "Type": 301,
@@ -7059,7 +7150,7 @@
         "Params": "{1: '1', 3: 'Fear grips your stomach like tentacles. This is just like that ominous dream.'}"
     },
     {
-        "Id": 544,
+        "Id": 551,
         "ActionId": 544,
         "NextActionId": null,
         "Type": 401,
@@ -7072,7 +7163,7 @@
         "Params": "{1: '2', 2: '2959'}"
     },
     {
-        "Id": 545,
+        "Id": 552,
         "ActionId": 545,
         "NextActionId": null,
         "Type": 501,
@@ -7085,7 +7176,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}"
     },
     {
-        "Id": 546,
+        "Id": 553,
         "ActionId": 546,
         "NextActionId": null,
         "Type": 101,
@@ -7098,7 +7189,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/BgStory780.jpg'}"
     },
     {
-        "Id": 547,
+        "Id": 554,
         "ActionId": 547,
         "NextActionId": null,
         "Type": 505,
@@ -7111,7 +7202,7 @@
         "Params": "{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryMovieFilm.prefab'}"
     },
     {
-        "Id": 548,
+        "Id": 555,
         "ActionId": 548,
         "NextActionId": null,
         "Type": 202,
@@ -7124,7 +7215,7 @@
         "Params": "{1: '1', 6: '1'}"
     },
     {
-        "Id": 549,
+        "Id": 556,
         "ActionId": 549,
         "NextActionId": null,
         "Type": 201,
@@ -7137,7 +7228,7 @@
         "Params": "{1: '1', 2: '501736', 7: '1'}"
     },
     {
-        "Id": 550,
+        "Id": 557,
         "ActionId": 550,
         "NextActionId": null,
         "Type": 301,
@@ -7150,7 +7241,7 @@
         "Params": "{1: '1', 3: 'Your fists clenched, you try to steady your racing heartbeat. Then, slumped on the floor, you remember this is where you and Karenina locked eyes just moments ago.'}"
     },
     {
-        "Id": 551,
+        "Id": 558,
         "ActionId": 551,
         "NextActionId": null,
         "Type": 205,
@@ -7163,7 +7254,7 @@
         "Params": "{1: '1', 3: '1', 4: '0', 5: '3'}"
     },
     {
-        "Id": 552,
+        "Id": 559,
         "ActionId": 552,
         "NextActionId": null,
         "Type": 504,
@@ -7176,7 +7267,7 @@
         "Params": "{1: '0', 8: '3'}"
     },
     {
-        "Id": 553,
+        "Id": 560,
         "ActionId": 553,
         "NextActionId": null,
         "Type": 301,
@@ -7189,7 +7280,7 @@
         "Params": "{3: \"But now she's gone...\"}"
     },
     {
-        "Id": 554,
+        "Id": 561,
         "ActionId": 554,
         "NextActionId": null,
         "Type": 202,
@@ -7202,7 +7293,7 @@
         "Params": "{1: '1', 6: '1'}"
     },
     {
-        "Id": 555,
+        "Id": 562,
         "ActionId": 555,
         "NextActionId": null,
         "Type": 205,
@@ -7215,7 +7306,7 @@
         "Params": "{1: '1', 3: '1', 4: '1', 5: '0'}"
     },
     {
-        "Id": 556,
+        "Id": 563,
         "ActionId": 556,
         "NextActionId": null,
         "Type": 101,
@@ -7228,7 +7319,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/Bgstory561.png'}"
     },
     {
-        "Id": 557,
+        "Id": 564,
         "ActionId": 557,
         "NextActionId": null,
         "Type": 104,
@@ -7241,7 +7332,7 @@
         "Params": "{1: '0|0|0', 2: '0', 4: '1'}"
     },
     {
-        "Id": 558,
+        "Id": 565,
         "ActionId": 558,
         "NextActionId": null,
         "Type": 501,
@@ -7254,7 +7345,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab', 2: '1'}"
     },
     {
-        "Id": 559,
+        "Id": 566,
         "ActionId": 559,
         "NextActionId": null,
         "Type": 401,
@@ -7267,7 +7358,7 @@
         "Params": "{1: '2', 2: '9330025'}"
     },
     {
-        "Id": 560,
+        "Id": 567,
         "ActionId": 560,
         "NextActionId": null,
         "Type": 401,
@@ -7280,7 +7371,7 @@
         "Params": "{1: '2', 2: '5375'}"
     },
     {
-        "Id": 561,
+        "Id": 568,
         "ActionId": 561,
         "NextActionId": null,
         "Type": 501,
@@ -7293,7 +7384,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiCourseCombatlicense/FxUiCourseCombatlicenseFog01.prefab', 2: '2'}"
     },
     {
-        "Id": 562,
+        "Id": 569,
         "ActionId": 562,
         "NextActionId": null,
         "Type": 301,
@@ -7306,7 +7397,7 @@
         "Params": "{3: 'The waves push the stage upward, while the props and decorations peel away. The stage is transforming into an aircraft carrier before your eyes.'}"
     },
     {
-        "Id": 563,
+        "Id": 570,
         "ActionId": 563,
         "NextActionId": null,
         "Type": 402,
@@ -7319,7 +7410,7 @@
         "Params": "{1: '5375'}"
     },
     {
-        "Id": 564,
+        "Id": 571,
         "ActionId": 564,
         "NextActionId": null,
         "Type": 401,
@@ -7332,7 +7423,7 @@
         "Params": "{1: '2', 2: '830004'}"
     },
     {
-        "Id": 565,
+        "Id": 572,
         "ActionId": 565,
         "NextActionId": null,
         "Type": 502,
@@ -7345,7 +7436,7 @@
         "Params": "{1: 'RImgBg1Shake2Loop'}"
     },
     {
-        "Id": 566,
+        "Id": 573,
         "ActionId": 566,
         "NextActionId": null,
         "Type": 301,
@@ -7358,7 +7449,7 @@
         "Params": "{3: 'Gale winds whip up from all sides, as a war horn echoes from the depths below.'}"
     },
     {
-        "Id": 567,
+        "Id": 574,
         "ActionId": 567,
         "NextActionId": null,
         "Type": 301,
@@ -7371,7 +7462,7 @@
         "Params": "{3: 'A faint tremor travels up from the ground, as if a hunting army is drawing closer.'}"
     },
     {
-        "Id": 568,
+        "Id": 575,
         "ActionId": 568,
         "NextActionId": null,
         "Type": 301,
@@ -7384,7 +7475,7 @@
         "Params": "{3: 'Waves and mist interweave and merge. Within the deep blue-black expanse, the curtain rises to reveal cold stars filling the sky.'}"
     },
     {
-        "Id": 569,
+        "Id": 576,
         "ActionId": 569,
         "NextActionId": null,
         "Type": 402,
@@ -7397,7 +7488,7 @@
         "Params": "{1: '9330025'}"
     },
     {
-        "Id": 570,
+        "Id": 577,
         "ActionId": 570,
         "NextActionId": null,
         "Type": 402,
@@ -7410,7 +7501,7 @@
         "Params": "{1: '830004'}"
     },
     {
-        "Id": 571,
+        "Id": 578,
         "ActionId": 571,
         "NextActionId": null,
         "Type": 401,
@@ -7423,7 +7514,7 @@
         "Params": "{1: '2', 2: '4641'}"
     },
     {
-        "Id": 572,
+        "Id": 579,
         "ActionId": 572,
         "NextActionId": null,
         "Type": 201,
@@ -7436,7 +7527,7 @@
         "Params": "{1: '5', 2: '500119', 7: '1'}"
     },
     {
-        "Id": 573,
+        "Id": 580,
         "ActionId": 573,
         "NextActionId": null,
         "Type": 505,
@@ -7449,7 +7540,7 @@
         "Params": "{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiCourseCombatlicense/FxUiCourseCombatlicenseFog01.prefab'}"
     },
     {
-        "Id": 574,
+        "Id": 581,
         "ActionId": 574,
         "NextActionId": null,
         "Type": 205,
@@ -7462,7 +7553,7 @@
         "Params": "{1: '5', 3: '0', 4: '0.9', 5: '2.5'}"
     },
     {
-        "Id": 575,
+        "Id": 582,
         "ActionId": 575,
         "NextActionId": null,
         "Type": 505,
@@ -7475,7 +7566,7 @@
         "Params": "{1: 'RImgBg1Shake2Loop'}"
     },
     {
-        "Id": 576,
+        "Id": 583,
         "ActionId": 576,
         "NextActionId": null,
         "Type": 502,
@@ -7488,7 +7579,7 @@
         "Params": "{1: 'RImgBg1Shake2Disable'}"
     },
     {
-        "Id": 577,
+        "Id": 584,
         "ActionId": 577,
         "NextActionId": null,
         "Type": 301,
@@ -7501,7 +7592,7 @@
         "Params": "{1: '1', 3: 'Eyes more terrible than the abyss rise from the water. Carcosa has awakened.'}"
     },
     {
-        "Id": 578,
+        "Id": 585,
         "ActionId": 578,
         "NextActionId": null,
         "Type": 202,
@@ -7514,7 +7605,7 @@
         "Params": "{1: '5', 6: '1'}"
     },
     {
-        "Id": 579,
+        "Id": 586,
         "ActionId": 579,
         "NextActionId": null,
         "Type": 205,
@@ -7527,7 +7618,7 @@
         "Params": "{1: '5', 3: '1', 4: '1', 5: '0'}"
     },
     {
-        "Id": 580,
+        "Id": 587,
         "ActionId": 580,
         "NextActionId": null,
         "Type": 201,
@@ -7540,7 +7631,7 @@
         "Params": "{1: '1', 2: '500769', 4: '0'}"
     },
     {
-        "Id": 581,
+        "Id": 588,
         "ActionId": 581,
         "NextActionId": null,
         "Type": 201,
@@ -7553,7 +7644,7 @@
         "Params": "{1: '2', 2: '500769', 4: '-450'}"
     },
     {
-        "Id": 582,
+        "Id": 589,
         "ActionId": 582,
         "NextActionId": null,
         "Type": 201,
@@ -7566,7 +7657,7 @@
         "Params": "{1: '3', 2: '500769', 4: '450'}"
     },
     {
-        "Id": 583,
+        "Id": 590,
         "ActionId": 583,
         "NextActionId": null,
         "Type": 301,
@@ -7579,7 +7670,7 @@
         "Params": "{1: '1', 3: 'The Choir members spread their arms wide and begin their song: a grating, hissing cacophony so hoarse and jarring it sounds like the belly-rumbling of serpents.'}"
     },
     {
-        "Id": 584,
+        "Id": 591,
         "ActionId": 584,
         "NextActionId": null,
         "Type": 202,
@@ -7592,7 +7683,7 @@
         "Params": "{1: '1', 2: '2', 3: '3'}"
     },
     {
-        "Id": 585,
+        "Id": 592,
         "ActionId": 585,
         "NextActionId": null,
         "Type": 301,
@@ -7605,7 +7696,7 @@
         "Params": "{3: 'The stage warps and transforms into an altar. Stone steps materialize before you, leading up to the platform.'}"
     },
     {
-        "Id": 586,
+        "Id": 593,
         "ActionId": 586,
         "NextActionId": null,
         "Type": 201,
@@ -7618,7 +7709,7 @@
         "Params": "{1: '1', 2: '501734', 3: '8'}"
     },
     {
-        "Id": 587,
+        "Id": 594,
         "ActionId": 587,
         "NextActionId": null,
         "Type": 301,
@@ -7631,7 +7722,7 @@
         "Params": "{1: '1', 3: 'Through the murky deluge pouring from the sky, Karenina ascends the steps, surrounded by the throng.'}"
     },
     {
-        "Id": 588,
+        "Id": 595,
         "ActionId": 588,
         "NextActionId": null,
         "Type": 202,
@@ -7644,7 +7735,7 @@
         "Params": "{1: '1', 6: '1'}"
     },
     {
-        "Id": 589,
+        "Id": 596,
         "ActionId": 589,
         "NextActionId": null,
         "Type": 201,
@@ -7657,7 +7748,7 @@
         "Params": "{1: '1', 2: '501770'}"
     },
     {
-        "Id": 590,
+        "Id": 597,
         "ActionId": 590,
         "NextActionId": null,
         "Type": 301,
@@ -7670,7 +7761,7 @@
         "Params": "{1: '1', 2: 'Choir Administrator', 3: 'We give thanks to the sea below, to the stars above, to the dark moon and the tide...', 4: '1', 18: '100020180'}"
     },
     {
-        "Id": 591,
+        "Id": 598,
         "ActionId": 591,
         "NextActionId": null,
         "Type": 301,
@@ -7683,7 +7774,7 @@
         "Params": "{2: 'Choir Administrator', 3: 'Today, we offer unto Carcosa once more... a Songstress!', 4: '1', 18: '100020181'}"
     },
     {
-        "Id": 592,
+        "Id": 599,
         "ActionId": 592,
         "NextActionId": null,
         "Type": 301,
@@ -7696,7 +7787,7 @@
         "Params": "{2: 'Choir Administrator', 3: 'Her Song of True Love has awakened Carcosa, and Xoth shall grant her the future of civilization in return.', 4: '1', 18: '100020182'}"
     },
     {
-        "Id": 593,
+        "Id": 600,
         "ActionId": 593,
         "NextActionId": null,
         "Type": 301,
@@ -7709,7 +7800,7 @@
         "Params": "{2: 'Choir Administrator', 3: 'Let the Songstress and Carcosa guide the lost kin and chart our voyage to the stars!', 4: '1', 18: '100020183'}"
     },
     {
-        "Id": 594,
+        "Id": 601,
         "ActionId": 594,
         "NextActionId": null,
         "Type": 301,
@@ -7722,7 +7813,7 @@
         "Params": "{2: 'Choir Administrator', 3: 'Depart! Depart! Bathe in the boundless blessings!', 4: '1', 18: '100020184'}"
     },
     {
-        "Id": 595,
+        "Id": 602,
         "ActionId": 595,
         "NextActionId": null,
         "Type": 202,
@@ -7735,7 +7826,7 @@
         "Params": "{1: '1'}"
     },
     {
-        "Id": 596,
+        "Id": 603,
         "ActionId": 596,
         "NextActionId": null,
         "Type": 302,
@@ -7748,7 +7839,7 @@
         "Params": "{2: '<i><color=#34aff8ff>Karenina!</color></i>', 3: '597'}"
     },
     {
-        "Id": 597,
+        "Id": 604,
         "ActionId": 597,
         "NextActionId": null,
         "Type": 401,
@@ -7761,7 +7852,7 @@
         "Params": "{1: '2', 2: '4009'}"
     },
     {
-        "Id": 598,
+        "Id": 605,
         "ActionId": 598,
         "NextActionId": null,
         "Type": 205,
@@ -7774,7 +7865,7 @@
         "Params": "{1: '1007', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront12.png', 3: '0', 4: '1', 5: '10'}"
     },
     {
-        "Id": 599,
+        "Id": 606,
         "ActionId": 599,
         "NextActionId": null,
         "Type": 501,
@@ -7787,7 +7878,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab', 2: '3'}"
     },
     {
-        "Id": 600,
+        "Id": 607,
         "ActionId": 600,
         "NextActionId": null,
         "Type": 502,
@@ -7800,7 +7891,7 @@
         "Params": "{1: 'RImgBg1Shake2Loop'}"
     },
     {
-        "Id": 601,
+        "Id": 608,
         "ActionId": 601,
         "NextActionId": null,
         "Type": 104,
@@ -7813,7 +7904,7 @@
         "Params": "{1: '0|0|-300', 2: '20'}"
     },
     {
-        "Id": 602,
+        "Id": 609,
         "ActionId": 602,
         "NextActionId": null,
         "Type": 401,
@@ -7826,7 +7917,7 @@
         "Params": "{1: '2', 2: '4680'}"
     },
     {
-        "Id": 603,
+        "Id": 610,
         "ActionId": 603,
         "NextActionId": null,
         "Type": 301,
@@ -7839,7 +7930,7 @@
         "Params": "{3: 'You shove through the crowd, but shadowy hands seep out from both sides, blocking your way to their \"sacrifice.\"'}"
     },
     {
-        "Id": 604,
+        "Id": 611,
         "ActionId": 604,
         "NextActionId": null,
         "Type": 301,
@@ -7852,7 +7943,7 @@
         "Params": "{3: 'No matter how hard you struggle, she remains just out of reach.'}"
     },
     {
-        "Id": 605,
+        "Id": 612,
         "ActionId": 605,
         "NextActionId": null,
         "Type": 401,
@@ -7865,7 +7956,7 @@
         "Params": "{1: '2', 2: '846106'}"
     },
     {
-        "Id": 606,
+        "Id": 613,
         "ActionId": 606,
         "NextActionId": null,
         "Type": 501,
@@ -7878,7 +7969,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}"
     },
     {
-        "Id": 607,
+        "Id": 614,
         "ActionId": 607,
         "NextActionId": null,
         "Type": 402,
@@ -7891,7 +7982,7 @@
         "Params": "{1: '4680'}"
     },
     {
-        "Id": 608,
+        "Id": 615,
         "ActionId": 608,
         "NextActionId": null,
         "Type": 401,
@@ -7904,7 +7995,7 @@
         "Params": "{1: '2', 2: '2597'}"
     },
     {
-        "Id": 609,
+        "Id": 616,
         "ActionId": 609,
         "NextActionId": null,
         "Type": 502,
@@ -7917,7 +8008,7 @@
         "Params": "{1: 'RImgBg1Shake'}"
     },
     {
-        "Id": 610,
+        "Id": 617,
         "ActionId": 610,
         "NextActionId": null,
         "Type": 301,
@@ -7930,7 +8021,7 @@
         "Params": "{3: 'The storm rages harder. Rain pelts your body like gunfire, and your eyelids are sealed shut by the warm, murky torrent.'}"
     },
     {
-        "Id": 611,
+        "Id": 618,
         "ActionId": 611,
         "NextActionId": null,
         "Type": 201,
@@ -7943,7 +8034,7 @@
         "Params": "{1: '1', 2: '501734', 3: '8'}"
     },
     {
-        "Id": 612,
+        "Id": 619,
         "ActionId": 612,
         "NextActionId": null,
         "Type": 301,
@@ -7956,7 +8047,7 @@
         "Params": "{1: '1', 3: 'The only thing you can cling to is the white, pure figure.'}"
     },
     {
-        "Id": 613,
+        "Id": 620,
         "ActionId": 613,
         "NextActionId": null,
         "Type": 402,
@@ -7969,7 +8060,7 @@
         "Params": "{1: '4009'}"
     },
     {
-        "Id": 614,
+        "Id": 621,
         "ActionId": 614,
         "NextActionId": null,
         "Type": 401,
@@ -7982,7 +8073,7 @@
         "Params": "{1: '2', 2: '2926'}"
     },
     {
-        "Id": 615,
+        "Id": 622,
         "ActionId": 615,
         "NextActionId": null,
         "Type": 501,
@@ -7995,7 +8086,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}"
     },
     {
-        "Id": 616,
+        "Id": 623,
         "ActionId": 616,
         "NextActionId": null,
         "Type": 101,
@@ -8008,7 +8099,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}"
     },
     {
-        "Id": 617,
+        "Id": 624,
         "ActionId": 617,
         "NextActionId": null,
         "Type": 402,
@@ -8021,7 +8112,7 @@
         "Params": "{1: '2597'}"
     },
     {
-        "Id": 618,
+        "Id": 625,
         "ActionId": 618,
         "NextActionId": null,
         "Type": 202,
@@ -8034,7 +8125,7 @@
         "Params": "{1: '1', 6: '1'}"
     },
     {
-        "Id": 619,
+        "Id": 626,
         "ActionId": 619,
         "NextActionId": null,
         "Type": 505,
@@ -8047,7 +8138,7 @@
         "Params": "{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryLineFocusNew.prefab'}"
     },
     {
-        "Id": 620,
+        "Id": 627,
         "ActionId": 620,
         "NextActionId": null,
         "Type": 505,
@@ -8060,7 +8151,7 @@
         "Params": "{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiRainNew.prefab'}"
     },
     {
-        "Id": 621,
+        "Id": 628,
         "ActionId": 621,
         "NextActionId": null,
         "Type": 205,
@@ -8073,7 +8164,7 @@
         "Params": "{1: '1007'}"
     },
     {
-        "Id": 622,
+        "Id": 629,
         "ActionId": 622,
         "NextActionId": null,
         "Type": 505,
@@ -8086,7 +8177,7 @@
         "Params": "{1: 'RImgBg1Shake2Loop'}"
     },
     {
-        "Id": 623,
+        "Id": 630,
         "ActionId": 623,
         "NextActionId": null,
         "Type": 502,
@@ -8099,7 +8190,7 @@
         "Params": "{1: 'RImgBg1Shake2Disable'}"
     },
     {
-        "Id": 624,
+        "Id": 631,
         "ActionId": 624,
         "NextActionId": null,
         "Type": 301,
@@ -8112,7 +8203,7 @@
         "Params": "{3: '...'}"
     },
     {
-        "Id": 625,
+        "Id": 632,
         "ActionId": 625,
         "NextActionId": null,
         "Type": 301,
@@ -8125,7 +8216,7 @@
         "Params": "{3: \"Is this really where it ends? No... You won't stop here.\"}"
     },
     {
-        "Id": 626,
+        "Id": 633,
         "ActionId": 626,
         "NextActionId": null,
         "Type": 302,
@@ -8138,7 +8229,7 @@
         "Params": "{2: '<i><color=#34aff8ff>Karenina...</color></i>', 3: '627'}"
     },
     {
-        "Id": 627,
+        "Id": 634,
         "ActionId": 627,
         "NextActionId": null,
         "Type": 401,
@@ -8151,7 +8242,7 @@
         "Params": "{1: '1', 2: '36'}"
     },
     {
-        "Id": 628,
+        "Id": 635,
         "ActionId": 628,
         "NextActionId": null,
         "Type": 101,
@@ -8164,7 +8255,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/Bgstory146.png'}"
     },
     {
-        "Id": 629,
+        "Id": 636,
         "ActionId": 629,
         "NextActionId": null,
         "Type": 104,
@@ -8177,7 +8268,7 @@
         "Params": "{1: '0|0|0', 2: '0', 4: '1'}"
     },
     {
-        "Id": 630,
+        "Id": 637,
         "ActionId": 630,
         "NextActionId": null,
         "Type": 502,
@@ -8190,7 +8281,7 @@
         "Params": "{1: 'DialogEnable'}"
     },
     {
-        "Id": 631,
+        "Id": 638,
         "ActionId": 631,
         "NextActionId": null,
         "Type": 401,
@@ -8203,7 +8294,7 @@
         "Params": "{1: '1', 2: '5061'}"
     },
     {
-        "Id": 632,
+        "Id": 639,
         "ActionId": 632,
         "NextActionId": null,
         "Type": 301,
@@ -8216,7 +8307,7 @@
         "Params": "{3: \"While you race toward her, Karenina's consciousness is present in another realm.\"}"
     },
     {
-        "Id": 633,
+        "Id": 640,
         "ActionId": 633,
         "NextActionId": null,
         "Type": 201,
@@ -8229,7 +8320,7 @@
         "Params": "{1: '1', 2: '500670'}"
     },
     {
-        "Id": 634,
+        "Id": 641,
         "ActionId": 634,
         "NextActionId": null,
         "Type": 301,
@@ -8242,7 +8333,7 @@
         "Params": "{1: '1', 2: '\"Wise\"', 3: \"Karenina, what's going through your head?\", 4: '1', 18: '100020185'}"
     },
     {
-        "Id": 635,
+        "Id": 642,
         "ActionId": 635,
         "NextActionId": null,
         "Type": 301,
@@ -8255,7 +8346,7 @@
         "Params": "{2: '\"Wise\"', 3: \"You need to finalize the construction plan for the Sky Base's lower hull by the end of the month.\", 4: '1', 18: '100020186'}"
     },
     {
-        "Id": 636,
+        "Id": 643,
         "ActionId": 636,
         "NextActionId": null,
         "Type": 301,
@@ -8268,7 +8359,7 @@
         "Params": "{2: '\"Wise\"', 3: \"Otherwise, your teacher is going to be furious. Trust me, you don't want to see him angry.\", 4: '1', 18: '100020187'}"
     },
     {
-        "Id": 637,
+        "Id": 644,
         "ActionId": 637,
         "NextActionId": null,
         "Type": 306,
@@ -8281,7 +8372,7 @@
         "Params": "{1: '1'}"
     },
     {
-        "Id": 638,
+        "Id": 645,
         "ActionId": 638,
         "NextActionId": null,
         "Type": 202,
@@ -8294,7 +8385,7 @@
         "Params": "{1: '1'}"
     },
     {
-        "Id": 639,
+        "Id": 646,
         "ActionId": 639,
         "NextActionId": null,
         "Type": 205,
@@ -8307,7 +8398,7 @@
         "Params": "{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory146.png', 3: '0', 4: '1', 5: '1'}"
     },
     {
-        "Id": 640,
+        "Id": 647,
         "ActionId": 640,
         "NextActionId": null,
         "Type": 104,
@@ -8320,7 +8411,7 @@
         "Params": "{1: '250|-100|-300', 2: '0', 4: '3'}"
     },
     {
-        "Id": 641,
+        "Id": 648,
         "ActionId": 641,
         "NextActionId": null,
         "Type": 501,
@@ -8333,7 +8424,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTempleBattle/FxUiTempleBattleHuaban.prefab', 2: '2'}"
     },
     {
-        "Id": 642,
+        "Id": 649,
         "ActionId": 642,
         "NextActionId": null,
         "Type": 401,
@@ -8346,7 +8437,7 @@
         "Params": "{1: '2', 2: '4250'}"
     },
     {
-        "Id": 643,
+        "Id": 650,
         "ActionId": 643,
         "NextActionId": null,
         "Type": 301,
@@ -8359,7 +8450,7 @@
         "Params": "{3: 'Sunlight streams into the laboratory. Outside the window, cherry blossoms drift down like a woven tapestry.'}"
     },
     {
-        "Id": 644,
+        "Id": 651,
         "ActionId": 644,
         "NextActionId": null,
         "Type": 104,
@@ -8372,7 +8463,7 @@
         "Params": "{1: '-100|-100|-300', 2: '2.5', 4: '3'}"
     },
     {
-        "Id": 645,
+        "Id": 652,
         "ActionId": 645,
         "NextActionId": null,
         "Type": 201,
@@ -8385,7 +8476,7 @@
         "Params": "{1: '1', 2: '501739', 5: '100'}"
     },
     {
-        "Id": 646,
+        "Id": 653,
         "ActionId": 646,
         "NextActionId": null,
         "Type": 301,
@@ -8398,7 +8489,7 @@
         "Params": "{1: '1', 3: 'On the windowsill sits a potted plant with fresh sprouts. Spring is here, and the plant is growing.', 4: '1'}"
     },
     {
-        "Id": 647,
+        "Id": 654,
         "ActionId": 647,
         "NextActionId": null,
         "Type": 306,
@@ -8411,7 +8502,7 @@
         "Params": null
     },
     {
-        "Id": 648,
+        "Id": 655,
         "ActionId": 648,
         "NextActionId": null,
         "Type": 202,
@@ -8424,7 +8515,7 @@
         "Params": "{1: '1'}"
     },
     {
-        "Id": 649,
+        "Id": 656,
         "ActionId": 649,
         "NextActionId": null,
         "Type": 505,
@@ -8437,7 +8528,7 @@
         "Params": "{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTempleBattle/FxUiTempleBattleHuaban.prefab'}"
     },
     {
-        "Id": 650,
+        "Id": 657,
         "ActionId": 650,
         "NextActionId": null,
         "Type": 402,
@@ -8450,7 +8541,7 @@
         "Params": "{1: '4250'}"
     },
     {
-        "Id": 651,
+        "Id": 658,
         "ActionId": 651,
         "NextActionId": null,
         "Type": 205,
@@ -8463,7 +8554,7 @@
         "Params": "{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory146.png', 3: '1', 4: '0', 5: '1'}"
     },
     {
-        "Id": 652,
+        "Id": 659,
         "ActionId": 652,
         "NextActionId": null,
         "Type": 104,
@@ -8476,7 +8567,7 @@
         "Params": "{1: '0|0|0', 2: '0', 4: '3'}"
     },
     {
-        "Id": 653,
+        "Id": 660,
         "ActionId": 653,
         "NextActionId": null,
         "Type": 201,
@@ -8489,7 +8580,7 @@
         "Params": "{1: '1', 2: '501734', 3: '4'}"
     },
     {
-        "Id": 654,
+        "Id": 661,
         "ActionId": 654,
         "NextActionId": null,
         "Type": 301,
@@ -8502,7 +8593,7 @@
         "Params": "{1: '1', 2: 'Karenina', 3: 'Hmph, piece of cake. Besides, Grandpa could never stay mad at me.', 4: '1', 18: '100020188'}"
     },
     {
-        "Id": 655,
+        "Id": 662,
         "ActionId": 655,
         "NextActionId": null,
         "Type": 204,
@@ -8515,7 +8606,7 @@
         "Params": "{1: '1'}"
     },
     {
-        "Id": 656,
+        "Id": 663,
         "ActionId": 656,
         "NextActionId": null,
         "Type": 401,
@@ -8528,7 +8619,7 @@
         "Params": "{1: '2', 2: '1515'}"
     },
     {
-        "Id": 657,
+        "Id": 664,
         "ActionId": 657,
         "NextActionId": null,
         "Type": 301,
@@ -8541,7 +8632,7 @@
         "Params": "{3: \"Her comms buzzes, but Karenina instinctively hides it in her sleeve, knowing who it is that's calling her.\"}"
     },
     {
-        "Id": 658,
+        "Id": 665,
         "ActionId": 658,
         "NextActionId": null,
         "Type": 203,
@@ -8554,7 +8645,7 @@
         "Params": "{1: '1', 2: '0.25', 3: '-400'}"
     },
     {
-        "Id": 659,
+        "Id": 666,
         "ActionId": 659,
         "NextActionId": null,
         "Type": 201,
@@ -8567,7 +8658,7 @@
         "Params": "{1: '2', 2: '500670', 4: '400'}"
     },
     {
-        "Id": 660,
+        "Id": 667,
         "ActionId": 660,
         "NextActionId": null,
         "Type": 301,
@@ -8580,7 +8671,7 @@
         "Params": "{1: '1', 2: '\"Wise\"', 3: \"Don't say I didn't warn you if Lucia's team submits their report early.\", 4: '2', 18: '100020189'}"
     },
     {
-        "Id": 661,
+        "Id": 668,
         "ActionId": 661,
         "NextActionId": null,
         "Type": 301,
@@ -8593,7 +8684,7 @@
         "Params": "{2: '\"Wise\"', 3: \"Now go. Don't keep \u3010kuroname\u3011 waiting.\", 4: '2', 18: '100020190'}"
     },
     {
-        "Id": 662,
+        "Id": 669,
         "ActionId": 662,
         "NextActionId": null,
         "Type": 301,
@@ -8603,10 +8694,10 @@
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\"Wise\"', 3: \"And make sure you're back before curfew. Don't make your Grandpa wait up for you.\", 4: '2', 18: '100020191'}"
+        "Params": "{2: '\"Wise\"', 3: \"And make sure you're back before curfew. Don't make your Grandpa wait for you.\", 4: '2', 18: '100020191'}"
     },
     {
-        "Id": 663,
+        "Id": 670,
         "ActionId": 663,
         "NextActionId": null,
         "Type": 204,
@@ -8619,7 +8710,7 @@
         "Params": "{1: '1', 2: '4'}"
     },
     {
-        "Id": 664,
+        "Id": 671,
         "ActionId": 664,
         "NextActionId": null,
         "Type": 301,
@@ -8632,7 +8723,7 @@
         "Params": "{2: 'Karenina', 3: \"I know, I know! Alright, I'll hand in the report and be home on time.\", 4: '1', 18: '100020192'}"
     },
     {
-        "Id": 665,
+        "Id": 672,
         "ActionId": 665,
         "NextActionId": null,
         "Type": 501,
@@ -8645,7 +8736,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}"
     },
     {
-        "Id": 666,
+        "Id": 673,
         "ActionId": 666,
         "NextActionId": null,
         "Type": 101,
@@ -8658,7 +8749,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/BgStory1493.jpg'}"
     },
     {
-        "Id": 667,
+        "Id": 674,
         "ActionId": 667,
         "NextActionId": null,
         "Type": 401,
@@ -8671,7 +8762,7 @@
         "Params": "{1: '2', 2: '4331'}"
     },
     {
-        "Id": 668,
+        "Id": 675,
         "ActionId": 668,
         "NextActionId": null,
         "Type": 202,
@@ -8684,7 +8775,7 @@
         "Params": "{1: '1', 2: '2', 6: '1'}"
     },
     {
-        "Id": 669,
+        "Id": 676,
         "ActionId": 669,
         "NextActionId": null,
         "Type": 201,
@@ -8697,7 +8788,7 @@
         "Params": "{1: '2', 2: '501298', 4: '300', 7: '1'}"
     },
     {
-        "Id": 670,
+        "Id": 677,
         "ActionId": 670,
         "NextActionId": null,
         "Type": 201,
@@ -8710,7 +8801,7 @@
         "Params": "{1: '1', 2: '501734', 4: '-1000'}"
     },
     {
-        "Id": 671,
+        "Id": 678,
         "ActionId": 671,
         "NextActionId": null,
         "Type": 203,
@@ -8723,7 +8814,7 @@
         "Params": "{1: '1', 2: '0.38', 3: '-100'}"
     },
     {
-        "Id": 672,
+        "Id": 679,
         "ActionId": 672,
         "NextActionId": null,
         "Type": 402,
@@ -8736,7 +8827,7 @@
         "Params": "{1: '4331'}"
     },
     {
-        "Id": 673,
+        "Id": 680,
         "ActionId": 673,
         "NextActionId": null,
         "Type": 401,
@@ -8749,7 +8840,7 @@
         "Params": "{1: '2', 2: '3077'}"
     },
     {
-        "Id": 674,
+        "Id": 681,
         "ActionId": 674,
         "NextActionId": null,
         "Type": 501,
@@ -8762,7 +8853,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}"
     },
     {
-        "Id": 675,
+        "Id": 682,
         "ActionId": 675,
         "NextActionId": null,
         "Type": 501,
@@ -8775,7 +8866,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiChopping03.prefab', 2: '2'}"
     },
     {
-        "Id": 676,
+        "Id": 683,
         "ActionId": 676,
         "NextActionId": null,
         "Type": 204,
@@ -8788,7 +8879,7 @@
         "Params": "{1: '1', 2: '17'}"
     },
     {
-        "Id": 677,
+        "Id": 684,
         "ActionId": 677,
         "NextActionId": null,
         "Type": 203,
@@ -8801,7 +8892,7 @@
         "Params": "{1: '1', 2: '0', 3: '-200', 4: '-100'}"
     },
     {
-        "Id": 678,
+        "Id": 685,
         "ActionId": 678,
         "NextActionId": null,
         "Type": 203,
@@ -8814,7 +8905,7 @@
         "Params": "{1: '2', 2: '0', 3: '280', 4: '-30'}"
     },
     {
-        "Id": 679,
+        "Id": 686,
         "ActionId": 679,
         "NextActionId": null,
         "Type": 502,
@@ -8827,7 +8918,7 @@
         "Params": "{1: 'PanelActor1Shake'}"
     },
     {
-        "Id": 680,
+        "Id": 687,
         "ActionId": 680,
         "NextActionId": null,
         "Type": 401,
@@ -8840,7 +8931,7 @@
         "Params": "{1: '2', 2: '4895'}"
     },
     {
-        "Id": 681,
+        "Id": 688,
         "ActionId": 681,
         "NextActionId": null,
         "Type": 203,
@@ -8853,7 +8944,7 @@
         "Params": "{1: '1', 2: '0.4', 3: '-350'}"
     },
     {
-        "Id": 682,
+        "Id": 689,
         "ActionId": 682,
         "NextActionId": null,
         "Type": 203,
@@ -8866,7 +8957,7 @@
         "Params": "{1: '2', 2: '0.4', 3: '400'}"
     },
     {
-        "Id": 683,
+        "Id": 690,
         "ActionId": 683,
         "NextActionId": null,
         "Type": 204,
@@ -8879,7 +8970,7 @@
         "Params": "{1: '1', 2: '13'}"
     },
     {
-        "Id": 684,
+        "Id": 691,
         "ActionId": 684,
         "NextActionId": null,
         "Type": 301,
@@ -8892,7 +8983,7 @@
         "Params": "{3: 'Karenina rushes out the door, only to collide with Bianca, who is coming in from the other side. She stumbles, but Bianca catches her before she falls.'}"
     },
     {
-        "Id": 685,
+        "Id": 692,
         "ActionId": 685,
         "NextActionId": null,
         "Type": 202,
@@ -8905,7 +8996,7 @@
         "Params": "{1: '1', 2: '2', 6: '1'}"
     },
     {
-        "Id": 686,
+        "Id": 693,
         "ActionId": 686,
         "NextActionId": null,
         "Type": 201,
@@ -8918,7 +9009,7 @@
         "Params": "{1: '1', 2: '501411', 3: '2'}"
     },
     {
-        "Id": 687,
+        "Id": 694,
         "ActionId": 687,
         "NextActionId": null,
         "Type": 301,
@@ -8931,7 +9022,7 @@
         "Params": "{1: '1', 3: 'Meanwhile, Teddy happens to pass by and watches the whole scene unfold with obvious amusement.'}"
     },
     {
-        "Id": 688,
+        "Id": 695,
         "ActionId": 688,
         "NextActionId": null,
         "Type": 202,
@@ -8944,7 +9035,7 @@
         "Params": "{1: '1', 6: '1'}"
     },
     {
-        "Id": 689,
+        "Id": 696,
         "ActionId": 689,
         "NextActionId": null,
         "Type": 201,
@@ -8957,7 +9048,7 @@
         "Params": "{1: '2', 2: '501298'}"
     },
     {
-        "Id": 690,
+        "Id": 697,
         "ActionId": 690,
         "NextActionId": null,
         "Type": 301,
@@ -8970,7 +9061,7 @@
         "Params": "{1: '1', 2: '\"Bianca\"', 3: \"Karenina, you haven't been to the reading group in ages. Keep this up and you'll lose credits for your elective.\", 4: '2', 18: '100020193'}"
     },
     {
-        "Id": 691,
+        "Id": 698,
         "ActionId": 691,
         "NextActionId": null,
         "Type": 203,
@@ -8983,7 +9074,7 @@
         "Params": "{1: '2', 2: '0.25', 3: '400'}"
     },
     {
-        "Id": 692,
+        "Id": 699,
         "ActionId": 692,
         "NextActionId": null,
         "Type": 201,
@@ -8996,7 +9087,7 @@
         "Params": "{1: '1', 2: '501734', 3: '4', 4: '-350'}"
     },
     {
-        "Id": 693,
+        "Id": 700,
         "ActionId": 693,
         "NextActionId": null,
         "Type": 301,
@@ -9009,7 +9100,7 @@
         "Params": "{1: '1', 2: 'Karenina', 3: 'Someone hacked my account and signed me up for that! I never agreed to it.', 4: '1', 18: '100020194'}"
     },
     {
-        "Id": 694,
+        "Id": 701,
         "ActionId": 694,
         "NextActionId": null,
         "Type": 202,
@@ -9022,7 +9113,7 @@
         "Params": "{1: '1', 2: '2'}"
     },
     {
-        "Id": 695,
+        "Id": 702,
         "ActionId": 695,
         "NextActionId": null,
         "Type": 301,
@@ -9035,7 +9126,7 @@
         "Params": "{3: 'That \"someone\" flashes a smug grin before turning around and walking away, her pink twin-tails swaying behind her.'}"
     },
     {
-        "Id": 696,
+        "Id": 703,
         "ActionId": 696,
         "NextActionId": null,
         "Type": 301,
@@ -9048,7 +9139,7 @@
         "Params": "{3: 'Karenina does not chase after her, because someone is waiting at the theater.'}"
     },
     {
-        "Id": 697,
+        "Id": 704,
         "ActionId": 697,
         "NextActionId": null,
         "Type": 401,
@@ -9061,7 +9152,7 @@
         "Params": "{1: '2', 2: '4331'}"
     },
     {
-        "Id": 698,
+        "Id": 705,
         "ActionId": 698,
         "NextActionId": null,
         "Type": 501,
@@ -9074,7 +9165,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}"
     },
     {
-        "Id": 699,
+        "Id": 706,
         "ActionId": 699,
         "NextActionId": null,
         "Type": 101,
@@ -9087,7 +9178,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/BgStory1402.jpg'}"
     },
     {
-        "Id": 700,
+        "Id": 707,
         "ActionId": 700,
         "NextActionId": null,
         "Type": 201,
@@ -9100,7 +9191,7 @@
         "Params": "{1: '1', 2: '501734', 3: '1', 7: '1'}"
     },
     {
-        "Id": 701,
+        "Id": 708,
         "ActionId": 701,
         "NextActionId": null,
         "Type": 302,
@@ -9113,7 +9204,7 @@
         "Params": "{2: '<i><color=#34aff8ff>Karenina...</color></i>', 3: '702'}"
     },
     {
-        "Id": 702,
+        "Id": 709,
         "ActionId": 702,
         "NextActionId": null,
         "Type": 401,
@@ -9126,7 +9217,7 @@
         "Params": "{1: '2', 2: '5790'}"
     },
     {
-        "Id": 703,
+        "Id": 710,
         "ActionId": 703,
         "NextActionId": null,
         "Type": 401,
@@ -9139,7 +9230,7 @@
         "Params": "{1: '1', 2: '36'}"
     },
     {
-        "Id": 704,
+        "Id": 711,
         "ActionId": 704,
         "NextActionId": null,
         "Type": 204,
@@ -9152,7 +9243,7 @@
         "Params": "{1: '1', 2: '5'}"
     },
     {
-        "Id": 705,
+        "Id": 712,
         "ActionId": 705,
         "NextActionId": null,
         "Type": 502,
@@ -9165,7 +9256,7 @@
         "Params": "{1: 'PanelActor1Shake'}"
     },
     {
-        "Id": 706,
+        "Id": 713,
         "ActionId": 706,
         "NextActionId": null,
         "Type": 111,
@@ -9178,7 +9269,7 @@
         "Params": "{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong01.prefab'}"
     },
     {
-        "Id": 707,
+        "Id": 714,
         "ActionId": 707,
         "NextActionId": null,
         "Type": 111,
@@ -9191,7 +9282,7 @@
         "Params": "{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong02.prefab'}"
     },
     {
-        "Id": 708,
+        "Id": 715,
         "ActionId": 708,
         "NextActionId": null,
         "Type": 301,
@@ -9204,7 +9295,7 @@
         "Params": "{3: 'For some reason, the moment she sees you, the world around her ripples like water.'}"
     },
     {
-        "Id": 709,
+        "Id": 716,
         "ActionId": 709,
         "NextActionId": null,
         "Type": 301,
@@ -9217,7 +9308,7 @@
         "Params": "{3: 'The white light from the distortion looks like sunlight filtering through film.'}"
     },
     {
-        "Id": 710,
+        "Id": 717,
         "ActionId": 710,
         "NextActionId": null,
         "Type": 111,
@@ -9230,7 +9321,7 @@
         "Params": "{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiShixianraodong03.prefab'}"
     },
     {
-        "Id": 711,
+        "Id": 718,
         "ActionId": 711,
         "NextActionId": null,
         "Type": 402,
@@ -9243,7 +9334,7 @@
         "Params": "{1: '5790'}"
     },
     {
-        "Id": 712,
+        "Id": 719,
         "ActionId": 712,
         "NextActionId": null,
         "Type": 302,
@@ -9256,7 +9347,7 @@
         "Params": "{2: '\"Are you okay, Karenina?\"', 3: '713'}"
     },
     {
-        "Id": 713,
+        "Id": 720,
         "ActionId": 713,
         "NextActionId": null,
         "Type": 401,
@@ -9269,7 +9360,7 @@
         "Params": "{1: '1', 2: '280'}"
     },
     {
-        "Id": 714,
+        "Id": 721,
         "ActionId": 714,
         "NextActionId": null,
         "Type": 111,
@@ -9282,7 +9373,7 @@
         "Params": "{1: '0'}"
     },
     {
-        "Id": 715,
+        "Id": 722,
         "ActionId": 715,
         "NextActionId": null,
         "Type": 202,
@@ -9295,7 +9386,7 @@
         "Params": "{1: '1', 6: '1'}"
     },
     {
-        "Id": 716,
+        "Id": 723,
         "ActionId": 716,
         "NextActionId": null,
         "Type": 101,
@@ -9308,7 +9399,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}"
     },
     {
-        "Id": 717,
+        "Id": 724,
         "ActionId": 717,
         "NextActionId": null,
         "Type": 201,
@@ -9321,7 +9412,7 @@
         "Params": "{1: '1', 2: '501300', 7: '1'}"
     },
     {
-        "Id": 718,
+        "Id": 725,
         "ActionId": 718,
         "NextActionId": null,
         "Type": 502,
@@ -9334,7 +9425,7 @@
         "Params": "{1: 'DialogEnable'}"
     },
     {
-        "Id": 719,
+        "Id": 726,
         "ActionId": 719,
         "NextActionId": null,
         "Type": 301,
@@ -9347,7 +9438,7 @@
         "Params": "{1: '1', 2: '\"Bianca\"', 3: \"Do you think she'll notice?\", 4: '1', 18: '100020195'}"
     },
     {
-        "Id": 720,
+        "Id": 727,
         "ActionId": 720,
         "NextActionId": null,
         "Type": 202,
@@ -9360,7 +9451,7 @@
         "Params": "{1: '1', 6: '1'}"
     },
     {
-        "Id": 721,
+        "Id": 728,
         "ActionId": 721,
         "NextActionId": null,
         "Type": 201,
@@ -9373,7 +9464,7 @@
         "Params": "{1: '1', 2: '501772'}"
     },
     {
-        "Id": 722,
+        "Id": 729,
         "ActionId": 722,
         "NextActionId": null,
         "Type": 301,
@@ -9386,7 +9477,7 @@
         "Params": "{1: '1', 2: '\"Teddy\"', 3: \"Do you think she'll stay?\", 4: '1', 18: '100020196'}"
     },
     {
-        "Id": 723,
+        "Id": 730,
         "ActionId": 723,
         "NextActionId": null,
         "Type": 202,
@@ -9399,7 +9490,7 @@
         "Params": "{1: '1', 6: '1'}"
     },
     {
-        "Id": 724,
+        "Id": 731,
         "ActionId": 724,
         "NextActionId": null,
         "Type": 201,
@@ -9412,7 +9503,7 @@
         "Params": "{1: '1', 2: '500670'}"
     },
     {
-        "Id": 725,
+        "Id": 732,
         "ActionId": 725,
         "NextActionId": null,
         "Type": 301,
@@ -9425,7 +9516,7 @@
         "Params": "{1: '1', 2: '\"Wise\"', 3: \"It won't take long. Just hold on until she enters the coffin.\", 4: '1', 18: '100020197'}"
     },
     {
-        "Id": 726,
+        "Id": 733,
         "ActionId": 726,
         "NextActionId": null,
         "Type": 301,
@@ -9438,7 +9529,7 @@
         "Params": "{2: '\"Wise\"', 3: \"This place was custom-built from her own fantasies. She looks happy, doesn't she?\", 4: '1', 18: '100020198'}"
     },
     {
-        "Id": 727,
+        "Id": 734,
         "ActionId": 727,
         "NextActionId": null,
         "Type": 202,
@@ -9451,7 +9542,7 @@
         "Params": "{1: '1', 6: '1'}"
     },
     {
-        "Id": 728,
+        "Id": 735,
         "ActionId": 728,
         "NextActionId": null,
         "Type": 201,
@@ -9464,7 +9555,7 @@
         "Params": "{1: '1', 2: '500119'}"
     },
     {
-        "Id": 729,
+        "Id": 736,
         "ActionId": 729,
         "NextActionId": null,
         "Type": 301,
@@ -9477,7 +9568,7 @@
         "Params": "{1: '1', 2: 'Carcosa', 3: 'Yeah. The kind of happiness she never got in the real world.', 4: '1', 18: '100020199'}"
     },
     {
-        "Id": 730,
+        "Id": 737,
         "ActionId": 730,
         "NextActionId": null,
         "Type": 101,
@@ -9490,7 +9581,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/BgStory1402.jpg'}"
     },
     {
-        "Id": 731,
+        "Id": 738,
         "ActionId": 731,
         "NextActionId": null,
         "Type": 202,
@@ -9503,7 +9594,7 @@
         "Params": "{1: '1', 6: '1'}"
     },
     {
-        "Id": 732,
+        "Id": 739,
         "ActionId": 732,
         "NextActionId": null,
         "Type": 201,
@@ -9516,7 +9607,7 @@
         "Params": "{1: '1', 2: '501735', 7: '1'}"
     },
     {
-        "Id": 733,
+        "Id": 740,
         "ActionId": 733,
         "NextActionId": null,
         "Type": 301,
@@ -9529,7 +9620,7 @@
         "Params": "{1: '1', 2: 'Karenina', 3: \"I'm fine. Movie's about to start, and I'm not missing the opening this time.\", 4: '1', 18: '100020200'}"
     },
     {
-        "Id": 734,
+        "Id": 741,
         "ActionId": 734,
         "NextActionId": null,
         "Type": 306,
@@ -9542,7 +9633,7 @@
         "Params": "{1: '1'}"
     },
     {
-        "Id": 735,
+        "Id": 742,
         "ActionId": 735,
         "NextActionId": null,
         "Type": 301,
@@ -9555,7 +9646,7 @@
         "Params": "{3: 'Karenina spots the giant tub of popcorn and drinks in your arms.'}"
     },
     {
-        "Id": 736,
+        "Id": 743,
         "ActionId": 736,
         "NextActionId": null,
         "Type": 204,
@@ -9568,7 +9659,7 @@
         "Params": "{1: '1', 2: '1'}"
     },
     {
-        "Id": 737,
+        "Id": 744,
         "ActionId": 737,
         "NextActionId": null,
         "Type": 301,
@@ -9581,7 +9672,7 @@
         "Params": "{3: 'She must admit she craves this kind of happiness.'}"
     },
     {
-        "Id": 738,
+        "Id": 745,
         "ActionId": 738,
         "NextActionId": null,
         "Type": 501,
@@ -9594,7 +9685,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStoryBlackPassScene.prefab', 2: '3'}"
     },
     {
-        "Id": 739,
+        "Id": 746,
         "ActionId": 739,
         "NextActionId": null,
         "Type": 101,
@@ -9607,7 +9698,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/BgStory1275.jpg'}"
     },
     {
-        "Id": 740,
+        "Id": 747,
         "ActionId": 740,
         "NextActionId": null,
         "Type": 202,
@@ -9620,7 +9711,7 @@
         "Params": "{1: '1', 6: '1'}"
     },
     {
-        "Id": 741,
+        "Id": 748,
         "ActionId": 741,
         "NextActionId": null,
         "Type": 301,
@@ -9633,7 +9724,7 @@
         "Params": "{3: 'Tickets checked, 3D glasses claimed, seats found... A few ads are all that is left before a 130-minute romance movie.'}"
     },
     {
-        "Id": 742,
+        "Id": 749,
         "ActionId": 742,
         "NextActionId": null,
         "Type": 306,
@@ -9646,7 +9737,7 @@
         "Params": null
     },
     {
-        "Id": 743,
+        "Id": 750,
         "ActionId": 743,
         "NextActionId": null,
         "Type": 201,
@@ -9659,7 +9750,7 @@
         "Params": "{1: '1', 2: '501734'}"
     },
     {
-        "Id": 744,
+        "Id": 751,
         "ActionId": 744,
         "NextActionId": null,
         "Type": 301,
@@ -9672,7 +9763,7 @@
         "Params": "{1: '1', 2: 'Karenina', 3: 'Commandant, what kind of movie openings do you like best?', 4: '1', 18: '100020201'}"
     },
     {
-        "Id": 745,
+        "Id": 752,
         "ActionId": 745,
         "NextActionId": null,
         "Type": 302,
@@ -9685,7 +9776,7 @@
         "Params": "{2: '\"I think...\"', 3: '746'}"
     },
     {
-        "Id": 746,
+        "Id": 753,
         "ActionId": 746,
         "NextActionId": null,
         "Type": 302,
@@ -9698,7 +9789,7 @@
         "Params": "{2: '\"Karenina, what did you just call me?\"', 3: '747'}"
     },
     {
-        "Id": 747,
+        "Id": 754,
         "ActionId": 747,
         "NextActionId": null,
         "Type": 302,
@@ -9711,7 +9802,7 @@
         "Params": "{2: '\"I\\'m \u3010kuroname\u3011...\"', 3: '748'}"
     },
     {
-        "Id": 748,
+        "Id": 755,
         "ActionId": 748,
         "NextActionId": null,
         "Type": 302,
@@ -9724,7 +9815,7 @@
         "Params": "{2: '\"There\\'s no commandant here.\"', 3: '749'}"
     },
     {
-        "Id": 749,
+        "Id": 756,
         "ActionId": 749,
         "NextActionId": null,
         "Type": 401,
@@ -9737,7 +9828,7 @@
         "Params": "{1: '1', 2: '36'}"
     },
     {
-        "Id": 750,
+        "Id": 757,
         "ActionId": 750,
         "NextActionId": null,
         "Type": 401,
@@ -9750,7 +9841,7 @@
         "Params": "{1: '2', 2: '4304'}"
     },
     {
-        "Id": 751,
+        "Id": 758,
         "ActionId": 751,
         "NextActionId": null,
         "Type": 501,
@@ -9763,7 +9854,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}"
     },
     {
-        "Id": 752,
+        "Id": 759,
         "ActionId": 752,
         "NextActionId": null,
         "Type": 205,
@@ -9776,7 +9867,7 @@
         "Params": "{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg', 3: '0', 4: '1', 5: '0'}"
     },
     {
-        "Id": 753,
+        "Id": 760,
         "ActionId": 753,
         "NextActionId": null,
         "Type": 501,
@@ -9789,7 +9880,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}"
     },
     {
-        "Id": 754,
+        "Id": 761,
         "ActionId": 754,
         "NextActionId": null,
         "Type": 501,
@@ -9802,7 +9893,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab', 2: '2'}"
     },
     {
-        "Id": 755,
+        "Id": 762,
         "ActionId": 755,
         "NextActionId": null,
         "Type": 501,
@@ -9815,7 +9906,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3CommenScreenDate.prefab', 2: '2'}"
     },
     {
-        "Id": 756,
+        "Id": 763,
         "ActionId": 756,
         "NextActionId": null,
         "Type": 502,
@@ -9828,7 +9919,7 @@
         "Params": "{1: 'RImgBg1Shake'}"
     },
     {
-        "Id": 757,
+        "Id": 764,
         "ActionId": 757,
         "NextActionId": null,
         "Type": 205,
@@ -9841,7 +9932,7 @@
         "Params": "{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg', 3: '1', 4: '0', 5: '1'}"
     },
     {
-        "Id": 758,
+        "Id": 765,
         "ActionId": 758,
         "NextActionId": null,
         "Type": 401,
@@ -9854,7 +9945,7 @@
         "Params": "{1: '2', 2: '6307'}"
     },
     {
-        "Id": 759,
+        "Id": 766,
         "ActionId": 759,
         "NextActionId": null,
         "Type": 401,
@@ -9867,7 +9958,7 @@
         "Params": "{1: '1', 2: '7250', 3: '0.7'}"
     },
     {
-        "Id": 760,
+        "Id": 767,
         "ActionId": 760,
         "NextActionId": null,
         "Type": 301,
@@ -9880,7 +9971,7 @@
         "Params": "{1: '1', 3: 'An explosion resounds through the theater. Karenina watches as the figure before her burns like paper.'}"
     },
     {
-        "Id": 761,
+        "Id": 768,
         "ActionId": 761,
         "NextActionId": null,
         "Type": 301,
@@ -9893,7 +9984,7 @@
         "Params": "{3: 'It turns into ash. Code. Symbols.'}"
     },
     {
-        "Id": 762,
+        "Id": 769,
         "ActionId": 762,
         "NextActionId": null,
         "Type": 402,
@@ -9906,7 +9997,7 @@
         "Params": "{1: '6307'}"
     },
     {
-        "Id": 763,
+        "Id": 770,
         "ActionId": 763,
         "NextActionId": null,
         "Type": 204,
@@ -9919,7 +10010,7 @@
         "Params": "{1: '1', 2: '8'}"
     },
     {
-        "Id": 764,
+        "Id": 771,
         "ActionId": 764,
         "NextActionId": null,
         "Type": 301,
@@ -9932,7 +10023,7 @@
         "Params": "{2: 'Karenina', 3: \"No, I wasn't calling you... I was calling the real commandant. The one outside.\", 4: '1', 18: '100020202'}"
     },
     {
-        "Id": 765,
+        "Id": 772,
         "ActionId": 765,
         "NextActionId": null,
         "Type": 204,
@@ -9945,7 +10036,7 @@
         "Params": "{1: '1', 2: '4'}"
     },
     {
-        "Id": 766,
+        "Id": 773,
         "ActionId": 766,
         "NextActionId": null,
         "Type": 301,
@@ -9958,7 +10049,7 @@
         "Params": "{2: 'Karenina', 3: \"You're not wearing the tracker. Your eyes, your voice, the way you speak... it's all just mimicry. You're not my commandant.\", 4: '1', 18: '100020203'}"
     },
     {
-        "Id": 767,
+        "Id": 774,
         "ActionId": 767,
         "NextActionId": null,
         "Type": 202,
@@ -9971,7 +10062,7 @@
         "Params": "{1: '1'}"
     },
     {
-        "Id": 768,
+        "Id": 775,
         "ActionId": 768,
         "NextActionId": null,
         "Type": 301,
@@ -9984,7 +10075,7 @@
         "Params": "{3: 'Karenina grabs a handful of popcorn and tosses it in her mouth with a hint of regret. It is sweet, just as she thought.'}"
     },
     {
-        "Id": 769,
+        "Id": 776,
         "ActionId": 769,
         "NextActionId": null,
         "Type": 401,
@@ -9997,7 +10088,7 @@
         "Params": "{1: '2', 2: '4895'}"
     },
     {
-        "Id": 770,
+        "Id": 777,
         "ActionId": 770,
         "NextActionId": null,
         "Type": 201,
@@ -10010,7 +10101,7 @@
         "Params": "{1: '1', 2: '501735', 3: '8'}"
     },
     {
-        "Id": 771,
+        "Id": 778,
         "ActionId": 771,
         "NextActionId": null,
         "Type": 301,
@@ -10023,7 +10114,7 @@
         "Params": "{1: '1', 3: 'With that done, Karenina brushes off her jacket and adjusts her cap before standing.'}"
     },
     {
-        "Id": 772,
+        "Id": 779,
         "ActionId": 772,
         "NextActionId": null,
         "Type": 202,
@@ -10036,7 +10127,7 @@
         "Params": "{1: '1', 6: '1'}"
     },
     {
-        "Id": 773,
+        "Id": 780,
         "ActionId": 773,
         "NextActionId": null,
         "Type": 201,
@@ -10049,7 +10140,7 @@
         "Params": "{1: '1', 2: '501734', 3: '4'}"
     },
     {
-        "Id": 774,
+        "Id": 781,
         "ActionId": 774,
         "NextActionId": null,
         "Type": 401,
@@ -10062,7 +10153,7 @@
         "Params": "{1: '2', 2: '5380'}"
     },
     {
-        "Id": 775,
+        "Id": 782,
         "ActionId": 775,
         "NextActionId": null,
         "Type": 501,
@@ -10075,7 +10166,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiChatServeMain/FxUiChatServe01.prefab', 2: '2', 5: '21'}"
     },
     {
-        "Id": 776,
+        "Id": 783,
         "ActionId": 776,
         "NextActionId": null,
         "Type": 511,
@@ -10088,7 +10179,7 @@
         "Params": "{1: '21', 2: '0', 3: '0|-200|0'}"
     },
     {
-        "Id": 777,
+        "Id": 784,
         "ActionId": 777,
         "NextActionId": null,
         "Type": 401,
@@ -10101,7 +10192,7 @@
         "Params": "{1: '2', 2: '5703'}"
     },
     {
-        "Id": 778,
+        "Id": 785,
         "ActionId": 778,
         "NextActionId": null,
         "Type": 203,
@@ -10114,7 +10205,7 @@
         "Params": "{1: '1', 2: '0.5', 5: '-50'}"
     },
     {
-        "Id": 779,
+        "Id": 786,
         "ActionId": 779,
         "NextActionId": null,
         "Type": 401,
@@ -10127,7 +10218,7 @@
         "Params": "{1: '2', 2: '5703'}"
     },
     {
-        "Id": 780,
+        "Id": 787,
         "ActionId": 780,
         "NextActionId": null,
         "Type": 505,
@@ -10140,7 +10231,7 @@
         "Params": "{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}"
     },
     {
-        "Id": 781,
+        "Id": 788,
         "ActionId": 781,
         "NextActionId": null,
         "Type": 505,
@@ -10153,7 +10244,7 @@
         "Params": "{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFireLiziNew.prefab'}"
     },
     {
-        "Id": 782,
+        "Id": 789,
         "ActionId": 782,
         "NextActionId": null,
         "Type": 505,
@@ -10166,7 +10257,7 @@
         "Params": "{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiTheatre3/FxUiTheatre3CommenScreenDate.prefab'}"
     },
     {
-        "Id": 783,
+        "Id": 790,
         "ActionId": 783,
         "NextActionId": null,
         "Type": 203,
@@ -10179,7 +10270,7 @@
         "Params": "{1: '1', 2: '0.5', 5: '-100'}"
     },
     {
-        "Id": 784,
+        "Id": 791,
         "ActionId": 784,
         "NextActionId": null,
         "Type": 301,
@@ -10192,7 +10283,7 @@
         "Params": "{3: 'She steps over the burnt remains, an electric guitar somehow already in hand, and strides toward the screen with purpose.'}"
     },
     {
-        "Id": 785,
+        "Id": 792,
         "ActionId": 785,
         "NextActionId": null,
         "Type": 301,
@@ -10205,7 +10296,7 @@
         "Params": "{2: 'Karenina', 3: \"Fool others if you want, but you shouldn't have tried to fool me.\", 4: '1', 18: '100020204'}"
     },
     {
-        "Id": 786,
+        "Id": 793,
         "ActionId": 786,
         "NextActionId": null,
         "Type": 204,
@@ -10218,7 +10309,7 @@
         "Params": "{1: '1', 2: '8'}"
     },
     {
-        "Id": 787,
+        "Id": 794,
         "ActionId": 787,
         "NextActionId": null,
         "Type": 301,
@@ -10228,10 +10319,10 @@
         "EndAnim": "DialogDisable",
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: 'Karenina', 3: 'Sigh, if only this were real. I wish I could catch a movie with the commandant in the real world without worry.', 4: '1', 18: '100020205'}"
+        "Params": "{2: 'Karenina', 3: 'Sigh, if only this were real. I wish I could catch a movie with the commandant in the real world.', 4: '1', 18: '100020205'}"
     },
     {
-        "Id": 788,
+        "Id": 795,
         "ActionId": 788,
         "NextActionId": null,
         "Type": 204,
@@ -10244,7 +10335,7 @@
         "Params": "{1: '1', 2: '4'}"
     },
     {
-        "Id": 789,
+        "Id": 796,
         "ActionId": 789,
         "NextActionId": null,
         "Type": 401,
@@ -10257,7 +10348,7 @@
         "Params": "{1: '2', 2: '4895'}"
     },
     {
-        "Id": 790,
+        "Id": 797,
         "ActionId": 790,
         "NextActionId": null,
         "Type": 203,
@@ -10270,7 +10361,7 @@
         "Params": "{1: '1', 2: '0.25', 4: '-30', 5: '-100'}"
     },
     {
-        "Id": 791,
+        "Id": 798,
         "ActionId": 791,
         "NextActionId": null,
         "Type": 203,
@@ -10283,7 +10374,7 @@
         "Params": "{1: '1', 2: '0.15', 5: '-350'}"
     },
     {
-        "Id": 792,
+        "Id": 799,
         "ActionId": 792,
         "NextActionId": null,
         "Type": 501,
@@ -10296,7 +10387,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}"
     },
     {
-        "Id": 793,
+        "Id": 800,
         "ActionId": 793,
         "NextActionId": null,
         "Type": 401,
@@ -10309,7 +10400,7 @@
         "Params": "{1: '2', 2: '9317017'}"
     },
     {
-        "Id": 794,
+        "Id": 801,
         "ActionId": 794,
         "NextActionId": null,
         "Type": 202,
@@ -10322,7 +10413,7 @@
         "Params": "{1: '1', 6: '1'}"
     },
     {
-        "Id": 795,
+        "Id": 802,
         "ActionId": 795,
         "NextActionId": null,
         "Type": 502,
@@ -10335,7 +10426,7 @@
         "Params": "{1: 'RImgBg1Shake'}"
     },
     {
-        "Id": 796,
+        "Id": 803,
         "ActionId": 796,
         "NextActionId": null,
         "Type": 301,
@@ -10348,7 +10439,7 @@
         "Params": "{3: \"With everything she's got, Karenina grabs the guitar by the neck and swings it down with all her strength without reservation, like always.\"}"
     },
     {
-        "Id": 797,
+        "Id": 804,
         "ActionId": 797,
         "NextActionId": null,
         "Type": 401,
@@ -10361,7 +10452,7 @@
         "Params": "{1: '2', 2: '2511'}"
     },
     {
-        "Id": 798,
+        "Id": 805,
         "ActionId": 798,
         "NextActionId": null,
         "Type": 501,
@@ -10374,7 +10465,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}"
     },
     {
-        "Id": 799,
+        "Id": 806,
         "ActionId": 799,
         "NextActionId": null,
         "Type": 501,
@@ -10387,7 +10478,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '2'}"
     },
     {
-        "Id": 800,
+        "Id": 807,
         "ActionId": 800,
         "NextActionId": null,
         "Type": 201,
@@ -10400,7 +10491,7 @@
         "Params": "{1: '1', 2: '501734', 3: '4', 7: '1'}"
     },
     {
-        "Id": 801,
+        "Id": 808,
         "ActionId": 801,
         "NextActionId": null,
         "Type": 502,
@@ -10413,7 +10504,7 @@
         "Params": "{1: 'RImgBg1Shake'}"
     },
     {
-        "Id": 802,
+        "Id": 809,
         "ActionId": 802,
         "NextActionId": null,
         "Type": 401,
@@ -10426,7 +10517,7 @@
         "Params": "{1: '2', 2: '4795'}"
     },
     {
-        "Id": 803,
+        "Id": 810,
         "ActionId": 803,
         "NextActionId": null,
         "Type": 501,
@@ -10439,7 +10530,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}"
     },
     {
-        "Id": 804,
+        "Id": 811,
         "ActionId": 804,
         "NextActionId": null,
         "Type": 501,
@@ -10452,7 +10543,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '2'}"
     },
     {
-        "Id": 805,
+        "Id": 812,
         "ActionId": 805,
         "NextActionId": null,
         "Type": 204,
@@ -10465,7 +10556,7 @@
         "Params": "{1: '1', 2: '5'}"
     },
     {
-        "Id": 806,
+        "Id": 813,
         "ActionId": 806,
         "NextActionId": null,
         "Type": 501,
@@ -10478,7 +10569,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab', 2: '2'}"
     },
     {
-        "Id": 807,
+        "Id": 814,
         "ActionId": 807,
         "NextActionId": null,
         "Type": 502,
@@ -10491,7 +10582,7 @@
         "Params": "{1: 'RImgBg1Shake'}"
     },
     {
-        "Id": 808,
+        "Id": 815,
         "ActionId": 808,
         "NextActionId": null,
         "Type": 401,
@@ -10504,7 +10595,7 @@
         "Params": "{1: '2', 2: '9317017'}"
     },
     {
-        "Id": 809,
+        "Id": 816,
         "ActionId": 809,
         "NextActionId": null,
         "Type": 204,
@@ -10517,7 +10608,7 @@
         "Params": "{1: '1', 2: '15'}"
     },
     {
-        "Id": 810,
+        "Id": 817,
         "ActionId": 810,
         "NextActionId": null,
         "Type": 501,
@@ -10530,7 +10621,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}"
     },
     {
-        "Id": 811,
+        "Id": 818,
         "ActionId": 811,
         "NextActionId": null,
         "Type": 501,
@@ -10543,7 +10634,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiStorySlash02.prefab', 2: '2'}"
     },
     {
-        "Id": 812,
+        "Id": 819,
         "ActionId": 812,
         "NextActionId": null,
         "Type": 501,
@@ -10556,7 +10647,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab', 2: '2'}"
     },
     {
-        "Id": 813,
+        "Id": 820,
         "ActionId": 813,
         "NextActionId": null,
         "Type": 502,
@@ -10569,7 +10660,7 @@
         "Params": "{1: 'RImgBg1Shake'}"
     },
     {
-        "Id": 814,
+        "Id": 821,
         "ActionId": 814,
         "NextActionId": null,
         "Type": 301,
@@ -10582,7 +10673,7 @@
         "Params": "{1: '1', 3: 'Once. Twice. Again. Until the guitar splinters, shards flying up and cutting her face.'}"
     },
     {
-        "Id": 815,
+        "Id": 822,
         "ActionId": 815,
         "NextActionId": null,
         "Type": 401,
@@ -10595,7 +10686,7 @@
         "Params": "{1: '2', 2: '5373'}"
     },
     {
-        "Id": 816,
+        "Id": 823,
         "ActionId": 816,
         "NextActionId": null,
         "Type": 401,
@@ -10608,7 +10699,7 @@
         "Params": "{1: '2', 2: '2511'}"
     },
     {
-        "Id": 817,
+        "Id": 824,
         "ActionId": 817,
         "NextActionId": null,
         "Type": 501,
@@ -10621,7 +10712,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}"
     },
     {
-        "Id": 818,
+        "Id": 825,
         "ActionId": 818,
         "NextActionId": null,
         "Type": 505,
@@ -10634,7 +10725,7 @@
         "Params": "{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiMovie/FxUiMovieLuochen.prefab'}"
     },
     {
-        "Id": 819,
+        "Id": 826,
         "ActionId": 819,
         "NextActionId": null,
         "Type": 505,
@@ -10647,7 +10738,7 @@
         "Params": "{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStorySandNew.prefab'}"
     },
     {
-        "Id": 820,
+        "Id": 827,
         "ActionId": 820,
         "NextActionId": null,
         "Type": 205,
@@ -10660,7 +10751,7 @@
         "Params": "{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg', 3: '0', 4: '1', 5: '0'}"
     },
     {
-        "Id": 821,
+        "Id": 828,
         "ActionId": 821,
         "NextActionId": null,
         "Type": 205,
@@ -10673,7 +10764,7 @@
         "Params": "{1: '1005', 2: 'Assets/Product/Texture/Image/BgStoryFront/BgStoryFront18.png', 3: '0', 4: '1', 5: '0'}"
     },
     {
-        "Id": 822,
+        "Id": 829,
         "ActionId": 822,
         "NextActionId": null,
         "Type": 502,
@@ -10686,7 +10777,7 @@
         "Params": "{1: 'RImgBg5Shake'}"
     },
     {
-        "Id": 823,
+        "Id": 830,
         "ActionId": 823,
         "NextActionId": null,
         "Type": 502,
@@ -10699,7 +10790,7 @@
         "Params": "{1: 'RImgBg1Shake'}"
     },
     {
-        "Id": 824,
+        "Id": 831,
         "ActionId": 824,
         "NextActionId": null,
         "Type": 205,
@@ -10712,7 +10803,7 @@
         "Params": "{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg', 3: '1', 4: '0', 5: '1'}"
     },
     {
-        "Id": 825,
+        "Id": 832,
         "ActionId": 825,
         "NextActionId": null,
         "Type": 204,
@@ -10725,7 +10816,7 @@
         "Params": "{1: '1'}"
     },
     {
-        "Id": 826,
+        "Id": 833,
         "ActionId": 826,
         "NextActionId": null,
         "Type": 301,
@@ -10738,7 +10829,7 @@
         "Params": "{3: 'When the guitar snaps clean in two, a white light suddenly bleeds through from behind the screen. That sliver of a way out finally makes her stop.'}"
     },
     {
-        "Id": 827,
+        "Id": 834,
         "ActionId": 827,
         "NextActionId": null,
         "Type": 401,
@@ -10751,7 +10842,7 @@
         "Params": "{1: '2', 2: '1543'}"
     },
     {
-        "Id": 828,
+        "Id": 835,
         "ActionId": 828,
         "NextActionId": null,
         "Type": 203,
@@ -10764,7 +10855,7 @@
         "Params": "{1: '1', 2: '0.5', 5: '-50'}"
     },
     {
-        "Id": 829,
+        "Id": 836,
         "ActionId": 829,
         "NextActionId": null,
         "Type": 401,
@@ -10777,7 +10868,7 @@
         "Params": "{1: '2', 2: '2708'}"
     },
     {
-        "Id": 830,
+        "Id": 837,
         "ActionId": 830,
         "NextActionId": null,
         "Type": 501,
@@ -10790,7 +10881,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}"
     },
     {
-        "Id": 831,
+        "Id": 838,
         "ActionId": 831,
         "NextActionId": null,
         "Type": 205,
@@ -10803,7 +10894,7 @@
         "Params": "{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg', 3: '0', 4: '1', 5: '0'}"
     },
     {
-        "Id": 832,
+        "Id": 839,
         "ActionId": 832,
         "NextActionId": null,
         "Type": 101,
@@ -10816,7 +10907,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/BgStory1039.png'}"
     },
     {
-        "Id": 833,
+        "Id": 840,
         "ActionId": 833,
         "NextActionId": null,
         "Type": 205,
@@ -10829,7 +10920,7 @@
         "Params": "{1: '1005'}"
     },
     {
-        "Id": 834,
+        "Id": 841,
         "ActionId": 834,
         "NextActionId": null,
         "Type": 501,
@@ -10842,7 +10933,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiSummerSign/FxUiSummerSignChenai.prefab', 2: '2'}"
     },
     {
-        "Id": 835,
+        "Id": 842,
         "ActionId": 835,
         "NextActionId": null,
         "Type": 205,
@@ -10855,7 +10946,7 @@
         "Params": "{1: '1007', 2: 'Assets/Product/Texture/Image/BgStory/Bgstory428.jpg', 3: '1', 4: '0', 5: '1'}"
     },
     {
-        "Id": 836,
+        "Id": 843,
         "ActionId": 836,
         "NextActionId": null,
         "Type": 301,
@@ -10868,7 +10959,7 @@
         "Params": "{3: 'Karenina reaches out and touches the crack. The entire world crumbles to dust, starting from her fingertips.'}"
     },
     {
-        "Id": 837,
+        "Id": 844,
         "ActionId": 837,
         "NextActionId": null,
         "Type": 203,
@@ -10881,7 +10972,7 @@
         "Params": "{1: '1', 2: '0.35', 5: '-100'}"
     },
     {
-        "Id": 838,
+        "Id": 845,
         "ActionId": 838,
         "NextActionId": null,
         "Type": 401,
@@ -10894,7 +10985,7 @@
         "Params": "{1: '2', 2: '4895'}"
     },
     {
-        "Id": 839,
+        "Id": 846,
         "ActionId": 839,
         "NextActionId": null,
         "Type": 401,
@@ -10907,7 +10998,7 @@
         "Params": "{1: '1', 2: '2704'}"
     },
     {
-        "Id": 840,
+        "Id": 847,
         "ActionId": 840,
         "NextActionId": null,
         "Type": 204,
@@ -10920,7 +11011,7 @@
         "Params": "{1: '1', 2: '4'}"
     },
     {
-        "Id": 841,
+        "Id": 848,
         "ActionId": 841,
         "NextActionId": null,
         "Type": 401,
@@ -10933,7 +11024,7 @@
         "Params": "{1: '2', 2: '1543'}"
     },
     {
-        "Id": 842,
+        "Id": 849,
         "ActionId": 842,
         "NextActionId": null,
         "Type": 203,
@@ -10946,7 +11037,7 @@
         "Params": "{1: '1', 2: '0.4', 5: '-60'}"
     },
     {
-        "Id": 843,
+        "Id": 850,
         "ActionId": 843,
         "NextActionId": null,
         "Type": 204,
@@ -10959,7 +11050,7 @@
         "Params": "{1: '1', 2: '1'}"
     },
     {
-        "Id": 844,
+        "Id": 851,
         "ActionId": 844,
         "NextActionId": null,
         "Type": 301,
@@ -10972,7 +11063,7 @@
         "Params": "{3: 'Watching the dust scatter and drift away, she points a finger gun toward it, then pulls her hand back and blows away imaginary gunsmoke.'}"
     },
     {
-        "Id": 845,
+        "Id": 852,
         "ActionId": 845,
         "NextActionId": null,
         "Type": 302,
@@ -10985,7 +11076,7 @@
         "Params": "{2: '<i><color=#34aff8ff>Karenina!</color></i>', 3: '846'}"
     },
     {
-        "Id": 846,
+        "Id": 853,
         "ActionId": 846,
         "NextActionId": null,
         "Type": 204,
@@ -10998,7 +11089,7 @@
         "Params": "{1: '1', 2: '3'}"
     },
     {
-        "Id": 847,
+        "Id": 854,
         "ActionId": 847,
         "NextActionId": null,
         "Type": 301,
@@ -11011,7 +11102,7 @@
         "Params": "{3: 'A real sound... one that can pierce through illusions.'}"
     },
     {
-        "Id": 848,
+        "Id": 855,
         "ActionId": 848,
         "NextActionId": null,
         "Type": 202,
@@ -11024,7 +11115,7 @@
         "Params": "{1: '1', 6: '1'}"
     },
     {
-        "Id": 849,
+        "Id": 856,
         "ActionId": 849,
         "NextActionId": null,
         "Type": 218,
@@ -11037,7 +11128,7 @@
         "Params": "{1: '1', 2: 'Assets/Product/Texture/Image/IconMovie/V470chuanmaoNormal01.png', 6: '0.5'}"
     },
     {
-        "Id": 850,
+        "Id": 857,
         "ActionId": 850,
         "NextActionId": null,
         "Type": 401,
@@ -11050,7 +11141,7 @@
         "Params": "{1: '2', 2: '2624'}"
     },
     {
-        "Id": 851,
+        "Id": 858,
         "ActionId": 851,
         "NextActionId": null,
         "Type": 301,
@@ -11063,7 +11154,7 @@
         "Params": "{3: 'It comes from the <phonetic=tracker>anchor pendant</phonetic> outside, accompanied by heartbeats, each stronger than the last.'}"
     },
     {
-        "Id": 852,
+        "Id": 859,
         "ActionId": 852,
         "NextActionId": null,
         "Type": 402,
@@ -11076,7 +11167,7 @@
         "Params": "{1: '2624'}"
     },
     {
-        "Id": 853,
+        "Id": 860,
         "ActionId": 853,
         "NextActionId": null,
         "Type": 220,
@@ -11089,7 +11180,7 @@
         "Params": "{1: '1', 2: '0'}"
     },
     {
-        "Id": 854,
+        "Id": 861,
         "ActionId": 854,
         "NextActionId": null,
         "Type": 201,
@@ -11102,7 +11193,7 @@
         "Params": "{1: '1', 2: '501735', 3: '8'}"
     },
     {
-        "Id": 855,
+        "Id": 862,
         "ActionId": 855,
         "NextActionId": null,
         "Type": 301,
@@ -11115,7 +11206,7 @@
         "Params": "{1: '1', 2: 'Karenina', 3: 'Mm... It was nice, but a story is still just a story.', 4: '1', 18: '100020206'}"
     },
     {
-        "Id": 856,
+        "Id": 863,
         "ActionId": 856,
         "NextActionId": null,
         "Type": 204,
@@ -11128,7 +11219,7 @@
         "Params": "{1: '1', 2: '1'}"
     },
     {
-        "Id": 857,
+        "Id": 864,
         "ActionId": 857,
         "NextActionId": null,
         "Type": 401,
@@ -11141,7 +11232,7 @@
         "Params": "{1: '2', 2: '5703'}"
     },
     {
-        "Id": 858,
+        "Id": 865,
         "ActionId": 858,
         "NextActionId": null,
         "Type": 203,
@@ -11154,7 +11245,7 @@
         "Params": "{1: '1', 2: '0.5', 5: '-50'}"
     },
     {
-        "Id": 859,
+        "Id": 866,
         "ActionId": 859,
         "NextActionId": null,
         "Type": 205,
@@ -11167,7 +11258,7 @@
         "Params": "{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory0.png', 3: '0', 4: '1', 5: '1'}"
     },
     {
-        "Id": 860,
+        "Id": 867,
         "ActionId": 860,
         "NextActionId": null,
         "Type": 505,
@@ -11180,7 +11271,7 @@
         "Params": "{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiSummerSign/FxUiSummerSignChenai.prefab'}"
     },
     {
-        "Id": 861,
+        "Id": 868,
         "ActionId": 861,
         "NextActionId": null,
         "Type": 301,
@@ -11193,7 +11284,7 @@
         "Params": "{3: 'Karenina steps out of the crumbling fantasy and runs toward you, joy written all over her face.'}"
     },
     {
-        "Id": 862,
+        "Id": 869,
         "ActionId": 862,
         "NextActionId": null,
         "Type": 204,
@@ -11206,7 +11297,7 @@
         "Params": "{1: '1', 2: '1'}"
     },
     {
-        "Id": 863,
+        "Id": 870,
         "ActionId": 863,
         "NextActionId": null,
         "Type": 301,
@@ -11219,7 +11310,7 @@
         "Params": "{2: 'Karenina', 3: \"Just hold on a little longer. I'm coming for you right now. Running, actually.\", 4: '1', 18: '100020207'}"
     },
     {
-        "Id": 864,
+        "Id": 871,
         "ActionId": 864,
         "NextActionId": null,
         "Type": 202,
@@ -11232,7 +11323,7 @@
         "Params": "{1: '1'}"
     },
     {
-        "Id": 865,
+        "Id": 872,
         "ActionId": 865,
         "NextActionId": null,
         "Type": 401,
@@ -11245,7 +11336,7 @@
         "Params": "{1: '2', 2: '4009'}"
     },
     {
-        "Id": 866,
+        "Id": 873,
         "ActionId": 866,
         "NextActionId": null,
         "Type": 301,

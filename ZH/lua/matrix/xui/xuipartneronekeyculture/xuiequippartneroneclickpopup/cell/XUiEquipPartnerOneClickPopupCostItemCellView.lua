@@ -7,11 +7,13 @@
 ---@field _Control XPartnerControl
 ---@field UiTxtTitle UnityEngine.UI.Text
 ---@field UiTxtPreview UnityEngine.UI.Text
+---@field ImgArrow UnityEngine.UI.Image
 ---@field GoBgTitleChoose UnityEngine.RectTransform
 ---@field GoBgTitleNotChoose UnityEngine.RectTransform
 ---@field BtnChoose XUiComponent.XUiButton
 ---@field BtnDesc XUiComponent.XUiButton
----@field GoMaterialCell UnityEngine.RectTransform
+---@field GoMaterialCell UnityEngine.RectTransform 进化消耗格子模板
+---@field GridConsume UnityEngine.RectTransform 等级/技能消耗格子模板
 ---@field GoMaterialList UnityEngine.RectTransform
 ---@field GoPanelNone UnityEngine.RectTransform
 ---@field TxtNone UnityEngine.UI.Text 无可用材料时的定制提示文本
@@ -20,6 +22,8 @@
 ---@field TxtSkillPlan UnityEngine.UI.Text 主动技/被动技装配数量文本（如 主动技1/1 被动技2/4）
 ---@field BtnSkillSwitch XUiComponent.XUiButton 打开技能选中面板按钮
 local XUiEquipPartnerOneClickPopupCostItemCellView = XClass(XUiNode, "XUiEquipPartnerOneClickPopupCostItemCellView")
+
+local LACK_MATERIAL_COLOR = XUiHelper.Hexcolor2Color("A1A1A1")
 
 function XUiEquipPartnerOneClickPopupCostItemCellView:InitComponents()
     self.BtnChoose:AddEventListener(function()
@@ -38,10 +42,9 @@ function XUiEquipPartnerOneClickPopupCostItemCellView:InitComponents()
     self._CostList = {}
     self._DisplayCostList = {}
     self._ExchangeCountDic = {}
-    -- 第一个格子直接用 GoMaterialCell 本身
-    local firstGrid = self:_NewCostGrid(self.GoMaterialCell)
-    table.insert(self._CostGridList, firstGrid)
-    self.GoMaterialCell.gameObject:SetActiveEx(false)
+    self._OriginImgArrowColor = self.ImgArrow.color
+    self._OriginPreviewColor = self.UiTxtPreview.color
+    self._OriginTitleColor = self.UiTxtTitle.color
 end
 
 function XUiEquipPartnerOneClickPopupCostItemCellView:OnStart(...)
@@ -113,8 +116,7 @@ function XUiEquipPartnerOneClickPopupCostItemCellView:_OnCultureSelectChange(cul
     if cultureType ~= self._CultureType then
         return
     end
-    local isSelected = self._Control:GetOneKeyCultureMainControl():GetCommitControl():IsCultureSelected(self._CultureType)
-    self:_SetSelected(isSelected)
+    self:Refresh(self._CultureType)
 end
 
 function XUiEquipPartnerOneClickPopupCostItemCellView:_OnPartnerFoodChange()
@@ -129,19 +131,37 @@ end
 
 function XUiEquipPartnerOneClickPopupCostItemCellView:Refresh(cultureType)
     self._CultureType = cultureType
+    self:_InitCostGrid()
 
     local XPartnerEnum = XMVCA.XPartner.Enum
+    local isLackMaterial = false
 
     if cultureType == XPartnerEnum.CultureType.LevelUp then
-        self:_RefreshLevelUp()
+        isLackMaterial = self:_RefreshLevelUp()
     elseif cultureType == XPartnerEnum.CultureType.StarUp then
-        self:_RefreshStarUp()
+        isLackMaterial = self:_RefreshStarUp()
     elseif cultureType == XPartnerEnum.CultureType.SkillLevelUp then
-        self:_RefreshSkillLevelUp()
+        isLackMaterial = self:_RefreshSkillLevelUp()
     end
 
     local isSelected = self._Control:GetOneKeyCultureMainControl():GetCommitControl():IsCultureSelected(cultureType)
-    self:_SetSelected(isSelected)
+    self:_SetLackMaterialColor(isLackMaterial)
+    self:_SetSelected(isSelected, isLackMaterial)
+end
+
+function XUiEquipPartnerOneClickPopupCostItemCellView:_InitCostGrid()
+    if self._CostGridTemplate then
+        return
+    end
+
+    local XPartnerEnum = XMVCA.XPartner.Enum
+    self._IsCommonConsumeGrid = self._CultureType == XPartnerEnum.CultureType.LevelUp
+            or self._CultureType == XPartnerEnum.CultureType.SkillLevelUp
+    self._CostGridTemplate = self._IsCommonConsumeGrid and self.GridConsume or self.GoMaterialCell
+
+    local firstGrid = self:_NewCostGrid(self._CostGridTemplate)
+    table.insert(self._CostGridList, firstGrid)
+    self._CostGridTemplate.gameObject:SetActiveEx(false)
 end
 
 function XUiEquipPartnerOneClickPopupCostItemCellView:_RefreshLevelUp()
@@ -149,9 +169,15 @@ function XUiEquipPartnerOneClickPopupCostItemCellView:_RefreshLevelUp()
     local commitControl = mainControl:GetCommitControl()
     self.UiTxtTitle.text = XUiHelper.GetText("PartnerOneKeyLevelUpTitle")
     local partner = mainControl:GetCurPartnerEntity()
+    local isLackMaterial = false
     if partner and self:_IsCurCultureSelected() then
-        local canReachLevel = commitControl:GetCanReachLevel()
-        self.UiTxtPreview.text = XUiHelper.GetText("PartnerOneKeyLevelUpPreview", canReachLevel)
+        isLackMaterial = commitControl:GetLevelUpConsumeIndex() <= 0
+        if isLackMaterial then
+            self.UiTxtPreview.text = XUiHelper.GetText("PartnerOneKeyMaterialNotEnough")
+        else
+            local canReachLevel = commitControl:GetCanReachLevel()
+            self.UiTxtPreview.text = XUiHelper.GetText("PartnerOneKeyLevelUpPreview", canReachLevel)
+        end
         local targetBreakthrough = commitControl:GetCanReachBreakthrough()
         local breakthroughIcon = XPartnerConfigs.GetPartnerBreakThroughIcon(targetBreakthrough)
         if breakthroughIcon then
@@ -161,8 +187,21 @@ function XUiEquipPartnerOneClickPopupCostItemCellView:_RefreshLevelUp()
         self.ImgBreakIcon:SetSprite(partner:GetBreakthroughIcon())
         self.UiTxtPreview.text = ""
     end
-    local costList = commitControl:GetLevelUpConsumedList()
-    self:_RefreshCostList(costList, commitControl:GetLevelUpExchangedList(), commitControl:GetLevelUpConsumeIndex() > 0)
+    local isSelected = self:_IsCurCultureSelected()
+    local costList
+    local exchangedList
+    local hasConsume
+    if isSelected then
+        costList = commitControl:GetLevelUpConsumedList()
+        exchangedList = commitControl:GetLevelUpExchangedList()
+        hasConsume = commitControl:GetLevelUpConsumeIndex() > 0
+    else
+        costList = commitControl:GetLevelUpPreviewConsumedList()
+        exchangedList = table.empty
+        hasConsume = commitControl:GetLevelUpPreviewConsumeIndex() > 0
+    end
+    self:_RefreshCostList(costList, exchangedList, hasConsume)
+    return isLackMaterial
 end
 
 function XUiEquipPartnerOneClickPopupCostItemCellView:_RefreshStarUp()
@@ -170,10 +209,19 @@ function XUiEquipPartnerOneClickPopupCostItemCellView:_RefreshStarUp()
     local commitControl = mainControl:GetCommitControl()
     self.UiTxtTitle.text = XUiHelper.GetText("PartnerOneKeyStarUpTitle")
     local partner = mainControl:GetCurPartnerEntity()
+    local isLackMaterial = false
     if partner and self:_IsCurCultureSelected() then
-        local canReachQuality = commitControl:GetCanReachQuality()
-        local qualityString = XPartnerConfigs.GetQualityString(canReachQuality)
-        self.UiTxtPreview.text = XUiHelper.GetText("PartnerOneKeyStarUpPreview", qualityString)
+        local selectedCount = commitControl:GetSelectFoodCount()
+        isLackMaterial = selectedCount <= 0
+        if isLackMaterial then
+            local haveCount = mainControl:GetFoodSelectControl():GetSelectableFoodCount()
+            local textKey = haveCount > 0 and "PartnerOneKeyWaitSelectFood" or "PartnerOneKeyFoodNotEnough"
+            self.UiTxtPreview.text = XUiHelper.GetText(textKey)
+        else
+            local canReachQuality = commitControl:GetCanReachQuality()
+            local qualityString = XPartnerConfigs.GetQualityString(canReachQuality)
+            self.UiTxtPreview.text = XUiHelper.GetText("PartnerOneKeyStarUpPreview", qualityString)
+        end
     else
         self.UiTxtPreview.text = ""
     end
@@ -202,6 +250,7 @@ function XUiEquipPartnerOneClickPopupCostItemCellView:_RefreshStarUp()
     end
 
     self:_RefreshCostList(costList, commitControl:GetStarUpExchangedList(), partner ~= nil)
+    return isLackMaterial
 end
 
 function XUiEquipPartnerOneClickPopupCostItemCellView:_RefreshSkillLevelUp()
@@ -209,9 +258,16 @@ function XUiEquipPartnerOneClickPopupCostItemCellView:_RefreshSkillLevelUp()
     local commitControl = mainControl:GetCommitControl()
     self.UiTxtTitle.text = XUiHelper.GetText("PartnerOneKeySkillUpTitle")
     local partner = mainControl:GetCurPartnerEntity()
+    local isLackMaterial = false
     if partner and self:_IsCurCultureSelected() then
-        local avgLevel = commitControl:GetCanReachSkillAvgLevel()
-        self.UiTxtPreview.text = XUiHelper.GetText("PartnerOneKeySkillUpPreview", avgLevel)
+        local skillMOList = mainControl:GetBaseCostControl():GetSkillMOList()
+        isLackMaterial = #skillMOList > 0 and commitControl:GetSkillConsumeIndex() <= 0
+        if isLackMaterial then
+            self.UiTxtPreview.text = XUiHelper.GetText("PartnerOneKeyMaterialNotEnough")
+        else
+            local avgLevel = commitControl:GetCanReachSkillAvgLevel()
+            self.UiTxtPreview.text = XUiHelper.GetText("PartnerOneKeySkillUpPreview", avgLevel)
+        end
     else
         self.UiTxtPreview.text = ""
     end
@@ -226,6 +282,7 @@ function XUiEquipPartnerOneClickPopupCostItemCellView:_RefreshSkillLevelUp()
     end
     local costList = commitControl:GetSkillConsumedList()
     self:_RefreshCostList(costList, commitControl:GetSkillExchangedList(), commitControl:GetSkillConsumeIndex() > 0)
+    return isLackMaterial
 end
 
 ---@param costList table
@@ -273,12 +330,14 @@ function XUiEquipPartnerOneClickPopupCostItemCellView:_RefreshCostList(costList,
     local displayCount = #displayList
 
     local hasDisplayCost = hasConsume and displayCount > 0
-    local showNone = self:_IsCurCultureSelected() and not hasDisplayCost
+    local XPartnerEnum = XMVCA.XPartner.Enum
+    local showNone = (self:_IsCurCultureSelected()
+        or self._CultureType == XPartnerEnum.CultureType.LevelUp)
+        and not hasDisplayCost
     self.GoMaterialList.gameObject:SetActiveEx(true)
     self.GoPanelNone.gameObject:SetActiveEx(showNone)
 
     if showNone then
-        local XPartnerEnum = XMVCA.XPartner.Enum
         if self._CultureType == XPartnerEnum.CultureType.LevelUp then
             local levelUpMOList = self._Control:GetOneKeyCultureMainControl():GetBaseCostControl():GetLevelUpMOList()
             local firstMO = levelUpMOList[1]
@@ -327,15 +386,29 @@ function XUiEquipPartnerOneClickPopupCostItemCellView:_RefreshCostList(costList,
         local grid = self._CostGridList[displayIndex]
         if item.IsPartner then
             local commitControl = self._Control:GetOneKeyCultureMainControl():GetCommitControl()
+            local customText
+            local haveCount = self._Control:GetOneKeyCultureMainControl():GetFoodSelectControl():GetSelectableFoodCount()
             local selectedCount = commitControl:GetSelectFoodCount()
-            local haveText = selectedCount > 0 and selectedCount or XUiHelper.GetText("PartnerOneKeyNotSelected")
-            local needText = "/" .. item.NeedCount
-            local isSatisfied = selectedCount >= item.NeedCount
-            grid:RefreshByStringData(item.Icon, item.Quality, haveText,  isSatisfied)
+            if selectedCount > 0 then
+                customText = XUiHelper.GetText("PartnerOneKeyFoodSelectedCount", selectedCount, haveCount)
+            else
+                customText = XUiHelper.GetText("PartnerOneKeyFoodOwnedCount", haveCount)
+            end
+            grid:RefreshByStringData(item.Icon, item.Quality, customText, selectedCount)
             grid:SetCustomClick(self._OnPartnerCostClick, self)
         else
-            local goodsShowParams = XGoodsCommonManager.GetGoodsShowParamsByTemplateId(item.Id)
-            grid:RefreshByData(goodsShowParams.Icon, goodsShowParams.Quality, item.Count, item.Count, item.IsExchange)
+            if self._IsCommonConsumeGrid then
+                grid:Update({
+                    ItemId = item.Id,
+                    Count = item.Count,
+                    NeedCount = item.Count,
+                    IsEquip = false,
+                    IsExchange = item.IsExchange,
+                })
+            else
+                local goodsShowParams = XGoodsCommonManager.GetGoodsShowParamsByTemplateId(item.Id)
+                grid:RefreshByData(goodsShowParams.Icon, goodsShowParams.Quality, item.Count, item.Count, item.IsExchange)
+            end
         end
         grid.GameObject:SetActiveEx(true)
     end
@@ -347,7 +420,7 @@ end
 
 function XUiEquipPartnerOneClickPopupCostItemCellView:_EnsureCostGridCount(needCount)
     while #self._CostGridList < needCount do
-        local ui = CS.UnityEngine.Object.Instantiate(self.GoMaterialCell, self.GoMaterialList)
+        local ui = CS.UnityEngine.Object.Instantiate(self._CostGridTemplate, self.GoMaterialList)
         ui.gameObject:SetActiveEx(false)
         local grid = self:_NewCostGrid(ui)
         table.insert(self._CostGridList, grid)
@@ -355,13 +428,25 @@ function XUiEquipPartnerOneClickPopupCostItemCellView:_EnsureCostGridCount(needC
 end
 
 function XUiEquipPartnerOneClickPopupCostItemCellView:_NewCostGrid(ui)
+    if self._IsCommonConsumeGrid then
+        local XUiEquipPartnerOneClickPopupMatCellView2 = require("XUi/XUiPartnerOneKeyCulture/XUiEquipPartnerOneClickPopup/cell/XUiEquipPartnerOneClickPopupMatCellView2")
+        return XUiEquipPartnerOneClickPopupMatCellView2.New(ui, self)
+    end
+
     local XUiEquipPartnerOneClickPopupMatCellView = require("XUi/XUiPartnerOneKeyCulture/XUiEquipPartnerOneClickPopup/cell/XUiEquipPartnerOneClickPopupMatCellView")
     return XUiEquipPartnerOneClickPopupMatCellView.New(ui, self)
 end
 
-function XUiEquipPartnerOneClickPopupCostItemCellView:_SetSelected(isSelected)
-    self.GoBgTitleChoose.gameObject:SetActiveEx(isSelected)
-    self.GoBgTitleNotChoose.gameObject:SetActiveEx(not isSelected)
+function XUiEquipPartnerOneClickPopupCostItemCellView:_SetLackMaterialColor(isLackMaterial)
+    self.ImgArrow.color = isLackMaterial and LACK_MATERIAL_COLOR or self._OriginImgArrowColor
+    self.UiTxtPreview.color = isLackMaterial and LACK_MATERIAL_COLOR or self._OriginPreviewColor
+    self.UiTxtTitle.color = isLackMaterial and LACK_MATERIAL_COLOR or self._OriginTitleColor
+end
+
+function XUiEquipPartnerOneClickPopupCostItemCellView:_SetSelected(isSelected, isLackMaterial)
+    local isShowChooseBg = isSelected and not isLackMaterial
+    self.GoBgTitleChoose.gameObject:SetActiveEx(isShowChooseBg)
+    self.GoBgTitleNotChoose.gameObject:SetActiveEx(not isShowChooseBg)
     self.GoPreview.gameObject:SetActiveEx(isSelected)
     self.BtnChoose:SetButtonState(isSelected and CS.UiButtonState.Select or CS.UiButtonState.Normal)
 end

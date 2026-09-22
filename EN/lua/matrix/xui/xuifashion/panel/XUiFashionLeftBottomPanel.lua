@@ -168,7 +168,7 @@ function XUiFashionLeftBottomPanel:OnBtnUseCharacterFashionClick()
         return
     end
 
-    local colorId = self.FashionColorPanel:GetColorId()
+    local colorId = self.FashionColorPanel:GetColorId(fashionId)
     local status = XDataCenter.FashionManager.GetFashionStatus(fashionId)
     local fashionStatus = XDataCenter.FashionManager.FashionStatus
     local previewContext = self.Parent:IsPreviewSuitActive() and self.Parent:GetPreviewSuitContext() or nil

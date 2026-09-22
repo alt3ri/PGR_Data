@@ -129,6 +129,10 @@ local type = {
     --研究红点
     CONDITION_ACTIVITYDRAW_RED = "XRedPointConditionActivityDrawNew", -- 研究活动卡池红点
     CONDITION_DEVILMAYCRY_CAN_RECEIVE_CHARACTER = "XRedPointConditionDevilMayCryCanReceiveCharacter", -- 鬼泣卡池有可领取角色
+    CONDITION_DATEALIVE_MAIN = "XRedPointConditionDateALiveMain", -- 约战卡池主界面红点
+    CONDITION_DATEALIVE_CAN_RECEIVE_CHARACTER = "XRedPointConditionDateALiveCanReceiveCharacter", -- 约战卡池有可领取角色
+    CONDITION_DATEALIVE_SIGN_IN_REWARD = "XRedPointConditionDateALiveSignInReward", -- 约战联动签到存在可领取奖励
+    CONDITION_DATEALIVE_CHAPTER_ENTER = "XRedPointConditionDateALiveChapterEnter", -- 约战联动剧情关当前是否进去过
     --头像红点
     CONDITION_HEADPORTRAIT_RED = "XRedPointConditionHeadPortraitNew",
     --反馈红点
@@ -458,9 +462,6 @@ local type = {
     --正逆塔
     CONDITION_TWO_SIDE_TOWER_TASK = "XRedPointTwoSideTowerTask",
     CONDITION_TWO_SIDE_TOWER_NEW_CHAPTER = "XRedPointTwoSideTowerNewChapter",
-    --装备目标
-    CONDITION_EQUIP_GUIDE_CAN_EQUIP = "XRedPointEquipGuideCanEquip", --有装备可以装备
-    CONDITION_EQUIP_GUIDE_HAS_STRONGER_WEAPON = "XRedPointEquipGuideHasStrongerWeapon", --武器升强提醒
     -- v1.30 考级红点
     CONDITION_COURSE_BANNER = "XRedPointConditionCourseBanner", -- 海报红点
     CONDITION_COURSE_LESSON_TOG = "XRedPointConditionCourseLessonTog", -- 课程页签红点
@@ -570,6 +571,8 @@ local type = {
     CONDITION_DLC_MOUSE_HUNTER_ACTIVITY = "XRedPointDlcMouseHunterActivity", -- 活动入口
     -- 每日重置的红点
     CONDITION_DAILY_RESET = "Common/XRedPointConditionDailyReset",
+    -- 活动按钮永久一次性红点（点击后永久不再显示，跨版本不重显）
+    CONDITION_ACTIVITY_BTN_ONCE = "Common/XRedPointConditionActivityBtnOnce",
     -- 数据演习
     CONDITION_SIMULATE_TRAIN = "XRedPointConditionSimulateTrain",
     -- 背包整理玩法
@@ -720,6 +723,13 @@ local type = {
     CONDITION_DYEMERGE_MAIN = "XDyeMergeGame/XRedPointDyeMergeMain",
     CONDITION_DYEMERGE_NEW_CHAPTER = "XDyeMergeGame/XRedPointDyeMergeNewChapter",
     CONDITION_DYEMERGE_TASK = "XDyeMergeGame/XRedPointDyeMergeTask",
+    
+    --大巴扎玩法
+    -- 大巴扎玩法
+    CONDITION_PUNISHAAR_MAIN = "XPunishaar/XRedPointPunishaarMain",
+    CONDITION_PUNISHAAR_STAGE = "XPunishaar/XRedPointPunishaarStage",
+    CONDITION_PUNISHAAR_TASK = "XPunishaar/XRedPointPunishaarTask",
+    CONDITION_PUNISHAAR_COLLECTION = "XPunishaar/XRedPointPunishaarCollection",
 }
 XRedPointConditions.Conditions = type
 

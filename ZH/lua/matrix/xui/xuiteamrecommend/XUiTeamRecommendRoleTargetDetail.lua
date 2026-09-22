@@ -11,8 +11,17 @@ function XUiTeamRecommendRoleTargetDetail:OnAwake()
 end
 
 function XUiTeamRecommendRoleTargetDetail:OnStart(characterId)
-    self.CharacterId = characterId
+    self.CharacterId = self.ResumeCharacterId or characterId
+    self.ResumeCharacterId = nil
     self:Refresh()
+end
+
+function XUiTeamRecommendRoleTargetDetail:OnReleaseInst()
+    return self.CharacterId
+end
+
+function XUiTeamRecommendRoleTargetDetail:OnResume(characterId)
+    self.ResumeCharacterId = characterId
 end
 
 --- 从上层界面（切换套装进Main等）返回时按最新目标缓存全量刷新
@@ -25,6 +34,18 @@ function XUiTeamRecommendRoleTargetDetail:OnEnable()
     self:Refresh()
     if self.PanelLeftSwitch.gameObject.activeSelf then
         self:RefreshLeftSwitch()
+    end
+end
+
+function XUiTeamRecommendRoleTargetDetail:OnGetLuaEvents()
+    return {
+        XEventId.EVENT_TEAM_RECOMMEND_ROLE_TARGET_REFRESH,
+    }
+end
+
+function XUiTeamRecommendRoleTargetDetail:OnNotify(evt)
+    if evt == XEventId.EVENT_TEAM_RECOMMEND_ROLE_TARGET_REFRESH then
+        self:Refresh()
     end
 end
 
@@ -59,8 +80,7 @@ function XUiTeamRecommendRoleTargetDetail:InitUi()
 end
 
 function XUiTeamRecommendRoleTargetDetail:InitButton()
-    self.BtnBack.CallBack = function() self:Close() end
-    self.BtnMainUi.CallBack = function() XLuaUiManager.RunMain() end
+    self.TopController = XUiHelper.NewPanelTopControl(self, self.TopControl)
     self.BtnDetailClose.CallBack = function() self.PanelBubbleDetail.gameObject:SetActiveEx(false) end
     self.BtnNumDesc.CallBack = function() self.PanelBubbleDetail.gameObject:SetActiveEx(true) end
     self.BtnEvolution.CallBack = function() self:OnBtnEvolutionClick() end
@@ -68,6 +88,7 @@ function XUiTeamRecommendRoleTargetDetail:InitButton()
     self.PanelLeftSwitchUiObj.BtnCloseLeftPanel.CallBack = function() self:OnBtnCloseLeftPanelClick() end
     self.PanelEquipmentUiObj.BtnSwitch.CallBack = function() self:OnBtnSwitchClick() end
     self.PanelEquipmentUiObj.BtnDelete.CallBack = function() self:OnBtnDeleteClick() end
+    self:BindHelpBtn(self.BtnHelp, "OneClickCultivationRule")
 end
 
 function XUiTeamRecommendRoleTargetDetail:InitWeaponUiObj()
@@ -130,8 +151,8 @@ function XUiTeamRecommendRoleTargetDetail:Refresh()
     -- 角色信息
     self:RefreshRole()
 
-    -- 标题信息
-    self:RefreshEquipment()
+    -- 目标概览
+    self:RefreshTargetOverview()
 
     -- 武器推荐
     self:RefreshWeapon()
@@ -150,7 +171,7 @@ function XUiTeamRecommendRoleTargetDetail:RefreshRole()
     local characterId = self.RecommendCharData.CharacterId
 
     -- 基础信息
-    self.TxtName.text = XMVCA.XCharacter:GetCharacterFullNameStr(characterId)
+    self.TxtName.text = XMVCA.XCharacter:GetCharacterLogName(characterId)
     self.TxtPowerNum.text = tostring(XMVCA.XCharacter:GetCharacterHaveRobotAbilityById(characterId) or 0)
 
     -- 立绘品质
@@ -161,7 +182,11 @@ function XUiTeamRecommendRoleTargetDetail:RefreshRole()
     if self.RImgCharacterRank then
         self.RImgCharacterRank:SetRawImage(XMVCA.XCharacter:GetCharacterQualityIcon(currentQuality))
     end
-    self.BtnEvolution:SetRawImage(XMVCA.XCharacter:GetCharacterQualityIcon(self.RecommendCharData.Quality))
+    local targetQualityName = XMVCA.XCharacter:GetCharacterQualityDesc(self.RecommendCharData.Quality)
+    if XTool.IsNumberValid(self.RecommendCharData.Star) then
+        targetQualityName = targetQualityName .. self.RecommendCharData.Star
+    end
+    self.BtnEvolution:SetNameByGroup(0, targetQualityName)
 
     -- 目标进度
     local progress = XMVCA.XTeamRecommend:GetServerCharacterTargetProgressAndCheckFinish(self.RecommendCharData)
@@ -169,10 +194,9 @@ function XUiTeamRecommendRoleTargetDetail:RefreshRole()
     if self.ImgProgress then
         self.ImgProgress.fillAmount = progress
     end
-    -- TODO: 修改共鸣预期接入后，完成度需支持任意攻击/任意技能的通配匹配。
 end
 
-function XUiTeamRecommendRoleTargetDetail:RefreshEquipment()
+function XUiTeamRecommendRoleTargetDetail:RefreshTargetOverview()
     self.PanelEquipmentUiObj.TxtTeamName.text = self.TargetName or ""
 
     -- 详情页只展示已存目标，删除入口常显
@@ -180,6 +204,24 @@ function XUiTeamRecommendRoleTargetDetail:RefreshEquipment()
 
     -- 详情页只展示已存目标，不存在“展示方案≠已存方案”的比较场景，6星武器切换标签恒隐藏。
     self.PanelEquipmentUiObj.BtnSwitch:ShowTag(false)
+
+    -- 阵容目标显示阵容配置标签，单人目标隐藏标签。
+    local target = XMVCA.XTeamRecommend:GetServerCharacterTarget(self.CharacterId)
+    local formationCfg
+    if target and not XTool.IsNumberValid(target.BaseCharacterId) then
+        formationCfg = XMVCA.XTeamRecommend:GetTeamRecommendFormation(target.TeamCfgId)
+    end
+
+    local tags = formationCfg and formationCfg.Tags or {}
+    local tagName = #tags > 0 and table.concat(tags, ",") or ""
+    self.TxtTagName.text = tagName
+    self.TagNode.gameObject:SetActiveEx(formationCfg ~= nil)
+    self.ImgRankBg.gameObject:SetActiveEx(formationCfg ~= nil)
+    if formationCfg then
+        local qualityTagName, qualityTagBg = XMVCA.XTeamRecommend:GetFormationQualityTag(formationCfg)
+        self.TxtTagRank.text = qualityTagName
+        self.ImgRankBg:SetSprite(qualityTagBg)
+    end
 end
 
 --- 目标武器的可穿戴候选装备id；无候选返回nil
@@ -252,7 +294,8 @@ function XUiTeamRecommendRoleTargetDetail:RefreshWeapon()
     -- 武器格
     if self.WeaponUiObj.EquipGrid then
         local wearingResonanceCount = isWearing and (XMVCA.XEquip:GetEquipResonanceCount(candidateEquipId) or 0) or 0
-        self.WeaponUiObj.EquipGrid:Refresh(weaponId, wearingResonanceCount, isWearing and candidateEquipId or nil)
+        local isTargetOverrun = XTool.IsNumberValid(recommendCharData.WeaponOverrunChoseSuit)
+        self.WeaponUiObj.EquipGrid:Refresh(weaponId, wearingResonanceCount, isTargetOverrun and isWearing and candidateEquipId or nil)
     end
 
     -- 共鸣技能
@@ -372,11 +415,13 @@ function XUiTeamRecommendRoleTargetDetail:RefreshPartner()
 
     -- 按钮状态
     local isAllCultureMax = isCarried and XMVCA.XPartner:GetOneKeyCultureAgency():IsPartnerAllCultureMax(candidatePartner:GetId())
+    local isSkillSlotFull = isCarried and XMVCA.XPartner.Util.IsSkillSlotFull(candidatePartner)
     self.PartnerUiObj.ImgMedalIconlock.gameObject:SetActiveEx(not isCarried)
     self.PartnerUiObj.BtnObtain.gameObject:SetActiveEx(not hasCandidate)
     self.PartnerUiObj.BtnWear.gameObject:SetActiveEx(hasCandidate and not isCarried)
     self.PartnerUiObj.BtnWear:ShowReddot(hasCandidate and not isCarried)
     self.PartnerUiObj.BtnUpgrade.gameObject:SetActiveEx(isCarried and not isAllCultureMax)
+    self.PartnerUiObj.BtnUpgrade:ShowReddot(not isSkillSlotFull)
     self.PartnerUiObj.BtnAchieve.gameObject:SetActiveEx(isCarried and isAllCultureMax)
 end
 
@@ -676,10 +721,8 @@ end
 
 function XUiTeamRecommendRoleTargetDetail:OnBtnAwarenessGetClick()
     XMVCA.XTeamRecommend:RecordRoleTargetDetailOperation(XGlobalVar.BtnUiTeamRecommendRoleTargetDetail.BtnObtainAwareness, self.RecommendCharData.CharacterId)
-    XLuaUiManager.Open("UiTeamRecommendExchangeCostPopup", self.RecommendCharData, function()
-        self:RefreshRole()
-        self:RefreshAwareness()
-    end)
+    -- 兑换弹窗可能跨战斗释放并恢复，不能持有当前界面闭包；销毁时通过事件解耦刷新
+    XLuaUiManager.Open("UiTeamRecommendExchangeCostPopup", self.RecommendCharData)
 end
 
 function XUiTeamRecommendRoleTargetDetail:OnBtnAwarenessWearClick()
@@ -690,6 +733,7 @@ function XUiTeamRecommendRoleTargetDetail:OnBtnAwarenessWearClick()
 
     local equipIds = {}
     local equipIdMap = {}
+    -- 1. 找出还没穿上目标意识的格子，为每个格子选择一件可穿戴装备
     for site = 1, XEnumConst.EQUIP.WEAR_AWARENESS_COUNT do
         local candidateEquipId = self:GetAwarenessCandidate(site)
         if XTool.IsNumberValid(candidateEquipId) and not XMVCA.XEquip:IsEquipWearingByCharacterId(candidateEquipId, characterId) and not equipIdMap[candidateEquipId] then

@@ -98,12 +98,12 @@ function XFangKuaiMove:GetMoveXTime(blockData, dimGridX)
 end
 
 function XFangKuaiMove:GetMoveYTime()
-    if self._MainControl:IsFever() then
-        -- 进入狂热状态时 加速方块上升和掉落
-        -- 这里有可能是无限循环小数 如果不确定精度 会导致异步等待和缓动不同步
-        local fevSpeed = string.format("%.2f", self._SpeedY / self._MainControl:GetFevSpeed())
-        return tonumber(fevSpeed)
-    end
+    --if self._MainControl:IsFever() then
+    --    -- 进入狂热状态时 加速方块上升和掉落
+    --    -- 这里有可能是无限循环小数 如果不确定精度 会导致异步等待和缓动不同步
+    --    local fevSpeed = string.format("%.2f", self._SpeedY / self._MainControl:GetFevSpeed())
+    --    return tonumber(fevSpeed)
+    --end
     return self._SpeedY
 end
 

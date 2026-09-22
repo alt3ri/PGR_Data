@@ -24,6 +24,20 @@ function XEquipAgency:InitEvent()
     --self:AddAgencyEvent()
 end
 
+---达到共鸣技能数量要求时，请求解锁意识一键共鸣功能。
+function XEquipAgency:TryUnlockAwarenessOneClickResonance()
+    local functionId = XFunctionManager.FunctionName.AwarenessOneClickResonance
+    if XFunctionManager.IsPlayerMark(functionId) then
+        return
+    end
+
+    if not XFunctionManager.JudgeCanOpen(functionId) then
+        return
+    end
+
+    XPlayer.ChangeMarks(functionId)
+end
+
 
 --============================================================== #region rpc ==============================================================
 -- 登陆初始化装备数据
@@ -1030,6 +1044,19 @@ end
 -- 获取所有装备的XEquip对象实例
 function XEquipAgency:GetEquipDic()
     return self._Model:GetEquipDic()
+end
+
+---获取玩家当前持有意识的共鸣技能总数。
+---@return number
+function XEquipAgency:GetAwarenessResonanceSkillCount()
+    local resonanceSkillCount = 0
+    for _, equip in pairs(self:GetEquipDic()) do
+        if equip:IsAwareness() then
+            resonanceSkillCount = resonanceSkillCount + equip:GetResonanceCount()
+        end
+    end
+
+    return resonanceSkillCount
 end
 
 -- 获取装备的配置表Id
@@ -2716,11 +2743,28 @@ function XEquipAgency:OpenUiEquipAwareness(characterId)
     XLuaUiManager.Open("UiEquipAwarenessV2P6", characterId)
 end
 
--- 打开意识一键养成主界面（先确保材料商店数据已拉取）
+--- 请求意识一键养成所需的商店数据。
+---@param cb function
+function XEquipAgency:_RequestAwarenessEnhanceShopInfo(cb)
+    if not XFunctionManager.DetectionFunction(XFunctionManager.FunctionName.ShopCommon, nil, true) then
+        cb()
+        return
+    end
+
+    XShopManager.GetBaseInfo(function()
+        -- 固定请求列表，避免同一缓存键因商店解锁状态变化而对应不同的商店集合。
+        XShopManager.GetShopInfoList({
+            XShopManager.MaterialShopId,
+            XGuildConfig.GuildPersonalShop,
+        }, cb, XShopManager.ActivityShopType.AwarenessOneKeyEnhance, true)
+    end)
+end
+
+-- 打开意识一键养成主界面
 function XEquipAgency:OpenUiEquipAwarenessEnhanceMain(characterId)
-    XShopManager.GetShopInfoList({ XShopManager.MaterialShopId, XGuildConfig.GuildPersonalShop }, function()
+    self:_RequestAwarenessEnhanceShopInfo(function()
         XLuaUiManager.Open("UiEquipAwarenessEnhanceMain", characterId)
-    end, XShopManager.ActivityShopType.AwarenessOneKeyEnhance)
+    end)
 end
 
 --- 打开武器一键养成主界面：按角色从推荐阵容拉取目标武器方案数据

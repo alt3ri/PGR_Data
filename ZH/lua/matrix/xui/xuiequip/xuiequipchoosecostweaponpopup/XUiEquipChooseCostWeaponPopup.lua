@@ -131,13 +131,26 @@ function XUiEquipChooseCostWeaponPopup:RefreshGridSelectedState()
     end
 end
 
+-- 全选按钮是否应处于选中态
+---@return boolean
+function XUiEquipChooseCostWeaponPopup:IsSelectAllChecked()
+    local selectedCount = self:GetSelectedEquipCount()
+    local maxCount = self.MaxSelectCount
+    if maxCount > 0 and selectedCount >= maxCount then
+        return true
+    end
+
+    local totalCount = #self.EquipIdList
+    return totalCount > 0 and selectedCount >= totalCount
+end
+
 -- 刷新已选择武器数量显示（x/y，y = 最大可选数量 = 共鸣技能数）
 function XUiEquipChooseCostWeaponPopup:RefreshChooseCount()
     local selectedCount = self:GetSelectedEquipCount()
     local maxCount = self.MaxSelectCount
     self.TxtChoosesNum.text = string.format("%d/%d", selectedCount, maxCount)
 
-    local isAllSelected = maxCount > 0 and selectedCount >= maxCount
+    local isAllSelected = self:IsSelectAllChecked()
     self.BtnSelectAll:SetButtonState(isAllSelected and CS.UiButtonState.Select or CS.UiButtonState.Normal)
 end
 
@@ -157,7 +170,7 @@ end
 -- 点击全选按钮：选满 MaxSelectCount 个（共鸣技能数），或全部取消
 function XUiEquipChooseCostWeaponPopup:OnBtnSelectAllClick()
     local maxCount = self.MaxSelectCount
-    local isSelectAll = maxCount > 0 and self:GetSelectedEquipCount() < maxCount
+    local isSelectAll = not self:IsSelectAllChecked()
     self.SelectedEquipIdMap = {}
     if isSelectAll then
         local selected = 0

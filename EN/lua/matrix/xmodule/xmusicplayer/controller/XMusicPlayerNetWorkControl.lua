@@ -86,7 +86,11 @@ function XMusicPlayerNetWorkControl:SendAllLickSetBGMRequest()
         XTool.CallFunctionOnNextFrame(function()  self:OnAllLickSetBGMReply(toAddMusicIDList)  end)
     else
         XNetwork.Call("AddAudioPlayerBackgroundSongRequest", { SongIds = toAddMusicIDList }, function(res)
-            if res.Code ~= XCode.Success then XLog.Error("AddAudioPlayerBackgroundSongRequest fail, code = " .. tostring(res.Code))  return end
+            if res.Code ~= XCode.Success then 
+                XLog.Error("AddAudioPlayerBackgroundSongRequest fail, code = " .. tostring(res.Code)) 
+                XUiManager.TipCode(res.Code)
+                return
+            end
             self:OnAllLickSetBGMReply(toAddMusicIDList)
         end)
     end
@@ -121,8 +125,12 @@ function XMusicPlayerNetWorkControl:SendBGMListResetRequest()
         XTool.CallFunctionOnNextFrame(function()  self:OnBGMListResetReply()  end)
     else
         XNetwork.Call("ResetAudioPlayerBackgroundSongRequest", nil, function(res)
-            if res.Code ~= XCode.Success then XLog.Error("ResetAudioPlayerBackgroundSongRequest fail, code = " .. tostring(res.Code))  return end
-            self:OnBGMListResetReply()
+            if res.Code ~= XCode.Success then 
+                XLog.Error("ResetAudioPlayerBackgroundSongRequest fail, code = " .. tostring(res.Code)) 
+                XUiManager.TipCode(res.Code) 
+                return 
+            end           
+            self:OnBGMListResetReply(res.BackgroundSongs)
         end)
     end
 end
@@ -133,14 +141,13 @@ function XMusicPlayerNetWorkControl:OnBGMListResetReply(musicList)
     local bgmList = musicListModel:GetAndModifyMusicListByListType(XMusicPlayerEnum.MusicListType.BGM)
     table.clear(bgmList)
 
-    local defaultSongId = self:_GetConfigControl():GetDefaultBackgroundSongId()
-    if XTool.IsNumberValid(defaultSongId) then
-        table.insert(bgmList, defaultSongId)
+    for _, musicID in ipairs(musicList) do
+        table.insert(bgmList, musicID)
     end
 
     self._Model:GetCommonSystemBgmModel():MarkChangedAndReset()
     self._MainControl:DispatchEvent(XMVCA.XMusicPlayer.EventIds.EVENT_MUSICLIST_UPDATE, XMusicPlayerEnum.MusicListType.BGM)
-    self._MainControl:DispatchEvent(XMVCA.XMusicPlayer.EventIds.EVENT_REPLY_BGMLIST_RESET, XMusicPlayerEnum.MusicListType.BGM, defaultSongId)
+    self._MainControl:DispatchEvent(XMVCA.XMusicPlayer.EventIds.EVENT_REPLY_BGMLIST_RESET, XMusicPlayerEnum.MusicListType.BGM, bgmList[1])
 end
 
 
@@ -164,7 +171,11 @@ function XMusicPlayerNetWorkControl:SendAddLikeMusicRequest(musicID)
         XTool.CallFunctionOnNextFrame(function()  self:OnAddLikeMusicReply(musicID)  end)
     else
         XNetwork.Call("AddAudioPlayerFavoriteSongRequest", { SongId = musicID }, function(res)
-            if res.Code ~= XCode.Success then XLog.Error("AddAudioPlayerFavoriteSongRequest fail, code = " .. tostring(res.Code))  return end
+            if res.Code ~= XCode.Success then 
+                XLog.Error("AddAudioPlayerFavoriteSongRequest fail, code = " .. tostring(res.Code)) 
+                XUiManager.TipCode(res.Code) 
+                return 
+            end
             self:OnAddLikeMusicReply(musicID)
         end)
     end
@@ -199,7 +210,11 @@ function XMusicPlayerNetWorkControl:SendRemoveLikeMusicRequest(musicID)
         XTool.CallFunctionOnNextFrame(function()  self:OnRemoveLikeMusicReply(musicID)  end)
     else
         XNetwork.Call("RemoveAudioPlayerFavoriteSongRequest", { SongId = musicID }, function(res)
-            if res.Code ~= XCode.Success then XLog.Error("RemoveAudioPlayerFavoriteSongRequest fail, code = " .. tostring(res.Code))  return end
+            if res.Code ~= XCode.Success then 
+                XLog.Error("RemoveAudioPlayerFavoriteSongRequest fail, code = " .. tostring(res.Code)) 
+                XUiManager.TipCode(res.Code) 
+                return 
+            end
             self:OnRemoveLikeMusicReply(musicID)
         end)
     end
@@ -237,7 +252,11 @@ function XMusicPlayerNetWorkControl:SendAddBGMMusicRequest(musicID)
         XTool.CallFunctionOnNextFrame(function()  self:OnAddBgmMusicReply(musicID)  end)
     else
         XNetwork.Call("AddAudioPlayerBackgroundSongRequest", { SongIds = { musicID } }, function(res)
-            if res.Code ~= XCode.Success then XLog.Error("AddAudioPlayerBackgroundSongRequest fail, code = " .. tostring(res.Code))  return end
+            if res.Code ~= XCode.Success then 
+                XLog.Error("AddAudioPlayerBackgroundSongRequest fail, code = " .. tostring(res.Code)) 
+                XUiManager.TipCode(res.Code) 
+                return 
+            end
             self:OnAddBgmMusicReply(musicID)
         end)
     end
@@ -278,7 +297,11 @@ function XMusicPlayerNetWorkControl:SendRemoveBgmMusicRequest(musicID)
         XTool.CallFunctionOnNextFrame(function()  self:OnRemoveBgmMusicReply(musicID)  end)
     else
         XNetwork.Call("RemoveAudioPlayerBackgroundSongRequest", { SongId = musicID }, function(res)
-            if res.Code ~= XCode.Success then XLog.Error("RemoveAudioPlayerBackgroundSongRequest fail, code = " .. tostring(res.Code))  return end
+            if res.Code ~= XCode.Success then 
+                XLog.Error("RemoveAudioPlayerBackgroundSongRequest fail, code = " .. tostring(res.Code)) 
+                XUiManager.TipCode(res.Code) 
+                return 
+            end
             self:OnRemoveBgmMusicReply(musicID)
         end)
     end
@@ -297,14 +320,10 @@ function XMusicPlayerNetWorkControl:OnRemoveBgmMusicReply(musicID)
 end
 
 
-
-
-
-
-
----@param index number Lua/客户端 1-based 索引
----@param isUp  boolean true=置顶，头插；false=向下移动
-function XMusicPlayerNetWorkControl:SendBgmMusicIndexChangeRequest(index, isUp)
+---@param index   number Lua/客户端 1-based 索引
+---@param isUp    boolean true=置顶，头插；false=向下移动
+---@param musicId number 当前移动的歌曲 Id
+function XMusicPlayerNetWorkControl:SendBgmMusicIndexChangeRequest(index, isUp, musicId)
     if not self:_CheckCanSendAndTipWhenFaild() then return end
 
     -- 边界校验：列表内 + 不在端点反方向越界
@@ -323,18 +342,22 @@ function XMusicPlayerNetWorkControl:SendBgmMusicIndexChangeRequest(index, isUp)
 
 
     if isInDebug then
-        XTool.CallFunctionOnNextFrame(function()  self:OnBgmMusicIndexChangeReply(index, isUp)  end)
+        XTool.CallFunctionOnNextFrame(function()  self:OnBgmMusicIndexChangeReply(index, isUp, musicId)  end)
     else
         local serverIndex = self:_LuaIndex2ServerIndex(index, count)
-        local req = { Index = serverIndex, MoveType = isUp and 1 or 2 }
+        local req = { Index = serverIndex, MoveType = isUp and 1 or 2, SongId = musicId }
         XNetwork.Call("MoveAudioPlayerBackgroundSongRequest", req, function(res)
-            if res.Code ~= XCode.Success then XLog.Error("MoveAudioPlayerBackgroundSongRequest fail, code = " .. tostring(res.Code))  return end
-            self:OnBgmMusicIndexChangeReply(index, isUp)
+            if res.Code ~= XCode.Success then 
+                XLog.Error("MoveAudioPlayerBackgroundSongRequest fail, code = " .. tostring(res.Code)) 
+                XUiManager.TipCode(res.Code) 
+                return 
+            end
+            self:OnBgmMusicIndexChangeReply(index, isUp, musicId)
         end)
     end
 end
 
-function XMusicPlayerNetWorkControl:OnBgmMusicIndexChangeReply(index, isUp)
+function XMusicPlayerNetWorkControl:OnBgmMusicIndexChangeReply(index, isUp, musicId)
     local XMusicPlayerEnum = XMVCA.XMusicPlayer.Enum
     local bgmList = self._Model:GetMusicListModel():GetAndModifyMusicListByListType(XMusicPlayerEnum.MusicListType.BGM)
 
@@ -354,16 +377,42 @@ function XMusicPlayerNetWorkControl:OnBgmMusicIndexChangeReply(index, isUp)
 end
 
 
-
-function XMusicPlayerNetWorkControl:_OnNotifyBgmListChange()
+function XMusicPlayerNetWorkControl:_OnNotifyBgmListChange(oldList)
     local XMusicPlayerEnum = XMVCA.XMusicPlayer.Enum
+    local listType = XMusicPlayerEnum.MusicListType.BGM
     self._Model:GetCommonSystemBgmModel():MarkChangedAndReset()
-    self._MainControl:DispatchEvent(XMVCA.XMusicPlayer.EventIds.EVENT_MUSICLIST_UPDATE, XMusicPlayerEnum.MusicListType.BGM)
+    self:_OnNotifyMusicListChange(listType, oldList)
 end
 
-function XMusicPlayerNetWorkControl:_OnNotifyFavoriteListChange()
+function XMusicPlayerNetWorkControl:_OnNotifyFavoriteListChange(oldList)
     local XMusicPlayerEnum = XMVCA.XMusicPlayer.Enum
-    self._MainControl:DispatchEvent(XMVCA.XMusicPlayer.EventIds.EVENT_MUSICLIST_UPDATE, XMusicPlayerEnum.MusicListType.Favorite)
+    self:_OnNotifyMusicListChange(XMusicPlayerEnum.MusicListType.Favorite, oldList)
+end
+
+function XMusicPlayerNetWorkControl:_OnNotifyMusicListChange(listType, oldList)
+    local newList = self._Model:GetMusicListModel():GetMusicListByListType(listType) or table.empty
+    oldList = oldList or table.empty
+
+    local curMusicId = self._Model:GetCDViewModel():GetCurPlayingMusicID()
+    if curMusicId and table.contains(oldList, curMusicId) and not table.contains(newList, curMusicId) then
+        self._MainControl:DispatchEvent(XMVCA.XMusicPlayer.EventIds.EVENT_REPLY_MUISC_REMOVE_FROM_LIST, listType, curMusicId)
+    end
+
+    for i = 1, #oldList do
+        local musicId = oldList[i]
+        if musicId ~= curMusicId and not table.contains(newList, musicId) then
+            self._MainControl:DispatchEvent(XMVCA.XMusicPlayer.EventIds.EVENT_REPLY_MUISC_REMOVE_FROM_LIST, listType, musicId)
+        end
+    end
+
+    for i = 1, #newList do
+        local musicId = newList[i]
+        if not table.contains(oldList, musicId) then
+            self._MainControl:DispatchEvent(XMVCA.XMusicPlayer.EventIds.EVENT_REPLY_BGM_ADD_TO_LIST, listType, musicId)
+        end
+    end
+
+    self._MainControl:DispatchEvent(XMVCA.XMusicPlayer.EventIds.EVENT_MUSICLIST_UPDATE, listType)
 end
 
 

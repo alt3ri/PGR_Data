@@ -98,6 +98,10 @@ XMusicPlayerEnum.UiMaterialKey = {
     Sanjiao2      = "Sanjiao2",
 }
 
+XMusicPlayerEnum.AudioName = {
+    cdSFXSwitch = "cdSFXSwitch",
+}
+ 
 return XMusicPlayerEnum
 
 

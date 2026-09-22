@@ -74,6 +74,17 @@ function XHeroSdkManager.IsGuestUserType(userType)
             or userType == "Guest"
 end
 
+function XHeroSdkManager.IsOfficialChannel()
+    local channelId = CS.XHeroSdkAgent.GetChannelId()
+    local channelIds = string.Split(CS.XGame.ClientConfig:GetString("CommonChannelIds"), "|")
+    for _, id in ipairs(channelIds) do
+        if channelId == tonumber(id) then
+            return true
+        end
+    end
+    return false
+end
+
 function XHeroSdkManager.UpdateCallbackUrl()
     LoadPayCallback()
 end

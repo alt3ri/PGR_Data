@@ -5942,6 +5942,45 @@
     },
     {
         "Id": 458,
+        "ActionId": 5000,
+        "NextActionId": null,
+        "Type": 101,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": "DialogDisable",
+        "EndAnim": null,
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}"
+    },
+    {
+        "Id": 459,
+        "ActionId": 460,
+        "NextActionId": null,
+        "Type": 302,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": "AniZhuanchangEnd",
+        "EndAnim": null,
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{2: '...Vera?', 3: '461'}"
+    },
+    {
+        "Id": 460,
+        "ActionId": 461,
+        "NextActionId": null,
+        "Type": 501,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": null,
+        "EndAnim": null,
+        "BeginDelay": null,
+        "EndDelay": 50.0,
+        "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}"
+    },
+    {
+        "Id": 461,
         "ActionId": 458,
         "NextActionId": null,
         "Type": 101,
@@ -5954,7 +5993,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/Bgstory466.jpg'}"
     },
     {
-        "Id": 459,
+        "Id": 462,
         "ActionId": 459,
         "NextActionId": null,
         "Type": 201,
@@ -5967,46 +6006,20 @@
         "Params": "{1: '1', 2: '501239', 3: '8', 7: '1'}"
     },
     {
-        "Id": 460,
-        "ActionId": 460,
-        "NextActionId": null,
-        "Type": 302,
-        "IsBlock": null,
-        "IsEnd": null,
-        "BeginAnim": null,
-        "EndAnim": null,
-        "BeginDelay": null,
-        "EndDelay": null,
-        "Params": "{2: '...Vera?', 3: '461'}"
-    },
-    {
-        "Id": 461,
-        "ActionId": 461,
-        "NextActionId": null,
-        "Type": 501,
-        "IsBlock": null,
-        "IsEnd": null,
-        "BeginAnim": null,
-        "EndAnim": null,
-        "BeginDelay": null,
-        "EndDelay": null,
-        "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}"
-    },
-    {
-        "Id": 462,
+        "Id": 463,
         "ActionId": 462,
         "NextActionId": null,
         "Type": 301,
         "IsBlock": null,
         "IsEnd": null,
-        "BeginAnim": "AniZhuanchangEnd",
+        "BeginAnim": "DialogEnable",
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
         "Params": "{1: '1', 3: 'Vera sits upright in the bedside chair with her arms crossed. Her eyes are tightly shut and her brow deeply furrowed, likely experiencing something unpleasant in her sleep mode.'}"
     },
     {
-        "Id": 463,
+        "Id": 464,
         "ActionId": 463,
         "NextActionId": null,
         "Type": 302,
@@ -6019,7 +6032,7 @@
         "Params": "{2: '(Should I help her out?)', 3: '464'}"
     },
     {
-        "Id": 464,
+        "Id": 465,
         "ActionId": 464,
         "NextActionId": null,
         "Type": 401,
@@ -6032,7 +6045,7 @@
         "Params": "{1: '2', 2: '4044'}"
     },
     {
-        "Id": 465,
+        "Id": 466,
         "ActionId": 465,
         "NextActionId": null,
         "Type": 202,
@@ -6045,7 +6058,7 @@
         "Params": "{1: '1'}"
     },
     {
-        "Id": 466,
+        "Id": 467,
         "ActionId": 466,
         "NextActionId": null,
         "Type": 104,
@@ -6058,7 +6071,7 @@
         "Params": "{1: '0|0|-50', 2: '0.25'}"
     },
     {
-        "Id": 467,
+        "Id": 468,
         "ActionId": 467,
         "NextActionId": null,
         "Type": 301,
@@ -6071,7 +6084,7 @@
         "Params": "{3: 'The view shifts upward with effort\u2014you<//Eve> rise up from the hospital bed and reach out toward the red-haired Construct.'}"
     },
     {
-        "Id": 468,
+        "Id": 469,
         "ActionId": 468,
         "NextActionId": null,
         "Type": 302,
@@ -6084,7 +6097,7 @@
         "Params": "{2: '(Let me try... a M.I.N.D. connection.)', 3: '469'}"
     },
     {
-        "Id": 469,
+        "Id": 470,
         "ActionId": 469,
         "NextActionId": null,
         "Type": 401,
@@ -6097,7 +6110,7 @@
         "Params": "{1: '2', 2: '2567'}"
     },
     {
-        "Id": 470,
+        "Id": 471,
         "ActionId": 470,
         "NextActionId": null,
         "Type": 501,
@@ -6110,7 +6123,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie1New.prefab', 2: '3'}"
     },
     {
-        "Id": 471,
+        "Id": 472,
         "ActionId": 471,
         "NextActionId": null,
         "Type": 505,
@@ -6123,7 +6136,7 @@
         "Params": "{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiLianjie1New.prefab'}"
     },
     {
-        "Id": 472,
+        "Id": 473,
         "ActionId": 472,
         "NextActionId": null,
         "Type": 101,
@@ -6136,7 +6149,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}"
     },
     {
-        "Id": 473,
+        "Id": 474,
         "ActionId": 473,
         "NextActionId": null,
         "Type": 301,
@@ -6149,7 +6162,7 @@
         "Params": "{3: 'You sink into the connection, doing your best to soothe her turbulent M.I.N.D.'}"
     },
     {
-        "Id": 474,
+        "Id": 475,
         "ActionId": 474,
         "NextActionId": null,
         "Type": 301,
@@ -6162,7 +6175,7 @@
         "Params": "{3: 'But before long, you pull away with a look of surprise, uttering a single name.'}"
     },
     {
-        "Id": 475,
+        "Id": 476,
         "ActionId": 475,
         "NextActionId": null,
         "Type": 302,
@@ -6175,7 +6188,7 @@
         "Params": "{2: '...Kurono...?', 3: '476'}"
     },
     {
-        "Id": 476,
+        "Id": 477,
         "ActionId": 476,
         "NextActionId": null,
         "Type": 101,
@@ -6188,7 +6201,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/Bgstory466.jpg'}"
     },
     {
-        "Id": 477,
+        "Id": 478,
         "ActionId": 477,
         "NextActionId": null,
         "Type": 301,
@@ -6201,7 +6214,7 @@
         "Params": "{3: 'You stare silently at Vera for a long time, then reach out to touch the bandage on your side.'}"
     },
     {
-        "Id": 478,
+        "Id": 479,
         "ActionId": 478,
         "NextActionId": null,
         "Type": 301,
@@ -6214,7 +6227,7 @@
         "Params": "{3: 'Your gaze shifts to the apple at the bedside, along with a glass of water\u2014the stale water has been replaced.'}"
     },
     {
-        "Id": 479,
+        "Id": 480,
         "ActionId": 479,
         "NextActionId": null,
         "Type": 302,
@@ -6227,7 +6240,7 @@
         "Params": "{2: \"...This isn't right.\", 3: '480', 4: 'What will you do?', 5: '480'}"
     },
     {
-        "Id": 480,
+        "Id": 481,
         "ActionId": 480,
         "NextActionId": null,
         "Type": 301,
@@ -6240,7 +6253,7 @@
         "Params": "{3: 'You reach for your terminal and make note of something.'}"
     },
     {
-        "Id": 481,
+        "Id": 482,
         "ActionId": 481,
         "NextActionId": null,
         "Type": 301,
@@ -6253,7 +6266,7 @@
         "Params": "{3: \"Then, taking a deep breath, you reconnect to Vera's M.I.N.D.\"}"
     },
     {
-        "Id": 482,
+        "Id": 483,
         "ActionId": 482,
         "NextActionId": null,
         "Type": 501,
@@ -6266,7 +6279,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}"
     },
     {
-        "Id": 483,
+        "Id": 484,
         "ActionId": 483,
         "NextActionId": null,
         "Type": 504,
@@ -6279,7 +6292,7 @@
         "Params": "{1: '0'}"
     },
     {
-        "Id": 484,
+        "Id": 485,
         "ActionId": 484,
         "NextActionId": null,
         "Type": 401,
@@ -6292,7 +6305,7 @@
         "Params": "{1: '2', 2: '4386'}"
     },
     {
-        "Id": 485,
+        "Id": 486,
         "ActionId": 485,
         "NextActionId": null,
         "Type": 101,
@@ -6305,7 +6318,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}"
     },
     {
-        "Id": 486,
+        "Id": 487,
         "ActionId": 486,
         "NextActionId": null,
         "Type": 201,
@@ -6318,7 +6331,7 @@
         "Params": "{1: '1', 2: '500928'}"
     },
     {
-        "Id": 487,
+        "Id": 488,
         "ActionId": 487,
         "NextActionId": null,
         "Type": 301,
@@ -6331,7 +6344,7 @@
         "Params": "{1: '1', 2: 'Eve', 3: '...Why would you do this? Why am I [happy]?', 4: '1'}"
     },
     {
-        "Id": 488,
+        "Id": 489,
         "ActionId": 488,
         "NextActionId": null,
         "Type": 302,
@@ -6344,7 +6357,7 @@
         "Params": "{2: 'Can you understand?', 3: '489', 4: 'How do you like it?', 5: '490'}"
     },
     {
-        "Id": 489,
+        "Id": 490,
         "ActionId": 489,
         "NextActionId": 491.0,
         "Type": 301,
@@ -6357,7 +6370,7 @@
         "Params": "{2: 'Eve', 3: 'Understand...?', 4: '1'}"
     },
     {
-        "Id": 490,
+        "Id": 491,
         "ActionId": 490,
         "NextActionId": 491.0,
         "Type": 301,
@@ -6370,7 +6383,7 @@
         "Params": "{2: 'Eve', 3: 'Is it... good?', 4: '1'}"
     },
     {
-        "Id": 491,
+        "Id": 492,
         "ActionId": 491,
         "NextActionId": null,
         "Type": 202,
@@ -6383,7 +6396,7 @@
         "Params": "{1: '1'}"
     },
     {
-        "Id": 492,
+        "Id": 493,
         "ActionId": 492,
         "NextActionId": null,
         "Type": 301,
@@ -6396,7 +6409,7 @@
         "Params": "{3: 'You<//Eve> wander through your memories.'}"
     },
     {
-        "Id": 493,
+        "Id": 494,
         "ActionId": 493,
         "NextActionId": null,
         "Type": 301,
@@ -6409,7 +6422,7 @@
         "Params": "{3: 'After tasting a portion of it, Eve gradually lost her smile, feeling that she was becoming entangled in the threads of fate just like her mother<//father>.'}"
     },
     {
-        "Id": 494,
+        "Id": 495,
         "ActionId": 494,
         "NextActionId": null,
         "Type": 301,
@@ -6422,7 +6435,7 @@
         "Params": "{3: 'Their thoughts grow heavy, each successive interpretation becoming more and more burdensome.'}"
     },
     {
-        "Id": 495,
+        "Id": 496,
         "ActionId": 495,
         "NextActionId": null,
         "Type": 201,
@@ -6435,7 +6448,7 @@
         "Params": "{1: '1', 2: '500928'}"
     },
     {
-        "Id": 496,
+        "Id": 497,
         "ActionId": 496,
         "NextActionId": null,
         "Type": 301,
@@ -6448,7 +6461,7 @@
         "Params": "{1: '1', 2: 'Eve', 3: '[Love], incomprehensible.', 4: '1'}"
     },
     {
-        "Id": 497,
+        "Id": 498,
         "ActionId": 497,
         "NextActionId": null,
         "Type": 301,
@@ -6461,7 +6474,7 @@
         "Params": "{2: 'Eve', 3: 'What else? Is there anything easier to understand?', 4: '1'}"
     },
     {
-        "Id": 498,
+        "Id": 499,
         "ActionId": 498,
         "NextActionId": null,
         "Type": 202,
@@ -6474,7 +6487,7 @@
         "Params": "{1: '1'}"
     },
     {
-        "Id": 499,
+        "Id": 500,
         "ActionId": 499,
         "NextActionId": null,
         "Type": 401,
@@ -6487,7 +6500,7 @@
         "Params": "{1: '1', 2: '36'}"
     },
     {
-        "Id": 500,
+        "Id": 501,
         "ActionId": 500,
         "NextActionId": null,
         "Type": 301,
@@ -6500,7 +6513,7 @@
         "Params": "{3: 'With the aid of Punishing energy, they step into yet another place.'}"
     },
     {
-        "Id": 501,
+        "Id": 502,
         "ActionId": 501,
         "NextActionId": null,
         "Type": 401,
@@ -6513,7 +6526,7 @@
         "Params": "{1: '1', 2: '296'}"
     },
     {
-        "Id": 502,
+        "Id": 503,
         "ActionId": 502,
         "NextActionId": null,
         "Type": 501,
@@ -6526,7 +6539,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}"
     },
     {
-        "Id": 503,
+        "Id": 504,
         "ActionId": 503,
         "NextActionId": null,
         "Type": 504,
@@ -6539,7 +6552,7 @@
         "Params": "{1: '0.7'}"
     },
     {
-        "Id": 504,
+        "Id": 505,
         "ActionId": 504,
         "NextActionId": null,
         "Type": 401,
@@ -6552,7 +6565,7 @@
         "Params": "{1: '2', 2: '4386'}"
     },
     {
-        "Id": 505,
+        "Id": 506,
         "ActionId": 505,
         "NextActionId": null,
         "Type": 101,
@@ -6565,7 +6578,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/Bgstory10.jpg'}"
     },
     {
-        "Id": 506,
+        "Id": 507,
         "ActionId": 506,
         "NextActionId": null,
         "Type": 201,
@@ -6578,7 +6591,7 @@
         "Params": "{1: '3', 2: '500293', 3: '7', 7: '1'}"
     },
     {
-        "Id": 507,
+        "Id": 508,
         "ActionId": 507,
         "NextActionId": null,
         "Type": 301,
@@ -6591,7 +6604,7 @@
         "Params": "{1: '1', 2: 'Vanessa', 3: 'So the eavesdropper... has taken an interest in our casual chat...?', 4: '3'}"
     },
     {
-        "Id": 508,
+        "Id": 509,
         "ActionId": 508,
         "NextActionId": null,
         "Type": 202,
@@ -6604,7 +6617,7 @@
         "Params": "{1: '3', 6: '1'}"
     },
     {
-        "Id": 509,
+        "Id": 510,
         "ActionId": 509,
         "NextActionId": null,
         "Type": 201,
@@ -6617,7 +6630,7 @@
         "Params": "{1: '1', 2: '500260', 4: '-200', 5: '-100', 7: '1'}"
     },
     {
-        "Id": 510,
+        "Id": 511,
         "ActionId": 510,
         "NextActionId": null,
         "Type": 201,
@@ -6630,7 +6643,7 @@
         "Params": "{1: '2', 2: '501236', 4: '200', 7: '1'}"
     },
     {
-        "Id": 511,
+        "Id": 512,
         "ActionId": 511,
         "NextActionId": null,
         "Type": 301,
@@ -6643,7 +6656,7 @@
         "Params": "{1: '1', 2: 'Girl', 3: 'Die... die... DIE!!', 4: '1'}"
     },
     {
-        "Id": 512,
+        "Id": 513,
         "ActionId": 512,
         "NextActionId": null,
         "Type": 301,
@@ -6656,7 +6669,7 @@
         "Params": "{2: 'Girl', 3: 'Let him die! Kill him, now!!!', 4: '1'}"
     },
     {
-        "Id": 513,
+        "Id": 514,
         "ActionId": 513,
         "NextActionId": null,
         "Type": 202,
@@ -6669,7 +6682,7 @@
         "Params": "{1: '1', 2: '2', 6: '1'}"
     },
     {
-        "Id": 514,
+        "Id": 515,
         "ActionId": 514,
         "NextActionId": null,
         "Type": 501,
@@ -6682,7 +6695,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}"
     },
     {
-        "Id": 515,
+        "Id": 516,
         "ActionId": 515,
         "NextActionId": null,
         "Type": 504,
@@ -6695,7 +6708,7 @@
         "Params": "{1: '0'}"
     },
     {
-        "Id": 516,
+        "Id": 517,
         "ActionId": 516,
         "NextActionId": null,
         "Type": 401,
@@ -6708,7 +6721,7 @@
         "Params": "{1: '2', 2: '4386'}"
     },
     {
-        "Id": 517,
+        "Id": 518,
         "ActionId": 517,
         "NextActionId": null,
         "Type": 101,
@@ -6721,7 +6734,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}"
     },
     {
-        "Id": 518,
+        "Id": 519,
         "ActionId": 518,
         "NextActionId": null,
         "Type": 201,
@@ -6734,7 +6747,7 @@
         "Params": "{1: '1', 2: '500928'}"
     },
     {
-        "Id": 519,
+        "Id": 520,
         "ActionId": 519,
         "NextActionId": null,
         "Type": 301,
@@ -6747,7 +6760,7 @@
         "Params": "{1: '1', 2: 'Eve', 3: '(Rapidly exits.)', 4: '1'}"
     },
     {
-        "Id": 520,
+        "Id": 521,
         "ActionId": 520,
         "NextActionId": null,
         "Type": 301,
@@ -6760,7 +6773,7 @@
         "Params": "{2: 'Eve', 3: 'W-wait, wait... Is this right?', 4: '1'}"
     },
     {
-        "Id": 521,
+        "Id": 522,
         "ActionId": 521,
         "NextActionId": null,
         "Type": 202,
@@ -6773,7 +6786,7 @@
         "Params": "{1: '1'}"
     },
     {
-        "Id": 522,
+        "Id": 523,
         "ActionId": 522,
         "NextActionId": null,
         "Type": 301,
@@ -6786,7 +6799,7 @@
         "Params": "{3: 'They glimpse Haynes, the creator who made them, while emotions splash out like blood drenching their entire being. Instinctively, they choose to withdraw.'}"
     },
     {
-        "Id": 523,
+        "Id": 524,
         "ActionId": 523,
         "NextActionId": null,
         "Type": 501,
@@ -6799,7 +6812,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}"
     },
     {
-        "Id": 524,
+        "Id": 525,
         "ActionId": 524,
         "NextActionId": null,
         "Type": 504,
@@ -6812,7 +6825,7 @@
         "Params": "{1: '0.7'}"
     },
     {
-        "Id": 525,
+        "Id": 526,
         "ActionId": 525,
         "NextActionId": null,
         "Type": 401,
@@ -6825,7 +6838,7 @@
         "Params": "{1: '2', 2: '4386'}"
     },
     {
-        "Id": 526,
+        "Id": 527,
         "ActionId": 526,
         "NextActionId": null,
         "Type": 101,
@@ -6838,7 +6851,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/Bgstory10.jpg'}"
     },
     {
-        "Id": 527,
+        "Id": 528,
         "ActionId": 527,
         "NextActionId": null,
         "Type": 201,
@@ -6851,7 +6864,7 @@
         "Params": "{1: '1', 2: '501236', 3: '5'}"
     },
     {
-        "Id": 528,
+        "Id": 529,
         "ActionId": 528,
         "NextActionId": null,
         "Type": 301,
@@ -6864,7 +6877,7 @@
         "Params": "{1: '1', 2: 'Haynes', 3: '...All... wrong...', 4: '1'}"
     },
     {
-        "Id": 529,
+        "Id": 530,
         "ActionId": 529,
         "NextActionId": null,
         "Type": 301,
@@ -6877,7 +6890,7 @@
         "Params": "{2: 'Haynes', 3: 'You think...', 4: '1'}"
     },
     {
-        "Id": 530,
+        "Id": 531,
         "ActionId": 530,
         "NextActionId": null,
         "Type": 204,
@@ -6890,7 +6903,7 @@
         "Params": "{1: '1'}"
     },
     {
-        "Id": 531,
+        "Id": 532,
         "ActionId": 531,
         "NextActionId": null,
         "Type": 301,
@@ -6903,7 +6916,7 @@
         "Params": "{1: '1', 2: 'Haynes', 3: 'You... deserve this... hah...', 4: '1'}"
     },
     {
-        "Id": 532,
+        "Id": 533,
         "ActionId": 532,
         "NextActionId": null,
         "Type": 301,
@@ -6916,7 +6929,7 @@
         "Params": "{2: 'Haynes', 3: 'Hah hah hah... I... did it... The new seed... has already...', 4: '1'}"
     },
     {
-        "Id": 533,
+        "Id": 534,
         "ActionId": 533,
         "NextActionId": null,
         "Type": 202,
@@ -6929,7 +6942,7 @@
         "Params": "{1: '1', 6: '1'}"
     },
     {
-        "Id": 534,
+        "Id": 535,
         "ActionId": 534,
         "NextActionId": null,
         "Type": 501,
@@ -6942,7 +6955,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '2'}"
     },
     {
-        "Id": 535,
+        "Id": 536,
         "ActionId": 535,
         "NextActionId": null,
         "Type": 504,
@@ -6955,7 +6968,7 @@
         "Params": "{1: '0'}"
     },
     {
-        "Id": 536,
+        "Id": 537,
         "ActionId": 536,
         "NextActionId": null,
         "Type": 401,
@@ -6968,7 +6981,7 @@
         "Params": "{1: '2', 2: '4386'}"
     },
     {
-        "Id": 537,
+        "Id": 538,
         "ActionId": 537,
         "NextActionId": null,
         "Type": 101,
@@ -6981,7 +6994,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/BgStory00.png'}"
     },
     {
-        "Id": 538,
+        "Id": 539,
         "ActionId": 538,
         "NextActionId": null,
         "Type": 301,
@@ -6994,7 +7007,7 @@
         "Params": "{3: 'They cannot understand why humans are slaughtering each other, with their own creator leading the carnage.'}"
     },
     {
-        "Id": 539,
+        "Id": 540,
         "ActionId": 539,
         "NextActionId": null,
         "Type": 201,
@@ -7007,7 +7020,7 @@
         "Params": "{1: '1', 2: '500928'}"
     },
     {
-        "Id": 540,
+        "Id": 541,
         "ActionId": 540,
         "NextActionId": null,
         "Type": 301,
@@ -7020,7 +7033,7 @@
         "Params": "{1: '1', 2: 'Eve', 3: \"No, no... Don't look at these.\", 4: '1'}"
     },
     {
-        "Id": 541,
+        "Id": 542,
         "ActionId": 541,
         "NextActionId": null,
         "Type": 301,
@@ -7033,7 +7046,7 @@
         "Params": "{3: 'But \"silk threads\" have already silently entwined themselves around Eve, preventing her escape attempt.'}"
     },
     {
-        "Id": 542,
+        "Id": 543,
         "ActionId": 542,
         "NextActionId": null,
         "Type": 301,
@@ -7046,7 +7059,7 @@
         "Params": "{3: 'You seem to be looking down at her past as well, responding to her panic with a contemptuous laugh.'}"
     },
     {
-        "Id": 543,
+        "Id": 544,
         "ActionId": 543,
         "NextActionId": null,
         "Type": 302,
@@ -7059,7 +7072,7 @@
         "Params": "{2: 'Is it [painful]?', 3: '544', 4: 'Can you shoulder the burden?', 5: '544'}"
     },
     {
-        "Id": 544,
+        "Id": 545,
         "ActionId": 544,
         "NextActionId": null,
         "Type": 301,
@@ -7072,7 +7085,7 @@
         "Params": "{2: 'Eve', 3: 'No... Let me go!', 4: '1'}"
     },
     {
-        "Id": 545,
+        "Id": 546,
         "ActionId": 545,
         "NextActionId": null,
         "Type": 302,
@@ -7085,7 +7098,7 @@
         "Params": "{2: '...cunning and arrogant beast.', 3: '546'}"
     },
     {
-        "Id": 546,
+        "Id": 547,
         "ActionId": 546,
         "NextActionId": null,
         "Type": 302,
@@ -7098,7 +7111,7 @@
         "Params": "{2: 'You want this? Then take it.', 3: '547'}"
     },
     {
-        "Id": 547,
+        "Id": 548,
         "ActionId": 547,
         "NextActionId": null,
         "Type": 301,
@@ -7111,7 +7124,7 @@
         "Params": "{2: 'Eve', 3: '!', 4: '1'}"
     },
     {
-        "Id": 548,
+        "Id": 549,
         "ActionId": 548,
         "NextActionId": null,
         "Type": 401,
@@ -7124,7 +7137,7 @@
         "Params": "{1: '2', 2: '721'}"
     },
     {
-        "Id": 549,
+        "Id": 550,
         "ActionId": 549,
         "NextActionId": null,
         "Type": 203,
@@ -7137,7 +7150,7 @@
         "Params": "{1: '1', 2: '0.25', 4: '-125'}"
     },
     {
-        "Id": 550,
+        "Id": 551,
         "ActionId": 550,
         "NextActionId": null,
         "Type": 301,
@@ -7150,7 +7163,7 @@
         "Params": "{3: 'You raise your hand and forcefully push yourself<//Eve> deeper into the murky depths.'}"
     },
     {
-        "Id": 551,
+        "Id": 552,
         "ActionId": 551,
         "NextActionId": null,
         "Type": 301,
@@ -7163,7 +7176,7 @@
         "Params": "{2: 'Eve', 3: 'Guh!!', 4: '1'}"
     },
     {
-        "Id": 552,
+        "Id": 553,
         "ActionId": 552,
         "NextActionId": null,
         "Type": 202,
@@ -7176,7 +7189,7 @@
         "Params": "{1: '1'}"
     },
     {
-        "Id": 553,
+        "Id": 554,
         "ActionId": 553,
         "NextActionId": null,
         "Type": 301,
@@ -7189,7 +7202,7 @@
         "Params": "{3: \"The sensation of drowning\u2014now it's their turn to experience it.\"}"
     },
     {
-        "Id": 554,
+        "Id": 555,
         "ActionId": 554,
         "NextActionId": null,
         "Type": 104,
@@ -7202,7 +7215,7 @@
         "Params": "{1: '0|0|-100', 2: '0.8'}"
     },
     {
-        "Id": 555,
+        "Id": 556,
         "ActionId": 555,
         "NextActionId": null,
         "Type": 205,
@@ -7215,7 +7228,7 @@
         "Params": "{1: '999', 2: 'Assets/Product/Texture/Image/BgStory/BgStory970.jpg', 3: '0', 4: '1', 5: '1'}"
     },
     {
-        "Id": 556,
+        "Id": 557,
         "ActionId": 556,
         "NextActionId": null,
         "Type": 205,
@@ -7228,7 +7241,7 @@
         "Params": "{1: '999'}"
     },
     {
-        "Id": 557,
+        "Id": 558,
         "ActionId": 557,
         "NextActionId": null,
         "Type": 101,
@@ -7241,7 +7254,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/BgStory970.jpg'}"
     },
     {
-        "Id": 558,
+        "Id": 559,
         "ActionId": 558,
         "NextActionId": null,
         "Type": 301,
@@ -7254,7 +7267,7 @@
         "Params": "{3: 'Eve is forcibly confined within a human body, every scar across her form reawakening with its original pain.'}"
     },
     {
-        "Id": 559,
+        "Id": 560,
         "ActionId": 559,
         "NextActionId": null,
         "Type": 301,
@@ -7267,7 +7280,7 @@
         "Params": "{3: 'It begins with some \"insignificant\" bruises and scrapes\u2014all from training courses at F.O.S. Military College. Minor scuffles, minor ailments, things every student experiences.'}"
     },
     {
-        "Id": 560,
+        "Id": 561,
         "ActionId": 560,
         "NextActionId": null,
         "Type": 301,
@@ -7280,7 +7293,7 @@
         "Params": "{3: 'A vibrant vitality would gently erase these wounds, as if they had never existed.'}"
     },
     {
-        "Id": 561,
+        "Id": 562,
         "ActionId": 561,
         "NextActionId": null,
         "Type": 201,
@@ -7293,7 +7306,7 @@
         "Params": "{1: '1', 2: '500928'}"
     },
     {
-        "Id": 562,
+        "Id": 563,
         "ActionId": 562,
         "NextActionId": null,
         "Type": 301,
@@ -7306,7 +7319,7 @@
         "Params": "{1: '1', 2: 'Eve', 3: 'Tch...', 4: '1'}"
     },
     {
-        "Id": 563,
+        "Id": 564,
         "ActionId": 563,
         "NextActionId": null,
         "Type": 202,
@@ -7319,7 +7332,7 @@
         "Params": "{1: '1'}"
     },
     {
-        "Id": 564,
+        "Id": 565,
         "ActionId": 564,
         "NextActionId": null,
         "Type": 301,
@@ -7332,7 +7345,7 @@
         "Params": "{3: 'After entering the battlefield, her wounds grew increasingly severe.'}"
     },
     {
-        "Id": 565,
+        "Id": 566,
         "ActionId": 565,
         "NextActionId": null,
         "Type": 301,
@@ -7345,7 +7358,7 @@
         "Params": "{3: 'A Corrupted sliced open her abdomen while she was evacuating civilians. Cranial trauma.'}"
     },
     {
-        "Id": 566,
+        "Id": 567,
         "ActionId": 566,
         "NextActionId": null,
         "Type": 301,
@@ -7358,7 +7371,7 @@
         "Params": "{3: 'To protect a damaged sample container, she pressed its breach against a wound in her side.'}"
     },
     {
-        "Id": 567,
+        "Id": 568,
         "ActionId": 567,
         "NextActionId": null,
         "Type": 201,
@@ -7371,7 +7384,7 @@
         "Params": "{1: '1', 2: '500928'}"
     },
     {
-        "Id": 568,
+        "Id": 569,
         "ActionId": 568,
         "NextActionId": null,
         "Type": 301,
@@ -7384,7 +7397,7 @@
         "Params": "{1: '1', 2: 'Eve', 3: 'Sss-hisss!!', 4: '1'}"
     },
     {
-        "Id": 569,
+        "Id": 570,
         "ActionId": 569,
         "NextActionId": null,
         "Type": 302,
@@ -7397,7 +7410,7 @@
         "Params": "{2: \"Don't struggle. You can't escape.\", 3: '570', 4: \"Don't struggle. This is what you wanted.\", 5: '570'}"
     },
     {
-        "Id": 570,
+        "Id": 571,
         "ActionId": 570,
         "NextActionId": null,
         "Type": 202,
@@ -7410,7 +7423,7 @@
         "Params": "{1: '1'}"
     },
     {
-        "Id": 571,
+        "Id": 572,
         "ActionId": 571,
         "NextActionId": null,
         "Type": 301,
@@ -7423,7 +7436,7 @@
         "Params": "{3: 'While fighting Vonnegut alongside Strike Hawk, she was buried under a collapsing wall. Fractured ribs. Lung damage.'}"
     },
     {
-        "Id": 572,
+        "Id": 573,
         "ActionId": 572,
         "NextActionId": null,
         "Type": 301,
@@ -7436,7 +7449,7 @@
         "Params": "{3: 'While fighting a Hetero-Hive Mother, she was impaled through her side by Punishing tentacles. Minor organ rupture. Fractured hand bones. Cranial trauma. Subdural hematoma.'}"
     },
     {
-        "Id": 573,
+        "Id": 574,
         "ActionId": 573,
         "NextActionId": null,
         "Type": 201,
@@ -7449,7 +7462,7 @@
         "Params": "{1: '1', 2: '500928'}"
     },
     {
-        "Id": 574,
+        "Id": 575,
         "ActionId": 574,
         "NextActionId": null,
         "Type": 301,
@@ -7462,7 +7475,7 @@
         "Params": "{1: '1', 2: 'Eve', 3: 'HISSSSS!!', 4: '1'}"
     },
     {
-        "Id": 575,
+        "Id": 576,
         "ActionId": 575,
         "NextActionId": null,
         "Type": 202,
@@ -7475,7 +7488,7 @@
         "Params": "{1: '1'}"
     },
     {
-        "Id": 576,
+        "Id": 577,
         "ActionId": 576,
         "NextActionId": null,
         "Type": 301,
@@ -7488,7 +7501,7 @@
         "Params": "{3: 'Countless knife wounds. Countless explosions. Countless falls.'}"
     },
     {
-        "Id": 577,
+        "Id": 578,
         "ActionId": 577,
         "NextActionId": null,
         "Type": 301,
@@ -7501,7 +7514,7 @@
         "Params": "{3: '...'}"
     },
     {
-        "Id": 578,
+        "Id": 579,
         "ActionId": 578,
         "NextActionId": null,
         "Type": 301,
@@ -7514,7 +7527,7 @@
         "Params": "{3: 'Heroes are sculpted by disaster\u2014sculpted by the disasters crashing down upon the fragile human body, wave after wave, cycle after cycle, endlessly overlapping.'}"
     },
     {
-        "Id": 579,
+        "Id": 580,
         "ActionId": 579,
         "NextActionId": null,
         "Type": 301,
@@ -7527,7 +7540,7 @@
         "Params": "{3: 'It is pressed down into the mire, experiencing [pain] firsthand. You had anticipated this reaction all along, and you issued your warning accordingly.'}"
     },
     {
-        "Id": 580,
+        "Id": 581,
         "ActionId": 580,
         "NextActionId": null,
         "Type": 302,
@@ -7540,7 +7553,7 @@
         "Params": "{2: 'Listen carefully\u2014', 3: '581'}"
     },
     {
-        "Id": 581,
+        "Id": 582,
         "ActionId": 581,
         "NextActionId": null,
         "Type": 302,
@@ -7553,7 +7566,7 @@
         "Params": "{2: 'This is what forged every scar on my body!', 3: '582'}"
     },
     {
-        "Id": 582,
+        "Id": 583,
         "ActionId": 582,
         "NextActionId": null,
         "Type": 302,
@@ -7566,7 +7579,7 @@
         "Params": "{2: 'Keep dreaming of replacing humans, you primitive beast!', 3: '583'}"
     },
     {
-        "Id": 583,
+        "Id": 584,
         "ActionId": 583,
         "NextActionId": null,
         "Type": 201,
@@ -7579,7 +7592,7 @@
         "Params": "{1: '1', 2: '500928'}"
     },
     {
-        "Id": 584,
+        "Id": 585,
         "ActionId": 584,
         "NextActionId": null,
         "Type": 301,
@@ -7592,7 +7605,7 @@
         "Params": "{1: '1', 2: 'Eve', 3: 'Get out! Run fast!! [Pain]!! [PAIN]!!!', 4: '1'}"
     },
     {
-        "Id": 585,
+        "Id": 586,
         "ActionId": 585,
         "NextActionId": null,
         "Type": 401,
@@ -7605,7 +7618,7 @@
         "Params": "{1: '2', 2: '3077'}"
     },
     {
-        "Id": 586,
+        "Id": 587,
         "ActionId": 586,
         "NextActionId": null,
         "Type": 203,
@@ -7618,7 +7631,7 @@
         "Params": "{1: '1', 2: '0.2', 4: '-75', 5: '100'}"
     },
     {
-        "Id": 587,
+        "Id": 588,
         "ActionId": 587,
         "NextActionId": null,
         "Type": 202,
@@ -7631,7 +7644,7 @@
         "Params": "{1: '1'}"
     },
     {
-        "Id": 588,
+        "Id": 589,
         "ActionId": 588,
         "NextActionId": null,
         "Type": 301,
@@ -7644,7 +7657,7 @@
         "Params": "{3: 'You shove Eve forcefully, tearing apart the two of you that had begun to merge, with fine intricate threads, stretching like half-dried adhesive.'}"
     },
     {
-        "Id": 589,
+        "Id": 590,
         "ActionId": 589,
         "NextActionId": null,
         "Type": 302,
@@ -7657,7 +7670,7 @@
         "Params": "{2: 'Stay away from me. Go face the fate you deserve.', 3: '590'}"
     },
     {
-        "Id": 590,
+        "Id": 591,
         "ActionId": 590,
         "NextActionId": null,
         "Type": 101,
@@ -7670,7 +7683,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/BgStory538.png'}"
     },
     {
-        "Id": 591,
+        "Id": 592,
         "ActionId": 591,
         "NextActionId": null,
         "Type": 501,
@@ -7683,7 +7696,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab', 2: '2'}"
     },
     {
-        "Id": 592,
+        "Id": 593,
         "ActionId": 592,
         "NextActionId": null,
         "Type": 502,
@@ -7696,7 +7709,7 @@
         "Params": "{1: 'DialogEnable'}"
     },
     {
-        "Id": 593,
+        "Id": 594,
         "ActionId": 593,
         "NextActionId": null,
         "Type": 301,
@@ -7709,7 +7722,7 @@
         "Params": "{3: 'Eve immediately accepts this, even [ecstatically] embracing being expelled by you. It never wants to make contact with you again.'}"
     },
     {
-        "Id": 594,
+        "Id": 595,
         "ActionId": 594,
         "NextActionId": null,
         "Type": 301,
@@ -7722,7 +7735,7 @@
         "Params": "{3: 'For a brief moment, it believes it is finally free.'}"
     },
     {
-        "Id": 595,
+        "Id": 596,
         "ActionId": 595,
         "NextActionId": null,
         "Type": 301,
@@ -7735,7 +7748,7 @@
         "Params": "{3: \"But reality isn't so kind\u2014no sooner has its mental agony subsided than its body is seized by new [pain].\"}"
     },
     {
-        "Id": 596,
+        "Id": 597,
         "ActionId": 596,
         "NextActionId": null,
         "Type": 401,
@@ -7748,7 +7761,7 @@
         "Params": "{1: '1', 2: '36'}"
     },
     {
-        "Id": 597,
+        "Id": 598,
         "ActionId": 597,
         "NextActionId": null,
         "Type": 505,
@@ -7761,7 +7774,7 @@
         "Params": "{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryFallNew.prefab'}"
     },
     {
-        "Id": 598,
+        "Id": 599,
         "ActionId": 598,
         "NextActionId": null,
         "Type": 101,
@@ -7774,7 +7787,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/BgStory1262.jpg'}"
     },
     {
-        "Id": 599,
+        "Id": 600,
         "ActionId": 599,
         "NextActionId": null,
         "Type": 401,
@@ -7787,7 +7800,7 @@
         "Params": "{1: '1', 2: '6178'}"
     },
     {
-        "Id": 600,
+        "Id": 601,
         "ActionId": 600,
         "NextActionId": null,
         "Type": 401,
@@ -7800,7 +7813,7 @@
         "Params": "{1: '2', 2: '9327108'}"
     },
     {
-        "Id": 601,
+        "Id": 602,
         "ActionId": 601,
         "NextActionId": null,
         "Type": 201,
@@ -7813,7 +7826,7 @@
         "Params": "{1: '1', 2: '500928', 5: '-75', 6: '-150', 7: '1'}"
     },
     {
-        "Id": 602,
+        "Id": 603,
         "ActionId": 602,
         "NextActionId": null,
         "Type": 401,
@@ -7826,7 +7839,7 @@
         "Params": "{1: '2', 2: '2690'}"
     },
     {
-        "Id": 603,
+        "Id": 604,
         "ActionId": 603,
         "NextActionId": null,
         "Type": 203,
@@ -7839,7 +7852,7 @@
         "Params": "{1: '1', 2: '0.25', 5: '-150'}"
     },
     {
-        "Id": 604,
+        "Id": 605,
         "ActionId": 604,
         "NextActionId": null,
         "Type": 301,
@@ -7852,7 +7865,7 @@
         "Params": "{1: '1', 3: 'Splash\u2014'}"
     },
     {
-        "Id": 605,
+        "Id": 606,
         "ActionId": 605,
         "NextActionId": null,
         "Type": 301,
@@ -7865,7 +7878,7 @@
         "Params": "{3: 'In this bleak reality, Eve is violently torn from your abdomen, and in the next moment, hangs suspended in midair.'}"
     },
     {
-        "Id": 606,
+        "Id": 607,
         "ActionId": 606,
         "NextActionId": null,
         "Type": 401,
@@ -7878,7 +7891,7 @@
         "Params": "{1: '2', 2: '4807'}"
     },
     {
-        "Id": 607,
+        "Id": 608,
         "ActionId": 607,
         "NextActionId": null,
         "Type": 301,
@@ -7891,7 +7904,7 @@
         "Params": "{2: 'Eve', 3: 'HISSSSSSS!!!', 4: '1'}"
     },
     {
-        "Id": 608,
+        "Id": 609,
         "ActionId": 608,
         "NextActionId": null,
         "Type": 201,
@@ -7904,7 +7917,7 @@
         "Params": "{1: '1', 2: '501239', 3: '5', 4: '-200'}"
     },
     {
-        "Id": 609,
+        "Id": 610,
         "ActionId": 609,
         "NextActionId": null,
         "Type": 301,
@@ -7917,7 +7930,7 @@
         "Params": "{1: '1', 2: 'Vera', 3: '...Who gave you permission to hurt my Commandant...?!', 4: '1'}"
     },
     {
-        "Id": 610,
+        "Id": 611,
         "ActionId": 610,
         "NextActionId": null,
         "Type": 301,
@@ -7930,7 +7943,7 @@
         "Params": "{3: 'A delicate face, contorted with rage, presses close against its eyes.'}"
     },
     {
-        "Id": 611,
+        "Id": 612,
         "ActionId": 611,
         "NextActionId": null,
         "Type": 202,
@@ -7943,7 +7956,7 @@
         "Params": "{1: '1', 2: '2', 6: '1'}"
     },
     {
-        "Id": 612,
+        "Id": 613,
         "ActionId": 612,
         "NextActionId": null,
         "Type": 111,
@@ -7956,7 +7969,7 @@
         "Params": "{1: '1', 2: 'Assets/Product/Effect/Prefab/FxUiFight/FxUiMohuTest.prefab'}"
     },
     {
-        "Id": 613,
+        "Id": 614,
         "ActionId": 613,
         "NextActionId": null,
         "Type": 401,
@@ -7969,7 +7982,7 @@
         "Params": "{1: '2', 2: '2924'}"
     },
     {
-        "Id": 614,
+        "Id": 615,
         "ActionId": 614,
         "NextActionId": null,
         "Type": 501,
@@ -7982,7 +7995,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab', 2: '3'}"
     },
     {
-        "Id": 615,
+        "Id": 616,
         "ActionId": 615,
         "NextActionId": null,
         "Type": 101,
@@ -7995,7 +8008,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgCg/Cg5501_8.jpg'}"
     },
     {
-        "Id": 616,
+        "Id": 617,
         "ActionId": 616,
         "NextActionId": null,
         "Type": 401,
@@ -8008,7 +8021,7 @@
         "Params": "{1: '2', 2: '558'}"
     },
     {
-        "Id": 617,
+        "Id": 618,
         "ActionId": 617,
         "NextActionId": null,
         "Type": 501,
@@ -8021,7 +8034,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}"
     },
     {
-        "Id": 618,
+        "Id": 619,
         "ActionId": 618,
         "NextActionId": null,
         "Type": 101,
@@ -8034,7 +8047,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgCg/Cg5501_9.jpg'}"
     },
     {
-        "Id": 619,
+        "Id": 620,
         "ActionId": 619,
         "NextActionId": null,
         "Type": 401,
@@ -8047,7 +8060,7 @@
         "Params": "{1: '2', 2: '558'}"
     },
     {
-        "Id": 620,
+        "Id": 621,
         "ActionId": 620,
         "NextActionId": null,
         "Type": 501,
@@ -8060,7 +8073,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiZhuanchangBeginHei.prefab', 2: '2'}"
     },
     {
-        "Id": 621,
+        "Id": 622,
         "ActionId": 621,
         "NextActionId": null,
         "Type": 505,
@@ -8073,7 +8086,7 @@
         "Params": "{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStory/FxUiHuaping.prefab'}"
     },
     {
-        "Id": 622,
+        "Id": 623,
         "ActionId": 622,
         "NextActionId": null,
         "Type": 101,
@@ -8086,7 +8099,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgCg/Cg5501_8.jpg'}"
     },
     {
-        "Id": 623,
+        "Id": 624,
         "ActionId": 623,
         "NextActionId": null,
         "Type": 401,
@@ -8099,7 +8112,7 @@
         "Params": "{1: '2', 2: '558'}"
     },
     {
-        "Id": 624,
+        "Id": 625,
         "ActionId": 624,
         "NextActionId": null,
         "Type": 301,
@@ -8112,7 +8125,7 @@
         "Params": "{3: '\"Eve\\'s\" vision blurs. In her delirium, the woman before her merges with the silhouette from the sea, the one who nearly killed her before.'}"
     },
     {
-        "Id": 625,
+        "Id": 626,
         "ActionId": 625,
         "NextActionId": null,
         "Type": 301,
@@ -8125,7 +8138,7 @@
         "Params": "{1: '1', 2: 'Eve', 3: 'You...', 4: '2'}"
     },
     {
-        "Id": 626,
+        "Id": 627,
         "ActionId": 626,
         "NextActionId": null,
         "Type": 101,
@@ -8138,7 +8151,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/BgStory1262.jpg'}"
     },
     {
-        "Id": 627,
+        "Id": 628,
         "ActionId": 627,
         "NextActionId": null,
         "Type": 502,
@@ -8151,7 +8164,7 @@
         "Params": "{1: 'DialogEnable'}"
     },
     {
-        "Id": 628,
+        "Id": 629,
         "ActionId": 628,
         "NextActionId": null,
         "Type": 201,
@@ -8164,7 +8177,7 @@
         "Params": "{1: '1', 2: '501239', 3: '5', 4: '-400'}"
     },
     {
-        "Id": 629,
+        "Id": 630,
         "ActionId": 629,
         "NextActionId": null,
         "Type": 201,
@@ -8177,7 +8190,7 @@
         "Params": "{1: '2', 2: '500928', 4: '400', 5: '-50'}"
     },
     {
-        "Id": 630,
+        "Id": 631,
         "ActionId": 630,
         "NextActionId": null,
         "Type": 301,
@@ -8190,7 +8203,7 @@
         "Params": "{1: '1', 2: 'Vera', 3: 'You... goddamned Hetero-Creature!!', 4: '1'}"
     },
     {
-        "Id": 631,
+        "Id": 632,
         "ActionId": 631,
         "NextActionId": null,
         "Type": 302,
@@ -8203,7 +8216,7 @@
         "Params": "{2: 'Kill it now, Vera!', 3: '632'}"
     },
     {
-        "Id": 632,
+        "Id": 633,
         "ActionId": 632,
         "NextActionId": null,
         "Type": 301,
@@ -8216,7 +8229,7 @@
         "Params": "{3: \"You press down on the wound where Eve's corrosion has eaten through your flesh, voice strained with pain as you issue the command to Vera.\"}"
     },
     {
-        "Id": 633,
+        "Id": 634,
         "ActionId": 633,
         "NextActionId": null,
         "Type": 204,
@@ -8229,7 +8242,7 @@
         "Params": "{1: '1', 2: '4'}"
     },
     {
-        "Id": 634,
+        "Id": 635,
         "ActionId": 634,
         "NextActionId": null,
         "Type": 401,
@@ -8242,7 +8255,7 @@
         "Params": "{1: '2', 2: '4796'}"
     },
     {
-        "Id": 635,
+        "Id": 636,
         "ActionId": 635,
         "NextActionId": null,
         "Type": 203,
@@ -8255,7 +8268,7 @@
         "Params": "{1: '1', 2: '0.25', 3: '-200'}"
     },
     {
-        "Id": 636,
+        "Id": 637,
         "ActionId": 636,
         "NextActionId": null,
         "Type": 203,
@@ -8268,7 +8281,7 @@
         "Params": "{1: '2', 2: '0.25', 3: '450'}"
     },
     {
-        "Id": 637,
+        "Id": 638,
         "ActionId": 637,
         "NextActionId": null,
         "Type": 502,
@@ -8281,7 +8294,7 @@
         "Params": "{1: 'RImgBg1Shake'}"
     },
     {
-        "Id": 638,
+        "Id": 639,
         "ActionId": 638,
         "NextActionId": null,
         "Type": 301,
@@ -8294,7 +8307,7 @@
         "Params": "{3: \"Vera raises her hand, driving her gunlance deep into the Hetero-Creature's body, twisting it to shred the flesh within. This time, she won't let this cunning creature escape.\"}"
     },
     {
-        "Id": 639,
+        "Id": 640,
         "ActionId": 639,
         "NextActionId": null,
         "Type": 202,
@@ -8307,7 +8320,7 @@
         "Params": "{1: '2', 6: '1'}"
     },
     {
-        "Id": 640,
+        "Id": 641,
         "ActionId": 640,
         "NextActionId": null,
         "Type": 306,
@@ -8320,7 +8333,7 @@
         "Params": "{1: '1'}"
     },
     {
-        "Id": 641,
+        "Id": 642,
         "ActionId": 641,
         "NextActionId": null,
         "Type": 201,
@@ -8333,7 +8346,7 @@
         "Params": "{1: '1', 2: '501239', 3: '4', 5: '-75', 6: '-200'}"
     },
     {
-        "Id": 642,
+        "Id": 643,
         "ActionId": 642,
         "NextActionId": null,
         "Type": 502,
@@ -8346,7 +8359,7 @@
         "Params": "{1: 'RImgBg1BlowUp'}"
     },
     {
-        "Id": 643,
+        "Id": 644,
         "ActionId": 643,
         "NextActionId": null,
         "Type": 301,
@@ -8359,7 +8372,7 @@
         "Params": "{1: '1', 3: 'Eve hangs suspended in mid-air, quietly gazing at the red Construct before her.'}"
     },
     {
-        "Id": 644,
+        "Id": 645,
         "ActionId": 644,
         "NextActionId": null,
         "Type": 301,
@@ -8372,7 +8385,7 @@
         "Params": "{3: 'No one knows what it\\'s \"thinking.\"'}"
     },
     {
-        "Id": 645,
+        "Id": 646,
         "ActionId": 645,
         "NextActionId": null,
         "Type": 401,
@@ -8385,7 +8398,7 @@
         "Params": "{1: '2', 2: '4408'}"
     },
     {
-        "Id": 646,
+        "Id": 647,
         "ActionId": 646,
         "NextActionId": null,
         "Type": 301,
@@ -8398,7 +8411,7 @@
         "Params": "{3: 'The two of you can only watch as\u2014in its moment of death, amid the spine-chilling sound of flesh being shredded, Eve unsteadily opens her \"arms\" toward Vera.'}"
     },
     {
-        "Id": 647,
+        "Id": 648,
         "ActionId": 647,
         "NextActionId": null,
         "Type": 301,
@@ -8411,7 +8424,7 @@
         "Params": "{3: 'In the final moment of its life, it chose to embrace [pain].'}"
     },
     {
-        "Id": 648,
+        "Id": 649,
         "ActionId": 648,
         "NextActionId": null,
         "Type": 301,

@@ -20,8 +20,8 @@ function XUiPunishaarSellCardTipCardTipsPanelRoot:ShowSubCardNested(data, posUi)
     if not detail then return end
     if self._SubInst and self:_IsDetailEqual(self._SubData, detail) then
         -- PickingHost 期间 toggle 关已装备副卡 → 恢复待购入副卡（B2 态），不空关 #bug1
-        local gc = self._Control and self._Control.GameControl
-        if gc and gc:IsPickingHost() then
+        local gameControl = self._Control and self._Control.GameControl
+        if gameControl and gameControl:IsPickingHost() then
             self:_RestorePickingSub()
             return
         end
@@ -34,15 +34,15 @@ end
 --- PickingHost 期间 toggle 关已装备副卡后，恢复显示待购入副卡（B2 态）。#bug1
 --- 构造待购入 subData（GetPickingSubCardId/GoodsIndex + BuyReplace/BuyPlace mode）调基类 ShowSubCardNested 切换。
 function XUiPunishaarSellCardTipCardTipsPanelRoot:_RestorePickingSub()
-    local gc = self._Control and self._Control.GameControl
-    if not gc or not gc:IsPickingHost() then return end
+    local gameControl = self._Control and self._Control.GameControl
+    if not gameControl or not gameControl:IsPickingHost() then return end
     local mainDetail = self._CurData
     local masterCard = mainDetail and mainDetail.masterCard
     local hasSub = masterCard and masterCard.SubCardId and masterCard.SubCardId ~= 0
     local mode = hasSub and 3 or 4  -- BuyReplace=3 / BuyPlace=4，对齐 ShowMainCardTips B2 逻辑
     local pickingSubData = {
-        CardId = gc:GetPickingSubCardId(),
-        GoodsIndex = gc:GetPickingGoodsIndex(),
+        CardId = gameControl:GetPickingSubCardId(),
+        GoodsIndex = gameControl:GetPickingGoodsIndex(),
         operationMode = mode,
         masterCard = masterCard,
     }

@@ -1500,7 +1500,7 @@ function XTheatre6CharBase:OnNpcSkillActionKeyframeSendEvent(launcher, eventName
     if eventName == "WrestleSuccEndFinish" then return self:OnWrestleSuccEndFinish(skillActionId, keyFrameId) end
     if eventName == "DodgeSuccEndFinish" then return self:OnDodgeSuccEndFinish(self._uuid) end
     if eventName == "ChangeCamera" then
-        XLog.Warning("切换镜头")
+        --XLog.Warning("切换镜头")
         self._proxy:SetCameraFocusTarget(self._uuid, self._enemyUUID)
     end
 end
@@ -1602,7 +1602,7 @@ end
 function XTheatre6CharBase:OnNpcAddBuffEvent(casterNpcUUID, npcUUID, buffId, buffKinds, buffUUId)
     if casterNpcUUID ~= self._uuid then return end
     if buffId == 10254103 or buffId == 10253107 then
-        XLog.Error("镜头跟随目标发生更改")
+        --XLog.Error("镜头跟随目标发生更改")
         self._proxy:SetCameraFocusTarget(self._uuid, self._enemyUUID)
     end
 end

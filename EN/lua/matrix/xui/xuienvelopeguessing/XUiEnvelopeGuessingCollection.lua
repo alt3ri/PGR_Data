@@ -62,7 +62,23 @@ function XUiEnvelopeGuessingCollection:_Refresh()
     end)
 
     self._DynTable:SetDataSource(self._Collection)
-    self._DynTable:ReloadDataASync()
+    -- 排序后角色位置会变，定位到上次查看的角色
+    self._DynTable:ReloadDataASync(self:_GetLastViewedIndex())
+end
+
+-- 上次查看角色在排序后列表中的下标
+function XUiEnvelopeGuessingCollection:_GetLastViewedIndex()
+    if not XTool.IsNumberValid(self._LastViewedCharacterId) then
+        return -1
+    end
+
+    for index, characterConf in ipairs(self._Collection) do
+        if characterConf.Id == self._LastViewedCharacterId then
+            return index
+        end
+    end
+
+    return -1
 end
 
 function XUiEnvelopeGuessingCollection:OnEnable()
@@ -136,9 +152,21 @@ end
 
 function XUiEnvelopeGuessingCollection:_OnGridClick(characterConf)
     if self._Control:IsCharacterOpened(characterConf.Id) then
+        -- 缓存查看的角色
+        self._LastViewedCharacterId = characterConf.Id
         XLuaUiManager.Open("UiEnvelopeGuessingDetail", characterConf)
     else
         XUiManager.TipText("EnvelopeGuessingCollectionUiClickLockedCharacterTips")
+    end
+end
+
+function XUiEnvelopeGuessingCollection:OnReleaseInst()
+    return self._LastViewedCharacterId
+end
+
+function XUiEnvelopeGuessingCollection:OnResume(value)
+    if XTool.IsNumberValid(value) then
+        self._LastViewedCharacterId = value
     end
 end
 

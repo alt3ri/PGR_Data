@@ -665,9 +665,9 @@ function XFangKuaiGame:AddDirClearOperate(blockData, curBlockGridY, direction)
         return
     end
     local isMoveLeft = direction == XEnumConst.FangKuai.DirectionType.Left
-    local leftPos = isMoveLeft and 0 or blockData:GetHeadGrid().x
+    local leftPos = isMoveLeft and 1 or blockData:GetHeadGrid().x
     local rightPos = isMoveLeft and blockData:GetTailGrid().x or blockData:GetMaxWidth()
-    self:AddOperate(OperateMode.DirClear, { curBlockGridY, leftPos, rightPos })
+    self:AddOperate(OperateMode.DirClear, { math.floor(curBlockGridY), math.floor(leftPos), math.floor(rightPos) })
 end
 
 function XFangKuaiGame:RunOperate(operate)
@@ -1646,7 +1646,7 @@ function XFangKuaiGame:FindGuideBlock(gridX, gridY)
         end
     end
     if not dimBlockData then
-        XLog.Error(string.format("引导播放失败：(%s,%s)位置上没有方块)"), gridX, gridY)
+        XLog.Error(string.format("引导播放失败：(%s,%s)位置上没有方块)", gridX, gridY))
         return
     end
     return dimBlockData

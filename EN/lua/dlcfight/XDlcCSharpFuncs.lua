@@ -4496,8 +4496,9 @@ end
 ---@param npcUUID int 角色UUID
 ---@param nowSkillId int 当前技能ID
 ---@param nextSkillId int 下个技能ID
+---@param skillType int 本次释放的技能类型(ETheatre6SkillType)，决定UI动效
 ---@return void 
-function XDlcCSharpFuncs:Theatre6UpdateSkillUI(npcUUID, nowSkillId, nextSkillId)
+function XDlcCSharpFuncs:Theatre6UpdateSkillUI(npcUUID, nowSkillId, nextSkillId, skillType)
 end
 
 ---@desc 肉鸽6开关连击数UI

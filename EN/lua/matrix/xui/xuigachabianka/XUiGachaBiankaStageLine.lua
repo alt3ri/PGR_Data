@@ -68,7 +68,7 @@ end
 function XUiGachaBiankaStageLine:SetUiData()
     -- 初始化prefab组件
     local chapterGameObject = self.PanelChapter:LoadPrefab(self._ChapterTemplate.FubenPrefab)
-    local uiObj = chapterGameObject.transform:GetComponent("UiObject")
+    local uiObj = chapterGameObject.transform:GetComponent(typeof(CS.UiObject))
     for i = 0, uiObj.NameList.Count - 1 do
         self[uiObj.NameList[i]] = uiObj.ObjList[i]
     end

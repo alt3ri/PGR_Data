@@ -1,5 +1,5 @@
 local Vector3 = CS.UnityEngine.Vector3
-local DeviceMask = CS.UnityEngine.LayerMask.GetMask("Device")
+local DeviceMask = CS.UnityEngine.LayerMask.GetMask(LayerMaskName.SceneObject)
 local XGDComponet = require("XEntity/XGuildDorm/Components/XGDComponet")
 ---@class XGDInteractCheckComponent : XGDComponet
 local XGDInteractCheckComponent = XClass(XGDComponet, "XGDInteractCheckComponent")

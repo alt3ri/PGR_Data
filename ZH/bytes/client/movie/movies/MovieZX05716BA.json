@@ -2944,7 +2944,7 @@
         "Type": 202,
         "IsBlock": null,
         "IsEnd": null,
-        "BeginAnim": null,
+        "BeginAnim": "DialogDisable",
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": 500.0,
@@ -2965,19 +2965,32 @@
     },
     {
         "Id": 229,
-        "ActionId": 229,
+        "ActionId": 8000,
         "NextActionId": null,
-        "Type": 302,
+        "Type": 101,
         "IsBlock": null,
         "IsEnd": null,
         "BeginAnim": null,
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{2: '\u5443\uff01', 3: '230'}"
+        "Params": "{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}"
     },
     {
         "Id": 230,
+        "ActionId": 229,
+        "NextActionId": null,
+        "Type": 302,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": "AniZhuanchangEnd",
+        "EndAnim": "AniZhuanchangBegin",
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{2: '\u5443\uff01', 3: '230'}"
+    },
+    {
+        "Id": 231,
         "ActionId": 230,
         "NextActionId": null,
         "Type": 101,
@@ -2990,7 +3003,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/Bgstory52.jpg'}"
     },
     {
-        "Id": 231,
+        "Id": 232,
         "ActionId": 231,
         "NextActionId": null,
         "Type": 201,
@@ -3003,20 +3016,20 @@
         "Params": "{1: '1', 2: '500004'}"
     },
     {
-        "Id": 232,
+        "Id": 233,
         "ActionId": 232,
         "NextActionId": null,
         "Type": 501,
         "IsBlock": null,
         "IsEnd": null,
-        "BeginAnim": null,
+        "BeginAnim": "DialogEnable",
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": 500.0,
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab', 2: '2'}"
     },
     {
-        "Id": 233,
+        "Id": 234,
         "ActionId": 233,
         "NextActionId": null,
         "Type": 301,
@@ -3029,7 +3042,7 @@
         "Params": "{1: '1', 3: '\u731b\u7136\u6e05\u9192\uff0c\u624d\u5bdf\u89c9\u5230\u51b7\u6c57\u5df2\u7ecf\u6253\u6e7f\u4e86\u81ea\u5df1\u7684\u8863\u9886\u3002'}"
     },
     {
-        "Id": 234,
+        "Id": 235,
         "ActionId": 234,
         "NextActionId": null,
         "Type": 401,
@@ -3042,7 +3055,7 @@
         "Params": "{1: '1', 2: '209'}"
     },
     {
-        "Id": 235,
+        "Id": 236,
         "ActionId": 235,
         "NextActionId": null,
         "Type": 505,
@@ -3055,7 +3068,7 @@
         "Params": "{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryZhengyanNew.prefab'}"
     },
     {
-        "Id": 236,
+        "Id": 237,
         "ActionId": 236,
         "NextActionId": null,
         "Type": 301,
@@ -3068,7 +3081,7 @@
         "Params": "{2: '\u963f\u897f\u83ab\u592b', 3: '\u2026\u2026\u5f02\u805a\u788e\u7247\u53d1\u51fa\u4e86\u5f88\u5947\u602a\u7684\u6ce2\u52a8\u3002\u4f60\u770b\u5230\u4e86\u4ec0\u4e48\uff1f', 4: '1'}"
     },
     {
-        "Id": 237,
+        "Id": 238,
         "ActionId": 237,
         "NextActionId": null,
         "Type": 302,
@@ -3081,7 +3094,7 @@
         "Params": "{2: '\u6211\u2026\u2026', 3: '238'}"
     },
     {
-        "Id": 238,
+        "Id": 239,
         "ActionId": 238,
         "NextActionId": null,
         "Type": 301,
@@ -3094,7 +3107,7 @@
         "Params": "{3: '\u8a00\u8bed\u5c31\u5728\u5507\u8fb9\uff0c\u4f46\u5374\u4e0d\u77e5\u9053\u5e94\u5f53\u5982\u4f55\u5f00\u53e3\uff0c\u53ea\u80fd\u5c1d\u8bd5\u4ee5\u95ee\u9898\u5c06\u7b54\u6848\u7275\u5f15\u51fa\u6765\u3002'}"
     },
     {
-        "Id": 239,
+        "Id": 240,
         "ActionId": 239,
         "NextActionId": null,
         "Type": 302,
@@ -3107,7 +3120,7 @@
         "Params": "{2: '\u4f60\u62c6\u5206\u8fc7\u8fd9\u4e2a\u788e\u7247\u4e86\u5417\uff1f', 3: '240'}"
     },
     {
-        "Id": 240,
+        "Id": 241,
         "ActionId": 240,
         "NextActionId": null,
         "Type": 301,
@@ -3120,7 +3133,7 @@
         "Params": "{2: '\u963f\u897f\u83ab\u592b', 3: '\u55ef\u3002', 4: '1'}"
     },
     {
-        "Id": 241,
+        "Id": 242,
         "ActionId": 241,
         "NextActionId": null,
         "Type": 301,
@@ -3133,7 +3146,7 @@
         "Params": "{2: '\u963f\u897f\u83ab\u592b', 3: '\u5b83\u50cf\u662f\u4e00\u4e2a\u2026\u2026\u5f88\u7eaf\u7cb9\u7684\uff0c\u7528\u6765\u627f\u63a5\u4fe1\u606f\u7684\u8f7d\u4f53\uff0c\u4f46\u5b83\u7684\u52a0\u5bc6\u65b9\u5f0f\u975e\u5e38\u590d\u6742\uff0c\u5df2\u7ecf\u8d85\u51fa\u4e86\u6211\u73b0\u5728\u7684\u7406\u89e3\u2026\u2026', 4: '1'}"
     },
     {
-        "Id": 242,
+        "Id": 243,
         "ActionId": 242,
         "NextActionId": null,
         "Type": 301,
@@ -3146,7 +3159,7 @@
         "Params": "{2: '\u963f\u897f\u83ab\u592b', 3: '\u552f\u4e00\u88ab\u89e3\u6790\u5b8c\u6210\u7684\u662f\u8fd9\u6bb5\u2026\u2026', 4: '1'}"
     },
     {
-        "Id": 243,
+        "Id": 244,
         "ActionId": 243,
         "NextActionId": null,
         "Type": 202,
@@ -3159,7 +3172,7 @@
         "Params": "{1: '1', 6: '1'}"
     },
     {
-        "Id": 244,
+        "Id": 245,
         "ActionId": 244,
         "NextActionId": null,
         "Type": 307,
@@ -3172,7 +3185,7 @@
         "Params": "{1: '\u201c\u8fd9\u662f\u2026\u2026\u540d\u4e3a\u672a\u6765\u7684\u793c\u7269\u201d'}"
     },
     {
-        "Id": 245,
+        "Id": 246,
         "ActionId": 245,
         "NextActionId": null,
         "Type": 301,
@@ -3185,7 +3198,7 @@
         "Params": "{3: '\u201c\u8fd9\u662f\u2026\u2026\u540d\u4e3a\u672a\u6765\u7684\u793c\u7269\u201d'}"
     },
     {
-        "Id": 246,
+        "Id": 247,
         "ActionId": 246,
         "NextActionId": null,
         "Type": 401,
@@ -3198,7 +3211,7 @@
         "Params": "{1: '2', 2: '4387'}"
     },
     {
-        "Id": 247,
+        "Id": 248,
         "ActionId": 247,
         "NextActionId": null,
         "Type": 501,
@@ -3211,7 +3224,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}"
     },
     {
-        "Id": 248,
+        "Id": 249,
         "ActionId": 248,
         "NextActionId": null,
         "Type": 307,
@@ -3224,7 +3237,7 @@
         "Params": "{2: '1'}"
     },
     {
-        "Id": 249,
+        "Id": 250,
         "ActionId": 249,
         "NextActionId": null,
         "Type": 504,
@@ -3237,7 +3250,7 @@
         "Params": "{1: '0.7'}"
     },
     {
-        "Id": 250,
+        "Id": 251,
         "ActionId": 250,
         "NextActionId": null,
         "Type": 201,
@@ -3250,7 +3263,7 @@
         "Params": "{1: '1', 2: '501086', 7: '1'}"
     },
     {
-        "Id": 251,
+        "Id": 252,
         "ActionId": 251,
         "NextActionId": null,
         "Type": 101,
@@ -3263,7 +3276,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/BgStory1102.jpg'}"
     },
     {
-        "Id": 252,
+        "Id": 253,
         "ActionId": 252,
         "NextActionId": null,
         "Type": 301,
@@ -3276,7 +3289,7 @@
         "Params": "{1: '1', 2: '\u4e03\u5b9e', 3: '\u201c\u7b54\u6848\u201d\u5c31\u85cf\u5728\u6307\u6325\u5b98\u624d\u77e5\u9053\u7684\u79d8\u5bc6\u91cc\uff01', 4: '1'}"
     },
     {
-        "Id": 253,
+        "Id": 254,
         "ActionId": 253,
         "NextActionId": null,
         "Type": 501,
@@ -3289,7 +3302,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}"
     },
     {
-        "Id": 254,
+        "Id": 255,
         "ActionId": 254,
         "NextActionId": null,
         "Type": 504,
@@ -3302,7 +3315,7 @@
         "Params": "{1: '0'}"
     },
     {
-        "Id": 255,
+        "Id": 256,
         "ActionId": 255,
         "NextActionId": null,
         "Type": 202,
@@ -3315,7 +3328,7 @@
         "Params": "{1: '1', 6: '1'}"
     },
     {
-        "Id": 256,
+        "Id": 257,
         "ActionId": 256,
         "NextActionId": null,
         "Type": 101,
@@ -3328,7 +3341,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}"
     },
     {
-        "Id": 257,
+        "Id": 258,
         "ActionId": 257,
         "NextActionId": null,
         "Type": 302,
@@ -3341,7 +3354,7 @@
         "Params": "{2: '\u89e3\u5bc6\u7684\u4ee3\u7801\u662f\u2026\u2026', 3: '258'}"
     },
     {
-        "Id": 258,
+        "Id": 259,
         "ActionId": 258,
         "NextActionId": null,
         "Type": 501,
@@ -3354,7 +3367,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}"
     },
     {
-        "Id": 259,
+        "Id": 260,
         "ActionId": 259,
         "NextActionId": null,
         "Type": 401,
@@ -3367,7 +3380,7 @@
         "Params": "{1: '2', 2: '4387'}"
     },
     {
-        "Id": 260,
+        "Id": 261,
         "ActionId": 260,
         "NextActionId": null,
         "Type": 101,
@@ -3380,7 +3393,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/BgStory799.jpg'}"
     },
     {
-        "Id": 261,
+        "Id": 262,
         "ActionId": 261,
         "NextActionId": null,
         "Type": 301,
@@ -3393,7 +3406,7 @@
         "Params": "{3: '\u660f\u6697\u7684\u6863\u6848\u5ba4\uff0c\u624b\u5199\u7684\u6863\u6848\u7f16\u7801\uff0c\u5fae\u5fae\u523a\u75db\u7684\u6307\u5c16\u2026\u2026'}"
     },
     {
-        "Id": 262,
+        "Id": 263,
         "ActionId": 262,
         "NextActionId": null,
         "Type": 501,
@@ -3406,7 +3419,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab'}"
     },
     {
-        "Id": 263,
+        "Id": 264,
         "ActionId": 263,
         "NextActionId": null,
         "Type": 101,
@@ -3419,7 +3432,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/Bgstory52.jpg'}"
     },
     {
-        "Id": 264,
+        "Id": 265,
         "ActionId": 264,
         "NextActionId": null,
         "Type": 302,
@@ -3432,7 +3445,7 @@
         "Params": "{2: 'q\u2026\u2026', 3: '265'}"
     },
     {
-        "Id": 265,
+        "Id": 266,
         "ActionId": 265,
         "NextActionId": null,
         "Type": 302,
@@ -3445,7 +3458,7 @@
         "Params": "{2: 'q31206\u2026\u2026', 3: '266'}"
     },
     {
-        "Id": 266,
+        "Id": 267,
         "ActionId": 266,
         "NextActionId": null,
         "Type": 301,
@@ -3458,7 +3471,7 @@
         "Params": "{3: '\u8111\u6d77\u4e2d\u7684\u8bb0\u5fc6\u4f9d\u65e7\u6a21\u7cca\u5982\u540c\u88ab\u767d\u96fe\u7b3c\u7f69\uff0c\u4f46\u552f\u72ec\u8fd9\u6761\u4fe1\u606f\u6b7b\u6b7b\u523b\u5370\u5728\u5927\u8111\u76ae\u5c42\uff0c\u65e0\u6bd4\u6e05\u6670\u3002'}"
     },
     {
-        "Id": 267,
+        "Id": 268,
         "ActionId": 267,
         "NextActionId": null,
         "Type": 201,
@@ -3471,7 +3484,7 @@
         "Params": "{1: '1', 2: '500004', 3: '7', 7: '1'}"
     },
     {
-        "Id": 268,
+        "Id": 269,
         "ActionId": 268,
         "NextActionId": null,
         "Type": 301,
@@ -3484,7 +3497,7 @@
         "Params": "{1: '1', 2: '\u963f\u897f\u83ab\u592b', 3: '\u2026\u2026\uff1f', 4: '1'}"
     },
     {
-        "Id": 269,
+        "Id": 270,
         "ActionId": 269,
         "NextActionId": null,
         "Type": 301,
@@ -3497,7 +3510,7 @@
         "Params": "{2: '\u963f\u897f\u83ab\u592b', 3: '\u4f60\u662f\u8bf4\u2026\u2026\u4f60\u201c\u770b\u201d\u5230\u4e86\u89e3\u5bc6\u7684\u5bc6\u7801\uff1f', 4: '1'}"
     },
     {
-        "Id": 270,
+        "Id": 271,
         "ActionId": 270,
         "NextActionId": null,
         "Type": 302,
@@ -3510,7 +3523,7 @@
         "Params": "{2: '\u6211\u4e0d\u786e\u5b9a\u3002', 3: '271', 4: '\u6216\u8bb8\u662f\u8fd9\u6837\u3002', 5: '271'}"
     },
     {
-        "Id": 271,
+        "Id": 272,
         "ActionId": 271,
         "NextActionId": null,
         "Type": 204,
@@ -3523,7 +3536,7 @@
         "Params": "{1: '1', 2: '8'}"
     },
     {
-        "Id": 272,
+        "Id": 273,
         "ActionId": 272,
         "NextActionId": null,
         "Type": 301,
@@ -3536,7 +3549,7 @@
         "Params": "{2: '\u963f\u897f\u83ab\u592b', 3: '\u2026\u2026\u2026\u2026', 4: '1'}"
     },
     {
-        "Id": 273,
+        "Id": 274,
         "ActionId": 273,
         "NextActionId": null,
         "Type": 204,
@@ -3549,7 +3562,7 @@
         "Params": "{1: '1'}"
     },
     {
-        "Id": 274,
+        "Id": 275,
         "ActionId": 274,
         "NextActionId": null,
         "Type": 301,
@@ -3562,7 +3575,7 @@
         "Params": "{3: '\u4e0d\u7531\u5206\u8bf4\u5730\u5c06\u81ea\u5df1\u6309\u5728\u68c0\u67e5\u7684\u6905\u5b50\u4e0a\uff0c\u963f\u897f\u83ab\u592b\u4ece\u5934\u5230\u811a\u518d\u6b21\u7ed9\u81ea\u5df1\u505a\u4e86\u68c0\u67e5\u3002'}"
     },
     {
-        "Id": 275,
+        "Id": 276,
         "ActionId": 275,
         "NextActionId": null,
         "Type": 301,
@@ -3575,7 +3588,7 @@
         "Params": "{2: '\u963f\u897f\u83ab\u592b', 3: '\u5927\u8111\u6ce2\u52a8\u6b63\u5e38\uff0c\u610f\u8bc6\u4fe1\u6807\u4e5f\u6ca1\u6709\u95ee\u9898\u2026\u2026', 4: '1'}"
     },
     {
-        "Id": 276,
+        "Id": 277,
         "ActionId": 276,
         "NextActionId": null,
         "Type": 301,
@@ -3588,7 +3601,7 @@
         "Params": "{2: '\u963f\u897f\u83ab\u592b', 3: '\u8fd9\u5230\u5e95\u662f\u600e\u4e48\u56de\u4e8b\u3002', 4: '1'}"
     },
     {
-        "Id": 277,
+        "Id": 278,
         "ActionId": 277,
         "NextActionId": null,
         "Type": 301,
@@ -3601,7 +3614,7 @@
         "Params": "{3: '\u963f\u897f\u83ab\u592b\u96be\u5f97\u5982\u6b64\u7591\u60d1\u3002'}"
     },
     {
-        "Id": 278,
+        "Id": 279,
         "ActionId": 278,
         "NextActionId": null,
         "Type": 302,
@@ -3614,7 +3627,7 @@
         "Params": "{2: '\u6211\u4e0d\u77e5\u9053\u3002', 3: '279', 4: '\u6211\u4e0d\u786e\u5b9a\u3002', 5: '279'}"
     },
     {
-        "Id": 279,
+        "Id": 280,
         "ActionId": 279,
         "NextActionId": null,
         "Type": 202,
@@ -3627,7 +3640,7 @@
         "Params": "{1: '1'}"
     },
     {
-        "Id": 280,
+        "Id": 281,
         "ActionId": 280,
         "NextActionId": null,
         "Type": 301,
@@ -3640,7 +3653,7 @@
         "Params": "{3: '\u201c\u65f6\u95f4\u56da\u7b3c\u201d\u7684\u540e\u9057\u75c7\u6216\u8bb8\u80fd\u591f\u89e3\u91ca\u8fd9\u4e00\u5207\uff0c\u4f46\u2026\u2026\u771f\u7684\u662f\u201c\u65f6\u95f4\u56da\u7b3c\u201d\u5417\uff1f'}"
     },
     {
-        "Id": 281,
+        "Id": 282,
         "ActionId": 281,
         "NextActionId": null,
         "Type": 401,
@@ -3653,7 +3666,7 @@
         "Params": "{1: '2', 2: '4387'}"
     },
     {
-        "Id": 282,
+        "Id": 283,
         "ActionId": 282,
         "NextActionId": null,
         "Type": 501,
@@ -3666,7 +3679,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}"
     },
     {
-        "Id": 283,
+        "Id": 284,
         "ActionId": 283,
         "NextActionId": null,
         "Type": 101,
@@ -3679,7 +3692,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgCg/Cg3001_01.jpg'}"
     },
     {
-        "Id": 284,
+        "Id": 285,
         "ActionId": 284,
         "NextActionId": null,
         "Type": 301,
@@ -3692,7 +3705,7 @@
         "Params": "{3: '\u51b0\u51b7\u7684\u6d77\u6c34\uff0c\u6323\u624e\u7684\u6bd4\u5b89\u5361\u2026\u2026\u90a3\u4e00\u5207\uff0c\u90fd\u771f\u5b9e\u7684\u4e0d\u50cf\u4e00\u4e2a\u865a\u6784\u7684\u53d9\u4e8b\u3002'}"
     },
     {
-        "Id": 285,
+        "Id": 286,
         "ActionId": 285,
         "NextActionId": null,
         "Type": 401,
@@ -3705,7 +3718,7 @@
         "Params": "{1: '2', 2: '4388'}"
     },
     {
-        "Id": 286,
+        "Id": 287,
         "ActionId": 286,
         "NextActionId": null,
         "Type": 501,
@@ -3718,7 +3731,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab'}"
     },
     {
-        "Id": 287,
+        "Id": 288,
         "ActionId": 287,
         "NextActionId": null,
         "Type": 101,
@@ -3731,7 +3744,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/Bgstory52.jpg'}"
     },
     {
-        "Id": 288,
+        "Id": 289,
         "ActionId": 288,
         "NextActionId": null,
         "Type": 201,
@@ -3744,7 +3757,7 @@
         "Params": "{1: '1', 2: '500004'}"
     },
     {
-        "Id": 289,
+        "Id": 290,
         "ActionId": 289,
         "NextActionId": null,
         "Type": 301,
@@ -3757,7 +3770,7 @@
         "Params": "{1: '1', 2: '\u963f\u897f\u83ab\u592b', 3: '\u2026\u2026\u6211\u4f1a\u8bd5\u4e00\u8bd5\u4f60\u63d0\u4f9b\u7684\u8fd9\u4e2a\u5bc6\u7801\uff0c\u5047\u5982\u4f60\u518d\u6b21\u51fa\u73b0\u8fd9\u6837\u7684\u60c5\u51b5\uff0c\u7acb\u523b\u8fc7\u6765\u627e\u6211\u3002', 4: '1'}"
     },
     {
-        "Id": 290,
+        "Id": 291,
         "ActionId": 290,
         "NextActionId": null,
         "Type": 302,
@@ -3770,7 +3783,7 @@
         "Params": "{2: '\u55ef\u3002', 3: '291', 4: '\u6211\u77e5\u9053\u4e86\u3002', 5: '291'}"
     },
     {
-        "Id": 291,
+        "Id": 292,
         "ActionId": 291,
         "NextActionId": null,
         "Type": 202,
@@ -3783,7 +3796,7 @@
         "Params": "{1: '1', 6: '1'}"
     },
     {
-        "Id": 292,
+        "Id": 293,
         "ActionId": 292,
         "NextActionId": null,
         "Type": 401,
@@ -3796,7 +3809,7 @@
         "Params": "{1: '1', 2: '210'}"
     },
     {
-        "Id": 293,
+        "Id": 294,
         "ActionId": 293,
         "NextActionId": null,
         "Type": 101,
@@ -3809,7 +3822,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/BgStory17.jpg'}"
     },
     {
-        "Id": 294,
+        "Id": 295,
         "ActionId": 294,
         "NextActionId": null,
         "Type": 301,
@@ -3822,7 +3835,7 @@
         "Params": "{3: '\u5e26\u7740\u6ee1\u8179\u7591\u95ee\uff0c\u4eba\u7c7b\u6307\u6325\u5b98\u8d70\u51fa\u79d1\u5b66\u7406\u4e8b\u4f1a\u3002'}"
     },
     {
-        "Id": 295,
+        "Id": 296,
         "ActionId": 295,
         "NextActionId": null,
         "Type": 401,
@@ -3835,7 +3848,7 @@
         "Params": "{1: '2', 2: '2925'}"
     },
     {
-        "Id": 296,
+        "Id": 297,
         "ActionId": 296,
         "NextActionId": null,
         "Type": 301,
@@ -3848,7 +3861,7 @@
         "Params": "{3: '\u53ee\u549a\u2014\u2014'}"
     },
     {
-        "Id": 297,
+        "Id": 298,
         "ActionId": 297,
         "NextActionId": null,
         "Type": 301,
@@ -3861,7 +3874,7 @@
         "Params": "{3: '\u7ec8\u7aef\u6536\u5230\u8d5b\u5229\u5361\u53d1\u6765\u7684\u62a5\u544a\uff0c\u519b\u65b9\u6c47\u603b\u4e86\u8fd9\u6b21\u6d77\u6d0b\u9986\u6218\u5f79\u7684\u4f24\u4ea1\u6570\u636e\u2014\u2014\u8fdc\u8fdc\u4f4e\u4e8e\u9884\u671f\u3002'}"
     },
     {
-        "Id": 298,
+        "Id": 299,
         "ActionId": 298,
         "NextActionId": null,
         "Type": 301,
@@ -3874,7 +3887,7 @@
         "Params": "{3: '\u56de\u5fc6\u8d77\u521a\u521a\u5728\u201c\u65e2\u89c6\u611f\u201d\u4e2d\u770b\u5230\u7684\u53ef\u6016\u666f\u8c61\uff0c\u5c38\u4f53\u548c\u4f24\u5458\u904d\u5e03\u6d77\u5cb8\u7ebf\uff0c\u9c9c\u8840\u3001\u5faa\u73af\u6db2\u548c\u7ea2\u6f6e\u5c06\u6d77\u6c34\u67d3\u5f97\u901a\u7ea2\uff0c\u6240\u6709\u4eba\u90fd\u75b2\u4e8e\u5954\u547d\u2026\u2026'}"
     },
     {
-        "Id": 299,
+        "Id": 300,
         "ActionId": 299,
         "NextActionId": null,
         "Type": 201,
@@ -3887,7 +3900,7 @@
         "Params": "{1: '18', 2: '500001'}"
     },
     {
-        "Id": 300,
+        "Id": 301,
         "ActionId": 300,
         "NextActionId": null,
         "Type": 501,
@@ -3900,7 +3913,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 3: '18'}"
     },
     {
-        "Id": 301,
+        "Id": 302,
         "ActionId": 301,
         "NextActionId": null,
         "Type": 301,
@@ -3913,7 +3926,7 @@
         "Params": "{1: '1', 2: '\u8d5b\u5229\u5361', 3: '\u7531\u4e8e\u03a9\u6b66\u5668\u53ca\u65f6\u6295\u653e\uff0c\u7cbe\u82f1\u5c0f\u961f\u63d0\u524d\u9884\u5907\u652f\u63f4\uff0c\u6bd4\u5b89\u5361\u548c\u4f60\u5c06\u5f02\u5408\u4eba\u5f62\u751f\u7269\u62e6\u622a\u5728\u4e86\u6d77\u5c9b\u2026\u2026', 4: '18'}"
     },
     {
-        "Id": 302,
+        "Id": 303,
         "ActionId": 302,
         "NextActionId": null,
         "Type": 204,
@@ -3926,7 +3939,7 @@
         "Params": "{1: '18', 2: '2'}"
     },
     {
-        "Id": 303,
+        "Id": 304,
         "ActionId": 303,
         "NextActionId": null,
         "Type": 301,
@@ -3939,7 +3952,7 @@
         "Params": "{2: '\u8d5b\u5229\u5361', 3: '\u8fd9\u6b21\u6218\u5f79\u7684\u4f24\u4ea1\u8fdc\u8fdc\u4f4e\u4e8e\u9884\u4f30\u768440-50%\uff0c\u6216\u8bb8\u53ef\u80fd\u4f1a\u6709\u4e00\u573a\u5609\u5956\u4f1a\u54e6\uff0c\u63d0\u524d\u71a8\u70eb\u4e00\u4e0b\u4f60\u7684\u793c\u670d\u5427~', 4: '18'}"
     },
     {
-        "Id": 304,
+        "Id": 305,
         "ActionId": 304,
         "NextActionId": null,
         "Type": 505,
@@ -3952,7 +3965,7 @@
         "Params": "{2: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryTongxunHalfNew.prefab', 4: '18'}"
     },
     {
-        "Id": 305,
+        "Id": 306,
         "ActionId": 305,
         "NextActionId": null,
         "Type": 202,
@@ -3965,7 +3978,7 @@
         "Params": "{1: '18', 6: '1'}"
     },
     {
-        "Id": 306,
+        "Id": 307,
         "ActionId": 306,
         "NextActionId": null,
         "Type": 301,
@@ -3978,7 +3991,7 @@
         "Params": "{3: '\u4e8b\u4ef6\u8fc7\u540e\uff0c\u8d5b\u5229\u5361\u7684\u8baf\u606f\u4e5f\u5e26\u4e0a\u4e86\u8f7b\u5feb\u7684\u6ce2\u6d6a\u53f7\u3002'}"
     },
     {
-        "Id": 307,
+        "Id": 308,
         "ActionId": 307,
         "NextActionId": null,
         "Type": 301,
@@ -3991,7 +4004,7 @@
         "Params": "{3: '\u5173\u95ed\u7ec8\u7aef\uff0c\u5927\u8111\u7acb\u523b\u4e60\u60ef\u6027\u5730\u5f00\u59cb\u8fd0\u8f6c\uff0c\u601d\u7d22\u7740\u63a5\u4e0b\u6765\u7684\u5de5\u4f5c\u91cd\u70b9\u3002'}"
     },
     {
-        "Id": 308,
+        "Id": 309,
         "ActionId": 308,
         "NextActionId": null,
         "Type": 301,
@@ -4004,7 +4017,7 @@
         "Params": "{3: '\u63a5\u4e0b\u6765\u2026\u2026\u8981\u505a\u4e9b\u4ec0\u4e48\uff1f'}"
     },
     {
-        "Id": 309,
+        "Id": 310,
         "ActionId": 309,
         "NextActionId": null,
         "Type": 301,
@@ -4017,7 +4030,7 @@
         "Params": "{3: '\u627e\u51fa\u51af\u00b7\u5185\u53e4\u7279\u7684\u8e2a\u8ff9\uff0c\u963b\u6b62\u4ed6\u8352\u8c2c\u7684\u8ba1\u5212\uff1f'}"
     },
     {
-        "Id": 310,
+        "Id": 311,
         "ActionId": 310,
         "NextActionId": null,
         "Type": 301,
@@ -4030,7 +4043,7 @@
         "Params": "{3: '\u627e\u51fa\u201c\u65e2\u89c6\u611f\u201d\u7684\u6765\u6e90\uff0c\u67e5\u6e05\u695a\u7a76\u7adf\u662f\u600e\u4e48\u56de\u4e8b\uff1f'}"
     },
     {
-        "Id": 311,
+        "Id": 312,
         "ActionId": 311,
         "NextActionId": null,
         "Type": 301,
@@ -4043,7 +4056,7 @@
         "Params": "{3: '\u6216\u8005\u2026\u2026'}"
     },
     {
-        "Id": 312,
+        "Id": 313,
         "ActionId": 312,
         "NextActionId": null,
         "Type": 101,
@@ -4056,7 +4069,7 @@
         "Params": "{1: 'Assets/Product/Texture/Image/BgStory/Bgstory263.png'}"
     },
     {
-        "Id": 313,
+        "Id": 314,
         "ActionId": 313,
         "NextActionId": null,
         "Type": 501,
@@ -4069,7 +4082,7 @@
         "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiturntable/FxUiturntable01.prefab', 2: '2'}"
     },
     {
-        "Id": 314,
+        "Id": 315,
         "ActionId": 314,
         "NextActionId": null,
         "Type": 301,
@@ -4082,7 +4095,7 @@
         "Params": "{3: '\u8981\u505a\u7684\u6e05\u5355\u5728\u8111\u6d77\u4e2d\u9010\u4e00\u5217\u51fa\uff0c\u7a7a\u4e2d\u82b1\u56ed\u7684\u9633\u5149\u6d12\u843d\u5728\u4eba\u7c7b\u6307\u6325\u5b98\u8eab\u65c1\u3002'}"
     },
     {
-        "Id": 315,
+        "Id": 316,
         "ActionId": 315,
         "NextActionId": null,
         "Type": 301,

@@ -195,8 +195,15 @@ function XFangKuaiStageData:ReduceFevStep()
 end
 
 function XFangKuaiStageData:TransformItem(index, itemId)
-    if self.ItemIds[index] then
+    local oldItemId = self.ItemIds[index]
+    if oldItemId then
         self.ItemIds[index] = itemId
+        table.insert(self.CurRoundNewItems, {
+            OperatorType = XEnumConst.FangKuai.ItemOperate.Discard, Index = index, Id = oldItemId
+        })
+        table.insert(self.CurRoundNewItems, {
+            OperatorType = XEnumConst.FangKuai.ItemOperate.Get, Index = index, Id = itemId
+        })
     end
 end
 

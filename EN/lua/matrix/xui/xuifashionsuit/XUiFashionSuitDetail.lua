@@ -32,6 +32,7 @@ function XUiFashionSuitDetail:OnAwake()
     if self.PanelLackResources then
         self._PanelLackRes = XUiPanelLackResources.New(self.PanelLackResources, self)
     end
+    XUiHelper.SetSceneType(CS.XSceneType.Ui)
 end
 
 function XUiFashionSuitDetail:GetContextUi()

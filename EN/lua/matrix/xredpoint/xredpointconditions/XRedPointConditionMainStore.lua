@@ -11,6 +11,11 @@ function XRedPointConditionMainStore.Check(eventId, args)
         return true
     end
 
+    -- 有免费商品可购买(服务端MainUiShopRedpointNotify下发)
+    if XShopManager.CheckAnyShopFreeGoodsRedPoint() then
+        return true
+    end
+
     return false
 end
 
@@ -19,7 +24,8 @@ function XRedPointConditionMainStore.GetSubEvents()
         return Events
     end
     Events = {
-        XRedPointEventElement.New(XEventId.EVENT_ITEM_RESTRICT_CONFIG_TRIGGER_CHANGE)
+        XRedPointEventElement.New(XEventId.EVENT_ITEM_RESTRICT_CONFIG_TRIGGER_CHANGE),
+        XRedPointEventElement.New(XEventId.EVENT_SHOP_FREE_GOODS_RED_POINT_UPDATE)
     }
     return Events
 end

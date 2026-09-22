@@ -99,4 +99,30 @@ function XPunishaarGameControl:GetCardRealtimeAtkCd(cardId, level, masterCard)
     return STEProjection.ProjectAtkCd(self, targetCard, equipped, ProjectionLogicFrame)
 end
 
+--region 卡牌数值历史缓存（逻辑层，替代 grid 实例级缓存）#数值动画逻辑分离
+
+--- 取卡上次 atk/cd（供 UI 判 changed；无历史返 nil=首次/cross-card）
+---@param masterCardId number 主卡实例 Id（Server.XPunishaarMasterCard.Id，唯一；同模板不同等级/实例可共存故不用 TemplateId）
+---@return number|nil lastAtk, number|nil lastCd
+function XPunishaarGameControl:GetLastCardAtkCd(masterCardId)
+    return self._LastAtkByCardId[masterCardId], self._LastCdByCardId[masterCardId]
+end
+
+--- 记录卡当前 atk/cd（UI 刷后调，供下次对比）
+---@param masterCardId number 主卡实例 Id
+---@param atkCur number
+---@param cdCur number
+function XPunishaarGameControl:SetLastCardAtkCd(masterCardId, atkCur, cdCur)
+    self._LastAtkByCardId[masterCardId] = atkCur
+    self._LastCdByCardId[masterCardId] = cdCur
+end
+
+--- 清全部 atk/cd 历史（OnRelease 调）
+function XPunishaarGameControl:ClearLastCardAtkCd()
+    self._LastAtkByCardId = {}
+    self._LastCdByCardId = {}
+end
+
+--endregion
+
 return XPunishaarGameControl

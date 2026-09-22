@@ -40,6 +40,9 @@ function XUiEquipDetailV2P6:OnStart(equipId, isPreview, characterId, forceShowBi
     self.OpenResonanceSkillPos = openResonanceSkillPos
     self.IsWeapon = XMVCA.XEquip:IsEquipWeapon(self.TemplateId)
     self.IsAwareness = XMVCA.XEquip:IsEquipAwareness(self.TemplateId)
+    if self.IsWeapon then
+        self:ApplyWeaponOverrunCameraConfig()
+    end
     if self.IsAwareness then
         self.SelectAwarenessIndex = XMVCA.XEquip:GetEquipSiteByEquipId(equipId)
     end
@@ -740,6 +743,17 @@ function XUiEquipDetailV2P6:InitVirtualCamera(root)
     end
 end
 
+-- 应用当前武器的超限页默认相机配置；未配置时保留 Prefab 参数
+function XUiEquipDetailV2P6:ApplyWeaponOverrunCameraConfig()
+    local cameraConfig = self._Control:GetWeaponOverrunCameraConfig(self.TemplateId)
+    if not cameraConfig or XTool.UObjIsNil(self.VCOverrun) then
+        return
+    end
+
+    self.VCOverrun.localPosition = CS.UnityEngine.Vector3(cameraConfig.PositionX, cameraConfig.PositionY, cameraConfig.PositionZ)
+    self.VCOverrun.localEulerAngles = CS.UnityEngine.Vector3(cameraConfig.RotationX, cameraConfig.RotationY, cameraConfig.RotationZ)
+end
+
 function XUiEquipDetailV2P6:SetVirtualCameraActive(virtualCamera, isActive)
     if not XTool.UObjIsNil(virtualCamera) then
         virtualCamera.gameObject:SetActiveEx(isActive)
@@ -757,7 +771,8 @@ end
 -- 切换 UiEquipOverrunV4P6 内部相机；level 为空时使用超限页默认相机
 function XUiEquipDetailV2P6:SwitchVirtualCamera(level, overrunCfg)
     self:CloseAllVirtualCamera()
-    self:SetVirtualCameraActive(self.VCOverrun, level == nil)
+    local isDefaultCamera = level == nil
+    self:SetVirtualCameraActive(self.VCOverrun, isDefaultCamera)
     for i = 1, 7 do
         self:SetVirtualCameraActive(self.VCOverrunLvList[i], i == level)
     end

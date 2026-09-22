@@ -111,6 +111,23 @@ XGachaManagerCreator = function()
         return false
     end
 
+    -- gachaId 能反查到所属 Group 即为自选gacha
+    function XGachaManager.IsGachaIdBelongSelfChoice(gachaId)
+        return XTool.IsNumberValid(XGachaManager.GetGroupIdByGachaId(gachaId))
+    end
+
+    -- 切换gacha入口：界面已开则抛事件由界面自身刷新到切换态，未开则新开
+    function XGachaManager.OpenSelfChoiceEntranceForChange(gachaId)
+        local groupId = XGachaManager.GetGroupIdByGachaId(gachaId)
+        if not XTool.IsNumberValid(groupId) then return end
+        local uiName = "UiGachaFashionSelfChoiceEntrance"
+        if XLuaUiManager.IsUiLoad(uiName) then
+            XEventManager.DispatchEvent(XEventId.EVENT_GACHA_SELF_CHOICE_ENTER_CHANGE_MODE)
+        else
+            XLuaUiManager.Open(uiName, groupId, true)
+        end
+    end
+
     -- 检查当前活动是否有任一（时间有效的）Group未选择
     function XGachaManager.HasUnselectedGroup()
         local activityConfig = XGachaManager.GetCurGachaFashionSelfChoiceActivityConfig()
@@ -425,15 +442,19 @@ XGachaManagerCreator = function()
         end
     end
     
-    function XGachaManager.GetGachaRewardInfoRequest(gaChaId, cb)
+    function XGachaManager.GetGachaRewardInfoRequest(gaChaId, cb, notips)
         local now = XTime.GetServerNowTimestamp()
         if LastGetGachaRewardInfoTimes[gaChaId] and now - LastGetGachaRewardInfoTimes[gaChaId] <= GET_GACHA_DATA_INTERVAL then
-            cb()
+            if cb then cb() end
             return
         end
         XNetwork.Call(METHOD_NAME.GetGachaInfo, { Id = gaChaId }, function(res)
             if res.Code ~= XCode.Success then
-                XUiManager.TipCode(res.Code)
+                if not notips then
+                    XUiManager.TipCode(res.Code)
+                end
+                -- 失败也须回调:选池已落地,进池回调若被丢弃会陷入"已选却进不去"卡死态
+                if cb then cb() end
                 return
             end
             XGachaManager.UpdateGachaRewardInfo(res.GridInfoList, gaChaId)
@@ -504,9 +525,13 @@ XGachaManagerCreator = function()
                 CurGroupSelectMap[groupId] = gachaId
             end
 
-            if cb then
-                cb()
-            end
+            -- 新选的子池需重新拉取奖励数据才会下发，清零时间戳绕过节流，拉完再回调进池
+            LastGetGachaRewardInfoTimes[gachaId] = nil
+            XGachaManager.GetGachaRewardInfoRequest(gachaId, function()
+                if cb then
+                    cb()
+                end
+            end, true)
         end)
     end
     --------------------------------------------Organize卡池状态相关------------------------------------------------------

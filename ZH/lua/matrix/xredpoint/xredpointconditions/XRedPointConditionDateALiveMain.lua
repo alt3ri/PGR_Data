@@ -15,9 +15,9 @@ function XRedPointConditionDateALiveMain.Check()
     if XRedPointConditions.Check(XRedPointConditions.Types.CONDITION_DATEALIVE_SIGN_IN_REWARD) then
         return true
     end
-    if XRedPointConditions.Check(XRedPointConditions.Types.CONDITION_DATEALIVE_CHAPTER_ENTER) then
-        return true
-    end
+    --if XRedPointConditions.Check(XRedPointConditions.Types.CONDITION_DATEALIVE_CHAPTER_ENTER) then
+    --    return true
+    --end
     return false
 end
 

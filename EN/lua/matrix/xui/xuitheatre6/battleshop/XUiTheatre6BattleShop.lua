@@ -69,7 +69,6 @@ function XUiTheatre6BattleShop:InitComponents()
     self:OnDragSell(false)
     self.BtnBack:AddEventListener(handler(self, self.OnBtnBackClick))
     self._PanelBuff = require("XUi/XUiTheatre6/Stage/Panel/XUiPanelTheatre6BottomBuffList").New(self.ListBuff, self)
-    self._PanelBuff:UpdateView()
     require("XUi/XUiTheatre6/Stage/Panel/XUiPanelTheatre6MessyCodeFx").New(self.MessyCodeFx, self)
 
     self.BtnBuySan:AddEventListener(handler(self, self.OnBtnBuySanClick))

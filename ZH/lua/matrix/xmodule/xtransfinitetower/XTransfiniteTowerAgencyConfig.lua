@@ -244,6 +244,35 @@ function XTransfiniteTowerAgency:GetOpenActivityTimeId()
     end
 end
 
+---当前开放活动下四座塔的配置
+function XTransfiniteTowerAgency:GetMainTowerCfgIds()
+    local _, activityId = self:GetOpenActivityTimeId()
+    if not activityId then return table.empty end
+    local cfg = self:GetActivityCfg(activityId)
+    return cfg and cfg.ChapterIds or table.empty
+end
+
+function XTransfiniteTowerAgency:IsTowerUnlockRedDotShow(chapterId)
+    local chapter = self:GetChapterCfg(chapterId)
+    if not chapter then
+        return false
+    end
+    if XTool.IsNumberValid(chapter.UnLockTimeId) and not XFunctionManager.CheckInTimeByTimeId(chapter.UnLockTimeId) then
+        return false
+    end
+    if not XConditionManager.CheckConditionAndDefaultPass(chapter.ConditionId) then
+        return false
+    end
+    return not self._Model:IsTowerEntered(chapterId)
+end
+
+function XTransfiniteTowerAgency:MarkTowerUnlockRedDotShown(chapterId)
+    if not XTool.IsNumberValid(chapterId) then
+        return
+    end
+    self._Model:SetTowerEntered(chapterId)
+end
+
 --endregion
 
 return XTransfiniteTowerAgency

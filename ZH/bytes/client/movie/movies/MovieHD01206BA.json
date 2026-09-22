@@ -825,8 +825,8 @@
         "Type": 301,
         "IsBlock": null,
         "IsEnd": null,
-        "BeginAnim": null,
-        "EndAnim": "AniZhuanchangEnd",
+        "BeginAnim": "AniZhuanchangEnd",
+        "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
         "Params": "{3: '\u90a3\u662f\u5728\u4e3d\u8299\u56de\u6765\u540e\u7684\u4e8b\u60c5\u3002'}"
@@ -1020,11 +1020,11 @@
         "Type": 101,
         "IsBlock": null,
         "IsEnd": null,
-        "BeginAnim": null,
+        "BeginAnim": "DialogDisable",
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
-        "Params": "{1: 'Assets/Product/Texture/Image/BgStory/Bgstory295.png'}"
+        "Params": "{1: 'Assets/Product/Texture/Image/BgStory/BgStory0.png'}"
     },
     {
         "Id": 80,
@@ -1033,7 +1033,7 @@
         "Type": 302,
         "IsBlock": null,
         "IsEnd": null,
-        "BeginAnim": null,
+        "BeginAnim": "AniZhuanchangEnd",
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
@@ -1080,6 +1080,32 @@
     },
     {
         "Id": 84,
+        "ActionId": 2000,
+        "NextActionId": null,
+        "Type": 501,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": null,
+        "EndAnim": null,
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{1: 'Assets/Product/Effect/Prefab/FxUi/FxUiStoryNew/FxUiStoryWhiteNew.prefab', 2: '3'}"
+    },
+    {
+        "Id": 85,
+        "ActionId": 2001,
+        "NextActionId": null,
+        "Type": 101,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": null,
+        "EndAnim": null,
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{1: 'Assets/Product/Texture/Image/BgStory/Bgstory295.png'}"
+    },
+    {
+        "Id": 86,
         "ActionId": 84,
         "NextActionId": null,
         "Type": 502,
@@ -1087,25 +1113,25 @@
         "IsEnd": null,
         "BeginAnim": null,
         "EndAnim": null,
-        "BeginDelay": 1000.0,
-        "EndDelay": null,
+        "BeginDelay": null,
+        "EndDelay": 1000.0,
         "Params": "{1: 'RImgBg1Shake'}"
     },
     {
-        "Id": 85,
+        "Id": 87,
         "ActionId": 85,
         "NextActionId": null,
         "Type": 301,
         "IsBlock": null,
         "IsEnd": null,
-        "BeginAnim": "AniZhuanchangEnd",
+        "BeginAnim": "DialogEnable",
         "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
         "Params": "{3: '\u2018\u8f70\u9686\u2019'}"
     },
     {
-        "Id": 86,
+        "Id": 88,
         "ActionId": 86,
         "NextActionId": null,
         "Type": 301,
@@ -1118,7 +1144,7 @@
         "Params": "{3: '\u81ea\u5df1\u8bdd\u97f3\u521a\u843d\uff0c\u5267\u70c8\u7684\u7206\u70b8\u58f0\u4fbf\u4ece\u53a8\u623f\u91cc\u4f20\u4e86\u51fa\u6765\u3002'}"
     },
     {
-        "Id": 87,
+        "Id": 89,
         "ActionId": 87,
         "NextActionId": null,
         "Type": 201,
@@ -1131,7 +1157,7 @@
         "Params": "{1: '1', 2: '500026', 3: '10'}"
     },
     {
-        "Id": 88,
+        "Id": 90,
         "ActionId": 88,
         "NextActionId": null,
         "Type": 301,

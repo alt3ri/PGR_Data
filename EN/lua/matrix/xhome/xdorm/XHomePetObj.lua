@@ -64,7 +64,7 @@ function XHomePetObj:OnLoadComplete()
         self:OnCollideAgent(obj)
     end)
     --层级
-    self.GameObject:SetLayerRecursively(CS.UnityEngine.LayerMask.NameToLayer(HomeSceneLayerMask.Device))
+    self.GameObject:SetLayerRecursively(CS.UnityEngine.LayerMask.NameToLayer(LayerMaskName.SceneObject))
     --阴影
     CS.XMaterialContainerHelper.ProcessCharacterShadowVolume(self.GameObject)
 end

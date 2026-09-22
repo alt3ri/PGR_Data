@@ -32,6 +32,7 @@ function XUiPanelEquipV2P6:InitButton()
     XUiHelper.RegisterClickEvent(self, self.BtnUnFold, self.OnBtnUnFoldClick)
     XUiHelper.RegisterClickEvent(self, self.BtnFold, self.OnBtnFoldClick)
     XUiHelper.RegisterClickEvent(self, self.BtnRecommend, self.OnBtnRecommendClick)
+    self.BtnRecommend:SetNameByGroup(1, XUiHelper.GetText("TeamRecommendBubbleBtnRecommend"))
 
     XEventManager.AddEventListener(XEventId.EVENT_EQUIPLIST_TAKEOFF_NOTYFY, self.OnEquipTakeOff, self)
 end
@@ -64,6 +65,10 @@ function XUiPanelEquipV2P6:InitUnFoldButton()
     XUiHelper.RegisterClickEvent(self, self.BtnAutoTakeOff, self.OnBtnAutoTakeOffClick)
     XUiHelper.RegisterClickEvent(self, self.BtnAwarenessSuit, self.OnBtnAwarenessSuitClick)
     XUiHelper.RegisterClickEvent(self, self.BtnAddition, self.OnPanelAdditionClick)
+end
+
+function XUiPanelEquipV2P6:OnEnable()
+    self.IsShowRecommendBubble = nil
 end
 
 function XUiPanelEquipV2P6:OnDisable()
@@ -127,6 +132,10 @@ function XUiPanelEquipV2P6:UpdateRoleView()
     -- 推荐按钮
     local openRecommend = XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.TeamRecommend)
     self.BtnRecommend.gameObject:SetActiveEx(openRecommend)
+    if self.IsShowRecommendBubble == nil and openRecommend then
+        self.IsShowRecommendBubble = XMVCA.XTeamRecommend:TryRecordBubbleShown(self.RootUi.Name)
+    end
+    self.BtnRecommend:ShowReddot(self.IsShowRecommendBubble)
 
     -- 辅助机
     local partner = XDataCenter.PartnerManager.GetCarryPartnerEntityByCarrierId(characterId)

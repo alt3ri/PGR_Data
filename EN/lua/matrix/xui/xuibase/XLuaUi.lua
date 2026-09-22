@@ -671,11 +671,22 @@ function XLuaUi:FindPlayable(animName)
     return self.Ui:FindPlayable(animName)
 end
 
+-- 完成已开始播放的动画，会结束播放状态并执行完成回调
 function XLuaUi:FinishAnimation(animName)
     local playable = self:FindPlayable(animName)
 
     if playable then
         playable.gameObject:FinishTimelineAnimation()
+    end
+end
+
+-- 强制将动画采样到末帧，不要求动画播放过，也不处理播放状态和回调
+function XLuaUi:ForceSkipToEndAnimation(animName)
+    local playable = self:FindPlayable(animName)
+
+    if playable then
+        playable.time = playable.duration
+        playable:Evaluate()
     end
 end
 --endregion

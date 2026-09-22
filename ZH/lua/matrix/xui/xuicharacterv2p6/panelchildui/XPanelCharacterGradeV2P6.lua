@@ -112,6 +112,11 @@ function XPanelCharacterGradeV2P6:OnStart()
     self:InitTable()
 end
 
+function XPanelCharacterGradeV2P6:OnEnable()
+    self:RefreshOneClickBtn()
+    XDataCenter.GuideManager.CheckGuideOpen()
+end
+
 function XPanelCharacterGradeV2P6:InitButton()
     XUiHelper.RegisterClickEvent(self, self.BtnWisdom, self.OnBtnWisdomClick)
     self.BtnOneClick:AddEventListener(handler(self, self.OnBtnOneClickClick))
@@ -137,12 +142,17 @@ function XPanelCharacterGradeV2P6:RefreshUiShow()
     self:UpdateGradeData()
     self.CanvasGroup.alpha = 1
 
-    local isOneClickOpen = XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.CharacterOneClick)
-        and self._Control:CheckRoleCultureHasAnyUpgradableByCurState(self.CharacterId)
-    self.BtnOneClick.gameObject:SetActiveEx(isOneClickOpen)
+    self:RefreshOneClickBtn()
     self:RefreshTrainingItemBubble()
 
     self:AddEventListener()
+end
+
+function XPanelCharacterGradeV2P6:RefreshOneClickBtn()
+    self.CharacterId = self.Parent.ParentUi.CurCharacter.Id
+    local isOneClickOpen = XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.CharacterOneClick)
+        and self._Control:CheckRoleCultureHasAnyUpgradableByCurState(self.CharacterId)
+    self.BtnOneClick.gameObject:SetActiveEx(isOneClickOpen)
 end
 
 --- 一键养成道具持有提示：有道具才展示气泡

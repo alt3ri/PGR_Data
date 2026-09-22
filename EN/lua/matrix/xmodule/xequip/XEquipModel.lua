@@ -13,6 +13,7 @@ local TableKey =
     WeaponSkillPool = { CacheType = XConfigUtil.CacheType.Normal },
     EquipAwake = { CacheType = XConfigUtil.CacheType.Normal },
     WeaponOverrun = { CacheType = XConfigUtil.CacheType.Normal },
+    WeaponOverrunCamera = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "WeaponId", CacheType = XConfigUtil.CacheType.Normal },
     WeaponOverrunSkill = { DirPath = XConfigUtil.DirectoryType.Client, CacheType = XConfigUtil.CacheType.Normal },
     CharacterSuitPriority = { DirPath = XConfigUtil.DirectoryType.Client, Identifier = "CharacterId", CacheType = XConfigUtil.CacheType.Normal},
     EquipRes = { DirPath = XConfigUtil.DirectoryType.Client, CacheType = XConfigUtil.CacheType.Normal },
@@ -29,10 +30,13 @@ local TableKey =
     EquipResonanceEffect = { DirPath = XConfigUtil.DirectoryType.Client, CacheType = XConfigUtil.CacheType.Normal },
 }
 
-local EquipGuideTableKey = 
+local EquipRecommendTableKey =
 {
     EquipRecommend = { CacheType = XConfigUtil.CacheType.Normal }
 }
+
+local AWARENESS_ENHANCE_MAIN_AUTO_EXCHANGE_KEY = "AwarenessEnhanceMainAutoExchange"
+local AWARENESS_STRENGTHEN_AUTO_EXCHANGE_KEY = "AwarenessStrengthenAutoExchange"
 
 ---@class XEquipModel : XModel
 local XEquipModel = XClass(XModel, "XEquipModel")
@@ -53,9 +57,16 @@ function XEquipModel:OnInit()
         Days = 0 --设置回收天数, 0为不回收
     }
     self.OverLimitTexts = {}
-    
+
+    self._OneClickAutoSettingModel = self:AddSubModel(require("XModule/XEquip/SubModule/XEquipOneClickAutoSettingModel"))
+
     --config相关
     self:InitConfig()
+end
+
+---@return XEquipOneClickAutoSettingModel
+function XEquipModel:GetOneClickAutoSettingModel()
+    return self._OneClickAutoSettingModel
 end
 
 function XEquipModel:ClearPrivate()
@@ -89,19 +100,97 @@ function XEquipModel:InitEquipData(dataList)
     end
 end
 
+---@class XEquipSiteChange
+---@field CharacterId number
+---@field Site number
+---@field OldEquipId number|nil
+---@field NewEquipId number|nil
+
+---@param snapshotDic table<number, table<number, number|boolean>>
+---@param characterId number
+---@param site number
+function XEquipModel:_RecordEquipSiteSnapshot(snapshotDic, characterId, site)
+    if characterId == 0 then
+        return
+    end
+
+    local characterSnapshotDic = snapshotDic[characterId]
+    if not characterSnapshotDic then
+        characterSnapshotDic = {}
+        snapshotDic[characterId] = characterSnapshotDic
+    end
+
+    if characterSnapshotDic[site] ~= nil then
+        return
+    end
+
+    -- false 表示该部位原本为空，用于区分“尚未记录”和“已记录空部位”。
+    characterSnapshotDic[site] = self:GetCharacterEquipId(characterId, site) or false
+end
+
 -- 刷新装备列表
+---@param dataList table
+---@return table<number, boolean>
+---@return XEquipSiteChange[]
 function XEquipModel:UpdateEquipData(dataList)
+    local siteSnapshotDic = {}
+
+    -- 服务端保证受影响部位的最终装备及所有相关装备会完整下推。
+    -- 必须先记录完整旧状态，再统一清理和重建索引，避免 A/B 交换时受列表顺序影响。
+    for _, protoData in pairs(dataList) do
+        local equip = self.EquipDic[protoData.Id]
+        local oldCharacterId = equip and equip.CharacterId or 0
+        local templateId = equip and equip.TemplateId or protoData.TemplateId
+        local equipSite = self:GetEquipSite(templateId)
+        self:_RecordEquipSiteSnapshot(siteSnapshotDic, oldCharacterId, equipSite)
+        self:_RecordEquipSiteSnapshot(siteSnapshotDic, protoData.CharacterId, equipSite)
+    end
+
+    for characterId, characterSnapshotDic in pairs(siteSnapshotDic) do
+        for equipSite in pairs(characterSnapshotDic) do
+            local equipIdDic = self.CharacterEquipIdDic[characterId]
+            if equipIdDic then
+                equipIdDic[equipSite] = nil
+            end
+        end
+    end
+
     local XEquip = require("XEntity/XEquip/XEquip")
     for _, protoData in pairs(dataList) do
         local equip = self.EquipDic[protoData.Id]
-        if not equip then
-            equip = XEquip.New(protoData)
-            self.EquipDic[protoData.Id] = equip
-            self:SetCharacterEquipId(protoData.CharacterId, protoData.Id)
-        else
+        if equip then
             equip:SyncData(protoData)
+        else
+            self.EquipDic[protoData.Id] = XEquip.New(protoData)
         end
     end
+
+    -- 数据已全部同步为服务端最终状态，此时重建索引不会受 EquipDataList 顺序影响。
+    for _, protoData in pairs(dataList) do
+        if protoData.CharacterId ~= 0 then
+            self:SetCharacterEquipId(protoData.CharacterId, protoData.Id)
+        end
+    end
+
+    local changedCharacterIdDic = {}
+    local siteChangeList = {}
+    for characterId, characterSnapshotDic in pairs(siteSnapshotDic) do
+        for equipSite, oldEquipIdValue in pairs(characterSnapshotDic) do
+            local oldEquipId = oldEquipIdValue or nil
+            local newEquipId = self:GetCharacterEquipId(characterId, equipSite)
+            if oldEquipId ~= newEquipId then
+                changedCharacterIdDic[characterId] = true
+                table.insert(siteChangeList, {
+                    CharacterId = characterId,
+                    Site = equipSite,
+                    OldEquipId = oldEquipId,
+                    NewEquipId = newEquipId,
+                })
+            end
+        end
+    end
+
+    return changedCharacterIdDic, siteChangeList
 end
 
 -- 释放所有装备
@@ -352,6 +441,23 @@ function XEquipModel:GetCharacterAwarenessIds(characterId, isUseTempList)
         end
     end
     return equipIds
+end
+
+--- 获取成员的意识Id字典（site -> equipId，未穿戴的 site 不存在 key）
+---@param characterId number 成员Id
+function XEquipModel:GetCharacterAwarenessIdDic(characterId)
+    local result = {}
+    local equipIdDic = self.CharacterEquipIdDic[characterId]
+    if equipIdDic then
+        local awarenessOne = XEnumConst.EQUIP.EQUIP_SITE.AWARENESS.ONE
+        local awarenessSix = XEnumConst.EQUIP.EQUIP_SITE.AWARENESS.SIX
+        for site, equipId in pairs(equipIdDic) do
+            if site >= awarenessOne and site <= awarenessSix then
+                result[site] = equipId
+            end
+        end
+    end
+    return result
 end
 
 --- 获取成员穿戴的意识数量
@@ -733,33 +839,68 @@ function XEquipModel:CanEatEquipSort(lEquipId, rEquipId)
 end
 
 function XEquipModel:GetCanEatWeaponIds(equipId)
-    local weaponIds = {}
-    for k, v in pairs(self.EquipDic) do
-        if v.Id ~= equipId and self:IsClassifyEqualByEquipId(v.Id, XEnumConst.EQUIP.CLASSIFY.WEAPON) and
-        not self:IsWearing(v.Id) and
-        not self:IsLock(v.Id) then
-            table.insert(weaponIds, k)
+    -- 提前算出SortKey,空间换时间
+    local entries = {}
+    for _, v in pairs(self.EquipDic) do
+        if v.Id ~= equipId and self:IsClassifyEqualByEquipId(v.Id, XEnumConst.EQUIP.CLASSIFY.WEAPON)
+            and not self:IsWearing(v.Id)
+            and not self:IsLock(v.Id) then
+            local templateId = v.TemplateId
+            table.insert(entries, {
+                Id = v.Id,
+                -- 排序 key：star↑ → isFood → breakthrough↑ → level↑ → priority↑
+                Star = self:GetEquipStar(templateId),
+                IsFood = v:IsFood() and 1 or 0,
+                Breakthrough = v.Breakthrough or 0,
+                Level = v.Level or 0,
+                Priority = self:GetEquipPriority(templateId),
+            })
         end
     end
-    table.sort(weaponIds, function(a, b)
-        return self:CanEatEquipSort(a, b)
+    table.sort(entries, function(a, b)
+        if a.Star ~= b.Star then return a.Star < b.Star end
+        if a.IsFood ~= b.IsFood then return a.IsFood > b.IsFood end
+        if a.Breakthrough ~= b.Breakthrough then return a.Breakthrough < b.Breakthrough end
+        if a.Level ~= b.Level then return a.Level < b.Level end
+        return a.Priority < b.Priority
     end)
+    local weaponIds = {}
+    for i, e in ipairs(entries) do
+        weaponIds[i] = e.Id
+    end
     return weaponIds
 end
 
 function XEquipModel:GetCanEatAwarenessIds(equipId)
-    local awarenessIds = {}
-    for k, v in pairs(self.EquipDic) do
-        if v.Id ~= equipId and self:IsClassifyEqualByEquipId(v.Id, XEnumConst.EQUIP.CLASSIFY.AWARENESS) and
-        not self:IsWearing(v.Id) and
-        not self:IsInSuitPrefab(v.Id) and
-        not self:IsLock(v.Id) then
-            table.insert(awarenessIds, k)
+    -- 提前算出SortKey,空间换时间
+    local entries = {}
+    for _, v in pairs(self.EquipDic) do
+        if v.Id ~= equipId and self:IsClassifyEqualByEquipId(v.Id, XEnumConst.EQUIP.CLASSIFY.AWARENESS)
+            and not self:IsWearing(v.Id)
+            and not self:IsInSuitPrefab(v.Id)
+            and not self:IsLock(v.Id) then
+            local templateId = v.TemplateId
+            table.insert(entries, {
+                Id = v.Id,
+                Star = self:GetEquipStar(templateId),
+                IsFood = v:IsFood() and 1 or 0,
+                Breakthrough = v.Breakthrough or 0,
+                Level = v.Level or 0,
+                Priority = self:GetEquipPriority(templateId),
+            })
         end
     end
-    table.sort(awarenessIds, function(a, b)
-        return self:CanEatEquipSort(a, b)
+    table.sort(entries, function(a, b)
+        if a.Star ~= b.Star then return a.Star < b.Star end
+        if a.IsFood ~= b.IsFood then return a.IsFood > b.IsFood end
+        if a.Breakthrough ~= b.Breakthrough then return a.Breakthrough < b.Breakthrough end
+        if a.Level ~= b.Level then return a.Level < b.Level end
+        return a.Priority < b.Priority
     end)
+    local awarenessIds = {}
+    for i, e in ipairs(entries) do
+        awarenessIds[i] = e.Id
+    end
     return awarenessIds
 end
 
@@ -1152,6 +1293,28 @@ function XEquipModel:SetRecycleCookie(isSelect)
     end
 end
 
+-- 意识强化主界面（UiEquipAwarenessEnhanceMain）自动兑换开关本地缓存
+function XEquipModel:GetAwarenessEnhanceMainAutoExchangeOn()
+    local isOn = self._SaveUtil:GetData(AWARENESS_ENHANCE_MAIN_AUTO_EXCHANGE_KEY)
+    if isOn == nil then
+        return false
+    end
+    return isOn == true
+end
+
+function XEquipModel:SetAwarenessEnhanceMainAutoExchangeOn(isOn)
+    self._SaveUtil:SaveData(AWARENESS_ENHANCE_MAIN_AUTO_EXCHANGE_KEY, isOn and true or false)
+end
+
+-- 意识强化界面（UiEquipAwarenessStrengthen）自动兑换开关本地缓存
+function XEquipModel:GetAwarenessStrengthenAutoExchangeOn()
+    return self._SaveUtil:GetData(AWARENESS_STRENGTHEN_AUTO_EXCHANGE_KEY) == true
+end
+
+function XEquipModel:SetAwarenessStrengthenAutoExchangeOn(isOn)
+    self._SaveUtil:SaveData(AWARENESS_STRENGTHEN_AUTO_EXCHANGE_KEY, isOn and true or false)
+end
+
 --- 装备是否待回收
 function XEquipModel:IsRecycle(equipId)
     if not equipId then
@@ -1242,7 +1405,7 @@ end
 
 function XEquipModel:InitConfig()
     self._ConfigUtil:InitConfigByTableKey("Equip", TableKey)
-    self._ConfigUtil:InitConfigByTableKey("Equip/EquipGuide", EquipGuideTableKey)
+    self._ConfigUtil:InitConfigByTableKey("Equip/EquipGuide", EquipRecommendTableKey)
 
     self:InitEquipLevelUpConfig()
     self:InitWeaponSkillPoolConfig()
@@ -2829,7 +2992,7 @@ end
 
 
 function XEquipModel:GetEquipRecommend(id)
-    local cfgs = self._ConfigUtil:GetByTableKey(EquipGuideTableKey.EquipRecommend)
+    local cfgs = self._ConfigUtil:GetByTableKey(EquipRecommendTableKey.EquipRecommend)
     if id then
         if cfgs[id] then
             return cfgs[id]
@@ -2843,6 +3006,12 @@ end
 
 
 ---------------------------------------- #region WeaponOverrun ----------------------------------------
+
+---@param weaponTemplateId number 武器模板Id
+---@return XTableWeaponOverrunCamera|nil
+function XEquipModel:GetWeaponOverrunCameraConfig(weaponTemplateId)
+    return self._ConfigUtil:GetCfgByTableKeyAndIdKey(TableKey.WeaponOverrunCamera, weaponTemplateId, true)
+end
 
 ---@return XTableWeaponOverrun[]
 function XEquipModel:GetWeaponOverrunConfigs()
@@ -2902,25 +3071,25 @@ function XEquipModel:GetWeaponOverrunCfgIds(weaponTemplateId, characterId)
     return result
 end
 
----@return number|nil
-function XEquipModel:GetWeaponOverrunCharacterId(weaponTemplateId)
-    if not self.WeaponOverrunDic then
-        self:InitWeaponOverrunCfgs()
-    end
-
-    local weaponData = self.WeaponOverrunDic[weaponTemplateId]
-    if not weaponData then
-        return nil
-    end
-
-    for characterId in pairs(weaponData.Character) do
-        return characterId
-    end
-    return nil
-end
-
----@return table<number, XTableWeaponOverrun> 超限等级对应配置的字典
-function XEquipModel:GetWeaponOverrunCfgsByTemplateId(weaponTemplateId, characterId)
+---@return number|nil
+function XEquipModel:GetWeaponOverrunCharacterId(weaponTemplateId)
+    if not self.WeaponOverrunDic then
+        self:InitWeaponOverrunCfgs()
+    end
+
+    local weaponData = self.WeaponOverrunDic[weaponTemplateId]
+    if not weaponData then
+        return nil
+    end
+
+    for characterId in pairs(weaponData.Character) do
+        return characterId
+    end
+    return nil
+end
+
+---@return table<number, XTableWeaponOverrun> 超限等级对应配置的字典
+function XEquipModel:GetWeaponOverrunCfgsByTemplateId(weaponTemplateId, characterId)
     local cfgIds = self:GetWeaponOverrunCfgIds(weaponTemplateId, characterId)
     local cfgs = {}
     for level, cfgId in pairs(cfgIds) do
@@ -2937,32 +3106,32 @@ function XEquipModel:CanOverrunByTemplateId(weaponTemplateId)
 end
 
 -- 获取武器超限意识绑定的配置表
-function XEquipModel:GetWeaponOverrunSuitCfgByTemplateId(weaponTemplateId)
-    local cfgIds = self:GetWeaponOverrunCfgIds(weaponTemplateId)
-    for _, cfgId in ipairs(cfgIds) do
-        local cfg = self:GetWeaponOverrunConfigById(cfgId)
-        if cfg and cfg.OverrunType == XEnumConst.EQUIP.WEAPON_OVERRUN_UNLOCK_TYPE.SUIT then
+function XEquipModel:GetWeaponOverrunSuitCfgByTemplateId(weaponTemplateId)
+    local cfgIds = self:GetWeaponOverrunCfgIds(weaponTemplateId)
+    for _, cfgId in ipairs(cfgIds) do
+        local cfg = self:GetWeaponOverrunConfigById(cfgId)
+        if cfg and cfg.OverrunType == XEnumConst.EQUIP.WEAPON_OVERRUN_UNLOCK_TYPE.SUIT then
             return cfg
         end
     end
-    return nil
-end
-
-function XEquipModel:GetWeaponOverrunAttrCfgByTemplateId(weaponTemplateId, characterId)
-    local attrCfg
-    local cfgIds = self:GetWeaponOverrunCfgIds(weaponTemplateId, characterId)
-    for _, cfgId in pairs(cfgIds) do
-        local cfg = self:GetWeaponOverrunConfigById(cfgId)
-        if cfg and cfg.OverrunType == XEnumConst.EQUIP.WEAPON_OVERRUN_UNLOCK_TYPE.ATTR then
-            if not attrCfg or cfg.Level < attrCfg.Level then
-                attrCfg = cfg
-            end
-        end
-    end
-    return attrCfg
-end
-
-function XEquipModel:GetConfigWeaponDeregulateUI(lv)
+    return nil
+end
+
+function XEquipModel:GetWeaponOverrunAttrCfgByTemplateId(weaponTemplateId, characterId)
+    local attrCfg
+    local cfgIds = self:GetWeaponOverrunCfgIds(weaponTemplateId, characterId)
+    for _, cfgId in pairs(cfgIds) do
+        local cfg = self:GetWeaponOverrunConfigById(cfgId)
+        if cfg and cfg.OverrunType == XEnumConst.EQUIP.WEAPON_OVERRUN_UNLOCK_TYPE.ATTR then
+            if not attrCfg or cfg.Level < attrCfg.Level then
+                attrCfg = cfg
+            end
+        end
+    end
+    return attrCfg
+end
+
+function XEquipModel:GetConfigWeaponDeregulateUI(lv)
     local cfgs = self._ConfigUtil:GetByTableKey(TableKey.WeaponDeregulateUI)
     if lv then
         if cfgs[lv] then
@@ -3026,6 +3195,19 @@ function XEquipModel:GetLevelUpCfg(templateId, times, level)
     end
 
     return config
+end
+
+--- 取某突破段的全量等级配置表（供循环内逐级取 cfg[level].Exp，避免每级重复表查）
+---@param templateId number
+---@param times number
+---@return table<number, table>|nil cfgs 以 level 为下标
+function XEquipModel:GetLevelUpCfgs(templateId, times)
+    local breakthroughCfg = self:GetEquipBreakthroughCfg(templateId, times)
+    if not breakthroughCfg then
+        return
+    end
+    local key = self.LevelUpTableKey[breakthroughCfg.LevelUpTemplateId]
+    return self._ConfigUtil:GetByTableKey(key)
 end
 ---------------------------------------- #endregion LevelUpTemplate ----------------------------------------
 
@@ -3451,69 +3633,77 @@ function XEquipModel:DefaultSort(a, b, exclude)
 end
 
 function XEquipModel:SortEquipIdListByPriorType(equipIdList, priorSortType)
-    local sortFunc
-    if priorSortType == XEnumConst.EQUIP.PRIOR_SORT_TYPE.LEVEL then
-        sortFunc = function(aId, bId)
-            local a = self:GetEquip(aId)
-            local b = self:GetEquip(bId)
-            if a.Level ~= b.Level then
-                return a.Level > b.Level
-            end
-            return self:DefaultSort(a, b, priorSortType)
+    if XTool.IsTableEmpty(equipIdList) then
+        return
+    end
+    -- 提前算出SortKey,空间换时间（含 IsWearing/IsInPrefab/Star/Overrun/BT/Lv/Recycle/Priority/CreateTime）
+    local entries = {}
+    for i, id in ipairs(equipIdList) do
+        local equip = self:GetEquip(id)
+        if not equip then
+            goto continue
         end
-    elseif priorSortType == XEnumConst.EQUIP.PRIOR_SORT_TYPE.BREAKTHROUGH then
-        sortFunc = function(aId, bId)
-            local a = self:GetEquip(aId)
-            local b = self:GetEquip(bId)
-            if a.Breakthrough ~= b.Breakthrough then
-                return a.Breakthrough > b.Breakthrough
-            end
-            return self:DefaultSort(a, b, priorSortType)
-        end
-    elseif priorSortType == XEnumConst.EQUIP.PRIOR_SORT_TYPE.STAR then
-        sortFunc = function(aId, bId)
-            local a = self:GetEquip(aId)
-            local b = self:GetEquip(bId)
-            local aStar = self:GetEquipStar(a.TemplateId)
-            local bStar = self:GetEquipStar(b.TemplateId)
-            if aStar ~= bStar then
-                return aStar > bStar
-            end
-            return self:DefaultSort(a, b, priorSortType)
-        end
-    elseif priorSortType == XEnumConst.EQUIP.PRIOR_SORT_TYPE.PROCEED then
-        sortFunc = function(aId, bId)
-            local a = self:GetEquip(aId)
-            local b = self:GetEquip(bId)
-            if a.CreateTime ~= b.CreateTime then
-                return a.CreateTime < b.CreateTime
-            end
-            return self:DefaultSort(a, b, priorSortType)
-        end
-    else
-        sortFunc = function(aId, bId)
-            local a = self:GetEquip(aId)
-            local b = self:GetEquip(bId)
-            return self:DefaultSort(a, b)
-        end
+        local templateId = equip.TemplateId
+        table.insert(entries, {
+            Id = id,
+            Wearing = self:IsWearing(id) and 1 or 0,
+            InPrefab = (XDataCenter.TeamManager.CheckEquipIdIsInTeamPrefab(id) or self:IsInSuitPrefab(id)) and 1 or 0,
+            Star = self:GetEquipStar(templateId),
+            IsOverrun = equip:IsOverrun() and 1 or 0,
+            Breakthrough = equip.Breakthrough or 0,
+            Level = equip.Level or 0,
+            IsRecycle = equip.IsRecycle and 1 or 0,
+            Priority = self:GetEquipPriority(templateId),
+            CreateTime = equip.CreateTime or 0,
+        })
+        ::continue::
     end
 
-    table.sort(equipIdList, function(aId, bId)
-        --强制优先插入装备中排序
-        local aWearing = self:IsWearing(aId) and 1 or 0
-        local bWearing = self:IsWearing(bId) and 1 or 0
-        if aWearing ~= bWearing then
-            return aWearing < bWearing
+    local PRIOR = XEnumConst.EQUIP.PRIOR_SORT_TYPE
+    table.sort(entries, function(a, b)
+        -- 强制优先：穿戴的排后
+        if a.Wearing ~= b.Wearing then
+            return a.Wearing < b.Wearing
+        end
+        -- 套装预设/队伍预设里的排后
+        if a.InPrefab ~= b.InPrefab then
+            return a.InPrefab < b.InPrefab
         end
 
-        local isInPrefabA = XDataCenter.TeamManager.CheckEquipIdIsInTeamPrefab(aId) or self:IsInSuitPrefab(aId)
-        local isInPrefabB = XDataCenter.TeamManager.CheckEquipIdIsInTeamPrefab(bId) or self:IsInSuitPrefab(bId)
-        if isInPrefabA ~= isInPrefabB then
-            return not isInPrefabA
+        if priorSortType == PRIOR.LEVEL then
+            if a.Level ~= b.Level then return a.Level > b.Level end
+        elseif priorSortType == PRIOR.BREAKTHROUGH then
+            if a.Breakthrough ~= b.Breakthrough then return a.Breakthrough > b.Breakthrough end
+        elseif priorSortType == PRIOR.STAR then
+            if a.Star ~= b.Star then return a.Star > b.Star end
+        elseif priorSortType == PRIOR.PROCEED then
+            if a.CreateTime ~= b.CreateTime then return a.CreateTime < b.CreateTime end
         end
 
-        return sortFunc(aId, bId)
+        if priorSortType ~= PRIOR.STAR then
+            if a.Star ~= b.Star then return a.Star > b.Star end
+        end
+        if a.IsOverrun ~= b.IsOverrun then
+            return a.IsOverrun > b.IsOverrun
+        end
+        if priorSortType ~= PRIOR.BREAKTHROUGH then
+            if a.Breakthrough ~= b.Breakthrough then return a.Breakthrough > b.Breakthrough end
+        end
+        if priorSortType ~= PRIOR.LEVEL then
+            if a.Level ~= b.Level then return a.Level > b.Level end
+        end
+        if a.IsRecycle ~= b.IsRecycle then
+            return a.IsRecycle == 0
+        end
+        return a.Priority > b.Priority
     end)
+
+    for i, e in ipairs(entries) do
+        equipIdList[i] = e.Id
+    end
+    for i = #entries + 1, #equipIdList do
+        equipIdList[i] = nil
+    end
 end
 
 function XEquipModel:CheckMaxCount(equipType, count)

@@ -54,7 +54,7 @@ function XUiPanelRecommendCompanyPackage:SetData(data, skipFunc, buyFinished)
                 end
                 if package:GetIsSellOut() then
                     btnBuy:SetDisable(true)
-                    self:ShowBuyBtnSoldOutOrOwned(btnBuy.transform, true)
+                    self:ShowBuyBtnSoldOutOrOwned(btnBuy.transform, not package:IsCoatingLB())
                 else
                     allSellOut = false
                 end

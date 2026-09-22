@@ -95,6 +95,26 @@
         "Des": "<color=#CB4B12><Icon=IconSun|30|30|0.5/>Dawnlight</color> caps at 120. Each time <color=#CB4B12><Icon=IconSun|30|30|0.5/>Dawnlight</color> is full, depletes all <color=#CB4B12><Icon=IconSun|30|30|0.5/>Dawnlight</color> and unleashes <color=#CB4B12><Icon=IconSun|30|30|0.5/>Dawnlight Unbound</color>: forcibly triggers the Trigger Skill in slot 1, ignoring its original activation conditions."
     },
     {
+        "Id": 30,
+        "Name": "Dark Hex",
+        "Des": "When the enemy uses a skill, they take DMG equal to 10% <color=#9B8015><Icon=IconAttack|30|30|0.5/>ATK</color> for each stack. Lasts indefinitely and stacks infinitely. The DMG ignores <color=#137D90><Icon=IconProtector|30|30|0.5/>shields</color><color=#E7D09A>."
+    },
+    {
+        "Id": 31,
+        "Name": "Dreamlure",
+        "Des": "Equipping any skill with a <color=#6F4877><Icon=IconCharm|30|30|0.5/>Dreamlure</color> effect activates the following effect: Gains 1 <color=#6F4877><Icon=IconCharm|30|30|0.5/>Dreamlure</color> when using a skill. <color=#6F4877><Icon=IconCharm|30|30|0.5/>Dreamlure</color> is capped at 13. When <color=#6F4877><Icon=IconCharm|30|30|0.5/>Dreamlure</color> reaches the cap, consumes all <color=#6F4877><Icon=IconCharm|30|30|0.5/>Dreamlure</color> and triggers <color=#6F4877><Icon=IconCharm|30|30|0.5/>Entranced</color>."
+    },
+    {
+        "Id": 32,
+        "Name": "Entranced",
+        "Des": "Triggers when <color=#6F4877><Icon=IconCharm|30|30|0.5/>Dreamlure</color> is full. When triggered, drains 15 <color=#6F4877><Icon=IconStamina|30|30|0.5/>Fighting Will</color> from the enemy and forcibly activates the Active Skill in Slot 1."
+    },
+    {
+        "Id": 98,
+        "Name": "Dark Hex",
+        "Des": "When using a skill, takes DMG equal to 10% ATK for each stack. Lasts indefinitely and stacks infinitely. The DMG ignores shields."
+    },
+    {
         "Id": 99,
         "Name": "Ignite",
         "Des": "When hit by enemy Skills, deal DMG equal to 10% Attack for every stack. Lasts indefinitely. Stacks infinitely."

@@ -133,25 +133,29 @@ function XUiPanelPunishaarCollectionMainCard:SetCollectionSubCardMode(isSubCard,
     local isAwareness = cardCfg and cardCfg.Type == CardType.Awareness
 
     SetActive(
-            self.GridSubCardRoleBg,
-            isSubCard and isAwareness
+        self.GridSubCardRoleBg,
+        isSubCard and isAwareness
     )
 
     SetActive(
-            self.GridSubCardPatsBg,
-            isSubCard and not isAwareness
+        self.GridSubCardPatsBg,
+        isSubCard and not isAwareness
     )
 
     SetActive(
-            self.ImgQualityBgRole,
-            not isSubCard and cardCfg and cardCfg.Type == CardType.Character
+        self.ImgQualityBgRole,
+        not isSubCard
+            and cardCfg
+            and cardCfg.Type == CardType.Character
     )
 
     SetActive(
-            self.ImgQualityBgPets,
-            not isSubCard and cardCfg and cardCfg.Type == CardType.Weapon
+        self.ImgQualityBgPets,
+        not isSubCard
+            and cardCfg
+            and cardCfg.Type == CardType.Weapon
     )
-
+    
     SetActive(self.StatDamage, not isSubCard)
     SetActive(self.StatCD, not isSubCard)
 end
@@ -182,6 +186,10 @@ function XUiPanelPunishaarCollectionMainCard:RefreshCollectionSubCard(cardId)
     if self.TxtCardName then
         self.TxtCardName.text = cardCfg.Name or ""
     end
+
+
+    -- 用当前副卡的标签替换上一张卡的标签。
+    self:_RefreshCardTags(cardCfg)
 end
 
 return XUiPanelPunishaarCollectionMainCard

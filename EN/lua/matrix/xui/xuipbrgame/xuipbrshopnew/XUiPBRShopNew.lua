@@ -107,7 +107,7 @@ function XUiPBRShopNew:OnStart(stageId)
         self.UiGridMusic:SetVisible(self._Control.InGameControl:CheckIsInEndlessMode())
     end
 
-    self:_PlaySelectedBgm()
+    self:_InitBgmFromBattle()
 end
 
 function XUiPBRShopNew:OnEnable()
@@ -253,7 +253,9 @@ function XUiPBRShopNew:_DoShopFresh(isGiveUpChoose)
             -- 主要是检查技能升级显示
             self:RefreshCharacterInfo()
 
-            XUiManager.TipMsg(self._Control:GetClientPBRText('ShopFreshSuccessTips'))
+            -- 放弃本次选择触发的刷新走独立文案，普通刷新走原"刷新成功"文案
+            local tipKey = isGiveUpChoose and 'ShopGiveUpSuccessTips' or 'ShopFreshSuccessTips'
+            XUiManager.TipMsg(self._Control:GetClientPBRText(tipKey))
         end
     end, isGiveUpChoose)
 end
@@ -349,6 +351,14 @@ end
 --endregion
 
 --region BGM
+
+-- 从战斗场景首次进入商店：若战斗 BGM 与目标一致则接管不重播，否则正常播放
+function XUiPBRShopNew:_InitBgmFromBattle()
+    local bgmId = self._Control.MusicControl:GetSelectedBgmIdByStageId(self.StageId)
+    if bgmId then
+        self._Control.MusicControl:TakeoverBgmOrPlay(bgmId)
+    end
+end
 
 function XUiPBRShopNew:_PlaySelectedBgm()
     local bgmId = self._Control.MusicControl:GetSelectedBgmIdByStageId(self.StageId)

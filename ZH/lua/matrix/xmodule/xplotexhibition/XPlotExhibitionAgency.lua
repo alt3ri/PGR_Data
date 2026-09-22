@@ -24,6 +24,11 @@ function XPlotExhibitionAgency:RemoveEvent()
     self:_StopCoroutine()
 end
 
+function XPlotExhibitionAgency:ResetAll()
+    self._HasStoryCache = nil
+    self:_StopCoroutine()
+end
+
 -- 停止协程的函数
 function XPlotExhibitionAgency:_StopCoroutine()
     self._IsRunningCoroutine = false
@@ -39,6 +44,18 @@ function XPlotExhibitionAgency:OpenRoleDetail(characterId)
     if XFunctionManager.DetectionFunction(functionId) then
         XLuaUiManager.Open("UiPlotExhibitionDetail", characterId)
     end
+end
+
+-- 是否有剧情条目
+function XPlotExhibitionAgency:HasCharacterPlot(characterId)
+    if not self._HasStoryCache then
+        self._HasStoryCache = {}
+        local configs = self._Model:GetStoryLineConfigs()
+        for _, c in pairs(configs) do
+            self._HasStoryCache[c.CharacterId] = true
+        end
+    end
+    return self._HasStoryCache[characterId] == true
 end
 
 --此记录仅在当次登录期间保存，重登游戏时，清除上一次登录的本地记录，所有勾选状态切换回【取消】状态

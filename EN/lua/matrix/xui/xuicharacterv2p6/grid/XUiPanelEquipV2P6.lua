@@ -125,7 +125,7 @@ function XUiPanelEquipV2P6:UpdateRoleView()
     end
 
     -- 推荐按钮
-    local openRecommend = XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.EquipGuideRecommend)
+    local openRecommend = XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.TeamRecommend)
     self.BtnRecommend.gameObject:SetActiveEx(openRecommend)
 
     -- 辅助机
@@ -366,9 +366,13 @@ function XUiPanelEquipV2P6:OnBtnAutoTakeOffClick()
 end
 
 function XUiPanelEquipV2P6:OnBtnRecommendClick()
-    XDataCenter.EquipGuideManager.OpenEquipGuideView(self.CharacterId)
-    XMVCA.XCharacter:BuryingUiCharacterAction(self.RootUi.Name, XGlobalVar.BtnUiCharacterSystemV2P6.BtnRecommend, self.CharacterId)
+    if XMVCA.XTeamRecommend:GetServerCharacterTarget(self.CharacterId) then
+        XLuaUiManager.Open("UiTeamRecommendRoleTargetDetail", self.CharacterId)
+    else
+        XLuaUiManager.Open("UiTeamRecommendMain", self.CharacterId)
+    end
     
+    XMVCA.XCharacter:BuryingUiCharacterAction(self.RootUi.Name, XGlobalVar.BtnUiCharacterSystemV2P6.BtnRecommend, self.CharacterId)
     XPlayerManager.RequestRecordPlayerPoint(XFunctionConfig.FunctionalShowId.UiCharacterEquipRecommand, XFunctionConfig.RedPointType.NewbieFirstShow)
 end
 

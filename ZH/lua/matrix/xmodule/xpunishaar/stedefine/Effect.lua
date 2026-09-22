@@ -3,6 +3,14 @@ local STECustomEnum = require("XModule/XPunishaar/STEDefine/STECustomEnum")
 local Selector = require("XModule/XPunishaar/STEDefine/Selector")
 local STEHelper = require("STEVM/STEHelper")
 
+--- 判断当前 Effect 执行时机是否包含指定时机类型（通用接口，替代手写位运算保一致性）#TimeMask
+---@param timeMask number|nil 黑板 TimeMask 值（vm:GetFromBlackBoard 取）
+---@param timeType number STECustomEnum.TriggerTimeType（Other/OnEquip/OnBattleStart）
+---@return boolean
+local function IsEffectTime(timeMask, timeType)
+    return timeMask ~= nil and (timeMask & (1 << timeType)) ~= 0
+end
+
 local Effect = {}
 
 --region 攻击伤害落地延时（#75）
@@ -154,6 +162,8 @@ function Effect._InitBuffEntity(vm, uid, buffId, ownEntityId, targetEntityId, ta
     local handler = vm:ReadProperty(STECustomEnum.GlobalEntityIds.Global, STECustomEnum.FieldNameType.BuffEntityIds)
 
     vm:PropAppend(handler, uid)
+    -- 置 buff 列表脏标记（新增 buff 致有序缓存失效，TickAllBuffs 下帧重排 by Priority）#buff优先级排序
+    vm:Store(STECustomEnum.GlobalEntityIds.Global, STECustomEnum.FieldNameType.BuffListDirty, STEEnum.ValChangeType.Set, 1)
 end
 
 --- 查找已存在的同 (buffId, ownEntityId, targetEntityId, targetFieldNameEnum) 的 buff
@@ -201,6 +211,8 @@ function Effect._DestroyBuff(vm, uid)
     -- 2. 从全局索引摘除（按值删）
     local buffList = vm:ReadProperty(STECustomEnum.GlobalEntityIds.Global, STECustomEnum.FieldNameType.BuffEntityIds)
     vm:PropRemoveValue(buffList, uid)
+    -- 置 buff 列表脏标记（删除 buff 致有序缓存失效，TickAllBuffs 下帧重排 by Priority）#buff优先级排序
+    vm:Store(STECustomEnum.GlobalEntityIds.Global, STECustomEnum.FieldNameType.BuffListDirty, STEEnum.ValChangeType.Set, 1)
 
     -- 3. 销毁实体
     vm:GetEnv():RemoveScope(uid)
@@ -234,12 +246,41 @@ end
 --region 公开到配置表中的Effect
 
 --- 单目标私有（单/多分支收敛至此，不临时 table 整合，零 GC）#72
+--- TickCDMax 修改后夹紧 TickCD（TickCD 不应超 TickCDMax，防 UI percent>1 + 逻辑异常）
+--- 通用工具：_ModifyOne（直接修改）+ _TempModifyOne（buff 修正）修改 TickCDMax 后调
+--- 开局（OnEquip|OnBattleStart）时额外向上对齐：CDMax 改高 → CD=新CDMax（装备即生效，CD 从新上限倒计时）
+--- 顺序一致性由 RunBattleStartEffects 拆分两阶段保证（OnEquip 先全部执行 → OnBattleStart 后执行）
+function Effect._ClampTickCDToCdMax(vm, target)
+    local newCdMax = vm:Read(target, STECustomEnum.FieldNameType.TickCDMax)
+    if newCdMax == nil then
+        return
+    end
+    local tickCD = vm:Read(target, STECustomEnum.FieldNameType.TickCD)
+    -- 夹紧（所有时机）：CD > CDMax → CD=CDMax
+    if tickCD and tickCD > newCdMax then
+        vm:Store(target, STECustomEnum.FieldNameType.TickCD, STEEnum.ValChangeType.Set, newCdMax)
+        return
+    end
+    -- 开局向上对齐：CDMax 改高时 CD < CDMax → CD=CDMax（装备即生效，CD 从新上限倒计时）
+    -- OnEquip 先于 OnBattleStart 执行（RunBattleStartEffects 拆分两阶段），CDMax 修正在加速前落地 → 顺序固定
+    local timeMask = vm:GetFromBlackBoard(STECustomEnum.BlackBoardKeys.TimeMask)
+    if timeMask ~= nil
+            and (timeMask & STECustomEnum.TriggerTimeMask.BattleStart) ~= 0
+            and tickCD and tickCD < newCdMax then
+        vm:Store(target, STECustomEnum.FieldNameType.TickCD, STEEnum.ValChangeType.Set, newCdMax)
+    end
+end
+
 function Effect._ModifyOne(vm, target, fieldName, op, rightVal)
     local before
     if XMain.IsEditorDebug then
         before = vm:Read(target, fieldName)
     end
     vm:Store(target, fieldName, op, rightVal)
+    -- TickCDMax 直接修改后夹紧 TickCD（与 _TempModifyOne 统一）#CD夹紧
+    if fieldName == STECustomEnum.FieldNameType.TickCDMax then
+        Effect._ClampTickCDToCdMax(vm, target)
+    end
     if XMain.IsEditorDebug then
         local after = vm:Read(target, fieldName)
         XLog.Debug(string.format("[Effect] ModifyNumberField uid=%s field=%s op=%s rightVal=%s %s→%s",
@@ -303,6 +344,10 @@ function Effect._TempModifyOne(vm, target, targetFieldEnum, fieldName, op, right
             local finalVal = vm:Read(target, fieldName)
             if snapshotDict and finalVal ~= nil then
                 vm:PropSet(snapshotDict, target, finalVal)
+            end
+            -- CDMax 修改后夹紧 TickCD（与 _ModifyOne 统一，调公共方法）#CD夹紧
+            if fieldName == STECustomEnum.FieldNameType.TickCDMax then
+                Effect._ClampTickCDToCdMax(vm, target)
             end
         end
     end
@@ -515,6 +560,9 @@ function Effect.ConsumeBallByColor(vm, entityIds, color, count)
         end
     end
     if removed > 0 then
+        -- cardUid 取首（entityIds 可为 selector 列表，EnqueueBallAnim cardUid 契约单 number；列表取首卡位作 trail 终点 #核实:522）
+        local cardUid = type(entityIds) == "table" and entityIds[1] or entityIds
+        vm:GetEnv():EnqueueBallAnim(STECustomEnum.BallAnimStepType.ConsumeBall, cardUid, color, removed)
         vm:Emit(STECustomEnum.EventEnum.BallListChanged)
         -- 埋点统计：信号球消费总量累加（循环后一次 Store，非每球；事务可回滚）
         vm:Store(STECustomEnum.GlobalEntityIds.Global, STECustomEnum.FieldNameType.TotalBallConsumed, STEEnum.ValChangeType.Add, removed)
@@ -542,6 +590,8 @@ function Effect.ProduceBallByColor(vm, entityIds, color, count)
         produced = produced + 1
     end
     if produced > 0 then
+        local cardUid = type(entityIds) == "table" and entityIds[1] or entityIds
+        vm:GetEnv():EnqueueBallAnim(STECustomEnum.BallAnimStepType.ProduceBall, cardUid, color, produced)
         vm:Emit(STECustomEnum.EventEnum.BallListChanged)
         -- 埋点统计：信号球生成总量累加（循环后一次 Store，非每球；事务可回滚）
         vm:Store(STECustomEnum.GlobalEntityIds.Global, STECustomEnum.FieldNameType.TotalBallProduced, STEEnum.ValChangeType.Add, produced)
@@ -666,13 +716,16 @@ end
 ---@param amount number 扣除量（mode=Fixed=毫秒 / mode=Ratio=浮点比例 0.5=50%）
 ---@param mode number STECustomEnum.ConfigCDDeductMode（0=Fixed / 1=Ratio 基于 CDMax）
 ---@param accelList PropertyList 帧级加速记录列表
-function Effect._AccelerateOne(vm, target, amount, mode, accelList)
+function Effect._AccelerateOne(vm, target, amount, mode, accelList, ignoreLock)
     -- 加速冷却 gate（perf护栏，非玩法）：同卡在 W=TickCDMaxMin 帧内只允许被加速一次。
     -- Global.AccelLockUntilTickDict[target]=解锁tick；未到则跳过本次推进（不扣CD、不续锁、不入accelList）。#加速冷却
     local lockDict = vm:ReadProperty(STECustomEnum.GlobalEntityIds.Global, STECustomEnum.FieldNameType.AccelLockUntilTickDict)
-    if vm:GetEnv():GetTick() < (vm:PropGet(lockDict, target) or 0) then
+    
+    -- 如果本次加速不忽略CD锁，并且CD未到，则禁止本次加速
+    if not ignoreLock and vm:GetEnv():GetTick() < (vm:PropGet(lockDict, target) or 0) then
         return
     end
+    
     local cd = vm:Read(target, STECustomEnum.FieldNameType.TickCD) or 0
     local cdMax = vm:Read(target, STECustomEnum.FieldNameType.TickCDMax) or 0
     -- 1 帧 = 50ms（STECustomEnum.MsPerLogicFrame 预算常量，免运行时除法）
@@ -682,12 +735,15 @@ function Effect._AccelerateOne(vm, target, amount, mode, accelList)
     local cdMaxMs = cdMax * msPerFrame
     -- 扣除量（毫秒域运算）
     local deductMs
+    
     if mode == STECustomEnum.ConfigCDDeductMode.Ratio then
         deductMs = cdMaxMs * (amount or 0)  -- 浮点比例（0.5=扣 50% CDMax）
     else
         deductMs = amount or 0  -- Fixed：固定毫秒
     end
+    
     local newCdMs = cdMs - deductMs
+    
     if newCdMs < 0 then
         newCdMs = 0
     end
@@ -696,7 +752,7 @@ function Effect._AccelerateOne(vm, target, amount, mode, accelList)
     vm:Store(target, STECustomEnum.FieldNameType.TickCD, STEEnum.ValChangeType.Set, newCd)
     -- 续加速冷却锁：仅当本次真正缩短了 CD（newCd<cd）才续锁，避免无实际推进的加速（cd 已 0 就绪态 / Ratio cdMax=0 致 deductMs=0）误占锁、4 帧内挡掉后续有效加速。#加速冷却
     if newCd < cd then
-        vm:PropSet(lockDict, target, vm:GetEnv():GetTick() + STECustomEnum.TickCDMaxMin)
+        vm:PropSet(lockDict, target, vm:GetEnv():GetTick() + STECustomEnum.CDAccIntervalTick)
     end
     if XMain.IsEditorDebug then
         XLog.Debug(string.format("[Effect] AccelerateCardCD uid=%s mode=%s amount=%s TickCD %s→%s (cdMs %s→%s deduct %sms)",
@@ -725,21 +781,25 @@ end
 ---@param entityIds any 选中的卡牌（单 id 或列表）
 ---@param amount number 扣除量（mode=Fixed=毫秒 / mode=Ratio=浮点比例 0.5=50% CDMax）
 ---@param mode number STECustomEnum.ConfigCDDeductMode（0=Fixed 固定毫秒 / 1=Ratio 基于 CDMax 比例）
-function Effect.AccelerateCardCD(vm, entityIds, amount, mode)
+---@param ignoreLockMask number 是否忽略加速CD的数值
+function Effect.AccelerateCardCD(vm, entityIds, amount, mode, ignoreLockMask)
     if not amount or amount <= 0 then
         return
     end
     if not entityIds then
         return
     end
+    
+    local ignoreLock = XTool.IsNumberValidEx(ignoreLockMask)
+    
     local accelList = vm:ReadProperty(STECustomEnum.GlobalEntityIds.Global, STECustomEnum.FieldNameType.TickAccelEntityList)
     -- 单/多分支收敛：相同逻辑入 _AccelerateOne 私有函数，单 id 直调、多 id 循环调，不临时 table 整合（#L3）
     if type(entityIds) == "table" then
         for _, target in ipairs(entityIds) do
-            Effect._AccelerateOne(vm, target, amount, mode, accelList)
+            Effect._AccelerateOne(vm, target, amount, mode, accelList, ignoreLock)
         end
     else
-        Effect._AccelerateOne(vm, entityIds, amount, mode, accelList)
+        Effect._AccelerateOne(vm, entityIds, amount, mode, accelList, ignoreLock)
     end
 end
 

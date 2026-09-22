@@ -30,8 +30,15 @@ function XUiPanelCharacterCard:OnStart(pos)
             local res = self.TeamPrefab:CheckEquipIdInTeam(weaponEquipId)
             if res then
                 XUiManager.TipText("TeamPrefabWeaponEquippedByOtherInPreset")
+                return res
             end
-            return res
+            -- 辅助机冲突检测：候选角色真实携带的辅助机已存在于编队其他位置时拦截上阵，避免服务端查重报错（同位置替换会被覆盖，不算冲突）
+            local carryPartnerId = XDataCenter.PartnerManager.GetCarryPartnerIdByCarrierId(currentNeedAddEntityId)
+            if self.TeamPrefab:CheckPartnerIdInTeam(carryPartnerId, self.Pos) then
+                XUiManager.TipText("TeamPrefabPartnerEquippedByOtherInPreset")
+                return true
+            end
+            return false
         end,
         AOPOnBtnJoinTeamClickedAfter = function(curProxy, uiBattleRoomRoleDetail)
             local newCharId = self.TeamPrefab:GetEntityIdByTeamPos(self.Pos)

@@ -237,10 +237,9 @@ function XUiPunishaarCollection:RefreshSubCollection(cardType)
     self._CurrSizeGroup = {}
 
     self.DynamicTable:SetDataSource({})
-    self.DynamicTable:RecycleAllTableGrid()
+    self.DynamicTable:Clear()
 
-    local datas, _, _, percent =
-    self._Control:GetSubCollectionDatas(cardType)
+    local datas, _, _, percent = self._Control:GetSubCollectionDatas(cardType)
 
     self:RefreshProgress(percent)
 
@@ -261,7 +260,7 @@ function XUiPunishaarCollection:RefreshSubCollection(cardType)
     end
 
     self.SubCardDynamicTable:SetDataSource(datas)
-    self.SubCardDynamicTable:ReloadDataSync(self._DefaultSubCardIndex or 1)
+    self.SubCardDynamicTable:ReloadDataSync(1)
 end
 
 
@@ -302,11 +301,17 @@ end
 function XUiPunishaarCollection:OnSubCardDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         local data = self.SubCardDynamicTable:GetData(index)
+
         if data and grid then
             grid:Refresh(data)
-            grid:SetSelected(
-                self:IsCardSelected(data.Id)
-            )
+
+            local isSelected = self:IsCardSelected(data.Id)
+            grid:SetSelected(isSelected)
+
+            -- 默认卡滚动进可视范围后，保存实际生成的 Grid。
+            if isSelected then
+                self._SelectedCardGrid = grid
+            end
         end
 
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_RELOAD_COMPLETED then
@@ -316,11 +321,14 @@ function XUiPunishaarCollection:OnSubCardDynamicTableEvent(event, index, grid)
         end
 
         local data = self.SubCardDynamicTable:GetData(defaultIndex)
-
         local defaultGrid = self.SubCardDynamicTable:GetGridByIndex(defaultIndex)
 
-        if data and defaultGrid then
+        if data then
+            -- 先记录默认选中的卡并刷新右侧详情。
             self:OnSubCardClick(data, defaultGrid)
+
+            -- 再正确滚动到默认卡
+            self.SubCardDynamicTable:ScrollToIndex(defaultIndex, 0)
         end
     end
 end
@@ -360,7 +368,9 @@ function XUiPunishaarCollection:OnSubCardClick(data, grid)
     self._SelectedCardGrid = grid
     self._SelectedCardId = data.Id
 
-    grid:SetSelected(true)
+    if grid then
+        grid:SetSelected(true)
+    end
 
     self.MainCardDetail:Open()
     self.MainCardDetail:RefreshCollection({

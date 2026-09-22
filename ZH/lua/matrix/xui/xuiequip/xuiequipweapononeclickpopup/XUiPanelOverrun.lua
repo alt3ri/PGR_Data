@@ -1,4 +1,8 @@
 -- 谐振栏
+local COLOR = {
+    Grey = XUiHelper.Hexcolor2Color("A1A1A1"),
+    Blue = XUiHelper.Hexcolor2Color("0D70BC"),
+}
 ---@class XUiPanelOverrun:XUiNode
 ---@field Parent XUiEquipWeaponOneClickPopup
 ---@field BgTitleChoose UnityEngine.RectTransform
@@ -17,6 +21,7 @@
 ---@field ImgArrow UnityEngine.RectTransform
 ---@field PanelCosume UnityEngine.RectTransform
 ---@field PanelNone UnityEngine.RectTransform
+---@field TxtNone UnityEngine.UI.Text
 ---@field GridConsume UnityEngine.RectTransform
 local XUiPanelOverrun = XClass(XUiNode, "XUiPanelOverrun")
 
@@ -38,13 +43,18 @@ end
 ---   TargetSuitName, CurrentSuitName, HasCurrentSuit, CostList }
 function XUiPanelOverrun:Refresh(data)
     self.Data = data
+    self._IsOverrunLocked = not XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.EquipOverrun)
+    if self._IsOverrunLocked then
+        self.IsChoose = false
+    end
     self:RefreshChooseState()
 
     -- 谐振目标激活等级状态：最低=当前谐振等级，最高=总节点数
     self.ActiveNum = data.ActiveNum or 0
     self.MinLevel = data.MinLevel or 0
     self.MaxLevel = data.TotalNode or 0
-    self.PanelTitleDetail.gameObject:SetActiveEx(data.IsShowTitleDetail == true)
+    local isLocked = self._IsOverrunLocked
+    self.PanelTitleDetail.gameObject:SetActiveEx(data.IsShowTitleDetail == true and not isLocked)
     self:RefreshActiveNum()
 
     self:RefreshBindAwareness(data)
@@ -52,9 +62,11 @@ function XUiPanelOverrun:Refresh(data)
     local costList = data.CostList or table.empty
     local displayList = self:BuildDisplayList(costList)
     local hasCost = not XTool.IsTableEmpty(displayList)
-    self.PanelCosume.gameObject:SetActiveEx(hasCost)
-    -- 仅换绑（目标套装已激活、无新升级档）时 CostList 为空，本就不消耗材料，不算空态
-    self.PanelNone.gameObject:SetActiveEx(not XTool.IsTableEmpty(costList) and not hasCost)
+    self.PanelCosume.gameObject:SetActiveEx(hasCost and not isLocked)
+    if isLocked then
+        self.TxtNone.text = XFunctionManager.GetFunctionOpenCondition(XFunctionManager.FunctionName.EquipOverrun)
+    end
+    self.PanelNone.gameObject:SetActiveEx(isLocked or (not XTool.IsTableEmpty(costList) and not hasCost))
     if hasCost then
         XTool.UpdateDynamicItem(self._ConsumeGrids, displayList, self.GridConsume, XUiGridConsume, self)
     end
@@ -92,12 +104,16 @@ function XUiPanelOverrun:RefreshPreviewText(data)
     else
         self.UiTxtPreview.text = CS.XTextManager.GetText(key)
     end
+    self._IsMaterialLack = key == "EquipOneClickCultureMaterialNotEnough"
     -- BgTitle: 未勾选 或 (材料不足/待设置) → NotChoose；否则 Choose
     local showNotChoose = (not self.IsChoose)
         or key == "EquipOneClickCultureMaterialNotEnough"
         or key == "AwarenessOneClickResonanceTargetSettingPending"
     self.BgTitleChoose.gameObject:SetActiveEx(not showNotChoose)
     self.BgTitleNotChoose.gameObject:SetActiveEx(showNotChoose)
+    local color = (not showNotChoose) and COLOR.Blue or COLOR.Grey
+    self.Arrow.color = color
+    self.UiTxtPreview.color = color
 end
 
 --- 把每个谐振材料拆成"已有格 + 兑换格"：已有格显 min(持有,需求)，兑换格显缺口(仅需兑换补足时)
@@ -155,7 +171,11 @@ end
 function XUiPanelOverrun:RefreshChooseState()
     self.BgTitleChoose.gameObject:SetActiveEx(self.IsChoose)
     self.BgTitleNotChoose.gameObject:SetActiveEx(not self.IsChoose)
-    self.BtnChoose:SetButtonState(self.IsChoose and CS.UiButtonState.Select or CS.UiButtonState.Normal)
+    if self._IsOverrunLocked then
+        self.BtnChoose:SetDisable(true, false)
+    else
+        self.BtnChoose:SetButtonState(self.IsChoose and CS.UiButtonState.Select or CS.UiButtonState.Normal, true)
+    end
     self.ImgArrow1.gameObject:SetActiveEx(self.IsChoose)
     self.UiTxtPreview.gameObject:SetActiveEx(self.IsChoose)
 end
@@ -206,6 +226,12 @@ end
 
 function XUiPanelOverrun:GetIsChoose()
     return self.IsChoose
+end
+
+---超限材料是否不足（升级材料不够、或需绑套装却材料不够）
+---@return boolean
+function XUiPanelOverrun:GetIsMaterialLack()
+    return self._IsMaterialLack == true
 end
 
 ---@param isChoose boolean

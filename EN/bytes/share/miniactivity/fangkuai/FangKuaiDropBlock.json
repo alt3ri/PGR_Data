@@ -268,5 +268,104 @@
         "BlockType": "[1, 1]",
         "Weight": "[100, 100]",
         "ActionCd": 4
+    },
+    {
+        "Id": 31,
+        "StageId": 5012,
+        "ActionRange": "[1, 1]",
+        "BlockLength": "[3]",
+        "BlockType": "[2]",
+        "Weight": "[100]",
+        "ActionCd": 1
+    },
+    {
+        "Id": 32,
+        "StageId": 5012,
+        "ActionRange": "[5, 9999]",
+        "BlockLength": "[1, 2]",
+        "BlockType": "[1, 1]",
+        "Weight": "[400, 400]",
+        "ActionCd": 5
+    },
+    {
+        "Id": 33,
+        "StageId": 5013,
+        "ActionRange": "[1, 1]",
+        "BlockLength": "[1]",
+        "BlockType": "[6]",
+        "Weight": "[100]",
+        "ActionCd": 1
+    },
+    {
+        "Id": 34,
+        "StageId": 5013,
+        "ActionRange": "[5, 9999]",
+        "BlockLength": "[1, 2, 1]",
+        "BlockType": "[1, 1, 6]",
+        "Weight": "[100, 100, 100]",
+        "ActionCd": 5
+    },
+    {
+        "Id": 35,
+        "StageId": 5014,
+        "ActionRange": "[1, 50]",
+        "BlockLength": "[2, 3, 1]",
+        "BlockType": "[1, 1, 1]",
+        "Weight": "[150, 150, 50]",
+        "ActionCd": 5
+    },
+    {
+        "Id": 36,
+        "StageId": 5014,
+        "ActionRange": "[51, 9999]",
+        "BlockLength": "[2, 3, 4, 1]",
+        "BlockType": "[1, 1, 1, 1]",
+        "Weight": "[100, 200, 50, 50]",
+        "ActionCd": 5
+    },
+    {
+        "Id": 37,
+        "StageId": 5022,
+        "ActionRange": "[1, 1]",
+        "BlockLength": "[1]",
+        "BlockType": "[5]",
+        "Weight": "[100]",
+        "ActionCd": 1
+    },
+    {
+        "Id": 38,
+        "StageId": 5022,
+        "ActionRange": "[2, 9999]",
+        "BlockLength": "[1]",
+        "BlockType": "[5]",
+        "Weight": "[100]",
+        "ActionCd": 4
+    },
+    {
+        "Id": 39,
+        "StageId": 5031,
+        "ActionRange": "[1, 9999]",
+        "BlockLength": "[1, 1, 2]",
+        "BlockType": "[5, 6, 1]",
+        "Weight": "[100, 100, 100]",
+        "ActionCd": 4
+    },
+    {
+        "Id": 40,
+        "StageId": 5033,
+        "ActionRange": "[1, 9999]",
+        "BlockLength": "[1, 2, 1]",
+        "BlockType": "[5, 1, 6]",
+        "Weight": "[100, 100, 100]",
+        "ActionCd": 4
+    },
+    {
+        "Id": 41,
+        "StageId": 5034,
+        "ActionRange": "[1, 9999]",
+        "BlockLength": "[2, 3, 1]",
+        "BlockType": "[1, 1, 6]",
+        "Weight": "[100, 100, 100]",
+        "ActionCd": 4
     }
 ]

@@ -121,7 +121,7 @@ function XRestaurantChar:OnLoadSuccess()
     --是否需要点击
     if self:IsNeedClick() then
         --设置层级，点击生效
-        self._GameObject:SetLayerRecursively(CS.UnityEngine.LayerMask.NameToLayer(HomeSceneLayerMask.HomeCharacter))
+        self._GameObject:SetLayerRecursively(CS.UnityEngine.LayerMask.NameToLayer(LayerMaskName.Npc))
         self._Input = self._GameObject:GetComponent(typeof(CS.XGoInputHandler))
         if not self._Input then
             self._Input = self._GameObject:AddComponent(typeof(CS.XGoInputHandler))

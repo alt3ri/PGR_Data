@@ -12,8 +12,12 @@ function XUiChatBoard:Refresh(chatBoradId, isRight)
     chatBoradId = XTool.IsNumberValid(chatBoradId) and chatBoradId or XChatConfigs.DefaultChatBoardId
 
     local cfg = XChatConfigs.GetChatBoardCfgById(chatBoradId)
-    
+
+    self._TextColor = nil
     if cfg then
+        if not string.IsNilOrEmpty(cfg.TextColor) then
+            self._TextColor = XUiHelper.Hexcolor2Color(cfg.TextColor)
+        end
         --设置底图
         if isRight then
             if cfg.ChatBoardImageRes then
@@ -35,7 +39,17 @@ function XUiChatBoard:Refresh(chatBoradId, isRight)
         else
             self.Image.gameObject:SetActiveEx(false)
         end
+        if cfg.EffectRes then
+            self.Effect.gameObject:LoadPrefab(cfg.EffectRes)
+            self.Effect.gameObject:SetActiveEx(true)
+        else
+            self.Effect.gameObject:SetActiveEx(false)
+        end
     end
+end
+
+function XUiChatBoard:GetTextColor()
+    return self._TextColor
 end
 
 return XUiChatBoard

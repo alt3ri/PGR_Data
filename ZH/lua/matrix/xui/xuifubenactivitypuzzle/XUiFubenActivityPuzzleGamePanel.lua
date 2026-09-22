@@ -291,7 +291,11 @@ function XUiFubenActivityPuzzleGamePanel:GetPisont()
     if CS.UnityEngine.Application.platform == CS.UnityEngine.RuntimePlatform.WindowsEditor or CS.UnityEngine.Application.platform == CS.UnityEngine.RuntimePlatform.WindowsPlayer then
         screenPoint = CS.UnityEngine.Vector2(CS.UnityEngine.Input.mousePosition.x, CS.UnityEngine.Input.mousePosition.y)
     else
-        screenPoint = CS.UnityEngine.Input.GetTouch(0).position
+        if CS.UnityEngine.Input.touchCount > 0 then
+            screenPoint = CS.UnityEngine.Input.GetTouch(0).position
+        else
+            return CS.UnityEngine.Vector3.zero
+        end
     end
 
     -- 设置拖拽

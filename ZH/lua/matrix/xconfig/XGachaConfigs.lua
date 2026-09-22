@@ -332,4 +332,10 @@ end
 ---@return XTableGachaSceneInteract
 function XGachaConfigs.GetConfigGachaSceneInteractById(gachaId)
     return GachaSceneInteract[gachaId]
+end
+
+-- 卡池跳过动画本地缓存 key 拼接账号 uid：XSaveTool 底层是 PlayerPrefs（设备级），
+-- 不隔离账号会导致同设备多号共享跳过状态，故各卡池统一走此方法追加 XPlayer.Id
+function XGachaConfigs.GetSkipAnimCacheKey(baseKey)
+    return string.format("%s_%s", baseKey, XPlayer.Id)
 end 

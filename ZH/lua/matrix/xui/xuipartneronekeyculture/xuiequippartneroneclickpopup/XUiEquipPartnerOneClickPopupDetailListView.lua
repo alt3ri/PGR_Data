@@ -40,10 +40,11 @@ function XUiEquipPartnerOneClickPopupDetailListView:Refresh()
     local XPartnerEnum = XMVCA.XPartner.Enum
     self:_RefreshCellView(self._LvupCostItemCellView, XPartnerEnum.CultureType.LevelUp)
     self:_RefreshCellView(self._StarUpCostItemCellView, XPartnerEnum.CultureType.StarUp)
-    self:_RefreshCellView(self._SkillLvupCostItemCellView, XPartnerEnum.CultureType.SkillLevelUp)
+    -- self:_RefreshCellView(self._SkillLvupCostItemCellView, XPartnerEnum.CultureType.SkillLevelUp)
+    self._SkillLvupCostItemCellView:Close()
 end
 
--- 养成已满的条目隐藏（技能需槽位选满且全部满级才隐藏）
+-- 养成已满的条目隐藏
 ---@param cellView XUiEquipPartnerOneClickPopupCostItemCellView
 ---@param cultureType XPartnerEnum.CultureType
 function XUiEquipPartnerOneClickPopupDetailListView:_RefreshCellView(cellView, cultureType)

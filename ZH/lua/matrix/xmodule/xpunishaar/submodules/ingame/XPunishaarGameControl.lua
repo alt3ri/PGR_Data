@@ -20,6 +20,34 @@ XClassPartialRequire("XModule/XPunishaar/SubModules/InGame/XPunishaarGameControl
 -- HUD 调度 partial（关卡内：节点推进选+缓存+显隐，#86；condition 求值 TODO）
 XClassPartialRequire("XModule/XPunishaar/SubModules/Hud/XPunishaarHudControl", "XPunishaarGameControl")
 
+--- 玩法级事件 Id（仅玩法界面内收发，无跨系统；定义+派发捆绑：本表事件经 GameControl 派发/监听）
+--- 统合原 partial 散表 ShopEventId/DragEventId/BagEventId + XEventId 的 DRAG_BEGIN/END 到一处 #事件统合
+--- value=string 短串（interned 共享）；全唯一无冲突（PunishaarShop/Drag/SubCard/Bag 各前缀不撞）
+XPunishaarGameControl.EventId = {
+    Shop = {
+        BuySuccess          = "PunishaarShopBuySuccess",
+        PickHostChange      = "PunishaarShopPickHostChange",
+        LevelupAnimPlay     = "PunishaarShopLevelupAnimPlay",
+        RefreshShopSuccess  = "PunishaarShopRefreshShopSuccess",
+        RefreshShopFail     = "PunishaarShopRefreshShopFail",
+        ShopPanelAnimEnable  = "PunishaarShopPanelAnimEnable",
+        ShopPanelAnimDisable = "PunishaarShopPanelAnimDisable",
+    },
+    Drag = {
+        RequestCustody        = "PunishaarDragCustody",
+        SubCardHostHintBegin  = "PunishaarSubCardHostHintBegin",
+        SubCardHostHintEnd    = "PunishaarSubCardHostHintEnd",
+        DragSettled           = "PunishaarDragSettled",
+        FocusChange           = "PunishaarDragFocusChange",
+        DragBegin             = "PunishaarDragBegin",    -- 原 XEventId.EVENT_PUNISHAAR_DRAG_BEGIN，迁入改名避 EVENT_ 前缀
+        DragEnd               = "PunishaarDragEnd",      -- 原 XEventId.EVENT_PUNISHAAR_DRAG_END
+    },
+    Bag = {
+        Open  = "PunishaarBagOpen",
+        Close = "PunishaarBagClose",
+    },
+}
+
 function XPunishaarGameControl:OnInit()
     self:InitConfig()
 
@@ -39,6 +67,10 @@ function XPunishaarGameControl:OnInit()
     -- 用 TemplateId+Level 而非 MasterCardId：keptMasterId=chainConsumed[1].Id 是被消耗卡（升级后移除不在列表），保留卡 Id 不可预知（服务端合成），但保留卡 TemplateId=商品 TemplateId + Level=finalLevel 可预知
     self._PendingLevelupAnimTemplateId = nil
     self._PendingLevelupAnimLevel = nil
+
+    -- 卡牌数值历史缓存（关卡级；供战斗外 UI 判 changed，替代 grid 实例级缓存）#数值动画逻辑分离
+    self._LastAtkByCardId = {}
+    self._LastCdByCardId = {}
 end
 
 --- typed 祖父接口：取根 Control（XPunishaarControl）。
@@ -51,11 +83,15 @@ end
 --- 进入关卡（Control:EnterGame lazy 建 GameControl 后调）。
 ---@param gameData table 服务端局数据
 function XPunishaarGameControl:EnterRun(gameData)
+    -- 局内禁多指（覆盖 Shopping/PreFight/Fighting 全态，防多 Drag 同时触发/拖拽刷新层级乱）#多指禁用
+    CS.UnityEngine.Input.multiTouchEnabled = false
     self.RunControl:EnterRun(gameData)
 end
 
 --- 关内节点推进时关 FightMain 面板（不销毁 GameControl，仍处关卡内）。
 function XPunishaarGameControl:ExitRun()
+    -- 离开局内恢复多指（EnterRun 禁用的对称）#多指禁用
+    CS.UnityEngine.Input.multiTouchEnabled = true
     self.RunControl:ExitRun()
 end
 
@@ -87,6 +123,8 @@ function XPunishaarGameControl:_OnBattleEnded(result, loseMaxColor)
 end
 
 function XPunishaarGameControl:OnRelease()
+    -- 兜底恢复多指（EnterRun 禁用，ExitRun 未调时 OnRelease 兜底）#多指禁用
+    CS.UnityEngine.Input.multiTouchEnabled = true
     -- 框架 RemoveSubControl 已级联释放 RunControl/FightControl 子控，此处只清引用
     self.RunControl = nil
     self.FightControl = nil
@@ -95,6 +133,8 @@ function XPunishaarGameControl:OnRelease()
     -- 清升级动画缓存（防残留致下关卡误播）#升级动画
     self._PendingLevelupAnimTemplateId = nil
     self._PendingLevelupAnimLevel = nil
+    -- 清卡牌数值历史缓存（关卡级清，防下关卡同 TemplateId 残留误判 changed）#数值动画逻辑分离
+    self:ClearLastCardAtkCd()
 end
 
 return XPunishaarGameControl

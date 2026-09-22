@@ -58,6 +58,7 @@ XFubenNewCharConfig.TreasureType = {
 --- 自定义的UI控件类型
 XFubenNewCharConfig.UiCustom = {
     DMC = 1, -- 鬼泣联动
+    DAL = 2, -- 约战狂三联动
 }
 
 --- 自定义UI控件类型关联的控制器
@@ -65,7 +66,11 @@ XFubenNewCharConfig.UiCustomScripts = {
     [XFubenNewCharConfig.UiCustom.DMC] = {
         MainUi = "XUi/XUiCharacterFiles/DevilMayCry/XUiPanelCharacterFileDMCMain",
         FullBgUi = "XUi/XUiCharacterFiles/Default/XUiPanelCharacterFileFullBg",
-    }
+    },
+    [XFubenNewCharConfig.UiCustom.DAL] = {
+        MainUi = "XUi/XUiCharacterFiles/DateALive/XUiPanelCharacterFileDALMain",
+        FullBgUi = "XUi/XUiCharacterFiles/Default/XUiPanelCharacterFileFullBg",
+    },
 }
 
 function XFubenNewCharConfig.Init()

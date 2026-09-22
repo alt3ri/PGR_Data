@@ -17,20 +17,6 @@ local DragArea = {
 }
 XPunishaarGameControl.DragArea = DragArea
 
--- 局外拖拽的表现层托管事件（grid 派发 → 当前状态实控节点接住做 reparent；与局内 FightControl.EventIds 分开）
-XPunishaarGameControl.DragEventId = {
-    RequestCustody = "PunishaarDragCustody",  -- 请求托管：payload = grid（拖起时派发）
-    -- 副卡宿主选择态：拖起副卡时派发 Begin(payload = subCardId)，UI 容器据此给"不可作宿主的主卡格"置灰；
-    -- 松手（无论成败）时派发 End(无 payload)，UI 恢复全部主卡格。
-    SubCardHostHintBegin = "PunishaarSubCardHostHintBegin",
-    SubCardHostHintEnd   = "PunishaarSubCardHostHintEnd",
-    -- 拖拽归位完成（_RestorePosition 派发）：购买走异步 cb→归位=等 cb；取消/无效走同步=松手即展开。
-    -- PanelShop 据此展开副卡拖拽收起的商店栏；非副卡拖拽商店栏未收起则 no-op。#副卡拖拽收起展开
-    DragSettled = "PunishaarDragSettled",
-    -- 拖拽焦点变化（SetDragFocusTarget/ClearDragFocusTarget 派发）：payload={Area,Pos} 或 nil（清空）。
-    -- PanelDragBuyTips 订阅据此在 Neutral/BuyZone 间实时切换 #PanelDragBuyTips
-    FocusChange = "PunishaarDragFocusChange",
-}
 
 --region 拖拽会话状态 ----------------------------------------------------------
 
@@ -49,17 +35,23 @@ function XPunishaarGameControl:BeginDragCard(cardData, sourceArea, sourcePos)
     -- 通知 UI 容器给不可作宿主的主卡格置灰（DragControl 在逻辑层拿不到 grid，只能走事件）。
     self._IsDraggingSubCard = cardData and cardData.CardId ~= nil and self:GetControl():IsSubCard(cardData.CardId) or false
     if self._IsDraggingSubCard then
-        self:DispatchEvent(self.DragEventId.SubCardHostHintBegin, cardData.CardId)
+        self:DispatchEvent(self.EventId.Drag.SubCardHostHintBegin, cardData.CardId)
     end
 
     -- 通知 UI 拖拽开始（PanelTopShop 显隐卖出区 #50）
-    XEventManager.DispatchEvent(XEventId.EVENT_PUNISHAAR_DRAG_BEGIN)
+    self:DispatchEvent(self.EventId.Drag.DragBegin)
 end
 
 --- 是否正处于拖拽会话中。
 ---@return boolean
 function XPunishaarGameControl:GetIsDraggingCard()
     return self._DraggingCardData ~= nil
+end
+
+--- 是否正在拖拽副卡（供 BagLayout OnEnable 补刷置灰——SubCardHostHintBegin 可能在 BagLayout Open 前派发致遗漏）#副卡置灰时序
+---@return boolean
+function XPunishaarGameControl:GetIsDraggingSubCard()
+    return self._IsDraggingSubCard == true
 end
 
 --- 拖拽的卡与来源（表现层/操作接口读取用）。
@@ -78,7 +70,7 @@ function XPunishaarGameControl:SetDragFocusTarget(area, pos)
     self._FocusArea = area
     self._FocusPos  = pos
     -- 焦点变化通知 UI：PanelDragBuyTips 据此切 Neutral/BuyZone（_RecomputeFocus 防抖下仅变化时调）#PanelDragBuyTips
-    self:DispatchEvent(self.DragEventId.FocusChange, { Area = area, Pos = pos })
+    self:DispatchEvent(self.EventId.Drag.FocusChange, { Area = area, Pos = pos })
 end
 
 --- 清除落点目标（落点容器 OnExit 调用）。
@@ -86,7 +78,7 @@ function XPunishaarGameControl:ClearDragFocusTarget()
     self._FocusArea = nil
     self._FocusPos  = nil
     -- 焦点清空通知 UI 切回 Neutral #PanelDragBuyTips
-    self:DispatchEvent(self.DragEventId.FocusChange, nil)
+    self:DispatchEvent(self.EventId.Drag.FocusChange, nil)
 end
 
 --- 当前落点区域（栏级反算 handler 读以判定是否清空 / 防抖，避免越权清卖出区焦点 #批次2）。
@@ -133,11 +125,11 @@ function XPunishaarGameControl:EndDragCard(cb)
 
     -- 副卡宿主选择态结束：无论成功/失败/取消，均恢复全部主卡格（与 Begin 对称，在清理会话前派发）
     if self._IsDraggingSubCard then
-        self:DispatchEvent(self.DragEventId.SubCardHostHintEnd)
+        self:DispatchEvent(self.EventId.Drag.SubCardHostHintEnd)
     end
 
     -- 通知 UI 拖拽结束（PanelTopShop 隐卖出区 #50）
-    XEventManager.DispatchEvent(XEventId.EVENT_PUNISHAAR_DRAG_END)
+    self:DispatchEvent(self.EventId.Drag.DragEnd)
 
     self:_ClearDragSession()
     return handled
@@ -150,9 +142,9 @@ end
 function XPunishaarGameControl:CancelDrag()
     if not self:GetIsDraggingCard() then return end
     if self._IsDraggingSubCard then
-        self:DispatchEvent(self.DragEventId.SubCardHostHintEnd)
+        self:DispatchEvent(self.EventId.Drag.SubCardHostHintEnd)
     end
-    XEventManager.DispatchEvent(XEventId.EVENT_PUNISHAAR_DRAG_END)
+    self:DispatchEvent(self.EventId.Drag.DragEnd)
     self:_ClearDragSession()
 end
 

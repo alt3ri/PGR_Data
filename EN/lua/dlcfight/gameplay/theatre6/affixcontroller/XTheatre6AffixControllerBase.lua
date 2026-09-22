@@ -20,6 +20,8 @@ XTheatre6AffixControllerBase.Name2Path = {
     Anger = "Gameplay/Theatre6/AffixController/XTheatre6AngerController",
     Sun = "Gameplay/Theatre6/AffixController/XTheatre6SunController",
     Protector = "Gameplay/Theatre6/AffixController/XTheatre6ProtectorController",
+    Poisoned = "Gameplay/Theatre6/AffixController/XTheatre6PoisonedController",
+    Hypno = "Gameplay/Theatre6/AffixController/XTheatre6HypnoController",
 }
 
 ---肉鸽6词条控制器更新类型

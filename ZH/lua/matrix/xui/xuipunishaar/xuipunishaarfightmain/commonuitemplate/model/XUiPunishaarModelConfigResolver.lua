@@ -36,8 +36,8 @@ function XUiPunishaarModelConfigResolver:GetEnemyCfgByFightId()
     if not control then
         return nil
     end
-    local gc = control.GameControl
-    if not gc then
+    local gameControl = control.GameControl
+    if not gameControl then
         return nil
     end
     local fightId = control:GetCurrentFightId()
@@ -45,12 +45,12 @@ function XUiPunishaarModelConfigResolver:GetEnemyCfgByFightId()
         return nil
     end
 
-    local fightCfg = gc:GetTablePunishaarFight(fightId, true)
+    local fightCfg = gameControl:GetTablePunishaarFight(fightId, true)
     local enemyId = fightCfg and fightCfg.EnemyId
     if not enemyId then
         return nil
     end
-    return gc:GetTablePunishaarEnemy(enemyId, true)
+    return gameControl:GetTablePunishaarEnemy(enemyId, true)
 end
 
 --- 取攻击特效 prefab 路径（统一三分支收口，取代 BattleEffectController._GetEffectPrefabPath 两路查询）。

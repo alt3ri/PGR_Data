@@ -162,3 +162,16 @@ function XHomeScene:ResetToCurrentGlobalIllumination()
     end
 end
 ----------------------------光照信息接口 end-----------------------------
+
+function XHomeScene:SetActive(bValue)
+    if XTool.UObjIsNil(self.GameObject) then
+        return
+    end
+    self.GameObject:SetActiveEx(bValue)
+    if bValue then
+        if not XTool.UObjIsNil(self.Camera) then
+            CS.XGraphicManager.BindCamera(self.Camera)
+        end
+        self:ResetToCurrentGlobalIllumination()
+    end
+end 

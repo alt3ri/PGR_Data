@@ -1,3 +1,4 @@
+---@class XUiPurchaseSceneTip:XLuaUi
 local XUiPurchaseSceneTip = XLuaUiManager.Register(XLuaUi, "UiPurchaseSceneTip")
 local PurchaseBuyPayCD = CS.XGame.ClientConfig:GetInt("PurchaseBuyPayCD") / 1000
 local UiMainMenuType = {
@@ -20,6 +21,9 @@ function XUiPurchaseSceneTip:OnStart(sceneId,openType, data, checkCb, finishCb, 
     self.UpdateCb = finishCb
     self.BeforeBuyReqFun = beforeBuyCb
     self.UiTypeList = uiTypes
+
+    ---@type XUiPanelMusicScene
+    self.MusicScene = require("XUi/XUiMusicScene/XUiPanelMusicScene").New(self)
     
     local sceneTemplate = XDataCenter.PhotographManager.GetSceneTemplateById(self.SceneId)
     local scenePath, modelPath = XSceneModelConfigs.GetSceneAndModelPathById(sceneTemplate.SceneModelId)
@@ -45,7 +49,7 @@ end
 
 function XUiPurchaseSceneTip:OnDisable()
     self:RemoveEventListener()
-
+    self.MusicScene:Stop()
     -- 关闭时钟
     if self.ClockTimer then
         XUiHelper.StopClockTimeTempFun(self, self.ClockTimer)
@@ -53,10 +57,17 @@ function XUiPurchaseSceneTip:OnDisable()
     end
 end
 
+function XUiPurchaseSceneTip:OnDestroy()
+    self.MusicScene:OnDestroy()
+end
+
 --endregion
 
 --region 初始化
 function XUiPurchaseSceneTip:SetBatteryUi()
+    self.MusicScene:SetForbidSwitch()
+    self.MusicScene:DontSaveData()
+    self.MusicScene:Play(self.SceneId, self.UiSceneInfo.Transform)
     if XMVCA.XSwitchableScene:IsSceneGyro(self.SceneId) then
         return
     end
@@ -101,7 +112,8 @@ function XUiPurchaseSceneTip:AutoSetUi()
     if self.SwitchBtn == nil then return end
     if  not XTool.IsTableEmpty(XPhotographConfigs.GetBackgroundSwitchDescById(self.SceneId))  then
         local btn = require("XUi/XUiSceneTip/XUiSwitchBtn")
-        self.BtnSwitch = btn.New(self.SwitchBtn, XDataCenter.PhotographManager:IsBtnSwitchFirst(self.SceneId), self.SceneId)
+        -- 购买预览: 未拥有场景, 切档不落库(persist=false)
+        self.BtnSwitch = btn.New(self.SwitchBtn, XDataCenter.PhotographManager:IsBtnSwitchFirst(self.SceneId), self.SceneId, nil, false)
     else
         self.SwitchBtn.gameObject:SetActiveEx(false)
     end
@@ -121,6 +133,7 @@ function XUiPurchaseSceneTip:Refresh()
     self.TogPreview.isOn = false
     local isFirst = XDataCenter.PhotographManager:IsBtnSwitchFirst(self.SceneId)
     if self.BtnSwitch then self.BtnSwitch:RefreshSelect(isFirst) end
+    self:RefreshHintText()
 end
 
 function XUiPurchaseSceneTip:UpdateBatteryMode()
@@ -231,10 +244,12 @@ end
 --region 其他
 function XUiPurchaseSceneTip:AddEventListener()
     XEventManager.AddEventListener(XEventId.EVENT_SCENE_PREVIEW_STATE_CHANGE, self.PlayChangeModeAnim, self)
+    XEventManager.AddEventListener(XEventId.EVENT_PURCHASE_QUICK_BUY_SKIP, self.OnBtnBackClick, self)
 end
 
 function XUiPurchaseSceneTip:RemoveEventListener()
     XEventManager.RemoveEventListener(XEventId.EVENT_SCENE_PREVIEW_STATE_CHANGE, self.PlayChangeModeAnim, self)
+    XEventManager.RemoveEventListener(XEventId.EVENT_PURCHASE_QUICK_BUY_SKIP, self.OnBtnBackClick, self)
 end
 
 function XUiPurchaseSceneTip:PlayChangeModeAnim()
@@ -265,10 +280,14 @@ function XUiPurchaseSceneTip:CloseTips()
 end
 --endregion
 
-
-
-
-
-
+function XUiPurchaseSceneTip:RefreshHintText()
+    local hintText = XPhotographConfigs.GetBackgroundHintText(self.SceneId)
+    if string.IsNilOrEmpty(hintText) then
+        self.PanelHintText.gameObject:SetActiveEx(false)
+    else
+        self.PanelHintText.gameObject:SetActiveEx(true)
+        self.HintText.text = XUiHelper.ReplaceTextNewLine(hintText)
+    end
+end
 
 return XUiPurchaseSceneTip

@@ -81,30 +81,45 @@ function XUiEquipAwarenessEnhanceProgressPopup:OnStart(args)
     self:StartProcess()
 end
 
---- 收集六个意识位置的最终等级和突破等级。
----@return number[][]
+---@class XAwarenessOneClickUpgradeFinalValue
+---@field level number 最终等级
+---@field breakthrough number 最终突破次数
+
+--- 收集六个意识位的最终等级和突破次数。
+--- 键为意识穿戴位字符串 "1" ~ "6"，避免 XRecord 丢弃数值键。
+---@return table<string, XAwarenessOneClickUpgradeFinalValue>
 function XUiEquipAwarenessEnhanceProgressPopup:CollectUpgradeFinalValues()
     local finalValues = {}
     for site = 1, AWARENESS_COUNT do
         local equipId = self.EquipIdBySite[site]
         local equip = equipId and self._Control:GetEquip(equipId)
-        finalValues[site] = equip and { equip.Level, equip.Breakthrough } or { 0, 0 }
+        finalValues[tostring(site)] = {
+            level = equip and equip.Level or 0,
+            breakthrough = equip and equip.Breakthrough or 0,
+        }
     end
     return finalValues
 end
 
---- 按意识位置及上、下位顺序收集十二个共鸣槽的最终类型和技能 Id。
----@return number[][]
+---@class XAwarenessOneClickResonanceFinalSkill
+---@field type number 最终共鸣类型
+---@field skill_id number 最终共鸣技能模板 Id
+
+--- 按意识位及上、下位顺序收集十二个共鸣槽的最终类型和技能 Id。
+--- 键为字符串槽位序号 "1" ~ "12"，顺序为意识位 1 ~ 6、每位上位后下位。
+---@return table<string, XAwarenessOneClickResonanceFinalSkill>
 function XUiEquipAwarenessEnhanceProgressPopup:CollectResonanceFinalSkills()
     local finalSkills = {}
     for site = 1, AWARENESS_COUNT do
         local equipId = self.EquipIdBySite[site]
         local equip = equipId and self._Control:GetEquip(equipId)
         for pos = 1, RESONANCE_SLOT_COUNT do
+            local slotIndex = (site - 1) * RESONANCE_SLOT_COUNT + pos
             local resonanceInfo = equip and equip:GetResonanceInfo(pos)
-            finalSkills[#finalSkills + 1] = resonanceInfo
-                and { resonanceInfo.Type, resonanceInfo.TemplateId }
-                or { 0, 0 }
+            finalSkills[tostring(slotIndex)] = {
+                type = resonanceInfo and resonanceInfo.Type or 0,
+                skill_id = resonanceInfo and resonanceInfo.TemplateId or 0,
+            }
         end
     end
     return finalSkills
@@ -144,15 +159,17 @@ function XUiEquipAwarenessEnhanceProgressPopup:CollectResonanceTargetReachedFlag
     return upperTargetReachedFlag, lowerTargetReachedFlag
 end
 
---- 按意识位置及上、下位顺序收集十二个超频槽的最终状态。
----@return number[]
+--- 按意识位及槽位顺序收集十二个超频槽的最终状态。
+--- 键为字符串槽位序号 "1" ~ "12"，顺序为意识位 1 ~ 6、每位超频槽顺序。
+---@return table<string, number>
 function XUiEquipAwarenessEnhanceProgressPopup:CollectOverclockFinalSlots()
     local finalSlots = {}
     for site = 1, AWARENESS_COUNT do
         local equipId = self.EquipIdBySite[site]
         for pos = 1, OVERCLOCK_SLOT_COUNT do
+            local slotIndex = (site - 1) * OVERCLOCK_SLOT_COUNT + pos
             local isOverclocked = equipId and XMVCA.XEquip:IsEquipPosAwaken(equipId, pos)
-            finalSlots[#finalSlots + 1] = isOverclocked and 1 or 0
+            finalSlots[tostring(slotIndex)] = isOverclocked and 1 or 0
         end
     end
     return finalSlots

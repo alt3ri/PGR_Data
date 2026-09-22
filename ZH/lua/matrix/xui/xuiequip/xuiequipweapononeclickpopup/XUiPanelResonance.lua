@@ -1,4 +1,8 @@
 -- 共鸣栏
+local COLOR = {
+    Grey = XUiHelper.Hexcolor2Color("A1A1A1"),
+    Blue = XUiHelper.Hexcolor2Color("0D70BC"),
+}
 ---@class XUiPanelResonance:XUiNode
 ---@field Parent XUiEquipWeaponOneClickPopup
 ---@field BgTitleChoose UnityEngine.RectTransform
@@ -41,6 +45,9 @@ function XUiPanelResonance:Refresh(data)
     end
     self.BgTitleChoose.gameObject:SetActiveEx(isBgChoose)
     self.BgTitleNotChoose.gameObject:SetActiveEx(not isBgChoose)
+    local color = isBgChoose and COLOR.Blue or COLOR.Grey
+    self.Arrow.color = color
+    self.UiTxtPreview.color = color
     self.TxtChoosePreview.text = string.format("%d/%d", data.ResonanceCount or 0, data.TargetCount or 0)
 
     local materialList = data.MaterialList or table.empty

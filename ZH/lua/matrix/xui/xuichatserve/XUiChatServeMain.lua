@@ -113,7 +113,10 @@ function XUiChatServeMain:OnStart(isMain, ...)
 end
 
 function XUiChatServeMain:OnEnable()
+    -- 有坑：必须先于 Refresh
+    XDataCenter.ChatManager.SetChatBoardNeedPlayEnableAnim(true)
     self:Refresh()
+    XDataCenter.ChatManager.SetChatBoardNeedPlayEnableAnim(false)
     XEventManager.DispatchEvent(XEventId.EVENT_SCENE_UICHAT_ENABLE)
 end
 
@@ -329,6 +332,7 @@ function XUiChatServeMain:Close()
     if self.InputField.isFocused then
         return
     end
+    XEventManager.DispatchEvent(XEventId.EVENT_CHAT_BOARD_PLAY_DISABLE)
     --关闭聊天
     self:PlayAnimationWithMask("AnimChatOut", function()
         self.Super.Close(self)

@@ -43,6 +43,8 @@ function XUiPunishaarFightMainPanelEnemyHp:InitComponents()
     if self.FxEnemyAttack then
         self.FxEnemyAttack.gameObject:SetActiveEx(false)
     end
+    
+    self._ShakeStrengthVec3 = CS.UnityEngine.Vector3(0, 0, 0)
 end
 
 function XUiPunishaarFightMainPanelEnemyHp:OnStart()
@@ -103,6 +105,11 @@ function XUiPunishaarFightMainPanelEnemyHp:RefreshHpShow(curHp, hpMax)
         local sx = XMVCA.XPunishaar:GetClientNumberByKey("HpShakeStrength", 1)
         local sy = XMVCA.XPunishaar:GetClientNumberByKey("HpShakeStrength", 2)
         if duration and duration > 0 and sx and sy then
+            if not self._CacheHpRootPos then
+                self._CacheHpRootPos = true
+                self._HpRootDefaultPosX, self._HpRootDefaultPosY, self._HpRootDefaultPosZ = self.CurHp.transform.parent:GetPosition()
+            end
+            
             -- 倍速缩放：震动时长随倍速缩短（2x → duration/2），与战斗节奏同步
             local fc = self._Control and self._Control.GameControl and self._Control.GameControl.FightControl
             local speed = fc and fc.SpeedController and fc.SpeedController:GetSpeed() or 1
@@ -110,9 +117,12 @@ function XUiPunishaarFightMainPanelEnemyHp:RefreshHpShow(curHp, hpMax)
             duration = duration / speed
             if self._HpShakeTweener then
                 self._HpShakeTweener:Kill()
+                self.CurHp.transform.parent:SetPosition(self._HpRootDefaultPosX, self._HpRootDefaultPosY, self._HpRootDefaultPosZ)
             end
-            local strength = CS.UnityEngine.Vector3(sx, sy, 0)
-            self._HpShakeTweener = self.CurHp.transform.parent:DOShakePosition(duration, strength)
+
+            self._ShakeStrengthVec3:Set(sx, sy, 0)
+            
+            self._HpShakeTweener = self.CurHp.transform.parent:DOShakePosition(duration, self._ShakeStrengthVec3)
         end
     end
     -- NextHp 插值追赶 CurHp：定时动画追到目标 fillAmount，相差无几则不赋值

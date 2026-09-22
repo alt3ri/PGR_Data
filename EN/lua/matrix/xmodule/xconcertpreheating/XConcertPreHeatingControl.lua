@@ -2,26 +2,9 @@
 ---@field private _Model XConcertPreHeatingModel
 local XConcertPreHeatingControl = XClass(XControl, "XConcertPreHeatingControl", false)
 
-local TUNE_PROGRESS_MAX = 100
+local TUNE_PERCENT_MAX = 100
 local TUNE_TARGET_LIGHT_OFFSET_RATIO = 0.005
 local TUNE_TARGET_LIGHT_MIN_OFFSET = 0.001
-
-local CLIENT_CONFIG_TUNE_COMPLETE_ACCURACY = "TuneCompleteAccuracy"
-local CLIENT_CONFIG_TUNE_SNAP_TRANSITION_TIME = "TuneSnapTransitionTimeSecond"
-
--- 客户端杂项配置预留：表暂为空，后续按 Id 读取 Values[]。
-function XConcertPreHeatingControl:GetClientConfig(configId, index)
-    return self._Model:GetClientConfigValue(configId, index)
-end
-
-function XConcertPreHeatingControl:GetClientConfigNumber(configId, index)
-    local value = self:GetClientConfig(configId, index)
-    return value and tonumber(value) or nil
-end
-
-function XConcertPreHeatingControl:GetClientConfigValues(configId)
-    return self._Model:GetClientConfigValues(configId)
-end
 
 -- 主界面页签和调频按钮使用：判断关卡是否已解锁。
 function XConcertPreHeatingControl:IsStageOpen(stageId)
@@ -151,7 +134,15 @@ function XConcertPreHeatingControl:GetTuningStageControlParamCfgs(tuningStageId)
     return result
 end
 
-local function CalculateTuneAccuracy(controlParamCfg, value)
+-- 调频数值由原始输入派生出三层语义，禁止混用：
+-- 输入 controlValue：单杆 Slider 的原始值，对应 ControlParam 的 MinParam/MaxParam/Target。
+-- 1. controlAccuracy：单杆原始值对 Target 的接近度，范围 0~100；初始值不一定为 0。
+--    例如 Min=0、Max=100、Target=70、controlValue=0 时，单杆准确度是 30，而不是 0。
+-- 2. matchProgress：所有单杆准确度取平均后再经手感曲线映射的内部匹配进度；
+--    它保留了初始杆位自带的匹配度，只用于换算，不直接交给 UI 或完成判定。
+-- 3. stageProgress：从 matchProgress 中扣除本关初始匹配进度后重新归一化的权威关卡完成度；
+--    初始杆位恒为 0，平均单杆准确度达到完成阈值时为 100，供点云、信号提示和关卡完成判定消费。
+local function CalculateControlAccuracy(controlParamCfg, controlValue)
     local minParam = controlParamCfg.MinParam or 0
     local maxParam = controlParamCfg.MaxParam or 0
     local range = maxParam - minParam
@@ -160,38 +151,40 @@ local function CalculateTuneAccuracy(controlParamCfg, value)
     end
 
     local target = controlParamCfg.Target or minParam
-    local accuracy = TUNE_PROGRESS_MAX - math.abs((value or minParam) - target) / range * TUNE_PROGRESS_MAX
-    return XMath.Clamp(accuracy, 0, TUNE_PROGRESS_MAX)
+    local controlAccuracy = TUNE_PERCENT_MAX
+        - math.abs((controlValue or minParam) - target) / range * TUNE_PERCENT_MAX
+    return XMath.Clamp(controlAccuracy, 0, TUNE_PERCENT_MAX)
 end
 
-local function ConvertTuneAccuracyToMatchProgress(accuracy, completeAccuracy)
-    accuracy = XMath.Clamp(accuracy or 0, 0, TUNE_PROGRESS_MAX)
-    -- completeAccuracy 由调用方 GetTuneCompleteAccuracy() 传入；未传时取 0，使任何准确度都判定完成，暴露漏配。
-    completeAccuracy = completeAccuracy or 0
-    if accuracy >= completeAccuracy then
-        return TUNE_PROGRESS_MAX
+local function ConvertAverageControlAccuracyToMatchProgress(averageControlAccuracy, completionAverageAccuracy)
+    averageControlAccuracy = XMath.Clamp(averageControlAccuracy or 0, 0, TUNE_PERCENT_MAX)
+    -- completionAverageAccuracy 未传时取 0，使任何准确度都判定完成，暴露漏配。
+    completionAverageAccuracy = completionAverageAccuracy or 0
+    if averageControlAccuracy >= completionAverageAccuracy then
+        return TUNE_PERCENT_MAX
     end
 
-    local progress
-    if accuracy <= 20 then
-        progress = accuracy
-    elseif accuracy <= 75 then
-        progress = 20 + (accuracy - 20) * 1.27
+    local matchProgress
+    if averageControlAccuracy <= 20 then
+        matchProgress = averageControlAccuracy
+    elseif averageControlAccuracy <= 75 then
+        matchProgress = 20 + (averageControlAccuracy - 20) * 1.27
     else
-        progress = 90 + (accuracy - 75)
+        matchProgress = 90 + (averageControlAccuracy - 75)
     end
 
-    return XMath.Clamp(progress, 0, TUNE_PROGRESS_MAX)
+    return XMath.Clamp(matchProgress, 0, TUNE_PERCENT_MAX)
 end
 
-local function ConvertMatchProgressToTuneProgress(matchProgress, baseProgress)
-    local progressRange = TUNE_PROGRESS_MAX - (baseProgress or 0)
-    if progressRange <= 0 then
-        return matchProgress >= TUNE_PROGRESS_MAX and TUNE_PROGRESS_MAX or 0
+local function ConvertMatchProgressToStageProgress(matchProgress, initialMatchProgress)
+    local matchProgressRange = TUNE_PERCENT_MAX - (initialMatchProgress or 0)
+    if matchProgressRange <= 0 then
+        return matchProgress >= TUNE_PERCENT_MAX and TUNE_PERCENT_MAX or 0
     end
 
-    local progress = ((matchProgress or 0) - (baseProgress or 0)) / progressRange * TUNE_PROGRESS_MAX
-    return XMath.Clamp(progress, 0, TUNE_PROGRESS_MAX)
+    local stageProgress = ((matchProgress or 0) - (initialMatchProgress or 0))
+        / matchProgressRange * TUNE_PERCENT_MAX
+    return XMath.Clamp(stageProgress, 0, TUNE_PERCENT_MAX)
 end
 
 -- 调频界面使用：判断单个控制参数是否已调到目标值附近。
@@ -246,82 +239,74 @@ function XConcertPreHeatingControl.GetTuneAisacValue(controlParamCfg, value)
     return aisacTargetValue * (maxParam - value) / fallRange
 end
 
--- 调频界面使用：完成判定的准确度阈值，读客户端杂项配置，未配置时报错。
-function XConcertPreHeatingControl:GetTuneCompleteAccuracy()
-    local value = self:GetClientConfigNumber(CLIENT_CONFIG_TUNE_COMPLETE_ACCURACY)
-    if not value then
-        XLog.Error(string.format("ConcertClientConfig missing config, Id: %s", CLIENT_CONFIG_TUNE_COMPLETE_ACCURACY))
-        return 0
-    end
-
-    return value
-end
-
 -- 调频界面使用：完成后滑条吸附到目标值的过渡时长（秒），未配置时报错，非正数视为瞬间吸附。
 function XConcertPreHeatingControl:GetTuneSnapTransitionTime()
-    local value = self:GetClientConfigNumber(CLIENT_CONFIG_TUNE_SNAP_TRANSITION_TIME)
+    local config = self._Model:GetClientConfigCfg("TuneSnapTransitionTimeSecond")
+    local value = config and tonumber(config.Values[1])
     if not value then
-        XLog.Error(string.format("ConcertClientConfig missing config, Id: %s", CLIENT_CONFIG_TUNE_SNAP_TRANSITION_TIME))
+        XLog.Error("ConcertClientConfig missing config, Id: TuneSnapTransitionTimeSecond")
         return 0
     end
 
     return value
 end
 
--- 调频界面使用：计算内部匹配度。初始参数可能已有较高匹配度，不直接作为关卡完成度。
-function XConcertPreHeatingControl:CalculateTuneMatchProgress(tuningStageId, values)
+-- 计算内部匹配进度；结果仅供 CalculateTuneStageProgress 做初始值归零换算。
+local function CalculateTuneMatchProgress(controlParamCfgs, controlValues, completionAverageAccuracy)
+    local averageControlAccuracy = 0
+    local controlWeight = 1 / #controlParamCfgs
+
+    for index, controlParamCfg in ipairs(controlParamCfgs) do
+        local controlValue = controlValues and controlValues[index] or controlParamCfg.MinParam
+        local controlAccuracy = CalculateControlAccuracy(controlParamCfg, controlValue)
+        averageControlAccuracy = averageControlAccuracy + controlAccuracy * controlWeight
+    end
+
+    return ConvertAverageControlAccuracyToMatchProgress(averageControlAccuracy, completionAverageAccuracy)
+end
+
+-- 唯一对外的调频关卡完成度：初始杆位为 0，完成为 100，供 UI 表现和完成判定消费。
+function XConcertPreHeatingControl:CalculateTuneStageProgress(tuningStageId, controlValues)
     local controlParamCfgs = self:GetTuningStageControlParamCfgs(tuningStageId)
     if XTool.IsTableEmpty(controlParamCfgs) then
         return 0
     end
 
-    local accuracy = 0
-    local tuneControlWeight = 1 / #controlParamCfgs
-
-    for index, controlParamCfg in ipairs(controlParamCfgs) do
-        local value = values and values[index] or controlParamCfg.MinParam
-        local singleAccuracy = CalculateTuneAccuracy(controlParamCfg, value)
-        accuracy = accuracy + singleAccuracy * tuneControlWeight
+    local completionAccuracyCfg = self._Model:GetClientConfigCfg("TuneCompleteAccuracy")
+    local completionAverageAccuracy = completionAccuracyCfg and tonumber(completionAccuracyCfg.Values[1])
+    if not completionAverageAccuracy then
+        XLog.Error("ConcertClientConfig missing config, Id: TuneCompleteAccuracy")
+        completionAverageAccuracy = 0
     end
 
-    return ConvertTuneAccuracyToMatchProgress(accuracy, self:GetTuneCompleteAccuracy())
+    local matchProgress = CalculateTuneMatchProgress(controlParamCfgs, controlValues, completionAverageAccuracy)
+    self._TuningStageInitialMatchProgressMap = self._TuningStageInitialMatchProgressMap or {}
+    local initialMatchProgress = self._TuningStageInitialMatchProgressMap[tuningStageId]
+    if initialMatchProgress == nil then
+        local initialControlValues = {}
+        for index, controlParamCfg in ipairs(controlParamCfgs) do
+            initialControlValues[index] = controlParamCfg.MinParam or 0
+        end
+
+        initialMatchProgress = CalculateTuneMatchProgress(
+            controlParamCfgs,
+            initialControlValues,
+            completionAverageAccuracy
+        )
+        self._TuningStageInitialMatchProgressMap[tuningStageId] = initialMatchProgress
+    end
+
+    return ConvertMatchProgressToStageProgress(matchProgress, initialMatchProgress)
 end
 
-function XConcertPreHeatingControl:GetTuneBaseMatchProgress(tuningStageId)
-    self._TuningStageBaseMatchProgress = self._TuningStageBaseMatchProgress or {}
-    if self._TuningStageBaseMatchProgress[tuningStageId] ~= nil then
-        return self._TuningStageBaseMatchProgress[tuningStageId]
-    end
-
-    local controlParamCfgs = self:GetTuningStageControlParamCfgs(tuningStageId)
-    if XTool.IsTableEmpty(controlParamCfgs) then
-        return 0
-    end
-
-    local values = {}
-    for index, controlParamCfg in ipairs(controlParamCfgs) do
-        values[index] = controlParamCfg.MinParam or 0
-    end
-
-    local progress = self:CalculateTuneMatchProgress(tuningStageId, values)
-    self._TuningStageBaseMatchProgress[tuningStageId] = progress
-    return progress
-end
-
--- 调频界面使用：计算关卡权威完成度。初始滑条状态为 0，目标状态为 100。
-function XConcertPreHeatingControl:CalculateTuneProgress(tuningStageId, values)
-    local matchProgress = self:CalculateTuneMatchProgress(tuningStageId, values)
-    local baseProgress = self:GetTuneBaseMatchProgress(tuningStageId)
-    return ConvertMatchProgressToTuneProgress(matchProgress, baseProgress)
-end
-
-function XConcertPreHeatingControl.IsTuneComplete(tuneProgress)
-    return (tuneProgress or 0) >= TUNE_PROGRESS_MAX
+-- 只接受 CalculateTuneStageProgress 返回的权威关卡完成度，不接受单杆准确度或内部匹配进度。
+function XConcertPreHeatingControl.IsTuneStageComplete(stageProgress)
+    return (stageProgress or 0) >= TUNE_PERCENT_MAX
 end
 
 function XConcertPreHeatingControl:OnRelease()
     self._TuningStageControlParamCfgs = nil
-    self._TuningStageBaseMatchProgress = nil
+    self._TuningStageInitialMatchProgressMap = nil
 end
 
 return XConcertPreHeatingControl

@@ -30,11 +30,17 @@ end
 --- 刷新敌人详情：按 fightId 取 Fight+Enemy+EnemySkill[] 刷 EnemyBase + 克隆 GridSkill #69
 ---@param fightId number（ShowEnemy 直接传，禁止临时 ViewModel #70）
 function XUiPunishaarEnemyTips:Refresh(fightId)
-    if not fightId then return end
-    local gc = self._Control and self._Control.GameControl
-    if not gc then return end
-    local fightCfg = gc:GetTablePunishaarFight(fightId, true)
-    if not fightCfg then return end
+    if not fightId then
+        return
+    end
+    local gameControl = self._Control and self._Control.GameControl
+    if not gameControl then
+        return
+    end
+    local fightCfg = gameControl:GetTablePunishaarFight(fightId, true)
+    if not fightCfg then
+        return
+    end
     -- 敌人基础信息
     if self._EnemyBase then
         self._EnemyBase:Refresh(fightId)
@@ -44,24 +50,24 @@ function XUiPunishaarEnemyTips:Refresh(fightId)
     local validSkills = {}
     if skillIds then
         for _, skillId in ipairs(skillIds) do
-            local skillCfg = gc:GetTablePunishaarEnemySkill(skillId, true)
+            local skillCfg = gameControl:GetTablePunishaarEnemySkill(skillId, true)
             if skillCfg then
                 validSkills[#validSkills + 1] = skillCfg
             end
         end
     end
     local hasSkill = #validSkills > 0
-    
+
     if self.PanelNoneSkill then
         self.PanelNoneSkill.gameObject:SetActiveEx(not hasSkill)
     end
-    
+
     if self.ListDesc then
         self.ListDesc.gameObject:SetActiveEx(hasSkill)
     end
-    
+
     if not hasSkill then
-        return 
+        return
     end
 
     if self._SkillGridDict == nil then
@@ -71,7 +77,7 @@ function XUiPunishaarEnemyTips:Refresh(fightId)
             v:Close()
         end
     end
-    
+
     XUiHelper.RefreshCustomizedList(self.GridSkill.transform.parent, self.GridSkill, #validSkills, function(index, go)
         local grid = self._SkillGridDict[go]
         if not grid then

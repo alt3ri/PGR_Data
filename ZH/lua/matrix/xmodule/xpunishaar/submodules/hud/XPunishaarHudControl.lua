@@ -3,11 +3,6 @@
 --- 显隐时机（规则3）：a. 节点推进（OnHudNodeAdvance）选+缓存；b. FightMain 显时读 GetDisplayHud 显（未 DismissHud）；玩家 DismissHud 标关闭；节点推进重置。
 local XPunishaarGameControl = XClassPartial("XPunishaarGameControl")
 
--- 背包暂存区开合的局内表现层事件（ComBottomBagBase 派发 → FightMain 订阅隐/恢复 HUD）#背包HUD互斥
-XPunishaarGameControl.BagEventId = {
-    Open  = "PunishaarBagOpen",  -- 背包展开：纯遮蔽隐 HUD（不标 DismissHud，收起可恢复）
-    Close = "PunishaarBagClose", -- 背包收起：恢复 HUD 显隐（读 GetDisplayHud，未手动关才显）
-}
 
 --- 节点推进时选 HUD：当前节点 StageContent.HudGroupId → GetHudCfgsByGroup（规则1 Id=GroupId*100+index 连续读）→
 ---   过滤本关卡已抽 GameNoRepeat=1 的（不放回；配空放回每次参与）→ Weight 随机选一 → 缓存 + 登记。

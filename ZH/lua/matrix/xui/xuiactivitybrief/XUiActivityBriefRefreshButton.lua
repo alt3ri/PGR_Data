@@ -75,7 +75,7 @@ function XUiActivityBriefRefreshButton:InitActivityBriefButton(index, groupId)
     end
     local btn
     local btnGrid = self[btnName]
-    if XTool.IsNumberValid(btnGrid.transform.childCount) then
+    if not XTool.UObjIsNil(btnGrid) and XTool.IsNumberValid(btnGrid.transform.childCount) then
         btn = btnGrid.transform:GetChild(0):GetComponent("XUiButton")
     else
         XLog.Error("InitActivityBriefButton() Error: " .. btnName .. " 下不存在Button")

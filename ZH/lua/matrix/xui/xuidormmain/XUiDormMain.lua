@@ -581,5 +581,5 @@ end
 
 function XUiDormMain:OnBeforeEnterFight()
     XLuaUiManager.SafeClose("UiDormSecond")
-    XLuaUiManager.SafeClose(self.UiName)
+    XLuaUiManager.SafeClose("UiDormMain")
 end

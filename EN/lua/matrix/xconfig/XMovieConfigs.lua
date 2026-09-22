@@ -1,4 +1,6 @@
+local MOVIE_TABLE_NAME_PREFIX = "Movie"
 local TABLE_MOVIE_PATH_PREFIX = "Client/Movie/Movies/Movie%s.tab"
+local TABLE_MOVIE_VOICE_MUTE_LIST_PATH = "Client/Movie/MovieVoiceMuteList.tab"
 local TABLE_MOVIE_ACTOR_PATH = "Client/Movie/MovieActor.tab"
 local TABLE_MOVIE_SPINE_ACTOR_PATH = "Client/Movie/MovieSpineActor.tab"
 local TABLE_MOVIE_SPINE_ACTOR_V2_PATH = "Client/Movie/MovieSpineActorV2.tab"
@@ -24,6 +26,7 @@ local MovieSkipTemplates = {}
 local MovieStaffTemplates = {}
 local MovieSpeedTemplates = {}
 local MovieSkipSummaryTemplates = {}
+local MovieVoiceMuteListTemplates = {}
 
 local IsLoadMovieSkipSummary = false
 
@@ -94,12 +97,22 @@ local InitSpineActorV2Configs = function()
     MovieSpineActorV2Templates = XTableManager.ReadByIntKey(TABLE_MOVIE_SPINE_ACTOR_V2_PATH, XTable.XTableMovieSpineActorV2, "RoleId")
 end
 
+local InitMovieVoiceMuteListConfigs = function()
+    MovieVoiceMuteListTemplates = {}
+    if not checkTableExist(TABLE_MOVIE_VOICE_MUTE_LIST_PATH) then
+        return
+    end
+
+    MovieVoiceMuteListTemplates = XTableManager.ReadByStringKey(TABLE_MOVIE_VOICE_MUTE_LIST_PATH, XTable.XTableMovieVoiceMuteList, "MovieTableName")
+end
+
 function XMovieConfigs.Init()
     MovieActorTemplates = XTableManager.ReadByIntKey(TABLE_MOVIE_ACTOR_PATH, XTable.XTableMovieActor, "RoleId")
     MovieSpineActorTemplates = XTableManager.ReadByIntKey(TABLE_MOVIE_SPINE_ACTOR_PATH, XTable.XTableMovieSpineActor, "RoleId")
     MovieRoleFaceTemplates = XTableManager.ReadByIntKey(TABLE_MOVIE_ROLE_FACE_PATH, XTable.XTableMovieRoleFace, "RoleId")
     MovieSkipTemplates = {}--= XTableManager.ReadByStringKey(TABLE_MOVIE_SKIP_PATH, XTable.XTableMovieSkip, "Id")
     MovieSpeedTemplates = XTableManager.ReadByIntKey(TABLE_MOVIE_SPEED_PATH, XTable.XTableMovieSpeed, "Id")
+    InitMovieVoiceMuteListConfigs()
     InitSpineActorV2Configs()
     InitStaffConfigs()
 
@@ -118,6 +131,11 @@ end
 function XMovieConfigs.CheckMovieConfigExist(movieId)
     local path = stringFormat(TABLE_MOVIE_PATH_PREFIX, movieId)
     return checkTableExist(path)
+end
+
+function XMovieConfigs.IsMovieVoiceMuted(movieId)
+    local movieTableName = MOVIE_TABLE_NAME_PREFIX .. movieId
+    return MovieVoiceMuteListTemplates[movieTableName] ~= nil
 end
 
 function XMovieConfigs.GetMovieCfg(movieId)

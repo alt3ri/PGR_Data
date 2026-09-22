@@ -93,6 +93,7 @@ local TABLE_DRAW_CHARACTER_IMAGE = "Client/Draw/DrawCharacterImage.tab"
 local TABLE_DRAW_COMBINATIONS = "Share/Draw/DrawCombinations.tab"
 local TABLE_DRAW_TICKET = "Share/DrawTicket/DrawTicket.tab"
 local TABLE_DEVILMAYCRY_ACTIVITY = "Share/Draw/DevilMayCryActivity.tab"
+local TABLE_DATEALIVE_ACTIVITY = "Share/Draw/DateALiveActivity.tab"
 local TABLE_DRAW_CAN_LIVER_ACTIVITY  = "Share/Draw/DrawCanLiverActivity.tab"
 local TABLE_DRAW_EXTRA_TAG_GROUP = "Client/Draw/DrawExtraTagGroup.tab"
 
@@ -136,6 +137,8 @@ local DrawPreviewsCfg = {}
 local DrawPreviewGoodsCfg = {}
 ---@type XTableDevilMayCryActivity[]
 local DevilMayCryActivityCfg = {}
+---@type XTableDateALiveActivity[]
+local DateALiveActivityCfg = {}
 ---@type XTableDrawCanLiverActivity[]
 local DrawCanLiverActivityCfg = {}
 ---@type table<number, XTableDrawExtraTagGroup>
@@ -169,6 +172,7 @@ function XDrawConfigs.Init()
     DrawPreviewsCfg = XTableManager.ReadByIntKey(TABLE_DRAW_PREVIEW, XTable.XTableDrawPreview, "Id")
     DrawPreviewGoodsCfg = XTableManager.ReadByIntKey(TABLE_DRAW_PREVIEW_GOODS, XTable.XTableRewardGoods, "Id")
     DevilMayCryActivityCfg = XTableManager.ReadByIntKey(TABLE_DEVILMAYCRY_ACTIVITY, XTable.XTableDevilMayCryActivity, "DrawId")
+    DateALiveActivityCfg = XTableManager.ReadByIntKey(TABLE_DATEALIVE_ACTIVITY, XTable.XTableDateALiveActivity, "Id")
     DrawProbs = XTableManager.ReadByIntKey(TABLE_DRAW_PROB, XTable.XTableDrawProbShow, "DrawId")
     DrawPower = XTableManager.ReadByIntKey(TABLE_DRAW_DRAW_POWER, XTable.XTableDrawPower, "DrawId")
     DrawCanLiverActivityCfg = XTableManager.ReadByIntKey(TABLE_DRAW_CAN_LIVER_ACTIVITY, XTable.XTableDrawCanLiverActivity, "Id")
@@ -528,6 +532,21 @@ end
 
 function XDrawConfigs.GetDevilMayCryActivityCfg()
     return DevilMayCryActivityCfg
+end
+
+function XDrawConfigs.GetDateALiveTaskGroupIdByDrawId(drawId)
+    local cfgs = XDrawConfigs.GetDateALiveActivityCfg()
+    for _, cfg in pairs(cfgs) do
+        local index = table.indexof(cfg.DrawIds, drawId)
+        if XTool.IsNumberValid(index) then
+            return cfg.TaskGroupIds[index]
+        end
+    end
+    return nil
+end
+
+function XDrawConfigs.GetDateALiveActivityCfg()
+    return DateALiveActivityCfg
 end
 
 function XDrawConfigs.GetDrawCanLiverActivityCfg()

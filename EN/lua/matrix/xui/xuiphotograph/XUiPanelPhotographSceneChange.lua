@@ -54,7 +54,7 @@ end
 
 function XUiPanelPhotographSceneChange:SwitchSceneMode(index)
     local sceneId = XDataCenter.PhotographManager.GetCurSelectSceneId()
-    XMVCA.XSwitchableScene:SetSceneSetting(sceneId, index)
+    XDataCenter.PhotographManager.ApplySceneSwitch(sceneId, index, true)
     self:UpdateSceneChangeBtn()
     if self._UpdateBatteryMode then
         self._UpdateBatteryMode()
@@ -69,7 +69,7 @@ end
 
 function XUiPanelPhotographSceneChange:SwitchMusicMode(mode)
     local sceneId = XDataCenter.PhotographManager.GetCurSelectSceneId()
-    XMVCA.XMusicScene:UpdateMusicSceneMode(sceneId, mode)
+    XDataCenter.PhotographManager.ApplySceneSwitch(sceneId, mode - 1, true) --mode(Normal=1/Music=2)→门面optionIndex(0/1), 门面内 +1 还原
     self:UpdateSceneChangeBtn()
 end
 

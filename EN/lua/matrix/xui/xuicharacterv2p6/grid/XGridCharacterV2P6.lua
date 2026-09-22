@@ -128,10 +128,10 @@ function XGridCharacterV2P6:SetData(character)
 end
 
 -- public choose start
-function XGridCharacterV2P6:UpdateIconEquipGuide()
+function XGridCharacterV2P6:UpdateIconTeamRecommend()
     -- 装备目标
     if self.IconEquipGuide then
-        self.IconEquipGuide.gameObject:SetActiveEx(XDataCenter.EquipGuideManager.IsEquipGuideCharacter(self.Character.Id))
+        self.IconEquipGuide.gameObject:SetActiveEx(XMVCA.XTeamRecommend:GetServerCharacterTarget(self.Character.Id) ~= nil)
     end
 end
 

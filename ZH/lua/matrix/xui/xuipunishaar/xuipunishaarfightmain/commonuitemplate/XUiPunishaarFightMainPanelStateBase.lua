@@ -8,19 +8,19 @@ local XUiPunishaarFightMainPanelStateBase = XClass(XUiNode, "XUiPunishaarFightMa
 
 function XUiPunishaarFightMainPanelStateBase:OnEnable()
     self:_OnBuySuccess()
-    self._Control.GameControl:AddEventListener(self._Control.GameControl.ShopEventId.BuySuccess, self._OnBuySuccess, self)
+    self._Control.GameControl:AddEventListener(self._Control.GameControl.EventId.Shop.BuySuccess, self._OnBuySuccess, self)
     -- notify 回流：服务端 NotifyPunishaarMasterCardChange（持有卡变更）。可能先于/后于 BuyGoods 回调：
     --   先于：SetCurrentNode 未调 → 商品 Goods 旧（IsBought 未更新）→ 标记 isFromMasterCardChange 跳过商品栏可升级判定（防误显）#升级动画
     --   后于：补刷（BuySuccess 时 Model 未含新卡 → 此事件补刷装备栏）#M1
-    XEventManager.AddEventListener(XEventId.EVENT_PUNISHAAR_MASTER_CARD_CHANGE, self._OnMasterCardChange, self)
+    XMVCA.XPunishaar:AddEventListener(XMVCA.XPunishaar.EventIds.EVENT_PUNISHAAR_INNER_MASTER_CARD_CHANGE, self._OnMasterCardChange, self)
     -- 卡牌拖拽托管：grid 拖起时派发 RequestCustody，由本节点 reparent 到 DragRoot 高层
-    self._Control.GameControl:AddEventListener(self._Control.GameControl.DragEventId.RequestCustody, self.OnCardDragCustody, self)
+    self._Control.GameControl:AddEventListener(self._Control.GameControl.EventId.Drag.RequestCustody, self.OnCardDragCustody, self)
 end
 
 function XUiPunishaarFightMainPanelStateBase:OnDisable()
-    self._Control.GameControl:RemoveEventListener(self._Control.GameControl.ShopEventId.BuySuccess, self._OnBuySuccess, self)
-    XEventManager.RemoveEventListener(XEventId.EVENT_PUNISHAAR_MASTER_CARD_CHANGE, self._OnMasterCardChange, self)
-    self._Control.GameControl:RemoveEventListener(self._Control.GameControl.DragEventId.RequestCustody, self.OnCardDragCustody, self)
+    self._Control.GameControl:RemoveEventListener(self._Control.GameControl.EventId.Shop.BuySuccess, self._OnBuySuccess, self)
+    XMVCA.XPunishaar:RemoveEventListener(XMVCA.XPunishaar.EventIds.EVENT_PUNISHAAR_INNER_MASTER_CARD_CHANGE, self._OnMasterCardChange, self)
+    self._Control.GameControl:RemoveEventListener(self._Control.GameControl.EventId.Drag.RequestCustody, self.OnCardDragCustody, self)
 end
 
 --- BuySuccess 刷新钩子（子类覆写：Shop=RefreshAll，PreFight=Refresh）。OnEnable 时也调一次做初刷。

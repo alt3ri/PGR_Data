@@ -402,6 +402,10 @@ function XBountyChallengeControl:SetDifficultyLevel(level)
     XSaveTool.SaveData("BountyChallengeLevel" .. XPlayer.Id .. self._SelectedBossId, level)
 end
 
+function XBountyChallengeControl:SetBossNewRed(bossId, value)
+    self._Model:SetBossNewRed(bossId, value)
+end
+
 function XBountyChallengeControl:GetRemainTime()
     local activityConfig = self._Model:GetActivityConfig()
     if not activityConfig then

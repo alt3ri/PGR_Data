@@ -112,6 +112,17 @@ function XUiPunishaarFightMainPanelBattleCardList:RefreshBallCount()
     end)
 end
 
+--- 轻量刷所有卡"待激发+球够"显隐（球数变化 BallListChanged 时调）。#手动牌球不足显隐
+--- CD 到 0 后 TickAllCards 不再推进 CD、不再 Emit CardCdChanged，球数变化需此入口重判手动牌显隐。
+function XUiPunishaarFightMainPanelBattleCardList:RefreshCardActivateState()
+    if not self._CardList then
+        return
+    end
+    self._CardList:ForEachActive(function(_, grid)
+        grid:RefreshActivateState()
+    end)
+end
+
 --- 帧刷所有卡 CD（CardCdChanged 事件触发；只刷 CD 进度不重建）。
 function XUiPunishaarFightMainPanelBattleCardList:RefreshAllCardCd()
     if not self._CardList then
@@ -131,6 +142,38 @@ function XUiPunishaarFightMainPanelBattleCardList:_GetNewOrResetUidList()
         end
     end
     return self._UidList
+end
+
+--- 取卡 grid 视觉中心 world position（pivot.x=0 左缘 → +sizeDelta.x/2 偏移到中心）。#消球动效
+--- 遍历 _CardList 活跃 grid 找 uid 匹配（grid 数小，可接受）。
+---@param cardUid number 卡 entityId
+---@return UnityEngine.Vector3|nil
+function XUiPunishaarFightMainPanelBattleCardList:GetCardCenterPosition(cardUid)
+    local grid = self:_FindGridByUid(cardUid)
+    if not grid then
+        return nil
+    end
+    local trans = grid.Transform
+    local width = trans.sizeDelta.x or 0
+    -- pivot.x=0 左缘：position 是左缘 world pos，半宽右偏用 TransformPoint 从本地转 world（不直接叠 world，因经父节点旋转/缩放变换）#消球动效
+    return trans:TransformPoint(CS.UnityEngine.Vector3(width / 2, 0, 0))
+end
+
+--- 遍历活跃 grid 找 uid 匹配（uid→grid 查找，消球动效用）。#消球动效
+---@param cardUid number
+---@return table|nil grid 实例
+function XUiPunishaarFightMainPanelBattleCardList:_FindGridByUid(cardUid)
+    if not self._CardList then
+        return nil
+    end
+    local result = nil
+    self._CardList:ForEachActive(function(_, grid)
+        if grid._Uid2Card == cardUid then
+            result = grid
+            return true  -- break
+        end
+    end)
+    return result
 end
 
 return XUiPunishaarFightMainPanelBattleCardList

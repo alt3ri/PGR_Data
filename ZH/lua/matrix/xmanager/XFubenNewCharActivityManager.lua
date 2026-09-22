@@ -650,13 +650,21 @@ XFubenNewCharActivityManagerCreator = function()
     
     --活动入口进度提示
     -- #203409 这个方法无法被覆写, 因此只能直接在原文改动
-    function XFubenNewCharActivityManager.GetProgressTips(teachId)
+    function XFubenNewCharActivityManager.GetProgressTips(exConfig)
+        -- 约定角色试玩关的FubenActivity自定义配置索引1是活动Id
+        local teachId = nil
+
+        if exConfig and exConfig.CustomParams then
+            teachId = exConfig.CustomParams[1]
+        end
+        
         local activityIds = XFubenNewCharConfig.GetClientConfigNumListByKey('CurVersionActivityIds')
 
         local passCount = 0
         local hasCount = 0
 
-        if not XTool.IsTableEmpty(activityIds) then
+        -- 如果配置表的活动集合不为空，且FubenActivity表没有指定活动Id，则显示活动集合
+        if not XTool.IsTableEmpty(activityIds) and not XTool.IsNumberValidEx(teachId) then
             for i, id in pairs(activityIds) do
                 local tmpPassCount, tmpHasCount = XFubenNewCharActivityManager.GetProcess(id)
 

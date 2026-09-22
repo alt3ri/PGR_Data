@@ -167,6 +167,13 @@ function XPhotographConfigs.GetBackgroundTabTag(id)
     return SceneTemplates[id].TabTag or ''
 end
 
+function XPhotographConfigs.GetBackgroundHintText(id)
+    if not SceneTemplates then
+        return nil
+    end
+    return SceneTemplates[id].HintText or nil
+end
+
 function XPhotographConfigs.SetLogoOrInfoPos(rectTransform, alignment, delayFrame, offsetX, offsetY, autoLayout)
     if not rectTransform or not alignment then
         return

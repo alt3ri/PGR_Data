@@ -69,7 +69,7 @@ function XUiGridCharacterNew:UpdateOwnInfo()
     self.RImgQuality:SetRawImage(XMVCA.XCharacter:GetCharacterQualityIcon(XMVCA.XCharacter:GetCharacterQuality(self.Character.Id)))
     self.RImgHeadIcon:SetRawImage(XMVCA.XCharacter:GetCharSmallHeadIcon(self.Character.Id))
     if self.IconEquipGuide then
-        self.IconEquipGuide.gameObject:SetActiveEx(XDataCenter.EquipGuideManager.IsEquipGuideCharacter(self.Character.Id))
+        self.IconEquipGuide.gameObject:SetActiveEx(XMVCA.XTeamRecommend:GetServerCharacterTarget(self.Character.Id) ~= nil)
     end
 end
 

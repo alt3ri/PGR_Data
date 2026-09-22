@@ -240,16 +240,16 @@ function XPunishaarGameControl:FinishFight(isWin, loseMaxColor, stats)
                 -- 非最终结算（Remedy/Processing 连战）：stage 在场取战后 Durability（服务端已扣减）
                 afterDur = stage.Durability or beforeDur
             elseif settleInfo then
-                -- 最终结算（settleInfo 存在 = 整局结束）：失败必耐久归零（纯客户端算，不依赖 SettleType——
-                -- 无尽关回 Finished 也能显 -1，普通关 DurabilityEnd 同覆盖）#耐久扣除
-                afterDur = 0
+                -- 最终结算（settleInfo 存在 = 整局结束）：用服务端 settleInfo.Durability 作权威战后值
+                -- （服务端下发归零/剩余，覆盖纯客户端硬推 0——更准）#耐久扣除
+                afterDur = settleInfo.Durability or 0
             end
             local delta = beforeDur - afterDur
             if delta > 0 then
                 durabilityDelta = delta
             end
         end
-        XLuaUiManager.Open("UiPunishaarBattleSettlement", isWin, nil, onConfirm, hasRemedy, durabilityDelta)
+        XLuaUiManager.Open("UiPunishaarBattleSettlement", isWin, nil, onConfirm, hasRemedy, durabilityDelta, settleInfo)
     end)
 end
 
@@ -328,8 +328,8 @@ end
 
 --- 【分支B·正式】暂存卡放不下（双区均满）时的承载界面入口。
 --- 切 Base 态→开承载界面 SellCardTip(RewardFull)（EventSettlement 由调用方 _DoExit:302 自关，本入口不重复关）。玩家卖/弃腾位后，MasterCardChange
----   触发 SellCardTip 刷背包 + 调 gc:TryAutoPlacePendingReward（复用 _FindPlacementForDirectBuy，有位即
----   HandlePendingReward(true)→_FinishRewardPlacement 关弹窗+ExitNode）；或点放弃→gc:AbandonPendingReward
+---   触发 SellCardTip 刷背包 + 调 gameControl:TryAutoPlacePendingReward（复用 _FindPlacementForDirectBuy，有位即
+---   HandlePendingReward(true)→_FinishRewardPlacement 关弹窗+ExitNode）；或点放弃→gameControl:AbandonPendingReward
 ---   （HandlePendingReward(false)→_FinishRewardPlacement）。
 --- 时序保障：OnNotifyPunishaarMasterCardChange 在 DispatchEvent 前已 UpdateMasterCardByNotify 更新 Model，
 ---   故重检读到的是腾位后最新值（无 stale）。UI 不拖拽（对齐主/副卡装配 click-only 范式），空槽充足自动入背包。

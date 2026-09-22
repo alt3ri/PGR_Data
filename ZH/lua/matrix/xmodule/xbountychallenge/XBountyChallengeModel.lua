@@ -335,4 +335,14 @@ function XBountyChallengeModel:GetTaskState(taskId)
     return self._TaskState[taskId]
 end
 
+local BOSS_NEW_RED_KEY = "BossNewRed_"
+
+function XBountyChallengeModel:GetBossNewRed(bossId)
+    return self._SaveUtil:GetData(BOSS_NEW_RED_KEY .. bossId) == true
+end
+
+function XBountyChallengeModel:SetBossNewRed(bossId, value)
+    self._SaveUtil:SaveData(BOSS_NEW_RED_KEY .. bossId, value == true)
+end
+
 return XBountyChallengeModel

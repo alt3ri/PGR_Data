@@ -71,31 +71,6 @@ function XUiSignCardPopup:RefreshButtonsAndBg(autoGetReward)
     return true
 end
 
-function XUiSignCardPopup:RefreshInfo(data)
-    if not XOverseaManager.IsENRegion() then
-        return
-    end
-    if not self.CardBg then
-        self.CardBg = self.Transform:Find("SafeAreaContentPane/SignCard/Bg/Bg"):GetComponent(typeof(CS.UnityEngine.UI.RawImage))
-    end
-    if not self.CardABgPath then
-        self.CardABgPath = CS.XGame.ClientConfig:GetString("MonthlyCardABg")
-    end
-    if not self.CardCBgPath then
-        self.CardCBgPath = CS.XGame.ClientConfig:GetString("MonthlyCardCBg")
-    end
-    local isA = data.Id == 83028
-    self.CardBg:SetImage(isA and self.CardABgPath or self.CardCBgPath)
-
-    if self.TxtCount then
-        self.TxtCount.text = data.RewardGoodsList[1].Count
-    end
-
-    if self.TxtCountDay then
-        self.TxtCountDay.text = data.Desc
-    end
-end
-
 function XUiSignCardPopup:AutoGetReward()
     local data = XDataCenter.PurchaseManager.GetYKInfoData()
     if not data or data.IsDailyRewardGet then
@@ -183,6 +158,10 @@ function XUiSignCardPopup:RefreshGet()
         return
     end
     local ykConfig = XSignInConfigs.GetSignCardConfigByPurchasePackageId(data.Id)
+    if not ykConfig then
+        XLog.Error("[XUiSignCardPopup] GetSignCardConfigByPurchasePackageId nil, data.Id=" .. tostring(data.Id))
+        return
+    end
 
     local remainDay = not XOverseaManager.IsJP_KR_ENRegion() and data.DailyRewardRemainDay or data.DailyRewardRemainDay - 1
     if remainDay < 0 then
@@ -264,6 +243,9 @@ end
 function XUiSignCardPopup:OnBtnRetroactiveClick()
     self:Record()
     local data = XDataCenter.PurchaseManager.GetYKInfoData()
+    if not data then
+        return
+    end
 
     local cardsMissed = 0
     if data.DailyRewardSupplementGetData then

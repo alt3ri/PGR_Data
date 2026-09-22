@@ -399,10 +399,20 @@ function XLineArithmetic2Model:GetHelpStageGamePath(stageId, fullPath)
     return path
 end
 
+local function FileExists(filePath)
+    local file = io.open(filePath, "r")
+    if file then
+        io.close(file)
+        return true
+    else
+        return false
+    end
+end
+
 function XLineArithmetic2Model:GetStageHelpConfig(stageId)
     if XMain.IsWindowsEditor then
         local fullPath = self:GetHelpStageGamePath(stageId, true)
-        if not XTool.FileExists(fullPath) then
+        if not FileExists(fullPath) then
             XLog.Debug("[XLineArithmetic2Model] 文件尚不存在:", fullPath)
             return {}
         end

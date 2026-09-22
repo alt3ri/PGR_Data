@@ -9,6 +9,10 @@ function XMovieActionAddReview:OnInit(actionData)
         XLog.Error(string.format("XMovieActionAddReview:OnInit error: 参数3(CvId)必须为数字，当前填写为 %s，请检查节点: %s", tostring(params[3]), self.ActionId))
     end
     self.CvId = XMVCA.XMovie:ParamToNumber(params[3])
+    local movieId = XDataCenter.MovieManager.GetCurPlayingMovieId()
+    if XMovieConfigs.IsMovieVoiceMuted(movieId) then
+        self.CvId = 0
+    end
 end
 
 function XMovieActionAddReview:OnEnter()

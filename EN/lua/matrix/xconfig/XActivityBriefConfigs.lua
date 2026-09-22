@@ -312,21 +312,33 @@ function XActivityBriefConfigs.GetLoopAnimName(panelType)
     return config.LoopAnimName or nil
 end
 
--- 按 bgm 序列 Marker 的 tag 命中 SpineDiffTag，返回对齐的 SpineDiffAnimName 差分动画名；
--- 未配置或未命中返回 nil（由调用方回落到 LoopAnimName）
-function XActivityBriefConfigs.GetSpineDiffAnimNameByTag(panelType, tag)
+-- 在 SpineDiffTag 里按 tag 找到命中下标(大小写不敏感)，返回 valueList 中对齐的值；
+-- 未配置/未命中返回 nil。spine 差分动画与差分音效复用同一套 tag，共用此查找逻辑
+local GetSpineDiffValueByTag = function(panelType, tag, valueField)
     local config = ActivityTemplates[panelType]
     if XTool.IsTableEmpty(config) then return nil end
     local tags = config.SpineDiffTag
-    local anims = config.SpineDiffAnimName
-    if not tags or not anims or string.IsNilOrEmpty(tag) then return nil end
+    local values = config[valueField]
+    if not tags or not values or string.IsNilOrEmpty(tag) then return nil end
     local lowerTag = string.lower(tag)
     for i = 1, #tags do
         if tags[i] and string.lower(tags[i]) == lowerTag then
-            return anims[i]
+            return values[i]
         end
     end
     return nil
+end
+
+-- 按 bgm 序列 Marker 的 tag 命中 SpineDiffTag，返回对齐的 SpineDiffAnimName 差分动画名；
+-- 未配置或未命中返回 nil（由调用方回落到 LoopAnimName）
+function XActivityBriefConfigs.GetSpineDiffAnimNameByTag(panelType, tag)
+    return GetSpineDiffValueByTag(panelType, tag, "SpineDiffAnimName")
+end
+
+-- 按 bgm 序列 Marker 的 tag 命中 SpineDiffTag，返回对齐的 SpineDiffSoundCueId 差分音效；
+-- 与 spine 差分复用同一套 tag，未配置或未命中返回 nil
+function XActivityBriefConfigs.GetSpineDiffSoundCueIdByTag(panelType, tag)
+    return GetSpineDiffValueByTag(panelType, tag, "SpineDiffSoundCueId")
 end
 
 function XActivityBriefConfigs.GetVideoEnterSoundCueId(panelType)

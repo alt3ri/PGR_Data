@@ -14,6 +14,7 @@ function XPunishaarSubModelOutSide:ResetAll()
     self._PassedStageIds = nil
     self._PunishaarStages = nil
     self._SaveStageIds = nil
+    self._StageChallengeCountDict = nil
 end
 
 ---登录推送初始化：保存关卡进度和四类图鉴已解锁卡牌集合，
@@ -50,6 +51,13 @@ function XPunishaarSubModelOutSide:InitDataDb(data)
     self._PassedStageIds  = data.PassedStageIds
     self._PunishaarStages = data.StageSaves
     self:RebuildUnlockedCatalogCache()
+    self._StageChallengeCountDict = {}
+
+    if data.StageChallengeCounts then
+        XTool.LoopMap(data.StageChallengeCounts, function(stageId, count)
+            self._StageChallengeCountDict[stageId] = count
+        end)
+    end
 end
 
 ---查询卡牌是否已解锁
@@ -242,6 +250,30 @@ function XPunishaarSubModelOutSide:GetSaveStageCount()
     end
 
     return count
+end
+
+--- 获取关卡累计挑战次数
+---@param stageId number
+---@return number
+function XPunishaarSubModelOutSide:GetStageChallengeCount(stageId)
+    if not self._StageChallengeCountDict then
+        return 0
+    end
+
+    return self._StageChallengeCountDict[stageId] or 0
+end
+
+--- 开始关卡成功后，同步更新客户端挑战次数缓存
+---@param stageId number
+function XPunishaarSubModelOutSide:AddStageChallengeCount(stageId)
+    if not XTool.IsNumberValid(stageId) then
+        return
+    end
+
+    self._StageChallengeCountDict = self._StageChallengeCountDict or {}
+
+    local count = self._StageChallengeCountDict[stageId] or 0
+    self._StageChallengeCountDict[stageId] = count + 1
 end
 
 --endregion ----------public end----------

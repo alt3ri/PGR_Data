@@ -65,6 +65,7 @@ function XUiTransfiniteTowerStage:OnEnable()
     end
     self._NeedRollToTop = true
     self._NeedPlayGridEnableAnim = true --防止提前结算的时候重复播动效用的
+    self._NeedPlayRollbackGuide = true
     self:PlayBossGridEnableAnim()
     self:Refresh()
 end
@@ -110,6 +111,10 @@ function XUiTransfiniteTowerStage:OnDisable()
         XScheduleManager.UnSchedule(self._RollToTopTimer)
         self._RollToTopTimer = nil
     end
+    if self._RollbackGuideTimer then
+        XScheduleManager.UnSchedule(self._RollbackGuideTimer)
+        self._RollbackGuideTimer = nil
+    end
     XMVCA.XTransfiniteTower:SetStageUiTowerCfgId(nil)
 end
 
@@ -121,6 +126,10 @@ function XUiTransfiniteTowerStage:OnDestroy()
     if self._RollToTopTimer then
         XScheduleManager.UnSchedule(self._RollToTopTimer)
         self._RollToTopTimer = nil
+    end
+    if self._RollbackGuideTimer then
+        XScheduleManager.UnSchedule(self._RollbackGuideTimer)
+        self._RollbackGuideTimer = nil
     end
 end
 
@@ -223,7 +232,17 @@ function XUiTransfiniteTowerStage:RefreshDefaultSelect()
 end
 
 function XUiTransfiniteTowerStage:RefreshStageList()
-    self._StageCfgIds = self._Control:GetTowerStageCfgIds(self.TowerCfgId)
+    local stageCfgIds = self._Control:GetTowerStageCfgIds(self.TowerCfgId)
+    -- 显示 Boss 格时列表去掉末关
+    if self._Control:IsShowBossGrid(self.TowerCfgId) then
+        local list = {}
+        for i = 1, #stageCfgIds - 1 do
+            list[i] = stageCfgIds[i]
+        end
+        self._StageCfgIds = list
+    else
+        self._StageCfgIds = stageCfgIds
+    end
     -- 最高层下标随通关进度变化，列表刷新时算一次；滚动回调只比对可视区间
     self._TopStageIndex = self:CalcTopStageIndex()
     local dataSource = self._DynamicTable.DataSource
@@ -244,13 +263,14 @@ function XUiTransfiniteTowerStage:RefreshStageList()
         end
     end
     self._DynamicTable:SetDataSource(self._StageCfgIds)
-    self._DynamicTable:ReloadDataSync(1)
+    self._DynamicTable:ReloadDataASync(1)
 end
 
 function XUiTransfiniteTowerStage:OnDynamicTableEvent(event, index, grid)
     if event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_ATINDEX then
         grid:Refresh(self._StageCfgIds[index])
     elseif event == DYNAMIC_DELEGATE_EVENT.DYNAMIC_GRID_RELOAD_COMPLETED then
+        self:RefreshLocateButtons()
         -- 动效控制必须放这里，放Grid里会被重建打断
         if self._NeedPlayGridEnableAnim then
             self._NeedPlayGridEnableAnim = false
@@ -258,37 +278,47 @@ function XUiTransfiniteTowerStage:OnDynamicTableEvent(event, index, grid)
             for _, grid in pairs(grids) do
                 grid:PlayAnimation()
             end
+            if self._NeedPlayRollbackGuide then
+                self._NeedPlayRollbackGuide = false
+                self:DelayAfterGridEnableAnim("_RollbackGuideTimer", handler(self, self.TryPlayRollbackGuide))
+            end
         end
         if self._NeedRollToTop then
-            self:ScheduleRollToTop()
+            self:DelayAfterGridEnableAnim("_RollToTopTimer", handler(self, self.RollToTopStage))
             self._NeedRollToTop = false
         end
     end
 end
 
-function XUiTransfiniteTowerStage:ScheduleRollToTop()
+---等 Grid 入场动效播完再执行
+function XUiTransfiniteTowerStage:DelayAfterGridEnableAnim(timerField, func)
     local playable = self._GridEnablePlayable
     local remainTime = playable and playable.duration - playable.time or 0
     if remainTime <= 0 then
-        self:RollToTopStage()
+        func()
         return
     end
-    self._RollToTopTimer = XScheduleManager.ScheduleOnce(function()
-        self._RollToTopTimer = nil
-        self:RollToTopStage()
+    self[timerField] = XScheduleManager.ScheduleOnce(function()
+        self[timerField] = nil
+        func()
     end, remainTime * XScheduleManager.SECOND)
 end
 
 ---最终层：3 层塔隐藏，8/15 层塔显示
 function XUiTransfiniteTowerStage:RefreshBossGrid()
-    local isShowBoss = self._Control:IsShowBossGrid(self.TowerCfgId)
-    self.GridTowerBoss.gameObject:SetActiveEx(isShowBoss)
-    if isShowBoss then
-        if not self._BossGrid then
-            self._BossGrid = XUiGridTowerStage.New(self.GridTowerBoss, self)
+    if not self._Control:IsShowBossGrid(self.TowerCfgId) then
+        if self._BossGrid then
+            self._BossGrid:Close()
+        else
+            self.GridTowerBoss.gameObject:SetActiveEx(false)
         end
-        self._BossGrid:Refresh(self._Control:GetTowerBossStageCfgId(self.TowerCfgId))
+        return
     end
+    if not self._BossGrid then
+        self._BossGrid = XUiGridTowerStage.New(self.GridTowerBoss, self)
+    end
+    self._BossGrid:Open()
+    self._BossGrid:Refresh(self._Control:GetTowerBossStageCfgId(self.TowerCfgId))
 end
 
 function XUiTransfiniteTowerStage:RefreshTitle()
@@ -398,12 +428,16 @@ function XUiTransfiniteTowerStage:CalcTopStageIndex()
     if not XTool.IsNumberValid(topStageCfgId) then
         return 0
     end
-    for i = 1, #self._StageCfgIds do
+    local count = #self._StageCfgIds
+    if count <= 0 then
+        return 0
+    end
+    for i = 1, count do
         if self._StageCfgIds[i] == topStageCfgId then
             return i
         end
     end
-    return 0
+    return count
 end
 
 --endregion
@@ -521,11 +555,13 @@ function XUiTransfiniteTowerStage:OnBtnLocateClick()
 end
 
 function XUiTransfiniteTowerStage:RollToTopStage()
-    local topIndex = self._TopStageIndex or 0
-    if topIndex <= 0 then
+    local topStageCfgId = self._Control:GetTopStageCfgId(self.TowerCfgId)
+    if not XTool.IsNumberValid(topStageCfgId) then
         return
     end
-    self:RollToStageIndex(topIndex)
+    self._DynamicTable:UpdateViewSize()
+    self._DynamicTable:ScrollToIndex(self._TopStageIndex, 0.3)
+    self:SelectStage(topStageCfgId)
 end
 
 ---滚动列表到指定下标并选中该层
@@ -541,5 +577,10 @@ function XUiTransfiniteTowerStage:RollToStageIndex(index)
 end
 
 --endregion
+
+---激活过回溯点后触发回溯引导（实现在 Agency，编队界面 Proxy 共用）
+function XUiTransfiniteTowerStage:TryPlayRollbackGuide()
+    XMVCA.XTransfiniteTower:TryPlayRollbackGuide(self._SelectedStageCfgId)
+end
 
 return XUiTransfiniteTowerStage

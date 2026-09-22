@@ -12,8 +12,8 @@ function XUiGachaBiankaMain:OnAwake()
     self._FinishCbTrigger = nil -- 抽卡结束触发器，抽卡请求回调设置，播放完抽卡演出后触发
     self._GachaAllFinishTrigger = nil -- 抽卡全结束触发器，1/10回抽按钮设置，抽卡结果界面关闭后刷新触发
     self._TipCbTrigger = nil -- 奖励弹框
-    self._HasBeenKey = "BiankaHasBeenKey"
-    self._SkipBtnKey = "UiGachaBianka"
+    self._HasBeenKey = XGachaConfigs.GetSkipAnimCacheKey("BiankaHasBeenKey")
+    self._SkipBtnKey = XGachaConfigs.GetSkipAnimCacheKey("UiGachaBianka")
     self._GachaStoryRedPoint = "GachaStoryRedPoint"
     self._IsCanGacha = true
     self._IsCanGachaClick = true
@@ -107,6 +107,10 @@ function XUiGachaBiankaMain:OnEnable()
     if self._TipCbTrigger then
         self._TipCbTrigger()
         self._TipCbTrigger = nil
+    end
+    -- 从剧情关返回时不会重新触发 EVENT_UI_ALLOWOPERATE，手动检测一次引导
+    if self._CanPlayStoryAnim then
+        XDataCenter.GuideManager.CheckGuideOpen()
     end
     self._IsGachaReturnMain = false
     self._CanPlayStoryAnim = false

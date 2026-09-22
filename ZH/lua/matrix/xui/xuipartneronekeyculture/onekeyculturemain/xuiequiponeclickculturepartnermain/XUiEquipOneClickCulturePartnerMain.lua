@@ -25,8 +25,10 @@
 ---@field _PartnerBaseView XUiEquipOneClickCulturePartnerMainPanelPartnerPlan
 ---@field _EnhanceDetailView XUiEquipOneClickCulturePartnerMainEnhanceDetail
 local XUiEquipOneClickCulturePartnerMain = XLuaUiManager.Register(XLuaUi, "UiEquipOneClickCulturePartnerMain")
-function XUiEquipOneClickCulturePartnerMain:OnAwake()
-    self._Control:GetOneKeyCultureMainControl():OnEnterCultureMainUI()
+
+---@param partnerId number 辅助机实例 Id
+function XUiEquipOneClickCulturePartnerMain:OnStart(partnerId)
+    self._Control:GetOneKeyCultureMainControl():OnEnterCultureMainUI(partnerId)
     self:InitComponents()
 end
 
@@ -80,6 +82,10 @@ end
 ---region ui event
 
 function XUiEquipOneClickCulturePartnerMain:OnBtnOneKeyCultureSureClick()
+    if self._Control:GetOneKeyCultureMainControl():IsAllCultureDone() then
+        return
+    end
+
     self._Control:GetOneKeyCultureMainControl():SyncAutoSettingsFromEquip()
     XLuaUiManager.Open("UiEquipPartnerOneClickPopup")
 end
@@ -162,7 +168,7 @@ end
 
 function XUiEquipOneClickCulturePartnerMain:_RefreshOneKeyCultureBtn()
     local isAllDone = self._Control:GetOneKeyCultureMainControl():IsAllCultureDone()
-    self.GoOneKeyCultureFinish.gameObject:SetActiveEx(isAllDone)
+    self.GoOneKeyCultureFinish.gameObject:SetActiveEx(false)
     self.BtnOneKeyCultureSure:SetButtonState(isAllDone and CS.UiButtonState.Disable or CS.UiButtonState.Normal)
 end
 

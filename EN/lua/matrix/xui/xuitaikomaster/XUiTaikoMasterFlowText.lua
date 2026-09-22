@@ -8,10 +8,18 @@ function XUiTaikoMasterFlowText:Ctor(text, mask)
     self._Sequence = false
     self._StrText = false
     self._StrTextDouble = false
+    self._UseRectWidth = false
 end
 
 function XUiTaikoMasterFlowText:IsPlaying()
     return self._Sequence and true or false
+end
+
+---设置是否用 mask.rect.width（实际渲染宽度）作为滚动判定依据
+---sizeDelta.x 在锚点拉伸时为 0，开启后每次 Play 动态读 rect.width
+---@param flag boolean
+function XUiTaikoMasterFlowText:SetUseRectWidth(flag)
+    self._UseRectWidth = flag
 end
 
 function XUiTaikoMasterFlowText:Play()
@@ -33,10 +41,16 @@ function XUiTaikoMasterFlowText:Stop()
     end
     -- 还原text
     if self._Text.text == self._StrTextDouble then
-        self._Text.text = self._StrText    
+        self._Text.text = self._StrText
     end
     self._StrText = false
     self._StrTextDouble = false
+end
+
+---彻底重置：Stop + 清 _InitX，cell 回收复用时调用
+function XUiTaikoMasterFlowText:Reset()
+    self:Stop()
+    self._InitX = false
 end
 
 function XUiTaikoMasterFlowText:DoubleText(txtName)
@@ -52,7 +66,11 @@ end
 function XUiTaikoMasterFlowText:CreateTextSequence(txtName, mask, initX)
     local txtNameWidth = XUiHelper.CalcTextWidth(txtName)
     local txtMaskWidth = mask.sizeDelta.x
-    if txtNameWidth <= txtMaskWidth then
+    if self._UseRectWidth and mask.rect then
+        txtMaskWidth = mask.rect.width
+    end
+    -- ==0 我认为是一种错误。ui错误初始化的情况。并且在这种情况下滚动其实也没意义
+    if  txtMaskWidth == 0 or txtNameWidth <= txtMaskWidth then
         return
     end
     local txtTransform = txtName.transform

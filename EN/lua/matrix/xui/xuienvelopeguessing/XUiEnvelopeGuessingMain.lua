@@ -18,6 +18,13 @@ local REPORT_MIN_STAY_SECONDS = 3
 local REPORT_INSTRUMENT_COUNT = 4
 --endregion
 
+-- 特殊角色模型对应的动画控制器
+local SPECIAL_CONTROLLER = {
+    ["QR4LuosaitaMd010011TX"] = "EnvelopeGuessingControllerLuosaita",
+    ["QR3CibeizheMd010011TX"] = "EnvelopeGuessingControllerCibeizhe",
+    ["QR3HelentineMd010011TX"] = "EnvelopeGuessingControllerHelentine",
+}
+
 ---@class XUiEnvelopeGuessingMain : XLuaUi
 ---@field private _Control XEnvelopeGuessingControl
 ---@field private _Instruments table<number, XUiPanelEnvelopeGuessingInstrument>
@@ -90,31 +97,18 @@ function XUiEnvelopeGuessingMain:_InitInstruments()
         self._Instruments[instrumentConf.Id] = XUiPanelEnvelopeGuessingInstrument.New(panelGo, self, instrumentConf, openInstrumentMusicianChoosePanel,
             threeDSceneUiObjects[instName], threeDSceneUiObjects.UiNearCamera, self.Name, loadAnimationController)
     end
+
+    -- 播放场景镜头动画
+    threeDSceneUiObjects.AnimStart.gameObject:PlayTimelineAnimation()
 end
 
-function XUiEnvelopeGuessingMain:_LoadCharacterAnimationController(isFemale)
-    if not self._AnimationControllerCache then
-        self._AnimationControllerCache = {}
+function XUiEnvelopeGuessingMain:_LoadCharacterAnimationController(isFemale, modelId)
+    -- 优先根据modelId获取特殊角色的动画控制器，没有再按性别使用默认
+    local pathKey = SPECIAL_CONTROLLER[modelId]
+    if not pathKey then
+        pathKey = isFemale and "EnvelopeGuessingCharacterAnimationControllerFemale" or "EnvelopeGuessingCharacterAnimationControllerMale"
     end
-
-    local cached = self._AnimationControllerCache[isFemale]
-
-    if not cached then
-        local pathKey
-        local lifeTimeBoundGameObject   -- Controller绑定生命周期的GameObject
-        if isFemale then
-            pathKey = "EnvelopeGuessingCharacterAnimationControllerFemale"
-            lifeTimeBoundGameObject = self.GameObject
-        else
-            pathKey = "EnvelopeGuessingCharacterAnimationControllerMale"
-            lifeTimeBoundGameObject = self.PanelAsset1.gameObject   -- 没有必要专门建个GameObject来存生命周期，直接随便找个已有的
-        end
-
-        cached = CS.LoadHelper.LoadUiController(CS.XGame.ClientConfig:GetString(pathKey), lifeTimeBoundGameObject)
-        self._AnimationControllerCache[isFemale] = cached
-    end
-
-    return cached
+    return pathKey
 end
 
 function XUiEnvelopeGuessingMain:_CloseInstrumentMusicianChoosePanel()
@@ -174,12 +168,16 @@ function XUiEnvelopeGuessingMain:OnGetLuaEvents()
     return {
         XEventId.EVENT_DAILY_RESET,
         XEventId.EVENT_ENVELOPE_UPDATE_DATA,
+        XEventId.EVENT_FINISH_TASK,
+        XEventId.EVENT_TASK_SYNC,
     }
 end
 
 function XUiEnvelopeGuessingMain:OnNotify(event, ...)
     if event == XEventId.EVENT_DAILY_RESET or event == XEventId.EVENT_ENVELOPE_UPDATE_DATA then
         self:_Refresh()
+    elseif event == XEventId.EVENT_FINISH_TASK or event == XEventId.EVENT_TASK_SYNC then
+        self.BtnTask:ShowReddot(XMVCA.XEnvelopeGuessing:HasAnyAchievedTask())
     end
 end
 

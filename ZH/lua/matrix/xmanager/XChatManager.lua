@@ -883,6 +883,16 @@ XChatManagerCreator = function()
         end
     end
 
+    local ChatBoardNeedPlayEnableAnim = false --让发消息不播动效用的
+
+    function XChatManager.SetChatBoardNeedPlayEnableAnim(value)
+        ChatBoardNeedPlayEnableAnim = value
+    end
+
+    function XChatManager.IsChatBoardNeedPlayEnableAnim()
+        return ChatBoardNeedPlayEnableAnim
+    end
+
     -- 设置特效播放完毕的时间
     function XChatManager.SetEffectEnd(time)
         LastEffectCoolTime = time or XTime.GetServerNowTimestamp()

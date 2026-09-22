@@ -17,6 +17,7 @@
 ---@field BtnTab XUiButton
 ---@field TagNew UnityEngine.RectTransform
 ---@field TagAllGet UnityEngine.RectTransform
+---@field _Control XFashionSuitControl
 local XUiFashionSuitLobbyGridTab = XClass(XUiNode, "XUiFashionSuitLobbyGridTab")
 
 --[=====[AUTO GENERATED END: CLASS]=====]
@@ -39,11 +40,8 @@ function XUiFashionSuitLobbyGridTab:UpdateReddot()
         return
     end
     local hasNew = self._Control:IsSuitHasNew(self._Cfg.Id)
-    local canGetReward =self._Cfg.IsComplete and self._Control:IsSuitRewardCanGain(self._Cfg.Id)
-    if canGetReward then
-        hasNew = false
-    end
-    self.BtnTab:ShowReddot(canGetReward)
+    local canGetReward = self._Cfg.IsComplete and self._Control:IsSuitRewardCanGain(self._Cfg.Id)
+    self.BtnTab:ShowReddot(hasNew or canGetReward)
     self.BtnTab:ShowTag(false)
 end
 function XUiFashionSuitLobbyGridTab:OnStart(...)

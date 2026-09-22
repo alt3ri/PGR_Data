@@ -10,8 +10,8 @@ function XUiEpicFashionGacha:Ctor()
     self.DoGachaTrigger = nil -- 抽卡触发器，1/10回抽按钮设置，拨动时钟触发
     self.FinishCbTrigger = nil -- 抽卡结束触发器，抽卡请求回调设置，播放完抽卡演出后触发
     self.GachaAllFinishTrigger = nil -- 抽卡全结束触发器，1/10回抽按钮设置，抽卡结果界面关闭后刷新触发
-    self.HasBeenKey = "GachaBiancaHasBeenKey"
-    self.SkipBtnKey = "UiEpicFashionGacha"
+    self.HasBeenKey = XGachaConfigs.GetSkipAnimCacheKey("GachaBiancaHasBeenKey")
+    self.SkipBtnKey = XGachaConfigs.GetSkipAnimCacheKey("UiEpicFashionGacha")
     self.GachaStoryRedPoint = "GachaStoryRedPoint"
     self.TempFx = nil
     self.TimerStoryRoleEnable = nil

@@ -14,6 +14,8 @@ local TABLE_BUY_ASSET_PATH = "Share/Item/BuyAsset.tab"
 local TABLE_BUY_ASSET_CONFIG_PATH = "Share/Item/BuyAssetConfig.tab"
 local TABLE_UI_BUY_ASSET_PATH = "Share/Item/UiBuyAsset.tab"
 local TABLE_ITEM_COLLECTION_PATH = "Share/ItemCollection/ItemCollection.tab"
+local TABLE_ITEM_AUTO_EXCHANGE_PATH = "Client/Item/ItemAutoExchange.tab"
+local TABLE_AUTO_EXCHANGE_TOKEN_SHOP_PATH = "Client/Item/AutoExchangeTokenShop.tab"
 
 local BuyAssetTemplates = {}                    -- 购买资源配置表
 local BuyAssetDailyLimit = {}                   -- 购买资源每日限制
@@ -29,6 +31,10 @@ local BuyAssetIsRestrictFreeBuy = {}            -- 是否限制免费购买
 -- local BuyAssetDiscountShow = {}                 -- 购买打折展示
 local ItemCollectionTemplates = {}              -- 道具收藏配置表
 local ItemCollectionDefaultCollect = {}         -- 默认解锁收藏道具
+-- 懒加载缓存：首次访问 GetItemAutoExchangeById 时才读取，nil 表示未加载
+local ItemAutoExchangeTemplates = nil
+---@type table<number, XTableAutoExchangeTokenShop>|nil
+local AutoExchangeTokenShopTemplates = nil
 
 XItemConfigs.SuitAllType = {
     DefaultAll = 0,
@@ -57,6 +63,7 @@ XItemConfigs.ItemType = {
     Gift = 1 << 4, -- 礼包
     WeaponFashion = 1 << 5, -- 武器时装增加时限道具
     DlcMaterial = 1 << 6, -- DlcHunt相关
+    NormalConsumableItem = 1 << 7, -- 普通消耗品
     CardExp = 1 << 11 | 1 << 2, -- 卡牌exp
     EquipExp = 1 << 12 | 1 << 2, -- 装备exp 4100
     EquipExpNotInBag = 1 << 12 | 1 << 3, -- 装备exp(不显示在背包中) 4104
@@ -89,6 +96,7 @@ XItemConfigs.Materials = {
     XItemConfigs.ItemType.ActiveMoney,
     XItemConfigs.ItemType.PlayingItem,
     XItemConfigs.ItemType.PartnerExp,
+    XItemConfigs.ItemType.NormalConsumableItem,
 }
 
 --背包页签类型
@@ -296,4 +304,42 @@ function XItemConfigs.GetItemCollectTemplate(id)
         return {}
     end
     return template
-end 
+end
+
+-- 懒加载 ItemAutoExchange 配置表
+local function EnsureItemAutoExchangeLoaded()
+    if ItemAutoExchangeTemplates then
+        return
+    end
+    ItemAutoExchangeTemplates = XTableManager.ReadByIntKey(
+        TABLE_ITEM_AUTO_EXCHANGE_PATH,
+        XTable.XTableItemAutoExchange,
+        "Id"
+    )
+end
+
+function XItemConfigs.GetItemAutoExchangeById(id)
+    EnsureItemAutoExchangeLoaded()
+    return ItemAutoExchangeTemplates[id]
+end
+
+-- 懒加载自动兑换代币对应商店配置表
+local function EnsureAutoExchangeTokenShopLoaded()
+    if AutoExchangeTokenShopTemplates then
+        return
+    end
+    AutoExchangeTokenShopTemplates = XTableManager.ReadByIntKey(TABLE_AUTO_EXCHANGE_TOKEN_SHOP_PATH, XTable.XTableAutoExchangeTokenShop,"ItemId")
+end
+
+---获取兑换代币对应的商店名称
+---@param itemId number 兑换代币Id
+---@return string shopName
+function XItemConfigs.GetAutoExchangeTokenShopName(itemId)
+    EnsureAutoExchangeTokenShopLoaded()
+    local config = AutoExchangeTokenShopTemplates[itemId]
+    if not config then
+        XLog.ErrorTableDataNotFound("XItemConfigs.GetAutoExchangeTokenShopName", "AutoExchangeTokenShop", TABLE_AUTO_EXCHANGE_TOKEN_SHOP_PATH, "ItemId", itemId)
+        return ""
+    end
+    return config.ShopName
+end

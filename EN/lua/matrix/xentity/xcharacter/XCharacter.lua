@@ -254,11 +254,9 @@ function XCharacter:GetEnhanceSkillPosName(index)
 end
 
 function XCharacter:GetIsHasEnhanceSkill()
-    if not self:GetEnhanceSkillGroupIdList() or not next(self:GetEnhanceSkillGroupIdList()) then
-        return false
-    else
-        return true
-    end
+    local cfg = XMVCA.XCharacter:GetEnhanceSkillConfigSafe(self:GetId())
+    local groupIdList = cfg and cfg.SkillGroupId
+    return groupIdList ~= nil and next(groupIdList) ~= nil
 end
 
 function XCharacter:GetEnhanceSkillGroupByPos(pos)

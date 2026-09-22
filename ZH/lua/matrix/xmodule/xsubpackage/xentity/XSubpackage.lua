@@ -1,10 +1,10 @@
-local CSDownloadTaskGroupState = XTool.GetDownloadStateEnum()
-
 ---@class XSubpackage 分包数据
 ---@field _Id number
 ---@field _State number
 ---@field _TotalSize number
 local XSubpackage = XClass(nil, "XSubpackage")
+
+local CSXMTDownloadTaskGroupState
 
 function XSubpackage:Ctor(packageId)
     self._Id = packageId
@@ -59,9 +59,15 @@ function XSubpackage:GetProgress()
         return 0
     end
 
-    local downloadSize = self:GetDownloadSize()
-    local totalSize = self:GetTotalSize()
-    return downloadSize / totalSize
+    local prg = 0
+    local totalDownSize = 0
+    local totalAllSize = 0
+    for k, resItem in pairs(self._ResItemDic) do
+        totalDownSize = totalDownSize + resItem:GetDownloadSize()
+        totalAllSize = totalAllSize + resItem:GetTotalSize()
+    end
+    prg = totalDownSize / totalAllSize
+    return prg
 end
 
 function XSubpackage:GetMaxProgress()
@@ -90,7 +96,11 @@ function XSubpackage:GetTotalSize()
 end
 
 function XSubpackage:GetDownloadSize()
-    return XMVCA.XSubPackage:GetSubpackageDownloadSize(self._Id)
+    local bytes = 0
+    for k, resItem in pairs(self._ResItemDic) do
+        bytes = bytes + resItem:GetDownloadSize()
+    end
+    return bytes
 end
 
 function XSubpackage:StartResDownload(forceResumePausedRes)
@@ -284,22 +294,25 @@ end
 
 ---@param center XMTDownloadCenter
 function XSubpackage:OnStateChanged(resState)
+    if not CSXMTDownloadTaskGroupState then
+        CSXMTDownloadTaskGroupState = XTool.GetDownloadStateEnum()
+    end
     local state = nil
     local taskGroups = self:GetTaskGroups()
-    if resState == CSDownloadTaskGroupState.CompleteError then
-        state = CSDownloadTaskGroupState.CompleteError
+    if resState == CSXMTDownloadTaskGroupState.CompleteError then
+        state = CSXMTDownloadTaskGroupState.CompleteError
     elseif self._WaitPause then
         local hasRegistered = false
         local hasComplete = false
         local hasOtherState = false
         for i = 1, #taskGroups do
-            if taskGroups[i].State == CSDownloadTaskGroupState.Registered then
+            if taskGroups[i].State == CSXMTDownloadTaskGroupState.Registered then
                 hasRegistered = true
             end
-            if taskGroups[i].State == CSDownloadTaskGroupState.Complete then
+            if taskGroups[i].State == CSXMTDownloadTaskGroupState.Complete then
                 hasComplete = true
             end
-            if taskGroups[i].State ~= CSDownloadTaskGroupState.Registered and taskGroups[i].State ~= CSDownloadTaskGroupState.Complete then
+            if taskGroups[i].State ~= CSXMTDownloadTaskGroupState.Registered and taskGroups[i].State ~= CSXMTDownloadTaskGroupState.Complete then
                 hasOtherState = true
             end
 
@@ -308,7 +321,7 @@ function XSubpackage:OnStateChanged(resState)
             end
         end
         if hasRegistered or hasComplete then
-            state = CSDownloadTaskGroupState.Registered
+            state = CSXMTDownloadTaskGroupState.Registered
         end
     else
         -- 同步所有ResItem的TaskGroup状态
@@ -321,7 +334,7 @@ function XSubpackage:OnStateChanged(resState)
         end
 
         if isResStateComplete then
-            state = CSDownloadTaskGroupState.Complete
+            state = CSXMTDownloadTaskGroupState.Complete
         else
             state = taskGroups[1].State
             if #taskGroups > 1 then
@@ -337,10 +350,10 @@ function XSubpackage:OnStateChanged(resState)
 
     -- print("SP/DN OnStateChanged", self._Id, resState, state, self._WaitPause)
 
-    if state == CSDownloadTaskGroupState.Registered and self._WaitPause then
+    if state == CSXMTDownloadTaskGroupState.Registered and self._WaitPause then
         XMVCA.XSubPackage:OnDownloadRelease()
         self._WaitPause = false
-    elseif state == CSDownloadTaskGroupState.Complete then
+    elseif state == CSXMTDownloadTaskGroupState.Complete then
         local formattedStrings = {}
         for i = 1, #taskGroups do
             -- 使用 string.format 来格式化单个任务组的信息，并将其添加到表中
@@ -354,9 +367,9 @@ function XSubpackage:OnStateChanged(resState)
         XMVCA.XSubPackage:OnComplete(self._Id)
         XMVCA.XSubPackage:OnDownloadRelease()
         self._WaitPause = false
-    elseif state == CSDownloadTaskGroupState.Pausing then
+    elseif state == CSXMTDownloadTaskGroupState.Pausing then
         self._WaitPause = true
-    elseif state == CSDownloadTaskGroupState.CompleteError then
+    elseif state == CSXMTDownloadTaskGroupState.CompleteError then
         XMVCA.XSubPackage:DoDownloadError(self._Id)
         XMVCA.XSubPackage:OnDownloadRelease()
     end

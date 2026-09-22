@@ -16,14 +16,21 @@ function XUiRoleStrengthenTip:Refresh(params)
     self:RefreshProperty(self.TxtAttack, self.TxtAttackAfter, params.BeforeAttribs.Attack, params.AfterAttribs.Attack)
     self:RefreshProperty(self.TxtDefense, self.TxtDefenseAfter, params.BeforeAttribs.Defense, params.AfterAttribs.Defense)
     self:RefreshProperty(self.TxtCrit, self.TxtCritAfter, params.BeforeAttribs.Crit, params.AfterAttribs.Crit)
+    self:RefreshProperty(self.TxtPower, self.TxtPowerAfter, params.BeforeAttribs.Power, params.AfterAttribs.Power)
 end
 
 function XUiRoleStrengthenTip:RefreshProperty(txtBefore, txtAfter, before, after)
-    txtBefore.text = FixToInt(before)
-    local hasGain = after ~= nil and FixToDouble(after) ~= FixToDouble(before)
+    if type(before) == "number" then
+        after = after or before
+    else
+        before = FixToInt(before)
+        after = FixToInt(after)
+    end
+    txtBefore.text = before
+    local hasGain = after ~= before
     txtAfter.gameObject:SetActiveEx(hasGain)
     if hasGain then
-        txtAfter.text = FixToInt(after)
+        txtAfter.text = after
     end
 end
 

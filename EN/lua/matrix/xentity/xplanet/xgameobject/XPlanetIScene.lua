@@ -83,7 +83,7 @@ function XPlanetIScene:GetCameraRayTileByScreenPoint(screenPoint)
     if not self:CheckIsHaveCamera() then
         return
     end
-    local hit = self._PlanetCamera:RayTileCastByScreenPoint(screenPoint, CS.UnityEngine.LayerMask.GetMask(HomeSceneLayerMask.Room))
+    local hit = self._PlanetCamera:RayTileCastByScreenPoint(screenPoint, CS.UnityEngine.LayerMask.GetMask(LayerMaskName.Room))
     if XTool.UObjIsNil(hit) then
         return
     end

@@ -28,6 +28,8 @@ function XUiGridActivityButton:Init(config, rootUi)
     -- 红点注册
     self._IsDailyRedPoint = false
     self._DailyRedPointKey = nil
+    self._IsOnceRedPoint = false
+    self._OnceRedPointKey = nil
     local reds = self.Config.RedPointConditions
     if not XTool.IsTableEmpty(reds) then
         local realReds = {}
@@ -37,9 +39,14 @@ function XUiGridActivityButton:Init(config, rootUi)
             if XMVCA.XDailyReset:IsDailyResetRedPoint(redPointKey) then
                 self._IsDailyRedPoint = true
                 self._DailyRedPointKey = string.format("%s_ActivityBtn_%s", XPlayer.Id, self.Config.Id)
+            elseif redPointKey == XRedPointConditions.Types.CONDITION_ACTIVITY_BTN_ONCE then
+                self._IsOnceRedPoint = true
+                self._OnceRedPointKey = XMVCA.XUiMain:GetActivityBtnIdentityKey(self.Config)
             end
         end
-        self.RedId = self:AddRedPointEvent(self.Btn.ReddotObj, self.CheckRed, self, realReds, self._DailyRedPointKey)
+        -- 红点条件只接受一个 key：Once 优先于 Daily
+        -- 同按钮同时配 Daily 与 Once 为非常驻边界情形，二者 key 空间不兼容会冲突，不在此覆盖
+        self.RedId = self:AddRedPointEvent(self.Btn.ReddotObj, self.CheckRed, self, realReds, self._OnceRedPointKey or self._DailyRedPointKey)
     end
 
     -- 特效
@@ -89,6 +96,12 @@ function XUiGridActivityButton:OnBtnClick()
     XFunctionManager.SkipInterface(skipId)
     if self._IsDailyRedPoint then
         XMVCA.XDailyReset:SaveDailyRedPoint(self._DailyRedPointKey)
+        if self.RedId then
+            XRedPointManager.Check(self.RedId)
+        end
+    end
+    if self._IsOnceRedPoint then
+        XMVCA.XUiMain:SaveActivityBtnRedOnceClicked(self._OnceRedPointKey)
         if self.RedId then
             XRedPointManager.Check(self.RedId)
         end

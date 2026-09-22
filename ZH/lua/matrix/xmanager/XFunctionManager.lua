@@ -289,6 +289,7 @@ XFunctionManager.FunctionName = {
     Envelope = 10507, -- 七夕邀请函开包活动
     Punishaar = 10509, -- 大巴扎玩法
     CharacterOneClick = 10511, --角色一键养成
+    AwarenessOneClickResonance = 10515, -- 意识一键共鸣
     TransfiniteTower = 10510, -- 超限启航（爬塔活动
 }   
 

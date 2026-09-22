@@ -39,7 +39,47 @@ function XUiChatBoard:Refresh(chatBoradId, isRight)
         else
             self.Image.gameObject:SetActiveEx(false)
         end
+        if cfg.EffectRes then
+            local effectGo = self.Effect.gameObject:LoadPrefab(cfg.EffectRes)
+            self.Effect.gameObject:SetActiveEx(true)
+            self:InitEffectAnim(effectGo)
+        else
+            self.Effect.gameObject:SetActiveEx(false)
+            self:InitEffectAnim(nil)
+        end
     end
+end
+
+---缓存特效 prefab 里的进出场动效节点
+function XUiChatBoard:InitEffectAnim(effectGo)
+    self._EffectEnableAnim = effectGo and effectGo.transform:FindTransform("Enable")
+    self._EffectDisableAnim = effectGo and effectGo.transform:FindTransform("Disable")
+    if self._IsPlayEnableAnimOnRefresh or XDataCenter.ChatManager.IsChatBoardNeedPlayEnableAnim() then
+        self:PlayEffectAnim(self._EffectEnableAnim)
+    end
+end
+
+function XUiChatBoard:SetPlayEnableAnimOnRefresh(isPlay)
+    self._IsPlayEnableAnimOnRefresh = isPlay and true or false
+end
+
+function XUiChatBoard:PlayEffectAnim(animTrans)
+    if XTool.UObjIsNil(animTrans) or not animTrans.gameObject.activeInHierarchy then
+        return
+    end
+    animTrans.gameObject:PlayTimelineAnimation()
+end
+
+function XUiChatBoard:OnEnable()
+    XEventManager.AddEventListener(XEventId.EVENT_CHAT_BOARD_PLAY_DISABLE, self.PlayDisableAnim, self)
+end
+
+function XUiChatBoard:OnDisable()
+    XEventManager.RemoveEventListener(XEventId.EVENT_CHAT_BOARD_PLAY_DISABLE, self.PlayDisableAnim, self)
+end
+
+function XUiChatBoard:PlayDisableAnim()
+    self:PlayEffectAnim(self._EffectDisableAnim)
 end
 
 function XUiChatBoard:GetTextColor()

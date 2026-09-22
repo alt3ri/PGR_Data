@@ -99,6 +99,9 @@ function XUiPunishaarFightMainPanelFightBefore:_OnBagAfterClose()
 end
 
 function XUiPunishaarFightMainPanelFightBefore:_OnBtnFight()
+    if self._Control.GameControl:GetIsDraggingCard() then
+        return  -- 拖拽中不响应 #拖拽中禁功能按钮
+    end
     self._Control.GameControl:ConfirmEnterFight()
 end
 

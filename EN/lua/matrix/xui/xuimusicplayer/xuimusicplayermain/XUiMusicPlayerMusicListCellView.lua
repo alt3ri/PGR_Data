@@ -34,7 +34,7 @@
 ---@field ImgColorBgmBtn UnityEngine.UI.Image
 ---@field ImgNoSelectBg UnityEngine.UI.Image
 ---@field RImgMusicCurve UnityEngine.RawImage
----@field RImgMusicCurve4 UnityEngine.RawImage
+---@field RImgMusicCurve2  UnityEngine.RawImage
 local XUiMusicPlayerMusicListCellView = XClass(XUiNode, "XUiMusicPlayerMusicListCellView")
 
 function XUiMusicPlayerMusicListCellView:InitComponents()
@@ -49,6 +49,11 @@ end
 function XUiMusicPlayerMusicListCellView:OnStart(...)
     self._MusicPlayerConfig = self._Control:GetMusicPlayerconfigControl()
     self:InitComponents()
+
+    local XUiTextScrolling = require("XUi/XUiTaikoMaster/XUiTaikoMasterFlowText")
+    self._MusicNameScrolling = XUiTextScrolling.New(self.TxtMusicName, self.TxtMusicName.transform.parent)
+    self._MusicNameScrolling:SetUseRectWidth(true)
+    self._MusicNameScrolling:Stop()
 end
 
 function XUiMusicPlayerMusicListCellView:OnEnable()
@@ -59,9 +64,11 @@ end
 function XUiMusicPlayerMusicListCellView:OnDisable()
     self._MusicID = nil
     self:_SetEvent(false)
+    self._MusicNameScrolling:Stop()
 end
 
 function XUiMusicPlayerMusicListCellView:OnDestroy()
+    self._MusicNameScrolling:Stop()
 end
 
 ---region ui event
@@ -91,11 +98,11 @@ function XUiMusicPlayerMusicListCellView:OnBtnBgmClick(eventData)
 end
 
 function XUiMusicPlayerMusicListCellView:OnBtnUpClick(eventData)
-    self._Control:GetMusicPlayerNetWorkControl():SendBgmMusicIndexChangeRequest(self._Index,true)
+    self._Control:GetMusicPlayerNetWorkControl():SendBgmMusicIndexChangeRequest(self._Index, true, self._MusicID)
 end
 
 function XUiMusicPlayerMusicListCellView:OnBtnDownClick(eventData)
-    self._Control:GetMusicPlayerNetWorkControl():SendBgmMusicIndexChangeRequest(self._Index,false)
+    self._Control:GetMusicPlayerNetWorkControl():SendBgmMusicIndexChangeRequest(self._Index, false, self._MusicID)
 end
 
 function XUiMusicPlayerMusicListCellView:OnBtnCurCellClick(eventData)
@@ -177,6 +184,14 @@ function XUiMusicPlayerMusicListCellView:_Refreash()
 
     local musicCO = self._MusicPlayerConfig:GetMusicPlayerAlbumCOByid(musicID)
     self.TxtMusicName.text =  musicCO.Name
+    self._MusicNameScrolling:Reset()
+    -- 延迟一帧 Play，等 Unity layout pass 算完 rect.width
+    local id = musicID
+    XScheduleManager.ScheduleOnce(function()
+        if self._MusicID == id then
+            self._MusicNameScrolling:Play()
+        end
+    end, 0)
     local hasBrief = not string.IsNilOrEmpty(musicCO.ComposeBrief)
     self.TxtAuthorName.text = XUiHelper.ConvertLineBreakSymbol(hasBrief and musicCO.ComposeBrief or musicCO.Composer)
     
@@ -274,9 +289,9 @@ function XUiMusicPlayerMusicListCellView:_refreshColorFX()
         self.RImgMusicCurve.material = mat
     end
 
-    mat = self._Control:GetCurColorMat(UiMaterialKey.MusicCurve4)
-    if mat and self.RImgMusicCurve4 then
-        self.RImgMusicCurve4.material = mat
+    mat = self._Control:GetCurColorMat(UiMaterialKey.MusicCurve2)
+    if mat and self.RImgMusicCurve2 then
+        self.RImgMusicCurve2.material = mat
     end
 end
 

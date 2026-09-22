@@ -11,6 +11,8 @@ local XExFubenBaseManager = XClass(nil, "XExFubenBaseManager")
         TimeId : 运行时间
         SkipId : 跳转入口Id
         RedPointConditions : 红点条件
+        CustomParams : 自定义参数数组(list:int)，位置索引语义由各消费 Manager 自行约定
+                        用于按 config 差异化查询（如进度/红点），对齐 SkipFunctional.CustomParams
     }
 ]]
 function XExFubenBaseManager:Ctor(chapterType, config)
@@ -158,15 +160,15 @@ function XExFubenBaseManager:ExGetCurrentChapterIndex()
         local currPrg, totalPrg = viewModel:GetCurrentAndMaxProgress()
         local isPass = currPrg >= totalPrg
 
-        if not viewModel:GetBusinessIsLocked() and isPass then
+        if not viewModel:GetIsLocked() and isPass then
             table.insert(unlockAndPassList, {viewModel = viewModel, index = i})
         end
 
-        if viewModel:CheckHasTimeLimitTag() and not viewModel:GetBusinessIsLocked() and not isPass then
+        if viewModel:CheckHasTimeLimitTag() and not viewModel:GetIsLocked() and not isPass then
             return i
         end
         
-        if not isPass and not viewModel:GetBusinessIsLocked() then
+        if not isPass and not viewModel:GetIsLocked() then
             return i
         end
     end

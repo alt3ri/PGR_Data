@@ -216,8 +216,10 @@ function XUiGridFangKuaiBlock:OnLongClickBlock()
         end)
         self.BlockData:UpdatePos(gridX)
         --狂热状态下/拖动刀锋方块时 需要显示剑痕特效
-        if self._Control:IsFever() or self.BlockData:IsKnife() then
+        if self._Control:IsFever() then
             self.Parent:ShowSwordTrailEffect(self._InitGridX, gridX, self)
+        elseif self.BlockData:IsKnife() then
+            self.Parent:ShowKnifeDragEffect(self._InitGridX, gridX, self)
         end
     end
 end

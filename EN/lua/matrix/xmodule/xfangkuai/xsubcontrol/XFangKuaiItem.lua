@@ -103,6 +103,17 @@ function XFangKuaiItem:ExecuteTwoLineExChange(itemIdx, blockData1, blockData2)
     self:RemoveItemId(itemIdx)
 end
 
+---@param blockData1 XFangKuaiBlock
+---@param blockData2 XFangKuaiBlock
+function XFangKuaiItem:ExecuteTwoLineRemove(itemIdx, blockData1, blockData2)
+    local grid1 = blockData1:GetHeadGrid()
+    local grid2 = blockData2:GetHeadGrid()
+    self._MainControl:AddClearOperate(grid1.y, XEnumConst.FangKuai.ClearType.Normal)
+    self._MainControl:AddClearOperate(grid2.y, XEnumConst.FangKuai.ClearType.Normal)
+    self._MainControl:PlayUseItemSound()
+    self:RemoveItemId(itemIdx)
+end
+
 function XFangKuaiItem:ExecuteAdjacentExchange(itemIdx, blockData1, blockData2)
     local grid1 = blockData1:GetHeadGrid()
     local grid2 = blockData2:GetHeadGrid()
@@ -129,8 +140,8 @@ function XFangKuaiItem:ExecuteAddRound(itemIdx, params)
     self:RemoveItemId(itemIdx)
 end
 
-function XFangKuaiItem:ExecuteFrozen(itemIdx, chapterId)
-    self._MainControl:AddFrozenRound(chapterId)
+function XFangKuaiItem:ExecuteFrozen(itemIdx, chapterId, isPlus)
+    self._MainControl:AddFrozenRound(chapterId, isPlus)
     self._MainControl:PlayUseItemSound()
     self:RemoveItemId(itemIdx)
 end
@@ -167,42 +178,49 @@ function XFangKuaiItem:ExecuteAlignment(itemIdx, gridY, direction, maxCount)
     self:RemoveItemId(itemIdx)
 end
 
-function XFangKuaiItem:ExecuteConvertion(itemIdx, stageId)
+function XFangKuaiItem:ExecuteConvertion(itemIdx, stageId, isPlus)
     ---@type XFangKuaiBlock[]
     local bossBlocks = {}
     for k, _ in pairs(self._MainControl:GetBlockMap()) do
-        if k:IsBoss() then
+        if k:IsBoss() and not k:IsChief() and not k:IsKnife() then
             table.insert(bossBlocks, k)
         end
     end
     if #bossBlocks == 0 then
         return nil
     end
-    local blockData = bossBlocks[XTool.Random(1, #bossBlocks)]
+    if not isPlus then
+        --普通道具：随机进化一个方块
+        --强化道具：净化所有方块
+        local blockData = bossBlocks[XTool.Random(1, #bossBlocks)]
+        bossBlocks = { blockData }
+    end
     local blockTemplates = self._Model:GetBlockTemplates()
-    local blocks = blockTemplates[stageId][blockData:GetLen()]
-    local colorIds = {}
-    local colorToIdMap = {}
-    for _, v in pairs(blocks) do
-        if v.Type == 1 and not XTool.IsTableEmpty(v.Colors) and not table.indexof(colorIds, v.Colors[1]) then
-            colorToIdMap[v.Colors[1]] = v.Id
-            table.insert(colorIds, v.Colors[1])
+    for _, blockData in ipairs(bossBlocks) do
+        local blocks = blockTemplates[stageId][blockData:GetLen()]
+        local colorIds = {}
+        local colorToIdMap = {}
+        for _, v in pairs(blocks) do
+            if v.Type == 1 and not XTool.IsTableEmpty(v.Colors) and not table.indexof(colorIds, v.Colors[1]) then
+                colorToIdMap[v.Colors[1]] = v.Id
+                table.insert(colorIds, v.Colors[1])
+            end
         end
+        if XTool.IsTableEmpty(colorIds) then
+            XLog.Error(string.format("使用净化道具失败 关卡%s没有长度为%s的普通方块", stageId, blockData:GetLen()))
+            return
+        end
+        local randomColorId = colorIds[XTool.Random(1, #colorIds)]
+        local randomId = colorToIdMap[randomColorId]
+        blockData:SetBlockId(randomId)
+        blockData:SetColor(randomColorId)
+        blockData:SetBlockType(XEnumConst.FangKuai.BlockType.Normal)
+        blockData:SetScore()
+        blockData:SetHitTimes()
     end
-    if XTool.IsTableEmpty(colorIds) then
-        XLog.Error(string.format("使用净化道具失败 关卡%s没有长度为%s的普通方块", stageId, blockData:GetLen()))
-        return
-    end
-    local randomColorId = colorIds[XTool.Random(1, #colorIds)]
-    local randomId = colorToIdMap[randomColorId]
-    blockData:SetBlockId(randomId)
-    blockData:SetColor(randomColorId)
-    blockData:SetBlockType(XEnumConst.FangKuai.BlockType.Normal)
-    blockData:SetScore()
-    blockData:SetHitTimes()
     self._MainControl:PlayUseItemSound()
     self:RemoveItemId(itemIdx)
-    return blockData
+    return bossBlocks
 end
 
 function XFangKuaiItem:ExecuteBorn(itemIdx, color, maxX, maxY, chapterId)
@@ -337,12 +355,12 @@ function XFangKuaiItem:AddItemId(itemId)
     local stageData = self._MainControl:GetCurStageData()
 
     if not XTool.IsNumberValid(itemId) then
-        return
+        return nil
     end
 
     local diffCount = self._MainControl:GetMaxItemCount() - stageData:GetItemCount()
     if diffCount <= 0 then
-        return
+        return nil
     end
 
     if self._MainControl:GetItemConfig(itemId) then

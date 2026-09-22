@@ -52,6 +52,7 @@ function XPartnerOneKeyCultureFoodSelectControl:ConfirmFoodSelect()
     end
     commitModel:SetOreExchangeRemainChipCount(self._FoodSelectVM:GetOreExchangeRemainChipCount())
 
+    self._IsSelectMode = false
     self._FoodSelectVM:Init()
     self._MainControl:GetRootControl():DispatchEvent(XMVCA.XPartner.EventIds.EVENT_PARTNER_FOOD_CHANGE)
 end
@@ -206,6 +207,16 @@ end
 
 
 --region 消耗计算
+
+---@return number
+function XPartnerOneKeyCultureFoodSelectControl:GetSelectableFoodCount()
+    local partner = self._MainControl:GetCurPartnerEntity()
+    if not partner then
+        return 0
+    end
+    local partnerList = XDataCenter.PartnerManager.GetPartnerQualityUpDataList(partner:GetId())
+    return #partnerList + self:GetLooseChipPartnerCount() + self:GetOreExchangePartnerCount()
+end
 
 ---@return number 散碎碎片持有数
 function XPartnerOneKeyCultureFoodSelectControl:GetLooseChipCount()

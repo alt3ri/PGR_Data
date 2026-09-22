@@ -11,6 +11,10 @@ function XMovieActionDialog:OnInit(actionData)
     local paramToNumber = XDataCenter.MovieManager.ParamToNumber
     self.IsBlockTypeWriter = params[17] == "1" -- 打字机是否不可点击跳过，并在打字机播放完自动进入下一个节点
     self.CvId = paramToNumber(params[18])
+    local movieId = XDataCenter.MovieManager.GetCurPlayingMovieId()
+    if XMovieConfigs.IsMovieVoiceMuted(movieId) then
+        self.CvId = 0
+    end
     self.SpineActorIndexs = XMVCA.XMovie:SplitParam(params[19], "&",true)
     self.SpineActorKouSpeed = paramToNumber(params[20])
     self.LipAnimFolder = params[21] -- 嘴唇动画的文件夹名称

@@ -92,10 +92,47 @@ function XTeamRecommendAgency:GetTargetFinishPercentage()
     return self._Model:GetTargetFinishPercentage()
 end
 
+
+--- 气泡展示条件是否满足
+function XTeamRecommendAgency:CheckBubbleShowCondition()
+    local values = self._Model:GetTeamRecommendClientConfigValues("BubbleShowCondition")
+    local conditionId = values and tonumber(values[1])
+    return XTool.IsNumberValid(conditionId) and XConditionManager.CheckCondition(conditionId)
+end
+
+--- 检查并记录玩家是否首次展示指定气泡
+function XTeamRecommendAgency:TryRecordBubbleShown(bubbleKey)
+    if not self:CheckBubbleShowCondition() then
+        return false
+    end
+
+    local saveKey = string.format("TeamRecommendBubble_%s_%s", bubbleKey, XPlayer.Id)
+    if XSaveTool.GetData(saveKey) then
+        return false
+    end
+
+    XSaveTool.SaveData(saveKey, true)
+    return true
+end
+
 ---------------------------------------- #region TeamRecommendFormation ----------------------------------------
 --- 获取阵容筛选/展示配置（单条/全部）
 function XTeamRecommendAgency:GetTeamRecommendFormation(id)
     return self._Model:GetTeamRecommendFormation(id)
+end
+
+--- 获取阵容最低推荐品质标签文案与底图
+function XTeamRecommendAgency:GetFormationQualityTag(formationCfg)
+    local qualityStar = formationCfg.MinCharacterQualityStar
+    local quality = math.floor(qualityStar / 1000)
+    local star = qualityStar % 1000
+    local qualityName = XMVCA.XCharacter:GetCharacterQualityDesc(quality)
+    if XTool.IsNumberValid(star) then
+        qualityName = qualityName .. star
+    end
+
+    local bgIndex = XEnumConst.TeamRecommend.FormationQualityTagBgIndexByQuality[quality]
+    return qualityName, self._Model:GetTeamRecommendClientConfigValues("FormationQualityTagBg")[bgIndex]
 end
 
 --- 根据StageType+FormationType筛选Formation配置列表
@@ -104,41 +141,67 @@ function XTeamRecommendAgency:GetFormationListByFilter(stageType, formationType)
 end
 
 --- Tab2核心查询：根据筛选条件+角色ID构造完整阵容展示数据
---- 返回 { Formation=cfg, BaseFormation=cfg, ServerFormation=serverData } 列表
+--- 返回 { Formation=cfg, BaseFormation=cfg|nil, ServerFormation=serverData|nil } 列表
 function XTeamRecommendAgency:BuildFormationGridList(stageType, formationType, characterId)
-    local formations = self:GetFormationListByFilter(stageType, formationType)
-    local result = {}
-    for _, formationCfg in ipairs(formations) do
+    -- 2. 先构造全部阵容条目
+    local allGridData = {}
+    for _, formationCfg in pairs(self:GetTeamRecommendFormation()) do
+        -- 3. 每个阵容类型进入统一构建入口
         local gridData = self:BuildFormationGridData(formationCfg.Id, characterId, formationCfg)
         if gridData then
+            table.insert(allGridData, gridData)
+        end
+    end
+
+    -- 4. 再按当前页签过滤真正展示的条目
+    local result = {}
+    for _, gridData in ipairs(allGridData) do
+        local formationCfg = gridData.Formation
+        if formationCfg.StageType == stageType and formationCfg.FormationType == formationType then
             table.insert(result, gridData)
         end
     end
 
+    -- 5. 沿用原有配置顺序展示
     table.sort(result, function(a, b)
-        return a.BaseFormation.Order > b.BaseFormation.Order
+        return a.Formation.Order > b.Formation.Order
     end)
 
     return result
 end
 
---- 构造单个阵容展示数据
 function XTeamRecommendAgency:BuildFormationGridData(teamCfgId, characterId, formationCfg)
     if not XTool.IsNumberValid(teamCfgId) or not XTool.IsNumberValid(characterId) then
         return nil
     end
 
+    -- 3.1 分别读取当前角色的客户端配置和服务端缓存
     formationCfg = formationCfg or self:GetTeamRecommendFormation(teamCfgId)
-    local baseFormationCfg = self:GetTeamRecommendBaseFormationByFormationIdAndCharacterId(teamCfgId, characterId)
-    if not formationCfg or not baseFormationCfg then
+    if not formationCfg then
         return nil
     end
 
-    return {
-        Formation = formationCfg,
-        BaseFormation = baseFormationCfg,
-        ServerFormation = self:GetServerFormationData(characterId, teamCfgId),
-    }
+    local baseFormationCfg = self:GetTeamRecommendBaseFormationByFormationIdAndCharacterId(teamCfgId, characterId)
+    local serverFormation = self:GetServerFormationData(characterId, teamCfgId)
+
+    -- 3.2 服务端有数据时走此分支；客户端和服务端都有时，展示内容优先使用服务端数据
+    if serverFormation then
+        return {
+            Formation = formationCfg,
+            BaseFormation = baseFormationCfg,
+            ServerFormation = serverFormation,
+        }
+    end
+
+    -- 3.3 没有服务端数据时使用客户端配置；客户端也没有则不构造条目
+    if baseFormationCfg then
+        return {
+            Formation = formationCfg,
+            BaseFormation = baseFormationCfg,
+        }
+    end
+
+    return nil
 end
 
 --- 记录装备目标详情页操作
@@ -331,14 +394,11 @@ function XTeamRecommendAgency:BuildRoleTargetDetailData(characterId)
         recommendCharData = self:FromCfgData(cfg)
         targetName = recommendCharData and self:GetCharacterTargetNameByBaseCfgId(characterId, recommendCharData.BaseCfgId)
     else
-        -- 阵容目标：从目标快照取本人数据，标题优先读死配置来源BaseFormation行的Desc
+        -- 阵容目标：从目标快照取本人数据，标题读取公共阵容配置
         recommendCharData = self:GetCharacterTargetCharData(characterId)
         if recommendCharData then
-            local baseFormationCfg = XTool.IsNumberValid(target.BaseFormationId) and self:GetTeamRecommendBaseFormation(target.BaseFormationId) or nil
-            if not baseFormationCfg then
-                baseFormationCfg = self:GetTeamRecommendBaseFormationByFormationIdAndCharacterId(target.TeamCfgId, characterId)
-            end
-            targetName = baseFormationCfg and baseFormationCfg.Desc
+            local formationCfg = self:GetTeamRecommendFormation(target.TeamCfgId)
+            targetName = formationCfg and formationCfg.Name
         end
     end
 
@@ -488,14 +548,51 @@ function XTeamRecommendAgency:GetFormationRoleDisplayList(formationGridData, cur
     return result
 end
 
---- 获取推荐装备模板的可穿戴候选装备id：同模板在背包中或当前角色已穿戴的最优实例（穿戴优先），
---- 排除其他角色已穿戴；无候选返回nil（UI引导用；完成度公式只看当前穿戴）
-function XTeamRecommendAgency:GetRecommendEquipCandidate(templateId, characterId)
+--- 获取推荐装备模板的全部可穿戴候选装备id
+--- 背包候选排除共鸣绑定其他角色、或被编队预设分配给其他角色的装备
+function XTeamRecommendAgency:GetRecommendEquipCandidateIds(templateId, characterId)
     if not XTool.IsNumberValid(templateId) then
-        return nil
+        return {}
     end
 
+    -- 1. 获取同模板候选，范围包含当前角色已穿戴和背包装备
     local equipIds = XMVCA.XEquip:GetEnableEquipIdsByTemplateId(templateId, characterId)
+
+    -- 2. 已经穿上的不用管，只筛背包里的装备
+    for index = #equipIds, 1, -1 do
+        local equipId = equipIds[index]
+        if not XMVCA.XEquip:IsEquipWearingByCharacterId(equipId, characterId) then
+            local equip = XMVCA.XEquip:GetEquip(equipId)
+
+            -- 2.1 过滤共鸣绑定其他角色的装备
+            local isBindOtherCharacter = false
+            for _, resonanceList in ipairs({ equip.ResonanceInfo, equip.UnconfirmedResonanceInfo }) do
+                for _, resonanceInfo in pairs(resonanceList or {}) do
+                    if XTool.IsNumberValid(resonanceInfo.CharacterId) and resonanceInfo.CharacterId ~= characterId then
+                        isBindOtherCharacter = true
+                        break
+                    end
+                end
+                if isBindOtherCharacter then
+                    break
+                end
+            end
+
+            -- 2.2 过滤被其他角色编队预设占用的装备
+            local isInOtherCharacterPrefab = XDataCenter.TeamManager.CheckEquipIdIsInTeamPrefab(equipId)
+                and not XDataCenter.TeamManager.CheckEquipIdCharIdIsInTeamPrefab(equipId, characterId)
+            if isBindOtherCharacter or isInOtherCharacterPrefab then
+                table.remove(equipIds, index)
+            end
+        end
+    end
+
+    return equipIds
+end
+
+--- 获取推荐装备模板的可穿戴候选装备id：当前角色已穿戴的优先，否则从背包筛选最优实例
+function XTeamRecommendAgency:GetRecommendEquipCandidate(templateId, characterId)
+    local equipIds = self:GetRecommendEquipCandidateIds(templateId, characterId)
     if XTool.IsTableEmpty(equipIds) then
         return nil
     end
@@ -513,6 +610,7 @@ function XTeamRecommendAgency:GetRecommendEquipCandidate(templateId, characterId
         return curChar, total
     end
 
+    -- 3. 按突破、等级和共鸣情况选择最优候选
     table.sort(equipIds, function(equipIdA, equipIdB)
         local equipA = XMVCA.XEquip:GetEquip(equipIdA)
         local equipB = XMVCA.XEquip:GetEquip(equipIdB)
@@ -535,6 +633,7 @@ function XTeamRecommendAgency:GetRecommendEquipCandidate(templateId, characterId
         return equipIdA < equipIdB
     end)
 
+    -- 4. 已经穿上就用身上的，没有就用背包里最好的
     for _, equipId in ipairs(equipIds) do
         if XMVCA.XEquip:IsEquipWearingByCharacterId(equipId, characterId) then
             return equipId
@@ -1075,17 +1174,6 @@ local function BuildAwarenessTargetSlotData(site, templateId)
     return targetSlotData
 end
 
--- 预留共鸣预期本地缓存覆写入口。
-local function ApplyAwarenessResonanceExpectCache(targetSlotData, characterId, baseCfgId)
-    if not characterId or not baseCfgId then
-        return targetSlotData
-    end
-
-    -- TODO: 修改共鸣预期接入后，在这里读取每个角色/方案的本地缓存，
-    -- 覆写目标共鸣为方案指定、任意攻击或任意技能。
-    return targetSlotData
-end
-
 -- 写入单个意识槽的目标共鸣数据。
 local function SetAwarenessResonance(targetSlotData, skillId, resonanceType, pos)
     if not targetSlotData or not XTool.IsNumberValid(skillId) then
@@ -1161,10 +1249,6 @@ function XTeamRecommendAgency:FromServerData(characterData)
         local targetSlotData = awarenessTargetSlotList[site]
         SetAwarenessResonance(targetSlotData, resonanceData.TemplateId, resonanceData.Type, slot)
     end
-    for site, targetSlotData in pairs(awarenessTargetSlotList) do
-        awarenessTargetSlotList[site] = ApplyAwarenessResonanceExpectCache(targetSlotData, characterId, characterData.BaseCfgId)
-    end
-
     if equipIds then
         for _, templateId in ipairs(equipIds) do
             if XTool.IsNumberValid(templateId) then
@@ -1262,7 +1346,7 @@ function XTeamRecommendAgency:FromCfgData(baseCharacterCfg)
             local skillId, resonanceType = GetCfgAwarenessResonance(baseCharacterCfg, site, slot)
             SetAwarenessResonance(targetSlotData, skillId, resonanceType, slot)
         end
-        awarenessTargetSlotList[site] = ApplyAwarenessResonanceExpectCache(targetSlotData, characterId, baseCharacterCfg.Id)
+        awarenessTargetSlotList[site] = targetSlotData
     end
 
     if equipIds then

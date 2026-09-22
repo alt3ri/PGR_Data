@@ -209,15 +209,15 @@
     },
     {
         "Key": "MainShowCardIds",
-        "Values": "['30005', '10004', '30006']"
+        "Values": "['10004', '10003', '30005', '30006']"
     },
     {
         "Key": "MainShowAnimas",
-        "Values": "['Talk01', 'Stand01', 'StandReward01']"
+        "Values": "['Stand01', 'Stand02', 'Talk01', 'StandReward01']"
     },
     {
         "Key": "PlayerHurtPopupRandomRangeX",
-        "Values": "['120']"
+        "Values": "['100']"
     },
     {
         "Key": "PlayerHurtPopupRandomRangeY",
@@ -225,7 +225,7 @@
     },
     {
         "Key": "EnemyHurtPopupRandomRangeX",
-        "Values": "['120']"
+        "Values": "['100']"
     },
     {
         "Key": "EnemyHurtPopupRandomRangeY",
@@ -281,19 +281,11 @@
     },
     {
         "Key": "PunishaarMaxConcurrentDamagePop",
-        "Values": "['20']"
+        "Values": "['15']"
     },
     {
         "Key": "PunishaarMaxConcurrentEffect",
-        "Values": "['10']"
-    },
-    {
-        "Key": "DamageTextColor",
-        "Values": null
-    },
-    {
-        "Key": "DamageTextOutlineColor",
-        "Values": null
+        "Values": "['8']"
     },
     {
         "Key": "DiscardMasterCardSuccess",
@@ -321,6 +313,26 @@
     },
     {
         "Key": "BuyTips",
-        "Values": "['\u5c06\u82b1\u8d39{0}\u91d1\u5e01', '<color=#FF0000>\u5c06\u82b1\u8d39{0}\u91d1\u5e01</color>']"
+        "Values": "['\u5c06\u82b1\u8d39{0}\u91d1\u5e01', '<o=d01717|1.5>\u5c06\u82b1\u8d39{0}\u91d1\u5e01</o>']"
+    },
+    {
+        "Key": "MainLeftTimeText",
+        "Values": "['\u5269\u4f59\u65f6\u95f4\uff1a{0}']"
+    },
+    {
+        "Key": "CDAccIntervalTick",
+        "Values": "['1']"
+    },
+    {
+        "Key": "BallEffectStayAnimTime",
+        "Values": "['0.15']"
+    },
+    {
+        "Key": "BallEffectFlyAnimTime",
+        "Values": "['0.45']"
+    },
+    {
+        "Key": "PunishaarDragMainCardScale",
+        "Values": "['1']"
     }
 ]

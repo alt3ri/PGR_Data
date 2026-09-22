@@ -41,8 +41,10 @@ function XUiPanelRecommendBase:AddEditableTextComponent(btn, index, package)
 end
 
 -- 子类可重写 礼包点击处理
+---@param package XPurchasePackage
 function XUiPanelRecommendBase:OnClickPackage(package)
-    if package:GetIsSellOut() then
+    --v4.8：涂装没有售罄，只有已拥有，可点击进详情
+    if not package:IsCoatingLB() and package:GetIsSellOut() then
         XUiManager.TipErrorWithKey("PurchaseSettOut")
         return
     end
@@ -87,7 +89,7 @@ function XUiPanelRecommendBase:SetData(data, skipFunc, buyFinished)
                     end
                     if package:GetIsSellOut() then
                         btn:SetDisable(true)
-                        self:ShowBuyBtnSoldOutOrOwned(btn.transform, true)
+                        self:ShowBuyBtnSoldOutOrOwned(btn.transform, not package:IsCoatingLB())
                     else
                         allSellOut = false
                     end
@@ -140,7 +142,7 @@ function XUiPanelRecommendBase:PlayEnableAnim()
     end
 end
 
--- v1.31显示购买按钮已售罄或者已拥有
+---v1.31显示购买按钮已售罄或者已拥有（true：已售罄、false：已拥有）
 function XUiPanelRecommendBase:ShowBuyBtnSoldOutOrOwned(btn, isSoldOut)
     local uiObject = btn:GetComponent("UiObject")
     if uiObject == nil then

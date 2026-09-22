@@ -354,7 +354,15 @@ function XUiCommodity:OnBtnBuyClick()
                 if not result then
                     XUiManager.TipText("ShopItemHongKaNotEnough")
                     if XOverseaManager.IsENRegion() then
-                        XLuaUiManager.Open("UiPurchaseQuickBuy", self.NeedCount)
+                        -- 独立打开 QuickBuy 需自带跳转回调（无 XUiPurchase 宿主监听 SKIP 事件），参照 XFashionSuitAgency:OnMoneyNotEnough
+                        XLuaUiManager.Open("UiPurchaseQuickBuy", self.NeedCount, function(index)
+                            XLuaUiManager.SafeClose("UiPurchaseQuickBuy")
+                            -- 把 UiPurchase 移到时装详情之上，避免被挡住
+                            if XLuaUiManager.IsUiLoad("UiPurchase") then
+                                XLuaUiManager.Remove("UiPurchase")
+                            end
+                            XLuaUiManager.Open("UiPurchase", XPurchaseConfigs.TabsConfig.Pay, false, index)
+                        end)
                     else
                         XLuaUiManager.Open("UiPurchase", XPurchaseConfigs.TabsConfig.Pay)
                     end

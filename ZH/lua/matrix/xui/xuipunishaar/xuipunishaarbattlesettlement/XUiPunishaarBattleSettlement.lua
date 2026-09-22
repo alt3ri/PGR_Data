@@ -24,6 +24,7 @@ function XUiPunishaarBattleSettlement:OnAwake()
 
     -- 保底判空：PanelAsset 引用未挂时跳过，不影响奖励/结算主流程
     if self.PanelAsset then
+        self.PanelAsset.gameObject:SetActiveEx(false)
         ---@type XUiPunishaarFightMainPanelAsset
         self.PanelAsset = XUiPunishaarFightMainPanelAsset.New(self.PanelAsset, self)
     end
@@ -31,7 +32,7 @@ function XUiPunishaarBattleSettlement:OnAwake()
     self.GridReward.gameObject:SetActiveEx(false)
 end
 
-function XUiPunishaarBattleSettlement:OnStart(isWin, rewardList, onConfirm, hasRemedy, durabilityDelta)
+function XUiPunishaarBattleSettlement:OnStart(isWin, rewardList, onConfirm, hasRemedy, durabilityDelta, settleInfo)
     self._OnConfirm = onConfirm
     -- 耐久扣减量（FinishFight 算好传入：失败+扣减才 >0；UI 层合并显示，不写 Model）
     self._DurabilityDelta = durabilityDelta or 0
@@ -46,6 +47,8 @@ function XUiPunishaarBattleSettlement:OnStart(isWin, rewardList, onConfirm, hasR
     self.GroupControl:SetText(0, XMVCA.XPunishaar:GetClientStringByKey(tipsKey) or "")
 
     if self.PanelAsset then
+        -- 服务端 settleInfo.Durability 权威（若有），覆盖 stage.Durability 显示
+        self.PanelAsset._DurabilityOverride = settleInfo and settleInfo.Durability or nil
         self.PanelAsset:Open()
     end
 

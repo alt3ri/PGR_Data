@@ -79,6 +79,8 @@ end
 
 function XUiEquipPartnerOneClickPopup:OnEnable()
     self:_SetEvent(true)
+    self:_CalcCommitData()
+    self:_Refresh()
 end
 
 function XUiEquipPartnerOneClickPopup:OnDisable()
@@ -150,19 +152,27 @@ end
 
 function XUiEquipPartnerOneClickPopup:_SetEvent(flag)
     local XPartnerEventId = XMVCA.XPartner.EventIds
+    local coinCountUpdateEvent = XEventId.EVENT_ITEM_COUNT_UPDATE_PREFIX .. XDataCenter.ItemManager.ItemId.Coin
     if flag then
+        XEventManager.AddEventListener(coinCountUpdateEvent, self._OnCoinCountUpdate, self)
         self._Control:AddEventListener(XPartnerEventId.EVENT_CULTURE_SELECT_CHANGE, self._OnCultureSelectChange, self)
         self._Control:AddEventListener(XPartnerEventId.EVENT_PARTNER_FOOD_CHANGE, self._OnPartnerFoodChange, self)
         self._Control:AddEventListener(XPartnerEventId.EVENT_REPLY_PARTNER_DATA_UPDATE, self._OnPartnerDataUpdate, self)
         self._Control:AddEventListener(XPartnerEventId.EVENT_AUTO_EXCHANGE_CHANGE, self._OnAutoExchangeChange, self)
         self._Control:AddEventListener(XPartnerEventId.EVENT_VIEW_PARTNER_POPUP_OPEN_STARUP_PREVIEW, self._OnOpenStarUpPreview, self)
     else
+        XEventManager.RemoveEventListener(coinCountUpdateEvent, self._OnCoinCountUpdate, self)
         self._Control:RemoveEventListener(XPartnerEventId.EVENT_CULTURE_SELECT_CHANGE, self._OnCultureSelectChange, self)
         self._Control:RemoveEventListener(XPartnerEventId.EVENT_PARTNER_FOOD_CHANGE, self._OnPartnerFoodChange, self)
         self._Control:RemoveEventListener(XPartnerEventId.EVENT_REPLY_PARTNER_DATA_UPDATE, self._OnPartnerDataUpdate, self)
         self._Control:RemoveEventListener(XPartnerEventId.EVENT_AUTO_EXCHANGE_CHANGE, self._OnAutoExchangeChange, self)
         self._Control:RemoveEventListener(XPartnerEventId.EVENT_VIEW_PARTNER_POPUP_OPEN_STARUP_PREVIEW, self._OnOpenStarUpPreview, self)
     end
+end
+
+function XUiEquipPartnerOneClickPopup:_OnCoinCountUpdate()
+    self:_CalcCommitData()
+    self:_Refresh()
 end
 
 function XUiEquipPartnerOneClickPopup:_OnCultureSelectChange()

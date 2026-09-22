@@ -39,6 +39,19 @@ function XDailyResetAgency:IsDailyResetRedPoint(key)
     return self:_GetDailyResetRedPoints()[key]
 end
 
+function XDailyResetAgency:CheckDateALiveDailyRedPoint()
+    return self:CheckDailyRedPoint(self._Model:GetDateALiveDailyRedPointKey())
+end
+
+function XDailyResetAgency:MarkDateALiveEnteredToday(chapterId)
+    local configuredChapterId = XSignInConfigs.GetIntClientConfigValue("DateALiveChapterId")
+    if chapterId ~= configuredChapterId then
+        return
+    end
+    self:SaveDailyRedPoint(self._Model:GetDateALiveDailyRedPointKey())
+    XEventManager.DispatchEvent(XEventId.EVENT_DATE_A_LIVE_FESTIVAL_ENTER)
+end
+
 ----------public end----------
 
 ----------private start----------

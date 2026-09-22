@@ -15,7 +15,7 @@
         "Name": "Ignite",
         "Pirority": 2,
         "IsHide": null,
-        "Desc": "When hit by enemy Skills, deals DMG equal to 10% Attack for every stack. Lasts indefinitely. Stacks infinitely.",
+        "Desc": "When hit by enemy skills, deals DMG equal to 10% <color=#9B8015><Icon=IconAttack|30|30|0.5/>ATK</color> for every stack. Lasts indefinitely and stacks infinitely.",
         "SaveWeight": 10.0,
         "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon38.png",
         "FilterSort": 2.0,
@@ -206,6 +206,50 @@
         "SaveWeight": 10.0,
         "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon57.png",
         "FilterSort": null,
+        "GroupId": 2.0
+    },
+    {
+        "Id": 30,
+        "Name": "Dark Hex",
+        "Pirority": 2,
+        "IsHide": null,
+        "Desc": "When the enemy uses a skill, they take DMG equal to 10% <color=#9B8015><Icon=IconAttack|30|30|0.5/>ATK</color> for each stack. Lasts indefinitely and stacks infinitely. The DMG ignores <color=#137D90><Icon=IconProtector|30|30|0.5/>shields</color><color=#E7D09A>.",
+        "SaveWeight": 10.0,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon59.png",
+        "FilterSort": 10.0,
+        "GroupId": 2.0
+    },
+    {
+        "Id": 31,
+        "Name": "Dreamlure",
+        "Pirority": 3,
+        "IsHide": null,
+        "Desc": "Equipping any skill with a <color=#6F4877><Icon=IconCharm|30|30|0.5/>Dreamlure</color> effect activates the following effect: Gains 1 <color=#6F4877><Icon=IconCharm|30|30|0.5/>Dreamlure</color> when using a skill. <color=#6F4877><Icon=IconCharm|30|30|0.5/>Dreamlure</color> is capped at 13. When <color=#6F4877><Icon=IconCharm|30|30|0.5/>Dreamlure</color> reaches the cap, consumes all <color=#6F4877><Icon=IconCharm|30|30|0.5/>Dreamlure</color> and triggers <color=#6F4877><Icon=IconCharm|30|30|0.5/>Entranced</color>.",
+        "SaveWeight": 10.0,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon58.png",
+        "FilterSort": null,
+        "GroupId": 2.0
+    },
+    {
+        "Id": 32,
+        "Name": "Entranced",
+        "Pirority": 3,
+        "IsHide": null,
+        "Desc": "Triggers when <color=#6F4877><Icon=IconCharm|30|30|0.5/>Dreamlure</color> is full. When triggered, drains 15 <color=#6F4877><Icon=IconStamina|30|30|0.5/>Fighting Will</color> from the enemy and forcibly activates the Active Skill in Slot 1.",
+        "SaveWeight": 10.0,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon58.png",
+        "FilterSort": null,
+        "GroupId": 2.0
+    },
+    {
+        "Id": 98,
+        "Name": "Dark Hex",
+        "Pirority": 2,
+        "IsHide": null,
+        "Desc": "When using a skill, takes DMG equal to 10% ATK for each stack. Lasts indefinitely and stacks infinitely. The DMG ignores shields.",
+        "SaveWeight": 10.0,
+        "Icon": "Assets/Product/Texture/Image/UiTheatre6/UiTheatre6Icon59.png",
+        "FilterSort": 10.0,
         "GroupId": 2.0
     },
     {

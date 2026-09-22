@@ -134,7 +134,7 @@ function XUiPBRTask:_GetTaskDynamicTableStartIndex(taskDataList)
         -- 找到次序索引
         if not XTool.IsTableEmpty(taskDataList) then
             for i, v in pairs(taskDataList) do
-                if v.TaskId == targetTaskId then
+                if v.Id == targetTaskId then
                     return i
                 end
             end

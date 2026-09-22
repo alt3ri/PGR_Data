@@ -10,8 +10,8 @@ function XUiGachaLuciaMain:OnAwake()
     self._FinishCbTrigger = nil -- 抽卡结束触发器，抽卡请求回调设置，播放完抽卡演出后触发
     self._GachaAllFinishTrigger = nil -- 抽卡全结束触发器，1/10回抽按钮设置，抽卡结果界面关闭后刷新触发
     self._TipCbTrigger = nil -- 奖励弹框
-    self._HasBeenKey = "LuciaHasBeenKey"
-    self._SkipBtnKey = "UiGachaLucia"
+    self._HasBeenKey = XGachaConfigs.GetSkipAnimCacheKey("LuciaHasBeenKey")
+    self._SkipBtnKey = XGachaConfigs.GetSkipAnimCacheKey("UiGachaLucia")
     self._GachaStoryRedPoint = "GachaStoryRedPoint"
     self._TimerStoryRoleEnable = nil
     self._IsParentShow = true
@@ -242,6 +242,9 @@ function XUiGachaLuciaMain:OnChildClose()
         XScheduleManager.UnSchedule(self._TimerStoryRoleEnable)
         self._TimerStoryRoleEnable = nil
     end
+
+    -- 从剧情关返回时不会重新触发 EVENT_UI_ALLOWOPERATE，手动检测一次引导
+    XDataCenter.GuideManager.CheckGuideOpen()
 end
 
 function XUiGachaLuciaMain:AutoOpenChild()
@@ -803,9 +806,9 @@ function XUiGachaLuciaMain:OnBtnStoryLineClick(isAutoOpen)
     if not self._CanPlayEnableAnim or isAutoOpen then
         -- 在Hold状态时，最后一个事件帧触发会有问题
 
-        -- AnimStart2 为控制一个渐变背景隐藏的动画，功能与命名不符，同时仅在此处调用存在剧情界面的子界面返回时渐变背景无法正常隐藏的bug
-        -- 调整预制将渐变 bg 纳入抽卡界面 UI 对象控制，此处停用
-        -- self:PlayAnimationWithMask("AnimStart2")
+        -- AnimStart2 控制渐变背景隐藏，仅在此处播放会导致从剧情子界面返回时背景异常显示
+        -- 在 OnAfterStageLineEnable 中补播，恢复背景隐藏状态
+        self:PlayAnimationWithMask("AnimStart2")
     end
     self.Panel3D.UiFarCamStory.gameObject:SetActiveEx(false)
     self.Panel3D.UiNearCamStory.gameObject:SetActiveEx(false)
@@ -813,6 +816,8 @@ function XUiGachaLuciaMain:OnBtnStoryLineClick(isAutoOpen)
 end
 
 function XUiGachaLuciaMain:OnAfterStageLineEnable()
+    -- 覆盖式子界面关闭后 Timeline 的 Hold 状态会丢失，重新隐藏剧情界面下的渐变背景
+    self:PlayAnimationWithMask("AnimStart2")
     self.Panel3D.AnimDisableStory.gameObject:SetActiveEx(false)
     self.Panel3D.AnimEnableStory.gameObject:SetActiveEx(true)
     self.Panel3D.AnimEnableStory:PlayTimelineAnimation()

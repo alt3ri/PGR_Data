@@ -1,4 +1,4 @@
-local XUiGridAttribute = require("XUi/XUiDorm/XUiDormCommom/XUiGridAttribute")
+local XUiGridAttribute = require("XUi/XUiDorm/XUiDormCommom/XUiGridAttribute")
 
 local InitFurniturePosX, InitFurniturePosY = 15, 15
 
@@ -235,7 +235,7 @@ function XUiGridFurnitureItem:OnBtnItemDrag(eventData)
             self.ScreenToRayV3.y = eventData.position.y
             self.ScreenToRayV3.z = 0
             local ray = camera:ScreenPointToRay(self.ScreenToRayV3)
-            local mask = CS.UnityEngine.LayerMask.GetMask("HomeSurface")
+            local mask = CS.UnityEngine.LayerMask.GetMask(LayerMaskName.Terrain)
             if mask then
                 local ret, hit = ray:RayCast(mask)
                 if ret then

@@ -51,12 +51,12 @@ function XUiPunishaarEventSettlement:OnStart(node)
         return
     end
     -- Event 三表为关卡级（GameConfigControl），经 GameControl 读取（EventSettlement 开启时 GameControl 必存活）
-    local gc = self._Control and self._Control.GameControl
-    if not gc then
+    local gameControl = self._Control and self._Control.GameControl
+    if not gameControl then
         XLog.Error("[PunishaarEventSettlement] OnStart: GameControl 不可用")
         return
     end
-    local eventGroupCfg = gc:GetTablePunishaarEventGroup(selectedId)
+    local eventGroupCfg = gameControl:GetTablePunishaarEventGroup(selectedId)
     if not eventGroupCfg then
         XLog.Error("[PunishaarEventSettlement] OnStart: EventGroup 配置缺失，id=" .. tostring(selectedId))
         return
@@ -68,7 +68,7 @@ function XUiPunishaarEventSettlement:OnStart(node)
         XLog.Error("[PunishaarEventSettlement] OnStart: EventGroup.EventId 无效，groupId=" .. tostring(selectedId))
         return
     end
-    local contentCfg = gc:GetTablePunishaarEventContent(contentId)
+    local contentCfg = gameControl:GetTablePunishaarEventContent(contentId)
     if not contentCfg then
         XLog.Error("[PunishaarEventSettlement] OnStart: EventContent 配置缺失，id=" .. tostring(contentId))
         return
@@ -190,15 +190,15 @@ function XUiPunishaarEventSettlement:AdvanceChain()
     if self._IsExiting then return end
     local contentCfg = self._CurrentContentCfg
     if not contentCfg then return end
-    local gc = self._Control and self._Control.GameControl
-    if not gc then
+    local gameControl = self._Control and self._Control.GameControl
+    if not gameControl then
         XLog.Error("[PunishaarEventSettlement] AdvanceChain: GameControl 不可用")
         return
     end
 
     local nextEvent = contentCfg.NextEvent
     if XTool.IsNumberValid(nextEvent) then
-        local nextCfg = gc:GetTablePunishaarEventContent(nextEvent)
+        local nextCfg = gameControl:GetTablePunishaarEventContent(nextEvent)
         if not nextCfg then
             XLog.Error("[PunishaarEventSettlement] AdvanceChain: 下一 Content 配置缺失，id=" .. tostring(nextEvent))
             return
@@ -218,13 +218,13 @@ end
 --- 幂等：_RewardFetched 已真或 _FinishInFlight 进行中则不重入。
 function XUiPunishaarEventSettlement:_EnterRewardStage()
     if self._RewardFetched or self._FinishInFlight then return end
-    local gc = self._Control and self._Control.GameControl
-    if not gc then
+    local gameControl = self._Control and self._Control.GameControl
+    if not gameControl then
         XLog.Error("[PunishaarEventSettlement] _EnterRewardStage: GameControl 不可用")
         return
     end
     self._FinishInFlight = true
-    gc:FinishEvent(Handler(self, self._OnRewardFetchedCb))
+    gameControl:FinishEvent(Handler(self, self._OnRewardFetchedCb))
 end
 
 --- FinishEvent 回调：node 为更新后的当前节点（终端态）；nil=失败。
@@ -263,9 +263,9 @@ function XUiPunishaarEventSettlement:_ShowRewardGrid()
     end
     local eventRewardCfg = nil
     if self._EventGroupCfg and XTool.IsNumberValid(self._EventGroupCfg.EventRewardId) then
-        local gc = self._Control and self._Control.GameControl
-        if gc then
-            eventRewardCfg = gc:GetTablePunishaarEventReward(self._EventGroupCfg.EventRewardId)
+        local gameControl = self._Control and self._Control.GameControl
+        if gameControl then
+            eventRewardCfg = gameControl:GetTablePunishaarEventReward(self._EventGroupCfg.EventRewardId)
         end
     end
     if not eventRewardCfg then
@@ -285,8 +285,8 @@ function XUiPunishaarEventSettlement:_DoExit()
         return
     end
     self._IsExiting = true
-    local gc = self._Control and self._Control.GameControl
-    if not gc then
+    local gameControl = self._Control and self._Control.GameControl
+    if not gameControl then
         XLog.Error("[PunishaarEventSettlement] _DoExit: GameControl 不可用")
         self._IsExiting = nil
         return
@@ -297,7 +297,7 @@ function XUiPunishaarEventSettlement:_DoExit()
         self._IsExiting = nil
         return
     end
-    gc:_FinishEventThenExit(node)
+    gameControl:_FinishEventThenExit(node)
     -- TODO: 先盖后关——待下一节点面板就位再关可杜绝底层闪现；暂同步关闭。
     self:Close()
 end

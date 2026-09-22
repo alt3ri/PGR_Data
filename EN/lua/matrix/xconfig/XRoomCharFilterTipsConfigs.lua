@@ -64,7 +64,7 @@ XRoomCharFilterTipsConfigs.EnumSortTag = {
     SuperLevel = 5, -- 超限等级，超级爬塔活动
     SSBMonster = 6, -- 怪物阶级，超限乱斗活动
     SSBMonsterDefault = 7, -- 怪物阶级+战力，超限乱斗活动
-    EquipGuide = 8, -- 装备引导
+    TeamRecommend = 8, -- 队伍养成推荐
 }
 
 function XRoomCharFilterTipsConfigs.Init()

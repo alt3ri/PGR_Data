@@ -211,7 +211,7 @@ XActivityBriefManagerCreator = function()
             if XTool.IsNumberValid(v.OnlyRedPoint) then
                 goto CONTINUE
             end
-            
+
             if XFunctionManager.CheckInTimeByTimeId(v.TimeId) and
                     (v.Condition == 0 or XConditionManager.CheckCondition(v.Condition)) then
                 table.insert(nowSpecialActivityTemplates, v)
@@ -220,7 +220,7 @@ XActivityBriefManagerCreator = function()
             :: CONTINUE ::
 
         end
-        
+
         return nowSpecialActivityTemplates
     end
 
@@ -373,6 +373,17 @@ XActivityBriefManagerCreator = function()
     function XActivityBriefManager.SetIsSkipAnim(panelType, active)
         local key = string.format("ActivityBrief_IsSkipAnim_%s_%s_%s", XPlayer.Id,panelType,ActivityConfig.TimeId)
         return XSaveTool.SaveData(key, active)
+    end
+
+    -- 标题状态切换过渡动画(AnimTitleExChange)本期是否已播过(按 TimeId 每期一次)
+    function XActivityBriefManager.GetTitleExChangePlayed(panelType)
+        local key = string.format("ActivityBrief_TitleExChangePlayed_%s_%s_%s", XPlayer.Id, panelType, ActivityConfig.TimeId)
+        return XSaveTool.GetData(key)
+    end
+
+    function XActivityBriefManager.SetTitleExChangePlayed(panelType)
+        local key = string.format("ActivityBrief_TitleExChangePlayed_%s_%s_%s", XPlayer.Id, panelType, ActivityConfig.TimeId)
+        return XSaveTool.SaveData(key, true)
     end
 
     function XActivityBriefManager.CheckIsFirstReadedAnim(panelType)

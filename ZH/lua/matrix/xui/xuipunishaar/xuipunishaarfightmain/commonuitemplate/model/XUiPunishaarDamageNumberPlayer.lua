@@ -4,6 +4,8 @@
 ---@class XUiPunishaarDamageNumberPlayer : XUiNode
 ---@field UiPunishaarDamageTxt UnityEngine.GameObject 飘字预制体（FlashTextRoot 的 UiObject 自动绑定）
 ---@field PlayerDamageTxtPoint UnityEngine.Transform 玩家飘字定位锚点（FlashTextRoot 的 UiObject 自动绑定）
+---@field ImgDigit UnityEngine.UI.Image 数字位 Image 模板（inactive 克隆源，FlashTextRoot UiObject 引用 Image 组件）
+---@field Cache UnityEngine.RectTransform ImgDigit 回收暂存节点（池还时 SetParent 此处，离 grid PnlList）
 ---@field private _DamagePool XPool 飘字对象池（双方复用单池，isDebug=false）
 ---@field private _ActiveNumbers XDictionary 在播飘字登记（grid→true，防双重归池；XDictionary 原位 Clear 复用）
 ---@field private _ForceRecycleList table _ForceRecycleAll 收集用 scratch（复用）
@@ -45,6 +47,43 @@ function XUiPunishaarDamageNumberPlayer:_EnsurePool()
         end,
         function(item) item:ResetForReuse() end,
         false)
+    -- ImgDigit 外部池（跨 grid 共享，grid 按位取/还；ImgDigit 是独立 Image 模板，回收挂 Cache 暂存）
+    -- 守卫 ImgDigit + Cache 都绑定（prefab 打包有时差，缺一则不建池 + Error，grid Play no-op 回池不崩）
+    if self.ImgDigit and self.Cache then
+        self.ImgDigit.gameObject:SetActiveEx(false)  -- 模板 inactive 仅克隆源
+        self._DigitImgPool = XPool.New(
+            function()
+                local go = XUiHelper.Instantiate(self.ImgDigit.gameObject, self.Cache)
+                return go:GetComponent(typeof(CS.UnityEngine.UI.Image))
+            end,
+            function(img)
+                img.transform:SetParent(self.Cache, false)
+                img.gameObject:SetActiveEx(false)
+            end,
+            false)
+        self._AcquireDigitCb = handler(self, self.AcquireDigitImage)
+        self._ReleaseDigitCb = handler(self, self.ReleaseDigitImage)
+    else
+        XLog.Error("[DamageNumber] EnsurePool: ImgDigit 或 Cache 未绑定（FlashTextRoot 的 UiObject 未引用？）")
+    end
+end
+
+--- 从 ImgDigit 池取一个 Image（grid 按位调）。池空则克隆。
+---@return UnityEngine.UI.Image|nil
+function XUiPunishaarDamageNumberPlayer:AcquireDigitImage()
+    if not self._DigitImgPool then
+        return nil
+    end
+    return self._DigitImgPool:GetItemFromPool()
+end
+
+--- 归还 Image 到 ImgDigit 池（grid 回收前调）。
+---@param img UnityEngine.UI.Image
+function XUiPunishaarDamageNumberPlayer:ReleaseDigitImage(img)
+    if not img or not self._DigitImgPool then
+        return
+    end
+    self._DigitImgPool:ReturnItemToPool(img)
 end
 
 ---@return number, number 半径（0=不偏移）
@@ -148,6 +187,9 @@ function XUiPunishaarDamageNumberPlayer:_OnSpawnDamageNumber(targetId, atkPerHit
 
         grid.Transform:SetLocalPosition(pos.x + xOffset, pos.y + yOffset, pos.z)
         grid:SetFinishedCallback(self._OnGridFinishedHandler)
+        if self._AcquireDigitCb then
+            grid:SetDigitPoolHandler(self._AcquireDigitCb, self._ReleaseDigitCb)
+        end
         grid:Play(atkPerHit, isCrit)
     end
 end

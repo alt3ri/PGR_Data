@@ -421,7 +421,7 @@ function XUiNewGridDrawBanner:SetImage(imageList)
         return
     end
 
-    if self.TargetBtnDetails or XDataCenter.DrawManager:CheckIsDevilMayCryDrawId(self.Base.DrawInfo.Id) then
+    if self.TargetBtnDetails or XDataCenter.DrawManager:CheckIsLinkageDrawId(self.Base.DrawInfo.Id) then
         if self.RImgBg then self.RImgBg.gameObject:SetActiveEx(false) end
         if self.RImgRole then self.RImgRole.gameObject:SetActiveEx(false) end
         if self.RImgName then self.RImgName.gameObject:SetActiveEx(false) end
@@ -478,7 +478,7 @@ function XUiNewGridDrawBanner:SetTextByResourceIds(resourceIds)
         return
     end
 
-    if self.TargetBtnDetails or XDataCenter.DrawManager:CheckIsDevilMayCryDrawId(self.Base.DrawInfo.Id) then
+    if self.TargetBtnDetails or XDataCenter.DrawManager:CheckIsDevilMayCryGroupId(self.Base.DrawInfo.GroupId) then
         self:SetTextActive(false)
         return
     end
@@ -775,13 +775,9 @@ end
 
 --endregion
 
---- 获取当前 DrawInfo（优先使用 OptionKey 维度）
+--- 获取当前界面正在展示的 DrawInfo
 function XUiNewGridDrawBanner:_GetDrawInfo()
-    if not string.IsNilOrEmpty(self.OptionKey) then
-        return XDataCenter.DrawManager.GetUseDrawInfoByOptionKey(self.OptionKey)
-    else
-        return XDataCenter.DrawManager.GetUseDrawInfoByGroupId(self.Data:GetId())
-    end
+    return self.Base.DrawInfo
 end
 
 return XUiNewGridDrawBanner

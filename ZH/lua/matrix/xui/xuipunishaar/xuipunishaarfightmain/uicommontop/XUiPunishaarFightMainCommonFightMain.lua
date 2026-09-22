@@ -97,6 +97,9 @@ function XUiPunishaarFightMainCommonFightMain:OnDestroy()
 end
 
 function XUiPunishaarFightMainCommonFightMain:OnBtnBackClick()
+    if self._Control.GameControl:GetIsDraggingCard() then
+        return  -- 拖拽中不响应 #拖拽中禁功能按钮
+    end
     XLuaUiManager.Open("UiPunishaarStagePause")
 end
 

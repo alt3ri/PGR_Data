@@ -23,7 +23,17 @@ function XUiGridTransfiniteTowerRank:PlayAnimation()
     end
 
     self.IsAnimation = true
+    self._IsNewAnim = true
     self.GridRankEnable:PlayTimelineAnimation()
+end
+
+---跳至动效末帧
+function XUiGridTransfiniteTowerRank:SkipEnableAnimToEnd()
+    local director = self.GridRankEnable:GetComponent(typeof(CS.UnityEngine.Playables.PlayableDirector))
+    if director then
+        director.time = director.duration
+        director:Evaluate()
+    end
 end
 
 function XUiGridTransfiniteTowerRank:OnBtnDetailClick()
@@ -75,6 +85,12 @@ function XUiGridTransfiniteTowerRank:Refresh(data, index)
     self.StandIcon.gameObject:SetActiveEx(icon ~= nil)
     if icon then
         self.StandIcon:SetRawImage(icon)
+    end
+
+    if self._IsNewAnim then
+        self._IsNewAnim = nil
+    else
+        self:SkipEnableAnimToEnd()
     end
 end
 

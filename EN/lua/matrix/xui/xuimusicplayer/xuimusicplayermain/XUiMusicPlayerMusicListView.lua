@@ -20,6 +20,7 @@
 ---@field ScrollViewListMusic UnityEngine.RectTransform
 ---@field PanelManage UnityEngine.RectTransform
 ---@field GoDontHasMusic UnityEngine.RectTransform
+---@field GoDontSearchMusic UnityEngine.RectTransform
 ---@field TxtDontHasMusic UnityEngine.UI.Text
 ---@field BtnTabAllMusic XUiComponent.XUiButton
 ---@field BtnTabLike XUiComponent.XUiButton
@@ -210,6 +211,10 @@ end
 
 function XUiMusicPlayerMusicListView:_OnMusicListDataChange(listType)
     if listType == self._ListType then
+        local XMusicPlayerEnum = XMVCA.XMusicPlayer.Enum
+        if self._Status == XMusicPlayerEnum.MusicListUIStatus.search then
+            self:_SearchByInput(self:_GetCurSeverDataList(), self.InputSearchMusic.text or "")
+        end
         self:_RefreshAll(self._ListType,self._Status)
     end
 end
@@ -314,9 +319,11 @@ function XUiMusicPlayerMusicListView:_RefreshTablBtn (listType)
 end
 
 function XUiMusicPlayerMusicListView:_RefreshMusicListByData(listType,status)
-    local XMusicPlayerEnum = XMVCA.XMusicPlayer.Enum 
-    self._MusicListTable:SetDataSource(self:_GetCurShowListDataList())
+    local XMusicPlayerEnum = XMVCA.XMusicPlayer.Enum
+    local dataList = self:_GetCurShowListDataList()
+    self._MusicListTable:SetDataSource(dataList)
     self._MusicListTable:ReloadDataSync(1)
+    self.GoDontSearchMusic.gameObject:SetActive(status == XMusicPlayerEnum.MusicListUIStatus.search and #dataList == 0)
 end
 
 function XUiMusicPlayerMusicListView:OnDynamicTableEvent(event, index, grid)
@@ -367,16 +374,17 @@ function XUiMusicPlayerMusicListView:_RefreshMusicShow(listType,status)
 
     self.GoDontHasMusic.gameObject:SetActive(false)
     local musicCount = #self:_GetCurSeverDataList()
+    local XMusicPlayerEnum = XMVCA.XMusicPlayer.Enum
     
     local musicTitleStr = "" 
-    if listType == XMVCA.XMusicPlayer.Enum.MusicListType.BGM then
+    if listType == XMusicPlayerEnum.MusicListType.BGM then
         musicTitleStr = CS.XTextManager.GetText("MusicPlayerListTitleBgm" ) 
-    elseif listType == XMVCA.XMusicPlayer.Enum.MusicListType.Favorite then
+    elseif listType == XMusicPlayerEnum.MusicListType.Favorite then
         musicTitleStr = CS.XTextManager.GetText("MusicPlayerListTitleLike")
-        if musicCount == 0 then
+        if status ~= XMusicPlayerEnum.MusicListUIStatus.search and musicCount == 0 then
             self.GoDontHasMusic.gameObject:SetActive(true)
         end
-    elseif listType == XMVCA.XMusicPlayer.Enum.MusicListType.Normal then
+    elseif listType == XMusicPlayerEnum.MusicListType.Normal then
         musicTitleStr = CS.XTextManager.GetText("MusicPlayerListTitleTotle" )
     end
     

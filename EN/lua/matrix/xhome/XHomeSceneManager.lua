@@ -6,14 +6,6 @@ HomeSceneViewType = {
     DeviceView = 2, --设备视角
 }
 
-HomeSceneLayerMask = {
-    Room = "Room",
-    Device = "Device",
-    HomeSurface = "HomeSurface",
-    Block = "Block",
-    HomeCharacter = "HomeCharacter",
-}
-
 ---@type XHomeScene
 local CurrentScene = nil
 local CurrentView = HomeSceneViewType.OverView
@@ -167,9 +159,9 @@ end
 
 function XHomeSceneManager.GetLayerMask()
     if (CurrentView == HomeSceneViewType.OverView) then
-        return CS.UnityEngine.LayerMask.GetMask(HomeSceneLayerMask.Room)
+        return CS.UnityEngine.LayerMask.GetMask(LayerMaskName.Room)
     elseif (CurrentView == HomeSceneViewType.RoomView) then
-        return CS.UnityEngine.LayerMask.GetMask(HomeSceneLayerMask.Device) | CS.UnityEngine.LayerMask.GetMask(HomeSceneLayerMask.HomeCharacter)
+        return CS.UnityEngine.LayerMask.GetMask(LayerMaskName.SceneObject) | CS.UnityEngine.LayerMask.GetMask(LayerMaskName.Npc)
     else
         return nil
     end

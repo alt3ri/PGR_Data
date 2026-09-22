@@ -106,6 +106,7 @@ function XUiEquipAwarenessEnhanceMain:OnStart(characterId)
 end
 
 function XUiEquipAwarenessEnhanceMain:OnEnable()
+    XMVCA.XEquip:TryUnlockAwarenessOneClickResonance()
     self:Refresh()
 end
 

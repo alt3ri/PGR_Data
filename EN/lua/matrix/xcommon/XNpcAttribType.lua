@@ -175,6 +175,12 @@ XNpcAttribType = {
     DriveShield = 172, --超算盾
     DriveShieldRegeneration = 173, --超算盾恢复时间(毫秒)
     DriveOverBurnTime = 174, --临时虚损时间(毫秒)
+    AllSourceDamageNormalChangeAmpP = 175,  --全来源物理伤害增幅
+    AllSourceDamageMagic1ChangeAmpP = 176,  --全来源火元素伤害增幅
+    AllSourceDamageMagic2ChangeAmpP = 177,  --全来源雷元素伤害增幅
+    AllSourceDamageMagic3ChangeAmpP = 178,  --全来源冰元素伤害增幅
+    AllSourceDamageMagic4ChangeAmpP = 179,  --全来源暗元素伤害增幅
+    AllSourceDamageMagic5ChangeAmpP = 180,  --全来源空元素伤害增幅
     
-    End = 175, --结束标志
+    End = 181, --结束标志
 }

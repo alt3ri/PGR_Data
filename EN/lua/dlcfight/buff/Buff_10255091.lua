@@ -7,18 +7,29 @@ local XBuffScript10255091 = XDlcScriptManager.RegBuffScript(10255091, "XBuffScri
 function XBuffScript10255091:ScriptInit(isGainControl) --初始化
     --self.TargetSkill = self._skillId
     self.BuffId = 10255091        --25%加伤buff
+    self.UseCount = 0
 end
 
 function XBuffScript10255091:OnLuaSkillEnd(eventArgs)
     ------------执行------------
     if eventArgs._launcherUUID ~= self._npcUUID then return end
-    local cfg = self._proxy:Theatre6GetSkillConfig(eventArgs._skillId)
-    --self:LogError("体力恢复"..eventArgs._skillId)
-    local tlCost = cfg.CostTL
-    self.TLRecover = tlCost // 5 --体力恢复=体力消耗的1/5
-    --self:LogError("体力恢复"..self.TLRecover)
-    self._proxy:Theatre6ChangeStaminaValue(self._npcUUID, self.TLRecover, 0) --恢复体力
-    --self._proxy:RemoveBuffByKindAndCount(self._npcUUID, self.BuffId, 1)
+    if self.UseCount == 1 then
+        local cfg = self._proxy:Theatre6GetSkillConfig(eventArgs._skillId)
+        --self:LogError("体力打印2，这次会触发回体力"..eventArgs._skillId)
+        local tlCost = cfg.CostTL
+        self.TLRecover = tlCost // 5 --体力恢复=体力消耗的1/5
+        --self:LogError("体力恢复"..self.TLRecover)
+        self._proxy:Theatre6ChangeStaminaValue(self._npcUUID, self.TLRecover, 0) --恢复体力
+        --self._proxy:RemoveBuffByKindAndCount(self._npcUUID, self.BuffId, 1)
+        self.UseCount = 2
+    end
+    if self.UseCount == 0 then
+        self.UseCount = 1
+        --self:LogError("体力打印1-"..eventArgs._skillId)
+    end
+    if self.UseCount == 2 then
+        self.UseCount = 0
+    end
 end
 
 return XBuffScript10255091

@@ -1,8 +1,24 @@
 ---@class XEquipControl : XControl
 ---@field _Model XEquipModel
+---@field StrengthenControl XEquipStrengthenControl
+---@field ResonanceControl XEquipResonanceControl
+---@field AwakeControl XEquipAwakeControl
+---@field OneClickCultureControl XEquipOneClickCultureControl
 local XEquipControl = XClass(XControl, "XEquipControl")
+
+-- 初始化装备子控制器
 function XEquipControl:OnInit()
     --初始化内部变量
+    ---@type XEquipStrengthenControl
+    self.StrengthenControl = self:AddSubControl(require('XModule/XEquip/SubModule/XEquipStrengthenControl'))
+    ---@type XEquipResonanceControl
+    self.ResonanceControl = self:AddSubControl(require('XModule/XEquip/SubModule/XEquipResonanceControl'))
+    ---@type XEquipAwakeControl
+    self.AwakeControl = self:AddSubControl(require('XModule/XEquip/SubModule/XEquipAwakeControl'))
+    ---@type XEquipOneClickAutoSettingControl
+    self.OneClickAutoSettingControl = self:AddSubControl(require('XModule/XEquip/SubModule/XEquipOneClickAutoSettingControl'))
+    ---@type XEquipOneClickCultureControl
+    self.OneClickCultureControl = self:AddSubControl(require('XModule/XEquip/SubModule/XEquipOneClickCultureControl'))
 end
 
 function XEquipControl:AddAgencyEvent()
@@ -42,6 +58,24 @@ function XEquipControl:GetCharacterEquipId(characterId, site)
     return self._Model:GetCharacterEquipId(characterId, site)
 end
 
+-- 意识强化主界面（UiEquipAwarenessEnhanceMain）自动兑换开关本地缓存
+function XEquipControl:GetAwarenessEnhanceMainAutoExchangeOn()
+    return self._Model:GetAwarenessEnhanceMainAutoExchangeOn()
+end
+
+function XEquipControl:SetAwarenessEnhanceMainAutoExchangeOn(isOn)
+    self._Model:SetAwarenessEnhanceMainAutoExchangeOn(isOn)
+end
+
+-- 意识强化界面（UiEquipAwarenessStrengthen）自动兑换开关本地缓存
+function XEquipControl:GetAwarenessStrengthenAutoExchangeOn()
+    return self._Model:GetAwarenessStrengthenAutoExchangeOn()
+end
+
+function XEquipControl:SetAwarenessStrengthenAutoExchangeOn(isOn)
+    self._Model:SetAwarenessStrengthenAutoExchangeOn(isOn)
+end
+
 --- 获取成员身上的所有装备Id列表
 ---@param characterId number 成员Id
 ---@param isUseTempList table 是否使用复用的临时列表
@@ -69,6 +103,28 @@ function XEquipControl:GetCharacterAwarenessIds(characterId, isUseTempList)
     return self._Model:GetCharacterAwarenessIds(characterId, isUseTempList)
 end
 
+--- 获取成员的意识Id字典（site -> equipId，未穿戴的 site 不存在 key）
+---@param characterId number 成员Id
+function XEquipControl:GetCharacterAwarenessIdDic(characterId)
+    return self._Model:GetCharacterAwarenessIdDic(characterId)
+end
+
+--- 获取穿戴意识字典中的首个意识 Id。
+---@param awarenessEquipIdBySite table<number, number>|nil 穿戴意识 Id 字典，key 为穿戴位
+---@return number|nil equipId 首个穿戴意识 Id
+function XEquipControl:GetFirstWearAwarenessEquipId(awarenessEquipIdBySite)
+    if not awarenessEquipIdBySite then
+        return nil
+    end
+
+    for equipSite = 1, XEnumConst.EQUIP.WEAR_AWARENESS_COUNT do
+        local equipId = awarenessEquipIdBySite[equipSite]
+        if equipId then
+            return equipId
+        end
+    end
+end
+
 -- 装备是否适配角色类型
 function XEquipControl:IsFitCharacterType(equipTemplateId, charType)
     local fitCharType = XMVCA.XEquip:GetEquipCharacterType(equipTemplateId)
@@ -89,19 +145,15 @@ function XEquipControl:GetCharacterWearingAwarenesss(characterId)
 end
 
 --------------------region 升级、突破 --------------------
+-- 以下方法已迁移到 StrengthenControl，此处仅做转发；其余强化相关方法 UI 直接调 self._Control.StrengthenControl
 --- 获取装备突破次数对应图片
 function XEquipControl:GetEquipBreakThroughIcon(breakthroughTimes)
-    return self._Model:GetEquipBreakThroughIcon(breakthroughTimes)
+    return self.StrengthenControl:GetEquipBreakThroughIcon(breakthroughTimes)
 end
 
 -- 检测是否满足强化条件
 function XEquipControl:CheckBreakthroughCondition(templateId, targetBreakthrough)
-    local conditionId = self:GetBreakthroughConditionId(templateId, targetBreakthrough)
-    if conditionId and conditionId ~= 0 then
-        return XConditionManager.CheckCondition(conditionId)
-    end
-
-    return true, ""
+    return self.StrengthenControl:CheckBreakthroughCondition(templateId, targetBreakthrough)
 end
 --------------------endregion 升级、突破 --------------------
 
@@ -339,6 +391,12 @@ end
 
 --------------------region 超限 --------------------
 
+---@param weaponTemplateId number 武器模板Id
+---@return XTableWeaponOverrunCamera|nil
+function XEquipControl:GetWeaponOverrunCameraConfig(weaponTemplateId)
+    return self._Model:GetWeaponOverrunCameraConfig(weaponTemplateId)
+end
+
 function XEquipControl:GetWeaponOverrunConfigById(id)
     return self._Model:GetWeaponOverrunConfigById(id)
 end
@@ -572,56 +630,20 @@ end
 
 
 ---------------------------------------- #region EquipBreakThrough ----------------------------------------
+-- 以下方法已迁移到 StrengthenControl，此处仅做转发；其余强化相关方法 UI 直接调 self._Control.StrengthenControl
 -- 获取装备的最大突破次数
 function XEquipControl:GetEquipMaxBreakthrough(templateId)
-    return self._Model:GetEquipMaxBreakthrough(templateId)
+    return self.StrengthenControl:GetEquipMaxBreakthrough(templateId)
 end
 
 --获取指定突破次数下最大等级限制
 function XEquipControl:GetBreakthroughLevelLimit(templateId, times)
-    return self._Model:GetEquipBreakthroughLevelLimit(templateId, times)
-end
-
---检查指定突破次数下的突破条件
-function XEquipControl:GetBreakthroughConditionId(templateId, breakthrough)
-    local cfgs = self._Model:GetEquipBreakthroughCfgs(templateId)
-    for _, config in pairs(cfgs) do
-        if config.Times == breakthrough - 1 then
-            return config.ConditionId
-        end
-    end
-
-    return
+    return self.StrengthenControl:GetBreakthroughLevelLimit(templateId, times)
 end
 
 --- 升级单位转换为突破次数，等级
 function XEquipControl:ConvertToBreakThroughAndLevel(templateId, levelUnit)
-    return self._Model:ConvertToBreakThroughAndLevel(templateId, levelUnit)
-end
-
---- 突破次数，等级转换为升级单位
-function XEquipControl:ConvertToLevelUnit(templateId, breakthrough, level)
-    return self._Model:ConvertToLevelUnit(templateId, breakthrough, level)
-end
-
---- 获取装备最大升级单位（全突破）
-function XEquipControl:GetEquipMaxLevelUnit(templateId)
-    return self._Model:GetEquipMaxLevelUnit(templateId)
-end
-
---- 获取装备当前升级单位（当前突破次数等级之和+当前等级）
-function XEquipControl:GetEquipLevelUnit(equipId)
-    return self._Model:GetEquipLevelUnit(equipId)
-end
-
---获取装备从当前到目标突破次数总消耗道具
-function XEquipControl:GetMutiBreakthroughConsumeItems(equipId, targetBreakthrough)
-    return self._Model:GetMutiBreakthroughConsumeItems(equipId, targetBreakthrough)
-end
-
---获取装备从当前到目标突破次数总消耗货币
-function XEquipControl:GetMutiBreakthroughUseMoney(equipId, targetBreakthrough)
-    return self._Model:GetMutiBreakthroughUseMoney(equipId, targetBreakthrough)
+    return self.StrengthenControl:ConvertToBreakThroughAndLevel(templateId, levelUnit)
 end
 ---------------------------------------- #endregion EquipBreakThrough ----------------------------------------
 
@@ -974,7 +996,7 @@ end
 --------------------endregion WeaponDeregulateUI --------------------
 
 function XEquipControl:GetLevelUpCfg(templateId, times, level)
-    return self._Model:GetLevelUpCfg(templateId, times, level)
+    return self.StrengthenControl:GetLevelUpCfg(templateId, times, level)
 end
 
 ----------config end----------

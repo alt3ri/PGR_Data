@@ -62,7 +62,11 @@ end
 ---region UI 生命周期
 
 -- 进入一键培养主界面时调用，初始化默认数据
-function XPartnerOneKeyCultureControl:OnEnterCultureMainUI()
+---@param partnerId number 辅助机实例 Id
+function XPartnerOneKeyCultureControl:OnEnterCultureMainUI(partnerId)
+    if partnerId then
+        self._Model:GetOneKeyCultureModel():SetCurPartnerId(partnerId)
+    end
     if not self._Model:GetOneKeyCultureModel():GetCurPartnerId() then
         local partnerList = XDataCenter.PartnerManager.GetPartnerOverviewDataList(nil, nil, true)
         local firstPartner = partnerList and partnerList[1]
@@ -223,7 +227,7 @@ function XPartnerOneKeyCultureControl:IsAllCultureDone()
     local XPartnerEnum = XMVCA.XPartner.Enum
     return not self:IsNeedCulture(XPartnerEnum.CultureType.LevelUp)
         and not self:IsNeedCulture(XPartnerEnum.CultureType.StarUp)
-        and not self:IsNeedCulture(XPartnerEnum.CultureType.SkillLevelUp)
+        -- and not self:IsNeedCulture(XPartnerEnum.CultureType.SkillLevelUp)
 end
 ---endregion
 

@@ -4,9 +4,10 @@ local XAutoRotationType = typeof(CS.XAutoRotation)
 local XDragAutoRotateType = typeof(CS.XDragAutoRotate)
 
 ---@class XUiEquipDetailV2P6 : XLuaUi
----@field _Control XEquipControl
----@field EffectUiOverrunV4P6 UnityEngine.GameObject
-local XUiEquipDetailV2P6 = XLuaUiManager.Register(XLuaUi, "UiEquipDetailV2P6")
+---@field _Control XEquipControl
+---@field EffectUiOverrunV4P6 UnityEngine.GameObject
+---@field ShouldOpenHelpOnEnable boolean 是否在首次启用时自动打开当前页签的帮助说明
+local XUiEquipDetailV2P6 = XLuaUiManager.Register(XLuaUi, "UiEquipDetailV2P6")
 
 function XUiEquipDetailV2P6:OnAwake()
     -- UI初始化
@@ -27,17 +28,19 @@ function XUiEquipDetailV2P6:OnAwake()
     self:InitTabGroup()
 end
 
---参数isPreview为true时是装备详情预览，传templateId进来
---characterId只有需要判断武器共鸣特效时才传
-function XUiEquipDetailV2P6:OnStart(equipId, isPreview, characterId, forceShowBindCharacter, childUiIndex, openUiType, openResonanceSkillPos)
+--参数isPreview为true时是装备详情预览，传templateId进来
+--characterId只有需要判断武器共鸣特效时才传
+---@param openHelpOnEnable boolean|nil 是否在首次启用时自动打开当前页签的帮助说明
+function XUiEquipDetailV2P6:OnStart(equipId, isPreview, characterId, forceShowBindCharacter, childUiIndex, openUiType, openResonanceSkillPos, openHelpOnEnable)
     self.IsPreview = isPreview
     self.EquipId = equipId
     self.CharacterId = characterId
     self.ForceShowBindCharacter = forceShowBindCharacter
     self.TabIndex = childUiIndex
     self.TemplateId = isPreview and self.EquipId or XMVCA.XEquip:GetEquipTemplateId(equipId)
-    self.OpenUiType = openUiType
-    self.OpenResonanceSkillPos = openResonanceSkillPos
+    self.OpenUiType = openUiType
+    self.OpenResonanceSkillPos = openResonanceSkillPos
+    self.ShouldOpenHelpOnEnable = openHelpOnEnable == true
     self.IsWeapon = XMVCA.XEquip:IsEquipWeapon(self.TemplateId)
     self.IsAwareness = XMVCA.XEquip:IsEquipAwareness(self.TemplateId)
     if self.IsWeapon then
@@ -52,9 +55,13 @@ function XUiEquipDetailV2P6:OnStart(equipId, isPreview, characterId, forceShowBi
     end
 end
 
-function XUiEquipDetailV2P6:OnEnable()
-    self:UpdateView()
-end
+function XUiEquipDetailV2P6:OnEnable()
+    self:UpdateView()
+    if self.ShouldOpenHelpOnEnable then
+        self.ShouldOpenHelpOnEnable = false
+        self:OnBtnHelpClick()
+    end
+end
 
 function XUiEquipDetailV2P6:OnDestroy()
     self.PanelWeaponPlane.gameObject:SetActiveEx(true)
@@ -132,8 +139,12 @@ function XUiEquipDetailV2P6:OnBtnStrengthenMax()
     XUiManager.TipText("EquipStrengthenMaxLevel")
 end
 
-function XUiEquipDetailV2P6:OnBtnHelpClick()
-    local keyStr = self.IsWeapon and "EquipWeapon" or "EquipAwareness"
+function XUiEquipDetailV2P6:OnBtnHelpClick()
+    if XUiManager.IsHideFunc then
+        return
+    end
+
+    local keyStr = self.IsWeapon and "EquipWeapon" or "EquipAwareness"
 
     local indexKey
     if self.TabIndex == XEnumConst.EQUIP.UI_EQUIP_DETAIL_BTN_INDEX.STRENGTHEN then

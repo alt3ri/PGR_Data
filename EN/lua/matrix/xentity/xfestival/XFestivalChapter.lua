@@ -120,6 +120,21 @@ function XFestivalChapter:GetMainBackgound()
     return self.ChapterCfg and self.ChapterCfg.MainBackgound
 end
 --====================
+--获取当前进度对应的主页面背景图:按 BgConditionId 顺序评估,后命中的覆盖前面,无命中回退 MainBackgound
+--====================
+function XFestivalChapter:GetProgressBackgound()
+    local cfg = self.ChapterCfg
+    local bg = cfg and cfg.MainBackgound
+    if cfg and cfg.Condition then
+        for i, condId in ipairs(cfg.Condition) do
+            if condId and condId ~= 0 and XConditionManager.CheckCondition(condId) then
+                bg = cfg.ConditionBg and cfg.ConditionBg[i] or bg
+            end
+        end
+    end
+    return bg
+end
+--====================
 --获取关卡路线图预制体
 --====================
 function XFestivalChapter:GetFubenPrefab()

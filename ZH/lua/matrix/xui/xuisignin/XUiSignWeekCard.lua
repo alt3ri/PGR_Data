@@ -87,6 +87,14 @@ function XUiSignWeekCard:RefreshPanel(round)
     end
 end
 
+-- 虹卡数量变动时重刷购买按钮价格颜色,转发给实际持有买按钮的周期子面板
+function XUiSignWeekCard:RefreshBuyBtnColor()
+    local signPrefab = self.PanelSignPrefabs and self.PanelSignPrefabs[1]
+    if signPrefab and signPrefab.RefreshBuyBtnColor then
+        signPrefab:RefreshBuyBtnColor()
+    end
+end
+
 function XUiSignWeekCard:OnHide()
 end
 

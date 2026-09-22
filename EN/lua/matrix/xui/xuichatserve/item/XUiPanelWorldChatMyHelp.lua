@@ -63,6 +63,10 @@ function XUiPanelWorldChatMyHelp:Refresh(chatData)
 
     -- 设置聊天框
     self._PanelChatBoard:Refresh(chatData.ChatBoardId, chatData.SenderId == XPlayer.Id)
+    local color = self._PanelChatBoard:GetTextColor()
+    if color and self.TxtWord then
+        self.TxtWord.color = color
+    end
 end
 
 function XUiPanelWorldChatMyHelp:OnBtnViewClick()

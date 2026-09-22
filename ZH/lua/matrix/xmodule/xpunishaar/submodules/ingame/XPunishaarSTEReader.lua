@@ -295,8 +295,22 @@ function XPunishaarSTEReader:GetMaxCountColorInSlot()
             maxCount = v
         end
     end
-    
+
     return maxColor
+end
+
+--- 手动牌本帧是否球不足够发动（读 TickBallNotEnoughCardIdDict，O(1) 查询）。#手动牌球不足显隐
+--- 存"不足够"非"足够"：不足的牌 STE skip 持续停留 WaittingDone 稳定，足够的是瞬时态
+--- （自动模式立即释放移出/手动模式等点击）。STE tick 末算好（复用 CheckBallEnough，与
+--- ExecuteOneCardEffects:432 同口径），替代 UI 每卡遍历球槽。
+---@param uid any
+---@return boolean
+function XPunishaarSTEReader:IsCardBallNotEnough(uid)
+    local dict = self:_GetField(GlobalIds.Global, FieldNameType.TickBallNotEnoughCardIdDict)
+    if not dict or type(dict.GetByKey) ~= "function" then
+        return false
+    end
+    return dict:GetByKey(uid) == true
 end
 --endregion
 

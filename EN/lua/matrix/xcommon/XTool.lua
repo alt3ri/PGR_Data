@@ -351,12 +351,22 @@ local RomanNumberText = {
     [10] = CS.XTextManager.GetText("RomanTen")
 }
 
+local DoubleText = CS.XTextManager.GetText("Double")
+
 XTool.ParseNumberString = function(num)
     return NumberText[mathModf(num / 10)] .. NumberText[num % 10]
 end
 
 XTool.ConvertNumberString = function(num)
     return NumberText[num] or ""
+end
+
+---“2”→“双”
+XTool.ConvertChineseNumberString = function(num)
+    if num == 2 then
+        return DoubleText
+    end
+    return XTool.ConvertNumberString(num)
 end
 
 XTool.ConvertRomanNumberString = function(num)
@@ -1170,6 +1180,18 @@ function XTool.GetBezierPoint(time, startPoint, center, endPoint)
     return (1 - time) * (1 - time) * startPoint + 2 * time * (1 - time) * center + time * time * endPoint
 end
 
+--- 二次贝塞尔标量（单轴）：B(t) = (1-t)²·p0 + 2t(1-t)·p1 + t²·p2。
+--- 与 GetBezierPoint（Vector3 运算装箱）对标，避 Vector3 装拆箱；3D/2D 调用方按轴独立调用取 x/y[/z]。
+---@param time number 归一化参数 t∈[0,1]
+---@param p0 number 起点单轴坐标
+---@param p1 number 控制点单轴坐标
+---@param p2 number 终点单轴坐标
+---@return number 单轴贝塞尔结果
+function XTool.GetBezierScalar(time, p0, p1, p2)
+    local u = 1 - time
+    return u * u * p0 + 2 * u * time * p1 + time * time * p2
+end
+
 function XTool.StrToTable(str)
     local fn, err = load("return " .. str)
     if fn then
@@ -1182,7 +1204,11 @@ end
 
 function XTool.SortIdTable(idTable, isDescend)
     table.sort(idTable, function(a, b)
-        return isDescend and a > b or a < b
+        if isDescend then
+            return a > b
+        else
+            return a < b
+        end
     end)
 end
 
@@ -1804,6 +1830,34 @@ XTool.SetUISizeDelta = function(go, x, y)
     if not XTool.UObjIsNil(go) then
         return go.transform:SetUISizeDelta(x, y)
     end
+end
+
+--endregion
+
+--region 实例化相关
+
+---@param initSize number 初始化容量，可缺省
+---@return XList
+function XTool.XListNew(initSize)
+    ---@type XList
+    local xList = require("XCommon/XList")
+    
+    return xList.New(initSize)
+end
+
+---@param initSize number 初始化容量，可缺省
+---@return XDictionary
+function XTool.XDictionaryNew(initSzie)
+    local xDictionary = require("XCommon/XDictionary")
+    
+    return xDictionary.New(initSzie)
+end
+
+---@return XHash
+function XTool.XHashNew()
+    local xHash = require("XCommon/XHash")
+    
+    return xHash.New()
 end
 
 --endregion

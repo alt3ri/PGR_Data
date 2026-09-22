@@ -105,14 +105,27 @@ end
 ---@param cardCfg XTablePunishaarCard
 function XUiComBattleCardShow:RefreshBallCount(uid, reader, cardCfg)
     if self._BgApplier and cardCfg then
-        local gc = self._Control.GameControl
+        local gameControl = self._Control.GameControl
         local level = reader:GetCardLevel(uid)
-        local levelCfg = gc.FightControl:GetTablePunishaarCardLevel((cardCfg.Id or 0) * 100 + level)
+        local levelCfg = gameControl.FightControl:GetTablePunishaarCardLevel((cardCfg.Id or 0) * 100 + level)
         local configConsume = levelCfg and levelCfg.BallConsume or 0
         local configOutPut = levelCfg and levelCfg.BallOutPut or 0
-        self._BgApplier:Refresh(gc, cardCfg.Id, cardCfg.Type, cardCfg.Size, level, cardCfg.Color,
+        self._BgApplier:Refresh(gameControl, cardCfg.Id, cardCfg.Type, cardCfg.Size, level, cardCfg.Color,
             configConsume, configOutPut,
             reader:GetCardBallConsume(uid) or 0, reader:GetCardBallProduct(uid) or 0)
+    end
+end
+
+--- 轻量刷待激发显隐（ImgArrow + RImgOutlineGroup），由 grid:RefreshActivateState 调（球数变化时）。#手动牌球不足显隐
+--- canActivate 由 grid 已算好（ByHand+WaitingDone+球够），本方法只 SetActiveEx 不重算，避免全量 Refresh。
+---@param canActivate boolean
+function XUiComBattleCardShow:RefreshActivateState(canActivate)
+    if self.ImgArrow then
+        self.ImgArrow.gameObject:SetActiveEx(canActivate)
+    end
+    if self.RImgOutlineGroup then
+        -- outlineSprite 有效性在 Refresh 时缓存（卡不变则 outlineSprite 不变）；无缓存时保守隐
+        self.RImgOutlineGroup.gameObject:SetActiveEx(canActivate and self._HasOutlineSprite == true)
     end
 end
 
@@ -126,7 +139,9 @@ function XUiComBattleCardShow:Refresh(uid, reader, cardCfg)
     -- atk/cd 数值显示迁卡牌根节点 TagDamage/TagCD（grid 层 #79），本组件不再含
 
     if self.ImgArrow then
+        -- 球不足时不显示待激发箭头（与 CDTipsGroup 同口径）#手动牌球不足显隐
         local showArrow = reader:IsCardByHand(uid) and reader:IsCardWaitingDone(uid)
+            and not reader:IsCardBallNotEnough(uid)
         self.ImgArrow.gameObject:SetActiveEx(showArrow)
     end
 
@@ -152,9 +167,13 @@ function XUiComBattleCardShow:Refresh(uid, reader, cardCfg)
 
     -- 外描边 Group 显隐 + RImgOutline 子图设图（按 Type/Size 取 SizeOutline 外发光图）#64
     if self.RImgOutlineGroup then
-        local gc = self._Control.GameControl
-        local outlineSprite = gc and cardCfg and CardBgSettingsReader.GetOutlineSprite(gc, cardCfg.Type, cardCfg.Size) or nil
-        local showOutline = (reader:IsCardByHand(uid) and reader:IsCardWaitingDone(uid)) and outlineSprite ~= nil
+        local gameControl = self._Control.GameControl
+        local outlineSprite = gameControl and cardCfg and CardBgSettingsReader.GetOutlineSprite(gameControl, cardCfg.Type, cardCfg.Size) or nil
+        -- 球不足时不显示外发光（与 CDTipsGroup/ImgArrow 同口径）#手动牌球不足显隐
+        local showOutline = (reader:IsCardByHand(uid) and reader:IsCardWaitingDone(uid)
+            and not reader:IsCardBallNotEnough(uid)) and outlineSprite ~= nil
+        -- 缓存 outline 有效性供 RefreshActivateState 轻量刷（卡不变则 outlineSprite 不变）#手动牌球不足显隐
+        self._HasOutlineSprite = outlineSprite ~= nil
         if outlineSprite and self.RImgOutline then
             self.RImgOutline:SetRawImage(outlineSprite)
         end

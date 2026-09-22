@@ -191,8 +191,13 @@ function XGame2048DebugRecordControl:ExportToFile(data, directory, filename)
     end
     
     local filepath = directory..filename
+    
+    local file = io.open(filepath, "w")
+    if not file then error("无法创建文件: " .. filepath) end
+    
     local content = "return " .. self:SerializeRecord(data)
-    XTool.WriteAllText(filepath, content, "w")
+    file:write(content)
+    file:close()
 
     XLog.Error('[2048Recorder]录制保存成功：'..tostring(filepath))
 end

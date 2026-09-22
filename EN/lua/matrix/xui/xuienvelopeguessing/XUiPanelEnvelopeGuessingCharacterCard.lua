@@ -15,6 +15,10 @@ function XUiPanelEnvelopeGuessingCharacterCard:OnStart(charConf, onOpenCardCallb
     self:_InitSlider()
 end
 
+function XUiPanelEnvelopeGuessingCharacterCard:OnDisable()
+    self:_KillReverseOpenPackageAnimation()
+end
+
 function XUiPanelEnvelopeGuessingCharacterCard:SetAsOpenedAndPlayUnlockAnimation(isPlay)
     self.RImgCardPackage.gameObject:SetActiveEx(false)
     self.Slider.gameObject:SetActiveEx(false)
@@ -59,8 +63,12 @@ end
 
 function XUiPanelEnvelopeGuessingCharacterCard:_OnRelease()
     if self._ForceOpened then return end
-
+    self:_KillReverseOpenPackageAnimation()
     self._ReverseOpenPackageSchedule = XScheduleManager.ScheduleForever(function()
+        if XTool.UObjIsNil(self.OpenPackage) then
+            self:_KillReverseOpenPackageAnimation()
+            return
+        end
         self.OpenPackage.time = self.OpenPackage.time - CS.UnityEngine.Time.deltaTime
 
         if self.OpenPackage.time <= 0 then
@@ -92,9 +100,7 @@ function XUiPanelEnvelopeGuessingCharacterCard:ForceOpen(isForceOpen)
     if isForceOpen then
         self.OpenPackage:Play()
     else
-        if self.OpenPackage.time <= 0 then
-            self.OpenPackage:Evaluate()
-        end
+        self.OpenPackage:Evaluate()
         self.OpenPackage:Resume()
     end
 

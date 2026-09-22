@@ -43,7 +43,7 @@ function XUiCommonPopupGetCharacter:Refresh()
 
     -- TxtType: ElementName·CareerName（例如"雷·进攻型"）
     if elementConfig and careerConfig then
-        self.TxtType.text = elementConfig.ElementName .. "·" .. careerConfig.Name
+        self.TxtType.text = elementConfig.ElementName .. " " .. careerConfig.Name
     end
 
     -- TxtType 颜色: CharacterPopupGetCharacterController.tab 的 TxtTypeColor

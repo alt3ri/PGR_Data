@@ -1,21 +1,11 @@
 --- Control部分类（Shop partial，#72 编排策略链/找位算法/InsertCard/MoveCard 抽离至 Arrange partial）。
 --- 此处留 Shop 特有：商店操作（购买提交/卖出/丢弃/冻结/刷新）+ 商店商品升级判断（UI 查询）+ 副卡选宿主子流程（PickingHost）。
 --- 编排策略链 _ArrangeStrategies（在 Arrange partial）的 execute 经 self 调本 partial 的 _DoBuyGoodsFinal/SellCard（跨 partial 同类，无 self._Control 跳转）。
---- 委托 NetworkAgency:Do* + Model 同步 + 派发 ShopEventId.BuySuccess 刷新商品/装备栏。
+--- 委托 NetworkAgency:Do* + Model 同步 + 派发 EventId.Shop.BuySuccess 刷新商品/装备栏。
 --- 被 UI（商品卡/装备栏/Tips 按钮）+ 拖拽中枢（_DropAction_*）调用。
 
 local XPunishaarGameControl = XClassPartial('XPunishaarGameControl')
 
--- 商店相关表现层事件（grid/panel 派发与订阅，与局内 FightControl.EventIds 分开）
-XPunishaarGameControl.ShopEventId = {
-    BuySuccess = "PunishaarShopBuySuccess", -- 购买成功：由 BuyGoods 在服务端确认后派发
-    PickHostChange = "PunishaarShopPickHostChange", -- 副卡选宿主子流程态变更（进入/退出 PickingHost）#69
-    LevelupAnimPlay = "PunishaarShopLevelupAnimPlay", -- 升级动画播放：BuySuccess 刷新后派发，grid 订阅检查缓存匹配+清+播 #升级动画
-    RefreshShopSuccess = "PunishaarShopRefreshSuccess", -- 刷新商店成功（服务端下发新商品）：FightMain 订阅播 ReShow 根动画 #商店刷新动效
-    RefreshShopFail = "PunishaarShopRefreshFail", -- 刷新商店链路失败（服务端Code失败/网络异常）：FightMain 订阅播 ReShowFail 根动画 #商店刷新动效
-    ShopPanelAnimEnable = "PunishaarShopPanelAnimEnable", -- 商店栏展开动效（切态进入/BtnExpand/互斥还原）：FightMain 订阅播 PanelShopAnimEnable 根动画 #商店栏动效
-    ShopPanelAnimDisable = "PunishaarShopPanelAnimDisable", -- 商店栏收起动效（BtnFoldUp/背包展开前/PickHost进入）：FightMain 订阅播 PanelShopDisable 根动画 #商店栏动效
-}
 
 --- 刷新商店商品并更新 Model 节点
 ---@param cb function(success: boolean)
@@ -25,7 +15,7 @@ function XPunishaarGameControl:RefreshShop(cb)
     local gold = self:GetControl():GetCurrentGold() or 0
     if gold < cost then
         XUiManager.TipMsg(XMVCA.XPunishaar:GetClientStringByKey("ShopRefreshNotEnoughCoin"))
-        self:DispatchEvent(self.ShopEventId.RefreshShopFail)
+        self:DispatchEvent(self.EventId.Shop.RefreshShopFail)
         if cb then
             cb(false)
         end
@@ -34,7 +24,7 @@ function XPunishaarGameControl:RefreshShop(cb)
     XMVCA.XPunishaar.NetworkAgency:DoRefreshShop(function(node)
         if not node then
             -- 刷新链路失败（服务端 Code 失败 / 网络异常经 DoRefreshShop 补 cb(nil) 传播）：派发 Fail 供 FightMain 播 ReShowFail
-            self:DispatchEvent(self.ShopEventId.RefreshShopFail)
+            self:DispatchEvent(self.EventId.Shop.RefreshShopFail)
             if cb then
                 cb(false)
             end
@@ -47,11 +37,11 @@ function XPunishaarGameControl:RefreshShop(cb)
             XUiManager.TipMsg(successTip)
         end
         -- 派发 RefreshShopSuccess：FightMain 订阅播 ReShow 根动画（商店列表刷新动效）#商店刷新动效
-        self:DispatchEvent(self.ShopEventId.RefreshShopSuccess)
+        self:DispatchEvent(self.EventId.Shop.RefreshShopSuccess)
         -- 派发 BuySuccess 联动刷新：商品列表变后战斗区卡升级标记(CanOwnedCardUpgradeByShop)+
         -- 背包入口红点(HasBagCardUpgradeableByShop)需重算（与 BuyGoods/SellCard/FreezeGoods 同事件，
         -- 注释 :93 原意；实现漏派发致刷新商品后战斗区/背包入口升级标记不刷 #74）
-        self:DispatchEvent(self.ShopEventId.BuySuccess)
+        self:DispatchEvent(self.EventId.Shop.BuySuccess)
         if cb then
             cb(true)
         end
@@ -59,7 +49,7 @@ function XPunishaarGameControl:RefreshShop(cb)
 end
 
 --- BuyGoods 发请求 + 回流统一入口（升级/非升级路径共用，#61 抽取）。
---- 成功后 Model:SetCurrentNode + 购买成功提示 + 派发 ShopEventId.BuySuccess 刷新 UI；
+--- 成功后 Model:SetCurrentNode + 购买成功提示 + 派发 EventId.Shop.BuySuccess 刷新 UI；
 --- 升级合成的 AddedCard/RemovedCardIds 由服务端 NotifyPunishaarMasterCardChange→Model:UpdateMasterCardByNotify 回流统一处理。
 ---@param goodsIndex number
 ---@param cardDetail table { AreaType, StartPos, SubCardId, MasterCardId }
@@ -83,9 +73,9 @@ function XPunishaarGameControl:_DoBuyGoodsFinal(goodsIndex, cardDetail, cb)
         if not string.IsNilOrEmpty(successTip) then
             XUiManager.TipMsg(successTip)
         end
-        self:DispatchEvent(self.ShopEventId.BuySuccess)
+        self:DispatchEvent(self.EventId.Shop.BuySuccess)
         -- 升级动画播放：BuySuccess 同步刷新完成后派发（grid 已重建 Open + 新 card），grid 订阅检查缓存匹配+清+播 #升级动画
-        self:DispatchEvent(self.ShopEventId.LevelupAnimPlay)
+        self:DispatchEvent(self.EventId.Shop.LevelupAnimPlay)
         if cb then
             cb(true)
         end
@@ -117,7 +107,7 @@ function XPunishaarGameControl:FreezeGoods(goodsIndex, isFreeze, cb)
         end
         self._Model:SetCurrentNode(node)
         -- 冻结/解冻成功：刷新商品列表（与 BuyGoods/SellCard/RefreshShop 同事件，冻结图标随之更新）
-        self:DispatchEvent(self.ShopEventId.BuySuccess)
+        self:DispatchEvent(self.EventId.Shop.BuySuccess)
         if cb then
             cb(true)
         end
@@ -126,7 +116,7 @@ end
 
 --- 卖出主卡（含镶嵌副卡一并卖出，按 Sell 总和加金币）。
 --- 包装 NetworkAgency:DoSellCard，补 Model 移除（DoSellCard 内部 TODO 的本地同步），
---- 成功后派发 ShopEventId.BuySuccess 让装备栏/背包刷新（与 BuyGoods 同事件，刷新逻辑统一）。
+--- 成功后派发 EventId.Shop.BuySuccess 让装备栏/背包刷新（与 BuyGoods 同事件，刷新逻辑统一）。
 ---@param masterCardId number 主卡唯一 Id（MasterCard.Id，非 TemplateId）
 ---@param cb function(success: boolean)
 function XPunishaarGameControl:SellCard(masterCardId, cb)
@@ -154,7 +144,7 @@ function XPunishaarGameControl:SellCard(masterCardId, cb)
         end
         -- 刷新装备栏/背包（与 BuyGoods 同事件）
         -- TODO: 若有独立 SellSuccess 事件再补；现复用 BuySuccess 触发统一刷新
-        self:DispatchEvent(self.ShopEventId.BuySuccess)
+        self:DispatchEvent(self.EventId.Shop.BuySuccess)
         if cb then
             cb(true)
         end
@@ -163,7 +153,7 @@ end
 
 --- 丢弃卡牌（主卡 or 副卡）。
 --- IsMasterCard=true 丢弃主卡本身（含镶嵌副卡一并丢弃）；false 丢弃该主卡携带的副卡。
---- 成功后 Model 本地同步 + 派发 ShopEventId.BuySuccess 刷新 UI（与 BuyGoods/SellCard 同事件统一刷新）。
+--- 成功后 Model 本地同步 + 派发 EventId.Shop.BuySuccess 刷新 UI（与 BuyGoods/SellCard 同事件统一刷新）。
 ---@param masterCardId number 主卡唯一 Id（丢弃副卡时亦用此定位其所在主卡）
 ---@param isMasterCard boolean true=丢弃主卡，false=丢弃副卡
 ---@param cb function(success: boolean)
@@ -181,7 +171,7 @@ function XPunishaarGameControl:DiscardCard(masterCardId, isMasterCard, cb)
         else
             self._Model:UpdateSubCardByNotify(masterCardId, 0)
         end
-        self:DispatchEvent(self.ShopEventId.BuySuccess)
+        self:DispatchEvent(self.EventId.Shop.BuySuccess)
         if cb then
             cb(true)
         end
@@ -321,7 +311,7 @@ end
 function XPunishaarGameControl:EnterPickHost(goodsIndex, subCardId)
     self._PickingHostCtx = { goodsIndex = goodsIndex, subCardId = subCardId }
     self._PendingPickHostTipOpen = true  -- 标记待开弹窗，收起动画 cb / 已收起兜底时消费
-    self:DispatchEvent(self.ShopEventId.PickHostChange, true)
+    self:DispatchEvent(self.EventId.Shop.PickHostChange, true)
 end
 
 --- 开 PickHost 弹窗（收起动画完成 cb 或已收起态直接调）。幂等：无 pending no-op。
@@ -343,7 +333,7 @@ function XPunishaarGameControl:ExitPickHost()
     self._PickingHostCtx = nil
     self._PendingPickHostTipOpen = nil  -- 取消延迟开（动画 cb 前退出防误开）#副卡购买收起后开弹窗
     XLuaUiManager.Close("UiPunishaarSellCardTip")
-    self:DispatchEvent(self.ShopEventId.PickHostChange, false)
+    self:DispatchEvent(self.EventId.Shop.PickHostChange, false)
 end
 
 --- 是否在副卡选宿主子流程中。

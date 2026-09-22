@@ -180,6 +180,18 @@ XPurchaseManagerCreator = function()
         XEventManager.DispatchEvent(XEventId.EVENT_PURCHASE_CLEAR_DATA)
     end
 
+    ---礼包数据是否被清空
+    function XPurchaseManager.IsPurchaseInfosEmpty()
+        local uiTypes = XPurchaseConfigs.GetYKUiTypes()
+        local yktype = uiTypes and uiTypes[1]
+        for uiType in pairs(PurchaseInfosData) do
+            if uiType ~= yktype then
+                return false
+            end
+        end
+        return true
+    end
+
     -- RPC
     -- // 失效时间
     -- public int TimeToInvalid;
@@ -913,6 +925,7 @@ XPurchaseManagerCreator = function()
         data.Priority = purchaseInfo.Priority
         data.Icon = purchaseInfo.Icon
         data.DailyRewardRemainDay = purchaseInfo.DailyRewardRemainDay
+        data.ResMonthlyCardRemainDayList = purchaseInfo.ResMonthlyCardRemainDayList
         data.UiType = purchaseInfo.UiType
         data.ConsumeId = purchaseInfo.ConsumeId
         data.TimeToShelve = purchaseInfo.TimeToShelve
@@ -974,20 +987,13 @@ XPurchaseManagerCreator = function()
         local datas = XPurchaseManager.GetYKInfoDatas()
         if not datas then return nil end
 
-        if XOverseaManager.IsENRegion() then
-            for _, data in pairs(datas) do
-                if not data.IsUseMail and data.DailyRewardRemainDay > 0 then
-                    return data
-                end
+        for i = 1, #datas do
+            local data = datas[i]
+            if not data.IsUseMail and data.DailyRewardRemainDay > 0 then
+                return data
             end
-            return nil
-        else
-            if not datas[1] then
-                return nil
-            end
-
-            return datas[1]
         end
+        return nil
     end
 
     function XPurchaseManager.GetYKInfoDataById(monthlyCardId)

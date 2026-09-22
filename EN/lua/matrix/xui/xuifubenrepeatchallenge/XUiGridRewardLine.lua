@@ -42,21 +42,11 @@ function XUiGridRewardLine:Refresh(rewardGoodsList, index, stageId)
     end
 end
 
--- 记录存在额外奖励的TemplateId（合并前）
+-- 记录存在多倍奖励的TemplateId（合并前）
 function XUiGridRewardLine:RecordGiftTemplateIds(rewardGoodsList)
-    local giftTemplateIds = nil
+    -- 回归双倍与多倍奖励活动共用RewardMulti字段，统一按服务端实际下发的倍率记录
+    local giftTemplateIds = {}
 
-    -- 先判断玩家是否是回归玩家且拥有双倍奖励次数
-    if not XMVCA.XReCallActivity:CheckIsRegressionPlayer() then
-        return giftTemplateIds
-    end
-
-    -- 这里只要玩家是回归玩家，那么复刷关这里的IsGift就是双倍奖励送的
-    -- 如果存在其他活动也会有额外奖励，则需要额外加字段来比较
-
-    giftTemplateIds = {}
-
-    -- 遍历记录哪些TemplateId存在IsGift标记的奖励
     for _, item in ipairs(rewardGoodsList) do
         if XTool.IsNumberValidEx(item.RewardMulti) then
             giftTemplateIds[item.TemplateId] = item.RewardMulti
@@ -70,17 +60,26 @@ end
 ---@param reward XRewardGoods
 function XUiGridRewardLine:RewardShowEx(grid, reward)
     if grid.PanelDouble then
-        -- 检查合并后的奖励是否有对应的Gift记录
+        -- 检查合并后的奖励是否有对应的多倍记录
         local rewardMulti = self._GiftTemplateIdRecord and self._GiftTemplateIdRecord[reward.TemplateId] or 0
 
-        -- 使用传入的hasGift参数判断，而非reward.IsGift
-        if rewardMulti == 2 then
+        -- 服务端只对实际消耗了双倍次数的场次下发RewardMulti，未翻倍的场次不能显示翻倍角标
+        if rewardMulti > 1 then
             grid.PanelDouble.gameObject:SetActiveEx(true)
+            self:SetRewardMultiText(grid, rewardMulti)
             return
         end
 
         grid.PanelDouble.gameObject:SetActiveEx(false)
     end
+end
+
+function XUiGridRewardLine:SetRewardMultiText(grid, multiple)
+    if not grid.TxtSite then
+        return
+    end
+    local countStr = XTool.ConvertChineseNumberString(multiple)
+    grid.TxtSite.text = XUiHelper.GetText("ActivityRepeatChallengeMultiRewardTag2", countStr)
 end
 
 return XUiGridRewardLine

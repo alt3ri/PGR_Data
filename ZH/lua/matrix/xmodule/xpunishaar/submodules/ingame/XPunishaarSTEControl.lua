@@ -22,6 +22,10 @@ function XPunishaarSTEControl:OnInit()
     ---@type XList
     self._DrainEventList = XList.New()
 
+    -- 帧末球动画 step Drain 缓冲（bus drain 之前，UI 收 BallAnimSteps 时 stepList 完整）#消球动效动画队列
+    ---@type XList
+    self._DrainBallAnimStepList = XList.New()
+
     -- 自动战斗开关缓存（镜像 SpeedController 范式：缓存+InitFromSave+getter，不每帧读 vm）#Auto
     self._AutoEnabled = false
     -- 埋点：本局曾真正启用过自动战斗（门控通过 _AutoEnabled=true 时记 true，once true 永 true，仿 FightControl._UsedDoubleSpeed）#IsAutoFight
@@ -41,6 +45,8 @@ end
 
 function XPunishaarSTEControl:OnRelease()
     self:OnEndGame()
+    -- 清 STE 模块级缓存（BuffSortedBuf 跨帧缓存，防退出战斗后数据滞留下局误读）#buff优先级排序
+    XPunishaarSTEPipeline.ClearBattleBuffers()
 end
 
 --- 初始化新一局
@@ -280,8 +286,18 @@ function XPunishaarSTEControl:STETick()
     STEHelper.RunStep(self._STEEnv, XPunishaarSTEPipeline.TickBattlePacing, false, nil, self._MainControl, self._MainControl:GetLogicFrame())
 
     STEHelper.RunStep(self._STEEnv, XPunishaarSTEPipeline.OnTickEnd, false)
-    
-    -- 帧末派发事件（_DrainEventList 复用，Drain :Append 填充，ipairs 遍历派发）
+
+    -- 帧末球态稳定后记录"球不足够发动"手动牌集合（OnTickEnd 后、bus drain 前：算好供 UI 收 BallListChanged 时读）#手动牌球不足显隐
+    STEHelper.RunStep(self._STEEnv, XPunishaarSTEPipeline.TickBallNotEnoughCards, false, nil, self._MainControl)
+
+    -- ① 球动画 step 队列 drain + dispatch（bus 之前，UI 收 BallAnimSteps 时 stepList 完整；批量传 stepList 引用，UI 同步遍历 EnqueueStep+StartPlay #消球动效动画队列）
+    self._STEEnv:DrainBallAnimSteps(self._DrainBallAnimStepList)
+    if self._DrainBallAnimStepList:GetCount() > 0 then
+        self._MainControl:DispatchEvent(self._MainControl.EventIds.BallAnimSteps, self._DrainBallAnimStepList)
+    end
+    self._DrainBallAnimStepList:Clear()
+
+    -- ② bus drain + dispatch（BallListChanged → UI Refresh 重建 grid）
     self._STEEnv:GetEventSystem():Drain(self._DrainEventList)
 
     if self._DrainEventList:GetCount() > 0 then

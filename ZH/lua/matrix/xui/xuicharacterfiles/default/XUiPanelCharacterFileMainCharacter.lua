@@ -59,7 +59,12 @@ function XUiPanelCharacterFileMainCharacter:Refresh()
         local endTime = XFunctionManager.GetEndTimeByTimeId(self.Config.TimeId)
         local leftTime = endTime - now
         self.TxtTime.text = XUiHelper.GetTime(leftTime, XUiHelper.TimeFormatType.CHATEMOJITIMER)
-        self.TxtTips.gameObject:SetActiveEx(not isFinish)
+
+        if self.TxtTimeRoot then
+            self.TxtTimeRoot.gameObject:SetActiveEx(not isFinish)
+        else
+            self.TxtTips.gameObject:SetActiveEx(not isFinish)
+        end
     end
 
     if self.Grid256New and self.Config.RewardId then

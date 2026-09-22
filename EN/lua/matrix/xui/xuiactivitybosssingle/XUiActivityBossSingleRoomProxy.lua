@@ -51,6 +51,7 @@ end
 
 function XUiActivityBossSingleRoomProxy:AOPOnEnableAfter(rootUi)
     local count = self._NeedCharacterCount
+    rootUi.PanelTeamLeader.gameObject:SetActiveEx(count ~= 1)
     if count >= MAX_ROLE_COUNT then return end
     for pos = count + 1, MAX_ROLE_COUNT do
         if rootUi["BtnChar" .. pos] then

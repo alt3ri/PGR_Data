@@ -1,5 +1,5 @@
-local XUiGridShopCard          = require("XUi/XUiPunishaar/XUiPunishaarFightMain/UiShop/XUiGridShopCard")
-local XUiGridShopCardSlot      = require("XUi/XUiPunishaar/XUiPunishaarFightMain/UiShop/XUiGridShopCardSlot")
+local XUiGridShopCard = require("XUi/XUiPunishaar/XUiPunishaarFightMain/UiShop/XUiGridShopCard")
+local XUiGridShopCardSlot = require("XUi/XUiPunishaar/XUiPunishaarFightMain/UiShop/XUiGridShopCardSlot")
 local XUiPanelPunishaarSellEffect = require("XUi/XUiPunishaar/XUiPunishaarFightMain/UiShop/Panel/XUiPanelPunishaarSellEffect")
 local XUiNodeList = require("XUi/XUiCommon/XUiNodeList")
 
@@ -26,7 +26,7 @@ function XUiPunishaarFightMainPanelTopShop:InitComponents()
     if self.ExpandBtnExitShop then
         self.ExpandBtnExitShop:AddEventListener(exitHandler)
     end
-    
+
     -- 商品卡/槽位列表容器：模板恒 inactive 仅作克隆源（根治 XUiEffectLayer 特效层级二次叠层），
     -- 内部持 XUiNode 实例替代原 _CardGridDict/_SlotGridDict + _SlotList 手工缓存。
     ---@type XUiNodeList
@@ -60,20 +60,42 @@ function XUiPunishaarFightMainPanelTopShop:SetFolded(folded)
 end
 
 function XUiPunishaarFightMainPanelTopShop:OnEnable()
-    XEventManager.AddEventListener(XEventId.EVENT_PUNISHAAR_GOLD_CHANGE, self._OnGoldChange, self)
+    local gameControl = self._Control.GameControl  -- #事件统合 补 local（DRAG 订阅经 gameControl:）
+    XMVCA.XPunishaar:AddEventListener(XMVCA.XPunishaar.EventIds.EVENT_PUNISHAAR_INNER_GOLD_CHANGE, self._OnGoldChange, self)
     -- 拖拽开始/结束：显隐卖出区组件 #50
-    XEventManager.AddEventListener(XEventId.EVENT_PUNISHAAR_DRAG_BEGIN, self._OnDragBegin, self)
-    XEventManager.AddEventListener(XEventId.EVENT_PUNISHAAR_DRAG_END, self._OnDragEnd, self)
+    gameControl:AddEventListener(gameControl.EventId.Drag.DragBegin, self._OnDragBegin, self)
+    gameControl:AddEventListener(gameControl.EventId.Drag.DragEnd, self._OnDragEnd, self)
 end
 
 function XUiPunishaarFightMainPanelTopShop:OnDisable()
-    XEventManager.RemoveEventListener(XEventId.EVENT_PUNISHAAR_GOLD_CHANGE, self._OnGoldChange, self)
-    XEventManager.RemoveEventListener(XEventId.EVENT_PUNISHAAR_DRAG_BEGIN, self._OnDragBegin, self)
-    XEventManager.RemoveEventListener(XEventId.EVENT_PUNISHAAR_DRAG_END, self._OnDragEnd, self)
+    local gameControl = self._Control.GameControl  -- #事件统合 补 local（DRAG 订阅经 gameControl:）
+    -- 兜底恢复按钮（防 DRAG_END 随 OnDisable 注销后未触发、enabled=false 残留致永久不可点）#拖拽中禁功能按钮
+    if self.BtnRefresh then
+        self.BtnRefresh.enabled = true
+    end
+    if self.BtnExitShop then
+        self.BtnExitShop.enabled = true
+    end
+    if self.BtnFoldUp then
+        self.BtnFoldUp.enabled = true
+    end
+    XMVCA.XPunishaar:RemoveEventListener(XMVCA.XPunishaar.EventIds.EVENT_PUNISHAAR_INNER_GOLD_CHANGE, self._OnGoldChange, self)
+    gameControl:RemoveEventListener(gameControl.EventId.Drag.DragBegin, self._OnDragBegin, self)
+    gameControl:RemoveEventListener(gameControl.EventId.Drag.DragEnd, self._OnDragEnd, self)
 end
 
 function XUiPunishaarFightMainPanelTopShop:OnDestroy()
     self._FoldHandler = nil
+    -- 兜底恢复按钮（同 OnDisable，防 Destroy 路径未恢复）#拖拽中禁功能按钮
+    if self.BtnRefresh then
+        self.BtnRefresh.enabled = true
+    end
+    if self.BtnExitShop then
+        self.BtnExitShop.enabled = true
+    end
+    if self.BtnFoldUp then
+        self.BtnFoldUp.enabled = true
+    end
 end
 
 --- 设置"折叠"上报回调（自上而下注入，由父 PanelShop 统一管理折叠态与互斥 #70）。
@@ -85,6 +107,9 @@ end
 
 --- 折叠商店面板：上报父对象（父负责 Close 本面板 + 显折叠态绳索）。
 function XUiPunishaarFightMainPanelTopShop:OnBtnFoldUpClick()
+    if self._Control.GameControl:GetIsDraggingCard() then
+        return  -- 拖拽中功能按钮不响应 #拖拽中禁功能按钮
+    end
     if self._FoldHandler then
         self._FoldHandler()
     end
@@ -96,6 +121,16 @@ function XUiPunishaarFightMainPanelTopShop:_OnDragBegin()
     -- 但父 inactive 下 SellEffect:Open 无效（activeInHierarchy=false，违活跃祖先不变式）——收起态直接跳过 #SellEffect商店态
     if not self.GameObject.activeInHierarchy then
         return
+    end
+    -- 拖拽中禁功能按钮（enabled=false 禁用 Selectable 组件，不切 Select 态、不响应点击、视觉态不变）#拖拽中禁功能按钮
+    if self.BtnRefresh then
+        self.BtnRefresh.enabled = false
+    end
+    if self.BtnExitShop then
+        self.BtnExitShop.enabled = false
+    end
+    if self.BtnFoldUp then
+        self.BtnFoldUp.enabled = false
     end
     local dragData = self._Control.GameControl:GetDraggingCardData()
     local srcArea = self._Control.GameControl:GetDraggingSourceArea()
@@ -113,6 +148,16 @@ end
 function XUiPunishaarFightMainPanelTopShop:_OnDragEnd()
     if self.SellEffect then
         self.SellEffect:Close()
+    end
+    -- 恢复功能按钮（_OnDragBegin enabled=false 的对称）#拖拽中禁功能按钮
+    if self.BtnRefresh then
+        self.BtnRefresh.enabled = true
+    end
+    if self.BtnExitShop then
+        self.BtnExitShop.enabled = true
+    end
+    if self.BtnFoldUp then
+        self.BtnFoldUp.enabled = true
     end
 end
 
@@ -134,7 +179,9 @@ end
 --- 刷新刷新按钮显示：费用文本 + 金币不足时禁用按钮（灰显作不足信号，不依赖 richText）。
 --- 费用 = 基础 + 增量 × 已刷新次数（见 Control:GetShopRefreshCost）。
 function XUiPunishaarFightMainPanelTopShop:_RefreshRefreshBtn()
-    if not self.BtnRefresh then return end
+    if not self.BtnRefresh then
+        return
+    end
     local cost = self._Control:GetShopRefreshCost() or 0
     local gold = self._Control:GetCurrentGold() or 0
     local canAfford = gold >= cost
@@ -148,7 +195,9 @@ function XUiPunishaarFightMainPanelTopShop:Refresh()
         return
     end
     local goods = self._Control:GetCurrentShopGoods()
-    if not goods then return end
+    if not goods then
+        return
+    end
 
     -- 复用成员表 + 内层条目表（每次 Refresh 重填，避免 per-call 新建 table 抖 GC）
     if self._DisplayList == nil then
@@ -211,6 +260,9 @@ function XUiPunishaarFightMainPanelTopShop:CloseAllGrids()
 end
 
 function XUiPunishaarFightMainPanelTopShop:OnBtnExitShopClick()
+    if self._Control.GameControl:GetIsDraggingCard() then
+        return  -- 拖拽中功能按钮不响应（防拖拽刷新层级乱/误操作）#拖拽中禁功能按钮
+    end
     if self._Control:IsInRemedyShop() then
         self._Control.GameControl:LeaveRemedyShop()
     else
@@ -219,6 +271,9 @@ function XUiPunishaarFightMainPanelTopShop:OnBtnExitShopClick()
 end
 
 function XUiPunishaarFightMainPanelTopShop:OnBtnRefreshClick()
+    if self._Control.GameControl:GetIsDraggingCard() then
+        return  -- 拖拽中功能按钮不响应（防拖拽中 BuySuccess→RefreshAll 重建 grid 致拖拽卡层级降）#拖拽中禁功能按钮
+    end
     -- 金币不足校验移至 Control:RefreshShop 收口（不足派发 RefreshShopFail 供 FightMain 播 ReShowFail）#商店刷新动效
     -- RefreshShop 成功后派发 BuySuccess→RefreshAll 统一刷（含本 TopShop:Refresh 商品卡升级标记 +
     -- 战斗区卡装备态升级标记 _RefreshEquippedTags + 背包入口红点），无需回调自刷 #74

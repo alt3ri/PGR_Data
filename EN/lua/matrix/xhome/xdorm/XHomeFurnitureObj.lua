@@ -154,9 +154,9 @@ function XHomeFurnitureObj:OnLoadComplete()
     end
 
     if self.PlaceType == XFurniturePlaceType.Ceiling then
-        self.GameObject:SetLayerRecursively(CS.UnityEngine.LayerMask.NameToLayer(HomeSceneLayerMask.Block))
+        self.GameObject:SetLayerRecursively(CS.UnityEngine.LayerMask.NameToLayer(LayerMaskName.Block))
     else
-        self.GameObject:SetLayerRecursively(CS.UnityEngine.LayerMask.NameToLayer(HomeSceneLayerMask.Device))
+        self.GameObject:SetLayerRecursively(CS.UnityEngine.LayerMask.NameToLayer(LayerMaskName.SceneObject))
     end
 
     self:SetData(self.Data)
@@ -891,7 +891,7 @@ function XHomeFurnitureObj:AdjustPosition(screenPos)
     end
 
     local ray = camera:ScreenPointToRay(Vector3(screenPos.x, screenPos.y, 0))
-    local layerMask = CS.UnityEngine.LayerMask.GetMask("HomeSurface")
+    local layerMask = CS.UnityEngine.LayerMask.GetMask(LayerMaskName.Terrain)
     if (layerMask) then
         local ret, hit = ray:RayCast(layerMask)
         if ret then
@@ -1333,7 +1333,7 @@ function XHomeFurnitureObj:OnPress(pressTime)
             XEventManager.DispatchEvent(XEventId.EVENT_CHARACTER_PUT_ON, self.Data.CfgId, self.Transform, false)
             self.IsPressing = true
         elseif pressTime >= self.DormPutOnAnimaTime then
-            self.GameObject:SetLayerRecursively(CS.UnityEngine.LayerMask.NameToLayer(HomeSceneLayerMask.HomeCharacter))
+            self.GameObject:SetLayerRecursively(CS.UnityEngine.LayerMask.NameToLayer(LayerMaskName.Npc))
             self:SidewaysSceneCamera()
             self.OrignalPosition = self.Transform.position
             self.Transform.position = CS.UnityEngine.Vector3(self.OrignalPosition.x, self.OrignalPosition.y + PutOnOffeY, self.OrignalPosition.z)
@@ -1384,7 +1384,7 @@ function XHomeFurnitureObj:OnBehaviorDrag(eventData)
     end
     self.Transform.position = CS.UnityEngine.Vector3(pos.x, self.OrignalPosition.y + PutOnOffeY, pos.z)
     --判断射线碰到家私
-    local layerMask = CS.UnityEngine.LayerMask.GetMask("Device")
+    local layerMask = CS.UnityEngine.LayerMask.GetMask(LayerMaskName.SceneObject)
     if layerMask then
         local hit = self.Transform:PhysicsRayCast(CS.UnityEngine.Vector3.up * 100, CS.UnityEngine.Vector3.down, layerMask)
         if not XTool.UObjIsNil(hit) then
@@ -1433,7 +1433,7 @@ function XHomeFurnitureObj:OnPointerUp(eventData)
     end
 
     if self.Status == XHomeBehaviorStatus.GRAB_UP or self.IsPressing then
-        self.GameObject:SetLayerRecursively(CS.UnityEngine.LayerMask.NameToLayer(HomeSceneLayerMask.Device))
+        self.GameObject:SetLayerRecursively(CS.UnityEngine.LayerMask.NameToLayer(LayerMaskName.SceneObject))
         XEventManager.DispatchEvent(XEventId.EVENT_CHARACTER_PUT_DOWN)
     end
 

@@ -52,10 +52,7 @@ end
 
 function XUiCharacterDetail:OnBtnEquipRecomendClick()
     --self:SwitchView(CharDetailUiType.Equip)
-    local isOwn = XMVCA:GetAgency(ModuleId.XCharacter):IsOwnCharacter(self.CharacterId)
-    local isUnlock = XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.EquipGuideRecommend)
-    local canSet = isOwn and isUnlock
-    XDataCenter.EquipGuideManager.OpenEquipGuideRecommend(self.CharacterId, not canSet)
+    XMVCA.XTeamRecommend:OpenCharacterRecommend(self.CharacterId)
 end
 
 function XUiCharacterDetail:OnBtnDetialClick()
@@ -153,7 +150,7 @@ function XUiCharacterDetail:OnStart(CharacterId)
     -- self.BtnArchive.gameObject:SetActiveEx(true)
     self.BtnDetial.gameObject:SetActiveEx(false)
     self.AssetPanel:Close()
-    self.BtnEquipRecomend.gameObject:SetActiveEx(XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.EquipGuideRecommend))
+    self.BtnEquipRecomend.gameObject:SetActiveEx(XFunctionManager.JudgeCanOpen(XFunctionManager.FunctionName.TeamRecommend))
     
     self:SwitchView(CharDetailUiType.Detail)
 

@@ -65,6 +65,18 @@
 ---@field private _AwarenessAwakeCallback fun(isSuccess:boolean, errorCode:any)|nil
 local XEquipAwakeControl = XClass(XControl, 'XEquipAwakeControl')
 
+--- 超频自动兑换仅在玩家勾选且兑换商店已解锁时生效。
+---@param options XEquipFullAwakePreviewOptions|XEquipAvailableAwakePreviewOptions|nil
+---@return boolean
+local function IsAwakeAutoExchangeEnabled(options)
+    if not options or options.IsAutoExchangeEnabled ~= true then
+        return false
+    end
+
+    -- 超频兑换商店当前仅受基础等级条件限制，无需额外判断商店有效信息。
+    return XShopManager.IsShopUnlock(XGuildConfig.GuildPersonalShop)
+end
+
 ---@param countDic table<number, number> 道具数量字典
 ---@param itemId number|nil 道具 Id
 ---@param count number|nil 增量数量
@@ -387,7 +399,7 @@ function XEquipAwakeControl:CalcAvailableAwakePreviewCost(options)
         return BuildEmptyAwakePreview()
     end
 
-    local isAutoExchangeEnabled = options and options.IsAutoExchangeEnabled == true
+    local isAutoExchangeEnabled = IsAwakeAutoExchangeEnabled(options)
     local previewRemainItemCountDic = options and options.PreviewRemainItemCountDic
 
     return self:_BuildAvailableAwakePreviewResult(targetAwakeInfoList, previewRemainItemCountDic, isAutoExchangeEnabled)
@@ -399,7 +411,7 @@ end
 ---@return XEquipAwakePreviewResult result 全量超频到上限的资源预览结果
 function XEquipAwakeControl:CalcFullAwakePreviewCost(equipIds, options)
     local result = BuildEmptyAwakePreview()
-    local isAutoExchangeEnabled = options and options.IsAutoExchangeEnabled == true
+    local isAutoExchangeEnabled = IsAwakeAutoExchangeEnabled(options)
 
     if XTool.IsTableEmpty(equipIds) then
         return result

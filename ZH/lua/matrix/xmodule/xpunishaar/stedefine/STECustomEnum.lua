@@ -17,6 +17,7 @@ STECustomEnum.BlackBoardKeys = {
     OwnCardId = "OwnCardId",     -- 执行者
     OwnBuffId = "OwnBuffId",    -- buffId
     ATK = "ATK",                -- 伤害计算的中间值
+    TimeMask = "TimeMask",      -- 当前 Effect 执行时机 mask（Runtime/OnEquip/OnBattleStart，BattleStart=6 仅 _ClampTickCDToCdMax 兼容用），供 Effect 取用 #TimeMask
 }
 
 -- 实体类型标签
@@ -84,11 +85,13 @@ STECustomEnum.FieldNameType = {
     TickAccelEntityList = "TickAccelEntityList",                -- 当前时刻 CD 被加速推进的实体（AccelerateCardCD 写入）
     TickClickCardIdDict = "TickClickCardIdDict",                -- 当前接收输入的卡牌Id
     WaittingDoneCardIdList = "WaittingDoneCardIdList",          -- 等待释放的卡牌id列表
+    TickBallNotEnoughCardIdDict = "TickBallNotEnoughCardIdDict", -- 帧末"球不足够发动"手动牌集合（uid→true；存不足够非足够：不足的牌 STE skip 持续停留 WaittingDone 稳定，足够的是瞬时态——自动模式立即释放移出/手动模式等点击；供 UI 隐藏"点击触发"字样+外发光）#手动牌球不足显隐
     BallList = "BallList",                                      -- 球槽
     BallSlotCapacity = "BallSlotCapacity",                      -- 球槽容量上限
     FightId = "FightId",                                        -- 本场选中的 Fight.Id（场级，敌人现查配置）
     CardEntityIds = "CardEntityIds",                            -- 卡牌实体Id列表(方便搜索）
     BuffEntityIds = "BuffEntityIds",                            -- Buff实体Id列表（方便搜索）
+    BuffListDirty = "BuffListDirty",                            -- buff 列表脏标记（0/1，_Init/_Destroy 置 1，TickAllBuffs 懒排序重排后清 0）#buff优先级排序
     SubCardDict = "SubCardDict",                                -- 副卡登记表（主卡uid→副卡{cardId,level}）
     CardId = "CardId",                                          -- 卡牌配置Id
 
@@ -194,19 +197,24 @@ STECustomEnum.BuffLifeTimeType = {
 }
 
 --- Effect 触发时机类型（策划配连续值；内部把值当"左移位数"转 mask 位运算判断）
---- 局内约定：装备时与战斗开始时都在"战斗开始钩子"执行（对战斗而言二者本质相同）；
+--- 局内约定：装备时与战斗开始时都在"战斗开始钩子"执行，但**拆分两阶段**——
+---   阶段1 OnEquip 全局先执行（CDMax 修正+CD 向上对齐落地），阶段2 OnBattleStart 后执行（加速等），
+---   保证跨卡牌顺序固定（CDMax 修正先于加速，_ClampTickCDToCdMax 向上对齐依赖此顺序一致性）#B1271760
 ---   Other 为运行时激发（卡牌CD/敌人/buff Ex），是现有 effect 的默认时机（TriggerType 空/0 天然落此，兼容存量）。
 STECustomEnum.TriggerTimeType = {
     Other = 0,          -- 其他：运行时激发（CD激发等），默认
-    OnEquip = 1,        -- 装备时（局内归并到战斗开始钩子；局外预览语义留待将来）
-    OnBattleStart = 2,  -- 战斗开始时
+    OnEquip = 1,        -- 装备时（局内开局钩子阶段1，先执行）
+    OnBattleStart = 2,  -- 战斗开始时（局内开局钩子阶段2，后执行）
 }
 
 --- 时机 mask 常量（1 << 时机值）：调用方按上下文传入，CheckEffectTrigger 位与判断
---- 运行时激发只接受 Other；战斗开始钩子接受 装备时|战斗开始时
+--- 运行时激发只接受 Other；开局钩子拆两阶段分跑 OnEquip(=2)/OnBattleStart(=4)，
+---   BattleStart(=6) 为二者合集保留兼容旧引用 #B1271760
 STECustomEnum.TriggerTimeMask = {
     Runtime = 1 << STECustomEnum.TriggerTimeType.Other,                                                    -- =1
-    BattleStart = (1 << STECustomEnum.TriggerTimeType.OnEquip) | (1 << STECustomEnum.TriggerTimeType.OnBattleStart),  -- =6
+    OnEquip = 1 << STECustomEnum.TriggerTimeType.OnEquip,                                                 -- =2 开局阶段1：装备时
+    OnBattleStart = 1 << STECustomEnum.TriggerTimeType.OnBattleStart,                                     -- =4 开局阶段2：战斗开始时
+    BattleStart = (1 << STECustomEnum.TriggerTimeType.OnEquip) | (1 << STECustomEnum.TriggerTimeType.OnBattleStart),  -- =6 合一（兼容）
 }
 
 --- VM输出事件枚举
@@ -225,6 +233,13 @@ STECustomEnum.EventEnum = {
     FatigueAnim = 12,  -- 疲劳弹窗动画（EffectGroup 组末尾 EmitEvent 派发，逻辑时间超阈值挂疲劳 buff 时触发；号段对齐 FightConfigControl.EventIds）#80
     EnemyAttackPrepare = 13,  -- 敌人准备攻击（ExecuteEnemyEffects 激发时 Emit，CD 到 0 准备执行 EffectGroup；表现层订阅触发 FxEnemyAttack 特效）#EnemyAttack
     DotBuffLayerChanged = 14,  -- buff Layer 变化（SnapshotFieldToBuff 幂等值变 Emit / _DestroyBuff 销毁前 Emit；表现层 PanelEnemyHp:RefreshBuffList 订阅→GetDotBuffLayers 取聚合值→刷 buff 图标列表数值）
+    BallAnimSteps = 15,  -- 球动画 step 批量事件（STEControl 帧末 drain step 队列 + dispatch，payload=stepList 引用；UI 回调内同步遍历 EnqueueStep+StartPlay #消球动效动画队列）
+}
+
+--- 球动画 step 类型（step.actionType；Pipeline ConsumeBall/ProduceBall 入队用）#消球动效动画队列
+STECustomEnum.BallAnimStepType = {
+    ConsumeBall = 1,  -- 消球（UI: 从 _BallPosList 队头取 N 颗该色 → trail 球位→卡位 → 隐藏 grid + 删列表）
+    ProduceBall = 2,  -- 产球（UI: _BallPosList 加尾/挤头重算 pos；不播动效，全播完 Refresh 才显新球）
 }
 
 --- 球动作过滤：相邻方向（0=不约束，从1起，与 color/cardType 的 0=不约束 保持一致）
@@ -235,5 +250,7 @@ STECustomEnum.AdjacentSide = {
 }
 
 STECustomEnum.TickCDMaxMin = 4 -- 约定CD最小4帧 = 0.2s
+
+STECustomEnum.CDAccIntervalTick = 1 -- CD可以被加速的最小间隔帧数，默认1帧，支持配置覆盖（不可为0）
 
 return STECustomEnum

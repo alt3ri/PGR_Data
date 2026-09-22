@@ -37,6 +37,16 @@ function XPunishaarFightControl:OnInit()
 
     self:AddEventListener(self.EventIds.OnPause, self.OnPauseEvent, self)
     self:AddEventListener(self.EventIds.OnResume, self.OnResumeEvent, self)
+    
+    local cDAccIntervalTickInCfg = XMVCA.XPunishaar:GetClientNumberByKey("CDAccIntervalTick")
+    cDAccIntervalTickInCfg = XMath.ToInt(cDAccIntervalTickInCfg)
+    
+    -- CD保底1帧
+    if cDAccIntervalTickInCfg <= 0 then
+        cDAccIntervalTickInCfg = 1
+    end
+    
+    STECustomEnum.CDAccIntervalTick = cDAccIntervalTickInCfg
 end
 
 function XPunishaarFightControl:AddAgencyEvent()
@@ -88,6 +98,10 @@ function XPunishaarFightControl:StartBattle(initData)
     self:InitNewGame()   -- 建 env（用契约 seed/ballSlotCapacity）+ 装初始球
     self:SetupBattle()   -- 纯翻译契约 → 建 Player/Enemy/卡牌
     self.STEControl:RunBattleStartEffects()  -- 战斗开始钩子：跑装备/战斗开始时机的 effect（开局一次）
+    -- 开局血量快照（proto StartHp/EnemyStartHp 埋点用，RunBattleStartEffects 后取含开局 buff 的最终值）#埋点
+    local startPlayerHp, startEnemyHp = self.STEControl:GetHp()
+    self._BattleStartPlayerHp = startPlayerHp
+    self._BattleStartEnemyHp = startEnemyHp
     -- 注：不在此直接 StartGame——由 UI 层（XUiPunishaarFightMainPanelFighting:_PlayVsNotify）
     -- 播 VSNotify 开场动画、隐藏回调触发 StartGame，让逻辑帧在表现层就位后才流动（变更#32）。
     return true
@@ -297,7 +311,7 @@ end
 --- 聚合战斗埋点统计（OnBattleEnded 正式路径调，结果传 FinishFight→DoFinishFight→Request）。
 --- 字段名/类型对齐服务端 proto XPunishaarFinishFightRequest（XPunishaarProto.cs）。
 --- 纯读：只读 STE 状态 + 本控制器的墙钟字段，不改任何状态。
----@return table stats { FightTime, FightSpeed, IsAutoFight, UseSkillCount, AutoUseSkillCount, BallProduction, BallConsumption }
+---@return table stats { FightTime, FightSpeed, IsAutoFight, UseSkillCount, AutoUseSkillCount, BallProduction, BallConsumption, StartHp, EndHp, EnemyStartHp, EnemyEndHp }
 function XPunishaarFightControl:CollectBattleStats()
     local autoCount, manualCount = 0, 0
     -- 遍历所有卡牌，按 ByHand tag 分组求和 DoneTimes（手动=玩家点击驱动；自动=CD 驱动）
@@ -317,6 +331,8 @@ function XPunishaarFightControl:CollectBattleStats()
     local ballConsumed = self.STEControl:GetBallConsumed()
     -- IsAutoFight：本局曾真正启用过自动战斗（STEControl 累计，once true 永 true）#IsAutoFight
     local isAutoFight = self.STEControl:IsAutoFightUsed()
+    -- 结束血量（fire 时 HP；CollectBattleStats 在 EndGame 前调 env 仍活，可读 GetHp）#埋点
+    local endPlayerHp, endEnemyHp = self.STEControl:GetHp()
     -- FightTime 单位=秒（proto int 秒）：XTime.GetServerNowTimestamp 返回秒级 timestamp，
     -- 直接 diff 即可（勿 /1000——timestamp 本身就是秒，除 1000 永远 0，#77 bug 修正）
     local fightTime = math.floor((self._BattleEndTs or 0) - (self._BattleStartTs or 0))
@@ -328,6 +344,10 @@ function XPunishaarFightControl:CollectBattleStats()
         AutoUseSkillCount = autoCount,              -- int（自动释放=非 ByHand 卡 DoneTimes 和）
         BallProduction = ballProduced or 0,         -- int
         BallConsumption = ballConsumed or 0,         -- int
+        StartHp = self._BattleStartPlayerHp or 0,    -- int 我方开始血量（StartBattle 快照）
+        EndHp = endPlayerHp or 0,                    -- int 我方结束血量（fire 时）
+        EnemyStartHp = self._BattleStartEnemyHp or 0,-- int 敌方开始血量
+        EnemyEndHp = endEnemyHp or 0,                -- int 敌方结束血量
     }
 end
 

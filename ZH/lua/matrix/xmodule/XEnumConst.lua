@@ -210,14 +210,22 @@ XEnumConst = {
             CHARACTER = 1,
             FASHION = 1,
         },
-    },
-    TeamRecommend = {
-        MainTabIndex = {
-            Character = 1, -- 按角色培养
-            Formation = 2, -- 按阵容培养
-        },
-        -- 阵容目标来源类型，对应服务端 XTeamRecommendTargetSrcType
-        TargetSrcType = {
+    },
+    TeamRecommend = {
+        MainTabIndex = {
+            Character = 1, -- 按角色培养
+            Formation = 2, -- 按阵容培养
+        },
+        FormationQualityTagBgIndexByQuality = {
+            [1] = 1, -- B
+            [2] = 1, -- A
+            [3] = 1, -- S
+            [4] = 2, -- SS
+            [5] = 3, -- SSS
+            [6] = 3, -- SSS+
+        },
+        -- 阵容目标来源类型，对应服务端 XTeamRecommendTargetSrcType
+        TargetSrcType = {
             FromConfig = 1, -- 来源配置表，SourceId=TeamRecommendBaseFormation.Id
             FromTopDetail = 2, -- 来源角色top推荐快照，SourceId=来源角色Id
             FromOtherTarget = 3, -- 来源其他角色目标快照，SourceId=目标拥有者角色Id
@@ -3925,7 +3933,7 @@ XEnumConst = {
     Shop = {
         AwarenessStarToShopIdList = {
             [5] = { 405 },
-            [6] = { 406, 1423 },
+            [6] = { 406, 1421, 1423 },
         }
     },
 }

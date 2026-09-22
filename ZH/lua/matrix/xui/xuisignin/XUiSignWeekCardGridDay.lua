@@ -46,7 +46,10 @@ end
 
 function XUiSignWeekCardGridDay:OnBtnCardClick()
     XDataCenter.AutoWindowManager.StopAutoWindow()
-    XDataCenter.PurchaseManager.OpenYKPackageBuyUi()
+    -- 道具不足时跳转充值界面对应页签，而非仅弹提示
+    XDataCenter.PurchaseManager.OpenYKPackageBuyUi(function(skipIndex)
+        XLuaUiManager.Open("UiPurchase", skipIndex)
+    end)
 end
 
 function XUiSignWeekCardGridDay:OnEnable()
@@ -130,13 +133,16 @@ function XUiSignWeekCardGridDay:Refresh(weekCardData, roundIndex, index, isShow,
     self:RefreshRewardGrids(rewardList)
 end
 
--- 当日可领时显示高亮底图,否则(未到/往日/已领)显示普通底图。ImgNormal/ImgHighlight 仅部分预制注册,故判空
+-- 当日可领时显示高亮底图,否则(未到/往日/已领)显示普通底图。ImgNormal/ImgHighlight/PanelEffectHighlight 仅部分预制注册,故判空
 function XUiSignWeekCardGridDay:RefreshBaseImg(canReceiveToday)
     if self.ImgNormal then
         self.ImgNormal.gameObject:SetActiveEx(not canReceiveToday)
     end
     if self.ImgHighlight then
         self.ImgHighlight.gameObject:SetActiveEx(canReceiveToday)
+    end
+    if self.PanelEffectHighlight then
+        self.PanelEffectHighlight.gameObject:SetActiveEx(canReceiveToday)
     end
 end
 
@@ -164,7 +170,7 @@ function XUiSignWeekCardGridDay:AnimaStart()
 end
 
 function XUiSignWeekCardGridDay:SetEffectActive(active)
-    self.PanelEffect.gameObject:SetActiveEx(active)
+    self.PanelEffectReceive.gameObject:SetActiveEx(active)
 end
 
 function XUiSignWeekCardGridDay:GetWeekCardReward()

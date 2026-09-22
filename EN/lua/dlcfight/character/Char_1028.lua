@@ -23,15 +23,20 @@ States.Dodge.DodgeSkillId = 1028003  -- 超算受身动作
 States.Dodge.SucceedActionId = 1028004 --超算受身成功反击
 States.Block.Actions = {1028009} -- 格挡动作
 
+-- local NetiaGatherSelfPos = { x = 51, y = 11.52, z = 58.5 } --涅媞娅大招固定点位for自己
+-- local NetiaGatherSelfPos_look = { x = 52, y = 11.52, z = 58.5 } --涅媞娅大招固定点位for自己_看向的方向
+-- local NetiaGatherEnemyPos = { x = 60, y = 11.52, z = 55.6 } --涅媞娅大招固定点位for敌人
+--local NetiaGatherEnemyPos_look = { x = 58.7, y = 11.52, z = 54 } --涅媞娅大招固定点位for敌人_看向的方向
+
 function XChar1028:_BaseInit()
     XTheatre6CharBase._BaseInit(self)
     -- self._proxy:ApplyMagic(self._uuid, self._uuid, 1028003)
     -- self._proxy:ApplyMagic(self._uuid, self._uuid, 1028004)
-    -- XLog.Warning("维罗妮卡初始化完成")
+    -- XLog.Warning("涅媞娅初始化完成")
 end
 
 function XChar1028:InitEventCallBackRegister()
-    --维罗妮卡独特注册脚本
+    --涅媞娅独特注册脚本
     XTheatre6CharBase.InitEventCallBackRegister(self)
     self._proxy:RegisterEvent(EWorldEvent.NpcCastActionAfter)
 end
@@ -68,14 +73,40 @@ end
 
 function XChar1028:OnNpcSkillActionKeyframeSendEvent(launcher, eventName, skillActionId, keyFrameId, skillId)
     XTheatre6CharBase.OnNpcSkillActionKeyframeSendEvent(self, launcher, eventName, skillActionId, keyFrameId, skillId)
-    
-    if eventName == "ChangeAirStyle" then
-        self._proxy:SetNpcGravity(self._uuid, 0, 0)
+
+    if launcher ~= self._uuid then
+        return
     end
 
-    if eventName == "EndAirStyle" then
-        self._proxy:SetNpcGravity(self._uuid, -50, -15)
+    if eventName == "ResetGatherPosition" then
+        local enemy = self._enemyUUID or self._proxy:GetFightTargetId(self._uuid)
+        if not enemy or not self._proxy:CheckActorExist(enemy) then
+            return
+        end
+        local centerPos = self._proxy:GetSpot(1)
+        local NetiaGatherSelfPos = {
+         x = centerPos.x - 6,
+         y = centerPos.y,
+         z = centerPos.z - 2.9,
+        }
+        local NetiaGatherSelfPos_look = {
+         x = centerPos.x -5,
+         y = centerPos.y,
+         z = centerPos.z - 2.9,
+        }
+        local NetiaGatherEnemyPos = {
+         x = centerPos.x + 11,
+         y = centerPos.y,
+         z = centerPos.z -7,
+        }
+
+        self._proxy:SetNpcPosition(self._uuid, NetiaGatherSelfPos, false)
+        self._proxy:SetNpcPosition(enemy, NetiaGatherEnemyPos, false)
+        self._proxy:SetNpcFaceToPosition(self._uuid, NetiaGatherSelfPos_look)
+        self._proxy:SetNpcFaceToPosition(enemy, NetiaGatherSelfPos)
+        return
     end
+
 end
 
 return XChar1028

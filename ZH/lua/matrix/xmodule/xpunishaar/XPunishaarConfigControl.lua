@@ -43,6 +43,7 @@ local ClientConfigKey = {
     SaveCountLimitTipCode = "SaveCountLimitTipCode", -- 存档达到上限提示码
     StageUnlockTimeTip = "StageUnlockTimeTip", --关卡时间未开放文本提示
     BuffIcons = "BuffIcons",                 --状态图标：Values[1]=护盾（敌我共用）、[2]=敌人持续受伤（仅敌人）
+    MainLeftTimeText = "MainLeftTimeText", -- 主界面剩余时间文本，{0}=格式化后的倒计时
 }
 
 -- ShareConfig（PunishaarConfig）Key 常量
@@ -503,6 +504,17 @@ end
 function XPunishaarControl:GetSaveCountLimitTipCode()
     return XMVCA.XPunishaar:GetClientNumberByKey(
         ClientConfigKey.SaveCountLimitTipCode,
+        1
+    )
+end
+
+--- 获取主界面剩余时间文本。
+--- 读取 PunishaarClientConfig.MainLeftTimeText 的 Values[1]。
+--- 格式化参数：{0}=格式化后的活动剩余时间。
+---@return string
+function XPunishaarControl:GetMainLeftTimeText()
+    return XMVCA.XPunishaar:GetClientStringByKey(
+        ClientConfigKey.MainLeftTimeText,
         1
     )
 end

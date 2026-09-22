@@ -129,7 +129,22 @@ function XUiFangKuaiChapterDetail:UpdateEnemy()
             XUiHelper.InitUiClass(uiObject, grid)
             uiObject.RImgIcon:SetRawImage(blockTypes[index].Icon)
             XUiHelper.RegisterClickEvent(uiObject, uiObject.RImgIcon.transform, function()
-                self:OnClickItem()
+                self:OnClickItem(XEnumConst.FangKuai.PropDetail.Block)
+            end)
+        end)
+    end
+
+    local showItems = self._StageConfig.ShowItem
+    if #showItems == 0 then
+        self.PanelItem.gameObject:SetActiveEx(false)
+    else
+        self.PanelItem.gameObject:SetActiveEx(true)
+        XUiHelper.RefreshCustomizedList(self.GridItem.parent, self.GridItem, #showItems, function(index, grid)
+            local uiObject = {}
+            XUiHelper.InitUiClass(uiObject, grid)
+            uiObject.RImgIcon:SetRawImage(self._Control:GetItemConfig(showItems[index]).Icon)
+            XUiHelper.RegisterClickEvent(uiObject, uiObject.RImgIcon.transform, function()
+                self:OnClickItem(XEnumConst.FangKuai.PropDetail.Item)
             end)
         end)
     end
@@ -233,8 +248,8 @@ function XUiFangKuaiChapterDetail:OpenFightPanel(isNewGame)
     self._Control:EnterGame(self._StageId, isNewGame)
 end
 
-function XUiFangKuaiChapterDetail:OnClickItem()
-    XLuaUiManager.Open("UiFangKuaiPropDetail", self._StageId)
+function XUiFangKuaiChapterDetail:OnClickItem(propDetailType)
+    XLuaUiManager.Open("UiFangKuaiPropDetail", self._StageId, propDetailType)
 end
 
 -- 引导用

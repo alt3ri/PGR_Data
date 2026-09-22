@@ -168,9 +168,17 @@ function XUiPanelWorldChatMyMsgItem:Refresh(chatData, longClickCb)
     
     -- 设置聊天框
     self._PanelChatBoard:Refresh(chatData.ChatBoardId, chatData.SenderId == XPlayer.Id)
-    
+    self:RefreshTextColor()
+
     -- 缓存待复制的文本
     self._CopyCom:SetMsg(chatData.Content)
+end
+
+function XUiPanelWorldChatMyMsgItem:RefreshTextColor()
+    local color = self._PanelChatBoard:GetTextColor()
+    if color then
+        self.TxtWord.color = color
+    end
 end
 
 function XUiPanelWorldChatMyMsgItem:GetPlayerId()

@@ -131,7 +131,7 @@ end
 function XUiPartnerOneKeyCultureDetailItemCellView:_RefreshStarUp()
     local mainControl = self._Control:GetOneKeyCultureMainControl()
     local costControl = mainControl:GetBaseCostControl()
-    local havePartnerCount = costControl:GetStarUpPartnerHaveCount()
+    local havePartnerCount = mainControl:GetFoodSelectControl():GetSelectableFoodCount()
     local recommendQuality = mainControl:GetRecommendQuality()
     local recommendQualityText = XPartnerConfigs.GetQualityString(recommendQuality)
     self.TxtTitle.text = XUiHelper.GetText("PartnerOneKeyDetailStarTitle", recommendQualityText)

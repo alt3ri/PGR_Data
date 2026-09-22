@@ -272,6 +272,9 @@ function XUiPanelFashionSuitButtonGroup:OnBuyBefore()
         endTime = XTime.GetServerNowTimestamp() + self._RemainTime
     end
 
+    local giftId = XFashionConfigs.GetFashionTemplate(self._Id).GiftId
+    local isHideWorldDesc = self._Helper:IsEnableGroupSales() and not XTool.IsNumberValid(giftId)
+
     ---@type CoatingBuyTipsViewModel
     local viewModel = {
         Title = self._Helper:GetName(),
@@ -284,6 +287,7 @@ function XUiPanelFashionSuitButtonGroup:OnBuyBefore()
         AssetsItemIds = { XDataCenter.ItemManager.ItemId.FreeGem, XDataCenter.ItemManager.ItemId.HongKa },
         EndTime = endTime,
         IsTimeLimit = XTool.IsNumberValid(endTime),
+        IsHideWorldDesc = isHideWorldDesc,
     }
 
     -- 打开详情界面
@@ -373,7 +377,11 @@ end
 --只有从涂装套装主界面跳转过来时 才开启成套购买功能
 function XUiPanelFashionSuitButtonGroup:SetBtnBuySuitVisible(bo, skipUpdateView)
     self._IsGroupSalesVisible = bo
-    self.BtnBuySuit.gameObject:SetActiveEx(bo)
+    if self._Context.FashionGroup.GainType == GainType.Skip then
+        self.BtnBuySuit.gameObject:SetActiveEx(false)
+    else
+        self.BtnBuySuit.gameObject:SetActiveEx(bo)
+    end
     if skipUpdateView then
         self.Parent:ApplyGroupSalesState(self._IsGroupSalesVisible, self._IsGroupSalesEnable)
     else

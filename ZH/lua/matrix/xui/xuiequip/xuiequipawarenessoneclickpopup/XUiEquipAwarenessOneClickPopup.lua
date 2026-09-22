@@ -84,18 +84,18 @@ local function BuildAutoExchangeList(strengthenResult, overclockingResult)
 end
 
 ---@param targetList XAwarenessOneClickResonanceRecordTargetData[]
----@return number[]
+---@return table<string, number>
 local function BuildSelectedResonanceSlots(targetList)
     local selectedSlots = {}
     local resonanceSlotCount = XEnumConst.EQUIP.AWARENESS_RESONANCE_COUNT
     local totalSlotCount = XEnumConst.EQUIP.WEAR_AWARENESS_COUNT * resonanceSlotCount
     for index = 1, totalSlotCount do
-        selectedSlots[index] = 0
+        selectedSlots[tostring(index)] = 0
     end
 
     for _, targetData in ipairs(targetList) do
         local index = (targetData.Site - 1) * resonanceSlotCount + targetData.Pos
-        selectedSlots[index] = 1
+        selectedSlots[tostring(index)] = 1
     end
 
     return selectedSlots
@@ -116,7 +116,7 @@ end
 ---@field UpperTargetIndex number|nil 上位共鸣目标选项下标
 ---@field LowerTargetIndex number|nil 下位共鸣目标选项下标
 ---@field TimesIndex number|nil 单个技能共鸣次数选项下标
----@field SelectedSlots number[] 按意识位置及上、下位顺序排列的十二个共鸣槽选中状态
+---@field SelectedSlots table<string, number> 按意识位置及上、下位顺序排列的十二个共鸣槽选中状态；键为字符串槽位序号，避免 XRecord 丢弃数值键
 ---@field TargetList XAwarenessOneClickResonanceRecordTargetData[] 已选且尚未达成的共鸣目标快照
 
 ---@class XAwarenessOneClickOverclockRecordTarget
@@ -193,14 +193,15 @@ function XUiEquipAwarenessOneClickPopup:InitComponents()
     self.UiPanelOverclocking:Open()
 end
 
--- 记录当前角色 Id，并刷新弹窗内容
+-- 记录当前角色 Id
 function XUiEquipAwarenessOneClickPopup:OnStart(characterId)
     self.CharacterId = characterId
-    self:Refresh()
 end
 
--- 界面启用生命周期预留
+-- 每次启用时检测意识一键共鸣解锁，并刷新跳转操作后的最新养成数据
 function XUiEquipAwarenessOneClickPopup:OnEnable()
+    XMVCA.XEquip:TryUnlockAwarenessOneClickResonance()
+    self:Refresh()
 end
 
 -- 界面禁用生命周期预留
@@ -233,7 +234,7 @@ end
 -- 在完整预览、消耗和确认按钮刷新后，按当前养成状态统一更新功能面板显隐。
 function XUiEquipAwarenessOneClickPopup:RefreshPanelVisibility()
     local isStrengthenVisible = not self.UiPanelStrengthen:IsAllAwarenessMaxLevelAndBreakthrough()
-    local isResonanceVisible = self.UiPanelResonance:HasUnachievedTargetResonanceSkill()
+    local isResonanceVisible = self.UiPanelResonance:ShouldShowPanel()
     local isOverclockingVisible = self.UiPanelOverclocking:HasUnawakenedSkill()
     self.UiPanelStrengthen:SetVisible(isStrengthenVisible)
     self.UiPanelResonance:SetVisible(isResonanceVisible)

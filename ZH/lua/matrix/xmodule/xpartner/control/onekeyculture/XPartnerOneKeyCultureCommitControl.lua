@@ -18,6 +18,8 @@ function XPartnerOneKeyCultureCommitControl:OnInit()
     self._StarUpTailFeedCount = 0
     --- 分类型消耗列表缓存
     self._LevelUpConsumedList = {}
+    self._LevelUpPreviewConsumeIndex = 0
+    self._LevelUpPreviewConsumedList = {} -- 仅有这里期望常驻显示
     self._StarUpConsumedList = {}
     self._SkillConsumedList = {}
     self._ItemIdSet = {}
@@ -42,6 +44,7 @@ end
 function XPartnerOneKeyCultureCommitControl:OnRelease()
     table.clear(self._VirtualPool)
     table.clear(self._LevelUpConsumedList)
+    table.clear(self._LevelUpPreviewConsumedList)
     table.clear(self._StarUpConsumedList)
     table.clear(self._SkillConsumedList)
     table.clear(self._ItemIdSet)
@@ -59,6 +62,7 @@ end
 --region 计算提交结果
 function XPartnerOneKeyCultureCommitControl:CalcCommit()
     self:_ClearResult()
+    self:_CalcLevelUpPreview()
 
     --虚拟材料池先收集一波材料。
     self:_InitVirtualPool()
@@ -81,7 +85,7 @@ function XPartnerOneKeyCultureCommitControl:CalcCommit()
     end
 
     -- 尝试消耗一波技能用的开销
-    if self._OneKeyCultureModel:IsCultureSelected(XPartnerEnum.CultureType.SkillLevelUp) then
+    if self:IsCultureSelected(XPartnerEnum.CultureType.SkillLevelUp) then
         table.clear(self._TempExchangedDic)
         self._SkillConsumeIndex = self:_ConsumeMOList(self._CostItemModel:GetSkillMOList(), self._TempExchangedDic)
         self:_BuildExchangedList(self._TempExchangedDic, self._SkillExchangedList)
@@ -128,6 +132,16 @@ end
 ---@return table<{Id: number, Count: number}>
 function XPartnerOneKeyCultureCommitControl:GetLevelUpConsumedList()
     return self._LevelUpConsumedList
+end
+
+---@return number
+function XPartnerOneKeyCultureCommitControl:GetLevelUpPreviewConsumeIndex()
+    return self._LevelUpPreviewConsumeIndex
+end
+
+---@return table<{Id: number, Count: number}>
+function XPartnerOneKeyCultureCommitControl:GetLevelUpPreviewConsumedList()
+    return self._LevelUpPreviewConsumedList
 end
 
 ---@return table<{Id: number, Count: number}>
@@ -205,7 +219,9 @@ end
 
 ---@return number 选中的矿石兑换碎片数量（折算为狗粮只数）
 function XPartnerOneKeyCultureCommitControl:GetSelectOreExchangeClipCount()
-    if not self._MainControl:IsAutoExchange() then
+    local XPartnerEnum = XMVCA.XPartner.Enum
+    if not self:IsCultureSelected(XPartnerEnum.CultureType.StarUp)
+        or not self._MainControl:IsAutoExchange() then
         return 0
     end
     return self._OneKeyCultureModel:GetCommitModel():GetSelectOreExchangeClipCount()
@@ -213,6 +229,10 @@ end
 
 ---@return number 选中的矿石兑换格实际需要兑换的碎片数
 function XPartnerOneKeyCultureCommitControl:GetSelectOreExchangeChipCount()
+    local XPartnerEnum = XMVCA.XPartner.Enum
+    if not self:IsCultureSelected(XPartnerEnum.CultureType.StarUp) then
+        return 0
+    end
     return self._MainControl:GetFoodSelectControl():GetSelectOreExchangeChipCount()
 end
 
@@ -257,6 +277,9 @@ end
 ---@param cultureType XPartnerEnum.CultureType
 ---@return boolean
 function XPartnerOneKeyCultureCommitControl:IsCultureSelected(cultureType)
+    if cultureType == XMVCA.XPartner.Enum.CultureType.SkillLevelUp then
+        return false
+    end
     return self._OneKeyCultureModel:IsCultureSelected(cultureType)
 end
 
@@ -386,9 +409,11 @@ end
 function XPartnerOneKeyCultureCommitControl:_ClearResult()
     table.clear(self._VirtualPool)
     table.clear(self._LevelUpConsumedList)
+    table.clear(self._LevelUpPreviewConsumedList)
     table.clear(self._StarUpConsumedList)
     table.clear(self._SkillConsumedList)
     self._LevelUpConsumeIndex = 0
+    self._LevelUpPreviewConsumeIndex = 0
     self._StarUpConsumeIndex = 0
     self._SkillConsumeIndex = 0
     self._StarUpTailFeedCount = 0
@@ -422,6 +447,39 @@ function XPartnerOneKeyCultureCommitControl:_BuildConsumedListByMOList(moList, c
             table.insert(outList, { Id = id, Count = itemCount })
         end
     end
+end
+
+function XPartnerOneKeyCultureCommitControl:_CalcLevelUpPreview()
+    local moList = self._CostItemModel:GetLevelUpMOList()
+    local consumedDic = {}
+    local consumeIndex = 0
+
+    for index, mo in ipairs(moList) do
+        local nextConsumedDic = {}
+        for itemId, count in pairs(consumedDic) do
+            nextConsumedDic[itemId] = count
+        end
+
+        local canConsume = true
+        for _, item in ipairs(mo:GetNeedList()) do
+            local consumedCount = (nextConsumedDic[item.Id] or 0) + item.Count
+            if consumedCount > self:_GetItemHaveCount(item.Id) then
+                canConsume = false
+                break
+            end
+            nextConsumedDic[item.Id] = consumedCount
+        end
+
+        if not canConsume then
+            break
+        end
+
+        consumedDic = nextConsumedDic
+        consumeIndex = index
+    end
+
+    self._LevelUpPreviewConsumeIndex = consumeIndex
+    self:_BuildConsumedListByMOList(moList, consumeIndex, self._LevelUpPreviewConsumedList)
 end
 
 --- 从 BaseCostControl 初始化虚拟持有池

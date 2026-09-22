@@ -995,7 +995,7 @@
         "IsBlock": null,
         "IsEnd": null,
         "BeginAnim": null,
-        "EndAnim": "AniZhuanchangBegin",
+        "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
         "Params": "{2: 'Cervantes', 3: \"It's also a message Sage left behind.\", 4: '1'}"
@@ -1008,7 +1008,7 @@
         "IsBlock": null,
         "IsEnd": null,
         "BeginAnim": null,
-        "EndAnim": null,
+        "EndAnim": "AniZhuanchangBegin",
         "BeginDelay": null,
         "EndDelay": null,
         "Params": "{2: 'Nanami...', 3: '79'}"
@@ -5363,26 +5363,13 @@
         "IsBlock": null,
         "IsEnd": null,
         "BeginAnim": null,
-        "EndAnim": "AniZhuanchangBegin",
+        "EndAnim": null,
         "BeginDelay": null,
         "EndDelay": null,
         "Params": "{2: 'Nanami', 3: \"I won't let this happen.\", 4: '1'}"
     },
     {
         "Id": 414,
-        "ActionId": 414,
-        "NextActionId": null,
-        "Type": 101,
-        "IsBlock": null,
-        "IsEnd": null,
-        "BeginAnim": null,
-        "EndAnim": null,
-        "BeginDelay": null,
-        "EndDelay": null,
-        "Params": "{4: '4', 5: '1'}"
-    },
-    {
-        "Id": 415,
         "ActionId": 415,
         "NextActionId": null,
         "Type": 202,
@@ -5395,7 +5382,7 @@
         "Params": "{1: '1'}"
     },
     {
-        "Id": 416,
+        "Id": 415,
         "ActionId": 416,
         "NextActionId": null,
         "Type": 502,
@@ -5408,17 +5395,30 @@
         "Params": "{1: 'DialogDisable'}"
     },
     {
-        "Id": 417,
+        "Id": 416,
         "ActionId": 417,
         "NextActionId": null,
         "Type": 302,
         "IsBlock": null,
         "IsEnd": null,
         "BeginAnim": null,
-        "EndAnim": null,
+        "EndAnim": "AniZhuanchangBegin",
         "BeginDelay": null,
         "EndDelay": null,
         "Params": "{2: 'This is more than just a \"simulation,\" isn\\'t it?', 3: '418'}"
+    },
+    {
+        "Id": 417,
+        "ActionId": 414,
+        "NextActionId": null,
+        "Type": 101,
+        "IsBlock": null,
+        "IsEnd": null,
+        "BeginAnim": null,
+        "EndAnim": null,
+        "BeginDelay": null,
+        "EndDelay": null,
+        "Params": "{4: '4', 5: '1'}"
     },
     {
         "Id": 418,
@@ -5430,7 +5430,7 @@
         "BeginAnim": null,
         "EndAnim": null,
         "BeginDelay": null,
-        "EndDelay": null,
+        "EndDelay": 2000.0,
         "Params": "{1: '1', 2: '36'}"
     },
     {

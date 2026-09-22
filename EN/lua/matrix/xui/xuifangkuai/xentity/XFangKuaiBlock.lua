@@ -15,6 +15,8 @@
 ---@field _HitTimes number 方块受击次数
 local XFangKuaiBlock = XClass(nil, "XFangKuaiBlock")
 
+local BlockType = XEnumConst.FangKuai.BlockType
+
 function XFangKuaiBlock:Ctor()
     self._HeadGrid = CS.UnityEngine.Vector2(0, 0)
     self._TailGrid = CS.UnityEngine.Vector2(0, 0)
@@ -171,14 +173,19 @@ function XFangKuaiBlock:SetMaxSize(stageId)
 end
 
 function XFangKuaiBlock:IsBoss()
-    return self._BlockType == XEnumConst.FangKuai.BlockType.BossWane or
-            self._BlockType == XEnumConst.FangKuai.BlockType.BossHit or
-            self._BlockType == XEnumConst.FangKuai.BlockType.BossFission or
-            self._BlockType == XEnumConst.FangKuai.BlockType.Chief
+    return self._BlockType ~= BlockType.Invalid and self._BlockType ~= BlockType.Normal
 end
 
 function XFangKuaiBlock:IsChief()
-    return self._BlockType == XEnumConst.FangKuai.BlockType.Chief
+    return self._BlockType == BlockType.Chief
+end
+
+function XFangKuaiBlock:IsKnife()
+    return self._BlockType == BlockType.Knife
+end
+
+function XFangKuaiBlock:CheckBlock(blockType)
+    return self._BlockType == blockType
 end
 
 ---方块方向是否朝左
@@ -281,6 +288,10 @@ end
 ---方块是否在有效区域内
 function XFangKuaiBlock:IsOnEffectiveArea()
     return self._HeadGrid.y >= 1 and self._HeadGrid.y <= self._MaxH
+end
+
+function XFangKuaiBlock:IsInSide(left, right)
+    return self._HeadGrid.x >= left and self._TailGrid.x <= right
 end
 
 ---获取方块下方的所有格子

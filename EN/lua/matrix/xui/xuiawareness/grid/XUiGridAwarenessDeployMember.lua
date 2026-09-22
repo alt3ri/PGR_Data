@@ -68,7 +68,7 @@ function XUiGridAwarenessDeployMember:Refresh(chapterId, teamOrder, teamData, me
 
         -- 职业图标
         local carrerIconPath = nil
-        if not (self.TankEffect and self.AmplifierEffect and self.BreakerEffect) then
+        if not (self.TankEffect and self.AmplifierEffect and self.BreakerEffect and self.OverlinkerEffect) then
             return
         end
 
@@ -76,6 +76,7 @@ function XUiGridAwarenessDeployMember:Refresh(chapterId, teamOrder, teamData, me
         self.TankEffect.gameObject:SetActiveEx(isObsPos and obsCarrer == XEnumConst.CHARACTER.Career.Tank)
         self.AmplifierEffect.gameObject:SetActiveEx(isObsPos and (obsCarrer == XEnumConst.CHARACTER.Career.Amplifier or obsCarrer == XEnumConst.CHARACTER.Career.Support))
         self.BreakerEffect.gameObject:SetActiveEx(isObsPos and obsCarrer == XEnumConst.CHARACTER.Career.Breaker)
+        self.OverlinkerEffect.gameObject:SetActiveEx(isObsPos and obsCarrer == XEnumConst.CHARACTER.Career.Fusion)
 
         if isObsPos then
             carrerIconPath = XMVCA.XCharacter:GetNpcTypeIconObs(obsCarrer)

@@ -74,6 +74,33 @@ function XPool:ReturnItemToPool(item)
     self.__Container:Push(item)
 end
 
+--- 预热：补足池中对象数到 target（当前 Left+Using >= target 时不 Create，避免冗余实例化+层级遗留）
+--- 不经 GetItemFromPool（ReturnItemToPool 要求 UsingCount>=1 不适用预热路径）
+--- 用途：开战/进场景时预填充池避免运行时 Instantiate 卡顿
+---@param target number 目标池总数（Left+Using 补足到此）
+function XPool:Preload(target)
+    if not target or target <= 0 then
+        return
+    end
+    local need = target - self.__TotalCount
+    if need <= 0 then
+        return  -- 已够，不 Create
+    end
+    local createFunc = self.__CreateFunc
+    local onRelease = self.__OnRelease
+    local container = self.__Container
+    for i = 1, need do
+        local item = createFunc()
+        if item then
+            if onRelease then
+                onRelease(item)
+            end
+            container:Push(item)
+            self.__TotalCount = self.__TotalCount + 1
+        end
+    end
+end
+
 --池中剩余对象数量
 function XPool:LeftCount()
     return self.__Container:Count()

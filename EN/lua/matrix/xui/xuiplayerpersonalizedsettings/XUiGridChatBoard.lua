@@ -33,13 +33,9 @@ function XUiGridChatBoard:UpdateGrid(chapter, parent)
         self.LockImgHeadImg:SetRawImage(chapter.Icon)
         self.HeadIcon = chapter.Icon
     end
-
-    if chapter.EffectRes then
-        self.HeadIconEffect.gameObject:LoadPrefab(chapter.EffectRes)
-        self.HeadIconEffect.gameObject:SetActiveEx(true)
-    else
-        self.HeadIconEffect.gameObject:SetActiveEx(false)
-    end
+    
+    -- 这里不用播特效
+    self.HeadIconEffect.gameObject:SetActiveEx(false)
     
     -- 判断是否是限时聊天框
     local timeLimit = XTool.IsNumberValid(chapter.Duration) or not string.IsNilOrEmpty(chapter.ExpireTimeStr)

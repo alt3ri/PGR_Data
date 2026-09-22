@@ -197,13 +197,19 @@ XPurchaseManagerCreator = function()
     -- public int TimeToInvalid;
     -- 采购列表请求
     -- public List<XPurchaseClientInfo> PurchaseInfoList;
-    function XPurchaseManager.GetPurchaseListRequest(uiTypeList, cb)
+    function XPurchaseManager.GetPurchaseListRequest(uiTypeList, cb, failCb)
         if XTool.IsTableEmpty(uiTypeList) then
+            if failCb then
+                failCb()
+            end
             return
         end
         XNetwork.Call(PurchaseRequest.GetPurchaseListReq, { UiTypeList = uiTypeList }, function(res)
             if res.Code ~= XCode.Success then
                 XUiManager.TipCode(res.Code)
+                if failCb then
+                    failCb()
+                end
                 return
             end
 
@@ -977,9 +983,9 @@ XPurchaseManagerCreator = function()
     end
 
     -- 请求月卡数据
-    function XPurchaseManager.YKInfoDataReq(cb)
+    function XPurchaseManager.YKInfoDataReq(cb, failCb)
         local uiTypeList = XPurchaseConfigs.GetYKUiTypes()
-        XPurchaseManager.GetPurchaseListRequest(uiTypeList, cb)
+        XPurchaseManager.GetPurchaseListRequest(uiTypeList, cb, failCb)
     end
 
     -- Get月卡数据
@@ -987,20 +993,13 @@ XPurchaseManagerCreator = function()
         local datas = XPurchaseManager.GetYKInfoDatas()
         if not datas then return nil end
 
-        if XOverseaManager.IsENRegion() then
-            for _, data in pairs(datas) do
-                if not data.IsUseMail and data.DailyRewardRemainDay > 0 then
-                    return data
-                end
+        for i = 1, #datas do
+            local data = datas[i]
+            if not data.IsUseMail and data.DailyRewardRemainDay > 0 then
+                return data
             end
-            return nil
-        else
-            if not datas[1] then
-                return nil
-            end
-
-            return datas[1]
         end
+        return nil
     end
 
     function XPurchaseManager.GetYKInfoDataById(monthlyCardId)

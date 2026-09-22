@@ -82,13 +82,14 @@ function XUiPlotExhibitionDetailStoryGrid:Update(data)
     --    self.ImgBgGreen2.gameObject:SetActiveEx(false)
     --end
 
-    -- 对于肉鸽12345类型，progress显示为空字符串
+    -- 对于肉鸽123456类型，progress显示为空字符串
     local progressText = ""
     if data.StoryType == XEnumConst.FuBen.ChapterType.Theatre
         or data.StoryType == XEnumConst.FuBen.ChapterType.BiancaTheatre
         or data.StoryType == XEnumConst.FuBen.ChapterType.Theatre3
         or data.StoryType == XEnumConst.FuBen.ChapterType.Theatre4
-        or data.StoryType == XEnumConst.FuBen.ChapterType.Theatre5 then
+        or data.StoryType == XEnumConst.FuBen.ChapterType.Theatre5
+        or data.StoryType == XEnumConst.FuBen.ChapterType.Theatre6 then
         progressText = ""
     else
         progressText = data.Progress .. "%"

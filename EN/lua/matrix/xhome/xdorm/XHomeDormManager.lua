@@ -744,7 +744,7 @@ end
 -- 选中指定房间
 function XHomeDormManager.SetSelectedRoom(roomId, isSelected, isVisitor, onFinishEnterRoom)
     -- 镜面管理
-    CS.XMirrorManager.Instance:SetDormLayer(isSelected, CS.UnityEngine.LayerMask.GetMask(HomeSceneLayerMask.Device))
+    CS.XMirrorManager.Instance:SetDormLayer(isSelected, CS.UnityEngine.LayerMask.GetMask(LayerMaskName.SceneObject))
     local room = RoomDic[roomId]
     if not room then
         return nil
@@ -1387,4 +1387,12 @@ function XHomeDormManager.GetFurnitureRedRimMat()
         FurnitureRedRimMatKey = "UnOwnRed"
     end
     return FurnitureRimMat[FurnitureRedRimMatKey]
+end
+
+function XHomeDormManager.SetSceneActive(bValue)
+    local scene = XHomeSceneManager.GetCurrentScene()
+    if not scene then
+        return
+    end
+    scene:SetActive(bValue)
 end

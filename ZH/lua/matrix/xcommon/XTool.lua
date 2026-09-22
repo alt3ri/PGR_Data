@@ -1670,7 +1670,7 @@ function XTool.GetConfigContent(toSave, headTable, isTable)
     return content
 end
 
-function XTool.FileExists(filePath)
+function XTool.IsFileExists(filePath)
     local file = io.open(filePath, "r")
     if file then
         io.close(file)
@@ -1678,21 +1678,6 @@ function XTool.FileExists(filePath)
     else
         return false
     end
-end
-
--- 写入文件所有内容
----@param filepath string
----@param content string
----@param mode string? 默认为 "w"，覆盖写入；"a" 为追加
----@return string? err 成功返回nil，失败返回错误信息
-function XTool.WriteAllText(filepath, content, mode)
-    local CsIOFile = CS.System.IO.File
-    local CsFileWriteAllText = CsIOFile.WriteAllText
-    local CsFileAppendAllText = CsIOFile.AppendAllText
-    local csWrite = (mode == "a") and CsFileAppendAllText or CsFileWriteAllText
-    local ok, err = pcall(csWrite, filepath, content)
-    if ok then return end
-    return tostring(err)
 end
 
 function XTool.ExtractFilenameWithoutExtension(path)

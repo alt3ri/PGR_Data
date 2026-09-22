@@ -10,7 +10,7 @@ local XPunishaarRunControl = XClass(XControl, "XPunishaarRunControl")
 
 --- 局内流程事件（RunControl 派发 → FightMain 等常驻面板订阅；与局内 FightControl.EventIds、
 --- 局外 ShopEventId/DragEventId 分开）。
-XPunishaarRunControl.RunEventId = {
+XPunishaarRunControl.EventId = {
     -- FightMain 子态切换：payload = fightState（FightState 枚举）。
     -- 局内循环节点推进时，FightMain 已在栈中，靠此事件复用实例刷新子面板，避免重开界面。
     FightStateChanged = "PunishaarRunFightStateChanged",
@@ -490,7 +490,7 @@ end
 function XPunishaarRunControl:_ExecuteTransition(fromPanel, toPanel, toSubstate, strategy, onReady)
     -- 同面板子状态切换：FightMain 已在栈中，复用实例、派发事件刷新子面板，不碰 UI 栈（同步，避 PopThenOpen 弹栈重开在栈顶有弹窗时重复开出 FightMain）。
     if fromPanel == toPanel then
-        self:DispatchEvent(self.RunEventId.FightStateChanged, toSubstate)
+        self:DispatchEvent(self.EventId.FightStateChanged, toSubstate)
         if onReady then
             onReady(true)
         end
@@ -592,7 +592,7 @@ function XPunishaarRunControl:_PrepareBattleData()
             end
         end
     end
-    XLog.Error(string.format("[Punishaar] 进入战斗节点 FightID=%s Seed=%s 阵容(%d):%s",
+    XLog.Debug(string.format("[Punishaar] 进入战斗节点 FightID=%s Seed=%s 阵容(%d):%s",
             tostring(fightId), tostring(data:GetSeed()), #lineup, table.concat(lineup, " ")))
 end
 
